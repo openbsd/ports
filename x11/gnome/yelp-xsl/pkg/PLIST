@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/05 13:20:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/27 06:56:22 ajacoutot Exp $
 lib/pkgconfig/
 lib/pkgconfig/yelp-xsl.pc
 share/locale/ar/
@@ -7,6 +7,9 @@ share/locale/ar/LC_MESSAGES/yelp-xsl.mo
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/yelp-xsl.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/yelp-xsl.mo
 share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/yelp-xsl.mo
@@ -40,6 +43,7 @@ share/locale/en_CA/LC_MESSAGES/yelp-xsl.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/yelp-xsl.mo
+share/locale/eo/LC_MESSAGES/yelp-xsl.mo
 share/locale/es/LC_MESSAGES/yelp-xsl.mo
 share/locale/et/LC_MESSAGES/yelp-xsl.mo
 share/locale/eu/LC_MESSAGES/yelp-xsl.mo
@@ -137,6 +141,12 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/yelp-xsl.mo
 share/locale/uk/LC_MESSAGES/yelp-xsl.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/yelp-xsl.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/yelp-xsl.mo
 share/locale/vi/LC_MESSAGES/yelp-xsl.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
@@ -180,7 +190,7 @@ share/yelp-xsl/js/
 share/yelp-xsl/js/jquery.js
 share/yelp-xsl/js/jquery.syntax.brush.apache.js
 share/yelp-xsl/js/jquery.syntax.brush.applescript.js
-share/yelp-xsl/js/jquery.syntax.brush.asm.js
+share/yelp-xsl/js/jquery.syntax.brush.assembly.js
 share/yelp-xsl/js/jquery.syntax.brush.bash-script.js
 share/yelp-xsl/js/jquery.syntax.brush.bash.js
 share/yelp-xsl/js/jquery.syntax.brush.basic.js
@@ -190,8 +200,10 @@ share/yelp-xsl/js/jquery.syntax.brush.css.js
 share/yelp-xsl/js/jquery.syntax.brush.diff.js
 share/yelp-xsl/js/jquery.syntax.brush.haskell.js
 share/yelp-xsl/js/jquery.syntax.brush.html.js
+share/yelp-xsl/js/jquery.syntax.brush.io.js
 share/yelp-xsl/js/jquery.syntax.brush.java.js
 share/yelp-xsl/js/jquery.syntax.brush.javascript.js
+share/yelp-xsl/js/jquery.syntax.brush.kai.js
 share/yelp-xsl/js/jquery.syntax.brush.lisp.js
 share/yelp-xsl/js/jquery.syntax.brush.lua.js
 share/yelp-xsl/js/jquery.syntax.brush.ooc.js
@@ -204,9 +216,11 @@ share/yelp-xsl/js/jquery.syntax.brush.python.js
 share/yelp-xsl/js/jquery.syntax.brush.ruby.js
 share/yelp-xsl/js/jquery.syntax.brush.smalltalk.js
 share/yelp-xsl/js/jquery.syntax.brush.sql.js
+share/yelp-xsl/js/jquery.syntax.brush.xml.js
 share/yelp-xsl/js/jquery.syntax.brush.yaml.js
 share/yelp-xsl/js/jquery.syntax.core.js
 share/yelp-xsl/js/jquery.syntax.js
+share/yelp-xsl/js/jquery.syntax.layout.yelp.js
 share/yelp-xsl/xslt/
 share/yelp-xsl/xslt/common/
 share/yelp-xsl/xslt/common/color.xsl
@@ -237,7 +251,6 @@ share/yelp-xsl/xslt/docbook/html/db2html-inline.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-l10n.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-list.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-media.xsl
-share/yelp-xsl/xslt/docbook/html/db2html-qanda.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-refentry.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-suppressed.xsl
 share/yelp-xsl/xslt/docbook/html/db2html-table.xsl
@@ -254,23 +267,30 @@ share/yelp-xsl/xslt/docbook/utils/figures.xsl
 share/yelp-xsl/xslt/docbook/utils/graphics.xsl
 share/yelp-xsl/xslt/docbook/utils/ids.xsl
 share/yelp-xsl/xslt/gettext/
+share/yelp-xsl/xslt/gettext/domains/
+share/yelp-xsl/xslt/gettext/domains/yelp-xsl.xml
 share/yelp-xsl/xslt/gettext/gettext.xsl
 share/yelp-xsl/xslt/gettext/l10n-numbers.xsl
-share/yelp-xsl/xslt/gettext/l10n.xml
 share/yelp-xsl/xslt/mallard/
 share/yelp-xsl/xslt/mallard/cache/
 share/yelp-xsl/xslt/mallard/cache/mal-cache.xsl
 share/yelp-xsl/xslt/mallard/common/
+share/yelp-xsl/xslt/mallard/common/mal-gloss.xsl
+share/yelp-xsl/xslt/mallard/common/mal-if.xsl
 share/yelp-xsl/xslt/mallard/common/mal-link.xsl
 share/yelp-xsl/xslt/mallard/common/mal-sort.xsl
 share/yelp-xsl/xslt/mallard/html/
+share/yelp-xsl/xslt/mallard/html/mal2html-api.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-block.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-facets.xsl
+share/yelp-xsl/xslt/mallard/html/mal2html-gloss.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-inline.xsl
+share/yelp-xsl/xslt/mallard/html/mal2html-links.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-list.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-media.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-page.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-svg.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html-table.xsl
+share/yelp-xsl/xslt/mallard/html/mal2html-ui.xsl
 share/yelp-xsl/xslt/mallard/html/mal2html.xsl
 share/yelp-xsl/xslt/mallard/html/mal2xhtml.xsl
