@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/27 06:53:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/27 06:55:46 jasper Exp $
 
 COMMENT=		general user documentation for GNOME
 
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS= 	yelp
+
+BUILD_DEPENDS=		textproc/itstool
 
 PKG_ARCH=		*
 USE_LIBTOOL=		No
