@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/27 12:52:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/27 16:03:56 ajacoutot Exp $
 
 COMMENT=		assistive screen reader
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			x11/gtk+3
 RUN_DEPENDS=		x11/gnome/py-atspi>=2.2.0 \
 			devel/py-xdg \
 			x11/dbus-python
