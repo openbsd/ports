@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2011/09/26 17:03:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2011/09/27 07:30:06 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.2.0
-REVISION=		0
+REVISION=		1
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -78,10 +78,6 @@ CONFIGURE_ARGS=		--enable-ssl \
 			--enable-ipv6 \
 			--enable-weather \
 			--enable-nntp \
-			--with-nss-libs="${LOCALBASE}/lib" \
-			--with-nss-includes="${LOCALBASE}/include/nss" \
-			--with-nspr-libs=${LOCALBASE}/lib \
-			--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-krb5 \
 			--with-krb5-libs=/usr/lib \
 			--with-krb5-includes=/usr/include/kerberosV \
