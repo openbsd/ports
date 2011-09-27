@@ -1,0 +1,28 @@
+$OpenBSD: patch-gi_object_c,v 1.1 2011/09/27 17:39:28 jasper Exp $
+
+Revert 72bc4307860a315f9d2173d700582add938d79a0
+as our spidermonkey port does not have JS_updateMallocCounter().
+
+--- gi/object.c.orig	Sat Sep 17 16:03:19 2011
++++ gi/object.c	Tue Sep 27 19:32:00 2011
+@@ -674,7 +674,9 @@ GJS_NATIVE_CONSTRUCTOR_DECLARE(object_instance)
+         if (unthreadsafe_template_for_constructor.gobj == NULL) {
+             GParameter *params;
+             int n_params;
++#ifdef JS_updateMallocCounter
+             GTypeQuery query;
++#endif
+ 
+             gtype = g_registered_type_info_get_g_type( (GIRegisteredTypeInfo*) priv->info);
+             if (gtype == G_TYPE_NONE) {
+@@ -693,8 +695,10 @@ GJS_NATIVE_CONSTRUCTOR_DECLARE(object_instance)
+             priv->gobj = g_object_newv(gtype, n_params, params);
+             free_g_params(params, n_params);
+ 
++#ifdef JS_updateMallocCounter
+             g_type_query(gtype, &query);
+             JS_updateMallocCounter(context, query.instance_size);
++#endif
+ 
+             if (G_IS_INITIALLY_UNOWNED(priv->gobj) &&
+                 !g_object_is_floating(priv->gobj)) {
