@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.44 2011/09/22 09:44:40 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.45 2011/09/27 21:27:36 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -8,16 +8,6 @@ SHARED_ONLY=		Yes
 CATEGORIES+=		lang/python
 
 MODPY_VERSION?=		2.7
-.if ${MODPY_VERSION} == 2.4
-MODPY_VSPEC = >=${MODPY_VERSION},<2.5
-.elif ${MODPY_VERSION} == 2.5
-MODPY_VSPEC = >=${MODPY_VERSION},<2.6
-.elif ${MODPY_VERSION} == 2.7
-MODPY_VSPEC = >=${MODPY_VERSION},<2.8
-.elif ${MODPY_VERSION} == 3.2
-MODPY_VSPEC = >=${MODPY_VERSION},<3.3
-.endif
-MODPYSPEC = python-${MODPY_VSPEC}
 
 .if ${MODPY_VERSION} < 2.6
 MODPY_JSON =		devel/py-simplejson
@@ -30,7 +20,7 @@ MODPY_WANTLIB =	python${MODPY_VERSION}
 .else
 MODPY_WANTLIB = python${MODPY_VERSION}m
 .endif
-MODPY_RUN_DEPENDS=	${MODPYSPEC}:lang/python/${MODPY_VERSION}
+MODPY_RUN_DEPENDS=	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
 _MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
 
@@ -76,7 +66,7 @@ _MODPY_USERBASE =	${WRKDIR}
 .endif
 
 .if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-MODPY_TKINTER_DEPENDS=	STEM-${MODPY_VSPEC}:lang/python/${MODPY_VERSION},-tkinter
+MODPY_TKINTER_DEPENDS=	${MODPY_RUN_DEPENDS},-tkinter
 .endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}

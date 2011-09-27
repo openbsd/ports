@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.83 2011/09/21 14:37:28 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.84 2011/09/27 21:27:36 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -15,14 +15,22 @@ COMMENT-tests=	Python test suite
 COMMENT-tkinter=tk GUI module for Python
 COMMENT-tools=	extra tools for Python
 
-DISTNAME=	Python-${VERSION}${PATCHLEVEL}
-PKGNAME-main=	python-${VERSION}${PATCHLEVEL}
-PKGNAME-bsddb=	python-bsddb-${VERSION}${PATCHLEVEL}
-PKGNAME-gdbm=	python-gdbm-${VERSION}${PATCHLEVEL}
-PKGNAME-idle=	python-idle-${VERSION}${PATCHLEVEL}
-PKGNAME-tests=	python-tests-${VERSION}${PATCHLEVEL}
-PKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}
-PKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}
+DISTNAME =	Python-${VERSION}${PATCHLEVEL}
+PKGNAME-main =	python-${VERSION}${PATCHLEVEL}
+PKGSPEC-main =	python-${VERSION_SPEC}
+PKGNAME-bsddb =	python-bsddb-${VERSION}${PATCHLEVEL}
+PKGSPEC-bsddb =	python-bsddb-${VERSION_SPEC}
+PKGNAME-gdbm =	python-gdbm-${VERSION}${PATCHLEVEL}
+PKGSPEC-gdbm =	python-gdbm-${VERSION_SPEC}
+PKGNAME-idle =	python-idle-${VERSION}${PATCHLEVEL}
+PKGSPEC-idle =	python-idle-${VERSION_SPEC}
+PKGNAME-tests =	python-tests-${VERSION}${PATCHLEVEL}
+PKGSPEC-tests =	python-tests-${VERSION_SPEC}
+PKGNAME-tkinter = python-tkinter-${VERSION}${PATCHLEVEL}
+PKGSPEC-tkinter = python-tkinter-${VERSION_SPEC}
+PKGNAME-tools =	python-tools-${VERSION}${PATCHLEVEL}
+PKGSPEC-tools =	python-tools-${VERSION_SPEC}
+
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
 		http://sunsite.informatik.rwth-aachen.de/python/ftp/${PSUBDIR}/
