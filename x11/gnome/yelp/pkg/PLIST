@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2011/09/12 07:28:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2011/09/27 07:39:07 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-help
 @bin bin/yelp
@@ -44,11 +44,6 @@ share/gtk-doc/html/libyelp/object-tree.html
 share/gtk-doc/html/libyelp/right.png
 share/gtk-doc/html/libyelp/style.css
 share/gtk-doc/html/libyelp/up.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/192x192/
-share/icons/hicolor/192x192/apps/
-share/icons/hicolor/192x192/apps/yelp-icon-big.png
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
 share/locale/ar/LC_MESSAGES/yelp.mo
@@ -174,7 +169,6 @@ share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/yelp.mo
 share/yelp/
-share/yelp/default.css
 share/yelp/dtd/
 share/yelp/dtd/catalog
 share/yelp/dtd/docbookx.dtd
@@ -218,36 +212,15 @@ share/yelp/icons/hicolor/scalable/status/yelp-page-task-symbolic.svg
 share/yelp/icons/hicolor/scalable/status/yelp-page-tip-symbolic.svg
 share/yelp/icons/hicolor/scalable/status/yelp-page-ui-symbolic.svg
 share/yelp/icons/hicolor/scalable/status/yelp-page-video-symbolic.svg
-share/yelp/icons/yelp-icon-caution.png
-share/yelp/icons/yelp-icon-important.png
-share/yelp/icons/yelp-icon-note.png
-share/yelp/icons/yelp-icon-tip.png
-share/yelp/icons/yelp-icon-warning.png
-share/yelp/icons/yelp-watermark-blockquote-00AB.png
-share/yelp/icons/yelp-watermark-blockquote-00BB.png
-share/yelp/icons/yelp-watermark-blockquote-201C.png
-share/yelp/icons/yelp-watermark-blockquote-201D.png
-share/yelp/icons/yelp-watermark-blockquote-201E.png
-share/yelp/important_docs.xml
-share/yelp/info.xml
-share/yelp/jquery-1.4.2.min.js
-share/yelp/jquery-ui-1.8.custom.min.js
-share/yelp/man.xml
-share/yelp/scrollkeeper.xml
-share/yelp/toc.xml
+share/yelp/js/
+share/yelp/js/jquery-ui-1.8.custom.min.js
 share/yelp/xslt/
-share/yelp/xslt/db-title.xsl
 share/yelp/xslt/db2html.xsl
 share/yelp/xslt/info2html.xsl
 share/yelp/xslt/mal2html.xsl
 share/yelp/xslt/man2html.xsl
-share/yelp/xslt/search2html.xsl
-share/yelp/xslt/toc2html.xsl
 share/yelp/xslt/yelp-common.xsl
-share/yelp/yelp.js
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
