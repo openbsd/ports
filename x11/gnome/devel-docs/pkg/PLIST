@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/05/24 05:47:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/09/27 06:52:09 jasper Exp $
+share/gnome/
+share/gnome/help/
 share/gnome/help/accessibility-devel-guide/
 share/gnome/help/accessibility-devel-guide/C/
 share/gnome/help/accessibility-devel-guide/C/accessibility-devel-guide.xml
@@ -2044,6 +2046,8 @@ share/gnome/help/integration-guide/es/
 share/gnome/help/integration-guide/es/integration-guide.xml
 share/gnome/help/integration-guide/fr/
 share/gnome/help/integration-guide/fr/integration-guide.xml
+share/gnome/help/integration-guide/gl/
+share/gnome/help/integration-guide/gl/integration-guide.xml
 share/gnome/help/integration-guide/it/
 share/gnome/help/integration-guide/it/integration-guide.xml
 share/gnome/help/integration-guide/pt_BR/
@@ -2103,6 +2107,14 @@ share/gnome/help/optimization-guide/fr/optimization-guide.xml
 share/gnome/help/optimization-guide/fr/optimization-harmful.xml
 share/gnome/help/optimization-guide/fr/optimization-intro.xml
 share/gnome/help/optimization-guide/fr/optimization-massif.xml
+share/gnome/help/optimization-guide/gl/
+share/gnome/help/optimization-guide/gl/figures/
+share/gnome/help/optimization-guide/gl/figures/massif-after.png
+share/gnome/help/optimization-guide/gl/figures/massif-before.png
+share/gnome/help/optimization-guide/gl/optimization-guide.xml
+share/gnome/help/optimization-guide/gl/optimization-harmful.xml
+share/gnome/help/optimization-guide/gl/optimization-intro.xml
+share/gnome/help/optimization-guide/gl/optimization-massif.xml
 share/gnome/help/optimization-guide/sl/
 share/gnome/help/optimization-guide/sl/figures/
 share/gnome/help/optimization-guide/sl/figures/massif-after.png
@@ -2448,6 +2460,7 @@ share/omf/integration-guide/integration-guide-el.omf
 share/omf/integration-guide/integration-guide-en_GB.omf
 share/omf/integration-guide/integration-guide-es.omf
 share/omf/integration-guide/integration-guide-fr.omf
+share/omf/integration-guide/integration-guide-gl.omf
 share/omf/integration-guide/integration-guide-it.omf
 share/omf/integration-guide/integration-guide-pt_BR.omf
 share/omf/integration-guide/integration-guide-sl.omf
@@ -2460,5 +2473,6 @@ share/omf/optimization-guide/optimization-guide-de.omf
 share/omf/optimization-guide/optimization-guide-el.omf
 share/omf/optimization-guide/optimization-guide-es.omf
 share/omf/optimization-guide/optimization-guide-fr.omf
+share/omf/optimization-guide/optimization-guide-gl.omf
 share/omf/optimization-guide/optimization-guide-sl.omf
 share/omf/optimization-guide/optimization-guide-zh_CN.omf

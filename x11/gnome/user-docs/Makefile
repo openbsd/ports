@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/27 06:52:01 jasper Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		general GNOME User Documentation
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		3.0.5
+GNOME_VERSION=		3.2.0
 
 # CC Attribution 3.0
 PERMIT_PACKAGE_CDROM=	Yes
