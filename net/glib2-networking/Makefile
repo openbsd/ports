@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/27 06:31:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network-related gio modules for glib2
 
-GNOME_VERSION=	2.28.7
+GNOME_VERSION=	2.30.0
 GNOME_PROJECT=	glib-networking
-REVISION=		0
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
 
@@ -22,11 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += c gcrypt gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
 WANTLIB += gpg-error gthread-2.0 hogweed m modman nettle pcre
-WANTLIB += proxy pthread stdc++ tasn1 z
+WANTLIB += proxy pthread stdc++ tasn1 z ffi p11-kit
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -36,7 +33,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	net/libproxy>=0.4.6 \
 		security/gnutls \
-		devel/glib2 \
+		devel/glib2>=2.30.0 \
 		security/libgcrypt
 
 LIBTOOL_FLAGS=	--tag=disable-static
@@ -44,8 +41,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--with-ca-certificates=/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
