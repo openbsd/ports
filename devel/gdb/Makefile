@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/22 16:40:54 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/27 20:26:45 jasper Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -6,7 +6,8 @@ CATEGORIES=	devel
 DISTNAME=	gdb-7.2
 REVISION=	1
 
-MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
+MASTER_SITES=	${MASTER_SITE_GNU:=gdb/} \
+		http://distfiles.nl/
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 
