@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/22 10:15:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/27 06:10:45 ajacoutot Exp $
 
 COMMENT=	python bindings for at-spi2
 
 GNOME_PROJECT=	pyatspi
-GNOME_VERSION=	2.1.91
+GNOME_VERSION=	2.2.0
 
 PKGNAME=	py-atspi-${GNOME_VERSION}
 
@@ -15,8 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 MODULES=	x11/gnome \
 		lang/python
 
@@ -24,7 +22,7 @@ PKG_ARCH=	*
 
 BUILD_DEPENDS=	devel/py-gobject3
 RUN_DEPENDS=	devel/py-gobject3 \
-		x11/gnome/at-spi2-core
+		x11/gnome/at-spi2-core>=2.2.0
 
 # connects to DBus
 REGRESS_IS_INTERACTIVE=	x11
