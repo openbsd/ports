@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	media profiles management library
 
@@ -36,8 +36,5 @@ MODGNOME_TOOLS= yelp
 
 LIB_DEPENDS=	x11/gtk+3 \
 		multimedia/gstreamer-0.10/core
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

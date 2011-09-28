@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/22 11:56:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/28 09:47:48 jasper Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -90,9 +90,9 @@ TOTEM_PLUGINS=	"media-player-keys ontop properties \
 		screensaver skipto thumbnail \
 		opensubtitles jamendo screenshot dbus-service"
 
-CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+CONFIGURE_ENV= 	CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
 		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 CONFIGURE_ARGS=	--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \

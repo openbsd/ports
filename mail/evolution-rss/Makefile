@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/26 10:05:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -58,8 +58,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-gecko \
 			--disable-webkit \
 			--with-primary-render=gtkhtml
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 ### XXX remove this chunk when updating to a 'real' release ############
 MASTER_SITES=		http://distfiles.bsdfrog.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
@@ -27,7 +27,5 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

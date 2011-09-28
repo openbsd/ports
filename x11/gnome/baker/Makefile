@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/20 20:52:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -45,8 +45,6 @@ MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS+=	--disable-libnotify
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
 
 .if ${MACHINE_ARCH:Mamd64}
 # XXX: See FreeBSD ports/130972

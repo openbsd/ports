@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/27 15:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/28 09:51:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,8 +64,7 @@ LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
 			x11/gtk+3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+MODGNOME_LDFLAGS=	-pthread
 
 FAKE_FLAGS=	completiondir=${PREFIX}/share/examples/dconf/bash_completion.d
 

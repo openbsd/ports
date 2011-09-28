@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/09/26 11:04:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -31,9 +31,7 @@ MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--without-libgtop-smp
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			GMSGFMT="${LOCALBASE}/bin/msgfmt" \
+CONFIGURE_ENV=		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
 			ac_cv_header_sys_mount_h=yes
 
 .ifdef DEBUG

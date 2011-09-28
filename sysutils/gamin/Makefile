@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/27 08:15:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/28 09:51:36 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -73,9 +73,9 @@ MODPY_RUNDEP=	No
 
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE= gnu 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -pthread" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_STYLE= gnu
+MODGNOME_CPPFLAGS=	-pthread
+MODGNOME_LDFLAGS=	-pthread
 CONFIGURE_ARGS+= --disable-docs \
 		--disable-inotify \
 		--disable-dnotify \

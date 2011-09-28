@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/27 12:26:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT =		C++ interface for pango
 
@@ -32,6 +32,6 @@ LIB_DEPENDS =		devel/pango \
 			graphics/cairomm
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 .include <bsd.port.mk>

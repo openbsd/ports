@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,11 +39,8 @@ MODULES=		devel/gettext \
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-static \
+CONFIGURE_ARGS= 	--disable-static \
 			--enable-animation
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 # nm: unknown option -- D
 NO_REGRESS=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/28 08:39:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -34,9 +34,6 @@ LIB_DEPENDS=		x11/gnome/panel>=3.0.0 \
 			multimedia/gstreamer-0.10/plugins-base
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 #
 # Remove this and patch-configure_ac when updating to

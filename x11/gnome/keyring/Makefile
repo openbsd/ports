@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/26 06:25:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	password agent for the GNOME project
 
@@ -43,8 +43,6 @@ CONFIGURE_ARGS=	--with-root-certs=/etc/ssl \
 		--disable-selinux \
 		--disable-tests \
 		--without-libcap-ng
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	configdir=${PREFIX}/share/examples/gnome-keyring/pkcs11/modules
 

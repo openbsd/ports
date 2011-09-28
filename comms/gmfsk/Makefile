@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -45,8 +45,6 @@ LIB_DEPENDS=		comms/hamlib \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-hamlib
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-lsndio"
+CONFIGURE_ENV=		LIBS="-lsndio"
 
 .include <bsd.port.mk>

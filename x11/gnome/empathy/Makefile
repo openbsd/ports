@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2011/09/28 09:47:46 jasper Exp $
 
 BROKEN=			needs an update (GNOME3)
 
@@ -88,8 +88,6 @@ CONFIGURE_ARGS+=	--enable-spell=Yes \
 # revisit when telepathy-yell is moved out from empathy(?)
 CONFIGURE_ARGS+=	--disable-nautilus-sendto \
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
 
 FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/

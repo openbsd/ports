@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
@@ -32,8 +32,7 @@ LIB_DEPENDS=		x11/gtk+2
 
 SEPARATE_BUILD= 	simple
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-lib-GL
+CONFIGURE_ARGS+=	--with-lib-GL
 
 DOC_DIR=		${PREFIX}/share/doc/gtkglarea2
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/09/25 13:40:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -99,6 +99,7 @@ post-install:
 	find ${PREFIX} -type d -name rbzeitgeist | xargs -r rm -rf
 
 ### XXX remove this chunk when updating to a 'real' release ############
+### Also convert to new gnome.port.mk CONFIGURE_ARGS ############
 # Sat Sep 17 15:51:41 CEST 2011
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 

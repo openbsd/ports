@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/26 14:34:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,9 +74,6 @@ CONFIGURE_ARGS+=	--enable-plugin-subversion
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz
-
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 # The Symbol Browser plugin isn't built on OpenBSD due to the lack of an
 # shm_open() implementation. So remove the "Symbol Browser" as a requirement

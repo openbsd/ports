@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,8 +45,7 @@ SEPARATE_BUILD=	concurrent
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR= metacity
 
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 USE_GROFF =	Yes
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/22 16:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -49,7 +49,7 @@ MODGNOME_DESKTOP_FILE= 	Yes
 MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=	CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
-		LDFLAGS="-pthread -lutil -L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-pthread
+MODGNOME_LDFLAGS=	-pthread -lutil
 
 .include <bsd.port.mk>

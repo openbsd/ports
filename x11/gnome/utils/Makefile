@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/26 15:50:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/28 09:47:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,8 +43,7 @@ MODGCONF2_SCHEMAS_DIR=	gnome-utils
 
 CONFIGURE_ARGS+=	--with-grep="/usr/bin/grep" \
 			--enable-ipv6
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 USE_GROFF =		Yes
 
 .include <bsd.port.mk>

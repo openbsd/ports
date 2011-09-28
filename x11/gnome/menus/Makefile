@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/28 08:21:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,8 +28,6 @@ RUN_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 MODGNOME_TOOLS= 	goi
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/layout/applications.menu

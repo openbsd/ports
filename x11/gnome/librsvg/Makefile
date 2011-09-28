@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -29,8 +29,6 @@ LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		devel/pango \
 		www/libcroco
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gtk-theme \
 		--with-svgz \
 		--with-croco

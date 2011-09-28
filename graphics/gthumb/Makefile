@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -51,8 +51,8 @@ MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 CONFIGURE_ARGS=	--disable-libopenraw \
 		--disable-libbrasero \
 		--enable-libsoup \

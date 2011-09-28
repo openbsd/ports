@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:46 jasper Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -64,8 +64,6 @@ CONFIGURE_ARGS+= 	--localstatedir="/var" \
 # lightsoff and swell-foop need seed
 CONFIGURE_ARGS+=	--enable-omitgames=lightsoff,swell-foop
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
 
 REGRESS_IS_INTERACTIVE= x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/28 06:38:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=	API documentation browser for GNOME
 
@@ -39,8 +39,5 @@ LIB_DEPENDS=	www/webkit,gtk3
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

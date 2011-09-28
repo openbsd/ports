@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/22 10:23:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
@@ -33,7 +33,5 @@ LIB_DEPENDS=		graphics/gdk-pixbuf2
 MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

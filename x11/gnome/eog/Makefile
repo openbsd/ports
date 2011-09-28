@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/27 07:37:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/28 09:47:46 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -43,8 +43,6 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-xmp \
 			--with-libexif
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/20 21:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -52,8 +52,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dbus=yes \
 		--enable-gnome-keyring=yes \
 		--enable-spell=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODGNOME_DESKTOP_FILE=	Yes
 

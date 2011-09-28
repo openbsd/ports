@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/28 09:51:37 jasper Exp $
 
 COMMENT=	C++ wrapper for gtksourceview3
 
@@ -41,6 +41,5 @@ LIB_DEPENDS=	x11/gtksourceview3 \
 		x11/gtk3mm
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

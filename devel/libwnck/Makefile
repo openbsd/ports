@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -38,7 +38,5 @@ LIB_DEPENDS=		x11/gtk+2 \
 			devel/startup-notification
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=	C++ bindings for libglade
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	x11/gtk2mm \
 		devel/libglade2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static
+CONFIGURE_ARGS=	--enable-static
 
 .include <bsd.port.mk>

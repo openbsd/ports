@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/26 09:45:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:51:36 jasper Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -85,8 +85,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-static-ldap=no \
 		--with-openldap=${LOCALBASE} \
 		--with-libdb=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			-Wl,-rpath,${TRUEPREFIX}/lib/evolution-exchange/${EVO_VERSION}:${TRUEPREFIX}/lib"
+MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/db4
+MODGNOME_LDFLAGS=-Wl,-rpath,${TRUEPREFIX}/lib/evolution-exchange/${EVO_VERSION}:${TRUEPREFIX}/lib
 
 .include <bsd.port.mk>

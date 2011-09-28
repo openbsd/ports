@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/21 14:03:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		GObject Introspection
 
@@ -40,8 +40,6 @@ USE_GROFF =		Yes
 YACC=			bison
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 CFLAGS+=		-pthread
 

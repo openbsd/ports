@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/09/27 07:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2011/09/28 09:47:48 jasper Exp $
 
 COMMENT=		GNOME help browser
 
@@ -38,7 +38,5 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS+= 	--enable-lzma \
 			--enable-bz2
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

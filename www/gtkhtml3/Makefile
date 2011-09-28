@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/21 08:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/28 09:51:36 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -54,9 +54,6 @@ RUN_DEPENDS=		devel/iso-codes \
 			x11/gnome/icon-theme
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		API_VERSION
 

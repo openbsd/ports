@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		IDL parsing library
 
@@ -31,9 +31,6 @@ LIB_DEPENDS=		devel/glib2
 
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-build:
 # Info files shipped in the official distfile aren't correctly 

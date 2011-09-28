@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -51,8 +51,6 @@ CONFIGURE_ARGS=		--without-gnome \
 			--without-paradox \
 			--without-long-double \
 			--without-python
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		VERSION API_VERSION
 

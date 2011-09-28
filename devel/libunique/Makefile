@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/20 21:17:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/28 09:51:36 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -33,8 +33,6 @@ WANTLIB += xcb-shm z ffi
 MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	--with-x
 
 MODULES =	devel/gettext \

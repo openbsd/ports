@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/28 09:51:37 jasper Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
@@ -33,8 +33,7 @@ RUN_DEPENDS=	devel/xdg-user-dirs>=0.13p0
 LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+MODGNOME_LDFLAGS=-pthread
 
 CFLAGS+=	-pthread
 

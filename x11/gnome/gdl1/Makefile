@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=	GNOME 2 Docking Library
 
@@ -31,8 +31,5 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

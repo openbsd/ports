@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/27 13:14:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -108,9 +108,8 @@ CONFIGURE_ARGS+= --disable-static \
 		--enable-djvu \
 		--enable-dvi
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=${CFLAGS}
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
 MULTI_PACKAGES=	-main
 PSEUDO_FLAVORS=	light

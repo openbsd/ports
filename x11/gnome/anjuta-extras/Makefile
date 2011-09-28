@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/26 20:53:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,5 @@ LIB_DEPENDS=	x11/gnome/anjuta>=3.2.0
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

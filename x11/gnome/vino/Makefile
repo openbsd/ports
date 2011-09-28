@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/28 07:07:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/28 09:47:48 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
@@ -46,8 +46,8 @@ CONFIGURE_ARGS=	--with-gnome-keyring \
 		--with-telepathy \
 		--disable-ipv6
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/vino
 

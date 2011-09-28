@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/28 09:47:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,9 +41,8 @@ CONFIGURE_ARGS+= 	--disable-cdda \
 			--disable-avahi \
 			--disable-howl \
 			--disable-samba
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
-			ac_cv_header_sys_mount_h=yes
+MODGNOME_LDFLAGS=	-pthread
+CONFIGURE_ENV=		ac_cv_header_sys_mount_h=yes
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-vfs2
 

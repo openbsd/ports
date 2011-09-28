@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -36,9 +36,6 @@ USE_GROFF =	Yes
 # popt usage is deprecated in gnome, but the header file is still included
 # from some libbonobo header and might still be used inside libbonobo
 RUN_DEPENDS=   devel/popt
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libbonobo
 

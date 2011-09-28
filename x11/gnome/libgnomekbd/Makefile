@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/27 23:24:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=	x11/gnome/libxklavier \
 
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 .include <bsd.port.mk>

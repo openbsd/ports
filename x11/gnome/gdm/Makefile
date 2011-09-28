@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2011/09/28 09:47:46 jasper Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -51,8 +51,8 @@ MODGCONF2_SCHEMAS_DIR=	gdm
 USE_LIBTOOL=		Yes
 MODGNOME_TOOLS= 	yelp
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include -DHAS_SA_LEN" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		--localstatedir=/var \
 			--mandir=${PREFIX}/man \

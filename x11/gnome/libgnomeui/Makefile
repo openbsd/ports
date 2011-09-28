@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=	x11/gnome/libgnome-keyring \
 		x11/gnome/libgnomecanvas \
 		x11/gnome/libbonoboui
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/27 16:03:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		assistive screen reader
 
@@ -25,9 +25,7 @@ RUN_DEPENDS=		x11/gnome/py-atspi>=2.2.0 \
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			DATADIRNAME=share
+CONFIGURE_ENV=		DATADIRNAME=share
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 

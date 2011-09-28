@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/27 06:07:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,8 +25,7 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	x11/gnome/at-spi2-core>=2.2.0 \
 		devel/atk
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=-I${X11BASE}/include
 CONFIGURE_ARGS= --enable-p2p
 
 # connects to DBus

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/26 18:09:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,8 +33,5 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

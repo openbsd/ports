@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/28 06:39:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,9 +41,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/krb5-auth-dialog/xdg/autostart \
 		smallicondir=${PREFIX}/share/icons/hicolor/22x22/apps
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		KRB5_CFLAGS="-I/usr/include/kerberosV" \
+CONFIGURE_ENV=	KRB5_CFLAGS="-I/usr/include/kerberosV" \
 		KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcrypto"
 CONFIGURE_ARGS=	--disable-static \
 		--with-gtk=3.0 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/27 17:17:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -91,8 +91,8 @@ CONFIGURE_ARGS=	--disable-static \
 # Disable libsocialweb support until Flickr integration is fixed upstream.
 CONFIGURE_ARGS+=--without-libsocialweb
 
-CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center \
 		pkgconfigdir=${PREFIX}/lib/pkgconfig/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/28 09:47:48 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,8 +37,6 @@ LIB_DEPENDS=	mail/gmime>=2.6.0 \
 
 MODGNOME_TOOLS= goi
 
-CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-quvi \
 		--enable-libarchive
 

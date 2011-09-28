@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/26 14:34:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,8 +42,7 @@ LIB_DEPENDS=	x11/gtksourceview \
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgmp"
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -lgmp
 CONFIGURE_ARGS=	--disable-update-mimedb \
 		--disable-extra-gcc-optimization
 

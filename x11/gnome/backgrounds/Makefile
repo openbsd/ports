@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/26 11:37:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		wallpapers for GNOME
 
@@ -16,7 +16,5 @@ MODULES=		x11/gnome
 BUILD_DEPENDS=		devel/gettext
 
 USE_LIBTOOL=		No
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

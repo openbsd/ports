@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/25 08:32:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT =	library for writing single instance GTK+3 applications
 
@@ -36,8 +36,6 @@ LIB_DEPENDS =		x11/dbus-glib \
 			x11/gtk+3
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	--enable-bacon \
 			--with-x
 

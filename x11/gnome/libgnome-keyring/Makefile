@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/25 17:32:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -21,8 +21,5 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
 		devel/glib2
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

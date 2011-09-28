@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/28 09:47:46 jasper Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -50,8 +50,7 @@ MODGNOME_TOOLS= yelp
 MODGCONF2_SCHEMAS_DIR= ekiga
 USE_GROFF =	Yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
+MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
 CONFIGURE_ARGS=	--enable-avahi \
 		--disable-gnome \
 		--with-ldap-dir=${LOCALBASE} \

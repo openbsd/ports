@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		high-performance 2D graphics library
 
@@ -25,6 +25,5 @@ WANTLIB=		m
 MODULES=		x11/gnome
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

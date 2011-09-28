@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -60,8 +60,6 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	--enable-shave=no \
 			--disable-static
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 DLLMAP_FILES=		lib/unique-sharp/unique/unique-sharp.dll.config \
 			lib/gtk-sharp-beans/gtk-sharp-beans.dll.config \

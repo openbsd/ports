@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/27 12:57:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		home media solution that allows easy media sharing
 
@@ -45,8 +45,6 @@ CONFIGURE_ARGS+=	--enable-mpris-plugin \
 			--enable-external-plugin \
 			--disable-mediathek-plugin \
 			--disable-tracker-plugin
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/rygel/
 

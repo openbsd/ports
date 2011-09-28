@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -44,7 +44,5 @@ BUILD_DEPENDS =		archivers/gtar \
 
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

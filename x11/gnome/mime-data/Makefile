@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		MIME and application database for GNOME
 
@@ -19,8 +19,6 @@ MODULES=		x11/gnome
 
 USE_LIBTOOL=		No
 CONFIGURE_STYLE= 	gnu old
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=		pkgconfigdir=${PREFIX}/lib/pkgconfig/ \
 			sysconfdir=${PREFIX}/share/examples/gnome-mime-data/

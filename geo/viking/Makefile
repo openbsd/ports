@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT =	GPS track manager
 
@@ -26,8 +26,7 @@ CONFIGURE_STYLE =	gnu
 MODGNOME_DESKTOP_FILE =		Yes
 MODGNOME_TOOLS= 	yelp
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+MODGNOME_LDFLAGS=-pthread
 
 LIB_DEPENDS =	misc/gpsd \
 		net/curl \

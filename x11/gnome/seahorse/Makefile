@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/09/26 07:15:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -40,9 +40,6 @@ MODULES=		devel/gettext \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		--enable-hkp \
 			--enable-ldap \

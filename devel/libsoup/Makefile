@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/27 07:58:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -58,8 +58,6 @@ CONFIGURE_ARGS +=	--disable-more-warnings \
 # checking Apache version... 1.3.29 (Unix) (ignoring)
 # But this prevents needing apache2 for certain regress tests.
 CONFIGURE_ARGS+=	--with-apache-httpd="/usr/sbin/httpd"
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS =		API_VERSION
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -34,8 +34,7 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LIBS="-pthread -lm -lutil"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	--disable-static
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

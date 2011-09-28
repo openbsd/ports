@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -54,8 +54,5 @@ CONFIGURE_ARGS=		--without-examples \
 # mozilla plugin and python bindings are gtk+2 only
 CONFIGURE_ARGS +=	--disable-plugin \
 			--without-python
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

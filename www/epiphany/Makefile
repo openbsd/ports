@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/20 21:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,8 +69,7 @@ CONFIGURE_ARGS=	--disable-static \
 		--enable-seed \
 		--disable-nss
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		HOME=/tmp
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+CONFIGURE_ENV=		HOME=/tmp
 
 .include <bsd.port.mk>

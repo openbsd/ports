@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		documentation metadata library
 
@@ -29,15 +29,12 @@ RUN_DEPENDS=		shells/bash \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--localstatedir=/var \
+CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-convert-dir=${PREFIX}/share/omf \
 			--enable-installed \
 			--enable-scrollkeeper-compat \
 			--enable-omf-read \
 			--disable-skdb-update
-CONFIGURE_ENV=   	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 # The .in files in ${WRKSRC}/util/ don't have a newline at the end
 # of the file, which causes diff(1) to puke.

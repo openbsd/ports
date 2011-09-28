@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/26 17:32:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/28 09:47:48 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -51,8 +51,5 @@ CONFIGURE_ARGS=	--with-avahi \
 
 # XXX console does not spawn (needs grantpt, ptsname...)
 CONFIGURE_ARGS+= --enable-ssh=no
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

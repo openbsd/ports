@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		shared JavaScript files for GNOME
 
@@ -15,9 +15,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS+=		gnome_js_commondoc_DATA=""
 

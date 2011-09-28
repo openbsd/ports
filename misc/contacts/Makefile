@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		lightweight addressbook
 
@@ -42,11 +42,8 @@ LIB_DEPENDS=		databases/evolution-data-server
 RUN_DEPENDS=		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gnome-vfs \
+CONFIGURE_ARGS+=	--disable-gnome-vfs \
 			--enable-gconf \
 			--enable-dbus
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

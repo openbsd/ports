@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	brain teaser game
 
@@ -33,8 +33,6 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-tests
 
 DLLMAP_FILES=	src/Clients/Classical/gbrainy.exe.config.in \

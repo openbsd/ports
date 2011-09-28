@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/27 06:31:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,6 @@ LIB_DEPENDS=	net/libproxy>=0.4.6 \
 LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-static \
 		--with-ca-certificates=/etc/ssl/cert.pem
 

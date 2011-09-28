@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
@@ -29,8 +29,6 @@ RUN_DEPENDS +=	x11/gnome/librsvg
 
 MODGNOME_TOOLS= 	yelp
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1

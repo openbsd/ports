@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		GNOME Docking Library
 
@@ -31,8 +31,5 @@ LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+3
 
 MODGNOME_TOOLS= goi
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

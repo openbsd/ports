@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/25 18:54:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/28 09:51:36 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=		"-DG_CONST_RETURN=const"
@@ -32,7 +32,6 @@ MODULES=	devel/gettext \
 AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 MODGCONF2_SCHEMAS_DIR=	emerillon
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 MODGNOME_TOOLS= 	goi vala yelp
 

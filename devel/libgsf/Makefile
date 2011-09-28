@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -45,8 +45,6 @@ CONFIGURE_ARGS=		--without-bonobo \
 			--without-python \
 			--with-bz2 \
 			--with-gio
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GROFF=		Yes
 

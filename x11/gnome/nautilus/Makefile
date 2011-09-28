@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2011/09/26 14:46:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		GNOME file manager
 
@@ -72,8 +72,8 @@ CONFIGURE_ARGS+= 	--disable-update-mimedb \
 # results from paths not indexed by tracker
 CONFIGURE_ARGS +=	--disable-tracker
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus
 

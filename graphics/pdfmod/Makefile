@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
@@ -30,8 +30,6 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-release \
 		--disable-external-poppler-sharp
 

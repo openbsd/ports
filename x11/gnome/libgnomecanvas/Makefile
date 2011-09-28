@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,8 +34,7 @@ LIB_DEPENDS=	devel/libglade2 \
 		graphics/libart
 
 CONFIGURE_ARGS=	--enable-glade
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 REGRESS_IS_INTERACTIVE= x11
 

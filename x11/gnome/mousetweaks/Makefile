@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/26 16:23:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	mouse accessibility enhancements for GNOME
 
@@ -31,8 +31,5 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 LIB_DEPENDS=	x11/gtk+3
 
 MODGNOME_TOOLS= yelp
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

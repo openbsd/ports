@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/27 13:02:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	base icon theme for GNOME
 
@@ -30,8 +30,6 @@ RUN_DEPENDS +=	x11/gtk+2 \
 PKG_ARCH=	*
 
 USE_LIBTOOL=	No
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-icon-mapping \
 		--disable-nls
 

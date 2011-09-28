@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/27 06:28:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,8 +34,5 @@ CONFIGURE_ARGS+=	--enable-import-tool \
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no
 # Not yet until e-d-s' vala bindings are stable
 CONFIGURE_ARGS+=	--disable-eds-backend
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

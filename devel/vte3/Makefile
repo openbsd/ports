@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/26 15:17:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		terminal emulation library
 
@@ -40,7 +40,5 @@ MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-Bsymbolic \
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -36,13 +36,10 @@ WANTLIB +=		ORBit-2 gconf-2>=5 sigc-2.0 glibmm-2.4
 
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_path_DOT= \
+CONFIGURE_ENV=		ac_cv_path_DOT= \
 			ac_cv_path_XSLTPROC= \
 			ac_cv_path_DOXYGEN=
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-documentation
+CONFIGURE_ARGS=		--enable-documentation
 
 # XXX when updating, check that this is still needed
 CONFIGURE_ENV+=		MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`

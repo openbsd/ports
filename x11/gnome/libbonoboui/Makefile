@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	user interface components for bonobo
 
@@ -34,8 +34,6 @@ LIB_DEPENDS=	devel/popt \
 		x11/gnome/libgnomecanvas
 
 MODGNOME_DESKTOP_FILE=	Yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE= x11
 

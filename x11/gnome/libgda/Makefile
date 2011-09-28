@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -82,9 +82,9 @@ CONFIGURE_ARGS+=	--disable-static \
 			--without-oracle \
 			--without-mdb \
 			--with-java=no
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
-			LDFLAGS="-L${LOCALBASE}/lib -lm" \
-			LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
+MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4/
+MODGNOME_LDFLAGS=	-lm
+CONFIGURE_ENV=		LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
 			LIBCRYPTO_LIBS="-lcrypto" \
 			MYSQL_CONFIG="${LOCALBASE}/bin/mysql_config"
 

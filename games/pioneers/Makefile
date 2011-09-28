@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -43,9 +43,7 @@ MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_pngtopnm=""
+CONFIGURE_ENV=	ac_cv_path_pngtopnm=""
 CONFIGURE_ARGS=	--enable-protocol=IPv4
 
 pre-configure:

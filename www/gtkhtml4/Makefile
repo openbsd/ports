@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/25 17:45:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -48,8 +48,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/icon-theme
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/24 11:42:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -37,9 +37,6 @@ MODULES=	devel/gettext \
 		devel/dconf
 
 MODGNOME_TOOLS=goi
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--disable-update-mime-database
 

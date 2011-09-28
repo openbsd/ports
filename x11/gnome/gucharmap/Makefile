@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/26 13:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,6 @@ MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 LIB_DEPENDS+=		x11/gtk+3,-main
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 .include <bsd.port.mk>

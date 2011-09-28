@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		C++ Application Framework for use with Gtkmm
 
@@ -38,9 +38,6 @@ LIB_DEPENDS =		devel/gconfmm \
 			textproc/libxml++
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS+=		API_VERSION
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,9 +39,7 @@ BUILD_DEPENDS=		archivers/gtar \
 LIB_DEPENDS=		devel/glib2mm \
 			x11/gnome/libgda>=4.99.4
 
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_path_DOT= \
+CONFIGURE_ENV=		ac_cv_path_DOT= \
 			ac_cv_path_XSLTPROC= \
 			ac_cv_path_DOXYGEN=
 

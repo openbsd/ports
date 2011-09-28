@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2011/09/27 10:27:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.187 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		GNOME session
 
@@ -75,7 +75,5 @@ MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS=	--disable-rebuilds \
 		--enable-docbook-docs
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

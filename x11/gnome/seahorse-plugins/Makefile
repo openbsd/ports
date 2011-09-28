@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/26 08:05:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,8 +56,6 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-cpp-rtti \
 		--disable-applet \
 		--with-gtk=3.0
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 # the plugin needs a gecko epiphany, ours uses webkit
 CONFIGURE_ARGS+= --disable-epiphany

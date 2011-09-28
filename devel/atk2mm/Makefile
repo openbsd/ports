@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=	C++ binding for the ATK library
 
@@ -33,8 +33,7 @@ LIB_DEPENDS=	devel/glib2mm \
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--disable-dependency-tracking
 
 .include <bsd.port.mk>

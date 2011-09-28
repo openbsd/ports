@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/26 20:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/28 09:47:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,8 +47,6 @@ LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ARGS=		--enable-python \
 			--disable-updater \
 			--enable-gvfs-metadata
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/09/26 14:59:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/28 09:47:48 jasper Exp $
 
 COMMENT=	GNOME terminal
 
@@ -30,8 +30,5 @@ LIB_DEPENDS=	devel/vte3
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

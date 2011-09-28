@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/21 10:16:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -44,8 +44,6 @@ MODGNOME_TOOLS= Yes
 MODGCONF2_SCHEMAS_DIR=	gconf-editor
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 # the devel/gconf2 MODULE overrides the path to gconftool-2
 CONFIGURE_ARGS += --with-gconf-defaults-source="xml:merged:/var/db/gconf/gconf.xml.defaults" \

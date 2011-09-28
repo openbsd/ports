@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/17 14:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=		send small notifications to your desktop
 
@@ -33,9 +33,6 @@ LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 RUN_DEPENDS=		devel/desktop-file-utils
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/system.d"
 
 .include <bsd.port.mk>

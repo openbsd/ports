@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/27 17:39:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
@@ -45,8 +45,6 @@ LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 REGRESS_DEPENDS=	sysutils/e2fsprogs
 
 CONFIGURE_ARGS+=	--with-js-package="mozilla-js"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/22 08:03:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
@@ -50,8 +50,6 @@ CONFIGURE_ARGS+=	--enable-readline-module \
 			--enable-cairo-module \
 			--enable-gettext-module \
 			--enable-mpfr-module
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE= x11
 REGRESS_DEPENDS=	${BASE_PKGPATH}

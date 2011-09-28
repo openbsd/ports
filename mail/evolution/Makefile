@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2011/09/26 17:05:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -125,11 +125,9 @@ YACC=			bison
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-				-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
-				-Wl,--as-needed"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
+				-Wl,--as-needed
 
 CONFIGURE_ARGS=		--enable-plugins=all \
 			--disable-nm \

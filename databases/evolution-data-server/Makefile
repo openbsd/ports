@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2011/09/27 07:30:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2011/09/28 09:51:35 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -83,7 +83,7 @@ CONFIGURE_ARGS=		--enable-ssl \
 			--with-krb5-includes=/usr/include/kerberosV \
 			--with-libdb=${LOCALBASE} \
 			--with-openldap=${LOCALBASE}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/db4
+MODGNOME_LDFLAGS=	-pthread
 
 .include <bsd.port.mk>

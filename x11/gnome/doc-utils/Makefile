@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/28 09:47:46 jasper Exp $
 
 # This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -35,8 +35,7 @@ RUN_DEPENDS=	devel/gettext \
 
 USE_LIBTOOL=	No
 USE_GROFF=	Yes
-CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=${CFLAGS}
 
 FAKE_FLAGS+=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
 

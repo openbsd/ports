@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/28 09:51:35 jasper Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -35,7 +35,5 @@ REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.67
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

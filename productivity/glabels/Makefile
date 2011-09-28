@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/20 21:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT =	labels and business card designer
 
@@ -49,8 +49,6 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
 
 USE_GROFF =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/26 09:39:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=	PGP public keys sharing via DNS-SD and HKP
 
@@ -35,9 +35,6 @@ RUN_DEPENDS +=	x11/gnome/seahorse
 
 MODULES=	devel/gettext \
 		x11/gnome
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/seahorse-sharing
 

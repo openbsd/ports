@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/26 10:52:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,5 @@ WANTLIB += sqlite3 xcb xcb-render xcb-shm xml2 z
 MODGCONF2_SCHEMAS_DIR=	libgweather
 
 CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

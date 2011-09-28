@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/25 12:42:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:47 jasper Exp $
 
 # gnome-volume-control needs pulseaudio.
 
@@ -38,9 +38,6 @@ LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
 
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
-
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 # XXX recording doesn't work and "Device" appears as "Unsupported" in
 # `gstreamer-properties' (needs pulseaudio); when this is fixed,

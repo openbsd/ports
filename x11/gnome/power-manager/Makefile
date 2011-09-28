@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/26 16:57:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -30,9 +30,9 @@ WANTLIB += stdc++ upower-glib xcb xcb-render xcb-shm z
 LIB_DEPENDS=	sysutils/upower \
 		x11/gtk+3
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		ac_cv_path_DOCBOOK2MAN=no \
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+CONFIGURE_ENV=	ac_cv_path_DOCBOOK2MAN=no \
 		ac_cv_path_XMLTO=no
 
 .include <bsd.port.mk>

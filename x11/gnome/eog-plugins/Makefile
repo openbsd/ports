@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/27 07:56:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		plugins for EOG
 
@@ -45,7 +45,5 @@ AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+=	--enable-python \
 			--with-plugins=${PLUGINS}
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

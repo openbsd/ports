@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/09/26 12:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/09/28 09:47:48 jasper Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -131,9 +131,7 @@ CONFIGURE_ARGS += --disable-miner-rss
 # needs libiptcdata
 CONFIGURE_ARGS += --disable-libiptcdata
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib \
-			-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}"
+MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/meta-tracker/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT=		utility library for XKB
 
@@ -33,7 +33,6 @@ LIB_DEPENDS=		devel/glib2 \
 CONFIGURE_ARGS+=	--with-xkb-base="${X11BASE}/share/X11/xkb/" \
 			--with-xkb-bin-base="${X11BASE}/bin/" \
 			--with-xmodmap-base="/usr/share/xmodmap"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 .include <bsd.port.mk>

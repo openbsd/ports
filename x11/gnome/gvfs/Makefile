@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/26 14:32:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/09/28 09:47:47 jasper Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -67,8 +67,6 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--enable-http \
 		--enable-keyring \
 		--with-bash-completion-dir="${PREFIX}/share/gvfs"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 MULTI_PACKAGES=		-main
 PSEUDO_FLAVORS=		no_smb

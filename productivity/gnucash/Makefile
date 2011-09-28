@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/20 21:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/28 09:51:36 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -70,8 +70,7 @@ CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so
 CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 USE_GROFF =		Yes
 
 # Steps to build the docs.

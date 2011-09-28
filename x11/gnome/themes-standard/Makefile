@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/28 06:15:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/28 09:47:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,5 @@ RUN_DEPENDS+=		x11/gtk-engines2
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	--disable-static
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

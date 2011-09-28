@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/27 06:28:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/28 09:47:46 jasper Exp $
 
 COMMENT=		GTK desktop calculator
 
@@ -31,8 +31,5 @@ RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
-
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

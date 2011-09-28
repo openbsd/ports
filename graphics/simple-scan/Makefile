@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/27 08:05:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	simple scanning utility
 
@@ -37,7 +37,5 @@ MODGNOME_TOOLS= 	yelp
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

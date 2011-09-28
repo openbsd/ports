@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/28 09:51:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,7 +45,7 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 
 # pick bind_textdomain_codeset
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl -liconv"
+MODGNOME_LDFLAGS=-lintl -liconv
 
 REGRESS_IS_INTERACTIVE= x11
 

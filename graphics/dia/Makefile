@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2011/09/28 09:51:36 jasper Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -40,9 +40,7 @@ MODULES=	devel/gettext \
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \
-		-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/libpng
 CONFIGURE_ARGS=	--with-cairo \
 		--enable-db2html=no \
 		--with-hardbooks=no

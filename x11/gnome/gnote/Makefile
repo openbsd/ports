@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/25 21:15:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -44,7 +44,5 @@ MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
 CONFIGURE_ARGS+=	--disable-static
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/26 10:57:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/28 09:47:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,9 +45,6 @@ LIBTOOL_FLAGS=	--tag=disable-static
 # --with-plugins=all ; empathy comes with its own nautilus-sendto plugin
 # allowed_plugins="evolution gajim nautilus-burn pidgin removable-devices upnp"
 CONFIGURE_ARGS+= --with-plugins="evolution gajim pidgin removable-devices upnp"
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	schemadir=${PREFIX}/share/schemas/nautilus-sendto
 
