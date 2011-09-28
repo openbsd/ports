@@ -1,0 +1,183 @@
+$OpenBSD: patch-src_gs-window-x11_c,v 1.1 2011/09/28 09:30:56 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660343
+
+--- src/gs-window-x11.c.orig	Mon Sep 12 14:19:19 2011
++++ src/gs-window-x11.c	Wed Sep 28 10:12:44 2011
+@@ -34,9 +34,6 @@
+ 
+ #include <gdesktop-enums.h>
+ 
+-#define GNOME_DESKTOP_USE_UNSTABLE_API
+-#include <libgnome-desktop/gnome-wall-clock.h>
+-
+ #include "gs-window.h"
+ #include "gs-marshal.h"
+ #include "subprocs.h"
+@@ -103,7 +100,10 @@ struct GSWindowPrivate
+ 
+         guint      watchdog_timer_id;
+         guint      info_bar_timer_id;
++        guint      clock_update_id;
+ 
++        gint64     clock_update_time;
++
+         gint       lock_pid;
+         gint       lock_watch_id;
+         gint       dialog_response;
+@@ -120,7 +120,8 @@ struct GSWindowPrivate
+ 
+         GTimer    *timer;
+ 
+-        GnomeWallClock *clock_tracker;
++        GSettings           *clock_settings;
++        GDesktopClockFormat  clock_format;
+ 
+ #ifdef HAVE_SHAPE_EXT
+         int        shape_event_base;
+@@ -151,6 +152,8 @@ static guint           signals [LAST_SIGNAL] = { 0, };
+ 
+ G_DEFINE_TYPE (GSWindow, gs_window, GTK_TYPE_WINDOW)
+ 
++static void queue_clock_update (GSWindow *window);
++
+ static void
+ set_invisible_cursor (GdkWindow *window,
+                       gboolean   invisible)
+@@ -2183,19 +2186,80 @@ on_panel_draw (GtkWidget    *widget,
+ static void
+ update_clock (GSWindow *window)
+ {
++        const char *clock_format;
++        char *text;
+         char *markup;
++        GDateTime *dt;
+ 
+-        markup = g_strdup_printf ("<b><span foreground=\"#ccc\">%s</span></b>", gnome_wall_clock_get_clock (window->priv->clock_tracker));
++        /* clock */
++        if (window->priv->clock_format == G_DESKTOP_CLOCK_FORMAT_24H)
++                /* Translators, this is the 24h date format used in the panel clock */
++                clock_format = _("%a %R");
++        else
++                /* Translators, this is the 12h date format used in the panel clock */
++                clock_format = _("%a %l:%M %p");
++
++        window->priv->clock_update_time = g_get_real_time ();
++        dt = g_date_time_new_from_unix_local (window->priv->clock_update_time / G_USEC_PER_SEC);
++        text = g_date_time_format (dt, clock_format);
++        markup = g_strdup_printf ("<b><span foreground=\"#ccc\">%s</span></b>", text);
+         gtk_label_set_markup (GTK_LABEL (window->priv->clock), markup);
+         g_free (markup);
++        g_free (text);
++        g_date_time_unref (dt);
+ }
+ 
++
++static gboolean
++update_clock_timer (GSWindow *window)
++{
++        update_clock (window);
++        queue_clock_update (window);
++        return FALSE;
++}
++
++static gboolean
++check_clock_timer (GSWindow *window)
++{
++        /* Update the panel clock when necessary.
++           This happens:
++
++           - Once a minute in the normal case
++           - When the machine resumes from suspend
++           - When the system time is adjusted
++
++           Right now this function is called much more frequently than any of the
++           above 3 events happen (see queue_clock_update ()).
++
++           We can wake up less often if bug 655129 gets fixed.  */
++        if (ABS (g_get_real_time () - window->priv->clock_update_time) > 60 * G_USEC_PER_SEC) {
++                update_clock (window);
++        }
++
++        queue_clock_update (window);
++        return FALSE;
++}
++
+ static void
+-on_clock_changed (GnomeWallClock *clock,
+-                  GParamSpec     *pspec,
+-                  gpointer        user_data)
++queue_clock_update (GSWindow *window)
+ {
+-        update_clock (GS_WINDOW (user_data));
++        int timeouttime;
++        struct timeval tv;
++
++        gettimeofday (&tv, NULL);
++        timeouttime = (G_USEC_PER_SEC - tv.tv_usec) / 1000 + 1;
++
++        /* time until next minute */
++        timeouttime += 1000 * (59 - tv.tv_sec % 60);
++
++        /* If we are more than 2.5 seconds from the start of the next minute,
++           schedule less precise but more power friendly 2 second add_seconds
++           timeout to check if the system realtime clock has changed under us. */
++        if (timeouttime > 2500) {
++                window->priv->clock_update_id = g_timeout_add_seconds (2, (GSourceFunc)check_clock_timer, window);
++        } else {
++                window->priv->clock_update_id = g_timeout_add (timeouttime, (GSourceFunc)update_clock_timer, window);
++        }
+ }
+ 
+ static char *
+@@ -2298,6 +2362,20 @@ create_panel (GSWindow *window)
+ }
+ 
+ static void
++update_clock_format (GSettings  *settings,
++                     const char *key,
++                     GSWindow   *window)
++{
++        GDesktopClockFormat clock_format;
++
++        clock_format = g_settings_get_enum (settings, key);
++        if (clock_format != window->priv->clock_format) {
++                window->priv->clock_format = clock_format;
++                queue_clock_update (window);
++        }
++}
++
++static void
+ gs_window_init (GSWindow *window)
+ {
+         window->priv = GS_WINDOW_GET_PRIVATE (window);
+@@ -2346,9 +2424,12 @@ gs_window_init (GSWindow *window)
+         gtk_box_pack_start (GTK_BOX (window->priv->vbox), window->priv->drawing_area, TRUE, TRUE, 0);
+         create_info_bar (window);
+ 
+-        window->priv->clock_tracker = g_object_new (GNOME_TYPE_WALL_CLOCK, NULL);
+-        g_signal_connect (window->priv->clock_tracker, "notify::clock", G_CALLBACK (on_clock_changed), window);
++        window->priv->clock_settings = g_settings_new ("org.gnome.desktop.interface");
++        window->priv->clock_format = g_settings_get_enum (window->priv->clock_settings, "clock-format");
++        g_signal_connect (window->priv->clock_settings, "changed::clock-format",
++                          G_CALLBACK (update_clock_format), window);
+         update_clock (window);
++        queue_clock_update (window);
+ 
+         force_no_pixmap_background (window->priv->drawing_area);
+ }
+@@ -2381,8 +2462,12 @@ gs_window_finalize (GObject *object)
+         g_free (window->priv->logout_command);
+         g_free (window->priv->keyboard_command);
+ 
+-        if (window->priv->clock_tracker) {
+-                g_object_unref (window->priv->clock_tracker);
++        if (window->priv->clock_settings) {
++                g_object_unref (window->priv->clock_settings);
++        }
++
++        if (window->priv->clock_update_id > 0) {
++                g_source_remove (window->priv->clock_update_id);
+         }
+ 
+         if (window->priv->info_bar_timer_id > 0) {
