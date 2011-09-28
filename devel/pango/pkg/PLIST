@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/09/20 21:11:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/09/28 15:29:48 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pango-querymodules
 @bin bin/pango-view
@@ -155,7 +155,6 @@ share/gtk-doc/html/pango/pango-Xft-Fonts-and-Rendering.html
 share/gtk-doc/html/pango/pango-hierarchy.html
 share/gtk-doc/html/pango/pango-pango-renderer.html
 share/gtk-doc/html/pango/pango-querymodules.html
-share/gtk-doc/html/pango/pango.devhelp
 share/gtk-doc/html/pango/pango.devhelp2
 share/gtk-doc/html/pango/pango.html
 share/gtk-doc/html/pango/rendering.html
