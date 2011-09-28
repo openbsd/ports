@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2011/09/27 10:28:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.167 2011/09/28 14:17:32 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -27,6 +27,7 @@
      SUBDIR += gdl1
      SUBDIR += gdm
      SUBDIR += gedit
+     SUBDIR += gedit-latex
      SUBDIR += gedit-plugins
      SUBDIR += genius
      SUBDIR += ghex
@@ -96,6 +97,7 @@
      SUBDIR += vinagre
      SUBDIR += vino
      SUBDIR += yelp
+     SUBDIR += yelp-tools
      SUBDIR += yelp-xsl
      SUBDIR += zenity
 
