@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-make_local,v 1.5 2011/03/02 11:30:08 jasper Exp $
---- src/make_local.orig	Fri Dec 17 18:21:15 2010
-+++ src/make_local	Wed Mar  2 11:49:07 2011
-@@ -68,28 +68,25 @@ PATH_GTKGL_L =-L/usr/lib64
+$OpenBSD: patch-src-make_local,v 1.6 2011/09/28 16:45:17 jasper Exp $
+--- src/make_local.orig	Sun Jun 19 22:16:55 2011
++++ src/make_local	Wed Sep 28 17:35:29 2011
+@@ -70,29 +70,29 @@ PATH_GTKGL_L =-L/usr/lib
  
  #================================= OpenBSD =====================================
  #
@@ -12,22 +12,12 @@ $OpenBSD: patch-src-make_local,v 1.5 2011/03/02 11:30:08 jasper Exp $
 -# PATH_CAIRO_H = -I/usr/local/include/cairo
 -# PATH_PANGO_H = -I/usr/local/include/pango-2.0
 -# PATH_ATK_H = -I/usr/local/include/atk-2.0
--# PATH_GTK_H =  -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include
+-# PATH_GTK_H =  -I/usr/local/include/gtk-2.0 -I/usr/local/lib/gtk-2.0/include \
+-#	 -I/usr/include/gdk-pixbuf-2.0/
 -# PATH_MESA_H = -I/usr/X11R6/include/GL
 -# PATH_GTKGL_H = -I/usr/local/include/gtkglext-1.0 \
--	-I/usr/local/lib/gtkglext-1.0/include
-+PATH_EXPAT_H = -I${X11BASE}/include
-+PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
-+PATH_X_H = -I${X11BASE}/include
-+PATH_GLIB_H = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include
-+PATH_CAIRO_H = -I${LOCALBASE}/include/cairo
-+PATH_PANGO_H = -I${LOCALBASE}/include/pango-1.0
-+PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
-+PATH_GTK_H = -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include
-+PATH_MESA_H = -I${X11BASE}/include/GL
-+PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
-+	-I${LOCALBASE}/lib/gtkglext-1.0/include
- 
+-#	-I/usr/local/lib/gtkglext-1.0/include
+-#
 -# PATH_EXPAT_L = -L/usr/X11R6/lib
 -# PATH_FREETYPE_L = -L/usr/X11R6/lib
 -# PATH_X_L = -L/usr/X11R6/lib
@@ -38,13 +28,29 @@ $OpenBSD: patch-src-make_local,v 1.5 2011/03/02 11:30:08 jasper Exp $
 -# PATH_GTK_L = -L/usr/local/lib
 -# PATH_MESA_L = -L/usr/X11R6/lib
 -# PATH_GTKGL_L = -L/usr/local/lib
++PATH_EXPAT_H = -I${X11BASE}/include
++PATH_FREETYPE_H = -I${X11BASE}/include/freetype2
++PATH_X_H = -I${X11BASE}/include
++PATH_GLIB_H = -I${LOCALBASE}/include/glib-2.0 -I${LOCALBASE}/lib/glib-2.0/include
++PATH_CAIRO_H = -I${LOCALBASE}/include/cairo
++PATH_PANGO_H = -I${LOCALBASE}/include/pango-1.0
++PATH_ATK_H = -I${LOCALBASE}/include/atk-1.0
++PATH_GTK_H =  -I${LOCALBASE}/include/gtk-2.0 -I${LOCALBASE}/lib/gtk-2.0/include \
++       -I/usr/include/gdk-pixbuf-2.0/
++PATH_MESA_H = -I${X11BASE}/include/GL
++PATH_GTKGL_H = -I${LOCALBASE}/include/gtkglext-1.0 \
++      -I${LOCALBASE}/lib/gtkglext-1.0/include/
++
++PATH_EXPAT_L = -L${X11BASE}/lib
++PATH_FREETYPE_L = -L${X11BASE}/lib
 +PATH_X_L = -L${X11BASE}/lib
 +PATH_GLIB_L = -L${LOCALBASE}/lib
++PATH_CAIRO_L = -L${LOCALBASE}/lib
++PATH_PANGO_L = -L${LOCALBASE}/lib
++PATH_ATK_L = -L${LOCALBASE}/lib
 +PATH_GTK_L = -L${LOCALBASE}/lib
 +PATH_MESA_L = -L${X11BASE}/lib
 +PATH_GTKGL_L = -L${LOCALBASE}/lib
-+PATH_EXPAT_L = -L${X11BASE}/lib
-+PATH_FREETYPE_L = -L${X11BASE}/lib
- 
+ #
  #======================== Mac OS X 1.03 / MacPort  =============================
  #

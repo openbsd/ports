@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2011/03/02 11:30:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/28 16:45:17 jasper Exp $
 
 COMMENT=		General Atomistic Modelling Graphic Interface
 
-V=			0.15.1
+V=			0.15.5
 DISTNAME=		gamgi-all-${V}
 PKGNAME=		${DISTNAME:S/-all//}
 CATEGORIES=		education x11
 
 HOMEPAGE=		http://www.gamgi.org/
-
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
