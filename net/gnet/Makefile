@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/28 09:54:01 jasper Exp $
 
 COMMENT=	simple network library
 
@@ -26,8 +26,7 @@ LIB_DEPENDS=	devel/glib2
 WANTLIB=	pcre glib-2.0 gthread-2.0
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-threadsafe-getaddrinfo \
+CONFIGURE_ARGS+=--enable-threadsafe-getaddrinfo \
 		--enable-threadsafe-gethostbyname
 
 REGRESS_FLAGS=	CFLAGS="${CFLAGS} -D_internal_test" LIBTOOL=${LIBTOOL} \

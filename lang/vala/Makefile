@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/28 09:54:01 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
@@ -37,8 +37,7 @@ USE_GROFF=		Yes
 SUBST_VARS+=		API_V
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-vapigen
+CONFIGURE_ARGS+=	--enable-vapigen
 
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
