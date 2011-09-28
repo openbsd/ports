@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.1 2011/09/25 07:59:49 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.2 2011/09/28 10:03:09 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -85,11 +85,15 @@ IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH
 .    endif
 .  endif
 .  if defined(NOT_FOR_ARCHS${_s})
+_ARCH_OK = 1
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(NOT_FOR_ARCHS${_s}:M${__ARCH})
-IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
+_ARCH_OK = 0
 .      endif
 .    endfor
+.    if ${_ARCH_OK} == 0
+IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
+.    endif
 .  endif
 
 # allow subpackages to vanish on architectures that don't
