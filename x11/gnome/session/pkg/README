@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.35 2011/09/28 14:20:07 ajacoutot Exp $
+$OpenBSD: README,v 1.36 2011/09/28 16:18:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -142,6 +142,7 @@ Office & Productivity
 
     * abiword - WYSIWYG word processor
     * gcalctool - desktop calculator
+    * gnome-contacts - contacts manager for your different online accounts
     * gnumeric - spreadsheet application
     * meta-tracker - powerful desktop search tool and indexer
     * planner - project management
