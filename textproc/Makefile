@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.338 2011/09/24 19:11:45 kili Exp $
+# $OpenBSD: Makefile,v 1.339 2011/09/28 14:13:41 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -284,6 +284,7 @@
      SUBDIR += rarian
      SUBDIR += redland
      SUBDIR += rman
+     SUBDIR += rubber
      SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
      SUBDIR += ruby-classifier
