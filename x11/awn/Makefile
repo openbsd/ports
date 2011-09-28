@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/22 13:20:37 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/28 06:44:33 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.4.0
 DISTNAME=		avant-window-navigator-$V
+REVISION=		0
 
 SHARED_LIBS +=	awn                  1.0      # .1.1
 
@@ -56,8 +57,11 @@ USE_GMAKE=		Yes
 MODGCONF2_SCHEMAS_DIR=	awn
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--without-vala
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+
+# only used for tests
+CONFIGURE_ARGS+=	--without-vala
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_python_version=${MODPY_VERSION} \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl -lm -pthread -lutil"

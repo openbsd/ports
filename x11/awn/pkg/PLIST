@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/22 13:20:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/28 06:44:33 ajacoutot Exp $
 @bin bin/avant-window-navigator
 @bin bin/awn-applet
 bin/awn-settings
@@ -50,16 +50,16 @@ lib/awn/applets/taskmanager/
 @comment lib/awn/applets/taskmanager/taskmanager.a
 @comment lib/awn/applets/taskmanager/taskmanager.la
 lib/awn/applets/taskmanager/taskmanager.so
-@comment lib/libawn.a
-@comment lib/libawn.la
+lib/libawn.a
+lib/libawn.la
 @lib lib/libawn.so.${LIBawn_VERSION}
 lib/pkgconfig/awn.pc
 lib/python${MODPY_VERSION}/site-packages/awn/
 lib/python${MODPY_VERSION}/site-packages/awn/__init__.py
 lib/python${MODPY_VERSION}/site-packages/awn/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/awn/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/awn/awn.a
-lib/python${MODPY_VERSION}/site-packages/awn/awn.la
+@comment lib/python${MODPY_VERSION}/site-packages/awn/awn.a
+@comment lib/python${MODPY_VERSION}/site-packages/awn/awn.la
 lib/python${MODPY_VERSION}/site-packages/awn/awn.so
 share/applications/avant-window-navigator.desktop
 share/applications/awn-settings.desktop
@@ -167,6 +167,8 @@ share/locale/dv/
 share/locale/dv/LC_MESSAGES/
 share/locale/dv/LC_MESSAGES/avant-window-navigator.mo
 share/locale/el/LC_MESSAGES/avant-window-navigator.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/avant-window-navigator.mo
 share/locale/en_CA/LC_MESSAGES/avant-window-navigator.mo
 share/locale/en_GB/LC_MESSAGES/avant-window-navigator.mo
@@ -231,13 +233,13 @@ share/locale/zh_CN/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_HK/LC_MESSAGES/avant-window-navigator.mo
 share/locale/zh_TW/LC_MESSAGES/avant-window-navigator.mo
 share/pygtk/2.0/defs/awn.defs
-share/vala/vapi/awn.deps
-share/vala/vapi/awn.vapi
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/avant-window-navigator.schemas
 ${SCHEMAS_INSTDIR}/awn-applet-taskmanager.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/vala/vapi/awn.deps
+share/vala/vapi/awn.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
