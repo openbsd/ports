@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/28 14:58:38 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,9 +8,9 @@ COMMENT-jack =		jack plugin for audacious
 V =			2.4.5
 DISTNAME =		audacious-plugins-$V
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		2
+REVISION-main =		3
 PKGNAME-jack =		audacious-jack-$V
-REVISION-jack =		1
+REVISION-jack =		2
 
 CATEGORIES =		audio multimedia
 
@@ -22,12 +22,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 audcore audgui cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m mcs mowgli pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 samplerate z ${MODGETTEXT_WANTLIB}
+WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs samplerate xcb
+WANTLIB += xcb-render xcb-shm z ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += ${WANTLIB} FLAC SDL audtag avcodec avformat avutil
 WANTLIB-main += bz2 cddb cdio cdio_cdda cue curl faad gsm mp3lame
@@ -55,11 +56,9 @@ LIB_DEPENDS-main =	audio/faad \
 			audio/lame \
 			audio/libcdio \
 			audio/libcue \
-			audio/libmpcdec \
 			audio/libsamplerate \
 			audio/libsndfile \
 			audio/libvorbis \
-			audio/taglib>=1.4 \
 			audio/wavpack \
 			devel/libnotify>=0.7.2 \
 			devel/sdl \
