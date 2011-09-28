@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/28 06:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/28 06:17:41 ajacoutot Exp $
 
 COMMENT=		interfaces for interacting with online accounts
 
@@ -42,11 +42,7 @@ MODGNOME_TOOLS= 	goi
 # instead of the actual library
 USE_LIBTOOL=		gnu
 
-CONFIGURE_ARGS=		--localstatedir=/var \
-			--enable-google \
-			--disable-twitter \
-			--disable-yahoo \
-			--disable-facebook
+CONFIGURE_ARGS=		--localstatedir=/var
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
