@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/09/25 06:41:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/09/28 15:26:05 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -758,8 +758,6 @@ share/locale/de/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/dz/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/el/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/en@shaw/LC_MESSAGES/evolution-data-server-${R}.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/en_CA/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/en_GB/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -825,7 +823,6 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-${R}.mo
-share/pixmaps/
 share/pixmaps/evolution-data-server/
 share/pixmaps/evolution-data-server/category_birthday_16.png
 share/pixmaps/evolution-data-server/category_business_16.png
@@ -845,5 +842,10 @@ share/pixmaps/evolution-data-server/category_status_16.png
 share/pixmaps/evolution-data-server/category_strategies_16.png
 share/pixmaps/evolution-data-server/category_suppliers_16.png
 share/pixmaps/evolution-data-server/category_time-and-expenses_16.png
+share/vala/vapi/libebook-1.2.deps
+share/vala/vapi/libebook-1.2.vapi
+share/vala/vapi/libecalendar-1.2.deps
+share/vala/vapi/libecalendar-1.2.vapi
+share/vala/vapi/libedataserver-1.2.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

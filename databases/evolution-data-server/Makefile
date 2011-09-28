@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2011/09/28 15:26:05 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.2.0
-REVISION=		1
+REVISION=		2
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -70,7 +70,7 @@ MODPY_ADJ_FILES=	addressbook/libebook/gen-western-table.py
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	goi vala
 
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS=		--enable-ssl \
