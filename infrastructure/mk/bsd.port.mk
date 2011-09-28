@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1111 2011/09/25 21:30:04 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1112 2011/09/28 10:20:19 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -93,7 +93,7 @@ _PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
-	SUBPACKAGE MULTI_PACKAGES
+	SUBPACKAGE MULTI_PACKAGES FLAVOR
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
 	PKG_ARCH IGNORE 
@@ -445,9 +445,9 @@ _PKG_ARGS += -D${_i}=1
 .    endif
 .  endfor
 .endif
-#.if empty(FLAVOR)
-#BUILD_PKGPATH := ${BUILD_PKGPATH},
-#.endif
+.if !${BUILD_PKGPATH:M,}
+BUILD_PKGPATH := ${BUILD_PKGPATH},
+.endif
 
 .if ${NO_SHARED_LIBS:L} == "yes"
 _PKG_ARGS += -DSHARED_LIBS=0
@@ -1365,9 +1365,7 @@ _CHECK_DEPENDS +:= ${${_v}_DEPENDS${_s}}
 ERRORS += "Fatal: old style depends ${_CHECK_DEPENDS:M\:*}"
 .endif
 
-# normalization of depends to remove extra :
-
-# also, the C,...., part basically does this:
+# the C,...., part basically does this:
 # if the depends contains only pkgpath>=something
 # then we rebuild it as STEM->=something:pkgpath
 
