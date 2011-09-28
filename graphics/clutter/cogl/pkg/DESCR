@@ -1,0 +1,5 @@
+Cogl is a modern 3D graphics API with associated utility APIs designed
+to expose the features of 3D graphics hardware using a direct state
+access API design, as opposed to the state-machine style of OpenGL. It
+is implemented in the C programming language but we want to provide
+bindings for everyone's favorite language too.

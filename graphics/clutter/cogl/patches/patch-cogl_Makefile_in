@@ -1,0 +1,12 @@
+$OpenBSD: patch-cogl_Makefile_in,v 1.1.1.1 2011/09/28 12:29:39 robert Exp $
+--- cogl/Makefile.in.orig	Tue Sep 20 14:45:41 2011
++++ cogl/Makefile.in	Tue Sep 20 14:45:47 2011
+@@ -110,7 +110,7 @@ DIST_COMMON = $(am__coglinclude_HEADERS_DIST) $(srcdir
+ @SUPPORT_EGL_TRUE@       $(srcdir)/winsys/cogl-winsys-egl-feature-functions.h \
+ @SUPPORT_EGL_TRUE@       $(srcdir)/winsys/cogl-winsys-egl-private.h
+ 
+-@SUPPORT_GLX_TRUE@am__append_11 = -ldl
++@SUPPORT_GLX_TRUE@am__append_11 =
+ @HAVE_INTROSPECTION_TRUE@am__append_12 = Cogl-1.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_13 = $(gir_DATA) $(typelib_DATA)
+ subdir = cogl
