@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/28 12:29:39 robert Exp $
-@lib lib/libcogl-pango.so.${LIBcogl-pango_VERSION}
-@lib lib/libcogl.so.${LIBcogl_VERSION}
