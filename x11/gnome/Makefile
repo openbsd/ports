@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2011/09/28 14:17:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2011/09/28 15:27:35 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -9,6 +9,7 @@
      SUBDIR += baker
      SUBDIR += byzanz
      SUBDIR += common
+     SUBDIR += contacts
      SUBDIR += controlcenter
      SUBDIR += desktop
      SUBDIR += devel-docs
