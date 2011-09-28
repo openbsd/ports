@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.980 2011/09/27 21:38:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.981 2011/09/28 10:54:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1122,6 +1122,7 @@
      SUBDIR += smpeg
      SUBDIR += spe
      SUBDIR += splint
+     SUBDIR += srecord
      SUBDIR += startup-notification
      SUBDIR += stm32loader
      SUBDIR += stp
