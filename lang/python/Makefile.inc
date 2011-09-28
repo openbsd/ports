@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.84 2011/09/27 21:27:36 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.85 2011/09/28 16:59:33 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -56,7 +56,7 @@ LIB_SUFX =	m
 MULTI_PACKAGES=	-main -tests -gdbm -idle -tkinter
 .endif
 
-# Python 2.6 lists BSD db 4.6.x as unstable on most architectures (see
+# Python 2.7 lists BSD db 4.6.x as unstable on most architectures (see
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
 .if ${VERSION} == "2.7"
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
