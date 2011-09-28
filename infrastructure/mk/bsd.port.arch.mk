@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.2 2011/09/28 10:03:09 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.3 2011/09/28 13:54:20 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -33,6 +33,8 @@ GCC4_ARCHS = amd64 arm armish beagle gumstix i386 hppa loongson macppc mips64 \
 	mips64el mvmeppc palm powerpc sgi socppc sparc sparc64 zaurus
 GCC3_ARCHS = alpha hppa64 landisk sh
 GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k vax
+# XXX easier for ports that depend on mono
+MONO_ARCHS = amd64 i386
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
