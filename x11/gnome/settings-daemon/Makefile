@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/27 09:35:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/28 08:39:50 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -50,7 +50,6 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--disable-static \

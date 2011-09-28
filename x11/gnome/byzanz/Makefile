@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/28 08:39:50 jasper Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -35,7 +35,6 @@ LIB_DEPENDS=		x11/gnome/panel>=3.0.0 \
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
