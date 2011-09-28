@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.48 2011/09/27 11:37:52 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.49 2011/09/28 09:46:57 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -15,7 +15,13 @@ CATEGORIES+=		x11/gnome
 USE_LIBTOOL?=		Yes
 MODULES+=		textproc/intltool
 .   if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
-        CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+        CONFIGURE_ARGS += ${CONFIGURE_SHARED}
+        # If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
+        # to the desired value, like -I${X11BASE}/include
+        _MODGNOME_cppflags ?= CPPFLAGS="-I${LOCALBASE}/include ${MODGNOME_CPPFLAGS}"
+        _MODGNOME_ldflags ?= LDFLAGS="-L${LOCALBASE}/lib ${MODGNOME_LDFLAGS}"
+        CONFIGURE_ENV += ${_MODGNOME_cppflags} \
+                         ${_MODGNOME_ldflags}
 .   endif
 .endif
 
