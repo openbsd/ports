@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/28 15:27:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/28 16:09:02 ajacoutot Exp $
 
 COMMENT=		contacts manager for GNOME
 
@@ -29,7 +29,7 @@ WANTLIB += png pthread pthread-stubs smime3 softokn3 soup-2.4
 WANTLIB += sqlite3 ssl3 telepathy-glib xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
-LIB_DEPENDS=		net/telepathy/folks>=0.6.3.2p1 \
+LIB_DEPENDS=		net/telepathy/folks>=0.6.3.2p0 \
 			x11/gnome/desktop
 
 MODGNOME_DESKTOP_FILE=	Yes
