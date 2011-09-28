@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/26 17:32:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/28 07:07:11 ajacoutot Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
 GNOME_VERSION=	3.2.0
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -13,24 +14,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
+WANTLIB += cairo-gobject dbus-1 dbus-glib-1 drm expat ffi fontconfig
+WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gmp gnome-keyring gnutls gobject-2.0 gpg-error
+WANTLIB += gthread-2.0 gtk-3 hogweed jpeg kvm m nettle notify
+WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 tasn1 telepathy-glib
+WANTLIB += xcb xcb-render xcb-shm xml2 z
+
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
-WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
-WANTLIB += cairo-gobject dbus-1 dbus-glib-1 drm expat fontconfig
-WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gmp gnome-keyring gnutls gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 gtk-3 hogweed jpeg m nettle notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs soup-2.4 tasn1 telepathy-glib xcb xcb-render
-WANTLIB += xcb-shm xml2 z ffi kvm p11-kit stdc++
-
 LIB_DEPENDS=	devel/libnotify \
 		devel/libsoup \
-		devel/libunique3 \
 		net/avahi \
 		net/telepathy/telepathy-glib \
 		security/gnutls \
