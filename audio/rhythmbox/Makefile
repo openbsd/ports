@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2011/09/28 14:59:39 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.90.1.2
-REVISION=		0
+GNOME_VERSION=		2.90.1.3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -29,18 +28,19 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme-pthread gpod
 WANTLIB += gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 lzma m notify pango-1.0
+WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 kvm lzma m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 totem-plparser xcb xcb-render xcb-shm xml2
-WANTLIB += z kvm
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			x11/gnome \
 			lang/python \
 			devel/dconf
 
-BUILD_DEPENDS=		audio/libmusicbrainz
+BUILD_DEPENDS=		audio/libmusicbrainz \
+			devel/py-gobject3
 
 LIB_DEPENDS=		devel/libpeas \
 			audio/libgpod \
@@ -51,12 +51,13 @@ LIB_DEPENDS=		devel/libpeas \
 RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
 			x11/dbus-python \
 			www/py-mako \
-			audio/libmusicbrainz
+			audio/libmusicbrainz \
+			devel/py-gobject3
 
 # needed for sndio(7) support
 RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	goi yelp
 
 CONFIGURE_STYLE= 	gnu
@@ -100,8 +101,9 @@ post-install:
 
 ### XXX remove this chunk when updating to a 'real' release ############
 ### Also convert to new gnome.port.mk CONFIGURE_ARGS ############
-# Sat Sep 17 15:51:41 CEST 2011
+# Wed Sep 28 16:26:51 CEST 2011
 MASTER_SITES=		http://distfiles.bsdfrog.org/
+EXTRACT_SUFX=		.tar.gz
 
 BUILD_DEPENDS +=	x11/gnome/common \
 			devel/autoconf/${AUTOCONF_VERSION} \
