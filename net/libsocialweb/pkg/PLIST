@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/04 11:39:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/28 15:08:15 jasper Exp $
 include/libsocialweb/
 include/libsocialweb/interfaces/
 include/libsocialweb/interfaces/sw-avatar-ginterface.h
@@ -11,6 +11,7 @@ include/libsocialweb/interfaces/sw-status-update-ginterface.h
 include/libsocialweb/interfaces/sw-video-upload-ginterface.h
 include/libsocialweb/libsocialweb/
 include/libsocialweb/libsocialweb-client/
+include/libsocialweb/libsocialweb-client/libsocialweb-client-hack-for-vala.h
 include/libsocialweb/libsocialweb-client/sw-client-contact-view.h
 include/libsocialweb/libsocialweb-client/sw-client-item-view.h
 include/libsocialweb/libsocialweb-client/sw-client-lastfm.h
@@ -211,3 +212,5 @@ share/locale/uk/LC_MESSAGES/libsocialweb.mo
 share/locale/wa/LC_MESSAGES/libsocialweb.mo
 share/locale/zh_CN/LC_MESSAGES/libsocialweb.mo
 share/locale/zh_TW/LC_MESSAGES/libsocialweb.mo
+share/vala/vapi/libsocialweb-client.deps
+share/vala/vapi/libsocialweb-client.vapi
