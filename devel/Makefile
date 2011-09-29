@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.982 2011/09/28 12:45:23 mpi Exp $
+# $OpenBSD: Makefile,v 1.983 2011/09/29 18:03:34 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -30,7 +30,6 @@
      SUBDIR += automake
      SUBDIR += avr
      SUBDIR += avrdude
-     SUBDIR += bakery
      SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
@@ -107,7 +106,6 @@
      SUBDIR += fribidi
      SUBDIR += gconf-editor
      SUBDIR += gconf2
-     SUBDIR += gconfmm
      SUBDIR += gdb
      SUBDIR += geany
      SUBDIR += geotiff
