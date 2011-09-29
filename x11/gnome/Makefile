@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.168 2011/09/28 15:27:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.169 2011/09/29 17:20:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -34,6 +34,7 @@
      SUBDIR += ghex
      SUBDIR += gitg
      SUBDIR += gjs
+     SUBDIR += glom
      SUBDIR += gnote
      SUBDIR += gucharmap
      SUBDIR += gvfs
