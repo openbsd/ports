@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/27 11:57:02 pea Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/09/29 20:04:44 jasper Exp $
 @pkgpath x11/enlightenment
 @bin bin/e16
 @bin bin/edox
@@ -7,7 +7,6 @@
 bin/starte16
 lib/e16/
 @man man/man1/e16.1
-share/applications/
 share/applications/e16.desktop
 share/doc/e16/
 share/doc/e16/e16.html
@@ -100,10 +99,6 @@ share/e16/misc/Xclients.e16-gnome.sh
 share/e16/misc/Xclients.e16-kde.sh
 share/e16/misc/Xclients.e16.sh
 share/e16/misc/e16-dbus-cmd
-share/e16/misc/e16-gnome.desktop
-share/e16/misc/e16-kde.desktop
-share/e16/misc/e16.desktop
-share/e16/misc/e16.desktop-app
 share/e16/misc/starte16
 share/e16/misc/starte16-gnome
 share/e16/misc/starte16-kde
@@ -2770,6 +2765,9 @@ share/e16/themes/winter/tooltips/images/
 share/e16/themes/winter/tooltips/images/clear.png
 share/e16/themes/winter/tooltips/images/tooltipbg.png
 share/e16/themes/winter/tooltips/tooltips.cfg
+share/gnome-session/
+share/gnome-session/sessions/
+share/gnome-session/sessions/e16-gnome.session
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/e16.mo
@@ -2809,8 +2807,9 @@ share/locale/tr/LC_MESSAGES/e16.mo
 share/locale/uk/LC_MESSAGES/e16.mo
 share/locale/zh_CN/LC_MESSAGES/e16.mo
 @comment share/xsessions/
-@comment share/xsessions/e16-gnome.desktop
-@comment share/xsessions/e16-kde.desktop
-@comment share/xsessions/e16.desktop
+@comment share/xsessions/e16-gnome2-session.desktop
+@comment share/xsessions/e16-gnome3-session.desktop
+@comment share/xsessions/e16-kde-session.desktop
+@comment share/xsessions/e16-session.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
