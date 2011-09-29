@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/13 07:00:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/29 17:33:31 jasper Exp $
 bin/calibre
 bin/calibre-complete
 bin/calibre-customize
@@ -2131,6 +2131,17 @@ lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/__init__.pyc
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/simple.pyc
+lib/calibre/calibre/web/jsbrowser/
+lib/calibre/calibre/web/jsbrowser/__init__.py
+lib/calibre/calibre/web/jsbrowser/__init__.pyc
+lib/calibre/calibre/web/jsbrowser/browser.py
+lib/calibre/calibre/web/jsbrowser/browser.pyc
+lib/calibre/calibre/web/jsbrowser/forms.py
+lib/calibre/calibre/web/jsbrowser/forms.pyc
+lib/calibre/calibre/web/jsbrowser/login.py
+lib/calibre/calibre/web/jsbrowser/login.pyc
+lib/calibre/calibre/web/jsbrowser/test.py
+lib/calibre/calibre/web/jsbrowser/test.pyc
 lib/calibre/odf/
 lib/calibre/odf/__init__.py
 lib/calibre/odf/__init__.pyc
@@ -2630,6 +2641,9 @@ share/calibre/recipes/bbc_es.recipe
 share/calibre/recipes/bbc_fast.recipe
 share/calibre/recipes/bbc_sport.recipe
 share/calibre/recipes/bbcvietnamese.recipe
+share/calibre/recipes/benchmark_pl.png
+share/calibre/recipes/benchmark_pl.recipe
+share/calibre/recipes/berliner_zeitung.recipe
 share/calibre/recipes/berlingske_dk.png
 share/calibre/recipes/berlingske_dk.recipe
 share/calibre/recipes/beta.png
@@ -2696,10 +2710,13 @@ share/calibre/recipes/cbn.recipe
 share/calibre/recipes/cd_action.png
 share/calibre/recipes/cd_action.recipe
 share/calibre/recipes/cetnixploitation.recipe
+share/calibre/recipes/cgm_pl.png
+share/calibre/recipes/cgm_pl.recipe
 share/calibre/recipes/chicago_breaking_news.png
 share/calibre/recipes/chicago_breaking_news.recipe
 share/calibre/recipes/chicago_tribune.recipe
 share/calibre/recipes/china_economic_net.recipe
+share/calibre/recipes/china_post.recipe
 share/calibre/recipes/china_press.recipe
 share/calibre/recipes/china_times.recipe
 share/calibre/recipes/chinadaily.png
@@ -2716,6 +2733,7 @@ share/calibre/recipes/cincinnati_enquirer.recipe
 share/calibre/recipes/cinco_dias.recipe
 share/calibre/recipes/cinebel_be.recipe
 share/calibre/recipes/cio.recipe
+share/calibre/recipes/cio_magazine.recipe
 share/calibre/recipes/cjr.recipe
 share/calibre/recipes/clarin.png
 share/calibre/recipes/clarin.recipe
@@ -2861,6 +2879,8 @@ share/calibre/recipes/dr_dk.png
 share/calibre/recipes/dr_dk.recipe
 share/calibre/recipes/drivelry.recipe
 share/calibre/recipes/dvhn.recipe
+share/calibre/recipes/dzieje_pl.png
+share/calibre/recipes/dzieje_pl.recipe
 share/calibre/recipes/e_novine.png
 share/calibre/recipes/e_novine.recipe
 share/calibre/recipes/eclicto.png
@@ -2876,6 +2896,7 @@ share/calibre/recipes/editor_and_publisher.recipe
 share/calibre/recipes/edmonton_journal.recipe
 share/calibre/recipes/egirl.png
 share/calibre/recipes/egirl.recipe
+share/calibre/recipes/ekantipur.recipe
 share/calibre/recipes/ekot.recipe
 share/calibre/recipes/eksiazki.png
 share/calibre/recipes/eksiazki.recipe
@@ -3063,6 +3084,8 @@ share/calibre/recipes/granma.png
 share/calibre/recipes/granma.recipe
 share/calibre/recipes/greader.recipe
 share/calibre/recipes/greader_uber.recipe
+share/calibre/recipes/greenlinux_pl.png
+share/calibre/recipes/greenlinux_pl.recipe
 share/calibre/recipes/greensboro_news_and_record.png
 share/calibre/recipes/greensboro_news_and_record.recipe
 share/calibre/recipes/grrm.recipe
@@ -3102,8 +3125,11 @@ share/calibre/recipes/helsingin_sanomat.recipe
 share/calibre/recipes/heraldo.recipe
 share/calibre/recipes/hindu.recipe
 share/calibre/recipes/hindu_business_line.recipe
+share/calibre/recipes/hindustan_times.recipe
 share/calibre/recipes/hira.recipe
 share/calibre/recipes/histmag.recipe
+share/calibre/recipes/historia_pl.png
+share/calibre/recipes/historia_pl.recipe
 share/calibre/recipes/historiaro.png
 share/calibre/recipes/historiaro.recipe
 share/calibre/recipes/hitro.png
@@ -3187,6 +3213,7 @@ share/calibre/recipes/izvestia.recipe
 share/calibre/recipes/jakarta_post.recipe
 share/calibre/recipes/jalopnik.png
 share/calibre/recipes/jalopnik.recipe
+share/calibre/recipes/japan_times.png
 share/calibre/recipes/japan_times.recipe
 share/calibre/recipes/javalobby.recipe
 share/calibre/recipes/jb_online.png
@@ -3248,6 +3275,7 @@ share/calibre/recipes/krstarica.png
 share/calibre/recipes/krstarica.recipe
 share/calibre/recipes/krstarica_en.png
 share/calibre/recipes/krstarica_en.recipe
+share/calibre/recipes/ksiazka_pl.recipe
 share/calibre/recipes/kstar.png
 share/calibre/recipes/kstar.recipe
 share/calibre/recipes/kudika.png
@@ -3322,6 +3350,8 @@ share/calibre/recipes/linuxdevices.recipe
 share/calibre/recipes/livemint.png
 share/calibre/recipes/livemint.recipe
 share/calibre/recipes/living_digital.recipe
+share/calibre/recipes/lomza.png
+share/calibre/recipes/lomza.recipe
 share/calibre/recipes/london_free_press.recipe
 share/calibre/recipes/los_tiempos_bo.png
 share/calibre/recipes/los_tiempos_bo.recipe
@@ -3545,6 +3575,7 @@ share/calibre/recipes/ourdailybread.recipe
 share/calibre/recipes/outlook_india.recipe
 share/calibre/recipes/pagina12.png
 share/calibre/recipes/pagina12.recipe
+share/calibre/recipes/pagina_12_print_ed.recipe
 share/calibre/recipes/pajama.recipe
 share/calibre/recipes/panorama.recipe
 share/calibre/recipes/paperli_topic.recipe
@@ -3667,6 +3698,8 @@ share/calibre/recipes/root.recipe
 share/calibre/recipes/rstones.png
 share/calibre/recipes/rstones.recipe
 share/calibre/recipes/rte.recipe
+share/calibre/recipes/rtnews.png
+share/calibre/recipes/rtnews.recipe
 share/calibre/recipes/rts.png
 share/calibre/recipes/rts.recipe
 share/calibre/recipes/rue89.recipe
@@ -3771,11 +3804,13 @@ share/calibre/recipes/svd_se.png
 share/calibre/recipes/svd_se.recipe
 share/calibre/recipes/swiatkindle.png
 share/calibre/recipes/swiatkindle.recipe
+share/calibre/recipes/tablety_pl.recipe
 share/calibre/recipes/tabu.png
 share/calibre/recipes/tabu.recipe
 share/calibre/recipes/tagesan.recipe
 share/calibre/recipes/tagesspiegel.recipe
 share/calibre/recipes/taggeschau_de.recipe
+share/calibre/recipes/taipei.recipe
 share/calibre/recipes/tanea.recipe
 share/calibre/recipes/tanjug.png
 share/calibre/recipes/tanjug.recipe
@@ -3876,6 +3911,7 @@ share/calibre/recipes/tuttosport.recipe
 share/calibre/recipes/tvmania.png
 share/calibre/recipes/tvmania.recipe
 share/calibre/recipes/tweakers.recipe
+share/calibre/recipes/twitchfilms.png
 share/calibre/recipes/twitchfilms.recipe
 share/calibre/recipes/twtfb.recipe
 share/calibre/recipes/tyzden.recipe
