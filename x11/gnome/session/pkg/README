@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.36 2011/09/28 16:18:58 ajacoutot Exp $
+$OpenBSD: README,v 1.37 2011/09/29 17:31:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -119,6 +119,7 @@ Development
     * gedit-plugins - plugins for gedit(1)
     * ghex - HEX editor
     * glade - user interface builder
+    * glom - database designer and user interface
     * gnome-devel-docs - developer documentation
     * yelp-tools - create, modify and manage documentation for Yelp and the web
 
