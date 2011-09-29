@@ -1,6 +1,11 @@
-$OpenBSD: patch-glom_main_cc,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
+$OpenBSD: patch-glom_main_cc,v 1.2 2011/09/29 20:57:45 jasper Exp $
 
-Don't call __libc_freeres which is GLIBC-only.
+From bf111b2f3d39fa8aa27a6b3e6778ae8f987cad8f Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Thu, 29 Sep 2011 20:54:56 +0000
+Subject: Hide __libc_freeres on system which don't have glibc.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660496
 
 --- glom/main.cc.orig	Thu Sep 29 14:32:56 2011
 +++ glom/main.cc	Thu Sep 29 14:33:56 2011
