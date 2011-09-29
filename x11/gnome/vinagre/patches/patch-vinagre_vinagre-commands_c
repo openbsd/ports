@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-commands_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-commands.c.orig	Wed Sep 28 20:06:57 2011
++++ vinagre/vinagre-commands.c	Wed Sep 28 20:07:11 2011
+@@ -39,6 +39,7 @@
+ #include "vinagre-cache-prefs.h"
+ #include "vinagre-plugins-engine.h"
+ #include "vinagre-reverse-vnc-listener-dialog.h"
++#include "vinagre-utils.h"
+ 
+ void
+ vinagre_cmd_direct_connect (VinagreConnection *conn,

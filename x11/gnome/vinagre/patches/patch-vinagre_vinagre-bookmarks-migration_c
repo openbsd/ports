@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-bookmarks-migration_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-bookmarks-migration.c.orig	Wed Sep 28 20:06:28 2011
++++ vinagre/vinagre-bookmarks-migration.c	Wed Sep 28 20:06:36 2011
+@@ -36,6 +36,7 @@
+ #include "vinagre-bookmarks-migration.h"
+ #include "vinagre-bookmarks.h"
+ #include "vinagre-plugins-engine.h"
++#include "vinagre-utils.h"
+ 
+ static void
+ fill_xml (GSList *list, xmlTextWriter *writer)

@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-prefs_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-prefs.c.orig	Mon Aug 15 19:41:13 2011
++++ vinagre/vinagre-prefs.c	Wed Sep 28 19:48:01 2011
+@@ -21,6 +21,7 @@
+ #include <config.h>
+ #include <glib/gi18n.h>
+ #include "vinagre-prefs.h"
++#include "vinagre-utils.h"
+ 
+ static const char VINAGRE_SCHEMA_NAME[]	= "org.gnome.Vinagre";
+ static const char VM_HISTORY_SIZE[] = "history-size";

@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-connect_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-connect.c.orig	Mon Aug 29 22:20:27 2011
++++ vinagre/vinagre-connect.c	Wed Sep 28 19:49:35 2011
+@@ -36,6 +36,7 @@
+ #include "vinagre-prefs.h"
+ #include "vinagre-cache-prefs.h"
+ #include "vinagre-plugins-engine.h"
++#include "vinagre-utils.h"
+ 
+ typedef struct {
+   GtkBuilder *xml;

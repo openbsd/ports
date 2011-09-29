@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-bookmarks-ui_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-bookmarks-ui.c.orig	Mon Aug 15 19:41:13 2011
++++ vinagre/vinagre-bookmarks-ui.c	Wed Sep 28 19:48:01 2011
+@@ -25,6 +25,7 @@
+ #include "vinagre-bookmarks-ui.h"
+ #include "vinagre-bookmarks-tree.h"
+ #include "vinagre-plugins-engine.h"
++#include "vinagre-utils.h"
+ 
+ static void
+ control_save_button_visibility (GtkEntry *ed, GtkWidget *bt)

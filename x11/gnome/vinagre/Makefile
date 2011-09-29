@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/28 16:57:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/29 06:58:14 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	remote desktop viewer for GNOME
 
 GNOME_VERSION=	3.2.0
 GNOME_PROJECT=	vinagre
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -47,10 +47,12 @@ MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS=	--with-avahi \
 		--with-telepathy \
-		--without-panelapplet \
 		--disable-spice
 
 # XXX console does not spawn (needs grantpt, ptsname...)
 CONFIGURE_ARGS+= --enable-ssh=no
+
+post-extract:
+	cp ${FILESDIR}/vinagre-utils.h ${WRKSRC}/vinagre/
 
 .include <bsd.port.mk>

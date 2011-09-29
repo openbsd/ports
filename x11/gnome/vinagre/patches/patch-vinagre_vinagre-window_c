@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-window_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-window.c.orig	Wed Sep 28 20:10:40 2011
++++ vinagre/vinagre-window.c	Wed Sep 28 20:11:03 2011
+@@ -41,6 +41,7 @@
+ #include "vinagre-window-private.h"
+ #include "vinagre-bookmarks-entry.h"
+ #include "vinagre-plugins-engine.h"
++#include "vinagre-utils.h"
+ 
+ #ifdef VINAGRE_HAVE_AVAHI
+ #include "vinagre-mdns.h"

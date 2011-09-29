@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.8 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- Makefile.in.orig	Wed Sep 28 20:28:25 2011
++++ Makefile.in	Wed Sep 28 20:28:39 2011
+@@ -554,6 +554,7 @@ AM_CPPFLAGS = \
+ 	-include config.h
+ 
+ AM_VALAFLAGS = \
++	-H vinagre/vinagre-utils.h \
+ 	--vapidir vinagre/vapi \
+ 	--pkg config \
+ 	--pkg gtk+-3.0

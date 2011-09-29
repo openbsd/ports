@@ -1,0 +1,15 @@
+$OpenBSD: patch-vinagre_vinagre-notebook_c,v 1.1 2011/09/29 06:58:14 jasper Exp $
+
+Fix crasher on 64-bit arches due to pointer truncation.
+https://bugzilla.gnome.org/show_bug.cgi?id=652531
+
+--- vinagre/vinagre-notebook.c.orig	Wed Sep 28 20:10:34 2011
++++ vinagre/vinagre-notebook.c	Wed Sep 28 20:10:58 2011
+@@ -26,6 +26,7 @@
+ 
+ #include "vinagre-dnd.h"
+ #include "vinagre-prefs.h"
++#include "vinagre-utils.h"
+ 
+ #define VINAGRE_NOTEBOOK_GET_PRIVATE(object)(G_TYPE_INSTANCE_GET_PRIVATE ((object), VINAGRE_TYPE_NOTEBOOK, VinagreNotebookPrivate))
+ 
