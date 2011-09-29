@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.18 2011/09/21 13:10:36 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.19 2011/09/29 11:03:19 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
@@ -18,8 +18,11 @@ going to/returning from fullscreen (upstream svn r2167 - r2169)
 Bugfix: 'f' not going to/returning from fullscreen
 (upstream svn revision r2161)
 
+Fix problem with seeking in the tracker
+(upstream svn revision r2176)
+
 --- src/gui.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/gui.c	Wed Sep 21 15:05:50 2011
++++ src/gui.c	Wed Sep 28 15:34:17 2011
 @@ -106,6 +106,7 @@ PLAYSTATE media_state_to_playstate(GmtkMediaPlayerMedi
  void set_media_player_attributes(GtkWidget * widget)
  {
@@ -96,3 +99,31 @@ Bugfix: 'f' not going to/returning from fullscreen
      default:
          if (verbose) {
              printf("Unhandled attribute change %i\n", attribute);
+@@ -6229,6 +6252,19 @@ void player_position_changed_callback(GmtkMediaTracker
+     }
+ }
+ 
++gboolean tracker_value_changed_callback(GtkWidget * widget, gint value, gpointer data)
++{
++    if (gmtk_media_player_get_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SEEKABLE)) {
++	if (!autopause) {
++	    if (gmtk_media_player_get_state(GMTK_MEDIA_PLAYER(media)) != MEDIA_STATE_STOP) {
++                gmtk_media_player_seek(GMTK_MEDIA_PLAYER(media), value * 1.0, SEEK_PERCENT);
++            }
++        }
++    }
++
++    return FALSE;
++}
++
+ gboolean tracker_difference_callback(GtkWidget * widget, gdouble difference, void *data)
+ {
+ 
+@@ -7146,6 +7182,7 @@ GtkWidget *create_window(gint windowid)
+     tracker = GMTK_MEDIA_TRACKER(gmtk_media_tracker_new());
+     gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(tracker), TRUE, TRUE, 2);
+     g_signal_connect(G_OBJECT(tracker), "difference-changed", G_CALLBACK(tracker_difference_callback), NULL);
++    g_signal_connect(G_OBJECT(tracker), "value-changed", G_CALLBACK(tracker_value_changed_callback), NULL);
+     g_signal_connect(G_OBJECT(tracker), "button_press_event", G_CALLBACK(progress_callback), NULL);
+     g_signal_connect_swapped(G_OBJECT(media), "position_changed",
+                              G_CALLBACK(player_position_changed_callback), tracker);

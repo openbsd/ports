@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libgmtk_gmtk_media_tracker_c,v 1.1 2011/09/29 11:03:19 dcoppa Exp $
+
+Fix problem with seeking in the tracker
+(upstream svn revision r48 of gmtk)
+
+--- src/libgmtk/gmtk_media_tracker.c.orig	Wed Sep 28 14:55:12 2011
++++ src/libgmtk/gmtk_media_tracker.c	Wed Sep 28 14:56:17 2011
+@@ -196,9 +196,6 @@ static gboolean gmtk_media_tracker_motion_notify(GtkWi
+         gtk_range_set_value(GTK_RANGE(GMTK_MEDIA_TRACKER(tracker)->scale), position);
+         g_signal_emit_by_name(tracker, "value-changed", (gint) (100 * position));
+         difference = (GMTK_MEDIA_TRACKER(tracker)->length * position) - GMTK_MEDIA_TRACKER(tracker)->position;
+-        if (ABS(position) > 15)
+-            g_signal_emit_by_name(tracker, "difference-changed", difference);
+-
+     } else {
+         if (GMTK_MEDIA_TRACKER(tracker)->length > 0.0) {
+             tip = gm_seconds_to_string(GMTK_MEDIA_TRACKER(tracker)->length * ((gdouble) event->x / alloc.width));
