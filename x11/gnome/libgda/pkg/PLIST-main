@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2011/09/12 15:31:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2011/09/29 13:35:41 jasper Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @pkgpath x11/gnome/libgda,-mdb
@@ -119,6 +119,7 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-provider.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
+lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-5.0_VERSION}
@@ -150,7 +151,8 @@ share/examples/libgda/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
 share/gir-1.0/Gda-${GDA_MAJOR}.gir
-share/gir-1.0/Gda-${GDA_MAJOR}.typelib
+share/gnome/
+share/gnome/help/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html

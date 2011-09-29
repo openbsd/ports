@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.20 2011/09/12 15:31:15 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.21 2011/09/29 13:35:41 jasper Exp $
 
 - Don't do bash pattern substitutions.
 
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.20 2011/09/12 15:31:15 ajacoutot Exp $
 +            INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e 's,$datadir,\$\(datadir\),g'`
              INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
 -            INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
-+            INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e 's,$libdir,\$\($libdir\),g'`
++            INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e 's,$libdir,\$\($libdir\),g'`
              INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
              INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
              INTROSPECTION_MAKEFILE=$introspection_makefile
