@@ -1,0 +1,15 @@
+$OpenBSD: patch-glom_libglom_connectionpool_backends_postgres_self_cc,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
+--- glom/libglom/connectionpool_backends/postgres_self.cc.orig	Thu Sep 29 15:24:59 2011
++++ glom/libglom/connectionpool_backends/postgres_self.cc	Thu Sep 29 15:28:10 2011
+@@ -423,7 +423,11 @@ Backend::StartupErrors PostgresSelfHosted::startup(con
+                                   + " -c hba_file=\"" + dbdir + "/config/pg_hba.conf\""
+                                   + " -c ident_file=\"" + dbdir + "/config/pg_ident.conf\""
+                                   + " -k \"" + dbdir + "\""
++#ifdef __OpenBSD__
++; /* The --external_pid_file option is a no-op and pidfile is fixed to dbdir_data/postmaster.pid */
++#else
+                                   + " --external_pid_file=\"" + dbdir + "/pid\"";
++#endif
+ 
+   // Make sure to use double quotes for the executable path, because the
+   // CreateProcess() API used on Windows does not support single quotes.

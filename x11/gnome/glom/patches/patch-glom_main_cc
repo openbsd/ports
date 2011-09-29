@@ -1,0 +1,36 @@
+$OpenBSD: patch-glom_main_cc,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
+
+Don't call __libc_freeres which is GLIBC-only.
+
+--- glom/main.cc.orig	Thu Sep 29 14:32:56 2011
++++ glom/main.cc	Thu Sep 29 14:33:56 2011
+@@ -373,18 +373,19 @@ bool check_pygda_is_available_with_warning()
+ 
+ } //namespace Glom
+ 
+-#ifndef G_OS_WIN32
++#ifdef __linux__
+ extern "C" void __libc_freeres(void);
+ #endif
+ 
+ int
+ main(int argc, char* argv[])
+ {
+-#ifndef G_OS_WIN32
++#ifdef __linux__
+   //Force some cleanup at exit,
+   //to help valgrind to detect memory leaks:
+   atexit(__libc_freeres);
+ #else
++#  ifdef G_OS_WIN32
+   WSADATA data;
+   int errcode = WSAStartup(MAKEWORD(2, 0), &data);
+   if(errcode != 0)
+@@ -396,6 +397,7 @@ main(int argc, char* argv[])
+   gchar* installation_dir_c = g_win32_get_package_installation_directory_of_module(0);
+   const std::string installation_dir(installation_dir_c);
+   g_free(installation_dir_c);
++#  endif
+ #endif
+ 
+   // TODO: I am not sure why, but this does not work. PYTHONPATH is set

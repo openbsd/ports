@@ -1,0 +1,20 @@
+$OpenBSD: patch-glom_mode_data_datawidget_dialog_choose_id_cc,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
+
+From 5cf223201ece3534ab177e7eaaa75322542e8bec Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Thu, 29 Sep 2011 10:18:31 +0000
+Subject: Dialog_Choose_ID: Work around a crash in GTK+.
+
+--- glom/mode_data/datawidget/dialog_choose_id.cc.orig	Thu Sep 29 14:08:16 2011
++++ glom/mode_data/datawidget/dialog_choose_id.cc	Thu Sep 29 14:09:02 2011
+@@ -72,6 +72,10 @@ Dialog_ChooseID::~Dialog_ChooseID()
+ {
+   remove_view(&m_box_find);
+   remove_view(&m_box_select);
++
++  //Work around this bug (apparently in GTK+):
++  //https://bugzilla.gnome.org/show_bug.cgi?id=660347
++  m_alignment_parent->remove();
+ }
+ 
+ void Dialog_ChooseID::setup()
