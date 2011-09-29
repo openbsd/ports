@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.4 2011/08/16 15:01:17 ajacoutot Exp $
+$OpenBSD: patch-common_mapi_ptr_mapi_object_ptr_h,v 1.5 2011/09/29 17:12:11 ajacoutot Exp $
 
 On OpenBSD, _P and _U are defined in ctype.h.
 
---- common/mapi_ptr/mapi_object_ptr.h.orig	Tue Aug  2 15:02:45 2011
-+++ common/mapi_ptr/mapi_object_ptr.h	Sun Aug 14 04:45:51 2011
+--- common/mapi_ptr/mapi_object_ptr.h.orig	Mon Sep 26 15:56:08 2011
++++ common/mapi_ptr/mapi_object_ptr.h	Thu Sep 29 16:53:37 2011
 @@ -146,13 +146,13 @@ class mapi_object_ptr (public)
  		std::swap(m_lpObject, other.m_lpObject);
  	}
@@ -31,8 +31,8 @@ On OpenBSD, _P and _U are defined in ctype.h.
  				if (hr == hrSuccess)
  					refResult = lpNewObject;
  			}
-@@ -200,9 +200,9 @@ class mapi_object_ptr (public)
- 		return m_lpObject == NULL;
+@@ -204,9 +204,9 @@ class mapi_object_ptr (public)
+ 		return m_lpObject;
  	}
  
 -	template<typename _P>

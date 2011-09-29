@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
---- configure.orig	Mon Dec 13 10:26:08 2010
-+++ configure	Thu Feb  3 16:56:09 2011
-@@ -16701,13 +16701,13 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.2 2011/09/29 17:12:11 ajacoutot Exp $
+--- configure.orig	Tue Nov 16 13:56:00 2010
++++ configure	Thu Sep 29 16:12:26 2011
+@@ -16471,13 +16471,13 @@ $as_echo "no" >&6; }
  #		])
  #	fi
  	ost_cv_thread_library=none
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16779,13 +16779,13 @@ $as_echo "$ac_cv_lib_c_r_pthread_self" >&6; }
+@@ -16549,13 +16549,13 @@ $as_echo "$ac_cv_lib_c_r_pthread_self" >&6; }
  if test "x$ac_cv_lib_c_r_pthread_self" = x""yes; then :
    ost_cv_thread_library=c_r
  else
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17090,13 +17090,13 @@ fi
+@@ -16860,13 +16860,13 @@ fi
      fi
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_mach_thread_np" | $as_tr_sh`
@@ -52,7 +52,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17137,13 +17137,13 @@ fi
+@@ -16907,13 +16907,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_nanosleep" | $as_tr_sh`
@@ -69,7 +69,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17645,13 +17645,13 @@ $as_echo "#define PTHREAD_MUTEXTYPE_RECURSIVE PTHREAD_
+@@ -17415,13 +17415,13 @@ $as_echo "#define PTHREAD_MUTEXTYPE_RECURSIVE PTHREAD_
  	esac
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_mutexattr_settype" | $as_tr_sh`
@@ -86,7 +86,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17690,13 +17690,13 @@ $as_echo "#define HAVE_PTHREAD_MUTEXATTR_SETTYPE 1" >>
+@@ -17460,13 +17460,13 @@ $as_echo "#define HAVE_PTHREAD_MUTEXATTR_SETTYPE 1" >>
  else
  
  		as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_mutexattr_settype_np" | $as_tr_sh`
@@ -103,7 +103,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17735,13 +17735,13 @@ $as_echo "#define HAVE_PTHREAD_MUTEXATTR_SETTYPE_NP 1"
+@@ -17505,13 +17505,13 @@ $as_echo "#define HAVE_PTHREAD_MUTEXATTR_SETTYPE_NP 1"
  fi
  
  		as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_mutexattr_setkind_np" | $as_tr_sh`
@@ -120,7 +120,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17786,13 +17786,13 @@ fi
+@@ -17556,13 +17556,13 @@ fi
  
  	ost_cv_thread_rwlock=false
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_rwlock_init" | $as_tr_sh`
@@ -137,7 +137,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17877,13 +17877,13 @@ $as_echo "#define HAVE_PREAD_PWRITE 1" >>confdefs.h
+@@ -17647,13 +17647,13 @@ $as_echo "#define HAVE_PREAD_PWRITE 1" >>confdefs.h
  else
  
  		as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pread" | $as_tr_sh`
@@ -154,7 +154,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17970,13 +17970,13 @@ fi
+@@ -17740,13 +17740,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_suspend" | $as_tr_sh`
@@ -171,7 +171,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18016,13 +18016,13 @@ fi
+@@ -17786,13 +17786,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_attr_setstacksize" | $as_tr_sh`
@@ -188,7 +188,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18062,13 +18062,13 @@ fi
+@@ -17832,13 +17832,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_yield_np" | $as_tr_sh`
@@ -205,7 +205,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18107,13 +18107,13 @@ $as_echo "#define HAVE_PTHREAD_YIELD_NP 1" >>confdefs.
+@@ -17877,13 +17877,13 @@ $as_echo "#define HAVE_PTHREAD_YIELD_NP 1" >>confdefs.
  else
  
  		as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_yield" | $as_tr_sh`
@@ -222,7 +222,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18152,13 +18152,13 @@ $as_echo "#define HAVE_PTHREAD_YIELD 1" >>confdefs.h
+@@ -17922,13 +17922,13 @@ $as_echo "#define HAVE_PTHREAD_YIELD 1" >>confdefs.h
  else
  
  			as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_sched_yield" | $as_tr_sh`
@@ -239,7 +239,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18204,13 +18204,13 @@ fi
+@@ -17974,13 +17974,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_cancel" | $as_tr_sh`
@@ -256,7 +256,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18248,13 +18248,13 @@ eval as_val=\$$as_ac_Lib
+@@ -18018,13 +18018,13 @@ eval as_val=\$$as_ac_Lib
  $as_echo "#define HAVE_PTHREAD_CANCEL 1" >>confdefs.h
  
  	  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_setcanceltype" | $as_tr_sh`
@@ -273,7 +273,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18342,13 +18342,13 @@ fi
+@@ -18112,13 +18112,13 @@ fi
  else
  
  		as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_setcanceltype" | $as_tr_sh`
@@ -290,7 +290,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18394,13 +18394,13 @@ fi
+@@ -18164,13 +18164,13 @@ fi
  
  
  	as_ac_Lib=`$as_echo "ac_cv_lib_${ost_cv_thread_library}''_pthread_delay_np" | $as_tr_sh`
@@ -307,7 +307,7 @@ $OpenBSD: patch-configure,v 1.1 2011/06/02 12:45:43 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21276,7 +21276,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -21047,7 +21047,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  else
  	# -O2
  	OLD_CXXFLAGS="$CXXFLAGS"

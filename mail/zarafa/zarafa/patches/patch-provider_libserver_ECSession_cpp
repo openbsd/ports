@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.5 2011/06/02 12:46:37 ajacoutot Exp $
---- provider/libserver/ECSession.cpp.orig	Wed Apr 20 19:51:48 2011
-+++ provider/libserver/ECSession.cpp	Mon May  2 12:47:53 2011
-@@ -750,11 +750,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
+$OpenBSD: patch-provider_libserver_ECSession_cpp,v 1.6 2011/09/29 17:12:11 ajacoutot Exp $
+--- provider/libserver/ECSession.cpp.orig	Mon Sep 26 15:56:11 2011
++++ provider/libserver/ECSession.cpp	Thu Sep 29 16:53:37 2011
+@@ -816,11 +816,20 @@ ECRESULT ECAuthSession::ValidateUserSocket(int socket,
  	uid_t uid;
  	char strbuf[1024];	
  #ifdef SO_PEERCRED

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.32 2011/09/01 15:39:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2011/09/29 17:12:11 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -77,6 +77,7 @@ include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 include/zarafa/CommonUtil.h
 include/zarafa/ECABEntryID.h
+include/zarafa/ECACL.h
 include/zarafa/ECCache.h
 include/zarafa/ECChannel.h
 include/zarafa/ECConfig.h
@@ -92,6 +93,7 @@ include/zarafa/ECGuid.h
 include/zarafa/ECIConv.h
 include/zarafa/ECInterfaceDefs.h
 include/zarafa/ECInvariantChecker.h
+include/zarafa/ECIterators.h
 include/zarafa/ECKeyTable.h
 include/zarafa/ECLogger.h
 include/zarafa/ECMemStream.h
@@ -100,8 +102,10 @@ include/zarafa/ECRestriction.h
 include/zarafa/ECScheduler.h
 include/zarafa/ECSerializer.h
 include/zarafa/ECTags.h
+include/zarafa/ECThreadPool.h
 include/zarafa/ECUnknown.h
 include/zarafa/EMSAbTag.h
+include/zarafa/HrException.h
 include/zarafa/HtmlEntity.h
 include/zarafa/HtmlToTextParser.h
 include/zarafa/IECChangeAdviseSink.h
@@ -152,6 +156,7 @@ include/zarafa/my_getopt.h
 include/zarafa/namedprops.h
 include/zarafa/platform.h
 include/zarafa/platform.linux.h
+include/zarafa/pthreadutil.h
 include/zarafa/restrictionutil.h
 include/zarafa/rtfutil.h
 include/zarafa/stringutil.h
@@ -261,6 +266,7 @@ share/doc/zarafa/db-convert-4.20-to-4.21
 share/doc/zarafa/db-convert-4.20-to-innodb.sql
 share/doc/zarafa/db-convert-4.2x-to-5.00
 share/doc/zarafa/db-convert-attachments-to-files
+share/doc/zarafa/db-remove-orphaned-attachments
 share/doc/zarafa/db-upgrade-objectsid-to-objectguid.pl
 @mode
 share/doc/zarafa/eula.txt
