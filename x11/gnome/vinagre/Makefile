@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/29 06:58:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/29 07:57:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	remote desktop viewer for GNOME
 
 GNOME_VERSION=	3.2.0
 GNOME_PROJECT=	vinagre
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -23,12 +23,12 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
 WANTLIB += avahi-common avahi-glib avahi-gobject avahi-ui-gtk3
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
 WANTLIB += ffi fontconfig freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
-WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
-WANTLIB += gvnc-1.0 hogweed m nettle pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png p11-kit stdc++
-WANTLIB += pthread pthread-stubs sasl2 tasn1 telepathy-glib util
-WANTLIB += xcb xcb-render xcb-shm xml2 z kvm
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring gnutls
+WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
+WANTLIB += gvnc-1.0 hogweed kvm m ncurses nettle p11-kit pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sasl2 tasn1 telepathy-glib util vte2_90
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -40,7 +40,8 @@ LIB_DEPENDS=	devel/libpeas \
 		x11/gtk-vnc \
 		x11/gnome/panel \
 		net/telepathy/telepathy-glib \
-		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
+		net/avahi,-gtk3,no_mono,no_qt3,no_qt4 \
+		devel/vte3
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
@@ -48,9 +49,6 @@ MODGNOME_TOOLS= 	yelp
 CONFIGURE_ARGS=	--with-avahi \
 		--with-telepathy \
 		--disable-spice
-
-# XXX console does not spawn (needs grantpt, ptsname...)
-CONFIGURE_ARGS+= --enable-ssh=no
 
 post-extract:
 	cp ${FILESDIR}/vinagre-utils.h ${WRKSRC}/vinagre/
