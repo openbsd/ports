@@ -1,0 +1,9 @@
+The Easy Publish and Consume library provides an easy method to:
+
+    * Publish data using HTTPS: EpcPublisher;
+    * Announce that information via DNS-SD: EpcDispatcher;
+    * find that information: EpcConsumer;
+    * And finally consume it.
+
+You can use this library as a key/value store published to the network,
+using encryption, authentication and service discovery.

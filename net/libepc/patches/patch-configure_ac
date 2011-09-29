@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/09/29 17:07:03 jasper Exp $
+
+From a08655df4081f76053f22c0c587a25a3f0443792 Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Wed, 31 Aug 2011 12:19:47 +0000
+Subject: Really use GTK+ 3.
+
+--- configure.ac.orig	Thu Sep 29 16:54:42 2011
++++ configure.ac	Thu Sep 29 16:55:00 2011
+@@ -80,7 +80,7 @@ PKG_CHECK_MODULES(LIBEPC,    [avahi-client >= 0.6
+                               uuid         >= 1.36
+                               $LIBSOUP
+                               $GIO])
+-PKG_CHECK_MODULES(LIBEPC_UI, [gtk+-2.0     >= 2.10])
++PKG_CHECK_MODULES(LIBEPC_UI, [gtk+-3.0     >= 3.0])
+ 
+ AC_SUBST(AVAHI_UI_CFLAGS)
+ AC_SUBST(AVAHI_UI_LIBS)

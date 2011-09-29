@@ -1,0 +1,43 @@
+$OpenBSD: patch-examples_publisher-ui_c,v 1.1.1.1 2011/09/29 17:07:03 jasper Exp $
+
+From a08655df4081f76053f22c0c587a25a3f0443792 Mon Sep 17 00:00:00 2001
+From: Murray Cumming <murrayc@murrayc.com>
+Date: Wed, 31 Aug 2011 12:19:47 +0000
+Subject: Really use GTK+ 3.
+
+--- examples/publisher-ui.c.orig	Thu May 12 21:11:43 2011
++++ examples/publisher-ui.c	Thu Sep 29 16:55:00 2011
+@@ -366,25 +366,6 @@ schedule_auto_save (void)
+     auto_save_id = g_timeout_add (5 * 1000, auto_save_cb, NULL);
+ }
+ 
+-static void
+-url_hook (GtkAboutDialog *dialog,
+-          const gchar    *link,
+-          gpointer        data G_GNUC_UNUSED)
+-{
+-  gchar *args[] = { "xdg-open", (gchar*) link, NULL };
+-  GError *error = NULL;
+-
+-  gdk_spawn_on_screen (gtk_widget_get_screen (GTK_WIDGET (dialog)),
+-                       NULL, args, NULL, G_SPAWN_SEARCH_PATH,
+-                       NULL, NULL, NULL, &error);
+-
+-  if (error)
+-    {
+-      show_error (GTK_WIDGET (dialog), "Cannot follow link.", error);
+-      g_error_free (error);
+-    }
+-}
+-
+ void
+ about_button_clicked_cb (GtkWidget *widget)
+ {
+@@ -799,7 +780,6 @@ main (int   argc,
+   g_set_application_name ("Easy Publisher Example");
+ 
+   gtk_init (&argc, &argv);
+-  gtk_about_dialog_set_url_hook (url_hook, NULL, NULL);
+ 
+   builder = gtk_builder_new ();
+   load_ui (argv[0]);

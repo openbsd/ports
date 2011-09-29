@@ -1,0 +1,45 @@
+$OpenBSD: patch-tests_framework_c,v 1.1.1.1 2011/09/29 17:07:03 jasper Exp $
+
+- Add missing headers.
+- Set interface index to -1 by default.
+
+--- tests/framework.c.orig	Thu May 12 21:11:43 2011
++++ tests/framework.c	Thu Sep 29 11:28:48 2011
+@@ -24,8 +24,12 @@
+ #include <avahi-client/client.h>
+ #include <avahi-common/error.h>
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <sys/sockio.h>
+ #include <net/if.h>
+-#include <sys/ioctl.h>
++#include <net/if_dl.h>
++#include <ifaddrs.h>
+ 
+ #include <errno.h>
+ #include <unistd.h>
+@@ -188,12 +192,14 @@ epc_test_list_ifaces (void)
+           continue;
+         }
+ 
++#ifdef SIOCGIFINDEX
+       if (ioctl (fd, SIOCGIFINDEX, req) < 0)
+         {
+           g_warning ("%s: ioctl(SIOCGIFINDEX): %s",
+                      G_STRLOC, g_strerror (errno));
+           goto out;
+         }
++#endif
+ 
+ /* The following allows to fall back to ifr_index on kFreeBSD, where 
+    ifr_ifindex does not exist. See bug #592474. */
+@@ -201,7 +207,7 @@ epc_test_list_ifaces (void)
+ #define ifr_ifindex ifr_index
+ #endif
+ 
+-      ifaces[j].ifidx = req->ifr_ifindex;
++      ifaces[j].ifidx = -1;
+       ifaces[j].mask = epc_test_result;
+ 
+       g_print ("%s: name=%s, ifidx=%u, \n",
