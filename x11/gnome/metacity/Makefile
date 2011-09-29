@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/29 14:59:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.1
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -35,12 +35,12 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	devel/startup-notification \
 		audio/libcanberra,-gtk \
 		devel/libgtop2
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		x11/gnome/doc-utils
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/gnome/zenity \
 		x11/gnome/themes-standard \
 		fonts/cantarell-fonts
 
+MODGNOME_TOOLS= yelp
 SEPARATE_BUILD=	concurrent
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR= metacity
