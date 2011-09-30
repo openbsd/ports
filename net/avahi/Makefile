@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/16 11:13:37 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/30 12:29:54 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	gtk+2 avahi-ui libraries
@@ -22,14 +22,14 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
-REVISION-main=	4
-REVISION-gtk=	3
-REVISION-gtk3=	0
-REVISION-gui=	0
-REVISION-mono=	2
-REVISION-qt3=	2
-REVISION-qt4=	2
-REVISION-ui=	0
+REVISION-main=	5
+REVISION-gtk=	4
+REVISION-gtk3=	1
+REVISION-gui=	1
+REVISION-mono=	3
+REVISION-qt3=	3
+REVISION-qt4=	3
+REVISION-ui=	1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -59,11 +59,14 @@ MULTI_PACKAGES=	-main
 MODULES=	devel/gettext \
 		textproc/intltool
 
+TAR=		${LOCALBASE}/bin/gtar
+
 BUILD_DEPENDS=	converters/xmltoman \
-		devel/gobject-introspection
+		devel/gobject-introspection \
+		archivers/gtar
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
-		gthread-2.0 gdbm daemon dbus-1 \
+		gthread-2.0 gdbm daemon dbus-1 ffi \
 		${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
@@ -120,7 +123,7 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common GL Xxf86vm drm xcb-shm \
-		avahi-glib ${MODGETTEXT_WANTLIB}
+		avahi-glib ffi ${MODGETTEXT_WANTLIB}
 
 ### -gtk3
 SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
@@ -137,7 +140,7 @@ WANTLIB-gtk3 += dbus-1 drm expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += xcb-shm z ffi kvm ${MODGETTEXT_WANTLIB}
 
 ### -gui
 MULTI_PACKAGES+= -gui
@@ -157,7 +160,7 @@ WANTLIB-gui += cairo cairo-gobject dbus-1 drm expat fontconfig freetype
 WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi kvm
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
@@ -184,7 +187,7 @@ WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread-stubs xcb z \
 		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
-		Xdamage Xxf86vm drm
+		Xdamage Xxf86vm drm ffi kvm
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif
@@ -244,10 +247,6 @@ FAKE_FLAGS=	SYSCONFDIR=${SYSCONFDIR}
 PC_FILES=	avahi-ui.pc avahi-client.pc avahi-compat-howl.pc \
 		avahi-compat-libdns_sd.pc avahi-core.pc avahi-glib.pc \
 		avahi-gobject.pc avahi-qt3.pc avahi-qt4.pc
-
-post-extract:
-	find ${WRKDIR} -type d -name PaxHeaders.\* | \
-		xargs rm -r
 
 pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
