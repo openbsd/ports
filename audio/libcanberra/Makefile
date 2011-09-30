@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/24 06:45:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/30 06:51:31 ajacoutot Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -11,9 +11,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
-REVISION-main=	0
-REVISION-gtk=	1
-REVISION-gtk3=	0
+REVISION-main=	1
+REVISION-gtk=	2
+REVISION-gtk3=	1
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -33,25 +33,26 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 ltdl m ogg
-WANTLIB += pcre vorbis vorbisfile z
+cWANTLIB += ltdl m ogg vorbis vorbisfile
 
-WANTLIB-main += ${WANTLIB} gstreamer-0.10 sndio xml2
+WANTLIB-main += ${cWANTLIB} sndio
 
-WANTLIB-gtk += ${WANTLIB}
+WANTLIB-gtk += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-gtk += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo canberra
-WANTLIB-gtk += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-gtk += gio-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-gtk += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB-gtk += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB-gtk += gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z
 
-WANTLIB-gtk3 += ${WANTLIB}
+WANTLIB-gtk3 += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB-gtk3 += cairo-gobject canberra drm expat fontconfig freetype
-WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 gtk-3 pango-1.0 pangocairo-1.0
-WANTLIB-gtk3 += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
-WANTLIB-gtk3 += xcb-render xcb-shm
+WANTLIB-gtk3 += cairo-gobject canberra drm expat ffi fontconfig freetype
+WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB-gtk3 += gthread-2.0 gtk-3 kvm pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB-gtk3 += xcb-shm z
 
 MODULES=		devel/gettext \
 			devel/gconf2
@@ -69,20 +70,21 @@ AUTOMAKE_VERSION= 	1.10
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-main=	textproc/libxml \
 			audio/libvorbis \
-			devel/libtool,-ltdl \
-			multimedia/gstreamer-0.10/core
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
-			audio/sound-theme-freedesktop>=0.6
+			devel/libtool,-ltdl
+RUN_DEPENDS-main=	audio/sound-theme-freedesktop>=0.6
 
 LIB_DEPENDS-gtk=	${BASE_PKGPATH} \
+			${MODGETTEXT_LIB_DEPENDS} \
 			x11/gtk+2
-RUN_DEPENDS-gtk=	${MODGCONF2_RUN_DEPENDS}
+RUN_DEPENDS-gtk=	${MODGCONF2_RUN_DEPENDS} \
+			${MODGETTEXT_RUN_DEPENDS}
 
 LIB_DEPENDS-gtk3=	${BASE_PKGPATH} \
+			${MODGETTEXT_LIB_DEPENDS} \
 			x11/gtk+3
-RUN_DEPENDS-gtk3=	# empty
+RUN_DEPENDS-gtk3=	${MODGETTEXT_RUN_DEPENDS}
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
@@ -91,13 +93,14 @@ CONFIGURE_STYLE=	 gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
 			--enable-sndio \
-			--enable-gstreamer \
+			--disable-gstreamer \
 			--disable-oss \
 			--disable-alsa \
 			--disable-pulse \
 			--disable-tdb \
 			--disable-udev \
-			--disable-gtk-doc
+			--disable-gtk-doc \
+			--disable-gtk-doc-html
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

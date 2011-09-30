@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile_am,v 1.6 2011/09/30 06:51:31 ajacoutot Exp $
+
+XXX
+/bin/sh[1]: ELF: not found
+/bin/sh[2]: ÿÿÿ
+ySu~%=i: not found
+/bin/sh[418]: syntax error: `(' unexpected
+
+--- Makefile.am.orig	Fri Sep 30 08:25:13 2011
++++ Makefile.am	Fri Sep 30 08:25:19 2011
+@@ -26,7 +26,7 @@ EXTRA_DIST = \
+ 	vala/libcanberra.vapi \
+ 	vala/libcanberra-gtk.vapi
+ 
+-SUBDIRS = src gtkdoc doc
++SUBDIRS = src doc
+ 
+ MAINTAINERCLEANFILES = README
+ noinst_DATA = README
