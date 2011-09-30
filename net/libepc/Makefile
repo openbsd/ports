@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/30 07:23:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/30 11:45:43 jasper Exp $
 
 COMMENT=		Easy Publish and Consume library
 
 GNOME_PROJECT=		libepc
-GNOME_VERSION=		0.4.0
-REVISION=		1
+GNOME_VERSION=		0.4.1
 SHARED_LIBS +=  epc-1.0              0.0      # 3.0
 SHARED_LIBS +=  epc-ui-1.0           0.0      # 3.0
 CATEGORIES=		net
@@ -16,8 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -39,9 +36,7 @@ LIB_DEPENDS=		devel/libsoup \
 			sysutils/e2fsprogs \
 			x11/gtk+3
 
-AUTOCONF_VERSION=	2.68
-
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	gnu
 
 # Not much of use without a proper SIOCGIFINDEX
 NO_REGRESS=		Yes
