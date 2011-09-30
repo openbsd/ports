@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/30 06:54:31 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
 GNOME_VERSION=		1.19.11
+REVISION=		0
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 
@@ -42,10 +43,12 @@ WANTLIB += xml2 xslt z
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
-BUILD_DEPENDS=		devel/iso-codes \
+BUILD_DEPENDS=		databases/postgresql,-server \
+			devel/iso-codes \
 			devel/py-gobject3 \
 			textproc/py-sphinx
-RUN_DEPENDS=		devel/py-gobject3 \
+RUN_DEPENDS=		databases/postgresql,-server \
+			devel/py-gobject3 \
 			misc/shared-mime-info \
 			x11/gnome/libgda>=4.99.4p2
 LIB_DEPENDS=		devel/boost \
