@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/30 06:52:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/30 07:23:22 jasper Exp $
 
 COMMENT=		Easy Publish and Consume library
 
 GNOME_PROJECT=		libepc
 GNOME_VERSION=		0.4.0
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  epc-1.0              0.0      # 3.0
 SHARED_LIBS +=  epc-ui-1.0           0.0      # 3.0
 CATEGORIES=		net
@@ -32,8 +32,10 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 tasn1 xcb xcb-render xcb-shm
 WANTLIB += xml2 z
 
+# Only needed for examples.
+BUILD_DEPENDS=		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 LIB_DEPENDS=		devel/libsoup \
-			net/avahi,-gtk3,no_mono,no_qt3,no_qt4 \
+			net/avahi \
 			sysutils/e2fsprogs \
 			x11/gtk+3
 
