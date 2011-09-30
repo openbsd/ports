@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.38 2011/09/30 08:57:36 ajacoutot Exp $
+$OpenBSD: README,v 1.39 2011/09/30 09:33:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,8 +28,8 @@ It is advised to _always_ install the "minimal" set (see also: the
 	gnome-utils \
 	nautilus
 
-"full" GNOME Desktop
---------------------
+"full" GNOME Desktop (additions to the "minimal" set)
+-----------------------------------------------------
     $ sudo pkg_add \
 	deja-dup \
     	ekiga \
