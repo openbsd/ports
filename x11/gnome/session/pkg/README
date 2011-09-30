@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.37 2011/09/29 17:31:08 ajacoutot Exp $
+$OpenBSD: README,v 1.38 2011/09/30 08:57:36 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -41,6 +41,7 @@ It is advised to _always_ install the "minimal" set (see also: the
 	gedit-plugins \
 	eog-plugins \
 	gcalctool \
+	gnome-contacts \
 	gnome-games-extra-data \
 	gnome-icon-theme-extras \
 	gnome-nettool \
