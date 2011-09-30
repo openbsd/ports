@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.113 2011/09/08 10:33:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2011/09/30 07:33:59 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
+
+REVISION=	0
 
 CATEGORIES=	print sysutils
 
@@ -117,6 +119,11 @@ WANTLIB +=	ldap
 LIB_DEPENDS+=	databases/openldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
+.endif
+
+# needed otherwise cups will strip binaries even with INSTALL_STRIP=
+.if defined(DEBUG)
+CONFIGURE_ARGS += --enable-debug
 .endif
 
 post-extract:
