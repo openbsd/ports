@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2011/09/19 20:22:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.143 2011/09/30 09:03:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -15,8 +15,6 @@
      SUBDIR += ccze
      SUBDIR += cdrdao
      SUBDIR += clex
-     SUBDIR += contacts
-     SUBDIR += dates
      SUBDIR += deco
      SUBDIR += delay
      SUBDIR += dialog
