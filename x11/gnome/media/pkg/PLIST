@@ -1,12 +1,85 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/09/25 12:42:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/09/30 09:31:49 ajacoutot Exp $
 @pkgpath x11/gnome/media
 @pkgpath x11/gnome/media,-main
 @pkgpath x11/gnome/media,-glade3
+@bin bin/gnome-sound-recorder
 @bin bin/gstreamer-properties
+share/applications/gnome-sound-recorder.desktop
 share/applications/gstreamer-properties.desktop
+share/gnome/
 share/gnome-media/
 share/gnome-media/sounds/
 share/gnome-media/sounds/gnome-sounds-default.xml
+share/gnome-sound-recorder/
+share/gnome-sound-recorder/ui/
+share/gnome-sound-recorder/ui/ui.xml
+share/gnome/help/
+share/gnome/help/gnome-sound-recorder/
+share/gnome/help/gnome-sound-recorder/C/
+share/gnome/help/gnome-sound-recorder/C/figures/
+share/gnome/help/gnome-sound-recorder/C/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/C/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/C/legal.xml
+share/gnome/help/gnome-sound-recorder/ca/
+share/gnome/help/gnome-sound-recorder/ca/figures/
+share/gnome/help/gnome-sound-recorder/ca/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/ca/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/cs/
+share/gnome/help/gnome-sound-recorder/cs/figures/
+share/gnome/help/gnome-sound-recorder/cs/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/cs/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/da/
+share/gnome/help/gnome-sound-recorder/da/figures/
+share/gnome/help/gnome-sound-recorder/da/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/da/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/de/
+share/gnome/help/gnome-sound-recorder/de/figures/
+share/gnome/help/gnome-sound-recorder/de/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/de/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/el/
+share/gnome/help/gnome-sound-recorder/el/figures/
+share/gnome/help/gnome-sound-recorder/el/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/el/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/en_GB/
+share/gnome/help/gnome-sound-recorder/en_GB/figures/
+share/gnome/help/gnome-sound-recorder/en_GB/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/en_GB/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/es/
+share/gnome/help/gnome-sound-recorder/es/figures/
+share/gnome/help/gnome-sound-recorder/es/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/es/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/fr/
+share/gnome/help/gnome-sound-recorder/fr/figures/
+share/gnome/help/gnome-sound-recorder/fr/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/fr/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/it/
+share/gnome/help/gnome-sound-recorder/it/figures/
+share/gnome/help/gnome-sound-recorder/it/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/it/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/oc/
+share/gnome/help/gnome-sound-recorder/oc/figures/
+share/gnome/help/gnome-sound-recorder/oc/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/oc/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/ru/
+share/gnome/help/gnome-sound-recorder/ru/figures/
+share/gnome/help/gnome-sound-recorder/ru/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/ru/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/sl/
+share/gnome/help/gnome-sound-recorder/sl/figures/
+share/gnome/help/gnome-sound-recorder/sl/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/sl/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/sv/
+share/gnome/help/gnome-sound-recorder/sv/figures/
+share/gnome/help/gnome-sound-recorder/sv/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/sv/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/uk/
+share/gnome/help/gnome-sound-recorder/uk/figures/
+share/gnome/help/gnome-sound-recorder/uk/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/uk/gnome-sound-recorder.xml
+share/gnome/help/gnome-sound-recorder/zh_CN/
+share/gnome/help/gnome-sound-recorder/zh_CN/figures/
+share/gnome/help/gnome-sound-recorder/zh_CN/figures/grecord_window.png
+share/gnome/help/gnome-sound-recorder/zh_CN/gnome-sound-recorder.xml
 share/gnome/help/gstreamer-properties/
 share/gnome/help/gstreamer-properties/C/
 share/gnome/help/gstreamer-properties/C/figures/
@@ -89,9 +162,27 @@ share/gstreamer-properties/
 share/gstreamer-properties/gstreamer-properties.ui
 share/gstreamer-properties/icons/
 share/gstreamer-properties/icons/gstreamer-properties.png
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/gnome-sound-recorder.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/gnome-sound-recorder.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/gnome-sound-recorder.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/gnome-sound-recorder.png
 share/icons/hicolor/48x48/apps/gstreamer-properties.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/gnome-sound-recorder.svg
 share/locale/af/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-media-2.0.mo
@@ -182,6 +273,24 @@ share/locale/xh/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
+share/omf/
+share/omf/gnome-sound-recorder/
+share/omf/gnome-sound-recorder/gnome-sound-recorder-C.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-ca.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-cs.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-da.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-de.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-el.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-en_GB.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-es.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-fr.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-it.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-oc.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-ru.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-sl.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-sv.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-uk.omf
+share/omf/gnome-sound-recorder/gnome-sound-recorder-zh_CN.omf
 share/omf/gstreamer-properties/
 share/omf/gstreamer-properties/gstreamer-properties-C.omf
 share/omf/gstreamer-properties/gstreamer-properties-ca.omf
@@ -202,6 +311,10 @@ share/omf/gstreamer-properties/gstreamer-properties-sv.omf
 share/omf/gstreamer-properties/gstreamer-properties-th.omf
 share/omf/gstreamer-properties/gstreamer-properties-uk.omf
 share/omf/gstreamer-properties/gstreamer-properties-zh_CN.omf
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gnome-sound-recorder.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
