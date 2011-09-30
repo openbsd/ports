@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2011/09/29 20:04:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2011/09/30 06:50:29 jasper Exp $
 
 COMMENT=	themed window manager
 
-DISTNAME=	e16-1.0.9
-PKGNAME=	enlightenment-1.0.7
+V=		1.0.9
+DISTNAME=	e16-$V
+PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.1
 
