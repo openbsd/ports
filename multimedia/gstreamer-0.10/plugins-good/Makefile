@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.78 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2011/09/30 19:05:50 ajacoutot Exp $
+
+# XXX ossaudio(3) is only enabled to be used as a mixing device by
+# audio/pulseaudio and x11/xfce4/xfce4-mixer
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
