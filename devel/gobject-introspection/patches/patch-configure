@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.2 2011/09/21 13:59:21 jasper Exp $
+$OpenBSD: patch-configure,v 1.3 2011/09/30 07:47:58 jasper Exp $
 --- configure.orig	Tue Sep 20 23:52:38 2011
 +++ configure	Tue Sep 20 23:53:26 2011
 @@ -12940,6 +12940,9 @@ if test x$have_cairo_gobject = xyes; then
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure,v 1.2 2011/09/21 13:59:21 jasper Exp $
        CAIRO_SHARED_LIBRARY="libcairo-2.dll"
 +      ;;
 +    *-*-openbsd*)
-+      CAIRO_SHARED_LIBRARY="libcairo.2.so"
++      CAIRO_SHARED_LIBRARY="libcairo.so"
        ;;
      *)
        CAIRO_SHARED_LIBRARY="libcairo.so.2"
