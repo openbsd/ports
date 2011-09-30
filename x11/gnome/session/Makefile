@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.192 2011/09/30 09:33:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.193 2011/09/30 14:32:20 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.0
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11
 
@@ -72,6 +72,9 @@ RUN_DEPENDS+=	x11/gnome/at-spi2-atk
 RUN_DEPENDS+=	devel/gconf2,-polkit
 
 MODGNOME_DESKTOP_FILE=		Yes
+
+MODGNOME_CPPFLAGS=-I${X11BASE}/include
+MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 CONFIGURE_ARGS=	--disable-rebuilds \
 		--enable-docbook-docs
