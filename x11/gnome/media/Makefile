@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/30 09:31:49 ajacoutot Exp $
-
-# gnome-volume-control needs pulseaudio.
+# $OpenBSD: Makefile,v 1.58 2011/09/30 13:55:05 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
