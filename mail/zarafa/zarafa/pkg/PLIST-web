@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-web,v 1.14 2011/09/29 17:38:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.15 2011/09/30 05:33:33 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
-@extra-unexec rm -f %D/zarafa-webaccess/debug.php
+@extraunexec rm -f %D/zarafa-webaccess/debug.php
 include/
 include/php/
 include/php/mapi/
