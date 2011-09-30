@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.46 2011/09/05 07:11:23 giovanni Exp $
+@comment $OpenBSD: PLIST-tests,v 1.47 2011/09/30 10:18:26 giovanni Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -3859,6 +3859,7 @@ share/mysql-test/suite/rpl/r/rpl_row_blob_innodb.result
 share/mysql-test/suite/rpl/r/rpl_row_blob_myisam.result
 share/mysql-test/suite/rpl/r/rpl_row_colSize.result
 share/mysql-test/suite/rpl/r/rpl_row_conflicts.result
+share/mysql-test/suite/rpl/r/rpl_row_corruption.result
 share/mysql-test/suite/rpl/r/rpl_row_create_table.result
 share/mysql-test/suite/rpl/r/rpl_row_delayed_ins.result
 share/mysql-test/suite/rpl/r/rpl_row_drop.result
@@ -4179,6 +4180,8 @@ share/mysql-test/suite/rpl/t/rpl_row_blob_innodb.test
 share/mysql-test/suite/rpl/t/rpl_row_blob_myisam.test
 share/mysql-test/suite/rpl/t/rpl_row_colSize.test
 share/mysql-test/suite/rpl/t/rpl_row_conflicts.test
+share/mysql-test/suite/rpl/t/rpl_row_corruption-slave.opt
+share/mysql-test/suite/rpl/t/rpl_row_corruption.test
 share/mysql-test/suite/rpl/t/rpl_row_create_table.test
 share/mysql-test/suite/rpl/t/rpl_row_delayed_ins.test
 share/mysql-test/suite/rpl/t/rpl_row_drop.test
