@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk_gtktextattributes_h,v 1.1 2011/10/01 09:38:44 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660619
+
+--- gtk/gtktextattributes.h.orig	Tue Aug 16 04:04:34 2011
++++ gtk/gtktextattributes.h	Sat Oct  1 11:14:21 2011
+@@ -104,9 +104,11 @@ struct _GtkTextAppearance
+ 
+   GdkRGBA *rgba[2];
+ 
++#if defined(__SIZEOF_INT__) && defined(__SIZEOF_POINTER__)
+ #if __SIZEOF_INT__ == __SIZEOF_POINTER__
+   /* unusable, just for ABI compat */
+   guint padding[2];
++#endif
+ #endif
+ };
+ 
