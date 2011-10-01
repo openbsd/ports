@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/02 10:10:06 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/10/01 08:41:26 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/lxml/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/lxml/cssselect.pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/doctestcompare.py
 lib/python${MODPY_VERSION}/site-packages/lxml/doctestcompare.pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/etree.so
+lib/python${MODPY_VERSION}/site-packages/lxml/etree_defs.h
+lib/python${MODPY_VERSION}/site-packages/lxml/etreepublic.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/html/
 lib/python${MODPY_VERSION}/site-packages/lxml/html/ElementSoup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/html/ElementSoup.pyc
@@ -69,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/lxml/pyclasslookup.py
 lib/python${MODPY_VERSION}/site-packages/lxml/pyclasslookup.pyc
 lib/python${MODPY_VERSION}/site-packages/lxml/sax.py
 lib/python${MODPY_VERSION}/site-packages/lxml/sax.pyc
+lib/python${MODPY_VERSION}/site-packages/lxml/tree.pxd
 lib/python${MODPY_VERSION}/site-packages/lxml/usedoctest.py
 lib/python${MODPY_VERSION}/site-packages/lxml/usedoctest.pyc
 share/doc/py-lxml/
@@ -349,6 +352,8 @@ share/doc/py-lxml/html/api/lxml.html.soupparser-module.html
 share/doc/py-lxml/html/api/lxml.html.soupparser-pysrc.html
 share/doc/py-lxml/html/api/lxml.html.usedoctest-module.html
 share/doc/py-lxml/html/api/lxml.html.usedoctest-pysrc.html
+share/doc/py-lxml/html/api/lxml.include-module.html
+share/doc/py-lxml/html/api/lxml.include-pysrc.html
 share/doc/py-lxml/html/api/lxml.isoschematron-module.html
 share/doc/py-lxml/html/api/lxml.isoschematron-pysrc.html
 share/doc/py-lxml/html/api/lxml.isoschematron.Schematron-class.html
@@ -492,6 +497,7 @@ share/doc/py-lxml/html/api/toc-lxml.html.formfill-module.html
 share/doc/py-lxml/html/api/toc-lxml.html.html5parser-module.html
 share/doc/py-lxml/html/api/toc-lxml.html.soupparser-module.html
 share/doc/py-lxml/html/api/toc-lxml.html.usedoctest-module.html
+share/doc/py-lxml/html/api/toc-lxml.include-module.html
 share/doc/py-lxml/html/api/toc-lxml.isoschematron-module.html
 share/doc/py-lxml/html/api/toc-lxml.objectify-module.html
 share/doc/py-lxml/html/api/toc-lxml.pyclasslookup-module.html
@@ -548,13 +554,12 @@ share/doc/py-lxml/html/lxmlhtml.html
 share/doc/py-lxml/html/objectify.html
 share/doc/py-lxml/html/parsing.html
 share/doc/py-lxml/html/performance.html
-share/doc/py-lxml/html/proxies.png
 share/doc/py-lxml/html/pubkey.asc
 share/doc/py-lxml/html/resolvers.html
 share/doc/py-lxml/html/sax.html
+share/doc/py-lxml/html/sitemap.html
 share/doc/py-lxml/html/style.css
 share/doc/py-lxml/html/tagpython-big.png
-share/doc/py-lxml/html/tagpython.png
 share/doc/py-lxml/html/tutorial.html
 share/doc/py-lxml/html/validation.html
 share/doc/py-lxml/html/xpathxslt.html
@@ -590,7 +595,6 @@ share/doc/py-lxml/s5/ep2008/atomgen.py
 share/doc/py-lxml/s5/ep2008/proxies.png
 share/doc/py-lxml/s5/lxml-ep2008.html
 share/doc/py-lxml/s5/lxml-ep2008.txt
-share/doc/py-lxml/s5/rst2s5.py
 share/doc/py-lxml/s5/tagpython.png
 share/doc/py-lxml/s5/ui/
 share/doc/py-lxml/s5/ui/default/
