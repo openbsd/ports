@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/23 23:39:57 kurt Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/01 14:31:04 kurt Exp $
 
-ONLY_FOR_ARCHS=	amd64 arm i386 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
 COMMENT=	free, standards-compliant jvm with a small footprint
 
