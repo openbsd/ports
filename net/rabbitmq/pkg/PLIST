@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/15 11:02:59 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/10/01 08:30:37 jasper Exp $
 @newgroup _rabbitmq:646
 @newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 lib/rabbitmq/
@@ -13,6 +13,9 @@ lib/rabbitmq/ebin/gm.beam
 lib/rabbitmq/ebin/gm_soak_test.beam
 lib/rabbitmq/ebin/gm_speed_test.beam
 lib/rabbitmq/ebin/gm_tests.beam
+lib/rabbitmq/ebin/mirrored_supervisor.beam
+lib/rabbitmq/ebin/mirrored_supervisor_tests.beam
+lib/rabbitmq/ebin/pg2_fixed.beam
 lib/rabbitmq/ebin/pg_local.beam
 lib/rabbitmq/ebin/priority_queue.beam
 lib/rabbitmq/ebin/rabbit.app
@@ -30,6 +33,7 @@ lib/rabbitmq/ebin/rabbit_auth_mechanism_amqplain.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/rabbitmq/ebin/rabbit_auth_mechanism_plain.beam
 lib/rabbitmq/ebin/rabbit_backing_queue.beam
+lib/rabbitmq/ebin/rabbit_backing_queue_qc.beam
 lib/rabbitmq/ebin/rabbit_basic.beam
 lib/rabbitmq/ebin/rabbit_binary_generator.beam
 lib/rabbitmq/ebin/rabbit_binary_parser.beam
@@ -60,6 +64,11 @@ lib/rabbitmq/ebin/rabbit_heartbeat.beam
 lib/rabbitmq/ebin/rabbit_limiter.beam
 lib/rabbitmq/ebin/rabbit_log.beam
 lib/rabbitmq/ebin/rabbit_memory_monitor.beam
+lib/rabbitmq/ebin/rabbit_mirror_queue_coordinator.beam
+lib/rabbitmq/ebin/rabbit_mirror_queue_master.beam
+lib/rabbitmq/ebin/rabbit_mirror_queue_misc.beam
+lib/rabbitmq/ebin/rabbit_mirror_queue_slave.beam
+lib/rabbitmq/ebin/rabbit_mirror_queue_slave_sup.beam
 lib/rabbitmq/ebin/rabbit_misc.beam
 lib/rabbitmq/ebin/rabbit_mnesia.beam
 lib/rabbitmq/ebin/rabbit_msg_file.beam
