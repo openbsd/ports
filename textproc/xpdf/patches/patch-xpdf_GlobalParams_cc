@@ -1,10 +1,10 @@
-$OpenBSD: patch-xpdf_GlobalParams_cc,v 1.1 2009/04/04 14:45:48 naddy Exp $
---- xpdf/GlobalParams.cc.orig	Fri Apr  3 19:30:57 2009
-+++ xpdf/GlobalParams.cc	Fri Apr  3 19:31:18 2009
-@@ -110,11 +110,7 @@ static char *displayFontDirs[] = {
+$OpenBSD: patch-xpdf_GlobalParams_cc,v 1.2 2011/10/01 19:46:35 kili Exp $
+--- xpdf/GlobalParams.cc.orig	Mon Aug 15 23:08:53 2011
++++ xpdf/GlobalParams.cc	Thu Aug 18 21:56:42 2011
+@@ -110,11 +110,7 @@ static const char *displayFontDirs[] = {
  };
  #else
- static char *displayFontDirs[] = {
+ static const char *displayFontDirs[] = {
 -  "/usr/share/ghostscript/fonts",
 -  "/usr/local/share/ghostscript/fonts",
 -  "/usr/share/fonts/default/Type1",

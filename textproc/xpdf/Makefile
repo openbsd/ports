@@ -1,28 +1,22 @@
-# $OpenBSD: Makefile,v 1.80 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2011/10/01 19:46:35 kili Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
-DISTNAME=	xpdf-3.02
-PKGNAME-main=	xpdf-3.02.5
-REVISION-main=	3
-PKGNAME-utils=	xpdf-utils-3.02.5
-REVISION-utils =	0
+DISTNAME=	xpdf-3.03
+PKGNAME-main=	xpdf-3.03
+PKGNAME-utils=	xpdf-utils-3.03
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		ftp://gd.tuwien.ac.at/publishing/xpdf/ \
-		ftp://tug.org/xpdf/
-PATCHFILES=	xpdf-3.02pl1.patch xpdf-3.02pl2.patch \
-		xpdf-3.02pl3.patch xpdf-3.02pl4.patch \
-		xpdf-3.02pl5.patch
-PATCH_DIST_STRIP=-p1
+		http://mirror.ctan.org/support/xpdf/
 
 HOMEPAGE=	http://www.foolabs.com/xpdf/
 
 MULTI_PACKAGES=	-main -utils
 
-# GPLv2
+# GPLv2 only or GPLv3 only or both (at our choice)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -40,14 +34,13 @@ CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 LIB_DEPENDS-utils=
-LIB_DEPENDS-main=	devel/t1lib ${LIB_DEPENDS}
 RUN_DEPENDS-utils=	print/ghostscript/gnu-fonts
 RUN_DEPENDS-main=	${RUN_DEPENDS-utils} \
 			${FULLPKGNAME-utils}:textproc/xpdf,-utils
 
 WANTLIB-utils=		c m pthread stdc++ z
 WANTLIB-main=		${WANTLIB} ${WANTLIB-utils} ICE SM X11 Xext Xpm Xt \
-			freetype t1>=3 Xm
+			freetype Xm
 
 NO_REGRESS=	Yes
 
