@@ -1,0 +1,26 @@
+$OpenBSD: patch-calendar_gui_alarm-notify_alarm_c,v 1.1 2011/10/01 10:44:35 ajacoutot Exp $
+
+alarm.c:104: warning: format '%lu' expects type 'long unsigned int', but argument 2 has type 'time_t'
+alarm.c:159: warning: format '%lu' expects type 'long unsigned int', but argument 4 has type 'time_t'
+alarm.c:159: warning: format '%lu' expects type 'long unsigned int', but argument 5 has type 'time_t'
+
+--- calendar/gui/alarm-notify/alarm.c.orig	Sat Oct  1 11:39:41 2011
++++ calendar/gui/alarm-notify/alarm.c	Sat Oct  1 11:42:31 2011
+@@ -101,7 +101,7 @@ alarm_ready_cb (gpointer data)
+ 		if (ar->trigger > now)
+ 			break;
+ 
+-		debug (("Process alarm with trigger %lu", ar->trigger));
++		debug (("Process alarm with trigger %lu", (long unsigned int)ar->trigger));
+ 		notify_id = ar;
+ 
+ 		ar_copy = *ar;
+@@ -157,7 +157,7 @@ setup_timeout (void)
+ 
+ 	/* Add the time out */
+ 	debug (("Setting timeout for %d.%2d (from now) %lu %lu",
+-		     diff / 60, diff % 60, ar->trigger, now));
++		     diff / 60, diff % 60, (long unsigned int)ar->trigger, (long unsigned int)now));
+ 	debug ((" %s", ctime (&ar->trigger)));
+ 	debug ((" %s", ctime (&now)));
+ 	timeout_id = g_timeout_add_seconds (diff, alarm_ready_cb, NULL);
