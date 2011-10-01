@@ -1,4 +1,10 @@
-$OpenBSD: patch-addressbook_gui_widgets_eab-gui-util_c,v 1.1 2011/09/21 13:27:59 jasper Exp $
+$OpenBSD: patch-addressbook_gui_widgets_eab-gui-util_c,v 1.2 2011/10/01 12:20:23 ajacoutot Exp $
+
+From 328334d9c9eb4c0c9ed249eb33461a0071df9635 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 01 Oct 2011 11:50:24 +0000
+Subject: LC_ADDRESS is no posix and may not be defined.
+
 --- addressbook/gui/widgets/eab-gui-util.c.orig	Sun Sep 18 22:28:50 2011
 +++ addressbook/gui/widgets/eab-gui-util.c	Mon Sep 19 23:25:11 2011
 @@ -655,7 +655,11 @@ get_locales (void)
