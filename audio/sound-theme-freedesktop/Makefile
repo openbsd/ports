@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/23 14:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/01 10:03:02 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.7
 CATEGORIES=	audio
 
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -37,11 +37,13 @@ NO_REGRESS=	Yes
 AUTOMAKE_VERSION=1.9
 AUTOCONF_VERSION=2.62
 
+CONFIGURE_STYLE=gnu
+
 do-configure:
 	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		./autogen.sh
+		./autogen.sh ${CONFIGURE_ARGS}
 
 post-install:
 	cd ${PREFIX}/share/sounds/freedesktop/stereo && \
