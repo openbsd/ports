@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_daemon_default_pa_in,v 1.2 2011/09/25 17:23:19 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.3 2011/10/01 08:37:30 ajacoutot Exp $
 
 - Adjust path to soundfiles.
 - Use /dev/audio instead of /dev/dsp
 
---- src/daemon/default.pa.in.orig	Thu Jun 23 22:18:54 2011
-+++ src/daemon/default.pa.in	Sun Sep 25 19:13:48 2011
-@@ -22,10 +22,10 @@
- .nofail
- 
- ### Load something into the sample cache
+--- src/daemon/default.pa.in.orig	Thu Sep 15 12:29:38 2011
++++ src/daemon/default.pa.in	Fri Sep 30 21:31:39 2011
+@@ -27,10 +27,10 @@ ifelse(@OS_IS_WIN32@, 1, [dnl
+ load-sample x11-bell %WINDIR%\Media\ding.wav
+ load-sample-dir-lazy %WINDIR%\Media\*.wav
+ ], [dnl
 -#load-sample-lazy x11-bell /usr/share/sounds/gtk-events/activate.wav
 -#load-sample-lazy pulse-hotplug /usr/share/sounds/startup3.wav
 -#load-sample-lazy pulse-coldplug /usr/share/sounds/startup3.wav
@@ -17,17 +17,17 @@ $OpenBSD: patch-src_daemon_default_pa_in,v 1.2 2011/09/25 17:23:19 ajacoutot Exp
 +#load-sample-lazy pulse-hotplug ${LOCALBASE}/share/sounds/startup3.wav
 +#load-sample-lazy pulse-coldplug ${LOCALBASE}/share/sounds/startup3.wav
 +#load-sample-lazy pulse-access ${LOCALBASE}/share/sounds/generic.wav
+ ])dnl
  
  .fail
- 
-@@ -43,8 +43,8 @@ load-module module-augment-properties
- ### see below -- for doing this automatically)
- #load-module module-alsa-sink
+@@ -52,8 +52,8 @@ ifelse(@HAVE_ALSA@, 1, [dnl
  #load-module module-alsa-source device=hw:1,0
+ ])dnl
+ ifelse(@HAVE_OSS_OUTPUT@, 1, [dnl
 -#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
 -#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
 +#load-module module-oss device="/dev/audio" sink_name=output source_name=input
 +#load-module module-oss-mmap device="/dev/audio" sink_name=output source_name=input
- #load-module module-null-sink
- #load-module module-pipe-sink
- 
+ ])dnl
+ ifelse(@HAVE_WAVEOUT@, 1, [dnl
+ load-module module-waveout sink_name=output source_name=input

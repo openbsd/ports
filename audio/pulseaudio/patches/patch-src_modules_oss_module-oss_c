@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_modules_oss_module-oss_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+$OpenBSD: patch-src_modules_oss_module-oss_c,v 1.2 2011/10/01 08:37:30 ajacoutot Exp $
 
 - Fix path to soundcard.h
 - Use correct fd.
 
---- src/modules/oss/module-oss.c.orig	Fri Nov 26 01:45:23 2010
-+++ src/modules/oss/module-oss.c	Thu Jun 23 11:31:14 2011
+--- src/modules/oss/module-oss.c.orig	Sun Sep 11 16:17:14 2011
++++ src/modules/oss/module-oss.c	Fri Sep 30 14:50:32 2011
 @@ -42,7 +42,7 @@
  #include <sys/mman.h>
  #endif
@@ -13,8 +13,8 @@ $OpenBSD: patch-src_modules_oss_module-oss_c,v 1.1.1.1 2011/09/25 09:30:52 rober
 +#include <soundcard.h>
  #include <sys/ioctl.h>
  #include <stdlib.h>
- #include <sys/stat.h>
-@@ -1223,10 +1223,12 @@ int pa__init(pa_module*m) {
+ #include <stdio.h>
+@@ -1219,10 +1219,12 @@ int pa__init(pa_module*m) {
          use_mmap = FALSE;
      }
  
@@ -27,12 +27,12 @@ $OpenBSD: patch-src_modules_oss_module-oss_c,v 1.1.1.1 2011/09/25 09:30:52 rober
  
      if (pa_oss_get_hw_description(dev, hwdesc, sizeof(hwdesc)) >= 0)
          pa_log_info("Hardware name is '%s'.", hwdesc);
-@@ -1420,7 +1422,7 @@ int pa__init(pa_module*m) {
+@@ -1416,7 +1418,7 @@ int pa__init(pa_module*m) {
      if ((u->mixer_fd = pa_oss_open_mixer_for_device(u->device_name)) >= 0) {
          pa_bool_t do_close = TRUE;
  
 -        if (ioctl(fd, SOUND_MIXER_READ_DEVMASK, &u->mixer_devmask) < 0)
 +        if (ioctl(u->mixer_fd, SOUND_MIXER_READ_DEVMASK, &u->mixer_devmask) < 0)
              pa_log_warn("SOUND_MIXER_READ_DEVMASK failed: %s", pa_cstrerror(errno));
- 
          else {
+             if (u->sink && (u->mixer_devmask & (SOUND_MASK_VOLUME|SOUND_MASK_PCM))) {

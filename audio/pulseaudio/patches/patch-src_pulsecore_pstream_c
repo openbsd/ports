@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_pulsecore_pstream_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+$OpenBSD: patch-src_pulsecore_pstream_c,v 1.2 2011/10/01 08:37:31 ajacoutot Exp $
 
 - Fix a lock-up.
 
---- src/pulsecore/pstream.c.orig	Fri Nov 26 01:45:23 2010
-+++ src/pulsecore/pstream.c	Thu Jun 23 11:36:14 2011
-@@ -181,14 +181,17 @@ static void do_something(pa_pstream *p) {
+--- src/pulsecore/pstream.c.orig	Thu Sep  1 10:28:14 2011
++++ src/pulsecore/pstream.c	Fri Sep 30 14:50:32 2011
+@@ -174,14 +174,17 @@ static void do_something(pa_pstream *p) {
      p->mainloop->defer_enable(p->defer_event, 0);
  
      if (!p->dead && pa_iochannel_is_readable(p->io)) {

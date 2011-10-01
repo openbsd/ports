@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/25 15:26:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/01 08:37:31 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
 @unexec-delete rm -rf /var/db/pulse
 bin/esdcompat
-@bin bin/pabrowse
 @bin bin/pacat
 @bin bin/pacmd
 @bin bin/pactl
@@ -14,19 +13,17 @@ bin/paplay
 bin/parec
 bin/parecord
 @bin bin/pasuspender
-@bin bin/pax11publish
 @bin bin/pulseaudio
-bin/start-pulseaudio-kde
-bin/start-pulseaudio-x11
 include/pulse/
-include/pulse/browser.h
 include/pulse/cdecl.h
 include/pulse/channelmap.h
 include/pulse/context.h
 include/pulse/def.h
 include/pulse/error.h
 include/pulse/ext-device-manager.h
+include/pulse/ext-device-restore.h
 include/pulse/ext-stream-restore.h
+include/pulse/format.h
 include/pulse/gccmacro.h
 include/pulse/glib-mainloop.h
 include/pulse/introspect.h
@@ -49,8 +46,6 @@ include/pulse/util.h
 include/pulse/version.h
 include/pulse/volume.h
 include/pulse/xmalloc.h
-lib/libpulse-browse.la
-@lib lib/libpulse-browse.so.${LIBpulse-browse_VERSION}
 lib/libpulse-mainloop-glib.la
 @lib lib/libpulse-mainloop-glib.so.${LIBpulse-mainloop-glib_VERSION}
 lib/libpulse-simple.la
@@ -62,13 +57,11 @@ lib/libpulsecommon-${VERSION}.so
 lib/libpulsecore-${VERSION}.la
 lib/libpulsecore-${VERSION}.so
 lib/libpulsedsp.so
-lib/pkgconfig/libpulse-browse.pc
 lib/pkgconfig/libpulse-mainloop-glib.pc
 lib/pkgconfig/libpulse-simple.pc
 lib/pkgconfig/libpulse.pc
 lib/pulse-${VERSION}/
 lib/pulse-${VERSION}/modules/
-lib/pulse-${VERSION}/modules/libavahi-wrap.so
 lib/pulse-${VERSION}/modules/libcli.so
 lib/pulse-${VERSION}/modules/liboss-util.so
 lib/pulse-${VERSION}/modules/libprotocol-cli.so
@@ -84,8 +77,8 @@ lib/pulse-${VERSION}/modules/module-card-restore.so
 lib/pulse-${VERSION}/modules/module-cli-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-cli-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-cli.so
+lib/pulse-${VERSION}/modules/module-combine-sink.so
 lib/pulse-${VERSION}/modules/module-combine.so
-lib/pulse-${VERSION}/modules/module-console-kit.so
 lib/pulse-${VERSION}/modules/module-cork-music-on-phone.so
 lib/pulse-${VERSION}/modules/module-default-device-restore.so
 lib/pulse-${VERSION}/modules/module-detect.so
@@ -97,7 +90,8 @@ lib/pulse-${VERSION}/modules/module-esound-compat-spawnpid.so
 lib/pulse-${VERSION}/modules/module-esound-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-esound-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-esound-sink.so
-lib/pulse-${VERSION}/modules/module-gconf.so
+lib/pulse-${VERSION}/modules/module-filter-apply.so
+lib/pulse-${VERSION}/modules/module-filter-heuristics.so
 lib/pulse-${VERSION}/modules/module-http-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-http-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-intended-roles.so
@@ -108,54 +102,41 @@ lib/pulse-${VERSION}/modules/module-native-protocol-fd.so
 lib/pulse-${VERSION}/modules/module-native-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-native-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-null-sink.so
+lib/pulse-${VERSION}/modules/module-null-source.so
 lib/pulse-${VERSION}/modules/module-oss.so
 lib/pulse-${VERSION}/modules/module-pipe-sink.so
 lib/pulse-${VERSION}/modules/module-pipe-source.so
 lib/pulse-${VERSION}/modules/module-position-event-sounds.so
-lib/pulse-${VERSION}/modules/module-raop-discover.so
 lib/pulse-${VERSION}/modules/module-raop-sink.so
 lib/pulse-${VERSION}/modules/module-remap-sink.so
 lib/pulse-${VERSION}/modules/module-rescue-streams.so
 lib/pulse-${VERSION}/modules/module-rtp-recv.so
 lib/pulse-${VERSION}/modules/module-rtp-send.so
-lib/pulse-${VERSION}/modules/module-rygel-media-server.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-tcp.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-sine-source.so
 lib/pulse-${VERSION}/modules/module-sine.so
 lib/pulse-${VERSION}/modules/module-stream-restore.so
 lib/pulse-${VERSION}/modules/module-suspend-on-idle.so
+lib/pulse-${VERSION}/modules/module-switch-on-connect.so
 lib/pulse-${VERSION}/modules/module-tunnel-sink.so
 lib/pulse-${VERSION}/modules/module-tunnel-source.so
+lib/pulse-${VERSION}/modules/module-virtual-sink.so
+lib/pulse-${VERSION}/modules/module-virtual-source.so
 lib/pulse-${VERSION}/modules/module-volume-restore.so
-lib/pulse-${VERSION}/modules/module-x11-bell.so
-lib/pulse-${VERSION}/modules/module-x11-cork-request.so
-lib/pulse-${VERSION}/modules/module-x11-publish.so
-lib/pulse-${VERSION}/modules/module-x11-xsmp.so
-lib/pulse-${VERSION}/modules/module-zeroconf-discover.so
-lib/pulse-${VERSION}/modules/module-zeroconf-publish.so
 libexec/pulse/
-@bin libexec/pulse/gconf-helper
 @man man/man1/esdcompat.1
-@man man/man1/pabrowse.1
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
 @man man/man1/padsp.1
 @man man/man1/paplay.1
 @man man/man1/pasuspender.1
-@man man/man1/pax11publish.1
 @man man/man1/pulseaudio.1
 @man man/man5/default.pa.5
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
 share/examples/pulseaudio/
-share/examples/pulseaudio/dbus-1/
-@sample ${SYSCONFDIR}/dbus-1/
-share/examples/pulseaudio/dbus-1/system.d/
-@sample ${SYSCONFDIR}/dbus-1/system.d/
-share/examples/pulseaudio/dbus-1/system.d/pulseaudio-system.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/pulseaudio-system.conf
 share/examples/pulseaudio/pulse/
 @sample ${SYSCONFDIR}/pulse/
 share/examples/pulseaudio/pulse/client.conf
@@ -166,14 +147,6 @@ share/examples/pulseaudio/pulse/default.pa
 @sample ${SYSCONFDIR}/pulse/default.pa
 share/examples/pulseaudio/pulse/system.pa
 @sample ${SYSCONFDIR}/pulse/system.pa
-share/examples/pulseaudio/xdg/
-@sample ${SYSCONFDIR}/xdg/
-share/examples/pulseaudio/xdg/autostart/
-@sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/pulseaudio/xdg/autostart/pulseaudio-kde.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/pulseaudio-kde.desktop
-share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/bn_IN/LC_MESSAGES/pulseaudio.mo
 share/locale/ca/LC_MESSAGES/pulseaudio.mo
@@ -187,6 +160,7 @@ share/locale/es/LC_MESSAGES/pulseaudio.mo
 share/locale/fi/LC_MESSAGES/pulseaudio.mo
 share/locale/fr/LC_MESSAGES/pulseaudio.mo
 share/locale/gu/LC_MESSAGES/pulseaudio.mo
+share/locale/he/LC_MESSAGES/pulseaudio.mo
 share/locale/hi/LC_MESSAGES/pulseaudio.mo
 share/locale/hu/LC_MESSAGES/pulseaudio.mo
 share/locale/it/LC_MESSAGES/pulseaudio.mo
@@ -200,6 +174,7 @@ share/locale/pa/LC_MESSAGES/pulseaudio.mo
 share/locale/pl/LC_MESSAGES/pulseaudio.mo
 share/locale/pt/LC_MESSAGES/pulseaudio.mo
 share/locale/pt_BR/LC_MESSAGES/pulseaudio.mo
+share/locale/ru/LC_MESSAGES/pulseaudio.mo
 share/locale/sr/LC_MESSAGES/pulseaudio.mo
 share/locale/sr@latin/LC_MESSAGES/pulseaudio.mo
 share/locale/sv/LC_MESSAGES/pulseaudio.mo
@@ -207,6 +182,7 @@ share/locale/ta/LC_MESSAGES/pulseaudio.mo
 share/locale/te/LC_MESSAGES/pulseaudio.mo
 share/locale/uk/LC_MESSAGES/pulseaudio.mo
 share/locale/zh_CN/LC_MESSAGES/pulseaudio.mo
+share/locale/zh_TW/LC_MESSAGES/pulseaudio.mo
 share/vala/
 share/vala/vapi/
 share/vala/vapi/libpulse-mainloop-glib.deps

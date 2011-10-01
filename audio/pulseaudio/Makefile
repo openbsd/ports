@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/25 18:16:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/01 08:37:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		0.9.23
+VERSION=		1.0
 DISTNAME=		pulseaudio-${VERSION}
 
-REVISION=		6
-
-SHARED_LIBS +=  pulse-browse              0.0 # 1.1
-SHARED_LIBS +=  pulse-mainloop-glib       0.0 # 0.4
-SHARED_LIBS +=  pulse-simple              0.0 # 0.3
-SHARED_LIBS +=  pulse                     0.0 # 12.4
+SHARED_LIBS +=  pulse                1.0      # .13.4
+SHARED_LIBS +=  pulse-simple         0.0      # .0.3
+SHARED_LIBS +=  pulse-mainloop-glib  0.0      # .0.4
 
 CATEGORIES=		audio
 
@@ -27,69 +24,82 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m ossaudio
+WANTLIB += pcre pthread sndfile speexdsp ssl
+
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar
 
 MODULES=		devel/gettext \
 			textproc/intltool
 
-WANTLIB += ICE ORBit-2 SM X11 X11-xcb Xext Xi Xtst avahi-client
-WANTLIB += avahi-common c crypto dbus-1 execinfo ffi gconf-2 gdbm
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += ltdl m ossaudio pcre pthread samplerate sndfile speexdsp
-WANTLIB += ssl xcb z
-
 USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
-# module-console-kit.so
-RUN_DEPENDS=		sysutils/consolekit
-
 BUILD_DEPENDS=		archivers/gtar
-LIB_DEPENDS=		audio/libsamplerate \
-			audio/speex \
+LIB_DEPENDS=		audio/speex \
 			databases/gdbm \
-			devel/gconf2 \
 			devel/libexecinfo \
 			devel/libtool,-ltdl>=2.4 \
-			net/avahi
+			devel/json-c \
+			devel/glib2 \
+			audio/libsndfile
 
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf gnu
+
+# We only enable the strict minimum for basic volume control support.
+# aucat(1) is the default sound server on OpenBSD and pulseaudio is only
+# needed for a couple of use cases (volume control, media-keys)
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static \
 			--disable-atomic-arm-linux-helpers \
+			--disable-default-build-tests \
 			--with-system-user=_pulse \
 			--with-system-group=_pulse \
 			--with-access-group=_pulse-access \
 			--with-database=gdbm \
-			--enable-x11 \
+			--without-fftw \
+			--without-caps \
+			--enable-oss-output \
+			--enable-oss-wrapper \
+			--disable-x11 \
 			--disable-alsa \
 			--disable-asyncns \
 			--disable-bluez \
+			--disable-dbus \
 			--disable-gtk2 \
 			--disable-jack \
 			--disable-hal \
 			--disable-hal-compat \
 			--disable-udev \
 			--disable-lirc \
+			--disable-samplerate \
 			--disable-solaris \
 			--disable-tcpwrap \
-			--enable-oss-output \
-			--enable-oss-wrapper \
+			--disable-coreaudio-output \
+			--disable-waveout \
+			--disable-gconf \
+			--disable-avahi \
+			--disable-orc \
 			--localstatedir=/var
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/" \
 			PTHREAD_LIBS="-pthread"
 
-FAKE_FLAGS=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
-			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
-			pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
+FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in \
 			${WRKSRC}/src/pulse/util.c
+
+# remove man pages for utilities we don't install
+post-install:
+	cd ${PREFIX} && \
+		rm man/man1/pax11publish.1 \
+		man/man1/start-pulseaudio-kde.1 \
+		man/man1/start-pulseaudio-x11.1
 
 .include <bsd.port.mk>
