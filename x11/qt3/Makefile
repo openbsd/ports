@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.101 2011/10/02 07:03:11 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -96,21 +96,21 @@ CONFIGURE_ARGS=	-qt-gif -system-libmng -system-libpng -system-libjpeg -system-zl
 		-L${WRKSRC}/lib \
 		-L${LOCALBASE}/lib
 
-MULTI_PACKAGES+=-main -html
+MULTI_PACKAGES+=-main -html -examples -mysql -postgresql -sqlite2
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=-debug
 PKGDEBUG=-debug
+FLAVOR += no_examples
 .else
 PKGDEBUG=
 .endif
 
 CONFIGURE_ARGS+=-thread
 
+.include <bsd.port.arch.mk>
 
-.if !${FLAVOR:L:Mdebug} && !${FLAVOR:L:Mno_examples}
-MULTI_PACKAGES+=	-examples
-.else
+.if !${BUILD_PACKAGES:M-examples}
 ALL_TARGET=sub-src sub-tools
 .endif
 
@@ -123,30 +123,28 @@ CONFIGURE_ENV=	QTDIR="${WRKSRC}"
 LIB_DEPENDS=
 BUILD_DEPENDS=print/cups
 
-.if !empty(FLAVOR:L:Mno_mysql)
-CONFIGURE_ARGS+=-no-sql-mysql
-.else
-MULTI_PACKAGES+=	-mysql
+.if ${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql \
 	-plugin-sql-mysql
+.else
+CONFIGURE_ARGS+=-no-sql-mysql
 .endif
 
 
-.if !empty(FLAVOR:L:Mno_postgresql)
-CONFIGURE_ARGS+=-no-sql-psql
-.else
-MULTI_PACKAGES+=	-postgresql
+.if ${BUILD_PACKAGES:M-postgresql}
 BUILD_DEPENDS+=databases/postgresql,-server
 CONFIGURE_ARGS+= -I${LOCALBASE}/include/postgresql \
 	    -I${LOCALBASE}/include/postgresql/server \
 	    -L${LOCALBASE}/lib \
 	    -I${LOCALBASE}/include -plugin-sql-psql
-.endif
-.if !empty(FLAVOR:L:Mno_sqlite2)
-CONFIGURE_ARGS+=-no-sql-sqlite
 .else
-MULTI_PACKAGES+=	-sqlite2
+CONFIGURE_ARGS+=-no-sql-psql
+.endif
+
+.if ${BUILD_PACKAGES:M-sqlite2}
 CONFIGURE_ARGS+= -plugin-sql-sqlite
+.else
+CONFIGURE_ARGS+=-no-sql-sqlite
 .endif
 
 
@@ -303,15 +301,15 @@ do-install:
 		${QT_PLUGINSDIR}/sqldrivers ${QT_PLUGINSDIR}/styles \
 		${QT_PLUGINSDIR}/inputmethods
 
-.if empty(FLAVOR:L:Mno_postgresql)
+.if ${BUILD_PACKAGES:M-postgresql}
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlpsql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
-.if empty(FLAVOR:L:Mno_mysql)
+.if ${BUILD_PACKAGES:M-mysql}
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlmysql.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif
-.if empty(FLAVOR:L:Mno_sqlite2)
+.if ${BUILD_PACKAGES:M-sqlite2}
 	${INSTALL_DATA} ${WRKBUILD}/plugins/sqldrivers/libqsqlite.so \
 	    ${QT_PLUGINSDIR}/sqldrivers
 .endif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2011/09/19 22:27:35 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2011/10/02 07:03:11 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -138,7 +138,8 @@ BUILD_DEPENDS +=	print/cups
 BUILD_DEPENDS +=	x11/dbus
 BUILD_DEPENDS +=	databases/postgresql,-server
 
-MULTI_PACKAGES =	-main -html -mysql -postgresql -sqlite2 -sqlite -tds
+MULTI_PACKAGES =	-main -examples \
+			-html -mysql -postgresql -sqlite2 -sqlite -tds
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	-debug
@@ -147,8 +148,9 @@ MULTI_PACKAGES +=	-debug
 CONFIGURE_ARGS +=-release
 .endif
 
+.include <bsd.port.arch.mk>
 
-.if ${FLAVOR:L:Mno_examples}
+.if !${BUILD_PACKAGES:M-examples}
 SUBTARGETS = 		sub-tools-bootstrap \
 			sub-moc \
 			sub-rcc \
@@ -183,7 +185,6 @@ INSTALL_TARGET =	${SUBTARGETS:S/$/-install_subtargets/} \
 			install_htmldocs install_qchdocs install_docimages \
 			install_qmake install_mkspecs
 .else
-MULTI_PACKAGES +=	-examples
 PROGRAMS +=		qtdemo pixeltool
 .endif
 
@@ -213,32 +214,32 @@ WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			Xrender expat fontconfig freetype png>=2 z
 
 
-LIB_DEPENDS-mysql =	${BASE_PKGPATH} \
+LIB_DEPENDS-mysql =	${BUILD_PKGPATH} \
 			databases/mysql
 WANTLIB-mysql =		${sqlWANTLIB} \
 			crypto ssl pthread z mysqlclient_r
 
 
-LIB_DEPENDS-postgresql =${BASE_PKGPATH} \
+LIB_DEPENDS-postgresql =${BUILD_PKGPATH} \
 			databases/postgresql
 WANTLIB-postgresql =	${sqlWANTLIB}  pq
 			
 
-LIB_DEPENDS-sqlite2 =	${BASE_PKGPATH} \
+LIB_DEPENDS-sqlite2 =	${BUILD_PKGPATH} \
 			databases/sqlite
 WANTLIB-sqlite2 =	${sqlWANTLIB} sqlite
 
 
-LIB_DEPENDS-sqlite =	${BASE_PKGPATH} \
+LIB_DEPENDS-sqlite =	${BUILD_PKGPATH} \
 			databases/sqlite3
 WANTLIB-sqlite =	${sqlWANTLIB} sqlite3
 
 
-LIB_DEPENDS-tds =	${BASE_PKGPATH} \
+LIB_DEPENDS-tds =	${BUILD_PKGPATH} \
 			databases/freetds
 WANTLIB-tds =		${sqlWANTLIB} sybdb
 
-LIB_DEPENDS-examples =	${BASE_PKGPATH}
+LIB_DEPENDS-examples =	${BUILD_PKGPATH}
 WANTLIB-examples =	${commonWANTLIB} lib/qt4/QtDesigner \
 			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
 			lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtXml \
@@ -253,19 +254,16 @@ WANTLIB-html =
 RUN_DEPENDS-html =
 PKG_ARCH-html =	*
 
-.include <bsd.own.mk>
-
 .if ${COMPILER_VERSION:L:Mgcc4*}
 CONFIGURE_ARGS +=	-platform openbsd-g++4
-PKG_ARGS += -DGCC4=1
-commonWANTLIB += stdc++
-sqlWANTLIB += stdc++
-LIB_DEPENDS-examples +=	${BASE_PKGPATH}
+PKG_ARGS += 		-DGCC4=1
+commonWANTLIB += 	stdc++
+sqlWANTLIB += 		stdc++
 WANTLIB-examples +=	lib/qt4/QtWebKit lib/qt4/QtXmlPatterns
-LIB_DEPENDS-main += databases/sqlite3
-WANTLIB-main += sqlite3
+LIB_DEPENDS-main += 	databases/sqlite3
+WANTLIB-main += 	sqlite3
 .else
-PKG_ARGS += -DGCC4=0
+PKG_ARGS += 		-DGCC4=0
 .endif
 
 commonWANTLIB += 	stdc++
