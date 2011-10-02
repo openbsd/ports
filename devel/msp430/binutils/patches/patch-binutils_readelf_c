@@ -1,0 +1,36 @@
+$OpenBSD: patch-binutils_readelf_c,v 1.1 2011/10/02 18:26:32 jasper Exp $
+
+Fix -Wbounded warnings by using correct casts.
+
+--- binutils/readelf.c.orig	Fri Sep 30 16:24:11 2011
++++ binutils/readelf.c	Fri Sep 30 16:28:53 2011
+@@ -12202,8 +12202,10 @@ get_file_header (FILE * file)
+   if (is_32bit_elf)
+     {
+       Elf32_External_Ehdr ehdr32;
++      /* Temporary var to prevent the GCC -Wbounded checker from firing. */
++      void *tmp = &ehdr32.e_type[0];
+ 
+-      if (fread (ehdr32.e_type, sizeof (ehdr32) - EI_NIDENT, 1, file) != 1)
++      if (fread (tmp, sizeof (ehdr32) - EI_NIDENT, 1, file) != 1)
+ 	return 0;
+ 
+       elf_header.e_type      = BYTE_GET (ehdr32.e_type);
+@@ -12223,6 +12225,8 @@ get_file_header (FILE * file)
+   else
+     {
+       Elf64_External_Ehdr ehdr64;
++      /* Temporary var to prevent the GCC -Wbounded checker from firing. */
++      void *tmp = &ehdr64.e_type[0];
+ 
+       /* If we have been compiled with sizeof (bfd_vma) == 4, then
+ 	 we will not be able to cope with the 64bit data found in
+@@ -12235,7 +12239,7 @@ get_file_header (FILE * file)
+ 	  return 0;
+ 	}
+ 
+-      if (fread (ehdr64.e_type, sizeof (ehdr64) - EI_NIDENT, 1, file) != 1)
++      if (fread (tmp, sizeof (ehdr64) - EI_NIDENT, 1, file) != 1)
+ 	return 0;
+ 
+       elf_header.e_type      = BYTE_GET (ehdr64.e_type);

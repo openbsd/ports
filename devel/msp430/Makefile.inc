@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2011/09/16 10:24:46 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2011/10/02 18:26:32 jasper Exp $
 
 TARGET=			msp430
 
@@ -41,8 +41,6 @@ CONFIGURE_STYLE?=	gnu
 CONFIGURE_ARGS+=	--target=msp430		\
 			--disable-nls		\
 			--disable-shared
-# XXX: Breaks with -Wbounded 
-CONFIGURE_ARGS+=	--disable-werror
 
 USE_LIBTOOL?=		Yes
 USE_GROFF?=		Yes
