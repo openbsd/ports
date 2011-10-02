@@ -1,0 +1,96 @@
+$OpenBSD: patch-src_libical_icaltimezone_c,v 1.1 2011/10/02 08:55:40 ajacoutot Exp $
+
+From upstream SVN:
+http://freeassociation.svn.sourceforge.net/viewvc/freeassociation?view=revision&revision=1039
+
+--- src/libical/icaltimezone.c.orig	Mon Aug 30 22:05:06 2010
++++ src/libical/icaltimezone.c	Sat Oct  1 12:08:20 2011
+@@ -45,6 +45,11 @@
+ 
+ #include <sys/stat.h>
+ 
++#ifdef HAVE_PTHREAD
++#include <pthread.h>
++static pthread_mutex_t builtin_mutex = PTHREAD_MUTEX_INITIALIZER;
++#endif
++
+ #ifdef WIN32
+ #include <mbstring.h>
+ #include <windows.h>
+@@ -453,8 +458,7 @@ icaltimezone_ensure_coverage		(icaltimezone *zone,
+ 
+     int changes_end_year;
+ 
+-    if (!zone->component)
+-	icaltimezone_load_builtin_timezone (zone);
++    icaltimezone_load_builtin_timezone (zone);
+ 
+     if (icaltimezone_minimum_expansion_year == -1) {
+ 	struct icaltimetype today = icaltime_today();
+@@ -1140,8 +1144,7 @@ icaltimezone_get_tzid			(icaltimezone *zone)
+     if (!zone)
+ 	return NULL;
+ 
+-    if (!zone->tzid)
+-	icaltimezone_load_builtin_timezone (zone);
++    icaltimezone_load_builtin_timezone (zone);
+ 
+     return zone->tzid;
+ }
+@@ -1167,8 +1170,7 @@ icaltimezone_get_tznames		(icaltimezone *zone)
+     if (!zone)
+ 	return NULL;
+ 
+-    if (!zone->component)
+-	icaltimezone_load_builtin_timezone (zone);
++    icaltimezone_load_builtin_timezone (zone);
+ 
+     return zone->tznames;
+ }
+@@ -1210,8 +1212,7 @@ icaltimezone_get_component		(icaltimezone *zone)
+     if (!zone)
+ 	return NULL;
+ 
+-    if (!zone->component)
+-	icaltimezone_load_builtin_timezone (zone);
++    icaltimezone_load_builtin_timezone (zone);
+ 
+     return zone->component;
+ }
+@@ -1449,8 +1450,7 @@ icaltimezone_get_builtin_timezone_from_offset	(int off
+     for (i=0; i<count; i++) {
+ 	int z_offset;
+ 	zone = icalarray_element_at (builtin_timezones, i);
+-	if (!zone->component)
+-	    icaltimezone_load_builtin_timezone (zone);
++        icaltimezone_load_builtin_timezone (zone);
+ 	
+ 	z_offset = get_offset(zone);
+ 
+@@ -1745,6 +1745,12 @@ icaltimezone_load_builtin_timezone	(icaltimezone *zone
+     if (!zone->location || !zone->location[0])
+ 	return;
+ 
++#ifdef HAVE_PTHREAD
++    pthread_mutex_lock(&builtin_mutex);
++    if (zone->component)
++       goto out;
++#endif
++
+ #ifdef USE_BUILTIN_TZDATA
+     {
+     char *filename;
+@@ -1801,8 +1807,11 @@ icaltimezone_load_builtin_timezone	(icaltimezone *zone
+     icalcomponent_remove_component(comp,subcomp);
+     icalcomponent_free(comp);
+     }
+-#endif    
+-
++#endif 
++#ifdef HAVE_PTHREAD
++ out:
++    pthread_mutex_unlock(&builtin_mutex);
++#endif
+ }
+ 
+ 

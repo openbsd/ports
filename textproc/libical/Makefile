@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/20 18:15:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/02 08:55:40 ajacoutot Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
-DISTNAME=	libical-0.44
-REVISION=	3
+DISTNAME=	libical-0.46
 
-SHARED_LIBS +=  ical                 1.0      # .44.0
-SHARED_LIBS +=  icalss               1.0      # .44.0
-SHARED_LIBS +=  icalvcal             0.0      # .44.0
+SHARED_LIBS +=  ical                 2.0      # 46.0
+SHARED_LIBS +=  icalss               2.0      # 46.0
+SHARED_LIBS +=  icalvcal             1.0      # 46.0
 
 CATEGORIES=	textproc
 
@@ -23,10 +22,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += pthread
+
 USE_LIBTOOL=	Yes
 
+AUTOCONF_VERSION= 2.60
+AUTOMAKE_VERSION= 1.9
+
+BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
+		devel/automake/${AUTOMAKE_VERSION}
+
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--without-builtintz
+
+do-configure:
+	cd ${WRKSRC} && \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		./autogen.sh ${CONFIGURE_ARGS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/libical/

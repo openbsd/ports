@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_libical_icalparser_c,v 1.1 2011/03/18 12:23:45 ajacoutot Exp $
+$OpenBSD: patch-src_libical_icalparser_c,v 1.2 2011/10/02 08:55:40 ajacoutot Exp $
 
 SVN rev. 1062
 In parser_get_next_char(), make sure we are on at least the second character
 when testing if the current double-quote char is escaped.
 Might fix the crash reported in ID: 2994723
 
---- src/libical/icalparser.c.orig	Sun Sep 27 04:38:51 2009
-+++ src/libical/icalparser.c	Fri Mar 18 08:11:26 2011
+From upstream SVN:
+http://freeassociation.svn.sourceforge.net/viewvc/freeassociation?view=revision&revision=1042
+
+--- src/libical/icalparser.c.orig	Mon Aug 30 22:05:06 2010
++++ src/libical/icalparser.c	Sat Oct  1 12:10:27 2011
 @@ -192,18 +192,18 @@ char* parser_get_next_char(char c, char *str, int qm)
  
      for(p=str; *p!=0; p++){
@@ -29,3 +32,25 @@ Might fix the crash reported in ID: 2994723
  				return p;
  		} 
  
+@@ -930,10 +930,7 @@ icalcomponent* icalparser_add_line(icalparser* parser,
+ 
+                 /* Change for mozilla */
+                 /* have the option of being flexible towards unsupported parameters */
+-                #ifndef ICAL_ERRORS_ARE_FATAL
+-                continue;
+-                #endif
+-
++		#if ICAL_ERRORS_ARE_FATAL == 1
+ 		insert_error(tail, str, "Cant parse parameter name",
+ 			     ICAL_XLICERRORTYPE_PARAMETERNAMEPARSEERROR);
+ 		tail = 0;
+@@ -947,6 +944,9 @@ icalcomponent* icalparser_add_line(icalparser* parser,
+ 			name = 0;
+ 		}
+ 		return 0;
++		#else
++		continue;
++		#endif
+ 	    }
+ 
+ 	    /* if (pvalue) {

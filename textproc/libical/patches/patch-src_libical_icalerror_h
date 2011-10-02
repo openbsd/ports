@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_libical_icalerror_h,v 1.1 2011/10/02 08:55:40 ajacoutot Exp $
+
+From upstream SVN:
+http://freeassociation.svn.sourceforge.net/viewvc/freeassociation?view=revision&revision=1042
+
+--- src/libical/icalerror.h.orig	Mon Aug 30 22:05:06 2010
++++ src/libical/icalerror.h	Sat Oct  1 12:10:32 2011
+@@ -121,7 +121,7 @@ if(icalerror_get_error_state(x)==ICAL_ERROR_FATAL || \
+ void icalerror_set_errno(icalerrorenum x); 
+ #endif
+ 
+-#ifdef ICAL_ERRORS_ARE_FATAL
++#if ICAL_ERRORS_ARE_FATAL == 1
+ #undef NDEBUG
+ #endif
+ 
+@@ -131,7 +131,7 @@ void icalerror_set_errno(icalerrorenum x); 
+ #define icalerror_check_component_type(value,type);
+ 
+ /* Assert with a message */
+-#ifdef ICAL_ERRORS_ARE_FATAL
++#if ICAL_ERRORS_ARE_FATAL == 1
+ 
+ #ifdef __GNUC__
+ #define icalerror_assert(test,message) if(!(test)){fprintf(stderr,"%s(), %s:%d: %s\n",__FUNCTION__,__FILE__,__LINE__,message);icalerror_stop_here(); abort();}
