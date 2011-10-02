@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.139 2011/10/02 08:18:04 espie Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -41,20 +41,26 @@ CONFIGURE_ENV=		WGET=/usr/bin/ftp
 PSEUDO_FLAVORS=		no_python
 FLAVOR?=
 
-MULTI_PACKAGES=		-main
+MULTI_PACKAGES=		-main -python
 
 WANTLIB-main=		${WANTLIB} c
 RUN_DEPENDS-main=
+NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 
-.if !${FLAVOR:L:Mno_python}
-MULTI_PACKAGES+=	-python
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-python}
 MODULES+=		lang/python
 LIB_DEPENDS-python=	textproc/libxml,-main \
 			${MODPY_LIB_DEPENDS} \
 			${MODLIBICONV_LIB_DEPENDS}
 WANTLIB-python=		m z util xml2>=11 ${MODPY_WANTLIB} ${MODLIBICONV_WANTLIB}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxml2/
+CONFIGURE_ARGS+=	--with-python
+.else
+CONFIGURE_ARGS+=	--without-python
 .endif
+
 
 CONFIGURE_ARGS+=	--without-threads
 REGRESS_DEPENDS=	devel/gmake
@@ -65,7 +71,7 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
-.if !${FLAVOR:Mno_python}
+.if ${BUILD_PACKAGES:M-python}
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}${MODPY_SITEPKG}
 .endif
 
@@ -74,9 +80,3 @@ do-regress:
 		${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
 
 .include <bsd.port.mk>
-
-.if ${FLAVOR:L:Mno_python} || ${NO_SHARED_LIBS:L} == "yes"
-CONFIGURE_ARGS+=	--without-python
-.else
-CONFIGURE_ARGS+=	--with-python
-.endif
