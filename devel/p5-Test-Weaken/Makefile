@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/02 14:02:23 rpointel Exp $
 
 COMMENT =	test that freed memory objects were, indeed, freed
 
 MODULES =	cpan
-DISTNAME =	Test-Weaken-3.002000
-REVISION =	0
+DISTNAME =	Test-Weaken-3.006000
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
