@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/01 08:37:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/02 09:32:13 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,7 +47,7 @@ LIB_DEPENDS=		audio/speex \
 			audio/libsndfile
 
 AUTOCONF_VERSION=	2.68
-CONFIGURE_STYLE=	autoconf gnu
+CONFIGURE_STYLE=	autoconf
 
 # We only enable the strict minimum for basic volume control support.
 # aucat(1) is the default sound server on OpenBSD and pulseaudio is only
