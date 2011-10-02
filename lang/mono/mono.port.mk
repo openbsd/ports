@@ -1,9 +1,8 @@
-# $OpenBSD: mono.port.mk,v 1.18 2011/09/28 13:56:03 espie Exp $
+# $OpenBSD: mono.port.mk,v 1.19 2011/10/02 15:21:44 ajacoutot Exp $
 
 # XXX see bsd.port.arch.mk
 # XXX arm powerpc (no support for sigcontext)
-MODMONO_ONLY_FOR_ARCHS=	${MONO_ARCHS} 
-ONLY_FOR_ARCHS?=	${MODMONO_ONLY_FOR_ARCHS}
+ONLY_FOR_ARCHS?=	${MONO_ARCHS}
 
 CATEGORIES+=		lang/mono
 
