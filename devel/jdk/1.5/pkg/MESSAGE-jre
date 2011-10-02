@@ -12,4 +12,4 @@ to your local Mozilla plugins directory, which is found at
 
 or to the shared Mozilla plugins directory, which is found at
 
-${PREFIX}/lib/mozilla-plugins/
+${PREFIX}/lib/mozilla/plugins/
