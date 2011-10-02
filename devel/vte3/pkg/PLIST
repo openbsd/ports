@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/26 15:17:25 jasper Exp $
-@conflict vte-<=0.28.2
+@comment $OpenBSD: PLIST,v 1.5 2011/10/02 16:11:11 ajacoutot Exp $
+@conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @pkgpath devel/vte,-main
 @bin bin/vte2_90
