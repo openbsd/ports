@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/10/02 13:14:15 nigel Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
 V =		4.4
 PATCHLEVEL =	3
-REVISION =	1
+REVISION =	2
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
@@ -29,7 +29,7 @@ CONFIGURE_ARGS =	--without-linux-vga \
 			--with-readline \
 			--with-lasergnu \
 			--disable-wxwidgets \
-			--disable-lua \
+			--without-lua \
 			--without-lisp-files \
 			--without-pdf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
