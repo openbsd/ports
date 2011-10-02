@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/10/02 13:31:33 ajacoutot Exp $
+
+# XXX Binary files patch-panels_info_hostnames-test_txt and
+# patch-panels_info_hostnames-test_txt.new differ
+DIFF_ARGS=	-a
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
