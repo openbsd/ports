@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/02 08:55:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/02 20:11:30 jasper Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
@@ -31,6 +31,8 @@ AUTOMAKE_VERSION= 1.9
 
 BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/automake/${AUTOMAKE_VERSION}
+# needs the AM_PROG_LIBTOOL macro                                           
+BUILD_DEPENDS+=	devel/libtool
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
