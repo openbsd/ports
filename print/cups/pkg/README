@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.11 2011/09/08 10:33:12 ajacoutot Exp $
+$OpenBSD: README,v 1.12 2011/10/02 14:41:48 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,27 +23,18 @@ splix...
 To be able to use CUPS printers from GTK applications, the corresponding
 package needs to be installed: gtk+2-cups and/or gtk+3-cups.
 
-CUPS supports both ulpt(4) and libusb for printing to USB devices.
-ulpt(4) should work out of the box, however:
-* ulpt(4) does not support select() which is used by CUPS to know when
-the device can accept more data (http://www.cups.org/str.php?L3028)
-* it won't be able to automatically detect the corresponding driver/PPD
-* it is deprecated upstream in favor of libusb
-
-Required steps for libusb based printing
-========================================
-If you choose to make your USB printer use libusb, you need to allow the
+USB
+===
+Since USB printing will be handled by libusb, you need to allow the
 _cups user access to the corresponding USB endpoint. To do so, find
 where your printer is attached to using `sudo usbdevs -vd` then change
 the ownerships accordingly.
 
 e.g.
-Controller /dev/usb3:
-addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086), rev 1.00
-  uhub3
- port 1 powered
- port 2 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
-   ulpt0
+Controller /dev/usb5:
+addr 1: full speed, self powered, config 1, OHCI root hub(0x0000), ATI(0x1002), rev 1.00
+  uhub5
+ port 1 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
    ugen0
 
 $ sudo chown _cups /dev/ugen0.* /dev/usb3
@@ -55,3 +46,7 @@ allow for multi-function devices to work for both printing and scanning
 To preserve your changes after a system update, use rc.local(8).
 e.g. for a multi-function printer/scanner add the following lines:
 chown _cups:_saned /dev/ugen0.* /dev/usb1
+
+*** WARNING ***
+ulpt(4) needs to be disable in the kernel (see config(8)) or the printer
+will not be available to libusb.
