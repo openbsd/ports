@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/30 12:29:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/10/02 15:27:31 ajacoutot Exp $
+
+ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	gtk+2 avahi-ui libraries
@@ -73,9 +75,6 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/gdbm \
 		devel/libdaemon>=0.14 \
 		x11/dbus
-
-# keep in sync with lang/mono/mono.port.mk
-ONLY_FOR_ARCHS-mono = i386 amd64
 
 BUILD_MONO = No
 .if !${FLAVOR:L:Mno_mono}

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/26 14:20:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/02 15:27:31 ajacoutot Exp $
+
+ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
 COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
@@ -58,9 +60,6 @@ FLAVOR ?=
 
 MODMONO_DEPS=   No
 DLLMAP_FILES=	mono/gmime-sharp.dll.config
-
-# keep in sync with lang/mono/mono.port.mk
-ONLY_FOR_ARCHS-mono= i386 amd64
 
 .include <bsd.port.arch.mk>
 
