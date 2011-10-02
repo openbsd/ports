@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/02 13:59:38 rpointel Exp $
 
 COMMENT= 	handy web browsing in a Perl object
 
 MODULES=	cpan
 
-DISTNAME=	WWW-Mechanize-1.60
-REVISION=	1
+DISTNAME=	WWW-Mechanize-1.70
 CATEGORIES=	www perl5
-USE_GROFF =	Yes
 
 # Artistic + GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	www/p5-libwww>=5.78 \
+RUN_DEPENDS=	www/p5-libwww>=5.829 \
 		devel/p5-Test-LongString \
 		www/p5-HTTP-Server-Simple
 
