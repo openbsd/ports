@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/02 19:25:51 naddy Exp $
 
 COMMENT=	GTK+2 secure notes manager
 
@@ -23,7 +23,7 @@ WANTLIB += gdk-x11-2.0>=1200 gdk_pixbuf-2.0 gtk-x11-2.0 gthread-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png popt
 WANTLIB += pthread pthread-stubs xcb xcb-render xcb-render-util z
 
-MASTER_SITES=	http://download.berlios.de/gringotts/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=gringotts/}
 
 MODULES=        devel/gettext
 LIB_DEPENDS=	x11/gtk+2 \

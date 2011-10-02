@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/02 19:25:51 naddy Exp $
 
 COMMENT=	encryption backend
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	bz2>=10 m mcrypt>=8 mhash z
 
-MASTER_SITES=	http://download.berlios.de/gringotts/
+MASTER_SITES=	${MASTER_SITE_BERLIOS:=gringotts/}
 
 LIB_DEPENDS=	security/libmcrypt \
 		archivers/bzip2 \
