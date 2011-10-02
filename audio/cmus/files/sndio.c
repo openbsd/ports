@@ -1,5 +1,8 @@
 /*
- * Copyright (C) 2010 Donovan "Tsomi" Watteau <tsoomi@gmail.com>
+ * Copyright (C) 2011 Donovan "Tsomi" Watteau <tsoomi@gmail.com>
+ *
+ * Based on Thomas Pfaff's work for XMMS, and some suggestions from
+ * Alexandre Ratchov.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -35,15 +38,6 @@ static struct sio_par par;
 static struct sio_hdl *hdl = NULL;
 static int sndio_volume = 100;
 static int sndio_paused;
-
-static long long rdpos;
-static long long wrpos;
-static long bytes_per_sec;
-
-static void onmove_cb(void *addr, int delta)
-{
-	rdpos += delta * (int)(par.bps * par.pchan);
-}
 
 static int sndio_mixer_set_volume(int l, int r)
 {
@@ -95,6 +89,7 @@ static int sndio_set_sf(sample_format_t sf)
 		return -1;
 	}
 
+	par.appbufsz = par.rate * 300 / 1000;
 	apar = par;
 
 	if (!sio_setpar(hdl, &par))
@@ -103,15 +98,16 @@ static int sndio_set_sf(sample_format_t sf)
 	if (!sio_getpar(hdl, &par))
 		return -1;
 
-	wrpos = 0;
-	rdpos = 0;
-	sio_onmove(hdl, onmove_cb, NULL);
+	if (apar.rate != par.rate || apar.pchan != par.pchan ||
+	    apar.bits != par.bits || (par.bits > 8 && apar.le != par.le) ||
+	    apar.sig != par.sig)
+		return -1;
+
 	sndio_mixer_set_volume(sndio_volume, sndio_volume);
 
 	if (!sio_start(hdl))
 		return -1;
 
-	bytes_per_sec = par.bps * par.pchan * par.rate;
 	return 0;
 }
 
@@ -131,7 +127,7 @@ static int sndio_close(void)
 		sio_close(hdl);
 		hdl = NULL;
 	}
-	
+
 	return 0;
 }
 
@@ -140,6 +136,7 @@ static int sndio_open(sample_format_t sf)
 	hdl = sio_open(NULL, SIO_PLAY, 0);
 	if (hdl == NULL)
 		return -1;
+
 	if (sndio_set_sf(sf) == -1) {
 		sndio_close();
 		return -1;
@@ -150,24 +147,13 @@ static int sndio_open(sample_format_t sf)
 
 static int sndio_write(const char *buf, int cnt)
 {
-	const char *t;
+	size_t rc;
 
-	cnt /= 4;
-	cnt *= 4;
-	t = buf;
-	while (cnt > 0) {
-		int rc = sio_write(hdl, buf, cnt);
-		if (rc == -1) {
-			if (errno == EINTR)
-				continue;
-			else
-				return rc;
-		}
-		buf += rc;
-		cnt -= rc;
-	}
+	rc = sio_write(hdl, buf, cnt);
+	if (rc == 0)
+		return -1;
 
-	return (buf - t);
+	return rc;
 }
 
 static int op_sndio_set_option(int key, const char *val)
@@ -182,21 +168,30 @@ static int op_sndio_get_option(int key, char **val)
 
 static int sndio_pause(void)
 {
-	sndio_paused = 1;
+	if (!sndio_paused) {
+		sio_stop(hdl);
+		sndio_paused = 1;
+	}
 
 	return 0;
 }
 
 static int sndio_unpause(void)
 {
-	sndio_paused = 0;
+	if (sndio_paused) {
+		sio_start(hdl);
+		sndio_paused = 0;
+	}
 
 	return 0;
 }
 
 static int sndio_buffer_space(void)
 {
-	return par.bufsz;
+	/*
+	 * Do as if there's always some space and let sio_write() block.
+	 */
+	return par.bufsz * par.bps * par.pchan;
 }
 
 static int sndio_mixer_init(void)
