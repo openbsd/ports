@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.13 2010/12/03 11:43:05 ajacoutot Exp $
+# $OpenBSD: cpan.port.mk,v 1.14 2011/10/03 14:21:02 jasper Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -33,9 +33,7 @@ MODCPAN_EXAMPLES_DIR ?= ${PREFIX}/share/examples/p5-${DISTNAME:C/-([0-9]+\.[0-9]
 MODCPAN_EXAMPLES_DIST ?= examples
 .  if !target(post-install)
 post-install:
-	${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}
-	cd ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/ && pax -rw . ${MODCPAN_EXAMPLES_DIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MODCPAN_EXAMPLES_DIR}
+	${MODCPAN_POST_INSTALL}
 .  endif
 .endif
 
