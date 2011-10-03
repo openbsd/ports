@@ -1,0 +1,58 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_linking_prlink_c,v 1.3 2011/10/03 17:54:23 landry Exp $
+If dlopen() fails, retry with everything stripped after .so
+https://bugzilla.mozilla.org/show_bug.cgi?id=650772
+--- mozilla/nsprpub/pr/src/linking/prlink.c.orig	Wed May  4 22:02:19 2011
++++ mozilla/nsprpub/pr/src/linking/prlink.c	Wed May  4 22:33:45 2011
+@@ -44,6 +44,10 @@
+ #include <image.h>
+ #endif
+ 
++#if defined(OpenBSD)
++#include <sys/param.h> /* for MAXPATHLEN */
++#endif
++
+ #if defined(XP_MACOSX) && defined(USE_MACH_DYLD)
+ #include <Carbon/Carbon.h>
+ #include <CoreFoundation/CoreFoundation.h>
+@@ -810,6 +814,10 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+ #else
+     int dl_flags = 0;
+ #endif
++#if defined(OpenBSD)
++    char sname[MAXPATHLEN];
++    char *c;
++#endif
+     void *h = NULL;
+ 
+     if (flags & PR_LD_LAZY) {
+@@ -834,7 +842,18 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+         }
+ #else
+     h = dlopen(name, dl_flags);
++#if defined(OPENBSD)
++    /* On OpenBSD, we don't know what can be major.minor in libfoo.so.major.minor */
++    /* but ld.so is smart enough to open the correct lib when asked for libfoo.so */
++    /* so if the previous dlopen() failed, let's strip what's after .so and retry */
++    strncpy(sname, name, MAXPATHLEN);
++    if (!h) {
++        if ((c = strstr(sname,".so")) != NULL)
++            c[3] = '\0';
++        h = dlopen(sname, dl_flags);
++    }
+ #endif
++#endif
+ #elif defined(USE_HPSHL)
+     int shl_flags = 0;
+     shl_t h;
+@@ -865,7 +884,11 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
+         PR_DELETE(lm);
+         goto unlock;
+     }
++#if defined(OPENBSD)
++    lm->name = strdup(sname);
++#else
+     lm->name = strdup(name);
++#endif
+     lm->dlh = h;
+     lm->next = pr_loadmap;
+     pr_loadmap = lm;
