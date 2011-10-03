@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/10/03 06:42:45 ajacoutot Exp $
 
 COMMENT=	digital camera frontend
 
 DISTNAME=	gtkam-0.1.17
-REVISION=		0
+REVISION=	1
 
 CATEGORIES=	graphics
 
@@ -48,7 +48,5 @@ CONFIGURE_ARGS +=--with-gnome=no \
 		--with-gimp=no \
 		--with-bonobo=no \
 		--disable-scrollkeeper
-
-FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale
 
 .include <bsd.port.mk>

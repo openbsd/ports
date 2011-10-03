@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.5 2011/10/03 06:42:46 ajacoutot Exp $
+
+Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
+
+--- configure.orig	Sun Oct  2 09:38:59 2011
++++ configure	Sun Oct  2 09:39:35 2011
+@@ -13865,6 +13865,9 @@ else
+ fi
+ 
+     ;;
++    *-*-openbsd*)
++    DATADIRNAME=share
++    ;;
+     *)
+     DATADIRNAME=lib
+     ;;

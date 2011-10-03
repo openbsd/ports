@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/28 06:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/10/03 06:42:46 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.4.0
 DISTNAME=		avant-window-navigator-$V
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	awn                  1.0      # .1.1
 
@@ -65,7 +65,5 @@ CONFIGURE_ARGS+=	--without-vala
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_python_version=${MODPY_VERSION} \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl -lm -pthread -lutil"
-
-FAKE_FLAGS+=		itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/03 06:42:45 ajacoutot Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
 
-REVISION=	4
+REVISION=	5
 
 SHARED_ONLY=	Yes
 

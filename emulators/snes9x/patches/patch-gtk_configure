@@ -1,6 +1,9 @@
-$OpenBSD: patch-gtk_configure,v 1.1 2010/05/13 23:31:56 jakemsr Exp $
---- gtk/configure.orig	Sun Jan 10 17:28:11 2010
-+++ gtk/configure	Mon Apr 19 16:59:27 2010
+$OpenBSD: patch-gtk_configure,v 1.2 2011/10/03 06:42:46 ajacoutot Exp $
+
+Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
+
+--- gtk/configure.orig	Sun Jan 10 18:28:11 2010
++++ gtk/configure	Sun Oct  2 09:23:54 2011
 @@ -2351,7 +2351,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
@@ -10,3 +13,13 @@ $OpenBSD: patch-gtk_configure,v 1.1 2010/05/13 23:31:56 jakemsr Exp $
  CXXFLAGS="$CFLAGS"
  
  ac_ext=c
+@@ -5003,6 +5003,9 @@ else
+   DATADIRNAME=lib
+ fi
+ 
++    ;;
++    *-*-openbsd*)
++    DATADIRNAME=share
+     ;;
+     *)
+     DATADIRNAME=lib

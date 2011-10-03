@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/03 06:42:46 ajacoutot Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -6,7 +6,7 @@ DISTNAME =	snes9x-1.52-src
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	emulators games
 
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://www.snes9x.com/
 
@@ -52,8 +52,7 @@ CONFIGURE_ARGS = --without-portaudio \
 		 --without-pulseaudio \
 		 --without-opengl 
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		DATADIRNAME="share"
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS =	Yes
 
