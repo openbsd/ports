@@ -1,7 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/05 19:28:35 landry Exp $
-lib/tcl/TclXML/
-lib/tcl/TclXML/pkgIndex.tcl
-lib/tcl/TclXML/sgml.tcl
-lib/tcl/TclXML/xml.tcl
-share/doc/TclXML/
-share/doc/TclXML/reference.html
+@comment $OpenBSD: PLIST,v 1.8 2011/10/03 08:41:59 sebastia Exp $
+@conflict TclXML-*
+%%SHARED%%
+include/tclxml/
+include/tclxml/docObj.h
+include/tclxml/tcldom-libxml2.h
+include/tclxml/tcldom.h
+include/tclxml/tclxml-libxml2.h
+include/tclxml/tclxslt.h
+lib/tcl/TclxmlConfig.sh
+lib/tcl/tclxml/
+lib/tcl/tclxml/libTclxmlstub32.a
+lib/tcl/tclxml/pkgIndex.tcl
+lib/tcl/tclxml/process.tcl
+lib/tcl/tclxml/resources.tcl
+lib/tcl/tclxml/sgml-8.0.tcl
+lib/tcl/tclxml/sgml-8.1.tcl
+lib/tcl/tclxml/sgmlparser.tcl
+lib/tcl/tclxml/tcldom-libxml2.tcl
+lib/tcl/tclxml/tclparser-8.0.tcl
+lib/tcl/tclxml/tclparser-8.1.tcl
+lib/tcl/tclxml/tclxslt-libxslt.tcl
+lib/tcl/tclxml/utilities.tcl
+lib/tcl/tclxml/xml-8.0.tcl
+lib/tcl/tclxml/xml-8.1.tcl
+lib/tcl/tclxml/xml__tcl.tcl
+lib/tcl/tclxml/xmldep.tcl
+lib/tcl/tclxml/xmlswitch.tcl
+lib/tcl/tclxml/xpath.tcl
+lib/tcl/tclxml/xsltcache.tcl

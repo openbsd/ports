@@ -1,2 +1,3 @@
-TclXML is a pure-Tcl implementation of a XML parser.  No extensions 
-to Tcl are necessary to use this parser.
+The TclXML project is a collection of tools and libraries for handling
+XML documents with the Tcl scripting language. It has Tcl and C based
+XML parsers, DOM interfaces and XSLT.

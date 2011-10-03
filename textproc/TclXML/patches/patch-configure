@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2011/10/03 08:41:59 sebastia Exp $
+
+make the values match the installation
+
+--- configure.orig	Thu Aug 18 12:35:36 2011
++++ configure	Thu Aug 18 12:35:56 2011
+@@ -10380,7 +10380,7 @@ echo "${ECHO_T}${TCLSH_PROG}" >&6; }
+ #--------------------------------------------------------------------
+ 
+ # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
+-eval pkglibdir="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
++eval pkglibdir="${libdir}/tclxml"
+ if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
+     eval Tclxml_LIB_FLAG="-l${PACKAGE_NAME}${PACKAGE_VERSION}${DBGX}"
+ else
