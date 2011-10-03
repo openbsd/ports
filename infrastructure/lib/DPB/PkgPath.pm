@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.11 2011/09/27 17:15:03 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.12 2011/10/03 08:56:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -235,6 +235,15 @@ sub merge_depends
 	my $global2 = bless {}, "AddDepends";
 	for my $v (values %$h) {
 		my $info = $v->{info};
+		if (defined $info->{DIST}) {
+			for my $f (values %{$info->{DIST}}) {
+				$info->{FDEPENDS}{$f} = $f;
+				bless $info->{FDEPENDS}, "AddDepends";
+			}
+		}
+		# XXX don't grab dependencies for IGNOREd stuff
+		next if defined $info->{IGNORE};
+
 		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS)) {
 			if (defined $info->{$k}) {
 				for my $d (values %{$info->{$k}}) {
@@ -249,12 +258,6 @@ sub merge_depends
 					$info->{RDEPENDS}{$d} = $d;
 					bless $info->{RDEPENDS}, "AddDepends";
 				}
-			}
-		}
-		if (defined $info->{DIST}) {
-			for my $f (values %{$info->{DIST}}) {
-				$info->{FDEPENDS}{$f} = $f;
-				bless $info->{FDEPENDS}, "AddDepends";
 			}
 		}
 	}
