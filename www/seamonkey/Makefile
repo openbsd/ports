@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.92 2011/09/21 14:34:27 nigel Exp $
+# $OpenBSD: Makefile,v 1.93 2011/10/03 21:07:39 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.3.3
+MOZILLA_VERSION=	2.4.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.0beta5
+PKGNAME-lightning =	lightning-seamonkey-1.0beta6
 PKGNAME-enigmail =	enigmail-seamonkey-1.3.2
-REVISION-main =		1
+REVISION-enigmail =	0
 EPOCH-lightning =	0
-REVISION-lightning =	1
 
-# must be in sync with SO_VERSION in main/enigmail/seamonkey
-SO_VERSION=	19.0
+SO_VERSION=	20.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -76,10 +74,10 @@ NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS+=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 
-LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION}:${BUILD_PKGPATH},-main
-WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/xpcom \
-			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/xul \
-			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozalloc \
+LIB_DEPENDS-lightning = STEM->=2.4beta3:${BUILD_PKGPATH},-main
+WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/xpcom \
+			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/xul \
+			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4
 
 RUN_DEPENDS-enigmail =	security/gnupg
@@ -115,7 +113,7 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	calendar-timezones calendar-timezones@mozilla.org \
 	../bin/enigmail-1.4-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
-EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
+EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/extensions/
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

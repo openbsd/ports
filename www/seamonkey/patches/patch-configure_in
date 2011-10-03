@@ -1,18 +1,9 @@
-$OpenBSD: patch-configure_in,v 1.11 2011/08/23 20:25:24 landry Exp $
+$OpenBSD: patch-configure_in,v 1.12 2011/10/03 21:07:39 landry Exp $
 hack to avoid conflict with our own MOZILLA_VERSION var.
 fix linking of seamonkey-bin
---- configure.in.orig	Mon Jun 27 04:55:51 2011
-+++ configure.in	Sat Jul  2 11:40:43 2011
-@@ -251,7 +251,7 @@ dnl Get mozilla version from central milestone file
- MOZILLA_VERSION=`$PERL $MOZILLA_SRCDIR/config/milestone.pl -topsrcdir $MOZILLA_SRCDIR`
- 
- changequote(,)
--MOZILLA_BRANCH_VERSION=`echo ${MOZILLA_VERSION} | sed -e 's/^\([0-9]\.[0-9]\).*/\1/;'`
-+MOZILLA_BRANCH_VERSION="6.0"
- changequote([,])
- 
- dnl Set the Gecko branch version.
-@@ -1126,7 +1126,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
+--- configure.in.orig	Sat Sep 17 03:22:59 2011
++++ configure.in	Mon Sep 19 10:35:56 2011
+@@ -1098,7 +1098,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
  MOZ_JS_STATIC_LIBS='-L$(LIBXUL_DIST)/bin -ljs_static'
  MOZ_JS_SHARED_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
  DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core -lmozalloc'
@@ -21,7 +12,7 @@ fix linking of seamonkey-bin
  XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom -lmozalloc'
  LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
  XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
-@@ -5070,14 +5070,7 @@ dnl ==================================================
+@@ -5043,14 +5043,7 @@ dnl ==================================================
  
  # The GNOME component is built if one of
  # gnome-vfs, gio, gconf or libnotify is available.
