@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2011/08/31 19:47:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.234 2011/10/03 11:10:28 edd Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += an
      SUBDIR += angband
      SUBDIR += angband,no_x11
+     SUBDIR += angband,sdl
      SUBDIR += angrydd
      SUBDIR += atomix
      SUBDIR += barrage
