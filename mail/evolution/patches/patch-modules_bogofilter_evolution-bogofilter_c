@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_bogofilter_evolution-bogofilter_c,v 1.1 2011/10/03 16:33:53 ajacoutot Exp $
+--- modules/bogofilter/evolution-bogofilter.c.orig	Mon Oct  3 17:31:15 2011
++++ modules/bogofilter/evolution-bogofilter.c	Mon Oct  3 17:31:29 2011
+@@ -34,7 +34,7 @@
+ 	((obj), E_TYPE_BOGOFILTER, EBogofilter))
+ 
+ #ifndef BOGOFILTER_BINARY
+-#define BOGOFILTER_BINARY "/usr/bin/bogofilter"
++#define BOGOFILTER_BINARY "${LOCALBASE}/bin/bogofilter"
+ #endif
+ 
+ #define BOGOFILTER_EXIT_STATUS_SPAM		0

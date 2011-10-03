@@ -1,0 +1,27 @@
+$OpenBSD: patch-modules_spamassassin_evolution-spamassassin_c,v 1.1 2011/10/03 16:33:53 ajacoutot Exp $
+--- modules/spamassassin/evolution-spamassassin.c.orig	Mon Oct  3 17:30:28 2011
++++ modules/spamassassin/evolution-spamassassin.c	Mon Oct  3 17:30:53 2011
+@@ -36,19 +36,19 @@
+ 	((obj), E_TYPE_SPAM_ASSASSIN, ESpamAssassin))
+ 
+ #ifndef SPAMASSASSIN_BINARY
+-#define SPAMASSASSIN_BINARY "/usr/bin/spamassassin"
++#define SPAMASSASSIN_BINARY "${LOCALBASE}/bin/spamassassin"
+ #endif
+ 
+ #ifndef SA_LEARN_BINARY
+-#define SA_LEARN_BINARY "/usr/bin/sa-learn"
++#define SA_LEARN_BINARY "${LOCALBASE}/bin/sa-learn"
+ #endif
+ 
+ #ifndef SPAMC_BINARY
+-#define SPAMC_BINARY "/usr/bin/spamc"
++#define SPAMC_BINARY "${LOCALBASE}/bin/spamc"
+ #endif
+ 
+ #ifndef SPAMD_BINARY
+-#define SPAMD_BINARY "/usr/bin/spamd"
++#define SPAMD_BINARY "${LOCALBASE}/bin/spamd"
+ #endif
+ 
+ /* For starting our own daemon. */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2011/10/01 10:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2011/10/03 16:33:53 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.2.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		4
+REVISION-main=		5
 REVISION-plugins=	2
 
 # Only get the first x.y which is needed in the PLIST.
@@ -146,6 +146,10 @@ CONFIGURE_ARGS=		--enable-plugins=all \
 CONFIGURE_ARGS+=	--disable-image-inline
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
+		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
 
 # needed to prevent lazy bindings failures on pthreads(3) functions
 post-configure:
