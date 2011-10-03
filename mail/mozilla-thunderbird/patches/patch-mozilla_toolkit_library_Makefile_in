@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.6 2011/08/23 20:19:33 landry Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Fri Jul 15 07:51:48 2011
-+++ mozilla/toolkit/library/Makefile.in	Sun Jul 31 22:33:53 2011
-@@ -168,12 +168,6 @@ EXTRA_DSO_LDOPTS += \
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.7 2011/10/03 21:07:05 landry Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Wed Aug 31 23:37:37 2011
++++ mozilla/toolkit/library/Makefile.in	Thu Sep  1 10:23:18 2011
+@@ -171,12 +171,6 @@ EXTRA_DSO_LDOPTS += \
  endif
  endif
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.6 2011/08/23 20:19:33 la
  ifdef MOZ_PLATFORM_MAEMO
  EXTRA_DSO_LDOPTS += $(MOZ_PLATFORM_MAEMO_LIBS)
  endif 
-@@ -250,6 +244,12 @@ ifeq ($(OS_ARCH),OpenBSD)
+@@ -253,6 +247,12 @@ ifeq ($(OS_ARCH),OpenBSD)
  # Needed by nsAuthGSSAPI
  EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
  endif

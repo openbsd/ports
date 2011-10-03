@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_parser_html_Makefile_in,v 1.1 2010/07/27 17:01:16 landry Exp $
---- mozilla/parser/html/Makefile.in.orig	Wed Jul  7 09:09:17 2010
-+++ mozilla/parser/html/Makefile.in	Wed Jul  7 09:09:47 2010
-@@ -98,3 +98,6 @@ include $(topsrcdir)/config/rules.mk
+$OpenBSD: patch-mozilla_parser_html_Makefile_in,v 1.2 2011/10/03 21:07:05 landry Exp $
+--- mozilla/parser/html/Makefile.in.orig	Wed Aug 31 23:37:11 2011
++++ mozilla/parser/html/Makefile.in	Thu Sep  1 10:23:18 2011
+@@ -88,3 +88,6 @@ include $(topsrcdir)/config/rules.mk
  INCLUDES	+= \
  		-I$(srcdir)/../../content/base/src \
  		$(NULL)

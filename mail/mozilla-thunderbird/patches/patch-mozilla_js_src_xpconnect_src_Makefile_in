@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_xpconnect_src_Makefile_in,v 1.4 2011/08/23 20:19:33 landry Exp $
---- mozilla/js/src/xpconnect/src/Makefile.in.orig	Fri Jul 15 07:51:32 2011
-+++ mozilla/js/src/xpconnect/src/Makefile.in	Sun Jul 31 22:20:15 2011
-@@ -203,6 +203,7 @@ dom_quickstubs.cpp: $(srcdir)/dom_quickstubs.qsconf \
+$OpenBSD: patch-mozilla_js_src_xpconnect_src_Makefile_in,v 1.5 2011/10/03 21:07:05 landry Exp $
+--- mozilla/js/src/xpconnect/src/Makefile.in.orig	Wed Aug 31 23:36:53 2011
++++ mozilla/js/src/xpconnect/src/Makefile.in	Thu Sep  1 10:23:17 2011
+@@ -179,6 +179,7 @@ dom_quickstubs.cpp: $(srcdir)/dom_quickstubs.qsconf \
  	  --makedepend-output $(MDDEPDIR)/dom_qsgen.pp \
  	  $(ENABLE_TRACEABLE_FLAGS) \
  	  $(srcdir)/dom_quickstubs.qsconf
