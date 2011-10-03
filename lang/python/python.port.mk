@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.45 2011/09/27 21:27:36 sthen Exp $
+# $OpenBSD: python.port.mk,v 1.46 2011/10/03 13:54:12 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -46,22 +46,24 @@ MODPY_SETUPUTILS_DEPEND ?= devel/py3-distribute
 .endif
 MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
+MODPY_SETUPUTILS =	Yes
 # The setuptools uses test target
 REGRESS_TARGET?=	test
 _MODPY_USERBASE =
 .else
 # Try to detect the case where a port will build regardless of setuptools
 # but the final plist will be different if it's present.
-_MODPY_SETUPTOOLS_FAKE_DIR =	\
+_MODPY_SETUPUTILS_FAKE_DIR =	\
 	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
 MODPY_PRE_BUILD_STEPS +=	\
-	;mkdir -p ${_MODPY_SETUPTOOLS_FAKE_DIR} \
-	;exec >${_MODPY_SETUPTOOLS_FAKE_DIR}/__init__.py \
+	;mkdir -p ${_MODPY_SETUPUTILS_FAKE_DIR} \
+	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
 	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes or\\n" \' \
 	;echo '          "\\t\\t\\t  MODPY_DISTRIBUTE = Yes required"' \
 	;echo '    raise Exception(msg)' \
 	;echo 'Extension = Feature = find_packages = setup'
+MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
@@ -87,7 +89,7 @@ MODPY_SETUP?=		setup.py
 # build or build_ext are commonly used
 MODPY_DISTUTILS_BUILD?=		build --build-base=${WRKSRC}
 
-.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
+.if ${MODPY_SETUPUTILS:L} == "yes"
 MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR} \
 				--single-version-externally-managed
@@ -132,8 +134,7 @@ do-install:
 .  endif
 
 # setuptools supports regress testing from setup.py using a standard target
-.  if !target(do-regress) && \
-      defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
+.  if !target(do-regress) && ${MODPY_SETUPUTILS:L} == "yes"
 do-regress:
 	${_MODPY_CMD} ${REGRESS_TARGET}
 .  endif
