@@ -1,6 +1,6 @@
-$OpenBSD: patch-panels_region_gnome-region-panel-formats_c,v 1.2 2011/10/02 13:31:33 ajacoutot Exp $
+$OpenBSD: patch-panels_region_gnome-region-panel-formats_c,v 1.3 2011/10/03 13:21:29 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=660692
+https://bugzilla.gnome.org/show_bug.cgi?id=660787
 
 --- panels/region/gnome-region-panel-formats.c.orig	Tue Aug 23 10:23:42 2011
 +++ panels/region/gnome-region-panel-formats.c	Sun Oct  2 15:13:45 2011
