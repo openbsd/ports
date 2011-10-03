@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.3 2011/09/28 13:54:20 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.4 2011/10/03 08:35:36 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -53,6 +53,17 @@ SUBPACKAGE ?= -
 SUBPACKAGE ?= -main
 .endif
 
+# allow pseudo-flavors to make subpackages vanish.
+.if defined(FLAVOR)
+.  for _S in ${MULTI_PACKAGES}
+.    for _T in ${_S:S/^-/no_/}
+.      if ${FLAVOR:L:M${_T}}
+MULTI_PACKAGES := ${MULTI_PACKAGES:N${_S}}
+.      endif
+.    endfor
+.  endfor
+.endif
+
 # build the actual list of subpackages we want
 BUILD_PACKAGES =
 
@@ -105,13 +116,3 @@ BUILD_PACKAGES += ${_s}
 .  endif
 .endfor
 
-# allow pseudo-flavors to make subpackages vanish.
-.if defined(FLAVOR)
-.  for _S in ${BUILD_PACKAGES}
-.    for _T in ${_S:S/^-/no_/}
-.      if ${FLAVOR:L:M${_T}}
-BUILD_PACKAGES := ${BUILD_PACKAGES:N${_S}}
-.      endif
-.    endfor
-.  endfor
-.endif
