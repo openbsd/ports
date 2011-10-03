@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.50 2011/09/28 15:07:57 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.51 2011/10/03 06:41:43 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -22,6 +22,10 @@ MODULES+=		textproc/intltool
         _MODGNOME_ldflags ?= LDFLAGS="-L${LOCALBASE}/lib ${MODGNOME_LDFLAGS}"
         CONFIGURE_ENV += ${_MODGNOME_cppflags} \
                          ${_MODGNOME_ldflags}
+        # Older versions of glib-gettext.m4 used to set DATADIRNAME to
+        # "lib" which resulted in locale files being installed under the
+        # wrong directory.
+        CONFIGURE_ENV += DATADIRNAME=share
 .   endif
 .endif
 
@@ -31,8 +35,6 @@ MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 .endif
 
 USE_GMAKE?=		Yes
-
-FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
 
 # Use MODGNOME_TOOLS to indicate certain tools are needed for building bindings
 # or for ensuring documentation is available. If an option is not set, it's
