@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1113 2011/09/30 05:35:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1114 2011/10/03 15:46:33 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -399,7 +399,7 @@ FLAVORS ?=
 PSEUDO_FLAVORS ?=
 FLAVORS += ${PSEUDO_FLAVORS}
 
-.if !empty(FLAVORS:L:Mregress) && empty(FLAVOR:L:Mregress)
+.if !empty(FLAVORS:Mregress) && empty(FLAVOR:Mregress)
 NO_REGRESS = Yes
 .endif
 
@@ -429,13 +429,13 @@ _README_DIR = ${LOCALBASE}/share/doc/pkg-readmes
 PSEUDO_FLAVOR =
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
-.  for _i in ${FLAVORS:L}
-.    if empty(FLAVOR:L:M${_i})
+.  for _i in ${FLAVORS}
+.    if empty(FLAVOR:M${_i})
 _PKG_ARGS += -D${_i}=0
 .    else
 _FLAVOR_EXT2 := ${_FLAVOR_EXT2}-${_i}
 BUILD_PKGPATH := ${BUILD_PKGPATH},${_i}
-.    if empty(PSEUDO_FLAVORS:L:M${_i})
+.    if empty(PSEUDO_FLAVORS:M${_i})
 FLAVOR_EXT := ${FLAVOR_EXT}-${_i}
 BASE_PKGPATH := ${BASE_PKGPATH},${_i}
 .    else
@@ -460,8 +460,8 @@ ERRORS += "Fatal: flavor should never start with a digit"
 
 .if !empty(FLAVOR)
 .  if !empty(FLAVORS)
-.    for _i in ${FLAVOR:L}
-.      if empty(FLAVORS:L:M${_i})
+.    for _i in ${FLAVOR}
+.      if empty(FLAVORS:M${_i})
 ERRORS += "Fatal: Unknown flavor: ${_i}"
 ERRORS += "   (Possible flavors are: ${FLAVORS})."
 .      endif

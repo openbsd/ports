@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.4 2011/10/03 08:35:36 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.5 2011/10/03 15:46:33 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -57,7 +57,7 @@ SUBPACKAGE ?= -main
 .if defined(FLAVOR)
 .  for _S in ${MULTI_PACKAGES}
 .    for _T in ${_S:S/^-/no_/}
-.      if ${FLAVOR:L:M${_T}}
+.      if ${FLAVOR:M${_T}}
 MULTI_PACKAGES := ${MULTI_PACKAGES:N${_S}}
 .      endif
 .    endfor
