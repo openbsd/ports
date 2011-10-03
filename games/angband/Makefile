@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/15 12:30:30 edd Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/03 10:59:33 edd Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
-V =			3.3.0
+V =			3.3.1
 V_DLDIR =		${V:C/\.[0-9]$//}
-REVISION =		0
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
 CATEGORIES=     	games
@@ -25,18 +24,18 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m ncurses
 
 MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
-			
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-setgid=games \
+CONFIGURE_ENV +=	"LDFLAGS=-L${LOCALBASE}/lib"
+CONFIGURE_ARGS +=	--with-setgid=games \
 			--with-varpath=/var/games/angband \
 			--with-configpath=${PREFIX}/share/angband \
-			--bindir=${PREFIX}/bin \
-			--disable-sdl-mixer	# defaults to ON
+			--bindir=${PREFIX}/bin
 
 CONFIGURE_ENV=          TRUEPREFIX="${TRUEPREFIX}"
 USE_GMAKE =		Yes
 
-FLAVORS=		no_x11 # eventually add SDL
+FLAVORS=		no_x11 sdl
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
@@ -45,5 +44,20 @@ CONFIGURE_ARGS+=	--without-x
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		ICE SM X11
 .endif
+
+.if ${FLAVOR:L:Msdl}	# funky graphical mode and sounds
+CONFIGURE_ARGS +=	--enable-sdl \
+			--enable-sdl-mixer
+PKG_ARGS +=		-Dsdl=1
+LIB_DEPENDS +=		devel/sdl-mixer \
+			devel/sdl-image \
+			devel/sdl-ttf
+WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf pthread	
+.else
+CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
+PKG_ARGS +=		-Dsdl=0
+.endif
+
+NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
