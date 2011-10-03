@@ -1,9 +1,16 @@
 Bitlbee is a proxy which accepts connections from any irc-client
 and allows you to communicate using following instant messaging
-protocols.
+protocols:
 
- - AIM
- - ICQ
- - Jabber
- - MSN
- - Yahoo
+ - AIM/ICQ (oscar)
+ - XMPP/Jabber
+ - MSN Messenger
+ - Yahoo! Messenger
+ - Twitter (and API compatible services like identi.ca)
+
+Flavors:
+ * libpurple - Enables a backend using purple library allowing
+   to communicate with even more chat networks like Gadu-Gadu,
+   MySpaceIM, Groupwise, Sametime, SILC etc.
+ * otr - Enables Off-the-Record (OTR) Messaging to have private
+   conversations.
