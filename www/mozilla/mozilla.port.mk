@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.36 2011/09/06 19:40:24 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.37 2011/10/03 21:04:57 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -27,7 +27,7 @@ MODMOZ_BUILD_DEPENDS =	devel/libIDL \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			devel/nspr>=4.8.9 \
+			devel/nspr>=4.8.9p0 \
 			security/nss>=3.12.11p0
 
 MODMOZ_WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
