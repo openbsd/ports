@@ -1,11 +1,14 @@
-$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.4 2011/10/02 13:31:33 ajacoutot Exp $
+$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.5 2011/10/03 12:11:30 ajacoutot Exp $
 
 No PackageKit on OpenBSD.
 
-https://bugzilla.gnome.org/show_bug.cgi?id=660692
+From 0e119e480af5f80989211ccb2f32b8b8eeb9b189 Mon Sep 17 00:00:00 2001
+From: Bastien Nocera <hadess@hadess.net>
+Date: Mon, 03 Oct 2011 11:26:08 +0000
+Subject: printers: Fix build on systems without LC_PAPER
 
 --- panels/printers/pp-new-printer-dialog.c.orig	Mon Sep 26 18:04:02 2011
-+++ panels/printers/pp-new-printer-dialog.c	Sun Oct  2 15:24:36 2011
++++ panels/printers/pp-new-printer-dialog.c	Mon Oct  3 14:02:57 2011
 @@ -1514,6 +1514,7 @@ new_printer_add_button_cb (GtkButton *button,
                         pp->devices[device_id].device_make_and_model,
                         pp->devices[device_id].device_uri);
@@ -22,13 +25,132 @@ https://bugzilla.gnome.org/show_bug.cgi?id=660692
  
            /* Add the new printer */
            if (ppd_name && ppd_name->ppd_name)
-@@ -1665,7 +1667,9 @@ new_printer_add_button_cb (GtkButton *button,
+@@ -1626,7 +1628,9 @@ new_printer_add_button_cb (GtkButton *button,
+           DBusGProxy *proxy;
+           GError     *error = NULL;
+           char       *ret_error = NULL;
+-          char       *locale = NULL;
++          ppd_file_t  *ppd_file = NULL;
++          gchar      **value = NULL;
++          const gchar *paper_size;
+ 
+           ppd_file_name = cupsGetPPD (pp->devices[device_id].display_name);
+ 
+@@ -1665,75 +1669,60 @@ new_printer_add_button_cb (GtkButton *button,
  
  
                /* Set default PaperSize according to the locale */
-+#ifdef LC_PAPER
-               locale = setlocale (LC_PAPER, NULL);
-+#endif
-               if (locale == NULL)
-                 locale = setlocale (LC_MESSAGES, NULL);
+-              locale = setlocale (LC_PAPER, NULL);
+-              if (locale == NULL)
+-                locale = setlocale (LC_MESSAGES, NULL);
++              paper_size = gtk_paper_size_get_default ();
++              if (g_str_equal (paper_size, GTK_PAPER_NAME_LETTER))
++                paper_size = "Letter";
++              else
++                paper_size = "A4";
  
+-              if (locale)
++              if (ppd_file_name)
+                 {
+-                  ppd_file_t  *ppd_file = NULL;
+-                  gchar      **value = NULL;
+-                  gchar       *paper_size;
+-
+-                  /* CLDR 2.0 alpha
+-                   * http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/territory_language_information.html
+-                   */
+-                  if (g_regex_match_simple ("[^_.@]{2,3}_(BZ|CA|CL|CO|CR|GT|MX|NI|PA|PH|PR|SV|US|VE)",
+-                                            locale, G_REGEX_ANCHORED, G_REGEX_MATCH_ANCHORED))
+-                    paper_size = g_strdup ("Letter");
+-                  else
+-                    paper_size = g_strdup ("A4");
+-
+-                  if (ppd_file_name)
++                  ppd_file = ppdOpenFile (ppd_file_name);
++                  if (ppd_file)
+                     {
+-                      ppd_file = ppdOpenFile (ppd_file_name);
+-                      if (ppd_file)
+-                        {
+-                          ppdMarkDefaults (ppd_file);
+-                          for (i = 0; i < ppd_file->num_groups; i++)
+-                            for (j = 0; j < ppd_file->groups[i].num_options; j++)
+-                              if (g_strcmp0 ("PageSize", ppd_file->groups[i].options[j].keyword) == 0)
++                      ppdMarkDefaults (ppd_file);
++                      for (i = 0; i < ppd_file->num_groups; i++)
++                        for (j = 0; j < ppd_file->groups[i].num_options; j++)
++                          if (g_strcmp0 ("PageSize", ppd_file->groups[i].options[j].keyword) == 0)
++                            {
++                              for (k = 0; k < ppd_file->groups[i].options[j].num_choices; k++)
+                                 {
+-                                  for (k = 0; k < ppd_file->groups[i].options[j].num_choices; k++)
++                                  if (g_ascii_strncasecmp (paper_size,
++                                                           ppd_file->groups[i].options[j].choices[k].choice,
++                                                           strlen (paper_size)) == 0 &&
++                                      !ppd_file->groups[i].options[j].choices[k].marked)
+                                     {
+-                                      if (g_ascii_strncasecmp (paper_size,
+-                                                               ppd_file->groups[i].options[j].choices[k].choice,
+-                                                               strlen (paper_size)) == 0 &&
+-                                          !ppd_file->groups[i].options[j].choices[k].marked)
+-                                        {
+-                                          value = g_new0 (gchar *, 2);
+-                                          value[0] = g_strdup (ppd_file->groups[i].options[j].choices[k].choice);
+-                                          break;
+-                                        }
++                                      value = g_new0 (gchar *, 2);
++                                      value[0] = g_strdup (ppd_file->groups[i].options[j].choices[k].choice);
++                                      break;
+                                     }
+-                                  break;
+                                 }
+-                          ppdClose (ppd_file);
+-                        }
++                              break;
++                            }
++                      ppdClose (ppd_file);
+                     }
++                }
+ 
+-                  if (value)
++              if (value)
++                {
++                  dbus_g_proxy_call (proxy, "PrinterAddOptionDefault", &error,
++                                     G_TYPE_STRING, pp->devices[device_id].display_name,
++                                     G_TYPE_STRING, "PageSize-default",
++                                     G_TYPE_STRV, value,
++                                     G_TYPE_INVALID,
++                                     G_TYPE_STRING, &ret_error,
++                                     G_TYPE_INVALID);
++
++                  if (error)
+                     {
+-                      dbus_g_proxy_call (proxy, "PrinterAddOptionDefault", &error,
+-                                         G_TYPE_STRING, pp->devices[device_id].display_name,
+-                                         G_TYPE_STRING, "PageSize-default",
+-                                         G_TYPE_STRV, value,
+-                                         G_TYPE_INVALID,
+-                                         G_TYPE_STRING, &ret_error,
+-                                         G_TYPE_INVALID);
++                      g_warning ("%s", error->message);
++                      g_clear_error (&error);
++                    }
+ 
+-                      if (error)
+-                        {
+-                          g_warning ("%s", error->message);
+-                          g_clear_error (&error);
+-                        }
++                  if (ret_error && ret_error[0] != '\0')
++                    g_warning ("%s", ret_error);
+ 
+-                      if (ret_error && ret_error[0] != '\0')
+-                        g_warning ("%s", ret_error);
+-
+-                      g_strfreev (value);
+-                    }
+-                  g_free (paper_size);
++                  g_strfreev (value);
+                 }
+               g_object_unref (proxy);
+             }
