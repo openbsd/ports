@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.19 2011/10/02 15:21:44 ajacoutot Exp $
+# $OpenBSD: mono.port.mk,v 1.20 2011/10/03 11:00:58 jasper Exp $
 
 # XXX see bsd.port.arch.mk
 # XXX arm powerpc (no support for sigcontext)
@@ -23,20 +23,24 @@ RUN_DEPENDS+=		${MODMONO_RUN_DEPENDS}
 # version from library names. 
 DLLMAP_FILES?=
 
-.if defined(USE_NANT)
+.if defined(MODMONO_NANT) && ${MODMONO_NANT:L} == "yes"
 NANT?=		nant
 NANT_FLAGS?=
 
 BUILD_DEPENDS+= devel/nant
 
+MODMONO_BUILD_TARGET=	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
+MODMONO_INSTALL_TARGET=	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} \
+	-D:prefix="${PREFIX}" install
+
 .  if !target(do-build)
 do-build:
-	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS}
+	${MODMONO_BUILD_TARGET}
 .  endif
 
 .  if !target(do-install)
 do-install:
-	@cd ${WRKSRC} && ${MAKE_FLAGS} ${NANT} ${NANT_FLAGS} -D:prefix="${PREFIX}" install
+	${MODMONO_INSTALL_TARGET}
 .  endif
 
 .endif
