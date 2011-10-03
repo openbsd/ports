@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/03 16:38:21 fgsch Exp $
 @newgroup _mongodb:670
 @newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -13,6 +13,7 @@
 @bin bin/mongos
 @bin bin/mongosniff
 @bin bin/mongostat
+@bin bin/mongotop
 include/mongo/
 include/mongo/bson/
 include/mongo/bson/bson-inl.h
@@ -49,10 +50,13 @@ include/mongo/client/undef_macros.h
 include/mongo/db/
 include/mongo/db/background.h
 include/mongo/db/btree.h
+include/mongo/db/btreebuilder.h
 include/mongo/db/client.h
 include/mongo/db/clientcursor.h
+include/mongo/db/cloner.h
 include/mongo/db/cmdline.h
 include/mongo/db/commands.h
+include/mongo/db/compact.h
 include/mongo/db/concurrency.h
 include/mongo/db/curop-inl.h
 include/mongo/db/curop.h
@@ -80,6 +84,7 @@ include/mongo/db/introspect.h
 include/mongo/db/jsobj.h
 include/mongo/db/jsobjmanipulator.h
 include/mongo/db/json.h
+include/mongo/db/key.h
 include/mongo/db/lasterror.h
 include/mongo/db/matcher.h
 include/mongo/db/minilex.h
@@ -91,10 +96,15 @@ include/mongo/db/namespace.h
 include/mongo/db/nonce.h
 include/mongo/db/oplog.h
 include/mongo/db/oplogreader.h
+include/mongo/db/ops/
+include/mongo/db/ops/delete.h
+include/mongo/db/ops/query.h
+include/mongo/db/ops/update.h
 include/mongo/db/pdfile.h
 include/mongo/db/projection.h
-include/mongo/db/query.h
 include/mongo/db/queryoptimizer.h
+include/mongo/db/querypattern.h
+include/mongo/db/queryutil-inl.h
 include/mongo/db/queryutil.h
 include/mongo/db/repl/
 include/mongo/db/repl.h
@@ -107,12 +117,12 @@ include/mongo/db/repl/rs_exception.h
 include/mongo/db/repl/rs_member.h
 include/mongo/db/repl/rs_optime.h
 include/mongo/db/repl_block.h
-include/mongo/db/replpair.h
+include/mongo/db/replutil.h
 include/mongo/db/resource.h
 include/mongo/db/restapi.h
 include/mongo/db/scanandorder.h
 include/mongo/db/security.h
-include/mongo/db/security_key.h
+include/mongo/db/security_common.h
 include/mongo/db/stats/
 include/mongo/db/stats/counters.h
 include/mongo/db/stats/fine_clock.h
@@ -120,7 +130,6 @@ include/mongo/db/stats/service_stats.h
 include/mongo/db/stats/snapshots.h
 include/mongo/db/stats/top.h
 include/mongo/db/taskqueue.h
-include/mongo/db/update.h
 include/mongo/pch.h
 include/mongo/s/
 include/mongo/s/balance.h
@@ -133,6 +142,7 @@ include/mongo/s/d_chunk_manager.h
 include/mongo/s/d_logic.h
 include/mongo/s/d_writeback.h
 include/mongo/s/grid.h
+include/mongo/s/mr_shard.h
 include/mongo/s/request.h
 include/mongo/s/server.h
 include/mongo/s/shard.h
@@ -150,6 +160,7 @@ include/mongo/scripting/engine_v8.h
 include/mongo/scripting/v8_db.h
 include/mongo/scripting/v8_utils.h
 include/mongo/scripting/v8_wrapper.h
+include/mongo/server.h
 include/mongo/targetver.h
 include/mongo/util/
 include/mongo/util/admin_access.h
@@ -159,7 +170,10 @@ include/mongo/util/array.h
 include/mongo/util/assert_util.h
 include/mongo/util/background.h
 include/mongo/util/base64.h
+include/mongo/util/bson_util.h
 include/mongo/util/bufreader.h
+include/mongo/util/checksum.h
+include/mongo/util/compress.h
 include/mongo/util/concurrency/
 include/mongo/util/concurrency/list.h
 include/mongo/util/concurrency/msg.h
@@ -182,16 +196,11 @@ include/mongo/util/hashtab.h
 include/mongo/util/heapcheck.h
 include/mongo/util/hex.h
 include/mongo/util/histogram.h
-include/mongo/util/hostandport.h
-include/mongo/util/httpclient.h
 include/mongo/util/log.h
 include/mongo/util/logfile.h
 include/mongo/util/lruishmap.h
 include/mongo/util/md5.h
 include/mongo/util/md5.hpp
-include/mongo/util/message.h
-include/mongo/util/message_server.h
-include/mongo/util/miniwebserver.h
 include/mongo/util/mmap.h
 include/mongo/util/mongoutils/
 include/mongo/util/mongoutils/checksum.h
@@ -199,6 +208,15 @@ include/mongo/util/mongoutils/hash.h
 include/mongo/util/mongoutils/html.h
 include/mongo/util/mongoutils/str.h
 include/mongo/util/moveablebuffer.h
+include/mongo/util/net/
+include/mongo/util/net/hostandport.h
+include/mongo/util/net/httpclient.h
+include/mongo/util/net/listen.h
+include/mongo/util/net/message.h
+include/mongo/util/net/message_port.h
+include/mongo/util/net/message_server.h
+include/mongo/util/net/miniwebserver.h
+include/mongo/util/net/sock.h
 include/mongo/util/ntservice.h
 include/mongo/util/optime.h
 include/mongo/util/password.h
@@ -207,7 +225,6 @@ include/mongo/util/processinfo.h
 include/mongo/util/queue.h
 include/mongo/util/ramlog.h
 include/mongo/util/signal_handlers.h
-include/mongo/util/sock.h
 include/mongo/util/stringutils.h
 include/mongo/util/text.h
 include/mongo/util/time_support.h

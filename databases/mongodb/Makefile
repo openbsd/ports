@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/18 19:56:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/03 16:38:21 fgsch Exp $
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r1.8.2
+DISTNAME =	mongodb-src-r2.0.0
 PKGNAME =	${DISTNAME:S/src-r//}
 
-SHARED_LIBS =	mongoclient	0.0
+SHARED_LIBS =	mongoclient	1.0
 
 CATEGORIES =	databases
 
@@ -19,25 +19,29 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	boost_filesystem-mt boost_program_options-mt boost_system-mt \
 		boost_thread-mt c execinfo mozjs m pcap pcre pcrecpp pthread \
-		readline stdc++ termcap
+		stdc++
 
 MASTER_SITES =	http://downloads.mongodb.org/src/
 
 MODULES =	devel/scons
 MODSCONS_FLAGS = --prefix="${PREFIX}" \
 		 --cpppath="${LOCALBASE}/include/nspr" \
+		 --extralib="mozjs,pcrecpp" \
 		 --usesm \
 		 --sharedclient \
 		 --full 
 
 MAKE_ENV +=	HOME="${HOME}" \
 		TERM="${TERM}" \
-		CXXFLAGS="$(CXXFLAGS) -DXULRUNNER" \
+		CXXFLAGS="$(CXXFLAGS) -DXULRUNNER -I${LOCALBASE}/include/js" \
 		LIBmongoclient_VERSION="${LIBmongoclient_VERSION}"
 LIB_DEPENDS =	devel/boost \
 		devel/libexecinfo \
 		devel/pcre \
 		lang/spidermonkey
+
+pre-configure:
+	rm -f ${WRKSRC}/third_party/{pcre,sm}.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb
