@@ -1,0 +1,16 @@
+$OpenBSD: patch-toolkit_xre_glxtest_cpp,v 1.1 2011/10/03 21:06:09 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=687320
+--- toolkit/xre/glxtest.cpp.orig	Thu Sep  8 22:25:30 2011
++++ toolkit/xre/glxtest.cpp	Sun Sep 18 10:17:58 2011
+@@ -107,7 +107,11 @@ x_error_handler(Display *, XErrorEvent *ev)
+ static void glxtest()
+ {
+   ///// Open libGL and load needed symbols /////
++#ifdef __OpenBSD__
++  void *libgl = dlopen("libGL.so", RTLD_LAZY);
++#else
+   void *libgl = dlopen("libGL.so.1", RTLD_LAZY);
++#endif
+   if (!libgl)
+     fatal_error("Unable to load libGL.so.1");
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.192 2011/10/03 21:06:09 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,15 +6,14 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	6.0.2
+MOZILLA_VERSION =	7.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION=	0
 
 # url for beta releases
 # MASTER_SITES=  ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/
-SO_VERSION =	25.0
+SO_VERSION =	26.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc \
@@ -71,6 +70,6 @@ post-install:
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
-	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION}/chrome/icons/default/default{48,}.png
+	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/chrome/icons/default/default{48,}.png
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_events_src_nsContentEventHandler_cpp,v 1.4 2011/08/23 20:14:52 landry Exp $
+$OpenBSD: patch-content_events_src_nsContentEventHandler_cpp,v 1.5 2011/10/03 21:06:09 landry Exp $
 fix for gcc3 archs ?
---- content/events/src/nsContentEventHandler.cpp.orig	Fri Jul 22 00:18:34 2011
-+++ content/events/src/nsContentEventHandler.cpp	Sat Jul 30 15:37:26 2011
-@@ -1028,7 +1028,8 @@ nsContentEventHandler::OnSelectionEvent(nsSelectionEve
+--- content/events/src/nsContentEventHandler.cpp.orig	Thu Aug 25 02:36:40 2011
++++ content/events/src/nsContentEventHandler.cpp	Mon Aug 29 14:54:46 2011
+@@ -1096,7 +1096,8 @@ nsContentEventHandler::OnSelectionEvent(nsSelectionEve
    selPrivate->EndBatchChanges();
    NS_ENSURE_SUCCESS(rv, rv);
  

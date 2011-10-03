@@ -1,11 +1,11 @@
-$OpenBSD: patch-toolkit_library_libxul-config_mk,v 1.3 2011/08/23 20:14:52 landry Exp $
+$OpenBSD: patch-toolkit_library_libxul-config_mk,v 1.4 2011/10/03 21:06:09 landry Exp $
 Ensure systemwide nss is taken
 Ensure local libjs is taken (build failure when spidermonkey is installed,
 its libjs_static.a is found first in lib search path)
 https://bugzilla.mozilla.org/show_bug.cgi?id=646375
---- toolkit/library/libxul-config.mk.orig	Fri Jul 22 00:18:55 2011
-+++ toolkit/library/libxul-config.mk	Sat Jul 30 15:37:52 2011
-@@ -331,13 +331,14 @@ EXTRA_DSO_LDOPTS += \
+--- toolkit/library/libxul-config.mk.orig	Thu Aug 25 02:37:24 2011
++++ toolkit/library/libxul-config.mk	Mon Aug 29 14:54:57 2011
+@@ -336,13 +336,14 @@ EXTRA_DSO_LDOPTS += \
  	$(JPEG_LIBS) \
  	$(PNG_LIBS) \
  	$(QCMS_LIBS) \
