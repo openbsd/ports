@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/10/04 05:36:43 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	3.2.0
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,7 +29,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	textproc/xmlto \
 		devel/gsettings-desktop-schemas \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS=	x11/gnome/desktop \
+LIB_DEPENDS=	x11/gnome/desktop>=3.2.0p0 \
 		x11/gnome/libgnomekbd
 
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
