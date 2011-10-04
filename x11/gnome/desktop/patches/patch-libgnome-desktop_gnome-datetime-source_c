@@ -1,0 +1,35 @@
+$OpenBSD: patch-libgnome-desktop_gnome-datetime-source_c,v 1.1 2011/10/04 05:35:26 ajacoutot Exp $
+
+From 7033804a455ccd39997632c164b5fae3e4fedac4 Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Mon, 03 Oct 2011 20:35:20 +0000
+Subject: GnomeWallClock: Fix non-Linux fallback code
+
+--- libgnome-desktop/gnome-datetime-source.c.orig	Mon Sep  5 08:54:41 2011
++++ libgnome-desktop/gnome-datetime-source.c	Tue Oct  4 07:29:59 2011
+@@ -57,8 +57,10 @@ static gboolean
+ g_datetime_source_is_expired (GDateTimeSource *datetime_source)
+ {
+ 	gint64 real_now;
++	gint64 monotonic_now;
+ 
+ 	real_now = g_get_real_time ();
++	monotonic_now = g_source_get_time ((GSource*)datetime_source);
+ 
+ 	if (datetime_source->initially_expired)
+ 		return TRUE;
+@@ -66,10 +68,11 @@ g_datetime_source_is_expired (GDateTimeSource *datetim
+ 	if (datetime_source->real_expiration <= real_now)
+ 		return TRUE;
+ 
+-	/* We can't really detect without system support when things change;
+-	 * so just trigger every second.
++	/* We can't really detect without system support when things
++	 * change; so just trigger every second (i.e. our wakeup
++	 * expiration)
+ 	 */
+-	if (datetime_source->cancel_on_set)
++	if (datetime_source->cancel_on_set && monotonic_now >= datetime_source->wakeup_expiration)
+ 		return TRUE;
+ 
+ 	return FALSE;
