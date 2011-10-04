@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2011/09/20 23:02:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.273 2011/10/04 13:23:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
+     SUBDIR += p11-kit
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-Krb5-Simple
      SUBDIR += p5-Authen-NTLM
@@ -174,7 +175,6 @@
      SUBDIR += p5-POE-Component-SSLify
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
-     SUBDIR += p11-kit
      SUBDIR += parse
      SUBDIR += passwdqc
      SUBDIR += pcsc-lite
