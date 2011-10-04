@@ -1,0 +1,16 @@
+$OpenBSD: patch-PolkitQt-1Config_cmake_in,v 1.1 2011/10/04 06:07:46 ajacoutot Exp $
+--- PolkitQt-1Config.cmake.in.orig	Tue Oct  4 05:42:32 2011
++++ PolkitQt-1Config.cmake.in	Tue Oct  4 05:44:47 2011
+@@ -33,9 +33,9 @@ elseif(APPLE)
+   set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.dylib")
+   set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.dylib")
+ else()
+-  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/libpolkit-qt-core-1.so")
+-  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.so")
+-  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.so")
++  set(POLKITQT-1_CORE_LIBRARY         "${POLKITQT-1_LIB_DIR}/libpolkit-qt-core-1.so.${LIBpolkit-qt-core-1_VERSION}")
++  set(POLKITQT-1_AGENT_LIBRARY        "${POLKITQT-1_LIB_DIR}/libpolkit-qt-agent-1.so.${LIBpolkit-qt-agent-1_VERSION}")
++  set(POLKITQT-1_GUI_LIBRARY          "${POLKITQT-1_LIB_DIR}/libpolkit-qt-gui-1.so.${LIBpolkit-qt-gui-1_VERSION}")
+ endif()
+ 
+ set(POLKITQT-1_LIBRARIES ${POLKITQT-1_GUI_LIBRARY} ${POLKITQT-1_CORE_LIBRARY} ${POLKITQT-1_AGENT_LIBRARY})
