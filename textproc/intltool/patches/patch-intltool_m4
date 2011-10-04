@@ -1,6 +1,6 @@
-$OpenBSD: patch-intltool_m4,v 1.1 2011/10/04 11:29:51 ajacoutot Exp $
+$OpenBSD: patch-intltool_m4,v 1.2 2011/10/04 14:55:24 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=660675
+https://bugs.edge.launchpad.net/intltool/+bug/867559
 
 --- intltool.m4.orig	Tue Oct  4 13:23:56 2011
 +++ intltool.m4	Tue Oct  4 13:24:43 2011
