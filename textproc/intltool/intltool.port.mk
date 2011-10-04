@@ -1,6 +1,6 @@
-# $OpenBSD: intltool.port.mk,v 1.3 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: intltool.port.mk,v 1.4 2011/10/04 11:29:51 ajacoutot Exp $
 
-BUILD_DEPENDS+=	textproc/intltool
+BUILD_DEPENDS+=	textproc/intltool>=0.41.1p0
 
 MODINTLTOOL_OVERRIDE=INTLTOOL_EXTRACT=${LOCALBASE}/bin/intltool-extract \
 		INTLTOOL_MERGE=${LOCALBASE}/bin/intltool-merge \
