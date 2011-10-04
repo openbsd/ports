@@ -1,0 +1,21 @@
+# $FreeBSD: ports/graphics/exiftran/files/Makefile.exiftran,v 1.1 2011/06/03 12:51:23 mm Exp $
+# $OpenBSD: Makefile.exiftran,v 1.1.1.1 2011/10/04 07:28:36 ajacoutot Exp $
+
+.PATH: ${.CURDIR}/../..
+PROG=	exiftran
+SRCS=	exiftran.c genthumbnail.c jpegtools.c filter.c op.c readers.c
+
+.PATH: ${.CURDIR}/../../jpeg/80
+SRCS+=	transupp.c
+
+.PATH: ${.CURDIR}/../../rd
+SRCS+=	read-jpeg.c
+
+LDADD=	-L${PREFIX}/lib -ljpeg -lexif
+
+CFLAGS+= -I${PREFIX}/include -I${.CURDIR}/../../jpeg/80 \
+	-I${.CURDIR}/../.. -DHAVE_NEW_EXIF
+
+MAN=
+
+.include <bsd.prog.mk>
