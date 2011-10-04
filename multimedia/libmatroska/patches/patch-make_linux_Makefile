@@ -1,6 +1,6 @@
-$OpenBSD: patch-make_linux_Makefile,v 1.4 2011/03/12 21:17:50 jakemsr Exp $
---- make/linux/Makefile.orig	Sun Feb 27 00:50:05 2011
-+++ make/linux/Makefile	Sun Feb 27 00:53:28 2011
+$OpenBSD: patch-make_linux_Makefile,v 1.5 2011/10/04 08:59:41 giovanni Exp $
+--- make/linux/Makefile.orig	Sun Oct  2 16:04:20 2011
++++ make/linux/Makefile	Sun Oct  2 16:05:23 2011
 @@ -33,8 +33,8 @@ INSTALL_DIR_OPTS = -m 755
  CWD=$(shell pwd)
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-make_linux_Makefile,v 1.4 2011/03/12 21:17:50 jakemsr Exp $
  # Names
  LIBRARY=libmatroska.a
 -LIBRARY_SO=libmatroska.so
--LIBRARY_SO_VER=libmatroska.so.3
+-LIBRARY_SO_VER=libmatroska.so.5
 +LIBRARY_SO_VER=libmatroska.so.${LIBmatroska_VERSION}
  
  # source-files
