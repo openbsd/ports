@@ -1,16 +1,17 @@
-$OpenBSD: patch-m4macros_glib-gettext_m4,v 1.1 2011/10/03 06:40:28 ajacoutot Exp $
+$OpenBSD: patch-m4macros_glib-gettext_m4,v 1.2 2011/10/04 09:37:09 nigel Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=660675
 
 --- m4macros/glib-gettext.m4.orig	Sun Oct  2 08:43:44 2011
 +++ m4macros/glib-gettext.m4	Sat Oct  1 16:03:29 2011
-@@ -239,6 +239,9 @@ msgstr ""
+@@ -239,6 +239,10 @@ msgstr ""
  	      [CATOBJEXT=.mo
                 DATADIRNAME=lib])
  	    ;;
 +	    *-*-openbsd*)
 +	    CATOBJEXT=.mo
 +            DATADIRNAME=share
++	    ;;
  	    *)
  	    CATOBJEXT=.mo
              DATADIRNAME=lib
