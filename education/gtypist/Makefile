@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/04 20:02:56 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.8.3
-REVISION=	0
+DISTNAME=	gtypist-2.8.5
 CATEGORIES=	education
 HOMEPAGE=	http://www.gnu.org/software/gtypist/
 
@@ -23,6 +22,8 @@ MODULES=	devel/gettext
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 CONFIGURE_ENV=	EMACS=no
+
+MAKE_FLAGS=	'gtypist_LDADD=$$(LTLIBINTL)'
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp

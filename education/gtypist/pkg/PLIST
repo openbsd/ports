@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/02/04 21:04:42 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/10/04 20:02:56 naddy Exp $
 @bin bin/gtypist
 bin/typefortune
+@info info/gtypist.cs.info
 @info info/gtypist.info
 @man man/man1/gtypist.1
 @man man/man1/typefortune.1
