@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.300 2011/09/29 17:05:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.301 2011/10/04 07:29:21 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -49,6 +49,7 @@
      SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
+     SUBDIR += exiftran
      SUBDIR += exiv2
      SUBDIR += feh
      SUBDIR += ffmpeg
