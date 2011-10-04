@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/25 14:12:10 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2011/10/04 07:08:54 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -187,14 +187,14 @@ PKG_ARGS += -DI386=1
 PKG_ARGS += -DI386=0
 .endif
 
-RUN_DEPENDS =		gcc-${FULL_PKGVERSION}v0:${PKGPATH}
+RUN_DEPENDS =		gcc-${FULL_PKGVERSION}v0:${BUILD_PKGPATH}
 WANTLIB =		c
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
-RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${PKGPATH},-estdc
+RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
 WANTLIB-estdc =		c m
 WANTLIB-java =		c m pthread z
 
