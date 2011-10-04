@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.4 2010/11/19 08:58:18 jasper Exp $
---- configure.ac.orig	Thu Oct 14 15:36:03 2010
-+++ configure.ac	Sun Oct 17 21:48:26 2010
-@@ -172,7 +172,7 @@ AC_DEFINE(ORC_EXPORTS, 1, [Defined for compiling inter
- ORC_CFLAGS="$ORC_CFLAGS -I\$(top_srcdir)"
+$OpenBSD: patch-configure_ac,v 1.5 2011/10/04 06:45:41 ajacoutot Exp $
+--- configure.ac.orig	Sun Sep 25 17:12:47 2011
++++ configure.ac	Sun Oct  2 23:37:06 2011
+@@ -171,7 +171,7 @@ ORC_CFLAGS="$ORC_CFLAGS \$(ERROR_CFLAGS) -I\$(top_srcd
+ AC_SUBST(ERROR_CFLAGS)
  AC_SUBST(ORC_CFLAGS)
  
 -ORC_LIBS="\$(top_builddir)/orc/liborc-$ORC_MAJORMINOR.la $LIBM $LIBRT"
