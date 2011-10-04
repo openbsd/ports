@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/04 07:30:30 ajacoutot Exp $
 
 COMMENT=	lightweight Gtk+2 based image viewer
 
 DISTNAME=	geeqie-1.0
 CATEGORIES=	graphics
 
-REVISION=	1
+REVISION=	2
 
 EPOCH=		0
 
@@ -33,7 +33,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	x11/gnome/doc-utils>=0.20.4p0
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
-		graphics/ImageMagick
+		graphics/ImageMagick \
+		graphics/exiftran
 LIB_DEPENDS=	x11/gtk+2 \
 		graphics/lcms \
 		graphics/exiv2
