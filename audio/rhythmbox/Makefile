@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.86 2011/09/28 14:59:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2011/10/04 15:10:44 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.90.1.3
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -113,12 +114,13 @@ BUILD_DEPENDS +=	x11/gnome/common \
 
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.11
-CONFIGURE_STYLE=	none
+CONFIGURE_STYLE=	gnu
 
 do-configure:
 	@cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		env ${CONFIGURE_ENV} \
 		./autogen.sh ${CONFIGURE_ARGS} --disable-maintainer-mode \
 			--disable-silent-rules
 ### end XXX ############################################################
