@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/04 07:40:15 jasper Exp $
 
 COMMENT=	abstraction layer for logging and tracing
 
 MODULES=	cpan
 DISTNAME=	Log-Agent-0.307
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
-
-MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes

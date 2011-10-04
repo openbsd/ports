@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/04 07:40:15 jasper Exp $
 
 COMMENT=	debugging and tracing ultimate module
 
 MODULES=	cpan
 DISTNAME=	Carp-Datum-0.1.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel perl5
 USE_GROFF =	Yes
-
-MAINTAINER=	Andrew Dalgleish <openbsd@ajd.net.au>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
