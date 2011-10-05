@@ -1,0 +1,22 @@
+$OpenBSD: patch-policyd-spf_peruser_5,v 1.1 2011/10/05 08:53:02 giovanni Exp $
+--- policyd-spf.peruser.5.orig	Wed Oct  5 10:22:37 2011
++++ policyd-spf.peruser.5	Wed Oct  5 10:24:44 2011
+@@ -210,12 +210,12 @@ configuration information, with one line per user's co
+ (NOTE: due to man page formating requirements, these lines are wrapped - in
+ the config file, it must be one line per user):
+ 
+-postmaster@example.com,{'Mail_From_reject'='No_Check'|'PermError_reject'= \
+- 'False'|'HELO_reject'='SPF_Not_Pass'|'defaultSeedOnly'= 1|'debugLevel'= \
+- 5|'skip_addresses'='127.0.0.0/8,::ffff:127.0.0.0//104,::1//128'| \
+- 'TempError_Defer'='False'}
+-strict@example.com,{'PermError_reject'='True'|'HELO_reject'= SPF_Not_Pass'| \
+- 'TempError_Defer'='True'}
++postmaster@example.com,Mail_From_reject='No_Check'|PermError_reject= \
++ 'False'|HELO_reject='SPF_Not_Pass'|defaultSeedOnly= 1|debugLevel= \
++ 5|skip_addresses='127.0.0.0/8,::ffff:127.0.0.0//104,::1//128'| \
++ TempError_Defer='False'
++strict@example.com,PermError_reject='True'|HELO_reject='SPF_Not_Pass'| \
++ TempError_Defer='True'}
+ 
+ It is not necessary to specify all configuration parameters for each user,
+ only those that are different than the overall configuration need to be
