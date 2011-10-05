@@ -1,7 +1,9 @@
-$OpenBSD: patch-gi_object_c,v 1.1 2011/09/27 17:39:28 jasper Exp $
+$OpenBSD: patch-gi_object_c,v 1.2 2011/10/05 06:42:01 jasper Exp $
 
 Revert 72bc4307860a315f9d2173d700582add938d79a0
 as our spidermonkey port does not have JS_updateMallocCounter().
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660431 
 
 --- gi/object.c.orig	Sat Sep 17 16:03:19 2011
 +++ gi/object.c	Tue Sep 27 19:32:00 2011
