@@ -1,9 +1,0 @@
-The bluetooth-libs package consists of a few Bluetooth network libraries
-derived from NetBSD, and originally from FreeBSD.
-
-libbluetooth provides a set of common routines to be used in the
-Bluetooth network applications similar to the libc network routines like
-gethostbyname(3).
-
-libsdp provides a set of routines that deal with the Bluetooth Service
-Discovery Protocol.
