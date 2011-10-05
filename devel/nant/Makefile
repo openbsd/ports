@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/30 20:36:05 jasper Exp $
-
-BROKEN-amd64=	build hangs due threading?
+# $OpenBSD: Makefile,v 1.8 2011/10/05 06:44:42 jasper Exp $
 
 COMMENT=	.NET build tool inspired by Ant
 
