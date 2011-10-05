@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/10/05 17:30:57 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Python wrapper for the Vorbis libraries
 MODPY_EGG_VERSION=1.4
 DISTNAME =	pyvorbis-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =	2
 CATEGORIES =	audio
 HOMEPAGE =	http://ekyo.nerim.net/software/pyogg/
 
@@ -28,8 +28,8 @@ BUILD_DEPENDS =	audio/py-ogg
 LIB_DEPENDS =	audio/libogg \
 		audio/libvorbis
 
-RUN_DEPENDS =	${BUILD_DEPENDS} \
-		audio/py-ao
+RUN_DEPENDS =	audio/py-ao \
+		audio/py-ogg
 
 NO_REGRESS =	Yes
 

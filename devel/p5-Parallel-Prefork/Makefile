@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/14 12:52:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/05 17:30:57 jasper Exp $
 
 COMMENT=	simple prefork server framework
 
 DISTNAME=	Parallel-Prefork-0.11
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 # Perl
@@ -14,11 +14,11 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	cpan
 
-BUILD_DEPENDS=	devel/p5-Class-Accessor-Lite \
+RUN_DEPENDS=	devel/p5-Class-Accessor-Lite \
 		devel/p5-List-MoreUtils \
 		devel/p5-Scope-Guard \
 		sysutils/p5-Proc-Wait3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=devel/p5-Test-Requires
 
 .include <bsd.port.mk>

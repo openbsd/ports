@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/05 17:03:34 stu Exp $
+# $OpenBSD: Makefile,v 1.25 2011/10/05 17:30:58 jasper Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -6,7 +6,7 @@ DOTVER =		2.10
 VER =			${DOTVER:S/.//}
 DISTNAME =		Tktable${DOTVER}
 PKGNAME =		Tktable-${DOTVER}
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		Tktable${VER} 0.0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktable.sourceforge.net/
@@ -22,7 +22,7 @@ WANTLIB +=		X11
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktable/}
 MODULES =		x11/tk
 BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS =		${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =		INSTALL_PROGRAM="${INSTALL_DATA}"
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu

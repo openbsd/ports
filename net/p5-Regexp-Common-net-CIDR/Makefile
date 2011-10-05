@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/14 11:34:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/05 17:30:58 jasper Exp $
 
 COMMENT=	provide patterns for CIDR blocks
 
 MODULES=	cpan
-USE_GROFF =	Yes
+REVISION=	0
 
 DISTNAME=	Regexp-Common-net-CIDR-0.02
 CATEGORIES=	net textproc
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	textproc/p5-Regexp-Common
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	textproc/p5-Regexp-Common
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
