@@ -1,0 +1,29 @@
+$OpenBSD: patch-daemon_gvfsjobunmount_c,v 1.1 2011/10/05 13:56:08 ajacoutot Exp $
+
+From 1f5c16b8ac679b322f2bed33c8e6cc5ed6096ff3 Mon Sep 17 00:00:00 2001
+From: Michael Terry <michael.terry@canonical.com>
+Date: Thu, 29 Sep 2011 15:57:32 +0000
+Subject: daemon: Grab a pointer to the GvfsBackend before unref'ing a job source, preventing a crash.
+
+--- daemon/gvfsjobunmount.c.orig	Mon Sep 26 15:14:03 2011
++++ daemon/gvfsjobunmount.c	Wed Oct  5 15:49:04 2011
+@@ -231,6 +231,7 @@ unregister_mount_callback (DBusMessage *unmount_reply,
+ 			   gpointer user_data)
+ {
+   GVfsBackend *backend;
++  GVfsDaemon *daemon;
+   GVfsJobUnmount *op_job = G_VFS_JOB_UNMOUNT (user_data);
+ 
+   g_debug ("unregister_mount_callback, unmount_reply: %p, error: %p\n", unmount_reply, error);
+@@ -239,9 +240,10 @@ unregister_mount_callback (DBusMessage *unmount_reply,
+   (*G_VFS_JOB_CLASS (g_vfs_job_unmount_parent_class)->send_reply) (G_VFS_JOB (op_job));
+ 
+   /* Unlink job source from daemon */
++  daemon = g_vfs_backend_get_daemon (backend);
+   g_vfs_job_source_closed (G_VFS_JOB_SOURCE (backend));
+ 
+-  g_vfs_daemon_close_active_channels (g_vfs_backend_get_daemon ((backend)));
++  g_vfs_daemon_close_active_channels (daemon);
+ }
+ 
+ /* Might be called on an i/o thread */

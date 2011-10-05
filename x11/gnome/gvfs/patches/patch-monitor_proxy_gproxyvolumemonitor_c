@@ -1,0 +1,138 @@
+$OpenBSD: patch-monitor_proxy_gproxyvolumemonitor_c,v 1.1 2011/10/05 13:56:08 ajacoutot Exp $
+
+From 7f976371da249ef587925145c0eedf9f86f4696d Mon Sep 17 00:00:00 2001
+From: David Zeuthen <davidz@redhat.com>
+Date: Tue, 27 Sep 2011 21:21:43 +0000
+Subject: Keep remote volume monitor proxies alive forever
+
+--- monitor/proxy/gproxyvolumemonitor.c.orig	Mon Sep 26 15:14:03 2011
++++ monitor/proxy/gproxyvolumemonitor.c	Wed Oct  5 15:48:42 2011
+@@ -121,82 +121,20 @@ get_match_rule_for_name_owner_changed (GProxyVolumeMon
+ static void
+ g_proxy_volume_monitor_finalize (GObject *object)
+ {
+-  GProxyVolumeMonitor *monitor;
+-  DBusError dbus_error;
+-  char *match_rule;
+-  GObjectClass *parent_class;
+-
+-  /* since GProxyVolumeMonitor is a non-instantiatable type we're dealing with a
+-   * sub-type here. So we need to look at the grandparent sub-type to get the
+-   * parent class for GProxyVolumeMonitor */
+-  parent_class = G_OBJECT_CLASS (g_type_class_peek_parent (
+-                                 g_type_class_peek_parent (G_OBJECT_GET_CLASS (object))));
+-
+-  monitor = G_PROXY_VOLUME_MONITOR (object);
+-
+-  g_hash_table_unref (monitor->drives);
+-  g_hash_table_unref (monitor->volumes);
+-  g_hash_table_unref (monitor->mounts);
+-
+-  g_free (monitor->unique_name);
+-
+-  dbus_connection_remove_filter (monitor->session_bus, filter_function, monitor);
+-
+-  match_rule = get_match_rule_for_signals (monitor);
+-  dbus_error_init (&dbus_error);
+-  dbus_bus_remove_match (monitor->session_bus,
+-                         match_rule,
+-                         &dbus_error);
+-  if (dbus_error_is_set (&dbus_error)) {
+-    g_warning ("cannot remove match rule '%s': %s: %s", match_rule, dbus_error.name, dbus_error.message);
+-    dbus_error_free (&dbus_error);
+-  }
+-  g_free (match_rule);
+-
+-  match_rule = get_match_rule_for_name_owner_changed (monitor);
+-  dbus_error_init (&dbus_error);
+-  dbus_bus_remove_match (monitor->session_bus,
+-                         match_rule,
+-                         &dbus_error);
+-  if (dbus_error_is_set (&dbus_error)) {
+-    g_warning ("cannot remove match rule '%s': %s: %s", match_rule, dbus_error.name, dbus_error.message);
+-    dbus_error_free (&dbus_error);
+-  }
+-  g_free (match_rule);
+-
+-  dbus_connection_unref (monitor->session_bus);
+-
+-  if (parent_class->finalize)
+-    parent_class->finalize (object);
++  g_warning ("finalize() called on instance of type %s but instances of this type "
++             "are supposed to live forever. This is a reference counting bug in "
++             "the application or library using GVolumeMonitor.",
++             g_type_name (G_OBJECT_TYPE (object)));
+ }
+ 
+ static void
+ g_proxy_volume_monitor_dispose (GObject *object)
+ {
+-  GProxyVolumeMonitor *monitor;
+-  GObjectClass *parent_class;
+-
+-  /* since GProxyVolumeMonitor is a non-instantiatable type we're dealing with a
+-   * sub-type here. So we need to look at the grandparent sub-type to get the
+-   * parent class for GProxyVolumeMonitor */
+-  parent_class = G_OBJECT_CLASS (g_type_class_peek_parent (
+-                                 g_type_class_peek_parent (G_OBJECT_GET_CLASS (object))));
+-
+-  monitor = G_PROXY_VOLUME_MONITOR (object);
+-
+-  /* Clear all objects to avoid circular dependencies keeping things alive.
+-   * Note that atm we're keeping the union monitor alive, so this won't
+-   * actually happen, but better safe than sorry in case we change this
+-   * later */
+-  g_hash_table_remove_all (monitor->drives);
+-  g_hash_table_remove_all (monitor->volumes);
+-  g_hash_table_remove_all (monitor->mounts);
+-  
+- if (parent_class->dispose)
+-    parent_class->dispose (object);
++  /* since we want instances to live forever, don't even chain up since
++   * GObject's default implementation destroys e.g. qdata on the instance
++   */
+ }
+ 
+-
+ static GList *
+ get_mounts (GVolumeMonitor *volume_monitor)
+ {
+@@ -352,7 +290,7 @@ get_mount_for_mount_path (const char *mount_path,
+ 
+   /* There's a problem here insofar that this static method on GNativeVolumeMonitor can
+    * be called *before* any of our monitors are constructed. Since this method doesn't
+-   * pass in the class structure we *know* which native remote monitor to use.
++   * pass in the class structure we *do not know* which native remote monitor to use.
+    *
+    * To work around that, we get the singleton GVolumeMonitor... This will trigger
+    * construction of a GUnionVolumeMonitor in gio which will construct the *appropriate*
+@@ -403,16 +341,6 @@ get_mount_for_mount_path (const char *mount_path,
+   return mount;
+ }
+ 
+-static void
+-volume_monitor_went_away (gpointer data,
+-                          GObject *where_the_object_was)
+-{
+-  GType type = (GType) data;
+-  G_LOCK (proxy_vm);
+-  g_hash_table_remove (the_volume_monitors, (gpointer) type);
+-  G_UNLOCK (proxy_vm);
+-}
+-
+ static GObject *
+ g_proxy_volume_monitor_constructor (GType                  type,
+                                     guint                  n_construct_properties,
+@@ -477,7 +405,11 @@ g_proxy_volume_monitor_constructor (GType             
+   seed_monitor (monitor);
+ 
+   g_hash_table_insert (the_volume_monitors, (gpointer) type, object);
+-  g_object_weak_ref (G_OBJECT (object), volume_monitor_went_away, (gpointer) type);
++
++  /* Take an extra reference to make the instance live forever - see also
++   * the dispose() and finalize() vfuncs
++   */
++  g_object_ref (object);
+ 
+  out:
+   G_UNLOCK (proxy_vm);
