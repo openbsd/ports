@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/22 11:51:32 pea Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/10/05 14:42:37 gsoares Exp $
 phpPgAdmin/
 phpPgAdmin/CREDITS
 phpPgAdmin/DEVELOPERS
@@ -337,7 +337,6 @@ phpPgAdmin/libraries/highlight.php
 phpPgAdmin/libraries/js/
 phpPgAdmin/libraries/js/jquery.js
 phpPgAdmin/libraries/lib.inc.php
-@comment phpPgAdmin/libraries/lib.inc.php.orig
 phpPgAdmin/links.js
 phpPgAdmin/login.php
 phpPgAdmin/logout.php
