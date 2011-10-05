@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.983 2011/09/29 18:03:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.984 2011/10/05 17:37:45 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -33,7 +33,6 @@
      SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
-     SUBDIR += bluetooth-libs
      SUBDIR += boehm-gc
      SUBDIR += boost
      SUBDIR += bouml

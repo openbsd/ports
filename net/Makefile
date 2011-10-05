@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.713 2011/09/29 17:09:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.714 2011/10/05 17:37:45 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -34,7 +34,6 @@
      SUBDIR += bird
      SUBDIR += bird,v6
      SUBDIR += bitlbee
-     SUBDIR += bluetooth-tools
      SUBDIR += bnc
      SUBDIR += bro
      SUBDIR += btpd
