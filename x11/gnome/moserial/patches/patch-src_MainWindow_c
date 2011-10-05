@@ -1,27 +1,24 @@
-$OpenBSD: patch-src_MainWindow_c,v 1.2 2011/09/12 07:36:49 jasper Exp $
+$OpenBSD: patch-src_MainWindow_c,v 1.3 2011/10/05 16:55:43 jasper Exp $
 
 Tweak message if the device can't be opened.
 
---- src/MainWindow.c.orig	Thu Sep  1 14:19:00 2011
-+++ src/MainWindow.c	Thu Sep  1 14:58:59 2011
-@@ -2211,6 +2211,7 @@ static gboolean moserial_main_window_startConnection (
- 		GtkToggleToolButton* _tmp3_;
- 		GtkWindow* _tmp4_;
- 		const gchar* _tmp5_ = NULL;
-+		const gchar* _tmp51_ = NULL;
- 		Settings* _tmp6_;
- 		const gchar* _tmp7_;
- 		const gchar* _tmp8_;
-@@ -2226,10 +2227,11 @@ static gboolean moserial_main_window_startConnection (
- 		gtk_toggle_tool_button_set_active (_tmp3_, FALSE);
- 		_tmp4_ = self->priv->gtkWindow;
- 		_tmp5_ = _ ("Error: Could not open device");
-+		_tmp51_ = _ ("Make sure you are a member of the dialer group");
- 		_tmp6_ = self->priv->currentSettings;
- 		_tmp7_ = settings_get_device (_tmp6_);
- 		_tmp8_ = _tmp7_;
--		_tmp9_ = g_strdup_printf ("%s: %s", _tmp5_, _tmp8_);
-+		_tmp9_ = g_strdup_printf ("%s: %s\n%s", _tmp5_, _tmp8_, _tmp51_);
- 		_tmp10_ = _tmp9_;
- 		_tmp11_ = (GtkMessageDialog*) gtk_message_dialog_new (_tmp4_, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp10_);
- 		_tmp12_ = g_object_ref_sink (_tmp11_);
+--- src/MainWindow.c.orig	Wed Oct  5 17:06:42 2011
++++ src/MainWindow.c	Wed Oct  5 17:08:12 2011
+@@ -1381,6 +1381,7 @@ void moserial_main_window_startRecording (moserialMain
+ 	{
+ 		GError * e;
+ 		const gchar* _tmp3_ = NULL;
++		const gchar* _tmp31_ = NULL;
+ 		gchar* _tmp4_ = NULL;
+ 		gchar* _tmp5_;
+ 		GtkMessageDialog* _tmp6_ = NULL;
+@@ -1389,7 +1390,8 @@ void moserial_main_window_startRecording (moserialMain
+ 		e = _inner_error_;
+ 		_inner_error_ = NULL;
+ 		_tmp3_ = _ ("Error: Could not open file");
+-		_tmp4_ = g_strdup_printf ("%s: %s\n%s", _tmp3_, filename, e->message);
++		_tmp31_ = _ ("Make sure you are a member of the dialer group");
++		_tmp4_ = g_strdup_printf ("%s: %s\n%s\n%s", _tmp3_, filename, e->message, _tmp31_);
+ 		_tmp5_ = _tmp4_;
+ 		_tmp6_ = (GtkMessageDialog*) gtk_message_dialog_new (self->priv->gtkWindow, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp5_);
+ 		_tmp7_ = g_object_ref_sink (_tmp6_);
