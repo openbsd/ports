@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/06 10:05:37 ajacoutot Exp $
 
 COMMENT=	nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION= 0.9.5
+MODPY_EGG_VERSION= 0.9.7.1
 DISTNAME=	nagstamon_${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	2
 
 CATEGORIES=	x11 net/nagios
 
 HOMEPAGE=	http://nagstamon.ifw-dresden.de/
+
+MAINTAINER=	Nicolas P. M. Legrand <nlegrand@ethelred.fr>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,8 +31,10 @@ RUN_DEPENDS=	textproc/py-lxml \
 
 NO_REGRESS=	Yes
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Nagstamon/Config.py
+WRKDIST = ${WRKDIR}/Nagstamon
+
+MODPY_ADJ_FILES=nagstamon.py \
+		Nagstamon/Server/Multisite.py
 
 post-install:
 	cd ${PREFIX}/bin && ln -s nagstamon.py nagstamon
