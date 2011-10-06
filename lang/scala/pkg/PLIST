@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/28 16:57:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/06 13:44:45 jasper Exp $
 bin/scala
 bin/scalac
 bin/scaladoc
@@ -147,8 +147,6 @@ scala/src/scala-compiler-src.jar
 scala/src/scala-dbc-src.jar
 scala/src/scala-library-src.jar
 scala/src/scala-swing-src.jar
-share/emacs/
-share/emacs/site-lisp/
 share/emacs/site-lisp/emacs/
 share/emacs/site-lisp/emacs/AUTHORS
 share/emacs/site-lisp/emacs/FUTURE
