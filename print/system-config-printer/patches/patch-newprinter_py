@@ -1,7 +1,7 @@
-$OpenBSD: patch-newprinter_py,v 1.4 2011/07/29 16:56:32 ajacoutot Exp $
---- newprinter.py.orig	Thu Jul 28 18:04:13 2011
-+++ newprinter.py	Fri Jul 29 18:47:58 2011
-@@ -1526,7 +1526,7 @@ class NewPrinterGUI(GtkGUI):
+$OpenBSD: patch-newprinter_py,v 1.5 2011/10/06 06:02:10 ajacoutot Exp $
+--- newprinter.py.orig	Mon Sep 26 17:39:20 2011
++++ newprinter.py	Thu Oct  6 08:00:22 2011
+@@ -1528,7 +1528,7 @@ class NewPrinterGUI(GtkGUI):
          # Try to get make and model via SNMP
          if host:
              os.environ["HOST"] = host
@@ -10,7 +10,7 @@ $OpenBSD: patch-newprinter_py,v 1.4 2011/07/29 16:56:32 ajacoutot Exp $
              debugprint (host + ": " + cmd)
              stdout = None
              try:
-@@ -3375,7 +3375,7 @@ class NewPrinterGUI(GtkGUI):
+@@ -3387,7 +3387,7 @@ class NewPrinterGUI(GtkGUI):
                  try:
                      # We want this to be in the current natural language,
                      # so we intentionally don't set LC_ALL=C here.
