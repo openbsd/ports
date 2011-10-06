@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/10/06 10:58:12 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 VERSION =	0.98.1.1
 DISTNAME =	murrine-${VERSION}
 PKGNAME =	gtk2-murrine-engine-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
@@ -69,5 +69,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/
 	cp -R ${WRKDIR}/Murrina* ${PREFIX}/share/themes/
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/themes/*
+# Fix numerous warnings triggered by outdated configuration options:
+# https://bugs.launchpad.net/ubuntu/+source/murrine-themes/+bug/584941
+	perl -pi -e 's/scrollbar_color.*=.*// ; s/hilight_ratio/hilight_shade/; s/gradients.*=.*//' \
+		${PREFIX}/share/themes/*/gtk-2.0/gtkrc
 
 .include <bsd.port.mk>
