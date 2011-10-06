@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.9 2011/09/18 08:36:56 ajacoutot Exp $
---- src/tracker-extract/tracker-extract-mp3.c.orig	Sat Sep 17 17:30:45 2011
-+++ src/tracker-extract/tracker-extract-mp3.c	Sat Sep 17 17:29:45 2011
-@@ -1047,10 +1047,10 @@ id3v2_strlen (const gchar  encoding,
+$OpenBSD: patch-src_tracker-extract_tracker-extract-mp3_c,v 1.10 2011/10/06 20:26:47 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-mp3.c.orig	Thu Oct  6 15:07:14 2011
++++ src/tracker-extract/tracker-extract-mp3.c	Thu Oct  6 20:22:53 2011
+@@ -1049,10 +1049,10 @@ id3v2_strlen (const gchar  encoding,
  	case 0x02:
  		
  		/* UTF-16, string terminated by two NUL bytes */

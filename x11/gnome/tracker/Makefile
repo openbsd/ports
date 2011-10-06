@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/09/28 09:47:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2011/10/06 20:26:47 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.3
+GNOME_VERSION=	0.12.4
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -41,7 +41,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext \
 		x11/gnome \
-		devel/dconf
+		devel/dconf \
+		lang/python
 
 MULTI_PACKAGES=	-main -evolution -nautilus
 
@@ -56,7 +57,7 @@ WANTLIB-main += ORBit-2 archive assuan atk-1.0 bz2 c cairo cairo-gobject
 WANTLIB-main += dbus-1 dbus-glib-1 e2fs-uuid enca exempi exif gconf-2
 WANTLIB-main += gcrypt gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gee gif gmime-2.6
 WANTLIB-main += gnome-keyring gpg-error gpgme-pthread gsf-1 gtk-3 icudata
-WANTLIB-main += icui18n icuuc jpeg lcms lzma openjpeg panel-applet-4
+WANTLIB-main += icui18n icuuc jpeg lcms lzma openjpeg panel-applet-4 cue
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2 gstvideo-0.10
@@ -72,7 +73,7 @@ WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
 WANTLIB-evolution += icui18n icuuc krb5 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB-evolution += pangoft2-1.0 plc4 plds4 png smime3 softokn3 soup-2.4
 WANTLIB-evolution += sqlite3 ssl3 stdc++ tracker-miner-0.12 tracker-sparql-0.12
-WANTLIB-evolution += xml2
+WANTLIB-evolution += xml2 dbus-glib-1 pthread
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable
@@ -101,7 +102,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			textproc/exempi \
 			sysutils/e2fsprogs \
 			graphics/libexif \
-			graphics/libungif
+			graphics/libungif \
+			audio/libcue
 
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
@@ -117,6 +119,10 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 MODGNOME_TOOLS= 	goi vala
 MODGNOME_DESKTOP_FILE=	Yes
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+
+MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py
 
 CONFIGURE_ARGS=	--disable-static \
 		--disable-functional-tests \
@@ -136,6 +142,6 @@ MODGNOME_LDFLAGS=	-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-needle.vala
+	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 .include <bsd.port.mk>
