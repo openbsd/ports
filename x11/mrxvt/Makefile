@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/07/08 20:38:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/06 10:00:02 giovanni Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
 DISTNAME=	mrxvt-0.5.4
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	x11
 
@@ -20,11 +20,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=materm/}
  
 BUILD_DEPENDS=	archivers/bzip2
+RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png
 
-WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig freetype util m z \
-		Xft Xau Xdmcp expat pthread-stubs xcb jpeg png
+WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig util m z \
+		Xft jpeg png
 
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE=autoconf
@@ -44,5 +45,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 post-install:
 	@cd ${PREFIX}/share/doc/mrxvt && \
 		bunzip2 *.bz2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/mrxvt.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

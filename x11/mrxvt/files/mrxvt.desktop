@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Mrxvt terminal emulator
+GenericName=Terminal
+Comment=Command-line terminal
+Categories=Utility;Terminal;
+Exec=mrxvt
+Icon=mrxvt
+Path=
+Type=Application
+Terminal=false
+X-KDE-StartupNotify=true
+X-KDE-AuthorizeAction=shell_access
