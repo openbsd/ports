@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.339 2011/09/28 14:13:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.340 2011/10/07 20:35:19 rpointel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -335,6 +335,7 @@
      SUBDIR += textutils
      SUBDIR += tre
      SUBDIR += txt2tags
+     SUBDIR += uncrustify
      SUBDIR += unrtf
      SUBDIR += urlview
      SUBDIR += urlview,slang
