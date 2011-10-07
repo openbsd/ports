@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/07 20:34:28 rpointel Exp $
+@bin bin/uncrustify
+share/man/
+share/man/man1/
+@man share/man/man1/uncrustify.1
+share/uncrustify/
+share/uncrustify/ben.cfg
+share/uncrustify/d.cfg
+share/uncrustify/defaults.cfg
+share/uncrustify/gnu-indent.cfg
+share/uncrustify/kr-indent.cfg
+share/uncrustify/linux-indent.cfg
+share/uncrustify/linux.cfg
+share/uncrustify/mono.cfg
+share/uncrustify/xsupplicant.cfg
