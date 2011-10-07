@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mod_status_c,v 1.3 2011/10/07 20:04:39 sthen Exp $
+
+Fix mod_status bug: always showed "0/0" in the "Read" column for uploads.
+
+--- src/mod_status.c.orig	Fri Oct  7 00:04:52 2011
++++ src/mod_status.c	Fri Oct  7 00:05:16 2011
+@@ -487,7 +487,7 @@ static handler_t mod_status_handle_server_status_html(
+ 
+ 		buffer_append_string_len(b, CONST_STR_LEN("</td><td class=\"int\">"));
+ 
+-		if (con->request.content_length) {
++		if (c->request.content_length) {
+ 			buffer_append_long(b, c->request_content_queue->bytes_in);
+ 			buffer_append_string_len(b, CONST_STR_LEN("/"));
+ 			buffer_append_long(b, c->request.content_length);
