@@ -1,0 +1,21 @@
+$OpenBSD: patch-gui_simple-chooser_gdm-host-chooser_c,v 1.1 2011/10/07 14:04:18 ajacoutot Exp $
+--- gui/simple-chooser/gdm-host-chooser.c.orig	Fri Oct  7 14:45:11 2011
++++ gui/simple-chooser/gdm-host-chooser.c	Fri Oct  7 14:45:24 2011
+@@ -54,7 +54,7 @@ assistive_registry_launch (void)
+         char      **argv;
+         gboolean    res;
+ 
+-        command = AT_SPI_REGISTRYD_DIR "/at-spi-registryd";
++        command = AT_SPI_REGISTRYD_DIR "/at-spi2-registryd";
+ 
+         argv = NULL;
+         error = NULL;
+@@ -83,7 +83,7 @@ assistive_registry_launch (void)
+         }
+ 
+         if (kill (pid, 0) < 0) {
+-                g_warning ("at-spi-registryd not running");
++                g_warning ("at-spi2-registryd not running");
+                 return FALSE;
+         }
+ 

@@ -1,14 +1,18 @@
-# $OpenBSD: Makefile,v 1.109 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2011/10/07 14:04:18 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
+
+SHARED_ONLY=		Yes
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.0.4
-REVISION=	0
+GNOME_VERSION=		3.2.0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
+
+SHARED_LIBS +=  gdmgreeter                0.0 # 1.0
+SHARED_LIBS +=  gdmsimplegreeter          0.0 # 1.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,32 +23,35 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm accountsservice
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
-WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat fontconfig
+WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m ogg pam pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs upower-glib util vorbis vorbisfile wrap
-WANTLIB += xcb xcb-render xcb-shm xkbfile xklavier xml2 z
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 kvm ltdl m nspr4 nss3
+WANTLIB += nssutil3 ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += smime3 softokn3 sqlite3 ssl3 upower-glib util vorbis
+WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
+WANTLIB += xml2 z
 
 BUILD_DEPENDS=		x11/gnome/zenity
 
-# SYSCONFDIR/dconf/{db,profile}/gdm
-RUN_DEPENDS=		devel/dconf
-
+#XXX
 #RUN_DEPENDS=		audio/sox \
 #			x11/hicolor-icon-theme \
-#			x11/gnome/zenity
-#::sysutils/consolekit
+#			x11/gnome/zenity \
+#			sysutils/consolekit
+
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			sysutils/upower \
 			sysutils/accountsservice \
 			security/libdpam \
 			x11/gnome/libxklavier \
-			devel/libexecinfo
+			devel/libexecinfo \
+			security/nss
 
 MODULES=		devel/gettext \
 			devel/gconf2 \
-			x11/gnome
+			x11/gnome \
+			devel/dconf
 
 MODGCONF2_SCHEMAS_DIR=	gdm
 
@@ -96,12 +103,10 @@ pre-configure:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
 	perl -pi -e 's,/bin/true,/usr/bin/true,g' \
-		${WRKSRC}/data/{mime-dummy-handler.desktop,session-setup.entries}
-	perl -pi -e 's,X-GNOME-Bugzilla-ExtraInfoScript.*\n,,g' \
-		${WRKSRC}/data/greeter-autostart/gnome-power-manager.desktop.in
+		${WRKSRC}/data/applications/mime-dummy-handler.desktop
 .for i in gdm-simple-greeter gnome-session-check-accelerated gnome-settings-daemon
 	perl -pi -e 's,/usr/libexec,${PREFIX},g' \
-		${WRKSRC}/data/greeter-autostart/$i.desktop.in
+		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in
 .endfor
 
 pre-fake:
@@ -124,8 +129,7 @@ post-install:
 	mv ${WRKINST}/etc/X11/ ${PREFIX}/share/examples/gdm/
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/db
-	rm -rf ${PREFIX}/var/{,log,cache,run}/gdm \
-		${PREFIX}/etc
+	rm -rf ${WRKINST}/etc/pam.d ${WRKINST}/var/run/gdm
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
 .include <bsd.port.mk>

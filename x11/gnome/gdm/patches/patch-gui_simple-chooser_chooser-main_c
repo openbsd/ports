@@ -1,0 +1,21 @@
+$OpenBSD: patch-gui_simple-chooser_chooser-main_c,v 1.1 2011/10/07 14:04:18 ajacoutot Exp $
+--- gui/simple-chooser/chooser-main.c.orig	Fri Oct  7 14:45:29 2011
++++ gui/simple-chooser/chooser-main.c	Fri Oct  7 14:45:38 2011
+@@ -53,7 +53,7 @@ assistive_registry_launch (void)
+         char      **argv;
+         gboolean    res;
+ 
+-        command = AT_SPI_REGISTRYD_DIR "/at-spi-registryd";
++        command = AT_SPI_REGISTRYD_DIR "/at-spi2-registryd";
+ 
+         argv = NULL;
+         error = NULL;
+@@ -82,7 +82,7 @@ assistive_registry_launch (void)
+         }
+ 
+         if (kill (pid, 0) < 0) {
+-                g_warning ("at-spi-registryd not running");
++                g_warning ("at-spi2-registryd not running");
+                 return FALSE;
+         }
+ 
