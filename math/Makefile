@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2011/04/29 17:55:50 matthew Exp $
+# $OpenBSD: Makefile,v 1.105 2011/10/07 09:01:20 edd Exp $
 #
 
      SUBDIR =
@@ -41,6 +41,7 @@
      SUBDIR += lapack
      SUBDIR += libneural
      SUBDIR += logic2cnf
+     SUBDIR += lrs
      SUBDIR += maple
      SUBDIR += maple-share
      SUBDIR += mathomatic
