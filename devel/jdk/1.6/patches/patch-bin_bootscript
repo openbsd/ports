@@ -1,0 +1,91 @@
+$OpenBSD: patch-bin_bootscript,v 1.1 2011/10/07 02:04:12 kurt Exp $
+--- bin/bootscript.orig	Sat Oct  1 08:17:38 2011
++++ bin/bootscript	Sat Oct  1 10:10:04 2011
+@@ -0,0 +1,87 @@
++#!/bin/sh
++
++progname=`basename $0`
++
++case $progname in
++  java)
++    # this makes sure the sanity check passes
++    case $1 in
++      -version|-fullversion)
++        echo 'java version "1.5.0"'
++        exit 0
++      ;;
++    esac;
++
++    exec jamvm $@
++    ;;
++  jar)
++    exec gjar $@
++    ;;
++  javah)
++    exec gjavah -force $@
++    ;;
++  javac)
++    # move -J args to jamvm
++    # ecj doesn't like multiple -source, -target or
++    # -encoding arguments. only keep the last of each
++    # to make ecj happy
++
++    JARGS=""
++    SRC=""
++    TRG=""
++    TRG_ARG=""
++    ENC=""
++    ARGS=""
++
++    while [ $# -gt 0 ]; do
++      case "$1" in
++        -J-Xbootclasspath*gjc.jar)
++          # we're using ecj instead
++          ;;
++        -J-XX:ThreadStackSize=*)
++          JARGS="$JARGS -Xss${1#-J-XX:ThreadStackSize=}K"
++          ;;
++        -J*)
++          JARGS="$JARGS ${1#-J}"
++          ;;
++        -source)
++          SRC="$1 $2"
++          shift
++          ;;
++        -target)
++          TRG="$1 $2"
++          TRG_ARG="$2"
++          shift
++          ;;
++        -encoding)
++          ENC="$1 $2"
++          shift
++          ;;
++        *)
++          ARGS="$ARGS $1"
++          ;;
++      esac;
++
++      shift
++    done
++
++    # ecj errors out if -target is specified but not -source
++    if [ "$TRG" != "" -a "$SRC" = "" ] ; then
++      if [ "$TRG_ARG" = "jsr14" ] ; then
++        TRG_ARG="1.5"
++      fi
++      SRC="-source $TRG_ARG" 
++    fi
++
++    # if no source specified use 1.5
++    if [ "$SRC" == "" ] ; then
++       SRC="-source 1.5"
++    fi
++
++    exec jamvm $JARGS -classpath $ECJ_JAR \
++      org.eclipse.jdt.internal.compiler.batch.Main -nowarn \
++      $SRC $TRG $ENC $ARGS
++    ;;
++esac;
++
++exit 1

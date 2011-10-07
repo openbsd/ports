@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/02 13:31:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/07 02:04:12 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -29,6 +29,7 @@ DISTFILES=		${JRLSRC} \
 			${JRLBIN} \
 			${JRLMOZ} \
 			${PATCHSET}
+DIST_SUBDIR=		jdk
 
 MASTER_SITES=		http://download.java.net/jdk6/6u3/promoted/b05/
 
@@ -49,8 +50,8 @@ BUILD_DEPENDS=		archivers/gtar \
 			print/cups \
 			x11/openmotif
 MODULES=		converters/libiconv
-WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread pthread-stubs \
-			sndio stdc++ xcb z
+WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread \
+			sndio stdc++ z
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
@@ -102,8 +103,22 @@ ERRORS += "Fatal: This flavor requires an installed 1.6 jdk package"
 BUILD_DEPENDS+=		jdk->=1.6,<1.7:devel/jdk/1.6
 MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/${JDKHOME}"
 .else
-BUILD_DEPENDS+=		jdk->=1.5,<1.6:devel/jdk/1.5
-MAKE_ENV+=		ALT_BOOTDIR="${LOCALBASE}/jdk-1.5.0"
+DISTFILES+=		bsd-jdk16-gensrc.tar.gz \
+			xalan-j_2_7_0-bin.tar.gz \
+			ecj-3.7.1.jar
+FETCH_MANUALLY+=	"Get the file:"
+FETCH_MANUALLY+=	"    bsd-jdk16-gensrc.tar.gz"
+FETCH_MANUALLY+=	"from http:://www.intricatesoftware.com/distfiles/bsd-jdk16-gensrc.tar.gz"
+FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
+FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
+FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
+FETCH_MANUALLY+=	"Get the Eclipse Java Compiler file:"
+FETCH_MANUALLY+=	"    ecj-3.7.1.jar"
+FETCH_MANUALLY+=	"from http://download.eclipse.org/eclipse/downloads/drops/R-3.7.1-201109091335/ecj-3.7.1.jar"
+BUILD_DEPENDS+=		lang/jamvm>=1.5.4
+MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
+			ALT_BOOTSTRAP=yes \
+			ECJ_JAR=${FULLDISTDIR}/ecj-3.7.1.jar
 .endif
 
 .if !${FLAVOR:L:Mno_web}
@@ -164,6 +179,16 @@ post-extract:
 pre-patch:
 	@cd ${WRKDIR} &&  \
 		${PATCH} -p0 -z .orig.bsd --quiet < ${WRKDIR}/jdk16.patches
+
+.if !${FLAVOR:L:Mnative_bootstrap}
+post-patch:
+	@cd ${WRKDIR}/bin && \
+		${CHMOD} +x bootscript
+.for prog in java javac javah jar
+	@cd ${WRKDIR}/bin && \
+		ln -s bootscript ${prog}
+.endfor
+.endif
 
 post-build:
 	@rm -rf ${JDKIMAGEDIR}/man/ja \
