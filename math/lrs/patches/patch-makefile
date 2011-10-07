@@ -1,0 +1,153 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2011/10/07 08:58:42 edd Exp $
+
+Honour CFLAGS, LDFLAGS, CPPFLAGS. Use dynamic linking.
+
+--- makefile.orig	Mon Apr 26 03:12:56 2010
++++ makefile	Mon Oct  3 12:14:16 2011
+@@ -15,87 +15,76 @@
+ # make clean    to clean all executables
+ 
+ 
+-#Select one of the following INCLUDE,LIB paths only needed for gmp version
+-
+-#linux at mcgill with gmp version 3
+-INCLUDEDIR = /usr/local/include
+-LIBDIR     = /usr/local/lib
+-
+-#linux at mcgill with gmp version 2
+-#INCLUDEDIR = /labs/cgm/gmp2/include
+-#LIBDIR     = /labs/cgm/gmp2/lib
+-
+-
+ all:	lrs.c lrslib.c lrslib.h lrsmp.c lrsmp.h lrslong.c lrslong.h redund.c buffer.c nash.c 2nash.c 
+-	gcc -O3 -DTIMES -DSIGNALS -o lrs  lrs.c lrslib.c lrsmp.c
+-	gcc -O3 -DTIMES -DSIGNALS -o redund  redund.c lrslib.c lrsmp.c
+-	gcc -O3 -DTIMES -DSIGNALS -DLONG -o lrs1  lrs.c lrslib.c lrslong.c
+-	gcc -O3 -DTIMES -DSIGNALS -DLONG -o redund1  redund.c lrslib.c lrslong.c
+-	gcc -O3 -DLRS_QUIET  -DTIMES -DSIGNALS -o nash nash.c lrslib.c lrsmp.c
+-	gcc -O3 -o setupnash setupnash.c lrslib.c lrsmp.c
+-	gcc -O3 -o setupnash2 setupnash2.c lrslib.c lrsmp.c
+-	gcc -Wall -O3 -o fourier  fourier.c lrslib.c lrsmp.c
+-	gcc -O3 -o buffer buffer.c
+-	gcc -O3 -o 2nash 2nash.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS -o lrs  lrs.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS -o redund  redund.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS -DLONG -o lrs1  lrs.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS -DLONG -o redund1  redund.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DLRS_QUIET  -DTIMES -DSIGNALS -o nash nash.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o setupnash setupnash.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o setupnash2 setupnash2.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall ${CFLAGS} -o fourier  fourier.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o buffer buffer.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o 2nash 2nash.c
+ 
+ gmp:	fourier.c 2gnash.c lrs.c redund.c lrslib.h lrslib.c lrsgmp.h lrsgmp.c nash.c
+-	gcc -O3 -static -DTIMES -DSIGNALS  -DGMP -I${INCLUDEDIR} lrs.c lrslib.c lrsgmp.c -L${LIBDIR}  -lgmp -o glrs
+-	gcc -O3 -static -DTIMES -DSIGNALS -DGMP -I${INCLUDEDIR} redund.c lrslib.c lrsgmp.c -L${LIBDIR} -lgmp -o gredund
+-	gcc -O3 -static -DLRS_QUIET -DTIMES -DSIGNALS -DGMP -I${INCLUDEDIR} nash.c lrslib.c lrsgmp.c -L${LIBDIR} -lgmp -o gnash
+-	gcc -O3 -static -DTIMES -DSIGNALS  -DGMP -I${INCLUDEDIR} fourier.c lrslib.c lrsgmp.c -L${LIBDIR}  -lgmp -o gfourier
+-	gcc -O3 -o buffer buffer.c
+-	gcc -O3 -o 2gnash 2gnash.c
+-	gcc -O3 -static -DTIMES -DSIGNALS  -DGMP -I${INCLUDEDIR} fourier.c lrslib.c lrsgmp.c -L${LIBDIR}  -lgmp -o gfourier
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS  -DGMP lrs.c lrslib.c lrsgmp.c ${LDFLAGS}  -lgmp -o glrs
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS -DGMP  redund.c lrslib.c lrsgmp.c ${LDFLAGS} -lgmp -o gredund
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DLRS_QUIET -DTIMES -DSIGNALS -DGMP  nash.c lrslib.c lrsgmp.c ${LDFLAGS} -lgmp -o gnash
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS  -DGMP  fourier.c lrslib.c lrsgmp.c ${LDFLAGS}  -lgmp -o gfourier
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o buffer buffer.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o 2gnash 2gnash.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -DTIMES -DSIGNALS  -DGMP  fourier.c lrslib.c lrsgmp.c -lgmp -o gfourier
+ gnash:	lrslib.h lrslib.c lrsgmp.h lrsgmp.c nash.c 2gnash.c
+-	gcc -O3 -static -DLRS_QUIET -DTIMES -DSIGNALS -DGMP -I${INCLUDEDIR} nash.c lrslib.c lrsgmp.c -L${LIBDIR} -lgmp -o gnash
+-	gcc -O3 -o 2gnash 2gnash.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS}  -DLRS_QUIET -DTIMES -DSIGNALS -DGMP  nash.c lrslib.c lrsgmp.c ${LDFLAGS} -lgmp -o gnash
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o 2gnash 2gnash.c
+ 
+ all64:	lrs.c lrslib.c lrslib.h lrsmp.c lrsmp.h lrslong.c lrslong.h redund.c buffer.c
+-	gcc -DTIMES -DSIGNALS -DB64 -O3 -o lrs  lrs.c lrslib.c lrsmp.c
+-	gcc -DTIMES -DSIGNALS -DB64 -O3 -o redund  redund.c lrslib.c lrsmp.c
+-	gcc -DTIMES -DSIGNALS -DLONG -DB64 -O3 -o lrs1  lrs.c lrslib.c lrslong.c
+-	gcc -DTIMES -DSIGNALS -DLONG -DB64 -O3 -o redund1  redund.c lrslib.c lrslong.c
+-	gcc -O3 -o buffer buffer.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DTIMES -DSIGNALS -DB64 ${CFLAGS} -o lrs  lrs.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DTIMES -DSIGNALS -DB64 ${CFLAGS} -o redund  redund.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DTIMES -DSIGNALS -DLONG -DB64 ${CFLAGS} -o lrs1  lrs.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DTIMES -DSIGNALS -DLONG -DB64 ${CFLAGS} -o redund1  redund.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o buffer buffer.c
+ 
+ ansi:	lrs.c lrslib.c lrslib.h lrsmp.c lrsmp.h lrslong.c lrslong.h redund.c buffer.c nash.c
+-	gcc -ansi -DTIMES   -O3 -o lrs  lrs.c lrslib.c lrsmp.c
+-	gcc -ansi -DTIMES   -O3 -o redund redund.c lrslib.c lrsmp.c
+-	gcc -ansi -DTIMES  -DLONG  -O3 -o lrs1  lrs.c lrslib.c lrslong.c
+-	gcc -ansi -DTIMES  -DLONG  -O3 -o redund1 redund.c lrslib.c lrslong.c
+-	gcc -O3 -o buffer buffer.c
+-	gcc -Wall -ansi -O3 -o nash nash.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi -DTIMES   ${CFLAGS} -o lrs  lrs.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi -DTIMES   ${CFLAGS} -o redund redund.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi -DTIMES  -DLONG  ${CFLAGS} -o lrs1  lrs.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi -DTIMES  -DLONG  ${CFLAGS} -o redund1 redund.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o buffer buffer.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o nash nash.c lrslib.c lrsmp.c
+ 
+ nosigs:	lrs.c lrslib.c lrslib.h lrsmp.c lrsmp.h lrslong.c lrslong.h redund.c buffer.c
+-	gcc -ansi  -O3 -o lrs  lrs.c lrslib.c lrsmp.c
+-	gcc -ansi  -O3 -o redund redund.c lrslib.c lrsmp.c
+-	gcc -ansi  -O3 -DLONG -o lrs1  lrs.c lrslib.c lrslong.c
+-	gcc -ansi  -O3 -DLONG -o redund1 redund.c lrslib.c lrslong.c
+-	gcc -ansi -O3 -o buffer buffer.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi  ${CFLAGS} -o lrs  lrs.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi  ${CFLAGS} -o redund redund.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi  ${CFLAGS} -DLONG -o lrs1  lrs.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi  ${CFLAGS} -DLONG -o redund1 redund.c lrslib.c lrslong.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -ansi ${CFLAGS} -o buffer buffer.c
+ 
+ lrs:    lrs.c lrslib.c lrslong.c lrsmp.c
+-	gcc -Wall -ansi -O3 -o lrs  lrs.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o lrs  lrs.c lrslib.c lrsmp.c
+ 
+ redund:    redund.c lrslib.c lrslong.c lrsmp.c
+-	gcc -Wall -ansi -O3 -o redund redund.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o redund redund.c lrslib.c lrsmp.c
+ 
+ nash:    setupnash2.c setupnash.c nash.c lrslib.c  lrsmp.c 2nash.c
+-	gcc -Wall -DTIMES -ansi -O3 -o nash nash.c lrslib.c lrsmp.c
+-	gcc -Wall -o setupnash setupnash.c lrslib.c lrsmp.c
+-	gcc -Wall -o setupnash2 setupnash2.c lrslib.c lrsmp.c
+-	gcc -O3 -o 2nash 2nash.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -DTIMES -ansi ${CFLAGS} -o nash nash.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -o setupnash setupnash.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -o setupnash2 setupnash2.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS} -o 2nash 2nash.c
+ 
+ fourier:    fourier.c lrslib.c lrslong.c lrsmp.c
+-	gcc -Wall -O3 -o fourier  fourier.c lrslib.c lrsmp.c
+-	gcc -O3 -static -DTIMES -DSIGNALS  -DGMP -I${INCLUDEDIR} fourier.c lrslib.c lrsgmp.c -L${LIBDIR}  -lgmp -o gfourier
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall ${CFLAGS} -o fourier  fourier.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS}  -DTIMES -DSIGNALS  -DGMP  fourier.c lrslib.c lrsgmp.c -lgmp -o gfourier
+ 
+ demo:	lpdemo.c chdemo.c vedemo.c lrslib.c lrslong.c lrsmp.c
+-	gcc -Wall -ansi -O3 -o lpdemo lpdemo.c lrslib.c lrsmp.c
+-	gcc -Wall -ansi -O3 -o vedemo vedemo.c lrslib.c lrsmp.c
+-	gcc -Wall -ansi -O3 -o chdemo chdemo.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o lpdemo lpdemo.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o vedemo vedemo.c lrslib.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -Wall -ansi ${CFLAGS} -o chdemo chdemo.c lrslib.c lrsmp.c
+ 
+ float: float2rat.c rat2float.c lrsmp.c 
+-	gcc -DLRSMP -Wall -ansi -o float2rat float2rat.c lrsmp.c
+-	gcc -DLRSMP -Wall -ansi -o rat2float rat2float.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DLRSMP -Wall -ansi -o float2rat float2rat.c lrsmp.c
++	${CC} ${CPPFLAGS} ${LDFLAGS} -DLRSMP -Wall -ansi -o rat2float rat2float.c lrsmp.c
+ 
+ clean:
+ 	rm -rf lrs lrs1 redund redund1 buffer glrs gredund
+@@ -105,8 +94,8 @@ clean:
+ 	rm -rf nash gnash setupnash setupnash2
+ 
+ foo:	foo.c lrslib.h lrslib.c lrsmp.h lrsmp.c
+-	gcc -O3 -static -DTIMES -DSIGNALS  foo.c lrslib.c lrsmp.c -L${LIBDIR} -o foo
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS}  -DTIMES -DSIGNALS  foo.c lrslib.c lrsmp.c ${LDFLAGS} -o foo
+ 
+ gfoo:	foo.c lrslib.h lrslib.c lrsgmp.h lrsgmp.c
+-	gcc -O3 -static -DTIMES -DSIGNALS  -DGMP -I${INCLUDEDIR} foo.c lrslib.c lrsgmp.c -L${LIBDIR}  -lgmp -o gfoo
++	${CC} ${CPPFLAGS} ${LDFLAGS} ${CFLAGS}  -DTIMES -DSIGNALS  -DGMP  foo.c lrslib.c lrsgmp.c -lgmp -o gfoo
+ 

@@ -1,0 +1,14 @@
+cube 
+* Cube of side 2 centred at the origin
+* Borrowed from:
+* http://cgm.cs.mcgill.ca/~avis/C/lrslib/USERGUIDE.html
+H-representation 
+begin 
+6 4 rational 
+1 1 0 0 
+1 0 1 0 
+1 0 0 1 
+1 -1 0 0 
+1 0 -1 0 
+1 0 0 -1 
+end
