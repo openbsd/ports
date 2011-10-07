@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/07 20:07:48 sthen Exp $
 
 COMMENT=	php class for building console-style tables
 
-DISTNAME=	Console_Table-1.1.3
-REVISION=	1
+DISTNAME=	Console_Table-1.1.4
 CATEGORIES=	devel
 
 MASTER_SITES=	http://pear.php.net/get/
