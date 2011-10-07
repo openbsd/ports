@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/06 12:43:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/07 12:11:38 nigel Exp $
 bin/booc
 bin/booi
 bin/booish
@@ -231,7 +231,7 @@ share/examples/boo/svnutils/src/svn_changed.boo
 share/examples/boo/svnutils/src/svn_ignore.boo
 share/examples/boo/svnutils/src/svn_ignore_all.boo
 share/examples/boo/svnutils/src/svn_locals.boo
-share/gtksourceview-2.0/language-specs/boo.lang
+@comment share/gtksourceview-2.0/language-specs/boo.lang
 share/mime-info/
 share/mime-info/boo.keys
 share/mime-info/boo.mime

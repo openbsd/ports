@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/06 12:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/07 12:11:38 nigel Exp $
 
 COMMENT = 	Python-like language for the .NET/Mono platform
 
@@ -9,6 +9,7 @@ BUILD_NUM =	9
 DISTNAME = 	${PKGNAME}.${BUILD_NUM}
 PKGNAME = 	${PNAME}-${V}
 CATEGORIES = 	lang
+REVISION =	0
 
 EXTRACT_SUFX = 	-src.zip
 
@@ -26,6 +27,7 @@ MASTER_SITES = 		http://dist.codehaus.org/boo/distributions/
 
 MODULES = 		lang/mono
 
+BUILD_DEPENDS +=	x11/gtksourceview
 RUN_DEPENDS +=		misc/shared-mime-info \
 			x11/gtksourceview
 
@@ -45,8 +47,9 @@ NO_REGRESS =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR} ${EXAMPLEDIR}
-	cp -Rp ${WRKDIST}/docs/* ${DOCDIR}
-	cp -Rp ${WRKDIST}/*.txt ${DOCDIR}
-	cp -Rp ${WRKDIST}/examples/* ${EXAMPLEDIR}
+	cp -R ${WRKDIST}/docs/* ${DOCDIR}
+	cp -R ${WRKDIST}/*.txt ${DOCDIR}
+	cp -R ${WRKDIST}/examples/* ${EXAMPLEDIR}
+	find ${DOCDIR} ${EXAMPLEDIR} -type f -exec chmod 444 {} \;
 
 .include <bsd.port.mk>
