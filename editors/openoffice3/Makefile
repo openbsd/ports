@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2011/10/07 13:54:31 kurt Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 REVISION-main=	0
 REVISION-kde=	0
-REVISION-java=	0
+REVISION-java=	1
 CATEGORIES=	editors productivity
 
 REVISION-main=	0

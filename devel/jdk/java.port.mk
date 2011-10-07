@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.28 2011/09/30 09:10:18 jasper Exp $
+# $OpenBSD: java.port.mk,v 1.29 2011/10/07 13:54:31 kurt Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -25,42 +25,26 @@ MODJAVA_JRERUN?=no
 #
 # NOTE: All source built java ports must properly set
 # javac -source and -target build arguments. Depending
-# on the architecture a 1.3 or 1.4 level port may be built
-# by a 1.5 jdk. The JAVA_HOME variable points to the
+# on the architecture a 1.3, 1.4 or 1.5 level port may be
+# built by a 1.6 jdk. The JAVA_HOME variable points to the
 # build jdk not the default RUN_DEPEND jdk, so it
 # should not be used to set a default jdk to run with.
 # The javaPathHelper port should be used to set the
 # default JAVA_HOME or JAVACMD vars for a package.
 #
 
-.if ${MODJAVA_VER} == "1.3" || ${MODJAVA_VER} == "1.4"
+.if ${MODJAVA_VER} == "1.3" || ${MODJAVA_VER} == "1.4" || ${MODJAVA_VER} == "1.5"
     BROKEN=MODJAVA_VER=${MODJAVA_VER} only ports are not supported
-.elif ${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+"
+.elif ${MODJAVA_VER} == "1.3+" || ${MODJAVA_VER} == "1.4+" || ${MODJAVA_VER} == "1.5+"
    ONLY_FOR_ARCHS?= i386 amd64
 .  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= jdk->=1.5.0,<1.6:devel/jdk/1.5
+     JAVA_HOME= ${LOCALBASE}/jdk-1.6.0
+     BUILD_DEPENDS+= jdk->=1.6.0,<1.7:devel/jdk/1.6
 .  endif
 .  if ${MODJAVA_JRERUN:L} == "yes"
-     MODJAVA_RUN_DEPENDS= jdk->=1.5.0|jre->=1.5.0|kaffe-*|jamvm-*:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= jdk->=1.6.0|jre->=1.6.0|jamvm-*:devel/jdk/1.6
 .  else
-     MODJAVA_RUN_DEPENDS= jdk->=1.5.0|kaffe-*:devel/jdk/1.5
-.  endif
-.elif ${MODJAVA_VER:S/+//} == "1.5"
-   ONLY_FOR_ARCHS?= i386 amd64
-.  if ${NO_BUILD:L} != "yes"
-     JAVA_HOME= ${LOCALBASE}/jdk-1.5.0
-     BUILD_DEPENDS+= jdk->=1.5.0,<1.6:devel/jdk/1.5
-.  endif
-.  if ${MODJAVA_JRERUN:L} == "yes"
-     _MODJAVA_RUNDEP= jdk->=1.5.0,<1.6|jre->=1.5.0,<1.6
-.  else
-     _MODJAVA_RUNDEP= jdk->=1.5.0,<1.6
-.  endif
-.  if ${MODJAVA_VER} == "1.5+"
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP:S/,<1.6//g}:devel/jdk/1.5
-.  else
-     MODJAVA_RUN_DEPENDS= ${_MODJAVA_RUNDEP}:devel/jdk/1.5
+     MODJAVA_RUN_DEPENDS= jdk->=1.6.0:devel/jdk/1.6
 .  endif
 .elif ${MODJAVA_VER:S/+//} == "1.6"
    ONLY_FOR_ARCHS?= i386 amd64
