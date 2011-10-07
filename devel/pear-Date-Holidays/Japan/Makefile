@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/07 20:03:13 sthen Exp $
 
 COMMENT =	Japanese holiday classes for PHP
-HOLNAME =	Japan-0.1.1
-REVISION=		0
+HOLNAME =	Japan-0.1.2
 
 .include <bsd.port.mk>
