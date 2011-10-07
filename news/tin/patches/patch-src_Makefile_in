@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2008/05/13 14:48:33 naddy Exp $
---- src/Makefile.in.orig	Thu May  4 03:19:04 2006
-+++ src/Makefile.in	Wed Apr 30 20:24:39 2008
-@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ @INN_NNTPLIB
+$OpenBSD: patch-src_Makefile_in,v 1.6 2011/10/07 14:12:55 giovanni Exp $
+--- src/Makefile.in.orig	Tue May  3 15:20:34 2011
++++ src/Makefile.in	Tue Oct  4 11:21:26 2011
+@@ -78,6 +78,7 @@ LINK_LIBS	= $(PCRE_LIBS) $(CANLIB) @LIBS@ $(INTL_LIBS)
  # Where do you want the binary & manual page installed?
  DESTDIR	= @DESTDIR@
  INS_BINARY_DIR	= @bindir@
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2008/05/13 14:48:33 naddy Exp $
  $(DESTDIR)$(INS_BINARY_DIR) \
 +$(DESTDIR)$(INS_DATA_DIR) \
  $(DESTDIR)$(INS_SYSDEF_DIR) :
- 	$(top_srcdir)/mkdirs.sh $@
+ 	mkdir -p $@
  
 @@ -336,8 +338,6 @@ install_manpage : $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MAN
  	@$(INSTALL) -m 444 $(DOCDIR)/tin.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/$(PROJECT).$(INS_MANUAL_EXT)
@@ -33,25 +33,16 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2008/05/13 14:48:33 naddy Exp $
 -install_helpers : $(DESTDIR)$(INS_BINARY_DIR) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)
 +install_helpers : $(DESTDIR)$(INS_BINARY_DIR) $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT) $(DESTDIR)$(INS_DATA_DIR)
  	@$(ECHO) "Installing helper applications ..."
--	@-if test ! -f $(DESTDIR)$(INS_BINARY_DIR)/url_handler.sh ; then $(INSTALL) -m 755 $(TOLDIR)/url_handler.sh $(DESTDIR)$(INS_BINARY_DIR)/url_handler.sh ; fi
 -	@-if test ! -f $(DESTDIR)$(INS_BINARY_DIR)/metamutt ; then $(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_BINARY_DIR)/metamutt ; fi
 -	@$(INSTALL) -m 755 $(TOLDIR)/w2r.pl $(DESTDIR)$(INS_BINARY_DIR)/w2r.pl
 -	@$(INSTALL) -m 755 $(TOLDIR)/opt-case.pl $(DESTDIR)$(INS_BINARY_DIR)/opt-case.pl
 -	@$(INSTALL) -m 755 $(TOLDIR)/tinews.pl $(DESTDIR)$(INS_BINARY_DIR)/tinews.pl
-+	@$(INSTALL) -m 755 $(TOLDIR)/url_handler.sh $(DESTDIR)$(INS_DATA_DIR)/url_handler.sh
-+	@$(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_DATA_DIR)/metamutt
+-	@$(INSTALL) -m 755 $(TOLDIR)/url_handler.pl $(DESTDIR)$(INS_BINARY_DIR)/url_handler.pl
 +	@$(INSTALL) -m 755 $(TOLDIR)/w2r.pl $(DESTDIR)$(INS_DATA_DIR)/w2r.pl
 +	@$(INSTALL) -m 755 $(TOLDIR)/opt-case.pl $(DESTDIR)$(INS_DATA_DIR)/opt-case.pl
 +	@$(INSTALL) -m 755 $(TOLDIR)/tinews.pl $(DESTDIR)$(INS_DATA_DIR)/tinews.pl
++	@$(INSTALL) -m 755 $(TOLDIR)/url_handler.pl $(DESTDIR)$(INS_DATA_DIR)/url_handler.pl
++	@$(INSTALL) -m 755 $(TOLDIR)/metamutt $(DESTDIR)$(INS_DATA_DIR)/metamutt
  	@$(INSTALL) -m 444 $(DOCDIR)/w2r.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/w2r.pl.$(INS_MANUAL_EXT)
  	@$(INSTALL) -m 444 $(DOCDIR)/opt-case.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/opt-case.pl.$(INS_MANUAL_EXT)
  	@$(INSTALL) -m 444 $(DOCDIR)/tinews.1 $(DESTDIR)$(INS_MANUAL_DIR)$(INS_MANUAL_EXT)/tinews.pl.$(INS_MANUAL_EXT)
-@@ -474,7 +474,7 @@ makecfg$X :			$(SRCDIR)/makecfg.c \
- 				$(INCDIR)/tin.h \
- 				../include/autoconf.h
- @SHOW_CC@
--	@ECHO_CC@$(BUILD_CC) $(BUILD_CFLAGS) $(BUILD_CPPFLAGS) $(BUILD_LDFLAGS) -o $@ $(SRCDIR)/makecfg.c #$(BUILD_LIBS)
-+	@ECHO_CC@$(BUILD_CC) $(BUILD_CFLAGS) $(BUILD_CPPFLAGS) $(BUILD_LDFLAGS) -o $@ $(SRCDIR)/makecfg.c $(BUILD_LIBS)
- 
- TIN_DEP	= \
- 	Makefile \

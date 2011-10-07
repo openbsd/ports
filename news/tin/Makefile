@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/05/04 14:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2011/10/07 14:12:55 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
-REVISION=	2
-MAJORVERSION=	1.8
-PATCHLEVEL=	3
+MAJORVERSION=	2.0
+PATCHLEVEL=	0
 CATEGORIES=	news
 
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
