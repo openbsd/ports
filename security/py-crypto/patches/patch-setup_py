@@ -1,21 +1,16 @@
-$OpenBSD: patch-setup_py,v 1.3 2008/06/11 02:59:32 wcmaier Exp $
---- setup.py.orig	Mon Jun 13 20:20:22 2005
-+++ setup.py	Wed May 28 20:56:03 2008
-@@ -64,9 +64,10 @@ class PCTBuildExt (build_ext):
-     def build_extensions(self):
-         self.extensions += [
+--- setup.py.orig	Fri Aug 27 06:41:55 2010
++++ setup.py	Fri Sep 30 12:26:29 2011
+@@ -267,9 +267,6 @@
+                       sources=["src/_fastmath.c"]),
+ 
              # Hash functions
--            Extension("Crypto.Hash.MD4",
+-            Extension("Crypto.Hash.MD2",
 -                      include_dirs=['src/'],
--                      sources=["src/MD4.c"]),
-+# Added below
-+#            Extension("Crypto.Hash.MD4",
-+#                      include_dirs=['src/'],
-+#                      sources=["src/MD4.c"]),
-             Extension("Crypto.Hash.RIPEMD",
+-                      sources=["src/MD2.c"]),
+             Extension("Crypto.Hash.MD4",
                        include_dirs=['src/'],
-                       sources=["src/RIPEMD.c"],
-@@ -79,9 +80,10 @@ class PCTBuildExt (build_ext):
+                       sources=["src/MD4.c"]),
+@@ -285,9 +282,10 @@
              Extension("Crypto.Cipher.AES",
                        include_dirs=['src/'],
                        sources=["src/AES.c"]),
@@ -29,57 +24,3 @@ $OpenBSD: patch-setup_py,v 1.3 2008/06/11 02:59:32 wcmaier Exp $
              Extension("Crypto.Cipher.Blowfish",
                        include_dirs=['src/'],
                        sources=["src/Blowfish.c"]),
-@@ -94,13 +96,14 @@ class PCTBuildExt (build_ext):
-             Extension("Crypto.Cipher.DES3",
-                       include_dirs=['src/'],
-                       sources=["src/DES3.c"]),
--            Extension("Crypto.Cipher.IDEA",
--                      include_dirs=['src/'],
--                      sources=["src/IDEA.c"],
--                      libraries=HTONS_LIBS),
--            Extension("Crypto.Cipher.RC5",
--                      include_dirs=['src/'],
--                      sources=["src/RC5.c"]),
-+# Patented
-+#            Extension("Crypto.Cipher.IDEA",
-+#                      include_dirs=['src/'],
-+#                      sources=["src/IDEA.c"],
-+#                      libraries=HTONS_LIBS),
-+#            Extension("Crypto.Cipher.RC5",
-+#                      include_dirs=['src/'],
-+#                      sources=["src/RC5.c"]),
- 
-             # Stream ciphers
-             Extension("Crypto.Cipher.ARC4",
-@@ -116,14 +119,12 @@ class PCTBuildExt (build_ext):
-         build_ext.build_extensions(self)
- 
-     def detect_modules (self):
--        lib_dirs = self.compiler.library_dirs + ['/lib', '/usr/lib']
--        inc_dirs = self.compiler.include_dirs + ['/usr/include']
-         exts = []
--        if (self.compiler.find_library_file(lib_dirs, 'gmp')):
--            exts.append(Extension("Crypto.PublicKey._fastmath",
--                                  include_dirs=['src/'],
--                                  libraries=['gmp'],
--                                  sources=["src/_fastmath.c"]))
-+        exts.append(Extension("Crypto.PublicKey._fastmath",
-+                              include_dirs=['src/', '${LOCALBASE}/include'],
-+                              library_dirs=['${LOCALBASE}/lib'],
-+                              libraries=['gmp'],
-+                              sources=["src/_fastmath.c"]))
-         self.extensions += exts
- 
- kw = {'name':"pycrypto",
-@@ -139,9 +140,9 @@ kw = {'name':"pycrypto",
-       'package_dir' : { "Crypto":"." },
-       # One module is defined here, because build_ext won't be
-       # called unless there's at least one extension module defined.
--      'ext_modules':[Extension("Crypto.Hash.MD2",
-+      'ext_modules':[Extension("Crypto.Hash.MD4",
-                              include_dirs=['src/'],
--                             sources=["src/MD2.c"])],
-+                             sources=["src/MD4.c"])],
-      }
- 
- # If we're running Python 2.3, add extra information

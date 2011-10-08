@@ -1,0 +1,19 @@
+--- lib/Crypto/Cipher/__init__.py.orig	Fri Sep 30 12:06:01 2011
++++ lib/Crypto/Cipher/__init__.py	Fri Sep 30 12:06:27 2011
+@@ -31,7 +31,6 @@
+ standard and has undergone a fair bit of examination.
+ 
+ Crypto.Cipher.AES         Advanced Encryption Standard
+-Crypto.Cipher.ARC2        Alleged RC2
+ Crypto.Cipher.ARC4        Alleged RC4
+ Crypto.Cipher.Blowfish
+ Crypto.Cipher.CAST
+@@ -41,7 +40,7 @@
+ Crypto.Cipher.XOR         The simple XOR cipher.
+ """
+ 
+-__all__ = ['AES', 'ARC2', 'ARC4',
++__all__ = ['AES', 'ARC4',
+            'Blowfish', 'CAST', 'DES', 'DES3',
+            'XOR'
+            ]

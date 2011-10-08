@@ -1,0 +1,10 @@
+--- lib/Crypto/SelfTest/Cipher/__init__.py.orig	Fri Sep 30 12:30:31 2011
++++ lib/Crypto/SelfTest/Cipher/__init__.py	Fri Sep 30 12:30:43 2011
+@@ -29,7 +29,6 @@
+ def get_tests(config={}):
+     tests = []
+     import test_AES;      tests += test_AES.get_tests(config=config)
+-    import test_ARC2;     tests += test_ARC2.get_tests(config=config)
+     import test_ARC4;     tests += test_ARC4.get_tests(config=config)
+     import test_Blowfish; tests += test_Blowfish.get_tests(config=config)
+     import test_CAST;     tests += test_CAST.get_tests(config=config)

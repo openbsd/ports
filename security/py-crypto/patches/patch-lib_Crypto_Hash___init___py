@@ -1,0 +1,17 @@
+--- lib/Crypto/Hash/__init__.py.orig	Fri Sep 30 12:13:19 2011
++++ lib/Crypto/Hash/__init__.py	Fri Sep 30 12:13:38 2011
+@@ -32,13 +32,12 @@
+ 
+ Submodules:
+ Crypto.Hash.HMAC          RFC 2104: Keyed-Hashing for Message Authentication
+-Crypto.Hash.MD2
+ Crypto.Hash.MD4
+ Crypto.Hash.MD5
+ Crypto.Hash.RIPEMD160
+ Crypto.Hash.SHA
+ """
+ 
+-__all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
++__all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
+ __revision__ = "$Id: patch-lib_Crypto_Hash___init___py,v 1.1 2011/10/08 14:56:34 mpi Exp $"
+ 
