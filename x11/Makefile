@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.472 2011/09/23 14:46:03 zinke Exp $
+# $OpenBSD: Makefile,v 1.473 2011/10/08 16:42:13 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -96,6 +96,7 @@
      SUBDIR += gtk2-theme-switch
      SUBDIR += gtk2mm
      SUBDIR += gtk3-engines
+     SUBDIR += gtk3-unico-engine
      SUBDIR += gtk3mm
      SUBDIR += gtkdatabox
      SUBDIR += gtkglarea
