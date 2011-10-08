@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/30 20:05:45 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/08 13:26:02 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/urwid/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/urwid-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -12,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/urwid/canvas.py
 lib/python${MODPY_VERSION}/site-packages/urwid/canvas.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/command_map.py
 lib/python${MODPY_VERSION}/site-packages/urwid/command_map.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/compat.py
+lib/python${MODPY_VERSION}/site-packages/urwid/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/container.py
 lib/python${MODPY_VERSION}/site-packages/urwid/container.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/curses_display.py
@@ -28,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/urwid/graphics.py
 lib/python${MODPY_VERSION}/site-packages/urwid/graphics.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/html_fragment.py
 lib/python${MODPY_VERSION}/site-packages/urwid/html_fragment.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/lcd_display.py
+lib/python${MODPY_VERSION}/site-packages/urwid/lcd_display.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/listbox.py
 lib/python${MODPY_VERSION}/site-packages/urwid/listbox.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/main_loop.py
@@ -43,10 +47,20 @@ lib/python${MODPY_VERSION}/site-packages/urwid/signals.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/split_repr.py
 lib/python${MODPY_VERSION}/site-packages/urwid/split_repr.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/str_util.so
+lib/python${MODPY_VERSION}/site-packages/urwid/tests.py
+lib/python${MODPY_VERSION}/site-packages/urwid/tests.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/text_layout.py
 lib/python${MODPY_VERSION}/site-packages/urwid/text_layout.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/treetools.py
+lib/python${MODPY_VERSION}/site-packages/urwid/treetools.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/util.py
 lib/python${MODPY_VERSION}/site-packages/urwid/util.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/version.py
+lib/python${MODPY_VERSION}/site-packages/urwid/version.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/vterm.py
+lib/python${MODPY_VERSION}/site-packages/urwid/vterm.pyc
+lib/python${MODPY_VERSION}/site-packages/urwid/vterm_test.py
+lib/python${MODPY_VERSION}/site-packages/urwid/vterm_test.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/web_display.py
 lib/python${MODPY_VERSION}/site-packages/urwid/web_display.pyc
 lib/python${MODPY_VERSION}/site-packages/urwid/widget.py
