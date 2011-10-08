@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/20 11:32:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2011/10/08 18:55:36 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 
@@ -48,8 +48,8 @@ pre-configure:
 
 # Remove spurious post-build files
 post-install:
-	@rm ${WRKDIST}/Modules/*.{beforesubst,orig}
-	@rm ${WRKDIST}/Modules/Compiler/*.orig
-	@rm ${WRKDIST}/Modules/Platform/*.orig
+	@rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig}
+	@rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/Compiler/*.orig
+	@rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/Platform/*.orig
 
 .include <bsd.port.mk>
