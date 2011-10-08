@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/07 02:04:12 kurt Exp $
+# $OpenBSD: Makefile,v 1.25 2011/10/08 14:13:44 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -108,7 +108,7 @@ DISTFILES+=		bsd-jdk16-gensrc.tar.gz \
 			ecj-3.7.1.jar
 FETCH_MANUALLY+=	"Get the file:"
 FETCH_MANUALLY+=	"    bsd-jdk16-gensrc.tar.gz"
-FETCH_MANUALLY+=	"from http:://www.intricatesoftware.com/distfiles/bsd-jdk16-gensrc.tar.gz"
+FETCH_MANUALLY+=	"from http://www.intricatesoftware.com/distfiles/bsd-jdk16-gensrc.tar.gz"
 FETCH_MANUALLY+=	"Get the Apache Xalan Java file:"
 FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
