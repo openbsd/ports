@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/09 15:02:13 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
 GNOME_VERSION=		0.7.2
 GNOME_PROJECT=		notification-daemon
+REVISION=		0
 
 CATEGORIES=		sysutils net
 
@@ -22,13 +23,12 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs vorbis vorbisfile xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z ffi kvm
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		devel/libnotify>=0.7.2 \
-			devel/libtool,-ltdl \
+LIB_DEPENDS=		devel/libtool,-ltdl \
 			audio/libcanberra,-gtk3
 RUN_DEPENDS=		devel/desktop-file-utils
 
