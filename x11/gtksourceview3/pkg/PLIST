@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/26 19:56:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/09 15:16:27 ajacoutot Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -128,6 +128,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/imagej.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ini.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/java.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/javascript.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/json.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/language.dtd
 share/gtksourceview-${MAJOR_VERSION}/language-specs/language.rng
 share/gtksourceview-${MAJOR_VERSION}/language-specs/language2.rng
