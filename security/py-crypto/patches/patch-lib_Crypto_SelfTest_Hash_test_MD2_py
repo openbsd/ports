@@ -1,5 +1,6 @@
---- lib/Crypto/SelfTest/Hash/test_MD2.py	Fri Aug 27 06:41:55 2010
-+++ /dev/null	Fri Sep 30 12:38:26 2011
+$OpenBSD: patch-lib_Crypto_SelfTest_Hash_test_MD2_py,v 1.2 2011/10/09 15:09:55 ajacoutot Exp $
+--- lib/Crypto/SelfTest/Hash/test_MD2.py.orig	Fri Aug 27 06:41:55 2010
++++ lib/Crypto/SelfTest/Hash/test_MD2.py	Sun Oct  9 17:08:42 2011
 @@ -1,60 +0,0 @@
 -# -*- coding: utf-8 -*-
 -#
@@ -27,7 +28,7 @@
 -
 -"""Self-test suite for Crypto.Hash.MD2"""
 -
--__revision__ = "$Id: patch-lib_Crypto_SelfTest_Hash_test_MD2_py,v 1.1 2011/10/08 14:56:34 mpi Exp $"
+-__revision__ = "$Id: patch-lib_Crypto_SelfTest_Hash_test_MD2_py,v 1.2 2011/10/09 15:09:55 ajacoutot Exp $"
 -
 -# This is a list of (expected_result, input[, description]) tuples.
 -test_data = [

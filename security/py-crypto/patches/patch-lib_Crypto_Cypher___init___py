@@ -1,6 +1,6 @@
---- lib/Crypto/Cipher/__init__.py.orig	Fri Sep 30 12:06:01 2011
-+++ lib/Crypto/Cipher/__init__.py	Fri Sep 30 12:06:27 2011
-@@ -31,7 +31,6 @@
+--- lib/Crypto/Cipher/__init__.py.orig	Fri Aug 27 06:41:55 2010
++++ lib/Crypto/Cipher/__init__.py	Sun Oct  9 17:06:47 2011
+@@ -31,7 +31,6 @@ If you don't know which algorithm to choose, use AES b
  standard and has undergone a fair bit of examination.
  
  Crypto.Cipher.AES         Advanced Encryption Standard
@@ -8,7 +8,7 @@
  Crypto.Cipher.ARC4        Alleged RC4
  Crypto.Cipher.Blowfish
  Crypto.Cipher.CAST
-@@ -41,7 +40,7 @@
+@@ -41,7 +40,7 @@ Crypto.Cipher.DES3        Triple DES.
  Crypto.Cipher.XOR         The simple XOR cipher.
  """
  

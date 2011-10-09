@@ -1,6 +1,6 @@
---- lib/Crypto/SelfTest/Hash/__init__.py.orig	Fri Sep 30 12:15:52 2011
-+++ lib/Crypto/SelfTest/Hash/__init__.py	Fri Sep 30 12:16:36 2011
-@@ -29,7 +29,6 @@
+--- lib/Crypto/SelfTest/Hash/__init__.py.orig	Fri Aug 27 06:41:55 2010
++++ lib/Crypto/SelfTest/Hash/__init__.py	Sun Oct  9 17:06:47 2011
+@@ -29,7 +29,6 @@ __revision__ = "$Id: patch-lib_Crypto_SelfTest_Hash___init__py,v 1.2 2011/10/09 15:09:55 ajacoutot Exp $"
  def get_tests(config={}):
      tests = []
      import test_HMAC;   tests += test_HMAC.get_tests(config=config)

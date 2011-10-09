@@ -1,6 +1,6 @@
 --- setup.py.orig	Fri Aug 27 06:41:55 2010
-+++ setup.py	Fri Sep 30 12:26:29 2011
-@@ -267,9 +267,6 @@
++++ setup.py	Sun Oct  9 17:06:47 2011
+@@ -267,9 +267,6 @@ kw = {'name':"pycrypto",
                        sources=["src/_fastmath.c"]),
  
              # Hash functions
@@ -10,7 +10,7 @@
              Extension("Crypto.Hash.MD4",
                        include_dirs=['src/'],
                        sources=["src/MD4.c"]),
-@@ -285,9 +282,10 @@
+@@ -285,9 +282,10 @@ kw = {'name':"pycrypto",
              Extension("Crypto.Cipher.AES",
                        include_dirs=['src/'],
                        sources=["src/AES.c"]),
