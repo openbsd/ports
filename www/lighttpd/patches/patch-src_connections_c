@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
+$OpenBSD: patch-src_connections_c,v 1.17 2011/10/09 20:42:33 sthen Exp $
 --- src/connections.c.orig	Sun Apr 24 11:55:46 2011
-+++ src/connections.c	Mon Sep  5 20:38:50 2011
++++ src/connections.c	Sun Sep 18 16:00:21 2011
 @@ -445,6 +445,7 @@ static int connection_handle_write_prepare(server *srv
  		default:
  			switch(con->http_status) {
@@ -9,7 +9,20 @@ $OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
  			case 414: /* overload request header */
  			case 505: /* unknown protocol */
  			case 207: /* this was webdav */
-@@ -617,8 +618,9 @@ static int connection_handle_write_prepare(server *srv
+@@ -560,8 +561,10 @@ static int connection_handle_write_prepare(server *srv
+ 				if (NULL != (ds = (data_string*) array_get_element(con->response.headers, "Content-Length"))) {
+ 					buffer_reset(ds->value); /* Headers with empty values are ignored for output */
+ 				}
+-			} else if (qlen > 0 || con->request.http_method != HTTP_METHOD_HEAD) {
+-				/* qlen = 0 is important for Redirects (301, ...) as they MAY have
++			} else if (qlen >= 0) {
++				/* the Content-Length header has to be >= 0 to be valid.
++				 *
++				 * qlen = 0 is important for Redirects (301, ...) as they MAY have
+ 				 * a content. Browsers are waiting for a Content otherwise
+ 				 */
+ 				buffer_copy_off_t(srv->tmp_buf, qlen);
+@@ -617,8 +620,9 @@ static int connection_handle_write_prepare(server *srv
  }
  
  static int connection_handle_write(server *srv, connection *con) {
@@ -20,7 +33,7 @@ $OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
  		if (con->file_finished) {
  			connection_set_state(srv, con, CON_STATE_RESPONSE_END);
  			joblist_append(srv, con);
-@@ -635,6 +637,7 @@ static int connection_handle_write(server *srv, connec
+@@ -635,6 +639,7 @@ static int connection_handle_write(server *srv, connec
  		joblist_append(srv, con);
  		break;
  	case 1:
@@ -28,7 +41,7 @@ $OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
  		con->is_writable = 0;
  
  		/* not finished yet -> WRITE */
-@@ -1251,8 +1254,6 @@ static handler_t connection_handle_fdevent(server *srv
+@@ -1251,8 +1256,6 @@ static handler_t connection_handle_fdevent(server *srv
  			log_error_write(srv, __FILE__, __LINE__, "ds",
  					con->fd,
  					"handle write failed.");
@@ -37,7 +50,7 @@ $OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
  		}
  	}
  
-@@ -1667,8 +1668,6 @@ int connection_state_machine(server *srv, connection *
+@@ -1667,8 +1670,6 @@ int connection_state_machine(server *srv, connection *
  							con->fd,
  							"handle write failed.");
  					connection_set_state(srv, con, CON_STATE_ERROR);

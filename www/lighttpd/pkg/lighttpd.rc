@@ -1,12 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: lighttpd.rc,v 1.1 2011/03/23 12:47:24 sthen Exp $
+# $OpenBSD: lighttpd.rc,v 1.2 2011/10/09 20:42:33 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/lighttpd"
 daemon_flags="-f ${SYSCONFDIR}/lighttpd.conf"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
+rc_reload() {
+	pkill -INT -f "^${pexp}"
+	${rcexec} "${daemon} ${daemon_flags}" >/dev/null
+}
 
 rc_cmd $1
