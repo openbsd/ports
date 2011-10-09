@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/15 13:23:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.41 2011/10/09 08:50:37 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
@@ -60,10 +60,8 @@ CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
 
 NO_REGRESS=		Yes
 
-pre-install:
-	@find ${WRKDIST} -name '*.lua.in.orig' -print0 | xargs -0 rm
-
 post-install:
+	@find ${WRKINST} -name '*.lua.in.orig' -print0 | xargs -0 rm
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/
