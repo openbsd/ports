@@ -1,4 +1,4 @@
-$OpenBSD: no_gnome-patch-data_integrated-ui_xml,v 1.1 2009/06/01 21:17:39 ajacoutot Exp $
+$OpenBSD: patch-data_integrated-ui_xml,v 1.1 2011/10/09 19:11:55 ajacoutot Exp $
 --- data/integrated-ui.xml.orig	Wed Apr 15 15:24:59 2009
 +++ data/integrated-ui.xml	Wed Apr 15 15:25:08 2009
 @@ -172,9 +172,6 @@

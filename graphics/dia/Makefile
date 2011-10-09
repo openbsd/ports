@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.82 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2011/10/09 19:11:55 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.1
-REVISION=	8
+REVISION=	9
+
+EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	graphics
 
@@ -18,62 +22,41 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm art_lgpl_2 atk-1.0
+WANTLIB += c cairo drm expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += util xcb xcb-render xcb-shm xml2 xslt z ${MODPY_WANTLIB}
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
-WANTLIB += xcb-render xcb-render-util gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 art_lgpl_2>=5 xslt>=3
-
+RUN_DEPENDS=	devel/xdg-utils
 BUILD_DEPENDS=	textproc/docbook-xsl
 LIB_DEPENDS=	x11/gtk+2 \
 		graphics/libart \
-		textproc/libxslt
+		textproc/libxslt \
+		${MODPY_LIB_DEPENDS}
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/libpng
+
+MODPY_ADJ_FILES=po-checktrans.py 
+
+LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
-MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/libpng
-CONFIGURE_ARGS=	--with-cairo \
-		--enable-db2html=no \
-		--with-hardbooks=no
-USE_GROFF =	Yes
-
-FLAVORS=	gnome
-FLAVOR?=
-
-.if ${FLAVOR:L:Mgnome}
-CONFIGURE_ARGS+=--enable-gnome \
+CONFIGURE_ARGS=	--disable-static \
+		--with-cairo \
 		--with-python \
-		--with-swig
-BUILD_DEPENDS+=	devel/swig
-LIB_DEPENDS +=	x11/gnome/libgnomeui \
-		${MODPY_LIB_DEPENDS}
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM bonobo-2 bonobo-activation
-WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
-WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt ssl
-WANTLIB += util canberra gcrypt gpg-error ltdl ogg vorbis vorbisfile
-WANTLIB += ${MODPY_WANTLIB} gnomeui-2
-MODGNOME_TOOLS= 	yelp
-.else
-# help is only installed and usable with yelp
-PATCH_LIST=	patch-* no_gnome-patch-*
-CONFIGURE_ARGS+=--disable-gnome \
-		--without-python \
-		--without-swig
-RUN_DEPENDS+=	devel/xdg-utils
-MODPY_RUNDEP=	No
-.endif
+		--disable-db2html \
+		--disable-gnome \
+		--without-hardbooks \
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/app/commands.c \
-		${WRKSRC}/po-checktrans.py
+	${SUBST_CMD} ${WRKSRC}/app/commands.c
 
 .include <bsd.port.mk>

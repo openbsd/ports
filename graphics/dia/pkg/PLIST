@@ -1,79 +1,97 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/03/20 16:53:22 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.23 2011/10/09 19:11:55 ajacoutot Exp $
+@pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/
-lib/dia/libaadl_objects.a
-lib/dia/libaadl_objects.la
-lib/dia/libart_filter.a
-lib/dia/libart_filter.la
-lib/dia/libcairo_filter.a
-lib/dia/libcairo_filter.la
-lib/dia/libcgm_filter.a
-lib/dia/libcgm_filter.la
-lib/dia/libchronogram_objects.a
-lib/dia/libchronogram_objects.la
-lib/dia/libcustom_lines_objects.a
-lib/dia/libcustom_lines_objects.la
-lib/dia/libcustom_objects.a
-lib/dia/libcustom_objects.la
-lib/dia/libdb_objects.a
-lib/dia/libdb_objects.la
-lib/dia/libdia.a
-lib/dia/libdia.la
-lib/dia/libdxf_filter.a
-lib/dia/libdxf_filter.la
-lib/dia/liber_objects.a
-lib/dia/liber_objects.la
-lib/dia/libflowchart_objects.a
-lib/dia/libflowchart_objects.la
-lib/dia/libfs_objects.a
-lib/dia/libfs_objects.la
-lib/dia/libgrafcet_objects.a
-lib/dia/libgrafcet_objects.la
-lib/dia/libhpgl_filter.a
-lib/dia/libhpgl_filter.la
-lib/dia/libistar_objects.a
-lib/dia/libistar_objects.la
-lib/dia/libjackson_objects.a
-lib/dia/libjackson_objects.la
-lib/dia/libkaos_objects.a
-lib/dia/libkaos_objects.la
-lib/dia/libmetapost_filter.a
-lib/dia/libmetapost_filter.la
-lib/dia/libmisc_objects.a
-lib/dia/libmisc_objects.la
-lib/dia/libnetwork_objects.a
-lib/dia/libnetwork_objects.la
-lib/dia/libpgf_filter.a
-lib/dia/libpgf_filter.la
-lib/dia/libpixbuf_filter.a
-lib/dia/libpixbuf_filter.la
-lib/dia/libpostscript_filter.a
-lib/dia/libpostscript_filter.la
-lib/dia/libpstricks_filter.a
-lib/dia/libpstricks_filter.la
-lib/dia/libsadt_objects.a
-lib/dia/libsadt_objects.la
-lib/dia/libshape_filter.a
-lib/dia/libshape_filter.la
-lib/dia/libstandard_objects.a
-lib/dia/libstandard_objects.la
-lib/dia/libsvg_filter.a
-lib/dia/libsvg_filter.la
-lib/dia/libuml_objects.a
-lib/dia/libuml_objects.la
-lib/dia/libvdx_filter.a
-lib/dia/libvdx_filter.la
-lib/dia/libwpg_filter.a
-lib/dia/libwpg_filter.la
-lib/dia/libxfig_filter.a
-lib/dia/libxfig_filter.la
-lib/dia/libxslt_filter.a
-lib/dia/libxslt_filter.la
+@comment lib/dia/libaadl_objects.la
+lib/dia/libaadl_objects.so
+@comment lib/dia/libart_filter.la
+lib/dia/libart_filter.so
+@comment lib/dia/libcairo_filter.la
+lib/dia/libcairo_filter.so
+@comment lib/dia/libcgm_filter.la
+lib/dia/libcgm_filter.so
+@comment lib/dia/libchronogram_objects.la
+lib/dia/libchronogram_objects.so
+@comment lib/dia/libcustom_lines_objects.la
+lib/dia/libcustom_lines_objects.so
+@comment lib/dia/libcustom_objects.la
+lib/dia/libcustom_objects.so
+@comment lib/dia/libdb_objects.la
+lib/dia/libdb_objects.so
+@comment lib/dia/libdia.la
+lib/dia/libdia.so
+@comment lib/dia/libdxf_filter.la
+lib/dia/libdxf_filter.so
+@comment lib/dia/liber_objects.la
+lib/dia/liber_objects.so
+@comment lib/dia/libflowchart_objects.la
+lib/dia/libflowchart_objects.so
+@comment lib/dia/libfs_objects.la
+lib/dia/libfs_objects.so
+@comment lib/dia/libgrafcet_objects.la
+lib/dia/libgrafcet_objects.so
+@comment lib/dia/libhpgl_filter.la
+lib/dia/libhpgl_filter.so
+@comment lib/dia/libistar_objects.la
+lib/dia/libistar_objects.so
+@comment lib/dia/libjackson_objects.la
+lib/dia/libjackson_objects.so
+@comment lib/dia/libkaos_objects.la
+lib/dia/libkaos_objects.so
+@comment lib/dia/libmetapost_filter.la
+lib/dia/libmetapost_filter.so
+@comment lib/dia/libmisc_objects.la
+lib/dia/libmisc_objects.so
+@comment lib/dia/libnetwork_objects.la
+lib/dia/libnetwork_objects.so
+@comment lib/dia/libpgf_filter.la
+lib/dia/libpgf_filter.so
+@comment lib/dia/libpixbuf_filter.la
+lib/dia/libpixbuf_filter.so
+@comment lib/dia/libpostscript_filter.la
+lib/dia/libpostscript_filter.so
+@comment lib/dia/libpstricks_filter.la
+lib/dia/libpstricks_filter.so
+@comment lib/dia/libpython_plugin.la
+lib/dia/libpython_plugin.so
+@comment lib/dia/libsadt_objects.la
+lib/dia/libsadt_objects.so
+@comment lib/dia/libshape_filter.la
+lib/dia/libshape_filter.so
+@comment lib/dia/libstandard_objects.la
+lib/dia/libstandard_objects.so
+@comment lib/dia/libsvg_filter.la
+lib/dia/libsvg_filter.so
+@comment lib/dia/libuml_objects.la
+lib/dia/libuml_objects.so
+@comment lib/dia/libvdx_filter.la
+lib/dia/libvdx_filter.so
+@comment lib/dia/libwpg_filter.la
+lib/dia/libwpg_filter.so
+@comment lib/dia/libxfig_filter.la
+lib/dia/libxfig_filter.so
+@comment lib/dia/libxslt_filter.la
+lib/dia/libxslt_filter.so
 @man man/man1/dia.1
 share/applications/dia.desktop
 share/dia/
 share/dia/dia-splash.png
+share/dia/python/
+share/dia/python-startup.py
+share/dia/python/allprops.py
+share/dia/python/aobjects.py
+share/dia/python/codegen.py
+share/dia/python/diasvg.py
+share/dia/python/diasvg_import.py
+share/dia/python/dot.py
+share/dia/python/doxrev.py
+share/dia/python/gtkcons.py
+share/dia/python/imgmap.py
+share/dia/python/otypes.py
+share/dia/python/pydiadoc.py
+share/dia/python/scascale.py
+share/dia/python/select_by.py
+share/dia/python/select_empty.py
 share/dia/shapes/
 share/dia/shapes/Assorted/
 share/dia/shapes/Assorted/arrow-chevron.png
@@ -1838,8 +1856,8 @@ share/locale/zh_TW/LC_MESSAGES/dia.mo
 share/mime-info/
 share/mime-info/dia.keys
 share/mime-info/dia.mime
+@comment share/oaf/
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-%%gnome%%
