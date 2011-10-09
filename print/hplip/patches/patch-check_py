@@ -1,6 +1,6 @@
-$OpenBSD: patch-check_py,v 1.5 2010/09/08 07:13:16 ajacoutot Exp $
---- check.py.orig	Mon Jul 19 04:17:45 2010
-+++ check.py	Wed Sep  8 08:34:10 2010
+$OpenBSD: patch-check_py,v 1.6 2011/10/09 07:42:29 ajacoutot Exp $
+--- check.py.orig	Sun Oct  2 05:06:19 2011
++++ check.py	Sun Oct  9 09:17:00 2011
 @@ -342,7 +342,7 @@ try:
              log.warn("Version: (cups-config) Not available. Unable to determine installed version of CUPS.)")
  
@@ -69,7 +69,7 @@ $OpenBSD: patch-check_py,v 1.5 2010/09/08 07:13:16 ajacoutot Exp $
                  num_errors += 1
              else:
                  found = False
-@@ -738,7 +733,7 @@ try:
+@@ -741,7 +736,7 @@ try:
                      log.info("OK, found. SANE backend 'hpaio' is properly set up.")
                  else:
                      num_errors += 1

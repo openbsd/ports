@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Exp $
---- installer/core_install.py.orig	Mon Jul 19 04:17:37 2010
-+++ installer/core_install.py	Wed Sep  8 08:34:10 2010
-@@ -190,7 +190,7 @@ class CoreInstall(object):
+$OpenBSD: patch-installer_core_install_py,v 1.8 2011/10/09 07:42:29 ajacoutot Exp $
+--- installer/core_install.py.orig	Sun Oct  2 05:06:03 2011
++++ installer/core_install.py	Sun Oct  9 09:17:00 2011
+@@ -191,7 +191,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
          self.distro_version_supported = False
@@ -10,7 +10,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -826,14 +826,14 @@ class CoreInstall(object):
+@@ -827,14 +827,14 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -27,7 +27,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
  
      def check_libjpeg(self):
-@@ -841,11 +841,11 @@ class CoreInstall(object):
+@@ -842,11 +842,11 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
@@ -41,7 +41,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
  
      def check_libnetsnmp(self):
-@@ -897,7 +897,7 @@ class CoreInstall(object):
+@@ -898,7 +898,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
@@ -50,7 +50,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
  
      def check_xsane(self):
-@@ -986,9 +986,8 @@ class CoreInstall(object):
+@@ -987,9 +987,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
@@ -62,7 +62,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
  
      def check_cups_devel(self):
-@@ -1006,12 +1005,12 @@ class CoreInstall(object):
+@@ -1007,12 +1006,12 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -77,7 +77,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
  
      def check_hpssd(self):
-@@ -1036,14 +1035,14 @@ class CoreInstall(object):
+@@ -1037,14 +1036,14 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
@@ -96,7 +96,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
      def check_pkg_mgr(self):
          """
-@@ -1327,7 +1326,7 @@ class CoreInstall(object):
+@@ -1328,7 +1327,7 @@ class CoreInstall(object):
              cmd = self.su_sudo() % '/etc/init.d/cupsys restart'
  
          else:
@@ -105,7 +105,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
          self.run(cmd)
  
-@@ -1654,7 +1653,7 @@ class CoreInstall(object):
+@@ -1655,7 +1654,7 @@ class CoreInstall(object):
      def pre_build(self):
          cmds = []
          if self.get_distro_ver_data('fix_ppd_symlink', False):
@@ -114,7 +114,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.7 2010/09/08 07:13:16 ajacoutot Ex
  
          return cmds
  
-@@ -1824,8 +1823,8 @@ class CoreInstall(object):
+@@ -1825,8 +1824,8 @@ class CoreInstall(object):
          url = "http://hplip.sf.net/plugin.conf"
          home = sys_conf.get('dirs', 'home')
  
