@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/29 10:47:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/10/09 13:42:53 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
-GNOME_VERSION=		4.99.4
+GNOME_VERSION=		4.99.4.1
 
-SHARED_LIBS +=  gdamm-5.0            0.0     # 13.0
+SHARED_LIBS +=  gdamm-5.0            0.1     # 13.0
 
 CATEGORIES+=		databases
 
