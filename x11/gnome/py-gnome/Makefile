@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/10/09 14:11:11 shadchin Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	2.28.1
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	py-gnome-${VERSION}
 
-REVISION=	10
+REVISION=	11
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -37,8 +37,7 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
-		x11/gnome/libgnomeui \
-		net/avahi
+		x11/gnome/libgnomeui
 RUN_DEPENDS=	x11/py-gtk2>=2.10.3 \
 		devel/py-orbit
 
