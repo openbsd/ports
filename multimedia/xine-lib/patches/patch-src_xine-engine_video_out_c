@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Exp $
+$OpenBSD: patch-src_xine-engine_video_out_c,v 1.11 2011/10/09 20:45:07 sthen Exp $
 
 - Disable decoder flush from video out to avoid decoding errors.
 - Fixes two issues of video out standard cropping feature.
   Resulting left and right cropping parameters should be multiple of 2.
   Left cropping offset calculation to YUY2 frames fixed.
+- Fix UI freeze.
+- Fix video deadlock.
 
---- src/xine-engine/video_out.c.orig	Mon May  9 21:02:46 2011
-+++ src/xine-engine/video_out.c	Mon May  9 21:10:23 2011
+--- src/xine-engine/video_out.c.orig	Wed Jul 21 13:43:52 2010
++++ src/xine-engine/video_out.c	Wed Sep 28 01:45:14 2011
 @@ -533,8 +533,8 @@ static int vo_frame_draw (vo_frame_t *img, xine_stream
      xine_list_iterator_t ite;
  
@@ -18,7 +20,95 @@ $OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Ex
      img->crop_top    += this->crop_top;
      img->crop_bottom += this->crop_bottom;
  
-@@ -1124,6 +1124,11 @@ static void paused_loop( vos_t *this, int64_t vpts )
+@@ -571,25 +571,28 @@ static int vo_frame_draw (vo_frame_t *img, xine_stream
+      * check for first frame after seek and mark it
+      */
+     img->is_first = 0;
+-    pthread_mutex_lock(&this->streams_lock);
+-    for (ite = xine_list_front(this->streams); ite;
+-         ite = xine_list_next(this->streams, ite)) {
+-      stream = xine_list_get_value(this->streams, ite);
+-      if (stream == XINE_ANON_STREAM) continue;
+-      pthread_mutex_lock (&stream->first_frame_lock);
+-      if (stream->first_frame_flag == 2) {
+-        if (this->grab_only) {
+-          stream->first_frame_flag = 0;
+-          pthread_cond_broadcast(&stream->first_frame_reached);
+-        } else
+-          stream->first_frame_flag = 1;
+-        img->is_first = FIRST_FRAME_MAX_POLL;
++    /* avoid a complex deadlock situation caused by net_buf_control */
++    if (!pthread_mutex_trylock(&this->streams_lock)) {
++      for (ite = xine_list_front(this->streams); ite;
++           ite = xine_list_next(this->streams, ite)) {
++        stream = xine_list_get_value(this->streams, ite);
++        if (stream == XINE_ANON_STREAM) continue;
++        pthread_mutex_lock (&stream->first_frame_lock);
++        if (stream->first_frame_flag == 2) {
++          if (this->grab_only) {
++            stream->first_frame_flag = 0;
++            pthread_cond_broadcast(&stream->first_frame_reached);
++          } else {
++            stream->first_frame_flag = 1;
++          }
++          img->is_first = FIRST_FRAME_MAX_POLL;
+ 
+-        lprintf ("get_next_video_frame first_frame_reached\n");
++          lprintf ("get_next_video_frame first_frame_reached\n");
++        }
++        pthread_mutex_unlock (&stream->first_frame_lock);
+       }
+-      pthread_mutex_unlock (&stream->first_frame_lock);
++      pthread_mutex_unlock(&this->streams_lock);
+     }
+-    pthread_mutex_unlock(&this->streams_lock);
+ 
+     if (!img_already_locked)
+       vo_frame_inc_lock( img );
+@@ -801,7 +804,7 @@ static void expire_frames (vos_t *this, int64_t cur_vp
+ 
+   while (img) {
+ 
+-    if (img->is_first) {
++    if (img->is_first > 0) {
+       lprintf("expire_frames: first_frame !\n");
+ 
+       /*
+@@ -818,6 +821,8 @@ static void expire_frames (vos_t *this, int64_t cur_vp
+         img->vpts = cur_vpts + FIRST_FRAME_POLL_DELAY;
+       }
+       img->is_first--;
++      /* make sure to wake up xine_play even if this first frame gets discarded */
++      if (img->is_first == 0) img->is_first = -1;
+       break;
+     }
+ 
+@@ -847,6 +852,24 @@ static void expire_frames (vos_t *this, int64_t cur_vp
+ 	pthread_mutex_lock( &img->stream->current_extra_info_lock );
+ 	_x_extra_info_merge( img->stream->current_extra_info, img->extra_info );
+ 	pthread_mutex_unlock( &img->stream->current_extra_info_lock );
++	/* wake up xine_play now if we just discarded first frame */
++	if (img->is_first != 0) {
++	  xine_list_iterator_t ite;
++	  pthread_mutex_lock (&this->streams_lock);
++	  for (ite = xine_list_front(this->streams); ite;
++	    ite = xine_list_next(this->streams, ite)) {
++	    xine_stream_t *stream = xine_list_get_value (this->streams, ite);
++	    if (stream == XINE_ANON_STREAM) continue;
++	    pthread_mutex_lock (&stream->first_frame_lock);
++	    if (stream->first_frame_flag) {
++	      stream->first_frame_flag = 0;
++	      pthread_cond_broadcast (&stream->first_frame_reached);
++	    }
++	    pthread_mutex_unlock (&stream->first_frame_lock);
++	  }
++	  pthread_mutex_unlock(&this->streams_lock);
++	  xine_log (this->xine, XINE_LOG_MSG, _("video_out: just discarded first frame after seek\n"));
++	}
+       }
+ 
+       /* when flushing frames, keep the first one as backup */
+@@ -1124,6 +1147,11 @@ static void paused_loop( vos_t *this, int64_t vpts )
    pthread_mutex_unlock( &this->free_img_buf_queue->mutex );
  }
  
@@ -30,7 +120,7 @@ $OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Ex
  static void *video_out_loop (void *this_gen) {
  
    int64_t            vpts, diff;
-@@ -1131,6 +1136,7 @@ static void *video_out_loop (void *this_gen) {
+@@ -1131,6 +1159,7 @@ static void *video_out_loop (void *this_gen) {
    vos_t             *this = (vos_t *) this_gen;
    int64_t            next_frame_vpts = 0;
    int64_t            usec_to_sleep;
@@ -38,7 +128,7 @@ $OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Ex
  
  #ifndef WIN32
    /* nice(-value) will fail silently for normal users.
-@@ -1141,6 +1147,16 @@ static void *video_out_loop (void *this_gen) {
+@@ -1141,6 +1170,16 @@ static void *video_out_loop (void *this_gen) {
    nice(-2);
  #endif /* WIN32 */
  
@@ -55,7 +145,7 @@ $OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Ex
    /*
     * here it is - the heart of xine (or rather: one of the hearts
     * of xine) : the video output loop
-@@ -1191,7 +1207,7 @@ static void *video_out_loop (void *this_gen) {
+@@ -1191,7 +1230,7 @@ static void *video_out_loop (void *this_gen) {
             ite = xine_list_next(this->streams, ite)) {
  	xine_stream_t *stream = xine_list_get_value(this->streams, ite);
  	if (stream == XINE_ANON_STREAM) continue;
@@ -64,7 +154,7 @@ $OpenBSD: patch-src_xine-engine_video_out_c,v 1.10 2011/05/11 09:05:55 dcoppa Ex
            buf_element_t *buf;
  
  	  lprintf ("flushing current video decoder plugin\n");
-@@ -1741,7 +1757,7 @@ static vo_frame_t * crop_frame( xine_video_port_t *thi
+@@ -1741,7 +1780,7 @@ static vo_frame_t * crop_frame( xine_video_port_t *thi
      yuy2_to_yuy2(
       /* src */
        img->base[0] + img->crop_top * img->pitches[0] +

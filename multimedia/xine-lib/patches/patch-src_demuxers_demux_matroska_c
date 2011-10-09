@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.5 2011/10/09 20:45:07 sthen Exp $
+
+VP8 support.
+
+--- src/demuxers/demux_matroska.c.orig	Wed Sep 28 01:31:40 2011
++++ src/demuxers/demux_matroska.c	Wed Sep 28 01:32:48 2011
+@@ -1327,6 +1327,29 @@ static int parse_track_entry(demux_matroska_t *this, m
+       lprintf("MATROSKA_CODEC_ID_V_MPEG2\n");
+       track->buf_type = BUF_VIDEO_MPEG;
+       init_codec = init_codec_video;
++    } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_V_VP8)) {
++      xine_bmiheader *bih;
++
++      lprintf("MATROSKA_CODEC_ID_V_VP8\n");
++      if (track->codec_private_len > 0x7fffffff - sizeof(xine_bmiheader))
++        track->codec_private_len = 0x7fffffff - sizeof(xine_bmiheader);
++
++      /* create a bitmap info header struct for vp8 */
++      bih = calloc(1, sizeof(xine_bmiheader) + track->codec_private_len);
++      bih->biSize = sizeof(xine_bmiheader) + track->codec_private_len;
++      bih->biCompression = ME_FOURCC('v', 'p', '8', '0');
++      bih->biWidth = track->video_track->pixel_width;
++      bih->biHeight = track->video_track->pixel_height;
++      _x_bmiheader_le2me(bih);
++
++      /* add bih extra data */
++      memcpy(bih + 1, track->codec_private, track->codec_private_len);
++      free(track->codec_private);
++      track->codec_private = (uint8_t *)bih;
++      track->codec_private_len = bih->biSize;
++      track->buf_type = BUF_VIDEO_VP8;
++
++      init_codec = init_codec_video;
+     } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_V_REAL_RV10)) {
+     } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_V_REAL_RV20)) {
+     } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_V_REAL_RV30)) {

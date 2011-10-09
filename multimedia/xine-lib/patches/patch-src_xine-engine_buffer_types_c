@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_xine-engine_buffer_types_c,v 1.1 2011/10/09 20:45:07 sthen Exp $
+--- src/xine-engine/buffer_types.c.orig	Tue Mar 23 11:46:03 2010
++++ src/xine-engine/buffer_types.c	Wed Sep 28 04:09:58 2011
+@@ -789,6 +789,14 @@ static const video_db_t video_db[] = {
+   BUF_VIDEO_SNOW,
+   "Snow"
+ },
++{
++  {
++    ME_FOURCC('V','P','8','0'),
++    0
++  },
++  BUF_VIDEO_VP8,
++  "On2 VP8"
++},
+ { { 0 }, 0, "last entry" }
+ };
+ 
+@@ -826,6 +834,7 @@ static const audio_db_t audio_db[] = {
+   {
+     ME_FOURCC('t','w','o','s'),
+     ME_FOURCC('i','n','2','4'),
++    ME_FOURCC('4','2','n','i'),
+     0
+   },
+   BUF_AUDIO_LPCM_BE,

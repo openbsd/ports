@@ -1,9 +1,19 @@
-$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.1 2011/05/11 09:05:54 dcoppa Exp $
+$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.2 2011/10/09 20:45:07 sthen Exp $
 
-Check boundaries during MPEG TS stream detection.
+- Check boundaries during MPEG TS stream detection.
+- Logic error with AC3 demuxer.
 
---- src/demuxers/demux_ts.c.orig	Mon May  9 20:47:00 2011
-+++ src/demuxers/demux_ts.c	Mon May  9 20:49:06 2011
+--- src/demuxers/demux_ts.c.orig	Fri Apr  9 17:08:08 2010
++++ src/demuxers/demux_ts.c	Wed Sep 28 01:47:17 2011
+@@ -1438,7 +1438,7 @@ printf("Program Number is %i, looking for %i\n",progra
+         if (((stream[i] == 0x6a) || (stream[i] == 0x7a)) && (this->audio_tracks_count < MAX_AUDIO_TRACKS)) {
+           int j, found = 0;
+           for(j = 0; j < this->audio_tracks_count; j++) {
+-            if(this->audio_tracks[i].pid == pid) {
++            if(this->audio_tracks[j].pid == pid) {
+               found = 1;
+               break;
+ 	    }
 @@ -2360,18 +2360,20 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
    demux_ts_t *this;
    int         i;
