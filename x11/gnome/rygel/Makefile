@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/09 10:11:26 jasper Exp $
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
-GNOME_VERSION=		0.12.3
+GNOME_VERSION=		0.12.4
 
 CATEGORIES=		multimedia
 
