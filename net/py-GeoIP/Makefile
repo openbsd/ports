@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/09 09:18:50 benoit Exp $
 
 COMMENT =		GeoIP Python API
 
-MODPY_EGG_VERSION =	1.2.5
-REVISION =		3
+MODPY_EGG_VERSION =	1.2.7
 DISTNAME =		GeoIP-Python-${MODPY_EGG_VERSION}
 PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}
 CATEGORIES =		net
@@ -32,6 +31,6 @@ NO_REGRESS =		Yes
                        
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/test* ${EXAMPLEDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${MODPY_ADJ_FILES} ${EXAMPLEDIR}
 
 .include <bsd.port.mk>
