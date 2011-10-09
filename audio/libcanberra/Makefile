@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/30 06:51:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/10/09 14:03:02 shadchin Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -11,7 +11,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-gtk=	2
 REVISION-gtk3=	1
 
@@ -70,8 +70,7 @@ AUTOMAKE_VERSION= 	1.10
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
-LIB_DEPENDS-main=	textproc/libxml \
-			audio/libvorbis \
+LIB_DEPENDS-main=	audio/libvorbis \
 			devel/libtool,-ltdl
 RUN_DEPENDS-main=	audio/sound-theme-freedesktop>=0.6
 
