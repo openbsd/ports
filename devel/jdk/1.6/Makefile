@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/10/08 14:13:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.26 2011/10/10 00:44:07 kurt Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -161,6 +161,7 @@ BROKEN += to /etc/mk.conf and restart the build
 post-extract:
 	@rm -rf ${WRKDIR}/tmp
 	@mkdir ${WRKDIR}/tmp && \
+		cd ${WRKDIR}/tmp && \
 		${CC} ${CFLAGS} -o ${WRKDIR}/tmp/x_x2zip ${FILESDIR}/x_x2zip.c
 .for jar in ${JRLSRC} ${JRLBIN} ${JRLMOZ}
 	@cd ${WRKDIR}/tmp && \
