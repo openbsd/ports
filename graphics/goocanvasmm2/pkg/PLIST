@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/29 17:05:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/10 18:28:17 jasper Exp $
 %%SHARED%%
 include/goocanvasmm-2.0/
 include/goocanvasmm-2.0/goocanvasmm/
@@ -163,8 +163,6 @@ share/doc/goocanvasmm-2.0/reference/html/classGoocanvas_1_1Text__inherit__graph.
 share/doc/goocanvasmm-2.0/reference/html/classGoocanvas_1_1Widget-members.html
 share/doc/goocanvasmm-2.0/reference/html/classGoocanvas_1_1Widget.html
 share/doc/goocanvasmm-2.0/reference/html/classGoocanvas_1_1Widget__inherit__graph.png
-share/doc/goocanvasmm-2.0/reference/html/classGtk_1_1Container.html
-share/doc/goocanvasmm-2.0/reference/html/classGtk_1_1Container__inherit__graph.png
 share/doc/goocanvasmm-2.0/reference/html/classes.html
 share/doc/goocanvasmm-2.0/reference/html/closed.png
 share/doc/goocanvasmm-2.0/reference/html/doxygen.css
@@ -215,9 +213,9 @@ share/doc/goocanvasmm-2.0/reference/html/inherit_graph_0.png
 share/doc/goocanvasmm-2.0/reference/html/inherit_graph_1.png
 share/doc/goocanvasmm-2.0/reference/html/inherit_graph_2.png
 share/doc/goocanvasmm-2.0/reference/html/inherit_graph_3.png
-share/doc/goocanvasmm-2.0/reference/html/inherit_graph_4.png
 share/doc/goocanvasmm-2.0/reference/html/inherits.html
 share/doc/goocanvasmm-2.0/reference/html/modules.html
+share/doc/goocanvasmm-2.0/reference/html/namespaceAtk.html
 share/doc/goocanvasmm-2.0/reference/html/namespaceGoocanvas.html
 share/doc/goocanvasmm-2.0/reference/html/namespacemembers.html
 share/doc/goocanvasmm-2.0/reference/html/namespacemembers_enum.html
