@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/10/07 13:54:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.48 2011/10/10 09:01:42 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -117,7 +117,7 @@ COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
-REVISION-i18n-$l =	0
+REVISION-i18n-$l =	1
 .endfor
 .endif
 
