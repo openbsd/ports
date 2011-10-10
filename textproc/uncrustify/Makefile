@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/07 20:34:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/10 20:22:55 rpointel Exp $
 
 COMMENT =		source code beautifier
 
-DISTNAME =		uncrustify-0.58
+DISTNAME =		uncrustify-0.59
 
 CATEGORIES =		textproc devel
 
