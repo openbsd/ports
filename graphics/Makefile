@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.301 2011/10/04 07:29:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.302 2011/10/10 18:43:35 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -36,7 +36,6 @@
      SUBDIR += dcmtk
      SUBDIR += dcraw
      SUBDIR += dia
-     SUBDIR += dia,gnome
      SUBDIR += digikam
      SUBDIR += digikam-doc
      SUBDIR += discwrapper
