@@ -1,3 +1,4 @@
+$OpenBSD: patch-lib_Crypto_Cypher___init___py,v 1.3 2011/10/10 10:08:05 mpi Exp $
 --- lib/Crypto/Cipher/__init__.py.orig	Fri Aug 27 06:41:55 2010
 +++ lib/Crypto/Cipher/__init__.py	Sun Oct  9 17:06:47 2011
 @@ -31,7 +31,6 @@ If you don't know which algorithm to choose, use AES b

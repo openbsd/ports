@@ -1,3 +1,4 @@
+$OpenBSD: patch-setup_py,v 1.6 2011/10/10 10:08:05 mpi Exp $
 --- setup.py.orig	Fri Aug 27 06:41:55 2010
 +++ setup.py	Sun Oct  9 17:06:47 2011
 @@ -267,9 +267,6 @@ kw = {'name':"pycrypto",

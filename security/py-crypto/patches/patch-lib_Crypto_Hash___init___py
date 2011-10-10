@@ -1,3 +1,4 @@
+$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.3 2011/10/10 10:08:05 mpi Exp $
 --- lib/Crypto/Hash/__init__.py.orig	Fri Aug 27 06:41:55 2010
 +++ lib/Crypto/Hash/__init__.py	Sun Oct  9 17:06:47 2011
 @@ -32,13 +32,12 @@ The hashing modules here all support the interface des
@@ -13,5 +14,3 @@
  
 -__all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
 +__all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
- __revision__ = "$Id: patch-lib_Crypto_Hash___init___py,v 1.2 2011/10/09 15:09:55 ajacoutot Exp $"
- 

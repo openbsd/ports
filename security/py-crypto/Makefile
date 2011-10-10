@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/10/08 14:56:34 mpi Exp $
+# $OpenBSD: Makefile,v 1.21 2011/10/10 10:08:05 mpi Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,6 +29,8 @@ DOCSDIR =	${PREFIX}/share/doc/py-crypto
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/setup.py
+	rm ${WRKSRC}/lib/Crypto/SelfTest/Cipher/test_ARC2.py
+	rm ${WRKSRC}/lib/Crypto/SelfTest/Hash/test_MD2.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
