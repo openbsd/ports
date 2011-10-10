@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.25 2011/09/25 10:41:30 espie Exp $
+# $OpenBSD: dpb,v 1.26 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -236,7 +236,7 @@ sub parse_build_file
 		chomp;
 		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
 		next if (!defined $sz) || $sz =~ m/!$/;
-		my $o = DPB::PkgPath->new_hidden($pkgpath);
+		my $o = DPB::PkgPath->new($pkgpath);
 		for my $c (@consumers) {
 			$c->add_build_info($o, $host, $time, $sz);
 		}
@@ -288,7 +288,7 @@ use DPB::Locks;
 use DPB::Job;
 use DPB::Grabber;
 
-my @subdirlist;
+my $subdirlist = {};
 
 my $state = DPB::State->new('dpb');
 $state->handle_options;
@@ -310,7 +310,7 @@ for my $arg (@ARGV) {
 	}
 	my $pkgpath = DPB::PkgPath->new($path);
 	$state->heuristics->set_weight($pkgpath, $weight);
-	$pkgpath->add_to_subdirlist(\@subdirlist);
+	$pkgpath->add_to_subdirlist($subdirlist);
 }
 
 $state->{builder} = DPB::PortBuilder->new($state);
@@ -375,12 +375,13 @@ if ($state->{all}) {
 	my $list = $state->engine->find_best($state->logger->logfile("dependencies"), 10);
 	# if we have them, list them before the full ports tree walk.
 	if (@$list > 0) {
-		$state->grabber->grab_subdirs($core, $list);
+		my $actual = map {($_,1)} @$list;
+		$state->grabber->grab_subdirs($core, $actual);
 	}
 }
 
-if (@subdirlist > 0) {
-	$state->grabber->grab_subdirs($core, \@subdirlist);
+if (keys %$subdirlist > 0) {
+	$state->grabber->grab_subdirs($core, $subdirlist);
 }
 
 $state->grabber->complete_subdirs($core);

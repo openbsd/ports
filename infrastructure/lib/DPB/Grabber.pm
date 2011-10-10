@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.14 2011/09/25 10:40:25 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.15 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -53,7 +53,8 @@ sub finish
 			delete $v->{info};
 			delete $v->{broken};
 			$self->{engine}->add_fatal($v);
-		} else {
+		} elsif ($v->{wantbuild}) {
+			delete $v->{wantbuild};
 			$self->{engine}->new_path($v);
 		}
 	}
@@ -84,7 +85,11 @@ sub grab_subdirs
 	DPB::Vars->grab_list($core, $self, $list,
 	    $self->{loglist}, $self->{dpb},
 	    sub {
-		$self->finish(shift);
+	    	my $h = shift;
+		for my $v (values %$h) {
+			$v->{wantbuild} = 1;
+		}
+		$self->finish($h);
 	});
 }
 
@@ -105,22 +110,32 @@ sub complete_subdirs
 	my ($self, $core) = @_;
 	# more passes if necessary
 	while ($self->{keep_going}) {
-		my @subdirlist = ();
+		my $subdirlist = {};
 		for my $v (DPB::PkgPath->seen) {
-			next if defined $v->{info};
+			if (defined $v->{info}) {
+				if (defined $v->{wantbuild}) {
+					delete $v->{wantbuild};
+					$self->{engine}->new_path($v);
+				}
+				next;
+			}
 			next if defined $v->{category};
 			if (defined $v->{tried}) {
 				$self->{engine}->add_fatal($v) 
 				    if !defined $v->{errored};
 				$v->{errored} = 1;
-			} else {
-				$v->add_to_subdirlist(\@subdirlist);
+			} elsif ($v->{wantinfo} || $v->{wantbuild}) {
+				$v->add_to_subdirlist($subdirlist);
 				$v->{tried} = 1;
 			}
 		}
-		last if @subdirlist == 0;
+		last if (keys %$subdirlist) == 0;
 
-		$self->grab_subdirs($core, \@subdirlist);
+		DPB::Vars->grab_list($core, $self, $subdirlist,
+		    $self->{loglist}, $self->{dpb},
+		    sub {
+			$self->finish(shift);
+		    });
 	}
 }
 

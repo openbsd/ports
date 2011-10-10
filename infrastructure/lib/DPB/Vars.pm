@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.18 2011/09/13 09:46:53 espie Exp $
+# $OpenBSD: Vars.pm,v 1.19 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -21,7 +21,7 @@ package DPB::GetThings;
 sub subdirlist
 {
 	my ($class, $list) = @_;
-	return join(' ', sort @$list);
+	return join(' ', sort keys %$list);
 }
 
 sub run_command
@@ -118,9 +118,7 @@ sub grab_list
 	my $subdir;
 	my $category;
 	my $reset = sub {
-			for my $v (values %$h) {
-				$v->handle_default($h);
-			}
+			DPB::PkgPath->handle_equivalences($grabber->{state}, $h);
 			$grabber->{fetch}->build_distinfo($h, 
 			    $grabber->{state}->{fetch_only});
 			DPB::PkgPath->merge_depends($h);
@@ -134,7 +132,7 @@ sub grab_list
 		chomp;
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
-			my $dir = DPB::PkgPath->new_hidden($1);
+			my $dir = DPB::PkgPath->new($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
 			open my $quicklog,  '>>',
@@ -147,7 +145,7 @@ sub grab_list
 			@current = ("$_\n");
 			print $log $_, "\n";
 			$core->job->set_status(" at $1");
-			$subdir = DPB::PkgPath->new_hidden($1);
+			$subdir = DPB::PkgPath->new($1);
 			if (defined $category) {
 				$category->{category} = 1;
 			}
@@ -171,7 +169,7 @@ sub grab_list
 				$o->{broken} = 1;
 			}
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
-			my $dir = DPB::PkgPath->new_hidden($1);
+			my $dir = DPB::PkgPath->new($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
 			print $log $_, "\n";

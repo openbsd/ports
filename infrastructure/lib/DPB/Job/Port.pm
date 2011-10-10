@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.13 2011/09/25 10:41:30 espie Exp $
+# $OpenBSD: Port.pm,v 1.14 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -427,6 +427,18 @@ sub add_build_info
 {
 	my ($class, $pkgpath, $host, $time, $sz) = @_;
 	$logsize->{$pkgpath} = $sz;
+}
+
+sub equates
+{
+	my ($class, $h) = @_;
+	for my $v (values %$h) {
+		next unless defined $logsize->{$v};
+		for my $w (values %$h) {
+			$logsize->{$w} //= $logsize->{$v};
+		}
+		return;
+	}
 }
 
 sub set_watch

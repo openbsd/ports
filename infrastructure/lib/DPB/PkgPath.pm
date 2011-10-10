@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.12 2011/10/03 08:56:40 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.13 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,6 @@ use warnings;
 
 package DPB::PkgPath;
 my $cache = {};
-my $seen = {};
 
 sub create
 {
@@ -65,8 +64,8 @@ sub normalize
 	return $cache->{$fullpkgpath} //= $o;
 }
 
-# actual user constructor that doesn't record into seen
-sub new_hidden
+# actual constructor
+sub new
 {
 	my ($class, $fullpkgpath) = @_;
 	if (defined $cache->{$fullpkgpath}) {
@@ -76,17 +75,9 @@ sub new_hidden
 	}
 }
 
-# actual user constructor that records into seen
-sub new
-{
-	my ($class, $fullpkgpath) = @_;
-	my $o = $class->new_hidden($fullpkgpath);
-	$seen->{$o} //= $o;
-}
-
 sub seen
 {
-	return values %$seen;
+	return values %$cache;
 }
 
 sub basic_list
@@ -113,7 +104,8 @@ sub fullpkgpath
 
 sub logname
 {
-	return shift->fullpkgpath;
+	my $self = shift;
+	return $self->fullpkgpath;
 }
 
 sub lockname
@@ -150,7 +142,7 @@ sub pkgpath_and_flavors
 sub add_to_subdirlist
 {
 	my ($self, $list) = @_;
-	push(@$list, $self->pkgpath_and_flavors);
+	$list->{$self->pkgpath_and_flavors} = 1;
 }
 
 sub copy_flavors
@@ -170,7 +162,6 @@ sub compose
 	my $o = $class->create($fullpkgpath);
 	$o->{flavors} = $pseudo->copy_flavors;
 	$o->{sawflavor} = $pseudo->{sawflavor};
-	my $p = $o->normalize;
 	return $o->normalize;
 }
 
@@ -182,11 +173,46 @@ sub fullpkgname
 	return (defined $self->{info}) ?  $self->{info}->fullpkgname : undef;
 }
 
+sub may_create
+{
+	my ($n, $o, $h, $state) = @_;
+	my $k = $n->fullpkgpath;
+	if (defined $cache->{$k}) {
+		$n = $cache->{$k};
+	} else {
+		$cache->{$k} = $n;
+	}
+	$n->{has} //= $o->{has};
+	$n->{new} //= $o->{new};
+	$n->{info} //= $o->{info};
+	$h->{$n} = 1;
+	return $n;
+}
+
+sub simplifies_to
+{
+	my ($self, $simpler, $state) = @_;
+	open my $quicklog, '>>', $state->logger->logfile('equiv');
+	print $quicklog $self->fullpkgpath, " -> ", $simpler->fullpkgpath, "\n";
+}
+
+sub handle_equivalences
+{
+	my ($class, $state, $todo) = @_;
+	my $h = {};
+	for my $v (values %$todo) {
+		$h->{$v} = 1;
+		$v->handle_default_flavor($h, $state);
+		$v->handle_default_subpackage($h, $state);
+	}
+	DPB::Job::Port->equates($h);
+	DPB::Heuristics->equates($h);
+}
 
 sub zap_default
 {
 	my ($self, $subpackage) = @_;
-	return $self unless defined $subpackage;
+	return $self unless defined $subpackage and defined $self->{multi};
 	if ($subpackage->string eq $self->{multi}) {
 		my $o = bless {pkgpath => $self->{pkgpath},
 			sawflavor => $self->{sawflavor},
@@ -197,15 +223,30 @@ sub zap_default
 	}
 }
 
-# default subpackage leads to pkgpath,-default = pkgpath
-sub handle_default
+sub handle_default_flavor
 {
-	my ($self, $h) = @_;
+	my ($self, $h, $state) = @_;
+
+	if (!$self->{sawflavor}) {
+		my $m = bless { pkgpath => $self->{pkgpath},
+		    sawflavor => 1,
+		    multi => $self->{multi},
+		    flavors => $self->{info}->{FLAVOR}}, ref($self);
+		$m = $m->may_create($self, $h, $state);
+		$m->simplifies_to($self, $state);
+		$m->handle_default_subpackage($h, $state);
+	}
+}
+
+# default subpackage leads to pkgpath,-default = pkgpath
+sub handle_default_subpackage
+{
+	my ($self, $h, $state) = @_;
 	my $m = $self->zap_default($self->{info}->{SUBPACKAGE});
 	if ($m ne $self) {
-#		print $m->fullpkgpath, " vs. ", $self->fullpkgpath,"\n";
-		$m->{info} = $self->{info};
-		$h->{$m} = $m;
+		$m = $m->may_create($self, $h, $state);
+		$self->simplifies_to($m, $state);
+		$m->handle_default_flavor($h, $state);
 	}
 }
 

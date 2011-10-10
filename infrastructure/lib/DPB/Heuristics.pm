@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.10 2011/09/13 09:46:53 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.11 2011/10/10 18:56:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,7 +64,19 @@ sub finished_parsing
 sub intrinsic_weight
 {
 	my ($self, $v) = @_;
-	$weight{$v} //= $default;
+	$weight{$v} // $default;
+}
+
+sub equates
+{
+	my ($class, $h) = @_;
+	for my $v (values %$h) {
+		next unless defined $weight{$v};
+		for my $w (values %$h) {
+			$weight{$w} //= $weight{$v};
+		}
+		return;
+	}
 }
 
 my $threshold;
