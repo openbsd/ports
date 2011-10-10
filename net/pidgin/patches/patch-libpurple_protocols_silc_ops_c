@@ -1,0 +1,24 @@
+$OpenBSD: patch-libpurple_protocols_silc_ops_c,v 1.1 2011/10/10 17:17:08 jasper Exp $
+
+Fix invalid UTF-8 string handling with SILC messages. CVE-2001-3594
+
+--- libpurple/protocols/silc/ops.c.orig	Fri Oct  7 19:05:48 2011
++++ libpurple/protocols/silc/ops.c	Fri Oct  7 19:07:04 2011
+@@ -408,9 +408,16 @@ silc_private_message(SilcClient client, SilcClientConn
+ 	}
+ 
+ 	if (flags & SILC_MESSAGE_FLAG_UTF8) {
+-		tmp = g_markup_escape_text((const char *)message, -1);
++		const char *msg = (const char *)message;
++		char *salvaged = NULL;
++		if (!g_utf8_validate((const char *)message, -1, NULL)) {
++			salvaged = purple_utf8_salvage((const char *)message);
++			msg = salvaged;
++		}
++		tmp = g_markup_escape_text(msg, -1);
+ 		/* Send to Purple */
+ 		serv_got_im(gc, sender->nickname, tmp, 0, time(NULL));
++		g_free(salvaged);
+ 		g_free(tmp);
+ 	}
+ }

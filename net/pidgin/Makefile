@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.100 2011/10/10 17:17:08 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,8 @@ DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION =	0
+REVISION-main=	0
+REVISION-libpurple= 0
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}

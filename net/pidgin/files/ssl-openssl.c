@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.5 2010/11/07 12:32:07 steven Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.6 2011/10/10 17:17:08 jasper Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -161,6 +161,11 @@ ssl_openssl_connect(PurpleSslConnection *gsc)
 		purple_ssl_close(gsc);
 		return;
 	}
+
+	/*
+	 * disable SSLv2
+	*/
+	SSL_CTX_set_options(openssl_data->ssl_ctx, SSL_OP_NO_SSLv2);
 
 	/*
 	 * allocate a new SSL object
