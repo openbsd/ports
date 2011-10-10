@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/29 17:19:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/10 20:14:17 jasper Exp $
 @bin bin/glom
+@bin bin/glom_create_from_example
 include/glom-${API_V}/
 include/glom-${API_V}/libglom/
 include/glom-${API_V}/libglom/appstate.h
@@ -429,8 +430,6 @@ share/glom/pixmaps/glom-text.png
 share/glom/xslt/
 share/glom/xslt/print_details_to_html.xsl
 share/glom/xslt/print_report_to_html.xsl
-share/gnome/
-share/gnome/help/
 share/gnome/help/glom/
 share/gnome/help/glom/C/
 share/gnome/help/glom/C/figures/

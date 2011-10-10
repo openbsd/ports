@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/03 12:10:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/10/10 20:14:17 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
-GNOME_VERSION=		1.19.11
-REVISION=		1
+GNOME_VERSION=		1.19.12
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=619445
 PATCHFILES=		glom_locale.patch:0
@@ -58,7 +57,7 @@ RUN_DEPENDS=		databases/postgresql,-server \
 			x11/gnome/libgda>=4.99.4p2
 LIB_DEPENDS=		devel/boost \
 			graphics/evince \
-			graphics/goocanvasmm2 \
+			graphics/goocanvasmm2>=1.90.6 \
 			net/libepc \
 			textproc/libxml++ \
 			x11/gnome/libgda,-pgsql \
