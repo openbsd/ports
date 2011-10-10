@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/12 14:07:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/10 08:14:46 jasper Exp $
 %%SHARED%%
 include/goocanvas-2.0/
 include/goocanvas-2.0/goocanvas.h
@@ -19,12 +19,14 @@ include/goocanvas-2.0/goocanvastable.h
 include/goocanvas-2.0/goocanvastext.h
 include/goocanvas-2.0/goocanvasutils.h
 include/goocanvas-2.0/goocanvaswidget.h
+lib/girepository-1.0/GooCanvas-2.0.typelib
 lib/libgoocanvas-2.0.a
 lib/libgoocanvas-2.0.la
-lib/pkgconfig/
 lib/pkgconfig/goocanvas-2.0.pc
-share/gtk-doc/
-share/gtk-doc/html/
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.pyc
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/GooCanvas.pyo
+share/gir-1.0/GooCanvas-2.0.gir
 share/gtk-doc/html/goocanvas2/
 share/gtk-doc/html/goocanvas2/GooCanvas.html
 share/gtk-doc/html/goocanvas2/GooCanvasEllipse.html
@@ -64,7 +66,6 @@ share/gtk-doc/html/goocanvas2/goocanvas-overview.html
 share/gtk-doc/html/goocanvas2/goocanvas-simple-canvas.html
 share/gtk-doc/html/goocanvas2/goocanvas-wysiwyg.html
 share/gtk-doc/html/goocanvas2/goocanvas2-GooCanvas-Types.html
-share/gtk-doc/html/goocanvas2/goocanvas2.devhelp
 share/gtk-doc/html/goocanvas2/goocanvas2.devhelp2
 share/gtk-doc/html/goocanvas2/home.png
 share/gtk-doc/html/goocanvas2/index.html
@@ -73,8 +74,6 @@ share/gtk-doc/html/goocanvas2/left.png
 share/gtk-doc/html/goocanvas2/right.png
 share/gtk-doc/html/goocanvas2/style.css
 share/gtk-doc/html/goocanvas2/up.png
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/goocanvas2.mo
 share/locale/es/LC_MESSAGES/goocanvas2.mo
 share/locale/ja/LC_MESSAGES/goocanvas2.mo
