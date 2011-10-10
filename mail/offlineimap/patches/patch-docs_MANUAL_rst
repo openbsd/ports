@@ -1,0 +1,21 @@
+$OpenBSD: patch-docs_MANUAL_rst,v 1.1 2011/10/10 13:31:43 mpi Exp $
+--- docs/MANUAL.rst.orig	Mon Oct 10 10:25:54 2011
++++ docs/MANUAL.rst	Mon Oct 10 10:26:53 2011
+@@ -380,7 +380,7 @@
+ default.
+ 
+ Certificate checking
+-^^^^^^^^^^^^^^^^^^^^
++--------------------
+ 
+ Unfortunately, by default we will not verify the certificate of an IMAP
+ TLS/SSL server we connect to, so connecting by SSL is no guarantee
+@@ -397,7 +397,7 @@
+ certificate and CA certificate.
+ 
+ StartTLS
+-^^^^^^^^
++--------
+ 
+ If you have not configured your account to connect via SSL anyway,
+ OfflineImap will still attempt to set up an SSL connection via the

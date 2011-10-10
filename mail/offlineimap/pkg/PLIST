@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/27 12:59:27 pea Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/10/10 13:31:43 mpi Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
 lib/python${MODPY_VERSION}/site-packages/offlineimap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/accounts.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/error.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/error.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Base.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Base.pyc
@@ -17,12 +19,16 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/IMAP.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/IMAP.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/LocalStatus.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/LocalStatus.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/LocalStatusSQLite.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/LocalStatusSQLite.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Maildir.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/Maildir.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/UIDMaps.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/UIDMaps.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/folder/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.py
+lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplib2.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplibutil.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imaplibutil.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/imapserver.py
