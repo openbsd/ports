@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.19 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: Vars.pm,v 1.20 2011/10/11 13:56:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -192,7 +192,7 @@ sub grab_signature
 	my $signature;
 	$core->start_pipe(sub {
 		my $shell = shift;
-		$class->run_command($core, $shell, $grabber, [$subdir],
+		$class->run_command($core, $shell, $grabber, {$subdir => 1},
 			'print-package-signature', 'ECHO_MSG=:')
 	}, "PORT-SIGNATURE");
 	my $fh = $core->fh;
@@ -211,7 +211,7 @@ sub clean
 	my ($class, $core, $grabber, $subdir) = @_;
 	$core->start_pipe(sub {
 		my $shell = shift;
-		$class->run_command($core, $shell, $grabber, [$subdir],
+		$class->run_command($core, $shell, $grabber, {$subdir => 1},
 			'clean=packages')
 	}, "CLEAN-PACKAGES");
 	my $fh = $core->fh;
