@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/08 19:26:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/10/11 18:02:53 jasper Exp $
 
 COMMENT=	interact with an EWMH/NetWM window manager
 DISTNAME=	wmctrl-1.07
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 MASTER_SITES=	${HOMEPAGE}/dist/
