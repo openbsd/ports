@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2011/08/24 19:18:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.129 2011/10/11 10:43:13 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -18,7 +18,6 @@ WANTLIB=		c crypto krb5 ssl
 
 MODULES=		devel/gettext \
 			lang/python
-MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	fetchmailconf.py
 SUBST_VARS+=		MODPY_LIBDIR
