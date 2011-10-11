@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.69 2011/10/02 15:27:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/10/11 16:03:45 espie Exp $
 
-ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
+ONLY_FOR_ARCHS-mono=	i386 amd64
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	gtk+2 avahi-ui libraries
