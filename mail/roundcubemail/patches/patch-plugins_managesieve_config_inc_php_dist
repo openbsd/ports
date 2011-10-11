@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugins_managesieve_config_inc_php_dist,v 1.1 2011/10/11 22:04:28 sthen Exp $
+--- plugins/managesieve/config.inc.php.dist.orig	Thu Sep  8 14:23:44 2011
++++ plugins/managesieve/config.inc.php.dist	Thu Sep  8 14:24:37 2011
+@@ -1,7 +1,8 @@
+ <?php
+ 
+ // managesieve server port
+-$rcmail_config['managesieve_port'] = 2000;
++// 4190: IETF standard. 2000: deprecated but in common use.
++$rcmail_config['managesieve_port'] = 4190;
+ 
+ // managesieve server address, default is localhost.
+ // Replacement variables supported in host name:
