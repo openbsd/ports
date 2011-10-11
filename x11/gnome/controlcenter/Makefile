@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/10/03 13:49:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2011/10/11 09:35:31 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -107,7 +107,7 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center \
 #   in devel/gsettings-desktop-schemas).
 # * gnome-power-panel needs a fully working gnome-power-manager
 #   (userland cannot be made aware of power/button events yet).
-# * gnome-wacom-panel needs device detection support
+# * gnome-wacom-panel needs device detection support and gnome-bluetooth
 DISABLED_PLUGINS= media power wacom
 
 pre-configure:
