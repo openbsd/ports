@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.13 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.14 2011/10/11 13:43:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -185,7 +185,7 @@ sub may_create
 	$n->{has} //= $o->{has};
 	$n->{new} //= $o->{new};
 	$n->{info} //= $o->{info};
-	$h->{$n} = 1;
+	$h->{$n} = $n;
 	return $n;
 }
 
@@ -201,7 +201,7 @@ sub handle_equivalences
 	my ($class, $state, $todo) = @_;
 	my $h = {};
 	for my $v (values %$todo) {
-		$h->{$v} = 1;
+		$h->{$v} = $v;
 		$v->handle_default_flavor($h, $state);
 		$v->handle_default_subpackage($h, $state);
 	}
