@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.26 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: dpb,v 1.27 2011/10/11 09:50:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -266,7 +266,7 @@ sub parse_size_file
 		if (defined $sz2) {
 			$sz += $sz2;
 		}
-		my $o = DPB::PkgPath->new_hidden($pkgpath);
+		my $o = DPB::PkgPath->new($pkgpath);
 		for my $c (@consumers) {
 			$c->add_size_info($o, $sz);
 		}
