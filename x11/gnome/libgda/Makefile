@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/29 13:35:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/10/11 05:10:25 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,7 @@ PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
 REVISION =		0
 REVISION-main = 	2
-REVISION-ui =		0
+REVISION-ui =		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
