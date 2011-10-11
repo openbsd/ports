@@ -1,10 +1,10 @@
-$OpenBSD: patch-man_feh_pre,v 1.7 2011/09/26 18:01:26 dcoppa Exp $
+$OpenBSD: patch-man_feh_pre,v 1.8 2011/10/11 07:49:07 dcoppa Exp $
 
 fix typo
 
---- man/feh.pre.orig	Mon Sep 26 19:54:00 2011
-+++ man/feh.pre	Mon Sep 26 19:54:21 2011
-@@ -167,7 +167,7 @@ the caption will be looked for in
+--- man/feh.pre.orig	Mon Oct 10 12:31:30 2011
++++ man/feh.pre	Tue Oct 11 09:32:56 2011
+@@ -169,7 +169,7 @@ the caption will be looked for in
  Don't display images, print image info according to
  .Ar format
  instead.  See
@@ -13,3 +13,21 @@ fix typo
  .
  .It Cm --cycle-once
  .
+@@ -801,7 +801,7 @@ which
+ defaults to
+ .Pa ~/.config/feh/ .
+ If the files are not found in that directory, it will also try
+-.Pa /etc/feh/ .
++.Pa ${SYSCONFDIR}/feh/ .
+ .Pp
+ All config files treat lines starting with a
+ .Qq #
+@@ -1293,7 +1293,7 @@ order it finds them on the hard disk, which is usually
+ .
+ Show 128x128 pixel thumbnails, limit window width to 1024 pixels.
+ .
+-.It feh -t -Sfilename -E 128 -y 128 -W 1024 -P -C /usr/share/fonts/truetype/ttf-dejavu/ -e DejaVuSans/8 /opt/images
++.It feh -t -Sfilename -E 128 -y 128 -W 1024 -P -C ${X11BASE}/lib/X11/fonts/TTF/ -e DejaVuSans/8 /opt/images
+ .
+ Same as above, but enable thumbnail caching in ~/.thumbnails and use a smaller
+ font.

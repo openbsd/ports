@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/26 18:01:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2011/10/11 07:49:07 dcoppa Exp $
 
 COMMENT=	lightweight image viewer
 
-DISTNAME=	feh-1.16.2
+DISTNAME=	feh-2.0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	graphics
 
@@ -39,6 +39,8 @@ USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/src/keyevents.c ${WRKSRC}/src/options.c
+	${SUBST_CMD} ${WRKSRC}/examples/themes ${WRKSRC}/man/feh.pre \
+		${WRKSRC}/src/events.c ${WRKSRC}/src/keyevents.c \
+			${WRKSRC}/src/options.c
 
 .include <bsd.port.mk>

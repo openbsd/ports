@@ -1,0 +1,38 @@
+$OpenBSD: patch-examples_themes,v 1.1 2011/10/11 07:49:07 dcoppa Exp $
+--- examples/themes.orig	Tue Oct 11 09:33:25 2011
++++ examples/themes	Tue Oct 11 09:36:41 2011
+@@ -1,6 +1,6 @@
+ # Feh themes configuration file.
+ # Lines starting with # are comments. Midline comments are not supported.
+-# Place this as either ~/.config/feh/themes or /etc/feh/themes
++# Place this as either ~/.config/feh/themes or ${SYSCONFDIR}/feh/themes
+ 
+ # Options are defined in theme_name/options pairs.
+ # Separate themename and options by whitespace.
+@@ -42,9 +42,9 @@ booth --full-screen --hide-pointer --slideshow-delay 2
+ screensave --recursive --full-screen --randomize --slideshow-delay 10 --hide-pointer
+ 
+ # Different menus
+-aqua --menu-bg /usr/share/feh/images/menubg_aqua.png
+-sky --menu-bg /usr/share/feh/images/menubg_sky.png
+-black --menu-bg /usr/share/feh/images/menubg_black.png
++aqua --menu-bg ${TRUEPREFIX}/share/feh/images/menubg_aqua.png
++sky --menu-bg ${TRUEPREFIX}/share/feh/images/menubg_sky.png
++black --menu-bg ${TRUEPREFIX}/share/feh/images/menubg_black.png
+ 
+ # Some more examples, used by the feh developer
+ 
+@@ -53,11 +53,11 @@ fs  --full-screen --hide-pointer --auto-zoom --sort fi
+ 
+ thumb_s  --thumbnails --cache-thumbnails --thumb-width 128 --thumb-height 128 \
+          --limit-width 1024 --sort filename \
+-         --fontpath /usr/share/fonts/truetype/ttf-dejavu/ --font DejaVuSans/8
++         --fontpath ${X11BASE}/lib/X11/fonts/TTF/ --font DejaVuSans/8
+ 
+ thumb_b  --thumbnails --cache-thumbnails --thumb-width 256 --thumb-height 256 \
+          --limit-width 1024 --sort filename \
+-         --fontpath /usr/share/fonts/truetype/ttf-dejavu/ --font DejaVuSans/8
++         --fontpath ${X11BASE}/lib/X11/fonts/TTF/ --font DejaVuSans/8
+ 
+ thumb_s_nt --thumbnails --cache-thumbnails --thumb-width 128 --thumb-height 128 \
+            --limit-width 1024 --sort filename --index-name 0
