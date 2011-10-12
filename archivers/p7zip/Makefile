@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/21 12:54:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/12 08:37:39 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
 PKGNAME-rar=	p7zip-rar-${V}
+REVISION-rar=	0
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://sourceforge.net/projects/p7zip/
@@ -23,8 +24,9 @@ PERMIT_PACKAGE_FTP=		Yes
 PERMIT_DISTFILES_CDROM=		no fee
 PERMIT_DISTFILES_FTP=		Yes 
 
-WANTLIB-main=	c m pthread stdc++
-WANTLIB-rar=	pthread
+WANTLIB=	m pthread stdc++
+WANTLIB-main=	${WANTLIB} c
+WANTLIB-rar=	${WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=p7zip/}
 EXTRACT_SUFX=	.tar.bz2

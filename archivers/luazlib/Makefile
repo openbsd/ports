@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/12 08:37:39 jasper Exp $
 
 COMMENT=	lua binding of zlib
 SHARED_ONLY=	Yes
 DISTNAME=	luazlib-20100731
+REVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_BACKUP}	
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/lua
 REGRESS_DEPENDS += archivers/luazlib
-WANTLIB+=	m z
+WANTLIB+=	lua m z
 
 CFLAGS+=	-I${LOCALBASE}/include
 LINK=		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
