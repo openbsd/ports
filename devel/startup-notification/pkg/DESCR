@@ -1,4 +1,4 @@
-Startup-notification is a library which implements a
-startup notification protocol. Using this protocol a desktop
-environment can track the launch of an application and provide
-feedback such as a busy cursor, among other features.
+Startup-notification is a library which implements a startup
+notification protocol. Using this protocol a desktop environment can
+track the launch of an application and provide feedback such as a busy
+cursor, among other features.

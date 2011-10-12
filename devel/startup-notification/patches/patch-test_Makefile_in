@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2011/10/12 07:41:04 ajacoutot Exp $
+
+See XXX in the port Makefile.
+
+--- test/Makefile.in.orig	Wed Oct 12 09:33:57 2011
++++ test/Makefile.in	Wed Oct 12 09:34:08 2011
+@@ -105,7 +105,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(L
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \
+ 	--mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+-	$(LDFLAGS) -o $@
++	$(LDFLAGS) -lexecinfo -o $@
+ SOURCES = $(test_launchee_SOURCES) $(test_launchee_xcb_SOURCES) \
+ 	$(test_launcher_SOURCES) $(test_launcher_xcb_SOURCES) \
+ 	$(test_monitor_SOURCES) $(test_monitor_xcb_SOURCES) \
