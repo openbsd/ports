@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/10/12 12:54:30 jasper Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	5
+REVISION=	6
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -26,6 +26,7 @@ WANTLIB += vorbis vorbisenc vorbisfile z gtk-x11-2.0 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 xml2 lua mac mad mpcdec FLAC avcodec
 WANTLIB += avformat avutil jack wavpack lrdf oggz speex cddb cdio
 WANTLIB += cdio_cdda cdio_paranoia modplug
+WANTLIB += GL pixman-1 png pthread-stubs xcb xcb-render xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 

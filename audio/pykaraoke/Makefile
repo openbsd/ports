@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/12 12:54:31 jasper Exp $
 
 COMMENT =		free karaoke player
 
 V =			0.7.1
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		pykaraoke-${V}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kibosh.org/pykaraoke/
@@ -21,7 +21,7 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
 
-WANTLIB +=		SDL
+WANTLIB +=		SDL ${MODPY_WANTLIB}
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		x11/py-wxPython	\
 			audio/py-mutagen>=1.9 \

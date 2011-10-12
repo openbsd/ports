@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/22 15:51:26 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/12 12:54:30 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		audio
 
@@ -27,7 +27,7 @@ WANTLIB = 	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 gthread-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		pthread-stubs xcb xcb-render xcb-shm xml2 z \
-		jack glade-2.0
+		jack glade-2.0 ffi stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calf/}
 

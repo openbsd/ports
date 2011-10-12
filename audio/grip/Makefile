@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/10/12 12:54:30 jasper Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-REVISION=	23
+REVISION=	24
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -16,17 +16,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation bonoboui-2
-WANTLIB += c cairo canberra cdda_interface cdda_paranoia crypto
-WANTLIB += curl drm expat fontconfig freetype gailutil gconf-2
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2
+WANTLIB += GL ICE ORBit-2 SM X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo cdda_interface
+WANTLIB += cdda_paranoia crypto curl expat fontconfig freetype
+WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-2 gnomecanvas-2 gnomeui-2 gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 id3 idn m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png popt pthread
 WANTLIB += pthread-stubs ssl stdc++ vte xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 

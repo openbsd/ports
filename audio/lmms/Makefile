@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/19 13:48:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/12 12:54:30 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		music studio with tracking, sampling and MIDI
 DISTNAME =		lmms-0.4.8
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 HOMEPAGE =		http://lmms.sourceforge.net/
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		ICE SM QtGui QtXml X11 Xext Xft Xinerama c fltk jack \
 			fftw3f fluidsynth fontconfig freetype m ncurses ogg \
 			pthread readline samplerate sndfile sndio vorbis \
-			vorbisenc vorbisfile z
+			vorbisenc vorbisfile z stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lmms/}
 EXTRACT_SUFX =		.tar.bz2
