@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Tue Sep 22 18:40:11 2009
-+++ doc/Makefile.in	Thu Oct  1 14:53:44 2009
-@@ -598,7 +598,7 @@
+--- doc/Makefile.in.orig	Thu Oct  6 09:25:28 2011
++++ doc/Makefile.in	Thu Oct  6 09:27:11 2011
+@@ -1061,7 +1061,7 @@ manext = 1
  RM = rm -f
  TEXI2POD = $(srcdir)/texi2pod.pl
  MAN = wget.$(manext)
@@ -9,7 +9,7 @@
  SAMPLERCTEXI = sample.wgetrc.munged_for_texi_inclusion
  
  #
-@@ -1067,23 +1067,9 @@
+@@ -1558,22 +1558,8 @@ install.man: $(MAN)
  
  # install sample.wgetrc
  install.wgetrc: $(srcdir)/sample.wgetrc
@@ -29,10 +29,8 @@
 -	else \
 -	  $(INSTALL_DATA) $(srcdir)/sample.wgetrc $(DESTDIR)$(WGETRC); \
 -	fi
--
 +	$(mkinstalldirs) $(DESTDIR)$(WGETRCDIR)
 +	$(INSTALL_DATA) $(srcdir)/sample.wgetrc $(DESTDIR)$(WGETRCDIR)
-+	
+ 
  # uninstall man page
  uninstall.man:
- 	$(RM) $(DESTDIR)$(mandir)/man$(manext)/$(MAN)

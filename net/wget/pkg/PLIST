@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2009/11/03 10:45:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/10/12 10:14:30 dcoppa Exp $
 @bin bin/wget
 @info info/wget.info
 @comment lib/charset.alias
@@ -13,14 +13,9 @@ share/locale/cs/LC_MESSAGES/wget.mo
 share/locale/da/LC_MESSAGES/wget.mo
 share/locale/de/LC_MESSAGES/wget.mo
 share/locale/el/LC_MESSAGES/wget.mo
-share/locale/en@boldquot/LC_MESSAGES/wget.mo
-share/locale/en@quot/LC_MESSAGES/wget.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/wget.mo
-share/locale/en_US/
-share/locale/en_US/LC_MESSAGES/
-share/locale/en_US/LC_MESSAGES/wget.mo
 share/locale/eo/LC_MESSAGES/wget.mo
 share/locale/es/LC_MESSAGES/wget.mo
 share/locale/et/LC_MESSAGES/wget.mo
