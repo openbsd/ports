@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2011/10/12 06:24:28 espie Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -14,14 +14,14 @@ C = index.cache.bz2
 REVISION = 0
 FLAVOR ?= fr
 SUBST_VARS = I C
-.if ${FLAVOR:L:Msr@latn}
+.if ${FLAVOR:Msr@latn}
 RUN_DEPENDS +=	x11/kde/i18n3,sr
 FULLPKGNAME = kde-i18n-sr@Latn-${VERSION}
 .endif
 
 .for l in ${LANGS}
-FLAVORS += $l
-.  if ${FLAVOR:L:M${l:L}}
+FLAVORS += ${l:L}
+.  if ${FLAVOR:M${l:L}}
 DISTFILES = kde-i18n-$l-${VERSION}.tar.bz2
 WRKDIST = ${WRKDIR}/kde-i18n-$l-${VERSION}
 FULLPKGNAME ?= kde-i18n-$l-${VERSION}

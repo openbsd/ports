@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/10/12 06:24:28 espie Exp $
 
      SUBDIR =
      SUBDIR += arts3
@@ -34,7 +34,7 @@
      SUBDIR +=i18n3,da
      SUBDIR +=i18n3,de
      SUBDIR +=i18n3,el
-     SUBDIR +=i18n3,en_GB
+     SUBDIR +=i18n3,en_gb
      SUBDIR +=i18n3,eo
      SUBDIR +=i18n3,es
      SUBDIR +=i18n3,et
@@ -67,7 +67,7 @@
      SUBDIR +=i18n3,pa
      SUBDIR +=i18n3,pl
      SUBDIR +=i18n3,pt
-     SUBDIR +=i18n3,pt_BR
+     SUBDIR +=i18n3,pt_br
      SUBDIR +=i18n3,ro
      SUBDIR +=i18n3,ru
      SUBDIR +=i18n3,rw
@@ -75,7 +75,7 @@
      SUBDIR +=i18n3,sk
      SUBDIR +=i18n3,sl
      SUBDIR +=i18n3,sr
-     SUBDIR +=i18n3,sr@Latn
+     SUBDIR +=i18n3,sr@latn
      SUBDIR +=i18n3,ss
      SUBDIR +=i18n3,sv
      SUBDIR +=i18n3,ta
@@ -85,15 +85,15 @@
      SUBDIR +=i18n3,uk
      SUBDIR +=i18n3,uz
      SUBDIR +=i18n3,vi
-     SUBDIR +=i18n3,zh_CN
-     SUBDIR +=i18n3,zh_TW
+     SUBDIR +=i18n3,zh_cn
+     SUBDIR +=i18n3,zh_tw
      SUBDIR +=office-i18n3,ca
      SUBDIR +=office-i18n3,cs
      SUBDIR +=office-i18n3,cy
      SUBDIR +=office-i18n3,da
      SUBDIR +=office-i18n3,de
      SUBDIR +=office-i18n3,el
-     SUBDIR +=office-i18n3,en_GB
+     SUBDIR +=office-i18n3,en_gb
      SUBDIR +=office-i18n3,es
      SUBDIR +=office-i18n3,et
      SUBDIR +=office-i18n3,eu
@@ -108,17 +108,17 @@
      SUBDIR +=office-i18n3,nl
      SUBDIR +=office-i18n3,pl
      SUBDIR +=office-i18n3,pt
-     SUBDIR +=office-i18n3,pt_BR
+     SUBDIR +=office-i18n3,pt_br
      SUBDIR +=office-i18n3,ru
      SUBDIR +=office-i18n3,sk
      SUBDIR +=office-i18n3,sl
      SUBDIR +=office-i18n3,sr
-     SUBDIR +=office-i18n3,sr@Latn
+     SUBDIR +=office-i18n3,sr@latn
      SUBDIR +=office-i18n3,sv
      SUBDIR +=office-i18n3,tr
      SUBDIR +=office-i18n3,uk
-     SUBDIR +=office-i18n3,zh_CN
-     SUBDIR +=office-i18n3,zh_TW
+     SUBDIR +=office-i18n3,zh_cn
+     SUBDIR +=office-i18n3,zh_tw
      SUBDIR += kdoc3
      SUBDIR += libs3-doc
      SUBDIR += okle

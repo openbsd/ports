@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/10/12 06:24:28 espie Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
@@ -11,8 +11,8 @@ C=index.cache.bz2
 FLAVOR?=fr
 SUBST_VARS=I C
 .for l in ${LANGS}
-FLAVORS+=$l
-.  if ${FLAVOR:L:M${l:L}}
+FLAVORS+=${l:L}
+.  if ${FLAVOR:M${l:L}}
 DISTFILES=koffice-l10n-$l-${VERSION}.tar.bz2
 WRKDIST=${WRKDIR}/koffice-l10n-$l-${VERSION}
 FULLPKGNAME=koffice-i18n-$l-${VERSION:S/-//g}
