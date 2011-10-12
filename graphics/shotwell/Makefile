@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/12 07:57:29 jasper Exp $
 
 COMMENT =	digital photo organizer
 
 DISTNAME =	shotwell-0.11.1
-REVISION=		0
+REVISION=	1
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/0.11/
 HOMEPAGE =	http://yorba.org/shotwell/
@@ -23,9 +23,9 @@ WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 stdc++ unique-1.0 usb webkitgtk-1.0
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z gconf-2
 
-MODULES =	devel/gettext x11/gnome
+MODULES =	devel/dconf devel/gettext x11/gnome
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE =		yes
