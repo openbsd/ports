@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2011/10/13 06:56:30 jasper Exp $
+--- tests/Makefile.in.orig	Fri Oct  7 23:06:09 2011
++++ tests/Makefile.in	Fri Oct  7 23:07:06 2011
+@@ -358,7 +358,7 @@ LDADD = $(top_builddir)/src/libephymain.la \
+ 	$(top_builddir)/lib/widgets/libephywidgets.la \
+ 	$(top_builddir)/lib/libephymisc.la \
+ 	$(top_builddir)/lib/egg/libegg.la $(DBUS_LIBS) \
+-	$(DEPENDENCIES_LIBS) $(am__append_2)
++	$(DEPENDENCIES_LIBS) $(am__append_2) -lexecinfo
+ test_ephy_download_SOURCES = \
+ 	ephy-download.c
+ 

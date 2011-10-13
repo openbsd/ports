@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/09/12 07:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/10/13 06:56:30 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 include/epiphany/
@@ -8,7 +8,6 @@ include/epiphany/${M}/epiphany/ephy-adblock-manager.h
 include/epiphany/${M}/epiphany/ephy-adblock.h
 include/epiphany/${M}/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-bookmarks.h
-include/epiphany/${M}/epiphany/ephy-dbus.h
 include/epiphany/${M}/epiphany/ephy-dialog.h
 include/epiphany/${M}/epiphany/ephy-download.h
 include/epiphany/${M}/epiphany/ephy-embed-container.h
@@ -57,6 +56,7 @@ share/epiphany/epiphany-fs-toolbar.xml
 share/epiphany/epiphany-history-window-ui.xml
 share/epiphany/epiphany-toolbar.xml
 share/epiphany/epiphany-ui.xml
+share/epiphany/epiphany.css
 share/epiphany/epiphany.xhtml
 share/epiphany/glade/
 share/epiphany/glade/certificate-dialogs.ui
@@ -124,6 +124,7 @@ share/epiphany/icons/hicolor/scalable/status/
 share/epiphany/icons/hicolor/scalable/status/popup-hidden.svg
 share/epiphany/mime-types-permissions.xml
 share/epiphany/pages/
+share/epiphany/pages/about.css
 share/epiphany/pages/error.html
 share/epiphany/pages/recovery.html
 share/gir-1.0/EphyEgg-${M}.gir

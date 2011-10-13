@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/10/13 06:56:30 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,7 @@ COMMENT=	GNOME web browser based on webkit
 # www/epiphany-extensions
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.0.4
-REVISION=	0
+GNOME_VERSION=	3.2.0
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -31,17 +30,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
-WANTLIB += execinfo expat ffi fontconfig freetype gailutil-3 gcrypt
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gstapp-0.10
-WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 icudata icui18n icuuc
-WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs seed-gtk3 soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 startup-notification-1 stdc++ webkitgtk-3.0
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm xml2
-WANTLIB += xslt z
+WANTLIB += c cairo cairo-gobject dbus-1 drm enchant execinfo expat
+WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0 jpeg
+WANTLIB += kvm m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs seed-gtk3 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \
@@ -51,7 +49,7 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libnotify>=0.7.2 \
 		devel/libsoup,-gnome \
 		devel/startup-notification \
-		x11/gnome/seed
+		x11/gnome/seed>=3.2.0p0
 
 MODULES=	devel/dconf \
 		devel/gettext \
