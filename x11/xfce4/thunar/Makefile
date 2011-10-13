@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/20 23:03:09 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2011/10/13 21:25:44 jasper Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -6,6 +6,8 @@ XFCE_VERSION=	1.2.3
 XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
+
+REVISION=	0
 
 SHARED_LIBS=	thunarx-2	0.0
 
@@ -38,14 +40,14 @@ RUN_DEPENDS=	x11/xfce4/xfce4-icon-theme \
 		tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme \
 		x11/gnome/gvfs
 
-WANTLIB =	exo-1 xfce4ui-1 xfce4panel-1.0 exif notify \
-		ICE SM X11 atk-1.0 c cairo dbus-1 dbus-glib-1 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 pango-1.0 pcre pthread xfce4util \
-		GL Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender Xxf86vm drm execinfo expat \
-		fontconfig freetype m pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs startup-notification-1 xcb X11-xcb \
-		xcb-aux xcb-render xcb-shm z stdc++
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm exif exo-1 expat
+WANTLIB += ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += xcb xcb-aux xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
+WANTLIB += xfce4util z
 
 .include <bsd.port.mk>
