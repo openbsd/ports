@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/05 20:10:36 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/13 12:10:16 jasper Exp $
 
 COMMENT=		command line client for mpd
 
-DISTNAME=		mpc-0.20
+DISTNAME=		mpc-0.21
 CATEGORIES=		audio
 
 HOMEPAGE=		http://mpd.wikia.com/wiki/Client:Mpc
