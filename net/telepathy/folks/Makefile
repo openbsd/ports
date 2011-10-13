@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/28 15:23:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/10/13 16:39:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,7 +34,8 @@ MODGNOME_TOOLS= 	goi vala
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-import-tool \
-			--enable-inspect-tool
+			--enable-inspect-tool \
+			--disable-tracker-backend
 # Don't enable this yet untill it's stable enough.
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no
 # Experimental bindings, but hey, without testing they'll never mature.
