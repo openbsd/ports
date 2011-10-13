@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2011/10/13 06:55:58 jasper Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
+REVISION=	0
 GNOME_VERSION=	3.2.0
 
 SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
@@ -27,7 +28,7 @@ WANTLIB += gtk-3 icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
 WANTLIB += dbus-1 dbus-glib-1 ffi kvm
-WANTLIB += xcb-shm xml2 xslt z
+WANTLIB += xcb-shm xml2 xslt z javascriptcoregtk-3.0
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -35,7 +36,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	x11/gnome/doc-utils
-LIB_DEPENDS=	www/webkit,gtk3
+LIB_DEPENDS=	www/webkit,gtk3>=1.6.1v0
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp

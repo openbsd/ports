@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2011/08/30 18:13:41 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/13 06:55:58 jasper Exp $
 
 COMMENT =		vi-like minimalists web browser
 DISTNAME =		xxxterm-1.518
+REVISION =		0
 CATEGORIES =		www
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
@@ -22,11 +23,11 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 util webkitgtk-1.0
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z javascriptcoregtk-1.0
 
 MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 
-LIB_DEPENDS =		www/webkit>=1.4.0v0
+LIB_DEPENDS =		www/webkit>=1.6.1v0
 RUN_DEPENDS =		devel/desktop-file-utils
 
 EXTRACT_SUFX =		.tgz
