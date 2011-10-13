@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2011/10/11 09:59:45 stsp Exp $
+# $OpenBSD: Makefile,v 1.98 2011/10/13 11:22:58 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -6,7 +6,7 @@ COMMENT-python=		python interface to subversion
 COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 
-VERSION=		1.6.17
+VERSION=		1.7.0
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -18,13 +18,7 @@ FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
 
-REVISION-main=		4
-REVISION-python=	1
-REVISION-perl=		0
-REVISION-ruby=		3
-REVISION-ap2=		0
-
-SO_VERSION=	1.2
+SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_neon-1 \
 		svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
@@ -44,8 +38,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# Subversion 1.6.x tarballs are still hosted at tigris.org, not apache.org
-MASTER_SITES=	http://subversion.tigris.org/downloads/
+MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2
@@ -55,7 +48,7 @@ FLAVOR?=
 MODULES=	devel/gettext lang/python
 USE_GROFF =	Yes
 
-WANTLIB=	expat db z
+WANTLIB=	expat db magic z
 
 
 # autogen.sh checks for libtoolize
@@ -70,33 +63,18 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/apr \
 		devel/apr-util \
 		security/cyrus-sasl2 \
-		databases/sqlite3
+		databases/sqlite3 \
+		devel/libmagic
 
 WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl \
 		neon>=26 apr-1 aprutil-1 sasl2>=2 sqlite3
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
-
-CONTRIB_HOOK_SCRIPTS=	case-insensitive.py pre-commit-check.py \
-	check-mime-type.pl pre-lock-require-needs-lock.py \
-	commit-block-joke.py remove-zombie-locks.py \
-	syntax-check.sh commit-email.pl
-# There's also 'enforcer', but we handle it separately, see post-install
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 	commit-access-control.pl commit-email.rb \
 	log-police.py svn2feed.py svnperms.conf.example \
 	svnperms.py verify-po.py
 # There's also 'mailer', but we handle it separately, see post-install
-
-CONTRIB_CLIENT_SIDE_SCRIPTS=	incremental-update.py search-svnlog.pl \
-	svn-clean svn-merge-vendor.py svn_apply_autoprops.py \
-	svn_export_empty_files.py
-
-SVN_LOAD_DIRS_FILES=	LICENSE_AFL3.txt svn_load_dirs.README \
-	svn_load_dirs.pl svn_load_dirs_property_table.example
-
-CONTRIB_SERVER_SIDE_SCRIPTS=	authz_svn_group.py fsfsverify.py \
-	svn-fast-backup svn-tweak-author.py
 
 TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 	server-version.py showchange.pl svn-graph.pl
@@ -171,13 +149,15 @@ MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
+CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-sasl=${LOCALBASE} \
 		--without-jikes \
-		--without-jdk
+		--without-jdk \
+		--with-libmagic=${LOCALBASE}
 .if !${FLAVOR:L:Mno_bindings}
 CONFIGURE_ARGS+=--with-swig
+CONFIGURE_ENV+=	RUBY=ruby${MODRUBY_BINREV} RDOC=rdoc${MODRUBY_BINREV}
 .else
 CONFIGURE_ARGS+=--without-swig
 .endif
@@ -268,34 +248,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/hook-scripts/enforcer
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/server-side/mod_dontdothat
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/xslt
-	${INSTALL_DATA} ${WRKSRC}/contrib/cgi/* \
-			${PREFIX}/share/examples/subversion/cgi
-	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/emacs/* \
-			${PREFIX}/share/examples/subversion/client-side/emacs
-	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/svn2cl/* \
-			${PREFIX}/share/examples/subversion/client-side/svn2cl
-.for _file in ${SVN_LOAD_DIRS_FILES}
-	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/svn_load_dirs/${_file} \
-			${PREFIX}/share/examples/subversion/client-side/svn_load_dirs
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/mod_dontdothat/* \
-			${PREFIX}/share/examples/subversion/server-side/mod_dontdothat
-.for _script in ${CONTRIB_CLIENT_SIDE_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/client-side/${_script} \
-			${PREFIX}/share/examples/subversion/client-side
-.endfor
-.for _script in ${CONTRIB_SERVER_SIDE_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/server-side/${_script} \
-			${PREFIX}/share/examples/subversion/server-side
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer \
-			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/enforcer/enforcer.conf \
-			${PREFIX}/share/examples/subversion/hook-scripts/enforcer/
-.for _hook_script in ${CONTRIB_HOOK_SCRIPTS}
-	${INSTALL_DATA} ${WRKSRC}/contrib/hook-scripts/${_hook_script} \
-			${PREFIX}/share/examples/subversion/hook-scripts/
-.endfor
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} install-tools
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/subversion/backup
@@ -317,8 +269,6 @@ post-install:
 			${PREFIX}/share/examples/subversion/server-side
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/server-side/svn-populate-node-origins-index.c \
 		${PREFIX}/share/examples/subversion/server-side
-	${INSTALL_DATA} ${WRKSRC}/tools/hook-scripts/README \
-			${PREFIX}/share/examples/subversion/hook-scripts/
 	${INSTALL_DATA} ${WRKSRC}/tools/xslt/* \
 		${PREFIX}/share/examples/subversion/xslt
 .for _hook_script in ${TOOLS_HOOK_SCRIPTS}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/11/16 18:17:06 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/10/13 11:23:01 stsp Exp $
 @conflict gnome-keyring-subversion-*
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
@@ -9,11 +9,14 @@
 @comment @bin bin/diff4
 @bin bin/svn
 @bin bin/svn-populate-node-origins-index
+@bin bin/svn-rep-sharing-stats
 @bin bin/svnadmin
 @bin bin/svnauthz-validate
 @bin bin/svndumpfilter
 @bin bin/svnlook
 @bin bin/svnmucc
+@bin bin/svnraisetreeconflict
+@bin bin/svnrdump
 @bin bin/svnserve
 @bin bin/svnsync
 @bin bin/svnversion
@@ -21,6 +24,7 @@ include/subversion-1/
 include/subversion-1/svn-revision.txt
 include/subversion-1/svn_auth.h
 include/subversion-1/svn_base64.h
+include/subversion-1/svn_cache_config.h
 include/subversion-1/svn_checksum.h
 include/subversion-1/svn_client.h
 include/subversion-1/svn_cmdline.h
@@ -98,6 +102,7 @@ lib/libsvn_wc-1.la
 @man man/man1/svnadmin.1
 @man man/man1/svndumpfilter.1
 @man man/man1/svnlook.1
+@man man/man1/svnrdump.1
 @man man/man1/svnsync.1
 @man man/man1/svnversion.1
 @man man/man5/svnserve.conf.5
@@ -115,41 +120,16 @@ share/examples/subversion/bdb/svnfs.py
 share/examples/subversion/bdb/whatis-rep.py
 share/examples/subversion/blame.py
 share/examples/subversion/cgi/
-share/examples/subversion/cgi/mirror_dir_through_svn.README
-share/examples/subversion/cgi/mirror_dir_through_svn.cgi
-share/examples/subversion/cgi/tweak-log.cgi
 share/examples/subversion/check-modified.py
 share/examples/subversion/client-side/
 share/examples/subversion/client-side/bash_completion
 share/examples/subversion/client-side/change-svn-wc-format.py
 share/examples/subversion/client-side/emacs/
-share/examples/subversion/client-side/emacs/dsvn.el
-share/examples/subversion/client-side/emacs/psvn.el
-share/examples/subversion/client-side/emacs/vc-svn.el
-share/examples/subversion/client-side/incremental-update.py
-share/examples/subversion/client-side/search-svnlog.pl
 share/examples/subversion/client-side/server-version.py
 share/examples/subversion/client-side/showchange.pl
-share/examples/subversion/client-side/svn-clean
 share/examples/subversion/client-side/svn-graph.pl
-share/examples/subversion/client-side/svn-merge-vendor.py
 share/examples/subversion/client-side/svn2cl/
-share/examples/subversion/client-side/svn2cl/NEWS
-share/examples/subversion/client-side/svn2cl/README
-share/examples/subversion/client-side/svn2cl/TODO
-share/examples/subversion/client-side/svn2cl/authors.xml
-share/examples/subversion/client-side/svn2cl/svn2cl.1
-share/examples/subversion/client-side/svn2cl/svn2cl.sh
-share/examples/subversion/client-side/svn2cl/svn2cl.xsl
-share/examples/subversion/client-side/svn2cl/svn2html.css
-share/examples/subversion/client-side/svn2cl/svn2html.xsl
-share/examples/subversion/client-side/svn_apply_autoprops.py
-share/examples/subversion/client-side/svn_export_empty_files.py
 share/examples/subversion/client-side/svn_load_dirs/
-share/examples/subversion/client-side/svn_load_dirs/LICENSE_AFL3.txt
-share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs.README
-share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs.pl
-share/examples/subversion/client-side/svn_load_dirs/svn_load_dirs_property_table.example
 share/examples/subversion/dumpprops.py
 share/examples/subversion/get-location-segments.py
 share/examples/subversion/getfile.py
@@ -157,17 +137,10 @@ share/examples/subversion/getlocks_test.c
 share/examples/subversion/geturl.py
 share/examples/subversion/headrev.c
 share/examples/subversion/hook-scripts/
-share/examples/subversion/hook-scripts/README
-share/examples/subversion/hook-scripts/case-insensitive.py
-share/examples/subversion/hook-scripts/check-mime-type.pl
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
 share/examples/subversion/hook-scripts/commit-access-control.pl
-share/examples/subversion/hook-scripts/commit-block-joke.py
-share/examples/subversion/hook-scripts/commit-email.pl
 share/examples/subversion/hook-scripts/commit-email.rb
 share/examples/subversion/hook-scripts/enforcer/
-share/examples/subversion/hook-scripts/enforcer/enforcer
-share/examples/subversion/hook-scripts/enforcer/enforcer.conf
 share/examples/subversion/hook-scripts/log-police.py
 share/examples/subversion/hook-scripts/mailer/
 share/examples/subversion/hook-scripts/mailer/mailer.conf.example
@@ -178,30 +151,20 @@ share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.output
 share/examples/subversion/hook-scripts/mailer/tests/mailer-t1.sh
 share/examples/subversion/hook-scripts/mailer/tests/mailer-tweak.py
 share/examples/subversion/hook-scripts/mailer/tests/mailer.conf
-share/examples/subversion/hook-scripts/pre-commit-check.py
-share/examples/subversion/hook-scripts/pre-lock-require-needs-lock.py
-share/examples/subversion/hook-scripts/remove-zombie-locks.py
 share/examples/subversion/hook-scripts/svn2feed.py
 share/examples/subversion/hook-scripts/svnperms.conf.example
 share/examples/subversion/hook-scripts/svnperms.py
-share/examples/subversion/hook-scripts/syntax-check.sh
 share/examples/subversion/hook-scripts/verify-po.py
 share/examples/subversion/minimal_client.c
 share/examples/subversion/putfile.py
 share/examples/subversion/revplist.py
 share/examples/subversion/server-side/
-share/examples/subversion/server-side/authz_svn_group.py
 share/examples/subversion/server-side/fsfs-reshard.py
-share/examples/subversion/server-side/fsfsverify.py
 @comment mod_dontdothat should be compiled and installed
 @comment so that it can be loaded into apache
 share/examples/subversion/server-side/mod_dontdothat/
-share/examples/subversion/server-side/mod_dontdothat/README
-share/examples/subversion/server-side/mod_dontdothat/mod_dontdothat.c
 share/examples/subversion/server-side/svn-backup-dumps.py
-share/examples/subversion/server-side/svn-fast-backup
 share/examples/subversion/server-side/svn-populate-node-origins-index.c
-share/examples/subversion/server-side/svn-tweak-author.py
 share/examples/subversion/servers
 @sample ${SYSCONFDIR}/subversion/servers
 share/examples/subversion/svnlog2html.rb
