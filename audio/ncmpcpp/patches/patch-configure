@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/07/25 20:08:23 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.2 2011/10/13 11:15:41 dcoppa Exp $
 
 Fix libpthread linkage
 
---- configure.orig	Tue Jul 19 20:40:24 2011
-+++ configure	Tue Jul 19 20:41:22 2011
-@@ -15426,13 +15426,13 @@ if test "x$ac_cv_header_pthread_h" = xyes; then :
+--- configure.orig	Tue Oct 11 21:34:09 2011
++++ configure	Thu Oct 13 12:53:07 2011
+@@ -15429,13 +15429,13 @@ if test "x$ac_cv_header_pthread_h" = xyes; then :
    cat >>confdefs.h <<_ACEOF
  #define HAVE_PTHREAD_H 1
  _ACEOF
@@ -21,7 +21,7 @@ Fix libpthread linkage
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15463,7 +15463,7 @@ fi
+@@ -15466,7 +15466,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
