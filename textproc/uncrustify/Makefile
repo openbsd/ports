@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/10/10 20:22:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/13 21:03:53 rpointel Exp $
 
 COMMENT =		source code beautifier
 
 DISTNAME =		uncrustify-0.59
+REVISION =		0
 
 CATEGORIES =		textproc devel
 
@@ -21,6 +22,7 @@ WANTLIB += c m stdc++
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=uncrustify/}
 
 CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS +=	--mandir=${LOCALBASE}/man/
 
 MODULES =	lang/python
 

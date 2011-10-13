@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/07 20:34:28 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/13 21:03:53 rpointel Exp $
 @bin bin/uncrustify
-share/man/
-share/man/man1/
-@man share/man/man1/uncrustify.1
+@man man/man1/uncrustify.1
 share/uncrustify/
 share/uncrustify/ben.cfg
 share/uncrustify/d.cfg
