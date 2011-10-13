@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/29 17:07:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/13 15:01:07 jasper Exp $
 %%SHARED%%
 include/libepc-1.0/
 include/libepc-1.0/libepc/
@@ -76,6 +76,7 @@ share/locale/lv/LC_MESSAGES/libepc.mo
 share/locale/nb/LC_MESSAGES/libepc.mo
 share/locale/pl/LC_MESSAGES/libepc.mo
 share/locale/pt_BR/LC_MESSAGES/libepc.mo
+share/locale/ru/LC_MESSAGES/libepc.mo
 share/locale/sl/LC_MESSAGES/libepc.mo
 share/locale/sv/LC_MESSAGES/libepc.mo
 share/locale/th/
