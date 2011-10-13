@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2011/10/13 13:10:58 jasper Exp $
+--- src/Makefile.in.orig	Fri Oct  7 23:03:34 2011
++++ src/Makefile.in	Fri Oct  7 23:04:28 2011
+@@ -524,7 +524,7 @@ epiphany_LDADD = libephymain.la \
+ 	$(top_builddir)/lib/widgets/libephywidgets.la \
+ 	$(top_builddir)/lib/libephymisc.la \
+ 	$(top_builddir)/lib/egg/libegg.la $(DEPENDENCIES_LIBS) \
+-	$(LIBINTL) $(am__append_5) $(am__append_6)
++	$(LIBINTL) $(am__append_5) $(am__append_6) -lexecinfo
+ TYPES_SOURCE = \
+ 	ephy-type-builtins.c	\
+ 	ephy-type-builtins.h
