@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.26 2011/10/04 15:10:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2011/10/14 07:19:26 ajacoutot Exp $
 @bin bin/rhythmbox
+@bin bin/rhythmbox-client
 include/rhythmbox/
 include/rhythmbox/backends/
 include/rhythmbox/backends/rb-encoder.h
@@ -244,7 +245,7 @@ lib/rhythmbox/plugins/sendto/sendto.pyo
 @man man/man1/rhythmbox.1
 share/applications/rhythmbox-device.desktop
 share/applications/rhythmbox.desktop
-share/dbus-1/services/org.gnome.Rhythmbox.service
+share/dbus-1/services/org.gnome.Rhythmbox3.service
 share/gir-1.0/MPID-3.0.gir
 share/gir-1.0/RB-3.0.gir
 share/glib-2.0/schemas/org.gnome.rhythmbox.gschema.xml

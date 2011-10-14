@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.87 2011/10/04 15:10:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2011/10/14 07:19:26 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.90.1.3
-REVISION=		0
+GNOME_VERSION=		2.90.1.4
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -23,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
-WANTLIB += assuan atk-1.0 bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += assuan atk-1.0 bz2 c cairo cairo-gobject dbus-1
 WANTLIB += drm expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme-pthread gpod
@@ -62,8 +61,8 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	goi yelp
 
 CONFIGURE_STYLE= 	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 CONFIGURE_ARGS=		--with-database=tree \
 			--with-gnome-keyring \
 			--with-ipod \
