@@ -1,10 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/14 07:15:26 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += core
-    #SUBDIR += libcompizconfig
-    #SUBDIR += compizconfig-python
-    #SUBDIR += ccsm
-    #SUBDIR += emerald
 
 .include <bsd.port.subdir.mk>
