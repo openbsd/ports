@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_CMakeLists_txt,v 1.1 2011/10/14 09:06:57 dcoppa Exp $
+--- tests/CMakeLists.txt.orig	Thu Oct 13 10:26:30 2011
++++ tests/CMakeLists.txt	Thu Oct 13 10:26:54 2011
+@@ -1,6 +1,7 @@
+ if(BUILD_TESTS)
+ 
+ INCLUDE_DIRECTORIES(
++  ${CPPUNIT_INCLUDE_DIR}
+   ${CMAKE_CURRENT_SOURCE_DIR}/../taglib
+   ${CMAKE_CURRENT_SOURCE_DIR}/../taglib/toolkit
+   ${CMAKE_CURRENT_SOURCE_DIR}/../taglib/ape

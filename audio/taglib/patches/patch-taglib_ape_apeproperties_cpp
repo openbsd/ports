@@ -1,0 +1,16 @@
+$OpenBSD: patch-taglib_ape_apeproperties_cpp,v 1.1 2011/10/14 09:06:57 dcoppa Exp $
+
+Fix: crash parsing ID3v2 tag in ape file due to null pointer
+dereference (https://bugs.kde.org/show_bug.cgi?id=278773)
+
+--- taglib/ape/apeproperties.cpp.orig	Fri Mar 11 14:15:38 2011
++++ taglib/ape/apeproperties.cpp	Thu Oct 13 12:45:05 2011
+@@ -137,7 +137,7 @@ long APE::Properties::findDescriptor()
+   long ID3v2OriginalSize = 0;
+   bool hasID3v2 = false;
+   if(ID3v2Location >= 0) {
+-    ID3v2::Tag tag(d->file, ID3v2Location, 0);
++    ID3v2::Tag tag(d->file, ID3v2Location);
+     ID3v2OriginalSize = tag.header()->completeTagSize();
+     if(tag.header()->tagSize() > 0)
+       hasID3v2 = true;

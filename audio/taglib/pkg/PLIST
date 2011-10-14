@@ -1,14 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/05/17 11:21:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/14 09:06:57 dcoppa Exp $
 %%SHARED%%
 bin/taglib-config
 include/taglib/
 include/taglib/aifffile.h
 include/taglib/aiffproperties.h
+include/taglib/apefile.h
 include/taglib/apefooter.h
 include/taglib/apeitem.h
+include/taglib/apeproperties.h
 include/taglib/apetag.h
 include/taglib/asfattribute.h
 include/taglib/asffile.h
+include/taglib/asfpicture.h
 include/taglib/asfproperties.h
 include/taglib/asftag.h
 include/taglib/attachedpictureframe.h
@@ -16,6 +19,8 @@ include/taglib/audioproperties.h
 include/taglib/commentsframe.h
 include/taglib/fileref.h
 include/taglib/flacfile.h
+include/taglib/flacmetadatablock.h
+include/taglib/flacpicture.h
 include/taglib/flacproperties.h
 include/taglib/generalencapsulatedobjectframe.h
 include/taglib/id3v1genres.h
@@ -77,10 +82,6 @@ include/taglib/wavpackproperties.h
 include/taglib/wavproperties.h
 include/taglib/xingheader.h
 include/taglib/xiphcomment.h
-lib/libtag.a
-lib/libtag.la
-lib/libtag_c.a
-lib/libtag_c.la
 lib/pkgconfig/
 lib/pkgconfig/taglib.pc
 lib/pkgconfig/taglib_c.pc

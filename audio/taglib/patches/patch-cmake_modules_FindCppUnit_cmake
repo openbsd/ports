@@ -1,0 +1,14 @@
+$OpenBSD: patch-cmake_modules_FindCppUnit_cmake,v 1.1 2011/10/14 09:06:57 dcoppa Exp $
+--- cmake/modules/FindCppUnit.cmake.orig	Thu Oct 13 10:21:42 2011
++++ cmake/modules/FindCppUnit.cmake	Thu Oct 13 10:22:30 2011
+@@ -30,8 +30,8 @@ ELSE(CPPUNIT_INCLUDE_DIR AND CPPUNIT_LIBRARIES)
+         STRING(REGEX REPLACE "-I(.+)" "\\1" CPPUNIT_CFLAGS "${CPPUNIT_CFLAGS}")
+     ELSE(CPPUNIT_CONFIG_EXECUTABLE)
+         # in case win32 needs to find it the old way?
+-        FIND_PATH(CPPUNIT_CFLAGS cppunit/TestRunner.h PATHS /usr/include /usr/local/include )
+-        FIND_LIBRARY(CPPUNIT_LIBRARIES NAMES cppunit PATHS /usr/lib /usr/local/lib )
++        FIND_PATH(CPPUNIT_CFLAGS cppunit/TestRunner.h PATHS ${LOCALBASE}/include )
++        FIND_LIBRARY(CPPUNIT_LIBRARIES NAMES cppunit PATHS ${LOCALBASE}/lib )
+         # how can we find cppunit version?
+         MESSAGE (STATUS "Ensure you cppunit installed version is at least ${CPPUNIT_MIN_VERSION}")
+         SET (CPPUNIT_INSTALLED_VERSION ${CPPUNIT_MIN_VERSION})

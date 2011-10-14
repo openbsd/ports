@@ -1,0 +1,14 @@
+$OpenBSD: patch-tests_utils_h,v 1.1 2011/10/14 09:06:57 dcoppa Exp $
+
+Add missing include, needed for S_IRUSR/S_IWUSR macros
+
+--- tests/utils.h.orig	Thu Oct 13 10:28:58 2011
++++ tests/utils.h	Thu Oct 13 10:29:23 2011
+@@ -4,6 +4,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <sys/fcntl.h>
++#include <sys/stat.h>
+ #endif
+ #include <stdio.h>
+ #include <string>
