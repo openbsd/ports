@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/10/14 07:00:51 ajacoutot Exp $
 @newgroup _pdnsd:510
 @newuser _pdnsd:510:_pdnsd:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
@@ -14,6 +14,7 @@ share/doc/pdnsd/manual.txt
 share/examples/pdnsd/
 share/examples/pdnsd/pdnsd.conf
 @sample ${SYSCONFDIR}/pdnsd.conf
+@rcscript ${RCDIR}/pdnsd
 @owner _pdnsd
 @group _pdnsd
 @sample /var/pdnsd/

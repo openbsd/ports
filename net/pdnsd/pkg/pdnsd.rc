@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: pdnsd.rc,v 1.1 2011/10/14 07:00:51 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/pdnsd"
+daemon_flags="-d"
+
+. /etc/rc.d/rc.subr
+
+rc_reload() {
+	${TRUEPREFIX}/sbin/pdnsd-ctl config
+}
+
+rc_cmd $1
