@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.531 2011/09/24 19:12:49 kili Exp $
+# $OpenBSD: Makefile,v 1.532 2011/10/14 16:33:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -387,6 +387,7 @@
      SUBDIR += py-pylons
      SUBDIR += py-quixote
      SUBDIR += py-repoze-profile
+     SUBDIR += py-requests
      SUBDIR += py-routes
      SUBDIR += py-tempita
      SUBDIR += py-turbogears
