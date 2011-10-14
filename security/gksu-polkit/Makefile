@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/14 07:00:23 jasper Exp $
 
 COMMENT=	command line utility to run programs as root
 
 DISTNAME=	gksu-polkit-0.0.2
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  gksu-polkit               0.0 # 0.1
 
@@ -19,14 +19,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo dbus-1 dbus-glib-1 drm execinfo expat fontconfig
+WANTLIB += c cairo dbus-1 dbus-glib-1 drm expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gee gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
-WANTLIB += pthread pthread-stubs startup-notification-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xcb-shm z
+WANTLIB += pthread pthread-stubs startup-notification-1 xcb xcb-aux
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
