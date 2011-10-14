@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/14 09:06:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/14 09:14:03 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.7
@@ -24,7 +24,6 @@ WANTLIB=	stdc++ m z
 
 BUILD_DEPENDS=	devel/cppunit
 
-CONFIGURE_ENV=	LIBS="-lstdc++ -lm"
 CONFIGURE_STYLE=cmake
 CONFIGURE_ARGS+=-DCMAKE_BUILD_TYPE=Release \
 		-DWITH_MP4=ON \
