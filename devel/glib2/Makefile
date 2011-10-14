@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.139 2011/10/08 08:29:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2011/10/14 15:25:40 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.30.0
+VERSION=		2.30.1
 DISTNAME=		glib-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
-
-REVISION-main=		2
 
 CATEGORIES=		devel
 
@@ -84,8 +82,7 @@ CONFIGURE_ARGS +=	--disable-maintainer-mode
 # currently don't have most of the _POSIX_* defines in unistd.h (e.g.
 # _POSIX_MONOTONIC_CLOCK 200112L) and the associated sysconf(3)
 # _SC_MONOTONIC_CLOCK variable.
-# (see also: patches/patch-glib_gmain_c
-#            patches/patch-gthread_gthread-posix_c)
+# (see also: patches/patch-gthread_gthread-posix_c)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-D_POSIX_MONOTONIC_CLOCK=200112L" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"

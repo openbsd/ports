@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.22 2011/09/20 21:09:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.23 2011/10/14 15:25:40 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -175,7 +175,6 @@ share/gtk-doc/html/gio/gio-Unix-Mounts.html
 share/gtk-doc/html/gio/gio-Watching-Bus-Names.html
 share/gtk-doc/html/gio/gio-hierarchy.html
 share/gtk-doc/html/gio/gio-querymodules.html
-share/gtk-doc/html/gio/gio.devhelp
 share/gtk-doc/html/gio/gio.devhelp2
 share/gtk-doc/html/gio/glib-compile-schemas.html
 share/gtk-doc/html/gio/gsettings-tool.html
@@ -306,7 +305,6 @@ share/gtk-doc/html/glib/glib-regex-syntax.html
 share/gtk-doc/html/glib/glib-resources.html
 share/gtk-doc/html/glib/glib-running.html
 share/gtk-doc/html/glib/glib-utilities.html
-share/gtk-doc/html/glib/glib.devhelp
 share/gtk-doc/html/glib/glib.devhelp2
 share/gtk-doc/html/glib/glib.html
 share/gtk-doc/html/glib/gtester-report.html
@@ -365,7 +363,6 @@ share/gtk-doc/html/gobject/gobject-Varargs-Value-Collection.html
 share/gtk-doc/html/gobject/gobject-memory.html
 share/gtk-doc/html/gobject/gobject-properties.html
 share/gtk-doc/html/gobject/gobject-query.html
-share/gtk-doc/html/gobject/gobject.devhelp
 share/gtk-doc/html/gobject/gobject.devhelp2
 share/gtk-doc/html/gobject/gtype-conventions.html
 share/gtk-doc/html/gobject/gtype-instantiable-classed.html
