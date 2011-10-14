@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/19 07:53:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/10/14 11:37:24 jasper Exp $
 
 COMMENT=	Xfce4 extension library
 
 XFCE_VERSION=	0.6.2
 XFCE_PROJECT=	exo
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	exo-1		0.0
 
@@ -36,7 +36,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread z pthread-stubs xcb \
-		xcb-render xfce4util GL Xxf86vm drm xcb-shm
+		xcb-render xfce4util GL Xxf86vm drm xcb-shm ffi
 
 # XXX workaround for pkg_add bug when a symlink to a dir becomes a real dir
 post-install:
