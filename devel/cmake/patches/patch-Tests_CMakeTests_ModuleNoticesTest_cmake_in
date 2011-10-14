@@ -1,14 +1,13 @@
-$OpenBSD: patch-Tests_CMakeTests_ModuleNoticesTest_cmake_in,v 1.3 2011/09/20 11:32:36 dcoppa Exp $
---- Tests/CMakeTests/ModuleNoticesTest.cmake.in.orig	Fri Jul  8 14:21:50 2011
-+++ Tests/CMakeTests/ModuleNoticesTest.cmake.in	Fri Sep  9 10:49:42 2011
-@@ -22,6 +22,10 @@ string(REPLACE "\r\r" "\r" notice_regex "${notice_rege
+$OpenBSD: patch-Tests_CMakeTests_ModuleNoticesTest_cmake_in,v 1.4 2011/10/14 17:22:10 dcoppa Exp $
+--- Tests/CMakeTests/ModuleNoticesTest.cmake.in.orig	Tue Oct  4 18:09:25 2011
++++ Tests/CMakeTests/ModuleNoticesTest.cmake.in	Fri Oct  7 11:25:43 2011
+@@ -22,6 +22,9 @@ string(REPLACE "\r\r" "\r" notice_regex "${notice_rege
  # Modules that do not require our notice.
  set(notice_exceptions
    FindCUDA.cmake # MIT License, distributed here from upstream project
 +  FindIconv.cmake
 +  FindLCMS.cmake
 +  FindLibintl.cmake
-+  MacroPushRequiredVars.cmake
    )
  
  # Load the list of modules to check.

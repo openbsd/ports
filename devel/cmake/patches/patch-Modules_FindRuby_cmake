@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.1 2011/10/14 17:22:10 dcoppa Exp $
+--- Modules/FindRuby.cmake.orig	Sun Oct  9 18:41:47 2011
++++ Modules/FindRuby.cmake	Sun Oct  9 18:42:49 2011
+@@ -180,7 +180,7 @@ ENDIF( ${Ruby_FIND_VERSION_SHORT_NODOT} GREATER 18  OR
+ 
+ 
+ # Determine the list of possible names for the ruby library
+-SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT})
++SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT})
+ 
+ IF(WIN32)
+    SET( _RUBY_MSVC_RUNTIME "" )

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/10/08 18:55:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.46 2011/10/14 17:22:10 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-2.8.5
+DISTNAME =	cmake-2.8.6
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -39,14 +39,17 @@ MAKE_FLAGS +=		VERBOSE=1
 
 pre-configure:
 	@cp ${FILESDIR}/*.cmake ${WRKSRC}/Modules/
-	${SUBST_CMD} ${WRKSRC}/Modules/FindMPEG.cmake \
+	${SUBST_CMD} ${WRKSRC}/Modules/CMakeDetermineJavaCompiler.cmake \
+		${WRKSRC}/Modules/FindJNI.cmake \
+		${WRKSRC}/Modules/FindJava.cmake \
+		${WRKSRC}/Modules/FindMPEG.cmake \
 		${WRKSRC}/Modules/FindMPEG2.cmake \
 		${WRKSRC}/Modules/FindQt.cmake \
 		${WRKSRC}/Modules/FindQt3.cmake \
 		${WRKSRC}/Modules/FindSDL.cmake \
-		${WRKSRC}/Modules/FindwxWindows.cmake
+		${WRKSRC}/Modules/FindwxWindows.cmake \
+		${WRKSRC}/Modules/UseJava.cmake
 
-# Remove spurious post-build files
 post-install:
 	@rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/*.{beforesubst,orig}
 	@rm ${WRKINST}/${LOCALBASE}/share/cmake/Modules/Compiler/*.orig

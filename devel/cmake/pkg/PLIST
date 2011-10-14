@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/09/20 11:32:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/10/14 17:22:10 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -13,9 +13,14 @@
 @man man/man1/cmakevars.1
 @man man/man1/cpack.1
 @man man/man1/ctest.1
+share/aclocal/
+share/aclocal/cmake.m4
 share/cmake/
 share/cmake/Modules/
 share/cmake/Modules/AddFileDependencies.cmake
+share/cmake/Modules/AutomocInfo.cmake.in
+share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 share/cmake/Modules/BundleUtilities.cmake
 share/cmake/Modules/CMake.cmake
 share/cmake/Modules/CMakeASM-ATTInformation.cmake
@@ -54,11 +59,13 @@ share/cmake/Modules/CMakeDetermineRCCompiler.cmake
 share/cmake/Modules/CMakeDetermineSystem.cmake
 share/cmake/Modules/CMakeDetermineVSServicePack.cmake
 share/cmake/Modules/CMakeExportBuildSettings.cmake
+share/cmake/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake
 share/cmake/Modules/CMakeFindBinUtils.cmake
 share/cmake/Modules/CMakeFindCodeBlocks.cmake
 share/cmake/Modules/CMakeFindEclipseCDT4.cmake
 share/cmake/Modules/CMakeFindFrameworks.cmake
 share/cmake/Modules/CMakeFindKDevelop3.cmake
+share/cmake/Modules/CMakeFindPackageMode.cmake
 share/cmake/Modules/CMakeFindWMake.cmake
 share/cmake/Modules/CMakeFindXCode.cmake
 share/cmake/Modules/CMakeForceCompiler.cmake
@@ -78,6 +85,7 @@ share/cmake/Modules/CMakeParseArguments.cmake
 share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake
 share/cmake/Modules/CMakePlatformId.h.in
 share/cmake/Modules/CMakePrintSystemInformation.cmake
+share/cmake/Modules/CMakePushCheckState.cmake
 share/cmake/Modules/CMakeRCCompiler.cmake.in
 share/cmake/Modules/CMakeRCInformation.cmake
 share/cmake/Modules/CMakeSystem.cmake.in
@@ -95,8 +103,10 @@ share/cmake/Modules/CMakeTestGNU.c
 share/cmake/Modules/CMakeTestJavaCompiler.cmake
 share/cmake/Modules/CMakeTestNMakeCLVersion.c
 share/cmake/Modules/CMakeTestRCCompiler.cmake
+share/cmake/Modules/CMakeTestWatcomVersion.c
 share/cmake/Modules/CMakeUnixFindMake.cmake
 share/cmake/Modules/CMakeVS10FindMake.cmake
+share/cmake/Modules/CMakeVS11FindMake.cmake
 share/cmake/Modules/CMakeVS6BackwardCompatibility.cmake
 share/cmake/Modules/CMakeVS6FindMake.cmake
 share/cmake/Modules/CMakeVS71FindMake.cmake
@@ -133,6 +143,7 @@ share/cmake/Modules/CheckCSourceRuns.cmake
 share/cmake/Modules/CheckCXXCompilerFlag.cmake
 share/cmake/Modules/CheckCXXSourceCompiles.cmake
 share/cmake/Modules/CheckCXXSourceRuns.cmake
+share/cmake/Modules/CheckCXXSymbolExists.cmake
 share/cmake/Modules/CheckForPthreads.c
 share/cmake/Modules/CheckFortranFunctionExists.cmake
 share/cmake/Modules/CheckFunctionExists.c
@@ -371,14 +382,18 @@ share/cmake/Modules/FortranCInterface/mymodule_.c
 share/cmake/Modules/FortranCInterface/mysub.f
 share/cmake/Modules/FortranCInterface/symbol.c.in
 share/cmake/Modules/GNUInstallDirs.cmake
+share/cmake/Modules/GenerateExportHeader.cmake
 share/cmake/Modules/GetPrerequisites.cmake
 share/cmake/Modules/ITKCompatibility.cmake
 share/cmake/Modules/InstallRequiredSystemLibraries.cmake
+share/cmake/Modules/IntelVSImplicitPath/
+share/cmake/Modules/IntelVSImplicitPath/CMakeLists.txt
+share/cmake/Modules/IntelVSImplicitPath/detect.cmake
+share/cmake/Modules/IntelVSImplicitPath/hello.f
 share/cmake/Modules/KDE3Macros.cmake
 share/cmake/Modules/MacOSXBundleInfo.plist.in
 share/cmake/Modules/MacOSXFrameworkInfo.plist.in
 share/cmake/Modules/MacroAddFileDependencies.cmake
-share/cmake/Modules/MacroPushRequiredVars.cmake
 share/cmake/Modules/NSIS.InstallOptions.ini.in
 share/cmake/Modules/NSIS.template.in
 share/cmake/Modules/Platform/
@@ -388,6 +403,7 @@ share/cmake/Modules/Platform/AIX-GNU-Fortran.cmake
 share/cmake/Modules/Platform/AIX-GNU.cmake
 share/cmake/Modules/Platform/AIX-VisualAge-C.cmake
 share/cmake/Modules/Platform/AIX-VisualAge-CXX.cmake
+share/cmake/Modules/Platform/AIX-VisualAge-Fortran.cmake
 share/cmake/Modules/Platform/AIX-XL-ASM.cmake
 share/cmake/Modules/Platform/AIX-XL-C.cmake
 share/cmake/Modules/Platform/AIX-XL-CXX.cmake
@@ -551,6 +567,9 @@ share/cmake/Modules/TestForSSTREAM.cxx
 share/cmake/Modules/TestForSTDNamespace.cmake
 share/cmake/Modules/TestForSTDNamespace.cxx
 share/cmake/Modules/UseEcos.cmake
+share/cmake/Modules/UseJava.cmake
+share/cmake/Modules/UseJavaClassFilelist.cmake
+share/cmake/Modules/UseJavaSymlinks.cmake
 share/cmake/Modules/UsePkgConfig.cmake
 share/cmake/Modules/UseQt4.cmake
 share/cmake/Modules/UseSWIG.cmake
@@ -560,7 +579,9 @@ share/cmake/Modules/UseVTKConfig40.cmake
 share/cmake/Modules/Use_wxWindows.cmake
 share/cmake/Modules/UsewxWidgets.cmake
 share/cmake/Modules/VTKCompatibility.cmake
+share/cmake/Modules/WriteBasicConfigVersionFile.cmake
 share/cmake/Modules/ecos_clean.cmake
+share/cmake/Modules/exportheader.cmake.in
 share/cmake/Modules/kde3init_dummy.cpp.in
 share/cmake/Modules/kde3uic.cmake
 share/cmake/Modules/readme.txt

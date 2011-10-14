@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules_UseJava_cmake,v 1.1 2011/10/14 17:22:10 dcoppa Exp $
+--- Modules/UseJava.cmake.orig	Fri Oct  7 11:27:56 2011
++++ Modules/UseJava.cmake	Fri Oct  7 11:28:32 2011
+@@ -445,7 +445,7 @@ function (find_jar VARIABLE)
+     set(_jar_versions)
+     set(_jar_paths
+         /usr/share/java/
+-        /usr/local/share/java/
++        ${LOCALBASE}/share/java/
+         ${Java_JAR_PATHS})
+     set(_jar_doc "NOTSET")
+ 
