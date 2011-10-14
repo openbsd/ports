@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/22 22:20:10 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2011/10/14 12:22:00 jasper Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
 XFCE_VERSION=	4.8.3
+REVISION =	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,7 +29,7 @@ WANTLIB= 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
-		execinfo xcb-aux X11-xcb stdc++ gthread-2.0 \
+		xcb-aux X11-xcb gthread-2.0 ffi \
 		xcb-render dbus-1 dbus-glib-1 GL Xxf86vm drm xcb-shm xfce4ui-1
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx" \

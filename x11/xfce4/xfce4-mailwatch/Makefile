@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/15 16:13:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/14 12:22:00 jasper Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	mailwatch
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 
@@ -21,14 +21,14 @@ LIB_DEPENDS+=	security/gnutls
 LIB_DEPENDS+=	x11/xfce4/libxfcegui4 \
 		security/libgcrypt
 
-WANTLIB=	ICE SM X11 Xdmcp Xrender Xau Xdamage fontconfig freetype \
-		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 pcre m z c\
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pthread \
-		pangoft2-1.0 pangocairo-1.0 pixman-1 cairo png \
-		gthread-2.0 startup-notification-1 xfce4util xfcegui4 \
-		gcrypt gpg-error gio-2.0 tasn1 pthread-stubs xcb \
-		execinfo xcb-atom xcb-aux xcb-event gnutls xcb-render \
-		GL Xxf86vm drm xcb-shm gmp hogweed nettle
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo drm expat ffi fontconfig freetype gcrypt
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gmp gnutls gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
+WANTLIB += hogweed m nettle p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += tasn1 xcb xcb-aux xcb-render xcb-shm xfce4util xfcegui4
+WANTLIB += z
 
 .include <bsd.port.mk>

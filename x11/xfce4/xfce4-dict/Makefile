@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/19 07:53:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/14 12:22:00 jasper Exp $
 
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	xfce4-dict
-REVISION=	3
+REVISION=	4
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,13 +22,13 @@ LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 # so that the icon is correctly displayed
 RUN_DEPENDS+=	x11/gnome/librsvg
 
-WANTLIB=	ICE SM X11 Xdmcp Xrender Xdamage Xau fontconfig freetype \
-		Xcursor Xext Xfixes Xi Xinerama Xcomposite Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 m z c \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 pcre xfce4panel-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo png pthread \
-		startup-notification-1 xfce4util pixman-1 gthread-2.0 \
-		xfcegui4 pthread-stubs xcb execinfo xcb-atom xcb-aux xcb-event \
-		xcb-render  GL Xxf86vm drm xcb-shm
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo drm expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += xfce4panel-1.0 xfce4util xfcegui4 z
 
 .include <bsd.port.mk>

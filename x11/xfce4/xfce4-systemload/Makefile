@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/18 21:10:48 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2011/10/14 12:22:00 jasper Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	1.0.0
 XFCE_PLUGIN=	systemload
-REVISION =	0
+REVISION =	1
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 LIB_DEPENDS +=	x11/xfce4/libxfcegui4
 
-WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype kvm \
-		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
-		atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 glib-2.0 m z c \
-		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
-		pangoft2-1.0 pangocairo-1.0 cairo png \
-		pixman-1 xfce4util xfcegui4 gio-2.0 pthread-stubs xcb \
-		gthread-2.0 pthread xcb-render GL ICE SM Xxf86vm drm \
-		execinfo pcre startup-notification-1 xcb-atom xcb-aux xcb-event xcb-shm
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo drm expat ffi fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 kvm m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += xfce4util xfcegui4 z
 
 .include <bsd.port.mk>
