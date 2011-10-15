@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/28 14:16:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/15 17:01:40 jasper Exp $
 
 COMMENT=	LaTeX plugin for Gedit
 
@@ -19,7 +19,8 @@ MODULES=	x11/gnome \
 		lang/python \
 		devel/dconf
 
-BUILD_DEPENDS=	devel/gettext
+BUILD_DEPENDS=	devel/gettext \
+		x11/gnome/gedit>=3.2.0
 RUN_DEPENDS=	devel/gettext \
 		textproc/rubber \
 		x11/gnome/gedit>=3.2.0
