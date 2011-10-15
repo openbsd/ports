@@ -1,0 +1,30 @@
+$OpenBSD: patch-tests_python_test_python_module_cc,v 1.1 2011/10/15 07:38:10 jasper Exp $
+
+From e2e9cf98d420f1bf924a1e416c3b258c28ee2fd4 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sat, 15 Oct 2011 09:33:34 +0200
+Subject: [PATCH] Hide another __libc_freeres on systems which don't have
+ glibc.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660496
+
+--- tests/python/test_python_module.cc.orig	Sat Oct 15 09:24:18 2011
++++ tests/python/test_python_module.cc	Sat Oct 15 09:25:07 2011
+@@ -5,7 +5,7 @@
+ #include "config.h"
+ #include "glom/python_embed/glom_python.h"
+ 
+-#ifndef G_OS_WIN32
++#ifdef __linux__
+ extern "C" void __libc_freeres(void);
+ #endif
+ 
+@@ -43,7 +43,7 @@ bool gda_python_module_is_available()
+ 
+ int main ()
+ {
+-#ifndef G_OS_WIN32
++#ifdef __linux__
+   atexit(__libc_freeres);
+ #endif
+   Glom::libglom_init();  // Calls PyInitialize()
