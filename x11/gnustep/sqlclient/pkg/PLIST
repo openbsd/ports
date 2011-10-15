@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/17 07:26:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/15 08:02:23 sebastia Exp $
 include/SQLClient/
 include/SQLClient/SQLClient.h
 lib/GNUstep/Bundles/
@@ -44,7 +44,6 @@ lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/Resources/Info-gnustep.plist
 @bin lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/SQLite_libs
 lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/stamp.make
 @lib lib/libSQLClient.so.${LIBSQLClient_VERSION}
-share/doc/GNUstep/
 share/doc/GNUstep/SQLClient/
 share/doc/GNUstep/SQLClient/OrderedSymbolDeclarations.plist
 share/doc/GNUstep/SQLClient/SQLClient.gsdoc
