@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/10/15 16:19:15 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.12.3
-REVISION=		0
+GNOME_VERSION=	2.12.4
 
 CATEGORIES=	graphics
 
@@ -19,8 +18,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo dbus-1 dbus-glib-1 drm expat fontconfig freetype
@@ -30,7 +27,7 @@ WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs tiff xcb xcb-render sqlite3
 WANTLIB += xml2 z unique-1.0 gstinterfaces-0.10 soup-gnome-2.4 soup-2.4
-WANTLIB += json-glib-1.0 stdc++ xcb-shm
+WANTLIB += json-glib-1.0 stdc++ xcb-shm cairo-gobject ffi
 WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 exiv2
 
 MODULES=	x11/gnome \
@@ -47,7 +44,7 @@ LIB_DEPENDS=	devel/json-glib \
 RUN_DEPENDS=	misc/shared-mime-info
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=gnu
