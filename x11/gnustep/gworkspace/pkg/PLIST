@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/04/18 12:33:04 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/10/15 08:10:47 sebastia Exp $
 bin/GWorkspace
 bin/MDFinder
 bin/Recycler
@@ -326,6 +326,7 @@ lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/RecyclerFull.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Workspace.tiff
 @lib lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/libFSNode.so.${LIBFSNode_VERSION}
 lib/GNUstep/Frameworks/FSNode.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/FSNode.framework/libFSNode.so.${LIBFSNode_VERSION}
 lib/GNUstep/Frameworks/Inspector.framework/
 lib/GNUstep/Frameworks/Inspector.framework/Headers
 lib/GNUstep/Frameworks/Inspector.framework/Inspector
@@ -434,6 +435,7 @@ lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchOn.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/tiffPboard.tiff
 @lib lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/libInspector.so.${LIBInspector_VERSION}
 lib/GNUstep/Frameworks/Inspector.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/Inspector.framework/libInspector.so.${LIBInspector_VERSION}
 lib/GNUstep/Frameworks/MDKit.framework/
 lib/GNUstep/Frameworks/MDKit.framework/Headers
 lib/GNUstep/Frameworks/MDKit.framework/MDKit
@@ -508,6 +510,7 @@ lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowDown.tif
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowRight.tiff
 @lib lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/libMDKit.so.${LIBMDKit_VERSION}
 lib/GNUstep/Frameworks/MDKit.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/MDKit.framework/libMDKit.so.${LIBMDKit_VERSION}
 lib/GNUstep/Frameworks/Operation.framework/
 lib/GNUstep/Frameworks/Operation.framework/Headers
 lib/GNUstep/Frameworks/Operation.framework/Operation
@@ -528,6 +531,7 @@ lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Info-gnustep.p
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Operation.tiff
 @lib lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/libOperation.so.${LIBOperation_VERSION}
 lib/GNUstep/Frameworks/Operation.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/Operation.framework/libOperation.so.${LIBOperation_VERSION}
 lib/GNUstep/Services/thumbnailer.service/
 lib/GNUstep/Services/thumbnailer.service/Resources/
 lib/GNUstep/Services/thumbnailer.service/Resources/Info-gnustep.plist
@@ -695,6 +699,7 @@ libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_alt.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_osx.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileIcon_Directory_Open_osx.tiff
+libexec/GNUstep/GWorkspace.app/Resources/FileIcon_WebLink.tiff
 libexec/GNUstep/GWorkspace.app/Resources/FileManager.tiff
 libexec/GNUstep/GWorkspace.app/Resources/French.lproj/
 libexec/GNUstep/GWorkspace.app/Resources/French.lproj/Localizable.strings
