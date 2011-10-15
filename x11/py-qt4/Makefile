@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/10/15 16:21:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
 EPOCH=		0
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-docs=	0
 
 CATEGORIES=	x11 devel
@@ -27,8 +27,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU X11 Xext c dbus-1 m pthread stdc++ 
-WANTLIB += QtDesigner QtGui QtHelp QtNetwork QtOpenGL
-WANTLIB += QtScript QtSql QtSvg QtTest QtWebKit QtXml
+WANTLIB += QtDeclarative QtDesigner QtGui QtHelp QtNetwork QtOpenGL
+WANTLIB += QtScript QtSql QtSvg QtTest QtWebKit QtXml QtXmlPatterns
 WANTLIB += ${MODPY_WANTLIB}
 
 MULTI_PACKAGES=	-main -docs
@@ -74,8 +74,9 @@ CONFIGURE_ARGS=	--verbose \
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
-		QtTest QtXml QtAssistant QtDesigner QtWebKit QtHelp
+PYQTMODS=	QtAssistant QtCore QtDeclarative QtDesigner QtGui QtHelp \
+		QtNetwork QtOpenGL QtScript QtSql QtSvg QtTest QtWebKit \
+		QtXml QtXmlPatterns
 
 .for i in ${PYQTMODS}
 CONFIGURE_ARGS+=--enable=${i}
