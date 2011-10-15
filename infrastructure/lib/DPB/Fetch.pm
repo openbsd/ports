@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.16 2011/09/27 17:12:56 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.17 2011/10/15 10:35:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -79,6 +79,11 @@ sub simple_lockname
 sub fullpkgpath
 {
 	return shift->{path}->fullpkgpath;
+}
+
+sub pkgpath_and_flavors
+{
+	return shift->{path}->pkgpath_and_flavors;
 }
 
 sub tempfilename
