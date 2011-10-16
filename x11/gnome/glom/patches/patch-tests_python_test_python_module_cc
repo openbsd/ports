@@ -1,10 +1,9 @@
-$OpenBSD: patch-tests_python_test_python_module_cc,v 1.1 2011/10/15 07:38:10 jasper Exp $
+$OpenBSD: patch-tests_python_test_python_module_cc,v 1.2 2011/10/16 17:52:39 jasper Exp $
 
-From e2e9cf98d420f1bf924a1e416c3b258c28ee2fd4 Mon Sep 17 00:00:00 2001
+From af9f209eab099458cc4d92c9170757c78b11b1b1 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Sat, 15 Oct 2011 09:33:34 +0200
-Subject: [PATCH] Hide another __libc_freeres on systems which don't have
- glibc.
+Date: Sat, 15 Oct 2011 07:33:34 +0000
+Subject: Hide another __libc_freeres on systems which don't have glibc.
 
 https://bugzilla.gnome.org/show_bug.cgi?id=660496
 
