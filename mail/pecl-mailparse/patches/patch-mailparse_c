@@ -1,7 +1,7 @@
-$OpenBSD: patch-mailparse_c,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
+$OpenBSD: patch-mailparse_c,v 1.2 2011/10/16 15:56:24 ajacoutot Exp $
 
 not pretty, but mbstring is only installed as an option rather
-than in php5-core, so we need a little hack to pick up the headers.
+than in php, so we need a little hack to pick up the headers.
 
 --- mailparse.c.orig	Tue Mar  3 22:24:04 2009
 +++ mailparse.c	Tue Apr 28 15:44:12 2009
