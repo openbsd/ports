@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2011/10/16 06:41:07 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
-DISTNAME=		shared-mime-info-0.90
-REVISION=		0
+DISTNAME=		shared-mime-info-0.91
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
@@ -16,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c glib-2.0 xml2
+WANTLIB += c glib-2.0 xml2
 
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/gettext \
 			textproc/intltool
@@ -28,10 +27,12 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=		pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 pre-configure:
 	@perl -pi -e 's|/usr/local|${PREFIX}|g' \
