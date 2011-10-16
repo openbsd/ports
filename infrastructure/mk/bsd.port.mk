@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1114 2011/10/03 15:46:33 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1115 2011/10/16 07:12:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -186,9 +186,9 @@ PROTECT_MOUNT_POINTS ?=
 
 .if !defined(_MAKEFILE_INC_DONE)
 .  if exists(${.CURDIR}/../Makefile.inc)
+_MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
-_MAKEFILE_INC_DONE = Yes
 .endif
 
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \

@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.5 2011/10/03 15:46:33 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.6 2011/10/16 07:12:35 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -13,9 +13,9 @@ _BSD_PORT_ARCH_MK_INCLUDED = Done
 # early include of Makefile.inc
 .if !defined(_MAKEFILE_INC_DONE)
 .  if exists(${.CURDIR}/../Makefile.inc)
+_MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
-_MAKEFILE_INC_DONE = Yes
 .endif
 
 # architecture stuff
@@ -83,31 +83,31 @@ IGNORE${_s} += ${IGNORE}
 
 # compute _ARCH_OK for ignore
 .  if defined(ONLY_FOR_ARCHS${_s})
-_ARCH_OK = 0
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(ONLY_FOR_ARCHS${_s}:M${__ARCH})
-_ARCH_OK = 1
+.    for A B in ${MACHINE_ARCH} ${ARCH}
+.      if empty(ONLY_FOR_ARCHS${_s}:M$A) && empty(ONLY_FOR_ARCHS${_s}:M$B)
+.        if ${MACHINE_ARCH} == "${ARCH}"
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
+.        else
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
+.        endif
 .      endif
 .    endfor
-.    if ${_ARCH_OK} == 0
-.      if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
-.      else
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
-.      endif
-.    endif
 .  endif
 .  if defined(NOT_FOR_ARCHS${_s})
-_ARCH_OK = 1
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(NOT_FOR_ARCHS${_s}:M${__ARCH})
-_ARCH_OK = 0
+.    for A B in ${MACHINE_ARCH} ${ARCH}
+.      if !empty(NOT_FOR_ARCHS${_s}:M$A) || !empty(NOT_FOR_ARCHS${_s}:M$B)
+IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
 .      endif
 .    endfor
-.    if ${_ARCH_OK} == 0
-IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
-.    endif
 .  endif
+
+.for PROP in ALL APM LP64 NO_SHARED GCC4 GCC3 GCC2 MONO
+.  for A B in ${MACHINE_ARCH} ${ARCH}
+.    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
+PROPERTIES += ${PROP:L}
+.    endif
+.  endfor
+.endfor
 
 # allow subpackages to vanish on architectures that don't
 # support them
