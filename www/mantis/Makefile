@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/10/16 15:20:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/16 18:17:22 ajacoutot Exp $
 
 COMMENT=	web based bug tracking
 
@@ -16,6 +16,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mantisbt/}
+
+MODULES=	lang/php
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
