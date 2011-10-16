@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/10/16 15:20:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,7 @@ The default superuser account is: admin (password: admin).
 * Creating a dedicated user and database for Tikiwiki:
   While Tikiwiki partially supports any relational databases such as
   PostgreSQL or SQLite, only MySQL is fully supported.
-  Also, it is recommended to use the mysqli extension (php5-mysqli) for php
+  Also, it is recommended to use the mysqli extension (php-mysqli) for php
   communication to the database.
 
   $ mysqladmin -u root -p create 'tiki'
@@ -43,7 +43,7 @@ The default superuser account is: admin (password: admin).
     default_charset = "utf-8"
 
 * In order to use the Maps feature, please install the Mapserver PHP extension
-  (php5-mapscript).
+  (php-mapscript).
 
 * Tikiwiki is a big piece of software, you should refer to the official
   documentation before using it. (http://doc.tikiwiki.org/)

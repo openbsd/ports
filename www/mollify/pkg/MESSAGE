@@ -3,4 +3,4 @@ at http://yourhost/mollify/backend/install/ and following the directions
 to modify ${INSTDIR}/backend/configuration.php
 
 Mollify optionally supports MySQL configuration storage; the installer
-can create the tables for you if you install the php5-mysqli package.
+can create the tables for you if you install the php-mysqli package.

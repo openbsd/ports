@@ -13,8 +13,8 @@ Some important notes:
 
 Choose a database system:
 
-Mantis can use a PostgreSQL or MySQL database.  Install either the php5-pgsql
-or the php5-mysql package before you use Mantis.
+Mantis can use a PostgreSQL or MySQL database.  Install either the php-pgsql
+or the php-mysql package before you use Mantis.
 
 MySQL Database:
 

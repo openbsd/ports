@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/07/28 09:24:35 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2011/10/16 15:20:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,9 +14,9 @@ Database creation
 
 You need to install the PHP module corresponding to the database used by
 your bacula(8) installation. e.g:
-    for PostreSQL you'll need to install php5-pdo_pgsql
-    for MySQL you'll need to install php5-pdo_mysql
-    for SQLite3 you'll need to install php5-pdo_sqlite
+    for PostreSQL you'll need to install php-pdo_pgsql
+    for MySQL you'll need to install php-pdo_mysql
+    for SQLite3 you'll need to install php-pdo_sqlite
 
 To add the webacula DB tables, run the following commands according to
 the RDBMS that bacula(8) uses. Note that prior to run these commands,

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/10/16 15:20:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,7 +21,7 @@ DocumentRoot of your web-server:
 
 == MySQL==
 
-Please add the php5-mysql package to enable MySQL support in PHP.
+Please add the php-mysql package to enable MySQL support in PHP.
 
 MySQL users running with chroot'ed httpd might like to take the
 following steps to place the mysql socket inside the chroot:
@@ -50,7 +50,7 @@ Now connect to MySQL and create a user and database for Status.net:
 
 == PostgreSQL ==
 
-Please add the php5-pqsql package to enable PostgreSQL support in PHP.
+Please add the php-pqsql package to enable PostgreSQL support in PHP.
 
 Assuming you have an administrative account named `postgres',
 you can create the 'statusnet' user and database like this:
