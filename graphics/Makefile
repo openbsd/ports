@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.302 2011/10/10 18:43:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.303 2011/10/16 03:52:01 bentley Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -140,6 +140,7 @@
      SUBDIR += luagd
      SUBDIR += luvcview
      SUBDIR += makehuman
+     SUBDIR += mandelbulber
      SUBDIR += mapivi
      SUBDIR += mapnik
      SUBDIR += mhgui
