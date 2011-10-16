@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2011/10/06 20:26:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2011/10/16 08:54:53 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.4
+GNOME_VERSION=	0.12.5
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -47,10 +47,10 @@ MODULES=	devel/gettext \
 MULTI_PACKAGES=	-main -evolution -nautilus
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat fontconfig
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat ffi fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z ffi
+WANTLIB += z
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += ORBit-2 archive assuan atk-1.0 bz2 c cairo cairo-gobject
@@ -64,6 +64,8 @@ WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2 gstvideo-0.10
 WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 
 WANTLIB-evolution += ${WANTLIB}
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-evolution += ICE ORBit-2 SM asn1 atk-1.0 cairo cairo-gobject camel-1.2
 WANTLIB-evolution += camel-provider-1.2 com_err crypto db dbus-1 e2fs-uuid
 WANTLIB-evolution += ebackend-1.2 ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0

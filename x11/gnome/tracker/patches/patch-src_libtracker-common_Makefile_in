@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_libtracker-common_Makefile_in,v 1.4 2011/10/06 20:26:47 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_Makefile_in,v 1.5 2011/10/16 08:54:53 ajacoutot Exp $
+
+Needed by patch-src_libtracker-common_tracker-dbus_c.
+
 --- src/libtracker-common/Makefile.in.orig	Thu Oct  6 17:27:23 2011
 +++ src/libtracker-common/Makefile.in	Thu Oct  6 20:22:53 2011
 @@ -509,7 +509,7 @@ libtracker_common_la_LDFLAGS = \
