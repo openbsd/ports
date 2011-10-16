@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.6 2011/10/16 07:12:35 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.7 2011/10/16 07:52:08 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -108,6 +108,9 @@ PROPERTIES += ${PROP:L}
 .    endif
 .  endfor
 .endfor
+.if ${ELF_TOOLCHAIN:L} == "yes"
+PROPERTIES += elf
+.endif
 
 # allow subpackages to vanish on architectures that don't
 # support them
