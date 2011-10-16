@@ -1,0 +1,106 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/16 03:51:10 bentley Exp $
+@bin bin/mandelbulber
+share/applications/
+share/applications/mandelbulber.desktop
+share/mandelbulber/
+share/mandelbulber/defaults
+share/mandelbulber/exampleKeyframes/
+share/mandelbulber/exampleKeyframes/keyframe00000.fract
+share/mandelbulber/exampleKeyframes/keyframe00001.fract
+share/mandelbulber/exampleKeyframes/keyframe00002.fract
+share/mandelbulber/exampleKeyframes/keyframe00003.fract
+share/mandelbulber/exampleKeyframes/keyframe00004.fract
+share/mandelbulber/exampleKeyframes/keyframe00005.fract
+share/mandelbulber/exampleKeyframes/keyframe00006.fract
+share/mandelbulber/exampleKeyframes/keyframe00007.fract
+share/mandelbulber/exampleKeyframes/keyframe00008.fract
+share/mandelbulber/exampleKeyframes/keyframe00009.fract
+share/mandelbulber/exampleKeyframes/keyframe00010.fract
+share/mandelbulber/examples/
+share/mandelbulber/examples/FoldIntPow2 2.fract
+share/mandelbulber/examples/FoldIntPow2 3.fract
+share/mandelbulber/examples/Folded trigonometric power 8 version 2.fract
+share/mandelbulber/examples/Folded trigonometric power 8.fract
+share/mandelbulber/examples/Hybrid 1.fract
+share/mandelbulber/examples/Hybrid 2.fract
+share/mandelbulber/examples/Hybrid 3.fract
+share/mandelbulber/examples/Hybrid 4.fract
+share/mandelbulber/examples/IFS Dodecahedron.fract
+share/mandelbulber/examples/IFS Icosahedron 2.fract
+share/mandelbulber/examples/IFS Icosahedron.fract
+share/mandelbulber/examples/IFS Octahedral Sierpinski.fract
+share/mandelbulber/examples/IFS Sierpinski.fract
+share/mandelbulber/examples/IFS Trees.fract
+share/mandelbulber/examples/Mandelbulb with backlight.fract
+share/mandelbulber/examples/Volumetric fog 1.fract
+share/mandelbulber/examples/Volumetric light 1.fract
+share/mandelbulber/examples/Volumetric light 2.fract
+share/mandelbulber/examples/Volumetric light 3.fract
+share/mandelbulber/examples/colour palette example.fract
+share/mandelbulber/examples/constant factor -1.2  - mandelbox scale -1.5.fract
+share/mandelbulber/examples/constant factor 1.2  - mandelbulb power 8.fract
+share/mandelbulber/examples/constant factor 2.0  - mandelbox scale 2.0.fract
+share/mandelbulber/examples/default.fract
+share/mandelbulber/examples/example animation (keyframes).fract
+share/mandelbulber/examples/fish eye.fract
+share/mandelbulber/examples/hypercomplex - ambient occlusion.fract
+share/mandelbulber/examples/hypercomplex - julia - environment mapping.fract
+share/mandelbulber/examples/interior - mandelbox scale 2.fract
+share/mandelbulber/examples/interior - mandelbulb power 2.fract
+share/mandelbulber/examples/interior - mandelbulb power 8.fract
+share/mandelbulber/examples/menger sponge - equirectangular projection.fract
+share/mandelbulber/examples/menger sponge 2.fract
+share/mandelbulber/examples/menger sponge 3.fract
+share/mandelbulber/examples/menger sponge.fract
+share/mandelbulber/examples/modified mandelbulb 1.fract
+share/mandelbulber/examples/modified mandelbulb 2 - sliced.fract
+share/mandelbulber/examples/modified mandelbulb 2.fract
+share/mandelbulber/examples/modified mandelbulb 3.fract
+share/mandelbulber/examples/power 2 - Julia environment mapping central light.fract
+share/mandelbulber/examples/power 2 - default.fract
+share/mandelbulber/examples/power 2 - hq ambient occlusion.fract
+share/mandelbulber/examples/power 2 - julia.fract
+share/mandelbulber/examples/power 2 - limits.fract
+share/mandelbulber/examples/power 2 - screen space ambient occlusion.fract
+share/mandelbulber/examples/primitive objects - inverted box.fract
+share/mandelbulber/examples/primitive objects - set.fract
+share/mandelbulber/examples/primitive objects - water.fract
+share/mandelbulber/examples/quaternion - julia.fract
+share/mandelbulber/examples/quaternion - lathe.fract
+share/mandelbulber/examples/raytraced reflections 1.fract
+share/mandelbulber/examples/raytraced reflections 2.fract
+share/mandelbulber/examples/rotated mandelbox 1.fract
+share/mandelbulber/examples/rotated mandelbox 2.fract
+share/mandelbulber/examples/rotated mandelbox 3.fract
+share/mandelbulber/examples/rotated mandelbox 4.fract
+share/mandelbulber/examples/spherical folding - mandelbulb power 2.fract
+share/mandelbulber/examples/spherical folding - mandelbulb power 8.fract
+share/mandelbulber/examples/spherical folding - menger sponge.fract
+share/mandelbulber/examples/stereo.fract
+share/mandelbulber/examples/tglad - scale -1.4, minRadius 0.1.fract
+share/mandelbulber/examples/tglad - scale -1.73 closeup.fract
+share/mandelbulber/examples/tglad - scale -2.fract
+share/mandelbulber/examples/tglad - scale 2 - coloured lights.fract
+share/mandelbulber/examples/tglad - scale 2.fract
+share/mandelbulber/examples/tglad - scale 3.fract
+share/mandelbulber/examples/trigonometric - default.fract
+share/mandelbulber/examples/trigonometric - hq ambient occlusion.fract
+share/mandelbulber/examples/trigonometric - power 6 julia.fract
+share/mandelbulber/examples/trigonometric - power 8 deep zoom.fract
+share/mandelbulber/examples/volumetric fog 2.fract
+share/mandelbulber/examples/xenodreambuie's formula 2.fract
+share/mandelbulber/examples/xenodreambuie's formula.fract
+share/mandelbulber/icons/
+share/mandelbulber/icons/go-down.png
+share/mandelbulber/icons/go-next.png
+share/mandelbulber/icons/go-previous.png
+share/mandelbulber/icons/go-up.png
+share/mandelbulber/icons/mandelbulber.png
+share/mandelbulber/textures/
+share/mandelbulber/textures/background.jpg
+share/mandelbulber/textures/colour palette.jpg
+share/mandelbulber/textures/envmap.jpg
+share/mandelbulber/textures/lightmap.jpg
+share/mandelbulber/textures/lightmap2.jpg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,0 +1,12 @@
+$OpenBSD: patch-makefiles_makefile,v 1.1.1.1 2011/10/16 03:51:10 bentley Exp $
+--- makefiles/makefile.orig	Fri Sep 30 10:08:25 2011
++++ makefiles/makefile	Fri Sep 30 10:08:37 2011
+@@ -44,7 +44,7 @@ all: mandelbulber
+ mandelbulber: $(OBJS) $(USER_OBJS)
+ 	@echo 'Building target: $@'
+ 	@echo 'Invoking: GCC C++ Linker'
+-	g++ `pkg-config --libs gtk+-2.0 gthread-2.0` -o"mandelbulber"$(OBJS) $(USER_OBJS) $(LIBS)
++	${CXX} ${LDFLAGS} `pkg-config --libs gtk+-2.0 gthread-2.0` -o"mandelbulber"$(OBJS) $(USER_OBJS) $(LIBS)
+ 	@echo 'Finished building target: $@'
+ 	@echo ' '
+ 
