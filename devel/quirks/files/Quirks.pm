@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.60 2011/07/20 07:59:28 dcoppa Exp $
+# $OpenBSD: Quirks.pm,v 1.61 2011/10/16 16:05:50 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -249,7 +249,9 @@ my $stem_extensions = {
 	'wqy-zenhei-ttf' => 'zh-wqy-zenhei-ttf',
 	'wqy-bitmapfont' => 'zh-wqy-bitmapfont',
 	'ptsans' => 'ru-ptsans',
-	'py-zeya' => 'zeya'
+	'py-zeya' => 'zeya',
+# 5.1
+	'php5-mapscript' => 'php-mapscript'
 };
 
 # ->is_base_system($handle, $state):
