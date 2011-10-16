@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/10/10 20:14:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/16 06:51:11 ajacoutot Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
 GNOME_VERSION=		1.19.12
+REVISION=		0
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=619445
 PATCHFILES=		glom_locale.patch:0
@@ -50,17 +51,17 @@ MODGNOME_DESKTOP_FILE=	Yes
 BUILD_DEPENDS=		databases/postgresql,-server \
 			devel/iso-codes \
 			devel/py-gobject3 \
-			textproc/py-sphinx
+			textproc/py-sphinx \
+			x11/gnome/libgda,-pgsql
 RUN_DEPENDS=		databases/postgresql,-server \
 			devel/py-gobject3 \
 			misc/shared-mime-info \
-			x11/gnome/libgda>=4.99.4p2
+			x11/gnome/libgda,-pgsql
 LIB_DEPENDS=		devel/boost \
 			graphics/evince \
 			graphics/goocanvasmm2>=1.90.6 \
 			net/libepc \
 			textproc/libxml++ \
-			x11/gnome/libgda,-pgsql \
 			x11/gnome/libgdamm>=4.99.4 \
 			x11/gtksourceviewmm3
 
