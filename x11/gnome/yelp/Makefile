@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.75 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/10/16 19:23:35 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.2.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 
@@ -24,7 +24,7 @@ WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 icudata icui18n icuuc
 WANTLIB += jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
 WANTLIB += stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z ffi javascriptcoregtk-3.0 kvm
+WANTLIB += z ffi javascriptcoregtk-3.0
 
 MODULES=		devel/gettext \
 			x11/gnome \

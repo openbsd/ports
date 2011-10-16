@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/16 19:23:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.8.0
-REVISION=		3
+REVISION=		4
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -27,7 +27,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += atkmm-1.6 c cairo cairo-gobject cairomm-1.0 drm e2fs-uuid
 WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtkmm-3.0 kvm m panel-applet-4
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtkmm-3.0 m panel-applet-4
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
 WANTLIB += pcrecpp pixman-1 png pthread pthread-stubs sigc-2.0
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 xslt z

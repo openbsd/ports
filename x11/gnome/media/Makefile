@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2011/09/30 13:55:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/10/16 19:23:34 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.91.2
-REVISION=	5
+REVISION=	6
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,7 +20,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-media-profiles-3.0 gobject-2.0
 WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gthread-2.0 gtk-3
-WANTLIB += kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
 WANTLIB += z
 

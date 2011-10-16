@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2011/10/07 14:04:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2011/10/16 19:23:34 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -8,6 +8,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -25,7 +26,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm accountsservice
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
 WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 kvm ltdl m nspr4 nss3
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3
 WANTLIB += nssutil3 ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 softokn3 sqlite3 ssl3 upower-glib util vorbis

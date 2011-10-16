@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/29 07:57:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/10/16 19:23:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	remote desktop viewer for GNOME
 
 GNOME_VERSION=	3.2.0
 GNOME_PROJECT=	vinagre
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
@@ -25,7 +25,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
 WANTLIB += ffi fontconfig freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring gnutls
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
-WANTLIB += gvnc-1.0 hogweed kvm m ncurses nettle p11-kit pango-1.0
+WANTLIB += gvnc-1.0 hogweed m ncurses nettle p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sasl2 tasn1 telepathy-glib util vte2_90
 WANTLIB += xcb xcb-render xcb-shm xml2 z

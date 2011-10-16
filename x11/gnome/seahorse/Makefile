@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2011/10/16 19:23:35 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.2.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -22,7 +22,7 @@ WANTLIB += avahi-client avahi-common avahi-glib c cairo cairo-gobject
 WANTLIB += com_err crypto dbus-1 drm expat ffi fontconfig freetype
 WANTLIB += gck-1 gcr-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gpgme
-WANTLIB += gssapi gthread-2.0 gtk-3 krb5 kvm lber-2.4 ldap-2.4
+WANTLIB += gssapi gthread-2.0 gtk-3 krb5 lber-2.4 ldap-2.4
 WANTLIB += m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 soup-2.4 ssl
 WANTLIB += tasn1 xcb xcb-render xcb-shm xml2 z

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/28 09:47:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/10/16 19:23:35 ajacoutot Exp $
 
 COMMENT=		dialogs for GNOME
 
 GNOME_PROJECT=		zenity
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,7 +21,7 @@ WANTLIB += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 m
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z kvm soup-2.4 webkitgtk-3.0
+WANTLIB += z soup-2.4 webkitgtk-3.0
 
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			www/webkit,gtk3

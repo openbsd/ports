@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/16 19:23:35 ajacoutot Exp $
 
 COMMENT=	PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=	seahorse-sharing
 GNOME_VERSION=	3.2
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -20,7 +21,7 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm assuan
 WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
 WANTLIB += cairo-gobject dbus-1 drm expat ffi fontconfig freetype
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gpg-error gpgme gthread-2.0 gtk-3 kvm m pango-1.0 pangocairo-1.0
+WANTLIB += gpg-error gpgme gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 xcb xcb-render xcb-shm xml2 z
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/27 18:20:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/16 19:23:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		git repository viewer for gtk+/GNOME
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		0.2.5
+REVISION=		0
+
 SHARED_LIBS +=  gitg-1.0                  0.0 # 0.0
 
 CATEGORIES=		devel
@@ -28,7 +30,7 @@ WANTLIB += cairo-gobject drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb
-WANTLIB += xcb-render xcb-shm xml2 z ffi kvm
+WANTLIB += xcb-render xcb-shm xml2 z ffi
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
