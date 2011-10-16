@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/01/14 20:27:11 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/10/16 07:03:12 ajacoutot Exp $
 @conflict rpm2cpio-*
+%%SHARED%%
 bin/gendiff
-bin/rpm
-bin/rpm2cpio
-@comment include/popt.h
+@bin bin/rpm
+@bin bin/rpm2cpio
 include/rpm/
 include/rpm/dbindex.h
 include/rpm/header.h
@@ -15,19 +15,10 @@ include/rpm/rpmmacro.h
 include/rpm/rpmspec.h
 include/rpm/rpmurl.h
 include/rpm/stringbuf.h
-@comment lib/libpopt.a
-@comment lib/libpopt.la
 lib/librpm.a
 lib/librpm.la
 lib/librpmbuild.a
 lib/librpmbuild.la
-@comment lib/locale/
-@comment lib/locale/ro/
-@comment lib/locale/ro/LC_MESSAGES/
-@comment lib/locale/ro/LC_MESSAGES/popt.mo
-@comment lib/locale/sk/
-@comment lib/locale/sk/LC_MESSAGES/
-@comment lib/locale/sk/LC_MESSAGES/popt.mo
 lib/rpm/
 lib/rpm/brp-compress
 lib/rpm/brp-redhat
@@ -57,9 +48,9 @@ lib/rpm/perl.prov
 lib/rpm/perl.req
 lib/rpm/rpmdiff
 lib/rpm/rpmdiff.cgi
-lib/rpm/rpmgettext
+@bin lib/rpm/rpmgettext
 lib/rpm/rpmpopt
-lib/rpm/rpmputtext
+@bin lib/rpm/rpmputtext
 lib/rpm/rpmrc
 lib/rpm/u_pkg.sh
 lib/rpm/vpkg-provides.sh
@@ -71,7 +62,6 @@ lib/rpmrc
 @comment @man man/ja/man8/rpm.8
 @comment @man man/ja/man8/rpm2cpio.8
 @man man/man1/gendiff.1
-@comment @man man/man3/popt.3
 @man man/man8/rpm.8
 @man man/man8/rpm2cpio.8
 @comment man/pl/
@@ -97,17 +87,3 @@ share/locale/sl/LC_MESSAGES/rpm.mo
 share/locale/sr/LC_MESSAGES/rpm.mo
 share/locale/sv/LC_MESSAGES/rpm.mo
 share/locale/tr/LC_MESSAGES/rpm.mo
-src/
-src/redhat/
-src/redhat/BUILD/
-src/redhat/RPMS/
-@comment src/redhat/RPMS/athlon/
-src/redhat/${RPM_INTEL}/
-@comment src/redhat/RPMS/i486/
-@comment src/redhat/RPMS/i586/
-@comment src/redhat/RPMS/i686/
-src/redhat/RPMS/noarch/
-src/redhat/SOURCES/
-src/redhat/SPECS/
-src/redhat/SRPMS/
-%%SHARED%%

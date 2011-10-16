@@ -1,59 +1,43 @@
-$OpenBSD: patch-Makefile_in,v 1.3 2010/05/19 13:45:15 espie Exp $
---- Makefile.in.orig	Wed Sep 13 22:00:40 2000
-+++ Makefile.in	Wed May 19 05:28:31 2010
-@@ -167,15 +167,15 @@ SUBDIRS = intl po popt lib build misc tools scripts te
- INCLUDES = -I$(top_srcdir)/build -I$(top_srcdir)/lib -I$(top_srcdir)/popt 	@INCPATH@
+$OpenBSD: patch-Makefile_in,v 1.4 2011/10/16 07:03:12 ajacoutot Exp $
+--- Makefile.in.orig	Wed Sep 13 16:00:40 2000
++++ Makefile.in	Sun Oct 16 02:26:04 2011
+@@ -162,19 +162,19 @@ EXTRA_DIST = CHANGES CREDITS GROUPS README.amiga INSTA
+ 
+ 
+ # XXX TODO: python perl
+-SUBDIRS = intl po popt lib build misc tools scripts tests doc .
++SUBDIRS = po lib build misc tools scripts tests doc .
+ 
+-INCLUDES = -I$(top_srcdir)/build -I$(top_srcdir)/lib -I$(top_srcdir)/popt 	@INCPATH@
++INCLUDES = -I$(top_srcdir)/build -I$(top_srcdir)/lib	@INCPATH@
  
  
 -myldflags = -L$(top_builddir)/build -L$(top_builddir)/lib -L$(top_builddir)/popt
-+myldflags = -L$(top_builddir)/build -L$(top_builddir)/lib -L/usr/local/lib
++myldflags = -L$(top_builddir)/build -L$(top_builddir)/lib
  
  # XXX libtool can/should generate dependent libs.
  # XXX solaris2.6 cannot use *.la with --all-static (downrev binutils/egcs?)
 -myldadd =  	$(top_builddir)/build/.libs/librpmbuild.a 	$(top_builddir)/lib/.libs/librpm.a 	$(top_builddir)/popt/.libs/libpopt.a 	@INTLLIBS@ @LIBMISC@
-+myldadd =  	$(top_builddir)/build/.libs/librpmbuild.a @INTLLIBS@ @LIBMISC@
++myldadd =  	$(top_builddir)/build/.libs/librpmbuild.a	$(top_builddir)/lib/.libs/librpm.a	-lpopt	-lintl -liconv @LIBMISC@
  
  
 -LDFLAGS = @LDFLAGS_STATIC@ $(myldflags)
--LDADD = $(myldadd)
-+LDFLAGS = $(myldflags)
-+LDADD = $(myldadd) -L$(top_builddir)/lib/.libs -lrpm -lpopt
++LDFLAGS = @LDFLAGS@ $(myldflags)
+ LDADD = $(myldadd)
  
  rpmbindir = `echo $(bindir) | sed -e s,usr/bin,bin,`
- rpmbin_PROGRAMS = rpm
-@@ -235,7 +235,7 @@ rpmrc.in
+@@ -208,12 +208,12 @@ CPPFLAGS = @CPPFLAGS@
+ rpm2cpio_OBJECTS =  rpm2cpio.o
+ rpm2cpio_LDADD = $(LDADD)
+ rpm2cpio_DEPENDENCIES =  $(top_builddir)/build/.libs/librpmbuild.a \
+-$(top_builddir)/lib/.libs/librpm.a $(top_builddir)/popt/.libs/libpopt.a
++$(top_builddir)/lib/.libs/librpm.a
+ rpm2cpio_LDFLAGS = 
+ rpm_OBJECTS =  build.o rpm.o
+ rpm_LDADD = $(LDADD)
+ rpm_DEPENDENCIES =  $(top_builddir)/build/.libs/librpmbuild.a \
+-$(top_builddir)/lib/.libs/librpm.a $(top_builddir)/popt/.libs/libpopt.a
++$(top_builddir)/lib/.libs/librpm.a
+ rpm_LDFLAGS = 
+ SCRIPTS =  $(bin_SCRIPTS) $(pkglib_SCRIPTS)
  
- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) $(TEXINFOS) $(EXTRA_DIST)
- 
--TAR = gtar
-+TAR = tar
- GZIP_ENV = --best
- SOURCES = $(rpm2cpio_SOURCES) $(rpm_SOURCES)
- OBJECTS = $(rpm2cpio_OBJECTS) $(rpm_OBJECTS)
-@@ -580,7 +580,7 @@ distdir: $(DISTFILES)
- 	@for file in $(DISTFILES); do \
- 	  d=$(srcdir); \
- 	  if test -d $$d/$$file; then \
--	    cp -pr $$d/$$file $(distdir)/$$file; \
-+	    cp -pr $$/$$file $(distdir)/$$file; \
- 	  else \
- 	    test -f $(distdir)/$$file \
- 	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
-@@ -597,17 +597,6 @@ distdir: $(DISTFILES)
- 	      || exit 1; \
- 	  fi; \
- 	done
--build.o: build.c system.h config.h build/rpmbuild.h lib/rpmlib.h \
--	lib/rpmio.h lib/dbindex.h lib/header.h popt/popt.h \
--	lib/stringbuf.h lib/misc.h build/rpmspec.h lib/rpmmacro.h \
--	lib/rpmurl.h build.h lib/install.h
--rpm.o: rpm.c system.h config.h build/rpmbuild.h lib/rpmlib.h lib/rpmio.h \
--	lib/dbindex.h lib/header.h popt/popt.h lib/stringbuf.h \
--	lib/misc.h build/rpmspec.h lib/rpmmacro.h lib/rpmurl.h build.h \
--	lib/install.h lib/signature.h
--rpm2cpio.o: rpm2cpio.c system.h config.h lib/rpmlib.h lib/rpmio.h \
--	lib/dbindex.h lib/header.h popt/popt.h
--
- info-am:
- info: info-recursive
- dvi-am:
