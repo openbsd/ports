@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1115 2011/10/16 07:12:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1116 2011/10/16 07:51:27 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1583,6 +1583,32 @@ _complete_pkgspec = \
 		pkg="$$stem$${pkg\#STEM}";; \
 	esac
 
+.if empty(PLIST_DB)
+_register_plist =:
+.else
+_register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
+.endif
+.if ${CHECK_LIB_DEPENDS:L} == "yes"
+_check_lib_depends = ${_CHECK_LIB_DEPENDS} 
+.else
+_check_lib_depends =:
+.endif
+
+CLEAN_PLIST_OUTPUT?=No
+.if ${CLEAN_PLIST_OUTPUT:L} == "yes"
+_plist_header=echo "@+++ new plist"
+_plist_footer=echo "@--- end plist"
+.else
+_plist_header=:
+_plist_footer=:
+.endif
+
+_CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
+_CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
+.  if ${ELF_TOOLCHAIN:L} == "no"
+_CHECK_LIB_DEPENDS += -o
+.  endif
+
 
 ###
 ### end of variable setup. Only targets now
@@ -1947,7 +1973,7 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-subpackage _internal-subupdate _internal-uninstall \
 	_internal-update _internal-update-or-install \
 	_internal-update-or-install-all _internal-update-plist \
-	port-lib-depends-check update-patches:
+	lib-depends-check port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
 	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}}."
 .  endif
@@ -1955,12 +1981,6 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	@echo "${IGNORE${SUBPACKAGE}}" >${_IGNORE_COOKIE}
 .  endif
 .else
-
-_CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
-_CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
-.  if ${ELF_TOOLCHAIN:L} == "no"
-_CHECK_LIB_DEPENDS += -o
-.  endif
 
 lib-depends-check:
 	@${_MAKE} package
@@ -2531,26 +2551,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	done
 
 	@${SUDO} ${_MAKE_COOKIE} $@
-
-.if empty(PLIST_DB)
-_register_plist =:
-.else
-_register_plist = mkdir -p ${PLIST_DB:S/:/ /g} && ${_PERLSCRIPT}/register-plist ${PLIST_DB}
-.endif
-.if ${CHECK_LIB_DEPENDS:L} == "yes"
-_check_lib_depends = ${_CHECK_LIB_DEPENDS} 
-.else
-_check_lib_depends =:
-.endif
-
-CLEAN_PLIST_OUTPUT?=No
-.if ${CLEAN_PLIST_OUTPUT:L} == "yes"
-_plist_header=echo "@+++ new plist"
-_plist_footer=echo "@--- end plist"
-.else
-_plist_header=:
-_plist_footer=:
-.endif
 
 print-plist:
 	@${_plist_header}; ${_PKG_CREATE} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
@@ -3303,16 +3303,6 @@ uninstall deinstall:
 	@${ECHO_MSG} "===> Deinstalling for ${FULLPKGNAME${SUBPACKAGE}}"
 	@${SUDO} ${_PKG_DELETE} ${FULLPKGNAME${SUBPACKAGE}}
 
-.if defined(ERRORS)
-.BEGIN:
-.  for _m in ${ERRORS}
-	@echo 1>&2 ${_m} "(in ${PKGPATH})"
-.  endfor
-.  if !empty(ERRORS:M"Fatal\:*") || !empty(ERRORS:M'Fatal\:*')
-	@exit 1
-.  endif
-.endif
-
 peek-ftp:
 	@echo "DISTFILES=${DISTFILES}"
 	@mkdir -p ${FULLDISTDIR}; cd ${FULLDISTDIR}; echo "cd ${FULLDISTDIR}"; \
@@ -3419,6 +3409,16 @@ _all_phony = ${_recursive_depends_targets} \
 ERRORS += "Fatal: phony target ${_t} does not exist"
 .    endif
 .  endfor
+.endif
+
+.if defined(ERRORS)
+.BEGIN:
+.  for _m in ${ERRORS}
+	@echo 1>&2 ${_m} "(in ${PKGPATH})"
+.  endfor
+.  if !empty(ERRORS:M"Fatal\:*") || !empty(ERRORS:M'Fatal\:*')
+	@exit 1
+.  endif
 .endif
 
 .PHONY: ${_all_phony}
