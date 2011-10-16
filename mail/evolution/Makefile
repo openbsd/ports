@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2011/10/16 18:29:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2011/10/16 19:03:34 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,6 +8,9 @@ GNOME_VERSION=		3.2.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -52,7 +55,7 @@ WANTLIB += expat fontconfig freetype gailutil-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
 WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
-WANTLIB += ical icalss icalvcal krb5 ffi kvm dbus-glib-1
+WANTLIB += ical icalss icalvcal krb5 ffi dbus-glib-1
 WANTLIB += m notify nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl3

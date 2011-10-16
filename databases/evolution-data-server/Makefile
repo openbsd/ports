@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2011/10/16 18:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2011/10/16 19:03:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -45,7 +46,7 @@ WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3
 WANTLIB += xcb xcb-render xcb-shm xml2 z curl idn oauth ffi
-WANTLIB += kvm softokn3 goa-1.0 dbus-glib-1
+WANTLIB += softokn3 goa-1.0 dbus-glib-1
 
 MODULES=		devel/gettext \
 			lang/python \
