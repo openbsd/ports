@@ -1,6 +1,6 @@
-$OpenBSD: patch-dbus_dbus-gvalue_c,v 1.4 2011/06/03 16:55:16 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-gvalue_c,v 1.5 2011/10/16 06:45:18 ajacoutot Exp $
 
-fixes compile on gcc2.95 arches
+Fixes compile on gcc2.95 archs.
 
 --- dbus/dbus-gvalue.c.orig	Wed Jun  1 18:29:39 2011
 +++ dbus/dbus-gvalue.c	Fri Jun  3 18:37:46 2011
