@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/16 15:03:24 naddy Exp $
 # $RuOBSD: Makefile,v 1.4 2009/02/07 10:28:55 form Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
@@ -7,11 +7,9 @@ COMMENT=		thorough, stand alone memory test
 VERSION=		4.20
 DISTNAME=		memtest86+-${VERSION}
 CATEGORIES=		sysutils
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.memtest.org/
-
-MAINTAINER=		Oleg Safiullin <form@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
