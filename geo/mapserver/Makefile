@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/16 16:03:26 ajacoutot Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -14,8 +14,8 @@ PKGNAME-main=	${DISTNAME}
 REVISION-main = 0
 PKGNAME-utils=	mapserver-utils-${V}
 REVISION-utils = 0
-PKGNAME-php=	php5-mapscript-${V}
-REVISION-php =	0
+PKGNAME-php=	php-mapscript-${V}
+REVISION-php =	1
 PKGNAME-perl=	p5-mapscript-${V}
 REVISION-perl = 0
 
@@ -88,7 +88,7 @@ UTILS=	shp2img legend shptree shptreevis shptreetst scalebar \
 
 PREFIX-main=	/var/www
 
-SUBST_VARS+=	PREFIX-php PREFIX-main
+SUBST_VARS+=	PREFIX-main
 
 post-build:
 	cd ${WRKSRC}/mapscript/perl && perl Makefile.PL && ${MAKE}
