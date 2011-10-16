@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/16 19:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/10/16 21:24:04 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -30,6 +30,10 @@ WANTLIB += stdc++ upower-glib xcb xcb-render xcb-shm z
 
 LIB_DEPENDS=	sysutils/upower \
 		x11/gtk+3
+
+AUTOCONF_VERSION=	2.68
+
+CONFIGURE_STYLE=	autoconf
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
