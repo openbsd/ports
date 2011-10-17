@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/05 18:51:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/17 16:45:21 jasper Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/telepathy-spec/
@@ -12,10 +12,13 @@ share/gtk-doc/html/telepathy-spec/Account_Manager.html
 share/gtk-doc/html/telepathy-spec/Account_Manager_Interface_Hidden.html
 share/gtk-doc/html/telepathy-spec/Authentication_TLS_Certificate.html
 share/gtk-doc/html/telepathy-spec/Call_Content.html
-share/gtk-doc/html/telepathy-spec/Call_Content_Codec_Offer.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Media.html
-share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Mute.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Video_Control.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Media_Description.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Media_Description_Interface_RTCP_Extended_Reports.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Media_Description_Interface_RTCP_Feedback.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Media_Description_Interface_RTP_Header_Extensions.html
+share/gtk-doc/html/telepathy-spec/Call_Interface_Mute.html
 share/gtk-doc/html/telepathy-spec/Call_Stream.html
 share/gtk-doc/html/telepathy-spec/Call_Stream_Endpoint.html
 share/gtk-doc/html/telepathy-spec/Call_Stream_Interface_Media.html
@@ -42,11 +45,13 @@ share/gtk-doc/html/telepathy-spec/Channel_Interface_Mergeable_Conference.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Messages.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Password.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Room.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_Room_Config.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_SASL_Authentication.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_SMS.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Securable.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Service_Point.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Splittable.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_Subject.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Tube.html
 share/gtk-doc/html/telepathy-spec/Channel_Request.html
 share/gtk-doc/html/telepathy-spec/Channel_Type_Call.html
@@ -106,6 +111,7 @@ share/gtk-doc/html/telepathy-spec/Protocol_Interface_Addressing.html
 share/gtk-doc/html/telepathy-spec/Protocol_Interface_Avatars.html
 share/gtk-doc/html/telepathy-spec/Protocol_Interface_Presence.html
 share/gtk-doc/html/telepathy-spec/errors.html
+share/gtk-doc/html/telepathy-spec/favicon.png
 share/gtk-doc/html/telepathy-spec/fullindex.html
 share/gtk-doc/html/telepathy-spec/generic-types.html
 share/gtk-doc/html/telepathy-spec/index.html
