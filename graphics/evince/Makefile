@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2011/10/17 18:40:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.2.0
+GNOME_VERSION=	3.2.1
 
 MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
@@ -48,7 +48,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += GL xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi kvm
+WANTLIB += GL xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 
 MODGNOME_TOOLS= goi yelp
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/09/27 13:14:01 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/10/17 18:40:16 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -188,6 +188,7 @@ share/gnome/help/evince/C/figures/list-add-tabs.png
 share/gnome/help/evince/C/figures/print-2sided.png
 share/gnome/help/evince/C/figures/print-select.png
 share/gnome/help/evince/C/figures/reverse-collate.png
+share/gnome/help/evince/C/figures/synctex_screencast.ogv
 share/gnome/help/evince/C/figures/zoom.png
 share/gnome/help/evince/C/finding.page
 share/gnome/help/evince/C/formats.page
@@ -266,6 +267,7 @@ share/gnome/help/evince/bg/figures/list-add-tabs.png
 share/gnome/help/evince/bg/figures/print-2sided.png
 share/gnome/help/evince/bg/figures/print-select.png
 share/gnome/help/evince/bg/figures/reverse-collate.png
+share/gnome/help/evince/bg/figures/synctex_screencast.ogv
 share/gnome/help/evince/bg/figures/zoom.png
 share/gnome/help/evince/bg/finding.page
 share/gnome/help/evince/bg/formats.page
@@ -344,6 +346,7 @@ share/gnome/help/evince/ca/figures/list-add-tabs.png
 share/gnome/help/evince/ca/figures/print-2sided.png
 share/gnome/help/evince/ca/figures/print-select.png
 share/gnome/help/evince/ca/figures/reverse-collate.png
+share/gnome/help/evince/ca/figures/synctex_screencast.ogv
 share/gnome/help/evince/ca/figures/zoom.png
 share/gnome/help/evince/ca/finding.page
 share/gnome/help/evince/ca/formats.page
@@ -422,6 +425,7 @@ share/gnome/help/evince/cs/figures/list-add-tabs.png
 share/gnome/help/evince/cs/figures/print-2sided.png
 share/gnome/help/evince/cs/figures/print-select.png
 share/gnome/help/evince/cs/figures/reverse-collate.png
+share/gnome/help/evince/cs/figures/synctex_screencast.ogv
 share/gnome/help/evince/cs/figures/zoom.png
 share/gnome/help/evince/cs/finding.page
 share/gnome/help/evince/cs/formats.page
@@ -500,6 +504,7 @@ share/gnome/help/evince/da/figures/list-add-tabs.png
 share/gnome/help/evince/da/figures/print-2sided.png
 share/gnome/help/evince/da/figures/print-select.png
 share/gnome/help/evince/da/figures/reverse-collate.png
+share/gnome/help/evince/da/figures/synctex_screencast.ogv
 share/gnome/help/evince/da/figures/zoom.png
 share/gnome/help/evince/da/finding.page
 share/gnome/help/evince/da/formats.page
@@ -578,6 +583,7 @@ share/gnome/help/evince/de/figures/list-add-tabs.png
 share/gnome/help/evince/de/figures/print-2sided.png
 share/gnome/help/evince/de/figures/print-select.png
 share/gnome/help/evince/de/figures/reverse-collate.png
+share/gnome/help/evince/de/figures/synctex_screencast.ogv
 share/gnome/help/evince/de/figures/zoom.png
 share/gnome/help/evince/de/finding.page
 share/gnome/help/evince/de/formats.page
@@ -656,6 +662,7 @@ share/gnome/help/evince/el/figures/list-add-tabs.png
 share/gnome/help/evince/el/figures/print-2sided.png
 share/gnome/help/evince/el/figures/print-select.png
 share/gnome/help/evince/el/figures/reverse-collate.png
+share/gnome/help/evince/el/figures/synctex_screencast.ogv
 share/gnome/help/evince/el/figures/zoom.png
 share/gnome/help/evince/el/finding.page
 share/gnome/help/evince/el/formats.page
@@ -734,6 +741,7 @@ share/gnome/help/evince/en_GB/figures/list-add-tabs.png
 share/gnome/help/evince/en_GB/figures/print-2sided.png
 share/gnome/help/evince/en_GB/figures/print-select.png
 share/gnome/help/evince/en_GB/figures/reverse-collate.png
+share/gnome/help/evince/en_GB/figures/synctex_screencast.ogv
 share/gnome/help/evince/en_GB/figures/zoom.png
 share/gnome/help/evince/en_GB/finding.page
 share/gnome/help/evince/en_GB/formats.page
@@ -812,6 +820,7 @@ share/gnome/help/evince/es/figures/list-add-tabs.png
 share/gnome/help/evince/es/figures/print-2sided.png
 share/gnome/help/evince/es/figures/print-select.png
 share/gnome/help/evince/es/figures/reverse-collate.png
+share/gnome/help/evince/es/figures/synctex_screencast.ogv
 share/gnome/help/evince/es/figures/zoom.png
 share/gnome/help/evince/es/finding.page
 share/gnome/help/evince/es/formats.page
@@ -890,6 +899,7 @@ share/gnome/help/evince/eu/figures/list-add-tabs.png
 share/gnome/help/evince/eu/figures/print-2sided.png
 share/gnome/help/evince/eu/figures/print-select.png
 share/gnome/help/evince/eu/figures/reverse-collate.png
+share/gnome/help/evince/eu/figures/synctex_screencast.ogv
 share/gnome/help/evince/eu/figures/zoom.png
 share/gnome/help/evince/eu/finding.page
 share/gnome/help/evince/eu/formats.page
@@ -968,6 +978,7 @@ share/gnome/help/evince/fi/figures/list-add-tabs.png
 share/gnome/help/evince/fi/figures/print-2sided.png
 share/gnome/help/evince/fi/figures/print-select.png
 share/gnome/help/evince/fi/figures/reverse-collate.png
+share/gnome/help/evince/fi/figures/synctex_screencast.ogv
 share/gnome/help/evince/fi/figures/zoom.png
 share/gnome/help/evince/fi/finding.page
 share/gnome/help/evince/fi/formats.page
@@ -1046,6 +1057,7 @@ share/gnome/help/evince/fr/figures/list-add-tabs.png
 share/gnome/help/evince/fr/figures/print-2sided.png
 share/gnome/help/evince/fr/figures/print-select.png
 share/gnome/help/evince/fr/figures/reverse-collate.png
+share/gnome/help/evince/fr/figures/synctex_screencast.ogv
 share/gnome/help/evince/fr/figures/zoom.png
 share/gnome/help/evince/fr/finding.page
 share/gnome/help/evince/fr/formats.page
@@ -1124,6 +1136,7 @@ share/gnome/help/evince/gl/figures/list-add-tabs.png
 share/gnome/help/evince/gl/figures/print-2sided.png
 share/gnome/help/evince/gl/figures/print-select.png
 share/gnome/help/evince/gl/figures/reverse-collate.png
+share/gnome/help/evince/gl/figures/synctex_screencast.ogv
 share/gnome/help/evince/gl/figures/zoom.png
 share/gnome/help/evince/gl/finding.page
 share/gnome/help/evince/gl/formats.page
@@ -1202,6 +1215,7 @@ share/gnome/help/evince/hu/figures/list-add-tabs.png
 share/gnome/help/evince/hu/figures/print-2sided.png
 share/gnome/help/evince/hu/figures/print-select.png
 share/gnome/help/evince/hu/figures/reverse-collate.png
+share/gnome/help/evince/hu/figures/synctex_screencast.ogv
 share/gnome/help/evince/hu/figures/zoom.png
 share/gnome/help/evince/hu/finding.page
 share/gnome/help/evince/hu/formats.page
@@ -1280,6 +1294,7 @@ share/gnome/help/evince/it/figures/list-add-tabs.png
 share/gnome/help/evince/it/figures/print-2sided.png
 share/gnome/help/evince/it/figures/print-select.png
 share/gnome/help/evince/it/figures/reverse-collate.png
+share/gnome/help/evince/it/figures/synctex_screencast.ogv
 share/gnome/help/evince/it/figures/zoom.png
 share/gnome/help/evince/it/finding.page
 share/gnome/help/evince/it/formats.page
@@ -1358,6 +1373,7 @@ share/gnome/help/evince/ja/figures/list-add-tabs.png
 share/gnome/help/evince/ja/figures/print-2sided.png
 share/gnome/help/evince/ja/figures/print-select.png
 share/gnome/help/evince/ja/figures/reverse-collate.png
+share/gnome/help/evince/ja/figures/synctex_screencast.ogv
 share/gnome/help/evince/ja/figures/zoom.png
 share/gnome/help/evince/ja/finding.page
 share/gnome/help/evince/ja/formats.page
@@ -1436,6 +1452,7 @@ share/gnome/help/evince/nl/figures/list-add-tabs.png
 share/gnome/help/evince/nl/figures/print-2sided.png
 share/gnome/help/evince/nl/figures/print-select.png
 share/gnome/help/evince/nl/figures/reverse-collate.png
+share/gnome/help/evince/nl/figures/synctex_screencast.ogv
 share/gnome/help/evince/nl/figures/zoom.png
 share/gnome/help/evince/nl/finding.page
 share/gnome/help/evince/nl/formats.page
@@ -1514,6 +1531,7 @@ share/gnome/help/evince/oc/figures/list-add-tabs.png
 share/gnome/help/evince/oc/figures/print-2sided.png
 share/gnome/help/evince/oc/figures/print-select.png
 share/gnome/help/evince/oc/figures/reverse-collate.png
+share/gnome/help/evince/oc/figures/synctex_screencast.ogv
 share/gnome/help/evince/oc/figures/zoom.png
 share/gnome/help/evince/oc/finding.page
 share/gnome/help/evince/oc/formats.page
@@ -1592,6 +1610,7 @@ share/gnome/help/evince/pt_BR/figures/list-add-tabs.png
 share/gnome/help/evince/pt_BR/figures/print-2sided.png
 share/gnome/help/evince/pt_BR/figures/print-select.png
 share/gnome/help/evince/pt_BR/figures/reverse-collate.png
+share/gnome/help/evince/pt_BR/figures/synctex_screencast.ogv
 share/gnome/help/evince/pt_BR/figures/zoom.png
 share/gnome/help/evince/pt_BR/finding.page
 share/gnome/help/evince/pt_BR/formats.page
@@ -1670,6 +1689,7 @@ share/gnome/help/evince/ru/figures/list-add-tabs.png
 share/gnome/help/evince/ru/figures/print-2sided.png
 share/gnome/help/evince/ru/figures/print-select.png
 share/gnome/help/evince/ru/figures/reverse-collate.png
+share/gnome/help/evince/ru/figures/synctex_screencast.ogv
 share/gnome/help/evince/ru/figures/zoom.png
 share/gnome/help/evince/ru/finding.page
 share/gnome/help/evince/ru/formats.page
@@ -1748,6 +1768,7 @@ share/gnome/help/evince/sl/figures/list-add-tabs.png
 share/gnome/help/evince/sl/figures/print-2sided.png
 share/gnome/help/evince/sl/figures/print-select.png
 share/gnome/help/evince/sl/figures/reverse-collate.png
+share/gnome/help/evince/sl/figures/synctex_screencast.ogv
 share/gnome/help/evince/sl/figures/zoom.png
 share/gnome/help/evince/sl/finding.page
 share/gnome/help/evince/sl/formats.page
@@ -1826,6 +1847,7 @@ share/gnome/help/evince/sr/figures/list-add-tabs.png
 share/gnome/help/evince/sr/figures/print-2sided.png
 share/gnome/help/evince/sr/figures/print-select.png
 share/gnome/help/evince/sr/figures/reverse-collate.png
+share/gnome/help/evince/sr/figures/synctex_screencast.ogv
 share/gnome/help/evince/sr/figures/zoom.png
 share/gnome/help/evince/sr/finding.page
 share/gnome/help/evince/sr/formats.page
@@ -1904,6 +1926,7 @@ share/gnome/help/evince/sv/figures/list-add-tabs.png
 share/gnome/help/evince/sv/figures/print-2sided.png
 share/gnome/help/evince/sv/figures/print-select.png
 share/gnome/help/evince/sv/figures/reverse-collate.png
+share/gnome/help/evince/sv/figures/synctex_screencast.ogv
 share/gnome/help/evince/sv/figures/zoom.png
 share/gnome/help/evince/sv/finding.page
 share/gnome/help/evince/sv/formats.page
@@ -1982,6 +2005,7 @@ share/gnome/help/evince/uk/figures/list-add-tabs.png
 share/gnome/help/evince/uk/figures/print-2sided.png
 share/gnome/help/evince/uk/figures/print-select.png
 share/gnome/help/evince/uk/figures/reverse-collate.png
+share/gnome/help/evince/uk/figures/synctex_screencast.ogv
 share/gnome/help/evince/uk/figures/zoom.png
 share/gnome/help/evince/uk/finding.page
 share/gnome/help/evince/uk/formats.page
@@ -2060,6 +2084,7 @@ share/gnome/help/evince/vi/figures/list-add-tabs.png
 share/gnome/help/evince/vi/figures/print-2sided.png
 share/gnome/help/evince/vi/figures/print-select.png
 share/gnome/help/evince/vi/figures/reverse-collate.png
+share/gnome/help/evince/vi/figures/synctex_screencast.ogv
 share/gnome/help/evince/vi/figures/zoom.png
 share/gnome/help/evince/vi/finding.page
 share/gnome/help/evince/vi/formats.page
@@ -2138,6 +2163,7 @@ share/gnome/help/evince/zh_CN/figures/list-add-tabs.png
 share/gnome/help/evince/zh_CN/figures/print-2sided.png
 share/gnome/help/evince/zh_CN/figures/print-select.png
 share/gnome/help/evince/zh_CN/figures/reverse-collate.png
+share/gnome/help/evince/zh_CN/figures/synctex_screencast.ogv
 share/gnome/help/evince/zh_CN/figures/zoom.png
 share/gnome/help/evince/zh_CN/finding.page
 share/gnome/help/evince/zh_CN/formats.page
@@ -2216,6 +2242,7 @@ share/gnome/help/evince/zh_HK/figures/list-add-tabs.png
 share/gnome/help/evince/zh_HK/figures/print-2sided.png
 share/gnome/help/evince/zh_HK/figures/print-select.png
 share/gnome/help/evince/zh_HK/figures/reverse-collate.png
+share/gnome/help/evince/zh_HK/figures/synctex_screencast.ogv
 share/gnome/help/evince/zh_HK/figures/zoom.png
 share/gnome/help/evince/zh_HK/finding.page
 share/gnome/help/evince/zh_HK/formats.page
@@ -2294,6 +2321,7 @@ share/gnome/help/evince/zh_TW/figures/list-add-tabs.png
 share/gnome/help/evince/zh_TW/figures/print-2sided.png
 share/gnome/help/evince/zh_TW/figures/print-select.png
 share/gnome/help/evince/zh_TW/figures/reverse-collate.png
+share/gnome/help/evince/zh_TW/figures/synctex_screencast.ogv
 share/gnome/help/evince/zh_TW/figures/zoom.png
 share/gnome/help/evince/zh_TW/finding.page
 share/gnome/help/evince/zh_TW/formats.page
@@ -2361,7 +2389,6 @@ share/gtk-doc/html/evince/evince-ev-properties-license.html
 share/gtk-doc/html/evince/evince-ev-utils.html
 share/gtk-doc/html/evince/evince-ev-window-title.html
 share/gtk-doc/html/evince/evince-frontend.html
-share/gtk-doc/html/evince/evince.devhelp
 share/gtk-doc/html/evince/evince.devhelp2
 share/gtk-doc/html/evince/home.png
 share/gtk-doc/html/evince/index.html
@@ -2404,7 +2431,6 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/home.png
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/index.sgml
 share/gtk-doc/html/libevdocument-${MAJ_V}/left.png
-share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-EvDocumentMisc.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/libevdocument-Version-checks.html
@@ -2429,7 +2455,6 @@ share/gtk-doc/html/libevview-${MAJ_V}/home.png
 share/gtk-doc/html/libevview-${MAJ_V}/index.html
 share/gtk-doc/html/libevview-${MAJ_V}/index.sgml
 share/gtk-doc/html/libevview-${MAJ_V}/left.png
-share/gtk-doc/html/libevview-${MAJ_V}/libevview-${MAJ_V}.devhelp
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-${MAJ_V}.devhelp2
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-annotation-window.html
 share/gtk-doc/html/libevview-${MAJ_V}/libevview-ev-document-model.html
