@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/23 18:50:16 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/10/17 13:57:59 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,9 +39,9 @@ FLAVORS=		python2.4 python2.7
 FLAVOR=			python2.7
 .endif
 
-.if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
+.if ${FLAVOR} == "python2.4"
 MULTI_PACKAGES= -main
-.elif ${FLAVOR:L:Mpython2.7} && !${FLAVOR:L:Npython2.7}
+.elif ${FLAVOR} == "python2.7"
 MULTI_PACKAGES= -main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
