@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.13 2010/12/18 00:19:51 jasper Exp $
+#	$OpenBSD: Makefile,v 1.14 2011/10/17 12:58:21 espie Exp $
 
 COMMENT=	perl interface to the ACEDB database
 
@@ -32,7 +32,7 @@ SUBST_VARS=	P5ACE
 RUN_DEPENDS=	devel/p5-Cache-Cache \
 		devel/p5-WeakRef
 
-.if ${FLAVOR:L:Mopt}
+.if ${FLAVOR:Mopt}
 SHARED_ONLY=Yes
 CONFIGURE_ENV+=	CHOICE1=2
 P5ACE=${P5ARCH}
