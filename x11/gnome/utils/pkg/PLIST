@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/09/26 15:19:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/10/17 15:06:52 ajacoutot Exp $
 @bin bin/baobab
 @bin bin/gnome-dictionary
 @bin bin/gnome-font-viewer
@@ -62,6 +62,7 @@ share/gnome-screenshot/gnome-screenshot.ui
 share/gnome-utils/
 share/gnome-utils/logview-filter.ui
 share/gnome-utils/logview-toolbar.xml
+share/gnome/help/
 share/gnome/help/baobab/
 share/gnome/help/baobab/C/
 share/gnome/help/baobab/C/baobab.xml
@@ -773,6 +774,7 @@ share/locale/xh/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
+share/omf/
 share/omf/baobab/
 share/omf/baobab/baobab-C.omf
 share/omf/baobab/baobab-ca.omf
