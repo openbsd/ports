@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/28 10:16:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/17 07:16:58 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for gtksourceview3
 
 GNOME_PROJECT=	gtksourceviewmm
 GNOME_VERSION=	3.2.0
 PKGNAME=	${GNOME_PROJECT}3-${GNOME_VERSION}
+REVISION=	0
 
 MAJOR_VERSION=	3.0
 SUBST_VARS+=	MAJOR_VERSION
@@ -28,7 +29,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4
 WANTLIB += glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 gtkmm-3.0 gtksourceview-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pixman-1 png pthread-stubs
-WANTLIB += sigc-2.0 stdc++ xcb xcb-render xcb-shm xml2 z ffi kvm
+WANTLIB += sigc-2.0 stdc++ xcb xcb-render xcb-shm xml2 z ffi
 
 MODULES=	devel/gettext \
 		x11/gnome
