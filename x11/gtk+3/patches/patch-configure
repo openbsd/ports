@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.8 2011/10/15 12:03:52 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.9 2011/10/17 17:08:06 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=661835
+From d987a01d80126ee351727d1603a599c4edb66eca Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 15 Oct 2011 09:27:47 +0000
+Subject: GMountOperation on OpenBSD: remove the need for kvm(3)
 
 Do not force enable_man to yes.
 
