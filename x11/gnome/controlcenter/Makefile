@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/10/11 09:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/10/17 15:33:28 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -9,8 +9,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.2.0
-REVISION=		3
+GNOME_VERSION=		3.2.1
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -22,9 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xt Xtst Xxf86vm asn1 atk-1.0 c cairo cairo-gobject
+WANTLIB += Xt Xxf86vm asn1 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 crypto cups dbus-1 dbus-glib-1
 WANTLIB += drm enchant execinfo expat ffi fontconfig freetype
 WANTLIB += gailutil-3 gconf-2 gcrypt gdbm gdk-3 gdk_pixbuf-2.0
@@ -38,7 +37,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
 WANTLIB += pthread pthread-stubs pulse pulse-mainloop-glib rest-0.7
 WANTLIB += sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl stdc++
 WANTLIB += vorbis vorbisfile webkitgtk-3.0 xcb xcb-render xcb-shm
-WANTLIB += xkbfile xklavier xml2 xslt z
+WANTLIB += xkbfile xklavier xml2 xslt z javascriptcoregtk-3.0 json
 
 MODULES=		devel/gettext \
 			x11/gnome
