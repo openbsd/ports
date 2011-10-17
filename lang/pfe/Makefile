@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/17 07:10:53 ajacoutot Exp $
+
+BROKEN-powerpc=	does not build, error: lvalue required as increment operand
 
 COMMENT=	Portable Forth Environment
 
