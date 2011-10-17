@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.5 2011/01/05 16:13:53 stu Exp $
---- unix/Makefile.in.orig	Wed Sep  8 13:40:48 2010
-+++ unix/Makefile.in	Sun Nov 28 00:17:39 2010
+$OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
+--- unix/Makefile.in.orig	Thu Jun 23 09:18:36 2011
++++ unix/Makefile.in	Wed Oct  5 01:55:17 2011
 @@ -554,6 +554,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
@@ -12,7 +12,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2011/01/05 16:13:53 stu Exp $
  # Make target which outputs the list of the .o contained in the Tcl lib useful
  # to build a single big shared library containing Tcl and other extensions.
  # Used for the Tcl Plugin.  -- dl
-@@ -716,17 +720,12 @@ install-binaries: binaries
+@@ -709,17 +713,12 @@ install-binaries: binaries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -31,7 +31,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2011/01/05 16:13:53 stu Exp $
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)@EXEEXT@"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)"/tclsh$(VERSION)@EXEEXT@
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -742,23 +741,18 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -735,23 +734,18 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -58,34 +58,34 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2011/01/05 16:13:53 stu Exp $
  	@echo "Installing header files";
  	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
  		$(GENERIC_DIR)/tclPlatDecls.h \
-@@ -779,21 +773,21 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -772,21 +766,21 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
- 	@echo "Installing package http 2.7.5 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.5.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/http-2.7.5.tm;
+ 	@echo "Installing package http 2.7.6 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.6.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/http-2.7.6.tm;
  	@echo "Installing library opt0.4 directory";
  	@for i in $(TOP_DIR)/library/opt/*.tcl ; \
  	    do \
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/opt0.4; \
  	    done;
- 	@echo "Installing package msgcat 1.4.3 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.4.3.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/msgcat-1.4.3.tm;
- 	@echo "Installing package tcltest 2.3.2 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.2.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/tcltest-2.3.2.tm;
+ 	@echo "Installing package msgcat 1.4.4 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/msgcat-1.4.4.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/msgcat-1.4.4.tm;
+ 	@echo "Installing package tcltest 2.3.3 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.5/tcltest-2.3.3.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/tcltest-2.3.3.tm;
  
- 	@echo "Installing package platform 1.0.9 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.9.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/platform-1.0.9.tm;
+ 	@echo "Installing package platform 1.0.10 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform-1.0.10.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/platform-1.0.10.tm;
  	@echo "Installing package platform::shell 1.1.4 as a Tcl Module";
 -	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/platform/shell-1.1.4.tm;
 +	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/shell.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/platform/shell-1.1.4.tm;
  
  	@echo "Installing library encoding directory";
  	@for i in $(TOP_DIR)/library/encoding/*.enc ; do \
-@@ -824,8 +818,7 @@ install-doc: doc
+@@ -817,8 +811,7 @@ install-doc: doc
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -95,7 +95,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.5 2011/01/05 16:13:53 stu Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -850,14 +843,10 @@ install-private-headers: libraries
+@@ -843,14 +836,10 @@ install-private-headers: libraries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
