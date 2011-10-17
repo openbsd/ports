@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/10/11 16:03:45 espie Exp $
+# $OpenBSD: Makefile,v 1.71 2011/10/17 06:41:43 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	i386 amd64
 
@@ -26,8 +26,8 @@ PKGNAME-ui=	avahi-ui-${V}
 
 REVISION-main=	5
 REVISION-gtk=	4
-REVISION-gtk3=	1
-REVISION-gui=	1
+REVISION-gtk3=	2
+REVISION-gui=	2
 REVISION-mono=	3
 REVISION-qt3=	3
 REVISION-qt4=	3
@@ -139,7 +139,7 @@ WANTLIB-gtk3 += dbus-1 drm expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ffi kvm ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
 
 ### -gui
 MULTI_PACKAGES+= -gui
@@ -159,7 +159,7 @@ WANTLIB-gui += cairo cairo-gobject dbus-1 drm expat fontconfig freetype
 WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi kvm
+WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui

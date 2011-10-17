@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/27 06:24:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/17 06:41:43 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.2.0
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -29,9 +30,9 @@ WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstapp-0.10 gstbase-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-3 icudata icui18n icuuc jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs seed-gtk3 soup-2.4 sqlite3
+WANTLIB += pthread-stubs seed-gtk3 soup-2.4 sqlite3 javascriptcoregtk-3.0
 WANTLIB += stdc++ util webkitgtk-3.0 xcb xcb-render xcb-shm xml2
-WANTLIB += kvm xslt z gjs mozjs ncurses nspr4 plc4 plds4 
+WANTLIB += xslt z gjs mozjs ncurses nspr4 plc4 plds4 
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
