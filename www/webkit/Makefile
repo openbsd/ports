@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/10/13 06:52:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2011/10/17 06:16:58 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,6 +8,8 @@ V =		1.6.1
 DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
+
+REVISION =	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}
@@ -85,7 +87,7 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mgtk3}
 FULLPKGNAME =	webkit-gtk3-${V}
 LIB_DEPENDS +=	x11/gtk+3,-main
-WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3 kvm
+WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3
 CONFIGURE_ARGS += --with-gtk=3.0
 SHARED_LIBS +=  webkitgtk-3.0            2.0      # .11.0
 SHARED_LIBS +=  javascriptcoregtk-3.0    0.0      # 0.0
