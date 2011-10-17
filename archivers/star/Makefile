@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/10/17 11:14:11 espie Exp $
 
 COMMENT=	unique standard tape archiver
 
@@ -24,7 +24,7 @@ MAKE_FLAGS=	CCOM="${CC}" COPTOPT="${CFLAGS}" \
 			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\"" \
 		GMAKE_NOWARN=1
 
-.if ${FLAVOR:L:Mstatic}
+.if ${FLAVOR:Mstatic}
 MAKE_ENV+=	LDOPTX=-static
 .else
 WANTLIB=	c

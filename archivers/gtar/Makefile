@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/10/17 10:59:19 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/10/17 11:14:11 espie Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -37,7 +37,7 @@ CONFIGURE_ENV+=	gl_cv_func_mknod_works=no
 FLAVORS=	static
 FLAVOR?=
 
-.if ${FLAVOR:L:Mstatic}
+.if ${FLAVOR:Mstatic}
 LDSTATIC=	-static
 MODULES=
 BUILD_DEPENDS+=	devel/gettext>=0.17
