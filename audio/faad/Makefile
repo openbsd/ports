@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/07/06 21:30:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/10/17 10:38:41 espie Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -42,16 +42,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PSEUDO_FLAVORS=	no_xmms
 FLAVOR?= no_xmms
 
-MULTI_PACKAGES=-main
+MULTI_PACKAGES=-main -xmms
 
-.if !${FLAVOR:L:Mno_xmms}
-MULTI_PACKAGES+=-xmms
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-xmms}
 BUILD_DEPENDS+=	audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
 .endif
 
 LIB_DEPENDS-xmms=	audio/xmms \
-			audio/faad
+			${BUILD_PKGPATH}
 RUN_DEPENDS-xmms=	audio/xmms
 WANTLIB-xmms=		${MODGETTEXT_WANTLIB} \
 			X11 Xau Xdmcp Xext Xi glib \

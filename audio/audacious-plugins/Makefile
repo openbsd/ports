@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/28 14:58:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2011/10/17 10:38:41 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -42,7 +42,6 @@ MASTER_SITES =		http://distfiles.atheme.org/
 
 EXTRACT_SUFX =		.tgz
 
-MULTI_PACKAGES =	-main
 
 MODULES =		devel/gettext
 
@@ -76,11 +75,12 @@ LIB_DEPENDS-jack =	audio/jack \
 
 PSEUDO_FLAVORS =	no_jack
 FLAVOR ?=
+MULTI_PACKAGES =	-main -jack
 
-.if ${FLAVOR:Mno_jack}
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-jack}
 CONFIGURE_ARGS +=	--disable-jack
-.else
-MULTI_PACKAGES +=	-jack
 .endif
 
 USE_GMAKE =		Yes
