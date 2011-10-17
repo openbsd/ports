@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/10/17 12:15:32 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,16 +43,19 @@ USE_GROFF =	Yes
 LIB_DEPENDS=	x11/gtk+2 \
 		devel/glib2
 
-MULTI_PACKAGES=-main
-PSEUDO_FLAVORS=	no_mp3 no_vorbis
-FLAVOR?=
+MULTI_PACKAGES =	-main -mp3 -vorbis
 
-.if !${FLAVOR:L:Mno_mp3}
-MULTI_PACKAGES+=-mp3
+PSEUDO_FLAVORS =	no_mp3 no_vorbis
+FLAVOR ?=
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:M-mp3}
+CONFIGURE_ARGS += --disable-mp3
 .endif
-.if !${FLAVOR:L:Mno_vorbis}
-MULTI_PACKAGES+=-vorbis
+.if !${BUILD_PACKAGES:M-vorbis}
+CONFIGURE_ARGS += --disable-vorbis
 .endif
+
 
 RUN_DEPENDS-main=${RUN_DEPENDS} \
 		devel/desktop-file-utils
@@ -78,5 +81,6 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-oss
+
 
 .include <bsd.port.mk>
