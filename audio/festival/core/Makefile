@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/14 01:19:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2011/10/17 12:40:44 espie Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -41,7 +41,7 @@ SHAREDIR=	${PREFIX}/lib/festival
 FLAVORS=	ogi
 FLAVOR?=
 
-.if ${FLAVOR:L:Mogi}
+.if ${FLAVOR:Mogi}
 DISTFILES+=	OGIresLPC-2.0.9.tar.gz:0
 PATCH_LIST=	ogi-* patch-*
 PERMIT_DISTFILES_CDROM=	no fee
@@ -66,7 +66,7 @@ post-patch:
 do-configure:
 	@cd ${FESTIVAL} && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
 	@cd ${SPEECH} && ${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS}
-.if ${FLAVOR:L:Mogi}
+.if ${FLAVOR:Mogi}
 	@printf "ALSO_INCLUDE += OGIcommon\nALSO_INCLUDE += OGIdbase\nALSO_INCLUDE += OGIresLPC\n" >> ${FESTIVAL}/config/config
 .endif
 
@@ -74,7 +74,7 @@ post-build:
 	@perl -pi -e s,'/bin/festival','${PREFIX}/bin/festival', ${WRKBUILD}/festival/bin/text2wave
 
 do-install:
-.if ${FLAVOR:L:Mogi}
+.if ${FLAVOR:Mogi}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/festival-ogi
 	${INSTALL_DATA} ${WRKDIR}/{README-OGIresLPC-2.0,license_ogi_tts.txt} \
 		${PREFIX}/share/doc/festival-ogi

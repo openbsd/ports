@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/17 12:40:44 espie Exp $
 
 COMMENT=	command-line utility to rip and encode audio cds
 
@@ -34,7 +34,7 @@ FLAVOR?=
 NO_REGRESS=	Yes
 USE_GROFF =	Yes
 
-.if ${FLAVOR:L:Mlame}
+.if ${FLAVOR:Mlame}
 DISTFILES+=	id3_0.12.orig.tar.gz:1
 RUN_DEPENDS+=	audio/lame
 .else
@@ -43,14 +43,14 @@ RUN_DEPENDS+=	audio/vorbis-tools
 SUPDISTFILES=	id3_0.12.orig.tar.gz:1
 
 pre-configure:
-.if ${FLAVOR:L:Mlame}
+.if ${FLAVOR:Mlame}
 	perl -pi -e 's,OUTPUTTYPE=ogg,OUTPUTTYPE=mp3,g' ${WRKSRC}/abcde
 .endif
 
 do-build:
 	cd ${WRKDIR}/cd-discid-${V2} && \
 		${CC} ${CFLAGS} -o cd-discid cd-discid.c
-.if ${FLAVOR:L:Mlame}
+.if ${FLAVOR:Mlame}
 	cd ${WRKDIR}/id3-0.12 && \
 		perl -pi -e 's,#include <getopt.h>,/*#include <getopt.h>*/,g' id3.c && \
 		${CC} ${CFLAGS} -o id3 id3.c
@@ -65,7 +65,7 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/cd-discid-${V2}/cd-discid.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/abcde
 	${INSTALL_DATA} ${WRKSRC}/abcde.conf ${PREFIX}/share/examples/abcde
-.if ${FLAVOR:L:Mlame}
+.if ${FLAVOR:Mlame}
 	${INSTALL_PROGRAM} ${WRKDIR}/id3-0.12/id3 ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/id3-0.12/id3.1 ${PREFIX}/man/man1
 .endif

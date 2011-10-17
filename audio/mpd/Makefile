@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2011/10/17 12:40:44 espie Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.16.2
@@ -65,7 +65,7 @@ CONFIGURE_ARGS +=	--enable-ao \
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
 
-.if ${FLAVOR:L:Mtremor}
+.if ${FLAVOR:Mtremor}
 CONFIGURE_ARGS +=	--with-tremor \
 			--disable-oggflac \
 			--disable-shout \

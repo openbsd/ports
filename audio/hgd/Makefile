@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/17 12:40:44 espie Exp $
 
 COMMENT =		music system for hackathons
 DISTNAME =		hgd-0.4.1
@@ -30,7 +30,7 @@ LIB_DEPENDS =		databases/sqlite3 \
 			devel/libconfig \
 			audio/taglib
 
-.if ${FLAVOR:L:Mpython}
+.if ${FLAVOR:Mpython}
 LIB_DEPENDS +=		${MODPY_LIB_DEPENDS}
 WANTLIB +=		${MODPY_WANTLIB}
 WANTLIB +=		m pthread util

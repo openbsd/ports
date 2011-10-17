@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/17 12:40:44 espie Exp $
 
 COMMENT=	premier dockable radio tuner
 
@@ -25,7 +25,7 @@ USE_GROFF =		Yes
 FLAVORS=		zoltrix
 FLAVOR?=
 
-.if ${FLAVOR:L} == "zoltrix"
+.if ${FLAVOR:Mzoltrix}
 CFLAGS+=		-DZOLTRIX
 BINMODE=		4555
 ONLY_FOR_ARCHS=		i386

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/10/17 12:40:44 espie Exp $
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
@@ -26,7 +26,7 @@ USE_GROFF =	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 ALL_TARGET=	mp3info doc
 INSTALL_TARGET=	install-mp3info
 .else
