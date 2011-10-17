@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_tk_tcl,v 1.1 2011/01/05 16:18:09 stu Exp $
---- library/tk.tcl.orig	Sun Oct  3 14:36:58 2010
-+++ library/tk.tcl	Sun Oct  3 14:37:21 2010
-@@ -57,12 +57,12 @@ namespace eval ::ttk {
+$OpenBSD: patch-library_tk_tcl,v 1.2 2011/10/17 15:19:22 stu Exp $
+--- library/tk.tcl.orig	Mon Jun 20 16:17:08 2011
++++ library/tk.tcl	Wed Oct  5 11:26:28 2011
+@@ -55,12 +55,12 @@ namespace eval ::ttk {
      }
  }
  
