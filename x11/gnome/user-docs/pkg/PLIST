@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/27 06:52:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/10/17 16:37:37 jasper Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -75,7 +75,6 @@ share/help/C/gnome-help/figures/color-display.png
 share/help/C/gnome-help/figures/color-printer.png
 share/help/C/gnome-help/figures/color-profile-default.png
 share/help/C/gnome-help/figures/color-space.png
-share/help/C/gnome-help/figures/gnome-searchtool.png
 share/help/C/gnome-help/figures/gnome.png
 share/help/C/gnome-help/figures/input-keyboard-symbolic.png
 share/help/C/gnome-help/figures/nautilus-icons.png
@@ -357,7 +356,6 @@ share/help/ca/gnome-help/figures/color-display.png
 share/help/ca/gnome-help/figures/color-printer.png
 share/help/ca/gnome-help/figures/color-profile-default.png
 share/help/ca/gnome-help/figures/color-space.png
-share/help/ca/gnome-help/figures/gnome-searchtool.png
 share/help/ca/gnome-help/figures/gnome.png
 share/help/ca/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ca/gnome-help/figures/nautilus-icons.png
@@ -639,7 +637,6 @@ share/help/de/gnome-help/figures/color-display.png
 share/help/de/gnome-help/figures/color-printer.png
 share/help/de/gnome-help/figures/color-profile-default.png
 share/help/de/gnome-help/figures/color-space.png
-share/help/de/gnome-help/figures/gnome-searchtool.png
 share/help/de/gnome-help/figures/gnome.png
 share/help/de/gnome-help/figures/input-keyboard-symbolic.png
 share/help/de/gnome-help/figures/nautilus-icons.png
@@ -921,7 +918,6 @@ share/help/es/gnome-help/figures/color-display.png
 share/help/es/gnome-help/figures/color-printer.png
 share/help/es/gnome-help/figures/color-profile-default.png
 share/help/es/gnome-help/figures/color-space.png
-share/help/es/gnome-help/figures/gnome-searchtool.png
 share/help/es/gnome-help/figures/gnome.png
 share/help/es/gnome-help/figures/input-keyboard-symbolic.png
 share/help/es/gnome-help/figures/nautilus-icons.png
@@ -1203,7 +1199,6 @@ share/help/fi/gnome-help/figures/color-display.png
 share/help/fi/gnome-help/figures/color-printer.png
 share/help/fi/gnome-help/figures/color-profile-default.png
 share/help/fi/gnome-help/figures/color-space.png
-share/help/fi/gnome-help/figures/gnome-searchtool.png
 share/help/fi/gnome-help/figures/gnome.png
 share/help/fi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fi/gnome-help/figures/nautilus-icons.png
@@ -1485,7 +1480,6 @@ share/help/fr/gnome-help/figures/color-display.png
 share/help/fr/gnome-help/figures/color-printer.png
 share/help/fr/gnome-help/figures/color-profile-default.png
 share/help/fr/gnome-help/figures/color-space.png
-share/help/fr/gnome-help/figures/gnome-searchtool.png
 share/help/fr/gnome-help/figures/gnome.png
 share/help/fr/gnome-help/figures/input-keyboard-symbolic.png
 share/help/fr/gnome-help/figures/nautilus-icons.png
@@ -1767,7 +1761,6 @@ share/help/gl/gnome-help/figures/color-display.png
 share/help/gl/gnome-help/figures/color-printer.png
 share/help/gl/gnome-help/figures/color-profile-default.png
 share/help/gl/gnome-help/figures/color-space.png
-share/help/gl/gnome-help/figures/gnome-searchtool.png
 share/help/gl/gnome-help/figures/gnome.png
 share/help/gl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/gl/gnome-help/figures/nautilus-icons.png
@@ -2049,7 +2042,6 @@ share/help/hi/gnome-help/figures/color-display.png
 share/help/hi/gnome-help/figures/color-printer.png
 share/help/hi/gnome-help/figures/color-profile-default.png
 share/help/hi/gnome-help/figures/color-space.png
-share/help/hi/gnome-help/figures/gnome-searchtool.png
 share/help/hi/gnome-help/figures/gnome.png
 share/help/hi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hi/gnome-help/figures/nautilus-icons.png
@@ -2331,7 +2323,6 @@ share/help/hu/gnome-help/figures/color-display.png
 share/help/hu/gnome-help/figures/color-printer.png
 share/help/hu/gnome-help/figures/color-profile-default.png
 share/help/hu/gnome-help/figures/color-space.png
-share/help/hu/gnome-help/figures/gnome-searchtool.png
 share/help/hu/gnome-help/figures/gnome.png
 share/help/hu/gnome-help/figures/input-keyboard-symbolic.png
 share/help/hu/gnome-help/figures/nautilus-icons.png
@@ -2613,7 +2604,6 @@ share/help/nl/gnome-help/figures/color-display.png
 share/help/nl/gnome-help/figures/color-printer.png
 share/help/nl/gnome-help/figures/color-profile-default.png
 share/help/nl/gnome-help/figures/color-space.png
-share/help/nl/gnome-help/figures/gnome-searchtool.png
 share/help/nl/gnome-help/figures/gnome.png
 share/help/nl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/nl/gnome-help/figures/nautilus-icons.png
@@ -2895,7 +2885,6 @@ share/help/ru/gnome-help/figures/color-display.png
 share/help/ru/gnome-help/figures/color-printer.png
 share/help/ru/gnome-help/figures/color-profile-default.png
 share/help/ru/gnome-help/figures/color-space.png
-share/help/ru/gnome-help/figures/gnome-searchtool.png
 share/help/ru/gnome-help/figures/gnome.png
 share/help/ru/gnome-help/figures/input-keyboard-symbolic.png
 share/help/ru/gnome-help/figures/nautilus-icons.png
@@ -3177,7 +3166,6 @@ share/help/sl/gnome-help/figures/color-display.png
 share/help/sl/gnome-help/figures/color-printer.png
 share/help/sl/gnome-help/figures/color-profile-default.png
 share/help/sl/gnome-help/figures/color-space.png
-share/help/sl/gnome-help/figures/gnome-searchtool.png
 share/help/sl/gnome-help/figures/gnome.png
 share/help/sl/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sl/gnome-help/figures/nautilus-icons.png
@@ -3459,7 +3447,6 @@ share/help/sv/gnome-help/figures/color-display.png
 share/help/sv/gnome-help/figures/color-printer.png
 share/help/sv/gnome-help/figures/color-profile-default.png
 share/help/sv/gnome-help/figures/color-space.png
-share/help/sv/gnome-help/figures/gnome-searchtool.png
 share/help/sv/gnome-help/figures/gnome.png
 share/help/sv/gnome-help/figures/input-keyboard-symbolic.png
 share/help/sv/gnome-help/figures/nautilus-icons.png
@@ -3741,7 +3728,6 @@ share/help/vi/gnome-help/figures/color-display.png
 share/help/vi/gnome-help/figures/color-printer.png
 share/help/vi/gnome-help/figures/color-profile-default.png
 share/help/vi/gnome-help/figures/color-space.png
-share/help/vi/gnome-help/figures/gnome-searchtool.png
 share/help/vi/gnome-help/figures/gnome.png
 share/help/vi/gnome-help/figures/input-keyboard-symbolic.png
 share/help/vi/gnome-help/figures/nautilus-icons.png
