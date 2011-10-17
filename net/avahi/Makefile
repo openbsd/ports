@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/17 06:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2011/10/17 10:03:51 espie Exp $
 
-ONLY_FOR_ARCHS-mono=	i386 amd64
+ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	gtk+2 avahi-ui libraries
@@ -56,7 +56,7 @@ MASTER_SITES=	${HOMEPAGE}/download/
 PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4
 FLAVOR?=	no_gui no_mono no_qt3 no_qt4
 
-MULTI_PACKAGES=	-main
+MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -ui
 
 MODULES=	devel/gettext \
 		textproc/intltool
@@ -76,22 +76,19 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/libdaemon>=0.14 \
 		x11/dbus
 
-BUILD_MONO = No
-.if !${FLAVOR:L:Mno_mono}
-MULTI_PACKAGES+= -mono
-.  for _a in ${MACHINE_ARCH} ${ARCH}
-.    if ${ONLY_FOR_ARCHS-mono:M${_a}}
-BUILD_MONO = Yes
-.    endif
-.  endfor
+.include <bsd.port.arch.mk>
+
+.if !${BUILD_PACKAGES:M-gui}
+# all these vanish together
+BUILD_PACKAGES := ${BUILD_PACKAGES:N-mono:N-gtk:N-gtk3:N-ui}
 .endif
 
-.if ${BUILD_MONO:L} == "yes"
+.if ${BUILD_PACKAGES:M-mono}
 MODULES+=	lang/mono
 BUILD_DEPENDS+=	${MODMONO_BUILD_DEPENDS} \
 		x11/mono-gtk2
 RUN_DEPENDS-mono= ${MODMONO_RUN_DEPENDS} \
-		net/avahi,-gtk,no_qt3,no_qt4 \
+		${BUILD_PKGPATH},-gtk \
 		x11/mono-gtk2
 LIB_DEPENDS-mono= # empty
 WANTLIB-mono=	# empty
@@ -100,7 +97,7 @@ CONFIGURE_ARGS+= --disable-mono \
 		--disable-monodoc
 .endif
 
-.if !${FLAVOR:L:Mno_gui} || ${BUILD_MONO:L} == "yes"
+.if ${BUILD_PACKAGES:M-gui}
 ### common
 MODULES+=	lang/python
 BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
@@ -109,12 +106,11 @@ BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
 
 ### -gtk
 SHARED_LIBS +=  avahi-ui             0.0      # .1.0
-MULTI_PACKAGES+= -gtk
 LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/gtk+2 \
-		net/avahi
+		${BUILD_PKGPATH}
 RUN_DEPENDS-gtk= ${MODGETTEXT_RUN_DEPENDS} \
-		net/avahi,-ui,no_mono,no_qt3,no_qt4
+		${BUILD_PKGPATH},-ui
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
@@ -126,12 +122,11 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 
 ### -gtk3
 SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
-MULTI_PACKAGES+= -gtk3
 LIB_DEPENDS-gtk3= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/gtk+3 \
-		net/avahi
+		${BUILD_PKGPATH}
 RUN_DEPENDS-gtk3= ${MODGETTEXT_RUN_DEPENDS} \
-		net/avahi,-ui,no_mono,no_qt3,no_qt4
+		${BUILD_PKGPATH},-ui
 WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
 WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
@@ -142,9 +137,8 @@ WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
 WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
 
 ### -gui
-MULTI_PACKAGES+= -gui
 LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
-		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
+		${BUILD_PKGPATH},-gtk3
 RUN_DEPENDS-gui= ${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
 		lang/python/${MODPY_VERSION},-gdbm \
@@ -163,9 +157,8 @@ WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
-MULTI_PACKAGES+= -ui
 LIB_DEPENDS-ui= # empty
-RUN_DEPENDS-ui= net/avahi
+RUN_DEPENDS-ui= ${BUILD_PKGPATH}
 WANTLIB-ui= # empty
 .else
 CONFIGURE_ARGS+= --disable-gtk \
@@ -173,15 +166,15 @@ CONFIGURE_ARGS+= --disable-gtk \
 		--disable-python \
 		--disable-pygtk \
 		--disable-python-dbus
+
 .endif
 
-.if !${FLAVOR:L:Mno_qt3}
+.if ${BUILD_PACKAGES:M-qt3}
 SHARED_LIBS +=  avahi-qt3            0.0      # .1.2
-MULTI_PACKAGES+= -qt3
 MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 		${MODQT3_LIB_DEPENDS} \
-		net/avahi
+		${BUILD_PKGPATH}
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread-stubs xcb z \
@@ -191,13 +184,12 @@ WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 CONFIGURE_ARGS+= --disable-qt3
 .endif
 
-.if !${FLAVOR:L:Mno_qt4}
+.if ${BUILD_PACKAGES:M-qt4}
 SHARED_LIBS +=  avahi-qt4            0.0      # .1.2
-MULTI_PACKAGES+= -qt4
 MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/qt4 \
-		net/avahi
+		${BUILD_PKGPATH}
 WANTLIB-qt4=	QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} \
 		glib-2.0 gthread-2.0 pcre z
 .else
