@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/12 08:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/17 11:13:19 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,6 +43,12 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
 		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"
 
+# unaligned access error in NCompress::NPPMD::CInfo::CreateSuccessors()
+.if ${MACHINE_ARCH} == "alpha"
+CXXFLAGS:=     ${CXXFLAGS:N-O*}
+.endif
+
+
 ALL_TARGET=	all3
 REGRESS_TARGET=	all_test
 
@@ -55,7 +61,3 @@ do-install:
 
 .include <bsd.port.mk>
 
-# unaligned access error in NCompress::NPPMD::CInfo::CreateSuccessors()
-.if ${MACHINE_ARCH} == "alpha"
-CXXFLAGS:=     ${CXXFLAGS:N-O*}
-.endif
