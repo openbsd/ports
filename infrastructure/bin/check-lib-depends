@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.10 2011/04/25 23:01:03 sthen Exp $
+# $OpenBSD: check-lib-depends,v 1.11 2011/10/17 10:18:16 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -270,7 +270,7 @@ sub get_plist
 	$state->say("Asking ports for dependency #1(#2)", $pkgname, $pkgpath);
 	my $portsdir = $ENV{PORTSDIR} || "/usr/ports";
 	my $make = $ENV{MAKE} || "make";
-	open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath ECHO_MSG=: make print-plist-with-depends |" or return undef;
+	open my $fh, "cd $portsdir && env -i SUBDIR=$pkgpath FULLPATH=Yes ECHO_MSG=: make print-plist-with-depends |" or return undef;
 	my $plist = OpenBSD::PackingList->read($fh);
 	close $fh;
 	return $plist;
