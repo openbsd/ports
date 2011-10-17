@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.19 2011/09/29 11:03:19 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.20 2011/10/17 13:50:34 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
@@ -21,8 +21,10 @@ Bugfix: 'f' not going to/returning from fullscreen
 Fix problem with seeking in the tracker
 (upstream svn revision r2176)
 
+Fix speed multipliers and speed reset (upstream svn revision r2180)
+
 --- src/gui.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/gui.c	Wed Sep 28 15:34:17 2011
++++ src/gui.c	Mon Oct 17 14:53:08 2011
 @@ -106,6 +106,7 @@ PLAYSTATE media_state_to_playstate(GmtkMediaPlayerMedi
  void set_media_player_attributes(GtkWidget * widget)
  {
@@ -67,6 +69,24 @@ Fix problem with seeking in the tracker
      return FALSE;
  }
  
+@@ -1826,7 +1840,7 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+             gmtk_media_player_set_attribute_integer_delta(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SATURATION, 5);
+             return FALSE;
+         case GDK_bracketleft:
+-            gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_MULTIPLIER, 0.90);
++            gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_MULTIPLIER, 0.9091);
+             return FALSE;
+         case GDK_bracketright:
+             gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_MULTIPLIER, 1.10);
+@@ -1838,7 +1852,7 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+             gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_MULTIPLIER, 2.0);
+             return FALSE;
+         case GDK_BackSpace:
+-            gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_MULTIPLIER, 1.0);
++            gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_SPEED_SET, 1.0);
+             return FALSE;
+         case GDK_9:
+ #ifdef GTK2_12_ENABLED
 @@ -1908,6 +1922,10 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
                  delete_callback(NULL, NULL, NULL);
              }
