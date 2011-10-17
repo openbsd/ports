@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/10/17 13:03:42 espie Exp $
 
 COMMENT=	tools to talk to GSM cellular phones
 
@@ -36,7 +36,7 @@ CONFIGURE_ARGS=		--enable-security \
 			--disable-xdebug \
 			--disable-rlpdebug
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
@@ -62,7 +62,7 @@ post-install:
 		${PREFIX}/share/examples/gnokii
 	${INSTALL_DATA} ${WRKSRC}/Docs/man/gnokii.1 \
 		${PREFIX}/man/man1
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/Docs/man/xgnokii.1x \
 		${PREFIX}/man/man1/xgnokii.1

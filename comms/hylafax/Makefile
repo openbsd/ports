@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/06/02 13:41:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/10/17 13:03:42 espie Exp $
 
 COMMENT=		send/receive faxes and share modems
 DISTNAME=		hylafax-6.0.5
@@ -50,7 +50,7 @@ CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 			INETDCONF=/etc/inetd.conf MKFIFO=/sbin/mkfifo \
 			SCRIPT_SH=/bin/ksh
 
-.if ${FLAVOR:L} == "a4"
+.if ${FLAVOR:Ma4}
 CONFIGURE_ARGS+=	--with-PAGESIZE=A4
 .endif
 
