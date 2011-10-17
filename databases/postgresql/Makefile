@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2011/09/26 11:58:28 pea Exp $
+# $OpenBSD: Makefile,v 1.157 2011/10/17 13:27:11 espie Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -49,8 +49,6 @@ SUBST_VARS=	VERSION
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
-
-.include <bsd.own.mk>
 
 INCLUDES=	${LOCALBASE}/include /usr/include/kerberosV
 CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
