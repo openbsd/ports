@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2010/10/30 23:14:15 steven Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2011/10/17 10:10:59 espie Exp $
 
 COMMENT-main=	Berkeley DB package, revision ${REV}
 COMMENT-tcl=	TCL bindings for Berkeley DB, revision ${REV}
@@ -36,15 +36,18 @@ WRKBUILD=	${WRKDIST}/build_unix
 PSEUDO_FLAVORS+=	no_tcl
 FLAVOR?=
 
-MULTI_PACKAGES+=	-main
+MULTI_PACKAGES += -main -tcl
 
 LIB_DEPENDS-main?=
 RUN_DEPENDS-main?=
+NOT_FOR_ARCHS-tcl = ${NO_SHARED_ARCHS}
+#ONLY_FOR_ARCHS = ${ALL_ARCHS}
+ONLY_FOR_ARCHS-java = i386 amd64
 
-.if !${FLAVOR:L:Mno_tcl}
-MULTI_PACKAGES+=-tcl
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-tcl}
 MODULES+=	lang/tcl
-NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
 WANTLIB-tcl?=
 RUN_DEPENDS-tcl+=	${MODTCL_RUN_DEPENDS}
@@ -64,6 +67,17 @@ do-regress:
 CONFIGURE_ARGS+=--disable-tcl
 # regression tests need tcl
 NO_REGRESS=	Yes
+.endif
+
+.if ${BUILD_PACKAGES:M-java}
+CONFIGURE_ARGS+=--enable-java
+MODULES+=	java
+MODJAVA_VER=	1.4+
+MODJAVA_JRERUN=	Yes
+CONFIGURE_ENV+=	JAVAC=${JAVA_HOME}/bin/javac \
+		JAR=${JAVA_HOME}/bin/jar \
+		JAVA=${JAVA_HOME}/bin/java
+MAKE_FLAGS+=	DBJVERSION=${LIBdb_java_VERSION}
 .endif
 
 post-install:

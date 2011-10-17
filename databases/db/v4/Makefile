@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/10/07 13:54:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.55 2011/10/17 10:10:59 espie Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -36,25 +36,14 @@ CONFIGURE_STYLE=gnu
 DEST_SUBDIR=	${REV}
 WANTLIB=	c m stdc++
 
-PSEUDO_FLAVORS=	java
-FLAVOR?=
+PSEUDO_FLAVORS=	no_java
+FLAVOR?= 
+MULTI_PACKAGES = -java
 
-RUN_DEPENDS-java=	databases/db/v${REV} \
+RUN_DEPENDS-java=	${BUILD_PKGPATH} \
 			${MODJAVA_RUN_DEPENDS}
-RUN_DEPENDS-tcl=	databases/db/v${REV}
+RUN_DEPENDS-tcl=	${BUILD_PKGPATH}
 WANTLIB-java=
-
-.if ${FLAVOR:L:Mjava}
-MULTI_PACKAGES+=-java
-CONFIGURE_ARGS+=--enable-java
-MODULES+=	java
-MODJAVA_VER=	1.4+
-MODJAVA_JRERUN=	Yes
-CONFIGURE_ENV+=	JAVAC=${JAVA_HOME}/bin/javac \
-		JAR=${JAVA_HOME}/bin/jar \
-		JAVA=${JAVA_HOME}/bin/java
-MAKE_FLAGS+=	DBJVERSION=${LIBdb_java_VERSION}
-.endif
 
 SUBST_VARS=	LIBdb_tcl_VERSION
 

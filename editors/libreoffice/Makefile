@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/10/10 09:01:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/10/17 10:10:59 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -184,7 +184,7 @@ MODULES+=		java
 MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
 .endif
-LIB_DEPENDS-java=	databases/db/v4,-java,java \
+LIB_DEPENDS-java=	databases/db/v4,-java \
 			devel/apache-ant>=1.8.2
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			editors/libreoffice \

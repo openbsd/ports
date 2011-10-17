@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/25 14:40:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2011/10/17 10:10:59 espie Exp $
 
 REV=		3
 DBLIBDIR=	lib/db
@@ -20,7 +20,7 @@ WANTLIB=c
 
 WANTLIB-tcl =		m ${MODTCL_WANTLIB}
 LIB_DEPENDS-tcl =	${MODTCL_LIB_DEPENDS}
-RUN_DEPENDS-tcl =	databases/db/v${REV}
+RUN_DEPENDS-tcl =	${BUILD_PKGPATH}
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/test/include.tcl
