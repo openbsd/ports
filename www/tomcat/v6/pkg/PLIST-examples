@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2011/07/04 07:41:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2011/10/17 11:11:46 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -1962,4 +1962,5 @@ webapps/examples/servlets/sessions.html
 @cwd ${CONFDIR}
 Catalina/
 Catalina/localhost/
+Catalina/localhost/host-manager.xml
 Catalina/localhost/manager.xml

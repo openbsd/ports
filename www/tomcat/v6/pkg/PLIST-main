@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/07/24 11:11:59 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/10/17 11:11:46 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v6
 @newgroup _tomcat:526
@@ -28,6 +28,7 @@ share/examples/tomcat/context.xml
 @sample ${SYSCONFDIR}/tomcat/context.xml
 @owner
 @group
+share/examples/tomcat/host-manager.xml
 share/examples/tomcat/logging.properties
 @owner _tomcat
 @group _tomcat

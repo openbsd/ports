@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/07/24 11:11:58 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2011/10/17 11:11:46 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -138,7 +138,6 @@ tomcat/server/webapps/host-manager/WEB-INF/
 tomcat/server/webapps/host-manager/WEB-INF/lib/
 tomcat/server/webapps/host-manager/WEB-INF/lib/catalina-host-manager.jar
 tomcat/server/webapps/host-manager/WEB-INF/web.xml
-tomcat/server/webapps/host-manager/host-manager.xml
 tomcat/server/webapps/host-manager/images/
 tomcat/server/webapps/host-manager/images/add.gif
 tomcat/server/webapps/host-manager/images/asf-logo.gif
@@ -169,7 +168,6 @@ tomcat/server/webapps/manager/images/tomcat.gif
 tomcat/server/webapps/manager/images/update.gif
 tomcat/server/webapps/manager/images/void.gif
 tomcat/server/webapps/manager/manager-howto.html
-tomcat/server/webapps/manager/manager.xml
 tomcat/server/webapps/manager/status.xsd
 tomcat/server/webapps/manager/xform.xsl
 @rcscript ${RCDIR}/tomcat
