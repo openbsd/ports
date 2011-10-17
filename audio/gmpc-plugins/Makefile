@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/17 12:23:53 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -25,14 +25,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES =	-main
-
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "i386" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "sparc64"
 # XXX give it a chance to build on systems where webkit is not built
-MULTI_PACKAGES+=	-wikipedia
-.else
+MULTI_PACKAGES =	-main -wikipedia
+ONLY_FOR_ARCHS-wikipedia = alpha i386 powerpc amd64 hppa sparc64
+
+.include <bsd.port.arch.mk>
+.if !${BUILD_PACKAGES:M-wikipedia}
 CONFIGURE_ARGS+=	--disable-wikipedia
 .endif
 
