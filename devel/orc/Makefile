@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/04 06:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/17 09:06:54 ajacoutot Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.16
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
