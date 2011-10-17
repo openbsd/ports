@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/10/16 21:24:04 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/10/17 08:26:07 jasper Exp $
 
-- Don't check for gnome-doc-utils, there are no docs to build anyway as they
-  have been removed some time ago.
+From dde008e64a81ec90a8c32ebc16763321648d889a Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Sun, 16 Oct 2011 21:24:23 +0000
+Subject: Remove check for gnome-doc-utils as there are no docs anymore to build.
 
 --- configure.ac.orig	Sun Oct 16 23:18:58 2011
 +++ configure.ac	Sun Oct 16 23:19:54 2011
