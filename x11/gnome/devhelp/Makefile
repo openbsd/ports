@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2011/10/17 14:28:40 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-REVISION=	0
 GNOME_VERSION=	3.2.0
+REVISION=	1
 
 SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
 
@@ -27,7 +27,7 @@ WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
-WANTLIB += dbus-1 dbus-glib-1 ffi kvm
+WANTLIB += dbus-1 dbus-glib-1 ffi
 WANTLIB += xcb-shm xml2 xslt z javascriptcoregtk-3.0
 
 MODULES=	devel/gettext \

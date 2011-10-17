@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2011/10/17 14:28:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_VERSION=		3.2.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		0
+REVISION-nautilus=	0
 
 CATEGORIES=		archivers
 
@@ -25,7 +28,7 @@ WANTLIB += cairo-gobject drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z kvm ffi
+WANTLIB += z ffi
 
 MODULES=		devel/dconf \
 			devel/gettext \
