@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/10/13 13:47:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2011/10/17 14:23:52 ajacoutot Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -6,7 +6,7 @@ COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.2.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -21,10 +21,10 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo cairo-gobject croco-0.6 drm exempi exif expat
 WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 jpeg kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gtk-3 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z
-WANTLIB += gnome-desktop-3
+WANTLIB += gnome-desktop-3 lcms2
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -35,7 +35,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		devel/libpeas \
 			graphics/libexif \
 			textproc/exempi \
-			x11/gnome/desktop
+			x11/gnome/desktop \
+			graphics/lcms2
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			misc/shared-mime-info>=0.21 \
 			x11/gnome/icon-theme>=3.0.0
