@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/17 10:24:52 espie Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 
-PSEUDO_FLAVORS=	gui
-FLAVOR?=
+PSEUDO_FLAVORS=	no_gui
+FLAVOR?= no_gui
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
@@ -32,14 +32,14 @@ CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
 		--install /usr/bin/install \
 		--dot ${LOCALBASE}/bin/dot
 
-MULTI_PACKAGES=	-main
-.if ${FLAVOR:Mgui}
+MULTI_PACKAGES=	-main -gui
+
+.include <bsd.port.arch.mk>
+.if ${BUILD_PACKAGES:M-gui}
 CONFIGURE_ARGS+=--with-doxywizard
 CONFIGURE_ENV=	QTDIR=${LOCALBASE}
 
 MODULES+=	x11/qt4
-
-MULTI_PACKAGES+=-gui
 .endif
 
 BUILD_DEPENDS +=	devel/bison
@@ -51,7 +51,7 @@ LIB_DEPENDS-main = ${COMMON_LIB_DEPENDS}
 
 WANTLIB-gui=	${COMMON_WANTLIB} ${MODQT_WANTLIB} QtGui QtXml
 LIB_DEPENDS-gui=${COMMON_LIB_DEPENDS} ${MODQT_LIB_DEPENDS}
-RUN_DEPENDS-gui=:doxygen-${VERSION}:${BASE_PKGPATH}
+RUN_DEPENDS-gui=doxygen-${VERSION}:${BUILD_PKGPATH}
 
 
 MAKE_FLAGS+=	CXX=${CXX} CC=${CC} \
