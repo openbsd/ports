@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2011/05/31 17:40:50 jakob Exp $
---- Makefile.in.orig	Mon May 30 13:56:41 2011
-+++ Makefile.in	Tue May 31 19:39:46 2011
+$OpenBSD: patch-Makefile_in,v 1.11 2011/10/17 19:41:24 jakob Exp $
+--- Makefile.in.orig	Thu Sep 22 15:55:11 2011
++++ Makefile.in	Fri Oct 14 22:04:28 2011
 @@ -13,7 +13,7 @@ datarootdir	= @datarootdir@
  datadir		= @datadir@
  libdir		= @libdir@
@@ -8,9 +8,18 @@ $OpenBSD: patch-Makefile_in,v 1.10 2011/05/31 17:40:50 jakob Exp $
 -doxygen		= @doxygen@
 +#doxygen	= @doxygen@
  pywrapdir       = ${srcdir}/contrib/python
- swig    	= @swig@
- python_site	=@PYTHON_SITE_PKG@
-@@ -229,7 +229,6 @@ uninstall-h:
+ pyldnsxwrapdir  = ${srcdir}/contrib/ldnsx
+ swig		= @swig@
+@@ -216,7 +216,7 @@ install-manpages:	manpages
+ 		done
+ 		if [ $(INSTALL_LDNS_CONFIG) = "yes" ] ; then \
+ 			${INSTALL} -d $(DESTDIR)$(mandir)/man1; \
+-			${INSTALL} -c -m 444 packaging/ldns-config.1 $(DESTDIR)$(mandir)/man1/; \
++			${INSTALL} -c -m 444 $(srcdir)/packaging/ldns-config.1 $(DESTDIR)$(mandir)/man1/; \
+ 		fi
+ 
+ uninstall-manpages:
+@@ -248,7 +248,6 @@ uninstall-h:
  install-lib:	lib
  		$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)
  		$(LIBTOOL) --mode=install cp libldns.la $(DESTDIR)$(libdir)
