@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/10/18 07:57:18 jasper Exp $
 
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		3.2.0
+GNOME_VERSION=		3.2.1
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
