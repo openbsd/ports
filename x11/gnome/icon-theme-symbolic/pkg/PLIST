@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/27 11:49:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/10/18 15:22:34 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
+share/icons/gnome/scalable/actions/call-end-symbolic.svg
+share/icons/gnome/scalable/actions/call-start-symbolic.svg
 share/icons/gnome/scalable/actions/document-open-recent-symbolic.svg
 share/icons/gnome/scalable/actions/document-open-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-as-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-symbolic.svg
+share/icons/gnome/scalable/actions/edit-clear-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/edit-clear-symbolic.svg
 share/icons/gnome/scalable/actions/edit-copy-symbolic.svg
 share/icons/gnome/scalable/actions/edit-cut-symbolic.svg
@@ -14,7 +17,9 @@ share/icons/gnome/scalable/actions/edit-find-symbolic.svg
 share/icons/gnome/scalable/actions/edit-paste-symbolic.svg
 share/icons/gnome/scalable/actions/edit-redo-symbolic.svg
 share/icons/gnome/scalable/actions/edit-undo-symbolic.svg
+share/icons/gnome/scalable/actions/format-indent-less-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/format-indent-less-symbolic.svg
+share/icons/gnome/scalable/actions/format-indent-more-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/format-indent-more-symbolic.svg
 share/icons/gnome/scalable/actions/format-justify-center-symbolic.svg
 share/icons/gnome/scalable/actions/format-justify-fill-symbolic.svg
@@ -26,9 +31,13 @@ share/icons/gnome/scalable/actions/format-text-strikethrough-symbolic.svg
 share/icons/gnome/scalable/actions/format-text-underline-symbolic.svg
 share/icons/gnome/scalable/actions/go-bottom-symbolic.svg
 share/icons/gnome/scalable/actions/go-down-symbolic.svg
+share/icons/gnome/scalable/actions/go-first-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-first-symbolic.svg
+share/icons/gnome/scalable/actions/go-last-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-last-symbolic.svg
+share/icons/gnome/scalable/actions/go-next-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-next-symbolic.svg
+share/icons/gnome/scalable/actions/go-previous-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-previous-symbolic.svg
 share/icons/gnome/scalable/actions/go-top-symbolic.svg
 share/icons/gnome/scalable/actions/go-up-symbolic.svg
@@ -37,12 +46,17 @@ share/icons/gnome/scalable/actions/list-remove-symbolic.svg
 share/icons/gnome/scalable/actions/mail-send-receive-symbolic.svg
 share/icons/gnome/scalable/actions/media-eject-symbolic.svg
 share/icons/gnome/scalable/actions/media-playback-pause-symbolic.svg
+share/icons/gnome/scalable/actions/media-playback-start-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-playback-start-symbolic.svg
 share/icons/gnome/scalable/actions/media-playback-stop-symbolic.svg
 share/icons/gnome/scalable/actions/media-record-symbolic.svg
+share/icons/gnome/scalable/actions/media-seek-backward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-seek-backward-symbolic.svg
+share/icons/gnome/scalable/actions/media-seek-forward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-seek-forward-symbolic.svg
+share/icons/gnome/scalable/actions/media-skip-backward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-backward-symbolic.svg
+share/icons/gnome/scalable/actions/media-skip-forward-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-forward-symbolic.svg
 share/icons/gnome/scalable/actions/object-flip-horizontal-symbolic.svg
 share/icons/gnome/scalable/actions/object-flip-vertical-symbolic.svg
@@ -136,6 +150,7 @@ share/icons/gnome/scalable/status/battery-low-symbolic.svg
 share/icons/gnome/scalable/status/battery-missing-symbolic.svg
 share/icons/gnome/scalable/status/bluetooth-active-symbolic.svg
 share/icons/gnome/scalable/status/bluetooth-disabled-symbolic.svg
+share/icons/gnome/scalable/status/call-missed-symbolic.svg
 share/icons/gnome/scalable/status/changes-allow-symbolic.svg
 share/icons/gnome/scalable/status/changes-prevent-symbolic.svg
 share/icons/gnome/scalable/status/channel-insecure-symbolic.svg
