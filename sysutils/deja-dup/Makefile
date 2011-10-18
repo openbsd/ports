@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/27 11:45:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/18 09:45:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple encrypted backup tool for GNOME
 
-V=		20.0
+V=		20.1
 DISTNAME=	deja-dup-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -25,7 +25,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += cairo-gobject dbus-1 drm expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0 gtk-3
-WANTLIB += kvm m nautilus-extension notify pango-1.0 pangocairo-1.0
+WANTLIB += m nautilus-extension notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
