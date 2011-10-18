@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/09/26 06:25:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2011/10/18 06:07:05 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gcr-viewer
 bin/gnome-keyring
@@ -117,7 +117,6 @@ share/gtk-doc/html/gck/gck-GckSession.html
 share/gtk-doc/html/gck/gck-GckSlot.html
 share/gtk-doc/html/gck/gck-Miscellaneous-Functions.html
 share/gtk-doc/html/gck/gck-PKCS11-URIs.html
-share/gtk-doc/html/gck/gck.devhelp
 share/gtk-doc/html/gck/gck.devhelp2
 share/gtk-doc/html/gck/home.png
 share/gtk-doc/html/gck/index.html
@@ -139,7 +138,6 @@ share/gtk-doc/html/gcr-3/certificates.html
 share/gtk-doc/html/gcr-3/ch01.html
 share/gtk-doc/html/gcr-3/collections.html
 share/gtk-doc/html/gcr-3/combo-selector.png
-share/gtk-doc/html/gcr-3/gcr-3.devhelp
 share/gtk-doc/html/gcr-3/gcr-3.devhelp2
 share/gtk-doc/html/gcr-3/gcr-GcrCertificate.html
 share/gtk-doc/html/gcr-3/gcr-GcrCertificateWidget.html
@@ -156,7 +154,6 @@ share/gtk-doc/html/gcr-3/gcr-GcrTreeSelector.html
 share/gtk-doc/html/gcr-3/gcr-GcrViewer.html
 share/gtk-doc/html/gcr-3/gcr-Library-Settings.html
 share/gtk-doc/html/gcr-3/gcr-Trust-Storage-and-Lookups.html
-share/gtk-doc/html/gcr-3/gcr-gcr-misc.html
 share/gtk-doc/html/gcr-3/home.png
 share/gtk-doc/html/gcr-3/index.html
 share/gtk-doc/html/gcr-3/index.sgml
