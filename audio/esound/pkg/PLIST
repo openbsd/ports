@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.19 2008/12/20 08:58:32 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/10/18 08:44:01 ajacoutot Exp $
+@pkgpath audio/esound,arts
 @bin bin/esd
 bin/esd-config
 @bin bin/esdcat
