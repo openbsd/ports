@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/18 06:15:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/18 08:41:41 jasper Exp $
 
 COMMENT=		interfaces for interacting with online accounts
 
@@ -31,6 +31,7 @@ WANTLIB += png pthread pthread-stubs rest-0.7 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm
 WANTLIB += xml2 xslt z javascriptcoregtk-3.0
 
+BUILD_DEPENDS=		textproc/docbook-xsl
 LIB_DEPENDS=		devel/json-glib \
 			devel/libnotify \
 			net/librest \
