@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2011/10/16 19:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2011/10/18 06:37:02 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -15,8 +15,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.2.0
-REVISION=		0
+GNOME_VERSION=		3.2.1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
