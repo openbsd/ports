@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_Blender_py,v 1.3 2009/10/25 22:41:25 steven Exp $
---- tools/Blender.py.orig	Tue Sep  1 17:21:54 2009
-+++ tools/Blender.py	Wed Oct 14 23:43:51 2009
+$OpenBSD: patch-tools_Blender_py,v 1.4 2011/10/18 15:58:33 sthen Exp $
+--- tools/Blender.py.orig	Tue Sep  1 16:21:54 2009
++++ tools/Blender.py	Tue Oct 18 16:55:51 2011
 @@ -116,6 +116,7 @@ def setup_staticlibs(lenv):
  		'/usr/lib',
  		lenv['BF_OPENGL_LIBPATH'],
@@ -19,6 +19,15 @@ $OpenBSD: patch-tools_Blender_py,v 1.3 2009/10/25 22:41:25 steven Exp $
  		]
  
  	if lenv['WITH_BF_PYTHON'] and not lenv['WITH_BF_STATICPYTHON']:
+@@ -217,7 +219,7 @@ def buildinfo(lenv, build_type):
+ 	"""
+ 	build_date = time.strftime ("%Y-%m-%d")
+ 	build_time = time.strftime ("%H:%M:%S")
+-	build_rev = os.popen('svnversion').read()[:-1] # remove \n
++	build_rev = ""
+ 
+ 	obj = []
+ 	if lenv['BF_BUILDINFO']:
 @@ -398,7 +400,7 @@ class BlenderEnvironment(SConsEnvironment):
  		
  		print bc.HEADER+'Configuring resource '+bc.ENDC+bc.OKGREEN+libname+bc.ENDC
