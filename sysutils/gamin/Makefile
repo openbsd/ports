@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/10/04 07:09:47 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/10/18 06:46:24 espie Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -39,7 +39,7 @@ EXTRACT_SUFX=		.tar.bz2
 MULTI_PACKAGES=	-main -server -python
 NOT_FOR_ARCHS-python =	${NO_SHARED_ARCHS}
 
-PSEUDO_FLAVORS=	no_python no_server
+PSEUDO_FLAVORS=	no_python no_server bootstrap
 FLAVOR?=
 
 MODULES=	x11/gnome

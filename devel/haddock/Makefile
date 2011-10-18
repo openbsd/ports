@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/10/18 06:46:24 espie Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -20,13 +20,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# This pseudo flavor is needed to let ghc extract the haddock sources
+# This flavor is needed to let ghc extract the haddock sources
 # without pulling in haddocks own build dependencies (which would
 # include ghc).
-PSEUDO_FLAVORS =	no_deps
+FLAVORS =	no_deps
 FLAVOR ?=
 
-.if ! ${FLAVOR:L:Mno_deps}
+.if ! ${FLAVOR:Mno_deps}
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register
 

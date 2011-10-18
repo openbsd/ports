@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2011/10/14 15:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2011/10/18 06:46:24 espie Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -43,7 +43,7 @@ WANTLIB-main += ${WANTLIB} c pthread z pcre fam ffi
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pcre>=8.13 \
-			sysutils/gamin,no_server,no_python \
+			sysutils/gamin,no_server,no_python,bootstrap \
 			devel/libffi
 
 PKG_ARCH-docs=		*

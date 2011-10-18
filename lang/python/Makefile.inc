@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.85 2011/09/28 16:59:33 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.86 2011/10/18 06:46:24 espie Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -76,8 +76,14 @@ LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
 .endif
 
-LIB_DEPENDS-bsddb =	databases/db/v4 \
-			lang/python/${VERSION},-main
+LIB_DEPENDS-bsddb =	lang/python/${VERSION},-main
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+# XXX recursion: if we have java, then db/v4 depends on libxml
+LIB_DEPENDS-bsddb +=	databases/db/v4,no_tcl,no_java,bootstrap
+.else
+LIB_DEPENDS-bsddb +=	databases/db/v4
+.endif
+
 WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}${LIB_SUFX}
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python/${VERSION},-main
