@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.32 2011/06/16 08:38:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.33 2011/10/18 06:20:16 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -85,7 +85,6 @@ share/gtk-doc/html/gdk/gdk-Testing.html
 share/gtk-doc/html/gdk/gdk-Threads.html
 share/gtk-doc/html/gdk/gdk-Visuals.html
 share/gtk-doc/html/gdk/gdk-Windows.html
-share/gtk-doc/html/gdk/gdk-X-Window-System-Interaction.html
 share/gtk-doc/html/gdk/gdk.devhelp2
 share/gtk-doc/html/gdk/gobbler.png
 share/gtk-doc/html/gdk/gumby.png
@@ -605,6 +604,7 @@ share/gtk-doc/html/gtk/spinner.png
 share/gtk-doc/html/gtk/statusbar.png
 share/gtk-doc/html/gtk/style.css
 share/gtk-doc/html/gtk/system-run.png
+share/gtk-doc/html/gtk/text-x-generic.png
 share/gtk-doc/html/gtk/toggle-button.png
 share/gtk-doc/html/gtk/toolbar.png
 share/gtk-doc/html/gtk/toolpalette.png
