@@ -1,17 +1,10 @@
-$OpenBSD: patch-vinagre_vinagre-ssh_c,v 1.5 2011/09/29 06:58:14 jasper Exp $
+$OpenBSD: patch-vinagre_vinagre-ssh_c,v 1.6 2011/10/18 14:26:44 jasper Exp $
 
 Fix crasher on 64-bit arches due to pointer truncation.
 https://bugzilla.gnome.org/show_bug.cgi?id=652531
 
-From 3e8e6cf66229fa9d8e7c8a2cbab979bca327959a Mon Sep 17 00:00:00 2001
-From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date: Tue, 27 Sep 2011 18:14:09 +0000
-Subject: Add missing includes to fix build on OpenBSD
-
-Fixes bug 660274.
-
---- vinagre/vinagre-ssh.c.orig	Sun Aug 14 12:37:18 2011
-+++ vinagre/vinagre-ssh.c	Wed Sep 28 20:15:47 2011
+--- vinagre/vinagre-ssh.c.orig	Tue Oct 18 11:32:25 2011
++++ vinagre/vinagre-ssh.c	Tue Oct 18 11:32:44 2011
 @@ -22,6 +22,7 @@
  #include <config.h>
  
@@ -20,11 +13,3 @@ Fixes bug 660274.
  #include "pty_open.h"
  
  #ifdef G_OS_WIN32
-@@ -30,6 +31,7 @@
- #include <gio/gwin32inputstream.h>
- #include <gio/gwin32outputstream.h>
- #else /* !G_OS_WIN32 */
-+#include <arpa/inet.h>
- #include <netinet/in.h>
- #include <gio/gunixinputstream.h>
- #include <gio/gunixoutputstream.h>
