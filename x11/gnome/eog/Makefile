@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2011/10/17 14:23:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/10/18 08:05:37 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.2.0
-REVISION=		1
+GNOME_VERSION=		3.2.1
 
 CATEGORIES=		graphics
 
