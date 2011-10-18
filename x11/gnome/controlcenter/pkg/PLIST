@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/09/27 12:15:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/10/18 14:53:25 sthen Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
+@conflict gdm-<3.0.4
 @pkgpath x11/gnome/controlcenter2
 @bin bin/gnome-control-center
 @bin bin/gnome-sound-applet
