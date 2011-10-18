@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.8 2011/09/23 09:46:14 pea Exp $
+$OpenBSD: README-server,v 1.9 2011/10/18 12:03:01 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -122,36 +122,34 @@ Upgrade Howto (for a major upgrade)
 If you didn't install PostgreSQL by following this README, 
 you must adapt these instructions to your setup.
 
-Most commands must be launched as the user _postgresql:
-# su - _postgresql
-
 1) Backup all your data:
-$ pg_dumpall -U postgres > /var/postgresql/full.sqldump
+# sudo -u _postgresql pg_dumpall -U postgres > /var/postgresql/full.sqldump
 
 2) Shutdown the server:
-$ pg_ctl -D /var/postgresql/data/ stop -m fast
+# /etc/rc.d/postgresql stop
 
-3) As root, upgrade your PostgreSQL package with pkg_add.
-# pkg_add -u postgresql-server
+3) Upgrade your PostgreSQL package with pkg_add.
+# pkg_add -ui postgresql-server
 
 4) Backup your old data directory:
-$ mv /var/postgresql/data /var/postgresql/data.old
+# mv /var/postgresql/data /var/postgresql/data.old
 
 5) Create a new data directory:
-$ mkdir /var/postgresql/data
-$ initdb -D /var/postgresql/data -U postgres -A md5 -W
+# sudo -u _postgresql mkdir /var/postgresql/data
+# sudo -u _postgresql initdb -D /var/postgresql/data -U postgres -A md5 -W
 
 6) Restore your old pg_hba.conf
-$ cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/
+# sudo -u _postgresql cp /var/postgresql/data.old/pg_hba.conf \
+    /var/postgresql/data/
 
 Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
 
 7) Start PostgreSQL:
-$ pg_ctl -D /var/postgresql/data -l /var/postgresql/logfile start
+# /etc/rc.d/postgresql start
 
 8) Restore your data:
-$ psql -U postgres < /var/postgresql/full.sqldump
+# sudo -u _postgresql psql -U postgres < /var/postgresql/full.sqldump
 
 Clients/Frontends
 =================
