@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/13 13:26:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/18 06:05:20 ajacoutot Exp $
 %%SHARED%%
 @bin bin/enca
 bin/enconv
 include/enca.h
-@comment lib/libenca.la
+lib/libenca.a
+lib/libenca.la
 lib/pkgconfig/
 lib/pkgconfig/enca.pc
 libexec/enca/
