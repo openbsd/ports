@@ -1,7 +1,7 @@
-$OpenBSD: patch-authenticate_c,v 1.1 2011/04/02 15:13:25 ajacoutot Exp $
---- authenticate.c.orig	Mon Mar 28 13:59:40 2011
-+++ authenticate.c	Mon Mar 28 13:59:55 2011
-@@ -291,7 +291,7 @@ void auth_client(int fd, const char *user, const char 
+$OpenBSD: patch-authenticate_c,v 1.2 2011/10/18 20:24:24 naddy Exp $
+--- authenticate.c.orig	Sat Sep 10 22:38:17 2011
++++ authenticate.c	Tue Oct 18 16:51:20 2011
+@@ -283,7 +283,7 @@ void auth_client(int fd, const char *user, const char 
  	char pass2[MAX_DIGEST_LEN*2];
  
  	if (!user || !*user)

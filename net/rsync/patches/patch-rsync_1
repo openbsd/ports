@@ -1,7 +1,7 @@
-$OpenBSD: patch-rsync_1,v 1.1 2011/04/02 15:13:25 ajacoutot Exp $
---- rsync.1.orig	Mon Mar 28 13:57:27 2011
-+++ rsync.1	Mon Mar 28 13:57:35 2011
-@@ -3465,7 +3465,7 @@ consult the remote shell\(cq\&s documentation.
+$OpenBSD: patch-rsync_1,v 1.2 2011/10/18 20:24:24 naddy Exp $
+--- rsync.1.orig	Fri Sep 23 18:42:26 2011
++++ rsync.1	Tue Oct 18 16:51:20 2011
+@@ -3495,7 +3495,7 @@ consult the remote shell\(cq\&s documentation.
  .IP "\fBUSER\fP or \fBLOGNAME\fP"
  The USER or LOGNAME environment variables
  are used to determine the default username sent to an rsync daemon.

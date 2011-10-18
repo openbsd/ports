@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/03 13:06:01 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2011/10/18 20:24:24 naddy Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME =	rsync-3.0.8
+DISTNAME =	rsync-3.0.9
 CATEGORIES =	net
 HOMEPAGE =	http://rsync.samba.org/
-
-REVISION =	1
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -40,7 +38,6 @@ MODULES += converters/libiconv
 .endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync
-USE_GROFF =	Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rsyncd.conf.5
