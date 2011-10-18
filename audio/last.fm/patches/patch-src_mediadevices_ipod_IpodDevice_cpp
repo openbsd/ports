@@ -1,7 +1,21 @@
-$OpenBSD: patch-src_mediadevices_ipod_IpodDevice_cpp,v 1.1 2011/09/19 12:50:57 dcoppa Exp $
---- src/mediadevices/ipod/IpodDevice.cpp.orig	Mon Sep 19 12:48:57 2011
-+++ src/mediadevices/ipod/IpodDevice.cpp	Mon Sep 19 12:56:29 2011
-@@ -78,8 +78,9 @@ IpodDevice::open()
+$OpenBSD: patch-src_mediadevices_ipod_IpodDevice_cpp,v 1.2 2011/10/18 12:17:26 dcoppa Exp $
+--- src/mediadevices/ipod/IpodDevice.cpp.orig	Tue Oct 18 11:12:40 2011
++++ src/mediadevices/ipod/IpodDevice.cpp	Tue Oct 18 11:30:05 2011
+@@ -24,12 +24,11 @@
+ 
+ #include "logger.h"
+ 
+-#include <QApplication>
+ #include <QDateTime>
++#include <QFileInfo>
+ #include <QSqlError>
+ #include <QSqlQuery>
+ #include <QtPlugin>
+-#include <QFileDialog>
+ #include <QSettings>
+ 
+ extern "C"
+@@ -78,8 +77,9 @@ IpodDevice::open()
  
      if ( m_uid.isEmpty() )
      {
