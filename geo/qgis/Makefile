@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 09:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/18 07:06:32 ajacoutot Exp $
+
+BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
 COMMENT =	desktop geographical information system
 
