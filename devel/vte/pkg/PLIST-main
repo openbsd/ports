@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/09/26 14:25:09 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/10/18 15:06:49 ajacoutot Exp $
 @pkgpath devel/vte
 @pkgpath devel/vte,-main,gtk2
 @pkgpath devel/vte,-pty-helper
+@pkgpath devel/vte,-pty-helper,gtk2
 @bin bin/vte2
 include/vte-0.0/
 include/vte-0.0/vte/
