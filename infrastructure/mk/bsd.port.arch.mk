@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.7 2011/10/16 07:52:08 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.8 2011/10/18 06:43:51 espie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -55,6 +55,16 @@ SUBPACKAGE ?= -main
 
 # allow pseudo-flavors to make subpackages vanish.
 .if defined(FLAVOR)
+# XXX remove all extra pseudo flavors that remove stuff
+BUILD_ONCE ?= No
+.  if ${BUILD_ONCE:L} == "yes" && defined(PSEUDO_FLAVORS) && !${FLAVOR:Mbootstrap}
+.    for f in ${FLAVOR:Mno_*}
+.      if ${PSEUDO_FLAVORS:M$f}
+FLAVOR := ${FLAVOR:N$f}
+.      endif
+.    endfor
+.  endif
+
 .  for _S in ${MULTI_PACKAGES}
 .    for _T in ${_S:S/^-/no_/}
 .      if ${FLAVOR:M${_T}}
