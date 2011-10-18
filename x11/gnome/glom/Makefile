@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/18 14:12:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/18 18:08:16 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
 GNOME_VERSION=		1.19.13
+
+REVISION=		0
 
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=619445
 PATCHFILES=		glom_locale.patch:0
@@ -68,5 +70,7 @@ CONFIGURE_ENV+= 	ac_cv_path_DOT= \
 			ac_cv_path_XSLTPROC= \
 			ac_cv_path_DOXYGEN=
 CONFIGURE_ARGS+=	--disable-update-mime-database
+
+REGRESS_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>
