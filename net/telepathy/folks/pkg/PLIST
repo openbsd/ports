@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/10/18 08:56:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/10/18 18:05:46 jasper Exp $
 @bin bin/folks-import
 @bin bin/folks-inspect
 include/folks/
@@ -6,20 +6,20 @@ include/folks/folks-eds.h
 include/folks/folks-telepathy.h
 include/folks/folks.h
 lib/folks/
-lib/folks/27/
-lib/folks/27/backends/
-lib/folks/27/backends/eds/
-@comment lib/folks/27/backends/eds/eds.a
-@comment lib/folks/27/backends/eds/eds.la
-lib/folks/27/backends/eds/eds.so
-lib/folks/27/backends/key-file/
-@comment lib/folks/27/backends/key-file/key-file.a
-@comment lib/folks/27/backends/key-file/key-file.la
-lib/folks/27/backends/key-file/key-file.so
-lib/folks/27/backends/telepathy/
-@comment lib/folks/27/backends/telepathy/telepathy.a
-@comment lib/folks/27/backends/telepathy/telepathy.la
-lib/folks/27/backends/telepathy/telepathy.so
+lib/folks/28/
+lib/folks/28/backends/
+lib/folks/28/backends/eds/
+@comment lib/folks/28/backends/eds/eds.a
+@comment lib/folks/28/backends/eds/eds.la
+lib/folks/28/backends/eds/eds.so
+lib/folks/28/backends/key-file/
+@comment lib/folks/28/backends/key-file/key-file.a
+@comment lib/folks/28/backends/key-file/key-file.la
+lib/folks/28/backends/key-file/key-file.so
+lib/folks/28/backends/telepathy/
+@comment lib/folks/28/backends/telepathy/telepathy.a
+@comment lib/folks/28/backends/telepathy/telepathy.la
+lib/folks/28/backends/telepathy/telepathy.so
 lib/girepository-1.0/Folks-0.6.typelib
 lib/libfolks-eds.a
 lib/libfolks-eds.la
