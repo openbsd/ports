@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure_in,v 1.5 2011/10/18 08:40:55 ajacoutot Exp $
 --- configure.in.orig	Wed Feb  4 19:55:38 2009
 +++ configure.in	Wed Jun 29 17:49:41 2011
 @@ -1,7 +1,7 @@
