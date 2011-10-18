@@ -1,19 +1,16 @@
-BZFlag is an Open Source OpenGL multiplayer multiplatform Battle Zone
-capture the Flag game.  At its heart, the game is a 3D first person
-tank simulation where opposing teams battle for dominance.  The game
-was originally written for SGI computers running Irix, but now runs
-and is actively maintained on Windows, Linux, Mac OS X, BSD, Solaris,
-and other platforms.  The game is distributed under the LGPL license.
+BZFlag is a 3D multi-player tank battle game that allows users to play
+against each other in a networked environment. There are five teams:
+red, green, blue, purple and rogue (rogue tanks are black). Destroying a
+player on another team scores a win, while being destroyed or destroying
+a teammate scores a loss. Rogues have no teammates (not even other
+rogues), so they cannot shoot teammates and they do not have a team
+score.
 
-This is the BZFlag README file.  This file includes introductory build
-instructions, user community interaction references, information for
-getting involved in BZFlag development, a manifest of the source code
-layout, basic usage expectations, contact information, and more.
-
-If your system does not have hardware-accelerated OpenGL, you
-may wish to consider adding this line:
-
-	set useBitmapFontRenderer 1
-
-to your configuration file (~/.bzf/2.0/config.cfg), to improve
-your framerate considerably.
+There are two main styles of play: capture-the-flag and free-for-all. In
+capture-the-flag, each team (except rogues) has a team base and each
+team with at least one player has a team flag.  The object is to capture
+an enemy team's flag by bringing it to your team's base. This destroys
+every player on the captured team, subtracts one from that team's score,
+and adds one to your team's score. In free-for-all, there are no team
+flags or team bases. The object is simply to get as high a score as
+possible.

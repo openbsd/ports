@@ -1,61 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/09/22 23:08:49 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.11 2011/10/18 07:56:41 ajacoutot Exp $
 @bin bin/bzadmin
 @bin bin/bzflag
 @bin bin/bzfs
 lib/bzflag/
-lib/bzflag/HoldTheFlag.a
-@comment lib/bzflag/HoldTheFlag.la
-lib/bzflag/Phoenix.a
-@comment lib/bzflag/Phoenix.la
-lib/bzflag/RogueGenocide.a
-@comment lib/bzflag/RogueGenocide.la
-lib/bzflag/SAMPLE_PLUGIN.a
-@comment lib/bzflag/SAMPLE_PLUGIN.la
-lib/bzflag/TimeLimit.a
-@comment lib/bzflag/TimeLimit.la
-lib/bzflag/airspawn.a
-@comment lib/bzflag/airspawn.la
-lib/bzflag/chathistory.a
-@comment lib/bzflag/chathistory.la
-lib/bzflag/customflagsample.a
-@comment lib/bzflag/customflagsample.la
-lib/bzflag/flagStay.a
-@comment lib/bzflag/flagStay.la
-lib/bzflag/hiddenAdmin.a
-@comment lib/bzflag/hiddenAdmin.la
-lib/bzflag/keepaway.a
-@comment lib/bzflag/keepaway.la
-lib/bzflag/killall.a
-@comment lib/bzflag/killall.la
-lib/bzflag/koth.a
-@comment lib/bzflag/koth.la
-lib/bzflag/logDetail.a
-@comment lib/bzflag/logDetail.la
-lib/bzflag/nagware.a
-@comment lib/bzflag/nagware.la
-lib/bzflag/playHistoryTracker.a
-@comment lib/bzflag/playHistoryTracker.la
-lib/bzflag/pushstats.a
-@comment lib/bzflag/pushstats.la
-lib/bzflag/rabbitTimer.a
-@comment lib/bzflag/rabbitTimer.la
-lib/bzflag/rabidRabbit.a
-@comment lib/bzflag/rabidRabbit.la
-lib/bzflag/recordmatch.a
-@comment lib/bzflag/recordmatch.la
-lib/bzflag/regFlag.a
-@comment lib/bzflag/regFlag.la
-lib/bzflag/serverControl.a
-@comment lib/bzflag/serverControl.la
-lib/bzflag/shockwaveDeath.a
-@comment lib/bzflag/shockwaveDeath.la
-lib/bzflag/teamflagreset.a
-@comment lib/bzflag/teamflagreset.la
-lib/bzflag/timedctf.a
-@comment lib/bzflag/timedctf.la
-lib/bzflag/wwzones.a
-@comment lib/bzflag/wwzones.la
+lib/bzflag/HoldTheFlag.so
+lib/bzflag/Phoenix.so
+lib/bzflag/RogueGenocide.so
+lib/bzflag/SAMPLE_PLUGIN.so
+lib/bzflag/TimeLimit.so
+lib/bzflag/airspawn.so
+lib/bzflag/chathistory.so
+lib/bzflag/customflagsample.so
+lib/bzflag/flagStay.so
+lib/bzflag/hiddenAdmin.so
+lib/bzflag/keepaway.so
+lib/bzflag/killall.so
+lib/bzflag/koth.so
+lib/bzflag/logDetail.so
+lib/bzflag/nagware.so
+lib/bzflag/playHistoryTracker.so
+lib/bzflag/pushstats.so
+lib/bzflag/rabbitTimer.so
+lib/bzflag/rabidRabbit.so
+lib/bzflag/recordmatch.so
+lib/bzflag/regFlag.so
+lib/bzflag/serverControl.so
+lib/bzflag/shockwaveDeath.so
+lib/bzflag/teamflagreset.so
+lib/bzflag/timedctf.so
+lib/bzflag/wwzones.so
 @man man/man5/bzw.5
 @man man/man6/bzadmin.6
 @man man/man6/bzflag.6
@@ -234,3 +207,4 @@ share/bzflag/water.png
 share/bzflag/zone_ground.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/doc/pkg-readmes/${FULLPKGNAME}

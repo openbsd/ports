@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.1 2011/10/18 07:56:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If your system does not have hardware-accelerated OpenGL, you
+may wish to consider adding this line:
+
+        set useBitmapFontRenderer 1
+
+to your configuration file (~/.bzf/2.0/config.cfg), to improve
+your framerate considerably.
