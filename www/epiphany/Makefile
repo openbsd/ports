@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/10/18 14:26:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2011/10/18 16:09:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.2.1
+REVISION=	0
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -36,8 +37,8 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0 jpeg
-WANTLIB += kvm m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs seed-gtk3 soup-2.4
+WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs seed-gtk3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z
 
@@ -48,7 +49,6 @@ LIB_DEPENDS=	textproc/libxslt \
 		devel/libexecinfo \
 		devel/libnotify>=0.7.2 \
 		devel/libsoup,-gnome \
-		devel/startup-notification \
 		x11/gnome/seed>=3.2.0p0
 
 MODULES=	devel/dconf \

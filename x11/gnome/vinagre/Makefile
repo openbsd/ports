@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/10/18 14:26:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/10/18 16:09:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	remote desktop viewer for GNOME
 
 GNOME_VERSION=	3.2.1
 GNOME_PROJECT=	vinagre
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -35,9 +36,7 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	misc/shared-mime-info>=0.21 \
 		x11/rdesktop
-LIB_DEPENDS=	devel/libpeas \
-		x11/gtk-vnc \
-		x11/gnome/panel \
+LIB_DEPENDS=	x11/gtk-vnc \
 		net/telepathy/telepathy-glib \
 		net/avahi,-gtk3,no_mono,no_qt3,no_qt4 \
 		devel/vte3
