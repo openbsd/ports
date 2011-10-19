@@ -1,0 +1,22 @@
+$OpenBSD: patch-glib_gmain_c,v 1.6 2011/10/19 15:04:45 ajacoutot Exp $
+
+Rewrote upstream, but provides similar functionnality.
+(test with GDM that the following does not happen:
+Failed to read from child watch wake up pipe: Interrupted system call)
+
+--- glib/gmain.c.orig	Wed Oct 19 16:38:09 2011
++++ glib/gmain.c	Wed Oct 19 14:09:17 2011
+@@ -4549,6 +4549,13 @@ unix_signal_helper_thread (gpointer data) 
+       gboolean sighup_received = FALSE;
+ 
+       bytes_read = read (unix_signal_wake_up_pipe[0], b, sizeof (b));
++
++      do
++        {
++          bytes_read = read (unix_signal_wake_up_pipe[0], b, sizeof (b));
++        }
++      while (bytes_read == -1 && errno == EINTR);
++
+       if (bytes_read < 0)
+ 	{
+ 	  g_warning ("Failed to read from child watch wake up pipe: %s",
