@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2011/10/19 08:13:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2011/10/19 14:25:46 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -8,6 +8,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 

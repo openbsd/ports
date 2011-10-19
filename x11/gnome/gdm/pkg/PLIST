@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2011/10/19 08:13:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2011/10/19 14:25:46 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @extraunexec rm -rf /var/db/gdm/.ICEauthority
@@ -59,22 +59,30 @@ share/examples/gdm/X11/gdm/
 @sample ${SYSCONFDIR}/X11/gdm/
 share/examples/gdm/X11/gdm/Init/
 @sample ${SYSCONFDIR}/X11/gdm/Init/
+@mode 555
 share/examples/gdm/X11/gdm/Init/Default
 @sample ${SYSCONFDIR}/X11/gdm/Init/Default
+@mode
 share/examples/gdm/X11/gdm/PostLogin/
 @sample ${SYSCONFDIR}/X11/gdm/PostLogin/
+@mode 555
 share/examples/gdm/X11/gdm/PostLogin/Default.sample
 @sample ${SYSCONFDIR}/X11/gdm/PostLogin/Default.sample
+@mode
 share/examples/gdm/X11/gdm/PostSession/
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/
+@mode 555
 share/examples/gdm/X11/gdm/PostSession/Default
 @sample ${SYSCONFDIR}/X11/gdm/PostSession/Default
+@mode
 share/examples/gdm/X11/gdm/PreSession/
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/
+@mode 555
 share/examples/gdm/X11/gdm/PreSession/Default
 @sample ${SYSCONFDIR}/X11/gdm/PreSession/Default
 share/examples/gdm/X11/gdm/Xsession
 @sample ${SYSCONFDIR}/X11/gdm/Xsession
+@mode
 share/examples/gdm/X11/gdm/custom.conf
 @sample ${SYSCONFDIR}/X11/gdm/custom.conf
 share/examples/gdm/db/
