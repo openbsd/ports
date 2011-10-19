@@ -1,9 +1,10 @@
-$OpenBSD: patch-hw_e1000_c,v 1.1 2011/08/28 11:21:05 sthen Exp $
+$OpenBSD: patch-hw_e1000_c,v 1.2 2011/10/19 08:12:06 sthen Exp $
 
-use MII status register for link up/down
+- Use MII status register for link up/down.
+- The Capabilities Pointer is NULL, so this bit shouldn't be set.
 
---- hw/e1000.c.orig	Fri Aug 26 02:20:32 2011
-+++ hw/e1000.c	Fri Aug 26 02:23:52 2011
+--- hw/e1000.c.orig	Wed Oct 12 12:41:43 2011
++++ hw/e1000.c	Sat Oct 15 05:19:04 2011
 @@ -624,10 +624,13 @@ e1000_set_link_status(VLANClientState *nc)
      E1000State *s = DO_UPCAST(NICState, nc, nc)->opaque;
      uint32_t old_status = s->mac_reg[STATUS];
@@ -20,3 +21,12 @@ use MII status register for link up/down
  
      if (s->mac_reg[STATUS] != old_status)
          set_ics(s, 0, E1000_ICR_LSC);
+@@ -1164,8 +1167,6 @@ static int pci_e1000_init(PCIDevice *pci_dev)
+ 
+     pci_conf = d->dev.config;
+ 
+-    /* TODO: we have no capabilities, so why is this bit set? */
+-    pci_set_word(pci_conf + PCI_STATUS, PCI_STATUS_CAP_LIST);
+     /* TODO: RST# value should be 0, PCI spec 6.2.4 */
+     pci_conf[PCI_CACHE_LINE_SIZE] = 0x10;
+ 
