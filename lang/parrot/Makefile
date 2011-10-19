@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/08/20 16:48:37 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/19 13:30:59 ajacoutot Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
 V=		3.6.0
 DISTNAME=	parrot-$V
+REVISION=	0
 CATEGORIES=	lang perl6
 SHARED_LIBS=	parrot	3.0
 
@@ -33,6 +34,13 @@ CONFIGURE_ARGS+=	--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
 # pthread_cond_timedwait(3). Without threads, it maps to an ordinary sleep(3)
 # call. Exposed by rakudo tests.
 CONFIGURE_ARGS +=	--without-threads
+
+# XXX The default (gms) garbage collector has issues on powerpc. Until
+# it's fixed, use the old one (ms2).
+.if ${MACHINE_ARCH:Mpowerpc}
+CONFIGURE_ARGS+=	--gc=ms2
+.endif
+
 CONFIGURE_ENV =		LIBparrot_VERSION=${LIBparrot_VERSION}
 
 MAKE_ENV=		LIBparrot_VERSION=${LIBparrot_VERSION}
