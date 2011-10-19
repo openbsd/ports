@@ -1,16 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/18 18:08:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/19 08:06:31 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
-GNOME_VERSION=		1.19.13
-
-REVISION=		0
-
-# XXX https://bugzilla.gnome.org/show_bug.cgi?id=619445
-PATCHFILES=		glom_locale.patch:0
-MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCH_DIST_STRIP=	-p1
+GNOME_VERSION=		1.19.14
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 

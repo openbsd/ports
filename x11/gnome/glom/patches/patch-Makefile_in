@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/10/15 07:38:10 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2011/10/19 08:06:31 jasper Exp $
 
 Remove -dl linking, which won't work on OpenBSD.
 
---- Makefile.in.orig	Sat Oct 15 09:22:55 2011
-+++ Makefile.in	Sat Oct 15 09:23:05 2011
-@@ -2590,7 +2590,7 @@ tests_test_signal_reemit_SOURCES = tests/test_signal_r
+--- Makefile.in.orig	Tue Oct 18 22:17:23 2011
++++ Makefile.in	Tue Oct 18 23:30:03 2011
+@@ -2620,7 +2620,7 @@ tests_test_signal_reemit_SOURCES = tests/test_signal_r
  tests_test_signal_reemit_LDADD = $(LIBGLOM_LIBS)
  tests_test_signal_reemit_CPPFLAGS = $(tests_cppflags)
  tests_python_test_load_python_library_SOURCES = tests/python/test_load_python_library.cc
