@@ -1,6 +1,9 @@
-Empathy consists of a rich set of reusable instant messaging widgets,
-and a GNOME client using those widgets. It uses Telepathy and Nokia's
-Mission Control, and reuses Gossip's UI. The main goal is to permit
-desktop integration by providing libempathy and libempathy-gtk
-libraries. libempathy-gtk is a set of powerful widgets that can be
-embeded into any GNOME application.
+Empathy is a messaging program which supports text, voice, and video
+chat and file transfers over many different protocols. You can tell it
+about your accounts on all those services and do all your chatting
+within one application.
+
+Empathy uses Telepathy for protocol support and has a user interface
+based on Gossip. Empathy is the default chat client in current versions
+of GNOME, making it easier for other GNOME applications to integrate
+collaboration functionality using Telepathy.
