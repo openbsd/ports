@@ -1,11 +1,11 @@
-$OpenBSD: patch-gthread_gthread-posix_c,v 1.3 2011/10/19 06:38:16 robert Exp $
---- gthread/gthread-posix.c.orig	Fri Oct 14 05:50:36 2011
-+++ gthread/gthread-posix.c	Tue Oct 18 22:35:58 2011
+$OpenBSD: patch-gthread_gthread-posix_c,v 1.4 2011/10/19 06:42:44 robert Exp $
+--- gthread/gthread-posix.c.orig	Wed Oct 19 08:41:50 2011
++++ gthread/gthread-posix.c	Wed Oct 19 08:42:24 2011
 @@ -119,7 +119,7 @@ static gulong g_thread_min_stack_size = 0;
  
  #define G_MUTEX_SIZE (sizeof (pthread_mutex_t))
  
--#if defined(HAVE_CLOCK_GETTIME) && defined(HAVE_MONOTONIC_CLOCK)
+-#if defined(HAVE_CLOCK_GETTIME) && defined(HAVE_MONOTONIC_CLOCK) 
 +#if defined(HAVE_CLOCK_GETTIME) && defined(CLOCK_MONOTONIC)
  #define USE_CLOCK_GETTIME 1
  static gint posix_clock = 0;
