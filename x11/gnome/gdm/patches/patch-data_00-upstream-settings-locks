@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_00-upstream-settings-locks,v 1.1 2011/10/19 08:13:04 ajacoutot Exp $
+
+Our gnome-settings-daemon does not provide the
+org.gnome.settings-daemon.plugins.orientation gschema because it depends
+on gudev.
+
+--- data/00-upstream-settings-locks.orig	Wed Oct 19 08:15:42 2011
++++ data/00-upstream-settings-locks	Wed Oct 19 08:15:48 2011
+@@ -39,7 +39,6 @@
+ /org/gnome/settings-daemon/plugins/media-keys/stop
+ /org/gnome/settings-daemon/plugins/media-keys/www
+ /org/gnome/settings-daemon/plugins/mouse/active
+-/org/gnome/settings-daemon/plugins/orientation/active
+ /org/gnome/settings-daemon/plugins/power/active
+ /org/gnome/settings-daemon/plugins/print-notifications/active
+ /org/gnome/settings-daemon/plugins/smartcard/active

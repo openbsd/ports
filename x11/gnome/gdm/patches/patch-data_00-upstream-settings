@@ -1,0 +1,18 @@
+$OpenBSD: patch-data_00-upstream-settings,v 1.1 2011/10/19 08:13:04 ajacoutot Exp $
+
+Our gnome-settings-daemon does not provide the
+org.gnome.settings-daemon.plugins.orientation gschema because it depends
+on gudev.
+
+--- data/00-upstream-settings.orig	Wed Oct 19 08:15:27 2011
++++ data/00-upstream-settings	Wed Oct 19 08:15:36 2011
+@@ -90,9 +90,6 @@ www=''
+ [org/gnome/settings-daemon/plugins/mouse]
+ active=false
+ 
+-[org/gnome/settings-daemon/plugins/orientation]
+-active=true
+-
+ [org/gnome/settings-daemon/plugins/power]
+ active=true
+ 

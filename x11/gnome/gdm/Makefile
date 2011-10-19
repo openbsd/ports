@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2011/10/16 19:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2011/10/19 08:13:04 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.2.0
-REVISION=		0
+GNOME_VERSION=		3.2.1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -26,12 +25,11 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm accountsservice
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
 WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3
-WANTLIB += nssutil3 ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += smime3 softokn3 sqlite3 ssl3 upower-glib util vorbis
-WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
-WANTLIB += xml2 z
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3 nssutil3
+WANTLIB += ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
+WANTLIB += softokn3 sqlite3 ssl3 upower-glib util vorbis vorbisfile
+WANTLIB += wrap xcb xcb-render xcb-shm xkbfile xklavier xml2 z
 
 BUILD_DEPENDS=		x11/gnome/zenity
 
@@ -104,7 +102,11 @@ pre-configure:
 	perl -pi -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
 	perl -pi -e 's,/bin/true,/usr/bin/true,g' \
-		${WRKSRC}/data/applications/mime-dummy-handler.desktop
+		${WRKSRC}/data/applications/mime-dummy-handler.desktop \
+		${WRKSRC}/configure \
+		${WRKSRC}/data/00-upstream-settings \
+		${WRKSRC}/data/upstream-settings \
+		${WRKSRC}/data/session-setup.entries
 .for i in gdm-simple-greeter gnome-session-check-accelerated gnome-settings-daemon
 	perl -pi -e 's,/usr/libexec,${PREFIX},g' \
 		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in

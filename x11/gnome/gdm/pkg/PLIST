@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2011/10/07 14:04:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.35 2011/10/19 08:13:04 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @extraunexec rm -rf /var/db/gdm/.ICEauthority
@@ -49,6 +49,7 @@ lib/pkgconfig/gdmsimplegreeter.pc
 @bin libexec/gdm-simple-greeter
 @bin libexec/gdm-simple-slave
 @bin libexec/gdm-smartcard-worker
+libexec/gdm-update-dconf-db
 @bin libexec/gdm-xdmcp-chooser-slave
 sbin/gdm
 @bin sbin/gdm-binary
@@ -127,12 +128,13 @@ share/examples/gdm/dbus-1/system.d/gdm.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/gdm.conf
 share/examples/gdm/dconf/
 share/examples/gdm/dconf/db/
-share/examples/gdm/dconf/db/gdm
-@sample ${SYSCONFDIR}/dconf/db/gdm
 share/examples/gdm/dconf/db/gdm.d/
 @sample ${SYSCONFDIR}/dconf/db/gdm.d/
+share/examples/gdm/dconf/db/gdm.d/00-upstream-settings
+@sample ${SYSCONFDIR}/dconf/db/gdm.d/00-upstream-settings
 share/examples/gdm/dconf/db/gdm.d/locks/
 @sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/
+share/examples/gdm/dconf/db/gdm.d/locks/00-upstream-settings-locks
 share/examples/gdm/dconf/profile/
 share/examples/gdm/dconf/profile/gdm
 @sample ${SYSCONFDIR}/dconf/profile/gdm
@@ -159,6 +161,7 @@ share/gdm/simple-greeter/extensions/smartcard/
 share/gdm/simple-greeter/extensions/smartcard/page.ui
 share/gdm/simple-greeter/extensions/unified/
 share/gdm/simple-greeter/extensions/unified/page.ui
+share/gdm/upstream-settings
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
 share/gnome-session/
 share/gnome-session/sessions/
@@ -343,10 +346,10 @@ ${SCHEMAS_INSTDIR}/gdm-simple-greeter.schemas
 @sample /var/cache/gdm/
 @mode 1770
 @sample /var/gdm/
+@mode
+@group
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@mode
-@group
 @rcscript ${RCDIR}/gdm

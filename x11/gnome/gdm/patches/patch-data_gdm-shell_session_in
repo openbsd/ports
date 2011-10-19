@@ -1,0 +1,10 @@
+$OpenBSD: patch-data_gdm-shell_session_in,v 1.1 2011/10/19 08:13:04 ajacoutot Exp $
+--- data/gdm-shell.session.in.orig	Wed Oct 19 08:47:27 2011
++++ data/gdm-shell.session.in	Wed Oct 19 08:48:10 2011
+@@ -1,5 +1,5 @@
+ [GNOME Session]
+ Name=Display Manager
+ RequiredComponents=gnome-shell;gnome-settings-daemon;
+-IsRunnableHelper=bash -c 'gnome-shell --help | grep -q gdm-mode && @libexecdir@/gnome-session-check-accelerated'
++IsRunnableHelper=sh -c 'gnome-shell --help | grep -q gdm-mode && @libexecdir@/gnome-session-check-accelerated'
+ FallbackSession=gdm-fallback
