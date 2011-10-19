@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.33 2011/10/18 15:17:20 ajacoutot Exp $
-@unexec rm -f %D/share/icons/gnome/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.34 2011/10/19 12:44:40 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 lib/pkgconfig/gnome-icon-theme.pc
 share/examples/gnome-icon-theme/
 share/examples/gnome-icon-theme/gtk-2.0/
@@ -216,6 +216,7 @@ share/icons/gnome/16x16/actions/mail_send.png
 share/icons/gnome/16x16/actions/mail_spam.png
 share/icons/gnome/16x16/actions/media-eject.png
 share/icons/gnome/16x16/actions/media-playback-pause.png
+share/icons/gnome/16x16/actions/media-playback-start-rtl.png
 share/icons/gnome/16x16/actions/media-playback-start.png
 share/icons/gnome/16x16/actions/media-playback-stop.png
 share/icons/gnome/16x16/actions/media-record.png
@@ -1259,6 +1260,7 @@ share/icons/gnome/22x22/actions/mail_send.png
 share/icons/gnome/22x22/actions/mail_spam.png
 share/icons/gnome/22x22/actions/media-eject.png
 share/icons/gnome/22x22/actions/media-playback-pause.png
+share/icons/gnome/22x22/actions/media-playback-start-rtl.png
 share/icons/gnome/22x22/actions/media-playback-start.png
 share/icons/gnome/22x22/actions/media-playback-stop.png
 share/icons/gnome/22x22/actions/media-record.png
@@ -2302,6 +2304,7 @@ share/icons/gnome/24x24/actions/mail_send.png
 share/icons/gnome/24x24/actions/mail_spam.png
 share/icons/gnome/24x24/actions/media-eject.png
 share/icons/gnome/24x24/actions/media-playback-pause.png
+share/icons/gnome/24x24/actions/media-playback-start-rtl.png
 share/icons/gnome/24x24/actions/media-playback-start.png
 share/icons/gnome/24x24/actions/media-playback-stop.png
 share/icons/gnome/24x24/actions/media-record.png
@@ -4015,6 +4018,7 @@ share/icons/gnome/32x32/actions/mail_send.png
 share/icons/gnome/32x32/actions/mail_spam.png
 share/icons/gnome/32x32/actions/media-eject.png
 share/icons/gnome/32x32/actions/media-playback-pause.png
+share/icons/gnome/32x32/actions/media-playback-start-rtl.png
 share/icons/gnome/32x32/actions/media-playback-start.png
 share/icons/gnome/32x32/actions/media-playback-stop.png
 share/icons/gnome/32x32/actions/media-record.png
@@ -5051,6 +5055,7 @@ share/icons/gnome/48x48/actions/mail_send.png
 share/icons/gnome/48x48/actions/mail_spam.png
 share/icons/gnome/48x48/actions/media-eject.png
 share/icons/gnome/48x48/actions/media-playback-pause.png
+share/icons/gnome/48x48/actions/media-playback-start-rtl.png
 share/icons/gnome/48x48/actions/media-playback-start.png
 share/icons/gnome/48x48/actions/media-playback-stop.png
 share/icons/gnome/48x48/actions/media-record.png
