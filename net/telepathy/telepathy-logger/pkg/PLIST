@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/16 19:53:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/10/19 08:23:37 jasper Exp $
 include/telepathy-logger-0.2/
 include/telepathy-logger-0.2/telepathy-logger/
 include/telepathy-logger-0.2/telepathy-logger/entity.h
@@ -6,11 +6,23 @@ include/telepathy-logger-0.2/telepathy-logger/event.h
 include/telepathy-logger-0.2/telepathy-logger/log-manager.h
 include/telepathy-logger-0.2/telepathy-logger/telepathy-logger.h
 include/telepathy-logger-0.2/telepathy-logger/text-event.h
+include/tpl-extensions/
+include/tpl-extensions/_gen/
+include/tpl-extensions/_gen/cli-misc.h
+include/tpl-extensions/_gen/enums.h
+include/tpl-extensions/_gen/gtypes.h
+include/tpl-extensions/_gen/interfaces.h
+include/tpl-extensions/_gen/svc-misc.h
+include/tpl-extensions/extensions.h
 lib/girepository-1.0/TelepathyLogger-0.2.typelib
 lib/libtelepathy-logger.a
 lib/libtelepathy-logger.la
 @lib lib/libtelepathy-logger.so.${LIBtelepathy-logger_VERSION}
+lib/libtpl-extensions.a
+lib/libtpl-extensions.la
+@lib lib/libtpl-extensions.so.${LIBtpl-extensions_VERSION}
 lib/pkgconfig/telepathy-logger-0.2.pc
+lib/pkgconfig/tpl-extensions.pc
 @bin libexec/telepathy-logger
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Logger.service
 share/dbus-1/services/org.freedesktop.Telepathy.Logger.service
