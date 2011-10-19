@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/08/31 18:35:32 landry Exp $
+# $OpenBSD: Makefile,v 1.57 2011/10/19 09:16:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -58,5 +58,6 @@
      SUBDIR += xine-lib
      SUBDIR += xine-ui
      SUBDIR += xvidcore
+     SUBDIR += yle-dl
 
 .include <bsd.port.subdir.mk>
