@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2011/10/07 13:54:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.127 2011/10/19 16:27:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -11,7 +11,6 @@
      SUBDIR += classpath
      SUBDIR += clisp
      SUBDIR += clojure
-     SUBDIR += clojure-contrib
      SUBDIR += cython
      SUBDIR += datalog
      SUBDIR += eagle
