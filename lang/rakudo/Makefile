@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/17 08:00:51 ajacoutot Exp $
-
-BROKEN-powerpc =	does not package (Model.pir does not exist)
+# $OpenBSD: Makefile,v 1.9 2011/10/19 13:31:58 ajacoutot Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
