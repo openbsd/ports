@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/09/25 17:25:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/10/19 12:17:54 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -1401,6 +1401,7 @@ share/gnome/help/anjuta-manual/zh_CN/widget-index.page
 share/gtk-doc/html/libanjuta/
 share/gtk-doc/html/libanjuta/AnjutaCModule.html
 share/gtk-doc/html/libanjuta/AnjutaCPluginFactory.html
+share/gtk-doc/html/libanjuta/AnjutaCellRendererCaptionedImage.html
 share/gtk-doc/html/libanjuta/AnjutaLauncher.html
 share/gtk-doc/html/libanjuta/AnjutaPlugin.html
 share/gtk-doc/html/libanjuta/AnjutaPreferences.html
@@ -1538,6 +1539,7 @@ share/icons/hicolor/32x32/apps/anjuta.png
 share/icons/hicolor/48x48/apps/anjuta.png
 share/icons/hicolor/scalable/apps/anjuta.svg
 share/locale/ar/LC_MESSAGES/anjuta.mo
+share/locale/ast/LC_MESSAGES/anjuta.mo
 share/locale/az/LC_MESSAGES/anjuta.mo
 share/locale/be/LC_MESSAGES/anjuta.mo
 share/locale/be@latin/LC_MESSAGES/anjuta.mo

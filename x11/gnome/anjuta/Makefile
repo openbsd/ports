@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2011/10/17 14:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2011/10/19 12:17:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.2.0
-REVISION=		2
+GNOME_VERSION=		3.2.1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -34,7 +33,7 @@ WANTLIB += gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gssapi gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 icudata icui18n icuuc jpeg
-WANTLIB += krb5 kvm m ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += krb5 m ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2
 WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
@@ -60,8 +59,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3
-
-BUILD_DEPENDS+=		
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=		Yes
