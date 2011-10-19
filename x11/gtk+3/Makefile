@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/10/15 12:03:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/10/19 17:41:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,16 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-docs=	gtk+3-docs-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
+
+REVISION-main=	0
+REVISION-cups=	0
+
+# grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
+GTK_BINARY_VERSION=3.0.0
+SUBST_VARS=	GTK_BINARY_VERSION
+# XXX temporary, remove the following line from PLIST-main
+# (immodules.cache file moved, so give a change for people to update)
+# @unexec rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
 
 CATEGORIES=	x11 devel
 
