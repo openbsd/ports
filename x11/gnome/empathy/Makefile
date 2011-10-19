@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2011/10/19 11:32:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2011/10/19 12:52:01 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -14,11 +15,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=		devel/dconf \
-			devel/gettext \
-			lang/python \
-			x11/gnome
 
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
@@ -40,12 +36,16 @@ WANTLIB += sqlite3 ssl3 stdc++ tasn1 telepathy-farsight telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisfile webkitgtk-3.0 xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z
 
+MODULES=		devel/dconf \
+			devel/gettext \
+			lang/python \
+			x11/gnome
+
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 #XXX see below		x11/gnome/nautilus-sendto
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio \
-			devel/libunique \
 			geo/geoclue \
 			net/telepathy/folks>=0.6.3.2p0 \
 			net/telepathy/telepathy-farsight \
@@ -64,24 +64,27 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
-MODGCONF2_SCHEMAS_DIR=	empathy
 
 CONFIGURE_ARGS+=	--enable-spell=Yes \
 			--enable-location=Yes \
 			--enable-control-center-embedding=no \
-			--with-connectivity=no \
 			--with-eds \
 			--with-ca-file=/etc/ssl/cert.pem \
 			--disable-Werror \
-			--enable-call=no \
-			--enable-goa=yes
+			--enable-goa
+
+# needs connman or network-manager
+CONFIGURE_ARGS+=	--with-connectivity=no
+
 # XXX: Disable map plugin as this requires libchamplain (+clutter)
 CONFIGURE_ARGS+=	--enable-map=no
+# XXX: Disable call plugin as this requires a newer clutter
+CONFIGURE_ARGS+=	--enable-call=no
 # XXX lots of 'libnstempathy.so: undefined symbol' at runtime
 # revisit when telepathy-yell is moved out from empathy(?)
-CONFIGURE_ARGS+=	--disable-nautilus-sendto \
+CONFIGURE_ARGS+=	--disable-nautilus-sendto
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 
 FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 
