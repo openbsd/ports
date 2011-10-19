@@ -1,5 +1,3 @@
-# $Cambridge: exim/src/src/EDITME,v 1.27 2010/06/12 15:21:25 jetmore Exp $
-
 ##################################################
 #          The Exim mail transport agent         #
 ##################################################
@@ -1205,6 +1203,26 @@ PID_FILE_PATH=/var/run/exim.pid
 
 # SUPPORT_MOVE_FROZEN_MESSAGES=yes
 
+
+#------------------------------------------------------------------------------
+# Expanding match_* second paramters: BE CAREFUL IF ENABLING THIS!
+# It has proven too easy in practice for administrators to configure security
+# problems into their Exim install, by treating match_domain{}{} and friends
+# as a form of string comparison, where the second string comes from untrusted
+# data. Because these options take lists, which can include lookup;LOOKUPDATA
+# style elements, a foe can then cause Exim to, eg, execute an arbitrary MySQL
+# query, dropping tables.
+# From Exim 4.77 onwards, the second parameter is not expanded; it can still
+# be a list literal, or a macro, or a named list reference.  There is also
+# the new expansion condition "inlisti" which does expand the second parameter,
+# but treats it as a list of strings; also, there's "eqi" which is probably
+# what is normally wanted.
+#
+# If you really need to have the old behaviour, know what you are doing and
+# will not complain if your system is compromised as a result of doing so, then
+# uncomment this option to get the old behaviour back.
+
+# EXPAND_LISTMATCH_RHS=yes
 
 #------------------------------------------------------------------------------
 # Disabling the use of fsync(): DO NOT UNCOMMENT THE FOLLOWING LINE unless you
