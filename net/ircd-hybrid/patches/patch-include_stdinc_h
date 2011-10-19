@@ -1,12 +1,12 @@
-$OpenBSD: patch-include_stdinc_h,v 1.1 2009/02/09 15:14:22 form Exp $
---- include/stdinc.h.orig	Wed Feb 28 10:17:43 2007
-+++ include/stdinc.h	Sun Feb  8 14:33:40 2009
-@@ -94,6 +94,8 @@
+$OpenBSD: patch-include_stdinc_h,v 1.2 2011/10/19 13:46:17 jasper Exp $
+--- include/stdinc.h.orig	Fri Oct 14 15:11:43 2011
++++ include/stdinc.h	Fri Oct 14 15:12:31 2011
+@@ -65,6 +65,8 @@
  #include <stdarg.h>
  #include <signal.h>
  #include <ctype.h>
 +#include <login_cap.h>
 +#include <pwd.h>
  
- #ifdef _WIN32
- #define PATH_MAX (MAX_PATH - 1)
+ #include <dirent.h>
+ #include <netdb.h>

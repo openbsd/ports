@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_defaults_h,v 1.2 2009/02/09 15:14:22 form Exp $
---- include/defaults.h.orig	Wed Feb 28 10:17:43 2007
-+++ include/defaults.h	Sun Feb  8 14:28:26 2009
-@@ -47,14 +47,19 @@
+$OpenBSD: patch-include_defaults_h,v 1.3 2011/10/19 13:46:17 jasper Exp $
+--- include/defaults.h.orig	Thu Aug 18 12:21:47 2011
++++ include/defaults.h	Fri Oct 14 15:08:11 2011
+@@ -47,6 +47,11 @@
   * AUTOMODPATH = directory for autoloaded modules
   */
  
@@ -11,27 +11,25 @@ $OpenBSD: patch-include_defaults_h,v 1.2 2009/02/09 15:14:22 form Exp $
 +#endif
 +
  /* dirs */
- #define DPATH       IRCD_PREFIX                                                     
- #define BINPATH     IRCD_PREFIX "/bin/"
--#define MSGPATH     IRCD_PREFIX "/messages/"
--#define ETCPATH     IRCD_PREFIX "/etc"
--#define LOGPATH     IRCD_PREFIX "/logs"
--#define MODPATH     IRCD_PREFIX "/modules/"
--#define AUTOMODPATH IRCD_PREFIX "/modules/autoload/"
-+#define MSGPATH     IRCD_PREFIX "/share/ircd-hybrid/messages/"
-+#define ETCPATH     "${SYSCONFDIR}/ircd-hybrid"
-+#define LOGPATH     "/var/log/ircd-hybrid"
-+#define MODPATH     IRCD_PREFIX "/lib/ircd-hybrid/modules/"
-+#define AUTOMODPATH IRCD_PREFIX "/lib/ircd-hybrid/modules/autoload/"
+ #define DPATH       PREFIX                                                     
+ #define SBINPATH    PREFIX "/sbin/"
+@@ -56,8 +61,8 @@
+ #define HPATH		    DATADIR "/" PACKAGE "/help/opers"
+ #define UHPATH		  DATADIR "/" PACKAGE "/help/users"
+ #define AUTOMODPATH	MODPATH "/autoload/"
+-#define ETCPATH     SYSCONFDIR
+-#define	LOGPATH		  LOCALSTATEDIR "/log"
++#define ETCPATH     SYSCONFDIR "/ircd-hybrid/"
++#define	LOGPATH		  LOCALSTATEDIR "/log/ircd-hybrid"
  
  /* files */
- #define SPATH   BINPATH "/ircd"                 /* ircd executable */
-@@ -70,7 +75,7 @@
+ #define SPATH   SBINPATH "/ircd"                /* ircd executable */
+@@ -73,7 +78,7 @@
  #define RKPATH  ETCPATH "/rkline.conf"
  #define MPATH   ETCPATH "/ircd.motd"            /* MOTD file */
  #define LPATH   LOGPATH "/ircd.log"             /* ircd logfile */
--#define PPATH   ETCPATH "/ircd.pid"             /* pid file */
-+#define PPATH   "/var/run/ircd/ircd.pid"        /* pid file */
+-#define PPATH   LOCALSTATEDIR "/ircd.pid"             /* pid file */
++#define PPATH   LOCALSTATEDIR "/run/ircd-hybrid/ircd.pid" /* pid file */
  #define OPATH   ETCPATH "/opers.motd"           /* oper MOTD file */
  #define LIPATH  ETCPATH "/links.txt"            /* cached links file */
  

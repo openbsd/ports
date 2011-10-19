@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_core_Makefile_in,v 1.1 2011/10/19 13:46:17 jasper Exp $
+--- modules/core/Makefile.in.orig	Thu Aug 18 12:21:47 2011
++++ modules/core/Makefile.in	Wed Oct 19 08:53:25 2011
+@@ -642,7 +642,6 @@ install-dvi-am:
+ 
+ install-exec-am:
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ install-html: install-html-am
+ 
+ install-html-am:

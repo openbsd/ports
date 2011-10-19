@@ -1,12 +1,35 @@
-$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2009/01/28 23:35:07 bernd Exp $
---- etc/Makefile.in.orig	Wed Feb 28 05:17:53 2007
-+++ etc/Makefile.in	Mon Apr 14 15:23:40 2008
-@@ -10,7 +10,7 @@ TEST		= @TEST@
- CLOBBER=@CLOBBER@
+$OpenBSD: patch-etc_Makefile_in,v 1.2 2011/10/19 13:46:17 jasper Exp $
+--- etc/Makefile.in.orig	Fri Oct 14 15:18:51 2011
++++ etc/Makefile.in	Fri Oct 14 15:24:01 2011
+@@ -257,24 +257,24 @@ clean-libtool:
+ 	-rm -rf .libs _libs
+ install-dist_sysconfDATA: $(dist_sysconf_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(sysconfdir)" || $(MKDIR_P) "$(DESTDIR)$(sysconfdir)"
+-	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
++	test -z "$(prefix)/share/examples/ircd-hybrid" || $(MKDIR_P) "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid"
++	@list='$(dist_sysconf_DATA)'; test -n "$(prefix)/share/examples/ircd-hybrid" || list=; \
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(sysconfdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(sysconfdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(prefix)/share/examples/ircd-hybrid'"; \
++	  $(INSTALL_DATA) $$files "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" || exit $$?; \
+ 	done
  
- prefix		= $(DESTDIR)@prefix@
--sysconfdir	= $(DESTDIR)@sysconfdir@
-+sysconfdir	= $(DESTDIR)@prefix@/share/examples/ircd-hybrid
- exec_prefix	= $(DESTDIR)@exec_prefix@
- datarootdir	= $(DESTDIR)@datarootdir@
+ uninstall-dist_sysconfDATA:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(dist_sysconf_DATA)'; test -n "$(sysconfdir)" || list=; \
++	@list='$(dist_sysconf_DATA)'; test -n "$(prefix)/share/examples/ircd-hybrid" || list=; \
+ 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
+ 	test -n "$$files" || exit 0; \
+-	echo " ( cd '$(DESTDIR)$(sysconfdir)' && rm -f" $$files ")"; \
+-	cd "$(DESTDIR)$(sysconfdir)" && rm -f $$files
++	echo " ( cd '$(DESTDIR)$(prefix)/share/examples/ircd-hybrid' && rm -f" $$files ")"; \
++	cd "$(DESTDIR)$(prefix)/share/examples/ircd-hybrid" && rm -f $$files
+ tags: TAGS
+ TAGS:
  
