@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fe-common_Makefile_am,v 1.1 2011/10/19 09:47:26 dcoppa Exp $
+--- src/fe-common/Makefile.am.orig	Tue Oct 18 15:12:19 2011
++++ src/fe-common/Makefile.am	Tue Oct 18 15:12:30 2011
+@@ -1,7 +1,7 @@
+ moduledir = $(libdir)/irssi/modules
+ 
+ module_LTLIBRARIES = libfe_icb.la
+-libfe_icb_la_LDFLAGS = -avoid-version
++libfe_icb_la_LDFLAGS = -module -avoid-version
+ 
+ INCLUDES = \
+ 	$(GLIB_CFLAGS) \

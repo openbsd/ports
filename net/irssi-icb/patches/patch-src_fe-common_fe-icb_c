@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.3 2011/06/14 10:22:16 sthen Exp $
---- src/fe-common/fe-icb.c.orig	Sat Apr 27 21:56:18 2002
-+++ src/fe-common/fe-icb.c	Tue Jun 14 10:40:30 2011
-@@ -24,27 +24,65 @@
+$OpenBSD: patch-src_fe-common_fe-icb_c,v 1.4 2011/10/19 09:47:26 dcoppa Exp $
+--- src/fe-common/fe-icb.c.orig	Sat Apr 27 22:56:18 2002
++++ src/fe-common/fe-icb.c	Tue Oct 18 15:20:42 2011
+@@ -18,33 +18,73 @@
+     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ 
++#include <time.h>
++
+ #include "module.h"
+ #include "module-formats.h"
+ #include "signals.h"
  #include "commands.h"
  #include "servers-setup.h"
  #include "levels.h"
@@ -75,7 +83,7 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.3 2011/06/14 10:22:16 sthen Exp $
  static void event_error(ICB_SERVER_REC *server, const char *data)
  {
  	printformat(server, NULL, MSGLEVEL_CRAP, ICBTXT_ERROR, data);
-@@ -84,15 +122,351 @@ static void event_personal(ICB_SERVER_REC *server, con
+@@ -84,15 +124,351 @@ static void event_personal(ICB_SERVER_REC *server, con
          icb_split_free(args);
  }
  
@@ -428,7 +436,7 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.3 2011/06/14 10:22:16 sthen Exp $
  static void sig_server_add_fill(SERVER_SETUP_REC *rec,
  				GHashTable *optlist)
  {
-@@ -109,13 +483,23 @@ void fe_icb_init(void)
+@@ -109,13 +485,23 @@ void fe_icb_init(void)
  {
  	theme_register(fecommon_icb_formats);
  
@@ -453,7 +461,7 @@ $OpenBSD: patch-src_fe-common_fe-icb_c,v 1.3 2011/06/14 10:22:16 sthen Exp $
  
  	signal_add("server add fill", (SIGNAL_FUNC) sig_server_add_fill);
  	command_set_options("server add", "-icbnet");
-@@ -125,13 +509,23 @@ void fe_icb_init(void)
+@@ -125,13 +511,23 @@ void fe_icb_init(void)
  
  void fe_icb_deinit(void)
  {
