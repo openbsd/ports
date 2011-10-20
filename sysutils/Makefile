@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.250 2011/10/05 17:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.251 2011/10/20 10:59:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -65,6 +65,7 @@
      SUBDIR += gkrellm
      SUBDIR += glastree
      SUBDIR += god
+     SUBDIR += gource
      SUBDIR += gpioflicker
      SUBDIR += grub
      SUBDIR += gsmartcontrol
@@ -85,6 +86,7 @@
      SUBDIR += login_ldap
      SUBDIR += login_oath
      SUBDIR += logpp
+     SUBDIR += logstalgia
      SUBDIR += lsof
      SUBDIR += luastatgrab
      SUBDIR += mac-robber
