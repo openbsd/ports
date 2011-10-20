@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.1 2011/10/20 20:45:05 jasper Exp $
+
+Remove a few compiler options GCC 4.2.1 doesn't understand.
+
+--- configure.orig	Thu Oct 20 22:13:47 2011
++++ configure	Thu Oct 20 22:14:08 2011
+@@ -15844,18 +15844,18 @@ if test "$GCC" = "yes"; then
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wformat-security"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-include-dirs"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-format-attribute"
+-	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wclobbered"
+-	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wempty-body"
+-	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wignored-qualifiers"
++#	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wclobbered"
++#	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wempty-body"
++#	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wignored-qualifiers"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wsign-compare"
+-	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wtype-limits"
++#	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wtype-limits"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wuninitialized"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Waggregate-return"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wdeclaration-after-statement"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wshadow"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wno-strict-aliasing"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Winline"
+-	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-parameter-type"
++#	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-parameter-type"
+ 	WARNINGFLAGS_C="$WARNINGFLAGS_C -Woverride-init"
+ else
+ 	WARNINGFLAGS_C=""

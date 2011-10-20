@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2010/04/22 15:01:53 landry Exp $
-lib/giggle/plugins/0.5/libpersonal-details.so
-lib/giggle/plugins/0.5/libterminal-view.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2011/10/20 20:45:05 jasper Exp $
+lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.so
 @lib lib/libgiggle-git.so.${LIBgiggle-git_VERSION}
 @lib lib/libgiggle.so.${LIBgiggle_VERSION}
