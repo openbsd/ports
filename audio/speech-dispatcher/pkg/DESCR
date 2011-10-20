@@ -1,0 +1,17 @@
+The Speech Dispatcher project provides a high-level device independent
+layer for access to speech synthesis through a simple, stable and well
+documented interface.
+
+Key features:
+    o Common interface to different TTS engines.
+    o Handling concurrent synthesis requests - requests may come
+      assynchronously from multiple sources within an application and/or
+      from different applications.
+    o Subsequent serialization, resolution of conflicts and priorities
+      of incomming requests.
+    o Context switching - state is maintained for each client connection
+      independently, event for connections from within one application.
+    o High-level client interfaces for popular programming languages.
+    o Common sound output handling - audio playback is handled by Speech
+      Dispatcher rather than the TTS engine, since most engines have
+      limited sound output capabilities.
