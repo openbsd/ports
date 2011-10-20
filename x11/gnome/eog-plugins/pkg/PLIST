@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/27 07:56:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/10/20 11:53:54 jasper Exp $
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/fit-to-width.plugin
 @comment lib/eog/plugins/libexif-display.a
@@ -49,6 +49,7 @@ share/locale/ja/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
 share/locale/ko/LC_MESSAGES/eog-plugins.mo
 share/locale/lt/LC_MESSAGES/eog-plugins.mo
+share/locale/lv/LC_MESSAGES/eog-plugins.mo
 share/locale/mk/LC_MESSAGES/eog-plugins.mo
 share/locale/ml/LC_MESSAGES/eog-plugins.mo
 share/locale/mr/LC_MESSAGES/eog-plugins.mo
