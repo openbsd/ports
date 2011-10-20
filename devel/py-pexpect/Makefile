@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/10/20 19:02:33 rpointel Exp $
 
 COMMENT=	pure Python Expect-like module
 
-DISTNAME=	pexpect-2.1
+DISTNAME=	pexpect-2.3
 PKGNAME=	py-${DISTNAME}
-REVISION =	4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pexpect.sourceforge.net/
