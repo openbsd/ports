@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.36 2011/10/19 14:25:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2011/10/20 07:23:28 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
+@unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
 @extraunexec rm -rf /var/db/gdm/.ICEauthority
 @extraunexec rm -rf /var/db/gdm/.aucat_cookie
 @extraunexec rm -rf /var/db/gdm/.cache
@@ -49,7 +50,6 @@ lib/pkgconfig/gdmsimplegreeter.pc
 @bin libexec/gdm-simple-greeter
 @bin libexec/gdm-simple-slave
 @bin libexec/gdm-smartcard-worker
-libexec/gdm-update-dconf-db
 @bin libexec/gdm-xdmcp-chooser-slave
 sbin/gdm
 @bin sbin/gdm-binary
@@ -169,7 +169,6 @@ share/gdm/simple-greeter/extensions/smartcard/
 share/gdm/simple-greeter/extensions/smartcard/page.ui
 share/gdm/simple-greeter/extensions/unified/
 share/gdm/simple-greeter/extensions/unified/page.ui
-share/gdm/upstream-settings
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
 share/gnome-session/
 share/gnome-session/sessions/
@@ -360,4 +359,5 @@ ${SCHEMAS_INSTDIR}/gdm-simple-greeter.schemas
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/dconf update
 @rcscript ${RCDIR}/gdm

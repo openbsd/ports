@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2011/10/19 14:25:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2011/10/20 07:23:28 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -7,8 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.2.1
-REVISION=		0
+GNOME_VERSION=		3.2.1.1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -106,7 +105,6 @@ pre-configure:
 		${WRKSRC}/data/applications/mime-dummy-handler.desktop \
 		${WRKSRC}/configure \
 		${WRKSRC}/data/00-upstream-settings \
-		${WRKSRC}/data/upstream-settings \
 		${WRKSRC}/data/session-setup.entries
 .for i in gdm-simple-greeter gnome-session-check-accelerated gnome-settings-daemon
 	perl -pi -e 's,/usr/libexec,${PREFIX},g' \
