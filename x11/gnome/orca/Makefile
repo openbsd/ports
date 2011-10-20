@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2011/10/18 07:57:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/10/20 11:32:38 ajacoutot Exp $
 
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -20,7 +21,9 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			x11/gtk+3
 RUN_DEPENDS=		x11/gnome/py-atspi>=2.2.0 \
 			devel/py-xdg \
-			x11/dbus-python
+			x11/dbus-python \
+			audio/speech-dispatcher \
+			devel/liblouis
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
