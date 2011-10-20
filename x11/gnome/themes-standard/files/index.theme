@@ -1,0 +1,4 @@
+# $OpenBSD: index.theme,v 1.1 2011/10/20 06:14:04 ajacoutot Exp $
+
+[Icon Theme]
+Inherits=Adwaita

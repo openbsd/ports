@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/10/19 18:45:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/10/20 06:14:04 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec rm -f %D/share/icons/HighContrast/icon-theme.cache
 @unexec rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
@@ -587,6 +587,8 @@ share/icons/LowContrast/48x48/stock/zoom-in.png
 share/icons/LowContrast/48x48/stock/zoom-original.png
 share/icons/LowContrast/48x48/stock/zoom-out.png
 share/icons/LowContrast/index.theme
+share/icons/default/
+share/icons/default/index.theme
 share/locale/af/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/an/
 share/locale/an/LC_MESSAGES/
