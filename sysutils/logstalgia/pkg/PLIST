@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/20 10:58:21 jasper Exp $
+@bin bin/logstalgia
+@man man/man1/logstalgia.1
+share/logstalgia/
+share/logstalgia/ball.tga
+share/logstalgia/example.log
+share/logstalgia/fonts/
+share/logstalgia/fonts/FreeMonoBold.ttf
+share/logstalgia/fonts/FreeSerif.ttf
+share/logstalgia/fonts/README
+share/logstalgia/glow.tga

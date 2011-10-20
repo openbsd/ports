@@ -1,0 +1,14 @@
+Logstalgia is a website traffic visualization that replays or streams
+Apache web-server access logs as a pong-like battle between the web
+server and an never ending torrent of requests.
+
+Requests appear as colored balls (the same color as the host) which
+travel across the screen to arrive at the requested location. Successful
+requests are hit by the paddle while unsuccessful ones (eg 404 - File
+Not Found) are missed and pass through.
+
+The paths of requests are summarized within the available space by
+identifying common path prefixes. Related paths are grouped together
+under headings. For instance, by default paths ending in png, gif or jpg
+are grouped under the heading Images. Paths that don't match any of the
+specified groups are lumped together under a Miscellaneous section.
