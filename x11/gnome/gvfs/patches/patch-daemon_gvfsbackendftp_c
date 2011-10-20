@@ -1,0 +1,43 @@
+$OpenBSD: patch-daemon_gvfsbackendftp_c,v 1.5 2011/10/20 15:35:29 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=662301
+
+--- daemon/gvfsbackendftp.c.orig	Thu Oct 20 17:15:18 2011
++++ daemon/gvfsbackendftp.c	Thu Oct 20 17:15:29 2011
+@@ -689,28 +689,7 @@ try_mount (GVfsBackend *backend,
+   return FALSE;
+ }
+ 
+-static void
+-do_unmount (GVfsBackend *   backend,
+-            GVfsJobUnmount *job,
+-            GMountUnmountFlags flags,
+-            GMountSource *mount_source)
+-{
+-  GVfsBackendFtp *ftp = G_VFS_BACKEND_FTP (backend);
+-  GVfsFtpConnection *conn;
+ 
+-  g_mutex_lock (ftp->mutex);
+-  while ((conn = g_queue_pop_head (ftp->queue)))
+-    {
+-      /* FIXME: properly quit */
+-      g_vfs_ftp_connection_free (conn);
+-    }
+-  g_queue_free (ftp->queue);
+-  ftp->queue = NULL;
+-  g_cond_broadcast (ftp->cond);
+-  g_mutex_unlock (ftp->mutex);
+-  g_vfs_job_succeeded (G_VFS_JOB (job));
+-}
+-
+ /* NB: sets EPERM if file exists, ENOENT if not - an error will _always_ be set */
+ static void
+ error_550_permission_or_not_found (GVfsFtpTask *task, gpointer file)
+@@ -1670,7 +1649,6 @@ g_vfs_backend_ftp_class_init (GVfsBackendFtpClass *kla
+ 
+   backend_class->mount = do_mount;
+   backend_class->try_mount = try_mount;
+-  backend_class->unmount = do_unmount;
+   backend_class->open_for_read = do_open_for_read;
+   backend_class->close_read = do_close_read;
+   backend_class->read = do_read;
