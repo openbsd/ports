@@ -1,0 +1,23 @@
+$OpenBSD: patch-runtime_vm386_c,v 1.1 2011/10/21 20:23:02 jasper Exp $
+--- runtime/vm386.c.orig	Wed Dec 15 14:39:11 2010
++++ runtime/vm386.c	Thu Oct 20 19:01:29 2011
+@@ -1137,19 +1137,9 @@ code_addr *vm_jumptable(int n) {
+      return (code_addr *) limit;
+ }
+ 
+-#ifdef USE_MPROTECT
+-#include <sys/mman.h>
+-#endif
+-
+ static void check_space(int space) {
+      if (codebuf == NULL || pc + space > limit - MARGIN) {
+ 	  code_addr p = vm_alloc(CODEPAGE);
+-#ifdef USE_MPROTECT
+-	  if (mprotect(p, CODEPAGE, PROT_READ|PROT_WRITE|PROT_EXEC) < 0) {
+-	       perror("mprotect failed");
+-	       exit(2);
+-	  }
+-#endif
+ 	  if (codebuf != NULL) jump_i(p);
+ 
+ 	  codebuf = p; limit = p + CODEPAGE;

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/21 20:23:02 jasper Exp $
 
-# Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1090 of file gc.c
+# Fatal error: assertion sizeof(page_index) == GC_PAGESIZE failed on line 1110 of file gc.c
 ONLY_FOR_ARCHS= i386
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Oxford Oberon-2 compiler
 
-DISTNAME =	obc-2.9.1
+DISTNAME =	obc-2.9.2
 CATEGORIES =	lang
 
 HOMEPAGE =	http://spivey.oriel.ox.ac.uk/corner/Oxford_Oberon-2_compiler
@@ -46,8 +46,7 @@ CONFIGURE_ENV =		CFLAGS="${CFLAGS} -m32 -I${X11BASE}/include" \
 			TCLSH="${MODTCL_BIN}" \
 			DLFLAGS="-Wl,-E"
 
-FAKE_FLAGS =		prefix="${WRKINST}${PREFIX}" \
-			mandir="${WRKINST}${PREFIX}/man"
+FAKE_FLAGS =		prefix="${WRKINST}${PREFIX}"
 
 MAKE_ENV +=		STRIP="/usr/bin/true"
 

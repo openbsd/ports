@@ -1,0 +1,35 @@
+$OpenBSD: patch-runtime_gc_c,v 1.1 2011/10/21 20:23:02 jasper Exp $
+--- runtime/gc.c.orig	Wed Mar 23 12:38:21 2011
++++ runtime/gc.c	Thu Oct 20 19:10:33 2011
+@@ -108,6 +108,12 @@ typedef unsigned word;
+ #include <fcntl.h>
+ #include <sys/mman.h>
+ 
++#ifdef USE_MPROTECT
++#include <sys/mman.h>
++#endif
++
++#include <assert.h>
++
+ static void *grab_chunk(unsigned size) {
+      void *p;
+      static void *last_addr = NULL;
+@@ -125,6 +131,18 @@ static void *grab_chunk(unsigned size) {
+      }
+ 
+      p = mmap(last_addr, size, PROT_READ|PROT_WRITE, MAP_PRIVATE, zero_fd, 0);
++     assert(p != MAP_FAILED);
++#endif
++
++/*
++    XXX: mprotect call moved here from vm386.check_space due to obc-2.9.2 bug
++    (see CoordTransformTest regression test for details)
++*/
++#ifdef USE_MPROTECT
++     if (mprotect(p, size, PROT_READ|PROT_WRITE|PROT_EXEC) < 0) {
++	  perror("mprotect failed");
++	  exit(2);
++     }
+ #endif
+ 
+      last_addr = p;

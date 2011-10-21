@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_bigtest_in,v 1.1 2011/10/21 20:23:02 jasper Exp $
+--- test/bigtest.in.orig	Thu Jun 30 01:40:55 2011
++++ test/bigtest.in	Thu Jun 30 01:41:05 2011
+@@ -67,7 +67,7 @@ echo Fib
+     && ./fib | $fixup | cmp $srcdir/Fib.out -)
+ 
+ echo Browser
+-($browser Files | cmp $srcdir/File.out -)
++($browser Files | cmp $srcdir/Files.out -)
+ 
+ exit
+ 

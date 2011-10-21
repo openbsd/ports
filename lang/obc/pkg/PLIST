@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/21 20:23:02 jasper Exp $
 bin/obb
 bin/obc
 bin/obdb
@@ -74,7 +74,3 @@ lib/obc/sober.xml
 lib/obc/stepinto.png
 lib/obc/stepout.png
 lib/obc/stepover.png
-@man man/man1/obb.1
-@man man/man1/obc.1
-@man man/man1/obdump.1
-@man man/man1/obprof.1
