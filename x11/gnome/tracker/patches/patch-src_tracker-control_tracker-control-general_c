@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.3 2011/10/16 08:54:53 ajacoutot Exp $
---- src/tracker-control/tracker-control-general.c.orig	Sun Oct 16 09:37:10 2011
-+++ src/tracker-control/tracker-control-general.c	Sun Oct 16 09:44:23 2011
+$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.4 2011/10/21 14:26:56 ajacoutot Exp $
+--- src/tracker-control/tracker-control-general.c.orig	Thu Oct 20 17:37:11 2011
++++ src/tracker-control/tracker-control-general.c	Fri Oct 21 15:27:49 2011
 @@ -21,6 +21,16 @@
  
  #include <errno.h>
@@ -40,13 +40,8 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.3 2011/10/16 0
  	    list_processes) {
 -		guint32 own_pid;
 -		guint32 own_uid;
--		gchar *own_uid_str;
-+		gchar *basename, **strv;
-+		int i, nproc;
-+		struct kinfo_proc *plist, *kp;
-+		char buf[_POSIX2_LINE_MAX];
-+		kvm_t *kd;
- 
+-		gchar *own_pid_str;
+-
 -		pids = get_pids ();
 -		str = g_strdup_printf (g_dngettext (NULL,
 -		                                    "Found %d PID…",
@@ -55,20 +50,13 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.3 2011/10/16 0
 -		                       g_slist_length (pids));
 -		g_print ("%s\n", str);
 -		g_free (str);
-+		if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, buf)) == NULL) {
-+			printf("%s\n", buf);
-+			return EXIT_FAILURE;
-+		}
- 
+-
 -		/* Establish own uid/pid */
 -		own_pid = (guint32) getpid ();
--		own_uid_str = g_strdup_printf ("%d", own_pid);
--		own_uid = get_uid_for_pid (own_uid_str, NULL);
--		g_free (own_uid_str);
-+		plist = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(*plist), &nproc);
-+		if (plist == NULL)
-+			return EXIT_FAILURE;
- 
+-		own_pid_str = g_strdup_printf ("%d", own_pid);
+-		own_uid = get_uid_for_pid (own_pid_str, NULL);
+-		g_free (own_pid_str);
+-
 -		for (l = pids; l; l = l->next) {
 -			GError *error = NULL;
 -			gchar *filename;
@@ -80,12 +68,27 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.3 2011/10/16 0
 -
 -			/* Stat the file and make sure current user == file owner */
 -			if (uid != own_uid) {
++		gchar *basename, **strv;
++		int i, nproc;
++		struct kinfo_proc *plist, *kp;
++		char buf[_POSIX2_LINE_MAX];
++		kvm_t *kd;
++ 
++		if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, buf)) == NULL) {
++			printf("%s\n", buf);
++			return EXIT_FAILURE;
++		}
++ 
++		plist = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(*plist), &nproc);
++		if (plist == NULL)
++			return EXIT_FAILURE;
++ 
 +		for (i = 0, kp = plist; i < nproc; i++, kp++) {
 +			if ((kp->p_flag & P_SYSTEM) != 0)
  				continue;
 -			}
  
--			/* Get contents to determin basename */
+-			/* Get contents to determine basename */
 -			if (!g_file_get_contents (filename, &contents, NULL, &error)) {
 -				str = g_strdup_printf (_("Could not open '%s'"), filename);
 -				g_printerr ("%s, %s\n",
@@ -97,11 +100,12 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.3 2011/10/16 0
 -				g_free (filename);
 +				if ((strv = kvm_getargv(kd, kp, 0)) == NULL)
 +					continue;
++ 
++				basename = g_path_get_basename(strv[0]);
  
 -				continue;
 -			}
-+				basename = g_path_get_basename(strv[0]);
- 
+-
 -			strv = g_strsplit (contents, "^@", 2);
 -			if (strv && strv[0]) {
 -				gchar *basename;

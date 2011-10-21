@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-text_c,v 1.2 2011/09/26 12:31:40 ajacoutot Exp $
---- src/tracker-extract/tracker-extract-text.c.orig	Mon Sep 26 11:27:10 2011
-+++ src/tracker-extract/tracker-extract-text.c	Mon Sep 26 12:31:22 2011
-@@ -61,10 +61,14 @@ get_file_content (GFile *file,
+$OpenBSD: patch-src_tracker-extract_tracker-extract-text_c,v 1.3 2011/10/21 14:26:56 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-text.c.orig	Thu Oct 20 17:37:11 2011
++++ src/tracker-extract/tracker-extract-text.c	Fri Oct 21 15:22:12 2011
+@@ -60,10 +60,14 @@ get_file_content (GFile *file,
  	/* Get filename from URI */
  	path = g_file_get_path (file);
  
