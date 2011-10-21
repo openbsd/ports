@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/20 11:31:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/21 13:01:11 ajacoutot Exp $
 
 COMMENT=	braille translator and back-translator
 
@@ -21,6 +21,8 @@ WANTLIB += c
 MASTER_SITES=	http://liblouis.googlecode.com/files/
 
 MODULES=	lang/python
+
+BUILD_DEPENDS=	devel/help2man
 
 USE_LIBTOOL=	Yes
 
