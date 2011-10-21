@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/20 18:55:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/21 10:50:23 jasper Exp $
 @pkgpath net/pymsn
 lib/python${MODPY_VERSION}/site-packages/papyon/
 lib/python${MODPY_VERSION}/site-packages/papyon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -166,10 +166,6 @@ lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/base.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/base.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/default.py
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/default.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/nat_traversal.py
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/nat_traversal.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/notification.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/notification.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/switchboard.py
