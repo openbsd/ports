@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.18 2010/10/28 09:29:27 espie Exp $
+# $OpenBSD: config.site,v 1.19 2011/10/21 08:51:55 espie Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -1122,3 +1122,31 @@ ac_cv_lib_X11_XkbQueryExtension=${ac_cv_lib_X11_XkbQueryExtension=yes}
 #ac_cv_lib_Xft_XftInit=${ac_cv_lib_Xft_XftInit=yes}
 ac_cv_lib_Xinerama_XineramaIsActive=${ac_cv_lib_Xinerama_XineramaIsActive=yes}
 ac_cv_lib_freetype_FT_Init_FreeType=${ac_cv_lib_freetype_FT_Init_FreeType=yes}
+ac_cv_func_btowc=${ac_cv_func_btowc=yes}
+ac_cv_func_fdopendir=${ac_cv_func_fdopendir=yes}
+ac_cv_func_flockfile=${ac_cv_func_flockfile=yes}
+ac_cv_func_futimens=${ac_cv_func_futimens=yes}
+ac_cv_func_futimes=${ac_cv_func_futimes=yes}
+ac_cv_func_iswblank=${ac_cv_func_iswblank=yes}
+ac_cv_func_iswcntrl=${ac_cv_func_iswcntrl=yes}
+ac_cv_func_iswctype=${ac_cv_func_iswctype=yes}
+ac_cv_func_linkat=${ac_cv_func_linkat=yes}
+ac_cv_func_mbrtowc=${ac_cv_func_mbrtowc=yes}
+ac_cv_func_mbsinit=${ac_cv_func_mbsinit=yes}
+ac_cv_func_mbsrtowcs=${ac_cv_func_mbsrtowcs=yes}
+ac_cv_func_mkfifoat=${ac_cv_func_mkfifoat=yes}
+ac_cv_func_mknodat=${ac_cv_func_mknodat=yes}
+ac_cv_func_readlinkat=${ac_cv_func_readlinkat=yes}
+ac_cv_func_renameat=${ac_cv_func_renameat=yes}
+ac_cv_func_sleep=${ac_cv_func_sleep=yes}
+ac_cv_func_symlinkat=${ac_cv_func_symlinkat=yes}
+ac_cv_func_utimensat=${ac_cv_func_utimensat=yes}
+ac_cv_func_wcrtomb=${ac_cv_func_wcrtomb=yes}
+ac_cv_func_wcscoll=${ac_cv_func_wcscoll=yes}
+ac_cv_func_wcwidth=${ac_cv_func_wcwidth=yes}
+ac_cv_func_wmemchr=${ac_cv_func_wmemchr=yes}
+ac_cv_func_wmemcpy=${ac_cv_func_wmemcpy=yes}
+ac_cv_header_wchar_h=${ac_cv_header_wchar_h=yes}
+ac_cv_header_wctype_h=${ac_cv_header_wctype_h=yes}
+ac_cv_type_dev_t=${ac_cv_type_dev_t=yes}
+ac_cv_type_ssize_t=${ac_cv_type_ssize_t=yes}
