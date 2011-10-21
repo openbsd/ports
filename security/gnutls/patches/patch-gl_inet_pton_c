@@ -1,6 +1,6 @@
-$OpenBSD: patch-gl_inet_pton_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
---- gl/inet_pton.c.orig	Wed May  4 16:59:41 2011
-+++ gl/inet_pton.c	Wed May  4 17:02:35 2011
+$OpenBSD: patch-gl_inet_pton_c,v 1.2 2011/10/21 15:38:15 ajacoutot Exp $
+--- gl/inet_pton.c.orig	Mon Oct  3 17:41:55 2011
++++ gl/inet_pton.c	Fri Oct 21 17:21:51 2011
 @@ -35,6 +35,7 @@
  #include <config.h>
  
@@ -8,4 +8,4 @@ $OpenBSD: patch-gl_inet_pton_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
 +#include <netinet/in.h>
  #include <arpa/inet.h>
  
- #include <c-ctype.h>
+ #if HAVE_DECL_INET_PTON

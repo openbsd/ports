@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_configure,v 1.6 2011/10/03 15:32:24 ajacoutot Exp $
---- lib/configure.orig	Sun Sep 18 20:31:32 2011
-+++ lib/configure	Mon Oct  3 17:00:27 2011
-@@ -18577,21 +18577,9 @@ else
+$OpenBSD: patch-lib_configure,v 1.7 2011/10/21 15:38:15 ajacoutot Exp $
+--- lib/configure.orig	Thu Oct 20 20:59:56 2011
++++ lib/configure	Fri Oct 21 17:21:51 2011
+@@ -18729,21 +18729,9 @@ else
    ZLIB_HAS_PKGCONFIG=n
  fi
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-lib_configure,v 1.6 2011/10/03 15:32:24 ajacoutot Exp $
  # Check whether --with-p11-kit was given.
  if test "${with_p11_kit+set}" = set; then :
    withval=$with_p11_kit;
-@@ -26951,7 +26939,7 @@ fi
+@@ -27784,7 +27772,7 @@ fi
              done
            fi
            if test "X$found_dir" != "X"; then
@@ -32,7 +32,7 @@ $OpenBSD: patch-lib_configure,v 1.6 2011/10/03 15:32:24 ajacoutot Exp $
              if test "X$found_so" != "X"; then
                                                          if test "$enable_rpath" = no || test "X$found_dir" = "X/usr/$acl_libdirstem"; then
                                  LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_so"
-@@ -27004,7 +26992,7 @@ fi
+@@ -27837,7 +27825,7 @@ fi
                      if test "$acl_hardcode_minus_L" != no; then
                                                                                          LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_so"
                      else
@@ -41,7 +41,7 @@ $OpenBSD: patch-lib_configure,v 1.6 2011/10/03 15:32:24 ajacoutot Exp $
                      fi
                    fi
                  fi
-@@ -27013,7 +27001,7 @@ fi
+@@ -27846,7 +27834,7 @@ fi
                if test "X$found_a" != "X"; then
                                  LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_a"
                else
@@ -50,7 +50,7 @@ $OpenBSD: patch-lib_configure,v 1.6 2011/10/03 15:32:24 ajacoutot Exp $
                fi
              fi
                          additional_includedir=
-@@ -27163,8 +27151,8 @@ fi
+@@ -27996,8 +27984,8 @@ fi
                done
              fi
            else

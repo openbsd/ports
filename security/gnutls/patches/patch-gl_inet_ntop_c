@@ -1,6 +1,6 @@
-$OpenBSD: patch-gl_inet_ntop_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
---- gl/inet_ntop.c.orig	Wed May  4 16:59:41 2011
-+++ gl/inet_ntop.c	Wed May  4 17:02:33 2011
+$OpenBSD: patch-gl_inet_ntop_c,v 1.2 2011/10/21 15:38:15 ajacoutot Exp $
+--- gl/inet_ntop.c.orig	Mon Oct  3 17:41:55 2011
++++ gl/inet_ntop.c	Fri Oct 21 17:21:51 2011
 @@ -36,6 +36,7 @@
  #include <config.h>
  
@@ -8,4 +8,4 @@ $OpenBSD: patch-gl_inet_ntop_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
 +#include <netinet/in.h>
  #include <arpa/inet.h>
  
- #include <stdio.h>
+ #if HAVE_DECL_INET_NTOP
