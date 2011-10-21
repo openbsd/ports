@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/17 06:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/21 20:19:03 jasper Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -34,7 +34,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/py-gobject3
 LIB_DEPENDS=	x11/gtk+3
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.68
+CONFIGURE_STYLE=autoconf
 
 MODGNOME_TOOLS= goi
 
