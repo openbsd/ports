@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1117 2011/10/21 16:35:14 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1118 2011/10/21 16:52:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1671,7 +1671,7 @@ ${_PACKAGE_COOKIE${_S}}:
 		${_register_plist} $$tmp && \
 		mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
 		mode=`id -u`:`id -g` && \
-		${SUDO} ${CHOWN} $${mode} ${_PACKAGE_COOKIE${_S}}; then \
+		${SUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
 		 	exit 0; \
 	else \
 		${SUDO} rm -f $$tmp; \
