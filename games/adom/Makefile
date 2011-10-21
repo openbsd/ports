@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/12/03 07:27:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/10/21 21:38:42 espie Exp $
 # Author: Thomas Biskup <rpg@saranxis.ruhr.de>
 
 COMMENT =	Ancient Domains of Mystery - roguelike
@@ -32,11 +32,6 @@ ADOMOWN ?=	games
 
 # can't be changed except by patching the binary
 HISCORE_DIR =	/var/lib/adom
-
-.if !defined(NO_WARNINGS)
-pre-fetch:
-	@echo "Your kernel must have COMPAT_LINUX (GENERIC does)"
-.endif
 
 RUN_DEPENDS =	emulators/fedora/base
 
