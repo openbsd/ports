@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/17 06:53:35 stu Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	multi-entry widget package for Tcl/Tk
 
@@ -46,6 +46,6 @@ do-install:
 		demos	*.tcl		${MT_EXA_DIR}
 	${INSTALL_DATA} ${WRKSRC}/${SRC}/${GLOB} ${DEST}
 .endfor
-	${CHMOD} ${BINMODE} ${EXA_SCRIPTS:S!^!${MT_EXA_DIR}/!}
+	chmod ${BINMODE} ${EXA_SCRIPTS:S!^!${MT_EXA_DIR}/!}
 
 .include <bsd.port.mk>

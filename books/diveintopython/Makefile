@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/24 06:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/21 16:23:44 espie Exp $
 
 COMMENT=	book about Python for experienced programmers
 
@@ -41,6 +41,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${DOC}/print
 	${INSTALL_DATA} ${WRKSRC}/diveintopython.pdf ${DOC}/print
 
-	${CHOWN} -R ${DOCOWN}:${DOCGRP} ${DOC}
+	chown -R ${DOCOWN}:${DOCGRP} ${DOC}
 
 .include <bsd.port.mk>

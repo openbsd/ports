@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/21 16:23:45 espie Exp $
 
 COMMENT=	concurrent multi-player battle strategy game
 
@@ -27,14 +27,14 @@ post-install:
 	@cp -R $(WRKSRC)/xbas $(PREFIX)/share/xbattle/
 	@cp -R $(WRKSRC)/xbos $(PREFIX)/share/xbattle/
 	@cp -R $(WRKSRC)/xbts $(PREFIX)/share/xbattle/
-	@${CHMOD} 755 $(PREFIX)/share/doc/xbattle
-	@${CHMOD} 644 $(PREFIX)/share/doc/xbattle/*
-	@${CHMOD} 755 ${PREFIX}/share/xbattle
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbas
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbas/*
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbos
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbos/*
-	@${CHMOD} 755 ${PREFIX}/share/xbattle/xbts
-	@${CHMOD} 644 ${PREFIX}/share/xbattle/xbts/*
+	@chmod 755 $(PREFIX)/share/doc/xbattle
+	@chmod 644 $(PREFIX)/share/doc/xbattle/*
+	@chmod 755 ${PREFIX}/share/xbattle
+	@chmod 755 ${PREFIX}/share/xbattle/xbas
+	@chmod 644 ${PREFIX}/share/xbattle/xbas/*
+	@chmod 755 ${PREFIX}/share/xbattle/xbos
+	@chmod 644 ${PREFIX}/share/xbattle/xbos/*
+	@chmod 755 ${PREFIX}/share/xbattle/xbts
+	@chmod 644 ${PREFIX}/share/xbattle/xbts/*
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/23 20:00:24 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2011/10/21 16:23:45 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -70,11 +70,11 @@ post-install:
 .if ${MULTI_PACKAGES:L:M-zope}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/zope/lib/python/Products/
 	cd ${WRKSRC}; tar cf - ZPsycopgDA | tar xf - -C ${PREFIX}/lib/zope/lib/python/Products
-	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/zope/lib/python/Products/ZPsycopgDA
+	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/zope/lib/python/Products/ZPsycopgDA
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-psycopg/
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/* \
 		${PREFIX}/share/examples/py-psycopg/
-	${CHOWN} ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so
+	chown ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so
 
 .include <bsd.port.mk>

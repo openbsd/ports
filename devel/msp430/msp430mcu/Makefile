@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/27 19:20:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/21 16:23:45 espie Exp $
 
 PKG_ARCH=	*
 
@@ -21,6 +21,6 @@ NO_REGRESS=	Yes
 do-install:
 	cd ${WRKSRC} && \
 		MSP430MCU_ROOT=${WRKSRC} /bin/sh scripts/install.sh ${PREFIX}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/msp430/
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/msp430/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	web error handling and exception catching
 
@@ -31,7 +31,7 @@ REGRESS_DEPENDS = ${RUN_DEPENDS} \
 MODPY_SETUPTOOLS =	Yes
 
 pre-build:
-	${CHMOD} 644 ${WRKSRC}/WebError.egg-info/*
+	chmod 644 ${WRKSRC}/WebError.egg-info/*
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests lib tests

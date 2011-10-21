@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/10/10 00:44:07 kurt Exp $
+# $OpenBSD: Makefile,v 1.27 2011/10/21 16:23:45 espie Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -184,7 +184,7 @@ pre-patch:
 .if !${FLAVOR:L:Mnative_bootstrap}
 post-patch:
 	@cd ${WRKDIR}/bin && \
-		${CHMOD} +x bootscript
+		chmod +x bootscript
 .for prog in java javac javah jar
 	@cd ${WRKDIR}/bin && \
 		ln -s bootscript ${prog}

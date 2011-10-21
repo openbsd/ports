@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/25 21:12:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
@@ -42,6 +42,6 @@ do-install:
 		${FILESDIR}/clojure \
 		${PREFIX}/bin/clojure
 	cd ${WRKDIST} && tar -cf - src | tar -C ${CLOJURE_HOME} -xf -
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${CLOJURE_HOME}/src
+	chown -R ${SHAREOWN}:${SHAREGRP} ${CLOJURE_HOME}/src
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/19 23:22:05 stu Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
@@ -51,8 +51,8 @@ do-install:
 .endfor
 	echo '#! /bin/sh' > ${EAGLE_BIN}
 	echo 'exec mono ${TRUEPREFIX}/${EAGLE_DIR}/bin/EagleShell.exe $${1+"$$@"}' >> ${EAGLE_BIN}
-	${CHOWN} ${BINOWN}:${BINGRP} ${EAGLE_BIN}
-	${CHMOD} ${BINMODE} ${EAGLE_BIN}
+	chown ${BINOWN}:${BINGRP} ${EAGLE_BIN}
+	chmod ${BINMODE} ${EAGLE_BIN}
 
 # Some tests are too timing-sensitive to succeed everywhere so don't run them
 do-regress:

@@ -1,4 +1,4 @@
-# $OpenBSD: zope.port.mk,v 1.7 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: zope.port.mk,v 1.8 2011/10/21 16:23:45 espie Exp $
 #
 #	zope.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -31,4 +31,4 @@ do-build:
 .endif
 
 post-install:
-	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${MODZOPE_PRODUCTSDIR}
+	chown -R ${LIBOWN}:${LIBGRP} ${MODZOPE_PRODUCTSDIR}

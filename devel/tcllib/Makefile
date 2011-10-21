@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/05 16:27:24 stu Exp $
+# $OpenBSD: Makefile,v 1.14 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	Tcl Standard Library
 
@@ -67,12 +67,12 @@ do-install:
 	-nroff-path ${PREFIX}/man/mann \
 	-example-path ${PREFIX}/share/examples/tcllib \
 	-app-path ${PREFIX}/bin
-	@${CHMOD} ${BINMODE} ${SCRIPTS_TCLSH:S!logger!log!:S!^!${PREFIX}/share/examples/tcllib/!}
+	@chmod ${BINMODE} ${SCRIPTS_TCLSH:S!logger!log!:S!^!${PREFIX}/share/examples/tcllib/!}
 	${SETENV} TCLLIBPATH=${DESTDIR}${MODTCL_TCLDIR} ${MODTCL_BIN} \
 		${FILESDIR}/mkindex.tcl ${PREFIX}/man/mann \
 		${PKGDIR}/DESCR ${PREFIX}/man/mann/tcllib.n tcllib "${COMMENT}" 1.12
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tcllib.n
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/mann/tcllib.n
+	@chown ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tcllib.n
+	@chmod ${MANMODE} ${PREFIX}/man/mann/tcllib.n
 
 # Define TEST_MODULES to restrict to a subset of regression tests.
 do-regress:

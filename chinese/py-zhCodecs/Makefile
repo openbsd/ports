@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/21 16:23:45 espie Exp $
 
 COMMENT=	Python Unicode codecs for Chinese charsets
 
@@ -25,6 +25,6 @@ WRKSRC=	${WRKDIST}/Python
 NO_REGRESS=	Yes
 
 post-extract:
-	@${CHMOD} 711 ${WRKSRC}/chinesetw
+	@chmod 711 ${WRKSRC}/chinesetw
 
 .include <bsd.port.mk>

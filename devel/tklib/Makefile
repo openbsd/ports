@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/05 16:37:10 stu Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =		Tk Standard Library
 
@@ -50,11 +50,11 @@ do-install:
 	-pkg-path ${DESTDIR}${MODTCL_TCLDIR} \
 	-nroff-path ${PREFIX}/man/mann \
 	-example-path ${PREFIX}/share/examples/tklib
-	@${CHMOD} ${BINMODE} ${SCRIPTS_TCLSH:S!^!${PREFIX}/share/examples/tklib/!}
+	@chmod ${BINMODE} ${SCRIPTS_TCLSH:S!^!${PREFIX}/share/examples/tklib/!}
 	${MODTCL_BIN} ${FILESDIR}/mkindex.tcl ${PREFIX}/man/mann \
 		${PKGDIR}/DESCR ${PREFIX}/man/mann/tklib.n tklib "${COMMENT}" 0.5
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tklib.n
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/mann/tklib.n
+	@chown ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tklib.n
+	@chmod ${MANMODE} ${PREFIX}/man/mann/tklib.n
 
 do-regress:
 	${SETENV} ${MAKE_ENV} ${REGRESS_FLAGS} \

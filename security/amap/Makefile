@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/07 00:13:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/21 16:23:45 espie Exp $
 
 COMMENT=	application protocol detection tool
 
@@ -31,7 +31,7 @@ NO_REGRESS=	Yes
 MAKE_FLAGS=	OPT="${CFLAGS} -I${LOCALBASE}/include"
 
 post-extract:
-	@${CHMOD} -R u+w ${WRKDIST}
+	@chmod -R u+w ${WRKDIST}
 	@perl -pi -e "s,\"\.\/\",\"$(LOCALBASE)\/share\/amap\/\"," \
 		${WRKSRC}/amap-lib.c
 

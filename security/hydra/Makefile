@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/10/21 16:23:45 espie Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -67,7 +67,7 @@ WANTLIB-gui=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
 		xcb-render-util
 
 post-extract:
-	${CHMOD} -R u+w ${WRKDIST}
+	chmod -R u+w ${WRKDIST}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hydra

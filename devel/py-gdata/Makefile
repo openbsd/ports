@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	Python client library for Google data APIs
 
@@ -33,9 +33,9 @@ E =	${PREFIX}/share/examples/py-gdata
 post-install:
 	${INSTALL_DATA_DIR} $D
 	${INSTALL_DATA} ${WRKSRC}/pydocs/*.html $D && \
-		${CHMOD} o+r $D/*
+		chmod o+r $D/*
 	${INSTALL_DATA_DIR} $E
 	cp -r ${WRKSRC}/samples/* $E && \
-		${CHMOD} -R o+rx $E
+		chmod -R o+rx $E
 
 .include <bsd.port.mk>

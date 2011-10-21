@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =	professional PHP application framework
 
@@ -36,6 +36,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cd ${WRKSRC} && ${TAR} -cf - . | ${TAR} -C ${INSTDIR} -xf -
 	find ${INSTDIR} -name '*.orig' -type f | xargs -r rm -f
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

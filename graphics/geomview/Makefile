@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/18 10:16:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
@@ -56,6 +56,6 @@ post-install:
 .for i in ${MAN5_PAGES}
 	mv ${PREFIX}/man/man5/${i}gv ${PREFIX}/man/man5/${i}
 .endfor
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/geomview/html/
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/geomview/html/
 
 .include <bsd.port.mk>

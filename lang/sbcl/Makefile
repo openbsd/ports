@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/07/28 20:54:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/21 16:23:45 espie Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -78,7 +78,7 @@ do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh install.sh
 
 post-install:
-	${CHOWN} -R 0:0 ${PREFIX}/lib/sbcl
+	chown -R 0:0 ${PREFIX}/lib/sbcl
 
 do-regress:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} RUN_CONTRIB_TESTS=1 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/05 17:07:26 stu Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/21 16:23:45 espie Exp $
 
 COMMENT =		high-level widget set for Tcl/Tk
 
@@ -48,6 +48,6 @@ do-install:
 		demo	*.xbm		${BW_EXA_DIR}
 	${INSTALL_DATA} ${WRKSRC}/${SRC}/${GLOB} ${DEST}
 .endfor
-	${CHMOD} ${BINMODE} ${BW_EXA_DIR}/demo.tcl
+	chmod ${BINMODE} ${BW_EXA_DIR}/demo.tcl
 
 .include <bsd.port.mk>
