@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/11 06:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =	NetHack derivative
 
@@ -41,7 +41,7 @@ MAKE_ENV +=	CFLAGS="${CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include -L${X1
 NO_REGRESS =	Yes
 
 do-configure:
-	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks
+	@cd ${WRKSRC}/sys/unix && /bin/sh setup.sh symlinks
 
 post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} ${MAKE_PROGRAM} recover

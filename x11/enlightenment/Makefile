@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/30 06:50:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2011/10/21 17:43:30 espie Exp $
 
 COMMENT=	themed window manager
 
@@ -51,9 +51,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 
 post-configure:
 	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${CONFIGURE_ENV} \
-	    ${SH} ./configure ${CONFIGURE_ARGS}
+	    /bin/sh ./configure ${CONFIGURE_ARGS}
 	@cd ${WRKDIR}/${THEMES} && ${SETENV} ${CONFIGURE_ENV} \
-	    ${SH} ./configure ${CONFIGURE_ARGS}
+	    /bin/sh ./configure ${CONFIGURE_ARGS}
 
 post-install:
 	@cd ${WRKDIR}/${DOCS} && ${SETENV} ${MAKE_ENV} \

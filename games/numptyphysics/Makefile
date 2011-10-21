@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/08 21:13:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2011/10/21 17:43:30 espie Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
@@ -62,7 +62,7 @@ post-patch:
 
 pre-configure:
 	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ${SH} ./autogen.sh
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} /bin/sh ./autogen.sh
 	@${SUBST_CMD} ${WRKSRC}/Config.h
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/15 19:15:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
@@ -52,7 +52,7 @@ RUN_DEPENDS =		games/hackdata
 NO_REGRESS =		Yes
 
 do-configure:
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks
+	@cd ${WRKSRC}/sys/unix; /bin/sh setup.sh symlinks
 
 post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover

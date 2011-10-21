@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/05 06:52:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.18
@@ -49,6 +49,6 @@ CONFIGURE_ARGS +=	CPPFLAGS="${CPPFLAGS}" \
 
 pre-configure:
 	cd ${WRKSRC}; AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} ${SH} ./bootstrap
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} /bin/sh ./bootstrap
 
 .include <bsd.port.mk>

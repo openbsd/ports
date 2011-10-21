@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =	MOD player
 DISTNAME =	tracker-5.3
@@ -53,6 +53,6 @@ post-install:
 # - tracker doesn't crash on random files,
 # - tracker plays some music.
 test:
-	@cd ${WRKSRC} && ${SH} ${FILESDIR}/test.uu && tracker *
+	@cd ${WRKSRC} && /bin/sh ${FILESDIR}/test.uu && tracker *
 
 .include <bsd.port.mk>

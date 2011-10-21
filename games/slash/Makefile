@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/05/14 10:36:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/10/21 17:43:30 espie Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
@@ -61,7 +61,7 @@ post-distpatch:
 	@cd ${WRKSRC} && ${PATCH} -p1 -z .bak.orig -s < ${WRKDIR}/e8p1.dif
 
 do-configure:
-	@cd ${WRKSRC}/sys/unix && ${SH} setup.sh symlinks
+	@cd ${WRKSRC}/sys/unix && /bin/sh setup.sh symlinks
 
 post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover

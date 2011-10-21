@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/30 06:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =		database convenience library based on db 2.7.7
 DISTNAME =		edb-20071211
@@ -27,6 +27,6 @@ CONFIGURE_ARGS +=		--disable-gtk
 
 post-patch:
 	@cd ${WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} NOCONFIGURE=true \
-		${SH} autogen.sh
+		/bin/sh autogen.sh
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/26 14:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/21 17:43:30 espie Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -46,6 +46,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 pre-configure:
 	@cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ${SH} autogen.sh
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} /bin/sh autogen.sh
 
 .include <bsd.port.mk>

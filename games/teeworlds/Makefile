@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/21 17:43:30 espie Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
@@ -49,7 +49,7 @@ pre-configure:
 
 # build bam executable - teeworlds own build system
 pre-build:
-	cd ${BAM_WRKSRC} && ${SH} -v make_unix.sh
+	cd ${BAM_WRKSRC} && /bin/sh -v make_unix.sh
 
 do-build:
 	cd ${WRKSRC} && CC=${CC} ${BAM_WRKSRC}/src/bam -v ${BAM_TARGET}

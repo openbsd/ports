@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/10/21 17:43:30 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
@@ -51,7 +51,7 @@ NO_REGRESS =	Yes
 SUBST_VARS =	GAMEDIR V
 
 do-configure:
-	@cd ${WRKSRC}/sys/unix; ${SH} setup.sh symlinks
+	@cd ${WRKSRC}/sys/unix; /bin/sh setup.sh symlinks
 
 post-build:
 	@cd ${WRKSRC}/util && ${MAKE_ENV} make recover
