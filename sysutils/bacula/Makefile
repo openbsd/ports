@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/20 08:01:20 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2011/10/21 17:04:23 espie Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -30,8 +30,6 @@ MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
 WANTLIB=		c pthread crypto ssl z m stdc++
 
-MULTI_PACKAGES=		-main
-
 # GPLv2 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
 # http://bacula.org/en/dev-manual/Bacula_Copyri_Tradem_Licens.html
@@ -53,10 +51,12 @@ NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
-FLAVOR?=		sqlite3
-.if empty(FLAVOR)
+
+.if !defined(FLAVOR) || empty(FLAVOR)
 FLAVOR =		sqlite3
 .endif
+
+MULTI_PACKAGES=		-main -server -bat
 
 CONFIGURE_ARGS=		--enable-smartalloc \
 			--prefix=${PREFIX} \
@@ -109,74 +109,66 @@ CONFIGURE_ENV+=		CPPFLAGS="-I/usr/include/readline \
 CONFIGURE_ENV+=		ac_cv_func_${ac_func}=no
 .endfor
 
-.if ${FLAVOR:L:Mno_server}
+.include <bsd.port.arch.mk>
+
+WANTLIB-server=		${WANTLIB} bac baccfg bacfind bacpy readline termcap
+LIB_DEPENDS-server=	sysutils/bacula,-main
+
+.if !${BUILD_PACKAGES:M-server}
 CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-dird \
 			--disable-build-stored
 .else
-MULTI_PACKAGES+=	-server
-WANTLIB-server=		${WANTLIB} bac baccfg bacfind bacpy readline termcap
-LIB_DEPENDS-server=	sysutils/bacula,-main
 CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
 			--with-sd-user=${SD_USER} \
 			--with-sd-group=_bacula
 
-BACKEND=
-.if ${FLAVOR:L:Mpgsql}
-.if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
-.endif
+.  if ${FLAVOR:Mpgsql}
 CONFIGURE_ARGS+=	--with-postgresql
 WANTLIB-server+=	pq>=2
 LIB_DEPENDS-server+=	databases/postgresql
-BACKEND=		postgresql
-.else
+BACKEND += 		postgresql
+.  else
 CONFIGURE_ARGS+=	--without-postgresql
-.endif
+.  endif
 
-.if ${FLAVOR:L:Mmysql}
-.if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
-.endif
+.  if ${FLAVOR:Mmysql}
 CONFIGURE_ARGS+=	--with-mysql \
 			--enable-batch-insert
 WANTLIB-server+=	mysqlclient_r>=18
 LIB_DEPENDS-server+=	databases/mysql
-BACKEND=		mysql
-.else
+BACKEND+=		mysql
+.  else
 CONFIGURE_ARGS+=	--without-mysql
-.endif
+.  endif
 
-.if ${FLAVOR:L:Msqlite3}
-.if !empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
-.endif
+.  if ${FLAVOR:Msqlite3}
 CONFIGURE_ARGS+=	--with-sqlite3
 WANTLIB-server+=	sqlite3>=8
 LIB_DEPENDS-server+=	databases/sqlite3
-BACKEND=		sqlite3
-.else
+BACKEND+=		sqlite3
+.  else
 CONFIGURE_ARGS+=	--without-sqlite3
-.endif
+.  endif
 
 SUBST_VARS+=		BACKEND
-.if empty(BACKEND)
-ERRORS+=		"Fatal: choose either pgsql or mysql or sqlite3"
-.endif
-.endif # if no_server
+.  if !defined(BACKEND) || (${BACKEND} != "mysql" && ${BACKEND} != "sqlite3" && ${BACKEND} != "postgresql")
+ERRORS+=		"Fatal: choose one of pgsql or mysql or sqlite3"
+.  endif
+.endif # server
 
 LIB_DEPENDS-main=
 
-.if ${FLAVOR:L:Mno_bat}
-CONFIGURE_ARGS+=	--disable-bat
-.else
-CONFIGURE_ARGS+=	--enable-bat
 WANTLIB-bat +=		QtCore QtGui bac baccfg c crypto m pthread ssl stdc++
-MULTI_PACKAGES+=	-bat
 RUN_DEPENDS-bat=	devel/desktop-file-utils
 LIB_DEPENDS-bat=	x11/qt4 \
 			sysutils/bacula,-main
+
+.if !${BUILD_PACKAGES:M-bat}
+CONFIGURE_ARGS+=	--disable-bat
+.else
+CONFIGURE_ARGS+=	--enable-bat
 .endif
 
 pre-configure:
@@ -188,7 +180,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-fd.conf \
 		${PREFIX}/share/examples/bacula/
-.if !${FLAVOR:L:Mno_server}
+.if ${BUILD_PACKAGES:M-server}
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-dir.conf \
 		${WRKINST}/etc/bacula/bacula-sd.conf \
 		${WRKINST}/etc/bacula/bconsole.conf \
@@ -196,7 +188,7 @@ post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
 .endif
-.if !${FLAVOR:L:Mno_bat}
+.if ${BUILD_PACKAGES:M-bat}
 	if [ -f ${PREFIX}/lib/libbac.so.${LIBbac_VERSION} ] ; then \
 		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin/; \
 	else \
