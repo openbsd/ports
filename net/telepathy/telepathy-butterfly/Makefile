@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/21 10:58:29 jasper Exp $
+
+BROKEN= 		Unable to connect to network due to tp-b or papyon bugs
 
 COMMENT=		flexible communications framework, MSN component
 
