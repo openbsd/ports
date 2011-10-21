@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1116 2011/10/16 07:51:27 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1117 2011/10/21 16:35:14 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -979,8 +979,6 @@ ERRORS += "Fatal: Missing comment for ${_S:S/^-$/main package/}."
 .  endif
 .endfor
 
-CHMOD ?= /bin/chmod
-CHOWN ?= /usr/sbin/chown
 GUNZIP_CMD ?= /usr/bin/gunzip -f
 GZCAT ?= /usr/bin/gzcat
 GZIP ?= -9
