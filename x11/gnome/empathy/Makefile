@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.79 2011/10/19 12:52:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/10/21 10:59:44 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -56,11 +56,12 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			net/telepathy/telepathy-mission-control \
-			net/telepathy/telepathy-butterfly \
 			net/telepathy/telepathy-gabble \
 			net/telepathy/telepathy-idle \
 			net/telepathy/telepathy-salut \
 			x11/gnome/icon-theme>=2.30.3
+# XXX: need to address "Disconnected, network error" first.
+#RUN_DEPENDS+=		net/telepathy/telepathy-butterfly
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
