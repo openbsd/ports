@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/27 11:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/10/21 21:40:49 espie Exp $
 # Original from: Marc Espie
 # XXX This port installs in a somewhat unusual way.
 
@@ -31,10 +31,6 @@ MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 WRKDIST=	${WRKDIR}
 USE_GROFF =	Yes
-
-# verify that it makes sense to install maple here
-pre-fetch:
-	@echo "You must have LINUX_COMPAT in your kernel for this port"
 
 # we only use the CD-Rom files for markers
 DIST_SUBDIR=maple5.5
