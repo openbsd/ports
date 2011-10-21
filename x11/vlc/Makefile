@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.136 2011/10/21 18:20:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -116,41 +116,41 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig" \
 		LOCALBASE=${LOCALBASE}
 
-MULTI_PACKAGES=-main
+MULTI_PACKAGES=-main -web -jack
 
 PSEUDO_FLAVORS=	no_web no_jack
 FLAVOR?=
 
-.if !${FLAVOR:L:Mno_web}
-MULTI_PACKAGES+=-web
+.include <bsd.port.arch.mk>
+
 COMMENT-web=	Mozilla plugin for embedded media playback
 PKGNAME-web=	vlc-web-${V}
-BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
-CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
-CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
-CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
-PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 LIB_DEPENDS-web=${LIB_DEPENDS} \
-		${BASE_PKGPATH} \
+		${BUILD_PKGPATH} \
 		devel/nspr
 RUN_DEPENDS-web=${BUILD_PKGPATH}
 WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m nspr4 plc4 plds4 \
 		pthread-stubs stdc++ vlc vlccore xcb dbus-1 \
 		${WANTLIB}
+
+.if ${BUILD_PACKAGES:M-web}
+BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
+CONFIGURE_ARGS+=--enable-mozilla --with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
+CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
+CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
+PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 .endif
 
-.if !${FLAVOR:L:Mno_jack}
-MULTI_PACKAGES+=-jack
 COMMENT-jack=	jackd audio output module for VLC
-FULLPKGNAME-jack=vlc-jack-${V}
-FULLPKGPATH-jack=x11/vlc,-jack
-CONFIGURE_ARGS+=--enable-jack
+PKGNAME-jack=vlc-jack-${V}
 LIB_DEPENDS-jack=${LIB_DEPENDS} \
-		 ${BASE_PKGPATH} \
+		 ${BUILD_PKGPATH} \
 		 audio/jack
-# any FLAVOR of VLC will do
-RUN_DEPENDS-jack=${BASE_PKGPATH}
+RUN_DEPENDS-jack=${BUILD_PKGPATH}
 WANTLIB-jack=	${WANTLIB} m jack vlccore dbus-1
+
+.if ${BUILD_PACKAGES:M-jack}
+CONFIGURE_ARGS+=--enable-jack
 .endif
 
 .if ${MACHINE_ARCH} == "amd64"
@@ -175,7 +175,7 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/share/vlc${_img}.png \
 	    ${PREFIX}/share/icons/hicolor/${_img}/apps/vlc.png
 .endfor
-.if !${FLAVOR:L:Mno_web}
+.if ${BUILD_PACKAGES:M-web}
 	@rm ${PREFIX}/lib/mozilla/plugins/libvlcplugin.a
 .endif
 	@find ${PREFIX}/lib/vlc -name '*.a' -print | xargs rm
