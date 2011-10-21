@@ -1,0 +1,42 @@
+$OpenBSD: patch-libempathy-gtk_empathy-theme-adium_c,v 1.1 2011/10/21 21:24:32 jasper Exp $
+
+From 739aca418457de752be13721218aaebc74bd9d36 Mon Sep 17 00:00:00 2001
+From: Guillaume Desmottes <guillaume.desmottes@collabora.co.uk>
+Date: Tue, 18 Oct 2011 18:32:52 +0200
+Subject: [PATCH] theme_adium_append_message: escape alias before displaying it
+
+Not doing so can lead to nasty HTML injection from hostile users.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=662035
+
+--- libempathy-gtk/empathy-theme-adium.c.orig	Mon Oct 17 16:22:12 2011
++++ libempathy-gtk/empathy-theme-adium.c	Fri Oct 21 23:18:55 2011
+@@ -782,7 +782,7 @@ theme_adium_append_message (EmpathyChatView *view,
+ 	EmpathyContact        *sender;
+ 	TpMessage             *tp_msg;
+ 	TpAccount             *account;
+-	gchar                 *body_escaped;
++	gchar                 *body_escaped, *name_escaped;
+ 	const gchar           *name;
+ 	const gchar           *contact_id;
+ 	EmpathyAvatar         *avatar;
+@@ -947,8 +947,10 @@ theme_adium_append_message (EmpathyChatView *view,
+ 		}
+ 	}
+ 
++	name_escaped = g_markup_escape_text (name, -1);
++
+ 	theme_adium_append_html (theme, func, html, body_escaped,
+-				 avatar_filename, name, contact_id,
++				 avatar_filename, name_escaped, contact_id,
+ 				 service_name, message_classes->str,
+ 				 timestamp, is_backlog, empathy_contact_is_user (sender));
+ 
+@@ -961,6 +963,7 @@ theme_adium_append_message (EmpathyChatView *view,
+ 	priv->last_is_backlog = is_backlog;
+ 
+ 	g_free (body_escaped);
++	g_free (name_escaped);
+ 	g_string_free (message_classes, TRUE);
+ }
+ 
