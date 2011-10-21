@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.151 2011/09/26 09:32:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.152 2011/10/21 20:10:51 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
-DISTNAME=		samba-3.6.0
+DISTNAME=		samba-3.6.1
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
@@ -41,12 +41,12 @@ LIB_DEPENDS=	databases/tdb>=1.2.7 \
 		devel/libexecinfo \
 		devel/libtalloc
 
-MAKE_FLAGS+=	PASSWD_PROGRAM="/usr/bin/passwd"  \
-		LIBSMBCLIENT_SOVER="${LIBsmbclient_VERSION}" \
-		LIBSMBSHAREMODES_SOVER="${LIBsmbsharemodes_VERSION}" \
-		LIBNETAPI_SOVER="${LIBnetapi_VERSION}" \
-		LIBADDNS_SOVER="${LIBaddns_VERSION}" \
-		LIBWBCLIENT_SOVER="${LIBwbclient_VERSION}"
+MAKE_FLAGS+=	PASSWD_PROGRAM="/usr/bin/passwd" \
+		LIBSMBCLIENT_SHARED_TARGET_SONAME="bin/libsmbclient.so.${LIBsmbclient_VERSION}" \
+		LIBSMBSHAREMODES_SHARED_TARGET_SONAME="bin/libsmbsharemodes.so.${LIBsmbsharemodes_VERSION}" \
+		LIBNETAPI_SHARED_TARGET_SONAME="bin/libnetapi.so.${LIBnetapi_VERSION}" \
+		LIBADDNS_SHARED_TARGET_SONAME="bin/libaddns.so.${LIBaddns_VERSION}" \
+		LIBWBCLIENT_SHARED_TARGET_SONAME="bin/libwbclient.so.${LIBwbclient_VERSION}"
 
 CONFDIR=		${SYSCONFDIR}/samba
 SAMBA_LOGDIR=		/var/log/samba

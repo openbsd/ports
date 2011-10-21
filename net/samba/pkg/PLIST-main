@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/09/26 09:32:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/10/21 20:10:51 sthen Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -96,12 +96,6 @@ lib/samba/vfs/xattr_tdb.so
 @bin libexec/swat
 @bin libexec/winbindd
 @man man/man1/findsmb.1
-@man man/man1/ldbadd.1
-@man man/man1/ldbdel.1
-@man man/man1/ldbedit.1
-@man man/man1/ldbmodify.1
-@man man/man1/ldbrename.1
-@man man/man1/ldbsearch.1
 @man man/man1/log2pcap.1
 @man man/man1/nmblookup.1
 @man man/man1/ntlm_auth.1
@@ -137,7 +131,6 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/idmap_rid.8
 @man man/man8/idmap_tdb.8
 @man man/man8/idmap_tdb2.8
-@comment @man man/man8/mount.cifs.8
 @man man/man8/net.8
 @man man/man8/nmbd.8
 @comment @man man/man8/pam_winbind.8
@@ -150,9 +143,9 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/tdbbackup.8
 @man man/man8/tdbdump.8
 @man man/man8/tdbtool.8
-@comment @man man/man8/umount.cifs.8
 @man man/man8/vfs_acl_tdb.8
 @man man/man8/vfs_acl_xattr.8
+@man man/man8/vfs_aio_fork.8
 @man man/man8/vfs_audit.8
 @man man/man8/vfs_cacheprime.8
 @man man/man8/vfs_cap.8
