@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_detectsys_py,v 1.1 2011/10/21 13:04:17 ajacoutot Exp $
+
+Recognize macppc, socppc.
+
+--- build/detectsys.py.orig	Fri Oct 21 03:19:41 2011
++++ build/detectsys.py	Fri Oct 21 03:19:05 2011
+@@ -21,7 +21,7 @@ def detectCPU():
+ 		return 'x86_64'
+ 	elif cpu in ('x86', 'i386', 'i486', 'i586', 'i686'):
+ 		return 'x86'
+-	elif cpu.startswith('ppc') or cpu.startswith('power'):
++	elif cpu.startswith('ppc') or cpu.startswith('power') or cpu.endswith('ppc'):
+ 		return 'ppc64' if cpu.endswith('64') else 'ppc'
+ 	elif cpu.startswith('arm'):
+ 		return 'arm'

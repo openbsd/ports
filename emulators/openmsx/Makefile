@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/21 13:04:17 ajacoutot Exp $
 
 COMMENT =	MSX home computer emulator
 
 DISTNAME =	openmsx-0.8.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	emulators
 
@@ -42,5 +42,8 @@ MODULES =	converters/libiconv \
 MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/build/python-search.sh
 
 .include <bsd.port.mk>

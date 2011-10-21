@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_cpu_py,v 1.1 2011/10/21 13:04:17 ajacoutot Exp $
+
+_cpusByName returns "powerpc" on OpenBSD.
+
+--- build/cpu.py.orig	Fri Oct 21 03:25:32 2011
++++ build/cpu.py	Fri Oct 21 03:25:54 2011
+@@ -69,7 +69,7 @@ class MIPSel(MIPS):
+ class PPC(CPU):
+ 	'''32-bit Power PC.
+ 	'''
+-	name = 'ppc'
++	name = 'powerpc'
+ 	bigEndian = True
+ 
+ class PPC64(CPU):
