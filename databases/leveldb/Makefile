@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/10/22 18:10:32 ajacoutot Exp $
+
+BROKEN-powerpc=	atomic_pointer.h: error Please implement AtomicPointer for this platform
 
 COMMENT=	fast and lightweight key/value database library
 

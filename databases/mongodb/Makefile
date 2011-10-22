@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/03 16:38:21 fgsch Exp $
+# $OpenBSD: Makefile,v 1.4 2011/10/22 18:10:32 ajacoutot Exp $
+
+BROKEN-powerpc =atomic_int.h: error "unsupported compiler or platform"
 
 COMMENT =	scalable, high-performance document-oriented database
 
