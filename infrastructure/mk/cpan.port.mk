@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.14 2011/10/03 14:21:02 jasper Exp $
+# $OpenBSD: cpan.port.mk,v 1.15 2011/10/22 07:42:24 espie Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -26,7 +26,7 @@ REGRESS_DEPENDS +=	devel/p5-Test-Pod \
 
 MODCPAN_POST_INSTALL = ${INSTALL_DATA_DIR} ${MODCPAN_EXAMPLES_DIR}; \
 	cd ${WRKSRC}/${MODCPAN_EXAMPLES_DIST}/ && pax -rw . ${MODCPAN_EXAMPLES_DIR};\
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${MODCPAN_EXAMPLES_DIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${MODCPAN_EXAMPLES_DIR}
 
 .if defined(MODCPAN_EXAMPLES) && ${MODCPAN_EXAMPLES:L} == "yes"
 MODCPAN_EXAMPLES_DIR ?= ${PREFIX}/share/examples/p5-${DISTNAME:C/-([0-9]+\.[0-9]+).*$//g}
