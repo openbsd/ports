@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/09/01 01:29:02 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/10/22 07:29:01 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/paramiko/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/paramiko-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -50,12 +50,6 @@ lib/python${MODPY_VERSION}/site-packages/paramiko/primes.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/primes.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/resource.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/resource.pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng.pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng_posix.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng_posix.pyc
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng_win32.py
-lib/python${MODPY_VERSION}/site-packages/paramiko/rng_win32.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/rsakey.py
 lib/python${MODPY_VERSION}/site-packages/paramiko/rsakey.pyc
 lib/python${MODPY_VERSION}/site-packages/paramiko/server.py
@@ -189,15 +183,6 @@ share/doc/py-paramiko/paramiko.primes-pysrc.html
 share/doc/py-paramiko/paramiko.primes.ModulusPack-class.html
 share/doc/py-paramiko/paramiko.resource-module.html
 share/doc/py-paramiko/paramiko.resource-pysrc.html
-share/doc/py-paramiko/paramiko.rng-module.html
-share/doc/py-paramiko/paramiko.rng-pysrc.html
-share/doc/py-paramiko/paramiko.rng.StrongLockingRandomPool-class.html
-share/doc/py-paramiko/paramiko.rng_posix-module.html
-share/doc/py-paramiko/paramiko.rng_posix-pysrc.html
-share/doc/py-paramiko/paramiko.rng_posix.error-class.html
-share/doc/py-paramiko/paramiko.rng_win32-module.html
-share/doc/py-paramiko/paramiko.rng_win32-pysrc.html
-share/doc/py-paramiko/paramiko.rng_win32.error-class.html
 share/doc/py-paramiko/paramiko.rsakey-module.html
 share/doc/py-paramiko/paramiko.rsakey-pysrc.html
 share/doc/py-paramiko/paramiko.server-module.html
@@ -255,9 +240,6 @@ share/doc/py-paramiko/toc-paramiko.pipe-module.html
 share/doc/py-paramiko/toc-paramiko.pkey-module.html
 share/doc/py-paramiko/toc-paramiko.primes-module.html
 share/doc/py-paramiko/toc-paramiko.resource-module.html
-share/doc/py-paramiko/toc-paramiko.rng-module.html
-share/doc/py-paramiko/toc-paramiko.rng_posix-module.html
-share/doc/py-paramiko/toc-paramiko.rng_win32-module.html
 share/doc/py-paramiko/toc-paramiko.rsakey-module.html
 share/doc/py-paramiko/toc-paramiko.server-module.html
 share/doc/py-paramiko/toc-paramiko.sftp-module.html
