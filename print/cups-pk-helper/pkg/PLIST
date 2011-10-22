@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/09 00:03:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/22 22:39:57 ajacoutot Exp $
 @bin libexec/cups-pk-helper-mechanism
 share/dbus-1/
 share/dbus-1/system-services/
@@ -14,13 +14,16 @@ share/locale/cs/LC_MESSAGES/cups-pk-helper.mo
 share/locale/de/LC_MESSAGES/cups-pk-helper.mo
 share/locale/eo/LC_MESSAGES/cups-pk-helper.mo
 share/locale/fr/LC_MESSAGES/cups-pk-helper.mo
+share/locale/gl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/hu/LC_MESSAGES/cups-pk-helper.mo
 share/locale/id/LC_MESSAGES/cups-pk-helper.mo
 share/locale/it/LC_MESSAGES/cups-pk-helper.mo
+share/locale/ko/LC_MESSAGES/cups-pk-helper.mo
 share/locale/pl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/sl/LC_MESSAGES/cups-pk-helper.mo
 share/locale/tr/LC_MESSAGES/cups-pk-helper.mo
 share/locale/uk/LC_MESSAGES/cups-pk-helper.mo
+share/locale/zh_TW/LC_MESSAGES/cups-pk-helper.mo
 share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.opensuse.cupspkhelper.mechanism.policy

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/09 00:03:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/10/22 22:39:57 ajacoutot Exp $
 
 COMMENT=	fine-grained privileges PolicyKit helper for CUPS
 
-DISTNAME=	cups-pk-helper-0.1.3
+DISTNAME=	cups-pk-helper-0.2.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	print sysutils
@@ -15,9 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c cups dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 pcre polkit-gobject-1 pthread
-WANTLIB += z
+WANTLIB += c cups gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += polkit-gobject-1 pthread
 
 MASTER_SITES=	http://www.freedesktop.org/software/cups-pk-helper/releases/
 
@@ -25,7 +24,6 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS=	sysutils/polkit \
-		x11/dbus-glib \
 		print/cups
 
 USE_GMAKE=	Yes
