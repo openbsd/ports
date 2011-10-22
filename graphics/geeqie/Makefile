@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/04 07:30:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/10/22 08:10:45 jasper Exp $
 
 COMMENT=	lightweight Gtk+2 based image viewer
 
 DISTNAME=	geeqie-1.0
 CATEGORIES=	graphics
 
-REVISION=	2
+REVISION=	3
 
 EPOCH=		0
 
@@ -39,6 +39,7 @@ LIB_DEPENDS=	x11/gtk+2 \
 		graphics/lcms \
 		graphics/exiv2
 
+USE_GMAKE=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_STYLE= gnu
