@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: imake.port.mk,v 1.5 2008/05/11 19:50:55 espie Exp $
+# $OpenBSD: imake.port.mk,v 1.6 2011/10/23 22:06:01 matthieu Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -21,9 +21,8 @@ MODIMAKE_configure = \
 			${X11BASE}/lib/X11/config/OpenBSD.cf; then \
 		cd ${WRKSRC} && ${_SYSTRACE_CMD} ${SETENV} ${MAKE_ENV} ${XMKMF}; \
 	else \
-		echo >&2 "Error: your X installation is not recent enough"; \
-		echo >&2 "Update to a more recent version, or use a ports tree"; \
-		echo >&2 "that predates March 18, 2000"; \
+		echo >&2 "Error: your X installation is incomplete"; \
+		echo >&2 "Please install the xshare tarball"; \
 		exit 1; \
 	fi
 # Kludge
