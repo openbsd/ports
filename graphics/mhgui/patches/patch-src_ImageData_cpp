@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_ImageData_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+$OpenBSD: patch-src_ImageData_cpp,v 1.2 2011/10/23 11:06:17 ajacoutot Exp $
 
 Fix build with png-1.5.
 
---- src/ImageData.cpp.orig	Tue Jul  5 21:52:52 2011
-+++ src/ImageData.cpp	Tue Jul  5 21:56:08 2011
-@@ -370,6 +370,7 @@ bool ImageData::pngLoadPNGLib (const string& filename)
+--- src/ImageData.cpp.orig	Wed Dec 12 22:07:21 2007
++++ src/ImageData.cpp	Sun Oct 23 11:33:36 2011
+@@ -371,6 +371,7 @@ bool ImageData::pngLoadPNGLib (const string& filename)
  
    char         sig[8];           /* PNG signature array */
  
@@ -12,7 +12,7 @@ Fix build with png-1.5.
    int           bit_depth;
    int           color_type;
  
-@@ -454,8 +455,10 @@ bool ImageData::pngLoadPNGLib (const string& filename)
+@@ -455,8 +456,10 @@ bool ImageData::pngLoadPNGLib (const string& filename)
    // read all the info up to the image data
    png_read_info(png_ptr, info_ptr);
  

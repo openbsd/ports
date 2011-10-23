@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/23 08:52:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/23 11:06:17 ajacoutot Exp $
 %%SHARED%%
 include/mhgui/
 include/mhgui/AbstractListener.h
@@ -6,15 +6,19 @@ include/mhgui/CGUtilities.h
 include/mhgui/Camera.h
 include/mhgui/Component.h
 include/mhgui/Console.h
+include/mhgui/GLUTWrapper.h
 include/mhgui/Image.h
 include/mhgui/ImageData.h
 include/mhgui/ImageSlider.h
 include/mhgui/ImageSliderSysListener.h
 include/mhgui/ImageSysListener.h
 include/mhgui/Label.h
+include/mhgui/MultiPanel.h
 include/mhgui/Panel.h
 include/mhgui/Point.h
 include/mhgui/Rect.h
+include/mhgui/Selector.h
+include/mhgui/SelectorSysListener.h
 include/mhgui/Size.h
 include/mhgui/TextEntry.h
 include/mhgui/TextEntrySysListener.h
