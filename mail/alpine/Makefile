@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/23 19:46:57 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -18,11 +18,9 @@ PKGNAME-main=	alpine-${V}
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
-REVISION-main=	4
-REVISION-pico=	1
-REVISION-pilot=	3
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+REVISION-main=	5
+REVISION-pico=	2
+REVISION-pilot=	4
 
 HOMEPAGE=	http://www.washington.edu/alpine/
 
