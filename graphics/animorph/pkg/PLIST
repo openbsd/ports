@@ -1,11 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/11/23 08:51:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/23 11:05:53 ajacoutot Exp $
 %%SHARED%%
 include/animorph/
 include/animorph/BodySettings.h
+include/animorph/ColladaExporter.h
 include/animorph/Color.h
 include/animorph/DirectoryList.h
+include/animorph/EdgeStrip.h
 include/animorph/Euler.h
 include/animorph/Face.h
+include/animorph/FaceGroup.h
 include/animorph/FaceVector.h
 include/animorph/FileReader.h
 include/animorph/FileWriter.h
@@ -15,10 +18,17 @@ include/animorph/MathUtil.h
 include/animorph/Matrix.h
 include/animorph/Mesh.h
 include/animorph/ObjExporter.h
+include/animorph/OgreXMLExporter.h
+include/animorph/PoseRotation.h
 include/animorph/PoseSemiTarget.h
 include/animorph/PoseTarget.h
+include/animorph/PoseTranslation.h
 include/animorph/Quaternion.h
 include/animorph/RIBExporter.h
+include/animorph/RawMesh.h
+include/animorph/Skin.h
+include/animorph/SkinVertex.h
+include/animorph/SmoothVertex.h
 include/animorph/Target.h
 include/animorph/TextureVector.h
 include/animorph/Vector2.h
@@ -27,6 +37,7 @@ include/animorph/Vertex.h
 include/animorph/VertexGroup.h
 include/animorph/VertexVector.h
 include/animorph/util.h
+include/animorph/xmlParser.h
 lib/libanimorph.a
 lib/libanimorph.la
 lib/pkgconfig/
