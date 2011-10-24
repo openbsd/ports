@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/24 05:59:26 stu Exp $
 
 COMMENT =		Tk Standard Library
 
 DISTNAME =		tklib-0.5
-REVISION =		0
+REVISION =		1
 CATEGORIES=		devel x11/tk
 HOMEPAGE =		http://sourceforge.net/projects/tcllib/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcllib/}
 MODULES =		x11/tk
 BUILD_DEPENDS =		devel/tcllib
-RUN_DEPENDS =		devel/tcllib
-REGRESS_DEPENDS =	devel/tcllib
-REGRESS_IS_INTERACTIVE =x11
+RUN_DEPENDS =		devel/tcllib ${MODTK_RUN_DEPENDS}
+REGRESS_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
+REGRESS_IS_INTERACTIVE =X11
 USE_GROFF =		Yes
 NO_BUILD =		Yes
 PKG_ARCH =		*
