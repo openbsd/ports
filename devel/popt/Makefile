@@ -1,29 +1,27 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/10/24 18:52:18 jasper Exp $
 
-COMMENT=		getopt(3)-like library with a number of enhancements
+COMMENT=	getopt(3)-like library with a number of enhancements
 
-DISTNAME=		popt-1.7
-REVISION =		1
-SHARED_LIBS=		popt 0.3
-CATEGORIES=		devel
-MASTER_SITES=		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/ \
-			ftp://ftp.sunfreeware.com/pub/freeware/SOURCES/ \
-			ftp://ftp.rpm.org/pub/rpm/dist/rpm-4.1.x/
+DISTNAME=	popt-1.16
+CATEGORIES=	devel
+MASTER_SITES=	http://rpm5.org/files/popt/
 
-# BSD-like
+SHARED_LIBS=	popt	1.0
+
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
-SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-included-gettext
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+MODULES=	devel/gettext
+
+USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

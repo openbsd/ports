@@ -1,21 +1,12 @@
-$OpenBSD: patch-configure,v 1.2 2003/07/15 16:50:22 jolan Exp $
---- configure.orig	Sat Jun 21 22:38:13 2003
-+++ configure	Sat Jun 21 22:38:17 2003
-@@ -6382,7 +6382,7 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-       hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-@@ -6392,7 +6392,7 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-         hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-         ;;
-       esac
+$OpenBSD: patch-configure,v 1.3 2011/10/24 18:52:18 jasper Exp $
+--- configure.orig	Sat Sep  3 04:16:58 2011
++++ configure	Sat Sep  3 04:17:21 2011
+@@ -16076,7 +16076,7 @@ _ACEOF
+ #   (https://bugzilla.novell.com/show_bug.cgi?id=529921)
+ # - Don't require a not upstream patch to pkgconfig
+ #   (https://bugs.freedesktop.org/show_bug.cgi?id=16095)
+-popt_pkgconfig_libs='-L${libdir} -lpopt'
++popt_pkgconfig_libs='-L${libdir} -lpopt -lintl -liconv'
+ case "${host}" in
+     *-*-linux*)
+ 	case "${libdir}" in
