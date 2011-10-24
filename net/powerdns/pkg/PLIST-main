@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/10/24 19:47:55 sthen Exp $
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
@@ -21,3 +21,4 @@ share/examples/powerdns/pdns.conf-dist
 share/examples/powerdns/tables-mysql.sql
 share/examples/powerdns/tables-pgsql.sql
 share/examples/powerdns/tables-sqlite.sql
+@rcscript ${RCDIR}/pdns_server
