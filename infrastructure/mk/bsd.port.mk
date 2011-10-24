@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1118 2011/10/21 16:52:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1119 2011/10/24 12:34:08 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -32,8 +32,8 @@ ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
 ERRORS += "Fatal: Variable $v is obsolete, use PACKAGE_REPOSITORY instead."
 .  endif
 .endfor
-.for t in do-fetch
-.  if target(do-fetch)
+.for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
+.  if target($t)
 ERRORS += "Fatal: you're not allowed to override $t"
 .  endif
 .endfor
@@ -991,7 +991,6 @@ YACC ?= yacc
 # XXX ${SETENV} is needed in front of var=value lists whenever the next
 # command is expanded from a variable, as this could be a shell construct
 SETENV ?= /usr/bin/env -i
-SH ?= /bin/sh
 
 # Used to print all the '===>' style prompts - override this to turn them off.
 ECHO_MSG ?= echo
@@ -1652,12 +1651,6 @@ ${_PACKAGE_COOKIE${_S}}:
 		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
-.    if target(pre-package)
-	@${_MAKE} pre-package
-.    endif
-.  if target(do-package)
-	@${_MAKE} do-package
-.    else
 # What PACKAGE normally does:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
@@ -1678,10 +1671,6 @@ ${_PACKAGE_COOKIE${_S}}:
 	    exit 1; \
 	fi
 # End of PACKAGE.
-.    endif
-.    if target(post-package)
-	@${_MAKE} post-package
-.    endif
 	@rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif
 
@@ -1951,17 +1940,11 @@ _internal-${_m:L}wantlib-depends: ${_DEP${_m}WANTLIB_COOKIE}
 _internal-fetch-all:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
-.if target(pre-fetch)
-	@${_MAKE} pre-fetch __FETCH_ALL=Yes
-.endif
 # What FETCH-ALL normally does:
 .  if !empty(MAKESUMFILES)
 	@${_MAKE} ${MAKESUMFILES:S@^@${DISTDIR}/@}
 .    endif
 # End of FETCH
-.if target(post-fetch)
-	@${_MAKE} post-fetch __FETCH_ALL=Yes
-.endif
 
 .if !empty(IGNORE${SUBPACKAGE}) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
@@ -2009,27 +1992,15 @@ _internal-manpages-check: ${_FAKE_COOKIE}
 # Besides, fetch can't create cookies, as it does not have WRKDIR available
 # in the first place.
 #
-# IMPORTANT: pre-fetch/do-fetch/post-fetch MUST be designed so that they
-# can be run several times in a row.
 
 _internal-fetch:
 # See ports/infrastructure/templates/Makefile.template
 	@${ECHO_MSG} "===>  Checking files for ${FULLPKGNAME}${_MASTER}"
-.  if target(pre-fetch)
-	@${_MAKE} pre-fetch
-.  endif
-.  if target(do-fetch)
-	@${_MAKE} do-fetch
-.  else
 # What FETCH normally does:
-.    if !empty(CHECKSUMFILES)
+.  if !empty(CHECKSUMFILES)
 	@${_MAKE} ${CHECKSUMFILES:S@^@${DISTDIR}/@}
-.    endif
+.  endif
 # End of FETCH
-.  endif
-.  if target(post-fetch)
-	@${_MAKE} post-fetch
-.  endif
 
 
 _internal-checksum: _internal-fetch
@@ -2586,7 +2557,7 @@ print-plist-contents:
 	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 print-plist-libs:
-	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist}; ${_plist_footer}
+	@${_plist_header}; ${_PKG_CREATE} -DLIBS_ONLY -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist}; ${_plist_footer}
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
@@ -3388,12 +3359,12 @@ _all_phony = ${_recursive_depends_targets} \
 	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch addsum \
 	build-depends build-depends-list checkpatch clean clean-depends \
 	delete-package depends distpatch do-build do-configure do-distpatch \
-	do-extract do-fetch do-install do-package do-regress fetch-all \
+	do-extract do-install do-regress fetch-all \
 	install-all lib-depends lib-depends-list \
 	peek-ftp port-lib-depends-check post-build post-configure \
-	post-distpatch post-extract post-fetch post-install post-package \
+	post-distpatch post-extract post-install \
 	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
-	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
+	pre-install pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends regress-depends-list run-depends run-depends-list \
     show-required-by subpackage uninstall mirror-maker-fetch _print-metadata \
