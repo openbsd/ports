@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/13 13:30:46 stu Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/24 16:50:08 stu Exp $
 bin/eagle
 libdata/Eagle/
 libdata/Eagle/bin/
@@ -7,6 +7,7 @@ libdata/Eagle/bin/Eagle.pdb
 libdata/Eagle/bin/Eagle.tasks
 libdata/Eagle/bin/EagleCmdlets.dll
 libdata/Eagle/bin/EagleCmdlets.pdb
+libdata/Eagle/bin/EagleCmdlets.ps1
 libdata/Eagle/bin/EagleExtensions.dll
 libdata/Eagle/bin/EagleExtensions.pdb
 libdata/Eagle/bin/EagleShell.exe
@@ -24,4 +25,5 @@ libdata/Eagle/lib/Eagle1.0/pkgIndex.tcl
 libdata/Eagle/lib/Eagle1.0/safe.eagle
 libdata/Eagle/lib/Eagle1.0/shell.eagle
 libdata/Eagle/lib/Eagle1.0/test.eagle
+libdata/Eagle/lib/Eagle1.0/vendor.eagle
 libdata/Eagle/license.terms
