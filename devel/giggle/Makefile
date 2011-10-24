@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/20 20:45:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/24 17:56:16 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 
-GNOME_VERSION=	0.6
+GNOME_VERSION=	0.6.1
 GNOME_PROJECT=	giggle
 
 CATEGORIES=	devel x11

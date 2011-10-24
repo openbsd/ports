@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2011/10/20 20:45:05 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2011/10/24 17:56:16 jasper Exp $
 
 Remove a few compiler options GCC 4.2.1 doesn't understand.
 
---- configure.orig	Thu Oct 20 22:13:47 2011
-+++ configure	Thu Oct 20 22:14:08 2011
-@@ -15844,18 +15844,18 @@ if test "$GCC" = "yes"; then
+--- configure.orig	Mon Oct 24 15:04:42 2011
++++ configure	Mon Oct 24 19:48:06 2011
+@@ -15867,18 +15867,18 @@ if test "$GCC" = "yes"; then
  	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wformat-security"
  	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-include-dirs"
  	WARNINGFLAGS_C="$WARNINGFLAGS_C -Wmissing-format-attribute"
