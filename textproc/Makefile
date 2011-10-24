@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.340 2011/10/07 20:35:19 rpointel Exp $
+# $OpenBSD: Makefile,v 1.341 2011/10/24 20:28:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -77,6 +77,7 @@
      SUBDIR += liblrdf
      SUBDIR += libnxml
      SUBDIR += libtextcat
+     SUBDIR += libwbxml
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
