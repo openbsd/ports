@@ -1,6 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/13 17:31:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/25 18:58:07 dhill Exp $
 %%SHARED%%
 include/xmlsd.h
 lib/libxmlsd.a
 lib/libxmlsd_p.a
 %%no_mips64%%
+@man man/man3/xmlsd.3
+@man man/man3/xmlsd_add_element.3
+@man man/man3/xmlsd_check_attributes.3
+@man man/man3/xmlsd_check_boolean.3
+@man man/man3/xmlsd_check_path.3
+@man man/man3/xmlsd_create.3
+@man man/man3/xmlsd_free_element.3
+@man man/man3/xmlsd_generate.3
+@man man/man3/xmlsd_get_attr.3
+@man man/man3/xmlsd_get_value.3
+@man man/man3/xmlsd_parse_file.3
+@man man/man3/xmlsd_parse_fileds.3
+@man man/man3/xmlsd_parse_mem.3
+@man man/man3/xmlsd_remove_element.3
+@man man/man3/xmlsd_set_attr.3
+@man man/man3/xmlsd_set_attr_int32.3
+@man man/man3/xmlsd_set_attr_int64.3
+@man man/man3/xmlsd_set_attr_uint32.3
+@man man/man3/xmlsd_set_attr_uint64.3
+@man man/man3/xmlsd_set_attr_x32.3
+@man man/man3/xmlsd_set_attr_x64.3
+@man man/man3/xmlsd_set_value.3
+@man man/man3/xmlsd_unwind.3
+@man man/man3/xmlsd_validate.3
+@man man/man3/xmlsd_version.3
