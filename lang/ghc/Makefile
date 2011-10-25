@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/16 21:17:41 kili Exp $
+# $OpenBSD: Makefile,v 1.60 2011/10/25 19:23:09 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -147,13 +147,17 @@ do-regress:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20110824
+BOOTSTRAP_DATE =	20111023
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
 # You have to install gtar in order to run this target!
 bootstrap: patch
+	@if [ ! -x ${LOCALBASE}/bin/gtar ]; then \
+		echo Please pkg_add gtar.; \
+		false; \
+	fi
 	cd ${WRKDIR} && rm -rf bin
 
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
