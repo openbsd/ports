@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/06 15:02:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/10/25 20:32:27 rpointel Exp $
 
 COMMENT =		simple distributed software configuration management
 
-VERSION =		20110901182519
+VERSION =		20111021125253
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
