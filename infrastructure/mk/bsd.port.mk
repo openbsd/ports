@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1119 2011/10/24 12:34:08 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1120 2011/10/25 15:08:10 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -3099,10 +3099,25 @@ _print-package-signature-run:
 _print-package-signature-lib:
 	@echo $$LIST_LIBS| ${_resolve_lib} ${_DEPRUNLIBS:QL}
 .for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@echo '${_i}' |{ \
+	@d='${_i}'; echo '${_i}'|{ \
 		${_parse_spec}; \
-		${_compute_default}; \
-		echo "$$default"; \
+		${_complete_pkgspec}; \
+		libs=`eval $$toset ${MAKE} print-plist-libs`; \
+		needed=false; \
+		exec 3>&2; \
+		for d in ${_DEPRUNLIBS:QL}; do \
+			if $$needed; then continue; fi; \
+			exec 2>/dev/null; \
+			${_libresolve_fragment}; \
+			case "$$check" in \
+			*.a|Failed) \
+				continue;; \
+			*) \
+				needed=true;; \
+			esac; \
+		done; \
+		exec 2>&3; \
+		if $$needed; then echo "$$default"; fi; \
 	}
 .endfor
 
