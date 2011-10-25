@@ -1,0 +1,20 @@
+$OpenBSD: patch-htdocs_cmd_php,v 1.2 2011/10/25 19:07:56 jasper Exp $
+
+From 64668e882b8866fae0fa1b25375d1a2f3b4672e2 Mon Sep 17 00:00:00 2001
+From: Deon George <wurley@users.sf.net>
+Date: Wed, 27 Jul 2011 07:30:06 +1000
+Subject: [PATCH] Remove XSS vulnerabilty in debug code
+
+--- htdocs/cmd.php.orig	Tue Oct 25 21:06:17 2011
++++ htdocs/cmd.php	Tue Oct 25 21:06:32 2011
+@@ -19,10 +19,6 @@ $www['meth'] = get_request('meth','REQUEST');
+ ob_start();
+ 
+ switch ($www['cmd']) {
+-	case '_debug':
+-		debug_dump($_REQUEST,1);
+-		break;
+-
+ 	default:
+ 		if (defined('HOOKSDIR') && file_exists(HOOKSDIR.$www['cmd'].'.php'))
+ 			$app['script_cmd'] = HOOKSDIR.$www['cmd'].'.php';
