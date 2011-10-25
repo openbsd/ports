@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/26 17:12:07 todd Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/25 19:05:27 dhill Exp $
 
 COMMENT =		tar-like secure remote deduplicating archiver
 
-DISTNAME =		cyphertite-0.4.5
+DISTNAME =		cyphertite-0.4.7
 CATEGORIES =		sysutils archivers security
 
 HOMEPAGE =		https://www.cyphertite.com/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		assl>=3 c clog crypto event expat exude>=2 \
 			shrink sqlite3 ssl util xmlsd>=1
 
-MASTER_SITES =		http://opensource.conformal.com/snapshots/cyphertite/
+MASTER_SITES =		https://opensource.conformal.com/snapshots/cyphertite/
 
 LIB_DEPENDS =		archivers/libshrink>=0.2.1	\
 			databases/sqlite3		\
