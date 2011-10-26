@@ -1,7 +1,7 @@
-$OpenBSD: patch-glom_libglom_connectionpool_backends_postgres_self_cc,v 1.1.1.1 2011/09/29 17:19:28 jasper Exp $
---- glom/libglom/connectionpool_backends/postgres_self.cc.orig	Thu Sep 29 15:24:59 2011
-+++ glom/libglom/connectionpool_backends/postgres_self.cc	Thu Sep 29 15:28:10 2011
-@@ -423,7 +423,11 @@ Backend::StartupErrors PostgresSelfHosted::startup(con
+$OpenBSD: patch-glom_libglom_connectionpool_backends_postgres_self_cc,v 1.2 2011/10/26 11:14:09 jasper Exp $
+--- glom/libglom/connectionpool_backends/postgres_self.cc.orig	Wed Oct 19 11:14:35 2011
++++ glom/libglom/connectionpool_backends/postgres_self.cc	Wed Oct 26 12:55:24 2011
+@@ -425,7 +425,11 @@ Backend::StartupErrors PostgresSelfHosted::startup(con
                                    + " -c hba_file=\"" + dbdir + "/config/pg_hba.conf\""
                                    + " -c ident_file=\"" + dbdir + "/config/pg_ident.conf\""
                                    + " -k \"" + dbdir + "\""

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/10/19 08:06:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/10/26 11:14:09 jasper Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 include/glom-${API_V}/
@@ -105,18 +105,13 @@ share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1View__coll__graph.p
 share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1View__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1DocumentTableInfo-members.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1DocumentTableInfo.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1DocumentTableInfo__coll__graph.png
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1LayoutInfo-members.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1LayoutInfo.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document_1_1LayoutInfo__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field-members.html
@@ -127,6 +122,7 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting__coll__gr
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FoundSet-members.html
@@ -146,8 +142,6 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutGroup__coll__graph.
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutGroup__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem_1_1PrintLayoutPosition-members.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem_1_1PrintLayoutPosition.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem__Button-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem__Button.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem__Button__coll__graph.png
@@ -219,6 +213,7 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1NumericFormat.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1NumericFormat__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout__coll__graph.png
@@ -233,6 +228,7 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1SystemPrefs-members.html
@@ -244,14 +240,18 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1TableInfo__coll__graph.pn
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TableInfo__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr__inherit__graph.png
@@ -314,10 +314,6 @@ share/doc/libglom-${API_V}/reference/html/inherit_graph_10.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_11.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_12.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_13.png
-share/doc/libglom-${API_V}/reference/html/inherit_graph_14.png
-share/doc/libglom-${API_V}/reference/html/inherit_graph_15.png
-share/doc/libglom-${API_V}/reference/html/inherit_graph_16.png
-share/doc/libglom-${API_V}/reference/html/inherit_graph_17.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_2.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_3.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_4.png
