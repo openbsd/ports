@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/16 08:07:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/26 16:59:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
-V=		3.6.8
-DISTNAME=	opal-${V}
+DISTNAME=	opal-3.10.3
 
-REVISION=	3
-
-SUBST_VARS+=	V
-
-SHARED_LIBS=	opal	1.0 # .2.2.11
+SHARED_LIBS=	opal	2.0	# 3.10.3
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -27,28 +22,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c celt0 crypto gsm m ogg pt pthread spandsp speex speexdsp
+WANTLIB += stdc++ theora tiff x264
+
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
-WANTLIB += SDL c crypto expat lber ldap ldap_r m ogg sasl2
-WANTLIB += ssl speex speexdsp x264 theora gsm pt pthread stdc++
-
-LIB_DEPENDS=	audio/speex \
-		multimedia/libtheora \
-		audio/gsm \
-		devel/ptlib \
-		multimedia/x264
+LIB_DEPENDS=	devel/ptlib>=2.10.3 \
+		audio/celt \
+		telephony/spandsp
 
 # dlopen(3) libavcodec.so; shows as Extra: in check-lib-depends but
 # this is ok, we want to be sure we track ABI changes
 WANTLIB+=	avcodec
 LIB_DEPENDS+=	graphics/ffmpeg>=20110306
 
-ALL_TARGET=	opt
-OPAL_FILE=	libopal.so
+ALL_TARGET=	default_target
 
 MAKE_ENV=	CC=${CC} CPLUS=${CXX} VERBOSE=1
-MAKE_FLAGS=	OPAL_FILE=${OPAL_FILE} \
-		RELEASE_LIB_FILENAME_SHARED_PAT=${OPAL_FILE}.${LIBopal_VERSION}
+MAKE_FLAGS=	RELEASE_LIB_NAME=libopal.so.${LIBopal_VERSION} \
+		RELEASE_LIB_FILENAME_SHARED_PAT=libopal.so.${LIBopal_VERSION}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
@@ -56,11 +48,16 @@ NO_REGRESS=	Yes
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread" \
+		ac_cv_path_SWIG=${LOCALBASE}/bin/swig
 CONFIGURE_ARGS=	--disable-localspeex \
 		--disable-localgsm \
-		--enable-plugins
+		--enable-ixj \
+		--disable-ruby \
+		--disable-sbc \
+		--enable-plugins \
+		--with-plugin-installdir=opal
 
 # XXX
 # ekiga:/usr/local/lib/opal-3.6.6/lid/vpb_lid_pwplugin.so:
@@ -68,9 +65,11 @@ CONFIGURE_ARGS=	--disable-localspeex \
 # <...>
 CONFIGURE_ARGS+= --disable-vpb
 
-.ifndef DEBUG
-CONFIGURE_ENV+=	DEBUG_BUILD="no"
-.endif
+pre-configure:
+# use perl(1) instead of SUBST_CMD to prevent breaking the configure script
+	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
+		-e 's,SUBDIRS\+=\",SUBDIRS=\"\$${SUBDIRS},g' \
+		${WRKSRC}/plugins/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/opal
