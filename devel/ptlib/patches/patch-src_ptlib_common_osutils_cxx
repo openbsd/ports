@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_ptlib_common_osutils_cxx,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
---- src/ptlib/common/osutils.cxx.orig	Mon Jun 22 15:27:25 2009
-+++ src/ptlib/common/osutils.cxx	Mon Jun 22 15:27:50 2009
-@@ -36,6 +36,8 @@
+$OpenBSD: patch-src_ptlib_common_osutils_cxx,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
+--- src/ptlib/common/osutils.cxx.orig	Fri Oct 14 08:54:51 2011
++++ src/ptlib/common/osutils.cxx	Wed Oct 26 10:29:39 2011
+@@ -35,6 +35,9 @@
+ #include <vector>
  #include <map>
  #include <fstream>
- 
++#ifdef P_OPENBSD
 +#include <stdint.h>
-+
++#endif
+ 
  #include <ctype.h>
  #include <ptlib/pfactory.h>
- #include <ptlib/pprocess.h>

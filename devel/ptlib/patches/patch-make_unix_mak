@@ -1,16 +1,7 @@
-$OpenBSD: patch-make_unix_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
---- make/unix.mak.orig	Mon Sep 21 02:25:30 2009
-+++ make/unix.mak	Tue Sep 22 17:20:24 2009
-@@ -159,7 +159,7 @@ endif # P_SHAREDLIB
- 
- 
- STATIC_LIBS	:= libstdc++.a libg++.a libm.a libc.a
--SYSLIBDIR	:= $(shell $(PTLIBDIR)/make/ptlib-config --libdir)
-+SYSLIBDIR	:= $(shell ${PREFIX}/bin/ptlib-config --libdir)
- 
- endif # linux
- 
-@@ -198,12 +198,18 @@ ifeq ($(MACHTYPE),x86)
+$OpenBSD: patch-make_unix_mak,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
+--- make/unix.mak.orig	Fri Oct 14 08:54:53 2011
++++ make/unix.mak	Wed Oct 26 08:58:01 2011
+@@ -200,11 +200,19 @@ ifeq ($(MACHTYPE),x86)
  #STDCCFLAGS	+= -m486
  endif
  
@@ -25,18 +16,20 @@ $OpenBSD: patch-make_unix_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
 +
  P_USE_RANLIB		:= 1
  #STDCCFLAGS      += -DP_USE_PRAGMA		# migrated to configure
-+STDCCFLAGS      += -fPIC
++STDCCFLAGS      += -fPIC -DPIC
  
--
++SYSLIBDIR	:= $(shell $(PTLIBDIR)/make/ptlib-config --libdir)
+ 
  endif # OpenBSD
  
- 
-@@ -656,7 +662,7 @@ ifneq ($(OSTYPE),Darwin)
+@@ -659,7 +667,9 @@ ifneq ($(OSTYPE),Darwin)
        STDCCFLAGS	+= -xO3
      endif
    else
 -    STDCCFLAGS	+= -Os 
-+    STDCCFLAGS	+=
++    ifneq ($(OSTYPE),OpenBSD)
++      STDCCFLAGS	+= -Os
++    endif
    endif
  else
    STDCCFLAGS	+= -O2

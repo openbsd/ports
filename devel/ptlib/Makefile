@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/26 16:59:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	portable tools library
 
-DISTNAME=	ptlib-2.6.7
-REVISION=		0
+DISTNAME=	ptlib-2.10.3
 
-SHARED_LIBS=	pt	3.0	# 2.4.2
+SHARED_LIBS=	pt	4.0	# 2.10.3
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto expat m sasl2 sndio ssl lber ldap ldap_r SDL
+WANTLIB += SDL c crypto expat lber ldap ldap_r m sasl2 sndio ssl
+WANTLIB += stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
@@ -33,6 +33,8 @@ BUILD_DEPENDS=	devel/bison \
 LIB_DEPENDS=	databases/openldap \
 		devel/sdl
 
+ALL_TARGET=	default
+
 .include <bsd.own.mk>
 .if !${COMPILER_VERSION:L:Mgcc4}
 PATCH_LIST = patch-* gcc3-patch-*
@@ -41,7 +43,6 @@ PATCH_LIST = patch-* gcc3-patch-*
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-plugin-installdir=ptlib \
-		--enable-appshare \
 		--enable-plugins \
 		--enable-bsdvideo \
 		--enable-sasl \
@@ -53,36 +54,43 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-v4l2 \
 		--enable-sndio \
 		--enable-openssl \
+		--disable-lua \
 		--disable-oss \
 		--disable-alsa \
 		--disable-avc \
 		--disable-dc \
-		--disable-odbc
+		--disable-odbc \
+		--disable-pulse
+
+# XXX needs /proc/net/if_inet6
+CONFIGURE_ARGS+=--disable-ipv6
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		OPENSSL_CFLAGS="-I/usr/include" \
 		OPENSSL_LIBS="-lssl -lcrypto -lm"
 
-AUTOCONF_VERSION=	2.61
-AUTOMAKE_VERSION=	1.9
+# should be 2.66
+AUTOCONF_VERSION=	2.67
+AUTOMAKE_VERSION=	1.10
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 
 MAKE_FLAGS=	MAJOR_VERSION=${LIBpt_VERSION:R} \
-		MINOR_VERSION=${LIBpt_VERSION:E}
+		MINOR_VERSION=${LIBpt_VERSION:E} \
+		LIB_SONAME=libpt.so.${LIBpt_VERSION} \
+		DEBUG_SONAME=libpt_d.so.${LIBpt_VERSION}
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
 
-ALL_TARGET=	optshared
-
-post-patch:
+post-extract:
 	@mkdir ${WRKSRC}/plugins/sound_sndio
 	@cp ${FILESDIR}/{Makefile,sound_sndio.*} ${WRKSRC}/plugins/sound_sndio
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/make/common.mak \
-		${WRKSRC}/src/ptlib/common/pluginmgr.cxx \
-		${WRKSRC}/include/ptlib/pluginmgr.h
+		${WRKSRC}/make/unix.mak \
+		${WRKSRC}/src/ptlib/common/pluginmgr.cxx
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \

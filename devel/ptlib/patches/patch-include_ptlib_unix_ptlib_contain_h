@@ -1,0 +1,19 @@
+$OpenBSD: patch-include_ptlib_unix_ptlib_contain_h,v 1.1 2011/10/26 16:59:09 ajacoutot Exp $
+
+contain.h:81: error: 'intptr_t' does not name a type
+
+--- include/ptlib/unix/ptlib/contain.h.orig	Fri Oct 14 08:54:58 2011
++++ include/ptlib/unix/ptlib/contain.h	Wed Oct 26 10:28:14 2011
+@@ -32,9 +32,12 @@
+  */
+ 
+ #include "pmachdep.h"
++#include <stdint.h>
+ #include <unistd.h>
+ #include <ctype.h>
++#ifdef P_OPENBSD
+ #include <limits.h>
++#endif
+ 
+ 
+ ///////////////////////////////////////////

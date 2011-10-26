@@ -1,11 +1,11 @@
-$OpenBSD: gcc3-patch-include_ptlib_safecoll_h,v 1.1 2010/05/11 07:23:23 espie Exp $
+$OpenBSD: gcc3-patch-include_ptlib_safecoll_h,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
 
 Make this build on gcc3.
-(reversed commit from upstream SVN)
+(revert commit from upstream SVN)
 
---- include/ptlib/safecoll.h.orig	Tue May 19 11:49:40 2009
-+++ include/ptlib/safecoll.h	Mon Jun 22 15:21:19 2009
-@@ -761,7 +761,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
+--- include/ptlib/safecoll.h.orig	Fri May  7 06:42:29 2010
++++ include/ptlib/safecoll.h	Sat Jun 26 16:40:52 2010
+@@ -767,7 +767,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
        */
      PSafePtr & operator=(const PSafeCollection & safeCollection)
        {
@@ -14,7 +14,7 @@ Make this build on gcc3.
          return *this;
        }
  
-@@ -797,7 +797,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -803,7 +803,7 @@ template <class T, class BaseClass = PSafePtrBase> cla
       */
      PSafePtr & operator=(PINDEX idx)
        {
@@ -23,7 +23,7 @@ Make this build on gcc3.
          return *this;
        }
    //@}
-@@ -806,15 +806,15 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -812,15 +812,15 @@ template <class T, class BaseClass = PSafePtrBase> cla
    //@{
      /**Return the physical pointer to the object.
        */
@@ -42,7 +42,7 @@ Make this build on gcc3.
  
      /**Post-increment the pointer.
         This requires that the pointer has been created with a PSafeCollection
-@@ -822,8 +822,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -828,8 +828,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
        */
      T * operator++(int)
        {
@@ -53,7 +53,7 @@ Make this build on gcc3.
          return previous;
        }
  
-@@ -833,8 +833,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -839,8 +839,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
        */
      T * operator++()
        {
@@ -64,7 +64,7 @@ Make this build on gcc3.
        }
  
      /**Post-decrement the pointer.
-@@ -843,8 +843,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -849,8 +849,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
        */
      T * operator--(int)
        {
@@ -75,7 +75,7 @@ Make this build on gcc3.
          return previous;
        }
  
-@@ -854,8 +854,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
+@@ -860,8 +860,8 @@ template <class T, class BaseClass = PSafePtrBase> cla
        */
      T * operator--()
        {

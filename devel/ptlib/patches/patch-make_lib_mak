@@ -1,34 +1,36 @@
-$OpenBSD: patch-make_lib_mak,v 1.3 2010/03/27 14:32:23 ajacoutot Exp $
---- make/lib.mak.orig	Mon Sep 21 02:25:30 2009
-+++ make/lib.mak	Sat Mar 27 15:21:24 2010
-@@ -29,10 +29,14 @@
+$OpenBSD: patch-make_lib_mak,v 1.4 2011/10/26 16:59:09 ajacoutot Exp $
+--- make/lib.mak.orig	Fri Oct 14 08:54:53 2011
++++ make/lib.mak	Wed Oct 26 10:49:21 2011
+@@ -28,6 +28,13 @@
+ # $Date: 2011/10/26 16:59:09 $
  #
  
++ifeq ($(OSTYPE),OpenBSD)
++  ifeq ($(BUILD_TYPE),.)
++    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)
++  else
++    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)
++  endif
++else
  ifeq (,$(findstring $(OSTYPE),Darwin cygwin mingw))
--  ifeq ($(BUILD_TYPE),.)
--    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
-+  ifeq ($(OSTYPE),OpenBSD)
-+    LIBNAME_PAT = $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)
-   else
--    LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER)
-+    ifeq ($(BUILD_TYPE),.)
-+      LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
-+    else
-+      LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER)
-+    endif
-   endif
- else
    ifeq ($(BUILD_TYPE),.)
-@@ -98,7 +102,11 @@ ifeq ($(P_SHAREDLIB),1)
-       LDSOOPTS += -Wl,--kill-at
-     else
-       ifneq ($(OSTYPE),Darwin)
--        LDSOOPTS += -Wl,-soname,$(LIB_SONAME)
-+        ifneq ($(OSTYPE),OpenBSD)
-+          LDSOOPTS += -Wl,-soname,$(LIB_SONAME)
-+        else
-+          LDSOOPTS += -fPIC
-+        endif
+     LIBNAME_PAT	= $(LIB_FILENAME).$(MAJOR_VERSION).$(MINOR_VERSION).$(BUILD_NUMBER)
+@@ -41,6 +48,7 @@ else
+     LIBNAME_PAT	= $(subst .$(LIB_SUFFIX),.$(MAJOR_VERSION).$(MINOR_VERSION)-$(BUILD_TYPE)$(BUILD_NUMBER).$(LIB_SUFFIX),$(LIB_FILENAME))
+   endif
+ endif
++endif
+ 
+ LIB_SONAME	= $(LIBNAME_PAT)
+ 
+@@ -101,6 +109,10 @@ ifeq ($(P_SHAREDLIB),1)
+         LDSOOPTS += -Wl,-soname,$(LIB_SONAME)
        endif
      endif
++  endif
++
++  ifeq ($(OSTYPE),OpenBSD)
++    LDSOOPTS += -fPIC
    endif
+ 
+   $(LIBDIR)/$(LIB_FILENAME): $(LIBDIR)/$(LIBNAME_PAT)

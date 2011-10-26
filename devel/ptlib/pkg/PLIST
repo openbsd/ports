@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
 @conflict pwlib-*
 @pkgpath devel/pwlib
 @pkgpath devel/pwlib,ldap
@@ -14,6 +14,7 @@ include/ptclib/asnber.h
 include/ptclib/asner.h
 include/ptclib/asnper.h
 include/ptclib/asnxer.h
+include/ptclib/cli.h
 include/ptclib/cypher.h
 include/ptclib/delaychan.h
 include/ptclib/dtmf.h
@@ -27,6 +28,7 @@ include/ptclib/httpsvc.h
 include/ptclib/inetmail.h
 include/ptclib/inetprot.h
 include/ptclib/ipacl.h
+include/ptclib/lua.h
 include/ptclib/memfile.h
 include/ptclib/mime.h
 include/ptclib/modem.h
@@ -61,6 +63,7 @@ include/ptclib/socks.h
 include/ptclib/telnet.h
 include/ptclib/threadpool.h
 include/ptclib/url.h
+include/ptclib/vcard.h
 include/ptclib/vsdl.h
 include/ptclib/vxml.h
 include/ptclib/xmpp.h
@@ -118,6 +121,7 @@ include/ptlib/sound.h
 include/ptlib/svcproc.h
 include/ptlib/syncpoint.h
 include/ptlib/syncthrd.h
+include/ptlib/syslog.h
 include/ptlib/tcpsock.h
 include/ptlib/textfile.h
 include/ptlib/thread.h
@@ -141,6 +145,7 @@ include/ptlib/unix/ptlib/icmpsock.h
 include/ptlib/unix/ptlib/ipdsock.h
 include/ptlib/unix/ptlib/ipsock.h
 include/ptlib/unix/ptlib/maccoreaudio.h
+include/ptlib/unix/ptlib/mail.h
 include/ptlib/unix/ptlib/mutex.h
 include/ptlib/unix/ptlib/pdirect.h
 include/ptlib/unix/ptlib/pipechan.h
@@ -169,7 +174,9 @@ include/ptlib/vconvert.h
 include/ptlib/video.h
 include/ptlib/videoio.h
 include/ptlib/videoio1394dc.h
+include/ptlib/wxstring.h
 @lib lib/libpt.so.${LIBpt_VERSION}
+lib/libpt_s.a
 lib/pkgconfig/ptlib.pc
 lib/ptlib/
 lib/ptlib/devices/

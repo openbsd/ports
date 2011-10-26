@@ -1,6 +1,3 @@
-ifndef PWLIBDIR
-PWLIBDIR = $(HOME)/pwlib
-endif
 
 PLUGIN_NAME	= sndio
 PLUGIN_FAMILY	= device/sound

@@ -1,26 +1,23 @@
-$OpenBSD: patch-make_common_mak,v 1.1.1.1 2010/03/23 21:10:17 ajacoutot Exp $
---- make/common.mak.orig	Mon Sep 21 02:25:30 2009
-+++ make/common.mak	Thu Jan 28 12:46:41 2010
-@@ -80,12 +80,12 @@ endif
+$OpenBSD: patch-make_common_mak,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
+--- make/common.mak.orig	Fri Oct 14 08:54:53 2011
++++ make/common.mak	Wed Oct 26 10:37:55 2011
+@@ -80,6 +80,7 @@ endif
  SOURCES         := $(strip $(SOURCES))
  
  
--ifeq ($(V)$(VERBOSE),)
--Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
--Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
--Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
--Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
--endif
-+#ifeq ($(V)$(VERBOSE),)
-+#Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
-+#Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
-+#Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
-+#Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
-+#endif
++ifneq ($(OSTYPE),OpenBSD)
+ ifeq ($(V)$(VERBOSE),)
+ Q    = @
+ Q_CC = @echo [CC] `echo $< | sed s/$PWD//` ; 
+@@ -87,6 +88,7 @@ Q_DEP= @echo [DEP] `echo $< | sed s/$PWD//` ; 
+ Q_AR = @echo [AR] `echo $@ | sed s/$PWD//` ; 
+ Q_LD = @echo [LD] `echo $@ | sed s/$PWD//` ; 
+ endif
++endif
  
  
  #
-@@ -163,7 +163,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
+@@ -164,7 +166,7 @@ TARGET_LIBS	= $(PTLIBDIR)/lib_$(PLATFORM_TYPE)/$(PTLIB
  
  # distinguish betweek building and using pwlib
  ifeq (,$(wildcard $(PTLIBDIR)/src))
