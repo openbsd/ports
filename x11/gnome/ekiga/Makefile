@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/10/26 17:02:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/10/26 21:46:48 ajacoutot Exp $
 
 BROKEN=		WIP (see ajacoutot@)
 
@@ -51,7 +51,7 @@ CFLAGS +=	-fexceptions
 MODGCONF2_SCHEMAS_DIR= ekiga
 
 MODGNOME_DESKTOP_FILE=	Yes
-#MODGNOME_TOOLS=	yelp
+MODGNOME_TOOLS=	yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
 
 LIBTOOL_FLAGS=	--tag=disable-static
