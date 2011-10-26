@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/30 07:59:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/10/26 12:26:15 ajacoutot Exp $
 @conflict gtk2mm-<2.22
 %%SHARED%%
 include/atkmm-1.6/
@@ -149,7 +149,7 @@ share/doc/atkmm-1.6/reference/html/graph_legend.png
 share/doc/atkmm-1.6/reference/html/group__atkmmEnums.html
 share/doc/atkmm-1.6/reference/html/hierarchy.html
 share/doc/atkmm-1.6/reference/html/index.html
-share/doc/atkmm-1.6/reference/html/inherit__graph__0.png
+share/doc/atkmm-1.6/reference/html/inherit_graph_0.png
 share/doc/atkmm-1.6/reference/html/inherits.html
 share/doc/atkmm-1.6/reference/html/modules.html
 share/doc/atkmm-1.6/reference/html/namespaceAtk.html

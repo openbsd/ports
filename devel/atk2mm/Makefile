@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/10/26 12:26:15 ajacoutot Exp $
 
 COMMENT=	C++ binding for the ATK library
 
 GNOME_PROJECT=	atkmm
-GNOME_VERSION=	2.22.5
+GNOME_VERSION=	2.22.6
 
 PKGNAME=	atk2mm-${GNOME_VERSION}
 
@@ -19,10 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += m stdc++ atk-1.0 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 pcre sigc-2.0
+WANTLIB += atk-1.0 ffi glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pcre sigc-2.0 stdc++
 
 MODULES=	devel/gettext \
 		x11/gnome
