@@ -1,11 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/05/31 07:20:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/10/26 17:02:53 ajacoutot Exp $
 @bin bin/ekiga
 bin/ekiga-config-tool
 @bin bin/ekiga-helper
+lib/ekiga/
+lib/ekiga/3.3.2/
+@comment lib/ekiga/3.3.2/libekiga.la
+lib/ekiga/3.3.2/libekiga.so
+lib/ekiga/3.3.2/plugins/
+@comment lib/ekiga/3.3.2/plugins/libgmevolution.la
+lib/ekiga/3.3.2/plugins/libgmevolution.so
+@comment lib/ekiga/3.3.2/plugins/libgmldap.la
+lib/ekiga/3.3.2/plugins/libgmldap.so
 @man man/man1/ekiga.1
 share/applications/ekiga.desktop
 share/dbus-1/services/org.ekiga.Ekiga.service
 share/dbus-1/services/org.ekiga.Helper.service
+share/gnome/
+share/gnome/help/
 share/gnome/help/ekiga/
 share/gnome/help/ekiga/C/
 share/gnome/help/ekiga/C/ekiga.xml
@@ -358,6 +369,33 @@ share/gnome/help/ekiga/ru/figures/monitoring_lines.png
 share/gnome/help/ekiga/ru/figures/roster.png
 share/gnome/help/ekiga/ru/figures/status.png
 share/gnome/help/ekiga/ru/figures/video_codecs.png
+share/gnome/help/ekiga/sl/
+share/gnome/help/ekiga/sl/ekiga.xml
+share/gnome/help/ekiga/sl/figures/
+share/gnome/help/ekiga/sl/figures/accounts_d1.png
+share/gnome/help/ekiga/sl/figures/accounts_ekiga_call_out.png
+share/gnome/help/ekiga/sl/figures/accounts_ekiga_net.png
+share/gnome/help/ekiga/sl/figures/accounts_h323.png
+share/gnome/help/ekiga/sl/figures/accounts_sip.png
+share/gnome/help/ekiga/sl/figures/addressbook_d1.png
+share/gnome/help/ekiga/sl/figures/addressbook_d2.png
+share/gnome/help/ekiga/sl/figures/audio_codecs.png
+share/gnome/help/ekiga/sl/figures/call_d1.png
+share/gnome/help/ekiga/sl/figures/call_history.png
+share/gnome/help/ekiga/sl/figures/chat_d1.png
+share/gnome/help/ekiga/sl/figures/config_d1.png
+share/gnome/help/ekiga/sl/figures/config_d2.png
+share/gnome/help/ekiga/sl/figures/config_d3.png
+share/gnome/help/ekiga/sl/figures/config_d4.png
+share/gnome/help/ekiga/sl/figures/config_d5.png
+share/gnome/help/ekiga/sl/figures/config_d6.png
+share/gnome/help/ekiga/sl/figures/config_d7.png
+share/gnome/help/ekiga/sl/figures/config_d8.png
+share/gnome/help/ekiga/sl/figures/lumi.png
+share/gnome/help/ekiga/sl/figures/monitoring_lines.png
+share/gnome/help/ekiga/sl/figures/roster.png
+share/gnome/help/ekiga/sl/figures/status.png
+share/gnome/help/ekiga/sl/figures/video_codecs.png
 share/gnome/help/ekiga/sv/
 share/gnome/help/ekiga/sv/ekiga.xml
 share/gnome/help/ekiga/sv/figures/
@@ -412,26 +450,40 @@ share/gnome/help/ekiga/uk/figures/monitoring_lines.png
 share/gnome/help/ekiga/uk/figures/roster.png
 share/gnome/help/ekiga/uk/figures/status.png
 share/gnome/help/ekiga/uk/figures/video_codecs.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
+share/gnome/help/ekiga/zh_CN/
+share/gnome/help/ekiga/zh_CN/ekiga.xml
+share/gnome/help/ekiga/zh_CN/figures/
+share/gnome/help/ekiga/zh_CN/figures/accounts_d1.png
+share/gnome/help/ekiga/zh_CN/figures/accounts_ekiga_call_out.png
+share/gnome/help/ekiga/zh_CN/figures/accounts_ekiga_net.png
+share/gnome/help/ekiga/zh_CN/figures/accounts_h323.png
+share/gnome/help/ekiga/zh_CN/figures/accounts_sip.png
+share/gnome/help/ekiga/zh_CN/figures/addressbook_d1.png
+share/gnome/help/ekiga/zh_CN/figures/addressbook_d2.png
+share/gnome/help/ekiga/zh_CN/figures/audio_codecs.png
+share/gnome/help/ekiga/zh_CN/figures/call_d1.png
+share/gnome/help/ekiga/zh_CN/figures/call_history.png
+share/gnome/help/ekiga/zh_CN/figures/chat_d1.png
+share/gnome/help/ekiga/zh_CN/figures/config_d1.png
+share/gnome/help/ekiga/zh_CN/figures/config_d2.png
+share/gnome/help/ekiga/zh_CN/figures/config_d3.png
+share/gnome/help/ekiga/zh_CN/figures/config_d4.png
+share/gnome/help/ekiga/zh_CN/figures/config_d5.png
+share/gnome/help/ekiga/zh_CN/figures/config_d6.png
+share/gnome/help/ekiga/zh_CN/figures/config_d7.png
+share/gnome/help/ekiga/zh_CN/figures/config_d8.png
+share/gnome/help/ekiga/zh_CN/figures/lumi.png
+share/gnome/help/ekiga/zh_CN/figures/monitoring_lines.png
+share/gnome/help/ekiga/zh_CN/figures/roster.png
+share/gnome/help/ekiga/zh_CN/figures/status.png
+share/gnome/help/ekiga/zh_CN/figures/video_codecs.png
 share/icons/hicolor/128x128/apps/ekiga.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/ekiga.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/ekiga.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
+share/icons/hicolor/24x24/apps/ekiga.png
 share/icons/hicolor/32x32/apps/ekiga.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ekiga.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/ekiga.png
-share/icons/hicolor/72x72/
-share/icons/hicolor/72x72/apps/
 share/icons/hicolor/72x72/apps/ekiga.png
 share/locale/am/LC_MESSAGES/ekiga.mo
 share/locale/ar/LC_MESSAGES/ekiga.mo
@@ -452,6 +504,7 @@ share/locale/da/LC_MESSAGES/ekiga.mo
 share/locale/de/LC_MESSAGES/ekiga.mo
 share/locale/dz/LC_MESSAGES/ekiga.mo
 share/locale/el/LC_MESSAGES/ekiga.mo
+share/locale/en@shaw/LC_MESSAGES/ekiga.mo
 share/locale/en_CA/LC_MESSAGES/ekiga.mo
 share/locale/en_GB/LC_MESSAGES/ekiga.mo
 share/locale/eo/LC_MESSAGES/ekiga.mo
@@ -473,6 +526,7 @@ share/locale/is/LC_MESSAGES/ekiga.mo
 share/locale/it/LC_MESSAGES/ekiga.mo
 share/locale/ja/LC_MESSAGES/ekiga.mo
 share/locale/ka/LC_MESSAGES/ekiga.mo
+share/locale/kk/LC_MESSAGES/ekiga.mo
 share/locale/kn/LC_MESSAGES/ekiga.mo
 share/locale/ko/LC_MESSAGES/ekiga.mo
 share/locale/ku/LC_MESSAGES/ekiga.mo
@@ -508,6 +562,7 @@ share/locale/ta/LC_MESSAGES/ekiga.mo
 share/locale/te/LC_MESSAGES/ekiga.mo
 share/locale/th/LC_MESSAGES/ekiga.mo
 share/locale/tr/LC_MESSAGES/ekiga.mo
+share/locale/ug/LC_MESSAGES/ekiga.mo
 share/locale/uk/LC_MESSAGES/ekiga.mo
 share/locale/vi/LC_MESSAGES/ekiga.mo
 share/locale/wa/LC_MESSAGES/ekiga.mo
@@ -515,6 +570,7 @@ share/locale/xh/LC_MESSAGES/ekiga.mo
 share/locale/zh_CN/LC_MESSAGES/ekiga.mo
 share/locale/zh_HK/LC_MESSAGES/ekiga.mo
 share/locale/zh_TW/LC_MESSAGES/ekiga.mo
+share/omf/
 share/omf/ekiga/
 share/omf/ekiga/ekiga-C.omf
 share/omf/ekiga/ekiga-bg.omf
@@ -529,9 +585,10 @@ share/omf/ekiga/ekiga-fr.omf
 share/omf/ekiga/ekiga-oc.omf
 share/omf/ekiga/ekiga-pt_BR.omf
 share/omf/ekiga/ekiga-ru.omf
+share/omf/ekiga/ekiga-sl.omf
 share/omf/ekiga/ekiga-sv.omf
 share/omf/ekiga/ekiga-uk.omf
-share/pixmaps/
+share/omf/ekiga/ekiga-zh_CN.omf
 share/pixmaps/ekiga/
 share/pixmaps/ekiga/ekiga-logo.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

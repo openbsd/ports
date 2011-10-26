@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2010/05/31 07:20:04 ajacoutot Exp $
---- configure.orig	Mon May 31 00:12:51 2010
-+++ configure	Mon May 31 08:34:46 2010
-@@ -15339,8 +15339,8 @@ _ACEOF
+$OpenBSD: patch-configure,v 1.5 2011/10/26 17:02:53 ajacoutot Exp $
+--- configure.orig	Tue Aug 23 00:54:32 2011
++++ configure	Tue Oct 25 12:52:40 2011
+@@ -16450,8 +16450,8 @@ fi
  
  
  if test ".$ac_cv_c_compiler_gnu" = .yes; then
@@ -12,7 +12,7 @@ $OpenBSD: patch-configure,v 1.4 2010/05/31 07:20:04 ajacoutot Exp $
  fi
  
  case $host in
-@@ -15390,7 +15390,7 @@ case $target_os in
+@@ -16501,7 +16501,7 @@ case $target_os in
      gm_platform="linux"
      ;;
  

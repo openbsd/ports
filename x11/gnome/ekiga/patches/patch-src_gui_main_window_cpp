@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gui_main_window_cpp,v 1.1 2011/10/26 17:02:53 ajacoutot Exp $
+
+gui/main_window.cpp:38:22: error: revision.h: No such file or directory
+
+--- src/gui/main_window.cpp.orig	Tue Oct 25 14:22:38 2011
++++ src/gui/main_window.cpp	Tue Oct 25 14:22:47 2011
+@@ -35,7 +35,7 @@
+  *                          build the main window.
+  */
+ 
+-#include "revision.h"
++// #include "revision.h"
+ 
+ #include "config.h"
+ 
