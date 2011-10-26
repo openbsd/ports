@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/11 09:01:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/10/26 17:00:06 ajacoutot Exp $
+@pkgpath net/gnugk,mysql
+@pkgpath net/gnugk,pgsq
 @newgroup _gnugk:586
 @newuser _gnugk:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/log/gnugk/*
@@ -10,7 +12,6 @@ share/doc/gnugk/identifiers.txt
 share/doc/gnugk/keepalive.txt
 share/doc/gnugk/known_bugs.txt
 share/doc/gnugk/performance.txt
-share/doc/gnugk/pwlib_bugs.txt
 share/doc/gnugk/trace_levels.txt
 share/examples/gnugk/
 share/examples/gnugk/H46023.ini
@@ -42,6 +43,7 @@ share/examples/gnugk/status.ini
 share/examples/gnugk/syslog.ini
 share/examples/gnugk/uri.ini
 share/examples/gnugk/vqueue.ini
-@rcscript ${RCDIR}/gnugk
 @owner _gnugk
 @sample /var/log/gnugk/
+@owner
+@rcscript ${RCDIR}/gnugk
