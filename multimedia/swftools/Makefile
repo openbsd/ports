@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/26 20:17:42 sthen Exp $
 
 COMMENT=	SWF manipulation and generation utilities
 
 DISTNAME=	swftools-0.9.1
-REVISION=		0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}
 
