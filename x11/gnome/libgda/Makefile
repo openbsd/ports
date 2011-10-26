@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/10/11 05:10:25 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/10/26 22:31:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.99.4
+GNOME_VERSION=		5.0.0
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -20,10 +20,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION =		0
-REVISION-main = 	2
-REVISION-ui =		1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -48,7 +44,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt gnome-keyring
-WANTLIB += gpg-error
+WANTLIB += gpg-error ffi
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -116,7 +112,7 @@ WANTLIB-ui += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB-ui += cairo-gobject drm expat fontconfig freetype gda-5.0
 WANTLIB-ui += gdk-3 gdk_pixbuf-2.0 goocanvas-2.0 gtk-3 gtksourceview-3.0
 WANTLIB-ui += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-ui += pthread pthread-stubs xcb xcb-render xcb-shm
+WANTLIB-ui += pthread pthread-stubs xcb xcb-render xcb-shm stdc++
 LIB_DEPENDS-ui=		${LIB_DEPENDS} \
 			x11/gnome/libgda \
 			x11/gtksourceview3 \

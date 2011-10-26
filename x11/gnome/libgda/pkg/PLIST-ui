@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.13 2011/09/29 13:35:41 jasper Exp $
+@comment $OpenBSD: PLIST-ui,v 1.14 2011/10/26 22:31:27 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -402,7 +402,6 @@ share/gtk-doc/html/gda-browser/gda-browser-Schema-Browser-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Support-functions.html
 share/gtk-doc/html/gda-browser/gda-browser-UiFormgrid.html
 share/gtk-doc/html/gda-browser/gda-browser-popup-container.html
-share/gtk-doc/html/gda-browser/gda-browser.devhelp
 share/gtk-doc/html/gda-browser/gda-browser.devhelp2
 share/gtk-doc/html/gda-browser/home.png
 share/gtk-doc/html/gda-browser/index.html
