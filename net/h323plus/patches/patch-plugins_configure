@@ -1,65 +1,41 @@
-$OpenBSD: patch-plugins_configure,v 1.3 2010/06/27 01:30:33 ajacoutot Exp $
---- plugins/configure.orig	Mon Oct 22 09:40:39 2007
-+++ plugins/configure	Sun Jun 27 03:22:08 2010
-@@ -3156,7 +3156,7 @@ case "$target_os" in
-           esac
- 	  PLUGINEXT=dylib
-         ;;
--        *)LDSO='-shared -Wl,-soname,$(SONAME)';;
-+        *)LDSO='-shared -fPIC -Wl,-soname,$(SONAME)';;
- esac
- LDSO=${LDSO}
+$OpenBSD: patch-plugins_configure,v 1.4 2011/10/26 16:59:51 ajacoutot Exp $
+--- plugins/configure.orig	Mon Sep 20 11:04:24 2010
++++ plugins/configure	Wed Oct 26 13:08:03 2011
+@@ -2318,6 +2318,10 @@ fi
+                  opal_release_flags="-O3 -DSOLARIS"
+                  opal_debug_flags="-g -D_DEBUG -DSOLARIS"
+                ;;
++               openbsd*)
++                 opal_release_flags=""
++                 opal_debug_flags="-g3 -ggdb -O0 -D_DEBUG"
++               ;;
+                *)
+                  opal_release_flags="-Os"
+                  opal_debug_flags="-g3 -ggdb -O0 -D_DEBUG"
+@@ -6530,7 +6534,7 @@ _ACEOF
  
-@@ -5886,13 +5886,13 @@ echo "${ECHO_T}no" >&6
-   else
-     echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
--    echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
--echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6
-+    echo "$as_me:$LINENO: checking for dlopen" >&5
-+echo $ECHO_N "checking for dlopen... $ECHO_C" >&6
- if test "${ac_cv_lib_dl_dlopen+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldl  $LIBS"
-+LIBS="$LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -6101,7 +6101,7 @@ fi
-     LIBS=$saved_LIBS
-     if test "x${ffmpeg_libs}" != "xno"; then
+         *)
+           STDCCFLAGS="$STDCCFLAGS -fPIC"
+-          LDSO='-shared -Wl,-soname,$(SONAME)'
++          LDSO='-shared -fPIC -Wl,-soname,$(SONAME)'
+           PLUGINEXT=so
  
--for ac_header in ffmpeg/avcodec.h
-+for ac_header in libavcodec/avcodec.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
-@@ -6262,7 +6262,7 @@ _ACEOF
- cat confdefs.h >>conftest.$ac_ext
+ 
+@@ -7331,7 +7335,7 @@ cat confdefs.h >>conftest.$ac_ext
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
--#include <ffmpeg/avcodec.h>
-+#include <libavcodec/avcodec.h>
-   	     #ifdef LIBAVCODEC_VERSION_INT
-                #if LIBAVCODEC_VERSION_INT >= ((51<<16)+(11<<8)+0)
-                  yes
-@@ -6321,7 +6321,7 @@ if test "x${enable_x264}" != "xno" ; then
-     enable_x264=yes
  
-     saved_LIBS="$LIBS"
--    LIBS="$LIBS -lm -lz -lpthread"
-+    LIBS="$LIBS -lm -lz -pthread"
-     echo "$as_me:$LINENO: checking for x264_encoder_open in -lx264" >&5
- echo $ECHO_N "checking for x264_encoder_open in -lx264... $ECHO_C" >&6
- if test "${ac_cv_lib_x264_x264_encoder_open+set}" = set; then
-@@ -6621,7 +6621,7 @@ if test "x${enable_theora}" != "xno" ; then
-     enable_theora=yes
+-            #include <gsm/gsm.h>
++            #include <gsm.h>
  
-     saved_LIBS="$LIBS"
--    LIBS="$LIBS -lm -lz -lpthread"
-+    LIBS="$LIBS -lm -lz -pthread"
-     echo "$as_me:$LINENO: checking for theora_encode_init in -ltheora" >&5
- echo $ECHO_N "checking for theora_encode_init in -ltheora... $ECHO_C" >&6
- if test "${ac_cv_lib_theora_theora_encode_init+set}" = set; then
+ int
+ main ()
+@@ -7504,7 +7508,7 @@ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
+ 
+-            #include <gsm/gsm.h>
++            #include <gsm.h>
+ 
+ int
+ main ()

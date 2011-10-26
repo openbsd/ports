@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/10/26 16:59:51 ajacoutot Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -63,12 +63,22 @@ include/openh323/h450/h450pdu.h
 include/openh323/h460/
 include/openh323/h460/h460.h
 include/openh323/h460/h4601.h
+include/openh323/h460/h46015.h
+include/openh323/h460/h46017a.h
 include/openh323/h460/h46018.h
+include/openh323/h460/h46018_h225.h
 include/openh323/h460/h46019.h
+include/openh323/h460/h46024b.h
 include/openh323/h460/h4609.h
+include/openh323/h460/h460_oid3.h
+include/openh323/h460/h460_std17.h
+include/openh323/h460/h460_std18.h
+include/openh323/h460/h460_std23.h
+include/openh323/h460/h460_std9.h
 include/openh323/h460/h460p.h
 include/openh323/h460/h460pres.h
 include/openh323/h460/h460tm.h
+include/openh323/h460/upnpcp.h
 include/openh323/h501.h
 include/openh323/h501pdu.h
 include/openh323/jitter.h
@@ -78,6 +88,7 @@ include/openh323/opalvxml.h
 include/openh323/opalwavfile.h
 include/openh323/openh323buildopts.h
 include/openh323/peclient.h
+include/openh323/ptlib_extras.h
 include/openh323/q922.h
 include/openh323/q931.h
 include/openh323/rfc2833.h
@@ -90,18 +101,26 @@ include/openh323/t38proto.h
 include/openh323/transports.h
 include/openh323/x224.h
 include/openh323/x880.h
+lib/h323plus/
+lib/h323plus/codecs/
+lib/h323plus/codecs/audio/
+lib/h323plus/codecs/audio/g7221_audio_pwplugin.so
+lib/h323plus/codecs/audio/g7222_audio_pwplugin.so
+lib/h323plus/codecs/audio/g722_audio_pwplugin.so
+lib/h323plus/codecs/audio/g726_audio_pwplugin.so
+lib/h323plus/codecs/audio/gsm0610_audio_pwplugin.so
+lib/h323plus/codecs/audio/gsmamrcodec_pwplugin.so
+lib/h323plus/codecs/audio/ilbc_audio_pwplugin.so
+lib/h323plus/codecs/audio/ima_adpcm_audio_pwplugin.so
+lib/h323plus/codecs/audio/lpc10_audio_pwplugin.so
+lib/h323plus/codecs/audio/speex_audio_pwplugin.so
+lib/h323plus/codecs/video/
+lib/h323plus/codecs/video/h261-vic_video_pwplugin.so
+lib/h323plus/codecs/video/h263-1998_video_pwplugin.so
+lib/h323plus/codecs/video/h263-ffmpeg_video_pwplugin.so
+lib/h323plus/codecs/video/h264_video_pwplugin.so
+@bin lib/h323plus/codecs/video/h264_video_pwplugin_helper
 @lib lib/libh323.so.${LIBh323_VERSION}
-lib/ptlib/codecs/
-lib/ptlib/codecs/audio/
-lib/ptlib/codecs/audio/g726_audio_pwplugin.so
-lib/ptlib/codecs/audio/gsm0610_audio_pwplugin.so
-lib/ptlib/codecs/audio/gsmamrcodec_pwplugin.so
-lib/ptlib/codecs/audio/ilbc_audio_pwplugin.so
-lib/ptlib/codecs/audio/ima_adpcm_audio_pwplugin.so
-lib/ptlib/codecs/audio/lpc10_audio_pwplugin.so
-lib/ptlib/codecs/audio/speex_audio_pwplugin.so
-lib/ptlib/codecs/video/
-lib/ptlib/codecs/video/h263-ffmpeg_video_pwplugin.so
 share/openh323/
 share/openh323/openh323u.mak
 share/openh323/version.h
