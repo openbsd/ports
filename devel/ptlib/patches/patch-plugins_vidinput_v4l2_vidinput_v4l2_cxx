@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_vidinput_v4l2_vidinput_v4l2_cxx,v 1.1 2011/10/27 09:34:40 ajacoutot Exp $
+--- plugins/vidinput_v4l2/vidinput_v4l2.cxx.orig	Thu Oct 27 09:55:19 2011
++++ plugins/vidinput_v4l2/vidinput_v4l2.cxx	Thu Oct 27 09:59:26 2011
+@@ -982,7 +982,7 @@ V4L2Names::Update()
+   PTRACE(1,"Detecting V4L2 devices");
+   PWaitAndSignal m(mutex);
+   inputDeviceNames.RemoveAll (); // flush the previous run
+-#if defined(P_FREEBSD)
++#if defined(P_FREEBSD) || defined(P_OPENBSD)
+   for (int i = 0; i < 10; i++) {
+     PString thisDevice = PString("/dev/video") + PString(i);
+     int videoFd=::v4l2_open((const char *)thisDevice, O_RDONLY | O_NONBLOCK);
