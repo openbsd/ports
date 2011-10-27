@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/20 21:20:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/10/27 15:46:16 ajacoutot Exp $
 @pkgpath x11/polkit-gnome,gtk2
 @bin libexec/polkit-gnome-authentication-agent-1
 share/examples/polkit-gnome/
@@ -40,11 +40,13 @@ share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/hu/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/id/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/it/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/ja/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/ko/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/polkit-gnome-1.mo

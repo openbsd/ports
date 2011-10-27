@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/10/17 18:37:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/10/27 15:46:16 ajacoutot Exp $
 
 COMMENT=	PolicyKit authentication agent for GNOME/GTK+
 
 GNOME_PROJECT=	polkit-gnome
-GNOME_VERSION=	0.104
+GNOME_VERSION=	0.105
 
 CATEGORIES=	x11 sysutils
 
@@ -23,7 +23,7 @@ WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png polkit-agent-1 polkit-gobject-1 pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z stdc++
 
 MODULES=	devel/gettext \
 		x11/gnome
