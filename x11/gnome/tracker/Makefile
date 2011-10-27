@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2011/10/21 14:26:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2011/10/27 15:39:00 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.6
+GNOME_VERSION=	0.12.7
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -91,7 +91,7 @@ WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
-WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12
+WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12 stdc++
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \

@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_libtracker-common_tracker-sched-test_c,v 1.1 2011/10/27 15:39:00 ajacoutot Exp $
+
+There is no SCHED_IDLE policy on OpenBSD.
+
+--- tests/libtracker-common/tracker-sched-test.c.orig	Thu Oct 27 16:30:04 2011
++++ tests/libtracker-common/tracker-sched-test.c	Thu Oct 27 16:30:16 2011
+@@ -46,7 +46,9 @@ test_sched_set_and_get ()
+ {
+         g_assert (scheduler_is (SCHED_OTHER));
+         g_assert (tracker_sched_idle ());
++#ifdef __linux__
+         g_assert (scheduler_is (SCHED_IDLE));
++#endif
+ }
+ 
+ 
