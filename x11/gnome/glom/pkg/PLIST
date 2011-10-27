@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/10/26 11:14:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/10/27 14:27:19 jasper Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 include/glom-${API_V}/
@@ -420,7 +420,6 @@ share/glom/glade/operator/dialog_image_save_progress.glade
 share/glom/glade/operator/dialog_import_csv.glade
 share/glom/glade/operator/dialog_import_csv_progress.glade
 share/glom/glade/operator/window_main.glade
-share/glom/glade/operator/window_progress.glade
 share/glom/glom_document.dtd
 share/glom/pixmaps/
 share/glom/pixmaps/glom-button.png

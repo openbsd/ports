@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/26 11:14:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/27 14:27:19 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
-GNOME_VERSION=		1.19.15
+GNOME_VERSION=		1.19.16
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 
@@ -46,14 +46,14 @@ BUILD_DEPENDS=		databases/postgresql,-server \
 			devel/iso-codes \
 			devel/py-gobject3 \
 			textproc/py-sphinx \
-			x11/gnome/libgda,-pgsql
+			x11/gnome/libgda,-pgsql>=5.0.0
 RUN_DEPENDS=		databases/postgresql,-server \
 			devel/py-gobject3 \
 			misc/shared-mime-info \
-			x11/gnome/libgda,-pgsql
+			x11/gnome/libgda,-pgsql>=5.0.0
 LIB_DEPENDS=		devel/boost \
 			graphics/evince \
-			graphics/goocanvasmm2>=1.90.6 \
+			graphics/goocanvasmm2>=1.90.8 \
 			net/libepc \
 			textproc/libxml++ \
 			x11/gnome/libgdamm>=4.99.4 \
