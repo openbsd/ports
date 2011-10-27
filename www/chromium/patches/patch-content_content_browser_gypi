@@ -1,12 +1,15 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.4 2011/09/19 08:55:26 robert Exp $
---- content/content_browser.gypi.orig	Wed Sep 14 10:01:11 2011
-+++ content/content_browser.gypi	Fri Sep 16 18:17:23 2011
-@@ -129,8 +129,6 @@
-         'browser/geolocation/empty_device_data_provider.h',
-         'browser/geolocation/gateway_data_provider_common.cc',
-         'browser/geolocation/gateway_data_provider_common.h',
--        'browser/geolocation/gateway_data_provider_linux.cc',
--        'browser/geolocation/gateway_data_provider_linux.h',
-         'browser/geolocation/gateway_data_provider_win.cc',
-         'browser/geolocation/gateway_data_provider_win.h',
-         'browser/geolocation/geolocation_dispatcher_host.cc',
+$OpenBSD: patch-content_content_browser_gypi,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- content/content_browser.gypi.orig	Wed Oct 26 13:58:26 2011
++++ content/content_browser.gypi	Wed Oct 26 13:58:57 2011
+@@ -596,6 +596,11 @@
+             'browser/renderer_host/gtk_key_bindings_handler.h',
+           ],
+         }],
++        ['OS=="openbsd"', {
++          'sources/': [
++            ['exclude', '^browser/geolocation/wifi_data_provider_linux\\.cc$'],
++          ],
++        }],
+         ['touchui==1', {
+           'sources/': [
+             ['exclude', '^browser/renderer_host/gtk_im_context_wrapper.cc'],

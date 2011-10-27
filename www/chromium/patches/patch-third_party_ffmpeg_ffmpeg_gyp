@@ -1,11 +1,16 @@
-$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.6 2011/09/19 08:55:26 robert Exp $
---- third_party/ffmpeg/ffmpeg.gyp.orig	Wed Sep 14 10:03:27 2011
-+++ third_party/ffmpeg/ffmpeg.gyp	Sat Sep 17 15:59:48 2011
-@@ -493,7 +493,6 @@
-                 '-std=c99',
-                 '-pthread',
-                 '-fno-math-errno',
--                '-fno-signed-zeros',
-                 '-fno-tree-vectorize',
-                 '-fomit-frame-pointer',
-                 # Don't warn about libavformat using its own deprecated APIs.
+$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.7 2011/10/27 07:59:09 robert Exp $
+--- third_party/ffmpeg/ffmpeg.gyp.orig	Wed Oct 26 13:54:51 2011
++++ third_party/ffmpeg/ffmpeg.gyp	Wed Oct 26 13:55:42 2011
+@@ -227,6 +227,12 @@
+                 ],
+               },
+             }],  # OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"
++            ['OS=="openbsd"', {
++              # OpenBSD's gcc (4.2.1) does not support this flag
++              'cflags!': [
++                '-fno-signed-zeros',
++              ],
++            }],
+             ['OS=="mac"', {
+               'conditions': [
+                 ['mac_breakpad==1', {

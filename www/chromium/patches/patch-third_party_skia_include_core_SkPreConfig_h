@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_skia_include_core_SkPreConfig_h,v 1.4 2011/09/19 08:55:26 robert Exp $
---- third_party/skia/include/core/SkPreConfig.h.orig	Wed Sep 14 10:02:12 2011
-+++ third_party/skia/include/core/SkPreConfig.h	Fri Sep 16 18:17:24 2011
-@@ -37,7 +37,7 @@
+$OpenBSD: patch-third_party_skia_include_core_SkPreConfig_h,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- third_party/skia/include/core/SkPreConfig.h.orig	Fri Oct 21 10:30:58 2011
++++ third_party/skia/include/core/SkPreConfig.h	Wed Oct 26 13:37:47 2011
+@@ -30,7 +30,7 @@
          #define SK_BUILD_FOR_WIN32
      #elif defined(__SYMBIAN32__)
          #define SK_BUILD_FOR_WIN32

@@ -1,7 +1,17 @@
-$OpenBSD: patch-base_base_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
---- base/base.gypi.orig	Wed Sep 14 10:01:29 2011
-+++ base/base.gypi	Fri Sep 16 18:17:22 2011
-@@ -191,6 +191,7 @@
+$OpenBSD: patch-base_base_gypi,v 1.9 2011/10/27 07:59:08 robert Exp $
+--- base/base.gypi.orig	Fri Oct 21 10:30:02 2011
++++ base/base.gypi	Wed Oct 26 21:04:14 2011
+@@ -93,8 +93,7 @@
+           'file_version_info_win.h',
+           'files/file_path_watcher.cc',
+           'files/file_path_watcher.h',
+-          'files/file_path_watcher_linux.cc',
+-          'files/file_path_watcher_mac.cc',
++          'files/file_path_watcher_kqueue.cc',
+           'files/file_path_watcher_win.cc',
+           'float_util.h',
+           'global_descriptors_posix.cc',
+@@ -190,6 +189,7 @@
            'process_util.h',
            'process_util_linux.cc',
            'process_util_mac.mm',
@@ -9,7 +19,15 @@ $OpenBSD: patch-base_base_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
            'process_util_posix.cc',
            'process_util_win.cc',
            'process_win.cc',
-@@ -383,12 +384,11 @@
+@@ -250,7 +250,6 @@
+           'sys_info.h',
+           'sys_info_chromeos.cc',
+           'sys_info_freebsd.cc',
+-          'sys_info_linux.cc',
+           'sys_info_mac.cc',
+           'sys_info_openbsd.cc',
+           'sys_info_posix.cc',
+@@ -388,12 +387,11 @@
            }, {
              'sources!' : [ 'message_pump_gtk.cc', ],
            }],
@@ -23,7 +41,22 @@ $OpenBSD: patch-base_base_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
                ],
              },
            ],
-@@ -499,6 +499,12 @@
+@@ -434,12 +432,9 @@
+               'string16.cc',
+             ],
+           },],
+-          ['os_posix==1 and OS!="linux" and OS!="mac"', {
+-            'sources!': [
+-              'files/file_path_watcher_linux.cc',
+-            ],
++          ['os_posix==1 and OS == "openbsd"', {
+             'sources': [
+-              'files/file_path_watcher_stub.cc',
++              'files/file_path_watcher_kqueue.cc',
+             ],
+           }],
+         ],
+@@ -508,6 +503,12 @@
              ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {

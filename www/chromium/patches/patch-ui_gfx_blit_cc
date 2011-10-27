@@ -1,0 +1,14 @@
+$OpenBSD: patch-ui_gfx_blit_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- ui/gfx/blit.cc.orig	Wed Oct 26 13:51:34 2011
++++ ui/gfx/blit.cc	Wed Oct 26 13:51:54 2011
+@@ -10,7 +10,9 @@
+ #include "ui/gfx/point.h"
+ #include "ui/gfx/rect.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_OPENBSD)
++#include <cairo.h>
++#elif defined(OS_POSIX) && !defined(OS_MACOSX)
+ #include <cairo/cairo.h>
+ #endif
+ 

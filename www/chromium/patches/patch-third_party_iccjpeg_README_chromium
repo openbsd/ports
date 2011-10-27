@@ -1,0 +1,20 @@
+$OpenBSD: patch-third_party_iccjpeg_README_chromium,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- third_party/iccjpeg/README.chromium.orig	Fri Oct 21 10:29:58 2011
++++ third_party/iccjpeg/README.chromium	Wed Oct 26 13:43:17 2011
+@@ -2,6 +2,7 @@ Name: iccjpeg
+ URL: http://www.ijg.org
+ Version: unknown
+ License File: LICENSE
++Security Critical: yes
+ 
+ Description:
+ Contain support for ICC color profile on top of jpeg6b (and up) library.
+@@ -10,3 +11,8 @@ We include the relevant part of the original IJG licen
+ in the file LICENSE.
+ 
+ Documentation for ICC profile can be found at: http://www.color.org
++
++Local Modifications:
++* On at least OpenBSD we might need to include to correct header file from
++  the system, so a USE_SYSTEM_LIBJPEG ifdef is added to iccjpeg.h in order
++  to be able to decide which jpeglib.h header to include.

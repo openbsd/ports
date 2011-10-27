@@ -1,22 +1,17 @@
-$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.4 2011/09/19 08:55:26 robert Exp $
---- net/base/dnsrr_resolver.cc.orig	Tue Aug 23 10:28:31 2011
-+++ net/base/dnsrr_resolver.cc	Wed Aug 24 10:54:23 2011
-@@ -4,6 +4,12 @@
- 
+$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- net/base/dnsrr_resolver.cc.orig	Wed Oct 26 13:46:29 2011
++++ net/base/dnsrr_resolver.cc	Wed Oct 26 13:46:58 2011
+@@ -5,6 +5,7 @@
  #include "net/base/dnsrr_resolver.h"
  
-+#if defined(OS_OPENBSD)
-+#include <sys/types.h>
-+#include <sys/socket.h>
-+#include <netinet/in.h>
-+#endif
-+
  #if defined(OS_POSIX)
++#include <netinet/in.h>
  #include <resolv.h>
  #endif
-@@ -185,7 +191,11 @@ class RRResolverWorker {
  
+@@ -186,7 +187,11 @@ class RRResolverWorker {
      bool r = true;
+ #if defined(OS_MACOSX) || defined(OS_OPENBSD)
      if ((_res.options & RES_INIT) == 0) {
 +#if defined(OS_OPENBSD)
 +      if (res_init() != 0)
@@ -25,24 +20,4 @@ $OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.4 2011/09/19 08:55:26 robert Exp 
 +#endif
          r = false;
      }
- 
-@@ -193,14 +203,18 @@ class RRResolverWorker {
-       unsigned long saved_options = _res.options;
-       r = Do();
- 
--#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX)
-       if (!r && DnsReloadTimerHasExpired()) {
-         // When there's no network connection, _res may not be initialized by
-         // getaddrinfo. Therefore, we call res_nclose only when there are ns
-         // entries.
-+#if !defined(OS_OPENBSD)
-         if (_res.nscount > 0)
-           res_nclose(&_res);
-         if (res_ninit(&_res) == 0)
-+#else
-+        if (res_init() == 0)
-+#endif
-           r = Do();
-       }
- #endif
+ #else

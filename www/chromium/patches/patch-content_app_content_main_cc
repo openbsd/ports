@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_app_content_main_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
+--- content/app/content_main.cc.orig	Fri Oct 21 10:29:36 2011
++++ content/app/content_main.cc	Wed Oct 26 14:10:40 2011
+@@ -345,7 +345,7 @@ int ContentMain(int argc,
+   base::GlobalDescriptors* g_fds = base::GlobalDescriptors::GetInstance();
+   g_fds->Set(kPrimaryIPCChannel,
+              kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   g_fds->Set(kCrashDumpSignal,
+              kCrashDumpSignal + base::GlobalDescriptors::kBaseDescriptor);
+ #endif

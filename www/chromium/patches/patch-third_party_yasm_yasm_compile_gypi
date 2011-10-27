@@ -1,0 +1,19 @@
+$OpenBSD: patch-third_party_yasm_yasm_compile_gypi,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- third_party/yasm/yasm_compile.gypi.orig	Fri Oct 21 10:29:58 2011
++++ third_party/yasm/yasm_compile.gypi	Wed Oct 26 13:41:00 2011
+@@ -29,13 +29,13 @@
+     'yasm_path': '<(PRODUCT_DIR)/yasm',
+     'conditions': [
+       # Define yasm_flags that pass into YASM.
+-      [ 'OS=="linux" and target_arch=="ia32"', {
++      [ 'os_posix==1 and OS!="mac" and target_arch=="ia32"', {
+         'yasm_flags': [
+           '-felf32',
+           '-m', 'x86',
+         ],
+       }],
+-      [ 'OS=="linux" and target_arch=="x64"', {
++      [ 'os_posix==1 and OS!="mac" and target_arch=="x64"', {
+         'yasm_flags': [
+           '-DPIC',
+           '-felf64',

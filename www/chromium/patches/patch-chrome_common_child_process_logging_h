@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_child_process_logging_h,v 1.1 2011/10/27 07:59:08 robert Exp $
+--- chrome/common/child_process_logging.h.orig	Fri Oct 21 10:30:30 2011
++++ chrome/common/child_process_logging.h	Wed Oct 26 14:10:40 2011
+@@ -23,7 +23,7 @@ static const int kMaxReportedActiveExtensions = 10;
+ 
+ namespace child_process_logging {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ // These are declared here so the crash reporter can access them directly in
+ // compromised context without going through the standard library.
+ extern char g_active_url[];

@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_gpu_gpu_blacklist_unittest_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- content/browser/gpu/gpu_blacklist_unittest.cc.orig	Fri Oct 21 10:29:36 2011
++++ content/browser/gpu/gpu_blacklist_unittest.cc	Wed Oct 26 14:10:40 2011
+@@ -188,7 +188,7 @@ TEST_F(GpuBlacklistTest, VendorOnAllOsEntry) {
+       GpuBlacklist::kOsLinux, os_version.get(), gpu_info());
+   EXPECT_EQ(flags.flags(),
+             static_cast<uint32>(GpuFeatureFlags::kGpuFeatureWebgl));
+-#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Blacklist entries will be filtered to the current OS only upon loading.
+   EXPECT_TRUE(
+       blacklist.LoadGpuBlacklist(vendor_json, GpuBlacklist::kCurrentOsOnly));

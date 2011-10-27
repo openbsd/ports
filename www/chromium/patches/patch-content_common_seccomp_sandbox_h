@@ -1,0 +1,13 @@
+$OpenBSD: patch-content_common_seccomp_sandbox_h,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- content/common/seccomp_sandbox.h.orig	Fri Oct 21 10:29:44 2011
++++ content/common/seccomp_sandbox.h	Wed Oct 26 14:10:40 2011
+@@ -18,7 +18,8 @@
+ #include "content/common/content_switches.h"
+ 
+ #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
+-  !defined(__clang__) && !defined(OS_CHROMEOS) && !defined(TOOLKIT_VIEWS)
++  !defined(__clang__) && !defined(OS_CHROMEOS) && !defined(TOOLKIT_VIEWS) && \
++  !defined(OS_OPENBSD)
+ #define SECCOMP_SANDBOX
+ #include "seccompsandbox/sandbox.h"
+ #endif

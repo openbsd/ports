@@ -1,24 +1,32 @@
-$OpenBSD: patch-content_browser_zygote_host_linux_cc,v 1.4 2011/09/19 08:55:26 robert Exp $
---- content/browser/zygote_host_linux.cc.orig	Fri Sep 16 18:21:50 2011
-+++ content/browser/zygote_host_linux.cc	Fri Sep 16 18:22:14 2011
-@@ -301,7 +301,9 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
-   if (using_suid_sandbox_ && !selinux) {
-     std::vector<std::string> adj_oom_score_cmdline;
-     adj_oom_score_cmdline.push_back(sandbox_binary_);
-+#if !defined(OS_OPENBSD)
-     adj_oom_score_cmdline.push_back(base::kAdjustOOMScoreSwitch);
-+#endif
-     adj_oom_score_cmdline.push_back(base::Int64ToString(pid));
-     adj_oom_score_cmdline.push_back(base::IntToString(score));
- 
-@@ -311,8 +313,10 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
-       ProcessWatcher::EnsureProcessGetsReaped(sandbox_helper_process);
-     }
-   } else if (!using_suid_sandbox_) {
-+#if !defined(OS_OPENBSD)
-     if (!base::AdjustOOMScore(pid, score))
-       PLOG(ERROR) << "Failed to adjust OOM score of renderer with pid " << pid;
-+#endif
+$OpenBSD: patch-content_browser_zygote_host_linux_cc,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- content/browser/zygote_host_linux.cc.orig	Fri Oct 21 10:29:43 2011
++++ content/browser/zygote_host_linux.cc	Wed Oct 26 14:10:40 2011
+@@ -271,6 +271,7 @@ pid_t ZygoteHost::ForkRequest(
+       return base::kNullProcessHandle;
    }
+ 
++#if defined(OS_LINUX)
+   // This is just a starting score for a renderer or extension (the
+   // only types of processes that will be started this way).  It will
+   // get adjusted as time goes on.  (This is the same value as
+@@ -278,10 +279,12 @@ pid_t ZygoteHost::ForkRequest(
+   // that's not something we can include here.)
+   const int kLowestRendererOomScore = 300;
+   AdjustRendererOOMScore(pid, kLowestRendererOomScore);
++#endif
+ 
+   return pid;
  }
  
++#if defined(OS_LINUX)
+ void ZygoteHost::AdjustRendererOOMScore(base::ProcessHandle pid, int score) {
+   // 1) You can't change the oom_score_adj of a non-dumpable process
+   //    (EPERM) unless you're root. Because of this, we can't set the
+@@ -345,6 +348,7 @@ void ZygoteHost::AdjustRendererOOMScore(base::ProcessH
+       PLOG(ERROR) << "Failed to adjust OOM score of renderer with pid " << pid;
+   }
+ }
++#endif
+ 
+ void ZygoteHost::EnsureProcessTerminated(pid_t process) {
+   DCHECK(init_);

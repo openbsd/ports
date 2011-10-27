@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_tab_contents_tab_contents_cc,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- content/browser/tab_contents/tab_contents.cc.orig	Fri Oct 21 10:29:36 2011
++++ content/browser/tab_contents/tab_contents.cc	Wed Oct 26 14:10:40 2011
+@@ -1971,7 +1971,7 @@ bool TabContents::CreateRenderViewForRenderManager(
+   if (!render_view_host->CreateRenderView(string16()))
+     return false;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Force a ViewMsg_Resize to be sent, needed to make plugins show up on
+   // linux. See crbug.com/83941.
+   if (RenderWidgetHost* render_widget_host = rwh_view->GetRenderWidgetHost())

@@ -1,57 +1,37 @@
-$OpenBSD: patch-build_common_gypi,v 1.10 2011/09/19 08:55:26 robert Exp $
---- build/common.gypi.orig	Fri Sep 16 18:18:11 2011
-+++ build/common.gypi	Sat Sep 17 11:23:00 2011
-@@ -131,7 +131,7 @@
-       'webui_task_manager%': 0,
- 
-       # Python version.
--      'python_ver%': '2.6',
-+      'python_ver%': '2.7',
- 
-       # Set ARM-v7 compilation flags
-       'armv7%': 0,
-@@ -255,7 +255,7 @@
-         }],
- 
-         # Enable smooth scrolling for Linux and ChromeOS
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
-           'enable_smooth_scrolling%': 1,
-         }, {
-           'enable_smooth_scrolling%': 0,
-@@ -516,7 +516,7 @@
-         # This is used to tweak build flags for gcc 4.4.
-         'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
-         # Figure out the python architecture to decide if we build pyauto.
--        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
-+	'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1.0)',
-         'conditions': [
-           ['branding=="Chrome"', {
-             'linux_breakpad%': 1,
-@@ -956,7 +956,7 @@
-               ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
+$OpenBSD: patch-build_common_gypi,v 1.11 2011/10/27 07:59:08 robert Exp $
+--- build/common.gypi.orig	Wed Oct 26 13:56:52 2011
++++ build/common.gypi	Wed Oct 26 14:22:38 2011
+@@ -960,9 +960,11 @@
+               '-Wextra',
+               '-Werror',
+             ],
+-            'cflags': [
++            'cflags_cc': [
+               # Don't warn about hash_map in third-party code.
+               '-Wno-deprecated',
++            ],
++            'cflags': [
+               # Don't warn about printf format problems.
+               # This is off by default in gcc but on in Ubuntu's gcc(!).
+               '-Wno-format',
+@@ -973,7 +975,7 @@
+               '-Wsign-compare',
+             ]
+           }],
+-          [ 'os_posix==1 and OS!="mac" and chromeos==0', {
++          [ 'os_posix==1 and OS!="mac" and OS!="openbsd" and chromeos==0', {
+             'cflags': [
+               # Don't warn about ignoring the return value from e.g. close().
+               # This is off by default in some gccs but on by default in others.
+@@ -1045,7 +1047,10 @@
+               ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
              ],
            }],
 -          ['OS!="linux"', {
++          # Do not exclude the linux files on OpenBSD since most of them can be
++          # shared at this point.
++          # In case a file is not needed, it is going to be excluded later on.
 +          ['OS!="linux" and OS!="openbsd"', {
              'sources/': [
                ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
                ['exclude', '(^|/)linux/'],
-@@ -1088,7 +1088,7 @@
-           },
-         },
-         'conditions': [
--          ['OS=="linux"', {
-+          ['OS=="linux" or OS=="openbsd"', {
-             'cflags': [
-               '<@(debug_extra_cflags)',
-             ],
-@@ -1148,7 +1148,7 @@
-           ['win_use_allocator_shim==0', {
-             'defines': ['NO_TCMALLOC'],
-           }],
--          ['OS=="linux"', {
-+          ['OS=="linux" or OS=="openbsd"', {
-             'cflags': [
-              '<@(release_extra_cflags)',
-             ],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Aug 24 11:09:14 2011
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Aug 24 11:10:50 2011
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.6 2011/10/27 07:59:09 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Oct 26 20:55:10 2011
++++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Oct 26 20:56:56 2011
 @@ -4,14 +4,17 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
@@ -24,26 +24,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.5 2011/09/19 08
  }
  
  bool AudioManagerOpenBSD::HasAudioInputDevices() {
-@@ -21,8 +24,16 @@ bool AudioManagerOpenBSD::HasAudioInputDevices() {
- 
- AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
-     const AudioParameters& params) {
--  NOTIMPLEMENTED();
--  return NULL;
-+  if (getenv("CHROME_SNDIO") == NULL) {
-+    NOTIMPLEMENTED();
-+    return NULL;
-+  }
-+
-+  if (params.format == AudioParameters::AUDIO_MOCK) {
-+    return FakeAudioOutputStream::MakeFakeStream(params);
-+  }
-+
-+  return new PCMQueueOutAudioOutputStream(this, params);
- }
- 
- AudioInputStream* AudioManagerOpenBSD::MakeAudioInputStream(
-@@ -37,10 +48,6 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
+@@ -37,10 +40,6 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
  AudioManagerOpenBSD::~AudioManagerOpenBSD() {
  }
  
@@ -54,7 +35,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.5 2011/09/19 08
  void AudioManagerOpenBSD::MuteAll() {
    NOTIMPLEMENTED();
  }
-@@ -52,4 +59,16 @@ void AudioManagerOpenBSD::UnMuteAll() {
+@@ -52,4 +51,16 @@ void AudioManagerOpenBSD::UnMuteAll() {
  // static
  AudioManager* AudioManager::CreateAudioManager() {
    return new AudioManagerOpenBSD();

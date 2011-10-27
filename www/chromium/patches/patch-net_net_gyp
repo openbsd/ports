@@ -1,20 +1,7 @@
-$OpenBSD: patch-net_net_gyp,v 1.7 2011/09/19 08:55:26 robert Exp $
---- net/net.gyp.orig	Fri Sep 16 18:25:56 2011
-+++ net/net.gyp	Fri Sep 16 18:26:25 2011
-@@ -148,12 +148,8 @@
-         'base/network_change_notifier.cc',
-         'base/network_change_notifier.h',
-         'base/network_change_notifier_factory.h',
--        'base/network_change_notifier_linux.cc',
--        'base/network_change_notifier_linux.h',
-         'base/network_change_notifier_mac.cc',
-         'base/network_change_notifier_mac.h',
--        'base/network_change_notifier_netlink_linux.cc',
--        'base/network_change_notifier_netlink_linux.h',
-         'base/network_change_notifier_win.cc',
-         'base/network_change_notifier_win.h',
-         'base/network_config_watcher_mac.cc',
-@@ -752,7 +748,6 @@
+$OpenBSD: patch-net_net_gyp,v 1.8 2011/10/27 07:59:09 robert Exp $
+--- net/net.gyp.orig	Fri Oct 21 10:29:46 2011
++++ net/net.gyp	Wed Oct 26 14:00:39 2011
+@@ -797,7 +797,6 @@
                '../build/linux/system.gyp:gconf',
                '../build/linux/system.gyp:gdk',
                '../build/linux/system.gyp:gio',
@@ -22,3 +9,21 @@ $OpenBSD: patch-net_net_gyp,v 1.7 2011/09/19 08:55:26 robert Exp $
              ],
              'conditions': [
                ['use_openssl==1', {
+@@ -809,6 +808,17 @@
+                 'dependencies': [
+                   '../build/linux/system.gyp:ssl',
+                 ],
++              }],
++              ['OS=="openbsd"', {
++                'sources!': [
++                  'base/network_change_notifier_linux.cc',
++                  'base/network_change_notifier_netlink_linux.cc',
++                  'proxy/proxy_config_service_linux.cc',
++                ],
++              },{
++                 'dependencies': [
++                   '../build/linux/system.gyp:libresolv',
++                 ],
+               }],
+               ['OS=="solaris"', {
+                 'link_settings': {

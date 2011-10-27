@@ -1,0 +1,12 @@
+$OpenBSD: patch-skia_ext_vector_platform_device_skia_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- skia/ext/vector_platform_device_skia.cc.orig	Wed Oct 26 14:04:20 2011
++++ skia/ext/vector_platform_device_skia.cc	Wed Oct 26 14:04:26 2011
+@@ -88,7 +88,7 @@ CGContextRef VectorPlatformDeviceSkia::GetBitmapContex
+   SkASSERT(false);
+   return NULL;
+ }
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ void VectorPlatformDeviceSkia::DrawToNativeContext(
+     PlatformSurface surface, int x, int y, const PlatformRect* src_rect) {
+   // Should never be called on Linux.

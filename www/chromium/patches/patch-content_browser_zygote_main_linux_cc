@@ -1,28 +1,19 @@
-$OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.4 2011/09/19 08:55:26 robert Exp $
---- content/browser/zygote_main_linux.cc.orig	Fri Sep 16 18:22:38 2011
-+++ content/browser/zygote_main_linux.cc	Fri Sep 16 18:23:42 2011
-@@ -57,7 +57,7 @@
- #endif
- 
- #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
--    !defined(__clang__)
-+    !defined(__clang__) && !defined(__OpenBSD__)
- // The seccomp sandbox is enabled on all ia32 and x86-64 processor as long as
- // we aren't using SELinux or clang.
- #define SECCOMP_SANDBOX
-@@ -701,6 +701,7 @@ static bool EnterSandbox() {
+$OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.5 2011/10/27 07:59:09 robert Exp $
+--- content/browser/zygote_main_linux.cc.orig	Fri Oct 21 10:29:43 2011
++++ content/browser/zygote_main_linux.cc	Wed Oct 26 14:10:40 2011
+@@ -711,6 +711,7 @@ static bool EnterSandbox() {
      SkiaFontConfigSetImplementation(
          new FontConfigIPC(kMagicSandboxIPCDescriptor));
  
-+#if !defined(OS_OPENBSD)
++#if defined(OS_LINUX)
      // Previously, we required that the binary be non-readable. This causes the
      // kernel to mark the process as non-dumpable at startup. The thinking was
      // that, although we were putting the renderers into a PID namespace (with
-@@ -726,6 +727,7 @@ static bool EnterSandbox() {
+@@ -736,6 +737,7 @@ static bool EnterSandbox() {
          return false;
        }
      }
 +#endif
-   } else if (CommandLine::ForCurrentProcess()->HasSwitch(
-         switches::kEnableSeccompSandbox)) {
+ #if defined(SECCOMP_SANDBOX)
+   } else if (SeccompSandboxEnabled()) {
      PreSandboxInit();

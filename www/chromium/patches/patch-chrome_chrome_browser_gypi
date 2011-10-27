@@ -1,13 +1,16 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
---- chrome/chrome_browser.gypi.orig	Wed Sep 14 10:02:00 2011
-+++ chrome/chrome_browser.gypi	Fri Sep 16 18:17:22 2011
-@@ -3895,8 +3895,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.9 2011/10/27 07:59:08 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Wed Oct 26 13:53:46 2011
++++ chrome/chrome_browser.gypi	Wed Oct 26 13:53:57 2011
+@@ -4072,12 +4072,6 @@
+             '../build/linux/system.gyp:x11',
+             '../third_party/undoview/undoview.gyp:undoview',
            ],
-           'link_settings': {
-             'libraries': [
+-          'link_settings': {
+-            'libraries': [
 -              # For dlsym() in 'browser/zygote_main_linux.cc'
 -              '-ldl',
-+              '-lkvm',
-             ],
-           },
+-            ],
+-          },
            'sources!': [
+             'browser/ui/views/extensions/extension_view.cc',
+             'browser/ui/views/extensions/extension_view.h',

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
---- ipc/ipc_channel_posix.cc.orig	Wed Sep 14 10:01:29 2011
-+++ ipc/ipc_channel_posix.cc	Fri Sep 16 18:17:23 2011
+$OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.6 2011/10/27 07:59:09 robert Exp $
+--- ipc/ipc_channel_posix.cc.orig	Fri Oct 21 10:30:02 2011
++++ ipc/ipc_channel_posix.cc	Wed Oct 26 13:39:46 2011
 @@ -10,6 +10,7 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -9,16 +9,7 @@ $OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
  #include <sys/un.h>
  
  #include <string>
-@@ -273,7 +274,7 @@ bool CreateClientUnixDomainSocket(const std::string& p
- }
- 
- bool SocketWriteErrorIsRecoverable() {
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_OPENBSD)
-   // On OS X if sendmsg() is trying to send fds between processes and there
-   // isn't enough room in the output buffer to send the fd structure over
-   // atomically then EMSGSIZE is returned.
-@@ -929,7 +930,7 @@ bool Channel::ChannelImpl::HasAcceptedConnection() con
+@@ -930,7 +931,7 @@ bool Channel::ChannelImpl::HasAcceptedConnection() con
  
  bool Channel::ChannelImpl::GetClientEuid(uid_t* client_euid) const {
    DCHECK(HasAcceptedConnection());

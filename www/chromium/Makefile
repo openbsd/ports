@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/05 16:16:44 robert Exp $
+# $OpenBSD: Makefile,v 1.72 2011/10/27 07:59:08 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			14.0.835.202
+V=			15.0.874.102
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -21,23 +21,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xss
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
-WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
-WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
-WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
-WANTLIB += Xtst event xslt kvm>=10.0 sndio speex
-WANTLIB += cups gcrypt
-
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://build.chromium.org/buildbot/official/ \
 		ftp://rene-ladan.nl/pub/distfiles/
 
 MODULES=	devel/gettext \
 		lang/python
+
+WANTLIB += X11 Xext Xrender Xss bz2 c cairo cups dbus-glib-1 event
+WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
+WANTLIB += plc4 png pthread pthread-stubs smime3 speex stdc++
+WANTLIB += xml2 xslt z
 
 MODPY_RUNDEP=	No
 
@@ -50,7 +46,6 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
 		devel/flex \
-		devel/yasm \
 		shells/bash \
 		sysutils/flock
 LIB_DEPENDS=	devel/libexecinfo \
@@ -89,16 +84,20 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
 		-Duse_system_vpx=0 \
-		-Duse_system_yasm=1 \
+		-Duse_system_yasm=0 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dlinux_strip_binary=1 \
+		-Denable_webrtc=0 \
+		-Duse_kerberos=0 \
 		-DOS=openbsd
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
+		${WRKSRC}/third_party/libvpx/source/config/openbsd
 	${SUBST_CMD} ${WRKSRC}/build/common.gypi
 
 # gyp_chromium generates all the Makefiles from gyp
@@ -122,7 +121,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
-.for f in ffmpegsumo_nolink libffmpegsumo.so mksnapshot protoc
+.for f in libffmpegsumo.so mksnapshot protoc
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
 .for s in 16 22 24 32 48 64 128 256

@@ -1,8 +1,8 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
---- base/process_util_openbsd.cc.orig	Fri Sep 16 18:17:22 2011
-+++ base/process_util_openbsd.cc	Sun Sep 18 12:32:09 2011
-@@ -0,0 +1,339 @@
-+// Copyright (c) 2009 The Chromium Authors. All rights reserved.
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.6 2011/10/27 07:59:08 robert Exp $
+--- base/process_util_openbsd.cc.orig	Wed Oct 26 14:14:55 2011
++++ base/process_util_openbsd.cc	Wed Oct 26 14:15:00 2011
+@@ -0,0 +1,346 @@
++// Copyright (c) 2011 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -35,38 +35,46 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +ProcessId GetParentProcessId(ProcessHandle process) {
 +  struct kinfo_proc info;
-+  int mib[6];
-+  size_t info_size = sizeof(info);
++  size_t length;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
++                sizeof(struct kinfo_proc), 0 };
 +
-+  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC;
-+  mib[2] = KERN_PROC_PID;
-+  mib[3] = process;
-+  mib[4] = info_size;
-+  mib[5] = 400; /* XXX */
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
++    return -1;
 +
-+  if (sysctl(mib, 6, &info, &info_size, NULL, 0) < 0)
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
 +    return -1;
 +
 +  return info.p_ppid;
 +}
 +
 +FilePath GetProcessExecutablePath(ProcessHandle process) {
-+  return FilePath(std::string("/usr/local/chrome/chrome"));
++  struct kinfo_proc kp;
++  size_t len;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process,
++                sizeof(struct kinfo_proc), 0 };
++
++  if (sysctl(mib, arraysize(mib), NULL, &len, NULL, 0) == -1)
++    return FilePath();
++  mib[5] = (len / sizeof(struct kinfo_proc));
++  if (sysctl(mib, arraysize(mib), &kp, &len, NULL, 0) < 0)
++    return FilePath();
++  if ((kp.p_flag & P_SYSTEM) != 0)
++    return FilePath();
++  if (strcmp(kp.p_comm, "chrome") == 0)
++    return FilePath(kp.p_comm);
++
++  return FilePath();
 +}
 +
 +ProcessIterator::ProcessIterator(const ProcessFilter* filter)
-+  : index_of_kinfo_proc_(),
-+  filter_(filter) {
++    : index_of_kinfo_proc_(),
++      filter_(filter) {
 +
-+  int mib[6];
-+
-+  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC;
-+  mib[2] = KERN_PROC_UID;
-+  mib[3] = getuid();
-+  mib[4] = sizeof(struct kinfo_proc);
-+  mib[5] = 0;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_UID, getuid(),
++                sizeof(struct kinfo_proc), 0 };
 +
 +  bool done = false;
 +  int try_num = 1;
@@ -74,7 +82,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +  do {
 +    size_t len = 0;
-+    if (sysctl(mib, 6, NULL, &len, NULL, 0) <0 ){
++    if (sysctl(mib, arraysize(mib), NULL, &len, NULL, 0) < 0) {
 +      LOG(ERROR) << "failed to get the size needed for the process list";
 +      kinfo_procs_.resize(0);
 +      done = true;
@@ -85,7 +93,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +      num_of_kinfo_proc += 16;
 +      kinfo_procs_.resize(num_of_kinfo_proc);
 +      len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
-+      if (sysctl(mib, 6, &kinfo_procs_[0], &len, NULL, 0) <0) {
++      if (sysctl(mib, arraysize(mib), &kinfo_procs_[0], &len, NULL, 0) < 0) {
 +        // If we get a mem error, it just means we need a bigger buffer, so
 +        // loop around again.  Anything else is a real error and give up.
 +        if (errno != ENOMEM) {
@@ -113,36 +121,39 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +bool ProcessIterator::CheckForNextProcess() {
 +  std::string data;
++  for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++index_of_kinfo_proc_) {
++    kinfo_proc& kinfo = kinfo_procs_[index_of_kinfo_proc_];
 +
-+  for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++ index_of_kinfo_proc_) {
-+    int mib[3];
-+    size_t len;
-+    struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];
-+
++    // Skip processes just awaiting collection
 +    if ((kinfo.p_pid > 0) && (kinfo.p_stat == SZOMB))
 +      continue;
 +
-+    mib[0] = CTL_KERN;
-+    mib[1] = KERN_PROC_ARGS;
-+    mib[2] = kinfo.p_pid;
++    int mib[] = { CTL_KERN, KERN_PROC_ARGS, kinfo.p_pid };
 +
-+    len = 0;
-+    if (sysctl(mib, 3, NULL, &len, NULL, 0) < 0) {
-+      LOG(ERROR) << "failed to figure out the buffer size for a command line";
++    // Find out what size buffer we need.
++    size_t data_len = 0;
++    if (sysctl(mib, arraysize(mib), NULL, &data_len, NULL, 0) < 0) {
++      DVPLOG(1) << "failed to figure out the buffer size for a commandline";
 +      continue;
 +    }
 +
-+    data.resize(len);
-+
-+    if (sysctl(mib, 3, &data[0], &len, NULL, 0) < 0) {
-+      LOG(ERROR) << "failed to fetch a commandline";
++    data.resize(data_len);
++    if (sysctl(mib, arraysize(mib), &data[0], &data_len, NULL, 0) < 0) {
++      DVPLOG(1) << "failed to fetch a commandline";
 +      continue;
 +    }
 +
++    // |data| contains all the command line parameters of the process, separated
++    // by blocks of one or more null characters. We tokenize |data| into a
++    // vector of strings using '\0' as a delimiter and populate
++    // |entry_.cmd_line_args_|.
 +    std::string delimiters;
 +    delimiters.push_back('\0');
 +    Tokenize(data, delimiters, &entry_.cmd_line_args_);
 +
++    // |data| starts with the full executable path followed by a null character.
++    // We search for the first instance of '\0' and extract everything before it
++    // to populate |entry_.exe_file_|.
 +    size_t exec_name_end = data.find('\0');
 +    if (exec_name_end == std::string::npos) {
 +      LOG(ERROR) << "command line data didn't match expected format";
@@ -152,17 +163,15 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +    entry_.pid_ = kinfo.p_pid;
 +    entry_.ppid_ = kinfo.p_ppid;
 +    entry_.gid_ = kinfo.p__pgid;
-+
 +    size_t last_slash = data.rfind('/', exec_name_end);
 +    if (last_slash == std::string::npos)
 +      entry_.exe_file_.assign(data, 0, exec_name_end);
 +    else
 +      entry_.exe_file_.assign(data, last_slash + 1,
 +                              exec_name_end - last_slash - 1);
-+
 +    // Start w/ the next entry next time through
 +    ++index_of_kinfo_proc_;
-+
++    // Done
 +    return true;
 +  }
 +  return false;
@@ -170,7 +179,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +bool NamedProcessIterator::IncludeEntry() {
 +  return (executable_name_ == entry().exe_file() &&
-+		            ProcessIterator::IncludeEntry());
++          ProcessIterator::IncludeEntry());
 +}
 +
 +
@@ -190,18 +199,17 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +size_t ProcessMetrics::GetPagefileUsage() const {
 +  struct kinfo_proc info;
-+  int mib[6];
-+  size_t info_size = sizeof(info);
++  size_t length;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
++                sizeof(struct kinfo_proc), 0 };
 +
-+  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC;
-+  mib[2] = KERN_PROC_PID;
-+  mib[3] = process_;
-+  mib[4] = info_size;
-+  mib[5] = 400; /* XXX */
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
++    return -1;
 +
-+  if (sysctl(mib, 6, &info, &info_size, NULL, 0) < 0)
-+    return 0;
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
++    return -1;
 +
 +  return (info.p_vm_tsize + info.p_vm_dsize + info.p_vm_ssize);
 +}
@@ -213,18 +221,17 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +size_t ProcessMetrics::GetWorkingSetSize() const {
 +  struct kinfo_proc info;
-+  int mib[6];
-+  size_t info_size = sizeof(info);
++  size_t length;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, process_,
++                sizeof(struct kinfo_proc), 0 };
 +
-+  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC;
-+  mib[2] = KERN_PROC_PID;
-+  mib[3] = process_;
-+  mib[4] = info_size;
-+  mib[5] = 400; /* XXX */
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
++    return -1;
 +
-+  if (sysctl(mib, 6, &info, &info_size, NULL, 0) < 0)
-+    return 0;
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
++    return -1;
 +
 +  return info.p_vm_rssize * getpagesize();
 +}
@@ -268,17 +275,16 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +
 +static int GetProcessCPU(pid_t pid) {
 +  struct kinfo_proc info;
-+  int mib[6];
-+  size_t info_size = sizeof(info);
++  size_t length;
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
++                sizeof(struct kinfo_proc), 0 };
 +
-+  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC;
-+  mib[2] = KERN_PROC_PID;
-+  mib[3] = pid;
-+  mib[4] = info_size;
-+  mib[5] = 400; /* XXX */
++  if (sysctl(mib, arraysize(mib), NULL, &length, NULL, 0) < 0)
++    return -1;
 +
-+  if (sysctl(mib, 6, &info, &info_size, NULL, 0) < 0)
++  mib[5] = (length / sizeof(struct kinfo_proc));
++
++  if (sysctl(mib, arraysize(mib), &info, &length, NULL, 0) < 0)
 +    return 0;
 +
 +  return info.p_pctcpu;
@@ -317,15 +323,13 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +}
 +
 +size_t GetSystemCommitCharge() {
-+  int mib[2], pagesize;
++  int mib[] = { CTL_VM, VM_METER };
++  int pagesize;
 +  struct vmtotal vmtotal;
 +  unsigned long mem_total, mem_free, mem_inactive;
 +  size_t len = sizeof(vmtotal);
 +
-+  mib[0] = CTL_VM;
-+  mib[1] = VM_METER;
-+
-+  if (sysctl(mib, 2, &vmtotal, &len, NULL, 0) < 0)
++  if (sysctl(mib, arraysize(mib), &vmtotal, &len, NULL, 0) < 0)
 +    return 0;
 +
 +  mem_total = vmtotal.t_vm;
@@ -338,6 +342,9 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Ex
 +}
 +
 +void EnableTerminationOnOutOfMemory() {
-+  return;
 +}
++
++void EnableTerminationOnHeapCorruption() {
 +}
++
++}  // namespace base

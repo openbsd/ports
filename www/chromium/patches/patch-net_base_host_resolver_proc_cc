@@ -1,20 +1,27 @@
-$OpenBSD: patch-net_base_host_resolver_proc_cc,v 1.3 2011/09/19 08:55:26 robert Exp $
---- net/base/host_resolver_proc.cc.orig	Wed Sep 14 10:01:13 2011
-+++ net/base/host_resolver_proc.cc	Fri Sep 16 18:17:23 2011
-@@ -12,6 +12,12 @@
+$OpenBSD: patch-net_base_host_resolver_proc_cc,v 1.4 2011/10/27 07:59:09 robert Exp $
+--- net/base/host_resolver_proc.cc.orig	Fri Oct 21 10:29:46 2011
++++ net/base/host_resolver_proc.cc	Wed Oct 26 13:47:44 2011
+@@ -12,8 +12,8 @@
  #include "net/base/net_errors.h"
  #include "net/base/sys_addrinfo.h"
  
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
+-#include <resolv.h>
 +#if defined(OS_OPENBSD)
-+#include <sys/types.h>
-+#include <sys/socket.h>
-+#include <netinet/in.h>
-+#endif
-+
- #if defined(OS_POSIX) && !defined(OS_MACOSX)
- #include <resolv.h>
++#define AI_ADDRCONFIG 0
  #endif
-@@ -180,6 +186,7 @@ int SystemHostResolverProc(const std::string& host,
+ 
+ namespace net {
+@@ -143,7 +143,7 @@ int SystemHostResolverProc(const std::string& host,
+       hints.ai_family = AF_UNSPEC;
+   }
+ 
+-#if defined(OS_WIN) || defined(OS_OPENBSD)
++#if defined(OS_WIN)
+   // DO NOT USE AI_ADDRCONFIG ON WINDOWS.
+   //
+   // The following comment in <winsock2.h> is the best documentation I found
+@@ -167,6 +167,7 @@ int SystemHostResolverProc(const std::string& host,
    //
    // OpenBSD does not support it, either.
    hints.ai_flags = 0;

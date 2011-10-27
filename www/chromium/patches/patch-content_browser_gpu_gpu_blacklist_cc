@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_gpu_gpu_blacklist_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- content/browser/gpu/gpu_blacklist.cc.orig	Fri Oct 21 10:29:36 2011
++++ content/browser/gpu/gpu_blacklist.cc	Wed Oct 26 14:10:40 2011
+@@ -992,7 +992,7 @@ GpuBlacklist::OsType GpuBlacklist::GetOsType() {
+   return kOsChromeOS;
+ #elif defined(OS_WIN)
+   return kOsWin;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   return kOsLinux;
+ #elif defined(OS_MACOSX)
+   return kOsMacosx;

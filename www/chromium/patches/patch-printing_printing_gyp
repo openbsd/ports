@@ -1,13 +1,15 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.7 2011/09/19 08:55:26 robert Exp $
---- printing/printing.gyp.orig	Wed Sep 14 10:01:08 2011
-+++ printing/printing.gyp	Fri Sep 16 18:17:23 2011
-@@ -220,6 +220,9 @@
-                   ]
+$OpenBSD: patch-printing_printing_gyp,v 1.8 2011/10/27 07:59:09 robert Exp $
+--- printing/printing.gyp.orig	Fri Oct 21 10:29:33 2011
++++ printing/printing.gyp	Wed Oct 26 13:42:04 2011
+@@ -235,6 +235,11 @@
+                   ],
                  },
-               }, {
-+                'include_dirs': [
-+                  '/usr/local/include',
+               }],
++              [ 'OS == "openbsd"', {
++                'cflags': [
++                  '<!@(python cups_config_helper.py --cflags)',
 +                ],
-                 'link_settings': {
-                   'libraries': [
-                     '<!@(cups-config --libs)',
++              }],
+             ],
+           },
+         }],

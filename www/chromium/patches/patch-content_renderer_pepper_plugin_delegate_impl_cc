@@ -1,30 +1,12 @@
-$OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.3 2011/09/19 08:55:26 robert Exp $
---- content/renderer/pepper_plugin_delegate_impl.cc.orig	Wed Sep 14 10:01:11 2011
-+++ content/renderer/pepper_plugin_delegate_impl.cc	Fri Sep 16 18:17:23 2011
-@@ -121,7 +121,7 @@ class PlatformImage2DImpl
-         dib_(dib) {
-   }
- 
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_OPENBSD)
-   // On Mac, we have to tell the browser to free the transport DIB.
-   virtual ~PlatformImage2DImpl() {
-     if (dib_.get()) {
-@@ -139,7 +139,7 @@ class PlatformImage2DImpl
-     *byte_count = dib_->size();
- #if defined(OS_WIN)
+$OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.4 2011/10/27 07:59:09 robert Exp $
+--- content/renderer/pepper_plugin_delegate_impl.cc.orig	Fri Oct 21 10:29:44 2011
++++ content/renderer/pepper_plugin_delegate_impl.cc	Wed Oct 26 14:10:40 2011
+@@ -142,7 +142,7 @@ class PlatformImage2DImpl
      return reinterpret_cast<intptr_t>(dib_->handle());
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+ #elif defined(OS_MACOSX)
      return static_cast<intptr_t>(dib_->handle().fd);
- #elif defined(OS_LINUX)
+-#elif defined(OS_LINUX)
++#elif defined(OS_POSIX)
      return static_cast<intptr_t>(dib_->handle());
-@@ -802,7 +802,7 @@ PepperPluginDelegateImpl::CreateImage2D(int width, int
-   uint32 buffer_size = width * height * 4;
- 
-   // Allocate the transport DIB and the PlatformCanvas pointing to it.
--#if defined(OS_MACOSX)
-+#if defined(OS_MACOSX) || defined(OS_OPENBSD)
-   // On the Mac, shared memory has to be created in the browser in order to
-   // work in the sandbox.  Do this by sending a message to the browser
-   // requesting a TransportDIB (see also
+ #endif
+   }

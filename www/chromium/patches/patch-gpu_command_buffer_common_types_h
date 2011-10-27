@@ -1,0 +1,50 @@
+$OpenBSD: patch-gpu_command_buffer_common_types_h,v 1.1 2011/10/27 07:59:09 robert Exp $
+--- gpu/command_buffer/common/types.h.orig	Fri Oct 21 10:29:33 2011
++++ gpu/command_buffer/common/types.h	Wed Oct 26 14:05:17 2011
+@@ -7,7 +7,9 @@
+ #ifndef GPU_COMMAND_BUFFER_COMMON_TYPES_H_
+ #define GPU_COMMAND_BUFFER_COMMON_TYPES_H_
+ 
+-#if !defined(_MSC_VER)
++#include "build/build_config.h"
++
++#if !defined(OS_WIN)
+ #include <stdint.h>
+ #endif
+ #include <cstddef>
+@@ -28,7 +30,7 @@ typedef int                 int32;
+ 
+ // The NSPR system headers define 64-bit as |long| when possible.  In order to
+ // not have typedef mismatches, we do the same on LP64.
+-#if __LP64__
++#if defined(__LP64__) && !defined(OS_OPENBSD) && !defined(OS_MACOSX)
+ typedef long                int64;
+ #else
+ typedef long long           int64;
+@@ -53,7 +55,7 @@ typedef unsigned int       uint32;
+ #endif
+ 
+ // See the comment above about NSPR and 64-bit.
+-#if __LP64__
++#if defined(__LP64__) && !defined(OS_OPENBSD) && !defined(OS_MACOSX)
+ typedef unsigned long uint64;
+ #else
+ typedef unsigned long long uint64;
+@@ -95,7 +97,7 @@ char (&ArraySizeHelper(T (&array)[N]))[N];
+ // That gcc wants both of these prototypes seems mysterious. VC, for
+ // its part, can't decide which to use (another mystery). Matching of
+ // template overloads: the final frontier.
+-#ifndef _MSC_VER
++#if !defined(OS_WIN)
+ template <typename T, size_t N>
+ char (&ArraySizeHelper(const T (&array)[N]))[N];
+ #endif
+@@ -167,7 +169,7 @@ struct GpuCompileAssert {
+ //   causes ((0.0) ? 1 : -1) to incorrectly evaluate to 1.
+ 
+ namespace gpu {
+-#if defined(_MSC_VER)
++#if defined(OS_WIN)
+ typedef short Int16;
+ typedef unsigned short Uint16;
+ typedef int Int32;

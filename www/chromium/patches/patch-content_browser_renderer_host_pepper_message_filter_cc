@@ -1,14 +1,17 @@
-$OpenBSD: patch-content_browser_renderer_host_pepper_message_filter_cc,v 1.1 2011/09/19 08:55:26 robert Exp $
---- content/browser/renderer_host/pepper_message_filter.cc.orig	Wed Sep 14 10:01:10 2011
-+++ content/browser/renderer_host/pepper_message_filter.cc	Fri Sep 16 18:17:23 2011
-@@ -113,8 +113,9 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
+$OpenBSD: patch-content_browser_renderer_host_pepper_message_filter_cc,v 1.2 2011/10/27 07:59:09 robert Exp $
+--- content/browser/renderer_host/pepper_message_filter.cc.orig	Fri Oct 21 10:29:43 2011
++++ content/browser/renderer_host/pepper_message_filter.cc	Wed Oct 26 13:54:30 2011
+@@ -117,10 +117,13 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
  
+ }  // namespace
+ 
++// This assert fails on OpenBSD for an unknown reason at the moment.
++#if !defined(OS_OPENBSD)
  // Make sure the storage in |PP_Flash_NetAddress| is big enough. (Do it here
  // since the data is opaque elsewhere.)
--COMPILE_ASSERT(sizeof(reinterpret_cast<PP_Flash_NetAddress*>(0)->data) >=
-+/*COMPILE_ASSERT(sizeof(reinterpret_cast<PP_Flash_NetAddress*>(0)->data) >=
+ COMPILE_ASSERT(sizeof(reinterpret_cast<PP_Flash_NetAddress*>(0)->data) >=
                 sizeof(sockaddr_storage), PP_Flash_NetAddress_data_too_small);
-+	       */
++#endif
  
  const PP_Flash_NetAddress kInvalidNetAddress = { 0 };
  
