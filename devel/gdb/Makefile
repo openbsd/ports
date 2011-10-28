@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/27 20:26:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/28 12:40:20 robert Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -24,6 +24,7 @@ WANTLIB+=	c kvm m ncurses z
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
 		--disable-nls \
+		--disable-werror \
 		--enable-target=all \
 		--without-expat \
 		--without-python
