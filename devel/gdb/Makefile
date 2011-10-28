@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/28 12:40:20 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/28 14:42:43 espie Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.2
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/} \
 		http://distfiles.nl/
@@ -21,10 +21,10 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB+=	c kvm m ncurses z
 
+SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
 		--disable-nls \
-		--disable-werror \
 		--enable-target=all \
 		--without-expat \
 		--without-python
