@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/03 06:42:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/28 21:58:16 jasper Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
 
-REVISION=	5
+REVISION=	6
 
 SHARED_ONLY=	Yes
 
@@ -41,7 +41,7 @@ MODGCONF2_SCHEMAS_DIR= darktable
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libglade2 \
-		graphics/exiv2 \
+		graphics/exiv2>=0.22 \
 		graphics/lcms \
 		graphics/libgphoto2 \
 		graphics/lensfun \
