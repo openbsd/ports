@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2011/10/03 21:06:09 landry Exp $
+# $OpenBSD: Makefile,v 1.193 2011/10/28 13:01:13 robert Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -10,6 +10,8 @@ MOZILLA_VERSION =	7.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
+
+REVISION = 0
 
 # url for beta releases
 # MASTER_SITES=  ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/
