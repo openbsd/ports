@@ -1,7 +1,7 @@
-$OpenBSD: patch-Tty_xs,v 1.1 2004/08/28 22:54:50 millert Exp $
---- Tty.xs.orig	Wed Mar  6 06:47:32 2002
-+++ Tty.xs	Sat Aug 28 13:02:55 2004
-@@ -271,6 +271,7 @@ make_safe_fd(int * fd)
+$OpenBSD: patch-Tty_xs,v 1.2 2011/10/28 22:38:15 okan Exp $
+--- Tty.xs.orig	Mon Oct 11 14:07:57 2010
++++ Tty.xs	Tue Oct 11 23:43:40 2011
+@@ -233,6 +233,7 @@ make_safe_fd(int * fd)
    }
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-Tty_xs,v 1.1 2004/08/28 22:54:50 millert Exp $
  /*
   * After having acquired a master pty, try to find out the slave name,
   * initialize and open the slave.
-@@ -433,6 +434,7 @@ open_slave(int *ptyfd, int *ttyfd, char 
+@@ -395,6 +396,7 @@ open_slave(int *ptyfd, int *ttyfd, char *namebuf, int 
  
      return 1;
  }
@@ -17,7 +17,7 @@ $OpenBSD: patch-Tty_xs,v 1.1 2004/08/28 22:54:50 millert Exp $
  
  /*
   * Allocates and opens a pty.  Returns 0 if no pty could be allocated, or
-@@ -488,7 +490,7 @@ allocate_pty(int *ptyfd, int *ttyfd, cha
+@@ -450,7 +452,7 @@ allocate_pty(int *ptyfd, int *ttyfd, char *namebuf, in
  	}
  #endif
  
@@ -25,8 +25,8 @@ $OpenBSD: patch-Tty_xs,v 1.1 2004/08/28 22:54:50 millert Exp $
 +#if defined(HAVE_PTSNAME) || defined(HAVE_PTSNAME_R) || defined(HAVE_OPENPTY)
  /* we don't need to try these if we don't have a way to get the pty names */
  
- #if defined(HAVE_GETPT)
-@@ -505,29 +507,21 @@ allocate_pty(int *ptyfd, int *ttyfd, cha
+ #if defined(HAVE_POSIX_OPENPT)
+@@ -479,29 +481,21 @@ allocate_pty(int *ptyfd, int *ttyfd, char *namebuf, in
  #endif /* defined(HAVE_GETPT) */
  
  #if defined(HAVE_OPENPTY)
