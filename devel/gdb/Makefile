@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/28 14:42:43 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/10/28 14:51:47 espie Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
@@ -21,7 +21,7 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB+=	c kvm m ncurses z
 
-SEPARATE_BUILD = Yes
+#SEPARATE_BUILD = Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-transform-name=s,^,e, \
 		--disable-nls \
