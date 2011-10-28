@@ -1,0 +1,15 @@
+$OpenBSD: patch-gthumb_glib-utils_c,v 1.1 2011/10/28 22:08:24 jasper Exp $
+
+glib-utils.c:555: error: wrong type argument to unary minus
+
+--- gthumb/glib-utils.c.orig	Thu Oct 27 23:28:27 2011
++++ gthumb/glib-utils.c	Thu Oct 27 23:35:33 2011
+@@ -552,7 +552,7 @@ _g_time_get_timezone_offset (struct tm *tm)
+ {
+ 	int offset;
+ 
+-	offset = -timezone;
++	offset = -(int)timezone;
+ #if defined (HAVE_TM_GMTOFF)
+ 	offset = tm->tm_gmtoff;
+ #elif defined (HAVE_TIMEZONE)
