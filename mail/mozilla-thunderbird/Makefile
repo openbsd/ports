@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2011/10/03 21:07:05 landry Exp $
+# $OpenBSD: Makefile,v 1.139 2011/10/28 12:31:41 robert Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -17,7 +17,9 @@ MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-1.0beta6
 PKGNAME-enigmail =	enigmail-1.3.2
-REVISION-enigmail =	0
+REVISION-main =		0
+REVISION-lightning = 	0
+REVISION-enigmail =	1
 EPOCH-lightning =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
