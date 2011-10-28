@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/16 14:41:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/10/28 06:08:03 ajacoutot Exp $
 bin/gbrainy
 lib/gbrainy/
 lib/gbrainy/gbrainy.Core.dll
@@ -443,6 +443,8 @@ share/gnome/help/gbrainy/sr@latin/pause.page
 share/gnome/help/gbrainy/sr@latin/score.page
 share/gnome/help/gbrainy/sr@latin/times.page
 share/gnome/help/gbrainy/sr@latin/tips.page
+share/icons/
+share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gbrainy.png
@@ -465,6 +467,7 @@ share/locale/da/LC_MESSAGES/gbrainy.mo
 share/locale/de/LC_MESSAGES/gbrainy.mo
 share/locale/el/LC_MESSAGES/gbrainy.mo
 share/locale/en_GB/LC_MESSAGES/gbrainy.mo
+share/locale/eo/LC_MESSAGES/gbrainy.mo
 share/locale/es/LC_MESSAGES/gbrainy.mo
 share/locale/eu/LC_MESSAGES/gbrainy.mo
 share/locale/fi/LC_MESSAGES/gbrainy.mo
