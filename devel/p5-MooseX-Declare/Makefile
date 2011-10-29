@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/29 16:43:57 jasper Exp $
 
 COMMENT=		declarative syntax for Moose
 
-DISTNAME=		MooseX-Declare-0.32
-REVISION=		0
+DISTNAME=		MooseX-Declare-0.35
 
 CATEGORIES=		devel
 
@@ -17,7 +16,7 @@ MODULES=		cpan
 USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
-			devel/p5-MooseX-Method-Signatures \
+			devel/p5-MooseX-Method-Signatures>=0.37 \
 			devel/p5-MooseX-Role-Parameterized \
 			devel/p5-MooseX-Types \
 			devel/p5-namespace-autoclean

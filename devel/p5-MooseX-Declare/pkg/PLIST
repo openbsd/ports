@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:44:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/29 16:43:57 jasper Exp $
 ${P5SITE}/MooseX/Declare/
 ${P5SITE}/MooseX/Declare.pm
 ${P5SITE}/MooseX/Declare/Context/
@@ -32,6 +32,8 @@ ${P5SITE}/MooseX/Declare/Util.pm
 @man man/man3p/MooseX::Declare::Context.3p
 @man man/man3p/MooseX::Declare::Context::Namespaced.3p
 @man man/man3p/MooseX::Declare::Context::Parameterized.3p
+@man man/man3p/MooseX::Declare::Context::WithOptions.3p
+@man man/man3p/MooseX::Declare::StackItem.3p
 @man man/man3p/MooseX::Declare::Syntax::EmptyBlockIfMissing.3p
 @man man/man3p/MooseX::Declare::Syntax::Extending.3p
 @man man/man3p/MooseX::Declare::Syntax::InnerSyntaxHandling.3p
@@ -44,6 +46,7 @@ ${P5SITE}/MooseX/Declare/Util.pm
 @man man/man3p/MooseX::Declare::Syntax::Keyword::With.3p
 @man man/man3p/MooseX::Declare::Syntax::KeywordHandling.3p
 @man man/man3p/MooseX::Declare::Syntax::MethodDeclaration.3p
+@man man/man3p/MooseX::Declare::Syntax::MethodDeclaration::Parameterized.3p
 @man man/man3p/MooseX::Declare::Syntax::MooseSetup.3p
 @man man/man3p/MooseX::Declare::Syntax::NamespaceHandling.3p
 @man man/man3p/MooseX::Declare::Syntax::OptionHandling.3p
