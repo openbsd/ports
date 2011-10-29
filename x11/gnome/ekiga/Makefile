@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/10/26 21:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2011/10/29 08:37:40 ajacoutot Exp $
 
 BROKEN=		WIP (see ajacoutot@)
 
@@ -8,6 +8,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.3.2
+REVISION=	0
 
 CATEGORIES=	net multimedia
 
@@ -19,9 +20,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm asn1
-WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib boost_signals-mt
+WANTLIB += GL SDL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xv Xxf86vm asn1 atk-1.0
+WANTLIB += avahi-client avahi-common avahi-glib boost_signals-mt
 WANTLIB += c cairo camel-1.2 com_err crypto dbus-1 dbus-glib-1
 WANTLIB += drm ebook-1.2 edataserver-1.2 expat ffi fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
@@ -51,7 +52,7 @@ CFLAGS +=	-fexceptions
 MODGCONF2_SCHEMAS_DIR= ekiga
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_TOOLS=	yelp
+#MODGNOME_TOOLS=	yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
 
 LIBTOOL_FLAGS=	--tag=disable-static

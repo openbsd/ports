@@ -1,0 +1,44 @@
+$OpenBSD: patch-lib_engine_components_opal_opal-main_cpp,v 1.1 2011/10/29 08:37:40 ajacoutot Exp $
+
+From af47729a21a17459d9a098e10fd8daaccd5aa7a5 Mon Sep 17 00:00:00 2001
+From: Julien Puydt <jpuydt@newton.localdomain>
+Date: Sat, 24 Sep 2011 11:28:47 +0000
+Subject: Got rid of the infamous crash on exit... by not managing deallocation of opal endpoints ourselves
+
+--- lib/engine/components/opal/opal-main.cpp.orig	Wed May 18 18:18:09 2011
++++ lib/engine/components/opal/opal-main.cpp	Fri Oct 28 15:43:55 2011
+@@ -64,6 +64,13 @@
+ #define H323_KEY "/apps/" PACKAGE_NAME "/protocols/h323/"
+ #endif
+ 
++// opal manages its endpoints itself, so we must be wary
++struct null_deleter
++{
++    void operator()(void const *) const
++    { }
++};
++
+ static bool
+ is_supported_address (const std::string uri)
+ {
+@@ -123,7 +130,7 @@ struct OPALSpark: public Ekiga::Spark
+       call_manager->ready.connect (boost::bind (&Opal::Bank::call_manager_ready, &*bank));
+ 
+       unsigned sip_port = gm_conf_get_int (SIP_KEY "listen_port");
+-      boost::shared_ptr<Sip::EndPoint> sip_manager (new Sip::EndPoint (*call_manager, core, sip_port));
++      boost::shared_ptr<Sip::EndPoint> sip_manager (new Sip::EndPoint (*call_manager, core, sip_port), null_deleter ());
+       core.add (sip_manager);
+ 
+       call_manager->add_protocol_manager (sip_manager);
+@@ -133,9 +140,10 @@ struct OPALSpark: public Ekiga::Spark
+       presence_core->add_presence_publisher (bank);
+       presence_core->add_presence_fetcher (bank);
+ 
++
+ #ifdef HAVE_H323
+       unsigned h323_port = gm_conf_get_int (H323_KEY "listen_port");
+-      boost::shared_ptr<H323::EndPoint> h323_manager (new H323::EndPoint (*call_manager, core, h323_port));
++      boost::shared_ptr<H323::EndPoint> h323_manager (new H323::EndPoint (*call_manager, core, h323_port), null_deleter ());
+       call_manager->add_protocol_manager (h323_manager);
+       contact_core->add_contact_decorator (h323_manager);
+       presence_core->add_presentity_decorator (h323_manager);
