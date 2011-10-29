@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.14 2011/09/29 06:57:36 ajacoutot Exp $
+$OpenBSD: patch-tools_Makefile_in,v 1.15 2011/10/29 14:37:42 ajacoutot Exp $
 --- tools/Makefile.in.orig	Wed Sep 21 16:27:56 2011
-+++ tools/Makefile.in	Thu Sep 29 08:49:44 2011
++++ tools/Makefile.in	Sat Oct 29 16:12:34 2011
 @@ -369,7 +369,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -15,7 +15,16 @@ $OpenBSD: patch-tools_Makefile_in,v 1.14 2011/09/29 06:57:36 ajacoutot Exp $
  
  #create the /var/lib/data directory for dbus-uuidgen
 -localstatelibdir = $(localstatedir)/lib/dbus
-+#localstatelibdir = $(localstatedir)/lib/dbus
++localstatelibdir = $(localstatedir)/db/dbus
  localstatelib_DATA = 
  all: all-am
+ 
+@@ -707,7 +707,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-localstatelibDATA
++install-data-am:
+ 
+ install-dvi: install-dvi-am
  
