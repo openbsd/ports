@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/12 09:43:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/10/29 16:42:33 jasper Exp $
 ${P5SITE}/MooseX/Method/
 ${P5SITE}/MooseX/Method/Signatures/
 ${P5SITE}/MooseX/Method/Signatures.pm
@@ -6,3 +6,5 @@ ${P5SITE}/MooseX/Method/Signatures/Meta/
 ${P5SITE}/MooseX/Method/Signatures/Meta/Method.pm
 ${P5SITE}/MooseX/Method/Signatures/Types.pm
 @man man/man3p/MooseX::Method::Signatures.3p
+@man man/man3p/MooseX::Method::Signatures::Meta::Method.3p
+@man man/man3p/MooseX::Method::Signatures::Types.3p
