@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/13 17:46:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/29 16:31:26 jasper Exp $
 
 COMMENT=		perl6-like method signature parser
 
-DISTNAME=		Parse-Method-Signatures-1.003013
-REVISION=		3
+DISTNAME=		Parse-Method-Signatures-1.003014
 
 CATEGORIES=		devel
 
@@ -14,7 +13,6 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			devel/p5-MooseX-Traits \
