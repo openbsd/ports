@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/10/29 16:32:50 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		wrap OP check callbacks
 
-DISTNAME=		B-Hooks-OP-Check-0.18
-REVISION=		1
+DISTNAME=		B-Hooks-OP-Check-0.19
 
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
