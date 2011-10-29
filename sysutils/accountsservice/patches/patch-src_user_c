@@ -1,19 +1,7 @@
-$OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
---- src/user.c.orig	Tue Aug 16 14:53:31 2011
-+++ src/user.c	Thu Sep  8 15:05:49 2011
-@@ -29,7 +29,11 @@
- #include <sys/wait.h>
- #include <unistd.h>
- #include <grp.h>
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+#include <pwd.h>
-+#else
- #include <shadow.h>
-+#endif
- 
- #include <glib.h>
- #include <glib/gi18n.h>
-@@ -46,7 +50,7 @@
+$OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
+--- src/user.c.orig	Mon Oct 17 21:30:21 2011
++++ src/user.c	Sat Oct 29 12:49:00 2011
+@@ -48,7 +48,7 @@
  #include "user-glue.h"
  #include "util.h"
  
@@ -22,7 +10,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
  
  enum {
          PROP_0,
-@@ -430,10 +434,15 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -432,10 +432,15 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
          gid_t wheel;
@@ -39,7 +27,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
          if (pwent->pw_uid == 0) {
                  g_debug ("user is root so account type is administrator");
                  return ACCOUNT_TYPE_ADMINISTRATOR;
-@@ -446,16 +455,28 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -448,16 +453,28 @@ account_type_from_pwent (struct passwd *pwent)
          }
          wheel = grp->gr_gid;
  
@@ -68,31 +56,9 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
  
          return ACCOUNT_TYPE_STANDARD;
  }
-@@ -464,7 +485,11 @@ void
- user_local_update_from_pwent (User          *user,
-                               struct passwd *pwent)
- {
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+        struct passwd *spent;
-+#else
-         struct spwd *spent;
-+#endif
-         gchar *real_name;
-         gboolean changed;
-         const gchar *passwd;
-@@ -555,16 +580,31 @@ user_local_update_from_pwent (User          *user,
-         }
- 
-         passwd = pwent->pw_passwd;
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+        spent = getpwnam (pwent->pw_name);
-+        if (spent)
-+                passwd = spent->pw_passwd;
-+#else
-         spent = getspnam (pwent->pw_name);
-         if (spent)
+@@ -565,12 +582,21 @@ user_local_update_from_pwent (User          *user,
                  passwd = spent->sp_pwdp;
-+#endif
+ #endif
  
 +#ifdef __OpenBSD__
 +        if (g_str_has_suffix (user->shell, "-") == 1) {
@@ -112,21 +78,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
  
          if (user->locked != locked) {
                  user->locked = locked;
-@@ -579,11 +619,13 @@ user_local_update_from_pwent (User          *user,
-                 mode = PASSWORD_MODE_REGULAR;
-         }
- 
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
-         if (spent) {
-                 if (spent->sp_lstchg == 0) {
-                         mode = PASSWORD_MODE_SET_AT_LOGIN;
-                 }
-         }
-+#endif
- 
-         if (user->password_mode != mode) {
-                 user->password_mode = mode;
-@@ -686,7 +728,7 @@ save_extra_data (User *user)
+@@ -694,7 +720,7 @@ save_extra_data (User *user)
          error = NULL;
          data = g_key_file_to_data (keyfile, NULL, &error);
          if (error == NULL) {
@@ -135,7 +87,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
                                               user->user_name,
                                               NULL);
                  g_file_set_contents (filename, data, -1, &error);
-@@ -707,9 +749,10 @@ move_extra_data (const gchar *old_name,
+@@ -715,9 +741,10 @@ move_extra_data (const gchar *old_name,
          gchar *old_filename;
          gchar *new_filename;
  
@@ -148,7 +100,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1556,14 +1599,28 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1574,14 +1601,28 @@ user_change_locked_authorized_cb (Daemon              
          GError *error;
          gchar *argv[5];
  
@@ -177,7 +129,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
                  argv[4] = NULL;
  
                  error = NULL;
-@@ -1573,6 +1630,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1591,6 +1632,11 @@ user_change_locked_authorized_cb (Daemon              
                          return;
                  }
  
@@ -189,7 +141,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
                  user->locked = locked;
  
                  g_signal_emit (user, signals[CHANGED], 0);
-@@ -1639,7 +1701,11 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1657,7 +1703,11 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
@@ -201,7 +153,7 @@ $OpenBSD: patch-src_user_c,v 1.8 2011/09/08 13:15:52 ajacoutot Exp $
                          break;
                  default:
                          /* remove excess comma */
-@@ -1761,9 +1827,15 @@ user_change_password_mode_authorized_cb (Daemon       
+@@ -1779,9 +1829,15 @@ user_change_password_mode_authorized_cb (Daemon       
                  }
                  else if (user->locked) {
                          argv[0] = "/usr/sbin/usermod";

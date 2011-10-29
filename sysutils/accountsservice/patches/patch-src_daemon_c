@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_daemon_c,v 1.8 2011/09/08 13:56:53 ajacoutot Exp $
---- src/daemon.c.orig	Thu Sep  8 15:52:39 2011
-+++ src/daemon.c	Thu Sep  8 15:52:39 2011
-@@ -49,13 +49,17 @@
+$OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
+--- src/daemon.c.orig	Mon Oct 17 21:30:22 2011
++++ src/daemon.c	Sat Oct 29 12:52:11 2011
+@@ -52,13 +52,17 @@
  #define PATH_PASSWD "/etc/passwd"
  #define PATH_SHADOW "/etc/shadow"
  #define PATH_LOGIN_DEFS "/etc/login.defs"
@@ -21,80 +21,7 @@ $OpenBSD: patch-src_daemon_c,v 1.8 2011/09/08 13:56:53 ajacoutot Exp $
  
  static const char *default_excludes[] = {
          "bin",
-@@ -490,22 +494,32 @@ reload_passwd (Daemon *daemon)
-         GSList *old_users;
-         GSList *new_users;
-         GSList *list;
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
-         FILE *fp;
-+#endif
-         User *user = NULL;
- 
-         old_users = NULL;
-         new_users = NULL;
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+       setpwent();
-+#else
-         errno = 0;
-         fp = fopen (PATH_PASSWD, "r");
-         if (fp == NULL) {
-                 g_warning ("Unable to open %s: %s", PATH_PASSWD, g_strerror (errno));
-                 goto out;
-         }
-+#endif
-         g_hash_table_foreach (daemon->priv->users, listify_hash_values_hfunc, &old_users);
-         g_slist_foreach (old_users, (GFunc) g_object_ref, NULL);
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+        for (pwent = getpwent (); pwent != NULL; pwent = getpwent ()) {
-+#else
-         for (pwent = fgetpwent (fp); pwent != NULL; pwent = fgetpwent (fp)) {
-+#endif
-                 /* Skip users below MINIMAL_UID... */
-                 if (daemon_local_user_is_excluded (daemon, pwent->pw_name, pwent->pw_uid)) {
-                         g_debug ("skipping user: %s", pwent->pw_name);
-@@ -555,10 +569,14 @@ reload_passwd (Daemon *daemon)
-                 }
-         }
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+        endpwent ();
-+#else
-  out:
-         /* Cleanup */
- 
-         fclose (fp);
-+#endif
- 
-         g_slist_foreach (new_users, (GFunc) g_object_thaw_notify, NULL);
-         g_slist_foreach (new_users, (GFunc) g_object_unref, NULL);
-@@ -718,9 +736,16 @@ on_gdm_monitor_changed (GFileMonitor      *monitor,
-         queue_reload_autologin (daemon);
- }
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
- static uid_t
- get_minimal_uid (void)
- {
-+	return FALLBACK_MINIMAL_UID;
-+}
-+#else
-+static uid_t
-+get_minimal_uid (void)
-+{
-         GError *error;
-         char *contents;
-         gboolean contents_loaded;
-@@ -770,6 +795,7 @@ out:
-         g_free (contents);
-         return uid;
- }
-+#endif
- 
- static void
- daemon_init (Daemon *daemon)
-@@ -1183,7 +1209,12 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1023,7 +1027,12 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -107,7 +34,7 @@ $OpenBSD: patch-src_daemon_c,v 1.8 2011/09/08 13:56:53 ajacoutot Exp $
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1191,6 +1222,22 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1031,6 +1040,22 @@ daemon_create_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -130,7 +57,7 @@ $OpenBSD: patch-src_daemon_c,v 1.8 2011/09/08 13:56:53 ajacoutot Exp $
          sys_log (context, "create user '%s'", cd->user_name);
  
          argv[0] = "/usr/sbin/useradd";
-@@ -1199,15 +1246,34 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1039,15 +1064,34 @@ daemon_create_user_authorized_cb (Daemon              
          argv[3] = cd->real_name;
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
@@ -165,7 +92,7 @@ $OpenBSD: patch-src_daemon_c,v 1.8 2011/09/08 13:56:53 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1277,6 +1343,23 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1117,6 +1161,23 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
