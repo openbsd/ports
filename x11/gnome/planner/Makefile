@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/10/29 08:12:33 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.5
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		productivity
 
@@ -28,7 +28,7 @@ WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2
 WANTLIB += gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png popt pthread pthread-stubs ssl util vorbis
-WANTLIB += vorbisfile xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += vorbisfile xcb xcb-render xcb-shm xml2 xslt z ffi stdc++
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \

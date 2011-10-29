@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2011/10/16 19:03:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -9,8 +9,8 @@ GNOME_VERSION=		3.2.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-plugins=	0
+REVISION-main=		1
+REVISION-plugins=	1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -45,7 +45,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
 WANTLIB += camel-provider-1.2 canberra com_err crypto

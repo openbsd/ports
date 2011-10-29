@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/18 18:05:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.6.4.1
+REVISION=		0
 
 SHARED_LIBS +=  folks-telepathy           4.0 # 28.0
 SHARED_LIBS +=  folks                     4.0 # 28.0
@@ -16,7 +17,7 @@ HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 MODULES=		devel/gettext \
 			x11/gnome
 
-WANTLIB += ORBit-2 asn1 c camel-1.2 com_err crypto dbus-1 dbus-glib-1
+WANTLIB += asn1 c camel-1.2 com_err crypto dbus-1 dbus-glib-1
 WANTLIB += ebook-1.2 edataserver-1.2 ffi gconf-2 gee gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gssapi gthread-2.0 krb5 m ncurses
 WANTLIB += nspr4 nss3 nssutil3 pcre plc4 plds4 pthread readline

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2011/10/16 19:03:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -35,18 +35,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
-WANTLIB += atk-1.0 c cairo cairo-gobject com_err crypto db dbus-1
-WANTLIB += drm expat fontconfig freetype gconf-2 gcrypt gdata
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm asn1 atk-1.0 c cairo
+WANTLIB += cairo-gobject com_err crypto curl db dbus-1 dbus-glib-1
+WANTLIB += drm expat ffi fontconfig freetype gconf-2 gcrypt gdata
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-3 gweather-3
-WANTLIB += ical icalss icalvcal krb5 lber-2.4 ldap-2.4 m nspr4
-WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += sasl2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3
-WANTLIB += xcb xcb-render xcb-shm xml2 z curl idn oauth ffi
-WANTLIB += softokn3 goa-1.0 dbus-glib-1
+WANTLIB += goa-1.0 gobject-2.0 gpg-error gssapi gthread-2.0 gtk-3
+WANTLIB += gweather-3 ical icalss icalvcal idn krb5 lber-2.4 ldap-2.4
+WANTLIB += m nspr4 nss3 nssutil3 oauth pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += sasl2 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += ssl ssl3 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \

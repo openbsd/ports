@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/10/18 15:14:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
 WANTLIB += drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0

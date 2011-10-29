@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
 
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
 WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm enchant expat
 WANTLIB += fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0

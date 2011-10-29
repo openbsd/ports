@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2011/10/29 08:12:32 ajacoutot Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -7,7 +7,7 @@ COMMENT=		collection of games for the GNOME desktop
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage rsvg-2
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage rsvg-2
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm guile
 WANTLIB += atk-1.0 c cairo canberra canberra-gtk clutter-glx-1.0
 WANTLIB += croco-0.6 xcb-shm drm expat fontconfig freetype

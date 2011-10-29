@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/10/17 10:10:59 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2011/10/29 08:12:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -14,6 +14,7 @@ PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
+REVISION-main=	0
 REVISION-java=	0
 CATEGORIES=	editors productivity
 
@@ -156,7 +157,7 @@ WANTLIB-main=	gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		db>=4 xslt>=3 curl>=7 neon>=24 \
 		icuuc>=0 icudata>=0 icui18n icule \
 		raptor>=2 rasqal rdf>=0 poppler
-WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
+WANTLIB-main+=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 \

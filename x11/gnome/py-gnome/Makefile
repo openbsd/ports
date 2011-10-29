@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/09 14:11:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.42 2011/10/29 08:12:33 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	2.28.1
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	py-gnome-${VERSION}
 
-REVISION=	11
+REVISION=	12
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -27,7 +27,7 @@ WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2
 WANTLIB += gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
 WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png popt pthread-stubs ssl util vorbis vorbisfile
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
 
 WANTLIB += ${MODPY_WANTLIB}
 

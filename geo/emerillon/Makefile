@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/10/29 08:12:31 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=		"-DG_CONST_RETURN=const"
@@ -7,7 +7,7 @@ COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	5
+REVISION=	6
 
 CATEGORIES =	geo x11
 
@@ -48,7 +48,7 @@ WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z ethos-1.0 ethos-ui-1.0
-WANTLIB += proxy ORBit-2 Xxf86vm dbus-1 dbus-glib-1 drm gnome-keyring
+WANTLIB += proxy Xxf86vm dbus-1 dbus-glib-1 drm gnome-keyring
 WANTLIB += champlain-0.8 champlain-gtk-0.8 soup-gnome-2.4
 WANTLIB += geoclue rest-0.7 xcb-render xcb-shm
 

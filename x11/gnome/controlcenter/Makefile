@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/10/18 14:53:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2011/10/29 08:12:33 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xt Xxf86vm asn1 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 crypto cups dbus-1 dbus-glib-1

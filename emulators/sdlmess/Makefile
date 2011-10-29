@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/29 08:12:31 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ COMMENT =		emulates game consoles and old home computers
 V =			0.132
 DISTNAME =		sdlmess${V:S/.//}
 PKGNAME =		sdlmess-${V}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES =		emulators games
 
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB +=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0

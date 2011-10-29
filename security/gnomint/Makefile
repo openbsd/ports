@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	security x11
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo drm expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls

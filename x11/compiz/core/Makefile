@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/14 07:15:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	10
+REVISION=	11
 
 SHARED_LIBS =	decoration	0.0
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU ICE ORBit-2 SM X11 X11-xcb XRes Xau Xcomposite
+WANTLIB += GL GLU ICE SM X11 X11-xcb XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender Xxf86vm atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += drm expat ffi fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0

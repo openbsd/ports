@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.1
-REVISION=		0
+REVISION =	1
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo dbus-1 dbus-glib-1 drm enchant expat fontconfig
 WANTLIB += freetype gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0

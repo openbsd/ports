@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/28 21:58:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
 
-REVISION=	6
+REVISION=	7
 
 SHARED_ONLY=	Yes
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += Half Iex IlmImf IlmThread Imath ORBit-2 X11 Xau Xcomposite
+WANTLIB += Half Iex IlmImf IlmThread Imath X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += atk-1.0 c cairo crypto curl dbus-1 dbus-glib-1
 WANTLIB += exif exiv2 expat fontconfig freetype gcrypt gdk-x11-2.0

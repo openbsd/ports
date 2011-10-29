@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/16 11:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
 DISTNAME=		workrave-1.9.4
-REVISION=		0
+REVISION=		1
 CATEGORIES=		productivity x11
 
 HOMEPAGE=		http://www.workrave.org/
@@ -14,15 +14,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 atkmm-1.6 c cairo cairomm-1.0 dbus-1 dbus-glib-1
-WANTLIB += drm expat fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
-WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += drm expat ffi fontconfig freetype gconf-2 gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 gstreamer-0.10 gthread-2.0
+WANTLIB += gtk-x11-2.0 gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sigc-2.0 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 

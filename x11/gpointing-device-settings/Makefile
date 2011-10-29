@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		tool for setting pointing devices
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
 
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -25,7 +25,7 @@ MODULES =		devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo dbus-1 dbus-glib-1 drm expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/10/27 15:39:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2011/10/29 08:12:33 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -20,6 +20,9 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
+
+REVISION-main=		0
+REVISION-evolution=	0
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
@@ -53,7 +56,7 @@ WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += z
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += ORBit-2 archive assuan atk-1.0 bz2 c cairo cairo-gobject
+WANTLIB-main += archive assuan atk-1.0 bz2 c cairo cairo-gobject
 WANTLIB-main += dbus-1 dbus-glib-1 e2fs-uuid enca exempi exif gconf-2
 WANTLIB-main += gcrypt gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gee gif gmime-2.6
 WANTLIB-main += gnome-keyring gpg-error gpgme-pthread gsf-1 gtk-3 icudata
@@ -66,7 +69,7 @@ WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 WANTLIB-evolution += ${WANTLIB}
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
-WANTLIB-evolution += ICE ORBit-2 SM asn1 atk-1.0 cairo cairo-gobject camel-1.2
+WANTLIB-evolution += ICE SM asn1 atk-1.0 cairo cairo-gobject camel-1.2
 WANTLIB-evolution += camel-provider-1.2 com_err crypto db dbus-1 e2fs-uuid
 WANTLIB-evolution += ebackend-1.2 ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0
 WANTLIB-evolution += enchant gailutil-3 gconf-2 gcrypt gdk-3 gdk_pixbuf-2.0

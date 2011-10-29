@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 10:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/10/29 08:12:32 ajacoutot Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	lang java
 
@@ -39,19 +39,18 @@ RUN_DEPENDS=	lang/gcc/4.2,-java \
 		lang/antlr3>=3.4p0
 
 LIB_DEPENDS=	x11/gtk+2 \
-		x11/dbus-glib \
-		devel/ORBit2 \
 		devel/gconf2 \
 		devel/libmagic \
 		devel/gmp
 
-WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
-		Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo \
-		dbus-1 expat fontconfig freetype gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
-		xcb xcb-render xcb-render-util ORBit-2 gconf-2 magic gmp z \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += atk-1.0 cairo dbus-1 dbus-glib-1 drm expat ffi fontconfig
+WANTLIB += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gmp gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += m magic pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread-stubs stdc++ xcb xcb-render xcb-shm
+WANTLIB += z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=classpath/}
 MASTER_SITES0=	http://archive.eclipse.org/eclipse/downloads/drops/R-3.2.2-200702121330/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/23 16:52:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.8.1
+REVISION=		0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -21,7 +22,7 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += atkmm-1.6 c cairo cairo-gobject cairomm-1.0 drm e2fs-uuid
 WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0

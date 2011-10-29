@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/09/30 19:05:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/10/29 08:12:32 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -16,10 +16,10 @@ PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main = 	1
-REVISION-aalib = 	1
-REVISION-dv = 		1
-REVISION-caca = 	1
+REVISION-main = 	2
+REVISION-aalib = 	2
+REVISION-dv = 		2
+REVISION-caca = 	2
 
 EPOCH-main =		0
 
@@ -44,7 +44,7 @@ REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 
 RUN_DEPENDS =		${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-			pcre xml2 m z gstreamer-0.10 gstbase-0.10
+			pcre xml2 m z gstreamer-0.10 gstbase-0.10 ffi
 LIB_DEPENDS =		$P/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
@@ -52,13 +52,13 @@ WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			gstcontroller-0.10 Xau Xdmcp xcb-render cairo-gobject \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
 			fontconfig freetype ogg pixman-1 png Xv \
-			stdc++ theora vorbis ORBit-2 dbus-1 GL Xxf86vm \
+			stdc++ theora vorbis dbus-1 GL Xxf86vm \
 			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
 			gstfft-0.10 gstrtsp-0.10 gstsdp-0.10 gstpbutils-0.10 \
 			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2 \
 			gcrypt gio-2.0 gnome-keyring drm xcb-shm \
-			gpg-error soup-2.4 soup-gnome-2.4 sqlite3
+			gpg-error soup-2.4 soup-gnome-2.4 sqlite3 dbus-glib-1
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
 			devel/orc>=0.4.6 \
@@ -77,7 +77,7 @@ RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 
 WANTLIB-aalib=		${WANTLIB} \
-			X11 ncurses Xau Xdmcp pthread-stubs xcb aa
+			X11 ncurses xcb aa
 LIB_DEPENDS-aalib =	${LIB_DEPENDS} \
 			graphics/aalib
 
@@ -87,7 +87,7 @@ LIB_DEPENDS-dv =	${LIB_DEPENDS} \
 			${P}/plugins-base
 
 WANTLIB-caca =		${WANTLIB} \
-			X11 ncursesw Xau Xdmcp pthread-stubs xcb caca
+			X11 ncursesw xcb caca
 LIB_DEPENDS-caca =	${LIB_DEPENDS} \
 			graphics/libcaca
 

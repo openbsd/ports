@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-REVISION=		1
+REVISION=		2
 EPOCH=			0
 
 CATEGORIES=     	net
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=twitux/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo canberra canberra-gtk dbus-1 dbus-glib-1 drm
 WANTLIB += enchant expat fontconfig freetype gcrypt gdk-x11-2.0

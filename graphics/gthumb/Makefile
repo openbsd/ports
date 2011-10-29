@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2011/10/28 22:08:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.14.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += atk-1.0 c cairo clutter-glx-1.0 clutter-gtk-0.10 dbus-1
 WANTLIB += dbus-glib-1 drm exiv2 expat ffi fontconfig freetype

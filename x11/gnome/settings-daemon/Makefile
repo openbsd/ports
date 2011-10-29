@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/10/17 14:52:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.2.1
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor json
+WANTLIB += GL X11 Xau Xcomposite Xcursor json
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject
 WANTLIB += canberra canberra-gtk3 crypto cups dbus-1 dbus-glib-1

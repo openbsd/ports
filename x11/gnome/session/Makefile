@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.195 2011/10/16 14:58:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2011/10/29 08:12:33 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1 drm
 WANTLIB += execinfo expat ffi fontconfig freetype gconf-2 gdk-3

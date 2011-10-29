@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/10/16 19:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.91.6
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	6
+REVISION=	7
 
 # XXX until we have a stable 3.X release
 MASTER_SITES=	http://distfiles.bsdfrog.org/
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm assuan
 WANTLIB += atk-1.0 c cairo cairo-gobject cryptui dbus-1 dbus-glib-1
 WANTLIB += drm expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0

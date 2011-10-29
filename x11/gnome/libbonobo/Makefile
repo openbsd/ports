@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
 GNOME_PROJECT=	libbonobo
 GNOME_VERSION=	2.32.1
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += c m pcre pthread z ORBit-2 ORBitCosNaming-2 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 xml2 gio-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 xml2 gio-2.0 ffi
 
 MODULES=	devel/gettext \
 		x11/gnome

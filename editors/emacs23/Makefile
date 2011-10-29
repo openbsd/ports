@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/10/29 08:12:31 ajacoutot Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -9,7 +9,7 @@ PKGNAME-main =		emacs-${VERSION}
 FULLPKGNAME-el =	emacs-el-${VERSION}
 FULLPKGPATH-el =	editors/emacs23,-el
 
-REVISION-main =		3
+REVISION-main =		4
 REVISION-el =		2
 
 CATEGORIES =		editors
@@ -69,10 +69,9 @@ MODULES +=		devel/gettext
 CONFIGURE_ARGS +=	--with-x-toolkit=gtk
 LIB_DEPENDS-main +=	x11/gtk+2 \
 			graphics/libungif \
-			devel/ORBit2 \
 			devel/gconf2 \
 			x11/gnome/librsvg
-WANTLIB-main +=		GL ICE ORBit-2 SM X11 Xdmcp Xext Xft Xpm Xrender \
+WANTLIB-main +=		GL ICE SM X11 Xdmcp Xext Xft Xpm Xrender \
 			Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 			Xrandr Xxf86vm jpeg png tiff gthread-2.0 pthread-stubs xcb \
 			atk-1.0 cairo drm expat fontconfig freetype \

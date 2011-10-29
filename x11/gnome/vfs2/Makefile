@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/28 09:47:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.24.4
 
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -19,11 +19,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += asn1 bz2 c crypto dbus-1 dbus-glib-1 fam ffi gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
+WANTLIB += krb5 m pcre pthread ssl util xml2 z
 
-WANTLIB += crypto dbus-1 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre ssl util z ORBit-2 xml2 dbus-glib-1 c asn1 gssapi krb5
-WANTLIB += pthread gio-2.0 bz2 fam
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome \

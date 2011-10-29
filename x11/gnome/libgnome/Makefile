@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/10/29 08:12:32 ajacoutot Exp $
 
 COMMENT=	libraries for the GNOME project
 
 GNOME_PROJECT=	libgnome
 GNOME_VERSION=	2.32.1
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre pthread
 WANTLIB += ssl util xml2 z bonobo-2 bonobo-activation gnomevfs-2
-WANTLIB += canberra ltdl ogg vorbis vorbisfile dbus-1
+WANTLIB += canberra ltdl ogg vorbis vorbisfile dbus-1 ffi
 WANTLIB += dbus-glib-1 gio-2.0 glib-2.0 ORBit-2 ORBitCosNaming-2
 WANTLIB += c crypto popt
 

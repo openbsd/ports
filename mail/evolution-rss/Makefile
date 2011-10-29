@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/07 08:22:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/10/29 08:12:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90.20111007
+REVISION=		0
 
 CATEGORIES=		mail
 
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo cairo-gobject
 WANTLIB += camel-1.2 camel-provider-1.2 com_err crypto dbus-1
 WANTLIB += ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/10/16 19:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	3.0.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	misc net
 
@@ -20,7 +20,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
 WANTLIB += atk-1.0 c cairo cairo-gobject camel-1.2 com_err crypto
 WANTLIB += dbus-1 dbus-glib-1 drm e2fs-uuid ebook-1.2 edataserver-1.2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/10/13 14:08:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/10/29 08:12:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.1
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm atk-1.0 c cairo canberra canberra-gtk dbus-1
 WANTLIB += dbus-glib-1 drm expat ffi fontconfig freetype gdk-x11-2.0

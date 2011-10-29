@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/29 08:12:31 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION=	4
+REVISION=	5
 
 CATEGORIES =	games
 
@@ -30,7 +30,7 @@ RUN_DEPENDS +=	x11/gnome/librsvg
 MODGNOME_TOOLS= 	yelp
 CONFIGURE_STYLE =	gnu
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB += dbus-glib-1 expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0

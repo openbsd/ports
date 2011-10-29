@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/10/29 08:12:32 ajacoutot Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -9,7 +9,7 @@ COMMENT=	gettext(1) files editor for GNOME
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.13
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	textproc devel
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
 WANTLIB += enchant expat fontconfig freetype gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
