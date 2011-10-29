@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/29 16:48:15 jasper Exp $
 
 COMMENT=		the Illicit Love Child of Moose and POE
 
-DISTNAME=		MooseX-POE-0.205
-REVISION=		0
+DISTNAME=		MooseX-POE-0.213
 
 CATEGORIES=		devel
 
@@ -14,10 +13,11 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
-RUN_DEPENDS=		devel/p5-MooseX-Async \
-			devel/p5-MooseX-Declare \
+RUN_DEPENDS=		devel/p5-Moose \
 			devel/p5-POE
+
+REGRESS_DEPENDS=	devel/p5-Test-Fatal \
+			devel/p5-MooseX-Declare>=0.35
 
 .include <bsd.port.mk>
