@@ -1,16 +1,16 @@
-$OpenBSD: patch-servers_slapd_schema_init_c,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
+$OpenBSD: patch-servers_slapd_schema_init_c,v 1.2 2011/10/29 11:56:04 gsoares Exp $
 
 SECURITY FIX
 
-Resolves CVE-2010-0211 and CVE-2010-0212 (ITS#6570) 
+Resolves CVE-2010-0211, CVE-2010-0212 (ITS#6570), and SA46599
 from upstream
 
 Also cure a crash in IA5StringNormalize() by sync'ing it with the same 
 function from 2.4.23
 
 
---- servers/slapd/schema_init.c.orig	Mon Feb 11 18:24:17 2008
-+++ servers/slapd/schema_init.c	Tue Aug  3 15:35:45 2010
+--- servers/slapd/schema_init.c.orig	Thu Oct 27 10:02:29 2011
++++ servers/slapd/schema_init.c	Thu Oct 27 10:02:47 2011
 @@ -1439,8 +1439,9 @@ UTF8StringNormalize(
  		? LDAP_UTF8_APPROX : 0;
  
@@ -22,6 +22,15 @@ function from 2.4.23
  	}
  	
  	/* collapse spaces (in place) */
+@@ -1473,7 +1474,7 @@ UTF8StringNormalize(
+ 		}
+ 		nvalue.bv_val[nvalue.bv_len] = '\0';
+ 
+-	} else {
++	} else if ( nvalue.bv_len )  {
+ 		/* string of all spaces is treated as one space */
+ 		nvalue.bv_val[0] = ' ';
+ 		nvalue.bv_val[1] = '\0';
 @@ -2101,14 +2102,18 @@ IA5StringNormalize(
  	char *p, *q;
  	int casefold = !SLAP_MR_ASSOCIATED(mr, slap_schema.si_mr_caseExactIA5Match);
