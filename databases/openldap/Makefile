@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2011/09/21 14:07:47 pea Exp $
+# $OpenBSD: Makefile,v 1.109 2011/10/29 11:54:04 gsoares Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -6,6 +6,8 @@ COMMENT-server=	Open source LDAP software (server)
 DISTNAME=		openldap-2.4.26
 PKGNAME-main=		${DISTNAME:S/-/-client-/}
 PKGNAME-server=		${DISTNAME:S/-/-server-/}
+
+REVISION-server=	0
 
 SHARED_LIBS +=	lber                 11.0      # .9.1
 SHARED_LIBS +=	ldap                 11.1      # .9.1
