@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_demuxers_ebml_c,v 1.3 2011/10/30 21:20:21 dcoppa Exp $
+
+Fix NULL dereferences and skipping of unknown elements.
+
+--- src/demuxers/ebml.c.orig	Fri Oct 28 00:50:36 2011
++++ src/demuxers/ebml.c	Fri Oct 28 00:52:43 2011
+@@ -211,14 +211,13 @@ int ebml_skip(ebml_parser_t *ebml, ebml_elem_t *elem) 
+ 
+ int ebml_read_elem_head(ebml_parser_t *ebml, ebml_elem_t *elem) {
+ 
+-  if (!ebml_read_elem_id(ebml, &elem->id))
+-    return 0;
++  int ret_id  = ebml_read_elem_id(ebml, &elem->id);
+ 
+-  if (!ebml_read_elem_len(ebml, &elem->len))
+-    return 0;
++  int ret_len = ebml_read_elem_len(ebml, &elem->len);
+ 
+   elem->start = ebml->input->get_current_pos(ebml->input);
+-  return 1;
++
++  return (ret_id && ret_len);
+ }
+ 
+ 
+@@ -473,6 +472,7 @@ int ebml_check_header(ebml_parser_t *ebml) {
+       default:
+         xprintf(ebml->xine, XINE_VERBOSITY_LOG,
+                 "ebml: Unknown data type 0x%x in EBML header (ignored)\n", elem.id);
++        ebml_skip(ebml, &elem);
+     }
+     next_level = ebml_get_next_level(ebml, &elem);
+   }

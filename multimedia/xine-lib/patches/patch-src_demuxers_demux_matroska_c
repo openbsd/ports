@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.6 2011/10/13 07:27:00 dcoppa Exp $
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.7 2011/10/30 21:20:21 dcoppa Exp $
 
 - Header stripping support.
 - VP8 support.
+- Fix NULL dereferences and skipping of unknown elements.
 
 --- src/demuxers/demux_matroska.c.orig	Mon Jul 19 14:01:43 2010
-+++ src/demuxers/demux_matroska.c	Tue Oct 11 02:43:22 2011
++++ src/demuxers/demux_matroska.c	Fri Oct 28 00:49:57 2011
 @@ -304,8 +304,12 @@ static int parse_content_compression (demux_matroska_t
          }
          break;
@@ -133,3 +134,21 @@ $OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.6 2011/10/13 07:27:00 dcoppa E
            return 0;
  
            has_block = 1;
+@@ -2993,7 +3030,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+   if (ebml->max_size_len > 8)
+     goto error;
+   /* handle both Matroska and WebM here; we don't (presently) differentiate */
+-  if (strcmp(ebml->doctype, "matroska") && strcmp(ebml->doctype, "webm"))
++  if (!ebml->doctype || (strcmp(ebml->doctype, "matroska") && strcmp(ebml->doctype, "webm")))
+     goto error;
+ 
+   this->event_queue = xine_event_new_queue(this->stream);
+@@ -3003,7 +3040,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+ error:
+   dispose_ebml_parser(ebml);
+ 
+-  if (NULL != this) {
++  if (this != NULL && this->event_queue != NULL) {
+     xine_event_dispose_queue(this->event_queue);
+     free(this);
+   }
