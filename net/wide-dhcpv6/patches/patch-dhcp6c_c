@@ -1,0 +1,25 @@
+$OpenBSD: patch-dhcp6c_c,v 1.1 2011/10/30 16:47:08 stsp Exp $
+--- dhcp6c.c.orig	Sun Feb 20 13:29:11 2011
++++ dhcp6c.c	Sun Feb 20 13:29:49 2011
+@@ -88,7 +88,6 @@ static sig_atomic_t sig_flags = 0;
+ const dhcp6_mode_t dhcp6_mode = DHCP6_MODE_CLIENT;
+ 
+ int sock;	/* inbound/outbound udp port */
+-int rtsock;	/* routing socket */
+ int ctlsock = -1;		/* control TCP port */
+ char *ctladdr = DEFAULT_CLIENT_CONTROL_ADDR;
+ char *ctlport = DEFAULT_CLIENT_CONTROL_PORT;
+@@ -336,13 +335,6 @@ client6_init()
+ 		exit(1);
+ 	}
+ 	freeaddrinfo(res);
+-
+-	/* open a routing socket to watch the routing table */
+-	if ((rtsock = socket(PF_ROUTE, SOCK_RAW, 0)) < 0) {
+-		dprintf(LOG_ERR, FNAME, "open a routing socket: %s",
+-		    strerror(errno));
+-		exit(1);
+-	}
+ 
+ 	memset(&hints, 0, sizeof(hints));
+ 	hints.ai_family = PF_INET6;
