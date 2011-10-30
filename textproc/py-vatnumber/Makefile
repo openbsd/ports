@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/10/30 14:27:11 ajacoutot Exp $
 
 COMMENT =		Python module to validate VAT numbers
 
-MODPY_EGG_VERSION =	0.9
+MODPY_EGG_VERSION =	1.0
 DISTNAME =		vatnumber-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES =		textproc
 
@@ -24,6 +23,8 @@ MASTER_SITES =		${HOMEPAGE}files/
 MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-suds
+
+REGRESS_DEPENDS =	devel/py-suds
 
 MODPY_SETUPTOOLS =	Yes
 
