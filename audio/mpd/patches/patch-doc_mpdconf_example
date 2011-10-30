@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.7 2011/04/05 19:55:38 landry Exp $
---- doc/mpdconf.example.orig	Sat Mar 19 06:11:52 2011
-+++ doc/mpdconf.example	Mon Apr  4 22:43:42 2011
+$OpenBSD: patch-doc_mpdconf_example,v 1.8 2011/10/30 11:46:19 dcoppa Exp $
+--- doc/mpdconf.example.orig	Sun Oct  9 13:43:52 2011
++++ doc/mpdconf.example	Thu Oct 13 16:42:40 2011
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -69,7 +69,7 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.7 2011/04/05 19:55:38 landry Exp $
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -296,6 +298,14 @@
+@@ -296,6 +298,14 @@ input {
  #	name		"My Null Output"
  #	mixer_type      "none"			# optional
  #}

@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure,v 1.13 2011/04/05 19:55:38 landry Exp $
+$OpenBSD: patch-configure,v 1.14 2011/10/30 11:46:18 dcoppa Exp $
 
 Don't reset CPPFLAGS...stupid configure.
 
---- configure	Mon Apr  4 22:34:06 2011
-+++ configure	Mon Apr  4 22:35:15 2011
-@@ -8759,7 +8759,7 @@
+--- configure.orig	Sun Oct  9 13:44:12 2011
++++ configure	Thu Oct 13 16:42:40 2011
+@@ -8830,7 +8830,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -I."
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
 -	CPPFLAGS=$CFLAGS
 +	CPPFLAGS="$CPPFLAGS $CFLAGS"
  	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
- if test "x$ac_cv_header_faad_h" = x""yes; then :
+ if test "x$ac_cv_header_faad_h" = xyes; then :
  
-@@ -9013,7 +9013,7 @@
+@@ -9084,7 +9084,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -Werror"
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
@@ -22,7 +22,7 @@ Don't reset CPPFLAGS...stupid configure.
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken libfaad headers" >&5
  $as_echo_n "checking for broken libfaad headers... " >&6; }
-@@ -9059,7 +9059,7 @@
+@@ -9130,7 +9130,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS $MP4FF_LIBS"
@@ -30,13 +30,13 @@ Don't reset CPPFLAGS...stupid configure.
 +	CPPFLAGS="$CPPFLAGS $CFLAGS"
  
  	ac_fn_c_check_header_mongrel "$LINENO" "mp4ff.h" "ac_cv_header_mp4ff_h" "$ac_includes_default"
- if test "x$ac_cv_header_mp4ff_h" = x""yes; then :
-@@ -10370,7 +10370,7 @@
+ if test "x$ac_cv_header_mp4ff_h" = xyes; then :
+@@ -10637,7 +10637,7 @@ if test x$enable_mpc = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $MPCDEC_CFLAGS -I."
  	LIBS="$LIBS $MPD_LIBS $MPCDEC_LIBS"
 -	CPPFLAGS=$CFLAGS
 +	CPPFLAGS="$CPPFLAGS $CFLAGS"
  	ac_fn_c_check_header_mongrel "$LINENO" "mpc/mpcdec.h" "ac_cv_header_mpc_mpcdec_h" "$ac_includes_default"
- if test "x$ac_cv_header_mpc_mpcdec_h" = x""yes; then :
+ if test "x$ac_cv_header_mpc_mpcdec_h" = xyes; then :
    old_mpcdec=no
