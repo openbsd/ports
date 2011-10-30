@@ -1,10 +1,10 @@
-$OpenBSD: patch-generic_itcl_cmds_c,v 1.3 2011/01/05 18:55:31 sebastia Exp $
+$OpenBSD: patch-generic_itcl_cmds_c,v 1.4 2011/10/30 07:36:05 sebastia Exp $
 
 On OpenBSD we only have one version installed.
 
---- generic/itcl_cmds.c.orig	Sun Dec 12 12:25:58 2010
-+++ generic/itcl_cmds.c	Sun Dec 12 12:26:47 2010
-@@ -62,7 +62,7 @@ namespace eval ::itcl {\n\
+--- generic/itcl_cmds.c.orig	Fri Jul 15 20:30:52 2011
++++ generic/itcl_cmds.c	Sun Oct  9 19:00:41 2011
+@@ -60,7 +60,7 @@ namespace eval ::itcl {\n\
              if {[info exists env(ITCL_LIBRARY)]} {\n\
                  lappend dirs $env(ITCL_LIBRARY)\n\
              }\n\
