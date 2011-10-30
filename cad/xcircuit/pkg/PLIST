@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/26 15:02:55 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/10/30 05:12:15 stu Exp $
 bin/xcircuit
 lib/xcircuit-${BASEVER}/
 lib/xcircuit-${BASEVER}/analog.lps
@@ -151,4 +151,5 @@ share/examples/xcircuit/systemd1.lgf
 share/examples/xcircuit/test.py
 share/examples/xcircuit/threestage.ps
 share/examples/xcircuit/vcoblock.ps
+share/examples/xcircuit/xc_remote.sh
 share/examples/xcircuit/xcclock.ps

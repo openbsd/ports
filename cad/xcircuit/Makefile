@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/10/30 05:12:15 stu Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		circuit drawing and schematic capture
 
-BASEVER=		3.6
-DISTNAME=		xcircuit-${BASEVER}.167
+BASEVER=		3.7
+DISTNAME=		xcircuit-${BASEVER}.26
 CATEGORIES=		cad
 
 HOMEPAGE=		http://opencircuitdesign.com/xcircuit/
