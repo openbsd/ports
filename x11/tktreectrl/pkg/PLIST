@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/05 17:57:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/10/30 07:38:50 sebastia Exp $
 lib/tcl/tktreectrl/
 lib/tcl/tktreectrl/filelist-bindings.tcl
-@lib lib/tcl/tktreectrl/libtreectrl23.so.${LIBtreectrl23_VERSION}
+@lib lib/tcl/tktreectrl/libtreectrl24.so.${LIBtreectrl24_VERSION}
 lib/tcl/tktreectrl/pkgIndex.tcl
 lib/tcl/tktreectrl/treectrl.tcl
 @man man/mann/treectrl.n
 share/doc/tktreectrl/
-share/doc/tktreectrl/Whats_New_in_TkTreeCtrl.html
+share/doc/tktreectrl/What-is-New-in-TkTreeCtrl.html
 share/doc/tktreectrl/license.terms
 share/doc/tktreectrl/treectrl.html
 share/examples/tktreectrl/
@@ -19,6 +19,7 @@ share/examples/tktreectrl/firefox.tcl
 share/examples/tktreectrl/gradients.tcl
 share/examples/tktreectrl/gradients2.tcl
 share/examples/tktreectrl/gradients3.tcl
+share/examples/tktreectrl/headers.tcl
 share/examples/tktreectrl/help.tcl
 share/examples/tktreectrl/imovie.tcl
 share/examples/tktreectrl/layout.tcl
@@ -84,5 +85,6 @@ share/examples/tktreectrl/pics/unchecked.gif
 share/examples/tktreectrl/random.tcl
 share/examples/tktreectrl/span.tcl
 share/examples/tktreectrl/style-editor.tcl
+share/examples/tktreectrl/table.tcl
 share/examples/tktreectrl/textvariable.tcl
 share/examples/tktreectrl/www-options.tcl

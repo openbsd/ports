@@ -1,8 +1,8 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2011/01/05 17:57:00 sebastia Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2011/10/30 07:38:50 sebastia Exp $
 Also install some demos and license files.
---- Makefile.in.orig	Fri Nov 19 22:19:54 2010
-+++ Makefile.in	Wed Dec  8 12:13:04 2010
-@@ -77,6 +77,7 @@ datadir		= @datadir@
+--- Makefile.in.orig	Wed Jun  1 22:16:09 2011
++++ Makefile.in	Sun Oct  9 18:18:26 2011
+@@ -75,6 +75,7 @@ datadir		= @datadir@
  datarootdir     = @datarootdir@
  mandir		= @mandir@
  includedir	= @includedir@
@@ -10,7 +10,7 @@ Also install some demos and license files.
  
  DESTDIR		=
  
-@@ -192,7 +193,7 @@ doc-x:
+@@ -190,7 +191,7 @@ doc-x:
  doc:
  	@echo "No docs to build"
  
@@ -19,7 +19,7 @@ Also install some demos and license files.
  
  install-binaries: binaries install-lib-binaries install-bin-binaries
  	@mkdir -p $(DESTDIR)$(pkglibdir)
-@@ -221,13 +222,21 @@ install-doc-x:
+@@ -219,13 +220,21 @@ install-doc-x:
  	@echo "Installing documentation in $(DESTDIR)$(mandir)"
  	@for i in $(srcdir)/doc/*.n; do \
  	    echo "Installing $$i"; \
@@ -43,4 +43,4 @@ Also install some demos and license files.
 +	$(INSTALL_DATA) $(srcdir)/demos/pics/* $(DESTDIR)$(pkgdatadir)/pics
  
  test: binaries libraries
- 	$(WISH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS) | cat
+ 	@$(WISH) `@CYGPATH@ $(srcdir)/tests/all.tcl` $(TESTFLAGS) | cat

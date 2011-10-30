@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/11 15:52:34 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2011/10/30 07:38:50 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		tree widget extension for Tk
-DISTNAME =		tktreectrl-2.3
+DISTNAME =		tktreectrl-2.4.1
 EPOCH =			0
-SHARED_LIBS =		treectrl23 0.0
+SHARED_LIBS =		treectrl24 0.0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktreectrl.sourceforge.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		X11
+WANTLIB +=		m X11
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tktreectrl/}
 MODULES =		x11/tk
@@ -36,14 +36,12 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-tk=${MODTK_LIBDIR} \
 			--datadir=${PREFIX}/share/examples \
 			--docdir=${PREFIX}/share/doc/tktreectrl \
-			SHLIB_VERSION=${LIBtreectrl23_VERSION}
+			SHLIB_VERSION=${LIBtreectrl24_VERSION}
 
 REGRESS_IS_INTERACTIVE =X11
 REGRESS_TARGET =	test
-WRKDIST =		${WRKDIR}/tktreectrl-2.3
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/demos/demo.tcl
-	mv "${WRKSRC}/doc/What's New in TkTreeCtrl.html" ${WRKSRC}/doc/Whats_New_in_TkTreeCtrl.html
 
 .include <bsd.port.mk>
