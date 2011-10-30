@@ -1,0 +1,25 @@
+$OpenBSD: patch-libkexiv2_libkexiv2_kexiv2_cpp,v 1.4 2011/10/30 22:25:22 jasper Exp $
+
+Unbreak with libexiv2 > 0.21.
+Based on gentoo's libkexiv2-4.4.5-exiv2-0.21.patch
+
+--- libkexiv2/libkexiv2/kexiv2.cpp.orig	Sun Oct 30 23:18:23 2011
++++ libkexiv2/libkexiv2/kexiv2.cpp	Sun Oct 30 23:20:47 2011
+@@ -1603,7 +1603,7 @@ QString KExiv2::getExifTagTitle(const char *exifTagNam
+     {
+         std::string exifkey(exifTagName);
+         Exiv2::ExifKey ek(exifkey);
+-        return QString::fromLocal8Bit( Exiv2::ExifTags::tagTitle(ek.tag(), ek.ifdId()) );
++	return QString::fromLocal8Bit( ek.tagLabel().c_str() );
+     }
+     catch (Exiv2::Error& e)
+     {
+@@ -1619,7 +1619,7 @@ QString KExiv2::getExifTagDescription(const char *exif
+     {
+         std::string exifkey(exifTagName);
+         Exiv2::ExifKey ek(exifkey);
+-        return QString::fromLocal8Bit( Exiv2::ExifTags::tagDesc(ek.tag(), ek.ifdId()) );
++	return QString::fromLocal8Bit( ek.tagDesc().c_str() );
+     }
+     catch (Exiv2::Error& e)
+     {
