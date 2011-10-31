@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_xml,v 1.3 2010/11/30 00:48:56 ian Exp $
---- build.xml.orig	Mon Nov 29 19:04:46 2010
-+++ build.xml	Mon Nov 29 19:11:17 2010
+$OpenBSD: patch-build_xml,v 1.4 2011/10/31 20:22:20 jasper Exp $
+--- build.xml.orig	Tue Nov 30 01:17:55 2010
++++ build.xml	Mon Oct 31 21:19:55 2011
 @@ -28,28 +28,12 @@
  
  
@@ -31,3 +31,19 @@ $OpenBSD: patch-build_xml,v 1.3 2010/11/30 00:48:56 ian Exp $
  		<tstamp>
  			<format property="build.tstamp" pattern="yyyy-MM-dd HH:mm:ss"/>
  		</tstamp>
+@@ -66,15 +50,7 @@ Build-Date: ${build.tstamp}
+ 
+ 
+ 	<target name="dist" depends="compile,create-revision">
+-
+-		<exec append="false" output="REVISION" executable="svn" failifexecutionfails="false">
+-			<env key="LANG" value="C"/>
+-			<arg value="info"/>
+-			<arg value="--xml"/>
+-			<arg value="."/>
+-		</exec>
+ 		<xmlproperty file="REVISION" prefix="version" keepRoot="false" collapseAttributes="true"/>
+-		<delete file="REVISION"/>
+ 		<property name="version.entry.commit.revision" value="UNKNOWN"/>
+ 		<property name="version.entry.commit.date" value="UNKNOWN"/>
+ 		<echo>Revision ${version.entry.commit.revision}</echo>

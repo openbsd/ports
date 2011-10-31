@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/10/31 20:22:20 jasper Exp $
 
 COMMENT=		OpenStreetMap map editor
 
 SVN_REV=		3592
 DISTNAME=		josm-1.5.${SVN_REV}
-REVISION=		1
+REVISION=		2
 
 PKG_ARCH=		*
 
