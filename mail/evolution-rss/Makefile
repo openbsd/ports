@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/31 08:56:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90.20111007
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -32,7 +32,7 @@ WANTLIB += enchant expat ffi fontconfig freetype gailutil-3 gcrypt
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gssapi gthread-2.0
 WANTLIB += gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
-WANTLIB += krb5 kvm m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += krb5 m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++
 WANTLIB += xcb xcb-render xcb-shm xml2 z dbus-glib-1 softokn3
@@ -53,6 +53,8 @@ MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--disable-gecko \
 			--disable-webkit \
 			--with-primary-render=gtkhtml
@@ -75,7 +77,7 @@ do-configure:
 	@cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		CONFIGURE_ENV=${CONFIGURE_ENV} \
+		${CONFIGURE_ENV} \
 		./autogen.sh ${CONFIGURE_ARGS} --disable-maintainer-mode \
 			--disable-silent-rules --enable-shared
 ### end XXX ############################################################
