@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/10/31 16:29:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/10/31 17:13:08 ajacoutot Exp $
 @pkgpath devel/gconf2
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
@@ -169,6 +169,8 @@ share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_HK/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
+share/polkit-1/
+share/polkit-1/actions/
 share/schemas/
 share/sgml/
 share/sgml/gconf/
