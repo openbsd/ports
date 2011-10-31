@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/10/31 19:51:19 naddy Exp $
 
 COMMENT=	AFP file and print services for AppleTalk/IP networks
 
@@ -34,12 +34,9 @@ CONFIGURE_ARGS+=	--disable-cups
 
 CONFIGURE_ENV+=		netatalk_cv_install_pam=no
 
-post-patch:
-	@cp /usr/include/netatalk/*.h ${WRKSRC}/sys/netatalk
-
 post-build:
-	@(cd ${WRKSRC}/distrib/initscripts; make rc.atalk.bsd)
-	@(cd ${WRKSRC}/config; make afpd.conf)
+	@cd ${WRKSRC}/distrib/initscripts; make rc.atalk.bsd
+	@cd ${WRKSRC}/config; make afpd.conf
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/netatalk
