@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/27 16:22:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/10/31 10:25:04 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -28,6 +28,6 @@ CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--with-tls=openssl
 CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
-MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/lib/ext/wocky
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
 
 .include <bsd.port.mk>
