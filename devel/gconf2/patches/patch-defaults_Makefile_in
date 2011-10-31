@@ -1,7 +1,7 @@
-$OpenBSD: patch-defaults_Makefile_in,v 1.5 2011/09/26 16:13:22 ajacoutot Exp $
---- defaults/Makefile.in.orig	Mon Sep 26 17:47:40 2011
-+++ defaults/Makefile.in	Mon Sep 26 18:02:33 2011
-@@ -314,7 +314,7 @@ gconf_defaults_mechanism_SOURCES = \
+$OpenBSD: patch-defaults_Makefile_in,v 1.6 2011/10/31 16:29:56 ajacoutot Exp $
+--- defaults/Makefile.in.orig	Mon Oct 31 16:30:46 2011
++++ defaults/Makefile.in	Mon Oct 31 17:05:23 2011
+@@ -316,7 +316,7 @@ gconf_defaults_mechanism_SOURCES = \
  INCLUDES = \
  	-I$(top_srcdir) \
  	-I$(top_builddir) \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/09/18 22:04:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2011/10/31 16:29:56 ajacoutot Exp $
 @pkgpath devel/gconf2
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
@@ -21,8 +21,6 @@ include/gconf/2/gconf/gconf-value.h
 include/gconf/2/gconf/gconf.h
 lib/GConf/
 lib/GConf/2/
-lib/gio/
-lib/gio/modules/
 @comment lib/GConf/2/libgconfbackend-oldxml.a
 @comment lib/GConf/2/libgconfbackend-oldxml.la
 lib/GConf/2/libgconfbackend-oldxml.so
@@ -78,7 +76,6 @@ share/gtk-doc/html/gconf/gconf-gconf-schema.html
 share/gtk-doc/html/gconf/gconf-gconf-sources.html
 share/gtk-doc/html/gconf/gconf-gconf-value.html
 share/gtk-doc/html/gconf/gconf-gconf.html
-share/gtk-doc/html/gconf/gconf.devhelp
 share/gtk-doc/html/gconf/gconf.devhelp2
 share/gtk-doc/html/gconf/home.png
 share/gtk-doc/html/gconf/index.html
