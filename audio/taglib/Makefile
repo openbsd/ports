@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/14 09:14:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2011/10/31 21:01:50 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.7
@@ -29,8 +29,6 @@ CONFIGURE_ARGS+=-DCMAKE_BUILD_TYPE=Release \
 		-DWITH_MP4=ON \
 		-DWITH_ASF=ON \
 		-DBUILD_TESTS=ON
-
-REGRESS_DEPENDS=${BUILD_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindCppUnit.cmake
