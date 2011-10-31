@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/10/31 08:37:57 sebastia Exp $
 
 PKG_ARCH=	*
 
@@ -7,7 +7,7 @@ COMMENT=	Iwidgets Mega Widget Set
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
 PKGNAME=	iwidgets-${VERSION}
-REVISION=	4
+REVISION =	5
 
 CATEGORIES=	x11 devel
 
@@ -26,7 +26,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=incrtcl/}
 MODULES=	x11/tk
 BUILD_DEPENDS=	${MODTK_RUN_DEPENDS}
 RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
-		itcl->=3.4,<3.5:devel/itcl \
+		itcl->=3.4,<3.5v0:devel/itcl \
 		itk->=3.3,<3.4:x11/itk
 REGRESS_DEPENDS=${RUN_DEPENDS}
 # This regression test wants an X11 display
