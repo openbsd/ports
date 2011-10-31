@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/15 16:31:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/10/31 18:19:47 jasper Exp $
 
 COMMENT=		background browser and setter for X11
 
 DISTNAME=		nitrogen-1.5.2
+REVISION=		0
 CATEGORIES=		x11 graphics
 
 HOMEPAGE=		http://projects.l3ib.org/nitrogen/
@@ -29,6 +30,7 @@ WANTLIB += pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
 WANTLIB += xcb-shm z
 
 LIB_DEPENDS=		x11/gtk2mm
+RUN_DEPENDS=		x11/gnome/icon-theme
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-xinerama \
