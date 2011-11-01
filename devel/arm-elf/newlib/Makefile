@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/20 00:23:06 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/01 19:22:24 naddy Exp $
 
 COMMENT=	newlib for arm-elf cross-development
 
@@ -11,7 +11,8 @@ MASTER_SITES=	ftp://sources.redhat.com/pub/newlib/
 
 EXTRACT_SUFX=	.tar.gz
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	devel/arm-elf/binutils \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	devel/arm-elf/gcc
 
 # cope with user settings in /etc/mk.conf
