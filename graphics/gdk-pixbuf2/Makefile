@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=	graphic library for GTK+2
 
 V=		2.24.0
 DISTNAME=	gdk-pixbuf-${V}
-REVISION=		0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += jasper jpeg m pcre png pthread tiff xcb z
+WANTLIB += jasper jpeg m pcre png pthread tiff xcb z ffi
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 

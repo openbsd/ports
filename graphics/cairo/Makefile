@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=		vector graphics library
 
 DISTNAME=		cairo-1.10.2
-REVISION=		2
+REVISION=		3
 SHARED_LIBS=		cairo 11.1
 SHARED_LIBS+=		cairo-trace 0.0
 SHARED_LIBS+=		cairo-gobject 0.0
@@ -17,7 +17,7 @@ MAINTAINER=		Eric Faurot <eric@openbsd.org>
 WANTLIB=		GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender \
 			Xxf86vm drm expat fontconfig freetype glib-2.0 \
 			gobject-2.0 gthread-2.0 m pcre pixman-1 png \
-			pthread-stubs xcb xcb-render xcb-shm z
+			pthread-stubs xcb xcb-render xcb-shm z ffi stdc++
 
 # LGPLv2.1 / MPL 1.1
 PERMIT_PACKAGE_CDROM=	Yes

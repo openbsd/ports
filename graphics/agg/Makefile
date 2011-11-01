@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
 DISTNAME=	agg-2.5
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	agg		3.0 \
 		aggfontfreetype	3.0 \
 		aggplatformsdl	3.0 \
@@ -18,8 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xext Xrandr Xrender freetype m pthread-stubs \
-		sndio usbhid xcb z SDL>=6
+WANTLIB=	X11 freetype m sndio usbhid xcb z SDL>=6 stdc++
 
 MASTER_SITES=	${HOMEPAGE}
 

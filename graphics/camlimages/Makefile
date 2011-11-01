@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -7,7 +7,7 @@ DISTNAME=	camlimages-3.0.2
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://cristal.inria.fr/camlimages/
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-MODULES=	lang/ocaml
+MODULES=	devel/gettext \
+		lang/ocaml
 
 WANTLIB+=	ICE SM X11 Xpm freetype gif jpeg m png tiff z
 
@@ -52,8 +53,8 @@ post-install:
 
 .if ${MODOCAML_NATIVE:L} == "yes"
 MODULES +=	devel/gettext
-WANTLIB+=	GL Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
-		Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm \
+WANTLIB+=	GL Xcomposite Xcursor Xdamage Xext Xfixes Xi \
+		Xinerama Xrandr Xrender atk-1.0 c cairo \
 		expat fontconfig gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gtk-x11-2.0 pango-1.0 pangocairo-1.0 \

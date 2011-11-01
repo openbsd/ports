@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.24
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	djvulibre 24.0
 CATEGORIES=	graphics print
 
@@ -41,9 +41,9 @@ CONFIGURE_ARGS+=--without-x
 .else
 MODULES=	x11/qt3
 
-WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm expat
-WANTLIB += fontconfig freetype lcms mng png pthread-stubs xcb
+WANTLIB += fontconfig freetype lcms mng png xcb
 
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/hicolor-icon-theme

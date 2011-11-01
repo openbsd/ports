@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/21 17:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		3
+REVISION=		4
 SHARED_LIBS+=		IL	0.0 # 2.0
 
 CATEGORIES=		graphics devel
@@ -20,9 +20,12 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
 WANTLIB += jasper jpeg lcms m png stdc++ tiff z
+WANTLIB += Half Iex IlmImf IlmThread Imath
 
-LIB_DEPENDS=		graphics/jasper \
+LIB_DEPENDS=		graphics/ilmbase \
+			graphics/jasper \
 			graphics/lcms \
+			graphics/openexr \
 			graphics/openjpeg \
 			graphics/tiff \
 			graphics/png

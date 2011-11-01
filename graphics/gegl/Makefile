@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/11/01 20:30:49 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT-plugins=gegl plugins
 
 V=		0.1.6
 DISTNAME=	gegl-${V}
+REVISION=	0
 CATEGORIES=	graphics devel
 
 PKGNAME-main=	gegl-${V}
@@ -32,7 +33,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/${V:R}/ \
 MULTI_PACKAGES=	-main -plugins
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre z execinfo
+WANTLIB += gthread-2.0 m pcre z execinfo ffi stdc++
 
 MODULES=	devel/gettext
 
@@ -57,9 +58,9 @@ LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += Half Iex IlmThread Imath gsm mp3lame ogg orc-0.4
-WANTLIB-plugins += schroedinger-1.0 speex stdc++ theoradec theoraenc
+WANTLIB-plugins += schroedinger-1.0 speex theoradec theoraenc
 WANTLIB-plugins += vorbis vorbisenc x264 IlmImf avcodec avformat
-WANTLIB-plugins += avutil bz2 vpx
+WANTLIB-plugins += avutil bz2 vpx 
 
 RUN_DEPENDS-plugins= 	${BUILD_PKGPATH},-main
 LIB_DEPENDS-plugins= 	${LIB_DEPENDS} \

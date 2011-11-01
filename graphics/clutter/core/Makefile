@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/23 08:04:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/01 20:30:49 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 DISTNAME=		clutter-${MAJOR}.6
-REVISION=		5
+REVISION=		6
 SHARED_LIBS +=  clutter-glx-1.0      0.0      # .0.6
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.0/}
@@ -13,7 +13,7 @@ MODULES=		devel/gettext
 WANTLIB += GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xrender expat fontconfig freetype gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pangoft2-1.0
-WANTLIB += pcre pixman-1 png xcb-render xcb-render-util
+WANTLIB += pcre pixman-1 png xcb-render ffi stdc++ xcb-shm
 WANTLIB += pthread-stubs xcb z Xxf86vm drm json-glib-1.0
 WANTLIB += gdk_pixbuf-2.0 cairo pango-1.0 pangocairo-1.0
 

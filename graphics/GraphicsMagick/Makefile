@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/01 20:30:49 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.12
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		bz2 c jasper jbig lcms ltdl jpeg \
+WANTLIB=		bz2 c jasper jbig lcms ltdl jpeg xcb \
 			m png pthread stdc++ tiff xml2 z ${MODLIBICONV_WANTLIB}
 
 MODULES=		converters/libiconv
@@ -68,8 +68,7 @@ CONFIGURE_ARGS+=	--without-x \
 			--without-wmf
 PKG_ARGS+=		-Dx11=0
 .else
-WANTLIB+=		ICE SM X11 Xau Xdmcp Xext freetype pthread-stubs \
-			wmflite-0.2 xcb
+WANTLIB+=		ICE SM X11 Xext freetype wmflite-0.2 xcb
 LIB_DEPENDS+=		graphics/libwmf
 BUILD_DEPENDS+=		print/ghostscript/gnu \
 			print/transfig

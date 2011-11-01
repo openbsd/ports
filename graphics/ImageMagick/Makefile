@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.116 2011/11/01 20:30:49 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =		c bz2>=10 djvulibre fftw3 jasper>=1 jbig>=1.2 jpeg \
-			lcms>=1 lzma ltdl m perl png>=4 pthread stdc++ \
+			lcms2 lzma ltdl m perl png>=4 pthread stdc++ \
 			tiff>=36 z
 
 LIB_DEPENDS =		archivers/bzip2 \
@@ -41,7 +41,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			graphics/jbigkit \
 			graphics/png \
 			graphics/tiff \
-			graphics/lcms \
+			graphics/lcms2 \
 			graphics/jasper \
 			math/fftw3
 
@@ -86,8 +86,8 @@ CONFIGURE_ARGS +=	--without-x \
 			--without-wmf
 .else
 MODULES +=		converters/libiconv
-WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig \
-			freetype pthread-stubs xcb wmf wmflite>=7 \
+WANTLIB +=		ICE SM X11 Xext Xt expat fontconfig \
+			freetype xcb wmf wmflite>=7 \
 			xml2>=9
 LIB_DEPENDS +=		graphics/libwmf \
 			textproc/libxml \
