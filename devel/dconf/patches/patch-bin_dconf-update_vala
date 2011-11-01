@@ -1,0 +1,24 @@
+$OpenBSD: patch-bin_dconf-update_vala,v 1.1 2011/11/01 13:54:25 ajacoutot Exp $
+
+From 094151937b8f4b22a9a1347d3c875c4ce8841db2 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Mon, 31 Oct 2011 23:08:41 +0000
+Subject: dconf update: don't access before start of string
+
+--- bin/dconf-update.vala.orig	Thu Aug  4 00:07:20 2011
++++ bin/dconf-update.vala	Tue Nov  1 14:51:23 2011
+@@ -24,11 +24,13 @@ unowned Gvdb.Item get_parent (Gvdb.HashTable table, st
+ 
+ 	int end = 0;
+ 
+-	for (int i = 0; name[i] != '\0'; i++) {
++	for (int i = 1; name[i] != '\0'; i++) {
+ 		if (name[i - 1] == '/') {
+ 			end = i;
+ 		}
+ 	}
++
++	assert (end != 0);
+ 
+ 	var parent_name = name.substring (0, end);
+ 	parent = table.lookup (parent_name);
