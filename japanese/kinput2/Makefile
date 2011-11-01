@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/01 16:27:06 jasper Exp $
 
 COMMENT-canna=		X input method for Japanese, canna support
 COMMENT-canna-wnn=	X input method for Japanese, canna and wnn support
@@ -6,7 +6,7 @@ COMMENT-wnn=		X input method for Japanese, wnn support
 
 DISTNAME=	kinput2-v3
 PKGNAME=	ja-kinput2-3.0
-REVISION=	4
+REVISION=	5
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 CATEGORIES=	japanese x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c pthread-stubs xcb
+WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c
 
 MAINTAINER=	SUZUKI Hitoshi <sigh@kuzirabekon.econ.nagasaki-u.ac.jp>
 

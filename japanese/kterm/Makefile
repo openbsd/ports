@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/01 16:27:06 jasper Exp $
 
 COMMENT=	Japanese-capable xterm
 
 VERSION=	6.2.0
 DISTNAME=	kterm-${VERSION}
 PKGNAME=	ja-kterm-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	japanese x11
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt curses c \
-		pthread-stubs util xcb
+		util
 
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 PATCHFILES=	kterm-620-0213-20010706.diff.gz:0
