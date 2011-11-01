@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.46 2011/09/05 17:07:29 nigel Exp $
+$OpenBSD: patch-get_iplayer,v 1.47 2011/11/01 16:33:19 sthen Exp $
 --- get_iplayer.orig	Mon Aug 29 15:09:13 2011
-+++ get_iplayer	Wed Aug 31 18:23:50 2011
++++ get_iplayer	Thu Oct 27 22:10:02 2011
 @@ -308,6 +308,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -36,6 +36,15 @@ $OpenBSD: patch-get_iplayer,v 1.46 2011/09/05 17:07:29 nigel Exp $
  		}
  		exit 1;
  	} 
+@@ -5786,7 +5787,7 @@ sub get_stream_data_cdn {
+ 		# Common attributes
+ 		# swfurl = Default iPlayer swf version
+ 		my $conn = {
+-			swfurl		=> "http://www.bbc.co.uk/emp/revisions/18269_21576_10player.swf?revision=18269_21576",
++			swfurl		=> "http://www.bbc.co.uk/emp/iplayer/revisions/617463_618125_2/617463_618125_2_emp.swf",
+ 			ext		=> $ext,
+ 			streamer	=> $streamer,
+ 			bitrate		=> $mattribs->{bitrate},
 @@ -9543,7 +9544,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
