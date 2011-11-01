@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2011/09/22 21:10:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2011/11/01 16:07:31 jasper Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 
-VERSION=	2.4
+VERSION=	2.4.2
 DISTNAME=	libtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-ltdl=	libltdl-${VERSION}

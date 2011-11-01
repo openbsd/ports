@@ -1,7 +1,7 @@
-$OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
---- libltdl/config/ltmain.sh.orig	Wed Sep 22 10:45:43 2010
-+++ libltdl/config/ltmain.sh	Tue Jun 14 19:49:50 2011
-@@ -2713,51 +2713,6 @@ func_mode_finish ()
+$OpenBSD: patch-libltdl_config_ltmain_sh,v 1.2 2011/11/01 16:07:31 jasper Exp $
+--- libltdl/config/ltmain.sh.orig	Mon Oct 17 06:19:35 2011
++++ libltdl/config/ltmain.sh	Sat Oct 29 07:05:47 2011
+@@ -2714,51 +2714,6 @@ func_mode_finish ()
      # Exit here if they wanted silent mode.
      $opt_silent && exit $EXIT_SUCCESS
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
      exit $EXIT_SUCCESS
  }
  
-@@ -2850,6 +2805,10 @@ func_mode_install ()
+@@ -2851,6 +2806,10 @@ func_mode_install ()
        fi
        func_append install_shared_prog " $func_quote_for_eval_result"
      done
@@ -64,7 +64,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  
      test -z "$install_prog" && \
        func_fatal_help "you must specify an install program"
-@@ -2987,7 +2946,7 @@ func_mode_install ()
+@@ -2988,7 +2947,7 @@ func_mode_install ()
  	  test -n "$relink_command" && srcname="$realname"T
  
  	  # Install the shared library and build the symlinks.
@@ -73,7 +73,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  	      'exit $?'
  	  tstripme="$stripme"
  	  case $host_os in
-@@ -3024,7 +2983,7 @@ func_mode_install ()
+@@ -3025,7 +2984,7 @@ func_mode_install ()
  	func_basename "$file"
  	name="$func_basename_result"
  	instname="$dir/$name"i
@@ -82,7 +82,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  
  	# Maybe install the static library, too.
  	test -n "$old_library" && func_append staticlibs " $dir/$old_library"
-@@ -3059,14 +3018,14 @@ func_mode_install ()
+@@ -3060,14 +3019,14 @@ func_mode_install ()
  
  	# Install the libtool object if requested.
  	test -n "$destfile" && \
@@ -99,7 +99,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  	fi
  	exit $EXIT_SUCCESS
  	;;
-@@ -5647,6 +5606,7 @@ func_mode_link ()
+@@ -5660,6 +5619,7 @@ func_mode_link ()
  	func_append compiler_flags " $arg"
  	func_append compile_command " $arg"
  	func_append finalize_command " $arg"
@@ -107,7 +107,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  	case "$new_inherited_linker_flags " in
  	    *" $arg "*) ;;
  	    * ) func_append new_inherited_linker_flags " $arg" ;;
-@@ -6153,6 +6113,7 @@ func_mode_link ()
+@@ -6167,6 +6127,7 @@ func_mode_link ()
  	    finalize_deplibs="$deplib $finalize_deplibs"
  	  else
  	    func_append compiler_flags " $deplib"
@@ -115,7 +115,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  	    if test "$linkmode" = lib ; then
  		case "$new_inherited_linker_flags " in
  		    *" $deplib "*) ;;
-@@ -6683,7 +6644,7 @@ func_mode_link ()
+@@ -6697,7 +6658,7 @@ func_mode_link ()
  	  *)
  	    if test "$installed" = no; then
  	      func_append notinst_deplibs " $lib"
@@ -124,7 +124,7 @@ $OpenBSD: patch-libltdl_config_ltmain_sh,v 1.1 2011/09/22 21:10:19 jasper Exp $
  	    fi
  	    ;;
  	  esac
-@@ -7506,6 +7467,20 @@ func_mode_link ()
+@@ -7521,6 +7482,20 @@ func_mode_link ()
  	  major=
  	  versuffix=
  	  verstring=""
