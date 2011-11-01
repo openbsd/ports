@@ -3,6 +3,7 @@ distfiles
 locks
 logs
 mystuff
+openbsd-wip
 pobj
 packages
 plist
