@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/24 21:02:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/01 16:05:26 jasper Exp $
 
 COMMENT=	European Molecular Biology Open Software Suite
 
 DISTNAME=	EMBOSS-6.0.1
-REVISION=	1
+REVISION=	2
 SHARED_LIBS +=  eplplot                 0.0   # .5.7
 SHARED_LIBS +=  ajax                    1.0   # .6.0
 SHARED_LIBS +=  ajaxg                   1.0   # .6.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	ftp://emboss.open-bio.org/pub/EMBOSS/
 
-WANTLIB=	X11 Xau Xdmcp c m pthread-stubs xcb
+WANTLIB += X11 c m xcb
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
