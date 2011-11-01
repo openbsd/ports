@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/17 11:14:11 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/01 16:44:19 naddy Exp $
 
 COMMENT=	unique standard tape archiver
 
@@ -18,7 +18,7 @@ FLAVORS=	static
 FLAVOR?=
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 MAKE_FLAGS=	CCOM="${CC}" COPTOPT="${CFLAGS}" \
 		CPPOPTX="-DDEFTAPE=\\\"/dev/rst0\\\" \
 			 -DSYSCONFDIR=\\\"$(SYSCONFDIR)\\\"" \
@@ -35,20 +35,20 @@ post-extract:
 
 post-patch:
 	perl -pi -e 's,/etc/default/,${SYSCONFDIR}/default/,g' \
-		${WRKSRC}/star/defaults.c ${WRKSRC}/star/suntar.c \
-		${WRKSRC}/star/star.1 ${WRKSRC}/mt/smt.1 \
-		${WRKSRC}/rmt/rmt.c ${WRKSRC}/rmt/rmt.1
+	    ${WRKSRC}/star/defaults.c ${WRKSRC}/star/suntar.c \
+	    ${WRKSRC}/star/star.1 ${WRKSRC}/mt/smt.1 \
+	    ${WRKSRC}/rmt/rmt.c ${WRKSRC}/rmt/rmt.1
 
 do-configure:
 .if ${MACHINE} != "i386" || ${CC} != "cc"
-	ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
-		${WRKSRC}/RULES/${MACHINE}-openbsd-${CC}.rul
+	cd ${WRKSRC}/RULES && \
+	    ln -sf i386-openbsd-cc.rul ${MACHINE}-openbsd-${CC}.rul
 .endif
 .if ${CC} != "cc" && ${CC} != "gcc"
-	ln -sf ${WRKSRC}/RULES/cc-gcc.rul ${WRKSRC}/RULES/cc-${CC}.rul
+	cd ${WRKSRC}/RULES && ln -sf cc-gcc.rul cc-${CC}.rul
 .endif
 
-OBJ=	OBJ/${MACHINE}-openbsd-${CC}
+OBJ=	OBJ/${MACHINE_ARCH}-openbsd-${CC}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/star
@@ -57,10 +57,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/star/${OBJ}/star ${PREFIX}/bin
 	cd ${PREFIX}/bin; ln -s star scpio; ln -s star spax
 	${INSTALL_MAN} ${WRKSRC}/star/star.1 ${WRKSRC}/star/scpio.1 \
-		${WRKSRC}/star/spax.1 ${PREFIX}/man/man1
+	    ${WRKSRC}/star/spax.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/star/star.4 ${PREFIX}/man/man5/star.5
 	${INSTALL_DATA} ${WRKSRC}/star/star.dfl \
-		${PREFIX}/share/examples/star/default/star
+	    ${PREFIX}/share/examples/star/default/star
 	
 	${INSTALL_PROGRAM} ${WRKBUILD}/star_sym/${OBJ}/star_sym ${PREFIX}/bin
 	
@@ -70,7 +70,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/rmt/${OBJ}/rmt ${PREFIX}/libexec/srmt
 	${INSTALL_MAN} ${WRKSRC}/rmt/rmt.1 ${PREFIX}/man/man8/srmt.8
 	${INSTALL_DATA} ${WRKSRC}/rmt/rmt.dfl \
-		${PREFIX}/share/examples/star/default/rmt
+	    ${PREFIX}/share/examples/star/default/rmt
 	
 	${INSTALL_PROGRAM} ${WRKBUILD}/tartest/${OBJ}/tartest ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/tartest/tartest.1 ${PREFIX}/man/man1

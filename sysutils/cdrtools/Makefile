@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/01 16:44:19 naddy Exp $
 
 COMMENT=		ISO 9660 filesystem and CD creation tools
 
 DISTNAME=		cdrtools-2.01
-REVISION =		1
+REVISION =		2
 CATEGORIES=		sysutils
 HOMEPAGE=		http://cdrecord.berlios.de/old/private/cdrecord.html
 
@@ -24,31 +24,28 @@ MAKE_ENV=		MAKEPROG=${MAKE_PROGRAM} \
 
 NO_REGRESS=		Yes
 
-CDRMACH=		${MACHINE}-openbsd-${CC}
-
 .if ${MACHINE} != "i386" || ${CC} != "cc"
 do-configure:
-	@ln -sf ${WRKSRC}/RULES/i386-openbsd-cc.rul \
-		${WRKSRC}/RULES/${CDRMACH}.rul
+	cd ${WRKSRC}/RULES && \
+	    ln -sf i386-openbsd-cc.rul ${MACHINE}-openbsd-${CC}.rul
 .endif
+
+OBJ=	OBJ/${MACHINE_ARCH}-openbsd-${CC}
 
 do-install:
 	@cp ${WRKSRC}/mkisofs/mkisofs.8 ${WRKSRC}/mkisofs/mkisofs.1
-.for PROG in cdda2wav cdrecord mkisofs readcd
-	${INSTALL_PROGRAM} ${WRKBUILD}/${PROG}/OBJ/${CDRMACH}/${PROG} \
-		${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PROG}/${PROG}.1 ${PREFIX}/man/man1
+.for i in cdda2wav cdrecord mkisofs readcd
+	${INSTALL_PROGRAM} ${WRKBUILD}/$i/${OBJ}/$i ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/$i/$i.1 ${PREFIX}/man/man1
 .endfor
-.for PROG in devdump isodebug isodump isoinfo isovfy
-	${INSTALL_PROGRAM} ${WRKBUILD}/mkisofs/diag/OBJ/${CDRMACH}/${PROG} \
-		${PREFIX}/bin
+.for i in devdump isodebug isodump isoinfo isovfy
+	${INSTALL_PROGRAM} ${WRKBUILD}/mkisofs/diag/${OBJ}/$i ${PREFIX}/bin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 \
-		${PREFIX}/man/man1/isoinfo.1
-	@cd ${PREFIX}/man/man1; \
-		for i in devdump.1 isovfy.1 ; do \
-			ln -s isoinfo.1 $$i ; \
-		done
+	    ${PREFIX}/man/man1/isoinfo.1
+.for i in devdump.1 isovfy.1
+	cd ${PREFIX}/man/man1 && ln -s isoinfo.1 $i
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/cdrtools
 	${INSTALL_DATA} ${WRKSRC}/README.OpenBSD ${PREFIX}/share/doc/cdrtools
 
