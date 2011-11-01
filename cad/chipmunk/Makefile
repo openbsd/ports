@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/24 21:04:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/01 19:00:25 jasper Exp $
 
 COMMENT=	electronic CAD system
 
 PKGNAME=	chipmunk-1.57
-REVISION=	1
+REVISION=	2
 DISTNAME=	psys-1.57
 DISTFILES=	psys-1.57.tar.gz webdoc1.46.tar.gz log-5.61.tar.gz \
 		view-1.13.tar.gz until-1.13.tar.gz wol-1.13.tar.gz \
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 c m pthread-stubs xcb
+WANTLIB=		X11 c m
 
 #MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/chipmunk/pickup/sources/
 MASTER_SITES=	http://www.sightly.net/distfiles/

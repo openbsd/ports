@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/01 19:00:25 jasper Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
@@ -7,7 +7,7 @@ BROKEN-arm=	makedepend infinite loop
 
 VERSION=	1.35
 DISTNAME=	xnecview-${VERSION}
-REVISION=	8
+REVISION=	9
 EXTRACT_SUFX=	.tgz
 
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/xnecview/
@@ -22,12 +22,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gtk-x11-2.0>=400.13 gdk-x11-2.0>=400.13
+WANTLIB += GL gthread-2.0 pthread xcb-render xcb-shm
 
 MODULES=		devel/gettext
 
