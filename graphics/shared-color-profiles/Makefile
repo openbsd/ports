@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/02 17:34:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/02 17:37:40 ajacoutot Exp $
 
 COMMENT-main=	color profiles from contributors for color calibration
 COMMENT-extra=	less commonly used extra profiles for shared-color-profiles
@@ -25,6 +25,8 @@ MASTER_SITES=	http://people.freedesktop.org/~hughsient/releases/
 MULTI_PACKAGES=	-main -extra
 
 PKG_ARCH=	*
+
+RUN_DEPENDS-extra= ${BASE_PKGPATH},-main
 
 CONFIGURE_STYLE=gnu
 
