@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/02 17:46:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/02 20:19:32 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.2.1
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -32,7 +33,8 @@ LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		graphics/exiv2 \
 		graphics/libexif
 
-RUN_DEPENDS=	graphics/shared-color-profiles,-extra
+RUN_DEPENDS=	graphics/shared-color-profiles,-extra \
+		graphics/shared-color-targets
 
 MODGNOME_DESKTOP_FILE=	Yes
 
@@ -50,5 +52,8 @@ pre-configure:
 		-e 's,-Wtype-limits,,g;' \
 		-e 's,-Wmissing-parameter-type,,g' \
 		${WRKSRC}/configure
+	perl -pi -e 's,/usr/share,${LOCALBASE}/share,g;' \
+		-e 's,/usr/bin,${LOCALBASE}/bin,g' \
+		${WRKSRC}/src/{gcm-calibrate.c,gcm-calibrate-argyll.c,gcm-picker.c,gcm-calibrate-main.c}
 
 .include <bsd.port.mk>
