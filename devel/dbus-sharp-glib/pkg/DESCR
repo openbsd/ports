@@ -1,0 +1,2 @@
+dbus-sharp-glib is a fork of ndesk-dbus-glib, which provides GLib main
+loop integration for dbus-sharp.

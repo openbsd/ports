@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/02 12:47:43 ajacoutot Exp $
+lib/mono/dbus-sharp-glib-1.0/
+lib/mono/dbus-sharp-glib-1.0/dbus-sharp-glib.dll
+lib/mono/gac/dbus-sharp-glib/
+lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/
+lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll
+lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll.config
+lib/mono/gac/dbus-sharp-glib/1.0.0.0__5675b0c3093115b5/dbus-sharp-glib.dll.mdb
+lib/pkgconfig/dbus-sharp-glib-1.0.pc
