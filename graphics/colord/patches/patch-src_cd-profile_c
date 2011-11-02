@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_cd-profile_c,v 1.1.1.1 2011/11/02 16:40:22 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- src/cd-profile.c.orig	Fri Sep  9 18:09:23 2011
++++ src/cd-profile.c	Wed Nov  2 15:50:36 2011
+@@ -270,7 +270,7 @@ cd_profile_install_system_wide (CdProfile *profile, GE
+ 		goto out;
+ 	}
+ 
+-	/* is profile already installed in /var/lib/color */
++	/* is profile already installed in /var/db/color */
+ 	if (g_str_has_prefix (profile->priv->filename,
+ 			      CD_SYSTEM_PROFILES_DIR)) {
+ 		ret = FALSE;
+@@ -282,7 +282,7 @@ cd_profile_install_system_wide (CdProfile *profile, GE
+ 		goto out;
+ 	}
+ 
+-	/* is profile already installed in /usr/share/color */
++	/* is profile already installed in ${LOCALBASE}/share/color */
+ 	if (g_str_has_prefix (profile->priv->filename,
+ 			      DATADIR "/color")) {
+ 		ret = FALSE;

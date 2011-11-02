@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_cd-profile-store_c,v 1.1.1.1 2011/11/02 16:40:22 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- src/cd-profile-store.c.orig	Tue Sep 27 18:11:00 2011
++++ src/cd-profile-store.c	Tue Sep 27 18:11:30 2011
+@@ -193,8 +193,8 @@ cd_profile_store_add_profile (CdProfileStore *profile_
+ 
+ 	/* is system wide? */
+ 	profile = cd_profile_new ();
+-	if (g_str_has_prefix (filename, "/usr/share/color") ||
+-	    g_str_has_prefix (filename, "/var/lib/color"))
++	if (g_str_has_prefix (filename, "${LOCALBASE}/share/color") ||
++	    g_str_has_prefix (filename, "/var/db/color"))
+ 		cd_profile_set_is_system_wide (profile, TRUE);
+ 
+ 	/* parse the profile name */
+@@ -555,7 +555,7 @@ cd_profile_store_search (CdProfileStore *profile_store
+ 	/* get machine specific profiles */
+ 	if (flags & CD_PROFILE_STORE_SEARCH_MACHINE) {
+ 		ret = cd_profile_store_search_path (profile_store,
+-						    "/var/lib/color/icc");
++						    "/var/db/color/icc");
+ 		if (ret)
+ 			success = TRUE;
+ 	}
