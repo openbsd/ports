@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/02 23:06:02 rpointel Exp $
 
 COMMENT=		discovery-based unittest extension
 
-MODPY_EGG_VERSION=	0.11.4
+MODPY_EGG_VERSION=	1.1.2
 DISTNAME=		nose-${MODPY_EGG_VERSION}
-REVISION =		1
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
@@ -19,14 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://somethingaboutorange.com/mrl/projects/nose/
+MASTER_SITES=		${MASTER_SITE_PYPI:=n/nose/}
 
+BUILD_DEPENDS=		archivers/gtar
 MODULES=		lang/python
 REGRESS_DEPENDS=	devel/py-nose \
-			devel/py-twisted/core
+			devel/py-twisted/core \
+			devel/py-coverage
 USE_GROFF =		Yes
 
 MODPY_SETUPTOOLS=	Yes
+
+# problem with upstream tar and our tar
+TAR=gtar
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-nose
@@ -37,7 +41,7 @@ post-install:
 		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/examples/py-nose/{} \;
 
 do-regress:
-	cd ${WRKSRC}/functional_tests && nosetests
-	cd ${WRKSRC}/unit_tests && nosetests
+	cd ${WRKSRC}/functional_tests && nosetests -v
+	cd ${WRKSRC}/unit_tests && nosetests -v
 
 .include <bsd.port.mk>
