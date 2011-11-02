@@ -1,0 +1,12 @@
+$OpenBSD: patch-hgdc_c,v 1.1 2011/11/02 21:26:57 edd Exp $
+--- hgdc.c.orig	Tue Nov  1 17:24:51 2011
++++ hgdc.c	Tue Nov  1 17:24:58 2011
+@@ -478,7 +478,7 @@ hgd_usage()
+ 	printf("    user-add <user> [password]\tAdd a user\n");
+ 	printf("    user-del <user>\t\tRemove a user\n");
+ 	printf("    user-list\t\t\tList Users\n");
+-	printf("    user-mkadmin <user>\tGrant user admin rights\n");
++	printf("    user-mkadmin <user>\t\tGrant user admin rights\n");
+ 	printf("    user-noadmin <user>\t\tRevoke user admin rights\n");
+ 
+ 	printf("\n  Options include:\n");

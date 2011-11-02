@@ -1,12 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/08/27 17:15:17 edd Exp $
---- Makefile.in.orig	Sat Aug 27 13:01:43 2011
-+++ Makefile.in	Sat Aug 27 13:03:48 2011
-@@ -18,7 +18,7 @@ BSD_LDFLAGS=@BSD_LIBS@
- TAG_CFLAGS=@TAGLIB_CFLAGS@
- TAG_LDFLAGS=@TAGLIB_LIBS@
+$OpenBSD: patch-Makefile_in,v 1.2 2011/11/02 21:26:57 edd Exp $
+--- Makefile.in.orig	Wed Nov  2 20:03:24 2011
++++ Makefile.in	Wed Nov  2 20:03:12 2011
+@@ -1,4 +1,4 @@
+-CC?=@CC@
++CC=@CC@
  
--CFLAGS+=@CFLAGS@ -Wall -Wextra
-+CFLAGS+=@CFLAGS@ -Wall
- LDFLAGS+=@LIBS@
- CPPFLAGS+=@CPPFLAGS@
- 
+ PY_LDFLAGS+=@PYTHON_LDFLAGS@
+ PY_CFLAGS+=@PYTHON_CFLAGS@
