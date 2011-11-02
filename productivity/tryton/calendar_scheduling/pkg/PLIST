@@ -1,25 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:13:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/caldav.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/calendar.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/calendar.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/res.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/res.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/ru_RU.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/scenario_calendar_scheduling.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/scenario_calendar_scheduling.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/test_calendar_scheduling.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_scheduling/tests/test_calendar_scheduling.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond_calendar_scheduling-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

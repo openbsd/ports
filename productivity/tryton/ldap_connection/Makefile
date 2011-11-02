@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 11:13:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/02 14:29:38 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	2.0.0
 TRYTOND_MODULE =	ldap_connection
-REVISION =		2
 
 RUN_DEPENDS =		databases/py-ldap
 

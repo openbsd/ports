@@ -1,13 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:12:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/sale.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/sale.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/analytic_sale/sale.xml

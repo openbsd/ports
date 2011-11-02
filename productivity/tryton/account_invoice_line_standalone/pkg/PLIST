@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:09:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/bg_BG.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/invoice.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/invoice.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/invoice.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/tests/__init__.pyc

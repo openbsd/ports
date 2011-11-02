@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:13:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/02 14:29:37 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	2.0.0
 TRYTOND_MODULE =	account_invoice
-REVISION=		0
 
-RUN_DEPENDS =		productivity/tryton/account_product \
-			productivity/tryton/currency \
-			productivity/tryton/party
+RUN_DEPENDS =		productivity/tryton/account_product>=2.2.0 \
+			productivity/tryton/currency>=2.2.0 \
+			productivity/tryton/party>=2.2.0
 
 .include <bsd.port.mk>

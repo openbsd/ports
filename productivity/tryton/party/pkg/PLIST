@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/20 11:41:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__init__.pyc
@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/address.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/address.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/address.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/category.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/category.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/category.xml
@@ -17,20 +16,21 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/configuration.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/contact_mechanism.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/contact_mechanism.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/contact_mechanism.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/icons/
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/icons/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/icons/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/icons/tryton-party.svg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/label.odt
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/nl_NL.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/party.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/party.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/party.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/ru_RU.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/party/tests/__init__.pyc

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/20 11:40:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.pyc
@@ -7,11 +7,15 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__tryton__.
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/bg_BG.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.pyc

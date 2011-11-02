@@ -1,27 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:16:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/configuration.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/customer_return_restocking_list.odt
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/de_DE.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/delivery_note.odt
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/icons/
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/icons/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/icons/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/icons/tryton-inventory.svg
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/internal_shipment.odt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/inventory.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/inventory.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/inventory.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/location.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/location.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/location.xml
@@ -36,7 +38,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/picking_list.odt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/product.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/ru_RU.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/shipment.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/shipment.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock/shipment.xml

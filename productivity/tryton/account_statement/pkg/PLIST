@@ -1,19 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:10:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/bg_BG.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/invoice.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/journal.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/journal.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/journal.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/nl_NL.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/statement.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/statement.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_statement/statement.xml

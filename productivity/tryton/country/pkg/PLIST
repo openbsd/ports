@@ -1,19 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/13 17:09:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/country.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/country.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/country.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/cs_CZ.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/fr_FR.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/ru_RU.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/country/tests/__init__.pyc

@@ -1,18 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/20 11:41:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/bg_BG.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/icons/
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/icons/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/icons/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/icons/tryton-project.svg
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/project.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/project/tests/__init__.py

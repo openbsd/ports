@@ -1,17 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:14:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/caldav.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/fr_FR.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/ru_RU.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar_todo/tests/__init__.pyc

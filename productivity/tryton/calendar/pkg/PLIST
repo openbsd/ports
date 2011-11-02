@@ -1,25 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/13 17:08:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/caldav.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/res.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/res.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/ru_RU.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/scenario_calendar.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/scenario_calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/test_calendar.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/tests/test_calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/webdav.py

@@ -1,35 +1,22 @@
-$OpenBSD: patch-etc_trytond_conf,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
---- etc/trytond.conf.orig	Sat May 28 19:58:46 2011
-+++ etc/trytond.conf	Thu Jun  9 16:28:49 2011
-@@ -1,15 +1,13 @@
+$OpenBSD: patch-etc_trytond_conf,v 1.2 2011/11/02 14:29:39 ajacoutot Exp $
+--- etc/trytond.conf.orig	Wed Oct 19 16:22:59 2011
++++ etc/trytond.conf	Wed Nov  2 11:24:48 2011
+@@ -1,5 +1,3 @@
 -#This file is part of Tryton.  The COPYRIGHT file at the top level of
 -#this repository contains the full copyright notices and license terms.
  [options]
  
- # Configure the IP address for trytond
- # If empty, the server will listen on all available interfaces
--#interface =
-+interface = 127.0.0.1
+ # This is the hostname used when generating tryton URI
+@@ -10,7 +8,7 @@ jsonrpc = localhost:8000
+ #ssl_jsonrpc = False
  
- # Activate the netrpc protocol
--#netrpc = True
-+netrpc = True
- # Configure the port for the netrpc protocol to listen
--#netport = 8070
-+netport = 8070
- 
- # Activate the xml-rpc protocol
- #xmlrpc = False
-@@ -21,7 +19,7 @@
- # Configure the port for the json-rpc protocol to listen
- #jsonport = 8000
  # Configure the path of json-rpc data
 -#jsondata_path = /var/www/localhost/tryton
 +#jsondata_path = /var/www/tryton
  
- # Activate the webdav protocol
- #webdav = False
-@@ -30,16 +28,16 @@
+ # Activate the xml-rpc protocol
+ #xmlrpc = *:8069
+@@ -22,16 +20,16 @@ jsonrpc = localhost:8000
  
  # Configure the database type
  # allowed values are postgresql, sqlite, mysql
@@ -51,7 +38,7 @@ $OpenBSD: patch-etc_trytond_conf,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
  #db_minconn = 1
  #db_maxconn = 64
  
-@@ -47,11 +45,12 @@
+@@ -39,25 +37,26 @@ jsonrpc = localhost:8000
  #pg_path = None
  
  # Configure the Tryton server password
@@ -63,9 +50,7 @@ $OpenBSD: patch-etc_trytond_conf,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
  #logfile = False
 +logfile = /var/log/trytond
  
- # Enable secure connection with SSL
- #secure_netrpc = False
-@@ -62,15 +61,15 @@
+ #privatekey = server.pem
  #certificate = server.pem
  
  # Configure the SMTP connection
@@ -82,5 +67,5 @@ $OpenBSD: patch-etc_trytond_conf,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
 -#data_path = /var/lib/trytond
 +data_path = /var/db/trytond
  
- # Limit the number of threads
- #max_thread = 40
+ # Allow to run more than one instance of trytond
+ #multi_server = False

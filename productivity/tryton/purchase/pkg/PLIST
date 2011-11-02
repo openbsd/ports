@@ -1,19 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:14:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/configuration.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/configuration.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/configuration.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/invoice.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/invoice.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/party.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/purchase.odt
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/purchase/purchase.py

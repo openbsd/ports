@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 11:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/02 14:29:39 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	2.0.0
 TRYTOND_MODULE =	timesheet
-REVISION =		1
 
-RUN_DEPENDS =		productivity/tryton/company \
-			productivity/tryton/company_work_time
+RUN_DEPENDS =		productivity/tryton/company>=2.2.0 \
+			productivity/tryton/company_work_time>=2.2.0
 
 .include <bsd.port.mk>

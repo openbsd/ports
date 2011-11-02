@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:19:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/bg_BG.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/move.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/move.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_cost_fifo/product.py

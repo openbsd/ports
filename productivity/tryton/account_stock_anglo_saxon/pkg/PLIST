@@ -1,14 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:10:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/account.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/invoice.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/invoice.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_anglo_saxon/product.xml

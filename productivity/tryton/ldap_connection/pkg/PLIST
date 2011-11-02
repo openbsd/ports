@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/13 17:15:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:38 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/bg_BG.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.xml
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/de_DE.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/es_CO.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/es_ES.csv
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/cs_CZ.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/es_CO.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/nl_NL.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/locale/ru_RU.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/__init__.pyc
