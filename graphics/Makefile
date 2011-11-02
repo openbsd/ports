@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.303 2011/10/16 03:52:01 bentley Exp $
+# $OpenBSD: Makefile,v 1.304 2011/11/02 16:40:57 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -27,6 +27,7 @@
      SUBDIR += camlimages
      SUBDIR += cfdg
      SUBDIR += clutter
+     SUBDIR += colord
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += compface
