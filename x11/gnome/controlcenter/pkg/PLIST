@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/10/18 14:53:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/11/02 16:43:00 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -10,6 +10,8 @@ lib/control-center-1/
 lib/control-center-1/panels/
 @comment lib/control-center-1/panels/libbackground.la
 lib/control-center-1/panels/libbackground.so
+@comment lib/control-center-1/panels/libcolor.la
+lib/control-center-1/panels/libcolor.so
 @comment lib/control-center-1/panels/libdate_time.la
 lib/control-center-1/panels/libdate_time.so
 @comment lib/control-center-1/panels/libdisplay.la
@@ -38,6 +40,7 @@ lib/libgnome-control-center.la
 @lib lib/libgnome-control-center.so.${LIBgnome-control-center_VERSION}
 lib/pkgconfig/gnome-keybindings.pc
 share/applications/gnome-background-panel.desktop
+share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
 share/applications/gnome-datetime-panel.desktop
 share/applications/gnome-display-panel.desktop
@@ -163,6 +166,7 @@ share/gnome-control-center/ui/background/
 share/gnome-control-center/ui/background/background.ui
 share/gnome-control-center/ui/background/display-base.png
 share/gnome-control-center/ui/background/display-overlay.png
+share/gnome-control-center/ui/color.ui
 share/gnome-control-center/ui/datetime/
 share/gnome-control-center/ui/datetime/bg.png
 share/gnome-control-center/ui/datetime/cc.png
@@ -301,33 +305,41 @@ share/icons/hicolor/16x16/apps/gnome-power-manager.png
 share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.svg
+share/icons/hicolor/16x16/apps/preferences-color.png
 share/icons/hicolor/16x16/apps/preferences-desktop-display.png
 share/icons/hicolor/16x16/apps/preferences-system-time.png
 share/icons/hicolor/22x22/apps/gnome-power-manager.png
 share/icons/hicolor/22x22/apps/goa-panel.png
 share/icons/hicolor/22x22/apps/multimedia-volume-control.png
 share/icons/hicolor/22x22/apps/multimedia-volume-control.svg
+share/icons/hicolor/22x22/apps/preferences-color.png
 share/icons/hicolor/22x22/apps/preferences-desktop-display.png
 share/icons/hicolor/22x22/apps/preferences-system-time.png
 share/icons/hicolor/24x24/apps/gnome-power-manager.png
 share/icons/hicolor/24x24/apps/goa-panel.png
 share/icons/hicolor/24x24/apps/multimedia-volume-control.png
+share/icons/hicolor/24x24/apps/preferences-color.png
 share/icons/hicolor/24x24/apps/preferences-desktop-display.png
 share/icons/hicolor/256x256/apps/gnome-power-manager.png
 share/icons/hicolor/256x256/apps/goa-panel.png
+share/icons/hicolor/256x256/apps/preferences-color.png
 share/icons/hicolor/256x256/apps/preferences-system-time.png
 share/icons/hicolor/32x32/apps/gnome-power-manager.png
 share/icons/hicolor/32x32/apps/goa-panel.png
 share/icons/hicolor/32x32/apps/multimedia-volume-control.png
 share/icons/hicolor/32x32/apps/multimedia-volume-control.svg
+share/icons/hicolor/32x32/apps/preferences-color.png
 share/icons/hicolor/32x32/apps/preferences-desktop-display.png
 share/icons/hicolor/32x32/apps/preferences-system-time.png
 share/icons/hicolor/48x48/apps/gnome-power-manager.png
 share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/multimedia-volume-control.png
+share/icons/hicolor/48x48/apps/preferences-color.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
 share/icons/hicolor/48x48/devices/audio-headset.svg
+share/icons/hicolor/64x64/apps/preferences-color.png
 share/icons/hicolor/scalable/apps/multimedia-volume-control.svg
+share/icons/hicolor/scalable/apps/preferences-color.svg
 share/icons/hicolor/scalable/apps/preferences-desktop-display.svg
 share/icons/hicolor/scalable/apps/preferences-system-time.svg
 share/icons/hicolor/scalable/categories/slideshow-symbolic.svg
