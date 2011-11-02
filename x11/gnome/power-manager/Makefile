@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/17 11:24:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/02 17:51:32 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -38,5 +38,14 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 CONFIGURE_ENV=	ac_cv_path_DOCBOOK2MAN=no \
 		ac_cv_path_XMLTO=no
+
+# Remove a few compiler options GCC 4.2.1 doesn't understand.
+pre-configure:
+	perl -pi -e 's,-Wclobbered,,g;' \
+		-e 's,-Wempty-body,,g;' \
+		-e 's,-Wignored-qualifiers,,g;' \
+		-e 's,-Wtype-limits,,g;' \
+		-e 's,-Wmissing-parameter-type,,g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>

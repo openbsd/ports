@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2011/10/17 08:26:07 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2011/11/02 17:51:32 jasper Exp $
 
 From dde008e64a81ec90a8c32ebc16763321648d889a Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -15,23 +15,3 @@ Subject: Remove check for gnome-doc-utils as there are no docs anymore to build.
  
  AC_PATH_PROG(GLIB_GENMARSHAL, glib-genmarshal)
  
-@@ -56,14 +55,14 @@ if test "$GCC" = "yes"; then
- 	WARNINGFLAGS="$WARNINGFLAGS -Wformat-security"
- 	WARNINGFLAGS="$WARNINGFLAGS -Wmissing-include-dirs"
- 	WARNINGFLAGS="$WARNINGFLAGS -Wmissing-format-attribute"
--	WARNINGFLAGS="$WARNINGFLAGS -Wclobbered"
--	WARNINGFLAGS="$WARNINGFLAGS -Wempty-body"
--	WARNINGFLAGS="$WARNINGFLAGS -Wignored-qualifiers"
--	WARNINGFLAGS="$WARNINGFLAGS -Wtype-limits"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Wclobbered"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Wempty-body"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Wignored-qualifiers"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Wtype-limits"
- 	WARNINGFLAGS="$WARNINGFLAGS -Wdeclaration-after-statement"
- 	WARNINGFLAGS="$WARNINGFLAGS -Wshadow"
- 	WARNINGFLAGS="$WARNINGFLAGS -Winline"
--	WARNINGFLAGS="$WARNINGFLAGS -Wmissing-parameter-type"
-+#	WARNINGFLAGS="$WARNINGFLAGS -Wmissing-parameter-type"
- 	WARNINGFLAGS="$WARNINGFLAGS -Woverride-init"
- 	WARNINGFLAGS="$WARNINGFLAGS -Wno-strict-aliasing"
- else

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/10/24 17:56:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/02 17:51:32 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 
@@ -44,5 +44,14 @@ CONFIGURE_ARGS+=	--disable-evolution-data-server
 CONFIGURE_ARGS+=--disable-terminal
 
 SUBST_VARS+=	GNOME_VERSION
+
+# Remove a few compiler options GCC 4.2.1 doesn't understand.
+pre-configure:
+	perl -pi -e 's,-Wclobbered,,g;' \
+		-e 's,-Wempty-body,,g;' \
+		-e 's,-Wignored-qualifiers,,g;' \
+		-e 's,-Wtype-limits,,g;' \
+		-e 's,-Wmissing-parameter-type,,g' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
