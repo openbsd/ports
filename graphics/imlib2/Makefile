@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=	image manipulation library
 
 DISTNAME=	imlib2-1.4.2
-REVISION =	1
+REVISION =	2
 SHARED_LIBS=	Imlib2	6.0	# .5.0
 CATEGORIES=	graphics
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=enlightenment/}
 
-WANTLIB=	X11 Xau Xdmcp Xext c freetype m pthread-stubs xcb z \
+WANTLIB=	X11 Xext c freetype m xcb z \
 		jpeg>=62 gif>=5 png>=2 tiff>=35 bz2 id3tag>=3
 LIB_DEPENDS+=	graphics/jpeg \
 		graphics/libungif \

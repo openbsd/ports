@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=		OpenGL Extrusion library
 
 VERSION=		3.0.4
 DISTNAME=		gle-${VERSION}
-REVISION =		3
+REVISION =		4
 SHARED_LIBS=		gle	3.4
 CATEGORIES=     	graphics devel
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	unclear
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xau Xdmcp Xext Xi m pthread-stubs xcb
+WANTLIB=		X11 Xext Xi m xcb
 
 MASTER_SITES=		http://www.linas.org/gle/pub/
 

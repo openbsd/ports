@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
 V =			1.9.4
 DISTNAME =		geomview-$V
-REVISION=		0
+REVISION=		1
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.geomview.org
@@ -25,8 +25,8 @@ RUN_DEPENDS =		graphics/netpbm \
 
 LIB_DEPENDS =		x11/openmotif
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xm Xmu Xrender Xt c expat
-WANTLIB += fontconfig freetype jpeg m png pthread-stubs
+WANTLIB += ICE SM X11 Xext Xft Xm Xmu Xrender Xt c expat
+WANTLIB += fontconfig freetype jpeg m png
 WANTLIB += stdc++ xcb z
 
 USE_GMAKE =	Yes

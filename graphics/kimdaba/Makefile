@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=		kde image database
 CATEGORIES=		graphics x11 x11/kde
 DISTNAME=		kphotoalbum-3.0
-REVISION =		7
+REVISION =		8
 EXTRACT_SUFX=		.tar.bz2
 HOMEPAGE=		http://www.kphotoalbum.org/
 MASTER_SITES=		${HOMEPAGE}data/download/
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c expat fam idn \
-		jpeg m png pthread pthread-stubs rpcsvc stdc++ util xcb z \
+WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 c expat idn \
+		jpeg m png pthread stdc++ util xcb z \
 		kdecore>=6 DCOP kdefx kdesu kdeui kio kmediaplayer kparts \
-		kwalletclient kipi exiv2
+		kwalletclient kipi exiv2 Xfixes Xt fontconfig freetype
 
 LIB_DEPENDS=	x11/kde/libs3 \
 		graphics/libkipi \

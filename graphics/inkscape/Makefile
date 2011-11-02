@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.2
-REVISION=		0
+REVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
@@ -15,9 +15,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	GL Magick++ MagickCore X11 Xau Xcomposite Xcursor Xdamage \
-		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm \
-		aspell atk-1.0 atkmm-1.6 c cairo cairomm-1.0 drm expat \
+WANTLIB=	GL Magick++ MagickCore X11 Xcomposite Xcursor Xdamage \
+		Xext Xfixes Xi Xinerama Xrandr Xrender \
+		aspell atk-1.0 atkmm-1.6 c cairo cairomm-1.0 expat \
 		fontconfig freetype gc gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 \
 		gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0 \
 		gsl gslcblas gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		goocanvas
 GNOME_VERSION=		1.0.0
 SHARED_LIBS +=  goocanvas            1.0      # .6.0
 CATEGORIES=		graphics
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GooCanvas
 
@@ -23,7 +23,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
-WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
+WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm ffi stdc++
 
 MODULES=		devel/gettext \
 			x11/gnome

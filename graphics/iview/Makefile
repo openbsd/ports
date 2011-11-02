@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/02 08:46:37 jasper Exp $
 
 COMMENT=	image viewer for X
 
 VERSION=	1.4
 DISTNAME=	iview-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://math.smsu.edu/~erik/software.php?id=63
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://math.smsu.edu/~erik/files/
 
-WANTLIB=	SDL X11 Xext c m pthread pthread-stubs usbhid xcb SDL_image
+WANTLIB=	SDL X11 c pthread SDL_image
 LIB_DEPENDS=	devel/sdl-image
 
 USE_GROFF =	Yes
