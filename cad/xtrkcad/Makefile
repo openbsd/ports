@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/01 19:00:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/02 21:05:38 naddy Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
@@ -6,7 +6,7 @@ VERSION=	4.0.3a
 DISTNAME=	xtrkcad-source-${VERSION}
 PKGNAME=	xtrkcad-${VERSION}
 CATEGORIES=	cad
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.xtrkcad.org/
 
