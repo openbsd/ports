@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/11/02 17:46:25 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- configure.orig	Wed Nov  2 17:06:08 2011
++++ configure	Wed Nov  2 17:06:37 2011
+@@ -18615,7 +18615,7 @@ else
+ fi
+ 
+ 
+-GCM_SYSTEM_PROFILES_DIR="\$(localstatedir)/lib/color"
++GCM_SYSTEM_PROFILES_DIR="\$(localstatedir)/db/color"
+ 
+ 
+ ac_config_files="$ac_config_files Makefile data/Makefile data/icons/Makefile data/icons/16x16/Makefile data/icons/22x22/Makefile data/icons/24x24/Makefile data/icons/32x32/Makefile data/icons/48x48/Makefile data/icons/64x64/Makefile data/icons/256x256/Makefile data/icons/scalable/Makefile data/tests/Makefile data/targets/Makefile data/figures/Makefile man/Makefile po/Makefile.in src/Makefile tools/Makefile"

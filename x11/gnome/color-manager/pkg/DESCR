@@ -1,0 +1,26 @@
+GNOME Color Manager is a session framework that makes it easy to manage,
+install and generate color profiles in the GNOME desktop.
+
+This project has the following features:
+
+* Setting output gamma tables (with local brightness and adjustments) to
+  any Xrandr output (falling back to the per-screen methods for drivers
+  that do not yet support Xrandr 1.3).
+
+* Setting of settings at session start, and when monitors are
+  hotplugged.
+
+* Easy install of vendor supplied ICC or ICM files, just by double
+  clicking on the file.
+
+* Easy display calibration using an external calibration device, and
+  scanner calibration using a inexpensive IT 8.7 target.
+
+* Integration X11 by setting the per-screen and per-output _ICC_PROFILE
+  atom, which makes applications such as the GIMP use a color managed
+  output.
+
+* Easy to use DBus interface for applications to query what ICC profiles
+  should be used for a specific device or device type. This is session
+  activated and is only started when it is needed, and quits after a
+  small period of idleness.
