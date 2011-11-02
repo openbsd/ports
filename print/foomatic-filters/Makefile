@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/11/02 16:46:16 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -50,7 +50,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			MPAGE="${LOCALBASE}/bin/mpage"
 
 CONFIGURE_ARGS=		--enable-file-converter-check=no \
-			--enable-dbus=no # only useful for colord which we don't have yet
+			--enable-dbus=no # needed for colord but adds a dependency on dbus
 
 MAKE_ENV=		${CONFIGURE_ENV}
 
