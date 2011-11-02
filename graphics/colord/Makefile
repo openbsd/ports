@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/02 16:40:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/02 17:55:33 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
 DISTNAME=	colord-0.1.14
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	0
 
 SHARED_LIBS +=  colord               0.0      # 1.4
 
@@ -34,6 +36,10 @@ LIB_DEPENDS=	devel/libusb1 \
 		graphics/sane-backends \
 		sysutils/polkit \
 		graphics/lcms2
+
+# technically not needed, however it is handy to have some profiles to
+# start working with
+RUN_DEPENDS=	graphics/shared-color-profiles
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
