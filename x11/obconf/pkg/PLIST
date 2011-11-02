@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/12/21 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/11/02 19:12:40 jasper Exp $
 @bin bin/obconf
 share/applications/obconf.desktop
 share/locale/cs/LC_MESSAGES/obconf.mo
+share/locale/de/LC_MESSAGES/obconf.mo
 share/locale/en@boldquot/LC_MESSAGES/obconf.mo
 share/locale/en@quot/LC_MESSAGES/obconf.mo
 share/locale/es/LC_MESSAGES/obconf.mo
 share/locale/fr/LC_MESSAGES/obconf.mo
 share/locale/it/LC_MESSAGES/obconf.mo
 share/locale/no/LC_MESSAGES/obconf.mo
+share/locale/pt_BR/LC_MESSAGES/obconf.mo
+share/locale/ru/LC_MESSAGES/obconf.mo
 share/locale/sv/LC_MESSAGES/obconf.mo
 share/locale/tr/LC_MESSAGES/obconf.mo
+share/locale/zh_CN/LC_MESSAGES/obconf.mo
 share/locale/zh_TW/LC_MESSAGES/obconf.mo
 share/mime/packages/obconf.xml
 share/mimelnk/

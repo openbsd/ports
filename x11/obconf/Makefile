@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/10/30 15:32:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/02 19:12:40 jasper Exp $
 
 COMMENT=	configuration utility for openbox
 
-DISTNAME=	obconf-2.0.3
-REVISION=	10
+# git clone of b7f1c6ac679bbda61bc4ca13267f03022cbfde74
+# which will become 2.0.4 when upstream releases a new version.
+DISTNAME=	obconf-2.0.3.1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
@@ -14,13 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://icculus.org/openbox/obconf/
+MASTER_SITES=	http://distfiles.nl/
+#http://icculus.org/openbox/obconf/
 
-WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat
-WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m obparser obrender pango-1.0 pangocairo-1.0
+WANTLIB += GL ICE Imlib2 SM X11 Xcomposite Xcursor Xdamage Xext
+WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 m obrender obt pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangoxft-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xml2
 WANTLIB += z
@@ -29,14 +31,20 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtk+2 \
 		devel/libglade2 \
 		devel/startup-notification \
-		x11/openbox
+		x11/openbox>=3.5.0
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info>=0.21
 
 USE_GMAKE=	Yes
 
+AUTOMAKE_VERSION=1.9
+AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} /bin/sh bootstrap
 
 .include <bsd.port.mk>
