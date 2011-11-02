@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/10/17 06:16:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/11/02 20:00:58 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 MAKE_FILE =	GNUmakefile
 
 # Fix incorrect GCC output which was caused by over optimization
-# as it was emitting a fdtox %r8, %r7 call, whose second operatand isn't even and thus invalid.
+# as it was emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 .if ${MACHINE_ARCH:Msparc64}
 MAKE_FLAGS=	EXTRA_FLAGS="-O0"
 .endif
