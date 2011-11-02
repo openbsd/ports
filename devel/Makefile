@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.987 2011/10/31 10:08:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.988 2011/11/02 12:48:51 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -81,6 +81,8 @@
      SUBDIR += cvsweb
      SUBDIR += cxxtools
      SUBDIR += darcs
+     SUBDIR += dbus-sharp
+     SUBDIR += dbus-sharp-glib
      SUBDIR += dconf
      SUBDIR += ddd
      SUBDIR += dejagnu
