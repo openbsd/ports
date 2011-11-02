@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2010/09/06 08:42:48 fgsch Exp $
---- Makefile.in.orig	Fri May 14 15:04:52 2010
-+++ Makefile.in	Wed Sep  1 02:17:09 2010
-@@ -956,11 +956,6 @@ dist_noinst_DATA = \
+$OpenBSD: patch-Makefile_in,v 1.10 2011/11/02 19:12:01 jasper Exp $
+--- Makefile.in.orig	Sun Oct 30 16:35:03 2011
++++ Makefile.in	Sun Oct 30 16:35:17 2011
+@@ -1043,11 +1043,6 @@ dist_noinst_DATA = \
  	tests/urgent.c
  
  dist_doc_DATA = \
@@ -13,19 +13,3 @@ $OpenBSD: patch-Makefile_in,v 1.9 2010/09/06 08:42:48 fgsch Exp $
  	data/rc.xsd \
  	data/menu.xsd \
  	doc/rc-mouse-focus.xml
-@@ -3160,12 +3155,12 @@ uninstall-dist_pixmapDATA:
- 	done
- install-dist_rcDATA: $(dist_rc_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(rcdir)" || $(mkdir_p) "$(DESTDIR)$(rcdir)"
-+	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
- 	@list='$(dist_rc_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(dist_rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(rcdir)/$$f'"; \
--	  $(dist_rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(rcdir)/$$f"; \
-+	  echo " $(dist_rcDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
-+	  $(dist_rcDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
- 	done
- 
- uninstall-dist_rcDATA:

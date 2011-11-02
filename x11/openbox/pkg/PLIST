@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/05/02 09:10:58 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/11/02 19:12:01 jasper Exp $
 %%SHARED%%
 @bin bin/gdm-control
 @bin bin/gnome-panel-control
@@ -8,27 +8,38 @@ bin/openbox-gnome-session
 bin/openbox-kde-session
 bin/openbox-session
 include/openbox/
-include/openbox/${V}/
-include/openbox/${V}/openbox/
-include/openbox/${V}/openbox/color.h
-include/openbox/${V}/openbox/font.h
-include/openbox/${V}/openbox/geom.h
-include/openbox/${V}/openbox/gradient.h
-include/openbox/${V}/openbox/image.h
-include/openbox/${V}/openbox/instance.h
-include/openbox/${V}/openbox/mask.h
-include/openbox/${V}/openbox/parse.h
-include/openbox/${V}/openbox/render.h
-include/openbox/${V}/openbox/theme.h
-include/openbox/${V}/openbox/version.h
-lib/libobparser.a
-lib/libobparser.la
+include/openbox/${API_V}/
+include/openbox/${API_V}/obrender/
+include/openbox/${API_V}/obrender/color.h
+include/openbox/${API_V}/obrender/font.h
+include/openbox/${API_V}/obrender/geom.h
+include/openbox/${API_V}/obrender/gradient.h
+include/openbox/${API_V}/obrender/image.h
+include/openbox/${API_V}/obrender/instance.h
+include/openbox/${API_V}/obrender/mask.h
+include/openbox/${API_V}/obrender/render.h
+include/openbox/${API_V}/obrender/theme.h
+include/openbox/${API_V}/obrender/version.h
+include/openbox/${API_V}/obt/
+include/openbox/${API_V}/obt/display.h
+include/openbox/${API_V}/obt/keyboard.h
+include/openbox/${API_V}/obt/link.h
+include/openbox/${API_V}/obt/paths.h
+include/openbox/${API_V}/obt/prop.h
+include/openbox/${API_V}/obt/signal.h
+include/openbox/${API_V}/obt/util.h
+include/openbox/${API_V}/obt/version.h
+include/openbox/${API_V}/obt/xml.h
+include/openbox/${API_V}/obt/xqueue.h
 lib/libobrender.a
 lib/libobrender.la
-lib/openbox/
-lib/openbox/xdg-autostart
-lib/pkgconfig/obparser-3.0.pc
-lib/pkgconfig/obrender-3.0.pc
+lib/libobt.a
+lib/libobt.la
+@lib lib/libobt.so.${LIBobt_VERSION}
+lib/pkgconfig/obrender-${API_V}.pc
+lib/pkgconfig/obt-${API_V}.pc
+libexec/openbox-autostart
+libexec/openbox-xdg-autostart
 @man man/man1/obxprop.1
 @man man/man1/openbox-gnome-session.1
 @man man/man1/openbox-kde-session.1
@@ -38,6 +49,10 @@ share/applications/openbox.desktop
 share/examples/openbox/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/openbox/
+share/examples/openbox/autostart
+@sample ${SYSCONFDIR}/xdg/openbox/autostart
+share/examples/openbox/environment
+@sample ${SYSCONFDIR}/xdg/openbox/environment
 share/examples/openbox/menu.xml
 @sample ${SYSCONFDIR}/xdg/openbox/menu.xml
 share/examples/openbox/menu.xsd
@@ -55,10 +70,6 @@ share/examples/openbox/xbm/max.xbm
 share/examples/openbox/xbm/max_toggled.xbm
 share/examples/openbox/xbm/shade.xbm
 share/examples/openbox/xbm/shade_toggled.xbm
-share/examples/openbox/xdg/
-share/examples/openbox/xdg/openbox/
-share/examples/openbox/xdg/openbox/autostart.sh
-@sample ${SYSCONFDIR}/xdg/openbox/autostart.sh
 share/gnome/
 share/gnome/wm-properties/
 share/gnome/wm-properties/openbox.desktop
@@ -117,6 +128,9 @@ share/themes/Bear2/openbox-3/shade.xbm
 share/themes/Bear2/openbox-3/shade_pressed.xbm
 share/themes/Bear2/openbox-3/themerc
 share/themes/Clearlooks/
+share/themes/Clearlooks-3.4/
+share/themes/Clearlooks-3.4/openbox-3/
+share/themes/Clearlooks-3.4/openbox-3/themerc
 share/themes/Clearlooks-Olive/
 share/themes/Clearlooks-Olive/openbox-3/
 share/themes/Clearlooks-Olive/openbox-3/themerc
