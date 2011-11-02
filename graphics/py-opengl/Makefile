@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/02 11:44:00 jasper Exp $
 
 COMMENT =		Python bindings for OpenGL
 MODPY_EGG_VERSION =	3.0.0
@@ -21,7 +21,7 @@ REGRESS_IS_INTERACTIVE = X11
 
 LIB_DEPENDS =		graphics/freeglut
 REGRESS_DEPENDS =	devel/pygame \
-			graphics/py-opengl \
+			${BASE_PKGPATH} \
 			math/py-numpy
 
 do-regress:
