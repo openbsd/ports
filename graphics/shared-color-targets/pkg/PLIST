@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/02 19:37:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/02 20:18:40 ajacoutot Exp $
 share/color/
 share/color/targets/
 share/color/targets/test.it8
@@ -182,7 +182,7 @@ share/color/targets/wolf_faust/transmissive/V100710.it8
 share/color/targets/wolf_faust/transmissive/V110202.it8
 share/color/targets/wolf_faust/transmissive/V110606.it8
 share/color/targets/wolf_faust/transmissive/V110902.it8
-share/doc/shared-color-targets/
-share/doc/shared-color-targets/wolf_faust/
-share/doc/shared-color-targets/wolf_faust/LICENSE
-share/doc/shared-color-targets/wolf_faust/README
+share/shared-color-targets/
+share/shared-color-targets/wolf_faust/
+share/shared-color-targets/wolf_faust/LICENSE
+share/shared-color-targets/wolf_faust/README

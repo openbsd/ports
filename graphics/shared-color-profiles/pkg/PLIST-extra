@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-extra,v 1.1.1.1 2011/11/02 17:34:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-extra,v 1.2 2011/11/02 20:18:52 ajacoutot Exp $
 share/color/icc/Oysonar/
 share/color/icc/Oysonar/FOGRA28L_webcoated.icc
 share/color/icc/Oysonar/FOGRA29L_uncoated.icc
@@ -11,6 +11,6 @@ share/color/icc/Oysonar/Gray.icc
 share/color/icc/Oysonar/SNAP_TR002_newsprint.icc
 share/color/icc/Oysonar/SWOP_TR003_coated_3.icc
 share/color/icc/Oysonar/SWOP_TR005_coated_5.icc
-share/doc/shared-color-profiles/Oysonar/
-share/doc/shared-color-profiles/Oysonar/LICENSE
-share/doc/shared-color-profiles/Oysonar/README
+share/shared-color-profiles/Oysonar/
+share/shared-color-profiles/Oysonar/LICENSE
+share/shared-color-profiles/Oysonar/README

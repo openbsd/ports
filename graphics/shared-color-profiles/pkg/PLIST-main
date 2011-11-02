@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/11/02 17:34:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/11/02 20:18:52 ajacoutot Exp $
 share/color/
 share/color/icc/
 share/color/icc/AdobeGammaTest.icm
@@ -22,10 +22,10 @@ share/color/icc/Yamma/OldPhoto.icc
 share/color/icc/Yamma/RedAndBlack.icc
 share/color/icc/Yamma/RedAndGreen.icc
 share/color/icc/bluish.icc
-share/doc/shared-color-profiles/
-share/doc/shared-color-profiles/Argyll/
-share/doc/shared-color-profiles/Argyll/LICENSE
-share/doc/shared-color-profiles/Argyll/README
-share/doc/shared-color-profiles/Yamma/
-share/doc/shared-color-profiles/Yamma/LICENSE
-share/doc/shared-color-profiles/Yamma/README
+share/shared-color-profiles/
+share/shared-color-profiles/Argyll/
+share/shared-color-profiles/Argyll/LICENSE
+share/shared-color-profiles/Argyll/README
+share/shared-color-profiles/Yamma/
+share/shared-color-profiles/Yamma/LICENSE
+share/shared-color-profiles/Yamma/README

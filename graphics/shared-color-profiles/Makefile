@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/02 17:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/02 20:18:52 ajacoutot Exp $
 
 COMMENT-main=	color profiles from contributors for color calibration
 COMMENT-extra=	less commonly used extra profiles for shared-color-profiles
@@ -9,6 +9,9 @@ DISTNAME=	${NAME}-${V}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-extra=	${NAME}-extra-${V}
+
+REVISION-main=	0
+REVISION-extra=	0
 
 CATEGORIES=	graphics
 
@@ -29,9 +32,5 @@ PKG_ARCH=	*
 RUN_DEPENDS-extra= ${BASE_PKGPATH},-main
 
 CONFIGURE_STYLE=gnu
-
-post-install:
-	mv ${PREFIX}/share/shared-color-profiles \
-		${PREFIX}/share/doc/shared-color-profiles
 
 .include <bsd.port.mk>
