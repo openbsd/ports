@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/02 19:21:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/02 19:48:26 jasper Exp $
+
+BROKEN-sparc64= 	bus error webkit's JSC::Lexer::lex()
 
 COMMENT=		GObject JavaScriptCore bridge
 
