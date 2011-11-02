@@ -1,0 +1,79 @@
+$OpenBSD: README,v 1.1 2011/11/02 16:45:02 stsp Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Using /etc/hostname.tun0 without persist-tun
+============================================
+
+OpenVPN re-creates the tun(4) interface at startup, unless the
+persist-tun option is given in the configuration file. When not using
+persist-tun, compatibility with PF is improved by starting OpenVPN from
+hostname.if(5).  For example:
+
+# cat << EOF > /etc/hostname.tun0
+up
+!${TRUEPREFIX}/sbin/openvpn --daemon \
+    --config ${SYSCONFDIR}/openvpn/server.conf
+EOF
+
+Using /etc/hostname.tun0 with persist-tun
+=========================================
+
+When the persist-tun option is used, the tun(4) interface can be
+configured before OpenVPN is started, just like any other interface.
+
+The example below configures a point-to-point link between two sites
+accross an OpenVPN tunnel. Site-1 has tunnel end point 10.1.1.1 and
+local network 192.168.0.0/24. Site-2 has tunnel end point 10.1.1.2
+and local network 192.168.1.1/24. The sites connect their local
+networks via the tunnel.
+
+Site-1:
+# cat << EOF > /etc/hostname.tun0
+inet 10.1.1.1 255.255.255.255 NONE
+dest 10.1.1.2
+!/sbin/route add -host 10.1.1.1 127.0.0.1
+!/sbin/route add -net 192.168.1.1/24 10.1.1.2
+EOF
+
+Site-2:
+# cat << EOF > /etc/hostname.tun0
+inet 10.1.1.2 255.255.255.255 NONE
+dest 10.1.1.1
+!/sbin/route add -host 10.1.1.2 127.0.0.1
+!/sbin/route add -net 192.168.0.0/24 10.1.1.1
+EOF
+
+In this case, there is no need to configure an IP address on the tun
+interface from the OpenVPN configuration file. The tun interface will
+become active when OpenVPN starts using it.
+
+A suitable OpenVPN configuration file for site-1 might look as follows:
+
+  daemon
+  dev tun0
+  persist-tun
+  proto udp
+  local site-1.example.com
+  remote site-2.example.com
+  secret /etc/openvpn/secret.key
+  ping 10
+  ping-restart 60
+
+Running OpenVPN in chroot
+=========================
+
+OpenVPN can run as an unprivileged user inside chroot when the
+persist-tun, persist-key, and persist-local-ip options are used.
+Note that persist-local-ip requires that OpenVPN is listening on an
+interface with a static IP address. To chroot OpenVPN, use the following
+as part of your configuration file:
+
+  persist-tun
+  persist-key
+  persist-local-ip
+  user _openvpn
+  group _openvpn
+  chroot /var/empty
