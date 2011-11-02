@@ -1,0 +1,30 @@
+$OpenBSD: patch-lib_FlashVideo_Site_Vimeo_pm,v 1.1 2011/11/02 12:40:32 sthen Exp $
+
+from upstream commit 99be5bdb53 - support HD
+
+--- lib/FlashVideo/Site/Vimeo.pm.orig	Wed Nov  2 12:33:51 2011
++++ lib/FlashVideo/Site/Vimeo.pm	Wed Nov  2 12:35:36 2011
+@@ -19,16 +19,20 @@ sub find_video {
+   $browser->get("$base/load/clip:$id/embed?param_fullscreen=1&param_clip_id=$id&param_show_byline=0&param_server=vimeo.com&param_color=cc6600&param_show_portrait=0&param_show_title=1");
+ 
+   my $xml = from_xml($browser);
+-
+   my $filename = title_to_filename($xml->{video}->{caption});
+   my $request_signature = $xml->{request_signature};
+   my $request_signature_expires = $xml->{request_signature_expires};
++  my $isHD = $xml->{video}->{isHD};
+ 
+   # I want to follow redirects now.
+   $browser->allow_redirects;
+ 
+-  my $url = "$base/play/clip:$id/$request_signature/$request_signature_expires/?q=sd&type=embed";
+-
++  my $url = "$base/play/clip:$id/$request_signature/$request_signature_expires/?q=hd&type=embed";
++  # Check if hd quality is available.
++  if ($isHD == '1') { 
++      return $url, $filename;
++  };
++  $url = "$base/play/clip:$id/$request_signature/$request_signature_expires/?q=sd&type=embed";
+   return $url, $filename;
+ }
+ 
