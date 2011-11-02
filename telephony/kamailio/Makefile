@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/02 08:32:17 jasper Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -20,7 +20,7 @@ REVISION-xmlrpc =	0
 PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
 REVISION-carrierroute =	0
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
-REVISION-snmpstats =	0
+REVISION-snmpstats =	1
 PKGNAME-perl =		kamailio-perl-${VERSION}
 REVISION-perl =		0
 
@@ -121,7 +121,7 @@ PSEUDO_FLAVORS +=	no_snmpstats
 MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_MODULES +=	snmpstats
-WANTLIB-snmpstats =	netsnmp netsnmpagent netsnmphelpers netsnmpmibs
+WANTLIB-snmpstats =	netsnmp netsnmpagent netsnmpmibs
 LIB_DEPENDS-snmpstats =	net/net-snmp
 .endif
 
@@ -130,9 +130,8 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	${MODGETTEXT_WANTLIB} confuse
-LIB_DEPENDS-carrierroute = devel/libconfuse \
-			   ${MODGETTEXT_LIB_DEPENDS}
+WANTLIB-carrierroute =	confuse
+LIB_DEPENDS-carrierroute = devel/libconfuse
 RUN_DEPENDS-carrierroute = ${MODGETTEXT_RUN_DEPENDS}
 .endif
 

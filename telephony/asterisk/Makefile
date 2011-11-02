@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2011/10/17 19:35:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2011/11/02 08:32:17 jasper Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,6 +6,8 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			1.8.7.1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+
+REVISION-snmp=		0
 
 SOUNDS=			CORE MOH EXTRA
 SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.21
@@ -202,7 +204,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 
 # snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
-WANTLIB-snmp=		c m netsnmp netsnmpagent netsnmphelpers netsnmpmibs perl util
+WANTLIB-snmp=		m netsnmp netsnmpagent netsnmpmibs crypto kvm wrap
 LIB_DEPENDS-snmp=	net/net-snmp 
 
 .if !${BUILD_PACKAGES:M-snmp}
