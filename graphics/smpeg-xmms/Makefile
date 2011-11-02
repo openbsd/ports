@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/02 09:57:22 jasper Exp $
 
 COMMENT=	MPEG and VCD video playback in XMMS
 SHARED_ONLY=	Yes
@@ -6,7 +6,7 @@ SHARED_ONLY=	Yes
 VERSION=	0.3.5
 DISTNAME=	smpeg-xmms-${VERSION}
 PKGNAME=	xmms-smpeg-${VERSION}
-REVISION =	5
+REVISION =	6
 CATEGORIES=	graphics
 
 MAINTAINER=	Wilbern Cobb <wcobb@openbsd.org>
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	SDL X11 Xau Xdmcp Xext Xrandr Xrender m sndio \
-		pthread-stubs xcb usbhid xmms>=2 smpeg>=1.3
+WANTLIB += SDL m smpeg sndio usbhid
 
 MASTER_SITES=	ftp://ftp.sunet.se/pub/multimedia/xmms/plugins/smpeg-xmms/
 

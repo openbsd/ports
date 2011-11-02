@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/02 09:57:22 jasper Exp $
 
 COMMENT=	flash rendering library
 
 DISTNAME=	swfdec-0.8.4
-REVISION=	4
+REVISION=	5
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
@@ -20,12 +20,14 @@ MASTER_SITES=		${HOMEPAGE}download/swfdec/0.8/
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gcrypt gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
+WANTLIB += freetype gdk_pixbuf-2.0 gdk-x11-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gstpbutils-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += m oil-0.3 pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread-stubs sndio soup-2.4 tasn1 xcb
-WANTLIB += xcb-render xcb-render-util xml2 z
+WANTLIB += pixman-1 png pthread-stubs sndio soup-2.4 xcb
+WANTLIB += xcb-render xml2 z
+WANTLIB += GL Xxf86vm drm ffi gstbase-0.10 gstvideo-0.10 stdc++
+WANTLIB += xcb-shm
 
 LIB_DEPENDS=	devel/libsoup \
 		devel/liboil \

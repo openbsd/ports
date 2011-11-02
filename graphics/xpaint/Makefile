@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2011/11/02 09:57:23 jasper Exp $
 
 COMMENT=		simple paint program
 
 DISTNAME=		xpaint-2.7.8.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		graphics x11
 
 HOMEPAGE=		http://sf-xpaint.sourceforge.net/
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xau Xdmcp Xaw Xext Xmu Xpm Xt c m \
-			pthread-stubs xcb z jpeg>=62 tiff>=36 png>=4
+			z jpeg>=62 tiff>=36 png>=4
 
 FAKE=			lib
 LIB_DEPENDS=		graphics/jpeg \

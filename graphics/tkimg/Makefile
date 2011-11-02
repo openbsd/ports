@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/05 18:33:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/02 09:57:22 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -28,8 +28,8 @@ PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
-WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss expat fontconfig
-WANTLIB += freetype m z pthread-stubs xcb
+
+WANTLIB += X11 Xext Xft Xss m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tkimg/}
 

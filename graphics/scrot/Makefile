@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/07/08 12:20:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/02 09:57:22 jasper Exp $
 
 COMMENT=		commandline screen capture util
 
 DISTNAME=		scrot-0.8
-REVISION =		2
+REVISION =		3
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext c freetype m pthread-stubs xcb z \
+WANTLIB=		X11 Xext c freetype m z \
 			giblib>=1 Imlib2>=1
 
 MASTER_SITES=		http://www.linuxbrit.co.uk/downloads/

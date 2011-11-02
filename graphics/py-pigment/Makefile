@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/02 09:57:22 jasper Exp $
 
 COMMENT =	python bindings for pigment
 
@@ -41,5 +41,6 @@ WANTLIB += pcre pixman-1 png pthread-stubs xcb z xml2
 WANTLIB += gstvideo-0.10 gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 
 WANTLIB += gstbase-0.10 gstreamer-0.10
 WANTLIB += pigment-0.3 pigment-gtk-0.3 pigment-imaging-0.3
+WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
 
 .include <bsd.port.mk>

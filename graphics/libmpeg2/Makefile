@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/02 09:57:22 jasper Exp $
 
 COMMENT=	free MPEG-2 video stream decoder
 
 DISTNAME=	libmpeg2-0.5.1
-REVISION =	0
+REVISION =	1
 SHARED_LIBS=	mpeg2		0.1 \
 		mpeg2convert	0.0
 CATEGORIES=	graphics x11
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xv c pthread-stubs xcb
+WANTLIB=	ICE SM X11 Xext Xv c xcb
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
