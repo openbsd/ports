@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.304 2011/11/02 16:40:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.305 2011/11/02 17:35:33 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -219,6 +219,7 @@
      SUBDIR += sane-frontends
      SUBDIR += scratch
      SUBDIR += scrot
+     SUBDIR += shared-color-profiles
      SUBDIR += shotwell
      SUBDIR += simple-scan
      SUBDIR += sketch
