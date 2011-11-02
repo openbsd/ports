@@ -1,0 +1,15 @@
+$OpenBSD: patch-version_AssemblyVersion_cs,v 1.1 2011/11/02 09:10:54 ajacoutot Exp $
+
+Prevent from randomizing the DLL install path.
+
+--- version/AssemblyVersion.cs.orig	Wed Nov  2 09:55:16 2011
++++ version/AssemblyVersion.cs	Wed Nov  2 09:55:41 2011
+@@ -54,7 +54,7 @@ using System.Runtime.InteropServices;
+ // You can specify all the values or you can default the Revision and Build Numbers 
+ // by using the '*' as shown below:
+ 
+-[assembly: AssemblyVersion("1.9.0.*")]
++[assembly: AssemblyVersion("${V}")]
+ 
+ 
+ 
