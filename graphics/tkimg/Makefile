@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/03 07:40:20 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	image extension for Tcl/Tk
 
 V =		1.4
-REVISION =	0
+REVISION =	1
 DISTNAME =	tkimg$V
 PKGNAME =	tkimg-$V
 SHLIB_VERSION =	0.0
