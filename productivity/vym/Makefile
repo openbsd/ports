@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/03 22:21:21 jasper Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-1.12.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
@@ -17,9 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vym/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig
-WANTLIB += freetype glib-2.0 gobject-2.0 gthread-2.0 m png pthread
-WANTLIB += stdc++ z Qt3Support QtGui QtNetwork QtSql QtXml
+WANTLIB += Qt3Support QtGui QtNetwork QtSql QtXml c m pthread
+WANTLIB += stdc++
 
 MODULES=	devel/gettext \
 		x11/qt4

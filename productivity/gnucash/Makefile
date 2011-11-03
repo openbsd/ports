@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/11/03 22:21:21 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
 DOC_VERSION = 	2.2.0
 
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -40,9 +40,10 @@ WANTLIB += glade-2.0 glib-2.0 gmodule-2.0 gmp gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gsf-1 gthread-2.0
 WANTLIB += gtk-x11-2.0 ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl stdc++
-WANTLIB += util xcb xcb-render xcb-render-util xml2 z
+WANTLIB += util xcb xcb-render xml2 z
 WANTLIB += canberra gcrypt gpg-error ogg vorbis vorbisfile
 WANTLIB += goffice-0.8 guile gtkhtml-3.14 gnomeui-2
+WANTLIB += GL Xxf86vm drm ffi xcb-shm
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnucash/} \
 		${HOMEPAGE}pub/gnucash/sources/stable/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 11:13:42 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/03 22:21:21 jasper Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	4
+REVISION=	5
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -16,14 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
-		fontconfig freetype glib-2.0 gmodule-2.0 \
-		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread z dbus-1 dbus-glib-1 gio-2.0 \
-		pthread-stubs xcb gthread-2.0 xcb-render xcb-render-util \
-		gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 xml2 ical icalss \
-		icalvcal gringotts notify gtkspell
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gringotts gthread-2.0 gtk-x11-2.0 gtkspell
+WANTLIB += ical icalss icalvcal m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
+WANTLIB += xcb-render xcb-shm xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 

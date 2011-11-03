@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/03 22:21:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	4
+REVISION=	5
 EPOCH=		0
 
 CATEGORIES=	productivity x11
@@ -31,6 +31,7 @@ WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += dbus-1 dbus-glib-1 ffi stdc++
 
 MODULES=	devel/gettext \
 		textproc/intltool \
