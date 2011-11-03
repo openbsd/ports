@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/20 20:28:44 robert Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/03 20:16:43 naddy Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -52,8 +52,7 @@ TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}
 
 post-patch:
-	touch ${WRKSRC}/aclocal.m4
-	touch ${WRKSRC}/Makefile.in
+	cd ${WRKSRC}; touch aclocal.m4 Makefile.in configure
 
 do-regress:
 	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
