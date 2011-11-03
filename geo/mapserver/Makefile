@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/16 16:03:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/03 17:35:12 jasper Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -11,13 +11,13 @@ COMMENT-perl=	Perl Mapscript binding
 V =		6.0.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main = 0
+REVISION-main = 1
 PKGNAME-utils=	mapserver-utils-${V}
-REVISION-utils = 0
+REVISION-utils = 1
 PKGNAME-php=	php-mapscript-${V}
-REVISION-php =	1
+REVISION-php =	2
 PKGNAME-perl=	p5-mapscript-${V}
-REVISION-perl = 0
+REVISION-perl = 1
 
 CATEGORIES=	geo www
 
@@ -47,8 +47,8 @@ RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
 WANTLIB += gdal geos_c gd stdc++
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo drm fontconfig glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB += GL X11
+WANTLIB += cairo Xrender fontconfig glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm
 
 WANTLIB-main=	${WANTLIB} pthread c gif

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/29 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/03 17:35:12 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=		"-DG_CONST_RETURN=const"
@@ -7,7 +7,7 @@ COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	6
+REVISION=	7
 
 CATEGORIES =	geo x11
 
@@ -38,18 +38,19 @@ MODGNOME_TOOLS= 	goi vala yelp
 LIB_DEPENDS =	geo/libchamplain/core>=0.8.0 \
 		devel/ethos \
 		geo/geoclue \
-		net/librest>=0.7.9
+		net/librest>=0.7.9 \
+		devel/gobject-introspection
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 expat fontconfig freetype
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0
-WANTLIB += gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z ethos-1.0 ethos-ui-1.0
-WANTLIB += proxy Xxf86vm dbus-1 dbus-glib-1 drm gnome-keyring
-WANTLIB += champlain-0.8 champlain-gtk-0.8 soup-gnome-2.4
-WANTLIB += geoclue rest-0.7 xcb-render xcb-shm
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
+WANTLIB += champlain-0.8 champlain-gtk-0.8 clutter-glx-1.0 clutter-gtk-0.10
+WANTLIB += dbus-1 dbus-glib-1 drm ethos-1.0 ethos-ui-1.0 expat
+WANTLIB += ffi fontconfig freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += geoclue gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
+WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rest-0.7 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 stdc++ xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 .include <bsd.port.mk>

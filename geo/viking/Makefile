@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/03 17:35:12 jasper Exp $
 
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.0.2
-REVISION=		0
+REVISION=	1
 
 CATEGORIES =	geo x11
 
@@ -34,12 +34,12 @@ LIB_DEPENDS =	misc/gpsd \
 		x11/gtk+2
 RUN_DEPENDS =	geo/gpsbabel
 
-WANTLIB = gps curl idn gdk-x11-2.0 gtk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo crypto expat
-WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs ssl
-WANTLIB += GL Xxf86vm drm xcb-shm xcb xcb-render z
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo crypto curl expat fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gps gthread-2.0 gtk-x11-2.0
+WANTLIB += idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread pthread-stubs ssl xcb xcb-render xcb-shm
+WANTLIB += z
 
 .include <bsd.port.mk>

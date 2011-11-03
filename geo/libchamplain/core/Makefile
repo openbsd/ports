@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/25 18:30:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/03 17:35:12 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=		"-DG_CONST_RETURN=const"
@@ -6,7 +6,7 @@ CFLAGS +=		"-DG_CONST_RETURN=const"
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  champlain-0.8       0.0          # 1.2
 SHARED_LIBS +=  champlain-gtk-0.8   0.0          # 1.2
@@ -19,7 +19,7 @@ WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 json-glib-1.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z ffi stdc++
 
 MODULES=		devel/gettext
 

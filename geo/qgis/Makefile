@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/18 07:06:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/03 17:35:12 jasper Exp $
 
 BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
@@ -7,7 +7,7 @@ COMMENT =	desktop geographical information system
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 DISTNAME =	qgis-1.7.0
-REVISION=		0
+REVISION=	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -53,7 +53,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 
 WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		fontconfig freetype glib-2.0 gthread-2.0 lcms m \
-		mng png pthread gobject-2.0 util stdc++ z proj \
+		mng png pthread util stdc++ z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi
 WANTLIB += ${MODPY_WANTLIB} jpeg tiff

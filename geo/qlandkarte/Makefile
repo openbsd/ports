@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/03 17:35:12 jasper Exp $
 
 COMMENT=	garmin gps map management tool
 
 DISTNAME=	QLandkarte_final
 PKGNAME=	qlandkarte-0.7.4
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	geo x11
 
@@ -26,10 +26,8 @@ LIB_DEPENDS+=	devel/proj \
 		devel/libusb
 RUN_DEPENDS=	devel/desktop-file-utils
 
-WANTLIB+=	ICE SM X11 Xext Xi Xinerama Xrender \
-		fontconfig freetype glib-2.0 gthread-2.0 \
-		c m png pthread stdc++ z expat gobject-2.0 \
-		pthread-stubs xcb proj usb QtGui QtNetwork QtXml
+WANTLIB += QtGui QtNetwork QtXml X11 Xext c m proj pthread stdc++
+WANTLIB += usb
 
 PORTHOME=	${WRKDIR}
 
