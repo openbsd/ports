@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/03 17:46:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	scim input method module for fcitx
 V=		3.1.1
 DISTNAME=	scim-fcitx.$V
 PKGNAME=	scim-fcitx-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	inputmethods chinese
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c m stdc++ scim-1.0
+WANTLIB=	c m stdc++ scim-1.0 pthread
 
 MODULES=	devel/gettext
 

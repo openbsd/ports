@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/03 17:46:21 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	smart common input method platform
 
 DISTNAME =	scim-1.4.9
-REVISION =	10
+REVISION =	11
 
 SHARED_LIBS +=  scim-1.0           0.0           # .10.4
 SHARED_LIBS +=  scim-x11utils-1.0  0.0           # .10.4
@@ -28,7 +28,8 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
 		gio-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread pthread-stubs stdc++ xcb z gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 xcb-render xcb-render-util
+		gdk-x11-2.0 gdk_pixbuf-2.0 xcb-render \
+		GL Xxf86vm drm ffi xcb-shm
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=scim/}
 

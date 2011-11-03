@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/10/03 06:42:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/11/03 17:46:21 jasper Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -17,10 +17,10 @@ PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 
-REVISION-main=	7
-REVISION-gtk=	9
-REVISION-qt=	4
-REVISION-kde=	4
+REVISION-main=	8
+REVISION-gtk=	10
+REVISION-qt=	5
+REVISION-kde=	5
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -48,7 +48,7 @@ USE_GROFF =	Yes
 AUTOCONF_VERSION=	2.62
 SUBST_VARS=	MODQT_PLUGINS
 
-Wcommon =	X11 Xau Xdmcp Xext c m pthread-stubs xcb \
+Wcommon =	X11 Xext c m xcb \
 		Xrender fontconfig freetype expat z \
 		${MODGETTEXT_WANTLIB} ${MODLIBICONV_WANTLIB}
 
@@ -93,7 +93,7 @@ WANTLIB-gtk=	${Wcommon} ${Wx} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		pangocairo-1.0 cairo png Xcomposite xcb-render xcb-shm \
 		pcre pixman-1 gtk-x11-2.0 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gthread-2.0 pthread anthy anthydic \
-		uim-custom
+		uim-custom Xau Xdmcp ffi pthread-stubs stdc++
 
 MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11'

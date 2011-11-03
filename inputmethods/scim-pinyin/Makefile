@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/03 17:46:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for pinyin
 
 DISTNAME=	scim-pinyin-0.5.91
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	inputmethods chinese
 
@@ -26,7 +26,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		pangoft2-1.0 pcre pixman-1 png pthread-stubs stdc++ xcb z gio-2.0 \
 		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 scim-1.0 \
 		scim-gtkutils-1.0 scim-x11utils-1.0 gthread-2.0 xcb-render \
-		xcb-render-util
+		GL Xxf86vm drm ffi xcb-shm
 
 MODULES=	devel/gettext
 
