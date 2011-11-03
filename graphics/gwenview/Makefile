@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/03 14:57:23 jasper Exp $
 
 COMMENT=	image viewer for KDE
 
 DISTNAME=	gwenview-1.4.2
-REVISION =	9
+REVISION =	10
 SHARED_LIBS +=	gwenviewcore         5.0      # .1.0
 CATEGORIES=	graphics x11 x11/kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gwenview/}
