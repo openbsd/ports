@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:10 espie Exp $ 
+# $OpenBSD: Makefile,v 1.17 2011/11/03 20:28:09 jasper Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
 DISTNAME=	netcdf-3.6.2
+REVISION=	0
 CATEGORIES=	math
 
 SHARED_LIBS=	netcdf		4.0 \
@@ -23,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m
+WANTLIB=		c m stdc++
 
 MASTER_SITES=		ftp://ftp.unidata.ucar.edu/pub/netcdf/
 

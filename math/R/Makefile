@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/11/03 20:28:09 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.8.1
-REVISION=	5
+REVISION=	6
 SHARED_LIBS=	Rlapack 29.0 \
 		Rblas	29.0
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= 	GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xmu Xrender Xss Xt \
-		Xxf86vm bz2 c cairo drm expat fontconfig freetype glib-2.0 \
+WANTLIB= 	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
+		bz2 c cairo expat fontconfig freetype glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ncurses pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png  pthread-stubs \
 		readline tiff xcb xcb-render xcb-shm z \

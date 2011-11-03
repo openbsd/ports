@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/11/03 20:28:09 jasper Exp $
 
 COMMENT=	GTK2-based scientific calculator
 
 DISTNAME=	galculator-1.3.4
-REVISION=	3
+REVISION=	4
 CATEGORIES=	math
 HOMEPAGE=	http://galculator.sourceforge.net/
 
@@ -22,6 +22,8 @@ WANTLIB=	X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m \
 		pango-1.0 xml2 z pangocairo-1.0 cairo png \
 		pangoft2-1.0 pixman-1 pthread-stubs xcb
+WANTLIB += GL Xxf86vm drm ffi gthread-2.0 pthread stdc++ xcb-render
+WANTLIB += xcb-shm
 
 MODULES=	devel/gettext \
 		textproc/intltool

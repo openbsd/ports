@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/03 20:28:09 jasper Exp $
 
 COMMENT=	spreadsheet program under X11
 
 DISTNAME=	xspread3.1.1c
 PKGNAME=	xspread-3.1.1c
-REVISION=	0
+REVISION=	1
 CATEGORIES=	math
 
 # GPLv2
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		X11 c curses m pthread-stubs termlib xcb
+WANTLIB=		X11 c curses m termlib
 
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 

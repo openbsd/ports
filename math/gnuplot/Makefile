@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2011/10/02 13:14:15 nigel Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/03 20:28:09 jasper Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
 V =		4.4
 PATCHLEVEL =	3
-REVISION =	2
+REVISION =	3
 DISTNAME =	gnuplot-${V}.${PATCHLEVEL}
 CATEGORIES =	math graphics
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gnuplot/}
@@ -58,7 +58,7 @@ CONFIGURE_ARGS += --without-cairo
 MODULES +=	devel/gettext
 LIB_DEPENDS +=	devel/pango	\
 		graphics/cairo
-WANTLIB +=	GL Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm drm \
+WANTLIB +=	GL Xrender \
 		expat gmodule-2.0 gobject-2.0 gthread-2.0 pixman-1 \
 		pthread pthread-stubs xcb xcb-render xcb-shm \
 		pangocairo-1.0 cairo glib-2.0 pango-1.0 pangoft2-1.0

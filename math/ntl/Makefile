@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/03 20:28:09 jasper Exp $
 
 COMMENT =	Victor Shoup's Number Theory Library
 
 DISTNAME =	ntl-5.5.2
-REVISION =	0
+REVISION =	1
 SHARED_LIBS =	ntl	0.0	# .0.1
 CATEGORIES =	math
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 
-WANTLIB =		m gmp
+WANTLIB =		m gmp stdc++
 
 MASTER_SITES =		${HOMEPAGE}
 
