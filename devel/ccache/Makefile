@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/16 20:18:54 schwarze Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/03 22:13:23 jasper Exp $
 
 COMMENT =	compiler cache
 
 DISTNAME =	ccache-3.1.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # The ccache(1) manual page causes ERRORs with mandoc(1),
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB += c
+WANTLIB += c m z
 
 MASTER_SITES =	http://samba.org/ftp/ccache/
 

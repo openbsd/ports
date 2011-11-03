@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/07 16:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/03 22:13:23 jasper Exp $
 
 COMMENT=	implementation of the Real-time Transport Protocol
 
 DISTNAME=	ccrtp-1.7.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ccrtp/}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	crypto ssl ccgnu2>=1
+WANTLIB=	crypto ssl ccgnu2>=1m stdc++
 
 LIB_DEPENDS=	devel/commoncpp
 

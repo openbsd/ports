@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:48 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/03 22:13:23 jasper Exp $
 
 COMMENT=	convert ASP code to PHP code
 
 DISTNAME=	asp2php-0.77.3
-REVISION=	6
+REVISION=	7
 CATEGORIES=	devel www
 
 HOMEPAGE=	http://asp2php.naken.cc/
@@ -27,11 +27,12 @@ ALL_TARGET =	all gui
 
 MODULES =	devel/gettext
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
+WANTLIB += GL gthread-2.0 pthread xcb-render xcb-shm
 .endif
 
 WRKDIST=	${WRKDIR}/asp2php

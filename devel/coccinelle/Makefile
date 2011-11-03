@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/03 22:13:23 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	program matching and transformation engine
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc7
-REVISION =	2
+REVISION =	3
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB += c m pthread util ${MODPY_WANTLIB}
+WANTLIB += c m pthread util pcre ${MODPY_WANTLIB}
 
 MASTER_SITES = ${HOMEPAGE}distrib/
 

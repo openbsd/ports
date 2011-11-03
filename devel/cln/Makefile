@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/08/18 09:50:13 pirofti Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/03 22:13:23 jasper Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
@@ -6,6 +6,7 @@ COMMENT =	library for efficient computations
 
 DISTNAME =	cln-1.3.2
 SHARED_LIBS +=  cln                  1.0      # .5.2
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.ginac.de/CLN/
@@ -21,7 +22,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB	+=		c m stdc++ gmp
+WANTLIB	+=		m stdc++ gmp
 
 LIB_DEPENDS =		devel/gmp 
 

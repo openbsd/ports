@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:48 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/03 22:13:23 jasper Exp $
 
 COMMENT=	companion library to APR
 
 V=		1.2.10
 DISTNAME=	apr-util-$V
 FULLPKGNAME=	apr-util${MT}-$V${FLAVOR_EXT:S/-mt//}
-REVISION =	7
+REVISION =	8
 SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
 
 CATEGORIES=	devel
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
-WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber ldap
+WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber-2.4 ldap-2.4
 .endif
 
 MT?=
