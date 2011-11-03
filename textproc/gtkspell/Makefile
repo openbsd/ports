@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/11/03 20:13:20 jasper Exp $
 
 COMMENT=	gtk2 spelling checker
 DISTNAME=	gtkspell-2.0.16
 SHARED_LIBS=	gtkspell 1.0 # .0.0
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc x11
 
@@ -25,8 +25,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		fontconfig freetype glib-2.0 gmodule-2.0 \
 		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs stdc++ xcb z gio-2.0 \
-		gthread-2.0 xcb-render xcb-render-util gdk_pixbuf-2.0 \
-		enchant>=5 gdk-x11-2.0 gtk-x11-2.0
+		gthread-2.0 xcb-render gdk_pixbuf-2.0 drm ffi \
+		enchant>=5 gdk-x11-2.0 gtk-x11-2.0 GL Xxf86vm xcb-shm
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

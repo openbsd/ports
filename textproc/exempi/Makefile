@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/04/09 08:59:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/03 20:13:20 jasper Exp $
 
 COMMENT =		implementation of XMP
 DISTNAME =		exempi-2.1.1
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -17,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += expat z
+WANTLIB += expat z m stdc++
 
 MODULES =		converters/libiconv
 MASTER_SITES =		http://libopenraw.freedesktop.org/download/
