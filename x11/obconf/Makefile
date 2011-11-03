@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/02 19:12:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/11/03 16:43:33 jasper Exp $
 
 COMMENT=	configuration utility for openbox
 
 # git clone of b7f1c6ac679bbda61bc4ca13267f03022cbfde74
 # which will become 2.0.4 when upstream releases a new version.
 DISTNAME=	obconf-2.0.3.1
+REVISION=	0
 CATEGORIES=	x11
 
-HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf
+HOMEPAGE=	http://openbox.org/wiki/Obconf
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
