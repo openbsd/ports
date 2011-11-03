@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/06 16:31:57 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/03 10:08:43 ajacoutot Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4.2
 CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 HOMEPAGE=	http://monodevelop.com/
 
@@ -60,5 +62,8 @@ pre-configure:
 		perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/$${i}; \
 	done
 	${SUBST_CMD} ${WRKSRC}/theme-icons/icon-theme-installer
+	perl -pi -e 's,^prefix=.*,prefix=\@prefix\@,g' \
+		${WRKSRC}/monodevelop.pc.in \
+		${WRKSRC}/monodevelop-core-addins.pc.in
 
 .include <bsd.port.mk>
