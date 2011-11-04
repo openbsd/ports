@@ -1,0 +1,20 @@
+$OpenBSD: patch-support_installation_actions_tcl,v 1.1 2011/11/04 11:45:21 stu Exp $
+--- support/installation/actions.tcl.orig	Mon Oct 17 12:39:01 2011
++++ support/installation/actions.tcl	Mon Oct 17 12:44:25 2011
+@@ -68,6 +68,16 @@ proc _tci {module libdir} {
+     return
+ }
+ 
++proc _trt {module libdir} {
++    global distribution
++
++    _tcr $module $libdir
++    xcopy \
++	    [file join $distribution modules $module] \
++	    [file join $libdir $module] \
++	    0 *.template
++    return
++}
+ 
+ proc _manfile {f format ext docdir} {
+     global distribution argv argc argv0 config

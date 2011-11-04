@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/05 16:27:24 stu Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/04 11:45:21 stu Exp $
 bin/dtplite
-bin/page
-bin/tcldocstrip
 lib/tcl/aes/
 lib/tcl/aes/aes.tcl
 lib/tcl/aes/pkgIndex.tcl
@@ -22,6 +20,7 @@ lib/tcl/base32/base32hex_c.tcl
 lib/tcl/base32/base32hex_tcl.tcl
 lib/tcl/base32/pkgIndex.tcl
 lib/tcl/base64/
+lib/tcl/base64/ascii85.tcl
 lib/tcl/base64/base64.tcl
 lib/tcl/base64/base64c.tcl
 lib/tcl/base64/pkgIndex.tcl
@@ -210,6 +209,14 @@ lib/tcl/fumagic/filetypes.tcl
 lib/tcl/fumagic/mimetypes.tcl
 lib/tcl/fumagic/pkgIndex.tcl
 lib/tcl/fumagic/rtcore.tcl
+lib/tcl/gpx/
+lib/tcl/gpx/gpx.tcl
+lib/tcl/gpx/pkgIndex.tcl
+lib/tcl/grammar_aycock/
+lib/tcl/grammar_aycock/aycock-build.tcl
+lib/tcl/grammar_aycock/aycock-debug.tcl
+lib/tcl/grammar_aycock/aycock-runtime.tcl
+lib/tcl/grammar_aycock/pkgIndex.tcl
 lib/tcl/grammar_fa/
 lib/tcl/grammar_fa/dacceptor.tcl
 lib/tcl/grammar_fa/dexec.tcl
@@ -227,6 +234,9 @@ lib/tcl/grammar_peg/
 lib/tcl/grammar_peg/peg.tcl
 lib/tcl/grammar_peg/peg_interp.tcl
 lib/tcl/grammar_peg/pkgIndex.tcl
+lib/tcl/hook/
+lib/tcl/hook/hook.tcl
+lib/tcl/hook/pkgIndex.tcl
 lib/tcl/html/
 lib/tcl/html/html.tcl
 lib/tcl/html/pkgIndex.tcl
@@ -239,6 +249,9 @@ lib/tcl/http/pkgIndex.tcl
 lib/tcl/ident/
 lib/tcl/ident/ident.tcl
 lib/tcl/ident/pkgIndex.tcl
+lib/tcl/imap4/
+lib/tcl/imap4/imap4.tcl
+lib/tcl/imap4/pkgIndex.tcl
 lib/tcl/inifile/
 lib/tcl/inifile/ini.tcl
 lib/tcl/inifile/pkgIndex.tcl
@@ -296,12 +309,14 @@ lib/tcl/math/fourier.tcl
 lib/tcl/math/fuzzy.tcl
 lib/tcl/math/geometry.tcl
 lib/tcl/math/interpolate.tcl
+lib/tcl/math/kruskal.tcl
 lib/tcl/math/linalg.tcl
 lib/tcl/math/liststat.tcl
 lib/tcl/math/machineparameters.tcl
 lib/tcl/math/math.tcl
 lib/tcl/math/misc.tcl
 lib/tcl/math/mvlinreg.tcl
+lib/tcl/math/numtheory.tcl
 lib/tcl/math/optimize.tcl
 lib/tcl/math/pdf_stat.tcl
 lib/tcl/math/pkgIndex.tcl
@@ -312,6 +327,7 @@ lib/tcl/math/rational_funcs.tcl
 lib/tcl/math/romannumerals.tcl
 lib/tcl/math/special.tcl
 lib/tcl/math/statistics.tcl
+lib/tcl/math/symdiff.tcl
 lib/tcl/math/tclIndex
 lib/tcl/md4/
 lib/tcl/md4/md4.tcl
@@ -333,6 +349,9 @@ lib/tcl/mime/smtp.tcl
 lib/tcl/multiplexer/
 lib/tcl/multiplexer/multiplexer.tcl
 lib/tcl/multiplexer/pkgIndex.tcl
+lib/tcl/namespacex/
+lib/tcl/namespacex/namespacex.tcl
+lib/tcl/namespacex/pkgIndex.tcl
 lib/tcl/ncgi/
 lib/tcl/ncgi/ncgi.tcl
 lib/tcl/ncgi/pkgIndex.tcl
@@ -364,7 +383,9 @@ lib/tcl/page/gen_peg_canon.tcl
 lib/tcl/page/gen_peg_cpkg.tcl
 lib/tcl/page/gen_peg_hb.tcl
 lib/tcl/page/gen_peg_me.tcl
+lib/tcl/page/gen_peg_me.template
 lib/tcl/page/gen_peg_mecpu.tcl
+lib/tcl/page/gen_peg_mecpu.template
 lib/tcl/page/gen_peg_ser.tcl
 lib/tcl/page/gen_tree_text.tcl
 lib/tcl/page/parse_lemon.tcl
@@ -399,6 +420,9 @@ lib/tcl/page/util_norm_lemon.tcl
 lib/tcl/page/util_norm_peg.tcl
 lib/tcl/page/util_peg.tcl
 lib/tcl/page/util_quote.tcl
+lib/tcl/pki/
+lib/tcl/pki/pkgIndex.tcl
+lib/tcl/pki/pki.tcl
 lib/tcl/pluginmgr/
 lib/tcl/pluginmgr/pkgIndex.tcl
 lib/tcl/pluginmgr/pluginmgr.tcl
@@ -416,6 +440,46 @@ lib/tcl/pop3d/pop3d_udb.tcl
 lib/tcl/profiler/
 lib/tcl/profiler/pkgIndex.tcl
 lib/tcl/profiler/profiler.tcl
+lib/tcl/pt/
+lib/tcl/pt/char.tcl
+lib/tcl/pt/configuration.tcl
+lib/tcl/pt/paths.tcl
+lib/tcl/pt/pkgIndex.tcl
+lib/tcl/pt/pt_astree.tcl
+lib/tcl/pt/pt_cparam_config_critcl.tcl
+lib/tcl/pt/pt_parse_peg.tcl
+lib/tcl/pt/pt_parse_peg_c.tcl
+lib/tcl/pt/pt_parse_peg_tcl.tcl
+lib/tcl/pt/pt_peg_container.tcl
+lib/tcl/pt/pt_peg_container_peg.tcl
+lib/tcl/pt/pt_peg_export.tcl
+lib/tcl/pt/pt_peg_export_container.tcl
+lib/tcl/pt/pt_peg_export_json.tcl
+lib/tcl/pt/pt_peg_export_peg.tcl
+lib/tcl/pt/pt_peg_from_json.tcl
+lib/tcl/pt/pt_peg_from_peg.tcl
+lib/tcl/pt/pt_peg_import.tcl
+lib/tcl/pt/pt_peg_import_json.tcl
+lib/tcl/pt/pt_peg_import_peg.tcl
+lib/tcl/pt/pt_peg_interp.tcl
+lib/tcl/pt/pt_peg_op.tcl
+lib/tcl/pt/pt_peg_to_container.tcl
+lib/tcl/pt/pt_peg_to_cparam.tcl
+lib/tcl/pt/pt_peg_to_json.tcl
+lib/tcl/pt/pt_peg_to_param.tcl
+lib/tcl/pt/pt_peg_to_peg.tcl
+lib/tcl/pt/pt_peg_to_tclparam.tcl
+lib/tcl/pt/pt_pegrammar.tcl
+lib/tcl/pt/pt_pexpr_op.tcl
+lib/tcl/pt/pt_pexpression.tcl
+lib/tcl/pt/pt_pgen.tcl
+lib/tcl/pt/pt_rdengine.tcl
+lib/tcl/pt/pt_rdengine_c.tcl
+lib/tcl/pt/pt_rdengine_oo.tcl
+lib/tcl/pt/pt_rdengine_tcl.tcl
+lib/tcl/pt/pt_tclparam_config_snit.tcl
+lib/tcl/pt/pt_tclparam_config_tcloo.tcl
+lib/tcl/pt/text_write.tcl
 lib/tcl/rc4/
 lib/tcl/rc4/pkgIndex.tcl
 lib/tcl/rc4/rc4.tcl
@@ -492,6 +556,7 @@ lib/tcl/struct/pool.tcl
 lib/tcl/struct/prioqueue.tcl
 lib/tcl/struct/queue.tcl
 lib/tcl/struct/queue_c.tcl
+lib/tcl/struct/queue_oo.tcl
 lib/tcl/struct/queue_tcl.tcl
 lib/tcl/struct/record.tcl
 lib/tcl/struct/sets.tcl
@@ -500,6 +565,7 @@ lib/tcl/struct/sets_tcl.tcl
 lib/tcl/struct/skiplist.tcl
 lib/tcl/struct/stack.tcl
 lib/tcl/struct/stack_c.tcl
+lib/tcl/struct/stack_oo.tcl
 lib/tcl/struct/stack_tcl.tcl
 lib/tcl/struct/struct.tcl
 lib/tcl/struct/struct1.tcl
@@ -510,6 +576,9 @@ lib/tcl/struct/tree_tcl.tcl
 lib/tcl/tar/
 lib/tcl/tar/pkgIndex.tcl
 lib/tcl/tar/tar.tcl
+lib/tcl/tepam/
+lib/tcl/tepam/pkgIndex.tcl
+lib/tcl/tepam/tepam.tcl
 lib/tcl/term/
 lib/tcl/term/ansi/
 lib/tcl/term/ansi/code/
@@ -630,9 +699,11 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/ansi_code.n
 @man man/mann/ansi_ctrlu.n
 @man man/mann/ansi_send.n
+@man man/mann/ascii85.n
 @man man/mann/asn.n
 @man man/mann/async.n
 @man man/mann/autoproxy.n
+@man man/mann/aycock.n
 @man man/mann/base32.n
 @man man/mann/base32core.n
 @man man/mann/base32hex.n
@@ -712,15 +783,16 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/ftpd.n
 @man man/mann/fuzzy.n
 @man man/mann/gasm.n
-@man man/mann/geometry.n
 @man man/mann/graph.n
 @man man/mann/graph1.n
 @man man/mann/graphops.n
+@man man/mann/hook.n
 @man man/mann/html.n
 @man man/mann/html_cssdefaults.n
 @man man/mann/htmlparse.n
 @man man/mann/huddle.n
 @man man/mann/ident.n
+@man man/mann/imap4.n
 @man man/mann/imenu.n
 @man man/mann/import.n
 @man man/mann/import_docidx.n
@@ -748,6 +820,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/map_slippy_fetcher.n
 @man man/mann/mapproj.n
 @man man/mann/math.n
+@man man/mann/math_geometry.n
 @man man/mann/matrix.n
 @man man/mann/matrix1.n
 @man man/mann/md4.n
@@ -764,7 +837,6 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/mimetypes.n
 @man man/mann/montecarlo.n
 @man man/mann/mpexpand.n
-@man man/mann/msgcat.n
 @man man/mann/msgcat_c.n
 @man man/mann/msgcat_de.n
 @man man/mann/msgcat_en.n
@@ -772,17 +844,22 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/multi.n
 @man man/mann/multiop.n
 @man man/mann/multiplexer.n
+@man man/mann/namespacex.n
 @man man/mann/ncgi.n
 @man man/mann/nmea.n
+@man man/mann/nns.n
 @man man/mann/nns_auto.n
 @man man/mann/nns_client.n
 @man man/mann/nns_common.n
 @man man/mann/nns_intro.n
 @man man/mann/nns_protocol.n
 @man man/mann/nns_server.n
+@man man/mann/nnsd.n
+@man man/mann/nnslog.n
 @man man/mann/nntp.n
 @man man/mann/nroff_manmacros.n
 @man man/mann/ntp_time.n
+@man man/mann/numtheory.n
 @man man/mann/optimize.n
 @man man/mann/otp.n
 @man man/mann/page.n
@@ -797,6 +874,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/peg.n
 @man man/mann/peg_interp.n
 @man man/mann/picoirc.n
+@man man/mann/pki.n
 @man man/mann/pluginmgr.n
 @man man/mann/png.n
 @man man/mann/polynomials.n
@@ -807,6 +885,44 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/pop3d_udb.n
 @man man/mann/prioqueue.n
 @man man/mann/profiler.n
+@man man/mann/pt.n
+@man man/mann/pt_astree.n
+@man man/mann/pt_cparam_config_critcl.n
+@man man/mann/pt_from_api.n
+@man man/mann/pt_introduction.n
+@man man/mann/pt_json_language.n
+@man man/mann/pt_param.n
+@man man/mann/pt_parser_api.n
+@man man/mann/pt_peg_container.n
+@man man/mann/pt_peg_container_peg.n
+@man man/mann/pt_peg_export.n
+@man man/mann/pt_peg_export_container.n
+@man man/mann/pt_peg_export_json.n
+@man man/mann/pt_peg_export_peg.n
+@man man/mann/pt_peg_from_container.n
+@man man/mann/pt_peg_from_json.n
+@man man/mann/pt_peg_from_peg.n
+@man man/mann/pt_peg_import.n
+@man man/mann/pt_peg_import_container.n
+@man man/mann/pt_peg_import_json.n
+@man man/mann/pt_peg_import_peg.n
+@man man/mann/pt_peg_interp.n
+@man man/mann/pt_peg_introduction.n
+@man man/mann/pt_peg_language.n
+@man man/mann/pt_peg_to_container.n
+@man man/mann/pt_peg_to_cparam.n
+@man man/mann/pt_peg_to_json.n
+@man man/mann/pt_peg_to_param.n
+@man man/mann/pt_peg_to_peg.n
+@man man/mann/pt_peg_to_tclparam.n
+@man man/mann/pt_pegrammar.n
+@man man/mann/pt_pexpr_op.n
+@man man/mann/pt_pexpression.n
+@man man/mann/pt_pgen.n
+@man man/mann/pt_rdengine.n
+@man man/mann/pt_tclparam_config_snit.n
+@man man/mann/pt_tclparam_config_tcloo.n
+@man man/mann/pt_to_api.n
 @man man/mann/qcomplex.n
 @man man/mann/queue.n
 @man man/mann/rational_funcs.n
@@ -845,6 +961,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/struct_tree1.n
 @man man/mann/structure.n
 @man man/mann/sum.n
+@man man/mann/symdiff.n
 @man man/mann/tabify.n
 @man man/mann/tar.n
 @man man/mann/tcl_parse.n
@@ -853,6 +970,10 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/tcllib_dns.n
 @man man/mann/tcllib_interp.n
 @man man/mann/tcllib_ip.n
+@man man/mann/tcllib_msgcat.n
+@man man/mann/tepam_argument_dialogbox.n
+@man man/mann/tepam_introduction.n
+@man man/mann/tepam_procedure.n
 @man man/mann/term.n
 @man man/mann/term_bind.n
 @man man/mann/term_send.n
@@ -881,6 +1002,12 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/yaml.n
 @man man/mann/yencode.n
 share/examples/tcllib/
+share/examples/tcllib/apps/
+share/examples/tcllib/apps/nns
+share/examples/tcllib/apps/nnsd
+share/examples/tcllib/apps/nnslog
+share/examples/tcllib/apps/page
+share/examples/tcllib/apps/tcldocstrip
 share/examples/tcllib/bibtex/
 share/examples/tcllib/bibtex/bibtex.tcl
 share/examples/tcllib/csv/
@@ -966,6 +1093,15 @@ share/examples/tcllib/struct/
 share/examples/tcllib/struct/README
 share/examples/tcllib/struct/diff.tcl
 share/examples/tcllib/struct/diff2.tcl
+share/examples/tcllib/tepam/
+share/examples/tcllib/tepam/1_procedure_introduction.demo
+share/examples/tcllib/tepam/1a_procedure_subcommand.demo
+share/examples/tcllib/tepam/1b_procedure_interactive_widgets.demo
+share/examples/tcllib/tepam/1c_procedure_interactive_aux.demo
+share/examples/tcllib/tepam/2_argument_dialogbox_introduction.demo
+share/examples/tcllib/tepam/2a_argument_dialogbox_all_widgets.demo
+share/examples/tcllib/tepam/2b_argument_dialogbox_context.demo
+share/examples/tcllib/tepam/tepam_demo.tcl
 share/examples/tcllib/term/
 share/examples/tcllib/term/attributes
 share/examples/tcllib/term/box

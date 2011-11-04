@@ -1,0 +1,43 @@
+$OpenBSD: patch-examples_tepam_tepam_demo_tcl,v 1.1 2011/11/04 11:45:21 stu Exp $
+--- examples/tepam/tepam_demo.tcl.orig	Tue Jan 25 00:38:02 2011
++++ examples/tepam/tepam_demo.tcl	Thu Oct 13 13:41:51 2011
+@@ -1,6 +1,7 @@
+-#!/bin/sh
+-# Evaluating the wish origin \
+-exec `which wish` "$0" "$@"
++#! /bin/sh
++# the next line restarts with tclsh \
++exec tclsh "$0" ${1+"$@"}
++
+ ##########################################################################
+ # TEPAM - Tcl's Enhanced Procedure and Argument Manager
+ ##########################################################################
+@@ -161,7 +162,8 @@ proc OpenConsole {} {
+          set OPT(slaveexit) "close"
+       }
+       # Search inside the *n.x envirement for TkCon ...
+-      catch {set TkConPath [exec csh -f -c {which tkcon.tcl}]}
++      set TkConPath ""
++      catch {set TkConPath [exec csh -f -c {which tkcon}]}
+       # Search inide the Windows envirement for TkCon ...
+       catch {
+       	package require registry
+@@ -183,15 +185,15 @@ proc OpenConsole {} {
+          }
+          tkcon show
+       } else {
+-         if {$tcl_platform(platform)=={windows}} {
++         if {$::tcl_platform(platform)=={windows}} {
+             console show
+          } else {
+-            error "Cannot source tkcon.tcl."
++            error "Cannot source tkcon."
+          }
+       }
+    } else {
+       if {[catch {wm deiconify $::tkcon::PRIV(root)}]} {
+-         if {$tcl_platform(platform)=={windows}} {
++         if {$::tcl_platform(platform)=={windows}} {
+             console show
+          } else {
+             error "Cannot deiconify tkcon!"

@@ -1,7 +1,7 @@
-$OpenBSD: patch-support_devel_sak_test_run_tcl,v 1.2 2011/01/05 16:27:24 stu Exp $
---- support/devel/sak/test/run.tcl.orig	Mon Dec  7 09:56:49 2009
-+++ support/devel/sak/test/run.tcl	Mon Oct  4 15:41:21 2010
-@@ -684,6 +684,7 @@ proc ::sak::test::run::SetupError {} {
+$OpenBSD: patch-support_devel_sak_test_run_tcl,v 1.3 2011/11/04 11:45:21 stu Exp $
+--- support/devel/sak/test/run.tcl.orig	Tue Jan 25 00:37:57 2011
++++ support/devel/sak/test/run.tcl	Thu Oct 13 10:37:23 2011
+@@ -770,6 +770,7 @@ proc ::sak::test::run::SetupError {} {
  # ###
  
  proc ::sak::test::run::+= {string} {
@@ -9,7 +9,7 @@ $OpenBSD: patch-support_devel_sak_test_run_tcl,v 1.2 2011/01/05 16:27:24 stu Exp
      variable araw
      if {$araw} return
      variable aprefix
-@@ -693,6 +694,7 @@ proc ::sak::test::run::+= {string} {
+@@ -779,6 +780,7 @@ proc ::sak::test::run::+= {string} {
  }
  
  proc ::sak::test::run::= {string} {
@@ -17,7 +17,7 @@ $OpenBSD: patch-support_devel_sak_test_run_tcl,v 1.2 2011/01/05 16:27:24 stu Exp
      variable araw
      if {$araw} return
      variable aprefix
-@@ -701,6 +703,7 @@ proc ::sak::test::run::= {string} {
+@@ -787,6 +789,7 @@ proc ::sak::test::run::= {string} {
  }
  
  proc ::sak::test::run::=| {string} {

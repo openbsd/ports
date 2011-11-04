@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/04 11:45:21 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
-DISTNAME =	tcllib-1.12
+DISTNAME =	tcllib-1.13
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -22,9 +22,9 @@ NO_BUILD =	Yes
 PKG_ARCH =	*
 
 SCRIPTS_TCLSH_APPS = \
-	dtplite page tcldocstrip
+	dtplite page nns nnsd nnslog tcldocstrip
 
-SCRIPTS_TCLSH =	\
+SCRIPTS_TCLSH = \
 	bibtex/bibtex.tcl \
 	csv/csv2html csv/csvcut csv/csvdiff csv/csvjoin csv/csvsort csv/csvuniq \
 	ftp/ftpdemo.tcl ftp/ftpvalid \
@@ -38,6 +38,7 @@ SCRIPTS_TCLSH =	\
 	sasl/saslclient.tcl \
 	smtpd/tcl_smtpd smtpd/tk_smtpd \
 	struct/diff.tcl struct/diff2.tcl \
+	tepam/tepam_demo.tcl \
 	term/attributes term/box term/box2 term/clear term/colors term/frame \
 	term/graphics term/imenu term/ipager term/menu term/menu2 term/para \
 	term/title \
@@ -52,8 +53,6 @@ SCRIPTS_TCLSH_NOEXEC = \
 	nntp/postnews
 
 do-configure:
-	mv	${WRKSRC}/modules/simulation/random.man \
-		${WRKSRC}/modules/simulation/simulation_random.man
 	@${MODTCL_TCLSH_ADJ} \
 		${SCRIPTS_TCLSH_APPS:S!^!${WRKSRC}/apps/!} \
 		${SCRIPTS_TCLSH:S!^!${WRKSRC}/examples/!} \
@@ -66,18 +65,19 @@ do-install:
 	-pkg-path ${DESTDIR}${MODTCL_TCLDIR} \
 	-nroff-path ${PREFIX}/man/mann \
 	-example-path ${PREFIX}/share/examples/tcllib \
-	-app-path ${PREFIX}/bin
+	-app-path ${PREFIX}/share/examples/tcllib/apps
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
+	mv ${PREFIX}/share/examples/tcllib/apps/dtplite ${PREFIX}/bin
 	@chmod ${BINMODE} ${SCRIPTS_TCLSH:S!logger!log!:S!^!${PREFIX}/share/examples/tcllib/!}
 	${SETENV} TCLLIBPATH=${DESTDIR}${MODTCL_TCLDIR} ${MODTCL_BIN} \
 		${FILESDIR}/mkindex.tcl ${PREFIX}/man/mann \
-		${PKGDIR}/DESCR ${PREFIX}/man/mann/tcllib.n tcllib "${COMMENT}" 1.12
+		${PKGDIR}/DESCR ${PREFIX}/man/mann/tcllib.n tcllib "${COMMENT}" 1.13
 	@chown ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tcllib.n
 	@chmod ${MANMODE} ${PREFIX}/man/mann/tcllib.n
 
 # Define TEST_MODULES to restrict to a subset of regression tests.
 do-regress:
 	${SETENV} ${MAKE_ENV} ${MODTCL_BIN} \
-	${WRKSRC}/sak.tcl test run -v ${TEST_MODULES} \
-	${REGRESS_LOG}
+	${WRKSRC}/sak.tcl test run -v ${TEST_MODULES}
 
 .include <bsd.port.mk>

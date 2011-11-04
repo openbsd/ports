@@ -1,15 +1,19 @@
-$OpenBSD: patch-support_devel_all_tcl,v 1.2 2009/03/19 16:54:33 sthen Exp $
---- support/devel/all.tcl.orig	Fri Dec 12 23:10:20 2008
-+++ support/devel/all.tcl	Tue Jan  6 02:28:48 2009
-@@ -98,6 +98,7 @@ if {[catch {::tcltest::normalizePath ::tcltest::testsD
+$OpenBSD: patch-support_devel_all_tcl,v 1.3 2011/11/04 11:45:21 stu Exp $
+--- support/devel/all.tcl.orig	Tue Jan 25 00:37:57 2011
++++ support/devel/all.tcl	Thu Oct 13 10:42:02 2011
+@@ -97,7 +97,11 @@ if {[catch {::tcltest::normalizePath ::tcltest::testsD
+ }
  set root $::tcltest::testsDirectory
  
++# Until Tcllib is fixed, do this to skip tests that require Tk
++::tcltest::skipFiles {adbox_widgets.test adbox_all.test proc_interactive.test}
++
  proc Note {k v} {
 +return
      puts  stdout [list @@ $k $v]
      flush stdout
      return
-@@ -196,7 +197,7 @@ foreach module $modules {
+@@ -196,7 +200,7 @@ foreach module $modules {
  	set ::tcltest::testsDirectory [pSet ::tcltest::testsDirectory]
  
  	# configure not present in tcltest 1.x

@@ -1,0 +1,12 @@
+$OpenBSD: patch-support_installation_modules_tcl,v 1.3 2011/11/04 11:45:21 stu Exp $
+--- support/installation/modules.tcl.orig	Mon Oct 17 12:39:50 2011
++++ support/installation/modules.tcl	Mon Oct 17 12:42:52 2011
+@@ -99,7 +99,7 @@ Module  nns         _tcl  _man  _null
+ Module  nntp        _tcl  _man _exa
+ Module  ntp         _tcl  _man _exa
+ Module  otp         _tcl  _man  _null
+-Module  page         _tcr _man  _null
++Module  page         _trt _man  _null
+ Module  pluginmgr   _tcl  _man  _null
+ Module  png         _tcl  _man  _null
+ Module  pop3        _tcl  _man  _null
