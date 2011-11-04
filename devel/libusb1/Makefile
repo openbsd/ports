@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/04 09:18:11 mpi Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/04 12:17:50 jasper Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -24,7 +24,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libusb/}
 EXTRACT_SUFX =		.tar.bz2
 
 # XXX Depends on libtool macros
-BUILD_DEPEND =		devel/libtool
+BUILD_DEPENDS =		devel/libtool
 
 USE_LIBTOOL =		Yes
 AUTOCONF_VERSION =	2.65
