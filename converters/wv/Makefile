@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/04 09:05:54 jasper Exp $
 
 COMMENT =	convert various Microsoft formats into HTML/PNG
 
 DISTNAME =	wv-1.2.4
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS =	wv-1.2		1.0 \
 		wv		1.0
@@ -17,9 +17,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp bz2 c expat freetype gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 jpeg m pcre png pthread-stubs
-WANTLIB += xcb xml2 z gsf-1 wmf wmflite
+WANTLIB += X11 bz2 c expat ffi freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gsf-1 gthread-2.0 jpeg m pcre png pthread
+WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2 z
 
 MODULES =	devel/gettext
 
