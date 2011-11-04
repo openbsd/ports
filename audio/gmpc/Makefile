@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/11/04 08:42:25 jasper Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		audio
 
@@ -24,7 +24,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 			gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 			gthread-2.0 gtk-x11-2.0 m pango-1.0 \
 			pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
-			xml2 z pthread-stubs sqlite3 xcb \
+			xml2 z pthread-stubs sqlite3 xcb stdc++
 			GL Xxf86vm dbus-1 dbus-glib-1 drm xcb-shm \
 			mpd soup-2.4 xcb-render ffi unique-1.0
 

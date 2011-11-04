@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/04 08:43:32 jasper Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	security x11
 
@@ -25,6 +25,7 @@ WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 hogweed
 WANTLIB += m nettle pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs readline sqlite3
 WANTLIB += tasn1 termcap xcb xcb-render xcb-shm z
+WANTLIB += dbus-1 dbus-glib-1 ffi p11-kit stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnomint/}
 

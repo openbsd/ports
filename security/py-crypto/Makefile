@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/10 10:08:05 mpi Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/04 08:43:32 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -23,7 +23,7 @@ MASTER_SITES =	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 
 MODULES =	lang/python
 LIB_DEPENDS =	devel/gmp
-WANTLIB =	gmp>=6
+WANTLIB =	gmp>=6 ${MODPY_WANTLIB}
 
 DOCSDIR =	${PREFIX}/share/doc/py-crypto
 

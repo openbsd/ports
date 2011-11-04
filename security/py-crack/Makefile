@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/04 08:43:32 jasper Exp $
 
 COMMENT =		Python bindings for cracklib
 
 MODPY_EGG_VERSION =	0.5.1
 DISTNAME =		python-crack-${MODPY_EGG_VERSION}
 PKGNAME =		py-crack-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES =   		security devel
 
 HOMEPAGE =		http://www.nongnu.org/python-crack/
@@ -22,7 +22,7 @@ MASTER_SITES =		http://download.savannah.gnu.org/releases/python-crack/
 
 MODULES =		lang/python
 LIB_DEPENDS =		security/cracklib
-WANTLIB =		crack
+WANTLIB =		crack ${MODPY_WANTLIB}
 
 MAKE_FLAGS =		CC="${CC}" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \

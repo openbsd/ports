@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/04 08:43:32 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		reset NT/W2K/XP/Vista/W7 password
 
 V =			100627
-REVISION =		1
+REVISION =		2
 DISTNAME =		chntpw-source-${V}
 PKGNAME =		chntpw-${V}
 EXTRACT_SUFX =		.zip
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
-WANTLIB =		c ssl
+WANTLIB =		c
 
 MASTER_SITES =		http://pogostick.net/~pnh/ntpasswd/
 

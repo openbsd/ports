@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/22 11:42:01 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2011/11/04 08:43:32 jasper Exp $
 
 # XXX fails to build if not using the bundled libtool
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=0.9.24.1
 DISTNAME=	libprelude-${MODPY_EGG_VERSION}
 PKGNAME=	prelude-${DISTNAME}
 
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/libprelude/
 
@@ -21,7 +21,7 @@ CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 
 WANTLIB += c gcrypt gmp gnutls gpg-error hogweed nettle pthread
-WANTLIB += tasn1 z
+WANTLIB += tasn1 z p11-kit ${MODPY_WANTLIB}
 
 LIB_DEPENDS=	security/libgcrypt \
 		security/gnutls

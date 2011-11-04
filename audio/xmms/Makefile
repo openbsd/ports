@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/10/12 12:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.77 2011/11/04 08:42:25 jasper Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -10,13 +10,13 @@ SHARED_ONLY=		Yes
 VERSION=		1.2.11
 DISTNAME=		xmms-${VERSION}
 PKGNAME-main=		xmms-${VERSION}
-REVISION-main=		9
+REVISION-main=		10
 PKGNAME-vorbis=		xmms-vorbis-${VERSION}
-REVISION-vorbis=	3
+REVISION-vorbis=	4
 PKGNAME-mikmod=		xmms-mikmod-${VERSION}
-REVISION-mikmod=	4
+REVISION-mikmod=	5
 PKGNAME-mp3=		xmms-mp3-${VERSION}
-REVISION-mp3=		5
+REVISION-mp3=		6
 SHARED_LIBS=		xmms	4.2
 CATEGORIES=		audio
 HOMEPAGE=		http://www.xmms.org
@@ -29,7 +29,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xi glib gmodule m xcb Xdamage Xfixes drm
+WANTLIB += X11 Xext Xi glib gmodule m xcb
 WANTLIB += gtk>=1.2 gdk>=1.2 gthread>=1.2
 
 V=			1.2.x
@@ -40,7 +40,8 @@ MASTER_SITES=		${HOMEPAGE}/files/$V/ \
 
 MULTI_PACKAGES=		-main -vorbis -mikmod -mp3
 
-WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread sndio
+WANTLIB-main=		${WANTLIB} GL ICE c Xxf86vm SM pthread sndio stdc++ \
+			Xdamage Xfixes drm
 
 MODULES=		devel/gettext
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}

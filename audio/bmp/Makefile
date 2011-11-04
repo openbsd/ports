@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/10/17 12:15:32 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/11/04 08:42:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,9 @@ PKGNAME-vorbis=	bmp-vorbis-$V
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
-REVISION-main=	2
-REVISION-mp3=	2
-REVISION-vorbis=	2
+REVISION-main=	3
+REVISION-mp3=	3
+REVISION-vorbis=	3
 
 SHARED_LIBS=	beep	2.1
 
@@ -35,7 +35,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
                 xcb xcb-render z gdk_pixbuf-2.0>=400.3 \
                 gdk-x11-2.0>=400.3 gtk-x11-2.0>=0.5 glib-2.0>=400.2 \
-                gthread-2.0>=400.2 GL Xxf86vm drm ffi xcb-shm
+                gthread-2.0>=400.2 GL Xxf86vm drm ffi xcb-shm stdc++
 
 MODULES=	devel/gettext
 USE_GROFF =	Yes

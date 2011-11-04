@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/12 12:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/04 08:42:25 jasper Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -9,7 +9,7 @@ PKGNAME-main =  snack-${MODPY_EGG_VERSION}
 PKGNAME-python = py-snack-${MODPY_EGG_VERSION}
 CATEGORIES =	audio
 
-REVISION-main = 2
+REVISION-main = 3
 REVISION-python =1
 
 HOMEPAGE = 	http://www.speech.kth.se/snack
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB-main += 	c sndio ossaudio ogg vorbis vorbisenc z
+WANTLIB-main += 	c sndio ossaudio ogg vorbis vorbisenc
 WANTLIB-main += 	X11 Xext Xft Xss m
 
 LIB_DEPENDS-main =	audio/libvorbis

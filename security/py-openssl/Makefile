@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/04 08:43:32 jasper Exp $
 
 COMMENT=	Python interface to the OpenSSL library
 
 MODPY_EGG_VERSION=	0.9
 DISTNAME=	pyOpenSSL-${MODPY_EGG_VERSION}
 PKGNAME=	py-openssl-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	security devel
 
 HOMEPAGE=	http://www.sourceforge.net/projects/pyopenssl/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	crypto ssl
+WANTLIB=	crypto ssl ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pyopenssl/}
 

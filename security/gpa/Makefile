@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/04 08:43:32 jasper Exp $
 
 COMMENT=	graphical interface for GnuPG
 
 DISTNAME=	gpa-0.7.6
-REVISION=	5
+REVISION=	6
 CATEGORIES=    	security x11
 
 HOMEPAGE=	http://www.gnupg.org/gpa.html
@@ -19,12 +19,13 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 gio-2.0 
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpgme gthread-2.0 assuan
 WANTLIB += gpg-error m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-render-util z
+WANTLIB += png pthread pthread-stubs xcb xcb-render z
+WANTLIB += GL xcb-shm
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		security/gnupg
