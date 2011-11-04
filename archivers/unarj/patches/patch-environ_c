@@ -1,5 +1,6 @@
---- environ.c.orig	Mon Sep 29 06:00:24 1997
-+++ environ.c	Wed Mar  3 22:39:43 1999
+$OpenBSD: patch-environ_c,v 1.2 2011/11/04 10:00:19 jasper Exp $
+--- environ.c.orig	Mon Sep 29 12:00:24 1997
++++ environ.c	Fri Nov  4 10:57:45 2011
 @@ -40,11 +40,14 @@
  
  #define SUBS_DEFINED
@@ -15,7 +16,7 @@
  
  FILE *
  file_open(name, mode)
-@@ -432,14 +435,17 @@
+@@ -432,14 +435,17 @@ uint  host;
  
  #include <time.h>
  
@@ -34,7 +35,7 @@
  
  FILE *
  file_open(name, mode)
-@@ -535,8 +541,12 @@
+@@ -535,8 +541,12 @@ uint mode;
  }
  
  long
@@ -48,7 +49,7 @@
  #define NOONOFFSET    43200L
  #define SEC_IN_DAY    (24L * 60L * 60L)
  #define INV_VALUE     (SEC_IN_DAY + 1L)
-@@ -552,6 +562,7 @@
+@@ -552,6 +562,7 @@ gettz()         /* returns the offset from GMT in seco
      noontm = localtime(&noon);
      retval = NOONOFFSET - 60 * (60 * noontm->tm_hour - noontm->tm_min);
      return retval;
@@ -56,7 +57,7 @@
  }
  
  long
-@@ -609,7 +620,8 @@
+@@ -609,7 +620,8 @@ uint  host;
      (uint) attribute;
      (uint) host;
  
