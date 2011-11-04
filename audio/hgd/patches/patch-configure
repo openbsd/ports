@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2011/11/04 09:53:50 edd Exp $
+
+MPlayer is not actually a build dpeendency, so don't bail if not installed at build time.
+
+Bug raised upstream.
+
+--- configure.orig	Fri Nov  4 09:45:21 2011
++++ configure	Fri Nov  4 09:47:42 2011
+@@ -3438,9 +3438,9 @@ $as_echo "no" >&6; }
+ fi
+ 
+ 
+-	if test "x${MPLAYER}" = "xno"; then :
+-  as_fn_error $? "mplayer is missing" "$LINENO" 5
+-fi
++#	if test "x${MPLAYER}" = "xno"; then :
++#  as_fn_error $? "mplayer is missing" "$LINENO" 5
++#fi
+ 
+ 	# server just cant work without sqlite
+ 
