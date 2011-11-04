@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 08:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/04 08:16:24 jasper Exp $
 
 COMMENT=	access a MySQL database from Ruby
 
 DISTNAME=	mysql-2.8.1
-REVISION=	7
+REVISION=	8
 CATEGORIES=	databases
 
 HOMEPAGE=	http://tmtm.org/mysql/ruby/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/ruby
 
-WANTLIB=	mysqlclient
+WANTLIB=	mysqlclient crypto ssl z
 
 LIB_DEPENDS=	databases/mysql
 

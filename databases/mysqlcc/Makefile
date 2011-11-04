@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/04 08:16:24 jasper Exp $
 
 COMMENT=		GUI client for MySQL
 
 VERSION=		0.9.8
 DISTNAME=		mysqlcc-${VERSION}-src
 PKGNAME=		mysqlcc-${VERSION}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		databases
 
 HOMEPAGE=		http://mysqlcc.sourceforge.net/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext c m pthread pthread-stubs stdc++ xcb z
+WANTLIB += X11 Xext c m pthread stdc++ z
 WANTLIB += lib/mysql/mysqlclient>=10
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mysqlcc/}

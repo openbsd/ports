@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/04 08:16:24 jasper Exp $
 
 COMMENT =		database toolkit for Python
 
 MODPY_EGG_VERSION =	0.7.1
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		databases
 
@@ -24,6 +24,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sqlalchemy/}
 MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 PKG_ARCH =		*
+
+WANTLIB+=		${MODPY_WANTLIB}
 
 MAKE_ENV +=		PYTHONPATH=.
 

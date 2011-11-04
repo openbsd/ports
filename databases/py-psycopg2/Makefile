@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/04 08:16:24 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		PostgreSQL database adapter for Python
 MODPY_EGG_VERSION =	2.4.1
 DISTNAME =		psycopg2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		databases
 
 HOMEPAGE =		http://initd.org/projects/psycopg2
@@ -25,7 +25,7 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=p/psycopg2/} \
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql
-WANTLIB +=	pq
+WANTLIB +=	pq ${MODPY_WANTLIB}
 RUN_DEPENDS =	databases/postgresql
 REGRESS_DEPENDS = ${RUN_DEPENDS}
 

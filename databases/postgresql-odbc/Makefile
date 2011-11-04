@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/04 08:16:24 jasper Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	08.03.0400
 PKGNAME=	postgresql-odbc-${VERSION}
 DISTNAME=	psqlodbc-${VERSION}
 CATEGORIES=	databases
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://pgfoundry.org/projects/psqlodbc/
 
@@ -24,7 +24,7 @@ SHARED_ONLY =		Yes
 LIB_DEPENDS =		databases/postgresql>=8.3 \
 			databases/iodbc
 
-WANTLIB =		pq iodbc iodbcinst pthread 
+WANTLIB =		pq iodbc iodbcinst pthread com_err crypto ssl
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

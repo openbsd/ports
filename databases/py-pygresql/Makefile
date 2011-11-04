@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/04 08:16:24 jasper Exp $
 
 COMMENT =	PostgreSQL module for Python
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	4.0
 DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
 PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://www.pygresql.org/
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql
-WANTLIB +=	pq>=5
+WANTLIB +=	pq>=5 ${MODPY_WANTLIB}
 BUILD_DEPENDS =	databases/postgresql,-server
 RUN_DEPENDS =	databases/postgresql,-main
 

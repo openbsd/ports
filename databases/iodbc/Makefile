@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/11/04 08:16:23 jasper Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
@@ -9,7 +9,7 @@ DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
 PKGNAME-main=		iodbc-$V
 PKGNAME-admin=		iodbc-admin-$V
-REVISION-admin =	0
+REVISION-admin =	1
 
 CATEGORIES=		databases
 
@@ -56,7 +56,7 @@ WANTLIB-admin= ${MODGETTEXT_WANTLIB} c pthread \
         gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
         gtk-x11-2.0 iodbc iodbcinst m pango-1.0 pangocairo-1.0 \
         pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render \
-        xcb-shm z
+        xcb-shm z ffi stdc++
 
 EXDIR=${PREFIX}/share/examples/iodbc/
 post-install:
