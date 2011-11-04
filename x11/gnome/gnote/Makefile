@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/04 09:59:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.8.1
-REVISION=		0
+REVISION=		1
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -18,25 +18,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6
+WANTLIB += c cairo cairo-gobject cairomm-1.0 drm e2fs-uuid expat
+WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gdkmm-3.0
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 gtkmm-3.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pangomm-1.4 pcre pcrecpp pixman-1 png
+WANTLIB += pthread pthread-stubs sigc-2.0 stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
+
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += atkmm-1.6 c cairo cairo-gobject cairomm-1.0 drm e2fs-uuid
-WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtkmm-3.0 m panel-applet-4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
-WANTLIB += pcrecpp pixman-1 png pthread pthread-stubs sigc-2.0
-WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 xslt z
-WANTLIB += dbus-1 dbus-glib-1
-
 BUILD_DEPENDS=		devel/boost>=1.42.0p6
 LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 			textproc/libxslt \
-			x11/gnome/panel \
 			x11/gtk3mm
 
 MODGNOME_TOOLS= 	yelp
@@ -44,6 +42,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
-CONFIGURE_ARGS+=	--disable-static
+CONFIGURE_ARGS+=	--disable-static \
+			--disable-applet
 
 .include <bsd.port.mk>

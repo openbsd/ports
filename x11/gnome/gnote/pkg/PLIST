@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/23 16:52:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/11/04 09:59:09 ajacoutot Exp $
 @pkgpath x11/gnome/tomboy
 @bin bin/gnote
 lib/gnote/
@@ -26,13 +26,12 @@ lib/gnote/addins/${GNOME_VERSION}/stickynoteimport.so
 lib/gnote/addins/${GNOME_VERSION}/tomboyimport.so
 @comment lib/gnote/addins/${GNOME_VERSION}/underline.la
 lib/gnote/addins/${GNOME_VERSION}/underline.so
-libexec/gnote-applet
 @man man/man1/gnote.1
 share/applications/gnote.desktop
 share/dbus-1/services/org.gnome.Gnote.service
-share/dbus-1/services/org.gnome.panel.applet.GnoteAppletFactory.service
 share/glib-2.0/schemas/org.gnome.gnote.gschema.xml
-share/gnome-panel/4.0/applets/org.gnome.gnote.panel-applet
+share/gnome/
+share/gnome/help/
 share/gnome/help/gnote/
 share/gnome/help/gnote/C/
 share/gnome/help/gnote/C/figures/
