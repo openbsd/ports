@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/04 12:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/04 13:24:40 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.2.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics
 
@@ -40,8 +40,11 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS=	yelp
 
 CONFIGURE_ARGS=	--enable-exiv \
-		--disable-man-pages \
 		--disable-packagekit
+
+# XXX the --disable-man-pages switch exists but does nothing
+CONFIGURE_ARGS += --disable-man-pages
+CONFIGURE_ENV += ac_cv_path_DOCBOOK2MAN=no
 
 # XXX needs a newer clutter
 CONFIGURE_ARGS += --disable-clutter
