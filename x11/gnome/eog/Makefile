@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/10/18 08:05:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/11/04 09:56:28 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -6,6 +6,7 @@ COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -23,7 +24,7 @@ WANTLIB += girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += rsvg-2 xcb xcb-render xcb-shm xml2 z
-WANTLIB += gnome-desktop-3 lcms2
+WANTLIB += gnome-desktop-3 lcms2 stdc++
 
 MODULES=		devel/dconf \
 			devel/gettext \

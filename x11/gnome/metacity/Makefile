@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2011/11/04 09:56:29 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.1
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -26,7 +26,7 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 gtop-2.0 kvm ltdl m ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs startup-notification-1 vorbis vorbisfile
-WANTLIB += xcb xcb-aux xcb-render xcb-shm z
+WANTLIB += xcb xcb-aux xcb-render xcb-shm z stdc++
 
 MODULES=	devel/gettext \
 		x11/gnome \

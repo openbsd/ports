@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.60 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/11/04 09:56:29 jasper Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.91.2
-REVISION=	7
+REVISION=	8
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -22,7 +22,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gnome-media-profiles-3.0 gobject-2.0
 WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gthread-2.0 gtk-3
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z stdc++
 
 TAR=		${LOCALBASE}/bin/gtar
 

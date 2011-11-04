@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/04 09:56:28 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		personal photo management application for GNOME
 GNOME_VERSION=		0.8.2
 GNOME_PROJECT=		f-spot
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -32,7 +32,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomeui-2 gnomevfs-2 gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += util xcb xcb-render xml2 z lcms xcb-shm
+WANTLIB += util xcb xcb-render xml2 z lcms xcb-shm ffi stdc++
 WANTLIB += GL Xxf86vm canberra drm ltdl ogg pthread vorbis vorbisfile
 
 MODULES=		devel/gettext \

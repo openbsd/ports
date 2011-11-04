@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2011/10/20 11:53:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/04 09:56:28 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.2.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -29,7 +30,7 @@ WANTLIB += gthread-2.0 gtk-3 idn m nspr4 nss3 oauth pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
 WANTLIB += plc4 plds4 png pthread-stubs smime3 softokn3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 xcb xcb-render xcb-shm
-WANTLIB += xml2 z curl idn
+WANTLIB += xml2 z curl idn stdc++
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \

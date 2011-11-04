@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/28 09:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/04 09:56:29 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.14
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -25,7 +25,7 @@ WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread readline pthread-stubs xcb
-WANTLIB += termcap xml2 z
+WANTLIB += termcap xml2 z ffi stdc++
 WANTLIB += gtksourceview-2.0 gmp mpfr vte
 
 MODULES=	devel/gettext \

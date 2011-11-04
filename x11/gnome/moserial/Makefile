@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/16 19:23:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/04 09:56:29 jasper Exp $
 
 COMMENT=		serial terminal for GNOME
 
 GNOME_PROJECT=		moserial
 GNOME_VERSION=		3.0.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		comms
 
@@ -23,7 +23,7 @@ WANTLIB += cairo-gobject drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z ffi
+WANTLIB += z ffi stdc++
 
 LIB_DEPENDS=		x11/gtk+3
 

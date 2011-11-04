@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/10/18 08:16:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/11/04 09:56:30 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
 GNOME_VERSION=	3.2.1
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -22,7 +23,7 @@ WANTLIB += gmodule-2.0 gmp gnome-keyring gnutls gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-3 hogweed jpeg m nettle notify
 WANTLIB += p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 tasn1 telepathy-glib
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
 
 MODULES=	devel/dconf \
 		devel/gettext \

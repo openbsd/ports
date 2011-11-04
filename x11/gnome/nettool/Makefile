@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/28 09:47:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/04 09:56:29 jasper Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
 GNOME_VERSION=	3.0.0
-REVISION=	6
+REVISION=	
 
 CATEGORIES=	net
 
@@ -22,7 +22,7 @@ WANTLIB += cairo-gobject drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 gtop-2.0 kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z ffi stdc++
 
 MODULES=	devel/dconf \
 		devel/gettext \

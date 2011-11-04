@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/22 08:06:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/04 09:56:29 jasper Exp $
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.12.5
+REVISION=		0
 
 CATEGORIES=		multimedia
 
@@ -27,7 +28,7 @@ WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 gupnp-1.0 gupnp-av-1.0 gupnp-dlna-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 sqlite3 xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z stdc++
 
 LIB_DEPENDS=		devel/libgee \
 			net/gupnp/av \

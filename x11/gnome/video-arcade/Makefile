@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2011/10/16 19:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/11/04 09:56:30 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.8.0
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	emulators games
 
@@ -25,7 +25,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 gtk-3 m
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
-WANTLIB += wnck-3 xcb xcb-aux xcb-render xcb-shm xml2 z
+WANTLIB += wnck-3 xcb xcb-aux xcb-render xcb-shm xml2 z stdc++
 
 MODULES=	devel/gettext \
 		x11/gnome \

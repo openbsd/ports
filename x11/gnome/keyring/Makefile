@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2011/10/18 06:07:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/11/04 09:56:29 jasper Exp $
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.2.1
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                0.0      # 0.0
 SHARED_LIBS +=  gcr-3                1.0      # 1.0
@@ -20,7 +21,7 @@ WANTLIB += cairo-gobject dbus-1 drm expat fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 m p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z ffi
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z ffi stdc++
 
 MODULES=	devel/gettext \
 		x11/gnome \
