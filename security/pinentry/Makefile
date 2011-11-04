@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/17 15:39:57 pea Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/04 12:12:53 stsp Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
 
-COMMENT = 	collection of simple PIN or passphrase entry dialogs
+COMMENT-main = 	collection of simple PIN or passphrase entry dialogs
+COMMENT-gtk2 = 	gtk2 frontend for pinentry
 
-DISTNAME = 	pinentry-0.8.1
+VERSION = 	0.8.1
+DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
+
+PKGNAME-main = 	${DISTNAME}
+PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/pinentry/
 
@@ -20,7 +25,17 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
-WANTLIB = 		c ncurses
+MULTI_PACKAGES = 	-main -gtk2
+
+WANTLIB-main = 		${WANTLIB} c ncurses
+WANTLIB-gtk2 = 		${WANTLIB} c GL X11 Xcomposite Xcursor Xdamage \
+			Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 \
+			cairo expat fontconfig freetype gdk-x11-2.0 \
+			gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0  \
+			gobject-2.0 gthread-2.0 gtk-x11-2.0 intl m ncurses \
+			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
+			pthread pthread-stubs xcb xcb-render xcb-shm z
+LIB_DEPENDS-gtk2 = 	x11/gtk+2
 
 MODULES = 		converters/libiconv
 
@@ -31,6 +46,6 @@ CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-qt \
 			--disable-pinentry-qt4 \
 			--disable-pinentry-gtk \
-			--disable-pinentry-gtk2 
+			--enable-pinentry-gtk2
 
 .include <bsd.port.mk>
