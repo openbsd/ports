@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/02 20:19:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/04 12:26:44 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.2.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 
@@ -37,6 +37,7 @@ RUN_DEPENDS=	graphics/shared-color-profiles,-extra \
 		graphics/shared-color-targets
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS=	yelp
 
 CONFIGURE_ARGS=	--enable-exiv \
 		--disable-man-pages \
