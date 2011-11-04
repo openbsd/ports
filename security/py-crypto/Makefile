@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/04 13:36:16 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,8 @@ MODPY_EGG_VERSION =	2.3
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =    	security devel
+
+REVISION =		0
 
 HOMEPAGE =		https://www.dlitz.net/software/pycrypto/
 
@@ -22,8 +24,10 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 
 MODULES =	lang/python
-LIB_DEPENDS =	devel/gmp
-WANTLIB =	gmp>=6 ${MODPY_WANTLIB}
+LIB_DEPENDS =	${MODPY_LIB_DEPENDS}
+WANTLIB =	${MODPY_WANTLIB}
+
+BUILD_DEPENDS =	devel/gmp
 
 DOCSDIR =	${PREFIX}/share/doc/py-crypto
 
