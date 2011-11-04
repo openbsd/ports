@@ -1,3 +1,4 @@
+/*	$OpenBSD: openbsd_ugen.c,v 1.2 2011/11/04 09:18:11 mpi Exp $	*/
 /*
  * Copyright (c) 2011 Martin Pieuchot <mpi@openbsd.org>
  *
@@ -239,6 +240,10 @@ ugen_get_active_config_descriptor(struct libusb_device *dev,
     unsigned char *buf, size_t len, int *host_endian)
 {
 	struct device_priv *dpriv = (struct device_priv *)dev->os_priv;
+	usb_config_descriptor_t *ucd;
+
+	ucd = (usb_config_descriptor_t *) dpriv->cdesc;
+	len = MIN(len, UGETW(ucd->wTotalLength));
 
 	usbi_dbg("len %d", len);
 
@@ -593,7 +598,7 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
 	/* Pick the right node given the control one */
 	strlcpy(devnode, dpriv->devnode, sizeof(devnode));
 	s = strchr(devnode, '.');
-	snprintf(s, (s - devnode), ".%02d", endpt);
+	snprintf(s, 4, ".%02d", endpt);
 
 	/*
 	 * Bulk, Interrupt or Isochronous transfer depends on the
