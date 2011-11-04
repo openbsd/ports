@@ -1,4 +1,4 @@
-his is an extract-only program which allows access to the contents of
+This is an extract-only program which allows access to the contents of
 ARJ archives. You cannot specify a base directory or select individual
 files to extract. UNARJ does not support empty directories or volume
 labels.
