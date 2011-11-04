@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/02 17:51:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/04 09:18:43 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.6.1
 GNOME_PROJECT=	giggle
+REVISION=	0
 
 CATEGORIES=	devel x11
 
@@ -29,7 +30,7 @@ WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm xml2 z # vte2_90
+WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++ # vte2_90
 
 RUN_DEPENDS=	devel/git
 BUILD_DEPENDS+=	devel/git

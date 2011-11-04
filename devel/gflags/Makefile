@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/04 09:18:43 jasper Exp $
 # Original from: auclair.vincent
 
 COMMENT =		c++ commandline flags processing library
 
 DISTNAME =		gflags-1.2
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		gflags               0.0      # .0.0
 SHARED_LIBS +=		gflags_nothreads     0.0      # .0.0
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://google-gflags.googlecode.com/files/
 
-WANTLIB =		pthread
+WANTLIB =		pthread m stdc++
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/04 09:18:43 jasper Exp $
 
 COMMENT =	C++ unit test framework
 
 DISTNAME =	gtest-1.4.0
+REVISION =	0
 
 SHARED_LIBS +=	gtest		0.0   # .0.0
 SHARED_LIBS +=	gtest_main	0.0   # .0.0
@@ -22,6 +23,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://googletest.googlecode.com/files/
 
 SEPARATE_BUILD =	simple
+
+WANTLIB =		m stdc++
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

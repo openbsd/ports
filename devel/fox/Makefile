@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/04 09:18:43 jasper Exp $
 
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 
 DISTNAME =	fox-1.6.37
+REVISION =	0
 
 SHARED_LIBS +=	FOX-1.6              2.0      # .0.37
 SHARED_LIBS +=	CHART-1.6            1.0      # .0.28
@@ -39,6 +40,6 @@ SUBST_VARS =	FOX
 
 WANTLIB =	GL GLU X11 Xau Xcursor Xdmcp Xext Xfixes Xrender Xrandr c m \
 		stdc++ z pthread Xft expat fontconfig freetype \
-		pthread-stubs xcb bz2 jpeg png tiff
+		pthread-stubs xcb bz2 jpeg png tiff Xdamage Xxf86vm drm
 
 .include <bsd.port.mk>
