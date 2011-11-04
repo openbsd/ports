@@ -1,0 +1,11 @@
+$OpenBSD: patch-unarj_c,v 1.1 2011/11/04 13:25:59 jasper Exp $
+--- unarj.c.orig	Mon Sep 29 12:00:24 1997
++++ unarj.c	Fri Nov  4 14:25:17 2011
+@@ -104,6 +104,7 @@ static char *M_USAGE  [] =
+ "        UNARJ t archive        (test archive)\n",
+ "        UNARJ x archive        (extract with pathnames)\n",
+ "\n",
++"UNARJ was modified for OpenBSD ports.\n",
+ "This is an ARJ demonstration program and ** IS NOT OPTIMIZED ** for speed.\n",
+ "You may freely use, copy and distribute this program, provided that no fee\n",
+ "is charged for such use, copying or distribution, and it is distributed\n",
