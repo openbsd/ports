@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/03/16 23:32:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/11/04 08:21:59 jasper Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
@@ -7,7 +7,7 @@ DISTNAME=	pilot-link-0.12.5
 SHARED_LIBS +=	pisock               11.0      # .9.2
 SHARED_LIBS +=	pisync               2.0      # .0.3
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	comms palm
 
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c m png>=4 popt readline termcap z pthread
 
-MODULES=		converters/libiconv
+MODULES=		devel/gettext
 LIB_DEPENDS=		graphics/png \
 			devel/popt
 

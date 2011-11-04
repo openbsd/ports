@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/04 08:21:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MAL plugin for J-Pilot
 
 DISTNAME=	jpilot-syncmal-0.81
-REVISION=	2
+REVISION=	3
 CATEGORIES=	comms palm
 
 HOMEPAGE=	http://www.jlogday.com/code/syncmal/
@@ -24,6 +24,7 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += pthread-stubs xcb z pisock>=9 mal>=1 png>=5
 WANTLIB += gtk-x11-2.0>=400.13 gdk-x11-2.0>=400.13 gdk_pixbuf-2.0>=400.13
+WANTLIB += GL Xxf86vm drm ffi gthread-2.0 stdc++ xcb-render xcb-shm
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	comms/jpilot
