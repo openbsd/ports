@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/11/02 17:48:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/11/05 14:07:43 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.1
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -38,7 +38,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += rest-0.7 sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl
 WANTLIB += stdc++ vorbis vorbisfile webkitgtk-3.0 xcb xcb-render
-WANTLIB += xcb-shm xkbfile xklavier xml2 xslt z
+WANTLIB += xcb-shm xkbfile xklavier xml2 xslt z upower-glib
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -109,10 +109,8 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center \
 # * gnome-media-panel needs udev to take appropriate action on device
 #   plug (see patch-schemas_org_gnome_desktop_media-handling_gschema_xml_in_in
 #   in devel/gsettings-desktop-schemas).
-# * gnome-power-panel needs a fully working gnome-power-manager
-#   (userland cannot be made aware of power/button events yet).
 # * gnome-wacom-panel needs device detection support and gnome-bluetooth
-DISABLED_PLUGINS= media power wacom
+DISABLED_PLUGINS= media wacom
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/panels/printers/cc-printers-panel.c

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/11/02 16:43:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/11/05 14:07:43 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -24,6 +24,8 @@ lib/control-center-1/panels/libkeyboard.so
 lib/control-center-1/panels/libmouse-properties.so
 @comment lib/control-center-1/panels/libonline-accounts.la
 lib/control-center-1/panels/libonline-accounts.so
+@comment lib/control-center-1/panels/libpower.la
+lib/control-center-1/panels/libpower.so
 @comment lib/control-center-1/panels/libprinters.la
 lib/control-center-1/panels/libprinters.so
 @comment lib/control-center-1/panels/libregion.la
@@ -48,6 +50,7 @@ share/applications/gnome-info-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-mouse-panel.desktop
 share/applications/gnome-online-accounts-panel.desktop
+share/applications/gnome-power-panel.desktop
 share/applications/gnome-printers-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-screen-panel.desktop
@@ -221,6 +224,7 @@ share/gnome-control-center/ui/gnome-region-panel.ui
 share/gnome-control-center/ui/info.ui
 share/gnome-control-center/ui/language-chooser.ui
 share/gnome-control-center/ui/online-accounts.ui
+share/gnome-control-center/ui/power.ui
 share/gnome-control-center/ui/printers/
 share/gnome-control-center/ui/printers/new-printer-dialog.ui
 share/gnome-control-center/ui/printers/printers.ui
