@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.15 2011/09/25 10:41:30 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.16 2011/11/05 18:33:52 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 25 2011 $
+.Dd $Mdocdate: November 5 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -290,10 +290,13 @@ the basic pkgpath with slashes replaced by dots, and a possible second lock
 with the fullpkgpath.
 This lockfile is filled with such info as the build start time or the host.
 .Pp
+The lockfile will also contain the name of a parent pkgpath, for paths that
+were discovered as dependencies.
+This is particularly useful for bogus paths, where it would be hard to
+know where the path came from otherwise.
+.Pp
 At the end of a succesful build, these lockfiles are removed.
 The fullpkgpath lock will stay around in case of errors.
-.Pp
-In this case, it contains the status of the last task that was run
 .Po
 raw
 value from
@@ -394,6 +397,10 @@ plus a timestamp of the log entry.
 .Bl -tag -width BB:
 .It ^
 pkgpath temporarily put aside, because a job is running in the same directory.
+.It !
+pkgpath ignored, either directly, or indirectly because a dependency was
+ignored.
+End of the line states reason why ignored.
 .It B
 pkgpath built.
 .It I
