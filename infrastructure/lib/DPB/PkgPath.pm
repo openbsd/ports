@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.14 2011/10/11 13:43:25 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.15 2011/11/05 18:25:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -160,7 +160,7 @@ sub compose
 {
 	my ($class, $fullpkgpath, $pseudo) = @_;
 	my $o = $class->create($fullpkgpath);
-	$o->{flavors} = $pseudo->copy_flavors;
+	$o->{flavors} = $pseudo->{flavors};
 	$o->{sawflavor} = $pseudo->{sawflavor};
 	return $o->normalize;
 }
@@ -175,7 +175,7 @@ sub fullpkgname
 
 sub may_create
 {
-	my ($n, $o, $h, $state) = @_;
+	my ($n, $o, $h) = @_;
 	my $k = $n->fullpkgpath;
 	if (defined $cache->{$k}) {
 		$n = $cache->{$k};
@@ -216,7 +216,7 @@ sub zap_default
 	if ($subpackage->string eq $self->{multi}) {
 		my $o = bless {pkgpath => $self->{pkgpath},
 			sawflavor => $self->{sawflavor},
-			flavors => $self->copy_flavors}, ref($self);
+			flavors => $self->{flavors}}, ref($self);
 		return $o->normalize;
 	} else {
 		return $self;
@@ -231,8 +231,8 @@ sub handle_default_flavor
 		my $m = bless { pkgpath => $self->{pkgpath},
 		    sawflavor => 1,
 		    multi => $self->{multi},
-		    flavors => $self->{info}->{FLAVOR}}, ref($self);
-		$m = $m->may_create($self, $h, $state);
+		    flavors => $self->{info}{FLAVOR}}, ref($self);
+		$m = $m->may_create($self, $h);
 		$m->simplifies_to($self, $state);
 		$m->handle_default_subpackage($h, $state);
 	}
@@ -244,7 +244,7 @@ sub handle_default_subpackage
 	my ($self, $h, $state) = @_;
 	my $m = $self->zap_default($self->{info}->{SUBPACKAGE});
 	if ($m ne $self) {
-		$m = $m->may_create($self, $h, $state);
+		$m = $m->may_create($self, $h);
 		$self->simplifies_to($m, $state);
 		$m->handle_default_flavor($h, $state);
 	}
@@ -273,7 +273,6 @@ sub merge_depends
 {
 	my ($class, $h) = @_;
 	my $global = bless {}, "AddDepends";
-	my $global2 = bless {}, "AddDepends";
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		if (defined $info->{DIST}) {
@@ -289,7 +288,6 @@ sub merge_depends
 			if (defined $info->{$k}) {
 				for my $d (values %{$info->{$k}}) {
 					$global->{$d} = $d;
-					$global2->{$d} = $d;
 				}
 			}
 		}
@@ -301,15 +299,16 @@ sub merge_depends
 				}
 			}
 		}
+		for my $k (qw(DIST LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS)) {
+			delete $info->{$k};
+		}
 	}
 	if (values %$global > 0) {
 		for my $v (values %$h) {
 			my $info = $v->{info};
 			# remove stuff that depends on itself
 			delete $global->{$v};
-			delete $global2->{$v};
 			$info->{DEPENDS} = $global;
-			$info->{BDEPENDS} = $global2;
 		}
 	}
 }
