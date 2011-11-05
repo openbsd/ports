@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.28 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: Engine.pm,v 1.29 2011/11/05 18:27:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -418,6 +418,16 @@ sub adjust
 	return 0;
 }
 
+sub should_ignore
+{
+	my ($self, $v, $kind) = @_;
+	return undef if !exists $v->{info}{$kind};
+	for my $d (values %{$v->{info}{$kind}}) {
+		return $d if (defined $d->{info}) && $d->{info}{IGNORE};
+	}
+	return undef;
+}
+
 sub adjust_extra
 {
 	my ($self, $v, $kind) = @_;
@@ -485,6 +495,14 @@ sub check_buildable
 					$self->{installable}{$v} = $v;
 					$self->log_no_ts('I', $v);
 					$changes++;
+				} elsif (my $d = $self->should_ignore($v, 
+				    'RDEPENDS')) {
+					delete $self->{built}{$v};
+					$self->log_no_ts('!', $v, 
+					    " because of ".$d->fullpkgpath);
+					$changes++;
+					$v->{info} = DPB::PortInfo->stub;
+					push(@{$self->{ignored}}, $v);
 				}
 			}
 		}
@@ -509,6 +527,13 @@ sub check_buildable
 				$self->log_no_ts('Q', $v);
 				delete $self->{tobuild}{$v};
 				$changes++;
+			} elsif (my $d = $self->should_ignore($v, 'DEPENDS')) {
+				delete $self->{tobuild}{$v};
+				$self->log_no_ts('!', $v, 
+				    " because of ".$d->fullpkgpath);
+				$changes++;
+				$v->{info} = DPB::PortInfo->stub;
+				push(@{$self->{ignored}}, $v);
 			}
 		}
 	} while ($changes);
@@ -525,11 +550,8 @@ sub new_path
 		}
 		if (defined $v->{info}{IGNORE} && 
 		    !$self->{state}->{fetch_only}) {
-		    	$self->log('!', $v);
-			my $fh = $self->{logger}->open('ignored');
-			print $fh $v->fullpkgpath, ": ", 
-			    $v->{info}{IGNORE}->string, "\n";
-			close $fh;
+		    	$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
+			$v->{info} = DPB::PortInfo->stub;
 			push(@{$self->{ignored}}, $v);
 			return;
 		}
