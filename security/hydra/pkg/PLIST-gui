@@ -1,2 +1,3 @@
-@comment $OpenBSD: PLIST-gui,v 1.2 2009/01/05 22:10:06 rui Exp $
+@comment $OpenBSD: PLIST-gui,v 1.3 2011/11/05 15:24:39 nigel Exp $
 @bin bin/xhydra
+@man man/man1/xhydra.1

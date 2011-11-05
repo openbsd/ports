@@ -1,60 +1,210 @@
-$OpenBSD: patch-configure,v 1.5 2009/01/05 22:10:06 rui Exp $
---- configure.orig	Fri Jan 20 13:44:15 2006
-+++ configure	Sat Jan  3 13:50:44 2009
-@@ -96,52 +96,6 @@ if [ "$SSL_IPATH" = "/usr/include" ]; then
-     SSL_IPATH=""
+$OpenBSD: patch-configure,v 1.6 2011/11/05 15:24:39 nigel Exp $
+Remove tests for include files and libraries there are no
+configure options to disable support the build may fail or be altered
+if added
+--- configure.orig	Sun Oct  2 09:06:15 2011
++++ configure	Tue Nov  1 20:03:28 2011
+@@ -246,44 +246,6 @@ if [ "X" = "X$POSTGRES_PATH" -o "X" = "X$POSTGRES_IPAT
  fi
  
--echo "Checking for Postgres (libpq) ..."
--for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
--do
--    if [ "X" = "X$POSTGRES_PATH" ]; then
--        if [ -f "$i/libpq.so" -o -f "$i/libpq.dylib" ]; then
--            POSTGRES_PATH="$i"
--        fi
--    fi
--    if [ "X" = "X$POSTGRES_PATH" ]; then
--        TMP_LIB=`/bin/ls $i/libpq.so* /bin/cygpq*.dll 2> /dev/null | grep pq`
--        if [ -n "$TMP_LIB" ]; then
--          POSTGRES_PATH="$i"
--        fi
--    fi
--done
--if [ -n "$POSTGRES_PATH" ]; then
--    echo "                              ... found"
--fi
--if [ "X" = "X$POSTGRES_PATH" ]; then
--    echo "                              ... NOT found, module postgres disabled"
--fi
--
--echo "Checking for SVN (ibsvn_client-1 libapr-0.so libaprutil-0.so) ..."
--for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
+ echo "Checking for SVN (libsvn_client-1 libapr-1.so libaprutil-1.so) ..."
+-for i in  $LIBDIRS
 -do
 -    if [ "X" = "X$SVN_PATH" ]; then
--        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-0.so" ]&&[ -f "$i/libaprutil-0.so" ]; then
+-        if [ -f "$i/libsvn_client-1.so" ]&&[ -f "$i/libapr-1.so" ]&&[ -f "$i/libaprutil-1.so" ]; then
 -            SVN_PATH="$i"
+-	    APR_PATH="$i"
 -        fi
 -    fi
 -    if [ "X" = "X$SVN_PATH" ]; then
 -        TMP_LIB=`/bin/ls $i/libsvn_client*.so* 2> /dev/null | grep libsvn_client.`
 -        if [ -n "$TMP_LIB" ]; then
 -          SVN_PATH="$i"
+-	  APR_PATH="$i"
 -        fi
 -    fi
--    
--    
 -done
--if [ -n "$SVN_PATH" ]; then
--    echo "                              ... found"
--fi
--if [ "X" = "X$SVN_PATH" ]; then
--    echo "                              ... NOT found, module svn disabled"
--fi
--
+-for i in $INCDIRS
+-do
+-    if [ "X" = "X$SVN_IPATH" ]; then
+-        if [ -d "$i/subversion-1" ]; then
+-            SVN_IPATH="$i/subversion-1"
+-        fi
+-        if [ -d "$i/svn" ]; then
+-            SVN_IPATH="$i/svn"
+-        fi
+-    fi  
+-    if [ "X" = "X$APR_IPATH" ]; then
+-        if [ -d "$i/apr-1.0" ]; then
+-            APR_IPATH="$i/apr-1.0"
+-        fi
+-        if [ -d "$i/apr-1" ]; then
+-            APR_IPATH="$i/apr-1"
+-        fi
+-        if [ -d "$i/apr" ]; then
+-            APR_IPATH="$i/apr"
+-        fi
+-    fi  
+-done
+ 
+ if [ "X" = "X$SVN_PATH" -o "X" = "X$SVN_IPATH" -o "X" = "X$APR_IPATH" ]; then
+     SVN_PATH=""
+@@ -305,28 +267,7 @@ if [ "X" = "X$SVN_PATH" -o "X" = "X$APR_PATH" ]; then
+ fi
+ 
+ echo "Checking for firebird (libfbclient.so) ..."
+-for i in  $LIBDIRS
+-do
+-    if [ "X" = "X$FIREBIRD_PATH" ]; then
+-        if [ -f "$i/libfbclient.so" ]; then
+-            FIREBIRD_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$FIREBIRD_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libfbclient.so.* 2> /dev/null | grep libfbclient.`
+-        if [ -n "$TMP_LIB" ]; then
+-          FIREBIRD_PATH="$i"
+-        fi
+-    fi
+-done
+-for i in $INCDIRS
+-do
+-    if [ "X" != "X$FIREBIRD_PATH" ]; then
+-        if [ -f "$i/ibase.h" ]; then
+-            FIREBIRD_IPATH="$i"
+-        fi
+-    fi
+-done
++
+ if [ -n "$FIREBIRD_PATH" -a -n "$FIREBIRD_IPATH" ]; then
+     echo "                                       ... found"
+ fi
+@@ -373,28 +314,7 @@ else
+       echo "                                       ... math.h not found, module Mysql disabled"
+ fi
+ echo "Checking for AFP (libafpclient.so) ..."
+-for i in  $LIBDIRS 
+-do
+-    if [ "X" = "X$AFP_PATH" ]; then
+-        if [ -f "$i/libafpclient.so" ]; then
+-            AFP_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$AFP_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libafpclient.so.* 2> /dev/null | grep libafpclient.`
+-        if [ -n "$TMP_LIB" ]; then
+-          AFP_PATH="$i"
+-        fi
+-    fi
+-done
+-for i in $INCDIRS
+-do
+-    if [ "X" != "X$AFP_PATH" ]; then
+-        if [ -f "$i/afpfs-ng/afp.h" ]; then
+-            AFP_IPATH="$i/afpfs-ng"
+-        fi
+-    fi
+-done
++
+ if [ -n "$AFP_PATH" -a -n "$AFP_IPATH" ]; then
+     echo "                                   ... found"
+ fi
+@@ -405,28 +325,7 @@ if [ "X" = "X$AFP_PATH" -o "X" = "X$AFP_IPATH" ]; then
+ fi
+ 
+ echo "Checking for NCP (libncp.so / nwcalls.h) ..."
+-for i in  $LIBDIRS
+-do
+-    if [ "X" = "X$NCP_PATH" ]; then
+-        if [ -f "$i/libncp.so" ]; then
+-            NCP_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$NCP_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libncp.so.* 2> /dev/null | grep ncp.`
+-        if [ -n "$TMP_LIB" ]; then
+-            NCP_PATH="$i"
+-        fi
+-    fi
+-done
+-for i in $INCDIRS
+-do
+-    if [ "X" != "X$NCP_PATH" ]; then
+-        if [ -f "$i/ncp/nwcalls.h" ]; then
+-            NCP_IPATH="$i"
+-        fi
+-    fi
+-done
++
+ if [ -n "$NCP_PATH" -a -n "$NCP_IPATH" ]; then
+     echo "                                         ... found"
+ fi
+@@ -437,28 +336,7 @@ if [ "X" = "X$NCP_PATH" -o "X" = "X$NCP_IPATH" ]; then
+ fi
+ 
  echo "Checking for SAP/R3 (librfc/saprfc.h) ..."
- for i in  $LIBDIRS /lib  /usr/lib /usr/local/lib /opt/local/lib .
- do
-@@ -294,17 +248,9 @@ fi
+-for i in  $LIBDIRS 
+-do
+-    if [ "X" = "X$SAPR3_PATH" ]; then
+-        if [ -f "$i/librfc.a" -o -f "$i/librfc.dylib" -o "$i/librfc32.dll" ]; then
+-            SAPR3_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$SAPR3_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/librfc.* $i/librfc32.* 2> /dev/null | grep librfc`
+-        if [ -n "$TMP_LIB" ]; then
+-          SAPR3_PATH="$i"
+-        fi
+-    fi
+-done
+-for i in $INCDIRS
+-do
+-    if [ "X" = "X$SAPR3_IPATH" ]; then
+-        if [ -f "$i/saprfc.h" ]; then
+-            SAPR3_IPATH="$i"
+-        fi
+-    fi
+-done
++
+ if [ "X" = "X$SAPR3_PATH" ]; then
+     SAPR3_IPATH=""
+ fi
+@@ -558,34 +436,6 @@ if [ "X" != "X$WORACLE_LIB_PATH" ]; then
+     LIBDIRS="$LIBDIRS $WORACLE_LIB_PATH"
+ fi
+ 
+-for i in  $LIBDIRS
+-do
+-    if [ "X" = "X$ORACLE_PATH" ]; then
+-        if [ -f "$i/libocci.so" ]&&[ -f "$i/libclntsh.so" ]; then
+-            ORACLE_PATH="$i"
+-        fi
+-    fi
+-    if [ "X" = "X$ORACLE_PATH" ]; then
+-        TMP_LIB=`/bin/ls $i/libocci.so.* 2> /dev/null | grep occi.`
+-        if [ -n "$TMP_LIB" ]; then
+-            ORACLE_PATH="$i"
+-        fi
+-        if [ "X" != "X$ORACLE_PATH" ]; then
+-          TMP_LIB=`/bin/ls $i/libclntsh.so.* 2> /dev/null | grep clntsh.`
+-          if [ -z "$TMP_LIB" ]; then
+-            ORACLE_PATH=""
+-          fi
+-        fi
+-    fi
+-done
+-for i in $INCDIRS
+-do
+-    if [ "X" != "X$ORACLE_PATH" ]; then
+-        if [ -f "$i/oci.h" ]; then
+-            ORACLE_IPATH="$i"
+-        fi
+-    fi
+-done
+ if [ -n "$ORACLE_PATH" -a -n "$ORACLE_IPATH" ]; then
+     echo "                                                      ... found"
+ fi
+@@ -648,7 +498,7 @@ fi
  
  echo
  XDEFINES=""
@@ -62,14 +212,4 @@ $OpenBSD: patch-configure,v 1.5 2009/01/05 22:10:06 rui Exp $
 +XLIBS="-lm"
  XLIBPATHS=""
  XIPATHS=""
--
--# ignore errors if this uname call fails
--SYS=`uname -o 2>/dev/null`
--if [ "$SYS" = "Cygwin" ]; then
--    echo "Cygwin detected, enabling compability options ..."
--    XDEFINES="-DCYGWIN"
--    echo
--fi
  
- if [ -n "$SSL_PATH" -o -n "$CRYPTO_PATH" -o -n "$NSL_PATH" -o -n "$SOCKET_PATH" -o -n "$RESOLV_PATH" -o -n "$SAPR3_PATH" -o -n "$SSH_PATH" -o -n "$POSTGRES_PATH" -o -n "$SVN_PATH" ]; then
-     XLIBPATHS="-L/usr/lib -L/usr/local/lib -L/lib"

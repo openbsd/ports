@@ -1,94 +1,12 @@
-$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.3 2009/01/05 22:10:06 rui Exp $
---- hydra-gtk/src/callbacks.c.orig	Thu Sep 22 16:19:27 2005
-+++ hydra-gtk/src/callbacks.c	Sun May 13 13:48:10 2007
-@@ -34,7 +34,7 @@ char tasks[10];
+$OpenBSD: patch-hydra-gtk_src_callbacks_c,v 1.4 2011/11/05 15:24:39 nigel Exp $
+--- hydra-gtk/src/callbacks.c.orig	Sun Oct  2 09:06:15 2011
++++ hydra-gtk/src/callbacks.c	Wed Nov  2 00:36:25 2011
+@@ -35,7 +35,7 @@ char tasks[10];
  char timeout[10];
- char smbntparm[4];
+ char smbparm[12];
  char snmpparm[4];
 -char sapr3id[4];
 +char sapr3id[10];
  char passLoginNull[4];
-  
  
-@@ -69,21 +69,6 @@ int hydra_get_options(char *options[]) {
  
- 	options[0] = HYDRA_BIN;
- 
--	/* get the target, or target list */
--	widget = lookup_widget(GTK_WIDGET(wndMain), "radioTarget1");
--	if ( gtk_toggle_button_get_active((GtkToggleButton *) widget) ){	
--		widget = lookup_widget(GTK_WIDGET(wndMain), "entTarget");
--		options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
--	} else {
--		options[i++] = "-M";
--		widget = lookup_widget(GTK_WIDGET(wndMain), "entTargetFile");
--		options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
--	}
--
--	/* get the service */
--	widget = lookup_widget(GTK_WIDGET(wndMain), "entProtocol");
--	options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
--	
- 	/* get the port */
- 	widget = lookup_widget(GTK_WIDGET(wndMain), "spnPort");
- 	j = gtk_spin_button_get_value_as_int((GtkSpinButton *) widget);
-@@ -317,6 +302,21 @@ int hydra_get_options(char *options[]) {
- 		}
- 	}		
- 
-+        /* get the target, or target list */
-+        widget = lookup_widget(GTK_WIDGET(wndMain), "radioTarget1");
-+        if ( gtk_toggle_button_get_active((GtkToggleButton *) widget) ){
-+                widget = lookup_widget(GTK_WIDGET(wndMain), "entTarget");
-+                options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
-+        } else {
-+                options[i++] = "-M";
-+                widget = lookup_widget(GTK_WIDGET(wndMain), "entTargetFile");
-+                options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
-+        }
-+
-+        /* get the service */
-+        widget = lookup_widget(GTK_WIDGET(wndMain), "entProtocol");
-+        options[i++] = (char *) gtk_entry_get_text((GtkEntry *) widget);
-+
- 	options[i] = NULL;
- 	return i;
- }
-@@ -482,9 +482,9 @@ static void close_pipe(int *pipe) {
- int *popen_re_unbuffered(char *command) {
- 	static int p_r[2] = {-1, -1}, p_e[2] = {-1, -1};
- 	static int *pfd = NULL;
--	hydra_pid = 0;
- 	char *options[128];
- 
-+	hydra_pid = 0;
- 	update_statusbar();
- 
- 	/* only allocate once */
-@@ -504,6 +504,7 @@ int *popen_re_unbuffered(char *command) {
- 		g_warning("popen_rw_unbuffered: Error forking!");
- 		return NULL;
- 	} else if (hydra_pid == 0) { /* child */
-+		int k;
- 		if (setpgid(getpid(), getpid()) < 0)
- 			g_warning("popen_rw_unbuffered: setpgid() failed");
- 		if (close(p_r[0]) < 0)
-@@ -527,7 +528,6 @@ int *popen_re_unbuffered(char *command) {
- 		execv(HYDRA_BIN, options);
- 
- 		g_warning("%s %i: popen_rw_unbuffered: execv() returned", __FILE__, __LINE__);
--		int k;
- 		for ( k = 0; options[k] != NULL; k++ ){
- 			g_warning(options[k]);
- 		}
-@@ -679,8 +679,9 @@ void
- on_chkColon_toggled                    (GtkToggleButton *togglebutton,
-                                         gpointer         user_data)
- {
--	GtkWidget *user =  lookup_widget(GTK_WIDGET(wndMain), "frmUsername");;	
-+	GtkWidget *user;
- 	GtkWidget *pass =  lookup_widget(GTK_WIDGET(wndMain), "frmPass");
-+	user = lookup_widget(GTK_WIDGET(wndMain), "frmUsername");;	
- 
- 	if (gtk_toggle_button_get_active(togglebutton)){
- 		gtk_widget_set_sensitive(user, FALSE);

@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.45 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/11/05 15:24:38 nigel Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
 
-VERSION=	5.4
-DISTNAME=	hydra-5.4-src
+VERSION=	7.1
+DISTNAME=	hydra-${VERSION}-src
 PKGNAME-main=	hydra-${VERSION}
-REVISION-main=	1
 PKGNAME-gui=	hydra-gui-${VERSION}
-REVISION-gui=	6
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/
 
-# GPLv2 + restrictions in LICENCE.HYDRA
+# GPLv3 + restrictions in LICENCE.HYDRA
 PERMIT_PACKAGE_CDROM=	no charge
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	no charge
@@ -21,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c m
 
-MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=groups/thc/}
+MASTER_SITES =  http://www.thc.org/releases/
+MASTER_SITES +=	${MASTER_SITE_PACKETSTORM:=groups/thc/}
 
 PSEUDO_FLAVORS=	no_x11
 FLAVOR?=
@@ -33,6 +32,7 @@ CONFIGURE_STYLE=gnu dest
 USE_GMAKE= 	Yes
 NO_REGRESS=	Yes
 MAKE_FLAGS=	CC=${CC}
+CFLAGS +=	-I${LOCALBASE}/include
 
 .if ${FLAVOR:L:Mno_x11}
 ALL_TARGET=	hydra pw-inspector
@@ -51,20 +51,24 @@ post-configure:
 	cd ${WRKSRC}/hydra-gtk && ./configure
 .endif
 
-LIB_DEPENDS-main=
+LIB_DEPENDS-main=	databases/mysql,-main \
+			databases/postgresql,-main \
+			devel/libidn \
+			devel/pcre \
+			security/libssh
 RUN_DEPENDS-main=
-WANTLIB-main=	c m ssl crypto
+WANTLIB-main=	c crypto idn m mysqlclient pcre pq ssh ssl
 LIB_DEPENDS-gui=x11/gtk+2 \
 		${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-gui=hydra-${VERSION}:security/hydra,-main \
 		${MODGETTEXT_RUN_DEPENDS}
-WANTLIB-gui=	${WANTLIB} X11 Xcomposite Xcursor Xdamage Xfixes \
+WANTLIB-gui=	${WANTLIB} GL X11 Xcomposite Xcursor Xdamage Xfixes \
 		Xext Xi Xinerama Xrandr Xrender atk-1.0 freetype fontconfig \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 		gio-2.0 gmodule-2.0 gobject-2.0 glib-2.0 gthread-2.0 png \
 		pango-1.0 pangocairo-1.0 pixman-1 cairo z expat \
 		pangoft2-1.0 pthread pthread-stubs xcb xcb-render \
-		GL xcb-shm
+		xcb-shm
 
 post-extract:
 	chmod -R u+w ${WRKDIST}

@@ -1,35 +1,39 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2009/01/05 22:10:06 rui Exp $
---- Makefile.am.orig	Fri May  5 15:10:44 2006
-+++ Makefile.am	Sat May 12 21:58:03 2007
+$OpenBSD: patch-Makefile_am,v 1.2 2011/11/05 15:24:39 nigel Exp $
+--- Makefile.am.orig	Sun Oct  2 09:06:16 2011
++++ Makefile.am	Wed Nov  2 22:11:22 2011
 @@ -2,7 +2,7 @@
- # Makefile for Hydra - (c) 2001-2006 by van Hauser / THC <vh@thc.org>
+ # Makefile for Hydra - (c) 2001-2011 by van Hauser / THC <vh@thc.org>
  #
  
--OPTS=-I. -Wall -O2
+-OPTS=-I. -O3
 +OPTS=-I. $(CFLAGS) 
- # -ggdb -pedantic
+ # -Wall -ggdb -pedantic
  LIBS=-lm
  DIR=/bin
-@@ -43,7 +43,7 @@ hydra:	$(OBJ)
+@@ -43,7 +43,7 @@ hydra:	hydra.c $(OBJ)
  	@echo
  
  xhydra:	
--	-cd hydra-gtk && ./make_xhydra.sh
-+	-cd hydra-gtk/src && $(MAKE)
+-	-cd hydra-gtk && sh ./make_xhydra.sh
++	-cd hydra-gtk/src &&  $(MAKE)
  
  pw-inspector: pw-inspector.c
- 	-$(CC) $(OPTS) -o pw-inspector pw-inspector.c
-@@ -56,10 +56,9 @@ strip:	hydra
- 	-test -e hydra.exe && strip $(BINWIN) || touch hydra
- 	-test -e xhydra && strip xhydra || touch Makefile
+ 	-$(CC) $(OPTS) -o pw-inspector $(PWI_LOGO) pw-inspector.c
+@@ -55,12 +55,11 @@ strip:	hydra
+ 	strip $(BINS)
+ 	-echo OK > /dev/null && test -x xhydra && strip xhydra || echo OK > /dev/null
  
 -install:	strip
--	-test -e hydra.exe && touch Makefile || cp $(BINUNIX) $(PREFIX)$(DIR) && cd $(PREFIX)$(DIR) && chmod 755 $(BINUNIX)
--	-test -e hydra.exe && cp $(BINWIN) $(PREFIX)$(DIR) && cd $(PREFIX)$(DIR) && chmod 755 $(BINWIN) || touch Makefile
--	-test -e xhydra && cp xhydra $(PREFIX)$(DIR) && cd $(PREFIX)$(DIR) && chmod 755 xhydra
+-	-mkdir -p $(PREFIX)$(DIR) 
+-	cp $(BINS) dpl4hydra* $(PREFIX)$(DIR) && cd $(PREFIX)$(DIR) && chmod 755 $(BINS)
+-	-echo OK > /dev/null && test -x xhydra && cp xhydra $(PREFIX)$(DIR) && cd $(PREFIX)$(DIR) && chmod 755 xhydra || echo OK > /dev/null
+-	-mkdir -p $(PREFIX)/man/man1
+-	-cp -f hydra.1 xhydra.1 pw-inspector.1 $(PREFIX)/man/man1
 +install:
-+	$(BSD_INSTALL_PROGRAM) $(BINUNIX) $(PREFIX)$(DIR) 2> /dev/null
++	$(BSD_INSTALL_PROGRAM) $(BINS) $(PREFIX)$(DIR) 2> /dev/null
++	$(BSD_INSTALL_MAN_DIR) $(PREFIX)/man/man1 2> /dev/null
++	$(BSD_INSTALL_MAN) hydra.1 pw-inspector.1 xhydra.1 $(PREFIX)/man/man1 2> /dev/null
 +	cd hydra-gtk/src && $(BSD_INSTALL_PROGRAM) xhydra $(PREFIX)$(DIR) 2> /dev/null
  
  clean:
- 	rm -rf hydra pw-inspector xhydra pw-inspector.exe hydra.exe *.o core *~ Makefile.in Makefile dev_rfc hydra.restore arm/*.ipk arm/ipkg/usr/bin/* hydra-gtk/src/*.o hydra-gtk/src/xhydra hydra-gtk/stamp-h hydra-gtk/config.status hydra-gtk/errors hydra-gtk/config.log hydra-gtk/src/.deps hydra-gtk/src/Makefile hydra-gtk/Makefile
+ 	rm -rf xhydra pw-inspector hydra *.o core *.core *.stackdump *~ Makefile.in Makefile dev_rfc hydra.restore arm/*.ipk arm/ipkg/usr/bin/* hydra-gtk/src/*.o hydra-gtk/src/xhydra hydra-gtk/stamp-h hydra-gtk/config.status hydra-gtk/errors hydra-gtk/config.log hydra-gtk/src/.deps hydra-gtk/src/Makefile hydra-gtk/Makefile

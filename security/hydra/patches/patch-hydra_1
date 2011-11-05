@@ -1,0 +1,12 @@
+$OpenBSD: patch-hydra_1,v 1.1 2011/11/05 15:24:39 nigel Exp $
+Correct syntax error
+--- hydra.1.orig	Sun Oct  2 09:06:15 2011
++++ hydra.1	Wed Nov  2 22:34:20 2011
+@@ -102,7 +102,6 @@ verbose mode / show login+pass combination for each at
+ .TP
+ .B \-h, \-\-help
+ Show summary of options.
+-.TP
+ .SH SEE ALSO
+ .BR xhydra (1),
+ .BR pw-inspector (1).
