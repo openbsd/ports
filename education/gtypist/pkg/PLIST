@@ -1,26 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/10/04 20:02:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/11/06 20:09:25 naddy Exp $
 @bin bin/gtypist
 bin/typefortune
 @info info/gtypist.cs.info
+@info info/gtypist.es.info
 @info info/gtypist.info
 @man man/man1/gtypist.1
 @man man/man1/typefortune.1
 share/emacs/site-lisp/gtypist-mode.el
 share/gtypist/
+share/gtypist/c.typ
 share/gtypist/cs.typ
 share/gtypist/d.typ
 share/gtypist/demo.typ
 share/gtypist/esp.typ
 share/gtypist/gtypist.typ
+share/gtypist/ktbg.typ
+share/gtypist/ktbg_long.typ
 share/gtypist/ktde.typ
+share/gtypist/ktde2.typ
+share/gtypist/ktde_neo.typ
+share/gtypist/ktde_number.typ
 share/gtypist/ktdk.typ
 share/gtypist/ktdk2.typ
 share/gtypist/ktdvorak.typ
+share/gtypist/ktdvorak_abcd.typ
+share/gtypist/ktdvorak_es.typ
 share/gtypist/kten.typ
+share/gtypist/ktes.typ
+share/gtypist/ktes_cat.typ
+share/gtypist/ktfi.typ
+share/gtypist/ktfi_kids.typ
 share/gtypist/ktfr.typ
 share/gtypist/ktfr2.typ
+share/gtypist/kthu.typ
+share/gtypist/kthu_expert.typ
+share/gtypist/ktit.typ
+share/gtypist/ktnl.typ
+share/gtypist/ktnl_junior.typ
 share/gtypist/ktno.typ
-share/gtypist/ktnumber.typ
+share/gtypist/ktpl.typ
+share/gtypist/ktru.typ
+share/gtypist/ktru_long.typ
+share/gtypist/ktru_slava.typ
+share/gtypist/ktsi.typ
+share/gtypist/kttr.typ
 share/gtypist/m.typ
 share/gtypist/n.typ
 share/gtypist/q.typ
@@ -38,6 +61,8 @@ share/locale/eu/LC_MESSAGES/gtypist.mo
 share/locale/fi/LC_MESSAGES/gtypist.mo
 share/locale/fr/LC_MESSAGES/gtypist.mo
 share/locale/nl/LC_MESSAGES/gtypist.mo
+share/locale/pl/LC_MESSAGES/gtypist.mo
 share/locale/ru/LC_MESSAGES/gtypist.mo
+share/locale/tr/LC_MESSAGES/gtypist.mo
 share/locale/zh_CN/LC_MESSAGES/gtypist.mo
 share/locale/zh_TW/LC_MESSAGES/gtypist.mo
