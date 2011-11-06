@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/12/20 14:39:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2011/11/06 17:34:16 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
@@ -112,11 +112,11 @@ libexec/cyrus-imapd/
 @man man/man8/cyr_df.8
 @man man/man8/cyr_expire.8
 @man man/man8/cyr_synclog.8
+@man man/man8/cyrus-deliver.8
 @man man/man8/cyrus-fetchnews.8
 @man man/man8/cyrus-idled.8
 @man man/man8/cyrus-imapd.8
 @man man/man8/cyrus-master.8
-@man man/man8/deliver.8
 @comment @man man/man8/fetchnews.8
 @man man/man8/fud.8
 @comment @man man/man8/idled.8

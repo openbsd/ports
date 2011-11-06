@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/10/05 06:25:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/11/06 17:34:16 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -8,6 +8,8 @@ DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
+
+REVISION-main=	0
 
 CATEGORIES=	mail
 
@@ -88,7 +90,7 @@ WANTLIB-perl +=	${WANTLIB}
 
 NO_REGRESS=	Yes
 
-MAN8=		fetchnews idled master imapd
+MAN8=		fetchnews idled master imapd deliver
 SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
 		tools/masssievec tools/rehash tools/translatesieve \
 		tools/upgradesieve doc/text/install-upgrade
@@ -116,6 +118,7 @@ post-install:
 		tar xf - -C ${PREFIX}/share/examples/cyrus-imapd
 .for i in ${MAN8}
 	${INSTALL_MAN} ${PREFIX}/man/man8/${i}.8 ${PREFIX}/man/man8/cyrus-$i.8
+	rm -f ${PREFIX}/man/man8/${i}.8
 .endfor
 
 .include <bsd.port.mk>
