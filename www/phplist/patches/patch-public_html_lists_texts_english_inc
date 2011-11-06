@@ -1,6 +1,6 @@
-$OpenBSD: patch-public_html_lists_texts_english_inc,v 1.3 2011/06/24 09:04:30 sthen Exp $
---- public_html/lists/texts/english.inc.orig	Thu Sep 23 18:09:38 2010
-+++ public_html/lists/texts/english.inc	Mon Jun 13 12:06:53 2011
+$OpenBSD: patch-public_html_lists_texts_english_inc,v 1.4 2011/11/06 20:10:45 jasper Exp $
+--- public_html/lists/texts/english.inc.orig	Wed Sep 21 15:05:12 2011
++++ public_html/lists/texts/english.inc	Sun Nov  6 21:08:32 2011
 @@ -83,6 +83,7 @@ $strForgotPassword     = 'Forgot Password';
  $strPassword           = 'Password';
  $strPassword2           = 'Confirm Password';
@@ -17,3 +17,4 @@ $OpenBSD: patch-public_html_lists_texts_english_inc,v 1.3 2011/06/24 09:04:30 st
 +?>
  
  ?>
+\ No newline at end of file
