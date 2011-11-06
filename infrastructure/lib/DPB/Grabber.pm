@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.15 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.16 2011/11/06 12:23:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,8 +51,8 @@ sub finish
 	for my $v (values %$h) {
 		if ($v->{broken}) {
 			delete $v->{info};
+			$self->{engine}->add_fatal($v, $v->{broken});
 			delete $v->{broken};
-			$self->{engine}->add_fatal($v);
 		} elsif ($v->{wantbuild}) {
 			delete $v->{wantbuild};
 			$self->{engine}->new_path($v);
@@ -121,7 +121,7 @@ sub complete_subdirs
 			}
 			next if defined $v->{category};
 			if (defined $v->{tried}) {
-				$self->{engine}->add_fatal($v) 
+				$self->{engine}->add_fatal($v, "tried and didn't get it") 
 				    if !defined $v->{errored};
 				$v->{errored} = 1;
 			} elsif ($v->{wantinfo} || $v->{wantbuild}) {

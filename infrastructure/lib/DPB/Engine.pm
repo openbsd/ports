@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.29 2011/11/05 18:27:13 espie Exp $
+# $OpenBSD: Engine.pm,v 1.30 2011/11/06 12:23:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -467,20 +467,6 @@ sub adjust_distfiles
 
 my $output = {};
 
-sub log_fetch
-{
-	my ($self, $v) = @_;
-	my $k = $v->{info}{FETCH_MANUALLY}->string;
-	my $fh = $self->{logger}->open('fetch/manually');
-	print $fh $v->fullpkgpath, "\n", "-" x length($v->fullpkgpath), "\n";
-	if (defined $output->{$k}) {
-		print $fh "same as ", $output->{$k}->fullpkgpath, "\n\n";
-	} else {
-		print $fh "$k\n\n";
-		$output->{$k} = $v;
-	}
-}
-
 sub check_buildable
 {
 	my ($self, $quick) = @_;
@@ -544,9 +530,11 @@ sub new_path
 {
 	my ($self, $v) = @_;
 	if (!$self->{buildable}->is_done($v)) {
-		if (defined $v->{info}{FETCH_MANUALLY}) {
-			$self->log_fetch($v);
-			delete $v->{info}{FETCH_MANUALLY};
+		if (defined $v->{info}{FETCH_MANUALLY} &&
+		    defined $v->{info}{IGNORE}) {
+			$self->log('!', $v, " fetch manually");
+			$self->add_fatal($v, "Fetch manually error:", $v->{info}{FETCH_MANUALLY}->string);
+			return;
 		}
 		if (defined $v->{info}{IGNORE} && 
 		    !$self->{state}->{fetch_only}) {
@@ -595,9 +583,10 @@ sub rescan
 
 sub add_fatal
 {
-	my ($self, $v) = @_;
+	my ($self, $v, @messages) = @_;
 	push(@{$self->{errors}}, $v);
 	$self->{locker}->lock($v);
+	$self->{logger}->log_error($v, @messages);
 }
 
 sub rebuild_info
