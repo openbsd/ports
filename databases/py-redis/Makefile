@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/06 11:44:06 rpointel Exp $
 
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	2.4.9
+MODPY_EGG_VERSION =	2.4.10
 DISTNAME =		redis-${MODPY_EGG_VERSION}
 PKGNAME =		py-redis-${MODPY_EGG_VERSION}
 CATEGORIES =		databases
-REVISION =		0
 
 HOMEPAGE =		http://github.com/andymccurdy/redis-py/
 MASTER_SITES =		http://github.com/downloads/andymccurdy/redis-py/
@@ -27,6 +26,18 @@ MODPY_SETUPTOOLS =	Yes
 DIST_SUBDIR =           py-redis
 WRKDIST =		${WRKDIR}/redis-${MODPY_EGG_VERSION}
 
-NO_REGRESS =		Yes
+REGRESS_DEPENDS =	devel/git \
+			databases/redis
+
+REGRESS_IS_INTERACTIVE=Yes # be sure you have a redis server running on localhost
+do-regress:
+	# fetch tests because there are no include in tarball...
+	rm -rf ${WRKSRC}/redis-tmp-tests/ ${WRKSRC}/run_tests ${WRKSRC}/tests
+	cd ${WRKSRC} && git clone git://github.com/andymccurdy/redis-py.git redis-tmp-tests
+	cd ${WRKSRC}/redis-tmp-tests && git checkout ${MODPY_EGG_VERSION}
+	mv ${WRKSRC}/redis-tmp-tests/run_tests ${WRKSRC}/redis-tmp-tests/tests ${WRKSRC}
+	rm -rf ${WRKSRC}/redis-tmp-tests/
+	# test
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./run_tests
 
 .include <bsd.port.mk>
