@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.13 2008/10/15 14:29:04 ajacoutot Exp $
---- Makefile.orig	Mon May 12 21:43:44 2008
-+++ Makefile	Sat Oct 11 18:33:06 2008
-@@ -332,7 +332,7 @@ bsf:	an
+$OpenBSD: patch-Makefile,v 1.14 2011/11/06 09:03:28 ajacoutot Exp $
+--- Makefile.orig	Sat Jul 23 02:20:21 2011
++++ Makefile	Sun Nov  6 09:59:50 2011
+@@ -333,7 +333,7 @@ bsf:	an
  bso:	an
  	$(TOUCH) ip6
  	$(BUILD) BUILDTYPE=$@ IP=$(IP6) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.13 2008/10/15 14:29:04 ajacoutot Exp $
  
  # Info from Joel Reicher about NetBSD SSL paths.  I assume it has PAM because pam is in NetBSD sources...
  
-@@ -578,8 +578,8 @@ sslunix sslsco:
+@@ -579,8 +579,8 @@ sslunix sslsco:
  	@echo ++ SSLTYPE=$(SSLTYPE).nopwd
  	@echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  	@echo

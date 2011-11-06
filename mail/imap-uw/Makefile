@@ -1,19 +1,15 @@
-# $OpenBSD: Makefile,v 1.68 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/11/06 09:03:28 ajacoutot Exp $
 
 COMMENT-server=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 COMMENT-mailutil=University of Washington IMAP4rev1/POP2/POP3 mail utility
 COMMENT-c-client=University of Washington's c-client mail access routines
 
-V=		2007e
+V=		2007f
 DISTNAME=	imap-${V}
 
 PKGNAME-server=	imap-uw-${V}
 PKGNAME-mailutil=mailutil-uw-${V}
 PKGNAME-c-client=c-client-${V}
-
-REVISION-server=	4
-REVISION-mailutil=	1
-REVISION-c-client=	1
 
 #WRKDIST=	${WRKDIR}/imap-2007b
 
@@ -47,7 +43,7 @@ SHLIB=		libc-client.so.${LIBc-client_VERSION}
 MAKE_FLAGS=	EXTRACFLAGS="${CFLAGS}" EXTRAAUTHENTICATORS="gss" IP=6 \
 		SSLTYPE="unix.nopwd" SHLIB="${SHLIB}" SHLIBNAME=${SHLIB} \
 		CC="${CC}"
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 MULTI_PACKAGES=	-server -mailutil -c-client
 SUBPACKAGE?=	-server
