@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.4 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Logger.pm,v 1.5 2011/11/06 12:20:32 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,7 +40,7 @@ sub _open
 {
 	my ($self, $mode, $name) = @_;
 	my $log = $self->logfile($name);
-	open my $fh, $mode, $log or die "Can't write to $log: $!\n";
+	CORE::open my $fh, $mode, $log or die "Can't write to $log: $!\n";
 	return $fh;
 }
 
@@ -114,6 +114,17 @@ sub make_logs
 		$self->link($log, $self->log_pkgname($w));
 	}
 	return $log;
+}
+
+sub log_error
+{
+	my ($self, $v, @messages) = @_;
+	my $log = $self->make_logs($v);
+	CORE::open my $fh, ">>", $log or die "Can't write to $log: $!\n";
+	for my $msg (@messages) {
+		print $fh $msg, "\n";
+	}
+	$v->print_parent($fh);
 }
 
 sub make_distlogs
