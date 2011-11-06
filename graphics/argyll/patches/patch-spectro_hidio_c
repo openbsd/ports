@@ -1,0 +1,12 @@
+$OpenBSD: patch-spectro_hidio_c,v 1.1.1.1 2011/11/06 17:35:53 ajacoutot Exp $
+--- spectro/hidio.c.orig	Sun Nov  6 10:40:15 2011
++++ spectro/hidio.c	Sun Nov  6 10:40:26 2011
+@@ -51,7 +51,7 @@
+ #include <sys/stat.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
+ #include <sys/types.h> 
+ #include <usbhid.h> 
+ #else	/* assume Linux */ 

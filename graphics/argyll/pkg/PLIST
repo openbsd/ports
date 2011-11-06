@@ -1,0 +1,219 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/06 17:35:53 ajacoutot Exp $
+@bin bin/applycal
+@bin bin/average
+@bin bin/cb2cgats
+@bin bin/ccttest
+@bin bin/chartread
+@bin bin/collink
+@bin bin/colprof
+@bin bin/dispcal
+@bin bin/dispread
+@bin bin/dispwin
+@bin bin/extracticc
+@bin bin/extractttag
+@bin bin/fakeCMY
+@bin bin/fakeread
+@bin bin/iccdump
+@bin bin/iccgamut
+@bin bin/icclu
+@bin bin/icctest
+@bin bin/invprofcheck
+@bin bin/kodak2cgats
+@bin bin/logo2cgats
+@bin bin/mppcheck
+@bin bin/mpplu
+@bin bin/mpprof
+@bin bin/pathplot
+@bin bin/printcal
+@bin bin/printtarg
+@bin bin/profcheck
+@bin bin/refine
+@bin bin/revfix
+@bin bin/scanin
+@bin bin/sepgen
+@bin bin/simpprof
+@bin bin/spec2cie
+@bin bin/specplot
+@bin bin/splitcgats
+@bin bin/spotread
+@bin bin/spyd2en
+@bin bin/synthcal
+@bin bin/synthread
+@bin bin/targen
+@bin bin/tiffgamut
+@bin bin/verify
+@bin bin/viewgam
+@bin bin/xicclu
+share/color/
+share/color/argyll/
+share/color/argyll/ref/
+share/color/argyll/ref/3dap5k.sp
+share/color/argyll/ref/CIE_C.sp
+share/color/argyll/ref/CMP_DT_003.cht
+share/color/argyll/ref/CMP_Digital_Target-3.cht
+share/color/argyll/ref/ClayRGB1998.icm
+share/color/argyll/ref/ColorChecker.cht
+share/color/argyll/ref/ColorChecker.cie
+share/color/argyll/ref/ColorChecker.ti2
+share/color/argyll/ref/ColorCheckerDC.cht
+share/color/argyll/ref/ColorCheckerSG.cht
+share/color/argyll/ref/D50_0.0.sp
+share/color/argyll/ref/D50_0.1.sp
+share/color/argyll/ref/D50_0.3.sp
+share/color/argyll/ref/D50_0.5.sp
+share/color/argyll/ref/D50_0.7.sp
+share/color/argyll/ref/D50_1.0.sp
+share/color/argyll/ref/D50_1.2.sp
+share/color/argyll/ref/D50_1.5.sp
+share/color/argyll/ref/D50_1.7.sp
+share/color/argyll/ref/D50_2.0.sp
+share/color/argyll/ref/D50_2.5.sp
+share/color/argyll/ref/D50_3.0.sp
+share/color/argyll/ref/ECI2002R.ti2
+share/color/argyll/ref/FograStrip.ti1
+share/color/argyll/ref/FograStrip.ti2
+share/color/argyll/ref/GTIPlus.sp
+share/color/argyll/ref/Hutchcolor.cht
+share/color/argyll/ref/LaserSoftDCPro.cht
+share/color/argyll/ref/Makefile.am
+share/color/argyll/ref/Office.sp
+share/color/argyll/ref/QPcard_201.cht
+share/color/argyll/ref/QPcard_201.cie
+share/color/argyll/ref/SOtele.sp
+share/color/argyll/ref/Trulux.sp
+share/color/argyll/ref/TruluxPlus.sp
+share/color/argyll/ref/example.sp
+share/color/argyll/ref/example121.sp
+share/color/argyll/ref/i1_RGB_Scan_1.4.cht
+share/color/argyll/ref/i1_RGB_Scan_1.4.ti2
+share/color/argyll/ref/it8.cht
+share/color/argyll/ref/lab2lab.icm
+share/color/argyll/ref/sRGB.icm
+share/color/argyll/ref/strange.cal
+share/doc/argyll/
+share/doc/argyll/ArgyllDoc.html
+share/doc/argyll/CMP_DT_003.jpg
+share/doc/argyll/CMP_Digital_Target-3.jpg
+share/doc/argyll/CRTspectrum.jpg
+share/doc/argyll/ChangesSummary.html
+share/doc/argyll/ColorMunki.jpg
+share/doc/argyll/ColorMunkiCreate.jpg
+share/doc/argyll/Compiling.html
+share/doc/argyll/CrushedDisplyBlacks.html
+share/doc/argyll/DC.jpg
+share/doc/argyll/DTP20.jpg
+share/doc/argyll/DTP22.jpg
+share/doc/argyll/DTP41.jpg
+share/doc/argyll/DTP51.jpg
+share/doc/argyll/DTP92.jpg
+share/doc/argyll/DTP94.jpg
+share/doc/argyll/DocLicense.txt
+share/doc/argyll/FWA.html
+share/doc/argyll/FWA_measure.jpg
+share/doc/argyll/File_Formats.html
+share/doc/argyll/Fluorescent.jpg
+share/doc/argyll/HCFR.jpg
+share/doc/argyll/HCT.jpg
+share/doc/argyll/Huey.jpg
+share/doc/argyll/Installing.html
+share/doc/argyll/Installing_Linux.html
+share/doc/argyll/Installing_MSWindows.html
+share/doc/argyll/Installing_OSX.html
+share/doc/argyll/Kgraph1.jpg
+share/doc/argyll/Kgraph2.jpg
+share/doc/argyll/Kgraph3.jpg
+share/doc/argyll/Kgraph4.jpg
+share/doc/argyll/Kgraph5.jpg
+share/doc/argyll/Kgraph6.jpg
+share/doc/argyll/Kgraph7.jpg
+share/doc/argyll/Kgraph8.jpg
+share/doc/argyll/Kparams.jpg
+share/doc/argyll/LSDC.jpg
+share/doc/argyll/LabSteps.jpg
+share/doc/argyll/License.txt
+share/doc/argyll/License2.txt
+share/doc/argyll/License3.txt
+share/doc/argyll/Limitations.html
+share/doc/argyll/MinorUtilities.html
+share/doc/argyll/Organisation.html
+share/doc/argyll/Overview.html
+share/doc/argyll/Performance.html
+share/doc/argyll/Q60.jpg
+share/doc/argyll/ReadMe.txt
+share/doc/argyll/SG.jpg
+share/doc/argyll/Scenarios.html
+share/doc/argyll/Source.html
+share/doc/argyll/Spyd2.jpg
+share/doc/argyll/Spyd3.jpg
+share/doc/argyll/Spyd3x.jpg
+share/doc/argyll/applycal.html
+share/doc/argyll/average.html
+share/doc/argyll/cal_format.html
+share/doc/argyll/calvschar.html
+share/doc/argyll/cb2cgats.html
+share/doc/argyll/cctiff.html
+share/doc/argyll/chartread.html
+share/doc/argyll/chroma4.jpg
+share/doc/argyll/cht_format.html
+share/doc/argyll/collink.html
+share/doc/argyll/colorchecker.jpg
+share/doc/argyll/colprof.html
+share/doc/argyll/cube.jpg
+share/doc/argyll/dispcal.html
+share/doc/argyll/dispprofloc.html
+share/doc/argyll/dispread.html
+share/doc/argyll/dispwin.html
+share/doc/argyll/extracticc.html
+share/doc/argyll/extractttag.html
+share/doc/argyll/fakeCMY.html
+share/doc/argyll/fakeread.html
+share/doc/argyll/filmread.html
+share/doc/argyll/filmtarg.html
+share/doc/argyll/gamma.html
+share/doc/argyll/gamutmapping1.jpg
+share/doc/argyll/greytiff.html
+share/doc/argyll/i1d.jpg
+share/doc/argyll/i1m.jpg
+share/doc/argyll/i1p.jpg
+share/doc/argyll/i1scan14.jpg
+share/doc/argyll/iccdump.html
+share/doc/argyll/iccgamut.html
+share/doc/argyll/iccgamutmapping.html
+share/doc/argyll/icclu.html
+share/doc/argyll/instruments.html
+share/doc/argyll/invprofcheck.html
+share/doc/argyll/kodak2cgats.html
+share/doc/argyll/logo2cgats.html
+share/doc/argyll/monitorcontrols.html
+share/doc/argyll/mox.jpg
+share/doc/argyll/moxxr.jpg
+share/doc/argyll/mppcheck.html
+share/doc/argyll/mpplu.html
+share/doc/argyll/mpprof.html
+share/doc/argyll/printcal.html
+share/doc/argyll/printtarg.html
+share/doc/argyll/profcheck.html
+share/doc/argyll/refine.html
+share/doc/argyll/revfix.html
+share/doc/argyll/scanin.html
+share/doc/argyll/sepgen.html
+share/doc/argyll/sl.jpg
+share/doc/argyll/spec2cie.html
+share/doc/argyll/splitcgats.html
+share/doc/argyll/spotread.html
+share/doc/argyll/spyd2en.html
+share/doc/argyll/srgbplot.gif
+share/doc/argyll/ss.jpg
+share/doc/argyll/surface.jpg
+share/doc/argyll/synthcal.html
+share/doc/argyll/synthread.html
+share/doc/argyll/targen.html
+share/doc/argyll/ti3_format.html
+share/doc/argyll/tiffgamut.html
+share/doc/argyll/timage.html
+share/doc/argyll/ucmm.html
+share/doc/argyll/verify.html
+share/doc/argyll/viewgam.html
+share/doc/argyll/xicclu.html
+share/doc/pkg-readmes/${FULLPKGNAME}
+@sample /var/db/argyll/
