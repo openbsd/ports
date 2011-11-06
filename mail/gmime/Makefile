@@ -1,20 +1,15 @@
-# $OpenBSD: Makefile,v 1.22 2011/10/02 15:27:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/06 16:45:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
 COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
-V=		2.6.0
-DISTNAME=	gmime-${V}
+GNOME_PROJECT=	gmime
+GNOME_VERSION=	2.6.1
 
 PKGNAME-main=	${DISTNAME}
-PKGNAME-mono=	gmime-sharp-${V}
-
-REVISION-main=	1
-REVISION-mono=	0
-
-EXTRACT_SUFX=	.tar.bz2
+PKGNAME-mono=	gmime-sharp-${GNOME_VERSION}
 
 SHARED_LIBS +=  gmime-2.6            0.0    # 600.0
 
@@ -30,28 +25,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main += ${MODGETTEXT_WANTLIB}
 WANTLIB-main += assuan c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB-main += gpgme-pthread gthread-2.0 pcre pthread z
-
-MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gmime/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
+WANTLIB-main += gpgme-pthread gthread-2.0 pcre pthread z ffi
 
 MULTI_PACKAGES=	-main -mono
 
-MODULES +=	devel/gettext
+MODULES +=	devel/gettext \
+		x11/gnome
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
 		security/gpgme>=1.3.1
 
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-
 CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		DOLT_BASH="/bin/ksh"
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--with-gpgme-prefix=${LOCALBASE} \
+CONFIGURE_ENV=	DOLT_BASH="/bin/ksh"
+CONFIGURE_ARGS+=--with-gpgme-prefix=${LOCALBASE} \
 		--program-prefix='gmime-'
 
 ### mono subpackage
