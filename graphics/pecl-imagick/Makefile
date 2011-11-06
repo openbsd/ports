@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/06 18:57:58 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-2.3.0
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	graphics www
 
 HOMEPAGE=	http://pecl.php.net/package/imagick/
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += MagickCore MagickWand bz2 djvulibre fftw3 jasper jbig
 WANTLIB += jpeg lcms ltdl lzma m png tiff z
 WANTLIB += ICE SM X11 Xext Xt expat fontconfig freetype
-WANTLIB += wmf-0.2 wmflite-0.2 xcb xml2
+WANTLIB += xcb xml2
 
 MASTER_SITES=	http://pecl.php.net/get/
 EXTRACT_SUFX=	.tgz

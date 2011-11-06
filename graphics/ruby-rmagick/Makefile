@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/04 12:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/06 18:57:58 jasper Exp $
 
 COMMENT =	Ruby interface to ImageMagick
 
 DISTNAME =	rmagick-2.13.1
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://rmagick.rubyforge.org/
@@ -17,8 +18,7 @@ MODULES =	lang/ruby
 
 WANTLIB =	freetype z MagickCore>=1
 WANTLIB += ICE SM X11 Xext Xt bz2 djvulibre expat fftw3 fontconfig
-WANTLIB += jasper jbig jpeg lcms ltdl lzma png tiff wmf wmflite
-WANTLIB += xml2
+WANTLIB += jasper jbig jpeg lcms ltdl lzma png tiff xml2
 
 LIB_DEPENDS =	graphics/ImageMagick
 
