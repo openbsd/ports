@@ -1,3 +1,0 @@
-This is the phonon library, set apart because of too many dependencies.
-Please note that this contains the full version of qtconfig, which
-unfortunately links with gstreamer for the time being.

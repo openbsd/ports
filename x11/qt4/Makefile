@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2011/10/02 07:03:11 espie Exp $
+# $OpenBSD: Makefile,v 1.93 2011/11/06 12:44:04 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -29,7 +29,7 @@ REVISION-examples =	0
 REVISION-sqlite2 =	0
 REVISION-sqlite =	0
 REVISION-tds =		0
-REVISION-main =		0
+REVISION-main =		1
 REVISION-debug =	0
 REVISION-html =		0
 
@@ -128,8 +128,12 @@ CONFIGURE_ARGS += 	-I${LOCALBASE}/include/postgresql \
 	    		-I${LOCALBASE}/include/postgresql/server \
 			-plugin-sql-psql
 
+# XXX make sure those libraries gets written to libQtGui.la
+QMAKE_LIBS_GUI =	freetype SM ICE Xi Xrender Xinerama fontconfig Xext X11
+#QMAKE_LIBS_GUI =	
+
 CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
-			X11BASE=${X11BASE}
+			X11BASE=${X11BASE} QMAKE_LIBS_GUI="${QMAKE_LIBS_GUI:C/^/-l/}"
 .if defined(MAKE_JOBS)
 CONFIGURE_ENV +=	BOOTSTRAP_MAKE_FLAGS='-j${MAKE_JOBS}'
 .endif
@@ -298,6 +302,11 @@ DESTDIRNAME =	INSTALL_ROOT
 
 pre-patch:
 	cd ${WRKDIST} && cp -R mkspecs/openbsd-g++ mkspecs/openbsd-g++4
+
+post-build:
+.for l v in ${SHARED_LIBS}
+	-${SUBST_CMD} ${WRKBUILD}/lib/lib$l.la
+.endfor
 
 post-install:
 	# extra doc

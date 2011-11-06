@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.29 2011/09/07 09:54:07 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.30 2011/11/06 12:44:04 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -2989,11 +2989,11 @@ lib/qt4/imports/Qt/labs/shaders/qmldir
 lib/qt4/imports/QtWebKit/
 lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/include
-@comment lib/qt4/libQt3Support.la
+lib/qt4/libQt3Support.la
 lib/qt4/libQt3Support.prl
 lib/qt4/libQtCLucene.la
 lib/qt4/libQtCLucene.prl
-@comment lib/qt4/libQtCore.la
+lib/qt4/libQtCore.la
 lib/qt4/libQtCore.prl
 lib/qt4/libQtDBus.la
 lib/qt4/libQtDBus.prl
@@ -3001,21 +3001,21 @@ lib/qt4/libQtDeclarative.la
 lib/qt4/libQtDeclarative.prl
 lib/qt4/libQtDesigner.prl
 lib/qt4/libQtDesignerComponents.prl
-@comment lib/qt4/libQtGui.la
+lib/qt4/libQtGui.la
 lib/qt4/libQtGui.prl
 lib/qt4/libQtHelp.la
 lib/qt4/libQtHelp.prl
 lib/qt4/libQtMultimedia.la
 lib/qt4/libQtMultimedia.prl
-@comment lib/qt4/libQtNetwork.la
+lib/qt4/libQtNetwork.la
 lib/qt4/libQtNetwork.prl
-@comment lib/qt4/libQtOpenGL.la
+lib/qt4/libQtOpenGL.la
 lib/qt4/libQtOpenGL.prl
 lib/qt4/libQtScript.la
 lib/qt4/libQtScript.prl
 lib/qt4/libQtScriptTools.la
 lib/qt4/libQtScriptTools.prl
-@comment lib/qt4/libQtSql.la
+lib/qt4/libQtSql.la
 lib/qt4/libQtSql.prl
 lib/qt4/libQtSvg.la
 lib/qt4/libQtSvg.prl
@@ -3023,11 +3023,11 @@ lib/qt4/libQtTest.la
 lib/qt4/libQtTest.prl
 lib/qt4/libQtUiTools.a
 lib/qt4/libQtUiTools.prl
-@comment lib/qt4/libQtXml.la
+lib/qt4/libQtXml.la
 lib/qt4/libQtXml.prl
 lib/qt4/libQtXmlPatterns.la
 lib/qt4/libQtXmlPatterns.prl
-@comment lib/qt4/libphonon.la
+lib/qt4/libphonon.la
 lib/qt4/libphonon.prl
 lib/qt4/mkspecs/
 lib/qt4/mkspecs/aix-g++/

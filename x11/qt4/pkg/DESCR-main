@@ -7,7 +7,8 @@ simple example programs (source + binaries).
 
 There's a debug version of the libraries: qt4-debug.
 
-There are database plugins: qt4-mysql and qt4-postgresql.
+There are database plugins: qt4-mysql, qt4-postgresql, qt4-sqlite,
+qt4-sqlite2 and qt4-tds.
 
 People who want to use qt4 to compile applications outside the ports tree
 should note that qt4's installation conforms to OpenBSD habits, not

@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2011/09/07 09:54:07 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Tue Aug 23 14:02:27 2011
-+++ qmake/generators/unix/unixmake2.cpp	Mon Sep  5 11:19:03 2011
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.15 2011/11/06 12:44:04 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Mon Sep 12 10:49:28 2011
++++ qmake/generators/unix/unixmake2.cpp	Sun Oct 30 01:32:03 2011
 @@ -80,6 +80,9 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
  {
  
@@ -59,18 +59,21 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2011/09/07 09:54:07 e
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -998,6 +990,10 @@ void UnixMakefileGenerator::init2()
+@@ -998,6 +990,13 @@ void UnixMakefileGenerator::init2()
      project->values("VER_MAJ").append(l[0]);
      project->values("VER_MIN").append(l[1]);
      project->values("VER_PAT").append(l[2]);
 +    project->values("OBSD_TARGET_NAME").append(project->first("TARGET"));
 +    project->values("OBSD_TARGET_VERSION").append(project->first("VER_MAJ") +  "."  + project->first("VER_MIN"));
++    // for (portable) Makefiles
 +    project->values("OBSD_TARGET_x.y").append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".$(LIB" + project->first("TARGET") + "_VERSION)");
++    // for libtool files, to be updated by SUBST_CMD in OpenBSD ports
++    project->values("OBSD_SUBST_x.y").append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".${LIB" + project->first("TARGET") + "_VERSION}");
 +
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
          project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -1135,7 +1131,7 @@ void UnixMakefileGenerator::init2()
+@@ -1135,7 +1134,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }
@@ -79,3 +82,53 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2011/09/07 09:54:07 e
          }
          if(project->isEmpty("QMAKE_LN_SHLIB"))
              project->values("QMAKE_LN_SHLIB").append("ln -s");
+@@ -1280,18 +1279,31 @@ UnixMakefileGenerator::writeLibtoolFile()
+       << QT_VERSION_STR << ") on: " << QDateTime::currentDateTime().toString();
+ 	t << "\n";
+ 
+-    t << "# The name that we can dlopen(3).\n"
+-      << "dlname='" << var(project->isActiveConfig("plugin") ? "TARGET" : "TARGET_x")
+-      << "'\n\n";
++    t << "# The name that we can dlopen(3).\ndlname='";
++    if(project->isActiveConfig("plugin")) {
++        t << var("TARGET");
++    } else {
++#ifdef __OpenBSD__
++        t << var("OBSD_SUBST_x.y");
++#else
++        t << var("TARGET_x");
++#endif
++    }
++    t << "'\n\n";
+ 
+     t << "# Names of this library.\n";
+     t << "library_names='";
+     if(project->isActiveConfig("plugin")) {
+         t << var("TARGET");
+     } else {
+-        if (project->isEmpty("QMAKE_HPUX_SHLIB"))
+-            t << var("TARGET_x.y.z") << " ";
+-        t << var("TARGET_x") << " " << var("TARGET_");
++        if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
++#ifdef __OpenBSD__
++            t << var("OBSD_SUBST_x.y") << " ";
++#else
++            t << var("TARGET_x.y.z") << " " << var("TARGET_x") << " ";
++#endif
++        }
++        t << var("TARGET_");
+     }
+     t << "'\n\n";
+ 
+@@ -1303,10 +1315,10 @@ UnixMakefileGenerator::writeLibtoolFile()
+     if(!project->isEmpty("QMAKE_INTERNAL_PRL_LIBS"))
+         libs = project->values("QMAKE_INTERNAL_PRL_LIBS");
+     else
+         libs << "QMAKE_LIBS"; //obvious one
+     t << "dependency_libs='";
+     for(QStringList::ConstIterator it = libs.begin(); it != libs.end(); ++it)
+-        t << project->values((*it)).join(" ") << " ";
++        t << project->values((*it)).join(" ").replace('(', '{').replace(')', '}') << " ";
+     t << "'\n\n";
+ 
+     t << "# Version information for " << lname << "\n";
