@@ -1,19 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/08/29 17:27:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/06 08:51:43 ajacoutot Exp $
 @bin bin/calcurse
 @man man/man1/calcurse.1
 share/doc/calcurse/
 share/doc/calcurse/AUTHORS
 share/doc/calcurse/NEWS
 share/doc/calcurse/TODO
-share/doc/calcurse/manual.css
-share/doc/calcurse/manual_de.html
-share/doc/calcurse/manual_en.html
-share/doc/calcurse/manual_es.html
-share/doc/calcurse/manual_fr.html
-share/doc/calcurse/manual_it.html
-share/doc/calcurse/manual_nl.html
+share/doc/calcurse/manual.html
+share/doc/calcurse/manual.txt
 share/locale/de/LC_MESSAGES/calcurse.mo
 share/locale/en/LC_MESSAGES/calcurse.mo
 share/locale/es/LC_MESSAGES/calcurse.mo
 share/locale/fr/LC_MESSAGES/calcurse.mo
 share/locale/nl/LC_MESSAGES/calcurse.mo
+share/locale/ru/LC_MESSAGES/calcurse.mo
