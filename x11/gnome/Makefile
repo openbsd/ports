@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2011/11/02 17:47:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.171 2011/11/06 19:06:06 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -37,6 +37,8 @@
      SUBDIR += gjs
      SUBDIR += glom
      SUBDIR += gnote
+     SUBDIR += grilo
+     SUBDIR += grilo-plugins
      SUBDIR += gucharmap
      SUBDIR += gvfs
      SUBDIR += icon-theme
