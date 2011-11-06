@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/23 18:26:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/06 14:56:38 jasper Exp $
 #
 
 COMMENT=	Jonathan's Own Version of Emacs
 
 DISTNAME=	jove-4.16
-REVISION=	1
+REVISION=	2
 CATEGORIES=	editors
 
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/
