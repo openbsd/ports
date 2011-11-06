@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.20 2011/10/11 13:56:41 espie Exp $
+# $OpenBSD: Vars.pm,v 1.21 2011/11/06 12:21:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -133,7 +133,7 @@ sub grab_list
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
 			my $dir = DPB::PkgPath->new($1);
-			$dir->{broken} = 1;
+			$dir->{broken} = "exiting with an error";
 			$h->{$dir} = $dir;
 			open my $quicklog,  '>>',
 			    $grabber->logger->log_pkgpath($dir);
@@ -166,11 +166,12 @@ sub grab_list
 			eval { $info->add($var, $value, $o); };
 			if ($@) {
 				print $log $@;
-				$o->{broken} = 1;
+				$o->{broken} = "error with adding $var=$value";
 			}
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = DPB::PkgPath->new($1);
-			$dir->{broken} = 1;
+			$dir->{broken} = "broken dependency";
+			$dir->{parent} = $subdir;
 			$h->{$dir} = $dir;
 			print $log $_, "\n";
 			print $log "Broken ", $dir->fullpkgpath, "\n";
