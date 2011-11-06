@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/17 12:08:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/06 11:43:00 rpointel Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.2.15
+DISTNAME =		redis-2.4.2
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -39,7 +39,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
 	${INSTALL_DATA} ${WRKSRC}/redis.conf \
 		${PREFIX}/share/examples/redis/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/redis
-	${INSTALL_DATA} ${WRKBUILD}/doc/* ${PREFIX}/share/doc/redis/
 
 .include <bsd.port.mk>
