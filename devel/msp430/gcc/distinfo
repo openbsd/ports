@@ -7,6 +7,7 @@ MD5 (msp430/msp430-gcc-4.5.3-20110706-sf3396639.patch) = /gxadQr7RV/AnPR/cQhiEQ=
 MD5 (msp430/msp430-gcc-4.5.3-20110706-sf3409864.patch) = +cXClKVZJSFKv4Yjm82azA==
 MD5 (msp430/msp430-gcc-4.5.3-20110706-sf3417263.patch) = QI8zT4+cHAO0DXr63mJ/XA==
 MD5 (msp430/msp430-gcc-4.5.3-20110706-sf3431602.patch) = dYQcvkmd+lFfWlEg0U+pzQ==
+MD5 (msp430/msp430-gcc-4.5.3-20110706-sf3433730.patch) = LH9S/eeUpa960vFL4zuJSw==
 MD5 (msp430/msp430-gcc-4.5.3-20110706.patch) = 869xewQzqP2XqmGiV7qTvQ==
 RMD160 (msp430/gcc-core-4.5.3.tar.bz2) = 72uc3cO82YhHZmRWWdA/RgqrRD0=
 RMD160 (msp430/gcc-g++-4.5.3.tar.bz2) = XvN6NWcbR1wfhpYt+nlhM8gOZUk=
@@ -17,6 +18,7 @@ RMD160 (msp430/msp430-gcc-4.5.3-20110706-sf3396639.patch) = Oa2RfTJn1yg+pF0laoEV
 RMD160 (msp430/msp430-gcc-4.5.3-20110706-sf3409864.patch) = LGrFAfZQYL89QYLNWYsApEmxCRs=
 RMD160 (msp430/msp430-gcc-4.5.3-20110706-sf3417263.patch) = 4LTweDR9YREzpjLBvqLczdciu7U=
 RMD160 (msp430/msp430-gcc-4.5.3-20110706-sf3431602.patch) = vl5moXvf/FPClT5NepIHeVVCnxw=
+RMD160 (msp430/msp430-gcc-4.5.3-20110706-sf3433730.patch) = epwRFcE2wZps9/3kWRl7wH/SF1c=
 RMD160 (msp430/msp430-gcc-4.5.3-20110706.patch) = tWGB8n5WLaIkoYyreKQY3HKM2+I=
 SHA1 (msp430/gcc-core-4.5.3.tar.bz2) = Xt0qSuWiZd9xZVAHmZXAoLx75WQ=
 SHA1 (msp430/gcc-g++-4.5.3.tar.bz2) = /ebRbC1KKrIavqp9yOc+IlV+ii0=
@@ -27,6 +29,7 @@ SHA1 (msp430/msp430-gcc-4.5.3-20110706-sf3396639.patch) = zoEvNJCEqIfyfpm1oyd1Rd
 SHA1 (msp430/msp430-gcc-4.5.3-20110706-sf3409864.patch) = 0kAqJiulRVMk/auRB7y9KXmU+lU=
 SHA1 (msp430/msp430-gcc-4.5.3-20110706-sf3417263.patch) = Ay5t/RZlqnCsPN51IzNnyypo9/k=
 SHA1 (msp430/msp430-gcc-4.5.3-20110706-sf3431602.patch) = 1ujkw7GrZOQGhAijam106GihSN4=
+SHA1 (msp430/msp430-gcc-4.5.3-20110706-sf3433730.patch) = hKaaQuFoyX6Z1rEg20pI/k+rqvM=
 SHA1 (msp430/msp430-gcc-4.5.3-20110706.patch) = GE9VOEm4mLPrIxE4v1XeSl72GxM=
 SHA256 (msp430/gcc-core-4.5.3.tar.bz2) = /vfvE5bUH0ry2svqiCaolQYKinLZ8FVGwJEIWwNvH4c=
 SHA256 (msp430/gcc-g++-4.5.3.tar.bz2) = 4Ii5/gAWBw2pIfNT74wML4H9EdIeOusJIQq3utCAgEs=
@@ -37,6 +40,7 @@ SHA256 (msp430/msp430-gcc-4.5.3-20110706-sf3396639.patch) = +qvhvcu1/xltkcl+PjPd
 SHA256 (msp430/msp430-gcc-4.5.3-20110706-sf3409864.patch) = 6lOjm3EBjGdLfBvNPd2yE9om0kLVYip9NO1ejAIhSKY=
 SHA256 (msp430/msp430-gcc-4.5.3-20110706-sf3417263.patch) = ZUwldCQRXrzCA0oM9oCkd/6IokdDT8j7gN/wP96J0Mo=
 SHA256 (msp430/msp430-gcc-4.5.3-20110706-sf3431602.patch) = LYgMtfcDg5d2jaub1hoOqzzgbUt+RvsxJW1VLkXwgVI=
+SHA256 (msp430/msp430-gcc-4.5.3-20110706-sf3433730.patch) = XJtKmS+AtWu3975W65o+dmO5egW/RIcgjafJ+bIKoZc=
 SHA256 (msp430/msp430-gcc-4.5.3-20110706.patch) = y678wodmQHNG/x+F+dbneEb9oEOZTBa/Igdo3TPDgpQ=
 SIZE (msp430/gcc-core-4.5.3.tar.bz2) = 28252641
 SIZE (msp430/gcc-g++-4.5.3.tar.bz2) = 6475820
@@ -47,4 +51,5 @@ SIZE (msp430/msp430-gcc-4.5.3-20110706-sf3396639.patch) = 819
 SIZE (msp430/msp430-gcc-4.5.3-20110706-sf3409864.patch) = 2818
 SIZE (msp430/msp430-gcc-4.5.3-20110706-sf3417263.patch) = 1762
 SIZE (msp430/msp430-gcc-4.5.3-20110706-sf3431602.patch) = 2280
+SIZE (msp430/msp430-gcc-4.5.3-20110706-sf3433730.patch) = 2747
 SIZE (msp430/msp430-gcc-4.5.3-20110706.patch) = 432039
