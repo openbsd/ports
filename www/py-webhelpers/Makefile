@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/06 14:36:22 rpointel Exp $
 
 COMMENT =	helper functions focused on web applications
 
-MODPY_EGG_VERSION = 0.6.4
+MODPY_EGG_VERSION = 1.3
 DISTNAME =	WebHelpers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
@@ -19,7 +18,8 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebHelpers/}
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	www/py-routes
+RUN_DEPENDS =	www/py-routes \
+		textproc/py-MarkupSafe
 REGRESS_DEPENDS = ${RUN_DEPENDS} \
 		  devel/py-nose
 
