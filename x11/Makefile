@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.473 2011/10/08 16:42:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.474 2011/11/06 20:30:35 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -113,7 +113,6 @@
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3
-     SUBDIR += i3bar
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += icontool
@@ -165,7 +164,6 @@
      SUBDIR += openmotif
      SUBDIR += oroborus
      SUBDIR += osd_clock
-     SUBDIR += p5-AnyEvent-I3
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
      SUBDIR += p5-Gtk2-Ex-PodViewer
