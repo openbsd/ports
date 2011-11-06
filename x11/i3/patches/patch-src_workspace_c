@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_workspace_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: correctly revert focus to other floating windows when closing
+a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
+
+--- src/workspace.c.orig	Sun Aug 28 19:48:13 2011
++++ src/workspace.c	Mon Oct 31 12:44:02 2011
+@@ -211,7 +211,7 @@ void workspace_show(const char *num) {
+         /* check if this workspace is currently visible */
+         if (!workspace_is_visible(old)) {
+             LOG("Closing old workspace (%p / %s), it is empty\n", old, old->name);
+-            tree_close(old, DONT_KILL_WINDOW, false);
++            tree_close(old, DONT_KILL_WINDOW, false, false);
+             ipc_send_event("workspace", I3_IPC_EVENT_WORKSPACE, "{\"change\":\"empty\"}");
+             changed_num_workspaces = true;
+         }

@@ -1,0 +1,132 @@
+$OpenBSD: patch-src_con_c,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: don't fix floating coordinates when reassigning - fixes
+flickering (upstream git commit 6b541d382b89de18104202e5820f466725d77576)
+
+bugfix: always adjust floating position when moving to another
+output (upstream git commit a5012f60213f29265edfeeaa4574ebeaa61e1ca5)
+
+bugfix: avoid out of bounds coordinates when moving floating windows
+(upstream git commit a82f5750ded81dd1789c868f0e8f233c5b79b85a)
+
+bugfix: use con_orientation() - fixes switching between different
+outputs (upstream git commit 7a2e92a11646eee8459fc982c0569b4d454c6db9)
+
+bugfix: correctly revert focus to other floating windows when closing
+a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
+
+--- src/con.c.orig	Sun Aug 28 19:48:13 2011
++++ src/con.c	Fri Nov  4 16:05:33 2011
+@@ -559,7 +559,7 @@ update_netwm_state:
+  * TODO: is there a better place for this function?
+  *
+  */
+-void con_move_to_workspace(Con *con, Con *workspace, bool dont_warp) {
++void con_move_to_workspace(Con *con, Con *workspace, bool fix_coordinates, bool dont_warp) {
+     if (con->type == CT_WORKSPACE) {
+         DLOG("Moving workspaces is not yet implemented.\n");
+         return;
+@@ -601,29 +601,39 @@ void con_move_to_workspace(Con *con, Con *workspace, b
+         next = ws;
+     }
+ 
+-    /* If moving to a visible workspace, call show so it can be considered
+-     * focused. Must do before attaching because workspace_show checks to see
+-     * if focused container is in its area. */
+-    if (source_output != dest_output &&
+-        workspace_is_visible(workspace)) {
+-        workspace_show(workspace->name);
+-
+-        if (con->type == CT_FLOATING_CON) {
++    if (source_output != dest_output) {
++        /* Take the relative coordinates of the current output, then add them
++         * to the coordinate space of the correct output */
++        if (fix_coordinates && con->type == CT_FLOATING_CON) {
+             DLOG("Floating window, fixing coordinates\n");
+-            /* Take the relative coordinates of the current output, then add them
+-             * to the coordinate space of the correct output */
++            /* First we get the x/y coordinates relative to the x/y coordinates
++             * of the output on which the window is on */
+             uint32_t rel_x = (con->rect.x - source_output->rect.x);
+             uint32_t rel_y = (con->rect.y - source_output->rect.y);
+-            con->rect.x = dest_output->rect.x + rel_x;
+-            con->rect.y = dest_output->rect.y + rel_y;
+-        }
++            /* Then we calculate a fraction, for example 0.63 for a window
++             * which is at y = 1212 of a 1920 px high output */
++            double fraction_x = ((double)rel_x / source_output->rect.width);
++            double fraction_y = ((double)rel_y / source_output->rect.height);
++            DLOG("rel_x = %d, rel_y = %d, fraction_x = %f, fraction_y = %f, output->w = %d, output->h = %d\n",
++                 rel_x, rel_y, fraction_x, fraction_y, source_output->rect.width, source_output->rect.height);
++            con->rect.x = dest_output->rect.x + (fraction_x * dest_output->rect.width);
++            con->rect.y = dest_output->rect.y + (fraction_y * dest_output->rect.height);
++            DLOG("Resulting coordinates: x = %d, y = %d\n", con->rect.x, con->rect.y);
++        } else DLOG("Not fixing coordinates, fix_coordinates flag = %d\n", fix_coordinates);
+ 
+-        /* Don’t warp if told so (when dragging floating windows with the
+-         * mouse for example) */
+-        if (dont_warp)
+-            x_set_warp_to(NULL);
+-        else
+-            x_set_warp_to(&(con->rect));
++        /* If moving to a visible workspace, call show so it can be considered
++         * focused. Must do before attaching because workspace_show checks to see
++         * if focused container is in its area. */
++        if (workspace_is_visible(workspace)) {
++            workspace_show(workspace->name);
++
++            /* Don’t warp if told so (when dragging floating windows with the
++             * mouse for example) */
++            if (dont_warp)
++                x_set_warp_to(NULL);
++            else
++                x_set_warp_to(&(con->rect));
++        }
+     }
+ 
+     DLOG("Re-attaching container to %p / %s\n", next, next->name);
+@@ -827,15 +837,16 @@ Con *con_descend_tiling_focused(Con *con) {
+  */
+ Con *con_descend_direction(Con *con, direction_t direction) {
+     Con *most = NULL;
+-    DLOG("con_descend_direction(%p, %d)\n", con, direction);
++    int orientation = con_orientation(con);
++    DLOG("con_descend_direction(%p, orientation %d, direction %d)\n", con, orientation, direction);
+     if (direction == D_LEFT || direction == D_RIGHT) {
+-        if (con->orientation == HORIZ) {
++        if (orientation == HORIZ) {
+             /* If the direction is horizontal, we can use either the first
+              * (D_RIGHT) or the last con (D_LEFT) */
+             if (direction == D_RIGHT)
+                 most = TAILQ_FIRST(&(con->nodes_head));
+             else most = TAILQ_LAST(&(con->nodes_head), nodes_head);
+-        } else if (con->orientation == VERT) {
++        } else if (orientation == VERT) {
+             /* Wrong orientation. We use the last focused con. Within that con,
+              * we recurse to chose the left/right con or at least the last
+              * focused one. */
+@@ -848,13 +859,13 @@ Con *con_descend_direction(Con *con, direction_t direc
+     }
+ 
+     if (direction == D_UP || direction == D_DOWN) {
+-        if (con->orientation == VERT) {
++        if (orientation == VERT) {
+             /* If the direction is vertical, we can use either the first
+              * (D_DOWN) or the last con (D_UP) */
+             if (direction == D_UP)
+                 most = TAILQ_LAST(&(con->nodes_head), nodes_head);
+             else most = TAILQ_FIRST(&(con->nodes_head));
+-        } else if (con->orientation == HORIZ) {
++        } else if (orientation == HORIZ) {
+             /* Wrong orientation. We use the last focused con. Within that con,
+              * we recurse to chose the top/bottom con or at least the last
+              * focused one. */
+@@ -1003,7 +1014,7 @@ static void con_on_remove_child(Con *con) {
+     int children = con_num_children(con);
+     if (children == 0) {
+         DLOG("Container empty, closing\n");
+-        tree_close(con, DONT_KILL_WINDOW, false);
++        tree_close(con, DONT_KILL_WINDOW, false, false);
+         return;
+     }
+ }

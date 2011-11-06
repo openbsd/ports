@@ -1,0 +1,33 @@
+$OpenBSD: patch-i3bar_Makefile,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+--- i3bar/Makefile.orig	Sun Aug 28 19:48:13 2011
++++ i3bar/Makefile	Mon Oct 31 16:30:58 2011
+@@ -6,27 +6,22 @@ FILES:=$(wildcard src/*.c)
+ FILES:=$(FILES:.c=.o)
+ HEADERS:=$(wildcard include/*.h)
+ 
+-CPPFLAGS += -I$(TOPDIR)/include
++CPPFLAGS += -Iinclude
+ 
+ all: i3bar doc
+ 
+ i3bar: ${FILES}
+-	echo "LINK"
+ 	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ doc:
+-	echo ""
+-	echo "SUBDIR doc"
+ 	$(MAKE) -C doc
+ 
+ src/%.o: src/%.c ${HEADERS}
+-	echo "CC $<"
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+ 
+ install: all
+-	echo "INSTALL"
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 0755 i3bar $(DESTDIR)$(PREFIX)/bin
++	${INSTALL_PROGRAM} i3bar $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f src/*.o

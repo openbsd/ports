@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/09 11:33:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/06 20:23:24 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-3.e-bf3
-PKGNAME =	i3-3.5.3
-REVISION =	0
+DISTNAME =	i3-4.0.2
 
 CATEGORIES =	x11
 
@@ -19,19 +17,16 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB +=	X11 c ev m xcb xcb-atom xcb-aux xcb-event
-WANTLIB +=	xcb-icccm xcb-keysyms xcb-randr xcb-xinerama
-WANTLIB +=	yajl
+WANTLIB +=	X11 Xcursor c ev m xcb xcb-atom xcb-aux
+WANTLIB +=	xcb-event xcb-icccm xcb-keysyms
+WANTLIB +=	xcb-property xcb-randr xcb-xinerama yajl
 
 MODULES =	converters/libiconv
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0
-BUILD_DEPENDS =	devel/bison
-RUN_DEPENDS =	x11/dmenu \
-		devel/p5-IPC-Run \
-		devel/p5-Try-Tiny \
-		devel/p5-AnyEvent \
-		x11/p5-AnyEvent-I3
+BUILD_DEPENDS =	devel/bison \
+		devel/flex
+RUN_DEPENDS =	x11/dmenu
 
 USE_GMAKE =	Yes
 
@@ -48,9 +43,13 @@ FAKE_FLAGS =	PREFIX=${PREFIX} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/i3.config ${WRKSRC}/src/config.c
+	${SUBST_CMD} ${WRKSRC}/i3.config \
+		${WRKSRC}/i3.config.keycodes \
+			${WRKSRC}/src/config.c
 
 post-install:
-	${INSTALL_MAN} ${WRKBUILD}/man/*.1 ${PREFIX}/man/man1/
+	@rm -f ${WRKBUILD}/man/i3-wsbar.1
+	${INSTALL_MAN} ${WRKBUILD}/{i3bar/doc,man}/*.1 \
+		${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

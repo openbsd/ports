@@ -1,26 +1,48 @@
-$OpenBSD: patch-i3_config,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
---- i3.config.orig	Wed Jan 19 21:26:37 2011
-+++ i3.config	Mon Mar 14 13:39:50 2011
-@@ -101,14 +101,14 @@ bind Mod1+Shift+18 m9
- bind Mod1+Shift+19 m10
+$OpenBSD: patch-i3_config,v 1.4 2011/11/06 20:23:25 dcoppa Exp $
+--- i3.config.orig	Sun Aug 28 19:48:13 2011
++++ i3.config	Sat Nov  5 22:59:31 2011
+@@ -9,6 +9,8 @@
+ # layout, use the i3-config-wizard
+ #
  
- # Mod1+Enter starts a new terminal
--bind Mod1+36 exec /usr/bin/urxvt
-+bind Mod1+36 exec ${X11BASE}/bin/xterm
++set $mod Mod1
++
+ # font for window titles. ISO 10646 = Unicode
+ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
  
- # Mod1+Shift+q kills the current client
- bind Mod1+Shift+24 kill
+@@ -16,13 +18,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
+ floating_modifier Mod1
  
- # Mod1+v starts dmenu and launches the selected application
- # for now, we don’t have a launcher of our own.
--bind Mod1+55 exec /usr/bin/dmenu_run
-+bind Mod1+55 exec ${LOCALBASE}/bin/dmenu_run
+ # start a terminal
+-bindsym Mod1+Return exec urxvt
++bindsym Mod1+Return exec ${X11BASE}/bin/xterm
  
- # Mod1+Shift+e exits i3
- bind Mod1+Shift+26 exit
-@@ -123,4 +123,4 @@ ipc-socket ~/.i3/ipc.sock
- #############################################################
- # DELETE THE FOLLOWING LINES TO DISABLE THE WELCOME MESSAGE #
- #############################################################
--exec xmessage -file /etc/i3/welcome
-+exec ${X11BASE}/bin/xmessage -file ${SYSCONFDIR}/i3/welcome
+ # kill focused window
+ bindsym Mod1+Shift+q kill
+ 
+ # start dmenu (a program launcher)
+-bindsym Mod1+d exec dmenu_run
++bindsym Mod1+d exec ${LOCALBASE}/bin/dmenu_run
+ 
+ # change focus
+ bindsym Mod1+j focus left
+@@ -145,17 +147,5 @@ mode "resize" {
+ 
+ bindsym Mod1+r mode "resize"
+ 
+-# Start i3bar to display a workspace bar (plus the system information i3status
+-# finds out, if available)
+-exec i3status | i3bar -d
+-
+-#######################################################################
+-# automatically start i3-config-wizard to offer the user to create a
+-# keysym-based config which used his favorite modifier (alt or windows)
+-#
+-# i3-config-wizard will not launch if there already is a config file
+-# in ~/.i3/config.
+-#
+-# Please remove the following exec line:
+-#######################################################################
+-exec i3-config-wizard
++# Start i3bar to display a workspace bar
++exec ${TRUEPREFIX}/bin/i3bar -d

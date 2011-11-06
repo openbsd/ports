@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_click_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: skip dragging of floating containers in fullscreen mode
+(upstream git commit 0c367f9e4c67b77420b98a93b5d0e7ab08e695af)
+
+--- src/click.c.orig	Sun Aug 28 19:48:13 2011
++++ src/click.c	Fri Nov  4 16:12:53 2011
+@@ -179,7 +179,9 @@ static int route_click(Con *con, xcb_button_press_even
+     con_focus(con);
+ 
+     /* 3: for floating containers, we also want to raise them on click */
+-    if (floatingcon != NULL) {
++    Con *ws = con_get_workspace(con);
++    Con *fs = (ws ? con_get_fullscreen_con(ws, CF_OUTPUT) : NULL);
++    if (floatingcon != NULL && fs == NULL) {
+         floating_raise_con(floatingcon);
+ 
+         /* 4: floating_modifier plus left mouse button drags */

@@ -1,0 +1,36 @@
+$OpenBSD: patch-i3-config-wizard_Makefile,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+--- i3-config-wizard/Makefile.orig	Wed Sep 14 12:32:31 2011
++++ i3-config-wizard/Makefile	Wed Sep 14 12:33:33 2011
+@@ -10,30 +10,25 @@ HEADERS:=$(wildcard *.h)
+ 
+ # Depend on the specific file (.c for each .o) and on all headers
+ %.o: %.c ${HEADERS}
+-	echo "CC $<"
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
+ 
+ all: i3-config-wizard
+ 
+ i3-config-wizard: cfgparse.y.o cfgparse.yy.o ${FILES}
+-	echo "LINK i3-config-wizard"
+ 	$(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+ 
+ cfgparse.yy.o: cfgparse.l cfgparse.y.o ${HEADERS}
+-	echo "LEX $<"
+-	flex -i -o$(@:.o=.c) $<
++	gflex -i -o$(@:.o=.c) $<
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $(@:.o=.c)
+ 
+ cfgparse.y.o: cfgparse.y ${HEADERS}
+-	echo "YACC $<"
+ 	bison --debug --verbose -b $(basename $< .y) -d $<
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $(<:.y=.tab.c)
+ 
+ 
+ install: all
+-	echo "INSTALL"
+ 	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 0755 i3-config-wizard $(DESTDIR)$(PREFIX)/bin/
++	${INSTALL_PROGRAM} i3-config-wizard $(DESTDIR)$(PREFIX)/bin/
+ 
+ clean:
+ 	rm -f *.o cfgparse.tab.{c,h} cfgparse.output cfgparse.yy.c

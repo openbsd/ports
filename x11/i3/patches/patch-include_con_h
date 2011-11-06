@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_con_h,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: don't fix floating coordinates when reassigning - fixes
+flickering (upstream git commit 6b541d382b89de18104202e5820f466725d77576)
+
+--- include/con.h.orig	Sun Aug 28 19:48:13 2011
++++ include/con.h	Fri Nov  4 16:03:27 2011
+@@ -144,7 +144,7 @@ void con_toggle_fullscreen(Con *con, int fullscreen_mo
+  * TODO: is there a better place for this function?
+  *
+  */
+-void con_move_to_workspace(Con *con, Con *workspace, bool dont_warp);
++void con_move_to_workspace(Con *con, Con *workspace, bool fix_coordinates, bool dont_warp);
+ 
+ /**
+  * Returns the orientation of the given container (for stacked containers,

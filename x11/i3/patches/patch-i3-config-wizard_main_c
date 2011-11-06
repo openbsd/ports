@@ -1,0 +1,54 @@
+$OpenBSD: patch-i3-config-wizard_main_c,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+getline() is a GNU extension
+
+--- i3-config-wizard/main.c.orig	Wed Sep 14 12:16:22 2011
++++ i3-config-wizard/main.c	Wed Sep 14 12:22:41 2011
+@@ -74,6 +74,47 @@ Display *dpy;
+ char *rewrite_binding(const char *bindingline);
+ static void finish();
+ 
++#if defined(__OpenBSD__)
++
++ssize_t
++getline(char ** __restrict buf, size_t * __restrict buflen,
++    FILE * __restrict fp)
++{
++	size_t bytes, newlen;
++	char *newbuf, *p;
++	
++	if (buf == NULL || buflen == NULL) {
++		errno = EINVAL;
++		return -1;
++	}
++	if (*buf == NULL)
++		*buflen = 0;
++	
++	bytes = 0;
++	do {
++		if (feof(fp))
++			break;
++		if (*buf == NULL || bytes != 0) {
++			newlen = *buflen + BUFSIZ;
++			newbuf = realloc(*buf, newlen);
++			if (newbuf == NULL)
++				return -1;
++			*buf = newbuf;
++			*buflen = newlen;
++		}
++		p = *buf + bytes;
++		memset(p, 0, BUFSIZ);
++		if (fgets(p, BUFSIZ, fp) == NULL)
++			break;
++		bytes += strlen(p);
++	} while (bytes == 0 || *(*buf + (bytes - 1)) != '\n');
++	if (bytes == 0)
++		return -1;
++	return bytes;
++}
++
++#endif
++
+ #if defined(__APPLE__)
+ 
+ /*

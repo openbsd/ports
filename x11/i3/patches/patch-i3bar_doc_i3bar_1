@@ -1,0 +1,59 @@
+$OpenBSD: patch-i3bar_doc_i3bar_1,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: double-dash in font name got scrambled by a2x
+(upstream git commit a5938c40738c51097b4b802f0b5ee409681b4771)
+
+fix "AUTHOR" garbage and various tyops
+
+--- i3bar/doc/i3bar.1.orig	Sun Aug 28 19:48:30 2011
++++ i3bar/doc/i3bar.1	Sun Nov  6 13:38:01 2011
+@@ -42,7 +42,7 @@ Specifies the
+ connects to
+ \fBi3\fR(1)\&. If
+ \fBi3bar\fR
+-can not connect to
++cannot connect to
+ \fBi3\fR, it will exit\&. Defaults to
+ \fI/tmp/i3\-ipc\&.sock\fR
+ .RE
+@@ -53,7 +53,7 @@ Execute
+ \fI<command>\fR
+ to get
+ \fIstdin\fR\&. You can also simply pipe into
+-\fIstdin\fR, but starting the coomand for itself,
++\fIstdin\fR, but starting the command for itself,
+ \fBi3bar\fR
+ is able to send
+ \fISIGCONT\fR
+@@ -91,7 +91,7 @@ Specifies a
+ \fIX\-core\-font\fR
+ to use\&. You can choose one with
+ \fBxfontsel\fR(1)\&. Defaults to
+-\fI\-misc\-fixed\-medium\-r\-semicondensed\(em12\-110\-75\-75\-c\-60\-iso10646\-1\fR\&.
++\fI\-misc\-fixed\-medium\-r\-semicondensed\-\-12\-110\-75\-75\-c\-60\-iso10646\-1\fR\&.
+ .RE
+ .PP
+ \fB\-V, \-\-verbose\fR
+@@ -106,7 +106,7 @@ Display a short help\-message and exit
+ .RE
+ .SH "DESCRIPTION"
+ .sp
+-\fBi3bar\fR is an xcb\- and libev\-based status\- and ws\-bar\&. It is best thought of as an replacement for the \fBi3\-wsbar\fR(1) + \fBdzen2\fR(1)\-combination\&. It creates a workspace\-bar for every active output ("screen") and displays a piped in statusline rightaligned on every bar\&.
++\fBi3bar\fR is an xcb\- and libev\-based status\- and ws\-bar\&. It is best thought of as a replacement for the \fBi3\-wsbar\fR(1) + \fBdzen2\fR(1)\-combination\&. It creates a workspace\-bar for every active output ("screen") and displays a piped in statusline rightaligned on every bar\&.
+ .sp
+ It does not sample any status\-information itself, so you still need a program like \fBi3status\fR(1) or \fBconky\fR(1) for that\&.
+ .sp
+@@ -144,12 +144,6 @@ If you want it to hide when not needed, you should ins
+ .SH "SEE ALSO"
+ .sp
+ i3(1), i3\-wsbar(1), dzen2(1), i3status(1)
+-.SH "AUTHORS"
++.SH "AUTHOR"
+ .sp
+ Axel Wagner and contributors
+-.SH "AUTHOR"
+-.PP
+-\fBAxel Wagner\fR <\&mail+i3bar@merovius\&.de\&>
+-.RS 4
+-Author.
+-.RE

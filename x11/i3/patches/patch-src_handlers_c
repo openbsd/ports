@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_handlers_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: honor the X11 window border in ConfigureRequests
+(upstream git commit f2f636f9e7872ff19c31649b24d5a19a826e22bd)
+
+bugfix: correctly handle ConfigureRequests for floating windows in
+multi-monitor setups (git commit b1aa8107b3bc9510422b4a71744c2bfa71627b12)
+
+bugfix: correctly revert focus to other floating windows when closing
+a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
+
+--- src/handlers.c.orig	Sun Aug 28 19:48:13 2011
++++ src/handlers.c	Mon Oct 31 12:44:02 2011
+@@ -353,24 +353,27 @@ static int handle_configure_request(xcb_configure_requ
+             bsr.y += deco_height;
+             bsr.height -= deco_height;
+         }
+-        con = con->parent;
++        Con *floatingcon = con->parent;
+         DLOG("Container is a floating leaf node, will do that.\n");
+         if (event->value_mask & XCB_CONFIG_WINDOW_X) {
+-            con->rect.x = event->x + (-1) * bsr.x;
+-            DLOG("proposed x = %d, new x is %d\n", event->x, con->rect.x);
++            floatingcon->rect.x = event->x + (-1) * bsr.x;
++            DLOG("proposed x = %d, new x is %d\n", event->x, floatingcon->rect.x);
+         }
+         if (event->value_mask & XCB_CONFIG_WINDOW_Y) {
+-            con->rect.y = event->y + (-1) * bsr.y;
+-            DLOG("proposed y = %d, new y is %d\n", event->y, con->rect.y);
++            floatingcon->rect.y = event->y + (-1) * bsr.y;
++            DLOG("proposed y = %d, new y is %d\n", event->y, floatingcon->rect.y);
+         }
+         if (event->value_mask & XCB_CONFIG_WINDOW_WIDTH) {
+-            con->rect.width = event->width + (-1) * bsr.width;
+-            DLOG("proposed width = %d, new width is %d\n", event->width, con->rect.width);
++            floatingcon->rect.width = event->width + (-1) * bsr.width;
++            floatingcon->rect.width += con->border_width * 2;
++            DLOG("proposed width = %d, new width is %d (x11 border %d)\n", event->width, floatingcon->rect.width, con->border_width);
+         }
+         if (event->value_mask & XCB_CONFIG_WINDOW_HEIGHT) {
+-            con->rect.height = event->height + (-1) * bsr.height;
+-            DLOG("proposed height = %d, new height is %d\n", event->height, con->rect.height);
++            floatingcon->rect.height = event->height + (-1) * bsr.height;
++            floatingcon->rect.height += con->border_width * 2;
++            DLOG("proposed height = %d, new height is %d (x11 border %d)\n", event->height, floatingcon->rect.height, con->border_width);
+         }
++        floating_maybe_reassign_ws(floatingcon);
+         tree_render();
+     }
+ 
+@@ -454,7 +457,7 @@ static int handle_unmap_notify_event(xcb_unmap_notify_
+         return 1;
+     }
+ 
+-    tree_close(con, DONT_KILL_WINDOW, false);
++    tree_close(con, DONT_KILL_WINDOW, false, false);
+     tree_render();
+     x_push_changes(croot);
+     return 1;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-man_i3-migrate-config-to-v4_1,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+fix fatal error
+
+--- man/i3-migrate-config-to-v4.1.orig	Wed Sep 14 14:22:38 2011
++++ man/i3-migrate-config-to-v4.1	Wed Sep 14 14:22:51 2011
+@@ -7,7 +7,7 @@
+ .\"    Source: i3 4.0.2
+ .\"  Language: English
+ .\"
+-.TH "I3\-MIGRATE\-CONFIG\" "1" "08/28/2011" "i3 4\&.0\&.2" "i3 Manual"
++.TH "I3\-MIGRATE\-CONFIG" "1" "08/28/2011" "i3 4\&.0\&.2" "i3 Manual"
+ .\" -----------------------------------------------------------------
+ .\" * Define some portability stuff
+ .\" -----------------------------------------------------------------

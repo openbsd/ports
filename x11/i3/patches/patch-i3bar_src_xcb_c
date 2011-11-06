@@ -1,0 +1,20 @@
+$OpenBSD: patch-i3bar_src_xcb_c,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+
+bugfix: check if the X11 connection is unavailable
+(upstream git commit 7064cfc2a07c71a6efce8462e40e789ef8d90908)
+
+--- i3bar/src/xcb.c.orig	Sun Aug 28 19:48:13 2011
++++ i3bar/src/xcb.c	Mon Oct 31 12:44:02 2011
+@@ -406,6 +406,12 @@ void xcb_prep_cb(struct ev_loop *loop, ev_prepare *wat
+  */
+ void xcb_chk_cb(struct ev_loop *loop, ev_check *watcher, int revents) {
+     xcb_generic_event_t *event;
++
++    if (xcb_connection_has_error(xcb_connection)) {
++        ELOG("X11 connection was closed unexpectedly - maybe your X server terminated / crashed?\n");
++        exit(1);
++    }
++
+     while ((event = xcb_poll_for_event(xcb_connection)) == NULL) {
+         return;
+     }
