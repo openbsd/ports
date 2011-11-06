@@ -1,0 +1,18 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1.1.1 2011/11/06 19:05:38 jasper Exp $
+--- test/Makefile.in.orig	Wed Nov  2 22:58:00 2011
++++ test/Makefile.in	Wed Nov  2 22:58:09 2011
+@@ -283,14 +283,12 @@ test_CFLAGS = \
+ 	-DPREFIX=$(prefix)
+ 
+ test_LDADD = \
+-	-ldl -lpthread	\
+ 	@DEPS_LIBS@
+ 
+ test_local_metadata_SOURCES = \
+ 	test_local_metadata.c
+ 
+ test_local_metadata_LDADD = \
+-	-ldl -lpthread	\
+ 	@DEPS_LIBS@ \
+ 	@GTHREAD_LIBS@ \
+ 	@GIO_LIBS@
