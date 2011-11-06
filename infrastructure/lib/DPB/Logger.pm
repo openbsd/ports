@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.5 2011/11/06 12:20:32 espie Exp $
+# $OpenBSD: Logger.pm,v 1.6 2011/11/06 17:56:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -93,11 +93,13 @@ sub pathlist
 	if ($w ne $v) {
 		push(@l, $w);
 	}
-	for my $m (keys %{$v->{info}->{MULTI_PACKAGES}}) {
-		next if $m eq '-';
-		my $w = DPB::PkgPath->new("$stem,$m");
-		if ($w ne $v) {
-			push(@l, $w);
+	if (defined $v->{info}) {
+		for my $m (keys %{$v->{info}->{MULTI_PACKAGES}}) {
+			next if $m eq '-';
+			my $w = DPB::PkgPath->new("$stem,$m");
+			if ($w ne $v) {
+				push(@l, $w);
+			}
 		}
 	}
 	return @l;
