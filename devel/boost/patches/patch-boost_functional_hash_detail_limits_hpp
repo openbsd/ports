@@ -1,0 +1,38 @@
+$OpenBSD: patch-boost_functional_hash_detail_limits_hpp,v 1.1 2011/11/06 20:05:47 jasper Exp $
+--- boost/functional/hash/detail/limits.hpp.orig	Thu Nov  3 07:03:59 2011
++++ boost/functional/hash/detail/limits.hpp	Thu Nov  3 07:05:08 2011
+@@ -15,11 +15,7 @@
+ 
+ #include <boost/limits.hpp>
+ 
+-// On OpenBSD, numeric_limits is not reliable for long doubles, but
+-// the macros defined in <float.h> are and support long double when STLport
+-// doesn't.
+-
+-#if defined(__OpenBSD__) || defined(_STLP_NO_LONG_DOUBLE)
++#if defined(_STLP_NO_LONG_DOUBLE)
+ #include <float.h>
+ #endif
+ 
+@@ -30,7 +26,7 @@ namespace boost
+         template <class T>
+         struct limits : std::numeric_limits<T> {};
+ 
+-#if defined(__OpenBSD__) || defined(_STLP_NO_LONG_DOUBLE)
++#if defined(_STLP_NO_LONG_DOUBLE)
+         template <>
+         struct limits<long double>
+              : std::numeric_limits<long double>
+@@ -50,11 +46,9 @@ namespace boost
+             BOOST_STATIC_CONSTANT(int, digits = LDBL_MANT_DIG);
+             BOOST_STATIC_CONSTANT(int, max_exponent = LDBL_MAX_EXP);
+             BOOST_STATIC_CONSTANT(int, min_exponent = LDBL_MIN_EXP);
+-#if defined(_STLP_NO_LONG_DOUBLE)
+             BOOST_STATIC_CONSTANT(int, radix = FLT_RADIX);
+-#endif
+         };
+-#endif // __OpenBSD__
++#endif
+     }
+ }
+ 
