@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/06 19:05:03 jasper Exp $
+%%SHARED%%
+@bin bin/grilo-simple-playlist
+@bin bin/grilo-test-ui
+@bin bin/grl-inspect
+include/grilo-${API}/
+include/grilo-${API}/grilo.h
+include/grilo-${API}/grl-config.h
+include/grilo-${API}/grl-data.h
+include/grilo-${API}/grl-definitions.h
+include/grilo-${API}/grl-error.h
+include/grilo-${API}/grl-log.h
+include/grilo-${API}/grl-media-audio.h
+include/grilo-${API}/grl-media-box.h
+include/grilo-${API}/grl-media-image.h
+include/grilo-${API}/grl-media-plugin.h
+include/grilo-${API}/grl-media-source.h
+include/grilo-${API}/grl-media-video.h
+include/grilo-${API}/grl-media.h
+include/grilo-${API}/grl-metadata-key.h
+include/grilo-${API}/grl-metadata-source.h
+include/grilo-${API}/grl-multiple.h
+include/grilo-${API}/grl-operation.h
+include/grilo-${API}/grl-plugin-registry.h
+include/grilo-${API}/grl-related-keys.h
+include/grilo-${API}/grl-util.h
+include/grilo-${API}/net/
+include/grilo-${API}/net/grl-net-wc.h
+include/grilo-${API}/net/grl-net.h
+lib/girepository-1.0/
+lib/girepository-1.0/Grl-${API}.typelib
+lib/girepository-1.0/GrlNet-${API}.typelib
+lib/libgrilo-${API}.a
+lib/libgrilo-${API}.la
+lib/libgrlnet-${API}.a
+lib/libgrlnet-${API}.la
+lib/pkgconfig/
+lib/pkgconfig/grilo-${API}.pc
+lib/pkgconfig/grilo-net-${API}.pc
+share/gir-1.0/
+share/gir-1.0/Grl-${API}.gir
+share/gir-1.0/GrlNet-${API}.gir
+share/vala-${API}4/
+share/vala-${API}4/vapi/
+share/vala-${API}4/vapi/grilo-${API}.deps
+share/vala-${API}4/vapi/grilo-${API}.vapi
+share/vala-${API}4/vapi/grilo-net-${API}.deps
+share/vala-${API}4/vapi/grilo-net-${API}.vapi

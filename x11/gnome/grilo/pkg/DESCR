@@ -1,0 +1,13 @@
+Grilo is a framework focused on making media discovery and browsing easy
+for application developers.
+
+More precisely, Grilo provides:
+
+- A single, high-level API that abstracts the differences among various
+  media content providers, allowing application developers to integrate
+  content from various services and sources easily.
+- A collection of plugins for accessing content from various media
+  providers. Developers can share efforts and code by writing plugins for
+  the framework that are application agnostic.
+- A flexible API that allows plugin developers to write plugins of
+  various kinds.
