@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.306 2011/11/02 19:38:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.307 2011/11/06 17:36:44 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -15,6 +15,7 @@
      SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += aqsis
+     SUBDIR += argyll
      SUBDIR += asymptote
      SUBDIR += autopano-sift-c
      SUBDIR += babl
