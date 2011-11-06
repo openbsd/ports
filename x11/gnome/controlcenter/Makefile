@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/11/06 09:00:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/11/06 17:37:12 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.1
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -62,7 +62,8 @@ RUN_DEPENDS=		x11/gnome/settings-daemon>=3.2.0p1 \
 # enforced on purpose.
 
 # needed for gnome-color-panel
-RUN_DEPENDS+=		x11/gnome/color-manager
+RUN_DEPENDS+=		x11/gnome/color-manager \
+			graphics/argyll
 
 # needed for gnome-power-panel+gnome-screen-panel
 RUN_DEPENDS+=		x11/gnome/power-manager
