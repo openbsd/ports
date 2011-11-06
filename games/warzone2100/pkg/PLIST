@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/07 21:16:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/06 21:12:37 dcoppa Exp $
 @bin bin/warzone2100
 share/applications/warzone2100.desktop
 share/doc/warzone2100/
@@ -9,6 +9,7 @@ share/doc/warzone2100/
 @comment share/doc/warzone2100/ChangeLog
 share/doc/warzone2100/Readme.en
 share/doc/warzone2100/ScriptingManual.htm
+share/doc/warzone2100/docbook-xsl.css
 share/doc/warzone2100/images/
 share/doc/warzone2100/images/artillery-far-away.jpg
 share/doc/warzone2100/images/artillery-sensor.jpg

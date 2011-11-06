@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/07 21:16:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/06 21:12:37 dcoppa Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-2.3.8
+DISTNAME=	warzone2100-2.3.9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 
