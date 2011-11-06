@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2011/05/16 17:31:08 jolan Exp $
---- configure.orig	Thu Apr 14 10:09:51 2011
-+++ configure	Fri May  6 17:09:03 2011
-@@ -10663,8 +10663,6 @@ fi
+$OpenBSD: patch-configure,v 1.6 2011/11/06 20:28:11 kili Exp $
+--- configure.orig	Thu Nov  3 09:34:45 2011
++++ configure	Thu Nov  3 10:03:38 2011
+@@ -11643,8 +11643,6 @@ fi
  if test "$release" = "true"
  then
    CFLAGS="${CFLAGS} -O6"
