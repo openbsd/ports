@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.15 2011/11/05 18:25:36 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.16 2011/11/06 12:21:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -118,6 +118,14 @@ sub simple_lockname
 	return shift->{pkgpath};
 }
 
+sub print_parent
+{
+	my ($self, $fh) = @_;
+	if (defined $self->{parent}) {
+		print $fh "parent=", $self->{parent}->lockname, "\n";
+	}
+}
+
 sub unlock_conditions
 {
 	my ($v, $engine) = @_;
@@ -143,12 +151,6 @@ sub add_to_subdirlist
 {
 	my ($self, $list) = @_;
 	$list->{$self->pkgpath_and_flavors} = 1;
-}
-
-sub copy_flavors
-{
-	my $self = shift;
-	return {map {($_, 1)} keys %{$self->{flavors}}};
 }
 
 # XXX
