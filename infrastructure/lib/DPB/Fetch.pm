@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.17 2011/10/15 10:35:41 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.18 2011/11/06 16:56:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -79,6 +79,12 @@ sub simple_lockname
 sub fullpkgpath
 {
 	return shift->{path}->fullpkgpath;
+}
+
+sub print_parent
+{
+	my ($self, $fh) = @_;
+	$self->{path}->print_parent($fh);
 }
 
 sub pkgpath_and_flavors
