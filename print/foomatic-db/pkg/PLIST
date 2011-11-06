@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/07/08 23:28:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/11/06 17:25:51 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/oldprinterids
@@ -5132,7 +5132,6 @@ share/foomatic/db/source/printer/KONICA_MINOLTA-bizhub_C450P.xml
 share/foomatic/db/source/printer/KONICA_MINOLTA-bizhub_C451.xml
 share/foomatic/db/source/printer/KONICA_MINOLTA-bizhub_C550.xml
 share/foomatic/db/source/printer/KONICA_MINOLTA-magicolor_2300_DL.xml
-share/foomatic/db/source/printer/KONICA_MINOLTA-magicolor_2430_DL.xml
 share/foomatic/db/source/printer/KONICA_MINOLTA-magicolor_5430_DL.xml
 share/foomatic/db/source/printer/KONICA_MINOLTA-magicolor_5440_DL.xml
 share/foomatic/db/source/printer/Kodak-DigiSource_9110.xml

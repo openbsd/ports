@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/08 23:28:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/06 17:25:51 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,8 @@ V=			20110708
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 CATEGORIES=		print
+
+REVISION=		0
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -42,6 +44,7 @@ pre-configure:
 	rm -f ${WRKSRC}/db/source/driver/foo2${x}.xml \
 		${WRKSRC}/db/source/opt/foo2${x}-*
 .endfor
+	rm ${WRKSRC}/db/source/printer/KONICA_MINOLTA-magicolor_2430_DL.xml
 .for i in Xerox-Phaser_6110 Samsung-CLP-300 Samsung-CLP-310 Samsung-CLP-315
 	mv ${WRKSRC}/db/source/printer/${i}.xml \
 		${WRKSRC}/db/source/printer/${i}-splix.xml
