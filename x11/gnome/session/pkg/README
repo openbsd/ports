@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.40 2011/10/10 09:26:37 ajacoutot Exp $
+$OpenBSD: README,v 1.41 2011/11/07 17:42:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -132,6 +132,7 @@ Graphics & Multimedia
     * evince - viewer for multiple document formats
     * f-spot - photo management application
     * gnome-games (+gnome-games-extra-data) - collection of games
+    * grilo (+grilo-plugins) - network media discovery and browsing
     * nautilus-evince - display document information in the properties window
     * nautilus-totem - display media information in the properties window
     * rhythmbox - music management application
