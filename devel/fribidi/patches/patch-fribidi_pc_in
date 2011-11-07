@@ -1,0 +1,9 @@
+$OpenBSD: patch-fribidi_pc_in,v 1.1 2011/11/07 09:15:56 dcoppa Exp $
+--- fribidi.pc.in.orig	Mon Nov  7 09:07:42 2011
++++ fribidi.pc.in	Mon Nov  7 09:08:08 2011
+@@ -10,4 +10,4 @@ Description: Unicode Bidirectional Algorithm Library
+ Requires: @MISC_PACKAGES@
+ Version: @VERSION@
+ Libs: -L${libdir} -lfribidi
+-Cflags: -I${includedir}/@PACKAGE@
++Cflags: -I${includedir} -I${includedir}/@PACKAGE@

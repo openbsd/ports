@@ -1,0 +1,18 @@
+#!/bin/sh
+
+args=""
+
+while [ $# -gt 0 ]; do
+    case "x$1" in
+        x--version)
+	    /usr/bin/pkg-config --modversion fribidi
+	    exit 0
+	    ;;
+	x*)
+	    args="${args} $1"
+	    shift
+	    ;;
+    esac
+done
+
+/usr/bin/pkg-config fribidi ${args}
