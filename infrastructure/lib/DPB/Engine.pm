@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.30 2011/11/06 12:23:28 espie Exp $
+# $OpenBSD: Engine.pm,v 1.31 2011/11/07 13:23:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -171,6 +171,7 @@ sub is_done
 		$self->{engine}{built}{$v}= $v;
 		$self->log('B', $v);
 		delete $self->{engine}{tobuild}{$v};
+		delete $v->{new};
 		return 1;
 	} else {
 		return 0;
@@ -186,7 +187,7 @@ sub get_core
 sub key_for_doing
 {
 	my ($self, $v) = @_;
-	return $v->{pkgpath};
+	return $v->pkgpath;
 }
 
 sub already_done
@@ -505,8 +506,9 @@ sub check_buildable
 
 			my $has2 = $self->adjust_distfiles($v);
 			# buying buildable directly is a priority,
-			# but put the patch/dist/small stuff down the line
-			# as otherwise we will tend to grab patch files first
+			# but put the patch/dist/small stuff down the 
+			# line as otherwise we will tend to grab 
+			# patch files first
 			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
 			if ($has + $has2 == 0) {
 				$self->{buildable}->add($v);

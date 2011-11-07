@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.16 2011/11/06 12:21:07 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.17 2011/11/07 13:23:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,26 +32,27 @@ sub create
 	# XXX we want to preserve empty fields
 	my @list = split /,/, $fullpkgpath, -1;
 	my $pkgpath = shift @list;
-	my %flavors = ();
-	my $sawflavor = 0;
-	my $multi = undef;
+	my $o = bless { p => $pkgpath,
+		# XXX
+		has => 5, 
+		new => 1}, $class;
 	for my $v (@list) {
 		if ($v =~ m/^\-/) {
-			die "$fullpkgpath has >1 multi\n" if defined $multi;
-			$multi = $v;
+			die "$fullpkgpath has >1 multi\n" 
+			    if defined $o->{m};
+			$o->{m} = $v;
 		} else {
-			$sawflavor = 1;
-			$flavors{$v} = 1 unless $v eq '';
+			# XXX rely on stuff existing, no need to spring
+			# an empty hash into existence
+			if ($v eq '') {
+				$o->{f} = undef if !exists $o->{f};
+			} else {
+				$o->{f}{$v} = 1;
+			}
 		}
 	}
 
-	bless {pkgpath => $pkgpath,
-		# XXX
-		has => 5,
-		new => 1,
-		flavors => \%flavors,
-		sawflavor => $sawflavor,
-		multi => $multi}, $class;
+	return $o;
 }
 
 # cache just once, put into standard order, so that we don't
@@ -83,11 +84,13 @@ sub seen
 sub basic_list
 {
 	my $self = shift;
-	my @list = ($self->{pkgpath});
-	if (keys %{$self->{flavors}}) {
-		push(@list, sort keys %{$self->{flavors}});
-	} elsif ($self->{sawflavor}) {
-		push(@list, '');
+	my @list = ($self->{p});
+	if (exists $self->{f}) {
+		if (keys %{$self->{f}}) {
+			push(@list, sort keys %{$self->{f}});
+		} else {
+			push(@list, '');
+		}
 	}
 	return @list;
 }
@@ -96,16 +99,21 @@ sub fullpkgpath
 {
 	my $self = shift;
 	my @list = $self->basic_list;
-	if ($self->{multi}) {
-		push(@list, $self->{multi});
+	if (defined $self->{m}) {
+		push(@list, $self->{m});
 	}
 	return join (',', @list);
 }
 
-sub logname
+sub pkgpath
 {
 	my $self = shift;
-	return $self->fullpkgpath;
+	return $self->{p};
+}
+
+sub logname
+{
+	&fullpkgpath;
 }
 
 sub lockname
@@ -115,7 +123,7 @@ sub lockname
 
 sub simple_lockname
 {
-	return shift->{pkgpath};
+	&pkgpath;
 }
 
 sub print_parent
@@ -162,8 +170,11 @@ sub compose
 {
 	my ($class, $fullpkgpath, $pseudo) = @_;
 	my $o = $class->create($fullpkgpath);
-	$o->{flavors} = $pseudo->{flavors};
-	$o->{sawflavor} = $pseudo->{sawflavor};
+	if (defined $pseudo->{f}) {
+		$o->{f} = $pseudo->{f};
+	} else {
+		delete $o->{f};
+	}
 	return $o->normalize;
 }
 
@@ -214,11 +225,12 @@ sub handle_equivalences
 sub zap_default
 {
 	my ($self, $subpackage) = @_;
-	return $self unless defined $subpackage and defined $self->{multi};
-	if ($subpackage->string eq $self->{multi}) {
-		my $o = bless {pkgpath => $self->{pkgpath},
-			sawflavor => $self->{sawflavor},
-			flavors => $self->{flavors}}, ref($self);
+	return $self unless defined $subpackage and defined $self->{m};
+	if ($subpackage->string eq $self->{m}) {
+		my $o = bless {p => $self->{p}}, ref($self);
+		if (defined $self->{f}) {
+			$o->{f} = $self->{f};
+		}
 		return $o->normalize;
 	} else {
 		return $self;
@@ -229,11 +241,12 @@ sub handle_default_flavor
 {
 	my ($self, $h, $state) = @_;
 
-	if (!$self->{sawflavor}) {
-		my $m = bless { pkgpath => $self->{pkgpath},
-		    sawflavor => 1,
-		    multi => $self->{multi},
-		    flavors => $self->{info}{FLAVOR}}, ref($self);
+	if (!defined $self->{f}) {
+		my $m = bless { p => $self->{p},
+		    f => $self->{info}{FLAVOR}}, ref($self);
+	    	if (defined $self->{m}) {
+			$m->{m} = $self->{m};
+		}
 		$m = $m->may_create($self, $h);
 		$m->simplifies_to($self, $state);
 		$m->handle_default_subpackage($h, $state);
@@ -244,7 +257,7 @@ sub handle_default_flavor
 sub handle_default_subpackage
 {
 	my ($self, $h, $state) = @_;
-	my $m = $self->zap_default($self->{info}->{SUBPACKAGE});
+	my $m = $self->zap_default($self->{info}{SUBPACKAGE});
 	if ($m ne $self) {
 		$m = $m->may_create($self, $h);
 		$self->simplifies_to($m, $state);
@@ -301,7 +314,8 @@ sub merge_depends
 				}
 			}
 		}
-		for my $k (qw(DIST LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS)) {
+		for my $k (qw(DIST LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
+		    SUBPACKAGE FLAVOR)) {
 			delete $info->{$k};
 		}
 	}
