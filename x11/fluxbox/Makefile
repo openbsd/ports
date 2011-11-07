@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2011/10/30 15:16:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.58 2011/11/07 09:17:07 dcoppa Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 DISTNAME=		fluxbox-1.3.2
+
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -24,8 +26,7 @@ WANTLIB=		ICE Imlib2 SM X11 Xau Xdmcp Xext Xft Xinerama \
 			Xpm Xrandr Xrender c expat fontconfig freetype \
 			fribidi m pthread-stubs stdc++ xcb z
 
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.65
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2011/11/07 09:17:07 dcoppa Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -40,7 +40,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			graphics/imlib \
 			graphics/libungif \
-			devel/fribidi \
+			devel/fribidi>=0.19.2 \
 			print/libpaper \
 			print/poppler \
 			print/poppler,-qt
@@ -61,7 +61,7 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 10
+REVISION-main = 11
 REVISION-kamera = 6
 REVISION-kpov = 6
 REVISION-sane = 8
