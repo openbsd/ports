@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/06 21:12:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/07 13:55:44 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -38,7 +38,8 @@ RUN_DEPENDS=	devel/desktop-file-utils
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
-CONFIGURE_ARGS+= --with-distributor="OpenBSD"
+CONFIGURE_ARGS+=--disable-motif \
+		--with-distributor="OpenBSD"
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
 		    -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
