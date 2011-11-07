@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2011/11/07 09:49:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.60 2011/11/07 19:10:27 dcoppa Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 DISTNAME=		fluxbox-1.3.2
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -38,7 +38,7 @@ NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		simple
 
-LIB_DEPENDS=		devel/fribidi \
+LIB_DEPENDS=		devel/fribidi>=0.19.2 \
 			graphics/imlib2
 
 .include <bsd.port.mk>
