@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/05 20:09:32 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/07 12:36:08 sthen Exp $
 
 COMMENT=		library for interfacing MPD
 
-DISTNAME=		libmpdclient-2.4
-SHARED_LIBS=		mpdclient 1.0	# 2.1
+DISTNAME=		libmpdclient-2.6
+SHARED_LIBS=		mpdclient 1.1	# 2.5
 CATEGORIES=		audio
 HOMEPAGE=		http://mpd.wikia.com/wiki/ClientLib:libmpdclient
 
