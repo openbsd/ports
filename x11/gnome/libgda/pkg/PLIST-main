@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2011/10/26 22:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2011/11/07 07:53:28 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @pkgpath x11/gnome/libgda,-mdb
@@ -581,3 +581,6 @@ share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/vala-0.14/
+share/vala-0.14/vapi/
+share/vala-0.14/vapi/libgda-${GDA_MAJOR}.vapi

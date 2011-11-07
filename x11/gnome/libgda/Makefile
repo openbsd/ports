@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/10/26 22:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/11/07 07:53:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.0.0
+GNOME_VERSION=		5.0.1
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -68,7 +68,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 REGRESS_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	goi yelp vala
 
 LIBTOOL_FLAGS=		--tag=disable-static
 USE_GROFF =		Yes
