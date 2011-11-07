@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/09/16 09:48:08 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2011/11/07 15:39:50 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -38,6 +38,8 @@ FLAVOR?=
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
+MODGNU_EMACS_YOURE_WEIRD = Oh yes
+
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS=		${GCCARCH} --with-pop
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
@@ -51,7 +53,7 @@ SUBST_VARS=		GCCARCH VERSION
 
 WANTLIB-main=		c m ncurses ossaudio
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--with-x=no
 .else
 LIB_DEPENDS-main=	graphics/libungif \
