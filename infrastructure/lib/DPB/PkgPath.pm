@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.17 2011/11/07 13:23:09 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.18 2011/11/07 16:03:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -39,8 +39,12 @@ sub create
 	for my $v (@list) {
 		if ($v =~ m/^\-/) {
 			die "$fullpkgpath has >1 multi\n" 
-			    if defined $o->{m};
-			$o->{m} = $v;
+			    if exists $o->{m};
+			if ($v eq '-main') {
+				$o->{m} = undef;
+			} else {
+				$o->{m} = $v;
+			}
 		} else {
 			# XXX rely on stuff existing, no need to spring
 			# an empty hash into existence
@@ -101,6 +105,8 @@ sub fullpkgpath
 	my @list = $self->basic_list;
 	if (defined $self->{m}) {
 		push(@list, $self->{m});
+	} elsif (exists $self->{m}) {
+		push(@list, '-main');
 	}
 	return join (',', @list);
 }
@@ -109,6 +115,18 @@ sub pkgpath
 {
 	my $self = shift;
 	return $self->{p};
+}
+
+sub multi
+{
+	my $self = shift;
+	if (defined $self->{m}) {
+		return $self->{m};
+	} elsif (exists $self->{m}) {
+		return '-main';
+	} else {
+		return undef;
+	}
 }
 
 sub logname
@@ -225,8 +243,8 @@ sub handle_equivalences
 sub zap_default
 {
 	my ($self, $subpackage) = @_;
-	return $self unless defined $subpackage and defined $self->{m};
-	if ($subpackage->string eq $self->{m}) {
+	return $self unless defined $subpackage and defined $self->multi;
+	if ($subpackage->string eq $self->multi) {
 		my $o = bless {p => $self->{p}}, ref($self);
 		if (defined $self->{f}) {
 			$o->{f} = $self->{f};
@@ -244,7 +262,7 @@ sub handle_default_flavor
 	if (!defined $self->{f}) {
 		my $m = bless { p => $self->{p},
 		    f => $self->{info}{FLAVOR}}, ref($self);
-	    	if (defined $self->{m}) {
+	    	if (exists $self->{m}) {
 			$m->{m} = $self->{m};
 		}
 		$m = $m->may_create($self, $h);
@@ -288,6 +306,7 @@ sub merge_depends
 {
 	my ($class, $h) = @_;
 	my $global = bless {}, "AddDepends";
+	my $multi;
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		if (defined $info->{DIST}) {
@@ -295,6 +314,10 @@ sub merge_depends
 				$info->{FDEPENDS}{$f} = $f;
 				bless $info->{FDEPENDS}, "AddDepends";
 			}
+		}
+		# share !
+		if (defined $info->{MULTI_PACKAGES}) {
+			$multi = $info->{MULTI_PACKAGES};
 		}
 		# XXX don't grab dependencies for IGNOREd stuff
 		next if defined $info->{IGNORE};
@@ -321,10 +344,14 @@ sub merge_depends
 	}
 	if (values %$global > 0) {
 		for my $v (values %$h) {
-			my $info = $v->{info};
 			# remove stuff that depends on itself
 			delete $global->{$v};
-			$info->{DEPENDS} = $global;
+			$v->{info}{DEPENDS} = $global;
+		}
+	}
+	if (defined $multi) {
+		for my $v (values %$h) {
+			$v->{info}{MULTI_PACKAGES} = $multi;
 		}
 	}
 }
