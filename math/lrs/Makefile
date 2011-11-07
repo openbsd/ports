@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/07 08:58:42 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/07 12:16:22 edd Exp $
 
 COMMENT =		solve vertex enumeration and convex hull problems
 
 DISTNAME =		lrslib-042c
 PKGNAME =		lrs-042
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -40,5 +41,10 @@ do-regress:
 	cp ${FILESDIR}/${i} ${WRKBUILD}
 .endfor
 	cd ${WRKBUILD} && sh openbsd_regress.sh
+
+# resolve conflict with www/gnash and misc/buffer
+post-install:
+	mv ${PREFIX}/bin/gnash ${PREFIX}/bin/lrsgnash
+	mv ${PREFIX}/bin/buffer ${PREFIX}/bin/lrsbuffer
 
 .include <bsd.port.mk>
