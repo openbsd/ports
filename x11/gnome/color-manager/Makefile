@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/04 13:24:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/07 12:38:33 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.2.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
@@ -33,7 +33,8 @@ LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		graphics/exiv2 \
 		graphics/libexif
 
-RUN_DEPENDS=	graphics/shared-color-profiles,-extra \
+RUN_DEPENDS=	graphics/argyll \
+		graphics/shared-color-profiles,-extra \
 		graphics/shared-color-targets
 
 MODGNOME_DESKTOP_FILE=	Yes
