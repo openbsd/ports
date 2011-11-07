@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.16 2011/11/06 12:23:28 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.17 2011/11/07 13:21:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -113,6 +113,8 @@ sub complete_subdirs
 		my $subdirlist = {};
 		for my $v (DPB::PkgPath->seen) {
 			if (defined $v->{info}) {
+				delete $v->{tried};
+				delete $v->{wantinfo};
 				if (defined $v->{wantbuild}) {
 					delete $v->{wantbuild};
 					$self->{engine}->new_path($v);
