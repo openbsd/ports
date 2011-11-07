@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gui_gui_pro,v 1.1 2011/11/07 08:23:39 espie Exp $
+--- src/gui/gui.pro.orig	Sun Oct 30 02:05:34 2011
++++ src/gui/gui.pro	Sun Oct 30 02:06:18 2011
+@@ -46,6 +46,7 @@ win32:!wince*: DEFINES += QT_NO_EGL
+ embedded: QT += network
+ 
+ QMAKE_LIBS += $$QMAKE_LIBS_GUI
++QMAKE_LIBS += -lfreetype -lSM -lICE -lXi -lXrender -lXinerama -lfontconfig -lXext -lX11
+ 
+ contains(DEFINES,QT_EVAL):include($$QT_SOURCE_TREE/src/corelib/eval.pri)
+ 
