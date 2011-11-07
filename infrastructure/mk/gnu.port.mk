@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.43 2011/11/06 12:38:29 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.44 2011/11/07 14:23:09 espie Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -38,7 +38,7 @@ CONFIG_SITE = ${PORTSDIR}/infrastructure/db/config.site
 .endif
 .if !empty(CONFIG_SITE)
 CONFIGURE_ENV += CONFIG_SITE='${CONFIG_SITE}'
-MAKE_ENV += CONFIG_SITE='${CONFIG_SITE}'
+#MAKE_ENV += CONFIG_SITE='${CONFIG_SITE}'
 .endif
 
 MODGNU_CONFIG_GUESS_DIRS ?=${WRKSRC}
