@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/07 09:17:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/07 22:16:28 edd Exp $
 
 COMMENT=		Joe's Window Manager
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		X11 Xext Xft Xinerama Xmu Xpm Xrender c fribidi \
 			jpeg m png z
 
-MASTER_SITES=		${HOMEPAGE}/releases/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=jwm/} \
+			${HOMEPAGE}/releases/
 EXTRACT_SUFX=		.tar.bz2
 
 LIB_DEPENDS=		devel/fribidi>=0.19.2 \
