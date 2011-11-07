@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.165 2011/09/06 08:28:59 landry Exp $
+# $OpenBSD: network.conf.template,v 1.166 2011/11/07 13:13:06 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -179,7 +179,7 @@ MASTER_SITE_TEX_CTAN+=	\
 	http://ftp.chg.ru/pub/TeX/CTAN/ \
 	http://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
- 	http://ftp.sunet.se/pub/text-processing/TeX/ \
+	http://ftp.sunet.se/pub/text-processing/TeX/ \
 	http://www.ctan.org/pub/tex-archive/
 
 MASTER_SITE_KDE+=	\
@@ -189,24 +189,22 @@ MASTER_SITE_KDE+=	\
 	http://ftp.tuniv.szczecin.pl/pub/kde/ \
 	http://ftp.kddilabs.jp/X11/kde/ \
 	http://ftp.uvsq.fr/pub/X11/kde/ \
- 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
- 	http://ftp.sunet.se/pub/X11/kde/ \
+	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
+	http://ftp.sunet.se/pub/X11/kde/ \
 	http://ftp.chg.ru/pub/X11/kde/ \
 	ftp://ftp.kde.org/pub/kde/ \
- 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
+	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 
 MASTER_SITE_SAVANNAH+=	\
 	http://download.savannah.nongnu.org/releases/ \
-	http://download.savannah.nongnu.org/releases-noredirect/ \
+	http://download-mirror.savannah.nongnu.org/releases/ \
 	http://ftp.cc.uoc.gr/mirrors/nongnu.org/ \
 	http://ftp.twaren.net/Unix/NonGNU/ \
 	http://mirror.csclub.uwaterloo.ca/nongnu/ \
 	http://mirrors.zerg.biz/nongnu/ \
 	http://nongnu.askapache.com/ \
-	http://piotrkosoft.net/pub/mirrors/savannah.gnu.org/ \
 	http://savannah.c3sl.ufpr.br/ \
-	ftp://savannah.c3sl.ufpr.br/savannah-nongnu/ \
-	http://savannah.inetbridge.net/
+	ftp://savannah.c3sl.ufpr.br/savannah-nongnu/
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
