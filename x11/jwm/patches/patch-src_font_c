@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_font_c,v 1.1 2011/11/07 09:17:07 dcoppa Exp $
+$OpenBSD: patch-src_font_c,v 1.2 2011/11/07 09:35:53 dcoppa Exp $
+
+Fix with fribidi 0.19.x
+
 --- src/font.c.orig	Mon Sep 26 00:28:02 2011
 +++ src/font.c	Mon Nov  7 09:57:46 2011
 @@ -212,7 +212,7 @@ void RenderString(Drawable d, FontType font, ColorType
