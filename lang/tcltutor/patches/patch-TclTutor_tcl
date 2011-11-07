@@ -1,6 +1,6 @@
-$OpenBSD: patch-TclTutor_tcl,v 1.3 2009/01/25 20:47:48 steven Exp $
---- TclTutor.tcl.orig	Sat Aug  2 05:04:40 2008
-+++ TclTutor.tcl	Sun Jan 25 21:42:14 2009
+$OpenBSD: patch-TclTutor_tcl,v 1.4 2011/11/07 03:06:48 stu Exp $
+--- TclTutor.tcl.orig	Sat Jan  8 08:35:46 2011
++++ TclTutor.tcl	Fri Nov  4 20:58:15 2011
 @@ -1,8 +1,8 @@
 -package provide app-tcltutor 1.0
  #!/bin/sh 
@@ -31,15 +31,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.3 2009/01/25 20:47:48 steven Exp $
  
  #
  #   check if a Scripted Document 
-@@ -654,7 +654,6 @@ proc createDisplay {} {
-     foreach l {lesson code output} {
-       set t [labelframe .$l -text [string totitle $l] -height [expr $h/4]]
-       .pn add $t
--      puts [.pn paneconfigure $t ]
-       set w [text $t.txt -yscrollcommand "$t.ysb set" ]
-       scrollbar $t.ysb -command "$w yview"
-       grid rowconfigure $t 0 -weight 1
-@@ -694,7 +693,7 @@ proc createDisplay {} {
+@@ -694,7 +694,7 @@ proc createDisplay {} {
          $mbf.file add command -label $l -command $l2
      }
      
@@ -48,7 +40,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.3 2009/01/25 20:47:48 steven Exp $
          if {$Tutor(logUsage)} {
             $mbf.file add command -label "Disable activity log" -command {set Tutor(logUsage) 0}
           } else {
-@@ -1134,6 +1133,7 @@ proc SetFontSize {} {
+@@ -1134,6 +1134,7 @@ proc SetFontSize {} {
  proc logUsage {str} {
      global Tutor
      
@@ -56,7 +48,7 @@ $OpenBSD: patch-TclTutor_tcl,v 1.3 2009/01/25 20:47:48 steven Exp $
      if {$Tutor(logUsage) == 0} {return}
  
      if {[string match $Tutor(logFile) ""]} {
-@@ -1160,6 +1160,7 @@ proc logUsage {str} {
+@@ -1160,6 +1161,7 @@ proc logUsage {str} {
  # 
  proc mailLog {} {
    global Tutor tcl_platform
