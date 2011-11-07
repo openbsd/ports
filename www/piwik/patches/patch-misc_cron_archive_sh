@@ -1,0 +1,12 @@
+$OpenBSD: patch-misc_cron_archive_sh,v 1.1 2011/11/07 11:26:33 giovanni Exp $
+--- misc/cron/archive.sh.orig	Mon Nov  7 12:19:56 2011
++++ misc/cron/archive.sh	Mon Nov  7 12:20:25 2011
+@@ -30,7 +30,7 @@
+ # enable_browser_archiving_triggering = false
+ #===========================================================================
+ 
+-for TEST_PHP_BIN in php5 php php-cli php-cgi; do
++for TEST_PHP_BIN in php-5.2 php-5.3 php5 php php-cli php-cgi; do
+   if which $TEST_PHP_BIN >/dev/null 2>/dev/null; then
+     PHP_BIN=`which $TEST_PHP_BIN`
+     break
