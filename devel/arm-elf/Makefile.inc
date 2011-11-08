@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2011/07/18 17:10:25 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2011/11/08 12:43:25 jasper Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
@@ -8,7 +8,7 @@ MAINTAINER=	Sebastian Trahm <basti@schleifi.com>
 
 # GPLv3
 # For newlib: multiple copyrights, but basically BSD.
-#   See: /usr/local/share/doc/newlib
+#   See: ${PREFIX}/share/doc/newlib
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
