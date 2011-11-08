@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/08 12:48:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/08 12:50:23 jasper Exp $
 
 COMMENT=		interface to URL shortening sites
 
 DISTNAME=		WWW-Shorten-3.02
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 # Perl
@@ -23,5 +23,6 @@ RUN_DEPENDS=		devel/p5-Config-Auto \
 # Resolve conflict with audio/shorten
 post-install:
 	mv ${PREFIX}/bin/shorten ${PREFIX}/bin/shorten.pl
+	mv ${PREFIX}/man/man1/shorten.1 ${PREFIX}/man/man1/shorten.pl.1
 
 .include <bsd.port.mk>
