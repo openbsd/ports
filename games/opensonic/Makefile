@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/08 09:30:52 dcoppa Exp $
 
 COMMENT =		game based on the Sonic the Hedgehog universe
 
@@ -31,8 +31,8 @@ WANTLIB =		alleg c ogg m pthread vorbis vorbisfile
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-	cd ${WRKSRC} && env OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" \
-	    OPENSNC_ALLEGRO_VERSION="`allegro-config --version`" cmake . 
+	cd ${WRKBUILD} && env OPENSNC_ALLEGRO_LIBS="`allegro-config --libs`" \
+	    OPENSNC_ALLEGRO_VERSION="`allegro-config --version`" cmake ${WRKSRC}
 
 post-install:
 	echo "#!/bin/sh\ncd ${TRUEPREFIX}/share/opensonic\n./opensonic_launcher" > \

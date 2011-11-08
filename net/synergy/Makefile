@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/18 18:37:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/08 09:30:52 dcoppa Exp $
 
 COMMENT=		mouse and keyboard sharing utility
 
@@ -25,11 +25,11 @@ NO_REGRESS=		Yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/synergy[cs] ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/synergy
-	${INSTALL_DATA} ${WRKBUILD}/doc/synergy.conf.exampl* \
+	${INSTALL_DATA} ${WRKSRC}/doc/synergy.conf.exampl* \
 		${PREFIX}/share/examples/synergy/
-	${INSTALL_MAN} ${WRKBUILD}/doc/synergyc.man \
+	${INSTALL_MAN} ${WRKSRC}/doc/synergyc.man \
 		${PREFIX}/man/man1/synergyc.1
-	${INSTALL_MAN} ${WRKBUILD}/doc/synergys.man \
+	${INSTALL_MAN} ${WRKSRC}/doc/synergys.man \
 		${PREFIX}/man/man1/synergys.1
 
 .include <bsd.port.mk>

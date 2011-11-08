@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/08 09:30:52 dcoppa Exp $
 
 COMMENT =		blinkensisters - hunt for the lost pixels
 
@@ -31,6 +31,8 @@ USE_GMAKE =		Yes
 MODULES +=		devel/cmake
 CONFIGURE_STYLE =	cmake
 WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software/
+
+SEPARATE_BUILD =	No
 
 NO_REGRESS =		Yes
 

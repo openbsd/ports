@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/09 08:50:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2011/11/08 09:30:52 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
@@ -54,9 +54,9 @@ RUN_DEPENDS=		graphics/feh \
 MODULES=		devel/cmake \
 			devel/gettext
 
-CONFIGURE_STYLE=	cmake
-
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
+
+SEPARATE_BUILD=		No
 
 NO_REGRESS=		Yes
 
