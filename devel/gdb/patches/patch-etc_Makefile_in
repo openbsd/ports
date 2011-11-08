@@ -1,0 +1,15 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1 2011/11/08 20:23:00 jasper Exp $
+
+Don't bother installing GNU coding standards info.
+
+--- etc/Makefile.in.orig	Tue Nov  8 21:12:15 2011
++++ etc/Makefile.in	Tue Nov  8 21:12:28 2011
+@@ -64,7 +64,7 @@ PDFFILES = standards.pdf configure.pdf
+ HTMLFILES = standards.html configure.html
+ 
+ all: info
+-install: install-info
++install:
+ 
+ uninstall:
+ 
