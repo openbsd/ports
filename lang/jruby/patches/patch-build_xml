@@ -1,0 +1,23 @@
+$OpenBSD: patch-build_xml,v 1.3 2011/11/08 23:58:08 jeremy Exp $
+
+Fix build, backported from git commit 
+a760b4aea4b5aa9b38da4bd3334d8355a83f60fa.
+
+--- build.xml.orig	Sun Oct 30 20:59:44 2011
++++ build.xml	Sun Oct 30 21:01:00 2011
+@@ -379,7 +379,6 @@
+       </jar>
+ 
+       <antcall target="add-emma-jars"/>
+-      <antcall target="generate-ri-cache"/>
+ 
+       <property name="jar-jruby.hasrun" value="true"/>
+   </target>
+@@ -484,7 +483,6 @@
+         <param name="bar.wrap" value="${lib.dir}/jruby.bar" />
+       </antcall>
+       
+-      <antcall target="generate-ri-cache"/>
+   </target>
+   <target name="jarjar" depends="jar-jruby-dist"/>
+ 
