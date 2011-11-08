@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/08 15:03:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/08 18:43:15 jasper Exp $
 
 COMMENT =		Ubuntu Font Family
 
@@ -12,6 +12,7 @@ HOMEPAGE =		http://font.ubuntu.com/
 MAINTAINER =		Tim van der Molen <tbvdm@xs4all.nl>
 
 # Ubuntu Font Licence 1.0
+# http://font.ubuntu.com/ufl/ubuntu-font-licence-1.0.txt
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
