@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/21 13:38:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/08 10:38:48 jasper Exp $
 
 COMMENT=		library to handle UPnP IGD port mapping
 
 GNOME_PROJECT=		gupnp-igd
-GNOME_VERSION=		0.1.11
-REVISION=		2
+GNOME_VERSION=		0.2.0
 
-SHARED_LIBS +=  gupnp-igd-1.0        0.0      # 3.4
-
-EXTRACT_SUFX=		.tar.bz2
+SHARED_LIBS +=  gupnp-igd-1.0        0.0      # 4.0
 
 MODULES=		devel/gettext \
 			lang/python \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 17:00:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/08 10:38:48 jasper Exp $
 include/gupnp-igd-1.0/
 include/gupnp-igd-1.0/libgupnp-igd/
 include/gupnp-igd-1.0/libgupnp-igd/gupnp-simple-igd-thread.h
@@ -20,7 +20,6 @@ share/gtk-doc/html/gupnp-igd/
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgd.html
 share/gtk-doc/html/gupnp-igd/GUPnPSimpleIgdThread.html
 share/gtk-doc/html/gupnp-igd/ch01.html
-share/gtk-doc/html/gupnp-igd/gupnp-igd.devhelp
 share/gtk-doc/html/gupnp-igd/gupnp-igd.devhelp2
 share/gtk-doc/html/gupnp-igd/home.png
 share/gtk-doc/html/gupnp-igd/index.html
