@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/08 23:47:20 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.6.4
+V =		1.6.5
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
-REVISION =	1
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0
 
@@ -60,15 +59,16 @@ post-extract:
 		&& cd jruby-launcher && tar zxf ../data.tar.gz
 
 pre-configure:
+	# SUBST_CMD causes problems because $\( -> $(
+	perl -pi -e 's,\$$\{LOCALBASE\},'${LOCALBASE}',g' \
+		${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb \
+		${WRKSRC}/jruby-launcher/unixlauncher.cpp
 	# Rebuild the jruby-launcher gem
 	cd ${WRKSRC}/jruby-launcher && find . -type f \! -name '*.orig'  -print | \
 		pax -wz -s '/^\.\///' -f ../data.tar.gz
 	cd ${WRKSRC} && tar cf \
 		build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gem \
 		data.tar.gz metadata.gz
-	# SUBST_CMD causes problems because $\( -> $(
-	perl -pi -e 's,\$$\{LOCALBASE\},'${LOCALBASE}',' \
-		${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb
 	rm ${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb.orig
 
 do-build:
@@ -99,12 +99,14 @@ do-install:
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/lib
 	cd ${WRKBUILD}/lib && tar -cf - * | \
 		tar -C ${JRUBY_HOME}/lib -xf -
+	cd ${WRKBUILD} && rm -rf share/ri/1.8/system/* share/ri.jar
 	cd ${WRKBUILD} && tar -cf - share | \
 		tar -C ${JRUBY_HOME} -xf -
 	${SET_ENV} ${MAKE_ENV} PATH=${JRUBY_HOME}/bin:$$PATH HOME=${WRKBUILD} \
 		make=${LOCALBASE}/bin/gmake ${PREFIX}/jruby/bin/jruby \
 		${PREFIX}/jruby/bin/gem install --local --no-rdoc --no-ri \
-		${WRKBUILD}/build_lib/{rake*,jruby-launcher*-java}.gem 
+		${WRKBUILD}/build_lib/rake-${RAKE_V}.gem \
+		${WRKBUILD}/build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gem 
 	mkdir -p ${JRUBY_HOME}/lib/ruby/site_ruby/1.8/java
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share
 
