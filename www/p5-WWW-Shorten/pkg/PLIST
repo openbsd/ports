@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/18 07:58:39 jasper Exp $
-bin/shorten
+@comment $OpenBSD: PLIST,v 1.2 2011/11/08 12:48:55 jasper Exp $
+bin/shorten.pl
 ${P5SITE}/WWW/Shorten/
 ${P5SITE}/WWW/Shorten.pm
 ${P5SITE}/WWW/Shorten/LinkToolbot.pm
