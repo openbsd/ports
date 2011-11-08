@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_rubygems_config_file_rb,v 1.3 2010/10/06 18:12:19 jeremy Exp $
---- lib/rubygems/config_file.rb.orig	Mon Feb 15 20:14:16 2010
-+++ lib/rubygems/config_file.rb	Wed Oct  6 10:26:54 2010
-@@ -63,7 +63,7 @@ class Gem::ConfigFile
+$OpenBSD: patch-lib_rubygems_config_file_rb,v 1.4 2011/11/08 23:44:12 jeremy Exp $
+--- lib/rubygems/config_file.rb.orig	Thu Aug 25 17:30:44 2011
++++ lib/rubygems/config_file.rb	Sun Oct 30 20:36:11 2011
+@@ -68,7 +68,7 @@ class Gem::ConfigFile
  
-       path.strip
-     rescue LoadError
--      '/etc'
-+      '${SYSCONFDIR}'
+         path.strip
+       rescue LoadError
+-        "/etc"
++        '${SYSCONFDIR}'
+       end
      end
  
-   SYSTEM_WIDE_CONFIG_FILE = File.join system_config_path, 'gemrc'
