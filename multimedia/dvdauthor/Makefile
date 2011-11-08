@@ -1,36 +1,38 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/08 08:00:21 dcoppa Exp $
 
-COMMENT=		creates DVD file structures
-DISTNAME=		dvdauthor-0.6.14
-REVISION=		1
-CATEGORIES=		multimedia
+COMMENT=	creates DVD file structures
 
-HOMEPAGE=		http://dvdauthor.sourceforge.net/
+DISTNAME=	dvdauthor-0.7.0
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
 
-# GPLv2
+HOMEPAGE=	http://dvdauthor.sourceforge.net/
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
+WANTLIB+=	ICE MagickCore SM X11 Xext Xt bz2 c djvulibre dvdread
+WANTLIB+=	expat fftw3 fontconfig freetype fribidi jasper jbig
+WANTLIB+=	jpeg lcms2 ltdl lzma m png pthread tiff wmf wmflite
+WANTLIB+=	xml2 z
 
-MODULES=		converters/libiconv
+MODULES=	converters/libiconv
+LIB_DEPENDS=	devel/fribidi>=0.19.2 \
+		devel/libdvdread \
+		graphics/ImageMagick \
+		textproc/libxml
 
-LIB_DEPENDS=		devel/libdvdread \
-			devel/fribidi \
-			textproc/libxml \
-			graphics/ImageMagick
+MAKE_FLAGS+=	BISON="yacc"
 
-WANTLIB += c freetype m png z dvdread fribidi xml2 MagickCore MagickWand
+USE_GMAKE=	Yes
+CONFIGURE_STYLE= gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 
-USE_GMAKE=		Yes
-USE_GROFF=		Yes
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" \
-			CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libpng"
-MAKE_FLAGS+=		BISON="yacc" LDFLAGS="-L${LOCALBASE}/lib"
+WRKDIST=	${WRKDIR}/dvdauthor
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dvdauthor
