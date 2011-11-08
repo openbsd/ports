@@ -1,57 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2011/07/19 17:08:54 jeremy Exp $
+$OpenBSD: patch-configure,v 1.5 2011/11/08 23:38:57 jeremy Exp $
 
 Fix so name, checking for DOT and DOXYGEN, and use -pthread.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Fri Jul 15 06:00:12 2011
-+++ configure	Mon Jul 18 15:25:00 2011
-@@ -5820,7 +5820,7 @@ IFS=$as_save_IFS
- 
- fi
- fi
--DOT=$ac_cv_prog_DOT
-+DOT=""
- if test -n "$DOT"; then
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOT" >&5
- $as_echo "$DOT" >&6; }
-@@ -5878,10 +5878,10 @@ yes:)
- $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
- ac_tool_warned=yes ;;
- esac
--    DOT=$ac_ct_DOT
-+    DOT=""
-   fi
- else
--  DOT="$ac_cv_prog_DOT"
-+  DOT=""
- fi
- 
- if test -n "$ac_tool_prefix"; then
-@@ -5912,7 +5912,7 @@ IFS=$as_save_IFS
- 
- fi
- fi
--DOXYGEN=$ac_cv_prog_DOXYGEN
-+DOXYGEN=""
- if test -n "$DOXYGEN"; then
-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOXYGEN" >&5
- $as_echo "$DOXYGEN" >&6; }
-@@ -5970,10 +5970,10 @@ yes:)
- $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
- ac_tool_warned=yes ;;
- esac
--    DOXYGEN=$ac_ct_DOXYGEN
-+    DOXYGEN=""
-   fi
- else
--  DOXYGEN="$ac_cv_prog_DOXYGEN"
-+  DOXYGEN=""
- fi
- 
- if test x"$DOXYGEN" = x; then
-@@ -14776,13 +14776,13 @@ fi
+--- configure.orig	Sun Oct 30 02:55:52 2011
++++ configure	Sun Oct 30 19:07:09 2011
+@@ -15503,13 +15503,13 @@ fi
  if test x"$enable_pthread" = xyes; then
      for pthread_lib in thr pthread pthreads c c_r root; do
  	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
@@ -68,7 +24,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14848,7 +14848,7 @@ done
+@@ -15576,7 +15576,7 @@ done
    c_r) :
      MAINLIBS="-pthread $MAINLIBS" ;; #(
    *) :
@@ -77,16 +33,16 @@ so ports don't have to be bumped when OpenBSD version changes.
  esac
      else
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Don't know how to find pthread library on your system -- thread support disabled\"" >&5
-@@ -15786,7 +15786,7 @@ if test "$enable_shared" = 'yes'; then
+@@ -16568,7 +16568,7 @@ case "$enable_shared" in #(
    openbsd*) :
  
  	SOLIBS='$(LIBS)'
 -	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
-+	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.'${LIBruby19_VERSION}
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby19_VERSION}
  	 ;; #(
    solaris*) :
  
-@@ -16487,7 +16487,10 @@ _ACEOF
+@@ -17390,7 +17390,10 @@ _ACEOF
  _ACEOF
  
  else

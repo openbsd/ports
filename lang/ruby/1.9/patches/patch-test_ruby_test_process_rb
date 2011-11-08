@@ -1,17 +1,12 @@
-$OpenBSD: patch-test_ruby_test_process_rb,v 1.2 2011/07/19 17:08:54 jeremy Exp $
-
-OpenBSD seems to receive the SIGCHILD twice.  I'm not sure
-if that's just how OpenBSD works, or if this is a bug in
-OpenBSD or ruby.
-
---- test/ruby/test_process.rb.orig	Sat May 28 16:31:53 2011
-+++ test/ruby/test_process.rb	Mon Jul 18 15:24:00 2011
-@@ -1193,7 +1193,7 @@ class TestProcess < Test::Unit::TestCase
-       sleep 1
-       break unless signal_received.empty?
-     end
--    assert_equal [true], signal_received, " [ruby-core:19744]"
-+    assert_equal true, signal_received.first, " [ruby-core:19744]"
-   rescue NotImplementedError, ArgumentError
-   ensure
-     begin
+$OpenBSD: patch-test_ruby_test_process_rb,v 1.3 2011/11/08 23:38:57 jeremy Exp $
+--- test/ruby/test_process.rb.orig	Wed Jul 27 17:16:58 2011
++++ test/ruby/test_process.rb	Wed Jul 27 17:17:00 2011
+@@ -61,7 +61,7 @@ class TestProcess < Test::Unit::TestCase
+       write_file 's', <<-"End"
+ 	result = 1
+ 	begin
+-	  Process.setrlimit(Process::RLIMIT_NOFILE, 0)
++	  Process.setrlimit(Process::RLIMIT_NOFILE, 1)
+ 	rescue Errno::EINVAL
+ 	  result = 0
+ 	end
