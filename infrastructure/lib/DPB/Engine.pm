@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.31 2011/11/07 13:23:09 espie Exp $
+# $OpenBSD: Engine.pm,v 1.32 2011/11/08 10:26:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -401,7 +401,7 @@ sub important
 
 sub adjust
 {
-	my ($self, $v, $kind) = @_;
+	my ($self, $v, $kind, $kind2) = @_;
 	return 0 if !exists $v->{info}{$kind};
 	my $not_yet = 0;
 	for my $d (values %{$v->{info}{$kind}}) {
@@ -410,6 +410,7 @@ sub adjust
 		    (defined $d->{info} &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
+			$v->{info}{$kind2}{$d} = $d if defined $kind2;
 		} else {
 			$not_yet++;
 		}
@@ -501,7 +502,7 @@ sub check_buildable
 				$changes++;
 				next;
 			}
-			my $has = $self->adjust($v, 'DEPENDS');
+			my $has = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
 			$has += $self->adjust_extra($v, 'EXTRA');
 
 			my $has2 = $self->adjust_distfiles($v);
