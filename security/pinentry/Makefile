@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/04 12:12:53 stsp Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/08 16:55:19 stsp Exp $
 
 # pinentry builds against it's own stripped version of libassuan
 # I will see with upstream how to change this behavior
 
-COMMENT-main = 	collection of simple PIN or passphrase entry dialogs
-COMMENT-gtk2 = 	gtk2 frontend for pinentry
+COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
+COMMENT-gtk2 = 	PIN or passphrase entry dialog (gtk2 interface)
 
 VERSION = 	0.8.1
 DISTNAME = 	pinentry-${VERSION}
 CATEGORIES = 	security
 
+REVISION-main = 0
+REVISION-gtk2 = 0
 PKGNAME-main = 	${DISTNAME}
 PKGNAME-gtk2 = 	pinentry-gtk2-${VERSION}
 
@@ -48,4 +50,9 @@ CONFIGURE_ARGS = 	--enable-pinentry-curses \
 			--disable-pinentry-gtk \
 			--enable-pinentry-gtk2
 
+# Change default 'pinentry' to pinentry-curses in the -main package.
+# The shipped Makefiles insist on setting it to the gtk2 variant.
+post-install:
+	ln -sf pinentry-curses ${PREFIX}/bin/pinentry
+	
 .include <bsd.port.mk>
