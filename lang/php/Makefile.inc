@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2011/10/02 11:16:19 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2011/11/08 10:25:48 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -27,7 +27,7 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://uk.php.net/distributions/
 MASTER_SITES0=		http://blade2k.humppa.hu/ \
 			http://download.suhosin.org/ \
-			http://didy.avioc.org/FreeBSD/ports/distfiles/
+			${_MASTER_SITE_FREEBSD}
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
