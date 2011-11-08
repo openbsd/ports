@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/08 06:36:38 rpointel Exp $
 
 COMMENT =	ASN.1 library for Python
 
-MODPY_EGG_VERSION =	0.0.13
+MODPY_EGG_VERSION =	0.1.1
 DISTNAME =		pyasn1-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 PKG_ARCH =		*
-REVISION=		0
 EPOCH =			0
 
 HOMEPAGE =		http://pyasn1.sourceforge.net/
@@ -33,7 +32,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 
 do-regress: fake
-	@cd ${WRKSRC}/test && ${MAKE_ENV} \
-		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./suite.py
+	@cd ${WRKSRC} && ${MAKE_ENV} \
+		PYTHONPATH=${WRKSRC} ${MODPY_BIN} ./test/suite.py
 
 .include <bsd.port.mk>

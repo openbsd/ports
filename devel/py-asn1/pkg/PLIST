@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/26 13:02:13 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/11/08 06:36:38 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/pyasn1/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -34,6 +34,11 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/decoder.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/decoder.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/encoder.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/codec/der/encoder.pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/octets.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/compat/octets.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/error.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/error.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/
