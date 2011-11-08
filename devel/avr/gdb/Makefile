@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/17 18:04:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/08 13:00:21 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
 VER=		6.8
 DISTNAME=	gdb-${VER}
 PKGNAME=	avr-gdb-${VER}
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/gdb.html
 
