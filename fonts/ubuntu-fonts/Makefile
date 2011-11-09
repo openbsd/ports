@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/08 18:43:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/09 09:17:05 sthen Exp $
 
-COMMENT =		Ubuntu Font Family
+COMMENT =		unicode sans-serif/monospace TrueType fonts from Ubuntu
 
 DISTNAME =		ubuntu-font-family-0.80
+REVISION =		0
 PKGNAME =		${DISTNAME:S,-family,s,}
 
 CATEGORIES =		fonts
