@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.46 2011/08/22 17:53:38 espie Exp $
+# $OpenBSD: ruby.port.mk,v 1.47 2011/11/09 00:03:31 jeremy Exp $
 
 # ruby module
 
@@ -268,10 +268,17 @@ CONFIGURE_SCRIPT=	${RUBY} extconf.rb
 # All gems should be in the same directory on rubygems.org.
 MASTER_SITES?=	${MASTER_SITE_RUBYGEMS}
 EXTRACT_SUFX=	.gem
-# Ruby 1.9 and JRuby ship with ruby-gems
+
+# Require versions that no longer create the .require_paths files.
 .  if ${MODRUBY_REV} == 1.8
-BUILD_DEPENDS+=	devel/ruby-gems>=1.3.7p0
+BUILD_DEPENDS+=	devel/ruby-gems>=1.8.10
 RUN_DEPENDS+=	devel/ruby-gems>=1.3.7p0
+.  elif ${MODRUBY_REV} == 1.9
+BUILD_DEPENDS+=	lang/ruby/1.9>=1.9.3.0
+.  elif ${MODRUBY_REV} == jruby
+BUILD_DEPENDS+=	lang/jruby>=1.6.5
+.  elif ${MODRUBY_REV} == rbx
+BUILD_DEPENDS+=	lang/rubinius>=1.2.4p2
 .  endif
 
 # Just like all ruby C extensions should set SHARED_ONLY,
