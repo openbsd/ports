@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/22 13:26:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/09 12:18:19 dcoppa Exp $
 
 ONLY_FOR_ARCHS =amd64 i386
 
 COMMENT =	vmware userland helper for X
 
-V =		0.20110616
-DISTNAME =	jcs-vmwh-8249e85
-PKGNAME =	vmwh-${V}
+DISTNAME =	vmwh-0.20110905
+
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://github.com/jcs/vmwh/
@@ -19,10 +18,12 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
-WANTLIB +=	c
+WANTLIB +=	X11 Xmu c
 
 RUN_DEPENDS =	x11/xclip
 
+MAKE_FLAGS =	INCLUDES="-I${X11BASE}/include" \
+		LDPATH="-L${X11BASE}/lib"
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
