@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.32 2011/11/08 10:26:38 espie Exp $
+# $OpenBSD: Engine.pm,v 1.33 2011/11/09 08:28:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -634,11 +634,31 @@ sub dump_category
 
 	$k =~ m/^./;
 	my $q = "\u$&: ";
+	my $cache = {};
 	for my $v (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 	    values %{$self->{$k}}) {
 		print $fh $q;
-		$v->quick_dump($fh);
+		if (defined $cache->{$v->{info}}) {
+			print $fh $v->fullpkgpath, " same as ",
+			    $cache->{$v->{info}}, "\n";
+		} else {
+			$v->quick_dump($fh);
+			$cache->{$v->{info}} = $v->fullpkgpath;
+		}
 	}
+}
+
+sub end_dump
+{
+	my ($self, $fh) = @_;
+	$fh //= \*STDOUT;
+	for my $v (values %{$self->{built}}) {
+		$self->adjust($v, 'RDEPENDS');
+	}
+	for my $k (qw(tobuild built)) {
+		$self->dump_category($k, $fh);
+	}
+	print $fh "\n";
 }
 
 sub dump
