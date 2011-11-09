@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/08 23:24:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/11/09 00:17:38 jeremy Exp $
 ${GEM_BIN}/mongrel_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE

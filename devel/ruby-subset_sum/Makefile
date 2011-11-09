@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/09 00:17:38 jeremy Exp $
 
 COMMENT =	simple subset sum problem solver for ruby
 
 DISTNAME =	subset_sum-1.0.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE=	http://subset-sum.rubyforge.org/

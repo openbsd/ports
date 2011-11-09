@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/09 00:17:38 jeremy Exp $
 
 COMMENT =	faster implementation of the standard debug.rb
 
 VERSION =	0.10.3
 DISTNAME =      ruby-${PKGNAME}
 PKGNAME =       debug-${VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	devel
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>

@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/14 17:23:32 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/11/09 00:17:38 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
 ${GEM_LIB}/gems/${DISTNAME}/.rvmrc
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md

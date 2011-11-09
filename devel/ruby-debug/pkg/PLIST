@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/11/09 00:17:38 jeremy Exp $
 ${GEM_BIN}/rdebug${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/09 00:17:38 jeremy Exp $
 ${GEM_BIN}/parse_tree_abc${GEM_BIN_SUFFIX}
 ${GEM_BIN}/parse_tree_audit${GEM_BIN_SUFFIX}
 ${GEM_BIN}/parse_tree_deps${GEM_BIN_SUFFIX}
@@ -6,7 +6,6 @@ ${GEM_BIN}/parse_tree_show${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt

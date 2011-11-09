@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/09 00:17:38 jeremy Exp $
 
 COMMENT =	recursive descent parser combinator framework
 
 DISTNAME =	rparsec-1.0
-REVISION =	4
+REVISION =	5
 CATEGORIES =	devel
 
 # BSD

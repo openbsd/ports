@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/11/09 00:17:38 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/HISTORY.rdoc

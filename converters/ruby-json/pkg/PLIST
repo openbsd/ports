@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/07/27 03:41:26 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/09 00:17:37 jeremy Exp $
 ${GEM_BIN}/edit_json.rb${GEM_BIN_SUFFIX}
 ${GEM_BIN}/prettify_json.rb${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/COPYING-json-jruby
