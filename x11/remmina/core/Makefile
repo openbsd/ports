@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/09 14:51:42 jasper Exp $
 
 COMMENT=		GTK+2 remote desktop client
 
 DISTNAME=		remmina-0.9.3
-REVISION=		2
+REVISION=		3
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
@@ -25,7 +25,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-avahi \
 			--enable-vte \
 			--enable-unique \
-			--enable-gcrypt \
-			--disable-ssh
+			--enable-gcrypt
+# This needs the grantpt(3) and alike functions.
+CONFIGURE_ARGS+=	--disable-ssh
 
 .include <bsd.port.mk>
