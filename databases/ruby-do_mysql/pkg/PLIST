@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 17:36:22 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/09 00:05:40 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.markdown
@@ -9,12 +9,16 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/compat.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_common.c
+${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_common.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_common.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_mysql.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_mysql.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/do_mysql.so
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/error.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/mkmf.log
+${GEM_LIB}/gems/${DISTNAME}/ext/do_mysql/mysql_compat.h
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_mysql/
 ${GEM_LIB}/gems/${DISTNAME}/lib/do_mysql.rb
@@ -26,6 +30,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/connection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/encoding_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/error/
+${GEM_LIB}/gems/${DISTNAME}/spec/error/sql_error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/reader_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/result_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:34:25 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/09 00:05:40 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog.markdown
@@ -9,6 +9,9 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/compat.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.c
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.h
+${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_common.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/do_sqlite3/do_sqlite3.o
@@ -28,6 +31,8 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/command_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/connection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/encoding_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/error/
+${GEM_LIB}/gems/${DISTNAME}/spec/error/sql_error_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/reader_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/result_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
