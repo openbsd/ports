@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/09 00:10:56 jeremy Exp $
 
 COMMENT=		flexible HTML parser
 
-DISTNAME=		hpricot-0.8.1
-REVISION=		3
+DISTNAME=		hpricot-0.8.4
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://code.whytheluckystiff.net/hpricot/
