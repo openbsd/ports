@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/11/10 07:44:46 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		10
+REVISION-main=		11
 REVISION-nautilus=	4
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
@@ -52,12 +52,14 @@ WANTLIB-nautilus += ${WANTLIB} nautilus-extension
 
 BUILD_DEPENDS+= 	devel/iso-codes \
 			lang/vala \
-			multimedia/gstreamer-0.10/plugins-good>=0.10.30
+			multimedia/gstreamer-0.10/plugins-good>=0.10.30 \
+			devel/py-gobject
 
 RUN_DEPENDS-main+=	devel/iso-codes \
 			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/settings-daemon \
+			devel/py-gobject \
 			${MODGNOME_RUN_DEPENDS_yelp}
 
 LIB_DEPENDS-main+=	${MODGETTEXT_LIB_DEPENDS} \
