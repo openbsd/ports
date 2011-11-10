@@ -1,0 +1,20 @@
+$OpenBSD: patch-ttyrec_c,v 1.1 2011/11/10 21:35:02 kili Exp $
+--- ttyrec.c.orig	Sun Jun 11 17:52:50 2006
++++ ttyrec.c	Wed Nov  9 21:31:06 2011
+@@ -203,15 +203,10 @@ doinput()
+ void
+ finish()
+ {
+-#if defined(SVR4)
+-	int status;
+-#else /* !SVR4 */
+-	union wait status;
+-#endif /* !SVR4 */
+ 	register int pid;
+ 	register int die = 0;
+ 
+-	while ((pid = wait3((int *)&status, WNOHANG, 0)) > 0)
++	while ((pid = wait3(NULL, WNOHANG, 0)) > 0)
+ 		if (pid == child)
+ 			die = 1;
+ 
