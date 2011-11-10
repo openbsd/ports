@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/10 16:37:40 giovanni Exp $
 
 COMMENT=		Pure Perl MySQL driver for the Perl DBI
 
-DISTNAME=		DBD-mysqlPP-0.04
-REVISION=		0
+DISTNAME=		DBD-mysqlPP-0.06
 CATEGORIES=		databases
 MODULES=		cpan
-USE_GROFF =		Yes
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
