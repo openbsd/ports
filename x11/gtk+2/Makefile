@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2011/10/18 06:20:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2011/11/10 19:41:02 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
 
-V=		2.24.7
+V=		2.24.8
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype
 WANTLIB += gthread-2.0 m pcre pixman-1 pthread-stubs xcb ffi
-WANTLIB += xcb-render z gdk_pixbuf-2.0 GL Xxf86vm drm xcb-shm
+WANTLIB += xcb-render z gdk_pixbuf-2.0 GL Xxf86vm drm xcb-shm stdc++
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=	.tar.bz2
