@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_master_cf,v 1.1 2011/03/09 10:47:31 sthen Exp $
---- conf/master.cf.orig	Fri Dec 31 14:14:51 2010
-+++ conf/master.cf	Wed Mar  9 10:45:45 2011
-@@ -8,49 +8,49 @@
+$OpenBSD: patch-conf_master_cf,v 1.2 2011/11/10 17:27:09 sthen Exp $
+--- conf/master.cf.orig	Tue Nov  8 19:33:52 2011
++++ conf/master.cf	Thu Nov 10 10:14:21 2011
+@@ -8,47 +8,47 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -54,11 +54,9 @@ $OpenBSD: patch-conf_master_cf,v 1.1 2011/03/09 10:47:31 sthen Exp $
  proxymap  unix  -       -       n       -       -       proxymap
  proxywrite unix -       -       n       -       1       proxymap
 -smtp      unix  -       -       n       -       -       smtp
-+smtp      unix  -       -       -       -       -       smtp
- # When relaying mail as backup MX, disable fallback_relay to avoid MX loops
 -relay     unix  -       -       n       -       -       smtp
++smtp      unix  -       -       -       -       -       smtp
 +relay     unix  -       -       -       -       -       smtp
- 	-o smtp_fallback_relay=
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
@@ -79,7 +77,7 @@ $OpenBSD: patch-conf_master_cf,v 1.1 2011/03/09 10:47:31 sthen Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -84,14 +84,14 @@ scache    unix  -       -       n       -       1     
+@@ -82,14 +82,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
