@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/01 16:44:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/10 14:13:06 sthen Exp $
 
 COMMENT=	unique standard tape archiver
 
@@ -12,7 +12,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/star/ \
+		http://spacehopper.org/mirrors/berlios/star/
 
 FLAVORS=	static
 FLAVOR?=

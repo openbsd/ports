@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/01 16:44:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/10 14:13:06 sthen Exp $
 
 COMMENT=		ISO 9660 filesystem and CD creation tools
 
@@ -14,7 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c ossaudio
 
-MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/
+MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/ \
+			http://spacehopper.org/mirrors/berlios/cdrecord/
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes

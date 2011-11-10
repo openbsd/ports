@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/01 16:44:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/10 14:13:06 sthen Exp $
 
 COMMENT=	faster and improved version of dd
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c 
 
-MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/
+MASTER_SITES=	ftp://ftp.berlios.de/pub/sdd/ \
+		http://spacehopper.org/mirrors/berlios/sdd/
 
 USE_GMAKE=	Yes
 MAKE_ENV=	MAKEPROG="${MAKE_PROGRAM}" CCOM="${CC}" COPTX="${CFLAGS}"
