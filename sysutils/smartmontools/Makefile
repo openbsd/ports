@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/21 08:48:34 giovanni Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/10 18:41:22 giovanni Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
 COMMENT=		control and monitor storage systems using SMART
 
-DISTNAME=		smartmontools-5.41
+DISTNAME=		smartmontools-5.42
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=smartmontools/}	
