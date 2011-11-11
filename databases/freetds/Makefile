@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/11 12:38:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2011/11/11 11:37:54 espie Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -25,7 +25,7 @@ MASTER_SITES=	http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 AUTOCONF_VERSION=2.65
 AUTOMAKE_VERSION=1.11
 MODULES=	devel/gettext
-BUILD_DEPENDS=  devel/doxygen>=1.7.2 \
+BUILD_DEPENDS=  devel/doxygen,no_gui,bootstrap>=1.7.2 \
 		devel/libtool,-ltdl \
 		textproc/docbook-dsssl \
 		textproc/openjade \
@@ -48,7 +48,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 FLAVOR?=
 FLAVORS=	openssl
-.if ${FLAVOR:L:Mopenssl}
+.if ${FLAVOR:Mopenssl}
 CONFIGURE_ARGS+=	--with-openssl
 WANTLIB+=		crypto ssl
 PERMIT_PACKAGE_CDROM=	incompatible license
