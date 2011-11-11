@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/11 20:12:51 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386
 COMMENT =		high-speed threaded Scheme interpreter
 
 VERSION =		7.4
 MACHINE-TYPE=		ti3ob
+REVISION =		0
 DISTNAME =		pcsv${VERSION}-${MACHINE-TYPE}
 PKGNAME =		petite-chez-${VERSION}
 
 CATEGORIES =		lang
 
-HOMEPAGE =		http://www.scheme.com
+HOMEPAGE =		http://www.scheme.com/
 
 MAINTAINER =		Aaron W. Hsu <arcfide@sacrideo.us>
 
@@ -22,13 +23,14 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c curses m pthread z
 
-MASTER_SITES =		http://www.scheme.com/download/
+MASTER_SITES =		${HOMEPAGE}/download/
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--machine=${MACHINE-TYPE} \
 			--installprefix=${TRUEPREFIX} \
 			--temproot=${WRKINST} \
-			--force-relink --threads
+			--force-relink \
+			--threads
 USE_GROFF =		Yes
 			
 NO_REGRESS =		Yes
@@ -36,6 +38,6 @@ NO_REGRESS =		Yes
 WRKDIST =		${WRKDIR}/csv7.4
 WRKSRC =		${WRKDIST}/custom
 
-ALL_TARGET =		
+ALL_TARGET =		# empty
 
 .include <bsd.port.mk>

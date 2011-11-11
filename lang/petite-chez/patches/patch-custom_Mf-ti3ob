@@ -1,6 +1,7 @@
+$OpenBSD: patch-custom_Mf-ti3ob,v 1.2 2011/11/11 20:12:51 jasper Exp $
+
 Link with system zlib.
 
-$OpenBSD: patch-custom_Mf-ti3ob,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
 --- custom/Mf-ti3ob.orig	Mon Jun 11 12:09:01 2007
 +++ custom/Mf-ti3ob	Wed Feb 11 17:12:30 2009
 @@ -4,13 +4,13 @@

@@ -1,6 +1,7 @@
+$OpenBSD: patch-custom_scheme_1_in,v 1.2 2011/11/11 20:12:51 jasper Exp $
+
 Don't describe scheme executable in synopsis.
 
-$OpenBSD: patch-custom_scheme_1_in,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
 --- custom/scheme.1.in.orig	Wed Feb 11 16:18:42 2009
 +++ custom/scheme.1.in	Wed Feb 11 16:18:54 2009
 @@ -10,8 +10,6 @@

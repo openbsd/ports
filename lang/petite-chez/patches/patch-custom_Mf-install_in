@@ -1,6 +1,7 @@
+$OpenBSD: patch-custom_Mf-install_in,v 1.2 2011/11/11 20:12:51 jasper Exp $
+
 Fix example path and don't install with restrictive permissions.
 
-$OpenBSD: patch-custom_Mf-install_in,v 1.1.1.1 2009/04/24 13:13:45 wcmaier Exp $
 --- custom/Mf-install.in.orig	Tue Mar 13 12:03:19 2007
 +++ custom/Mf-install.in	Wed Feb 11 16:43:12 2009
 @@ -24,7 +24,7 @@ InstallBin=${InstallPrefix}/bin
