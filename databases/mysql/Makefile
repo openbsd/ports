@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2011/09/30 10:18:25 giovanni Exp $
+# $OpenBSD: Makefile,v 1.197 2011/11/11 11:37:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,10 +33,12 @@ DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 
-.include <bsd.own.mk>
+MULTI_PACKAGES=		-main -server -tests
+
+.include <bsd.port.arch.mk>
 
 # XXX gcc bug, gcc/3.3.5
-.if ${MACHINE_ARCH} == "alpha" && ${COMPILER_VERSION} != "gcc4"
+.if ${MACHINE_ARCH} == "alpha" && !${PROPERTIES:Mgcc4}
 CFLAGS+=	-mbwx
 .endif
 
@@ -64,7 +66,7 @@ CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
 		 --without-docs \
 		 --without-readline
 
-.if ${COMPILER_VERSION:L:Mgcc[34]}
+.if ${PROPERTIES:Mgcc[34]}
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
 .endif
@@ -72,8 +74,6 @@ CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 . if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+= --enable-assembler
 .endif
-
-MULTI_PACKAGES=		-main -server -tests
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.1,<5.2 \
 			databases/p5-DBD-mysql
