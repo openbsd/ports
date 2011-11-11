@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2005/09/04 23:28:43 espie Exp $
-bin/jove
-bin/teachjove
+@comment $OpenBSD: PLIST,v 1.9 2011/11/11 20:08:40 jasper Exp $
+@bin bin/jove
+@bin bin/teachjove
 libexec/jove/
-libexec/jove/portsrv
-libexec/jove/recover
+@bin libexec/jove/recover
 @man man/man1/jove.1
 @man man/man1/teachjove.1
 share/jove/

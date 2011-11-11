@@ -1,7 +1,7 @@
-$OpenBSD: patch-sysdep_h,v 1.1 2006/04/09 11:10:09 alek Exp $
---- sysdep.h.orig	Tue Mar 19 05:44:33 1996
-+++ sysdep.h	Sun Apr  9 13:03:06 2006
-@@ -568,7 +568,8 @@
+$OpenBSD: patch-sysdep_h,v 1.2 2011/11/11 20:08:40 jasper Exp $
+--- sysdep.h.orig	Fri Nov 11 20:49:39 2011
++++ sysdep.h	Fri Nov 11 20:50:09 2011
+@@ -670,7 +670,8 @@
  #endif
  
  #ifndef MSDOS	/* maximum path length (including '\0') */
