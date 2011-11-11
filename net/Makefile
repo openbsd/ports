@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.715 2011/11/11 10:58:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.716 2011/11/11 15:23:37 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -450,6 +450,7 @@
      SUBDIR += queryperf
      SUBDIR += queso
      SUBDIR += quirc
+     SUBDIR += quvi
      SUBDIR += rabbitmq
      SUBDIR += radiusd-cistron
      SUBDIR += radiusd-lucent
