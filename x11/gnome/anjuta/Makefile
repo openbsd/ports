@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/11/11 10:57:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -60,6 +60,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gtksourceview3
+
+# needed by plugins/class-gen/plugin.c
+RUN_DEPENDS += devel/autogen
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=		Yes
