@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.11 2011/11/11 17:24:12 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2011/11/11 18:38:17 jasper Exp $
 
 TARGET=			msp430
+
+PKGNAME?=		${TARGET}-${DISTNAME}
 
 CATEGORIES+=		devel devel/msp430
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/11 17:30:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/11 18:38:17 jasper Exp $
 
 COMMENT=		libc for msp430
 
 DISTNAME=		${TARGET}-libc-20110612
+PKGNAME=		${DISTNAME}
 REVISION=		2
 
 LTS_PATCHES=		msp430-libc-20110612-sf3387164.patch \
