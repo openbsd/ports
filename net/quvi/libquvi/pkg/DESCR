@@ -1,0 +1,3 @@
+libquvi is a small C library that can be used to parse flash media
+stream URLs. It originates from the idea of working around the flash
+requirement found on many media hosting websites (e.g. YouTube).
