@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.22 2011/09/01 10:53:50 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.23 2011/11/11 23:21:48 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -397,7 +397,7 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/script
 @bin libexec/dovecot/script-login
 @bin libexec/dovecot/ssl-params
-@man man/man1/deliver.1
+@comment @man man/man1/deliver.1
 @man man/man1/doveadm-altmove.1
 @man man/man1/doveadm-auth.1
 @man man/man1/doveadm-config.1
