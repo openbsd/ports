@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2011/11/02 19:12:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2011/11/11 10:59:22 benoit Exp $
 %%SHARED%%
 @bin bin/gdm-control
 @bin bin/gnome-panel-control
@@ -49,6 +49,11 @@ share/applications/openbox.desktop
 share/examples/openbox/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/openbox/
+@comment share/examples/openbox/AUTHORS
+@comment share/examples/openbox/CHANGELOG
+@comment share/examples/openbox/COMPLIANCE
+@comment share/examples/openbox/COPYING
+@comment share/examples/openbox/README
 share/examples/openbox/autostart
 @sample ${SYSCONFDIR}/xdg/openbox/autostart
 share/examples/openbox/environment

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2011/11/02 19:12:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2011/11/11 10:59:17 benoit Exp $
 
 COMMENT =	small, fast & usable window manager
 
 V =		3.5.0
 DISTNAME =	openbox-${V}
+REVISION =	0
 SHARED_LIBS +=  obt                  0.0      # 0.1
 SHARED_LIBS +=  obrender             10.0      # 27.1
 
@@ -38,7 +39,9 @@ LIB_DEPENDS +=	devel/pango \
 		textproc/libxml
 
 FAKE_FLAGS =	sysconfdir="${PREFIX}/share/examples/openbox" \
-		rcdir="${PREFIX}/share/examples/openbox"
+		rcdir="${PREFIX}/share/examples/openbox" \
+		mkdir_p="$${SHELL} ${WRKSRC}/install-sh -d"
+		
 API_V = 	${V:R}
 SUBST_VARS =	API_V
 
