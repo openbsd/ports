@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/11/11 15:16:18 jasper Exp $
 # losely based on the FreeBSD port
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
@@ -56,8 +56,7 @@ SCM_INFO+=	Xlibscm.info
 FEATURES=arrays bignums cautious edit-line curses posix socket unix \
 dynamic-linking i/o-extensions inexact regex
 
-.if ${FLAVOR:L:Mno_x11}
-.else
+.if !${FLAVOR:L:Mno_x11}
 FEATURES+=x
 OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
