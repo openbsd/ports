@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.714 2011/10/05 17:37:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.715 2011/11/11 10:58:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -26,7 +26,6 @@
      SUBDIR += arping
      SUBDIR += arpwatch
      SUBDIR += avahi,
-     SUBDIR += avahi,no_mono
      SUBDIR += axel
      SUBDIR += balance
      SUBDIR += bindgraph
