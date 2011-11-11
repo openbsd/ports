@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/11 18:33:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/11 23:01:23 jasper Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.2
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 
