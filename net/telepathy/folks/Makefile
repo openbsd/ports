@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/11 16:56:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/11 17:07:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.6.5
+API_V=			29
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
 SHARED_LIBS +=  folks                     5.0 # 29.0
@@ -39,5 +40,7 @@ CONFIGURE_ARGS+=	--enable-import-tool \
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no
 # Experimental bindings, but hey, without testing they'll never mature.
 CONFIGURE_ARGS+=	--enable-eds-backend
+
+SUBST_VARS+=		API_V
 
 .include <bsd.port.mk>
