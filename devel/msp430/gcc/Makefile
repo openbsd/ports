@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/11 17:23:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/11 17:24:12 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
 VERSION=		4.5.3
 R=			20110706
 DISTNAME=		gcc-${VERSION}
-REVISION=		4
+REVISION=		5
 PKGNAME=		${TARGET}-${DISTNAME}
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}

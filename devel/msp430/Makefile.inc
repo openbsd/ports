@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2011/11/11 17:23:04 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2011/11/11 17:24:12 jasper Exp $
 
 TARGET=			msp430
 
@@ -11,7 +11,7 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # the different msp430 architectures (uniarch).
 # For a list of changes this uniarch approach brings, please refer to:
 # http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Devel:Uniarch
-HOMEPAGE?=		http://mspgcc4.sourceforge.net/
+HOMEPAGE?=		http://mspgcc.sourceforge.net/
 
 # binutils/gcc/gdb: GPLv3
 # libc/msp430mcu: BSD3/ISC
