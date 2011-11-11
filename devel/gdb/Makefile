@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/08 20:23:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/11 18:33:03 jasper Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.2
 REVISION=	4
-
-MASTER_SITES=	${MASTER_SITE_GNU:=gdb/} \
-		http://distfiles.nl/
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 
@@ -16,6 +13,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
+MASTER_SITES=	${MASTER_SITE_GNU:=gdb/} \
+		http://distfiles.nl/
+DIST_SUBDIR=	gdb
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 

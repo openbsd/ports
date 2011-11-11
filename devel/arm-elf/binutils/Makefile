@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/22 15:32:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/11 18:33:03 jasper Exp $
 
 COMMENT=	binutils for arm-elf cross-development
 
@@ -10,6 +10,7 @@ HOMEPAGE=	http://www.gnu.org/software/binutils/
 WANTLIB=	c z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
+DIST_SUBDIR=	binutils
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no \
 		--enable-interwork	 \

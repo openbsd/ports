@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/11 18:33:03 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU binutils
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c z
 
 MASTER_SITES=	${MASTER_SITE_GNU:=binutils/}
+DIST_SUBDIR=	binutils
 
 CONFIGURE_ARGS+=--enable-commonbfdlib=no
 

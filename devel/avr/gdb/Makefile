@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/08 13:00:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/11 18:33:03 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' GNU gdb
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		c expat m ncurses
 
 MASTER_SITES=   	${MASTER_SITE_GNU:=gdb/}
+DIST_SUBDIR=		gdb
 
 REGRESS_DEPENDS=	devel/dejagnu
 

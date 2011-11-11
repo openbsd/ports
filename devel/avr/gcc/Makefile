@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/26 14:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/11 18:33:03 jasper Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -20,7 +20,8 @@ DISTFILES=	gcc-core-${V}${EXTRACT_SUFX} \
 		gcc-g++-${V}${EXTRACT_SUFX}
 #EXTRACT_ONLY=	${DISTFILES}
 
-MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(V)/}
+MASTER_SITES= 	${MASTER_SITE_GCC:=releases/gcc-$(V)/}
+DIST_SUBDIR=	gcc
 
 BUILD_DEPENDS+=		devel/autoconf/2.13 \
 			devel/bison		\
