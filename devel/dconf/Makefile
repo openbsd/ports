@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/11/11 11:39:13 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,9 +42,9 @@ WANTLIB-editor += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z dconf
 
-MULTI_PACKAGES=	-main
+MULTI_PACKAGES=	-main -editor
 
-PSEUDO_FLAVORS=	no_editor
+PSEUDO_FLAVORS=	no_editor bootstrap
 FLAVOR?=
 
 MODULES=	devel/gettext \
@@ -69,11 +69,12 @@ MODGNOME_LDFLAGS=	-pthread
 
 FAKE_FLAGS=	completiondir=${PREFIX}/share/examples/dconf/bash_completion.d
 
-.if ${FLAVOR:L:Mno_editor}
-CONFIGURE_ARGS +=	--disable-editor
-.else
-MULTI_PACKAGES +=	-editor
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-editor}
 CONFIGURE_ARGS +=	--enable-editor
+.else
+CONFIGURE_ARGS +=	--disable-editor
 .endif
 
 pre-configure:
