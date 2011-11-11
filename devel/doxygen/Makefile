@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/10/17 10:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/11 11:38:31 espie Exp $
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 
-PSEUDO_FLAVORS=	no_gui
+PSEUDO_FLAVORS=	no_gui bootstrap
 FLAVOR?= no_gui
 
 USE_GMAKE=	Yes
