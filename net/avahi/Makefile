@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/10/17 10:03:51 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2011/11/11 11:39:52 espie Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -53,8 +53,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4
-FLAVOR?=	no_gui no_mono no_qt3 no_qt4
+PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4 bootstrap
+FLAVOR?=	no_gui no_mono no_qt3 no_qt4 bootstrap
 
 MULTI_PACKAGES=	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -ui
 
