@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/11 16:56:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.6.4.1
-REVISION=		0
+GNOME_VERSION=		0.6.5
 
-SHARED_LIBS +=  folks-telepathy           4.0 # 28.0
-SHARED_LIBS +=  folks                     4.0 # 28.0
-SHARED_LIBS +=  folks-eds                 0.0 # 28.0
+SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
+SHARED_LIBS +=  folks                     5.0 # 29.0
+SHARED_LIBS +=  folks-eds                 0.1 # 29.0
 
 HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 
