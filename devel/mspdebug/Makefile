@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/06 20:36:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/11 15:48:39 jasper Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
-DISTNAME=		mspdebug-0.17
-REVISION=		1
+DISTNAME=		mspdebug-0.18
 CATEGORIES=		devel devel/msp430
 
 HOMEPAGE=		http://mspdebug.sourceforge.net/
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mspdebug/}
 
-WANTLIB += c readline termcap usb
+WANTLIB += c pthread readline termcap usb
 
 BUILD_DEPENDS=		archivers/gtar
 LIB_DEPENDS=		devel/libusb
@@ -27,11 +26,8 @@ TAR=			${LOCALBASE}/bin/gtar
 
 USE_GMAKE=		Yes
 MAKE_FLAGS=		CC="${CC}" GCC_CFLAGS="" LDFLAGS=""
+FAKE_FLAGS=		PREFIX=${PREFIX} MANDIR=${PREFIX}/man/man1/
 
 NO_REGRESS=		Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mspdebug ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mspdebug.man ${PREFIX}/man/man1/mspdebug.1
 
 .include <bsd.port.mk>

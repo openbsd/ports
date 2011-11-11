@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/02 10:35:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/11 15:48:39 jasper Exp $
 @bin bin/mspdebug
+lib/mspdebug/
+lib/mspdebug/ti_3410.fw.ihex
 @man man/man1/mspdebug.1
