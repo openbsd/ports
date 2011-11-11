@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.989 2011/11/02 15:11:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.990 2011/11/11 15:13:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -661,7 +661,6 @@
      SUBDIR += p5-Module-Starter-Plugin-CGIApp
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Moose
-     SUBDIR += p5-MooseX-Async
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-ConfigFromFile
