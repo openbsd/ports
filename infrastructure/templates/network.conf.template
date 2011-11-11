@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.169 2011/11/11 16:36:35 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.170 2011/11/11 16:58:09 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -150,7 +150,6 @@ MASTER_SITE_GNOME+=	\
 	http://linorg.usp.br/gnome/ \
 	http://mirror.aarnet.edu.au/pub/GNOME/ \
 	http://ftp.gnome.org/pub/GNOME/ \
-	ftp://ftp.no.gnome.org/pub/GNOME/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/ \
 	ftp://gnome.mirrors.pair.com/ \
 	ftp://ftp.nara.wide.ad.jp/pub/X11/GNOME/ \
