@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.72 2011/10/27 07:59:08 robert Exp $
+# $OpenBSD: Makefile,v 1.73 2011/11/11 22:54:53 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			15.0.874.102
+V=			15.0.874.120
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -22,8 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
-		http://build.chromium.org/buildbot/official/ \
-		ftp://rene-ladan.nl/pub/distfiles/
+		http://commondatastorage.googleapis.com/chromium-browser-official/
 
 MODULES=	devel/gettext \
 		lang/python
