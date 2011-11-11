@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/10/29 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/11/11 17:36:43 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -108,7 +108,7 @@ MULTI_PACKAGES+=	-java
 .endif
 
 .if !${FLAVOR:L:Mno_lang}
-LANGS=			bg ca de es fa fi fr hu it ja ko \
+LANGS=			ar bg ca de es fa fi fr hu it ja ko \
 			lt lv nl pl pt-BR ru sl sv
 
 .for l in ${LANGS:L}
