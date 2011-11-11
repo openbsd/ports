@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.168 2011/11/10 14:10:59 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.169 2011/11/11 16:36:35 jasper Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -65,13 +65,11 @@ MASTER_SITE_GNU+=	\
 	http://ftp.ibiblio.org/pub/mirrors/gnu/ftp/gnu/ \
 	http://ftp.kddilabs.jp/GNU/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
-	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/gnu/ \
 	http://ftp.ist.utl.pt/pub/GNU/gnu/gnu/ \
-	ftp://ftp.digitaltrust.it/pub/gnu/ \
 	ftp://mirror.cict.fr/gnu/ \
 	ftp://ftp.wayne.edu/pub/gnu/ \
-	http://ftp.chg.ru/pub/gnu/ \
-	ftp://ftp.sunet.se/pub/gnu/
+	ftp://ftp.sunet.se/pub/gnu/ \
+	ftp://ftp.nluug.nl/pub/gnu/
 
 MASTER_SITE_GCC+=	\
 	http://ftp.nluug.nl/languages/gcc/ \
