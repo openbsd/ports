@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/11/11 17:36:43 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/12 10:51:10 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,15 +7,13 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.4
-VERSION=	3.4.3.2
+VERSION=	3.4.4.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-bootstrap-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
-REVISION-main=	0
-REVISION-java=	0
 CATEGORIES=	editors productivity
 
 EPOCH=		0
@@ -24,7 +22,7 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.4.3/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.4.4/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
@@ -36,9 +34,8 @@ MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
 EDISTFILES=	libreoffice-bootstrap-${VERSION}.tar.bz2
 
 COMPONENTS=	artwork base calc components extensions extras \
-		filters help impress translations libs-core libs-extern \
-		libs-extern-sys libs-gui postprocess sdk testing \
-		ure writer
+		filters help impress libs-core libs-extern libs-extern-sys \
+		libs-gui postprocess sdk testing translations ure writer
 
 .for _dfile in ${COMPONENTS}
 EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.bz2
