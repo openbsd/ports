@@ -1,6 +1,6 @@
-$OpenBSD: patch-util_c,v 1.7 2011/09/22 08:28:56 stsp Exp $
---- util.c.orig	Wed Oct 28 00:59:21 2009
-+++ util.c	Thu Sep 22 09:53:40 2011
+$OpenBSD: patch-util_c,v 1.8 2011/11/12 12:31:21 naddy Exp $
+--- util.c.orig	Sat Nov 12 13:20:00 2011
++++ util.c	Sat Nov 12 13:19:25 2011
 @@ -41,10 +41,12 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -65,9 +65,9 @@ $OpenBSD: patch-util_c,v 1.7 2011/09/22 08:28:56 stsp Exp $
  {
  	(void)fprintf(stderr,
 +#ifdef COLORLS
-+	    "usage: %s [-1AaCcdFfGghikLlmnopqRrSsTtux] [file ...]\n",
++	    "usage: %s [-1AaCcdFfGgHhikLlmnopqRrSsTtux] [file ...]\n",
 +#else
- 	    "usage: %s [-1AaCcdFfghikLlmnopqRrSsTtux] [file ...]\n",
+ 	    "usage: %s [-1AaCcdFfgHhikLlmnopqRrSsTtux] [file ...]\n",
 +#endif
  	    __progname);
  	exit(1);
