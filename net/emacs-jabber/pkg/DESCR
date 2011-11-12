@@ -1,0 +1,6 @@
+Jabber client for Emacs.
+
+Available flavors are available for different Emacs version:
+    - emacs21
+    - emacs22
+    - emacs23
