@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/05 17:08:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/12 00:08:11 sthen Exp $
 
 COMMENT=	Nagios plugin to check full email delivery loop (SMTP/IMAP)
 
-DISTNAME=	check_email_delivery-0.7.0a
-WRKDIST=	${WRKDIR}/check_email_delivery-0.7.0
+DISTNAME=	check_email_delivery-0.7.1
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -41,9 +40,9 @@ do-install:
 # the ePN-compatible plugins are nearly identical to the normal ones,
 # they just don't include the pod documentation; no point installing both
 # versions.
-.for i in email_delivery imap_receive smtp_send
-	${INSTALL_SCRIPT} ${WRKSRC}/check_$i_epn ${PREFIX}/libexec/nagios/check_$i
-	pod2man ${WRKSRC}/check_$i ${PREFIX}/man/man3p/check_$i.3p
+.for i in check_email_delivery check_imap_receive check_imap_quota check_smtp_send imap_ssl_cert
+	${INSTALL_SCRIPT} ${WRKSRC}/$i_epn ${PREFIX}/libexec/nagios/$i
+	pod2man ${WRKSRC}/$i ${PREFIX}/man/man3p/$i.3p
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/check_email_delivery
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/check_email_delivery
