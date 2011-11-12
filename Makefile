@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/07/19 09:28:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/11/12 16:37:35 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -56,6 +56,7 @@ SUBDIR += korean
 SUBDIR += lang
 SUBDIR += mail
 SUBDIR += math
+SUBDIR += meta
 SUBDIR += misc
 SUBDIR += multimedia
 SUBDIR += net
