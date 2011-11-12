@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/17 10:55:47 pirofti Exp $
-bin/sis-install.sh
-@exec at + 1 minute < %D/bin/sis-install.sh
