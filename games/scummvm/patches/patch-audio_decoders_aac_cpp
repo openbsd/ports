@@ -1,0 +1,12 @@
+$OpenBSD: patch-audio_decoders_aac_cpp,v 1.1 2011/11/12 12:59:58 jsg Exp $
+--- audio/decoders/aac.cpp.orig	Fri Nov 11 16:25:02 2011
++++ audio/decoders/aac.cpp	Fri Nov 11 16:25:19 2011
+@@ -49,7 +49,7 @@ class AACDecoder : public Codec { (public)
+ private:
+ 	NeAACDecHandle _handle;
+ 	byte _channels;
+-	unsigned long _rate;
++	unsigned int _rate;
+ };
+ 
+ AACDecoder::AACDecoder(Common::SeekableReadStream *extraData, DisposeAfterUse::Flag disposeExtraData) {
