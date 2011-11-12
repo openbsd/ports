@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/12 11:49:29 jasper Exp $
+share/doc/emacs-haskell/
+share/doc/emacs-haskell/README
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/haskell-mode/
+share/emacs/site-lisp/haskell-mode/ghc-core.el
+share/emacs/site-lisp/haskell-mode/haskell-c.el
+share/emacs/site-lisp/haskell-mode/haskell-cabal.el
+share/emacs/site-lisp/haskell-mode/haskell-decl-scan.el
+share/emacs/site-lisp/haskell-mode/haskell-doc.el
+share/emacs/site-lisp/haskell-mode/haskell-font-lock.el
+share/emacs/site-lisp/haskell-mode/haskell-ghci.el
+share/emacs/site-lisp/haskell-mode/haskell-hugs.el
+share/emacs/site-lisp/haskell-mode/haskell-indent.el
+share/emacs/site-lisp/haskell-mode/haskell-indentation.el
+share/emacs/site-lisp/haskell-mode/haskell-mode.el
+share/emacs/site-lisp/haskell-mode/haskell-simple-indent.el
+share/emacs/site-lisp/haskell-mode/haskell-site-file.el
+share/emacs/site-lisp/haskell-mode/inf-haskell.el
