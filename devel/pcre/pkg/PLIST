@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/05/21 14:53:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/11/12 11:12:08 robert Exp $
 bin/pcre-config
 @bin bin/pcregrep
 @bin bin/pcretest
@@ -22,6 +22,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man1/pcregrep.1
 @man man/man1/pcretest.1
 @man man/man3/pcre.3
+@man man/man3/pcre_assign_jit_stack.3
 @man man/man3/pcre_compile.3
 @man man/man3/pcre_compile2.3
 @man man/man3/pcre_config.3
@@ -29,6 +30,7 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre_copy_substring.3
 @man man/man3/pcre_dfa_exec.3
 @man man/man3/pcre_exec.3
+@man man/man3/pcre_free_study.3
 @man man/man3/pcre_free_substring.3
 @man man/man3/pcre_free_substring_list.3
 @man man/man3/pcre_fullinfo.3
@@ -38,6 +40,8 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcre_get_substring.3
 @man man/man3/pcre_get_substring_list.3
 @man man/man3/pcre_info.3
+@man man/man3/pcre_jit_stack_alloc.3
+@man man/man3/pcre_jit_stack_free.3
 @man man/man3/pcre_maketables.3
 @man man/man3/pcre_refcount.3
 @man man/man3/pcre_study.3
@@ -47,6 +51,8 @@ lib/pkgconfig/libpcreposix.pc
 @man man/man3/pcrecallout.3
 @man man/man3/pcrecompat.3
 @man man/man3/pcrecpp.3
+@man man/man3/pcrejit.3
+@man man/man3/pcrelimits.3
 @man man/man3/pcrematching.3
 @man man/man3/pcrepartial.3
 @man man/man3/pcrepattern.3
@@ -57,6 +63,7 @@ lib/pkgconfig/libpcreposix.pc
 %%SHARED%%
 @man man/man3/pcrestack.3
 @man man/man3/pcresyntax.3
+@man man/man3/pcreunicode.3
 share/doc/pcre/
 share/doc/pcre/AUTHORS
 share/doc/pcre/COPYING
@@ -68,6 +75,7 @@ share/doc/pcre/html/
 share/doc/pcre/html/index.html
 share/doc/pcre/html/pcre-config.html
 share/doc/pcre/html/pcre.html
+share/doc/pcre/html/pcre_assign_jit_stack.html
 share/doc/pcre/html/pcre_compile.html
 share/doc/pcre/html/pcre_compile2.html
 share/doc/pcre/html/pcre_config.html
@@ -75,6 +83,7 @@ share/doc/pcre/html/pcre_copy_named_substring.html
 share/doc/pcre/html/pcre_copy_substring.html
 share/doc/pcre/html/pcre_dfa_exec.html
 share/doc/pcre/html/pcre_exec.html
+share/doc/pcre/html/pcre_free_study.html
 share/doc/pcre/html/pcre_free_substring.html
 share/doc/pcre/html/pcre_free_substring_list.html
 share/doc/pcre/html/pcre_fullinfo.html
@@ -84,6 +93,8 @@ share/doc/pcre/html/pcre_get_stringtable_entries.html
 share/doc/pcre/html/pcre_get_substring.html
 share/doc/pcre/html/pcre_get_substring_list.html
 share/doc/pcre/html/pcre_info.html
+share/doc/pcre/html/pcre_jit_stack_alloc.html
+share/doc/pcre/html/pcre_jit_stack_free.html
 share/doc/pcre/html/pcre_maketables.html
 share/doc/pcre/html/pcre_refcount.html
 share/doc/pcre/html/pcre_study.html
@@ -95,6 +106,8 @@ share/doc/pcre/html/pcrecompat.html
 share/doc/pcre/html/pcrecpp.html
 share/doc/pcre/html/pcredemo.html
 share/doc/pcre/html/pcregrep.html
+share/doc/pcre/html/pcrejit.html
+share/doc/pcre/html/pcrelimits.html
 share/doc/pcre/html/pcrematching.html
 share/doc/pcre/html/pcrepartial.html
 share/doc/pcre/html/pcrepattern.html
@@ -105,6 +118,7 @@ share/doc/pcre/html/pcresample.html
 share/doc/pcre/html/pcrestack.html
 share/doc/pcre/html/pcresyntax.html
 share/doc/pcre/html/pcretest.html
+share/doc/pcre/html/pcreunicode.html
 share/doc/pcre/pcre-config.txt
 share/doc/pcre/pcre.txt
 share/doc/pcre/pcregrep.txt
