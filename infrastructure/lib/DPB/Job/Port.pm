@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.14 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: Port.pm,v 1.15 2011/11/12 13:19:26 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -62,9 +62,7 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	$self->redirect($job->{log});
-	if ($builder->{state}->opt('v')) {
-		print ">>> Running $t in $fullpkgpath\n";
-	}
+	print ">>> Running $t in $fullpkgpath\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
