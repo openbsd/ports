@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.474 2011/11/06 20:30:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.475 2011/11/12 16:21:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -223,7 +223,6 @@
      SUBDIR += sclock
      SUBDIR += scrotwm
      SUBDIR += sisctrl
-     SUBDIR += sis-gnome
      SUBDIR += skippy
      SUBDIR += sliderule
      SUBDIR += slim
