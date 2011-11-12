@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/07/08 17:41:46 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/11/12 10:50:54 robert Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -82,6 +82,18 @@ include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
 include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
+include/poppler/cpp/
+include/poppler/cpp/poppler-document.h
+include/poppler/cpp/poppler-embedded-file.h
+include/poppler/cpp/poppler-font.h
+include/poppler/cpp/poppler-global.h
+include/poppler/cpp/poppler-image.h
+include/poppler/cpp/poppler-page-renderer.h
+include/poppler/cpp/poppler-page-transition.h
+include/poppler/cpp/poppler-page.h
+include/poppler/cpp/poppler-rectangle.h
+include/poppler/cpp/poppler-toc.h
+include/poppler/cpp/poppler-version.h
 include/poppler/fofi/
 include/poppler/fofi/FoFiBase.h
 include/poppler/fofi/FoFiEncodings.h
@@ -142,12 +154,15 @@ include/poppler/splash/SplashT1FontFile.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
+lib/libpoppler-cpp.a
+lib/libpoppler-cpp.la
 lib/libpoppler-glib.a
 lib/libpoppler-glib.la
 lib/libpoppler.a
 lib/libpoppler.la
 lib/pkgconfig/
 lib/pkgconfig/poppler-cairo.pc
+lib/pkgconfig/poppler-cpp.pc
 lib/pkgconfig/poppler-glib.pc
 lib/pkgconfig/poppler-splash.pc
 lib/pkgconfig/poppler.pc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/25 08:01:16 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2011/11/12 10:50:53 robert Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -11,11 +11,12 @@ PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-qt =	0
-REVISION-qt4 =	0
+REVISION-qt4 =	1
 
 SHARED_LIBS +=	poppler              10.0
+SHARED_LIBS +=  poppler-cpp          0.0
 SHARED_LIBS +=	poppler-glib         8.0
 SHARED_LIBS +=	poppler-qt           8.0
 SHARED_LIBS +=	poppler-qt4          7.0
@@ -82,7 +83,7 @@ LIB_DEPENDS-qt4=x11/qt4 \
 		${MODGETTEXT_LIB_DEPENDS} \
 		print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr c gio-2.0 \
+WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr c ffi gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 gdk_pixbuf-2.0 openjpeg \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo pcre png \
@@ -91,17 +92,17 @@ WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr c gio-2.0 \
 WANTLIB-qt=	${cWANTLIB} lcms openjpeg xml2 poppler png ${MODQT3_WANTLIB} \
 		${MODLIBICONV_WANTLIB}
 WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
-                Xinerama Xrender glib-2.0 gobject-2.0 gthread-2.0 lcms \
+                Xinerama Xrender ffi glib-2.0 gobject-2.0 gthread-2.0 lcms \
 		openjpeg pcre png poppler pthread-stubs xcb xml2 \
 		QtCore QtGui QtXml ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
-		--disable-poppler-cpp \
+		--enable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+CONFIGURE_ENV+= CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
