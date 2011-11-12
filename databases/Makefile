@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2011/09/08 17:14:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.201 2011/11/12 17:18:55 jeremy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -202,6 +202,7 @@
      SUBDIR += ruby-sqlite3
      SUBDIR += ruby-sqlite3,ruby19
      SUBDIR += ruby-sqlite3,rbx
+     SUBDIR += ruby-sqlite3,jruby
      SUBDIR += ruby-swift
      SUBDIR += ruby-tiny_tds
      SUBDIR += ruby-tiny_tds,ruby19
