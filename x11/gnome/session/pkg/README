@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.41 2011/11/07 17:42:53 ajacoutot Exp $
+$OpenBSD: README,v 1.42 2011/11/12 15:39:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -63,7 +63,7 @@ Starting the GNOME Desktop
 ==========================
 Before running gnome-session(1), a system-wide DBus daemon needs to be
 running ("dbus_daemon" needs to be added to the "pkg_scripts" variable
-in rc.conf.local(5)).
+in rc.conf.local(8)).
 
 Then the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
