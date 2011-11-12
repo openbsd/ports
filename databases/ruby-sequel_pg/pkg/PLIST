@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/18 23:06:10 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/12 17:15:32 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -14,5 +14,7 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/sequel_pg/sequel_pg.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg.so
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel_pg/sequel_pg.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
