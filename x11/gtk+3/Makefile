@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/11/02 16:41:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/12 14:40:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,16 +6,13 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+3 documentation
 COMMENT-cups=	gtk+3 CUPS print backend
 
-V=		3.2.1
+V=		3.2.2
 DISTNAME=	gtk+-${V}
 EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-docs=	gtk+3-docs-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
-
-REVISION-main=	1
-REVISION-cups=	1
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
