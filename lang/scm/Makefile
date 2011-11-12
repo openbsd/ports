@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2011/11/11 15:16:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/12 14:37:16 espie Exp $
 # losely based on the FreeBSD port
 
-.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "vax" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc" || \
-    ${MACHINE_ARCH} == "sparc64"
-BROKEN=		segfaults in longjump return while testing continuations
-.endif
+.for m in alpha powerpc vax sparc sparc64
+BROKEN-$m=	segfaults in longjump return while testing continuations
+.endfor
 
 COMMENT=	scheme r5 interpreter
 
@@ -48,7 +46,7 @@ SCM_DATA=	COPYING Idiffer.scm Iedline.scm Init${V}.scm Link.scm \
 
 SCM_INFO=	scm.info hobbit.info
 SCM_INCLUDES=	scmflags.h scmfig.h patchlvl.h scmhob.h
-.if !{FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 SCM_DATA+=	keysymdef.scm x11.scm xatoms.scm xevent.scm
 SCM_INFO+=	Xlibscm.info
 .endif
@@ -56,7 +54,7 @@ SCM_INFO+=	Xlibscm.info
 FEATURES=arrays bignums cautious edit-line curses posix socket unix \
 dynamic-linking i/o-extensions inexact regex
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 FEATURES+=x
 OPTIONS+=--compiler-options=-I${X11BASE}/include --compiler-options=-O2
 OPTIONS+=--linker-options=-L${X11BASE}/lib
