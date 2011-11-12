@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.990 2011/11/11 15:13:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.991 2011/11/12 11:49:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -95,6 +95,7 @@
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
+     SUBDIR += emacs-haskell
      SUBDIR += emacs-python
      SUBDIR += ethos
      SUBDIR += fasm

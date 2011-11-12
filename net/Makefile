@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.716 2011/11/11 15:23:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.717 2011/11/12 11:52:33 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -71,6 +71,7 @@
      SUBDIR += echoping
      SUBDIR += ejabberd
      SUBDIR += ekg
+     SUBDIR += emacs-jabber
      SUBDIR += emesene
      SUBDIR += enet
      SUBDIR += epic4
