@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.199 2011/11/12 15:39:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.200 2011/11/12 16:42:03 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.1
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		x11
 
@@ -60,16 +60,6 @@ RUN_DEPENDS+=	x11/gnome/metacity \
 RUN_DEPENDS+=	fonts/cantarell-fonts \
 		x11/gnome/backgrounds>=3 \
 		x11/gnome/themes-standard
-
-# Install accessibility components -- daemons will start only if
-# accessibility is enabled by the user.
-# This should really be a dep. of a "gnome-accessibility" metapackage.
-RUN_DEPENDS+=	x11/gnome/at-spi2-atk
-
-# gconf2 and polkit are already dependencies and we want to be able to
-# handle system-wide gconf entries. This should really be a dep. of a
-# "gnome" metapackage.
-RUN_DEPENDS+=	devel/gconf2,-polkit
 
 MODGNOME_DESKTOP_FILE=		Yes
 
