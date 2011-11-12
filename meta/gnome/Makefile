@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/12 16:40:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/12 19:45:27 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
+
+REVISION-main=	0
 
 MULTI_PACKAGES=	-main -extras
 
@@ -27,7 +29,7 @@ RUN_DEPENDS-main += \
 
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries.
-RUN_DEPENDS +=	devel/gconf2,-polkit
+RUN_DEPENDS-main += devel/gconf2,-polkit
 
 # Install accessibility components -- daemons will start only if
 # accessibility is enabled by the user.
