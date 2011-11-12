@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/12 16:49:43 sthen Exp $
 
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
@@ -89,6 +89,9 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=Off \
 			-DWITH_GSTREAMER:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
+
+pre-patch:
+	perl -i -pe 's/\r$$//' ${WRKSRC}/CMakeLists.txt
 
 post-configure:
 	find ${WRKSRC} -type f -iname "*.make" -exec \
