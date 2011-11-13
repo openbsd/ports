@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/11 11:38:31 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/13 16:11:11 pirofti Exp $
+
+# Memory hog, stuck for days on the same file during build.
+NOT_FOR_ARCHS=	sh
 
 COMMENT-main=	source code documentation generator tool
 COMMENT-gui=	GUI front-end for doxygen

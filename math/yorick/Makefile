@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/13 16:09:27 pirofti Exp $
+
+# Memory hog, stuck for days on the same file during build.
+NOT_FOR_ARCHS=	sh
 
 COMMENT=	interpreted language for scientific computing
 
