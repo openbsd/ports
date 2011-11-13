@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/11/03 12:05:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/11/13 13:54:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,9 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-hpijs=	0
+REVISION-libs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -46,7 +48,7 @@ cWANTLIB = crypto m pthread
 
 WANTLIB-main += ${WANTLIB} ${cWANTLIB}
 WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
-WANTLIB-main += sane ssl tiff usb z
+WANTLIB-main += sane ssl tiff usb z usb-1.0
 
 BUILD_DEPENDS=	sysutils/polkit
 
@@ -62,7 +64,7 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		print/hplip,-hpcups \
 		sysutils/polkit
 
-WANTLIB-hpijs += ${cWANTLIB} hpip
+WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1 hpmud
 LIB_DEPENDS-hpijs= print/hplip,-libs \
 		graphics/jpeg \
@@ -74,9 +76,9 @@ WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage
 LIB_DEPENDS-hpcups= print/hplip,-libs \
 		print/cups>=1.5.0
 
-WANTLIB-libs +=	${cWANTLIB} netsnmp usb
+WANTLIB-libs +=	${cWANTLIB} netsnmp usb usb-1.0
 LIB_DEPENDS-libs= net/net-snmp \
-		devel/libusb
+		devel/libusb-compat
 
 WANTLIB-gui +=	# empty
 RUN_DEPENDS-gui= x11/py-qt4 \

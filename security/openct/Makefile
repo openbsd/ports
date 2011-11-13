@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/11 08:24:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT=	drivers for several smart card readers
 
 DISTNAME=	openct-0.6.20
 CATEGORIES=	security
 SHARED_LIBS=	openct	1.1
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.opensc-project.org/openct/
 
@@ -19,8 +19,9 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	http://www.opensc-project.org/files/openct/
 
-WANTLIB=	c usb>=8 ltdl>=4
-LIB_DEPENDS=	devel/libusb \
+WANTLIB += c ltdl pthread usb usb-1.0
+
+LIB_DEPENDS=	devel/libusb-compat \
 		devel/libtool,-ltdl
 
 USE_GMAKE=	Yes

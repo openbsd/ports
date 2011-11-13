@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT=		perl wrapper around libusb
 
 DISTNAME=		Device-USB-0.31
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 SHARED_ONLY=		Yes
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-Inline
-LIB_DEPENDS =		devel/libusb
+LIB_DEPENDS =		devel/libusb-compat
 WANTLIB =		usb
 
 CONFIGURE_ENV+= 	LIBUSB_INCDIR="${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT-main =	graphical tools for the MetaGeek Wi-spy spectrum analyser
 COMMENT-utils =	tools for the MetaGeek Wi-spy spectrum analyser
@@ -10,8 +10,8 @@ PKGNAME =	spectrum-tools-$V
 FULLPKGNAME-main =  spectrum-tools-${V:S/-//g}
 FULLPKGNAME-utils = spectrum-tools-utils-${V:S/-//g}
 
-REVISION-main = 3
-REVISION-utils = 2
+REVISION-main = 4
+REVISION-utils = 3
 
 CATEGORIES =	net
 
@@ -29,22 +29,24 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MULTI_PACKAGES =	-main -utils
 
+MODULES =	devel/gettext
+
 cWANTLIB = 	c m pthread usb
 
 WANTLIB-main =	${cWANTLIB} \
-		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		X11 Xcomposite Xcursor Xdamage Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs xcb z gdk_pixbuf-2.0 gtk-x11-2.0 gdk-x11-2.0 \
-		${MODGETTEXT_WANTLIB}
+		GL gthread-2.0 ${MODGETTEXT_WANTLIB} xcb-render xcb-shm
 
 WANTLIB-utils =	${cWANTLIB} ncurses
 
-LIB_DEPENDS-utils =	devel/libusb
+LIB_DEPENDS-utils =	devel/libusb-compat
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			devel/libusb \
+			devel/libusb-compat \
 			x11/gtk+2
 
 RUN_DEPENDS-main = 	net/spectrum-tools,-utils
@@ -57,6 +59,9 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GMAKE =		Yes
 
 NO_REGRESS =		Yes
+
+pre-configure:
+	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/spectrum-tools

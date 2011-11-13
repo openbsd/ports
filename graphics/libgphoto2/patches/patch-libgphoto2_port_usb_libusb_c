@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgphoto2_port_usb_libusb_c,v 1.1 2011/11/13 13:54:04 ajacoutot Exp $
+--- libgphoto2_port/usb/libusb.c.orig	Sun Nov 13 10:12:30 2011
++++ libgphoto2_port/usb/libusb.c	Sun Nov 13 10:12:53 2011
+@@ -38,6 +38,10 @@
+ #include <gphoto2/gphoto2-port-result.h>
+ #include <gphoto2/gphoto2-port-log.h>
+ 
++#if !defined(ENODATA) && defined(ENOENT)
++#define ENODATA ENOENT
++#endif
++
+ #ifdef ENABLE_NLS
+ #  include <libintl.h>
+ #  undef _

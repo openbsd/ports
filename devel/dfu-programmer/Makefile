@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/08 06:22:16 matthew Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT =		Device Firmware Update-based programmer for Atmel chips
 
 V =			0.5.4
 DISTNAME =		dfu-programmer-${V}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,9 +16,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c usb
+WANTLIB =		c pthread usb-1.0
 
-LIB_DEPENDS =		devel/libusb
+LIB_DEPENDS =		devel/libusb1
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dfu-programmer/}
 

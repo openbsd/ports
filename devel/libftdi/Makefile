@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/08 08:30:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT =	libftdi, interface to ftdi debug device
 
 CATEGORIES =	devel
 
 DISTNAME =	libftdi-0.18
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	ftdi		15.1	# 19.0
 
@@ -17,11 +17,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c usb
+WANTLIB += c usb pthread usb-1.0
 
 MASTER_SITES =		${HOMEPAGE}/download/
 
-LIB_DEPENDS =		devel/libusb
+LIB_DEPENDS =		devel/libusb-compat
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	--disable-libftdipp \

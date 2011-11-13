@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2011/10/19 12:59:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,7 @@ VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	print sysutils
 
@@ -51,7 +51,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff \
-		devel/libusb \
+		devel/libusb-compat \
 		x11/dbus
 
 LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
@@ -78,7 +78,7 @@ MAKE_ENV=	${LIBS_ENV}
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 		${LIBS_ENV}
 
 CONFIGURE_STYLE= gnu dest

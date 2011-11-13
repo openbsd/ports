@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -7,11 +7,11 @@ COMMENT-tcl=	tcl bindings for hamlib
 VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}
 PKGNAME-main=	hamlib-${VERSION}
-REVISION-main =	7
+REVISION-main =	8
 PKGNAME-python=	hamlib-python-${VERSION}
-REVISION-python = 8
+REVISION-python = 9
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
-REVISION-tcl =	7
+REVISION-tcl =	8
 CATEGORIES=    	comms hamradio
 
 MULTI_PACKAGES=	-main -python -tcl
@@ -29,13 +29,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-cWANTLIB =		m usb>=9
-WANTLIB-main =		${cWANTLIB} c stdc++ z  xml2 ${MODLIBICONV_WANTLIB}
+cWANTLIB =		m usb usb-1.0
+WANTLIB-main =		${cWANTLIB} c stdc++ z xml2 ${MODLIBICONV_WANTLIB} pthread
 WANTLIB-python =	${cWANTLIB} hamlib ${MODPY_WANTLIB}
 WANTLIB-tcl =		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 
 LIB_DEPENDS-main=	textproc/libxml \
-			devel/libusb
+			devel/libusb-compat
 LIB_DEPENDS-python=	${BUILD_PKGPATH} \
 			${MODPY_LIB_DEPENDS}
 LIB_DEPENDS-tcl=	${BUILD_PKGPATH} \

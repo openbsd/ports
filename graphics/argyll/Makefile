@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/06 17:35:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/13 13:54:04 ajacoutot Exp $
 
 COMMENT=	ICC compatible color management system
 
 V=		1.1.0-20100201
 DISTNAME=	hargyllcms-${V}
 PKGNAME=	argyll-${V:S/-/./}
+REVISION=	0
 
 CATEGORIES=	graphics sysutils
 
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xext Xinerama Xrandr Xrender Xss Xxf86vm c jpeg
-WANTLIB += m pthread tiff usb xcb z
+WANTLIB += m pthread tiff usb xcb z usb-1.0
 
 # Fedora:
 # Switch to using the hargyllcms friendly fork sources as upstream
@@ -26,7 +27,7 @@ WANTLIB += m pthread tiff usb xcb z
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/argyllcms/${DISTNAME}${EXTRACT_SUFX}/59cdfbefa1c905967b0848634c2fb509/
 #MASTER_SITES=	https://github.com/hughsie/hargyllcms
 
-LIB_DEPENDS=	devel/libusb \
+LIB_DEPENDS=	devel/libusb-compat \
 		graphics/tiff
 
 USE_LIBTOOL=	Yes
