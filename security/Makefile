@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2011/10/04 13:23:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.274 2011/11/13 22:44:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += gksu-polkit
      SUBDIR += gnomint
      SUBDIR += gnupg
+     SUBDIR += gnupg,card,idea,ldap
      SUBDIR += gnupg2
      SUBDIR += gnutls
      SUBDIR += gpa
