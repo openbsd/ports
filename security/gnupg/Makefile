@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.78 2010/11/26 07:50:07 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2011/11/13 22:39:50 ajacoutot Exp $
 
 COMMENT=	GNU privacy guard - a free PGP replacement
 
 DISTNAME=	gnupg-1.4.11
 CATEGORIES=	security
+REVISION=	0
 
 # restrict, not compatible with gnupg-2.
 PKGSPEC =	gnupg-<2
@@ -60,8 +61,8 @@ SUPDISTFILES=	idea.c.gz:0
 .endif
 
 .if ${FLAVOR:L:Mcard}
-LIB_DEPENDS+=		devel/libusb
-WANTLIB +=		usb
+LIB_DEPENDS+=		devel/libusb-compat
+WANTLIB +=		usb pthread
 .else
 CONFIGURE_ARGS+=	--disable-card-support --without-libusb
 .endif
