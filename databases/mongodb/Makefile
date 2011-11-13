@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/10/22 18:10:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/13 03:55:30 fgsch Exp $
 
 BROKEN-powerpc =atomic_int.h: error "unsupported compiler or platform"
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r2.0.0
+DISTNAME =	mongodb-src-r2.0.1
 PKGNAME =	${DISTNAME:S/src-r//}
 
 SHARED_LIBS =	mongoclient	1.0
