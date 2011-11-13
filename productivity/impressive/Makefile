@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/13 15:57:21 ajacoutot Exp $
 
 COMMENT =		stylish PDF presentation generator
 
@@ -30,11 +30,7 @@ RUN_DEPENDS =		graphics/py-opengl \
 			textproc/xpdf \
 			devel/xdg-utils
 
-# We don't use SUBST_CMD here because it goofs with some images inlined
-# in the code.
-pre-configure:
-	mv ${WRKSRC}/impressive.py ${WRKSRC}/impressive.py.orig
-	sed -e "1s|/.*|${MODPY_BIN}|" ${WRKSRC}/impressive.py.orig > ${WRKSRC}/impressive.py
+MODPY_ADJ_FILES =	impressive.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/impressive.py ${PREFIX}/bin/impressive
