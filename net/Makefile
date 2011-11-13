@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.718 2011/11/12 12:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.719 2011/11/13 16:04:20 pascal Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -42,6 +42,7 @@
      SUBDIR += cftp
      SUBDIR += charm
      SUBDIR += cjc
+     SUBDIR += climm
      SUBDIR += clive
      SUBDIR += clog
      SUBDIR += cnupm
