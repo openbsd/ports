@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2011/11/13 12:33:11 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.35.80
-REVISION=		0
+DISTNAME=	netpbm-10.35.82
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
@@ -40,9 +39,11 @@ pre-patch:
 	@rm -f ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
 
 pre-build:
-	@perl -i -pe 's#%%X11BASE%%#${X11BASE}#g;' \
-		-e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
-	@cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
+	perl -i -p \
+	    -e 's#%%X11BASE%%#${X11BASE}#g;' \
+	    -e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
+	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
+	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
 
 NO_REGRESS=	Yes
 
