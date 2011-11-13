@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/02 17:55:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/13 18:02:33 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -27,7 +27,8 @@ WANTLIB += tiff usb usb-1.0 z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection
