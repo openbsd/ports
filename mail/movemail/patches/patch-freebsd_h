@@ -1,0 +1,12 @@
+$OpenBSD: patch-freebsd_h,v 1.1 2011/11/13 11:51:54 naddy Exp $
+--- freebsd.h.orig	Sun Nov 13 04:46:05 2011
++++ freebsd.h	Sun Nov 13 04:46:27 2011
+@@ -96,7 +96,7 @@
+ #ifdef emacs
+ #include <sys/wait.h>
+ #endif
+-#define WRETCODE(w) (_W_INT(w) >> 8)
++#define WRETCODE(w) WEXITSTATUS (w)
+ 
+ /* Needed to avoid hanging when child process writes an error message
+    and exits -- enami tsugutomo <enami@ba2.so-net.or.jp>.  */

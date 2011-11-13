@@ -1,0 +1,11 @@
+$OpenBSD: patch-movemail_c,v 1.1 2011/11/13 11:51:54 naddy Exp $
+--- movemail.c.orig	Sun Nov 13 04:37:47 2011
++++ movemail.c	Sun Nov 13 04:38:07 2011
+@@ -61,6 +61,7 @@ Boston, MA 02111-1307, USA.  */
+ #include <sys/file.h>
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <errno.h>
+ #include "syswait.h"
+ #ifdef MAIL_USE_POP
