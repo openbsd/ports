@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.4 2003/06/19 20:17:25 pvalchev Exp $
+# $OpenBSD: OpenBSD,v 1.5 2011/11/13 12:50:39 naddy Exp $
 #
 # Spice configuration file for OpenBSD
 
@@ -6,7 +6,7 @@ MAKE		= ${MAKE_PROGRAM}
 DEFAULT_EDITOR	= /usr/bin/vi
 X_DIR		= ${X11BASE}
 LDFLAGS		= -lm -ltermlib -lcompat
-SYS_CFLAGS	= -Dbsd -DHAS_STDLIB
+SYS_CFLAGS	= -Dbsd -DHAS_STDLIB -DHAS_INTWAITSTATUS
 SYS_DIR		= ${DIST_DIR}/OpenBSD
 SPICE_DIR	= ${PREFIX}
 SPICE_LIB_DIR	= ${PREFIX}/lib/spice
