@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.33 2011/11/09 08:28:55 espie Exp $
+# $OpenBSD: Engine.pm,v 1.34 2011/11/13 10:34:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -533,17 +533,18 @@ sub new_path
 {
 	my ($self, $v) = @_;
 	if (!$self->{buildable}->is_done($v)) {
-		if (defined $v->{info}{FETCH_MANUALLY} &&
-		    defined $v->{info}{IGNORE}) {
-			$self->log('!', $v, " fetch manually");
-			$self->add_fatal($v, "Fetch manually error:", $v->{info}{FETCH_MANUALLY}->string);
-			return;
-		}
 		if (defined $v->{info}{IGNORE} && 
 		    !$self->{state}->{fetch_only}) {
 		    	$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
 			$v->{info} = DPB::PortInfo->stub;
 			push(@{$self->{ignored}}, $v);
+			return;
+		}
+		if (defined $v->{info}{MISSING_FILES}) {
+			$self->log('!', $v, " fetch manually");
+			$self->add_fatal($v, "Missing distfiles: ".
+			    $v->{info}{MISSING_FILES}->string, 
+			    $v->{info}{FETCH_MANUALLY}->string);
 			return;
 		}
 #		$self->{heuristics}->todo($v);

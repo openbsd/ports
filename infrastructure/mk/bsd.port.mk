@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1121 2011/11/02 17:16:30 avsm Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1122 2011/11/13 10:34:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -103,7 +103,7 @@ _ALL_VARIABLES_PER_ARCH =
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-	CHECKSUM_FILE FETCH_MANUALLY
+	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES
 .endif
 .if ${DPB:L:Mall}
 _ALL_VARIABLES += HOMEPAGE DISTNAME \
@@ -1212,15 +1212,12 @@ CONFIGURE_SHARED ?= --enable-shared
 
 FETCH_MANUALLY ?= No
 .if ${FETCH_MANUALLY:L} != "no"
-_MISSING_FILES = 
+MISSING_FILES = 
 .  for _F in ${CHECKSUMFILES}
 .    if !exists(${DISTDIR}/${_F})
-_MISSING_FILES += ${_F}
+MISSING_FILES += ${_F}
 .    endif
 .  endfor
-.  if !empty(_MISSING_FILES)
-IS_INTERACTIVE = Yes
-.  endif
 .endif
 
 ################################################################
@@ -1249,9 +1246,13 @@ _IGNORE_REGRESS += "does not have interactive tests"
 
 .if defined(IS_INTERACTIVE) && defined(BATCH)
 IGNORE += "is an interactive port"
-.elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
+.elif !(defined(IS_INTERACTIVE)||defined(MISSING_FILES)) && defined(INTERACTIVE)
 IGNORE += "is not an interactive port"
 .endif
+.if defined(MISSING_FILES) && defined(BATCH)
+_EXTRA_IGNORE += "is an interactive port: missing files"
+.endif
+
 .if !exists(${X11BASE})
 IGNORE += "building ports requires X11 but ${X11BASE} not found"
 .endif
@@ -1278,9 +1279,9 @@ IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of
 IGNORE_IS_FATAL ?= "No"
 # XXX even if subpackage is invalid, define this
 IGNORE${SUBPACKAGE} ?= 
-.if !empty(IGNORE${SUBPACKAGE}) && ${IGNORE_IS_FATAL:L} == "yes"
+.if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
-ERRORS += ${IGNORE${SUBPACKAGE}}
+ERRORS += ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}
 .endif
 
 .if !defined(DEPENDS_TARGET)
@@ -1946,7 +1947,7 @@ _internal-fetch-all:
 .    endif
 # End of FETCH
 
-.if !empty(IGNORE${SUBPACKAGE}) && !defined(NO_IGNORE)
+.if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
 	_internal-install _internal-install-all _internal-manpages-check \
@@ -1956,10 +1957,10 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-update-or-install-all _internal-update-plist \
 	lib-depends-check port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}."
 .  endif
 .  if defined(_IGNORE_COOKIE)
-	@echo "${IGNORE${SUBPACKAGE}}" >${_IGNORE_COOKIE}
+	@echo "${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}" >${_IGNORE_COOKIE}
 .  endif
 .else
 
@@ -2568,8 +2569,8 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
 .for _F in ${MAKESUMFILES:S@^@${DISTDIR}/@}
 ${_F}:
 .  if ${FETCH_MANUALLY:L} != "no"
-.    if !empty(_MISSING_FILES)
-	@echo "*** You're missing files: ${_MISSING_FILES}"
+.    if !empty(MISSING_FILES)
+	@echo "*** You're missing files: ${MISSING_FILES}"
 .    endif
 .    for _M in ${FETCH_MANUALLY}
 	@echo "*** ${_M}"
