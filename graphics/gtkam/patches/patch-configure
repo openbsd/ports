@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2011/10/03 06:42:45 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.6 2011/11/13 17:16:26 ajacoutot Exp $
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
 
---- configure.orig	Sun Jan 31 17:14:41 2010
-+++ configure	Sun Oct  2 09:00:24 2011
-@@ -21440,6 +21440,9 @@ else
+--- configure.orig	Sun Sep 25 22:50:23 2011
++++ configure	Sun Nov 13 17:52:03 2011
+@@ -11722,6 +11722,9 @@ else
  fi
  
      ;;
@@ -14,17 +14,3 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
      *)
      DATADIRNAME=lib
      ;;
-@@ -26469,10 +26472,10 @@ GETTEXT_PACKAGE!$GETTEXT_PACKAGE$ac_delim
- MKINSTALLDIRS!$MKINSTALLDIRS$ac_delim
- USE_NLS!$USE_NLS$ac_delim
- GMSGFMT!$GMSGFMT$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
--INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+INTLLIBS!$LTLIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- LIBGPHOTO2_CFLAGS!$LIBGPHOTO2_CFLAGS$ac_delim
