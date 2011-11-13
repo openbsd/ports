@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/12 19:45:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/13 10:30:18 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 MULTI_PACKAGES=	-main -extras
 
@@ -34,6 +34,10 @@ RUN_DEPENDS-main += devel/gconf2,-polkit
 # Install accessibility components -- daemons will start only if
 # accessibility is enabled by the user.
 RUN_DEPENDS-main += x11/gnome/at-spi2-atk
+
+# GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center),
+# add gtk+{2,3}-cups so that gtkprint() can see native CUPS printers.
+RUN_DEPENDS-main += x11/gtk+2,-cups x11/gtk+3,-cups
 
 # Add some commonly used utilities.
 RUN_DEPENDS-main += \
