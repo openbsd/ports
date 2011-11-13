@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.991 2011/11/12 11:49:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.992 2011/11/13 10:53:51 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1034,7 +1034,6 @@
      SUBDIR += ruby-activemodel
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
-     SUBDIR += ruby-assistance
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
