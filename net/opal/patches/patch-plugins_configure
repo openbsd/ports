@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_configure,v 1.5 2011/10/26 16:59:34 ajacoutot Exp $
+$OpenBSD: patch-plugins_configure,v 1.6 2011/11/13 15:53:14 ajacoutot Exp $
 --- plugins/configure.orig	Fri Oct 14 09:00:00 2011
 +++ plugins/configure	Mon Oct 24 18:35:23 2011
 @@ -6479,7 +6479,7 @@ $as_echo "#define PLUGIN_CODEC_DLL_EXPORTS 1" >>confde
@@ -24,7 +24,7 @@ $OpenBSD: patch-plugins_configure,v 1.5 2011/10/26 16:59:34 ajacoutot Exp $
  
              if test "x${opal_gsm}" = "xyes" ; then
 -              GSM_CFLAGS="-I/usr/include/gsm -I/usr/local/include/gsm"
-+              GSM_CFLAGS="-I!!LOCALBASE!!/include"
++              GSM_CFLAGS="-I${LOCALBASE}/include"
                GSM_LIBS="-lgsm"
              fi
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-plugins_configure,v 1.5 2011/10/26 16:59:34 ajacoutot Exp $
  
              if test "x${opal_gsm}" = "xyes" ; then
 -              GSM_CFLAGS="-I/usr/include/gsm -I/usr/local/include/gsm"
-+              GSM_CFLAGS="-I!!LOCALBASE!!/include"
++              GSM_CFLAGS="-I${LOCALBASE}/include"
                GSM_LIBS="-lgsm"
              fi
  

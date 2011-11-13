@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/10/26 16:59:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/13 15:53:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -66,9 +66,8 @@ CONFIGURE_ARGS=	--disable-localspeex \
 CONFIGURE_ARGS+= --disable-vpb
 
 pre-configure:
-# use perl(1) instead of SUBST_CMD to prevent breaking the configure script
-	perl -pi -e "s,!!LOCALBASE!!,${LOCALBASE},g;" \
-		-e 's,SUBDIRS\+=\",SUBDIRS=\"\$${SUBDIRS},g' \
+	${SUBST_CMD} ${WRKSRC}/plugins/configure
+	perl -pi -e 's,SUBDIRS\+=\",SUBDIRS=\"\$${SUBDIRS},g' \
 		${WRKSRC}/plugins/configure
 
 post-install:
