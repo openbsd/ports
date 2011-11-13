@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_daemon_c,v 1.1 2011/11/13 15:16:01 naddy Exp $
+--- src/daemon.c.orig	Sun Nov 13 06:34:23 2011
++++ src/daemon.c	Sun Nov 13 06:34:50 2011
+@@ -503,7 +503,7 @@ static void reaper(
+ 	UNUSED int		sig)
+ {
+ 	char			path[40];	/* script to delete */
+-#if (defined BSD && !defined OSF && !defined __FreeBSD__)
++#if (defined BSD && !defined OSF && !defined __FreeBSD__ && !defined __OpenBSD__)
+ 	union wait		dummy;
+ #else
+ 	int			dummy;
