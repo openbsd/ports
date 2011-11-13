@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.81 2011/05/09 21:56:13 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.82 2011/11/13 16:20:00 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -98,7 +98,7 @@ do-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
-	@(cd ${WRKSRC}; sh postfix-install \
+	@(cd ${WRKSRC}; env SYSCONFDIR=${SYSCONFDIR} sh postfix-install \
 		-non-interactive \
 		mail_owner=_postfix \
 		setgid_group=_postdrop \

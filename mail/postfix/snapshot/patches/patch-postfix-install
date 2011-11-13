@@ -1,0 +1,12 @@
+$OpenBSD: patch-postfix-install,v 1.1 2011/11/13 16:20:00 sthen Exp $
+--- postfix-install.orig	Sun Nov 13 17:01:04 2011
++++ postfix-install	Sun Nov 13 17:01:20 2011
+@@ -363,7 +363,7 @@ HTML files. Specify \"no\" if you do not want to insta
+ 
+ : ${install_root=/}
+ : ${tempdir=`pwd`}
+-: ${config_directory=`bin/postconf -h -d config_directory`}
++: ${config_directory=`bin/postconf -h -d config_directory || echo ${SYSCONFDIR}/postfix`}
+ 
+ # Find out the location of installed configuration files.
+ 
