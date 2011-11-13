@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2011/10/19 16:27:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2011/11/13 12:44:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -85,5 +85,6 @@
      SUBDIR += ucblogo
      SUBDIR += unicon
      SUBDIR += vala
+     SUBDIR += verilator
 
 .include <bsd.port.subdir.mk>
