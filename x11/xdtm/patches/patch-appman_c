@@ -1,0 +1,30 @@
+$OpenBSD: patch-appman_c,v 1.1 2011/11/13 16:03:15 naddy Exp $
+--- appman.c.orig	Sun Nov 13 08:37:53 2011
++++ appman.c	Sun Nov 13 08:47:56 2011
+@@ -85,7 +85,7 @@
+   private void freeReturnStruct(void);
+   extern String getfilename(String);
+   private void increment_counter(AppProgram*, int, char*);
+-  extern void ioerr_dialog(int errno);
++  extern void ioerr_dialog(int errnum);
+   extern int openMasterAndSlave(int *, int *);
+   void pl_select_made(Widget, XtPointer, XtPointer);
+   private int plistcmp(const void *, const void *);
+@@ -1297,7 +1297,7 @@ public int execute(fullname, filename, fullcmd, cwait,
+ #endif
+     FILE         *processfp = NULL;    /* file pointer to process */
+     String *newargs, args;
+-#if !defined(SYSV) && !defined(SVR4_0) && !defined(_POSIX_SOURCE) && !defined(__386BSD__)
++#if !defined(SYSV) && !defined(SVR4_0) && !defined(_POSIX_SOURCE) && !defined(__386BSD__) && !defined(__OpenBSD__)
+     union wait       w_stat;   /* I'm not sure about the SYSV bit... */
+ #else
+     int              w_stat;
+@@ -1843,7 +1843,7 @@ public void child_died()
+   extern String cwd;
+ 
+   int pid;
+-#if !defined(SYSV) && !defined(SVR4_0) && !defined(_POSIX_SOURCE)
++#if !defined(SYSV) && !defined(SVR4_0) && !defined(_POSIX_SOURCE) && !defined(__OpenBSD__)
+   union wait status;
+ #else
+   int status;
