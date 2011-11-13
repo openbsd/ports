@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2011/09/21 13:10:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2011/11/13 15:16:17 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
@@ -311,7 +311,14 @@ lib/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
+share/gdb/
+share/gdb/auto-load/
+share/gdb/auto-load/libglib-2.0.so.0.3000.2-gdb.py
+share/gdb/auto-load/libgobject-2.0.so.0.3000.2-gdb.py
 share/glib-2.0/
+share/glib-2.0/gdb/
+share/glib-2.0/gdb/glib.py
+share/glib-2.0/gdb/gobject.py
 share/glib-2.0/gettext/
 share/glib-2.0/gettext/mkinstalldirs
 share/glib-2.0/gettext/po/

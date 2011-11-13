@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2011/11/12 13:14:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.145 2011/11/13 15:16:17 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -9,6 +9,8 @@ EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -100,9 +102,5 @@ pre-configure:
 		${WRKSRC}/gio/gdbusconnection.c \
 		${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
-
-# glib's GDB macros rely on gdb(1) auto-load feature
-post-install:
-	rm -rf ${PREFIX}/share/{,glib-2.0}/gdb/
 
 .include <bsd.port.mk>
