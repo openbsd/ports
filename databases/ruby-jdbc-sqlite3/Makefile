@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/09 20:12:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/13 00:26:22 jeremy Exp $
 
 COMMENT =	access an SQLite3 database from JRuby
 
-DISTNAME =	${PKGNAME}-java
-PKGNAME =	jdbc-sqlite3-3.6.14.2.056
+DISTNAME =	jdbc-sqlite3-3.7.2
 CATEGORIES =	databases
 
 # MIT
