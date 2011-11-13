@@ -1,0 +1,11 @@
+$OpenBSD: patch-gdb_python_python-config_py,v 1.1 2011/11/13 14:56:57 espie Exp $
+--- gdb/python/python-config.py.orig	Thu May 27 03:36:22 2010
++++ gdb/python/python-config.py	Sat Nov 12 23:43:37 2011
+@@ -50,5 +50,7 @@ elif opt in ('--libs', '--ldflags'):
+     # shared library in prefix/lib/.
+     if opt == '--ldflags' and not getvar('Py_ENABLE_SHARED'):
+         libs.insert(0, '-L' + getvar('LIBPL'))
++    if opt == '--ldflags':
++    	libs.insert(0, getvar('LDFLAGS'))
+     print ' '.join(libs)
+ 
