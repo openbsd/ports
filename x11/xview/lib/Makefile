@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/13 21:30:05 naddy Exp $
 
 COMMENT=	OpenLook Toolkit libs, includes, and man pages
 
 PKGNAME=	xview-lib-${XVIEW_VERSION}
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	olgx	3.2 \
 		xview	3.2
 EXTRACT_ONLY=	

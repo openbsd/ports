@@ -1,0 +1,12 @@
+$OpenBSD: p-lib_libxview_notify_nintn_wait_c,v 1.1 2011/11/13 21:30:05 naddy Exp $
+--- lib/libxview/notify/nintn_wait.c.orig	Sun Nov 13 11:08:28 2011
++++ lib/libxview/notify/nintn_wait.c	Sun Nov 13 11:10:56 2011
+@@ -22,7 +22,7 @@ extern          Notify_value
+ notify_next_wait3_func(nclient, pid, status, rusage)
+     Notify_client   nclient;
+     int             pid;
+-#ifndef SVR4
++#if !(defined(BSD4_4) || defined(SVR4))
+     union wait     *status;
+ #else SVR4
+     int *status;

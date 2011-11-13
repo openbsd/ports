@@ -1,0 +1,21 @@
+$OpenBSD: p-lib_libxview_notify_notify_h,v 1.1 2011/11/13 21:30:05 naddy Exp $
+--- lib/libxview/notify/notify.h.orig	Sun Nov 13 11:42:33 2011
++++ lib/libxview/notify/notify.h	Sun Nov 13 11:51:29 2011
+@@ -219,7 +219,7 @@ extern	struct itimerval NOTIFY_NO_ITIMER;	/* {{0,0},{0
+ 
+ #ifndef _NOTIFY_MIN_SYMBOLS
+ 
+-#ifdef SYSV_WAIT
++#if defined(BSD4_4) || defined(SYSV_WAIT)
+ EXTERN_FUNCTION (Notify_value   notify_default_wait3, (Notify_client nclient, int pid, int  *status, struct rusage *rusage));
+ #define notify_default_waitpid notify_default_wait3
+ #else
+@@ -305,7 +305,7 @@ EXTERN_FUNCTION (Notify_value 	notify_next_itimer_func
+ EXTERN_FUNCTION (Notify_value	notify_next_output_func, (Notify_client nclient, int fd));
+ EXTERN_FUNCTION (Notify_value 	notify_next_signal_func, (Notify_client nclient, int signal, Notify_signal_mode mode));
+ 
+-#ifdef SYSV_WAIT
++#if defined(BSD4_4) || defined(SYSV_WAIT)
+ EXTERN_FUNCTION (Notify_value 	notify_next_wait3_func, (Notify_client nclient, int pid, int  *status, struct rusage *rusage));
+ #define notify_next_waitpid_func notify_next_wait3_func
+ #else
