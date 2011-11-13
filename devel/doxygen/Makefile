@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/13 16:11:11 pirofti Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/13 22:29:21 naddy Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS=	sh
@@ -10,6 +10,7 @@ VERSION=	1.7.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
+REVISION-main=	0
 CATEGORIES=	devel textproc 
 
 HOMEPAGE=	http://www.doxygen.org/
