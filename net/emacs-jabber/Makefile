@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/12 11:51:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/13 15:46:06 jasper Exp $
 
 COMMENT =		Jabber client for Emacs
 
 DISTNAME =		emacs-jabber-0.8.90
+REVISION =		0
 CATEGORIES =		net
 
 HOMEPAGE =		http://emacs-jabber.sourceforge.net/
@@ -16,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=emacs-jabber/}
 
 FLAVORS =		emacs21 emacs22 emacs23
-FLAVOR ?=		emacs22
+FLAVOR ?=		emacs21
 
 .if ${FLAVOR:Memacs21}
 EMACS_VSN =	21.4
