@@ -1,0 +1,48 @@
+$OpenBSD: patch-configure_in,v 1.1 2011/11/13 18:23:24 sthen Exp $
+--- configure.in.orig	Fri Jul  3 21:23:53 2009
++++ configure.in	Sat Nov 12 14:46:10 2011
+@@ -60,7 +60,7 @@ if [[ -n "$snprintf" ]]; then
+    snprintf="#define NO_SNPRINTF"
+ fi
+ 
+-AC_CHECK_HEADERS(algorithm algo.h algo)
++AC_CHECK_HEADERS(algorithm algo)
+ 
+ AC_SUBST(linux_pthread)
+ AC_TRY_COMPILE([#define _GNU_SOURCE
+@@ -72,15 +72,8 @@ if [[ -n "$linux_pthread" ]]; then
+    linux_pthread="#define LINUX_PTHREAD"
+ fi
+  
+-LDFLAGS=-lpthread
++thread_ldflags="-pthread"
+ AC_SUBST(thread_ldflags)
+-AC_TRY_LINK([#include <pthread.h>
+-void * thread_func(void * param) { return NULL; }
+-] , [pthread_t thread_info;
+-     pthread_attr_t attr;
+-     pthread_create(&thread_info, &attr, &thread_func, NULL);]
+-  , thread_ldflags="-lpthread"
+-  , thread_ldflags="-pthread")
+ 
+ AC_SUBST(large_file)
+ AC_TRY_RUN([#ifndef _LARGEFILE64_SOURCE
+@@ -89,9 +82,18 @@ AC_TRY_RUN([#ifndef _LARGEFILE64_SOURCE
+ #include <stdio.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdlib.h>
++
++#ifdef BSD
++#define O_LARGEFILE 0
++#define off64_t off_t
++#define lseek64 lseek
++#define creat64 creat
++#define open64  open
++#endif
+ 
+ int main () {
+   int fd;
