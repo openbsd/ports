@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/06/11 12:34:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/11/13 17:32:12 rpointel Exp $
 @option no-default-conflict
 @conflict py-mxDateTime-*-python${MODPY_VERSION}
 %%python2.7%%
@@ -45,6 +45,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/mxh.h
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.py
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/test64bit.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.py
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/mxBeeBase/testernesto.pyo
@@ -129,6 +132,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/mxh.h
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/test.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/test.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/test.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testabsdatetime.py
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testabsdatetime.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testabsdatetime.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testcmp.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testcmp.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testcmp.pyo
@@ -150,6 +156,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testrichard.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testroundoff.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testroundoff.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testroundoff.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testslotops.py
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testslotops.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testslotops.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/teststrftime.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/teststrftime.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/teststrftime.pyo
@@ -162,17 +171,6 @@ lib/python${MODPY_VERSION}/site-packages/mx/DateTime/mxDateTime/testticks.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.py
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/DateTime/timegm.pyo
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/eGenix-mx-Extensions.html
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxBeeBase.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxDateTime.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxProxy.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxQueue.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxStack.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxTextTools.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxTools.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxUID.pdf
-lib/python${MODPY_VERSION}/site-packages/mx/Doc/mxURL.pdf
 lib/python${MODPY_VERSION}/site-packages/mx/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mx/Log.py
 lib/python${MODPY_VERSION}/site-packages/mx/Log.pyc
@@ -194,6 +192,9 @@ lib/python${MODPY_VERSION}/site-packages/mx/Misc/ConfigFile.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cookie.py
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cookie.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/Cookie.pyo
+lib/python${MODPY_VERSION}/site-packages/mx/Misc/Daemon.py
+lib/python${MODPY_VERSION}/site-packages/mx/Misc/Daemon.pyc
+lib/python${MODPY_VERSION}/site-packages/mx/Misc/Daemon.pyo
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/ExitFunctions.py
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/ExitFunctions.pyc
 lib/python${MODPY_VERSION}/site-packages/mx/Misc/ExitFunctions.pyo
