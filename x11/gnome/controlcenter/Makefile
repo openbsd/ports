@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/11/09 09:01:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/11/13 10:28:19 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,6 +10,8 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.2
+
+REVISION=		0
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -67,9 +69,7 @@ RUN_DEPENDS+=		x11/gnome/color-manager
 RUN_DEPENDS+=		x11/gnome/power-manager
 
 # needed for gnome-printers-panel
-# (and it would make no sense not to have gtk+3-cups in this case)
-RUN_DEPENDS+=		print/cups-pk-helper \
-			x11/gtk+3,-cups
+RUN_DEPENDS+=		print/cups-pk-helper
 
 # needed for gnome-screen-panel
 RUN_DEPENDS+=		x11/gnome/screensaver
