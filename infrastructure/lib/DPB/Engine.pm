@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.34 2011/11/13 10:34:35 espie Exp $
+# $OpenBSD: Engine.pm,v 1.35 2011/11/13 22:18:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -140,7 +140,6 @@ sub end
 		} else {
 			unshift(@{$self->{engine}{errors}}, $v);
 			$v->{host} = $core->host;
-			$self->{engine}{locker}->simple_unlock($v);
 			$self->log('E', $v);
 		}
 	}

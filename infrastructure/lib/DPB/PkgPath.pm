@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.20 2011/11/08 10:26:38 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.21 2011/11/13 22:18:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -136,11 +136,6 @@ sub logname
 
 sub lockname
 {
-	&logname;
-}
-
-sub simple_lockname
-{
 	&pkgpath;
 }
 
@@ -148,7 +143,7 @@ sub print_parent
 {
 	my ($self, $fh) = @_;
 	if (defined $self->{parent}) {
-		print $fh "parent=", $self->{parent}->lockname, "\n";
+		print $fh "parent=", $self->{parent}->logname, "\n";
 	}
 }
 

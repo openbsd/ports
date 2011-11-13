@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.8 2011/11/06 12:22:17 espie Exp $
+# $OpenBSD: Locks.pm,v 1.9 2011/11/13 22:18:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -38,12 +38,6 @@ sub build_lockname
 	return "$self->{lockdir}/$f";
 }
 
-sub simple_lockname
-{
-	my ($self, $v) = @_;
-	return $self->build_lockname($v->simple_lockname);
-}
-
 sub lockname
 {
 	my ($self, $v) = @_;
@@ -54,7 +48,7 @@ sub dolock
 {
 	my ($self, $name, $v) = @_;
 	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
-		print $fh "fullpkgpath=", $v->lockname, "\n";
+		print $fh "locked=", $v->logname, "\n";
 		$v->print_parent($fh);
 		return $fh;
 	} else {
@@ -65,19 +59,10 @@ sub dolock
 sub lock
 {
 	my ($self, $v) = @_;
-	my $simple = $self->simple_lockname($v);
-	my $fh = $self->dolock($simple, $v);
+	my $lock = $self->lockname($v);
+	my $fh = $self->dolock($lock, $v);
 	if ($fh) {
-		my $lk = $self->lockname($v);
-		if ($simple eq $lk) {
-			return $fh;
-		}
-		my $fh2 = $self->dolock($lk, $v);
-		if ($fh2) {
-			return $fh2;
-		} else {
-			$self->simple_unlock($v);
-		}
+		return $fh;
 	}
 	return undef;
 }
@@ -86,22 +71,12 @@ sub unlock
 {
 	my ($self, $v) = @_;
 	unlink($self->lockname($v));
-	$self->simple_unlock($v);
-}
-
-sub simple_unlock
-{
-	my ($self, $v) = @_;
-	my $simple = $self->simple_lockname($v);
-	if ($self->lockname($v) ne $simple) {
-		unlink($simple);
-	}
 }
 
 sub locked
 {
 	my ($self, $v) = @_;
-	return -e $self->lockname($v) || -e $self->simple_lockname($v);
+	return -e $self->lockname($v);
 }
 
 sub recheck_errors

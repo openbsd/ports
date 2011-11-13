@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.21 2011/11/06 12:21:47 espie Exp $
+# $OpenBSD: Vars.pm,v 1.22 2011/11/13 22:18:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -171,7 +171,6 @@ sub grab_list
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = DPB::PkgPath->new($1);
 			$dir->{broken} = "broken dependency";
-			$dir->{parent} = $subdir;
 			$h->{$dir} = $dir;
 			print $log $_, "\n";
 			print $log "Broken ", $dir->fullpkgpath, "\n";
