@@ -1,0 +1,11 @@
+$OpenBSD: patch-libusb_pc_in,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
+--- libusb.pc.in.orig	Wed Jun 18 01:13:02 2008
++++ libusb.pc.in	Sat Nov 12 23:17:16 2011
+@@ -9,6 +9,6 @@ emulated_by=libusb-1.0
+ Name: libusb
+ Description: USB access library (libusb-1.0 compat wrapper)
+ Version: @LIBUSB01_VERSION@
+-Libs: -L${libdir} -lusb
++Libs: -L${libdir} -lusb -pthread
+ Cflags: -I${includedir}
+ 

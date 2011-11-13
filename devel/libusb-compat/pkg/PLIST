@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
+@conflict libusb-*
+@pkgpath devel/libusb
+%%SHARED%%
+bin/libusb-config
+include/usb.h
+lib/libusb.a
+lib/libusb.la
+lib/pkgconfig/
+lib/pkgconfig/libusb.pc

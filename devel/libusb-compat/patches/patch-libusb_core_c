@@ -1,0 +1,14 @@
+$OpenBSD: patch-libusb_core_c,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
+--- libusb/core.c.orig	Sat Nov 12 18:44:27 2011
++++ libusb/core.c	Sat Nov 12 18:44:35 2011
+@@ -29,6 +29,10 @@
+ #include "usb.h"
+ #include "usbi.h"
+ 
++#if !defined(ENODATA) && defined(ENOENT)
++#define ENODATA ENOENT
++#endif
++
+ static libusb_context *ctx = NULL;
+ static int usb_debug = 0;
+ 
