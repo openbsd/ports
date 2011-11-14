@@ -1,4 +1,4 @@
-# $OpenBSD: Exec.pm,v 1.1 2010/12/05 16:37:50 espie Exp $
+# $OpenBSD: Exec.pm,v 1.2 2011/11/14 22:12:08 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -57,6 +57,30 @@ sub chdir
 	bless {dir => $dir}, $class;
 }
 
+sub compile
+{
+	my ($self, @l) = @_;
+	$self->command("compile", @l);	
+}
+
+sub execute
+{
+	my ($self, @l) = @_;
+	$self->command("execute", @l);
+}
+
+sub install
+{
+	my ($self, @l) = @_;
+	$self->command("install", @l);
+}
+
+sub link
+{
+	my ($self, @l) = @_;
+	$self->command("link", @l);
+}
+
 sub command_run
 {
 	my ($self, @l) = @_;
@@ -101,15 +125,20 @@ sub shell
 
 sub command
 {
-	my ($self, @l) = @_;
+	my ($self, $mode, @l) = @_;
 	# create an object "on the run"
 	if (!ref($self)) {
 		$self = $self->new;
 	}
-	say "@l" if $verbose || $dry;
+	if ($mode eq "compile"){
+		say "@l" if $verbose || $dry;
+	} else {
+		say "libtool: $mode: @l" if $verbose || $dry;	
+	}
 	if (!$dry) {
 		$self->command_run(@l);
 	}
 	$performed++;
 }
+
 1;

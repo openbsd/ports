@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.32 2011/05/16 20:09:54 sthen Exp $
+# $OpenBSD: libtool,v 1.33 2011/11/14 22:12:08 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -260,11 +260,11 @@ if ($mode eq 'compile') {
 			require Program;
 			Program->install($s, $dst, $ltprog, \@instopts);
 		} else {
-			Exec->command(@$ltprog, @instopts, $s, $dst);
+			Exec->$mode(@$ltprog, @instopts, $s, $dst);
 		}
 	}
 	if (defined $install_opts{'d'}) {
-		Exec->command(@$ltprog, @instopts, @ARGV);
+		Exec->$mode(@$ltprog, @instopts, @ARGV);
 	}
 } elsif ($mode eq 'link') {
 	my $cmd;
@@ -507,7 +507,7 @@ if ($mode eq 'compile') {
 } elsif ($mode eq 'execute') {
 	# XXX check whether this is right
 	Exec->silent_run;
-	Exec->command(@$ltprog, @ARGV);
+	Exec->$mode(@$ltprog, @ARGV);
 } else {
 	die "MODE=$mode not implemented yet.\n";
 }

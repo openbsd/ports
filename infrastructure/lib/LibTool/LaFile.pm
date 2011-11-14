@@ -1,4 +1,4 @@
-# $OpenBSD: LaFile.pm,v 1.1 2010/12/05 16:37:50 espie Exp $
+# $OpenBSD: LaFile.pm,v 1.2 2011/11/14 22:12:08 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -218,8 +218,8 @@ sub link
 		}
 		push @cmd, @libflags if (@libflags);
 		push @cmd, @$objs if (@$objs);
-		Exec->command(@cmd);
-		Exec->command('ranlib', $dst);
+		Exec->link(@cmd);
+		Exec->link('ranlib', $dst);
 		return;
 	}
 
@@ -285,7 +285,7 @@ sub link
        		if (@$staticlibs);
 	push @cmd, "-L$symlinkdir", @libflags if (@libflags);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
-	Exec->command(@cmd);
+	Exec->link(@cmd);
 }
 
 sub install
@@ -312,13 +312,13 @@ sub install
 		@realinstopts = grep { $_ ne '-s' } @realinstopts;
 		my $s = "$srcdir/$ltdir/$staticlib";
 		my $d = "$dstdir/$staticlib";
-		Exec->command(@$instprog, @realinstopts, $s, $d);
-		Exec->command('strip', @stripopts, $d) if ($strip);
+		Exec->install(@$instprog, @realinstopts, $s, $d);
+		Exec->install('strip', @stripopts, $d) if ($strip);
 	}
 	if ($sharedlib) {
 		my $s = "$srcdir/$ltdir/$sharedlib";
 		my $d = "$dstdir/$sharedlib";
-		Exec->command(@$instprog, @opts, $s, $d);
+		Exec->install(@$instprog, @opts, $s, $d);
 	}
 	if ($laipath) {
 		# do not try to strip .la files
@@ -326,7 +326,7 @@ sub install
 		@realinstopts = grep { $_ ne '-s' } @realinstopts;
 		my $s = $laipath;
 		my $d = "$dstdir/$dstfile";
-		Exec->command(@$instprog, @realinstopts, $s, $d);
+		Exec->install(@$instprog, @realinstopts, $s, $d);
 	}
 	# for libraries with a -release in their name
 	my @libnames = split /\s+/, $lainfo->{'library_names'};

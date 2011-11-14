@@ -1,4 +1,4 @@
-# $OpenBSD: Program.pm,v 1.1 2010/12/05 16:37:50 espie Exp $
+# $OpenBSD: Program.pm,v 1.2 2011/11/14 22:12:08 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -172,7 +172,7 @@ sub link
 	push @cmd, "-L$symlinkdir", @libflags if (@libflags);
 	push @cmd, @$RPdirs if (@$RPdirs);
 	push @cmd, "-Wl,-retain-symbols-file,$symbolsfile" if ($symbolsfile);
-	Exec->command(@cmd);
+	Exec->link(@cmd);
 }
 
 sub install
@@ -182,7 +182,7 @@ sub install
 	my $srcdir = dirname $src;
 	my $srcfile = basename $src;
 	my $realpath = "$srcdir/$ltdir/$srcfile";
-	Exec->command(@$instprog, @$instopts, $realpath, $dst);
+	Exec->install(@$instprog, @$instopts, $realpath, $dst);
 }
 
 1;
