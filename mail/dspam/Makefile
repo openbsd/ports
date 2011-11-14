@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/11/14 19:20:52 rpointel Exp $
 
 COMMENT=	anti-spam filter
 
@@ -111,8 +111,8 @@ WANTLIB +=		clamav>=1
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
-CONFIGURE_ENV=		CPPFLAGS="-I${DEPBASE}/include" \
-			LDFLAGS="-L${DEPBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
 			ldap>=8 lber>=8
