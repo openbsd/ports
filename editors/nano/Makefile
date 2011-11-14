@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/12/03 16:45:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.67 2011/11/14 09:48:46 rpointel Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -22,8 +22,8 @@ WANTLIB=	c ncursesw
 
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
-		LDFLAGS="-L${DEPBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 # only required to build HTML version of man pages
 USE_GROFF =	Yes
