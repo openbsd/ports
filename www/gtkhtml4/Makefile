@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/16 18:29:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/14 11:18:09 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
-GNOME_VERSION=		4.2.1
+GNOME_VERSION=		4.2.2
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -34,7 +34,7 @@ WANTLIB += cairo-gobject drm enchant expat fontconfig freetype
 WANTLIB += gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm z
+WANTLIB += stdc++ xcb xcb-render xcb-shm z ffi
 
 MODULES=		devel/gettext \
 			x11/gnome
