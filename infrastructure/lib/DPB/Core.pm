@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.9 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Core.pm,v 1.10 2011/11/14 21:56:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -458,6 +458,11 @@ sub set_logdir
 	$logdir = shift;
 }
 
+sub is_local
+{
+	return 0;
+}
+
 my @extra_report = ();
 my @extra_important = ();
 sub register_report
@@ -661,6 +666,11 @@ sub hostname
 		chomp($host = `hostname`);
 	}
 	return $host;
+}
+
+sub is_local
+{
+	return 1;
 }
 
 package DPB::Core::Fetcher;
