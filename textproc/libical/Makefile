@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/02 20:11:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/14 23:55:48 ajacoutot Exp $
 
 COMMENT=	implementation of basic iCAL protocols
 
 DISTNAME=	libical-0.46
+
+REVISION=	0
 
 SHARED_LIBS +=  ical                 2.0      # 46.0
 SHARED_LIBS +=  icalss               2.0      # 46.0
@@ -13,8 +15,6 @@ CATEGORIES=	textproc
 HOMEPAGE=	http://freeassociation.sf.net/
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freeassociation/}
-
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # MPL/LGPL
 PERMIT_PACKAGE_CDROM=	Yes
