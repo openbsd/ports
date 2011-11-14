@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1126 2011/11/14 16:18:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1127 2011/11/14 22:02:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1314,14 +1314,6 @@ wantlib_args ?= port-wantlib-args
 lib_depends_args ?= lib-depends-args
 
 
-# fairly good approximation of libraries we want
-# XXX this is ksh, be less perfect with pure sh
-_lib=/lib*.{so.+([0-9]).+([0-9]),a}
-
-_libresolve_fragment = \
-	check=`for _lib in $$libs; do echo $$_lib; done | \
-		${_resolve_lib} $$d` \
-			|| check=Failed
 
 PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
 _set_ld_library_path = :
@@ -1585,6 +1577,57 @@ _complete_pkgspec = \
 _emit_lib_depends = for i in ${LIB_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 _emit_run_depends = for i in ${RUN_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 
+_cache_fragment = \
+	case X$${_DEPENDS_CACHE} in \
+		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
+		export _DEPENDS_CACHE; \
+		trap "${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
+	esac
+
+_cached_libs = $${_DEPENDS_CACHE}/$$subdir/libs
+
+_libs2cache = \
+	if ! test -f ${_cached_libs}; then \
+		mkdir -p $${_DEPENDS_CACHE}/$$subdir; \
+		if ! eval $$toset ${MAKE} print-plist-libs >${_cached_libs}; \
+		then \
+			echo 1>&2 "Problem with dependency $$subdir"; \
+			exit 1; \
+		fi; \
+	fi
+
+# is this subdir actually needed as a libs depend ?
+_check_needed = \
+	needed=false; \
+	${_parse_spec}; \
+	${_libs2cache}; \
+	exec 3>&2; \
+	for d in ${_DEPRUNLIBS:QL}; do \
+		exec 2>/dev/null; \
+		if check=`${_resolve_lib} $$d <${_cached_libs}`; \
+		then \
+			case "$$check" in \
+				*.a) ;; \
+				*) needed=true; \
+					break;; \
+			esac; \
+		fi; \
+	done; \
+	exec 2>&3
+
+# fairly good approximation of libraries we want
+# XXX this is ksh, be less perfect with pure sh
+_lib=/lib*.{so.+([0-9]).+([0-9]),a}
+
+_list_system_libs = \
+	for i in /usr/lib${_lib} ${X11BASE}/lib${_lib}; do echo $$i; done
+
+_list_port_libs = \
+	{ ${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
+		${_flavor_fragment}; \
+		${_libs2cache}; \
+		cat ${_cached_libs}; \
+ 	done; ${_list_system_libs}; }
 
 .if empty(PLIST_DB)
 _register_plist =:
@@ -1654,7 +1697,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
+		${_cache_fragment} && cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
@@ -1915,13 +1958,15 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
-	@if found=`{ \
+	@${_cache_fragment}; if found=`{ \
 		for i in ${_LIB4:QL}; do echo "$$i"; done | \
 			while ${_read_spec}; do \
 				${_parse_spec}; \
-				eval $$toset ${MAKE} print-plist-libs; \
+				${_libs2cache}; \
+				cat ${_cached_libs}; \
 			done; \
-		echo ${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
+		for i in ${LOCALBASE}/lib${_lib}; do echo $$i; done;  \
+		${_list_system_libs}; \
 		for d in ${_DEP${_m}LIBS:QL}; do \
 			case "$$d" in \
 			/*) echo $${d%/*}${_lib};; \
@@ -1977,7 +2022,7 @@ ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
 	@${SUDO} ${_CHECK_LIB_DEPENDS} -O $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
-	@-for s in ${MULTI_PACKAGES}; do \
+	@-${_cache_fragment}; for s in ${MULTI_PACKAGES}; do \
 		SUBPACKAGE=$$s ${MAKE} print-plist-with-depends \
 		lib_depends_args=all-lib-depends-args \
 		wantlib_args=fake-wantlib-args| \
@@ -2167,17 +2212,17 @@ unlock:
 .endfor
 
 subpackage:
-	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
+	@${_DO_LOCK}; ${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
 
 _internal-package: 
-	@${_MAKE} _internal-package-only
+	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
 .if ${BULK_${PKGPATH}:L} == "yes"
 	@${_MAKE} ${_BULK_COOKIE}
 .endif
 
 
 ${_BULK_COOKIE}:
-	@${_MAKE} _internal-package-only
+	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
 	@mkdir -p ${BULK_COOKIES_DIR}
 .for _i in ${BULK_TARGETS_${PKGPATH}}
 	@${ECHO_MSG} "===> Running ${_i}"
@@ -2954,7 +2999,7 @@ ${_i:L}-depends-list:
 print-package-signature:
 	@echo -n ${FULLPKGNAME${SUBPACKAGE}}
 .if !empty(_DEPRUNLIBS)
-	@cd ${.CURDIR} && LIST_LIBS=`${MAKE} _list-port-libs` ${MAKE} _print-package-signature-lib _print-package-signature-run| \
+	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _print-package-signature-lib _print-package-signature-run| \
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
 .else
@@ -2993,36 +3038,24 @@ lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
 .else
 
 lib-depends-args:
-	@${_emit_lib_depends}| while ${_read_spec}; do \
-		${_parse_spec}; \
-		${_complete_pkgspec}; \
-		libs=`eval $$toset ${MAKE} print-plist-libs`; \
-		needed=false; \
-		exec 3>&2; \
-		for d in ${_DEPRUNLIBS:QL}; do \
-			if $$needed; then continue; fi; \
-			exec 2>/dev/null; \
-			${_libresolve_fragment}; \
-			case "$$check" in \
-			*.a|Failed) \
-				continue;; \
-			*) \
-				needed=true;; \
-			esac; \
-		done; \
-		exec 2>&3; \
-		if $$needed; then echo "-P $$pkgpath:$$pkg:$$default"; fi; \
+	@${_cache_fragment}; ${_emit_lib_depends}| while ${_read_spec}; do \
+		${_check_needed}; \
+		if $$needed; then \
+			${_complete_pkgspec}; \
+			echo "-P $$pkgpath:$$pkg:$$default"; \
+		fi; \
 	done
 
 wantlib-args:
-	@a=`mktemp /tmp/portstree.XXXXXX`; b=`mktemp /tmp/inst.XXXXXX`; \
+	@${_cache_fragment}; \
+	a=$${_DEPENDS_CACHE}/portstree${SUBPACKAGE}; \
+	b=$${_DEPENDS_CACHE}/inst${SUBPACKAGE}; \
 	cd ${.CURDIR} && \
 	${MAKE} port-wantlib-args >$$a && \
 	${MAKE} fake-wantlib-args >$$b; \
 	if cmp -s $$a $$b; \
 	then \
 		cat $$a; \
-		rm -f $$a $$b; \
 	else \
 		echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
 		echo 1>&2 "       and libraries from installed packages don't match"; \
@@ -3031,25 +3064,17 @@ wantlib-args:
 	fi
 
 port-wantlib-args:
-	@if found=`{ \
-		${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
-			${_flavor_fragment}; \
-			if ! eval $$toset ${MAKE} print-plist-libs; \
-			then \
-				echo 1>&2 "Problem with dependency $$subdir"; \
-				exit 1; \
-			fi; done; \
-		echo /usr/lib${_lib} ${X11BASE}/lib${_lib}; } | \
-		${_resolve_lib} ${_DEPRUNLIBS:QL}`; \
-		then \
-			for k in $$found; do \
-				case $$k in *.a) ;; \
-				*) echo "-W $$k";; \
-				esac; \
-			done; \
-		else \
-			exit 1; \
-		fi
+	@${_cache_fragment}; \
+	if found=`${_list_port_libs} | ${_resolve_lib} ${_DEPRUNLIBS:QL}`; \
+	then \
+		for k in $$found; do \
+			case $$k in *.a) ;; \
+			*) echo "-W $$k";; \
+			esac; \
+		done; \
+	else \
+		exit 1; \
+	fi
 
 fake-wantlib-args:
 	@if found=`{ \
@@ -3073,30 +3098,6 @@ fake-wantlib-args:
 
 no-wantlib-args:
 
-_list-port-libs:
-.if defined(_PORT_LIBS_CACHE) && defined(_DEPENDS_CACHE) && \
-	defined(_DEPENDS_FILE)
-	@if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
-		${MAKE} run-dir-depends >>${_DEPENDS_CACHE}; \
-	fi
-	@${_PERLSCRIPT}/extract-dependencies ${FULLPKGPATH} <${_DEPENDS_CACHE}|while read subdir; do \
-		fulldir=${_PORT_LIBS_CACHE}/$$subdir; \
-		if test -f $$fulldir; then \
-			cat $$fulldir; \
-		else \
-			mkdir -p $${fulldir%/*}; \
-			${_flavor_fragment}; \
-			eval $$toset ${MAKE} print-plist-libs | tee $$fulldir; \
-		fi; \
-	done
-.else
-	@${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
-		${_flavor_fragment}; \
-		eval $$toset ${MAKE} print-plist-libs ; \
-	done
-.endif
-	@echo /usr/lib/lib* ${X11BASE}/lib/lib*
-
 _print-package-signature-run:
 	@${_emit_run_depends} |while ${_read_spec}; do \
 		${_parse_spec}; \
@@ -3105,26 +3106,14 @@ _print-package-signature-run:
 	done
 
 _print-package-signature-lib:
-	@echo $$LIST_LIBS| ${_resolve_lib} ${_DEPRUNLIBS:QL}
-	@${_emit_lib_depends}| while ${_read_spec}; do \
-		${_parse_spec}; \
-		${_complete_pkgspec}; \
-		libs=`eval $$toset ${MAKE} print-plist-libs`; \
-		needed=false; \
-		exec 3>&2; \
-		for d in ${_DEPRUNLIBS:QL}; do \
-			if $$needed; then continue; fi; \
-			exec 2>/dev/null; \
-			${_libresolve_fragment}; \
-			case "$$check" in \
-			*.a|Failed) \
-				continue;; \
-			*) \
-				needed=true;; \
-			esac; \
-		done; \
-		exec 2>&3; \
-		if $$needed; then echo "$$default"; fi; \
+	@${_cache_fragment}; \
+	${_list_port_libs}| ${_resolve_lib} ${_DEPRUNLIBS:QL}; \
+	${_emit_lib_depends}| while ${_read_spec}; do \
+		${_check_needed}; \
+		if $$needed; then \
+			${_complete_pkgspec}; \
+			echo "$$default"; \
+		fi; \
 	done
 
 # recursively build a list of dirs for package running, ready for tsort
@@ -3375,7 +3364,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal-runwantlib-depends _internal-subpackage _internal-subupdate \
 	_internal-update _internal-update _internal-update-plist \
 	_internal_install _internal_runlib-depends _license-check \
-	_list-port-libs print-package-args _print-package-signature-lib \
+	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
 	_recurse-regress-dir-depends _recurse-run-dir-depends _refetch addsum \
 	build-depends build-depends-list checkpatch clean clean-depends \
