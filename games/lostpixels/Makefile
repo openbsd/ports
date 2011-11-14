@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/14 10:41:30 sthen Exp $
+
+BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
 COMMENT =		blinkensisters - hunt for the lost pixels
 
