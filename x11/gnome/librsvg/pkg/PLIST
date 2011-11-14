@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/09/06 22:37:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/11/14 18:00:58 ajacoutot Exp $
+%%SHARED%%
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
@@ -11,12 +12,14 @@ lib/gdk-pixbuf-2.0/2.10.0/
 lib/gdk-pixbuf-2.0/2.10.0/loaders/
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.a
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.la
-lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+lib/girepository-1.0/
+lib/girepository-1.0/Rsvg-2.0.typelib
 lib/librsvg-2.a
 lib/librsvg-2.la
-@lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
+share/gir-1.0/
+share/gir-1.0/Rsvg-2.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/rsvg-2.0/
@@ -25,6 +28,7 @@ share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-14.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-22.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-32.html
+share/gtk-doc/html/rsvg-2.0/api-index-2-36.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-4.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-8.html
 share/gtk-doc/html/rsvg-2.0/api-index-2-9.html
