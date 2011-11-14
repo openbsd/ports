@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/14 13:00:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/14 13:41:16 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -60,7 +60,7 @@ DISTNAME =   	gcc-${FULL_VERSION}
 
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES0 =	http://spacehopper.org/mirrors/
 
 CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
