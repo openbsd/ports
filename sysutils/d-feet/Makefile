@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/14 19:16:51 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
-MODPY_EGG_VERSION=	0.1.12
+MODPY_EGG_VERSION=	0.1.14
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
-REVISION =		5
 CATEGORIES=		sysutils x11
-
-EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://live.gnome.org/DFeet/
 
@@ -18,6 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/d-feet/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		lang/python
 MODPY_SETUPTOOLS=	Yes

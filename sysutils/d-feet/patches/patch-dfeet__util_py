@@ -1,6 +1,6 @@
-$OpenBSD: patch-dfeet__util_py,v 1.1 2011/09/03 07:54:33 landry Exp $
---- dfeet/_util.py.orig	Wed Feb  2 22:09:13 2011
-+++ dfeet/_util.py	Wed Feb  2 22:34:04 2011
+$OpenBSD: patch-dfeet__util_py,v 1.2 2011/11/14 19:16:51 ajacoutot Exp $
+--- dfeet/_util.py.orig	Tue Mar 15 22:45:55 2011
++++ dfeet/_util.py	Mon Nov 14 20:13:57 2011
 @@ -1,18 +1,9 @@
  import os
 +import subprocess
@@ -21,4 +21,4 @@ $OpenBSD: patch-dfeet__util_py,v 1.1 2011/09/03 07:54:33 landry Exp $
 +    return subprocess.Popen(['/bin/ps','-c', '-o', 'command=', '-p', str(pid)], stdout=subprocess.PIPE ).communicate()[0].strip().split('\0')
  
  # TODO: figure out more robust way to do this
- def get_ui_di
+ def get_ui_dir():
