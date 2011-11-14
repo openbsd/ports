@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/14 22:27:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		social web services integration framework
 
 GNOME_PROJECT=		libsocialweb
-GNOME_VERSION=		0.25.19
-REVISION=		1
+GNOME_VERSION=		0.25.20
 
-SHARED_LIBS +=  socialweb-client     2.0      # 2.0
+SHARED_LIBS +=  socialweb-client          2.0 # 2.0
 SHARED_LIBS +=  socialweb-keyfob          0.0 # 0.0
 SHARED_LIBS +=  socialweb-keystore        0.0 # 0.0
 SHARED_LIBS +=  socialweb                 0.0 # 0.0
@@ -30,7 +29,7 @@ MODULES=		devel/gettext \
 WANTLIB += c dbus-1 dbus-glib-1 gconf-2 gcrypt gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 json-glib-1.0 m pcre pthread rest-0.7 rest-extras-0.7
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z ffi
 
 MODGNOME_TOOLS= 	goi vala
 LIB_DEPENDS=		devel/json-glib \
