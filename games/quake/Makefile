@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/11 16:33:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/11/14 13:43:45 sthen Exp $
+
+BROKEN-sparc64 =	segv during build
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
