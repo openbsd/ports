@@ -1,0 +1,33 @@
+$OpenBSD: patch-libbacktrace_backtrace_h,v 1.1 2011/11/14 19:14:18 sthen Exp $
+--- libbacktrace/backtrace.h.orig	Fri Sep 10 00:23:45 2010
++++ libbacktrace/backtrace.h	Mon Nov 14 00:11:25 2011
+@@ -16,10 +16,19 @@
+  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+  */
+ 
++#ifndef _EXECINFO_H_
++#define _EXECINFO_H_
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ #ifndef __GNUC__
+ #error "this library must be compiled with gcc"
+ #endif
+ 
++#include <dlfcn.h>
++
+ #define BT_MAX_DEPTH            (128)
+ 
+ struct bt_frame {
+@@ -31,3 +40,9 @@ struct bt_frame {
+ int			backtrace(void **, int);
+ char			**backtrace_symbols(void *const *, int);
+ void			backtrace_symbols_fd(void *const *, int, int);
++
++#ifdef __cplusplus
++}
++#endif
++#endif
++

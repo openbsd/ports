@@ -1,0 +1,16 @@
+$OpenBSD: patch-libbacktrace_Makefile,v 1.1 2011/11/14 19:14:18 sthen Exp $
+--- libbacktrace/Makefile.orig	Sat Nov 12 21:05:03 2011
++++ libbacktrace/Makefile	Sat Nov 12 21:05:07 2011
+@@ -26,9 +26,9 @@ CLEANFILES+= backtrace.cat3
+ 
+ includes:
+ 	@cd ${.CURDIR}; for i in ${HDRS}; do \
+-	cmp -s $$i ${LOCALBASE}/include/$$i || \
+-	${INSTALL} ${INSTALL_COPY} -m 444 -o $(BINOWN) -g $(BINGRP) $$i ${LOCALBASE}/include; \
+-	echo ${INSTALL} ${INSTALL_COPY} -m 444 -o $(BINOWN) -g $(BINGRP) $$i ${LOCALBASE}/include;\
++	cmp -s $$i ${PREFIX}/include/$$i || \
++	${INSTALL} ${INSTALL_COPY} -m 444 -o $(BINOWN) -g $(BINGRP) $$i ${PREFIX}/include; \
++	echo ${INSTALL} ${INSTALL_COPY} -m 444 -o $(BINOWN) -g $(BINGRP) $$i ${PREFIX}/include;\
+ 	done
+ 
+ beforeinstall: includes

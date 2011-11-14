@@ -1,0 +1,23 @@
+$OpenBSD: patch-examples_Makefile,v 1.1 2011/11/14 19:14:18 sthen Exp $
+
+we renamed the library to execinfo
+
+--- examples/Makefile.orig	Mon May  2 19:39:02 2011
++++ examples/Makefile	Sat Nov 12 21:04:49 2011
+@@ -1,6 +1,6 @@
+ # $backtrace: Makefile,v 1.6 2011/05/02 17:39:02 dhill Exp $
+ 
+-LOCALBASE?=/usr/local
++LOCALBASE?=${PREFIX}
+ 
+ PROG=backtrace_test
+ NOMAN=
+@@ -10,7 +10,7 @@ COPTS= -O0
+ DEBUG+= -ggdb3
+ CFLAGS+= -Wall -Werror
+ CPPFLAGS+= -I${LOCALBASE}/include -I../../libbacktrace -I../libbacktrace
+-LDFLAGS+= -L${LOCALBASE}/lib -L../../libbacktrace/obj -L../libbacktrace/ -lbacktrace
++LDFLAGS+= -L${LOCALBASE}/lib -L../../libbacktrace/obj -L../libbacktrace/ -lexecinfo
+ # required to print function names using the compat API
+ LDFLAGS+= -Wl,--export-dynamic
+ 
