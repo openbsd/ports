@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/27 06:46:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/14 11:26:47 jasper Exp $
 
 COMMENT=	library and tools for creating SVF and XSVF JTAG players
 
 # svn rev 62
 DISTNAME=	libxsvf-0.0.62
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.clifford.at/libxsvf/
@@ -22,7 +23,7 @@ LIB_DEPENDS=	devel/libftdi
 
 USE_GMAKE=	Yes
 
-MAKE_FLAGS+=	EXTRA_LDFLAGS+="-L${LOCALBASE}/lib/ -ltermcap" \
+MAKE_FLAGS+=	EXTRA_LDFLAGS+="-L${LOCALBASE}/lib/ -ltermcap -pthread" \
 		EXTRA_CFLAGS+="-I${LOCALBASE}/include/"
 
 NO_REGRESS=	Yes
