@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/11 06:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/14 09:59:41 rpointel Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.5.1
@@ -31,7 +31,7 @@ LIB_DEPENDS=	devel/sdl-image
 FAKE=		all
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	sdlconf_args=--prefix=${DEPBASE}
+CONFIGURE_ENV+=	sdlconf_args=--prefix=${LOCALBASE}
 
 pre-configure:
 	@cp ${FILESDIR}/missile* ${WRKSRC}/data/gfx/
