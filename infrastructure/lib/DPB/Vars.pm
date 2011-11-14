@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.22 2011/11/13 22:18:04 espie Exp $
+# $OpenBSD: Vars.pm,v 1.23 2011/11/14 19:03:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -143,9 +143,13 @@ sub grab_list
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
 			@current = ("$_\n");
-			print $log $_, "\n";
 			$core->job->set_status(" at $1");
 			$subdir = DPB::PkgPath->new($1);
+			print $log $_;
+			if (defined $subdir->{parent}) {
+				print $log " (", $subdir->{parent}->fullpkgpath, ")";
+			}
+			print $log "\n";
 			if (defined $category) {
 				$category->{category} = 1;
 			}
