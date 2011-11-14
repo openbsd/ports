@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/14 13:41:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/14 17:34:35 pascal Exp $
 
-ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
+ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc sparc64 
 #BROKEN=adjust for types changes
 
 V = 4.6.2
@@ -19,13 +19,13 @@ PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 
-SHARED_LIBS =	estdc++		11.0 \
-		gfortran	2.0 \
-		gcj		0.0 \
-		gcj-tools	0.0 \
-		gij		0.0 \
-		objc		2.0 \
-		ssp		0.0 \
+SHARED_LIBS =	estdc++		12.0 \
+		gfortran	3.0 \
+		gcj		1.0 \
+		gcj-tools	1.0 \
+		gij		1.0 \
+		objc		3.0 \
+		ssp		1.0 \
 		lto_plugin      0.0
 
 
