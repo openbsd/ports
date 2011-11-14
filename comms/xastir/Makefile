@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/06 18:57:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/14 11:05:08 sthen Exp $
+
+BROKEN-sparc64=	illegal operands building draw_symbols.c
 
 COMMENT=	X amateur station tracking and info reporting
 
