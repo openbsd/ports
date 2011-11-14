@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.35 2011/09/23 21:00:28 sthen Exp $
---- scripts/makefile.openbsd.orig	Thu Sep 22 14:40:25 2011
-+++ scripts/makefile.openbsd	Fri Sep 23 09:20:15 2011
-@@ -7,12 +7,11 @@
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.36 2011/11/14 17:48:59 rpointel Exp $
+--- scripts/makefile.openbsd.orig	Thu Nov  3 04:42:52 2011
++++ scripts/makefile.openbsd	Thu Nov  3 12:18:34 2011
+@@ -7,8 +7,10 @@
  # and license in png.h
  
  PREFIX?= /usr/local
@@ -11,13 +11,9 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.35 2011/09/23 21:00:28 sthen Exp $
 +MANDIR= ${PREFIX}/man/man
 +INCDIR= ${PREFIX}/include/libpng
  
--SHLIB_MAJOR=	15
--SHLIB_MINOR=	1.5.5
--
- LIB=	png
- SRCS=	png.c pngerror.c pngget.c pngmem.c pngpread.c \
- 	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
-@@ -25,12 +24,30 @@ CPPFLAGS+= -I${.CURDIR}
+ SHLIB_MAJOR=	15
+ SHLIB_MINOR=	1.5.6
+@@ -25,12 +27,30 @@
  
  NOPROFILE= Yes
  
@@ -51,7 +47,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.35 2011/09/23 21:00:28 sthen Exp $
  # see scripts/pnglibconf.mak for more options
  pnglibconf.h: scripts/pnglibconf.h.prebuilt
  	cp scripts/pnglibconf.h.prebuilt $@
-@@ -41,13 +58,20 @@ pngtest.o:	pngtest.c
+@@ -41,13 +61,20 @@
  pngtest:	pngtest.o
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
@@ -77,7 +73,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.35 2011/09/23 21:00:28 sthen Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -61,22 +85,19 @@ beforeinstall:
+@@ -61,22 +88,19 @@
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
