@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2011/11/14 13:52:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.147 2011/11/14 14:59:53 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,6 +8,8 @@ GNOME_VERSION=		3.2.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -107,7 +109,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			audio/libcanberra,-gtk3
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
-			mail/evolution,-main>=${GNOME_VERSION} \
+			mail/evolution,-main=${GNOME_VERSION} \
 			multimedia/gstreamer-0.10/core
 # needed for the audio-inline plugin
 RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
