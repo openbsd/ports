@@ -1,10 +1,17 @@
-$OpenBSD: patch-build_xml,v 1.3 2011/11/08 23:58:08 jeremy Exp $
+$OpenBSD: patch-build_xml,v 1.4 2011/11/14 11:38:16 jeremy Exp $
 
-Fix build, backported from git commit 
-a760b4aea4b5aa9b38da4bd3334d8355a83f60fa.
+Fix build by removing ri cache generation, backported from git
+commit a760b4aea4b5aa9b38da4bd3334d8355a83f60fa.
 
---- build.xml.orig	Sun Oct 30 20:59:44 2011
-+++ build.xml	Sun Oct 30 21:01:00 2011
+Don't install the jruby launcher when running the regress specs,
+as it fails due to a make error and it isn't necessary for the
+regress tests.
+
+Also, don't fork for the regress tests, as otherwise the JVM
+exits abnormally.
+
+--- build.xml.orig	Tue Oct 25 16:54:51 2011
++++ build.xml	Sun Nov 13 23:49:50 2011
 @@ -379,7 +379,6 @@
        </jar>
  
@@ -21,3 +28,26 @@ a760b4aea4b5aa9b38da4bd3334d8355a83f60fa.
    </target>
    <target name="jarjar" depends="jar-jruby-dist"/>
  
+@@ -806,13 +804,6 @@
+       <env key="GEM_PATH" value=""/> <!-- to ignore any gems installed in ~/.gem -->
+       <arg line="-S gem uninstall --all jruby-launcher"/>
+     </java>
+-    <java classname="org.jruby.Main" fork="true" maxmemory="${jruby.launch.memory}" failonerror="true">
+-      <classpath refid="build.classpath"/>
+-      <classpath path="${jruby.classes.dir}"/>
+-      <sysproperty key="jruby.home" value="${basedir}"/>
+-      <env key="GEM_PATH" value=""/> <!-- to ignore any gems installed in ~/.gem -->
+-      <arg line="-S gem install ${jruby.launcher.gem}"/>
+-    </java>
+   </target>
+ 
+   <target name="test" depends="
+@@ -967,7 +958,7 @@
+       <echo message="compile=@{compile.mode}, jit.threshold=@{jit.threshold}, jit.maxsize=@{jit.maxsize}, jit.max=@{jit.max}, objectspace=@{objectspace.enabled} threadpool=@{thread.pooling} reflection=@{reflection} version=@{jruby.version}"/>
+       <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpath="${build.lib.dir}/junit.jar"/>
+ 
+-      <junit jvm="${jruby.test.jvm}" fork="yes" forkMode="once" haltonfailure="true" dir="${basedir}" maxmemory="${jruby.test.memory}" showoutput="true" timeout="1800000">
++      <junit jvm="${jruby.test.jvm}" haltonfailure="false" dir="${basedir}" maxmemory="${jruby.test.memory}" showoutput="true" timeout="1800000">
+ 	<classpath refid="test.class.path"/>
+ 
+ 	<sysproperty key="java.awt.headless" value="true"/>
