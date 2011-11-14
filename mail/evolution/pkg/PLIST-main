@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2011/09/26 17:05:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2011/11/14 13:52:39 jasper Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -4865,7 +4865,6 @@ share/gtk-doc/html/eshell/eshell-Shell-Utilities.html
 share/gtk-doc/html/eshell/eshell-Text-to-HTML-Conversion.html
 share/gtk-doc/html/eshell/eshell-User-Alert-Handling.html
 share/gtk-doc/html/eshell/eshell-e-signature-utils.html
-share/gtk-doc/html/eshell/eshell.devhelp
 share/gtk-doc/html/eshell/eshell.devhelp2
 share/gtk-doc/html/eshell/home.png
 share/gtk-doc/html/eshell/index.html
