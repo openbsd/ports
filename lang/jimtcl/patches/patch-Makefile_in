@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/09/16 20:07:35 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2011/11/14 18:30:17 ajacoutot Exp $
 
 - Install docs into the right directory.
 - Add shared library versioning to libjim.
@@ -39,7 +39,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/09/16 20:07:35 jasper Exp $
  @else
  $(LIBJIM): $(OBJS)
 -	$(CC) $(CFLAGS) $(LDFLAGS) $(SH_LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
-+	$(CC) -shared -Wl,-soname -Wl,$@.$(SONAME_MAJOR) $(OBJS) $(SH_LDFLAGS) $(CFLAGS) $(LDLIBS) -o $@.$(SONAME_MAJOR).$(SONAME_MINOR)
++	$(CC) -shared -Wl,-soname -Wl,$@.$(SONAME_MAJOR).$(SONAME_MINOR) $(OBJS) $(SH_LDFLAGS) $(CFLAGS) $(LDLIBS) -o $@.$(SONAME_MAJOR).$(SONAME_MINOR)
 +	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@.$(SONAME_MAJOR)
 +	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@
  @endif

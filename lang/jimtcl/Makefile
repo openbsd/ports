@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/14 11:03:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/14 18:30:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		small footprint implementation of Tcl
 
 DISTNAME=		jimtcl-0.72
-REVISION=		0
+REVISION=		1
 SHARED_LIBS=		jim 0.0
 CATEGORIES=		lang devel
 
