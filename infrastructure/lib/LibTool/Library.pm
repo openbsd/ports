@@ -1,4 +1,4 @@
-# $OpenBSD: Library.pm,v 1.1 2010/12/05 16:37:50 espie Exp $
+# $OpenBSD: Library.pm,v 1.2 2011/11/14 22:14:38 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -133,6 +133,11 @@ sub inspect
 
 	my $filename = $self->{fullpath};
 	my @deps;
+
+	if (!defined($filename)){
+		say "warning: library was specified that could not be found: $self->{key}";
+		return;
+	}
 	Trace::debug {"inspecting $filename for library dependencies...\n"};
 	open(my $fh, '-|', "objdump -p $filename");
 	while (<$fh>) {
