@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2011/11/12 16:41:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/14 13:26:10 jasper Exp $
 
      SUBDIR =
      SUBDIR += gnome
+     SUBDIR += msp430
 
 .include <bsd.port.subdir.mk>
