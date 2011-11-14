@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/11/14 08:58:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2011/11/14 14:21:18 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -8,6 +8,7 @@ COMMENT-scanner=	UPS scanning tool for nut
 
 DISTNAME=		nut-2.6.2
 REVISION-main=		0
+REVISION-cgi=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
