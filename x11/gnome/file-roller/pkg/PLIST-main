@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/09/26 20:14:45 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/11/14 22:27:24 ajacoutot Exp $
 @bin bin/file-roller
 libexec/file-roller/
 @bin libexec/file-roller-server
@@ -295,6 +295,7 @@ share/locale/ml/LC_MESSAGES/file-roller.mo
 share/locale/mn/LC_MESSAGES/file-roller.mo
 share/locale/mr/LC_MESSAGES/file-roller.mo
 share/locale/ms/LC_MESSAGES/file-roller.mo
+share/locale/my/LC_MESSAGES/file-roller.mo
 share/locale/nb/LC_MESSAGES/file-roller.mo
 share/locale/nds/LC_MESSAGES/file-roller.mo
 share/locale/ne/LC_MESSAGES/file-roller.mo
