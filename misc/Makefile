@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2011/09/30 09:03:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2011/11/14 14:12:05 sthen Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -60,6 +60,7 @@
      SUBDIR += p5-File-MMagic
      SUBDIR += p5-File-MMagic-XS
      SUBDIR += p5-File-Rotate-Backup
+     SUBDIR += p5-Finance-Bank-DE-DTA-Create
      SUBDIR += p5-Finance-IIF
      SUBDIR += p5-Finance-Quote
      SUBDIR += p5-Finance-QuoteHist
