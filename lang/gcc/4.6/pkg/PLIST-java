@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2011/11/14 22:37:23 pascal Exp $
 bin/eaot-compile
 @bin bin/egappletviewer
 @bin bin/egc-analyze
@@ -4003,6 +4003,24 @@ include/c++/${V}/org/ietf/jgss/GSSManager.h
 include/c++/${V}/org/ietf/jgss/GSSName.h
 include/c++/${V}/org/ietf/jgss/MessageProp.h
 include/c++/${V}/org/ietf/jgss/Oid.h
+include/c++/${V}/sun/
+include/c++/${V}/sun/awt/
+include/c++/${V}/sun/awt/CausedFocusEvent.h
+include/c++/${V}/sun/misc/
+include/c++/${V}/sun/misc/Service.h
+include/c++/${V}/sun/misc/ServiceConfigurationError.h
+include/c++/${V}/sun/misc/Unsafe.h
+include/c++/${V}/sun/reflect/
+include/c++/${V}/sun/reflect/Reflection.h
+include/c++/${V}/sun/reflect/annotation/
+include/c++/${V}/sun/reflect/annotation/AnnotationInvocationHandler.h
+include/c++/${V}/sun/reflect/annotation/AnnotationParser.h
+include/c++/${V}/sun/reflect/annotation/AnnotationType.h
+include/c++/${V}/sun/reflect/annotation/EnumConstantNotPresentExceptionProxy.h
+include/c++/${V}/sun/reflect/annotation/ExceptionProxy.h
+include/c++/${V}/sun/reflect/misc/
+include/c++/${V}/sun/reflect/misc/ReflectUtil.h
+@info info/cp-tools.info
 @info info/gcj.info
 lib/gcc/
 lib/gcc/${CONFIG}/

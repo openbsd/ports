@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- gcc/config/rs6000/t-openbsd.orig	Tue Jun 12 12:23:22 2007
-+++ gcc/config/rs6000/t-openbsd	Tue Jun 12 12:18:16 2007
-@@ -0,0 +1,55 @@
+$OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.2 2011/11/14 22:37:23 pascal Exp $
+--- gcc/config/rs6000/t-openbsd.orig	Mon Nov 14 12:16:44 2011
++++ gcc/config/rs6000/t-openbsd	Mon Nov 14 13:23:24 2011
+@@ -0,0 +1,48 @@
 +# include t-rs6000 too
 +# this is taken from t-ppccomm
 +# but crt* removed.
@@ -44,13 +44,6 @@ $OpenBSD: patch-gcc_config_rs6000_t-openbsd,v 1.1.1.1 2011/11/14 13:00:57 pascal
 +
 +LIBGCC = stmp-multilib
 +INSTALL_LIBGCC = install-multilib
-+EXTRA_MULTILIB_PARTS = crtsavres$(objext)
-+
-+crtsavres.S: $(srcdir)/config/rs6000/crtsavres.asm
-+	cat $(srcdir)/config/rs6000/crtsavres.asm >crtsavres.S
-+
-+$(T)crtsavres$(objext): crtsavres.S
-+	$(GCC_FOR_TARGET) $(GCC_CFLAGS) $(INCLUDES) $(MULTILIB_CFLAGS) -c crtsavres.S -o $(T)crtsavres$(objext)
 +
 +# It is important that crtbegin.o, etc., aren't surprised by stuff in .sdata.
 +CRTSTUFF_T_CFLAGS = -msdata=none

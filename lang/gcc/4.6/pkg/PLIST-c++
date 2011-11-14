@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2011/11/14 22:37:23 pascal Exp $
 @bin bin/ec++
 @bin bin/eg++
 @bin bin/${CONFIG}-ec++
@@ -592,23 +592,6 @@ include/c++/${V}/stack
 include/c++/${V}/stdexcept
 include/c++/${V}/streambuf
 include/c++/${V}/string
-include/c++/${V}/sun/
-include/c++/${V}/sun/awt/
-include/c++/${V}/sun/awt/CausedFocusEvent.h
-include/c++/${V}/sun/misc/
-include/c++/${V}/sun/misc/Service.h
-include/c++/${V}/sun/misc/ServiceConfigurationError.h
-include/c++/${V}/sun/misc/Unsafe.h
-include/c++/${V}/sun/reflect/
-include/c++/${V}/sun/reflect/Reflection.h
-include/c++/${V}/sun/reflect/annotation/
-include/c++/${V}/sun/reflect/annotation/AnnotationInvocationHandler.h
-include/c++/${V}/sun/reflect/annotation/AnnotationParser.h
-include/c++/${V}/sun/reflect/annotation/AnnotationType.h
-include/c++/${V}/sun/reflect/annotation/EnumConstantNotPresentExceptionProxy.h
-include/c++/${V}/sun/reflect/annotation/ExceptionProxy.h
-include/c++/${V}/sun/reflect/misc/
-include/c++/${V}/sun/reflect/misc/ReflectUtil.h
 include/c++/${V}/system_error
 include/c++/${V}/tgmath.h
 include/c++/${V}/thread

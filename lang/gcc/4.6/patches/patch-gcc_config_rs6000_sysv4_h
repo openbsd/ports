@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1 2011/11/14 22:37:23 pascal Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Mon Nov 14 14:22:43 2011
++++ gcc/config/rs6000/sysv4.h	Mon Nov 14 14:23:22 2011
+@@ -405,7 +405,9 @@ do {									\
+   asm_fprintf (FILE, "%L%s", PREFIX)
+ 
+ /* Globalizing directive for a label.  */
++#ifndef GLOBAL_ASM_OP
+ #define GLOBAL_ASM_OP "\t.globl "
++#endif
+ 
+ /* This says how to output assembler code to declare an
+    uninitialized internal linkage data object.  Under SVR4,

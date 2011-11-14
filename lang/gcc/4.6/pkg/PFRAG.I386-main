@@ -1,7 +1,24 @@
-@comment $OpenBSD: PFRAG.I386-main,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+@comment $OpenBSD: PFRAG.I386-main,v 1.2 2011/11/14 22:37:23 pascal Exp $
+lib/gcc/${CONFIG}/${V}/include/abmintrin.h
+lib/gcc/${CONFIG}/${V}/include/ammintrin.h
+lib/gcc/${CONFIG}/${V}/include/avxintrin.h
+lib/gcc/${CONFIG}/${V}/include/bmiintrin.h
+lib/gcc/${CONFIG}/${V}/include/bmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/cpuid.h
+lib/gcc/${CONFIG}/${V}/include/cross-stdarg.h
 lib/gcc/${CONFIG}/${V}/include/emmintrin.h
+lib/gcc/${CONFIG}/${V}/include/fma4intrin.h
+lib/gcc/${CONFIG}/${V}/include/lwpintrin.h
 lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
 lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
 lib/gcc/${CONFIG}/${V}/include/mmintrin.h
+lib/gcc/${CONFIG}/${V}/include/nmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/popcntintrin.h
 lib/gcc/${CONFIG}/${V}/include/pmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/smmintrin.h
 lib/gcc/${CONFIG}/${V}/include/xmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/tbmintrin.h
+lib/gcc/${CONFIG}/${V}/include/tmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/wmmintrin.h
+lib/gcc/${CONFIG}/${V}/include/x86intrin.h
+lib/gcc/${CONFIG}/${V}/include/xopintrin.h
