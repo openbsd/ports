@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/14 14:02:05 henning Exp $
+${P5SITE}/Finance/
+${P5SITE}/Finance/Bank/
+${P5SITE}/Finance/Bank/DE/
+${P5SITE}/Finance/Bank/DE/DTA/
+${P5SITE}/Finance/Bank/DE/DTA/Create.pm
+@man man/man3p/Finance::Bank::DE::DTA::Create.3p
