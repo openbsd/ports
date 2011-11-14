@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/06/23 22:50:27 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/14 17:05:22 dhill Exp $
 %%SHARED%%
 include/clog.h
 lib/libclog.a
@@ -6,16 +6,22 @@ lib/libclog_p.a
 %%no_mips64%%
 @man man/man3/CABORT.3
 @man man/man3/CABORTX.3
+@man man/man3/CALERT.3
+@man man/man3/CALERTX.3
+@man man/man3/CCRIT.3
+@man man/man3/CCRITX.3
 @man man/man3/CDBG.3
+@man man/man3/CEMERG.3
+@man man/man3/CEMERGX.3
+@man man/man3/CERR.3
+@man man/man3/CERRX.3
 @man man/man3/CFATAL.3
 @man man/man3/CFATALX.3
 @man man/man3/CINFO.3
-@man man/man3/CNABORT.3
-@man man/man3/CNABORTX.3
 @man man/man3/CNDBG.3
-@man man/man3/CNFATAL.3
-@man man/man3/CNFATALX.3
 @man man/man3/CNINFO.3
+@man man/man3/CNNOTICE.3
+@man man/man3/CNOTICE.3
 @man man/man3/CNWARN.3
 @man man/man3/CNWARNX.3
 @man man/man3/CWARN.3
