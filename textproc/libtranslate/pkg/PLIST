@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+%%SHARED%%
+@bin bin/translate
+include/libtranslate/
+include/libtranslate/translate-common.h
+include/libtranslate/translate-pair.h
+include/libtranslate/translate-service.h
+include/libtranslate/translate-session.h
+include/libtranslate/translate-util.h
+include/libtranslate/translate.h
+@comment lib/libtranslate/
+lib/libtranslate.a
+lib/libtranslate.la
+@comment lib/libtranslate/modules/
+@comment lib/libtranslate/modules/generic.a
+@comment lib/libtranslate/modules/generic.la
+lib/pkgconfig/
+lib/pkgconfig/libtranslate.pc
+@man man/man1/translate.1
+@man man/man5/services.xml.5
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libtranslate/
+share/gtk-doc/html/libtranslate/TranslatePair.html
+share/gtk-doc/html/libtranslate/TranslateService.html
+share/gtk-doc/html/libtranslate/TranslateSession.html
+share/gtk-doc/html/libtranslate/api-reference.html
+share/gtk-doc/html/libtranslate/ch01s02.html
+share/gtk-doc/html/libtranslate/ch02s02.html
+share/gtk-doc/html/libtranslate/compiling-modules.html
+share/gtk-doc/html/libtranslate/home.png
+share/gtk-doc/html/libtranslate/index.html
+share/gtk-doc/html/libtranslate/index.sgml
+share/gtk-doc/html/libtranslate/ix01.html
+share/gtk-doc/html/libtranslate/left.png
+share/gtk-doc/html/libtranslate/libtranslate-translate-common.html
+share/gtk-doc/html/libtranslate/libtranslate-translate-util.html
+share/gtk-doc/html/libtranslate/libtranslate-translate.html
+share/gtk-doc/html/libtranslate/libtranslate.devhelp
+share/gtk-doc/html/libtranslate/overview.html
+share/gtk-doc/html/libtranslate/rfc3066-builtin.html
+share/gtk-doc/html/libtranslate/right.png
+share/gtk-doc/html/libtranslate/tutorials.html
+share/gtk-doc/html/libtranslate/up.png
+share/libtranslate/
+share/libtranslate/services.dtd
+share/libtranslate/services.xml

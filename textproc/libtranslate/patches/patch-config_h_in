@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- config.h.in.orig	Mon Nov 14 16:06:02 2011
++++ config.h.in	Mon Nov 14 16:06:28 2011
+@@ -24,6 +24,12 @@
+ /* Define if your <locale.h> file defines LC_MESSAGES. */
+ #undef HAVE_LC_MESSAGES
+ 
++/* Building with libsoup 2.2 */
++#undef HAVE_LIBSOUP22
++
++/* Building with libsoup 2.4 */
++#undef HAVE_LIBSOUP24
++
+ /* Define to 1 if you have the <locale.h> header file. */
+ #undef HAVE_LOCALE_H
+ 

@@ -1,0 +1,169 @@
+$OpenBSD: patch-src_modules_translate-generic-soup-cookie-jar_c,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- src/modules/translate-generic-soup-cookie-jar.c.orig	Mon Nov 14 16:06:02 2011
++++ src/modules/translate-generic-soup-cookie-jar.c	Mon Nov 14 16:06:28 2011
+@@ -29,9 +29,12 @@
+  * POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
++#include "config.h"
+ #include <string.h>
+ #include <libsoup/soup.h>
++#ifdef HAVE_LIBSOUP22
+ #include <libsoup/soup-message-filter.h>
++#endif
+ #include "translate-generic-soup-cookie-jar.h"
+ 
+ struct _TranslateGenericSoupCookieJarPrivate
+@@ -44,9 +47,12 @@ static GObjectClass *parent_class = NULL;
+ static void translate_generic_soup_cookie_jar_register_type (GType *type);
+ static void translate_generic_soup_cookie_jar_class_init (TranslateGenericSoupCookieJarClass *class);
+ static void translate_generic_soup_cookie_jar_init (TranslateGenericSoupCookieJar *jar);
++#ifdef HAVE_LIBSOUP22
+ static void translate_generic_soup_cookie_jar_filter_init (SoupMessageFilterClass *iface);
++#else
++#define SoupMessageFilter TranslateGenericSoupCookieJar
++#endif
+ static void translate_generic_soup_cookie_jar_finalize (GObject *object);
+-
+ static void translate_generic_soup_cookie_jar_setup_message (SoupMessageFilter *filter,
+ 							     SoupMessage *message);
+ 
+@@ -75,17 +81,21 @@ translate_generic_soup_cookie_jar_register_type (GType
+     0,
+     (GInstanceInitFunc) translate_generic_soup_cookie_jar_init
+   };
++#ifdef HAVE_LIBSOUP22
+   static const GInterfaceInfo filter_info = {
+     (GInterfaceInitFunc) translate_generic_soup_cookie_jar_filter_init,
+     NULL,
+     NULL
+   };
++#endif
+ 
+   *type = g_type_register_static(G_TYPE_OBJECT,
+ 				 "TranslateGenericSoupCookieJar",
+ 				 &info,
+ 				 0);
++#ifdef HAVE_LIBSOUP22
+   g_type_add_interface_static(*type, SOUP_TYPE_MESSAGE_FILTER, &filter_info);
++#endif
+ }
+ 
+ static void
+@@ -107,11 +117,13 @@ translate_generic_soup_cookie_jar_init (TranslateGener
+ 					  TranslateGenericSoupCookieJarPrivate);
+ }
+ 
++#ifdef HAVE_LIBSOUP22
+ static void
+ translate_generic_soup_cookie_jar_filter_init (SoupMessageFilterClass *iface)
+ {
+   iface->setup_message = translate_generic_soup_cookie_jar_setup_message;
+ }
++#endif
+ 
+ static void
+ translate_generic_soup_cookie_jar_finalize (GObject *object)
+@@ -125,26 +137,46 @@ translate_generic_soup_cookie_jar_finalize (GObject *o
+ }
+ 
+ static void
++add_cookie_to_jar (TranslateGenericSoupCookieJar *jar, const char *cookie)
++{
++  char *s;
++
++  s = strchr(cookie, ';');
++  if (s)
++    jar->priv->cookies = g_slist_append(jar->priv->cookies, g_strndup(cookie, s - cookie));
++}
++
++#ifdef HAVE_LIBSOUP24
++static void
++maybe_add_cookie_to_jar (const char *header, const char *value, gpointer jar)
++{
++  if (!g_ascii_strcasecmp (header, "Set-Cookie"))
++    add_cookie_to_jar (jar, value);
++}
++#endif
++
++static void
+ translate_generic_soup_cookie_jar_setup_message (SoupMessageFilter *filter,
+-					 SoupMessage *message)
++						 SoupMessage *message)
+ {
+   TranslateGenericSoupCookieJar *jar = TRANSLATE_GENERIC_SOUP_COOKIE_JAR(filter);
+-  const GSList *cookies;
+   const GSList *l;
+ 
+   /* FIXME: add full RFC 2965 support */
+ 
++#ifdef HAVE_LIBSOUP22
++  const GSList *cookies;
++
+   cookies = soup_message_get_header_list(message->response_headers, "Set-Cookie");
+   for (l = cookies; l != NULL; l = l->next)
+     {
+       const char *cookie = l->data;
+-      char *s;
+-
+-      s = strchr(cookie, ';');
+-      if (s)
+-	jar->priv->cookies = g_slist_append(jar->priv->cookies, g_strndup(cookie, s - cookie));
++      add_cookie_to_jar(jar, cookie);
+     }
+-  
++#else
++  soup_message_headers_foreach(message->response_headers, maybe_add_cookie_to_jar, jar);
++#endif
++
+   if (jar->priv->cookies)
+     {
+       GString *string;
+@@ -159,13 +191,44 @@ translate_generic_soup_cookie_jar_setup_message (SoupM
+ 	    g_string_append(string, "; ");
+ 	}
+ 
++#ifdef HAVE_LIBSOUP22
+       soup_message_add_header(message->request_headers, "Cookie", string->str);
++#else
++      soup_message_headers_append(message->request_headers, "Cookie", string->str);
++#endif
+       g_string_free(string, TRUE);
+     }
+ }
+ 
++#ifdef HAVE_LIBSOUP24
++static void
++translate_generic_soup_cookie_jar_request_started (SoupSession *session,
++						   SoupMessage *message,
++						   SoupSocket *socket,
++						   gpointer cookie_jar)
++{
++  translate_generic_soup_cookie_jar_setup_message (cookie_jar, message);
++}
++#endif
++
+ TranslateGenericSoupCookieJar *
+ translate_generic_soup_cookie_jar_new (void)
+ {
+   return g_object_new(TRANSLATE_GENERIC_TYPE_SOUP_COOKIE_JAR, NULL);
+ }
++
++void
++translate_generic_soup_cookie_jar_attach (TranslateGenericSoupCookieJar *cookie_jar,
++					  SoupSession *session)
++{
++#ifdef HAVE_LIBSOUP22
++  soup_session_add_filter (session, SOUP_MESSAGE_FILTER(cookie_jar));
++#else
++  g_signal_connect (session, "request_started",
++		    G_CALLBACK (translate_generic_soup_cookie_jar_request_started),
++		    cookie_jar);
++  g_object_set_data_full (G_OBJECT (session), "TranslateGenericSoupCookieJar",
++			  g_object_ref (cookie_jar), g_object_unref);
++#endif
++}
++

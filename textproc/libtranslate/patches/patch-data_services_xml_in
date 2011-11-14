@@ -1,0 +1,411 @@
+$OpenBSD: patch-data_services_xml_in,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+from ubuntu
+
+--- data/services.xml.in.orig	Mon Jan 17 17:54:27 2005
++++ data/services.xml.in	Mon Nov 14 16:29:05 2011
+@@ -1,246 +1,209 @@
+-<?xml version="1.0"?>
++<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE services SYSTEM "services.dtd">
+-
+-<!-- Copyright (C) 2005 Jean-Yves Lefort -->
+-<!-- All rights reserved. -->
+-
+-<!-- Redistribution and use in source and binary forms, with or without -->
+-<!-- modification, are permitted provided that the following conditions -->
+-<!-- are met: -->
+-<!-- 1. Redistributions of source code must retain the above copyright -->
+-<!--    notice, this list of conditions and the following disclaimer. -->
+-<!-- 2. Redistributions in binary form must reproduce the above copyright -->
+-<!--    notice, this list of conditions and the following disclaimer in the -->
+-<!--    documentation and/or other materials provided with the distribution. -->
+-<!-- 3. Neither the name of Jean-Yves Lefort nor the names of its contributors -->
+-<!--    may be used to endorse or promote products derived from this software -->
+-<!--    without specific prior written permission. -->
+-
+-<!-- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND -->
+-<!-- CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, -->
+-<!-- INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF -->
+-<!-- MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE -->
+-<!-- DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS -->
+-<!-- BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, -->
+-<!-- EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED -->
+-<!-- TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, -->
+-<!-- DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON -->
+-<!-- ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, -->
+-<!-- OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY -->
+-<!-- OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE -->
+-<!-- POSSIBILITY OF SUCH DAMAGE. -->
+-
+ <services>
+-  <custom-language tag="zh-TW" _name="Chinese (Taiwan)"/>
++  <custom-language tag="oc_aran" name="Aranese"></custom-language>
++  <custom-language tag="pt-BR" name="Portuguese (Brazil)"></custom-language>
++  <custom-language tag="zh-TW" name="Chinese (Taiwan)"></custom-language>
+   
+-  <service name="babelfish" nick="Babel Fish">
++  <service nick="Babel Fish" name="babelfish">
+     <group>
+-      <language tag="zh" to="en"/>
+-      <language tag="zh-TW" service-tag="zt" to="en"/>
+-      <language tag="en" to="*"/>
+-      <language tag="nl" to="en,fr"/>
+-      <language tag="fr" to="en,de,el,it,pt,nl,es"/>
+-      <language tag="de" to="en,fr"/>
+-      <language tag="el" to="en,fr"/>
+-      <language tag="it" to="en,fr"/>
+-      <language tag="ja" to="en"/>
+-      <language tag="ko" to="en"/>
+-      <language tag="pt" to="en,fr"/>
+-      <language tag="ru" to="en"/>
+-      <language tag="es" to="en,fr"/>
+-      <text-translation url="http://babelfish.altavista.com/babelfish/tr?urltext=${text:escape}&amp;lp=${from}_${to}&amp;enc=utf8">
+-	<pre-marker text="&lt;form action=&quot;http://www.altavista.com/web/results"/>
+-	<pre-marker text="px;&gt;"/>
++      <language to="en,zh-TW" tag="zh"/>
++      <language to="en,zh" tag="zh-TW" service-tag="zt"/>
++      <language to="*" tag="en"/>
++      <language to="en,fr" tag="nl"/>
++      <language to="en,de,el,it,pt,nl,es" tag="fr"/>
++      <language to="en,fr" tag="de"/>
++      <language to="en,fr" tag="el"/>
++      <language to="en,fr" tag="it"/>
++      <language to="en" tag="ja"/>
++      <language to="en" tag="ko"/>
++      <language to="en,fr" tag="pt"/>
++      <language to="en" tag="ru"/>
++      <language to="en,fr" tag="es"/>
++      <text-translation url="http://babelfish.yahoo.com/translate_txt?trtext=${text:escape}&amp;lp=${from}_${to}&amp;doit=done&amp;intl=1&amp;tt=urltext&amp;ei=utf8">
++	<pre-marker text="&lt;div id=&quot;result&quot;&gt;"/>
++	<pre-marker text="&gt;"/>
+ 	<post-marker text="&lt;/div&gt;"/>
+       </text-translation>
+-      <web-page-translation url="http://babelfish.altavista.com/babelfish/trurl_load?url=${url:escape}&amp;lp=${from}_${to}&amp;enc=utf8"/>
++      <web-page-translation url="http://babelfish.yahoo.com/translate_url?trurl=${url:escape}&amp;lp=${from}_${to}&amp;doit=done&amp;intl=1&amp;tt=url&amp;ei=utf8"/>
+     </group>
+   </service>
+ 
+-  <service name="systran" nick="SYSTRAN">
++  <service nick="SYSTRAN" name="systran">
+     <group>
+-      <language tag="ar" to="en"/>
+-      <language tag="zh" to="en"/>
+-      <language tag="zh-TW" service-tag="zt" to="en"/>
+-      <language tag="nl" to="en,fr"/>
+-      <language tag="en" to="*"/>
+-      <language tag="fr" to="nl,en,de,it,pt,es"/>
+-      <language tag="de" to="en,fr"/>
+-      <language tag="it" to="en,fr"/>
+-      <language tag="ja" to="en"/>
+-      <language tag="ko" to="en"/>
+-      <language tag="pt" to="en,fr"/>
+-      <language tag="ru" to="en"/>
+-      <language tag="es" to="en,fr"/>
+-      <language tag="sv" to="en"/>
+-      <http-header name="Referer" value="http://www.systransoft.com/"/>
+-      <text-translation url="http://www.systranbox.com/systran/box?systran_charset=utf-8&amp;ttype=text&amp;systran_text=${text:escape}&amp;systran_lp=${from}_${to}">
+-	<pre-marker text="&lt;textarea name=&quot;translation&quot;"/>
+-	<pre-marker text="&gt;"/>
+-	<post-marker text="&lt;/textarea&gt;"/>
++      <language to="en" tag="ar"/>
++      <language to="en" tag="zh"/>
++      <language to="en,fr" tag="nl"/>
++      <language to="*" tag="en"/>
++      <language to="nl,el,en,de,it,pt,es" tag="fr"/>
++      <language to="en,es,fr,it,pt" tag="de"/>
++      <language to="en,es,de,fr,pt" tag="it"/>
++      <language to="en" tag="ja"/>
++      <language to="en" tag="ko"/>
++      <language to="en,es,de,fr,it" tag="pt"/>
++      <language to="en" tag="ru"/>
++      <language to="en,fr" tag="el"/>
++      <language to="en,de,fr,it,pt" tag="es"/>
++      <language to="en" tag="pl"/>
++      <language to="en" tag="sv"/>
++      <text-translation url="http://www.systranet.com/sai?gui=sbox/normal/systran/sboxEN&amp;lp=${from}_${to}&amp;service=translate" post="${text}">
++	<pre-marker text="body=&#10;"/>
+       </text-translation>
+-      <web-page-translation url="http://www.systranbox.com/systran/box?systran_id=SystranSoft-en&amp;systran_url=${url:escape}&amp;systran_lp=${from}_${to}&amp;systran_f=${time}"/>
++      <web-page-translation url="http://sysurl.systranet.com/?trans=1&amp;gui=sbox/normal/systran/systranEN&amp;lp=${from}_${to}&amp;loc_lang=en&amp;path=systran/systranEN&amp;frame=1&amp;url=${url:escape}"/>
+     </group>
+   </service>
+ 
+-  <service name="google" nick="Google">
++  <service nick="Google" name="google">
+     <group>
+-      <language tag="en" to="*"/>
+-      <language tag="fr" to="en,de"/>
+-      <language tag="de" to="en,fr"/>
+-      <language tag="it" to="en"/>
+-      <language tag="pt" to="en"/>
+-      <language tag="es" to="en"/>
++      <language to="*" tag="af"/>
++      <language to="*" tag="ar"/>
++      <language to="*" tag="bg"/>
++      <language to="*" tag="be"/>
++      <language to="*" tag="ca"/>
++      <language to="*" tag="cs"/>
++      <language to="*" tag="cy"/>
++      <language to="*" tag="da"/>
++      <language to="*" tag="de"/>
++      <language to="*" tag="el"/>
++      <language to="*" tag="en"/>
++      <language to="*" tag="es"/>
++      <language to="*" tag="et"/>
++      <language to="*" tag="fa"/>
++      <language to="*" tag="fi"/>
++      <language to="*" tag="fil"/>
++      <language to="*" tag="fr"/>
++      <language to="*" tag="ga"/>
++      <language to="*" tag="gl"/>
++      <language to="*" tag="he"/>
++      <language to="*" tag="hi"/>
++      <language to="*" tag="hr"/>
++      <language to="*" tag="hu"/>
++      <language to="*" tag="id"/>
++      <language to="*" tag="is"/>
++      <language to="*" tag="it"/>
++      <language to="*" tag="ja"/>
++      <language to="*" tag="ko"/>
++      <language to="*" tag="lt"/>
++      <language to="*" tag="lv"/>
++      <language to="*" tag="mk"/>
++      <language to="*" tag="ms"/>
++      <language to="*" tag="mt"/>
++      <language to="*" tag="nl"/>
++      <language to="*" tag="nb" service-tag="no"/>
++      <language to="*" tag="nn" service-tag="no"/>
++      <language to="*" tag="pl"/>
++      <language to="*" tag="pt"/>
++      <language to="*" tag="ro"/>
++      <language to="*" tag="ru"/>
++      <language to="*" tag="sk"/>
++      <language to="*" tag="sl"/>
++      <language to="*" tag="sq"/>
++      <language to="*" tag="sr"/>
++      <language to="*" tag="sv"/>
++      <language to="*" tag="sw"/>
++      <language to="*" tag="th"/>
++      <language to="*" tag="tl"/>
++      <language to="*" tag="tr"/>
++      <language to="*" tag="uk"/>
++      <language to="*" tag="vi"/>
++      <language to="*" tag="yi"/>
++      <language to="*" tag="zh" service-tag="zh-CN"/>
++      <language to="*" tag="zh-TW"/>
+       <text-translation url="http://www.google.com/translate_t?text=${text:escape}&amp;langpair=${from}|${to}&amp;ie=utf8&amp;oe=utf8">
+-	<pre-marker text="&lt;textarea"/>
++	<pre-marker text="&lt;span title="/>
+ 	<pre-marker text="&gt;"/>
+-	<post-marker text="&lt;/textarea&gt;"/>
++	<post-marker text="&lt;br&gt;&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;"/>
+       </text-translation>
+-      <web-page-translation url="http://www.google.com/translate_c?u=${url:escape}&amp;langpair=${from}|${to}"/>
++      <web-page-translation url="http://translate.google.com/translate?u=${url:escape}&amp;sl=${from}&amp;tl=${to}"/>
+     </group>
+   </service>
+ 
+-  <service name="freetranslation" nick="FreeTranslation" max-chunk-len="600">
++  <service nick="FreeTranslation" name="freetranslation" max-chunk-len="600">
+     <group>
+-      <language tag="nl" service-tag="dutch" to="en"/>
+-      <language tag="en" service-tag="english" to="*"/>
+-      <language tag="fr" service-tag="french" to="en"/>
+-      <language tag="de" service-tag="german" to="en"/>
+-      <language tag="it" service-tag="italian" to="en"/>
+-      <language tag="no" service-tag="norwegian"/>
+-      <language tag="pt" service-tag="portuguese" to="en"/>
+-      <language tag="es" service-tag="spanish" to="en"/>
++      <language to="en" tag="nl" service-tag="dutch"/>
++      <language to="da,nl,fi,fr,de,it,no,pt,es,sv" tag="en" service-tag="english"/>
++      <language to="en" tag="fr" service-tag="french"/>
++      <language to="en" tag="de" service-tag="german"/>
++      <language to="en" tag="it" service-tag="italian"/>
++      <language to="en" tag="pt" service-tag="portuguese"/>
++      <language to="en" tag="es" service-tag="spanish"/>
+       <text-translation url="http://ets.freetranslation.com/?sequence=core&amp;srctext=${text:escape}&amp;language=${from}/${to}&amp;charset=utf-8"/>
+       <web-page-translation url="http://fets5.freetranslation.com/?sequence=core&amp;url=${url:escape}&amp;language=${from}/${to}"/>
+     </group>
+     <group>
+-      <language tag="zh" service-tag="simplifiedchinese"/>
+-      <language tag="zh-TW" service-tag="traditionalchinese"/>
+-      <language tag="en" service-tag="english" to="*"/>
+-      <language tag="ru" service-tag="russian" to="en"/>
++      <language to="ru,zh,zh-TW" tag="en" service-tag="english"/>
++      <language to="en" tag="ru" service-tag="russian"/>
+       <text-translation url="http://ets6.freetranslation.com/?sequence=core&amp;srctext=${text:escape}&amp;language=${from}/${to}&amp;charset=utf-8"/>
+     </group>
+-  </service>
+-
+-  <service name="worldlingo" nick="WorldLingo">
+     <group>
+-      <language tag="en" to="*"/>
+-      <language tag="zh" service-tag="zh_cn" to="*"/>
+-      <language tag="zh-TW" service-tag="zh_tw" to="*"/>
+-      <language tag="nl" to="*"/>
+-      <language tag="fr" to="*"/>
+-      <language tag="de" to="*"/>
+-      <language tag="el" to="*"/>
+-      <language tag="it" to="*"/>
+-      <language tag="ja" to="*"/>
+-      <language tag="ko" to="*"/>
+-      <language tag="pt" to="*"/>
+-      <language tag="ru" to="*"/>
+-      <language tag="es" to="*"/>
+-      <text-translation url="http://www.worldlingo.com/wl/translate?wl_text=${text:escape}&amp;wl_srclang=${from}&amp;wl_trglang=${to}&amp;wl_ucp=1">
+-	<pre-marker text="&lt;textarea name=&quot;wl_result"/>
+-	<pre-marker text="&gt;"/>
+-	<post-marker text="&lt;/textarea&gt;"/>
+-      </text-translation>
+-      <web-page-translation url="http://www.worldlingo.com/wl/translate?wl_url=${url:escape}&amp;wl_srclang=${from}&amp;wl_trglang=${to}&amp;wl_fl=2"/>
++      <language to="*" tag="en" service-tag="english"/>
++      <language to="en" tag="ja" service-tag="japanese"/>
++      <text-translation url="http://tets9.freetranslation.com/?sequence=core&amp;srctext=${text:escape}&amp;language=${from}/${to}&amp;charset=utf-8"/>
+     </group>
++    <group>
++      <language to="de,es,ru" tag="fr" service-tag="french"/>
++      <language to="fr,ru" tag="de" service-tag="german"/>
++      <language to="ru" tag="it" service-tag="italian"/>
++      <language to="de,fr,es" tag="ru" service-tag="russian"/>
++      <language to="fr,ru" tag="es" service-tag="spanish"/>
++      <text-translation url="http://sets8.freetranslation.com/?sequence=core&amp;username=newlang&amp;password=Not_lw!&amp;srctext=${text:escape}&amp;language=${from}/${to}&amp;charset=utf-8"/>
++    </group>
+   </service>
+ 
+-  <service name="1800translate" nick="1-800-Translate">
++  <service nick="Kataku" name="kataku">
+     <group>
+-      <language tag="en" service-tag="English" to="*"/>
+-      <language tag="ar" service-tag="Arabic" to="*"/>
+-      <language tag="zh" service-tag="Chinese" to="*"/>
+-      <language tag="nl" service-tag="Dutch" to="*"/>
+-      <language tag="fa" service-tag="Farsi" to="*"/>
+-      <language tag="fr" service-tag="French" to="*"/>
+-      <language tag="de" service-tag="German" to="*"/>
+-      <language tag="he" service-tag="Hebrew" to="*"/>
+-      <language tag="it" service-tag="Italian" to="*"/>
+-      <language tag="ja" service-tag="Japanese" to="*"/>
+-      <language tag="ko" service-tag="Korean" to="*"/>
+-      <language tag="pl" service-tag="Polish" to="*"/>
+-      <language tag="pt" service-tag="Portuguese" to="*"/>
+-      <language tag="ru" service-tag="Russian" to="*"/>
+-      <language tag="es" service-tag="Spanish" to="*"/>
+-      <language tag="tr" service-tag="Turkish" to="*"/>
+-      <language tag="uk" service-tag="Ukrainian" to="*"/>
+-      <text-translation
+-	url="http://www.1-800-translate.com/machine_trans/process_free_trans.asp"
+-	post="transfrom=${from}&amp;transto=${to}&amp;sourcetext=${text:escape}&amp;expiredlang=no">
+-	<pre-marker text="&lt;textarea name=&quot;transresult"/>
+-	<pre-marker text="&gt;&#10;"/>
+-	<post-marker text="&#10;&lt;/textarea&gt;"/>
++      <language to="*" tag="en"/>
++      <language to="*" tag="id" service-tag="in"/>
++      <language to="tl" tag="en"/>
++      <text-translation url="http://www.toggletext.com/main.cgi?page=translation" post="ttype=text&amp;input_text=${text:charset=ISO8859-1,escape}&amp;langset_text=${from}_${to}&amp;sms_option=">
++	<pre-marker text="&lt;div id=&quot;trans_output&quot;&gt;"/>
++	<pre-marker text="&lt;p class=&quot;output_text&quot;&gt;"/>
++	<post-marker text="&#10;&lt;/p&gt;"/>
+       </text-translation>
++      <web-page-translation url="http://www.toggletext.com/kataku.cgi?translate=web&amp;frameset=1&amp;input_url=${url:escape}&amp;langset_text=${from}_${to}"/>
+     </group>
+   </service>
+-    
+-  <service name="tsunami" nick="Tsunami">
++
++  <service nick="Papiamentu" name="papiamentu">
+     <group>
+-      <language tag="ar" service-tag="AR"/>
+-      <language tag="bg" service-tag="BL" to="*"/>
+-      <language tag="zh" service-tag="ZH" to="*"/>
+-      <language tag="zh-TW" service-tag="ZH_TW" to="*"/>
+-      <language tag="hr" service-tag="CR" to="*"/>
+-      <language tag="cs" service-tag="CZ" to="*"/>
+-      <language tag="da" service-tag="DN" to="*"/>
+-      <language tag="nl" service-tag="NL" to="*"/>
+-      <language tag="en" service-tag="EN" to="*"/>
+-      <language tag="fi" service-tag="FI" to="*"/>
+-      <language tag="fr" service-tag="FR" to="*"/>
+-      <language tag="de" service-tag="DE" to="*"/>
+-      <language tag="el" service-tag="EL" to="*"/>
+-      <language tag="hu" service-tag="HN" to="*"/>
+-      <language tag="is" service-tag="IC" to="*"/>
+-      <language tag="it" service-tag="IT" to="*"/>
+-      <language tag="ja" service-tag="JA" to="*"/>
+-      <language tag="ko" service-tag="KO" to="*"/>
+-      <language tag="la" service-tag="LT" to="*"/>
+-      <language tag="no" service-tag="NW" to="*"/>
+-      <language tag="pl" service-tag="PO" to="*"/>
+-      <language tag="pt" service-tag="PT" to="*"/>
+-      <language tag="ro" service-tag="RO" to="*"/>
+-      <language tag="ru" service-tag="RU" to="*"/>
+-      <language tag="sr" service-tag="SB" to="*"/>
+-      <language tag="sk" service-tag="SL" to="*"/>
+-      <language tag="es" service-tag="ES" to="*"/>
+-      <language tag="sv" service-tag="SW" to="*"/>
+-      <language tag="tr" service-tag="TK" to="*"/>
+-      <language tag="cy" service-tag="WE" to="*"/>
+-      <text-translation url="http://www.translationbooth.com/tb/aojb/Tpl/freeTranslation/?textCheck=1&amp;original=${text:escape}&amp;srcLang=${from}&amp;trgLang=${to}">
+-	<pre-marker text="&lt;textarea name=&quot;original"/>
+-	<pre-marker text="&lt;textarea"/>
++      <language to="*" tag="en" service-tag="E"/>
++      <language to="*" tag="pap" service-tag="P"/>
++      <text-translation url="http://www.donamaro.nl/papiamentu/index.php?pAction=tradusi&amp;pSel=${from}2${to}&amp;pFrom=${text:charset=ISO8859-1,escape}">
++	<pre-marker text="&lt;textarea name=&quot;pTo&quot;"/>
+ 	<pre-marker text="&gt;"/>
+ 	<post-marker text="&lt;/textarea&gt;"/>
+-	<error-marker text="&gt;Translation Server Busy, Please Retry.&lt;"/>
+       </text-translation>
+     </group>
+   </service>
+ 
+-  <service name="kataku" nick="Kataku">
++  <service nick="Apertium" name="apertium">
+     <group>
+-      <language tag="en" to="*"/>
+-      <language tag="id" service-tag="in" to="*"/>
+-      <text-translation
+-	url="http://www.toggletext.com/kataku_trial.php"
+-	post="input_text=${text:charset=ISO8859-1,escape}&amp;langset_text=${from}_${to}">
+-	<pre-marker text="Translation:"/>
+-	<pre-marker text="&lt;pre"/>
+-	<pre-marker text="&gt;"/>
+-	<post-marker text="&#10;&lt;/pre&gt;"/>
+-      </text-translation>
+-      <web-page-translation url="http://www.toggletext.com/kataku_webpage_translate.php?input=${url:escape}&amp;langset=${from}_${to}"/>
++      <language to="en,es,eo,fr,oc,oc_aran" tag="ca"/>
++      <language to="en" tag="cy"/>
++      <language to="ca,es,gl" tag="en"/>
++      <language to="ca,en,eo,fr,gl,pt,pt-BR" tag="es"/>
++      <language to="es" tag="eu"/>
++      <language to="ca,es" tag="fr"/>
++      <language to="en,es" tag="gl"/>
++      <language to="es" tag="pt"/>
++      <language tag="pt-BR" service-tag="pt_BR"/>
++      <language to="ca" tag="oc"/>
++      <language to="es" tag="ro"/>
++      <text-translation url="http://xixona.dlsi.ua.es/webservice/ws.php?text=${text:escape}&amp;mode=${from}-${to}"/>
++      <web-page-translation url="http://www.apertium.org/apertium/tradurl.php?marcar=&amp;direccion=${from}-${to}&amp;inurl=${url:escape}"/>
+     </group>
+   </service>
+ 
+-  <service name="papiamentu" nick="Papiamentu">
++  <service nick="Opentrad" name="opentrad">
+     <group>
+-      <language tag="en" service-tag="E" to="*"/>
+-      <language tag="pap" service-tag="P" to="*"/>
+-      <text-translation url="http://www.donamaro.nl/papiamentu/index.php3?pAction=tradusi&amp;pSel=${from}2${to}&amp;pFrom=${text:charset=ISO8859-1,escape}">
+-	<pre-marker text="&lt;TEXTAREA NAME=&quot;pTo&quot;"/>
+-	<pre-marker text="&gt;"/>
+-	<post-marker text="&lt;/TEXTAREA&gt;"/>
++      <language to="en,es" tag="ca"/>
++      <language to="ca,en,eu,fr,gl,pt" tag="es"/>
++      <language to="en,es,pt" tag="gl"/>
++      <language to="ca,es,gl" tag="en"/>
++      <language to="es,gl" tag="pt"/>
++      <language to="es" tag="fr"/>
++      <text-translation url="http://opentrad.org/en/opentrad/traducir" post="direccion=${from}-${to}&amp;marcar=0&amp;cuadrotexto=${text:escape}">
++	<post-marker text="&lt;script"/>
+       </text-translation>
+     </group>
+   </service>

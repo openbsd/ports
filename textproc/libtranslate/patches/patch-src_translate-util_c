@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_translate-util_c,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- src/translate-util.c.orig	Mon Nov 14 16:06:02 2011
++++ src/translate-util.c	Mon Nov 14 16:06:28 2011
+@@ -136,7 +136,7 @@ translate_ascii_strcasestr_len (const char *big,
+   g_return_val_if_fail(big != NULL, NULL);
+   g_return_val_if_fail(little != NULL, NULL);
+ 
+-  lower_big = g_ascii_strdown(big, big_len);
++  lower_big = g_ascii_strdown(big, (int) big_len);
+   lower_little = g_ascii_strdown(little, -1);
+ 
+   s = strstr(lower_big, lower_little);

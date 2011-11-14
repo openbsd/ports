@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- configure.ac.orig	Mon Nov 14 16:06:01 2011
++++ configure.ac	Mon Nov 14 16:06:28 2011
+@@ -50,7 +50,11 @@ GTK_DOC_CHECK([1.0])
+ ### optional libraries
+ 
+ if TRANSLATE_FEATURE_ENABLED(generic); then
+-	PKG_CHECK_MODULES(SOUP, [libsoup-2.2],, [TRANSLATE_FEATURE_DISABLE(generic, [libsoup not found])])
++	PKG_CHECK_MODULES(SOUP, [libsoup-2.4],
++		[AC_DEFINE(HAVE_LIBSOUP24, 1, [Building with libsoup 2.4])],
++		[PKG_CHECK_MODULES(SOUP, [libsoup-2.2],
++			[AC_DEFINE(HAVE_LIBSOUP22, 1, [Building with libsoup 2.2])],
++			[TRANSLATE_FEATURE_DISABLE(generic, [libsoup not found])])])
+ fi
+ if TRANSLATE_FEATURE_ENABLED(generic); then
+ 	PKG_CHECK_MODULES(LIBXML, [libxml-2.0],, [TRANSLATE_FEATURE_DISABLE(generic, [libxml not found])])

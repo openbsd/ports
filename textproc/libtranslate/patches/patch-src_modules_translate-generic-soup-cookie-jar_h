@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_modules_translate-generic-soup-cookie-jar_h,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- src/modules/translate-generic-soup-cookie-jar.h.orig	Mon Nov 14 16:06:02 2011
++++ src/modules/translate-generic-soup-cookie-jar.h	Mon Nov 14 16:06:28 2011
+@@ -33,6 +33,7 @@
+ #define _TRANSLATE_GENERIC_SOUP_COOKIE_JAR_H
+ 
+ #include <glib-object.h>
++#include <libsoup/soup-session.h>
+ 
+ #define TRANSLATE_GENERIC_TYPE_SOUP_COOKIE_JAR			(translate_generic_soup_cookie_jar_get_type())
+ #define TRANSLATE_GENERIC_SOUP_COOKIE_JAR(obj)			(G_TYPE_CHECK_INSTANCE_CAST((obj), TRANSLATE_GENERIC_TYPE_SOUP_COOKIE_JAR, TranslateGenericSoupCookieJar))
+@@ -59,5 +60,6 @@ struct _TranslateGenericSoupCookieJarClass
+ 
+ GType translate_generic_soup_cookie_jar_get_type (void);
+ TranslateGenericSoupCookieJar *translate_generic_soup_cookie_jar_new (void);
++void translate_generic_soup_cookie_jar_attach (TranslateGenericSoupCookieJar *cookie_jar, SoupSession *session);
+ 
+ #endif /* _TRANSLATE_GENERIC_SOUP_COOKIE_JAR_H */

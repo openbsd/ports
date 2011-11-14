@@ -1,0 +1,363 @@
+$OpenBSD: patch-src_modules_translate-generic-service_c,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+
+upstream patch
+
+--- src/modules/translate-generic-service.c.orig	Mon Nov 14 16:06:02 2011
++++ src/modules/translate-generic-service.c	Mon Nov 14 16:06:28 2011
+@@ -35,7 +35,9 @@
+ #include <stdlib.h>
+ #include <glib/gi18n-lib.h>
+ #include <libsoup/soup.h>
++#ifdef HAVE_LIBSOUP22
+ #include <libsoup/soup-message-filter.h>
++#endif
+ #include <libxml/HTMLparser.h>
+ #include "translate.h"
+ #include "translate-generic-service.h"
+@@ -43,6 +45,17 @@
+ #include "translate-generic-parser.h"
+ #include "translate-generic-soup-cookie-jar.h"
+ 
++#ifdef HAVE_LIBSOUP22
++#define soup_message_headers_get soup_message_get_header
++#define soup_message_headers_append soup_message_add_header
++#define SoupURI SoupUri
++#define SOUP_MESSAGE_RESPONSE_BODY(msg) ((msg)->response.body)
++#define SOUP_MESSAGE_RESPONSE_LENGTH(msg) ((msg)->response.length)
++#else
++#define SOUP_MESSAGE_RESPONSE_BODY(msg) ((msg)->response_body->data)
++#define SOUP_MESSAGE_RESPONSE_LENGTH(msg) ((msg)->response_body->length)
++#endif
++
+ #define MAKE_WARNING_PREFIX(service, group_pos, attribute, element) \
+   g_strdup_printf(_("in %s, group %i, \"%s\" attribute of \"%s\" element"), \
+ 		  translate_service_get_name((service)), \
+@@ -140,6 +153,7 @@ static const char *translate_generic_service_get_heade
+ 							 const char *name);
+ 
+ static void translate_generic_service_log_connect (SoupMessage *message);
++#ifdef HAVE_LIBSOUP22
+ static void translate_generic_service_log_wrote_headers_h (SoupMessage *message,
+ 							   gpointer user_data);
+ static void translate_generic_service_log_wrote_body_h (SoupMessage *message,
+@@ -151,10 +165,20 @@ static void translate_generic_service_log_got_body_h (
+ static void translate_generic_service_log_headers_cb (const char *key,
+ 						      const char *value,
+ 						      gpointer user_data);
++#else
++static void translate_generic_service_log_printer (SoupLogger *logger,
++						   SoupLoggerLogLevel level,
++						   char direction,
++						   const char *data,
++						   gpointer user_data);
++#endif
+ 
+ static void translate_generic_service_progress_got_headers_h (SoupMessage *message,
+ 							      gpointer user_data);
+ static void translate_generic_service_progress_got_chunk_h (SoupMessage *message,
++#ifdef HAVE_LIBSOUP24
++							    SoupBuffer *chunk,
++#endif
+ 							    gpointer user_data);
+ 
+ static void translate_generic_service_html_got_headers_h (SoupMessage *message,
+@@ -170,8 +194,10 @@ static void translate_generic_service_html_end_element
+ static void translate_generic_service_refresh_got_body_h (SoupMessage *message,
+ 							  gpointer user_data);
+ 
++#ifdef HAVE_LIBSOUP22
+ static void translate_generic_service_redirect_handler (SoupMessage *message,
+ 							gpointer user_data);
++#endif
+ 
+ static char *translate_generic_service_translate_text (TranslateService *service,
+ 						       const char *text,
+@@ -419,7 +445,11 @@ translate_generic_service_get (const char *uri,
+       g_return_val_if_fail(post_content_type != NULL, NULL);
+       soup_message_set_request(message,
+ 			       post_content_type,
++#ifdef HAVE_LIBSOUP22
+ 			       SOUP_BUFFER_USER_OWNED,
++#else
++			       SOUP_MEMORY_TEMPORARY,
++#endif
+ 			       (char *) post,
+ 			       strlen(post));
+     }
+@@ -427,7 +457,7 @@ translate_generic_service_get (const char *uri,
+   for (l = headers; l != NULL; l = l->next)
+     {
+       TranslateGenericHttpHeader *header = l->data;
+-      soup_message_add_header(message->request_headers, header->name, header->value);
++      soup_message_headers_append(message->request_headers, header->name, header->value);
+     }
+   
+   info.session = translate_generic_service_soup_session_sync_new();
+@@ -435,12 +465,21 @@ translate_generic_service_get (const char *uri,
+   info.html_http_equiv = NULL;
+ 
+   if (translate_generic_debug_flags & TRANSLATE_GENERIC_DEBUG_LOG_TRANSFERS)
+-    g_object_connect(message,
+-		     "signal::wrote-headers", translate_generic_service_log_wrote_headers_h, &info,
+-		     "signal::wrote-body", translate_generic_service_log_wrote_body_h, &info,
+-		     "signal::got-headers", translate_generic_service_log_got_headers_h, &info,
+-		     "signal::got-body", translate_generic_service_log_got_body_h, &info,
+-		     NULL);
++    {
++#ifdef HAVE_LIBSOUP22
++      g_object_connect(message,
++		       "signal::wrote-headers", translate_generic_service_log_wrote_headers_h, &info,
++		       "signal::wrote-body", translate_generic_service_log_wrote_body_h, &info,
++		       "signal::got-headers", translate_generic_service_log_got_headers_h, &info,
++		       "signal::got-body", translate_generic_service_log_got_body_h, &info,
++		       NULL);
++#else
++      SoupLogger *logger = soup_logger_new (SOUP_LOGGER_LOG_BODY, -1);
++      soup_logger_set_printer (logger, translate_generic_service_log_printer, NULL, NULL);
++      soup_logger_attach (logger, info.session);
++      g_object_unref (logger);
++#endif
++    }
+ 
+   if (progress_func)
+     {
+@@ -468,6 +507,7 @@ translate_generic_service_get (const char *uri,
+   if (flags & TRANSFER_FOLLOW_REFRESH)
+     g_signal_connect(message, "got-body", G_CALLBACK(translate_generic_service_refresh_got_body_h), &info);
+ 
++#ifdef HAVE_LIBSOUP22
+   /* http://bugzilla.ximian.com/show_bug.cgi?id=70688 */
+   soup_message_set_flags(message, SOUP_MESSAGE_NO_REDIRECT);
+   soup_message_add_status_class_handler(message,
+@@ -475,6 +515,7 @@ translate_generic_service_get (const char *uri,
+ 					SOUP_HANDLER_POST_BODY,
+ 					translate_generic_service_redirect_handler,
+ 					info.session);
++#endif
+ 
+   if (translate_generic_debug_flags & TRANSLATE_GENERIC_DEBUG_LOG_TRANSFERS)
+     translate_generic_service_log_connect(message);
+@@ -484,7 +525,7 @@ translate_generic_service_get (const char *uri,
+ 
+   if (SOUP_STATUS_IS_SUCCESSFUL(message->status_code))
+     {
+-      const char *charset = NULL;
++      char *charset = NULL;
+       
+       if (flags & TRANSFER_CONVERT)
+ 	{
+@@ -493,23 +534,40 @@ translate_generic_service_get (const char *uri,
+ 	  content_type = translate_generic_service_get_header(message, &info, "Content-Type");
+ 	  if (content_type)
+ 	    {
+-	      charset = translate_ascii_strcasestr(content_type, "charset=");
+-	      if (charset)
+-		charset += 8;
++	      const char *tmp;
++	      
++	      tmp = translate_ascii_strcasestr(content_type, "charset=");
++	      if (tmp)
++		{
++		  int len;
++
++		  tmp += 8;
++		  if (*tmp == '\'' || *tmp == '"')
++		    tmp++;
++
++		  len = strlen(tmp);
++		  if (len > 0 && (tmp[len - 1] == '\'' || tmp[len - 1] == '"'))
++		    len--;
++
++		  charset = g_strndup(tmp, len);
++		}
+ 	    }
+ 	}
+ 
+       if (charset)
+-	response = g_convert(message->response.body, message->response.length, "UTF-8", charset, NULL, NULL, err);
++	{
++	  response = g_convert(SOUP_MESSAGE_RESPONSE_BODY (message), SOUP_MESSAGE_RESPONSE_LENGTH (message), "UTF-8", charset, NULL, NULL, err);
++	  g_free(charset);
++	}
+       else
+ 	{
+-	  if ((flags & TRANSFER_CONVERT) && ! g_utf8_validate(message->response.body, message->response.length, NULL))
++	  if ((flags & TRANSFER_CONVERT) && ! g_utf8_validate(SOUP_MESSAGE_RESPONSE_BODY (message), SOUP_MESSAGE_RESPONSE_LENGTH (message), NULL))
+ 	    g_set_error(err,
+ 			TRANSLATE_GENERIC_SERVICE_ERROR,
+ 			TRANSLATE_GENERIC_SERVICE_ERROR_TRANSFER,
+ 			_("invalid UTF-8"));
+ 	  else
+-	    response = g_strndup(message->response.body, message->response.length);
++	    response = g_strndup(SOUP_MESSAGE_RESPONSE_BODY (message), SOUP_MESSAGE_RESPONSE_LENGTH (message));
+ 	}
+     }
+   else
+@@ -550,7 +608,7 @@ translate_generic_service_get_header (SoupMessage *mes
+     : NULL;
+ 
+   if (! value)
+-    value = soup_message_get_header(message->response_headers, name);
++    value = soup_message_headers_get(message->response_headers, name);
+ 
+   return value;
+ }
+@@ -558,12 +616,14 @@ translate_generic_service_get_header (SoupMessage *mes
+ static void
+ translate_generic_service_log_connect (SoupMessage *message)
+ {
+-  const SoupUri *uri;
++  const SoupURI *uri;
+ 
+   uri = soup_message_get_uri(message);
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, _("connecting to %s:%i"), uri->host, uri->port);
+ }
+ 
++#ifdef HAVE_LIBSOUP22
++
+ static void
+ translate_generic_service_log_wrote_headers_h (SoupMessage *message,
+ 					       gpointer user_data)
+@@ -618,14 +678,28 @@ translate_generic_service_log_headers_cb (const char *
+   g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "%s %s: %s", prefix, key, value);
+ }
+ 
++#else /* !HAVE_LIBSOUP22 */
++
+ static void
++translate_generic_service_log_printer (SoupLogger *logger,
++				       SoupLoggerLogLevel level,
++				       char direction,
++				       const char *data,
++				       gpointer user_data)
++{
++  g_log(G_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "%c %s", direction, data);
++}
++
++#endif /* HAVE_LIBSOUP22 */
++
++static void
+ translate_generic_service_progress_got_headers_h (SoupMessage *message,
+ 						  gpointer user_data)
+ {
+   TransferInfo *info = user_data;
+   const char *content_length;
+ 
+-  content_length = soup_message_get_header(message->response_headers, "Content-Length");
++  content_length = soup_message_headers_get(message->response_headers, "Content-Length");
+   info->length = (content_length
+ 		  && *content_length
+ 		  && strspn(content_length, "0123456789") == strlen(content_length))
+@@ -635,6 +709,9 @@ translate_generic_service_progress_got_headers_h (Soup
+ 
+ static void
+ translate_generic_service_progress_got_chunk_h (SoupMessage *message,
++#ifdef HAVE_LIBSOUP24
++						SoupBuffer *chunk,
++#endif
+ 						gpointer user_data)
+ {
+   TransferInfo *info = user_data;
+@@ -644,7 +721,11 @@ translate_generic_service_progress_got_chunk_h (SoupMe
+     progress = -1;
+   else
+     {
++#ifdef HAVE_LIBSOUP22
+       info->received += message->response.length;
++#else
++      info->received += chunk->length;
++#endif
+       progress = (double) info->received / info->length;
+       progress = CLAMP(progress, 0.0, 1.0);
+     }
+@@ -660,7 +741,7 @@ translate_generic_service_html_got_headers_h (SoupMess
+   TransferInfo *info = user_data;
+   const char *content_type;
+ 
+-  content_type = soup_message_get_header(message->response_headers, "Content-Type");
++  content_type = soup_message_headers_get(message->response_headers, "Content-Type");
+   info->parse_html = content_type
+     && (g_str_has_prefix(content_type, "text/html")
+ 	|| g_str_has_prefix(content_type, "application/xhtml+xml")
+@@ -680,7 +761,7 @@ translate_generic_service_html_got_body_h (SoupMessage
+       info->html_http_equiv = NULL;
+     }
+ 
+-  if (info->parse_html && message->response.length > 0)
++  if (info->parse_html && SOUP_MESSAGE_RESPONSE_LENGTH (message) > 0)
+     {
+       char *body;
+       xmlSAXHandler sax_handler = { NULL };
+@@ -694,7 +775,7 @@ translate_generic_service_html_got_body_h (SoupMessage
+       sax_handler.startElement = translate_generic_service_html_start_element_cb;
+       sax_handler.endElement = translate_generic_service_html_end_element_cb;
+ 
+-      body = g_strndup(message->response.body, message->response.length);
++      body = g_strndup(SOUP_MESSAGE_RESPONSE_BODY (message), SOUP_MESSAGE_RESPONSE_LENGTH (message));
+       htmlSAXParseDoc(body, NULL, &sax_handler, user_data);
+       g_free(body);
+     }
+@@ -761,7 +842,7 @@ translate_generic_service_refresh_got_body_h (SoupMess
+ {
+   TransferInfo *info = user_data;
+   const char *refresh_uri;
+-  SoupUri *new_uri = NULL;
++  SoupURI *new_uri = NULL;
+ 
+   refresh_uri = translate_generic_service_get_header(message, info, "Refresh");
+   if (refresh_uri)
+@@ -776,9 +857,9 @@ translate_generic_service_refresh_got_body_h (SoupMess
+       new_uri = soup_uri_new(refresh_uri);
+       if (! new_uri)
+ 	{
+-	  const SoupUri *base_uri;
++	  SoupURI *base_uri;
+ 	  
+-	  base_uri = soup_message_get_uri(message);
++	  base_uri = (SoupURI *)soup_message_get_uri(message);
+ 	  new_uri = soup_uri_new_with_base(base_uri, refresh_uri);
+ 	}
+     }
+@@ -795,6 +876,7 @@ translate_generic_service_refresh_got_body_h (SoupMess
+     }
+ }
+ 
++#ifdef HAVE_LIBSOUP22
+ static void
+ translate_generic_service_redirect_handler (SoupMessage *message,
+ 					    gpointer user_data)
+@@ -831,6 +913,7 @@ translate_generic_service_redirect_handler (SoupMessag
+       soup_session_requeue_message(session, message);
+     }
+ }
++#endif
+ 
+ static char *
+ translate_generic_service_translate_text (TranslateService *service,
+@@ -938,7 +1021,7 @@ translate_generic_service_translate_text (TranslateSer
+ 		    raw = g_strndup(work, s - work);
+ 		}
+ 	      else
+-		raw = g_strdup(response);
++		raw = g_strdup(work);
+ 	    }
+ 
+ 	  if (raw)
+@@ -1297,7 +1380,7 @@ static SoupSession *
+ translate_generic_service_soup_session_sync_new (void)
+ {
+   char *proxy_text_uri;
+-  SoupUri *proxy_uri = NULL;
++  SoupURI *proxy_uri = NULL;
+   SoupSession *session;
+   TranslateGenericSoupCookieJar *cookie_jar;
+ 
+@@ -1317,7 +1400,7 @@ translate_generic_service_soup_session_sync_new (void)
+     soup_uri_free(proxy_uri);
+ 
+   cookie_jar = translate_generic_soup_cookie_jar_new();
+-  soup_session_add_filter(session, SOUP_MESSAGE_FILTER(cookie_jar));
++  translate_generic_soup_cookie_jar_attach(cookie_jar, session);
+   g_object_unref(cookie_jar);
+ 
+   return session;
