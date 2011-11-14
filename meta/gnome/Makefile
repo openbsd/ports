@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/13 10:30:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/14 13:33:42 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -9,13 +9,17 @@ PKGNAME=	gnome-${V}
 PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
 
-REVISION-main=	1
+REVISION-main=	2
+REVISION-extras=0
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
+		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MULTI_PACKAGES=	-main -extras
 
 # minimal dependencies for a working desktop
 RUN_DEPENDS-main += \
-		gnome-session->=${V}:x11/gnome/session \
+		x11/gnome/session=${V} \
 		x11/gnome/eog \
 		x11/gnome/file-roller \
 		x11/gnome/gedit \
@@ -46,7 +50,7 @@ RUN_DEPENDS-main += \
 		x11/gnome/gcalctool
 
 RUN_DEPENDS-extras += \
-		STEM->=${V}:${BASE_PKGPATH},-main \
+		STEM-=${V}:${BASE_PKGPATH},-main \
 		audio/rhythmbox \
 		graphics/simple-scan \
 		mail/evolution,-plugins \
