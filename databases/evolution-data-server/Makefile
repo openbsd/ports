@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.104 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2011/11/14 11:42:35 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.2.1
-REVISION=		1
+GNOME_VERSION=		3.2.2
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
