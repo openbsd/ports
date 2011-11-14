@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.307 2011/11/06 17:36:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.308 2011/11/14 11:01:54 bentley Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -79,6 +79,7 @@
      SUBDIR += glew
      SUBDIR += glpng
      SUBDIR += gmt
+     SUBDIR += gnofract4d
      SUBDIR += gocr
      SUBDIR += goocanvas
      SUBDIR += goocanvas2
