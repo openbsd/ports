@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/11/14 17:07:12 pascal Exp $
 @pkgpath lang/gcc/4.6
 %%SHARED%%
 @bin bin/ecpp
@@ -12,7 +12,7 @@
 @info info/gcc.info
 @info info/gccinstall.info
 @info info/gccint.info
-@comment @info info/libquadmath.info
+@info info/libquadmath.info
 lib/gcc/
 lib/gcc/${CONFIG}/
 lib/gcc/${CONFIG}/${V}/
