@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/11/14 11:38:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/14 12:00:04 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -109,7 +109,6 @@ do-install:
 	mkdir -p ${JRUBY_HOME}/lib/ruby/site_ruby/1.8/java
 	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share
 
-REGRESS_DEPENDS =	devel/git
 ANT_REGRESS_CMD =	${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
 				PATH=${JAVA_HOME}/bin:${PATH} \
 				${LOCALBASE}/bin/ant
@@ -117,11 +116,11 @@ ANT_REGRESS_CMD =	${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
 #   4 Failures in JRubyTestSuite
 #   1 Failure in MainTestSuite
 #   1 Failure in MRITestSuite
-# 41 spec failures, 2 errors, but this grabs the latest specs via git, so it
-# can change.
+# spec task disabled by default as it needs network access to download
+# the latest specs.
 do-regress:
 	rm -f ${WRKSRC}/lib/jruby-complete.jar
 	-cd ${WRKSRC} && ${ANT_REGRESS_CMD} test
-	cd ${WRKSRC} && ${ANT_REGRESS_CMD} spec
+	#cd ${WRKSRC} && ${ANT_REGRESS_CMD} spec
 
 .include <bsd.port.mk>
