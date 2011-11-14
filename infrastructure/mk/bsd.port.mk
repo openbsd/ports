@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1125 2011/11/14 13:12:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1126 2011/11/14 16:18:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1554,9 +1554,10 @@ _version2stem = sed -e 's,-[0-9].*,,'
 _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
 
+_read_spec = IFS=: read pkg subdir target
 _parse_spec = \
-	IFS=: read pkg subdir target; \
-	extra_msg="(DEPENDS was $$pkg $$subdir $$target) in ${FULLPKGPATH}"; \
+	d="$$pkg:$$subdir:$$target"; \
+	extra_msg="(DEPENDS was $$d) in ${FULLPKGPATH}"; \
 	case "X$$pkg" in \
 	*/*) target="$$subdir"; subdir="$$pkg"; pkg=;; \
 	esac; ${_flavor_fragment}
@@ -1580,6 +1581,10 @@ _complete_pkgspec = \
 		stem=`echo $$default|${_version2stem}`; \
 		pkg="$$stem$${pkg\#STEM}";; \
 	esac
+
+_emit_lib_depends = for i in ${LIB_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
+_emit_run_depends = for i in ${RUN_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
+
 
 .if empty(PLIST_DB)
 _register_plist =:
@@ -1822,8 +1827,7 @@ _print-packagename:
 .  if !target(${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g})
 ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
 	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
-	d='${_i}'; \
-	echo '${_i}'|{ \
+	echo '${_i}'| while ${_read_spec}; do \
 		${_parse_spec}; \
 		checkinstall=true; \
 		_ignore_cookie=${@:S/.dep/.ignored/}; \
@@ -1884,7 +1888,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				break; \
 			fi; \
 		done; \
-	}
+	done
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
 	@${_MAKE_COOKIE} $@
 .  endif
@@ -1912,11 +1916,12 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@if found=`{ \
-		for i in ${_LIB4:QL}; do echo "$$i"| { \
-			${_parse_spec}; \
-			eval $$toset ${MAKE} print-plist-libs; \
-			}; \
-		done; echo ${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
+		for i in ${_LIB4:QL}; do echo "$$i"; done | \
+			while ${_read_spec}; do \
+				${_parse_spec}; \
+				eval $$toset ${MAKE} print-plist-libs; \
+			done; \
+		echo ${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
 		for d in ${_DEP${_m}LIBS:QL}; do \
 			case "$$d" in \
 			/*) echo $${d%/*}${_lib};; \
@@ -1972,12 +1977,12 @@ ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
 	@${SUDO} ${_CHECK_LIB_DEPENDS} -O $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
-.  for _S in ${MULTI_PACKAGES}
-	@-SUBPACKAGE=${_S} ${MAKE} print-plist-with-depends \
+	@-for s in ${MULTI_PACKAGES}; do \
+		SUBPACKAGE=$$s ${MAKE} print-plist-with-depends \
 		lib_depends_args=all-lib-depends-args \
 		wantlib_args=fake-wantlib-args| \
-	 ${_CHECK_LIB_DEPENDS} -s ${WRKINST}/.saved_libs
-.  endfor
+			${_CHECK_LIB_DEPENDS} -s ${WRKINST}/.saved_libs; \
+	done
 
 _internal-manpages-check: ${_FAKE_COOKIE}
 	@cd ${WRKINST}${TRUEPREFIX}/man && \
@@ -2967,24 +2972,20 @@ print-package-args: ${lib_depends_args} ${wantlib_args}
 .endif
 
 run-depends-args:
-.for _i in ${RUN_DEPENDS${SUBPACKAGE}}
-	@d='${_i}'; echo '${_i}' |{ \
+	@${_emit_run_depends} | while ${_read_spec}; do \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		echo "-P $$pkgpath:$$pkg:$$default"; \
-	}
-.endfor
+	done
 
 # waive checks for WANTLIB when we're running lib-depends-check
 # since we're trying to figure out what's actually needed
 all-lib-depends-args:
-.for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@d='${_i}'; echo '${_i}' |{ \
+	@${_emit_lib_depends} |while ${_read_spec}; do \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		echo "-P $$pkgpath:$$pkg:$$default"; \
-	}
-.endfor
+	done
 
 # those are expensive computations, so don't do them if we don't have to
 .if empty(_DEPRUNLIBS)
@@ -2992,8 +2993,7 @@ lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
 .else
 
 lib-depends-args:
-.  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@d='${_i}'; echo '${_i}'|{ \
+	@${_emit_lib_depends}| while ${_read_spec}; do \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		libs=`eval $$toset ${MAKE} print-plist-libs`; \
@@ -3012,8 +3012,7 @@ lib-depends-args:
 		done; \
 		exec 2>&3; \
 		if $$needed; then echo "-P $$pkgpath:$$pkg:$$default"; fi; \
-	}
-.  endfor
+	done
 
 wantlib-args:
 	@a=`mktemp /tmp/portstree.XXXXXX`; b=`mktemp /tmp/inst.XXXXXX`; \
@@ -3099,18 +3098,15 @@ _list-port-libs:
 	@echo /usr/lib/lib* ${X11BASE}/lib/lib*
 
 _print-package-signature-run:
-.for _i in ${RUN_DEPENDS${SUBPACKAGE}}
-	@echo '${_i}' |{ \
+	@${_emit_run_depends} |while ${_read_spec}; do \
 		${_parse_spec}; \
 		${_compute_default}; \
 		echo "$$default"; \
-	}
-.endfor
+	done
 
 _print-package-signature-lib:
 	@echo $$LIST_LIBS| ${_resolve_lib} ${_DEPRUNLIBS:QL}
-.for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@d='${_i}'; echo '${_i}'|{ \
+	@${_emit_lib_depends}| while ${_read_spec}; do \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		libs=`eval $$toset ${MAKE} print-plist-libs`; \
@@ -3129,8 +3125,7 @@ _print-package-signature-lib:
 		done; \
 		exec 2>&3; \
 		if $$needed; then echo "$$default"; fi; \
-	}
-.endfor
+	done
 
 # recursively build a list of dirs for package running, ready for tsort
 _recurse-run-dir-depends:
