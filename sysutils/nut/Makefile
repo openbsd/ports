@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/11/14 14:21:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/14 15:57:21 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -7,8 +7,10 @@ COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 COMMENT-scanner=	UPS scanning tool for nut
 
 DISTNAME=		nut-2.6.2
-REVISION-main=		0
-REVISION-cgi=		0
+REVISION-main=		1
+REVISION-xml=		1
+REVISION-cgi=		1
+REVISION-scanner=	0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -31,9 +33,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMON +=	c crypto pthread
-WANTLIB-main +=	${COMMON} ${WANTLIB} m ssl usb usb-1.0
-WANTLIB-xml +=	${COMMON} ${WANTLIB} asn1 expat gssapi krb5 neon ssl z
-WANTLIB-cgi +=	${COMMON} ${MODLIBICONV_WANTLIB} X11 expat fontconfig
+WANTLIB-main +=	${COMMON} m ssl usb usb-1.0
+WANTLIB-xml +=	${COMMON} ${MODGETTEXT_WANTLIB} asn1 expat gssapi krb5 neon ssl z
+WANTLIB-cgi +=	${COMMON} ${MODGETTEXT_WANTLIB} X11 expat fontconfig
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 WANTLIB-snmp +=	${COMMON} m netsnmp
 WANTLIB-scanner += ${WANTLIB-main} ${WANTLIB-snmp} ${WANTLIB-xml} upsclient
@@ -41,8 +43,7 @@ WANTLIB-scanner += avahi-client avahi-common avahi-core dbus-1
 
 MASTER_SITES=		${HOMEPAGE}source/2.6/
 
-MODULES=		converters/libiconv \
-			devel/gettext \
+MODULES=		devel/gettext \
 			lang/python
 MODPY_RUNDEP=		No
 BUILD_DEPENDS+=		textproc/asciidoc \
