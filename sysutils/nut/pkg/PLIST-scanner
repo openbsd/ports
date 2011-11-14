@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST-scanner,v 1.1 2011/11/14 08:58:07 sthen Exp $
+@conflict nut-<2.6.2p0
+@bin bin/nut-scanner
+lib/libnutscan.a
+lib/libnutscan.la
+%%SHARED%%
+@comment lib/pkgconfig/
+@man man/man8/nut-scanner.8

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/09/19 15:59:57 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/11/14 08:58:07 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -36,7 +36,6 @@
 @bin bin/mge-utalk
 @bin bin/microdowell
 @bin bin/newmge-shut
-@bin bin/nut-scanner
 @bin bin/oneac
 @bin bin/optiups
 @bin bin/powercom
@@ -63,9 +62,6 @@ bin/upssched-cmd
 @comment html/header.html
 @comment html/index.html
 html/nut-banner.png
-lib/libnutscan.a
-lib/libnutscan.la
-@lib lib/libnutscan.so.${LIBnutscan_VERSION}
 lib/libupsclient.a
 lib/libupsclient.la
 @man man/man5/hosts.conf.5
@@ -103,7 +99,6 @@ lib/libupsclient.la
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
-@man man/man8/nut-scanner.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
@@ -186,6 +181,10 @@ share/examples/nut/
 @owner ${NUT_USER}
 share/examples/nut/nut.conf.sample
 @sample ${SYSCONFDIR}/nut/nut.conf
+share/examples/nut/nut.service
+@sample ${SYSCONFDIR}/avahi/
+@sample ${SYSCONFDIR}/avahi/services/
+@sample ${SYSCONFDIR}/avahi/services/nut.service
 share/examples/nut/ups.conf.sample
 @mode 600
 @sample ${SYSCONFDIR}/nut/ups.conf
