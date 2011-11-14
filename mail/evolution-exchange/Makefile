@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/14 17:14:24 ajacoutot Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -7,11 +7,11 @@
 
 SHARED_ONLY=	Yes
 
-COMMENT=	evolution connector for MS Exchange
+COMMENT=	evolution connector for MS Exchange via OWA
 
 GNOME_PROJECT=	evolution-exchange
 GNOME_VERSION=	3.2.1
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  exchange                  0.0 # 0.0
 SHARED_LIBS +=  xntlm                     0.0 # 0.0
