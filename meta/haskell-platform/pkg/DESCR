@@ -1,0 +1,4 @@
+The Haskell Platform (HP) is the blessed set of libraries and tools
+on which to build further Haskell libraries and applications. It
+is intended to provide a comprehensive, stable, and quality tested
+base for Haskell projects to work from.
