@@ -1,0 +1,15 @@
+$OpenBSD: patch-autosetup_cc-shared_tcl,v 1.1 2011/11/14 11:03:00 sthen Exp $
+--- autosetup/cc-shared.tcl.orig	Mon Nov 14 11:55:10 2011
++++ autosetup/cc-shared.tcl	Mon Nov 14 11:55:19 2011
+@@ -55,9 +55,9 @@ switch -glob -- [get-define host] {
+ 	* {
+ 		# Generic Unix settings
+ 		define SH_LINKFLAGS -rdynamic
+-		define SH_CFLAGS -fpic
++		define SH_CFLAGS -fPIC
+ 		define SH_LDFLAGS -shared
+-		define SHOBJ_CFLAGS -fpic
++		define SHOBJ_CFLAGS -fPIC
+ 		define SHOBJ_LDFLAGS "-shared -nostartfiles"
+ 	}
+ }
