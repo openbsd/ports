@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.29 2011/11/14 21:57:47 espie Exp $
+# $OpenBSD: dpb,v 1.30 2011/11/14 21:59:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,9 +89,10 @@ sub handle_options
 			while (<$fh>) {
 				chomp;
 				next if m/^\#/;
+				push @main::ARGV, $_;
+				s/\^=.*//;
 				my $p = DPB::PkgPath->new($_);
 				$p->{wantinstall} = 1;
-				push @main::ARGV, $_;
 			}
 		},
 		C => sub {
