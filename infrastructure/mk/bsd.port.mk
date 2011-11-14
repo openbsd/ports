@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1123 2011/11/14 10:29:58 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1124 2011/11/14 12:10:27 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2836,13 +2836,13 @@ describe:
 
 readme:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
 	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}.html
 
 readmes:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
 	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${_READMES}
 
