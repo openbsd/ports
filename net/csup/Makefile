@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/16 19:13:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/14 23:00:10 naddy Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
-DISTNAME=	csup-20101019
-REVISION=	0
+DISTNAME=	csup-20111114
 CATEGORIES=	net
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -15,7 +14,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://shell.uugrn.org/~naddy/
-EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c crypto pthread z
 
