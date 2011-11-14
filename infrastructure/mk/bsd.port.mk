@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1122 2011/11/13 10:34:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1123 2011/11/14 10:29:58 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2530,6 +2530,16 @@ print-plist-with-depends:
 	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
+	else \
+		exit 1; \
+	fi ; \
+	${_plist_footer}
+
+print-plist-libs-with-depends:
+	@${_plist_header}; \
+	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} print-package-args`; \
+	then \
+		${_PKG_CREATE} -DLIBS_ONLY -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
 		exit 1; \
 	fi ; \
