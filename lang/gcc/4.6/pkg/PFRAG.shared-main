@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared-main,v 1.1.1.1 2011/11/14 13:00:55 pascal Exp $
+@lib lib/libssp.so.${LIBssp_VERSION}
+@comment @lib libexec/gcc/${CONFIG}/${V}/liblto_plugin.so.${LIBlto_plugin_VERSION}

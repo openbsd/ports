@@ -1,0 +1,26 @@
+$OpenBSD: patch-libffi_Makefile_in,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- libffi/Makefile.in.orig	Sat Nov 12 13:53:18 2011
++++ libffi/Makefile.in	Sat Nov 12 13:54:50 2011
+@@ -474,7 +474,8 @@ libffi_convenience_la_SOURCES = $(libffi_la_SOURCES)
+ nodist_libffi_convenience_la_SOURCES = $(nodist_libffi_la_SOURCES)
+ AM_CFLAGS = -Wall -g -fexceptions
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+-libffi_la_LDFLAGS = -version-info `grep -v '^\#' $(srcdir)/libtool-version` $(LTLDFLAGS) $(AM_LTLDFLAGS)
++include $(top_srcdir)/../libversions
++libffi_la_LDFLAGS = $(LIBffi_LTVERSION) $(LTLDFLAGS) $(AM_LTLDFLAGS)
+ AM_CPPFLAGS = -I. -I$(top_srcdir)/include -Iinclude -I$(top_srcdir)/src
+ AM_CCASFLAGS = $(AM_CPPFLAGS)
+ all: fficonfig.h
+@@ -1368,9 +1369,9 @@ installdirs-am:
+ 	for dir in "$(DESTDIR)$(toolexeclibdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+ 	done
+-install: install-recursive
+-install-exec: install-exec-recursive
+-install-data: install-data-recursive
++install:
++install-exec:
++install-data:
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am

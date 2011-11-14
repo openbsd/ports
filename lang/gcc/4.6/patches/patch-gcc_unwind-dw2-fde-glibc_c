@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_unwind-dw2-fde-glibc_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- gcc/unwind-dw2-fde-glibc.c.orig	Sat Nov 12 14:39:41 2011
++++ gcc/unwind-dw2-fde-glibc.c	Sat Nov 12 14:40:21 2011
+@@ -33,7 +33,7 @@
+ 
+ #include "tconfig.h"
+ #include "tsystem.h"
+-#ifndef inhibit_libc
++#if !defined(inhibit_libc) && !defined(__OpenBSD__)
+ #include <elf.h>		/* Get DT_CONFIG.  */
+ #endif
+ #include "coretypes.h"

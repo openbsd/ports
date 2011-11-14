@@ -1,0 +1,16 @@
+$OpenBSD: patch-libtool_m4,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- libtool.m4.orig	Sat Nov 12 14:18:33 2011
++++ libtool.m4	Sat Nov 12 14:19:43 2011
+@@ -3099,11 +3099,7 @@ newos6*)
+   ;;
+ 
+ openbsd*)
+-  if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+-    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|\.so|_pic\.a)$'
+-  else
+-    lt_cv_deplibs_check_method='match_pattern /lib[[^/]]+(\.so\.[[0-9]]+\.[[0-9]]+|_pic\.a)$'
+-  fi
++  lt_cv_deplibs_check_method=pass_all
+   ;;
+ 
+ osf3* | osf4* | osf5*)

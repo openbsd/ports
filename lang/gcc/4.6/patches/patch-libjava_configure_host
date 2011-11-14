@@ -1,0 +1,16 @@
+$OpenBSD: patch-libjava_configure_host,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- libjava/configure.host.orig	Sat Nov 12 14:06:31 2011
++++ libjava/configure.host	Sat Nov 12 14:07:31 2011
+@@ -321,6 +321,12 @@ EOF
+   i?86-*-solaris2*)
+ 	can_unwind_signal=yes
+ 	;;
++  *-*-openbsd*)
++	enable_hash_synchronization_default=no
++	libgcj_flags="${libgcj_flags} -fno-omit-frame-pointer"
++	can_unwind_signal=no
++	slow_pthread_self=no
++	;;
+   *-*-freebsd*)
+ 	slow_pthread_self=
+ 	;;

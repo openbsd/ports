@@ -1,0 +1,48 @@
+$OpenBSD: patch-boehm-gc_dyn_load_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- boehm-gc/dyn_load.c.orig	Sat Nov 12 09:53:59 2011
++++ boehm-gc/dyn_load.c	Sat Nov 12 10:28:04 2011
+@@ -60,6 +60,7 @@
+     !defined(HPUX) && !(defined(LINUX) && defined(__ELF__)) && \
+     !defined(RS6000) && !defined(SCO_ELF) && !defined(DGUX) && \
+     !(defined(FREEBSD) && defined(__ELF__)) && \
++    !(defined(OPENBSD) && defined(__ELF__)) && \
+     !(defined(NETBSD) && defined(__ELF__)) && !defined(HURD) && \
+     !defined(DARWIN)
+  --> We only know how to find data segments of dynamic libraries for the
+@@ -90,9 +91,9 @@
+ 
+ #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
+     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
++    (defined(OPENBSD) && defined(__ELF__)) || \
+     (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
+ #   include <stddef.h>
+-#   include <elf.h>
+ #   include <link.h>
+ #endif
+ 
+@@ -106,7 +107,7 @@
+ #        define ElfW(type) Elf64_##type
+ #      endif
+ #    else
+-#      ifdef NETBSD
++#      if defined(NETBSD) || defined(OPENBSD)
+ #        if ELFSIZE == 32
+ #          define ElfW(type) Elf32_##type
+ #        else
+@@ -301,6 +302,7 @@ void GC_register_dynamic_libraries()
+ 
+ #if defined(LINUX) && defined(__ELF__) || defined(SCO_ELF) || \
+     (defined(FREEBSD) && defined(__ELF__)) || defined(DGUX) || \
++    (defined(OPENBSD) && defined(__ELF__)) || \
+     (defined(NETBSD) && defined(__ELF__)) || defined(HURD)
+ 
+ 
+@@ -492,7 +494,7 @@ GC_bool GC_register_main_static_data()
+ /* This doesn't necessarily work in all cases, e.g. with preloaded
+  * dynamic libraries.						*/
+ 
+-#if defined(NETBSD)
++#if defined(NETBSD) || defined(OPENBSD)
+ #  include <sys/exec_elf.h>
+ /* for compatibility with 1.4.x */
+ #  ifndef DT_DEBUG

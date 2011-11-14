@@ -1,0 +1,12 @@
+$OpenBSD: patch-lto-plugin_Makefile_in,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- lto-plugin/Makefile.in.orig	Sun Nov 13 18:11:38 2011
++++ lto-plugin/Makefile.in	Sun Nov 13 18:12:11 2011
+@@ -540,7 +540,7 @@ $(in_gcc_libs) : $(gcc_build_dir)/%: %
+ 	  echo WARNING: $* is static, not copying to $@ >&2 ; \
+ 	else \
+ 	  $(mkinstalldirs) $(gcc_build_dir) && \
+-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $* `pwd`/$@ ; \
++	cp $* `pwd`/$@ ; \
+ 	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

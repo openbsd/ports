@@ -1,0 +1,12 @@
+$OpenBSD: patch-libjava_configure,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
+--- libjava/configure.orig	Tue Nov  1 19:14:49 2011
++++ libjava/configure	Tue Nov  1 19:15:31 2011
+@@ -20727,7 +20727,7 @@ case "$THREADS" in
+ 	# support for weak references to pthread_* functions ala gthr.h API.
+ 	THREADSPEC='%{!pthread: %{!shared: %eUnder this configuration, the user must provide -pthread when linking.}}'
+ 	;;
+-     *-*-freebsd*)
++     *-*-freebsd* | *-*-openbsd*)
+ 	# FreeBSD >=5.3 implements a model much closer to other modern UNIX
+ 	# systems which support threads and -lpthread.
+ 	THREADLDFLAGS=-pthread

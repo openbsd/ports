@@ -1,0 +1,39 @@
+$OpenBSD: patch-libstdc++-v3_src_Makefile_in,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- libstdc++-v3/src/Makefile.in.orig	Wed Mar 16 17:59:24 2011
++++ libstdc++-v3/src/Makefile.in	Sat Nov 12 21:05:50 2011
+@@ -340,7 +340,7 @@ WARN_CXXFLAGS = \
+ AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
+ 
+ # Cross compiler support.
+-toolexeclib_LTLIBRARIES = libstdc++.la
++toolexeclib_LTLIBRARIES = libestdc++.la
+ @ENABLE_SYMVERS_TRUE@CLEANFILES = libstdc++-symbols.ver $(version_dep)
+ @ENABLE_SYMVERS_DARWIN_TRUE@@ENABLE_SYMVERS_TRUE@version_arg = -Wl,-exported_symbols_list,libstdc++-symbols.explist
+ @ENABLE_SYMVERS_FALSE@version_arg = 
+@@ -456,6 +456,8 @@ sources = \
+ 	${host_sources} \
+ 	${host_sources_extra}
+ 
++include $(top_srcdir)/../libversions
++
+ libstdc___la_SOURCES = $(sources)
+ libstdc___la_LIBADD = \
+ 	$(GLIBCXX_LIBS) \
+@@ -466,7 +468,7 @@ libstdc___la_DEPENDENCIES = \
+ 	$(top_builddir)/libsupc++/libsupc++convenience.la
+ 
+ libstdc___la_LDFLAGS = \
+-	-version-info $(libtool_VERSION) ${version_arg} -lm
++	$(LIBestdc++_LTVERSION) ${version_arg} -lm
+ 
+ libstdc___la_LINK = $(CXXLINK) $(libstdc___la_LDFLAGS)
+ 
+@@ -589,7 +591,7 @@ clean-toolexeclibLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libstdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) 
++libestdc++.la: $(libstdc___la_OBJECTS) $(libstdc___la_DEPENDENCIES) 
+ 	$(libstdc___la_LINK) -rpath $(toolexeclibdir) $(libstdc___la_OBJECTS) $(libstdc___la_LIBADD) $(LIBS)
+ 
+ mostlyclean-compile:

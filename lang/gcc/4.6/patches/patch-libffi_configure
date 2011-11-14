@@ -1,0 +1,13 @@
+$OpenBSD: patch-libffi_configure,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- libffi/configure.orig	Sat Nov 12 13:54:59 2011
++++ libffi/configure	Sat Nov 12 13:59:37 2011
+@@ -11410,6 +11410,9 @@ case "$host" in
+  powerpc64-*-freebsd*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;
++  powerpc-*-openbsd*)
++	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
++	;;
+   powerpc*-*-rtems*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;

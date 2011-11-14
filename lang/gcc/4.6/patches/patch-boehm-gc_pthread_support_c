@@ -1,0 +1,22 @@
+$OpenBSD: patch-boehm-gc_pthread_support_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+--- boehm-gc/pthread_support.c.orig	Sat Nov 12 10:42:07 2011
++++ boehm-gc/pthread_support.c	Sat Nov 12 10:44:30 2011
+@@ -892,6 +892,9 @@ void GC_thr_init()
+ 	  GC_nprocs = sysconf(_SC_NPROC_ONLN);
+ 	  if (GC_nprocs <= 0) GC_nprocs = 1;
+ #       endif
++#	if defined(GC_OPENBSD_THREADS)
++	 GC_nprocs = 1;
++#	endif
+ #       if defined(GC_DARWIN_THREADS) || defined(GC_FREEBSD_THREADS)
+ 	  int ncpus = 1;
+ 	  size_t len = sizeof(ncpus);
+@@ -966,7 +969,7 @@ void GC_init_parallel()
+ }
+ 
+ 
+-#if !defined(GC_DARWIN_THREADS)
++#if !defined(GC_DARWIN_THREADS) && !defined(GC_OPENBSD_THREADS)
+ int WRAP_FUNC(pthread_sigmask)(int how, const sigset_t *set, sigset_t *oset)
+ {
+     sigset_t fudged_set;
