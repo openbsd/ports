@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- gcc/config/alpha/alpha.c.orig	Sat Nov 12 13:09:38 2011
-+++ gcc/config/alpha/alpha.c	Sat Nov 12 13:22:02 2011
+$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.2 2011/11/14 15:37:55 pascal Exp $
+--- gcc/config/alpha/alpha.c.orig	Sat Aug  6 20:41:14 2011
++++ gcc/config/alpha/alpha.c	Mon Nov 14 15:58:46 2011
 @@ -227,6 +227,10 @@ alpha_handle_option (size_t code, const char *arg, int
        target_flags |= MASK_IEEE_CONFORMANT;
        break;
@@ -30,3 +30,57 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Ex
  
    /* Align labels and loops for optimal branching.  */
    /* ??? Kludge these by not doing anything if we don't optimize and also if
+@@ -7844,6 +7854,8 @@ alpha_expand_prologue (void)
+   if (flag_stack_check)
+     probed_size += STACK_CHECK_PROTECT;
+ 
++if (flag_stack_check || STACK_CHECK_BUILTIN)
++  {
+   if (probed_size <= 32768)
+     {
+       if (probed_size > 4096)
+@@ -7937,6 +7949,44 @@ alpha_expand_prologue (void)
+ 							? -frame_size + 64
+ 							: -frame_size))));
+     }
++    }
++  else
++    {
++      if (frame_size <= 32768)
++	{
++	  if (frame_size != 0)
++	    FRP (emit_insn (gen_adddi3 (stack_pointer_rtx, stack_pointer_rtx,
++					GEN_INT (TARGET_ABI_UNICOSMK
++						 ? -frame_size + 64
++						 : -frame_size))));
++	}
++      else
++	{
++	  rtx count = gen_rtx_REG (DImode, 23);
++	  rtx seq;
++ 
++	  emit_move_insn (count, GEN_INT (TARGET_ABI_UNICOSMK
++					  ? -frame_size + 64
++					  : -frame_size));
++	  seq = emit_insn (gen_adddi3 (stack_pointer_rtx, stack_pointer_rtx,
++				       count));
++ 
++	  /* This alternative is special, because the DWARF code cannot
++	     possibly intuit through the loop above.  So we invent this
++	     note it looks at instead.  */
++	  RTX_FRAME_RELATED_P (seq) = 1;
++	  REG_NOTES (seq)
++	    = gen_rtx_EXPR_LIST (REG_FRAME_RELATED_EXPR,
++				 gen_rtx_SET (VOIDmode, stack_pointer_rtx,
++				   gen_rtx_PLUS (Pmode, stack_pointer_rtx,
++						 GEN_INT (TARGET_ABI_UNICOSMK
++							  ? -frame_size + 64
++							  : -frame_size))),
++				 REG_NOTES (seq));
++	}
++    }
++
++
+ 
+   if (!TARGET_ABI_UNICOSMK)
+     {
