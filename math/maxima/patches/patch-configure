@@ -1,0 +1,31 @@
+$OpenBSD: patch-configure,v 1.1 2011/11/14 20:48:43 edd Exp $
+
+/bin/sh can't do this in POSIX mode on OpenBSD.
+
+Similar to this:
+https://bugs.launchpad.net/intltool/+bug/639857
+
+Reported upstream here:
+https://sourceforge.net/tracker/?func=detail&aid=3436157&group_id=4933&atid=104933
+
+
+--- configure.orig	Sat Nov 12 12:14:12 2011
++++ configure	Sat Nov 12 12:15:17 2011
+@@ -4571,12 +4571,12 @@ if test x"${exec_prefix}" = xNONE ; then
+ else
+ 	tmp_exec_prefix="${exec_prefix}"
+ fi
+-expanded_top_srcdir="`(cd \"$top_srcdir\" 1>/dev/null 2>/dev/null; pwd)`"
++expanded_top_srcdir=`(cd "$top_srcdir" 1>/dev/null 2>/dev/null; pwd)`
+ expanded_exec_prefix="${tmp_exec_prefix}"
+-expanded_libdir="`eval \"exec_prefix=${tmp_exec_prefix};echo ${libdir}\"`"
+-expanded_libexecdir="`eval \"exec_prefix=${tmp_exec_prefix};echo ${libexecdir}\"`"
+-expanded_datadir="`eval \"prefix=${tmp_prefix};datarootdir=${datarootdir};echo ${datadir}\"`"
+-expanded_infodir="`eval \"prefix=${tmp_prefix};datarootdir=${datarootdir};echo ${infodir}\"`"
++expanded_libdir=`eval "exec_prefix=${tmp_exec_prefix};echo ${libdir}"`
++expanded_libexecdir=`eval "exec_prefix=${tmp_exec_prefix};echo ${libexecdir}"`
++expanded_datadir=`eval "prefix=${tmp_prefix};datarootdir=${datarootdir};echo ${datadir}"`
++expanded_infodir=`eval "prefix=${tmp_prefix};datarootdir=${datarootdir};echo ${infodir}"`
+ 
+ 
+ 

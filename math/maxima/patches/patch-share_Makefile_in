@@ -1,0 +1,22 @@
+$OpenBSD: patch-share_Makefile_in,v 1.1 2011/11/14 20:48:43 edd Exp $
+--- share/Makefile.in.orig	Thu Nov 10 12:22:36 2011
++++ share/Makefile.in	Thu Nov 10 12:23:02 2011
+@@ -1373,18 +1373,6 @@ EXTRA_DIST = $(genericdirDATA)
+ all: all-am
+ 
+ .SUFFIXES:
+-$(srcdir)/Makefile.in:  $(srcdir)/Makefile.am $(top_srcdir)/common.mk $(top_srcdir)/src/sharefiles.mk $(am__configure_deps)
+-	@for dep in $?; do \
+-	  case '$(am__configure_deps)' in \
+-	    *$$dep*) \
+-	      cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh \
+-		&& exit 0; \
+-	      exit 1;; \
+-	  esac; \
+-	done; \
+-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu  share/Makefile'; \
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  share/Makefile
+ .PRECIOUS: Makefile
+ Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
+ 	@case '$?' in \
