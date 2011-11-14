@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.17 2011/11/06 15:42:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.18 2011/11/14 21:57:47 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 6 2011 $
+.Dd $Mdocdate: November 14 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,12 +23,14 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl acCeqrRsuUx
+.Op Fl aceqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
+.Op Fl C Ar pathlist
 .Op Fl D Ar PARAM Ns = Ns Ar value
 .Op Fl f Ar m
 .Op Fl h Ar hosts
+.Op Fl I Ar subdirlist
 .Op Fl j Ar n
 .Op Fl L Ar logdir
 .Op Fl m Ar threshold
@@ -72,9 +74,10 @@ Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
 .It Fl c
 Clean port working directory and log before each build.
-.It Fl C
-Don't clean port working directory after build.
-Warning: requires insane amounts of diskspace for a full build.
+.It Fl C Ar pathlist
+Don't clean port working directories after build.
+Use a list of simple pkgpaths, as this does not take multi and flavors into 
+account.
 .It Fl D Ar PARAM Ns = Ns Ar value
 Set defined parameter to value.
 Known parameters are as follows:
@@ -151,6 +154,9 @@ file can also define a start-up script, as
 STARTUP=path
 .Ed
 which will be run at start-up on each machine.
+.It Fl I Ar subdirlist
+List of pkgpaths to install, on the local box.
+This will also add them to the list of things to build.
 .It Fl j Ar n
 Number of concurrent local jobs to run (defaults to hw.ncpu if no hosts file).
 .It Fl L Ar logdir

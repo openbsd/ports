@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.35 2011/11/13 22:18:04 espie Exp $
+# $OpenBSD: Engine.pm,v 1.36 2011/11/14 21:57:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,6 +78,11 @@ sub already_done
 {
 }
 
+sub start_install
+{
+	return 0;
+}
+
 sub start
 {
 	my $self = shift;
@@ -85,6 +90,9 @@ sub start
 	if (@{$self->{engine}{requeued}} > 0) {
 		$self->{engine}->rebuild_info($core);
 		return;
+	}
+	if ($self->start_install($core)) {
+		return $core;
 	}
 	my $o = $self->sorted($core);
 	while (my $v = $o->next) {
@@ -153,7 +161,32 @@ sub new
 	my ($class, $engine, $builder) = @_;
 	my $o = $class->SUPER::new($engine);
 	$o->{builder} = $builder;
+	$o->{toinstall} = [];
 	return $o;
+}
+
+sub will_install
+{
+	my ($self, $v) = @_;
+	push(@{$self->{toinstall}}, $v);
+}
+
+sub start_install
+{
+	my ($self, $core) = @_;
+	return 0 unless $core->is_local;
+	if (my $v = pop @{$self->{toinstall}}) {
+		$self->{builder}->install($v, $core);
+		return 1;
+	} else {
+		return 0;
+	}
+}
+
+sub non_empty
+{
+	my $self = shift;
+	return  $self->SUPER::non_empty || @{$self->{toinstall}} > 0;
 }
 
 sub new_queue
@@ -480,6 +513,9 @@ sub check_buildable
 				if ($self->adjust($v, 'RDEPENDS') == 0) {
 					delete $self->{built}{$v};
 					$self->{installable}{$v} = $v;
+					if ($v->{wantinstall}) {
+						$self->{buildable}->will_install($v);
+					}
 					$self->log_no_ts('I', $v);
 					$changes++;
 				} elsif (my $d = $self->should_ignore($v, 

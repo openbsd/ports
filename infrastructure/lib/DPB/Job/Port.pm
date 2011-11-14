@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.15 2011/11/12 13:19:26 espie Exp $
+# $OpenBSD: Port.pm,v 1.16 2011/11/14 21:57:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -195,6 +195,39 @@ sub finalize
 	return 1;
 }
 
+package DPB::Task::Port::Install;
+our @ISA=qw(DPB::Task::Port::NoTime);
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $v = $job->{v};
+
+	my $sudo = OpenBSD::Paths->sudo;
+	$self->redirect($job->{log});
+	my @cmd = ('/usr/sbin/pkg_add');
+	if ($job->{builder}->{update}) {
+		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
+	}
+	if ($job->{builder}->{forceupdate}) {
+		push(@cmd,  "-Dinstalled");
+	}
+	print join(' ', @cmd, $v->fullpkgname, "\n");
+	my $path = $job->{builder}->{fullrepo}.'/';
+	$ENV{PKG_PATH} = $path;
+	exec{$sudo}($sudo, @cmd, $v->fullpkgname);
+	exit(1);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	$core->{status} = 0;
+	return 1;
+}
+
 
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
@@ -330,14 +363,14 @@ sub new
 		push(@{$job->{tasks}}, 
 		    DPB::Task::Port::Signature->new('signature'));
 	} else {
-		$job->add_normal_tasks;
+		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath});
 	}
 	return $job;
 }
 
 sub add_normal_tasks
 {
-	my $self = shift;
+	my ($self, $dontclean) = @_;
 
 	my @todo;
 	my $builder = $self->{builder};
@@ -358,7 +391,7 @@ sub add_normal_tasks
 	if ($builder->{size}) {
 		push @todo, 'show-fake-size';
 	}
-	if (!$builder->{dontclean}) {
+	if (!$dontclean) {
 		push @todo, 'clean';
 	}
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
@@ -485,5 +518,23 @@ sub really_watch
 	}
 	return 0;
 }
+
+package DPB::Job::Port::Install;
+our @ISA = qw(DPB::Job::Port);
+
+sub new
+{
+	my ($class, $log, $v, $builder, $e) = @_;
+	my $job = bless {
+	    tasks => [],
+	    log => $log, v => $v,
+	    builder => $builder, endcode => $e},
+		$class;
+
+	push(@{$job->{tasks}}, 
+		    DPB::Task::Port::Install->new('install'));
+	return $job;
+}
+
 1;
 

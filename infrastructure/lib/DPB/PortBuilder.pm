@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.13 2011/11/12 13:19:26 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.14 2011/11/14 21:57:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,7 @@ sub new
 	my $self = bless {
 	    state => $state,
 	    clean => $state->opt('c'),
-	    dontclean => $state->opt('C'),
+	    dontclean => $state->{dontclean},
 	    fetch => $state->opt('f'),
 	    size => $state->opt('s'),
 	    rebuild => $state->opt('R'),
@@ -177,6 +177,16 @@ sub build
 	print $lock "pid=$core->{pid}\n";
 	print $lock "start=$start (", DPB::Util->time2string($start), ")\n";
 	$job->set_watch($self->{logger}, $v);
+	return $core;
+}
+
+sub install
+{
+	my ($self, $v, $core) = @_;
+	my $log = $self->{logger}->make_logs($v);
+	my $job = DPB::Job::Port::Install->new($log, $v, $self, 
+	    sub {$core->mark_ready; });
+	$core->start_job($job, $v);
 	return $core;
 }
 

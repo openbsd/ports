@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.28 2011/11/09 08:28:55 espie Exp $
+# $OpenBSD: dpb,v 1.29 2011/11/14 21:57:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -55,6 +55,7 @@ sub init
 sub handle_options
 {
 	my $state = shift;
+	$state->{dontclean} = {};
 	$state->{opt} = {
 		a => sub {
 			$state->{all} = 1;
@@ -81,6 +82,29 @@ sub handle_options
 				push @main::ARGV, $_;
 			}
 		},
+		I => sub {
+			my $file = shift;
+			open my $fh, '<', $file or die "Can't open $file\n";
+			my $_;
+			while (<$fh>) {
+				chomp;
+				next if m/^\#/;
+				my $p = DPB::PkgPath->new($_);
+				$p->{wantinstall} = 1;
+				push @main::ARGV, $_;
+			}
+		},
+		C => sub {
+			my $file = shift;
+			open my $fh, '<', $file or die "Can't open $file\n";
+			my $_;
+			while (<$fh>) {
+				chomp;
+				next if m/^\#/;
+				s/\,.*//;
+				$state->{dontclean}{$_} = 1;
+			}
+		},
 		b => sub {
 			push(@{$state->{build_files}}, shift);
 		},
@@ -89,9 +113,10 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acCeqrRstuUvh:xA:f:F:j:m:P:b:L:S:',
-    "[-acCerRsuUvx] [-A arch] [-f N] [-F N][-j N] [-P plist] [-h hosts]",
-    "[-L logdir] [-b log] [-t ctimeout] [-m threshold] [path ...]");
+	$state->SUPER::handle_options('aceqrRstuUvh:xA:C:f:F:I:j:m:P:b:L:S:',
+    "[-acerRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-j N]",
+    "[-P plist] [-h hosts] [-L logdir] [-b log] [-t ctimeout] [-m threshold]",
+    "[path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // 
 	    join("/", $state->ports, "logs", $state->arch);
