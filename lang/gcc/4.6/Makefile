@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/14 17:34:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/14 22:55:10 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc sparc64 
 #BROKEN=adjust for types changes
@@ -72,7 +72,6 @@ REGRESS_DEPENDS += 	libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
 .endif
 .if ${BUILD_PACKAGES:M-f95}
 LANGS := ${LANGS},fortran
-CONFIGURE_ARGS += --with-gmp=${LOCALBASE}
 .endif
 .if ${BUILD_PACKAGES:M-objc}
 LANGS := ${LANGS},objc
@@ -136,6 +135,7 @@ CONFIGURE_ARGS += \
 	--with-gnu-as \
 	--enable-threads=posix \
 	--enable-wchar_t \
+	--with-gmp=${LOCALBASE} \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the
