@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/08 23:58:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/14 11:40:53 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -70,10 +70,11 @@ do-install:
 		${PREFIX}/lib/rubinius/bin/rbx -rrbconfig -e \
 		"puts RbConfig::CONFIG['$$dir']"`; done
 
-# Some failures and likely infinite loop in mspec ci
+# 45/56 failures in mspec on i386/amd64, most of which are due to lacking
+# Fiber support
 do-regress:
-	cd ${WRKSRC} && ${RAKE} vm:test
-	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci --background --agent
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} vm:test
+	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci -f s
 
 REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
