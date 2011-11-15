@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/04 08:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/15 17:57:59 sebastia Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -44,6 +44,8 @@ CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 MAKE_FLAGS +=		SNACK_INSTALL_PATH=${MODTCL_TCLDIR} 	
+
+REGRESS_TARGET =	test
 
 pre-configure:
 	cp ${FILESDIR}/jkAudIO_sndio.c ${WRKSRC}/unix/
