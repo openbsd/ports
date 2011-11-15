@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_Makefile_in,v 1.3 2010/03/20 16:58:11 jasper Exp $
---- man/Makefile.in.orig	Tue Feb 16 10:32:56 2010
-+++ man/Makefile.in	Fri Feb 19 09:33:11 2010
-@@ -57,13 +57,12 @@ install : sawfish.info installdirs
+$OpenBSD: patch-man_Makefile_in,v 1.4 2011/11/15 19:32:49 jasper Exp $
+--- man/Makefile.in.orig	Tue Nov 15 20:12:29 2011
++++ man/Makefile.in	Tue Nov 15 20:13:08 2011
+@@ -56,13 +56,12 @@ install : sawfish.info installdirs
  	done
  	-install-info --info-dir=$(DESTDIR)$(infodir) sawfish.info
  	for f in sawfish*.1; do \
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_Makefile_in,v 1.3 2010/03/20 16:58:11 jasper Exp $
 +		$(INSTALL_DATA) $$f $(DESTDIR)$(prefix)/man/man1/; \
  	done
  
- installdirs : mkinstalldirs
+ installdirs : $(top_srcdir)/mkinstalldirs
  	$(SHELL) $< $(DESTDIR)$(infodir)
 -	$(SHELL) $< $(DESTDIR)$(prefix)/share/man/man1/
 +	$(SHELL) $< $(DESTDIR)$(prefix)/man/man1/
