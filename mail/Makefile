@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2011/09/21 08:07:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.272 2011/11/15 17:11:40 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -47,6 +47,7 @@
      SUBDIR += dspam,pgsql
      SUBDIR += elm
      SUBDIR += evolution
+     SUBDIR += evolution-ews
      SUBDIR += evolution-exchange
      SUBDIR += evolution-rss
      SUBDIR += exim
