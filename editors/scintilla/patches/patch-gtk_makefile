@@ -1,37 +1,47 @@
-$OpenBSD: patch-gtk_makefile,v 1.8 2010/10/03 18:09:01 jeremy Exp $
---- gtk/makefile.orig	Tue Aug 17 20:03:30 2010
-+++ gtk/makefile	Sat Oct  2 20:04:57 2010
-@@ -6,7 +6,7 @@
+$OpenBSD: patch-gtk_makefile,v 1.9 2011/11/15 19:13:39 jeremy Exp $
+--- gtk/makefile.orig	Mon Aug  1 04:49:04 2011
++++ gtk/makefile	Tue Nov 15 19:33:22 2011
+@@ -6,14 +6,7 @@
  # Builds for GTK+ 2 and no longer supports GTK+ 1.
  # Also works with ming32-make on Windows.
  
 -.SUFFIXES: .cxx .c .o .h .a
+-ifdef CLANG
+-CC = clang
+-CCOMP = clang
+-else
+-CC = g++
+-CCOMP = gcc
+-endif
 +.SUFFIXES: .cxx .c .o .h .a .so
- ifdef CLANG
- CC = clang
- CCOMP = clang
-@@ -23,14 +23,17 @@ RANLIB = ranlib
- endif
- endif
+ AR = ar
+ RANLIB = touch
  
+@@ -36,17 +29,20 @@ DEL = del /q
+ COMPLIB=..\bin\scintilla.a
+ else
+ DEL = rm -f
 -COMPLIB=../bin/scintilla.a
 +COMPLIB=../bin/libscintilla.a
 +LEXERLIB=../bin/libscintilla_lexers.a
 +SHAREDLIB=../bin/libscintilla.so.${LIBscintilla_VERSION}
 +SHAREDLEXER=../bin/libscintilla_lexers.so.${LIBscintilla_lexers_VERSION}
+ endif
  
  vpath %.h ../src ../include ../lexlib
  vpath %.cxx ../src ../lexlib ../lexers
  
 -INCLUDEDIRS=-I ../include -I ../src -I ../lexlib
-+INCLUDEDIRS=-I ../include -I ../src -I ../lexlib -I /usr/local/include
- #~ DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DDISABLE_GDK_FONT
++INCLUDEDIRS=-I ../include -I ../src -I ../lexlib -I${LOCALBASE}/include
+ ifdef CHECK_DEPRECATED
+ DEPRECATED=-DGDK_PIXBUF_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DDISABLE_GDK_FONT
+ endif
 -CXXBASEFLAGS=-Wall -Wno-missing-braces -Wno-char-subscripts -Wno-long-long -pedantic -DGTK -DSCI_LEXER $(INCLUDEDIRS) $(DEPRECATED)
 +CXXBASEFLAGS=-Wall -Wno-missing-braces -Wno-char-subscripts -Wno-long-long -pedantic -DGTK -DSCI_LEXER -Dunix $(INCLUDEDIRS) $(DEPRECATED)
  
  ifdef NOTHREADS
  THREADFLAGS=-DG_THREADS_IMPL_NONE
-@@ -41,35 +44,70 @@ endif
+@@ -57,7 +53,7 @@ endif
  ifdef DEBUG
  CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS) $(THREADFLAGS)
  else
@@ -39,7 +49,8 @@ $OpenBSD: patch-gtk_makefile,v 1.8 2010/10/03 18:09:01 jeremy Exp $
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  
- CONFIGFLAGS:=$(shell pkg-config --cflags gtk+-2.0)
+ CFLAGS:=$(CXXFLAGS)
+@@ -66,28 +62,62 @@ CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION)
  MARSHALLER=scintilla-marshal.o
  
  .cxx.o:
@@ -48,9 +59,10 @@ $OpenBSD: patch-gtk_makefile,v 1.8 2010/10/03 18:09:01 jeremy Exp $
 +.cxx.so:
 +	$(CXX) -fPIC $(CONFIGFLAGS) $(CXXFLAGS) -o $@ -c $<
  .c.o:
- 	$(CCOMP) $(CONFIGFLAGS) $(CXXFLAGS) -w -c $<
+-	$(CCOMP) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
++	$(CC) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
 +.c.so:
-+	$(CCOMP) -fPIC $(CONFIGFLAGS) $(CXXFLAGS) -w -o $@ -c $<
++	$(CC) -fPIC $(CONFIGFLAGS) $(CFLAGS) -w -o $@ -c $<
  
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
@@ -77,7 +89,7 @@ $OpenBSD: patch-gtk_makefile,v 1.8 2010/10/03 18:09:01 jeremy Exp $
 +endif
 +
  clean:
- 	rm -f *.o $(COMPLIB)
+ 	$(DEL) *.o $(COMPLIB)
  
  deps:
 -	$(CC) -MM $(CONFIGFLAGS) $(CXXFLAGS) *.cxx ../src/*.cxx | sed -e 's/\/usr.* //' | grep [a-zA-Z] >deps.mak
@@ -94,7 +106,6 @@ $OpenBSD: patch-gtk_makefile,v 1.8 2010/10/03 18:09:01 jeremy Exp $
 +$(COMPLIB): $(LIBOBJS)
  	$(AR) rc $@ $^
  	$(RANLIB) $@
-+
 +
 +$(LEXERLIB): $(LEXOBJS)
 +	$(AR) rc $@ $^
