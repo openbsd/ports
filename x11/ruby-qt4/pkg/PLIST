@@ -1,0 +1,98 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/15 16:27:44 jeremy Exp $
+bin/rbqt4api
+@bin bin/rbrcc
+@bin bin/rbuic4
+@bin bin/smokeapi
+@bin bin/smokegen
+include/qtruby/
+include/qtruby/marshall.h
+include/qtruby/marshall_basetypes.h
+include/qtruby/marshall_complex.h
+include/qtruby/marshall_macros.h
+include/qtruby/marshall_primitives.h
+include/qtruby/marshall_types.h
+include/qtruby/qtruby.h
+include/qtruby/smokeruby.h
+include/smoke/
+include/smoke/qtcore_smoke.h
+include/smoke/qtdbus_smoke.h
+include/smoke/qtgui_smoke.h
+include/smoke/qtmultimedia_smoke.h
+include/smoke/qtnetwork_smoke.h
+include/smoke/qtopengl_smoke.h
+include/smoke/qtscript_smoke.h
+include/smoke/qtsql_smoke.h
+include/smoke/qtsvg_smoke.h
+include/smoke/qttest_smoke.h
+include/smoke/qtuitools_smoke.h
+include/smoke/qtwebkit_smoke.h
+include/smoke/qtxml_smoke.h
+include/smoke/qtxmlpatterns_smoke.h
+include/smokegen/
+include/smokegen/generator_export.h
+include/smokegen/generatorenvironment.h
+include/smokegen/generatorpreprocessor.h
+include/smokegen/generatorvisitor.h
+include/smokegen/name_compiler.h
+include/smokegen/options.h
+include/smokegen/type.h
+include/smokegen/type_compiler.h
+include/smokeqt4.h
+lib/libcppparser.so
+@comment lib/libqtruby4shared.so.2
+@lib lib/libqtruby4shared.so.${LIBqtruby4shared_VERSION}
+@comment lib/libsmokebase.so.3
+@lib lib/libsmokebase.so.${LIBsmokebase_VERSION}
+@comment lib/libsmokeqtcore.so.3
+@lib lib/libsmokeqtcore.so.${LIBsmokeqtcore_VERSION}
+@comment lib/libsmokeqtdbus.so.3
+@lib lib/libsmokeqtdbus.so.${LIBsmokeqtdbus_VERSION}
+@comment lib/libsmokeqtgui.so.3
+@lib lib/libsmokeqtgui.so.${LIBsmokeqtgui_VERSION}
+@comment lib/libsmokeqtmultimedia.so.3
+@lib lib/libsmokeqtmultimedia.so.${LIBsmokeqtmultimedia_VERSION}
+@comment lib/libsmokeqtnetwork.so.3
+@lib lib/libsmokeqtnetwork.so.${LIBsmokeqtnetwork_VERSION}
+@comment lib/libsmokeqtopengl.so.3
+@lib lib/libsmokeqtopengl.so.${LIBsmokeqtopengl_VERSION}
+@comment lib/libsmokeqtscript.so.3
+@lib lib/libsmokeqtscript.so.${LIBsmokeqtscript_VERSION}
+@comment lib/libsmokeqtsql.so.3
+@lib lib/libsmokeqtsql.so.${LIBsmokeqtsql_VERSION}
+@comment lib/libsmokeqtsvg.so.3
+@lib lib/libsmokeqtsvg.so.${LIBsmokeqtsvg_VERSION}
+@comment lib/libsmokeqttest.so.3
+@lib lib/libsmokeqttest.so.${LIBsmokeqttest_VERSION}
+@comment lib/libsmokeqtuitools.so.3
+@lib lib/libsmokeqtuitools.so.${LIBsmokeqtuitools_VERSION}
+@comment lib/libsmokeqtwebkit.so.3
+@lib lib/libsmokeqtwebkit.so.${LIBsmokeqtwebkit_VERSION}
+@comment lib/libsmokeqtxml.so.3
+@lib lib/libsmokeqtxml.so.${LIBsmokeqtxml_VERSION}
+@comment lib/libsmokeqtxmlpatterns.so.3
+@lib lib/libsmokeqtxmlpatterns.so.${LIBsmokeqtxmlpatterns_VERSION}
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/active_item_model.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/active_table_model.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt/qtruby4.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt3.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/Qt4.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtscript/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtscript/qtscript.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qttest/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qttest/qttest.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtuitools/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtuitools/qtuitools.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtwebkit/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/qtwebkit/qtwebkit.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/qtruby4.so
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/qtscript.so
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/qttest.so
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/qtuitools.so
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/qtwebkit.so
+lib/smokegen/
+lib/smokegen/generator_dump.so
+lib/smokegen/generator_smoke.so
+share/smokegen/
+share/smokegen/qt-config.xml
+share/smokegen/qtdefines
