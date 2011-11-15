@@ -1,0 +1,3 @@
+This package provides a connector for Evolution which adds support for
+Microsoft Exchange servers versions 2007 and later through the Exchange
+Web Services (EWS) interface.
