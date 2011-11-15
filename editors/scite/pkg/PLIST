@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/03 18:09:01 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/11/15 19:17:09 jeremy Exp $
 @bin bin/SciTE
 share/doc/scite/
 share/doc/scite/CommandValues.html
@@ -47,6 +47,7 @@ share/scite/forth.properties
 share/scite/fortran.properties
 share/scite/freebasic.properties
 share/scite/gap.properties
+share/scite/haskell.properties
 share/scite/html.properties
 share/scite/inno.properties
 share/scite/kix.properties
@@ -58,6 +59,7 @@ share/scite/lua.properties
 share/scite/matlab.properties
 share/scite/metapost.properties
 share/scite/mmixal.properties
+share/scite/modula3.properties
 share/scite/nimrod.properties
 share/scite/nncrontab.properties
 share/scite/nsis.properties

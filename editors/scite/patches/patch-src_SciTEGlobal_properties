@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_SciTEGlobal_properties,v 1.4 2010/10/03 18:09:01 jeremy Exp $
---- src/SciTEGlobal.properties.orig	Fri Jul 30 19:56:35 2010
-+++ src/SciTEGlobal.properties	Sat Oct  2 19:38:57 2010
-@@ -239,7 +239,7 @@ if PLAT_WIN
+$OpenBSD: patch-src_SciTEGlobal_properties,v 1.5 2011/11/15 19:17:09 jeremy Exp $
+--- src/SciTEGlobal.properties.orig	Tue Nov 15 02:37:08 2011
++++ src/SciTEGlobal.properties	Tue Nov 15 02:37:24 2011
+@@ -253,7 +253,7 @@ if PLAT_WIN
  	command.scite.help.subsystem=2
  if PLAT_GTK
  	command.print.*=a2ps "$(FileNameExt)"
--	command.scite.help=netscape "file://$(SciteDefaultHome)/SciTEDoc.html"
-+	command.scite.help=firefox "file://__DOCDIR__/SciTEDoc.html"
+-	command.scite.help=xdg-open "file://$(SciteDefaultHome)/SciTEDoc.html"
++	command.scite.help=xdg-open "file://__DOCDIR__/SciTEDoc.html"
  
  # Internationalisation
  # Japanese input code page 932 and ShiftJIS character set 128
