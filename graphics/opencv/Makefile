@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/14 09:54:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/15 00:09:31 sthen Exp $
 
 ONLY_FOR_ARCH=		${GCC4_ARCHS}
 
@@ -10,7 +10,7 @@ COMMENT-docs=		documentation for OpenCV
 V=			2.2.0
 DISTNAME=		OpenCV-$V
 PKGNAME-main=		opencv-$V
-REVISION-main=		4
+REVISION-main=		5
 PKGNAME-docs=		opencv-docs-$V
 CATEGORIES=		graphics devel
 
