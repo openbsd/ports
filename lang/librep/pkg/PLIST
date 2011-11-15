@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/02 17:22:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/11/15 19:32:14 jasper Exp $
 @bin bin/rep
 @bin bin/rep-remote
 bin/rep-xgettext
@@ -239,6 +239,8 @@ share/rep/lisp/rep/util/ispell.jl
 share/rep/lisp/rep/util/ispell.jlc
 share/rep/lisp/rep/util/memoize.jl
 share/rep/lisp/rep/util/memoize.jlc
+share/rep/lisp/rep/util/misc.jl
+share/rep/lisp/rep/util/misc.jlc
 share/rep/lisp/rep/util/repl.jl
 share/rep/lisp/rep/util/repl.jlc
 share/rep/lisp/rep/util/time.jl

@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_Makefile_in,v 1.1 2009/12/22 11:05:47 ajacoutot Exp $
---- man/Makefile.in.orig	Fri Dec 18 18:31:45 2009
-+++ man/Makefile.in	Sat Dec 19 11:05:18 2009
-@@ -50,18 +50,17 @@ install : librep.info installdirs
+$OpenBSD: patch-man_Makefile_in,v 1.2 2011/11/15 19:32:14 jasper Exp $
+--- man/Makefile.in.orig	Tue Nov 15 19:58:14 2011
++++ man/Makefile.in	Tue Nov 15 19:58:38 2011
+@@ -49,18 +49,17 @@ install : librep.info installdirs
  	done
  	-install-info --info-dir=$(DESTDIR)$(infodir) librep.info
  	for f in rep*.1; do \
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_Makefile_in,v 1.1 2009/12/22 11:05:47 ajacoutot Exp $
 +		$(INSTALL_DATA) $$f $(DESTDIR)$(prefix)/man/man1/; \
  	done
  
- installdirs : mkinstalldirs
+ installdirs : $(top_srcdir)/mkinstalldirs
  	$(SHELL) $< $(DESTDIR)$(infodir)
 -	$(SHELL) $< $(DESTDIR)$(prefix)/share/man/man1/
 +	$(SHELL) $< $(DESTDIR)$(prefix)/man/man1/

@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2010/01/09 19:38:18 ajacoutot Exp $
---- src/Makefile.in.orig	Fri Jan  8 19:30:43 2010
-+++ src/Makefile.in	Sat Jan  9 20:30:24 2010
-@@ -58,7 +58,7 @@ all : librep.la $(DL_OBJS) check-dl rep rep-remote rep
+$OpenBSD: patch-src_Makefile_in,v 1.6 2011/11/15 19:32:14 jasper Exp $
+--- src/Makefile.in.orig	Tue Nov 15 19:59:39 2011
++++ src/Makefile.in	Tue Nov 15 20:00:48 2011
+@@ -57,7 +57,7 @@ all : librep.la $(DL_OBJS) check-dl rep rep-remote rep
  
  librep.la : $(OBJS) $(LIBOBJS)
  	$(LIBTOOL) --mode=link --tag=CC $(CC) $(LDFLAGS) \
--	  -version-info $(libversion) -export-symbols $(srcdir)/librep.sym \
-+	  ${LIBrep_LTVERSION} -export-symbols $(srcdir)/librep.sym \
+-	  -version-info $(libversion) \
++	  ${LIBrep_LTVERSION} \
  	  -o $@ $^ -rpath $(libdir) $(LIBS) $(GMP_LIBS)
  
  rep : $(REP_OBJS) $(EXTRA_LIBOBJS) librep.la
