@@ -1,4 +1,4 @@
-.\"	$OpenBSD: resolve-lib.1,v 1.3 2010/09/09 19:17:06 jasper Exp $
+.\"	$OpenBSD: resolve-lib.1,v 1.4 2011/11/15 20:02:38 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 9 2010 $
+.Dd $Mdocdate: November 15 2011 $
 .Dt RESOLVE-LIB 1
 .Os
 .Sh NAME
@@ -22,7 +22,9 @@
 .Nd resolve library specs during ports build
 .Sh SYNOPSIS
 .Nm resolve-lib
+.Op Fl needed
 .Op Fl noshared
+.Op Fl silent
 .Ar spec ...
 .Sh DESCRIPTION
 .Nm
@@ -57,3 +59,15 @@ not found will result in an error message and exit code.
 If the option
 .Fl noshared
 is used, shared libraries will be ignored.
+.Pp
+If the option
+.Fl silent
+is used, nothing will be displayed.
+.Pp
+The option
+.Fl needed
+is used to sort out
+.Ev LIB_DEPENDS :
+.Nm
+will succeed if at least one of the libraries matches against a shared
+library passed on the command line.
