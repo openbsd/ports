@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/01 20:57:04 naddy Exp $
-lib/libolgx.so
-@lib lib/libolgx.so.${LIBolgx_VERSION}
-lib/libxview.so
-@lib lib/libxview.so.${LIBxview_VERSION}

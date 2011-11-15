@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2011/11/14 14:12:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2011/11/15 21:40:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -10,7 +10,6 @@
      SUBDIR += brltty
      SUBDIR += bsdiff
      SUBDIR += buffer
-     SUBDIR += calentool
      SUBDIR += cbb
      SUBDIR += ccze
      SUBDIR += cdrdao

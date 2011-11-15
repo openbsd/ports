@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/03/28 15:19:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2011/11/15 21:40:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -50,7 +50,6 @@
      SUBDIR += ted
      SUBDIR += texmaker
      SUBDIR += texworks
-     SUBDIR += textedit
      SUBDIR += uemacs
      SUBDIR += vim
      SUBDIR += vim,no_x11

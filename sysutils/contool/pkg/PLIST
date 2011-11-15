@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:39:32 espie Exp $
-bin/contool
-lib/help/
-lib/help/contool.info
-@man man/cat1/contool.0

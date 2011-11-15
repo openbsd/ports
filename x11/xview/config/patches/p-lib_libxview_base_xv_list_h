@@ -1,9 +1,0 @@
-$OpenBSD: p-lib_libxview_base_xv_list_h,v 1.1 2003/12/30 02:00:39 espie Exp $
---- lib/libxview/base/xv_list.h.orig	2003-12-30 02:53:03.000000000 +0100
-+++ lib/libxview/base/xv_list.h	2003-12-30 02:53:18.000000000 +0100
-@@ -91,4 +91,4 @@ xv_sl_remove();
- 	for (_this = (_type)_head, _next = XV_SL_SAFE_NEXT(_this);	\
- 	     _this; _this = (_type)_next, _next = XV_SL_SAFE_NEXT(_this))
- 
--#endif _xv_list_h_already_included
-+#endif /* _xv_list_h_already_included */

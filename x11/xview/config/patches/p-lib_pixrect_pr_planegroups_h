@@ -1,9 +1,0 @@
-$OpenBSD: p-lib_pixrect_pr_planegroups_h,v 1.1 2003/12/30 02:00:39 espie Exp $
---- lib/pixrect/pr_planegroups.h.orig	2003-12-30 02:53:32.000000000 +0100
-+++ lib/pixrect/pr_planegroups.h	2003-12-30 02:53:38.000000000 +0100
-@@ -47,4 +47,4 @@ extern int pr_get_plane_group();
- extern void pr_set_plane_group();
- extern void pr_set_planes();
- 
--#endif	pr_planegroups_DEFINED
-+#endif	/* pr_planegroups_DEFINED */

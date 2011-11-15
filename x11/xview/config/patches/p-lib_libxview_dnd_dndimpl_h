@@ -1,9 +1,0 @@
-$OpenBSD: p-lib_libxview_dnd_dndimpl_h,v 1.1 2003/12/30 02:00:39 espie Exp $
---- lib/libxview/dnd/dndimpl.h.orig	2003-12-30 02:52:47.000000000 +0100
-+++ lib/libxview/dnd/dndimpl.h	2003-12-30 02:52:54.000000000 +0100
-@@ -112,4 +112,4 @@ Pkg_private Xv_opaque	dnd_set_avlist();
- Pkg_private Xv_opaque	dnd_get_attr();
- Pkg_private int		dnd_destroy();
- 
--#endif ~xview_dndimpl_DEFINED
-+#endif /* ~xview_dndimpl_DEFINED */
