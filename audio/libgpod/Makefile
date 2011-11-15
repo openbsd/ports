@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/11/15 15:47:52 mpi Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
 
-VERSION=	0.7.2
+VERSION=	0.8.0
 DISTNAME=	libgpod-${VERSION}
 PKGNAME-main=	${DISTNAME}
-REVISION-main =	7
 PKGNAME-python= py-gpod-${VERSION}
-REVISION-python = 7
-SHARED_LIBS=	gpod	720.0
+SHARED_LIBS=	gpod	721.0	# 7.1
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
@@ -38,21 +36,26 @@ RUN_DEPENDS-python=	audio/py-mutagen
 LIB_DEPENDS-python=	${LIB_DEPENDS} \
 			devel/libffi \
 			${BUILD_PKGPATH},-main
-LIB_DEPENDS=		devel/glib2 \
+LIB_DEPENDS=		databases/sqlite3 \
+			devel/glib2 \
+			devel/libplist \
+			devel/py-gobject \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m z pcre
-WANTLIB += gdk_pixbuf-2.0 xml2 png ffi
+WANTLIB += gdk_pixbuf-2.0 xml2 png ffi sqlite3 plist
+WANTLIB-main += ${WANTLIB} c pthread
 WANTLIB-python += ${WANTLIB} gpod
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-hal \
-		--with-python="${MODPY_BIN}"
-CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CXXFLAGS="${CXXFLAGS} -ftrampolines" \
-		CFLAGS="${CFLAGS} -ftrampolines"
+CONFIGURE_ARGS+=--enable-gdk-pixbuf \
+		--enable-pygobject \
+		--without-hal \
+		--without-libimobiledevice \
+		--without-mono \
+		--with-python="${MODPY_BIN}" \
+		--localedir=${TRUEPREFIX}/share/locale
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2009/04/24 09:45:48 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/11/15 15:47:52 mpi Exp $
 @pkgpath audio/libgpod
+@bin bin/ipod-read-sysinfo-extended
 %%SHARED%%
 include/gpod-1.0/
 include/gpod-1.0/gpod/
@@ -7,6 +8,7 @@ include/gpod-1.0/gpod/itdb.h
 lib/libgpod.a
 lib/libgpod.la
 lib/pkgconfig/libgpod-1.0.pc
+@comment lib/pkgconfig/libgpod-sharp.pc
 share/gtk-doc/html/libgpod/
 share/gtk-doc/html/libgpod/ch01.html
 share/gtk-doc/html/libgpod/home.png
