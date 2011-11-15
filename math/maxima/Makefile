@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/14 21:35:35 edd Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/15 13:02:58 shadchin Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.25.1
-REVISION =		0
+REVISION =		1
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
@@ -33,9 +33,9 @@ FLAVORS=		no_x11
 FLAVOR?=
 
 .if !${FLAVOR:L:Mno_x11}
-RUN_DEPENDS =		math/gnuplot
 MODULES+=		x11/tk
-RUN_DEPENDS+=		${MODTK_RUN_DEPENDS}
+RUN_DEPENDS +=		${MODTK_RUN_DEPENDS} \
+			math/gnuplot
 BUILD_DEPENDS +=	${MODTK_RUN_DEPENDS}
 CONFIGURE_ARGS +=	--with-wish=${MODTK_BIN}
 .endif
