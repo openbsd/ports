@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/14 22:55:10 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/15 00:42:52 pascal Exp $
 
-ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc sparc64 
+ONLY_FOR_ARCHS = alpha amd64 i386 powerpc sparc sparc64
 #BROKEN=adjust for types changes
 
 V = 4.6.2
@@ -105,13 +105,6 @@ post-extract:
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
 
-post-install:
-.if ${BUILD_PACKAGES:M-ada}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
-.endif
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed
 CONFIGURE_ENV += am_cv_func_iconv=no
 CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 
@@ -155,9 +148,11 @@ ALL_TARGET = bootstrap
 MAKE_FLAGS = libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
 
-.if ${MACHINE_ARCH} == "m68k" || ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
+.if ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
+PIC = 1
 PKG_ARGS += -DPIC=1
 .else
+PIC = 0
 PKG_ARGS += -DPIC=0
 .endif
 
@@ -195,6 +190,20 @@ LIB_DEPENDS-estdc =
 
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG=x86_64-unknown-openbsd${OSREV}
+.endif
+
+post-install:
+.if ${BUILD_PACKAGES:M-ada}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
+.endif
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include-fixed
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/libgcc.a
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/libgcov.a
+.if ${PIC} == "1"
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/fpic/libgcc.a
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/fpic/libgcov.a
 .endif
 
 .include <bsd.port.mk>
