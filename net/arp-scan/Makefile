@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/03 09:47:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/15 23:02:23 sthen Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.nta-monitor.com/tools/arp-scan/
