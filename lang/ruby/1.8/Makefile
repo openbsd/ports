@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/08 23:40:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/15 00:05:16 jeremy Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -20,7 +20,9 @@ REVISION-main=		2
 REVISION-iconv=		1
 REVISION-gdbm=		1
 REVISION-tk=		1
+REVISION-ri_docs=	0
 
+PKG_ARCH-ri_docs=	*
 PKGSPEC-main=		ruby->=1.8,<1.9
 
 CONFIGURE_ARGS=		--program-suffix=18 \
@@ -38,10 +40,10 @@ WANTLIB-main= 		c m readline termcap util crypto ncurses ssl z
 LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 
-PSEUDO_FLAVORS= 	no_x11
+PSEUDO_FLAVORS= 	no_x11 no_ri_docs
 FLAVOR?=
 
-MULTI_PACKAGES=		-main -iconv -gdbm -ri_docs
+MULTI_PACKAGES=		-main -iconv -gdbm
 
 WANTLIB-iconv =		${MODLIBICONV_WANTLIB} c m ruby18
 LIB_DEPENDS-iconv =	${MODLIBICONV_LIB_DEPENDS} \
@@ -62,6 +64,12 @@ WANTLIB-tk =		X11 c m ruby18 tcl85 tk85
 LIB_DEPENDS-tk =		tk->=8.5,<8.6:x11/tk/8.5 \
 			lang/ruby/${REV},-main
 RUN_DEPENDS-tk =		
+.endif
+
+.if !${FLAVOR:L:Mno_ri_docs}
+MULTI_PACKAGES +=	-ri_docs
+ALL_TARGET =		all rdoc
+INSTALL_TARGET =	install install-doc
 .endif
 
 # Known regression failures in OpenSSL extension on sparc64

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/09 19:23:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/15 00:04:15 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for ruby
@@ -18,6 +18,9 @@ PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
 PKGNAME-ri_docs =	ruby-ri_docs-${VERSION}.${PATCHLEVEL}
 
 REVISION-main =		0
+REVISION-ri_docs=	0
+
+PKG_ARCH-ri_docs=	*
 
 PKGSPEC-main =		ruby->=1.9,<1.10
 
@@ -31,8 +34,8 @@ CONFIGURE_ENV =		LIBruby19_VERSION=${LIBruby19_VERSION} \
 			ac_cv_prog_DOXYGEN="" \
 			ac_cv_prog_DOT=""
 
-ALL_TARGET =		all V=1
-INSTALL_TARGET =	install-all V=1
+ALL_TARGET =		V=1 main
+INSTALL_TARGET =	V=1 install-nodoc
 
 MODULES =		converters/libiconv
 USE_GROFF =		Yes
@@ -44,10 +47,10 @@ LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
 			devel/libffi
 RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
 
-PSEUDO_FLAVORS=		no_x11
+PSEUDO_FLAVORS=		no_x11 no_ri_docs
 FLAVOR?=
 
-MULTI_PACKAGES =	-main -gdbm -dbm -ri_docs
+MULTI_PACKAGES =	-main -gdbm -dbm
 
 WANTLIB-gdbm =		c m gdbm ruby19
 LIB_DEPENDS-gdbm =	databases/gdbm \
@@ -68,6 +71,12 @@ WANTLIB-tk =		X11 c m ruby19 tcl85 tk85
 LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
 			lang/ruby/${REV},-main>=${VERSION}.${PATCHLEVEL}
 RUN_DEPENDS-tk =	
+.endif
+
+.if !${FLAVOR:L:Mno_ri_docs}
+MULTI_PACKAGES +=	-ri_docs
+ALL_TARGET +=		rdoc
+INSTALL_TARGET +=	install-doc
 .endif
 
 SUBST_VARS +=		RUBYLIBREV
