@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/05 17:50:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/15 18:06:10 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--datadir=${PREFIX}/share/examples \
 			LIBTkhtml30_VERSION=${LIBTkhtml30_VERSION}
 FAKE_FLAGS =		PKG_DIR=tkhtml
-NO_REGRESS =		Yes
+REGRESS_TARGET =	test
+REGRESS_IS_INTERACTIVE = X11
 
 .include <bsd.port.mk>
