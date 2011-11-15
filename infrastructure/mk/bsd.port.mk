@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1128 2011/11/15 20:08:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1129 2011/11/15 20:32:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1604,6 +1604,14 @@ _check_needed = \
 		needed=true; \
 	fi
 
+# both wantlib-args use this
+_show_found = \
+	for k in $$found; do \
+		case $$k in *.a) ;; \
+		*) echo "-W $$k";; \
+		esac; \
+	done
+
 # fairly good approximation of libraries we want
 # XXX this is ksh, be less perfect with pure sh
 _lib=/lib*.{so.+([0-9]).+([0-9]),a}
@@ -3056,11 +3064,7 @@ port-wantlib-args:
 	@${_cache_fragment}; \
 	if found=`${_list_port_libs} | ${_resolve_lib} ${_DEPRUNLIBS:QL}`; \
 	then \
-		for k in $$found; do \
-			case $$k in *.a) ;; \
-			*) echo "-W $$k";; \
-			esac; \
-		done; \
+		${_show_found}; \
 	else \
 		exit 1; \
 	fi
@@ -3075,11 +3079,7 @@ fake-wantlib-args:
 			esac; \
 		done } | perl -pe 's,\Q${WRKINST}\E,,g' | \
 			${_resolve_lib} ${_DEPRUNLIBS:QL}`; then \
-			for k in $$found; do \
-				case $$k in *.a) ;; \
-				*) echo "-W $$k";; \
-				esac; \
-			done; \
+				${_show_found}; \
 		else \
 			exit 1; \
 		fi
