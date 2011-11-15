@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1129 2011/11/15 20:32:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1130 2011/11/15 20:41:41 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1596,13 +1596,10 @@ _libs2cache = \
 	fi
 
 # is this subdir actually needed as a libs depend ?
-_check_needed = \
-	needed=false; \
+_if_check_needed = \
 	${_parse_spec}; \
 	${_libs2cache}; \
-	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <${_cached_libs}; then \
-		needed=true; \
-	fi
+	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <${_cached_libs}
 
 # both wantlib-args use this
 _show_found = \
@@ -3036,8 +3033,7 @@ lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
 
 lib-depends-args:
 	@${_cache_fragment}; ${_emit_lib_depends}| while ${_read_spec}; do \
-		${_check_needed}; \
-		if $$needed; then \
+		${_if_check_needed}; then \
 			${_complete_pkgspec}; \
 			echo "-P $$pkgpath:$$pkg:$$default"; \
 		fi; \
@@ -3097,8 +3093,7 @@ _print-package-signature-run:
 _print-package-signature-lib:
 	@${_list_port_libs}| ${_resolve_lib} ${_DEPRUNLIBS:QL}; \
 	${_emit_lib_depends}| while ${_read_spec}; do \
-		${_check_needed}; \
-		if $$needed; then \
+		${_if_check_needed}; then \
 			${_complete_pkgspec}; \
 			echo "$$default"; \
 		fi; \
