@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/06 21:12:51 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/15 18:55:30 jasper Exp $
 
 COMMENT=	AVR simulator
 
 DISTNAME=	simulavr-0.1.2.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.nongnu.org/simulavr/
@@ -25,6 +25,7 @@ CONFIGURE_ARGS+=	--enable-curses=yes \
 USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/doxygen \
 			textproc/texi2html \
 			print/texlive/base
 RUN_DEPENDS=		devel/avr/binutils \
