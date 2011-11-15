@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2011/06/23 12:55:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2011/11/15 16:52:51 naddy Exp $
 
 COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1
-REV=		16.2	# Debian
+REV=		16.3	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REV}
