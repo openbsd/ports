@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/11/15 11:05:22 mpi Exp $
+bin/plutil
+@bin bin/plutil-1.4
+include/plist/
+include/plist/Array.h
+include/plist/Boolean.h
+include/plist/Data.h
+include/plist/Date.h
+include/plist/Dictionary.h
+include/plist/Integer.h
+include/plist/Node.h
+include/plist/Real.h
+include/plist/String.h
+include/plist/Structure.h
+include/plist/plist++.h
+include/plist/plist.h
+@lib lib/libplist++.so.${LIBplist++_VERSION}
+@lib lib/libplist.so.${LIBplist_VERSION}
+lib/pkgconfig/libplist++.pc
+lib/pkgconfig/libplist.pc
