@@ -1,0 +1,22 @@
+$OpenBSD: patch-test_runtests_in,v 1.1.1.1 2011/11/15 16:35:15 jeremy Exp $
+
+Fix bug not respecting ruby version you pass to configure.
+
+Use gdiff since our diff doesn't implement --strip-trailing-cr.
+
+--- test/runtests.in.orig	Mon Nov 14 16:38:12 2011
++++ test/runtests.in	Mon Nov 14 16:41:51 2011
+@@ -118,11 +118,11 @@ function run_test()
+ 		
+ 		exec_cmd=./$binary
+ 		[ $lang = java ] && exec_cmd="java ${root}"
+-		[ $lang = ruby ] && exec_cmd="ruby ${code_src}"
++		[ $lang = ruby ] && exec_cmd="${ruby_engine} ${code_src}"
+ 		[ $lang = csharp ] && [ "$csharp_compiler" = gmcs ] && exec_cmd="mono ${exec_cmd}"
+ 
+ 		$exec_cmd 2>&1 > $output;
+-		if diff --strip-trailing-cr $expected_out $output > /dev/null; then
++		if gdiff --strip-trailing-cr $expected_out $output > /dev/null; then
+ 			echo "passed";
+ 		else
+ 			echo "FAILED";

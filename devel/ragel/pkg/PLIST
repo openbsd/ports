@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/15 16:35:15 jeremy Exp $
+@bin bin/ragel
+@man man/man1/ragel.1
+share/doc/ragel/
+share/doc/ragel/CREDITS
+share/doc/ragel/ChangeLog
