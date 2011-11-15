@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1127 2011/11/14 22:02:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1128 2011/11/15 20:08:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -89,7 +89,6 @@ CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
 DPB ?= All Fetch
 _SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
-_PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
@@ -1601,19 +1600,9 @@ _check_needed = \
 	needed=false; \
 	${_parse_spec}; \
 	${_libs2cache}; \
-	exec 3>&2; \
-	for d in ${_DEPRUNLIBS:QL}; do \
-		exec 2>/dev/null; \
-		if check=`${_resolve_lib} $$d <${_cached_libs}`; \
-		then \
-			case "$$check" in \
-				*.a) ;; \
-				*) needed=true; \
-					break;; \
-			esac; \
-		fi; \
-	done; \
-	exec 2>&3
+	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <${_cached_libs}; then \
+		needed=true; \
+	fi
 
 # fairly good approximation of libraries we want
 # XXX this is ksh, be less perfect with pure sh
@@ -1623,7 +1612,7 @@ _list_system_libs = \
 	for i in /usr/lib${_lib} ${X11BASE}/lib${_lib}; do echo $$i; done
 
 _list_port_libs = \
-	{ ${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
+	{ ${MAKE} show-run-depends|while read subdir; do \
 		${_flavor_fragment}; \
 		${_libs2cache}; \
 		cat ${_cached_libs}; \
@@ -2152,7 +2141,7 @@ _do_libs_too = NO_SHARED_LIBS=Yes
 _extra_info =
 .  for _s in ${MULTI_PACKAGES}
 _extra_info += PLIST${_s}='${PLIST${_s}}'
-_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} ${MAKE} run-dir-depends ${_do_libs_too}|${_sort_dependencies}`"
+_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} ${MAKE} show-run-depends ${_do_libs_too}`"
 .  endfor
 
 _internal-plist _internal-update-plist: _internal-fake
@@ -3106,8 +3095,7 @@ _print-package-signature-run:
 	done
 
 _print-package-signature-lib:
-	@${_cache_fragment}; \
-	${_list_port_libs}| ${_resolve_lib} ${_DEPRUNLIBS:QL}; \
+	@${_list_port_libs}| ${_resolve_lib} ${_DEPRUNLIBS:QL}; \
 	${_emit_lib_depends}| while ${_read_spec}; do \
 		${_check_needed}; \
 		if $$needed; then \
@@ -3219,6 +3207,35 @@ all-dir-depends:
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
+.endif
+
+# simpler list of package depends, no need to tsort, no duplicates
+_recurse-show-run-depends:
+	@for d in ${_RUN_DEP}; do \
+		fgrep -q -e "|$$d|" $${_DEPENDS_FILE} && continue; \
+		echo "$$d"; \
+		echo "|$$d|" >> $${_DEPENDS_FILE}; \
+		subdir=$$d; ${_flavor_fragment}; \
+		if ! eval $$toset ${MAKE} _recurse-show-run-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	done
+
+show-run-depends:
+.if !empty(_RUN_DEP)
+	@${_depfile_fragment}; \
+	echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
+	for d in ${_RUN_DEP}; do \
+		fgrep -q -e "|$$d|" $${_DEPENDS_FILE} && continue; \
+		echo "$$d"; \
+		echo "|$$d|" >> $${_DEPENDS_FILE}; \
+		subdir=$$d; ${_flavor_fragment}; \
+		if ! eval $$toset ${MAKE} _recurse-show-run-depends; then  \
+			echo 1>&2 "*** Problem checking deps in \"$$dir\"."; \
+			exit 1; \
+		fi; \
+	done
 .endif
 
 link-categories:
@@ -3380,7 +3397,8 @@ _all_phony = ${_recursive_depends_targets} \
     show-required-by subpackage uninstall mirror-maker-fetch _print-metadata \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
-	port-wantlib-args fake-wantlib-args no-wantlib-args
+	port-wantlib-args fake-wantlib-args no-wantlib-args \
+	_recurse-show-run-depends show-run-depends
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
