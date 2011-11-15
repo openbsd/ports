@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/25 21:55:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2011/11/15 16:05:19 naddy Exp $
 
-COMMENT-main=	lightweight BitTorrent command line and daemon client
-COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
-COMMENT-qt=	lightweight BitTorrent client with Qt interface
+COMMENT-main=	BitTorrent command line and daemon client
+COMMENT-gtk=	BitTorrent client with GTK+ interface
+COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.33
+VER=		2.42
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
-REVISION-gtk=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -38,10 +37,10 @@ FLAVOR?=
 WANTLIB=	c crypto curl event_core event_extra idn m pthread ssl z
 WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm GL atk-1.0 cairo \
-		dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0 pangoft2-1.0 \
-		pangocairo-1.0 pixman-1 png pcre pthread-stubs xcb \
+		cairo-gobject drm expat ffi fontconfig freetype \
+		gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 pangoft2-1.0 \
+		pangocairo-1.0 pixman-1 png pcre pthread-stubs stdc++ xcb \
 		xcb-render xcb-shm
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
 		expat fontconfig freetype stdc++
@@ -51,8 +50,7 @@ MODULES=	devel/gettext textproc/intltool
 LIB_DEPENDS=	devel/libevent2 \
 		net/curl
 LIB_DEPENDS-gtk=${LIB_DEPENDS} \
-		x11/gtk+2 \
-		x11/dbus-glib
+		x11/gtk+3
 LIB_DEPENDS-qt=	${LIB_DEPENDS} \
 		x11/qt4
 
@@ -68,10 +66,7 @@ TAR=		${LOCALBASE}/bin/gtar
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-shared \
-		--disable-libnotify \
-		--disable-libappindicator \
-		--disable-libcanberra
+CONFIGURE_ARGS=	--disable-shared
 # unaligned accesses throughout
 CONFIGURE_ARGS+=--disable-utp
 
@@ -81,7 +76,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gtk}
-CONFIGURE_ARGS+=--disable-gtk
+CONFIGURE_ARGS+=--without-gtk
 .endif
 
 .if ${BUILD_PACKAGES:M-qt}
