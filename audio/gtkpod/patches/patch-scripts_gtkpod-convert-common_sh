@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_gtkpod-convert-common_sh,v 1.1 2011/11/15 15:43:52 mpi Exp $
+--- scripts/gtkpod-convert-common.sh	Sun Nov 13 19:05:33 2011
++++ scripts/gtkpod-convert-common.sh	Sun Nov 13 19:05:45 2011
+@@ -90,7 +90,7 @@
+ case "$filetype" in
+ 	flac)	decoder="flac" ; options="-d -c --"  ;;
+ 	oga|ogg|ogv|ogx)
+-		decoder="oggdec" ; options="--output - --" ;;
++		decoder="oggdec" ; options="-Q --output - --" ;;
+ 	m4a)	decoder="faad" ; options="-o -" ;;
+ 	wav)	decoder="" ;;
+ 	*)	exit 4 ;;

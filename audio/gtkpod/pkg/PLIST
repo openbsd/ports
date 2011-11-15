@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/22 15:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/11/15 15:43:52 mpi Exp $
 @bin bin/gtkpod
 @man man/man1/gtkpod.1
 share/applications/gtkpod.desktop
@@ -119,6 +119,7 @@ share/icons/hicolor/64x64/apps/gtkpod.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gtkpod.svg
+share/locale/ca/LC_MESSAGES/gtkpod.mo
 share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/es/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo

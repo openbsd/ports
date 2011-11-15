@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/11/15 15:43:52 mpi Exp $
+--- src/Makefile.in	Sun Nov 13 17:32:12 2011
++++ src/Makefile.in	Sun Nov 13 17:33:08 2011
+@@ -282,7 +282,7 @@
+     rb_rating_helper.c rb_rating_helper.h \
+     rb_cell_renderer_rating.c rb_cell_renderer_rating.h
+ 
+-gtkpod_LDADD = $(LIBS) -lm $(INTLLIBS) -ldl @LIBOBJS@
++gtkpod_LDADD = $(LIBS) -lm $(INTLLIBS) @LIBOBJS@
+ EXTRA_DIST = getopt.h
+ CLEANFILES = date_parser.c date_parser2.c
+ all: all-am
