@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/09/26 20:37:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/11/15 17:35:56 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -1578,6 +1578,7 @@ share/locale/ml/LC_MESSAGES/gedit.mo
 share/locale/mn/LC_MESSAGES/gedit.mo
 share/locale/mr/LC_MESSAGES/gedit.mo
 share/locale/ms/LC_MESSAGES/gedit.mo
+share/locale/my/LC_MESSAGES/gedit.mo
 share/locale/nb/LC_MESSAGES/gedit.mo
 share/locale/nds/LC_MESSAGES/gedit.mo
 share/locale/ne/LC_MESSAGES/gedit.mo
