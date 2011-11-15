@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2011/11/14 14:59:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2011/11/15 17:12:49 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -14,8 +14,9 @@ REVISION-plugins=	0
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
 # and bump:
-# mail/evolution-rss
+# mail/evolution-ews
 # mail/evolution-exchange
+# mail/evolution-rss
 # x11/gnome/tracker
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
