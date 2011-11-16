@@ -1,10 +1,7 @@
 NAME = $(GLEW_NAME)
 CC ?= cc
 LD ?= cc
-ifneq (undefined, $(origin GLEW_MX))
-CFLAGS.EXTRA = -DGLEW_MX
-endif
-LDFLAGS.SO = -shared
+PICFLAG = -fPIC
 LDFLAGS.EXTRA = -L$(X11BASE)/lib
 LDFLAGS.GL = -lm -lXmu -lXi -lGLU -lGL -lXext -lX11
 LDFLAGS.STATIC = -Wl,-Bstatic
@@ -16,4 +13,8 @@ POPT =
 BIN.SUFFIX =
 LIB.SHARED = lib$(NAME).so.$(LIBGLEW_VERSION)
 LIB.STATIC = lib$(NAME).a
-SHARED_OBJ_EXT = so
+LDFLAGS.SO = -shared $(PICFLAG)
+LIB.SHARED.MX = lib$(NAME)mx.so.$(LIBGLEWMX_VERSION)
+LIB.STATIC.MX = lib$(NAME)mx.a
+LDFLAGS.SO.MX = -shared $(PICFLAG)
+SHARED_OBJ_EXT = pic_o

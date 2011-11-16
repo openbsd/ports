@@ -1,2 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/04/13 23:24:01 sthen Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2011/11/16 22:42:02 pascal Exp $
 @lib lib/libGLEW.so.${LIBGLEW_VERSION}
+@lib lib/libGLEWmx.so.${LIBGLEWmx_VERSION}
