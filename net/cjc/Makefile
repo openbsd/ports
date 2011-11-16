@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 11:13:37 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/16 16:00:00 rpointel Exp $
 
 COMMENT=		Jabber client for text terminals
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		cjc-${MODPY_EGG_VERSION}
-REVISION=		3
 CATEGORIES=		net
 
 HOMEPAGE=		http://cjc.jajcus.net/
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}downloads/
+MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/cjc/
 
 MODULES=	lang/python
 
