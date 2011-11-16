@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/17 07:28:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.33 2011/11/16 11:18:40 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
      SUBDIR += affiche
      SUBDIR += back
      SUBDIR += base
+     SUBDIR += batmon
      SUBDIR += cdplayer
      SUBDIR += databasin
      SUBDIR += dbuskit
