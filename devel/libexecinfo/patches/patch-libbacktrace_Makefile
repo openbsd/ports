@@ -1,6 +1,15 @@
-$OpenBSD: patch-libbacktrace_Makefile,v 1.1 2011/11/14 19:14:18 sthen Exp $
---- libbacktrace/Makefile.orig	Sat Nov 12 21:05:03 2011
-+++ libbacktrace/Makefile	Sat Nov 12 21:05:07 2011
+$OpenBSD: patch-libbacktrace_Makefile,v 1.2 2011/11/16 15:12:53 jasper Exp $
+--- libbacktrace/Makefile.orig	Mon May  2 19:23:58 2011
++++ libbacktrace/Makefile	Wed Nov 16 16:00:26 2011
+@@ -13,7 +13,7 @@ CFLAGS+= -fdiagnostics-show-option -Wall -Werror
+ CFLAGS+= -Wall -Werror
+ .endif
+ CFLAGS+= -ggdb3
+-CFLAGS+= -I${LOCALBASE}/include
++CFLAGS+= -I${LOCALBASE}/include ${EXTRA_CFLAGS}
+ LDFLAGS+= -Wl,--export-dynamic
+ HDRS= backtrace.h
+ 
 @@ -26,9 +26,9 @@ CLEANFILES+= backtrace.cat3
  
  includes:

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/14 19:14:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/16 15:12:53 jasper Exp $
 %%SHARED%%
+%%no_mips64%%
 @bin bin/backtrace_test
 include/execinfo.h
 lib/libexecinfo.a
 lib/libexecinfo_p.a
-lib/libexecinfo_pic.a
 @man man/man3/backtrace.3
 @man man/man3/backtrace_symbols.3
 @man man/man3/backtrace_symbols_fd.3

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/14 19:14:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/16 15:12:53 jasper Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
 V =		0.2
 DISTNAME =	backtrace-$V
 PKGNAME =	libexecinfo-$V
+REVISION =	0
 EPOCH =		0
 CATEGORIES =	devel
 
@@ -27,6 +28,14 @@ LDFLAGS+=	-Wl,--export-dynamic
 MAKE_FLAGS =	LIB=execinfo
 FAKE_FLAGS =	PREFIX=${WRKINST}/${TRUEPREFIX} \
 		MANDIR=${PREFIX}/man/man
+
+.if ${MACHINE_ARCH:Mmips64*}
+EXTRA_CFLAGS=   -D__BUILTIN_HACK
+# See bsd.lib.mk:162
+PKG_ARGS+=      -Dno_mips64=0
+.else
+PKG_ARGS+=      -Dno_mips64=1
+.endif
 
 do-configure:
 	printf "major=${LIBexecinfo_VERSION:R}\nminor=${LIBexecinfo_VERSION:E}\n" \

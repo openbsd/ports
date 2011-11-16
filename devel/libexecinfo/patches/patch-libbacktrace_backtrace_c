@@ -1,0 +1,23 @@
+$OpenBSD: patch-libbacktrace_backtrace_c,v 1.1 2011/11/16 15:12:53 jasper Exp $
+
+__builtin_return_address() and __builtin_frame_address()
+can't have a !0 argument on mips.
+
+--- libbacktrace/backtrace.c.orig	Wed Nov 16 16:00:58 2011
++++ libbacktrace/backtrace.c	Wed Nov 16 16:01:38 2011
+@@ -59,6 +59,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
+ 		/* number of HANDLE_FRAME must match BT_MAX_DEPTH */
+ 		switch (i) {
+ 		HANDLE_FRAME(0, i, addr);
++#ifndef __BUILTIN_HACK
+ 		HANDLE_FRAME(1, i, addr);
+ 		HANDLE_FRAME(2, i, addr);
+ 		HANDLE_FRAME(3, i, addr);
+@@ -186,6 +187,7 @@ bt_create_backtrace(void **buffer, int depth, int flag
+ 		HANDLE_FRAME(125, i, addr);
+ 		HANDLE_FRAME(126, i, addr);
+ 		HANDLE_FRAME(127, i, addr);
++#endif
+ 		default:
+ 			goto done;
+ 		}
