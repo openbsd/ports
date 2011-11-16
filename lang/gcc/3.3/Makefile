@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/26 14:06:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2011/11/16 15:23:46 espie Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -103,7 +103,7 @@ post-build:
 .endif
 
 post-extract:
-.if ${BUILD_PACKAGES:M-ada} == "yes"
+.if ${BUILD_PACKAGES:M-ada}
 .  for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
