@@ -1,12 +1,13 @@
---- usr/local/bin/peardev.orig	Fri Jul  8 20:30:24 2011
-+++ usr/local/bin/peardev	Fri Jul  8 20:30:39 2011
+$OpenBSD: patch-usr_local_bin_peardev,v 1.2 2011/11/16 13:29:13 robert Exp $
+--- usr/local/bin/peardev.orig	Wed Nov 16 14:16:34 2011
++++ usr/local/bin/peardev	Wed Nov 16 14:17:14 2011
 @@ -4,10 +4,10 @@
  if test "x$PHP_PEAR_PHP_BIN" != "x"; then
    PHP="$PHP_PEAR_PHP_BIN"
  else
 -  if test "/usr/local/bin/php" = '@'php_bin'@'; then
 +  if test "${MODPHP_BIN}" = '@'php_bin'@'; then
-     PHP=php 
+     PHP=php
    else
 -    PHP="/usr/local/bin/php"
 +    PHP="${MODPHP_BIN}"

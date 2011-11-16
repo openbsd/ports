@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/08/22 14:48:53 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/11/16 13:29:14 robert Exp $
 @conflict php5-pear-*
 @conflict php4-pear-*
 @pkgpath www/php5/core,-pear
 @group daemon
 pear/
+pear/.lock
 pear/data/
 pear/data/PEAR/
 pear/data/PEAR/package.dtd
 pear/data/PEAR/template.spec
 pear/data/Structures_Graph/
 pear/data/Structures_Graph/LICENSE
-pear/data/Structures_Graph/genpackage.xml.pl
-pear/data/Structures_Graph/package.sh
-pear/data/Structures_Graph/publish.sh
 pear/lib/
 pear/lib/.channels/
 pear/lib/.channels/.alias/
 pear/lib/.channels/.alias/pear.txt
 pear/lib/.channels/.alias/pecl.txt
+pear/lib/.channels/.alias/phpdocs.txt
 pear/lib/.channels/__uri.reg
+pear/lib/.channels/doc.php.net.reg
 pear/lib/.channels/pear.php.net.reg
 pear/lib/.channels/pecl.php.net.reg
 pear/lib/.depdb
 pear/lib/.depdblock
-pear/lib/.lock
 pear/lib/.registry/
 pear/lib/.registry/.channel.__uri/
+pear/lib/.registry/.channel.doc.php.net/
 pear/lib/.registry/.channel.pecl.php.net/
 pear/lib/.registry/archive_tar.reg
 pear/lib/.registry/console_getopt.reg
@@ -72,7 +72,6 @@ pear/lib/PEAR/Command/Test.xml
 pear/lib/PEAR/Common.php
 pear/lib/PEAR/Config.php
 @comment pear/lib/PEAR/Config.php.orig
-pear/lib/PEAR/Dependency.php
 pear/lib/PEAR/Dependency2.php
 pear/lib/PEAR/DependencyDB.php
 pear/lib/PEAR/Downloader/
@@ -127,7 +126,6 @@ pear/lib/PEAR/REST/10.php
 pear/lib/PEAR/REST/11.php
 pear/lib/PEAR/REST/13.php
 pear/lib/PEAR/Registry.php
-pear/lib/PEAR/Remote.php
 pear/lib/PEAR/RunTest.php
 pear/lib/PEAR/Task/
 pear/lib/PEAR/Task/Common.php
@@ -147,6 +145,7 @@ pear/lib/PEAR/Validate.php
 pear/lib/PEAR/Validator/
 pear/lib/PEAR/Validator/PECL.php
 pear/lib/PEAR/XMLParser.php
+pear/lib/PEAR5.php
 pear/lib/Structures/
 pear/lib/Structures/Graph/
 pear/lib/Structures/Graph.php
@@ -160,7 +159,6 @@ pear/lib/peclcmd.php
 pear/tests/
 pear/tests/Structures_Graph/
 pear/tests/Structures_Graph/tests/
-pear/tests/Structures_Graph/tests/README
-pear/tests/Structures_Graph/tests/all-tests.php
+pear/tests/Structures_Graph/tests/AllTests.php
 pear/tests/Structures_Graph/tests/testCase/
 pear/tests/Structures_Graph/tests/testCase/BasicGraph.php

@@ -1,15 +1,25 @@
-@comment $OpenBSD: PLIST-utils,v 1.3 2007/05/07 13:46:59 bernd Exp $
+@comment $OpenBSD: PLIST-utils,v 1.4 2011/11/16 13:29:14 robert Exp $
 @conflict php4-core-*
 @group daemon
 bin/pear
+@comment bin/pear.beforesubst
+@comment bin/pear.orig
+@comment bin/pear.orig.beforesubst
 bin/peardev
+@comment bin/peardev.beforesubst
+@comment bin/peardev.orig
+@comment bin/peardev.orig.beforesubst
 bin/pecl
+@comment bin/pecl.beforesubst
+@comment bin/pecl.orig
+@comment bin/pecl.orig.beforesubst
 share/doc/pear/
 share/doc/pear/Archive_Tar/
 share/doc/pear/Archive_Tar/docs/
 share/doc/pear/Archive_Tar/docs/Archive_Tar.txt
 share/doc/pear/PEAR/
 share/doc/pear/PEAR/INSTALL
+share/doc/pear/PEAR/LICENSE
 share/doc/pear/PEAR/README
 share/doc/pear/Structures_Graph/
 share/doc/pear/Structures_Graph/docs/

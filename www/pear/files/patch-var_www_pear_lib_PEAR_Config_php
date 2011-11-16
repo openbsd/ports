@@ -1,12 +1,12 @@
---- ./var/www/pear/lib/PEAR/Config.php.orig	Fri Jul  8 20:29:44 2011
-+++ ./var/www/pear/lib/PEAR/Config.php	Fri Jul  8 20:29:44 2011
-@@ -84,12 +84,7 @@
+$OpenBSD: patch-var_www_pear_lib_PEAR_Config_php,v 1.2 2011/11/16 13:29:13 robert Exp $
+--- var/www/pear/lib/PEAR/Config.php.orig	Wed Nov 16 14:18:34 2011
++++ var/www/pear/lib/PEAR/Config.php	Wed Nov 16 14:20:26 2011
+@@ -80,11 +80,7 @@
  if (getenv('PHP_PEAR_INSTALL_DIR')) {
      define('PEAR_CONFIG_DEFAULT_PHP_DIR', getenv('PHP_PEAR_INSTALL_DIR'));
  } else {
--    if (file_exists($PEAR_INSTALL_DIR) && is_dir($PEAR_INSTALL_DIR)) {
--        define('PEAR_CONFIG_DEFAULT_PHP_DIR',
--               $PEAR_INSTALL_DIR);
+-    if (@file_exists($PEAR_INSTALL_DIR) && is_dir($PEAR_INSTALL_DIR)) {
+-        define('PEAR_CONFIG_DEFAULT_PHP_DIR', $PEAR_INSTALL_DIR);
 -    } else {
 -        define('PEAR_CONFIG_DEFAULT_PHP_DIR', $PEAR_INSTALL_DIR);
 -    }
@@ -14,7 +14,7 @@
  }
  
  // Default for ext_dir
-@@ -112,8 +107,7 @@
+@@ -107,8 +103,7 @@
  if (getenv('PHP_PEAR_DOC_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DOC_DIR', getenv('PHP_PEAR_DOC_DIR'));
  } else {
@@ -24,7 +24,7 @@
  }
  
  // Default for bin_dir
-@@ -127,8 +121,7 @@
+@@ -122,8 +117,7 @@
  if (getenv('PHP_PEAR_DATA_DIR')) {
      define('PEAR_CONFIG_DEFAULT_DATA_DIR', getenv('PHP_PEAR_DATA_DIR'));
  } else {
@@ -34,7 +34,7 @@
  }
  
  // Default for cfg_dir
-@@ -151,8 +144,7 @@
+@@ -146,8 +140,7 @@
  if (getenv('PHP_PEAR_TEST_DIR')) {
      define('PEAR_CONFIG_DEFAULT_TEST_DIR', getenv('PHP_PEAR_TEST_DIR'));
  } else {
@@ -44,18 +44,7 @@
  }
  
  // Default for temp_dir
-@@ -168,9 +160,7 @@
- if (getenv('PHP_PEAR_CACHE_DIR')) {
-     define('PEAR_CONFIG_DEFAULT_CACHE_DIR', getenv('PHP_PEAR_CACHE_DIR'));
- } else {
--    define('PEAR_CONFIG_DEFAULT_CACHE_DIR',
--           System::tmpdir() . DIRECTORY_SEPARATOR . 'pear' .
--           DIRECTORY_SEPARATOR . 'cache');
-+    define('PEAR_CONFIG_DEFAULT_CACHE_DIR', '/var/www/pear'.'/cache');
- }
- 
- // Default for download_dir
-@@ -229,9 +219,7 @@
+@@ -224,9 +217,7 @@
  if (getenv('PHP_PEAR_SIG_BIN')) {
      define('PEAR_CONFIG_DEFAULT_SIG_BIN', getenv('PHP_PEAR_SIG_BIN'));
  } else {

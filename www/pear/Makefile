@@ -1,22 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/16 13:29:13 robert Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
 
-VERSION=	1.7.2
+VERSION=	1.9.4
 DISTNAME=	pear-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	pear-utils-${VERSION}
 CATEGORIES=	www devel
 
-EXTRACT_SUFX=	.tar.bz2
-
-REVISION-main=	2
-REVISION-utils=	3
-
 HOMEPAGE=	http://pear.php.net/
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
-		${MASTER_SITE_FREEBSD_LOCAL:=miwi/}
+MASTER_SITES=	http://blade2k.humppa.hu/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -40,9 +34,13 @@ NO_REGRESS=	Yes
 
 SUBST_VARS=	MODPHP_BIN
 
-do-install:
+pre-fake:
+	@perl -pi -e "s,%%BUNDLEDIR%%,${WRKSRC}/go-pear-bundle,g" ${WRKSRC}/go-pear
 	@perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX-main},g" ${WRKSRC}/go-pear
-	@${MODPHP_BIN} -nq ${WRKSRC}/go-pear
+	@perl -pi -e "s,%%TMPDIR%%,${TMPDIR}/go-pear,g" ${WRKSRC}/go-pear
+
+do-install:
+	@${MODPHP_BIN} -q ${WRKSRC}/go-pear
 
 	@mv ${WRKINST}${PREFIX-main}/bin ${WRKINST}${PREFIX-utils}/
 	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
@@ -51,10 +49,10 @@ do-install:
 	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \;
 	@find ${WRKINST}${PREFIX-utils}/bin -type f -exec perl -pi -e "s,${WRKINST},,g" {} \;
 
-	for _f in patch-usr_local_bin_pear patch-usr_local_bin_peardev \
+	@for _f in patch-usr_local_bin_pear patch-usr_local_bin_peardev \
 		patch-usr_local_bin_pecl patch-var_www_pear_lib_PEAR_Config_php; do \
 		patch -d ${WRKINST} < ${FILESDIR}/$${_f}; done
-	find ${WRKINST}/usr/local/bin -type f -exec ${SUBST_CMD} {} \;
+	@find ${WRKINST}/usr/local/bin -type f -exec ${SUBST_CMD} {} \;
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	@touch ${WRKINST}${PREFIX-main}/pear/.lock
