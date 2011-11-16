@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/11 15:21:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/16 22:58:14 jasper Exp $
 lib/pkgconfig/libquvi-scripts.pc
 @man man/man7/libquvi-scripts.7
 share/libquvi-scripts/
@@ -23,6 +23,7 @@ share/libquvi-scripts/lua/website/charlierose.lua
 share/libquvi-scripts/lua/website/clipfish.lua
 share/libquvi-scripts/lua/website/collegehumor.lua
 share/libquvi-scripts/lua/website/dailymotion.lua
+share/libquvi-scripts/lua/website/foundrymusic.lua
 share/libquvi-scripts/lua/website/foxnews.lua
 share/libquvi-scripts/lua/website/francetelevisions.lua
 share/libquvi-scripts/lua/website/funnyhub.lua
@@ -32,6 +33,7 @@ share/libquvi-scripts/lua/website/globo.lua
 share/libquvi-scripts/lua/website/golem.lua
 share/libquvi-scripts/lua/website/google.lua
 share/libquvi-scripts/lua/website/guardian.lua
+share/libquvi-scripts/lua/website/keezmovies.lua
 share/libquvi-scripts/lua/website/liveleak.lua
 share/libquvi-scripts/lua/website/megavideo.lua
 share/libquvi-scripts/lua/website/metacafe.lua
@@ -45,14 +47,20 @@ share/libquvi-scripts/lua/website/quvi/util.lua
 share/libquvi-scripts/lua/website/sapo.lua
 share/libquvi-scripts/lua/website/sevenload.lua
 share/libquvi-scripts/lua/website/soundcloud.lua
+share/libquvi-scripts/lua/website/spankwire.lua
 share/libquvi-scripts/lua/website/spiegel.lua
 share/libquvi-scripts/lua/website/tagtele.lua
 share/libquvi-scripts/lua/website/ted.lua
 share/libquvi-scripts/lua/website/theonion.lua
 share/libquvi-scripts/lua/website/tmunderground.lua
+share/libquvi-scripts/lua/website/totallynsfw.lua
+share/libquvi-scripts/lua/website/tube8.lua
 share/libquvi-scripts/lua/website/tvlux.lua
 share/libquvi-scripts/lua/website/videobash.lua
 share/libquvi-scripts/lua/website/vimeo.lua
+share/libquvi-scripts/lua/website/xhamster.lua
+share/libquvi-scripts/lua/website/xvideos.lua
 share/libquvi-scripts/lua/website/yfrog.lua
+share/libquvi-scripts/lua/website/youjizz.lua
 share/libquvi-scripts/lua/website/youtube.lua
 share/libquvi-scripts/version
