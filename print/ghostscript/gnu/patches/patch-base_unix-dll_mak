@@ -1,22 +1,22 @@
-$OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
---- base/unix-dll.mak.orig	Tue Jan 18 11:22:12 2011
-+++ base/unix-dll.mak	Tue Jun 28 13:50:10 2011
+$OpenBSD: patch-base_unix-dll_mak,v 1.3 2011/11/16 12:43:23 kili Exp $
+--- base/unix-dll.mak.orig	Fri Aug  5 13:12:20 2011
++++ base/unix-dll.mak	Mon Nov 14 18:48:00 2011
 @@ -23,10 +23,6 @@
  #  export LD_LIBRARY_PATH=/insert-path-here/sobin
  #  export GS_LIB=/insert-path-here/lib
  
 -# Location for building shared object
--SOOBJRELDIR=../soobj
--SOBINRELDIR=../sobin
+-SODIRPREFIX=so
+-SODEBUGDIRPREFIX=sodebug
 -
  # ------------------- Ghostscript shared object --------------------------- #
  
  # Shared object names
-@@ -34,12 +30,16 @@ SOBINRELDIR=../sobin
+@@ -34,12 +30,16 @@ SODEBUGDIRPREFIX=sodebug
  # simple loader (no support for display device)
  GSSOC_XENAME=$(GS)c$(XE)
  GSSOC_XE=$(BINDIR)/$(GSSOC_XENAME)
--GSSOC=$(BINDIR)/$(SOBINRELDIR)/$(GSSOC_XENAME)
+-GSSOC=$(BINDIR)/$(GSSOC_XENAME)
 +GSSOC-Yes=
 +GSSOC-No=$(BINDIR)/$(GSSOC_XENAME)
 +GSSOC=$(GSSOC-$(USE_GTK))
@@ -24,14 +24,14 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
  # loader suporting display device using Gtk+
  GSSOX_XENAME=$(GS)x$(XE)
  GSSOX_XE=$(BINDIR)/$(GSSOX_XENAME)
--GSSOX=$(BINDIR)/$(SOBINRELDIR)/$(GSSOX_XENAME)
+-GSSOX=$(BINDIR)/$(GSSOX_XENAME)
 +GSSOX-Yes=$(BINDIR)/$(GSSOX_XENAME)
 +GSSOX-No=
 +GSSOX=$(GSSOX-$(USE_GTK))
  
  # shared library
  GS_SONAME_BASE=lib$(GS)
-@@ -47,16 +47,11 @@ GS_SONAME_BASE=lib$(GS)
+@@ -47,16 +47,10 @@ GS_SONAME_BASE=lib$(GS)
  # GNU/Linux
  GS_SOEXT=so
  GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
@@ -46,12 +46,12 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
 -# trailing space to separation it from the value of the option. For GNU ld and
 -# similar linkers it must containt the trailing "=" 
 -LDFLAGS_SO=-shared -Wl,$(LD_SET_DT_SONAME)$(LDFLAGS_SO_PREFIX)$(GS_SONAME_MAJOR)
- 
+-
 -
  # MacOS X
  #GS_SOEXT=dylib
  #GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
-@@ -83,25 +78,25 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
+@@ -83,13 +77,13 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  	ln -s $(GS_SONAME_MAJOR_MINOR) $(GS_SO_MAJOR)
  
  # Build the small Ghostscript loaders, with Gtk+ and without
@@ -71,37 +71,51 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
  
  # ------------------------- Recursive make targets ------------------------- #
  
- SODEFS=\
-- GS_XE=$(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR)\
-+ GS_XE=$(BINDIR)/$(GS_SONAME_MAJOR_MINOR)\
+@@ -99,6 +93,13 @@ SODEFS=\
   STDIO_IMPLEMENTATION=c\
-- DISPLAY_DEV=$(DD)$(SOOBJRELDIR)/display.dev\
-- BINDIR=$(BINDIR)/$(SOBINRELDIR)\
-- GLGENDIR=$(GLGENDIR)/$(SOOBJRELDIR)\
-- GLOBJDIR=$(GLOBJDIR)/$(SOOBJRELDIR)\
-- PSGENDIR=$(PSGENDIR)/$(SOOBJRELDIR)\
-- PSOBJDIR=$(PSOBJDIR)/$(SOOBJRELDIR)
-+ DISPLAY_DEV=$(DD)display.dev\
-+ BINDIR=$(BINDIR)\
-+ GLGENDIR=$(GLGENDIR)\
-+ GLOBJDIR=$(GLOBJDIR)\
-+ PSGENDIR=$(PSGENDIR)\
-+ PSOBJDIR=$(PSOBJDIR)
+  BUILDDIRPREFIX=$(BUILDDIRPREFIX)
  
- 
- # Normal shared object
-@@ -110,8 +105,8 @@ so: SODIRS
- 	  then echo "Warning: this target requires gmake";\
++# NOTE: moved somewhere else:
++# + BINDIR=$(BINDIR)\
++# + GLGENDIR=$(GLGENDIR)\
++# + GLOBJDIR=$(GLOBJDIR)\
++# + PSGENDIR=$(PSGENDIR)\
++# + PSOBJDIR=$(PSOBJDIR)
++
+ # This is a bit nasty; because of the directory name rewriting that happens
+ # on a recursive build, we have to recurse twice before we are sure that
+ # all the targets are correct.
+@@ -117,19 +118,27 @@ sodebug:
  	fi
- 	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) \
--                $(GLOBJDIR)/$(SOOBJRELDIR)/echogs$(XEAUX) $(GLOBJDIR)/$(SOOBJRELDIR)/genarch$(XEAUX)
--	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)' CFLAGS='$(CFLAGS_STANDARD) $(CFLAGS_SO) $(GCFLAGS) $(XCFLAGS)' \
-+                ${ECHOGS_XE} $(GENARCH_XE)
-+	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)' CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' \
-                 prefix=$(prefix)
- 	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) $(GSSOC) $(GSSOX)
+ 	$(MAKE) so-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
-@@ -139,13 +134,11 @@ install-so: so
++# NOTE: Differs from gs-9.02, may be wrong
+ so-subtarget:
+ 	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
++	 USE_GTK=$(USE_GTK) \
+ 	 directories
+ 	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
++	 USE_GTK=$(USE_GTK) \
+ 	 $(AUXDIR)/echogs$(XEAUX) $(AUXDIR)/genarch$(XEAUX)
+ 	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
+-	 CFLAGS='$(CFLAGS_STANDARD) $(CFLAGS_SO) $(GCFLAGS) $(XCFLAGS)'\
++	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)'\
++	 USE_GTK=$(USE_GTK) \
+ 	 prefix=$(prefix)
++	@echo USE_GTK = $(USE_GTK)
++	@echo GSSOC = $(GSSOC)
++	@echo GSSOX = $(GSSOX)
+ 	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
+-	 $(GSSOC_XE) $(GSSOX_XE)
++	 USE_GTK=$(USE_GTK) \
++	 $(GSSOC) $(GSSOX)
+ 
+ install-so:
+ 	$(MAKE) install-so-subtarget BUILDDIRPREFIX=$(SODIRPREFIX)
+@@ -145,13 +154,11 @@ install-so-subtarget: so-subtarget
  	-mkdir -p $(DESTDIR)$(bindir)
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
@@ -109,37 +123,20 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
  	$(INSTALL_PROGRAM) $(GSSOC) $(DESTDIR)$(bindir)/$(GSSOC_XENAME)
 +	[ "$(USE_GTK)" = No ] || \
  	$(INSTALL_PROGRAM) $(GSSOX) $(DESTDIR)$(bindir)/$(GSSOX_XENAME)
--	$(INSTALL_PROGRAM) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
+ 	$(INSTALL_PROGRAM) $(BINDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
 -	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME)
 -	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME)
 -	$(RM_) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
 -	ln -s $(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR)
-+	$(INSTALL_PROGRAM) $(BINDIR)/$(GS_SONAME_MAJOR_MINOR) $(DESTDIR)$(libdir)/$(GS_SONAME_MAJOR_MINOR)
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
  	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
-@@ -154,17 +147,17 @@ soinstall: install-so install-scripts install-data $(I
+@@ -163,6 +170,8 @@ sodebuginstall:
+ 	$(MAKE) soinstall-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
- # Make the build directories
- SODIRS: STDDIRS
--	@if test ! -d $(BINDIR)/$(SOBINRELDIR); then mkdir -p $(BINDIR)/$(SOBINRELDIR); fi
--	@if test ! -d $(GLGENDIR)/$(SOOBJRELDIR); then mkdir -p $(GLGENDIR)/$(SOOBJRELDIR); fi
--	@if test ! -d $(GLOBJDIR)/$(SOOBJRELDIR); then mkdir -p $(GLOBJDIR)/$(SOOBJRELDIR); fi
--	@if test ! -d $(PSGENDIR)/$(SOOBJRELDIR); then mkdir -p $(PSGENDIR)/$(SOOBJRELDIR); fi
--	@if test ! -d $(PSOBJDIR)/$(SOOBJRELDIR); then mkdir -p $(PSOBJDIR)/$(SOOBJRELDIR); fi
-+	@if test ! -d $(BINDIR); then mkdir -p $(BINDIR); fi
-+	@if test ! -d $(GLGENDIR); then mkdir -p $(GLGENDIR); fi
-+	@if test ! -d $(GLOBJDIR); then mkdir -p $(GLOBJDIR); fi
-+	@if test ! -d $(PSGENDIR); then mkdir -p $(PSGENDIR); fi
-+	@if test ! -d $(PSOBJDIR); then mkdir -p $(PSOBJDIR); fi
+ soinstall-subtarget: install-so install-scripts install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)
++
++# NOTE: target SODIRS moved somewhere else.
  
- 
- soclean: SODIRS
- 	$(MAKE) $(SODEFS) clean
--	$(RM_) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME)
--	$(RM_) $(BINDIR)/$(SOBINRELDIR)/$(GS_SONAME_MAJOR)
-+	$(RM_) $(BINDIR)/$(GS_SONAME)
-+	$(RM_) $(BINDIR)/$(GS_SONAME_MAJOR)
- 	$(RM_) $(GSSOC)
- 	$(RM_) $(GSSOX)
- 	@-rmdir $(BINDIR)/$(SOBINRELDIR) $(GLGENDIR)/$(SOOBJRELDIR) $(GLOBJDIR)/$(SOOBJRELDIR) $(PSGENDIR)/$(SOOBJRELDIR) $(PSOBJDIR)/$(SOOBJRELDIR) || true 
+ # Clean targets
+ soclean:

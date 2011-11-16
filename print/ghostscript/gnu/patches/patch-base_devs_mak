@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_devs_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
---- base/devs.mak.orig	Thu Mar 10 01:58:08 2011
-+++ base/devs.mak	Tue Jun 28 16:38:49 2011
-@@ -1807,14 +1807,11 @@ $(DD)plibk.dev : $(DEVS_MAK) $(plib_) $(GLD)page.dev
+$OpenBSD: patch-base_devs_mak,v 1.3 2011/11/16 12:43:23 kili Exp $
+--- base/devs.mak.orig	Fri Aug  5 13:12:20 2011
++++ base/devs.mak	Mon Nov 14 17:20:40 2011
+@@ -1899,14 +1899,11 @@ $(DD)plibk.dev : $(DEVS_MAK) $(plib_) $(GLD)page.dev $
  	$(SETPDEV2) $(DD)plibk $(plib_)
  
  ### ------------------------------- CUPS ------------------------------- ###
@@ -9,8 +9,8 @@ $OpenBSD: patch-base_devs_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
 -lcupsi_dev=$(LCUPSIGENDIR)$(D)lcupsi.dev
 -
  cups_=$(GLOBJ)gdevcups.$(OBJ)
--$(DD)cups.dev : $(DEVS_MAK) $(lcups_dev) $(lcupsi_dev) $(cups_) 
-+$(DD)cups.dev : $(DEVS_MAK) $(cups_) 
+-$(DD)cups.dev : $(DEVS_MAK) $(lcups_dev) $(lcupsi_dev) $(cups_) $(GDEV)
++$(DD)cups.dev : $(DEVS_MAK) $(cups_) $(GDEV)
  	$(SETPDEV2) $(DD)cups $(cups_)
 -	$(ADDMOD) $(DD)cups -include $(lcups_dev)
 -	$(ADDMOD) $(DD)cups -include $(lcupsi_dev)
@@ -19,4 +19,4 @@ $OpenBSD: patch-base_devs_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
  
  $(GLOBJ)gdevcups.$(OBJ) : cups$(D)gdevcups.c $(std_h)
 -	$(CUPS_CC) $(GLO_)gdevcups.$(OBJ) $(C_) $(CFLAGS) $(I_)$(GLSRC) $(I_)$(GLOBJ) $(I_)$(LCUPSSRCDIR)$(D)libs $(LCUPSSRCDIR)$(D)gdevcups.c
-+	$(GLCC) $(GLO_)gdevcups.$(OBJ) $(C_) $(CFLAGS) $(I_)$(GLSRC) $(I_)$(GLOBJ) cups$(D)gdevcups.c
++	$(CUPS_CC) $(GLO_)gdevcups.$(OBJ) $(C_) $(CFLAGS) $(I_)$(GLSRC) $(I_)$(GLOBJ) cups$(D)gdevcups.c

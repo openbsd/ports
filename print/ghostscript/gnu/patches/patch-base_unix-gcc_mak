@@ -1,15 +1,15 @@
-$OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
---- base/unix-gcc.mak.orig	Thu Mar  3 21:23:43 2011
-+++ base/unix-gcc.mak	Sun Nov 13 19:29:43 2011
-@@ -30,6 +30,7 @@ PSLIBDIR=./lib
+$OpenBSD: patch-base_unix-gcc_mak,v 1.4 2011/11/16 12:43:23 kili Exp $
+--- base/unix-gcc.mak.orig	Fri Aug  5 13:12:20 2011
++++ base/unix-gcc.mak	Mon Nov 14 16:38:09 2011
+@@ -31,6 +31,7 @@ PSLIBDIR=./lib
  PSRESDIR=./Resource
- PSGENDIR=./obj
- PSOBJDIR=./obj
+ PSGENDIR=./$(BUILDDIRPREFIX)obj
+ PSOBJDIR=./$(BUILDDIRPREFIX)obj
 +CONTRIBDIR=./contrib
  
  # Do not edit the next group of lines.
  
-@@ -68,12 +69,12 @@ gsincludedir = $(includedir)/ghostscript/
+@@ -69,12 +70,12 @@ gsincludedir = $(includedir)/ghostscript/
  
  docdir=$(gsdatadir)/doc
  exdir=$(gsdatadir)/examples
@@ -24,7 +24,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  
  # Define whether or not searching for initialization files should always
  # look in the current directory first.  This leads to well-known security
-@@ -201,6 +202,9 @@ IJS_NAME=
+@@ -210,6 +211,9 @@ IJS_NAME=
  IJSSRCDIR=ijs
  IJSEXECTYPE=unix
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  # Define how to build the library archives.  (These are not used in any
  # standard configuration.)
  
-@@ -209,6 +213,11 @@ IJSEXECTYPE=unix
+@@ -218,6 +222,11 @@ IJSEXECTYPE=unix
  
  IMDISRCDIR=imdi
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  AR=ar
  ARFLAGS=qc
  RANLIB=ranlib
-@@ -217,7 +226,7 @@ RANLIB=ranlib
+@@ -226,7 +235,7 @@ RANLIB=ranlib
  
  # Define the name of the C compiler.
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -229,7 +238,7 @@ CCLD=$(CC)
+@@ -238,7 +247,7 @@ CCLD=$(CC)
  # the 2.7.0-2.7.2 optimizer bug, either "-Dconst=" or
  # "-Wcast-qual -Wwrite-strings" is automatically included.
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  
  # Define the added flags for standard, debugging, profiling 
  # and shared object builds.
-@@ -366,8 +375,6 @@ DISPLAY_DEV=
+@@ -375,8 +384,6 @@ DISPLAY_DEV=
  # Choose the device(s) to include.  See devs.mak for details,
  # devs.mak and contrib.mak for the list of available devices.
  
@@ -73,7 +73,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
  #DEVICE_DEVS3=
-@@ -389,35 +396,14 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
+@@ -398,37 +405,29 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -87,14 +87,15 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
 -DEVICE_DEVS8=$(DD)pcxmono.dev $(DD)pcxgray.dev $(DD)pcx16.dev $(DD)pcx256.dev $(DD)pcx24b.dev $(DD)pcxcmyk.dev
 -DEVICE_DEVS9=$(DD)pbm.dev $(DD)pbmraw.dev $(DD)pgm.dev $(DD)pgmraw.dev $(DD)pgnm.dev $(DD)pgnmraw.dev $(DD)pnm.dev $(DD)pnmraw.dev $(DD)ppm.dev $(DD)ppmraw.dev $(DD)pkm.dev $(DD)pkmraw.dev $(DD)pksm.dev $(DD)pksmraw.dev
 -DEVICE_DEVS10=$(DD)tiffcrle.dev $(DD)tiffg3.dev $(DD)tiffg32d.dev $(DD)tiffg4.dev $(DD)tifflzw.dev $(DD)tiffpack.dev
--DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev $(DD)tiff48nc.dev $(DD)tiffgray.dev $(DD)tiff32nc.dev $(DD)tiff64nc.dev $(DD)tiffsep.dev $(DD)tiffsep1.dev $(DD)tiffscaled.dev
+-DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev $(DD)tiff48nc.dev $(DD)tiffgray.dev $(DD)tiff32nc.dev $(DD)tiff64nc.dev $(DD)tiffsep.dev $(DD)tiffsep1.dev $(DD)tiffscaled.dev $(DD)tiffscaled8.dev $(DD)tiffscaled24.dev
 -DEVICE_DEVS12=$(DD)psmono.dev $(DD)psgray.dev $(DD)psrgb.dev $(DD)bit.dev $(DD)bitrgb.dev $(DD)bitcmyk.dev
--DEVICE_DEVS13=$(DD)pngmono.dev $(DD)pnggray.dev $(DD)png16.dev $(DD)png256.dev $(DD)png16m.dev $(DD)pngalpha.dev
+-DEVICE_DEVS13=$(DD)pngmono.dev $(DD)pngmonod.dev $(DD)pnggray.dev $(DD)png16.dev $(DD)png256.dev $(DD)png16m.dev $(DD)pngalpha.dev
 -DEVICE_DEVS14=$(DD)jpeg.dev $(DD)jpeggray.dev $(DD)jpegcmyk.dev
 -DEVICE_DEVS15=$(DD)pdfwrite.dev $(DD)pswrite.dev $(DD)ps2write.dev $(DD)epswrite.dev $(DD)txtwrite.dev $(DD)pxlmono.dev $(DD)pxlcolor.dev
 -DEVICE_DEVS16=$(DD)bbox.dev
+ 
+-DEVICE_DEVS17=$(DD)plan.dev $(DD)planm.dev $(DD)plang.dev $(DD)planc.dev $(DD)plank.dev
 -
--DEVICE_DEVS17=
 -DEVICE_DEVS18=
 -DEVICE_DEVS19=
 -DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev $(DD)pamcmyk32.dev $(DD)pamcmyk4.dev
@@ -110,9 +111,23 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
 +# Copied from Makefile.in
 +EXTRA_INIT_FILES= Fontmap cidfmap xlatmap FAPI FCOfontmap-PCLPS2 gs_cet.ps
  
++# CCFLAGS=$(GENOPT) $(CAPOPT) $(CFLAGS)
++# CC_=$(CC) $(CCFLAGS)
++CCAUX_=$(CCAUX) $(CFLAGS)
++CUPS_CC=$(CC)
++# CC_LEAF=$(CC_)
++# # note gcc can't use -fomit-frame-pointer with -pg.
++# CC_LEAF_PG=$(CC_)
++# # These are the specific warnings we have to turn off to compile those
++# # specific few files that need this.  We may turn off others in the future.
++# CC_NO_WARN=$(CC_)
++# CCAUX_NO_WARN=$(CCAUX_)
++# CC_SHARED=$(CC_) @DYNAMIC_CFLAGS@
++
  # ---------------------------- End of options --------------------------- #
  
-@@ -460,6 +446,7 @@ include $(GLSRCDIR)/zlib.mak
+ # Define the name of the partial makefile that specifies options --
+@@ -476,6 +475,7 @@ include $(GLSRCDIR)/zlib.mak
  include $(GLSRCDIR)/png.mak
  include $(GLSRCDIR)/tiff.mak
  include $(GLSRCDIR)/jbig2.mak
@@ -120,7 +135,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.3 2011/11/13 21:18:40 kili Exp $
  include $(GLSRCDIR)/icclib.mak
  include $(GLSRCDIR)/lcms.mak
  include $(GLSRCDIR)/ijs.mak
-@@ -470,6 +457,7 @@ include $(GLSRCDIR)/unixlink.mak
+@@ -486,6 +486,7 @@ include $(GLSRCDIR)/unixlink.mak
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak

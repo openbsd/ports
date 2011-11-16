@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/07/18 20:24:36 kili Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/11/16 12:43:23 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
 %%SHARED%%
-bin/bdftops
 bin/dumphint
 bin/dvipdf
 bin/eps2eps
-bin/fixmswrd.pl
 bin/font2c
 @bin bin/gs
 bin/gsbj
@@ -32,7 +30,6 @@ bin/ps2pdf14
 bin/ps2pdfwr
 bin/ps2ps
 bin/ps2ps2
-bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
 libexec/cups/
@@ -526,6 +523,7 @@ share/ghostscript/${VERSION}/iccprofiles/
 share/ghostscript/${VERSION}/iccprofiles/default_cmyk.icc
 share/ghostscript/${VERSION}/iccprofiles/default_gray.icc
 share/ghostscript/${VERSION}/iccprofiles/default_rgb.icc
+share/ghostscript/${VERSION}/iccprofiles/gray_to_k.icc
 share/ghostscript/${VERSION}/iccprofiles/lab.icc
 share/ghostscript/${VERSION}/iccprofiles/ps_cmyk.icc
 share/ghostscript/${VERSION}/iccprofiles/ps_gray.icc
@@ -538,7 +536,6 @@ share/ghostscript/${VERSION}/lib/PDFX_def.ps
 share/ghostscript/${VERSION}/lib/acctest.ps
 share/ghostscript/${VERSION}/lib/addxchar.ps
 share/ghostscript/${VERSION}/lib/align.ps
-share/ghostscript/${VERSION}/lib/bdftops.ps
 share/ghostscript/${VERSION}/lib/bj8.rpd
 share/ghostscript/${VERSION}/lib/bj8gc12f.upp
 share/ghostscript/${VERSION}/lib/bj8hg12f.upp

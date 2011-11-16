@@ -1,12 +1,13 @@
-$OpenBSD: patch-base_lib_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
---- base/lib.mak.orig	Thu Sep  9 01:20:36 2010
-+++ base/lib.mak	Sun Sep 19 13:19:33 2010
-@@ -25,11 +25,11 @@ GLO_=$(O_)$(GLOBJ)
+$OpenBSD: patch-base_lib_mak,v 1.2 2011/11/16 12:43:23 kili Exp $
+--- base/lib.mak.orig	Fri Aug  5 13:12:20 2011
++++ base/lib.mak	Mon Nov 14 13:41:09 2011
+@@ -27,12 +27,12 @@ AUXO_=$(O_)$(AUX)
  GLI_=$(GLGENDIR) $(II)$(GLSRCDIR)
  GLF_=
- GLCCFLAGS=$(I_)$(GLI_)$(_I) $(GLF_)
+ GLCCFLAGS=$(I_)$(GLI_)$(_I) $(GLF_) -DWHICH_CMS="$(WHICH_CMS)"
 -GLCC=$(CC_) $(GLCCFLAGS)
 +GLCC=$(CC) $(GLCCFLAGS) $(CCFLAGS)
+ GLCCAUX=$(CCAUX_) $(GLCCFLAGS)
  GLJCC=$(CC_) $(I_)$(GLI_) $(II)$(JI_)$(_I) $(JCF_) $(GLF_)
  GLZCC=$(CC_) $(I_)$(GLI_) $(II)$(ZI_)$(_I) $(ZCF_) $(GLF_)
  GLJBIG2CC=$(CC_) $(I_)$(GLI_) $(II)$(JB2I_)$(_I) $(JB2CF_) $(GLF_)

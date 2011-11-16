@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2011/11/13 21:18:40 kili Exp $
+# $OpenBSD: Makefile,v 1.89 2011/11/16 12:43:23 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	9.02
+VERSION=	9.04
 DISTNAME=	ghostscript-${VERSION}
-REVISION=	3
 CATEGORIES=	print lang
-SHARED_LIBS=	gs	13.0
+SHARED_LIBS=	gs	14.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
 
@@ -28,13 +27,14 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c ijs m jpeg>=62 lcms png>=6 pthread tiff z
+WANTLIB=	c ijs m jbig2dec jpeg>=62 lcms png>=6 pthread tiff z
 
 MODULES=	converters/libiconv
 
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
 BUILD_DEPENDS=	print/cups>=1.5.0
-LIB_DEPENDS=	graphics/jpeg		\
+LIB_DEPENDS=	graphics/jbig2dec	\
+		graphics/jpeg		\
 		graphics/lcms		\
 		graphics/png		\
 		graphics/tiff		\
@@ -63,7 +63,6 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		INSTALL='${INSTALL}'			\
 		INSTALL_DATA='${INSTALL_DATA}'		\
 		INSTALL_PROGRAM='${INSTALL_PROGRAM}'	\
-		JBIG2SRCDIR=./jbig2dec			\
 		JPX_LIB=jasper				\
 		LIBgs_VERSION=${LIBgs_VERSION}		\
 		PSGENDIR=./obj				\
@@ -297,6 +296,9 @@ DEVICES+=	jpeg jpegcmyk jpeggray jpx
 
 # PNG_DEVS (note: png48 not mentioned in configure.ac)
 DEVICES+=	png16 png16m png256 png48 pngalpha pnggray pngmono
+
+# JBIG2_DEVS
+DEVICES+=	jbig2
 
 # TIFF_DEVS
 DEVICES+=	tiff12nc tiff24nc tiff32nc tiffcrle tiffgray tifflzw \
