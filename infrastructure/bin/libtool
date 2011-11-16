@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.33 2011/11/14 22:12:08 jasper Exp $
+# $OpenBSD: libtool,v 1.34 2011/11/16 10:56:57 jasper Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -60,7 +60,6 @@ use constant {
 };
 
 my @no_shared_archs = qw(m88k vax);
-# XXX my $machine_arch = `machine -a`;
 my $machine_arch = $Config{'ARCH'};
 (my $gnu_arch = $machine_arch) =~ s/amd64/x86_64/;
 my @valid_modes = qw(clean compile execute finish install link uninstall);
