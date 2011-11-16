@@ -1,0 +1,33 @@
+$OpenBSD: README,v 1.1.1.1 2011/11/16 19:27:49 pirofti Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Environment Setup
+=================
+Set the mingw32 binary path before all the others. Like so:
+
+$ export PATH=/usr/local/mingw32/bin:${PATH}
+
+Generating PE files
+===================
+Just compile like you regulary would:
+
+$ cat CreateFile_test.cpp
+#include <windows.h>
+
+int main (void)
+{
+        HANDLE handle;
+
+        handle = CreateFile ("test.txt", GENERIC_READ | GENERIC_WRITE,
+	    0, NULL, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, NULL);
+
+        return 0;
+}
+
+$ g++ CreateFile_test.cpp -o CreateFile_test.exe
+$ file CreateFile_test.exe
+CreateFile_test.exe: MS-DOS executable PE  for MS Windows (console)
+Intel 80386 32-bit

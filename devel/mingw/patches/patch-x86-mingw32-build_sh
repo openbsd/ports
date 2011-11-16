@@ -1,0 +1,30 @@
+$OpenBSD: patch-x86-mingw32-build_sh,v 1.1.1.1 2011/11/16 19:27:48 pirofti Exp $
+--- x86-mingw32-build.sh.orig	Thu Mar 11 00:16:55 2010
++++ x86-mingw32-build.sh	Tue Nov 15 01:05:46 2011
+@@ -68,7 +68,7 @@ do
+     # name, bearing no resemblance to the file requested.
+     #
+     ( manifest=`echo *`
+-      $RUN wget $DOWNLOAD_HOST/$FILE$DOWNLOAD_OPTIONS && \
++      $RUN ftp -o $FILE $DOWNLOAD_HOST/$FILE$DOWNLOAD_OPTIONS && \
+       { test -f $FILE || \
+ 	{ for file in `echo *`
+ 	  do
+@@ -95,7 +95,7 @@ eval $RUN $CLEAN_SLATE_AT_START
+ setbuilddir "$WORKING_DIR" .
+ echo "done."
+ 
+-MAKE=${MAKE-"make"}
++MAKE=${MAKE}
+ PATH=$INSTALL_DIR/bin:$PATH
+ unrecoverable="$script: unrecoverable error"
+ 
+@@ -124,7 +124,7 @@ $script: stage $STAGE: build $COMPONENT ..."
+ 	$RUN setbuilddir binutils*
+ 	$RUN ../configure --prefix="$INSTALL_DIR" --target="$TARGET" \
+ 	  $GLOBAL_BASE_OPTIONS $BINUTILS_BASE_OPTIONS \
+-	  --with-sysroot="${INSTALL_DIR}" || die $? \
++	  --with-sysroot="${INSTALL_DIR}" --disable-werror || die $? \
+           "$unrecoverable configuring binutils"
+       fi
+       $RUN $MAKE CFLAGS="`echo $CFLAGS_FOR_BINUTILS`" \
