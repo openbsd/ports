@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/16 00:10:31 sthen Exp $
 
 COMMENT=		tool to monitor interface bandwidth usage
 
 DISTNAME=		ifstat-1.1
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 
 HOMEPAGE=		http://gael.roualland.free.fr/ifstat/
 
 MAINTAINER=		Johan Fredin <johan@spelaroll.se>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes

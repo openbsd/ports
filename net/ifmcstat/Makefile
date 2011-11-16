@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/23 22:50:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/16 00:10:31 sthen Exp $
 
 COMMENT =		show Ethernet Multicast memberships
 
 DISTNAME =		ifmcstat-1.0
+REVISION =		0
 CATEGORIES =		net
 
 HOMEPAGE =		http://opengrok.netbsd.org/source/xref/usr.sbin/ifmcstat/

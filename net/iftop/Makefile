@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/16 00:10:31 sthen Exp $
 
 COMMENT =		display bandwidth usage on an inteface
 
 DISTNAME =		iftop-0.17
-REVISION =		0
+REVISION =		1
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.ex-parrot.com/~pdw/iftop/
 
 MAINTAINER =		Girish Venkatachalam <girish1729@gmail.com>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
