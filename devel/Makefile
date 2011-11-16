@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.996 2011/11/16 16:54:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.997 2011/11/16 19:29:31 pirofti Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -332,6 +332,7 @@
      SUBDIR += mercurial
      SUBDIR += metaauto
      SUBDIR += mico
+     SUBDIR += mingw
      SUBDIR += mk
      SUBDIR += mm
      SUBDIR += mm-common
