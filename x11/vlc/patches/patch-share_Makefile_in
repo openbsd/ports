@@ -1,11 +1,14 @@
-$OpenBSD: patch-share_Makefile_in,v 1.8 2010/05/05 08:43:35 edd Exp $
---- share/Makefile.in.orig	Wed Apr 21 12:31:40 2010
-+++ share/Makefile.in	Fri Apr 23 16:55:32 2010
-@@ -1262,7 +1262,6 @@ uninstall-am: uninstall-dist_vlcdataDATA \
+$OpenBSD: patch-share_Makefile_in,v 1.9 2011/11/16 13:33:16 phessler Exp $
+--- share/Makefile.in.orig	Thu Oct  6 20:05:00 2011
++++ share/Makefile.in	Sun Nov 13 11:53:42 2011
+@@ -1406,10 +1406,6 @@ uninstall-am: uninstall-dist_appdataDATA uninstall-dis
  
  skins2/default.vlt: $(skins2_default_vlt_FILES)
  	mkdir -p skins2
--	tar cvvzf skins2/default.vlt --exclude .svn -C $(srcdir)/skins2 default/
+-	(cd "$(srcdir)/skins2"; find default -print0 | \
+-		LC_ALL=C sort -z | \
+-		tar cvv --exclude .svn --no-recursion --null -T -) | \
+-	gzip -n > skins2/default.vlt
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+ .lua.luac:
+ 	$(AM_V_at)for f in $(EXTRA_DIST); do \

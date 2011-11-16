@@ -1,0 +1,77 @@
+$OpenBSD: patch-modules_misc_inhibit_xdg_c,v 1.1 2011/11/16 13:33:15 phessler Exp $
+
+Missing posix_spawnp and family.
+
+--- modules/misc/inhibit/xdg.c.orig	Sun Nov 13 13:12:04 2011
++++ modules/misc/inhibit/xdg.c	Sun Nov 13 13:15:22 2011
+@@ -26,7 +26,6 @@
+ #include <vlc_plugin.h>
+ #include <vlc_inhibit.h>
+ #include <assert.h>
+-#include <spawn.h>
+ #include <sys/wait.h>
+ 
+ static int Open (vlc_object_t *);
+@@ -46,7 +45,6 @@ struct vlc_inhibit_sys
+     vlc_thread_t thread;
+     vlc_cond_t update, inactive;
+     vlc_mutex_t lock;
+-    posix_spawnattr_t attr;
+     bool suspend, suspended;
+ };
+ 
+@@ -66,18 +64,6 @@ static int Open (vlc_object_t *obj)
+     vlc_mutex_init (&p_sys->lock);
+     vlc_cond_init (&p_sys->update);
+     vlc_cond_init (&p_sys->inactive);
+-    posix_spawnattr_init (&p_sys->attr);
+-    /* Reset signal handlers to default and clear mask in the child process */
+-    {
+-        sigset_t set;
+-
+-        sigemptyset (&set);
+-        posix_spawnattr_setsigmask (&p_sys->attr, &set);
+-        sigaddset (&set, SIGPIPE);
+-        posix_spawnattr_setsigdefault (&p_sys->attr, &set);
+-        posix_spawnattr_setflags (&p_sys->attr, POSIX_SPAWN_SETSIGDEF
+-                                              | POSIX_SPAWN_SETSIGMASK);
+-    }
+     p_sys->suspend = false;
+     p_sys->suspended = false;
+ 
+@@ -105,7 +91,6 @@ static void Close (vlc_object_t *obj)
+ 
+     vlc_cancel (p_sys->thread);
+     vlc_join (p_sys->thread, NULL);
+-    posix_spawnattr_destroy (&p_sys->attr);
+     vlc_cond_destroy (&p_sys->inactive);
+     vlc_cond_destroy (&p_sys->update);
+     vlc_mutex_destroy (&p_sys->lock);
+@@ -142,26 +127,10 @@ static void *Thread (void *data)
+             vlc_cond_wait (&p_sys->update, &p_sys->lock);
+ 
+         int canc = vlc_savecancel ();
+-        char *argv[4] = {
+-            (char *)"xdg-screensaver",
+-            (char *)(p_sys->suspend ? "suspend" : "resume"),
+-            id,
+-            NULL,
+-        };
+-        pid_t pid;
+ 
+         vlc_mutex_unlock (&p_sys->lock);
+-        if (!posix_spawnp (&pid, "xdg-screensaver", NULL, &p_sys->attr,
+-                           argv, environ))
+-        {
+-            int status;
+ 
+-            msg_Dbg (ih, "started xdg-screensaver (PID = %d)", (int)pid);
+-            /* Wait for command to complete */
+-            while (waitpid (pid, &status, 0) == -1);
+-        }
+-        else/* We don't handle the error, but busy looping would be worse :( */
+-            msg_Warn (ih, "could not start xdg-screensaver");
++        msg_Warn (ih, "could not start xdg-screensaver");
+ 
+         vlc_mutex_lock (&p_sys->lock);
+         p_sys->suspended = p_sys->suspend;
