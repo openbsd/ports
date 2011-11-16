@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/16 18:32:36 robert Exp $
 
 COMMENT=	resolver library used to communicate with a DNS server
 
@@ -16,6 +16,5 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 PKG_ARCH=	*
-RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mhash
 
 .include <bsd.port.mk>
