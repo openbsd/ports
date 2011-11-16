@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.20 2010/06/18 09:08:57 espie Exp $
+# $OpenBSD: out-of-date,v 1.1 2011/11/16 22:57:03 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
