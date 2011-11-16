@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/16 15:57:15 rpointel Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_EGG_VERSION=	1.1.2
 DISTNAME=		pyxmpp-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		3
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://pyxmpp.jajcus.net/
@@ -17,9 +16,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		xml2
+WANTLIB=		xml2 ${MODPY_WANTLIB}
 
-MASTER_SITES=	${HOMEPAGE}downloads/
+MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/pyxmpp/
 
 MODULES=	lang/python
 

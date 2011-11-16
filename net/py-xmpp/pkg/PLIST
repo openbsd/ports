@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/10/11 17:51:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/16 15:57:15 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/
 lib/python${MODPY_VERSION}/site-packages/pyxmpp-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/__init__.py
@@ -79,6 +79,8 @@ lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/core.py
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/core.pyc
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/digest_md5.py
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/digest_md5.pyc
+lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/external.py
+lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/external.pyc
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/gssapi.py
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/gssapi.pyc
 lib/python${MODPY_VERSION}/site-packages/pyxmpp/sasl/plain.py
@@ -138,6 +140,7 @@ share/doc/py-xmpp/pyxmpp.exceptions.BadRequestProtocolError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.ClientError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.ClientStreamError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.ComponentStreamError-class.html
+share/doc/py-xmpp/pyxmpp.exceptions.DNSError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.Error-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.FatalClientError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.FatalClientStreamError-class.html
@@ -161,6 +164,7 @@ share/doc/py-xmpp/pyxmpp.exceptions.StringprepError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.TLSError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.TLSNegotiatedButNotAvailableError-class.html
 share/doc/py-xmpp/pyxmpp.exceptions.TLSNegotiationFailed-class.html
+share/doc/py-xmpp/pyxmpp.exceptions.UnexpectedCNAMEError-class.html
 share/doc/py-xmpp/pyxmpp.expdict-module.html
 share/doc/py-xmpp/pyxmpp.expdict-pysrc.html
 share/doc/py-xmpp/pyxmpp.expdict.ExpiringDictionary-class.html
@@ -172,6 +176,12 @@ share/doc/py-xmpp/pyxmpp.interface_micro_impl.Attribute-class.html
 share/doc/py-xmpp/pyxmpp.interface_micro_impl.InterfaceClass-class.html
 share/doc/py-xmpp/pyxmpp.interfaces-module.html
 share/doc/py-xmpp/pyxmpp.interfaces-pysrc.html
+share/doc/py-xmpp/pyxmpp.interfaces.IFeaturesProvider-class.html
+share/doc/py-xmpp/pyxmpp.interfaces.IIqHandlersProvider-class.html
+share/doc/py-xmpp/pyxmpp.interfaces.IMessageHandlersProvider-class.html
+share/doc/py-xmpp/pyxmpp.interfaces.IPresenceHandlersProvider-class.html
+share/doc/py-xmpp/pyxmpp.interfaces.IPyXMPPHelper-class.html
+share/doc/py-xmpp/pyxmpp.interfaces.IStanzaHandlersProvider-class.html
 share/doc/py-xmpp/pyxmpp.iq-module.html
 share/doc/py-xmpp/pyxmpp.iq-pysrc.html
 share/doc/py-xmpp/pyxmpp.iq.Iq-class.html
@@ -291,6 +301,9 @@ share/doc/py-xmpp/pyxmpp.sasl.digest_md5-module.html
 share/doc/py-xmpp/pyxmpp.sasl.digest_md5-pysrc.html
 share/doc/py-xmpp/pyxmpp.sasl.digest_md5.DigestMD5ClientAuthenticator-class.html
 share/doc/py-xmpp/pyxmpp.sasl.digest_md5.DigestMD5ServerAuthenticator-class.html
+share/doc/py-xmpp/pyxmpp.sasl.external-module.html
+share/doc/py-xmpp/pyxmpp.sasl.external-pysrc.html
+share/doc/py-xmpp/pyxmpp.sasl.external.ExternalClientAuthenticator-class.html
 share/doc/py-xmpp/pyxmpp.sasl.gssapi-module.html
 share/doc/py-xmpp/pyxmpp.sasl.gssapi-pysrc.html
 share/doc/py-xmpp/pyxmpp.sasl.gssapi.GSSAPIClientAuthenticator-class.html
@@ -333,10 +346,13 @@ share/doc/py-xmpp/pyxmpp.xmppstringprep.LookupFunction-class.html
 share/doc/py-xmpp/pyxmpp.xmppstringprep.LookupTable-class.html
 share/doc/py-xmpp/pyxmpp.xmppstringprep.Profile-class.html
 share/doc/py-xmpp/redirect.html
+share/doc/py-xmpp/zope.interface.Interface-class.html
+share/doc/py-xmpp/zope.interface.interface.Attribute-class.html
 share/examples/py-xmpp/
 share/examples/py-xmpp/c2s_test.py
 share/examples/py-xmpp/echobot.py
 share/examples/py-xmpp/echobot_old.py
 share/examples/py-xmpp/echocomponent.py
+share/examples/py-xmpp/getcert.py
 share/examples/py-xmpp/send_message.py
 share/examples/py-xmpp/server_c2s.py
