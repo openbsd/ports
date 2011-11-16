@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/01 17:41:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/16 17:42:26 naddy Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Unicode line breaking algorithm
@@ -18,7 +18,6 @@ CPAN_AUTHOR =		NEZUMI
 AUTOCONF_VERSION =	2.59
 AUTOMAKE_VERSION =	1.9
 
-MODULE+= gnu
 USE_LIBTOOL =	yes
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \

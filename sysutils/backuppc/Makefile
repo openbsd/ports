@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/10/28 21:56:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/16 17:42:26 naddy Exp $
 
 COMMENT =	remote backup software system
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULE =	perl
 HOMEPAGE =	http://backuppc.sourceforge.net
 
 #ftp: Too many redirections requested

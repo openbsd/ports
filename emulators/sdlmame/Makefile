@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/29 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/16 17:42:26 naddy Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -11,9 +11,9 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 V =			0.132
 DISTNAME =		sdlmame${V:S/.//}
 PKGNAME-main =		sdlmame-${V}
-REVISION-main =		8
+REVISION-main =		9
 PKGNAME-tools =		sdlmame-tools-${V}
-REVISION-tools =	6
+REVISION-tools =	7
 
 CATEGORIES =		emulators games
 
@@ -28,10 +28,11 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
 
-MODULE =	devel/gettext
+MODULES =	devel/gettext
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender xcb-render xcb-shm
+WANTLIB +=	GL atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
