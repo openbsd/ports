@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.8 2011/10/09 20:45:07 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.9 2011/11/16 00:43:17 sthen Exp $
 --- configure.ac.orig	Sun Jul 25 10:37:30 2010
 +++ configure.ac	Wed Sep 28 03:18:47 2011
-@@ -412,7 +412,7 @@ for ucname in $ffmpeg_uncommon_codecs; do
- done
- 
- dnl popular ffmpeg codecs
--ffmpeg_popular_codecs="CINEPAK FLASHSV H261 H263 H263I H264 INDEO2 INDEO3 MJPEG MJPEGB MPEG1VIDEO MPEG2VIDEO MPEG4 MPEGVIDEO MSMPEG4V1 MSMPEG4V2 MSMPEG4V3 MSRLE MSVIDEO1 QTRLE RV10 RV20 SVQ1 SVQ3 VC1 VP3 VP5 VP6 VP6F WMV1 WMV2 WMV3 COOK DTS EAC3 FLAC MP2 MP3 QDM2 RA_144 RA_288 WAVPACK WMAV1 WMAV2 WMAPRO ADPCM_SWF"
-+ffmpeg_popular_codecs="CINEPAK FLASHSV H261 H263 H263I H264 INDEO2 INDEO3 MJPEG MJPEGB MPEG1VIDEO MPEG2VIDEO MPEG4 MPEGVIDEO MSMPEG4V1 MSMPEG4V2 MSMPEG4V3 MSRLE MSVIDEO1 QTRLE RV10 RV20 RV30 RV40 SVQ1 SVQ3 VC1 VP3 VP5 VP6 VP6F VP8 WMV1 WMV2 WMV3 COOK DTS EAC3 FLAC MP2 MP3 QDM2 RA_144 RA_288 WAVPACK WMAV1 WMAV2 WMAPRO ADPCM_SWF"
- 
- for ucname in $ffmpeg_popular_codecs; do
-   config_name="CONFIG_${ucname}_DECODER"
 @@ -565,9 +565,9 @@ t q
  b
  :q
@@ -44,12 +35,3 @@ $OpenBSD: patch-configure_ac,v 1.8 2011/10/09 20:45:07 sthen Exp $
    AC_SUBST(MNG_LIBS)
  else
    have_libmng=no
-@@ -2708,6 +2709,8 @@ CC_CHECK_CFLAGS_APPEND([-Wformat=2 -Wformat],
-   [CC_CHECK_CFLAGS_APPEND([-Wno-format-zero-length])
-    break;
-   ])
-+
-+CC_CHECK_CFLAGS_APPEND([-Wformat-security])
- 
- dnl check for strict aliasing problem, get the highest between =2 and
- dnl normal.

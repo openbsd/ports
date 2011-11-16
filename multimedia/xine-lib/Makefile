@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.83 2011/10/30 21:20:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.84 2011/11/16 00:43:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.1.19
-REVISION=	13
+DISTNAME=	xine-lib-1.1.20
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	28.0
+SHARED_LIBS=	xine	29.0
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -21,15 +20,16 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	FLAC GL GLU SDL X11 Xau Xdamage Xdmcp Xext Xfixes Xinerama \
 		Xv XvMCW Xxf86vm a52 avcodec avutil c cdio dca drm dvdnav \
 		dvdread expat faad fontconfig freetype gsm iso9660 jpeg \
 		lcms m mad modplug mpcdec mng mp3lame ogg orc-0.4 postproc \
-		pthread-stubs pthread schroedinger-1.0 sndio speex theora \
-		theoradec theoraenc usbhid vcdinfo vorbis vorbisenc vpx \
-		wavpack x264 xcb-shape xcb-shm xcb-xv xcb z
+		pthread-stubs pthread schroedinger-1.0 sndio speex stdc++ \
+		theora theoradec theoraenc usbhid vcdinfo vorbis vorbisenc \
+		vpx wavpack x264 xcb-shape xcb-shm xcb-xv xcb z
 
-XINEAPI_REV=	1.29
+XINEAPI_REV=	1.30
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
@@ -62,7 +62,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.65
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \

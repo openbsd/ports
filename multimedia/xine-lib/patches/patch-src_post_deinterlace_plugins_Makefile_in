@@ -1,12 +1,13 @@
-$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.9 2010/03/21 01:41:15 sthen Exp $
---- src/post/deinterlace/plugins/Makefile.in.orig	Tue Feb 23 17:50:47 2010
-+++ src/post/deinterlace/plugins/Makefile.in	Tue Feb 23 19:29:58 2010
-@@ -893,7 +893,7 @@ maintainer-clean-generic:
+$OpenBSD: patch-src_post_deinterlace_plugins_Makefile_in,v 1.10 2011/11/16 00:43:17 sthen Exp $
+--- src/post/deinterlace/plugins/Makefile.in.orig	Sat Nov 12 20:37:30 2011
++++ src/post/deinterlace/plugins/Makefile.in	Sat Nov 12 21:59:05 2011
+@@ -899,9 +899,6 @@ maintainer-clean-generic:
+ 	-@echo "it deletes files that may require special tools to rebuild."
  	-rm -f Makefile.in
  
- # Avoid "can't find register" failures with -O0, -O2, -O3 (gcc 4.0)
+-# Avoid "can't find register" failures with -O0, -O2, -O3 (gcc 4.0)
 -libdeinterlaceplugins_la-kdetv_greedyh.o libdeinterlaceplugins_la-kdetv_greedyh.lo: CFLAGS=$(shell echo @CFLAGS@ | sed -e 's/$$/ -O1/')
-+# libdeinterlaceplugins_la-kdetv_greedyh.o libdeinterlaceplugins_la-kdetv_greedyh.lo: CFLAGS=$(shell echo @CFLAGS@ | sed -e 's/$$/ -O1/')
- 
+-
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/11 09:05:55 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/11/16 00:43:17 sthen Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -180,6 +180,7 @@ share/locale/es/LC_MESSAGES/libxine1.mo
 share/locale/eu/LC_MESSAGES/libxine1.mo
 share/locale/fr/LC_MESSAGES/libxine1.mo
 share/locale/it/LC_MESSAGES/libxine1.mo
+share/locale/ja/LC_MESSAGES/libxine1.mo
 share/locale/pl/LC_MESSAGES/libxine1.mo
 share/locale/pt_BR/LC_MESSAGES/libxine1.mo
 share/locale/sk/LC_MESSAGES/libxine1.mo
