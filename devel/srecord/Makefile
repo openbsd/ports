@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/28 10:53:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/16 12:47:07 jasper Exp $
+
+BROKEN-sparc64= 	needs pthread for reasons yet unknown
 
 COMMENT=		collection of tools for manipulating EPROM load files
 
