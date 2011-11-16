@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_core_misc_h,v 1.1 2011/11/16 10:16:57 sthen Exp $
+--- src/core/misc.h.orig	Sun Nov  6 04:52:00 2011
++++ src/core/misc.h	Sun Nov  6 04:52:03 2011
+@@ -92,6 +92,9 @@ char *stristr(const char *data, const char *key);
+ char *strstr_full(const char *data, const char *key);
+ char *stristr_full(const char *data, const char *key);
+ 
++char *ascii_strup(char *str);
++char *ascii_strdown(char *str);
++
+ /* Escape all '"', "'" and '\' chars with '\' */
+ char *escape_string(const char *str);
+ 

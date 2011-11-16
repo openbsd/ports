@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_fe-text_statusbar-config_c,v 1.1 2011/11/16 10:16:57 sthen Exp $
+--- src/fe-text/statusbar-config.c.orig	Sun Nov  6 05:02:18 2011
++++ src/fe-text/statusbar-config.c	Sun Nov  6 05:02:34 2011
+@@ -25,6 +25,7 @@
+ #include "settings.h"
+ #include "levels.h"
+ #include "lib-config/iconfig.h"
++#include "misc.h"
+ 
+ #include "statusbar.h"
+ #include "printtext.h"
+@@ -550,7 +551,7 @@ static void cmd_statusbar(const char *data)
+ 
+ 	/* call the subcommand */
+ 	signal = g_strconcat("command statusbar ", cmd, NULL);
+-        g_strdown(signal);
++	ascii_strdown(signal);
+ 	if (!signal_emit(signal, 4, params, NULL, NULL, node)) {
+ 		printformat(NULL, NULL, MSGLEVEL_CLIENTERROR,
+ 			    TXT_STATUSBAR_UNKNOWN_COMMAND, cmd);

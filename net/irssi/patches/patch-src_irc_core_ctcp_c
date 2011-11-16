@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_irc_core_ctcp_c,v 1.1 2011/11/16 10:16:57 sthen Exp $
+--- src/irc/core/ctcp.c.orig	Sun Nov  6 05:03:20 2011
++++ src/irc/core/ctcp.c	Sun Nov  6 05:03:36 2011
+@@ -238,7 +238,7 @@ static void ctcp_msg(IRC_SERVER_REC *server, const cha
+ 	args = strchr(str+9, ' ');
+ 	if (args != NULL) *args++ = '\0'; else args = "";
+ 
+-	g_strdown(str+9);
++	ascii_strdown(str+9);
+ 	if (!signal_emit(str, 5, server, args, nick, addr, target)) {
+ 		signal_emit("default ctcp msg", 5,
+ 			    server, data, nick, addr, target);
+@@ -258,7 +258,7 @@ static void ctcp_reply(IRC_SERVER_REC *server, const c
+ 	args = strchr(str+11, ' ');
+ 	if (args != NULL) *args++ = '\0'; else args = "";
+ 
+-	g_strdown(str+11);
++	ascii_strdown(str+11);
+ 	if (!signal_emit(str, 5, server, args, nick, addr, target)) {
+ 		signal_emit("default ctcp reply", 5,
+ 			    server, data, nick, addr, target);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fe-common_core_completion_c,v 1.1 2011/11/16 10:16:57 sthen Exp $
+--- src/fe-common/core/completion.c.orig	Sun Nov  6 04:56:28 2011
++++ src/fe-common/core/completion.c	Sun Nov  6 04:56:34 2011
+@@ -533,7 +533,7 @@ static char *line_get_command(const char *line, char *
+ 	} while (ptr != NULL);
+ 
+         if (cmd != NULL)
+-		g_strdown(cmd);
++		ascii_strdown(cmd);
+ 	return cmd;
+ }
+ 

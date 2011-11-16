@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_core_servers_c,v 1.4 2011/11/16 10:16:57 sthen Exp $
+--- src/core/servers.c.orig	Sun Nov  6 04:54:16 2011
++++ src/core/servers.c	Sun Nov  6 04:54:22 2011
+@@ -419,8 +419,8 @@ int server_start_connect(SERVER_REC *server)
+ 			return FALSE;
+ 		}
+ 
+-		server->connect_pipe[0] = g_io_channel_unix_new(fd[0]);
+-		server->connect_pipe[1] = g_io_channel_unix_new(fd[1]);
++		server->connect_pipe[0] = g_io_channel_new(fd[0]);
++		server->connect_pipe[1] = g_io_channel_new(fd[1]);
+ 
+ 		connect_address = server->connrec->proxy != NULL ?
+ 			server->connrec->proxy : server->connrec->address;
