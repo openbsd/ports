@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/16 17:21:04 ajacoutot Exp $
 bin/autolives.pl
 bin/build-lives-rfx-plugin
 bin/build-lives-rfx-plugin-multi
@@ -145,7 +145,6 @@ lib/lives/plugins/playback/
 lib/lives/plugins/playback/video/
 lib/lives/plugins/playback/video/SDL.so
 lib/lives/plugins/playback/video/lives2lives_stream.so
-share/applications/
 share/applications/LiVES.desktop
 share/doc/lives/
 share/doc/lives/AUTHORS
@@ -272,3 +271,5 @@ share/locale/tr/LC_MESSAGES/lives.mo
 share/locale/zh_CN/LC_MESSAGES/lives.mo
 share/pixmaps/
 share/pixmaps/lives.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

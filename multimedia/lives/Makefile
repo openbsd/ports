@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/16 17:21:04 ajacoutot Exp $
 
 COMMENT =		video editor and a VJ tool
 
 DISTNAME =		LiVES-1.0.10
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
@@ -33,7 +34,8 @@ RUN_DEPENDS =		graphics/ImageMagick \
 			x11/mplayer \
 			audio/sox \
 			sysutils/cdrtools \
-			audio/xmms
+			audio/xmms \
+			devel/desktop-file-utils
 LIB_DEPENDS =		multimedia/libtheora \
 			devel/sdl \
 			multimedia/libdv \
