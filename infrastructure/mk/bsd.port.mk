@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1130 2011/11/15 20:41:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1131 2011/11/16 10:30:47 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1583,12 +1583,11 @@ _cache_fragment = \
 		trap "${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
 	esac
 
-_cached_libs = $${_DEPENDS_CACHE}/$$subdir/libs
 
 _libs2cache = \
-	if ! test -f ${_cached_libs}; then \
-		mkdir -p $${_DEPENDS_CACHE}/$$subdir; \
-		if ! eval $$toset ${MAKE} print-plist-libs >${_cached_libs}; \
+	cached_libs=$${_DEPENDS_CACHE}/$$(echo $$subdir|sed -e 's/\//--/g'); \
+	if ! test -f $$cached_libs; then \
+		if ! eval $$toset ${MAKE} print-plist-libs >$$cached_libs; \
 		then \
 			echo 1>&2 "Problem with dependency $$subdir"; \
 			exit 1; \
@@ -1599,7 +1598,7 @@ _libs2cache = \
 _if_check_needed = \
 	${_parse_spec}; \
 	${_libs2cache}; \
-	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <${_cached_libs}
+	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <$$cached_libs
 
 # both wantlib-args use this
 _show_found = \
@@ -1620,7 +1619,7 @@ _list_port_libs = \
 	{ ${MAKE} show-run-depends|while read subdir; do \
 		${_flavor_fragment}; \
 		${_libs2cache}; \
-		cat ${_cached_libs}; \
+		cat $$cached_libs; \
  	done; ${_list_system_libs}; }
 
 .if empty(PLIST_DB)
@@ -1957,7 +1956,7 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 			while ${_read_spec}; do \
 				${_parse_spec}; \
 				${_libs2cache}; \
-				cat ${_cached_libs}; \
+				cat $$cached_libs; \
 			done; \
 		for i in ${LOCALBASE}/lib${_lib}; do echo $$i; done;  \
 		${_list_system_libs}; \
@@ -2009,8 +2008,8 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 .else
 
 lib-depends-check:
-	@${_MAKE} package
-	@${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
+	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} package; \
+	${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
 
 ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
 	@${SUDO} ${_CHECK_LIB_DEPENDS} -O $@
