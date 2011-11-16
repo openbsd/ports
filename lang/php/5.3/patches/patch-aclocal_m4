@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.5 2011/08/27 13:13:13 robert Exp $
---- aclocal.m4.orig.port	Thu Mar 17 03:55:54 2011
-+++ aclocal.m4	Sat Aug  6 21:37:33 2011
+$OpenBSD: patch-aclocal_m4,v 1.6 2011/11/16 12:29:00 espie Exp $
+--- aclocal.m4.orig.port	Tue Aug 23 11:33:49 2011
++++ aclocal.m4	Wed Nov 16 12:59:21 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -63,7 +63,7 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2011/08/27 13:13:13 robert Exp $
        PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
        PHP_EVAL_INCLINE($OPENSSL_INCS)
      fi
-@@ -4325,7 +4311,7 @@ bsdi[[45]]*)
+@@ -4326,7 +4312,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'
@@ -72,3 +72,12 @@ $OpenBSD: patch-aclocal_m4,v 1.5 2011/08/27 13:13:13 robert Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
+@@ -4651,7 +4637,7 @@ openbsd*)
+     *)                         need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds=''
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in

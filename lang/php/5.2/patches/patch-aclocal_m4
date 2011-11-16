@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
---- aclocal.m4.orig.port	Thu Jan  6 23:04:40 2011
-+++ aclocal.m4	Sat Jun 18 12:46:53 2011
+$OpenBSD: patch-aclocal_m4,v 1.5 2011/11/16 12:29:00 espie Exp $
+--- aclocal.m4.orig.port	Fri Jan  7 00:04:40 2011
++++ aclocal.m4	Wed Nov 16 12:04:20 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -71,3 +71,12 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
+@@ -4644,7 +4629,7 @@ openbsd*)
+     *)                         need_version=no  ;;
+   esac
+   library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
+-  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  finish_cmds=''
+   shlibpath_var=LD_LIBRARY_PATH
+   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
+     case $host_os in
