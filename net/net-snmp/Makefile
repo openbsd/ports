@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2011/11/16 00:11:35 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -6,8 +6,8 @@ COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7
 DISTNAME=	net-snmp-$V
-REVISION-main=	1
-REVISION-perl=	1
+REVISION-main=	2
+REVISION-perl=	2
 REVISION-tkmib=	1
 
 MULTI_PACKAGES=	-main -perl -tkmib
