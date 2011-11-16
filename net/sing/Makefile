@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/16 00:20:09 sthen Exp $
 
 COMMENT=	send ICMP nasty garbage
 
 DISTNAME=	SING-1.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sing/}
 EXTRACT_SUFX=	.tgz

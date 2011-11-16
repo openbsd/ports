@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/16 00:20:08 sthen Exp $
 # $FreeBSD: Makefile,v 1.2 1998/08/11 09:57:51 andreas Exp $
 
 COMMENT=	network usage, interface similar to top(1)
 
 DISTNAME=	ntop-1.1
+REVISION=	0
 DISTFILES=	${DISTNAME}-src.tar.gz
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.unipi.it/pub/local/ntop/source/ \

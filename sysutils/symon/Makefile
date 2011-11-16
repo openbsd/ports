@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2011/11/16 00:25:05 sthen Exp $
 
 COMMENT-main=		active monitoring tool
 
 V=			2.83
-REVISION=		1
+REVISION=		2
 DISTNAME=		symon-${V}
 WRKDIST=		${WRKDIR}/symon
 PKGNAME-main=		${DISTNAME}

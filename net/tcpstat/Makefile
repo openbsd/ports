@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/16 00:20:09 sthen Exp $
 
 COMMENT=	report network interface statistics
 
 DISTNAME=	tcpstat-1.5
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.frenchfries.net/paul/tcpstat/
 

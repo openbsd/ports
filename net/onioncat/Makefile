@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/16 00:20:09 sthen Exp $
 
 COMMENT =	IP-Transparent Tor Hidden Service Connector
 
 V =		0.2.1
 DISTNAME =	onioncat-$V
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.abenteuerland.at/onioncat/

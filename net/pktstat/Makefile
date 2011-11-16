@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/07 10:58:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/11/16 00:20:09 sthen Exp $
 
 COMMENT=		network traffic viewer
 DISTNAME=		pktstat-1.8.4
-REVISION=		2
+REVISION=		3
 CATEGORIES=		net
 
 MAINTAINER=		Antti Harri <iku@openbsd.fi>
