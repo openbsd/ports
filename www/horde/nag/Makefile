@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/16 15:56:37 robert Exp $
 
 COMMENT=	multiuser task list manager, for Horde
 
@@ -6,7 +6,7 @@ HORDE_NAME=	Nag
 
 # GPLv2
 DISTNAME=	nag-h3-2.3.7
-REVISION=	0
+REVISION=	1
 
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-imap
 

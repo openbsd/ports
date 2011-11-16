@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/16 15:56:37 robert Exp $
 
 COMMENT=	learning management system
 
 DISTNAME=	moodle-1.9.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www education
 
 HOMEPAGE=	http://www.moodle.org/

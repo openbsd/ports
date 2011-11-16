@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/16 15:56:37 robert Exp $
 
 COMMENT=	pear ldap
 
 DISTNAME=	Net_LDAP-1.1.5
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MODULES=	lang/php www/pear

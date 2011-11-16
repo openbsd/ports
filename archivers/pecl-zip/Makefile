@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 08:26:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:36 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
-REVISION =	3
+REVISION =	4
 WANTLIB=	z
 
 CONFIGURE_STYLE=gnu

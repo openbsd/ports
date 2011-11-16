@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/16 15:56:38 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for geocoding IPv4 addresses
 
 DISTNAME=	geoip-1.0.7
-REVISION=	1
+REVISION=	2
 PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 08:26:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/16 15:56:36 robert Exp $
 
 SHARED_ONLY =		Yes
 
@@ -9,7 +9,7 @@ PKGNAME =		pecl-${DISTNAME:L}
 CATEGORIES =		archivers
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
 
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		http://pecl.php.net/package/lzf/
 

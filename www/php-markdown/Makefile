@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/18 19:19:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/16 15:56:38 robert Exp $
 
 COMMENT=		Markdown implementation for PHP
 
 DISTNAME=		php-markdown-1.0.1n
 CATEGORIES=		www
+
+REVISION=		0
 
 HOMEPAGE=		http://michelf.com/projects/php-markdown/
 

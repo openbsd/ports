@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:38 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	support for PHP archives (.phar)
 DISTNAME=	phar-2.0.0
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	4
+REVISION=	5
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	www
