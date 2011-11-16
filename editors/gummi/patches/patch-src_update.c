@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_updatecheck_c,v 1.1.1.1 2010/11/08 20:08:55 kili Exp $
---- src/updatecheck.c.orig	Sun Oct 24 09:18:22 2010
-+++ src/updatecheck.c	Sun Nov  7 14:53:04 2010
+$OpenBSD: patch-src_update.c,v 1.1 2011/11/16 23:34:53 kili Exp $
+--- src/update.c.orig	Sun Oct 24 09:18:22 2010
++++ src/update.c	Sun Nov  7 14:53:04 2010
 @@ -33,7 +33,10 @@
  #include <string.h>
  
