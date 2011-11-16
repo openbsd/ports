@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_multitrack_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- src/multitrack.c.orig	Tue Nov 15 23:53:20 2011
++++ src/multitrack.c	Tue Nov 15 23:53:37 2011
+@@ -40,6 +40,8 @@
+ #include "effects.h"
+ #include "audio.h"
+ 
++#include <sys/stat.h>
++
+ static int renumbered_clips[MAX_FILES+1]; // used to match clips from the event recorder with renumbered clips (without gaps)
+ static gdouble lfps[MAX_FILES+1]; // table of layout fps
+ static void **pchain; // param chain for currently being edited filter

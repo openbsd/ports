@@ -1,0 +1,12 @@
+$OpenBSD: patch-libOSC_NetworkUDP_h,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- libOSC/NetworkUDP.h.orig	Tue Nov 15 23:36:56 2011
++++ libOSC/NetworkUDP.h	Tue Nov 15 23:37:20 2011
+@@ -26,6 +26,8 @@ The OpenSound Control WWW page is 
+     http://www.cnmat.berkeley.edu/OpenSoundControl
+ */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <netinet/in.h>
+ 
+ struct NetworkReturnAddressStruct {

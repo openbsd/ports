@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_callbacks_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- src/callbacks.c.orig	Wed Nov 16 11:02:32 2011
++++ src/callbacks.c	Wed Nov 16 11:02:43 2011
+@@ -3598,7 +3598,7 @@ gboolean on_load_set_ok (GtkButton *button, gpointer u
+ 
+       // lock the set
+       pthread_mutex_lock(&mainw->gtk_mutex);
+-      com=g_strdup_printf("/bin/touch %s/%s/lock.%d",prefs->tmpdir,mainw->set_name,getpid());
++      com=g_strdup_printf("touch %s/%s/lock.%d",prefs->tmpdir,mainw->set_name,getpid());
+       dummyvar=system(com);
+       g_free(com);
+       pthread_mutex_unlock(&mainw->gtk_mutex);

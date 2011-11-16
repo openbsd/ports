@@ -1,0 +1,11 @@
+$OpenBSD: patch-lives-plugins_plugins_decoders_dv_decoder_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- lives-plugins/plugins/decoders/dv_decoder.c.orig	Tue Nov 15 23:58:23 2011
++++ lives-plugins/plugins/decoders/dv_decoder.c	Tue Nov 15 23:58:52 2011
+@@ -11,6 +11,7 @@
+ #include "../../../libweed/weed.h"
+ #include "../../../libweed/weed-effects.h"
+ 
++#define off64_t off_t
+ 
+ ///////////////////////////////////////////////////////
+ #include <stdio.h>

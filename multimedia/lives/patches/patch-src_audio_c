@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_audio_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- src/audio.c.orig	Tue Nov 15 23:42:53 2011
++++ src/audio.c	Tue Nov 15 23:55:26 2011
+@@ -10,10 +10,14 @@
+ #include "effects-weed.h"
+ #include "support.h"
+ 
++#include <sys/stat.h>
++
+ #include "../libweed/weed.h"
+ #include "../libweed/weed-effects.h"
+ #include "../libweed/weed-host.h"
+ 
++#define off64_t off_t
++#define lseek64 lseek
+ 
+ inline void sample_silence_dS (float *dst, unsigned long nsamples) {
+   memset(dst,0,nsamples*sizeof(float));

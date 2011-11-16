@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_omc-learn_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- src/omc-learn.c.orig	Tue Nov 15 23:52:10 2011
++++ src/omc-learn.c	Tue Nov 15 23:52:47 2011
+@@ -14,6 +14,8 @@
+ #include "effects-weed.h"
+ #include "interface.h"
+ 
++#include <sys/stat.h>
++
+ #include "omc-learn.h"
+ 
+ #ifdef OMC_JS_IMPL

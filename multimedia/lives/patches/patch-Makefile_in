@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- Makefile.in.orig	Fri Oct 15 15:07:22 2010
++++ Makefile.in	Wed Nov 16 00:25:06 2011
+@@ -879,7 +879,7 @@ install-exec-local:
+ 	$(top_srcdir)/po/update_with_plugins.sh install $(PACKAGE) $(prefix) $(DESTDIR)
+ 
+ install-exec-hook:
+-	$(LN_S) $(DESTDIR)$(bindir)/lives-exe $(DESTDIR)$(bindir)/lives
++	$(LN_S) $(bindir)/lives-exe $(DESTDIR)$(bindir)/lives
+ 
+ uninstall-local:
+ 	rm -rf $(DESTDIR)$(bindir)/lives

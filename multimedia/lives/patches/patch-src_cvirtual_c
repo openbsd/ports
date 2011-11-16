@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_cvirtual_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
+--- src/cvirtual.c.orig	Tue Nov 15 23:54:22 2011
++++ src/cvirtual.c	Tue Nov 15 23:54:49 2011
+@@ -9,6 +9,7 @@
+ 
+ 
+ #include "main.h"
++#include <sys/stat.h>
+ 
+ // frame_index is for files of type CLIP_TYPE_FILE
+ // a positive number is a pointer to a frame within the video file
