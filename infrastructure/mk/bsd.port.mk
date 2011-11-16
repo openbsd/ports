@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1131 2011/11/16 10:30:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1132 2011/11/16 10:57:23 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1545,9 +1545,12 @@ _version2stem = sed -e 's,-[0-9].*,,'
 _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 	-e '/^@file .*\/lib\/lib.*\.a$$/{ s/^@file //; p; }'
 
+# used in the following pattern
+# while $(_read_spec); do $(_parse_spec); done
+
 _read_spec = IFS=: read pkg subdir target
 _parse_spec = \
-	d="$$pkg:$$subdir:$$target"; \
+	d="$$pkg$${subdir:+:}$$subdir$${target:+:}$$target"; \
 	extra_msg="(DEPENDS was $$d) in ${FULLPKGPATH}"; \
 	case "X$$pkg" in \
 	*/*) target="$$subdir"; subdir="$$pkg"; pkg=;; \
@@ -1576,6 +1579,8 @@ _complete_pkgspec = \
 _emit_lib_depends = for i in ${LIB_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 _emit_run_depends = for i in ${RUN_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 
+# computing libraries from the ports tree is expenive, so cache as many of
+# these as we can
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
 		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
@@ -1583,6 +1588,8 @@ _cache_fragment = \
 		trap "${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
 	esac
 
+# XXX assumes it's running under _cache_fragment, either directly, or from
+# a target up there
 
 _libs2cache = \
 	cached_libs=$${_DEPENDS_CACHE}/$$(echo $$subdir|sed -e 's/\//--/g'); \
@@ -1600,7 +1607,8 @@ _if_check_needed = \
 	${_libs2cache}; \
 	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <$$cached_libs
 
-# both wantlib-args use this
+# turn a list of found libraries into parameters for pkg_create,
+# zap .a in the meantime
 _show_found = \
 	for k in $$found; do \
 		case $$k in *.a) ;; \
