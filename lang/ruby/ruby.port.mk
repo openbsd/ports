@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.47 2011/11/09 00:03:31 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.48 2011/11/17 15:24:01 jeremy Exp $
 
 # ruby module
 
@@ -117,7 +117,8 @@ MODRUBY_FLAVOR =	rbx
 .endif
 
 MODRUBY_RAKE_DEPENDS =	
-MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
+MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec/1,${MODRUBY_FLAVOR}<2.0
+MODRUBY_RSPEC2_DEPENDS = devel/ruby-rspec/rspec,${MODRUBY_FLAVOR}>=2.0
 
 # Set the path for the ruby interpreter and the rake and rspec
 # commands used by MODRUBY_REGRESS and manually in some port
@@ -126,6 +127,7 @@ MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 RUBY=			${LOCALBASE}/jruby/bin/jruby
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
+MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
 MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
 
 # Without this, JRuby often fails with a memory error.
@@ -134,6 +136,7 @@ MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
 RUBY=			${LOCALBASE}/bin/rbx
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
+MODRUBY_BIN_RSPEC =	${RUBY} -S rspec
 MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
 .else
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
@@ -142,12 +145,20 @@ MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
 .  if ${MODRUBY_REV} == 1.8
 MODRUBY_RAKE_DEPENDS =	devel/ruby-rake
 RSPEC=			${LOCALBASE}/bin/spec
+MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec
 .  else
 RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
+MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
 .  endif
 .endif
 
+.if defined(MODRUBY_REGRESS) && !${MODRUBY_REGRESS:L:Mrspec} && \
+	!${MODRUBY_REGRESS:L:Mrspec2} && !${MODRUBY_REGRESS:L:Mrake} && \
+	!${MODRUBY_REGRESS:L:Mruby} && !${MODRUBY_REGRESS:L:Mtestrb}
+ERRORS += "Fatal: Unsupported MODRUBY_REGRESS value: ${MODRUBY_REGRESS}"
+.else
 MODRUBY_REGRESS?=
+.endif
 
 .if ${MODRUBY_REV} == jruby
 .  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
@@ -220,6 +231,9 @@ REGRESS_DEPENDS+=	${MODRUBY_RAKE_DEPENDS}
 .endif
 .if ${MODRUBY_REGRESS:L:Mrspec}
 REGRESS_DEPENDS+=	${MODRUBY_RSPEC_DEPENDS}
+.endif
+.if ${MODRUBY_REGRESS:L:Mrspec2}
+REGRESS_DEPENDS+=	${MODRUBY_RSPEC2_DEPENDS}
 .endif
 
 MODRUBY_RUBY_ADJ=	perl -pi -e 's,/usr/bin/env ruby,${RUBY},'
@@ -411,22 +425,35 @@ SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
 
 # regression stuff
 
-.if !target(do-regress)
-.  if ${MODRUBY_REGRESS:L:Mrspec}
+.if !empty(MODRUBY_REGRESS)
+.  if !target(do-regress)
+
 .    if ${MODRUBY_REGRESS:L:Mrake}
-RAKE_REGRESS_TARGET?=	${RSPEC_REGRESS_TARGET}
-.    else
-RSPEC_REGRESS_TARGET?=	spec
-do-regress:
-	cd ${WRKSRC} && ${RSPEC} ${RSPEC_REGRESS_TARGET}
+MODRUBY_REGRESS_BIN ?=	${RAKE} --trace
+.    elif ${MODRUBY_REGRESS:L:Mrspec}
+MODRUBY_REGRESS_BIN ?=	${RSPEC}
+.    elif ${MODRUBY_REGRESS:L:Mrspec2}
+MODRUBY_REGRESS_BIN ?=	${MODRUBY_BIN_RSPEC}
+.    elif ${MODRUBY_REGRESS:L:Mtestrb}
+MODRUBY_REGRESS_BIN ?=	${MODRUBY_BIN_TESTRB}
+.    elif ${MODRUBY_REGRESS:L:Mruby}
+MODRUBY_REGRESS_BIN ?=	${RUBY}
 .    endif
-.  endif
-.  if ${MODRUBY_REGRESS:L:Mrake}
-RAKE_REGRESS_TARGET?=	test
+
+.    if ${MODRUBY_REGRESS:L:Mrspec} || ${MODRUBY_REGRESS:L:Mrspec2}
+MODRUBY_REGRESS_TARGET ?=	spec
+.    else
+MODRUBY_REGRESS_TARGET ?=	test
+.    endif
+
+MODRUBY_REGRESS_ENV ?= 
+.    if ${MODRUBY_REV} == 1.9
+MODRUBY_REGRESS_ENV += RUBYLIB=.:"$$RUBYLIB"
+.    endif
+MODRUBY_REGRESS_DIR ?= ${WRKSRC}
 do-regress:
-	cd ${WRKSRC} && ${RAKE} ${RAKE_REGRESS_TARGET}
-.  endif
-.  if !${MODRUBY_REGRESS:L:Mrspec} && !${MODRUBY_REGRESS:L:Mrake}
-NO_REGRESS=YES
+	cd ${MODRUBY_REGRESS_DIR} && ${SETENV} ${MAKE_ENV} HOME=${WRKBUILD} \
+		${MODRUBY_REGRESS_ENV} ${MODRUBY_REGRESS_BIN} \
+		${MODRUBY_REGRESS_TARGET}
 .  endif
 .endif
