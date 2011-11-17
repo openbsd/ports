@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2011/11/15 21:40:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.146 2011/11/17 00:45:11 sebastia Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -80,6 +80,7 @@
      SUBDIR += redshift
      SUBDIR += remind
      SUBDIR += rlwrap
+     SUBDIR += rocrail
      SUBDIR += rpm
      SUBDIR += ruby-spreadsheet
      SUBDIR += screen
