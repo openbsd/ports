@@ -1,13 +1,19 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/17 23:32:33 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1.1.2 2011/11/17 23:38:02 sebastia Exp $
 
-COMMENT =	analog clock for the GNUstep desktop
+COMMENT =	GNUstep library to manipulate matrices
 
-DISTNAME =	AClock-0.4.0
+VERSION =	1.2
+DISTNAME =	MathArray-${VERSION}
+PKGNAME =	gnustep-matharray-${VERSION}
+CATEGORIES =	math
+SHARED_LIBS +=  MathArray	0.0
 
-HOMEPAGE =	http://gap.nongnu.org/aclock/
-MASTER_SITES =	http://savannah.nongnu.org/download/gap/
+HOMEPAGE =	http://wiki.gnustep.org/index.php/MathArray
+MASTER_SITES =	${MASTER_SITE_GNUSTEP:=contrib/}
 
-MODULES =	x11/gnustep
-WANTLIB =	c m pthread
+MODULES =		x11/gnustep
+MODGNUSTEP_NEEDS_GUI = 	No
+
+MAKE_FLAGS +=	libMathArray_INTERFACE_VERSION=${LIBMathArray_VERSION}
 
 .include <bsd.port.mk>
