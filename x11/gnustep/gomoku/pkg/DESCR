@@ -1,0 +1,5 @@
+Gomoku is an extended TicTacToe game for GNUstep. You win the game if
+you are able to put 5 of your pieces in a row, column or diagonal. You
+lose if the computer does it before you. Unlike most other engines, this
+engine is not designed to play very well, but rather to give you fun
+when you play against it.
