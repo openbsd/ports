@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-pcntl,v 1.1 2011/11/17 12:52:27 robert Exp $
+@conflict php5-pcntl->=5.2
+@conflict pecl-pctnl-*
+@pkgpath www/pecl-pcntl
+lib/php-${PV}/modules/pcntl.so
+share/examples/php-${PV}/pcntl.ini
+@sample ${SYSCONFDIR}/php-${PV}.sample/pcntl.ini

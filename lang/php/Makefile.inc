@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.22 2011/11/08 10:25:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.23 2011/11/17 12:52:27 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -340,7 +340,7 @@ pre-configure:
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
-.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
+.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:N-pcntl:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext

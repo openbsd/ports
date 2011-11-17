@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/17 12:52:27 robert Exp $
 
 PV=		5.3
 V=		${PV}.8
@@ -20,5 +20,12 @@ LIB_DEPENDS-fpm=	${LIB_DEPENDS-main}
 WANTLIB-fpm=		${WANTLIB-main}
 RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
 			php-${V}:lang/php/${PV}
+
+# pcntl
+MULTI_PACKAGES+=	-pcntl
+COMMENT-pcntl=		PCNTL extensions for php5
+CONFIGURE_ARGS+=	--enable-pcntl=shared
+LIB_DEPENDS-pcntl=
+WANTLIB-pcntl=
 
 .include <bsd.port.mk>
