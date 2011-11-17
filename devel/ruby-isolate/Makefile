@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/17 15:39:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/17 17:31:39 jeremy Exp $
 
 COMMENT =	very simple RubyGems sandbox
 
 DISTNAME =	isolate-3.2.1
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/jbarnette/isolate
@@ -19,7 +20,7 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
 
 REGRESS_DEPENDS = devel/ruby-minitest,${MODRUBY_FLAVOR} \
-	 	  devel/ruby-hoe,${MODRUBY_FLAVOR}
+	 	  devel/ruby-hoe,${MODRUBY_FLAVOR}>=2.12.3
 MODRUBY_REGRESS = testrb
 MODRUBY_REGRESS_ENV = RUBYOPT=-rubygems
 MODRUBY_REGRESS_TARGET = -I . -I ../lib test_*.rb
