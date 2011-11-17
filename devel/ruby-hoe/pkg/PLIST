@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/25 16:44:06 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/11/17 17:29:28 jeremy Exp $
 ${GEM_BIN}/sow${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Hoe.pdf
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
@@ -46,4 +47,5 @@ ${GEM_LIB}/gems/${DISTNAME}/template/test/test_file_name.rb.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_gemcutter.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_test.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
