@@ -1,0 +1,3 @@
+Netclasses is an easy to use, unbloated API for handling asynchronous
+connections in Objective-C under GNUstep as well as OS X. It can also be
+used for synchronous connections but this is not its primary use.
