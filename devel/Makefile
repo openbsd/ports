@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.997 2011/11/16 19:29:31 pirofti Exp $
+# $OpenBSD: Makefile,v 1.998 2011/11/17 15:58:12 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1045,6 +1045,7 @@
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-columnize
      SUBDIR += ruby-cucumber
+     SUBDIR += ruby-daemon_controller
      SUBDIR += ruby-daemons
      SUBDIR += ruby-debug
      SUBDIR += ruby-debug-base
@@ -1061,11 +1062,13 @@
      SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gir_ffi
+     SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
      SUBDIR += ruby-home_run
      SUBDIR += ruby-i18n
      SUBDIR += ruby-isolate
+     SUBDIR += ruby-jeweler
      SUBDIR += ruby-kgio
      SUBDIR += ruby-kgio,ruby19
      SUBDIR += ruby-linecache
