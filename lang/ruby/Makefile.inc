@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2011/11/17 10:54:11 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2011/11/17 11:47:12 jeremy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -29,6 +29,3 @@ CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 REV ?=			${VERSION:R}
 SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 SUBST_VARS +=		SUB REV
-
-# Building the ruby documentation consumes lots of memory.
-VMEM_WARNING = Yes
