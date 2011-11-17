@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.6 2011/06/02 12:46:37 ajacoutot Exp $
---- provider/libserver/ECAttachmentStorage.cpp.orig	Wed Apr 20 19:51:49 2011
-+++ provider/libserver/ECAttachmentStorage.cpp	Mon May  2 12:47:53 2011
-@@ -1213,7 +1213,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
- {
- 	m_basepath = basepath;
+$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.7 2011/11/17 15:14:37 ajacoutot Exp $
+--- provider/libserver/ECAttachmentStorage.cpp.orig	Thu Nov 17 03:03:24 2011
++++ provider/libserver/ECAttachmentStorage.cpp	Thu Nov 17 13:59:31 2011
+@@ -1215,7 +1215,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
+ 	m_lpLogger = lpLogger;
+ 	
  	if (m_basepath.empty())
 -		m_basepath = "/var/lib/zarafa";
 +		m_basepath = "/var/db/zarafa";

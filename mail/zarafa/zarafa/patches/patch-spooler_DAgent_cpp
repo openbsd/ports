@@ -1,18 +1,19 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.17 2011/09/29 17:12:11 ajacoutot Exp $
---- spooler/DAgent.cpp.orig	Mon Sep 26 15:56:09 2011
-+++ spooler/DAgent.cpp	Thu Sep 29 16:53:37 2011
-@@ -91,6 +91,10 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.18 2011/11/17 15:14:37 ajacoutot Exp $
+--- spooler/DAgent.cpp.orig	Thu Nov 17 03:03:22 2011
++++ spooler/DAgent.cpp	Thu Nov 17 14:52:18 2011
+@@ -91,6 +91,11 @@
  #include <sys/mman.h>
  #include <pwd.h>
  
 +#ifdef __OpenBSD__
 +#include <sys/resource.h>
++extern char **environ;
 +#endif
 +
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -3123,7 +3127,7 @@ int main(int argc, char *argv[]) {
+@@ -3283,7 +3288,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";

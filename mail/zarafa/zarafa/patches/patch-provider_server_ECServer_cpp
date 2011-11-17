@@ -1,6 +1,6 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.16 2011/09/29 17:12:11 ajacoutot Exp $
---- provider/server/ECServer.cpp.orig	Mon Sep 26 15:56:10 2011
-+++ provider/server/ECServer.cpp	Thu Sep 29 16:53:37 2011
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.17 2011/11/17 15:14:37 ajacoutot Exp $
+--- provider/server/ECServer.cpp.orig	Thu Nov 17 03:03:23 2011
++++ provider/server/ECServer.cpp	Thu Nov 17 15:02:57 2011
 @@ -86,6 +86,10 @@
  #include "unicode/uclean.h"
  #endif
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.16 2011/09/29 17:12:11 ajacouto
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -676,7 +680,7 @@ int running_server(char *szName, const char *szConfig)
+@@ -722,7 +726,7 @@ int running_server(char *szName, const char *szConfig)
  		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
  #endif
  		{ "attachment_storage",			"database" },
@@ -21,7 +21,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.16 2011/09/29 17:12:11 ajacouto
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -747,7 +751,7 @@ int running_server(char *szName, const char *szConfig)
+@@ -793,7 +797,7 @@ int running_server(char *szName, const char *szConfig)
  		{ "cache_sortkey_size",		"0", CONFIGSETTING_UNUSED }, // Option not support, only for backward compatibility of all configurations under the 6.20
  
  		{ "client_update_enabled",	"no" },
@@ -30,3 +30,18 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.16 2011/09/29 17:12:11 ajacouto
          { "index_services_enabled", "no", CONFIGSETTING_RELOADABLE }, 
          { "index_services_path",    "file:///var/run/zarafa-indexer", CONFIGSETTING_RELOADABLE },        
  		{ "index_services_search_timeout", "10", CONFIGSETTING_RELOADABLE },
+@@ -814,10 +818,14 @@ int running_server(char *szName, const char *szConfig)
+ 		{ NULL, NULL },
+ 	};
+ 
++#if defined(__linux__)
+ 	char buffer[256];
+ 	confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
+ 	if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0)
+ 		m_bNPTL = false;
++#elif defined(__OpenBSD__)
++	m_bNPTL = false;
++#endif
+ 
+ 	// Init random generator
+ 	rand_init();
