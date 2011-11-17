@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/17 15:17:41 sthen Exp $
 
 COMMENT= 	module for inspecting Perl's symbol table
 
 MODULES=	cpan
 DISTNAME=	Devel-Symdump-2.07
-REVISION=	1
+EPOCH=		0
 CATEGORIES=	devel perl5
 USE_GROFF =	Yes
 
