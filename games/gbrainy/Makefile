@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/01 07:22:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/17 09:16:03 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
-DISTNAME=	gbrainy-2.05
+DISTNAME=	gbrainy-2.06
 
 CATEGORIES=	games
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
-EXTRACT_SUFX=		.tar.gz
+EXTRACT_SUFX=	.tar.gz
 
 MODULES=	textproc/intltool \
 		lang/mono \
