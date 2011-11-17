@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/08 21:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/17 15:35:45 jeremy Exp $
 ${GEM_BIN}/bundle${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
+${GEM_LIB}/gems/${DISTNAME}/.travis.yml
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/ISSUES.md
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -23,6 +24,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/deployment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/dsl.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/environment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/gem_helper.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/gem_installer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/gem_tasks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/graph.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/index.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/installer.rb
@@ -46,6 +49,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/man/gemfile.5.txt
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/remote_specification.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/resolver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/rubygems_ext.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/rubygems_integration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/runtime.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/settings.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/setup.rb
@@ -73,6 +77,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/create_file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/create_link.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/empty_directory.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/actions/file_manipulation.rb
@@ -83,6 +88,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/core_ext/file_binary_read.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/core_ext/hash_with_indifferent_access.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/core_ext/ordered_hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/error.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/group.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/invocation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser.rb
@@ -90,6 +96,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser/argument.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser/arguments.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser/option.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/parser/options.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/rake_compat.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/runner.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/shell/
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/shell.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/shell/basic.rb
@@ -98,6 +106,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/shell/html.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/task.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendor/thor/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vendored_thor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/bundler/vlad.rb
 ${GEM_LIB}/gems/${DISTNAME}/man/
@@ -110,6 +119,8 @@ ${GEM_LIB}/gems/${DISTNAME}/man/bundle.ronn
 ${GEM_LIB}/gems/${DISTNAME}/man/gemfile.5.ronn
 ${GEM_LIB}/gems/${DISTNAME}/man/index.txt
 ${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/bundler/
+${GEM_LIB}/gems/${DISTNAME}/spec/bundler/gem_helper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cache/
 ${GEM_LIB}/gems/${DISTNAME}/spec/cache/gems_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/cache/git_spec.rb
@@ -143,14 +154,11 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/other/config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/console_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/exec_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/ext_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/other/gem_helper_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/help_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/init_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/newgem_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/open_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/other/show_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/pack/
-${GEM_LIB}/gems/${DISTNAME}/spec/pack/gems_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/quality_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/resolver/
 ${GEM_LIB}/gems/${DISTNAME}/spec/resolver/basic_spec.rb
@@ -173,7 +181,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/support/platforms.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/ruby_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/rubygems_ext.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/rubygems_hax/
-${GEM_LIB}/gems/${DISTNAME}/spec/support/rubygems_hax/rubygems_plugin.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/rubygems_hax/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/sudo.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/update/
 ${GEM_LIB}/gems/${DISTNAME}/spec/update/gems_spec.rb

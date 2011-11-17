@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/17 15:35:45 jeremy Exp $
 
 COMMENT=		ruby application dependency manager
 
-DISTNAME=		bundler-1.0.7
-REVISION =		1
+DISTNAME=		bundler-1.0.21
 CATEGORIES=		devel
 
 HOMEPAGE=		http://gembundler.com/
@@ -18,7 +17,9 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem
 
-# Currently requires a git checkout to run the specs
-MODRUBY_REGRESS=	rake rspec
+# hundreds of failures on ruby 1.8
+# broken on ruby 1.9
+REGRESS_DEPENDS =	textproc/ruby-ronn,${MODRUBY_FLAVOR}
+MODRUBY_REGRESS=	rake rspec2
 
 .include <bsd.port.mk>
