@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/30 07:47:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/11/17 11:39:49 jasper Exp $
 
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.30.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     2.0      # 1.0

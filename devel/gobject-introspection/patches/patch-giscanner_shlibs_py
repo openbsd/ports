@@ -1,0 +1,30 @@
+$OpenBSD: patch-giscanner_shlibs_py,v 1.1 2011/11/17 11:39:49 jasper Exp $
+--- giscanner/shlibs.py.orig	Fri Jun 10 17:36:50 2011
++++ giscanner/shlibs.py	Wed Nov 16 19:24:06 2011
+@@ -22,6 +22,7 @@
+ import re
+ import platform
+ import subprocess
++import os
+ 
+ from .utils import get_libtool_command, extract_libtool_shlib
+ 
+@@ -66,6 +67,18 @@ def _ldd_library_pattern(library_name):
+ def _resolve_non_libtool(options, binary, libraries):
+     if not libraries:
+         return []
++
++    # Hack for OpenBSD when using the ports' libtool which uses slightly
++    # different directories to store the libraries in. So rewite binary.args[0]
++    # by inserting '.libs/'.
++    old_argdir = binary.args[0]
++    new_libsdir = os.path.dirname(binary.args[0]) + '/.libs/'
++    new_lib = new_libsdir + os.path.basename(binary.args[0])
++    if os.path.exists(new_lib):
++        binary.args[0] = new_lib
++        os.putenv('LD_LIBRARY_PATH', new_libsdir)
++    else:
++        binary.args[0] = old_argdir
+ 
+     args = []
+     libtool = get_libtool_command(options)
