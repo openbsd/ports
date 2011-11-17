@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 23:42:51 sebastia Exp $
+include/MathArray/
+include/MathArray/MAValue.h
+include/MathArray/MAValueData.h
+include/MathArray/MaskedException.h
+include/MathArray/MathArray.h
+include/MathArray/MathArrayExtensions.h
+include/MathArray/NSObjectExtra.h
+include/MathArray/array_encoding.h
+include/MathArray/complex.h
+@lib lib/libMathArray.so.${LIBMathArray_VERSION}

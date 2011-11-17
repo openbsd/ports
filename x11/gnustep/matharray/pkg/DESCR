@@ -1,0 +1,9 @@
+MathArray is a general library of classes for performing mathematical
+operations on arrays (vectors, matrices, etc) of values. It can operate
+on any standard 'C' number type plus numbers of complex type. MathArray
+knows implicitly what types of operations can be performed on what types
+of numbers and will automatically cast itself to the correct number type
+representation to handle the specific operation. Standard operations
+include addition, scalar and matrix multiplication and logical
+operations. Mathematical operations in the standard C math library are
+also supported, as well as user-defined functions.
