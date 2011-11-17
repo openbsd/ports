@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/15 20:20:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/17 14:27:14 sthen Exp $
 
 COMMENT =	semantic grep, based on coccinelle
 
-MODPY_EGG_VERSION = 1.0
+MODPY_EGG_VERSION = 1.6
 DISTNAME =	coccigrep-${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel textproc
@@ -29,5 +29,6 @@ post-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccigrep
 	${INSTALL_DATA} ${WRKSRC}/README.rst ${PREFIX}/share/doc/coccigrep/
+	${INSTALL_DATA} ${WRKSRC}/coccigrep.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
