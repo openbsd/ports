@@ -1,6 +1,6 @@
-$OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.1.1.1 2011/11/16 19:27:48 pirofti Exp $
+$OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.2 2011/11/17 14:41:58 pirofti Exp $
 --- x86-mingw32-build.sh.conf.orig	Thu Mar 11 00:16:55 2010
-+++ x86-mingw32-build.sh.conf	Tue Nov 15 02:01:16 2011
++++ x86-mingw32-build.sh.conf	Thu Nov 17 16:01:32 2011
 @@ -35,17 +35,17 @@
  #    the `x86-mingw32-build.sh.hosts' file for the `mirror' field
  #    in the following URL, to establish a default download host.
@@ -40,15 +40,6 @@ $OpenBSD: patch-x86-mingw32-build_sh_conf,v 1.1.1.1 2011/11/16 19:27:48 pirofti 
  #
  # 8) User preferences for configuration options.  These have been
  #    preconfigured to match the setup of the prebuilt compiler suite,
-@@ -114,7 +114,7 @@
- #    build script; tampering with it here may damage the build.
- #
-      option GLOBAL_USER_OPTIONS         --disable-nls
--     option GLOBAL_USER_OPTIONS         --disable-shared
-+     option GLOBAL_USER_OPTIONS         --enable-shared
-      option GLOBAL_USER_OPTIONS         --disable-debug
- #
-      option GCC_USER_OPTIONS            --enable-sjlj-exceptions
 @@ -129,13 +129,13 @@
       option GCC_BASE_OPTIONS            --enable-threads=win32
       option GCC_BASE_OPTIONS            --disable-win32-registry

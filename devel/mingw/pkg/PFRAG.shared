@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/11/16 19:27:48 pirofti Exp $
-mingw32/lib/libbfd-2.20.1.20100303.so
-mingw32/lib/libbfd.so
-mingw32/lib/libopcodes-2.20.1.20100303.so
-mingw32/lib/libopcodes.so

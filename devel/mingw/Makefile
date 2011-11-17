@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/16 19:27:48 pirofti Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/17 14:41:58 pirofti Exp $
 
 COMMENT =	development environment for native Windows applications
 
 V = 		1.0.1
+REVISION =	0
 BASENAME =	x86-mingw32-build
 DISTNAME =	${BASENAME}-${V}-sh
 PKGNAME =	mingw-${V}
@@ -22,7 +23,6 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB += c z
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
 NO_REGRESS =	Yes
 
 EXTRACT_SUFX =	.tar.bz2
@@ -72,7 +72,7 @@ do-build:
 
 do-install:
 	# Fix the autoconf mess
-	${INSTALL_PROGRAM_DIR} ${MINGW32_DIR}/bin 
+	${INSTALL_PROGRAM_DIR} ${MINGW32_DIR}/bin ${MINGW32_DIR}/libexec
 	${INSTALL_DATA_DIR} ${MINGW32_DIR}/lib/ldscripts \
 	    ${MINGW32_DIR}/include \
 	    ${MINGW32_DIR}/lib/gcc/i386-mingw32/3.4.5/include
@@ -84,12 +84,15 @@ do-install:
 	    ${MINGW32_OUT}/i386-mingw32/bin/* ${MINGW32_DIR}/bin
 	${INSTALL_DATA} ${MINGW32_OUT}/i386-mingw32/lib/ldscripts/* \
 	    ${MINGW32_DIR}/lib/ldscripts
+	cp -r ${MINGW32_OUT}/libexec/* ${MINGW32_DIR}/libexec
+	    chown -R ${BINOWN}:${BINGRP} ${MINGW32_DIR}/libexec && \
+	    chmod -R 755 ${MINGW32_DIR}/libexec
 
 	# Libraries
+	${INSTALL_DATA} ${MINGW32_OUT}/lib/crt*.o \
+	    ${MINGW32_DIR}/lib/gcc/i386-mingw32/3.4.5
 	${INSTALL_DATA} ${MINGW32_OUT}/lib/*.a \
-	    ${MINGW32_OUT}/i386-mingw32/lib/*.*a \
-	    ${MINGW32_OUT}/x86_64-unknown-openbsd5.0/i386-mingw32/lib/* \
-	    ${MINGW32_DIR}/lib
+	    ${MINGW32_OUT}/i386-mingw32/lib/*.*a ${MINGW32_DIR}/lib
 	cp -r ${MINGW32_OUT}/lib/* ${MINGW32_DIR}/lib && \
 	    chown -R ${SHAREOWN}:${SHAREGRP} ${MINGW32_DIR}/lib && \
 	    chmod -R 644 ${MINGW32_DIR}/lib/* && \
@@ -100,9 +103,6 @@ do-install:
 	    chown -R ${SHAREOWN}:${SHAREGRP} ${MINGW32_DIR}/include && \
 	    chmod -R 644 ${MINGW32_DIR}/include/* && \
 	    find ${MINGW32_DIR}/include -type d -exec chmod a+x {} \;
-	${INSTALL_DATA} \
-	    ${MINGW32_OUT}/x86_64-unknown-openbsd${OSREV}/i386-mingw32/include/* \
-	    ${MINGW32_DIR}/include
 
 	# Documentation
 	${INSTALL_MAN} ${MINGW32_OUT}/share/man/man1/* \
