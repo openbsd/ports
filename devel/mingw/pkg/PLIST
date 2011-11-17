@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/17 14:41:59 pirofti Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2011/11/17 15:52:39 pirofti Exp $
 mingw32/
 mingw32/bin/
 @bin mingw32/bin/ar
