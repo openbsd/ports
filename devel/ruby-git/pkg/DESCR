@@ -1,0 +1,3 @@
+ruby-git provides an object-oriented interface to git's command line
+interface, allowing for both read and write operations on git
+repositories.

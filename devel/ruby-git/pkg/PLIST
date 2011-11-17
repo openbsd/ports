@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 15:27:39 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/git/
+${GEM_LIB}/gems/${DISTNAME}/lib/git.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/author.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/base.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/branch.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/branches.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/diff.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/index.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/lib.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/log.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/object.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/path.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/remote.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/repository.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/stash.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/stashes.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/status.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/git/working_directory.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
