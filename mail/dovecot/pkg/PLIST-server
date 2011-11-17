@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.23 2011/11/11 23:21:48 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.24 2011/11/17 10:39:01 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -412,6 +412,7 @@ libexec/dovecot/deliver
 @man man/man1/doveadm-kick.1
 @man man/man1/doveadm-log.1
 @man man/man1/doveadm-mailbox.1
+@man man/man1/doveadm-move.1
 @man man/man1/doveadm-penalty.1
 @man man/man1/doveadm-purge.1
 @man man/man1/doveadm-pw.1
@@ -582,6 +583,7 @@ share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.SpamtestVirustest.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.Vacation.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Extdata.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Pipe.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Troubleshooting.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Usage.txt
@@ -623,6 +625,7 @@ share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
 share/doc/dovecot/wiki/SharedMailboxes.Symlinks.txt
 share/doc/dovecot/wiki/SharedMailboxes.txt
+share/doc/dovecot/wiki/Statistics.txt
 share/doc/dovecot/wiki/SystemUsers.txt
 share/doc/dovecot/wiki/TestInstallation.txt
 share/doc/dovecot/wiki/TestPop3Installation.txt
