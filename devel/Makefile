@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.998 2011/11/17 15:58:12 jeremy Exp $
+# $OpenBSD: Makefile,v 1.999 2011/11/17 17:12:52 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -959,6 +959,7 @@
      SUBDIR += py-gdata
      SUBDIR += py-gobject
      SUBDIR += py-gobject3
+     SUBDIR += py-guppy
      SUBDIR += py-hg-git
      SUBDIR += py-html5lib
      SUBDIR += py-kid
