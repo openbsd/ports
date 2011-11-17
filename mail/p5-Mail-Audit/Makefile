@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/12 13:13:11 gsoares Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/17 16:22:38 gsoares Exp $
 
 COMMENT=	library for creating easy mail filters
 
-DISTNAME=	Mail-Audit-2.226
+DISTNAME=	Mail-Audit-2.227
 CATEGORIES=	mail
 
 # perl
