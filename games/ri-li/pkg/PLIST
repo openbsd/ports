@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/19 10:30:43 ajacoutot Exp $
-bin/Ri_li
+@comment $OpenBSD: PLIST,v 1.2 2011/11/17 22:57:18 ajacoutot Exp $
+@bin bin/Ri_li
 share/Ri-li/
 share/Ri-li/COPYING.Music
-@comment share/Ri-li/Ri-li-2.0.0-r1.ebuild
 share/Ri-li/Ri-li-icon-16x16.png
 share/Ri-li/Ri-li-icon-32x32.png
 share/Ri-li/Ri-li-icon-48x48.png
@@ -31,6 +30,7 @@ share/Ri-li/language.Fr
 share/Ri-li/language.Hu
 share/Ri-li/language.It
 share/Ri-li/language.Jp
+share/Ri-li/language.Ko
 share/Ri-li/language.Pl
 share/Ri-li/language.Po
 share/Ri-li/language.Ru
