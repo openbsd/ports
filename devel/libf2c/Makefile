@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/18 19:06:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/17 13:58:27 sthen Exp $
 
 V =		3.3.5
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -8,7 +8,7 @@ REVISION =	6
 DISTFILES = 	libf2c-openbsd.tgz
 MASTER_SITES =	http://spacehopper.org/mirrors/
 
-NOT_FOR_ARCHES =	${GCC2_ARCHS}
+NOT_FOR_ARCHS =	${GCC2_ARCHS}
 COMMENT =	GNU fortran 77 libraries
 CATEGORIES =	devel math
 PERMIT_DISTFILES_CDROM = Yes
