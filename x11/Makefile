@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.477 2011/11/15 21:40:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.478 2011/11/17 15:49:27 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -52,6 +52,7 @@
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
      SUBDIR += extace
+     SUBDIR += faenza-icon-theme
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk
