@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2005/01/04 19:55:58 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/17 15:15:04 sthen Exp $
 ${P5SITE}/Lingua/
 ${P5SITE}/Lingua/EN/
 ${P5SITE}/Lingua/EN/Inflect.pm
-${P5SITE}/Lingua/EN/demo_NO.pl
-${P5SITE}/Lingua/EN/demo_NUM.pl
-${P5SITE}/Lingua/EN/demo_PL.pl
-${P5SITE}/Lingua/EN/demo_eq.pl
-${P5SITE}/Lingua/EN/demo_inflect.pl
 @man man/man3p/Lingua::EN::Inflect.3p
+share/examples/p5-Lingua-EN-Inflect/
+share/examples/p5-Lingua-EN-Inflect/demo_NO.pl
+share/examples/p5-Lingua-EN-Inflect/demo_NUM.pl
+share/examples/p5-Lingua-EN-Inflect/demo_PL.pl
+share/examples/p5-Lingua-EN-Inflect/demo_eq.pl
+share/examples/p5-Lingua-EN-Inflect/demo_inflect.pl
