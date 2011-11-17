@@ -1,0 +1,12 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2011/11/17 00:43:19 sebastia Exp $
+--- makefile.orig	Sat Oct  8 22:24:43 2011
++++ makefile	Sat Oct  8 22:25:19 2011
+@@ -65,6 +65,7 @@ uninstall:
+ 
+ version:
+ 	echo $(QUOT)const int bzr = $(QUOT) > common$(FS)version.h
+-	bzr revno >> common$(FS)version.h
++	#bzr revno >> common$(FS)version.h
++	echo $(QUOT)2.0$(QUOT) >> common$(FS)version.h
+ 	echo $(QUOT);$(QUOT) >> common$(FS)version.h
+ 

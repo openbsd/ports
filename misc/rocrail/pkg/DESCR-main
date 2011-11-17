@@ -1,0 +1,11 @@
+Rocrail can control a model train layout from one or more computers. You
+can run trains directly from your computer, and you can have the
+computer run trains automatically for you. You can even have some of the
+trains on your layout running automatically while you control others by
+hand.  Rocrail is two programs; the Rocrail Server and the Rocview
+Client. These programs work with each other using Internet protocols,
+and do not need to be on the same computer. You can use Rocrail from a
+single computer connected directly to your layout, and you can also
+control your layout from any computer on your home network, or over the
+Internet. Rocrail also has a web interface, which will let you run the
+layout from a web browser.
