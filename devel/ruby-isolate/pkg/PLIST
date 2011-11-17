@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 20:04:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/17 15:39:15 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
@@ -22,6 +23,13 @@ ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/blort-0.0.gem
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/isolate.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/override.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/override.rb.local
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system/specifications/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system/specifications/rcov-0.9.9.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system_redundant/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system_redundant/specifications/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system_redundant/specifications/rake-0.8.7.gemspec
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/system_redundant/specifications/rcov-0.9.9.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/with-hoe/
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/with-hoe/specifications/
 ${GEM_LIB}/gems/${DISTNAME}/test/fixtures/with-hoe/specifications/hoe-2.3.3.gemspec

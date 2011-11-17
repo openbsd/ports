@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_isolate_entry_rb,v 1.1 2011/11/17 15:39:15 jeremy Exp $
+
+Add user-install option so that you don't need to have root access
+to use isolate with gems with C extensions.
+
+--- lib/isolate/entry.rb.orig	Mon Nov 14 19:51:12 2011
++++ lib/isolate/entry.rb	Mon Nov 14 19:52:10 2011
+@@ -67,9 +67,7 @@ module Isolate
+ 
+     def activate
+       fire :activating, :activated do
+-        spec = self.specification
+-        raise Gem::LoadError, "Couldn't resolve: #{self}" unless spec
+-        spec.activate
++        Gem::Specification.find_by_name(name, requirement).activate
+       end
+     end
+ 
+@@ -86,6 +84,7 @@ module Isolate
+             Gem::DependencyInstaller.new(:development   => false,
+                                          :generate_rdoc => false,
+                                          :generate_ri   => false,
++                                         :user_install  => true,
+                                          :install_dir   => @sandbox.path)
+ 
+           Gem::Command.build_args = Array(options[:args]) if options[:args]
