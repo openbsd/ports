@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/17 00:43:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/17 12:33:31 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -11,6 +11,8 @@ DISTNAME =		Rocrail-2585
 PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
+
+REVISION-main =		0
 
 HOMEPAGE =		http://www.rocrail.net/
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
