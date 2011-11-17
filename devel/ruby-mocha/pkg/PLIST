@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/11/17 15:41:11 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/RELEASE
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
+${GEM_LIB}/gems/${DISTNAME}/COPYING.rdoc
+${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/RELEASE.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/misc.rb
@@ -35,12 +36,19 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/assertion_counter.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_131_and_above.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/exception_translation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_13.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_140.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_141.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_142_to_172.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_200.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/mini_test/version_201_to_202.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/assertion_counter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/gem_version_200.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/gem_version_201_and_above.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/gem_version_201_to_202.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/gem_version_203_to_209.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/ruby_version_185_and_below.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/integration/test_unit/ruby_version_186_and_above.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/is_a.rb
@@ -54,6 +62,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/multiple_yields.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/names.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/no_yields.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/object.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/all_of.rb
@@ -73,6 +82,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/kind_of.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/not.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/optionally.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/query_string.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/regexp_matches.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/responds_with.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mocha/parameter_matchers/yaml_equivalent.rb
@@ -96,6 +106,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/api_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/bug_18914_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/bug_21465_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/bug_21563_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/acceptance/exception_rescue_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/expected_invocation_count_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/failure_messages_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/minitest_test.rb
@@ -104,6 +115,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/mocha_test_result_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/mock_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/mock_with_initializer_block_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/mocked_methods_dispatch_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/acceptance/multiple_expectations_failure_message_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/optional_parameters_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/parameter_matcher_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/partial_mocks_test.rb
@@ -128,9 +140,11 @@ ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/stubbing_non_public_any_instance_met
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/stubbing_non_public_class_method_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/stubbing_non_public_instance_method_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/acceptance/stubbing_on_non_mock_object_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/acceptance/unstubbing_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/deprecation_disabler.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/execution_point.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/method_definer.rb
+${GEM_LIB}/gems/${DISTNAME}/test/mini_test_result.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/simple_counter.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_runner.rb
@@ -142,6 +156,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/unit/cardinality_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/central_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/change_state_side_effect_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/class_method_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/unit/configuration_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/date_time_inspect_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/exception_raiser_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/expectation_list_test.rb
