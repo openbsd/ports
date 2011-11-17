@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/13 12:44:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/17 23:33:40 nigel Exp $
 
 COMMENT=	very fast free Verilog HDL simulator
 
@@ -17,6 +17,8 @@ MASTER_SITES=		http://www.veripool.org/ftp/
 EXTRACT_SUFX=		.tgz
 
 WANTLIB=		c m stdc++
+
+BUILD_DEPENDS +=	devel/bison
 
 CONFIGURE_STYLE=	gnu
 MAKE_FLAGS=		VERILATOR_ROOT=${PREFIX}/share/verilator/ \
