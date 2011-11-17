@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.532 2011/10/14 16:33:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.533 2011/11/17 12:54:31 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -337,7 +337,6 @@
      SUBDIR += pecl-chroot
      SUBDIR += pecl-geoip
      SUBDIR += pecl-memcache
-     SUBDIR += pecl-pcntl
      SUBDIR += pecl-phar
      SUBDIR += pecl-proctitle
      SUBDIR += pecl-ssh2
