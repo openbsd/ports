@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/16 17:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/17 08:56:09 ajacoutot Exp $
 
 COMMENT =		video editor and a VJ tool
 
-DISTNAME =		LiVES-1.0.10
+V =			1.0.10
+DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
 REVISION =		0
 
@@ -56,7 +57,7 @@ pre-install:
 	@cd ${WRKDIST}/po && ${MAKE_PROGRAM} update-po
 
 post-install:
-	mv ${WRKINST}/${TRUEPREFIX}/share/doc/${FULLPKGNAME} \
+	mv ${WRKINST}/${TRUEPREFIX}/share/doc/lives-${V} \
 	    ${WRKINST}/${TRUEPREFIX}/share/doc/lives/
 	find ${WRKINST}/${TRUEPREFIX}/lib/lives/plugins -name '*.la' | xargs rm
 
