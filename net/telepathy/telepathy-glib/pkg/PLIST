@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/10/17 16:45:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/11/17 14:54:22 jasper Exp $
 include/telepathy-1.0/
 include/telepathy-1.0/telepathy-glib/
 include/telepathy-1.0/telepathy-glib/_gen/
@@ -295,6 +295,7 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-svc-tls.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-svc.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-text-channel.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib-util.html
+share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
 share/gtk-doc/html/telepathy-glib/up.png
 share/vala/
