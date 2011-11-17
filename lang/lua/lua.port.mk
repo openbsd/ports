@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.6 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: lua.port.mk,v 1.7 2011/11/17 23:48:13 sthen Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -11,7 +11,10 @@ MODLUA_LIBDIR=	${PREFIX}/lib/lua/${MODLUA_VERSION}/
 # Where the lua modules will be installed to
 MODLUA_DATADIR=	${PREFIX}/share/lua/${MODLUA_VERSION}/
 
+MODLUA_RUNDEP?=	Yes
+.if ${MODLUA_RUNDEP:L} == yes
 RUN_DEPENDS+=	lang/lua
+.endif
 
 .if ${NO_BUILD:L} == "no"
 BUILD_DEPENDS+=	lang/lua
