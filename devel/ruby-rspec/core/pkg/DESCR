@@ -1,0 +1,3 @@
+rspec-core provides the structure for writing executable examples of how
+your code should behave. It uses the words "describe" and "it" so we can
+express concepts like a conversation.

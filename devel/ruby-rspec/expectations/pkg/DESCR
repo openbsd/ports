@@ -1,0 +1,2 @@
+RSpec::Expectations lets you express expected outcomes on an object in
+an example.
