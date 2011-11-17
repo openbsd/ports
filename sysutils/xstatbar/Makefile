@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/17 14:16:51 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/17 14:23:36 robert Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	simple system monitor bar
 
 DISTNAME=	xstatbar-0.5
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	sysutils x11
 

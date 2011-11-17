@@ -1,10 +1,10 @@
-$OpenBSD: patch-stats_c,v 1.6 2011/11/17 14:16:51 robert Exp $
+$OpenBSD: patch-stats_c,v 1.7 2011/11/17 14:23:36 robert Exp $
 
 If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
 progress and loop forever. Fix it by trying the next device.
 
 --- stats.c.orig	Tue Aug  3 19:04:34 2010
-+++ stats.c	Thu Nov 17 15:14:29 2011
++++ stats.c	Thu Nov 17 15:22:44 2011
 @@ -101,8 +101,10 @@ volume_init()
     devinfo.index = 0;
     while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
@@ -66,7 +66,21 @@ progress and loop forever. Fix it by trying the next device.
  
  
           /* draw yellow (total) bar */
-@@ -639,6 +652,8 @@ mem_draw(XColor color, int x, int y)
+@@ -627,6 +640,13 @@ mem_draw(XColor color, int x, int y)
+          XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
+             x + col, XINFO.height - h,
+             x + col, XINFO.height);
++
++         /* draw magenta (cache) bar */
++         h = sysinfo.memory[time][MEM_CCH] * XINFO.height / total;
++         XSetForeground(XINFO.disp, XINFO.gc, COLOR_MAGENTA.pixel);
++         XDrawLine(XINFO.disp, XINFO.buf, XINFO.gc,
++            x + col, XINFO.height - h,
++            x + col, XINFO.height);
+       }
+ 
+       time = (time + 1) % sysinfo.hist_size;
+@@ -639,6 +659,8 @@ mem_draw(XColor color, int x, int y)
     x += render_text(COLOR_YELLOW, x, y, fmtmem(sysinfo.memory[cur][MEM_TOT]));
     x += render_text(color, x, y, "/");
     x += render_text(COLOR_GREEN, x, y, fmtmem(sysinfo.memory[cur][MEM_FRE]));
