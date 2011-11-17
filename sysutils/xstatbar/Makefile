@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/17 14:23:36 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/17 14:25:37 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	simple system monitor bar
 
 DISTNAME=	xstatbar-0.5
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils x11
 
@@ -25,8 +25,6 @@ MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tgz
 
 ALL_TARGET=	# empty
-USE_GROFF =	Yes
-
 NO_REGRESS=	Yes
 
 pre-configure:
