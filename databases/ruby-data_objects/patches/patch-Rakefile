@@ -1,0 +1,14 @@
+$OpenBSD: patch-Rakefile,v 1.1 2011/11/17 16:08:00 jeremy Exp $
+
+This isn't needed for the specs, and causes an error.
+
+--- Rakefile.orig	Mon Nov 14 13:20:17 2011
++++ Rakefile	Mon Nov 14 13:20:21 2011
+@@ -2,7 +2,6 @@ require 'pathname'
+ require 'rubygems'
+ require 'bundler'
+ require 'rubygems/package_task'
+-Bundler::GemHelper.install_tasks
+ 
+ require 'rake'
+ require 'rake/clean'

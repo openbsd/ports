@@ -1,0 +1,20 @@
+$OpenBSD: patch-tasks_spec_rake,v 1.1 2011/11/17 16:08:00 jeremy Exp $
+
+skip_bundler is deprecated in the current version of rspec.
+The rcov.opts file is not shipped with the gem, and isn't
+necessary as we aren't running the rcov task.
+
+--- tasks/spec.rake.orig	Mon Nov 14 13:22:00 2011
++++ tasks/spec.rake	Mon Nov 14 13:22:09 2011
+@@ -2,11 +2,9 @@ require 'rspec/core/rake_task'
+ 
+ RSpec::Core::RakeTask.new(:spec) do |spec|
+   spec.pattern      = './spec/**/*_spec.rb'
+-  spec.skip_bundler = true
+ end
+ 
+ RSpec::Core::RakeTask.new(:rcov) do |rcov|
+   rcov.pattern    = "./spec/**/*_spec.rb"
+   rcov.rcov       = true
+-  rcov.rcov_opts  = File.read('spec/rcov.opts').split(/\s+/)
+ end

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT=	simple library for generating UUIDs
 
@@ -16,7 +16,7 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem
 
-MODRUBY_REGRESS=rake
-RAKE_REGRESS_TARGET=test_all
+MODRUBY_REGRESS=rake rspec
+MODRUBY_REGRESS_TARGET=spec:normal
 
 .include <bsd.port.mk>

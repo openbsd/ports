@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/09 00:17:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	ruby library for reading/writing vorbis comments
 
@@ -26,10 +26,7 @@ LIB_DEPENDS =	audio/libvorbis
 
 CONFIGURE_STYLE = ruby gem ext
 REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
-MODRUBY_REGRESS = rake
-RAKE_REGRESS_TARGET = default
-
-do-regress:
-	cd ${WRKSRC} && ${RUBY} test/test_vorbis_comment.rb
+MODRUBY_REGRESS = ruby
+MODRUBY_REGRESS_TARGET = test/test_vorbis_comment.rb
 
 .include <bsd.port.mk>

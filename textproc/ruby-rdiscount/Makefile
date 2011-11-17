@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	discount implementation of John Gruber's Markdown
 
@@ -18,6 +18,6 @@ CONFIGURE_STYLE = ruby gem ext
 
 MODRUBY_REGRESS = rake
 
-RAKE_REGRESS_TARGET = test:unit
+MODRUBY_REGRESS_TARGET = test:unit
 
 .include <bsd.port.mk>

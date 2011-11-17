@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	simple AMQP driver for Ruby
 
@@ -22,6 +22,6 @@ RUN_DEPENDS =	net/ruby-eventmachine,${MODRUBY_FLAVOR}
 REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/ruby-bacon,${MODRUBY_FLAVOR} 
 MODRUBY_REGRESS =	rake 
-RAKE_REGRESS_TARGET =	spec
+MODRUBY_REGRESS_TARGET = spec
 
 .include <bsd.port.mk>

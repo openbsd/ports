@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
 VERSION =	3.0.0
 DISTNAME =	bcrypt-ruby-${VERSION}
 PKGNAME =	bcrypt-${VERSION}
-REVISION=		0
+REVISION=	0
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -21,5 +21,9 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem ext
+
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/ruby-rake-compiler,${MODRUBY_FLAVOR}
+MODRUBY_REGRESS =	rake rspec2
 
 .include <bsd.port.mk>

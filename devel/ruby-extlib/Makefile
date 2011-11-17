@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	Ruby extensions serving DataMapper and DataObjects
 
@@ -17,7 +17,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_REGRESS =	rake rspec
-RAKE_REGRESS_TARGET =	spec
-REGRESS_DEPENDS =	converters/ruby-json,${MODRUBY_FLAVOR}
+REGRESS_DEPENDS =	converters/ruby-json,${MODRUBY_FLAVOR} \
+			devel/ruby-jeweler,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

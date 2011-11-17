@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/09 00:05:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	unified Ruby API for popular databases
 
@@ -19,9 +19,9 @@ RUN_DEPENDS =		www/ruby-addressable,${MODRUBY_FLAVOR} \
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_REGRESS =	rake rspec
-RAKE_REGRESS_TARGET=	-R tasks spec
+MODRUBY_REGRESS =	rake rspec2
 REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR} \
-			devel/ruby-bacon,${MODRUBY_FLAVOR}
+			devel/ruby-bacon,${MODRUBY_FLAVOR} \
+			devel/ruby-bundler,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>

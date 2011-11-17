@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT=	simple mock object for unit testing
 
@@ -17,6 +17,6 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 MODRUBY_REGRESS=	rake
-RAKE_REGRESS_TARGET=	test_all
+MODRUBY_REGRESS_TARGET=	test_all
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/09 00:08:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT=	ruby make
 
@@ -17,10 +17,14 @@ MODULES=	lang/ruby
 
 CONFIGURE_STYLE=ruby gem format-executable
 
+# ruby 1.9, jruby, and rubinius all ship with rake, so
+# force the empty (ruby 1.8) FLAVOR.
+FLAVOR=
+
 REGRESS_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/ruby-rcov \
-		devel/ruby-flexmock
+		devel/ruby-flexmock \
+		devel/ruby-minitest
 MODRUBY_REGRESS=rake
-RAKE_REGRESS_TARGET=test_all
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/17 16:08:00 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,9 +34,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/facter.conf \
 			${MODRUBY_EXAMPLEDIR}/facter 
 
-MODRUBY_REGRESS= rake rspec
-do-regress:
-	@cd ${WRKSRC}/spec && ${RAKE} all
+MODRUBY_REGRESS = rake rspec2
 
 
 .include <bsd.port.mk>

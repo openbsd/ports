@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/09 00:17:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
@@ -30,11 +30,13 @@ CONFIGURE_STYLE = ruby gem ext
 post-install:
 	rm -r ${GEM_ABS_PATH}/gems/${DISTNAME}/ext
 
-# Regress currently broken, libtest directory needed and not
-# included in the gem
-NO_REGRESS =	yes
-REGRESS_DEPENDS = devel/ruby-rake-compiler,${MODRUBY_FLAVOR}
-MODRUBY_REGRESS = rake rspec
-RAKE_REGRESS_TARGET = specs
+# Doesn't ship with libtest directory, which is necessary for
+# regress
+NO_REGRESS = Yes
+#REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
+#MODRUBY_REGRESS = rspec2
+#MODRUBY_REGRESS_ENV = RUBYLIB=$$(dirname `${GEM} which ffi.rb`) \
+#			RUBYOPT=-rffi
+#MODRUBY_REGRESS_TARGET = spec/ffi/*_spec.rb
 
 .include <bsd.port.mk>

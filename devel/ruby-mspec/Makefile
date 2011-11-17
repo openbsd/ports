@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	specialized test framework for running RubySpecs
 
@@ -18,6 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem
+
+# 1 expected failure on ruby 1.8
+# 20 failures on ruby 1.9
 MODRUBY_REGRESS = rake rspec
 
 .include <bsd.port.mk>

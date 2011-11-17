@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/11/17 16:08:00 jeremy Exp $
 
 COMMENT =	another synchronous Ruby amqp client
 
@@ -20,6 +20,6 @@ CONFIGURE_STYLE = ruby gem
 REGRESS_IS_INTERACTIVE = Yes
 
 MODRUBY_REGRESS = rake rspec
-RSPEC_REGRESS_TARGET = all
+MODRUBY_REGRESS_TARGET = all
 
 .include <bsd.port.mk>
