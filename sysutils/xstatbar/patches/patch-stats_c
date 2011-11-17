@@ -1,10 +1,10 @@
-$OpenBSD: patch-stats_c,v 1.5 2011/08/02 15:17:43 ajacoutot Exp $
+$OpenBSD: patch-stats_c,v 1.6 2011/11/17 14:16:51 robert Exp $
 
 If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
 progress and loop forever. Fix it by trying the next device.
 
---- stats.c.orig	Tue Aug  2 17:10:04 2011
-+++ stats.c	Tue Aug  2 17:11:47 2011
+--- stats.c.orig	Tue Aug  3 19:04:34 2010
++++ stats.c	Thu Nov 17 15:14:29 2011
 @@ -101,8 +101,10 @@ volume_init()
     devinfo.index = 0;
     while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
@@ -17,3 +17,61 @@ progress and loop forever. Fix it by trying the next device.
  
        if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
           oclass_idx = devinfo.index;
+@@ -405,9 +407,11 @@ sysinfo_update()
+    static int mib_nprocs[] = { CTL_KERN, KERN_NPROCS };
+    static int mib_vm[] = { CTL_VM, VM_METER };
+    static int mib_cpus[] = { CTL_KERN, 0, 0 };
++   static int mib_bcstats[] = {CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT};
+    static int diffs[CPUSTATES] = { 0 };
+    struct vmtotal vminfo;
+    struct swapent *swapdev;
++   struct bcachestats bcstats;
+    size_t    size;
+    int       cpu, state;
+    int       cur, prev;
+@@ -431,9 +435,16 @@ sysinfo_update()
+    if (sysctl(mib_vm, 2, &vminfo, &size, NULL, 0) < 0)
+       err(1, "sysinfo update: VM.METER failed");
+ 
++   /* update bufcache statistics */
++   size = sizeof(bcstats);
++   if (sysctl(mib_bcstats, 3, &bcstats, &size, NULL, 0) < 0)
++      err(1, "sysinfo update: VFS_BCACHESTAT failed");
++
++
+    sysinfo.memory[cur][MEM_ACT] = vminfo.t_arm << sysinfo.pageshift;
+    sysinfo.memory[cur][MEM_TOT] = vminfo.t_rm << sysinfo.pageshift;
+    sysinfo.memory[cur][MEM_FRE] = vminfo.t_free << sysinfo.pageshift;
++   sysinfo.memory[cur][MEM_CCH] = bcstats.numbufpages << sysinfo.pageshift;
+ 
+    /* get swap status */
+    if ((nswaps = swapctl(SWAP_NSWAP, 0, 0)) == 0)
+@@ -594,7 +605,8 @@ mem_draw(XColor color, int x, int y)
+    /* determine total memory */
+    total = sysinfo.memory[cur][MEM_ACT]
+          + sysinfo.memory[cur][MEM_TOT]
+-         + sysinfo.memory[cur][MEM_FRE];
++         + sysinfo.memory[cur][MEM_FRE]
++         + sysinfo.memory[cur][MEM_CCH];
+ 
+    /* start drawing ... */
+    x += render_text(color, x, y, "mem:") + 1;
+@@ -610,7 +622,8 @@ mem_draw(XColor color, int x, int y)
+ 
+       if ((sysinfo.memory[time][MEM_ACT] != 0)
+       ||  (sysinfo.memory[time][MEM_TOT] != 0)
+-      ||  (sysinfo.memory[time][MEM_FRE] != 0)) {
++      ||  (sysinfo.memory[time][MEM_FRE] != 0)
++      ||  (sysinfo.memory[time][MEM_CCH] != 0)) {
+ 
+ 
+          /* draw yellow (total) bar */
+@@ -639,6 +652,8 @@ mem_draw(XColor color, int x, int y)
+    x += render_text(COLOR_YELLOW, x, y, fmtmem(sysinfo.memory[cur][MEM_TOT]));
+    x += render_text(color, x, y, "/");
+    x += render_text(COLOR_GREEN, x, y, fmtmem(sysinfo.memory[cur][MEM_FRE]));
++   x += render_text(color, x, y, "/");
++   x += render_text(COLOR_MAGENTA, x, y, fmtmem(sysinfo.memory[cur][MEM_CCH]));
+ 
+    /* draw swap, if any is used */
+    if (sysinfo.swap_used > 0) {

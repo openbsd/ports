@@ -1,0 +1,19 @@
+$OpenBSD: patch-stats_h,v 1.1 2011/11/17 14:16:51 robert Exp $
+--- stats.h.orig	Thu Nov 17 15:03:08 2011
++++ stats.h	Thu Nov 17 15:10:28 2011
+@@ -30,6 +30,7 @@
+ #include <sys/audioio.h>
+ #include <sys/ioctl.h>
+ #include <sys/param.h>
++#include <sys/mount.h>
+ #include <sys/sched.h>
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+@@ -84,6 +85,7 @@ typedef struct {
+ #define MEM_ACT 0
+ #define MEM_TOT 1
+ #define MEM_FRE 2
++#define MEM_CCH 3
+    int        **memory;    /* [hist_size][3] */
+    int      ***cpu_pcnts;  /* [ncpu][hist_size][CPUSTATES] */
+    uint64_t ***cpu_raw;    /* [ncpu][hist_size][CPUSTATES] */
