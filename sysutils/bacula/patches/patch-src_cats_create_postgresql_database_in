@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_cats_create_postgresql_database_in,v 1.1 2011/11/17 23:45:56 ajacoutot Exp $
+--- src/cats/create_postgresql_database.in.orig	Tue Nov 15 21:47:07 2011
++++ src/cats/create_postgresql_database.in	Tue Nov 15 21:47:22 2011
+@@ -52,7 +52,7 @@ else
+    echo "!!!! Creation of ${db_name} database failed. !!!!"
+    echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+ fi
+-if psql -l ${dbname} | grep " ${db_name}.*SQL_ASCII" >/dev/null; then 
++if psql -l ${dbname} $* | grep " ${db_name}.*SQL_ASCII" >/dev/null; then 
+    echo "Database encoding OK"
+ else
+    echo " "

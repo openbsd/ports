@@ -1,9 +1,9 @@
 Alpha fails to build because ioctl_req_t is defined as unsigned long int.
 
-$OpenBSD: patch-src_baconfig_h,v 1.2 2010/07/20 14:38:39 merdely Exp $
---- src/baconfig.h.orig	Tue Apr 27 15:58:29 2010
-+++ src/baconfig.h	Thu Jun 24 09:37:47 2010
-@@ -727,6 +727,11 @@ extern "C" int setdomainname(char *name, int namelen);
+$OpenBSD: patch-src_baconfig_h,v 1.3 2011/11/17 23:45:56 ajacoutot Exp $
+--- src/baconfig.h.orig	Sun Oct 30 13:03:42 2011
++++ src/baconfig.h	Mon Nov 14 10:17:54 2011
+@@ -607,6 +607,11 @@ int setdomainname(char *name, int namelen);
  #endif /* HAVE_HPUX_OS */
  
  
@@ -13,5 +13,5 @@ $OpenBSD: patch-src_baconfig_h,v 1.2 2010/07/20 14:38:39 merdely Exp $
 +#endif
 +
  #ifdef HAVE_OSF1_OS
- extern "C" int fchdir(int filedes);
- extern "C" long gethostid(void);
+ #ifdef  __cplusplus
+ extern "C" {

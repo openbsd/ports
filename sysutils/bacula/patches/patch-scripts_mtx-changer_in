@@ -1,9 +1,9 @@
-$OpenBSD: patch-scripts_mtx-changer_in,v 1.5 2010/07/20 14:38:39 merdely Exp $
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.6 2011/11/17 23:45:56 ajacoutot Exp $
 
 XXX first hunk hand-rolled for CVS keyword, Id
 
---- scripts/mtx-changer.in.orig	Tue Apr 27 15:58:29 2010
-+++ scripts/mtx-changer.in	Thu Jun 24 10:22:49 2010
+--- scripts/mtx-changer.in.orig	Sun Oct 30 13:03:42 2011
++++ scripts/mtx-changer.in	Mon Nov 14 10:19:54 2011
 @@ -1,6 +1,6 @@
  #!/bin/sh
  #
@@ -50,7 +50,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
        rtn=$?
        if test ${load_sleep} -ne 0 ; then
  	sleep ${load_sleep}
-@@ -175,56 +175,22 @@ case $cmd in 
+@@ -175,61 +175,21 @@ case $cmd in 
        ;;
  
     list) 
@@ -61,7 +61,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
  	${MTX} -f $ctl inventory
        fi
        ${MTX} -f $ctl status >${TMPFILE}
-       rtn=$?
+-      rtn=$?
 -      if test ${vxa_packetloader} -ne 0 ; then
 -	cat ${TMPFILE} | grep " *Storage Element [0-9]*:.*Full" | sed "s/ Storage Element //" | sed "s/Full :VolumeTag=//"
 -      else
@@ -97,7 +97,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
 -      fi
 -      ${MTX} -f $ctl status >${TMPFILE}
 -      rtn=$?
--      # can be converted to awk+sed+cut, contributions are welcome
+-      # can be converted to awk+sed+cut, see below
 -      perl -ne '
 -/Data Transfer Element (\d+):Empty/ && print "D:$1:E\n";
 -/Data Transfer Element (\d+):Full \(Storage Element (\d+) Loaded\)(:VolumeTag =\s*(.+))?/ && print "D:$1:F:$2:$4\n";
@@ -105,6 +105,11 @@ XXX first hunk hand-rolled for CVS keyword, Id
 -/Storage Element (\d+):Full( :VolumeTag=(.+))?/ && print "S:$1:F:$3\n";
 -/Storage Element (\d+) IMPORT.EXPORT:Empty/ && print "I:$1:E\n";
 -/Storage Element (\d+) IMPORT.EXPORT:Full( :VolumeTag=(.+))?/ && print "I:$1:F:$3\n";' ${TMPFILE}
+-      # If perl isn't installed, you can use by those commands
+-#cat ${TMPFILE} | grep "Data Transfer Element" | awk "{print \"D:\"\$4 \$7 \$9 \$10}" | sed "s/=/:/" | sed "s/Full/F:/" | sed "s/Empty/E/"
+-#cat ${TMPFILE} | grep -v "Data Transfer Element" | grep "Storage Element" | grep -v "IMPORT/EXPORT" | awk "{print \"S:\"\$3 \$4 \$5}" | sed "s/IMPORT\/EXPORT//" | sed "s/Full *:VolumeTag=/F:/" | sed "s/Empty/E/"
+-#cat ${TMPFILE} | grep -v "Data Transfer Element" | grep "Storage Element" | grep "IMPORT/EXPORT" | awk "{print \"I:\"\$3 \$4 \$5}" | sed "s/IMPORT\/EXPORT//" | sed "s/Full *:VolumeTag=/F:/" | sed "s/Empty/E/" 
+-
 -      rm -f ${TMPFILE} >/dev/null 2>&1
 -      exit $rtn
 +      echo "The listall command is not implemented on OpenBSD"
@@ -112,7 +117,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
        ;;
  
     transfer)
-@@ -236,18 +202,19 @@ case $cmd in 
+@@ -241,18 +201,19 @@ case $cmd in 
        ;;
  
     loaded)

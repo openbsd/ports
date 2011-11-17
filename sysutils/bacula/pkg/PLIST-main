@@ -1,50 +1,56 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/03/21 17:06:23 ajacoutot Exp $
-@comment $OpenBSD: PLIST-main,v 1.8 2011/03/21 17:06:23 ajacoutot Exp $
-@conflict bacula-client-*
-@conflict bacula-server-<3.0.2
+@comment $OpenBSD: PLIST-main,v 1.9 2011/11/17 23:45:56 ajacoutot Exp $
+@conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 %%SHARED%%
 lib/bpipe-fd.a
 lib/libbac.a
-@comment lib/libbac.la
+lib/libbac.la
 lib/libbaccfg.a
-@comment lib/libbaccfg.la
+lib/libbaccfg.la
 lib/libbacfind.a
-@comment lib/libbacfind.la
+lib/libbacfind.la
 lib/libbacpy.a
-@comment lib/libbacpy.la
+lib/libbacpy.la
 libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 libexec/bacula/bacula_config
+libexec/bacula/bconsole
 libexec/bacula/mtx-changer.conf
 @man man/man8/bacula-fd.8
+@man man/man8/bconsole.8
 sbin/bacula
 @bin sbin/bacula-fd
+@bin sbin/bconsole
 share/doc/bacula/
-@comment share/doc/bacula/ChangeLog
-@comment share/doc/bacula/INSTALL
+share/doc/bacula/ChangeLog
+share/doc/bacula/INSTALL
 share/doc/bacula/LICENSE
-@comment share/doc/bacula/README
+share/doc/bacula/README
 share/doc/bacula/ReleaseNotes
-@comment share/doc/bacula/VERIFYING
+share/doc/bacula/VERIFYING
 share/doc/bacula/technotes
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/bacula/
 @mode 750
-@owner _bacula
 @group _bacula
 @sample ${BACULACONF}/
+@mode 770
+@owner _bacula
 @sample ${BACULASTATE}/
 @mode 644
-@owner
 @group
+@owner
 share/examples/bacula/bacula-fd.conf
 @mode 640
-@owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bacula-fd.conf
+@mode 644
+share/examples/bacula/bconsole.conf
+@mode 640
+@group _bacula
+@sample ${BACULACONF}/bconsole.conf
 @mode
-@owner
 @group
 @rcscript ${RCDIR}/bacula_fd

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_qt-console_main_cpp,v 1.4 2010/07/20 14:38:39 merdely Exp $
---- src/qt-console/main.cpp.orig	Tue Apr 27 15:58:29 2010
-+++ src/qt-console/main.cpp	Thu Jun 24 16:25:08 2010
+$OpenBSD: patch-src_qt-console_main_cpp,v 1.5 2011/11/17 23:45:56 ajacoutot Exp $
+--- src/qt-console/main.cpp.orig	Sun Oct 30 13:03:42 2011
++++ src/qt-console/main.cpp	Mon Nov 14 12:19:03 2011
 @@ -49,7 +49,7 @@ extern bool parse_bat_config(CONFIG *config, const cha
  extern void message_callback(int /* type */, char *msg);
  

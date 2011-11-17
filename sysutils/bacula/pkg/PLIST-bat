@@ -1,15 +1,13 @@
-@comment $OpenBSD: PLIST-bat,v 1.7 2010/07/20 14:38:39 merdely Exp $
+@comment $OpenBSD: PLIST-bat,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
 @man man/man1/bat.1
 @bin sbin/bat
 @mode 750
-@owner _bacula
 @group _bacula
 @sample ${BACULACONF}/
 @mode
-@owner
 @group
 share/applications/
 share/applications/bat.desktop
@@ -30,11 +28,9 @@ share/examples/bacula/
 @mode 644
 share/examples/bacula/bat.conf
 @mode 640
-@owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bat.conf
 @mode
-@owner
 @group
 share/pixmaps/
 share/pixmaps/bat_icon.png

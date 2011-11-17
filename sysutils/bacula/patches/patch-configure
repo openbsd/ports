@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.7 2010/10/12 19:47:06 robert Exp $
---- configure.orig	Tue Apr 27 21:58:29 2010
-+++ configure	Tue Oct 12 21:31:24 2010
-@@ -4267,7 +4267,7 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
+--- configure.orig	Sun Oct 30 13:03:42 2011
++++ configure	Mon Nov 14 17:12:31 2011
+@@ -4764,7 +4764,7 @@ $as_echo "no" >&6; }
  fi
  
  
 -if test ! -e $CXX; then
 +if test ! -e `which $CXX`; then
-    { { echo "$as_me:$LINENO: error: Unable to find C++ compiler" >&5
- echo "$as_me: error: Unable to find C++ compiler" >&2;}
-    { (exit 1); exit 1; }; }
-@@ -15929,7 +15929,7 @@ if test x$use_libtool != xno; then
+    as_fn_error "Unable to find C++ compiler" "$LINENO" 5
+ fi
+ 
+@@ -16356,7 +16356,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,51 +19,61 @@ $OpenBSD: patch-configure,v 1.7 2010/10/12 19:47:06 robert Exp $
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -15940,7 +15940,7 @@ else
-    LIBTOOL_INSTALL_TARGET=""
-    LIBTOOL_UNINSTALL_TARGET=""
-    LIBTOOL_CLEAN_TARGET=""
--   QMAKE_LIBTOOL="# ${BUILD_DIR}/libtool"
-+   QMAKE_LIBTOOL="# ${LIBTOOL}"
-    FD_PLUGIN_DIR=""
-    have_plugins=no
- fi
-@@ -27280,7 +27280,7 @@ if test "${ac_cv_lib_ssl_EVP_PKEY_encrypt_old+set}" = 
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -22038,7 +22038,7 @@ eval as_val=\$$as_ac_Header
+ 
+ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+ 
+-		    CONS_LIBS="-lreadline -lhistory $TERM_LIB"
++		    CONS_LIBS="-lreadline $TERM_LIB"
+ 		    got_readline="yes"
+ 
  else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lssl  $LIBS"
-+LIBS="-lssl -lcrypto $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -43349,13 +43349,13 @@ _ACEOF
+@@ -22078,7 +22078,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+ 
+ 			got_readline="yes"
+ 			CONS_INC="-I${TOP_DIR}/depkgs/readline"
+-			CONS_LIBS="-lreadline -lhistory $TERM_LIB"
++			CONS_LIBS="-lreadline $TERM_LIB"
+ 			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
+ 			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
+ 
+@@ -29782,13 +29782,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
  fi
  
  PTHREAD_LIB=""
--{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -43411,7 +43411,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
- if test $ac_cv_lib_pthread_pthread_create = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -29819,7 +29819,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
 -  PTHREAD_LIB="-lpthread"
 +  PTHREAD_LIB="-pthread"
  else
  
-        { echo "$as_me:$LINENO: checking for pthread_create in -lpthreads" >&5
-@@ -44158,6 +44158,7 @@ openbsd)
+        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthreads" >&5
+@@ -30189,7 +30189,8 @@ openbsd)
+    DISTVER=`uname -a |awk '{print $3}'`
+    lld="qd"
+    llu="qu"
+-   TAPEDRIVE="/dev/nrst0"
++   COMPRESS_MANPAGES=
++   TAPEDRIVE="/dev/rst0"
+    PSCMD="ps -ax -o pid,command"
+    PTHREAD_LIB="-pthread"
+    CFLAGS="${CFLAGS} -pthread"
+@@ -30198,6 +30199,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
@@ -71,42 +81,3 @@ $OpenBSD: patch-configure,v 1.7 2010/10/12 19:47:06 robert Exp $
    ;;
  redhat)
     if test -f /etc/whitebox-release ; then
-@@ -44299,7 +44300,7 @@ if test "x${subsysdir}" = "x${sbindir}" ; then
-    exit 1
- fi
- 
--ac_config_files="$ac_config_files autoconf/Make.common Makefile manpages/Makefile scripts/startmysql scripts/stopmysql scripts/btraceback scripts/startit scripts/stopit scripts/bconsole scripts/gconsole scripts/bacula scripts/bacula-ctl-dir scripts/bacula-ctl-fd scripts/bacula-ctl-sd scripts/devel_bacula scripts/Makefile scripts/logrotate scripts/bacula.desktop.gnome1 scripts/bacula.desktop.gnome2 scripts/bacula.desktop.gnome1.consolehelper scripts/bacula.desktop.gnome2.consolehelper scripts/bacula.desktop.gnome1.xsu scripts/bacula.desktop.gnome2.xsu scripts/bgnome-console.console_apps scripts/mtx-changer scripts/disk-changer scripts/dvd-handler scripts/dvd-simulator scripts/bacula-tray-monitor.desktop scripts/logwatch/Makefile scripts/logwatch/logfile.bacula.conf scripts/wxconsole.console_apps scripts/wxconsole.desktop.consolehelper scripts/wxconsole.desktop.xsu scripts/bat.desktop scripts/bat.desktop.xsu scripts/bat.desktop.consolehelper scripts/bat.console_apps src/Makefile src/host.h src/console/Makefile src/console/bconsole.conf src/qt-console/bat.conf src/qt-console/bat.pro src/qt-console/bat.pro.mingw32 src/qt-console/install_conf_file src/wx-console/Makefile src/wx-console/bwx-console.conf src/tray-monitor/Makefile src/tray-monitor/tray-monitor.conf src/dird/Makefile src/dird/bacula-dir.conf src/lib/Makefile src/stored/Makefile src/stored/bacula-sd.conf src/filed/Makefile src/filed/bacula-fd.conf src/cats/Makefile src/cats/make_catalog_backup.pl src/cats/make_catalog_backup src/cats/delete_catalog_backup src/cats/create_postgresql_database src/cats/update_postgresql_tables src/cats/make_postgresql_tables src/cats/grant_postgresql_privileges src/cats/drop_postgresql_tables src/cats/drop_postgresql_database src/cats/create_mysql_database src/cats/update_mysql_tables src/cats/make_mysql_tables src/cats/grant_mysql_privileges src/cats/drop_mysql_tables src/cats/drop_mysql_database src/cats/create_sqlite3_database src/cats/update_sqlite3_tables src/cats/make_sqlite3_tables src/cats/grant_sqlite3_privileges src/cats/drop_sqlite3_tables src/cats/drop_sqlite3_database src/cats/create_ingres_database src/cats/update_ingres_tables src/cats/make_ingres_tables src/cats/grant_ingres_privileges src/cats/drop_ingres_tables src/cats/drop_ingres_database src/cats/sqlite src/cats/mysql src/cats/create_bdb_database src/cats/update_bdb_tables src/cats/make_bdb_tables src/cats/grant_bdb_privileges src/cats/drop_bdb_tables src/cats/drop_bdb_database src/cats/create_bacula_database src/cats/update_bacula_tables src/cats/grant_bacula_privileges src/cats/make_bacula_tables src/cats/drop_bacula_tables src/cats/drop_bacula_database src/findlib/Makefile src/tools/Makefile src/plugins/fd/Makefile src/plugins/sd/Makefile src/plugins/dir/Makefile src/win32/Makefile.inc po/Makefile.in updatedb/update_mysql_tables_9_to_10 updatedb/update_sqlite3_tables_9_to_10 updatedb/update_postgresql_tables_9_to_10 updatedb/update_mysql_tables_10_to_11 updatedb/update_sqlite3_tables_10_to_11 updatedb/update_postgresql_tables_10_to_11 examples/nagios/check_bacula/Makefile $PFILES"
-+ac_config_files="$ac_config_files autoconf/Make.common Makefile manpages/Makefile scripts/startmysql scripts/stopmysql scripts/btraceback scripts/startit scripts/stopit scripts/bconsole scripts/gconsole scripts/bacula scripts/bacula-ctl-dir scripts/bacula-ctl-fd scripts/bacula-ctl-sd scripts/devel_bacula scripts/Makefile scripts/logrotate scripts/bacula.desktop.gnome1 scripts/bacula.desktop.gnome2 scripts/bacula.desktop.gnome1.consolehelper scripts/bacula.desktop.gnome2.consolehelper scripts/bacula.desktop.gnome1.xsu scripts/bacula.desktop.gnome2.xsu scripts/bgnome-console.console_apps scripts/mtx-changer scripts/disk-changer scripts/dvd-handler scripts/dvd-simulator scripts/bacula-tray-monitor.desktop scripts/logwatch/Makefile scripts/logwatch/logfile.bacula.conf scripts/wxconsole.console_apps scripts/wxconsole.desktop.consolehelper scripts/wxconsole.desktop.xsu scripts/bat.desktop scripts/bat.desktop.xsu scripts/bat.desktop.consolehelper scripts/bat.console_apps src/Makefile src/host.h src/console/Makefile src/console/bconsole.conf src/qt-console/bat.conf src/qt-console/bat.pro src/qt-console/bat.pro.mingw32 src/qt-console/install_conf_file src/wx-console/Makefile src/wx-console/bwx-console.conf src/tray-monitor/Makefile src/tray-monitor/tray-monitor.conf src/dird/Makefile src/dird/bacula-dir.conf src/lib/Makefile src/stored/Makefile src/stored/bacula-sd.conf src/filed/Makefile src/filed/bacula-fd.conf src/cats/Makefile src/cats/make_catalog_backup.pl src/cats/make_catalog_backup src/cats/delete_catalog_backup src/cats/create_postgresql_database src/cats/update_postgresql_tables src/cats/make_postgresql_tables src/cats/grant_postgresql_privileges src/cats/drop_postgresql_tables src/cats/drop_postgresql_database src/cats/create_mysql_database src/cats/update_mysql_tables src/cats/make_mysql_tables src/cats/grant_mysql_privileges src/cats/drop_mysql_tables src/cats/drop_mysql_database src/cats/create_sqlite3_database src/cats/update_sqlite3_tables src/cats/make_sqlite3_tables src/cats/grant_sqlite3_privileges src/cats/drop_sqlite3_tables src/cats/drop_sqlite3_database src/cats/create_ingres_database src/cats/update_ingres_tables src/cats/make_ingres_tables src/cats/grant_ingres_privileges src/cats/drop_ingres_tables src/cats/drop_ingres_database src/cats/sqlite src/cats/mysql src/cats/create_bdb_database src/cats/update_bdb_tables src/cats/make_bdb_tables src/cats/grant_bdb_privileges src/cats/drop_bdb_tables src/cats/drop_bdb_database src/cats/create_bacula_database src/cats/update_bacula_tables src/cats/grant_bacula_privileges src/cats/make_bacula_tables src/cats/drop_bacula_tables src/cats/drop_bacula_database src/findlib/Makefile src/tools/Makefile src/plugins/fd/Makefile src/plugins/sd/Makefile src/plugins/dir/Makefile src/win32/Makefile.inc po/Makefile.in updatedb/update_mysql_tables_9_to_10 updatedb/update_sqlite_tables_9_to_10 updatedb/update_sqlite3_tables_9_to_10 updatedb/update_postgresql_tables_9_to_10 updatedb/update_mysql_tables_10_to_11 updatedb/update_sqlite_tables_10_to_11 updatedb/update_sqlite3_tables_10_to_11 updatedb/update_postgresql_tables_10_to_11 examples/nagios/check_bacula/Makefile $PFILES"
- 
- ac_config_commands="$ac_config_commands default"
- 
-@@ -45332,9 +45333,11 @@ do
-     "src/win32/Makefile.inc") CONFIG_FILES="$CONFIG_FILES src/win32/Makefile.inc" ;;
-     "po/Makefile.in") CONFIG_FILES="$CONFIG_FILES po/Makefile.in" ;;
-     "updatedb/update_mysql_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_mysql_tables_9_to_10" ;;
-+    "updatedb/update_sqlite_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite_tables_9_to_10" ;;
-     "updatedb/update_sqlite3_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite3_tables_9_to_10" ;;
-     "updatedb/update_postgresql_tables_9_to_10") CONFIG_FILES="$CONFIG_FILES updatedb/update_postgresql_tables_9_to_10" ;;
-     "updatedb/update_mysql_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_mysql_tables_10_to_11" ;;
-+    "updatedb/update_sqlite_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite_tables_10_to_11" ;;
-     "updatedb/update_sqlite3_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_sqlite3_tables_10_to_11" ;;
-     "updatedb/update_postgresql_tables_10_to_11") CONFIG_FILES="$CONFIG_FILES updatedb/update_postgresql_tables_10_to_11" ;;
-     "examples/nagios/check_bacula/Makefile") CONFIG_FILES="$CONFIG_FILES examples/nagios/check_bacula/Makefile" ;;
-@@ -47193,7 +47196,7 @@ echo "$as_me: error: Could not find qmake $PATH. Check
-    { (exit 1); exit 1; }; }
-    fi
- 
--   QMAKEBIN="qmake"
-+   QMAKEBIN=${QMAKEBIN4}
-    cd src/qt-console
-    echo "Creating bat Makefile"
-    touch bat
-@@ -47221,7 +47224,7 @@ cd ..
- 
- c=updatedb
- chmod 755 $c/update_mysql_tables_10_to_11   $c/update_sqlite3_tables_10_to_11
--chmod 755 $c/update_postgresql_tables_10_to_11
-+chmod 755 $c/update_sqlite_tables_10_to_11 $c/update_postgresql_tables_10_to_11
- 
- c=src/cats
- 

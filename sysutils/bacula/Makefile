@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2011/10/21 17:04:23 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/11/17 23:45:56 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			5.0.2
+V=			5.2.1
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -13,40 +13,36 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-main=		3
-REVISION-server=	3
-REVISION-bat=		1
-
-SHARED_LIBS +=		bac		1.0 # .1.0
-SHARED_LIBS +=		baccfg		1.0 # .1.0
-SHARED_LIBS +=		bacpy		1.0 # .1.0
-SHARED_LIBS +=		bacfind		1.0 # .1.0
-SHARED_LIBS +=		bacsql		1.0 # .1.0
+SHARED_LIBS +=  bac                  2.0      # 5.2.1
+SHARED_LIBS +=  baccfg               2.0      # 5.2.1
+SHARED_LIBS +=  bacpy                2.0      # 5.2.1
+SHARED_LIBS +=  bacfind              2.0      # 5.2.1
+SHARED_LIBS +=  bacsql               2.0      # 5.2.1
+SHARED_LIBS +=  baccats              0.0      # 5.2.1
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>
 
-WANTLIB=		c pthread crypto ssl z m stdc++
+WANTLIB += c pthread crypto ssl z m stdc++
 
-# GPLv2 with exception for OpenSSL (majority),
+# AGPLv3 with exception for OpenSSL (majority),
 # FDL (docs), LGPL (some libraries), and PD
-# http://bacula.org/en/dev-manual/Bacula_Copyri_Tradem_Licens.html
+# http://bacula.org/en/dev-manual/main/main/Bacula_Copyright_Trademark_.html
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SD_USER=		_bacula-sd
 BACULACONF=		/etc/bacula
 BACULASTATE=		/var/bacula
-SUBST_VARS=		SD_USER BACULACONF BACULASTATE TRUEPREFIX
+SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_LIBTOOL=		yes
-USE_GROFF =		Yes
+USE_GROFF=		yes
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
@@ -67,6 +63,8 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--sysconfdir=${BACULACONF} \
 			--with-scriptdir=${PREFIX}/libexec/bacula \
 			--localstatedir=${BACULASTATE} \
+			--with-fd-user=root \
+			--with-fd-group=wheel \
 			--with-pid-dir=/var/run \
 			--with-subsys-dir=${BACULASTATE} \
 			--with-working-dir=${BACULASTATE} \
@@ -77,29 +75,25 @@ CONFIGURE_ARGS=		--enable-smartalloc \
 			--without-smtp-host \
 			--without-job-email \
 			--without-dump-email \
-			--without-qwt \
 			--disable-gnome \
 			--disable-bwx-console \
 			--disable-tray-monitor \
 			--disable-nls \
 			--disable-conio \
 			--enable-readline \
+			--with-readline=/usr \
 			--with-openssl \
 			--with-basename=bacula \
 			--with-hostname=bacula
 
 MAKE_FLAGS=		NO_ECHO=
-CONFIGURE_ENV+=		CPPFLAGS="-I/usr/include/readline \
-			-I${LOCALBASE}/include" \
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-			PTHREAD_LIBS="${PTHREAD_LIBS}" \
-			MTX=/bin/chio \
-			TAPEDRIVE=/dev/rst0 \
 			CONFIG_SITE=${PORTSDIR}/infrastructure/db/config.site \
-			QMAKEBIN4=qmake4 \
-			QMAKE=${LOCALBASE}/bin/${QMAKEBIN4} \
-			PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
+			MTX=/bin/chio \
+			PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4" \
+			QMAKE=${LOCALBASE}/bin/qmake4
 
 # configure mistakenly assumes xattr support if it finds any of the
 # openat() family of functions, so poison the autoconf cache.
@@ -111,7 +105,7 @@ CONFIGURE_ENV+=		ac_cv_func_${ac_func}=no
 
 .include <bsd.port.arch.mk>
 
-WANTLIB-server=		${WANTLIB} bac baccfg bacfind bacpy readline termcap
+WANTLIB-server += ${WANTLIB} bac baccfg bacfind bacpy lzo2
 LIB_DEPENDS-server=	sysutils/bacula,-main
 
 .if !${BUILD_PACKAGES:M-server}
@@ -119,14 +113,15 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-dird \
 			--disable-build-stored
 .else
+SHARED_LIBS +=		baccats-${BACKEND} 0.0 # sync with LIBbaccats_VERSION
 CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
-			--with-sd-user=${SD_USER} \
+			--with-sd-user=_bacula-sd \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
+WANTLIB-server += pq>=2 com_err
 CONFIGURE_ARGS+=	--with-postgresql
-WANTLIB-server+=	pq>=2
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND += 		postgresql
 .  else
@@ -134,9 +129,9 @@ CONFIGURE_ARGS+=	--without-postgresql
 .  endif
 
 .  if ${FLAVOR:Mmysql}
+WANTLIB-server += mysqlclient_r>=18
 CONFIGURE_ARGS+=	--with-mysql \
 			--enable-batch-insert
-WANTLIB-server+=	mysqlclient_r>=18
 LIB_DEPENDS-server+=	databases/mysql
 BACKEND+=		mysql
 .  else
@@ -144,8 +139,8 @@ CONFIGURE_ARGS+=	--without-mysql
 .  endif
 
 .  if ${FLAVOR:Msqlite3}
+WANTLIB-server += sqlite3>=8
 CONFIGURE_ARGS+=	--with-sqlite3
-WANTLIB-server+=	sqlite3>=8
 LIB_DEPENDS-server+=	databases/sqlite3
 BACKEND+=		sqlite3
 .  else
@@ -158,9 +153,12 @@ ERRORS+=		"Fatal: choose one of pgsql or mysql or sqlite3"
 .  endif
 .endif # server
 
-LIB_DEPENDS-main=
+WANTLIB-main += ${WANTLIB} lzo2 ncurses readline
+LIB_DEPENDS-main=	archivers/lzo2
 
-WANTLIB-bat +=		QtCore QtGui bac baccfg c crypto m pthread ssl stdc++
+WANTLIB-bat += ${WANTLIB}
+WANTLIB-bat += ICE QtCore QtGui SM X11 Xext Xi Xinerama Xrender bac
+WANTLIB-bat += baccfg bacfind expat fontconfig freetype xcb
 RUN_DEPENDS-bat=	devel/desktop-file-utils
 LIB_DEPENDS-bat=	x11/qt4 \
 			sysutils/bacula,-main
@@ -181,12 +179,12 @@ post-install:
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-fd.conf \
 		${PREFIX}/share/examples/bacula/
 .if ${BUILD_PACKAGES:M-server}
-	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-dir.conf \
-		${WRKINST}/etc/bacula/bacula-sd.conf \
-		${WRKINST}/etc/bacula/bconsole.conf \
-		${PREFIX}/share/examples/bacula/
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
+	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
+	rm ${PREFIX}/lib/libbaccats.*
+	cd ${PREFIX}/lib && \
+		ln -sf libbaccats-${BACKEND}.so.${LIBbaccats_VERSION} libbaccats.so.${LIBbaccats_VERSION} 
 .endif
 .if ${BUILD_PACKAGES:M-bat}
 	if [ -f ${PREFIX}/lib/libbac.so.${LIBbac_VERSION} ] ; then \
@@ -194,13 +192,16 @@ post-install:
 	else \
 		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin/; \
 	fi
-	${INSTALL_DATA} ${WRKINST}/etc/bacula/bat.conf \
-		${PREFIX}/share/examples/bacula/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/qt-console/images/bat_icon.png \
 		${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/scripts/bat.desktop ${PREFIX}/share/applications
+.else
+	rm ${PREFIX}/man/man1/bat.1
 .endif
+	mv ${WRKINST}/etc/bacula/* ${PREFIX}/share/examples/bacula/
+	rm ${PREFIX}/man/man1/bacula-{bwxconsole,tray-monitor}.1
+	rmdir ${WRKINST}/{etc,var}/bacula
 
 .include <bsd.port.mk>

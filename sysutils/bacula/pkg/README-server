@@ -1,0 +1,62 @@
+$OpenBSD: README-server,v 1.1 2011/11/17 23:45:56 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Note: If upgrading from a version older than 5.2.0, a database upgrade
+is necessary (see the ${TRUEPREFIX}/libexec/bacula/update_* scripts).
+Also, the Director and Storage Daemons must be upgraded at the same
+time, but older File Daemons can be used with 5.2.x.
+
+The official Bacula documentation can be found at:
+    http://bacula.org/5.2.x-manuals/en/main/main/index.html
+
+Setting up the database for the Bacula Director
+===============================================
+
+In this documentation, it is assumed the PostgreSQL administrator user
+is 'postgres' and the MySQL one is 'root'; adapt accordingly to your
+setup.
+Replace 'dbpassword' with the bacula DB user password (configured in
+${BACULACONF}/bacula-dir.conf).
+
+While SQLite3 may be of interest for quickly testing a setup, it is
+usually not advised to use it in production but rather go for a full
+RDBMS like PostgreSQL or MySQL.
+
+PostgreSQL
+----------
+
+Creating the DB, table and bacula user.
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ ./create_bacula_database -U postgres
+    $ ./make_bacula_tables -U postgres
+    $ ./grant_bacula_privileges -U postgres
+
+Setting up the bacula DB user password.
+    $ psql -U postgres
+    postgres=# alter user bacula with password 'dbpassword';
+    postgres=# \q
+
+MySQL
+-----
+
+Creating the DB, table and bacula user.
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ ./create_bacula_database -u root -p
+    $ ./make_bacula_tables -u root -p
+    $ ./grant_bacula_privileges -u root -p
+
+Setting up the bacula DB user password.
+    $ mysql -u root -p bacula
+    mysql> GRANT ALL PRIVILEGES ON `bacula` . *
+        -> TO 'bacula'@'localhost' IDENTIFIED BY 'dbpassword';
+    mysql> QUIT
+
+SQLite3
+-------
+
+Creating the DB and tables (default to ${BACULASTATE}/bacula.db).
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ sudo -u _bacula ./make_bacula_tables
