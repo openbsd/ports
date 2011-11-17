@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1133 2011/11/16 14:40:59 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1134 2011/11/17 17:53:22 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1589,7 +1589,7 @@ _cache_fragment = \
 		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_CACHE; \
 		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
-	esac
+	esac; PKGPATH=${PKGPATH}; export PKGPATH
 
 # XXX assumes it's running under _cache_fragment, either directly, or from
 # a target up there
@@ -1667,7 +1667,7 @@ check-register:
 .if empty(PLIST_DB)
 	@exit 1
 .else
-	@if cd ${.CURDIR} && ${MAKE} print-plist-with-depends | ${_PERLSCRIPT}/register-plist -p ${PLIST_DB}; then \
+	@if cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} print-plist-with-depends | ${_PERLSCRIPT}/register-plist -p ${PLIST_DB}; then \
 		echo "${FULLPKGNAME${SUBPACKAGE}} okay"; \
 	else \
 		echo "${FULLPKGNAME${SUBPACKAGE}} BAD"; \
@@ -1676,7 +1676,7 @@ check-register:
 
 check-register-all:
 .for _S in ${MULTI_PACKAGES}
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} check-register
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} check-register
 .endfor
 
 .for _S in ${MULTI_PACKAGES}
@@ -1701,7 +1701,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@f=${_CACHE_REPO}/${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${MAKE} $$f && \
 		{ ln $$f $@ 2>/dev/null || cp -p $$f $@ ; } || \
-		${_cache_fragment} && cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
@@ -1732,12 +1732,12 @@ ${_PACKAGE_COOKIE${_S}}:
 
 ${_INSTALL_COOKIE${_S}}:
 .  if ${FETCH_PACKAGES:L} == "yes"
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} exec ${MAKE} subpackage
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} exec ${MAKE} subpackage
 .  else
 
 	@${_MAKE} package
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install \
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
@@ -1763,7 +1763,7 @@ ${_INSTALL_COOKIE${_S}}:
 ${_UPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
 .  if empty(UPDATE_COOKIES_DIR)
-	@exec ${MAKE} ${WRKDIR}
+	@${_MAKE} ${WRKDIR}
 .  else
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
@@ -1771,7 +1771,7 @@ ${_UPDATE_COOKIE${_S}}:
 	@a=`${_PKG_QUERY} ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
-		*) cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package \
+		*) cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		     ${MAKE} _internal-run-depends _internal-runlib-depends \
 			   _internal-runwantlib-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
@@ -1781,11 +1781,11 @@ ${_UPDATE_COOKIE${_S}}:
 
 ${_FUPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package \
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 .  if empty(UPDATE_COOKIES_DIR)
-	@exec ${MAKE} ${WRKDIR}
+	@${_MAKE} ${WRKDIR}
 .  else
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
@@ -2091,7 +2091,7 @@ _internal-checksum: _internal-fetch
 		set --; \
 		if ! $$OK; then \
 		  if ${REFETCH}; then \
-		  	cd ${.CURDIR} && ${MAKE} _refetch _PROBLEMS="$$list"; \
+		  	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
 		  else \
 			echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
 			echo "are up to date.  If you want to fetch a good copy of this"; \
@@ -2156,7 +2156,7 @@ _do_libs_too = NO_SHARED_LIBS=Yes
 _extra_info =
 .  for _s in ${MULTI_PACKAGES}
 _extra_info += PLIST${_s}='${PLIST${_s}}'
-_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} ${MAKE} show-run-depends ${_do_libs_too}`"
+_extra_info += DEPPATHS${_s}="`${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} PKGPATH=${PKGPATH} ${MAKE} show-run-depends ${_do_libs_too}`"
 .  endfor
 
 _internal-plist _internal-update-plist: _internal-fake
@@ -2199,7 +2199,7 @@ update-patches:
 	update update-or-install update-or-install-all package install-all
 .  if defined(_LOCK)
 ${_t}:
-	@${_DO_LOCK}; cd ${.CURDIR} && ${MAKE} _internal-${_t}
+	@${_DO_LOCK}; cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _internal-${_t}
 .  else
 ${_t}: _internal-${_t}
 .  endif
@@ -2492,7 +2492,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .  endif
 .  if target(do-regress)
 	@${REGRESS_STATUS_IGNORE}cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
-		(exec; set +e; ${MAKE} do-regress; \
+		(exec; set +e; PKGPATH=${PKGPATH} ${MAKE} do-regress; \
 		echo $$? >&4) 2>&1 ${REGRESS_LOG}`
 .  else
 # What REGRESS normally does:
@@ -2581,7 +2581,7 @@ print-plist:
 
 print-plist-with-depends:
 	@${_plist_header}; \
-	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} print-package-args`; \
+	if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
@@ -2591,7 +2591,7 @@ print-plist-with-depends:
 
 print-plist-libs-with-depends:
 	@${_plist_header}; \
-	if a=`SUBPACKAGE=${SUBPACKAGE} ${MAKE} print-package-args`; \
+	if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -DLIBS_ONLY -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
@@ -2609,7 +2609,7 @@ print-plist-all-with-depends:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
 	@${_plist_header}; \
-	if a=`SUBPACKAGE=${_S} ${MAKE} print-package-args`; \
+	if a=`SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; \
 	else \
@@ -2685,7 +2685,7 @@ ${PACKAGE_REPOSITORY}/${_l}: ${PACKAGE_REPOSITORY}/${_o}
 
 _internal-clean:
 .if ${_clean:L:Mdepends} && ${_CLEANDEPENDS:L} == "yes"
-	@${MAKE} all-dir-depends|tsort -r|${_zap_last_line}|while read subdir; do \
+	@PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _CLEANDEPENDS=No clean; \
 	done
@@ -2748,14 +2748,15 @@ _internal-clean:
 fetch-makefile:
 	@mk=`mktemp ${TMPDIR}/mk.XXXXXXX`; \
 	trap "rm -f $$mk" 0 1 2 3 13 15; \
-	if ${MAKE} _fetch-makefile >$$mk; then \
+	if PKGPATH=${PKGPATH} ${MAKE} _fetch-makefile >$$mk; then \
 		cat $$mk >>${_FETCH_MAKEFILE}; \
 	else \
 		echo >&2 "Problem in ${PKGPATH}"; \
 	fi
 
 mirror-maker-fetch:
-	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; ${MAKE} fetch-makefile >$$mk; \
+	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; \
+	PKGPATH=${PKGPATH} ${MAKE} fetch-makefile >$$mk; \
 	echo "Check and remove $$mk"; \
 	cd ${DISTDIR} && \
 		${MAKE} -f $$mk all FETCH=${_SHSCRIPT}/fetch-all
@@ -2773,7 +2774,7 @@ _fetch-makefile:
 # write generic package dependencies
 	@echo ".PHONY: ${_FETCH_MAKEFILE_NAMES}"
 .  if ${RECURSIVE_FETCH_LIST:L} == "yes"
-	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
+	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes PKGPATH=${PKGPATH} ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
 .  else
 	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES}"
 .  endif
@@ -2782,7 +2783,7 @@ _fetch-makefile:
 .  for _F in ${MAKESUMFILES}
 	@: $${_DONE_FILES:=/dev/null}; if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
 		echo "|${_F}|" >>$${_DONE_FILES}; \
-		${MAKE} _fetch-onefile _file=${_F}; \
+		PKGPATH=${PKGPATH} ${MAKE} _fetch-onefile _file=${_F}; \
 	fi
 .  endfor
 .endif
@@ -2891,13 +2892,13 @@ describe:
 readme:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
 	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
-	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
+	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}.html
 
 readmes:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
 	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
-	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
+	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${_READMES}
 
 .for _S in ${MULTI_PACKAGES}
@@ -2922,7 +2923,7 @@ ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_S}}.html:
 .  endif
 .  for _I in build run
 .    if !empty(_${_I:U}_DEP)
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
 		while read n; do \
 			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
 			echo "<li><a href=\"${PKGDEPTH}$$j/$$k.html\">$$k</a>"; \
@@ -2946,21 +2947,21 @@ ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_S}}.html:
 print-build-depends:
 .if !empty(_BUILD_DEP)
 	@echo -n 'This port requires package(s) "'
-	@${MAKE} full-build-depends| ${_lines2list}
+	@PKGPATH=${PKGPATH} ${MAKE} full-build-depends| ${_lines2list}
 	@echo '" to build.'
 .endif
 
 print-run-depends:
 .if !empty(_RUN_DEP)
 	@echo -n 'This port requires package(s) "'
-	@${MAKE} full-run-depends| ${_lines2list}
+	@PKGPATH=${PKGPATH} ${MAKE} full-run-depends| ${_lines2list}
 	@echo '" to run.'
 .endif
 
 # full-build-depends, full-all-depends, full-run-depends full-regress-depends
 .for _i in build all run regress
 full-${_i}-depends:
-	@${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
+	@PKGPATH=${PKGPATH} ${MAKE} ${_i}-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		eval $$toset ${MAKE} _print-packagename ; \
 	done
@@ -2970,7 +2971,7 @@ license-check:
 .for _S in ${MULTI_PACKAGES}
 .  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes" || \
 	${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
-	@SUBPACKAGE=${_S} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
+	@SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
 		${_flavor_fragment}; \
 		_MASTER_PERMIT_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}; \
 		_MASTER_PERMIT_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}; \
@@ -3007,7 +3008,7 @@ print-package-signature:
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
 .else
-	@cd ${.CURDIR} && ${MAKE} _print-package-signature-run | \
+	@cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _print-package-signature-run | \
 		sort -u| \
 		while read i; do echo -n ",$$i"; done
 .endif
@@ -3129,7 +3130,7 @@ run-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "r|${FULLPKGPATH}|" -e "a|${FULLPKGPATH}" $${_DEPENDS_FILE}; then \
 		echo "r|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} ${MAKE} _recurse-run-dir-depends; \
+		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-run-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -3155,7 +3156,7 @@ regress-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "R|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "R|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} ${MAKE} _recurse-regress-dir-depends; \
+		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-regress-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -3197,7 +3198,7 @@ build-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q -e "b|${FULLPKGPATH}|" -e "a|${_dir}|" $${_DEPENDS_FILE}; then \
 		echo "b|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} ${MAKE} _build-dir-depends; \
+		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _build-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -3208,7 +3209,7 @@ all-dir-depends:
 	@${_depfile_fragment}; \
 	if ! fgrep -q "|${FULLPKGPATH}|" $${_DEPENDS_FILE}; then \
 		echo "|${FULLPKGPATH}|" >>$${_DEPENDS_FILE}; \
-		self=${FULLPKGPATH} ${MAKE} _recurse-all-dir-depends; \
+		self=${FULLPKGPATH} PKGPATH=${PKGPATH} ${MAKE} _recurse-all-dir-depends; \
 	fi
 .else
 	@echo "${FULLPKGPATH} ${FULLPKGPATH}"
@@ -3290,7 +3291,7 @@ delete-package:
 
 reinstall:
 	@${_MAKE} clean='install force'
-	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} exec ${MAKE} install
+	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} PKGPATH=${PKGPATH} exec ${MAKE} install
 
 repackage:
 	@${_MAKE} clean=packages
