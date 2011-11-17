@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.533 2011/11/17 12:54:31 robert Exp $
+# $OpenBSD: Makefile,v 1.534 2011/11/17 16:17:04 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -176,7 +176,6 @@
      SUBDIR += p5-Catalyst-Controller-HTML-FormFu
      SUBDIR += p5-Catalyst-Devel
      SUBDIR += p5-Catalyst-Engine-Apache
-     SUBDIR += p5-Catalyst-Engine-HTTP-POE
      SUBDIR += p5-Catalyst-Helper-Controller-Scaffold
      SUBDIR += p5-Catalyst-Log-Log4perl
      SUBDIR += p5-Catalyst-Plugin-Cache
