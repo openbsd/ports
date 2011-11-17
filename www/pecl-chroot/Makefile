@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/17 12:35:33 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for chroot(2)
 DISTNAME=	pecl-chroot-1.0
-REVISION=	2
+REVISION=	3
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 CATEGORIES=	www
 
