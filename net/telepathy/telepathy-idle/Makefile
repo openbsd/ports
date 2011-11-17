@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/11/17 14:25:38 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
-DISTNAME=		telepathy-idle-0.1.10
-REVISION=		1
+DISTNAME=		telepathy-idle-0.1.11
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-idle/}
 
 WANTLIB += c crypto dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 pcre pthread ssl telepathy-glib
-WANTLIB += z
+WANTLIB += z ffi
 
 MODULES=		devel/gettext \
 			lang/python
