@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1 2011/11/17 14:42:01 ajacoutot Exp $
+--- configure.orig	Thu Nov 17 15:36:45 2011
++++ configure	Thu Nov 17 15:36:50 2011
+@@ -1499,10 +1499,6 @@ EOF
+ fi
+ 
+ 
+-if test "$GCC" = "yes"; then
+-	CFLAGS="-g -O2 -Wall"
+-fi
+-
+ cat >> confdefs.h <<EOF
+ #define SOURCE_CHARSET "$sourcecharset"
+ EOF

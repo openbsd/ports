@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/03/08 21:07:22 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2011/11/17 14:42:01 ajacoutot Exp $
 
 COMMENT=	MS Word, Excel, Powerpoint ==> ASCII or TeX
 
 DISTNAME=	catdoc-0.94.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.wagner.pp.ru/pub/catdoc/
 
