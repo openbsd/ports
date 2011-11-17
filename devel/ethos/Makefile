@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/17 11:42:31 jasper Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=      "-DG_CONST_RETURN=const"
@@ -31,9 +31,7 @@ CONFIGURE_ARGS =	--disable-shave \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
+USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
 
 MODULES =	lang/python \

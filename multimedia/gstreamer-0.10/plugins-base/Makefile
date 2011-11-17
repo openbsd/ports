@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/11/17 11:42:32 jasper Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -30,10 +30,6 @@ SHARED_LIBS +=  gstrtsp-0.10         2.5      # .23.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
@@ -75,5 +71,6 @@ CONFIGURE_ARGS +=	--disable-libvisual \
 			--enable-orc
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 USE_GROFF =		Yes
+USE_LIBTOOL =		Yes
 
 .include <bsd.port.mk>

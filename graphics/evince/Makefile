@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/10/17 18:40:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2011/11/17 11:42:31 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -96,10 +96,6 @@ RUN_DEPENDS-nautilus=
 MODGNOME_DESKTOP_FILE=		Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --disable-static \

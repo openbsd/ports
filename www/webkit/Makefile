@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/11/02 20:00:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2011/11/17 11:42:31 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -24,10 +24,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 VMEM_WARNING =	Yes
 
+USE_LIBTOOL =	Yes
 USE_GMAKE =	Yes
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL =	gnu
 
 MODULES =	devel/gettext \
 		textproc/intltool  \

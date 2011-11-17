@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/17 11:42:31 jasper Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -35,9 +35,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 
 RUN_DEPENDS=	x11/dbus
 
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
+USE_LIBTOOL=	Yes
 # needs AM_PROG_LIBTOOL
 #BUILD_DEPENDS+=	devel/libtool
 

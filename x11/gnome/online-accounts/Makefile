@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/18 08:41:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/17 11:42:32 jasper Exp $
 
 COMMENT=		interfaces for interacting with online accounts
 
@@ -38,10 +38,6 @@ LIB_DEPENDS=		devel/json-glib \
 			www/webkit,gtk3>=1.6.1v0
 
 MODGNOME_TOOLS= 	goi
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=		gnu
 
 CONFIGURE_ARGS=		--localstatedir=/var
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/21 20:19:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/17 11:42:32 jasper Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -38,9 +38,5 @@ AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 
 MODGNOME_TOOLS= goi
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
 
 .include <bsd.port.mk>

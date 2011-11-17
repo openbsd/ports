@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/17 11:42:31 jasper Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
@@ -17,10 +17,6 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xcb-render
 WANTLIB += clutter-glx-1.0 ffi xcb-shm
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
 
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		graphics/clutter/core>=1.0.6p3 \
