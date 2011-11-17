@@ -1,6 +1,6 @@
-# $OpenBSD: gcc3.port.mk,v 1.7 2011/03/26 19:13:28 naddy Exp $
+# $OpenBSD: gcc3.port.mk,v 1.8 2011/11/17 18:03:43 sthen Exp $
 
-MODGCC3_ARCHES?=
+MODGCC3_ARCHS?=
 # Supported languages for now
 _MODGCC3CC=	cc
 _MODGCC3CXX=	c++
@@ -8,8 +8,8 @@ _MODGCC3G77=	g77
 # Always include support for this
 MODGCC3_LANGS+=	${_MODGCC3CC}
 
-.if ${MODGCC3_ARCHES:L} != ""
-.  for _i in ${MODGCC3_ARCHES}
+.if ${MODGCC3_ARCHS:L} != ""
+.  for _i in ${MODGCC3_ARCHS}
 .    if !empty(MACHINE_ARCH:M${_i})
 BUILD_DEPENDS+=	gcc->=3.3,<3.4|gcc->=3.3v0,<3.4v0:lang/gcc/3.3
 .      for _j in ${MODGCC3_LANGS:L}

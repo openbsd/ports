@@ -1,6 +1,6 @@
-# $OpenBSD: gcc4.port.mk,v 1.14 2011/09/15 17:25:35 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.15 2011/11/17 18:03:43 sthen Exp $
 
-MODGCC4_ARCHES?=
+MODGCC4_ARCHS?=
 MODGCC4_LANGS?=
 
 
@@ -19,8 +19,8 @@ ERRORS += "Fatal: unknown language ${_l}"
 
 _MODGCC4_ARCH_USES = No
 
-.if ${MODGCC4_ARCHES:L} != ""
-.  for _i in ${MODGCC4_ARCHES}
+.if ${MODGCC4_ARCHS:L} != ""
+.  for _i in ${MODGCC4_ARCHS}
 .    if !empty(MACHINE_ARCH:M${_i})
 _MODGCC4_ARCH_USES = Yes
 .    endif

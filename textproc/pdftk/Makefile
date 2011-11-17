@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/10 13:39:48 armani Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/17 18:03:43 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 VERSION=	1.44
@@ -20,7 +20,7 @@ WANTLIB += ${MODGCC4_GCJWANTLIB} c m pthread z
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 
 MODULES=	converters/libiconv gcc4
-MODGCC4_ARCHES=	*
+MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	java c++
 LIB_DEPENDS=	${MODGCC4_GCJLIBDEP}
 

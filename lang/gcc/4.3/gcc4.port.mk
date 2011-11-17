@@ -1,6 +1,6 @@
-# $OpenBSD: gcc4.port.mk,v 1.1.1.1 2007/03/17 22:35:25 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.2 2011/11/17 18:03:43 sthen Exp $
 
-MODGCC4_ARCHES?=
+MODGCC4_ARCHS?=
 # Supported languages for now
 _MODGCC4CC=	cc
 _MODGCC4CXX=	c++
@@ -8,8 +8,8 @@ _MODGCC4G77=	g77
 # Always include support for this
 MODGCC4_LANGS+=	${_MODGCC4CC}
 
-.if ${MODGCC4_ARCHES:L} != ""
-.  for _i in ${MODGCC4_ARCHES}
+.if ${MODGCC4_ARCHS:L} != ""
+.  for _i in ${MODGCC4_ARCHS}
 .    if !empty(MACHINE_ARCH:M${_i})
 BUILD_DEPENDS+=	::lang/gcc/4.2
 .      for _j in ${MODGCC4_LANGS:L}
