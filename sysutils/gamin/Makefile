@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/10/18 06:46:24 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/17 14:07:03 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -6,7 +6,6 @@ CFLAGS +=	"-DG_CONST_RETURN=const"
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
 COMMENT-python=	gamin Python bindings
-NOT_FOR_ARCHES-python = ${NO_SHARED_ARCHS}
 
 GNOME_PROJECT=	gamin
 GNOME_VERSION=	0.1.10
