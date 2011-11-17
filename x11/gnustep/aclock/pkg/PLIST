@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.3 2011/11/17 23:54:40 sebastia Exp $
+bin/AClock
+libexec/GNUstep/
+libexec/GNUstep/AClock.app/
+@bin libexec/GNUstep/AClock.app/AClock
+libexec/GNUstep/AClock.app/Resources/
+libexec/GNUstep/AClock.app/Resources/AClock.desktop
+libexec/GNUstep/AClock.app/Resources/AClock.gorm/
+libexec/GNUstep/AClock.app/Resources/AClock.gorm/data.classes
+libexec/GNUstep/AClock.app/Resources/AClock.gorm/data.info
+libexec/GNUstep/AClock.app/Resources/AClock.gorm/objects.gorm
+libexec/GNUstep/AClock.app/Resources/AClock.tiff
+libexec/GNUstep/AClock.app/Resources/Info-gnustep.plist
+libexec/GNUstep/AClock.app/Resources/clock.png
+libexec/GNUstep/AClock.app/Resources/cuckoo.wav
+libexec/GNUstep/AClock.app/Resources/cuckoo0.png
+libexec/GNUstep/AClock.app/Resources/cuckoo1.png
+libexec/GNUstep/AClock.app/Resources/cuckoo10.png
+libexec/GNUstep/AClock.app/Resources/cuckoo11.png
+libexec/GNUstep/AClock.app/Resources/cuckoo12.png
+libexec/GNUstep/AClock.app/Resources/cuckoo13.png
+libexec/GNUstep/AClock.app/Resources/cuckoo14.png
+libexec/GNUstep/AClock.app/Resources/cuckoo15.png
+libexec/GNUstep/AClock.app/Resources/cuckoo16.png
+libexec/GNUstep/AClock.app/Resources/cuckoo17.png
+libexec/GNUstep/AClock.app/Resources/cuckoo18.png
+libexec/GNUstep/AClock.app/Resources/cuckoo19.png
+libexec/GNUstep/AClock.app/Resources/cuckoo2.png
+libexec/GNUstep/AClock.app/Resources/cuckoo3.png
+libexec/GNUstep/AClock.app/Resources/cuckoo4.png
+libexec/GNUstep/AClock.app/Resources/cuckoo5.png
+libexec/GNUstep/AClock.app/Resources/cuckoo6.png
+libexec/GNUstep/AClock.app/Resources/cuckoo7.png
+libexec/GNUstep/AClock.app/Resources/cuckoo8.png
+libexec/GNUstep/AClock.app/Resources/cuckoo9.png
+libexec/GNUstep/AClock.app/Resources/ring.wav
+libexec/GNUstep/AClock.app/stamp.make
