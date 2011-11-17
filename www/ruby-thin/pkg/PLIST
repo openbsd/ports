@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/12 17:47:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/17 15:53:54 jeremy Exp $
 ${GEM_BIN}/thin${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
-${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/benchmark/
