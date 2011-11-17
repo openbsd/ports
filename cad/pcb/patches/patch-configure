@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.5 2010/10/07 20:40:40 jasper Exp $
---- configure.orig	Wed Sep 29 22:48:20 2010
-+++ configure	Fri Oct  1 19:28:17 2010
-@@ -17863,7 +17863,7 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.6 2011/11/17 12:41:08 jasper Exp $
+--- configure.orig	Wed Nov 16 14:47:53 2011
++++ configure	Wed Nov 16 14:48:13 2011
+@@ -13520,7 +13520,7 @@ $as_echo "no" >&6; }
  fi
  
  
--for ac_prog in wish wish83 wish8.3 wish80 wish8.0 cygwish83 cygwish80
+-for ac_prog in wish wish85 wish8.5 wish83 wish8.3 wish80 wish8.0 cygwish83 cygwish80
 +for ac_prog in wish wish85 wish8.5 wish84 wish8.4 wish80 wish8.0 cygwish83 cygwish80
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
