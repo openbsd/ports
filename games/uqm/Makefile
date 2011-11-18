@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/11/18 12:38:00 espie Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -61,29 +61,27 @@ USE_GMAKE=	Yes
 
 WRKSRC=	${WRKDIST}/sc2
 
-PSEUDO_FLAVORS=	remix1 remix2 remix3 threedomusic voice
-FLAVOR?=
+PSEUDO_FLAVORS=	no_remix1 no_remix2 no_remix3 no_threedomusic no_voice
+FLAVOR?= no_remix1 no_remix2 no_remix3 no_threedomusic no_voice
 
-MULTI_PACKAGES= -main -content
-.if ${FLAVOR:L:Mremix1}
+MULTI_PACKAGES= -main -content -remix1 -remix2 -remix3 -threedomusic -voice
+
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-remix1}
 DISTFILES+=	${RM1DIST}
-MULTI_PACKAGES+=-remix1
 .endif
-.if ${FLAVOR:L:Mremix2}
+.if ${BUILD_PACKAGES:M-remix2}
 DISTFILES+=	${RM2DIST}
-MULTI_PACKAGES+=-remix2
 .endif
-.if ${FLAVOR:L:Mremix3}
+.if ${BUILD_PACKAGES:M-remix3}
 DISTFILES+=	${RM3DIST}
-MULTI_PACKAGES+=-remix3
 .endif
-.if ${FLAVOR:L:Mthreedomusic}
+.if ${BUILD_PACKAGES:M-threedomusic}
 DISTFILES+=	${MDIST}
-MULTI_PACKAGES+=-threedomusic
 .endif
-.if ${FLAVOR:L:Mvoice}
+.if ${BUILD_PACKAGES:M-voice}
 DISTFILES+=	${VDIST}
-MULTI_PACKAGES+=-voice
 .endif
 
 BYTEORDER!=sysctl -n hw.byteorder
@@ -113,23 +111,23 @@ do-install:
 		${PREFIX}/share/uqm/content
 	${INSTALL_DATA} ${FULLDISTDIR}/${CDIST} \
 		${PREFIX}/share/uqm/content/packages
-.if ${FLAVOR:L:Mremix1}
+.if ${BUILD_PACKAGES:M-remix1}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM1DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
 .endif
-.if ${FLAVOR:L:Mremix2}
+.if ${BUILD_PACKAGES:M-remix2}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM2DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
 .endif
-.if ${FLAVOR:L:Mremix2}
+.if ${BUILD_PACKAGES:M-remix3}
 	${INSTALL_DATA} ${FULLDISTDIR}/${RM3DIST} \
 		${PREFIX}/share/uqm/content/packages/addons/uqmremix
 .endif
-.if ${FLAVOR:L:Mthreedomusic}
+.if ${BUILD_PACKAGES:M-threedomusic}
 	${INSTALL_DATA} ${FULLDISTDIR}/${MDIST} \
 		${PREFIX}/share/uqm/content/packages
 .endif
-.if ${FLAVOR:L:Mvoice}
+.if ${BUILD_PACKAGES:M-voice}
 	${INSTALL_DATA} ${FULLDISTDIR}/${VDIST} \
 		${PREFIX}/share/uqm/content/packages
 .endif
