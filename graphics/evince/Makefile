@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/11/17 11:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2011/11/18 12:37:19 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -99,27 +99,26 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --disable-static \
-		--disable-comics \
-		--enable-nautilus \
-		--enable-djvu \
-		--enable-dvi
+		--disable-comics
 
 MODGNOME_CPPFLAGS=${CFLAGS}
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
 
-MULTI_PACKAGES=	-main
-PSEUDO_FLAVORS=	light
+MULTI_PACKAGES=	-main -djvu -dvi -nautilus
+PSEUDO_FLAVORS=	no_djvu no_dvi no_nautilus light
 FLAVOR?=
-
-.if ${FLAVOR:L:Mlight}
-CONFIGURE_ARGS+= --disable-nautilus \
-		--disable-djvu \
-		--disable-dvi
-.else
-MULTI_PACKAGES+= -djvu -dvi -nautilus
-CONFIGURE_ARGS+= --enable-nautilus \
-		--enable-djvu \
-		--enable-dvi
+.if ${FLAVOR:Mlight}
+FLAVOR += no_djvu no_dvi no_nautilus
 .endif
+
+.include <bsd.port.arch.mk>
+
+.for s in -nautilus -djvu -dvi
+.  if ${BUILD_PACKAGES:M$s}
+CONFIGURE_ARGS+= --enable$s
+.  else
+CONFIGURE_ARGS+= --disable$s
+.  endif
+.endfor
 
 .include <bsd.port.mk>
