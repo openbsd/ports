@@ -1,0 +1,15 @@
+$OpenBSD: patch-x2x_1,v 1.1 2011/11/18 13:09:17 jasper Exp $
+
+Fix display of usage line.
+
+--- x2x.1.orig	Fri Nov 18 14:05:25 2011
++++ x2x.1	Fri Nov 18 14:06:03 2011
+@@ -3,7 +3,7 @@
+ .SH NAME
+ x2x \- X to X connection
+ .SH SYNTAX
+-\f x2x\fR  <[-to <DISPLAY>] | [-from <DISPLAY>]> [options...]
++\fB x2x\fR  <[-to <DISPLAY>] | [-from <DISPLAY>]> [options...]
+ .SH DESCRIPTION
+ x2x allows the keyboard and mouse on one ("from") X display to be used to
+ control another ("to") X display.  Since x2x uses the XTEST extension,
