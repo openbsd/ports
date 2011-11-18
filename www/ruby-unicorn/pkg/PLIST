@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/06 01:18:27 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/18 00:05:43 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -9,6 +9,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.mailmap
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
 ${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
+${GEM_LIB}/gems/${DISTNAME}/Application_Timeouts
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog

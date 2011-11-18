@@ -1,0 +1,12 @@
+$OpenBSD: patch-t_t0012-reload-empty-config_sh,v 1.1 2011/11/18 00:05:43 jeremy Exp $
+--- t/t0012-reload-empty-config.sh.orig	Tue Nov 15 20:05:13 2011
++++ t/t0012-reload-empty-config.sh	Tue Nov 15 20:05:37 2011
+@@ -9,7 +9,7 @@ t_begin "setup and start" && {
+ 	cat >> $unicorn_config <<EOF
+ logger Logger.new(STDOUT)
+ preload_app true
+-timeout 0x7fffffff
++timeout 0x7fffff
+ worker_processes 2
+ after_fork { |s,w| }
+ \$dump_cfg = lambda { |fp,srv|
