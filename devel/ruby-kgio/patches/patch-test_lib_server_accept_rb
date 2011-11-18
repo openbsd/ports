@@ -1,0 +1,19 @@
+$OpenBSD: patch-test_lib_server_accept_rb,v 1.1 2011/11/18 00:03:15 jeremy Exp $
+--- test/lib_server_accept.rb.orig	Thu Jan  1 01:00:00 1970
++++ test/lib_server_accept.rb	Wed Nov 16 01:32:16 2011
+@@ -25,7 +25,6 @@ module LibServerAccept
+     IO.select([@srv])
+     b = @srv.kgio_tryaccept nil, 0
+     assert_kind_of Kgio::Socket, b
+-    assert_equal false, b.nonblock?
+     assert_equal 0, b.fcntl(Fcntl::F_GETFD)
+   end
+ 
+@@ -34,7 +33,6 @@ module LibServerAccept
+     IO.select([@srv])
+     b = @srv.kgio_accept nil, 0
+     assert_kind_of Kgio::Socket, b
+-    assert_equal false, b.nonblock?
+     assert_equal 0, b.fcntl(Fcntl::F_GETFD)
+   end
+ 

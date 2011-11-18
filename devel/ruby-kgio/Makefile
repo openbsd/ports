@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/18 00:03:15 jeremy Exp $
 
 COMMENT =	kinder, gentler I/O for Ruby
 
-DISTNAME =	kgio-2.5.0
+DISTNAME =	kgio-2.6.0
 CATEGORIES =	devel
-REVISION=		0
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
@@ -22,6 +21,6 @@ REGRESS_DEPENDS =	devel/gmake
 
 # Couple failing regress tests
 do-regress:
-	@cd ${WRKSRC} && gmake test RUBY=${RUBY}
+	@cd ${WRKSRC} && gmake -k test RUBY=${RUBY}
 
 .include <bsd.port.mk>

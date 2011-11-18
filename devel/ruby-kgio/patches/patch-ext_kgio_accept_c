@@ -1,0 +1,61 @@
+$OpenBSD: patch-ext_kgio_accept_c,v 1.1 2011/11/18 00:03:15 jeremy Exp $
+--- ext/kgio/accept.c.orig	Thu Jan  1 01:00:00 1970
++++ ext/kgio/accept.c	Wed Nov 16 01:32:16 2011
+@@ -10,7 +10,7 @@ static VALUE cKgio_Socket;
+ static VALUE mSocketMethods;
+ static VALUE iv_kgio_addr;
+ 
+-#if defined(__linux__)
++#if defined(__linux__) && defined(HAVE_RB_THREAD_BLOCKING_REGION)
+ static int accept4_flags = SOCK_CLOEXEC;
+ #else /* ! linux */
+ static int accept4_flags = SOCK_CLOEXEC | SOCK_NONBLOCK;
+@@ -125,6 +125,10 @@ static int thread_accept(struct accept_args *a, int fo
+ 
+ 	/* always use non-blocking accept() under 1.8 for green threads */
+ 	set_nonblocking(a->fd);
++
++	/* created sockets are always non-blocking under 1.8, too */
++	a->flags |= SOCK_NONBLOCK;
++
+ 	TRAP_BEG;
+ 	rv = (int)xaccept(a);
+ 	TRAP_END;
+@@ -409,6 +413,8 @@ static VALUE unix_accept(int argc, VALUE *argv, VALUE 
+  *
+  * Returns true if newly accepted Kgio::Sockets are created with the
+  * FD_CLOEXEC file descriptor flag, false if not.
++ *
++ * Deprecated, use the per-socket flags for kgio_*accept instead.
+  */
+ static VALUE get_cloexec(VALUE mod)
+ {
+@@ -423,6 +429,8 @@ static VALUE get_cloexec(VALUE mod)
+  *
+  * Returns true if newly accepted Kgio::Sockets are created with the
+  * O_NONBLOCK file status flag, false if not.
++ *
++ * Deprecated, use the per-socket flags for kgio_*accept instead.
+  */
+ static VALUE get_nonblock(VALUE mod)
+ {
+@@ -444,6 +452,8 @@ static VALUE get_nonblock(VALUE mod)
+  *
+  * This is on by default, as there is little reason to deal to enable
+  * it for client sockets on a socket server.
++ *
++ * Deprecated, use the per-socket flags for kgio_*accept instead.
+  */
+ static VALUE set_cloexec(VALUE mod, VALUE boolean)
+ {
+@@ -476,6 +486,10 @@ static VALUE set_cloexec(VALUE mod, VALUE boolean)
+  * available (and on newer GNU/Linux, accept4() may also set
+  * the non-blocking flag.  This defaults to +true+ on non-GNU/Linux
+  * systems.
++ *
++ * This is always true on Ruby implementations using user-space threads.
++ *
++ * Deprecated, use the per-socket flags for kgio_*accept instead.
+  */
+ static VALUE set_nonblock(VALUE mod, VALUE boolean)
+ {
