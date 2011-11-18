@@ -1,6 +1,6 @@
-$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.5 2011/07/07 21:51:22 sthen Exp $
---- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Fri Jul  1 23:35:46 2011
-+++ agent/mibgroup/host/data_access/swrun_kinfo.c	Thu Jul  7 00:02:27 2011
+$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.6 2011/11/18 12:39:06 sthen Exp $
+--- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Wed Aug 31 03:21:51 2011
++++ agent/mibgroup/host/data_access/swrun_kinfo.c	Thu Sep  1 23:53:44 2011
 @@ -3,7 +3,7 @@
   *     hrSWRunTable data access:
   *     kvm_getprocs() interface - FreeBSD, NetBSD, OpenBSD
@@ -27,15 +27,17 @@ $OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.5 2011/07/07 2
  #define SWRUN_K_STAT	p_stat
  #define SWRUN_K_PID	p_pid
  #define SWRUN_K_COMM	p_comm
-@@ -158,6 +162,8 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+@@ -156,7 +160,9 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+         DEBUGMSGTL(("swrun:load:arch"," Can't query kvm info\n"));
+         return 1;     /* No handle for retrieving process table */
      }
- #if HAVE_KVM_GETPROC2
+-#if HAVE_KVM_GETPROC2
++#if defined(openbsd5)
++    proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc), &nprocs );
++#elif defined(HAVE_KVM_GETPROC2)
      proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2), &nprocs );
-+#elif defined(openbsd5)
-+    proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2), &nprocs );
  #else
      proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs );
- #endif
 @@ -287,7 +293,7 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
  # endif
          entry->hrSWRunPerfCPU  = proc_table[i].ki_runtime / 100000;

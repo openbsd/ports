@@ -1,7 +1,6 @@
-@comment $OpenBSD: PFRAG.shared-perl,v 1.3 2011/07/07 20:02:02 sthen Exp $
+@comment $OpenBSD: PFRAG.shared-perl,v 1.4 2011/11/18 12:39:06 sthen Exp $
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/TrapReceiver.pm
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/NetSNMP/agent/Support.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Bundle/NetSNMP/NetSNMP.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/ASN/ASN.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/NetSNMP/OID/OID.bs

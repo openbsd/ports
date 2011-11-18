@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_rules,v 1.5 2011/07/07 20:02:02 sthen Exp $
---- Makefile.rules.orig	Fri Jul  1 23:35:46 2011
-+++ Makefile.rules	Wed Jul  6 23:15:52 2011
-@@ -295,7 +295,8 @@ installlocalbin: $(INSTALLBINPROGS)
+$OpenBSD: patch-Makefile_rules,v 1.6 2011/11/18 12:39:06 sthen Exp $
+--- Makefile.rules.orig	Wed Aug 31 03:21:51 2011
++++ Makefile.rules	Thu Sep  1 23:24:44 2011
+@@ -298,7 +298,8 @@ installlocalbin: $(INSTALLBINPROGS)
  	@if test "$(INSTALLBINPROGS) $(INSTALLBINSCRIPTS)" != " "; then \
  		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(bindir) ; \
  		it="$(INSTALLBINPROGS) $(INSTALLBINSCRIPTS)" ; \
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile_rules,v 1.5 2011/07/07 20:02:02 sthen Exp $
  		for i in $$it ; do   \
  			echo "installing $$i in $(INSTALL_PREFIX)$(bindir)"; \
  		done \
-@@ -333,7 +334,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
+@@ -336,7 +337,7 @@ installlocalsbin: $(INSTALLSBINPROGS)
  	@if test "$(INSTALLSBINPROGS)" != ""; then \
  		it="$(INSTALLSBINPROGS)" ; \
  		$(SHELL) $(top_srcdir)/mkinstalldirs $(INSTALL_PREFIX)$(sbindir) ; \

@@ -1,6 +1,0 @@
-$OpenBSD: patch-include_net-snmp_system_openbsd5_h,v 1.1 2011/07/07 20:02:02 sthen Exp $
---- include/net-snmp/system/openbsd5.h.orig	Wed Jul  6 23:55:04 2011
-+++ include/net-snmp/system/openbsd5.h	Wed Jul  6 23:56:50 2011
-@@ -0,0 +1,2 @@
-+#include "openbsd4.h"
-+#define openbsd4 openbsd4
