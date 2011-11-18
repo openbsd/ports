@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/04/18 12:47:37 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/11/18 11:12:44 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -132,7 +132,6 @@ include/NGExtensions/NGLoggerManager.h
 include/NGExtensions/NGLogging.h
 include/NGExtensions/NGMemoryAllocation.h
 include/NGExtensions/NGMerging.h
-include/NGExtensions/NGObjCRuntime.h
 include/NGExtensions/NGObjectMacros.h
 include/NGExtensions/NGPropertyListParser.h
 include/NGExtensions/NGQuotedPrintableCoding.h
@@ -369,19 +368,6 @@ include/NGStreams/NGStringTextStream.h
 include/NGStreams/NGTerminalSupport.h
 include/NGStreams/NGTextStream.h
 include/NGStreams/NGTextStreamProtocols.h
-include/NGXmlRpc/
-include/NGXmlRpc/NGAsyncResultProxy.h
-include/NGXmlRpc/NGXmlRpc.h
-include/NGXmlRpc/NGXmlRpcAction.h
-include/NGXmlRpc/NGXmlRpcClient.h
-include/NGXmlRpc/NGXmlRpcInvocation.h
-include/NGXmlRpc/NGXmlRpcMethodSignature.h
-include/NGXmlRpc/NGXmlRpcRequestHandler.h
-include/NGXmlRpc/NSObject+Reflection.h
-include/NGXmlRpc/WODirectAction+XmlRpc.h
-include/NGXmlRpc/WODirectAction+XmlRpcIntrospection.h
-include/NGXmlRpc/XmlRpcMethodCall+WO.h
-include/NGXmlRpc/XmlRpcMethodResponse+WO.h
 include/SBJson/
 include/SBJson/NSObject+SBJSON.h
 include/SBJson/NSString+SBJSON.h
@@ -412,34 +398,12 @@ include/SaxObjC/SaxXMLFilter.h
 include/SaxObjC/SaxXMLReader.h
 include/SaxObjC/SaxXMLReaderFactory.h
 include/SaxObjC/XMLNamespaces.h
-include/SoOFS/
-include/SoOFS/OFSBaseObject.h
-include/SoOFS/OFSChangeLog.h
-include/SoOFS/OFSFactoryContext.h
-include/SoOFS/OFSFactoryRegistry.h
-include/SoOFS/OFSFile.h
-include/SoOFS/OFSFileRenderer.h
-include/SoOFS/OFSFolder.h
-include/SoOFS/OFSFolderDataSource.h
-include/SoOFS/OFSHttpPasswd.h
-include/SoOFS/OFSImage.h
-include/SoOFS/OFSPropertyListObject.h
-include/SoOFS/OFSResourceManager.h
-include/SoOFS/OFSWebDocument.h
-include/SoOFS/OFSWebMethod.h
-include/SoOFS/OFSWebMethodRenderer.h
-include/SoOFS/OFSWebTemplate.h
-include/SoOFS/SoOFS.h
 include/WEExtensions/
 include/WEExtensions/WEContextConditional.h
 include/WEExtensions/WEResourceManager.h
 include/WOExtensions/
 include/WOExtensions/WOExtensions.h
 include/WOExtensions/WORedirect.h
-include/WOXML/
-include/WOXML/WOXML.h
-include/WOXML/WOXMLDecoder.h
-include/WOXML/WOXMLMappingModel.h
 include/XmlRpc/
 include/XmlRpc/NSObject+XmlRpc.h
 include/XmlRpc/XmlRpc.h
@@ -454,14 +418,10 @@ include/XmlRpc/XmlRpcMethodResponse.h
 @lib lib/libNGMime.so.${LIBNGMime_VERSION}
 @lib lib/libNGObjWeb.so.${LIBNGObjWeb_VERSION}
 @lib lib/libNGStreams.so.${LIBNGStreams_VERSION}
-@lib lib/libNGXmlRpc.so.${LIBNGXmlRpc_VERSION}
 @lib lib/libSBJson.so.${LIBSBJson_VERSION}
 @lib lib/libSaxObjC.so.${LIBSaxObjC_VERSION}
-@lib lib/libSoOFS.so.${LIBSoOFS_VERSION}
 @lib lib/libWEExtensions.so.${LIBWEExtensions_VERSION}
-@lib lib/libWEPrototype.so.${LIBWEPrototype_VERSION}
 @lib lib/libWOExtensions.so.${LIBWOExtensions_VERSION}
-@lib lib/libWOXML.so.${LIBWOXML_VERSION}
 @lib lib/libXmlRpc.so.${LIBXmlRpc_VERSION}
 lib/sope-4.9/
 lib/sope-4.9/dbadaptors/
@@ -473,13 +433,6 @@ lib/sope-4.9/products/SoCore.sxp/Resources/Version
 lib/sope-4.9/products/SoCore.sxp/Resources/product.plist
 @bin lib/sope-4.9/products/SoCore.sxp/SoCore
 lib/sope-4.9/products/SoCore.sxp/stamp.make
-lib/sope-4.9/products/SoOFS.sxp/
-lib/sope-4.9/products/SoOFS.sxp/Resources/
-lib/sope-4.9/products/SoOFS.sxp/Resources/Info-gnustep.plist
-lib/sope-4.9/products/SoOFS.sxp/Resources/Version
-lib/sope-4.9/products/SoOFS.sxp/Resources/product.plist
-@bin lib/sope-4.9/products/SoOFS.sxp/SoOFS
-lib/sope-4.9/products/SoOFS.sxp/stamp.make
 lib/sope-4.9/saxdrivers/
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/Resources/
@@ -503,19 +456,12 @@ lib/sope-4.9/wox-builders/WEExtensions.wox/Resources/Info-gnustep.plist
 @bin lib/sope-4.9/wox-builders/WEExtensions.wox/WEExtensions
 lib/sope-4.9/wox-builders/WEExtensions.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WEExtensions.wox/stamp.make
-lib/sope-4.9/wox-builders/WEPrototype.wox/
-lib/sope-4.9/wox-builders/WEPrototype.wox/Resources/
-lib/sope-4.9/wox-builders/WEPrototype.wox/Resources/Info-gnustep.plist
-@bin lib/sope-4.9/wox-builders/WEPrototype.wox/WEPrototype
-lib/sope-4.9/wox-builders/WEPrototype.wox/bundle-info.plist
-lib/sope-4.9/wox-builders/WEPrototype.wox/stamp.make
 lib/sope-4.9/wox-builders/WOExtensions.wox/
 lib/sope-4.9/wox-builders/WOExtensions.wox/Resources/
 lib/sope-4.9/wox-builders/WOExtensions.wox/Resources/Info-gnustep.plist
 @bin lib/sope-4.9/wox-builders/WOExtensions.wox/WOExtensions
 lib/sope-4.9/wox-builders/WOExtensions.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WOExtensions.wox/stamp.make
-@bin sbin/sope-4.9
 share/GNUstep/Makefiles/Additional/ngobjweb.make
 share/GNUstep/Makefiles/woapp.make
 share/GNUstep/Makefiles/wobundle.make

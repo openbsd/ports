@@ -1,0 +1,17 @@
+$OpenBSD: patch-sope-core_NGStreams_NGActiveSocket_m,v 1.1 2011/11/18 11:12:44 sebastia Exp $
+
+MSG_NOSIGNAL is not POSIX, OpenBSD doesn't have it, so ignore it
+
+--- sope-core/NGStreams/NGActiveSocket.m.orig	Thu Oct  6 09:15:44 2011
++++ sope-core/NGStreams/NGActiveSocket.m	Thu Oct  6 10:04:09 2011
+@@ -73,6 +73,10 @@
+ #  define POLLRDNORM POLLIN
+ #endif
+ 
++#ifndef MSG_NOSIGNAL
++#define MSG_NOSIGNAL 0
++#endif
++
+ @interface NGActiveSocket(PrivateMethods)
+ 
+ - (id)_initWithDescriptor:(int)_fd

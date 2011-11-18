@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/18 11:12:44 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		1.3.8
-DISTNAME =		SOPE-${VERSION}b
-PKGNAME-main =		sope-${VERSION}.1
-PKGNAME-mysql =		sope-mysql-${VERSION}.1
-PKGNAME-postgres =	sope-postgres-${VERSION}.1
-REVISION =		0
+VERSION =		1.3.9
+DISTNAME =		SOPE-${VERSION}
+PKGNAME-main =		sope-${VERSION}
+PKGNAME-mysql =		sope-mysql-${VERSION}
+PKGNAME-postgres =	sope-postgres-${VERSION}
 
-SO_MAJOR=	0
-SO_MINOR=	1
+SO_MAJOR=	1
+SO_MINOR=	0
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
-		NGObjWeb NGStreams NGXmlRpc SaxObjC SoOFS WEExtensions \
-		WEPrototype WOExtensions WOXML XmlRpc SBJson
+		NGObjWeb NGStreams SaxObjC WEExtensions \
+		WOExtensions XmlRpc
 SHARED_LIBS+=   ${_lib} ${SO_MAJOR}.${SO_MINOR}
 .endfor
+SHARED_LIBS +=	SBJson	0.1
 
 CATEGORIES=	www
 HOMEPAGE=	http://www.sogo.nu
@@ -45,12 +45,11 @@ WANTLIB-postgres = 	gnustep-base m objc GDLAccess EOControl pq
 LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION} \
 			databases/mysql
-LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.1 \
+LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION} \
 			databases/postgresql
 
-WRKDIST=	${WRKDIR}/${DISTNAME}
 CONFIGURE_STYLE=simple dest
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES`
