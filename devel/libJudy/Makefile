@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/18 10:13:42 espie Exp $
 
 COMMENT=		general purpose dynamic array
 
@@ -33,10 +33,8 @@ post-install:
 	
 .include <bsd.port.mk>
 
-.for m in ${MACHINE_ARCH}
-.if ${LP64_ARCHS:L:M$m}
+.if ${PROPERTIES:Mlp64}
 CONFIGURE_ARGS+=--enable-64-bit
 .else
 CONFIGURE_ARGS+=--enable-32-bit
 .endif
-.endfor
