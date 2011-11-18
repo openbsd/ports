@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/11/18 00:35:08 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,17 +42,17 @@ FLAVORS=	python2.4 python2.7
 FLAVOR=	python2.7
 .endif
 
-.if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
+.if ${FLAVOR} == "python2.4"
 MULTI_PACKAGES=	-main -examples -zope
-.elif ${FLAVOR:L:Mpython2.7} && !${FLAVOR:L:Npython2.7}
+.elif ${FLAVOR} == "python2.7"
 MULTI_PACKAGES=	-main -examples
 .else
 ERRORS+=	"Fatal: You must select one version: ${FLAVORS}"
 .endif
 
-MODPY_VERSION=	${FLAVOR:L:S/python//}
-BUILD_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
-RUN_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR:L}:devel/py-mxDateTime,${FLAVOR:L}
+MODPY_VERSION=	${FLAVOR:S/python//}
+BUILD_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
+RUN_DEPENDS+=	py-mxDateTime->=2.0.0-${FLAVOR}:devel/py-mxDateTime,${FLAVOR}
 
 RUN_DEPENDS-examples=	py-psycopg-${VERSION}:${PKGPATH}
 PKG_ARCH-examples=	*
@@ -67,7 +67,7 @@ CONFIGURE_ARGS=	--with-mxdatetime-includes=${MODPY_SITEPKG}/mx/DateTime/mxDateTi
 NO_REGRESS=	Yes
 
 post-install:
-.if ${MULTI_PACKAGES:L:M-zope}
+.if ${MULTI_PACKAGES:M-zope}
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/zope/lib/python/Products/
 	cd ${WRKSRC}; tar cf - ZPsycopgDA | tar xf - -C ${PREFIX}/lib/zope/lib/python/Products
 	chown -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/zope/lib/python/Products/ZPsycopgDA
