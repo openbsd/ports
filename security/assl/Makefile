@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/14 17:06:08 dhill Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=		hide awful SSL API in a sane interface
 
@@ -23,10 +23,6 @@ EG_DIR=			${PREFIX}/share/examples/assl
 
 .if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=   -D__BUILTIN_HACK
-# See bsd.lib.mk:162
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
 .endif
 
 do-configure:

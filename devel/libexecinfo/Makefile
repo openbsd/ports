@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/16 15:12:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/18 11:16:24 espie Exp $
 
 COMMENT =	clone of backtrace facility found in the GNU libc
 
@@ -31,10 +31,6 @@ FAKE_FLAGS =	PREFIX=${WRKINST}/${TRUEPREFIX} \
 
 .if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=   -D__BUILTIN_HACK
-# See bsd.lib.mk:162
-PKG_ARGS+=      -Dno_mips64=0
-.else
-PKG_ARGS+=      -Dno_mips64=1
 .endif
 
 do-configure:

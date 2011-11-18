@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/17 13:58:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/18 11:16:24 espie Exp $
 
 V =		3.3.5
 CONFIG = 	${MACHINE_ARCH}-unknown-openbsd${OSREV}
@@ -22,13 +22,6 @@ SHARED_LIBS=	g2c	${MAJOR}.${MINOR}
 
 WRKDIST =	${WRKDIR}/libf2c
 MAKE_FILE = ${WRKDIST}/Makefile.bsd-wrapper
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 do-configure:
 	cd ${WRKDIST} && ${MAKE} -f ${MAKE_FILE} ${MAKE_FLAGS} obj

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/14 17:05:22 dhill Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/18 11:16:23 espie Exp $
 
 COMMENT=		configurable logging library
 
@@ -19,14 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=		Yes
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-EXTRA_CFLAGS=   -D__BUILTIN_HACK
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 

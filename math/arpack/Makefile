@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	solve large scale eigenvalue problems
 
@@ -23,13 +23,6 @@ DIST_SUBDIR=	arpack
 MODULES=		fortran
 MODFORTRAN_COMPILER =	g77
 BUILD_DEPENDS=		${MODFORTRAN_BUILD_DEPENDS}
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 LIB_DEPENDS =	math/lapack \
 		math/blas

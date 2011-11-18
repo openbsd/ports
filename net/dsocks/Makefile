@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/08/23 15:44:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=		SOCKS client wrapper for *BSD
 DISTNAME=		dsocks-1.6
@@ -22,13 +22,6 @@ MAKE_FLAGS=		SHLIB_MAJOR=${LIBdsocks_VERSION:R} \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
 
 FAKE_FLAGS=		DEBUGLIBS=No
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh \

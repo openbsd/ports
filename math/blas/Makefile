@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/05/13 14:52:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -40,13 +40,6 @@ FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 USE_GROFF =	Yes
 
 MANSRC=		${WRKDIR}/manpages/blas/man/manl
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 post-build:
 	@rm -f ${MANSRC}/{lsame,xerbla}.l

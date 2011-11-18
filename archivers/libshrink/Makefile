@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/14 17:04:52 dhill Exp $
+# $OpenBSD: Makefile,v 1.6 2011/11/18 11:16:23 espie Exp $
 
 COMMENT=	compression wrapper library
 
@@ -23,13 +23,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif 
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 

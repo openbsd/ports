@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/08 23:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	library of Fortran 77 linear algebra subroutines
 
@@ -41,13 +41,6 @@ REGRESS_FLAGS=	PLAT= OPTS= FORTRAN=${FC} LOADER=${FC} \
 
 MAKE_FILE=	${FILESDIR}/Makefile
 WRKSRC=		${WRKDIST}/SRC
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 # avoid 'unknown manpage type' errors and move manpages to section 3
 pre-configure:

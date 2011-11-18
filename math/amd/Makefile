@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 09:28:34 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
@@ -41,13 +41,6 @@ CFLAGS+=	-I${WRKDIST}/Include -I${LOCALBASE}/include
 
 CSRC=	aat 1 2 dump postorder post_tree defaults order control info \
 	valid preprocess
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 pre-configure:
 	@echo "#define DINT 1"  > ${WRKSRC}/di.c

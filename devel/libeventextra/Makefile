@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/18 11:16:23 espie Exp $
 
 COMMENT =	libevent extra features
 
@@ -24,13 +24,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}
 
 MAKE_ENV +=	CC="${CC}"
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 pre-build:
 	@printf "major=${LIBeventextra_VERSION:R}\nminor=${LIBeventextra_VERSION:E}\n" >${WRKBUILD}/shlib_version

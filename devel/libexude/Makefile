@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/14 17:05:47 dhill Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	memory allocation debugger library
 
@@ -21,13 +21,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	devel/libclog
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=      -Dno_mips64=0
-.else
-PKG_ARGS+=      -Dno_mips64=1
-.endif
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 

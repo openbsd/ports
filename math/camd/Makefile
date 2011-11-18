@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	constrained approximate minimum degree 
 
@@ -33,13 +33,6 @@ FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 CFLAGS+=	-I${WRKDIST}/Include -I${LOCALBASE}/include
 
 CSRC=	aat 1 2 dump postorder defaults order control info valid preprocess
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 pre-configure:
 	@echo "#define DINT 1"  > ${WRKSRC}/di.c

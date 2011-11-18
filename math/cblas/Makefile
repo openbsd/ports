@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/18 11:16:24 espie Exp $
 
 COMMENT=	C interface to the BLAS library
 
@@ -44,13 +44,6 @@ FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 
 REGRESS_FLAGS=	LOADER=${FC} CFLAGS="${CFLAGS}" INC="-I${WRKSRC}" \
 		LIB="-L${WRKSRC} -lcblas -L${LOCALBASE}/lib -lblas"
-
-# See bsd.lib.mk:162
-.if ${MACHINE_ARCH:Mmips64*}
-PKG_ARGS+=	-Dno_mips64=0
-.else
-PKG_ARGS+=	-Dno_mips64=1
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include
