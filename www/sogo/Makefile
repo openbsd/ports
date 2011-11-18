@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/18 11:15:13 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	1.3.8
-DISTNAME =	SOGo-${VERSION}b
-PKGNAME =	sogo-${VERSION}.1
-REVISION=	0
+VERSION =	1.3.9
+DISTNAME =	SOGo-${VERSION}
+PKGNAME =	sogo-${VERSION}
 
 SHLIB_VERSION =	1.1
 .for _lib in GDLContentStore NGCards OGoContentStore \
@@ -47,7 +46,7 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${SHLIB_VERSION} \
 
 pre-configure:
 .for f in SOGo_Installation_Guide SOGo_Mobile_Devices_Configuration \
-    SOGo_Mozilla_Thunderbird_Configuration
+    SOGo_Mozilla_Thunderbird_Configuration SOGo_Native_Microsoft_Outlook_Configuration
 	cd ${WRKSRC}/Documentation; mv "${f:S/_/ /g}.odt" "$f.odt"
 .endfor
 
