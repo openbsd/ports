@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/18 13:14:56 espie Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -80,9 +80,9 @@ BUILD_DEPENDS=		${RUN_DEPENDS-main}
 
 DOCS=			COPYING COPYING.GPL INSTALL NEWS README
 
-MULTI_PACKAGES=		-main
-FLAVOR?=
+MULTI_PACKAGES=		-main -ldap -mysql -pgsql -userdb
 PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql no_userdb
+FLAVOR?=
 
 WANTLIB-main=		c ltdl
 
@@ -106,42 +106,39 @@ WANTLIB-userdb=		c courierauthcommon courierauth gdbm>=3
 LIB_DEPENDS-userdb=	${BUILD_PKGPATH} \
 			databases/gdbm
 
+.include <bsd.port.arch.mk>
 
-.if ${FLAVOR:L:Mno_ldap}
-CONFIGURE_ARGS+=	--without-authldap
-.else
-MULTI_PACKAGES+=	-ldap
+.if ${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-authldap
 DOCS+=			README.ldap
+.else
+CONFIGURE_ARGS+=	--without-authldap
 .endif
 
-.if ${FLAVOR:L:Mno_mysql}
-CONFIGURE_ARGS+=	--without-authmysql
-.else
-MULTI_PACKAGES+=	-mysql
+.if ${BUILD_PACKAGES:M-mysql}
 CONFIGURE_ARGS+=	--with-authmysql \
 			--with-mysql-libs=${LOCALBASE}/lib/mysql \
 			--with-mysql-includes=${LOCALBASE}/include/mysql
 DOCS+=			README.authmysql.myownquery
+.else
+CONFIGURE_ARGS+=	--without-authmysql
 .endif
 
-.if ${FLAVOR:L:Mno_pgsql}
-CONFIGURE_ARGS+=	--without-authpgsql
-.else
-MULTI_PACKAGES+=	-pgsql
+.if ${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-authpgsql \
 			--with-pgsql-libs=${LOCALBASE}/lib \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
+.else
+CONFIGURE_ARGS+=	--without-authpgsql
 .endif
 
-.if ${FLAVOR:L:Mno_userdb}
-CONFIGURE_ARGS+=	--without-authuserdb \
-			--without-makedatprog
-.else
-MULTI_PACKAGES+=	-userdb
+.if ${BUILD_PACKAGES:M-userdb}
 CONFIGURE_ARGS+=	--with-makedatprog=${PREFIX}/libexec/courier-authlib/makedatprog \
 			--with-authuserdb \
 			--with-db=gdbm
+.else
+CONFIGURE_ARGS+=	--without-authuserdb \
+			--without-makedatprog
 .endif
 
 post-install:
@@ -154,12 +151,12 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	@mv ${WRKINST}${SYSCONFDIR}/courier/*.dist ${EXAMPLE_DIR}
 	@chown root:wheel ${EXAMPLE_DIR}/*
-.	if !${FLAVOR:L:Mno_ldap}
+.if !${BUILD_PACKAGES:M-ldap}
 	    ${INSTALL_DATA} ${WRKSRC}/authldap.schema ${EXAMPLE_DIR}
-.	endif
+.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier-authlib
-.	for i in ${DOCS}
+.for i in ${DOCS}
 	    ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier-authlib
-.	endfor
+.endfor
 
 .include <bsd.port.mk>
