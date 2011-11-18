@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2011/11/18 00:10:06 sebastia Exp $
 
 DIST_SUBDIR=	gnustep
 
@@ -14,4 +14,4 @@ PERMIT_DISTFILES_FTP?=   Yes
 PKGNAME ?=	${DISTNAME:L}
 
 # install the gnustep-examples package if you need a test suite
-NO_REGRESS=	Yes
+NO_REGRESS ?=	Yes
