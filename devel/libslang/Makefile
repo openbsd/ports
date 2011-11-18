@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/21 22:01:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2011/11/18 10:29:37 espie Exp $
 
 COMMENT=	stack-based interpreter for terminal applications
 
@@ -44,7 +44,7 @@ pre-configure:
 
 .include <bsd.port.mk>
 
-.if !(defined(NO_SHARED_LIBS) && ${NO_SHARED_LIBS:L} == "yes")
+.if !${PROPERTIES:Mno_shared}
 ALL_TARGET= all elf
 INSTALL_TARGET= install-elf
 .endif
