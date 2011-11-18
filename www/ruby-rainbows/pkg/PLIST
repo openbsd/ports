@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/06 01:19:20 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/18 00:07:19 jeremy Exp $
 ${GEM_BIN}/rainbows${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -101,7 +101,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/fiber/queue.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/fiber_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/fiber_spawn.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/http_parser.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/http_response.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/http_server.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/join_threads.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/max_body/

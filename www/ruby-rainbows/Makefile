@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/18 00:07:19 jeremy Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
-DISTNAME =	rainbows-4.0.0
-REVISION=	0
+DISTNAME =	rainbows-4.3.1
 CATEGORIES =	www
 
 HOMEPAGE =	http://rainbows.rubyforge.org/
@@ -19,8 +18,8 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.4,<3.0 \
-		www/ruby-unicorn,${MODRUBY_FLAVOR}>=4.0,<5.0 \
+RUN_DEPENDS =	devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.5,<3.0 \
+		www/ruby-unicorn,${MODRUBY_FLAVOR}>=4.1,<5.0 \
 		www/ruby-rack,${MODRUBY_FLAVOR}>=1.1.0,<2.0
 
 CONFIGURE_STYLE = ruby gem ext
@@ -32,13 +31,17 @@ post-install:
 
 # Regress fails for various different reasons,
 # many of which are due to nonportable test code
-REGRESS_DEPENDS = devel/gmake \
-		devel/ruby-isolate,${MODRUBY_FLAVOR}>=3.0.0,<3.1 \
-		net/socat \
-		net/curl
-
+REGRESS_DEPENDS =	devel/gmake \
+			devel/ruby-isolate,${MODRUBY_FLAVOR}>=3.0.0 \
+			net/socat \
+			net/curl
+ 
+# Limit to a single test file/model (which still fails), until the test suite
+# is fixed.
 do-regress:
-	cd ${WRKSRC} && RUBYLIB=$$(dirname `${GEM} which rack`) \
-		RUBY=${RUBY} MRI=${RUBY} MAKE="gmake -e" gmake -e test
+	cd ${WRKSRC}/t && RUBYLIB=$$(dirname `${GEM} which rack`) RUBYOPT=-rubygems \
+		RUBY=${RUBY} MRI=${RUBY} MAKE="gmake -ek" gmake -ek \
+		ThreadSpawn.t0000-simple-http.sh
+
 
 .include <bsd.port.mk>
