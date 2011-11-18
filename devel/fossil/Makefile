@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/10/25 20:32:27 rpointel Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/18 10:11:33 espie Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 FLAVORS=		static
 FLAVOR?=
 
-.if ${FLAVOR:L} == "static"
+.if ${FLAVOR} == "static"
 MAKE_FLAGS =		LDFLAGS="-static" TCC="${CC} -Wall -DUSE_PREAD"
 .else
 MAKE_FLAGS =		TCC="${CC} -Wall -DFOSSIL_ENABLE_SSL -DUSE_PREAD"

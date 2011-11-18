@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/15 19:13:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/18 10:11:32 espie Exp $
 
 COMMENT=	Apache Portable Runtime
 
@@ -35,7 +35,7 @@ FLAVOR?=
 
 SUBST_VARS+=	MT
 
-.if ${FLAVOR:L:Mmt}
+.if ${FLAVOR:Mmt}
 MT=-mt
 CONFIGURE_ARGS+=	--enable-threads
 
