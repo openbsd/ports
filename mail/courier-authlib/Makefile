@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/11/18 13:14:56 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/11/18 13:16:06 espie Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -151,12 +151,12 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLE_DIR}
 	@mv ${WRKINST}${SYSCONFDIR}/courier/*.dist ${EXAMPLE_DIR}
 	@chown root:wheel ${EXAMPLE_DIR}/*
-.if !${BUILD_PACKAGES:M-ldap}
-	    ${INSTALL_DATA} ${WRKSRC}/authldap.schema ${EXAMPLE_DIR}
+.if ${BUILD_PACKAGES:M-ldap}
+	${INSTALL_DATA} ${WRKSRC}/authldap.schema ${EXAMPLE_DIR}
 .endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/courier-authlib
 .for i in ${DOCS}
-	    ${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier-authlib
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/courier-authlib
 .endfor
 
 .include <bsd.port.mk>
