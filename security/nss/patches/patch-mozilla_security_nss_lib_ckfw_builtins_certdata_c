@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.9 2011/11/18 12:32:37 nigel Exp $
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.10 2011/11/18 23:31:01 nigel Exp $
 Don't handmerge it, cd to builtins and run gmake generate after patching certdata.txt
 --- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Thu Nov  3 15:11:57 2011
 +++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Wed Nov  9 15:21:38 2011
@@ -32,15 +32,6 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
  #ifdef DEBUG
  static const NSSItem nss_builtins_items_0 [] = {
    { (void *)&cko_data, (PRUint32)sizeof(CK_OBJECT_CLASS) },
-@@ -1095,7 +1109,7 @@ static const NSSItem nss_builtins_items_0 [] = {
-   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-   { (void *)"CVS ID", (PRUint32)7 },
-   { (void *)"NSS", (PRUint32)4 },
--  { (void *)"@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.9 $ $Date: 2011/11/18 12:32:37 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.9 $ $Date: 2011/11/18 12:32:37 $", (PRUint32)160 }
-+  { (void *)"@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.9 $ $Date: 2011/11/18 12:32:37 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.9 $ $Date: 2011/11/18 12:32:37 $", (PRUint32)160 }
- };
- #endif /* DEBUG */
- static const NSSItem nss_builtins_items_1 [] = {
 @@ -14792,6 +14806,332 @@ static const NSSItem nss_builtins_items_222 [] = {
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
