@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1 2011/11/18 08:27:34 rpointel Exp $
+does not install xml files twice
+--- lib/Makefile.in.orig	Mon Sep 12 22:52:32 2011
++++ lib/Makefile.in	Tue Nov 15 00:44:01 2011
+@@ -1040,7 +1040,6 @@ info-am: $(INFO_DEPS)
+ install-data-am: install-includeHEADERS install-info-am \
+ 	install-pkgdataDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am: $(DVIS)
