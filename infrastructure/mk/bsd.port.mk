@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1134 2011/11/17 17:53:22 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1135 2011/11/18 11:01:47 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -856,6 +856,13 @@ _TERM_ENV = PKG_TMPDIR=${PKG_TMPDIR}
 _TERM_ENV += ${_v}=${${_v}:Q}
 .  endif
 .endfor
+
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mmips64*}
+_PKG_ARGS += -Dno_mips64=0
+.else
+_PKG_ARGS += -Dno_mips64=1
+.endif
 
 _PKG_ARGS += -DFLAVORS=${FLAVOR_EXT:Q}
 _tmpvars += FLAVORS=${FLAVOR_EXT:Q}
