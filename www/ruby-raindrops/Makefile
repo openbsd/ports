@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/18 00:04:19 jeremy Exp $
 
 COMMENT =	real-time stats toolkit for Rack HTTP servers
 
-DISTNAME =	raindrops-0.7.0
-REVISION=	0
+DISTNAME =	raindrops-0.8.0
 CATEGORIES =	www
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
@@ -22,7 +21,7 @@ CONFIGURE_STYLE =	ruby gem ext
 BUILD_DEPENDS +=	libatomic_ops-*:devel/boehm-gc,-atomic
 
 REGRESS_DEPENDS =	devel/gmake \
-			www/ruby-rack,${MODRUBY_FLAVOR} \
+			www/ruby-unicorn,${MODRUBY_FLAVOR} \
 			${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:

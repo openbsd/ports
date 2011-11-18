@@ -1,0 +1,13 @@
+$OpenBSD: patch-test_test_linux_tcp_info_rb,v 1.1 2011/11/18 00:04:19 jeremy Exp $
+
+Skip linux specific tests, backported from
+499e63e2666f88134f7d47f3bcfdfedd72396e70.
+
+--- test/test_linux_tcp_info.rb.orig	Mon Nov 14 19:22:35 2011
++++ test/test_linux_tcp_info.rb	Mon Nov 14 19:22:43 2011
+@@ -58,4 +58,4 @@ class TestLinuxTCP_Info < Test::Unit::TestCase
+       a.close if a
+       s.close
+   end
+-end
++end if RUBY_PLATFORM =~ /linux/
