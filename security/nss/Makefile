@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/18 12:32:37 nigel Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libraries to support development of security-enabled apps
 
-VERSION=		3.12.11
-DISTNAME=		nss-${VERSION}.with.ckbi.1.87
+VERSION=		3.13.1
+DISTNAME=		nss-${VERSION}.with.ckbi.1.88
 WRKDIST=		${WRKDIR}/nss-${VERSION}
 PKGNAME =		nss-${VERSION}
-SO_VERSION=		28.0
+SO_VERSION=		29.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
 CATEGORIES=		security
-REVISION=		1
 
 HOMEPAGE=		http://www.mozilla.org/projects/security/pki/nss/
 
@@ -26,10 +25,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c pthread z nspr4 plc4 plds4 sqlite3
 
-MASTER_SITES =		ftp://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_3_12_11_WITH_CKBI_1_87_RTM/src/
 #for regular releases
-#MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/ \
-#			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${VERSION:S/./_/g}_RTM/src/
+MASTER_SITES=		http://ftp.eu.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/ \
+			http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src/
 
 LIB_DEPENDS=		devel/nspr>=4.8 \
 			databases/sqlite3>=3.6.13
