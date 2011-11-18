@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/17 12:33:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/18 13:16:46 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,6 +7,7 @@ COMMENT-gui =		model railroad control daemon client
 
 VERSION =		2.0
 REV =			2585
+REVISION =		0
 DISTNAME =		Rocrail-2585
 PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}

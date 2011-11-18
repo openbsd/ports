@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/11/17 12:33:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/11/18 13:16:46 sebastia Exp $
 @newgroup _rocrail:685
 @newuser _rocrail:685:_rocrail:daemon:rocrail daemon user:/var/rocrail:/bin/sh
 @bin bin/rocrail
-bin/rocview.sh
 lib/rocrail/
 lib/rocrail/analyser.so
 lib/rocrail/barjut.so
@@ -364,8 +363,8 @@ share/rocrail/symbols/turnout-rt-3.gif
 share/rocrail/symbols/turnout-rt-3.png
 share/rocrail/symbols/turnout-rt-4.gif
 share/rocrail/symbols/turnout-rt-4.png
-@group _rocrail
 @owner _rocrail
+@group _rocrail
 @sample /var/rocrail/
 @group
 @owner
