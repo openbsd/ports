@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/15 19:39:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/11/18 12:20:33 nigel Exp $
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-1.0.0
 
+REVISION =		0
 EPOCH = 		1
 
 SO_VERSION =		1.0
@@ -19,11 +20,12 @@ PERMIT_DISTFILES_FTP =	Yes
 USE_LIBTOOL =		Yes
 
 WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig
-WANTLIB += freetype glib-2.0 jpeg m pcre pthread ssl z
+WANTLIB += freetype fribidi glib-2.0 jpeg m pcre pthread ssl z
 
 MODULES =		devel/gettext
 
 LIB_DEPENDS =		x11/dbus \
+			devel/fribidi \
 			x11/e17/ecore>=1.0
 
 CONFIGURE_ARGS =	--disable-doc

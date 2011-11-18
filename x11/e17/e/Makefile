@@ -1,10 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2011/07/18 19:06:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2011/11/18 12:20:33 nigel Exp $
 
 COMMENT =		the enlightened window manager
+
+# XXX stop lua module creating a no-arch package...
+SHARED_ONLY =		Yes
+
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION =		2
+REVISION =		3
 EPOCH =			0
 
 # BSD
@@ -16,19 +20,20 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES +=		devel/gettext \
 			lang/lua
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xss Xtst c cares crypto
 WANTLIB += curl dbus-1 ebluez econnman ecore ecore_con ecore_evas
 WANTLIB += ecore_file ecore_imf ecore_imf_evas ecore_input ecore_input_evas
 WANTLIB += ecore_ipc ecore_x edbus edje eet efreet efreet_mime
 WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo
-WANTLIB += expat fontconfig freetype glib-2.0 idn jpeg lua m pcre
-WANTLIB += pthread pthread-stubs ssl xcb z
+WANTLIB += expat fribidi fontconfig freetype glib-2.0 idn jpeg lua m pcre
+WANTLIB += pthread ssl xcb z
 
 LIB_DEPENDS =		x11/e17/edje>=1.0 \
 			x11/e17/efreet>=1.0 \
 			x11/e17/ecore>=1.0 \
 			x11/e17/e_dbus>=1.0 \
+			devel/fribidi \
 			devel/libexecinfo
 
 RUN_DEPENDS =		devel/desktop-file-utils

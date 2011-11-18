@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/15 19:40:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/18 12:20:33 nigel Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-1.0.0
 
+REVISION =		0
 EPOCH =			2
+
+# XXX stop lua module creating a no-arch package
+SHARED_ONLY =		Yes
 
 SHARED_LIBS +=		edje 1.0
 
@@ -13,12 +17,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl ecore ecore_con
 WANTLIB += ecore_evas ecore_file ecore_imf ecore_imf_evas ecore_input
 WANTLIB += ecore_input_evas ecore_x eet eina embryo evas expat fontconfig
-WANTLIB += freetype glib-2.0 idn jpeg m pcre pthread
-WANTLIB += pthread-stubs ssl xcb z lua
+WANTLIB += freetype fribidi glib-2.0 idn jpeg m pcre pthread
+WANTLIB += ssl xcb z lua
 
 MODULES =		devel/gettext \
 			lang/lua
@@ -29,7 +33,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		misc/shared-mime-info>=0.21
 
 LIB_DEPENDS +=		x11/e17/ecore>=1.0 \
-			x11/e17/embryo>=1.0
+			x11/e17/embryo>=1.0 \
+			devel/fribidi
 
 CONFIGURE_ARGS +=	--disable-doc
 # perf ?

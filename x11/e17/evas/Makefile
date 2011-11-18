@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2011/03/15 19:41:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/11/18 12:20:33 nigel Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-1.0.0
+REVISION =		0
 EPOCH =			2
 
 SHARED_LIBS +=  evas                 1.0      # 1.0
@@ -15,11 +16,12 @@ PERMIT_DISTFILES_FTP =	Yes
 USE_LIBTOOL =		Yes
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += cairo croco-0.6 crypto drm eet eina expat fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs rsvg-2
-WANTLIB += ssl tiff xcb xcb-render xcb-shm xml2 z
+WANTLIB += cairo croco-0.6 crypto drm eet eina expat ffi fontconfig
+WANTLIB += freetype fribidi gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
+WANTLIB += rsvg-2 ssl stdc++ tiff xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MODULES=		devel/gettext
 
