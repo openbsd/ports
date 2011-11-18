@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/17 14:37:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/18 00:13:45 sebastia Exp $
 
 COMMENT =	GNUstep webservices framework
 
@@ -17,5 +17,9 @@ LIB_DEPENDS =		x11/gnustep/performance
 MODGNUSTEP_NEEDS_GUI = 	No
 
 MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION}
+
+NO_REGRESS =	No
+do-regress:
+	cd ${WRKSRC}/tests/ && LD_LIRABRY_PATH=../obj ./test
 
 .include <bsd.port.mk>
