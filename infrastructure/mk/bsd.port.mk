@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1135 2011/11/18 11:01:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1136 2011/11/19 11:33:39 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1588,15 +1588,6 @@ _emit_run_depends = for i in ${RUN_DEPENDS${SUBPACKAGE}:QL}; do echo "$$i"; done
 
 # computing libraries from the ports tree is expensive, so cache as many of
 # these as we can
-
-# the cache may be filled in as root, so try to remove as normal user, THEN
-# sudo only if it fails.
-_cache_fragment = \
-	case X$${_DEPENDS_CACHE} in \
-		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
-		export _DEPENDS_CACHE; \
-		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
-	esac; PKGPATH=${PKGPATH}; export PKGPATH
 
 # XXX assumes it's running under _cache_fragment, either directly, or from
 # a target up there

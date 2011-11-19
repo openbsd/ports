@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.39 2011/11/17 17:53:22 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.40 2011/11/19 11:33:39 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -94,6 +94,15 @@ _depfile_fragment = \
 		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
 	esac
 
+# the cache may be filled in as root, so try to remove as normal user, THEN
+# sudo only if it fails.
+_cache_fragment = \
+	case X$${_DEPENDS_CACHE} in \
+		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
+		export _DEPENDS_CACHE; \
+		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
+	esac; PKGPATH=${PKGPATH}; export PKGPATH
+
 HTMLIFY =	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
 _MAKE = cd ${.CURDIR} && PKGPATH=${PKGPATH} exec ${MAKE}
@@ -114,12 +123,10 @@ _recursive_targets = \
 	full-regress-depends full-run-depends \
 	install install-all lib-depends-check \
 	license-check link-categories manpages-check package patch \
-	port-lib-depends-check prepare print-package-signature repackage \
-	regress reinstall \
+	prepare repackage regress reinstall \
 	unlink-categories update update-or-install update-or-install-all \
 	describe dump-vars homepage-links print-plist print-plist-all \
-	print-plist-all-with-depends print-plist-contents print-plist-libs \
-	print-plist-with-depends print-plist-libs-with-depends \
+	print-plist-contents print-plist-libs \
 	show verbose-show show-size show-fake-size \
 	check-register check-register-all
 
@@ -128,4 +135,7 @@ _dangerous_recursive_targets = \
 
 _recursive_depends_targets = \
 	all-dir-depends build-dir-depends regress-dir-depends run-dir-depends
-
+_recursive_cache_targets = \
+	print-plist-with-depends print-plist-libs-with-depends \
+	print-plist-all-with-depends print-package-signature \
+	port-lib-depends-check 
