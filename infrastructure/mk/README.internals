@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.1 2011/11/19 13:37:41 espie Exp $
+$OpenBSD: README.internals,v 1.2 2011/11/19 14:17:59 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -55,6 +55,27 @@ internal and prefixed with _.  This is done for speed and compactness (forking
 an external shell would be very slow, and a total nightmare with respect
 to parameter passing).  These often communicate through internal shell 
 variables with well-defined names.
+
+- the infrastructure tries very hard to have real files (as far as possible)
+attached to most targets: "make package" points to the actual pkgfile(s)
+being generated. There's a whole section of the makefile devoted to 
+targets generated from the distfile devoted to fetch and fetch-all
+(see the section around _EVERYTHING for variable definition, and the
+# Separate target for each file fetch-all will retrieve
+for the actual targets). Apart from that, once a port starts building,
+targets "without" an actual file will generate a cookie under WRKDIR or
+some subdir of it (see all the _COOKIE* definitions). Of particular interest
+are dependencies, where the cookie file is generated depending on the
+name of the dependency: that's the infamous
+.for _i in ${_DEPLIST}
+${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
+loop.  The reason for that complexity is that this avoids rechecking 
+dependencies while working on a port, since only the new stuff will need
+evaluation...
+In general, make works really bad when you write 
+phony-target1: phony-target2
+	@do_some_shit
+as phony targets are always out-of-date, and thus you will always do_some_shit.
 
 Introspection
 -------------
@@ -123,9 +144,54 @@ bsd.port.subdir.mk (no reason for a name change so late in the game)
 
 fragments and common shell variables
 ------------------------------------
+_pflavor_fragment:
+	takes $$subdir as a pkgpath parameter. 
+	will parse it into a $$dir and $$toset variables, perform a cd $$dir
+	so that eval $$toset ${MAKE}   gets you into that
+	dependency (this will set PKGPATH, FLAVOR, SUBPACKAGE accordingly)
+
+	depending on $$_fullpath (true/false), will consider the absence
+	of flavor to be an empty flavor (e.g. $$toset contains FLAVOR='' ) 
+	or to be the default flavor (e.g. unset FLAVOR)
+
+	takes ${PORTSDIR_PATH} into account
+
+	succeeds if the dependency is correct and the directory is found.
+	Otherwise will emit an error message that ends with $$extra_msg.
+
+_flavor_fragment:
+	calls $$_pflavor_fragment after imposing $$_fullpath=false. e.g., for
+	actual dependencies.
+
+_depfile_fragment:
+	sets _DEPENDS_FILE to a temporary file in the environment if it's 
+	not already set. Set a trap to remove it on end.
+	_DEPENDS_FILE is used by the *dir-depends and show-run-depends targets
+	to not go thru the same directory twice. Beware of setting it 
+	"too globally", since it prevents directory walking from happening
+	twice.
+
+_cache_fragment:
+	sets _DEPENDS_CACHE to a temporary directory in the environment 
+	if it's not already set. Set a trap to remove it on end.
+	_DEPENDS_CACHE is used to store library lists in _libs2cache.
+	pkg_create(1) also knows about it and use it to store plists.
+	the ${SUDO} part in the trap is because some of the caching happens
+	during ${SUDO} pkg_create.
+	XXX also sets PKGPATH, as it reduces drastically the number of
+	PKGPATH=... needed in bsd.port.mk
 
 Misc
 ----
 - Modules inclusion is done through a separate modules.port.mk to handle
 recursion: modules may trigger the inclusion of other modules, thus
 modules.port.mk will re-include itself until the whole list is done.
+
+- MULTI_PACKAGES and SUBPACKAGE always get set to a non-empty value:
+if MULTI_PACKAGES is not set, it ends up as MULTI_PACKAGES=- and
+SUBPACKAGE=-. This does make loops over all subpackages simpler, e.g.,
+.for _s in ${MULTI_PACKAGES}  since make doesn't do anything if the list
+is empty...
+As a result, most subpackage-dependent variables end up being used as their
+"true" VAR-  form  in the case of a port without multi-packages.
+Exception: FULLPKGNAME needs some specific code for the !multi-packages case.
