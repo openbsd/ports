@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.4 2011/11/19 14:59:27 espie Exp $
+$OpenBSD: README.internals,v 1.5 2011/11/19 15:07:31 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -29,26 +29,31 @@ Some design principles
 ----------------------
 - all variables and targets prefixed with _  are for internal use.
 It may be that some other tools reuse them, but that's generally following
-the same guidelines: no user serviceable parts inside.
+the same guidelines: no user serviceable parts inside (and you should always
+ask ME about it, since I'm liable to change these with very little notice).
+This is an attempt to avoid exposing too many knobs, and a clear distinction
+between "supported" stuff, and "you're on your own, if you abuse this, bad
+things will happen".
 
 - most variables will always be defined, even with an empty value.  This avoids
 stupid .if defined(TESTS).
 
 - bsd.port.mk has a strict separation between variable definitions (at top)
-and target definition (right after the
+and target definitions (right after the
 	    ###
 	    ### end of variable setup. Only targets now
 	    ###
-). This is because of make's "lazy" way to evaluate things: constructs in
-shell-lines get evaluated very very late. But all targets (such as
-${_WRKDIR_COOKIE}) get evaluated when they're encountered. There was some
-significant effort in the early days when I took bsd.port.mk over to achieve
-that separation.  Be very careful with Makefile.inc and modules, since those
-get included at a very specific location in the Makefile.  They should mostly
-define variables. Makefile.inc is included very early so that it can override
-about anything it should be able to (but then, nothing is already defined 
-except for read-only variables / global user-tweakable defaults). Modules
-is included a little bit later...
+comment). This is because of make's "lazy" way to evaluate things:
+constructs in shell-lines get evaluated very very late. But all
+targets (such as ${_WRKDIR_COOKIE}) get evaluated when they're
+encountered. There was some significant effort in the early days
+when I took bsd.port.mk over to achieve that separation.  Be very
+careful with Makefile.inc and modules, since those get included at
+a very specific location in the Makefile.  They should mostly define
+variables. Makefile.inc is included very early so that it can
+override about anything it should be able to (but then, nothing is
+already defined except for read-only variables / global user-tweakable
+defaults). Modules is included a little bit later...
 
 - a lot of the code is done through shell fragments. All of these are
 internal and prefixed with _.  This is done for speed and compactness (forking
@@ -104,6 +109,10 @@ such as cut.
 - don't run test for checking variable values. Rather:
 case "$$subdir" in *,*)  ... ;; *) ... ;; esac
 is entirely internal
+
+- the shell has booleans. Set variables to true/false to achieve boolean
+conditions. Note that those are usually built-ins, and hence even faster
+than you would think.
 
 - () forks a subshell.  If you need to syntactally keep a list of commands
 together, "{ cmd1; cmd2; }"   is the way to do it.
