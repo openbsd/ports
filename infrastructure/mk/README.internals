@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.3 2011/11/19 14:35:56 espie Exp $
+$OpenBSD: README.internals,v 1.4 2011/11/19 14:59:27 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -77,6 +77,9 @@ phony-target1: phony-target2
 	@do_some_shit
 as phony targets are always out-of-date, and thus you will always do_some_shit.
 
+- a lot of computations are very expensive, so there are shortcuts all over
+the place whenever a variable is empty, especially for dependency computation.
+
 Introspection
 -------------
 There's a lot of stuff in the infrastructure which is there only for
@@ -147,7 +150,7 @@ bsd.port.subdir.mk (no reason for a name change so late in the game)
 
 fragments and common shell variables
 ------------------------------------
-_pflavor_fragment:
+_pflavor_fragment (in pkgpath.mk)
 	takes $$subdir as a pkgpath parameter. 
 	will parse it into a $$dir and $$toset variables, perform a cd $$dir
 	so that eval $$toset ${MAKE}   gets you into that
@@ -162,11 +165,11 @@ _pflavor_fragment:
 	succeeds if the dependency is correct and the directory is found.
 	Otherwise will emit an error message that ends with $$extra_msg.
 
-_flavor_fragment:
+_flavor_fragment (in pkgpath.mk)
 	calls ${_pflavor_fragment} after imposing $$_fullpath=false. e.g., for
 	actual dependencies.
 
-_depfile_fragment:
+_depfile_fragment (in pkgpath.mk)
 	sets _DEPENDS_FILE to a temporary file in the environment if it's 
 	not already set. Set a trap to remove it on end.
 	_DEPENDS_FILE is used by the *dir-depends and show-run-depends targets
@@ -174,7 +177,7 @@ _depfile_fragment:
 	"too globally", since it prevents directory walking from happening
 	twice.
 
-_cache_fragment:
+_cache_fragment (in pkgpath.mk)
 	sets _DEPENDS_CACHE to a temporary directory in the environment 
 	if it's not already set. Set a trap to remove it on end.
 	_DEPENDS_CACHE is used to store library lists in _libs2cache.
@@ -183,6 +186,47 @@ _cache_fragment:
 	during ${SUDO} pkg_create.
 	XXX also sets PKGPATH, as it reduces drastically the number of
 	PKGPATH=... needed in bsd.port.mk
+
+_read_spec/_parse_spec (in bsd.port.mk)
+	normally used in a pattern like:
+	${_emit_run_depends}|while ${_read_spec}; do
+		${_parse_spec};
+		...
+	done
+	takes specs, one per line, sets $$pkg $$subdir $$target,
+	and calls ${_flavor_fragment} to cd to the correct dir
+	and set $$toset.  Note that this takes "processed" specs:
+	transformation of pkgpath>=0.0 -> STEM->=0.0:pkgpath must have
+	already happened upfront (which happens in place for all
+	*DEPENDS variables).
+	This sets $$d to the spec being processed, which is probably a
+	bad variable name...
+
+_emit_run_depends/_emit_lib_depends (in bsd.port.mk)
+	writes out lists of specs suitable for ${_parse_spec}/${_read_spec}.
+
+_compute_default (in bsd.port.mk)
+	comes after ${_pflavor_fragment}, and obtains information from
+	the dependent port: sets $$default to the default pkgname,
+	$$pkgspec to the default pkgspec (see PKGSPEC), and $$pkgpath
+	to the actual pkgpath, when default flavors and subpackages are
+	taken into account (hence suitable for FULLPATH=Yes/$$_fullpath=true
+	Used alone when we only need $$default, as ${_complete_pkgspec} is
+	slightly more expensive.
+
+_complete_pkgspec (in bsd.port.mk)
+	comes after ${_pflavor_fragment}, obtains information from
+	the dependent port through ${_compute_default}, then make sure
+	$$pkg has the correct value.
+
+_libs2cache (in bsd.port.mk)
+	requires properly set dependency information obtained through 
+	${_flavor_fragment} (often through ${_parse_spec}).
+	assumes ${_depcache_fragment} has been called, either directly,
+	or from an upper level target.
+	If not already available, secure the library list from the 
+	dependency and store it in a file under _DEPENDS_CACHE. 
+	Sets $$cached_libs to the file name.
 
 Locking
 -------
@@ -219,6 +263,10 @@ then make _internal-all will normally run thru
 _internal-fetch _internal-extract _internal-patch _internal-build
 without ever releasing the lock, thus preventing anything else to sneak
 in and break the build.
+
+The difference between _internal-package and _internal-package-only is only
+due to BULK=Yes, which has to happen exactly once after a user-level target
+that involves packaging is finished.
 
 Misc
 ----
