@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.40 2011/11/19 11:33:39 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.41 2011/11/19 11:36:53 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -89,7 +89,7 @@ _flavor_fragment = _fullpath=false; ${_pflavor_fragment}
 
 _depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \
-		X) _DEPENDS_FILE=`mktemp /tmp/depends.XXXXXXXXX|| exit 1`; \
+		X) _DEPENDS_FILE=`mktemp ${TMPDIR}/depends.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_FILE; \
 		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
 	esac
@@ -98,7 +98,7 @@ _depfile_fragment = \
 # sudo only if it fails.
 _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
-		X) _DEPENDS_CACHE=`mktemp -d /tmp/dep_cache.XXXXXXXXX|| exit 1`; \
+		X) _DEPENDS_CACHE=`mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_CACHE; \
 		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
