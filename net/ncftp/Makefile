@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2011/11/19 15:58:21 naddy Exp $
 
 COMMENT=	ftp replacement with advanced user interface
 
-DISTNAME=	ncftp-3.2.3
+DISTNAME=	ncftp-3.2.5
 CATEGORIES=	net
 HOMEPAGE=	http://www.ncftp.com/ncftp/
 
@@ -19,18 +19,21 @@ WANTLIB=	c ncurses
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.ncftp.com/ncftp/
 MASTER_SITES:=	${MASTER_SITES} ${MASTER_SITES:=older_versions/}
-MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
+MASTER_SITES0=	http://shell.uugrn.org/~naddy/
 
 DISTFILES=	${DISTNAME}-src.tar.bz2
-PATCHFILES=	ncftp-323-v6-20091109.diff.gz:0
+PATCHFILES=	ncftp-325-v6.diff.gz:0		# former KAME v6 patch
 PATCH_DIST_STRIP=-p1
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.13
+AUTOCONF=	autoconf -l autoconf_local
+AUTOHEADER=	autoheader -l autoconf_local
+
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS=	--disable-ccdv
 CONFIGURE_ENV=	TAR=/bin/tar
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/sh
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
