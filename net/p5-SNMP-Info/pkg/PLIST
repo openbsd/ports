@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/25 08:41:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/19 10:03:22 giovanni Exp $
 ${P5SITE}/SNMP/
 ${P5SITE}/SNMP/Info/
 ${P5SITE}/SNMP/Info.pm
+${P5SITE}/SNMP/Info/AdslLine.pm
 ${P5SITE}/SNMP/Info/Airespace.pm
 ${P5SITE}/SNMP/Info/Bridge.pm
 ${P5SITE}/SNMP/Info/CDP.pm
@@ -43,6 +44,7 @@ ${P5SITE}/SNMP/Info/Layer2/Cisco.pm
 ${P5SITE}/SNMP/Info/Layer2/Foundry.pm
 ${P5SITE}/SNMP/Info/Layer2/HP.pm
 ${P5SITE}/SNMP/Info/Layer2/HP4000.pm
+${P5SITE}/SNMP/Info/Layer2/HPVC.pm
 ${P5SITE}/SNMP/Info/Layer2/N2270.pm
 ${P5SITE}/SNMP/Info/Layer2/NAP222x.pm
 ${P5SITE}/SNMP/Info/Layer2/Netgear.pm
@@ -70,9 +72,11 @@ ${P5SITE}/SNMP/Info/Layer3/Foundry.pm
 ${P5SITE}/SNMP/Info/Layer3/HP9300.pm
 ${P5SITE}/SNMP/Info/Layer3/Juniper.pm
 ${P5SITE}/SNMP/Info/Layer3/Microsoft.pm
+${P5SITE}/SNMP/Info/Layer3/Mikrotik.pm
 ${P5SITE}/SNMP/Info/Layer3/N1600.pm
 ${P5SITE}/SNMP/Info/Layer3/NetSNMP.pm
 ${P5SITE}/SNMP/Info/Layer3/Netscreen.pm
+${P5SITE}/SNMP/Info/Layer3/PacketFront.pm
 ${P5SITE}/SNMP/Info/Layer3/Passport.pm
 ${P5SITE}/SNMP/Info/Layer3/Pf.pm
 ${P5SITE}/SNMP/Info/Layer3/Sun.pm
@@ -83,6 +87,7 @@ ${P5SITE}/SNMP/Info/PowerEthernet.pm
 ${P5SITE}/SNMP/Info/RapidCity.pm
 ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info.3p
+@man man/man3p/SNMP::Info::AdslLine.3p
 @man man/man3p/SNMP::Info::Airespace.3p
 @man man/man3p/SNMP::Info::Bridge.3p
 @man man/man3p/SNMP::Info::CDP.3p
@@ -122,6 +127,7 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer2::Foundry.3p
 @man man/man3p/SNMP::Info::Layer2::HP.3p
 @man man/man3p/SNMP::Info::Layer2::HP4000.3p
+@man man/man3p/SNMP::Info::Layer2::HPVC.3p
 @man man/man3p/SNMP::Info::Layer2::N2270.3p
 @man man/man3p/SNMP::Info::Layer2::NAP222x.3p
 @man man/man3p/SNMP::Info::Layer2::Netgear.3p
@@ -148,9 +154,11 @@ ${P5SITE}/SNMP/Info/SONMP.pm
 @man man/man3p/SNMP::Info::Layer3::HP9300.3p
 @man man/man3p/SNMP::Info::Layer3::Juniper.3p
 @man man/man3p/SNMP::Info::Layer3::Microsoft.3p
+@man man/man3p/SNMP::Info::Layer3::Mikrotik.3p
 @man man/man3p/SNMP::Info::Layer3::N1600.3p
 @man man/man3p/SNMP::Info::Layer3::NetSNMP.3p
 @man man/man3p/SNMP::Info::Layer3::Netscreen.3p
+@man man/man3p/SNMP::Info::Layer3::PacketFront.3p
 @man man/man3p/SNMP::Info::Layer3::Passport.3p
 @man man/man3p/SNMP::Info::Layer3::Pf.3p
 @man man/man3p/SNMP::Info::Layer3::Sun.3p
