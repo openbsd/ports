@@ -1,7 +1,7 @@
-$OpenBSD: patch-libjava_Makefile_in,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+$OpenBSD: patch-libjava_Makefile_in,v 1.2 2011/11/19 02:53:11 pascal Exp $
 work around gcj-dbtool hanging during build
 --- libjava/Makefile.in.orig	Wed Oct 26 11:30:24 2011
-+++ libjava/Makefile.in	Sun Nov 13 11:48:33 2011
++++ libjava/Makefile.in	Sat Nov 19 03:50:25 2011
 @@ -502,7 +502,7 @@ RECURSIVE_TARGETS = all-recursive check-recursive dvi-
  	install-pdf-recursive install-ps-recursive install-recursive \
  	installcheck-recursive installdirs-recursive pdf-recursive \
@@ -40,7 +40,7 @@ work around gcj-dbtool hanging during build
  
  libgcj_tools_la_LDFLAGS = -rpath $(toolexeclibdir) \
 - -version-info `grep -v '^\#' $(srcdir)/libtool-version` \
-+ $(LIBgcj_tools_LTVERSION) \
++ $(LIBgcj-tools_LTVERSION) \
   $(LIBGCJ_LD_SYMBOLIC_FUNCTIONS) $(LIBJAVA_LDFLAGS_NOUNDEF) \
   $(LIBJAVA_LDFLAGS_LIBMATH)
  
