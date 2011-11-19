@@ -1,0 +1,9 @@
+$OpenBSD: patch-libgo_syscalls_syscall_openbsd_386_go,v 1.1 2011/11/19 22:19:53 pascal Exp $
+--- libgo/syscalls/syscall_openbsd_386.go.orig	Thu Nov 17 23:43:45 2011
++++ libgo/syscalls/syscall_openbsd_386.go	Thu Nov 17 23:43:27 2011
+@@ -0,0 +1,5 @@
++// Copyright 2009 The Go Authors.  All rights reserved.
++// Use of this source code is governed by a BSD-style
++// license that can be found in the LICENSE file.
++
++package syscall

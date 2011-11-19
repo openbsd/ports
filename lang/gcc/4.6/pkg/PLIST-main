@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/11/14 22:37:23 pascal Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/11/19 22:19:53 pascal Exp $
 @pkgpath lang/gcc/4.6
 %%SHARED%%
 @bin bin/ecpp
 @bin bin/egcc
 @bin bin/egcov
 @bin bin/${CONFIG}-egcc
-@bin bin/${CONFIG}-${FULLPKGNAME}
+@bin bin/${CONFIG}-gcc-${V}
 @info info/cpp.info
 @info info/cppinternals.info
 @info info/gcc.info

@@ -1,0 +1,28 @@
+$OpenBSD: patch-libgo_Makefile_in,v 1.1 2011/11/19 22:19:53 pascal Exp $
+--- libgo/Makefile.in.orig	Fri Mar 11 02:00:15 2011
++++ libgo/Makefile.in	Sat Nov 19 04:20:59 2011
+@@ -1040,7 +1040,7 @@ go_netchan_files = \
+ @LIBGO_IS_386_TRUE@@LIBGO_IS_SOLARIS_TRUE@go_os_dir_file = go/os/dir_largefile.go
+ @LIBGO_IS_LINUX_FALSE@@LIBGO_IS_SOLARIS_FALSE@go_os_dir_file = go/os/dir_regfile.go
+ @LIBGO_IS_LINUX_TRUE@@LIBGO_IS_SOLARIS_FALSE@go_os_dir_file = go/os/dir_largefile.go
+-@LIBGO_IS_LINUX_FALSE@@LIBGO_IS_RTEMS_FALSE@@LIBGO_IS_SOLARIS_FALSE@go_os_sys_file = go/os/sys_bsd.go
++@LIBGO_IS_LINUX_FALSE@@LIBGO_IS_OPENBSD_TRUE@go_os_sys_file = go/os/sys_uname.go
+ @LIBGO_IS_LINUX_FALSE@@LIBGO_IS_RTEMS_TRUE@@LIBGO_IS_SOLARIS_FALSE@go_os_sys_file = go/os/sys_uname.go
+ @LIBGO_IS_LINUX_FALSE@@LIBGO_IS_SOLARIS_TRUE@go_os_sys_file = go/os/sys_uname.go
+ @LIBGO_IS_LINUX_TRUE@go_os_sys_file = go/os/sys_linux.go
+@@ -1737,13 +1737,14 @@ libgo_la_LIBADD = \
+ libgobegin_a_SOURCES = \
+ 	runtime/go-main.c
+ 
++include $(top_srcdir)/../libversions
+ LTLDFLAGS = $(shell $(SHELL) $(top_srcdir)/../libtool-ldflags $(LDFLAGS))
+ AM_GOCFLAGS = $(STRINGOPS_FLAG)
+ GOCOMPILE = $(GOC) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_GOCFLAGS) $(GOCFLAGS)
+ LTGOCOMPILE = $(LIBTOOL) --tag GO --mode=compile $(GOC) $(INCLUDES) \
+ 	$(AM_GOCFLAGS) $(GOCFLAGS)
+ 
+-GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) \
++GOLINK = $(LIBTOOL) --tag GO --mode-link $(GOC) $(LIBgo_LTVERSION) \
+ 	$(OPT_LDFLAGS) $(SECTION_LDFLAGS) $(AM_GOCFLAGS) $(LTLDFLAGS) -o $@
+ 
+ 

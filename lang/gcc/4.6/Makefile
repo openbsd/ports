@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/15 15:48:13 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/19 22:19:53 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
-#BROKEN=adjust for types changes
 
 V = 4.6.2
 FULL_VERSION = $V
@@ -17,7 +16,7 @@ PKGNAME-f95 =   g95-${FULL_PKGVERSION}
 PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
-#PKGNAME-go =	gccgo-${FULL_PKGVERSION}
+PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 
 SHARED_LIBS =	estdc++		12.0 \
 		gfortran	3.0 \
@@ -26,17 +25,17 @@ SHARED_LIBS =	estdc++		12.0 \
 		gij		1.0 \
 		objc		3.0 \
 		ssp		1.0 \
-		lto_plugin      0.0
+		lto_plugin      0.0 \
+		go		0.0
 
 
-PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada
+PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go
 FLAVOR ?= 
 
 ONLY_FOR_ARCHS-ada = i386
-ONLY_FOR_ARCHS-java = amd64 sparc64 i386
-#ONLY_FOR_ARCHS-go = amd64 i386			# XXX
+ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
-MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
+MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada -go
 
 .include <bsd.port.arch.mk>
 
@@ -45,30 +44,24 @@ MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
 BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
 .endif
 
-DISTFILES =  ${DISTNAME}.tar.bz2
+DISTNAME =   	gcc-${FULL_VERSION}
+DISTFILES =	${DISTNAME}.tar.bz2
 SUPDISTFILES =	${ADASTRAP}:0
 
 USE_LIBTOOL =	Yes
 
-BUILD_DEPENDS += devel/bison
-
+BUILD_DEPENDS +=	devel/bison
 
 REGRESS_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
-DISTNAME =   	gcc-${FULL_VERSION}
-
-
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 MASTER_SITES0 =	http://spacehopper.org/mirrors/
-
-CONFIGURE_STYLE =	gnu
-MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS = c
 .if ${BUILD_PACKAGES:M-c++}
 LANGS := ${LANGS},c++
-REGRESS_DEPENDS += 	libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
+REGRESS_DEPENDS += 	${BUILD_PKGPATH},-estdc>=4.6,<4.7
 .endif
 .if ${BUILD_PACKAGES:M-f95}
 LANGS := ${LANGS},fortran
@@ -78,8 +71,9 @@ LANGS := ${LANGS},objc
 .endif
 .if ${BUILD_PACKAGES:M-java}
 LANGS := ${LANGS},java
-BUILD_DEPENDS += archivers/zip>=2.3p0
-CONFIGURE_ARGS += --enable-libgcj
+BUILD_DEPENDS +=	archivers/zip>=2.3p0
+CONFIGURE_ARGS +=	--enable-libgcj
+VMEM_WARNING =		Yes
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
@@ -89,21 +83,12 @@ MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
 REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
-#.if ${BUILD_PACKAGES:M-go}
-#LANGS := ${LANGS},go
-#.endif
+.if ${BUILD_PACKAGES:M-go}
+LANGS := ${LANGS},go
+.endif
 
-post-extract:
-.for f in egcc gnatbind gnatmake gnatlink
-	echo "#! /bin/sh" >${WRKDIR}/bin/$f
-	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
-	chmod a+x ${WRKDIR}/bin/$f
-.endfor
-	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
-	echo "# This file automatically generated" >> ${WRKSRC}/libversions
-.for l v in ${SHARED_LIBS}
-	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
-.endfor
+CONFIGURE_STYLE =		gnu
+MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 CONFIGURE_ENV += am_cv_func_iconv=no
 CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
@@ -111,7 +96,6 @@ CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
 CFLAGS = -O2 -g
-
 
 CONFIGURE_ARGS += \
 	--verbose \
@@ -128,7 +112,7 @@ CONFIGURE_ARGS += \
 	--with-gnu-as \
 	--enable-threads=posix \
 	--enable-wchar_t \
-	--with-gmp=${LOCALBASE} \
+	--with-gmp="${LOCALBASE}" \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the
@@ -146,7 +130,6 @@ USE_GMAKE = yes
 ALL_TARGET = bootstrap
 
 MAKE_FLAGS = libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
-
 
 .if ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
 PIC = 1
@@ -168,20 +151,19 @@ PKG_ARGS += -DI386=1
 PKG_ARGS += -DI386=0
 .endif
 
-RUN_DEPENDS =		gcc-${FULL_PKGVERSION}:${BUILD_PKGPATH}
-WANTLIB =		c
+RUN_DEPENDS =		${BUILD_PKGPATH},-main
+WANTLIB =		c gmp mpc mpfr z
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 RUN_DEPENDS-java =
 
-RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.6,<4.7:${BUILD_PKGPATH},-estdc
-WANTLIB-main =		${WANTLIB} gmp mpc mpfr z
-WANTLIB-c++ =		${WANTLIB} gmp mpc mpfr z
+RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
+			${BUILD_PKGPATH},-estdc>=4.6,<4.7
 WANTLIB-estdc =		m
-WANTLIB-f95 =		${WANTLIB} gmp m mpc mpfr z
-WANTLIB-java =		${WANTLIB} gmp m mpc mpfr pthread z
-WANTLIB-objc =		${WANTLIB} gmp mpc mpfr z
+WANTLIB-f95 =		${WANTLIB} m
+WANTLIB-java =		${WANTLIB} m pthread
+WANTLIB-go =		${WANTLIB} m pthread
 
 LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \
@@ -191,6 +173,19 @@ LIB_DEPENDS-estdc =
 .if ${MACHINE_ARCH:Mamd64}
 CONFIG=x86_64-unknown-openbsd${OSREV}
 .endif
+
+post-extract:
+.for f in egcc gnatbind gnatmake gnatlink
+	echo "#! /bin/sh" >${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	chmod a+x ${WRKDIR}/bin/$f
+.endfor
+	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
+	echo "# This file automatically generated" >> ${WRKSRC}/libversions
+.for l v in ${SHARED_LIBS}
+	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> \
+		${WRKSRC}/libversions
+.endfor
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}
@@ -203,7 +198,8 @@ post-install:
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/libgcov.a
 .if ${PIC} == "1"
 	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/fpic/libgcc.a
-	chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/gcc/${CONFIG}/${V}/fpic/libgcov.a
+	chown ${BINOWN}:${BINGRP} \
+		${PREFIX}/lib/gcc/${CONFIG}/${V}/fpic/libgcov.a
 .endif
 
 .include <bsd.port.mk>
@@ -216,5 +212,6 @@ adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
-	cd ${WRKDIR}/prepare && tar cf - bootstrap | xz > ${FULLDISTDIR}/${ADASTRAP}
+	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
+		xz > ${FULLDISTDIR}/${ADASTRAP}
 

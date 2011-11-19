@@ -1,0 +1,43 @@
+$OpenBSD: patch-libgo_configure,v 1.1 2011/11/19 22:19:53 pascal Exp $
+--- libgo/configure.orig	Mon Feb 21 05:17:20 2011
++++ libgo/configure	Sat Nov 19 23:07:23 2011
+@@ -644,6 +644,8 @@ LIBGO_IS_LINUX_FALSE
+ LIBGO_IS_LINUX_TRUE
+ LIBGO_IS_FREEBSD_FALSE
+ LIBGO_IS_FREEBSD_TRUE
++LIBGO_IS_OPENBSD_FALSE
++LIBGO_IS_OPENBSD_TRUE
+ LIBGO_IS_DARWIN_FALSE
+ LIBGO_IS_DARWIN_TRUE
+ LIBFFIINCS
+@@ -13213,6 +13215,7 @@ fi
+ 
+ is_darwin=no
+ is_freebsd=no
++is_openbsd=no
+ is_linux=no
+ is_rtems=no
+ is_solaris=no
+@@ -13220,6 +13223,7 @@ GOOS=unknown
+ case ${host} in
+   *-*-darwin*)   is_darwin=yes;  GOOS=darwin ;;
+   *-*-freebsd*)  is_freebsd=yes; GOOS=freebsd ;;
++  *-*-openbsd*)  is_openbsd=yes; GOOS=openbsd ;;
+   *-*-linux*)    is_linux=yes;   GOOS=linux ;;
+   *-*-rtems*)    is_rtems=yes;   GOOS=rtems ;;
+   *-*-solaris2*) is_solaris=yes; GOOS=solaris ;;
+@@ -13238,6 +13242,14 @@ fi
+ else
+   LIBGO_IS_FREEBSD_TRUE='#'
+   LIBGO_IS_FREEBSD_FALSE=
++fi
++
++ if test $is_openbsd = yes; then
++  LIBGO_IS_OPENBSD_TRUE=
++  LIBGO_IS_OPENBSD_FALSE='#'
++else
++  LIBGO_IS_OPENBSD_TRUE='#'
++  LIBGO_IS_OPENBSD_FALSE=
+ fi
+ 
+  if test $is_linux = yes; then

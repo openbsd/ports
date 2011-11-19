@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.shared-java,v 1.1.1.1 2011/11/14 13:00:55 pascal Exp $
-lib/${FULLPKGNAME\-java}-12/libjvm.so
+@comment $OpenBSD: PFRAG.shared-java,v 1.2 2011/11/19 22:19:53 pascal Exp $
+lib/gcj-${V}-12/libjvm.so
 @lib lib/libgcj-tools.so.${LIBgcj-tools_VERSION}
 @lib lib/libgcj.so.${LIBgcj_VERSION}
 @lib lib/libgij.so.${LIBgij_VERSION}

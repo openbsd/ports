@@ -1,0 +1,14 @@
+$OpenBSD: patch-libgo_runtime_go-go_c,v 1.1 2011/11/19 22:19:53 pascal Exp $
+--- libgo/runtime/go-go.c.orig	Fri Nov 18 00:51:14 2011
++++ libgo/runtime/go-go.c	Fri Nov 18 00:51:41 2011
+@@ -28,8 +28,8 @@ extern void *__splitstack_find (void *, void *, size_t
+ /* We stop the threads by sending them the signal GO_SIG_STOP and we
+    start them by sending them the signal GO_SIG_START.  */
+ 
+-#define GO_SIG_START (SIGRTMIN + 1)
+-#define GO_SIG_STOP (SIGRTMIN + 2)
++#define GO_SIG_START SIGUSR1
++#define GO_SIG_STOP SIGUSR2
+ 
+ #ifndef SA_RESTART
+   #define SA_RESTART 0
