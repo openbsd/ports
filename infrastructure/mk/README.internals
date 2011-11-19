@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.5 2011/11/19 15:07:31 espie Exp $
+$OpenBSD: README.internals,v 1.6 2011/11/19 16:35:46 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -291,4 +291,79 @@ is empty...
 As a result, most subpackage-dependent variables end up being used as their
 "true" VAR-  form  in the case of a port without multi-packages.
 Exception: FULLPKGNAME needs some specific code for the !multi-packages case.
+There's also a special case for the PKGDIR stuff, which isn't suffixed with '-'
+in the non multi-package case.
+Also, dump-vars distinguishes the !multi case.
 
+Note that there are a few checks for empty SUBPACKAGE, these allow the whole
+bsd.port.mk file to parse, so that we end up with an actual user error
+message instead of some weird internal error.
+
+Dependency variables
+--------------------
+Old legacy dependency styles are gone, so the compat code went away.
+The code has to deal with BUILD_DEPENDS, LIB_DEPENDS, RUN_DEPENDS, 
+REGRESS_DEPENDS, WANTLIB and RUN_DEPENDS-* LIB_DEPENDS-*, WANTLIB-*
+
+There is obviously completely different treatment for WANTLIB* and
+*DEPENDS*. Also, BUILD* stuff gets to inherit from LIB_DEPENDS* stripped
+of inter-dependencies, and RUN-s stuff must have LIB_DEPENDS* from
+inter-dependencies.
+
+
+First, the framework substitutes in place constructs like
+pkgpath>=version  into STEM->=version:pkgpath
+
+Then it accumulates dependency into build-time dependencies:
+- collect LIB_DEPENDS and LIB_DEPENDS-* as _BUILDLIB_DEPENDS
+- collect WANTLIB and WANTLIB-* as _BUILDWANTLIB
+(strip any interdependencies)
+
+Symetrically:
+- define _LIB4-* as the interdependencies in LIB_DEPENDS-*
+- define _LIB4 as the full list of all _LIB4-*
+
+- define _BUILD_DEPLIST, _RUN_DEPLIST, _REGRESS_DEPLIST, _BUILDLIB_DEPLIST,
+_RUNLIB_DEPLIST as the dependency lists relevant to the SUBPACKAGE being
+built (not set if NO_DEPENDS is Yes !)
+
+This accumulates as _DEPLIST, which is the full list of all specs in every
+dependency.
+
+*2 and *3 have the :configure/:patch/:build modifiers stripped:
+_BUILD_DEP2: BUILD_DEPENDS + _BUILDLIB_DEPENDS
+_BUILD_DEP3: BUILD_DEPENDS
+_BUILD_DEP3-*: _BUILD_DEP3
+
+_RUN_DEP2: RUN_DEPENDS (+LIB_DEPENDS-s if shared)
+_RUN_DEP3: RUN_DEPEND
+_RUN_DEP3-*: RUN_DEPENDS-* (+LIB_DEPENDS-* if shared)
+
+_LIB_DEP3: (LIB_DEPENDS-s if shared)
+_LIB_DEP3-*: (LIB_DEPENDS-* if shared)
+
+_REGRESS_DEP2: REGRESS_DEPENDS
+_REGRESS_DEP3: REGRESS_DEPENDS
+
+_DEPBUILDLIBS: _BUILDWANTLIB
+_DEPRUNLIBS: WANTLIB-s
+
+_BUILD_DEP is the _BUILD_DEP2 paths, without the specs
+_RUN_DEP is the _RUN_DEP2 paths, without the specs
+_REGRESS_DEP is the _REGRESS_DEP2 paths, without the specs
+
+e.g., *2 is "all the shit relevant to the port at hand", *3 is
+"only the shit directly relevant to the port with subpackages,
+or everything pertinent to THAT given subpackage".
+
+This gets converted into cookies relevant to each dependency
+_DEPBUILDLIBS -> _DEPBUILDLIBSPECS_COOKIES as .spec-$i
+_DEPRUNLIBS -> _DEPRUNLIBSPECS_COOKIES as .spec-$i
+_DEPBUILDWANTLIB_COOKIE as .buildwantlibs
+_DEPRUNWANTLIB_COOKIE as .runwantlibs-s
+
+Then there are rules for each dependency: a loop over _DEPLIST
+for each spec, and code to build both _DEP*WANTLIB_COOKIEs
+
+There's also some dependency in handling in 
+*wantlib-args, lib-depends-args and run-depends-args.
