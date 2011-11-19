@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.2 2011/11/19 14:17:59 espie Exp $
+$OpenBSD: README.internals,v 1.3 2011/11/19 14:35:56 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -136,6 +136,9 @@ be changeable.
 Also, note that stuff set within Makefiles is not exported to the environment,
 you have to be explicit and set them when you run a command.
 
+When things get ambiguous, This document uses $$var for a shell variable, 
+${VAR} for a variable set in make, and VAR for an environment variables.
+
 pkgpath.mk
 ----------
 Named that way because it mostly deals with pkgpath parsing, but in reality,
@@ -160,7 +163,7 @@ _pflavor_fragment:
 	Otherwise will emit an error message that ends with $$extra_msg.
 
 _flavor_fragment:
-	calls $$_pflavor_fragment after imposing $$_fullpath=false. e.g., for
+	calls ${_pflavor_fragment} after imposing $$_fullpath=false. e.g., for
 	actual dependencies.
 
 _depfile_fragment:
@@ -181,6 +184,42 @@ _cache_fragment:
 	XXX also sets PKGPATH, as it reduces drastically the number of
 	PKGPATH=... needed in bsd.port.mk
 
+Locking
+-------
+Done thru _DO_LOCK and _SIMPLE_LOCK mostly. Most user-visible targets 
+redirect through 
+	${_DO_LOCK}; make _internal-$@
+as soon as locking is used (which is the default these days). 
+The locking mechanism carefully maintains the _LOCK_HELD environment variable
+so that dependencies can relock themselves (yeah, it looks strange, but this
+happens !). 
+
+_SIMPLE_LOCK only exists to provide separate locking targets for fetch: it
+assumes $$lock has been set to an appropriate lock file name.
+
+
+Internal targets are:
+_internal-clean _internal-package-only _internal-run-depends 
+_internal-runlib-depends _internal-runwantlib-depends _internal-package
+_internal-build-depends _internal-buildlib-depends 
+_internal-buildwantlib-depends _internal-regress-depends
+_internal-prepare _internal-depends _internal-fetch-all
+_internal-fetch _internal-all _internal-build _internal-checksum
+_internal-configure _internal-deinstall _internal-extract _internal-fake
+_internal-patch _internal-plist _internal-regress _internal-subpackage
+_internal-subupdate _internal-uninstall _internal-update 
+_internal-update-or-install _internal-update-or-install-all
+_internal-update-plist _internal-distpatch
+(yeah, that's a lot).
+
+So, if you type "make", it will do
+make build -> lock && make _internal-all
+
+then make _internal-all will normally run thru 
+_internal-fetch _internal-extract _internal-patch _internal-build
+without ever releasing the lock, thus preventing anything else to sneak
+in and break the build.
+
 Misc
 ----
 - Modules inclusion is done through a separate modules.port.mk to handle
@@ -195,3 +234,4 @@ is empty...
 As a result, most subpackage-dependent variables end up being used as their
 "true" VAR-  form  in the case of a port without multi-packages.
 Exception: FULLPKGNAME needs some specific code for the !multi-packages case.
+
