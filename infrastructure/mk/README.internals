@@ -1,0 +1,131 @@
+$OpenBSD: README.internals,v 1.1 2011/11/19 13:37:41 espie Exp $
+Copyright (C) 2011 Marc Espie <espie@openbsd.org>
+ 
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ 
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ 
+
+This file is *not* user documentation of the *mk files. The full user
+documentation is available as manpages such as bsd.port.mk(5)
+
+There are comments in bsd.port.mk but this file is already too long,
+so I finally decided to put the design notes in a separate file.
+
+Most of this is not for the faint of heart.
+
+"Imagination could conceive almost anything in connexion with this place."
+(H.P. Lovecraft, At the Mountains of Madness)
+
+Some design principles
+----------------------
+- all variables and targets prefixed with _  are for internal use.
+It may be that some other tools reuse them, but that's generally following
+the same guidelines: no user serviceable parts inside.
+
+- most variables will always be defined, even with an empty value.  This avoids
+stupid .if defined(TESTS).
+
+- bsd.port.mk has a strict separation between variable definitions (at top)
+and target definition (right after the
+	    ###
+	    ### end of variable setup. Only targets now
+	    ###
+). This is because of make's "lazy" way to evaluate things: constructs in
+shell-lines get evaluated very very late. But all targets (such as
+${_WRKDIR_COOKIE}) get evaluated when they're encountered. There was some
+significant effort in the early days when I took bsd.port.mk over to achieve
+that separation.  Be very careful with Makefile.inc and modules, since those
+get included at a very specific location in the Makefile.  They should mostly
+define variables. Makefile.inc is included very early so that it can override
+about anything it should be able to (but then, nothing is already defined 
+except for read-only variables / global user-tweakable defaults). Modules
+is included a little bit later...
+
+- a lot of the code is done through shell fragments. All of these are
+internal and prefixed with _.  This is done for speed and compactness (forking
+an external shell would be very slow, and a total nightmare with respect
+to parameter passing).  These often communicate through internal shell 
+variables with well-defined names.
+
+Introspection
+-------------
+There's a lot of stuff in the infrastructure which is there only for
+introspection purposes: show, show-all, print-plist-*, dump-vars,
+*-dir-depends, print-package-signature (ill-named, since it actually only
+asks the ports tree for information).
+They allow external tools to interrogate the ports tree and get most
+information from it. dpb and sqlports rely very heavily on it.
+
+Significant work has been done to achieve better MI. The MULTI_PACKAGES
+code now assume you will define MULTI_PACKAGES *independently of the 
+architecture, annotate subpackage with ONLY_FOR_ARCHS-sub if appropriate,
+the include bsd.port.arch.mk (which was split off the main file specifically 
+for that purpose), and rely on BUILD_PACKAGES for building.
+
+Shell tricks and constructs
+---------------------------
+- IFS is your friend: echo "a:b:c"| while IFS=: read a b c
+will split things along any character without requiring external commands
+such as cut.
+
+- don't run test for checking variable values. Rather:
+case "$$subdir" in *,*)  ... ;; *) ... ;; esac
+is entirely internal
+
+- () forks a subshell.  If you need to syntactally keep a list of commands
+together, "{ cmd1; cmd2; }"   is the way to do it.
+
+- use trap to clean up at the end of a command. That's mostly used for
+caching stuff (depfile and cache), but also for the locking mechanism.
+
+- exec is often used for tail recursion: it replaces the shell with the
+executed command. BUT beware of pending traps, as you will lose them.
+
+- all of make commands are executed under -e. Thus, it's deadly to fail
+without a test around it. In the end, you might end up with:
+    if ( eval $$toset exec ${MAKE} subupdate ); then 
+this forks a subshell to avoid the unpleasantness of -e, then execs the
+resulting command to avoid piling up an extra process.
+
+Make vs. Shell
+--------------
+There are at least *4* kind of variables in those files:
+- internal shell variables
+- environment variables
+- make variables set on the command line
+- make variables set within a makefile
+
+Note that make variables set on the command line ARE set in stone: it's very
+difficult to change them from within the Makefile, and they will override
+mostly anything you can do. They also appear in the environment.
+
+Thus, a lot of make thingies, such as FLAVOR and SUBPACKAGE must be set in
+the environment because make will run into subdirs and requires them to
+be changeable.
+
+Also, note that stuff set within Makefiles is not exported to the environment,
+you have to be explicit and set them when you run a command.
+
+pkgpath.mk
+----------
+Named that way because it mostly deals with pkgpath parsing, but in reality,
+it's mostly a lift-up from the common parts between bsd.port.mk and 
+bsd.port.subdir.mk (no reason for a name change so late in the game)
+
+fragments and common shell variables
+------------------------------------
+
+Misc
+----
+- Modules inclusion is done through a separate modules.port.mk to handle
+recursion: modules may trigger the inclusion of other modules, thus
+modules.port.mk will re-include itself until the whole list is done.
