@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.41 2011/11/19 11:36:53 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.42 2011/11/20 15:38:08 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -32,7 +32,7 @@ PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 _pflavor_fragment = \
 	unset FLAVOR SUBPACKAGE || true; \
 	multi=''; flavor=''; space=''; sawflavor=$${_fullpath}; \
-	reported=false; found_dir=false; \
+	reported=false; found_dir=false; sawmulti=false; \
 	case "$$subdir" in \
 	"") \
 		echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
@@ -45,7 +45,11 @@ _pflavor_fragment = \
 			else \
 				case X"$$i" in \
 					X-*) \
-						multi="$$i";; \
+						if $$sawmulti; then \
+							echo 1>&2 ">> Broken dependency: several subpackages in $$subdir $$extra_msg"; \
+							reported=true; \
+						fi; \
+						multi="$$i"; sawmulti=true;; \
 					,) \
 						sawflavor=true;; \
 					*) \
