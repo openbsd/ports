@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2011/11/14 22:37:23 pascal Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2011/11/20 10:32:30 pascal Exp $
 @bin bin/ec++
 @bin bin/eg++
 @bin bin/${CONFIG}-ec++
@@ -511,31 +511,6 @@ include/c++/${V}/forward_list
 include/c++/${V}/fstream
 include/c++/${V}/functional
 include/c++/${V}/future
-include/c++/${V}/${CONFIG}/
-include/c++/${V}/${CONFIG}/bits/
-include/c++/${V}/${CONFIG}/bits/atomic_word.h
-include/c++/${V}/${CONFIG}/bits/basic_file.h
-include/c++/${V}/${CONFIG}/bits/c++allocator.h
-include/c++/${V}/${CONFIG}/bits/c++config.h
-include/c++/${V}/${CONFIG}/bits/c++io.h
-include/c++/${V}/${CONFIG}/bits/c++locale.h
-include/c++/${V}/${CONFIG}/bits/cpu_defines.h
-include/c++/${V}/${CONFIG}/bits/ctype_base.h
-include/c++/${V}/${CONFIG}/bits/ctype_inline.h
-include/c++/${V}/${CONFIG}/bits/ctype_noninline.h
-include/c++/${V}/${CONFIG}/bits/cxxabi_tweaks.h
-include/c++/${V}/${CONFIG}/bits/error_constants.h
-include/c++/${V}/${CONFIG}/bits/extc++.h
-include/c++/${V}/${CONFIG}/bits/gthr-default.h
-include/c++/${V}/${CONFIG}/bits/gthr-posix.h
-include/c++/${V}/${CONFIG}/bits/gthr-single.h
-include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
-include/c++/${V}/${CONFIG}/bits/gthr.h
-include/c++/${V}/${CONFIG}/bits/messages_members.h
-include/c++/${V}/${CONFIG}/bits/os_defines.h
-include/c++/${V}/${CONFIG}/bits/stdc++.h
-include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
-include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/initializer_list
 include/c++/${V}/iomanip
 include/c++/${V}/ios
@@ -667,6 +642,31 @@ include/c++/${V}/unordered_set
 include/c++/${V}/utility
 include/c++/${V}/valarray
 include/c++/${V}/vector
+include/c++/${V}/${CONFIG}/
+include/c++/${V}/${CONFIG}/bits/
+include/c++/${V}/${CONFIG}/bits/atomic_word.h
+include/c++/${V}/${CONFIG}/bits/basic_file.h
+include/c++/${V}/${CONFIG}/bits/c++allocator.h
+include/c++/${V}/${CONFIG}/bits/c++config.h
+include/c++/${V}/${CONFIG}/bits/c++io.h
+include/c++/${V}/${CONFIG}/bits/c++locale.h
+include/c++/${V}/${CONFIG}/bits/cpu_defines.h
+include/c++/${V}/${CONFIG}/bits/ctype_base.h
+include/c++/${V}/${CONFIG}/bits/ctype_inline.h
+include/c++/${V}/${CONFIG}/bits/ctype_noninline.h
+include/c++/${V}/${CONFIG}/bits/cxxabi_tweaks.h
+include/c++/${V}/${CONFIG}/bits/error_constants.h
+include/c++/${V}/${CONFIG}/bits/extc++.h
+include/c++/${V}/${CONFIG}/bits/gthr-default.h
+include/c++/${V}/${CONFIG}/bits/gthr-posix.h
+include/c++/${V}/${CONFIG}/bits/gthr-single.h
+include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
+include/c++/${V}/${CONFIG}/bits/gthr.h
+include/c++/${V}/${CONFIG}/bits/messages_members.h
+include/c++/${V}/${CONFIG}/bits/os_defines.h
+include/c++/${V}/${CONFIG}/bits/stdc++.h
+include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
+include/c++/${V}/${CONFIG}/bits/time_members.h
 lib/libestdc++.a
 lib/libestdc++.la
 lib/libesupc++.a
