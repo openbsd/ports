@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-go,v 1.1 2011/11/19 22:19:53 pascal Exp $
+@comment $OpenBSD: PLIST-go,v 1.2 2011/11/20 11:10:36 pascal Exp $
 %%SHARED%%
 @bin bin/egccgo
 @bin bin/${CONFIG}-egccgo
@@ -154,4 +154,5 @@ lib/libgo.a
 lib/libgo.la
 lib/libgobegin.a
 @bin libexec/gcc/${CONFIG}/${V}/go1
+%%PIC%%
 @man man/man1/egccgo.1
