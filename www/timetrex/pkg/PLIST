@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/06/23 06:52:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/11/21 07:54:52 ajacoutot Exp $
 @extraunexec rm -rf ${INSTDIR}/templates_c/*
 timetrex/
 timetrex/INSTALL.txt
@@ -404,8 +404,10 @@ timetrex/classes/jpgraph/lang/prod.inc.php
 timetrex/classes/misc/
 timetrex/classes/misc/MimeMailParser.class.php
 timetrex/classes/misc/MultiCurl.class.php
+timetrex/classes/misc/UUID.class.php
 timetrex/classes/misc/arr_multisort.class.php
 timetrex/classes/misc/attachment.class.php
+timetrex/classes/misc/is_email.php
 timetrex/classes/misc/signature_to_image.class.php
 timetrex/classes/modules/
 timetrex/classes/modules/accrual/
@@ -423,6 +425,10 @@ timetrex/classes/modules/company/CompanyDeductionPayStubEntryAccountListFactory.
 timetrex/classes/modules/company/CompanyFactory.class.php
 timetrex/classes/modules/company/CompanyGenericMapFactory.class.php
 timetrex/classes/modules/company/CompanyGenericMapListFactory.class.php
+timetrex/classes/modules/company/CompanyGenericTagFactory.class.php
+timetrex/classes/modules/company/CompanyGenericTagListFactory.class.php
+timetrex/classes/modules/company/CompanyGenericTagMapFactory.class.php
+timetrex/classes/modules/company/CompanyGenericTagMapListFactory.class.php
 timetrex/classes/modules/company/CompanyListFactory.class.php
 timetrex/classes/modules/company/CompanyUserCountFactory.class.php
 timetrex/classes/modules/company/CompanyUserCountListFactory.class.php
@@ -470,6 +476,8 @@ timetrex/classes/modules/core/PermissionUserFactory.class.php
 timetrex/classes/modules/core/PermissionUserListFactory.class.php
 timetrex/classes/modules/core/Profiler.class.php
 timetrex/classes/modules/core/ProgressBar.class.php
+timetrex/classes/modules/core/PurgeDatabase.class.php
+timetrex/classes/modules/core/RateLimit.class.php
 timetrex/classes/modules/core/Redirect.class.php
 timetrex/classes/modules/core/Serializer.class.php
 timetrex/classes/modules/core/SharedMemory.class.php
@@ -541,6 +549,13 @@ timetrex/classes/modules/holiday/HolidayFactory.class.php
 timetrex/classes/modules/holiday/HolidayListFactory.class.php
 timetrex/classes/modules/holiday/RecurringHolidayFactory.class.php
 timetrex/classes/modules/holiday/RecurringHolidayListFactory.class.php
+timetrex/classes/modules/import/
+timetrex/classes/modules/import/Import.class.php
+timetrex/classes/modules/import/ImportBranch.class.php
+timetrex/classes/modules/import/ImportClient.class.php
+timetrex/classes/modules/import/ImportDepartment.class.php
+timetrex/classes/modules/import/ImportUser.class.php
+timetrex/classes/modules/import/ImportUserWage.class.php
 timetrex/classes/modules/install/
 timetrex/classes/modules/install/Install.class.php
 timetrex/classes/modules/install/InstallSchema.class.php
@@ -608,6 +623,9 @@ timetrex/classes/modules/install/InstallSchema_1041A.class.php
 timetrex/classes/modules/install/InstallSchema_1042A.class.php
 timetrex/classes/modules/install/InstallSchema_1043A.class.php
 timetrex/classes/modules/install/InstallSchema_1044A.class.php
+timetrex/classes/modules/install/InstallSchema_1045A.class.php
+timetrex/classes/modules/install/InstallSchema_1046A.class.php
+timetrex/classes/modules/install/InstallSchema_1047A.class.php
 timetrex/classes/modules/install/InstallSchema_Base.class.php
 timetrex/classes/modules/install/sql/
 timetrex/classes/modules/install/sql/mysql/
@@ -675,6 +693,9 @@ timetrex/classes/modules/install/sql/mysql/1041A.sql
 timetrex/classes/modules/install/sql/mysql/1042A.sql
 timetrex/classes/modules/install/sql/mysql/1043A.sql
 timetrex/classes/modules/install/sql/mysql/1044A.sql
+timetrex/classes/modules/install/sql/mysql/1045A.sql
+timetrex/classes/modules/install/sql/mysql/1046A.sql
+timetrex/classes/modules/install/sql/mysql/1047A.sql
 timetrex/classes/modules/install/sql/postgresql/
 timetrex/classes/modules/install/sql/postgresql/1000A.sql
 timetrex/classes/modules/install/sql/postgresql/1000T.sql
@@ -740,6 +761,9 @@ timetrex/classes/modules/install/sql/postgresql/1041A.sql
 timetrex/classes/modules/install/sql/postgresql/1042A.sql
 timetrex/classes/modules/install/sql/postgresql/1043A.sql
 timetrex/classes/modules/install/sql/postgresql/1044A.sql
+timetrex/classes/modules/install/sql/postgresql/1045A.sql
+timetrex/classes/modules/install/sql/postgresql/1046A.sql
+timetrex/classes/modules/install/sql/postgresql/1047A.sql
 timetrex/classes/modules/message/
 timetrex/classes/modules/message/MessageControlFactory.class.php
 timetrex/classes/modules/message/MessageControlListFactory.class.php
@@ -838,7 +862,6 @@ timetrex/classes/modules/punch/PunchListFactory.class.php
 timetrex/classes/modules/report/
 timetrex/classes/modules/report/ActiveShiftReport.class.php
 timetrex/classes/modules/report/Form941Report.class.php
-timetrex/classes/modules/report/InvoiceTransactionSummaryReport.class.php
 timetrex/classes/modules/report/PayStubSummaryReport.class.php
 timetrex/classes/modules/report/PayrollExportReport.class.php
 timetrex/classes/modules/report/PunchSummaryReport.class.php
@@ -2262,6 +2285,7 @@ timetrex/includes/TableMap.inc.php
 timetrex/includes/global.inc.php
 timetrex/index.html
 timetrex/interface/
+timetrex/interface/BetaTest.php
 timetrex/interface/CloseWindow.php
 timetrex/interface/DownForMaintenance.php
 timetrex/interface/ForgotPassword.php
@@ -2366,6 +2390,7 @@ timetrex/interface/images/edit16.gif
 timetrex/interface/images/excel_icon.gif
 timetrex/interface/images/export.gif
 timetrex/interface/images/export16.gif
+timetrex/interface/images/facebook_button.jpg
 timetrex/interface/images/favicon.ico
 timetrex/interface/images/first-grey.gif
 timetrex/interface/images/first.gif
@@ -2453,7 +2478,9 @@ timetrex/interface/images/tab_menu.gif
 timetrex/interface/images/table_bottom.gif
 timetrex/interface/images/table_top.gif
 timetrex/interface/images/timetrex_just_logo_512.png
+timetrex/interface/images/timetrex_logo_flex_login.png
 timetrex/interface/images/timetrex_logo_wbg_small2.jpg
+timetrex/interface/images/twitter_button.jpg
 timetrex/interface/images/viewSched.gif
 timetrex/interface/images/viewSched16.gif
 timetrex/interface/images/vsep_black.gif
@@ -2733,6 +2760,7 @@ timetrex/interface/station/
 timetrex/interface/station/EditStation.php
 timetrex/interface/station/EditStationUser.php
 timetrex/interface/station/StationList.php
+timetrex/interface/system_check.php
 timetrex/interface/timesheet/
 timetrex/interface/timesheet/ViewTimeSheetVerification.php
 timetrex/interface/timesheet/ViewUserTimeSheet.php
@@ -2777,6 +2805,7 @@ timetrex/maint/cron.php
 timetrex/soap/
 timetrex/soap/server.php
 timetrex/templates/
+timetrex/templates/BetaTest.tpl
 timetrex/templates/DownForMaintenance.tpl
 timetrex/templates/ForgotPassword.tpl
 timetrex/templates/Login.tpl
@@ -3065,6 +3094,7 @@ timetrex/unit_tests/CAPayrollDeductionTest2011.php
 timetrex/unit_tests/CRPayrollDeductionTest.php
 timetrex/unit_tests/DateTimeTest.php
 timetrex/unit_tests/DependencyTreeTest.php
+timetrex/unit_tests/MealBreakPolicyTest.php
 timetrex/unit_tests/OverTimePolicyTest.php
 timetrex/unit_tests/PayPeriodScheduleTest.php
 timetrex/unit_tests/PayStubCalculationTest.php
