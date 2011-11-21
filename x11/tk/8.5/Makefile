@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/17 15:19:22 stu Exp $
+# $OpenBSD: Makefile,v 1.24 2011/11/21 18:31:02 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.5.10
-PKGNAME =		tk-8.5.10
-SHARED_LIBS =		tk85 0.7
+DISTNAME =		tk8.5.11
+PKGNAME =		tk-8.5.11
+SHARED_LIBS =		tk85 0.8
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -51,26 +51,27 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			EXTRA_CC_SWITCHES="-I${LOCALBASE}/include/tcl8.5" \
 			SHLIB_VERSION="${LIBtk85_VERSION}"
 
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-ALL_TARGET =		all libtk85.a
-CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_INSTALL_DIR)/" \
-			&& $$(INSTALL_DATA) libtk85.a $$(LIB_INSTALL_DIR)/libtk85.a \
-			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
-.endif
-
-REGRESS_IS_INTERACTIVE = x11
-
 FLAVORS =		threaded
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS +=		tcl->=8.5.10,<8.5.11-threaded:lang/tcl/8.5,threaded
+LIB_DEPENDS +=		tcl->=8.5.11,<8.5.12-threaded:lang/tcl/8.5,threaded
 .else
-LIB_DEPENDS +=		tcl->=8.5.10,<8.5.11-!threaded:lang/tcl/8.5
+LIB_DEPENDS +=		tcl->=8.5.11,<8.5.12-!threaded:lang/tcl/8.5
 .endif
 
+.include <bsd.port.arch.mk>
+
+.if ${NO_SHARED_LIBS:L} == "no"
+ALL_TARGET =		all libtk85.a
+CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_INSTALL_DIR)/" \
+			&& $$(INSTALL_DATA) libtk85.a $$(LIB_INSTALL_DIR)/libtk85.a \
+			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
+.endif
+
+REGRESS_IS_INTERACTIVE = X11
 WRKSRC =		${WRKDIST}/unix
 REGRESS_TARGET =	test
 
@@ -81,7 +82,7 @@ pre-regress:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/lib/tcl/tk8.5/man
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+.if ${NO_SHARED_LIBS:L} == "no"
 	ln -s libtk85.a ${PREFIX}/lib/libtk85_pic.a
 	ln -s libtkstub85.a ${PREFIX}/lib/libtkstub85_pic.a
 .endif
