@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/27 14:27:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/21 14:13:02 jasper Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
-GNOME_VERSION=		1.19.16
+GNOME_VERSION=		1.20.0
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 
@@ -56,7 +56,7 @@ LIB_DEPENDS=		devel/boost \
 			graphics/goocanvasmm2>=1.90.8 \
 			net/libepc \
 			textproc/libxml++ \
-			x11/gnome/libgdamm>=4.99.4 \
+			x11/gnome/libgdamm>=4.99.6 \
 			x11/gtksourceviewmm3
 
 CONFIGURE_ENV+= 	ac_cv_path_DOT= \

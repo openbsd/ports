@@ -1,7 +1,7 @@
-$OpenBSD: patch-glom_libglom_connectionpool_cc,v 1.4 2011/10/26 11:14:09 jasper Exp $
---- glom/libglom/connectionpool.cc.orig	Wed Oct 19 10:53:40 2011
-+++ glom/libglom/connectionpool.cc	Wed Oct 26 12:55:24 2011
-@@ -566,8 +566,10 @@ bool ConnectionPool::handle_error_cerr_only()
+$OpenBSD: patch-glom_libglom_connectionpool_cc,v 1.5 2011/11/21 14:13:03 jasper Exp $
+--- glom/libglom/connectionpool.cc.orig	Fri Nov 11 22:44:52 2011
++++ glom/libglom/connectionpool.cc	Mon Nov 21 14:37:05 2011
+@@ -571,8 +571,10 @@ bool ConnectionPool::handle_error_cerr_only()
  #ifdef G_OS_WIN32
  // TODO: This is probably mingw specific
  static __p_sig_fn_t previous_sig_handler = SIG_DFL;
