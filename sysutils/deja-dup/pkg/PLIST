@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/10/18 09:45:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/21 18:14:24 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 @comment lib/nautilus/extensions-3.0/libdeja-dup.la
@@ -21,6 +21,10 @@ man/bn/
 man/bn/man1/
 @man man/bn/man1/deja-dup-preferences.1
 @man man/bn/man1/deja-dup.1
+man/bo/
+man/bo/man1/
+@man man/bo/man1/deja-dup-preferences.1
+@man man/bo/man1/deja-dup.1
 man/bs/
 man/bs/man1/
 @man man/bs/man1/deja-dup-preferences.1
@@ -350,6 +354,20 @@ share/gnome/help/deja-dup/de/deja-dup/restore-lost.page
 share/gnome/help/deja-dup/de/deja-dup/restore-revert.page
 share/gnome/help/deja-dup/de/deja-dup/restore-worst-case.page
 share/gnome/help/deja-dup/de/deja-dup/support.page
+share/gnome/help/deja-dup/el/
+share/gnome/help/deja-dup/el/deja-dup/
+share/gnome/help/deja-dup/el/deja-dup/backup-auto.page
+share/gnome/help/deja-dup/el/deja-dup/backup-first.page
+share/gnome/help/deja-dup/el/deja-dup/contribute.page
+share/gnome/help/deja-dup/el/deja-dup/credits.page
+share/gnome/help/deja-dup/el/deja-dup/index.page
+share/gnome/help/deja-dup/el/deja-dup/license.page
+share/gnome/help/deja-dup/el/deja-dup/prefs.page
+share/gnome/help/deja-dup/el/deja-dup/restore-full.page
+share/gnome/help/deja-dup/el/deja-dup/restore-lost.page
+share/gnome/help/deja-dup/el/deja-dup/restore-revert.page
+share/gnome/help/deja-dup/el/deja-dup/restore-worst-case.page
+share/gnome/help/deja-dup/el/deja-dup/support.page
 share/gnome/help/deja-dup/en_GB/
 share/gnome/help/deja-dup/en_GB/deja-dup/
 share/gnome/help/deja-dup/en_GB/deja-dup/backup-auto.page
@@ -616,6 +634,20 @@ share/gnome/help/deja-dup/ru/deja-dup/restore-lost.page
 share/gnome/help/deja-dup/ru/deja-dup/restore-revert.page
 share/gnome/help/deja-dup/ru/deja-dup/restore-worst-case.page
 share/gnome/help/deja-dup/ru/deja-dup/support.page
+share/gnome/help/deja-dup/sk/
+share/gnome/help/deja-dup/sk/deja-dup/
+share/gnome/help/deja-dup/sk/deja-dup/backup-auto.page
+share/gnome/help/deja-dup/sk/deja-dup/backup-first.page
+share/gnome/help/deja-dup/sk/deja-dup/contribute.page
+share/gnome/help/deja-dup/sk/deja-dup/credits.page
+share/gnome/help/deja-dup/sk/deja-dup/index.page
+share/gnome/help/deja-dup/sk/deja-dup/license.page
+share/gnome/help/deja-dup/sk/deja-dup/prefs.page
+share/gnome/help/deja-dup/sk/deja-dup/restore-full.page
+share/gnome/help/deja-dup/sk/deja-dup/restore-lost.page
+share/gnome/help/deja-dup/sk/deja-dup/restore-revert.page
+share/gnome/help/deja-dup/sk/deja-dup/restore-worst-case.page
+share/gnome/help/deja-dup/sk/deja-dup/support.page
 share/gnome/help/deja-dup/sl/
 share/gnome/help/deja-dup/sl/deja-dup/
 share/gnome/help/deja-dup/sl/deja-dup/backup-auto.page
@@ -630,6 +662,20 @@ share/gnome/help/deja-dup/sl/deja-dup/restore-lost.page
 share/gnome/help/deja-dup/sl/deja-dup/restore-revert.page
 share/gnome/help/deja-dup/sl/deja-dup/restore-worst-case.page
 share/gnome/help/deja-dup/sl/deja-dup/support.page
+share/gnome/help/deja-dup/sr/
+share/gnome/help/deja-dup/sr/deja-dup/
+share/gnome/help/deja-dup/sr/deja-dup/backup-auto.page
+share/gnome/help/deja-dup/sr/deja-dup/backup-first.page
+share/gnome/help/deja-dup/sr/deja-dup/contribute.page
+share/gnome/help/deja-dup/sr/deja-dup/credits.page
+share/gnome/help/deja-dup/sr/deja-dup/index.page
+share/gnome/help/deja-dup/sr/deja-dup/license.page
+share/gnome/help/deja-dup/sr/deja-dup/prefs.page
+share/gnome/help/deja-dup/sr/deja-dup/restore-full.page
+share/gnome/help/deja-dup/sr/deja-dup/restore-lost.page
+share/gnome/help/deja-dup/sr/deja-dup/restore-revert.page
+share/gnome/help/deja-dup/sr/deja-dup/restore-worst-case.page
+share/gnome/help/deja-dup/sr/deja-dup/support.page
 share/gnome/help/deja-dup/sv/
 share/gnome/help/deja-dup/sv/deja-dup/
 share/gnome/help/deja-dup/sv/deja-dup/backup-auto.page
@@ -726,6 +772,9 @@ share/locale/ar/LC_MESSAGES/deja-dup.mo
 share/locale/ast/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
+share/locale/bo/LC_MESSAGES/deja-dup.mo
 share/locale/bs/LC_MESSAGES/deja-dup.mo
 share/locale/ca/LC_MESSAGES/deja-dup.mo
 share/locale/ca@valencia/LC_MESSAGES/deja-dup.mo

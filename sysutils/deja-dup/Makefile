@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/18 09:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/21 18:14:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple encrypted backup tool for GNOME
 
-V=		20.1
+V=		20.2
 DISTNAME=	deja-dup-${V}
 EXTRACT_SUFX=	.tar.bz2
 
@@ -27,7 +27,7 @@ WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0 gtk-3
 WANTLIB += m nautilus-extension notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += xcb xcb-render xcb-shm z stdc++
 
 MASTER_SITES=	http://launchpad.net/deja-dup/20/${V}/+download/
 
