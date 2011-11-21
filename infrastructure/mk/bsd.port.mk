@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1138 2011/11/21 12:20:53 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1139 2011/11/21 12:26:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1904,22 +1904,22 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 					break; \
 				else \
 					${ECHO_MSG} "$$h not found"; \
-					${ECHO_MSG} "     (or $$default does not match)"; \
+					${ECHO_MSG} "     (or default $$default does not match)"; \
 				fi; \
 			else \
 				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; \
 				then \
-					${ECHO_MSG} "$$h $$default does not match"; \
+					${ECHO_MSG} "$$h default $$default does not match"; \
 					${REPORT_PROBLEM}; \
 					exit 1; \
 				fi; \
 			fi; \
 			if $$second_pass; then \
 				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; then \
-					${ECHO_MSG} "$$h $$default does not match"; \
-					if ! ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg"; then \
-						${ECHO_MSG} "$$h not found"; \
-					fi; \
+					${ECHO_MSG} "     - default $$default does not match"; \
+				fi; \
+				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg"; then \
+					${ECHO_MSG} "     - not found in installed packages"; \
 				fi; \
 				${ECHO_MSG} "Dependency check failed"; \
 				${REPORT_PROBLEM}; \
