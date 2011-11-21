@@ -1,7 +1,7 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
---- unix/Makefile.in.orig	Thu Jun 23 09:18:36 2011
-+++ unix/Makefile.in	Wed Oct  5 01:55:17 2011
-@@ -554,6 +554,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+$OpenBSD: patch-unix_Makefile_in,v 1.7 2011/11/21 18:30:50 stu Exp $
+--- unix/Makefile.in.orig	Thu Oct 20 12:06:53 2011
++++ unix/Makefile.in	Wed Oct 26 11:47:46 2011
+@@ -556,6 +556,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
  # Make target which outputs the list of the .o contained in the Tcl lib useful
  # to build a single big shared library containing Tcl and other extensions.
  # Used for the Tcl Plugin.  -- dl
-@@ -709,17 +713,12 @@ install-binaries: binaries
+@@ -711,17 +715,12 @@ install-binaries: binaries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -31,7 +31,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)@EXEEXT@"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)"/tclsh$(VERSION)@EXEEXT@
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -735,23 +734,18 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -737,23 +736,18 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -58,12 +58,12 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
  	@echo "Installing header files";
  	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
  		$(GENERIC_DIR)/tclPlatDecls.h \
-@@ -772,21 +766,21 @@ install-libraries: libraries $(INSTALL_TZDATA) install
+@@ -774,21 +768,21 @@ install-libraries: libraries $(INSTALL_TZDATA) install
  	    $(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)"/http1.0; \
  	    done;
- 	@echo "Installing package http 2.7.6 as a Tcl Module";
--	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.6.tm;
-+	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/http-2.7.6.tm;
+ 	@echo "Installing package http 2.7.7 as a Tcl Module";
+-	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/../tcl8/8.4/http-2.7.7.tm;
++	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl "$(SCRIPT_INSTALL_DIR)"/modules/8.5/http-2.7.7.tm;
  	@echo "Installing library opt0.4 directory";
  	@for i in $(TOP_DIR)/library/opt/*.tcl ; \
  	    do \
@@ -85,7 +85,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
  
  	@echo "Installing library encoding directory";
  	@for i in $(TOP_DIR)/library/encoding/*.enc ; do \
-@@ -817,8 +811,7 @@ install-doc: doc
+@@ -819,8 +813,7 @@ install-doc: doc
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -95,7 +95,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.6 2011/10/17 15:18:39 stu Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -843,14 +836,10 @@ install-private-headers: libraries
+@@ -845,14 +838,10 @@ install-private-headers: libraries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
