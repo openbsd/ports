@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/09/12 07:26:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/11/21 14:14:58 ajacoutot Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
@@ -15,6 +15,8 @@ share/gconf-editor/icons/hicolor/16x16/status/type-pair.png
 share/gconf-editor/icons/hicolor/16x16/status/type-schema.png
 share/gconf-editor/icons/hicolor/16x16/status/type-string.png
 share/gconf-editor/icons/hicolor/16x16/status/type-undefined.png
+share/gnome/
+share/gnome/help/
 share/gnome/help/gconf-editor/
 share/gnome/help/gconf-editor/C/
 share/gnome/help/gconf-editor/C/figures/
@@ -87,6 +89,16 @@ share/gnome/help/gconf-editor/es/figures/entry-schema.png
 share/gnome/help/gconf-editor/es/figures/entry-string.png
 share/gnome/help/gconf-editor/es/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/es/gconf-editor.xml
+share/gnome/help/gconf-editor/eu/
+share/gnome/help/gconf-editor/eu/figures/
+share/gnome/help/gconf-editor/eu/figures/entry-blank.png
+share/gnome/help/gconf-editor/eu/figures/entry-bool.png
+share/gnome/help/gconf-editor/eu/figures/entry-list.png
+share/gnome/help/gconf-editor/eu/figures/entry-number.png
+share/gnome/help/gconf-editor/eu/figures/entry-schema.png
+share/gnome/help/gconf-editor/eu/figures/entry-string.png
+share/gnome/help/gconf-editor/eu/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/eu/gconf-editor.xml
 share/gnome/help/gconf-editor/fr/
 share/gnome/help/gconf-editor/fr/figures/
 share/gnome/help/gconf-editor/fr/figures/entry-blank.png
@@ -187,6 +199,28 @@ share/gnome/help/gconf-editor/zh_CN/figures/entry-schema.png
 share/gnome/help/gconf-editor/zh_CN/figures/entry-string.png
 share/gnome/help/gconf-editor/zh_CN/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/zh_CN/gconf-editor.xml
+share/gnome/help/gconf-editor/zh_HK/
+share/gnome/help/gconf-editor/zh_HK/figures/
+share/gnome/help/gconf-editor/zh_HK/figures/entry-blank.png
+share/gnome/help/gconf-editor/zh_HK/figures/entry-bool.png
+share/gnome/help/gconf-editor/zh_HK/figures/entry-list.png
+share/gnome/help/gconf-editor/zh_HK/figures/entry-number.png
+share/gnome/help/gconf-editor/zh_HK/figures/entry-schema.png
+share/gnome/help/gconf-editor/zh_HK/figures/entry-string.png
+share/gnome/help/gconf-editor/zh_HK/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/zh_HK/gconf-editor.xml
+share/gnome/help/gconf-editor/zh_TW/
+share/gnome/help/gconf-editor/zh_TW/figures/
+share/gnome/help/gconf-editor/zh_TW/figures/entry-blank.png
+share/gnome/help/gconf-editor/zh_TW/figures/entry-bool.png
+share/gnome/help/gconf-editor/zh_TW/figures/entry-list.png
+share/gnome/help/gconf-editor/zh_TW/figures/entry-number.png
+share/gnome/help/gconf-editor/zh_TW/figures/entry-schema.png
+share/gnome/help/gconf-editor/zh_TW/figures/entry-string.png
+share/gnome/help/gconf-editor/zh_TW/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/zh_TW/gconf-editor.xml
+share/icons/
+share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gconf-editor.png
@@ -301,6 +335,7 @@ share/omf/gconf-editor/gconf-editor-de.omf
 share/omf/gconf-editor/gconf-editor-el.omf
 share/omf/gconf-editor/gconf-editor-en_GB.omf
 share/omf/gconf-editor/gconf-editor-es.omf
+share/omf/gconf-editor/gconf-editor-eu.omf
 share/omf/gconf-editor/gconf-editor-fr.omf
 share/omf/gconf-editor/gconf-editor-it.omf
 share/omf/gconf-editor/gconf-editor-oc.omf
@@ -311,6 +346,8 @@ share/omf/gconf-editor/gconf-editor-sv.omf
 share/omf/gconf-editor/gconf-editor-th.omf
 share/omf/gconf-editor/gconf-editor-uk.omf
 share/omf/gconf-editor/gconf-editor-zh_CN.omf
+share/omf/gconf-editor/gconf-editor-zh_HK.omf
+share/omf/gconf-editor/gconf-editor-zh_TW.omf
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gconf-editor.schemas

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/11/21 14:14:58 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
-GNOME_VERSION=	3.0.0
-
-REVISION=	3
+GNOME_VERSION=	3.0.1
 
 CATEGORIES=	devel x11
 
@@ -27,8 +25,6 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm z
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	devel/gettext \
 		x11/gnome \
