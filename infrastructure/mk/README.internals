@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.6 2011/11/19 16:35:46 espie Exp $
+$OpenBSD: README.internals,v 1.7 2011/11/21 16:43:52 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  
  Permission to use, copy, modify, and distribute this software for any
@@ -64,9 +64,9 @@ variables with well-defined names.
 - the infrastructure tries very hard to have real files (as far as possible)
 attached to most targets: "make package" points to the actual pkgfile(s)
 being generated. There's a whole section of the makefile devoted to 
-targets generated from the distfile devoted to fetch and fetch-all
+targets generated from the distfiles devoted to fetch and fetch-all
 (see the section around _EVERYTHING for variable definition, and the
-# Separate target for each file fetch-all will retrieve
+    # Separate target for each file fetch-all will retrieve
 for the actual targets). Apart from that, once a port starts building,
 targets "without" an actual file will generate a cookie under WRKDIR or
 some subdir of it (see all the _COOKIE* definitions). Of particular interest
@@ -95,10 +95,10 @@ They allow external tools to interrogate the ports tree and get most
 information from it. dpb and sqlports rely very heavily on it.
 
 Significant work has been done to achieve better MI. The MULTI_PACKAGES
-code now assume you will define MULTI_PACKAGES *independently of the 
-architecture, annotate subpackage with ONLY_FOR_ARCHS-sub if appropriate,
-the include bsd.port.arch.mk (which was split off the main file specifically 
-for that purpose), and rely on BUILD_PACKAGES for building.
+code now assumes you will define MULTI_PACKAGES *independently of the 
+architecture*, annotate subpackage with ONLY_FOR_ARCHS-sub if appropriate,
+then .include <bsd.port.arch.mk> (which was split off the main file 
+specifically for that purpose), and rely on BUILD_PACKAGES for building.
 
 Shell tricks and constructs
 ---------------------------
