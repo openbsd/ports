@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1139 2011/11/21 12:26:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1140 2011/11/21 16:42:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -321,8 +321,11 @@ MAKE_FLAGS ?=
 FAKE_FLAGS ?=
 LIBTOOL_FLAGS ?=
 
-# where configuration files should go
-SYSCONFDIR ?= /etc
+# User choice, consider read-only from a given port
+BASESYSCONFDIR ?= /etc
+# where configuration files should actually go
+SYSCONFDIR ?= ${BASESYSCONFDIR}
+
 RCDIR ?= /etc/rc.d
 USE_GMAKE ?= No
 .if ${USE_GMAKE:L} == "yes"
