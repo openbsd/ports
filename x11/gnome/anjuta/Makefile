@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/11/21 15:21:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/11/21 15:49:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.2.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -74,17 +74,6 @@ CONFIGURE_ARGS+=	--enable-plugin-subversion \
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz
-
-# The Symbol Browser plugin isn't built on OpenBSD due to the lack of an
-# shm_open() implementation. So remove the "Symbol Browser" as a requirement
-# from these templates. It's just a really-nice-to-have, instead of a must-have.
-post-extract:
-	cd ${WRKSRC}/plugins/project-wizard/templates/ && \
-		for t in `find . -type f -name '*.anjuta'`; \
-		do \
-			sed '/<plugin name="Symbol Browser/,/<\/plugin>/d' \
-				$$t > $$t.new && mv $$t.new $$t; \
-		done
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \
