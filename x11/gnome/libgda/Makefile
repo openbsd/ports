@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/11/07 07:53:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/11/21 07:38:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.0.1
+GNOME_VERSION=		5.0.2
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
