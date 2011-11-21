@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_Makefile_in,v 1.9 2011/09/18 19:26:52 jasper Exp $
+$OpenBSD: patch-plugins_Makefile_in,v 1.10 2011/11/21 10:37:24 jasper Exp $
 
 Disable the symbol-db plugin, OpenBSD lacks shm_open().
 
---- plugins/Makefile.in.orig	Sun Sep 18 15:15:20 2011
-+++ plugins/Makefile.in	Sun Sep 18 17:44:15 2011
-@@ -387,7 +387,6 @@ SUBDIRS = . \
+--- plugins/Makefile.in.orig	Fri Nov 18 21:44:05 2011
++++ plugins/Makefile.in	Mon Nov 21 11:10:04 2011
+@@ -389,7 +389,6 @@ SUBDIRS = . \
  	sourceview \
  	starter \
  	subversion \

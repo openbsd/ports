@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/10/19 12:17:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/11/21 10:37:24 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -1499,7 +1499,6 @@ share/gtk-doc/html/libanjuta/libanjuta-anjuta-version.html
 share/gtk-doc/html/libanjuta/libanjuta-api.html
 share/gtk-doc/html/libanjuta/libanjuta-internal-api.html
 share/gtk-doc/html/libanjuta/libanjuta-libanjuta-iface-marshallers.html
-share/gtk-doc/html/libanjuta/libanjuta.devhelp
 share/gtk-doc/html/libanjuta/libanjuta.devhelp2
 share/gtk-doc/html/libanjuta/object-hierarchy.html
 share/gtk-doc/html/libanjuta/page-block.html
