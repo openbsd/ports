@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.21 2011/11/21 14:58:29 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.22 2011/11/21 15:02:14 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -550,11 +550,11 @@ tries really hard to check heterogeneous networks for sanity (checking
 shared libraries and .la files), it is still dependent on the user to
 make sure all the hosts build ports the same way.
 .Pp
-Make sure your NFS setup is consistent (the ports dir itself should be
-exported, including distfiles and packages repository, but the WRKOBJDIR
-should not be on NFS unless you have no choice, or if you exhibit deep
-masochistic tendencies). Pay particular attention to discrepancies
-in
+Make sure your NFS setup is consistent.
+The ports dir itself should be exported, including distfiles and packages
+repository, but the WRKOBJDIR should not be on NFS unless you have
+absolutely no choice, or if you exhibit deep masochistic tendencies.
+Pay particular attention to discrepancies in
 .Pa /etc/mk.conf .
 .Pp
 Also,
