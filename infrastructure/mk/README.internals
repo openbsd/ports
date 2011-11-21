@@ -1,10 +1,10 @@
-$OpenBSD: README.internals,v 1.7 2011/11/21 16:43:52 espie Exp $
+$OpenBSD: README.internals,v 1.8 2011/11/21 17:13:32 jasper Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
- 
+
  Permission to use, copy, modify, and distribute this software for any
  purpose with or without fee is hereby granted, provided that the above
  copyright notice and this permission notice appear in all copies.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
@@ -12,7 +12,7 @@ Copyright (C) 2011 Marc Espie <espie@openbsd.org>
  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
- 
+
 
 This file is *not* user documentation of the *mk files. The full user
 documentation is available as manpages such as bsd.port.mk(5)
@@ -58,12 +58,12 @@ defaults). Modules is included a little bit later...
 - a lot of the code is done through shell fragments. All of these are
 internal and prefixed with _.  This is done for speed and compactness (forking
 an external shell would be very slow, and a total nightmare with respect
-to parameter passing).  These often communicate through internal shell 
+to parameter passing).  These often communicate through internal shell
 variables with well-defined names.
 
 - the infrastructure tries very hard to have real files (as far as possible)
 attached to most targets: "make package" points to the actual pkgfile(s)
-being generated. There's a whole section of the makefile devoted to 
+being generated. There's a whole section of the makefile devoted to
 targets generated from the distfiles devoted to fetch and fetch-all
 (see the section around _EVERYTHING for variable definition, and the
     # Separate target for each file fetch-all will retrieve
@@ -74,10 +74,10 @@ are dependencies, where the cookie file is generated depending on the
 name of the dependency: that's the infamous
 .for _i in ${_DEPLIST}
 ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
-loop.  The reason for that complexity is that this avoids rechecking 
+loop.  The reason for that complexity is that this avoids rechecking
 dependencies while working on a port, since only the new stuff will need
 evaluation...
-In general, make works really bad when you write 
+In general, make works really bad when you write
 phony-target1: phony-target2
 	@do_some_shit
 as phony targets are always out-of-date, and thus you will always do_some_shit.
@@ -95,9 +95,9 @@ They allow external tools to interrogate the ports tree and get most
 information from it. dpb and sqlports rely very heavily on it.
 
 Significant work has been done to achieve better MI. The MULTI_PACKAGES
-code now assumes you will define MULTI_PACKAGES *independently of the 
+code now assumes you will define MULTI_PACKAGES *independently of the
 architecture*, annotate subpackage with ONLY_FOR_ARCHS-sub if appropriate,
-then .include <bsd.port.arch.mk> (which was split off the main file 
+then .include <bsd.port.arch.mk> (which was split off the main file
 specifically for that purpose), and rely on BUILD_PACKAGES for building.
 
 Shell tricks and constructs
@@ -125,7 +125,7 @@ executed command. BUT beware of pending traps, as you will lose them.
 
 - all of make commands are executed under -e. Thus, it's deadly to fail
 without a test around it. In the end, you might end up with:
-    if ( eval $$toset exec ${MAKE} subupdate ); then 
+    if ( eval $$toset exec ${MAKE} subupdate ); then
 this forks a subshell to avoid the unpleasantness of -e, then execs the
 resulting command to avoid piling up an extra process.
 
@@ -148,25 +148,25 @@ be changeable.
 Also, note that stuff set within Makefiles is not exported to the environment,
 you have to be explicit and set them when you run a command.
 
-When things get ambiguous, This document uses $$var for a shell variable, 
+When things get ambiguous, This document uses $$var for a shell variable,
 ${VAR} for a variable set in make, and VAR for an environment variables.
 
 pkgpath.mk
 ----------
 Named that way because it mostly deals with pkgpath parsing, but in reality,
-it's mostly a lift-up from the common parts between bsd.port.mk and 
+it's mostly a lift-up from the common parts between bsd.port.mk and
 bsd.port.subdir.mk (no reason for a name change so late in the game)
 
 fragments and common shell variables
 ------------------------------------
 _pflavor_fragment (in pkgpath.mk)
-	takes $$subdir as a pkgpath parameter. 
+	takes $$subdir as a pkgpath parameter.
 	will parse it into a $$dir and $$toset variables, perform a cd $$dir
 	so that eval $$toset ${MAKE}   gets you into that
 	dependency (this will set PKGPATH, FLAVOR, SUBPACKAGE accordingly)
 
 	depending on $$_fullpath (true/false), will consider the absence
-	of flavor to be an empty flavor (e.g. $$toset contains FLAVOR='' ) 
+	of flavor to be an empty flavor (e.g. $$toset contains FLAVOR='' )
 	or to be the default flavor (e.g. unset FLAVOR)
 
 	takes ${PORTSDIR_PATH} into account
@@ -179,15 +179,15 @@ _flavor_fragment (in pkgpath.mk)
 	actual dependencies.
 
 _depfile_fragment (in pkgpath.mk)
-	sets _DEPENDS_FILE to a temporary file in the environment if it's 
+	sets _DEPENDS_FILE to a temporary file in the environment if it's
 	not already set. Set a trap to remove it on end.
 	_DEPENDS_FILE is used by the *dir-depends and show-run-depends targets
-	to not go thru the same directory twice. Beware of setting it 
+	to not go thru the same directory twice. Beware of setting it
 	"too globally", since it prevents directory walking from happening
 	twice.
 
 _cache_fragment (in pkgpath.mk)
-	sets _DEPENDS_CACHE to a temporary directory in the environment 
+	sets _DEPENDS_CACHE to a temporary directory in the environment
 	if it's not already set. Set a trap to remove it on end.
 	_DEPENDS_CACHE is used to store library lists in _libs2cache.
 	pkg_create(1) also knows about it and use it to store plists.
@@ -229,38 +229,38 @@ _complete_pkgspec (in bsd.port.mk)
 	$$pkg has the correct value.
 
 _libs2cache (in bsd.port.mk)
-	requires properly set dependency information obtained through 
+	requires properly set dependency information obtained through
 	${_flavor_fragment} (often through ${_parse_spec}).
 	assumes ${_depcache_fragment} has been called, either directly,
 	or from an upper level target.
-	If not already available, secure the library list from the 
-	dependency and store it in a file under _DEPENDS_CACHE. 
+	If not already available, secure the library list from the
+	dependency and store it in a file under _DEPENDS_CACHE.
 	Sets $$cached_libs to the file name.
 
 Locking
 -------
-Done thru _DO_LOCK and _SIMPLE_LOCK mostly. Most user-visible targets 
-redirect through 
+Done thru _DO_LOCK and _SIMPLE_LOCK mostly. Most user-visible targets
+redirect through
 	${_DO_LOCK}; make _internal-$@
-as soon as locking is used (which is the default these days). 
+as soon as locking is used (which is the default these days).
 The locking mechanism carefully maintains the _LOCK_HELD environment variable
 so that dependencies can relock themselves (yeah, it looks strange, but this
-happens !). 
+happens !).
 
 _SIMPLE_LOCK only exists to provide separate locking targets for fetch: it
 assumes $$lock has been set to an appropriate lock file name.
 
 
 Internal targets are:
-_internal-clean _internal-package-only _internal-run-depends 
+_internal-clean _internal-package-only _internal-run-depends
 _internal-runlib-depends _internal-runwantlib-depends _internal-package
-_internal-build-depends _internal-buildlib-depends 
+_internal-build-depends _internal-buildlib-depends
 _internal-buildwantlib-depends _internal-regress-depends
 _internal-prepare _internal-depends _internal-fetch-all
 _internal-fetch _internal-all _internal-build _internal-checksum
 _internal-configure _internal-deinstall _internal-extract _internal-fake
 _internal-patch _internal-plist _internal-regress _internal-subpackage
-_internal-subupdate _internal-uninstall _internal-update 
+_internal-subupdate _internal-uninstall _internal-update
 _internal-update-or-install _internal-update-or-install-all
 _internal-update-plist _internal-distpatch
 (yeah, that's a lot).
@@ -268,7 +268,7 @@ _internal-update-plist _internal-distpatch
 So, if you type "make", it will do
 make build -> lock && make _internal-all
 
-then make _internal-all will normally run thru 
+then make _internal-all will normally run thru
 _internal-fetch _internal-extract _internal-patch _internal-build
 without ever releasing the lock, thus preventing anything else to sneak
 in and break the build.
@@ -302,7 +302,7 @@ message instead of some weird internal error.
 Dependency variables
 --------------------
 Old legacy dependency styles are gone, so the compat code went away.
-The code has to deal with BUILD_DEPENDS, LIB_DEPENDS, RUN_DEPENDS, 
+The code has to deal with BUILD_DEPENDS, LIB_DEPENDS, RUN_DEPENDS,
 REGRESS_DEPENDS, WANTLIB and RUN_DEPENDS-* LIB_DEPENDS-*, WANTLIB-*
 
 There is obviously completely different treatment for WANTLIB* and
@@ -365,5 +365,5 @@ _DEPRUNWANTLIB_COOKIE as .runwantlibs-s
 Then there are rules for each dependency: a loop over _DEPLIST
 for each spec, and code to build both _DEP*WANTLIB_COOKIEs
 
-There's also some dependency in handling in 
+There's also some dependency in handling in
 *wantlib-args, lib-depends-args and run-depends-args.
