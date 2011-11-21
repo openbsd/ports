@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.20 2011/11/21 12:39:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.21 2011/11/21 14:58:29 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -279,6 +279,8 @@ number of distfiles to fetch, when
 is used.
 .It !=
 number of ignored packages.
+Details in
+.Pa engine.log .
 .It L=
 list of packages that cannot currently be built because of locks.
 .It E=
@@ -302,8 +304,7 @@ since distfiles are checksummed after the fetch anyways.
 When building a package,
 .Nm
 produces a lockfile in the lock directory, whose name is deduced from
-the basic pkgpath with slashes replaced by dots, and a possible second lock
-with the fullpkgpath.
+the basic pkgpath with slashes replaced by dots.
 This lockfile is filled with such info as the build start time or the host.
 .Pp
 The lockfile will also contain the name of a parent pkgpath, for paths that
@@ -312,7 +313,7 @@ This is particularly useful for bogus paths, where it would be hard to
 know where the path came from otherwise.
 .Pp
 At the end of a succesful build, these lockfiles are removed.
-The fullpkgpath lock will stay around in case of errors.
+The lock will stay around in case of errors.
 .Po
 raw
 value from
@@ -353,7 +354,6 @@ same time, even on different machines:
 in some cases, MULTI_PACKAGES and FLAVOR combinations may lead to the
 same package being built simultaneously, and since the package repository
 is shared, this can easily lead to trouble.
-.Pp
 .Sh SHUTTING DOWN GRACEFULLY
 .Nm
 periodically checks for a file named
@@ -481,7 +481,8 @@ Not a logfile at all, but a file created by the user to stop
 creating new jobs.
 .It Pa vars.log
 Logs the directories that were walked in the ports tree for dependency
-information.
+information, including the path to a dependency that triggered this
+particular step.
 .El
 .Sh BUGS AND LIMITATIONS
 .Nm
@@ -495,10 +496,6 @@ file and remove the lock,
 .Nm
 won't pick it up.
 .Pp
-.Nm
-considers all pkgpaths it explores as valid candidates for packages.
-This is not the case for some pkgpath:patch depends.
-It should not try to reach them.
 Note that
 .Nm
 does not manage installed packages in any intelligent way, it will just
@@ -555,7 +552,8 @@ make sure all the hosts build ports the same way.
 .Pp
 Make sure your NFS setup is consistent (the ports dir itself should be
 exported, including distfiles and packages repository, but the WRKOBJDIR
-should not be in most cases). Pay particular attention to discrepancies
+should not be on NFS unless you have no choice, or if you exhibit deep
+masochistic tendencies). Pay particular attention to discrepancies
 in
 .Pa /etc/mk.conf .
 .Pp
