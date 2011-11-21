@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1136 2011/11/19 11:33:39 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1137 2011/11/21 12:16:42 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -88,6 +88,7 @@ BULK_DO ?=
 CHECK_LIB_DEPENDS ?= No
 FORCE_UPDATE ?= No
 DPB ?= All Fetch
+PREPARE_CHECK_ONLY ?= No
 _SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
@@ -1328,7 +1329,7 @@ DEPDIR =
 
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment = { \
-		${ECHO_MSG} "===>  Verifying update for $$what in $$dir"; \
+		${ECHO_MSG} "===>  Verifying update for $$pkg in $$dir"; \
 		if ( eval $$toset exec ${MAKE} subupdate ); then \
 			${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 		else \
@@ -1874,54 +1875,58 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'| while ${_read_spec}; do \
 		${_parse_spec}; \
-		checkinstall=true; \
 		_ignore_cookie=${@:S/.dep/.ignored/}; \
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
 		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
-		Xinstall|Xreinstall) early_exit=false;; \
-		Xpackage|Xfake) early_exit=true;; \
-		Xpatch|Xconfigure|Xlicense-check|Xbuild) \
-			early_exit=true; mkdir -p ${WRKDIR}/$$dir; \
-			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir"; \
-			checkinstall=false;; \
-		Xextract) \
-			${ECHO_MSG} "===> Error: bad dependency ${_i}"; \
-			${REPORT_PROBLEM}; \
-			exit 1;; \
+		Xinstall|Xreinstall) check_install=true;; \
+		Xpackage|Xfake) check_install=false;; \
+		Xpatch|Xconfigure|Xbuild) \
+			check_install=false; mkdir -p ${WRKDIR}/$$dir; \
+			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir";; \
 		*) \
-			${ECHO_MSG} "===> Error: don't know how to depend on $$target"; \
+			${ECHO_MSG} "===> Error: can't depend on $$target"; \
 			${REPORT_PROBLEM}; \
 			exit 1;; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
 		${_complete_pkgspec}; \
-		what=$$pkg; \
-		if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; \
-		then \
-			: $${msg:= $$default does not match}; \
-			${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what -$$msg"; \
-			${REPORT_PROBLEM}; \
-			exit 1; \
-		fi; \
-		for abort in false false true; do \
-			if $$abort; then \
+		h="===> ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$pkg -"; \
+		for second_pass in false true; do \
+			if $$check_install; then \
+				${_force_update_fragment}; \
+				if ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg" -r "$$pkg" $$default; then \
+					${ECHO_MSG} "$$h found"; \
+					break; \
+				else \
+					${ECHO_MSG} "$$h not found"; \
+					${ECHO_MSG} "     (or $$default does not match)"; \
+					case ${PREPARE_CHECK_ONLY:L} in \
+					yes) \
+							${REPORT_PROBLEM}; \
+							exit 1;; \
+					esac; \
+				fi; \
+			else \
+				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; \
+				then \
+					${ECHO_MSG} "$$h $$default does not match"; \
+					${REPORT_PROBLEM}; \
+					exit 1; \
+				fi; \
+			fi; \
+			if $$second_pass; then \
+				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; then \
+					${ECHO_MSG} "$$h $$default does not match"; \
+					if ! ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg"; then \
+						${ECHO_MSG} "$$h not found"; \
+					fi; \
+				fi; \
 				${ECHO_MSG} "Dependency check failed"; \
 				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi; \
-			found=false; \
-			if $$checkinstall; then \
-				$$early_exit || ${_force_update_fragment}; \
-				if ${_PKG_QUERY} "$$pkg" -q; then \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what - found"; \
-					break; \
-				else \
-					: $${msg:= not found}; \
-					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what -$$msg"; \
-				fi; \
-			fi; \
-			${ECHO_MSG} "===>  Verifying $$target for $$what in $$dir"; \
+			${ECHO_MSG} "===>  Verifying $$target for $$pkg in $$dir"; \
 			if (eval $$toset exec ${MAKE} $$target) && \
 				! test -e $${_ignore_cookie}; then \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
@@ -1929,9 +1934,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi; \
-			if $$early_exit; then \
-				break; \
-			fi; \
+			$$check_install || break; \
 		done; \
 	done
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
