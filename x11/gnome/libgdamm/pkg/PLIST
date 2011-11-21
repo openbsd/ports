@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/12 15:32:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/11/21 07:44:59 ajacoutot Exp $
 include/libgdamm-${GDA_MAJOR}/
 include/libgdamm-${GDA_MAJOR}/libgdamm/
 include/libgdamm-${GDA_MAJOR}/libgdamm.h
@@ -28,6 +28,7 @@ include/libgdamm-${GDA_MAJOR}/libgdamm/holder.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/init.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/metastore.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/metastruct.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/numeric.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/batch_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/blob_p.h
@@ -54,6 +55,7 @@ include/libgdamm-${GDA_MAJOR}/libgdamm/private/handlertype_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/holder_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/metastore_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/metastruct_p.h
+include/libgdamm-${GDA_MAJOR}/libgdamm/private/numeric_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/quarklist_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/row_p.h
 include/libgdamm-${GDA_MAJOR}/libgdamm/private/serveroperation_p.h
@@ -222,6 +224,9 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStructEr
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStructError__inherit__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStruct__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1MetaStruct__inherit__graph.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Numeric-members.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Numeric.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1Numeric__coll__graph.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1QuarkList-members.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1QuarkList.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/classGnome_1_1Gda_1_1QuarkList__coll__graph.png
@@ -362,6 +367,7 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_3.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_4.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_5.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_6.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_7.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherits.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/modules.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaceGnome.html
@@ -382,12 +388,12 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_func.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_type.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_vars.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaces.html
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacestd_1_1tr2.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/nav_f.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/nav_h.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/open.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/pages.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/since_3_2.html
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/since_4_0.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/since_4_2.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/tab_a.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/tab_b.png
