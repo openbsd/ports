@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.19 2011/11/21 12:03:05 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.20 2011/11/21 12:39:39 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -57,7 +57,9 @@ installations.
 .Nm
 can take
 .Ar pkgpath ...
-to build as parameters.
+to build as parameters, as
+.Xr pkgpath 7
+specifications.
 .Pp
 Options are as follows:
 .Bl -tag -width pkgpathlonger
@@ -76,8 +78,9 @@ take a long time to build will happen earlier.
 Clean port working directory and log before each build.
 .It Fl C Ar pathlist
 Don't clean port working directories after build.
-Use a list of simple pkgpaths, as this does not take multi and flavors into 
-account.
+Use a list of simple
+.Xr pkgpath 7 ,
+as this does not take subpackages and flavors into account.
 .It Fl D Ar PARAM Ns = Ns Ar value
 Set defined parameter to value.
 Known parameters are as follows:
@@ -155,7 +158,9 @@ STARTUP=path
 .Ed
 which will be run at start-up on each machine.
 .It Fl I Ar subdirlist
-List of pkgpaths to install, on the local box.
+List of
+.Xr pkgpath 7
+to install, on the local box.
 This will also add them to the list of things to build.
 .It Fl j Ar n
 Number of concurrent local jobs to run (defaults to hw.ncpu if no hosts file).
@@ -173,7 +178,9 @@ Avoid for now, as
 has serious race conditions which yield
 random errors under stress conditions such as bulk build.
 .It Fl P Ar subdirlist
-Read list of pkgpaths from file
+Read list of
+.Xr pkgpath 7
+from file.
 .It Fl q
 Don't quit while errors/locks are around.
 .It Fl r
