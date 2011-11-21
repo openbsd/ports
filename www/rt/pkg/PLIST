@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/08/23 08:23:09 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/21 22:56:52 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -528,9 +528,19 @@ share/examples/rt3/upgrade/4.0.1/acl.Pg
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/acl.Pg
 share/examples/rt3/upgrade/4.0.1/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/content
+share/examples/rt3/upgrade/4.0.3/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/
+share/examples/rt3/upgrade/4.0.3/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.3/content
+share/examples/rt3/upgrade/4.0.4/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/
+share/examples/rt3/upgrade/4.0.4/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/content
 share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
+share/examples/rt3/upgrade/sanity-check-stylesheets.pl
+@sample ${SYSCONFDIR}/rt3/upgrade/sanity-check-stylesheets.pl
 share/examples/rt3/upgrade/shrink_cgm_table.pl
 @sample ${SYSCONFDIR}/rt3/upgrade/shrink_cgm_table.pl
 share/examples/rt3/upgrade/shrink_transactions_table.pl
