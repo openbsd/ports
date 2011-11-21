@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/11/21 10:37:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/11/21 15:21:33 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
 @bin bin/anjuta-launcher
+@bin bin/anjuta-tags
 include/libanjuta-3.0/
 include/libanjuta-3.0/libanjuta/
 include/libanjuta-3.0/libanjuta/anjuta-async-command.h
@@ -202,6 +203,8 @@ lib/anjuta/libanjuta-sourceview.so
 lib/anjuta/libanjuta-starter.so
 @comment lib/anjuta/libanjuta-subversion.la
 lib/anjuta/libanjuta-subversion.so
+@comment lib/anjuta/libanjuta-symbol-db.la
+lib/anjuta/libanjuta-symbol-db.so
 @comment lib/anjuta/libanjuta-terminal.la
 lib/anjuta/libanjuta-terminal.so
 @comment lib/anjuta/libanjuta-tools.la
@@ -223,6 +226,7 @@ lib/anjuta/libpython_plugin.so
 lib/anjuta/mk-project.plugin
 lib/anjuta/python-plugin.plugin
 lib/anjuta/sourceview.plugin
+lib/anjuta/symbol-db.plugin
 lib/girepository-1.0/Anjuta-3.0.typelib
 lib/girepository-1.0/IAnjuta-3.0.typelib
 @comment lib/glade/modules/libgladeanjuta.la
@@ -262,6 +266,7 @@ share/anjuta/glade/anjuta-message-manager-plugin.ui
 share/anjuta/glade/anjuta-project-wizard.ui
 share/anjuta/glade/anjuta-run-program.ui
 share/anjuta/glade/anjuta-subversion.ui
+share/anjuta/glade/anjuta-symbol-db.ui
 share/anjuta/glade/anjuta-terminal-plugin.ui
 share/anjuta/glade/anjuta-tools.ui
 share/anjuta/glade/applogo.png
@@ -485,6 +490,7 @@ share/anjuta/project/xlib/src/main.c
 share/anjuta/snippets-global-variables.xml
 share/anjuta/snippets.anjuta-snippets
 share/anjuta/sources.list
+share/anjuta/tables.sql
 share/anjuta/tools/
 share/anjuta/tools/find-fixmes.pl
 share/anjuta/tools/prepare-changelog.pl
@@ -506,6 +512,7 @@ share/anjuta/ui/anjuta-patch.xml
 share/anjuta/ui/anjuta-project-manager.xml
 share/anjuta/ui/anjuta-run-program.xml
 share/anjuta/ui/anjuta-subversion.xml
+share/anjuta/ui/anjuta-symbol-db-plugin.xml
 share/anjuta/ui/anjuta-terminal-plugin.xml
 share/anjuta/ui/anjuta-tools.xml
 share/anjuta/ui/anjuta.xml
@@ -544,6 +551,7 @@ share/glib-2.0/schemas/org.gnome.anjuta.python.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.run.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.snippets.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.sourceview.gschema.xml
+share/glib-2.0/schemas/org.gnome.anjuta.symbol-db.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.terminal.gschema.xml
 share/glib-2.0/schemas/org.gnome.anjuta.tools.gschema.xml
 share/gnome/help/anjuta-build-tutorial/
@@ -1748,6 +1756,9 @@ share/pixmaps/anjuta/anjuta-subversion-plugin-48.png
 share/pixmaps/anjuta/anjuta-subversion-plugin.svg
 share/pixmaps/anjuta/anjuta-swap-16.png
 share/pixmaps/anjuta/anjuta-swap-24.png
+share/pixmaps/anjuta/anjuta-symbol-db-plugin-16.png
+share/pixmaps/anjuta/anjuta-symbol-db-plugin-48.png
+share/pixmaps/anjuta/anjuta-symbol-db-plugin.svg
 share/pixmaps/anjuta/anjuta-terminal-plugin-48.png
 share/pixmaps/anjuta/anjuta-terminal-plugin.svg
 share/pixmaps/anjuta/anjuta-tools-plugin-48.png
@@ -1762,6 +1773,28 @@ share/pixmaps/anjuta/code-analyzer.png
 share/pixmaps/anjuta/dir-project-plugin-48.png
 share/pixmaps/anjuta/directory-accept.png
 share/pixmaps/anjuta/directory.png
+share/pixmaps/anjuta/element-class-16.png
+share/pixmaps/anjuta/element-delegate-16.png
+share/pixmaps/anjuta/element-enumeration-16.png
+share/pixmaps/anjuta/element-event-16.png
+share/pixmaps/anjuta/element-field-16.png
+share/pixmaps/anjuta/element-interface-16.png
+share/pixmaps/anjuta/element-interface-24.png
+share/pixmaps/anjuta/element-interface-private-16.png
+share/pixmaps/anjuta/element-interface-protected-16.png
+share/pixmaps/anjuta/element-interface-public-16.png
+share/pixmaps/anjuta/element-literal-16.png
+share/pixmaps/anjuta/element-method-16.png
+share/pixmaps/anjuta/element-method-24.png
+share/pixmaps/anjuta/element-method-private-16.png
+share/pixmaps/anjuta/element-method-protected-16.png
+share/pixmaps/anjuta/element-method-public-16.png
+share/pixmaps/anjuta/element-namespace-16.png
+share/pixmaps/anjuta/element-property-16.png
+share/pixmaps/anjuta/element-property-private-16.png
+share/pixmaps/anjuta/element-property-protected-16.png
+share/pixmaps/anjuta/element-property-public-16.png
+share/pixmaps/anjuta/element-structure-16.png
 share/pixmaps/anjuta/gbf-build.png
 share/pixmaps/anjuta/gbf-install.png
 share/pixmaps/anjuta/js_debugger.png

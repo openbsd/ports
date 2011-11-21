@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.2 2011/09/18 19:26:52 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2011/11/21 15:21:33 ajacoutot Exp $
 --- configure.ac.orig	Sun Sep 18 15:14:26 2011
 +++ configure.ac	Sun Sep 18 17:44:15 2011
 @@ -80,10 +80,7 @@ AC_PROG_LEX
@@ -13,15 +13,3 @@ $OpenBSD: patch-configure_ac,v 1.2 2011/09/18 19:26:52 jasper Exp $
  AC_LANG([C])
  AC_LANG([C++])
  AC_PROG_CXX
-@@ -294,10 +291,7 @@ fi
- 
- AM_CONDITIONAL(HAVE_PYTHON, [test x$have_python = xyes])
- 
--PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB],
--     [libgda-5.0 >= $GDA5_REQUIRED],,
--     [PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB],
--         [libgda-4.0 >= $GDA4_REQUIRED])])
-+PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB], [])
- 
- dnl Disable packagekit support
- dnl -----------------------------------

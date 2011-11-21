@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/11/21 10:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/11/21 15:21:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.2.2
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -41,14 +42,10 @@ WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.14 vte2_90
 WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += dbus-1 dbus-glib-1 javascriptcoregtk-3.0 magic
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += gcrypt gda-5.0 gnome-keyring gpg-error ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
 			devel/bison
-# libgda is needed by the symbol-db plugin, which we don't build on OpenBSD.
-# though GDA_CFLAGS is used in various Makefile's. So instead of changing
-# dozens of files, we just drop the LIB_DEPENDS and keep the BUILD_DEPENDS.
-BUILD_DEPENDS+=		x11/gnome/libgda
 RUN_DEPENDS=		misc/shared-mime-info
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
@@ -58,7 +55,8 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
-			x11/gtksourceview3
+			x11/gtksourceview3 \
+			x11/gnome/libgda
 
 # needed by plugins/class-gen/plugin.c
 RUN_DEPENDS += devel/autogen
@@ -71,7 +69,8 @@ MODGNOME_TOOLS= 	goi vala yelp
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_STYLE=	autoconf gnu
-CONFIGURE_ARGS+=	--enable-plugin-subversion
+CONFIGURE_ARGS+=	--enable-plugin-subversion \
+			--with-symbol-db-shm=/tmp
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz
