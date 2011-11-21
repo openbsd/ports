@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/21 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/21 13:43:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
 GNOME_VERSION=		4.99.6
+REVISION=		0
 
 SHARED_LIBS +=  gdamm-5.0            0.1     # 13.0
 
@@ -34,7 +35,7 @@ BUILD_DEPENDS=		archivers/gtar \
 			devel/m4
 
 LIB_DEPENDS=		devel/glib2mm \
-			x11/gnome/libgda
+			x11/gnome/libgda>=5.0.2v2
 
 CONFIGURE_ENV=		ac_cv_path_DOT= \
 			ac_cv_path_XSLTPROC= \
