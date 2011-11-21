@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1137 2011/11/21 12:16:42 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1138 2011/11/21 12:20:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1894,6 +1894,10 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		h="===> ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$pkg -"; \
 		for second_pass in false true; do \
 			if $$check_install; then \
+				case ${PREPARE_CHECK_ONLY:L} in \
+				yes) \
+						second_pass=true;; \
+				esac; \
 				${_force_update_fragment}; \
 				if ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg" -r "$$pkg" $$default; then \
 					${ECHO_MSG} "$$h found"; \
@@ -1901,11 +1905,6 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				else \
 					${ECHO_MSG} "$$h not found"; \
 					${ECHO_MSG} "     (or $$default does not match)"; \
-					case ${PREPARE_CHECK_ONLY:L} in \
-					yes) \
-							${REPORT_PROBLEM}; \
-							exit 1;; \
-					esac; \
 				fi; \
 			else \
 				if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; \
