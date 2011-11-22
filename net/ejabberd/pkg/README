@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/11/22 17:11:07 gsoares Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -32,15 +32,15 @@ $OpenBSD: README,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
 
 
 * Running
-  Control is done using ${LOCALBASE}/sbin/ejabberdctl, run it without
+  Control is done using ${TRUEPREFIX}/sbin/ejabberdctl, run it without
   arguments for list of possible commands and flags. It needs to be
   executed as either root or _ejabberd user.
 
   To start ejabberd at boot time, you may insert the following
   into ${SYSCONFDIR}/rc.local:
 
-    if [ -x ${LOCALBASE}/sbin/ejabberdctl ]; then
-	echo -n ' ejabberd';   ${LOCALBASE}/sbin/ejabberdctl start
+    if [ -x ${TRUEPREFIX}/sbin/ejabberdctl ]; then
+	echo -n ' ejabberd';   ${TRUEPREFIX}/sbin/ejabberdctl start
     fi
 
 

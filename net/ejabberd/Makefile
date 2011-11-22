@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2011/06/03 13:45:43 gsoares Exp $
+# $OpenBSD: Makefile,v 1.27 2011/11/22 17:11:07 gsoares Exp $
 
 COMMENT=		jabber server written in Erlang
 
-V=			2.1.6
+V=			2.1.9
 DISTNAME=		ejabberd-$V
-REVISION=		1
 
 CATEGORIES=		net
 
@@ -12,7 +11,7 @@ HOMEPAGE=		http://www.ejabberd.im/
 
 MAINTAINER=		Wiktor Izdebski <vicviq@gmail.com>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,8 +22,8 @@ WANTLIB=		expat crypto ssl z
 MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
 
 MODULES=		converters/libiconv
-BUILD_DEPENDS=		lang/erlang>=12b.0
-RUN_DEPENDS=		lang/erlang>=12b.0
+BUILD_DEPENDS=		lang/erlang
+RUN_DEPENDS=		lang/erlang
 
 MAKE_FLAGS+=		EJABBERDDIR=${PREFIX}/lib/ejabberd \
 			LOGDIR=${EJLOGDIR} \
