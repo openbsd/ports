@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.16 2011/11/14 21:57:47 espie Exp $
+# $OpenBSD: Port.pm,v 1.17 2011/11/22 16:48:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -65,6 +65,7 @@ sub run
 	print ">>> Running $t in $fullpkgpath\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
+	    "PREPARE_CHECK_ONLY=Yes",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
 	if ($job->{special}) {
 		push(@args, "WRKOBJDIR=/tmp/ports");
@@ -114,7 +115,9 @@ sub finalize
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
 	if ($core->{status} == 0) {
-		$job->add_normal_tasks;
+		my $v = $job->{v};
+		my $builder = $job->{builder};
+		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath});
 	} else {
 		$job->{signature_only} = 1;
 	}
