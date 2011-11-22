@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/12 13:02:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/22 16:22:22 sthen Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
@@ -24,6 +24,8 @@ ${P5SITE}/FlashVideo/Site/Bing.pm
 ${P5SITE}/FlashVideo/Site/Blip.pm
 ${P5SITE}/FlashVideo/Site/Break.pm
 ${P5SITE}/FlashVideo/Site/Brightcove.pm
+${P5SITE}/FlashVideo/Site/Canalvie.pm
+${P5SITE}/FlashVideo/Site/Canoe.pm
 ${P5SITE}/FlashVideo/Site/Cartoonnetwork.pm
 ${P5SITE}/FlashVideo/Site/Cbs.pm
 ${P5SITE}/FlashVideo/Site/Cbsnews.pm
@@ -47,6 +49,7 @@ ${P5SITE}/FlashVideo/Site/Grindtv.pm
 ${P5SITE}/FlashVideo/Site/Ima.pm
 ${P5SITE}/FlashVideo/Site/Itv.pm
 ${P5SITE}/FlashVideo/Site/Joemonster.pm
+${P5SITE}/FlashVideo/Site/Kanal5play.pm
 ${P5SITE}/FlashVideo/Site/Kidswb.pm
 ${P5SITE}/FlashVideo/Site/Last.pm
 ${P5SITE}/FlashVideo/Site/Liveleak.pm
@@ -82,6 +85,7 @@ ${P5SITE}/FlashVideo/Site/Stagevu.pm
 ${P5SITE}/FlashVideo/Site/Starwars.pm
 ${P5SITE}/FlashVideo/Site/Stickam.pm
 ${P5SITE}/FlashVideo/Site/Stupidvideos.pm
+${P5SITE}/FlashVideo/Site/Svtplay.pm
 ${P5SITE}/FlashVideo/Site/Tbs.pm
 ${P5SITE}/FlashVideo/Site/Techcast.pm
 ${P5SITE}/FlashVideo/Site/Ted.pm
@@ -93,8 +97,13 @@ ${P5SITE}/FlashVideo/Site/Traileraddict.pm
 ${P5SITE}/FlashVideo/Site/Truveo.pm
 ${P5SITE}/FlashVideo/Site/Tudou.pm
 ${P5SITE}/FlashVideo/Site/Tv.pm
+${P5SITE}/FlashVideo/Site/Tv3play.pm
+${P5SITE}/FlashVideo/Site/Tv4play.pm
+${P5SITE}/FlashVideo/Site/Tv6play.pm
+${P5SITE}/FlashVideo/Site/Tv8play.pm
 ${P5SITE}/FlashVideo/Site/Tva.pm
 ${P5SITE}/FlashVideo/Site/Ustream.pm
+${P5SITE}/FlashVideo/Site/Videobb.pm
 ${P5SITE}/FlashVideo/Site/Videojug.pm
 ${P5SITE}/FlashVideo/Site/Videolectures.pm
 ${P5SITE}/FlashVideo/Site/Vimeo.pm
