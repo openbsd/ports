@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/22 19:38:10 jasper Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -12,8 +12,6 @@ LIB_DEPENDS=	x11/kde/libs3 \
 
 CONFIGURE_ARGS+=--with-ogle-libs='${LOCALBASE}/lib/ogle -L${LOCALBASE}/lib'
 CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
-
-USE_LIBTOOL=	Yes
 
 MODULES=	x11/kde devel/gettext
 
