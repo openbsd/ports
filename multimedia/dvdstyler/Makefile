@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/27 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/22 09:05:33 ajacoutot Exp $
+
+BROKEN=			needs an update
 
 COMMENT=		DVD authoring application
 
