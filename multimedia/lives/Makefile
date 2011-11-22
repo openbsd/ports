@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/17 08:56:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/22 15:41:23 jasper Exp $
+
+SHARED_ONLY =		Yes
 
 COMMENT =		video editor and a VJ tool
 
@@ -29,7 +31,6 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
 WANTLIB += stdc++ theora usbhid xcb xcb-render xcb-shm z
 
-SHARED_ONLY =		Yes
 MODULES =		devel/gettext
 RUN_DEPENDS =		graphics/ImageMagick \
 			x11/mplayer \
@@ -42,9 +43,7 @@ LIB_DEPENDS =		multimedia/libtheora \
 			multimedia/libdv \
 			x11/gtk+2
 
-USE_LIBTOOL =		gnu
-# Our libtool dies with the next option
-LIBTOOL_FLAGS = 	--tag=disable-static
+USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
