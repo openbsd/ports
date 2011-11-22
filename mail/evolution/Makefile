@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2011/11/15 17:12:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2011/11/22 15:29:44 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -9,6 +9,7 @@ GNOME_VERSION=		3.2.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
+REVISION-main=		0
 REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
@@ -101,7 +102,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/gsettings-desktop-schemas
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libpst \
-			databases/evolution-data-server>=3.2.1 \
+			databases/evolution-data-server>=3.2.2 \
 			databases/openldap \
 			devel/libnotify>=0.7.2 \
 			security/nss \
