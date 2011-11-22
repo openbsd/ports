@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.PIC-go,v 1.1 2011/11/19 22:19:53 pascal Exp $
+@comment $OpenBSD: PFRAG.PIC-go,v 1.2 2011/11/22 21:46:39 pascal Exp $
 lib/fpic/go/
 lib/fpic/go/${V}/
 lib/fpic/go/${V}/${CONFIG}/
@@ -148,5 +148,5 @@ lib/fpic/go/${V}/${CONFIG}/websocket.gox
 lib/fpic/go/${V}/${CONFIG}/xml.gox
 lib/fpic/libgo.a
 lib/fpic/libgo.la
-@lib lib/fpic/libgo.so.${LIBgo_VERSION}
+@comment @lib lib/fpic/libgo.so.${LIBgo_VERSION}
 lib/fpic/libgobegin.a

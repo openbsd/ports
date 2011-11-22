@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.3 2011/11/19 22:19:53 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.4 2011/11/22 21:46:39 pascal Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -32,22 +32,17 @@ COMPILER_VERSION ?= gcc2
 _MODGCC4_LINKS =
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
-.  if ${MODGCC4_LANGS:L:Mc} && ${COMPILER_VERSION:L:Ngcc4*}
+.  if ${MODGCC4_LANGS:L:Mc}
 BUILD_DEPENDS += lang/gcc/4.6>=4.6,<4.7
 _MODGCC4_LINKS += egcc gcc egcc cc
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mc++}
-.    if ${COMPILER_VERSION:L:Mgcc4*}
-MODGCC4STDCPP = stdc++
-WANTLIB += stdc++>=53.0
-.    else
 BUILD_DEPENDS += lang/gcc/4.6,-c++>=4.6,<4.7
 MODGCC4STDCPP = estdc++
 LIB_DEPENDS += lang/gcc/4.6,-estdc>=4.6,<4.7
 WANTLIB += estdc++>=12
 _MODGCC4_LINKS += eg++ g++ eg++ c++
-.    endif
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}

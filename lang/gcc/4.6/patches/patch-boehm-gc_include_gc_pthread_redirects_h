@@ -1,6 +1,6 @@
-$OpenBSD: patch-boehm-gc_include_gc_pthread_redirects_h,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- boehm-gc/include/gc_pthread_redirects.h.orig	Sat Nov 12 09:59:52 2011
-+++ boehm-gc/include/gc_pthread_redirects.h	Sat Nov 12 10:01:19 2011
+$OpenBSD: patch-boehm-gc_include_gc_pthread_redirects_h,v 1.2 2011/11/22 21:46:39 pascal Exp $
+--- boehm-gc/include/gc_pthread_redirects.h.orig	Tue Aug 22 00:07:30 2006
++++ boehm-gc/include/gc_pthread_redirects.h	Tue Nov 22 14:08:19 2011
 @@ -52,7 +52,7 @@
    int GC_pthread_create(pthread_t *new_thread,
                          const pthread_attr_t *attr,
@@ -10,12 +10,16 @@ $OpenBSD: patch-boehm-gc_include_gc_pthread_redirects_h,v 1.1.1.1 2011/11/14 13:
    int GC_pthread_sigmask(int how, const sigset_t *set, sigset_t *oset);
  #endif
    int GC_pthread_join(pthread_t thread, void **retval);
-@@ -72,7 +72,7 @@
+@@ -72,8 +72,11 @@
  # define pthread_join GC_pthread_join
  # define pthread_detach GC_pthread_detach
  
 -#ifndef GC_DARWIN_THREADS
 +#if !defined(GC_DARWIN_THREADS) && !defined(GC_OPENBSD_THREADS)
  # define pthread_sigmask GC_pthread_sigmask
++#endif
++
++#ifndef GC_DARWIN_THREADS
  # define dlopen GC_dlopen
  #endif
+ 

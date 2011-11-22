@@ -1,7 +1,7 @@
-$OpenBSD: patch-boehm-gc_openbsd_stop_world_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- boehm-gc/openbsd_stop_world.c.orig	Thu Mar 12 15:07:24 2009
-+++ boehm-gc/openbsd_stop_world.c	Thu Mar 12 18:07:50 2009
-@@ -0,0 +1,184 @@
+$OpenBSD: patch-boehm-gc_openbsd_stop_world_c,v 1.2 2011/11/22 21:46:39 pascal Exp $
+--- boehm-gc/openbsd_stop_world.c.orig	Sun Nov 20 19:18:24 2011
++++ boehm-gc/openbsd_stop_world.c	Mon Nov 21 01:15:08 2011
+@@ -0,0 +1,193 @@
 +#include "private/pthread_support.h"
 +
 +/* derived from pthread_stop_world.c */
@@ -184,5 +184,14 @@ $OpenBSD: patch-boehm-gc_openbsd_stop_world_c,v 1.1.1.1 2011/11/14 13:00:57 pasc
 +  if (pthread_resume_np(t -> id) != 0)
 +    ABORT("pthread_resume_np failed");
 +}
++
++int GC_is_thread_suspended(pthread_t thread) {
++  GC_thread t = GC_lookup_thread(thread);
++  if (t == NULL)
++    ABORT("querying suspension state of unknown thread");
++
++  return (t -> flags & SUSPENDED);
++}
++
 +
 +#endif

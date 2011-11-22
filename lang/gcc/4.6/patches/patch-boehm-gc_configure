@@ -1,7 +1,16 @@
-$OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- boehm-gc/configure.orig	Sat Nov 12 09:45:26 2011
-+++ boehm-gc/configure	Sat Nov 12 09:53:37 2011
-@@ -14855,6 +14855,12 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
+$OpenBSD: patch-boehm-gc_configure,v 1.2 2011/11/22 21:46:39 pascal Exp $
+--- boehm-gc/configure.orig	Wed Oct 26 11:30:24 2011
++++ boehm-gc/configure	Sun Nov 20 19:15:55 2011
+@@ -615,6 +615,8 @@ CPLUSPLUS_TRUE
+ target_all
+ EXTRA_TEST_LIBS
+ extra_ldflags_libgc
++OPENBSD_THREADS_TRUE
++OPENBSD_THREADS_FALSE
+ POWERPC_DARWIN_FALSE
+ POWERPC_DARWIN_TRUE
+ THREADLIBS
+@@ -14855,6 +14857,12 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&5
  $as_echo "$as_me: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&2;}
  	;;
@@ -14,7 +23,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
        *-*-kfreebsd*-gnu)
         $as_echo "#define GC_FREEBSD_THREADS 1" >>confdefs.h
  
-@@ -14995,6 +15001,13 @@ else
+@@ -14995,6 +15003,13 @@ else
    POWERPC_DARWIN_FALSE=
  fi
  
@@ -28,7 +37,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
  
  # Darwin needs a few extra special tests to deal with variation in the
  # system headers.
-@@ -15294,6 +15307,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
+@@ -15294,6 +15309,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
      ;;
   sparc-*-netbsd*)
      machdep="sparc_netbsd_mach_dep.lo"
