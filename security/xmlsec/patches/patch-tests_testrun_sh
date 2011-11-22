@@ -1,0 +1,15 @@
+$OpenBSD: patch-tests_testrun_sh,v 1.1 2011/11/22 15:36:33 jasper Exp $
+
+Remove bash-ism.
+
+--- tests/testrun.sh.orig	Tue Nov 22 16:34:47 2011
++++ tests/testrun.sh	Tue Nov 22 16:34:55 2011
+@@ -436,7 +436,7 @@ execXkmsServerRequestTest() {
+ rm -rf $tmpfile $tmpfile.2 tmpfile.3
+ 
+ # run tests
+-source "$testfile"
++. "$testfile"
+ 
+ # cleanup
+ rm -rf $tmpfile $tmpfile.2 tmpfile.3
