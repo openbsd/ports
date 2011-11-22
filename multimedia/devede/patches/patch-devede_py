@@ -1,6 +1,6 @@
-$OpenBSD: patch-devede_py,v 1.15 2011/06/20 13:24:28 ajacoutot Exp $
---- devede.py.orig	Sat Jul  3 00:09:18 2010
-+++ devede.py	Mon Jun 20 15:19:37 2011
+$OpenBSD: patch-devede_py,v 1.16 2011/11/22 08:55:23 ajacoutot Exp $
+--- devede.py.orig	Sun Nov 20 13:26:23 2011
++++ devede.py	Tue Nov 22 09:43:11 2011
 @@ -19,6 +19,13 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -15,25 +15,18 @@ $OpenBSD: patch-devede_py,v 1.15 2011/06/20 13:24:28 ajacoutot Exp $
  
  import sys
  import os
-@@ -35,7 +42,7 @@ import pickle
+@@ -34,8 +41,8 @@ import shutil
+ import pickle
  import cairo
  
- print "DeVeDe 3.16.9"
+-print "DeVeDe 3.17.1"
 -if (sys.platform!="win32") and (sys.platform!="win64"):
++print "DeVeDe 3.18.0"
 +if (sys.platform!="win32") and (sys.platform!="win64") and not sys.platform.startswith('openbsd'):
  	try:
  		print "Locale: "+str(os.environ["LANG"])
  	except:
-@@ -44,7 +51,7 @@ if (sys.platform!="win32") and (sys.platform!="win64")
- # append the directories where we install the devede's own modules
- tipo=-1
- try:
--	fichero=open("/usr/share/devede/wmain.ui","r")
-+	fichero=open("${PREFIX}/share/devede/wmain.ui","r")
- 	fichero.close()
- 	tipo=0
- 	found=True
-@@ -78,13 +85,13 @@ if tipo==0:
+@@ -79,13 +86,13 @@ if tipo==0:
  	#arbol=gtk.Builder("/usr/share/devede/devede.glade",domain="devede")
  	# append the directories where we install the devede's own modules
  

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/11/22 08:55:23 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.16.9
-REVISION=		0
+DISTNAME=	devede-3.18.0
 
 CATEGORIES=	multimedia x11
 
@@ -36,6 +35,8 @@ PKG_ARCH=	${MACHINE_ARCH},${ARCH}
 PKG_ARCH=	*
 .endif
 
+WRKDIST=	${WRKDIR}/devede
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
@@ -49,7 +50,7 @@ pre-configure:
 
 do-install:
 	cd ${WRKSRC} && \
-		/bin/sh install.sh prefix=${TRUEPREFIX} libdir=${MODPY_SITEPKG} uninstall=no
+		/bin/sh install.sh prefix=${TRUEPREFIX} uninstall=no
 	find ${PREFIX} -name \*.orig -or -name \*~ | xargs rm
 
 .include <bsd.port.mk>
