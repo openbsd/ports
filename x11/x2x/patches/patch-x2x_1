@@ -1,9 +1,11 @@
-$OpenBSD: patch-x2x_1,v 1.1 2011/11/18 13:09:17 jasper Exp $
+$OpenBSD: patch-x2x_1,v 1.2 2011/11/22 09:33:09 jasper Exp $
 
-Fix display of usage line.
+- Fix display of usage line.
+- Various fixes including -north/-south support.
+  From Debian's x2x_1.27-8 patch.
 
---- x2x.1.orig	Fri Nov 18 14:05:25 2011
-+++ x2x.1	Fri Nov 18 14:06:03 2011
+--- x2x.1.orig	Wed Aug 20 18:14:51 1997
++++ x2x.1	Mon Nov 21 14:46:52 2011
 @@ -3,7 +3,7 @@
  .SH NAME
  x2x \- X to X connection
@@ -13,3 +15,102 @@ Fix display of usage line.
  .SH DESCRIPTION
  x2x allows the keyboard and mouse on one ("from") X display to be used to
  control another ("to") X display.  Since x2x uses the XTEST extension,
+@@ -17,12 +17,12 @@ the input focus.  Clicking on the x2x window causes th
+ a subsequent multiple button click on the "to" display returns control
+ to the "from" display.
+ 
+-If the -east or -west options are specified on the command line, x2x
+-starts up with a different interface.  When the mouse moves to the
+-(east or west) side of the default screen on the "from" display, the
+-cursor slides over to the "to" display.  When the mouse returns to
+-to side of the "to" display that it entered, it slides back onto
+-the "from" display.
++If the -north, -south, -east or -west options are specified on the
++command line, x2x starts up with a different interface.  When the mouse
++moves to the top, bottom, east side or west side of the default screen
++on the "from" display, the cursor slides over to the "to" display.
++When the mouse returns to to side of the "to" display that it entered,
++it slides back onto the "from" display.
+ 
+ Unless the -nosel option is specified, x2x relays X selections from
+ one display to the other.
+@@ -55,6 +55,14 @@ Default is equivalent to the default display.
+ Indicates the ("from") display that remotely controls the "to" display.
+ Default is equivalent to the default display.
+ .TP
++.B \-north
++.IP 
++Slide off the north side of the "to" display onto the "from" display.
++.TP
++.B \-south
++.IP 
++Slide off the south side of the "to" display onto the "from" display.
++.TP
+ .B \-east
+ .IP 
+ Slide off the east side of the "to" display onto the "from" display.
+@@ -70,7 +78,7 @@ The font used in the x2x window. (Overridden by -east 
+ .B \-geometry \fIspecification\fP
+ .IP 
+ The X geometry specification for the x2x window.  
+-(Overridden by -east or -west.)
++(Overridden by -north, -south, -east or -west.)
+ .TP
+ .B \-wait
+ .IP 
+@@ -85,10 +93,16 @@ X server to track the cursor.
+ .TP
+ .B \-buttonblock
+ .IP 
+-If this option is enabled with -east or -west, the cursor will not
+-slide back onto the "from" display when one or more mouse buttons
+-are pressed.
++If this option is enabled with -north, -south, -east or -west, the
++cursor will not slide back onto the "from" display when one or more
++mouse buttons are pressed.
+ .TP
++.B \-buttonmap \fIbutton#\fP \fR"\fP\fIKeySym ...\fP\fR"\fP
++.IP 
++Map a mouse button to one or more keyboard events on the "to" display.
++This is useful if you have a mouse with more buttons than the remote X
++server can handle.
++.TP
+ .B \-nomouse
+ .IP 
+ Don't capture the mouse.
+@@ -119,11 +133,12 @@ To disable this feature, use the \-noautoup command li
+ .TP
+ .B \-resurface
+ .IP 
+-Ugly hack to work-around window manager ugliness.  The -east and -west
+-modes actually put a small window on the side of the "from" display.
+-This option causes this window to resurface itself if another window
+-ever obscures it.  This option can cause really nasty behavior if another
+-application tries to do the same thing.  Useful for login scripts.
++Ugly hack to work-around window manager ugliness.  The -north, -south,
++-east and -west modes actually put a small window on the side of the
++"from" display.  This option causes this window to resurface itself if
++another window ever obscures it.  This option can cause really nasty
++behavior if another application tries to do the same thing.  Useful for
++login scripts.
+ .TP
+ .B \-shadow \fIdisplay\fP
+ .IP 
+@@ -137,10 +152,17 @@ key only seems to work on every other press, try this 
+ sticky option prevents autoup for the specified key.  Look in
+ /usr/include/X11/keysymdef.h for a list of valid names of keys
+ (remove the leading XK_).
++.TP
++.B \-label \fIlabel\fP
++Override the title of the control window (useful when running over ssh).
++.IP 
+ .SH AUTHOR
+ David Chaiken
+ .br
+ (chaiken@pa.dec.com)
++.PP
++Addition of -north and -south options by Charles Briscoe-Smith
++<cpbs@debian.org>.
+ .SH BUGS
+ This software is experimental!  Heaven help you if your network
+ connection should go down.  Caveat hacker.  TANSTAAFL.
