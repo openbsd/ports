@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/27 18:03:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/22 23:42:34 gsoares Exp $
 
 COMMENT=	perl5 interface to GnuPG
 
 MODULES=	cpan
-DISTNAME=	GnuPG-0.17
+DISTNAME=	GnuPG-0.18
 CATEGORIES=	security
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 RUN_DEPENDS=	security/gnupg
 
