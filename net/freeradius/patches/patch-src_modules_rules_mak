@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_modules_rules_mak,v 1.6 2010/05/17 16:39:25 sthen Exp $
---- src/modules/rules.mak.orig	Wed Dec 30 15:44:35 2009
-+++ src/modules/rules.mak	Mon May 10 14:10:43 2010
+$OpenBSD: patch-src_modules_rules_mak,v 1.7 2011/11/22 19:14:20 jasper Exp $
+--- src/modules/rules.mak.orig	Mon Jun 20 16:57:14 2011
++++ src/modules/rules.mak	Tue Nov 22 20:11:06 2011
 @@ -121,9 +121,9 @@ build-module: $(TARGET).la $(RLM_UTILS)
  	done
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_modules_rules_mak,v 1.6 2010/05/17 16:39:25 sthen Exp $
 +	$(LIBTOOL) --mode=link $(CC) -avoid-version \
  	-module $(LINK_MODE) $(LDFLAGS) $(RLM_LDFLAGS) -o $@     \
 -	-rpath $(libdir) $^ $(LIBRADIUS) $(RLM_LIBS) $(LIBS)
-+	-rpath $(libdir)/freeradius $^ $(LIBRADIUS) $(RLM_LIBS) $(LIBS)
++	-rpath $(libdir)/freeradius $< $(LIBRADIUS) $(RLM_LIBS) $(LIBS)
  
  #######################################################################
  #

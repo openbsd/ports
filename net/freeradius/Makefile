@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/22 13:57:29 pea Exp $
+# $OpenBSD: Makefile,v 1.40 2011/11/22 19:14:20 jasper Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -68,7 +68,7 @@ MULTI_PACKAGES=	-main
 SUBST_VARS+=	V
 
 USE_GMAKE=	Yes
-# depends on libltdl
+# undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
 USE_LIBTOOL=	gnu
 USE_GROFF =	Yes
 
