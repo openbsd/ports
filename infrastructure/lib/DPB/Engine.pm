@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.36 2011/11/14 21:57:47 espie Exp $
+# $OpenBSD: Engine.pm,v 1.37 2011/11/22 16:46:44 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -370,6 +370,21 @@ sub errors_string
 	return join(' ', @l);
 }
 
+sub lock_errors_string
+{
+	my ($self, $name) = @_;
+	my @l = ();
+	my $done = {};
+	for my $e (@{$self->{$name}}) {
+		my $s = $e->lockname;
+		if (!defined $done->{$s}) {
+			push(@l, $s);
+			$done->{$s} = 1;
+		}
+	}
+	return join(' ', @l);
+}
+
 sub fetchcount
 {
 	my ($self, $q, $t)= @_;
@@ -405,7 +420,7 @@ sub report
 	return join(" ",
 	    $self->statline,
 	    "!=".$self->count("ignored"))."\n".
-	    "L=".$self->errors_string('locks')."\n".
+	    "L=".$self->lock_errors_string('locks')."\n".
 	    "E=".$self->errors_string('errors')."\n";
 }
 
