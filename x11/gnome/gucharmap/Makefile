@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/11/14 17:46:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2011/11/22 15:01:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -28,10 +28,6 @@ WANTLIB += z
 MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
-
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=		gnu
 
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
