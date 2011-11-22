@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/11/22 15:34:10 jasper Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -7,7 +7,7 @@ VERSION=	1.2.18
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
-REVISION-main =	1
+REVISION-main =	2
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-openssl	4.0 \
@@ -42,8 +42,7 @@ LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/libxslt \
 			security/gnutls
 
-# depends on libltdl
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
