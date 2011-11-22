@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2011/11/22 15:51:21 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0
@@ -50,8 +50,7 @@ BUILD_DEPENDS=		graphics/netpbm
 
 ALL_TARGET=		all perl-build
 
-# using libltdl stuff
-USE_LIBTOOL=		gnu
+USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
