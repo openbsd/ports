@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.1 2010/05/17 16:39:25 sthen Exp $
---- configure.in.orig	Mon May 10 17:01:49 2010
-+++ configure.in	Mon May 10 17:08:27 2010
-@@ -474,7 +474,7 @@ dnl # to do the threading properly.
+$OpenBSD: patch-configure_in,v 1.2 2011/11/22 16:22:27 jasper Exp $
+--- configure.in.orig	Mon Jun 20 16:57:14 2011
++++ configure.in	Tue Nov 22 17:22:08 2011
+@@ -497,7 +497,7 @@ dnl # to do the threading properly.
  dnl #
    AC_CHECK_LIB(pthread, pthread_create,
  		[ CFLAGS="$CFLAGS -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1 2010/05/17 16:39:25 sthen Exp $
  		AC_CHECK_LIB(c_r, pthread_create,
  			    [ CFLAGS="$CFLAGS -pthread -D_THREAD_SAFE" ],
  			    [ WITH_THREADS="no" ]
-@@ -510,7 +510,8 @@ AC_CHECK_LIB(socket, getsockname)
+@@ -533,7 +533,8 @@ AC_CHECK_LIB(socket, getsockname)
  
  dnl Check for -lresolv
  dnl This library may be needed later.
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure_in,v 1.1 2010/05/17 16:39:25 sthen Exp $
  
  dnl Check if we need -lnsl. Usually if we want to
  dnl link against -lsocket we need to include -lnsl as well.
-@@ -771,12 +772,18 @@ FR_CHECK_TYPE_INCLUDE([
+@@ -806,12 +807,18 @@ FR_CHECK_TYPE_INCLUDE([
  ],uint32_t, unsigned int, [uint32_t should be the canonical 'network integer])
  
  AC_CHECK_TYPE(struct in6_addr, AC_DEFINE(HAVE_STRUCT_IN6_ADDR, 1, [IPv6 address structure]), [], [

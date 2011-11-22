@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_rlm_otp_configure,v 1.1 2008/01/21 22:21:24 rui Exp $
---- src/modules/rlm_otp/configure.orig	Wed May 23 21:29:24 2007
-+++ src/modules/rlm_otp/configure	Mon Jan 21 16:21:31 2008
-@@ -2905,7 +2905,7 @@ if test "${ac_cv_lib_ssl_SSL_new+set}" = set; then
+$OpenBSD: patch-src_modules_rlm_otp_configure,v 1.2 2011/11/22 16:22:27 jasper Exp $
+--- src/modules/rlm_otp/configure.orig	Mon Jun 20 16:57:14 2011
++++ src/modules/rlm_otp/configure	Tue Nov 22 17:22:06 2011
+@@ -3418,7 +3418,7 @@ if test "${ac_cv_lib_ssl_SSL_new+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
