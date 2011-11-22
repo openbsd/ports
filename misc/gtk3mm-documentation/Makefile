@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/18 10:58:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/11/22 07:11:23 ajacoutot Exp $
 
 COMMENT=	documentation for gtk3mm
 
 GNOME_PROJECT=	gtkmm-documentation
-GNOME_VERSION=	3.2.0
+GNOME_VERSION=	3.2.1
 
 PKGNAME=	gtk3mm-documentation-${GNOME_VERSION}
 
