@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.23 2011/11/14 19:03:41 espie Exp $
+# $OpenBSD: Vars.pm,v 1.24 2011/11/22 16:44:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -118,7 +118,7 @@ sub grab_list
 	my $subdir;
 	my $category;
 	my $reset = sub {
-			DPB::PkgPath->handle_equivalences($grabber->{state}, $h);
+			$h = DPB::PkgPath->handle_equivalences($grabber->{state}, $h, $subdirs);
 			$grabber->{fetch}->build_distinfo($h, 
 			    $grabber->{state}->{fetch_only});
 			DPB::PkgPath->merge_depends($h);

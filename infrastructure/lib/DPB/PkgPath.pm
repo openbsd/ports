@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.21 2011/11/13 22:18:04 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.22 2011/11/22 16:44:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -222,17 +222,35 @@ sub simplifies_to
 	print $quicklog $self->fullpkgpath, " -> ", $simpler->fullpkgpath, "\n";
 }
 
+# XXX
+# this is complicated, we want to mark equivalent paths, but we do not want
+# to record them as to build by default, but if we're asking for explicit
+# subdirs, we have to deal with them.
+# so, create $h that holds all paths, and selectively copy the ones from
+# todo, along with the set in $want that corresponds to the subdirlist.
+
 sub handle_equivalences
 {
-	my ($class, $state, $todo) = @_;
+	my ($class, $state, $todo, $want) = @_;
 	my $h = {};
+	my $result = {};
 	for my $v (values %$todo) {
 		$h->{$v} = $v;
+		$result->{$v} = $v;
 		$v->handle_default_flavor($h, $state);
 		$v->handle_default_subpackage($h, $state);
 	}
 	DPB::Job::Port->equates($h);
 	DPB::Heuristics->equates($h);
+
+	if (defined $want) {
+		for my $v (values %$h) {
+			if ($want->{$v->fullpkgpath}) {
+				$result->{$v} = $v;
+			}
+		}
+	}
+	return $result;
 }
 
 sub zap_default
