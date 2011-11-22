@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/18 12:20:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.31 2011/11/22 16:12:19 jasper Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -97,8 +97,7 @@ CONFIGURE_ARGS +=	--disable-doc \
 CONFIGURE_ENV +=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-# Needed to properly build static archives.
-USE_LIBTOOL =		gnu
+USE_LIBTOOL =		Yes
 
 # Stupid crap in /src/modules/illume/dicts chokes in regular make.
 # Some issue with the "(US)" bit
