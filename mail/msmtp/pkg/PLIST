@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/05 18:34:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/11/22 18:24:50 gsoares Exp $
 @bin bin/msmtp
 @info info/msmtp.info
 @man man/man1/msmtp.1
 share/doc/msmtp/
 share/doc/msmtp/Mutt+msmtp.txt
-share/doc/msmtp/msmtp.html
 share/examples/msmtp/
 share/examples/msmtp/msmtp-enqueue.sh
 share/examples/msmtp/msmtp-listqueue.sh
@@ -14,7 +13,6 @@ share/examples/msmtp/msmtprc-system.example
 share/examples/msmtp/msmtprc-user.example
 share/examples/msmtp/set_sendmail.sh
 share/locale/de/LC_MESSAGES/msmtp.mo
-share/locale/pt_BR/LC_MESSAGES/msmtp.mo
 share/msmtp/
 share/msmtp/msmtpqueue/
 share/msmtp/msmtpqueue/ChangeLog
