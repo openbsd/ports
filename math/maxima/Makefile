@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/15 13:02:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.20 2011/11/22 11:36:55 edd Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
@@ -8,6 +8,7 @@ DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
 HOMEPAGE=		http://maxima.sourceforge.net/
+MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes 
