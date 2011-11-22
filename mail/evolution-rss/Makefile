@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/31 08:56:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/22 15:31:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		RSS reader plugin for evolution
 
 GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90.20111007
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		mail
 
@@ -47,7 +47,7 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 LIB_DEPENDS=		devel/libsoup,-gnome \
-			mail/evolution,-main>=3.0.2
+			mail/evolution,-main>=3.2.1
 
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
@@ -64,9 +64,9 @@ MASTER_SITES=		http://distfiles.bsdfrog.org/
 
 BUILD_DEPENDS +=	x11/gnome/common \
 			devel/autoconf/${AUTOCONF_VERSION} \
-			devel/automake/${AUTOMAKE_VERSION}
+			devel/automake/${AUTOMAKE_VERSION} \
+			devel/libtool
 
-USE_LIBTOOL=		gnu
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	# empty
