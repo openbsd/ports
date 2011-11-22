@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/07 08:03:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/11/22 15:47:07 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,6 +35,7 @@ MODULES=		devel/gettext \
 			textproc/intltool
 
 USE_GMAKE=		Yes
+# undefined reference to `lt__PROGRAM__LTX_preloaded_symbols'
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
