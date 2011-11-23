@@ -1,0 +1,20 @@
+$OpenBSD: patch-plugin_npapi_plugin_cpp,v 1.5 2011/11/23 21:13:27 jasper Exp $
+
+Security fix for SA46955
+GNU Gnash Cookie Disclosure Security Issue:
+
+From fa481c116e65ccf9137c7ddc8abc3cf05dc12f55 Mon Sep 17 00:00:00 2001
+From: Gabriele Giacone <1o5g4r8o@gmail.com>
+Date: Sun, 20 Nov 2011 17:27:42 +0100
+Subject: [PATCH] Make cookie file not world-readable. Fixes http://bugs.debian.org/649384
+
+--- plugin/npapi/plugin.cpp.orig	Wed Nov 23 13:36:08 2011
++++ plugin/npapi/plugin.cpp	Wed Nov 23 13:36:21 2011
+@@ -1102,6 +1102,7 @@ nsPluginInstance::setupCookies(const std::string& page
+     ss << "/tmp/gnash-cookies." << getpid();
+ 
+     cookiefile.open(ss.str().c_str(), std::ios::out | std::ios::trunc);
++    chmod (ss.str().c_str(), 0600);
+ 
+     // Firefox provides cookies in the following format:
+     //
