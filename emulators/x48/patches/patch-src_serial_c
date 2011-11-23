@@ -1,113 +1,45 @@
-$OpenBSD: patch-src_serial_c,v 1.1 2002/02/21 01:04:23 naddy Exp $
---- src/serial.c.orig	Wed Jan 11 19:24:04 1995
-+++ src/serial.c	Thu Feb 21 01:32:51 2002
-@@ -77,6 +77,8 @@
- #ifdef SOLARIS
- #include <sys/stream.h>
- #include <sys/stropts.h>
-+#endif
-+#if defined(SOLARIS) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
- #include <sys/termios.h>
- #endif
- 
-@@ -238,7 +240,7 @@ serial_init()
- 
-   if (ttyp >= 0)
+$OpenBSD: patch-src_serial_c,v 1.2 2011/11/23 19:36:44 pascal Exp $
+
+Adjust the serial code for *BSD
+
+--- src/serial.c.orig	Mon Nov 14 22:03:40 2011
++++ src/serial.c	Tue Nov 15 11:45:59 2011
+@@ -134,7 +134,19 @@ serial_init()
+   ttyp = -1;
+   if (useTerminal)
      {
--#if defined(SUNOS) || defined(HPUX)
-+#if defined(SUNOS) || defined(HPUX) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
-       if (tcgetattr(ttyp, &ttybuf) < 0)
- #else
-       if (ioctl(ttyp, TCGETS, (char *)&ttybuf) < 0)
-@@ -263,7 +265,7 @@ serial_init()
- 
-   if (ttyp >= 0)
-     {
--#if defined(SUNOS) || defined (HPUX)
-+#if defined(SUNOS) || defined (HPUX) || defined(__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
-       if (tcsetattr(ttyp, TCSANOW, &ttybuf) < 0)
- #else
-       if (ioctl(ttyp, TCSETS, (char *)&ttybuf) < 0)
-@@ -291,7 +293,7 @@ serial_init()
- 
-   if (ir_fd >= 0)
-     {
--#if defined(SUNOS) || defined (HPUX)
-+#if defined(SUNOS) || defined (HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
-       if (tcgetattr(ir_fd, &ttybuf) < 0)
- #else
-       if (ioctl(ir_fd, TCGETS, (char *)&ttybuf) < 0)
-@@ -315,7 +317,7 @@ serial_init()
- 
-   if (ir_fd >= 0)
-     {
--#if defined(SUNOS) || defined(HPUX)
-+#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
-       if (tcsetattr(ir_fd, TCSANOW, &ttybuf) < 0)
- #else
-       if (ioctl(ir_fd, TCSETS, (char *)&ttybuf) < 0)
-@@ -344,7 +346,7 @@ int baud;
- 
-   if (ir_fd >= 0)
-     {
--#if defined(SUNOS) || defined (HPUX)
-+#if defined(SUNOS) || defined (HPUX) || defined (__FreeBSD__) || defined (__bsdi__) || defined(__OpenBSD__)
-       if (tcgetattr(ir_fd, &ttybuf) < 0)
- #else
-       if (ioctl(ir_fd, TCGETS, (char *)&ttybuf) < 0)
-@@ -358,6 +360,10 @@ int baud;
-         }
-     }
- 
-+#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
-+  cfsetspeed(&ttybuf, baud);
-+#else
-+
-   ttybuf.c_cflag &= ~CBAUD;
- 
-   baud &= 0x7;
-@@ -404,9 +410,11 @@ int baud;
-       ttybuf.c_cflag |= B9600;
-     }
- 
-+#endif /* FreeBSD */
-+
-   if (ir_fd >= 0)
-     {
--#if defined(SUNOS) || defined(HPUX)
-+#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
-       if (tcsetattr(ir_fd, TCSANOW, &ttybuf) < 0)
- #else
-       if (ioctl(ir_fd, TCSETS, (char *)&ttybuf) < 0)
-@@ -422,7 +430,7 @@ int baud;
- 
-   if (ttyp >= 0)
-     {
--#if defined(SUNOS) || defined(HPUX)
-+#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
-       if (tcgetattr(ttyp, &ttybuf) < 0)
- #else
-       if (ioctl(ttyp, TCGETS, (char *)&ttybuf) < 0)
-@@ -437,6 +445,9 @@ int baud;
-         }
-     }
- 
-+#if defined(__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
-+  cfsetspeed(&ttybuf, baud);
-+#else
-   ttybuf.c_cflag &= ~CBAUD;
- 
-   baud &= 0x7;
-@@ -482,10 +493,11 @@ int baud;
+-#if defined(IRIX)
++#if defined(CSRG_BASED)
++      int tty_m, tty_s;
++      if (openpty(&tty_m, &tty_s, tty_dev_name, NULL, NULL) == 0)
++        {
++          if (verbose)
++            printf("%s: wire connection on %s\n", progname, tty_dev_name);
++          wire_fd = tty_m;
++          ttyp = tty_s;
++          wire_name = strdup(tty_dev_name);
++        }
++      else
++        perror("openpty");
++#elif defined(IRIX)
+       if ((p = _getpty(&wire_fd, O_RDWR | O_EXCL | O_NDELAY, 0666, 0)) == NULL)
+         {
+           wire_fd = -1;
+@@ -416,6 +428,8 @@ int baud;
          fprintf(stderr, "%s: can\'t set baud rate, using 9600\n", progname);
        ttybuf.c_cflag |= B9600;
      }
-+#endif
- 
-   if (ttyp >= 0)
-     {
--#if defined(SUNOS) || defined(HPUX)
-+#if defined(SUNOS) || defined(HPUX) || defined (__FreeBSD__) || defined(__bsdi__) || defined(__OpenBSD__)
-       if (tcsetattr(ttyp, TCSANOW, &ttybuf) < 0)
++#elif defined(CSRG_BASED)
++  cfsetspeed(&ttybuf, baud);
  #else
-       if (ioctl(ttyp, TCSETS, (char *)&ttybuf) < 0)
+   ttybuf.c_cflag &= ~CBAUD;
+ 
+@@ -497,6 +511,8 @@ int baud;
+     }
+ 
+ #if defined(__APPLE__)
++#elif defined(CSRG_BASED)
++  cfsetspeed(&ttybuf, baud);
+ #else
+   ttybuf.c_cflag &= ~CBAUD;
+ 

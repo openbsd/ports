@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_hp48_h,v 1.1 2002/02/21 01:04:23 naddy Exp $
---- src/hp48.h.orig	Thu Feb 21 01:38:49 2002
-+++ src/hp48.h	Thu Feb 21 01:39:02 2002
-@@ -218,7 +218,7 @@ typedef struct saturn_t {
+$OpenBSD: patch-src_hp48_h,v 1.2 2011/11/23 19:36:44 pascal Exp $
+--- src/hp48.h.orig	Thu Oct  6 19:54:57 2011
++++ src/hp48.h	Thu Oct  6 19:55:20 2011
+@@ -227,7 +227,7 @@ typedef struct saturn_t {
  
    word_8	unknown2;
  
