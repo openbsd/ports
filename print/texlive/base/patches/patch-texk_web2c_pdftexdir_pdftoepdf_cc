@@ -1,7 +1,7 @@
-$OpenBSD: patch-texk_web2c_pdftexdir_pdftoepdf_cc,v 1.2 2011/03/08 00:09:42 edd Exp $
---- texk/web2c/pdftexdir/pdftoepdf.cc.origy	Fri Sep 24 11:10:16 2010
-+++ texk/web2c/pdftexdir/pdftoepdf.cc	Fri Sep 24 11:14:51 2010
-@@ -61,6 +61,10 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 US
+$OpenBSD: patch-texk_web2c_pdftexdir_pdftoepdf_cc,v 1.3 2011/11/23 12:00:45 edd Exp $
+--- texk/web2c/pdftexdir/pdftoepdf.cc.origy	Mon May  2 13:27:51 2011
++++ texk/web2c/pdftexdir/pdftoepdf.cc	Sat Aug 27 14:12:00 2011
+@@ -60,6 +60,10 @@ with this program.  If not, see <http://www.gnu.org/li
  
  #undef boolean
  

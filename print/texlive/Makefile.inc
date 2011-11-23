@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2011/06/01 18:53:52 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2011/11/23 12:00:45 edd Exp $
 
 CATEGORIES ?=	print
 HOMEPAGE ?=	http://tug.org/texlive/
@@ -12,8 +12,9 @@ PERMIT_DISTFILES_FTP ?=		Yes
 
 EXTRACT_SUFX ?=		.tar.xz
 
-V ?=		2010
-DIST_V ?=	${V}0722
+V ?=		2011
+DIST_V ?=	${V}0705
 
-MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/
+MASTER_SITES ?=	ftp://ftp.tug.org/texlive/historic/${V}/ \
+		http://spacehopper.org/mirrors/
 PATCHORIG ?=	.origy

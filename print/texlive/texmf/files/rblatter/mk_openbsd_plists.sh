@@ -1,9 +1,14 @@
 #!/bin/sh
-# $OpenBSD: mk_openbsd_plists.sh,v 1.2 2011/03/08 00:09:42 edd Exp $
+# $OpenBSD: mk_openbsd_plists.sh,v 1.3 2011/11/23 12:00:45 edd Exp $
 #
 # This is how the texlive port packing lists were generated.
-# Please be aware that a *full* texmf/texmf-dist and tlpdb from the
+# Please be aware that a *full* texmf/texmf-dist and texlive.tlpdb from the
 # texlive svn are required.
+#
+# texlive.tlpdb does not come in the dist tarball, so you need to get
+# it from svn from the release date. Eg:
+# svn co -r {20110705} svn://tug.org/texlive/trunk/Master/tlpkg
+# You can then copy tlpkg/texlive.tlpdb to ${TARBALL_ROOT}/tlpkg/texlive.tlpdb
 
 if [ "$1" = "" ]; then
 	TMF="/usr/local/share";
@@ -20,27 +25,16 @@ mkdir sets
 
 echo "\nCalculating PLIST of texlive_texmf-minimal (tetex)..."
 ./rblatter -d -v -n -t ${TMF} -p share/ -o sets/tetex +scheme-tetex,run
-cat sets/tetex/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
-	| sort > sets/tetex/PLIST_final
+cat sets/tetex/PLIST | sort > sets/tetex/PLIST_final
 
 echo "\nCalculating PLIST of texlive_texmf-full..."
 ./rblatter -d -v -n -t ${TMF} -p share/ -o sets/full \
 	+scheme-full,run:-scheme-tetex,doc,src,run
-cat sets/full/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
-	| sort > sets/full/PLIST_final
+cat sets/full/PLIST | sort > sets/full/PLIST_final
 
 echo "\nCalculating PLIST of texlive_texmf-docs..."
 ./rblatter -d -v -n -t ${TMF} -p share/ -o sets/docs +scheme-full,doc
-cat sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
-	| sort > sets/docs/PLIST_final
-
-# XXX need to figure out how to futher split docs
-#grep -ie '\.1$' -e '\.pdf$' -e '\.html$' -e '\.dvi$' -e '\.ps$' \
-#	sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
-#	| sort > sets/docs/PLIST_final
-#grep -ive '\.1$' -e '\.pdf$' -e '\.html$' -e '\.dvi$' -e '\.ps$' \
-#	sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
-#	| sort > sets/docs/PLIST_final-sources
+cat sets/docs/PLIST | sort > sets/docs/PLIST_final
 
 echo "\ndone - PLISTS in sets/"
 echo "now inspect:"
@@ -49,6 +43,6 @@ echo "  - *.exe obviously a waste of space"
 echo "  - search for 'win32' and 'w32' and 'windows'"
 echo "  - comment out manual pages and include in _base"
 echo "  - bibarts is a DOS program"
-echo "  - Not all texworks related stuff is needed"
-echo "  - make sure no tlpkg/ sneaked in"
+echo "  - not all texworks related stuff is needed"
+echo "  - move the manuals in the right place"
 echo "  - etc..."

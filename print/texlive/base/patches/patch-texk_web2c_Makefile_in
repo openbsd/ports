@@ -1,7 +1,7 @@
-$OpenBSD: patch-texk_web2c_Makefile_in,v 1.4 2011/03/08 00:09:42 edd Exp $
---- texk/web2c/Makefile.in.origy	Tue Jul  6 10:17:20 2010
-+++ texk/web2c/Makefile.in	Thu Sep 23 16:53:27 2010
-@@ -1080,7 +1080,7 @@ WARNING_OBJCXXFLAGS = @WARNING_OBJCXXFLAGS@
+$OpenBSD: patch-texk_web2c_Makefile_in,v 1.5 2011/11/23 12:00:45 edd Exp $
+--- texk/web2c/Makefile.in.origy	Sat Jun  4 14:36:26 2011
++++ texk/web2c/Makefile.in	Sat Aug 27 14:12:00 2011
+@@ -1131,7 +1131,7 @@ WARNING_OBJCXXFLAGS = @WARNING_OBJCXXFLAGS@
  WEB2CVERSION = @WEB2CVERSION@
  XMKMF = @XMKMF@
  XPDF_DEPEND = @XPDF_DEPEND@

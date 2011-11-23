@@ -1,49 +1,36 @@
-$OpenBSD: README,v 1.2 2011/06/13 16:40:51 edd Exp $
+$OpenBSD: README,v 1.3 2011/11/23 12:00:45 edd Exp $
 
-Porting of TeX Live 2010 is now complete. Any remaining bugs will be
-fixed in-tree. This file remains as a reference when the time comes to
-port texlive 2011.
-
-TeX Live 2010 - Porting progress.
+TeX Live 2011 - Porting progress.
 ---------------------------------------
 
- * Get base compilers working:		done
- * Get xindy linking against clisp:	done
- * Test build works.			done
-   -> amd64				done
-   -> i386				done
-   -> sparc64				done
- * Do texmf split:			done
- * Get basic texmf packaging:		done
- * Re-add depenedencies:		done
- * Get -full config working:		done
- * Hack configs for subsets:		done
-   -> hack texmf.cnf:			done
-   -> fix $HOME ls-R owned root bug:	done
-   -> make fmtutil.cnf configs:		not needed this year
- * Implement remaining @xxx directives:	done
- * emulate texlinks			done
- * Test lots:				done (several months)
- * Link to build as print/texlive:	done
+ * Get base compilers working:			done
+ * Test build works.			
+   -> amd64					done
+   -> i386					done
+   -> sparc64					done
+   -> others, anyone?				XXX
+ * Do texmf split (see texmf/files/rblatter)	done
+ * Move manuals and pdf manuals			done
+ * Remove external deps				done
+   -> texworks					done
+   -> latexmk					done
+   -> asymptote					done
+ * Remove windows junk				done
+ * Get basic texmf packaging:			done
+ * Re-add depenedencies:			done
+ * Hack configs for subsets:			done
+   -> hack texmf.cnf:				done
+ * Implement @xxx in plists			done
+ * emulate texlinks				done
+ * patch in ruby/python versions for texexec	done
+ * Pull in perl modules needed for updmap	done
+ * Generate texmf-var pregen			done
+   (all as root) 'mktexlsr', 'fmtutil-sys --all',
+     'updmap-sys', rm ls-R and tar up texmf-var
+ * Apply any security/reliability patches	done
+   Search here: http://tug.org/pipermail/tldistro/
+ * Test lots:					XXX
 
 --- KNOWN ISSUES ---
 
- * gmverb is broken -- reported upstream, being ignored by package author.
-
- * man pages make noise
-   At package time:
-     /usr/ports/pobj/texlive_base-2010/fake-i386//usr/local/man/man1/texmfstart.1 :5: can't find macro file `www.tmac'
-
-   At install/uninstall:
-     Can't parse /usr/local/man/cat1/mendex.0 (not a manpage ?)
-
- * /usr/local/share/texmf* are left behind from previous texlive which cause
-   a conflict with new texlive2010.
-
---- EXTRA? ---
-
- * Split down -docs even further this year: docs_srcs + docs_built (?)
-   Probably not.
-
- * Pre-generate maps and formats and install from FILESDIR
-   -> check this is platform independent.	done - works
+None *yet*
