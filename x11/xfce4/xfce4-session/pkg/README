@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2011/11/24 10:22:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -56,12 +56,6 @@ install gvfs-smb package.
 You can have a look at hotplugd(8) if you want some kind of auto-mount
 feature in thunar, provided natively by gudev on Linux and FreeBSD.
 Also, see http://thunar.xfce.org/pwiki/documentation/faq.
-
-Desktop/Applications menu
--------------------------
-The desktop menu is compliant to freedesktop.org specifications, and
-can be edited using GNOME's alacarte. The menu will be saved in
-~/.config/menus/xfce-applications.menu
 
 Terminal, special characters and localized applications
 -------------------------------------------------------

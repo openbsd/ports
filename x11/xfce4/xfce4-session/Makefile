@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2011/10/14 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/11/24 10:22:33 ajacoutot Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-XFCE_VERSION= 4.8.2
-REVISION=	0
+XFCE_VERSION=	4.8.2
+REVISION=	1
 
 SHARED_LIBS +=	xfsm-4.6	0.0 # .0.0
 
