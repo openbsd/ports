@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/16 15:56:38 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/24 15:12:25 ajacoutot Exp $
 
 COMMENT=	bacula(8) web interface
 
 DISTNAME=	webacula-5.5
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www sysutils
 
@@ -21,7 +21,7 @@ MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		php-pdo_pgsql-*|php-pdo_mysql-*|php-pdo_sqlite-*:lang/php/${MODPHP_VERSION},-pdo_pgsql \
 		www/zendframework>=1.10.8p1 \
-		sysutils/bacula,pgsql,-server
+		sysutils/bacula,-main
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
