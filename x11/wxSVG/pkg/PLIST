@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/05/26 22:15:44 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/24 08:08:18 ajacoutot Exp $
 %%SHARED%%
 @bin bin/svgview
 include/wxSVG/
@@ -160,6 +160,7 @@ include/wxSVG/SVGStylable.h
 include/wxSVG/SVGStyleElement.h
 include/wxSVG/SVGSwitchElement.h
 include/wxSVG/SVGSymbolElement.h
+include/wxSVG/SVGTBreakElement.h
 include/wxSVG/SVGTRefElement.h
 include/wxSVG/SVGTSpanElement.h
 include/wxSVG/SVGTests.h
@@ -182,6 +183,7 @@ include/wxSVG/SVGZoomAndPan.h
 include/wxSVG/SVGZoomEvent.h
 include/wxSVG/String_wxsvg.h
 include/wxSVG/ViewCSS.h
+include/wxSVG/imagsvg.h
 include/wxSVG/mediadec_ffmpeg.h
 include/wxSVG/svg.h
 include/wxSVG/svgctrl.h
@@ -190,3 +192,5 @@ include/wxSVGXML/svgxml.h
 include/wxSVGXML/svgxmlhelpr.h
 lib/libwxsvg.a
 lib/libwxsvg.la
+lib/pkgconfig/
+lib/pkgconfig/libwxsvg.pc
