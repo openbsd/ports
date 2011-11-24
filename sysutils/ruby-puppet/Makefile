@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/10/05 07:41:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/11/24 08:39:12 jasper Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	2.7.5
 DISTNAME=	puppet-${VERSION}
 PKGNAME=	ruby-${DISTNAME}
+REVISION=	0
 CATEGORIES=	sysutils net
 
 HOMEPAGE=	http://reductivelabs.com/projects/puppet/
@@ -34,5 +35,7 @@ do-install:
 	for f in `ls -1 ${WRKSRC}/examples/etc/puppet/*.conf`; do \
 		${INSTALL_DATA} $$f ${MODRUBY_EXAMPLEDIR}/puppet; \
 	done
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
+	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
 
 .include <bsd.port.mk>
