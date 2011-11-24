@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1140 2011/11/21 16:42:52 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1141 2011/11/24 17:49:58 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -45,12 +45,6 @@ ERRORS += "Fatal: you're not allowed to override $t"
 # Any variable or target starting with an underscore (e.g., _DEPEND_ECHO)
 # is internal to bsd.port.mk, not part of the user's API, and liable to
 # change without notice.
-#
-#
-# Variables to change if you want a special behavior:
-#
-# DEPENDS_TARGET - The target to execute when a port is calling a
-#				  dependency (default: "install").
 #
 
 # Default sequence for "all" is:  fetch checksum extract patch configure build
@@ -166,7 +160,6 @@ FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE}
 
 PKG_TMPDIR ?= /var/tmp
 
-PKGDB_LOCK ?=
 PKG_ADD ?= /usr/sbin/pkg_add
 PKG_INFO ?= /usr/sbin/pkg_info
 PKG_CREATE ?= /usr/sbin/pkg_create
@@ -175,14 +168,6 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS}
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
-_PKG_QUERY = ${PKG_INFO} ${PKGDB_LOCK} -e
-_PKG_ADD += ${PKG_DBLOCK}
-_PKG_CREATE += ${PKGDB_LOCK}
-_PKG_DELETE += ${PKGDB_LOCK}
-
-# remount those mount points ro before fake.
-# XXX tends to panic the OS
-PROTECT_MOUNT_POINTS ?=
 
 .if !defined(_MAKEFILE_INC_DONE)
 .  if exists(${.CURDIR}/../Makefile.inc)
@@ -242,9 +227,6 @@ _okay_words = depends work fake -f flavors dist install sub packages package \
 ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 .  endif
 .endfor
-
-NOMANCOMPRESS ?= Yes
-DEF_UMASK ?= 022
 
 # MODULES support
 # reserved name spaces: for module=NAME, modname*, _modname* variables and
@@ -480,8 +462,6 @@ BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
 .endif
 
-PKG_SUFX ?= .tgz
-
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
@@ -710,7 +690,6 @@ REGRESS_FLAGS ?=
 ALL_REGRESS_FLAGS = ${MAKE_FLAGS} ${REGRESS_FLAGS}
 REGRESS_LOGFILE ?= ${WRKDIR}/regress.log
 REGRESS_LOG ?= | tee ${REGRESS_LOGFILE}
-REGRESS_STATUS_IGNORE ?=
 
 .if defined(REGRESS_IS_INTERACTIVE) && ${REGRESS_IS_INTERACTIVE:L} == "x11"
 REGRESS_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
@@ -746,7 +725,7 @@ _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 
 .for _S in ${MULTI_PACKAGES}
-_PKGFILE${_S} = ${FULLPKGNAME${_S}}${PKG_SUFX}
+_PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
 .  else
@@ -1007,22 +986,19 @@ ECHO_MSG ?= echo
 
 # basic master sites configuration
 
+MASTER_SITE_OVERRIDE ?= No
+
 .if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
 .else
 .include "${PORTSDIR}/infrastructure/templates/network.conf.template"
 .endif
 
-# XXX temporary, until people have correct network.conf
-MASTER_SITE_OPENBSD ?= \
-	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
-	ftp://ftp.usa.openbsd.org/pub/OpenBSD/distfiles/
-
 # Empty declarations to avoid "variable XXX is recursive" errors
 MASTER_SITES ?=
 # I guess we're in the master distribution business! :)  As we gain mirror
 # sites for distfiles, add them to this list.
-.if !defined(MASTER_SITE_OVERRIDE)
+.if ${MASTER_SITE_OVERRIDE:L} == "no"
 MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
 .else
 MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
@@ -1294,13 +1270,7 @@ ERRORS += "Fatal: can't build"
 ERRORS += ${IGNORE${SUBPACKAGE}} ${_EXTRA_IGNORE}
 .endif
 
-.if !defined(DEPENDS_TARGET)
-.  if make(reinstall)
-DEPENDS_TARGET = reinstall
-.  else
-DEPENDS_TARGET = install
-.  endif
-.endif
+_DEPENDS_TARGET ?= install
 
 ################################################################
 # Dependency checking
@@ -1739,7 +1709,7 @@ ${_INSTALL_COOKIE${_S}}:
 
 	@${_MAKE} package
 .  endif
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
@@ -1751,7 +1721,7 @@ ${_INSTALL_COOKIE${_S}}:
 .    endif
 .  endfor
 .  if ${TRUST_PACKAGES:L} == "yes"
-	@if ${_PKG_QUERY} ${FULLPKGNAME${_S}}; then \
+	@if ${PKG_INFO} -e ${FULLPKGNAME${_S}}; then \
 		echo "Package ${FULLPKGNAME${_S}} is already installed"; \
 	else \
 		${SUDO} ${SETENV} ${_TERM_ENV} PKG_PATH=${_PKG_REPO} ${_PKG_ADD} ${_PKG_ADD_AUTO} ${PKGFILE${_S}}; \
@@ -1770,10 +1740,10 @@ ${_UPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
-	@a=`${_PKG_QUERY} ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
+	@a=`${PKG_INFO} -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
-		*) cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
+		*) cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		     ${MAKE} _internal-run-depends _internal-runlib-depends \
 			   _internal-runwantlib-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
@@ -1783,7 +1753,7 @@ ${_UPDATE_COOKIE${_S}}:
 
 ${_FUPDATE_COOKIE${_S}}:
 	@${_MAKE} _internal-package
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
+	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-run-depends _internal-runlib-depends \
 		_internal-runwantlib-depends
 .  if empty(UPDATE_COOKIES_DIR)
@@ -1875,12 +1845,12 @@ _print-packagename:
 .for _i in ${_DEPLIST}
 .  if !target(${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g})
 ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
-	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
+	@unset _DEPENDS_TARGET _MASTER WRKDIR|| true; \
 	echo '${_i}'| while ${_read_spec}; do \
 		${_parse_spec}; \
 		_ignore_cookie=${@:S/.dep/.ignored/}; \
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
-		case "X$$target" in X) target=${DEPENDS_TARGET};; esac; \
+		case "X$$target" in X) target=${_DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
 		Xinstall|Xreinstall) check_install=true;; \
 		Xpackage|Xfake) check_install=false;; \
@@ -2494,12 +2464,12 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 	@${_MAKE} pre-regress
 .  endif
 .  if target(do-regress)
-	@${REGRESS_STATUS_IGNORE}cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
+	@cd ${.CURDIR} && exec 3>&1 && exit `exec 4>&1 1>&3; \
 		(exec; set +e; PKGPATH=${PKGPATH} ${MAKE} do-regress; \
 		echo $$? >&4) 2>&1 ${REGRESS_LOG}`
 .  else
 # What REGRESS normally does:
-	@${REGRESS_STATUS_IGNORE}cd ${WRKBUILD} && exec 3>&1 && exit `exec 4>&1 1>&3; \
+	@cd ${WRKBUILD} && exec 3>&1 && exit `exec 4>&1 1>&3; \
 		(exec; set +e; ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}; \
 		echo $$? >&4) 2>&1 ${REGRESS_LOG}`
@@ -2515,16 +2485,13 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 
 ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${ECHO_MSG} "===>  Faking installation for ${FULLPKGNAME}${_MASTER}"
-	@if [ x`${SUDO} /bin/sh -c umask` != x${DEF_UMASK} ]; then \
-		echo >&2 "Error: your umask is \"`/bin/sh -c umask`"\".; \
+	@if [ x`${SUDO} /bin/sh -c umask` != x022 ]; then \
+		echo >&2 "Error: your umask is \"`${SUDO} /bin/sh -c umask`"\".; \
 		exit 1; \
 	fi
 	@${SUDO} install -d -m 755 -o root -g wheel ${WRKINST}
 	@cat ${MTREE_FILE}| \
 		${SUDO} /usr/sbin/mtree -U -e -d -n -p ${WRKINST} >/dev/null
-.for _p in ${PROTECT_MOUNT_POINTS}
-	@${SUDO} mount -u -r ${_p}
-.endfor
 .for _m in ${MODULES:T:U}
 .  if defined(MOD${_m}_pre-fake)
 	@${MOD${_m}_pre-fake}
@@ -2550,9 +2517,6 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 .if target(post-install)
 	@${_SUDOMAKESYS} post-install ${_FAKE_SETUP}
 .endif
-.for _p in ${PROTECT_MOUNT_POINTS}
-	@${SUDO} mount -u -w ${_p}
-.endfor
 .if ${MULTI_PACKAGES} == "-"
 	@if test -e ${PKGDIR}/README; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME}; \
@@ -3294,7 +3258,7 @@ delete-package:
 
 reinstall:
 	@${_MAKE} clean='install force'
-	@cd ${.CURDIR} && DEPENDS_TARGET=${DEPENDS_TARGET} PKGPATH=${PKGPATH} exec ${MAKE} install
+	@cd ${.CURDIR} && _DEPENDS_TARGET=reinstall PKGPATH=${PKGPATH} exec ${MAKE} install
 
 repackage:
 	@${_MAKE} clean=packages
