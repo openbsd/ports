@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1141 2011/11/24 17:49:58 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1142 2011/11/24 18:12:28 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1852,10 +1852,11 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
 		case "X$$target" in X) target=${_DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
-		Xinstall|Xreinstall) check_install=true;; \
-		Xpackage|Xfake) check_install=false;; \
+		Xinstall|Xreinstall) check_installed=true; try_install=true;; \
+		Xpackage|Xfake) check_installed=true; try_install=false;; \
 		Xpatch|Xconfigure|Xbuild) \
-			check_install=false; mkdir -p ${WRKDIR}/$$dir; \
+			check_installed=false; try_install=false; \
+			mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir";; \
 		*) \
 			${ECHO_MSG} "===> Error: can't depend on $$target"; \
@@ -1866,12 +1867,12 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		${_complete_pkgspec}; \
 		h="===> ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$pkg -"; \
 		for second_pass in false true; do \
-			if $$check_install; then \
+			if $$check_installed; then \
 				case ${PREPARE_CHECK_ONLY:L} in \
 				yes) \
 						second_pass=true;; \
 				esac; \
-				${_force_update_fragment}; \
+				$$try_install && ${_force_update_fragment}; \
 				if ${PKG_INFO} ${PKGDB_LOCK} -q -e "$$pkg" -r "$$pkg" $$default; then \
 					${ECHO_MSG} "$$h found"; \
 					break; \
@@ -1906,7 +1907,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				${REPORT_PROBLEM}; \
 				exit 1; \
 			fi; \
-			$$check_install || break; \
+			$$try_install || break; \
 		done; \
 	done
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin
