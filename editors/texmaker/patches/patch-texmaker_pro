@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
---- texmaker.pro.orig	Sun Apr  3 16:16:58 2011
-+++ texmaker.pro	Tue Apr  5 21:45:23 2011
+$OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
+--- texmaker.pro.orig	Thu Jul 21 14:57:13 2011
++++ texmaker.pro	Tue Aug 16 20:12:48 2011
 @@ -4,7 +4,8 @@ TARGET	 = texmaker
  QT += network \
        xml \
@@ -8,10 +8,10 @@ $OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=3.0.2
+ TEXMAKERVERSION=3.1
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
-@@ -56,25 +57,6 @@ HEADERS	+= texmaker.h \
+@@ -62,25 +63,6 @@ HEADERS	+= texmaker.h \
  	usercompletiondialog.h \
  	synctex_parser.h \
  	synctex_parser_utils.h \
@@ -37,7 +37,7 @@ $OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -150,18 +132,6 @@ SOURCES	+= main.cpp \
+@@ -162,18 +144,6 @@ SOURCES	+= main.cpp \
  	usercompletiondialog.cpp \
  	synctex_parser.c \
  	synctex_parser_utils.c \
@@ -56,11 +56,11 @@ $OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -319,23 +289,7 @@ utilities.files = doc/doc1.png \
- 	locale/texmaker_zh_CN.qm \
- 	locale/texmaker_zh_TW.qm \
- 	locale/texmaker_cs.qm \
--	locale/texmaker_nl.qm \
+@@ -339,26 +309,7 @@ utilities.files = doc/doc1.png \
+ 	locale/texmaker_nl.qm \
+ 	locale/texmaker_fa.qm \
+ 	locale/texmaker_pl.qm \
+-	locale/texmaker_hu.qm \
 -	dictionaries/nl_NL.aff \
 -	dictionaries/nl_NL.dic \
 -	dictionaries/de_DE.aff \
@@ -74,10 +74,13 @@ $OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
 -	dictionaries/it_IT.aff \
 -	dictionaries/it_IT.dic \
 -	dictionaries/it_IT_README.txt \
+-	dictionaries/hu_HU.aff \
+-	dictionaries/hu_HU.dic \
+-	dictionaries/README_hu_HU.txt \
 -	dictionaries/README_de_DE_frami.txt \
 -	dictionaries/README_DIC_fr_FR.txt \
 -	dictionaries/README_es_ES.txt 
-+	locale/texmaker_nl.qm
++	locale/texmaker_hu.qm
  INSTALLS += utilities
  
  desktop.path = $${DESKTOPDIR}
