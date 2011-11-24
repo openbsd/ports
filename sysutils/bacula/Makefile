@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/24 09:29:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/11/24 09:57:38 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -50,7 +50,7 @@ NO_REGRESS=		yes
 
 # XXX gnu is needed to be able to build several -server FLAVORS
 # while bacula-client is already installed
-USE_LIBTOOL=		yes
+USE_LIBTOOL=		gnu
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
