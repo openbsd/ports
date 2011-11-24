@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/14 13:46:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/24 10:45:36 ajacoutot Exp $
 %%SHARED%%
 include/libmms/
-include/libmms/bswap.h
 include/libmms/mms.h
 include/libmms/mms_config.h
 include/libmms/mmsh.h
