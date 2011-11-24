@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_dird_Makefile_in,v 1.1 2011/11/24 09:29:55 ajacoutot Exp $
+
+Reorder LDFLAGS (prefer -L.libs over /usr/local/lib) so that bacula can
+be rebuilt while already installed.
+
+--- src/dird/Makefile.in.orig	Wed Nov 23 16:30:36 2011
++++ src/dird/Makefile.in	Wed Nov 23 16:31:32 2011
+@@ -68,14 +68,14 @@ bacula-dir: Makefile $(SVROBJS) ../lib/libbac$(DEFAULT
+ 	    ../lib/libbacpy$(DEFAULT_ARCHIVE_TYPE) ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) \
+ 	    ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
+ 	@echo "Linking $@ ..."
+-	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
++	$(LIBTOOL_LINK) $(CXX) -L../lib -L../cats -L../findlib $(WLDFLAGS) $(LDFLAGS) -o $@ $(SVROBJS) \
+ 	      -lbacfind -lbacsql -lbaccats -lbacpy -lbaccfg -lbac -lm $(PYTHON_LIBS) $(DLIB) $(DB_LIBS) $(LIBS) \
+ 	      $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
+ 
+ static-bacula-dir:  Makefile $(SVROBJS) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../lib/libbaccfg$(DEFAULT_ARCHIVE_TYPE) \
+ 		   ../lib/libbacpy$(DEFAULT_ARCHIVE_TYPE) ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) \
+ 		   ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
+-	$(LIBTOOL_LINK) $(CXX) $(WLDFLAGS) $(LDFLAGS) -static -L../lib -L../cats -L../findlib -o $@ $(SVROBJS) \
++	$(LIBTOOL_LINK) $(CXX) -static -L../lib -L../cats -L../findlib $(WLDFLAGS) $(LDFLAGS) -o $@ $(SVROBJS) \
+ 	      -lbacfind -lbacsql -lbaccats -lbacpy -lbaccfg -lbac -lm $(PYTHON_LIBS) $(DLIB) $(DB_LIBS) $(LIBS) \
+ 	      $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
+ 	strip $@

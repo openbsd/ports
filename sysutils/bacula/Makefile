@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/11/17 23:45:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/11/24 09:29:55 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -12,6 +12,10 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+REVISION-main=		0
+REVISION-server=	0
+REVISION-bat=		0
 
 SHARED_LIBS +=  bac                  2.0      # 5.2.1
 SHARED_LIBS +=  baccfg               2.0      # 5.2.1
@@ -41,9 +45,12 @@ SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
-USE_LIBTOOL=		yes
 USE_GROFF=		yes
 NO_REGRESS=		yes
+
+# XXX gnu is needed to be able to build several -server FLAVORS
+# while bacula-client is already installed
+USE_LIBTOOL=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
@@ -120,7 +127,7 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
-WANTLIB-server += pq>=2 com_err
+WANTLIB-server += pq>=2
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND += 		postgresql
