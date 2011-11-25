@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/11/24 09:29:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/11/25 11:00:27 ajacoutot Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 %%SHARED%%
+@comment lib/bpipe-fd.a
 lib/libbac.a
 lib/libbac.la
 lib/libbaccfg.a
@@ -38,14 +39,15 @@ share/examples/bacula/
 @mode 770
 @owner _bacula
 @sample ${BACULASTATE}/
-@mode 644
-@group
+@mode
 @owner
+@group
 share/examples/bacula/bacula-fd.conf
 @mode 640
 @group _bacula
 @sample ${BACULACONF}/bacula-fd.conf
-@mode 644
+@group
+@mode
 share/examples/bacula/bconsole.conf
 @mode 640
 @group _bacula

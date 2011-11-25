@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/11/24 09:57:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/11/25 11:00:27 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -13,9 +13,9 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-main=		0
-REVISION-server=	0
-REVISION-bat=		0
+REVISION-main=		1
+REVISION-server=	1
+REVISION-bat=		1
 
 SHARED_LIBS +=  bac                  2.0      # 5.2.1
 SHARED_LIBS +=  baccfg               2.0      # 5.2.1
@@ -46,11 +46,8 @@ SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_GROFF=		yes
+USE_LIBTOOL=		yes
 NO_REGRESS=		yes
-
-# XXX gnu is needed to be able to build several -server FLAVORS
-# while bacula-client is already installed
-USE_LIBTOOL=		gnu
 
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
@@ -127,7 +124,7 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
-WANTLIB-server += pq>=2
+WANTLIB-server += pq>=2 com_err
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND += 		postgresql
@@ -183,8 +180,6 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
-	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-fd.conf \
-		${PREFIX}/share/examples/bacula/
 .if ${BUILD_PACKAGES:M-server}
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
@@ -194,11 +189,6 @@ post-install:
 		ln -sf libbaccats-${BACKEND}.so.${LIBbaccats_VERSION} libbaccats.so.${LIBbaccats_VERSION} 
 .endif
 .if ${BUILD_PACKAGES:M-bat}
-	if [ -f ${PREFIX}/lib/libbac.so.${LIBbac_VERSION} ] ; then \
-		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/.libs/bat ${PREFIX}/sbin/; \
-	else \
-		${INSTALL_PROGRAM} ${WRKSRC}/src/qt-console/bat ${PREFIX}/sbin/; \
-	fi
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/src/qt-console/images/bat_icon.png \
 		${PREFIX}/share/pixmaps
