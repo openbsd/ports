@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.200 2011/11/12 16:42:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.201 2011/11/25 15:08:25 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.1
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -36,8 +36,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		sysutils/upower \
 		devel/json-glib
 RUN_DEPENDS=	x11/gnome/settings-daemon \
-		sysutils/consolekit \
-		x11/xdg-user-dirs-gtk>=0.8p6
+		sysutils/consolekit
 
 # only needed at runtime since the move from gconf to gsettings
 # (see NEWS in the source tarball)
