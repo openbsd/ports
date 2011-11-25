@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1143 2011/11/24 19:24:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1144 2011/11/25 13:58:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -690,8 +690,10 @@ REGRESS_FLAGS ?=
 ALL_REGRESS_FLAGS = ${MAKE_FLAGS} ${REGRESS_FLAGS}
 REGRESS_LOGFILE ?= ${WRKDIR}/regress.log
 REGRESS_LOG ?= | tee ${REGRESS_LOGFILE}
+IS_INTERACTIVE ?= No
+REGRESS_IS_INTERACTIVE ?= No
 
-.if defined(REGRESS_IS_INTERACTIVE) && ${REGRESS_IS_INTERACTIVE:L} == "x11"
+.if ${REGRESS_IS_INTERACTIVE:L} == "x11"
 REGRESS_FLAGS += DISPLAY=${DISPLAY} XAUTHORITY=${XAUTHORITY}
 XAUTHORITY ?= ${HOME}/.Xauthority
 .endif
@@ -1197,8 +1199,8 @@ CONFIGURE_SHARED ?= --enable-shared
 .endif
 
 FETCH_MANUALLY ?= No
-.if ${FETCH_MANUALLY:L} != "no"
 MISSING_FILES = 
+.if ${FETCH_MANUALLY:L} != "no"
 .  for _F in ${CHECKSUMFILES}
 .    if !exists(${DISTDIR}/${_F})
 MISSING_FILES += ${_F}
@@ -1224,18 +1226,18 @@ MISSING_FILES += ${_F}
 ################################################################
 TRY_BROKEN ?= No
 _IGNORE_REGRESS ?=
-.if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
+.if ${REGRESS_IS_INTERACTIVE:L} != "no" && defined(BATCH)
 _IGNORE_REGRESS += "has interactive tests"
-.elif !defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE)
+.elif ${REGRESS_IS_INTERACTIVE:L} == "no" && defined(INTERACTIVE)
 _IGNORE_REGRESS += "does not have interactive tests"
 .endif
 
-.if defined(IS_INTERACTIVE) && defined(BATCH)
+.if ${IS_INTERACTIVE:L} != "no" && defined(BATCH)
 IGNORE += "is an interactive port"
-.elif !(defined(IS_INTERACTIVE)||defined(MISSING_FILES)) && defined(INTERACTIVE)
+.elif !(${IS_INTERACTIVE:L} != "no" || !empty(MISSING_FILES)) && defined(INTERACTIVE)
 IGNORE += "is not an interactive port"
 .endif
-.if defined(MISSING_FILES) && defined(BATCH)
+.if !empty(MISSING_FILES) && defined(BATCH)
 _EXTRA_IGNORE += "is an interactive port: missing files"
 .endif
 
@@ -1263,7 +1265,8 @@ IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of
 .endif
 
 IGNORE_IS_FATAL ?= "No"
-# XXX even if subpackage is invalid, define this
+# XXX even if subpackage is invalid, define this, so that errors come out
+# from ERRORS and not make internals.
 IGNORE${SUBPACKAGE} ?= 
 .if (!empty(IGNORE${SUBPACKAGE}) || defined(_EXTRA_IGNORE)) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
@@ -1296,7 +1299,6 @@ lib_depends_args ?= lib-depends-args
 
 
 PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
-_set_ld_library_path = :
 DEPBASE = ${LOCALBASE}
 DEPDIR =
 
@@ -1616,15 +1618,6 @@ _check_lib_depends = ${_CHECK_LIB_DEPENDS}
 _check_lib_depends =:
 .endif
 
-CLEAN_PLIST_OUTPUT?=No
-.if ${CLEAN_PLIST_OUTPUT:L} == "yes"
-_plist_header=echo "@+++ new plist"
-_plist_footer=echo "@--- end plist"
-.else
-_plist_header=:
-_plist_footer=:
-.endif
-
 _CHECK_LIB_DEPENDS = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/check-lib-depends
 _CHECK_LIB_DEPENDS += -d ${_PKG_REPO} -B ${WRKINST}
 .  if ${ELF_TOOLCHAIN:L} == "no"
@@ -1873,12 +1866,26 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 						second_pass=true;; \
 				esac; \
 				$$try_install && ${_force_update_fragment}; \
-				if ${PKG_INFO} -q -e "$$pkg" -r "$$pkg" $$default; then \
-					${ECHO_MSG} "$$h found"; \
+				if `${PKG_INFO} -e "$$pkg" -r "$$pkg" $$default >$@t`; then \
+					sed -ne '/^inst:/s///p' <$@t| \
+						{ read v || v=found; \
+							echo "$$v" >$@; \
+							${ECHO_MSG} "$$h> $$v"; } ;\
+					rm $@t; \
 					break; \
 				else \
-					${ECHO_MSG} "$$h not found"; \
-					${ECHO_MSG} "     (or default $$default does not match)"; \
+					r=$$?; \
+					rm $@t; \
+					case $$r in \
+					1|3) \
+							${ECHO_MSG} "$$h not found";; \
+					esac; \
+					case $$r in \
+					2|3) \
+							${ECHO_MSG} "$$h default $$default does not match"; \
+							${REPORT_PROBLEM}; \
+							exit 1;; \
+					esac; \
 				fi; \
 			else \
 				if ! ${PKG_INFO} -q -r "$$pkg" $$default; \
@@ -1889,12 +1896,6 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				fi; \
 			fi; \
 			if $$second_pass; then \
-				if ! ${PKG_INFO} -q -r "$$pkg" $$default; then \
-					${ECHO_MSG} "     - default $$default does not match"; \
-				fi; \
-				if ! ${PKG_INFO} -q -e "$$pkg"; then \
-					${ECHO_MSG} "     - not found in installed packages"; \
-				fi; \
 				${ECHO_MSG} "Dependency check failed"; \
 				${REPORT_PROBLEM}; \
 				exit 1; \
@@ -1914,6 +1915,9 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 	@${_MAKE_COOKIE} $@
 .  endif
 .endfor
+
+show-prepare-results: prepare
+	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES}
 
 _internal-build-depends: ${_DEPBUILD_COOKIES}
 _internal-run-depends: ${_DEPRUN_COOKIES}
@@ -2252,7 +2256,6 @@ ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 do-extract:
 # What EXTRACT normally does:
 	@PATH=${PORTPATH}; set -e; cd ${WRKDIR}; \
-	${_set_ld_library_path}; \
 	for archive in ${EXTRACT_ONLY}; do \
 		case $$archive in \
 		${EXTRACT_CASES} \
@@ -2452,7 +2455,7 @@ ${_REGRESS_COOKIE}: ${_BUILD_COOKIE}
 .if ${NO_REGRESS:L} == "no"
 	@${ECHO_MSG} "===>  Regression check for ${FULLPKGNAME}${_MASTER}"
 # When interactive tests need X11
-.  if defined(REGRESS_IS_INTERACTIVE) && ${REGRESS_IS_INTERACTIVE:L} == "x11"
+.  if ${REGRESS_IS_INTERACTIVE:L} == "x11"
 .    if !defined(DISPLAY) || !exists(${XAUTHORITY})
 	@echo 1>&2 "The regression tests require a running instance of X."
 	@echo 1>&2 "You will also need to set the environment variable DISPLAY"
@@ -2545,52 +2548,46 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${SUDO} ${_MAKE_COOKIE} $@
 
 print-plist:
-	@${_plist_header}; ${_PKG_CREATE} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; ${_plist_footer}
+	@${_PKG_CREATE} -n -q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 print-plist-with-depends:
-	@${_plist_header}; \
-	if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
+	@if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
 		exit 1; \
-	fi ; \
-	${_plist_footer}
+	fi
 
 print-plist-libs-with-depends:
-	@${_plist_header}; \
-	if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
+	@if a=`SUBPACKAGE=${SUBPACKAGE} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -DLIBS_ONLY -n -q $$a ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}; \
 	else \
 		exit 1; \
-	fi ; \
-	${_plist_footer}
+	fi
 
 print-plist-all:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${_plist_header}; ${_PKG_CREATE} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}};${_plist_footer}
+	@${_PKG_CREATE} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
 .endfor
 
 print-plist-all-with-depends:
 .for _S in ${MULTI_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
-	@${_plist_header}; \
-	if a=`SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
+	@if a=`SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
 		${_PKG_CREATE} -n -q $$a ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}; \
 	else \
 		exit 1; \
-	fi; \
-	${_plist_footer}
+	fi
 .endfor
 
 print-plist-contents:
-	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
+	@${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}
 
 print-plist-libs:
-	@${_plist_header}; ${_PKG_CREATE} -DLIBS_ONLY -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist}; ${_plist_footer}
+	@${_PKG_CREATE} -DLIBS_ONLY -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist}
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
@@ -3254,9 +3251,6 @@ clean-depends:
 distclean:
 	@${_MAKE} clean=dist
 
-delete-package:
-	@${_MAKE} clean=package
-
 reinstall:
 	@${_MAKE} clean='install force'
 	@cd ${.CURDIR} && _DEPENDS_TARGET=reinstall PKGPATH=${PKGPATH} exec ${MAKE} install
@@ -3372,7 +3366,7 @@ _all_phony = ${_recursive_depends_targets} \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args \
-	_recurse-show-run-depends show-run-depends
+	_recurse-show-run-depends show-run-depends show-prepare-results
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
