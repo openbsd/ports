@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/12/03 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/11/25 21:07:00 gsoares Exp $
 
 COMMENT=	extension for unparsed raw whois information
 
-DISTNAME=	Net-Whois-Raw-2.00
-REVISION=	0
+DISTNAME=	Net-Whois-Raw-2.37
 CATEGORIES=	net
 
 # perl
@@ -15,10 +14,9 @@ PERMIT_DISTFILES_FTP=   Yes
 MODULES=		cpan
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		www/p5-URI \
+RUN_DEPENDS=		converters/p5-Net-IDN-Encode \
 			www/p5-libwww
 
 .include <bsd.port.mk>
