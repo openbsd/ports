@@ -1,4 +1,4 @@
-$OpenBSD: README.internals,v 1.8 2011/11/21 17:13:32 jasper Exp $
+$OpenBSD: README.internals,v 1.9 2011/11/25 15:05:56 espie Exp $
 Copyright (C) 2011 Marc Espie <espie@openbsd.org>
 
  Permission to use, copy, modify, and distribute this software for any
@@ -367,3 +367,65 @@ for each spec, and code to build both _DEP*WANTLIB_COOKIEs
 
 There's also some dependency in handling in
 *wantlib-args, lib-depends-args and run-depends-args.
+
+_DEPENDS_TARGET: used to be DEPENDS_TARGET, and visible, but not documented
+for years, and it can be set internally. Ports normally install their
+dependencies, with the exception of "make reinstall", and "make update".
+
+_FETCH_MAKEFILE: where to put the output of "fetch-makefile", by default
+stdout, but overridden from the main Makefile.
+
+_SHSCRIPT: prepend to a shell script in the infrastructure, e.g.,
+    ${_SHSCRIPT}/update-patches
+
+_PERLSCRIPT: likewise for perl scripts.
+
+_ALL_VARIABLES _ALL_VARIABLES_INDEXED _ALL_VARIABLES_PER_ARCH:
+	stuff to dump in dump-vars. First is "simple" variable, second one
+	will depend on the subpackage, and for last one, must iterate
+	over arches to get all relevant information.
+
+_BAD_LICENSING:
+note that the PERMIT_* variables are defined for subpackages as soon as
+the main variables are defined, so it's enough to check the normal variables.
+
+_lt_libs:
+	derived from SHARED_LIBRARIES explicitly for libtool
+
+_FLAVOR_EXT2: FLAVOR_EXT with pseudo-flavors included
+
+_PKG_ARGS: list of stuff to append to base PKG_ARGS-sub based on a lot of
+internal choices.
+
+_README_DIR: location for the pkg-readmes, no user serviceable parts inside.
+
+_MASTER: dependencies may be confusing, so set _MASTER to know where we come
+from when patching/configuring only.
+
+_SOLVING_DEP: pkg_add -a to avoid manually installed packages.
+
+_CHECK_DEPENDS: save all depends prior to tweaking them, just in case.
+
+
+_PERL_FIX_SHAR make visible ?
+TODO document:
+	MAKE_JOBS
+	PARALLEL_BUILD
+	PARALLEL_INSTALL
+	XAUTHORITY for interactive regress
+fishy: FLAVORS regress ?
+fishy: REGRESS_STATUS_IGNORE
+
+fishy:
+	GUNZIP_CMD
+	GZCAT
+	GZIP
+	GZIP_CMD
+	M4
+	STRIP
+
+uninstall ? deinstall
+
+Todo: kill PORT_LD_LIBRARY_PATH, DEPBASE, DEPDIR
+
+Document: all recursive targets
