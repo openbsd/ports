@@ -1,9 +1,0 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2011/11/02 21:26:57 edd Exp $
---- Makefile.in.orig	Wed Nov  2 20:03:24 2011
-+++ Makefile.in	Wed Nov  2 20:03:12 2011
-@@ -1,4 +1,4 @@
--CC?=@CC@
-+CC=@CC@
- 
- PY_LDFLAGS+=@PYTHON_LDFLAGS@
- PY_CFLAGS+=@PYTHON_CFLAGS@

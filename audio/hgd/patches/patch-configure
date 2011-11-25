@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2011/11/04 09:53:50 edd Exp $
+$OpenBSD: patch-configure,v 1.2 2011/11/25 14:04:58 edd Exp $
 
-MPlayer is not actually a build dpeendency, so don't bail if not installed at build time.
+MPlayer is not actually a build dependency, so don't bail if not installed at build time.
 
 Bug raised upstream.
 
