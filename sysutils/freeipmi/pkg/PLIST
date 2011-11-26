@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 18:17:02 wilfried Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/26 14:13:26 espie Exp $
 %%SHARED%%
 include/freeipmi/
 include/freeipmi/fiid.h
@@ -114,23 +114,23 @@ lib/libipmimonitoring.la
 @man man/man8/pef-config.8
 @man man/man8/rmcpping.8
 sbin/bmc-autoconfig
-sbin/bmc-config
-sbin/bmc-info
-sbin/bmc-watchdog
-sbin/ipmi-chassis
-sbin/ipmi-fru
-sbin/ipmi-locate
-sbin/ipmi-raw
-sbin/ipmi-sel
-sbin/ipmi-sensors
-sbin/ipmiconsole
-sbin/ipmidetect
-sbin/ipmidetectd
-sbin/ipmimonitoring
-sbin/ipmiping
-sbin/ipmipower
-sbin/pef-config
-sbin/rmcpping
+@bin sbin/bmc-config
+@bin sbin/bmc-info
+@bin sbin/bmc-watchdog
+@bin sbin/ipmi-chassis
+@bin sbin/ipmi-fru
+@bin sbin/ipmi-locate
+@bin sbin/ipmi-raw
+@bin sbin/ipmi-sel
+@bin sbin/ipmi-sensors
+@bin sbin/ipmiconsole
+@bin sbin/ipmidetect
+@bin sbin/ipmidetectd
+@bin sbin/ipmimonitoring
+@bin sbin/ipmiping
+@bin sbin/ipmipower
+@bin sbin/pef-config
+@bin sbin/rmcpping
 share/doc/freeipmi/
 share/doc/freeipmi/AUTHORS
 share/doc/freeipmi/COPYING
