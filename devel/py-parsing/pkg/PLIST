@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/10/09 10:38:53 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/11/26 09:58:42 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyparsing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/pyparsing.pyc
@@ -78,6 +78,7 @@ share/examples/py-parsing/SingleForm.dfm
 share/examples/py-parsing/TAP.py
 share/examples/py-parsing/adventureEngine.py
 share/examples/py-parsing/apicheck.py
+share/examples/py-parsing/btpyparse.py
 share/examples/py-parsing/cLibHeader.py
 share/examples/py-parsing/chemicalFormulas.py
 share/examples/py-parsing/commasep.py
@@ -93,11 +94,13 @@ share/examples/py-parsing/ebnftest.py
 share/examples/py-parsing/eval_arith.py
 share/examples/py-parsing/excelExpr.py
 share/examples/py-parsing/fourFn.py
+share/examples/py-parsing/gen_ctypes.py
 share/examples/py-parsing/getNTPservers.py
 share/examples/py-parsing/getNTPserversNew.py
 share/examples/py-parsing/greeting.py
 share/examples/py-parsing/greetingInGreek.py
 share/examples/py-parsing/greetingInKorean.py
+share/examples/py-parsing/groupUsingListAllMatches.py
 share/examples/py-parsing/holaMundo.py
 share/examples/py-parsing/htmlStripper.py
 share/examples/py-parsing/httpServerLogParser.py
@@ -120,6 +123,7 @@ share/examples/py-parsing/parsePythonValue.py
 share/examples/py-parsing/parseResultsSumExample.py
 share/examples/py-parsing/partial_gene_match.py
 share/examples/py-parsing/pgn.py
+share/examples/py-parsing/protobuf_parser.py
 share/examples/py-parsing/pymicko.py
 share/examples/py-parsing/pythonGrammarParser.py
 share/examples/py-parsing/readJson.py
@@ -140,6 +144,7 @@ share/examples/py-parsing/sql2dot.py
 share/examples/py-parsing/stackish.py
 share/examples/py-parsing/stateMachine2.py
 share/examples/py-parsing/tagCapture.py
+share/examples/py-parsing/test_bibparse.py
 share/examples/py-parsing/urlExtractor.py
 share/examples/py-parsing/urlExtractorNew.py
 share/examples/py-parsing/withAttribute.py
