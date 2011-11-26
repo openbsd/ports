@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/03 20:13:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/26 19:53:17 kili Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.3
-REVISION=		1
+REVISION=		2
 
 CATEGORIES =		textproc x11
 
@@ -27,7 +27,10 @@ WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES =	https://pwmt.org/download/
 
-LIB_DEPENDS =	print/poppler
+LIB_DEPENDS =	devel/atk \
+		graphics/gdk-pixbuf2 \
+		print/poppler \
+		x11/gtk+2
 
 MAKE_FLAGS = 	MANPREFIX=${WRKINST}/${PREFIX}/man CC=${CC}
 FAKE_FLAGS =	DESTDIR=''
