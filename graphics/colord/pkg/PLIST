@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/02 16:40:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/26 08:47:08 ajacoutot Exp $
 %%SHARED%%
 @bin bin/cd-create-profile
 @bin bin/cd-fix-profile
@@ -24,8 +24,9 @@ lib/libcolord.la
 lib/pkgconfig/
 lib/pkgconfig/colord.pc
 @bin libexec/colord
-share/color/
-share/color/icc/
+@man man/man1/cd-create-profile.1
+@man man/man1/cd-fix-profile.1
+@man man/man1/colormgr.1
 share/color/icc/colord/
 share/color/icc/colord/crayons.icc
 share/color/icc/colord/x11-colors.icc

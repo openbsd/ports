@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/13 18:02:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/11/26 08:47:08 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
 DISTNAME=	colord-0.1.14
 EXTRACT_SUFX=	.tar.xz
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  colord               0.0      # 1.4
 
@@ -31,7 +31,8 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 BUILD_DEPENDS=	lang/vala \
-		devel/gobject-introspection
+		devel/gobject-introspection \
+		textproc/docbook2x
 
 LIB_DEPENDS=	devel/libusb1 \
 		graphics/sane-backends \

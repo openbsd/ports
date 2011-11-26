@@ -1,0 +1,127 @@
+$OpenBSD: patch-src_cd-mapping-db_c,v 1.1 2011/11/26 08:47:08 ajacoutot Exp $
+
+UPSTREAM: Use sqlite3_mprintf() to avoid SQL injections
+(fixed SA46940)
+
+--- src/cd-mapping-db.c.orig	Thu Aug 25 17:41:18 2011
++++ src/cd-mapping-db.c	Sat Nov 26 09:34:39 2011
+@@ -162,8 +162,8 @@ cd_mapping_db_add (CdMappingDb *mdb,
+ 	g_debug ("CdMappingDb: add %s<=>%s",
+ 		 device_id, profile_id);
+ 	timestamp = g_get_real_time ();
+-	statement = g_strdup_printf ("INSERT INTO mappings (device, profile, timestamp) "
+-				     "VALUES ('%s', '%s', %"G_GINT64_FORMAT")",
++	statement = sqlite3_mprintf ("INSERT INTO mappings (device, profile, timestamp) "
++				     "VALUES ('%q', '%q', %"G_GINT64_FORMAT")",
+ 				     device_id, profile_id, timestamp);
+ 
+ 	/* insert the entry */
+@@ -179,7 +179,7 @@ cd_mapping_db_add (CdMappingDb *mdb,
+ 		goto out;
+ 	}
+ out:
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return ret;
+ }
+ /**
+@@ -203,8 +203,8 @@ cd_mapping_db_update_timestamp (CdMappingDb *mdb,
+ 	g_debug ("CdMappingDb: update timestamp %s<=>%s",
+ 		 device_id, profile_id);
+ 	timestamp = g_get_real_time ();
+-	statement = g_strdup_printf ("UPDATE mappings SET timestamp = %"G_GINT64_FORMAT
+-				     " WHERE device = '%s' AND profile = '%s';",
++	statement = sqlite3_mprintf ("UPDATE mappings SET timestamp = %"G_GINT64_FORMAT
++				     " WHERE device = '%q' AND profile = '%q';",
+ 				     timestamp, device_id, profile_id);
+ 
+ 	/* update the entry */
+@@ -220,7 +220,7 @@ cd_mapping_db_update_timestamp (CdMappingDb *mdb,
+ 		goto out;
+ 	}
+ out:
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return ret;
+ }
+ 
+@@ -242,8 +242,8 @@ cd_mapping_db_remove (CdMappingDb *mdb,
+ 	g_return_val_if_fail (mdb->priv->db != NULL, FALSE);
+ 
+ 	g_debug ("CdMappingDb: remove %s<=>%s", device_id, profile_id);
+-	statement = g_strdup_printf ("DELETE FROM mappings WHERE "
+-				     "device = '%s' AND profile = '%s';",
++	statement = sqlite3_mprintf ("DELETE FROM mappings WHERE "
++				     "device = '%q' AND profile = '%q';",
+ 				     device_id, profile_id);
+ 
+ 	/* remove the entry */
+@@ -259,7 +259,7 @@ cd_mapping_db_remove (CdMappingDb *mdb,
+ 		goto out;
+ 	}
+ out:
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return ret;
+ }
+ 
+@@ -301,8 +301,8 @@ cd_mapping_db_get_profiles (CdMappingDb *mdb,
+ 	g_return_val_if_fail (mdb->priv->db != NULL, FALSE);
+ 
+ 	g_debug ("CdMappingDb: get profiles for %s", device_id);
+-	statement = g_strdup_printf ("SELECT profile FROM mappings WHERE "
+-				     "device = '%s' ORDER BY timestamp ASC;", device_id);
++	statement = sqlite3_mprintf ("SELECT profile FROM mappings WHERE "
++				     "device = '%q' ORDER BY timestamp ASC;", device_id);
+ 
+ 	/* remove the entry */
+ 	array_tmp = g_ptr_array_new_with_free_func (g_free);
+@@ -325,7 +325,7 @@ cd_mapping_db_get_profiles (CdMappingDb *mdb,
+ 	array = g_ptr_array_ref (array_tmp);
+ out:
+ 	g_ptr_array_unref (array_tmp);
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return array;
+ }
+ 
+@@ -350,8 +350,8 @@ cd_mapping_db_get_devices (CdMappingDb *mdb,
+ 	g_return_val_if_fail (mdb->priv->db != NULL, FALSE);
+ 
+ 	g_debug ("CdMappingDb: get devices for %s", profile_id);
+-	statement = g_strdup_printf ("SELECT device FROM mappings WHERE "
+-				     "profile = '%s' ORDER BY timestamp ASC;", profile_id);
++	statement = sqlite3_mprintf ("SELECT device FROM mappings WHERE "
++				     "profile = '%q' ORDER BY timestamp ASC;", profile_id);
+ 
+ 	/* remove the entry */
+ 	array_tmp = g_ptr_array_new_with_free_func (g_free);
+@@ -374,7 +374,7 @@ cd_mapping_db_get_devices (CdMappingDb *mdb,
+ 	array = g_ptr_array_ref (array_tmp);
+ out:
+ 	g_ptr_array_unref (array_tmp);
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return array;
+ }
+ 
+@@ -416,8 +416,8 @@ cd_mapping_db_get_timestamp (CdMappingDb *mdb,
+ 
+ 	g_debug ("CdMappingDb: get checksum for %s<->%s",
+ 		 device_id, profile_id);
+-	statement = g_strdup_printf ("SELECT timestamp FROM mappings WHERE "
+-				     "device = '%s' AND profile = '%s' "
++	statement = sqlite3_mprintf ("SELECT timestamp FROM mappings WHERE "
++				     "device = '%q' AND profile = '%q' "
+ 				     "LIMIT 1;", device_id, profile_id);
+ 
+ 	/* query the checksum */
+@@ -436,7 +436,7 @@ cd_mapping_db_get_timestamp (CdMappingDb *mdb,
+ 		goto out;
+ 	}
+ out:
+-	g_free (statement);
++	sqlite3_free (statement);
+ 	return timestamp;
+ }
+ 
