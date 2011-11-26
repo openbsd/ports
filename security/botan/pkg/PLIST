@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/26 09:07:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/11/26 10:55:17 ajacoutot Exp $
 %%SHARED%%
 %%amd64%%
 bin/botan-config-1.10

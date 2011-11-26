@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/26 09:07:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/11/26 10:55:17 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -44,7 +44,8 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--with-bzip2 \
 		--with-gnump \
 		--with-openssl \
-		--with-zlib
+		--with-zlib \
+		--without-sphinx
 
 .if ${MACHINE_ARCH} == "amd64"
 CONFIGURE_ARGS+=--disable-asm

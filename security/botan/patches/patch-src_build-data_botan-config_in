@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_build-data_botan-config_in,v 1.1.1.1 2011/11/26 09:07:52 jasper Exp $
+$OpenBSD: patch-src_build-data_botan-config_in,v 1.2 2011/11/26 10:55:17 ajacoutot Exp $
 --- src/build-data/botan-config.in.orig	Sun Oct  9 20:19:40 2011
 +++ src/build-data/botan-config.in	Sun Oct  9 20:20:28 2011
 @@ -46,13 +46,13 @@ while test $# -gt 0; do
