@@ -1,5 +1,5 @@
-@comment $OpenBSD: PFRAG.GCC4-main,v 1.1 2011/07/08 17:41:46 jasper Exp $
+@comment $OpenBSD: PFRAG.GCC4-main,v 1.2 2011/11/26 19:45:29 kili Exp $
 lib/girepository-1.0/
-lib/girepository-1.0/Poppler-0.16.typelib
+lib/girepository-1.0/Poppler-0.18.typelib
 share/gir-1.0/
-share/gir-1.0/Poppler-0.16.gir
+share/gir-1.0/Poppler-0.18.gir

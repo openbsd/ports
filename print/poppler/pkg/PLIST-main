@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/11/12 10:50:54 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/11/26 19:45:29 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -6,11 +6,13 @@
 @comment @bin bin/pdffonts
 @comment @bin bin/pdfimages
 @comment @bin bin/pdfinfo
-@bin bin/pdftoabw
+@bin bin/pdfseparate
+@bin bin/pdftocairo
 @bin bin/pdftohtml
 @comment @bin bin/pdftoppm
 @comment @bin bin/pdftops
 @comment @bin bin/pdftotext
+@bin bin/pdfunite
 @comment @bin bin/poppler-glib-demo
 include/poppler/
 include/poppler/Annot.h
@@ -80,6 +82,7 @@ include/poppler/UnicodeDecompTables.h
 include/poppler/UnicodeMap.h
 include/poppler/UnicodeMapTables.h
 include/poppler/UnicodeTypeTable.h
+include/poppler/ViewerPreferences.h
 include/poppler/XRef.h
 include/poppler/XpdfPluginAPI.h
 include/poppler/cpp/
@@ -125,6 +128,7 @@ include/poppler/goo/GooTimer.h
 include/poppler/goo/ImgWriter.h
 include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
+include/poppler/goo/TiffWriter.h
 include/poppler/goo/gfile.h
 include/poppler/goo/gmem.h
 include/poppler/goo/gstrtod.h
@@ -169,10 +173,13 @@ lib/pkgconfig/poppler.pc
 @comment @man man/man1/pdffonts.1
 @comment @man man/man1/pdfimages.1
 @comment @man man/man1/pdfinfo.1
+@man man/man1/pdfseparate.1
+@man man/man1/pdftocairo.1
 @man man/man1/pdftohtml.1
 @comment @man man/man1/pdftoppm.1
 @comment @man man/man1/pdftops.1
 @comment @man man/man1/pdftotext.1
+@man man/man1/pdfunite.1
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/poppler/
@@ -198,7 +205,6 @@ share/gtk-doc/html/poppler/left.png
 share/gtk-doc/html/poppler/poppler-PopplerAction.html
 share/gtk-doc/html/poppler/poppler-Version-and-Features-Information.html
 share/gtk-doc/html/poppler/poppler-poppler.html
-share/gtk-doc/html/poppler/poppler.devhelp
 share/gtk-doc/html/poppler/poppler.devhelp2
 share/gtk-doc/html/poppler/right.png
 share/gtk-doc/html/poppler/style.css

@@ -1,0 +1,12 @@
+$OpenBSD: patch-poppler-glib_pc_in,v 1.1 2011/11/26 19:45:29 kili Exp $
+--- poppler-glib.pc.in.orig	Mon Oct 17 13:42:29 2011
++++ poppler-glib.pc.in	Tue Nov 15 17:44:13 2011
+@@ -6,7 +6,7 @@ includedir=@includedir@
+ Name: poppler-glib
+ Description: GLib wrapper for poppler
+ Version: @VERSION@
+-Requires: glib-2.0 >= $GLIB_REQUIRED gobject-2.0 >= $GLIB_REQUIRED cairo >= $CAIRO_VERSION
++Requires: glib-2.0 >= @GLIB_REQUIRED@ gobject-2.0 >= @GLIB_REQUIRED@ cairo >= @CAIRO_VERSION@
+ @PC_REQUIRES_PRIVATE@
+ 
+ Libs: -L${libdir} -lpoppler-glib
