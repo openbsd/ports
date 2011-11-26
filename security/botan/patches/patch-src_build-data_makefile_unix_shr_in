@@ -1,0 +1,72 @@
+$OpenBSD: patch-src_build-data_makefile_unix_shr_in,v 1.1.1.1 2011/11/26 09:07:52 jasper Exp $
+--- src/build-data/makefile/unix_shr.in.orig	Mon Jul 11 13:32:23 2011
++++ src/build-data/makefile/unix_shr.in	Sun Oct  9 19:52:41 2011
+@@ -14,12 +14,13 @@ VERSION       = %{version}
+ SERIES        = %{version_major}.%{version_minor}
+ 
+ # Installation Settings
+-DESTDIR       = %{prefix}
++DESTDIR       =
++PREFIX        = %{prefix}
+ 
+-BINDIR        = $(DESTDIR)/bin
+-LIBDIR        = $(DESTDIR)/%{libdir}
+-HEADERDIR     = $(DESTDIR)/%{includedir}/botan-$(SERIES)/botan
+-DOCDIR        = $(DESTDIR)/%{docdir}/botan-$(VERSION)
++BINDIR        = $(DESTDIR)$(PREFIX)/bin
++LIBDIR        = $(DESTDIR)$(PREFIX)/%{libdir}
++HEADERDIR     = $(DESTDIR)$(PREFIX)/%{includedir}/botan-$(SERIES)/botan
++DOCDIR        = $(DESTDIR)$(PREFIX)/%{docdir}/botan
+ PKGCONF_DIR   = $(LIBDIR)/pkgconfig
+ 
+ CONFIG_SCRIPT = %{botan_config}
+@@ -56,12 +57,8 @@ LIBRARIES     = $(STATIC_LIB) $(SHARED_LIB)
+ 
+ LIBNAME       = %{lib_prefix}libbotan
+ STATIC_LIB    = $(LIBNAME)-$(SERIES).a
++SHARED_LIB    = $(LIBNAME)-$(SERIES).%{so_suffix}.${LIBbotan_VERSION}
+ 
+-SONAME        = $(LIBNAME)-$(SERIES).%{so_suffix}.%{so_abi_rev}
+-SHARED_LIB    = $(SONAME).%{version_patch}
+-
+-SYMLINK       = $(LIBNAME)-$(SERIES).%{so_suffix}
+-
+ all: $(LIBRARIES)
+ 
+ # Build Commands
+@@ -80,8 +77,6 @@ $(STATIC_LIB): $(LIBOBJS)
+ 
+ $(SHARED_LIB): $(LIBOBJS)
+ 	$(SO_LINK_CMD) $(LDFLAGS) $(LIBOBJS) -o $(SHARED_LIB) $(LINK_TO)
+-	$(LN) $(SHARED_LIB) $(SONAME)
+-	$(LN) $(SHARED_LIB) $(SYMLINK)
+ 
+ # Fake Targets
+ .PHONY = docs clean distclean install static shared
+@@ -95,7 +90,7 @@ docs:
+ 
+ clean:
+ 	$(RM_R) %{build_dir}/lib/* %{build_dir}/checks/*
+-	$(RM) $(LIBRARIES) $(SYMLINK) $(SONAME) $(CHECK)
++	$(RM) $(LIBRARIES) $(SONAME) $(CHECK)
+ 
+ distclean: clean
+ 	$(RM_R) %{build_dir}
+@@ -103,7 +98,7 @@ distclean: clean
+ 	$(RM) botan_all.cpp botan_all.h
+ 
+ install: $(LIBRARIES) docs
+-	$(ECHO) "Installing Botan into $(DESTDIR)... "
++	$(ECHO) "Installing Botan into $(DESTDIR)$(PREFIX)... "
+ 	$(MKDIR_INSTALL) $(DOCDIR)
+ 	$(COPY_R) %{doc_output_dir}/* $(DOCDIR)
+ 
+@@ -115,8 +110,6 @@ install: $(LIBRARIES) docs
+ 	$(MKDIR_INSTALL) $(LIBDIR)
+ 	$(INSTALL_CMD_DATA) $(STATIC_LIB) $(LIBDIR)
+ 	$(INSTALL_CMD_EXEC) $(SHARED_LIB) $(LIBDIR)
+-	$(CD) $(LIBDIR); $(LN) $(SHARED_LIB) $(SYMLINK)
+-	$(CD) $(LIBDIR); $(LN) $(SHARED_LIB) $(SONAME)
+ 
+ 	$(MKDIR_INSTALL) $(BINDIR)
+ 	$(INSTALL_CMD_EXEC) $(CONFIG_SCRIPT) $(BINDIR)

@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/11/26 09:07:52 jasper Exp $
+@lib lib/libbotan-1.10.so.${LIBbotan-1.10_VERSION}
