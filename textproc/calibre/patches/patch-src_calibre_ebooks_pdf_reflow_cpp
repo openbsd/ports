@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_calibre_ebooks_pdf_reflow_cpp,v 1.1 2011/11/26 19:50:08 kili Exp $
+
+With poppler-0.18, the classes Link and AnnotLink had been merged
+into AnnotLink. The latter should now contain all functionality of
+the former.
+
+--- src/calibre/ebooks/pdf/reflow.cpp.orig	Fri Sep 23 19:14:20 2011
++++ src/calibre/ebooks/pdf/reflow.cpp	Thu Nov 17 16:35:55 2011
+@@ -625,7 +625,7 @@ static string get_link_dest(LinkAction *link, PDFDoc *
+   return oss.str();
+ }
+ 
+-void XMLOutputDev::process_link(Link* link){
++void XMLOutputDev::process_link(AnnotLink* link){
+   double _x1, _y1, _x2, _y2;
+   int x1, y1, x2, y2;
+   
