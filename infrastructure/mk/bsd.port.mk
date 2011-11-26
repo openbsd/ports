@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1144 2011/11/25 13:58:13 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1145 2011/11/26 13:52:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1845,10 +1845,10 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 		toset="$$toset _IGNORE_COOKIE=$${_ignore_cookie}"; \
 		case "X$$target" in X) target=${_DEPENDS_TARGET};; esac; \
 		case "X$$target" in \
-		Xinstall|Xreinstall) check_installed=true; try_install=true;; \
-		Xpackage|Xfake) check_installed=true; try_install=false;; \
+		Xinstall|Xreinstall) wantsub=false; check_installed=true; try_install=true;; \
+		Xpackage|Xfake) wantsub=false; check_installed=true; try_install=false;; \
 		Xpatch|Xconfigure|Xbuild) \
-			check_installed=false; try_install=false; \
+			wantsub=true; check_installed=false; try_install=false; \
 			mkdir -p ${WRKDIR}/$$dir; \
 			toset="$$toset _MASTER='[${FULLPKGNAME${SUBPACKAGE}}]${_MASTER}' WRKDIR=${WRKDIR}/$$dir";; \
 		*) \
@@ -1903,6 +1903,9 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			${ECHO_MSG} "===>  Verifying $$target for $$pkg in $$dir"; \
 			if (eval $$toset exec ${MAKE} $$target) && \
 				! test -e $${_ignore_cookie}; then \
+				if $$wantsub; then \
+					eval $$toset ${MAKE} show-prepare-results >$@; \
+				fi; \
 				${ECHO_MSG} "===> Returning to build of ${FULLPKGNAME${SUBPACKAGE}}${_MASTER}"; \
 			else \
 				${REPORT_PROBLEM}; \
