@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.11 2011/04/10 18:01:13 jasper Exp $
+# $OpenBSD: Var.pm,v 1.12 2011/11/26 22:30:30 kili Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -330,6 +330,7 @@ sub table() { 'MasterSites' }
 sub add
 {
 	my ($self, $ins) = @_;
+	$self->AnyVar::add($ins);
 
 	my $n;
 	if ($self->var =~ m/^MASTER_SITES(\d)$/) {
