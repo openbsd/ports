@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/09 11:56:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/11/27 10:57:24 fgsch Exp $
 @conflict irc-*
 @conflict ircd-hybrid-*
 @newgroup _ircd-ratbox:619
@@ -45,8 +45,6 @@ lib/ircd-ratbox/modules/autoload/m_post.so
 lib/ircd-ratbox/modules/autoload/m_rehash.so
 lib/ircd-ratbox/modules/autoload/m_restart.so
 lib/ircd-ratbox/modules/autoload/m_resv.so
-@comment lib/ircd-ratbox/modules/autoload/m_services.a
-@comment lib/ircd-ratbox/modules/autoload/m_services.la
 lib/ircd-ratbox/modules/autoload/m_services.so
 lib/ircd-ratbox/modules/autoload/m_set.so
 lib/ircd-ratbox/modules/autoload/m_stats.so
@@ -78,11 +76,7 @@ lib/ircd-ratbox/modules/m_part.so
 lib/ircd-ratbox/modules/m_quit.so
 lib/ircd-ratbox/modules/m_server.so
 lib/ircd-ratbox/modules/m_squit.so
-@comment lib/libcore.a
-@comment lib/libcore.la
 lib/libcore.so
-@comment lib/libratbox.a
-@comment lib/libratbox.la
 lib/libratbox.so
 libexec/ircd-ratbox/
 @bin libexec/ircd-ratbox/bandb
@@ -146,6 +140,7 @@ share/ircd-ratbox/help/opers/dline
 share/ircd-ratbox/help/opers/error
 share/ircd-ratbox/help/opers/etrace
 share/ircd-ratbox/help/opers/gline
+share/ircd-ratbox/help/opers/gungline
 share/ircd-ratbox/help/opers/help
 share/ircd-ratbox/help/opers/index
 share/ircd-ratbox/help/opers/info
