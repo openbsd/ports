@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.24 2011/11/27 14:49:42 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.25 2011/11/27 16:15:52 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -35,6 +35,31 @@ use OpenBSD::FileSource;
 use OpenBSD::BinaryScan;
 use OpenBSD::Recorder;
 use OpenBSD::Issue;
+
+package Logger;
+sub new
+{
+	my ($class, $dir) = @_;
+	require File::Path;
+
+	File::Path::make_path($dir);
+	bless {dir => $dir}, $class;
+}
+
+sub log
+{
+	my ($self, $name) = @_;
+	$name =~ s/^\/*//;
+	$name =~ s/\//./g;
+	return "$self->{dir}/$name";
+}
+
+sub open
+{
+	my ($self, $name) = @_;
+	open my $fh, '>>', $self->log($name);
+	return $fh;
+}
 
 package MyFile;
 our @ISA = qw(OpenBSD::PackingElement::FileBase);
@@ -126,7 +151,7 @@ sub handle_options
 {
 	my $state = shift;
 
-	$state->SUPER::handle_options('od:fB:qs:O:',
+	$state->SUPER::handle_options('od:D:fB:qs:O:',
 		'[-fomqx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
 
 	$state->{destdir} = $state->opt('B');
@@ -140,6 +165,9 @@ sub handle_options
 		$state->{scanner} = OpenBSD::BinaryScan::Objdump->new($state);
 	}
 	$state->{quiet} = $state->opt('q');
+	if ($state->opt('D')) {
+		$state->{logger} = Logger->new($state->opt('D'));
+	}
 }
 
 sub init

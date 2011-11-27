@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.1 2011/11/27 14:49:42 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.2 2011/11/27 16:15:52 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -45,6 +45,12 @@ sub fatal
 	$self->{state}->fatal(@_);
 }
 
+sub logger
+{
+	my $self = shift;
+	return $self->{state}{logger};
+}
+
 sub dest
 {
 	my $self = shift;
@@ -56,10 +62,16 @@ sub start
 	my ($self, @names) = @_;
 
 	unless (open(my $cmd, '-|')) {
+		if ($self->logger) {
+			my $log = $self->logger->log($self->command.".err");
+			open(STDERR, '>>', $log) or
+			    $self->fatal("Can't redirect: #1 #2", $log, $!);
+		} else {
+			open(STDERR, '>', '/dev/null');
+		}
 		chdir($self->{source}->directory) or 
 		    $self->fatal("Bad directory #1: #2", 
 		    	$self->{source}->directory, $!);
-		open(STDERR, '>', '/dev/null');
 		$self->exec(@names) or 
 		    $self->fatal("exec #1: #2", $self->command, $!);
 	} else {
@@ -70,10 +82,22 @@ sub start
 sub record_libs
 {
 	my ($self, $fullname, @libs) = @_;
+	my $fh;
+	if (defined $fullname && defined $self->logger) {
+		$fh = $self->logger->open("$fullname.log") or die "$!";
+		print $fh "Libraries: ";
+	}
+
 	for my $lib (@libs) {
 		# don't look for modules
 		next if $lib =~ m/\.so$/;
 		$self->dest->record($lib, $fullname);
+		if (defined $fh) {
+			print $fh "$lib ";
+		}
+	}
+	if (defined $fh) {
+		print $fh "\n";
 	}
 }
 
@@ -111,7 +135,14 @@ sub parse
 	my $fullname;
 	my @l = ();
 	my $linux_binary = 0;
+	my $fh;
+	if ($self->logger) {
+		$fh = $self->logger->open("objdump.out");
+	}
 	while (my $line = <$cmd>) {
+		if ($fh) {
+			print $fh $line;
+		}
 		chomp;
 		if ($line =~ m/^(.*)\:\s+file format/) {
 			my $k = $1;
@@ -137,9 +168,16 @@ sub parse
 				next if $path eq '/usr/lib';
 				$p->{$path} = 1;
 			}
+			my $d;
+			if ($self->logger) {
+				$d = $self->logger->open("$fullname.log");
+				print $d "rpath: ";
+			}
 			for my $path (keys %$p) {
 				$self->dest->record_rpath($path, $fullname);
+				print $d "$path " if $d;
 			}
+			print $d "\n" if $d;
 		}
 	}
 	$self->record_libs($fullname, @l) unless $linux_binary;
