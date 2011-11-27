@@ -1,7 +1,7 @@
-$OpenBSD: patch-devede_executor_py,v 1.7 2010/03/21 10:48:10 ajacoutot Exp $
---- devede_executor.py.orig	Mon Feb  1 23:41:26 2010
-+++ devede_executor.py	Mon Feb  8 08:56:11 2010
-@@ -154,7 +154,7 @@ class executor:
+$OpenBSD: patch-devede_executor_py,v 1.8 2011/11/27 16:53:55 ajacoutot Exp $
+--- devede_executor.py.orig	Sat Nov 26 14:51:25 2011
++++ devede_executor.py	Sun Nov 27 17:47:18 2011
+@@ -177,7 +177,7 @@ class executor:
  		if (sys.platform=="win32") or (sys.platform=="win64"):
  			pathlist=[os.path.join(wd[0],"bin"),os.path.join(os.getcwd(),"bin"), r'C:\WINDOWS', r'C:\WINDOWS\system32', r'C:\WINNT']
  		else:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/11/22 08:55:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/11/27 16:53:55 ajacoutot Exp $
 bin/devede
 bin/devede-debug
 bin/devede_debug
@@ -71,6 +71,7 @@ share/devede/wmain.ui
 share/devede/wmenu_preview_ntsc.ui
 share/devede/wmenu_preview_pal.ui
 share/devede/wmenu_properties.ui
+share/devede/wno_mp3lame.ui
 share/devede/wnofonts.ui
 share/devede/wpreview_dialog.ui
 share/devede/wpreviewagain_dialog.ui
