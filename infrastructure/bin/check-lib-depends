@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.18 2011/11/27 12:24:06 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.19 2011/11/27 12:29:10 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -106,7 +106,7 @@ sub record_needed_libs
 		return;
 	}
 
-	$state->retrieve_and_run_objdump($dest, $source, $item, $fullname);
+	$state->retrieve_and_scan_binaries($dest, $source, $item, $fullname);
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -152,6 +152,10 @@ sub start
 	}
 }
 
+sub finish_scanning
+{
+}
+
 package Runner::Objdump;
 our @ISA = qw(Runner);
 
@@ -180,7 +184,7 @@ sub exec
 package CheckLibDepends::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
 
-sub run_objdump
+sub scan_binaries
 {
 	my ($state, $source, $item) = @_;
 	my $cmd;
@@ -220,11 +224,11 @@ sub parse_objdump
 	&$doit($fullname, @l);
 }
 
-sub retrieve_and_run_objdump
+sub retrieve_and_scan_binaries
 {
 	my ($state, $dest, $source, $item, $fullname) = @_;
 
-	my $cmd = $state->run_objdump($source, $item);
+	my $cmd = $state->scan_binaries($source, $item);
 	parse_objdump($cmd, $dest, $fullname,
 	    sub {
 		    my $fullname = shift;
@@ -236,10 +240,6 @@ sub retrieve_and_run_objdump
 	    });
 	close($cmd);
 	$source->clean($item);
-}
-
-sub finish_objdump
-{
 }
 
 sub handle_options
@@ -462,7 +462,7 @@ sub scan_package
 	my ($self, $state, $plist, $source) = @_;
 	$state->{runner}->set_source($source);
 	$plist->record_needed_libs($state, $state->{recorder}, $source);
-	$state->finish_objdump($state->{recorder}, $source);
+	$state->{runner}->finish_scanning;
 }
 
 sub analyze 
