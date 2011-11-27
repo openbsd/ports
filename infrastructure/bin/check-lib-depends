@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.27 2011/11/27 16:50:19 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.28 2011/11/27 17:31:54 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -109,12 +109,10 @@ sub register_libs
 package OpenBSD::PackingElement::FileBase;
 sub find_libs
 {
-	my ($item, $dest, $special) = @_;
+	my ($item, $dest, $dump) = @_;
 	my $fullname = $item->fullname;
-	if (defined $special->{$fullname}) {
-		for my $lib (@{$special->{$fullname}{libs}}) {
-			$dest->record($lib, $fullname);
-		}
+	for my $lib ($dump->libraries($fullname)) {
+		$dest->record($lib, $fullname);
 	}
 }
 
@@ -386,7 +384,7 @@ sub analyze
 	my $needed_libs = $state->{full} ? OpenBSD::AllRecorder->new : 
 	    OpenBSD::SimpleRecorder->new;
 	my $has_libs = {};
-	$plist->find_libs($needed_libs, $state->{recorder});
+	$plist->find_libs($needed_libs, $state->{dump});
 	$plist->register_libs($has_libs);
 
 	if (!defined $dependencies->{$pkgname}) {
@@ -437,7 +435,7 @@ sub do_pkg
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	$state->set_context($plist);
 	my $temp = OpenBSD::Temp->dir;
-	$state->{recorder} = OpenBSD::DumpRecorder->new;
+	$state->{dump} = OpenBSD::DumpRecorder->new;
 	$self->scan_package($state, $plist,
 	    OpenBSD::PkgFileSource->new($true_package, $temp));
 	$self->analyze($state, $plist);
@@ -445,7 +443,7 @@ sub do_pkg
 	$true_package->wipe_info;
 	$plist->forget;
 	if ($state->{dest}) {
-		$state->{recorder}->dump($state->{dest});
+		$state->{dump}->dump($state->{dest});
 	}
 	return 1;
 }
@@ -491,13 +489,13 @@ sub main
 	my $need_package = 0;
 	# find files if we can
 	if ($state->{source}) {
-		$state->{recorder} = OpenBSD::DumpRecorder->new;
-		$state->{recorder}->retrieve($state, $state->{source});
+		$state->{dump} = OpenBSD::DumpRecorder->new;
+		$state->{dump}->retrieve($state, $state->{source});
 	} elsif ($state->{destdir}) {
-		$state->{recorder} = OpenBSD::DumpRecorder->new;
+		$state->{dump} = OpenBSD::DumpRecorder->new;
 		$self->scan_directory($state, $state->{destdir});
 		if ($state->{dest}) {
-			$state->{recorder}->dump($state->{dest});
+			$state->{dump}->dump($state->{dest});
 		}
 	} else {
 		$need_package = 1;

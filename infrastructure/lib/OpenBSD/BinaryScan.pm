@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.2 2011/11/27 16:15:52 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.3 2011/11/27 17:31:54 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -54,7 +54,7 @@ sub logger
 sub dest
 {
 	my $self = shift;
-	return $self->{state}->{recorder};
+	return $self->{state}{dump};
 }
 
 sub start

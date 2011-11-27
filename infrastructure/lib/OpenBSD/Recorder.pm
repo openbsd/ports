@@ -1,4 +1,4 @@
-# $OpenBSD: Recorder.pm,v 1.3 2010/11/11 12:17:20 espie Exp $
+# $OpenBSD: Recorder.pm,v 1.4 2011/11/27 17:31:54 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -90,7 +90,12 @@ sub dump
 }
 
 package OpenBSD::DumpRecorder;
-our @ISA = qw(OpenBSD::Recorder);
+sub new
+{
+	my $class = shift;
+	return bless {}, $class;
+}
+
 sub record
 {
 	my ($self, $lib, $filename) = @_;
@@ -112,6 +117,26 @@ sub dump
 			print $fh "(", join(':', @{$v->{rpath}}), ")";
 		}
 		print $fh ": ", join(',', @{$v->{libs}}), "\n";
+	}
+}
+
+sub libraries
+{
+	my ($self, $fullname) = @_;
+	if (defined $self->{$fullname} && defined $self->{$fullname}{libs}) {
+		return @{$self->{$fullname}{libs}};
+	} else {
+		return ();
+	}
+}
+
+sub rpath
+{
+	my ($self, $fullname) = @_;
+	if (defined $self->{$fullname} && defined $self->{$fullname}{rpath}) {
+		return @{$self->{$fullname}{rpath}};
+	} else {
+		return ();
 	}
 }
 
