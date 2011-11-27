@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/27 11:09:56 pirofti Exp $
 
 COMMENT =	faster implementation of the standard debug.rb - base
 
 DISTNAME =	ruby-${PKGNAME}
 PKGNAME =	debug-base-0.10.3
-REVISION =	3
+REVISION =	4
 CATEGORIES =	devel
-
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =		Yes

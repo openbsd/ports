@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/11/27 11:10:35 pirofti Exp $
 
 COMMENT =	caches (Ruby source) files
 
 DISTNAME =	linecache-0.43
-REVISION =	4
+REVISION =	5
 CATEGORIES =	devel
-
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

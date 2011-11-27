@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/27 11:11:12 pirofti Exp $
 
 COMMENT =	small and fast replacement for test/unit
 
 DISTNAME =	minitest-2.2.2
-REVISION=		0
+REVISION =	1
 CATEGORIES =	devel
-
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

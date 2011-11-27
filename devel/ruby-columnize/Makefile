@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:57 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/11/27 11:09:27 pirofti Exp $
 
 COMMENT =	sorts an array in column order
 
 DISTNAME =	columnize-0.3.1
-REVISION =	4
+REVISION =	5
 CATEGORIES =	devel
-
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes

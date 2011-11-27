@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/11/27 11:13:16 pirofti Exp $
 
 COMMENT =	ensures test coverage and accelerates TDD
 
 DISTNAME =	ZenTest-4.1.4
 PKGNAME =	${DISTNAME:L}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	devel
-
-MAINTAINER =	Paul Irofti <pirofti@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
