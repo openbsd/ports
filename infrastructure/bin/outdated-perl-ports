@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: outdated-perl-ports,v 1.6 2011/08/31 11:24:19 jasper Exp $
+# $OpenBSD: outdated-perl-ports,v 1.1 2011/11/27 13:29:35 jasper Exp $
 #
 # Copyright (c) 2003 Sam Smith <S@mSmith.net>
 #

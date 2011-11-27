@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.15 2011/10/22 07:42:24 espie Exp $
+# $OpenBSD: cpan.port.mk,v 1.16 2011/11/27 13:29:35 jasper Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -54,7 +54,7 @@ ERRORS +=	"Fatal: CPAN_REPORT_DB must point to a directory"
 ERRORS +=	"Fatal: CPAN_REPORT_FROM needs an email address"
 .  endif
 
-CPANTEST =	perl ${PORTSDIR}/infrastructure/build/cpanreport
+CPANTEST =	perl ${PORTSDIR}/infrastructure/bincpanreport
 CPANTEST_FLAGS =-f ${REGRESS_LOGFILE} -s ${CPAN_REPORT_FROM:Q} ${DISTNAME} \
 			> ${CPAN_REPORT_DB}/${PKGNAME}
 CPANTEST_PASS =	-g pass ${CPANTEST_FLAGS}
