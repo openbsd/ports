@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.21 2011/11/27 13:10:36 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.22 2011/11/27 13:29:38 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -136,6 +136,12 @@ sub fatal
 	$self->{state}->fatal(@_);
 }
 
+sub dest
+{
+	my $self = shift;
+	return $self->{state}->{recorder};
+}
+
 sub start
 {
 	my ($self, @names) = @_;
@@ -152,6 +158,15 @@ sub start
 	}
 }
 
+sub record_libs
+{
+	my ($self, $fullname, @libs) = @_;
+	for my $lib (@libs) {
+		# don't look for modules
+		next if $lib =~ m/\.so$/;
+		$self->dest->record($lib, $fullname);
+	}
+}
 
 sub retrieve_and_scan_binaries
 {
@@ -161,24 +176,7 @@ sub retrieve_and_scan_binaries
 	# make sure to turn into a relative path
 	$n =~ s/^\/*//;
 
-	my $cmd = $self->start($n);
-	my $dest = $self->{state}->{recorder};
-
-	$self->parse($cmd, $dest, $fullname, {$n => $fullname},
-	    sub {
-		    my $fullname = shift;
-		    for my $lib (@_) {
-			    # don't look for modules
-			    next if $lib =~ m/\.so$/;
-			    $dest->record($lib, $fullname);
-		    }
-	    });
-	close($cmd);
-	$self->{source}->clean($item);
-}
-
-sub finish_scanning
-{
+	$self->scan_binary($item, $fullname, $n);
 }
 
 package Runner::Objdump;
@@ -194,14 +192,15 @@ sub exec
 
 sub parse
 {
-	my ($self, $cmd, $dest, $fullname, $names, $doit) = @_;
+	my ($self, $cmd, $names) = @_;
+	my $fullname;
 	my @l = ();
 	my $linux_binary = 0;
 	while (my $line = <$cmd>) {
 		chomp;
 		if ($line =~ m/^(.*)\:\s+file format/) {
 			my $k = $1;
-			&$doit($fullname, @l) unless $linux_binary;
+			$self->record_libs($fullname, @l) unless $linux_binary;
 			$linux_binary = 0;
 			@l = ();
 			if (defined $names->{$k}) {
@@ -224,11 +223,41 @@ sub parse
 				$p->{$path} = 1;
 			}
 			for my $path (keys %$p) {
-				$dest->record_rpath($path, $fullname);
+				$self->dest->record_rpath($path, $fullname);
 			}
 		}
 	}
-	&$doit($fullname, @l) unless $linux_binary;
+	$self->record_libs($fullname, @l) unless $linux_binary;
+}
+
+sub scan_binary
+{
+	my ($self, $item, $fullname, $n) = @_;
+
+	$self->{names}{$n} = $fullname;
+	push(@{$self->{cleanup}}, $item);
+
+	if (@{$self->{cleanup}} >= 1000) {
+		$self->finish_scanning;
+	}
+}
+
+sub finish_scanning
+{
+	my $self = shift;
+
+	if (defined $self->{names}) {
+		my $cmd = $self->start(sort keys %{$self->{names}});
+		$self->parse($cmd, $self->{names});
+		close($cmd);
+		delete $self->{names};
+	}
+	if (defined $self->{cleanup}) {
+		for my $item (@{$self->{cleanup}}) {
+			$self->{source}->clean($item);
+		}
+		delete $self->{cleanup};
+	}
 }
 
 package Runner::Ldd;
@@ -247,7 +276,7 @@ sub exec
 
 sub parse
 {
-	my ($self, $cmd, $dest, $fullname, $names, $doit) = @_;
+	my ($self, $cmd, $fullname) = @_;
 	my @l = ();
 	my $linux_binary = 0;
 	while (my $line = <$cmd>) {
@@ -261,7 +290,21 @@ sub parse
 			}
 		}
 	}
-	&$doit($fullname, @l) unless $linux_binary;
+	$self->record_libs($fullname, @l) unless $linux_binary;
+}
+
+sub scan_binary
+{
+	my ($self, $item, $fullname, $n) = @_;
+	my $cmd = $self->start($n);
+
+	$self->parse($cmd, $fullname);
+	close($cmd);
+	$self->{source}->clean($item);
+}
+
+sub finish_scanning
+{
 }
 
 package CheckLibDepends::State;
