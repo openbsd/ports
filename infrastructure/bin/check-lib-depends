@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.28 2011/11/27 17:31:54 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.29 2011/11/27 17:37:47 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -71,7 +71,7 @@ sub fullname
 }
 
 package OpenBSD::PackingElement;
-sub record_needed_libs
+sub scan_binaries_for_libs
 {
 }
 
@@ -116,7 +116,7 @@ sub find_libs
 	}
 }
 
-sub record_needed_libs
+sub scan_binaries_for_libs
 {
 	my ($item, $state) = @_;
 
@@ -372,7 +372,7 @@ sub scan_package
 {
 	my ($self, $state, $plist, $source) = @_;
 	$state->{scanner}->set_source($source);
-	$plist->record_needed_libs($state);
+	$plist->scan_binaries_for_libs($state);
 	$state->{scanner}->finish_scanning;
 }
 
@@ -476,9 +476,10 @@ sub scan_directory
 		    $name =~ s/^\Q$fs\E/\//;
 		    # XXX hack FileBase object;
 		    my $i = bless {name => $name}, "MyFile";
-		    $i->record_needed_libs($state);
+		    $i->scan_binaries_for_libs($state);
 		},
 		no_chdir => 1 }, $fs);
+	$state->{scanner}->finish_scanning;
 }
 
 sub main
