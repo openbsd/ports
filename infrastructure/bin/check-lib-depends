@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.16 2011/11/27 11:50:26 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.17 2011/11/27 12:09:17 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -117,6 +117,60 @@ sub depwalk
 	$h->{$self->{def}} = $self->{pkgpath};
 }
 
+package Runner;
+sub new
+{
+	my ($class, $state) = @_;
+	bless {state => $state}, $class;
+}
+
+sub fatal
+{
+	my $self = shift;
+	$self->{state}->fatal(@_);
+}
+
+sub start
+{
+	my ($self, $directory, @names) = @_;
+
+	unless (open(my $cmd, '-|')) {
+		chdir($directory) or 
+		    $self->fatal("Bad directory #1: #2", 
+		    	$directory, $!);
+		open(STDERR, '>', '/dev/null');
+		$self->exec(@names) or 
+		    $self->fatal("exec #1: #2", $self->command, $!);
+	} else {
+		return $cmd;
+	}
+}
+
+package Runner::Objdump;
+our @ISA = qw(Runner);
+
+sub command() { 'objdump' }
+
+sub exec
+{
+	my ($self, @names) = @_;
+	exec($self->command, '-p', @names);
+}
+
+package Runner::Ldd;
+our @ISA = qw(Ldd);
+
+sub command() { 'ldd' }
+
+sub exec
+{
+	my ($self, @names) = @_;
+	if (@names > 1) {
+		$self->fatal("Can't run ldd over several names");
+	}
+	exec($self->command, '-f', "NEEDED lib%o.so.%m.%n\n", @names);
+}
+
 package CheckLibDepends::State;
 our @ISA = qw(OpenBSD::AddCreateDelete::State);
 
@@ -129,20 +183,7 @@ sub run_objdump
 	# make sure to turn into a relative path
 	$n =~ s/^\/*//;
 
-	unless (open($cmd, '-|')) {
-		chdir($source->directory) or 
-		    $state->fatal("Bad directory #1: #2", 
-		    	$source->directory, $!);
-		open(STDERR, '>', '/dev/null');
-		if ($state->{old}) {
-			exec("ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or 
-			    $state->fatal("exec ldd: #1", $!);
-		} else {
-			exec('objdump', '-p', $n) or 
-			    $state->fatal("exec objdump: #1", $!);
-		}
-	}
-	return $cmd;
+	return $state->{runner}->start($source->directory, $n);
 }
 
 sub parse_objdump
@@ -207,7 +248,11 @@ sub handle_options
 	$state->{source} = $state->opt('s');
 	$state->{full} = $state->opt('f');
 	$state->{repository} = $state->opt('d');
-	$state->{old} = $state->opt('o');
+	if ($state->opt('o')) {
+		$state->{runner} = Runner::Ldd->new($state);
+	} else {
+		$state->{runner} = Runner::Objdump->new($state);
+	}
 }
 
 sub init
