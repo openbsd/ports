@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1147 2011/11/27 17:21:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1148 2011/11/27 21:04:34 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1012,7 +1012,7 @@ _SITE_SELECTOR = case $$select in
 
 .for _I in 0 1 2 3 4 5 6 7 8 9
 .  if defined(MASTER_SITES${_I})
-.    if !defined(MASTER_SITE_OVERRIDE)
+.    if ${MASTER_SITE_OVERRIDE:L} == "no"
 MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
 .    else
 MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
