@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.26 2011/11/27 16:40:58 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.27 2011/11/27 16:50:19 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -488,6 +488,7 @@ sub main
 	my $self = shift;
 	my $state = CheckLibDepends::State->new('check-lib-depends');
 	$state->handle_options;
+	my $need_package = 0;
 	# find files if we can
 	if ($state->{source}) {
 		$state->{recorder} = OpenBSD::DumpRecorder->new;
@@ -498,12 +499,22 @@ sub main
 		if ($state->{dest}) {
 			$state->{recorder}->dump($state->{dest});
 		}
-	} 
+	} else {
+		$need_package = 1;
+	}
 
 	if ($state->{stdin}) {
+		if ($need_package) {
+			$state->fatal("no source for actual files given");
+		}
 		$self->do_plist($state);
 	} elsif (@ARGV == 0) {
-		$self->do_plist($state) if !$state->{dest};
+		if (!$state->{dest}) {
+			if ($need_package) {
+				$state->fatal("no source for actual files given");
+			}
+			$self->do_plist($state);
+		}
 	} else {
 		$state->progress->for_list("Scanning", \@ARGV,
 		    sub {
