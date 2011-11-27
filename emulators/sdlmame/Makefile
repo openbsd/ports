@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/16 17:42:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2011/11/27 12:42:28 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,18 +8,14 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			0.132
-DISTNAME =		sdlmame${V:S/.//}
-PKGNAME-main =		sdlmame-${V}
-REVISION-main =		9
-PKGNAME-tools =		sdlmame-tools-${V}
-REVISION-tools =	7
+V =			0144
+DISTNAME =		mame${V}s
+PKGNAME-main =		sdlmame-${V:S/0/0./}
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}
 
 CATEGORIES =		emulators games
 
-HOMEPAGE =		http://rbelmont.mameworld.info/?page_id=163
-
-MAINTAINER =		Pierre Riteau <pierre.riteau@gmail.com>
+HOMEPAGE =		http://mamedev.org/
 
 # MAME Distribution License, see http://mamedev.org/license.html
 # history.dat : Creative Commons Attribution 3.0
@@ -30,68 +26,69 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	devel/gettext
 
-WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender xcb-render xcb-shm
-WANTLIB +=	GL atk-1.0 c cairo dbus-1
-WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
-WANTLIB +=	SDL gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB =	GL SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
+		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
+		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
+		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+		pixman-1 png pthread pthread-stubs stdc++ util xcb \
+		xcb-render xcb-shm z
 
-MASTER_SITES =		http://rbelmont.mameworld.info/
+MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/
+MASTER_SITES0 =		http://mamedev.org/updates/
+MASTER_SITES1 = 	http://www.arcade-history.com/dats/
+
 EXTRACT_SUFX =		.zip
+DIST_SUBDIR =		mame
 
-MASTER_SITES0 = 	http://www.arcade-history.com/dats/
-DISTFILES+=		${DISTNAME}${EXTRACT_SUFX} \
-			mamehistory137.zip:0
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			mamehistory${V:S/0//}.zip:1
 
 BUILD_DEPENDS = 	archivers/unzip
-LIB_DEPENDS =		devel/sdl \
-			devel/gconf2 \
+LIB_DEPENDS =		devel/gconf2 \
+			devel/sdl-ttf \
 			x11/gtk+2
-RUN_DEPENDS-main =	${PKGNAME-tools}:emulators/sdlmame,-tools
+RUN_DEPENDS-main =	fonts/liberation-fonts
 
+MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
+MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
+			TARGETOS=openbsd
+.if ${MACHINE_ARCH} == "amd64"
+MAKE_ENV +=		PTR64=1
+.endif
 USE_GMAKE =		Yes
+
+MAKE_FILE =		makefile
 
 NO_REGRESS =		Yes
 VMEM_WARNING =		Yes
 
-MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
-MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" LD=$(CC) \
-			TARGETOS=openbsd
-.if ${MACHINE_ARCH} == "amd64"
-MAKE_ENV+=		PTR64=1
-# XXX -Wno-system-headers is needed because of inclusion of *mmintrin.h from gcc
-# those headers don't compile with -Wsystem-headers -Werror on amd64
-MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\"" -Wno-system-headers'
-.endif
-MAKE_FILE =		makefile
+post-extract:
+	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
-MAME_EXTBIN =		chdman jedutil ldresample ldverify romcmp
-MAME_DOC =		config.txt license.txt mame.txt newvideo.txt
-MAME_DATA_DIR =		roms samples artwork ctrlr cheat keymaps
+pre-patch:
+	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
+	    ${WRKDIST}/src/emu/fileio.h \
+	    ${WRKDIST}/src/osd/sdl/sdlos_unix.c \
+	    ${WRKDIST}/src/mame/video/mcd212.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/sdlmame
-.for i in ${MAME_EXTBIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/${i}
+.for f in chdman jedutil ldresample ldverify romcmp
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-.for i in ${MAME_DATA_DIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmame/${i}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/keymaps/km[-_]??.txt \
-		${PREFIX}/share/sdlmame/keymaps/
-	${INSTALL_DATA} ${WRKSRC}/ui.bdf ${PREFIX}/share/sdlmame
+	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmame/keymaps
+	${INSTALL_DATA} ${WRKSRC}/src/osd/sdl/keymaps/km[-_]??.txt \
+	    ${PREFIX}/share/sdlmame/keymaps/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sdlmame
-.for i in ${MAME_DOC}
-	${INSTALL_DATA} ${WRKSRC}/docs/${i} ${PREFIX}/share/doc/sdlmame/
+.for f in config.txt hlsl.txt license.txt mame.txt newvideo.txt
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/sdlmame
 .endfor
-	${INSTALL_DATA} $(WRKSRC)/SDLMAME.txt ${PREFIX}/share/doc/sdlmame/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sdlmame
 	${SUBST_CMD} -c ${FILESDIR}/mame.ini \
-		${PREFIX}/share/examples/sdlmame/mame.ini
+	    ${PREFIX}/share/examples/sdlmame/mame.ini
 	chown ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/examples/sdlmame/mame.ini
+	    ${PREFIX}/share/examples/sdlmame/mame.ini
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/sdlmame
 
 .include <bsd.port.mk>

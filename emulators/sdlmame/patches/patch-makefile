@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile,v 1.2 2010/05/23 09:19:45 espie Exp $
---- makefile.orig	Sun Mar 29 01:50:01 2009
-+++ makefile	Mon May 17 21:55:57 2010
-@@ -125,10 +125,10 @@ endif
+$OpenBSD: patch-makefile,v 1.3 2011/11/27 12:42:28 fgsch Exp $
+--- makefile.orig	Sat Feb 12 15:17:48 2011
++++ makefile	Thu Jun  2 12:18:06 2011
+@@ -206,10 +206,10 @@ endif
  # BIGENDIAN = 1
  
  # uncomment next line to build expat as part of MAME build
@@ -14,39 +14,34 @@ $OpenBSD: patch-makefile,v 1.2 2010/05/23 09:19:45 espie Exp $
  
  # uncomment next line to include the symbols
  # SYMBOLS = 1
-@@ -197,8 +197,8 @@ endif
+@@ -298,7 +298,7 @@ endif
  
  # compiler, linker and utilities
  AR = @ar
 -CC = @gcc
--LD = @gcc
 +CC ?= @gcc
-+LD ?= @gcc
+ LD = @g++
  MD = -mkdir$(EXE)
  RM = @rm -f
- 
-@@ -227,7 +227,7 @@ NAME = $(TARGET)$(SUBTARGET)
+@@ -347,7 +347,7 @@ NAME = $(TARGET)$(SUBTARGET)
  endif
  
- # fullname is prefix+name+suffix+debugsuffix
--FULLNAME = $(PREFIX)$(NAME)$(CPPSUFFIX)$(SUFFIX)$(DEBUGSUFFIX)
-+FULLNAME = $(NAME)$(CPPSUFFIX)$(SUFFIX)$(DEBUGSUFFIX)
+ # fullname is prefix+name+suffix+suffix64+suffixdebug
+-FULLNAME = $(PREFIX)$(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIX64)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
++FULLNAME = $(PREFIXSDL)$(NAME)$(SUFFIX)$(SUFFIXDEBUG)$(SUFFIXPROFILE)
  
  # add an EXE suffix to get the final emulator name
  EMULATOR = $(FULLNAME)$(EXE)
-@@ -302,9 +302,9 @@ CPPONLYFLAGS =
+@@ -423,7 +423,7 @@ CPPONLYFLAGS =
+ 
  # CFLAGS is defined based on C or C++ targets
  # (remember, expansion only happens when used, so doing it here is ok)
- ifdef CPP_COMPILE
 -CFLAGS = $(CCOMFLAGS) $(CPPONLYFLAGS)
 +CFLAGS += $(CCOMFLAGS) $(CPPONLYFLAGS)
- else
--CFLAGS = $(CCOMFLAGS) $(CONLYFLAGS)
-+CFLAGS += $(CCOMFLAGS) $(CONLYFLAGS)
- endif
  
  # we compile C-only to C89 standard with GNU extensions
-@@ -331,7 +331,7 @@ CCOMFLAGS += -pg
+ # we compile C++ code to C++98 standard with GNU extensions
+@@ -450,7 +450,7 @@ CCOMFLAGS += -pg
  endif
  
  # add the optimization flag
@@ -55,13 +50,3 @@ $OpenBSD: patch-makefile,v 1.2 2010/05/23 09:19:45 espie Exp $
  
  # if we are optimizing, include optimization options
  # and make all errors into warnings
-@@ -355,8 +355,7 @@ CCOMFLAGS += \
- # warnings only applicable to C compiles
- CONLYFLAGS += \
- 	-Wpointer-arith \
--	-Wbad-function-cast \
--	-Wstrict-prototypes
-+	-Wbad-function-cast
- 
- # this warning is not supported on the os2 compilers
- ifneq ($(TARGETOS),os2)
