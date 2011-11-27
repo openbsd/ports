@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/13 13:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/11/27 12:48:30 dcoppa Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
 DISTNAME = 	gnupg-2.0.18
 CATEGORIES = 	security
-REVISION =	0
+REVISION =	1
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
 		ftp://gd.tuwien.ac.at/privacy/gnupg/gnupg/ \
@@ -25,8 +25,8 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
-WANTLIB +=		assuan bz2 c gcrypt gpg-error pthread
-WANTLIB +=		ksba pth readline termcap usb z
+WANTLIB +=		assuan bz2 c gcrypt gpg-error
+WANTLIB +=		ksba pth readline termcap z
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -35,8 +35,7 @@ MODULES = 		devel/gettext
 FLAVORS = 		ldap
 FLAVOR ?=
 
-LIB_DEPENDS = 		devel/libusb-compat \
-			archivers/bzip2 \
+LIB_DEPENDS =		archivers/bzip2 \
 			security/libassuan \
 			security/libgcrypt \
 			security/libksba \
@@ -61,9 +60,12 @@ USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread" 
+			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 			--enable-gpgtar
+
+# XXX gnupth/pthread segfault woes
+CONFIGURE_ARGS +=	--disable-scdaemon
 
 # Avoid conflict with gnupg-1.x
 post-install:

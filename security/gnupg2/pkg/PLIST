@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/17 15:42:08 pea Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/11/27 12:48:30 dcoppa Exp $
 @option no-default-conflict
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
@@ -11,10 +11,8 @@ bin/gpgsm-gencert.sh
 @bin bin/gpgtar
 @bin bin/gpgv2
 @bin bin/kbxutil
-@bin bin/scdaemon
 @bin bin/watchgnupg
 @info info/gnupg.info
-@comment libexec/gnupg-pcsc-wrapper
 @bin libexec/gpg-check-pattern
 @bin libexec/gpg-preset-passphrase
 @bin libexec/gpg-protect-tool
