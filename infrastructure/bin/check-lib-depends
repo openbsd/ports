@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.14 2011/11/27 11:29:33 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.15 2011/11/27 11:37:58 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -119,7 +119,7 @@ sub run_objdump
 
 sub parse_objdump
 {
-	my ($cmd, $dest, $fullname) = @_;
+	my ($cmd, $dest, $fullname, $doit) = @_;
 	my @l = ();
 	while (my $line = <$cmd>) {
 		if ($line =~ m/^\s+NEEDED\s+(.*?)\s*$/) {
@@ -142,7 +142,7 @@ sub parse_objdump
 			}
 		}
 	}
-	return @l;
+	&$doit($fullname, @l);
 }
 
 sub record_needed_libs
@@ -159,11 +159,15 @@ sub record_needed_libs
 		return;
 	}
 	my $cmd = run_objdump($state, $source, $item);
-	for my $lib (parse_objdump($cmd, $dest, $fullname)) {
-		# don't look for modules
-		next if $lib =~ m/\.so$/;
-		$dest->record($lib, $fullname);
-	}
+	parse_objdump($cmd, $dest, $fullname,
+	    sub {
+		    my $fullname = shift;
+		    for my $lib (@_) {
+			    # don't look for modules
+			    next if $lib =~ m/\.so$/;
+			    $dest->record($lib, $fullname);
+		    }
+	    });
 	close($cmd);
 	$source->clean($item);
 }
