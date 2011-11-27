@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.15 2011/11/27 11:37:58 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.16 2011/11/27 11:50:26 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -92,6 +92,34 @@ sub find_libs
 	}
 }
 
+sub record_needed_libs
+{
+	my ($item, $state, $dest, $source) = @_;
+	my $fullname = File::Spec->canonpath($item->fullname);
+
+	my $linux_bin = 0;
+	if ($fullname =~ m,^/usr/local/emul/(?:redhat|fedora)/,) {
+		$linux_bin = 1;
+	}
+	if ($linux_bin || $item->{symlink} || $item->{link}) {
+		$source->skip($item);
+		return;
+	}
+
+	$state->retrieve_and_run_objdump($dest, $source, $item, $fullname);
+}
+
+package OpenBSD::PackingElement::Dependency;
+
+sub depwalk
+{
+	my ($self, $h) = @_;
+	$h->{$self->{def}} = $self->{pkgpath};
+}
+
+package CheckLibDepends::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+
 sub run_objdump
 {
 	my ($state, $source, $item) = @_;
@@ -145,20 +173,11 @@ sub parse_objdump
 	&$doit($fullname, @l);
 }
 
-sub record_needed_libs
+sub retrieve_and_run_objdump
 {
-	my ($item, $state, $dest, $source) = @_;
-	my $fullname = File::Spec->canonpath($item->fullname);
+	my ($state, $dest, $source, $item, $fullname) = @_;
 
-	my $linux_bin = 0;
-	if ($fullname =~ m,^/usr/local/emul/(?:redhat|fedora)/,) {
-		$linux_bin = 1;
-	}
-	if ($linux_bin || $item->{symlink} || $item->{link}) {
-		$source->skip($item);
-		return;
-	}
-	my $cmd = run_objdump($state, $source, $item);
+	my $cmd = $state->run_objdump($source, $item);
 	parse_objdump($cmd, $dest, $fullname,
 	    sub {
 		    my $fullname = shift;
@@ -172,16 +191,9 @@ sub record_needed_libs
 	$source->clean($item);
 }
 
-package OpenBSD::PackingElement::Dependency;
-
-sub depwalk
+sub finish_objdump
 {
-	my ($self, $h) = @_;
-	$h->{$self->{def}} = $self->{pkgpath};
 }
-
-package CheckLibDepends::State;
-our @ISA = qw(OpenBSD::AddCreateDelete::State);
 
 sub handle_options
 {
@@ -398,6 +410,7 @@ sub scan_package
 {
 	my ($self, $state, $plist, $source) = @_;
 	$plist->record_needed_libs($state, $state->{recorder}, $source);
+	$state->finish_objdump($state->{recorder}, $source);
 }
 
 sub analyze 
