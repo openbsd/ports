@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.17 2011/11/27 12:09:17 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.18 2011/11/27 12:24:06 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -124,6 +124,12 @@ sub new
 	bless {state => $state}, $class;
 }
 
+sub set_source
+{
+	my ($self, $source) = @_;
+	$self->{source} = $source;
+}
+
 sub fatal
 {
 	my $self = shift;
@@ -132,12 +138,12 @@ sub fatal
 
 sub start
 {
-	my ($self, $directory, @names) = @_;
+	my ($self, @names) = @_;
 
 	unless (open(my $cmd, '-|')) {
-		chdir($directory) or 
+		chdir($self->{source}->directory) or 
 		    $self->fatal("Bad directory #1: #2", 
-		    	$directory, $!);
+		    	$self->{source}->directory, $!);
 		open(STDERR, '>', '/dev/null');
 		$self->exec(@names) or 
 		    $self->fatal("exec #1: #2", $self->command, $!);
@@ -183,7 +189,7 @@ sub run_objdump
 	# make sure to turn into a relative path
 	$n =~ s/^\/*//;
 
-	return $state->{runner}->start($source->directory, $n);
+	return $state->{runner}->start($n);
 }
 
 sub parse_objdump
@@ -454,6 +460,7 @@ sub print_list
 sub scan_package
 {
 	my ($self, $state, $plist, $source) = @_;
+	$state->{runner}->set_source($source);
 	$plist->record_needed_libs($state, $state->{recorder}, $source);
 	$state->finish_objdump($state->{recorder}, $source);
 }
@@ -549,6 +556,7 @@ sub scan_directory
 	my ($self, $state, $fs) = @_;
 
 	my $source = OpenBSD::FsFileSource->new($fs);
+	$state->{runner}->set_source($source);
 	find({
 		wanted => sub {
 		    return if -l $_;
