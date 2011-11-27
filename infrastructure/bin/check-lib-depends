@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.22 2011/11/27 13:29:38 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.23 2011/11/27 13:39:11 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -315,8 +315,8 @@ sub handle_options
 {
 	my $state = shift;
 
-	$state->SUPER::handle_options('od:fB:s:O:',
-		'[-fomx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
+	$state->SUPER::handle_options('od:fB:qs:O:',
+		'[-fomqx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
 
 	$state->{destdir} = $state->opt('B');
 	$state->{dest} = $state->opt('O');
@@ -328,6 +328,7 @@ sub handle_options
 	} else {
 		$state->{runner} = Runner::Objdump->new($state);
 	}
+	$state->{quiet} = $state->opt('q');
 }
 
 sub init
@@ -572,7 +573,9 @@ sub analyze
 		next if $v == 2;
 		$extra->{$k} = 1;
 	}
-	$self->print_list($state, "Extra: ", $extra);
+	unless ($state->{quiet} && keys %{$r->{wantlib}} == 0) {
+		$self->print_list($state, "Extra: ", $extra);
+	}
 	$self->print_list($state, "WANTLIB +=", $r->{wantlib});
 	if ($state->{full}) {
 		$needed_libs->dump(\*STDOUT);
