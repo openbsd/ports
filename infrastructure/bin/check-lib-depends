@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.19 2011/11/27 12:29:10 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.20 2011/11/27 12:42:40 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -94,7 +94,8 @@ sub find_libs
 
 sub record_needed_libs
 {
-	my ($item, $state, $dest, $source) = @_;
+	my ($item, $state) = @_;
+
 	my $fullname = File::Spec->canonpath($item->fullname);
 
 	my $linux_bin = 0;
@@ -102,11 +103,10 @@ sub record_needed_libs
 		$linux_bin = 1;
 	}
 	if ($linux_bin || $item->{symlink} || $item->{link}) {
-		$source->skip($item);
-		return;
+		$state->{runner}->{source}->skip($item);
+	} else {
+		$state->{runner}->retrieve_and_scan_binaries($item, $fullname);
 	}
-
-	$state->retrieve_and_scan_binaries($dest, $source, $item, $fullname);
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -152,48 +152,16 @@ sub start
 	}
 }
 
-sub finish_scanning
-{
-}
-
-package Runner::Objdump;
-our @ISA = qw(Runner);
-
-sub command() { 'objdump' }
-
-sub exec
-{
-	my ($self, @names) = @_;
-	exec($self->command, '-p', @names);
-}
-
-package Runner::Ldd;
-our @ISA = qw(Ldd);
-
-sub command() { 'ldd' }
-
-sub exec
-{
-	my ($self, @names) = @_;
-	if (@names > 1) {
-		$self->fatal("Can't run ldd over several names");
-	}
-	exec($self->command, '-f', "NEEDED lib%o.so.%m.%n\n", @names);
-}
-
-package CheckLibDepends::State;
-our @ISA = qw(OpenBSD::AddCreateDelete::State);
-
 sub scan_binaries
 {
-	my ($state, $source, $item) = @_;
+	my ($self, $item) = @_;
 	my $cmd;
 
-	my $n = $source->retrieve($state, $item);
+	my $n = $self->{source}->retrieve($self->{state}, $item);
 	# make sure to turn into a relative path
 	$n =~ s/^\/*//;
 
-	return $state->{runner}->start($n);
+	return $self->start($n);
 }
 
 sub parse_objdump
@@ -226,9 +194,10 @@ sub parse_objdump
 
 sub retrieve_and_scan_binaries
 {
-	my ($state, $dest, $source, $item, $fullname) = @_;
+	my ($self, $item, $fullname) = @_;
 
-	my $cmd = $state->scan_binaries($source, $item);
+	my $cmd = $self->scan_binaries($item);
+	my $dest = $self->{state}->{recorder};
 	parse_objdump($cmd, $dest, $fullname,
 	    sub {
 		    my $fullname = shift;
@@ -239,8 +208,41 @@ sub retrieve_and_scan_binaries
 		    }
 	    });
 	close($cmd);
-	$source->clean($item);
+	$self->{source}->clean($item);
 }
+
+sub finish_scanning
+{
+}
+
+package Runner::Objdump;
+our @ISA = qw(Runner);
+
+sub command() { 'objdump' }
+
+sub exec
+{
+	my ($self, @names) = @_;
+	exec($self->command, '-p', @names);
+}
+
+package Runner::Ldd;
+our @ISA = qw(Ldd);
+
+sub command() { 'ldd' }
+
+sub exec
+{
+	my ($self, @names) = @_;
+	if (@names > 1) {
+		$self->fatal("Can't run ldd over several names");
+	}
+	exec($self->command, '-f', "NEEDED lib%o.so.%m.%n\n", @names);
+}
+
+package CheckLibDepends::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+
 
 sub handle_options
 {
@@ -461,7 +463,7 @@ sub scan_package
 {
 	my ($self, $state, $plist, $source) = @_;
 	$state->{runner}->set_source($source);
-	$plist->record_needed_libs($state, $state->{recorder}, $source);
+	$plist->record_needed_libs($state);
 	$state->{runner}->finish_scanning;
 }
 
@@ -565,7 +567,7 @@ sub scan_directory
 		    $name =~ s/^\Q$fs\E/\//;
 		    # XXX hack FileBase object;
 		    my $i = bless {name => $name}, "MyFile";
-		    $i->record_needed_libs($state, $state->{recorder}, $source);
+		    $i->record_needed_libs($state);
 		},
 		no_chdir => 1 }, $fs);
 }
