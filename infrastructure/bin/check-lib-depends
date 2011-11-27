@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.13 2011/11/26 12:02:54 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.14 2011/11/27 11:29:33 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -94,15 +94,22 @@ sub find_libs
 
 sub run_objdump
 {
-	my ($state, $n) = @_;
+	my ($state, $source, $item) = @_;
 	my $cmd;
 
-	if ($state->{old}) {
-		open($cmd, "-|", "ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or 
-		    $state->fatal("run ldd: #1", $!);
-	} else {
-		unless (open($cmd, '-|')) {
-			open(STDERR, '>', '/dev/null');
+	my $n = $source->retrieve($state, $item);
+	# make sure to turn into a relative path
+	$n =~ s/^\/*//;
+
+	unless (open($cmd, '-|')) {
+		chdir($source->directory) or 
+		    $state->fatal("Bad directory #1: #2", 
+		    	$source->directory, $!);
+		open(STDERR, '>', '/dev/null');
+		if ($state->{old}) {
+			exec("ldd", "-f", "NEEDED lib%o.so.%m.%n\n", $n) or 
+			    $state->fatal("exec ldd: #1", $!);
+		} else {
 			exec('objdump', '-p', $n) or 
 			    $state->fatal("exec objdump: #1", $!);
 		}
@@ -151,8 +158,7 @@ sub record_needed_libs
 		$source->skip($item);
 		return;
 	}
-	my $n = $source->retrieve($state, $item);
-	my $cmd = run_objdump($state, $n);
+	my $cmd = run_objdump($state, $source, $item);
 	for my $lib (parse_objdump($cmd, $dest, $fullname)) {
 		# don't look for modules
 		next if $lib =~ m/\.so$/;

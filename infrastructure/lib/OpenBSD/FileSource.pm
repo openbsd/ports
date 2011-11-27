@@ -1,4 +1,4 @@
-# $OpenBSD: FileSource.pm,v 1.1 2010/08/20 15:29:41 espie Exp $
+# $OpenBSD: FileSource.pm,v 1.2 2011/11/27 11:29:33 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -21,6 +21,12 @@ use warnings;
 
 package OpenBSD::FileSource;
 
+sub directory
+{
+	my $self = shift;
+	return $self->{location};
+}
+
 # file system
 package OpenBSD::FsFileSource;
 our @ISA = qw(OpenBSD::FileSource);
@@ -33,7 +39,7 @@ sub new
 sub retrieve
 {
 	my ($self, $state, $item) = @_;
-	return $self->{location}.$item->fullname;
+	return $item->fullname;
 }
 
 sub skip
@@ -78,7 +84,7 @@ sub retrieve
 	my ($self, $state, $item) = @_;
 	my $o = $self->prepare_to_extract($item);
 	$o->create;
-	return $self->extracted_name($item);
+	return $item->fullname;
 }
 
 sub skip
