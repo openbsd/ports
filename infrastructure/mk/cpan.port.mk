@@ -1,4 +1,4 @@
-# $OpenBSD: cpan.port.mk,v 1.16 2011/11/27 13:29:35 jasper Exp $
+# $OpenBSD: cpan.port.mk,v 1.17 2011/11/27 14:59:21 jasper Exp $
 
 PKGNAME ?=	p5-${DISTNAME}
 .if !defined(CPAN_AUTHOR)
@@ -16,7 +16,7 @@ MODULES +=	perl
 REGRESS_DEPENDS +=	${RUN_DEPENDS}
 
 .if !defined(SHARED_ONLY) || ${SHARED_ONLY:L} != "yes"
-PKG_ARCH ?=	* 
+PKG_ARCH ?=	*
 .endif
 
 .if defined(MAKE_ENV) && !empty(MAKE_ENV:MTEST_POD=*)
@@ -54,7 +54,7 @@ ERRORS +=	"Fatal: CPAN_REPORT_DB must point to a directory"
 ERRORS +=	"Fatal: CPAN_REPORT_FROM needs an email address"
 .  endif
 
-CPANTEST =	perl ${PORTSDIR}/infrastructure/bincpanreport
+CPANTEST =	perl ${PORTSDIR}/infrastructure/bin/cpanreport
 CPANTEST_FLAGS =-f ${REGRESS_LOGFILE} -s ${CPAN_REPORT_FROM:Q} ${DISTNAME} \
 			> ${CPAN_REPORT_DB}/${PKGNAME}
 CPANTEST_PASS =	-g pass ${CPANTEST_FLAGS}
