@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1146 2011/11/27 16:52:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1147 2011/11/27 17:21:44 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2004,7 +2004,7 @@ lib-depends-check:
 	${_CHECK_LIB_DEPENDS} ${_PACKAGE_COOKIE}
 
 ${WRKINST}/.saved_libs: ${_FAKE_COOKIE}
-	@${SUDO} ${_CHECK_LIB_DEPENDS} -O $@
+	@${SUDO} ${_CHECK_LIB_DEPENDS} -O $@t && ${SUDO} mv $@t $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
 	@-${_cache_fragment}; for s in ${MULTI_PACKAGES}; do \
