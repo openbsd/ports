@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/11/25 11:00:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/11/27 17:02:25 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -13,9 +13,9 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-main=		1
-REVISION-server=	1
-REVISION-bat=		1
+REVISION-main=		2
+REVISION-server=	2
+REVISION-bat=		2
 
 SHARED_LIBS +=  bac                  2.0      # 5.2.1
 SHARED_LIBS +=  baccfg               2.0      # 5.2.1
