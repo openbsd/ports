@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.25 2011/11/27 16:15:52 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.26 2011/11/27 16:40:58 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -151,14 +151,19 @@ sub handle_options
 {
 	my $state = shift;
 
-	$state->SUPER::handle_options('od:D:fB:qs:O:',
-		'[-fomqx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
+	$state->SUPER::handle_options('oid:D:fB:qs:O:',
+		'[-fiomqx] [-B destdir] [-d pkgrepo] [-O dest] [-s source]');
 
 	$state->{destdir} = $state->opt('B');
-	$state->{dest} = $state->opt('O');
+	if ($state->opt('O')) {
+		open $state->{dest}, '>', $state->opt('O') or 
+		    $state->fatal("Can't write to #1: #2", 
+			$state->opt('O'), $!);
+	}
 	$state->{source} = $state->opt('s');
 	$state->{full} = $state->opt('f');
 	$state->{repository} = $state->opt('d');
+	$state->{stdin} = $state->opt('i');
 	if ($state->opt('o')) {
 		$state->{scanner} = OpenBSD::BinaryScan::Ldd->new($state);
 	} else {
@@ -174,7 +179,6 @@ sub init
 {
 	my $self = shift;
 	$self->{errors} = 0;
-	$self->{recorder} = OpenBSD::DumpRecorder->new;
 	$self->SUPER::init(@_);
 }
 
@@ -432,18 +436,16 @@ sub do_pkg
 	return 0 unless -d $dir;
 	my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
 	$state->set_context($plist);
-	if ($state->{need_package}) {
-		my $temp = OpenBSD::Temp->dir;
-		$state->{recorder} = OpenBSD::DumpRecorder->new;
-		$self->scan_package($state, $plist,
-		    OpenBSD::PkgFileSource->new($true_package, $temp));
-	}
+	my $temp = OpenBSD::Temp->dir;
+	$state->{recorder} = OpenBSD::DumpRecorder->new;
+	$self->scan_package($state, $plist,
+	    OpenBSD::PkgFileSource->new($true_package, $temp));
 	$self->analyze($state, $plist);
 	$true_package->close;
 	$true_package->wipe_info;
 	$plist->forget;
-	if ($state->{need_package}) {
-		undef $state->{recorder};
+	if ($state->{dest}) {
+		$state->{recorder}->dump($state->{dest});
 	}
 	return 1;
 }
@@ -488,24 +490,20 @@ sub main
 	$state->handle_options;
 	# find files if we can
 	if ($state->{source}) {
+		$state->{recorder} = OpenBSD::DumpRecorder->new;
 		$state->{recorder}->retrieve($state, $state->{source});
 	} elsif ($state->{destdir}) {
+		$state->{recorder} = OpenBSD::DumpRecorder->new;
 		$self->scan_directory($state, $state->{destdir});
-	} else {
-		$state->{need_package} = 1;
-	}
-		
-	if ($state->{dest}) {
-		open my $fh, '>', $state->{dest} or 
-		    $state->fatal("Can't write to #1: #2", 
-			$state->{dest}, $!);
-		$state->{recorder}->dump($fh);
-		close $fh;
-		exit(0);
-	}
+		if ($state->{dest}) {
+			$state->{recorder}->dump($state->{dest});
+		}
+	} 
 
-	if (@ARGV == 0) {
+	if ($state->{stdin}) {
 		$self->do_plist($state);
+	} elsif (@ARGV == 0) {
+		$self->do_plist($state) if !$state->{dest};
 	} else {
 		$state->progress->for_list("Scanning", \@ARGV,
 		    sub {
