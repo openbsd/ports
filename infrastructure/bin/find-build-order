@@ -1,7 +1,6 @@
 #!/bin/sh
-# $OpenBSD: check_register,v 1.2 2003/08/02 10:53:52 espie Exp $
-# Copyright (c) 2001
-# Marc Espie.  All rights reserved.
+# $OpenBSD: find-build-order,v 1.1 2011/11/28 10:30:22 jasper Exp $
+# Copyright (c) 1999 Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
 # are met:
@@ -23,29 +22,30 @@
 # OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 # SUCH DAMAGE.
 
-
-# This script scans the ports tree twice, looking for discrepancies between
-# what's linked, and what's in there.
+# This is a simple filter that takes a set of package and outputs a full
+# dependency list, so that you may build things in order.
+# input is of the form: dir/package BUILD_PARAM1=something...
+# and output is a list of dir/package
 
 : ${PORTSDIR:=/usr/ports}
-: ${TMPDIR:=/tmp}
-: ${diffopts:=-u}
 
-known1=`mktemp ${TMPDIR}/known.XXXXXXXXX`
-known2=`mktemp ${TMPDIR}/known.XXXXXXXXX`
-cd ${PORTSDIR} && make show=FULLPKGPATH ECHO_MSG=: | tee ${known1}
-sort -o ${known1} -u ${known1}
+case "$1" in
+"build")
+	type=depends-list;;
+"run")
+	type=package-depends;;
+"all"|*)
+	type="depends-list package-depends";;
+esac
 
-cd ${PORTSDIR} && find . -path ./distfiles -prune -o \
-	-path ./packages\* -prune -o -path ./logs\* -prune -o 
-	-path ./bulk\* -prune -o \
-	-name w-\* -prune -o -name Makefile -print | \
-	xargs fgrep -l bsd.port.mk| \
-	while read f
-	do
-		d=`dirname $f`
-		echo $d
-		cd ${PORTSDIR} && cd $d && make show=FULLPKGPATH >>${known2}
-	done
-sort -o ${known2} -u ${known2}
-diff $diffopts ${known1} ${known2}
+(while read i j
+do
+	case $i in
+	\#*);;			# comments
+	*)
+		echo "Depending $i" >&2
+		cd ${PORTSDIR}/$i && make FULL_PACKAGE_NAME=yes $j $type
+		k=`cd ${PORTSDIR}/$i && make FULL_PACKAGE_NAME=yes $j package-name`
+		echo "$k $k";;
+	esac
+done)|tsort|tail -r

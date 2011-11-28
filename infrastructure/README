@@ -5,18 +5,18 @@ Better documentation will be written as this progresses.
 
 Quick list of what exists, most useful stuff first
 
-build/bundle-readmes: 
+bin/bundle-readmes:
 	Create README.html files and bundle them as one tar archive.
 
 fetch/check-distfiles
 	Heuristic to check the whole contents of /usr/ports/distfiles against
 	all MD5 files in the ports tree.
-	
+
 package/check-dependencies
 	Check dependencies for all packages in the current directory.
 	Basically, verifies that the tsort in bsd.port.mk did their job.
 
-build/find-build-order
+bin/find-build-order
 	Used such as cat plist/i386 | build/find-build-order
 	outputs a list of stuff that actually needs to be built to obtain those
 	packages, in a suitable order for removing backward dependencies.
@@ -28,7 +28,7 @@ build/find-build-order
 	rearrange the list it gets as input.
 
 bin/out-of-date
-	Compare installed registered packages with INDEX, try to find out 
+	Compare installed registered packages with INDEX, try to find out
 	of date ports.
 
 install/make-plist
@@ -44,7 +44,7 @@ db/user.list
 fetch/check-license
 	Legacy script used by Marco to check the LICENSE files.
 
-build/outdated-perl-ports
+bin/outdated-perl-ports
 	Compare perl ports INDEX entries with the latest module
 	versions available from CPAN.
 
