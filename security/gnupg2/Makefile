@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/27 12:48:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/28 15:38:38 dcoppa Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
@@ -64,7 +64,8 @@ CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS = 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 			--enable-gpgtar
 
-# XXX gnupth/pthread segfault woes
+# XXX GNU-Pth/libpthread segfault woes:
+# http://marc.info/?l=openbsd-ports&m=132197024628355
 CONFIGURE_ARGS +=	--disable-scdaemon
 
 # Avoid conflict with gnupg-1.x
