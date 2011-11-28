@@ -1,7 +1,7 @@
 To allow the system to be fully powered down (in order to preserve
 UPS battery), add the following lines to /etc/rc.shutdown:
 
-if [ -f ${SYSCONFDIR}/apcupsd/powerfail ]; then
+if [ -f ${SYSCONFDIR}/powerfail ]; then
   echo
   echo "APCUPSD requested this system is powered down."
   echo

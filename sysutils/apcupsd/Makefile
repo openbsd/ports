@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/20 11:26:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/11/28 10:46:19 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -8,6 +8,9 @@ DISTNAME =		apcupsd-3.14.10
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
+REVISION-main =		0
+REVISION-cgi =		0
+REVISION-x11 =		0
 
 CATEGORIES =		sysutils
 
@@ -27,17 +30,17 @@ WANTLIB-main =		c pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
-CONFIGURE_STYLE =	gnu old # old prevents overriding sysconfdir
+CONFIGURE_STYLE =	gnu
 USE_GMAKE =		Yes
 NO_REGRESS =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www
-SUBST_VARS +=		WEB_ROOT
+SUBST_VARS +=		WEB_ROOT ^BASESYSCONFDIR
+SYSCONFDIR =		${BASESYSCONFDIR}/apcupsd
 
 CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--sbindir=${PREFIX}/sbin \
-			--sysconfdir=${SYSCONFDIR}/apcupsd \
 			--enable-install-distdir \
 			--with-cgi-bin=${WEB_ROOT}/cgi-bin/apcupsd \
 			--with-lock-dir=/var/run \
@@ -77,9 +80,9 @@ WANTLIB-x11 += xcb-shm xcb z ${WANTLIB}
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/apcupsd/etc
 
 pre-configure:
-	perl -pi -e 's,/etc/apcupsd,${SYSCONFDIR}/apcupsd,g' \
+	perl -pi -e 's,/etc/apcupsd,${SYSCONFDIR},g' \
 		${WRKSRC}/doc/apcupsd.8 ${WRKSRC}/doc/apcaccess.8
-	perl -pi -e 's,/usr/local/etc/apcupsd,${SYSCONFDIR}/apcupsd,g' \
+	perl -pi -e 's,/usr/local/etc/apcupsd,${SYSCONFDIR},g' \
 		${WRKSRC}/doc/apcupsd.conf.5
 	perl -pi -e 's,/etc/rc.apcupsd,${PREFIX}/sbin/apcupsctl,' \
 		${WRKSRC}/platforms/openbsd/README
