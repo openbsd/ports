@@ -1,0 +1,15 @@
+$OpenBSD: patch-snmplib_snmp_api_c,v 1.1 2011/11/28 22:40:25 sthen Exp $
+
+bug #3423915: Change default number of retries back from 0 to 5
+
+--- snmplib/snmp_api.c.orig	Mon Nov 28 13:46:27 2011
++++ snmplib/snmp_api.c	Mon Nov 28 13:47:08 2011
+@@ -704,6 +704,8 @@ _init_snmp(void)
+ 
+     netsnmp_ds_set_int(NETSNMP_DS_LIBRARY_ID, 
+                        NETSNMP_DS_LIB_HEX_OUTPUT_LENGTH, 16);
++    netsnmp_ds_set_int(NETSNMP_DS_LIBRARY_ID, NETSNMP_DS_LIB_RETRIES,
++                       DEFAULT_RETRIES);
+ 
+ #ifdef NETSNMP_USE_REVERSE_ASNENCODING
+     netsnmp_ds_set_boolean(NETSNMP_DS_LIBRARY_ID, 

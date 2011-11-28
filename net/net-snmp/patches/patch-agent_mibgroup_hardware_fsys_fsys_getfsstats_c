@@ -1,0 +1,29 @@
+$OpenBSD: patch-agent_mibgroup_hardware_fsys_fsys_getfsstats_c,v 1.1 2011/11/28 22:40:25 sthen Exp $
+
+hunk 0 - stats[i].f_mnt{on,from}name is much smaller than sizeof(entry->path)
+so memcpy was reading past the allowed memory space; these are nul-terminated
+strings so just use strncpy instead
+
+hunk 1 - bug #3408398: Fix a memory leak
+
+--- agent/mibgroup/hardware/fsys/fsys_getfsstats.c.orig	Mon Nov 28 13:49:38 2011
++++ agent/mibgroup/hardware/fsys/fsys_getfsstats.c	Mon Nov 28 14:10:15 2011
+@@ -150,9 +150,9 @@ netsnmp_fsys_arch_load( void )
+         if (!entry)
+             continue;
+ 
+-        memcpy( entry->path,   stats[i].f_mntonname,   sizeof(entry->path)  );
++        strncpy( entry->path,   stats[i].f_mntonname,   sizeof(entry->path)  );
+         entry->path[sizeof(entry->path)-1] = '\0';
+-        memcpy( entry->device, stats[i].f_mntfromname, sizeof(entry->device));
++        strncpy( entry->device, stats[i].f_mntfromname, sizeof(entry->device));
+         entry->device[sizeof(entry->device)-1] = '\0';
+         entry->units = stats[i].f_bsize;    /* or f_frsize */
+         entry->size  = stats[i].f_blocks;
+@@ -175,4 +175,6 @@ netsnmp_fsys_arch_load( void )
+         }
+         netsnmp_fsys_calculate32(entry);
+     }
++
++    free(stats);
+ }

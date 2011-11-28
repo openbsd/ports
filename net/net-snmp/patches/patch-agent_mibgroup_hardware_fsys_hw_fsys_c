@@ -1,0 +1,22 @@
+$OpenBSD: patch-agent_mibgroup_hardware_fsys_hw_fsys_c,v 1.1 2011/11/28 22:40:25 sthen Exp $
+
+ensure sp->path and sp->device are null terminated
+
+--- agent/mibgroup/hardware/fsys/hw_fsys.c.orig	Mon Nov 28 14:06:25 2011
++++ agent/mibgroup/hardware/fsys/hw_fsys.c	Mon Nov 28 14:09:10 2011
+@@ -176,6 +176,7 @@ netsnmp_fsys_by_path( char *path, int create_type )
+     sp = _fsys_create_entry();
+     if ( sp ) {
+         strncpy( sp->path, path, sizeof(sp->path) );
++        sp->path[sizeof(sp->path) - 1] = '\0';
+     }
+     return sp;
+ }
+@@ -219,6 +220,7 @@ netsnmp_fsys_by_device( char *device, int create_type 
+     sp = _fsys_create_entry();
+     if ( sp ) {
+         strncpy( sp->device, device, sizeof(sp->device) );
++        sp->device[sizeof(sp->device) - 1] = '\0';
+     }
+     return sp;
+ }

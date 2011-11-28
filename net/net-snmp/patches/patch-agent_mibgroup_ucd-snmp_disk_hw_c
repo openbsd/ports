@@ -1,0 +1,24 @@
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_disk_hw_c,v 1.1 2011/11/28 22:40:25 sthen Exp $
+
+chunk 0 - bug #3434824: SIGSEGV when reading disk directive after SIGHUP
+chunk 1 - 9aa1e70: off-by-one in dskIndex
+
+--- agent/mibgroup/ucd-snmp/disk_hw.c.orig	Mon Nov 28 13:38:09 2011
++++ agent/mibgroup/ucd-snmp/disk_hw.c	Mon Nov 28 13:50:43 2011
+@@ -137,6 +137,7 @@ disk_free_config(void)
+   if (disks) {
+      free( disks );
+      disks = NULL;
++     maxdisks = numdisks = 0;
+   }
+   allDisksIncluded = 0;
+ }
+@@ -321,7 +322,7 @@ tryAgain:
+ 
+     switch (vp->magic) {
+     case MIBINDEX:
+-        long_ret = disknum;
++        long_ret = disknum + 1;
+         return ((u_char *) (&long_ret));
+     case ERRORNAME:            /* DISKPATH */
+         *var_len = strlen(entry->path);

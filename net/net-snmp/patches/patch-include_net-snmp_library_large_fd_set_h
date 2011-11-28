@@ -1,0 +1,15 @@
+$OpenBSD: patch-include_net-snmp_library_large_fd_set_h,v 1.1 2011/11/28 22:40:25 sthen Exp $
+
+e24c34f - Use correct select() FD mask size.
+
+--- include/net-snmp/library/large_fd_set.h.orig	Mon Nov 28 13:52:44 2011
++++ include/net-snmp/library/large_fd_set.h	Mon Nov 28 13:53:09 2011
+@@ -74,7 +74,7 @@ int    netsnmp_large_fd_is_set(SOCKET fd, netsnmp_larg
+  * According to SUSv2, this array must have the name fds_bits. See also
+  * <a href="http://www.opengroup.org/onlinepubs/007908775/xsh/systime.h.html">The Single UNIX Specification, Version 2, &lt;sys/time.h&gt;</a>.
+  */
+-#define NETSNMP_FD_MASK_SIZE sizeof(((fd_set*)0)->fds_bits)
++#define NETSNMP_FD_MASK_SIZE sizeof(((fd_set*)0)->fds_bits[0])
+ 
+ /** Number of bits in one element of the fd_set::fds_bits array. */
+ #define NETSNMP_BITS_PER_FD_MASK (8 * NETSNMP_FD_MASK_SIZE)
