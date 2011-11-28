@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: noip2.rc,v 1.1 2011/11/28 08:37:52 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/noip2"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/04/30 23:25:12 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/11/28 08:37:52 sthen Exp $
 @newgroup _noip:624
 @newuser _noip:624:_noip:daemon:noip user:/nonexistent:/sbin/nologin
 @bin sbin/noip2
@@ -7,3 +7,4 @@ share/doc/no-ip/README.FIRST
 share/examples/no-ip/
 share/examples/no-ip/no-ip2.conf
 @sample ${SYSCONFDIR}/no-ip2.conf
+@rcscript ${RCDIR}/noip2

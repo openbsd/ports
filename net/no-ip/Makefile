@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/16 00:20:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/11/28 08:37:51 sthen Exp $
 
 COMMENT=		No-IP.com Dynamic DNS client
 
 V=			2.1.9
 DISTNAME=		noip-${V}
 PKGNAME=		no-ip-${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.no-ip.com/
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
