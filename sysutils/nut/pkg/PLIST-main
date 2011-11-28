@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2011/11/14 08:58:07 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2011/11/28 10:56:13 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -176,35 +176,35 @@ share/doc/nut/images/warning.png
 share/doc/nut/packager-guide.html
 share/doc/nut/user-manual.html
 share/examples/nut/
-@sample ${SYSCONFDIR}/nut/
+@sample ${SYSCONFDIR}/
 @comment share/examples/nut/hosts.conf.sample
 @owner ${NUT_USER}
 share/examples/nut/nut.conf.sample
-@sample ${SYSCONFDIR}/nut/nut.conf
+@sample ${SYSCONFDIR}/nut.conf
 share/examples/nut/nut.service
 @sample ${SYSCONFDIR}/avahi/
 @sample ${SYSCONFDIR}/avahi/services/
 @sample ${SYSCONFDIR}/avahi/services/nut.service
 share/examples/nut/ups.conf.sample
 @mode 600
-@sample ${SYSCONFDIR}/nut/ups.conf
+@sample ${SYSCONFDIR}/ups.conf
 @mode
 share/examples/nut/upsd.conf.sample
 @mode 600
-@sample ${SYSCONFDIR}/nut/upsd.conf
+@sample ${SYSCONFDIR}/upsd.conf
 @mode
 share/examples/nut/upsd.users.sample
 @mode 600
-@sample ${SYSCONFDIR}/nut/upsd.users
+@sample ${SYSCONFDIR}/upsd.users
 @mode
 share/examples/nut/upsmon.conf.sample
 @mode 600
-@sample ${SYSCONFDIR}/nut/upsmon.conf
+@sample ${SYSCONFDIR}/upsmon.conf
 @mode
 share/examples/nut/upssched.conf.sample
-@sample ${SYSCONFDIR}/nut/upssched.conf
+@sample ${SYSCONFDIR}/upssched.conf
 share/examples/nut/upsset.conf.sample
-@sample ${SYSCONFDIR}/nut/upsset.conf
+@sample ${SYSCONFDIR}/upsset.conf
 @mode 700
 @sample /var/db/nut/
 @comment share/examples/nut/upsstats-single.html.sample

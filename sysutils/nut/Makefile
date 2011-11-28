@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/11/14 15:57:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2011/11/28 10:56:13 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -7,10 +7,10 @@ COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 COMMENT-scanner=	UPS scanning tool for nut
 
 DISTNAME=		nut-2.6.2
-REVISION-main=		1
-REVISION-xml=		1
-REVISION-cgi=		1
-REVISION-scanner=	0
+REVISION-main=		2
+REVISION-xml=		2
+REVISION-cgi=		2
+REVISION-scanner=	1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -56,11 +56,10 @@ NUT_ID=			529
 SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 USE_GROFF=		Yes
 
-CONFIGURE_STYLE=	gnu old
+CONFIGURE_STYLE=	gnu
+SYSCONFDIR=		${BASESYSCONFDIR}/nut
 CONFIGURE_ARGS+=	A2X=${LOCALBASE}/bin/a2x.py \
-			--sysconfdir=${SYSCONFDIR}/nut \
 			--datadir=${PREFIX}/share/ups \
-			--mandir=${PREFIX}/man \
 			--with-doc=html-single \
 			--with-ssl \
 			--with-statepath=/var/db/nut \
