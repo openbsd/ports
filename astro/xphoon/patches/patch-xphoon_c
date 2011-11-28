@@ -1,16 +1,7 @@
---- xphoon.c.orig	Wed Sep 18 21:57:37 1991
-+++ xphoon.c	Tue Dec 18 10:32:09 2007
-@@ -32,7 +32,7 @@ static char rcsid[] =
- /* Externals. */
- 
- extern char* malloc();
--extern long time();
-+extern time_t time();
- extern long random();
- 
- extern void getbits();
+--- xphoon.c.orig	Tue Jun 13 22:50:16 2000
++++ xphoon.c	Tue Feb 15 21:13:26 2011
 @@ -65,7 +65,7 @@ main( argc, argv )
-     int blackflag, demoflag;
+     int blackflag, demoflag, southflag;
      int printpid;
      char* display_name;
 -    long clock;
