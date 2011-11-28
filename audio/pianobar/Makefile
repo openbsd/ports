@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/22 14:28:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2011/11/28 14:11:25 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2011.09.22
+DISTNAME =	pianobar-2011.11.21
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-HOMEPAGE =	http://6xq.net/html/00/17.html
-MASTER_SITES =	http://6xq.net/media/00/16/
+HOMEPAGE =	http://6xq.net/projects/pianobar/
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 SHARED_ONLY =	Yes
 
@@ -21,11 +21,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	ao c faad m mad pthread
+WANTLIB =	ao c faad gmp gnutls hogweed iconv intl \
+		m mad nettle p11-kit pthread tasn1 z
 
-LIB_DEPENDS =	audio/libao \
-		audio/faad \
-		audio/libmad
+LIB_DEPENDS =	audio/faad \
+		audio/libao \
+		audio/libmad \
+		security/gnutls>=2.10.0
 
 CFLAGS +=	-I${LOCALBASE}/include
 
@@ -44,6 +46,8 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 USE_GMAKE =	Yes
+
+USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

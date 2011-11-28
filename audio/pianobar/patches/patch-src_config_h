@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_config_h,v 1.1 2011/11/28 14:11:25 dcoppa Exp $
+--- src/config.h.orig	Mon Nov 28 11:52:34 2011
++++ src/config.h	Mon Nov 28 11:52:51 2011
+@@ -4,6 +4,6 @@
+ /* package name */
+ #define PACKAGE "pianobar"
+ 
+-#define VERSION "2011.11.11-dev"
++#define VERSION "2011.11.21"
+ 
+ #endif /* _CONFIG_H */
