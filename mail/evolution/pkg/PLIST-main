@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2011/11/14 13:52:39 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2011/11/28 12:32:04 ajacoutot Exp $
+@conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
-%%SHARED%%
 @bin bin/evolution
 @bin bin/evolution-settings
 include/evolution-${R}/
@@ -418,104 +418,78 @@ include/evolution-${R}/text/gal-a11y-e-text-factory.h
 include/evolution-${R}/text/gal-a11y-e-text.h
 lib/evolution/
 lib/evolution/${R}/
-@comment lib/evolution/${R}/libcomposer.a
-@comment lib/evolution/${R}/libcomposer.la
-@comment lib/evolution/${R}/libeabutil.a
-@comment lib/evolution/${R}/libeabutil.la
-@comment lib/evolution/${R}/libecontacteditor.a
-@comment lib/evolution/${R}/libecontacteditor.la
-@comment lib/evolution/${R}/libecontactlisteditor.a
-@comment lib/evolution/${R}/libecontactlisteditor.la
-@comment lib/evolution/${R}/libemformat.a
-@comment lib/evolution/${R}/libemformat.la
-@comment lib/evolution/${R}/libemiscwidgets.a
-@comment lib/evolution/${R}/libemiscwidgets.la
-@comment lib/evolution/${R}/libeshell.a
-@comment lib/evolution/${R}/libeshell.la
-@comment lib/evolution/${R}/libessmime.a
-@comment lib/evolution/${R}/libessmime.la
-@comment lib/evolution/${R}/libetable.a
-@comment lib/evolution/${R}/libetable.la
-@comment lib/evolution/${R}/libetext.a
-@comment lib/evolution/${R}/libetext.la
-@comment lib/evolution/${R}/libetimezonedialog.a
-@comment lib/evolution/${R}/libetimezonedialog.la
-@comment lib/evolution/${R}/libeutil.a
-@comment lib/evolution/${R}/libeutil.la
-@comment lib/evolution/${R}/libevolution-a11y.a
-@comment lib/evolution/${R}/libevolution-a11y.la
-@comment lib/evolution/${R}/libevolution-addressbook-importers.a
-@comment lib/evolution/${R}/libevolution-addressbook-importers.la
-@comment lib/evolution/${R}/libevolution-calendar-importers.a
-@comment lib/evolution/${R}/libevolution-calendar-importers.la
-@comment lib/evolution/${R}/libevolution-calendar.a
-@comment lib/evolution/${R}/libevolution-calendar.la
-@comment lib/evolution/${R}/libevolution-mail-importers.a
-@comment lib/evolution/${R}/libevolution-mail-importers.la
-@comment lib/evolution/${R}/libevolution-mail-settings.a
-@comment lib/evolution/${R}/libevolution-mail-settings.la
-@comment lib/evolution/${R}/libevolution-mail.a
-@comment lib/evolution/${R}/libevolution-mail.la
-@comment lib/evolution/${R}/libevolution-smime.a
-@comment lib/evolution/${R}/libevolution-smime.la
-@comment lib/evolution/${R}/libfilter.a
-@comment lib/evolution/${R}/libfilter.la
-@comment lib/evolution/${R}/libgnomecanvas.a
-@comment lib/evolution/${R}/libgnomecanvas.la
-@comment lib/evolution/${R}/libmenus.a
-@comment lib/evolution/${R}/libmenus.la
+lib/evolution/${R}/libcomposer.la
+@lib lib/evolution/${R}/libcomposer.so.${LIBcomposer_VERSION}
+lib/evolution/${R}/libeabutil.la
+@lib lib/evolution/${R}/libeabutil.so.${LIBeabutil_VERSION}
+lib/evolution/${R}/libecontacteditor.la
+@lib lib/evolution/${R}/libecontacteditor.so.${LIBecontacteditor_VERSION}
+lib/evolution/${R}/libecontactlisteditor.la
+@lib lib/evolution/${R}/libecontactlisteditor.so.${LIBecontactlisteditor_VERSION}
+lib/evolution/${R}/libemformat.la
+@lib lib/evolution/${R}/libemformat.so.${LIBemformat_VERSION}
+lib/evolution/${R}/libemiscwidgets.la
+@lib lib/evolution/${R}/libemiscwidgets.so.${LIBemiscwidgets_VERSION}
+lib/evolution/${R}/libeshell.la
+@lib lib/evolution/${R}/libeshell.so.${LIBeshell_VERSION}
+lib/evolution/${R}/libessmime.la
+@lib lib/evolution/${R}/libessmime.so.${LIBessmime_VERSION}
+lib/evolution/${R}/libetable.la
+@lib lib/evolution/${R}/libetable.so.${LIBetable_VERSION}
+lib/evolution/${R}/libetext.la
+@lib lib/evolution/${R}/libetext.so.${LIBetext_VERSION}
+lib/evolution/${R}/libetimezonedialog.la
+@lib lib/evolution/${R}/libetimezonedialog.so.${LIBetimezonedialog_VERSION}
+lib/evolution/${R}/libeutil.la
+@lib lib/evolution/${R}/libeutil.so.${LIBeutil_VERSION}
+lib/evolution/${R}/libevolution-a11y.la
+@lib lib/evolution/${R}/libevolution-a11y.so.${LIBevolution-a11y_VERSION}
+lib/evolution/${R}/libevolution-addressbook-importers.la
+@lib lib/evolution/${R}/libevolution-addressbook-importers.so.${LIBevolution-addressbook-importers_VERSION}
+lib/evolution/${R}/libevolution-calendar-importers.la
+@lib lib/evolution/${R}/libevolution-calendar-importers.so.${LIBevolution-calendar-importers_VERSION}
+lib/evolution/${R}/libevolution-calendar.la
+@lib lib/evolution/${R}/libevolution-calendar.so.${LIBevolution-calendar_VERSION}
+lib/evolution/${R}/libevolution-mail-importers.la
+@lib lib/evolution/${R}/libevolution-mail-importers.so.${LIBevolution-mail-importers_VERSION}
+lib/evolution/${R}/libevolution-mail-settings.la
+@lib lib/evolution/${R}/libevolution-mail-settings.so.${LIBevolution-mail-settings_VERSION}
+lib/evolution/${R}/libevolution-mail.la
+@lib lib/evolution/${R}/libevolution-mail.so.${LIBevolution-mail_VERSION}
+lib/evolution/${R}/libevolution-smime.la
+@lib lib/evolution/${R}/libevolution-smime.so.${LIBevolution-smime_VERSION}
+lib/evolution/${R}/libfilter.la
+@lib lib/evolution/${R}/libfilter.so.${LIBfilter_VERSION}
+lib/evolution/${R}/libgnomecanvas.la
+@lib lib/evolution/${R}/libgnomecanvas.so.${LIBgnomecanvas_VERSION}
+lib/evolution/${R}/libmenus.la
+@lib lib/evolution/${R}/libmenus.so.${LIBmenus_VERSION}
 lib/evolution/${R}/modules/
-@comment lib/evolution/${R}/modules/libevolution-module-addressbook.a
-@comment lib/evolution/${R}/modules/libevolution-module-addressbook.la
-@comment lib/evolution/${R}/modules/libevolution-module-bogofilter.a
-@comment lib/evolution/${R}/modules/libevolution-module-bogofilter.la
-@comment lib/evolution/${R}/modules/libevolution-module-calendar.a
-@comment lib/evolution/${R}/modules/libevolution-module-calendar.la
-@comment lib/evolution/${R}/modules/libevolution-module-composer-autosave.a
-@comment lib/evolution/${R}/modules/libevolution-module-composer-autosave.la
-@comment lib/evolution/${R}/modules/libevolution-module-mail.a
-@comment lib/evolution/${R}/modules/libevolution-module-mail.la
-@comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.a
-@comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.la
-@comment lib/evolution/${R}/modules/libevolution-module-offline-alert.a
-@comment lib/evolution/${R}/modules/libevolution-module-offline-alert.la
-@comment lib/evolution/${R}/modules/libevolution-module-online-accounts.a
-@comment lib/evolution/${R}/modules/libevolution-module-online-accounts.la
-@comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
-@comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
-@comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.a
-@comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.la
-@comment lib/evolution/${R}/modules/libevolution-module-spamassassin.a
-@comment lib/evolution/${R}/modules/libevolution-module-spamassassin.la
-@comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
-@comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
+lib/evolution/${R}/modules/libevolution-module-addressbook.so
+lib/evolution/${R}/modules/libevolution-module-bogofilter.so
+lib/evolution/${R}/modules/libevolution-module-calendar.so
+lib/evolution/${R}/modules/libevolution-module-composer-autosave.so
+lib/evolution/${R}/modules/libevolution-module-mail.so
+lib/evolution/${R}/modules/libevolution-module-mailto-handler.so
+lib/evolution/${R}/modules/libevolution-module-offline-alert.so
+lib/evolution/${R}/modules/libevolution-module-online-accounts.so
+lib/evolution/${R}/modules/libevolution-module-plugin-lib.so
+lib/evolution/${R}/modules/libevolution-module-plugin-manager.so
+lib/evolution/${R}/modules/libevolution-module-spamassassin.so
+lib/evolution/${R}/modules/libevolution-module-startup-wizard.so
 lib/evolution/${R}/plugins/
-@comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-file.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-file.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-http.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-http.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-default-source.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-default-source.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-google.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
+lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.so
+lib/evolution/${R}/plugins/liborg-gnome-calendar-file.so
+lib/evolution/${R}/plugins/liborg-gnome-calendar-http.so
+lib/evolution/${R}/plugins/liborg-gnome-calendar-weather.so
+lib/evolution/${R}/plugins/liborg-gnome-default-source.so
+lib/evolution/${R}/plugins/liborg-gnome-evolution-caldav.so
+lib/evolution/${R}/plugins/liborg-gnome-evolution-google.so
+lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.so
+lib/evolution/${R}/plugins/liborg-gnome-imap-features.so
+lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.so
+lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.so
+lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.so
 lib/evolution/${R}/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-file.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-http.eplug
@@ -527,7 +501,6 @@ lib/evolution/${R}/plugins/org-gnome-evolution-webdav.eplug
 lib/evolution/${R}/plugins/org-gnome-imap-features.eplug
 lib/evolution/${R}/plugins/org-gnome-itip-formatter.eplug
 lib/evolution/${R}/plugins/org-gnome-mark-all-read.eplug
-lib/evolution/${R}/plugins/org-gnome-pst-import.eplug
 lib/evolution/${R}/plugins/org-gnome-publish-calendar.eplug
 lib/pkgconfig/evolution-calendar-3.0.pc
 lib/pkgconfig/evolution-mail-3.0.pc
@@ -1117,7 +1090,6 @@ share/evolution/${R}/ui/ldap-config.ui
 share/evolution/${R}/ui/mail-config.ui
 share/evolution/${R}/ui/mail-dialogs.ui
 share/evolution/${R}/ui/memo-page.ui
-share/evolution/${R}/ui/org-gnome-email-custom-header.ui
 share/evolution/${R}/ui/publish-calendar.ui
 share/evolution/${R}/ui/recurrence-page.ui
 share/evolution/${R}/ui/schedule-page.ui
@@ -1159,8 +1131,6 @@ share/examples/evolution/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/evolution/xdg/autostart/evolution-alarm-notify.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/evolution-alarm-notify.desktop
-share/gnome/
-share/gnome/help/
 share/gnome/help/evolution/
 share/gnome/help/evolution/C/
 share/gnome/help/evolution/C/backup-restore.page
@@ -4917,8 +4887,6 @@ share/locale/de/LC_MESSAGES/evolution-${R}.mo
 share/locale/dz/LC_MESSAGES/evolution-${R}.mo
 share/locale/el/LC_MESSAGES/evolution-${R}.mo
 share/locale/en@shaw/LC_MESSAGES/evolution-${R}.mo
-share/locale/en_AU/
-share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/evolution-${R}.mo
 share/locale/en_CA/LC_MESSAGES/evolution-${R}.mo
 share/locale/en_GB/LC_MESSAGES/evolution-${R}.mo
