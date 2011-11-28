@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: check-plist,v 1.8 2011/06/23 22:50:27 naddy Exp $
+# $OpenBSD: check-plist,v 1.9 2011/11/28 12:59:50 sthen Exp $
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -45,10 +45,11 @@ packages="$initial.pkgs"
 trimmed="$initial.trimmed"
 
 : ${PORTSDIR:=/usr/ports}
-cd ${PORTSDIR} 
+cd ${PORTSDIR}
 
 make ECHO_MSG='echo >&2' SUBDIRLIST=$initial show=FULLPKGPATH >$trimmed
 echo databases/pkglocatedb >>$trimmed
+echo devel/quirks >>$trimmed
 make ECHO_MSG='echo >&2' SUBDIRLIST=$trimmed run-dir-depends >$depends
 tsort -h $trimmed -r $depends >$list
 make ECHO_MSG='echo >&2' show='FULLPKGNAME${SUBPACKAGE}' SUBDIRLIST=$list|perl -ne 'print unless $h{$_}++'|sed -e 's,$,.tgz,' >$packages
