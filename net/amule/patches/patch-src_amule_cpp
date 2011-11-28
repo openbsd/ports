@@ -1,23 +1,35 @@
-$OpenBSD: patch-src_amule_cpp,v 1.2 2011/06/24 08:42:31 dcoppa Exp $
+$OpenBSD: patch-src_amule_cpp,v 1.3 2011/11/28 15:28:49 dcoppa Exp $
 
 Disable checking for new versions at startup: it's useless and was
 causing a crash with amuled on sparc64.
 
---- src/amule.cpp.orig	Tue Aug 18 18:24:58 2009
-+++ src/amule.cpp	Thu Nov  4 15:25:39 2010
-@@ -727,6 +727,7 @@ bool CamuleApp::OnInit()
- 		printf("\n%s\n", (const char *)unicode2char(msg));
+Ok() is just an undocumented alias for IsOk()
+(upstream git commit 740c0298147a614806f1676f77a89908074b5574)
+
+--- src/amule.cpp.orig	Sun Sep 18 13:01:52 2011
++++ src/amule.cpp	Mon Nov 28 10:35:00 2011
+@@ -521,6 +521,7 @@ bool CamuleApp::OnInit()
+ 		AddLogLineNS(msg);
  	}
  
 +#ifndef __OPENBSD__
  	// Test if there's any new version
- 	if (thePrefs::CheckNewVersion()) {
+ 	if (thePrefs::GetCheckNewVersion()) {
  		// We use the thread base because I don't want a dialog to pop up.
-@@ -736,6 +737,7 @@ bool CamuleApp::OnInit()
+@@ -530,6 +531,7 @@ bool CamuleApp::OnInit()
  		version_check->Create();
  		version_check->Run();
  	}
 +#endif
  
  	// Create main dialog, or fork to background (daemon).
- 	InitGui(geometry_enabled, geom_string);
+ 	InitGui(m_geometryEnabled, m_geometryString);
+@@ -760,7 +762,7 @@ bool CamuleApp::ReinitializeNetwork(wxString* msg)
+ 	// This command just sets a flag to control maximum number of connections.
+ 	// Notify(true) has already been called to the ListenSocket, so events may
+ 	// be already comming in.
+-	if (listensocket->Ok()) {
++	if (listensocket->IsOk()) {
+ 		listensocket->StartListening();
+ 	} else {
+ 		// If we wern't able to start listening, we need to warn the user

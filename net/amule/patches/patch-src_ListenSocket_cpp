@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ListenSocket_cpp,v 1.1 2011/11/28 15:28:49 dcoppa Exp $
+
+Ok() is just an undocumented alias for IsOk()
+(upstream git commit 740c0298147a614806f1676f77a89908074b5574)
+
+--- src/ListenSocket.cpp.orig	Mon Nov 28 10:34:06 2011
++++ src/ListenSocket.cpp	Mon Nov 28 10:34:30 2011
+@@ -57,7 +57,7 @@ CSocketServerProxy(addr, wxSOCKET_NOWAIT|wxSOCKET_REUS
+ 	totalconnectionchecks = 0;
+ 	averageconnections = 0.0;
+ 	// Set the listen socket event handler -- The handler is written in amule.cpp
+-	if (Ok()) {
++	if (IsOk()) {
+  		SetEventHandler(*theApp, ID_LISTENSOCKET_EVENT);
+  		SetNotify(wxSOCKET_CONNECTION_FLAG);
+  		Notify(true);

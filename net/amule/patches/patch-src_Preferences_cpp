@@ -1,15 +1,15 @@
-$OpenBSD: patch-src_Preferences_cpp,v 1.1 2011/06/24 08:42:31 dcoppa Exp $
+$OpenBSD: patch-src_Preferences_cpp,v 1.2 2011/11/28 15:28:49 dcoppa Exp $
 
 Disable checking for new versions at startup.
 
---- src/Preferences.cpp.orig	Fri Jun 24 10:18:35 2011
-+++ src/Preferences.cpp	Fri Jun 24 10:19:23 2011
-@@ -1152,7 +1152,7 @@ void CPreferences::BuildItemList( const wxString& appd
+--- src/Preferences.cpp.orig	Mon Nov 28 09:34:26 2011
++++ src/Preferences.cpp	Mon Nov 28 09:36:11 2011
+@@ -1210,7 +1210,7 @@ void CPreferences::BuildItemList( const wxString& appd
  	/**
  	 * Version check
  	 **/
 -	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( wxT("/eMule/NewVersionCheck"), s_NewVersionCheck, true )));
 +	 NewCfgItem(IDC_NEWVERSION,	(new Cfg_Bool( wxT("/eMule/NewVersionCheck"), s_NewVersionCheck, false )));
- 	 
+ 
  	 /**
  	  * Obfuscation

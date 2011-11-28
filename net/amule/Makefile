@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2011/07/28 11:06:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2011/11/28 15:28:49 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
 COMMENT-daemon =stand-alone daemon/cmdline for amule
 
-V =		2.2.6
+V =		2.3.1
 DISTNAME =	aMule-$V
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.amule.org/
+
 MULTI_PACKAGES =-main -web -daemon
+
 PKGNAME-main =	amule-$V
 PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
-REVISION-main = 3
-REVISION-daemon = 1
-REVISION-web = 1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,7 +24,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=amule/}
-EXTRACT_SUFX =	.tar.bz2
+EXTRACT_SUFX =	.tar.xz
 
 .if defined (SUBPACKAGE) && ${SUBPACKAGE:M-main}
 MODULES +=	converters/libiconv
@@ -65,12 +64,15 @@ WANTLIB-web =		${WANTLIB} ${commonWANTLIB} \
 			png readline termcap
 
 USE_GMAKE =		Yes
+USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.59
+AUTOCONF_VERSION =	2.65
 
 CONFIGURE_ARGS =	--disable-optimize \
 			--disable-profile \
+			--disable-plasmamule \
+			--disable-xas \
 			--enable-alc \
 			--enable-alcc \
 			--enable-amule-daemon \
@@ -82,7 +84,7 @@ CONFIGURE_ARGS =	--disable-optimize \
 			--enable-wxcas \
 			--with-denoise-level=0 \
 			--with-libiconv-prefix=${LOCALBASE} \
-			--with-x
+			--with-libpng-config=${LOCALBASE}/bin/libpng-config
 
 .ifndef DEBUG
 CONFIGURE_ARGS +=	--disable-debug
@@ -104,7 +106,5 @@ pre-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/src/utils/scripts/mldonkey_importer.pl \
 		${PREFIX}/bin/mldonkey_importer
-
-NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
