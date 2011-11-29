@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/27 09:16:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/11/29 17:42:17 jasper Exp $
 
 COMMENT=	tool for building of code, written in Clojure
 
-# Full tarball with the script and the leiningen jar taken from github
-V=		1.6.1.1
-DISTNAME=	leiningen-$V
-REVISION=	0
+# lein-pkg script from github
+DISTNAME=	leiningen-1.6.2
 
 CATEGORIES=	devel java
 
@@ -35,10 +33,10 @@ RUN_DEPENDS=	devel/apache-ant \
 SUBST_VARS+=	MODJAVA_JAR_DIR
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/lein
+	${SUBST_CMD} ${WRKSRC}/lein-pkg
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/lein ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/lein-pkg ${PREFIX}/bin/lein
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}/lein/
 
 .include <bsd.port.mk>
