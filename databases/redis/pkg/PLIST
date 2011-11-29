@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/06 11:43:01 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/11/29 16:07:23 dcoppa Exp $
+@newgroup _redis:686
+@newuser _redis:686:_redis:daemon:redis account:${DBDIR}:/sbin/nologin
 @bin bin/redis-benchmark
 @bin bin/redis-check-aof
 @bin bin/redis-check-dump
@@ -8,3 +10,11 @@ share/examples/redis/
 @sample ${SYSCONFDIR}/redis/
 share/examples/redis/redis.conf
 @sample ${SYSCONFDIR}/redis/redis.conf
+@mode 0700
+@owner _redis
+@group _redis
+@sample ${DBDIR}/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/redis

@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/06 11:43:00 rpointel Exp $
+# $OpenBSD: Makefile,v 1.17 2011/11/29 16:07:23 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.4.2
+DISTNAME =		redis-2.4.4
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -27,7 +27,11 @@ MAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}" \
 			INSTALL_DIR="${INSTALL_DATA_DIR}" \
 			V=1
 
-WANTLIB += 		c m pthread
+CFLAGS +=		-I${LOCALBASE}/include
+
+WANTLIB += 		c execinfo m pthread
+
+LIB_DEPENDS =		devel/libexecinfo
 
 # Warning: executing the test suite can take a long time and will
 # consume a lot of cpu cycles
@@ -35,9 +39,12 @@ REGRESS_DEPENDS =       ${MODTCL_BUILD_DEPENDS}
 REGRESS_FLAGS =		TCL_BIN="${MODTCL_BIN}"
 REGRESS_TARGET =	test
 
+DBDIR =			/var/redis
+SUBST_VARS +=		DBDIR
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
-	${INSTALL_DATA} ${WRKSRC}/redis.conf \
-		${PREFIX}/share/examples/redis/
+	${SUBST_CMD} -c -o root -g bin ${WRKSRC}/redis.conf \
+		${PREFIX}/share/examples/redis/redis.conf
 
 .include <bsd.port.mk>

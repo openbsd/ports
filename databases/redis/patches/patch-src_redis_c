@@ -1,7 +1,17 @@
-$OpenBSD: patch-src_redis_c,v 1.3 2011/11/06 11:43:00 rpointel Exp $
---- src/redis.c.orig	Wed Oct 26 16:16:33 2011
-+++ src/redis.c	Sat Nov  5 11:52:59 2011
-@@ -43,6 +43,7 @@
+$OpenBSD: patch-src_redis_c,v 1.4 2011/11/29 16:07:23 dcoppa Exp $
+--- src/redis.c.orig	Mon Nov 28 11:22:08 2011
++++ src/redis.c	Tue Nov 29 16:27:51 2011
+@@ -33,7 +33,9 @@
+ 
+ #ifdef HAVE_BACKTRACE
+ #include <execinfo.h>
++  #ifndef __OpenBSD__
+ #include <ucontext.h>
++  #endif
+ #endif /* HAVE_BACKTRACE */
+ 
+ #include <time.h>
+@@ -43,6 +45,7 @@
  #include <assert.h>
  #include <ctype.h>
  #include <stdarg.h>
@@ -9,3 +19,44 @@ $OpenBSD: patch-src_redis_c,v 1.3 2011/11/06 11:43:00 rpointel Exp $
  #include <arpa/inet.h>
  #include <sys/stat.h>
  #include <fcntl.h>
+@@ -1684,7 +1687,9 @@ int main(int argc, char **argv) {
+ 
+ #ifdef HAVE_BACKTRACE
+ static void *getMcontextEip(ucontext_t *uc) {
+-#if defined(__FreeBSD__)
++#if defined(__OpenBSD__)
++    return NULL;
++#elif defined(__FreeBSD__)
+     return (void*) uc->uc_mcontext.mc_eip;
+ #elif defined(__dietlibc__)
+     return (void*) uc->uc_mcontext.eip;
+@@ -1713,14 +1718,6 @@ static void *getMcontextEip(ucontext_t *uc) {
+ #endif
+ }
+ 
+-void bugReportStart(void) {
+-    if (server.bug_report_start == 0) {
+-        redisLog(REDIS_WARNING,
+-            "=== REDIS BUG REPORT START: Cut & paste starting from here ===");
+-        server.bug_report_start = 1;
+-    }
+-}
+-
+ static void sigsegvHandler(int sig, siginfo_t *info, void *secret) {
+     void *trace[100];
+     char **messages = NULL;
+@@ -1777,6 +1774,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
+     kill(getpid(),sig);
+ }
+ #endif /* HAVE_BACKTRACE */
++
++void bugReportStart(void) {
++    if (server.bug_report_start == 0) {
++        redisLog(REDIS_WARNING,
++            "=== REDIS BUG REPORT START: Cut & paste starting from here ===");
++        server.bug_report_start = 1;
++    }
++}
+ 
+ static void sigtermHandler(int sig) {
+     REDIS_NOTUSED(sig);
