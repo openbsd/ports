@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_helpers_cpp,v 1.1 2011/11/29 12:07:18 dcoppa Exp $
+
+display more detailed info if connection to MPD couldn't be
+estabilished (upstream git commit 62157909d5d2008b90bef74a21fdab164f391728)
+
+--- src/helpers.cpp.orig	Tue Oct 11 21:27:41 2011
++++ src/helpers.cpp	Tue Nov 29 12:31:42 2011
+@@ -42,7 +42,7 @@ bool ConnectToMPD()
+ {
+ 	if (!Mpd.Connect())
+ 	{
+-		std::cout << "Cannot connect to mpd: " << Mpd.GetErrorMessage() << std::endl;
++		std::cout << "Couldn't connect to MPD (host = " << Mpd.GetHostname() << ", port = " << Mpd.GetPort() << "): " << Mpd.GetErrorMessage() << std::endl;
+ 		return false;
+ 	}
+ 	return true;

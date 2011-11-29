@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_tag_editor_cpp,v 1.1 2011/11/29 12:07:18 dcoppa Exp $
+
+fix going to right column when filename is highlighted in middle
+one (upstream git commit 8e3b0620f0f7f00af76405c1ac5001dd8eb5885b)
+
+fix going to wrong directory in tag editor
+(upstream git commit 78cd46b7568e92bbecaa358bae21f3079ecf11ae)
+
+--- src/tag_editor.cpp.orig	Tue Oct 11 21:27:41 2011
++++ src/tag_editor.cpp	Tue Nov 29 12:26:46 2011
+@@ -809,7 +809,7 @@ void TagEditor::NextColumn()
+ 		w = TagTypes;
+ 		TagTypes->HighlightColor(Config.active_column_color);
+ 	}
+-	else if (w == TagTypes && TagTypes->Choice() < 12 && !Tags->ReallyEmpty())
++	else if (w == TagTypes && TagTypes->Choice() < 13 && !Tags->ReallyEmpty())
+ 	{
+ 		TagTypes->HighlightColor(Config.main_highlight_color);
+ 		w->Refresh();
+@@ -872,7 +872,11 @@ void TagEditor::LocateSong(const MPD::Song &s)
+ 	if (itsBrowsedDir != s.GetDirectory())
+ 	{
+ 		itsBrowsedDir = s.GetDirectory();
+-		itsBrowsedDir = itsBrowsedDir.substr(0, itsBrowsedDir.rfind('/'));
++		size_t last_slash = itsBrowsedDir.rfind('/');
++		if (last_slash != std::string::npos)
++			itsBrowsedDir = itsBrowsedDir.substr(0, last_slash);
++		else
++			itsBrowsedDir = "/";
+ 		if (itsBrowsedDir.empty())
+ 			itsBrowsedDir = "/";
+ 		Dirs->Clear();
