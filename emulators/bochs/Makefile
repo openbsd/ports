@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2011/03/23 11:27:39 giovanni Exp $
+# $OpenBSD: Makefile,v 1.51 2011/11/29 17:22:01 giovanni Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.4.6
+DISTNAME=	bochs-2.5
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
@@ -13,38 +13,39 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	c m stdc++ termlib
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --enable-acpi \
-		 --enable-all-optimizations \
-		 --enable-fpu \
-		 --enable-ne2000 \
-		 --enable-pci \
-		 --enable-smp \
-		 --enable-x86-64 \
-		 --enable-usb \
-		 --enable-usb-ohci \
-		 --with-term
+CONFIGURE_ARGS=	--enable-all-optimizations \
+		--enable-avx \
+		--enable-large-ramfile \
+		--enable-ne2000 \
+		--enable-pci \
+		--enable-smp \
+		--enable-x86-64 \
+		--enable-usb \
+		--enable-usb-ohci \
+		--enable-vmx=2 \
+		--with-term
 
 FLAVORS=	debug no_x11
 FLAVOR?=
 
 .if ${FLAVOR:L:Mdebug}
-CONFIGURE_ARGS+= --disable-debugger-gui \
-		 --enable-debugger \
-		 --enable-x86-debugger \
-		 --enable-readline
+CONFIGURE_ARGS+=--disable-debugger-gui \
+		--enable-debugger \
+		--enable-x86-debugger \
+		--enable-readline
 WANTLIB+=	curses readline
 .endif
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+= --with-nogui
+CONFIGURE_ARGS+=--with-nogui
 .else
-CONFIGURE_ARGS+= --with-x11
-WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xpm Xrandr Xrender \
-		pthread-stubs xcb
+CONFIGURE_ARGS+=--with-x11
+WANTLIB+=	ICE SM X11 Xext Xpm Xrandr Xrender xcb
 .endif
 
 NO_REGRESS=	Yes

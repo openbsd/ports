@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/06/23 16:03:58 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/11/29 17:22:01 giovanni Exp $
 @bin bin/bochs
 @bin bin/bxcommit
 @bin bin/bximage
@@ -37,4 +37,4 @@ share/doc/bochs/
 @comment share/doc/bochs/COPYING
 share/doc/bochs/README
 @comment share/doc/bochs/TODO
-share/doc/bochs/cosimulation.html
+share/doc/bochs/bxdebugger.html
