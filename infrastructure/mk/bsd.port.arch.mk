@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.8 2011/10/18 06:43:51 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.9 2011/11/29 15:11:18 naddy Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -29,9 +29,10 @@ ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
 APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
 NO_SHARED_ARCHS = m88k vax
-GCC4_ARCHS = amd64 arm armish beagle gumstix i386 hppa loongson macppc mips64 \
+GCC4_ARCHS = alpha amd64 arm armish beagle gumstix i386 hppa hppa64 \
+	loongson macppc mips64 \
 	mips64el mvmeppc palm powerpc sgi socppc sparc sparc64 zaurus
-GCC3_ARCHS = alpha hppa64 landisk sh
+GCC3_ARCHS = landisk sh
 GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k vax
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
