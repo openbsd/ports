@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.47 2011/10/17 13:55:24 espie Exp $
+# $OpenBSD: python.port.mk,v 1.48 2011/11/29 17:29:37 pascal Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -19,8 +19,10 @@ MODPY_JSON =
 
 .  if ${MODPY_VERSION} < 3.2
 MODPY_WANTLIB =	python${MODPY_VERSION}
+MODPY_INCDIR =	${LOCALBASE}/include/python${MODPY_VERSION}
 .  else
 MODPY_WANTLIB = python${MODPY_VERSION}m
+MODPY_INCDIR =	${LOCALBASE}/include/python${MODPY_VERSION}m
 .  endif
 .else
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
@@ -78,7 +80,6 @@ MODPY_TKINTER_DEPENDS=	${MODPY_RUN_DEPENDS},-tkinter
 .endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
-MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}
 MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
 
