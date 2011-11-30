@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/09/12 18:19:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/11/30 15:10:27 jasper Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -46,12 +46,13 @@ share/devhelp/books/vala-${API_V}/overview.html
 share/devhelp/books/vala-${API_V}/statements.html
 share/devhelp/books/vala-${API_V}/structs.html
 share/devhelp/books/vala-${API_V}/types.html
-share/devhelp/books/vala-${API_V}/vala.devhelp2
+share/devhelp/books/vala-${API_V}/vala-${API_V}.devhelp2
 share/vala-${API_V}/
 share/vala-${API_V}/vapi/
 share/vala-${API_V}/vapi/alsa.deps
 share/vala-${API_V}/vapi/alsa.vapi
 share/vala-${API_V}/vapi/atk.vapi
+share/vala-${API_V}/vapi/avahi-client.vapi
 share/vala-${API_V}/vapi/avahi-gobject.deps
 share/vala-${API_V}/vapi/avahi-gobject.vapi
 share/vala-${API_V}/vapi/bzlib.vapi
@@ -218,6 +219,8 @@ share/vala-${API_V}/vapi/libusb.vapi
 share/vala-${API_V}/vapi/libvala-${API_V}.vapi
 share/vala-${API_V}/vapi/libwnck-1.0.deps
 share/vala-${API_V}/vapi/libwnck-1.0.vapi
+share/vala-${API_V}/vapi/libwnck-3.0.deps
+share/vala-${API_V}/vapi/libwnck-3.0.vapi
 share/vala-${API_V}/vapi/libxml-2.0.vapi
 share/vala-${API_V}/vapi/linux.deps
 share/vala-${API_V}/vapi/linux.vapi

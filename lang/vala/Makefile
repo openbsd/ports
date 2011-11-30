@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/28 09:54:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2011/11/30 15:10:27 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.14.0
+GNOME_VERSION=		0.14.1
 API_V=			0.14
 
 SHARED_LIBS +=  vala-0.14                 0.0 # 0.0
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c pcre pthread glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += c pcre pthread ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 
 MODULES=		devel/gettext \
 			x11/gnome
