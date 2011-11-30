@@ -1,8 +1,9 @@
 #!/bin/ksh 
 #
-# $OpenBSD: clojure,v 1.7 2011/09/16 12:47:50 jasper Exp $
+# $OpenBSD: clojure,v 1.8 2011/11/30 19:40:28 jasper Exp $
 
 JAVA_CMD=$(javaPathHelper -c clojure)
 
-rlwrap ${JAVA_CMD} -classpath ${LOCALBASE}/share/java/classes/'*':${TRUEPREFIX}/clojure/clojure.jar:src:. \
+rlwrap -f ${TRUEPREFIX}/clojure/clj_completions ${JAVA_CMD} -classpath \
+	${LOCALBASE}/share/java/classes/'*':${TRUEPREFIX}/clojure/clojure.jar:src:. \
         clojure.main "$@"
