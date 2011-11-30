@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.719 2011/11/13 16:04:20 pascal Exp $
+# $OpenBSD: Makefile,v 1.720 2011/11/30 06:14:17 rpointel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -445,6 +445,7 @@
      SUBDIR += py-twitter
      SUBDIR += py-xmpp
      SUBDIR += py-xmpppy
+     SUBDIR += py-zmq
      SUBDIR += py-zsi
      SUBDIR += qsynergy
      SUBDIR += quagga
