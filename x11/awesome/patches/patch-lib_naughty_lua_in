@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_naughty_lua_in,v 1.3 2011/11/30 11:50:58 dcoppa Exp $
+--- lib/naughty.lua.in.orig	Wed Nov 30 11:39:37 2011
++++ lib/naughty.lua.in	Wed Nov 30 11:41:42 2011
+@@ -47,7 +47,7 @@ module("naughty")
+ config = {}
+ config.padding = 4
+ config.spacing = 1
+-config.icon_dirs = { "/usr/share/pixmaps/", }
++config.icon_dirs = { "${LOCALBASE}/share/pixmaps/", }
+ config.icon_formats = { "png", "gif" }
+ config.notify_callback = nil
+ 

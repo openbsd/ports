@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2011/11/30 11:50:58 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-DISTNAME=		awesome-3.4.10
-REVISION=		5
-EXTRACT_SUFX=		.tar.bz2
+DISTNAME=		awesome-3.4.11
+EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		x11
 
 HOMEPAGE=		http://awesome.naquadah.org/
@@ -60,8 +59,13 @@ SEPARATE_BUILD=		No
 
 NO_REGRESS=		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/naughty.lua.in \
+		${WRKSRC}/lib/awful/util.lua.in
+
 post-install:
-	@find ${WRKINST} -name '*.lua.in.orig' -print0 | xargs -0 rm
+	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/*.{beforesubst,orig}
+	@rm ${WRKINST}/${LOCALBASE}/share/awesome/lib/awful/*.{beforesubst,orig}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
 	@mv ${WRKINST}/${SYSCONFDIR}/xdg/awesome/rc.lua \
 		${PREFIX}/share/examples/awesome/

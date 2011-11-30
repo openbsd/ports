@@ -1,4 +1,4 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.11 2011/07/06 15:17:39 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.12 2011/11/30 11:50:58 dcoppa Exp $
 
 These auto-generated (db2man.xsl) manpages contain a mixture of ISO
 latin-1 characters and numerical HTML entities that neither mandoc
@@ -10,7 +10,7 @@ nor groff can fully understand: do not install them.
      ${SOURCE_DIR}/manpages/awsetbg.1.txt
      ${SOURCE_DIR}/manpages/awesome-client.1.txt
      ${SOURCE_DIR}/manpages/awesomerc.5.txt)
--set(AWE_MAN_LANGS es fr de)
+-set(AWE_MAN_LANGS es fr de ru)
  
  add_executable(${PROJECT_AWE_NAME}
      ${AWE_SRCS}

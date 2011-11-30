@@ -1,6 +1,6 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.4 2011/01/17 13:23:06 dcoppa Exp $
---- awesomeConfig.cmake.orig	Mon Jan 17 12:38:13 2011
-+++ awesomeConfig.cmake	Mon Jan 17 13:07:59 2011
+$OpenBSD: patch-awesomeConfig_cmake,v 1.5 2011/11/30 11:50:58 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Wed Nov 23 15:08:50 2011
++++ awesomeConfig.cmake	Wed Nov 30 10:43:32 2011
 @@ -16,11 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
  option(GENERATE_LUADOC "generate luadoc" ON)
  
@@ -18,7 +18,20 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.4 2011/01/17 13:23:06 dcoppa Exp $
      -Wstrict-prototypes)
  # }}}
  
-@@ -240,7 +240,7 @@ endif()
+@@ -139,9 +139,10 @@ pkg_check_modules(AWESOME_REQUIRED REQUIRED
+     xcb-xtest
+     xcb-xinerama
+     xcb-shape
+-    xcb-util>=0.3.8
++    xcb-aux>=0.3.6
++    xcb-atom>=0.3.6
+     xcb-keysyms>=0.3.4
+-    xcb-icccm>=0.3.8
++    xcb-icccm>=0.3.6
+     xcb-image>=0.3.0
+     cairo-xcb
+     libstartup-notification-1.0>=0.10
+@@ -239,7 +240,7 @@ endif()
  if(DEFINED SYSCONFDIR)
      set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
  else()
@@ -27,7 +40,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.4 2011/01/17 13:23:06 dcoppa Exp $
  endif()
  
  #If an XDG Config Dir is specificed, use it instead
-@@ -269,7 +269,7 @@ endif()
+@@ -268,7 +269,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()

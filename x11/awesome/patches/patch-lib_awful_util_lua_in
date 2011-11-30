@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.3 2011/06/22 12:54:03 dcoppa Exp $
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.4 2011/11/30 11:50:58 dcoppa Exp $
 
 XXX THIS IS A HACK
 This is needed to workaround the effects of userland 
 threads which change I/O operations to non-blocking.
 
---- lib/awful/util.lua.in.orig	Mon May 16 16:35:17 2011
-+++ lib/awful/util.lua.in	Wed Jun 22 12:59:39 2011
-@@ -88,18 +88,46 @@ function spawn_with_shell(cmd, screen)
+--- lib/awful/util.lua.in.orig	Wed Nov 23 15:08:50 2011
++++ lib/awful/util.lua.in	Wed Nov 30 11:41:52 2011
+@@ -89,19 +89,47 @@ function spawn_with_shell(cmd, screen)
      end
  end
  
@@ -43,7 +43,7 @@ threads which change I/O operations to non-blocking.
          else
 -            return err
 +            return nil
-+        end
+         end
 +
 +        fd_check = io.open(tmp2)
 +        if not fd_check then return nil end
@@ -57,6 +57,16 @@ threads which change I/O operations to non-blocking.
 +            return nil
 +        else
 +            return sout
-         end
++        end
      end
  end
+ 
+@@ -182,7 +210,7 @@ end
+ -- @param dirs Table of dirs to search, otherwise { '/usr/share/pixmaps/' }
+ function geticonpath(iconname, exts, dirs)
+     exts = exts or { 'png', 'gif' }
+-    dirs = dirs or { '/usr/share/pixmaps/' }
++    dirs = dirs or { '${LOCALBASE}/share/pixmaps/' }
+     for _, d in pairs(dirs) do
+         for _, e in pairs(exts) do
+             local icon = d .. iconname .. '.' .. e
