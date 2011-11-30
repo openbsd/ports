@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/06 20:09:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.25 2011/11/30 18:57:49 naddy Exp $
 
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.9
+DISTNAME=	gtypist-2.9.1
 CATEGORIES=	education
 HOMEPAGE=	http://www.gnu.org/software/gtypist/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
