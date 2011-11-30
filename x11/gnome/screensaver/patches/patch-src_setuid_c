@@ -1,32 +1,37 @@
-$OpenBSD: patch-src_setuid_c,v 1.2 2011/09/12 07:28:54 jasper Exp $
+$OpenBSD: patch-src_setuid_c,v 1.3 2011/11/30 11:13:47 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=651554
+From d7ab99c00a01bea870cf51d855ecf320e0d23bac Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 30 Nov 2011 12:02:48 +0100
+Subject: [PATCH] Implement OpenBSD authentication using bsd_auth(3).
 
---- src/setuid.c.orig	Wed Apr 30 04:30:08 2008
-+++ src/setuid.c	Fri May 15 12:15:54 2009
-@@ -194,6 +194,21 @@ hack_uid (char **nolock_reason,
+--- src/setuid.c.orig	Tue Aug 16 15:36:39 2011
++++ src/setuid.c	Wed Nov 30 11:57:22 2011
+@@ -194,6 +194,23 @@ hack_uid (char **nolock_reason,
                          *orig_uid = uid_gid_string (euid, egid);
                  }
  
 +#ifdef HAVE_BSDAUTH /* we need to setgid auth to run the bsd_auth(3) login_* helpers */
-+                struct group *authg = getgrnam("auth");
-+                if (!authg || !authg->gr_name || !*authg->gr_name) {
-+                                reason = ("no such group as \"auth\" for bsdauth.\n");
++                {
++                        struct group *authg = getgrnam("auth");
++                        if (!authg || !authg->gr_name || !*authg->gr_name) {
++                                        reason = g_strdup ("no such group as \"auth\" for bsdauth.");
 +
-+                                ret = FALSE;
-+                                goto out;
++                                        ret = FALSE;
++                                        goto out;
 +                        }
-+		if (! set_ids_by_number (uid, authg->gr_gid, uid_message)) {
-+                                reason = ("cannot setgid \"auth\" for bsdauth.");
++                        if (! set_ids_by_number (uid, authg->gr_gid, uid_message)) {
++                                        reason = g_strdup ("cannot setgid \"auth\" for bsdauth.");
 +
-+                                ret = FALSE;
-+                                goto out;
++                                        ret = FALSE;
++                                        goto out;
 +                        }
++                }
 +#else /* !HAVE_BSDAUTH */
                  if (uid != euid || gid != egid) {
                          if (! set_ids_by_number (uid, gid, uid_message)) {
                                  reason = g_strdup ("unable to discard privileges.");
-@@ -202,6 +217,7 @@ hack_uid (char **nolock_reason,
+@@ -202,6 +219,7 @@ hack_uid (char **nolock_reason,
                                  goto out;
                          }
                  }
