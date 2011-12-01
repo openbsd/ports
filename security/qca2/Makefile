@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/01 19:02:48 shadchin Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
 
-DISTNAME =	qca-2.0.2
-PKGNAME =	qca2-2.0.2
+DISTNAME =	qca-2.0.3
+PKGNAME =	qca2-2.0.3
 CATEGORIES =	security
 SHARED_LIBS +=	qca	3.0
 
 HOMEPAGE =	http://delta.affinix.com/qca/
 
-# LGPL
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -27,8 +27,8 @@ CONFIGURE_ENV +=	QTDIR=${MODQT_LIBDIR} HOME=${WRKDIR} LOCALBASE=${LOCALBASE} X11
 MAKE_FLAGS =	LIBqca_VERSION=${LIBqca_VERSION}
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 USE_GROFF =	Yes
+NO_REGRESS =	Yes
 
-WANTLIB += c m
-WANTLIB += pthread stdc++
-			
+WANTLIB += c m pthread stdc++
+
 .include <bsd.port.mk>
