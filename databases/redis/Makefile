@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/29 16:07:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/01 22:16:53 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.4.4
@@ -44,7 +44,8 @@ SUBST_VARS +=		DBDIR
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/redis
-	${SUBST_CMD} -c -o root -g bin ${WRKSRC}/redis.conf \
-		${PREFIX}/share/examples/redis/redis.conf
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+		${WRKSRC}/redis.conf \
+			${PREFIX}/share/examples/redis/redis.conf
 
 .include <bsd.port.mk>
