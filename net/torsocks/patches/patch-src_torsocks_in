@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_torsocks_in,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
+--- src/torsocks.in.orig	Tue Nov 29 11:58:05 2011
++++ src/torsocks.in	Tue Nov 29 11:58:20 2011
+@@ -76,7 +76,7 @@ fi
+ LIBDIR="@prefix@/lib/torsocks"
+ LIB_NAME="libtorsocks"
+ SHLIB_EXT="@SHLIB_EXT@"
+-SHLIB="${LIBDIR}/${LIB_NAME}.${SHLIB_EXT}"
++SHLIB="${LIBDIR}/${LIB_NAME}.${SHLIB_EXT}.${LIBtorsocks_VERSION}"
+ 
+ # Ensure libtorsocks exists,
+ if [ ! -f $SHLIB ]; then

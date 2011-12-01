@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
+--- doc/Makefile.in.orig	Tue Nov  8 14:46:24 2011
++++ doc/Makefile.in	Tue Nov  8 14:46:38 2011
+@@ -517,7 +517,7 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-dist_confDATA install-dist_dataDATA \
++install-data-am: install-dist_confDATA \
+ 	install-man
+ 
+ install-dvi: install-dvi-am

@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
+%%SHARED%%
+bin/torsocks
+bin/usewithtor
+lib/torsocks/
+lib/torsocks/libtorsocks.a
+lib/torsocks/libtorsocks.la
+@man man/man1/torsocks.1
+@man man/man1/usewithtor.1
+@man man/man5/torsocks.conf.5
+@man man/man8/torsocks.8
+share/examples/torsocks/
+share/examples/torsocks/torsocks.conf
+@sample ${SYSCONFDIR}/torsocks.conf

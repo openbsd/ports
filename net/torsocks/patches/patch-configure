@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/12/01 11:49:27 pascal Exp $
+--- configure.orig	Mon Oct 24 22:23:40 2011
++++ configure	Sun Oct 30 17:07:11 2011
+@@ -4827,7 +4827,6 @@ fi
+ fi
+ 
+ 
+-$as_echo "#define SUPPORT_RES_API /**/" >>confdefs.h
+ 
+ 
+ 
