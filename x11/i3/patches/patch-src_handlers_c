@@ -1,59 +1,49 @@
-$OpenBSD: patch-src_handlers_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-src_handlers_c,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
 
-bugfix: honor the X11 window border in ConfigureRequests
-(upstream git commit f2f636f9e7872ff19c31649b24d5a19a826e22bd)
+Bugfix: ignore EnterNotify events to prevent wrong focus in complex
+tabbed/stacked layouts
+(upstream git commit bd4b240d56df08bc255a09c9cb0d98b457c785dc)
 
-bugfix: correctly handle ConfigureRequests for floating windows in
-multi-monitor setups (git commit b1aa8107b3bc9510422b4a71744c2bfa71627b12)
+Bugfix: skip dock clients when handling FocusIn events
+(upstream git commit 5f8d719835832a91232d0331a25512e9a0853494)
 
-bugfix: correctly revert focus to other floating windows when closing
-a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
-
---- src/handlers.c.orig	Sun Aug 28 19:48:13 2011
-+++ src/handlers.c	Mon Oct 31 12:44:02 2011
-@@ -353,24 +353,27 @@ static int handle_configure_request(xcb_configure_requ
-             bsr.y += deco_height;
-             bsr.height -= deco_height;
-         }
--        con = con->parent;
-+        Con *floatingcon = con->parent;
-         DLOG("Container is a floating leaf node, will do that.\n");
-         if (event->value_mask & XCB_CONFIG_WINDOW_X) {
--            con->rect.x = event->x + (-1) * bsr.x;
--            DLOG("proposed x = %d, new x is %d\n", event->x, con->rect.x);
-+            floatingcon->rect.x = event->x + (-1) * bsr.x;
-+            DLOG("proposed x = %d, new x is %d\n", event->x, floatingcon->rect.x);
-         }
-         if (event->value_mask & XCB_CONFIG_WINDOW_Y) {
--            con->rect.y = event->y + (-1) * bsr.y;
--            DLOG("proposed y = %d, new y is %d\n", event->y, con->rect.y);
-+            floatingcon->rect.y = event->y + (-1) * bsr.y;
-+            DLOG("proposed y = %d, new y is %d\n", event->y, floatingcon->rect.y);
-         }
-         if (event->value_mask & XCB_CONFIG_WINDOW_WIDTH) {
--            con->rect.width = event->width + (-1) * bsr.width;
--            DLOG("proposed width = %d, new width is %d\n", event->width, con->rect.width);
-+            floatingcon->rect.width = event->width + (-1) * bsr.width;
-+            floatingcon->rect.width += con->border_width * 2;
-+            DLOG("proposed width = %d, new width is %d (x11 border %d)\n", event->width, floatingcon->rect.width, con->border_width);
-         }
-         if (event->value_mask & XCB_CONFIG_WINDOW_HEIGHT) {
--            con->rect.height = event->height + (-1) * bsr.height;
--            DLOG("proposed height = %d, new height is %d\n", event->height, con->rect.height);
-+            floatingcon->rect.height = event->height + (-1) * bsr.height;
-+            floatingcon->rect.height += con->border_width * 2;
-+            DLOG("proposed height = %d, new height is %d (x11 border %d)\n", event->height, floatingcon->rect.height, con->border_width);
-         }
-+        floating_maybe_reassign_ws(floatingcon);
-         tree_render();
-     }
+--- src/handlers.c.orig	Fri Nov 11 23:41:20 2011
++++ src/handlers.c	Thu Dec  1 13:58:48 2011
+@@ -452,10 +452,20 @@ static int handle_screen_change(xcb_generic_event_t *e
+  *
+  */
+ static int handle_unmap_notify_event(xcb_unmap_notify_event_t *event) {
+-    // XXX: this is commented out because in src/x.c we disable EnterNotify events
+-    /* we need to ignore EnterNotify events which will be generated because a
+-     * different window is visible now */
+-    //add_ignore_event(event->sequence, XCB_ENTER_NOTIFY);
++    /* If the client (as opposed to i3) destroyed or unmapped a window, an
++     * EnterNotify event will follow (indistinguishable from an EnterNotify
++     * event caused by moving your mouse), causing i3 to set focus to whichever
++     * window is now visible.
++     *
++     * In a complex stacked or tabbed layout (take two v-split containers in a
++     * tabbed container), when the bottom window in tab2 is closed, the bottom
++     * window of tab1 is visible instead. X11 will thus send an EnterNotify
++     * event for the bottom window of tab1, while the focus should be set to
++     * the remaining window of tab2.
++     *
++     * Therefore, we ignore all EnterNotify events which have the same sequence
++     * as an UnmapNotify event. */
++    add_ignore_event(event->sequence, XCB_ENTER_NOTIFY);
  
-@@ -454,7 +457,7 @@ static int handle_unmap_notify_event(xcb_unmap_notify_
+     DLOG("UnmapNotify for 0x%08x (received from 0x%08x), serial %d\n", event->window, event->event, event->sequence);
+     Con *con = con_by_window_id(event->window);
+@@ -965,6 +975,12 @@ static int handle_focus_in(xcb_focus_in_event_t *event
+ 
+     if (focused_id == event->event) {
+         DLOG("focus matches the currently focused window, not doing anything\n");
++        return 1;
++    }
++
++    /* Skip dock clients, they cannot get the i3 focus. */
++    if (con->parent->type == CT_DOCKAREA) {
++        DLOG("This is a dock client, not focusing.\n");
          return 1;
      }
  
--    tree_close(con, DONT_KILL_WINDOW, false);
-+    tree_close(con, DONT_KILL_WINDOW, false, false);
-     tree_render();
-     x_push_changes(croot);
-     return 1;

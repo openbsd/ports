@@ -1,41 +1,14 @@
-$OpenBSD: patch-src_ipc_c,v 1.5 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.6 2011/12/01 16:00:01 dcoppa Exp $
 
 missing header
 
-bugfix: properly free memory/close fd upon errors
-(upstream git commit e1631d6320cf6b47c3b46f0b56ae970986c9c20c)
-
-bugfix: IPC: Correctly dump the 'focus' array
-(upstream git commit abaa8c23564410ce4037ecb550b253a0e37bcbf0)
-
---- src/ipc.c.orig	Sun Aug 28 19:48:13 2011
-+++ src/ipc.c	Mon Oct 31 12:53:38 2011
-@@ -10,6 +10,7 @@
-  * ipc.c: Everything about the UNIX domain sockets for IPC
-  *
+--- src/ipc.c.orig	Wed Nov 30 17:03:50 2011
++++ src/ipc.c	Wed Nov 30 17:04:05 2011
+@@ -9,6 +9,7 @@
   */
+ #include "all.h"
+ 
 +#include <sys/types.h>
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <fcntl.h>
-@@ -59,8 +60,10 @@ static bool mkdirp(const char *path) {
-         copy[strlen(copy)-1] = '\0';
- 
-     char *sep = strrchr(copy, '/');
--    if (sep == NULL)
-+    if (sep == NULL) {
-+        FREE(copy);
-         return false;
-+    }
-     *sep = '\0';
-     bool result = false;
-     if (mkdirp(copy))
-@@ -277,7 +280,7 @@ void dump_node(yajl_gen gen, struct Con *con, bool inp
- 
-     ystr("focus");
-     y(array_open);
--    TAILQ_FOREACH(node, &(con->focus_head), nodes) {
-+    TAILQ_FOREACH(node, &(con->focus_head), focused) {
-         y(integer, (long int)node);
-     }
-     y(array_close);

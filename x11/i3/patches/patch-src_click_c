@@ -1,18 +1,54 @@
-$OpenBSD: patch-src_click_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-src_click_c,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
 
-bugfix: skip dragging of floating containers in fullscreen mode
-(upstream git commit 0c367f9e4c67b77420b98a93b5d0e7ab08e695af)
+Bugfix: fix resizing for v-split containers in h-split containers
+(upstream git commit 59283cce93dc1e468e3ad714a2f561aba8575180)
 
---- src/click.c.orig	Sun Aug 28 19:48:13 2011
-+++ src/click.c	Fri Nov  4 16:12:53 2011
-@@ -179,7 +179,9 @@ static int route_click(Con *con, xcb_button_press_even
-     con_focus(con);
+--- src/click.c.orig	Fri Nov 11 23:41:20 2011
++++ src/click.c	Thu Dec  1 14:01:12 2011
+@@ -26,7 +26,7 @@ typedef enum { CLICK_BORDER = 0, CLICK_DECORATION = 1,
+  *
+  */
+ static bool tiling_resize_for_border(Con *con, border_t border, const xcb_button_press_event_t *event) {
+-    DLOG("border = %d\n", border);
++    DLOG("border = %d, con = %p\n", border, con);
+     char way = (border == BORDER_TOP || border == BORDER_LEFT ? 'p' : 'n');
+     orientation_t orientation = (border == BORDER_TOP || border == BORDER_BOTTOM ? VERT : HORIZ);
  
-     /* 3: for floating containers, we also want to raise them on click */
--    if (floatingcon != NULL) {
-+    Con *ws = con_get_workspace(con);
-+    Con *fs = (ws ? con_get_fullscreen_con(ws, CF_OUTPUT) : NULL);
-+    if (floatingcon != NULL && fs == NULL) {
-         floating_raise_con(floatingcon);
+@@ -38,6 +38,7 @@ static bool tiling_resize_for_border(Con *con, border_
+            resize_con->parent->orientation != orientation)
+         resize_con = resize_con->parent;
  
-         /* 4: floating_modifier plus left mouse button drags */
++    DLOG("resize_con = %p\n", resize_con);
+     if (resize_con->type != CT_WORKSPACE &&
+         resize_con->type != CT_FLOATING_CON &&
+         resize_con->parent->orientation == orientation) {
+@@ -51,6 +52,8 @@ static bool tiling_resize_for_border(Con *con, border_
+             first = second;
+             second = tmp;
+         }
++        DLOG("first = %p, second = %p, resize_con = %p\n",
++                first, second, resize_con);
+     }
+ 
+     if (first == NULL || second == NULL) {
+@@ -130,13 +133,14 @@ static bool tiling_resize(Con *con, const xcb_button_p
+         /* Since the container might either be the child *or* already a split
+          * container (in the case of a nested split container), we need to make
+          * sure that we are dealing with the split container here. */
+-        if (con_is_leaf(con) && con->parent->type == CT_CON)
+-            con = con->parent;
++        Con *check_con = con;
++        if (con_is_leaf(check_con) && check_con->parent->type == CT_CON)
++            check_con = check_con->parent;
+ 
+-        if ((con->layout == L_STACKED ||
+-             con->layout == L_TABBED ||
+-             con->orientation == HORIZ) &&
+-            con_num_children(con) > 1) {
++        if ((check_con->layout == L_STACKED ||
++             check_con->layout == L_TABBED ||
++             check_con->orientation == HORIZ) &&
++            con_num_children(check_con) > 1) {
+             DLOG("Not handling this resize, this container has > 1 child.\n");
+             return false;
+         }

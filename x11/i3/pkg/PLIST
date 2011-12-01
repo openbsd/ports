@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
 @conflict i3bar-<=0.6.21p1
 @pkgpath x11/i3bar
 @bin bin/i3
@@ -23,7 +23,5 @@ share/examples/i3/config
 @sample ${SYSCONFDIR}/i3/config
 share/examples/i3/config.keycodes
 @sample ${SYSCONFDIR}/i3/config.keycodes
-share/examples/i3/welcome
-@sample ${SYSCONFDIR}/i3/welcome
 share/xsessions/
 share/xsessions/i3.desktop

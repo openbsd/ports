@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/06 20:23:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/01 16:00:01 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.0.2
+DISTNAME =	i3-4.1
 
 CATEGORIES =	x11
 
@@ -20,10 +20,13 @@ PERMIT_DISTFILES_FTP =   Yes
 WANTLIB +=	X11 Xcursor c ev m xcb xcb-atom xcb-aux
 WANTLIB +=	xcb-event xcb-icccm xcb-keysyms
 WANTLIB +=	xcb-property xcb-randr xcb-xinerama yajl
+WANTLIB +=	pcre startup-notification-1
 
 MODULES =	converters/libiconv
 LIB_DEPENDS =	devel/libev \
-		devel/libyajl>=2.0.0
+		devel/libyajl>=2.0.0 \
+		devel/pcre \
+		devel/startup-notification
 BUILD_DEPENDS =	devel/bison \
 		devel/flex
 RUN_DEPENDS =	x11/dmenu
@@ -45,11 +48,19 @@ FAKE_FLAGS =	PREFIX=${PREFIX} \
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
-			${WRKSRC}/src/config.c
+		${WRKSRC}/src/cfgparse.y \
+		${WRKSRC}/src/config.c
 
 post-install:
-	@rm -f ${WRKBUILD}/man/i3-wsbar.1
 	${INSTALL_MAN} ${WRKBUILD}/{i3bar/doc,man}/*.1 \
 		${PREFIX}/man/man1/
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-c ${WRKBUILD}/man/i3-config-wizard.1 \
+			${PREFIX}/man/man1/i3-config-wizard.1
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-c ${WRKBUILD}/man/i3.1 \
+			${PREFIX}/man/man1/i3.1
+	@rm -f ${PREFIX}/man/man1/i3-wsbar.1 \
+		${PREFIX}/man/man1/i3-sensible*.1
 
 .include <bsd.port.mk>

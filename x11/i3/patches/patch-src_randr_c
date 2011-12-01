@@ -1,16 +1,54 @@
-$OpenBSD: patch-src_randr_c,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-src_randr_c,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
 
-bugfix: correctly revert focus to other floating windows when closing
-a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
+Bugfix: don't create a workspace named "back_and_forth" on
+startup (unintended behaviour)
+(upstream git commit d686f2f8731a1b7a9c4524a30d4413200d768621)
 
---- src/randr.c.orig	Sun Aug 28 19:48:13 2011
-+++ src/randr.c	Mon Oct 31 12:44:02 2011
-@@ -789,7 +789,7 @@ void randr_query_outputs() {
-                 }
+Do not set the _NET_WM_WORKAREA hint: fix incorrect transient
+geometry with wxwidgets
+(upstream git commit d25e77ce7597bf0736c610a04185c8c27694c890)
+
+Bugfix: fix crash at startup when RandR is not present
+(upstream git commit 227a58b0c30a438e36ee8318c0d20079777f063d)
+
+--- src/randr.c.orig	Fri Nov 11 23:41:20 2011
++++ src/randr.c	Thu Dec  1 14:07:37 2011
+@@ -420,11 +420,12 @@ void init_ws_for_output(Output *output, Con *content) 
+             continue;
+         DLOG("relevant command = %s\n", bind->command);
+         char *target = bind->command + strlen("workspace ");
+-        /* We check if this is the workspace next/prev command. Beware: The
+-         * workspace names "next" and "prev" are OK, so we check before
+-         * stripping the double quotes */
++        /* We check if this is the workspace next/prev/back_and_forth command.
++         * Beware: The workspace names "next", "prev" and "back_and_forth" are
++         * OK, so we check before stripping the double quotes */
+         if (strncasecmp(target, "next", strlen("next")) == 0 ||
+-            strncasecmp(target, "prev", strlen("prev")) == 0)
++            strncasecmp(target, "prev", strlen("prev")) == 0 ||
++            strncasecmp(target, "back_and_forth", strlen("back_and_forth")) == 0)
+             continue;
+         if (*target == '"')
+             target++;
+@@ -807,8 +808,6 @@ void randr_query_outputs() {
+         disable_randr(conn);
+     }
  
-                 DLOG("destroying disappearing con %p\n", output->con);
--                tree_close(output->con, DONT_KILL_WINDOW, true);
-+                tree_close(output->con, DONT_KILL_WINDOW, true, false);
-                 DLOG("Done. Should be fine now\n");
-                 output->con = NULL;
-             }
+-    ewmh_update_workarea();
+-
+     /* Just go through each active output and assign one workspace */
+     TAILQ_FOREACH(output, &outputs, outputs) {
+         if (!output->active)
+@@ -845,9 +844,10 @@ void randr_init(int *event_base) {
+     const xcb_query_extension_reply_t *extreply;
+ 
+     extreply = xcb_get_extension_data(conn, &xcb_randr_id);
+-    if (!extreply->present)
++    if (!extreply->present) {
+         disable_randr(conn);
+-    else randr_query_outputs();
++        return;
++    } else randr_query_outputs();
+ 
+     if (event_base != NULL)
+         *event_base = extreply->first_event;

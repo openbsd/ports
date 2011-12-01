@@ -1,0 +1,46 @@
+$OpenBSD: patch-man_i3_1,v 1.3 2011/12/01 16:00:01 dcoppa Exp $
+--- man/i3.1.orig	Thu Dec  1 15:05:48 2011
++++ man/i3.1	Thu Dec  1 15:11:55 2011
+@@ -213,7 +213,7 @@ When starting, i3 looks for configuration files in the
+ .sp -1
+ .IP "  2." 4.2
+ .\}
+-/etc/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
++${SYSCONFDIR}/xdg/i3/config (or $XDG_CONFIG_DIRS/i3/config if set)
+ .RE
+ .sp
+ .RS 4
+@@ -235,7 +235,7 @@ When starting, i3 looks for configuration files in the
+ .sp -1
+ .IP "  4." 4.2
+ .\}
+-/etc/i3/config
++${SYSCONFDIR}/i3/config
+ .RE
+ .sp
+ You can specify a custom path using the \-c option\&.
+@@ -255,13 +255,13 @@ font \-misc\-fixed\-medium\-r\-normal\-\-13\-120\-75\-
+ floating_modifier Mod1
+ 
+ # start a terminal
+-bindsym Mod1+Return exec /usr/bin/urxvt
++bindsym Mod1+Return exec ${X11BASE}/bin/xterm
+ 
+ # kill focused window
+ bindsym Mod1+Shift+q kill
+ 
+ # start dmenu (a program launcher)
+-bindsym Mod1+d exec /usr/bin/dmenu_run
++bindsym Mod1+d exec ${LOCALBASE}/bin/dmenu_run
+ 
+ # change focus
+ bindsym Mod1+j focus left
+@@ -384,7 +384,7 @@ ulimit \-c unlimited
+ 
+ # Start i3 and log to ~/\&.i3/logfile
+ echo "Starting at $(date)" >> ~/\&.i3/logfile
+-exec /usr/bin/i3 \-V \-d all >> ~/\&.i3/logfile
++exec ${TRUEPREFIX}/bin/i3 \-V \-d all >> ~/\&.i3/logfile
+ .fi
+ .if n \{\
+ .RE

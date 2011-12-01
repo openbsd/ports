@@ -1,63 +1,14 @@
-$OpenBSD: patch-src_cfgparse_y,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
-
-bugfix: properly free memory/close fd upon errors
-(upstream git commit e1631d6320cf6b47c3b46f0b56ae970986c9c20c)
-
-bugfix: correctly split key/value when parsing variables
-(upstream git commit e1949aa69421ff6e8a540eb505ac5d00dee403a0)
-
-bugfix: boundary checking when replacing variables
-(upstream git commits cd6c3fedcb89b8ae995ca1afac2789aef5567de8 and
-77ae3cd8f77e4e255e823b07cd8b50d28b38e03b)
-
-bugfix: ignore for_window commands with empty (invalid) criteria
-(upstream git commit 2a215fd7e22f5d8e9f82fb5a1d610e56afa99fe7)
-
---- src/cfgparse.y.orig	Sun Aug 28 19:48:13 2011
-+++ src/cfgparse.y	Mon Oct 31 12:44:02 2011
-@@ -188,6 +188,7 @@ static char *migrate_config(char *input, off_t size) {
-         ret = read(readpipe[0], converted + read_bytes, conv_size - read_bytes);
-         if (ret == -1) {
-             warn("Cannot read from pipe");
-+            FREE(converted);
-             return NULL;
-         }
-         read_bytes += ret;
-@@ -357,12 +358,14 @@ void parse_file(const char *f) {
- 
-             /* get key/value for this variable */
-             char *v_key = value, *v_value;
--            if ((v_value = strstr(value, " ")) == NULL &&
--                (v_value = strstr(value, "\t")) == NULL) {
-+            if (strstr(value, " ") == NULL && strstr(value, "\t") == NULL) {
-                 ELOG("Malformed variable assignment, need a value\n");
-                 continue;
-             }
- 
-+            if (!(v_value = strstr(value, " ")))
-+                v_value = strstr(value, "\t");
-+
-             *(v_value++) = '\0';
- 
-             struct Variable *new = scalloc(sizeof(struct Variable));
-@@ -387,7 +390,8 @@ void parse_file(const char *f) {
-         int extra = (strlen(current->value) - strlen(current->key));
-         char *next;
-         for (next = bufcopy;
--             (next = strcasestr(bufcopy + (next - bufcopy), current->key)) != NULL;
-+             next < (bufcopy + stbuf.st_size) &&
-+             (next = strcasestr(next, current->key)) != NULL;
-              next += strlen(current->key)) {
-             *next = '_';
-             extra_bytes += extra;
-@@ -658,6 +662,10 @@ bindsym:
- for_window:
-     TOK_FOR_WINDOW match command
-     {
-+        if (match_is_empty(&current_match)) {
-+            ELOG("Match is empty, ignoring this for_window statement\n");
-+            break;
-+        }
-         printf("\t should execute command %s for the criteria mentioned above\n", $3);
-         Assignment *assignment = scalloc(sizeof(Assignment));
-         assignment->type = A_COMMAND;
+$OpenBSD: patch-src_cfgparse_y,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
+--- src/cfgparse.y.orig	Fri Nov 11 23:41:20 2011
++++ src/cfgparse.y	Wed Nov 30 17:01:02 2011
+@@ -284,8 +284,8 @@ static void start_configerror_nagbar(const char *confi
+     if (configerror_pid == 0) {
+         char *editaction,
+              *pageraction;
+-        sasprintf(&editaction, "i3-sensible-terminal -e sh -c \"i3-sensible-editor \\\"%s\\\" && i3-msg reload\"", config_path);
+-        sasprintf(&pageraction, "i3-sensible-terminal -e i3-sensible-pager \"%s\"", errorfilename);
++        sasprintf(&editaction, "${X11BASE}/bin/xterm -e sh -c \"/usr/bin/vi \\\"%s\\\" && i3-msg reload\"", config_path);
++        sasprintf(&pageraction, "${X11BASE}/bin/xterm -e /usr/bin/less \"%s\"", errorfilename);
+         char *argv[] = {
+             NULL, /* will be replaced by the executable path */
+             "-t",

@@ -1,0 +1,11 @@
+$OpenBSD: patch-man_Makefile,v 1.1 2011/12/01 16:00:01 dcoppa Exp $
+--- man/Makefile.orig	Wed Nov 30 16:54:53 2011
++++ man/Makefile	Wed Nov 30 16:55:25 2011
+@@ -1,6 +1,6 @@
+ A2M:=a2x -f manpage --asciidoc-opts="-f asciidoc.conf"
+ 
+-all: i3.1 i3-msg.1 i3-input.1 i3-nagbar.1 i3-wsbar.1 i3-config-wizard.1 i3-migrate-config-to-v4.1 i3-sensible-editor.1 i3-sensible-pager.1 i3-sensible-terminal.1
++all: i3.1 i3-msg.1 i3-input.1 i3-nagbar.1 i3-wsbar.1 i3-config-wizard.1 i3-migrate-config-to-v4.1
+ 
+ %.1: %.man asciidoc.conf
+ 	${A2M} $<

@@ -1,12 +1,12 @@
-$OpenBSD: patch-i3-config-wizard_main_c,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-i3-config-wizard_main_c,v 1.2 2011/12/01 16:00:01 dcoppa Exp $
 
 getline() is a GNU extension
 
---- i3-config-wizard/main.c.orig	Wed Sep 14 12:16:22 2011
-+++ i3-config-wizard/main.c	Wed Sep 14 12:22:41 2011
-@@ -74,6 +74,47 @@ Display *dpy;
- char *rewrite_binding(const char *bindingline);
- static void finish();
+--- i3-config-wizard/main.c.orig	Fri Nov 11 23:41:20 2011
++++ i3-config-wizard/main.c	Wed Nov 30 15:44:09 2011
+@@ -296,6 +296,47 @@ static void finish() {
+     fputs("# this file and re-run i3-config-wizard(1).\n", ks_config);
+     fputs("#\n", ks_config);
  
 +#if defined(__OpenBSD__)
 +
@@ -50,5 +50,5 @@ getline() is a GNU extension
 +#endif
 +
  #if defined(__APPLE__)
- 
- /*
+     while ((line = fgetln(kc_config, &len)) != NULL) {
+ #else

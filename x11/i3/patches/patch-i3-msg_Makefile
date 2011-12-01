@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3-msg_Makefile,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
---- i3-msg/Makefile.orig	Sun Aug 28 19:48:13 2011
-+++ i3-msg/Makefile	Mon Oct 31 16:32:23 2011
+$OpenBSD: patch-i3-msg_Makefile,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
+--- i3-msg/Makefile.orig	Wed Nov 30 16:31:25 2011
++++ i3-msg/Makefile	Wed Nov 30 16:32:50 2011
 @@ -3,27 +3,22 @@ TOPDIR=..
  
  include $(TOPDIR)/common.mk
@@ -13,17 +13,17 @@ $OpenBSD: patch-i3-msg_Makefile,v 1.3 2011/11/06 20:23:25 dcoppa Exp $
  
  # Depend on the specific file (.c for each .o) and on all headers
  %.o: %.c ${HEADERS}
--	echo "CC $<"
+-	echo "[i3-msg] CC $<"
  	$(CC) $(CPPFLAGS) $(CFLAGS) -c -o $@ $<
  
  all: i3-msg
  
  i3-msg: ${FILES}
--	echo "LINK i3-msg"
+-	echo "[i3-msg] LINK i3-msg"
  	$(CC) $(LDFLAGS) -o i3-msg ${FILES} $(LIBS)
  
  install: all
--	echo "INSTALL"
+-	echo "[i3-msg] INSTALL"
  	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
 -	$(INSTALL) -m 0755 i3-msg $(DESTDIR)$(PREFIX)/bin/
 +	${INSTALL_PROGRAM} i3-msg $(DESTDIR)$(PREFIX)/bin/

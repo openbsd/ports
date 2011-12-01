@@ -1,28 +1,57 @@
-$OpenBSD: patch-src_cmdparse_y,v 1.1 2011/11/06 20:23:25 dcoppa Exp $
+$OpenBSD: patch-src_cmdparse_y,v 1.2 2011/12/01 16:00:01 dcoppa Exp $
 
-bugfix: correctly revert focus to other floating windows when closing
-a floating window (git commit 4dbda7311480c231332a9dab9ed23d00abecb7e9)
+Bugfix: fix crash on '[class="i3bar"] focus'
+(upstream git commit 31acb91d906cecb94d791609917530545118eb3b)
 
-bugfix: don't fix floating coordinates when reassigning - fixes
-flickering (upstream git commit 6b541d382b89de18104202e5820f466725d77576)
+Bugfix: retain absolute window position and size when changing
+floating borders (git commit 970d11709e99aab7db13a2fd28a758a68a4137dc)
 
---- src/cmdparse.y.orig	Sun Aug 28 19:48:13 2011
-+++ src/cmdparse.y	Mon Oct 31 12:44:02 2011
-@@ -533,7 +533,7 @@ kill:
-         else {
-             TAILQ_FOREACH(current, &owindows, owindows) {
-                 printf("matching: %p / %s\n", current->con, current->con->name);
--                tree_close(current->con, $2, false);
-+                tree_close(current->con, $2, false, false);
-             }
-         }
+Bugfix: fix 'resize' command in nested containers
+(upstream git commit 626e3efb48cdf78dcda31bec61bcb8bcb9bf2940)
+
+--- src/cmdparse.y.orig	Fri Nov 11 23:41:20 2011
++++ src/cmdparse.y	Thu Dec  1 14:03:16 2011
+@@ -450,6 +450,10 @@ focus:
+         int count = 0;
+         TAILQ_FOREACH(current, &owindows, owindows) {
+             Con *ws = con_get_workspace(current->con);
++            /* If no workspace could be found, this was a dock window.
++             * Just skip it, you cannot focus dock windows. */
++            if (!ws)
++                continue;
  
-@@ -699,7 +699,7 @@ move:
+             /* If the container is not on the current workspace,
+              * workspace_show() will switch to a different workspace and (if
+@@ -719,10 +723,12 @@ border:
  
          TAILQ_FOREACH(current, &owindows, owindows) {
              printf("matching: %p / %s\n", current->con, current->con->name);
--            con_move_to_workspace(current->con, ws, false);
-+            con_move_to_workspace(current->con, ws, true, false);
++            int border_style = current->con->border_style;
+             if ($2 == TOK_TOGGLE) {
+-                current->con->border_style++;
+-                current->con->border_style %= 3;
+-            } else current->con->border_style = $2;
++                border_style++;
++                border_style %= 3;
++            } else border_style = $2;
++            con_set_border_style(current->con, border_style);
          }
  
          tree_render();
+@@ -961,6 +967,16 @@ resize:
+             while (current->parent->layout == L_STACKED ||
+                    current->parent->layout == L_TABBED)
+                 current = current->parent;
++
++            /* Then further go up until we find one with the matching orientation. */
++            orientation_t search_orientation =
++                (direction == TOK_LEFT || direction == TOK_RIGHT ? HORIZ : VERT);
++
++            while (current->type != CT_WORKSPACE &&
++                   current->type != CT_FLOATING_CON &&
++                   current->parent->orientation != search_orientation)
++                current = current->parent;
++
+             /* get the default percentage */
+             int children = con_num_children(current->parent);
+             Con *other;
