@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_download_download_constructor_cc,v 1.1 2011/12/01 17:10:40 dcoppa Exp $
+
+Spelling fixes
+
+--- src/download/download_constructor.cc.orig	Tue Jun  7 12:52:57 2011
++++ src/download/download_constructor.cc	Thu Oct 20 10:19:35 2011
+@@ -344,7 +344,7 @@ DownloadConstructor::create_path(const Object::list_ty
+     throw input_error("Bad torrent file, \"path\" has zero entries.");
+ 
+   if (std::find_if(plist.begin(), plist.end(), std::ptr_fun(&DownloadConstructor::is_invalid_path_element)) != plist.end())
+-    throw input_error("Bad torrent file, \"path\" has zero entries or a zero lenght entry.");
++    throw input_error("Bad torrent file, \"path\" has zero entries or a zero length entry.");
+ 
+   Path p;
+   p.set_encoding(enc);
