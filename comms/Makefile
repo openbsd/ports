@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/18 20:28:17 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2011/12/01 19:07:11 edd Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR =
@@ -19,6 +19,7 @@
      SUBDIR += jpilot
      SUBDIR += jpilot-syncmal
      SUBDIR += kermit
+     SUBDIR += lcdproc
      SUBDIR += libmal
      SUBDIR += lrzsz
      SUBDIR += mgetty+sendfax
