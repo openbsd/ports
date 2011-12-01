@@ -1,4 +1,4 @@
-# $OpenBSD: Recorder.pm,v 1.4 2011/11/27 17:31:54 espie Exp $
+# $OpenBSD: Recorder.pm,v 1.5 2011/12/01 11:13:25 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -116,6 +116,7 @@ sub dump
 		if (defined $v->{rpath}) {
 			print $fh "(", join(':', @{$v->{rpath}}), ")";
 		}
+		$v->{libs} //= [];
 		print $fh ": ", join(',', @{$v->{libs}}), "\n";
 	}
 }
