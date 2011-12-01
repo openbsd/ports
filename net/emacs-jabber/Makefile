@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/13 15:46:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/01 20:16:56 sthen Exp $
 
 COMMENT =		Jabber client for Emacs
 
@@ -21,6 +21,7 @@ FLAVOR ?=		emacs21
 
 .if ${FLAVOR:Memacs21}
 EMACS_VSN =	21.4
+BROKEN =	requires newer gnus
 .elif ${FLAVOR:Memacs22}
 EMACS_VSN =	22.3
 .elif ${FLAVOR:Memacs23}
