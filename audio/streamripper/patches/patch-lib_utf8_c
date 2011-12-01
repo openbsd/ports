@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_utf8_c,v 1.1 2011/12/01 18:57:48 shadchin Exp $
+--- lib/utf8.c.orig	Mon Nov 21 00:22:13 2011
++++ lib/utf8.c	Mon Nov 21 00:22:25 2011
+@@ -20,6 +20,7 @@
+ /*
+  * Convert a string between UTF-8 and the locale's charset.
+  */
++#include "srconfig.h"
+ 
+ #include <stdlib.h>
+ #include <string.h>

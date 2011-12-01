@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_iconvert_c,v 1.1 2011/12/01 18:57:48 shadchin Exp $
+--- lib/iconvert.c.orig	Mon Nov 21 00:23:32 2011
++++ lib/iconvert.c	Mon Nov 21 00:23:39 2011
+@@ -15,6 +15,7 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
++#include "srconfig.h"
+ 
+ #ifdef HAVE_ICONV
+ 
