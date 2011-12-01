@@ -1,4 +1,4 @@
-# $OpenBSD: BinaryScan.pm,v 1.3 2011/11/27 17:31:54 espie Exp $
+# $OpenBSD: BinaryScan.pm,v 1.4 2011/12/01 11:11:23 espie Exp $
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -143,7 +143,7 @@ sub parse
 		if ($fh) {
 			print $fh $line;
 		}
-		chomp;
+		chomp $line;
 		if ($line =~ m/^(.*)\:\s+file format/) {
 			my $k = $1;
 			$self->record_libs($fullname, @l) unless $linux_binary;
