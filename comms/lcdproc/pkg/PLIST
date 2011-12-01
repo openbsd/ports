@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+@newgroup _lcdproc:687
+@newuser _lcdproc:687:687:daemon:LCDproc Daemon:/var/lcdproc:/sbin/nologin
+%%SHARED%%
+bin/fortune.pl
+bin/iosock.pl
+@bin bin/lcdexec
+bin/lcdident.pl
+bin/lcdmetar.pl
+@bin bin/lcdproc
+bin/tail.pl
+bin/x11amp.pl
+lib/lcdproc/
+@man man/man1/lcdexec.1
+@man man/man1/lcdproc.1
+@man man/man5/lcdproc-config.5
+@man man/man8/LCDd.8
+@bin sbin/LCDd
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/lcdproc/
+share/examples/lcdproc/LCDd.conf
+@sample ${SYSCONFDIR}/LCDd.conf
+share/examples/lcdproc/lcdexec.conf
+@sample ${SYSCONFDIR}/lcdexec.conf
+share/examples/lcdproc/lcdproc.conf
+@sample ${SYSCONFDIR}/lcdproc.conf
+@mode 770
+@owner _lcdproc
+@group _lcdproc
+@sample /var/lcdproc/
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/LCDd
+@rcscript ${RCDIR}/lcdproc
+@rcscript ${RCDIR}/lcdexec

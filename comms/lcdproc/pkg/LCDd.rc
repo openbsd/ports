@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: LCDd.rc,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+daemon="${TRUEPREFIX}/sbin/LCDd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

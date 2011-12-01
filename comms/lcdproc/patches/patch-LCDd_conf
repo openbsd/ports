@@ -1,0 +1,50 @@
+$OpenBSD: patch-LCDd_conf,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+OpenBSD path and there is no point in logging to stderr if we use daemon() to daemonise
+(stderr will get closed).
+
+Fix a typo.
+
+--- LCDd.conf.orig	Wed Nov  9 19:50:01 2011
++++ LCDd.conf	Wed Nov 16 18:10:31 2011
+@@ -34,7 +34,7 @@
+ #            the driver modules and will thus not be able to
+ #            function properly.
+ # NOTE: Always place a slash as last character !
+-DriverPath=server/drivers/
++DriverPath=${TRUEPREFIX}/lib/lcdproc/
+ 
+ # Tells the server to load the given drivers. Multiple lines can be given.
+ # The name of the driver is case sensitive and determines the section
+@@ -50,7 +50,7 @@ DriverPath=server/drivers/
+ #   mdm166a, ms6931, mtc_s16209x, MtxOrb, mx5000, NoritakeVFD, picolcd,
+ #   pyramid, sed1330, sed1520, serialPOS, serialVFD, shuttleVFD, sli,
+ #   stv5730, svga, t6963, text, tyan, ula200, xosd
+-Driver=curses
++Driver=<<<CHOOSE A DRIVER!>>>
+ 
+ # Tells the driver to bind to the given interface
+ Bind=127.0.0.1
+@@ -62,11 +62,11 @@ Port=13666
+ #ReportLevel=3
+ 
+ # Should we report to syslog instead of stderr ? [default: no; legal: yes, no]
+-#ReportToSyslog=yes
++ReportToSyslog=yes
+ 
+ # User to run as.  LCDd will drop its root privileges, if any,
+ # and run as this user instead.
+-User=nobody
++User=_lcdproc
+ 
+ # The server will stay in the foreground if set to true.
+ #Foreground=no
+@@ -79,7 +79,7 @@ User=nobody
+ #GoodBye="Thanks for using"
+ #GoodBye="   LCDproc!"
+ 
+-# Sets the default time in seconds to displays a screen.
++# Sets the default time in seconds to display a screen.
+ WaitTime=5
+ 
+ # If set to no, LCDd will start with screen rotation disabled. This has the

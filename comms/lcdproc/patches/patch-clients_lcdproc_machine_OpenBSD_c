@@ -1,0 +1,47 @@
+$OpenBSD: patch-clients_lcdproc_machine_OpenBSD_c,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+The code distributed with LCDproc for querying the process table is out of date.
+
+--- clients/lcdproc/machine_OpenBSD.c.orig	Tue Nov 15 13:12:02 2011
++++ clients/lcdproc/machine_OpenBSD.c	Tue Nov 15 13:34:52 2011
+@@ -50,7 +50,7 @@
+ #include <sys/time.h>
+ #include <sys/user.h>
+ /* take care if $ARCH != i386! */
+-#include <i386/apmvar.h>
++#include <machine/apmvar.h>
+ #include <kvm.h>
+ #include <errno.h>
+ 
+@@ -61,7 +61,7 @@
+ 
+ static int pageshift;
+ #define pagetok(size) ((size) << pageshift)
+-#define PROCSIZE(pp) ((pp).vm_tsize + (pp).vm_dsize + (pp).vm_ssize)
++#define PROCSIZE(pp) ((pp)->p_vm_tsize + (pp)->p_vm_dsize + (pp)->p_vm_ssize)
+ 
+ 
+ int machine_init(void)
+@@ -294,7 +294,7 @@ int machine_get_procs(LinkedList *procs)
+ 		return(FALSE);
+ 	}
+ 
+-	kprocs = kvm_getprocs(kvmd, KERN_PROC_ALL, 0, &nproc);
++	kprocs = kvm_getprocs(kvmd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc), &nproc);
+ 	if (kprocs == NULL)
+ 	{
+ 		perror("kvm_getprocs");
+@@ -311,10 +311,10 @@ int machine_get_procs(LinkedList *procs)
+ 			kvm_close(kvmd);
+ 			return(FALSE);
+ 		}
+-		strncpy(p->name, kprocs->kp_proc.p_comm, 15);
++		strncpy(p->name, kprocs->p_comm, 15);
+ 		p->name[15] = '\0';
+-		p->totl = pagetok(PROCSIZE(kprocs->kp_eproc.e_vm));
+-		p->number = kprocs->kp_proc.p_pid;
++		p->totl = pagetok(PROCSIZE(kprocs));
++		p->number = kprocs->p_pid;
+ 		LL_Push(procs, (void *)p);
+ 
+ 		kprocs++;

@@ -1,0 +1,24 @@
+$OpenBSD: patch-clients_lcdproc_main_c,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+Consistently log errors (further, stderr will be closed if daemonised).
+
+--- clients/lcdproc/main.c.orig	Tue Nov 15 16:44:06 2011
++++ clients/lcdproc/main.c	Tue Nov 15 16:48:07 2011
+@@ -329,7 +329,7 @@ main(int argc, char **argv)
+ 
+ 	if (foreground != TRUE) {
+ 		if (daemon(1, 0) != 0) {
+-			fprintf(stderr, "Error: daemonize failed\n");
++			report(RPT_CRIT, "Error: daemonize failed: %s", strerror(errno));
+ 			return (EXIT_FAILURE);
+ 		}
+ 
+@@ -342,7 +342,7 @@ main(int argc, char **argv)
+ 				pidfile_written = TRUE;
+ 			}
+ 			else {
+-				fprintf(stderr, "Error creating pidfile %s: %s\n",
++				report(RPT_CRIT, "Error creating pidfile %s: %s",
+ 					pidfile, strerror(errno));
+ 				return (EXIT_FAILURE);
+ 			}

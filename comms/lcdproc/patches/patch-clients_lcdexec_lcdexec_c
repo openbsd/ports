@@ -1,0 +1,15 @@
+$OpenBSD: patch-clients_lcdexec_lcdexec_c,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+Consistently log errors (further, stderr will be closed if daemonised).
+
+--- clients/lcdexec/lcdexec.c.orig	Tue Nov 15 17:00:42 2011
++++ clients/lcdexec/lcdexec.c	Tue Nov 15 17:01:44 2011
+@@ -149,7 +149,7 @@ int main(int argc, char **argv)
+ 				fclose(pidf);
+ 				pidfile_written = TRUE;
+ 			} else {
+-				fprintf(stderr, "Error creating pidfile %s: %s\n",
++				report(RPT_CRIT, "Error creating pidfile %s: %s\n",
+ 					pidfile, strerror(errno));
+ 				return(EXIT_FAILURE);
+ 			}

@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: lcdproc.rc,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+daemon="${TRUEPREFIX}/bin/lcdproc"
+daemon_user="_lcdproc"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

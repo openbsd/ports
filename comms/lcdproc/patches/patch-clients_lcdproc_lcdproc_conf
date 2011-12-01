@@ -1,0 +1,23 @@
+$OpenBSD: patch-clients_lcdproc_lcdproc_conf,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+OpenBSD path and there is no point in logging to stderr if we use daemon() to daemonise
+(stderr will get closed).
+
+--- clients/lcdproc/lcdproc.conf.orig	Tue May 19 07:44:46 2009
++++ clients/lcdproc/lcdproc.conf	Mon Nov 28 20:41:15 2011
+@@ -12,13 +12,13 @@ Port=13666
+ ReportLevel=2
+ 
+ # report to to syslog ?
+-ReportToSyslog=false
++ReportToSyslog=true
+ 
+ # run in foreground [default: false; legal: true, false]
+ #Foreground=true
+ 
+ # PidFile location when running as daemon [default: /var/run/lcdproc.pid]
+-#PidFile=/var/run/lcdproc.pid
++PidFile=/var/lcdproc/lcdproc.pid
+ 
+ # slow down initial announcement of modes (in 1/100s)
+ #delay=2

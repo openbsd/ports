@@ -1,0 +1,23 @@
+$OpenBSD: patch-clients_lcdexec_lcdexec_conf,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+
+OpenBSD path and there is no point in logging to stderr if we use daemon() to daemonise
+(stderr will get closed).
+
+--- clients/lcdexec/lcdexec.conf.orig	Mon Dec 27 13:32:55 2010
++++ clients/lcdexec/lcdexec.conf	Mon Nov 28 20:42:00 2011
+@@ -12,13 +12,13 @@ Port=13666
+ ReportLevel=2
+ 
+ # report to to syslog ?
+-ReportToSyslog=false
++ReportToSyslog=true
+ 
+ # run in foreground [default: false; legal: true, false]
+ Foreground=false
+ 
+ # PidFile location when running as daemon [default: /var/run/lcdexec.pid]
+-#PidFile=/var/run/lcdexec.pid
++PidFile=/var/lcdproc/lcdexec.pid
+ 
+ # shell to use for executing programsi
+ # [default: $SHELL or /bin/sh; legal: any shell that understands: -c COMMAND]
