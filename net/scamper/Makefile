@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/16 08:31:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/01 21:45:04 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               0.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20110803
+V =		20111202
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-0.0.$V
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB += c
+WANTLIB += c m
 
 MASTER_SITES = ${HOMEPAGE}
 
