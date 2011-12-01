@@ -1,6 +1,9 @@
-$OpenBSD: patch-browser-plugin_totemPluginGlue_cpp,v 1.4 2011/10/07 10:33:24 ajacoutot Exp $
+$OpenBSD: patch-browser-plugin_totemPluginGlue_cpp,v 1.5 2011/12/01 11:15:02 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=660966
+From d3d467a49fa828f1b6bb5d999c97158bd736785e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 05 Oct 2011 08:16:30 +0000
+Subject: Fix dlopening libdbus-glib-1 on OpenBSD.
 
 --- browser-plugin/totemPluginGlue.cpp.orig	Mon Oct 18 15:19:58 2010
 +++ browser-plugin/totemPluginGlue.cpp	Wed Oct  5 10:24:35 2011
