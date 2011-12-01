@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.29 2011/11/27 17:37:47 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.30 2011/12/01 11:20:19 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -507,14 +507,7 @@ sub main
 			$state->fatal("no source for actual files given");
 		}
 		$self->do_plist($state);
-	} elsif (@ARGV == 0) {
-		if (!$state->{dest}) {
-			if ($need_package) {
-				$state->fatal("no source for actual files given");
-			}
-			$self->do_plist($state);
-		}
-	} else {
+	} elsif (@ARGV != 0) {
 		$state->progress->for_list("Scanning", \@ARGV,
 		    sub {
 			$self->do_pkg($state, shift);
