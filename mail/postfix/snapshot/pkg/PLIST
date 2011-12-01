@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.59 2011/11/07 12:31:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.60 2011/12/01 10:26:52 sthen Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -119,8 +119,8 @@ sbin/newaliases
 @mode 2755
 @group _postdrop
 @bin sbin/postdrop
-@group
 @mode
+@group
 @bin sbin/postfix
 sbin/postfix-disable
 sbin/postfix-enable
@@ -133,8 +133,8 @@ sbin/postfix-install
 @mode 2755
 @group _postdrop
 @bin sbin/postqueue
-@group
 @mode
+@group
 @bin sbin/postsuper
 sbin/qshape
 @bin sbin/sendmail
