@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/29 18:30:35 gsoares Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/01 12:32:37 gsoares Exp $
 
 COMMENT =	Perl Archive Toolkit
 
 CPAN_AUTHOR =	RSCHUPP
 
 MODULES =	cpan
-DISTNAME =	PAR-1.003
+DISTNAME =	PAR-1.004
 CATEGORIES =	devel archivers
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
