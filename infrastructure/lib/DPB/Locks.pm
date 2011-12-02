@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.9 2011/11/13 22:18:04 espie Exp $
+# $OpenBSD: Locks.pm,v 1.10 2011/12/02 22:32:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -48,6 +48,7 @@ sub dolock
 {
 	my ($self, $name, $v) = @_;
 	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
+		DPB::Util->make_hot($fh);
 		print $fh "locked=", $v->logname, "\n";
 		$v->print_parent($fh);
 		return $fh;
@@ -103,5 +104,32 @@ sub recheck_errors
 	}
 }
 
+sub find_dependencies
+{
+	my ($self, $hostname) = @_;
+	opendir(my $dir, $self->{lockdir});
+	my $h = {};
+	while (my $name = readdir($dir)) {
+		my $fullname = $self->{lockdir}."/".$name;
+		next if -d $fullname;
+		next if $name =~ m/^host:/;
+		open(my $f, '<', $fullname);
+		my $host;
+		my @d;
+		while (<$f>) {
+			if (m/^host=(.*)/) {
+				$host = $1;
+			} elsif (m/^needed=(.*)/) {
+				@d = split(/\s/, $1);
+			}
+		}
+		if (defined $host && $host eq $hostname) {
+			for my $k (@d) {
+				$h->{$k} = 1;
+			}
+		}
+	}
+	return sort keys %$h;
+}
 
 1;
