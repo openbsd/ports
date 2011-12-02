@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/02 19:36:42 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
@@ -53,6 +53,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bar_conversion.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/bullet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/deprecated.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/gruff/dot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/line.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/mini/
 ${GEM_LIB}/gems/${DISTNAME}/lib/gruff/mini/bar.rb
@@ -82,6 +83,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_area.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_bar.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_base.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_bullet.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_dot.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_legend.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_line.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_mini_bar.rb
