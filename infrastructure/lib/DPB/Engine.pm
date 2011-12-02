@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.38 2011/12/02 11:40:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.39 2011/12/02 11:52:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -549,10 +549,6 @@ sub check_buildable
 		for my $v (values %{$self->{tobuild}}) {
 			next if $quick && !$v->{new};
 			delete $v->{new};
-			if ($self->{buildable}->is_done($v)) {
-				$changes++;
-				next;
-			}
 			my $has = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
 			$has += $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
 
@@ -583,37 +579,35 @@ sub check_buildable
 sub new_path
 {
 	my ($self, $v) = @_;
-	if (!$self->{buildable}->is_done($v)) {
-		if (defined $v->{info}{IGNORE} && 
-		    !$self->{state}->{fetch_only}) {
-		    	$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
-			$v->{info} = DPB::PortInfo->stub;
-			push(@{$self->{ignored}}, $v);
-			return;
-		}
-		if (defined $v->{info}{MISSING_FILES}) {
-			$self->log('!', $v, " fetch manually");
-			$self->add_fatal($v, "Missing distfiles: ".
-			    $v->{info}{MISSING_FILES}->string, 
-			    $v->{info}{FETCH_MANUALLY}->string);
-			return;
-		}
+	if (defined $v->{info}{IGNORE} && 
+	    !$self->{state}->{fetch_only}) {
+		$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
+		$v->{info} = DPB::PortInfo->stub;
+		push(@{$self->{ignored}}, $v);
+		return;
+	}
+	if (defined $v->{info}{MISSING_FILES}) {
+		$self->log('!', $v, " fetch manually");
+		$self->add_fatal($v, "Missing distfiles: ".
+		    $v->{info}{MISSING_FILES}->string, 
+		    $v->{info}{FETCH_MANUALLY}->string);
+		return;
+	}
 #		$self->{heuristics}->todo($v);
-		$self->{tobuild}{$v} = $v;
-		$self->log('T', $v);
-		return unless defined $v->{info}{FDEPENDS};
-		for my $f (values %{$v->{info}{FDEPENDS}}) {
-			if ($self->{tofetch}->contains($f) ||
-			    $self->{tofetch}{doing}{$f}) {
-				next;
-			}
-			if ($self->{tofetch}->is_done($f)) {
-				delete $v->{info}{FDEPENDS}{$f};
-				next;
-			}
-			$self->{tofetch}->add($f);
-			$self->log('F', $f);
+	$self->{tobuild}{$v} = $v;
+	$self->log('T', $v);
+	return unless defined $v->{info}{FDEPENDS};
+	for my $f (values %{$v->{info}{FDEPENDS}}) {
+		if ($self->{tofetch}->contains($f) ||
+		    $self->{tofetch}{doing}{$f}) {
+			next;
 		}
+		if ($self->{tofetch}->is_done($f)) {
+			delete $v->{info}{FDEPENDS}{$f};
+			next;
+		}
+		$self->{tofetch}->add($f);
+		$self->log('F', $f);
 	}
 }
 
