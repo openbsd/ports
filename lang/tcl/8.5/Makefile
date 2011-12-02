@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/21 18:30:50 stu Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/02 14:36:15 espie Exp $
 
 COMMENT =		Tool Command Language
 
@@ -49,7 +49,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 FLAVORS =		threaded
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mthreaded}
+.if ${FLAVOR:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
 .endif

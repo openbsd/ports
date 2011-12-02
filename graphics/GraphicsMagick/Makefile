@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/02 14:36:14 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -59,7 +59,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/
 FLAVORS=		no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 BUILD_DEPENDS+=		print/ghostscript/gnu,no_x11
 RUN_DEPENDS+=		print/ghostscript/gnu,no_x11
 CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no

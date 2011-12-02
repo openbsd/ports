@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -37,7 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --disable-gui-client
 .else
 LIB_DEPENDS+=	x11/gtk+2

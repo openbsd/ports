@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -52,7 +52,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # XXX doesn't work
 #CONFIGURE_ARGS+=--enable-avahi
 
-.if ${FLAVOR:L:Msnmp}
+.if ${FLAVOR:Msnmp}
 LIB_DEPENDS +=	net/net-snmp
 WANTLIB +=	crypto netsnmp
 CONFIGURE_ARGS += --with-snmp

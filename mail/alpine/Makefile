@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/10/23 19:46:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/02 14:36:15 espie Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -61,7 +61,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 FLAVORS=	ldap
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=--with-ldap-dir=${LOCALBASE}
 LIB_DEPENDS+=	databases/openldap,-main
 WANTLIB+=	sasl2 lber ldap

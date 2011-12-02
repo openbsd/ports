@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/12/02 14:36:14 espie Exp $
 # $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
 
 COMMENT=	Japanized Vim
@@ -27,7 +27,7 @@ FLAVOR?=
 
 USE_GROFF =	Yes
 
-.if ${FLAVOR:L:Mwnn}
+.if ${FLAVOR:Mwnn}
 CHOICE=wnn4
 INPUT_METHOD=wnn4
 BUILD_DEPENDS+=	japanese/Wnn
@@ -35,8 +35,8 @@ JPDEF+=		-DWNN_ISDIR
 JPLIB+=		-ljd 
 .endif
 
-.if ${FLAVOR:L:Mcanna}
-.  if ${FLAVOR:L:Mwnn}
+.if ${FLAVOR:Mcanna}
+.  if ${FLAVOR:Mwnn}
 INPUT_METHOD=	wnn4-canna
 CHOICE=wnn4,canna
 .  else

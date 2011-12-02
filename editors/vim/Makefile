@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.123 2011/12/02 14:36:14 espie Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -57,16 +57,16 @@ CONFIGURE_ENV=	CPPFLAGS="-I${DEPBASE}/include" \
 		LDFLAGS="-L${DEPBASE}/lib"
 CONFIGURE_ARGS+=--with-tlib="curses" --enable-multibyte --enable-cscope
 
-.if ${FLAVOR:L:Mhuge}
+.if ${FLAVOR:Mhuge}
 CONFIGURE_ARGS+=--with-features=huge
 .endif
 
-.if ${FLAVOR:L:Mperl}
+.if ${FLAVOR:Mperl}
 CONFIGURE_ARGS+=--enable-perlinterp
 WANTLIB+=	m perl util
 .endif
 
-.if ${FLAVOR:L:Mpython}
+.if ${FLAVOR:Mpython}
 MODULES+=	lang/python
 CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
 CONFIGURE_ARGS+=--enable-pythoninterp \
@@ -75,7 +75,7 @@ LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
 WANTLIB+=	m pthread util ${MODPY_WANTLIB}
 .endif
 
-.if ${FLAVOR:L:Mruby}
+.if ${FLAVOR:Mruby}
 MODULES+=	lang/ruby
 CONFIGURE_ARGS+=--enable-rubyinterp
 MAKE_ENV+=	RUBY="${RUBY}"
@@ -83,23 +83,23 @@ LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
 WANTLIB+=	m ${MODRUBY_WANTLIB}
 .endif
 
-.if ${FLAVOR:L:Mno_x11} && \
-	!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
+.if ${FLAVOR:Mno_x11} && \
+	!${FLAVOR:Mmotif} && !${FLAVOR:Mathena} && !${FLAVOR:Mgtk2}
 CONFIGURE_ARGS+=--disable-gui --without-x
 WANTLIB+=	m
-.elif ${FLAVOR:L:Mmotif} && \
-	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
+.elif ${FLAVOR:Mmotif} && \
+	!${FLAVOR:Mno_x11} && !${FLAVOR:Mathena} && !${FLAVOR:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 LIB_DEPENDS+=	x11/openmotif
 WANTLIB+=	m ICE SM X11 Xmu Xpm Xt Xm
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.elif ${FLAVOR:L:Mathena} && \
-	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
+.elif ${FLAVOR:Mathena} && \
+	!${FLAVOR:Mno_x11} && !${FLAVOR:Mmotif} && !${FLAVOR:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
 WANTLIB+=	m ICE SM X11 Xaw Xmu Xpm Xt
-.elif ${FLAVOR:L:Mgtk2} && \
-		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
+.elif ${FLAVOR:Mgtk2} && \
+		!${FLAVOR:Mmotif} && !${FLAVOR:Mno_x11} && !${FLAVOR:Mathena}
 MAKE_FLAGS+=	'LDFLAGS=-pthread'
 MAKE_FLAGS+=	'CFLAGS=-pthread'
 LIB_DEPENDS+=	x11/gtk+2

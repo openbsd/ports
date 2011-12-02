@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	2.5 dimensional tetris-like game
 
@@ -25,7 +25,7 @@ CONFIGURE_STYLE=gnu
 FLAVORS=	no_sdl
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_sdl}
+.if ${FLAVOR:Mno_sdl}
 CONFIGURE_ARGS+=--with-x
 WANTLIB+=	ICE SM X11 Xext pthread-stubs xcb
 .else

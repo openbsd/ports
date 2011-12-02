@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/17 11:47:12 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/02 14:36:15 espie Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -55,7 +55,7 @@ LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/ruby/${REV},-main
 RUN_DEPENDS-gdbm =       
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES+=	-tk
 CONFIGURE_ARGS+=	--with-tcl-include=${PREFIX}/include/tcl8.5 \
 			--with-tk-include=${PREFIX}/include/tk8.5 \
@@ -66,7 +66,7 @@ LIB_DEPENDS-tk =		tk->=8.5,<8.6:x11/tk/8.5 \
 RUN_DEPENDS-tk =		
 .endif
 
-.if !${FLAVOR:L:Mno_ri_docs}
+.if !${FLAVOR:Mno_ri_docs}
 MULTI_PACKAGES +=	-ri_docs
 ALL_TARGET =		all rdoc
 INSTALL_TARGET =	install install-doc

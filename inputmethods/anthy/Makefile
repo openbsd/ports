@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/02 14:36:14 espie Exp $
 
 COMMENT-main =	japanese input method
 COMMENT-emacs =	emacs files for anthy
@@ -38,7 +38,7 @@ PSEUDO_FLAVORS = no_emacs
 FLAVOR ?=
 
 MULTI_PACKAGES = -main
-.if !${FLAVOR:L:Mno_emacs}
+.if !${FLAVOR:Mno_emacs}
 MULTI_PACKAGES += -emacs
 BUILD_DEPENDS =	editors/emacs21
 .endif

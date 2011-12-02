@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=		Free Unix Spectrum Emulator
 DISTNAME=		fuse-0.10.0.2
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=		--with-libao
 FLAVORS=gtk
 FLAVOR?=
 
-.if ${FLAVOR:L:Mgtk}
+.if ${FLAVOR:Mgtk}
 LIB_DEPENDS+=		x11/gtk+2 \
 			devel/glib2
 CONFIGURE_ARGS+=	--with-gtk2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/16 00:27:05 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/02 14:36:15 espie Exp $
 
 CATEGORIES=	books lang
 COMMENT=	Icon language implemention reference book
@@ -13,7 +13,7 @@ DISTNAME=	icon-book-$V
 
 FLAVORS=two_sided
 FLAVOR?=
-.if ${FLAVOR:L} == "two_sided"
+.if ${FLAVOR} == "two_sided"
 DISTFILES=	ib2up.pdf
 FULLPKGNAME=	implementation-of-icon-two_sided-$V
 .else

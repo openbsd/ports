@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=		visual sound representation
 
@@ -28,7 +28,7 @@ SEPARATE_BUILD=		concurrent
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 
-.if ${FLAVOR:L:Mesd}
+.if ${FLAVOR:Mesd}
 LIB_DEPENDS+=		audio/esound
 CONFIGURE_ARGS+=	--with-esound
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"

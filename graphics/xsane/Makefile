@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/02 09:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	scanner frontend for SANE
 
@@ -48,7 +48,7 @@ NO_REGRESS=	Yes
 FLAVORS=	gimp
 FLAVOR?=
 
-.if ${FLAVOR:L} == "gimp"
+.if ${FLAVOR} == "gimp"
 WANTLIB += gthread-2.0 gimp-2.0>=200.0 gimpmodule-2.0 gimpui-2.0 
 WANTLIB += gimpmath-2.0 gimpwidgets-2.0 gimpbase-2.0 gimpcolor-2.0 
 WANTLIB += gimpconfig-2.0

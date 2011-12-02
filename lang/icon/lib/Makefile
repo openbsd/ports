@@ -1,5 +1,5 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.23 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/02 14:36:15 espie Exp $
 
 COMMENT=	useful and interesting programs for Icon
 
@@ -44,23 +44,23 @@ IPL=${PREFIX}/share/ipl
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 PATCH_LIST=patch-progs*
 .endif
 
 do-build:
 # first build library
 	${BUILDENV} cd ${WRKSRC}/procs && icont -usc *.icn
-.if empty(FLAVOR:L:Mno_x11)
+.if empty(FLAVOR:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gprocs && icont -usc *.icn
 .endif
 # then build programs using library
 	${BUILDENV} cd ${WRKSRC}/progs && for i in *.icn; do icont -us $$i; done
-.if empty(FLAVOR:L:Mno_x11)
+.if empty(FLAVOR:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gprogs && for i in *.icn; do icont -us $$i; done
 .endif
 # finally build some supplementary packages
-.if empty(FLAVOR:L:Mno_x11)
+.if empty(FLAVOR:Mno_x11)
 	${BUILDENV} cd ${WRKSRC}/gpacks/vib && ${MAKE}
 	${BUILDENV} cd ${WRKSRC}/gpacks/xtiles && icont -s xtiles.icn
 .endif
@@ -73,7 +73,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${IPL}/incl
 	${INSTALL_DATA} ${WRKSRC}/incl/* ${IPL}/incl
 	${INSTALL_PROGRAM_DIR} ${IPL}/bin
-.if empty(FLAVOR:L:Mno_x11)
+.if empty(FLAVOR:Mno_x11)
 	${INSTALL_DATA} ${WRKSRC}/gprocs/*.u[12] ${IPL}/ucode
 	${INSTALL_DATA_DIR} ${IPL}/gincl
 	${INSTALL_DATA} ${WRKSRC}/gincl/* ${IPL}/gincl

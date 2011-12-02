@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/25 14:42:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/02 14:36:15 espie Exp $
 
 COMMENT =	bayesian spam filter
 
@@ -24,15 +24,15 @@ USE_GROFF =		Yes
 FLAVORS =		db4 sqlite3 qdbm
 FLAVOR ?=
 
-.if ${FLAVOR:L} == "db4"
+.if ${FLAVOR} == "db4"
 DB_DIR =		db4
 LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
-.elif ${FLAVOR:L} == "sqlite3"
+.elif ${FLAVOR} == "sqlite3"
 DB_ENGINE =		sqlite3
 LIB_DEPENDS +=		databases/sqlite3
 WANTLIB +=		sqlite3>=8
-.elif ${FLAVOR:L} == "qdbm"
+.elif ${FLAVOR} == "qdbm"
 DB_ENGINE =		qdbm
 LIB_DEPENDS +=		databases/qdbm
 WANTLIB +=		qdbm>=11

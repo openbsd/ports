@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2011/12/02 14:36:14 espie Exp $
 
 COMMENT-main=	Civilization clone for X11; multiplayer; game server
 COMMENT-client=	Freeciv client
@@ -33,7 +33,7 @@ WANTLIB=	bz2 c m z ncurses readline
 
 CONFIGURE_ARGS=	--with-ggz-client=no
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 MULTI_PACKAGES+= -client
 CONFIGURE_ARGS+= --enable-client=gtk2 \
 		 --disable-sdl-mixer

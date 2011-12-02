@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	ascii art library
 
@@ -30,7 +30,7 @@ NO_REGRESS=	Yes
 FLAVORS=	no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR} == "no_x11"
 CONFIGURE_ARGS+= --without-x
 .else
 WANTLIB+=	X11 xcb

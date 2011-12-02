@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	API for accessing scanners, frontends
 
@@ -46,7 +46,7 @@ NO_REGRESS=	Yes
 FLAVORS=	gimp
 FLAVOR?=
 
-.if ${FLAVOR:L} == "gimp"
+.if ${FLAVOR} == "gimp"
 LIB_DEPENDS+=	graphics/gimp/stable
 WANTLIB +=	gimp-2.0>=200.0 gimpui-2.0>=200.0 gimpmath-2.0>=200.0 \
 		gimpwidgets-2.0>=200.0 gimpbase-2.0>=200.0 \

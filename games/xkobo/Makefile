@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/05/11 06:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	multi-way scrolling shoot'em up for X11, addictive
 
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB:=games/}  \
 FLAVORS=harder
 FLAVOR?=
 
-.if ${FLAVOR:L} == "harder"
+.if ${FLAVOR} == "harder"
 PATCH_LIST=patch-* extra-hard
 .endif
 

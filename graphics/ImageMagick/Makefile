@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2011/11/22 15:51:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.118 2011/12/02 14:36:14 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0
@@ -75,7 +75,7 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/
 FLAVORS=		no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 LIB_DEPENDS +=		graphics/djvulibre,no_x11
 RUN_DEPENDS +=		print/ghostscript/gnu,no_x11
 BUILD_DEPENDS +=	print/ghostscript/gnu,no_x11
@@ -85,9 +85,8 @@ CONFIGURE_ARGS +=	--without-x \
 			--without-wmf
 .else
 MODULES +=		converters/libiconv
-WANTLIB +=		ICE SM X11 Xext Xt expat fontconfig \
-			freetype xcb wmf wmflite>=7 \
-			xml2>=9
+WANTLIB +=	 ICE SM X11 Xext Xt expat fontconfig freetype wmf wmf-0.2 \
+	wmflite-0.2>=7 wmflite>=7 xcb xml2>=9
 LIB_DEPENDS +=		graphics/libwmf \
 			textproc/libxml \
 			graphics/djvulibre

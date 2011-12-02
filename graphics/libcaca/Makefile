@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/02 09:57:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=		color ascii art library
 
@@ -30,7 +30,7 @@ USE_GROFF =		Yes
 FLAVORS=		no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--disable-x11 \
 			--disable-imlib2
 .else

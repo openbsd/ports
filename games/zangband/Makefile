@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/05/11 06:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	Zangband (Zelazny Angband) with color, X11 support
 
@@ -32,7 +32,7 @@ WRKDIST=		${WRKDIR}/zangband
 FLAVORS=		no_x11
 FLAVOR?=	
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		ICE SM X11 Xaw Xmu Xt pthread-stubs xcb
 .else

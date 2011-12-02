@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 10:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/02 14:36:14 espie Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
@@ -36,7 +36,7 @@ CONFIGURE_ARGS += 	--enable-boehm=system \
 # generating the tags. so override it for now untill etags is fixed.
 CONFIGURE_ENV +=	ETAGS=/usr/bin/true
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--with-debug-cflags=-g
 .endif
 

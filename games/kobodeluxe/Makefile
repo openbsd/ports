@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/14 09:59:41 rpointel Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	sdl port of xkobo
 DISTNAME=	KoboDeluxe-0.5.1
@@ -13,7 +13,7 @@ HOMEPAGE=	http://olofson.net/kobodl/
 FLAVORS=	harder
 FLAVOR?=
 
-.if ${FLAVOR:L:Mharder}
+.if ${FLAVOR:Mharder}
 PATCH_LIST=patch-* extra-hard
 .endif
 

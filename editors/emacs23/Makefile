@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/29 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/02 14:36:14 espie Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -51,13 +51,13 @@ LIB_DEPENDS-main =	x11/dbus
 WANTLIB-el =
 LIB_DEPENDS-el =
 
-.if ${FLAVOR:L:Mno_x11}
-.if ${FLAVOR:L:Mathena}
+.if ${FLAVOR:Mno_x11}
+.  if ${FLAVOR:Mathena}
 ERRORS =		"Fatal: athena and no_x11 flavors are mutually exclusive"
-.endif
+.  endif
 CONFIGURE_ARGS +=	--without-x
 
-.elif ${FLAVOR:L:Mathena}
+.elif ${FLAVOR:Mathena}
 CONFIGURE_ARGS +=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 LIB_DEPENDS-main +=	graphics/png \
 			graphics/tiff \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	text editor
 
@@ -30,7 +30,7 @@ FLAVORS=	no_x11
 FLAVOR?=
 USE_GROFF =	Yes
 
-.if ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR} == "no_x11"
 ALL_TARGET=	all getmail
 .else
 ALL_TARGET=	all getmail xjed

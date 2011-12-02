@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/12/02 14:36:14 espie Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -40,7 +40,7 @@ PERMIT_PACKAGE_CDROM = 	No gain
 FLAVORS = 	no_x11
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 WANTLIB +=	ncursesw
 MAKE_FLAGS += 	USE_UNICODE=y UNICODE_LOCALE=y
 .else

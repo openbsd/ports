@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/11/07 21:37:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.80 2011/12/02 14:36:14 espie Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
@@ -68,7 +68,7 @@ PKG_ARGS +=		-Dbsduser=0
 FLAVORS =		debug no_x11
 FLAVOR ?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	--disable-sdl --disable-opengl
 .else
 WANTLIB +=		GL SDL X11
@@ -82,7 +82,7 @@ EXTRA_LDFLAGS +=	-L${X11BASE}/lib
 # until the system headers are fixed properly.
 EXTRA_CFLAGS +=		-Wno-redundant-decls
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 

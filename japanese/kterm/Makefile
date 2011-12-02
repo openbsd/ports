@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/01 16:27:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	Japanese-capable xterm
 
@@ -29,13 +29,13 @@ USE_GROFF =	Yes
 
 FLAVORS=xaw3d tek
 FLAVOR?=
-.if ${FLAVOR:L:Mxaw3d}
+.if ${FLAVOR:Mxaw3d}
 WANTLIB += Xaw3d
 LIB_DEPENDS=	x11/Xaw3d
 MAKE_ENV=	EXTRA_DEFINES=-DKTERM_XAW3D
 .endif
 
-.if ${FLAVOR:L:Mtek}
+.if ${FLAVOR:Mtek}
 pre-configure:
 	perl -pi.bak -e 's/define KTERM_NOTEK/undef KTERM_NOTEK/;' \
 	  ${WRKSRC}/kterm.h

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/02 14:36:15 espie Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -32,7 +32,7 @@ FLAVOR?=
 
 USE_GROFF =		Yes
 
-.if ${FLAVOR:L:Mnative_bootstrap}
+.if ${FLAVOR:Mnative_bootstrap}
 BUILD_DEPENDS+=		lang/sbcl
 BOOTSTRAP_CMD=		${LOCALBASE}/bin/sbcl \
 			--disable-debugger --no-sysinit --no-userinit

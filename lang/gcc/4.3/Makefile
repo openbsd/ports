@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/07 18:59:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/02 14:36:14 espie Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -46,7 +46,7 @@ FLAVOR?=c++ fortran objc ada
 FLAVOR?=c++ fortran objc
 .endif
 
-.if ${FLAVOR:L:Mjava}
+.if ${FLAVOR:Mjava}
 FLAVOR+=c++
 .endif
 

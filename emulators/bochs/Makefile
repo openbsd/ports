@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/11/29 17:22:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.52 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	x86 machine simulator
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--enable-all-optimizations \
 FLAVORS=	debug no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--disable-debugger-gui \
 		--enable-debugger \
 		--enable-x86-debugger \
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--disable-debugger-gui \
 WANTLIB+=	curses readline
 .endif
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=--with-nogui
 .else
 CONFIGURE_ARGS+=--with-x11

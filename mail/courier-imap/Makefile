@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.78 2011/12/02 14:36:15 espie Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -80,13 +80,13 @@ DOCS=			AUTHORS INSTALL \
 FLAVORS=		no_trashquota imap_bugs
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_trashquota}
+.if ${FLAVOR:Mno_trashquota}
 CONFIGURE_ARGS+=	--without-trashquota
 .else
 CONFIGURE_ARGS+=	--with-trashquota
 .endif
 
-.if ${FLAVOR:L:Mimap_bugs}
+.if ${FLAVOR:Mimap_bugs}
 CONFIGURE_ARGS+=	--enable-workarounds-for-imap-client-bugs
 .else
 CONFIGURE_ARGS+=	--disable-workarounds-for-imap-client-bugs

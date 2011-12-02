@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/11/06 17:34:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/12/02 14:36:15 espie Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -77,7 +77,7 @@ USE_GROFF =	Yes
 FLAVORS=	drac
 FLAVOR?=
 
-.if ${FLAVOR:L:Mdrac}
+.if ${FLAVOR:Mdrac}
 BUILD_DEPENDS+=	mail/drac
 PATCH_LIST+=	drac-patch-imap_Makefile_in
 pre-patch:

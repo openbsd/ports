@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	dungeon explorin', hackin' game, but harder than nethack
 
@@ -38,7 +38,7 @@ USE_GROFF =	Yes
 FLAVORS=no_x11
 FLAVOR?=
 
-.if ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR} == "no_x11"
 NETHACKCONFIG=${FILESDIR}/simple-config
 .else
 NETHACKCONFIG=${FILESDIR}/x-config
@@ -73,7 +73,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/util/srecover ${PREFIX}/bin
 	@cd ${WRKSRC}/doc && \
 	    ${INSTALL_MAN} slash.6 srecover.6 ${PREFIX}/man/man6
-.if ${FLAVOR:L} == ""
+.if ${FLAVOR} == ""
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	sed -e "s/^NetHack/Slash/; s/^!NetHack/!Slash/" <NetHack.ad > Slash && \

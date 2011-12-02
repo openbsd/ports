@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/02 14:36:14 espie Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Hard
 DISTNAME =	se007e7f1
@@ -35,9 +35,9 @@ FLAVOR ?=
 # ... but let fragments work
 PKG_ARGS +=		-Dqt=0
 
-.if ${FLAVOR:L} == "no_x11"
+.if ${FLAVOR} == "no_x11"
 NETHACKCONFIG =		${FILESDIR}/simple-config
-.elif ${FLAVOR:L} == "qt"
+.elif ${FLAVOR} == "qt"
 NETHACKCONFIG =		${FILESDIR}/qt-config
 PORTPATH =	${LOCALBASE}/lib/qt2/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin
 LIB_DEPENDS =		x11/qt2
@@ -64,7 +64,7 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/util/strecover ${PREFIX}/bin/strecover-$V
 	${INSTALL_MAN} ${WRKSRC}/doc/slashem.6 ${PREFIX}/man/man6/slashem-$V.6
 	${INSTALL_MAN} ${WRKSRC}/doc/strecover.6 ${PREFIX}/man/man6/strecover-$V.6
-.if ${FLAVOR:L} == ""
+.if ${FLAVOR} == ""
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/X11/app-defaults
 	@cd ${WRKSRC}/win/X11 && \
 	    ${INSTALL_DATA} SlashEM.ad ${PREFIX}/lib/X11/app-defaults/SlashEM-$V

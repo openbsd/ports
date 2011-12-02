@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/03 10:59:33 edd Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/02 14:36:14 espie Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -38,14 +38,14 @@ USE_GMAKE =		Yes
 FLAVORS=		no_x11 sdl
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x
 .else
 CONFIGURE_ARGS+=	--with-x
 WANTLIB+=		ICE SM X11
 .endif
 
-.if ${FLAVOR:L:Msdl}	# funky graphical mode and sounds
+.if ${FLAVOR:Msdl}	# funky graphical mode and sounds
 CONFIGURE_ARGS +=	--enable-sdl \
 			--enable-sdl-mixer
 PKG_ARGS +=		-Dsdl=1

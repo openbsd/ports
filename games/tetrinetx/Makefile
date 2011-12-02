@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	tetrinet server
 
@@ -28,7 +28,7 @@ NO_REGRESS=	Yes
 FLAVORS=	ipv6
 FLAVOR?=
 
-.if ${FLAVOR:L:Mipv6}
+.if ${FLAVOR:Mipv6}
 CFLAGS+=	-DUSE_IPV6
 .endif
 

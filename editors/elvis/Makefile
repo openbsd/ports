@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:16:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/02 14:36:14 espie Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
@@ -26,7 +26,7 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin \
 		--datadir=${PREFIX}/share/elvis
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --with-x=no
 .else
 CONFIGURE_ARGS+= --with-x \

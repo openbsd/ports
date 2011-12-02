@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/11/14 19:20:52 rpointel Exp $
+# $OpenBSD: Makefile,v 1.36 2011/12/02 14:36:15 espie Exp $
 
 COMMENT=	anti-spam filter
 
@@ -47,12 +47,12 @@ FLAVORS=	sqlite3 sqlite mysql pgsql hash clamav ldap preferences \
 		domainscale largescale
 FLAVOR?=	sqlite3
 
-. if ${FLAVOR:L:Mlargescale} && ${FLAVOR:L:Mdomainscale}
+. if ${FLAVOR:Mlargescale} && ${FLAVOR:Mdomainscale}
 ERRORS+= "Fatal: choose either domainscale or largescale, not both"
 . endif
 
 .for d in sqlite3 sqlite mysql pgsql hash
-.  if ${FLAVOR:L:M$d}
+.  if ${FLAVOR:M$d}
 DRIVER ?= $d
 .    if ${DRIVER} != "$d"
 ERRORS += "Fatal: choose either mysql or pgsql or sqlite or sqlite3 or hash"
@@ -103,13 +103,13 @@ CONFIGURE_ARGS+=	--enable-daemon
 WANTLIB+=		pthread
 .endif
 
-.if ${FLAVOR:L:Mclamav}
+.if ${FLAVOR:Mclamav}
 CONFIGURE_ARGS+=	--enable-clamav
 LIB_DEPENDS+=		security/clamav
 WANTLIB +=		clamav>=1
 .endif
 
-.if ${FLAVOR:L:Mldap}
+.if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--enable-ldap
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
@@ -118,17 +118,17 @@ WANTLIB+=		crypto ssl sasl2 asn1 com_err gssapi krb5 \
 			ldap>=8 lber>=8
 .endif
 
-.if ${FLAVOR:L:Mpreferences}
+.if ${FLAVOR:Mpreferences}
 CONFIGURE_ARGS+=	--enable-preferences-extension
 .endif
 
-.if ${FLAVOR:L:Mdomainscale}
+.if ${FLAVOR:Mdomainscale}
 CONFIGURE_ARGS+=	--enable-domain-scale
 .else
 CONFIGURE_ARGS+=	--disable-domain-scale
 .endif
 
-.if ${FLAVOR:L:Mlargescale}
+.if ${FLAVOR:Mlargescale}
 CONFIGURE_ARGS+=	--enable-large-scale
 .else
 CONFIGURE_ARGS+=	--disable-large-scale

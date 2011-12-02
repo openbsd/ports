@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/02 14:36:14 espie Exp $
 
 LANGS = 	af am bg ca cs cy da de el eo es fo fr ga gd gl he hr hu \
 		id it ku la lt lv mg mi ms nb nl nn ny pl pt ro ru rw sk \
@@ -22,145 +22,145 @@ PERMIT_PACKAGE_FTP = 	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
-.  if ${FLAVOR:L:Maf}
+.  if ${FLAVOR:Maf}
 LANG_NAME = 	Afrikaans
 DISTFILES = 	af.latin1.spl af.utf-8.spl
-.  elif ${FLAVOR:L:Mam}
+.  elif ${FLAVOR:Mam}
 LANG_NAME = 	Amharic
 DISTFILES = 	am.utf-8.spl
-.  elif ${FLAVOR:L:Mbg}
+.  elif ${FLAVOR:Mbg}
 LANG_NAME = 	Bulgarian
 DISTFILES = 	bg.cp1251.spl bg.utf-8.spl
-.  elif ${FLAVOR:L:Mca}
+.  elif ${FLAVOR:Mca}
 LANG_NAME = 	Catalan
 DISTFILES = 	ca.latin1.spl ca.utf-8.spl
-.  elif ${FLAVOR:L:Mcs}
+.  elif ${FLAVOR:Mcs}
 LANG_NAME = 	Czech
 DISTFILES = 	cs.cp1250.spl cs.iso-8859-2.spl cs.utf-8.spl
-.  elif ${FLAVOR:L:Mcy}
+.  elif ${FLAVOR:Mcy}
 LANG_NAME = 	Welsh
 DISTFILES = 	cy.iso-8859-14.spl cy.utf-8.spl
-.  elif ${FLAVOR:L:Mda}
+.  elif ${FLAVOR:Mda}
 LANG_NAME = 	Danish
 DISTFILES = 	da.latin1.spl da.utf-8.spl
-.  elif ${FLAVOR:L:Mde}
+.  elif ${FLAVOR:Mde}
 LANG_NAME = 	German
 DISTFILES = 	de.latin1.spl de.utf-8.spl
-.  elif ${FLAVOR:L:Mel}
+.  elif ${FLAVOR:Mel}
 LANG_NAME = 	Greek
 DISTFILES = 	el.iso-8859-7.spl el.utf-8.spl
-.  elif ${FLAVOR:L:Meo}
+.  elif ${FLAVOR:Meo}
 LANG_NAME = 	Esperanto
 DISTFILES = 	eo.iso-8859-3.spl eo.utf-8.spl
-.  elif ${FLAVOR:L:Mes}
+.  elif ${FLAVOR:Mes}
 LANG_NAME = 	Spanish
 DISTFILES = 	es.latin1.spl es.utf-8.spl
-.  elif ${FLAVOR:L:Mfo}
+.  elif ${FLAVOR:Mfo}
 LANG_NAME = 	Faroese
 DISTFILES = 	fo.latin1.spl fo.utf-8.spl
-.  elif ${FLAVOR:L:Mfr}
+.  elif ${FLAVOR:Mfr}
 LANG_NAME = 	French
 DISTFILES = 	fr.latin1.spl fr.utf-8.spl
-.  elif ${FLAVOR:L:Mga}
+.  elif ${FLAVOR:Mga}
 LANG_NAME = 	Irish
 DISTFILES = 	ga.latin1.spl ga.utf-8.spl
-.  elif ${FLAVOR:L:Mgd}
+.  elif ${FLAVOR:Mgd}
 LANG_NAME = 	Scottish Gaelic 
 DISTFILES = 	gd.latin1.spl gd.utf-8.spl
-.  elif ${FLAVOR:L:Mgl}
+.  elif ${FLAVOR:Mgl}
 LANG_NAME = 	Galician 
 DISTFILES = 	gl.latin1.spl gl.utf-8.spl
-.  elif ${FLAVOR:L:Mhe}
+.  elif ${FLAVOR:Mhe}
 LANG_NAME = 	Hebrew 
 DISTFILES = 	he.iso-8859-8.spl he.utf-8.spl
-.  elif ${FLAVOR:L:Mhr}
+.  elif ${FLAVOR:Mhr}
 LANG_NAME = 	Croation 
 DISTFILES = 	hr.cp1250.spl hr.iso-8859-2.spl hr.utf-8.spl
-.  elif ${FLAVOR:L:Mhu}
+.  elif ${FLAVOR:Mhu}
 LANG_NAME = 	Hungarian 
 DISTFILES = 	hu.cp1250.spl hu.iso-8859-2.spl hu.utf-8.spl
-.  elif ${FLAVOR:L:Mid}
+.  elif ${FLAVOR:Mid}
 LANG_NAME = 	Indonesian 
 DISTFILES = 	id.latin1.spl id.utf-8.spl
-.  elif ${FLAVOR:L:Mit}
+.  elif ${FLAVOR:Mit}
 LANG_NAME = 	Italian
 DISTFILES = 	it.latin1.spl it.utf-8.spl
-.  elif ${FLAVOR:L:Mku}
+.  elif ${FLAVOR:Mku}
 LANG_NAME = 	Kurdish
 DISTFILES = 	ku.iso-8859-9.spl ku.utf-8.spl
-.  elif ${FLAVOR:L:Mla}
+.  elif ${FLAVOR:Mla}
 LANG_NAME = 	Latin
 DISTFILES = 	la.latin1.spl la.utf-8.spl
-.  elif ${FLAVOR:L:Mlt}
+.  elif ${FLAVOR:Mlt}
 LANG_NAME = 	Lithuanian 
 DISTFILES = 	lt.iso-8859-13.spl lt.utf-8.spl
-.  elif ${FLAVOR:L:Mlv}
+.  elif ${FLAVOR:Mlv}
 LANG_NAME = 	Latvian 
 DISTFILES = 	lv.iso-8859-13.spl lv.utf-8.spl
-.  elif ${FLAVOR:L:Mmg}
+.  elif ${FLAVOR:Mmg}
 LANG_NAME = 	Malagasy
 DISTFILES = 	mg.latin1.spl mg.utf-8.spl
-.  elif ${FLAVOR:L:Mmi}
+.  elif ${FLAVOR:Mmi}
 LANG_NAME = 	Maori 
 DISTFILES = 	mi.iso-8859-4.spl mi.utf-8.spl
-.  elif ${FLAVOR:L:Mms}
+.  elif ${FLAVOR:Mms}
 LANG_NAME = 	Malay 
 DISTFILES = 	ms.latin1.spl ms.utf-8.spl
-.  elif ${FLAVOR:L:Mnb}
+.  elif ${FLAVOR:Mnb}
 LANG_NAME = 	Norwegian (Bokmal)
 DISTFILES = 	nb.latin1.spl nb.utf-8.spl
-.  elif ${FLAVOR:L:Mnl}
+.  elif ${FLAVOR:Mnl}
 LANG_NAME = 	Dutch 
 DISTFILES = 	nl.latin1.spl nl.utf-8.spl
-.  elif ${FLAVOR:L:Mnn}
+.  elif ${FLAVOR:Mnn}
 LANG_NAME = 	Norwegian (Nynorsk)
 DISTFILES = 	nn.latin1.spl nn.utf-8.spl
-.  elif ${FLAVOR:L:Mny}
+.  elif ${FLAVOR:Mny}
 LANG_NAME = 	Chichewa
 DISTFILES = 	ny.ascii.spl ny.iso-8859-14.spl ny.utf-8.spl
-.  elif ${FLAVOR:L:Mpl}
+.  elif ${FLAVOR:Mpl}
 LANG_NAME = 	Polish
 DISTFILES = 	pl.cp1250.spl pl.iso-8859-2.spl pl.utf-8.spl
-.  elif ${FLAVOR:L:Mpt}
+.  elif ${FLAVOR:Mpt}
 LANG_NAME = 	Portuguese 
 DISTFILES = 	pt.latin1.spl pt.utf-8.spl
-.  elif ${FLAVOR:L:Mro}
+.  elif ${FLAVOR:Mro}
 LANG_NAME = 	Romanian 
 DISTFILES = 	ro.cp1250.spl ro.iso-8859-2.spl ro.utf-8.spl
-.  elif ${FLAVOR:L:Mru}
+.  elif ${FLAVOR:Mru}
 LANG_NAME = 	Russian 
 DISTFILES = 	ru.cp1251.spl ru.koi8-r.spl ru.utf-8.spl
-.  elif ${FLAVOR:L:Mrw}
+.  elif ${FLAVOR:Mrw}
 LANG_NAME = 	Kinyarwanda 
 DISTFILES = 	rw.latin1.spl rw.utf-8.spl
-.  elif ${FLAVOR:L:Msk}
+.  elif ${FLAVOR:Msk}
 LANG_NAME = 	Slovak 
 DISTFILES = 	sk.cp1250.spl sk.iso-8859-2.spl sk.utf-8.spl
-.  elif ${FLAVOR:L:Msl}
+.  elif ${FLAVOR:Msl}
 LANG_NAME = 	Slovenian 
 DISTFILES = 	sl.cp1250.spl sl.iso-8859-2.spl sl.utf-8.spl
-.  elif ${FLAVOR:L:Msv}
+.  elif ${FLAVOR:Msv}
 LANG_NAME = 	Swedish 
 DISTFILES = 	sv.latin1.spl sv.utf-8.spl
-.  elif ${FLAVOR:L:Msw}
+.  elif ${FLAVOR:Msw}
 LANG_NAME = 	Kiswahili 
 DISTFILES = 	sw.latin1.spl sw.utf-8.spl
-.  elif ${FLAVOR:L:Mtet}
+.  elif ${FLAVOR:Mtet}
 LANG_NAME = 	Tetum
 DISTFILES = 	tet.latin1.spl tet.utf-8.spl
-.  elif ${FLAVOR:L:Mtl}
+.  elif ${FLAVOR:Mtl}
 LANG_NAME = 	Tagalog
 DISTFILES = 	tl.latin1.spl tl.utf-8.spl
-.  elif ${FLAVOR:L:Mtn}
+.  elif ${FLAVOR:Mtn}
 LANG_NAME = 	Setswana 
 DISTFILES = 	tn.cp1250.spl tn.iso-8859-2.spl tn.utf-8.spl
-.  elif ${FLAVOR:L:Muk}
+.  elif ${FLAVOR:Muk}
 LANG_NAME = 	Ukrainian 
 DISTFILES = 	uk.koi8-u.spl uk.utf-8.spl
-.  elif ${FLAVOR:L:Myi}
+.  elif ${FLAVOR:Myi}
 LANG_NAME = 	Yiddish 	
 DISTFILES = 	yi-tr.utf-8.spl yi.latin1.spl yi.utf-8.spl
-.  elif ${FLAVOR:L:Mzu}
+.  elif ${FLAVOR:Mzu}
 LANG_NAME = 	Zulu 
 DISTFILES = 	zu.ascii.spl zu.latin1.spl zu.utf-8.spl
 .  endif
@@ -196,7 +196,7 @@ SUPDISTFILES = 	af.latin1.spl af.utf-8.spl am.utf-8.spl bg.cp1251.spl \
 
 .for l in ${LANGS}
 FLAVORS += 	$l
-.  if ${FLAVOR:L:M${l}}
+.  if ${FLAVOR:M${l}}
 FULLPKGNAME = 	vim-spell-$l-${VERSION}
 COMMENT = 	${LANG_NAME} spell-check files for Vim
 PLIST = 	${PKGDIR}/PLIST-$l
