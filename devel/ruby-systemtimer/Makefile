@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/02 19:34:42 jeremy Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
@@ -21,7 +21,6 @@ CONFIGURE_STYLE=ruby gem ext
 # which is dead upstream and won't be imported.  You can
 # manually install the gem if you want to run the regress
 # tests.
-NO_REGRESS = Yes
 #REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 #			devel/ruby-mocha,${MODRUBY_FLAVOR}
 #MODRUBY_REGRESS =	ruby

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/02 19:34:42 jeremy Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
@@ -30,9 +30,7 @@ CONFIGURE_STYLE = ruby gem ext
 post-install:
 	rm -r ${GEM_ABS_PATH}/gems/${DISTNAME}/ext
 
-# Doesn't ship with libtest directory, which is necessary for
-# regress
-NO_REGRESS = Yes
+# Doesn't ship with libtest directory, which is necessary for regress
 #REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 #MODRUBY_REGRESS = rspec2
 #MODRUBY_REGRESS_ENV = RUBYLIB=$$(dirname `${GEM} which ffi.rb`) \

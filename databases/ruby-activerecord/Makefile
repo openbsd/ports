@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/12/02 19:34:42 jeremy Exp $
 
 COMMENT =	object relation model implementation for ruby
 
@@ -22,8 +22,5 @@ RUN_DEPENDS = 	devel/ruby-activesupport,${MODRUBY_FLAVOR}=${VERSION} \
 		databases/ruby-arel,${MODRUBY_FLAVOR}>=2.0.2,<2.1
 
 CONFIGURE_STYLE =	ruby gem
-
-# Upstream doesn't ship the Rakefile or test files in the gem
-NO_REGRESS =	Yes
 
 .include <bsd.port.mk>

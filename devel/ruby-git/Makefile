@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/17 15:27:39 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/02 19:34:42 jeremy Exp $
 
 COMMENT =		ruby library wrapping calls to git CLI
 
@@ -18,8 +18,5 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-# Does not ship with the regress tests.
-NO_REGRESS = 		Yes
 
 .include <bsd.port.mk>
