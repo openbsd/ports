@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: LCDd.rc,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+# $OpenBSD: lcdd.rc,v 1.1 2011/12/02 12:39:23 edd Exp $
 
 daemon="${TRUEPREFIX}/sbin/LCDd"
 

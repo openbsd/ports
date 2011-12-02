@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/02 12:39:23 edd Exp $
 @newgroup _lcdproc:687
 @newuser _lcdproc:687:687:daemon:LCDproc Daemon:/var/lcdproc:/sbin/nologin
 %%SHARED%%
@@ -31,6 +31,6 @@ share/examples/lcdproc/lcdproc.conf
 @owner
 @group
 @mode
-@rcscript ${RCDIR}/LCDd
+@rcscript ${RCDIR}/lcdd
 @rcscript ${RCDIR}/lcdproc
 @rcscript ${RCDIR}/lcdexec
