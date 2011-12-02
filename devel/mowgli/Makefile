@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/06 08:24:36 shadchin Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/02 06:36:28 shadchin Exp $
 
 COMMENT =	performance and usability oriented extensions to C
 
-DISTNAME =	libmowgli-0.7.1
+DISTNAME =	libmowgli-1.0.0
 PKGNAME =	${DISTNAME:S/lib//}
 
-SHARED_LIBS =	mowgli	1.0
+SHARED_LIBS =	mowgli	1.1
 
 CATEGORIES =	devel
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://distfiles.atheme.org/
-EXTRACT_SUFX =	.tgz
 
 MAKE_ENV =	LIBmowgli_VERSION=${LIBmowgli_VERSION}
 
