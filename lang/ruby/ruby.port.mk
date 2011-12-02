@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.48 2011/11/17 15:24:01 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.49 2011/12/02 19:33:39 jeremy Exp $
 
 # ruby module
 
@@ -157,6 +157,14 @@ MODRUBY_BIN_RSPEC =	${LOCALBASE}/bin/rspec${MODRUBY_BINREV}
 	!${MODRUBY_REGRESS:L:Mruby} && !${MODRUBY_REGRESS:L:Mtestrb}
 ERRORS += "Fatal: Unsupported MODRUBY_REGRESS value: ${MODRUBY_REGRESS}"
 .else
+.  if ${CONFIGURE_STYLE:L:Mextconf} || ${CONFIGURE_STYLE:L:Mgem} || \
+	${CONFIGURE_STYLE:L:Msetup}
+.    if !target(do-regress)
+# Disable regress for extconf, gem, and setup based ports, since they
+# won't use make check for regress.
+NO_REGRESS =	Yes
+.    endif
+.  endif
 MODRUBY_REGRESS?=
 .endif
 
