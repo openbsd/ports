@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.18 2011/12/02 11:40:25 espie Exp $
+# $OpenBSD: Port.pm,v 1.19 2011/12/02 22:37:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,6 +51,34 @@ sub finalize
 	return $core->{status} == 0;
 }
 
+sub junk_lock
+{
+	my ($self, $core) = @_;
+	my $builder = $core->job->{builder};
+	return unless $builder->{junk};
+
+	my $locker = $builder->{state}->locker;
+	while (!$locker->lock($core)) {
+		sleep 1;
+	}
+}
+
+sub junk_unlock
+{
+	my ($self, $core) = @_;
+	my $builder = $core->job->{builder};
+	return unless $builder->{junk};
+
+	my $locker = $builder->{state}->locker;
+	$locker->unlock($core);
+}
+
+sub handle_output
+{
+	my ($self, $job) = @_;
+	$self->redirect($job->{log});
+}
+
 sub run
 {
 	my ($self, $core) = @_;
@@ -61,7 +89,7 @@ sub run
 	my $fullpkgpath = $job->{v}->fullpkgpath;
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
-	$self->redirect($job->{log});
+	$self->handle_output($job);
 	print ">>> Running $t in $fullpkgpath\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
@@ -130,7 +158,7 @@ sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
-	$self->redirect($job->{log});
+	$self->handle_output($job);
 	my $exit = 0;
 	for my $dist (values %{$job->{v}{info}{DIST}}) {
 		if (!$dist->checksum($dist->filename)) {
@@ -150,6 +178,7 @@ sub run
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $dep = {};
+	$self->junk_lock($core);
 	my $v = $job->{v};
 	if (exists $v->{info}{BDEPENDS}) {
 		for my $d (values %{$v->{info}{BDEPENDS}}) {
@@ -170,7 +199,7 @@ sub run
 	exit(0) unless %$dep;
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
-	$self->redirect($job->{log});
+	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-a');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -208,7 +237,7 @@ sub run
 	my $v = $job->{v};
 
 	my $sudo = OpenBSD::Paths->sudo;
-	$self->redirect($job->{log});
+	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
@@ -231,6 +260,94 @@ sub finalize
 	return 1;
 }
 
+package DPB::Task::Port::Prepare;
+our @ISA = qw(DPB::Task::Port);
+
+sub run
+{
+	my ($self, $core) = @_;
+	$self->SUPER::run($core);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+}
+
+package DPB::Task::Port::PrepareResults;
+our @ISA = qw(DPB::Task::Port);
+
+sub handle_output
+{
+	my ($self, $job) = @_;
+	my $logger = $job->{builder}{logger};
+	my $name = $logger->log_pkgpath($job->{v}).".tmp";
+	$self->redirect($name);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+
+	$self->SUPER::finalize($core);
+	$core->{status} = 0;
+
+	my $job = $core->{job};
+	my $v = $job->{v};
+	my $logger = $job->{builder}{logger};
+	my $file = $logger->log_pkgpath($job->{v}).".tmp";
+	if (open my $fh, '<', $file) {
+		my @l;
+		while (<$fh>) {
+			# zap headers
+			next if m/^\>\>\>\s/ || m/^\=\=\=\>\s/;
+			chomp;
+			push(@l, $_);
+		}
+		print {$job->{lock}} "needed=", join(' ', sort @l), "\n";
+	}
+	unlink($file);
+	my $l = $logger->open("needed");
+	# full list for every lock
+	my $locker = $core->job->{builder}->{state}->locker;
+	my @l = $locker->find_dependencies($core->hostname);
+	$job->{needed} = [sort @l];
+	print $l $core->hostname, "(", $job->{v}->fullpkgpath, "): ", 
+	    join(' ', scalar(@l), @l), "\n";
+	return 1;
+}
+
+package DPB::Task::Port::Uninstall;
+our @ISA=qw(DPB::Task::Port::NoTime);
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $v = $job->{v};
+
+	my $sudo = OpenBSD::Paths->sudo;
+	$self->handle_output($job);
+	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @{$job->{needed}});
+	print join(' ', @cmd, "\n");
+	my $shell = $core->{shell};
+	if (defined $shell) {
+		$shell->run(join(' ', $sudo, @cmd));
+	} else {
+		exec{$sudo}($sudo, @cmd);
+	}
+	exit(1);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	$self->junk_unlock($core);
+	$core->{status} = 0;
+	return 1;
+}
 
 package DPB::Task::Port::ShowSize;
 our @ISA = qw(DPB::Task::Port);
@@ -242,9 +359,8 @@ sub fork
 	open($self->{fh}, "-|");
 }
 
-sub redirect
+sub handle_output
 {
-	my ($self, $log) = @_;
 }
 
 sub finalize
@@ -263,6 +379,7 @@ sub finalize
 	close($fh);
 	return 1;
 }
+
 package DPB::Task::Port::ShowFakeSize;
 our @ISA = qw(DPB::Task::Port::ShowSize);
 
@@ -326,11 +443,13 @@ my $repo = {
 	default => 'DPB::Task::Port',
 	checksum => 'DPB::Task::Port::Checksum',
 	clean => 'DPB::Task::Port::Clean',
-	prepare => 'DPB::Task::Port::NoTime',
+	prepare => 'DPB::Task::Port::Prepare',
+	'show-prepare-results' => 'DPB::Task::Port::PrepareResults',
 	fetch => 'DPB::Task::Port::Fetch',
 	depends => 'DPB::Task::Port::Depends',
 	'show-size' => 'DPB::Task::Port::ShowSize',
 	'show-fake-size' => 'DPB::Task::Port::ShowFakeSize',
+	'junk' => 'DPB::Task::Port::Uninstall',
 };
 
 sub create
@@ -381,6 +500,9 @@ sub add_normal_tasks
 		push @todo, "clean";
 	}
 	push(@todo, qw(depends prepare));
+	if ($builder->{junk}) {
+		push(@todo, qw(show-prepare-results junk));
+	}
 	if ($builder->{fetch}) {
 		push(@todo, qw(checksum));
 	} else {

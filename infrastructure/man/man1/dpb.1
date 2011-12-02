@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.22 2011/11/21 15:02:14 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.23 2011/12/02 22:37:36 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 21 2011 $
+.Dd $Mdocdate: December 2 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl aceqrRsuUx
+.Op Fl aceJqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl C Ar pathlist
@@ -162,6 +162,36 @@ List of
 .Xr pkgpath 7
 to install, on the local box.
 This will also add them to the list of things to build.
+.It Fl J
+Delete unneeded installed packages during the build.
+Each
+.Ar prepare
+stage is followed by a
+.Ar show-prepare-results
+stage and a
+.Ar junk
+stage which uses
+.Xr pkg_delete 1
+with the
+.Fl aX
+options to delete automatically installed packages that are currently
+not needed.
+.Pp
+.Nm
+keeps track of list of dependencies on a given host, by storing each
+dependency list in the lockfile corresponding to the package being built.
+.Pp
+There is a potential race condition between the
+.Ar depends
+and
+.Ar junk
+stage, which
+.Nm
+solves by preventing more than one job on a given host to be in the
+.Ar depends
+\&...
+.Ar junk
+stages at one time, by using a per-host lock.
 .It Fl j Ar n
 Number of concurrent local jobs to run (defaults to hw.ncpu if no hosts file).
 .It Fl L Ar logdir
@@ -305,7 +335,8 @@ When building a package,
 .Nm
 produces a lockfile in the lock directory, whose name is deduced from
 the basic pkgpath with slashes replaced by dots.
-This lockfile is filled with such info as the build start time or the host.
+This lockfile is filled with such info as the build start time or the host,
+or the needed dependencies for this pkgpath.
 .Pp
 The lockfile will also contain the name of a parent pkgpath, for paths that
 were discovered as dependencies.
@@ -439,6 +470,8 @@ pkgpath to build.
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
 .El
+.It Pa equiv.log
+Lists of equivalent pkgpaths for the build, when default flavors and default subpackages have been resolved.
 .It Pa fetch/bad.log
 List of URLs that did not lead to a correct distfile, either because
 they were not responding, or because of incorrect checksums.
@@ -459,6 +492,10 @@ Directory where locks are created.
 The slash in a pkgpath is replaced with a dot like so:
 .Pa locks/devel.make
 to flatten the structure.
+.It Pa needed.log
+list of needed dependencies at each point in time for each host when the
+.Fl J
+option has been used.
 .It Pa packages/pkgname.log
 one file or symlink per pkgname.
 .It Pa paths/some/path.log
@@ -534,6 +571,28 @@ after fixing the problem.
 You have to stop
 .Nm ,
 cleanup and restart.
+.Pp
+Mixing
+.Nm
+running with
+.Fl J
+and
+.Nm
+running without
+.Fl J
+will lead to spurious errors: a
+.Nm
+lacking the option will not lock the host, and thus, may install new
+packages during
+.Ar depends ,
+and then fail the
+.Ar prepare
+stage as another
+.Nm
+will have removed the extraneous packages in-between.
+Always locking would be a safer option, but the gathering of statistical
+information to determine if the resulting bottleneck  has an actual
+negative impact is currently on-going.
 .Pp
 There's a bug in
 .Xr mfs 8
