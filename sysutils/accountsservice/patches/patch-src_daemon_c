@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.10 2011/12/02 17:55:00 ajacoutot Exp $
 --- src/daemon.c.orig	Mon Oct 17 21:30:22 2011
-+++ src/daemon.c	Sat Oct 29 12:52:11 2011
++++ src/daemon.c	Fri Dec  2 18:54:10 2011
 @@ -52,13 +52,17 @@
  #define PATH_PASSWD "/etc/passwd"
  #define PATH_SHADOW "/etc/shadow"
@@ -57,12 +57,11 @@ $OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
          sys_log (context, "create user '%s'", cd->user_name);
  
          argv[0] = "/usr/sbin/useradd";
-@@ -1039,15 +1064,34 @@ daemon_create_user_authorized_cb (Daemon              
-         argv[3] = cd->real_name;
+@@ -1040,14 +1065,30 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
+                 argv[5] = "wheel";
 +#ifdef __OpenBSD__
-+                argv[5] = "wheel,users";
 +                argv[6] = "-g";
 +                argv[7] = cd->user_name;
 +                argv[8] = "-L";
@@ -70,7 +69,6 @@ $OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
 +                argv[10] = cd->user_name;
 +                argv[11] = NULL;
 +#else
-                 argv[5] = "wheel";
                  argv[6] = "--";
                  argv[7] = cd->user_name;
                  argv[8] = NULL;
@@ -78,12 +76,10 @@ $OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
 +#ifdef __OpenBSD__
-+                argv[4] = "-G";
-+                argv[5] = "users";
-+                argv[6] = "-g";
-+                argv[7] = cd->user_name;
-+                argv[8] = cd->user_name;
-+                argv[9] = NULL;
++                argv[4] = "-g";
++                argv[5] = cd->user_name;
++                argv[6] = cd->user_name;
++                argv[7] = NULL;
 +#else
                  argv[4] = "--";
                  argv[5] = cd->user_name;
@@ -92,7 +88,7 @@ $OpenBSD: patch-src_daemon_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1117,6 +1161,23 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1117,6 +1158,23 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
