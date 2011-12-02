@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/07/12 22:07:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/02 11:19:32 sthen Exp $
 
 COMMENT=	provides rudimentary access to remote SNMP agents
 
@@ -16,4 +16,4 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-.include <bsd.port.mk>	
+.include <bsd.port.mk>
