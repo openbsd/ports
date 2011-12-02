@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
 --- src/user.c.orig	Mon Oct 17 21:30:21 2011
-+++ src/user.c	Sat Oct 29 12:49:00 2011
++++ src/user.c	Fri Dec  2 18:36:45 2011
 @@ -48,7 +48,7 @@
  #include "user-glue.h"
  #include "util.h"
@@ -10,23 +10,19 @@ $OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
  
  enum {
          PROP_0,
-@@ -432,10 +432,15 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -432,7 +432,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
          gid_t wheel;
--        gid_t *groups;
++#ifndef __OpenBSD__
+         gid_t *groups;
++#else
++        gid_t groups[NGROUPS_MAX + 1];
++#endif
++
          gint ngroups;
          gint i;
  
-+#ifdef __OpenBSD__
-+        gid_t groups[NGROUPS_MAX + 1];
-+#else
-+        gid_t *groups;
-+#endif
-+
-         if (pwent->pw_uid == 0) {
-                 g_debug ("user is root so account type is administrator");
-                 return ACCOUNT_TYPE_ADMINISTRATOR;
 @@ -448,16 +453,28 @@ account_type_from_pwent (struct passwd *pwent)
          }
          wheel = grp->gr_gid;
@@ -100,7 +96,7 @@ $OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1574,14 +1601,28 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1574,14 +1601,27 @@ user_change_locked_authorized_cb (Daemon              
          GError *error;
          gchar *argv[5];
  
@@ -111,7 +107,6 @@ $OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
 +        if (nolockshell[strlen(nolockshell) - 1] == '-')
 +               nolockshell[strlen(nolockshell)-1] = '\0';
 +#endif
-+
          if (user->locked != locked) {
                  sys_log (context,
                           "%s account of user '%s' (%d)",
@@ -129,19 +124,55 @@ $OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
                  argv[4] = NULL;
  
                  error = NULL;
-@@ -1591,6 +1632,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1591,6 +1631,11 @@ user_change_locked_authorized_cb (Daemon              
                          return;
                  }
  
 +#ifdef __OpenBSD__
-+               g_free (lockshell);
-+               g_free (nolockshell);
++                g_free (lockshell);
++                g_free (nolockshell);
 +#endif
 +
                  user->locked = locked;
  
                  g_signal_emit (user, signals[CHANGED], 0);
-@@ -1657,7 +1703,11 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1627,7 +1672,12 @@ user_change_account_type_authorized_cb (Daemon        
+ {
+         gint account_type = GPOINTER_TO_INT (data);
+         GError *error;
++#ifndef __OpenBSD__
+         gid_t *groups;
++#else
++        gid_t groups[NGROUPS_MAX + 1];
++        struct group *obsdgrp;
++#endif
+         gint ngroups;
+         GString *str;
+         gid_t wheel;
+@@ -1647,27 +1697,46 @@ user_change_account_type_authorized_cb (Daemon        
+                 }
+                 wheel = grp->gr_gid;
+ 
++#ifdef __OpenBSD__
++                ngroups = sizeof(groups) / sizeof(gid_t);
++                if (getgrouplist (user->user_name, user->gid, groups, &ngroups) == -1) {
++                        g_warning ("too many groups");
++                        return ACCOUNT_TYPE_STANDARD;
++                }
++#else
+                 ngroups = get_user_groups (user->user_name, user->gid, &groups);
++#endif
+ 
+                 str = g_string_new ("");
+                 for (i = 0; i < ngroups; i++) {
+                         if (groups[i] == wheel)
+                                 continue;
++#ifdef __OpenBSD__
++                        obsdgrp = getgrgid(groups[i]);
++                        g_string_append_printf (str, "%s,", obsdgrp->gr_name);
++#else
+                         g_string_append_printf (str, "%d,", groups[i]);
++#endif
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
@@ -153,7 +184,20 @@ $OpenBSD: patch-src_user_c,v 1.9 2011/10/29 11:00:39 ajacoutot Exp $
                          break;
                  default:
                          /* remove excess comma */
-@@ -1779,9 +1829,15 @@ user_change_password_mode_authorized_cb (Daemon       
+                         g_string_truncate (str, str->len - 1);
+                 }
+ 
++#ifndef __OpenBSD__
+                 g_free (groups);
++#endif
+ 
+                 argv[0] = "/usr/sbin/usermod";
+-                argv[1] = "-G";
++                argv[1] = "-S";
+                 argv[2] = str->str;
+                 argv[3] = "--";
+                 argv[4] = user->user_name;
+@@ -1779,9 +1848,15 @@ user_change_password_mode_authorized_cb (Daemon       
                  }
                  else if (user->locked) {
                          argv[0] = "/usr/sbin/usermod";
