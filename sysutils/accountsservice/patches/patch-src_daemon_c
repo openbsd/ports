@@ -1,12 +1,9 @@
-$OpenBSD: patch-src_daemon_c,v 1.10 2011/12/02 17:55:00 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.11 2011/12/02 20:07:26 ajacoutot Exp $
 --- src/daemon.c.orig	Mon Oct 17 21:30:22 2011
-+++ src/daemon.c	Fri Dec  2 18:54:10 2011
-@@ -52,13 +52,17 @@
- #define PATH_PASSWD "/etc/passwd"
- #define PATH_SHADOW "/etc/shadow"
++++ src/daemon.c	Fri Dec  2 21:00:47 2011
+@@ -54,11 +54,15 @@
  #define PATH_LOGIN_DEFS "/etc/login.defs"
--#define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
-+#define PATH_GDM_CUSTOM "${SYSCONFDIR}/gdm/custom.conf"
+ #define PATH_GDM_CUSTOM "${SYSCONFDIR}/gdm/custom.conf"
  
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +#define FALLBACK_MINIMAL_UID 1000
@@ -21,53 +18,30 @@ $OpenBSD: patch-src_daemon_c,v 1.10 2011/12/02 17:55:00 ajacoutot Exp $
  
  static const char *default_excludes[] = {
          "bin",
-@@ -1023,7 +1027,12 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1023,7 +1027,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
 +#ifndef __OpenBSD__
          gchar *argv[9];
 +#else
-+        gchar *argv[12];
-+        gchar *gargv[3];
++        gchar *argv[13];
 +#endif
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1031,6 +1040,22 @@ daemon_create_user_authorized_cb (Daemon              
-                 return;
-         }
- 
-+#ifdef __OpenBSD__
-+        GError *gerror;
-+        sys_log (context, "create group '%s'", cd->user_name);
-+
-+        gargv[0] = "/usr/sbin/groupadd";
-+        gargv[1] = cd->user_name;
-+        gargv[2] = NULL;
-+
-+        gerror = NULL;
-+        if (!spawn_with_login_uid (context, gargv, &gerror)) {
-+                throw_error (context, ERROR_FAILED, "running '%s' failed: %s", gargv[0], gerror->message);
-+                g_error_free (gerror);
-+                return;
-+        }
-+#endif
-+
-         sys_log (context, "create user '%s'", cd->user_name);
- 
-         argv[0] = "/usr/sbin/useradd";
-@@ -1040,14 +1065,30 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1040,14 +1048,31 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
 +#ifdef __OpenBSD__
 +                argv[6] = "-g";
-+                argv[7] = cd->user_name;
++                argv[7] = "=uid";
 +                argv[8] = "-L";
 +                argv[9] = "staff";
-+                argv[10] = cd->user_name;
-+                argv[11] = NULL;
++                argv[10] = "--";
++                argv[11] = cd->user_name;
++                argv[12] = NULL;
 +#else
                  argv[6] = "--";
                  argv[7] = cd->user_name;
@@ -77,7 +51,7 @@ $OpenBSD: patch-src_daemon_c,v 1.10 2011/12/02 17:55:00 ajacoutot Exp $
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
 +#ifdef __OpenBSD__
 +                argv[4] = "-g";
-+                argv[5] = cd->user_name;
++                argv[5] = "=uid";
 +                argv[6] = cd->user_name;
 +                argv[7] = NULL;
 +#else
@@ -88,24 +62,29 @@ $OpenBSD: patch-src_daemon_c,v 1.10 2011/12/02 17:55:00 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1117,6 +1158,23 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1117,6 +1142,28 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
 +
++/*
++ * Under OpenBSD there is no /etc/login.defs (for USERGROUPS_ENAB), so
++ * we need to explicitely remove the user's group if it contains no more
++ * members.
++ */
 +#ifdef __OpenBSD__
-+        GError *gerror;
-+        gchar *gargv[2];
++        GError *grperror;
++        gchar *grpargv[2];
 +
 +        sys_log (context, "delete group '%d'", pwent->pw_gid);
 +
-+        gargv[0] = "/usr/sbin/groupdel";
-+        gargv[1] = pwent->pw_name;
++        grpargv[0] = "/usr/sbin/groupdel";
++        grpargv[1] = pwent->pw_name;
 +
-+        gerror = NULL;
-+        if (!spawn_with_login_uid (context, gargv, &gerror)) {
-+                throw_error (context, ERROR_FAILED, "running '%s' failed: %s", argv[0], gerror->message);
-+                g_error_free (gerror);
++        grperror = NULL;
++        if (!spawn_with_login_uid (context, grpargv, &grperror)) {
++                throw_error (context, ERROR_FAILED, "running '%s' failed: %s", grpargv[0], grperror->message);
++                g_error_free (grperror);
 +                return;
 +        }
 +#endif

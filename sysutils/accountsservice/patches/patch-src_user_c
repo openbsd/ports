@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.11 2011/12/02 20:07:26 ajacoutot Exp $
 --- src/user.c.orig	Mon Oct 17 21:30:21 2011
-+++ src/user.c	Fri Dec  2 18:36:45 2011
++++ src/user.c	Fri Dec  2 21:01:04 2011
 @@ -48,7 +48,7 @@
  #include "user-glue.h"
  #include "util.h"
@@ -96,11 +96,15 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1574,14 +1601,27 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1572,17 +1599,33 @@ user_change_locked_authorized_cb (Daemon              
+ {
+         gboolean locked = GPOINTER_TO_INT (data);
          GError *error;
++#ifndef __OpenBSD__
          gchar *argv[5];
- 
-+#ifdef __OpenBSD__
+-
++#else
++        gchar *argv[6];
 +        gchar *lockshell, *nolockshell;
 +        lockshell = g_strjoin (NULL, user->shell, "-", NULL);
 +        nolockshell = g_strdup (user->shell);
@@ -115,16 +119,19 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
 +#ifdef __OpenBSD__
 +                argv[1] = "-s";
 +                argv[2] = locked ? lockshell : nolockshell;
-+                argv[3] = user->user_name;
++                argv[3] = "--";
++                argv[4] = user->user_name;
++                argv[5] = NULL;
 +#else
                  argv[1] = locked ? "-L" : "-U";
                  argv[2] = "--";
                  argv[3] = user->user_name;
-+#endif
                  argv[4] = NULL;
++#endif
  
                  error = NULL;
-@@ -1591,6 +1631,11 @@ user_change_locked_authorized_cb (Daemon              
+                 if (!spawn_with_login_uid (context, argv, &error)) {
+@@ -1591,6 +1634,11 @@ user_change_locked_authorized_cb (Daemon              
                          return;
                  }
  
@@ -136,7 +143,7 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
                  user->locked = locked;
  
                  g_signal_emit (user, signals[CHANGED], 0);
-@@ -1627,7 +1672,12 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1627,13 +1675,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          gint account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -149,7 +156,18 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
          gint ngroups;
          GString *str;
          gid_t wheel;
-@@ -1647,27 +1697,46 @@ user_change_account_type_authorized_cb (Daemon        
+         struct group *grp;
+         gint i;
++#ifndef __OpenBSD__
+         gchar *argv[6];
++#else
++        gchar *argv[8];
++	gchar *class;
++#endif
+ 
+         if (user->account_type != account_type) {
+                 sys_log (context,
+@@ -1647,31 +1705,65 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -157,7 +175,7 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
 +                ngroups = sizeof(groups) / sizeof(gid_t);
 +                if (getgrouplist (user->user_name, user->gid, groups, &ngroups) == -1) {
 +                        g_warning ("too many groups");
-+                        return ACCOUNT_TYPE_STANDARD;
++                        account_type = ACCOUNT_TYPE_STANDARD;
 +                }
 +#else
                  ngroups = get_user_groups (user->user_name, user->gid, &groups);
@@ -167,6 +185,7 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
                  for (i = 0; i < ngroups; i++) {
                          if (groups[i] == wheel)
                                  continue;
++
 +#ifdef __OpenBSD__
 +                        obsdgrp = getgrgid(groups[i]);
 +                        g_string_append_printf (str, "%s,", obsdgrp->gr_name);
@@ -178,6 +197,7 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
                  case ACCOUNT_TYPE_ADMINISTRATOR:
 +#ifdef __OpenBSD__
 +                        g_string_append_printf (str, "%s", "wheel");
++                        class = "staff";
 +#else
                          g_string_append_printf (str, "%d", wheel);
 +#endif
@@ -185,6 +205,9 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
                  default:
                          /* remove excess comma */
                          g_string_truncate (str, str->len - 1);
++#ifdef __OpenBSD__
++                        class = "";
++#endif
                  }
  
 +#ifndef __OpenBSD__
@@ -192,24 +215,40 @@ $OpenBSD: patch-src_user_c,v 1.10 2011/12/02 17:45:58 ajacoutot Exp $
 +#endif
  
                  argv[0] = "/usr/sbin/usermod";
--                argv[1] = "-G";
++#ifdef __OpenBSD__
 +                argv[1] = "-S";
++                argv[2] = str->str;
++                argv[3] = "-L";
++                argv[4] = class;
++                argv[5] = "--";
++                argv[6] = user->user_name;
++                argv[7] = NULL;
++#else
+                 argv[1] = "-G";
                  argv[2] = str->str;
                  argv[3] = "--";
                  argv[4] = user->user_name;
-@@ -1779,9 +1848,15 @@ user_change_password_mode_authorized_cb (Daemon       
+                 argv[5] = NULL;
++#endif
+ 
+                 g_string_free (str, FALSE);
+ 
+@@ -1779,10 +1871,18 @@ user_change_password_mode_authorized_cb (Daemon       
                  }
                  else if (user->locked) {
                          argv[0] = "/usr/sbin/usermod";
 +#ifdef __OpenBSD__
 +                        argv[1] = "-s";
 +                        argv[2] = g_strndup (user->shell, sizeof(user->shell));
-+                        argv[3] = user->user_name;
++                        argv[3] = "--";
++                        argv[4] = user->user_name;
++                        argv[5] = NULL;
 +#else
                          argv[1] = "-U";
                          argv[2] = "--";
                          argv[3] = user->user_name;
-+#endif
                          argv[4] = NULL;
++#endif
  
                          error = NULL;
+                         if (!spawn_with_login_uid (context, argv, &error)) {
