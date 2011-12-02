@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.27 2011/10/07 13:54:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.28 2011/12/02 08:29:45 ajacoutot Exp $
 
 COMMENT=        build tool for java applications
 
 DISTNAME=	apache-ant-1.8.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
-
-MAINTAINER=	Daniel Dickman <didickman@gmail.com>
 
 # Apache Software License 2.0 &
 # W3C Consortium License (August 14 1998)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/30 09:10:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/02 08:29:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,11 +9,9 @@ DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
-
-MAINTAINER=		Daniel Dickman <didickman@gmail.com>
 
 # Apache v2.0
 PERMIT_PACKAGE_CDROM=	Yes
