@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/22 00:35:42 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/02 22:00:34 ajacoutot Exp $
+@conflict qca-*
 @bin bin/qcatool2
 include/QtCrypto/
 include/QtCrypto/QtCrypto
