@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.22 2011/11/22 16:44:53 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.23 2011/12/02 11:40:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -320,6 +320,8 @@ sub merge_depends
 	my ($class, $h) = @_;
 	my $global = bless {}, "AddDepends";
 	my $global2 = bless {}, "AddDepends";
+	my $global3 = bless {}, "AddDepends";
+	my $global4 = bless {}, "AddDepends";
 	my $multi;
 	for my $v (values %$h) {
 		my $info = $v->{info};
@@ -351,8 +353,14 @@ sub merge_depends
 				}
 			}
 		}
+		if (defined $info->{EXTRA}) {
+			for my $d (values %{$info->{EXTRA}}) {
+				$global3->{$d} = $d;
+			}
+	    	}
+			
 		for my $k (qw(DIST LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
-		    SUBPACKAGE FLAVOR)) {
+		    SUBPACKAGE FLAVOR EXTRA)) {
 			delete $info->{$k};
 		}
 	}
@@ -362,6 +370,12 @@ sub merge_depends
 			delete $global->{$v};
 			$v->{info}{DEPENDS} = $global;
 			$v->{info}{BDEPENDS} = $global2;
+		}
+	}
+	if (values %$global3 > 0) {
+		for my $v (values %$h) {
+			$v->{info}{EXTRA} = $global3;
+			$v->{info}{BEXTRA} = $global4;
 		}
 	}
 	if (defined $multi) {

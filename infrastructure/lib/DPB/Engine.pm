@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.37 2011/11/22 16:46:44 espie Exp $
+# $OpenBSD: Engine.pm,v 1.38 2011/12/02 11:40:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -479,7 +479,7 @@ sub should_ignore
 
 sub adjust_extra
 {
-	my ($self, $v, $kind) = @_;
+	my ($self, $v, $kind, $kind2) = @_;
 	return 0 if !exists $v->{info}{$kind};
 	my $not_yet = 0;
 	for my $d (values %{$v->{info}{$kind}}) {
@@ -488,6 +488,7 @@ sub adjust_extra
 		    (defined $d->fullpkgname &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
+			$v->{info}{$kind2}{$d} = $d if defined $kind2;
 		} else {
 			$not_yet++;
 		}
@@ -553,7 +554,7 @@ sub check_buildable
 				next;
 			}
 			my $has = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
-			$has += $self->adjust_extra($v, 'EXTRA');
+			$has += $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
 
 			my $has2 = $self->adjust_distfiles($v);
 			# buying buildable directly is a priority,

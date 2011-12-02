@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.17 2011/11/22 16:48:01 espie Exp $
+# $OpenBSD: Port.pm,v 1.18 2011/12/02 11:40:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -157,8 +157,8 @@ sub run
 		}
 	}
 	# recurse for extra stuff
-	if (exists $v->{info}{EXTRA}) {
-		for my $two (values %{$v->{info}{EXTRA}}) {
+	if (exists $v->{info}{BEXTRA}) {
+		for my $two (values %{$v->{info}{BEXTRA}}) {
 			if (exists $two->{info}{BDEPENDS}) {
 				for my $d (values %{$two->{info}{BDEPENDS}}) {
 					$dep->{$d->fullpkgname} = 1;
