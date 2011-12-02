@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.10 2011/11/14 21:56:04 espie Exp $
+# $OpenBSD: Core.pm,v 1.11 2011/12/02 22:29:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -146,6 +146,22 @@ sub hostname
 {
 	my $self = shift;
 	return $self->host->name;
+}
+
+sub lockname
+{
+	my $self = shift;
+	return "host:".$self->hostname;
+}
+
+sub logname
+{
+	&hostname;
+}
+
+sub print_parent
+{
+	# Nothing to do
 }
 
 sub fullhostname
