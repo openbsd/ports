@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.42 2011/11/20 15:38:08 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.43 2011/12/02 15:14:20 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -127,7 +127,7 @@ _recursive_targets = \
 	full-regress-depends full-run-depends \
 	install install-all lib-depends-check \
 	license-check link-categories manpages-check package patch \
-	prepare repackage regress reinstall \
+	prepare show-prepare-results repackage regress reinstall \
 	unlink-categories update update-or-install update-or-install-all \
 	describe dump-vars homepage-links print-plist print-plist-all \
 	print-plist-contents print-plist-libs \

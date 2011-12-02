@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1148 2011/11/27 21:04:34 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1149 2011/12/02 15:14:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1920,7 +1920,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 .endfor
 
 show-prepare-results: prepare
-	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES}
+	@sort -u ${_DEPBUILD_COOKIES} ${_DEPBUILDLIB_COOKIES} /dev/null
 
 _internal-build-depends: ${_DEPBUILD_COOKIES}
 _internal-run-depends: ${_DEPRUN_COOKIES}
@@ -3369,7 +3369,7 @@ _all_phony = ${_recursive_depends_targets} \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args \
-	_recurse-show-run-depends show-run-depends show-prepare-results
+	_recurse-show-run-depends show-run-depends
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
