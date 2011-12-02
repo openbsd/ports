@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+$OpenBSD: README,v 1.2 2011/12/02 13:37:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,13 +7,13 @@ $OpenBSD: README,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
 Typical Usage
 =============
 
- * Edit ${SYSCONFVAR}/LCDd.conf:
+ * Edit ${SYSCONFDIR}/LCDd.conf:
    You will need to choose a driver and review your driver options.
 
  * Start LCDd:
-   sudo ${RCDIR}/LCDd start
+   sudo ${RCDIR}/lcdd start
 
- * Review ${SYSCONFVAR}/lcdproc.conf
+ * Review ${SYSCONFDIR}/lcdproc.conf
 
  * Start the lcdproc client:
    sudo ${RCDIR}/lcdproc start
@@ -30,7 +30,7 @@ LCDproc provides a curses output driver which is useful for testing.
 When using this driver, you should *not* run LCDd using the bundled rc
 script.
 
-Instead, choose the "curses" driver in ${RCDIR}/LCDd.conf and run:
+Instead, choose the "curses" driver in ${SYSCONFDIR}/LCDd.conf and run:
    LCDd -f
 
 Miscellaneous Notes
