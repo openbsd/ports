@@ -1,6 +1,5 @@
-$OpenBSD: patch-src_makefile,v 1.7 2011/04/09 08:02:37 benoit Exp $
---- src/makefile.orig	Wed Feb  9 22:56:23 2011
-+++ src/makefile	Sun Apr  3 11:14:04 2011
+--- src/makefile	Wed Oct  5 22:14:22 2011
++++ src/makefile.new	Sun Oct 23 12:58:49 2011
 @@ -12,11 +12,11 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
@@ -12,10 +11,10 @@ $OpenBSD: patch-src_makefile,v 1.7 2011/04/09 08:02:37 benoit Exp $
  
 -CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
 +#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
- #CFLAGS:=-ggdb ${CFLAGS} -DNDEBUG
- CFLAGS_DILU=-fno-strict-aliasing
+ #CFLAGS:=-ggdb ${CFLAGS}
  
-@@ -32,7 +32,7 @@
+ CFLAGS_DILU=-fno-strict-aliasing
+@@ -33,7 +33,7 @@
  INCLUDE_DIR=./include/
  
  # Lua paths
@@ -24,3 +23,16 @@ $OpenBSD: patch-src_makefile,v 1.7 2011/04/09 08:02:37 benoit Exp $
  LUA_LIBS=-llua
  #LUA_CFLAGS=$(shell pkg-config --cflags lua5.1)
  #LUA_LIBS=$(shell pkg-config --libs lua5.1)
+@@ -45,10 +45,10 @@
+ DILU_DIR=${CORE_DIR}Diluculum/
+ 
+ ifndef HL_CONFIG_DIR
+-	HL_CONFIG_DIR = /etc/highlight/
++	HL_CONFIG_DIR = ${SYSCONFDIR}/highlight/
+ endif
+ ifndef HL_DATA_DIR
+-	HL_DATA_DIR = /usr/share/highlight/
++	HL_DATA_DIR = ${PREFIX}/share/highlight/
+ endif
+ ifdef PIC
+ 	CFLAGS+=-fPIC
