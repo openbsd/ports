@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/12 14:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/12/03 18:31:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-docs=	gtk+3-docs-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
+
+REVISION-main=	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -100,7 +102,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # Do not build gtk-update-icon-cache and other shared tools.
 CONFIGURE_ARGS += --enable-gtk2-dependency
 BUILD_DEPENDS += ${RUN_DEPENDS}
-RUN_DEPENDS +=	x11/gtk+2
+RUN_DEPENDS +=	x11/gtk+2,-guic
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
 

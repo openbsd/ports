@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/10/19 17:41:40 ajacoutot Exp $
-@unexec rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
+@comment $OpenBSD: PLIST-main,v 1.9 2011/12/03 18:31:18 ajacoutot Exp $
+@unexec-delete rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
 @unexec-delete rm -f %D/lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules.cache
 @bin bin/gtk-query-immodules-3.0
 @bin bin/gtk3-demo
@@ -347,7 +347,7 @@ lib/pkgconfig/gtk+-3.0.pc
 lib/pkgconfig/gtk+-unix-print-3.0.pc
 lib/pkgconfig/gtk+-x11-3.0.pc
 @man man/man1/gtk-query-immodules-3.0.1
-@man man/man1/gtk-update-icon-cache.1
+@comment @man man/man1/gtk-update-icon-cache.1
 share/aclocal/gtk-3.0.m4
 share/examples/gtk+3/
 share/examples/gtk+3/gtk-3.0/
@@ -644,4 +644,3 @@ share/themes/Raleigh/gtk-3.0/gtk.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/${GTK_BINARY_VERSION}/immodules.cache
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
