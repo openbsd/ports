@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/10/28 06:08:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/12/03 19:49:45 ajacoutot Exp $
 bin/gbrainy
 lib/gbrainy/
 lib/gbrainy/gbrainy.Core.dll
@@ -500,7 +500,7 @@ share/pixmaps/gbrainy.png
 share/pixmaps/gbrainy.svg
 share/pixmaps/gbrainy16.png
 share/pixmaps/gbrainy48.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/02 08:29:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/03 19:49:46 ajacoutot Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
@@ -13,7 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		opensfx-${SFX_V}.zip:1 \
 		openmsx-${MSX_V}.zip:2
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 
@@ -39,7 +39,8 @@ LIB_DEPENDS=		archivers/lzo2 \
 			textproc/icu4c \
 			archivers/xz
 
-RUN_DEPENDS=            devel/desktop-file-utils
+RUN_DEPENDS=            devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 CONFIGURE_STYLE=	simple
 CONFIGURE_ARGS+=	--prefix-dir=${PREFIX} \

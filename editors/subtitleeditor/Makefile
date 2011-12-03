@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/03 19:49:45 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.37.1
 DISTNAME=	subtitleeditor-${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics editors
 
@@ -47,7 +47,8 @@ LIB_DEPENDS=	devel/pcre>=6.4p2 \
 		x11/gtk2mm
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		devel/iso-codes \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 MODULES+=	devel/gettext \
 		textproc/intltool

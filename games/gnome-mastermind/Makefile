@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/29 08:12:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/03 19:49:46 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
 GNOME_PROJECT =	gnome-mastermind
 GNOME_VERSION =	0.3.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES =	games
 
@@ -22,12 +22,14 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES =	devel/gettext \
 		x11/gnome
 
-MODGNOME_DESKTOP_FILE =	Yes
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/gconf2
 RUN_DEPENDS +=	x11/gnome/librsvg
 
 MODGNOME_TOOLS= 	yelp
+MODGNOME_ICON_CACHE=	Yes
+MODGNOME_DESKTOP_FILE =	Yes
+
 CONFIGURE_STYLE =	gnu
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext

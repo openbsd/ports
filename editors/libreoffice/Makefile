@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/11/12 10:51:10 robert Exp $
+# $OpenBSD: Makefile,v 1.53 2011/12/03 19:49:45 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -15,6 +15,8 @@ PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
+
+REVISION-main=	0
 
 EPOCH=		0
 
@@ -166,7 +168,8 @@ WANTLIB-main+=	hunspell-1.2 gdk_pixbuf_xlib-2.0
 WANTLIB-main+=	${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
-			misc/shared-mime-info
+			misc/shared-mime-info \
+			x11/gtk+2,-guic
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	editors/libreoffice

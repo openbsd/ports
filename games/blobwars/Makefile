@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/03 19:49:46 ajacoutot Exp $
 
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-1.19
-REVISION=		0
+REVISION=	1
 
 CATEGORIES =	games
 
@@ -30,7 +30,8 @@ LIB_DEPENDS =	devel/sdl-image \
 		devel/sdl-ttf
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk+2
+		x11/gtk+2 \
+		x11/gtk+2,-guic
 
 MAKE_ENV +=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \

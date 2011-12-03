@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/17 09:16:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/03 19:49:46 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
 DISTNAME=	gbrainy-2.06
+REVISION=	0
 
 CATEGORIES=	games
 
@@ -30,6 +31,7 @@ RUN_DEPENDS=	devel/mono-addins \
 		x11/gnome/mono-gnome
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
