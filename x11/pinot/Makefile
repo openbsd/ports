@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/11/09 18:13:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/12/03 23:20:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.98
+REVISION=	0
 
 CATEGORIES=	x11 misc
 
@@ -58,7 +59,8 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/unrtf \
 		textproc/xpdf,-utils \
 		textproc/antiword \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 # libxapianbackend.so: undefined symbol '__dso_handle'
 USE_LIBTOOL=	gnu

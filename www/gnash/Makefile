@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/11/23 21:13:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/12/03 23:20:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.9
 DISTNAME=	gnash-${VER}
-REVISION=	3
+REVISION=	4
 EPOCH=		0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
@@ -30,7 +30,8 @@ WANTLIB=	SDL X11 agg avcodec avformat avutil boost_program_options-mt \
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/xulrunner/1.9,-devel
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 LIB_DEPENDS=	audio/speex \
 		devel/boost \
 		devel/libtool,-ltdl \

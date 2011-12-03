@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/10/13 06:53:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/12/03 23:20:52 ajacoutot Exp $
 @bin bin/midori
 include/midori-0.4/
 include/midori-0.4/extensions/
@@ -97,7 +97,7 @@ share/midori/res/logo-shade.png
 share/midori/res/speeddial-head.html
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

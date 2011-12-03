@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.0.1
-REVISION=		2
+REVISION=		3
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -35,7 +35,8 @@ LIB_DEPENDS=		devel/vte \
 BUILD_DEPENDS=		textproc/docbook-xsl
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gnome/librsvg
+			x11/gnome/librsvg \
+			x11/gtk+2,-guic
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes

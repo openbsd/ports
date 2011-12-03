@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/11/17 14:53:21 robert Exp $
+# $OpenBSD: Makefile,v 1.75 2011/12/03 23:20:53 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			15.0.874.121
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -40,7 +41,8 @@ RUN_DEPENDS=	sysutils/gamin,-server \
 		devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gtk+2,-cups \
-		x11/gnome/icon-theme
+		x11/gnome/icon-theme \
+		x11/gtk+2,-guic
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \

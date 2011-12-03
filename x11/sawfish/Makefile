@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/11/15 19:32:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT=	extensible window manager
 
@@ -7,6 +7,8 @@ SHARED_ONLY=	Yes
 VERSION=	1.8.2
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
+
+REVISION=	0
 
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 EXTRACT_SUFX=	.tar.xz
@@ -23,7 +25,8 @@ PERMIT_DISTFILES_FTP=	Yes
 BUILD_DEPENDS=	archivers/gtar \
 		x11/rep-gtk>=0.90.7
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/rep-gtk>=0.90.7
+		x11/rep-gtk>=0.90.7 \
+		x11/gtk+2,-guic
 
 WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat

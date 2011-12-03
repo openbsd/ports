@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/16 08:53:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12
-REVISION=	3
+REVISION=	4
 
 CATEGORIES =	devel x11
 
@@ -22,7 +22,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/p5-HTML-Parser \
 		www/p5-URI \
 		x11/p5-Gtk2-Ex-PodViewer \
-		x11/p5-Gtk2-GladeXML
+		x11/p5-Gtk2-GladeXML \
+		x11/gtk+2,-guic
 
 NO_REGRESS =	Yes
 

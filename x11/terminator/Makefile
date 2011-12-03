@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT=		GTK2 terminal emulator with split-window and tabs support
 
 MODPY_EGG_VERSION=	0.95
 DISTNAME=		terminator-${MODPY_EGG_VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		x11
 
@@ -24,7 +24,8 @@ MODULES=		lang/python \
 			textproc/intltool
 RUN_DEPENDS=		devel/vte,-python \
 			devel/py-notify \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 NO_REGRESS=		Yes
 

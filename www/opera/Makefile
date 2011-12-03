@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/11/23 13:56:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/03 23:20:53 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 SHARED_ONLY=	Yes
@@ -9,7 +9,7 @@ V=		10.11
 OPERA_BUILD=	4791
 DISTNAME=	opera-${V}.gcc4-shared-qt3.i386
 PKGNAME=	opera-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -37,7 +37,8 @@ MASTER_SITES=	${MASTER_SITES_OPERA:=linux/${V:S/.//}/final/en/i386/shared/}
 EXTRACT_SUFX=	.tar.bz2
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		emulators/fedora/base
+		emulators/fedora/base \
+		x11/gtk+2,-guic
 
 USE_GROFF =	Yes
 NO_BUILD=	Yes

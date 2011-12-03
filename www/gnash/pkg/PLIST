@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/03/25 09:45:17 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/12/03 23:20:52 ajacoutot Exp $
 bin/gnash
 bin/gnash-gtk-launcher
 @bin bin/gprocessor
@@ -224,7 +224,7 @@ share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
 share/locale/ja/LC_MESSAGES/gnash.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

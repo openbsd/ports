@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/03 23:20:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		Flash plugin for Mozilla browsers
 V=			0.8.2
 DISTNAME=		swfdec-mozilla-$V
 PKGNAME=		swfdec-plugin-$V
-REVISION=		4
+REVISION=		5
 CATEGORIES=		graphics www
 
 HOMEPAGE=		http://swfdec.freedesktop.org/
@@ -31,13 +31,14 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		sndio soup-2.4 swfdec-0.8 swfdec-gtk-0.8 tasn1 xcb xcb-render \
 		xcb-render-util xml2 z
 
-LIB_DEPENDS=		graphics/swfdec
+LIB_DEPENDS=	graphics/swfdec
+RUN_DEPENDS=	x11/gtk+2,-guic
 
-USE_LIBTOOL=		Yes
+USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-plugin-dir="${LOCALBASE}/lib/mozilla/plugins/"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS= --with-plugin-dir="${LOCALBASE}/lib/mozilla/plugins/"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

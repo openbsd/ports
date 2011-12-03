@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/09 14:51:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT=		GTK+2 remote desktop client
 
 DISTNAME=		remmina-0.9.3
-REVISION=		3
+REVISION=		4
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
@@ -19,7 +19,8 @@ LIB_DEPENDS=		devel/libunique \
 			net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
 			security/libgcrypt
 
-RUN_DEPENDS=		devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-avahi \

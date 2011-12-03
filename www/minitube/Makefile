@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/12 19:19:05 pirofti Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/03 23:20:53 ajacoutot Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 DISTNAME =	minitube-1.6
 CATEGORIES =	www multimedia
+REVISION =	0
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
 
@@ -28,7 +29,8 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-bad \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		x11/gnome/icon-theme \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 WRKDIST =	${WRKDIR}/minitube
 

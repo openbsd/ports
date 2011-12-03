@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/03 23:20:53 ajacoutot Exp $
 
-COMMENT=	GTK+2 based xmessage(1) clone
+COMMENT=	gtk+2 based xmessage(1) clone
 
 DISTNAME=	gxmessage-2.12.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -25,7 +25,10 @@ WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gtk-x11-2.0 gdk_pixbuf-2.0
 
 MODULES=	devel/gettext \
 		textproc/intltool
+
 LIB_DEPENDS=	x11/gtk+2
+
+RUN_DEPENDS=	x11/gtk+2,-guic
 
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu

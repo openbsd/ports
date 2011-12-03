@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/09/15 16:31:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/03 23:20:53 ajacoutot Exp $
 @bin bin/nitrogen
 @man man/man1/nitrogen.1
 share/icons/
@@ -27,5 +27,5 @@ share/icons/hicolor/32x32/apps/nitrogen.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/nitrogen.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

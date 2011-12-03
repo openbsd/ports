@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/10/18 16:09:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/12/03 23:20:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.2.1
-REVISION=	0
+REVISION=	2
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -44,7 +44,8 @@ WANTLIB += xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \
-		devel/gsettings-desktop-schemas
+		devel/gsettings-desktop-schemas \
+		x11/gtk+2,-guic
 LIB_DEPENDS=	textproc/libxslt \
 		devel/libexecinfo \
 		devel/libnotify>=0.7.2 \
@@ -56,7 +57,8 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 LIBTOOL_FLAGS=		--tag=disable-static
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_STYLE=gnu
