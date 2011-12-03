@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/03 10:23:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/03 13:59:37 ajacoutot Exp $
 @bin bin/ushare
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ushare/
 share/examples/ushare/ushare.conf
 @sample ${SYSCONFDIR}/ushare.conf

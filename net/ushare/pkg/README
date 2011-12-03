@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2011/12/03 13:59:37 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 USHARE_IFACE (listening interface) and USHARE_DIR (shared directories)
 need to be set in ${SYSCONFDIR}/ushare.conf before starting ushare.
 
