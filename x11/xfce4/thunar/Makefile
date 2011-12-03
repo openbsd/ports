@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/13 21:25:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/12/03 22:32:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -7,7 +7,7 @@ XFCE_PROJECT=	Thunar
 # :L is here for a reason
 PKGNAME=	${DISTNAME:L}
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	thunarx-2	0.0
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \

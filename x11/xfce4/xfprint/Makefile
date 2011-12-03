@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
 XFCE_VERSION=	4.6.1
-REVISION=	11
+REVISION=	12
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_PROJECT}/${XFCE_BRANCH}/
 SHARED_LIBS=	xfprint	0.1
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=	--enable-cups \
 		--enable-bsdlpr \

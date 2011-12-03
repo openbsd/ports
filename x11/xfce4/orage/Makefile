@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2011/10/14 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/12/03 22:32:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
 XFCE_VERSION=	4.8.2
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS =	x11/xfce4/xfce4-panel \
 		devel/popt \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.7.9
 XFCE_GOODIE=	xfce4-screenshooter
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,6 +19,7 @@ LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libsoup
 
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm

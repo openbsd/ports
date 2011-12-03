@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
 XFCE_VERSION=	4.8.3
-REVISION =      0
+REVISION =      1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=	--enable-thunarx \
 		--enable-exo

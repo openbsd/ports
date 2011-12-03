@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/03/03 21:03:09 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/12/03 22:32:21 ajacoutot Exp $
 @conflict terminal-<=0.4.5p1
 @bin bin/xfce4-terminal
 man/ca/
@@ -343,7 +343,7 @@ share/locale/zh_CN/LC_MESSAGES/Terminal.mo
 share/locale/zh_TW/LC_MESSAGES/Terminal.mo
 share/pixmaps/
 share/pixmaps/terminal.xpm
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/05 18:13:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/03 22:32:22 ajacoutot Exp $
 @conflict xfce4-diskperf-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -70,5 +70,5 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/cpugraph.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/01/03 22:31:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/12/03 22:32:21 ajacoutot Exp $
 @conflict xfce4-battery-plugin-*
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
@@ -79,5 +79,5 @@ share/locale/zh_TW/LC_MESSAGES/xfce4-battery-plugin.mo
 share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/battmon.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

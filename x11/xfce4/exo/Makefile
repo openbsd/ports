@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/10/14 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/12/03 22:32:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 extension library
 
 XFCE_VERSION=	0.6.2
 XFCE_PROJECT=	exo
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	exo-1		0.0
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=	--disable-python --disable-linker-opts
 CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/14 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/03 22:32:21 ajacoutot Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.2.0.5
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM =	Yes
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =	x11/xfce4
 MODXFCE_DESKTOP_FILE =	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS =	--disable-power-manager-plugin
 

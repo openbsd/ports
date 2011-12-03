@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/10/13 17:19:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 XFCE_VERSION=	4.8.6
 SHARED_LIBS=	xfce4panel-1.0	0.0	# 3.0
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -15,6 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=--disable-linker-opts
 LIB_DEPENDS=	x11/xfce4/exo>=0.6.0 \

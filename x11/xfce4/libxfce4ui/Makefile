@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/13 16:43:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/03 22:32:21 ajacoutot Exp $
 
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	xfce4ui-1		0.0	\
 		xfce4kbd-private-2	0.0	# 0.0
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
+MODFXCE_ICON_CACHE=	Yes
 LIB_DEPENDS=	x11/xfce4/xfconf>=4.8.0 \
 		x11/gtk+2 \
 		devel/startup-notification

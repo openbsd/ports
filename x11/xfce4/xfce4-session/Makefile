@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2011/11/24 10:22:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
 XFCE_VERSION=	4.8.2
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	xfsm-4.6	0.0 # .0.0
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=	--disable-linker-opts \
 		--disable-hal \

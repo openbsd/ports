@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	xfce4-dict
-REVISION=	4
+REVISION=	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
+MODFXCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		x11/xfce4/libxfcegui4

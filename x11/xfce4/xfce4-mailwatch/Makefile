@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/03 22:32:22 ajacoutot Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	mailwatch
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/
+
+MODFXCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS+=	security/gnutls
 LIB_DEPENDS+=	x11/xfce4/libxfcegui4 \
