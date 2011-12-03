@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2011/11/04 08:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2011/12/03 18:55:28 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.90.1.4
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -59,6 +59,7 @@ RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
 RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	goi yelp
 
 CONFIGURE_STYLE= 	gnu

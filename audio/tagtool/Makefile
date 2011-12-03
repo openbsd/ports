@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/12 12:54:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/03 18:55:28 ajacoutot Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	13
+REVISION=	14
 CATEGORIES=	audio
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>
@@ -34,8 +34,8 @@ LIB_DEPENDS=	audio/id3lib \
 		x11/gtk+2>=2.10 \
 		devel/libglade2 \
 		audio/libvorbis
-RUN_DEPENDS=	x11/hicolor-icon-theme \
-		devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 CONFIGURE_STYLE=gnu
 

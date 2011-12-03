@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/03 18:55:28 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 
@@ -31,7 +31,8 @@ WANTLIB = 	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calf/}
 
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS =		audio/jack \
 			devel/libglade2
 BUILD_DEPENDS +=	audio/ladspa

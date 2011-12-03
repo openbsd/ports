@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2011/11/04 12:18:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/12/03 18:55:28 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		audio
 
@@ -42,7 +42,8 @@ BUILD_DEPENDS=		x11/gob2 \
 			lang/vala>=0.7.10
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/gnome/yelp
+			x11/gnome/yelp \
+			x11/gtk+2,-guic
 
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib -liconv" \
 			CPPFLAGS="-I${LOCALBASE}/include"

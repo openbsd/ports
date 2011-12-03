@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/12/03 18:55:28 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		gtk+2 media player based on BMP and XMMS
 
 DISTNAME =		audacious-2.4.5
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		audclient	1.1 	# 2.0
 SHARED_LIBS +=		audcore		0.0 	# 1.0
@@ -38,7 +38,8 @@ EXTRACT_SUFX =		.tgz
 MODULES =		devel/gettext
 
 BUILD_DEPENDS =		textproc/libxml
-RUN_DEPENDS =		devel/desktop-file-utils
+RUN_DEPENDS =		devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS =		devel/libexecinfo \
 			devel/libguess \
 			devel/mcs>=0.7.0 \

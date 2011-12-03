@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/04 08:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/03 18:55:28 ajacoutot Exp $
 
 COMMENT=		last.fm client for GNOME
 
 V=			0.8.2
 DISTNAME=		vagalume_$V.orig
 PKGNAME=		vagalume-$V
-REVISION=		7
+REVISION=		8
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://vagalume.igalia.com/
@@ -34,7 +34,8 @@ MODULES+=		devel/gettext \
 
 RUN_DEPENDS+=		devel/desktop-file-utils \
 			multimedia/gstreamer-0.10/plugins-good \
-			multimedia/gstreamer-0.10/plugins-ugly
+			multimedia/gstreamer-0.10/plugins-ugly \
+			x11/gtk+2,-guic
 
 LIB_DEPENDS=		devel/libidn \
 			devel/libnotify>=0.7.2 \
