@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2011/12/03 18:35:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2011/12/03 18:46:30 ajacoutot Exp $
 @conflict kdebase-<3.5
 @conflict kdeartwork-<3.4
 @conflict kdeaddons-<3.4
 @conflict kdeadmin-<3.4
 @pkgpath x11/kde/libs3
-@unexec rm -f %D/share/icons/crystalsvg/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/crystalsvg/icon-theme.cache
 @bin bin/artsmessage
 bin/checkXML
 @bin bin/dcop
