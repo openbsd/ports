@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/06/23 07:50:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/03 19:26:37 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gerbv
 include/gerbv-2.5.0/
@@ -38,5 +38,5 @@ share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gerbv.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

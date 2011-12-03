@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/04 11:59:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/03 19:26:37 ajacoutot Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -9,6 +9,8 @@ DISTNAME=	kicad-sources-${V}-${S}
 PKGNAME=	kicad-${V:S/-//g}
 PKGNAME-main=	kicad-${V:S/-//g}
 PKGNAME-docs=	kicad-docs-${V:S/-//g}
+
+REVISION-main=	0
 
 CATEGORIES=	cad
 
@@ -36,7 +38,8 @@ MODULES=	devel/cmake \
 BUILD_DEPENDS=		misc/shared-mime-info
 RUN_DEPENDS-main=	cad/kicad-library \
 			devel/desktop-file-utils \
-			misc/shared-mime-info
+			misc/shared-mime-info \
+			x11/gtk+2,-guic
 
 LIB_DEPENDS=	x11/wxWidgets
 
