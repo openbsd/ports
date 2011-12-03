@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/09 04:51:12 ajacoutot Exp $
-@unexec rm -f %D/share/icons/Human/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.6 2011/12/03 19:13:18 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/Human/icon-theme.cache
 share/icons/Human/
 share/icons/Human/12x12/
 share/icons/Human/12x12/stock/
@@ -1516,4 +1516,4 @@ share/locale/fr/LC_MESSAGES/human-icon-theme.mo
 share/locale/it/LC_MESSAGES/human-icon-theme.mo
 share/locale/pt_BR/LC_MESSAGES/human-icon-theme.mo
 share/locale/sv/LC_MESSAGES/human-icon-theme.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Human 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Human 2>/dev/null || true

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/10/20 06:14:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/12/03 19:13:18 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
-@unexec rm -f %D/share/icons/HighContrast/icon-theme.cache
-@unexec rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
-@unexec rm -f %D/share/icons/LowContrast/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/LowContrast/icon-theme.cache
 lib/gtk-3.0/3.0.0/theming-engines/
 @comment lib/gtk-3.0/3.0.0/theming-engines/libadwaita.la
 lib/gtk-3.0/3.0.0/theming-engines/libadwaita.so
@@ -782,6 +782,6 @@ share/themes/LowContrast/gtk-2.0/gtkrc
 share/themes/LowContrast/gtk-3.0/
 share/themes/LowContrast/gtk-3.0/gtk.css
 share/themes/LowContrast/index.theme
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastInverse 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrast 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/HighContrast 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/HighContrastInverse 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/LowContrast 2>/dev/null || true

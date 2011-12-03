@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/19 14:43:16 ajacoutot Exp $
-@unexec rm -f %D/share/icons/Rodent/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.11 2011/12/03 19:13:18 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/Rodent/icon-theme.cache
 lib/pkgconfig/
 lib/pkgconfig/xfce4-icon-theme-1.0.pc
 share/icons/
@@ -1632,4 +1632,4 @@ share/icons/Rodent/scalable/stock/volume-zero.svg
 share/xfce4/
 share/xfce4/mime/
 share/xfce4/mime/Rodent.mime.xml
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Rodent 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Rodent 2>/dev/null || true

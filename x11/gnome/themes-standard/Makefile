@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/03 19:13:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
 GNOME_VERSION=		3.2.1
-REVISION=		2
+REVISION=		3
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,6 +27,8 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		x11/gtk+3 \
 			x11/gnome/librsvg
+
+MODGNOME_ICON_CACHE=	Yes
 
 # As explained here:
 # https://mail.gnome.org/archives/desktop-devel-list/2011-March/msg00017.html

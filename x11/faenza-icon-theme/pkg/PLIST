@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/17 15:47:59 dcoppa Exp $
-@unexec rm -f %D/share/icons/Faenza/icon-theme.cache
-@unexec rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
-@unexec rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
-@unexec rm -f %D/share/icons/Faenza-Darker/icon-theme.cache
-@unexec rm -f %D/share/icons/Faenza-Darkest/icon-theme.cache
-@unexec rm -f %D/share/icons/Faenza-Radiance/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.2 2011/12/03 19:13:18 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/Faenza/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Faenza-Darker/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Faenza-Darkest/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Faenza-Radiance/icon-theme.cache
 share/icons/Faenza/
 share/icons/Faenza-Ambiance/
 share/icons/Faenza-Ambiance/index.theme
@@ -29105,9 +29105,9 @@ share/icons/Faenza/stock/scalable/stock_new-meeting.svg
 share/icons/Faenza/stock/scalable/stock_people.svg
 share/icons/Faenza/stock/scalable/stock_person-panel.svg
 share/icons/Faenza/stock/scalable/stock_person.svg
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza-Ambiance 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza-Dark 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza-Darker 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza-Darkest 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Faenza-Radiance 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Ambiance 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Dark 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Darker 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Darkest 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Radiance 2>/dev/null || true
