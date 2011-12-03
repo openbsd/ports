@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.27 2011/11/28 12:32:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.28 2011/12/03 18:35:11 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
@@ -4965,7 +4965,7 @@ ${SCHEMAS_INSTDIR}/evolution-bogofilter.schemas
 ${SCHEMAS_INSTDIR}/evolution-mail.schemas
 ${SCHEMAS_INSTDIR}/evolution-spamassassin.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

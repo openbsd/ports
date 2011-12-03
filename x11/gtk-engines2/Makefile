@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/12/03 18:35:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.20.2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -31,7 +31,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gdk_pixbuf-2.0 gthread-2.0 gtk-x11-2.0
 
 LIB_DEPENDS=	x11/gtk+2
-RUN_DEPENDS=	x11/hicolor-icon-theme
 
 MODULES=		devel/gettext \
 			x11/gnome

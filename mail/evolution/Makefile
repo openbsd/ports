@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2011/11/28 12:32:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2011/12/03 18:35:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.2.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-plugins=	1
 
 # Only get the first x.y which is needed in the PLIST.
@@ -98,9 +98,7 @@ BUILD_DEPENDS=		devel/bison \
 			devel/gsettings-desktop-schemas
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			x11/hicolor-icon-theme \
 			x11/gnome/icon-theme \
-			${MODGNOME_RUN_DEPENDS_yelp} \
 			devel/gsettings-desktop-schemas
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			databases/evolution-data-server>=3.2.2 \
@@ -123,6 +121,7 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison

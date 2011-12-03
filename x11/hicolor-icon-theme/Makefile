@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/19 14:43:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/03 18:35:11 ajacoutot Exp $
 
 COMMENT=		fallback theme of the icon theme specification
 
 DISTNAME=		hicolor-icon-theme-0.12
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.116 2011/12/03 18:35:11 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -83,7 +83,7 @@ WANTLIB-main = ${WANTLIB}
 
 RUN_DEPENDS-main = \
 	${RUN_DEPENDS} \
-	x11/hicolor-icon-theme \
+	x11/gtk+2,-guic \
 	devel/desktop-file-utils
 
 LIB_DEPENDS-cups = \
@@ -93,7 +93,7 @@ LIB_DEPENDS-cups = \
 
 WANTLIB-cups = ${WANTLIB}
 
-REVISION-main = 14
+REVISION-main = 15
 REVISION-cups = 8
 WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \

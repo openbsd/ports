@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2011/12/03 18:35:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
 
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=		lang/lua \
 			www/webkit>=1.6.1v0
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			x11/hicolor-icon-theme
+			x11/gtk+2,-guic
 
 FAKE_FLAGS=		htmldocdir="${PREFIX}/share/doc/liferea/html"
 
