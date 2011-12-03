@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.4 2010/12/12 06:04:20 ajacoutot Exp $
---- src/Makefile.in.orig	Fri Nov 26 23:52:30 2010
-+++ src/Makefile.in	Sun Dec 12 06:54:13 2010
-@@ -329,7 +329,7 @@ clean-binPROGRAMS:
+$OpenBSD: patch-src_Makefile_in,v 1.5 2011/12/03 08:19:08 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Nov 23 20:32:28 2011
++++ src/Makefile.in	Sat Dec  3 08:59:27 2011
+@@ -353,7 +353,7 @@ clean-binPROGRAMS:
  	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
  freedroidRPG$(EXEEXT): $(freedroidRPG_OBJECTS) $(freedroidRPG_DEPENDENCIES) 
  	@rm -f freedroidRPG$(EXEEXT)
