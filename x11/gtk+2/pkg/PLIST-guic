@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-guic,v 1.1 2011/12/03 18:30:41 ajacoutot Exp $
+@conflict gtk+2-<2.24.8p0
+@unexec rm -f %D/share/icons/hicolor/icon-theme.cache
+@bin bin/gtk-update-icon-cache
+@exec /usr/bin/find %D/share/icons -type d -maxdepth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || true

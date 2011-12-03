@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2011/05/19 14:30:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2011/12/03 18:30:41 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 @unexec-delete rm -f ${SYSCONFDIR}/gtk-2.0/gtk.immodules
 bin/gtk-builder-convert
 @bin bin/gtk-demo
 @bin bin/gtk-query-immodules-2.0
-@bin bin/gtk-update-icon-cache
 include/gail-1.0/
 include/gail-1.0/gail/
 include/gail-1.0/gail/gailwidget.h
@@ -634,4 +633,3 @@ share/themes/Raleigh/gtk-2.0/
 share/themes/Raleigh/gtk-2.0/gtkrc
 @sample ${SYSCONFDIR}/gtk-2.0/
 @exec %D/bin/gtk-query-immodules-2.0 > ${SYSCONFDIR}/gtk-2.0/gtk.immodules
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

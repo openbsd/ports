@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.138 2011/11/10 19:41:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2011/12/03 18:30:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
+COMMENT-guic=	gtk+ icon theme caching utility
 
 V=		2.24.8
 DISTNAME=	gtk+-${V}
@@ -12,6 +13,11 @@ DISTNAME=	gtk+-${V}
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
+PKGNAME-guic=	gtk-update-icon-cache-${V}
+
+REVISION-main=	0
+REVISION-cups=	0
+REVISION-docs=	0
 
 CATEGORIES=	x11 devel
 
@@ -29,20 +35,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender cairo expat fontconfig freetype
-WANTLIB += gthread-2.0 m pcre pixman-1 pthread-stubs xcb ffi
-WANTLIB += xcb-render z gdk_pixbuf-2.0 GL Xxf86vm drm xcb-shm stdc++
+WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pcre png z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=	.tar.bz2
 
-MULTI_PACKAGES=	-main -docs -cups
+MULTI_PACKAGES=	-main -docs -cups -guic
 
 MODULES=	devel/gettext \
 		lang/python
 
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
+		${BASE_PKGPATH},-guic \
 		x11/hicolor-icon-theme \
 		misc/shared-mime-info
 
@@ -54,8 +59,13 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
-WANTLIB-main += png
+WANTLIB-main += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-main += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
+WANTLIB-main += fontconfig freetype pixman-1 pthread-stubs stdc++ xcb
+WANTLIB-main += xcb-render xcb-shm png
 
+# python is only used by gtk-builder-convert, so let's not enforce the
+# dependency
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
@@ -66,7 +76,7 @@ RUN_DEPENDS-docs= # empty
 WANTLIB-docs +=	# empty
 PKG_ARCH-docs=	*
 
-RUN_DEPENDS-cups= # empty
+RUN_DEPENDS-cups= ${RUN_DEPENDS}
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups \
 		STEM->=${V}:${BASE_PKGPATH},-main
@@ -74,6 +84,16 @@ WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png
 WANTLIB-cups += ssl cups gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB-cups += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-cups += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
+WANTLIB-cups += fontconfig freetype pixman-1 pthread-stubs stdc++ xcb
+WANTLIB-cups += xcb-render xcb-shm
+
+RUN_DEPENDS-guic= ${RUN_DEPENDS} \
+		x11/hicolor-icon-theme
+LIB_DEPENDS-guic= graphics/gdk-pixbuf2
+WANTLIB-guic += ${WANTLIB}
+WANTLIB-guic += c pthread
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -87,8 +107,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--enable-introspection \
-		--enable-man=no \
-		--with-xinput=yes \
+		--with-xinput \
+		--disable-man \
 		--disable-papi
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+2
