@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/28 08:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/03 23:04:36 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-2.0/
 include/gtranslator-2.0/gtranslator/
@@ -324,8 +324,8 @@ share/pixmaps/gtranslator/oo-logo.png
 share/pixmaps/gtranslator/open-tran.png
 share/pixmaps/gtranslator/suse.png
 share/pixmaps/gtranslator/xfce.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database

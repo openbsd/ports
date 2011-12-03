@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/14 07:00:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =	html help viewer
 
 DISTNAME =	chmsee-1.2.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES =	textproc x11
 
@@ -31,7 +31,8 @@ MODULES =	devel/cmake \
 BUILD_DEPENDS =	devel/xulrunner/1.9,-devel
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/xulrunner/1.9
+		devel/xulrunner/1.9 \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS =	devel/nspr \
 		devel/chmlib \

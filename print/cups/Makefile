@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,7 @@ VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	print sysutils
 
@@ -47,7 +47,8 @@ BUILD_DEPENDS=	devel/xdg-utils \
 		${MODGNU_AUTOCONF_DEPENDS}
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/xdg-utils
+		devel/xdg-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff \

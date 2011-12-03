@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2011/12/03 23:04:37 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
 DOC_VERSION = 	2.2.0
 
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0
@@ -56,6 +56,7 @@ MODULES =	devel/gettext \
 		devel/gconf2
 
 MODGNOME_DESKTOP_FILE =	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_TOOLS= 	yelp
 

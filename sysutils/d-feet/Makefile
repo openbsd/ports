@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/14 19:16:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
 MODPY_EGG_VERSION=	0.1.14
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
 CATEGORIES=		sysutils x11
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/DFeet/
 
@@ -23,7 +24,8 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=		x11/py-gtk2
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus-python \
-			x11/py-gtk2
+			x11/py-gtk2 \
+			x11/gtk+2,-guic
 
 NO_REGRESS=		Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/03 23:04:36 ajacoutot Exp $
 
 COMMENT =		guitar tab editor
 
 DISTNAME =		kguitar-0.5.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES =		multimedia kde
 
@@ -28,6 +28,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/gettext \
 			x11/kde
 LIB_DEPENDS =		x11/kde/libs3
+RUN_DEPENDS =		x11/gtk+2,-guic
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

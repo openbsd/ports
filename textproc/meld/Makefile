@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
 GNOME_VERSION=	1.5.2
 GNOME_PROJECT=	meld
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc x11
 
@@ -26,6 +26,7 @@ RUN_DEPENDS=	x11/py-gtk2
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 SUBST_VARS+=	MODPY_SITEPKG
 CONFIGURE_STYLE=none

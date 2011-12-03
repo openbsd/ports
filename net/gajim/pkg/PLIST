@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/11/10 08:04:15 pea Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/12/03 23:04:36 ajacoutot Exp $
 bin/gajim
 bin/gajim-history-manager
 bin/gajim-remote
@@ -1419,5 +1419,5 @@ share/locale/uk/LC_MESSAGES/gajim.mo
 share/locale/zh_CN/LC_MESSAGES/gajim.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

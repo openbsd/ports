@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-4.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	productivity x11
 
@@ -35,7 +35,8 @@ LIB_DEPENDS =	x11/gtk+2 \
 		devel/libofx 
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
 
 USE_GMAKE =	Yes
 

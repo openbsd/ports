@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
+REVISION =		0
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -40,7 +41,8 @@ RUN_DEPENDS =		devel/py-dateutil \
 			www/py-CherryPy \
 			www/py-mechanize \
 			x11/py-qt4>=4.8.2p1 \
-			www/py-mechanize
+			www/py-mechanize \
+			x11/gtk+2,-guic
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 CFLAGS +=		"-I${LOCALBASE}/include"

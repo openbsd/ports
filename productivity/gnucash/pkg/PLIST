@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/08/29 21:00:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/12/03 23:04:36 ajacoutot Exp $
 @conflict gnucash-docs-<=2.2.0
 @pkgpath productivity/gnucash-docs
 bin/gnc-fq-check
@@ -1227,7 +1227,7 @@ share/xml/gnucash/xsl/gnucash-gnccustomer-vcard2.xsl
 share/xml/gnucash/xsl/gnucash-std.xsl
 share/xml/gnucash/xsl/string.xsl
 share/xml/gnucash/xsl/vcard-gnccustomer.pl
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

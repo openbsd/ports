@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/31 18:35:02 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/03 23:04:36 ajacoutot Exp $
 @bin bin/kguitar
 ${KDE}/libkguitarpart.a
 ${KDE}/libkguitarpart.la
@@ -88,7 +88,7 @@ share/locale/it/LC_MESSAGES/kguitar.mo
 share/locale/ru/LC_MESSAGES/kguitar.mo
 share/mimelnk/application/x-kguitar.desktop
 share/services/kguitar_part.desktop
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true

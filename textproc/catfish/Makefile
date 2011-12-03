@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =	versatile file searching tool
 
 DISTNAME =	catfish-0.3.2
-REVISION=	4
+REVISION=	5
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html
@@ -25,7 +25,8 @@ USE_GMAKE=	Yes
 RUN_DEPENDS =	x11/py-gtk2 \
 		x11/dbus-python \
 		devel/desktop-file-utils \
-		devel/py-xdg
+		devel/py-xdg \
+		x11/gtk+2,-guic
 
 # nothing in the dep chain provides librsvg, so explicitely depend on it
 # so that the icon is correctly displayed

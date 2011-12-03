@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2011/10/10 17:17:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2011/12/03 23:04:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-main=	0
+REVISION-main=	1
 REVISION-libpurple= 0
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
@@ -61,7 +61,8 @@ BUILD_DEPENDS=		x11/dbus-python
 LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS-main=	x11/dbus-python \
 			x11/py-gtk2 \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
 RUN_DEPENDS-finch=	# empty

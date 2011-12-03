@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =	labels and business card designer
 
 GNOME_PROJECT =	glabels
 GNOME_VERSION =	3.0.0
 
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	productivity graphics
 
@@ -47,7 +47,8 @@ LIB_DEPENDS =	x11/gtk+3 \
 RUN_DEPENDS =	misc/shared-mime-info
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE =		Yes
+MODGNOME_DESKTOP_FILE =	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_STYLE =	gnu
 

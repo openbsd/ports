@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-REVISION=		2
+REVISION=		3
 EPOCH=			0
 
 CATEGORIES=     	net
@@ -47,6 +47,7 @@ MODULES=	devel/gconf2 \
 MODGCONF2_SCHEMAS_DIR=	twitux
 
 MODGNOME_TOOLS= 	yelp
+MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-dbus=yes \

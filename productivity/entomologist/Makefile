@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-0.6
-REVISION=		0
+REVISION=	1
 CATEGORIES =	productivity
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =	x11/qt4
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/qt4,-sqlite \
-		x11/gtk+2
+		x11/gtk+2 \
+		x11/gtk+2,-guic
 WANTLIB +=	QtGui QtNetwork QtSql QtXml c m pthread stdc++
 
 MAKE_FLAGS =	CXX=${CXX} \

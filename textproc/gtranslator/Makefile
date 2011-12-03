@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/03 23:04:37 ajacoutot Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -9,7 +9,7 @@ COMMENT=	gettext(1) files editor for GNOME
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.13
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	textproc devel
 
@@ -51,6 +51,7 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		devel/json-glib
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu

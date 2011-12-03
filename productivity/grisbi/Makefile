@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/04 12:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
 DISTNAME=	grisbi-0.8.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	productivity x11
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2 \
 		devel/libofx
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

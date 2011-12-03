@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/08 18:17:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=	graphical hard drive inspection tool (smartctl front-end)
 
 DISTNAME=	gsmartcontrol-0.8.6
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 CATEGORIES=	sysutils x11
 
@@ -28,7 +29,8 @@ MASTER_SITES=	${MASTER_SITE_BERLIOS:=gsmartcontrol/}
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	devel/desktop-file-utils \
-		sysutils/smartmontools
+		sysutils/smartmontools \
+		x11/gtk+2,-guic
 LIB_DEPENDS=	x11/gtk2mm
 
 CONFIGURE_STYLE=	gnu

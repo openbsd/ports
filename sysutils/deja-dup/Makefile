@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/21 18:14:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/12/03 23:04:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,8 @@ COMMENT=	simple encrypted backup tool for GNOME
 V=		20.2
 DISTNAME=	deja-dup-${V}
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -38,6 +40,7 @@ MODULES=	devel/dconf \
 
 MODGNOME_TOOLS=	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

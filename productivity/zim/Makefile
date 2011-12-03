@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 11:13:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT =		desktop wiki
 
 MODPY_EGG_VERSION =	0.52
 DISTNAME =		zim-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity
 
@@ -28,6 +28,7 @@ BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS =		x11/py-gtk2 \
 			devel/py-gobject \
 			devel/py-xdg \
-			devel/xdg-utils
+			devel/xdg-utils \
+			x11/gtk+2,-guic
 
 .include <bsd.port.mk>

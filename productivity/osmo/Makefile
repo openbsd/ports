@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/03 23:04:37 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	5
+REVISION=	6
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -35,7 +35,8 @@ LIB_DEPENDS=	security/libgringotts \
 		textproc/gtkspell \
 		x11/gtk+2
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
