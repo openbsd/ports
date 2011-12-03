@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/21 07:26:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/03 12:49:11 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -38,6 +38,15 @@ CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
 USE_GMAKE =		yes
 USE_LIBTOOL =		yes
 LIBTOOL_FLAGS =		--tag=disable-static
+
+pre-configure:
+	perl -pi -e 's,-Wextra,,g;' \
+		-e 's,-Wno-missing-field-initializers,,g;' \
+	${WRKSRC}/Makefile.in ${WRKSRC}/agent/Makefile.in \
+	${WRKSRC}/nice/Makefile.in ${WRKSRC}/random/Makefile.in \
+	${WRKSRC}/socket/Makefile.in ${WRKSRC}/stun/Makefile.in \
+	${WRKSRC}/stun/tests/Makefile.in ${WRKSRC}/stun/tools/Makefile.in \
+	${WRKSRC}/tests/Makefile.in
 
 post-configure:
 	perl -pi -e 's,/bin/bash,/bin/sh,' \
