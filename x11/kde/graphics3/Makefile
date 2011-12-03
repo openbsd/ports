@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2011/12/03 23:37:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2011/12/03 23:43:04 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -53,7 +53,8 @@ RUN_DEPENDS-kpov =	graphics/povray \
 LIB_DEPENDS-kamera = 	${LIB_DEPENDS} \
 			graphics/libgphoto2
 
-RUN_DEPENDS-sane =	devel/desktop-file-utils
+RUN_DEPENDS-sane =	devel/desktop-file-utils \
+			x11/gtk+2,-guic
 LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 			graphics/sane-backends
 
@@ -65,7 +66,7 @@ WANTLIB-sane =		${WANTLIB}
 REVISION-main = 12
 REVISION-kamera = 6
 REVISION-kpov = 6
-REVISION-sane = 8
+REVISION-sane = 9
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
