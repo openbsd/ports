@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/17 06:41:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/03 19:38:09 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.2.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -43,6 +43,7 @@ RUN_DEPENDS=	devel/py-gobject3
 BUILD_DEPENDS=	devel/py-gobject3
 
 MODGNOME_TOOLS= vala
+MODGNOME_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gnome/seed \

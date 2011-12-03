@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/03 19:38:09 ajacoutot Exp $
 
 COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.6.1
 GNOME_PROJECT=	giggle
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel x11
 
@@ -38,6 +38,7 @@ LIB_DEPENDS=	x11/gtksourceview3
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-evolution-data-server
 

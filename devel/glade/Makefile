@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/12/03 19:38:09 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_VERSION=	3.10.2
 GNOME_PROJECT= 	glade
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=	x11/gnome/devhelp \
 		devel/py-gobject3
 
 MODGNOME_DESKTOP_FILE= 	Yes
-
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_STYLE=	gnu

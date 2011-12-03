@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/26 14:30:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/12/03 19:38:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.20
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	devel
 
@@ -39,7 +39,8 @@ WANTLIB += xcb-render xcb-shm z ffi
 
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/vte
+		devel/vte \
+		x11/gtk+2,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/03 19:38:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	2
+REVISION=	3
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -51,7 +51,8 @@ WANTLIB +=	bz2>=10 wx_base>=1 wx_base_net wx_base_odbc wx_base_xml \
 		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info>=0.21
+		misc/shared-mime-info>=0.21 \
+		x11/gtk+2,-guic
 
 MODULES=	devel/gettext
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2011/11/21 14:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/12/03 19:38:09 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	3.0.1
+REVISION=	0
 
 CATEGORIES=	devel x11
 
@@ -36,6 +37,7 @@ RUN_DEPENDS=	devel/gconf2,-polkit
 
 USE_GROFF=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= yelp
 MODGCONF2_SCHEMAS_DIR=	gconf-editor
 
