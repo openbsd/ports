@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/11/14 22:33:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/12/03 22:17:16 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -6,6 +6,7 @@ COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		3.2.2
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -27,6 +28,7 @@ RUN_DEPENDS=		x11/gnome/py-atspi>=2.2.0 \
 			devel/liblouis
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ENV=		DATADIRNAME=share

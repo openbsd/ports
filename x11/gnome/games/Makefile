@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/11/17 11:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2011/12/03 22:17:15 ajacoutot Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -7,7 +7,7 @@ COMMENT=		collection of games for the GNOME desktop
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 
@@ -50,7 +50,8 @@ REGRESS_DEPENDS=	devel/check
 
 MODGNOME_TOOLS= 	goi yelp
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games
 
 CONFIGURE_ARGS+= 	--localstatedir="/var" \

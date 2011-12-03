@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/12/03 22:17:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.91.6
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	8
+REVISION=	9
 
 # XXX until we have a stable 3.X release
 MASTER_SITES=	http://distfiles.bsdfrog.org/
@@ -47,6 +47,7 @@ MODULES=	devel/gettext \
 
 MODGNOME_TOOLS=		yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse-plugins
 
 LIBTOOL_FLAGS=	--tag=disable-static

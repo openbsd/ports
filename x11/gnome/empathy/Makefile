@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2011/11/14 17:46:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2011/12/03 22:17:15 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.2.2
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -63,6 +64,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 #RUN_DEPENDS+=		net/telepathy/telepathy-butterfly
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS+=	--enable-spell=Yes \

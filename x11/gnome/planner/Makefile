@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.5
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		productivity
 
@@ -45,7 +45,8 @@ LIB_DEPENDS=		x11/gnome/libbonoboui \
 			${MODPY_LIB_DEPENDS}
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	planner
 
 CONFIGURE_ARGS+= 	--disable-update-mimedb \

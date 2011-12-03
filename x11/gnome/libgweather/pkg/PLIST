@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/10/24 17:44:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/12/03 22:17:16 ajacoutot Exp $
 @conflict gnome-applets2-<=2.22.0
 include/libgweather-3.0/
 include/libgweather-3.0/libgweather/
@@ -636,5 +636,5 @@ share/locale/zh_TW/LC_MESSAGES/libgweather-3.0.mo
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gweather.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/29 13:14:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
 GNOME_VERSION=		1.20.1
+REVISION=		0
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 
@@ -41,6 +42,7 @@ WANTLIB += xml2 xslt z
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 BUILD_DEPENDS=		databases/postgresql,-server \
 			devel/iso-codes \

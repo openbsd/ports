@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/11/14 23:07:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/12/03 22:17:15 ajacoutot Exp $
 @bin bin/eog
 include/eog-3.0/
 include/eog-3.0/eog/
@@ -1513,8 +1513,8 @@ share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_HK/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
 share/locale/zu/LC_MESSAGES/eog.mo
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.14 2011/10/26 22:31:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.15 2011/12/03 22:17:16 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -523,5 +523,5 @@ share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml
 share/pixmaps/gda-browser-${GDA_MAJOR}.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

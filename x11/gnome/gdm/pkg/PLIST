@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2011/10/20 07:23:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2011/12/03 22:17:15 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -355,8 +355,8 @@ ${SCHEMAS_INSTDIR}/gdm-simple-greeter.schemas
 @sample /var/gdm/
 @mode
 @group
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/dconf update

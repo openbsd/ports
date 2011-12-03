@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/11/29 13:14:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/12/03 22:17:16 ajacoutot Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 include/glom-${API_V}/
@@ -630,8 +630,8 @@ share/omf/glom/glom-es.omf
 share/omf/glom/glom-fr.omf
 share/omf/glom/glom-sl.omf
 share/omf/glom/glom-sv.omf
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database

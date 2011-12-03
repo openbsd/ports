@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/03 22:17:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		binary editor
 
 GNOME_PROJECT=		ghex
 GNOME_VERSION=		3.0.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gtkhex-3                  0.0 # 0.0
 
@@ -33,6 +33,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.101 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -59,7 +59,8 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			textproc/exempi
 
 MODGNOME_TOOLS= 	goi
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 USE_GROFF=		Yes
 

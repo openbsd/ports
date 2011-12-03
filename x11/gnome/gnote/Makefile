@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/04 09:59:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/03 22:17:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.8.1
-REVISION=		1
+REVISION=		2
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -39,6 +39,7 @@ LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 

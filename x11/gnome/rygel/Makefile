@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.12.5
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		multimedia
 
@@ -38,6 +38,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		net/gupnp/vala>=0.10.0
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	vala
 
 CONFIGURE_ARGS+=	--enable-mpris-plugin \

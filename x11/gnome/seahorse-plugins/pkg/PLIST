@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/12/03 22:17:17 ajacoutot Exp $
 @bin bin/seahorse-preferences
 @bin bin/seahorse-tool
 @comment lib/nautilus/extensions-3.0/libnautilus-seahorse.la
@@ -192,5 +192,5 @@ share/seahorse-plugins/ui/seahorse-progress.xml
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

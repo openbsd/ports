@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2011/11/14 11:17:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.2.2
+REVISION=		0
 
 CATEGORIES=		security
 
@@ -38,6 +39,7 @@ MODULES=		devel/gettext \
 			devel/dconf
 
 MODGNOME_TOOLS= 	yelp
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS=		--enable-hkp \

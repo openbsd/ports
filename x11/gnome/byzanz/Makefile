@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/04 09:56:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/03 22:17:15 ajacoutot Exp $
 
 COMMENT=		simple desktop recording tool
 
 # git clone of b5a46ddca3b2b207f7f6ba444f9e0f02dc23128e
 GNOME_VERSION=		0.2.3.1
 GNOME_PROJECT=		byzanz
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		multimedia
 
@@ -34,6 +34,7 @@ LIB_DEPENDS=		x11/gnome/panel>=3.0.0 \
 			multimedia/gstreamer-0.10/plugins-base
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
+MODGNOME_ICON_CACHE=	Yes
 
 #
 # Remove this and patch-configure_ac when updating to

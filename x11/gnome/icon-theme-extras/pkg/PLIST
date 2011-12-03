@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/12 07:28:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/03 22:17:16 ajacoutot Exp $
 share/icons/gnome/16x16/devices/computer-apple-ipad.png
 share/icons/gnome/16x16/devices/drive-harddisk-ieee1394.png
 share/icons/gnome/16x16/devices/drive-harddisk-system.png
@@ -117,5 +117,5 @@ share/icons/gnome/48x48/mimetypes/application-x-blender.png
 share/icons/gnome/48x48/mimetypes/application-x-cd-image.png
 share/icons/gnome/48x48/mimetypes/application-x-mono-develop-xib.png
 share/icons/gnome/48x48/mimetypes/text-x-opml+xml.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true

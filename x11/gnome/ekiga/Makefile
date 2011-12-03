@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/10/29 08:37:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/12/03 22:17:15 ajacoutot Exp $
 
 BROKEN=		WIP (see ajacoutot@)
 
@@ -8,7 +8,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.3.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net multimedia
 
@@ -52,6 +52,7 @@ CFLAGS +=	-fexceptions
 MODGCONF2_SCHEMAS_DIR= ekiga
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 #MODGNOME_TOOLS=	yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
 

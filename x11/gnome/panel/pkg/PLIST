@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.46 2011/09/26 11:14:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.47 2011/12/03 22:17:16 ajacoutot Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -568,8 +568,8 @@ share/omf/fish/fish-zh_CN.omf
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/clock.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/17 11:42:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/03 22:17:16 ajacoutot Exp $
 
-COMMENT=		interfaces for interacting with online accounts
+COMMENT=	interfaces for interacting with online accounts
 
-GNOME_PROJECT=		gnome-online-accounts
-GNOME_VERSION=		3.2.1
+GNOME_PROJECT=	gnome-online-accounts
+GNOME_VERSION=	3.2.1
+REVISION=	0
 
 SHARED_LIBS +=  goa-1.0              0.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      0.0      # .0.0
 
-HOMEPAGE=		https://live.gnome.org/OnlineAccounts
+HOMEPAGE=	https://live.gnome.org/OnlineAccounts
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,6 +39,7 @@ LIB_DEPENDS=		devel/json-glib \
 			www/webkit,gtk3>=1.6.1v0
 
 MODGNOME_TOOLS= 	goi
+MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=		--localstatedir=/var
 

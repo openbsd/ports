@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
 GNOME_VERSION=		3.2.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://projects.gnome.org/gnome-power-manager/
 
@@ -19,6 +19,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

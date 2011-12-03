@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/12/03 22:17:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		3.2.1
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -39,7 +39,8 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-utils
 
 CONFIGURE_ARGS+=	--with-grep="/usr/bin/grep" \

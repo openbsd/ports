@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/11/21 15:21:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/12/03 22:17:15 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -1816,10 +1816,10 @@ share/pixmaps/anjuta/vcs-ignored.png
 share/pixmaps/anjuta/vcs-modified.png
 share/pixmaps/anjuta/vcs-unversioned.png
 share/pixmaps/anjuta/vcs-updated.png
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database

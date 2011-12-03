@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/09/12 07:28:55 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/12/03 22:17:17 ajacoutot Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
@@ -549,8 +549,8 @@ share/totem/properties.ui
 share/totem/totem.ui
 share/totem/uri.ui
 share/totem/video-list.ui
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

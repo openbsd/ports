@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.91.2
-REVISION=	8
+REVISION=	9
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -38,8 +38,9 @@ LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
 		x11/gtk+3
 
 MODGNOME_TOOLS= yelp
-MODGNOME_DESKTOP_FILE=		Yes
-MODGCONF2_SCHEMAS_DIR=		gnome-media
+MODGNOME_ICON_CACHE=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGCONF2_SCHEMAS_DIR=	gnome-media
 
 # XXX libcanberra-gtk3 is needed to build the sound-theme which we
 # remove because it's already shipped by gnome-control-center and would

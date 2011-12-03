@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2011/11/22 15:03:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2011/12/03 22:17:15 ajacoutot Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -8,6 +8,8 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.2.1.1
+
+REVISION=		0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -56,6 +58,7 @@ MODULES=		devel/gettext \
 MODGCONF2_SCHEMAS_DIR=	gdm
 
 MODGNOME_TOOLS= 	yelp
+MODGNOME_ICON_CACHE=	Yes
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib

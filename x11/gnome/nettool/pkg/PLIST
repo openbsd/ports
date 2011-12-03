@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/03 22:17:16 ajacoutot Exp $
 @bin bin/gnome-nettool
 share/applications/gnome-nettool.desktop
 share/glib-2.0/schemas/org.gnome.gnome-nettool.gschema.xml
@@ -169,8 +169,8 @@ share/omf/gnome-nettool/gnome-nettool-sv.omf
 share/omf/gnome-nettool/gnome-nettool-uk.omf
 share/omf/gnome-nettool/gnome-nettool-vi.omf
 share/omf/gnome-nettool/gnome-nettool-zh_CN.omf
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

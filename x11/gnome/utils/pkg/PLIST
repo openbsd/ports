@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2011/10/18 15:14:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.31 2011/12/03 22:17:17 ajacoutot Exp $
 @conflict gnome-control-center-<3.2.0
 @bin bin/baobab
 @bin bin/gnome-dictionary
@@ -868,7 +868,7 @@ share/thumbnailers/
 share/thumbnailers/gnome-font-viewer.thumbnailer
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

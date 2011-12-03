@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/10/18 06:07:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/12/03 22:17:16 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gcr-viewer
 bin/gnome-keyring
@@ -271,8 +271,8 @@ share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 share/mime/packages/gcr-crypto-types.xml
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/12/03 22:17:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.14
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -39,8 +39,9 @@ LIB_DEPENDS=	x11/gtksourceview \
 		devel/mpfr \
 		devel/vte
 
-MODGNOME_TOOLS= yelp
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -lgmp
 CONFIGURE_ARGS=	--disable-update-mimedb \

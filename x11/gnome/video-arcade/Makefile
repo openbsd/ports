@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/04 09:56:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/12/03 22:17:17 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.8.0
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	emulators games
 
@@ -40,8 +40,9 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/libwnck3 \
 		multimedia/gstreamer-0.10/core
 
-MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_TOOLS= yelp
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS=	--with-glade-catalog \
 		--with-wnck \

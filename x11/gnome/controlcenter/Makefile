@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/11/14 13:28:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2011/12/03 22:17:15 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -11,7 +11,7 @@ COMMENT=		GNOME control center
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.2
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -83,6 +83,7 @@ RUN_DEPENDS+=		sysutils/accountsservice \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 # Language code is synced with gdm but gnome-control-center does not
 # provide a --with-incomplete-locales configure switch.

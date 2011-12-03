@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/11/14 22:27:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/12/03 22:17:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		3.2.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		0
 
 CATEGORIES=		archivers
 
@@ -42,7 +44,7 @@ RUN_DEPENDS-main=	archivers/gcpio \
 			archivers/xz \
 			archivers/zip \
 			sysutils/cdrtools \
-			${MODGNOME_RUN_DEPENDS_yelp}
+			${RUN_DEPENDS}
 LIB_DEPENDS-main=	x11/gtk+3
 
 WANTLIB-nautilus=	${WANTLIB} nautilus-extension

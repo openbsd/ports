@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.201 2011/11/25 15:08:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.202 2011/12/03 22:17:17 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.1
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -60,7 +60,8 @@ RUN_DEPENDS+=	fonts/cantarell-fonts \
 		x11/gnome/backgrounds>=3 \
 		x11/gnome/themes-standard
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 MODGNOME_CPPFLAGS=-I${X11BASE}/include
 MODGNOME_LDFLAGS=-L${X11BASE}/lib

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=		serial terminal for GNOME
 
 GNOME_PROJECT=		moserial
 GNOME_VERSION=		3.0.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		comms
 
@@ -28,6 +28,7 @@ WANTLIB += z ffi stdc++
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 .include <bsd.port.mk>

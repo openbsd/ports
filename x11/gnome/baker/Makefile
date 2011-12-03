@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2011/11/04 09:56:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/12/03 22:17:15 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
 
-REVISION=		16
+REVISION=		17
 
 CATEGORIES=		sysutils multimedia
 
@@ -40,7 +40,8 @@ RUN_DEPENDS=		misc/cdrdao \
 			sysutils/cdrtools \
 			sysutils/dvd+rw-tools
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS+=	--disable-libnotify

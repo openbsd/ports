@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/11/16 19:25:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/12/03 22:17:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.2.2
-REVISION=	1
+REVISION=	2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -49,6 +49,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS+=	x11/gnome/icon-theme
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

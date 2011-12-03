@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/04 17:22:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
 GNOME_VERSION=	3.0.0
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	net
 
@@ -34,6 +34,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS= yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 .include <bsd.port.mk>

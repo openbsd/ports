@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/12/03 22:17:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
 GNOME_VERSION=	3.2.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -34,8 +34,9 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	x11/gtk+3 \
 		devel/libnotify
 
-MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
-MODGNOME_TOOLS= yelp
+MODGCONF2_SCHEMAS_DIR=	krb5-auth-dialog
+MODGNOME_TOOLS= 	yelp
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/krb5-auth-dialog/xdg/autostart \

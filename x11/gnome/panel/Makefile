@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2011/12/03 22:17:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.2.1
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	panel-applet-4            1.0 # 0.0
 
@@ -61,7 +61,8 @@ RUN_DEPENDS+=	x11/gnome/screensaver
 RUN_DEPENDS+=	x11/gnome/user-docs
 
 MODGNOME_TOOLS= goi yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d

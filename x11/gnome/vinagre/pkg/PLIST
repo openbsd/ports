@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/10/18 14:26:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/12/03 22:17:17 ajacoutot Exp $
 @bin bin/vinagre
 lib/vinagre-3.0/
 lib/vinagre-3.0/plugins/
@@ -251,8 +251,8 @@ share/telepathy/clients/Vinagre.client
 share/vinagre/
 share/vinagre/vinagre-ui.xml
 share/vinagre/vinagre.ui
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2011/11/14 10:59:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/12/03 22:17:16 ajacoutot Exp $
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.2.2
+
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                0.0      # 0.0
 SHARED_LIBS +=  gcr-3                1.0      # 1.0
@@ -27,6 +29,7 @@ MODULES=	devel/gettext \
 		devel/dconf
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 # only required during build for parsing ASN.1 files
 BUILD_DEPENDS=	security/libtasn1
