@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2011/10/19 12:59:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/12/03 18:45:02 ajacoutot Exp $
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	3.2.1.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 
@@ -18,15 +18,12 @@ MODULES=	x11/gnome
 
 BUILD_DEPENDS=	x11/icon-naming-utils>=0.8.90
 
-# Rational: except for QT/KDE ports, gtk+2 should already be in the
-# dependency chain for ports installing share/icons/ files (i.e. no need
-# to explicitely add it) and if we have svg icons without their png
-# counterpart and librsvg is not part of the dependency chain then we
-# explicitely add it.
+# If we have svg icons without their png counterpart and librsvg is not
+# part of the dependency chain then we explicitely add it.
 # gnome-icon-theme is the inherited theme for most icon themes so we
 # make sure we have gtk-update-icon-cache and can display svg icons.
-RUN_DEPENDS +=	x11/gtk+2 \
-		x11/gnome/librsvg
+MODGNOME_ICON_CACHE=	Yes
+RUN_DEPENDS +=		x11/gnome/librsvg
 
 PKG_ARCH=	*
 
