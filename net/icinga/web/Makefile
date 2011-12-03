@@ -1,20 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/03 15:01:38 sthen Exp $
 
 # Work in progress. Not yet linked to the build.
 
+V =		1.6.0
 COMMENT =	web UI for icinga
-V =		1.4.1
-REVISION =	1
 DISTNAME =	icinga-web-$V
 
 MODULES=	lang/php
 
-BUILD_DEPENDS =	icinga-api-$V:net/icinga/core,-api
 RUN_DEPENDS =	www/pear \
 		lang/php/${MODPHP_VERSION},-ldap \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
-		lang/php/${MODPHP_VERSION},-xsl \
-		icinga-api-$V:net/icinga/core,-api
+		lang/php/${MODPHP_VERSION},-xsl
 # Optional php extensions: gd soap xmlrpc
 # Does this work with pgo_pgsql? So far haven't worked out how.
 
@@ -22,9 +19,9 @@ MAKE_FLAGS =	PREFIX=/var/www/icinga-web
 FAKE_FLAGS =	CFGDIR=${TRUEPREFIX}/share/examples/icinga
 
 CONFIGURE_STYLE = gnu
+CONFIGURE_ENV +=  PHP="${MODPHP_BIN}"
 CONFIGURE_ARGS += \
 	--datarootdir=/var/www \
-	--with-icinga-api=/var/www/icinga-api \
 	--localstatedir=/var/icinga \
 	--sbindir=/var/www/cgi-bin/icinga \
 	--with-web-apache-path=/var/www/conf/modules.sample \

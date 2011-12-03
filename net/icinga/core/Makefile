@@ -1,21 +1,16 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/03 15:01:38 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
 COMMENT-ido =		store Icinga configuration and events in a database
-COMMENT-api =		database-backed API for icinga
 
 DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
-PKGNAME-api =		icinga-api-$V
 
-REVISION =		0
-
-MULTI_PACKAGES =	-main -cgi -api -ido
+MULTI_PACKAGES =	-main -cgi -ido
 PREFIX-cgi =		/var/www
-PREFIX-api =		/var/www
 
 WANTLIB =		c crypto m pthread ssl
 RUN_DEPENDS =		${BASE_PKGPATH},-main
@@ -30,8 +25,6 @@ RUN_DEPENDS-ido =	${BASE_PKGPATH},-main \
 			libdbi-drivers-mysql-*|libdbi-drivers-pgsql-*:databases/libdbi-drivers,-pgsql
 
 MODULES =		lang/php
-
-RUN_DEPENDS-api =	${MODPHP_RUN_DEPENDS}
 
 # the cgi binaries are linked -static to simplify use in chroot,
 # but listed as dependency anyway to help pkg_add -u find updates.
@@ -71,7 +64,7 @@ CFLAGS +=	-fPIC \
 CFGDIR =	${SYSCONFDIR}/icinga
 MAKE_FLAGS =	CFGDIR=${CFGDIR} SYSCONFDIR=${CFGDIR}
 INSTALL_TARGET = install-unstripped install-idoutils \
-		install-config install-webconf install-api
+		install-config install-webconf
 
 # perl tests work; C tests require --enable-libtap in configure and
 # fixing up WRKSRC/tap/configure
@@ -82,10 +75,9 @@ post-install:
 	${INSTALL_DATA_DIR} \
 	    ${PREFIX}/share/examples/icinga/db/{mysql,pgsql,queries,scripts}
 	cd ${WRKINST}${PREFIX-cgi}; \
-	mv ${WRKINST}${PREFIX-cgi}/icinga-cgi/icinga-api .; \
 	mv conf/modules.sample/icinga.conf \
 	    conf/modules.sample/icinga-cgi.conf.dist; \
-	chown -R ${SHAREOWN}:${SHAREGRP} icinga-api icinga-cgi conf
+	chown -R ${SHAREOWN}:${SHAREGRP} icinga-cgi conf
 	cd ${WRKSRC}/module/idoutils; \
 	pax -rw db ${PREFIX}/share/examples/icinga/
 
