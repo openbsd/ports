@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.23 2011/12/02 22:37:36 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.24 2011/12/03 18:02:39 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 2 2011 $
+.Dd $Mdocdate: December 3 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -45,7 +45,7 @@ with several cores.
 Its name is an acronym for
 .Sq distributed ports builder .
 .Nm
-walks ports to figure out dependencies, and starts building ports
+walks the ports tree to figure out dependencies, and starts building
 as soon as it can.
 .Pp
 On a clean machine,
@@ -54,12 +54,44 @@ will run with sensible defaults if used without options.
 Note, however, that it will produce logs, lock files, packages, and package
 installations.
 .Pp
+The file
+.Pa build.log
+.Po
+normally under
+.Pa ${PORTSDIR}/log/${ARCH}
+.Pc
+is of particular interest, as it contains build time summaries.
+After a full run of
+.Nm ,
+back-up or remove other logs, but keep the old
+.Pa build.log
+accessible, so that the next build can be primed with
+.Fl b Pa build.log
+in order to get a more efficient build that will focus on large ports first.
+.Pp
 .Nm
-can take
+can be restricted to a subset of the tree by giving it
 .Ar pkgpath ...
-to build as parameters, as
+to build as parameters, as per
 .Xr pkgpath 7
 specifications.
+.Pp
+.Nm
+supports
+.Sq hot-fixes :
+if a particular port errors out, it is possible to fix the problem, remove
+the corresponding lockfile, and
+.Nm
+will pick it up without needing to be stopped and restarted.
+.Pp
+In order to build on a cluster, the ports tree itself should be shared
+through NFS, including distfiles and built packages, but the WRKOBJDIR
+should be local to each machine.
+Option
+.Fl h Ar file
+is used to specify hosts to use,
+.Ar file
+can be as simple as a list of hosts to use, one host per line.
 .Pp
 Options are as follows:
 .Bl -tag -width pkgpathlonger
@@ -157,6 +189,10 @@ file can also define a start-up script, as
 STARTUP=path
 .Ed
 which will be run at start-up on each machine.
+There are no fine-grained options to control
+.Xr ssh 1
+options, as those can be specified through virtual host declarations in
+.Xr ssh_config 5 .
 .It Fl I Ar subdirlist
 List of
 .Xr pkgpath 7
