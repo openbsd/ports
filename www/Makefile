@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.534 2011/11/17 16:17:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.535 2011/12/03 12:52:49 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -28,7 +28,6 @@
      SUBDIR += clearsilver
      SUBDIR += cms-ms
      SUBDIR += cntlm
-     SUBDIR += community-id
      SUBDIR += concrete5
      SUBDIR += conkeror
      SUBDIR += cronolog
