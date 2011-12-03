@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.32 2011/12/02 22:33:46 espie Exp $
+# $OpenBSD: dpb,v 1.33 2011/12/03 11:01:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -393,6 +393,28 @@ sub handle_non_waiting_jobs
 	return $keep_going;
 }
 
+sub main_loop
+{
+	while (1) {
+		while (1) {
+			handle_non_waiting_jobs(0);
+			if (!DPB::Core->running &&
+			    (!$keep_going || !$state->engine->can_build)) {
+				$state->engine->check_buildable(0);
+				if (!$state->engine->can_build) {
+					last;
+				}
+			}
+			if (DPB::Core->running) {
+				DPB::Core->reap_wait;
+			}
+		}
+		if (!$state->opt('q') || !$state->engine->recheck_errors) {
+			last;
+		}
+	}
+}
+
 $state->{grabber} = DPB::Grabber->new($state, 
     sub { handle_non_waiting_jobs(1) });
 
@@ -402,7 +424,10 @@ if ($state->{all}) {
 	my $list = $state->engine->find_best($state->logger->logfile("dependencies"), 10);
 	# if we have them, list them before the full ports tree walk.
 	if (@$list > 0) {
-		my $actual = map {($_,1)} @$list;
+		my $actual = {};
+		for my $name (@$list) {
+			DPB::PkgPath->new($name)->add_to_subdirlist($actual);
+		}
 		$state->grabber->grab_subdirs($core, $actual);
 	}
 }
@@ -432,32 +457,13 @@ if ($state->{all}) {
 		DPB::Distfile->dump($state->{logger});
 	}
 }
-#$state->engine->dump($dump);
+
 $state->engine->check_buildable(1);
-#$state->engine->dump($dump);
 
 DPB::Core->start_clock($state->{display_timeout});
-while (1) {
-	while (1) {
-		handle_non_waiting_jobs(0);
-		if (!DPB::Core->running &&
-		    (!$keep_going || !$state->engine->can_build)) {
-			$state->engine->check_buildable(0);
-			if (!$state->engine->can_build) {
-				last;
-			}
-		}
-		if (DPB::Core->running) {
-			DPB::Core->reap_wait;
-		}
-	}
-	if (!$state->opt('q') || !$state->engine->recheck_errors) {
-		last;
-	}
-}
+main_loop();
 
 $reporter->reset;
 DPB::Core->cleanup;
 print $state->engine->report;
 $state->engine->end_dump($state->logger->open('dump'));
-#$state->engine->dump_category('tobuild', $state->logger->open('dump'));
