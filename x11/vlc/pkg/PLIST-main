@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/11/16 13:33:16 phessler Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/12/03 23:37:39 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -590,5 +590,5 @@ share/vlc/utils/video-vlc-default.sh
 share/vlc/vlc.ico
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/03 23:34:05 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, multimedia applications
 CATEGORIES =		x11 x11/kde
@@ -55,13 +55,14 @@ SAMPLECONFDIR =	${PREFIX}/share/apps/kde-conf-sample
 
 FAKE_FLAGS =	sysconfdir=${SAMPLECONFDIR}
 RUN_DEPENDS =	graphics/xanim \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 SEPARATE_BUILD =	flavored
 CONFIGURE_ARGS +=	--without-lame
 CONFIGURE_ENV +=	aktion_has_xanim=yes
 
-REVISION =	8
+REVISION =	9
 WANTLIB = FLAC>=8 ICE SM X11 Xau Xdmcp Xext Xrender Xv Xxf86dga Xxf86vm akode \
 	art_lgpl_2 audiofile c cdda_interface cdda_paranoia expat fam \
 	fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 gstreamer-0.10 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/22 19:38:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/03 23:34:05 ajacoutot Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -10,12 +10,14 @@ EXTRACT_SUFX=		.tar.gz
 LIB_DEPENDS=	x11/kde/libs3 \
 		x11/ogle
 
+RUN_DEPENDS=	x11/gtk+2,-guic
+
 CONFIGURE_ARGS+=--with-ogle-libs='${LOCALBASE}/lib/ogle -L${LOCALBASE}/lib'
 CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 MODULES=	x11/kde devel/gettext
 
-REVISION = 6
+REVISION = 7
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c dvdcontrol fam idn \
 	jpeg lib/kde3/DCOP lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m msgevents png \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2011/10/03 06:42:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/12/03 23:34:04 ajacoutot Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.4.0
 DISTNAME=		avant-window-navigator-$V
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	awn                  1.0      # .1.1
 
@@ -44,7 +44,8 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/bzr \
 			devel/py-xdg \
 			x11/dbus-python \
-			x11/py-gtk2
+			x11/py-gtk2 \
+			x11/gtk+2,-guic
 LIB_DEPENDS=		devel/libgtop2 \
 			devel/libexecinfo \
 			devel/libwnck \

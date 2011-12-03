@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2011/11/13 13:54:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2011/12/03 23:37:39 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -34,7 +34,8 @@ WANTLIB = ICE SM X11 Xext Xrender art_lgpl_2 idn jpeg \
 	stdc++ util xcb z
 
 RUN_DEPENDS-main =${RUN_DEPENDS} \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		openldap-client->=2,<3:databases/openldap \
@@ -46,7 +47,7 @@ LIB_DEPENDS-samba = ${LIB_DEPENDS} \
 		net/samba>=3
 
 
-REVISION-main =		15
+REVISION-main =		16
 WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	Xcursor Xdamage Xdamage Xfixes Xfixes Xft Xi Xinerama Xmu Xrandr Xss \
 	Xt Xtst Xxf86misc Xxf86vm Xxf86vm asn1 audiofile c com_err crypto drm \

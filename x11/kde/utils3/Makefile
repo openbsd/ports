@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2011/12/03 23:34:05 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, utilities
 CATEGORIES =		x11 x11/kde
@@ -13,7 +13,8 @@ SHARED_LIBS +=	ksimcore             2.0      # .1.0
 
 MODULES =	x11/kde devel/gettext
 
-RUN_DEPENDS +=	devel/desktop-file-utils
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 LIB_DEPENDS =	x11/kde/libs3 \
 		net/net-snmp \
 		devel/gmp \
@@ -24,7 +25,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 8
+REVISION = 9
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xi Xrender Xss Xtst art_lgpl_2 c crypto \
 	fam gdk glib gmodule gmp gtk idn jpeg kvm lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu \

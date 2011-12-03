@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2011/11/16 13:33:15 phessler Exp $
+# $OpenBSD: Makefile,v 1.138 2011/12/03 23:37:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,6 +14,8 @@ PKGNAME-web=	vlc-web-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION-main=	0
 
 SHARED_LIBS=	vlc	1.0 \
 		vlccore	1.0
@@ -77,7 +79,8 @@ LIB_DEPENDS-jack= ${LIB_DEPENDS} \
 LIB_DEPENDS-web=${LIB_DEPENDS} \
 		${BUILD_PKGPATH} \
 		devel/nspr
-RUN_DEPENDS-main= devel/desktop-file-utils
+RUN_DEPENDS-main= devel/desktop-file-utils \
+		x11/gtk+2,-guic
 RUN_DEPENDS-jack= ${BUILD_PKGPATH}
 RUN_DEPENDS-web= ${BUILD_PKGPATH}
 

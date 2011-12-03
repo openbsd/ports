@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/03 23:34:05 ajacoutot Exp $
 
 COMMENT =	desktop daemon to perform advanced window manipulations
 
 V =		0.2.4
 DISTNAME =	winwrangler-$V
-REVISION=	2
+REVISION=	3
 
 CATEGORIES =	x11
 
@@ -21,6 +21,8 @@ MASTER_SITES =	${HOMEPAGE}/0.2/$V/+download/
 MODULES =	devel/gettext
 
 USE_GMAKE =	Yes
+
+RUN_DEPENDS =	x11/gtk+2,-guic
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

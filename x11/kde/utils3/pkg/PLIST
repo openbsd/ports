@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/07/08 21:28:50 espie Exp $
+@comment $OpenBSD: PLIST,v 1.28 2011/12/03 23:34:04 ajacoutot Exp $
 @bin bin/ark
 @bin bin/irkick
 @bin bin/kcalc
@@ -620,9 +620,9 @@ share/servicetypes/kmilo/
 share/servicetypes/kmilo/kmilopluginsvc.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/crystalsvg 2> /dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/crystalsvg 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true

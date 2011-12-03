@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.77 2011/12/03 23:34:05 ajacoutot Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -11,12 +11,13 @@ SHARED_LIBS +=	smokekde             4.0      # .3.2
 
 MODULES =	x11/kde devel/gettext lang/ruby
 
-RUN_DEPENDS +=	devel/desktop-file-utils
+RUN_DEPENDS +=	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 LIB_DEPENDS =	x11/kde/libs3 \
 		x11/qt3 \
 		${MODRUBY_LIB_DEPENDS}
 
-REVISION =	16
+REVISION =	17
 #XXX missing -rpath to /usr/local ?
 USE_LIBTOOL =	gnu
 USE_GROFF =	Yes

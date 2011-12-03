@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/03 23:34:04 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-REVISION=	8
+REVISION=	9
 DISTNAME =	xarchiver-0.5.2
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
@@ -29,7 +29,8 @@ LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	archivers/zip \
 		archivers/unzip \
 		devel/xdg-utils \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
