@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_network_openssl_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
+$OpenBSD: patch-src_network_openssl_c,v 1.4 2011/12/03 22:26:08 sthen Exp $
 --- src/network_openssl.c.orig	Tue Aug 17 05:04:38 2010
-+++ src/network_openssl.c	Wed Aug 24 02:50:41 2011
++++ src/network_openssl.c	Fri Dec  2 04:44:24 2011
 @@ -27,10 +27,9 @@
  # include <openssl/ssl.h>
  # include <openssl/err.h>
@@ -37,7 +37,23 @@ $OpenBSD: patch-src_network_openssl_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
  
  			/**
  			 * SSL_write man-page
-@@ -139,6 +139,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
+@@ -87,7 +87,14 @@ int network_write_chunkqueue_openssl(server *srv, conn
+ 			 */
+ 
+ 			ERR_clear_error();
+-			if ((r = SSL_write(ssl, offset, toSend)) <= 0) {
++			r = SSL_write(ssl, offset, toSend);
++
++			if (con->renegotiations > 1 && con->conf.ssl_disable_client_renegotiation) {
++				log_error_write(srv, __FILE__, __LINE__, "s", "SSL: renegotiation initiated by client");
++				return -1;
++			}
++
++			if (r <= 0) {
+ 				unsigned long err;
+ 
+ 				switch ((ssl_r = SSL_get_error(ssl, r))) {
+@@ -139,6 +146,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
  			} else {
  				c->offset += r;
  				cq->bytes_out += r;
@@ -45,7 +61,7 @@ $OpenBSD: patch-src_network_openssl_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
  			}
  
  			if (c->offset == (off_t)c->mem->used - 1) {
-@@ -168,6 +169,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
+@@ -168,6 +176,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
  			do {
  				off_t offset = c->file.start + c->offset;
  				off_t toSend = c->file.length - c->offset;
@@ -53,7 +69,23 @@ $OpenBSD: patch-src_network_openssl_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
  
  				if (toSend > LOCAL_SEND_BUFSIZE) toSend = LOCAL_SEND_BUFSIZE;
  
-@@ -243,6 +245,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
+@@ -190,7 +199,14 @@ int network_write_chunkqueue_openssl(server *srv, conn
+ 				close(ifd);
+ 
+ 				ERR_clear_error();
+-				if ((r = SSL_write(ssl, s, toSend)) <= 0) {
++				r = SSL_write(ssl, s, toSend);
++
++				if (con->renegotiations > 1 && con->conf.ssl_disable_client_renegotiation) {
++					log_error_write(srv, __FILE__, __LINE__, "s", "SSL: renegotiation initiated by client");
++					return -1;
++				}
++
++				if (r <= 0) {
+ 					unsigned long err;
+ 
+ 					switch ((ssl_r = SSL_get_error(ssl, r))) {
+@@ -243,6 +259,7 @@ int network_write_chunkqueue_openssl(server *srv, conn
  				} else {
  					c->offset += r;
  					cq->bytes_out += r;
@@ -61,7 +93,7 @@ $OpenBSD: patch-src_network_openssl_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
  				}
  
  				if (c->offset == c->file.length) {
-@@ -263,11 +266,9 @@ int network_write_chunkqueue_openssl(server *srv, conn
+@@ -263,11 +280,9 @@ int network_write_chunkqueue_openssl(server *srv, conn
  
  			break;
  		}
