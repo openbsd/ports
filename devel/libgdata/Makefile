@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/10/03 06:42:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/03 14:21:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,6 +31,9 @@ WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
+
+# needed for demos/scrapbook
+BUILD_DEPENDS=		x11/gtk+3
 
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			net/liboauth
