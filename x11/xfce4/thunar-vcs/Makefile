@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/12/03 22:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/03 22:39:12 ajacoutot Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
@@ -19,7 +19,7 @@ CONFIGURE_ARGS +=	--disable-linker-opts
 # correctly find bindtextdomain
 CONFIGURE_ENV +=	LIBS='-liconv'
 
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 RUN_DEPENDS =	x11/xfce4/thunar \
 		devel/git

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/12/03 22:32:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/12/03 22:39:12 ajacoutot Exp $
 
 COMMENT=	Xfce4 printing helper
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS=	--enable-cups \
 		--enable-bsdlpr \

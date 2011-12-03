@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/12/03 22:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2011/12/03 22:39:12 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 LIB_DEPENDS =	x11/xfce4/libxfcegui4
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

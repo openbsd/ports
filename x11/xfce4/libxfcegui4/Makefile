@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/12/03 22:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/12/03 22:39:11 ajacoutot Exp $
 
 COMMENT=	Xfce4 widget library
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 CONFIGURE_ARGS+=	--disable-linker-opts
 LIB_DEPENDS=	x11/xfce4/libxfce4util>=4.8.0 \

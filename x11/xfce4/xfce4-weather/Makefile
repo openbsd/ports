@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/12/03 22:32:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/12/03 22:39:12 ajacoutot Exp $
 
 COMMENT=	Xfce4 temperature/weather conditions panel plugin
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	textproc/libxml
 LIB_DEPENDS +=	x11/xfce4/libxfcegui4

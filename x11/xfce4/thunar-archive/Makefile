@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/03 22:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/03 22:39:12 ajacoutot Exp $
 
 COMMENT =	Thunar archive plugin
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/xfce4
 
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS =	x11/xfce4/thunar \

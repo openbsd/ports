@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/12/03 22:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/12/03 22:39:11 ajacoutot Exp $
 
 COMMENT=	Xfce4 notification daemon
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
-MODFXCE_ICON_CACHE=	Yes
+MODXFCE_ICON_CACHE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
 		x11/libsexy \
