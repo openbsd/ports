@@ -1,4 +1,4 @@
-# $OpenBSD: Issue.pm,v 1.3 2010/11/22 21:16:42 espie Exp $
+# $OpenBSD: Issue.pm,v 1.4 2011/12/03 09:29:41 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -64,7 +64,7 @@ our @ISA = qw(OpenBSD::Issue);
 sub message
 {
 	my $self = shift;
-	return "WANTLIB:       ". $self->stringize. " (system lib)";
+	return "Missing: ". $self->stringize. " (system lib)";
 }
 
 sub record_wantlib
@@ -76,7 +76,7 @@ our @ISA = qw(OpenBSD::Issue);
 sub message
 {
 	my $self = shift;
-	return "WANTLIB:   ". $self->stringize;
+	return "Missing: ". $self->stringize;
 }
 
 sub record_wantlib
@@ -89,7 +89,7 @@ our @ISA = qw(OpenBSD::Issue);
 sub message
 {
 	my $self = shift;
-	return "WANTLIB:       ". $self->stringize;
+	return "Missing: ". $self->stringize;
 }
 
 sub record_wantlib
@@ -102,7 +102,7 @@ our @ISA = qw(OpenBSD::Issue);
 sub message
 {
 	my $self = shift;
-	return "Missing lib:   ". $self->stringize. " (NOT REACHABLE)";
+	return "Missing lib: ". $self->stringize. " (NOT REACHABLE)";
 }
 
 sub not_reachable
