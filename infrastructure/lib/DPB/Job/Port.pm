@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.19 2011/12/02 22:37:36 espie Exp $
+# $OpenBSD: Port.pm,v 1.20 2011/12/03 11:10:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -308,7 +308,7 @@ sub finalize
 		print {$job->{lock}} "needed=", join(' ', sort @l), "\n";
 	}
 	unlink($file);
-	my $l = $logger->open("needed");
+	my $l = $job->{builder}{junk};
 	# full list for every lock
 	my $locker = $core->job->{builder}->{state}->locker;
 	my @l = $locker->find_dependencies($core->hostname);

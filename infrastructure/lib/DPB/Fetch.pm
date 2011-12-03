@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.18 2011/11/06 16:56:23 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.19 2011/12/03 11:10:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -108,7 +108,6 @@ sub check
 {
 	my ($self, $logger) = @_;
 	return $self->checksize($logger, $self->filename);
-
 }
 
 sub checksize

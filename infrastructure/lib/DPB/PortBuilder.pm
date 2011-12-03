@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.15 2011/12/02 22:33:46 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.16 2011/12/03 11:10:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,7 +32,6 @@ sub new
 	    state => $state,
 	    clean => $state->opt('c'),
 	    dontclean => $state->{dontclean},
-	    junk => $state->opt('J'),
 	    fetch => $state->opt('f'),
 	    size => $state->opt('s'),
 	    rebuild => $state->opt('R'),
@@ -46,6 +45,9 @@ sub new
 	}
 	if ($state->opt('U')) {
 		$self->{forceupdate} = 1;
+	}
+	if ($state->opt('J')) {
+		$self->{junk} = DPB::Util->make_hot($state->{logger}->open("needed"));
 	}
 	$self->init;
 	return $self;
