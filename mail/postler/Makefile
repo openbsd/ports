@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
 # git clone of 0d21f7a7c5d8281ae5302756433956bca0522660
 XFCE_VERSION =	0.1.1.1
 XFCE_GOODIE =	postler
-REVISION=	1
+REVISION=	2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -37,7 +37,8 @@ CONFIGURE_ARGS+=	--disable-libindicate \
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		lang/vala>=0.12.0
 
-RUN_DEPENDS =	mail/msmtp
+RUN_DEPENDS =	mail/msmtp \
+		x11/gtk+2,-guic
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

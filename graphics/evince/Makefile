@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/11/18 12:37:19 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2011/12/03 20:30:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,8 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -93,7 +95,8 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

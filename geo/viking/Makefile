@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.0.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	geo x11
 
@@ -23,7 +23,8 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 MODULES =	devel/gettext x11/gnome
 
 CONFIGURE_STYLE =	gnu
-MODGNOME_DESKTOP_FILE =		Yes
+MODGNOME_DESKTOP_FILE =	Yes
+MODGNOME_ICON_CACHE =	Yes
 MODGNOME_TOOLS= 	yelp
 
 MODGNOME_LDFLAGS=-pthread

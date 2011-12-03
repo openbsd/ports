@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.14.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 
@@ -45,6 +45,7 @@ RUN_DEPENDS=	misc/shared-mime-info
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=	gnu

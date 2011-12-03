@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/12 07:57:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT =	digital photo organizer
 
 DISTNAME =	shotwell-0.11.1
-REVISION=	1
+REVISION=	2
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/0.11/
 HOMEPAGE =	http://yorba.org/shotwell/
@@ -30,7 +30,8 @@ MODULES =	devel/dconf devel/gettext x11/gnome
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE =		yes
 
-RUN_DEPENDS +=	x11/gnome/librsvg
+RUN_DEPENDS +=	x11/gnome/librsvg \
+		x11/gtk+2,-guic
 
 BUILD_DEPENDS =	lang/vala>=0.12
 

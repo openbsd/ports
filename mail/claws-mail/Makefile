@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/12/03 20:30:09 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-spamassassin=	spamassassin plugin
 V=			3.7.9
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		2
+REVISION-main=		3
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 REVISION-bogofilter =	0
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -66,7 +66,8 @@ LIB_DEPENDS=		x11/gtk+2 \
 			security/libgcrypt
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			devel/desktop-file-utils
+			devel/desktop-file-utils \
+			x11/gtk+2,-guic
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/startup-notification \

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT =	gpx file viewer
 
 VERSION =	0.2.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	geo x11
 
@@ -31,7 +31,8 @@ MODULES =	devel/gettext \
 LIB_DEPENDS =	devel/libunique \
 		geo/libchamplain/core>=0.8.0 \
 		x11/gnome/gdl1
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+2,-guic
 
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 c cairo champlain-0.8 champlain-gtk-0.8

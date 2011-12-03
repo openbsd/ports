@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.85 2011/12/03 20:30:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.1
-REVISION=	10
+REVISION=	11
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -43,6 +43,7 @@ MODULES=	devel/gettext \
 		lang/python
 
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/libpng
 
 MODPY_ADJ_FILES=po-checktrans.py 

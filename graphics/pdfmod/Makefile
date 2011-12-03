@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/03 20:30:09 ajacoutot Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
 GNOME_PROJECT=	pdfmod
 GNOME_VERSION=	0.9.1
-REVISION=		0
+REVISION=	1
 
 CATEGORIES=	graphics print
 
@@ -28,6 +28,7 @@ RUN_DEPENDS=	print/poppler \
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_ICON_CACHE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-release \

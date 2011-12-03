@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/10/28 22:08:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/12/03 20:30:09 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gthumb
 include/gthumb-2.14/
@@ -1013,7 +1013,7 @@ ${SCHEMAS_INSTDIR}/gthumb_resize_options.schemas
 ${SCHEMAS_INSTDIR}/gthumb_rotate_options.schemas
 ${SCHEMAS_INSTDIR}/gthumb_webalbums.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
