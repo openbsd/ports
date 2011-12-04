@@ -1,2 +1,8 @@
-nroff is an old-style unix text processor.
-This is the reimplementation under the GNU license.
+GNU troff (Groff) is the GNU reimplementation of the traditional
+general-purpose UNIX typesetting system, roff.
+
+The groff distribution includes:
+ * various macro packages including man, mdoc, ms, me, mm, and mom;
+ * postprocessors for various output devices, including character
+   terminals, X terminals, PostScript, HTML and XHTML, and TeX DVI;
+ * and many utility programs.

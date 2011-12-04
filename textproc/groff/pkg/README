@@ -1,0 +1,45 @@
+$OpenBSD: README,v 1.1 2011/12/04 15:41:26 schwarze Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Even though roff is a general-purpose typesetting system, the OpenBSD
+groff port is focussed on formatting ports(5) manuals that mandoc(1)
+is unable to handle.  To make groff output as similar as possible to
+mandoc output, the following two groff features have been disabled by
+default: adjustment of text to the right margin and hyphenation.
+
+If you want to use groff for serious typesetting work and need these
+features, please set up your own troff(1) configuration file:
+
+  mkdir ~/.tmac
+  cp ${TRUEPREFIX}/share/groff/1.21/tmac/troffrc ~/.tmac/
+  export GROFF_TMAC_PATH=~/.tmac
+
+In your new troffrc file, uncomment these two lines to enable
+hyphenation:
+
+.do hpf hyphen.us
+.do hpfa hyphenex.us
+
+Delete these three lines to enable the roff `ad' request, such that
+documents can adjust text to the right margin:
+
+.ad l
+.de ad
+..
+
+
+To suit the taste of OpenBSD developers, two mdoc(7) formatting
+details have been changed with respect to the upstream distribution:
+
+ * Title lines use an n-dash, not an m-dash between the manual page
+   name and the manual page description.
+
+ * The .Pa macro always produces emphasized text,
+   even in the FILES section.
+
+To allow automated output comparisons with mandoc(1), the bullet
+character \(bu has been changed to just "o" instead of a "+"
+superimposed on top of an "o".

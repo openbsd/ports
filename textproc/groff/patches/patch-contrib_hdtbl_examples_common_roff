@@ -1,0 +1,25 @@
+$OpenBSD: patch-contrib_hdtbl_examples_common_roff,v 1.1 2011/12/04 15:41:26 schwarze Exp $
+Do not depend on bash (from upstream CVS).
+--- contrib/hdtbl/examples/common.roff.orig	Fri Dec 31 08:33:09 2010
++++ contrib/hdtbl/examples/common.roff	Sun Oct 23 19:25:35 2011
+@@ -65,7 +65,7 @@ along with this program. If not, see <http://www.gnu.o
+ .\"	**	for example "Sun Dec  5 22:27:57     2004"		**
+ .\"	******************************************************************
+ .de date
+-.  pso bash -c "echo -n .ds *date\ ;date"
++.  pso sh -c "echo -n .ds *date\ ;date"
+ .  tm \\*[*date] ***
+ ..
+ .
+@@ -83,9 +83,9 @@ along with this program. If not, see <http://www.gnu.o
+ .  ds * \\$1\"
+ .  substring * 0 0
+ .  ie "\\*[*]"s" \
+-.    pso bash -c "echo -n .nr *time 0+;date +%s"
++.    pso sh -c "echo -n .nr *time 0+;date +%s"
+ .  el \{\
+-.   pso bash -c "echo -n .nr *time -;date +%s"
++.   pso sh -c "echo -n .nr *time -;date +%s"
+ .   nr *time 0-\\n[*time]
+ .   tm elapsed time: \\n[*time] seconds
+ .  \}

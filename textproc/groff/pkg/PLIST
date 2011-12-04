@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/10/12 22:00:07 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/04 15:41:26 schwarze Exp $
 @conflict groff-mdoc-*
 @pkgpath textproc/groff.mdoc
 @bin bin/addftinfo
@@ -142,6 +142,7 @@ share/doc/groff/meref.me
 share/doc/groff/meref.ps
 share/doc/groff/pic.ms
 share/doc/groff/pic.ps
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/groff/
 share/examples/groff/chem/
 share/examples/groff/chem/122/
@@ -205,7 +206,30 @@ share/examples/groff/grnexmpl.me
 share/examples/groff/grnexmpl.ps
 share/examples/groff/groff.css
 share/examples/groff/hdtbl/
+share/examples/groff/hdtbl/chess_board.ps
+share/examples/groff/hdtbl/chess_board.roff
+share/examples/groff/hdtbl/col_rowspan_colors.ps
+share/examples/groff/hdtbl/col_rowspan_colors.roff
+share/examples/groff/hdtbl/color_boxes.ps
+share/examples/groff/hdtbl/color_boxes.roff
+share/examples/groff/hdtbl/color_nested_tables.ps
+share/examples/groff/hdtbl/color_nested_tables.roff
+share/examples/groff/hdtbl/color_table_cells.ps
+share/examples/groff/hdtbl/color_table_cells.roff
+share/examples/groff/hdtbl/color_transitions.ps
+share/examples/groff/hdtbl/color_transitions.roff
+share/examples/groff/hdtbl/common.roff
+share/examples/groff/hdtbl/fonts_n.ps
+share/examples/groff/hdtbl/fonts_n.roff
+share/examples/groff/hdtbl/fonts_x.ps
+share/examples/groff/hdtbl/fonts_x.roff
 share/examples/groff/hdtbl/gnu.eps
+share/examples/groff/hdtbl/mixed_pickles.ps
+share/examples/groff/hdtbl/mixed_pickles.roff
+share/examples/groff/hdtbl/rainbow.ps
+share/examples/groff/hdtbl/rainbow.roff
+share/examples/groff/hdtbl/short_reference.ps
+share/examples/groff/hdtbl/short_reference.roff
 share/examples/groff/mom/
 share/examples/groff/mom/README.txt
 share/examples/groff/mom/elvis_syntax

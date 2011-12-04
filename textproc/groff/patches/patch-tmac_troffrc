@@ -1,7 +1,7 @@
-$OpenBSD: patch-tmac_troffrc,v 1.1 2011/03/19 16:48:53 schwarze Exp $
---- tmac/troffrc.orig	Fri Jan  9 07:25:52 2009
-+++ tmac/troffrc	Sun Dec  5 18:16:38 2010
-@@ -37,9 +37,10 @@ troffrc!X100 troffrc!X100-12 troffrc!lj4 troff!lbp tro
+$OpenBSD: patch-tmac_troffrc,v 1.2 2011/12/04 15:41:26 schwarze Exp $
+--- tmac/troffrc.orig	Fri Dec 31 08:33:09 2010
++++ tmac/troffrc	Sun Oct 16 14:28:38 2011
+@@ -37,10 +37,16 @@ troffrc!X100 troffrc!X100-12 troffrc!lj4 troff!lbp tro
  .\" Set the hyphenation language to `us'.
  .do hla us
  .
@@ -13,5 +13,11 @@ $OpenBSD: patch-tmac_troffrc,v 1.1 2011/03/19 16:48:53 schwarze Exp $
 +.\"do hpf hyphen.us
 +.\"do hpfa hyphenex.us
  .
++.\" Disable adjustment by default,
++.\" such that manuals look similar with groff and mandoc(1).
++.ad l
++.de ad
++..
  .\" Handle paper formats.
  .do mso papersize.tmac
+ .
