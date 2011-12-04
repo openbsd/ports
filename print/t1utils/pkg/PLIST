@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/10 23:14:01 steven Exp $
-bin/t1ascii
-bin/t1asm
-bin/t1binary
-bin/t1disasm
-bin/t1mac
-bin/t1unmac
+@comment $OpenBSD: PLIST,v 1.2 2011/12/04 23:59:35 sthen Exp $
+@bin bin/t1ascii
+@bin bin/t1asm
+@bin bin/t1binary
+@bin bin/t1disasm
+@bin bin/t1mac
+@bin bin/t1unmac
 @man man/man1/t1ascii.1
 @man man/man1/t1asm.1
 @man man/man1/t1binary.1
