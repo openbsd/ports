@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.33 2011/12/03 11:01:47 espie Exp $
+# $OpenBSD: dpb,v 1.34 2011/12/04 11:24:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -407,6 +407,15 @@ sub main_loop
 			}
 			if (DPB::Core->running) {
 				DPB::Core->reap_wait;
+			}
+			if ($state->{fetch_only}) {
+				if (!DPB::Core::Fetcher->running &&
+				    (!$keep_going || !$state->engine->can_fetch)) {
+					$state->engine->check_buildable(0);
+					if (!$state->engine->can_fetch) {
+						last;
+					}
+				}
 			}
 		}
 		if (!$state->opt('q') || !$state->engine->recheck_errors) {
