@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/12/04 10:01:52 benoit Exp $
 
 COMMENT =	space-based shoot'em up game for X11
 
-DISTNAME =	xsoldier-1.5
+DISTNAME =	xsoldier-1.8
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.interq.or.jp/libra/oohara/xsoldier/
@@ -23,8 +23,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--localstatedir=/var
 
 MAKE_FLAGS =		CC_OPTIMIZE="${CFLAGS}"
-
-USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 
