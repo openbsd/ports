@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.5 2011/11/19 20:22:08 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.6 2011/12/04 16:31:52 ajacoutot Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -27,7 +27,6 @@
 .poison MODGCC3_ARCHES
 .poison MODGCC4_ARCHES
 .poison MODPY_BUILDEP
-.poison MODULE
 .poison NOT_FOR_ARCH
 .poison NOT_FOR_ARCHES
 .poison ONLY_FOR_ARCH
