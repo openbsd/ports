@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.40 2011/12/04 10:39:52 espie Exp $
+# $OpenBSD: Engine.pm,v 1.41 2011/12/04 10:57:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -517,6 +517,66 @@ sub adjust_distfiles
 
 my $output = {};
 
+sub adjust_built
+{
+	my $self = shift;
+	my $changes = 0;
+
+	for my $v (values %{$self->{built}}) {
+		if ($self->adjust($v, 'RDEPENDS') == 0) {
+			delete $self->{built}{$v};
+			$self->{installable}{$v} = $v;
+			if ($v->{wantinstall}) {
+				$self->{buildable}->will_install($v);
+			}
+			$self->log_no_ts('I', $v);
+			$changes++;
+		} elsif (my $d = $self->should_ignore($v, 'RDEPENDS')) {
+			delete $self->{built}{$v};
+			$self->log_no_ts('!', $v, 
+			    " because of ".$d->fullpkgpath);
+			$changes++;
+			$v->{info} = DPB::PortInfo->stub;
+			push(@{$self->{ignored}}, $v);
+		}
+	}
+	return $changes;
+}
+
+sub adjust_tobuild
+{
+	my ($self, $quick) = @_;
+
+	my $changes = 0;
+	for my $v (values %{$self->{tobuild}}) {
+		next if $quick && !$v->{new};
+		delete $v->{new};
+		my $has = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
+		$has += $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
+
+		my $has2 = $self->adjust_distfiles($v);
+		# being buildable directly is a priority,
+		# but put the patch/dist/small stuff down the 
+		# line as otherwise we will tend to grab 
+		# patch files first
+		$v->{has} = 2 * ($has != 0) + ($has2 > 1);
+		if ($has + $has2 == 0) {
+			$self->{buildable}->add($v);
+			$self->log_no_ts('Q', $v);
+			delete $self->{tobuild}{$v};
+			$changes++;
+		} elsif (my $d = $self->should_ignore($v, 'DEPENDS')) {
+			delete $self->{tobuild}{$v};
+			$self->log_no_ts('!', $v, 
+			    " because of ".$d->fullpkgpath);
+			$changes++;
+			$v->{info} = DPB::PortInfo->stub;
+			push(@{$self->{ignored}}, $v);
+		}
+	}
+	return $changes;
+}
+
 sub check_buildable
 {
 	my ($self, $quick) = @_;
@@ -524,54 +584,9 @@ sub check_buildable
 	my $changes;
 	do {
 		$changes = 0;
-		if (!$quick) {
-			for my $v (values %{$self->{built}}) {
-				if ($self->adjust($v, 'RDEPENDS') == 0) {
-					delete $self->{built}{$v};
-					$self->{installable}{$v} = $v;
-					if ($v->{wantinstall}) {
-						$self->{buildable}->will_install($v);
-					}
-					$self->log_no_ts('I', $v);
-					$changes++;
-				} elsif (my $d = $self->should_ignore($v, 
-				    'RDEPENDS')) {
-					delete $self->{built}{$v};
-					$self->log_no_ts('!', $v, 
-					    " because of ".$d->fullpkgpath);
-					$changes++;
-					$v->{info} = DPB::PortInfo->stub;
-					push(@{$self->{ignored}}, $v);
-				}
-			}
-		}
+		$changes += $self->adjust_built if !$quick;
+		$changes += $self->adjust_tobuild($quick);
 
-		for my $v (values %{$self->{tobuild}}) {
-			next if $quick && !$v->{new};
-			delete $v->{new};
-			my $has = $self->adjust($v, 'DEPENDS', 'BDEPENDS');
-			$has += $self->adjust_extra($v, 'EXTRA', 'BEXTRA');
-
-			my $has2 = $self->adjust_distfiles($v);
-			# buying buildable directly is a priority,
-			# but put the patch/dist/small stuff down the 
-			# line as otherwise we will tend to grab 
-			# patch files first
-			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
-			if ($has + $has2 == 0) {
-				$self->{buildable}->add($v);
-				$self->log_no_ts('Q', $v);
-				delete $self->{tobuild}{$v};
-				$changes++;
-			} elsif (my $d = $self->should_ignore($v, 'DEPENDS')) {
-				delete $self->{tobuild}{$v};
-				$self->log_no_ts('!', $v, 
-				    " because of ".$d->fullpkgpath);
-				$changes++;
-				$v->{info} = DPB::PortInfo->stub;
-				push(@{$self->{ignored}}, $v);
-			}
-		}
 	} while ($changes);
 	$self->stats;
 }
