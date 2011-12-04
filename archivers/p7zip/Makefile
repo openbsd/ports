@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/10/17 11:13:19 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/04 23:24:20 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,8 @@ DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
 PKGNAME-rar=	p7zip-rar-${V}
-REVISION-rar=	0
+REVISION-main=	0
+REVISION-rar=	1
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://sourceforge.net/projects/p7zip/
@@ -43,12 +44,6 @@ MAKE_FILE=	makefile
 MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
 		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"
 
-# unaligned access error in NCompress::NPPMD::CInfo::CreateSuccessors()
-.if ${MACHINE_ARCH} == "alpha"
-CXXFLAGS:=     ${CXXFLAGS:N-O*}
-.endif
-
-
 ALL_TARGET=	all3
 REGRESS_TARGET=	all_test
 
@@ -60,4 +55,3 @@ do-install:
 		DESTDIR=${DESTDIR} /bin/sh install.sh
 
 .include <bsd.port.mk>
-
