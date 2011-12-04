@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2011/10/23 09:51:56 stsp Exp $
+# $OpenBSD: Makefile,v 1.101 2011/12/04 16:06:52 espie Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -41,9 +41,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
-PSEUDO_FLAVORS=	no_bindings no_ap2
+PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby
 FLAVORS=	gnome_keyring
 FLAVOR?=
+.if ${FLAVOR:Mno_bindings}
+FLAVOR += no_perl no_python no_ruby
+.endif
 
 MODULES=	devel/gettext lang/python
 USE_GROFF =	Yes
@@ -55,7 +58,7 @@ WANTLIB=	expat db magic z
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/libtool
 
-MULTI_PACKAGES=	-main
+MULTI_PACKAGES = -main -ap2 -perl -python -ruby
 
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
@@ -79,53 +82,45 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 	server-version.py showchange.pl svn-graph.pl
 
-.if !${FLAVOR:L:Mno_ap2}
-MULTI_PACKAGES+=	-ap2
 WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 sqlite3
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
-.  for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
+.for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
 WANTLIB-ap2 +=	${_lib}>=${SO_VERSION}
-.  endfor
-BUILD_DEPENDS+=		www/apache-httpd
+.endfor
 RUN_DEPENDS-ap2=	www/apache-httpd
-.endif
 
-.if !${FLAVOR:L:Mno_bindings}
-MULTI_PACKAGES+=-perl -python -ruby
-SHARED_ONLY=	Yes
+NOT_FOR_ARCHS-perl = ${NO_SHARED_ARCHS}
+NOT_FOR_ARCHS-python = ${NO_SHARED_ARCHS}
+NOT_FOR_ARCHS-ruby = ${NO_SHARED_ARCHS}
 
 WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
-.  for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
+.for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
 	svn_repos-1 svn_wc-1 svn_client-1
 WANTLIB-perl +=	${_lib}>=${SO_VERSION}
-.  endfor
+.endfor
 
 WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
 			krb5 neon sasl2 sqlite3 ssl ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 			${MAINSPEC}
-.  for _lib in ${SVN_LIBS}
+.for _lib in ${SVN_LIBS}
 WANTLIB-python +=	${_lib}>=${SO_VERSION}
-.  endfor
+.endfor
 
 WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
 			krb5 m neon sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
-.  for _lib in ${SVN_LIBS}
+.for _lib in ${SVN_LIBS}
 WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
-.  endfor
+.endfor
 
-MODULES+=	lang/ruby
-BUILD_DEPENDS+=	devel/swig>=1.3.36
-.endif
-
-.if ${FLAVOR:L:Mgnome_keyring}
+.if ${FLAVOR:Mgnome_keyring}
 SHARED_ONLY=	Yes
 MODULES+=	converters/libiconv
 LIB_DEPENDS-main += 	x11/dbus \
@@ -155,16 +150,26 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--without-jikes \
 		--without-jdk \
 		--with-libmagic=${LOCALBASE}
-.if !${FLAVOR:L:Mno_bindings}
+
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-ruby} || ${BUILD_PACKAGES:M-perl} || ${BUILD_PACKAGES:M-python}
+
+BUILD_DEPENDS+=	devel/swig>=1.3.36
 CONFIGURE_ARGS+=--with-swig
-CONFIGURE_ENV+=	RUBY=ruby${MODRUBY_BINREV} RDOC=rdoc${MODRUBY_BINREV}
 .else
 CONFIGURE_ARGS+=--without-swig
 .endif
 
-.if !${FLAVOR:L:Mno_ap2}
+.if ${BUILD_PACKAGES:M-ruby}
+MODULES+=	lang/ruby
+CONFIGURE_ENV+=	RUBY=ruby${MODRUBY_BINREV} RDOC=rdoc${MODRUBY_BINREV}
+.endif
+
+.if ${BUILD_PACKAGES:M-ap2}
 CONFIGURE_ARGS+=--with-apxs=${LOCALBASE}/sbin/apxs2 \
 		--disable-mod-activation
+BUILD_DEPENDS+=		www/apache-httpd
 .else
 CONFIGURE_ARGS+=--without-apxs
 .endif
@@ -181,13 +186,16 @@ pre-configure:
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
 
-.if ${FLAVOR:L:Mgnome_keyring}
+.if ${FLAVOR:Mgnome_keyring}
 CONFIGURE_ARGS+=--with-gnome-keyring
 .endif
 
-.if !${FLAVOR:L:Mno_bindings}
-REGRESS_DEPENDS+=	${FULLPKGNAME-python}:devel/subversion,-python \
-			${FULLPKGNAME-ruby}:devel/subversion,-ruby
+.if ${BUILD_PACKAGES:M-python}
+REGRESS_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python
+
+.if ${BUILD_PACKAGES:M-ruby}
+REGRESS_DEPENDS+=	${FULLPKGNAME-ruby}:${BUILD_PKGPATH},-ruby
+.endif
 
 pre-build:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
@@ -195,11 +203,15 @@ pre-build:
 .endif
 
 post-build:
-.if !${FLAVOR:L:Mno_bindings}
+.if ${BUILD_PACKAGES:M-python}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-py
+.endif
+.if ${BUILD_PACKAGES:M-perl}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-pl
+.endif
+.if ${BUILD_PACKAGES:M-ruby}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${MAKE_FLAGS} swig-rb
 .endif
@@ -215,21 +227,29 @@ do-regress:
 		${ALL_REGRESS_FLAGS} check FS_TYPE=bdb
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} check FS_TYPE=fsfs
-.if !${FLAVOR:L:Mno_bindings}
+.if ${BUILD_PACKAGES:M-perl}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} TMPDIR=${WRKBUILD} check-swig-pl
+.endif
+.if ${BUILD_PACKAGES:M-python}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} check-swig-py
+.endif
+.if ${BUILD_PACKAGES:M-ruby}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_REGRESS_FLAGS} check-swig-rb
 .endif
 
 post-install:
-.if !${FLAVOR:L:Mno_bindings}
+.if ${BUILD_PACKAGES:M-python}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} install-swig-py
+.endif
+.if ${BUILD_PACKAGES:M-perl}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} install-swig-pl
+.endif
+.if ${BUILD_PACKAGES:M-ruby}
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} install-swig-rb
 .endif
