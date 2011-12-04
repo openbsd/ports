@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2011/12/04 14:21:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2011/12/04 15:40:57 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,7 @@ VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	print sysutils
 
@@ -28,8 +28,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += 	asn1 c crypto dbus-1>=7 gssapi jpeg krb5 m png>=3 pthread
-WANTLIB +=	ssl stdc++ tiff>=35 z usb
+WANTLIB += asn1 c crypto dbus-1 gssapi jpeg krb5 m png pthread
+WANTLIB += ssl stdc++ tiff usb z
 
 MASTER_SITES=	http://ftp.easysw.com/pub/cups/${VERSION}/ \
 		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -45,10 +45,6 @@ WRKDIST=	${WRKDIR}/${DISTNAME:S/-source//}
 BUILD_DEPENDS=	devel/xdg-utils \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS}
-
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/xdg-utils
-#		x11/gtk+2,-guic
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff \
@@ -143,7 +139,14 @@ post-install:
 	ln -sf ${LOCALBASE}/bin/smbspool \
 		${PREFIX}/libexec/cups/backend/smb
 
-# Create a link to foomatic drivers database ; we do it here instead of
+# Remove desktop file and icons; we don't really need them (it's just a
+# launcher for http://localhost:631 and we may actually want to
+# configure a remote server); this is needed to prevent a dependency
+# loop: cups->gtk+2,-guic->cups
+	rm -rf ${PREFIX}/share/icons
+	rm -rf ${PREFIX}/share/applications
+
+# Create a link to foomatic drivers database; we do it here instead of
 # using --enable-ppds-to-cups in the foomatic-db port so that we don't
 # need to depend on it (other printer driver packages install PPDs under
 # ${PREFIX}/share/foomatic/db/source/PPD too, e.g. foo2zjs, hpijs...).
