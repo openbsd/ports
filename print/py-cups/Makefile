@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2011/10/06 06:00:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/04 16:56:45 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
-MODPY_EGG_VERSION=	1.9.59
+MODPY_EGG_VERSION=	1.9.60
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		py-cups-${MODPY_EGG_VERSION}
 
