@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.19 2011/12/03 11:10:48 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.20 2011/12/04 10:39:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -189,6 +189,14 @@ sub read_checksums
 		}
 	}
 	return $r;
+}
+
+sub forget
+{
+	my $self = shift;
+	delete $self->{size};
+	delete $self->{sha};
+	delete $self->{okay};
 }
 
 sub build_distinfo
