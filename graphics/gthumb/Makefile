@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/12/04 20:50:49 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.14.0
-REVISION=	1
+GNOME_VERSION=	2.14.1
 
 CATEGORIES=	graphics
 
