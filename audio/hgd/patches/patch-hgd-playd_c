@@ -1,0 +1,27 @@
+$OpenBSD: patch-hgd-playd_c,v 1.1 2011/12/04 12:57:09 edd Exp $
+
+Fix for bug #139 (Wrong PID file written away).
+
+--- hgd-playd.c.orig	Sun Dec  4 12:42:38 2011
++++ hgd-playd.c	Sun Dec  4 12:44:06 2011
+@@ -329,16 +329,15 @@ main(int argc, char **argv)
+ 		hgd_exit_nicely();
+ 	}
+ #endif
+-	/* Do this before daemonising so we can see the output */
+-	if (hgd_write_pid_file() != HGD_OK) {
+-		DPRINTF(HGD_D_ERROR, "Can't write PID away");
+-		return (HGD_FAIL);
+-	}
+ 
+ 	/* start */
+ 	if (background)
+ 		hgd_daemonise();
+ 
++	if (hgd_write_pid_file() != HGD_OK) {
++		DPRINTF(HGD_D_ERROR, "Can't write PID away");
++		return (HGD_FAIL);
++	}
+ 
+ 	if (hgd_play_loop() == HGD_OK)
+ 		exit_ok = 1;
