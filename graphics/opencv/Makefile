@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/16 23:28:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/04 22:49:22 espie Exp $
 
 ONLY_FOR_ARCHS=		${GCC4_ARCHS}
 
@@ -86,6 +86,7 @@ CONFIGURE_ARGS+=	-DBUILD_EXAMPLES:Bool=Off \
 			-DBUILD_LATEX_DOCS:Bool=Off \
 			-DWITH_GTK:Bool=On \
 			-DWITH_V4L:Bool=Off \
+			-DWITH_EIGEN2:Bool=Off \
 			-DWITH_GSTREAMER:Bool=On \
 			-DWITH_1394:Bool=Off \
 			-DWITH_FFMPEG:Bool=On
