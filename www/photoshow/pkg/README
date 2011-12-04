@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.1.1.1 2011/12/04 11:04:27 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
+
+    # ln -s ${PREFIX}/conf/modules.sample/photoshow.conf \
+        ${PREFIX}/conf/modules
