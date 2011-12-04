@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.535 2011/12/03 12:52:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.536 2011/12/04 11:05:28 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -341,6 +341,7 @@
      SUBDIR += pecl-swish
      SUBDIR += pecl-uploadprogress
      SUBDIR += perlbal
+     SUBDIR += photoshow
      SUBDIR += php-markdown
      SUBDIR += php-openid
      SUBDIR += php-predis
