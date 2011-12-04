@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/12/04 14:16:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2011/12/04 21:12:19 sthen Exp $
 
 COMMENT=	powerful, light-weight programming language
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_ONLY=	Yes
 SHARED_LIBS=	lua 5.1
-MAKE_FLAGS+=	LIBlua_VERSION="${LIBlua_VERSION}"
+MAKE_FLAGS+=	LIBlua_VERSION="${LIBlua_VERSION}" CC="${CC}"
 WANTLIB=	c m edit curses
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
