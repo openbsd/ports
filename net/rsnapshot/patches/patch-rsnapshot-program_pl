@@ -1,4 +1,4 @@
-$OpenBSD: patch-rsnapshot-program_pl,v 1.4 2008/09/27 11:54:11 ajacoutot Exp $
+$OpenBSD: patch-rsnapshot-program_pl,v 1.5 2011/12/04 08:53:57 ajacoutot Exp $
 --- rsnapshot-program.pl.orig	Sun Aug 31 13:17:07 2008
 +++ rsnapshot-program.pl	Fri Sep 19 15:28:30 2008
 @@ -392,7 +392,7 @@ sub find_config_file {
@@ -10,15 +10,6 @@ $OpenBSD: patch-rsnapshot-program_pl,v 1.4 2008/09/27 11:54:11 ajacoutot Exp $
  	
  	# consolidate multiple slashes
  	$autoconf_sysconfdir	=~ s/\/+/\//g;
-@@ -2986,7 +2986,7 @@ sub handle_interval {
- 		if (0 == $test) {
- 			my $result = rm_rf( "$config_vars{'snapshot_root'}/_delete.$$" );
- 			if (0 == $result) {
--				bail("Error! rm_rf(\"$config_vars{'snapshot_root'}/_delete.$$\")\n");
-+				bail("Error! rm_rf(\"$config_vars{'snapshot_root'}/_delete.$$\\")\n");
- 			}
- 		}
- 	} else {
 @@ -6093,7 +6093,7 @@ of cron jobs. It is possible, however, to run as any a
  with an alternate configuration file.
  
