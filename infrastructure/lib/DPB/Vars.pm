@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.24 2011/11/22 16:44:53 espie Exp $
+# $OpenBSD: Vars.pm,v 1.25 2011/12/04 12:05:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,13 +36,13 @@ sub run_command
 			$s="SUBDIR='".$class->subdirlist($subdirs)."'";
 		}
 		$shell->run("cd $ports && $s ".
-		    join(' ', $shell->make, @args));
+		    join(' ', $grabber->make_args, @args));
 	} else {
 		if (defined $subdirs) {
 			$ENV{SUBDIR} = $class->subdirlist($subdirs);
 		}
 		chdir($ports) or die "Bad directory $ports";
-		exec {$grabber->make} ('make', @args);
+		exec {$grabber->make} ($grabber->make_args, @args);
 	}
 	exit(1);
 }

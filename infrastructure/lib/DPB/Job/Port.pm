@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.20 2011/12/03 11:10:48 espie Exp $
+# $OpenBSD: Port.pm,v 1.21 2011/12/04 12:05:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -57,8 +57,7 @@ sub junk_lock
 	my $builder = $core->job->{builder};
 	return unless $builder->{junk};
 
-	my $locker = $builder->{state}->locker;
-	while (!$locker->lock($core)) {
+	while (!$builder->locker->lock($core)) {
 		sleep 1;
 	}
 }
@@ -69,8 +68,7 @@ sub junk_unlock
 	my $builder = $core->job->{builder};
 	return unless $builder->{junk};
 
-	my $locker = $builder->{state}->locker;
-	$locker->unlock($core);
+	$builder->locker->unlock($core);
 }
 
 sub handle_output
@@ -85,7 +83,7 @@ sub run
 	my $job = $core->job;
 	my $t = $self->{phase};
 	my $builder = $job->{builder};
-	my $ports = $builder->{ports};
+	my $ports = $builder->ports;
 	my $fullpkgpath = $job->{v}->fullpkgpath;
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
@@ -102,7 +100,7 @@ sub run
 		push(@args, "NO_CHECKSUM=Yes");
 	}
 	if (defined $shell) {
-		unshift(@args, $shell->make);
+		unshift(@args, $builder->make_args);
 		if ($self->{sudo}) {
 			unshift(@args, $sudo, "-E");
 		}
@@ -113,9 +111,9 @@ sub run
 		    die "Wrong ports tree $ports";
 		$ENV{SUBDIR} = $fullpkgpath;
 		if ($self->{sudo}) {
-			exec {$sudo}("sudo", "-E", $builder->{make}, @args);
+			exec {$sudo}("sudo", "-E", $builder->make_args, @args);
 		} else {
-			exec {$builder->{make}} ("make", @args);
+			exec {$builder->make} ($builder->make_args, @args);
 		}
 	}
 	exit(1);
@@ -278,12 +276,15 @@ sub finalize
 package DPB::Task::Port::PrepareResults;
 our @ISA = qw(DPB::Task::Port);
 
+sub result_filename
+{
+	my ($self, $job) = @_;
+	return $job->{builder}->logger->log_pkgpath($job->{v}).".tmp";
+}
 sub handle_output
 {
 	my ($self, $job) = @_;
-	my $logger = $job->{builder}{logger};
-	my $name = $logger->log_pkgpath($job->{v}).".tmp";
-	$self->redirect($name);
+	$self->redirect($self->result_filename($job));
 }
 
 sub finalize
@@ -295,8 +296,7 @@ sub finalize
 
 	my $job = $core->{job};
 	my $v = $job->{v};
-	my $logger = $job->{builder}{logger};
-	my $file = $logger->log_pkgpath($job->{v}).".tmp";
+	my $file = $self->result_filename($job);
 	if (open my $fh, '<', $file) {
 		my @l;
 		while (<$fh>) {
@@ -310,8 +310,7 @@ sub finalize
 	unlink($file);
 	my $l = $job->{builder}{junk};
 	# full list for every lock
-	my $locker = $core->job->{builder}->{state}->locker;
-	my @l = $locker->find_dependencies($core->hostname);
+	my @l = $core->job->{builder}->locker->find_dependencies($core->hostname);
 	$job->{needed} = [sort @l];
 	print $l $core->hostname, "(", $job->{v}->fullpkgpath, "): ", 
 	    join(' ', scalar(@l), @l), "\n";
@@ -393,7 +392,7 @@ sub finalize
 		if ($line =~ m/^\s*(\d+)\s+/) {
 			my $sz = $1;
 			my $job = $core->job;
-			my $f2 = $job->{builder}->{logger}->open("size");
+			my $f2 = $job->{builder}->logger->open("size");
 			print $f2 $job->{v}->fullpkgpath, " $job->{wrkdir} $sz\n";
 		}
 	}
@@ -430,7 +429,7 @@ sub finalize
 		$self->{sudo} = 1;
 		my $job = $core->job;
 		unshift(@{$job->{tasks}}, $self);
-		my $fh = $job->{builder}->{logger}->open("clean");
+		my $fh = $job->{builder}->logger->open("clean");
 		print $fh $job->{v}->fullpkgpath, "\n";
 		$core->{status} = 0;
 		return 1;

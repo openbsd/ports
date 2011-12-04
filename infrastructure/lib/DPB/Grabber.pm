@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.17 2011/11/07 13:21:46 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.18 2011/12/04 12:05:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,9 +26,8 @@ sub new
 {
 	my ($class, $state, $endcode) = @_;
 
-	my $o = bless { ports => $state->ports, make => $state->make,
+	my $o = bless { 
 		loglist => DPB::Util->make_hot($state->logger->open("vars")),
-		logger => $state->logger,
 		engine => $state->engine,
 		state => $state,
 		keep_going => 1,
@@ -64,19 +63,25 @@ sub finish
 sub ports
 {
 	my $self = shift;
-	return $self->{ports};
+	return $self->{state}->ports;
 }
 
 sub make
 {
 	my $self = shift;
-	return $self->{make};
+	return $self->{state}->make;
+}
+
+sub make_args
+{
+	my $self = shift;
+	return $self->{state}->make_args;
 }
 
 sub logger
 {
 	my $self = shift;
-	return $self->{logger};
+	return $self->{state}->logger;
 }
 
 sub grab_subdirs

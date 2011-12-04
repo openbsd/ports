@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.1.1.1 2010/08/20 13:40:14 espie Exp $
+# $OpenBSD: Distant.pm,v 1.2 2011/12/04 12:05:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,12 +64,6 @@ sub run
 	exec {OpenBSD::Paths->ssh}
 	    ($self->ssh($self->socket, $self->timeout),
 	    $self->hostname, $cmd);
-}
-
-sub make
-{
-	my $self = shift;
-	return OpenBSD::Paths->make;
 }
 
 package DPB::Task::SshMaster;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.20 2011/12/04 10:39:52 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.21 2011/12/04 12:05:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -310,6 +310,7 @@ sub finalize
 		print $fh "(", sprintf("%.2f", $sz / $elapsed / 1024), "KB/s)";
 	}
 	print $fh "\n";
+	close $fh;
 	return 1;
 }
 
