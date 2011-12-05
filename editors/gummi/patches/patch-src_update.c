@@ -1,14 +1,13 @@
-$OpenBSD: patch-src_update.c,v 1.1 2011/11/16 23:34:53 kili Exp $
---- src/update.c.orig	Sun Oct 24 09:18:22 2010
-+++ src/update.c	Sun Nov  7 14:53:04 2010
-@@ -33,7 +33,10 @@
+$OpenBSD: patch-src_update.c,v 1.2 2011/12/05 19:48:21 kili Exp $
+--- src/update.c.orig	Fri Dec  2 10:41:51 2011
++++ src/update.c	Mon Dec  5 20:14:23 2011
+@@ -33,7 +33,9 @@
  #include <string.h>
  
  #ifndef WIN32
 +#   include <sys/types.h>
  #   include <sys/socket.h>
 +#   include <netinet/in.h>
-+#   include <arpa/inet.h>
  #   include <sys/time.h>
  #   include <netdb.h>
  #   include <unistd.h>
