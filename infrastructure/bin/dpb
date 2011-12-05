@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.36 2011/12/05 16:10:00 espie Exp $
+# $OpenBSD: dpb,v 1.37 2011/12/05 21:22:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -67,6 +67,7 @@ sub handle_options
 			$state->{logdir} = shift;
 		},
 		r => sub {
+			$state->{random} = 1;
 			$state->heuristics->random;
 		},
 		m => sub {
@@ -437,7 +438,7 @@ sub main_loop
 $state->{grabber} = DPB::Grabber->new($state, 
     sub { handle_non_waiting_jobs(1) });
 
-if ($state->{all}) {
+if ($state->{all} && !$state->{random}) {
 	# when restarting interrupted dpb,
 	# find the most important paths first
 	my $list = $state->engine->find_best($state->logger->logfile("dependencies"), 10);
