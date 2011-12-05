@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/12/04 20:50:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/12/05 16:08:16 espie Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -32,6 +32,9 @@ WANTLIB += xcb-shm z
 MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
+
+# web albums
+BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libsoup,-gnome \
