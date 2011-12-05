@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/05 15:04:18 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight NETWM compliant desktop panel
 
 DISTNAME=	fbpanel-6.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tbz2
-
-MAINTAINER=	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE=	http://fbpanel.sourceforge.net/
 
