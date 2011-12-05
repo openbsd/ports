@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.23 2011/12/05 18:29:39 espie Exp $
+# $OpenBSD: Port.pm,v 1.24 2011/12/05 21:18:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -210,6 +210,8 @@ sub run
 		}
 	}
 
+	$self->junk_lock($core);
+
 	exit(0) unless %$dep;
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
@@ -223,7 +225,6 @@ sub run
 	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}->{fullrepo}.'/';
-	$self->junk_lock($core);
 	if (defined $shell) {
 		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd,
 		    (sort keys %$dep)));
@@ -316,10 +317,7 @@ sub finalize
 	} else {
 		$core->{status} = 1;
 	}
-	# if we're not followed by uninstall, then we end the serialized part.
-	if (!$job->{has_junk}) {
-		$self->junk_unlock($core);
-	}
+	$self->junk_unlock($core);
 	$self->SUPER::finalize($core);
 }
 
@@ -337,6 +335,7 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	$self->handle_output($job);
 	
+	$self->junk_lock($core);
 	my @d = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
 	print {$job->{builder}{junk_log}} $core->hostname, "(", 
@@ -521,7 +520,6 @@ sub add_normal_tasks
 		if ($builder->{junk_count}++ >= $builder->{junk}) {
 			$builder->{junk_count} = 0;
 			push(@todo, 'junk');
-			$self->{has_junk} = 1;
 		}
 	}
 	if ($builder->{fetch}) {
