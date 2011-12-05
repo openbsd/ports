@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.24 2011/12/03 18:02:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.25 2011/12/05 16:10:00 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 3 2011 $
+.Dd $Mdocdate: December 5 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl aceJqrRsuUx
+.Op Fl aceqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl C Ar pathlist
@@ -31,6 +31,7 @@
 .Op Fl f Ar m
 .Op Fl h Ar hosts
 .Op Fl I Ar subdirlist
+.Op Fl J Ar p
 .Op Fl j Ar n
 .Op Fl L Ar logdir
 .Op Fl m Ar threshold
@@ -198,13 +199,16 @@ List of
 .Xr pkgpath 7
 to install, on the local box.
 This will also add them to the list of things to build.
-.It Fl J
+.It Fl J Ar p
 Delete unneeded installed packages during the build.
 Each
 .Ar prepare
 stage is followed by a
 .Ar show-prepare-results
-stage and a
+stage.
+Every
+.Ar p
+build, it will be followed by a
 .Ar junk
 stage which uses
 .Xr pkg_delete 1
@@ -607,28 +611,6 @@ after fixing the problem.
 You have to stop
 .Nm ,
 cleanup and restart.
-.Pp
-Mixing
-.Nm
-running with
-.Fl J
-and
-.Nm
-running without
-.Fl J
-will lead to spurious errors: a
-.Nm
-lacking the option will not lock the host, and thus, may install new
-packages during
-.Ar depends ,
-and then fail the
-.Ar prepare
-stage as another
-.Nm
-will have removed the extraneous packages in-between.
-Always locking would be a safer option, but the gathering of statistical
-information to determine if the resulting bottleneck  has an actual
-negative impact is currently on-going.
 .Pp
 There's a bug in
 .Xr mfs 8

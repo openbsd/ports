@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.21 2011/12/04 12:05:41 espie Exp $
+# $OpenBSD: Port.pm,v 1.22 2011/12/05 16:10:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,26 +51,6 @@ sub finalize
 	return $core->{status} == 0;
 }
 
-sub junk_lock
-{
-	my ($self, $core) = @_;
-	my $builder = $core->job->{builder};
-	return unless $builder->{junk};
-
-	while (!$builder->locker->lock($core)) {
-		sleep 1;
-	}
-}
-
-sub junk_unlock
-{
-	my ($self, $core) = @_;
-	my $builder = $core->job->{builder};
-	return unless $builder->{junk};
-
-	$builder->locker->unlock($core);
-}
-
 sub handle_output
 {
 	my ($self, $job) = @_;
@@ -88,6 +68,8 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	$self->handle_output($job);
+	close STDIN;
+	open STDIN, '</dev/null';
 	print ">>> Running $t in $fullpkgpath\n";
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
@@ -121,12 +103,45 @@ sub run
 
 sub notime { 0 }
 
-package DPB::Task::Port::NoTime;
+package DPB::Task::Port::Serialized;
 our @ISA = qw(DPB::Task::Port);
-sub notime { 1 }
+
+sub junk_lock
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	my $locker = $job->{builder}->locker;
+
+	while (1) {
+		my $fh = $locker->lock($core);
+		if ($fh) {
+			print $fh "path=".$job->{v}->fullpkgpath, "\n";
+			return;
+		}
+		sleep 1;
+	}
+}
+
+sub junk_unlock
+{
+	my ($self, $core) = @_;
+
+	$core->job->{builder}->locker->unlock($core);
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	if ($core->{status} != 0) {
+		$self->junk_unlock($core);
+	}
+	$self->SUPER::finalize($core);
+}
 
 package DPB::Task::Port::Signature;
-our @ISA =qw(DPB::Task::Port::NoTime);
+our @ISA =qw(DPB::Task::Port);
+
+sub notime { 1 }
 
 sub run
 {
@@ -169,14 +184,15 @@ sub run
 }
 
 package DPB::Task::Port::Depends;
-our @ISA=qw(DPB::Task::Port::NoTime);
+our @ISA=qw(DPB::Task::Port::Serialized);
+
+sub notime { 1 }
 
 sub run
 {
 	my ($self, $core) = @_;
 	my $job = $core->job;
 	my $dep = {};
-	$self->junk_lock($core);
 	my $v = $job->{v};
 	if (exists $v->{info}{BDEPENDS}) {
 		for my $d (values %{$v->{info}{BDEPENDS}}) {
@@ -207,6 +223,7 @@ sub run
 	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}->{fullrepo}.'/';
+	$self->junk_lock($core);
 	if (defined $shell) {
 		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd,
 		    (sort keys %$dep)));
@@ -220,13 +237,15 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->SUPER::finalize($core);
 	$core->{status} = 0;
+	$self->SUPER::finalize($core);
 	return 1;
 }
 
 package DPB::Task::Port::Install;
-our @ISA=qw(DPB::Task::Port::NoTime);
+our @ISA=qw(DPB::Task::Port);
+
+sub notime { 1 }
 
 sub run
 {
@@ -253,34 +272,23 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->SUPER::finalize($core);
 	$core->{status} = 0;
+	$self->SUPER::finalize($core);
 	return 1;
 }
 
 package DPB::Task::Port::Prepare;
-our @ISA = qw(DPB::Task::Port);
-
-sub run
-{
-	my ($self, $core) = @_;
-	$self->SUPER::run($core);
-}
-
-sub finalize
-{
-	my ($self, $core) = @_;
-	$self->SUPER::finalize($core);
-}
+our @ISA = qw(DPB::Task::Port::Serialized);
 
 package DPB::Task::Port::PrepareResults;
-our @ISA = qw(DPB::Task::Port);
+our @ISA = qw(DPB::Task::Port::Serialized);
 
 sub result_filename
 {
 	my ($self, $job) = @_;
 	return $job->{builder}->logger->log_pkgpath($job->{v}).".tmp";
 }
+
 sub handle_output
 {
 	my ($self, $job) = @_;
@@ -291,34 +299,41 @@ sub finalize
 {
 	my ($self, $core) = @_;
 
-	$self->SUPER::finalize($core);
-	$core->{status} = 0;
-
 	my $job = $core->{job};
 	my $v = $job->{v};
 	my $file = $self->result_filename($job);
 	if (open my $fh, '<', $file) {
-		my @l;
+		my @r;
 		while (<$fh>) {
 			# zap headers
 			next if m/^\>\>\>\s/ || m/^\=\=\=\>\s/;
 			chomp;
-			push(@l, $_);
+			push(@r, $_);
 		}
-		print {$job->{lock}} "needed=", join(' ', sort @l), "\n";
+		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
+		close $fh;
+		unlink($file);
+		# full list for every lock
+		my @d = $core->job->{builder}->locker->find_dependencies(
+		    $core->hostname);
+		$job->{needed} = [sort @d];
+		print {$job->{builder}{junk_log}} $core->hostname, "(", 
+		    $job->{v}->fullpkgpath, "): ", join(' ', scalar(@d), @d), 
+		    "\n";
+	} else {
+		$core->{status} = 1;
 	}
-	unlink($file);
-	my $l = $job->{builder}{junk};
-	# full list for every lock
-	my @l = $core->job->{builder}->locker->find_dependencies($core->hostname);
-	$job->{needed} = [sort @l];
-	print $l $core->hostname, "(", $job->{v}->fullpkgpath, "): ", 
-	    join(' ', scalar(@l), @l), "\n";
-	return 1;
+	# if we're not followed by uninstall, then we end the serialized part.
+	if (!$job->{has_junk}) {
+		$self->junk_unlock($core);
+	}
+	$self->SUPER::finalize($core);
 }
 
 package DPB::Task::Port::Uninstall;
-our @ISA=qw(DPB::Task::Port::NoTime);
+our @ISA=qw(DPB::Task::Port::Serialized);
+
+sub notime { 1 }
 
 sub run
 {
@@ -342,9 +357,9 @@ sub run
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->SUPER::finalize($core);
-	$self->junk_unlock($core);
 	$core->{status} = 0;
+	$self->junk_unlock($core);
+	$self->SUPER::finalize($core);
 	return 1;
 }
 
@@ -402,7 +417,9 @@ sub finalize
 
 
 package DPB::Task::Port::Fetch;
-our @ISA = qw(DPB::Task::Port::NoTime);
+our @ISA = qw(DPB::Task::Port);
+
+sub notime { 1 }
 
 sub finalize
 {
@@ -418,7 +435,9 @@ sub finalize
 }
 
 package DPB::Task::Port::Clean;
-our @ISA = qw(DPB::Task::Port::NoTime);
+our @ISA = qw(DPB::Task::Port);
+
+sub notime { 1 }
 
 sub finalize
 {
@@ -498,9 +517,13 @@ sub add_normal_tasks
 	if ($builder->{clean}) {
 		push @todo, "clean";
 	}
-	push(@todo, qw(depends prepare));
+	push(@todo, qw(depends prepare show-prepare-results));
 	if ($builder->{junk}) {
-		push(@todo, qw(show-prepare-results junk));
+		if ($builder->{junk_count}++ >= $builder->{junk}) {
+			$builder->{junk_count} = 0;
+			push(@todo, 'junk');
+			$self->{has_junk} = 1;
+		}
 	}
 	if ($builder->{fetch}) {
 		push(@todo, qw(checksum));
