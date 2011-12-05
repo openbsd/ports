@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/11/23 12:00:46 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/12/05 23:22:39 sthen Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-docs-<2011
@@ -197,17 +197,17 @@ man/man1/showglyphs.1
 man/man1/sjisconv.1
 man/man1/splitindex.1
 man/man1/synctex.1
-man/man1/t1ascii.1
-man/man1/t1asm.1
-man/man1/t1binary.1
-man/man1/t1disasm.1
+@comment man/man1/t1ascii.1
+@comment man/man1/t1asm.1
+@comment man/man1/t1binary.1
+@comment man/man1/t1disasm.1
 man/man1/t1dotlessj.1
 man/man1/t1lint.1
-man/man1/t1mac.1
+@comment man/man1/t1mac.1
 man/man1/t1rawafm.1
 man/man1/t1reencode.1
 man/man1/t1testpage.1
-man/man1/t1unmac.1
+@comment man/man1/t1unmac.1
 man/man1/tangle.1
 man/man1/tcdialog.1
 man/man1/tex.1

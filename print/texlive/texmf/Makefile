@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/23 12:00:45 edd Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/05 23:22:39 sthen Exp $
 
-COMMENT-main =		texlive texmf for laTeX/PdfTeX 
+COMMENT-main =		texlive texmf for laTeX/PdfTeX
 COMMENT-full =		texlive texmf for XeTeX/ConTeXt and extra macros
 COMMENT-docs =		texlive documentation
 
@@ -10,9 +10,10 @@ MASTER_SITES0 =		http://spacehopper.org/mirrors/ \
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texmf-var-pregen-2011${EXTRACT_SUFX}:0
 
-PKGNAME-main = 		texlive_texmf-minimal-${V}
-PKGNAME-full = 		texlive_texmf-full-${V}
-PKGNAME-docs =	 	texlive_texmf-docs-${V}
+PKGNAME-main =		texlive_texmf-minimal-${V}
+PKGNAME-full =		texlive_texmf-full-${V}
+PKGNAME-docs =		texlive_texmf-docs-${V}
+REVISION-main =		0
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
@@ -30,10 +31,10 @@ MODPY_RUNDEP =		No
 RUN_DEPENDS-full +=	lang/python/${MODPY_VERSION} \
 			lang/ruby/${MODRUBY_REV}
 
-RUN_DEPENDS-docs = 	texlive_base-${V}:print/texlive/base \
+RUN_DEPENDS-docs =	texlive_base-${V}:print/texlive/base \
 			x11/p5-Tk
 
-MULTI_PACKAGES = 	-main -full -docs
+MULTI_PACKAGES =	-main -full -docs
 
 SUBST_VARS +=		LOCALBASE
 
