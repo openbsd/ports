@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2011/12/03 13:38:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2011/12/05 21:44:02 sthen Exp $
 
 VMEM_WARNING =	Yes
+BROKEN-arm =	build fails since move to gcc4
 
 HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
