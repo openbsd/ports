@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.24 2011/12/05 21:18:55 espie Exp $
+# $OpenBSD: Port.pm,v 1.25 2011/12/05 21:27:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -338,9 +338,6 @@ sub run
 	$self->junk_lock($core);
 	my @d = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
-	print {$job->{builder}{junk_log}} $core->hostname, "(", 
-	    $job->{v}->fullpkgpath, "): ", join(' ', scalar(@d), @d), "\n";
-
 	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @d);
 	print join(' ', @cmd, "\n");
 	my $shell = $core->{shell};
