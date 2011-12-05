@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/05 18:37:33 espie Exp $
 # Original from: Stephane Peter <megastep@megastep.org>
 
 COMMENT=	script generating a self-extractible .tgz from a directory
@@ -26,7 +26,7 @@ NO_REGRESS=		Yes
 PKG_ARCH=		*
 
 post-extract:
-	@cd ${WRKDIR} && /bin/sh ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
+	@cd ${WRKDIR} && /bin/sh ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} --nox11
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/makeself.sh ${PREFIX}/bin/makeself.sh
