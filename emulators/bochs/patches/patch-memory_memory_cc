@@ -1,0 +1,19 @@
+$OpenBSD: patch-memory_memory_cc,v 1.3 2011/12/05 14:56:27 giovanni Exp $
+
+Fix for busmaster DMA transfers from device to memory
+
+--- memory/memory.cc.orig	Thu Dec  1 04:34:02 2011
++++ memory/memory.cc	Thu Dec  1 04:35:34 2011
+@@ -365,3 +365,12 @@ inc_one:
+     }
+   }
+ }
++
++void BX_MEM_C::writePhysicalBlock(bx_phy_address addr, unsigned len, void *data)
++{
++  Bit8u *memptr = getHostMemAddr(NULL, addr, BX_WRITE);
++  if (memptr != NULL) {
++    pageWriteStampTable.decWriteStamp(addr);
++    memcpy(memptr, data, len);
++  }
++}

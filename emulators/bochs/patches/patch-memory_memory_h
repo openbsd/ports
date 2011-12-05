@@ -1,0 +1,14 @@
+$OpenBSD: patch-memory_memory_h,v 1.1 2011/12/05 14:56:27 giovanni Exp $
+
+Fix for busmaster DMA transfers from device to memory
+
+--- memory/memory.h.orig	Thu Dec  1 04:34:13 2011
++++ memory/memory.h	Thu Dec  1 04:34:53 2011
+@@ -101,6 +101,7 @@ class BOCHSAPI BX_MEM_C : public logfunctions { (publi
+                                       unsigned len, void *data);
+   BX_MEM_SMF void    writePhysicalPage(BX_CPU_C *cpu, bx_phy_address addr,
+                                        unsigned len, void *data);
++  BX_MEM_SMF void    writePhysicalBlock(bx_phy_address addr, unsigned len, void *data);
+   BX_MEM_SMF void    load_ROM(const char *path, bx_phy_address romaddress, Bit8u type);
+   BX_MEM_SMF void    load_RAM(const char *path, bx_phy_address romaddress, Bit8u type);
+ #if (BX_DEBUGGER || BX_DISASM || BX_GDBSTUB)
