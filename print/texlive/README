@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/11/23 12:00:45 edd Exp $
+$OpenBSD: README,v 1.4 2011/12/05 23:25:46 sthen Exp $
 
 TeX Live 2011 - Porting progress.
 ---------------------------------------
@@ -30,6 +30,8 @@ TeX Live 2011 - Porting progress.
  * Apply any security/reliability patches	done
    Search here: http://tug.org/pipermail/tldistro/
  * Test lots:					XXX
+ * @comment manpages conflicting with t1utils	done
+ * Mark manpages with @man in PLIST		XXX
 
 --- KNOWN ISSUES ---
 
