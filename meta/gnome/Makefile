@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/25 15:08:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/05 10:44:12 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
 
 REVISION-main=	4
-REVISION-extras=0
+REVISION-extras=1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -56,6 +56,7 @@ RUN_DEPENDS-main += \
 RUN_DEPENDS-extras += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		audio/rhythmbox \
+		devel/dconf,-editor \
 		graphics/simple-scan \
 		mail/evolution,-plugins \
 		mail/evolution-rss \
@@ -66,6 +67,7 @@ RUN_DEPENDS-extras += \
 		x11/gnome/eog-plugins \
 		x11/gnome/gedit-plugins \
 		x11/gnome/gnote \
+		x11/gnome/gvfs,-smb \
 		x11/gnome/icon-theme-extras \
 		x11/gnome/nautilus-open-terminal \
 		x11/gnome/nautilus-sendto \
