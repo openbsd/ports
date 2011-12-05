@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/23 12:11:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/05 14:58:59 dcoppa Exp $
 
 COMMENT =		command line podcast aggregator
 
-DISTNAME =		hpodder-1.1.5
-REVISION =		10
+DISTNAME =		hpodder-1.1.6
 CATEGORIES =		net
 HOMEPAGE =		http://wiki.github.com/jgoerzen/hpodder/
 
@@ -23,8 +22,8 @@ MODGHC_BUILD =		cabal hackage nort
 
 BUILD_DEPENDS =		devel/hs-ConfigFile \
 			devel/hs-mtl \
-			textproc/hs-HaXml>=1.20 \
-			databases/hs-HDBC-sqlite3
+			textproc/hs-HaXml>=1.20,<1.21 \
+			databases/hs-HDBC-sqlite3>=1.1.0
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/gmp
 RUN_DEPENDS =		net/curl>=7.15.5 \
