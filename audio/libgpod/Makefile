@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/11/15 15:47:52 mpi Exp $
+# $OpenBSD: Makefile,v 1.30 2011/12/05 22:59:52 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -10,6 +10,9 @@ PKGNAME-python= py-gpod-${VERSION}
 SHARED_LIBS=	gpod	721.0	# 7.1
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
+
+REVISION-main=	0
+REVISION-python=0
 
 HOMEPAGE=	http://www.gtkpod.org/libgpod/
 
@@ -33,19 +36,18 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=		audio/py-mutagen \
 			devel/swig
 RUN_DEPENDS-python=	audio/py-mutagen
-LIB_DEPENDS-python=	${LIB_DEPENDS} \
-			devel/libffi \
-			${BUILD_PKGPATH},-main
+LIB_DEPENDS-python=	${BUILD_PKGPATH},-main
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/glib2 \
 			devel/libplist \
 			devel/py-gobject \
 			graphics/gdk-pixbuf2 \
-			textproc/libxml
+			textproc/libxml \
+			devel/libusb1
 
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m z pcre
 WANTLIB += gdk_pixbuf-2.0 xml2 png ffi sqlite3 plist
-WANTLIB-main += ${WANTLIB} c pthread
+WANTLIB-main += ${WANTLIB} c pthread usb-1.0
 WANTLIB-python += ${WANTLIB} gpod
 
 CONFIGURE_STYLE=gnu
