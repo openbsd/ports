@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2011/11/22 14:38:51 giovanni Exp $
+# $OpenBSD: Makefile,v 1.199 2011/12/05 16:42:07 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,13 +35,6 @@ SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 
 MULTI_PACKAGES=		-main -server -tests
 
-.include <bsd.port.arch.mk>
-
-# XXX gcc bug, gcc/3.3.5
-.if ${MACHINE_ARCH} == "alpha" && !${PROPERTIES:Mgcc4}
-CFLAGS+=	-mbwx
-.endif
-
 # Suggested flags for the C compiler, needed for
 # high load servers otherwise MySQL will crash.
 CXX=		${CC}
@@ -65,6 +58,8 @@ CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
 		 --with-unix-socket-path="${SOCKET_DIR}/mysql.sock" \
 		 --without-docs \
 		 --without-readline
+
+.include <bsd.port.arch.mk>
 
 .if ${PROPERTIES:Mgcc[34]}
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
