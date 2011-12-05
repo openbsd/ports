@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/12/05 10:41:44 espie Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
@@ -28,7 +28,8 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/cppunit
+		devel/cppunit \
+		devel/libtool	# for libtoolize, required by autogen.sh
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
