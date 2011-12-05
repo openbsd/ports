@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:45:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/05 14:53:01 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ConfigFile/
 lib/ghc/${DISTNAME}/Data/ConfigFile.hi
 lib/ghc/${DISTNAME}/Data/ConfigFile/Lexer.hi
+lib/ghc/${DISTNAME}/Data/ConfigFile/Monadic.hi
 lib/ghc/${DISTNAME}/Data/ConfigFile/Parser.hi
 lib/ghc/${DISTNAME}/Data/ConfigFile/Types.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
@@ -16,6 +17,7 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYRIGHT
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/ConfigFile.haddock
+share/doc/hs-${DISTNAME}/html/Data-ConfigFile-Monadic.html
 share/doc/hs-${DISTNAME}/html/Data-ConfigFile-Parser.html
 share/doc/hs-${DISTNAME}/html/Data-ConfigFile-Types.html
 share/doc/hs-${DISTNAME}/html/Data-ConfigFile.html
@@ -25,6 +27,7 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile-Monadic.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile-Parser.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ConfigFile.html

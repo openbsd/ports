@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/11 14:45:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/12/05 14:53:01 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
@@ -18,7 +18,7 @@ lib/ghc/${DISTNAME}/register.sh
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
-share/doc/hs-${DISTNAME}/COPYRIGHT
+share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/System-Log-Formatter.html
 share/doc/hs-${DISTNAME}/html/System-Log-Handler-Growl.html

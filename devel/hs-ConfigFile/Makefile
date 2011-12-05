@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/05 14:53:01 dcoppa Exp $
 
 COMMENT =		parser and writer for config files
 
-DISTNAME =		ConfigFile-1.0.6
-REVISION =		11
+DISTNAME =		ConfigFile-1.1.1
 CATEGORIES =		devel sysutils
-HOMEPAGE =		http://software.complete.org/configfile
+HOMEPAGE =		https://github.com/jgoerzen/configfile/wiki
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
@@ -19,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-MissingH \
+RUN_DEPENDS +=		devel/hs-MissingH>=1.0.0 \
 			devel/hs-mtl
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
