@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:34:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/05 14:56:30 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
@@ -17,7 +17,7 @@ lib/ghc/${DISTNAME}/register.sh
 @unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
 lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
-share/doc/hs-${DISTNAME}/COPYRIGHT
+share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Database-HDBC-Sqlite3.html
 share/doc/hs-${DISTNAME}/html/HDBC-sqlite3.haddock
