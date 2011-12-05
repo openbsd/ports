@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.22 2011/12/05 16:10:01 espie Exp $
+# $OpenBSD: Port.pm,v 1.23 2011/12/05 18:29:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -313,13 +313,6 @@ sub finalize
 		print {$job->{lock}} "needed=", join(' ', sort @r), "\n";
 		close $fh;
 		unlink($file);
-		# full list for every lock
-		my @d = $core->job->{builder}->locker->find_dependencies(
-		    $core->hostname);
-		$job->{needed} = [sort @d];
-		print {$job->{builder}{junk_log}} $core->hostname, "(", 
-		    $job->{v}->fullpkgpath, "): ", join(' ', scalar(@d), @d), 
-		    "\n";
 	} else {
 		$core->{status} = 1;
 	}
@@ -343,7 +336,13 @@ sub run
 
 	my $sudo = OpenBSD::Paths->sudo;
 	$self->handle_output($job);
-	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @{$job->{needed}});
+	
+	my @d = $core->job->{builder}->locker->find_dependencies(
+	    $core->hostname);
+	print {$job->{builder}{junk_log}} $core->hostname, "(", 
+	    $job->{v}->fullpkgpath, "): ", join(' ', scalar(@d), @d), "\n";
+
+	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @d);
 	print join(' ', @cmd, "\n");
 	my $shell = $core->{shell};
 	if (defined $shell) {
