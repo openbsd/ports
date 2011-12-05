@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/12/05 22:36:54 espie Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -41,7 +41,7 @@ REGRESS_IS_INTERACTIVE =	x11
 
 SUBST_VARS =	V
 
-.if ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --without-x \
 		  --without-gd
 .else
@@ -52,7 +52,7 @@ WANTLIB +=	X11 fontconfig freetype ${MODLIBICONV_WANTLIB} jpeg png gd>=20
 CONFIGURE_ARGS += --with-x
 .endif
 
-.if ${FLAVOR:L:Mno_cairo} || ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mno_cairo} || ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS += --without-cairo
 .else
 MODULES +=	devel/gettext
