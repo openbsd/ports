@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2011/12/05 23:01:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,10 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-djvu=	0
+REVISION-dvi=	0
+REVISION-nautilus=	0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -45,10 +48,10 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	x11/gnome/icon-theme \
 		devel/gsettings-desktop-schemas
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes drm stdc++
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0
+WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0 Xau Xdmcp Xxf86vm
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += GL xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi
 
@@ -56,11 +59,10 @@ MODGNOME_TOOLS= goi yelp
 
 LIB_DEPENDS=	x11/gtk+3
 
-WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 gdk-x11-2.0 \
+WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 \
 		gnome-keyring gs gcrypt gpg-error \
 		jpeg pthread tiff xml2 lcms openjpeg \
-		poppler poppler-glib spectre gnome-keyring \
-		stdc++
+		poppler poppler-glib spectre gnome-keyring
 LIB_DEPENDS-main= print/poppler \
 		print/libspectre \
 		x11/gnome/libgnome-keyring \
@@ -81,7 +83,7 @@ LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
 		graphics/djvulibre,no_x11
 
 WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
-		c jpeg
+		jpeg
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
 LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
