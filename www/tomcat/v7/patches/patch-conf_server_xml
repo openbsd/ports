@@ -1,20 +1,20 @@
-$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2011/10/31 08:23:38 dcoppa Exp $
---- conf/server.xml.orig	Tue Sep 27 22:43:22 2011
-+++ conf/server.xml	Fri Oct 14 12:58:00 2011
+$OpenBSD: patch-conf_server_xml,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
+--- conf/server.xml.orig	Mon Dec  5 11:46:20 2011
++++ conf/server.xml	Mon Dec  5 11:48:53 2011
 @@ -67,12 +67,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL HTTP/1.1 Connector on port 8080
      -->
--    <Connector port="8080" protocol="HTTP/1.1" 
-+    <Connector address="0.0.0.0" port="8080" protocol="HTTP/1.1" 
-                connectionTimeout="20000" 
+-    <Connector port="8080" protocol="HTTP/1.1"
++    <Connector address="0.0.0.0" port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
                 redirectPort="8443" />
      <!-- A "Connector" using the shared thread pool-->
      <!--
 -    <Connector executor="tomcatThreadPool"
 +    <Connector executor="tomcatThreadPool" address="0.0.0.0"
-                port="8080" protocol="HTTP/1.1" 
-                connectionTimeout="20000" 
+                port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
                 redirectPort="8443" />
 @@ -82,13 +82,13 @@
           connector should be using the OpenSSL style configuration

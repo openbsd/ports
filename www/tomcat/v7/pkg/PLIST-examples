@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.1.1.1 2011/10/31 08:23:38 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -249,6 +249,7 @@ webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.XHttpServletResponse.
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.XPrintWriter.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.XServletOutputStream.html
 webapps/docs/api/org/apache/catalina/filters/ExpiresFilter.html
+webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/RemoteAddrFilter.html
 webapps/docs/api/org/apache/catalina/filters/RemoteHostFilter.html
@@ -515,6 +516,7 @@ webapps/docs/api/org/apache/catalina/startup/Embedded.html
 webapps/docs/api/org/apache/catalina/startup/EngineConfig.html
 webapps/docs/api/org/apache/catalina/startup/EngineRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/ExpandWar.html
+webapps/docs/api/org/apache/catalina/startup/FailedContext.html
 webapps/docs/api/org/apache/catalina/startup/HomesUserDatabase.html
 webapps/docs/api/org/apache/catalina/startup/HostConfig.DeployedApplication.html
 webapps/docs/api/org/apache/catalina/startup/HostConfig.html
@@ -1375,7 +1377,6 @@ webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantInterfaceMethodre
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantLong.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantMethodref.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantNameAndType.html
-webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantObject.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantPool.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantString.html
 webapps/docs/api/org/apache/tomcat/util/bcel/classfile/ConstantUtf8.html
@@ -1598,6 +1599,8 @@ webapps/docs/api/org/apache/tomcat/util/modeler/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/modeler/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/modeler/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/net/
+webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.AcceptorState.html
+webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Acceptor.html
 webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.BindState.html
 webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Handler.SocketState.html
 webapps/docs/api/org/apache/tomcat/util/net/AbstractEndpoint.Handler.html
@@ -1677,7 +1680,6 @@ webapps/docs/api/org/apache/tomcat/util/scan/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/scan/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/threads/
 webapps/docs/api/org/apache/tomcat/util/threads/Constants.html
-webapps/docs/api/org/apache/tomcat/util/threads/DedicatedThreadExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/LimitLatch.html
 webapps/docs/api/org/apache/tomcat/util/threads/ResizableExecutor.html
 webapps/docs/api/org/apache/tomcat/util/threads/TaskQueue.html

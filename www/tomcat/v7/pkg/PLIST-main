@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/10/31 08:23:38 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/tomcat/v7
 @newgroup _tomcat:526
@@ -78,6 +78,7 @@ tomcat/bin/catalina.sh
 tomcat/bin/commons-daemon-native.tar.gz
 tomcat/bin/commons-daemon.jar
 tomcat/bin/configtest.sh
+tomcat/bin/daemon.sh
 tomcat/bin/digest.sh
 tomcat/bin/setclasspath.sh
 tomcat/bin/shutdown.sh
