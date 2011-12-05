@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/05 13:04:10 espie Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -31,6 +31,9 @@ LIB_DEPENDS =		devel/libsoup,-gnome \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+
+# for xsltproc
+BUILD_DEPENDS =		textproc/libxslt
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
