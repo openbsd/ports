@@ -1,0 +1,10 @@
+$OpenBSD: patch-libproxy_libproxy-1_0_pc_in,v 1.1 2011/12/05 10:38:42 sthen Exp $
+--- libproxy/libproxy-1.0.pc.in.orig	Mon Dec  5 10:16:33 2011
++++ libproxy/libproxy-1.0.pc.in	Mon Dec  5 10:16:20 2011
+@@ -5,5 +5,5 @@ includedir=@PKGCONFIG_INCLUDEDIR@
+ Name: libproxy-1.0
+ Description: Proxy Configuration Library
+ Version: @PROJECT_VERSION@
+-Libs: -L${libdir} -lproxy
++Libs: -L${libdir} -lproxy -pthread
+ Cflags: -I${includedir} 
