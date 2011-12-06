@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.999 2011/11/17 17:12:52 kili Exp $
+# $OpenBSD: Makefile,v 1.1000 2011/12/06 20:55:11 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -166,6 +166,7 @@
      SUBDIR += hs-blaze-builder-enumerator
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
+     SUBDIR += hs-cmdargs
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
@@ -207,6 +208,7 @@
      SUBDIR += hs-regex-compat
      SUBDIR += hs-regex-pcre-builtin
      SUBDIR += hs-regex-posix
+     SUBDIR += hs-safe
      SUBDIR += hs-sendfile
      SUBDIR += hs-stm
      SUBDIR += hs-stringtable-atom
