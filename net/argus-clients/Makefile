@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/12/06 22:21:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/06 22:31:04 jasper Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
@@ -22,6 +22,9 @@ WANTLIB =	c m ncurses readline
 NO_REGRESS =	Yes
 
 CONFIGURE_STYLE = 	gnu
+CONFIGURE_ARGS +=	--without-mysql \
+			--without-GeoIP \
+			--without-sasl
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config
 BUILD_DEPENDS =	devel/bison
 USE_GROFF =	Yes
