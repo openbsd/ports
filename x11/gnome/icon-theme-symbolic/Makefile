@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/06 20:16:43 jasper Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	x11/icon-naming-utils \
 		x11/icontool
 
 # gtk-update-icon-cache is used at build time
-RUN_DEPENDS +=	x11/gtk+2,-guic
+BUILD_DEPENDS +=x11/gtk+2,-guic
 
 RUN_DEPENDS=	x11/gnome/icon-theme
 
