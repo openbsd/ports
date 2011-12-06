@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.20 2011/10/17 13:50:34 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.21 2011/12/06 16:05:44 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
@@ -18,13 +18,16 @@ going to/returning from fullscreen (upstream svn r2167 - r2169)
 Bugfix: 'f' not going to/returning from fullscreen
 (upstream svn revision r2161)
 
+Add 50% larger display of video
+(upstream svn revision r2187)
+
 Fix problem with seeking in the tracker
 (upstream svn revision r2176)
 
 Fix speed multipliers and speed reset (upstream svn revision r2180)
 
 --- src/gui.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/gui.c	Mon Oct 17 14:53:08 2011
++++ src/gui.c	Tue Dec  6 16:55:32 2011
 @@ -106,6 +106,7 @@ PLAYSTATE media_state_to_playstate(GmtkMediaPlayerMedi
  void set_media_player_attributes(GtkWidget * widget)
  {
@@ -98,7 +101,24 @@ Fix speed multipliers and speed reset (upstream svn revision r2180)
          case GDK_a:
              if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem_view_aspect_follow_window))) {
                  gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_view_aspect_default), TRUE);
-@@ -5073,7 +5091,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -3315,6 +3333,16 @@ void menuitem_view_onetoone_callback(GtkMenuItem * men
+ 
+ }
+ 
++void menuitem_view_onetoonepointfive_callback(GtkMenuItem * menuitem, void *data)
++{
++    IdleData *idle = (IdleData *) data;
++    idle->width = (gint) gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_WIDTH) * 1.5;
++    idle->height = (gint) gmtk_media_player_get_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_HEIGHT) * 1.5;
++    non_fs_width = 0;
++    non_fs_height = 0;
++    resize_window(idle);
++}
++
+ void menuitem_view_twotoone_callback(GtkMenuItem * menuitem, void *data)
+ {
+     IdleData *idle = (IdleData *) data;
+@@ -5073,7 +5101,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      gtk_spin_button_set_value(GTK_SPIN_BUTTON(config_volume), gm_pref_store_get_int(gm_store, VOLUME));
      gm_pref_store_free(gm_store);
      gtk_entry_set_width_chars(GTK_ENTRY(config_volume), 6);
@@ -107,7 +127,15 @@ Fix speed multipliers and speed reset (upstream svn revision r2180)
      gtk_entry_set_alignment(GTK_ENTRY(config_volume), 1);
      gtk_widget_show(config_volume);
      i++;
-@@ -6052,6 +6070,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
+@@ -5845,6 +5873,7 @@ void player_attribute_changed_callback(GmtkMediaTracke
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetoone), idledata->videopresent);
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetotwo), idledata->videopresent);
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_twotoone), idledata->videopresent);
++        gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetoonepointfive), idledata->videopresent);
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_advanced), idledata->videopresent);
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_aspect), idledata->videopresent);
+         gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_aspect_default), idledata->videopresent);
+@@ -6052,6 +6081,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
          g_strlcpy(idledata->media_info, text, 1024);
          g_thread_create(get_cover_art, metadata, FALSE, NULL);
          break;
@@ -119,7 +147,7 @@ Fix speed multipliers and speed reset (upstream svn revision r2180)
      default:
          if (verbose) {
              printf("Unhandled attribute change %i\n", attribute);
-@@ -6229,6 +6252,19 @@ void player_position_changed_callback(GmtkMediaTracker
+@@ -6229,6 +6263,19 @@ void player_position_changed_callback(GmtkMediaTracker
      }
  }
  
@@ -139,7 +167,25 @@ Fix speed multipliers and speed reset (upstream svn revision r2180)
  gboolean tracker_difference_callback(GtkWidget * widget, gdouble difference, void *data)
  {
  
-@@ -7146,6 +7182,7 @@ GtkWidget *create_window(gint windowid)
+@@ -6787,6 +6834,8 @@ GtkWidget *create_window(gint windowid)
+     gtk_menu_shell_append(GTK_MENU_SHELL(menu_view), GTK_WIDGET(menuitem_view_twotoone));
+     menuitem_view_onetotwo = GTK_MENU_ITEM(gtk_image_menu_item_new_with_mnemonic(_("_Half Size (1:2)")));
+     gtk_menu_shell_append(GTK_MENU_SHELL(menu_view), GTK_WIDGET(menuitem_view_onetotwo));
++    menuitem_view_onetoonepointfive = GTK_MENU_ITEM(gtk_image_menu_item_new_with_mnemonic(_("_50% larger (1.5:1)")));
++    gtk_menu_shell_append(GTK_MENU_SHELL(menu_view), GTK_WIDGET(menuitem_view_onetoonepointfive));
+     menuitem_view_aspect = GTK_MENU_ITEM(gtk_menu_item_new_with_mnemonic(_("_Aspect")));
+     menu_view_aspect = GTK_MENU(gtk_menu_new());
+     gtk_widget_show(GTK_WIDGET(menuitem_view_aspect));
+@@ -6840,6 +6889,8 @@ GtkWidget *create_window(gint windowid)
+                      G_CALLBACK(menuitem_view_twotoone_callback), idledata);
+     g_signal_connect(G_OBJECT(menuitem_view_onetotwo), "activate",
+                      G_CALLBACK(menuitem_view_onetotwo_callback), idledata);
++    g_signal_connect(G_OBJECT(menuitem_view_onetoonepointfive), "activate",
++                     G_CALLBACK(menuitem_view_onetoonepointfive_callback), idledata);
+     g_signal_connect(G_OBJECT(menuitem_view_aspect_default),
+                      "activate", G_CALLBACK(menuitem_view_aspect_callback), NULL);
+     g_signal_connect(G_OBJECT(menuitem_view_aspect_four_three),
+@@ -7146,6 +7197,7 @@ GtkWidget *create_window(gint windowid)
      tracker = GMTK_MEDIA_TRACKER(gmtk_media_tracker_new());
      gtk_box_pack_start(GTK_BOX(hbox), GTK_WIDGET(tracker), TRUE, TRUE, 2);
      g_signal_connect(G_OBJECT(tracker), "difference-changed", G_CALLBACK(tracker_difference_callback), NULL);
@@ -147,3 +193,12 @@ Fix speed multipliers and speed reset (upstream svn revision r2180)
      g_signal_connect(G_OBJECT(tracker), "button_press_event", G_CALLBACK(progress_callback), NULL);
      g_signal_connect_swapped(G_OBJECT(media), "position_changed",
                               G_CALLBACK(player_position_changed_callback), tracker);
+@@ -7372,7 +7424,7 @@ void show_window(gint windowid)
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetoone), FALSE);
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetotwo), FALSE);
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_twotoone), FALSE);
+-    gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_twotoone), FALSE);
++    gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_onetoonepointfive), FALSE);
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_aspect), FALSE);
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_aspect_default), FALSE);
+     gtk_widget_set_sensitive(GTK_WIDGET(menuitem_view_aspect_four_three), FALSE);
