@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/06 08:36:06 ajacoutot Exp $
+
+BROKEN-powerpc =	qdoc3 goes into an infinite loop
 
 COMMENT =		cross-platform IDE for use with Qt
 
