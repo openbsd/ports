@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/12/06 13:10:38 pascal Exp $
+--- Makefile.orig	Thu Dec  1 20:01:45 2011
++++ Makefile	Thu Dec  1 20:07:14 2011
+@@ -1,10 +1,10 @@
+ # Makefile for dungeon
+ 
+ # Where to install the program
+-BINDIR = /usr/games
++BINDIR = ${PREFIX}/bin
+ 
+ # Where to install the data file
+-LIBDIR = /usr/games/lib
++LIBDIR = ${PREFIX}/share/dungeon
+ 
+ # The dungeon program provides a ``more'' facility which tries to
+ # figure out how many rows the terminal has.  Several mechanisms are
+@@ -42,7 +42,7 @@ TERMFLAG =
+ # GDTFLAG = -DALLOW_GDT
+ 
+ # Compilation flags
+-CFLAGS = -O
++#CFLAGS = -O
+ # On SCO Unix Development System 3.2.2a, the const type qualifier does
+ # not work correctly when using cc.  The following line will cause it
+ # to not be used and should be uncommented.

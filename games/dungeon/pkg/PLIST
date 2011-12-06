@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/06 13:10:38 pascal Exp $
+@bin bin/dungeon
+@man man/man6/dungeon.6
+share/doc/dungeon/
+share/doc/dungeon/History
+share/dungeon/
+share/dungeon/dtextc.dat

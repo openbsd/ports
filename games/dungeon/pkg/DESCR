@@ -1,0 +1,3 @@
+Dungeon, also known as Zork(tm), is a text mode adventure/role-playing
+game. Originally developed for the PDP-10 and later ported to Fortran
+and the PDP-11, this version is a translation to C.
