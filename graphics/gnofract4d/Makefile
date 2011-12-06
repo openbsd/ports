@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/14 11:01:16 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/06 08:03:53 espie Exp $
 
 COMMENT =		fractal image generator
 
@@ -19,6 +19,7 @@ WANTLIB += m png stdc++ z ${MODPY_WANTLIB}
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=gnofract4d/}
 
+BUILD_DEPENDS =		graphics/png
 MODULES =		lang/python
 RUN_DEPENDS =		x11/py-gtk2
 
