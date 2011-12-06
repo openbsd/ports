@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1.1.1 2011/12/06 21:03:43 kili Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To fetch and initially create the default hoogle database set
+(currently all haskell packages from the haskell platform), you may
+want to run the following command:
+
+	su -s /bin/sh _hoogle -c 'hoogle data default'
+
+You can refetch files and rebuild the hoogle databases by running
+the following command from a cron job or /etc/weekly.local:
+
+	su -s /bin/sh _hoogle -c 'hoogle data -r default'
+
+If you want the complete set of databases for all packages available
+at hackage.haskell.org, replace "default" by "all" in the commands
+above.
