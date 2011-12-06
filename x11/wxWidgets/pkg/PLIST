@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/28 17:50:43 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/12/06 10:23:38 dcoppa Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -634,6 +634,7 @@ include/wx/zstream.h
 @lib lib/libwx_gtk2_gizmos_xrc.so.${LIBwx_gtk2_gizmos_xrc_VERSION}
 @lib lib/libwx_gtk2_gl.so.${LIBwx_gtk2_gl_VERSION}
 @lib lib/libwx_gtk2_html.so.${LIBwx_gtk2_html_VERSION}
+@lib lib/libwx_gtk2_media.so.${LIBwx_gtk2_media_VERSION}
 @lib lib/libwx_gtk2_ogl.so.${LIBwx_gtk2_ogl_VERSION}
 @lib lib/libwx_gtk2_plot.so.${LIBwx_gtk2_plot_VERSION}
 @lib lib/libwx_gtk2_qa.so.${LIBwx_gtk2_qa_VERSION}
