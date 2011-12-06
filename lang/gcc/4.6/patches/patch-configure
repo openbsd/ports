@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2011/12/06 01:51:37 pascal Exp $
+--- configure.orig	Mon Dec  5 22:50:49 2011
++++ configure	Mon Dec  5 22:51:01 2011
+@@ -2515,7 +2515,7 @@ for as_dir in $PATH
+ do
+   IFS=$as_save_IFS
+   test -z "$as_dir" && as_dir=.
+-    for ac_prog in sed gsed; do
++    for ac_prog in sed ; do
+     for ac_exec_ext in '' $ac_executable_extensions; do
+       ac_path_SED="$as_dir/$ac_prog$ac_exec_ext"
+       { test -f "$ac_path_SED" && $as_test_x "$ac_path_SED"; } || continue

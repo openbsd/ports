@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.4 2011/11/22 21:46:39 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.5 2011/12/06 01:51:37 pascal Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -47,7 +47,7 @@ _MODGCC4_LINKS += eg++ g++ eg++ c++
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
 BUILD_DEPENDS += lang/gcc/4.6,-f95>=4.6,<4.7
-WANTLIB += gfortran>=2
+WANTLIB += gfortran>=3
 LIB_DEPENDS += lang/gcc/4.6,-f95>=4.6,<4.7
 _MODGCC4_LINKS += egfortran gfortran
 .  endif
