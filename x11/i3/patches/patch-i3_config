@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config,v 1.5 2011/12/01 16:00:01 dcoppa Exp $
+$OpenBSD: patch-i3_config,v 1.6 2011/12/07 09:51:26 dcoppa Exp $
 --- i3.config.orig	Fri Nov 11 23:41:20 2011
-+++ i3.config	Thu Dec  1 14:37:51 2011
++++ i3.config	Wed Dec  7 10:35:02 2011
 @@ -9,6 +9,8 @@
  # layout, use the i3-config-wizard
  #
@@ -26,13 +26,14 @@ $OpenBSD: patch-i3_config,v 1.5 2011/12/01 16:00:01 dcoppa Exp $
  
  # change focus
  bindsym Mod1+j focus left
-@@ -145,19 +147,7 @@ mode "resize" {
+@@ -145,19 +147,8 @@ mode "resize" {
  
  bindsym Mod1+r mode "resize"
  
 -# Start i3bar to display a workspace bar (plus the system information i3status
 -# finds out, if available)
 +# Start i3bar to display a workspace bar
++# XXX: i3status has not been ported to OpenBSD yet
  bar {
 -	status_command i3status
 +	status_command /usr/bin/true
