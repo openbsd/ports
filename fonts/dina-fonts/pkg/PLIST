@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/07 09:27:16 jasper Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/dina/
+lib/X11/fonts/dina/DinaBold10.pcf.gz
+lib/X11/fonts/dina/DinaBold8.pcf.gz
+lib/X11/fonts/dina/DinaBold9.pcf.gz
+lib/X11/fonts/dina/DinaBoldItalic10.pcf.gz
+lib/X11/fonts/dina/DinaBoldItalic8.pcf.gz
+lib/X11/fonts/dina/DinaBoldItalic9.pcf.gz
+lib/X11/fonts/dina/DinaItalic10.pcf.gz
+lib/X11/fonts/dina/DinaItalic8.pcf.gz
+lib/X11/fonts/dina/DinaItalic9.pcf.gz
+lib/X11/fonts/dina/DinaMedium10.pcf.gz
+lib/X11/fonts/dina/DinaMedium8.pcf.gz
+lib/X11/fonts/dina/DinaMedium9.pcf.gz
+lib/X11/fonts/dina/fonts.alias-dina
