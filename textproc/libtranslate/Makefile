@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/14 16:38:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/07 06:21:29 espie Exp $
 
 SHARED_LIBS +=  translate                 0.0 # 0.0
 
@@ -27,6 +27,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/glib2 \
 		devel/libsoup \
 		textproc/libxml
+BUILD_DEPENDS +=	textproc/p5-XML-Parser
 
 USE_GMAKE=		Yes
 CONFIGURE_STYLE=	autoconf
