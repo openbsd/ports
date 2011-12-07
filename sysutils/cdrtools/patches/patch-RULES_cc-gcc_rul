@@ -1,0 +1,34 @@
+$OpenBSD: patch-RULES_cc-gcc_rul,v 1.1 2011/12/07 07:56:12 sebastia Exp $
+--- RULES/cc-gcc.rul.orig	Wed May  9 14:25:30 2007
++++ RULES/cc-gcc.rul	Thu Nov 17 16:25:51 2011
+@@ -19,9 +19,9 @@
+ # file and include the License file CDDL.Schily.txt from this distribution.
+ ###########################################################################
+ 
+-CPPFLAGS=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
+-C++FLAGS=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
++CPPFLAGS+=	-DSCHILY_BUILD $(CPPOPTS) $(CPPOPTX)
++CFLAGS+=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
++C++FLAGS+=	$(C++OPTS) $(C++WARNOPTS) $(C++OPTOPT) $(G++OPTOPT) $(C++OPTX)
+ 
+ CPPOPTS=	-I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(INCDIRSX:%=-I%) $(OSDEFS)
+ COPTS=
+@@ -29,7 +29,7 @@ COPTS=
+ CWOPTS=		-Wall -Wtraditional
+ CWOPTS=		-Wall -Wno-unknown-pragmas \
+ 		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+-COPTOPT=	-O
++COPTOPT=	
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
+ C++OPTS=
+@@ -45,7 +45,7 @@ SHL_SUFFIX=	.so.1
+ LIBS_PATH=	-L$(OLIBSDIR)
+ LIBS_PATH_STATIC= -L$(OLIBSDIR_STATIC) 
+ 
+-LDFLAGS=	$(LDOPTS) $(LDOPTX)
++LDFLAGS+=	$(LDOPTS) $(LDOPTX)
+ LDLIBS=		$(LIBS) $(LIBX)
+ 
+ LDOPTS=		$(LIBS_PATH) $(LDPATH) $(RUNPATH:-R%=-Wl,-R%)

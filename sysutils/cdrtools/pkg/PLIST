@@ -1,14 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/11/30 05:44:03 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/12/07 07:56:12 sebastia Exp $
 @conflict cdrecord-*
-bin/cdda2wav
-bin/cdrecord
-bin/devdump
-bin/isodebug
-bin/isodump
-bin/isoinfo
-bin/isovfy
-bin/mkisofs
-bin/readcd
+@bin bin/cdda2wav
+@bin bin/cdrecord
+@bin bin/devdump
+@bin bin/isodebug
+@bin bin/isodump
+@bin bin/isoinfo
+@bin bin/isovfy
+@bin bin/mkisofs
+@bin bin/readcd
 @man man/man1/cdda2wav.1
 @man man/man1/cdrecord.1
 @man man/man1/devdump.1

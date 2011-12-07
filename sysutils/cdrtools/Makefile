@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/10 14:13:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/07 07:56:12 sebastia Exp $
 
-COMMENT=		ISO 9660 filesystem and CD creation tools
+COMMENT=		ISO 9660 filesystem and CD/DVD/BD creation tools
 
-DISTNAME=		cdrtools-2.01
-REVISION =		2
+DISTNAME=		cdrtools-3.00
 CATEGORIES=		sysutils
-HOMEPAGE=		http://cdrecord.berlios.de/old/private/cdrecord.html
+HOMEPAGE=		http://cdrecord.berlios.de/private/cdrecord.html
 
-# GPL
+# mostly CDDL, some components GPL (see COPYING)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,11 +16,16 @@ WANTLIB=		c ossaudio
 MASTER_SITES=		ftp://ftp.berlios.de/pub/cdrecord/ \
 			http://spacehopper.org/mirrors/berlios/cdrecord/
 
-USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
-MAKE_ENV=		MAKEPROG=${MAKE_PROGRAM} \
-			CCOM=${CC}
+USE_GMAKE=		Yes
+
+MAKE_ENV +=		MAKEPROG=${MAKE_PROGRAM} 
+MAKE_FLAGS =		GMAKE_NOWARN=true CC="${CC}" CC++="${CXX}" \
+			LDCC="${CC}" LDCC++="${CXX}" \
+			MKC++DEP="${CXX} -M" MKDEP="${CC} -M" \
+			DYNLD="${CC}" DYNLDC++="${CXX}" \
+			GCCOPTOPT="" RANLIB=ranlib AR=ar \
+			OSS_SOUND_DEV='"/dev/audio"'
 
 NO_REGRESS=		Yes
 
