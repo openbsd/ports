@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/07 23:31:04 espie Exp $
 
 COMMENT =	html help viewer
 
@@ -28,7 +28,8 @@ WANTLIB += xcb-shm xml2 z
 MODULES =	devel/cmake \
 		devel/gettext
 
-BUILD_DEPENDS =	devel/xulrunner/1.9,-devel
+BUILD_DEPENDS =	devel/xulrunner/1.9,-devel \
+		textproc/intltool
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xulrunner/1.9 \
