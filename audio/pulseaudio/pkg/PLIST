@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/01 08:37:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/12/07 20:25:35 robert Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -46,6 +46,10 @@ include/pulse/util.h
 include/pulse/version.h
 include/pulse/volume.h
 include/pulse/xmalloc.h
+lib/cmake/
+lib/cmake/PulseAudio/
+lib/cmake/PulseAudio/PulseAudioConfig.cmake
+lib/cmake/PulseAudio/PulseAudioConfigVersion.cmake
 lib/libpulse-mainloop-glib.la
 @lib lib/libpulse-mainloop-glib.so.${LIBpulse-mainloop-glib_VERSION}
 lib/libpulse-simple.la

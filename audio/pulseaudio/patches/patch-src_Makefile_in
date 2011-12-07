@@ -1,28 +1,25 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2011/10/01 08:37:30 ajacoutot Exp $
-
-- Don't install ALSA and UDEV files on OpenBSD.
-
---- src/Makefile.in.orig	Tue Sep 27 09:57:34 2011
-+++ src/Makefile.in	Fri Sep 30 14:57:57 2011
-@@ -3109,7 +3109,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS
+$OpenBSD: patch-src_Makefile_in,v 1.3 2011/12/07 20:25:35 robert Exp $
+--- src/Makefile.in.orig	Wed Dec  7 21:15:43 2011
++++ src/Makefile.in	Wed Dec  7 21:17:10 2011
+@@ -3116,7 +3116,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS
  libpulsecommon_@PA_MAJORMINOR@_la_LDFLAGS = $(AM_LDFLAGS) \
- 	-avoid-version $(am__append_17)
+ 	-avoid-version $(am__append_18)
  libpulsecommon_@PA_MAJORMINOR@_la_LIBADD = $(AM_LIBADD) \
 -	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) \
 +	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) -lexecinfo \
- 	$(LIBSAMPLERATE_LIBS) $(LIBSNDFILE_LIBS) $(am__append_23) \
- 	$(am__append_27)
+ 	$(LIBSNDFILE_LIBS) $(am__append_24) $(am__append_28)
  
-@@ -3628,7 +3628,7 @@ module_x11_cork_request_la_LIBADD = $(MODULE_LIBADD) $
- 
+ ###################################
+@@ -3635,7 +3635,7 @@ module_x11_cork_request_la_LIBADD = $(MODULE_LIBADD) $
  # OSS
  liboss_util_la_SOURCES = modules/oss/oss-util.c modules/oss/oss-util.h
--liboss_util_la_LDFLAGS = -avoid-version
-+liboss_util_la_LDFLAGS = -avoid-version -lossaudio
- liboss_util_la_LIBADD = $(MODULE_LIBADD)
+ liboss_util_la_LDFLAGS = -avoid-version
+-liboss_util_la_LIBADD = $(MODULE_LIBADD)
++liboss_util_la_LIBADD = $(MODULE_LIBADD) -lossaudio
  module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
-@@ -8622,8 +8622,7 @@ info: info-am
+ module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la
+@@ -8628,8 +8628,7 @@ info: info-am
  
  info-am:
  
