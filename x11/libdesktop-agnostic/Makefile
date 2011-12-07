@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/07 08:48:28 jasper Exp $
 
 COMMENT=		desktop-agnostic library, apis and tools
 
 V=			0.3.92
 DISTNAME=		libdesktop-agnostic-$V
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -19,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}/0.4/$V/+download/
 
-MODULES=		devel/waf devel/gettext
+MODULES=		devel/waf \
+			devel/gettext \
+			textproc/intltool
 
 SO_VERSION =		0.0
 
