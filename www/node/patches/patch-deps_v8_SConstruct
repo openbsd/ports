@@ -1,26 +1,26 @@
-$OpenBSD: patch-deps_v8_SConstruct,v 1.5 2011/04/29 07:41:15 jasper Exp $
+$OpenBSD: patch-deps_v8_SConstruct,v 1.6 2011/12/07 12:18:01 sthen Exp $
 
 - Remove extra zoom-zoom!
 - Don't link with -lpthread but use -pthread instead.
 
---- deps/v8/SConstruct.orig	Sat Apr 23 02:06:25 2011
-+++ deps/v8/SConstruct	Fri Apr 29 00:07:18 2011
-@@ -154,7 +154,7 @@ LIBRARY_FLAGS = {
-       }
+--- deps/v8/SConstruct.orig	Wed Nov 16 13:43:22 2011
++++ deps/v8/SConstruct	Wed Nov 16 13:44:20 2011
+@@ -94,7 +94,7 @@ LIBRARY_FLAGS = {
+       'CPPDEFINES':   ['ENABLE_DISASSEMBLER', 'DEBUG'],
      },
      'mode:release': {
 -      'CCFLAGS':      ['-O3', '-fomit-frame-pointer', '-fdata-sections',
 +      'CCFLAGS':      ['-fomit-frame-pointer', '-fdata-sections',
                         '-ffunction-sections'],
-       'os:android': {
-         'CCFLAGS':    ['-mthumb', '-Os'],
-@@ -368,7 +368,8 @@ MKSNAPSHOT_EXTRA_FLAGS = {
+     },
+     'os:linux': {
+@@ -358,7 +358,8 @@ MKSNAPSHOT_EXTRA_FLAGS = {
        'LINKFLAGS': ['-mt']
      },
      'os:openbsd': {
 -      'LIBS': ['execinfo', 'pthread']
 +      'LIBS': ['execinfo'],
-+      'LINKFLAGS': ['-pthread']
++      'LINKFLAGS': ['-pthread'],
      },
      'os:win32': {
        'LIBS': ['winmm', 'ws2_32'],

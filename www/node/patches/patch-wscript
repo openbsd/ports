@@ -1,14 +1,7 @@
-$OpenBSD: patch-wscript,v 1.8 2011/06/29 18:44:07 jasper Exp $
-
-- OpenBSD can also use libexecinfo.
-- Don't append EV_MULTIPLICITY_EV was it breaks the build with using the
-  shared libev with an undefined reference to ev_rt_now.
-- Don't build with -O3.
-- Adjust some paths.
-
---- wscript.orig	Wed Jun 29 13:24:02 2011
-+++ wscript	Wed Jun 29 20:25:09 2011
-@@ -276,7 +276,7 @@ def configure(conf):
+$OpenBSD: patch-wscript,v 1.9 2011/12/07 12:18:01 sthen Exp $
+--- wscript.orig	Fri Nov 25 10:23:28 2011
++++ wscript	Fri Nov 25 13:45:49 2011
+@@ -301,7 +301,7 @@ def configure(conf):
    if Options.options.efence:
      conf.check(lib='efence', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='EFENCE')
  
@@ -17,38 +10,12 @@ $OpenBSD: patch-wscript,v 1.8 2011/06/29 18:44:07 jasper Exp $
       if not conf.check(lib="execinfo",
                         includes=['/usr/include', '/usr/local/include'],
                         libpath=['/usr/lib', '/usr/local/lib'],
-@@ -463,8 +463,10 @@ def configure(conf):
-   # LFS
-   conf.env.append_value('CPPFLAGS',  '-D_LARGEFILE_SOURCE')
-   conf.env.append_value('CPPFLAGS',  '-D_FILE_OFFSET_BITS=64')
--  conf.env.append_value('CPPFLAGS',  '-DEV_MULTIPLICITY=0')
- 
-+#  Disabled, see http://comments.gmane.org/gmane.comp.lang.javascript.nodejs/18924
-+#  conf.env.append_value('CPPFLAGS',  '-DEV_MULTIPLICITY=0')
-+
-   # Makes select on windows support more than 64 FDs
-   if sys.platform.startswith("win32"):
-     conf.env.append_value('CPPFLAGS', '-DFD_SETSIZE=1024');
-@@ -533,7 +535,7 @@ def configure(conf):
+@@ -534,7 +534,7 @@ def configure(conf):
  
    # Configure default variant
-   conf.setenv('default')
+   conf.setenv('Release')
 -  default_compile_flags = ['-g', '-O3']
 +  default_compile_flags = ['-g']
    conf.env.append_value('CCFLAGS', default_compile_flags)
    conf.env.append_value('CXXFLAGS', default_compile_flags)
    conf.write_config_header("config.h")
-@@ -902,11 +904,10 @@ def build(bld):
-   # Only install the man page if it exists.
-   # Do 'make doc install' to build and install it.
-   if os.path.exists('doc/node.1'):
--    bld.install_files('${PREFIX}/share/man/man1/', 'doc/node.1')
-+    bld.install_files('${PREFIX}/man/man1/', 'doc/node.1')
- 
-   bld.install_files('${PREFIX}/bin/', 'tools/node-waf', chmod=0755)
--  bld.install_files('${LIBDIR}/node/wafadmin', 'tools/wafadmin/*.py')
--  bld.install_files('${LIBDIR}/node/wafadmin/Tools', 'tools/wafadmin/Tools/*.py')
-+  bld.install_files('${LIBDIR}/node/wafadmin', 'tools/wafadmin/Node.py')
- 
-   # create a pkg-config(1) file
-   node_conf = bld.new_task_gen('subst', before="cxx")
