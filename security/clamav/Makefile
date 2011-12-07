@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/18 18:48:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/07 09:29:02 jasper Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.97.3
+REVISION=		0
 
 CATEGORIES=		security
 SHARED_LIBS=		clamav 18.1 \
@@ -20,7 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		bz2 c ltdl m milter ncurses pthread stdc++ z
 
-BUILD_DEPENDS=		devel/check
+BUILD_DEPENDS=		devel/check \
+			devel/libexecinfo
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl
@@ -28,7 +30,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 RUN_DEPENDS=		archivers/lha \
 			archivers/zoo \
 			archivers/arc \
-			archivers/unzip 
+			archivers/unzip
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
