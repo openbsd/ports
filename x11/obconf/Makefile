@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/11/03 16:43:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/12/07 06:18:05 espie Exp $
 
 COMMENT=	configuration utility for openbox
 
@@ -43,6 +43,8 @@ AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} ${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
