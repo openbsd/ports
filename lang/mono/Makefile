@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/11/09 22:13:37 robert Exp $
+# $OpenBSD: Makefile,v 1.67 2011/12/07 11:49:43 espie Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -98,5 +98,12 @@ pre-configure:
 pre-build:
 	@mkdir -p ${WRKSRC}/mcs/build/deps
 	@touch ${WRKSRC}/mcs/build/deps/use-monolite
+
+# XXX stop mono failing the first time
+# make _tmpinst more available
+post-build:
+	for i in ${WRKBUILD}/runtime/_tmpinst/bin/*; do \
+		ln -s $$i ${WRKDIR}/bin; \
+	done
 
 .include <bsd.port.mk>
