@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/14 11:18:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/07 17:26:32 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,8 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		textproc/enchant \
 			x11/gtk+3
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			devel/libsoup \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			x11/gnome/icon-theme
