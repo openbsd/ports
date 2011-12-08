@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/08 18:35:50 bluhm Exp $
 
-COMMENT=	perl module to generate random data
+COMMENT =		perl module to generate random data
 
-DISTNAME=	Data-Random-0.05
-REVISION=	1
-CATEGORIES=	devel
-USE_GROFF =	Yes
+DISTNAME =		Data-Random-0.06
 
-MAINTAINER=	Alexander Bluhm <bluhm@openbsd.org>
+CATEGORIES =		devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # perl
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=	cpan
-REGRESS_DEPENDS=devel/p5-Date-Calc \
-		graphics/p5-GD
+MODULES =		cpan
+REGRESS_DEPENDS =	devel/p5-Date-Calc \
+			graphics/p5-GD
 
 .include <bsd.port.mk>
