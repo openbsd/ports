@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.5 2011/12/06 01:51:37 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.6 2011/12/08 19:59:36 pascal Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -56,7 +56,7 @@ _MODGCC4_LINKS += egfortran gfortran
 BUILD_DEPENDS += lang/gcc/4.6,-java>=4.6,<4.7
 MODGCC4_GCJWANTLIB = gcj
 MODGCC4_GCJLIBDEP = lang/gcc/4.6,-java>=4.6,<4.7
-_MODGCC4_LINKS += egcj gcj egcjh gcjh ejar gjar egij gij
+_MODGCC4_LINKS += egcj gcj egcjh gcjh egjar gjar egij gij
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mgo}
