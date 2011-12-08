@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.721 2011/12/01 13:50:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.722 2011/12/08 13:56:14 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -242,6 +242,7 @@
      SUBDIR += onioncat
      SUBDIR += opal
      SUBDIR += openafs
+     SUBDIR += openconnect
      SUBDIR += openfire
      SUBDIR += openmdns
      SUBDIR += openvmps
