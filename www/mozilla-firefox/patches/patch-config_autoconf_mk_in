@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_autoconf_mk_in,v 1.13 2011/10/03 21:06:09 landry Exp $
---- config/autoconf.mk.in.orig	Thu Aug 25 02:36:39 2011
-+++ config/autoconf.mk.in	Mon Aug 29 14:54:45 2011
-@@ -302,7 +302,7 @@ OS_LDFLAGS	= @LDFLAGS@
+$OpenBSD: patch-config_autoconf_mk_in,v 1.14 2011/12/08 00:33:36 nigel Exp $
+--- config/autoconf.mk.in.orig	Fri Nov  4 21:33:54 2011
++++ config/autoconf.mk.in	Thu Nov 10 00:21:24 2011
+@@ -299,7 +299,7 @@ OS_LDFLAGS	= @LDFLAGS@
  OS_COMPILE_CFLAGS = $(OS_CPPFLAGS) @COMPILE_CFLAGS@
  OS_COMPILE_CXXFLAGS = $(OS_CPPFLAGS) @COMPILE_CXXFLAGS@
  
