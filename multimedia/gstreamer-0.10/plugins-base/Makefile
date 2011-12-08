@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/11/17 11:42:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/12/08 16:46:50 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -34,6 +34,9 @@ MODULES =		devel/gettext
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 .endfor
+
+# needed for tests/
+BUILD_DEPENDS =		x11/gtk+2
 
 RUN_DEPENDS =		${BUILD_PKGPATH}
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
