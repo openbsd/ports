@@ -1,7 +1,17 @@
-$OpenBSD: patch-boehm-gc_os_dep_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+$OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
 --- boehm-gc/os_dep.c.orig	Sun Mar 21 20:34:19 2010
-+++ boehm-gc/os_dep.c	Sun Nov 13 10:50:24 2011
-@@ -393,6 +393,103 @@ static void *tiny_sbrk(ptrdiff_t increment)
++++ boehm-gc/os_dep.c	Thu Dec  8 16:41:50 2011
+@@ -385,14 +385,111 @@ static void *tiny_sbrk(ptrdiff_t increment)
+ 
+   void GC_init_netbsd_elf()
+   {
+-    extern ptr_t GC_find_limit();
++    extern ptr_t GC_find_limit_openbsd();
+     extern char **environ;
+ 	/* This may need to be environ, without the underscore, for	*/
+ 	/* some versions.						*/
+-    GC_data_start = GC_find_limit((ptr_t)&environ, FALSE);
++    GC_data_start = GC_find_limit_openbsd((ptr_t)&environ, FALSE);
    }
  #endif
  

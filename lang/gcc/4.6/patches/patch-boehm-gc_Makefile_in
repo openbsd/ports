@@ -1,7 +1,7 @@
-$OpenBSD: patch-boehm-gc_Makefile_in,v 1.2 2011/11/22 21:46:39 pascal Exp $
+$OpenBSD: patch-boehm-gc_Makefile_in,v 1.3 2011/12/08 17:40:55 pascal Exp $
 --- boehm-gc/Makefile.in.orig	Wed Oct 26 11:30:24 2011
-+++ boehm-gc/Makefile.in	Tue Nov 22 14:06:34 2011
-@@ -64,6 +64,7 @@ CONFIG_CLEAN_VPATH_FILES =
++++ boehm-gc/Makefile.in	Thu Dec  8 09:56:11 2011
+@@ -64,13 +64,14 @@ CONFIG_CLEAN_VPATH_FILES =
  LTLIBRARIES = $(noinst_LTLIBRARIES)
  am__DEPENDENCIES_1 =
  @POWERPC_DARWIN_TRUE@am__objects_1 = powerpc_darwin_mach_dep.lo
@@ -9,6 +9,23 @@ $OpenBSD: patch-boehm-gc_Makefile_in,v 1.2 2011/11/22 21:46:39 pascal Exp $
  am_libgcjgc_la_OBJECTS = allchblk.lo alloc.lo blacklst.lo checksums.lo \
  	dbg_mlc.lo dyn_load.lo finalize.lo gc_dlopen.lo gcj_mlc.lo \
  	headers.lo malloc.lo mallocx.lo mark.lo mark_rts.lo misc.lo \
+ 	new_hblk.lo obj_map.lo os_dep.lo pcr_interface.lo ptr_chck.lo \
+ 	real_malloc.lo reclaim.lo specific.lo stubborn.lo typd_mlc.lo \
+ 	backgraph.lo win32_threads.lo pthread_support.lo \
+-	pthread_stop_world.lo darwin_stop_world.lo $(am__objects_1)
++	darwin_stop_world.lo $(am__objects_1)
+ libgcjgc_la_OBJECTS = $(am_libgcjgc_la_OBJECTS)
+ am__objects_2 = allchblk.lo alloc.lo blacklst.lo checksums.lo \
+ 	dbg_mlc.lo dyn_load.lo finalize.lo gc_dlopen.lo gcj_mlc.lo \
+@@ -78,7 +79,7 @@ am__objects_2 = allchblk.lo alloc.lo blacklst.lo check
+ 	new_hblk.lo obj_map.lo os_dep.lo pcr_interface.lo ptr_chck.lo \
+ 	real_malloc.lo reclaim.lo specific.lo stubborn.lo typd_mlc.lo \
+ 	backgraph.lo win32_threads.lo pthread_support.lo \
+-	pthread_stop_world.lo darwin_stop_world.lo $(am__objects_1)
++	darwin_stop_world.lo $(am__objects_1)
+ am_libgcjgc_convenience_la_OBJECTS = $(am__objects_2)
+ libgcjgc_convenience_la_OBJECTS =  \
+ 	$(am_libgcjgc_convenience_la_OBJECTS)
 @@ -209,6 +210,8 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
  PACKAGE_URL = @PACKAGE_URL@
  PACKAGE_VERSION = @PACKAGE_VERSION@
@@ -18,7 +35,7 @@ $OpenBSD: patch-boehm-gc_Makefile_in,v 1.2 2011/11/22 21:46:39 pascal Exp $
  RANLIB = @RANLIB@
  SED = @SED@
  SET_MAKE = @SET_MAKE@
-@@ -287,8 +290,8 @@ AUTOMAKE_OPTIONS = cygnus subdir-objects
+@@ -287,15 +290,15 @@ AUTOMAKE_OPTIONS = cygnus subdir-objects
  ACLOCAL_AMFLAGS = -I .. -I ../config
  SUBDIRS = include
  noinst_LTLIBRARIES = libgcjgc.la libgcjgc_convenience.la
@@ -28,3 +45,11 @@ $OpenBSD: patch-boehm-gc_Makefile_in,v 1.2 2011/11/22 21:46:39 pascal Exp $
  libgcjgc_la_SOURCES = allchblk.c alloc.c blacklst.c checksums.c dbg_mlc.c \
  dyn_load.c finalize.c gc_dlopen.c gcj_mlc.c headers.c \
  malloc.c mallocx.c mark.c mark_rts.c misc.c new_hblk.c \
+ obj_map.c os_dep.c pcr_interface.c ptr_chck.c real_malloc.c reclaim.c \
+ specific.c stubborn.c typd_mlc.c \
+ backgraph.c win32_threads.c \
+-pthread_support.c pthread_stop_world.c darwin_stop_world.c \
++pthread_support.c darwin_stop_world.c \
+ $(asm_libgcjgc_sources)
+ 
+ libgcjgc_convenience_la_SOURCES = $(libgcjgc_la_SOURCES)

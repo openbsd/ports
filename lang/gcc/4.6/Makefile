@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/23 20:55:11 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/08 17:40:55 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -46,7 +46,10 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-estdc}
 
 DISTNAME =   	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.bz2
-SUPDISTFILES =	${ADASTRAP}:0
+# there's no ecj-4.6.jar
+ECJ =		ecj-4.5.jar
+SUPDISTFILES =	${ADASTRAP}:0 ${ECJ}:1
+EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 USE_LIBTOOL =	Yes
 
@@ -57,6 +60,7 @@ REGRESS_DEPENDS = 	devel/dejagnu \
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
 MASTER_SITES0 =	http://spacehopper.org/mirrors/
+MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c
 .if ${BUILD_PACKAGES:M-c++}
@@ -71,6 +75,7 @@ LANGS := ${LANGS},objc
 .endif
 .if ${BUILD_PACKAGES:M-java}
 LANGS := ${LANGS},java
+DISTFILES +=		${ECJ}:1
 BUILD_DEPENDS +=	archivers/zip>=2.3p0
 CONFIGURE_ARGS +=	--enable-libgcj
 VMEM_WARNING =		Yes
@@ -78,6 +83,7 @@ VMEM_WARNING =		Yes
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
 DISTFILES += ${ADASTRAP}:0
+EXTRACT_ONLY += ${ADASTRAP}
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
@@ -171,7 +177,7 @@ LIB_DEPENDS +=		devel/gmp>=4.2 \
 LIB_DEPENDS-estdc =
 
 .if ${MACHINE_ARCH:Mamd64}
-CONFIG=x86_64-unknown-openbsd${OSREV}
+CONFIG = x86_64-unknown-openbsd${OSREV}
 .endif
 
 post-extract:
@@ -186,6 +192,9 @@ post-extract:
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> \
 		${WRKSRC}/libversions
 .endfor
+.if ${BUILD_PACKAGES:M-java}
+	cp ${FULLDISTDIR}/${ECJ} ${WRKSRC}/ecj.jar
+.endif
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}

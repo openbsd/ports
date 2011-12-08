@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.3 2011/11/20 10:32:30 pascal Exp $
+@comment $OpenBSD: PLIST-java,v 1.4 2011/12/08 17:40:56 pascal Exp $
 %%SHARED%%
 bin/eaot-compile
 @bin bin/egappletviewer
@@ -22,6 +22,8 @@ bin/eaot-compile
 @bin bin/ejv-convert
 bin/erebuild-gcj-db
 @bin bin/${CONFIG}-egcj
+include/c++/
+include/c++/${V}/
 include/c++/${V}/gcj/
 include/c++/${V}/gcj/array.h
 include/c++/${V}/gcj/cni.h
@@ -4029,14 +4031,13 @@ lib/gcc/${CONFIG}/${V}/
 lib/gcc/${CONFIG}/${V}/include/
 lib/gcc/${CONFIG}/${V}/include/gcj/
 lib/gcc/${CONFIG}/${V}/include/gcj/libgcj-config.h
-lib/gcc/${CONFIG}/${V}/include/ia32intrin.h
-lib/gcc/${CONFIG}/${V}/include/immintrin.h
 lib/gcc/${CONFIG}/${V}/include/jawt.h
 lib/gcc/${CONFIG}/${V}/include/jawt_md.h
 lib/gcc/${CONFIG}/${V}/include/jni.h
 lib/gcc/${CONFIG}/${V}/include/jni_md.h
 lib/gcc/${CONFIG}/${V}/include/jvmpi.h
 lib/gcj-${V}-12/
+lib/gcj-${V}-12/classmap.db
 lib/gcj-${V}-12/libjvm.a
 lib/gcj-${V}-12/libjvm.la
 lib/libgcj-tools.a
@@ -4051,6 +4052,10 @@ lib/pkgconfig/
 lib/pkgconfig/libgcj-4.6.pc
 lib/security/
 lib/security/classpath.security
+libexec/gcc/
+libexec/gcc/${CONFIG}/
+libexec/gcc/${CONFIG}/${V}/
+@bin libexec/gcc/${CONFIG}/${V}/ecj1
 @bin libexec/gcc/${CONFIG}/${V}/jc1
 @bin libexec/gcc/${CONFIG}/${V}/jvgenmain
 %%PIC%%
@@ -4082,5 +4087,6 @@ share/gcc-${V}/python/libjava/
 share/gcc-${V}/python/libjava/aotcompile.py
 share/gcc-${V}/python/libjava/classfile.py
 share/java/
+share/java/ecj.jar
 share/java/libgcj-${V}.jar
 share/java/libgcj-tools-${V}.jar

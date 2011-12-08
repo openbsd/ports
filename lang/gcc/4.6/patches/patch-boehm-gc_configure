@@ -1,6 +1,6 @@
-$OpenBSD: patch-boehm-gc_configure,v 1.2 2011/11/22 21:46:39 pascal Exp $
+$OpenBSD: patch-boehm-gc_configure,v 1.3 2011/12/08 17:40:55 pascal Exp $
 --- boehm-gc/configure.orig	Wed Oct 26 11:30:24 2011
-+++ boehm-gc/configure	Sun Nov 20 19:15:55 2011
++++ boehm-gc/configure	Thu Dec  8 16:49:20 2011
 @@ -615,6 +615,8 @@ CPLUSPLUS_TRUE
  target_all
  EXTRA_TEST_LIBS
@@ -16,7 +16,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.2 2011/11/22 21:46:39 pascal Exp $
  	;;
 +      *-*-openbsd*)
 +	$as_echo "#define GC_OPENBSD_THREADS 1" >>confdefs.h
-+	THREADDLLIBS=-pthread
++	THREADLIBS=-pthread
 +	INCLUDES="$INCLUDES -pthread"
 +	openbsd_threads=true
 +	;;
