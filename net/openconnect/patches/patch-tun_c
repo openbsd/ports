@@ -1,0 +1,27 @@
+$OpenBSD: patch-tun_c,v 1.1.1.1 2011/12/08 13:55:28 sthen Exp $
+
+Print error when write() to tun device fails.
+37867847e5 upstream
+
+--- tun.c.orig	Wed Dec  7 23:26:35 2011
++++ tun.c	Wed Dec  7 23:26:42 2011
+@@ -668,10 +668,15 @@ int tun_mainloop(struct openconnect_info *vpninfo, int
+ #endif
+ 		vpninfo->incoming_queue = this->next;
+ 
+-		if (write(vpninfo->tun_fd, data, len) < 0 &&
+-		    errno == ENOTCONN) {
+-			vpninfo->quit_reason = "Client connection terminated";
+-			return 1;
++		if (write(vpninfo->tun_fd, data, len) < 0) {
++			/* Handle death of "script" socket */
++			if (vpninfo->script_tun && errno == ENOTCONN) {
++				vpninfo->quit_reason = "Client connection terminated";
++				return 1;
++			}
++			vpn_progress(vpninfo, PRG_ERR,
++				     _("Failed to write incoming packet: %s\n"),
++				     strerror(errno));
+ 		}
+ 		free(this);
+ 	}

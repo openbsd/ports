@@ -1,0 +1,15 @@
+$OpenBSD: patch-www_Makefile_in,v 1.1.1.1 2011/12/08 13:55:28 sthen Exp $
+
+Avoid GNU-specific construct, standard make(1) is sufficient.
+
+--- www/Makefile.in.orig	Fri Nov 25 16:41:24 2011
++++ www/Makefile.in	Tue Dec  6 13:01:55 2011
+@@ -650,7 +650,7 @@ $(MAIN_PAGES): menu2.xml
+ 
+ manual.html: openconnect.8.inc
+ openconnect.8.inc: $(top_srcdir)/openconnect.8
+-	groff -t -K UTF-8 -mandoc -Txhtml $^ | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
++	groff -t -K UTF-8 -mandoc -Txhtml $? | sed -e '1,/<body>/d' -e '/<\/body>/,$$d' > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
