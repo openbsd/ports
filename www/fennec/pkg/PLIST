@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/10/03 21:08:12 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/08 01:35:08 nigel Exp $
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
@@ -34,7 +34,9 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/PlacesCategoriesStarter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/PromptService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/SessionStore.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/Sidebar.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/TelemetryPing.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/Weave.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/WebappsSupport.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/XPIDialogService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/addonManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/amContentHandler.js
@@ -95,7 +97,38 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/dictionaries/en-US.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}_icon.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/greprefs.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_af.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_bg.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ca.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_cy.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_da.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1901.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1996.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-CH.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_en_US.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_eo.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_es.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_et.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fi.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_gl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hsb.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ia.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_is.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_kmr.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_la.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_lt.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_mn.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nb.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nn.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_pt.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ru.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sh.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sl.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sv.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_uk.dic
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
@@ -120,6 +153,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/LightweightThemeManager.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/LocaleRepository.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Microformats.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/NetUtil.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PageMenu.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PerfMeasurement.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PlacesDBUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PlacesUtils.jsm
@@ -127,7 +161,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PluginProvider.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PluralForm.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PopupNotifications.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Services.jsm
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/SpatialNavigation.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/WindowDraggingUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/XPCOMUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/XPIProvider.jsm
@@ -163,6 +196,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/notifications.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/policies.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/record.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/resource.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/rest.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/service.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/status.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/services-sync/util.js
