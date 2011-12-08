@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/10/17 15:18:39 stu Exp $
+$OpenBSD: README,v 1.5 2011/12/08 22:41:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ any modifications to a minimum.
 This document describes these differences and includes a handy guide
 and patch for adding Tcl and Tk to ${SYSCONFDIR}/man.conf.
 
-Principally, the orginal install locations have been altered to enable
+Principally, the original install locations have been altered to enable
 installing multiple versions of Tcl and Tk on OpenBSD without conflict.
 
 Tclsh and Wish
