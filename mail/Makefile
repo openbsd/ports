@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.272 2011/11/15 17:11:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.273 2011/12/08 09:39:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -180,6 +180,7 @@
      SUBDIR += py-spf
      SUBDIR += pyzor
      SUBDIR += razor-agents
+     SUBDIR += rcube-sieverules
      SUBDIR += relaydb
      SUBDIR += roundcubemail
      SUBDIR += ruby-actionmailer
