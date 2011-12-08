@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/03 21:29:53 landry Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/08 00:30:49 nigel Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		7.0.1
+V=		8.0.1
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -24,10 +24,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	af ar ast be bg bn-BD bn-IN br ca cs cy da de el en-GB en-US en-ZA eo es-AR \
-		es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
+LANGUAGES=	af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de el en-GB en-US en-ZA eo \
+		es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
 		hi-IN hr hu hy-AM id \
-		is it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO \
+		is it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO nso \
 		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE \
 		ta-LK ta te th tr uk vi zh-CN zh-TW zu
 
