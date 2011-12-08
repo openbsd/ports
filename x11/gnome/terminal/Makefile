@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2011/12/08 08:05:54 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -31,5 +31,11 @@ LIB_DEPENDS=	devel/vte3
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
+
+# XXX check on update if this is still needed
+# gtk-builder-convert is needed at build time to convert glade files to ui
+MODULES +=		lang/python
+MODPY_RUNDEP =		No
+BUILD_DEPENDS +=	x11/gtk+2
 
 .include <bsd.port.mk>
