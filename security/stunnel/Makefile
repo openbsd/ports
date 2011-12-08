@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.60 2011/11/30 19:37:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2011/12/08 13:42:05 sthen Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
-DISTNAME=	stunnel-4.49
+DISTNAME=	stunnel-4.50
 CATEGORIES=	security
 
 MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
@@ -17,9 +17,9 @@ WANTLIB += c crypto pthread ssl util wrap z
 
 HOMEPAGE=	http://www.stunnel.org/
 
-MASTER_SITES=	http://ftp.nluug.nl/pub/networking/stunnel/ \
-		http://mirror.bit.nl/stunnel/ \
-		ftp://ftp.stunnel.org/stunnel/
+MASTER_SITES=	http://ftp.nluug.nl/pub/networking/stunnel/archive/4.x/ \
+		http://mirror.bit.nl/stunnel/archive/4.x/ \
+		ftp://ftp.stunnel.org/stunnel/archive/4.x/
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
