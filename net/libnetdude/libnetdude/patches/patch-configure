@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.1 2011/12/08 22:16:28 jasper Exp $
+
+Don't use the bundled libltdl.
+
+--- configure.orig	Sun Jun 24 23:06:14 2007
++++ configure	Thu Dec  8 23:01:54 2011
+@@ -426,7 +426,7 @@ PACKAGE_STRING=
+ PACKAGE_BUGREPORT=
+ 
+ ac_unique_file="src/libnd.h"
+-ac_subdirs_all="$ac_subdirs_all libltdl"
++ac_subdirs_all="$ac_subdirs_all"
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
+@@ -3116,7 +3116,7 @@ echo "$as_me: error: this package needs a convenience 
+ 
+ 
+ 
+-subdirs="$subdirs libltdl"
++subdirs="$subdirs"
+ 
+ 
+ 

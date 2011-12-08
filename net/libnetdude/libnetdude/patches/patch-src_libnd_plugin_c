@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libnd_plugin_c,v 1.1 2011/12/08 22:16:28 jasper Exp $
+
+Don't use the bundled libltdl.
+
+--- src/libnd_plugin.c.orig	Thu Dec  8 23:05:55 2011
++++ src/libnd_plugin.c	Thu Dec  8 23:09:48 2011
+@@ -34,6 +34,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALI
+ #include <sys/param.h>
+ #include <sys/stat.h>
+ #include <dirent.h>
++#include <ltdl.h>
+ 
+ #include <libnd_misc.h>
+ #include <libnd_prefs.h>
