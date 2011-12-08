@@ -1,7 +1,7 @@
-$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.11 2011/10/03 21:06:09 landry Exp $
---- security/manager/ssl/src/nsNSSComponent.cpp.orig	Thu Aug 25 02:37:17 2011
-+++ security/manager/ssl/src/nsNSSComponent.cpp	Mon Aug 29 14:54:56 2011
-@@ -849,11 +849,10 @@ nsNSSComponent::InstallLoadableRoots()
+$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.12 2011/12/08 01:47:02 nigel Exp $
+--- security/manager/ssl/src/nsNSSComponent.cpp.orig	Fri Nov  4 21:34:15 2011
++++ security/manager/ssl/src/nsNSSComponent.cpp	Thu Nov 10 00:21:27 2011
+@@ -847,11 +847,10 @@ nsNSSComponent::InstallLoadableRoots()
      return;
  
    const char *possible_ckbi_locations[] = {
@@ -16,7 +16,7 @@ $OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.11 2011/10/03 21
    };
  
    for (size_t il = 0; il < sizeof(possible_ckbi_locations)/sizeof(const char*); ++il) {
-@@ -862,7 +861,7 @@ nsNSSComponent::InstallLoadableRoots()
+@@ -860,7 +859,7 @@ nsNSSComponent::InstallLoadableRoots()
  
      if (!possible_ckbi_locations[il])
      {

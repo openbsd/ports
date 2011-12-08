@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.14 2011/06/28 05:43:57 landry Exp $
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.15 2011/12/08 01:47:02 nigel Exp $
 chunk 2: https://bugzilla.mozilla.org/show_bug.cgi?id=650749
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Fri May 27 18:13:00 2011
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Tue May 31 22:18:41 2011
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Fri Nov  4 21:34:23 2011
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Thu Nov 10 00:21:27 2011
 @@ -219,7 +219,7 @@ endif
  #
  # OpenBSD/ARM
@@ -11,11 +11,3 @@ chunk 2: https://bugzilla.mozilla.org/show_bug.cgi?id=650749
  CPPSRCS		:= xptcinvoke_arm_openbsd.cpp xptcstubs_arm_openbsd.cpp
  endif
  
-@@ -370,6 +370,7 @@ endif
- ifeq ($(OS_ARCH)$(OS_TEST),OpenBSDpowerpc)
- CPPSRCS		:= xptcinvoke_ppc_openbsd.cpp xptcstubs_ppc_openbsd.cpp
- ASFILES		:= xptcinvoke_asm_ppc_openbsd.s xptcstubs_asm_ppc_openbsd.s
-+AS		:= $(CC) -c -x assembler-with-cpp
- endif
- 
- #
