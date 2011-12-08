@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/08 22:40:15 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -15,7 +15,7 @@ REVISION-main = 1
 PKGNAME-utils=	mapserver-utils-${V}
 REVISION-utils = 1
 PKGNAME-php=	php-mapscript-${V}
-REVISION-php =	3
+REVISION-php =	4
 PKGNAME-perl=	p5-mapscript-${V}
 REVISION-perl = 1
 
