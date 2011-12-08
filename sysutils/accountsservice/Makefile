@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/12/02 20:07:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/08 16:04:20 jasper Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
 DISTNAME=	accountsservice-0.6.15
 EXTRACT_SUFX=	.tar.xz
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -26,7 +26,8 @@ WANTLIB += z
 
 MASTER_SITES=	http://www.freedesktop.org/software/accountsservice/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 BUILD_DEPENDS=	devel/gobject-introspection
 
