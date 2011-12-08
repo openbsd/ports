@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/12/08 20:15:40 eric Exp $
 
 COMMENT=	event-based Python framework (core module)
 
-VERSION=	11.0.0
+VERSION=	11.1.0
 DISTNAME=	TwistedCore-${VERSION}
 PKGNAME=	py-twisted-core-${VERSION}
-REVISION=		0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedCore
 
@@ -35,7 +34,8 @@ TRIAL_TARGET?=	twisted.application.test	\
 		twisted.internet.test		\
 		twisted.protocols.test		\
 		twisted.python.test		\
-		twisted.scripts.test		\
+		twisted.persisted.test		\
+		twisted.manhole.test		\
 		twisted.test			\
 		twisted.trial.test
 

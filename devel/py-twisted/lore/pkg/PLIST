@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/07/05 13:37:02 eric Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/08 20:15:40 eric Exp $
 bin/lore
 lib/python${MODPY_VERSION}/site-packages/Twisted_Lore-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/
@@ -60,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_lore.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_lore.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_man2lore.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_man2lore.pyc
+lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_scripts.py
+lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_scripts.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_slides.py
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/test/test_slides.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/lore/texi.py

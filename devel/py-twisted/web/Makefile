@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/08 20:15:40 eric Exp $
 
 COMMENT=	HTTP protocol implementation
 
 CATEGORIES+=	www
 
-VERSION=	11.0.0
+VERSION=	11.1.0
 DISTNAME=	TwistedWeb-${VERSION}
 PKGNAME=	py-twisted-web-${VERSION}
-REVISION=		0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWeb
 
