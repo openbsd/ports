@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_js_src_ctypes_libffi_configure,v 1.1 2011/07/24 07:10:12 landry Exp $
---- mozilla/js/src/ctypes/libffi/configure.orig	Fri Jan 14 23:21:32 2011
-+++ mozilla/js/src/ctypes/libffi/configure	Sun Feb 13 23:16:00 2011
+$OpenBSD: patch-mozilla_js_src_ctypes_libffi_configure,v 1.2 2011/12/08 02:25:59 nigel Exp $
+--- mozilla/js/src/ctypes/libffi/configure.orig	Sat Nov  5 09:20:38 2011
++++ mozilla/js/src/ctypes/libffi/configure	Tue Nov  8 15:21:46 2011
 @@ -11212,7 +11212,7 @@ case "$host" in
  	TARGET=FRV; TARGETDIR=frv
  	;;
@@ -19,12 +19,3 @@ $OpenBSD: patch-mozilla_js_src_ctypes_libffi_configure,v 1.1 2011/07/24 07:10:12
  	# Support 128-bit long double for NewABI.
  	HAVE_LONG_DOUBLE='defined(__mips64)'
  	TARGET=MIPS; TARGETDIR=mips
-@@ -11277,7 +11277,7 @@ case "$host" in
-   powerpc-*-aix* | rs6000-*-aix*)
- 	TARGET=POWERPC_AIX; TARGETDIR=powerpc
- 	;;
--  powerpc-*-freebsd*)
-+  powerpc-*-freebsd* | powerpc-*-openbsd* )
- 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
- 	;;
-   powerpc*-*-rtems*)

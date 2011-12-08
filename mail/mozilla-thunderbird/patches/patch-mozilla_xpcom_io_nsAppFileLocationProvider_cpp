@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.4 2011/08/23 20:19:33 landry Exp $
---- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Mon Aug  1 04:58:01 2011
-+++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Thu Aug  4 23:24:42 2011
+$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.5 2011/12/08 02:25:59 nigel Exp $
+--- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Sat Nov  5 09:21:12 2011
++++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Tue Nov  8 15:36:39 2011
 @@ -234,12 +234,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
      }
  #ifdef XP_UNIX
