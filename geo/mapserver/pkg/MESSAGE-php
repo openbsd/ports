@@ -13,3 +13,10 @@ chroot:
 # mkdir -p /var/www/${LOCALBASE}/share/{epsg_csv,proj}
 # cp ${LOCALBASE}/share/epsg_csv/* /var/www/${LOCALBASE}/share/epsg_csv
 # cp ${LOCALBASE}/share/proj/* /var/www/${LOCALBASE}/share/proj
+
+httpd(8) will also need to have libpthread.so preloaded, you can add this
+to /etc/login.conf and restart with /etc/rc.d/httpd restart:
+
+httpd:\
+        :setenv=LD_PRELOAD=/usr/lib/libpthread.so:\
+        :tc=daemon:
