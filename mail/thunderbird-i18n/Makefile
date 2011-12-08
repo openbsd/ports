@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.51 2011/10/03 21:25:54 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2011/12/08 01:52:21 nigel Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		7.0.1
+V=		8.0
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${V}
-REVISION =	0
 
 CATEGORIES=	mail
 
@@ -25,9 +24,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
-		fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO pl \
-		pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-TW
+LANGUAGES=	ar be bg bn-BD br ca cs da de el en-GB en-US es-AR es-ES et eu \
+		fi fr fy-NL ga-IE gd gl he hu id is it ja ko lt nb-NO nl nn-NO \
+		pa-IN pl pt-BR pt-PT rm ro ru si sk sl sq sv-SE ta-LK tr uk vi \
+		zh-CN zh-TW
 
 BUILD_DEPENDS=	archivers/unzip
 RUN_DEPENDS=	thunderbird-${V}:mail/mozilla-thunderbird
