@@ -1,12 +1,13 @@
-$OpenBSD: patch-cache_h,v 1.1 2008/06/13 00:38:12 canacar Exp $
---- cache.h.orig	Tue Nov  6 23:34:18 2007
-+++ cache.h	Wed Jun 11 19:50:07 2008
-@@ -31,14 +31,20 @@
+$OpenBSD: patch-cache_h,v 1.2 2011/12/08 13:04:38 sthen Exp $
+--- cache.h.orig	Wed Nov  7 06:34:18 2007
++++ cache.h	Thu Dec  8 13:03:20 2011
+@@ -31,14 +31,21 @@
  struct sc_ent {
          RB_ENTRY(sc_ent)    tlink;
  	TAILQ_ENTRY(sc_ent) qlink;
 +#ifdef HAVE_PFSYNC_STATE
-+	u_int32_t	    id[2];
++	u_int64_t	    id;
++	u_int32_t	    creatorid;
 +#else
  	struct pf_addr      addr[2];
 +#endif

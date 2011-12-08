@@ -1,13 +1,13 @@
-$OpenBSD: patch-cache_c,v 1.1 2008/06/13 00:38:12 canacar Exp $
---- cache.c.orig	Tue Nov  6 23:34:18 2007
-+++ cache.c	Wed Jun 11 19:50:07 2008
+$OpenBSD: patch-cache_c,v 1.2 2011/12/08 13:04:38 sthen Exp $
+--- cache.c.orig	Wed Nov  7 06:34:18 2007
++++ cache.c	Thu Dec  8 13:02:56 2011
 @@ -118,12 +118,17 @@ add_state(pf_state_t *st)
  
  	cache_size--;
  
 +#ifdef HAVE_PFSYNC_STATE
-+	ent->id[0] = st->id[0];
-+	ent->id[1] = st->id[1];
++	ent->id = st->id;
++	ent->creatorid = st->creatorid;
 +#else
  	ent->addr[0] = st->lan.addr;
  	ent->port[0] = st->lan.port;
@@ -24,8 +24,8 @@ $OpenBSD: patch-cache_c,v 1.1 2008/06/13 00:38:12 canacar Exp $
  		return (NULL);
  
 +#ifdef HAVE_PFSYNC_STATE
-+	ent.id[0] = st->id[0];
-+	ent.id[1] = st->id[1];
++	ent.id = st->id;
++	ent.creatorid = st->creatorid;
 +#else
  	ent.addr[0] = st->lan.addr;
  	ent.port[0] = st->lan.port;
@@ -43,13 +43,13 @@ $OpenBSD: patch-cache_c,v 1.1 2008/06/13 00:38:12 canacar Exp $
  sc_cmp(struct sc_ent *a, struct sc_ent *b)
  {
 +#ifdef HAVE_PFSYNC_STATE
-+	if (a->id[0] > b->id[0])
++	if (a->id > b->id)
 +		return (1);
-+	if (a->id[0] < b->id[0])
++	if (a->id < b->id)
 +		return (-1);
-+	if (a->id[1] > b->id[1])
++	if (a->creatorid > b->creatorid)
 +		return (1);
-+	if (a->id[1] < b->id[1])
++	if (a->creatorid < b->creatorid)
 +		return (-1);
 +#else	
         	int diff;
