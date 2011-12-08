@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.I386-main,v 1.3 2011/11/19 22:19:53 pascal Exp $
+@comment $OpenBSD: PFRAG.I386-main,v 1.4 2011/12/08 17:42:10 pascal Exp $
 lib/gcc/${CONFIG}/${V}/include/abmintrin.h
 lib/gcc/${CONFIG}/${V}/include/ammintrin.h
 lib/gcc/${CONFIG}/${V}/include/avxintrin.h
@@ -8,6 +8,8 @@ lib/gcc/${CONFIG}/${V}/include/cpuid.h
 lib/gcc/${CONFIG}/${V}/include/cross-stdarg.h
 lib/gcc/${CONFIG}/${V}/include/emmintrin.h
 lib/gcc/${CONFIG}/${V}/include/fma4intrin.h
+lib/gcc/${CONFIG}/${V}/include/ia32intrin.h
+lib/gcc/${CONFIG}/${V}/include/immintrin.h
 lib/gcc/${CONFIG}/${V}/include/lwpintrin.h
 lib/gcc/${CONFIG}/${V}/include/mm3dnow.h
 lib/gcc/${CONFIG}/${V}/include/mm_malloc.h
