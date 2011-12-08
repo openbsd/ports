@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/07 17:26:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/08 08:35:50 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,8 +42,11 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		textproc/enchant \
 			x11/gtk+3
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/libsoup \
+BUILD_DEPENDS=		${RUN_DEPENDS}
+# libsoup is only used by testgtkhtml, but since libsoup may be around during
+# configure, and can have disappeared afterwards, the build can fail. so
+# register it as a dependency instead of axing the Makefiles..
+BUILD_DEPENDS=		devel/libsoup
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
 			x11/gnome/icon-theme
