@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 18:06:35 nigel Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/08 11:01:55 nigel Exp $
 
 COMMENT =	create SOCKS v4/v5 client or server
 
-DISTNAME =	IO-Socket-Socks-0.51
+DISTNAME =	IO-Socket-Socks-0.60
 
 CATEGORIES =	net
 CPAN_AUTHOR =	OLEG
@@ -16,5 +16,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>
