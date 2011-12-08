@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1149 2011/12/02 15:14:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1150 2011/12/08 08:15:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -168,6 +168,11 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS}
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
+
+.if !defined(_ARCH_DEFINES_INCLUDED)
+_ARCH_DEFINES_INCLUDED = Done
+.  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
+.endif
 
 .if !defined(_MAKEFILE_INC_DONE)
 .  if exists(${.CURDIR}/../Makefile.inc)
