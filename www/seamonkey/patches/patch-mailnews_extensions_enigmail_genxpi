@@ -1,7 +1,7 @@
-$OpenBSD: patch-mailnews_extensions_enigmail_genxpi,v 1.1 2011/07/28 20:32:39 landry Exp $
+$OpenBSD: patch-mailnews_extensions_enigmail_genxpi,v 1.2 2011/12/08 00:39:18 nigel Exp $
 Remove ABI=xxx marker and xpcomAbi from lib naming.
---- mailnews/extensions/enigmail/genxpi.orig	Sun Jul 24 20:58:41 2011
-+++ mailnews/extensions/enigmail/genxpi	Sun Jul 24 20:58:42 2011
+--- mailnews/extensions/enigmail/genxpi.orig	Mon Aug 15 16:59:15 2011
++++ mailnews/extensions/enigmail/genxpi	Mon Nov 21 23:10:20 2011
 @@ -62,7 +62,7 @@ cd "$cwd"
  if [ "$xpcomAbi" = "" ] ; then
    xpcomAbi="unknown"
@@ -9,7 +9,7 @@ Remove ABI=xxx marker and xpcomAbi from lib naming.
 -platform=${osArch}_${xpcomAbi}
 +platform=${osArch}
  # Pepare install.rdf
- sed 's/<!-- targetPlatform placeholder -->/<em:targetPlatform>'${platform}'<\/em:targetPlatform>/' < ${srcDir}/package/install.rdf > ${targetDir}/install.rdf.t1
+ sed 's/<!-- targetPlatform placeholder -->/<em:targetPlatform>'${platform}'<\/em:targetPlatform>/' < ${srcDir}/package/install.rdf > ${targetDir}/install.rdf
  
 @@ -74,14 +74,14 @@ if [ ${platform} = OS2_x86-gcc3 ]; then
    enigDllFile=platform/${platform}/components/${enigmimeDll}

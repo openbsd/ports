@@ -1,10 +1,10 @@
-$OpenBSD: patch-mozilla_widget_src_xpwidgets_GfxInfoX11_h,v 1.1 2011/09/21 14:34:27 nigel Exp $
+$OpenBSD: patch-mozilla_widget_src_xpwidgets_GfxInfoX11_h,v 1.2 2011/12/08 00:39:18 nigel Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=681026
 https://hg.mozilla.org/mozilla-central/rev/bb708067dd57
 
---- mozilla/widget/src/xpwidgets/GfxInfoX11.h.orig	Sat Sep  3 00:56:28 2011
-+++ mozilla/widget/src/xpwidgets/GfxInfoX11.h	Tue Sep 20 22:28:27 2011
-@@ -67,6 +67,8 @@ class GfxInfo : public GfxInfoBase (public)
+--- mozilla/widget/src/xpwidgets/GfxInfoX11.h.orig	Mon Nov  7 21:08:31 2011
++++ mozilla/widget/src/xpwidgets/GfxInfoX11.h	Mon Nov 21 23:10:24 2011
+@@ -76,6 +76,8 @@ class GfxInfo : public GfxInfoBase (public)
    using GfxInfoBase::GetWebGLParameter;
  
    virtual nsresult Init();
@@ -13,8 +13,8 @@ https://hg.mozilla.org/mozilla-central/rev/bb708067dd57
  
  protected:
  
-@@ -81,7 +83,6 @@ class GfxInfo : public GfxInfoBase (public)
-   int mMajorVersion, mMinorVersion;
+@@ -91,7 +93,6 @@ class GfxInfo : public GfxInfoBase (public)
+   int mMajorVersion, mMinorVersion, mRevisionVersion;
  
    void AddCrashReportAnnotations();
 -  void GetData();

@@ -1,11 +1,11 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.4 2011/10/03 21:07:39 landry Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Sat Sep 17 03:35:15 2011
-+++ mozilla/toolkit/library/Makefile.in	Mon Sep 19 10:35:58 2011
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.5 2011/12/08 00:39:18 nigel Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Mon Nov  7 21:08:28 2011
++++ mozilla/toolkit/library/Makefile.in	Mon Nov 21 23:10:26 2011
 @@ -171,12 +171,6 @@ EXTRA_DSO_LDOPTS += \
  endif
  endif
  
--ifneq (,$(filter GNU GNU_% NetBSD OpenBSD,$(OS_ARCH)))
+-ifneq (,$(filter NetBSD OpenBSD,$(OS_ARCH)))
 -ifdef MOZ_SYDNEYAUDIO
 -EXTRA_DSO_LDOPTS += -lossaudio
 -endif
@@ -14,16 +14,13 @@ $OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.4 2011/10/03 21:07:39 la
  ifdef MOZ_PLATFORM_MAEMO
  EXTRA_DSO_LDOPTS += $(MOZ_PLATFORM_MAEMO_LIBS)
  endif 
-@@ -253,6 +247,12 @@ ifeq ($(OS_ARCH),OpenBSD)
- # Needed by nsAuthGSSAPI
- EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
- endif
-+
+@@ -250,6 +244,9 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
+ include $(srcdir)/libxul-rules.mk
+ 
+ ifeq ($(OS_ARCH),OpenBSD)
 +# GTK2 widget and Sydney audio sndio backends.
 +EXTRA_DSO_LDOPTS += -lsndio
 +
-+# Needed by nsAuthGSSAPI
-+EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
- 
- ifdef MOZ_JAVAXPCOM
- dlldeps-javaxpcom.cpp: $(topsrcdir)/extensions/java/xpcom/src/dlldeps-javaxpcom.cpp
+ # Needed by nsAuthGSSAPI
+ EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
+ endif

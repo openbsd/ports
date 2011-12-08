@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.94 2011/10/28 13:17:14 robert Exp $
+# $OpenBSD: Makefile,v 1.95 2011/12/08 00:39:18 nigel Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.4.1
+MOZILLA_VERSION=	2.5
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.0beta6
-PKGNAME-enigmail =	enigmail-seamonkey-1.3.2
-REVISION-main =		0
-REVISION-lightning =	0
-REVISION-enigmail =	1
+PKGNAME-lightning =	lightning-seamonkey-1.0beta8
+ENIG_V =		1.3.4
+PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 
-SO_VERSION=	20.0
+SO_VERSION=	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -32,38 +30,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+# url for beta releases
+#MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/ \
+#	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/
+
 MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/ \
+		https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/
 MASTER_SITES1 =	http://www.mozilla-enigmail.org/download/source/
 
-LANGUAGES=	ca \
-		cs \
-		de \
-		en-GB \
-		en-US \
-		es-AR \
-		es-ES \
-		fi \
-		fr \
-		hu \
-		it \
-		ja \
-		lt \
-		nb-NO \
-		nl \
-		pl \
-		pt-PT \
-		ru \
-		sk \
-		sv-SE \
-		tr
+LANGUAGES=	be ca cs de en-GB en-US \
+		es-AR es-ES fi fr gl hu \
+		it ja lt nb-NO nl pl \
+		pt-PT ru sk sv-SE tr zh-CN
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.2.tar.gz
+		enigmail-${ENIG_V}.tar.gz
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.3.2.tar.gz:1
+		enigmail-${ENIG_V}.tar.gz:1
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
@@ -76,7 +62,7 @@ NO_REGRESS=	Yes
 
 MODGNU_CONFIG_GUESS_DIRS+=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 
-LIB_DEPENDS-lightning = STEM->=2.4beta3:${BUILD_PKGPATH},-main
+LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
 WANTLIB-lightning =	lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/xpcom \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/xul \
 			lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/mozalloc \

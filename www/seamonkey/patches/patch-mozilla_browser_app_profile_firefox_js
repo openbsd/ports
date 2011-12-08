@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.4 2011/10/03 21:07:39 landry Exp $
---- mozilla/browser/app/profile/firefox.js.orig	Sat Sep 17 03:32:50 2011
-+++ mozilla/browser/app/profile/firefox.js	Mon Sep 19 10:35:56 2011
-@@ -135,7 +135,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
+$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.5 2011/12/08 00:39:18 nigel Exp $
+--- mozilla/browser/app/profile/firefox.js.orig	Mon Nov  7 21:07:41 2011
++++ mozilla/browser/app/profile/firefox.js	Mon Nov 21 23:10:20 2011
+@@ -140,7 +140,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
  pref("app.update.certs.2.commonName", "aus3.mozilla.org");
  
  // Whether or not app updates are enabled
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.4 2011/10/03 21:07:39
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
-@@ -687,10 +687,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+@@ -691,10 +691,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
  // Safe browsing does nothing unless this pref is set
@@ -23,7 +23,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.4 2011/10/03 21:07:39
  
  // Non-enhanced mode (local url lists) URL list to check for updates
  pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -752,10 +752,8 @@ pref("browser.EULA.version", 3);
+@@ -756,10 +756,8 @@ pref("browser.EULA.version", 3);
  pref("browser.rights.version", 3);
  pref("browser.rights.3.shown", false);
  
