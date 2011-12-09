@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.37 2011/12/06 10:23:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/09 09:10:05 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
-COMMENT =	C++ cross-platform GUI toolkit
+COMMENT-main =	C++ cross-platform GUI toolkit
+COMMENT-media =	wxMediaCtrl class for wxWidgets
 
 V =		2.8.12
 DISTNAME =	wxWidgets-${V}
-PKGNAME =	wxWidgets-gtk2-${V}
-REVISION =	1
+PKGNAME-main =	wxWidgets-gtk2-${V}
+PKGNAME-media =	wxWidgets-media-${V}
+REVISION-main =	2
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
@@ -41,24 +43,33 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += GL GLU SDL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c expat
-WANTLIB += fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstinterfaces-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 iodbc jpeg m
-WANTLIB += mspack pango-1.0 pangoft2-1.0 pixman-1 pthread pthread-stubs
-WANTLIB += stdc++ tiff xcb xcb-render xcb-shm xml2 z
+MULTI_PACKAGES = -main -media
+
+WANTLIB += GL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 expat
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += jpeg m pango-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
+WANTLIB += stdc++ tiff xcb xcb-render xcb-shm z
 
 MODULES	=	devel/gettext
 
 BUILD_DEPENDS =	devel/cppunit
-LIB_DEPENDS =	archivers/libmspack \
-		databases/iodbc \
-		devel/sdl \
-		multimedia/gstreamer-0.10/core \
-		multimedia/gstreamer-0.10/plugins-base \
-		x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2
 REGRESS_DEPENDS = ${BUILD_PKGPATH}>=${V}
+
+LIB_DEPENDS-main = ${LIB_DEPENDS} \
+		   archivers/libmspack \
+		   databases/iodbc \
+		   devel/sdl
+WANTLIB-main += ${WANTLIB} GLU SDL c iodbc mspack pthread
+
+LIB_DEPENDS-media = ${LIB_DEPENDS} \
+		    multimedia/gstreamer-0.10/core \
+		    multimedia/gstreamer-0.10/plugins-base \
+		    ${BASE_PKGPATH},-main>=${V}
+WANTLIB-media += ${WANTLIB} gconf-2 gstinterfaces-0.10 \
+		 gstreamer-0.10 wx_base wx_gtk2_core xml2
 
 VMEM_WARNING =	Yes
 

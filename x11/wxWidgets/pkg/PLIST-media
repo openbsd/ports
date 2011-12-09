@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-media,v 1.1 2011/12/09 09:10:05 dcoppa Exp $
+@conflict wxWidgets-gtk2-<=2.8.12p1
+include/wx/mediactrl.h
+@lib lib/libwx_gtk2_media.so.${LIBwx_gtk2_media_VERSION}
