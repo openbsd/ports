@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_imageio_format_png_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
---- src/imageio/format/png.c.orig	Tue Jul  5 20:40:09 2011
-+++ src/imageio/format/png.c	Tue Jul  5 20:40:23 2011
-@@ -28,6 +28,7 @@
+$OpenBSD: patch-src_imageio_format_png_c,v 1.2 2011/12/09 20:11:00 sthen Exp $
+--- src/imageio/format/png.c.orig	Mon Nov  7 06:46:13 2011
++++ src/imageio/format/png.c	Fri Dec  9 15:54:31 2011
+@@ -27,6 +27,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <png.h>
 +#include <zlib.h>
  #include <inttypes.h>
+ #include <zlib.h>
  
- DT_MODULE(1)
