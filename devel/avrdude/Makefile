@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/12/09 12:25:44 jasper Exp $
 
 COMMENT=	AVR microcontroller hardware in-system programmer
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GROFF =		Yes
 
 LIB_DEPENDS=		devel/libusb-compat
+
+SUBST_VARS+=		V
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/avrdude
