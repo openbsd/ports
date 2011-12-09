@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/14 12:00:04 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2011/12/09 21:46:15 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	pure-Java implementation of the Ruby language
 V =		1.6.5
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
+REVISION =	0
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0
@@ -61,6 +62,7 @@ post-extract:
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb \
+		${WRKSRC}/jruby-launcher/jrubyexe.cpp \
 		${WRKSRC}/jruby-launcher/unixlauncher.cpp
 	# Rebuild the jruby-launcher gem
 	cd ${WRKSRC}/jruby-launcher && find . -type f \! -name '*.orig'  -print | \
@@ -90,6 +92,7 @@ post-build:
 	  rm -r !(${FFI_ARCH}|*.ffi)
 
 do-install:
+	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}
 	${INSTALL_DATA_DIR} ${JRUBY_HOME}/bin
 	for file in ast gem jgem jirb jirb_swing jruby jrubyc rdoc ri testrb; \

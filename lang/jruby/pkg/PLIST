@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/11/08 23:58:08 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/12/09 21:46:15 jeremy Exp $
+bin/jruby
 jruby/
 jruby/bin/
 jruby/bin/ast
