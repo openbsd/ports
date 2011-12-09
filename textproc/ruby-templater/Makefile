@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/09 21:42:52 jeremy Exp $
 
 COMMENT =	system for generating files
 
@@ -23,6 +23,7 @@ RUN_DEPENDS =		devel/ruby-highline,${MODRUBY_FLAVOR}>=1.4.0 \
 
 CONFIGURE_STYLE =	ruby gem
 
-MODRUBY_REGRESS =	rake rspec
+MODRUBY_REGRESS =	rspec
+MODRUBY_REGRESS_TARGET = spec/*_spec.rb
 
 .include <bsd.port.mk>
