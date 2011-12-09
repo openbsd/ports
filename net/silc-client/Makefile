@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/11/22 15:55:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/12/09 11:43:44 jasper Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
@@ -36,7 +36,9 @@ BUILD_DEPENDS+= devel/yasm
 CONFDIR=	${SYSCONFDIR}/silc
 SUBST_VARS=	CONFDIR
 
-USE_LIBTOOL=	Yes
+# XXX this doesn't yet work with our libtool, it will get confused and
+# pick up libraries from silc-toolkit instead of its own unshared libraries.
+USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
