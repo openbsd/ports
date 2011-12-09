@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/11/27 16:53:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/12/09 07:25:58 ajacoutot Exp $
 bin/devede
 bin/devede-debug
 bin/devede_debug
@@ -31,6 +31,7 @@ share/devede/add_subtitle2.ui
 share/devede/background.png
 share/devede/backgrounds/
 share/devede/backgrounds/biglens.png
+share/devede/backgrounds/blackbg.png
 share/devede/backgrounds/default_bg.png
 share/devede/backgrounds/dvdfilm.png
 share/devede/barras.png
@@ -151,6 +152,7 @@ share/locale/pt_PT/LC_MESSAGES/devede.mo
 share/locale/ru/LC_MESSAGES/devede.mo
 share/locale/sk/LC_MESSAGES/devede.mo
 share/locale/sv/LC_MESSAGES/devede.mo
+share/locale/tr/LC_MESSAGES/devede.mo
 share/locale/zh_CN/LC_MESSAGES/devede.mo
 share/locale/zh_TW/LC_MESSAGES/devede.mo
 share/pixmaps/
