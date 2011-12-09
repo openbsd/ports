@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/05/11 06:22:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/12/09 10:01:32 sthen Exp $
 
 COMMENT =	gateway to send and receive SMS through GSM mobile phones
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =	devel/mm
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
 WRKDIST =	${WRKDIR}/smstools3
-WRKSRC = 	${WRKDIST}/src
+WRKSRC =	${WRKDIST}/src
 
 EXTRA_CFLAGS +=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
