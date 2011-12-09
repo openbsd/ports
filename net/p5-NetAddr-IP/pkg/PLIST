@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/21 12:51:40 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/09 17:53:59 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/NetAddr/
 ${P5ARCH}/NetAddr/IP/
 ${P5ARCH}/NetAddr/IP.pm
+${P5ARCH}/NetAddr/IP/InetBase.pm
 ${P5ARCH}/NetAddr/IP/Lite.pm
 ${P5ARCH}/NetAddr/IP/Util.pm
 ${P5ARCH}/NetAddr/IP/UtilPP.pm
@@ -10,14 +11,21 @@ ${P5ARCH}/NetAddr/IP/Util_IS.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/NetAddr/
 ${P5ARCH}/auto/NetAddr/IP/
+${P5ARCH}/auto/NetAddr/IP/InetBase/
+${P5ARCH}/auto/NetAddr/IP/InetBase/_inet_ntop.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/_inet_pton.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/_packzeros.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/autosplit.ix
+${P5ARCH}/auto/NetAddr/IP/InetBase/inet_any2n.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/inet_n2ad.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/inet_n2dx.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/inet_ntoa.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/ipv6_aton.al
+${P5ARCH}/auto/NetAddr/IP/InetBase/ipv6_ntoa.al
 ${P5ARCH}/auto/NetAddr/IP/Util/
 ${P5ARCH}/auto/NetAddr/IP/Util/Util.bs
 ${P5ARCH}/auto/NetAddr/IP/Util/Util.so
 ${P5ARCH}/auto/NetAddr/IP/Util/autosplit.ix
-${P5ARCH}/auto/NetAddr/IP/Util/inet_any2n.al
-${P5ARCH}/auto/NetAddr/IP/Util/inet_n2ad.al
-${P5ARCH}/auto/NetAddr/IP/Util/inet_n2dx.al
-${P5ARCH}/auto/NetAddr/IP/Util/ipv6_aton.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/_128x10.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/_128x2.al
@@ -39,7 +47,6 @@ ${P5ARCH}/auto/NetAddr/IP/UtilPP/hasbits.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/ipanyto6.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/ipv4to6.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/ipv6to4.al
-${P5ARCH}/auto/NetAddr/IP/UtilPP/isIPv4.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/mask4to6.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/maskanyto6.al
 ${P5ARCH}/auto/NetAddr/IP/UtilPP/notcontiguous.al
@@ -55,8 +62,6 @@ ${P5ARCH}/auto/NetAddr/IP/autosplit.ix
 ${P5ARCH}/auto/NetAddr/IP/coalesce.al
 ${P5ARCH}/auto/NetAddr/IP/compactref.al
 ${P5ARCH}/auto/NetAddr/IP/do_prefix.al
-${P5ARCH}/auto/NetAddr/IP/full.al
-${P5ARCH}/auto/NetAddr/IP/full6.al
 ${P5ARCH}/auto/NetAddr/IP/hostenum.al
 ${P5ARCH}/auto/NetAddr/IP/mod_version.al
 ${P5ARCH}/auto/NetAddr/IP/nprefix.al
@@ -66,6 +71,7 @@ ${P5ARCH}/auto/NetAddr/IP/re6.al
 ${P5ARCH}/auto/NetAddr/IP/short.al
 ${P5ARCH}/auto/NetAddr/IP/wildcard.al
 @man man/man3p/NetAddr::IP.3p
+@man man/man3p/NetAddr::IP::InetBase.3p
 @man man/man3p/NetAddr::IP::Lite.3p
 @man man/man3p/NetAddr::IP::Util.3p
 @man man/man3p/NetAddr::IP::UtilPP.3p
