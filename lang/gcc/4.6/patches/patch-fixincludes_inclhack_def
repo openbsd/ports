@@ -1,0 +1,19 @@
+$OpenBSD: patch-fixincludes_inclhack_def,v 1.1 2011/12/09 22:45:18 pascal Exp $
+adjust for our sed
+--- fixincludes/inclhack.def.orig	Fri Dec  9 15:32:20 2011
++++ fixincludes/inclhack.def	Fri Dec  9 15:32:24 2011
+@@ -3315,10 +3315,10 @@ fix = {
+     hackname  = solaris_complex_cxx;
+     mach      = "*-*-solaris2.*";
+     files     = complex.h;
+-    sed	      = "/#if[ \t]*!defined(__cplusplus)/c"
+-    		"#ifdef\t__cplusplus\\\nextern \"C\" {\\\n#endif";
+-    sed	      = "/#endif[ \t]*\\/\\* !defined(__cplusplus) \\*\\//c"
+-		"#ifdef\t__cplusplus\\\n}\\\n#endif";
++    sed	      = "/#if[ \t]*!defined(__cplusplus)/c\\\n"
++    		"#ifdef\t__cplusplus\\\nextern \"C\" {\\\n#endif\\\n";
++    sed	      = "/#endif[ \t]*\\/\\* !defined(__cplusplus) \\*\\//c\\\n"
++		"#ifdef\t__cplusplus\\\n}\\\n#endif\\\n";
+     test_text = "#if !defined(__cplusplus)\n"
+ 		"#endif	/* !defined(__cplusplus) */";
+ };

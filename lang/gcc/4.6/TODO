@@ -1,1 +1,2 @@
 - test all arches (only sparc and sparc64 left)
+- fails on alpha at bootstrap comparison
