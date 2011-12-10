@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:21:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/10 14:59:13 pascal Exp $
 bin/Pnews
 bin/Rnmail
-bin/inews
-bin/nntplist
-bin/trn
-bin/trn-artchk
+@bin bin/inews
+@bin bin/nntplist
+@bin bin/trn
+@bin bin/trn-artchk
 lib/trn/
 lib/trn/HelpFiles/
 lib/trn/HelpFiles/changelog

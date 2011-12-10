@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/10 14:59:13 pascal Exp $
 
 COMMENT=	threaded newsreader
 
@@ -6,10 +6,9 @@ CATEGORIES=	news
 MAINTAINER= 	Marc Espie <espie@openbsd.org>
 
 MASTER_SITES=${MASTER_SITE_SOURCEFORGE:=trn/}
-V=76
+V=77
 DISTNAME=	trn-4.0-test$V
 PKGNAME=	trn-4.0.$V
-REVISION=	1
 
 PERMIT_PACKAGE_FTP=Yes
 PERMIT_DISTFILES_FTP=Yes
@@ -24,7 +23,6 @@ CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=-dse -Doptimize="${CFLAGS}" -Dlocal=${PREFIX}
 SEPARATE_BUILD=concurrent
-USE_GROFF =	Yes
 
 pre-configure: 
 	cp ${FILESDIR}/openbsd-hints ${WRKSRC}/hints/openbsd.sh
