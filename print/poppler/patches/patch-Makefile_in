@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2011/11/26 19:45:29 kili Exp $
---- Makefile.in.orig	Wed Oct 26 14:40:05 2011
-+++ Makefile.in	Wed Nov 16 17:20:00 2011
-@@ -273,6 +273,8 @@ POPPLER_QT4_CXXFLAGS = @POPPLER_QT4_CXXFLAGS@
+$OpenBSD: patch-Makefile_in,v 1.2 2011/12/10 22:04:12 kili Exp $
+--- Makefile.in.orig	Sun Dec  4 15:46:38 2011
++++ Makefile.in	Fri Dec  9 20:57:20 2011
+@@ -274,6 +274,8 @@ POPPLER_QT4_CXXFLAGS = @POPPLER_QT4_CXXFLAGS@
  POPPLER_QT4_LIBS = @POPPLER_QT4_LIBS@
  POPPLER_QT4_TEST_CFLAGS = @POPPLER_QT4_TEST_CFLAGS@
  POPPLER_QT4_TEST_LIBS = @POPPLER_QT4_TEST_LIBS@
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2011/11/26 19:45:29 kili Exp $
  POPPLER_VERSION = @POPPLER_VERSION@
  PTHREAD_CC = @PTHREAD_CC@
  PTHREAD_CFLAGS = @PTHREAD_CFLAGS@
-@@ -328,6 +330,8 @@ infodir = @infodir@
+@@ -329,6 +331,8 @@ infodir = @infodir@
  install_sh = @install_sh@
  libdir = @libdir@
  libexecdir = @libexecdir@
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2011/11/26 19:45:29 kili Exp $
  localedir = @localedir@
  localstatedir = @localstatedir@
  mandir = @mandir@
-@@ -353,12 +357,14 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
+@@ -354,12 +358,14 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
  @BUILD_CAIRO_OUTPUT_TRUE@cairo_pc_file = poppler-cairo.pc
  @BUILD_POPPLER_GLIB_TRUE@glib_subdir = glib
  @BUILD_POPPLER_GLIB_TRUE@glib_pc_file = poppler-glib.pc
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2011/11/26 19:45:29 kili Exp $
  
  # Add CMake buildsystem files here so they get added on make dist
  EXTRA_DIST = README-XPDF poppler.pc.in poppler-uninstalled.pc.in \
-@@ -396,6 +402,7 @@ pkgconfig_DATA = \
+@@ -397,6 +403,7 @@ pkgconfig_DATA = \
  	$(cairo_pc_file)			\
  	$(splash_pc_file)			\
  	$(glib_pc_file)				\
@@ -43,7 +43,7 @@ $OpenBSD: patch-Makefile_in,v 1.1 2011/11/26 19:45:29 kili Exp $
  	$(qt4_pc_file)				\
  	$(cpp_pc_file)
  
-@@ -469,6 +476,10 @@ poppler-splash-uninstalled.pc: $(top_builddir)/config.
+@@ -470,6 +477,10 @@ poppler-splash-uninstalled.pc: $(top_builddir)/config.
  poppler-glib.pc: $(top_builddir)/config.status $(srcdir)/poppler-glib.pc.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
  poppler-glib-uninstalled.pc: $(top_builddir)/config.status $(srcdir)/poppler-glib-uninstalled.pc.in
