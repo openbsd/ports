@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/12/06 14:44:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.80 2011/12/10 17:28:13 stsp Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
@@ -29,6 +29,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-random="/dev/arandom" \
 		--with-libidn=${LOCALBASE} \
 		--without-libssh2
+
+# speed up some time-consuming configure tests
+CONFIGURE_ENV+=curl_cv_func_select_args="int,fd_set *,struct timeval *,int"
+CONFIGURE_ENV+=curl_cv_func_recv_args="int,void *,size_t,int,ssize_t"
+CONFIGURE_ENV+=curl_cv_func_recvfrom_args="int,void *,size_t,int,struct sockaddr *,socklen_t *,ssize_t"
+CONFIGURE_ENV+=curl_cv_func_send_args="int,const void *,size_t,int,ssize_t"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
