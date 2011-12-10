@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+$OpenBSD: patch-configure_in,v 1.2 2011/12/10 19:06:03 naddy Exp $
 --- configure.in.orig	Sat Sep  3 18:16:50 2011
 +++ configure.in	Mon Sep  5 20:00:17 2011
 @@ -1773,7 +1773,7 @@
@@ -42,7 +42,7 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
 -						# pthread (first!) on Linux
 +	case $ac_sys_system/$ac_sys_release in
 +        OpenBSD*)
-+		LIBS="-pthread $(LIBS)" ;;
++		LIBS="-pthread ${LIBS}" ;;
 +	*)
 +    		AC_SEARCH_LIBS(sem_init, pthread rt posix4) ;;  # 'Real Time' functions on Solaris
 +								# posix4 on Solaris 2.6

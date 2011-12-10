@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.5 2011/07/07 21:32:39 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.6 2011/12/10 19:06:03 naddy Exp $
 
 Wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
 
@@ -56,7 +56,7 @@ Wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
 +#    AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
  						# posix4 on Solaris 2.6
  						# pthread (first!) on Linux
-+	LIBS="-pthread $(LIBS)"
++	LIBS="-pthread ${LIBS}"
  fi
  
  # check if we need libintl for locale functions
