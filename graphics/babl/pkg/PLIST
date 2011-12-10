@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/07 11:17:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/10 09:12:19 ajacoutot Exp $
 include/babl-0.1/
 include/babl-0.1/babl/
 include/babl-0.1/babl/babl-macros.h
@@ -28,3 +28,6 @@ lib/pkgconfig/
 lib/pkgconfig/babl.pc
 share/gir-1.0/
 share/gir-1.0/Babl-0.1.gir
+share/vala/
+share/vala/vapi/
+share/vala/vapi/babl-0.1.vapi

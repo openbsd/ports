@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/17 11:42:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/10 09:12:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	dynamic pixel format conversion library
 
-V=		0.1.4
+V=		0.1.6
 DISTNAME=	babl-${V}
-REVISION=	0
 CATEGORIES=	graphics devel
 
-SHARED_LIBS=	babl-0.1	1.0 # .103.1
+SHARED_LIBS +=  babl-0.1             1.0      # 105.1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -29,7 +28,8 @@ WANTLIB=	m
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-BUILD_DEPENDS=	devel/gobject-introspection
+BUILD_DEPENDS=	devel/gobject-introspection \
+		lang/vala
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
