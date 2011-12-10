@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.37 2011/12/05 21:22:35 espie Exp $
+# $OpenBSD: dpb,v 1.38 2011/12/10 14:48:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -363,6 +363,12 @@ while (!DPB::Core->avail) {
 }
 my $core = DPB::Core->get;
 #my $dump = DPB::Util->make_hot($state->logger->open('dump'));
+$SIG{INFO} = sub {
+	$state->engine->info_dump($state->logger->open('info'));
+	# perl status may spew some garbage on the display, 
+	# remove it during next refresh
+	$reporter->refresh;
+};
 
 my $keep_going = 1;
 my $last_time = time() - $state->{display_timeout};

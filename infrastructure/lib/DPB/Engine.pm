@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.41 2011/12/04 10:57:46 espie Exp $
+# $OpenBSD: Engine.pm,v 1.42 2011/12/10 14:48:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -152,6 +152,12 @@ sub end
 		}
 	}
 	$self->done($v);
+}
+
+sub dump
+{
+	my ($self, $k, $fh) = @_;
+#	$self->{queue}->dump($k, $fh);
 }
 
 package DPB::SubEngine::Build;
@@ -715,6 +721,17 @@ sub dump_category
 			$cache->{$v->{info}} = $v->fullpkgpath;
 		}
 	}
+}
+
+
+sub info_dump
+{
+	my ($self, $fh) = @_;
+	for my $k (qw(tobuild built)) {
+		$self->dump_category($k, $fh);
+	}
+	$self->{buildable}->dump('Q', $fh);
+	print $fh "\n";
 }
 
 sub end_dump
