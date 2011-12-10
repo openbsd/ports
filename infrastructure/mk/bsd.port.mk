@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1151 2011/12/09 09:42:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1152 2011/12/10 11:15:16 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2400,7 +2400,7 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 ${_CONFIGURE_COOKIE}: ${_PATCH_COOKIE}
 	@${ECHO_MSG} "===>  Configuring for ${FULLPKGNAME}${_MASTER}"
 .if defined(_CONFIG_SITE)
-	@cat ${CONFIG_SITE_LIST} >${_CONFIG_SITE}
+	@cd ${PORTSDIR}/infrastructure/db && cat ${CONFIG_SITE_LIST} >${_CONFIG_SITE}
 	@echo "Using ${_CONFIG_SITE} (generated)"
 .endif
 	@mkdir -p ${WRKBUILD}

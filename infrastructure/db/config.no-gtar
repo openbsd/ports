@@ -1,0 +1,4 @@
+# $OpenBSD: config.no-gtar,v 1.1 2011/12/10 11:15:16 espie Exp $
+# included unless archivers/gtar*
+am_cv_prog_tar_ustar=${am_cv_prog_tar_ustar=/usr/bin/tar}
+AMTAR=${AMTAR=/usr/bin/tar}
