@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/02 21:07:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2011/12/10 09:13:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	graph based image processing framework
 COMMENT-plugins=gegl plugins
 
-V=		0.1.6
+V=		0.1.8
 DISTNAME=	gegl-${V}
-REVISION=	0
 CATEGORIES=	graphics devel
 
 PKGNAME-main=	gegl-${V}
 PKGNAME-plugins=gegl-plugins-${V}
-REVISION-plugins=4
 
-SHARED_LIBS=	gegl-0.1	1.0 # .105.1
+SHARED_LIBS=	gegl-0.1	1.1 # .105.1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -47,14 +45,18 @@ WANTLIB-main += X11 Xau Xdmcp Xrender c cairo croco-0.6 expat fontconfig
 WANTLIB-main += freetype gdk_pixbuf-2.0 jpeg pango-1.0
 WANTLIB-main += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread
 WANTLIB-main += pthread-stubs xcb xml2 xcb-render
-WANTLIB-main += rsvg-2 babl-0.1
+WANTLIB-main += rsvg-2 babl-0.1 Half Iex IlmThread Imath
 WANTLIB-main += GL Xdamage Xext Xfixes Xxf86vm drm jasper xcb-shm
+
+BUILD_DEPENDS=	devel/gobject-introspection \
+		lang/vala
 
 LIB_DEPENDS=	devel/libexecinfo
 
 LIB_DEPENDS-main= 	${LIB_DEPENDS} \
 			x11/gnome/librsvg \
-			graphics/babl
+			graphics/babl \
+			graphics/ilmbase
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += Half Iex IlmThread Imath gsm mp3lame ogg orc-0.4
@@ -78,6 +80,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-static \
 		--disable-docs \
+		--without-umfpack \
 		--without-sdl \
 		--without-lua \
 		--without-libopenraw \
