@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure_in,v 1.2 2011/11/28 15:28:49 dcoppa Exp $
+$OpenBSD: patch-configure_in,v 1.3 2011/12/11 18:31:13 dcoppa Exp $
 --- configure.in.orig	Fri Nov 11 21:59:14 2011
-+++ configure.in	Mon Nov 28 10:23:02 2011
++++ configure.in	Fri Dec  9 20:14:19 2011
+@@ -172,7 +172,7 @@ MULE_IF_ENABLED_ANY([monolithic, amule-daemon, amule-g
+ 	WX_DETECT_STANDARD_OPTION_VALUES
+ 
+ 	# We also need wxBase
+-	WX_LIBS=`$WX_CONFIG_WITH_ARGS --libs adv,core,net`
++	WX_LIBS="`$WX_CONFIG_WITH_ARGS --libs adv,core,net` -lX11"
+ 	WXBASE_LIBS=`$WX_CONFIG_WITH_ARGS --libs net`
+ 	WXBASE_CPPFLAGS="$WX_CPPFLAGS -DwxUSE_GUI=0"
+ 
 @@ -236,7 +236,7 @@ AC_LANG_POP([C++])
  ])
  
