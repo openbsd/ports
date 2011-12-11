@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/12/10 14:59:13 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/11 15:04:48 jasper Exp $
 
 COMMENT=	threaded newsreader
 
@@ -23,6 +23,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=-dse -Doptimize="${CFLAGS}" -Dlocal=${PREFIX}
 SEPARATE_BUILD=concurrent
+USE_GROFF=	Yes
 
 pre-configure: 
 	cp ${FILESDIR}/openbsd-hints ${WRKSRC}/hints/openbsd.sh
