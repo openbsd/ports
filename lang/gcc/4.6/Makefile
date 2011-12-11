@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/08 17:40:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/11 21:11:37 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -98,6 +98,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 CONFIGURE_ENV += am_cv_func_iconv=no
 CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
+MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
@@ -135,7 +136,7 @@ USE_GMAKE = yes
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET = bootstrap
 
-MAKE_FLAGS = libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
+MAKE_FLAGS += libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
 .if ${MACHINE_ARCH} == "sparc"  || ${MACHINE_ARCH} == "amd64"
 PIC = 1
