@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.23 2011/12/02 11:40:25 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.24 2011/12/11 19:55:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -341,6 +341,11 @@ sub merge_depends
 		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS)) {
 			if (defined $info->{$k}) {
 				for my $d (values %{$info->{$k}}) {
+					# filter these out like during build
+					# simpler to figure out logs from 
+					# depends stage that way.
+					next if $d->pkgpath_and_flavors eq 
+					    $v->pkgpath_and_flavors;
 					$global->{$d} = $d;
 				}
 			}
