@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/12/09 09:10:05 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/12/11 18:04:02 dcoppa Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -6,6 +6,7 @@
 @conflict wxWidgets-lesstif-*
 @conflict wxWidgets-gtk-*
 @conflict wxWidgets-gtk2-*
+@conflict wxWidgets-media-<2.8.12p0
 @pkgpath x11/wxWidgets/x11univ
 @pkgpath x11/wxWidgets/motif
 @pkgpath x11/wxWidgets/lesstif
@@ -371,6 +372,7 @@ include/wx/longlong.h
 include/wx/math.h
 include/wx/matrix.h
 include/wx/mdi.h
+include/wx/mediactrl.h
 include/wx/memconf.h
 include/wx/memory.h
 include/wx/memtext.h
