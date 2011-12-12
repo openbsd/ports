@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.102 2011/11/19 11:43:05 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.103 2011/12/12 14:52:02 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -33,11 +33,6 @@
 #	install, package, readmes, deinstall, reinstall,
 #	tags
 #
-
-# recent /usr/share/mk/* should include bsd.own.mk, guard for older versions
-.if !defined(BSD_OWN_MK)
-.  include <bsd.own.mk>
-.endif
 
 .if defined(verbose-show)
 .MAIN: verbose-show
