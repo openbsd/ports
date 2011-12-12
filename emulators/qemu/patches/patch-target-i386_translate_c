@@ -1,7 +1,7 @@
-$OpenBSD: patch-target-i386_translate_c,v 1.5 2011/08/16 21:24:42 sthen Exp $
---- target-i386/translate.c.orig	Sat Jul 23 13:05:22 2011
-+++ target-i386/translate.c	Mon Jul 25 19:29:57 2011
-@@ -4856,20 +4856,24 @@ static target_ulong disas_insn(DisasContext *s, target
+$OpenBSD: patch-target-i386_translate_c,v 1.6 2011/12/12 10:56:56 sthen Exp $
+--- target-i386/translate.c.orig	Mon Nov  7 16:24:56 2011
++++ target-i386/translate.c	Mon Nov  7 17:39:18 2011
+@@ -4870,20 +4870,24 @@ static target_ulong disas_insn(DisasContext *s, target
              tcg_gen_sub_tl(t2, cpu_regs[R_EAX], t0);
              gen_extu(ot, t2);
              tcg_gen_brcondi_tl(TCG_COND_EQ, t2, 0, label1);

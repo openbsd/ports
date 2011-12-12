@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.20 2011/10/17 20:27:17 sthen Exp $
---- configure.orig	Wed Oct 12 12:41:43 2011
-+++ configure	Thu Oct 13 05:12:57 2011
-@@ -229,13 +229,11 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
+$OpenBSD: patch-configure,v 1.21 2011/12/12 10:56:56 sthen Exp $
+--- configure.orig	Mon Nov 28 17:22:15 2011
++++ configure	Mon Nov 28 18:32:45 2011
+@@ -235,13 +235,11 @@ sdl_config="${SDL_CONFIG-${cross_prefix}sdl-config}"
  
  # default flags for all hosts
  QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
@@ -10,34 +10,21 @@ $OpenBSD: patch-configure,v 1.20 2011/10/17 20:27:17 sthen Exp $
  QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
- QEMU_INCLUDES="-I. -I\$(SRC_PATH)"
+ QEMU_INCLUDES="-I. -I\$(SRC_PATH) -I\$(SRC_PATH)/fpu"
 -LDFLAGS="-g $LDFLAGS"
  
  # make source path absolute
  source_path=`cd "$source_path"; pwd`
-@@ -281,6 +279,12 @@ elif check_define __s390__ ; then
-   else
-     cpu="s390"
-   fi
-+elif check_define __ARMEB__ ; then
-+  cpu="armv4b"
-+elif check_define __ARMEL__ ; then
-+  cpu="armv4l"
-+elif check_define __hppa__ ; then
-+  cpu="hppa"
- else
-   cpu=`uname -m`
- fi
-@@ -301,7 +305,7 @@ case "$cpu" in
-   armv*l)
-     cpu="armv4l"
-   ;;
--  parisc|parisc64)
-+  hppa|parisc|parisc64)
-     cpu="hppa"
-   ;;
-   mips*)
-@@ -2557,8 +2561,9 @@ fi
+@@ -1116,7 +1114,7 @@ fi
+ 
+ if test "$pie" = ""; then
+   case "$cpu-$targetos" in
+-    i386-Linux|x86_64-Linux)
++    i386-Linux|x86_64-Linux|i386-OpenBSD|x86_64-OpenBSD)
+       ;;
+     *)
+       pie="no"
+@@ -2684,8 +2682,9 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs
  

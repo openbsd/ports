@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.80 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2011/12/12 10:56:56 sthen Exp $
 
-# no success building on other archs yet
-ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS=		amd64 i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT =		multi system emulator
 
-DISTNAME =		qemu-0.15.1
-REVISION=		1
+DISTNAME=		qemu-1.0
 CATEGORIES =		emulators
 MASTER_SITES =		http://wiki.qemu.org/download/ \
-			${MASTER_SITE_SAVANNAH:=qemu/}
+			http://comstyle.com/source/
 
 HOMEPAGE =		http://www.qemu.org/
 
@@ -21,18 +19,30 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c curl jpeg m ncurses ossaudio png pthread util z
+WANTLIB=		GL SDL X11 c curl glib-2.0 gthread-2.0 jpeg m ncurses \
+			png pthread util z
 
+MODULES=		devel/gettext \
+			lang/python
 BUILD_DEPENDS =		textproc/texi2html
-LIB_DEPENDS =		graphics/jpeg \
+LIB_DEPENDS=		devel/glib2 \
+			devel/sdl \
+			graphics/jpeg \
 			graphics/png \
 			net/curl
+
+MODPY_RUNDEP=		No
 
 MAKE_ENV =		V=1
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
-EXTRA_CFLAGS=		-I${LOCALBASE}/include
-EXTRA_LDFLAGS=		-L${LOCALBASE}/lib
+EXTRA_CFLAGS=		-I${LOCALBASE}/include -I${X11BASE}/include
+EXTRA_LDFLAGS=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+# until the system headers are fixed properly.
+EXTRA_CFLAGS+=		-Wno-redundant-decls
+
+EXTRA_CFLAGS+=		-DTIME_MAX=INT_MAX
 
 VMEM_WARNING =		Yes
 
@@ -41,12 +51,15 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sysconfdir=${SYSCONFDIR} \
 			--mandir=${PREFIX}/man \
+			--python=${MODPY_BIN} \
 			--smbd=${LOCALBASE}/libexec/smbd \
 			--cc="${CC}" \
 			--host-cc="${CC}" \
 			--extra-cflags="${EXTRA_CFLAGS}" \
 			--extra-ldflags="${EXTRA_LDFLAGS}" \
-			--disable-guest-agent \
+			--audio-drv-list=sdl \
+			--disable-bsd-user \
+			--disable-libiscsi \
 			--disable-smartcard-nss \
 			--disable-spice \
 			--disable-uuid \
@@ -58,39 +71,14 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 CONFIGURE_ARGS +=	--sparc_cpu=v7
 .endif
 
-.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Msparc64}
-PKG_ARGS +=		-Dbsduser=1
-.else
-CONFIGURE_ARGS +=	--disable-bsd-user
-PKG_ARGS +=		-Dbsduser=0
-.endif
-
-FLAVORS =		debug no_x11
+FLAVORS=		debug
 FLAVOR ?=
-
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS +=	--disable-sdl --disable-opengl
-.else
-WANTLIB +=		GL SDL X11
-
-LIB_DEPENDS +=		devel/sdl
-
-EXTRA_CFLAGS +=		-I${X11BASE}/include
-EXTRA_LDFLAGS +=	-L${X11BASE}/lib
-.endif
-
-# until the system headers are fixed properly.
-EXTRA_CFLAGS +=		-Wno-redundant-decls
 
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 
-# Currently, the regression tests are utterly broken.
-REGRESS_TARGET =	test
-
-pre-configure:
-	@perl -pi -e 's|/dev/dsp|/dev/audio|g' ${WRKSRC}/audio/ossaudio.c
+NO_REGRESS=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu

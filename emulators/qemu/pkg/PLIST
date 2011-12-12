@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/08/16 21:24:42 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/12/12 10:56:56 sthen Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
 @pkgpath emulators/qemu,kqemu
 @pkgpath emulators/qemu-old[,no_x11]
-%%bsduser%%
-@bin bin/qemu
+@bin bin/qemu-ga
 @bin bin/qemu-img
 @bin bin/qemu-io
 @bin bin/qemu-nbd
+@bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-cris
+@bin bin/qemu-system-i386
 @bin bin/qemu-system-lm32
 @bin bin/qemu-system-m68k
 @bin bin/qemu-system-microblaze
@@ -28,6 +29,8 @@
 @bin bin/qemu-system-sparc
 @bin bin/qemu-system-sparc64
 @bin bin/qemu-system-x86_64
+@bin bin/qemu-system-xtensa
+@bin bin/qemu-system-xtensaeb
 @man man/man1/qemu-img.1
 @man man/man1/qemu.1
 @man man/man8/qemu-nbd.8
@@ -92,6 +95,7 @@ share/qemu/multiboot.bin
 share/qemu/openbios-ppc
 share/qemu/openbios-sparc32
 share/qemu/openbios-sparc64
+share/qemu/palcode-clipper
 share/qemu/petalogix-ml605.dtb
 share/qemu/petalogix-s3adsp1800.dtb
 share/qemu/ppc_rom.bin
@@ -102,6 +106,7 @@ share/qemu/pxe-pcnet.rom
 share/qemu/pxe-rtl8139.rom
 share/qemu/pxe-virtio.rom
 share/qemu/s390-zipl.rom
+share/qemu/sgabios.bin
 share/qemu/slof.bin
 share/qemu/spapr-rtas.bin
 share/qemu/vgabios-cirrus.bin

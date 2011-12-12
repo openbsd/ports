@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.bsduser,v 1.1 2011/06/15 21:13:33 sthen Exp $
-@bin bin/qemu-i386
-@bin bin/qemu-sparc
-@bin bin/qemu-sparc64
-@bin bin/qemu-x86_64
