@@ -1,0 +1,3 @@
+# $OpenBSD: config.no-gawk,v 1.1 2011/12/12 10:33:33 jasper Exp $
+# included unless lang/gawk
+ac_cv_prog_AWK=${ac_cv_prog_AWK=/usr/bin/awk}
