@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/27 17:02:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/12 09:15:09 sthen Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			5.2.1
+V=			5.2.2
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -12,10 +12,6 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
-
-REVISION-main=		2
-REVISION-server=	2
-REVISION-bat=		2
 
 SHARED_LIBS +=  bac                  2.0      # 5.2.1
 SHARED_LIBS +=  baccfg               2.0      # 5.2.1
@@ -53,7 +49,7 @@ PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
 
 .if !defined(FLAVOR) || empty(FLAVOR)
-FLAVOR =		sqlite3
+FLAVOR =		pgsql
 .endif
 
 MULTI_PACKAGES=		-main -server -bat

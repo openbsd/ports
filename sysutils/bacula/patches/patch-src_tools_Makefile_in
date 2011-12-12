@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tools_Makefile_in,v 1.1 2011/11/24 09:29:55 ajacoutot Exp $
+$OpenBSD: patch-src_tools_Makefile_in,v 1.2 2011/12/12 09:15:09 sthen Exp $
 
 Reorder LDFLAGS (prefer -L.libs over /usr/local/lib) so that bacula can
 be rebuilt while already installed.
 
---- src/tools/Makefile.in.orig	Wed Nov 23 16:35:16 2011
-+++ src/tools/Makefile.in	Wed Nov 23 16:38:38 2011
+--- src/tools/Makefile.in.orig	Sat Nov 26 14:08:12 2011
++++ src/tools/Makefile.in	Sun Dec  4 12:01:18 2011
 @@ -58,22 +58,22 @@ all: Makefile $(TOOLS) gigaslam grow
  	@echo " "
  
@@ -20,7 +20,7 @@ be rebuilt while already installed.
  	 ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) $(DIRCONFOBJS)
 -	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../cats -o $@ dbcheck.o $(DIRCONFOBJS) \
 +	$(LIBTOOL_LINK) $(CXX) -L../lib -L../cats $(LDFLAGS) -o $@ dbcheck.o $(DIRCONFOBJS) \
- 	  -lbacsql -lbaccats -lbaccfg -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
+ 	  -lbaccats -lbacsql -lbaccfg -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  fstype: Makefile fstype.o ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
 -	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../findlib -o $@ fstype.o -lbacfind -lbac -lm \
@@ -29,7 +29,7 @@ be rebuilt while already installed.
  
  drivetype: Makefile drivetype.o ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
 -	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -L../lib -L../findlib -o $@ drivetype.o -lbacfind -lbac -lm \
-+	$(LIBTOOL_LINK) $(CXX) -L../lib -L../findlib $(LDFLAGS)-o $@ drivetype.o -lbacfind -lbac -lm \
++	$(LIBTOOL_LINK) $(CXX) -L../lib -L../findlib $(LDFLAGS) -o $@ drivetype.o -lbacfind -lbac -lm \
  	  $(DLIB) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  dird_conf.o: ../dird/dird_conf.c
@@ -60,21 +60,30 @@ be rebuilt while already installed.
  	../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) bbatch.o
 -	$(LIBTOOL_LINK) $(CXX) -g $(LDFLAGS) -L../cats -L. -L../lib -o $@ bbatch.o \
 +	$(LIBTOOL_LINK) $(CXX) -g -L../cats -L. -L../lib $(LDFLAGS) -o $@ bbatch.o \
- 	  -lbacsql -lbaccats -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
+ 	  -lbaccats -lbacsql -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  bvfs_test: Makefile ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) \
  	   ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) bvfs_test.o
 -	$(LIBTOOL_LINK) $(CXX) -g $(LDFLAGS) -L../cats -L. -L../lib -L../findlib -o $@ bvfs_test.o  \
 +	$(LIBTOOL_LINK) $(CXX) -g -L../cats -L. -L../lib -L../findlib $(LDFLAGS) -o $@ bvfs_test.o  \
- 	  -lbacsql -lbaccats -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
+ 	  -lbaccats -lbacsql -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  ing_test: Makefile ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) \
  	  ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ing_test.o
 -	$(LIBTOOL_LINK) $(CXX) -g $(LDFLAGS) -L../cats -L. -L../lib -L../findlib -o $@ ing_test.o  \
 +	$(LIBTOOL_LINK) $(CXX) -g -L../cats -L. -L../lib -L../findlib $(LDFLAGS) -o $@ ing_test.o  \
- 	  -lbacsql -lbaccats -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
+ 	  -lbaccats -lbacsql -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
  
  cats_test.o: cats_test.c
+@@ -122,7 +122,7 @@ cats_test.o: cats_test.c
+ 	$(NO_ECHO)$(CXX) $(DEFS) $(DEBUG) -c $(CPPFLAGS) $(PYTHON_INC) -I$(srcdir) -I$(basedir) $(DINCLUDE) $(CFLAGS) $<
+ 
+ cats_test: Makefile ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE) ../lib/libbac$(DEFAULT_ARCHIVE_TYPE) ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) cats_test.o
+-	$(LIBTOOL_LINK) $(CXX) -g $(LDFLAGS) -L../cats -L. -L../lib -L../findlib -o $@ cats_test.o  \
++	$(LIBTOOL_LINK) $(CXX) -g -L../cats -L. -L../lib -L../findlib $(LDFLAGS) -o $@ cats_test.o  \
+ 	  -lbaccats -lbacsql -lbacfind -lbac -lm $(DB_LIBS) $(LIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS)
+ 
+ gigaslam.o: gigaslam.c
 @@ -132,7 +132,7 @@ gigaslam: gigaslam.o
  	$(LIBTOOL_LINK) $(CXX) $(LDFLAGS) -o $@ gigaslam.o
  

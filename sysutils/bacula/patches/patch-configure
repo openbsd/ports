@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
---- configure.orig	Sun Oct 30 13:03:42 2011
-+++ configure	Mon Nov 14 17:12:31 2011
-@@ -4764,7 +4764,7 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
+--- configure.orig	Sat Nov 26 14:08:12 2011
++++ configure	Sun Dec  4 11:54:53 2011
+@@ -4792,7 +4792,7 @@ $as_echo "no" >&6; }
  fi
  
  
 -if test ! -e $CXX; then
 +if test ! -e `which $CXX`; then
-    as_fn_error "Unable to find C++ compiler" "$LINENO" 5
+    as_fn_error $? "Unable to find C++ compiler" "$LINENO" 5
  fi
  
-@@ -16356,7 +16356,7 @@ if test x$use_libtool != xno; then
+@@ -16383,7 +16383,7 @@ if test x$use_libtool != xno; then
     LIBTOOL_INSTALL_TARGET="libtool-install"
     LIBTOOL_UNINSTALL_TARGET="libtool-uninstall"
     LIBTOOL_CLEAN_TARGET="libtool-clean"
@@ -19,7 +19,7 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
     FD_PLUGIN_DIR="src/plugins/fd"
     have_plugins=yes
  else
-@@ -22038,7 +22038,7 @@ eval as_val=\$$as_ac_Header
+@@ -22061,7 +22061,7 @@ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
  
  $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
  		    got_readline="yes"
  
  else
-@@ -22078,7 +22078,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
+@@ -22100,7 +22100,7 @@ $as_echo "#define HAVE_READLINE 1" >>confdefs.h
  
  			got_readline="yes"
  			CONS_INC="-I${TOP_DIR}/depkgs/readline"
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -29782,13 +29782,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
+@@ -29764,13 +29764,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
  fi
  
  PTHREAD_LIB=""
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
 +{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -54,16 +54,16 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -29819,7 +29819,7 @@ fi
+@@ -29801,7 +29801,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
 -  PTHREAD_LIB="-lpthread"
 +  PTHREAD_LIB="-pthread"
  else
  
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthreads" >&5
-@@ -30189,7 +30189,8 @@ openbsd)
+@@ -30169,7 +30169,8 @@ openbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -73,7 +73,7 @@ $OpenBSD: patch-configure,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
     CFLAGS="${CFLAGS} -pthread"
-@@ -30198,6 +30199,7 @@ openbsd)
+@@ -30178,6 +30179,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"
