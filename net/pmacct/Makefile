@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/12 12:07:19 jasper Exp $
 
 COMMENT=	IP accounting software
 
 DISTNAME=	pmacct-0.12.5
-REVISION=		0
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -25,7 +25,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-64bit \
 		--enable-ipv6 \
 		--enable-sqlite3 \
-		--with-sqlite3-includes="${LOCALBASE}/include"
+		--with-sqlite3-includes="${LOCALBASE}/include" \
+		ac_cv_prog_MAKE="/usr/bin/make"
 .ifdef DEBUG
 MAKE_ARGS+=	DEBUG=1
 .endif
