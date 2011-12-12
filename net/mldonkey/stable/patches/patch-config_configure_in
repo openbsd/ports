@@ -1,6 +1,42 @@
-$OpenBSD: patch-config_configure_in,v 1.15 2011/09/16 10:04:32 dcoppa Exp $
+$OpenBSD: patch-config_configure_in,v 1.16 2011/12/12 14:57:23 dcoppa Exp $
 --- config/configure.in.orig	Sun Aug  7 12:25:14 2011
-+++ config/configure.in	Fri Sep 16 11:46:15 2011
++++ config/configure.in	Mon Dec 12 15:17:24 2011
+@@ -482,7 +482,7 @@ fi
+ 
+ OCAML_PATH=
+ 
+-echo -e "\n--------------------------------"
++echo "\n--------------------------------"
+ echo "     Checking system tools."
+ echo "--------------------------------"
+ 
+@@ -526,7 +526,7 @@ WGET="$ac_cv_prog_WGET"
+ 
+ echo "----------------------------------------"
+ echo "     Checking system tools finished."
+-echo -e "----------------------------------------\n"
++echo "----------------------------------------\n"
+ 
+ echo "--------------------------------"
+ echo "     Checking Ocaml compiler."
+@@ -769,7 +769,7 @@ if test "$DEBUG" = "yes"; then
+     OCAMLOPT="$OCAMLOPT -g"
+ fi
+ 
+-echo -e "\n----------------------------------"
++echo "\n----------------------------------"
+ echo "     Checking system headers."
+ echo "----------------------------------"
+ 
+@@ -823,7 +823,7 @@ AC_CHECK_HEADERS([sys/param.h sys/mount.h],,,
+ ])
+ echo "-------------------------------------------"
+ echo "     Checking system headers finished."
+-echo -e "-------------------------------------------\n"
++echo "-------------------------------------------\n"
+ echo "-----------------------------------"
+ echo "     Checking system libraries."
+ echo "-----------------------------------"
 @@ -968,7 +968,7 @@ if test "$GD" != "no"; then
        PNG_LDFLAGS=`$PNGLIBCONFIG --ldflags`
        LDFLAGS="$LDFLAGS $PNG_LDFLAGS"
@@ -19,3 +55,101 @@ $OpenBSD: patch-config_configure_in,v 1.15 2011/09/16 10:04:32 dcoppa Exp $
          AC_DEFINE(HAVE_GD_PNG, 1, [Define to 1 if you have png support in libgd.])
        else
          AC_MSG_RESULT(no)
+@@ -1130,7 +1130,7 @@ esac
+ 
+ echo "---------------------------------------------"
+ echo "     Checking system libraries finished."
+-echo -e "---------------------------------------------\n"
++echo "---------------------------------------------\n"
+ 
+ CXX_VERSION=
+ CRYPTOPPFLAGS=
+@@ -1275,7 +1275,7 @@ echo "--------------------------------------"
+   fi
+ echo "-----------------------------------------------"
+ echo "     Checking activated networks finished."
+-echo "-----------------------------------------------"
++echo "-----------------------------------------------\n"
+ 
+ if test -f $OCAMLLIB/lablgl.cma; then
+   LABLGL_CMA=lablgl.cma
+@@ -1446,7 +1446,7 @@ else
+   MORE_TARGETS="$MORE_TARGETS $GUIS"
+   AC_MSG_CHECKING(GToolbox.popup_menu args)
+   GTOOLBOX="$OCAMLLIB/$LABLGTK_NAME/gToolbox.mli"
+-  grep popup $GTOOLBOX | grep -i button 2> /dev/null && GTOOLBOX_ARGS=new
++  grep popup $GTOOLBOX | grep -i button >/dev/null 2>&1 && GTOOLBOX_ARGS=new
+   if test "$GTOOLBOX_ARGS" = "new"; then
+     GTOOLBOX_POPUPMENU=' ~button: button ~time: time '
+     AC_MSG_RESULT(new)
+@@ -1456,7 +1456,7 @@ else
+   fi
+   echo "---------------------------------------------------------"
+   echo "End of GTK GUI configuration."
+-  echo "---------------------------------------------------------"
++  echo "---------------------------------------------------------\n"
+ fi
+ 
+ if test "$OS_FILES" = "mingw"; then
+@@ -1569,16 +1569,16 @@ diff $GTK_AUTOCONF.new $GTK_AUTOCONF 2> /dev/null > /d
+ 
+ cd ..
+ 
+-echo -e "\nBuilding dependencies (if it blocks, try '$GNU_MAKE depend' to see the problem)"
++echo "\nBuilding dependencies (if it blocks, try '$GNU_MAKE depend' to see the problem)"
+ $GNU_MAKE depend 2> /dev/null > /dev/null || echo "Building dependencies fails: try: '$GNU_MAKE depend'"
+ 
+-echo -e -n "\nConfiguring MLDonkey" $MLDONKEY_VERSION
++echo -n "\nConfiguring MLDonkey" $MLDONKEY_VERSION
+ if test ! -z "$SCM_VERSION"; then
+   echo -n " - SCM: $SCM_VERSION"
+ fi
+ echo " completed."
+ 
+-echo -e "\nNetwork modules:"
++echo "\nNetwork modules:"
+ echo -n " - eDonkey           "
+ if test "$DONKEY" = "yes"; then
+   if test "$DONKEY_SUI" = "yes"; then
+@@ -1653,7 +1653,7 @@ else
+   echo "        disabled - currently not usable"
+ fi
+ 
+-echo -e "\nCore features:"
++echo "\nCore features:"
+ 
+ echo " - zlib (required)   enabled"
+ 
+@@ -1713,7 +1713,7 @@ else
+ fi
+ 
+ if test "$LABLGTK_CONFIG" = "yes"; then
+-  echo -n -e "\n - GUI support       "
++  echo -n "\n - GUI support       "
+   if test "$GUI" = "newgui1"; then
+     echo "GTK1 newgui"
+   else
+@@ -1733,17 +1733,14 @@ if test "$TARGET_TYPE" = "byte"; then
+   OCAML_TYPE="- byte code"
+   COMPILE_TARGET=".byte"
+ fi
+-echo -e "\nCompilers:"
+-echo -e " - Ocaml version     $OCAMLVERSION $OCAML_TYPE"
+-echo -e " - $CC version       $CC_VERSION"
++echo "\nCompilers:"
++echo " - Ocaml version     $OCAMLVERSION $OCAML_TYPE"
++echo " - $CC version       $CC_VERSION"
+ if test "x$CXX" != "x"; then
+-  echo -e " - $CXX version       $CXX_VERSION"
++  echo " - $CXX version       $CXX_VERSION"
+ fi
+-echo -e "\nNow execute '$GNU_MAKE' to start compiling. Good luck!"
++echo "\nNow execute '$GNU_MAKE' to start compiling. Good luck!"
+ 
+-echo -e "\nTo compile a static code execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
++echo "\nTo compile a static code execute:     $GNU_MAKE mlnet$COMPILE_TARGET.static"
+ echo      "To produce a release tarball execute: $GNU_MAKE release.mlnet.static"
+ echo      "To clean the build directory execute: $GNU_MAKE maintainerclean"
+-if test "$DONKEY_SUI" = "yes"; then
+-  echo -e "\nCompiling CryptoPP.cc can take several minutes, on slow machines up to half an hour."
+-fi

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/12/12 14:57:23 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.0
 CATEGORIES =	net
 
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
@@ -35,17 +35,19 @@ AUTOCONF_VERSION =	2.68
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 CONFIGURE_ARGS +=	--enable-gui=newgui2
-CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include/libpng\
-			-I${LOCALBASE}/include -I${X11BASE}/include'
-CONFIGURE_ENV +=	LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
+CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include/libpng \
+			-I${LOCALBASE}/include -I${X11BASE}/include' \
+			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
+			ac_cv_prog_RPMBUILD="" \
+			ac_cv_prog_WGET=""
 
 USE_GMAKE =	Yes
 MODULES =	lang/ocaml devel/gettext
 BUILD_DEPENDS =	x11/lablgtk2
-LIB_DEPENDS =	x11/gnome/librsvg \
-		archivers/bzip2 \
-		graphics/gd \
+LIB_DEPENDS =	archivers/bzip2 \
 		devel/libmagic \
+		graphics/gd \
+		x11/gnome/librsvg \
 		x11/gtk+2
 
 FAKE_FLAGS =	MODOCAML_NATIVE=${MODOCAML_NATIVE}
