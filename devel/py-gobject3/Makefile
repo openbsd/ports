@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/21 22:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/12 16:13:09 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
-GNOME_VERSION=	3.0.2
+GNOME_VERSION=	3.0.3
 
 PKGNAME=	py-gobject3-${GNOME_VERSION}
 
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo drm expat ffi fontconfig freetype gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pcre
-WANTLIB += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pixman-1 png pthread-stubs stdc++ xcb xcb-render xcb-shm
+WANTLIB += z
 
 MODULES=	devel/gettext \
 		lang/python \
