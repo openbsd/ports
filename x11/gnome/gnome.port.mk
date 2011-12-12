@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.52 2011/12/03 18:32:06 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.53 2011/12/12 15:39:57 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -45,14 +45,14 @@ USE_GMAKE?=		Yes
 # or for ensuring documentation is available. If an option is not set, it's
 # explicitly disabled.
 # Currently supported tools are:
-# * goi: Build and enable GObject Introspection data.
+# * goi:  Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings.
 # * yelp: Use this if there are any files under share/gnome/help/
-#   in the pkg list and it calls gnome_help_display() -- gnome-doc-utils is
-#   here to make sure we have a dependency on rarian (scrollkeeper-*) and
-#   have access to the gnome-doc-* tools (not always needed but easier);
-#   same goes with itstool.
+#         in the pkg list and it calls gnome_help_display() -- gnome-doc-utils
+#         is here to make sure we have a dependency on rarian (scrollkeeper-*)
+#         and have access to the gnome-doc-* tools (not always needed but
+#         easier); same goes with itstool.
 #
 # Please note that if you're using multi-packages, you have to use the
 # MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
