@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/11 18:07:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/12 11:53:07 schwarze Exp $
 
 COMMENT=	threaded newsreader
 
@@ -23,10 +23,6 @@ CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=-dse -Doptimize="${CFLAGS}" -Dlocal=${PREFIX}
 SEPARATE_BUILD=concurrent
-
-# We need groff at build time to generate the manpages, but install them as
-# source, hence no USE_GROFF
-BUILD_DEPENDS =	textproc/groff
 
 pre-configure: 
 	cp ${FILESDIR}/openbsd-hints ${WRKSRC}/hints/openbsd.sh
