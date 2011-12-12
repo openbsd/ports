@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/12 12:23:14 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.3.9
-REVISION =	9
+DISTNAME =	ibus-1.4.0
 
-SHARED_LIBS =	ibus	1.0	# 2.0
+SHARED_LIBS =	ibus-1.0	0.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
@@ -19,13 +18,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 \
-		c cairo dbus-1 drm expat fontconfig freetype gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
-		xcb xcb-render xcb-shm z dbus-glib-1 ffi stdc++
+WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo \
+		cairo-gobject dbus-1 dbus-glib-1 drm expat ffi fontconfig \
+		freetype gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3 gtk-x11-2.0 \
+		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+		png pthread pthread-stubs stdc++ xcb xcb-render xcb-shm z
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
 
@@ -47,7 +46,8 @@ RUN_DEPENDS =	devel/iso-codes \
 		x11/gnome/librsvg \
 		x11/gtk+2,-guic
 
-LIB_DEPENDS =	x11/gtk+2
+LIB_DEPENDS =	x11/gtk+2 \
+		x11/gtk+3
 
 MODGCONF2_SCHEMAS_DIR = ibus
 
@@ -61,7 +61,5 @@ CONFIGURE_ARGS = --enable-vala \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS=	xdgautostartdir=${PREFIX}/share/examples/ibus/xdg/autostart
 
 .include <bsd.port.mk>

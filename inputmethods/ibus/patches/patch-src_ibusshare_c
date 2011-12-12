@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_ibusshare_c,v 1.1 2011/12/12 12:23:14 fgsch Exp $
+--- src/ibusshare.c.orig	Sun Nov 13 22:48:27 2011
++++ src/ibusshare.c	Sun Nov 13 22:48:33 2011
+@@ -41,11 +41,11 @@ ibus_get_local_machine_id (void)
+ 
+     if (machine_id == NULL) {
+         GError *error = NULL;
+-        if (!g_file_get_contents ("/var/lib/dbus/machine-id",
++        if (!g_file_get_contents ("/var/db/dbus/machine-id",
+                                   &machine_id,
+                                   NULL,
+                                   &error)) {
+-            g_warning ("Unable to load /var/lib/dbus/machine-id: %s", error->message);
++            g_warning ("Unable to load /var/db/dbus/machine-id: %s", error->message);
+             g_error_free (error);
+             machine_id = "machine-id";
+         }
