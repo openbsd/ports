@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/12 13:53:17 fgsch Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
 DISTNAME=		warmux-11.04.1
-REVISION=		0
+REVISION=		1
 WRKDIST=		${WRKDIR}/warmux-11.04
 CATEGORIES=		games
 
