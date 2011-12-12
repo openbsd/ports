@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/12 15:55:54 jasper Exp $
 %%SHARED%%
 @bin bin/rygel
 @bin bin/rygel-preferences
@@ -26,21 +26,13 @@ share/dbus-1/services/org.gnome.Rygel1.service
 share/examples/rygel/
 share/examples/rygel/rygel.conf
 @sample ${SYSCONFDIR}/rygel.conf
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/120x120/
 share/icons/hicolor/120x120/apps/
 share/icons/hicolor/120x120/apps/rygel.jpg
 share/icons/hicolor/120x120/apps/rygel.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/rygel.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/rygel.jpg
 share/icons/hicolor/48x48/apps/rygel.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/rygel-small.svg
 share/icons/hicolor/scalable/apps/rygel.svg
 share/locale/af/
@@ -64,6 +56,7 @@ share/locale/el/LC_MESSAGES/rygel.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/rygel.mo
+share/locale/eo/LC_MESSAGES/rygel.mo
 share/locale/es/LC_MESSAGES/rygel.mo
 share/locale/et/LC_MESSAGES/rygel.mo
 share/locale/fr/LC_MESSAGES/rygel.mo
