@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/12/03 19:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/12/12 09:38:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -15,6 +15,7 @@ PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
+REVISION-main =	0
 
 REVISION-main=	0
 
@@ -102,11 +103,11 @@ PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
 FLAVOR?=
 
-.if !${FLAVOR:L:Mno_java}
+.if !${FLAVOR:Mno_java}
 MULTI_PACKAGES+=	-java
 .endif
 
-.if !${FLAVOR:L:Mno_lang}
+.if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca de es fa fi fr hu it ja ko \
 			lt lv nl pl pt-BR ru sl sv
 
@@ -134,10 +135,8 @@ BUILD_DEPENDS+=	archivers/zip \
 		textproc/textutils
 
 MODULES+=	lang/python \
-		devel/gconf2 \
 		devel/gettext
 
-MODGCONF2_LIBDEP=No
 LIB_DEPENDS-main=x11/gtk+2 \
 		${MODPY_LIB_DEPENDS} \
 		databases/db/v4 \
@@ -150,8 +149,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 		textproc/redland \
 		textproc/hunspell \
 		devel/cppunit \
-		print/poppler \
-		${MODGCONF2_LIB_DEPENDS}
+		print/poppler
 WANTLIB-main=	gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		db>=4 xslt>=3 curl>=7 neon>=24 \
 		icuuc>=0 icudata>=0 icui18n icule \
@@ -162,7 +160,7 @@ WANTLIB-main+=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gmodule-2.0 gobject-2.0 gthread-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
-		util ${MODGCONF2_WANTLIB} ${MODGETTEXT_WANTLIB}
+		util ${MODGETTEXT_WANTLIB}
 WANTLIB-main+=	GL GLU Xxf86vm drm stdc++ xcb-render xcb-shm
 WANTLIB-main+=	hunspell-1.2 gdk_pixbuf_xlib-2.0
 WANTLIB-main+=	${MODPY_WANTLIB}
@@ -180,7 +178,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 			lib/kde3/kabc lib/kde3/kdecore \
 			lib/kde3/kdeui lib/kde3/kio
 
-.if !${FLAVOR:L:Mno_java}
+.if !${FLAVOR:Mno_java}
 MODULES+=		java
 MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
@@ -210,9 +208,11 @@ CONFIGURE_ARGS=	--disable-build-mozilla \
 		--disable-dbus \
 		--disable-epm \
 		--disable-fetch-external \
+		--disable-gconf \
 		--disable-gnome-vfs \
 		--disable-kde4 \
 		--disable-mozilla \
+		--disable-lockdown \
 		--disable-nss-module \
 		--disable-odk \
 		--disable-opengl \
@@ -222,9 +222,9 @@ CONFIGURE_ARGS=	--disable-build-mozilla \
 		--disable-xrender-link \
 		--enable-binfilter \
 		--enable-cairo \
+		--enable-gio \
 		--enable-gstreamer \
 		--enable-kde \
-		--enable-lockdown \
 		--enable-ext-presenter-minimizer \
 		--enable-ext-pdfimport \
 		--enable-ext-presenter-console \
@@ -269,7 +269,7 @@ CONFIGURE_ARGS=	--disable-build-mozilla \
 		--without-system-mozilla \
 		--without-unix-wrapper
 
-.if !${FLAVOR:L:Mno_java}
+.if !${FLAVOR:Mno_java}
 CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 		--with-java \
 		--with-java-target-version=1.5 \
@@ -280,14 +280,14 @@ CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 CONFIGURE_ARGS+=--without-java
 .endif
 
-.if ${FLAVOR:L:Mparallel}
+.if ${FLAVOR:Mparallel}
 NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
 .else
 NCPU=		1
 .endif
 CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
 
-.if ${FLAVOR:L:Mdebug}
+.if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS+=--enable-symbols \
 		--enable-debug
 .endif

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2011/06/23 11:59:08 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2011/12/12 09:38:03 ajacoutot Exp $
 lib/libreoffice/basis${BV}/program/basprovob.uno.so
 lib/libreoffice/basis${BV}/program/cairocanvas.uno.so
 lib/libreoffice/basis${BV}/program/canvasfactory.uno.so
@@ -13,7 +13,6 @@ lib/libreoffice/basis${BV}/program/fpicker.uno.so
 lib/libreoffice/basis${BV}/program/fps_gnome.uno.so
 lib/libreoffice/basis${BV}/program/fps_office.uno.so
 lib/libreoffice/basis${BV}/program/fsstorage.uno.so
-lib/libreoffice/basis${BV}/program/gconfbe1.uno.so
 lib/libreoffice/basis${BV}/program/hatchwindowfactory.uno.so
 lib/libreoffice/basis${BV}/program/i18npool.uno.so
 lib/libreoffice/basis${BV}/program/i18nsearch.uno.so
@@ -242,6 +241,7 @@ lib/libreoffice/basis${BV}/program/stringresourceob.uno.so
 lib/libreoffice/basis${BV}/program/syssh.uno.so
 lib/libreoffice/basis${BV}/program/ucpexpand1.uno.so
 lib/libreoffice/basis${BV}/program/ucpext.uno.so
+lib/libreoffice/basis${BV}/program/ucpgio1.uno.so
 lib/libreoffice/basis${BV}/program/ucptdoc1.uno.so
 lib/libreoffice/basis${BV}/program/updatefeed.uno.so
 lib/libreoffice/basis${BV}/program/vbaeventsob.uno.so
