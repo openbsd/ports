@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 09:48:09 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/12 11:04:04 sthen Exp $
 
 COMMENT=	graphical network simulator
 
 MODPY_EGG_VERSION=	0.7.3
 DISTNAME=		GNS3-${MODPY_EGG_VERSION}-src
 PKGNAME=		gns3-${MODPY_EGG_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=	emulators
 

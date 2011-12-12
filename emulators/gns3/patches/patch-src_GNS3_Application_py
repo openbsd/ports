@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_GNS3_Application_py,v 1.2 2011/03/03 16:29:29 sthen Exp $
+$OpenBSD: patch-src_GNS3_Application_py,v 1.3 2011/12/12 11:04:04 sthen Exp $
 --- src/GNS3/Application.py.orig	Tue Dec 14 17:52:57 2010
 +++ src/GNS3/Application.py	Sat Jan 29 11:33:08 2011
 @@ -319,7 +319,7 @@ class Application(QApplication, Singleton):
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_GNS3_Application_py,v 1.2 2011/03/03 16:29:29 sthen Exp $
          confo.qemuwrapper_workdir = ConfDB().get('Qemu/qemuwrapper_working_directory', unicode(''))
 -        confo.qemu_path = ConfDB().get('Qemu/qemu_path', unicode('qemu'))
 -        confo.qemu_img_path = ConfDB().get('Qemu/qemu_img_path', unicode('qemu-img'))
-+        confo.qemu_path = ConfDB().get('Qemu/qemu_path', unicode('${LOCALBASE}/bin/qemu'))
++        confo.qemu_path = ConfDB().get('Qemu/qemu_path', unicode('${LOCALBASE}/bin/qemu-system-i386'))
 +        confo.qemu_img_path = ConfDB().get('Qemu/qemu_img_path', unicode('${LOCALBASE}/bin/qemu-img'))
          confo.external_hosts = ConfDB().get('Qemu/external_hosts', unicode('localhost:10525')).split(',')
          confo.enable_QemuManager = ConfDB().value("Qemu/enable_QemuManager", QVariant(True)).toBool()
