@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/02/10 01:39:47 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/13 17:54:16 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Dependencies.txt
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO.rdoc
@@ -14,8 +16,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mail/body.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/nil.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/shellwords.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/smtp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/string/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/string.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/string/access.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/string/multibyte.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/elements/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/elements.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/elements/address.rb
@@ -83,14 +90,22 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mail/fields/subject_field.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/fields/to_field.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/fields/unstructured_field.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/header.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/indifferent_hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/mail.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/message.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte/
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte/chars.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte/exceptions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte/unicode.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/multibyte/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/file_delivery.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/sendmail.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/smtp.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/smtp_connection.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/delivery_methods/test_mailer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/retriever_methods/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/network/retriever_methods/base.rb
