@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/09 00:17:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/13 18:06:20 jeremy Exp $
 
 COMMENT=	modern, simple and very fast Mysql library for Ruby
 
-DISTNAME=	mysql2-0.2.7
+DISTNAME=	mysql2-0.3.10
 CATEGORIES=	databases
-REVISION =	1
 
 HOMEPAGE=	http://github.com/brianmario/mysql2
 
