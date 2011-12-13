@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2011/12/13 14:42:55 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,19 +6,18 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.0
+VERSION=	2.10.1
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-main=	1
-REVISION-libpurple= 0
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
+EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	jabber		0.0 \
 		oscar		0.0 \
@@ -37,19 +36,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m pcre pthread util xml2 z
-
+WANTLIB=	c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 idn m pcre pthread util xml2 z
 WANTLIB-main=	GL X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 cairo \
 		drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gtk-x11-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread-stubs purple stdc++ xcb-render xcb-shm xcb \
 		${WANTLIB}
-
 WANTLIB-libpurple= crypto gadu>=5 meanwhile ssl silc>=7 silcclient>=5 \
 		${WANTLIB}
-
 WANTLIB-finch=	X11 ncursesw panelw purple xcb ${WANTLIB} ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
@@ -70,6 +66,7 @@ LIB_DEPENDS-finch=	${LIB_DEPENDS} \
 			${MODPY_LIB_DEPENDS}
 RUN_DEPENDS-libpurple=	${MODGCONF2_RUN_DEPENDS}
 LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
+			devel/libidn \
 			devel/silc-toolkit \
 			net/meanwhile \
 			net/libgadu>=1.11.0
@@ -81,14 +78,13 @@ SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.67
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
 		 --disable-farsight \
 		 --disable-gevolution \
 		 --disable-gnutls \
-		 --disable-idn \
 		 --disable-nm \
 		 --disable-nss \
 		 --disable-perl \
@@ -149,7 +145,7 @@ post-install:
 	    ${PREFIX}/share/dbus-1/services
 .for dir in ${ARCHIVE_DIR_LIST}
 	@find ${PREFIX}/lib/${dir} -name '*.a' -print | xargs rm
+	@find ${PREFIX}/lib/${dir} -name '*.la' -print | xargs rm
 .endfor
-	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.17 2011/08/22 07:35:34 jasper Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.18 2011/12/13 14:42:55 jasper Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -82,8 +82,10 @@ include/libpurple/version.h
 include/libpurple/whiteboard.h
 include/libpurple/xmlnode.h
 lib/libpurple-client.a
+lib/libpurple-client.la
 @lib lib/libpurple-client.so.${LIBpurple-client_VERSION}
 lib/libpurple.a
+lib/libpurple.la
 @lib lib/libpurple.so.${LIBpurple_VERSION}
 lib/pkgconfig/purple.pc
 lib/purple-2/

@@ -1,4 +1,4 @@
-/*	$OpenBSD: ssl-openssl.c,v 1.6 2011/10/10 17:17:08 jasper Exp $	*/
+/*	$OpenBSD: ssl-openssl.c,v 1.7 2011/12/13 14:42:55 jasper Exp $	*/
 
 /*
  * OpenSSL SSL-plugin for purple
@@ -274,13 +274,25 @@ ssl_openssl_write(PurpleSslConnection *gsc, const void *data, size_t len)
 	return (s);
 }
 
+static GList *
+ssl_openssl_peer_certs(PurpleSslConnection *gsc)
+{
+	return (NULL);
+}
+
 static PurpleSslOps ssl_ops = {
 	ssl_openssl_init,
 	ssl_openssl_uninit,
 	ssl_openssl_connect,
 	ssl_openssl_close,
 	ssl_openssl_read,
-	ssl_openssl_write
+	ssl_openssl_write,
+	ssl_openssl_peer_certs,
+
+	/* padding */
+	NULL,
+	NULL,
+	NULL
 };
 
 static gboolean

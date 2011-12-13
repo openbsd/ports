@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-finch,v 1.6 2011/07/22 06:44:45 jasper Exp $
+@comment $OpenBSD: PLIST-finch,v 1.7 2011/12/13 14:42:55 jasper Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @bin bin/finch
@@ -62,6 +62,7 @@ lib/gnt/
 lib/gnt/irssi.so
 lib/gnt/s.so
 lib/libgnt.a
+lib/libgnt.la
 @lib lib/libgnt.so.${LIBgnt_VERSION}
 lib/pkgconfig/finch.pc
 lib/pkgconfig/gnt.pc
