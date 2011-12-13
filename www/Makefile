@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.539 2011/12/13 18:01:59 jeremy Exp $
+# $OpenBSD: Makefile,v 1.540 2011/12/13 18:40:32 jeremy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -420,6 +420,7 @@
      SUBDIR += ruby-merb
      SUBDIR += ruby-mongrel
      SUBDIR += ruby-passenger
+     SUBDIR += ruby-passenger,ruby19
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-cache
      SUBDIR += ruby-rack-mount
