@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/08 21:27:56 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/13 17:59:06 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
@@ -8,7 +8,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/analysis/
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/analysis/frequency.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/analysis/histogram.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/analysis/splitting.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/code_generation.rb
@@ -21,15 +20,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/route_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp/parser.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp/parser.y
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp/tokenizer.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/strexp/tokenizer.rex
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/multimap/
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/multimap/multimap.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/multimap/multiset.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/multimap/nested_multimap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/regin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/regin/regin/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mount/vendor/regin/regin.rb
