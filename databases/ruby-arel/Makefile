@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 08:48:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/12/13 17:49:22 jeremy Exp $
 
 COMMENT =	relational algebra for ruby
 
-DISTNAME =	arel-2.0.4
-REVISION =	1
+DISTNAME =	arel-2.2.1
 CATEGORIES =	databases
 
 HOMEPAGE =	https://github.com/rails/arel
