@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libs,v 1.1 2011/07/11 16:33:06 jasper Exp $
+@comment $OpenBSD: PLIST-libs,v 1.2 2011/12/13 12:51:17 jasper Exp $
 @pkgpath ${BASE_PKGPATH},-libs
 %%SHARED%%
 include/QF/
@@ -91,6 +91,7 @@ include/QF/vid.h
 include/QF/view.h
 include/QF/wad.h
 include/QF/wadfile.h
+include/QF/winding.h
 include/QF/zone.h
 lib/pkgconfig/qfcc.pc
 lib/pkgconfig/quakeforge.pc
