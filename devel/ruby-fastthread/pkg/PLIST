@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/09 00:17:38 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/13 18:10:55 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
@@ -13,7 +13,7 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/fastthread/fastthread.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/fastthread/fastthread.so
 ${GEM_LIB}/gems/${DISTNAME}/fastthread.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
-${GEM_LIB}/gems/${DISTNAME}/lib/fastthread.so
+${GEM_LIB}/gems/${DISTNAME}/lib/fastthread${FASTTHREAD_EXT}
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_all.rb
