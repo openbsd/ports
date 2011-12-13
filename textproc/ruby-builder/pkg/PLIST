@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/13 17:55:12 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/TAGS
 ${GEM_LIB}/gems/${DISTNAME}/doc/
 ${GEM_LIB}/gems/${DISTNAME}/doc/releases/
 ${GEM_LIB}/gems/${DISTNAME}/doc/releases/builder-1.2.4.rdoc
@@ -18,13 +20,13 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/builder/xchar.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/builder/xmlbase.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/builder/xmlevents.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/builder/xmlmarkup.rb
-${GEM_LIB}/gems/${DISTNAME}/scripts/
-${GEM_LIB}/gems/${DISTNAME}/scripts/publish.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/performance.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/preload.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_blankslate.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_cssbuilder.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_eventbuilder.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_markupbuilder.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_namecollision.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_xchar.rb
-${GEM_LIB}/gems/${DISTNAME}/test/testblankslate.rb
-${GEM_LIB}/gems/${DISTNAME}/test/testeventbuilder.rb
-${GEM_LIB}/gems/${DISTNAME}/test/testmarkupbuilder.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

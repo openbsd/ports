@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/17 16:08:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/13 17:55:12 jeremy Exp $
 
 COMMENT=	Ruby library to create XML markup and data structures
 
-DISTNAME=	builder-2.1.2
-REVISION =	5
+DISTNAME=	builder-3.0.0
 CATEGORIES=	textproc
 
-# mit
+# MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,6 +16,9 @@ MODULES=	lang/ruby
 CONFIGURE_STYLE=ruby gem
 
 MODRUBY_REGRESS=	rake
-MODRUBY_REGRESS_TARGET=	test_all
+MODRUBY_REGRESS_TARGET=	-I lib test_all
+
+pre-regress:
+	rm ${WRKSRC}/test/test_cssbuilder.rb
 
 .include <bsd.port.mk>
