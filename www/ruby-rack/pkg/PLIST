@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/12/08 21:48:59 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/12/13 17:58:27 jeremy Exp $
 ${GEM_BIN}/rackup${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/KNOWN-ISSUES
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/SPEC
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/rackup
@@ -27,6 +28,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/auth/digest/md5.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/auth/digest/nonce.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/auth/digest/params.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/auth/digest/request.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/common_18.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/backports/uri/common_192.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/body_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/cascade.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/chunked.rb
@@ -58,6 +64,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/methodoverride.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mime.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/mock.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/multipart/
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/multipart.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/multipart/generator.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/multipart/parser.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rack/multipart/uploaded_file.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/nulllogger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/recursive.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/reloader.rb
@@ -80,6 +91,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rack/urlmap.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rack/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/rack.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/builder/
+${GEM_LIB}/gems/${DISTNAME}/test/builder/anything.rb
+${GEM_LIB}/gems/${DISTNAME}/test/builder/comment.ru
+${GEM_LIB}/gems/${DISTNAME}/test/builder/end.ru
+${GEM_LIB}/gems/${DISTNAME}/test/builder/options.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/lighttpd.conf
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/rackup_stub.rb
@@ -87,9 +103,11 @@ ${GEM_LIB}/gems/${DISTNAME}/test/cgi/sample_rackup.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test.fcgi
 ${GEM_LIB}/gems/${DISTNAME}/test/cgi/test.ru
+${GEM_LIB}/gems/${DISTNAME}/test/gemloader.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/bad_robots
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/binary
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/content_type_and_no_filename
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/empty
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/fail_16384_nofile
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/file1.txt
@@ -99,14 +117,21 @@ ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_escaped_quotes_and_modi
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_percent_escaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/filename_with_unescaped_quotes
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/ie
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/mixed_files
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/nested
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/none
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/semicolon
 ${GEM_LIB}/gems/${DISTNAME}/test/multipart/text
+${GEM_LIB}/gems/${DISTNAME}/test/multipart/webkit
 ${GEM_LIB}/gems/${DISTNAME}/test/rackup/
 ${GEM_LIB}/gems/${DISTNAME}/test/rackup/config.ru
+${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/
+${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/
+${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/
+${GEM_LIB}/gems/${DISTNAME}/test/registering_handler/rack/handler/registering_myself.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_basic.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_auth_digest.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_body_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_cascade.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_cgi.rb
@@ -130,6 +155,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_methodoverride.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_mock.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_mongrel.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_multipart.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_nulllogger.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_recursive.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_request.rb
@@ -137,6 +163,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/spec_response.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_rewindable_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_runtime.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_sendfile.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_server.rb
+${GEM_LIB}/gems/${DISTNAME}/test/spec_session_abstract_id.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_session_cookie.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_session_memcache.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/spec_session_pool.rb
