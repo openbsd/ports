@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2011/10/17 11:11:46 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2011/12/13 09:28:37 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -209,6 +209,7 @@ webapps/docs/api/org/apache/catalina/filters/
 webapps/docs/api/org/apache/catalina/filters/Constants.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
 webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
+webapps/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
 webapps/docs/api/org/apache/catalina/filters/FilterBase.html
 webapps/docs/api/org/apache/catalina/filters/package-frame.html
 webapps/docs/api/org/apache/catalina/filters/package-summary.html
@@ -1114,8 +1115,10 @@ webapps/docs/api/org/apache/juli/ClassLoaderLogManager.ClassLoaderLogInfo.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.LogNode.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.RootLogger.html
 webapps/docs/api/org/apache/juli/ClassLoaderLogManager.html
+webapps/docs/api/org/apache/juli/DateFormatCache.html
 webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
+webapps/docs/api/org/apache/juli/OneLineFormatter.html
 webapps/docs/api/org/apache/juli/logging/
 webapps/docs/api/org/apache/juli/logging/Log.html
 webapps/docs/api/org/apache/juli/logging/LogConfigurationException.html
