@@ -1,0 +1,17 @@
+$OpenBSD: patch-test_test-users-guide_rb,v 1.1 2011/12/13 17:56:55 jeremy Exp $
+--- test/test-users-guide.rb.orig	Fri Nov 18 12:19:30 2011
++++ test/test-users-guide.rb	Fri Nov 18 12:20:26 2011
+@@ -28,7 +28,12 @@ class KwarkUsersGuideTest < Test::Unit::TestCase
+     s =~ /\A\$ (.*?)\n/
+     command = $1
+     expected = $'
+-    if ruby19?
++    if ruby18?
++      command.sub!(/^ruby\b/, 'ruby18')
++    elsif jruby?
++      command.sub!(/^ruby\b/, 'jruby')
++    elsif ruby19?
++      command.sub!(/^ruby\b/, 'ruby19')
+       case @name
+       when 'test_main_program1_result'
+         expected.sub!('["eruby", "items", "x", "_buf"]', '[:_buf, :eruby, :items, :x]')

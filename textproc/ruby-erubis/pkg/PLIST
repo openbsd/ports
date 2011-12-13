@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:24:42 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/13 17:56:55 jeremy Exp $
 ${GEM_BIN}/erubis${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -45,9 +45,11 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/CGenerator.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/CommandOptionError.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Context.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Converter.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/CppGenerator.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/DeleteIndentEnhancer.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/DeleteIndentEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Ec.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Ecpp.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Ejava.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Ejavascript.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Engine.html
@@ -59,6 +61,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/ErubisError.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/Eruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapeEnhancer.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapedEc.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapedEcpp.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapedEjava.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapedEjavascript.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/EscapedEperl.html
@@ -94,6 +97,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Converter.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Ec.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Ecpp.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Ejava.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Ejavascript.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PI/Engine.html
@@ -106,6 +110,8 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PercentLineEnhancer.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PercentLineEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PerlGenerator.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PhpGenerator.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PrefixedLineEnhancer.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PrefixedLineEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PreprocessingEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PreprocessingHelper.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/PrintEnabledEnhancer.html
@@ -127,6 +133,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/StringIOEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/TinyEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/XmlEruby.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Erubis/XmlHelper.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/classes/Kernel.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/created.rid
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/README_txt.html
@@ -135,6 +142,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/context_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/converter_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/ec_rb.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/ecpp_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/ejava_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/ejavascript_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/engine/enhanced_rb.html
@@ -156,6 +164,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/local-setting_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/main_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/preprocessing_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/tiny_rb.html
+${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis/util_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/files/erubis_rb.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/fr_class_index.html
 ${GEM_LIB}/gems/${DISTNAME}/doc-api/fr_file_index.html
@@ -168,6 +177,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/example.ec
+${GEM_LIB}/gems/${DISTNAME}/examples/basic/example.ecpp
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/example.ejava
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/example.ejs
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic/example.eperl
@@ -191,6 +201,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/converter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/ec.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/ecpp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/ejava.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/ejavascript.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/engine/enhanced.rb
@@ -211,6 +222,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/local-setting.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/main.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/preprocessing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubis/tiny.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/erubis/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/assert-text-equal.rb
@@ -221,12 +233,15 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/array_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/arraybuffer_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/bipattern-example.rhtml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/bipattern_example.result
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/bufvar-example.rb
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/bufvar-example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/context.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/context.yaml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/def_method.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/def_method.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/escape_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example.ec
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example.ecpp
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example.ejs
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example.eperl
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example.ephp
@@ -284,6 +299,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example_perl.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example_php.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example_scheme.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/example_scheme_display.result
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/fasteruby-example.rb
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/fasteruby-example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/fasteruby.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/fasteruby.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/fasteruby.rhtml
@@ -308,6 +325,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/notext-php.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/notext_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/percentline-example.rhtml
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/percentline_example.result
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/prefixedline-example.rb
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/prefixedline-example.rhtml
+${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/prefixedline_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/printenable_example.result
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/printenabled-example.eruby
 ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/printenabled-example.rb
@@ -323,6 +343,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/data/users-guide/template2.rhtml
 ${GEM_LIB}/gems/${DISTNAME}/test/test-engines.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test-enhancers.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test-erubis.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test-index-cgi.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test-main.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test-users-guide.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test.rb
