@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/19 09:16:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/13 13:10:47 sthen Exp $
 
-V =			1.4.4
+V =			1.4.6
 COMMENT =		download videos from YLE Areena
 DISTNAME =		rtmpdump-yle-$V
 PKGNAME =		yle-dl-$V
