@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/12/08 21:44:48 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/12/13 17:53:44 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -11,7 +11,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/adv_attr_accessor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/base.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/collector.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/delivery_methods.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/deprecated_api.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/log_subscriber.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/mail_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/action_mailer/old_api.rb

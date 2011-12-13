@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/12/08 21:53:03 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/12/13 17:51:43 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/
@@ -40,9 +41,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/benchmark.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/big_decimal/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/big_decimal.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/big_decimal/conversions.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/cgi/
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/cgi.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/cgi/escape_skipping_slashes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/class/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/class.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/class/attribute.rb
@@ -73,6 +71,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/float/rounding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/conversions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/deep_dup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/deep_merge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/diff.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/hash/except.rb
@@ -119,8 +118,8 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/acts_like.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/blank.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/conversions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/duplicable.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/inclusion.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/instance_variables.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/returning.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/to_json.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/to_param.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/object/to_query.rb
@@ -134,6 +133,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/blockless_step.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/conversions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/cover.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/include_range.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/range/overlaps.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/regexp.rb
@@ -147,6 +147,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/exclude.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/filters.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/inflections.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/inquiry.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/interpolation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/multibyte.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/core_ext/string/output_safety.rb
@@ -173,6 +174,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/deprecation/reporting.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/descendants_tracker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/duration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/file_update_checker.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/file_watcher.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/gzip.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/hash_with_indifferent_access.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/i18n.rb
@@ -185,10 +187,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/inflector/methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/inflector/transliterate.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/backends/
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/backends/jsongem.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/backends/yajl.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/backends/yaml.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/decoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/json/variable.rb
@@ -224,11 +222,18 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/test_case.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/assertions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/declarative.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/default.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/deprecation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/isolation.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/mochaing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/pending.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/jruby.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/rubinius.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/ruby/
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/ruby.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/ruby/mri.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/performance/ruby/yarv.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/setup_and_teardown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/time/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/time.rb

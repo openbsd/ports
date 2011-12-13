@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/08 21:23:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/13 17:51:08 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -10,7 +10,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_model.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/attribute_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/callbacks.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/conversion.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_model/deprecated_error_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/dirty.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/errors.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/lint.rb
@@ -21,8 +20,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/mass_assignment_security.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/mass_assignment_security/permission_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/mass_assignment_security/sanitizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/naming.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_model/observer_array.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/observing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/railtie.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_model/secure_password.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/serialization.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/serializers/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_model/serializers/json.rb

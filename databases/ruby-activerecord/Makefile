@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2011/12/02 19:34:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.36 2011/12/13 17:48:20 jeremy Exp $
 
 COMMENT =	object relation model implementation for ruby
 
-VERSION =	3.0.3
+VERSION =	3.1.3
 DISTNAME =	activerecord-${VERSION}
-REVISION =	2
 CATEGORIES =	databases
 
 # MIT License
@@ -18,8 +17,8 @@ MODULES =	lang/ruby
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS = 	devel/ruby-activesupport,${MODRUBY_FLAVOR}=${VERSION} \
 		devel/ruby-activemodel,${MODRUBY_FLAVOR}=${VERSION} \
-		devel/ruby-tzinfo,${MODRUBY_FLAVOR}>=0.3.23,<0.4 \
-		databases/ruby-arel,${MODRUBY_FLAVOR}>=2.0.2,<2.1
+		devel/ruby-tzinfo,${MODRUBY_FLAVOR}>=0.3.29,<0.4 \
+		databases/ruby-arel,${MODRUBY_FLAVOR}>=2.2.1,<2.3
 
 CONFIGURE_STYLE =	ruby gem
 
