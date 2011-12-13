@@ -1,10 +1,10 @@
-$OpenBSD: patch-ext_common_AgentBase_cpp,v 1.2 2011/05/17 03:25:18 william Exp $
+$OpenBSD: patch-ext_common_AgentBase_cpp,v 1.3 2011/12/13 18:38:18 jeremy Exp $
 
 Apparently there are issues using sigaltstack with pthreads.
 
---- ext/common/AgentBase.cpp.orig	Wed Apr 27 12:51:06 2011
-+++ ext/common/AgentBase.cpp	Wed Apr 27 12:51:20 2011
-@@ -302,10 +302,12 @@ installAbortHandler() {
+--- ext/common/AgentBase.cpp.orig	Wed Dec 31 16:00:00 1969
++++ ext/common/AgentBase.cpp	Wed Nov 30 10:51:43 2011
+@@ -320,10 +320,12 @@ installAbortHandler() {
  	stack.ss_flags = 0;
  	if (sigaltstack(&stack, NULL) != 0) {
  		int e = errno;

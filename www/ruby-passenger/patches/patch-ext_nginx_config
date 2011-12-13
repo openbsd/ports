@@ -1,12 +1,12 @@
-$OpenBSD: patch-ext_nginx_config,v 1.3 2011/05/17 03:25:18 william Exp $
---- ext/nginx/config.orig	Thu Feb 17 07:05:08 2011
-+++ ext/nginx/config	Wed Apr 27 10:30:11 2011
-@@ -41,7 +41,7 @@ NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
+$OpenBSD: patch-ext_nginx_config,v 1.4 2011/12/13 18:38:18 jeremy Exp $
+--- ext/nginx/config.orig	Wed Dec 31 16:00:00 1969
++++ ext/nginx/config	Wed Nov 30 10:51:43 2011
+@@ -29,7 +29,7 @@ NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
  CORE_LIBS="$CORE_LIBS  \
      ${ngx_addon_dir}/../common/libpassenger_common.a \
      ${ngx_addon_dir}/../common/libboost_oxt.a \
 -    -lstdc++ -lpthread"
 +    -lstdc++ -pthread"
  
- nginx_version=`grep 'NGINX_VERSION ' src/core/nginx.h | awk '{ print $3 }' | sed 's/"//g'`
- 
+ ngx_feature="Math library"
+ ngx_feature_name=

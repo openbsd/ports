@@ -1,0 +1,71 @@
+$OpenBSD: patch-lib_phusion_passenger_standalone_start_command_rb,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+
+The if false removes a method that tries to download and compile nginx and
+install it into the user's home directory (even if you change HOME!)
+
+We compile the standalone version of nginx in advance and place it in the
+gem standalone directory so there isn't a need to compile at runtime.
+
+Add a rescue clause so that attempting to kill a process that may or may not
+exist doesn't raise an error.
+
+--- lib/phusion_passenger/standalone/start_command.rb.orig	Thu Jan  1 01:00:00 1970
++++ lib/phusion_passenger/standalone/start_command.rb	Wed Nov 16 13:46:41 2011
+@@ -292,7 +292,7 @@ private
+ 			:binaries_url_root => @options[:binaries_url_root],
+ 			:plugin      => @plugin)
+ 		installer.start
+-	end
++	end if false
+ 	
+ 	def passenger_support_files_dir
+ 		return "#{@runtime_dir}/support"
+@@ -303,23 +303,9 @@ private
+ 	end
+ 	
+ 	def ensure_nginx_installed
+-		if @options[:nginx_bin] && !File.exist?(@options[:nginx_bin])
+-			error "The given Nginx binary '#{@options[:nginx_bin]}' does not exist."
+-			exit 1
+-		end
+-		
+-		home           = Etc.getpwuid.dir
+-		@runtime_dir   = "#{GLOBAL_STANDALONE_RESOURCE_DIR}/#{runtime_version_string}"
+-		if !File.exist?("#{nginx_dir}/sbin/nginx")
+-			if Process.euid == 0
+-				install_runtime
+-			else
+-				@runtime_dir = "#{home}/#{LOCAL_STANDALONE_RESOURCE_DIR}/#{runtime_version_string}"
+-				if !File.exist?("#{nginx_dir}/sbin/nginx")
+-					install_runtime
+-				end
+-			end
+-		end
++		gem_root_dir = File.dirname(File.dirname(File.dirname(File.dirname(__FILE__))))
++		@options[:nginx_bin] = File.join(gem_root_dir, 'standalone', 'nginx')
++		@runtime_dir = File.join(gem_root_dir, 'standalone')
+ 	end
+ 	
+ 	def ensure_directory_exists(dir)
+@@ -417,7 +403,11 @@ private
+ 					end
+ 				end
+ 			ensure
+-				Process.kill('TERM', f.pid)
++				begin
++					Process.kill('TERM', f.pid)
++				rescue SystemCallError
++					nil
++				end
+ 			end
+ 		end
+ 	end
+@@ -448,7 +438,7 @@ private
+ 			if @options[:socket_file]
+ 				socket = UNIXSocket.new(@options[:socket_file])
+ 			else
+-				socket = TCPSocket.new(@options[:address], nginx_ping_port)
++				socket = TCPSocket.new(@options[:address] == '0.0.0.0' ? '127.0.0.1' : @options[:address], nginx_ping_port)
+ 			end
+ 			begin
+ 				socket.read rescue nil

@@ -1,9 +1,9 @@
-$OpenBSD: patch-build_config_rb,v 1.2 2011/05/17 03:25:18 william Exp $
---- build/config.rb.orig	Sun Dec  5 11:54:35 2010
-+++ build/config.rb	Wed Apr 27 10:30:11 2011
-@@ -25,9 +25,9 @@ OPTIMIZE = boolean_option("OPTIMIZE")
- CC       = string_option("CC", "gcc")
+$OpenBSD: patch-build_config_rb,v 1.3 2011/12/13 18:38:17 jeremy Exp $
+--- build/config.rb.orig	Thu Jan  1 01:00:00 1970
++++ build/config.rb	Tue Nov 15 23:50:42 2011
+@@ -26,9 +26,9 @@ CC       = string_option("CC", "gcc")
  CXX      = string_option("CXX", "g++")
+ # TODO: consider -fcommon
  if OPTIMIZE
 -	OPTIMIZATION_FLAGS = "#{PlatformInfo.debugging_cflags} -O2 -DBOOST_DISABLE_ASSERTS".strip
 +	OPTIMIZATION_FLAGS = "#{ENV['CFLAGS']} -DBOOST_DISABLE_ASSERTS".strip

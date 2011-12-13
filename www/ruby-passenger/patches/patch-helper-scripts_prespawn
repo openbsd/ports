@@ -1,0 +1,18 @@
+$OpenBSD: patch-helper-scripts_prespawn,v 1.1 2011/12/13 18:38:18 jeremy Exp $
+
+Just because you can listen on 0.0.0.0 does not mean you can
+connect to it.
+
+--- helper-scripts/prespawn.orig	Wed Nov 16 13:16:37 2011
++++ helper-scripts/prespawn	Wed Nov 16 13:18:06 2011
+@@ -79,7 +79,9 @@ class PrespawnLocation
+ 	end
+ 
+ 	def request_host
+-		@uri.host
++		h = @uri.host
++		h = '127.0.0.1' if h == '0.0.0.0'
++		h
+ 	end
+ 
+ 	def socket
