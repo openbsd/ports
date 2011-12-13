@@ -1,0 +1,21 @@
+$OpenBSD: patch-iodev_pci_ide_cc,v 1.1 2011/12/13 08:46:51 giovanni Exp $
+
+Fix for busmaster DMA transfers from device to memory
+
+--- iodev/pci_ide.cc.orig	Wed Dec  7 01:59:12 2011
++++ iodev/pci_ide.cc	Wed Dec  7 02:00:16 2011
+@@ -273,12 +273,12 @@ void bx_pci_ide_c::timer()
+       BX_PIDE_THIS s.bmdma[channel].status |= 0x06;
+       return;
+     } else {
+-      DEV_MEM_WRITE_PHYSICAL_BLOCK(prd.addr, size, BX_PIDE_THIS s.bmdma[channel].buffer_idx);
++      DEV_MEM_WRITE_PHYSICAL_DMA(prd.addr, size, BX_PIDE_THIS s.bmdma[channel].buffer_idx);
+       BX_PIDE_THIS s.bmdma[channel].buffer_idx += size;
+     }
+   } else {
+     BX_DEBUG(("WRITE DMA from addr=0x%08x, size=0x%08x", prd.addr, size));
+-    DEV_MEM_READ_PHYSICAL_BLOCK(prd.addr, size, BX_PIDE_THIS s.bmdma[channel].buffer_top);
++    DEV_MEM_READ_PHYSICAL_DMA(prd.addr, size, BX_PIDE_THIS s.bmdma[channel].buffer_top);
+     BX_PIDE_THIS s.bmdma[channel].buffer_top += size;
+     count = BX_PIDE_THIS s.bmdma[channel].buffer_top - BX_PIDE_THIS s.bmdma[channel].buffer_idx;
+     while (count > 511) {

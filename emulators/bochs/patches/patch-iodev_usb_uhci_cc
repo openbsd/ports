@@ -1,0 +1,24 @@
+$OpenBSD: patch-iodev_usb_uhci_cc,v 1.1 2011/12/13 08:46:51 giovanni Exp $
+
+Fix for busmaster DMA transfers from device to memory
+
+--- iodev/usb_uhci.cc.orig	Wed Dec  7 02:01:02 2011
++++ iodev/usb_uhci.cc	Wed Dec  7 02:04:27 2011
+@@ -869,7 +869,7 @@ bx_bool bx_usb_uhci_c::DoTransfer(Bit32u address, Bit3
+     case USB_TOKEN_OUT:
+     case USB_TOKEN_SETUP:
+       if (maxlen > 0) {
+-        DEV_MEM_READ_PHYSICAL_BLOCK(td->dword3, maxlen, device_buffer);
++        DEV_MEM_READ_PHYSICAL_DMA(td->dword3, maxlen, device_buffer);
+       }
+       ret = BX_UHCI_THIS broadcast_packet(&BX_UHCI_THIS usb_packet);
+       len = maxlen;
+@@ -883,7 +883,7 @@ bx_bool bx_usb_uhci_c::DoTransfer(Bit32u address, Bit3
+           ret = USB_RET_BABBLE;
+         }
+         if (len > 0) {
+-          DEV_MEM_WRITE_PHYSICAL_BLOCK(td->dword3, len, device_buffer);
++          DEV_MEM_WRITE_PHYSICAL_DMA(td->dword3, len, device_buffer);
+         }
+       } else {
+         len = 0;
