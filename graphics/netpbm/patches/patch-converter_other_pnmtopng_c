@@ -1,9 +1,9 @@
-$OpenBSD: patch-converter_other_pnmtopng_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-converter_other_pnmtopng_c,v 1.2 2011/12/13 21:39:17 naddy Exp $
 
 Fix build with png-1.5.
 
---- converter/other/pnmtopng.c.orig	Fri Dec 10 11:19:40 2010
-+++ converter/other/pnmtopng.c	Mon Jul  4 14:21:23 2011
+--- converter/other/pnmtopng.c.orig	Sun Sep 25 20:51:44 2011
++++ converter/other/pnmtopng.c	Tue Dec 13 22:22:04 2011
 @@ -61,7 +61,8 @@
  #include <assert.h>
  #include <string.h> /* strcat() */
@@ -28,7 +28,7 @@ Fix build with png-1.5.
  struct zlibCompression {
      /* These are parameters that describe a form of zlib compression.
         Values have the same meaning as the similarly named arguments to
-@@ -2079,6 +2073,7 @@ makePngLine(png_byte *           const line,
+@@ -2098,6 +2092,7 @@ makePngLine(png_byte *           const line,
              gray *               const alpha_mask,
              colorhash_table      const cht,
              coloralphahash_table const caht,
@@ -36,7 +36,7 @@ Fix build with png-1.5.
              png_info *           const info_ptr,
              xelval               const png_maxval,
              unsigned int         const depth) {
-@@ -2091,20 +2086,20 @@ makePngLine(png_byte *           const line,
+@@ -2110,20 +2105,20 @@ makePngLine(png_byte *           const line,
          xel p_png;
          xel const p = xelrow[col];
          PPM_DEPTH(p_png, p, maxval, png_maxval);
@@ -62,7 +62,7 @@ Fix build with png-1.5.
              if (depth == 16)
                  *pp++ = PPM_GETR(p_png) >> 8;
              *pp++ = PPM_GETR(p_png) & 0xff;
-@@ -2117,7 +2112,7 @@ makePngLine(png_byte *           const line,
+@@ -2136,7 +2131,7 @@ makePngLine(png_byte *           const line,
          } else
              pm_error("INTERNAL ERROR: undefined color_type");
                  
@@ -71,7 +71,7 @@ Fix build with png-1.5.
              int const png_alphaval = (int)
                  alpha_mask[col] * (float) png_maxval / maxval + 0.5;
              if (depth == 16)
-@@ -2174,7 +2169,7 @@ writeRaster(png_struct *         const png_ptr,
+@@ -2193,7 +2188,7 @@ writeRaster(png_struct *         const png_ptr,
              
              makePngLine(line, xelrow, cols, maxval,
                          alpha, alpha ? alpha_mask[row] : NULL,
@@ -80,7 +80,7 @@ Fix build with png-1.5.
  
              png_write_row(png_ptr, line);
          }
-@@ -2186,12 +2181,12 @@ writeRaster(png_struct *         const png_ptr,
+@@ -2205,12 +2200,12 @@ writeRaster(png_struct *         const png_ptr,
  
  static void
  doGamaChunk(struct cmdlineInfo const cmdline,
@@ -95,7 +95,7 @@ Fix build with png-1.5.
      }
  }
  
-@@ -2199,20 +2194,15 @@ doGamaChunk(struct cmdlineInfo const cmdline,
+@@ -2218,20 +2213,15 @@ doGamaChunk(struct cmdlineInfo const cmdline,
  
  static void
  doChrmChunk(struct cmdlineInfo const cmdline,
@@ -121,7 +121,7 @@ Fix build with png-1.5.
      }
  }
  
-@@ -2220,15 +2210,12 @@ doChrmChunk(struct cmdlineInfo const cmdline,
+@@ -2239,15 +2229,12 @@ doChrmChunk(struct cmdlineInfo const cmdline,
  
  static void
  doPhysChunk(struct cmdlineInfo const cmdline,
@@ -139,7 +139,7 @@ Fix build with png-1.5.
      }
  }
  
-@@ -2237,26 +2224,28 @@ doPhysChunk(struct cmdlineInfo const cmdline,
+@@ -2256,26 +2243,28 @@ doPhysChunk(struct cmdlineInfo const cmdline,
  
  static void
  doTimeChunk(struct cmdlineInfo const cmdline,
@@ -173,7 +173,7 @@ Fix build with png-1.5.
          (pngMaxval > maxval || (alpha && pngMaxval > alphaMaxval))) {
  
          /* We're writing in a bit depth that doesn't match the maxval
-@@ -2275,27 +2264,29 @@ doSbitChunk(png_info * const pngInfoP,
+@@ -2294,27 +2283,29 @@ doSbitChunk(png_info * const pngInfoP,
             sBIT chunk.
          */
  
@@ -216,7 +216,7 @@ Fix build with png-1.5.
      }
  }
  
-@@ -2391,6 +2382,8 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2410,6 +2401,8 @@ convertpnm(struct cmdlineInfo const cmdline,
    xelval maxmaxval;
    gray ** alpha_mask;
  
@@ -225,7 +225,7 @@ Fix build with png-1.5.
    /* these guys are initialized to quiet compiler warnings: */
    maxmaxval = 255;
    alpha_mask = NULL;
-@@ -2576,43 +2569,42 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2595,43 +2588,42 @@ convertpnm(struct cmdlineInfo const cmdline,
      pm_error ("setjmp returns error condition (2)");
    }
  
@@ -291,7 +291,7 @@ Fix build with png-1.5.
      }
      /* creating hIST chunk */
      if (cmdline.hist) {
-@@ -2638,18 +2630,17 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2657,18 +2649,17 @@ convertpnm(struct cmdlineInfo const cmdline,
  
          ppm_freecolorhash(cht);
  
@@ -316,7 +316,7 @@ Fix build with png-1.5.
          }
      } else {
          /* This is PNG_COLOR_MASK_ALPHA.  Transparency will be handled
-@@ -2657,43 +2648,49 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2676,43 +2667,49 @@ convertpnm(struct cmdlineInfo const cmdline,
          */
      }
      if (verbose) {
@@ -384,7 +384,7 @@ Fix build with png-1.5.
  
    if (cmdline.filterSet != 0)
        png_set_filter(png_ptr, 0, cmdline.filterSet);
-@@ -2703,6 +2700,7 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2722,6 +2719,7 @@ convertpnm(struct cmdlineInfo const cmdline,
    /* write the png-info struct */
    png_write_info(png_ptr, info_ptr);
  
@@ -392,7 +392,7 @@ Fix build with png-1.5.
    if (cmdline.text || cmdline.ztxt)
        /* prevent from being written twice with png_write_end */
        info_ptr->num_text = 0;
-@@ -2710,6 +2708,7 @@ convertpnm(struct cmdlineInfo const cmdline,
+@@ -2729,6 +2727,7 @@ convertpnm(struct cmdlineInfo const cmdline,
    if (cmdline.modtime)
        /* prevent from being written twice with png_write_end */
        info_ptr->valid &= ~PNG_INFO_tIME;

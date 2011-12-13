@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2011/11/13 12:33:11 naddy Exp $
+# $OpenBSD: Makefile,v 1.57 2011/12/13 21:39:17 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.35.82
+DISTNAME=	netpbm-10.35.83
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
@@ -35,6 +35,14 @@ MAKE_FLAGS=	CC="${CC}" \
 		LIBnetpbm_VERSION=${LIBnetpbm_VERSION}
 FAKE_FLAGS=	PKGDIR="${WRKINST}${TRUEPREFIX}"
 
+.include <bsd.port.arch.mk>
+
+.if ${NO_SHARED_LIBS:L} == "yes"
+MAKE_FLAGS+=	NETPBMLIBTYPE=unixstatic
+.else
+MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
+.endif
+
 pre-patch:
 	@rm -f ${WRKSRC}/converter/other/jpeg2000/libjasper/include/jasper/jas_types.h.orig
 
@@ -43,14 +51,7 @@ pre-build:
 	    -e 's#%%X11BASE%%#${X11BASE}#g;' \
 	    -e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
 	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
-	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
 
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
-
-.if ${NO_SHARED_LIBS:L} == "yes"
-MAKE_FLAGS+=	NETPBMLIBTYPE=unixstatic
-.else
-MAKE_FLAGS+=	NETPBMLIBTYPE=unixshared
-.endif
