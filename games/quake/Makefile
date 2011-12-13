@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/12/13 12:51:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/13 12:58:04 jasper Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -13,6 +13,7 @@ PKGNAME-main =		quake-$V
 PKGNAME-libs =		quake-libs-$V
 FULLPKGNAME-server =	quakeworld-server-$V
 FULLPKGPATH-server =	games/quake,-server
+REVISION-main = 	0
 EPOCH-main =		0
 EPOCH-libs =		0
 EPOCH-server =		1
@@ -50,7 +51,7 @@ WANTLIB-main += QFcd QFconsole QFgamecode QFgib QFimage QFjs QFmodels
 WANTLIB-main += QFmodels_gl QFmodels_sw QFrenderer_gl QFrenderer_sw32
 WANTLIB-main += QFruamoko QFsound QFutil SDL X11 Xext Xxf86dga Xxf86vm
 WANTLIB-main += c crypto idn m ncurses png pthread sndio ssl usbhid
-WANTLIB-main += xcb z iconv intl curl
+WANTLIB-main += xcb z curl ${MODGETTEXT_WANTLIB}
 
 WANTLIB-libs += FLAC SDL m ncurses ogg png samplerate sndio usbhid
 WANTLIB-libs += vorbis vorbisfile z iconv
