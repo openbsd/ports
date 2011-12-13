@@ -1,0 +1,6 @@
+Redcarpet is Ruby library for Markdown processing that smells like
+butterflies and popcorn.
+
+Redcarpet used to be a drop-in replacement for Redcloth. This is no
+longer the case since version 2 -- it now has its own API, but retains
+the old name.
