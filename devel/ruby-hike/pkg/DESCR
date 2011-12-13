@@ -1,0 +1,2 @@
+Hike is a Ruby library for finding files in a set of paths. Use it to
+implement search paths, load paths, and the like.
