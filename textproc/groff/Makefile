@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/04 15:41:26 schwarze Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/13 18:16:37 pascal Exp $
 
 COMMENT =		GNU troff typesetter
 DISTNAME =		groff-1.21
@@ -19,10 +19,12 @@ WANTLIB =		c m stdc++
 MASTER_SITES =		${MASTER_SITE_GNU:=groff/}
 
 MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
-			exampledir=${PREFIX}/share/examples/groff
+			exampledir=${PREFIX}/share/examples/groff \
+			ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x
+CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x \
+			--with-awk=awk
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
 
