@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/13 13:10:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/13 13:11:21 sthen Exp $
 
 V =			1.4.6
 COMMENT =		download videos from YLE Areena
@@ -24,7 +24,7 @@ MODULES =		converters/libiconv \
 			lang/python
 LIB_DEPENDS =		devel/json-c
 
-MAKE_FLAGS =		OPT=""
+MAKE_FLAGS =		OPT="" CC="${CC}"
 MAKE_ENV =		XCFLAGS="${CFLAGS}" XLDFLAGS="${LDFLAGS}"
 
 USE_GMAKE =		Yes
