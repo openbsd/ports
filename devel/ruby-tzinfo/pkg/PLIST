@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/11 23:40:05 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/12/13 17:52:56 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
@@ -160,10 +160,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Kentucky/
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Kentucky/Louisville.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Kentucky/Monticello.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Knox_IN.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Kralendijk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/La_Paz.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Lima.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Los_Angeles.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Louisville.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Lower_Princes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Maceio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Managua.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Manaus.rb
