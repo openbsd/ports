@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2011/11/15 19:17:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2011/12/13 18:39:38 jeremy Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 DISTNAME=	nginx-1.0.10
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.org/
@@ -52,8 +53,8 @@ FLAVOR?=
 
 .if ${FLAVOR:L:Mpassenger}
 CONFIGURE_ARGS +=	--add-module=${LOCALBASE}/lib/phusion-passenger/ext/nginx
-BUILD_DEPENDS +=	www/ruby-passenger
-RUN_DEPENDS +=		www/ruby-passenger
+BUILD_DEPENDS +=	www/ruby-passenger,-main
+RUN_DEPENDS +=		ruby-passenger-*|ruby19-passenger-*:www/ruby-passenger,-main
 WANTLIB +=		m pthread stdc++
 .endif
 
