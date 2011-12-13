@@ -1,0 +1,5 @@
+Force SSL/TLS in your rack app:
+
+    Redirects all "http" requests to "https"
+    Set Strict-Transport-Security header
+    Flag all cookies as "secure"
