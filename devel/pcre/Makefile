@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2011/11/12 11:12:08 robert Exp $
+# $OpenBSD: Makefile,v 1.42 2011/12/14 21:52:42 robert Exp $
 
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-8.20
+DISTNAME=	pcre-8.21
 
 SHARED_LIBS +=  pcre                 2.5      # 0.1
 SHARED_LIBS +=  pcreposix            1.5      # 0.0
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/ \
 
 HOMEPAGE=	http://www.pcre.org/
 
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
