@@ -1,0 +1,39 @@
+$OpenBSD: patch-lib_Net_SMTP_TLS_pm,v 1.1 2011/12/14 14:58:57 sthen Exp $
+
+Add fixes from Net::SMTP::TLS::ButMaintained 0.18
+
+--- lib/Net/SMTP/TLS.pm.orig	Tue Jan 17 14:36:34 2006
++++ lib/Net/SMTP/TLS.pm	Wed Dec 14 14:57:11 2011
+@@ -115,10 +115,14 @@ sub new {
+ 	
+ 	my $me	= bless \%args, $pkg;
+ 	# read the line immediately after connecting
+-	my ($rsp,$txt) = $me->_response();
++	my ( $rsp, $txt, $more ) = $me->_response();
+ 	if(not $rsp == 220){
+ 		croak "Could not connect to SMTP server: $host $txt\n";
+ 	}
++
++	# empty the socket of any continuation lines
++	while ( $more eq '-' ) { ( $rsp, $txt, $more ) = $me->_response(); }
++
+ 	$me->hello(); # the first hello, 2nd after starttls
+ 	$me->starttls() if not $args{NoTLS}; # why we're here, after all
+ 	$me->login() if($me->{User} and $me->{Password});
+@@ -251,7 +255,7 @@ sub auth_PLAIN{
+ 	my $me	= shift;
+ 	my $user= $me->{User};
+ 	my $pass= $me->{Password};
+-	$me->_command(sprintf("AUTH PLAIN %S",
++	$me->_command(sprintf("AUTH PLAIN %s",
+ 		encode_base64("$user\0$user\0$pass","")));
+ 	my ($num,$txt) = $me->_response();
+ 	if(not $num == 235){
+@@ -367,6 +371,7 @@ sub datasend {
+ 				return undef;
+ 			}
+ 			$len -= $w;
++			$offset += $w;
+ 		}
+ 		else
+ 		{
