@@ -1,0 +1,46 @@
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.8 2011/12/14 22:58:23 sthen Exp $
+
+- let profiling work on OpenBSD
+
+--- tools/clang/lib/Driver/Tools.cpp.orig	Mon Nov  7 10:27:39 2011
++++ tools/clang/lib/Driver/Tools.cpp	Wed Dec 14 20:23:29 2011
+@@ -3805,9 +3805,13 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   if (!Args.hasArg(options::OPT_nostdlib) &&
+       !Args.hasArg(options::OPT_nostartfiles)) {
+     if (!Args.hasArg(options::OPT_shared)) {
++      if (Args.hasArg(options::OPT_pg))  
++        CmdArgs.push_back(Args.MakeArgString(
++                                getToolChain().GetFilePath("gcrt0.o")));
++      else
++        CmdArgs.push_back(Args.MakeArgString(
++                                getToolChain().GetFilePath("crt0.o")));
+       CmdArgs.push_back(Args.MakeArgString(
+-                              getToolChain().GetFilePath("crt0.o")));
+-      CmdArgs.push_back(Args.MakeArgString(
+                               getToolChain().GetFilePath("crtbegin.o")));
+     } else {
+       CmdArgs.push_back(Args.MakeArgString(
+@@ -3831,7 +3835,10 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+       !Args.hasArg(options::OPT_nodefaultlibs)) {
+     if (D.CCCIsCXX) {
+       getToolChain().AddCXXStdlibLibArgs(Args, CmdArgs);
+-      CmdArgs.push_back("-lm");
++      if (Args.hasArg(options::OPT_pg)) 
++        CmdArgs.push_back("-lm_p");
++      else
++        CmdArgs.push_back("-lm");
+     }
+ 
+     // FIXME: For some reason GCC passes -lgcc before adding
+@@ -3841,7 +3848,10 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+     if (Args.hasArg(options::OPT_pthread))
+       CmdArgs.push_back("-lpthread");
+     if (!Args.hasArg(options::OPT_shared))
+-      CmdArgs.push_back("-lc");
++      if (Args.hasArg(options::OPT_pg)) 
++         CmdArgs.push_back("-lc_p");
++      else
++         CmdArgs.push_back("-lc");
+     CmdArgs.push_back("-lgcc");
+   }
+ 

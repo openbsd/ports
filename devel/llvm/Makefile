@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/12/14 22:58:23 sthen Exp $
 
-COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
+SHARED_LIBS +=  libclang                  0.0 # 3.0
 
-LLVM_V =	2.9
+COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
+
+LLVM_V =	3.0
 DISTNAME =	llvm-${LLVM_V}
-REVISION =	3
 
 CATEGORIES =	devel
 
@@ -12,8 +13,7 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
-ONLY_FOR_ARCHS =${GCC4_ARCHS}
-BROKEN-sparc64 =not yet working on sparc64
+ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -25,22 +25,16 @@ WANTLIB =	c m pthread stdc++
 
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
-DISTFILES= ${DISTNAME}.tgz clang-${LLVM_V}.tgz
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}${EXTRACT_SUFX}
+WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 
 post-extract:
-	@mv ${WRKDIR}/clang-${LLVM_V} ${WRKDIST}/tools/clang
+	@mv ${WRKDIR}/clang-${LLVM_V}.src ${WRKDIST}/tools/clang
 
-MODULES =	lang/python
+MODULES =	devel/cmake \
+		lang/python
 
-# graphviz can be optionally used to draw graphs, but adds heavy build and
-# run dependencies, and this feature is often not needed. lie to autoconf
-# so we can build consistent packages without pulling in a stack of gnome
-# libraries; people wanting to use this can pkg_add graphviz.
-CONFIGURE_ENV =	ac_cv_path_DOT=${LOCALBASE}/bin/dot \
-		ac_cv_path_DOTTY=${LOCALBASE}/bin/dotty \
-		ac_cv_path_GV="echo gv"
-
-REGRESS_DEPENDS=devel/dejagnu
+REGRESS_DEPENDS = devel/dejagnu
 
 MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 		VERBOSE=Yes \
@@ -49,35 +43,38 @@ MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 REGRESS_FLAGS =	RUNTESTFLAGS=
 
 SEPARATE_BUILD =	simple
-USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
-USE_GROFF =		Yes
 MAKE_ENV =		REQUIRES_RTTI=1
 
-# also supports cmake
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--enable-bindings=no \
-			--enable-libffi=no \
-			--enable-optimized
-
-MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
+CONFIGURE_STYLE =	cmake
+CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
+			-DCMAKE_BUILD_TYPE:String=Release
 
 CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
-SUBST_VARS +=	CLANG_INCLUDE_PATH
+SUBST_VARS +=		CLANG_INCLUDE_PATH
 
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+
+post-build:
+	cd ${WRKSRC}/docs/CommandGuide && for i in *.pod; do \
+	pod2man --release=CVS --center="LLVM Command Guide" \
+	    $$i man/man1/$${i%.pod}.1; \
+	done
+	pod2man --release=CVS --center="LLVM Command Guide" \
+	    ${WRKSRC}/tools/clang/docs/tools/clang.pod \
+	    ${WRKSRC}/docs/CommandGuide/man/man1/clang.1
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/llvm
-	@${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
+	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
 	    ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
 	    ${PREFIX}/share/llvm
+	${INSTALL_DATA} ${WRKSRC}/docs/CommandGuide/man/man1/* \
+	    ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
