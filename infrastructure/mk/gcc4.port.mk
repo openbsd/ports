@@ -1,1 +1,2 @@
-.include "${PORTSDIR}/lang/gcc/4.2/gcc4.port.mk"
+MODGCC4_VERSION?=4.2
+.include "${PORTSDIR}/lang/gcc/${MODGCC4_VERSION}/gcc4.port.mk"
