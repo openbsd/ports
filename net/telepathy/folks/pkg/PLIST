@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/11/11 17:07:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/12/14 08:25:22 jasper Exp $
 @bin bin/folks-import
 @bin bin/folks-inspect
 include/folks/
@@ -9,16 +9,16 @@ lib/folks/
 lib/folks/${API_V}/
 lib/folks/${API_V}/backends/
 lib/folks/${API_V}/backends/eds/
-@comment lib/folks/29/backends/eds/eds.a
-@comment lib/folks/29/backends/eds/eds.la
+@comment lib/folks/${API_V}/backends/eds/eds.a
+@comment lib/folks/${API_V}/backends/eds/eds.la
 lib/folks/${API_V}/backends/eds/eds.so
 lib/folks/${API_V}/backends/key-file/
-@comment lib/folks/29/backends/key-file/key-file.a
-@comment lib/folks/29/backends/key-file/key-file.la
+@comment lib/folks/${API_V}/backends/key-file/key-file.a
+@comment lib/folks/${API_V}/backends/key-file/key-file.la
 lib/folks/${API_V}/backends/key-file/key-file.so
 lib/folks/${API_V}/backends/telepathy/
-@comment lib/folks/29/backends/telepathy/telepathy.a
-@comment lib/folks/29/backends/telepathy/telepathy.la
+@comment lib/folks/${API_V}/backends/telepathy/telepathy.a
+@comment lib/folks/${API_V}/backends/telepathy/telepathy.la
 lib/folks/${API_V}/backends/telepathy/telepathy.so
 lib/girepository-1.0/Folks-0.6.typelib
 lib/libfolks-eds.a
