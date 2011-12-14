@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1002 2011/12/13 17:44:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1003 2011/12/14 20:37:02 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -952,6 +952,7 @@
      SUBDIR += py-dateutil
      SUBDIR += py-decorator
      SUBDIR += py-decoratortools
+     SUBDIR += py-distribute,python3
      SUBDIR += py-distutils-extra
      SUBDIR += py-dtopt
      SUBDIR += py-dulwich
@@ -1017,7 +1018,6 @@
      SUBDIR += py-xdg
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting
-     SUBDIR += py3-distribute
      SUBDIR += pybugz
      SUBDIR += pyflakes
      SUBDIR += pygame
