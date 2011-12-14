@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.48 2011/11/29 17:29:37 pascal Exp $
+# $OpenBSD: python.port.mk,v 1.49 2011/12/14 20:31:28 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -7,25 +7,58 @@ SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python
 
-MODPY_VERSION?=		2.7
+# define the default versions
+MODPY_DEFAULT_VERSION_2 = 2.7
+MODPY_DEFAULT_VERSION_3 = 3.2
 
-.if ${MODPY_VERSION} == "2.4" || ${MODPY_VERSION} == "2.5" || ${MODPY_VERSION} == "2.7" || ${MODPY_VERSION} == "3.2"
+.if !defined(MODPY_VERSION)
 
-.  if ${MODPY_VERSION} < 2.6
-MODPY_JSON =		devel/py-simplejson
+FLAVOR?=
+
+.  if ${FLAVOR:L:Mpython3}
+# define default version 3
+MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_3}
 .  else
-MODPY_JSON =
+# without flavor, assume we use the default version 2
+MODPY_VERSION?=		${MODPY_DEFAULT_VERSION_2}
 .  endif
 
-.  if ${MODPY_VERSION} < 3.2
-MODPY_WANTLIB =	python${MODPY_VERSION}
-MODPY_INCDIR =	${LOCALBASE}/include/python${MODPY_VERSION}
-.  else
-MODPY_WANTLIB = python${MODPY_VERSION}m
-MODPY_INCDIR =	${LOCALBASE}/include/python${MODPY_VERSION}m
-.  endif
+# verify if MODPY_VERSION forced is correct
 .else
+.  if ${MODPY_VERSION} != "2.4" && \
+      ${MODPY_VERSION} != "2.5" && \
+      ${MODPY_VERSION} != "2.7" && \
+      ${MODPY_VERSION} != "3.2"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
+.  endif
+.endif
+
+_MODPY_MAJOR_VERSION =	${MODPY_VERSION:C/\.[1-9]*//g}
+
+.if ${_MODPY_MAJOR_VERSION} == 2
+MODPY_LIB_SUFFIX =
+MODPY_FLAVOR =
+MODPY_BIN_SUFFIX =
+MODPY_PY_PREFIX =	py-
+
+.elif ${_MODPY_MAJOR_VERSION} == 3
+MODPY_LIB_SUFFIX =	m
+# replace py- prefix by py3-
+FULLPKGNAME =	${PKGNAME:S/^py-/py3-/}
+MODPY_FLAVOR =	,python3
+# use MODPY_SUFFIX for binaries to avoid conflict
+MODPY_BIN_SUFFIX =	-3
+MODPY_PY_PREFIX =	py3-
+.  else
+ERRORS += "Fatal: unknown or unsupported _MODPY_MAJOR_VERSION: ${_MODPY_MAJOR_VERSION}"
+.endif
+
+MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+
+.if ${MODPY_VERSION} < 2.6
+MODPY_JSON =		devel/py-simplejson
+.else
+MODPY_JSON =
 .endif
 
 MODPY_RUN_DEPENDS=	lang/python/${MODPY_VERSION}
@@ -43,15 +76,15 @@ RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 .endif
 
 MODPY_PRE_BUILD_STEPS = @:
-.if (defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES) || \
-    (defined(MODPY_DISTRIBUTE) && ${MODPY_DISTRIBUTE:U} == YES)
+.if (defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES)
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
-.if ${MODPY_SETUPTOOLS:U} == YES
+.  if ${_MODPY_MAJOR_VERSION} == 2
 MODPY_SETUPUTILS_DEPEND?=devel/py-setuptools
-.else
-MODPY_SETUPUTILS_DEPEND ?= devel/py3-distribute
-.endif
+.  elif ${_MODPY_MAJOR_VERSION} == 3
+MODPY_SETUPUTILS_DEPEND?=devel/py-distribute${MODPY_FLAVOR}
+.  endif
+
 MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
 MODPY_SETUPUTILS =	Yes
@@ -67,8 +100,7 @@ MODPY_PRE_BUILD_STEPS +=	\
 	;mkdir -p ${_MODPY_SETUPUTILS_FAKE_DIR} \
 	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
-	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes or\\n" \' \
-	;echo '          "\\t\\t\\t  MODPY_DISTRIBUTE = Yes required"' \
+	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes is required"' \
 	;echo '    raise Exception(msg)' \
 	;echo 'Extension = Feature = find_packages = setup'
 MODPY_SETUPUTILS =	No
@@ -80,6 +112,7 @@ MODPY_TKINTER_DEPENDS=	${MODPY_RUN_DEPENDS},-tkinter
 .endif
 
 MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
+MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
 MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
 
@@ -111,7 +144,7 @@ CONFIGURE_ENV+=	PYTHON="${MODPY_BIN}"
 _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
 
-SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION ${SUBST_VARS}
+SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ=	perl -pi \
