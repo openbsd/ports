@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.6 2011/12/08 19:59:36 pascal Exp $
+# $OpenBSD: gcc4.port.mk,v 1.7 2011/12/14 18:16:51 robert Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -64,6 +64,7 @@ BUILD_DEPENDS += lang/gcc/4.6,-go>=4.6,<4.7
 WANTLIB += go
 LIB_DEPENDS += lang/gcc/4.6,-go>=4.6,<4.7
 _MODGCC4_LINKS += egccgo gccgo
+.  endif
 .endif
 
 .if !empty(_MODGCC4_LINKS)
