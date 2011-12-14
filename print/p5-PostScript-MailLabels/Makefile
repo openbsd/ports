@@ -1,4 +1,5 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/14 14:14:24 millert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/14 14:23:53 jasper Exp $
+
 COMMENT=	create PostScript files of mailing address labels
 
 MODULES=	cpan

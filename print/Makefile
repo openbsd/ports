@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.93 2011/07/19 09:22:50 jasper Exp $
+#	$OpenBSD: Makefile,v 1.94 2011/12/14 14:23:53 jasper Exp $
 
     SUBDIR =
     SUBDIR += a2ps,a4
@@ -46,6 +46,7 @@
     SUBDIR += mpage,legal
     SUBDIR += mpage,letter
     SUBDIR += openclipart
+    SUBDIR += p5-PostScript-MailLabels
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdfshuffler
