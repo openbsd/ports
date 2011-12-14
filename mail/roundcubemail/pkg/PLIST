@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/10/11 22:04:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/12/14 15:24:45 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -125,7 +125,8 @@ roundcubemail/plugins/emoticons/
 roundcubemail/plugins/emoticons/emoticons.php
 roundcubemail/plugins/enigma/
 roundcubemail/plugins/enigma/README
-roundcubemail/plugins/enigma/config.inc.php
+roundcubemail/plugins/enigma/config.inc.php.dist
+@sample roundcubemail/plugins/enigma/config.inc.php
 roundcubemail/plugins/enigma/enigma.js
 roundcubemail/plugins/enigma/enigma.php
 roundcubemail/plugins/enigma/home/
@@ -334,6 +335,7 @@ roundcubemail/plugins/managesieve/localization/hr_HR.inc
 roundcubemail/plugins/managesieve/localization/hu_HU.inc
 roundcubemail/plugins/managesieve/localization/it_IT.inc
 roundcubemail/plugins/managesieve/localization/ja_JP.inc
+roundcubemail/plugins/managesieve/localization/lv_LV.inc
 roundcubemail/plugins/managesieve/localization/nb_NO.inc
 roundcubemail/plugins/managesieve/localization/nl_NL.inc
 roundcubemail/plugins/managesieve/localization/pl_PL.inc
@@ -348,10 +350,17 @@ roundcubemail/plugins/managesieve/localization/zh_CN.inc
 roundcubemail/plugins/managesieve/localization/zh_TW.inc
 roundcubemail/plugins/managesieve/managesieve.js
 roundcubemail/plugins/managesieve/managesieve.php
+roundcubemail/plugins/managesieve/package.xml
 roundcubemail/plugins/managesieve/skins/
 roundcubemail/plugins/managesieve/skins/default/
+roundcubemail/plugins/managesieve/skins/default/images/
+roundcubemail/plugins/managesieve/skins/default/images/add.png
+roundcubemail/plugins/managesieve/skins/default/images/del.png
+roundcubemail/plugins/managesieve/skins/default/images/down_small.gif
+roundcubemail/plugins/managesieve/skins/default/images/filter.png
+roundcubemail/plugins/managesieve/skins/default/images/up_small.gif
 roundcubemail/plugins/managesieve/skins/default/managesieve.css
-roundcubemail/plugins/managesieve/skins/default/managesieve_toolbar.png
+roundcubemail/plugins/managesieve/skins/default/managesieve_mail.css
 roundcubemail/plugins/managesieve/skins/default/templates/
 roundcubemail/plugins/managesieve/skins/default/templates/filteredit.html
 roundcubemail/plugins/managesieve/skins/default/templates/managesieve.html
@@ -359,6 +368,15 @@ roundcubemail/plugins/managesieve/skins/default/templates/setedit.html
 roundcubemail/plugins/managesieve/tests/
 roundcubemail/plugins/managesieve/tests/Makefile
 roundcubemail/plugins/managesieve/tests/parser.phpt
+roundcubemail/plugins/managesieve/tests/parser_body.phpt
+roundcubemail/plugins/managesieve/tests/parser_imapflags.phpt
+roundcubemail/plugins/managesieve/tests/parser_include.phpt
+roundcubemail/plugins/managesieve/tests/parser_kep14.phpt
+roundcubemail/plugins/managesieve/tests/parser_prefix.phpt
+roundcubemail/plugins/managesieve/tests/parser_relational.phpt
+roundcubemail/plugins/managesieve/tests/parser_vacation.phpt
+roundcubemail/plugins/managesieve/tests/parser_variables.phpt
+roundcubemail/plugins/managesieve/tests/parset_subaddress.phpt
 roundcubemail/plugins/managesieve/tests/tokenize.phpt
 roundcubemail/plugins/markasjunk/
 roundcubemail/plugins/markasjunk/localization/
@@ -386,6 +404,7 @@ roundcubemail/plugins/markasjunk/skins/default/junk_act.png
 roundcubemail/plugins/markasjunk/skins/default/junk_pas.png
 roundcubemail/plugins/new_user_dialog/
 roundcubemail/plugins/new_user_dialog/localization/
+roundcubemail/plugins/new_user_dialog/localization/bg_BG.inc
 roundcubemail/plugins/new_user_dialog/localization/cs_CZ.inc
 roundcubemail/plugins/new_user_dialog/localization/de_CH.inc
 roundcubemail/plugins/new_user_dialog/localization/de_DE.inc
@@ -414,8 +433,14 @@ roundcubemail/plugins/newmail_notifier/config.inc.php.dist
 @sample roundcubemail/plugins/newmail_notifier/config.inc.php
 roundcubemail/plugins/newmail_notifier/favicon.ico
 roundcubemail/plugins/newmail_notifier/localization/
+roundcubemail/plugins/newmail_notifier/localization/de_CH.inc
+roundcubemail/plugins/newmail_notifier/localization/de_DE.inc
 roundcubemail/plugins/newmail_notifier/localization/en_US.inc
+roundcubemail/plugins/newmail_notifier/localization/lv_LV.inc
 roundcubemail/plugins/newmail_notifier/localization/pl_PL.inc
+roundcubemail/plugins/newmail_notifier/localization/pt_BR.inc
+roundcubemail/plugins/newmail_notifier/localization/ru_RU.inc
+roundcubemail/plugins/newmail_notifier/mail.png
 roundcubemail/plugins/newmail_notifier/newmail_notifier.js
 roundcubemail/plugins/newmail_notifier/newmail_notifier.php
 roundcubemail/plugins/newmail_notifier/sound.wav
@@ -508,11 +533,13 @@ roundcubemail/plugins/userinfo/localization/de_CH.inc
 roundcubemail/plugins/userinfo/localization/en_US.inc
 roundcubemail/plugins/userinfo/localization/es_ES.inc
 roundcubemail/plugins/userinfo/localization/et_EE.inc
+roundcubemail/plugins/userinfo/localization/fr_FR.inc
 roundcubemail/plugins/userinfo/localization/gl_ES.inc
 roundcubemail/plugins/userinfo/localization/ja_JP.inc
 roundcubemail/plugins/userinfo/localization/pl_PL.inc
 roundcubemail/plugins/userinfo/localization/pt_BR.inc
 roundcubemail/plugins/userinfo/localization/pt_PT.inc
+roundcubemail/plugins/userinfo/localization/ro_RO.inc
 roundcubemail/plugins/userinfo/localization/ru_RU.inc
 roundcubemail/plugins/userinfo/localization/sv_SE.inc
 roundcubemail/plugins/userinfo/localization/zh_TW.inc
@@ -562,6 +589,7 @@ roundcubemail/program/include/rcube_config.php
 roundcubemail/program/include/rcube_contacts.php
 roundcubemail/program/include/rcube_html_page.php
 roundcubemail/program/include/rcube_imap.php
+roundcubemail/program/include/rcube_imap_cache.php
 roundcubemail/program/include/rcube_imap_generic.php
 roundcubemail/program/include/rcube_json_output.php
 roundcubemail/program/include/rcube_ldap.php
@@ -811,7 +839,6 @@ roundcubemail/program/js/tiny_mce/plugins/media/langs/uk_dlg.js
 roundcubemail/program/js/tiny_mce/plugins/media/langs/vi_dlg.js
 roundcubemail/program/js/tiny_mce/plugins/media/langs/zh_dlg.js
 roundcubemail/program/js/tiny_mce/plugins/media/media.htm
-roundcubemail/program/js/tiny_mce/plugins/media/moxieplayer.swf
 roundcubemail/program/js/tiny_mce/plugins/nonbreaking/
 roundcubemail/program/js/tiny_mce/plugins/nonbreaking/editor_plugin.js
 roundcubemail/program/js/tiny_mce/plugins/nonbreaking/editor_plugin_src.js
