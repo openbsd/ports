@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_shell_shell_content_browser_client_cc,v 1.1 2011/12/14 16:58:19 robert Exp $
+--- content/shell/shell_content_browser_client.cc.orig	Wed Dec 14 09:55:01 2011
++++ content/shell/shell_content_browser_client.cc	Wed Dec 14 09:54:49 2011
+@@ -287,7 +287,7 @@ FilePath ShellContentBrowserClient::GetDefaultDownload
+   return FilePath();
+ }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ int ShellContentBrowserClient::GetCrashSignalFD(
+     const CommandLine& command_line) {
+   return -1;

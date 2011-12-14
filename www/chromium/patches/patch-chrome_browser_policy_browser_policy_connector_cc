@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_policy_browser_policy_connector_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
---- chrome/browser/policy/browser_policy_connector.cc.orig	Wed Oct 26 14:11:12 2011
-+++ chrome/browser/policy/browser_policy_connector.cc	Wed Oct 26 14:11:47 2011
-@@ -392,7 +392,7 @@ ConfigurationPolicyProvider*
+$OpenBSD: patch-chrome_browser_policy_browser_policy_connector_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- chrome/browser/policy/browser_policy_connector.cc.orig	Tue Dec 13 21:33:07 2011
++++ chrome/browser/policy/browser_policy_connector.cc	Tue Dec 13 21:33:31 2011
+@@ -427,7 +427,7 @@ ConfigurationPolicyProvider*
    return new ConfigurationPolicyProviderWin(policy_list);
  #elif defined(OS_MACOSX)
    return new ConfigurationPolicyProviderMac(policy_list);
@@ -10,12 +10,12 @@ $OpenBSD: patch-chrome_browser_policy_browser_policy_connector_cc,v 1.1 2011/10/
    FilePath config_dir_path;
    if (PathService::Get(chrome::DIR_POLICY_FILES, &config_dir_path)) {
      return new ConfigDirPolicyProvider(
-@@ -411,7 +411,7 @@ ConfigurationPolicyProvider*
+@@ -444,7 +444,7 @@ ConfigurationPolicyProvider*
+ // static
+ ConfigurationPolicyProvider*
      BrowserPolicyConnector::CreateRecommendedPlatformProvider() {
-   const ConfigurationPolicyProvider::PolicyDefinitionList* policy_list =
-       ConfigurationPolicyPrefStore::GetChromePolicyDefinitionList();
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   const PolicyDefinitionList* policy_list = GetChromePolicyDefinitionList();
    FilePath config_dir_path;
    if (PathService::Get(chrome::DIR_POLICY_FILES, &config_dir_path)) {
-     return new ConfigDirPolicyProvider(

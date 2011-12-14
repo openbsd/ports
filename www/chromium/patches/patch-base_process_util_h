@@ -1,44 +1,12 @@
-$OpenBSD: patch-base_process_util_h,v 1.9 2011/10/27 07:59:08 robert Exp $
---- base/process_util.h.orig	Fri Oct 21 10:30:02 2011
-+++ base/process_util.h	Wed Oct 26 16:56:36 2011
-@@ -14,14 +14,16 @@
- #if defined(OS_WIN)
- #include <windows.h>
- #include <tlhelp32.h>
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
- // kinfo_proc is defined in <sys/sysctl.h>, but this forward declaration
- // is sufficient for the vector<kinfo_proc> below.
- struct kinfo_proc;
- // malloc_zone_t is defined in <malloc/malloc.h>, but this forward declaration
- // is sufficient for GetPurgeableZone() below.
- typedef struct _malloc_zone_t malloc_zone_t;
-+#if !defined(OS_OPENBSD)
- #include <mach/mach.h>
-+#endif
- #elif defined(OS_POSIX)
- #include <dirent.h>
- #include <limits.h>
-@@ -164,10 +166,12 @@ BASE_EXPORT void CloseProcessHandle(ProcessHandle proc
+$OpenBSD: patch-base_process_util_h,v 1.10 2011/12/14 16:58:19 robert Exp $
+--- base/process_util.h.orig	Tue Dec 13 21:28:16 2011
++++ base/process_util.h	Tue Dec 13 21:28:57 2011
+@@ -166,7 +166,7 @@ BASE_EXPORT void CloseProcessHandle(ProcessHandle proc
  // Win XP SP1 as well.
  BASE_EXPORT ProcessId GetProcId(ProcessHandle process);
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
+-#if defined(OS_LINUX) || defined(OS_ANDROID)
++#if defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_OPENBSD)
  // Returns the path to the executable of the given process.
  BASE_EXPORT FilePath GetProcessExecutablePath(ProcessHandle process);
-+#endif
  
-+#if defined(OS_LINUX)
- // Parse the data found in /proc/<pid>/stat and return the sum of the
- // CPU-related ticks.  Returns -1 on parse error.
- // Exposed for testing.
-@@ -523,7 +527,7 @@ class BASE_EXPORT ProcessIterator {
- #if defined(OS_WIN)
-   HANDLE snapshot_;
-   bool started_iteration_;
--#elif defined(OS_MACOSX)
-+#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
-   std::vector<kinfo_proc> kinfo_procs_;
-   size_t index_of_kinfo_proc_;
- #elif defined(OS_POSIX)

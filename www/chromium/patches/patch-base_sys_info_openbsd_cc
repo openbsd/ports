@@ -1,12 +1,7 @@
-$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
---- base/sys_info_openbsd.cc.orig	Wed Oct 26 14:14:35 2011
-+++ base/sys_info_openbsd.cc	Wed Oct 26 14:14:41 2011
-@@ -1,10 +1,11 @@
--// Copyright (c) 2009 The Chromium Authors. All rights reserved.
-+// Copyright (c) 2011 The Chromium Authors. All rights reserved.
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
- 
+$OpenBSD: patch-base_sys_info_openbsd_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- base/sys_info_openbsd.cc.orig	Wed Dec  7 09:01:59 2011
++++ base/sys_info_openbsd.cc	Tue Dec 13 22:25:24 2011
+@@ -5,6 +5,7 @@
  #include "base/sys_info.h"
  
  #include <sys/param.h>
@@ -14,7 +9,7 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
  #include <sys/sysctl.h>
  
  #include "base/logging.h"
-@@ -15,11 +16,33 @@ int SysInfo::NumberOfProcessors() {
+@@ -15,7 +16,7 @@ int SysInfo::NumberOfProcessors() {
    int mib[] = { CTL_HW, HW_NCPU };
    int ncpu;
    size_t size = sizeof(ncpu);
@@ -23,18 +18,10 @@ $OpenBSD: patch-base_sys_info_openbsd_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
      NOTREACHED();
      return 1;
    }
-   return ncpu;
-+}
-+
-+int64 SysInfo::AmountOfPhysicalMemory() {
-+  long pages = sysconf(_SC_PHYS_PAGES);
-+  long page_size = sysconf(_SC_PAGESIZE);
-+  if (pages == -1 || page_size == -1) {
-+    NOTREACHED();
-+    return 0;
-+  }
-+
-+  return static_cast<int64>(pages) * page_size;
+@@ -31,6 +32,17 @@ int64 SysInfo::AmountOfPhysicalMemory() {
+   }
+ 
+   return static_cast<int64>(pages) * page_size;
 +}
 +
 +size_t SysInfo::MaxSharedMemorySize() {

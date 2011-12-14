@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_plugin_service_h,v 1.1 2011/10/27 07:59:09 robert Exp $
---- content/browser/plugin_service.h.orig	Fri Oct 21 10:29:43 2011
-+++ content/browser/plugin_service.h	Wed Oct 26 14:10:40 2011
+$OpenBSD: patch-content_browser_plugin_service_h,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- content/browser/plugin_service.h.orig	Wed Dec  7 09:01:17 2011
++++ content/browser/plugin_service.h	Tue Dec 13 21:23:12 2011
 @@ -31,7 +31,7 @@
  #include "base/win/registry.h"
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_plugin_service_h,v 1.1 2011/10/27 07:59:09 rober
  #include "base/files/file_path_watcher.h"
  #endif
  
-@@ -159,7 +159,7 @@ class PluginService
+@@ -222,7 +222,7 @@ class CONTENT_EXPORT PluginService
        const FilePath& plugin_path,
        PluginProcessHost::Client* client);
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_plugin_service_h,v 1.1 2011/10/27 07:59:09 rober
    // Registers a new FilePathWatcher for a given path.
    static void RegisterFilePathWatcher(
        base::files::FilePathWatcher* watcher,
-@@ -182,7 +182,7 @@ class PluginService
+@@ -245,7 +245,7 @@ class CONTENT_EXPORT PluginService
    base::WaitableEventWatcher hklm_watcher_;
  #endif
  

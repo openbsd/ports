@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_chrome_ppb_pdf_impl_cc,v 1.1 2011/10/27 07:59:08 robert Exp $
---- chrome/renderer/chrome_ppb_pdf_impl.cc.orig	Fri Oct 21 10:30:31 2011
-+++ chrome/renderer/chrome_ppb_pdf_impl.cc	Wed Oct 26 14:10:40 2011
-@@ -33,7 +33,7 @@
+$OpenBSD: patch-chrome_renderer_chrome_ppb_pdf_impl_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- chrome/renderer/chrome_ppb_pdf_impl.cc.orig	Wed Dec  7 09:02:55 2011
++++ chrome/renderer/chrome_ppb_pdf_impl.cc	Tue Dec 13 21:23:12 2011
+@@ -40,7 +40,7 @@ using content::RenderThread;
  
  namespace chrome {
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_renderer_chrome_ppb_pdf_impl_cc,v 1.1 2011/10/27 07:59:08
  class PrivateFontFile : public ppapi::Resource {
   public:
    PrivateFontFile(PP_Instance instance, int fd) : Resource(instance), fd_(fd) {
-@@ -178,7 +178,7 @@ PP_Resource GetFontFileWithFallback(
+@@ -185,7 +185,7 @@ PP_Resource GetFontFileWithFallback(
      PP_Instance instance_id,
      const PP_FontDescription_Dev* description,
      PP_PrivateFontCharset charset) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_renderer_chrome_ppb_pdf_impl_cc,v 1.1 2011/10/27 07:59:08
    // Validate the instance before using it below.
    if (!webkit::ppapi::ResourceTracker::Get()->GetInstance(instance_id))
      return 0;
-@@ -210,7 +210,7 @@ bool GetFontTableForPrivateFontFile(PP_Resource font_f
+@@ -217,7 +217,7 @@ bool GetFontTableForPrivateFontFile(PP_Resource font_f
                                      uint32_t table,
                                      void* output,
                                      uint32_t* output_length) {

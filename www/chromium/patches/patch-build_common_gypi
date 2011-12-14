@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_common_gypi,v 1.11 2011/10/27 07:59:08 robert Exp $
---- build/common.gypi.orig	Wed Oct 26 13:56:52 2011
-+++ build/common.gypi	Wed Oct 26 14:22:38 2011
-@@ -960,9 +960,11 @@
+$OpenBSD: patch-build_common_gypi,v 1.12 2011/12/14 16:58:19 robert Exp $
+--- build/common.gypi.orig	Tue Dec 13 21:29:10 2011
++++ build/common.gypi	Tue Dec 13 21:40:53 2011
+@@ -1149,9 +1149,11 @@
                '-Wextra',
                '-Werror',
              ],
 -            'cflags': [
-+            'cflags_cc': [
++            'ccflags': [
                # Don't warn about hash_map in third-party code.
                '-Wno-deprecated',
 +            ],
@@ -14,16 +14,7 @@ $OpenBSD: patch-build_common_gypi,v 1.11 2011/10/27 07:59:08 robert Exp $
                # Don't warn about printf format problems.
                # This is off by default in gcc but on in Ubuntu's gcc(!).
                '-Wno-format',
-@@ -973,7 +975,7 @@
-               '-Wsign-compare',
-             ]
-           }],
--          [ 'os_posix==1 and OS!="mac" and chromeos==0', {
-+          [ 'os_posix==1 and OS!="mac" and OS!="openbsd" and chromeos==0', {
-             'cflags': [
-               # Don't warn about ignoring the return value from e.g. close().
-               # This is off by default in some gccs but on by default in others.
-@@ -1045,7 +1047,10 @@
+@@ -1242,7 +1244,10 @@
                ['exclude', '(^|/)(wayland)_[^/]*\\.(h|cc)$'],
              ],
            }],

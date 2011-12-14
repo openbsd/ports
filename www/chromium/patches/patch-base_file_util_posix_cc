@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_file_util_posix_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
---- base/file_util_posix.cc.orig	Tue Aug 23 10:28:48 2011
-+++ base/file_util_posix.cc	Wed Aug 24 10:54:22 2011
-@@ -863,7 +863,11 @@ bool GetTempDir(FilePath* path) {
+$OpenBSD: patch-base_file_util_posix_cc,v 1.6 2011/12/14 16:58:19 robert Exp $
+--- base/file_util_posix.cc.orig	Wed Dec  7 09:01:59 2011
++++ base/file_util_posix.cc	Tue Dec 13 21:23:11 2011
+@@ -912,7 +912,11 @@ bool GetTempDir(FilePath* path) {
  
  #if !defined(OS_ANDROID)
  bool GetShmemTempDir(FilePath* path) {

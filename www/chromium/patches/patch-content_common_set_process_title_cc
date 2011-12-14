@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_common_set_process_title_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
---- content/common/set_process_title.cc.orig	Fri Oct 21 10:29:44 2011
-+++ content/common/set_process_title.cc	Wed Oct 26 14:10:40 2011
+$OpenBSD: patch-content_common_set_process_title_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- content/common/set_process_title.cc.orig	Wed Dec  7 09:01:17 2011
++++ content/common/set_process_title.cc	Tue Dec 13 21:23:12 2011
 @@ -23,7 +23,8 @@
  #include "content/common/set_process_title_linux.h"
  #endif
@@ -9,5 +9,5 @@ $OpenBSD: patch-content_common_set_process_title_cc,v 1.1 2011/10/27 07:59:09 ro
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_SOLARIS) && \
 +    defined(OS_OPENBSD)
  
- void SetProcessTitleFromCommandLine(char** main_argv) {
+ void SetProcessTitleFromCommandLine(const char** main_argv) {
    // Build a single string which consists of all the arguments separated

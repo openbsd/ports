@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.7 2011/10/27 07:59:08 robert Exp $
---- chrome/browser/browser_about_handler.cc.orig	Fri Oct 21 10:30:28 2011
-+++ chrome/browser/browser_about_handler.cc	Wed Oct 26 13:37:46 2011
-@@ -77,7 +77,7 @@
- #include "chrome/browser/chromeos/login/wizard_controller.h"
+$OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.8 2011/12/14 16:58:19 robert Exp $
+--- chrome/browser/browser_about_handler.cc.orig	Tue Dec 13 21:30:30 2011
++++ chrome/browser/browser_about_handler.cc	Tue Dec 13 21:31:13 2011
+@@ -79,7 +79,7 @@
  #include "chrome/browser/chromeos/version_loader.h"
+ #include "chrome/browser/oom_priority_manager.h"
  #include "content/browser/zygote_host_linux.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_OPENBSD)
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -149,7 +149,7 @@ const char* const kChromePaths[] = {
+@@ -152,7 +152,7 @@ const char* const kChromePaths[] = {
  #if defined(OS_WIN)
    chrome::kChromeUIConflictsHost,
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.7 2011/10/27 07:59:0
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -185,7 +185,7 @@ const char* const kAboutSourceNames[] = {
+@@ -190,7 +190,7 @@ const char* const kAboutSourceNames[] = {
  #if defined(USE_TCMALLOC)
    chrome::kChromeUITCMallocHost,
  #endif
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.7 2011/10/27 07:59:0
    chrome::kChromeUILinuxProxyConfigHost,
    chrome::kChromeUISandboxHost,
  #endif
-@@ -984,7 +984,7 @@ std::string AboutStats(const std::string& query) {
+@@ -1062,7 +1062,7 @@ std::string AboutStats(const std::string& query) {
    return data;
  }
  
@@ -37,12 +37,12 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.7 2011/10/27 07:59:0
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data, 0,
-@@ -1401,7 +1401,7 @@ void AboutSource::StartDataRequest(const std::string& 
-     response = ResourceBundle::GetSharedInstance().GetRawDataResource(
-         IDR_TERMS_HTML).as_string();
- #endif
+@@ -1447,7 +1447,7 @@ void AboutSource::StartDataRequest(const std::string& 
+     return;
+   } else if (host == chrome::kChromeUIHistogramsHost) {
+     response = AboutHistograms(path);
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
    } else if (host == chrome::kChromeUILinuxProxyConfigHost) {
      response = AboutLinuxProxyConfig();
-   } else if (host == chrome::kChromeUISandboxHost) {
+ #endif

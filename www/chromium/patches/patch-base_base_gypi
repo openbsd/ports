@@ -1,25 +1,25 @@
-$OpenBSD: patch-base_base_gypi,v 1.9 2011/10/27 07:59:08 robert Exp $
---- base/base.gypi.orig	Fri Oct 21 10:30:02 2011
-+++ base/base.gypi	Wed Oct 26 21:04:14 2011
-@@ -93,8 +93,7 @@
+$OpenBSD: patch-base_base_gypi,v 1.10 2011/12/14 16:58:19 robert Exp $
+--- base/base.gypi.orig	Tue Dec 13 21:24:50 2011
++++ base/base.gypi	Wed Dec 14 09:49:40 2011
+@@ -113,8 +113,7 @@
            'file_version_info_win.h',
            'files/file_path_watcher.cc',
            'files/file_path_watcher.h',
 -          'files/file_path_watcher_linux.cc',
 -          'files/file_path_watcher_mac.cc',
 +          'files/file_path_watcher_kqueue.cc',
+           'files/file_path_watcher_stub.cc',
            'files/file_path_watcher_win.cc',
            'float_util.h',
-           'global_descriptors_posix.cc',
-@@ -190,6 +189,7 @@
+@@ -219,6 +218,7 @@
+           'process_util.cc',
            'process_util.h',
            'process_util_linux.cc',
-           'process_util_mac.mm',
 +          'process_util_openbsd.cc',
+           'process_util_mac.mm',
+           'process_util_openbsd.cc',
            'process_util_posix.cc',
-           'process_util_win.cc',
-           'process_win.cc',
-@@ -250,7 +250,6 @@
+@@ -284,7 +284,6 @@
            'sys_info.h',
            'sys_info_chromeos.cc',
            'sys_info_freebsd.cc',
@@ -27,37 +27,25 @@ $OpenBSD: patch-base_base_gypi,v 1.9 2011/10/27 07:59:08 robert Exp $
            'sys_info_mac.cc',
            'sys_info_openbsd.cc',
            'sys_info_posix.cc',
-@@ -388,12 +387,11 @@
-           }, {
+@@ -427,7 +426,7 @@
              'sources!' : [ 'message_pump_gtk.cc', ],
+             'sources/' : [ [ 'include', 'message_pump_x.cc', ] ],
            }],
 -          [ 'OS != "linux"', {
-+          [ 'OS != "linux" and OS !="openbsd"', {
++          [ 'OS != "linux" and OS != "openbsd"', {
                'sources!': [
                  # Not automatically excluded by the *linux.cc rules.
-                 'gtk_util.cc',
-                 'gtk_util.h',
--                'linux_util.cc',
-               ],
-             },
-           ],
-@@ -434,12 +432,9 @@
-               'string16.cc',
-             ],
-           },],
--          ['os_posix==1 and OS!="linux" and OS!="mac"', {
--            'sources!': [
--              'files/file_path_watcher_linux.cc',
--            ],
-+          ['os_posix==1 and OS == "openbsd"', {
-             'sources': [
--              'files/file_path_watcher_stub.cc',
-+              'files/file_path_watcher_kqueue.cc',
+                 'linux_util.cc',
+@@ -504,6 +503,7 @@
+             'sources/': [
+               ['include', '^base_paths_linux\\.cc$'],
+               ['include', '^sys_string_conversions_linux\\.cc$'],
++              ['include', '^files/file_path_watcher_kqueue\\.cc$'],
              ],
            }],
          ],
-@@ -508,6 +503,12 @@
-             ],
+@@ -602,6 +602,11 @@
+           ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {
 +          'sources!': [
@@ -65,7 +53,6 @@ $OpenBSD: patch-base_base_gypi,v 1.9 2011/10/27 07:59:08 robert Exp $
 +            'process_linux.cc',
 +            'process_util_linux.cc',
 +          ],
-+          'include_dirs': [ '/usr/local/include' ],
-           'link_settings': {
-             'libraries': [
-               '-L/usr/local/lib -lexecinfo',
+           'include_dirs': [
+             '/usr/local/include',
+           ],

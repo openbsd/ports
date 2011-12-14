@@ -1,6 +1,6 @@
-$OpenBSD: patch-crypto_nss_util_cc,v 1.3 2011/10/27 07:59:09 robert Exp $
---- crypto/nss_util.cc.orig	Fri Oct 21 10:29:44 2011
-+++ crypto/nss_util.cc	Wed Oct 26 13:37:46 2011
+$OpenBSD: patch-crypto_nss_util_cc,v 1.4 2011/12/14 16:58:19 robert Exp $
+--- crypto/nss_util.cc.orig	Wed Dec  7 09:01:18 2011
++++ crypto/nss_util.cc	Tue Dec 13 21:23:12 2011
 @@ -16,6 +16,9 @@
  #if defined(OS_LINUX)
  #include <linux/nfs_fs.h>
@@ -11,7 +11,7 @@ $OpenBSD: patch-crypto_nss_util_cc,v 1.3 2011/10/27 07:59:09 robert Exp $
  #endif
  
  #include <vector>
-@@ -143,17 +146,21 @@ char* PKCS11PasswordFunc(PK11SlotInfo* slot, PRBool re
+@@ -156,17 +159,21 @@ char* PKCS11PasswordFunc(PK11SlotInfo* slot, PRBool re
  // Because this function sets an environment variable it must be run before we
  // go multi-threaded.
  void UseLocalCacheOfNSSDatabaseIfNFS(const FilePath& database_dir) {

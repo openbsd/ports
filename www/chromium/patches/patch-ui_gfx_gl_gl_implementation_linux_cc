@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_gfx_gl_gl_implementation_linux_cc,v 1.3 2011/10/27 07:59:09 robert Exp $
---- ui/gfx/gl/gl_implementation_linux.cc.orig	Fri Oct 21 10:30:31 2011
-+++ ui/gfx/gl/gl_implementation_linux.cc	Wed Oct 26 13:37:47 2011
-@@ -96,7 +96,7 @@ bool InitializeGLBindings(GLImplementation implementat
+$OpenBSD: patch-ui_gfx_gl_gl_implementation_linux_cc,v 1.4 2011/12/14 16:58:19 robert Exp $
+--- ui/gfx/gl/gl_implementation_linux.cc.orig	Wed Dec  7 09:02:56 2011
++++ ui/gfx/gl/gl_implementation_linux.cc	Tue Dec 13 21:23:12 2011
+@@ -103,7 +103,7 @@ bool InitializeGLBindings(GLImplementation implementat
        break;
      }
      case kGLImplementationDesktopGL: {

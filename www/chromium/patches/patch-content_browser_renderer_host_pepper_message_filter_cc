@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_renderer_host_pepper_message_filter_cc,v 1.2 2011/10/27 07:59:09 robert Exp $
---- content/browser/renderer_host/pepper_message_filter.cc.orig	Fri Oct 21 10:29:43 2011
-+++ content/browser/renderer_host/pepper_message_filter.cc	Wed Oct 26 13:54:30 2011
-@@ -117,10 +117,13 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
+$OpenBSD: patch-content_browser_renderer_host_pepper_message_filter_cc,v 1.3 2011/12/14 16:58:19 robert Exp $
+--- content/browser/renderer_host/pepper_message_filter.cc.orig	Wed Dec  7 09:01:16 2011
++++ content/browser/renderer_host/pepper_message_filter.cc	Tue Dec 13 21:23:12 2011
+@@ -130,10 +130,13 @@ bool NetAddressToAddressList(const PP_Flash_NetAddress
  
  }  // namespace
  

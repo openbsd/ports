@@ -1,6 +1,6 @@
-$OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.6 2011/10/27 07:59:09 robert Exp $
---- ipc/ipc_channel_posix.cc.orig	Fri Oct 21 10:30:02 2011
-+++ ipc/ipc_channel_posix.cc	Wed Oct 26 13:39:46 2011
+$OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.7 2011/12/14 16:58:19 robert Exp $
+--- ipc/ipc_channel_posix.cc.orig	Wed Dec  7 09:02:00 2011
++++ ipc/ipc_channel_posix.cc	Tue Dec 13 21:23:12 2011
 @@ -10,6 +10,7 @@
  #include <sys/types.h>
  #include <sys/socket.h>
@@ -9,7 +9,7 @@ $OpenBSD: patch-ipc_ipc_channel_posix_cc,v 1.6 2011/10/27 07:59:09 robert Exp $
  #include <sys/un.h>
  
  #include <string>
-@@ -930,7 +931,7 @@ bool Channel::ChannelImpl::HasAcceptedConnection() con
+@@ -944,7 +945,7 @@ bool Channel::ChannelImpl::HasAcceptedConnection() con
  
  bool Channel::ChannelImpl::GetClientEuid(uid_t* client_euid) const {
    DCHECK(HasAcceptedConnection());

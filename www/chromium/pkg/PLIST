@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/03 23:20:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/12/14 16:58:19 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -218,6 +218,7 @@ chrome/resources/inspector/ScriptFormatterWorker.js
 chrome/resources/inspector/dataGrid.css
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
+chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/networkLogView.css
 @man man/man1/chrome.1

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_gyp,v 1.9 2011/10/27 07:59:08 robert Exp $
---- chrome/chrome.gyp.orig	Wed Oct 26 14:19:56 2011
-+++ chrome/chrome.gyp	Wed Oct 26 14:21:01 2011
-@@ -136,7 +136,6 @@
+$OpenBSD: patch-chrome_chrome_gyp,v 1.10 2011/12/14 16:58:19 robert Exp $
+--- chrome/chrome.gyp.orig	Wed Dec  7 09:02:55 2011
++++ chrome/chrome.gyp	Tue Dec 13 21:23:12 2011
+@@ -130,7 +130,6 @@
      'chrome_renderer.gypi',
      'chrome_tests.gypi',
      'common_constants.gypi',

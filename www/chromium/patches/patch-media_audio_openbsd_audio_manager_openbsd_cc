@@ -1,54 +1,116 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.6 2011/10/27 07:59:09 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Oct 26 20:55:10 2011
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Oct 26 20:56:56 2011
-@@ -4,14 +4,17 @@
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.7 2011/12/14 16:58:19 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Wed Dec  7 09:01:06 2011
++++ media/audio/openbsd/audio_manager_openbsd.cc	Wed Dec 14 09:52:50 2011
+@@ -4,23 +4,71 @@
  
  #include "media/audio/openbsd/audio_manager_openbsd.h"
  
 -#include "base/logging.h"
-+#include "base/sys_info.h"
++#include "base/command_line.h"
++#include "base/stl_util.h"
++#include "media/audio/audio_output_dispatcher.h"
 +#include "media/audio/fake_audio_input_stream.h"
 +#include "media/audio/fake_audio_output_stream.h"
-+#include "media/audio/openbsd/audio_manager_openbsd.h"
-+#include "media/audio/openbsd/sndio_output.h"
++#if defined(USE_PULSEAUDIO)
++#include "media/audio/pulse/pulse_output.h"
++#endif
 +#include "media/base/limits.h"
-+#include "media/base/limits.h"
++#include "media/base/media_switches.h"
  
 -static AudioManagerOpenBSD* g_audio_manager = NULL;
--
++#include <fcntl.h>
+ 
++// Maximum number of output streams that can be open simultaneously.
++static const size_t kMaxOutputStreams = 50;
++
  // Implementation of AudioManager.
++static bool HasAudioHardware() {
++  int fd;
++  const char *file;
++
++  if ((file = getenv("AUDIOCTLDEVICE")) == 0 || *file == '\0')
++    file = "/dev/audioctl";
++
++  if ((fd = open(file, O_RDONLY)) < 0)
++    return false;
++
++  close(fd);
++  return true;
++}
++
  bool AudioManagerOpenBSD::HasAudioOutputDevices() {
 -  NOTIMPLEMENTED();
 -  return false;
-+  return true;
++  return HasAudioHardware();
  }
  
  bool AudioManagerOpenBSD::HasAudioInputDevices() {
-@@ -37,10 +40,6 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
- AudioManagerOpenBSD::~AudioManagerOpenBSD() {
+-  NOTIMPLEMENTED();
+-  return false;
++  return HasAudioHardware();
  }
  
--void AudioManagerOpenBSD::Init() {
--  AudioManagerBase::Init();
--}
--
- void AudioManagerOpenBSD::MuteAll() {
+ AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutputStream(
+     const AudioParameters& params) {
++  // Early return for testing hook.  Do this before checking for
++  // |initialized_|.
++  if (params.format == AudioParameters::AUDIO_MOCK) {
++    return FakeAudioOutputStream::MakeFakeStream(params);
++  }
++
++  if (!initialized()) {
++    return NULL;
++  }
++
++  // Don't allow opening more than |kMaxOutputStreams| streams.
++  if (active_streams_.size() >= kMaxOutputStreams) {
++    return NULL;
++  }
++
++#if defined(USE_PULSEAUDIO)
++  AudioOutputStream* stream;
++  if (CommandLine::ForCurrentProcess()->HasSwitch(switches::kUsePulseAudio)) {
++    stream = new PulseAudioOutputStream(params, this, GetMessageLoop());
++    active_streams_.insert(stream);
++    return stream;
++  }
++#endif
++
+   NOTIMPLEMENTED();
+   return NULL;
+ }
+@@ -35,6 +83,19 @@ AudioManagerOpenBSD::AudioManagerOpenBSD() {
+ }
+ 
+ AudioManagerOpenBSD::~AudioManagerOpenBSD() {
++  // Make sure we stop the thread first. If we allow the default destructor to
++  // destroy the members, we may destroy audio streams before stopping the
++  // thread, resulting an unexpected behavior.
++  // This way we make sure activities of the audio streams are all stopped
++  // before we destroy them.
++  audio_thread_.Stop();
++
++  // Free output dispatchers, closing all remaining open streams.
++  output_dispatchers_.clear();
++
++  // Delete all the streams. Have to do it manually, we don't have ScopedSet<>,
++  // and we are not using ScopedVector<> because search there is slow.
++  STLDeleteElements(&active_streams_);
+ }
+ 
+ void AudioManagerOpenBSD::Init() {
+@@ -49,9 +110,11 @@ void AudioManagerOpenBSD::UnMuteAll() {
    NOTIMPLEMENTED();
  }
-@@ -52,4 +51,16 @@ void AudioManagerOpenBSD::UnMuteAll() {
- // static
- AudioManager* AudioManager::CreateAudioManager() {
-   return new AudioManagerOpenBSD();
-+}
-+
-+// Called by the stream when it has been released by calling Close().
-+void AudioManagerOpenBSD::ReleaseOutputStream(
-+    PCMQueueOutAudioOutputStream* stream) {
-+  DCHECK(stream);
-+  delete stream;
-+}
-+
-+// Called by the stream when it has been released by calling Close().
-+void AudioManagerOpenBSD::ReleaseInputStream(PCMQueueInAudioInputStream* stream) {
-+  NOTIMPLEMENTED();
+ 
+-bool AudioManagerOpenBSD::IsRecordingInProgress() {
+-  NOTIMPLEMENTED();
+-  return false;
++void AudioManagerOpenBSD::ReleaseOutputStream(AudioOutputStream* stream) {
++  if (stream) {
++    active_streams_.erase(stream);
++    delete stream;
++  }
  }
+ 
+ // static

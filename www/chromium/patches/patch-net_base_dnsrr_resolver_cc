@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.5 2011/10/27 07:59:09 robert Exp $
---- net/base/dnsrr_resolver.cc.orig	Wed Oct 26 13:46:29 2011
-+++ net/base/dnsrr_resolver.cc	Wed Oct 26 13:46:58 2011
+$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.6 2011/12/14 16:58:19 robert Exp $
+--- net/base/dnsrr_resolver.cc.orig	Wed Dec  7 09:01:30 2011
++++ net/base/dnsrr_resolver.cc	Tue Dec 13 21:23:12 2011
 @@ -5,6 +5,7 @@
  #include "net/base/dnsrr_resolver.h"
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.5 2011/10/27 07:59:09 robert Exp 
  #include <resolv.h>
  #endif
  
-@@ -186,7 +187,11 @@ class RRResolverWorker {
+@@ -187,7 +188,11 @@ class RRResolverWorker {
      bool r = true;
  #if defined(OS_MACOSX) || defined(OS_OPENBSD)
      if ((_res.options & RES_INIT) == 0) {

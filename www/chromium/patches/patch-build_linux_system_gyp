@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_linux_system_gyp,v 1.6 2011/10/27 07:59:08 robert Exp $
---- build/linux/system.gyp.orig	Fri Oct 21 10:30:01 2011
-+++ build/linux/system.gyp	Wed Oct 26 13:37:46 2011
-@@ -238,13 +238,6 @@
+$OpenBSD: patch-build_linux_system_gyp,v 1.7 2011/12/14 16:58:19 robert Exp $
+--- build/linux/system.gyp.orig	Wed Dec  7 09:01:57 2011
++++ build/linux/system.gyp	Tue Dec 13 21:23:11 2011
+@@ -259,13 +259,6 @@
              'libraries': [
                '<!@(<(pkg-config) --libs-only-l gio-2.0)',
              ],
@@ -13,9 +13,9 @@ $OpenBSD: patch-build_linux_system_gyp,v 1.6 2011/10/27 07:59:08 robert Exp $
 -              }],
 -            ],
            },
-       }]]
-     },
-@@ -349,7 +342,6 @@
+         }],
+       ],
+@@ -389,7 +382,6 @@
              }, {
                'link_settings': {
                  'libraries': [

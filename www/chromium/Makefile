@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2011/12/14 16:58:19 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			15.0.874.121
+V=			16.0.912.63
 DISTNAME=		chromium-${V}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -25,15 +24,14 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	devel/gettext \
-		lang/python
+MODULES=	lang/python
 
-WANTLIB += X11 Xext Xrender Xss bz2 c cairo cups dbus-glib-1 event
+WANTLIB += X11 Xext Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += plc4 png pthread pthread-stubs smime3 speex stdc++
-WANTLIB += xml2 xslt z
+WANTLIB += xml2 xslt
 
 MODPY_RUNDEP=	No
 

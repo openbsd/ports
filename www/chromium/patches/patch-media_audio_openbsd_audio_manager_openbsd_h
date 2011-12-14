@@ -1,38 +1,46 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.6 2011/09/19 08:55:26 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.h.orig	Tue Aug 23 10:28:23 2011
-+++ media/audio/openbsd/audio_manager_openbsd.h	Wed Aug 24 10:54:23 2011
-@@ -5,15 +5,16 @@
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.7 2011/12/14 16:58:19 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Tue Dec 13 21:35:44 2011
++++ media/audio/openbsd/audio_manager_openbsd.h	Tue Dec 13 23:29:24 2011
+@@ -5,31 +5,37 @@
  #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  
++#include <set>
++
+ #include "base/compiler_specific.h"
 -#include "media/audio/audio_io.h"
-+#include "base/basictypes.h"
 +#include "media/audio/audio_manager_base.h"
  
-+class PCMQueueInAudioInputStream;
-+class PCMQueueOutAudioOutputStream;
-+
- class AudioManagerOpenBSD : public AudioManagerBase {
+-class AudioManagerOpenBSD : public AudioManagerBase {
++class MEDIA_EXPORT AudioManagerOpenBSD : public AudioManagerBase {
   public:
    AudioManagerOpenBSD();
  
--  // Call before using a newly created AudioManagerOpenBSD instance.
+   // Call before using a newly created AudioManagerOpenBSD instance.
 -  virtual void Init();
--
-   // Implementation of AudioManager.
-   virtual bool HasAudioOutputDevices();
-   virtual bool HasAudioInputDevices();
-@@ -24,10 +25,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
-   virtual void MuteAll();
-   virtual void UnMuteAll();
++  virtual void Init() OVERRIDE;
  
-- protected:
--  virtual ~AudioManagerOpenBSD();
-+  void ReleaseOutputStream(PCMQueueOutAudioOutputStream* stream);
-+  void ReleaseInputStream(PCMQueueInAudioInputStream* stream);
+   // Implementation of AudioManager.
+   virtual bool HasAudioOutputDevices() OVERRIDE;
+   virtual bool HasAudioInputDevices() OVERRIDE;
+   virtual AudioOutputStream* MakeAudioOutputStream(
+       const AudioParameters& params) OVERRIDE;
+-  virtual AudioInputStream* MakeAudioInputStream(
+-      const AudioParameters& params) OVERRIDE;
+-  virtual bool IsRecordingInProgress() OVERRIDE;
++  virtual AudioInputStream* MakeAudioInputStream(const AudioParameters& params)
++      OVERRIDE;
++
+   virtual void MuteAll() OVERRIDE;
+   virtual void UnMuteAll() OVERRIDE;
+ 
++  virtual void ReleaseOutputStream(AudioOutputStream* stream);
++
+  protected:
+   virtual ~AudioManagerOpenBSD();
  
   private:
-+  virtual ~AudioManagerOpenBSD();
++  std::set<AudioOutputStream*> active_streams_;
 +
    DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
  };

@@ -1,9 +1,9 @@
-$OpenBSD: patch-third_party_yasm_yasm_compile_gypi,v 1.1 2011/10/27 07:59:09 robert Exp $
---- third_party/yasm/yasm_compile.gypi.orig	Fri Oct 21 10:29:58 2011
-+++ third_party/yasm/yasm_compile.gypi	Wed Oct 26 13:41:00 2011
-@@ -29,13 +29,13 @@
-     'yasm_path': '<(PRODUCT_DIR)/yasm',
-     'conditions': [
+$OpenBSD: patch-third_party_yasm_yasm_compile_gypi,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- third_party/yasm/yasm_compile.gypi.orig	Wed Dec  7 09:01:53 2011
++++ third_party/yasm/yasm_compile.gypi	Tue Dec 13 21:23:12 2011
+@@ -36,13 +36,13 @@
+       }],
+ 
        # Define yasm_flags that pass into YASM.
 -      [ 'OS=="linux" and target_arch=="ia32"', {
 +      [ 'os_posix==1 and OS!="mac" and target_arch=="ia32"', {

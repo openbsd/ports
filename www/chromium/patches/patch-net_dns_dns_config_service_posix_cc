@@ -1,10 +1,10 @@
-$OpenBSD: patch-net_dns_dns_config_service_posix_cc,v 1.1 2011/10/27 07:59:09 robert Exp $
---- net/dns/dns_config_service_posix.cc.orig	Wed Oct 26 13:48:31 2011
-+++ net/dns/dns_config_service_posix.cc	Wed Oct 26 13:50:42 2011
-@@ -28,16 +28,21 @@ class DnsConfigServicePosix::DnsConfigReader : public 
+$OpenBSD: patch-net_dns_dns_config_service_posix_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
+--- net/dns/dns_config_service_posix.cc.orig	Tue Dec 13 21:36:06 2011
++++ net/dns/dns_config_service_posix.cc	Tue Dec 13 21:37:13 2011
+@@ -30,16 +30,21 @@ class DnsConfigServicePosix::ConfigReader : public Ser
        success_(false) {}
  
-   void DoRead() OVERRIDE {
+   void DoWork() OVERRIDE {
 +#if defined(OS_OPENBSD)
 +    if ((res_init() == 0) && (_res.options & RES_INIT)) {
 +      success_ = ConvertResToConfig(_res, &dns_config_);
@@ -24,7 +24,7 @@ $OpenBSD: patch-net_dns_dns_config_service_posix_cc,v 1.1 2011/10/27 07:59:09 ro
      res_nclose(&res);
  #endif
    }
-@@ -122,7 +127,9 @@ bool ConvertResToConfig(const struct __res_state& res,
+@@ -123,7 +128,9 @@ bool ConvertResToConfig(const struct __res_state& res,
    dns_config->ndots = res.ndots;
    dns_config->timeout = base::TimeDelta::FromSeconds(res.retrans);
    dns_config->attempts = res.retry;
