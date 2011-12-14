@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/14 14:14:24 millert Exp $
+bin/print_addrs
+${P5SITE}/PostScript/
+${P5SITE}/PostScript/MailLabels/
+${P5SITE}/PostScript/MailLabels.pm
+${P5SITE}/PostScript/MailLabels/BasicData.pm
+@man man/man3p/PostScript::MailLabels.3p
+@man man/man3p/PostScript::MailLabels::BasicData.3p

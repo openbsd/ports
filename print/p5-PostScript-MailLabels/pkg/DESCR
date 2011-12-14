@@ -1,0 +1,6 @@
+Modules for creating PostScript files of mailing address labels,
+to be printed on standard adhesive-backed mailing label stock.
+
+Flexible enough to tackle other printing tasks, basically anything
+requiring a set fields be printed on a regular grid. Also creates
+PostScript code for calibrating and testing mailing label printing.
