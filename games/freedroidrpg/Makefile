@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/03 08:19:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/15 07:59:08 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
 M_V=		0.15
-DISTNAME=	freedroidrpg-${M_V}rc1
+DISTNAME=	freedroidrpg-${M_V}rc2
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://freedroid.sourceforge.net/
@@ -22,7 +22,6 @@ WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
 WANTLIB += lua m ogg png pthread vorbis z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/freedroidRPG/freedroidRPG-${M_V}/}
-EXTRACT_SUFX=	.tar.bz2
 
 LIB_DEPENDS=	devel/libexecinfo \
 		devel/sdl-gfx \
