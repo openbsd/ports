@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/05/11 00:16:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/15 22:26:59 fgsch Exp $
 
      SUBDIR =
      SUBDIR += AsteriskGuide
@@ -18,6 +18,5 @@
      SUBDIR += vol3ol
      SUBDIR += vol6a
      SUBDIR += wndw
-     SUBDIR += zopebook
 
 .include <bsd.port.subdir.mk>
