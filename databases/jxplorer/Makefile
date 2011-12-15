@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/07 13:54:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/15 21:53:25 kili Exp $
 
 COMMENT=	standards compliant LDAP browser
 
 V=		3.2
 DISTNAME=	JXv${V}deploy
 PKGNAME=	jxplorer-${V}
-REVISION=	7
+REVISION=	8
 EXTRACT_SUFX=	.zip
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.pegacat.com/jxplorer/
-
-MAINTAINER=	Alexandre Anriot <aanriot@openbsd.org>
 
 # CA Open Source Licence v1.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,14 +22,14 @@ WRKDIST=	${WRKDIR}/jxplorer
 
 MODULES=	java
 MODJAVA_VER=	1.5+
-JAVA_HOME=	${LOCALBASE}/jdk-1.5.0
+
+RUN_DEPENDS=	java/javaPathHelper
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 do-configure:
 	@cp ${FILESDIR}/jxplorer ${WRKSRC}
-	@perl -pi -e "s,%%JAVA_HOME%%,${JAVA_HOME}," ${WRKSRC}/jxplorer.sh
 	@perl -pi -e "s,%%PREFIX%%,${PREFIX}," \
 		${WRKSRC}/jxplorer \
 		${WRKSRC}/jxplorer.sh
