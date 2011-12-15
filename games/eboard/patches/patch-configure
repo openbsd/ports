@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2010/01/07 09:49:21 jakemsr Exp $
---- configure.orig	Wed May 23 11:57:45 2007
-+++ configure	Sat Dec 26 03:23:34 2009
+$OpenBSD: patch-configure,v 1.5 2011/12/15 17:59:21 fgsch Exp $
+--- configure.orig	Fri Feb 22 13:51:22 2008
++++ configure	Wed Dec 14 23:30:00 2011
 @@ -6,8 +6,8 @@ my $prefix      = "/usr/local";
  my $package     = "eboard";
- my $version     = "1.0.4";
+ my $version     = "1.1.1";
  my $cxx         = "g++";
 -my @cxxflags    = ("-O6");
 -my @ldflags     = ("-lpthread");

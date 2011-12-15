@@ -1,10 +1,10 @@
-$OpenBSD: patch-cimg_cc,v 1.1 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-cimg_cc,v 1.2 2011/12/15 17:59:21 fgsch Exp $
 
 Fix build with png-1.5.
 
---- cimg.cc.orig	Wed May 23 12:57:45 2007
-+++ cimg.cc	Tue Jul  5 23:44:41 2011
-@@ -95,16 +95,16 @@ CImg::CImg(const char *filename) {
+--- cimg.cc.orig	Wed Dec 14 23:31:38 2011
++++ cimg.cc	Wed Dec 14 23:32:22 2011
+@@ -94,11 +94,11 @@ CImg::CImg(const char *filename) {
        ct == PNG_COLOR_TYPE_GRAY_ALPHA)
      png_set_gray_to_rgb(pngp);
  
@@ -12,12 +12,6 @@ Fix build with png-1.5.
 +  alloc(png_get_image_width(pngp, infp),png_get_image_height(pngp, infp));
    if (!ok) { fclose(f); return; }
    ok = 0;
- 
--  rp = (png_bytep *) malloc(sizeof(png_bytep) * (pngp->height));
-+  rp = (png_bytep *) malloc(sizeof(png_bytep) * (png_get_image_height(pngp, infp)));
-   if (rp==NULL) {
-     fclose(f); return;
-   }
  
 -  for(i=0;i<pngp->height;i++) {
 +  for(i=0;i<png_get_image_height(pngp, infp);i++) {
