@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.6 2010/03/31 15:56:45 naddy Exp $
---- configure.in.orig	Mon Mar 15 15:53:43 2010
-+++ configure.in	Tue Mar 30 22:42:34 2010
+$OpenBSD: patch-configure_in,v 1.7 2011/12/15 23:05:44 nigel Exp $
+--- configure.in.orig	Wed Apr 20 22:26:00 2011
++++ configure.in	Wed Dec 14 16:24:53 2011
 @@ -999,7 +999,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
  
  MOZ_JS_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
@@ -32,3 +32,14 @@ $OpenBSD: patch-configure_in,v 1.6 2010/03/31 15:56:45 naddy Exp $
  
  dnl End of C++ language/feature checks
  AC_LANG_C
+@@ -5078,8 +5078,8 @@ then
+     dnl GTK2 toolkit is in use.
+     if test "$MOZ_ENABLE_GTK2"
+     then
+-        MOZ_ENABLE_GNOMEVFS=1
+-        MOZ_ENABLE_GCONF=1
++        MOZ_ENABLE_GNOMEVFS=
++        MOZ_ENABLE_GCONF=
+         MOZ_ENABLE_LIBGNOME=1
+     fi
+ 

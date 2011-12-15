@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2011/12/08 00:39:18 nigel Exp $
+# $OpenBSD: Makefile,v 1.96 2011/12/15 23:10:32 nigel Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -12,6 +12,7 @@ MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
 PKGNAME-lightning =	lightning-seamonkey-1.0beta8
 ENIG_V =		1.3.4
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
@@ -76,6 +77,7 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 CONFIGURE_ARGS +=	--enable-calendar
 CONFIGURE_ARGS +=	--enable-official-branding
+CONFIGURE_ARGS +=	--disable-gconf
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event

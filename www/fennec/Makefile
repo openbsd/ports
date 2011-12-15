@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/08 00:42:54 nigel Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/15 23:09:44 nigel Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -6,6 +6,7 @@ MOZILLA_VERSION =	8.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
+REVISION =		0
 
 
 SO_VERSION =	4.0
@@ -36,6 +37,7 @@ NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
+CONFIGURE_ARGS +=	--disable-gconf
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event

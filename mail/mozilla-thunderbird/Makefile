@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2011/12/08 02:25:59 nigel Exp $
+# $OpenBSD: Makefile,v 1.141 2011/12/15 23:08:50 nigel Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -15,6 +15,7 @@ MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
 PKGNAME-lightning =	lightning-1.0beta8
 ENIG_V =		1.3.4
 PKGNAME-enigmail =	enigmail-${ENIG_V}
@@ -79,7 +80,8 @@ WANTLIB-enigmail =	${WANTLIB-lightning}
 
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar \
-			--enable-official-branding
+			--enable-official-branding \
+			--disable-gconf
 
 ALL_TARGET =	default
 
