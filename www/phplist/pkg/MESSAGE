@@ -4,7 +4,7 @@ You should point this to the DocumentRoot of your web-server:
   # ln -s ../lists /var/www/htdocs/lists
 (make sure you use a relative symlink since Apache is chrooted)
 
-Basic configuration of PHPlist cwmust be is done by editing the file
+Basic configuration of PHPlist is done by editing the file
 ${INSTDIR}/config/config.php.
 
 Enable the MySQL and IMAP extensions of PHP5 and create a database for phplist
