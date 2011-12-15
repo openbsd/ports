@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/31 20:22:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/15 21:35:18 kili Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -28,7 +28,6 @@ MODJAVA_BUILD=		ant
 MODJAVA_BUILD_ARGS=	-Dant.build.javac.source="1.5" \
 			-Dant.build.javac.target="1.5"
 MODJAVA_BUILD_TARGET=	dist
-MAKE_ENV+=		JAVA_HOME=${JAVA_HOME}
 
 BUILD_DEPENDS=		devel/apache-ant
 RUN_DEPENDS=		java/javaPathHelper \

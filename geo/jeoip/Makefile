@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/07 13:54:31 kurt Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/15 21:33:19 kili Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
@@ -29,8 +29,7 @@ REGRESS_DEPENDS=	net/GeoIP \
 			java/junit
 RUN_DEPENDS=		net/GeoIP\
  			java/javaPathHelper
-MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
-			CLASSPATH=${LOCALBASE}/share/java/classes/junit/junit.jar
+MAKE_ENV=		CLASSPATH=${LOCALBASE}/share/java/classes/junit/junit.jar
 
 WRKDIST=		${WRKDIR}/jeoip
 
