@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/12/15 09:47:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.9
 DISTNAME=	gnash-${VER}
-REVISION=	4
+REVISION=	5
 EPOCH=		0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
@@ -22,11 +22,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	SDL X11 agg avcodec avformat avutil boost_program_options-mt \
-		boost_thread-mt c curl freetype fontconfig gdk_pixbuf-2.0 \
-		gdk-x11-2.0 gif glib-2.0 gobject-2.0 gtk-x11-2.0 jpeg ltdl m \
-		glib-2.0 gobject-2.0 gtk-x11-2.0 png pthread speex speexdsp \
-		stdc++ swscale z
+
+WANTLIB=	SDL X11 agg avcodec avformat avutil boost_iostreams \
+		boost_program_options-mt boost_thread-mt c curl fontconfig \
+		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gif glib-2.0 gobject-2.0 \
+		gtk-x11-2.0 jpeg ltdl m png pthread speex speexdsp \
+		stdc++ swscale z \
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/xulrunner/1.9,-devel
