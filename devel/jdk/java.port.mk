@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.29 2011/10/07 13:54:31 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.30 2011/12/15 21:31:29 kili Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -93,6 +93,7 @@ CATEGORIES+=	java
 # respectively.
 .if defined(MODJAVA_BUILD) && ${MODJAVA_BUILD:L} == "ant"
     BUILD_DEPENDS += devel/apache-ant
+    MAKE_ENV += JAVA_HOME=${JAVA_HOME}
     MODJAVA_BUILD_TARGET ?=
     MODJAVA_BUILD_FILE ?= build.xml
     MODJAVA_BUILD_DIR ?= ${WRKSRC}
