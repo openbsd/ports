@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/15 21:11:55 kili Exp $
 
 COMMENT=	mail purpose library
 
 DISTNAME=	libetpan-1.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libetpan/}
 
 SHARED_LIBS=	etpan	14.0
 
 HOMEPAGE=	http://libetpan.sourceforge.net/
-
-MAINTAINER=	Ulrich Kahl <ulrich.kahl@cityweb.de>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
