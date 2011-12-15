@@ -1,5 +1,0 @@
-Adds a <dtml-fortune> tag that is replaced by a randomly-selected
-fortune cookie.  You have to have fortune cookie databases from the
-BSD "fortune" utility.  You can also give filenames as arguments,
-e.g. <dtml-fortune limerick startrek> to choose only fortunes from
-these two files.

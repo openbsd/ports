@@ -1,6 +1,0 @@
---- fortunesetup.py.orig	Wed Sep 29 17:40:22 1999
-+++ fortunesetup.py	Tue Jun  3 02:03:45 2003
-@@ -1,2 +1,2 @@
--fortunedir = '/usr/share/games/fortunes'
-+fortunedir = '/usr/share/games/fortune'
- maxfortune = 2048

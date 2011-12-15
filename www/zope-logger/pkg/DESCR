@@ -1,3 +1,0 @@
-The Logger Product adds the <dtml-log> tag, so that DTML code may 
-send messages directly to Zope's logging subsystem. 
-One use of this tag is to help debug complex DTML and ZSQL methods.

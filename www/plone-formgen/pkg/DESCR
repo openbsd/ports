@@ -1,3 +1,0 @@
-A generic Plone form generator using fields, widgets and validators
-from Archetypes. Actions like mailing or saving form input are
-incorporated by included plug-in adapters.

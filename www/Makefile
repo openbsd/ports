@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.540 2011/12/13 18:40:32 jeremy Exp $
+# $OpenBSD: Makefile,v 1.541 2011/12/15 22:19:51 fgsch Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -355,10 +355,6 @@
      SUBDIR += phppgadmin
      SUBDIR += piwik
      SUBDIR += plans
-     SUBDIR += plone
-     SUBDIR += plone-formgen
-     SUBDIR += plone-ldap
-     SUBDIR += plone-massloader
      SUBDIR += pmwiki
      SUBDIR += polipo
      SUBDIR += pound
@@ -503,28 +499,5 @@
      SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework
-     SUBDIR += zope
-     SUBDIR += zope-cmf
-     SUBDIR += zope-cmfquickinstaller
-     SUBDIR += zope-coreblog
-     SUBDIR += zope-externaleditor
-     SUBDIR += zope-formulator
-     SUBDIR += zope-fortune
-     SUBDIR += zope-fscounter
-     SUBDIR += zope-genericsetup
-     SUBDIR += zope-groupuserfolder
-     SUBDIR += zope-jtracker
-     SUBDIR += zope-ldapmultiplugins
-     SUBDIR += zope-ldapuserfolder
-     SUBDIR += zope-logger
-     SUBDIR += zope-placelesstranslationservice
-     SUBDIR += zope-pluggableauthservice
-     SUBDIR += zope-pluginregistry
-     SUBDIR += zope-rdfsummary
-     SUBDIR += zope-xmlmethods
-     SUBDIR += zope-zippy
-     SUBDIR += zope-zsyncer
-     SUBDIR += zope-zwiki
-     SUBDIR += zopeedit
 
 .include <bsd.port.subdir.mk>

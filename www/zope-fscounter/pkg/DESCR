@@ -1,2 +1,0 @@
-FSCounter is a simple web page hit counter for Zope. 
-Include the counter in your pages using <dtml-var counterid>.
