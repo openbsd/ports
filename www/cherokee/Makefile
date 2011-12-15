@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/12/15 15:04:32 nigel Exp $
 
 SHARED_ONLY=	Yes
 
@@ -90,7 +90,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PHPCGI="${LOCALBASE}/bin/php-fastcgi-${MODPHP_VERSION}" \
-			ac_cv_func_getgrnam_r=no
+			ac_cv_func_getgrnam_r=no \
+			ac_cv_header_execinfo_h=no
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
 			--sysconfdir=${SYSCONFDIR} \
