@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/16 20:15:06 naddy Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/lohit/
+lib/X11/fonts/lohit/Lohit-Assamese.ttf
+lib/X11/fonts/lohit/Lohit-Bengali.ttf
+lib/X11/fonts/lohit/Lohit-Devanagari.ttf
+lib/X11/fonts/lohit/Lohit-Gujarati.ttf
+lib/X11/fonts/lohit/Lohit-Kannada.ttf
+lib/X11/fonts/lohit/Lohit-Malayalam.ttf
+lib/X11/fonts/lohit/Lohit-Oriya.ttf
+lib/X11/fonts/lohit/Lohit-Punjabi.ttf
+lib/X11/fonts/lohit/Lohit-Tamil.ttf
+lib/X11/fonts/lohit/Lohit-Telugu.ttf
+lib/X11/fonts/lohit/OFL.txt
