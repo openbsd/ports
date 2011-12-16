@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2011/11/17 14:07:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/12/16 08:16:55 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
-DISTNAME=	polkit-0.102
-REVISION=	0
+DISTNAME=	polkit-0.103
 
 SHARED_LIBS +=  polkit-gobject-1	1.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	1.0 # .0.0
@@ -21,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c expat gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread z
+WANTLIB += c expat ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 pcre pthread z
 
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
