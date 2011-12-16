@@ -1,0 +1,16 @@
+$OpenBSD: patch-thumbnailer_main_c,v 1.1 2011/12/16 08:10:05 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=666347
+
+--- thumbnailer/main.c.orig	Fri Dec 16 08:42:36 2011
++++ thumbnailer/main.c	Fri Dec 16 08:50:00 2011
+@@ -40,6 +40,9 @@
+ 
+ #ifdef HAVE_SETRLIMIT
+ #include <sys/resource.h>
++#if !defined(RLIMIT_AS)
++#define RLIMIT_AS	RLIMIT_DATA
++#endif
+ #endif
+ 
+ G_GNUC_NORETURN static void

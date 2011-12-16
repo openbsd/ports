@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/06/22 21:16:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/12/16 08:10:05 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -10,12 +10,6 @@
 @bin bin/gsf-vba-dump
 include/libgsf-1/
 include/libgsf-1/gsf/
-include/libgsf-1/gsf-gnome/
-include/libgsf-1/gsf-gnome/gsf-input-bonobo.h
-include/libgsf-1/gsf-gnome/gsf-input-gnomevfs.h
-include/libgsf-1/gsf-gnome/gsf-output-bonobo.h
-include/libgsf-1/gsf-gnome/gsf-output-gnomevfs.h
-include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
@@ -66,10 +60,13 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.la
+lib/pkgconfig/
 lib/pkgconfig/libgsf-1.pc
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/gsf/
 share/gtk-doc/html/gsf/api.html
 share/gtk-doc/html/gsf/dependencies.html
@@ -114,24 +111,34 @@ share/locale/ca/LC_MESSAGES/libgsf.mo
 share/locale/cs/LC_MESSAGES/libgsf.mo
 share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libgsf.mo
+share/locale/eo/LC_MESSAGES/libgsf.mo
 share/locale/es/LC_MESSAGES/libgsf.mo
 share/locale/eu/LC_MESSAGES/libgsf.mo
 share/locale/fr/LC_MESSAGES/libgsf.mo
 share/locale/gl/LC_MESSAGES/libgsf.mo
+share/locale/id/LC_MESSAGES/libgsf.mo
 share/locale/it/LC_MESSAGES/libgsf.mo
 share/locale/nb/LC_MESSAGES/libgsf.mo
+share/locale/nn/LC_MESSAGES/libgsf.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/libgsf.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libgsf.mo
 share/locale/pl/LC_MESSAGES/libgsf.mo
 share/locale/pt/LC_MESSAGES/libgsf.mo
 share/locale/pt_BR/LC_MESSAGES/libgsf.mo
+share/locale/ro/LC_MESSAGES/libgsf.mo
+share/locale/ru/LC_MESSAGES/libgsf.mo
 share/locale/sl/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/uk/LC_MESSAGES/libgsf.mo
 share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gsf-office-thumbnailer.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/thumbnailers/
+share/thumbnailers/gsf-office.thumbnailer

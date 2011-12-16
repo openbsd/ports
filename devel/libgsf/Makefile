@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/12/16 08:10:05 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.21
-
-REVISION=		1
+GNOME_VERSION=		1.14.22
 
 CATEGORIES=		devel
 
@@ -22,27 +20,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += bz2 c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre png pthread xml2 z
+WANTLIB += bz2 c ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m pcre png pthread xml2 z
 
 MODULES=		devel/gettext \
-			x11/gnome \
-			devel/gconf2
+			x11/gnome
 
 LIB_DEPENDS=		archivers/bzip2 \
-			devel/glib2 \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml
 
-MODGCONF2_LIBDEP=	No
-MODGCONF2_SCHEMAS_DIR=	libgsf
-
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-bonobo \
-			--without-gnome-vfs \
-			--without-python \
+CONFIGURE_ARGS=		--without-python \
 			--with-bz2 \
 			--with-gio
 
