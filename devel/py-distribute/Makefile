@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/14 20:29:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/16 08:16:32 rpointel Exp $
 
 COMMENT =		fork of setuptools Python packages
 
 MODPY_EGG_VERSION =	0.6.24
 DISTNAME =		distribute-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
