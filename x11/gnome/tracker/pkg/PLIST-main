@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/12/03 22:17:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/12/16 17:36:55 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -264,6 +264,8 @@ share/locale/ro/LC_MESSAGES/tracker.mo
 share/locale/ru/LC_MESSAGES/tracker.mo
 share/locale/sk/LC_MESSAGES/tracker.mo
 share/locale/sl/LC_MESSAGES/tracker.mo
+share/locale/sr/LC_MESSAGES/tracker.mo
+share/locale/sr@latin/LC_MESSAGES/tracker.mo
 share/locale/sv/LC_MESSAGES/tracker.mo
 share/locale/th/LC_MESSAGES/tracker.mo
 share/locale/zh_CN/LC_MESSAGES/tracker.mo
