@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2011/11/13 12:44:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.129 2011/12/16 11:57:28 sthen Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -43,7 +43,6 @@
      SUBDIR += jimtcl
      SUBDIR += jruby
      SUBDIR += librep
-     SUBDIR += llvm-gcc4
      SUBDIR += lua
      SUBDIR += mawk
      SUBDIR += mono
