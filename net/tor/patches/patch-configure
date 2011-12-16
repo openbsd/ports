@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2011/09/17 10:39:26 sthen Exp $
---- configure.orig	Sat Sep 17 00:55:21 2011
-+++ configure	Sat Sep 17 00:56:22 2011
-@@ -5511,8 +5511,8 @@ for ac_lib in '' pthread; do
+$OpenBSD: patch-configure,v 1.15 2011/12/16 20:08:50 sthen Exp $
+--- configure.orig	Thu Dec 15 17:01:54 2011
++++ configure	Fri Dec 16 19:49:38 2011
+@@ -5532,8 +5532,8 @@ for ac_lib in '' nsl; do
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure,v 1.14 2011/09/17 10:39:26 sthen Exp $
 +    ac_res=-$ac_lib
 +    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
    fi
-   rm -f conftest.$ac_objext conftest$ac_exeext
- if { (ac_try="$ac_link"
-@@ -5594,8 +5594,8 @@ for ac_lib in '' pthread; do
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_gethostbyname=$ac_res
+@@ -5588,8 +5588,8 @@ for ac_lib in '' dl; do
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
@@ -21,5 +21,5 @@ $OpenBSD: patch-configure,v 1.14 2011/09/17 10:39:26 sthen Exp $
 +    ac_res=-$ac_lib
 +    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
    fi
-   rm -f conftest.$ac_objext conftest$ac_exeext
- if { (ac_try="$ac_link"
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_dlopen=$ac_res
