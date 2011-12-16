@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.no-no_x11,v 1.1.1.1 2011/04/24 20:14:06 stsp Exp $
+@comment $OpenBSD: PFRAG.no-no_x11,v 1.2 2011/12/16 15:03:03 stsp Exp $
+share/applications/stone-soup.desktop
 share/crawl/dat/tiles/
 share/crawl/dat/tiles/Vera.ttf
 share/crawl/dat/tiles/VeraMono.ttf
@@ -11,3 +12,7 @@ share/crawl/dat/tiles/stone_soup_icon-32x32.png
 share/crawl/dat/tiles/stone_soup_icon-win32.png
 share/crawl/dat/tiles/title.png
 share/crawl/dat/tiles/wall.png
+share/pixmaps/
+share/pixmaps/stone-soup.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
