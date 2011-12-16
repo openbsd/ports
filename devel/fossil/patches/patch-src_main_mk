@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_mk,v 1.11 2011/09/06 15:02:20 jasper Exp $
---- src/main.mk.orig	Mon Sep  5 16:03:24 2011
-+++ src/main.mk	Mon Sep  5 16:04:08 2011
-@@ -900,7 +900,7 @@ $(OBJDIR)/zip.o:	$(OBJDIR)/zip_.c $(OBJDIR)/zip.h  $(S
+$OpenBSD: patch-src_main_mk,v 1.12 2011/12/16 11:32:22 sthen Exp $
+--- src/main.mk.orig	Tue Dec 13 09:10:57 2011
++++ src/main.mk	Tue Dec 13 05:21:33 2011
+@@ -1015,7 +1015,7 @@ $(OBJDIR)/zip.o:	$(OBJDIR)/zip_.c $(OBJDIR)/zip.h  $(S
  
  $(OBJDIR)/zip.h:	$(OBJDIR)/headers
  $(OBJDIR)/sqlite3.o:	$(SRCDIR)/sqlite3.c
