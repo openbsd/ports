@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2011/09/09 15:29:21 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2011/12/16 14:50:09 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -855,8 +855,7 @@ share/asterisk/static-http/core-en_US.xml
 share/asterisk/static-http/mantest.html
 share/asterisk/static-http/prototype.js
 share/doc/asterisk/
-share/doc/asterisk/AST.pdf
-share/doc/asterisk/AST.txt
+share/doc/asterisk/Asterisk-Admin-Guide.pdf
 share/doc/asterisk/BUGS
 share/doc/asterisk/CHANGES
 share/doc/asterisk/COPYING
