@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Dungeon Crawl Stone Soup
+Exec=crawl-ss
+Icon=stone-soup.png
+Terminal=false
+Type=Application
+Categories=Application;Game;
+StartupNotify=false
