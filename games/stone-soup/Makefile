@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/06 14:12:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/16 11:40:08 sthen Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -17,7 +17,8 @@ WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
 MAKE_FILE = 	${WRKSRC}/makefile
 USE_GMAKE = 	Yes
-MAKE_FLAGS = 	LUA_INCLUDE_DIR=${LOCALBASE}/include \
+MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
+		LUA_INCLUDE_DIR=${LOCALBASE}/include \
 		LUA_LIB=-llua \
 		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
