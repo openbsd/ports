@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: rabbitmq.rc,v 1.3 2011/07/08 04:31:57 ajacoutot Exp $
+# $OpenBSD: rabbitmq.rc,v 1.4 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/rabbitmq-server"
-daemon_flags="-detached"
+daemon="${TRUEPREFIX}/sbin/rabbitmq-server -detached"
 daemon_user="_rabbitmq"
 
 . /etc/rc.d/rc.subr

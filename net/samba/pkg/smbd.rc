@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: smbd.rc,v 1.4 2011/05/19 20:44:51 gsoares Exp $
+# $OpenBSD: smbd.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/libexec/smbd"
-daemon_flags="-D"
+daemon="${TRUEPREFIX}/libexec/smbd -D"
 
 . /etc/rc.d/rc.subr
 

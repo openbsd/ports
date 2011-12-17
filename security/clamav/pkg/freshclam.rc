@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: freshclam.rc,v 1.1 2011/01/05 06:06:49 ajacoutot Exp $
+# $OpenBSD: freshclam.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/freshclam"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/bin/freshclam -d"
 
 . /etc/rc.d/rc.subr
 

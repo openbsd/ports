@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: winbindd.rc,v 1.4 2011/05/19 20:44:51 gsoares Exp $
+# $OpenBSD: winbindd.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/libexec/winbindd"
-daemon_flags="-D"
+daemon="${TRUEPREFIX}/libexec/winbindd -D"
 
 . /etc/rc.d/rc.subr
 

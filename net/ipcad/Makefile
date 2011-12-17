@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/06 08:34:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/17 22:01:13 sthen Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		IP accounting daemon simulating Cisco ip accounting
 
 DISTNAME=		ipcad-3.7.3
+REVISION=		0
 CATEGORIES=		net
 HOMEPAGE=		http://sourceforge.net/projects/ipcad/
 
@@ -17,7 +18,7 @@ WANTLIB=		c pcap pthread
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipcad/}
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 
 NO_REGRESS=		Yes
 

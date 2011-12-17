@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: vnstatd.rc,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: vnstatd.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/vnstatd"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/sbin/vnstatd -d"
 daemon_user="_vnstat"
 
 . /etc/rc.d/rc.subr

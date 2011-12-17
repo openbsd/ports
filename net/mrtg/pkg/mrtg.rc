@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: mrtg.rc,v 1.4 2011/03/20 06:43:47 ajacoutot Exp $
+# $OpenBSD: mrtg.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/mrtg"
-daemon_flags="--daemon --user _mrtg --group _mrtg --confcache-file /tmp/mrtg.ok --lock-file /tmp/mrtg_lock --pid-file /var/run/mrtg.pid"
+daemon="${TRUEPREFIX}/bin/mrtg --daemon"
+daemon_flags="--user _mrtg --group _mrtg --confcache-file /tmp/mrtg.ok --lock-file /tmp/mrtg_lock --pid-file /var/run/mrtg.pid"
 
 . /etc/rc.d/rc.subr
 

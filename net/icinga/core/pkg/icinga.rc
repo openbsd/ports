@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: icinga.rc,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+# $OpenBSD: icinga.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/icinga"
-daemon_flags="-d ${SYSCONFDIR}/icinga/icinga.cfg"
+daemon="${TRUEPREFIX}/bin/icinga -d"
+daemon_flags="${SYSCONFDIR}/icinga/icinga.cfg"
 
 . /etc/rc.d/rc.subr
 

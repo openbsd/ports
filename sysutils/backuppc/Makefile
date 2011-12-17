@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/16 17:42:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/17 22:01:13 sthen Exp $
 
 COMMENT =	remote backup software system
 
 DISTNAME =	BackupPC-3.2.1
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 

@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: exim.rc,v 1.1 2011/07/17 20:15:59 sthen Exp $
+# $OpenBSD: exim.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/exim"
-daemon_flags="-bd -q30m"
+daemon="${TRUEPREFIX}/bin/exim -bd"
+daemon_flags="-q30m"
 
 . /etc/rc.d/rc.subr
 

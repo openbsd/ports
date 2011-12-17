@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: nrpe.rc,v 1.1 2011/01/20 14:04:42 sthen Exp $
+# $OpenBSD: nrpe.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/nrpe"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/sbin/nrpe -d"
 
 . /etc/rc.d/rc.subr
 

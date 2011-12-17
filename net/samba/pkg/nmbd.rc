@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: nmbd.rc,v 1.4 2011/05/19 20:44:51 gsoares Exp $
+# $OpenBSD: nmbd.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/libexec/nmbd"
-daemon_flags="-D"
+daemon="${TRUEPREFIX}/libexec/nmbd -D"
 
 . /etc/rc.d/rc.subr
 

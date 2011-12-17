@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: pdnsd.rc,v 1.1 2011/10/14 07:00:51 ajacoutot Exp $
+# $OpenBSD: pdnsd.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/pdnsd"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/sbin/pdnsd -d"
 
 . /etc/rc.d/rc.subr
 

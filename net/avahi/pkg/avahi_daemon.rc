@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: avahi_daemon.rc,v 1.6 2011/03/17 16:49:27 ajacoutot Exp $
+# $OpenBSD: avahi_daemon.rc,v 1.7 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/avahi-daemon"
-daemon_flags="-D"
+daemon="${TRUEPREFIX}/sbin/avahi-daemon -D"
 
 . /etc/rc.d/rc.subr
 

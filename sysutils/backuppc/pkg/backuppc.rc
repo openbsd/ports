@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: backuppc.rc,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+# $OpenBSD: backuppc.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/BackupPC"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/bin/BackupPC -d"
 daemon_user="_backuppc"
 
 . /etc/rc.d/rc.subr

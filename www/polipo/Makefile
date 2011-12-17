@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/27 14:50:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/12/17 22:01:13 sthen Exp $
 
 COMMENT=	HTTP caching proxy
 
 DISTNAME=	polipo-1.0.4.1
 CATEGORIES=	www
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.pps.jussieu.fr/~jch/software/polipo/
 
@@ -17,8 +17,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=        	c
-USE_GROFF =		Yes
+
+WANTLIB += c
+
+USE_GROFF=	Yes
 
 post-extract:
 	@perl -pi -e "s,/usr/local/share/polipo/,${LOCALBASE}/share/polipo/," \

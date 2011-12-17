@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: yaws.rc,v 1.5 2011/03/09 19:37:47 ajacoutot Exp $
+# $OpenBSD: yaws.rc,v 1.6 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/yaws"
-daemon_flags="--daemon --conf ${SYSCONFDIR}/yaws/yaws.conf"
+daemon="${TRUEPREFIX}/bin/yaws --daemon"
+daemon_flags="--conf ${SYSCONFDIR}/yaws/yaws.conf"
 
 . /etc/rc.d/rc.subr
 

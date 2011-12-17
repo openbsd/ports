@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: slim.rc,v 1.2 2011/03/09 18:51:49 ajacoutot Exp $
+# $OpenBSD: slim.rc,v 1.3 2011/12/17 22:01:14 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/slim"
-daemon_flags="-d"
+daemon="${TRUEPREFIX}/bin/slim -d"
 
 . /etc/rc.d/rc.subr
 

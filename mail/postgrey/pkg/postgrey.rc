@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: postgrey.rc,v 1.1 2011/05/06 08:40:06 sthen Exp $
+# $OpenBSD: postgrey.rc,v 1.2 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/libexec/postgrey"
-daemon_flags="--inet=10023 -d"
+daemon="${TRUEPREFIX}/libexec/postgrey -d"
+daemon_flags="--inet=10023"
 
 . /etc/rc.d/rc.subr
 

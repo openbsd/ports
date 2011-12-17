@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/28 07:23:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/17 22:01:13 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,18 +15,18 @@ PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
-PKGNAME-sqlite= 	powerdns-sqlite-${V}
+PKGNAME-sqlite=		powerdns-sqlite-${V}
 PKGNAME-sqlite3=	powerdns-sqlite3-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
-REVISION-main=		1
-REVISION-mysql =	0
-REVISION-pgsql =	0
-REVISION-sqlite =	0
-REVISION-sqlite3 =	0
-REVISION-ldap =		0
+REVISION-main=		2
+REVISION-mysql=		0
+REVISION-pgsql=		0
+REVISION-sqlite=	0
+REVISION-sqlite3=	0
+REVISION-ldap=		0
 
 MULTI_PACKAGES=		-main
 

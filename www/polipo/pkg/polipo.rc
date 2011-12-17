@@ -1,9 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: polipo.rc,v 1.5 2010/12/27 14:50:24 ajacoutot Exp $
+# $OpenBSD: polipo.rc,v 1.6 2011/12/17 22:01:13 sthen Exp $
 
-daemon="${TRUEPREFIX}/bin/polipo"
-daemon_flags="daemonise=yes"
+daemon="${TRUEPREFIX}/bin/polipo daemonise=yes"
 
 . /etc/rc.d/rc.subr
 
