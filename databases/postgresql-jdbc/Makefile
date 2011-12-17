@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/07 13:54:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/17 18:02:44 kili Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
 
-V=			9.0-801
+V=			9.1-901
 DISTNAME=		postgresql-jdbc-$V
 PKGNAME-main=		postgresql-jdbc-${V:S/-/./}
 PKGNAME-docs=		postgresql-jdbc-docs-${V:S/-/./}
