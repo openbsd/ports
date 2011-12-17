@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/17 21:20:45 ajacoutot Exp $
 
 COMMENT=	graphic library for GTK+2
 
-V=		2.24.0
+V=		2.24.1
 DISTNAME=	gdk-pixbuf-${V}
-REVISION=	1
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -48,6 +47,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-Bsymbolic \
 		--enable-introspection \
-		--with-libjasper
+		--with-libjasper \
+		--with-x11
 
 .include <bsd.port.mk>
