@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/22 16:22:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/17 19:55:10 sthen Exp $
 
 COMMENT=		download flash video files from various sites
 
 DISTNAME=		App-get_flash_videos-1.24.20111112
+REVISION=		0
 PKGNAME=		${DISTNAME:S/App-//}
 CATEGORIES=		multimedia
 
