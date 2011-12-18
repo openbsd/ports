@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-editor,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-editor,v 1.2 2011/12/18 11:36:51 stsp Exp $
 bin/ufo2map
 bin/ufomodel
 bin/uforadiant
 @man man/man6/ufo2map.6
 @man man/man6/uforadiant.6
 share/applications/uforadiant.desktop
+share/pixmaps/
+share/pixmaps/uforadiant.xpm
 share/ufoai/radiant/
 share/ufoai/radiant/bitmaps/
 share/ufoai/radiant/bitmaps/background.png

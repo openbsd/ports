@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/06 18:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/18 11:36:49 stsp Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -8,9 +8,9 @@ COMMENT-editor = 	UFO:AI map editor
 V = 			2.3.1
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
-REVISION-main = 	1
+REVISION-main = 	2
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor = 	1
+REVISION-editor = 	2
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -97,6 +97,8 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/debian/*.6 ${PREFIX}/man/man6
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/debian/*.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/debian/*.xpm ${PREFIX}/share/pixmaps
 	${INSTALL_DATA_DIR} ${PREFIX}/share/ufoai/radiant/
 	cd ${WRKSRC}/radiant && find * -type d -exec ${INSTALL_DATA_DIR} \
 		"${PREFIX}/share/ufoai/radiant/{}" \;

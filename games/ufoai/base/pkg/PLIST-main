@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/05/30 05:28:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/12/18 11:36:51 stsp Exp $
 bin/ufoai
 bin/ufoded
 @man man/man6/ufoai.6
@@ -6,6 +6,9 @@ bin/ufoded
 share/applications/ufoai-safe.desktop
 share/applications/ufoai.desktop
 share/applications/ufoded.desktop
+share/pixmaps/
+share/pixmaps/ufoai.xpm
+share/pixmaps/ufoded.xpm
 share/ufoai/COPYING
 share/ufoai/LICENSES
 share/ufoai/base/game.so
