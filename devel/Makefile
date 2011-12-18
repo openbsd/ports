@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1003 2011/12/14 20:37:02 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1004 2011/12/18 13:44:59 mpi Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -947,6 +947,7 @@
      SUBDIR += py-bytecodeassembler
      SUBDIR += py-cheetah
      SUBDIR += py-configobj
+     SUBDIR += py-country
      SUBDIR += py-coverage
      SUBDIR += py-ctypes
      SUBDIR += py-dateutil
