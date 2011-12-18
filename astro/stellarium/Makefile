@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/18 09:01:45 ajacoutot Exp $
 
 COMMENT=	free open source planetarium
 
@@ -33,8 +33,6 @@ RUN_DEPENDS=	net/curl \
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV=	HOME=${WRKDIR}
 CONFIGURE_ARGS=	-Wno-dev
-
-USE_GROFF=	Yes
 
 PORTHOME=	${WRKDIR}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/20 12:33:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/18 09:01:19 ajacoutot Exp $
 
 NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
@@ -26,7 +26,6 @@ MODULES=	devel/gettext
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes
-USE_GROFF=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

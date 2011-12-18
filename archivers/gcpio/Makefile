@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/18 09:01:19 ajacoutot Exp $
 
 COMMENT=	GNU copy-in/out (cpio)
 
@@ -22,7 +22,6 @@ WANTLIB=	c
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix="g" \
 		--with-rmt=/etc/rmt
-USE_GROFF =	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/18 09:01:19 ajacoutot Exp $
 
 COMMENT=	perl interface to ZIP files
 
@@ -16,7 +16,5 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 REGRESS_DEPENDS = archivers/zip devel/p5-Test-Pod
-
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

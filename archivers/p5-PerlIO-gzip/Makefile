@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/18 09:01:19 ajacoutot Exp $
 
 COMMENT= 	PerlIO layer to gzip/gunzip
 
 MODULES=	cpan
 
 SHARED_ONLY=	Yes
-USE_GROFF =	Yes
+
 DISTNAME=	PerlIO-gzip-0.18
 CATEGORIES=	archivers
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/12/18 09:01:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -22,7 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 REVISION = 	3
 CONFIGURE_STYLE= perl
-USE_GROFF =	Yes
 
 WRKDIST=	${WRKDIR}/Compress-LZO-1.08
 
