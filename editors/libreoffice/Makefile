@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/12/12 22:54:30 nigel Exp $
+# $OpenBSD: Makefile,v 1.56 2011/12/18 10:21:01 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,6 +17,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 REVISION-main=	1
+REVISION-java=	0
 
 EPOCH=		0
 
@@ -179,7 +180,7 @@ WANTLIB-kde=		${MODQT_WANTLIB} \
 
 .if !${FLAVOR:Mno_java}
 MODULES+=		java
-MODJAVA_VER=		1.4+
+MODJAVA_VER=		1.6
 MODJAVA_JRERUN=		Yes
 .endif
 LIB_DEPENDS-java=	databases/db/v4,-java \
