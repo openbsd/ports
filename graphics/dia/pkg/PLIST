@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/12/18 19:18:39 ajacoutot Exp $
 @pkgpath graphics/dia,gnome
 @bin bin/dia
 lib/dia/
@@ -52,8 +52,6 @@ lib/dia/libpixbuf_filter.so
 lib/dia/libpostscript_filter.so
 @comment lib/dia/libpstricks_filter.la
 lib/dia/libpstricks_filter.so
-@comment lib/dia/libpython_plugin.la
-lib/dia/libpython_plugin.so
 @comment lib/dia/libsadt_objects.la
 lib/dia/libsadt_objects.so
 @comment lib/dia/libshape_filter.la
@@ -76,22 +74,6 @@ lib/dia/libxslt_filter.so
 share/applications/dia.desktop
 share/dia/
 share/dia/dia-splash.png
-share/dia/python/
-share/dia/python-startup.py
-share/dia/python/allprops.py
-share/dia/python/aobjects.py
-share/dia/python/codegen.py
-share/dia/python/diasvg.py
-share/dia/python/diasvg_import.py
-share/dia/python/dot.py
-share/dia/python/doxrev.py
-share/dia/python/gtkcons.py
-share/dia/python/imgmap.py
-share/dia/python/otypes.py
-share/dia/python/pydiadoc.py
-share/dia/python/scascale.py
-share/dia/python/select_by.py
-share/dia/python/select_empty.py
 share/dia/shapes/
 share/dia/shapes/Assorted/
 share/dia/shapes/Assorted/arrow-chevron.png
@@ -1785,6 +1767,7 @@ share/icons/hicolor/48x48/apps/dia.png
 share/icons/hicolor/scalable/apps/dia.svg
 share/locale/am/LC_MESSAGES/dia.mo
 share/locale/ar/LC_MESSAGES/dia.mo
+share/locale/ast/LC_MESSAGES/dia.mo
 share/locale/az/LC_MESSAGES/dia.mo
 share/locale/be/LC_MESSAGES/dia.mo
 share/locale/bg/LC_MESSAGES/dia.mo
@@ -1798,6 +1781,7 @@ share/locale/dz/LC_MESSAGES/dia.mo
 share/locale/el/LC_MESSAGES/dia.mo
 share/locale/en_CA/LC_MESSAGES/dia.mo
 share/locale/en_GB/LC_MESSAGES/dia.mo
+share/locale/eo/LC_MESSAGES/dia.mo
 share/locale/es/LC_MESSAGES/dia.mo
 share/locale/eu/LC_MESSAGES/dia.mo
 share/locale/fi/LC_MESSAGES/dia.mo
