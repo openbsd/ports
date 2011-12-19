@@ -1,0 +1,23 @@
+$OpenBSD: patch-Cakefile,v 1.1.1.1 2011/12/19 22:21:47 jeremy Exp $
+--- Cakefile.orig	Tue Nov  8 15:01:45 2011
++++ Cakefile	Tue Dec 13 14:52:16 2011
+@@ -50,17 +50,12 @@ task 'install', 'install CoffeeScript into /usr/local 
+   base = options.prefix or '/usr/local'
+   lib  = "#{base}/lib/coffee-script"
+   bin  = "#{base}/bin"
+-  node = "~/.node_libraries/coffee-script"
+   console.log   "Installing CoffeeScript to #{lib}"
+-  console.log   "Linking to #{node}"
+-  console.log   "Linking 'coffee' to #{bin}/coffee"
+   exec([
+     "mkdir -p #{lib} #{bin}"
+     "cp -rf bin lib LICENSE README package.json src #{lib}"
+-    "ln -sfn #{lib}/bin/coffee #{bin}/coffee"
+-    "ln -sfn #{lib}/bin/cake #{bin}/cake"
+-    "mkdir -p ~/.node_libraries"
+-    "ln -sfn #{lib}/lib/coffee-script #{node}"
++    "ln -sfn ${TRUEPREFIX}/lib/coffee-script/bin/coffee #{bin}/coffee"
++    "ln -sfn ${TRUEPREFIX}/lib/coffee-script/bin/cake #{bin}/cake"
+   ].join(' && '), (err, stdout, stderr) ->
+     if err then console.log stderr.trim() else log 'done', green
+   )
