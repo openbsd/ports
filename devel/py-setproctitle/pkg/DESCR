@@ -1,0 +1,2 @@
+setproctitle allows a process to change its title (as displayed by
+system tools such as ps and top). 
