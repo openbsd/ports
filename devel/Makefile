@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1004 2011/12/18 13:44:59 mpi Exp $
+# $OpenBSD: Makefile,v 1.1005 2011/12/19 10:42:39 mpi Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -997,6 +997,7 @@
      SUBDIR += py-rcsparse
      SUBDIR += py-ruledispatch
      SUBDIR += py-serial
+     SUBDIR += py-setproctitle
      SUBDIR += py-setuptools
      SUBDIR += py-silc
      SUBDIR += py-simplejson
@@ -1017,6 +1018,7 @@
      SUBDIR += py-virtualenv
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
+     SUBDIR += py-xmlrunner
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting
      SUBDIR += pybugz
