@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/19 22:18:59 sthen Exp $
 
 COMMENT=	web-based MySQL management
 
-V=		0.4.2
-REVISION=	3
-DISTNAME=	chive_$V
+DISTNAME=	chive_1.0.0
 PKGNAME=	${DISTNAME:S/_/-/}
 WRKDIST=	${WRKDIR}/chive
 
@@ -21,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://launchpad.net/chive/${V:C/..$//}/$V/+download/
+MASTER_SITES=	http://launchpad.net/chive/1.0/1.0/+download/
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-pdo_mysql
@@ -33,9 +31,14 @@ PKG_ARCH=	*
 PREFIX=		/var/www
 SUBST_VARS=	INSTDIR
 INSTDIR=	${TRUEPREFIX}/chive
+WRKDIST=	${WRKDIR}/chive
+
+do-extract:
+	mkdir ${WRKDIST}
+	cd ${WRKDIST} && ${TAR} xzf ${FULLDISTDIR}/${EXTRACT_ONLY}
 
 do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR} ${PREFIX}/conf/modules.samples
+	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
 	cd ${WRKSRC} && pax -rw * ${WRKINST}${INSTDIR}
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    -c ${FILESDIR}/chive.conf ${WRKINST}${INSTDIR}/chive.conf.default

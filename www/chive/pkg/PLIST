@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/12 10:50:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/19 22:18:59 sthen Exp $
 @extraunexec rm -rf /var/www/chive/*
 chive/
 @mode 775
 @group www
 chive/assets/
-@mode
+@mode 644
 @group
 chive/chive.conf.default
+@mode
 @sample /var/www/conf/modules.sample/chive.conf
 chive/css/
 chive/css/bg.gif
@@ -105,16 +106,27 @@ chive/images/icons/fugue/24/view.png
 chive/images/icons/fugue/control_small_090.png
 chive/images/icons/fugue/control_small_270.png
 chive/images/language/
+chive/images/language/ar_ar.png
+chive/images/language/cs_cs.png
 chive/images/language/de_de.png
+chive/images/language/el_el.png
+chive/images/language/en.png
 chive/images/language/en_gb.png
 chive/images/language/en_us.png
 chive/images/language/es_es.png
+chive/images/language/fi_fi.png
 chive/images/language/fr_fr.png
+chive/images/language/hu_hu.png
 chive/images/language/it_it.png
+chive/images/language/ja_ja.png
 chive/images/language/nl_nl.png
 chive/images/language/pl_pl.png
 chive/images/language/pt_br.png
+chive/images/language/ro_ro.png
 chive/images/language/ru_ru.png
+chive/images/language/si_si.png
+chive/images/language/tr_tr.png
+chive/images/language/uk_uk.png
 chive/images/loading.gif
 chive/images/loading4.gif
 chive/images/loading5.gif
@@ -357,6 +369,9 @@ chive/protected/messages/es_es/dataTypes.xml
 chive/protected/messages/fr_fr/
 chive/protected/messages/fr_fr/core.xml
 chive/protected/messages/fr_fr/dataTypes.xml
+chive/protected/messages/hu_hu/
+chive/protected/messages/hu_hu/core.xml
+chive/protected/messages/hu_hu/dataTypes.xml
 chive/protected/messages/it_it/
 chive/protected/messages/it_it/core.xml
 chive/protected/messages/it_it/dataTypes.xml
@@ -366,6 +381,12 @@ chive/protected/messages/pl_pl/dataTypes.xml
 chive/protected/messages/pt_br/
 chive/protected/messages/pt_br/core.xml
 chive/protected/messages/pt_br/dataTypes.xml
+chive/protected/messages/ru_ru/
+chive/protected/messages/ru_ru/core.xml
+chive/protected/messages/ru_ru/dataTypes.xml
+chive/protected/messages/uk_uk/
+chive/protected/messages/uk_uk/core.xml
+chive/protected/messages/uk_uk/dataTypes.xml
 chive/protected/models/
 chive/protected/models/BrowsePage.php
 chive/protected/models/CharacterSet.php
@@ -2229,7 +2250,6 @@ chive/yii/yii.php
 chive/yii/yiic
 chive/yii/yiic.bat
 chive/yii/yiic.php
-chive/yii/yiilite.php
 chive/yii/yiit.php
 chive/yii/zii/
 chive/yii/zii/behaviors/
