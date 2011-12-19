@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/19 22:28:59 rpointel Exp $
 
 COMMENT=		source code auditing tool
 
-DISTNAME=		rats-2.1
-REVISION =		0
+DISTNAME=		rats-2.3
 CATEGORIES=     	devel security
 
-HOMEPAGE=		http://www.securesoftware.com/rats/
+HOMEPAGE=		https://www.fortify.com/ssa-elements/threat-intelligence/rats.html
 
 MAINTAINER=		Jason Peel <jsyn@openbsd.org>
 
@@ -17,8 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c expat
 
-MASTER_SITES=		http://www.securesoftware.com/rats/ \
-			${MASTER_SITE_PACKETSTORM:=UNIX/security/}
+MASTER_SITES=		https://www.fortify.com/downloads2/public/
+
+USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu dest
 CONFIGURE_ARGS+=	--libdir=${WRKINST}${PREFIX}/share/rats \

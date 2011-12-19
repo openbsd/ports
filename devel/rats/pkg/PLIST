@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:44:01 espie Exp $
-bin/rats
+@comment $OpenBSD: PLIST,v 1.7 2011/12/19 22:28:59 rpointel Exp $
+@bin bin/rats
 @man man/man1/rats.1
 share/doc/rats/
 share/doc/rats/README
@@ -9,3 +9,4 @@ share/rats/rats-openssl.xml
 share/rats/rats-perl.xml
 share/rats/rats-php.xml
 share/rats/rats-python.xml
+share/rats/rats-ruby.xml
