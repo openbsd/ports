@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugin_npapi_plugin_cpp,v 1.6 2011/12/15 09:47:23 sthen Exp $
+$OpenBSD: patch-plugin_npapi_plugin_cpp,v 1.7 2011/12/19 21:23:24 sthen Exp $
 
 Fix creating world-readable cookies under /tmp with predictable filenames. CVE-2011-4328
 
---- plugin/npapi/plugin.cpp.orig	Thu Dec  8 19:34:53 2011
-+++ plugin/npapi/plugin.cpp	Thu Dec  8 19:34:07 2011
+--- plugin/npapi/plugin.cpp.orig	Fri Mar 18 09:44:30 2011
++++ plugin/npapi/plugin.cpp	Thu Dec 15 05:12:51 2011
 @@ -25,6 +25,9 @@
  #include <boost/scoped_array.hpp>
  #include <boost/algorithm/string/replace.hpp>
@@ -24,7 +24,7 @@ Fix creating world-readable cookies under /tmp with predictable filenames. CVE-2
 +getfdsink(char mksTemplate[])
 +{
 +  int fd, suffix = std::string(mksTemplate).size() - std::string(mksTemplate).find("XXXXXX") - 6;
-+#if (__GLIBC__ >= 2 && __GLIBC_MINOR__ >= 11)
++#ifdef HAVE_MKSTEMPS
 +  fd = mkstemps (mksTemplate, suffix);
 +#else
 +  if (suffix > 0) {
