@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/12/13 09:10:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/19 12:44:37 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
 DISTNAME =	pianobar-2011.12.11
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
