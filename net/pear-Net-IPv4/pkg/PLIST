@@ -1,7 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 00:34:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/19 14:52:21 giovanni Exp $
 @group daemon
 lib/
 lib/php/
 pear/lib/.registry/net_ipv4.reg
 pear/lib/Net/
 pear/lib/Net/IPv4.php
+pear/tests/Net_IPv4/
+pear/tests/Net_IPv4/tests/
+pear/tests/Net_IPv4/tests/AllTests.php
+pear/tests/Net_IPv4/tests/IPv4Test.php
+pear/tests/Net_IPv4/tests/MyIPv4.php

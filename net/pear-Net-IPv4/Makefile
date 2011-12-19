@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/19 14:52:21 giovanni Exp $
 
 COMMENT=	IPv4 address handling tools for PHP
 
-DISTNAME=	Net_IPv4-1.3.0
-REVISION=	1
+DISTNAME=	Net_IPv4-1.3.4
 CATEGORIES=	net
 
 MODULES=	www/pear
