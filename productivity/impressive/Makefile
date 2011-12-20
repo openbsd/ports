@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/13 15:57:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/20 11:25:44 sthen Exp $
 
 COMMENT =		stylish PDF presentation generator
 
 MODPY_EGG_VERSION =	0.10.2
 DISTNAME =		Impressive-${MODPY_EGG_VERSION}
 PKGNAME =		impressive-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		productivity
 HOMEPAGE =		http://impressive.sourceforge.net/
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
-PY_FLAVOR =		python${MODPY_VERSION}
 
 # Set NO_BUILD to prevent python.port.mk from adding Python to
 # BUILD_DEPENDS.
@@ -26,7 +25,7 @@ NO_BUILD =		Yes
 USE_GROFF =		Yes
 RUN_DEPENDS =		graphics/py-opengl \
 			devel/pygame \
-			py-Imaging-*-${PY_FLAVOR}:graphics/py-Imaging,${PY_FLAVOR} \
+			graphics/py-Imaging \
 			textproc/xpdf \
 			devel/xdg-utils
 

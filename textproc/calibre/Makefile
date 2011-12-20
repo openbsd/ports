@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/20 11:25:44 sthen Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=		devel/chmlib \
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
-			py-Imaging-*-python${MODPY_VERSION}:graphics/py-Imaging,python${MODPY_VERSION} \
+			graphics/py-Imaging \
 			net/py-dnspython \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
