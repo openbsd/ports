@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/12/20 11:18:42 sthen Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
 DISTNAME=	directoryassistant-2.0
-REVISION =	7
+REVISION=	8
 CATEGORIES=	databases
 
 HOMEPAGE=	http://olivier.sessink.nl/directoryassistant/
 
 MAINTAINER=	Joerg Zinke <mail@umaxx.net>
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,7 +22,7 @@ MODULES=	lang/python
 PY_FLAVOR=	python${MODPY_VERSION}
 
 RUN_DEPENDS=	x11/py-gtk2 \
-                py-ldap-*-${PY_FLAVOR}:databases/py-ldap,${PY_FLAVOR}
+		databases/py-ldap
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
