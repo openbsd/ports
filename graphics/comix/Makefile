@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/12/20 11:25:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/12/20 11:25:35 sthen Exp $
 
 COMMENT=	gtk2 comic book viewer
 
@@ -19,7 +19,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=comix/}
 
 MODULES=	lang/python \
 		devel/gconf2
-PY_FLAVOR=	python${MODPY_VERSION}
 
 MODGCONF2_LIBDEP= No
 MODGCONF2_SCHEMAS_DIR= comix
