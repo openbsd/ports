@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.2 2009/03/18 20:23:11 landry Exp $
+@comment $OpenBSD: PLIST-tools,v 1.3 2011/12/20 06:56:12 fgsch Exp $
 @conflict xmame+xmess-*
 @conflict xmame-*
 @conflict xmess-*
@@ -7,3 +7,4 @@
 @bin bin/ldresample
 @bin bin/ldverify
 @bin bin/romcmp
+@bin bin/unidasm

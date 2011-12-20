@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/27 12:42:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/20 06:56:12 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -10,8 +10,8 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
 V =			0144
 DISTNAME =		mame${V}s
-PKGNAME-main =		sdlmame-${V:S/0/0./}
-PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}
+PKGNAME-main =		sdlmame-${V:S/0/0./}pl3
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl3
 
 CATEGORIES =		emulators games
 
@@ -23,8 +23,6 @@ PERMIT_PACKAGE_CDROM =		may not sell
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
-
-MODULES =	devel/gettext
 
 WANTLIB =	GL SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
@@ -41,14 +39,19 @@ MASTER_SITES1 = 	http://www.arcade-history.com/dats/
 EXTRACT_SUFX =		.zip
 DIST_SUBDIR =		mame
 
+# PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			${V}u1_diff.zip:0 \
+			${V}u2_diff.zip:0 \
+			${V}u3_diff.zip:0 \
 			mamehistory${V:S/0//}.zip:1
 
-BUILD_DEPENDS = 	archivers/unzip
+MODULES =		devel/gettext
+
+RUN_DEPENDS-main =	fonts/liberation-fonts
 LIB_DEPENDS =		devel/gconf2 \
 			devel/sdl-ttf \
 			x11/gtk+2
-RUN_DEPENDS-main =	fonts/liberation-fonts
 
 MAKE_FLAGS =		OPT_FLAGS='-DINI_PATH="\"${SYSCONFDIR}/mame;\""'
 MAKE_ENV =		ARCH=$(ARCH) CC=$(CC) CFLAGS="$(CFLAGS)" \
@@ -67,14 +70,16 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
+.for v in 1 2 3
+	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
+.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h \
-	    ${WRKDIST}/src/osd/sdl/sdlos_unix.c \
 	    ${WRKDIST}/src/mame/video/mcd212.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/sdlmame
-.for f in chdman jedutil ldresample ldverify romcmp
+.for f in chdman jedutil ldresample ldverify romcmp unidasm
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/sdlmame/keymaps
