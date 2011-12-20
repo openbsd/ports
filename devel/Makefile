@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1005 2011/12/19 10:42:39 mpi Exp $
+# $OpenBSD: Makefile,v 1.1006 2011/12/20 07:00:18 fgsch Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -975,7 +975,6 @@
      SUBDIR += py-modulegraph
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
-     SUBDIR += py-mxDateTime,python2.4
      SUBDIR += py-mxDateTime
      SUBDIR += py-nose
      SUBDIR += py-notify

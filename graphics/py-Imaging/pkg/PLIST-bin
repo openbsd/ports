@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-bin,v 1.3 2011/06/12 08:44:44 rpointel Exp $
-%%python2.7%%
+@comment $OpenBSD: PLIST-bin,v 1.4 2011/12/20 07:03:56 fgsch Exp $
+@pkgpath graphics/py-Imaging,-bin[,python2.5][,python2.6][,python2.7]
 bin/pilconvert
 bin/pildriver
 bin/pilfile

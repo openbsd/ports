@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.python2.7-main,v 1.1 2011/06/12 09:02:32 rpointel Exp $
-@pkgpath databases/py-ldap,-main[,python2.5][,python2.6]

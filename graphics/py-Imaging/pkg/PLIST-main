@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/06/12 08:44:44 rpointel Exp $
-@option no-default-conflict
-@conflict py-Imaging-*-python${MODPY_VERSION}
+@comment $OpenBSD: PLIST-main,v 1.7 2011/12/20 07:03:56 fgsch Exp $
 @pkgpath graphics/py-Imaging
-%%python2.7%%
+@pkgpath graphics/py-Imaging,-main[,python2.5][,python2.6][,python2.7]
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
@@ -119,6 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/MspImagePlugin.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.py
 lib/python${MODPY_VERSION}/site-packages/PIL/OleFileIO.pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/PIL-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PSDraw.pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/PaletteFile.py
