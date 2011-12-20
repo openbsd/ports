@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/20 11:20:41 sthen Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
 MODPY_EGG_VERSION = 2.5.1
 DISTNAME =	pyPgSQL-${MODPY_EGG_VERSION}
 PKGNAME =	py-pgsql-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	databases
 
 HOMEPAGE =	http://pypgsql.sourceforge.net/
@@ -24,7 +24,7 @@ MODULES =	lang/python
 PY_FLAVOR =	python${MODPY_VERSION}
 
 BUILD_DEPENDS =		databases/postgresql
-RUN_DEPENDS =		py-mxDateTime-*-${PY_FLAVOR}:devel/py-mxDateTime,${PY_FLAVOR}
+RUN_DEPENDS =		devel/py-mxDateTime
 LIB_DEPENDS =		databases/postgresql
 REGRESS_DEPENDS =	${RUN_DEPENDS}
 WANTLIB +=		pq>=5 ${MODPY_WANTLIB}
