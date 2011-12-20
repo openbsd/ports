@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2011/12/02 14:36:13 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/12/20 11:14:40 sthen Exp $
 
 COMMENT =	easy to use, graphical editor
 
+DISTNAME =	cooledit-3.17.17
+
 CATEGORIES =	editors
-MASTER_SITES =	${HOMEPAGE}
-HOMEPAGE = 	ftp://ftp.ibiblio.org/pub/Linux/apps/editors/X/cooledit/
-DISTNAME =	cooledit-3.17.14
-REVISION =	6
+
+HOMEPAGE =	ftp://ftp.ibiblio.org/pub/Linux/apps/editors/X/cooledit/
 
 SHARED_LIBS =	Cw	1.0
 
@@ -15,31 +15,30 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 FLAVORS =	python
 FLAVOR ?=
 
-PYTHON_VER =	2.4
-WANTLIB =	X11 Xau Xdmcp c pthread-stubs util xcb
+WANTLIB =	X11 c util xcb
 USE_LIBTOOL =	Yes
 
+MASTER_SITES =	http://fossies.org/linux/misc/
+
 .if ${FLAVOR:Mpython}
-LIB_DEPENDS +=	python->=${PYTHON_VER},<2.5:lang/python/${PYTHON_VER}
-CONFIGURE_ENV +=PYTHON_VER=${PYTHON_VER} LOCALBASE=${LOCALBASE}
-WANTLIB +=	pthread m python${PYTHON_VER}
+MODULES +=	lang/python
+LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
+CONFIGURE_ENV += PYTHON_VER=${MODPY_VERSION} LOCALBASE=${LOCALBASE}
+WANTLIB +=	pthread m ${MODPY_WANTLIB}
 .else
 CONFIGURE_ENV +=NOPYTHON=Yes
 .endif
 
-MODULES =	devel/gettext
+MODULES +=	devel/gettext
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV += XTERM_CMD=xterm LDFLAGS="-L${LOCALBASE}/lib"
 
-# XXX temporary until we have full internationalization support
-#CONFIGURE_ENV +=		ac_cv_header_wchar_h=no
-
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 CONFIGURE_ARGS += --enable-static --disable-mail-author
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes

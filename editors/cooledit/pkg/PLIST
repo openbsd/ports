@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/05/16 20:26:51 alek Exp $
-bin/cooledit
+@comment $OpenBSD: PLIST,v 1.7 2011/12/20 11:14:40 sthen Exp $
+@bin bin/cooledit
 bin/cooledit-gdb
-bin/coolman
+@bin bin/coolman
 bin/coolproject
-bin/smalledit
+@bin bin/smalledit
 lib/libCw.a
 lib/libCw.la
 @man man/man1/cooledit.1
