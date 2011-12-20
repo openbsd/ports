@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/12/20 07:02:19 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2011/12/20 11:39:23 sthen Exp $
 @pkgpath databases/py-ldap
-@pkgpath databases/py-ldap,-main[,python2.5][,python2.6][,python2.7]
+@pkgpath databases/py-ldap,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/_ldap.so
 lib/python${MODPY_VERSION}/site-packages/dsml.py
 lib/python${MODPY_VERSION}/site-packages/dsml.pyc

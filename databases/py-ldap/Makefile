@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/12/20 07:02:19 fgsch Exp $
+# $OpenBSD: Makefile,v 1.34 2011/12/20 11:39:23 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,9 +8,9 @@ COMMENT-examples=	example programs for the LDAP client API for Python
 V=			2.3.1
 DISTNAME=		python-ldap-${V}
 PKGNAME-main=		py-ldap-${V}
-REVISION-main =		10
+REVISION-main =		11
 FULLPKGNAME-examples=	py-ldap-examples-${V}
-REVISION-examples =	9
+REVISION-examples =	10
 FULLPKGPATH-examples=	databases/py-ldap,-examples
 
 CATEGORIES=		databases
@@ -45,6 +45,6 @@ post-install:
 do-regress: fake
 	@cd ${WRKSRC}/Tests/Lib && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
-		${MODPY_BIN} ./test_ldapurl.py 
+		${MODPY_BIN} ./test_ldapurl.py
 
 .include <bsd.port.mk>
