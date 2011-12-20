@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/20 19:03:58 jasper Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.10.src
 PKGNAME=		${DISTNAME:S/.src//g}
-REVISION =		3
+REVISION =		4
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/

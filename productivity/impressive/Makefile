@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/12/20 11:25:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/20 19:03:58 jasper Exp $
 
 COMMENT =		stylish PDF presentation generator
 
 MODPY_EGG_VERSION =	0.10.2
 DISTNAME =		Impressive-${MODPY_EGG_VERSION}
 PKGNAME =		impressive-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		productivity
 HOMEPAGE =		http://impressive.sourceforge.net/
