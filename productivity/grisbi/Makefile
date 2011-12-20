@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/12/20 09:32:44 jasper Exp $
 
 COMMENT=	personal accounting application
 SHARED_ONLY =	Yes
 
 DISTNAME=	grisbi-0.8.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	productivity x11
 
@@ -30,7 +30,8 @@ WANTLIB += pthread pthread-stubs stdc++ xcb z pcre crypto gdk_pixbuf-2.0
 WANTLIB += xml2 gdk-x11-2.0 gtk-x11-2.0 ofx GL Xxf86vm drm gthread-2.0
 WANTLIB += xcb-render xcb-shm ffi
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2 \
