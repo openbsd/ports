@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.346 2011/12/13 14:07:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.347 2011/12/20 13:04:07 sthen Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -262,7 +262,6 @@
      SUBDIR += pilot_makedoc
      SUBDIR += pinfo
      SUBDIR += py-Chart
-     SUBDIR += py-ElementTree
      SUBDIR += py-HappyDoc
      SUBDIR += py-MarkupSafe
      SUBDIR += py-chardet
