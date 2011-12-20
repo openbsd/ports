@@ -1,28 +1,10 @@
-$OpenBSD: patch-src_connections_c,v 1.18 2011/12/03 22:26:08 sthen Exp $
---- src/connections.c.orig	Sun Apr 24 11:55:46 2011
-+++ src/connections.c	Fri Dec  2 04:40:01 2011
-@@ -223,6 +223,12 @@ static int connection_handle_read_ssl(server *srv, con
- 
- 		len = SSL_read(con->ssl, b->ptr + read_offset, toread);
- 
-+		if (con->renegotiations > 1 && con->conf.ssl_disable_client_renegotiation) {
-+			connection_set_state(srv, con, CON_STATE_ERROR);
-+			log_error_write(srv, __FILE__, __LINE__, "s", "SSL: renegotiation initiated by client");
-+			return -1;
-+		}
-+
- 		if (len > 0) {
- 			if (b->used > 0) b->used--;
- 			b->used += len;
-@@ -445,6 +451,7 @@ static int connection_handle_write_prepare(server *srv
- 		default:
- 			switch(con->http_status) {
- 			case 400: /* bad request */
-+			case 401: /* authorization required */
- 			case 414: /* overload request header */
- 			case 505: /* unknown protocol */
- 			case 207: /* this was webdav */
-@@ -560,8 +567,10 @@ static int connection_handle_write_prepare(server *srv
+$OpenBSD: patch-src_connections_c,v 1.19 2011/12/20 22:27:28 sthen Exp $
+
+let HEAD for 0-byte files return the Content-Length
+
+--- src/connections.c.orig	Wed Nov 30 12:42:45 2011
++++ src/connections.c	Tue Dec 20 16:33:10 2011
+@@ -567,8 +567,10 @@ static int connection_handle_write_prepare(server *srv
  				if (NULL != (ds = (data_string*) array_get_element(con->response.headers, "Content-Length"))) {
  					buffer_reset(ds->value); /* Headers with empty values are ignored for output */
  				}
@@ -35,48 +17,3 @@ $OpenBSD: patch-src_connections_c,v 1.18 2011/12/03 22:26:08 sthen Exp $
  				 * a content. Browsers are waiting for a Content otherwise
  				 */
  				buffer_copy_off_t(srv->tmp_buf, qlen);
-@@ -617,8 +626,9 @@ static int connection_handle_write_prepare(server *srv
- }
- 
- static int connection_handle_write(server *srv, connection *con) {
--	switch(network_write_chunkqueue(srv, con, con->write_queue)) {
-+	switch(network_write_chunkqueue(srv, con, con->write_queue, MAX_WRITE_LIMIT)) {
- 	case 0:
-+		con->write_request_ts = srv->cur_ts;
- 		if (con->file_finished) {
- 			connection_set_state(srv, con, CON_STATE_RESPONSE_END);
- 			joblist_append(srv, con);
-@@ -635,6 +645,7 @@ static int connection_handle_write(server *srv, connec
- 		joblist_append(srv, con);
- 		break;
- 	case 1:
-+		con->write_request_ts = srv->cur_ts;
- 		con->is_writable = 0;
- 
- 		/* not finished yet -> WRITE */
-@@ -1251,8 +1262,6 @@ static handler_t connection_handle_fdevent(server *srv
- 			log_error_write(srv, __FILE__, __LINE__, "ds",
- 					con->fd,
- 					"handle write failed.");
--		} else if (con->state == CON_STATE_WRITE) {
--			con->write_request_ts = srv->cur_ts;
- 		}
- 	}
- 
-@@ -1352,6 +1361,7 @@ connection *connection_accept(server *srv, server_sock
- 				return NULL;
- 			}
- 
-+			con->renegotiations = 0;
- #ifndef OPENSSL_NO_TLSEXT
- 			SSL_set_app_data(con->ssl, con);
- #endif
-@@ -1667,8 +1677,6 @@ int connection_state_machine(server *srv, connection *
- 							con->fd,
- 							"handle write failed.");
- 					connection_set_state(srv, con, CON_STATE_ERROR);
--				} else if (con->state == CON_STATE_WRITE) {
--					con->write_request_ts = srv->cur_ts;
- 				}
- 			}
- 
