@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.8 2011/04/28 13:08:33 ajacoutot Exp $
---- src/ck-sysdeps-openbsd.c.orig	Fri Sep 17 15:18:27 2010
-+++ src/ck-sysdeps-openbsd.c	Fri Sep 17 15:20:56 2010
-@@ -0,0 +1,430 @@
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.9 2011/12/20 19:24:38 ajacoutot Exp $
+--- src/ck-sysdeps-openbsd.c.orig	Tue Dec 20 20:17:24 2011
++++ src/ck-sysdeps-openbsd.c	Tue Dec 20 20:18:44 2011
+@@ -0,0 +1,425 @@
 +/* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
 + *
 + * Copyright (C) 2006 William Jon McCann <mccann@jhu.edu>
@@ -98,7 +98,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.8 2011/04/28 13:08:33 ajacoutot Exp
 +        int exit_signal;                /* stat            might not be SIGCHLD */
 +        int processor;                  /* stat            current (or most recent?) CPU */
 +        uintptr_t penv;                 /* stat            address of initial environment vector */
-+        char tty_text[16];              /* stat            device name */
++        char tty_text[11];              /* stat            device name */
 +
 +};
 +
@@ -130,23 +130,18 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.8 2011/04/28 13:08:33 ajacoutot Exp
 +get_kinfo_proc (pid_t pid,
 +                struct kinfo_proc *p)
 +{
-+	int name[6];
-+	u_int namelen;
-+	size_t sz;
++        size_t len;
 +
-+	sz = sizeof(*p);
-+	namelen = 0;
-+	name[namelen++] = CTL_KERN;
-+	name[namelen++] = KERN_PROC;
-+	name[namelen++] = KERN_PROC_PID;
-+	name[namelen++] = pid;
-+	name[namelen++] = sz;
-+	name[namelen++] = 1;
++        int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
++                      sizeof(struct kinfo_proc), 0 };
 +
-+        if (sysctl (name, namelen, p, &sz, NULL, 0) == -1) {
-+		perror("sysctl kern.proc.pid");
-+                return FALSE;
-+        }
++        if (sysctl(mib, nitems(mib), NULL, &len, NULL, 0) < 0)
++            return FALSE;
++
++        mib[5] = (len / sizeof(struct kinfo_proc));
++
++        if (sysctl(mib, nitems(mib), p, &len, NULL, 0) < 0)
++            return FALSE;
 +
 +        return TRUE;
 +}
