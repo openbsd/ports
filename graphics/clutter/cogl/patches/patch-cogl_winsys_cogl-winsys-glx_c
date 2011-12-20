@@ -1,0 +1,12 @@
+$OpenBSD: patch-cogl_winsys_cogl-winsys-glx_c,v 1.1 2011/12/20 15:00:56 ajacoutot Exp $
+--- cogl/winsys/cogl-winsys-glx.c.orig	Tue Dec 20 15:58:07 2011
++++ cogl/winsys/cogl-winsys-glx.c	Tue Dec 20 15:58:16 2011
+@@ -429,7 +429,7 @@ update_winsys_features (CoglContext *context, GError *
+   if (!glx_renderer->pf_glXWaitVideoSync)
+     {
+       if (glx_renderer->dri_fd < 0)
+-        glx_renderer->dri_fd = open("/dev/dri/card0", O_RDWR);
++        glx_renderer->dri_fd = open("/dev/drm0", O_RDWR);
+       if (glx_renderer->dri_fd >= 0)
+         COGL_FLAGS_SET (context->winsys_features,
+                         COGL_WINSYS_FEATURE_VBLANK_WAIT,
