@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2011/12/20 07:03:56 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/12/20 11:37:10 sthen Exp $
 @pkgpath graphics/py-Imaging
-@pkgpath graphics/py-Imaging,-main[,python2.5][,python2.6][,python2.7]
+@pkgpath graphics/py-Imaging,-main[,python2.4][,python2.5][,python2.6][,python2.7]
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
