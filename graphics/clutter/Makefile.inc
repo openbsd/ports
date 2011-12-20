@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2011/04/07 12:15:44 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2011/12/20 14:01:18 ajacoutot Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -13,7 +13,6 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=  Yes
 
 MASTER_SITES_CLUTTER?=	${HOMEPAGE}/sources/
-MASTER_SITES+=		http://distfiles.nl/clutter/
 DIST_SUBDIR=		clutter
 
 USE_GMAKE?=		Yes
