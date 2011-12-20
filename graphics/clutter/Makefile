@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/28 07:52:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/20 14:01:59 ajacoutot Exp $
 
     SUBDIR =
+    SUBDIR += cogl
     SUBDIR += core
     SUBDIR += clutter-box2d
     SUBDIR += clutter-gst
