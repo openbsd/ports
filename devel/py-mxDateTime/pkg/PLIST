@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/12/20 07:00:18 fgsch Exp $
-@pkgpath devel/py-mxDateTime[,python2.5][,python2.6][,python2.7]
+@comment $OpenBSD: PLIST,v 1.18 2011/12/20 11:33:56 sthen Exp $
+@pkgpath devel/py-mxDateTime[,python2.4][,python2.5][,python2.6][,python2.7]
 lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/mx/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
