@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.60 2011/12/01 10:26:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.61 2011/12/20 22:41:16 sthen Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -70,6 +70,7 @@ libexec/postfix/postmulti-script
 @man man/man5/header_checks.5
 @man man/man5/ldap_table.5
 @man man/man5/master.5
+@man man/man5/memcache_table.5
 @man man/man5/mysql_table.5
 @man man/man5/nisplus_table.5
 @man man/man5/pcre_table.5
@@ -210,6 +211,7 @@ share/doc/postfix/html/local.8.html
 share/doc/postfix/html/mailq.1.html
 share/doc/postfix/html/master.5.html
 share/doc/postfix/html/master.8.html
+share/doc/postfix/html/memcache_table.5.html
 share/doc/postfix/html/mysql_table.5.html
 share/doc/postfix/html/newaliases.1.html
 share/doc/postfix/html/nisplus_table.5.html
@@ -282,6 +284,7 @@ share/doc/postfix/readme/LDAP_README
 share/doc/postfix/readme/LINUX_README
 share/doc/postfix/readme/LOCAL_RECIPIENT_README
 share/doc/postfix/readme/MAILDROP_README
+share/doc/postfix/readme/MEMCACHE_README
 share/doc/postfix/readme/MILTER_README
 share/doc/postfix/readme/MULTI_INSTANCE_README
 share/doc/postfix/readme/MYSQL_README
