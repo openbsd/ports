@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.88 2011/12/08 08:17:28 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.89 2011/12/20 13:08:06 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -71,10 +71,8 @@ LIB_DEPENDS-main =	archivers/bzip2
 RUN_DEPENDS-main =
 WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
 			ncursesw stdc++ expat ossaudio bz2
-.if ${VERSION} != "2.4"
 LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
-.endif
 
 LIB_DEPENDS-bsddb =	lang/python/${VERSION},-main
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
@@ -106,7 +104,7 @@ PKG_ARGS+=	-Dmm=1
 .endif
 
 # The ctypes module depends of devel/libffi, not supported on all platforms
-.if ${VERSION} == "2.4" || ${MACHINE_ARCH:Marm}
+.if ${MACHINE_ARCH:Marm}
 PKG_ARGS+=	-Dctypes=0
 .else
 PKG_ARGS+=	-Dctypes=1
