@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/11/16 13:29:14 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/12/20 15:21:30 giovanni Exp $
 @conflict php5-pear-*
 @conflict php4-pear-*
 @pkgpath www/php5/core,-pear
@@ -23,6 +23,7 @@ pear/lib/.channels/pear.php.net.reg
 pear/lib/.channels/pecl.php.net.reg
 pear/lib/.depdb
 pear/lib/.depdblock
+pear/lib/.lock
 pear/lib/.registry/
 pear/lib/.registry/.channel.__uri/
 pear/lib/.registry/.channel.doc.php.net/

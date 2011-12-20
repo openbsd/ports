@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/20 15:21:30 giovanni Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -9,7 +9,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	pear-utils-${VERSION}
 CATEGORIES=	www devel
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	http://blade2k.humppa.hu/
@@ -58,5 +58,6 @@ do-install:
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	@touch ${WRKINST}${PREFIX-main}/pear/.lock
+	@touch ${WRKINST}${PREFIX-main}/pear/lib/.lock
 
 .include <bsd.port.mk>
