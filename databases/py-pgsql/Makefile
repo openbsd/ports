@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/20 11:20:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/20 11:26:24 sthen Exp $
 
 COMMENT =	Python DB-API 2.0 compliant interface to PostgreSQL
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pypgsql/}
 
 MODULES =	lang/python
-PY_FLAVOR =	python${MODPY_VERSION}
 
 BUILD_DEPENDS =		databases/postgresql
 RUN_DEPENDS =		devel/py-mxDateTime

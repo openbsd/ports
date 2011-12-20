@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/12/20 11:18:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/20 11:26:24 sthen Exp $
 
 COMMENT=	small application for managing a LDAP address book
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	lang/python
-PY_FLAVOR=	python${MODPY_VERSION}
 
 RUN_DEPENDS=	x11/py-gtk2 \
 		databases/py-ldap

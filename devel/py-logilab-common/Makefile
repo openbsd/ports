@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/20 11:21:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/12/20 11:26:24 sthen Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	ftp://ftp.logilab.fr/pub/common/
 
 MODULES=	lang/python
-PY_FLAVOR=	python${MODPY_VERSION}
 
 RUN_DEPENDS=	devel/py-mxDateTime
 REGRESS_DEPENDS=${RUN_DEPENDS}
