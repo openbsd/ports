@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/21 19:27:23 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.erb
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/systemu.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/
+${GEM_LIB}/gems/${DISTNAME}/samples/a.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/b.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/c.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/d.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/e.rb
+${GEM_LIB}/gems/${DISTNAME}/samples/f.rb
+${GEM_LIB}/gems/${DISTNAME}/systemu.gemspec
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
