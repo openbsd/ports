@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/29 09:13:01 pea Exp $
+# $OpenBSD: Makefile,v 1.64 2011/12/21 14:36:15 pea Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
@@ -20,7 +20,7 @@ SHARED_LIBS += sql             2.22 # 2.25
 
 CATEGORIES=	security
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.cyrusimap.org/
 

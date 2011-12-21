@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/09/29 09:13:01 pea Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/12/21 14:36:15 pea Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
 include/sasl/
@@ -126,8 +126,8 @@ share/doc/sasl2/testing.txt
 share/doc/sasl2/upgrading.html
 share/doc/sasl2/windows.html
 share/examples/sasl2/
+@sample /var/sasl2/
+@rcscript ${RCDIR}/saslauthd
 %%ldap%%
 %%sql%%
 %%SHARED%%
-@sample /var/sasl2/
-@rcscript ${RCDIR}/saslauthd
