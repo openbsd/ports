@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_client_cfg_dist,v 1.1 2011/12/21 19:34:28 jasper Exp $
+--- etc/client.cfg.dist.orig	Fri Dec 16 09:26:51 2011
++++ etc/client.cfg.dist	Fri Dec 16 09:27:45 2011
+@@ -1,7 +1,7 @@
+ topicprefix = /topic/
+ main_collective = mcollective
+ collectives = mcollective
+-libdir = /usr/libexec/mcollective
++libdir = ${TRUEPREFIX}/share/mcollective/plugins
+ logfile = /dev/null
+ loglevel = info
+ 
