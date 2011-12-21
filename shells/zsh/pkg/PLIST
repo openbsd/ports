@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2011/09/27 13:30:24 pea Exp $
+@comment $OpenBSD: PLIST,v 1.34 2011/12/21 15:01:56 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -34,6 +34,7 @@ share/zsh/${V}/functions/_aap
 share/zsh/${V}/functions/_acpi
 share/zsh/${V}/functions/_acpitool
 share/zsh/${V}/functions/_acroread
+share/zsh/${V}/functions/_adb
 share/zsh/${V}/functions/_alias
 share/zsh/${V}/functions/_aliases
 share/zsh/${V}/functions/_all_labels
@@ -119,6 +120,7 @@ share/zsh/${V}/functions/_cowsay
 share/zsh/${V}/functions/_cp
 share/zsh/${V}/functions/_cpio
 share/zsh/${V}/functions/_cplay
+share/zsh/${V}/functions/_cryptsetup
 share/zsh/${V}/functions/_cssh
 share/zsh/${V}/functions/_csup
 share/zsh/${V}/functions/_ctags_tags
@@ -312,6 +314,7 @@ share/zsh/${V}/functions/_links
 share/zsh/${V}/functions/_lintian
 share/zsh/${V}/functions/_list
 share/zsh/${V}/functions/_list_files
+share/zsh/${V}/functions/_ln
 share/zsh/${V}/functions/_loadkeys
 share/zsh/${V}/functions/_locales
 share/zsh/${V}/functions/_locate
@@ -384,7 +387,9 @@ share/zsh/${V}/functions/_newsgroups
 share/zsh/${V}/functions/_next_label
 share/zsh/${V}/functions/_next_tags
 share/zsh/${V}/functions/_nice
+share/zsh/${V}/functions/_nm
 share/zsh/${V}/functions/_nmap
+share/zsh/${V}/functions/_nmcli
 share/zsh/${V}/functions/_normal
 share/zsh/${V}/functions/_nothing
 share/zsh/${V}/functions/_notmuch
@@ -418,6 +423,7 @@ share/zsh/${V}/functions/_perldoc
 share/zsh/${V}/functions/_pfctl
 share/zsh/${V}/functions/_pfexec
 share/zsh/${V}/functions/_pgrep
+@comment share/zsh/${V}/functions/_pgrep.orig
 share/zsh/${V}/functions/_php
 share/zsh/${V}/functions/_physical_volumes
 share/zsh/${V}/functions/_pick_variant
@@ -491,6 +497,7 @@ share/zsh/${V}/functions/_samba
 share/zsh/${V}/functions/_savecore
 share/zsh/${V}/functions/_sccs
 share/zsh/${V}/functions/_sched
+share/zsh/${V}/functions/_schedtool
 share/zsh/${V}/functions/_schroot
 share/zsh/${V}/functions/_screen
 share/zsh/${V}/functions/_sed
@@ -538,6 +545,7 @@ share/zsh/${V}/functions/_svcs
 share/zsh/${V}/functions/_svcs_fmri
 share/zsh/${V}/functions/_svn-buildpackage
 share/zsh/${V}/functions/_sysctl
+share/zsh/${V}/functions/_systemctl
 share/zsh/${V}/functions/_tags
 share/zsh/${V}/functions/_tar
 share/zsh/${V}/functions/_tar_archive
@@ -568,8 +576,10 @@ share/zsh/${V}/functions/_tpb
 share/zsh/${V}/functions/_tpconfig
 share/zsh/${V}/functions/_tracepath
 share/zsh/${V}/functions/_trap
+share/zsh/${V}/functions/_tree
 share/zsh/${V}/functions/_ttyctl
 share/zsh/${V}/functions/_tune2fs
+share/zsh/${V}/functions/_twidge
 share/zsh/${V}/functions/_twisted
 share/zsh/${V}/functions/_typeset
 share/zsh/${V}/functions/_ulimit
@@ -710,7 +720,6 @@ share/zsh/${V}/functions/colors
 share/zsh/${V}/functions/compaudit
 share/zsh/${V}/functions/compdump
 share/zsh/${V}/functions/compinit
-@comment share/zsh/${V}/functions/compinit.orig
 share/zsh/${V}/functions/compinstall
 share/zsh/${V}/functions/copy-earlier-word
 share/zsh/${V}/functions/cycle-completion-positions
@@ -738,6 +747,7 @@ share/zsh/${V}/functions/match-word-context
 share/zsh/${V}/functions/match-words-by-style
 share/zsh/${V}/functions/mere
 share/zsh/${V}/functions/modify-current-argument
+share/zsh/${V}/functions/move-line-in-buffer
 share/zsh/${V}/functions/narrow-to-region
 share/zsh/${V}/functions/narrow-to-region-invisible
 share/zsh/${V}/functions/nslookup
@@ -803,6 +813,7 @@ share/zsh/${V}/functions/zkbd
 share/zsh/${V}/functions/zmathfuncdef
 share/zsh/${V}/functions/zmv
 share/zsh/${V}/functions/zrecompile
+share/zsh/${V}/functions/zsh-mime-contexts
 share/zsh/${V}/functions/zsh-mime-handler
 share/zsh/${V}/functions/zsh-mime-setup
 share/zsh/${V}/functions/zsh_directory_name_cdr
