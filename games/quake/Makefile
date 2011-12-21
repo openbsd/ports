@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/12/13 12:58:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/12/21 13:23:44 jasper Exp $
 
 COMMENT-main =		Quake/QuakeWorld client
 COMMENT-libs =		Quake common libs
@@ -7,13 +7,12 @@ COMMENT-server =	QuakeWorld server
 # .so.1.0
 SOMAJOR =		0
 SOMINOR =		0
-V =			0.5.99beta2
+V =			0.6.0
 DISTNAME =		quakeforge-$V
 PKGNAME-main =		quake-$V
 PKGNAME-libs =		quake-libs-$V
 FULLPKGNAME-server =	quakeworld-server-$V
 FULLPKGPATH-server =	games/quake,-server
-REVISION-main = 	0
 EPOCH-main =		0
 EPOCH-libs =		0
 EPOCH-server =		1
