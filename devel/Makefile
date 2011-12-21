@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1006 2011/12/20 07:00:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.1007 2011/12/21 19:28:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1110,6 +1110,7 @@
      SUBDIR += ruby-subset_sum
      SUBDIR += ruby-subset_sum,ruby19
      SUBDIR += ruby-systemtimer
+     SUBDIR += ruby-systemu
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
