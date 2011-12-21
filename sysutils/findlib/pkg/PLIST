@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/11 21:31:39 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/12/21 21:32:37 avsm Exp $
 @bin bin/ocamlfind
 bin/safe_camlp4
 lib/ocaml/
@@ -20,6 +20,7 @@ lib/ocaml/site-lib/findlib/findlib.mli
 lib/ocaml/site-lib/findlib/findlib_top.cma
 lib/ocaml/site-lib/findlib/fl_metascanner.cmi
 lib/ocaml/site-lib/findlib/fl_metascanner.mli
+lib/ocaml/site-lib/findlib/fl_metatoken.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.cmi
 lib/ocaml/site-lib/findlib/fl_package_base.mli
 lib/ocaml/site-lib/findlib/make_wizard
@@ -37,6 +38,8 @@ lib/ocaml/site-lib/num-top/num_top.cma
 lib/ocaml/site-lib/num-top/num_top.cmi
 lib/ocaml/site-lib/num-top/num_top_printers.cmi
 lib/ocaml/site-lib/num/META
+lib/ocaml/site-lib/ocamlbuild/
+lib/ocaml/site-lib/ocamlbuild/META
 lib/ocaml/site-lib/stdlib/
 lib/ocaml/site-lib/stdlib/META
 lib/ocaml/site-lib/str/
