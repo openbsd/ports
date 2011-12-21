@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/12/03 18:55:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/12/21 15:54:53 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -48,6 +48,7 @@ include/rhythmbox/shell/rb-track-transfer-queue.h
 include/rhythmbox/sources/
 include/rhythmbox/sources/rb-auto-playlist-source.h
 include/rhythmbox/sources/rb-browser-source.h
+include/rhythmbox/sources/rb-device-source.h
 include/rhythmbox/sources/rb-display-page-group.h
 include/rhythmbox/sources/rb-display-page-model.h
 include/rhythmbox/sources/rb-display-page-tree.h
@@ -55,12 +56,12 @@ include/rhythmbox/sources/rb-display-page.h
 include/rhythmbox/sources/rb-media-player-source.h
 include/rhythmbox/sources/rb-playlist-source.h
 include/rhythmbox/sources/rb-playlist-xml.h
-include/rhythmbox/sources/rb-removable-media-source.h
 include/rhythmbox/sources/rb-source-search-basic.h
 include/rhythmbox/sources/rb-source-search.h
 include/rhythmbox/sources/rb-source.h
 include/rhythmbox/sources/rb-static-playlist-source.h
 include/rhythmbox/sources/rb-streaming-source.h
+include/rhythmbox/sources/rb-transfer-target.h
 include/rhythmbox/widgets/
 include/rhythmbox/widgets/rb-alert-dialog.h
 include/rhythmbox/widgets/rb-cell-renderer-pixbuf.h
@@ -72,6 +73,7 @@ include/rhythmbox/widgets/rb-property-view.h
 include/rhythmbox/widgets/rb-rating.h
 include/rhythmbox/widgets/rb-segmented-bar.h
 include/rhythmbox/widgets/rb-song-info.h
+include/rhythmbox/widgets/rb-source-toolbar.h
 include/rhythmbox/widgets/rb-uri-dialog.h
 lib/girepository-1.0/MPID-3.0.typelib
 lib/girepository-1.0/RB-3.0.typelib
@@ -81,28 +83,27 @@ lib/pkgconfig/rhythmbox.pc
 lib/rhythmbox/
 lib/rhythmbox/plugins/
 lib/rhythmbox/plugins/artdisplay/
-lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.py
-lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyc
-lib/rhythmbox/plugins/artdisplay/CoverArtDatabase.pyo
-lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/EmbeddedCoverArtSearch.pyo
-lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/LastFMCoverArtSearch.pyo
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/LocalCoverArtSearch.pyo
-lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/MusicBrainzCoverArtSearch.pyo
-lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.py
-lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyc
-lib/rhythmbox/plugins/artdisplay/PodcastCoverArtSearch.pyo
 lib/rhythmbox/plugins/artdisplay/artdisplay.plugin
 lib/rhythmbox/plugins/artdisplay/artdisplay.py
 lib/rhythmbox/plugins/artdisplay/artdisplay.pyc
 lib/rhythmbox/plugins/artdisplay/artdisplay.pyo
+lib/rhythmbox/plugins/artsearch/
+lib/rhythmbox/plugins/artsearch/artsearch.plugin
+lib/rhythmbox/plugins/artsearch/artsearch.py
+lib/rhythmbox/plugins/artsearch/artsearch.pyc
+lib/rhythmbox/plugins/artsearch/artsearch.pyo
+lib/rhythmbox/plugins/artsearch/lastfm.py
+lib/rhythmbox/plugins/artsearch/lastfm.pyc
+lib/rhythmbox/plugins/artsearch/lastfm.pyo
+lib/rhythmbox/plugins/artsearch/local.py
+lib/rhythmbox/plugins/artsearch/local.pyc
+lib/rhythmbox/plugins/artsearch/local.pyo
+lib/rhythmbox/plugins/artsearch/musicbrainz.py
+lib/rhythmbox/plugins/artsearch/musicbrainz.pyc
+lib/rhythmbox/plugins/artsearch/musicbrainz.pyo
+lib/rhythmbox/plugins/artsearch/oldcache.py
+lib/rhythmbox/plugins/artsearch/oldcache.pyc
+lib/rhythmbox/plugins/artsearch/oldcache.pyo
 lib/rhythmbox/plugins/audioscrobbler/
 lib/rhythmbox/plugins/audioscrobbler/audioscrobbler.plugin
 @comment lib/rhythmbox/plugins/audioscrobbler/libaudioscrobbler.la
@@ -158,12 +159,6 @@ lib/rhythmbox/plugins/lyrics/AstrawebParser.pyo
 lib/rhythmbox/plugins/lyrics/DarkLyricsParser.py
 lib/rhythmbox/plugins/lyrics/DarkLyricsParser.pyc
 lib/rhythmbox/plugins/lyrics/DarkLyricsParser.pyo
-lib/rhythmbox/plugins/lyrics/LeoslyricsParser.py
-lib/rhythmbox/plugins/lyrics/LeoslyricsParser.pyc
-lib/rhythmbox/plugins/lyrics/LeoslyricsParser.pyo
-lib/rhythmbox/plugins/lyrics/LyrcParser.py
-lib/rhythmbox/plugins/lyrics/LyrcParser.pyc
-lib/rhythmbox/plugins/lyrics/LyrcParser.pyo
 lib/rhythmbox/plugins/lyrics/LyricWikiParser.py
 lib/rhythmbox/plugins/lyrics/LyricWikiParser.pyc
 lib/rhythmbox/plugins/lyrics/LyricWikiParser.pyo
@@ -703,9 +698,6 @@ share/rhythmbox/icons/hicolor/22x22/places/library-internet-radio.png
 share/rhythmbox/icons/hicolor/22x22/places/library-podcast.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist.png
-share/rhythmbox/icons/hicolor/24x24/
-share/rhythmbox/icons/hicolor/24x24/places/
-share/rhythmbox/icons/hicolor/24x24/places/magnatune.png
 share/rhythmbox/icons/hicolor/32x32/
 share/rhythmbox/icons/hicolor/32x32/actions/
 share/rhythmbox/icons/hicolor/32x32/actions/audio-cd-duplicate.png
@@ -737,7 +729,6 @@ share/rhythmbox/playlist-save.ui
 share/rhythmbox/playlists.xml
 share/rhythmbox/plugins/
 share/rhythmbox/plugins/artdisplay/
-share/rhythmbox/plugins/artdisplay/lastfm_red_small.png
 share/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 share/rhythmbox/plugins/audioscrobbler/
 share/rhythmbox/plugins/audioscrobbler/Last.fm-icon.png

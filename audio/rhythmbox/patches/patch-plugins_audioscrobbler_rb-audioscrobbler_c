@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_audioscrobbler_rb-audioscrobbler_c,v 1.11 2011/12/21 15:54:53 ajacoutot Exp $
+
+warning: format '%lu' expects type 'long unsigned int', but argument 6 has type 'time_t'
+
+--- plugins/audioscrobbler/rb-audioscrobbler.c.orig	Wed Dec 21 16:17:25 2011
++++ plugins/audioscrobbler/rb-audioscrobbler.c	Wed Dec 21 16:16:53 2011
+@@ -829,7 +829,7 @@ rb_audioscrobbler_should_handshake (RBAudioscrobbler *
+ 	}
+ 
+ 	if (time (NULL) < audioscrobbler->priv->handshake_next) {
+-		rb_debug ("Too soon; time=%lu, handshake_next=%lu",
++		rb_debug ("Too soon; time=%d, handshake_next=%d",
+ 			  time (NULL),
+ 			  audioscrobbler->priv->handshake_next);
+ 		return FALSE;
