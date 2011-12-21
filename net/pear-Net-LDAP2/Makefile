@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/21 16:25:05 giovanni Exp $
 
 COMMENT=	PHP classes for LDAP, based on Net::LDAP
 
-DISTNAME=	Net_LDAP2-2.0.11
-REVISION=	3
+DISTNAME=	Net_LDAP2-2.0.12
 CATEGORIES=	net
 
 MODULES=	lang/php www/pear
