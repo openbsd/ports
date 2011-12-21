@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/18 13:37:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/21 09:56:54 sthen Exp $
 @bin bin/node
 bin/node-waf
 bin/npm
@@ -85,6 +85,7 @@ lib/node_modules/
 lib/node_modules/npm/
 lib/node_modules/npm/.gitmodules
 lib/node_modules/npm/.npmignore
+lib/node_modules/npm/.travis.yml
 lib/node_modules/npm/AUTHORS
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
@@ -356,6 +357,7 @@ lib/node_modules/npm/lib/star.js
 lib/node_modules/npm/lib/start.js
 lib/node_modules/npm/lib/stop.js
 lib/node_modules/npm/lib/submodule.js
+lib/node_modules/npm/lib/substack.js
 lib/node_modules/npm/lib/tag.js
 lib/node_modules/npm/lib/test.js
 lib/node_modules/npm/lib/unbuild.js
@@ -397,7 +399,6 @@ lib/node_modules/npm/lib/utils/npm-registry-client/tag.js
 lib/node_modules/npm/lib/utils/npm-registry-client/unpublish.js
 lib/node_modules/npm/lib/utils/output.js
 lib/node_modules/npm/lib/utils/promise-chain.js
-lib/node_modules/npm/lib/utils/prompt.js
 lib/node_modules/npm/lib/utils/read-installed.js
 lib/node_modules/npm/lib/utils/read-json.js
 lib/node_modules/npm/lib/utils/relativize.js
@@ -532,11 +533,14 @@ lib/node_modules/npm/node_modules/block-stream/README.md
 lib/node_modules/npm/node_modules/block-stream/block-stream.js
 lib/node_modules/npm/node_modules/block-stream/package.json
 lib/node_modules/npm/node_modules/fast-list/
+lib/node_modules/npm/node_modules/fast-list/.npmignore
+lib/node_modules/npm/node_modules/fast-list/.travis.yml
 lib/node_modules/npm/node_modules/fast-list/README.md
-lib/node_modules/npm/node_modules/fast-list/bench.js
 lib/node_modules/npm/node_modules/fast-list/fast-list.js
 lib/node_modules/npm/node_modules/fast-list/package.json
 lib/node_modules/npm/node_modules/fstream/
+lib/node_modules/npm/node_modules/fstream/.npmignore
+lib/node_modules/npm/node_modules/fstream/.travis.yml
 lib/node_modules/npm/node_modules/fstream/README.md
 lib/node_modules/npm/node_modules/fstream/fstream.js
 lib/node_modules/npm/node_modules/fstream/lib/
@@ -552,9 +556,11 @@ lib/node_modules/npm/node_modules/fstream/lib/link-writer.js
 lib/node_modules/npm/node_modules/fstream/lib/proxy-reader.js
 lib/node_modules/npm/node_modules/fstream/lib/proxy-writer.js
 lib/node_modules/npm/node_modules/fstream/lib/reader.js
+lib/node_modules/npm/node_modules/fstream/lib/socket-reader.js
 lib/node_modules/npm/node_modules/fstream/lib/writer.js
 lib/node_modules/npm/node_modules/fstream/package.json
 lib/node_modules/npm/node_modules/graceful-fs/
+lib/node_modules/npm/node_modules/graceful-fs/.npmignore
 lib/node_modules/npm/node_modules/graceful-fs/LICENSE
 lib/node_modules/npm/node_modules/graceful-fs/README.md
 lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js
@@ -570,18 +576,18 @@ lib/node_modules/npm/node_modules/ini/LICENSE
 lib/node_modules/npm/node_modules/ini/README.md
 lib/node_modules/npm/node_modules/ini/ini.js
 lib/node_modules/npm/node_modules/ini/package.json
+lib/node_modules/npm/node_modules/lru-cache/
+lib/node_modules/npm/node_modules/lru-cache/.npmignore
+lib/node_modules/npm/node_modules/lru-cache/LICENSE
+lib/node_modules/npm/node_modules/lru-cache/README.md
+lib/node_modules/npm/node_modules/lru-cache/lib/
+lib/node_modules/npm/node_modules/lru-cache/lib/lru-cache.js
+lib/node_modules/npm/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/minimatch/
-lib/node_modules/npm/node_modules/minimatch/.gitmodules
+lib/node_modules/npm/node_modules/minimatch/.travis.yml
 lib/node_modules/npm/node_modules/minimatch/LICENSE
 lib/node_modules/npm/node_modules/minimatch/README.md
 lib/node_modules/npm/node_modules/minimatch/minimatch.js
-lib/node_modules/npm/node_modules/minimatch/node_modules/
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/LICENSE
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/README.md
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/lib/
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/lib/lru-cache.js
-lib/node_modules/npm/node_modules/minimatch/node_modules/lru-cache/package.json
 lib/node_modules/npm/node_modules/minimatch/package.json
 lib/node_modules/npm/node_modules/mkdirp/
 lib/node_modules/npm/node_modules/mkdirp/LICENSE
@@ -589,11 +595,13 @@ lib/node_modules/npm/node_modules/mkdirp/README.markdown
 lib/node_modules/npm/node_modules/mkdirp/index.js
 lib/node_modules/npm/node_modules/mkdirp/package.json
 lib/node_modules/npm/node_modules/node-uuid/
+lib/node_modules/npm/node_modules/node-uuid/.npmignore
 lib/node_modules/npm/node_modules/node-uuid/LICENSE.md
 lib/node_modules/npm/node_modules/node-uuid/README.md
 lib/node_modules/npm/node_modules/node-uuid/package.json
 lib/node_modules/npm/node_modules/node-uuid/uuid.js
 lib/node_modules/npm/node_modules/nopt/
+lib/node_modules/npm/node_modules/nopt/.npmignore
 lib/node_modules/npm/node_modules/nopt/LICENSE
 lib/node_modules/npm/node_modules/nopt/README.md
 lib/node_modules/npm/node_modules/nopt/bin/
@@ -606,6 +614,11 @@ lib/node_modules/npm/node_modules/proto-list/LICENSE
 lib/node_modules/npm/node_modules/proto-list/README.md
 lib/node_modules/npm/node_modules/proto-list/package.json
 lib/node_modules/npm/node_modules/proto-list/proto-list.js
+lib/node_modules/npm/node_modules/read/
+lib/node_modules/npm/node_modules/read/README.md
+lib/node_modules/npm/node_modules/read/lib/
+lib/node_modules/npm/node_modules/read/lib/read.js
+lib/node_modules/npm/node_modules/read/package.json
 lib/node_modules/npm/node_modules/request/
 lib/node_modules/npm/node_modules/request/LICENSE
 lib/node_modules/npm/node_modules/request/README.md
@@ -645,6 +658,8 @@ lib/node_modules/npm/node_modules/slide/lib/chain.js
 lib/node_modules/npm/node_modules/slide/lib/slide.js
 lib/node_modules/npm/node_modules/slide/package.json
 lib/node_modules/npm/node_modules/tar/
+lib/node_modules/npm/node_modules/tar/.npmignore
+lib/node_modules/npm/node_modules/tar/.travis.yml
 lib/node_modules/npm/node_modules/tar/README.md
 lib/node_modules/npm/node_modules/tar/lib/
 lib/node_modules/npm/node_modules/tar/lib/buffer-entry.js
@@ -672,4 +687,34 @@ lib/node_modules/npm/scripts/clean-old.sh
 lib/node_modules/npm/scripts/doc-build.sh
 lib/node_modules/npm/scripts/index-build.js
 lib/node_modules/npm/scripts/install.sh
+lib/node_modules/npm/test/
+lib/node_modules/npm/test/common.js
+lib/node_modules/npm/test/packages/
+lib/node_modules/npm/test/packages/npm-test-blerg/
+lib/node_modules/npm/test/packages/npm-test-blerg/package.json
+lib/node_modules/npm/test/packages/npm-test-blerg/test.js
+lib/node_modules/npm/test/packages/npm-test-env-reader/
+lib/node_modules/npm/test/packages/npm-test-env-reader/package.json
+lib/node_modules/npm/test/packages/npm-test-env-reader/test.sh
+lib/node_modules/npm/test/packages/npm-test-ignore/
+lib/node_modules/npm/test/packages/npm-test-ignore/.npmignore
+lib/node_modules/npm/test/packages/npm-test-ignore/include4
+lib/node_modules/npm/test/packages/npm-test-ignore/package.json
+lib/node_modules/npm/test/packages/npm-test-ignore/sub/
+lib/node_modules/npm/test/packages/npm-test-ignore/sub/include
+lib/node_modules/npm/test/packages/npm-test-ignore/sub/include2
+lib/node_modules/npm/test/packages/npm-test-ignore/sub/include4
+lib/node_modules/npm/test/packages/npm-test-ignore/test.sh
+lib/node_modules/npm/test/packages/npm-test-missing-bindir/
+lib/node_modules/npm/test/packages/npm-test-missing-bindir/package.json
+lib/node_modules/npm/test/packages/npm-test-missing-bindir/test.js
+lib/node_modules/npm/test/packages/npm-test-private/
+lib/node_modules/npm/test/packages/npm-test-private/package.json
+lib/node_modules/npm/test/packages/npm-test-test-package/
+lib/node_modules/npm/test/packages/npm-test-test-package/package.json
+lib/node_modules/npm/test/packages/npm-test-url-dep/
+lib/node_modules/npm/test/packages/npm-test-url-dep/package.json
+lib/node_modules/npm/test/run
+lib/node_modules/npm/test/update-test.sh
 @man man/man1/node.1
+@extraunexec rm -rf %D/lib/node_modules

@@ -1,16 +1,7 @@
-$OpenBSD: patch-wscript,v 1.9 2011/12/07 12:18:01 sthen Exp $
---- wscript.orig	Fri Nov 25 10:23:28 2011
-+++ wscript	Fri Nov 25 13:45:49 2011
-@@ -301,7 +301,7 @@ def configure(conf):
-   if Options.options.efence:
-     conf.check(lib='efence', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='EFENCE')
- 
--  if sys.platform.startswith("freebsd"):
-+  if sys.platform.startswith("freebsd") or sys.platform.startswith("openbsd"):
-      if not conf.check(lib="execinfo",
-                        includes=['/usr/include', '/usr/local/include'],
-                        libpath=['/usr/lib', '/usr/local/lib'],
-@@ -534,7 +534,7 @@ def configure(conf):
+$OpenBSD: patch-wscript,v 1.10 2011/12/21 09:56:54 sthen Exp $
+--- wscript.orig	Tue Dec 20 14:55:21 2011
++++ wscript	Tue Dec 20 14:57:09 2011
+@@ -537,7 +537,7 @@ def configure(conf):
  
    # Configure default variant
    conf.setenv('Release')
