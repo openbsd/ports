@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/10/31 09:59:05 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.54 2011/12/21 21:31:50 avsm Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
@@ -8,8 +8,8 @@ NOT_FOR_ARCHS=	hppa
 COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-3.12
-DISTNAME=	${BASENAME}.0
-REVISION=	4
+DISTNAME=	${BASENAME}.1
+REVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman.html.tar.gz
@@ -76,6 +76,10 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
+	@mkdir -p ${PREFIX}/lib/ocaml/compiler-libs
+	@cp -R ${WRKBUILD}/typing ${PREFIX}/lib/ocaml/compiler-libs
+	@cp -R ${WRKBUILD}/utils ${PREFIX}/lib/ocaml/compiler-libs
+	@cp -R ${WRKBUILD}/parsing ${PREFIX}/lib/ocaml/compiler-libs
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'

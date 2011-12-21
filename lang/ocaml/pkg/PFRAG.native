@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.11 2010/12/07 15:01:35 dcoppa Exp $
+@comment $OpenBSD: PFRAG.native,v 1.12 2011/12/21 21:31:50 avsm Exp $
 @bin bin/camlp4o.opt
 @bin bin/camlp4of.opt
 @bin bin/camlp4oof.opt
@@ -402,3 +402,85 @@ lib/ocaml/weak.p.cmx
 @man man/man3/Weak.Make.3o
 @man man/man3/Weak.S.3o
 %%dynlink%%
+lib/ocaml/compiler-libs/parsing/lexer.cmx
+lib/ocaml/compiler-libs/parsing/linenum.cmx
+lib/ocaml/compiler-libs/parsing/location.cmx
+lib/ocaml/compiler-libs/parsing/longident.cmx
+lib/ocaml/compiler-libs/parsing/parse.cmx
+lib/ocaml/compiler-libs/parsing/parser.cmx
+lib/ocaml/compiler-libs/parsing/printast.cmx
+lib/ocaml/compiler-libs/parsing/syntaxerr.cmx
+lib/ocaml/compiler-libs/typing/btype.cmx
+lib/ocaml/compiler-libs/typing/ctype.cmx
+lib/ocaml/compiler-libs/typing/datarepr.cmx
+lib/ocaml/compiler-libs/typing/env.cmx
+lib/ocaml/compiler-libs/typing/ident.cmx
+lib/ocaml/compiler-libs/typing/includeclass.cmx
+lib/ocaml/compiler-libs/typing/includecore.cmx
+lib/ocaml/compiler-libs/typing/includemod.cmx
+lib/ocaml/compiler-libs/typing/mtype.cmx
+lib/ocaml/compiler-libs/typing/oprint.cmx
+lib/ocaml/compiler-libs/typing/parmatch.cmx
+lib/ocaml/compiler-libs/typing/path.cmx
+lib/ocaml/compiler-libs/typing/predef.cmx
+lib/ocaml/compiler-libs/typing/primitive.cmx
+lib/ocaml/compiler-libs/typing/printtyp.cmx
+lib/ocaml/compiler-libs/typing/stypes.cmx
+lib/ocaml/compiler-libs/typing/subst.cmx
+lib/ocaml/compiler-libs/typing/typeclass.cmx
+lib/ocaml/compiler-libs/typing/typecore.cmx
+lib/ocaml/compiler-libs/typing/typedecl.cmx
+lib/ocaml/compiler-libs/typing/typedtree.cmx
+lib/ocaml/compiler-libs/typing/typemod.cmx
+lib/ocaml/compiler-libs/typing/types.cmx
+lib/ocaml/compiler-libs/typing/typetexp.cmx
+lib/ocaml/compiler-libs/typing/unused_var.cmx
+lib/ocaml/compiler-libs/utils/ccomp.cmx
+lib/ocaml/compiler-libs/utils/clflags.cmx
+lib/ocaml/compiler-libs/utils/config.cmx
+lib/ocaml/compiler-libs/utils/consistbl.cmx
+lib/ocaml/compiler-libs/utils/misc.cmx
+lib/ocaml/compiler-libs/utils/tbl.cmx
+lib/ocaml/compiler-libs/utils/terminfo.cmx
+lib/ocaml/compiler-libs/utils/warnings.cmx
+lib/ocaml/compiler-libs/parsing/lexer.o
+lib/ocaml/compiler-libs/parsing/linenum.o
+lib/ocaml/compiler-libs/parsing/location.o
+lib/ocaml/compiler-libs/parsing/longident.o
+lib/ocaml/compiler-libs/parsing/parse.o
+lib/ocaml/compiler-libs/parsing/parser.o
+lib/ocaml/compiler-libs/parsing/printast.o
+lib/ocaml/compiler-libs/parsing/syntaxerr.o
+lib/ocaml/compiler-libs/typing/btype.o
+lib/ocaml/compiler-libs/typing/ctype.o
+lib/ocaml/compiler-libs/typing/datarepr.o
+lib/ocaml/compiler-libs/typing/env.o
+lib/ocaml/compiler-libs/typing/ident.o
+lib/ocaml/compiler-libs/typing/includeclass.o
+lib/ocaml/compiler-libs/typing/includecore.o
+lib/ocaml/compiler-libs/typing/includemod.o
+lib/ocaml/compiler-libs/typing/mtype.o
+lib/ocaml/compiler-libs/typing/oprint.o
+lib/ocaml/compiler-libs/typing/parmatch.o
+lib/ocaml/compiler-libs/typing/path.o
+lib/ocaml/compiler-libs/typing/predef.o
+lib/ocaml/compiler-libs/typing/primitive.o
+lib/ocaml/compiler-libs/typing/printtyp.o
+lib/ocaml/compiler-libs/typing/stypes.o
+lib/ocaml/compiler-libs/typing/subst.o
+lib/ocaml/compiler-libs/typing/typeclass.o
+lib/ocaml/compiler-libs/typing/typecore.o
+lib/ocaml/compiler-libs/typing/typedecl.o
+lib/ocaml/compiler-libs/typing/typedtree.o
+lib/ocaml/compiler-libs/typing/typemod.o
+lib/ocaml/compiler-libs/typing/types.o
+lib/ocaml/compiler-libs/typing/typetexp.o
+lib/ocaml/compiler-libs/typing/unused_var.o
+lib/ocaml/compiler-libs/utils/ccomp.o
+lib/ocaml/compiler-libs/utils/clflags.o
+lib/ocaml/compiler-libs/utils/config.o
+lib/ocaml/compiler-libs/utils/consistbl.o
+lib/ocaml/compiler-libs/utils/misc.o
+lib/ocaml/compiler-libs/utils/tbl.o
+lib/ocaml/compiler-libs/utils/terminfo.o
+lib/ocaml/compiler-libs/utils/warnings.o
