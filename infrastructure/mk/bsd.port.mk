@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1152 2011/12/10 11:15:16 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1153 2011/12/21 05:16:04 miod Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -644,7 +644,7 @@ BZIP2 ?= bzip2
 
 # copy selected info from bsd.own.mk
 MAKE_ENV += ELF_TOOLCHAIN=${ELF_TOOLCHAIN} COMPILER_VERSION=${COMPILER_VERSION} \
-	PICFLAG=${PICFLAG} ASPICFLAG=${ASPICFLAG} \
+	PICFLAG="${PICFLAG}" ASPICFLAG=${ASPICFLAG} \
 	BINGRP=bin BINOWN=root BINMODE=555 NONBINMODE=444 DIRMODE=755 \
 	INSTALL_COPY=-c INSTALL_STRIP=${INSTALL_STRIP} \
 	MANGRP=bin MANOWN=root MANMODE=444
