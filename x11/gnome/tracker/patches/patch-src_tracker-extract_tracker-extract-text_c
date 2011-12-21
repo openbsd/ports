@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-text_c,v 1.4 2011/12/16 17:36:55 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-text_c,v 1.5 2011/12/21 14:20:06 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=666654
+
 --- src/tracker-extract/tracker-extract-text.c.orig	Fri Dec 16 16:37:39 2011
 +++ src/tracker-extract/tracker-extract-text.c	Fri Dec 16 18:02:12 2011
 @@ -58,10 +58,14 @@ get_file_content (GFile *file,
