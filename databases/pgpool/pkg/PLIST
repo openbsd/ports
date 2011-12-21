@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/21 15:51:04 pea Exp $
+@newgroup _pgpool:690
+@newuser _pgpool:690:_pgpool:daemon:pgpool daemon:/nonexistent:/sbin/nologin
+%%SHARED%%
+@bin bin/pcp_attach_node
+@bin bin/pcp_detach_node
+@bin bin/pcp_node_count
+@bin bin/pcp_node_info
+@bin bin/pcp_pool_status
+@bin bin/pcp_proc_count
+@bin bin/pcp_proc_info
+@bin bin/pcp_promote_node
+@bin bin/pcp_recovery_node
+@bin bin/pcp_stop_pgpool
+@bin bin/pcp_systemdb_info
+@bin bin/pg_md5
+@bin bin/pgpool
+include/libpcp_ext.h
+include/pcp.h
+include/pool_process_reporting.h
+include/pool_type.h
+lib/libpcp.a
+lib/libpcp.la
+lib/postgresql/
+@man man/man8/pgpool.8
+share/examples/pgpool-II/
+share/examples/pgpool-II/pcp.conf.sample
+@sample ${SYSCONFDIR}/pcp.conf
+share/examples/pgpool-II/pgpool.conf.sample
+@sample ${SYSCONFDIR}/pgpool.conf
+share/examples/pgpool-II/pgpool.conf.sample-master-slave
+share/examples/pgpool-II/pgpool.conf.sample-replication
+share/examples/pgpool-II/pgpool.conf.sample-stream
+share/examples/pgpool-II/pool_hba.conf.sample
+@sample ${SYSCONFDIR}/pool_hba.conf
+share/pgpool-II/
+share/pgpool-II/insert_lock.sql
+share/pgpool-II/pgpool.pam
+share/pgpool-II/system_db.sql
+share/postgresql/
+share/postgresql/contrib/
+share/postgresql/contrib/pgpool-regclass.sql
+share/postgresql/contrib/uninstall_pgpool-regclass.sql
+@rcscript ${RCDIR}/pgpool

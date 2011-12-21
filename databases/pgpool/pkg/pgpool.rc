@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# $OpenBSD: pgpool.rc,v 1.1.1.1 2011/12/21 15:51:04 pea Exp $
+
+daemon="${TRUEPREFIX}/bin/pgpool"
+daemon_user="_pgpool"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	/usr/bin/install -d -o _pgpool /var/run/pgpool
+}
+
+rc_stop() {
+	${daemon} -m s stop || ${daemon} -m f stop
+}
+
+rc_reload() {
+	${daemon} reload
+}
+
+rc_cmd $1

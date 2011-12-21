@@ -1,0 +1,8 @@
+pgpool-II is a middleware that sits between PostgreSQL servers and a
+PostgreSQL database client. It provides the following features:
+
++ Connection Pooling
++ Replication
++ Load Balance
++ Limiting Exceeding Connections
++ Parallel Query

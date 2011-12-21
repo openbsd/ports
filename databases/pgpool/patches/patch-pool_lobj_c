@@ -1,0 +1,11 @@
+$OpenBSD: patch-pool_lobj_c,v 1.1.1.1 2011/12/21 15:51:04 pea Exp $
+--- pool_lobj.c.orig	Thu Nov 24 15:43:49 2011
++++ pool_lobj.c	Thu Nov 24 15:44:02 2011
+@@ -27,6 +27,7 @@
+ #include <unistd.h>
+ #include <string.h>
+ #include <netinet/in.h>
++#include <stdint.h>
+ 
+ #include "pool.h"
+ #include "pool_lobj.h"
