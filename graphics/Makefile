@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.309 2011/12/20 07:03:56 fgsch Exp $
+# $OpenBSD: Makefile,v 1.310 2011/12/22 08:37:05 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -137,6 +137,7 @@
      SUBDIR += libraw
      SUBDIR += libungif
      SUBDIR += libvidcap
+     SUBDIR += libwebp
      SUBDIR += libwmf
      SUBDIR += libxmi
      SUBDIR += lsys
