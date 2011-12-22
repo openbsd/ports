@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/09 20:11:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2011/12/22 15:20:10 sthen Exp $
+
+# requires SSE
+ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.9.3
