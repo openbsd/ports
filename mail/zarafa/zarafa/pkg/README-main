@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.14 2011/09/11 06:47:52 ajacoutot Exp $
+$OpenBSD: README-main,v 1.15 2011/12/22 17:10:04 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -129,6 +129,14 @@ httpd:\
 	:setenv=LANG=en_US.UTF-8\
 	,LD_PRELOAD=/usr/lib/libpthread.so:\
 	:tc=daemon:
+
+Clients (Outlook) auto-update
+=============================
+
+When using the auto-update feature for Microsoft Outlook (TM) clients,
+it is advised to clean-up old update logs by running the following
+script from cron(8) once per day:
+    ${TRUEPREFIX}/share/examples/zarafa/zarafa-client-update
 
 Documentation and help
 ======================

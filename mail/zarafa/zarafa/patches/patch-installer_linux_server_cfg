@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.13 2011/11/17 15:14:37 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Wed Nov 16 23:01:36 2011
-+++ installer/linux/server.cfg	Thu Nov 17 13:59:31 2011
+$OpenBSD: patch-installer_linux_server_cfg,v 1.14 2011/12/22 17:10:04 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Wed Dec 21 20:17:06 2011
++++ installer/linux/server.cfg	Thu Dec 22 12:15:41 2011
 @@ -39,16 +39,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -31,12 +31,8 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.13 2011/11/17 15:14:37 ajacoutot 
  
  # Time (in seconds) to wait for a connection to the license server before 
  # terminating the request.
-@@ -118,10 +118,10 @@ mysql_socket		=
- mysql_database		= zarafa
- 
- # Where to place attachments. Value can be 'database' or 'files'
--attachment_storage	= database
-+attachment_storage	= files
+@@ -121,7 +121,7 @@ mysql_database		= zarafa
+ attachment_storage	= files 
  
  # When attachment_storage is 'files', use this path to store the files
 -attachment_path		= /var/lib/zarafa
@@ -108,5 +104,5 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.13 2011/11/17 15:14:37 ajacoutot 
 -client_update_path = /var/lib/zarafa/client
 +client_update_path = /var/db/zarafa/client
  
- # Everyone is a special internal group, which contains every user and group
- # You may want to disable this group from the Global Addressbook by setting
+ # Recieve update information from the client (0 = disabled, 1 = only on error, 2 = log always)
+ client_update_log_level = 1

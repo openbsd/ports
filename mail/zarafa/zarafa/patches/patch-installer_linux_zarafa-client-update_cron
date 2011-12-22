@@ -1,0 +1,27 @@
+$OpenBSD: patch-installer_linux_zarafa-client-update_cron,v 1.1 2011/12/22 17:10:04 ajacoutot Exp $
+--- installer/linux/zarafa-client-update.cron.orig	Thu Dec 22 14:22:30 2011
++++ installer/linux/zarafa-client-update.cron	Thu Dec 22 14:23:43 2011
+@@ -1,13 +1,13 @@
+ #!/bin/sh
+ 
+-CONFIG=/etc/zarafa/server.cfg
++CONFIG=${SYSCONFDIR}/zarafa/server.cfg
+ test -f ${CONFIG} || exit 0
+ 
+ LOGPATH=$(grep -w client_update_log_path ${CONFIG} | grep -v \# | cut -d= -f2 | sed -e 's/[[:blank:]\r]//g')
+ if test -z "${LOGPATH}"; then
+-	LOGPATH=/var/lib/zarafa/client
++	LOGPATH=/var/db/zarafa/client
+ fi
+-LOGPATH=$(readlink -e ${LOGPATH})
++LOGPATH=$(readlink -f ${LOGPATH})
+ if test -z "${LOGPATH}"; then
+ 	exit 0
+ fi
+@@ -16,5 +16,5 @@ if test -n ${LOGPATH} -a ${PATHDEPTH} -gt 2 -a -d ${LO
+ 	# remove all files older than 14 days
+ 	find ${LOGPATH} -maxdepth 2 -type f -ctime +14 -exec rm {} \;
+ 	# remove all empty directories
+-	find ${LOGPATH} -maxdepth 1 -type d -exec rmdir --ignore-fail-on-non-empty {} \;
++	find ${LOGPATH} -maxdepth 1 -type d -exec rmdir {} 2>/dev/null \;
+ fi

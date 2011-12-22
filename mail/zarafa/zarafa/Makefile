@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2011/11/23 13:23:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2011/12/22 17:10:04 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,6 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	0
-REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -140,7 +137,8 @@ pre-configure:
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
-		${WRKSRC}/spooler/DAgent.cpp
+		${WRKSRC}/spooler/DAgent.cpp \
+		${WRKSRC}/installer/linux/zarafa-client-update.cron
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \
@@ -187,10 +185,12 @@ post-install:
 	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
+	mv ${PREFIX}/share/examples/cron.daily/zarafa-client-update \
+		${PREFIX}/share/examples/zarafa/
 	rm ${PREFIX}/share/examples/zarafa/unix.cfg
 	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh
 	rmdir ${PREFIX}/share/doc/{zarafa/example-config,zarafa-gateway}
-	rm -rf ${PREFIX}/share/examples/{init.d,logrotate.d,zarafa/zarafa-gateway,zarafa/license}
+	rm -rf ${PREFIX}/share/examples/{cron.daily,init.d,logrotate.d,sysconfig,zarafa/zarafa-gateway,zarafa/license}
 
 	# part of zarafa-licensed (i.e. commercial edition, linux bin only)
 	cd ${PREFIX} && rm \

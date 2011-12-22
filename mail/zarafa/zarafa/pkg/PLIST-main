@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.34 2011/11/17 15:14:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.35 2011/12/22 17:10:04 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -228,6 +228,8 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Time.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Time.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util/AddressBook.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Generators.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/Util/Iterators.py
@@ -414,6 +416,9 @@ share/examples/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
 @mode
+@mode 555
+share/examples/zarafa/zarafa-client-update
+@mode
 share/examples/zarafa/zarafa.m4
 @mode 0444
 @sample /usr/share/sendmail/mailer/zarafa.m4
@@ -442,3 +447,4 @@ share/locale/sv/LC_MESSAGES/zarafa.mo
 @sample /var/db/zarafa/client/
 @sample /var/db/zarafa/index/
 @sample /var/log/zarafa/
+@sample /var/log/zarafa/autoupdate/

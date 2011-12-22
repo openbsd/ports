@@ -1,9 +1,9 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.11 2011/11/17 15:14:37 ajacoutot Exp $
+$OpenBSD: patch-common_ECLogger_cpp,v 1.12 2011/12/22 17:10:04 ajacoutot Exp $
 
 Needs newlocale(3).
 
---- common/ECLogger.cpp.orig	Thu Nov 17 03:03:21 2011
-+++ common/ECLogger.cpp	Thu Nov 17 14:58:59 2011
+--- common/ECLogger.cpp.orig	Thu Dec 22 01:02:33 2011
++++ common/ECLogger.cpp	Thu Dec 22 12:14:19 2011
 @@ -55,6 +55,10 @@
  #include <assert.h>
  #include "stringutil.h"
@@ -47,7 +47,7 @@ Needs newlocale(3).
  		strftime(timestring, _LOG_TSSIZE, "%c", &local);
  
  	return timestring;
-@@ -222,7 +232,7 @@ void ECLogger_File::DoPrefix() {
+@@ -224,7 +234,7 @@ void ECLogger_File::DoPrefix() {
  	if (timestamp)
  		fnPrintf(log, "%s: ", MakeTimestamp());
  	if (prefix == LP_TID)
@@ -74,7 +74,7 @@ Needs newlocale(3).
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;
-@@ -580,9 +590,13 @@ namespace PrivatePipe {
+@@ -586,9 +596,13 @@ namespace PrivatePipe {
  		int l;
  		bool bNPTL = true;
  
