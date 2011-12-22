@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/28 15:49:56 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/22 18:41:49 sebastia Exp $
 include/Performance/
 include/Performance/GSCache.h
+include/Performance/GSFIFO.h
 include/Performance/GSIOThreadPool.h
 include/Performance/GSLinkedList.h
 include/Performance/GSSkipMutableArray.h
@@ -12,6 +13,8 @@ share/doc/GNUstep/
 share/doc/GNUstep/Performance/
 share/doc/GNUstep/Performance/GSCache.gsdoc
 share/doc/GNUstep/Performance/GSCache.html
+share/doc/GNUstep/Performance/GSFIFO.gsdoc
+share/doc/GNUstep/Performance/GSFIFO.html
 share/doc/GNUstep/Performance/GSIOThreadPool.gsdoc
 share/doc/GNUstep/Performance/GSIOThreadPool.html
 share/doc/GNUstep/Performance/GSLinkedList.gsdoc
