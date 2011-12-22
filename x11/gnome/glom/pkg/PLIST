@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/12/22 13:53:09 jasper Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
+@bin bin/glom_test_connection
 include/glom-${API_V}/
 include/glom-${API_V}/libglom/
 include/glom-${API_V}/libglom/appstate.h
