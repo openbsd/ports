@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/16 15:06:57 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/12/22 17:49:06 sebastia Exp $
 @bin bin/map2gcm
 @bin bin/qlandkartegt
 @man man/man1/qlandkartegt.1
@@ -12,6 +12,6 @@ share/qlandkartegt/translations/qlandkartegt_es_ES.qm
 share/qlandkartegt/translations/qlandkartegt_fr.qm
 share/qlandkartegt/translations/qlandkartegt_it_IT.qm
 share/qlandkartegt/translations/qlandkartegt_nl_NL.qm
-share/qlandkartegt/translations/qlandkartegt_ru_RU.qm
+share/qlandkartegt/translations/qlandkartegt_ru.qm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
