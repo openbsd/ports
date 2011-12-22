@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/22 08:36:33 ajacoutot Exp $
+%%SHARED%%
+@bin bin/cwebp
+@bin bin/dwebp
+include/webp/
+include/webp/decode.h
+include/webp/decode_vp8.h
+include/webp/encode.h
+include/webp/types.h
+lib/libwebp.a
+lib/libwebp.la
+lib/pkgconfig/
+lib/pkgconfig/libwebp.pc
+@man man/man1/cwebp.1
+@man man/man1/dwebp.1
