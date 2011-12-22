@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2011/10/22 18:10:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/22 15:25:42 sthen Exp $
 
 BROKEN-powerpc=	atomic_pointer.h: error Please implement AtomicPointer for this platform
+BROKEN-sparc64=	atomic_pointer.h: error Please implement AtomicPointer for this platform
 
 COMMENT=	fast and lightweight key/value database library
 
