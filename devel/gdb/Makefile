@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/13 14:56:57 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/22 20:27:31 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.2
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 
@@ -36,5 +36,8 @@ MODULES +=	lang/python
 WANTLIB +=	expat ${MODPY_WANTLIB} pthread util
 LIB_DEPENDS += 	${MODPY_LIB_DEPENDS}
 MODPY_BUILDDEP = No
+
+post-extract:
+	perl -pi -e 's/\014//g' ${WRKSRC}/gdb/amd64obsd-tdep.c
 
 .include <bsd.port.mk>
