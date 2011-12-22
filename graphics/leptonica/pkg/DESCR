@@ -1,0 +1,18 @@
+Leptonica is a pedagogically-oriented open source site containing
+software that is broadly useful for image processing and image analysis
+applications.
+
+Featured operations are
+    * Rasterop (a.k.a. bitblt)
+    * Affine transformations (scaling, translation, rotation, shear) on
+      images of arbitrary pixel depth
+    * Binary and grayscale morphology, rank order, and convolution
+    * Seedfill and connected components
+    * Image transformations combining changes in scale and pixel depth
+    * Pixelwise masking, blending, enhancement, arithmetic ops, etc.
+
+Ancillary operations include
+    * I/O for standard image formats
+    * Utilities to handle arrays of image-related data types
+    * Utilities for generic stacks, queues, heaps and lists; and for
+      byte queues and arrays of numbers and strings

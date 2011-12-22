@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_pngio_c,v 1.1.1.1 2011/12/22 09:46:46 ajacoutot Exp $
+--- src/pngio.c.orig	Wed Dec 21 19:37:12 2011
++++ src/pngio.c	Wed Dec 21 19:37:37 2011
+@@ -98,6 +98,9 @@
+ #include <string.h>
+ #include "allheaders.h"
+ 
++/* Z_DEFAULT_COMPRESSION */
++#include <zlib.h>
++
+ #ifdef HAVE_CONFIG_H
+ #include "config_auto.h"
+ #endif  /* HAVE_CONFIG_H */
