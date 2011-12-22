@@ -1,26 +1,14 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/12/22 09:47:50 ajacoutot Exp $
 
 COMMENT-main=	OCR Engine developed at HP Labs
 
-V=		3.00
+V=		3.01
 DISTNAME=	tesseract-${V}
 CATEGORIES=	graphics textproc
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	3
 
-SHARED_LIBS +=  tesseract_api             0.0 # 3.0
-SHARED_LIBS +=  tesseract_ccstruct        0.0 # 3.0
-SHARED_LIBS +=  tesseract_ccutil          0.0 # 3.0
-SHARED_LIBS +=  tesseract_classify        0.0 # 3.0
-SHARED_LIBS +=  tesseract_cutil           0.0 # 3.0
-SHARED_LIBS +=  tesseract_dict            0.0 # 3.0
-SHARED_LIBS +=  tesseract_image           0.0 # 3.0
-SHARED_LIBS +=  tesseract_main            0.0 # 3.0
-SHARED_LIBS +=  tesseract_textord         0.0 # 3.0
-SHARED_LIBS +=  tesseract_training        0.0 # 3.0
-SHARED_LIBS +=  tesseract_viewer          0.0 # 3.0
-SHARED_LIBS +=  tesseract_wordrec         0.0 # 3.0
+SHARED_LIBS +=  tesseract            3.1      # 3.1
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		eng.traineddata.gz
@@ -50,21 +38,26 @@ COMMENT-${l}=	${l} language data for Tesseract
 DISTFILES+=	${l}.traineddata.gz
 PKGNAME-${l}=	tesseract-${l}-${LANG_V}
 MULTI_PACKAGES+=-${l}
-REVISION-${l}=	2
+REVISION-${l}=	3
 RUN_DEPENDS-${l}=	${BASE_PKGPATH}>=${MAJOR_V}
 PKG_ARCH-${l}=	*
 .endfor
 ### end languages ######################################################
 
-WANTLIB-main=	c jpeg m pthread stdc++ z tiff png
+WANTLIB-main=	c jpeg m pthread stdc++ z tiff png gif lept webp
 
-LIB_DEPENDS-main= graphics/tiff \
-		graphics/png
-
+LIB_DEPENDS-main=graphics/leptonica
 
 MASTER_SITES=	${HOMEPAGE}/files/
 
 USE_LIBTOOL=	Yes
+
+AUTOCONF_VERSION=2.65
+AUTOMAKE_VERSION=1.10
+BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+# libtoolize(1)
+BUILD_DEPENDS += devel/libtool
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -72,7 +65,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/ccutil/debugwin.cpp
+	cd ${WRKSRC} && \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		./autogen.sh ${CONFIGURE_ARGS}
+	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 post-install:
 	cp ${WRKDIR}/*.traineddata ${PREFIX}/share/tessdata/

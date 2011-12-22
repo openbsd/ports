@@ -28,7 +28,7 @@ MD5 (tesseract-3.20101024/slv.traineddata.gz) = 3vxJj6CUgO8AUv3nn0+E5Q==
 MD5 (tesseract-3.20101024/spa.traineddata.gz) = 3ZB4IREnGJmVUE8DRGj81g==
 MD5 (tesseract-3.20101024/srp.traineddata.gz) = weDw7wfSanIGOAI3C7/iyQ==
 MD5 (tesseract-3.20101024/swe.traineddata.gz) = N4f/D8GgdRcgNGaDD2+Gjg==
-MD5 (tesseract-3.20101024/tesseract-3.00.tar.gz) = zIEqJhCI6gw9Lac1vjXQnw==
+MD5 (tesseract-3.20101024/tesseract-3.01.tar.gz) = G6SW5RpCNY+50//ngbLSCg==
 MD5 (tesseract-3.20101024/tgl.traineddata.gz) = r4bKsNpS//foP5x2aGF6IQ==
 MD5 (tesseract-3.20101024/tur.traineddata.gz) = sPR5i/H57lQa5zr/SfCIIQ==
 MD5 (tesseract-3.20101024/ukr.traineddata.gz) = Vqgqw5lPBVLVT9FP9e1oFw==
@@ -63,7 +63,7 @@ RMD160 (tesseract-3.20101024/slv.traineddata.gz) = hUtuw50J7CEKeFDVZXP1p32je24=
 RMD160 (tesseract-3.20101024/spa.traineddata.gz) = kjA4EOlCnKWp2qOeAqAVp4rAnNY=
 RMD160 (tesseract-3.20101024/srp.traineddata.gz) = cO8kelCnLF1VHy99wkYnW5CWqbg=
 RMD160 (tesseract-3.20101024/swe.traineddata.gz) = dlPdilf3Wp4kCo4lbHpLIKLpEEA=
-RMD160 (tesseract-3.20101024/tesseract-3.00.tar.gz) = gshMM8QUuRltQvRnUlHz7zqxGzo=
+RMD160 (tesseract-3.20101024/tesseract-3.01.tar.gz) = 8lQYKHADgGjtuUlxTD6YnNlV4iU=
 RMD160 (tesseract-3.20101024/tgl.traineddata.gz) = ZppOp7tr6sQlBw2LpCTzQe7kR6k=
 RMD160 (tesseract-3.20101024/tur.traineddata.gz) = Fc6+oha1OWgdcwbKs/MfJ3PNk+I=
 RMD160 (tesseract-3.20101024/ukr.traineddata.gz) = DwQOyYRTw4oPGekNfzSrDe6Ol3g=
@@ -98,7 +98,7 @@ SHA1 (tesseract-3.20101024/slv.traineddata.gz) = ++RkzUnWp0lebZVgDUIaot0LnXc=
 SHA1 (tesseract-3.20101024/spa.traineddata.gz) = ezCVB0noSJH971+JQJw88bZBjNM=
 SHA1 (tesseract-3.20101024/srp.traineddata.gz) = R6/GAbYpmOTMP3QD2Ea6hh8wtBY=
 SHA1 (tesseract-3.20101024/swe.traineddata.gz) = VSkejqZkFVrVHbhnKEwRrRocXQA=
-SHA1 (tesseract-3.20101024/tesseract-3.00.tar.gz) = HXl8rj0AR9e+bJsX0Zc6mvz2vYE=
+SHA1 (tesseract-3.20101024/tesseract-3.01.tar.gz) = wLYF1xkrMHGEL+U1yCuJxl8tnGc=
 SHA1 (tesseract-3.20101024/tgl.traineddata.gz) = FTuh0N3SCeFYHYHUL+U0b3SOLyc=
 SHA1 (tesseract-3.20101024/tur.traineddata.gz) = oB2mLzgwgzslji1Gzg8oUlcUcOY=
 SHA1 (tesseract-3.20101024/ukr.traineddata.gz) = Bs7r/ZH6Rz1tkfiihWxmczvqATE=
@@ -133,7 +133,7 @@ SHA256 (tesseract-3.20101024/slv.traineddata.gz) = u3MY8klyq8OAaIxnvobQcZPgKUslK
 SHA256 (tesseract-3.20101024/spa.traineddata.gz) = XeB0iwaPNclB6Gu6Yi4jo3amsITLCUAH5wWXFPHgMOA=
 SHA256 (tesseract-3.20101024/srp.traineddata.gz) = VCuD9iOJ/4zDR0bddlNFVmqzaLY9zydcIj7LUsLLkpE=
 SHA256 (tesseract-3.20101024/swe.traineddata.gz) = JTMcofQTeKhjNmBEdgSYEKDFNQQXIF4wDLLREEjOwsE=
-SHA256 (tesseract-3.20101024/tesseract-3.00.tar.gz) = nDLUX5xczyvZcDqdsTcarw/I+J8txTYJZEKzHDxMOYQ=
+SHA256 (tesseract-3.20101024/tesseract-3.01.tar.gz) = wksL0ngpG8k6skL5OEHB2HQ2iclDvYBK+8W4mNwKHJs=
 SHA256 (tesseract-3.20101024/tgl.traineddata.gz) = 1NiOH7MXcdC0LmUpHAPaOhZ1Qd98loK4HYM6S9bJ6M8=
 SHA256 (tesseract-3.20101024/tur.traineddata.gz) = y04Yf2wlwUUlLIildvPjySBMHXfhwBIXKoWYDFwBCIs=
 SHA256 (tesseract-3.20101024/ukr.traineddata.gz) = pU8M4IQ8hj8QK/4TWTkgD8GHAs5hrm68Vxq0lGCEk2U=
@@ -168,7 +168,7 @@ SIZE (tesseract-3.20101024/slv.traineddata.gz) = 930221
 SIZE (tesseract-3.20101024/spa.traineddata.gz) = 910992
 SIZE (tesseract-3.20101024/srp.traineddata.gz) = 977674
 SIZE (tesseract-3.20101024/swe.traineddata.gz) = 959911
-SIZE (tesseract-3.20101024/tesseract-3.00.tar.gz) = 3436992
+SIZE (tesseract-3.20101024/tesseract-3.01.tar.gz) = 3287629
 SIZE (tesseract-3.20101024/tgl.traineddata.gz) = 978138
 SIZE (tesseract-3.20101024/tur.traineddata.gz) = 933401
 SIZE (tesseract-3.20101024/ukr.traineddata.gz) = 927741
