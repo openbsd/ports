@@ -1,0 +1,5 @@
+natpmpd is a daemon that can be used on an OpenBSD NAT gateway to
+provide support for the NAT-PMP protocol on any internal networks which
+then allows a client to create and maintain rules in pf to map TCP and
+UDP connections to the external IP address on the NAT gateway to
+services running on the client itself.

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: natpmpd.rc,v 1.1.1.1 2011/12/23 15:15:30 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/natpmpd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
