@@ -1,0 +1,39 @@
+$OpenBSD: patch-libdroplet_include_droplet_utils_h,v 1.1.1.1 2011/12/23 13:10:30 jasper Exp $
+--- libdroplet/include/droplet/utils.h.orig	Thu Dec 15 14:47:38 2011
++++ libdroplet/include/droplet/utils.h	Thu Dec 15 14:48:42 2011
+@@ -48,6 +48,17 @@
+ # define HAVE_CANONICALIZE_FILE_NAME
+ #endif
+ 
++/* OpenBSD gcc */
++#if defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/uio.h>
++#include <unistd.h>
++#if _BYTE_ORDER == _LITTLE_ENDIAN
++#define __BYTE_ORDER __LITTLE_ENDIAN
++#else
++#define __BYTE_ORDER __BIG_ENDIAN
++#endif
++#endif
+ 
+ /*
+  * endianness
+@@ -73,7 +84,7 @@
+     #define __BYTE_ORDER __BIG_ENDIAN__
+     #endif
+ 
+-#else
++#elif !defined(__OpenBSD__)
+ // linux case
+ # include <endian.h>
+ #endif
+@@ -86,7 +97,7 @@
+     #define le32toh OSSwapLittleToHostInt32
+     #define htole32 OSSwapHostToLittleInt32
+     #define bswap_32 OSSwapInt32
+-#else
++#elif !defined(__OpenBSD__)
+ //defines htonll() and ntohll() natively
+ # include <byteswap.h>
+ 

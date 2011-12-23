@@ -1,0 +1,5 @@
+Scality Droplet is a high perfomance Cloud Storage client library providing
+a set of high-level features. It is open source and released under the BSD
+License. Multiple backends are supported: S3 (Simple Storage Service), CDMI
+(Cloud Data Management Interface), SRWS (Scality Simple Rest Web Service).
+On-the-fly encryption/decryption and buffered I/O are also supported.

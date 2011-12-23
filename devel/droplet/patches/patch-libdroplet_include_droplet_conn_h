@@ -1,0 +1,10 @@
+$OpenBSD: patch-libdroplet_include_droplet_conn_h,v 1.1.1.1 2011/12/23 13:10:30 jasper Exp $
+--- libdroplet/include/droplet/conn.h.orig	Thu Dec 15 14:12:57 2011
++++ libdroplet/include/droplet/conn.h	Thu Dec 15 14:13:09 2011
+@@ -85,5 +85,5 @@ void dpl_conn_release(dpl_conn_t *conn);
+ void dpl_conn_terminate(dpl_conn_t *conn);
+ dpl_status_t dpl_conn_pool_init(dpl_ctx_t *ctx);
+ void dpl_conn_pool_destroy(dpl_ctx_t *ctx);
+-dpl_status_t dpl_conn_writev_all(dpl_conn_t *conn, struct iovec *iov, int n_iov, int timeout);
++//dpl_status_t dpl_conn_writev_all(dpl_conn_t *conn, struct iovec *iov, int n_iov, int timeout);
+ #endif

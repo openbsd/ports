@@ -1,0 +1,36 @@
+$OpenBSD: patch-libdroplet_src_utils_c,v 1.1.1.1 2011/12/23 13:10:30 jasper Exp $
+--- libdroplet/src/utils.c.orig	Fri Dec 16 13:57:00 2011
++++ libdroplet/src/utils.c	Fri Dec 16 13:58:47 2011
+@@ -72,6 +72,14 @@ gettid()
+ {
+   return syscall(SYS_gettid);
+ }
++#elif defined(__OpenBSD__)
++#include <sys/syscall.h>
++#include <unistd.h>
++pid_t
++gettid()
++{
++  return syscall(SYS_getpid);
++}
+ 
+ #else
+ #include <syscall.h>
+@@ -110,6 +118,17 @@ linux_gethostbyname_r(const char *name,
+   return 0;
+ 
+ #elif defined(__APPLE__) && defined(__MACH__) || defined(__ellcc__ )
++
++  struct hostent *resultp;
++
++  resultp = gethostbyname(name);
++  if (NULL == resultp)
++    return 1;
++
++  *result = resultp;
++
++  return 0;
++#elif defined(__OpenBSD__)
+ 
+   struct hostent *resultp;
+ 
