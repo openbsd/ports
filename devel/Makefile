@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1007 2011/12/21 19:28:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.1008 2011/12/23 13:12:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -92,6 +92,7 @@
      SUBDIR += doc++
      SUBDIR += dotconf
      SUBDIR += doxygen
+     SUBDIR += droplet
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
