@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2011/12/07 16:47:37 stsp Exp $
+# $OpenBSD: Makefile,v 1.103 2011/12/23 10:34:36 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -42,7 +42,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby
-FLAVORS=	gnome_keyring
+FLAVORS=	gnome_keyring maintainer_mode
 FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
@@ -150,6 +150,13 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--without-jikes \
 		--without-jdk \
 		--with-libmagic=${LOCALBASE}
+
+# Maintainer mode shows files and line numbers for every error raised
+# by Subversion. It is useful for debugging problems with Subversion
+# but is not required for normal operation.
+.if ${FLAVOR:Mmaintainer_mode}
+CONFIGURE_ARGS+=--enable-maintainer-mode
+.endif
 
 .include <bsd.port.arch.mk>
 
