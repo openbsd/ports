@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libepub_CMakeLists_txt,v 1.1.1.1 2011/12/23 13:04:00 jasper Exp $
+--- src/libepub/CMakeLists.txt.orig	Mon Sep 13 21:31:53 2010
++++ src/libepub/CMakeLists.txt	Fri Dec 23 12:14:37 2011
+@@ -1,6 +1,6 @@
+-include_directories (${EBOOK-TOOLS_SOURCE_DIR}/src/libepub ${LIBXML2_INCLUDE_DIR} ${LIBZIP_INCLUDE_DIR})
++include_directories (${EBOOK-TOOLS_SOURCE_DIR}/src/libepub ${LIBXML2_INCLUDE_DIR} ${LIBZIP_INCLUDE_DIRS})
+ add_library (epub SHARED epub.c ocf.c opf.c linklist.c list.c)
+-target_link_libraries (epub ${LIBZIP_LIBRARY} ${LIBXML2_LIBRARIES})
++target_link_libraries (epub ${LIBZIP_LIBRARIES} ${LIBXML2_LIBRARIES})
+ 
+ set_target_properties (epub PROPERTIES VERSION 0.2.1 SOVERSION 0)
+ 
