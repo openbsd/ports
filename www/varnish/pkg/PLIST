@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/11 13:03:46 jim Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/23 13:06:30 jasper Exp $
 @newgroup _varnish:625
 @newuser _varnish:625:_varnish:daemon:Varnish Cache:/var/varnish:/bin/sh
-%%SHARED%%
 @bin bin/varnishadm
 @bin bin/varnishhist
 @bin bin/varnishlog
@@ -12,21 +11,25 @@
 @bin bin/varnishtest
 @bin bin/varnishtop
 include/varnish/
-include/varnish/shmlog.h
-include/varnish/shmlog_tags.h
-include/varnish/stat_field.h
-include/varnish/stats.h
 include/varnish/varnishapi.h
-lib/libvarnish.a
-lib/libvarnish.la
+include/varnish/vcli.h
+include/varnish/vsc.h
+include/varnish/vsc_all.h
+include/varnish/vsc_fields.h
+include/varnish/vsl.h
+include/varnish/vsl_tags.h
+include/varnish/vsm.h
 lib/libvarnishapi.a
 lib/libvarnishapi.la
-lib/libvarnishcompat.a
-lib/libvarnishcompat.la
-lib/libvcl.a
-lib/libvcl.la
-lib/pkgconfig/
+@lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
 lib/pkgconfig/varnishapi.pc
+lib/varnish/
+lib/varnish/libvarnish.so
+lib/varnish/libvarnishcompat.so
+lib/varnish/libvcl.so
+lib/varnish/libvgz.so
+lib/varnish/vmods/
+lib/varnish/vmods/libvmod_std.so
 @man man/man1/varnishadm.1
 @man man/man1/varnishd.1
 @man man/man1/varnishhist.1
@@ -37,10 +40,12 @@ lib/pkgconfig/varnishapi.pc
 @man man/man1/varnishstat.1
 @man man/man1/varnishtest.1
 @man man/man1/varnishtop.1
+@man man/man3/vmod_std.3
+@man man/man7/varnish-cli.7
+@man man/man7/varnish-counters.7
 @man man/man7/vcl.7
 @bin sbin/varnishd
 share/doc/varnish/
-share/doc/varnish/getting-started.html
 share/examples/varnish/
 @sample ${SYSCONFDIR}/varnish/
 share/examples/varnish/default.vcl
