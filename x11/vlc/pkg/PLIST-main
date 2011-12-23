@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/12/03 23:37:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/12/23 15:01:59 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -88,8 +88,10 @@ include/vlc/plugins/vlc_xlib.h
 include/vlc/plugins/vlc_xml.h
 include/vlc/vlc.h
 lib/libvlc.a
+lib/libvlc.la
 @lib lib/libvlc.so.${LIBvlc_VERSION}
 lib/libvlccore.a
+lib/libvlccore.la
 @lib lib/libvlccore.so.${LIBvlccore_VERSION}
 lib/pkgconfig/libvlc.pc
 lib/pkgconfig/vlc-plugin.pc
@@ -328,6 +330,7 @@ lib/vlc/plugins/video_filter/libmosaic_plugin.so
 lib/vlc/plugins/video_filter/libmotionblur_plugin.so
 lib/vlc/plugins/video_filter/libmotiondetect_plugin.so
 lib/vlc/plugins/video_filter/libnoise_plugin.so
+lib/vlc/plugins/video_filter/libosdmenu_plugin.so
 lib/vlc/plugins/video_filter/libpanoramix_plugin.so
 lib/vlc/plugins/video_filter/libpostproc_plugin.so
 lib/vlc/plugins/video_filter/libpsychedelic_plugin.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2011/12/03 23:37:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.139 2011/12/23 15:01:59 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 COMMENT-web=	Mozilla plugin for embedded media playback
 
-V=		1.1.12
+V=		1.1.13
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
@@ -14,8 +14,6 @@ PKGNAME-web=	vlc-web-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
-
-REVISION-main=	0
 
 SHARED_LIBS=	vlc	1.0 \
 		vlccore	1.0
@@ -162,6 +160,10 @@ MULTI_PACKAGES+=-web
 
 .include <bsd.port.arch.mk>
 
+.if ${BUILD_PACKAGES:M-jack}
+CONFIGURE_ARGS+=--enable-jack
+.endif
+
 .if ${BUILD_PACKAGES:M-web}
 BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
 CONFIGURE_ARGS+=--enable-mozilla \
@@ -169,10 +171,6 @@ CONFIGURE_ARGS+=--enable-mozilla \
 CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
 CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
-.endif
-
-.if ${BUILD_PACKAGES:M-jack}
-CONFIGURE_ARGS+=--enable-jack
 .endif
 
 .if ${MACHINE_ARCH} == "amd64"
@@ -187,14 +185,12 @@ PKG_ARGS+=-Di386=1
 PKG_ARGS+=-Di386=0
 .endif
 
-pre-configure:
-	@perl -pi -e 's/grep -v /grep -av /' ${WRKSRC}/src/Makefile.in
-
 post-install:
 .if ${BUILD_PACKAGES:M-web}
 	@rm ${PREFIX}/lib/mozilla/plugins/libvlcplugin.a
+	@rm ${PREFIX}/lib/mozilla/plugins/libvlcplugin.la
 .endif
 	@find ${PREFIX}/lib/vlc -name '*.a' -print | xargs rm
-	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
+	@find ${PREFIX}/lib/vlc -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>
