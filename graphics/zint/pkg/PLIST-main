@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/12/23 15:08:07 jasper Exp $
+@bin bin/zint
+include/zint.h
+@lib lib/libzint.so.${LIBzint_VERSION}
+share/cmake/Modules/FindZint.cmake

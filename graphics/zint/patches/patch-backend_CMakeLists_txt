@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_CMakeLists_txt,v 1.1.1.1 2011/12/23 15:08:07 jasper Exp $
+--- backend/CMakeLists.txt.orig	Mon Apr  4 14:03:37 2011
++++ backend/CMakeLists.txt	Mon Apr  4 14:03:58 2011
+@@ -11,7 +11,7 @@ set(zint_TWODIM_SRCS code16k.c dmatrix.c pdf417.c qr.c
+ set(zint_SRCS ${zint_COMMON_SRCS} ${zint_ONEDIM_SRCS} ${zint_POSTAL_SRCS} ${zint_TWODIM_SRCS} )
+ 
+ if(PNG_FOUND)
+-    include_directories( ${PNG_INCLUDES} )
++    include_directories( ${PNG_INCLUDE_DIR} )
+ else(PNG_FOUND)
+     add_definitions (-DNO_PNG)
+ endif(PNG_FOUND)

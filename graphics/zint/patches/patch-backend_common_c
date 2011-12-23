@@ -1,0 +1,17 @@
+$OpenBSD: patch-backend_common_c,v 1.1.1.1 2011/12/23 15:08:07 jasper Exp $
+--- backend/common.c.orig	Mon May 16 21:12:46 2011
++++ backend/common.c	Mon Nov 14 20:01:43 2011
+@@ -127,6 +127,13 @@ void lookup(char set_string[], char *table[], char dat
+ 
+ int module_is_set(struct zint_symbol *symbol, int y_coord, int x_coord)
+ {
++	/* be sure you have y_coord <= ZINT_ROWS_MAX or (x_coord/7) <= ZINT_COLS_MAX
++	without this you will have coredump, be sure module_is_set(symbol, this_row, i + block_width) != module_is_set(symbol, this_row, i) */
++	if(y_coord > ZINT_ROWS_MAX)
++		return y_coord;
++	if((x_coord/7) > ZINT_COLS_MAX)
++		return x_coord;
++
+ 	return (symbol->encoded_data[y_coord][x_coord / 7] >> (x_coord % 7)) & 1;
+ #if 0	
+ 	switch(x_sub) {

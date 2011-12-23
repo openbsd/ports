@@ -1,0 +1,4 @@
+Zint Barcode Studio is a Qt-based GUI which allows desktop users to
+generate barcodes which can then be embedded in documents or HTML pages,
+and a library which can be used to incorporate barcode generation
+functionality into other software.
