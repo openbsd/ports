@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2010/09/11 13:03:46 jim Exp $
-@lib lib/libvarnish.so.${LIBvarnish_VERSION}
-@lib lib/libvarnishapi.so.${LIBvarnishapi_VERSION}
-@lib lib/libvarnishcompat.so.${LIBvarnishcompat_VERSION}
-@lib lib/libvcl.so.${LIBvcl_VERSION}
