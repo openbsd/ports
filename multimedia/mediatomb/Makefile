@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/24 08:46:29 jasper Exp $
 
 COMMENT =	UPnP media server
 
@@ -38,7 +38,8 @@ CONFIGURE_ARGS +=	--disable-inotify \
 			--disable-mysql \
 			PTHREAD_LIBS="-pthread"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_header_execinfo_h=no
 AUTOCONF_VERSION =	2.63
 USE_GROFF =	Yes
 
