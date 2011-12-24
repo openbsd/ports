@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2011/10/16 15:03:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2011/12/24 12:57:10 sthen Exp $
 # $NetBSD: Makefile,v 1.2 1998/08/23 20:48:03 frueauf Exp $
 
 COMMENT=		PDP, IBM 1401, Nova and other CPUs simulator
 
 PKGNAME=		simh-3.8.1
 DISTNAME=		simhv38-1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		emulators
 MASTER_SITES=		${HOMEPAGE}/sources/
 
@@ -31,6 +31,7 @@ COPTS+=		-DPATH_KA655X_BIN=\"${PREFIX}/lib/simh/vax/ka655x.bin\" \
 		-DPATH_VMB_EXE=\"${PREFIX}/lib/simh/vax/vmb.exe\"
 
 MAKE_FILE=		makefile
+MAKE_FLAGS=		CC="${CC}"
 
 NO_REGRESS=		Yes
 VMEM_WARNING=		Yes

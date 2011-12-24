@@ -1,6 +1,6 @@
-$OpenBSD: patch-makefile,v 1.13 2010/03/21 09:26:49 jasper Exp $
+$OpenBSD: patch-makefile,v 1.14 2011/12/24 12:57:10 sthen Exp $
 --- makefile.orig	Wed Nov 19 21:53:48 2008
-+++ makefile	Tue Jan 26 13:21:07 2010
++++ makefile	Sun Nov 20 03:46:22 2011
 @@ -1,32 +1,6 @@
 -#
 -# CC Command
@@ -32,8 +32,8 @@ $OpenBSD: patch-makefile,v 1.13 2010/03/21 09:26:49 jasper Exp $
 -  endif
 -endif
 +OS_CCDEFS = -D_GNU_SOURCE
-+CFLAGS += $(OS_CCDEFS) -std=c99 -O2 -U__STRICT_ANSI__ -g -lm -I .
-+NETWORK_OPT = -DUSE_NETWORK -isystem /usr/local/include -lpcap
++CFLAGS += $(OS_CCDEFS) -std=c99 -U__STRICT_ANSI__ -g -lm -I .
++NETWORK_OPT = -DUSE_NETWORK -lpcap
  
  #
  # Common Libraries
