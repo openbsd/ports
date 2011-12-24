@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/12/03 23:20:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/12/24 07:47:23 landry Exp $
 @bin bin/midori
 include/midori-0.4/
 include/midori-0.4/extensions/
@@ -31,7 +31,16 @@ share/doc/midori/README
 share/doc/midori/faq.css
 share/doc/midori/faq.html
 share/examples/midori/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/midori/
+share/examples/midori/extensions/
+@sample ${SYSCONFDIR}/xdg/midori/extensions/
+share/examples/midori/extensions/adblock/
+@sample ${SYSCONFDIR}/xdg/midori/extensions/adblock/
+share/examples/midori/extensions/adblock/config
+@sample ${SYSCONFDIR}/xdg/midori/extensions/adblock/config
 share/examples/midori/search
+@sample ${SYSCONFDIR}/xdg/midori/search
 share/icons/hicolor/16x16/apps/midori.png
 share/icons/hicolor/16x16/categories/extension.png
 share/icons/hicolor/16x16/status/news-feed.png
@@ -92,9 +101,10 @@ share/midori/
 share/midori/res/
 share/midori/res/autosuggestcontrol.css
 share/midori/res/autosuggestcontrol.js
+share/midori/res/close.png
 share/midori/res/error.html
 share/midori/res/logo-shade.png
-share/midori/res/speeddial-head.html
+share/midori/res/speeddial-head-0.4.3.html
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

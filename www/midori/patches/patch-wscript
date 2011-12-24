@@ -1,10 +1,10 @@
-$OpenBSD: patch-wscript,v 1.17 2011/10/13 06:53:30 jasper Exp $
+$OpenBSD: patch-wscript,v 1.18 2011/12/24 07:47:23 landry Exp $
 
-We don't need those files installed..
+Fix paths to config files.
 
---- wscript.orig	Mon Oct 10 00:41:47 2011
-+++ wscript	Wed Oct 12 10:17:53 2011
-@@ -68,7 +68,7 @@ def rc_file(self, node):
+--- wscript.orig	Sat Dec 17 23:47:28 2011
++++ wscript	Sat Dec 24 07:53:38 2011
+@@ -70,7 +70,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
  Task.simple_task_type ('winrc', '${WINRC} -o${TGT} ${SRC}', color='BLUE',
@@ -13,7 +13,7 @@ We don't need those files installed..
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -415,7 +415,7 @@ def build (bld):
+@@ -440,7 +440,7 @@ def build (bld):
              'AUTHORS COPYING ChangeLog EXPAT README data/faq.html data/faq.css')
  
      # Install default configuration
@@ -22,3 +22,12 @@ We don't need those files installed..
  
      if bld.env['INTLTOOL']:
          obj = bld.new_task_gen ('intltool_po')
+@@ -512,7 +512,7 @@ def build (bld):
+             for extension in extensions:
+                 source = 'data/extensions/' + extension +  '/config'
+                 if os.path.exists (source):
+-                    bld.install_files ('${SYSCONFDIR}/xdg/' + APPNAME + \
++                    bld.install_files ('${MDATADIR}/examples/' + APPNAME + \
+                                        '/extensions/' + extension, source)
+ 
+     if Options.commands['check'] or bld.env['tests']:
