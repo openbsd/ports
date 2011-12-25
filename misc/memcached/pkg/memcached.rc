@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: memcached.rc,v 1.1 2011/12/25 14:37:28 sebastia Exp $
+
+daemon="${TRUEPREFIX}/bin/memcached -d"
+daemon_flags="-u _memcached -P /var/run/memcached.pid"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
