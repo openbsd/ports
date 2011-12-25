@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/05/15 16:31:45 jim Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/12/25 23:59:07 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/boto/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/boto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -209,8 +209,8 @@ lib/python${MODPY_VERSION}/site-packages/boto/tests/test_sqsconnection.py
 lib/python${MODPY_VERSION}/site-packages/boto/tests/test_sqsconnection.pyc
 lib/python${MODPY_VERSION}/site-packages/boto/utils.py
 lib/python${MODPY_VERSION}/site-packages/boto/utils.pyc
-share/doc/boto/
-share/doc/boto/README
-share/doc/boto/ec2_tut.txt
-share/doc/boto/s3_tut.txt
-share/doc/boto/sqs_tut.txt
+share/doc/${MODPY_PY_PREFIX}boto/
+share/doc/${MODPY_PY_PREFIX}boto/README
+share/doc/${MODPY_PY_PREFIX}boto/ec2_tut.txt
+share/doc/${MODPY_PY_PREFIX}boto/s3_tut.txt
+share/doc/${MODPY_PY_PREFIX}boto/sqs_tut.txt

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/12/25 23:59:06 fgsch Exp $
 
 COMMENT =		libpcap module for Python
 
 MODPY_EGG_VERSION =	0.10.5
 DISTNAME =		pcapy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net devel
 

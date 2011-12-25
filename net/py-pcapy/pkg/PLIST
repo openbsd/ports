@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/03 15:45:41 sthen Exp $
-lib/python${MODPY_VERSION}/site-packages/pcapy-0.10.5-py${MODPY_VERSION}.egg-info
+@comment $OpenBSD: PLIST,v 1.2 2011/12/25 23:59:06 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/pca${MODPY_PY_PREFIX}${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pcapy.so
-share/doc/pcapy/
-share/doc/pcapy/LICENSE
-share/doc/pcapy/README
-share/doc/pcapy/pcapy.html
+share/doc/${MODPY_PY_PREFIX}pcapy/
+share/doc/${MODPY_PY_PREFIX}pcapy/LICENSE
+share/doc/${MODPY_PY_PREFIX}pcapy/README
+share/doc/${MODPY_PY_PREFIX}pcapy/pcapy.html
