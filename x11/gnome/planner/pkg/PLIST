@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/12/25 09:55:12 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -180,6 +180,7 @@ share/locale/dz/LC_MESSAGES/planner.mo
 share/locale/el/LC_MESSAGES/planner.mo
 share/locale/en_CA/LC_MESSAGES/planner.mo
 share/locale/en_GB/LC_MESSAGES/planner.mo
+share/locale/eo/LC_MESSAGES/planner.mo
 share/locale/es/LC_MESSAGES/planner.mo
 share/locale/et/LC_MESSAGES/planner.mo
 share/locale/eu/LC_MESSAGES/planner.mo
