@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.1 2011/12/26 22:58:48 bentley Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/12/26 23:03:24 stsp Exp $
 
+ONLY_FOR_ARCHS ?=	amd64 i386
 SHARED_ONLY = 		Yes
 VERSION ?= 		1.99.4
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
