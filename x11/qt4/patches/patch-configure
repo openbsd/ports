@@ -1,6 +1,15 @@
-$OpenBSD: patch-configure,v 1.22 2011/09/07 09:54:07 espie Exp $
---- configure.orig	Tue Aug 23 14:02:27 2011
-+++ configure	Mon Sep  5 11:19:02 2011
+$OpenBSD: patch-configure,v 1.23 2011/12/26 15:51:55 kili Exp $
+--- configure.orig	Mon Sep 12 08:49:28 2011
++++ configure	Mon Dec 26 16:47:31 2011
+@@ -776,7 +776,7 @@ CFG_SILENT=no
+ CFG_GRAPHICS_SYSTEM=default
+ CFG_RUNTIME_SYSTEM=
+ CFG_ALSA=auto
+-CFG_PULSEAUDIO=auto
++CFG_PULSEAUDIO=no
+ CFG_COREWLAN=auto
+ CFG_ICD=auto
+ CFG_NOPROCESS=no
 @@ -2138,7 +2138,7 @@ while [ "$#" -gt 0 ]; do
      v|verbose)
          if [ "$VAL" = "yes" ]; then

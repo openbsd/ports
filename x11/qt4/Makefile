@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2011/11/07 08:23:39 espie Exp $
+# $OpenBSD: Makefile,v 1.95 2011/12/26 15:51:55 kili Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -29,7 +29,7 @@ REVISION-examples =	0
 REVISION-sqlite2 =	0
 REVISION-sqlite =	0
 REVISION-tds =		0
-REVISION-main =		2
+REVISION-main =		3
 REVISION-debug =	0
 REVISION-html =		0
 
