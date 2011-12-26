@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/26 22:58:48 bentley Exp $
 
 COMMENT =		n64 emulator input plugin
 
@@ -12,7 +12,6 @@ WANTLIB =		SDL
 LIB_DEPENDS =		devel/sdl
 
 MUPEN64PLUS_MOD = 	input-sdl
-MODULES = 		emulators/mupen64plus
 
 # resolve 'no newline at end of file' warning
 post-patch:

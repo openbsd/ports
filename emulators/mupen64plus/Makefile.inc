@@ -1,4 +1,4 @@
-# $OpenBSD: mupen64plus.port.mk,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+# $OpenBSD: Makefile.inc,v 1.1 2011/12/26 22:58:48 bentley Exp $
 
 SHARED_ONLY = 		Yes
 VERSION ?= 		1.99.4
@@ -12,24 +12,13 @@ CONFIGURE_STYLE ?=	none
 USE_GMAKE ?=		Yes
 MAKE_FLAGS ?= 		CC=${CC} CXX=${CXX} V=1
 
+FAKE_FLAGS ?=		PREFIX=${PREFIX} LDCONFIG=true
+
 .if ${MUPEN64PLUS_MOD} != "core"
 MAKE_FLAGS += 		APIDIR=${LOCALBASE}/include/mupen64plus
 LIB_DEPENDS += 		emulators/mupen64plus/core
 .endif
 
-# non-standard build system...
-.if !target(do-build)
-do-build:
-	cd ${WRKSRC}/projects/unix && \
-		${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${ALL_TARGET}
-.endif
-
-.if !target(do-install)
-do-install:
-	cd ${WRKSRC}/projects/unix && \
-		${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		PREFIX=${LOCALBASE} DESTDIR=${DESTDIR} \
-		LDCONFIG=true ${INSTALL_TARGET}
-.endif
+WRKBUILD ?=	${WRKDIST}/projects/unix
 
 NO_REGRESS ?=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/26 22:58:48 bentley Exp $
 
 COMMENT =		n64 emulator opengl video plugin
 
@@ -11,7 +11,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		GL m stdc++ z SDL png 
 LIB_DEPENDS =		devel/sdl graphics/png
 MUPEN64PLUS_MOD = 	video-rice
-MODULES = 		emulators/mupen64plus
 
 # Use SSE instructions on amd64 only
 .if ${MACHINE_ARCH} != "amd64"
