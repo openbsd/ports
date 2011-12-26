@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/11 12:13:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/12/26 08:53:11 ajacoutot Exp $
+
+BROKEN-powerpc=		cc1plus: out of memory allocating 421022144 bytes after a total of 0 bytes
 
 COMMENT=		Gameboy Advance emulator
 

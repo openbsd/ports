@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/21 13:04:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/26 08:53:11 ajacoutot Exp $
+
+BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 
 COMMENT =	MSX home computer emulator
 
