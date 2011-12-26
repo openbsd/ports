@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/23 13:06:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/26 22:26:39 fgsch Exp $
 
 SHARED_ONLY =		Yes
 
@@ -30,6 +30,8 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS =	--localstatedir=/var
+
+REGRESS_TARGET =	check
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/varnish
