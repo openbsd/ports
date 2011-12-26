@@ -1,33 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/12/03 22:32:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/12/26 18:47:10 landry Exp $
 @bin bin/ristretto
 share/applications/ristretto.desktop
 share/doc/ristretto/
 share/doc/ristretto/html/
 share/doc/ristretto/html/C/
-share/doc/ristretto/html/C/images/
+share/doc/ristretto/html/C/getting-started.html
 share/doc/ristretto/html/C/index.html
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
+share/doc/ristretto/html/C/media/
+share/doc/ristretto/html/C/media/preferences-behaviour.png
+share/doc/ristretto/html/C/media/preferences-control.png
+share/doc/ristretto/html/C/media/preferences-display.png
+share/doc/ristretto/html/C/media/preferences-slideshow.png
+share/doc/ristretto/html/C/media/ristretto.png
+share/doc/ristretto/html/C/media/view-images-1.png
+share/doc/ristretto/html/C/preferences.html
+share/doc/ristretto/html/ristretto.css
 share/icons/hicolor/16x16/apps/ristretto.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/ristretto.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/ristretto.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/ristretto.png
-share/icons/hicolor/36x36/
-share/icons/hicolor/36x36/apps/
 share/icons/hicolor/36x36/apps/ristretto.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/ristretto.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ristretto.svg
 share/locale/ar/LC_MESSAGES/ristretto.mo
 share/locale/ast/
@@ -59,6 +52,7 @@ share/locale/pt_BR/LC_MESSAGES/ristretto.mo
 share/locale/ro/LC_MESSAGES/ristretto.mo
 share/locale/ru/LC_MESSAGES/ristretto.mo
 share/locale/sk/LC_MESSAGES/ristretto.mo
+share/locale/sl/LC_MESSAGES/ristretto.mo
 share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
 share/locale/ug/
