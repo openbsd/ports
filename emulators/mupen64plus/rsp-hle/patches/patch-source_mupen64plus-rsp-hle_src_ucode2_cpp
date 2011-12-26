@@ -1,0 +1,60 @@
+$OpenBSD: patch-source_mupen64plus-rsp-hle_src_ucode2_cpp,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/ucode2.cpp.orig	Mon Dec 19 00:02:57 2011
++++ src/ucode2.cpp	Sun Dec 18 19:51:29 2011
+@@ -56,17 +56,17 @@ static void LOADADPCM2 (void) { // Loads an ADPCM tabl
+     u16 *table = (u16 *)(rsp.RDRAM+v0); // Zelda2 Specific...
+ 
+     for (u32 x = 0; x < ((inst1&0xffff)>>0x4); x++) {
+-        adpcmtable[0x0+(x<<3)^S] = table[0];
+-        adpcmtable[0x1+(x<<3)^S] = table[1];
++        adpcmtable[(0x0+(x<<3))^S] = table[0];
++        adpcmtable[(0x1+(x<<3))^S] = table[1];
+ 
+-        adpcmtable[0x2+(x<<3)^S] = table[2];
+-        adpcmtable[0x3+(x<<3)^S] = table[3];
++        adpcmtable[(0x2+(x<<3))^S] = table[2];
++        adpcmtable[(0x3+(x<<3))^S] = table[3];
+ 
+-        adpcmtable[0x4+(x<<3)^S] = table[4];
+-        adpcmtable[0x5+(x<<3)^S] = table[5];
++        adpcmtable[(0x4+(x<<3))^S] = table[4];
++        adpcmtable[(0x5+(x<<3))^S] = table[5];
+ 
+-        adpcmtable[0x6+(x<<3)^S] = table[6];
+-        adpcmtable[0x7+(x<<3)^S] = table[7];
++        adpcmtable[(0x6+(x<<3))^S] = table[6];
++        adpcmtable[(0x7+(x<<3))^S] = table[7];
+         table += 8;
+     }
+ }
+@@ -99,7 +99,6 @@ static void ADPCM2 (void) { // Verified to be 100% Acc
+     short *book1,*book2;
+ 
+     u8 srange;
+-    u8 inpinc;
+     u8 mask1;
+     u8 mask2;
+     u8 shifter;
+@@ -108,13 +107,11 @@ static void ADPCM2 (void) { // Verified to be 100% Acc
+ 
+     if (Flags & 0x4) { // Tricky lil Zelda MM and ABI2!!! hahaha I know your secrets! :DDD
+         srange = 0xE;
+-        inpinc = 0x5;
+         mask1 = 0xC0;
+         mask2 = 0x30;
+         shifter = 10;
+     } else {
+         srange = 0xC;
+-        inpinc = 0x9;
+         mask1 = 0xf0;
+         mask2 = 0x0f;
+         shifter = 12;
+@@ -710,7 +707,7 @@ static void INTERLEAVE2 (void) { // Needs accuracy ver
+         Left2=*(inSrcL++);
+         Right2=*(inSrcR++);
+ 
+-#ifdef _BIG_ENDIAN
++#ifdef M64P_BIG_ENDIAN
+         *(outbuff++)=Right;
+         *(outbuff++)=Left;
+         *(outbuff++)=Right2;

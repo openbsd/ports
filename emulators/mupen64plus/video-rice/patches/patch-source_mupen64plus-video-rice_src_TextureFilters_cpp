@@ -1,0 +1,137 @@
+$OpenBSD: patch-source_mupen64plus-video-rice_src_TextureFilters_cpp,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/TextureFilters.cpp.orig	Mon Dec 19 00:27:06 2011
++++ src/TextureFilters.cpp	Mon Dec 19 00:27:22 2011
+@@ -30,7 +30,12 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include "liblinux/BMGLibPNG.h"
+ #include "liblinux/BMGDLL.h"
+ #include <sys/types.h>
++#include <algorithm>
+ 
++#ifdef min
++#undef min
++#endif
++
+ /************************************************************************/
+ /* 2X filters                                                           */
+ /************************************************************************/
+@@ -308,7 +313,7 @@ void SharpenFilter_32(uint32 *pdata, uint32 width, uin
+                 val[z]=t5;
+                 if( (t5*mul2) > (t1+t3+t7+t9+t2+t4+t6+t8)*mul1 )
+                 {
+-                    val[z]= min((((t5*mul3) - (t1+t3+t7+t9+t2+t4+t6+t8)*mul1)>>shift4),0xFF);
++                    val[z]= std::min((((t5*mul3) - (t1+t3+t7+t9+t2+t4+t6+t8)*mul1)>>shift4),0xFFU);
+                 }
+             }
+             dest[x] = val[0]|(val[1]<<8)|(val[2]<<16)|(val[3]<<24);
+@@ -375,7 +380,7 @@ void SharpenFilter_16(uint16 *pdata, uint32 width, uin
+                 if( (t5*mul2) > (t1+t3+t7+t9+t2+t4+t6+t8)*mul1 )
+                 {
+                     val[z] = (((t5*mul3) - (t1+t3+t7+t9+t2+t4+t6+t8)*mul1)>>shift4);
+-                    val[z]= min(val[z],0xF);
++                    val[z]= std::min(val[z],(unsigned short)0xFU);
+                 }
+             }
+             dest[x] = val[0]|(val[1]<<4)|(val[2]<<8)|(val[3]<<12);
+@@ -1288,6 +1293,7 @@ void FindAllHiResTextures(void)
+     gHiresTxtrInfos.clear();
+     if (!osal_is_directory(foldername))
+     {
++        DebugMessage(M64MSG_WARNING, "Couldn't open hi-res texture directory: %s", foldername);
+         return;
+     }
+     else
+@@ -1377,7 +1383,8 @@ int FindScaleFactor(const ExtTxtrInfo &info, TxtrCache
+ 
+ int CheckTextureInfos( CSortedList<uint64,ExtTxtrInfo> &infos, TxtrCacheEntry &entry, int &indexa, int &scaleShift, bool bForDump = false)
+ {
+-    if(entry.ti.WidthToCreate/entry.ti.WidthToLoad > 2 || entry.ti.HeightToCreate/entry.ti.HeightToLoad > 2 )
++    if ((entry.ti.WidthToLoad  != 0 && entry.ti.WidthToCreate  / entry.ti.WidthToLoad  > 2) ||
++        (entry.ti.HeightToLoad != 0 && entry.ti.HeightToCreate / entry.ti.HeightToLoad > 2 ))
+     {
+         //DebugMessage(M64MSG_WARNING, "Hires texture does not support extreme texture replication");
+         return -1;
+@@ -1564,9 +1571,28 @@ bool LoadRGBBufferFromPNGFile(char *filename, unsigned
+                 pSrc++;
+             }
+         }
++        else if (img.bits_per_pixel == 8 && (bits_per_pixel == 24 || bits_per_pixel == 32))
++        {
++            // do palette lookup and convert 8bpp to 24/32bpp
++            int destBytePP = bits_per_pixel / 8;
++            int paletteBytePP = img.bytes_per_palette_entry;
++            unsigned char *pSrc = img.bits;
++            unsigned char *pDst = *pbuf;
++            // clear the destination image data (just to clear alpha if bpp=32)
++            memset(*pbuf, 0, img.width*img.height*destBytePP);
++            for (int i = 0; i < (int)(img.width*img.height); i++)
++            {
++                unsigned char clridx = *pSrc++;
++                unsigned char *palcolor = img.palette + clridx * paletteBytePP;
++                pDst[0] = palcolor[2]; // red
++                pDst[1] = palcolor[1]; // green
++                pDst[2] = palcolor[0]; // blue
++                pDst += destBytePP;
++            }
++        }
+         else
+         {
+-            DebugMessage(M64MSG_ERROR, "PNG file is %i bpp but texture is %i bpp.", img.bits_per_pixel, bits_per_pixel);
++            DebugMessage(M64MSG_ERROR, "PNG file '%s' is %i bpp but texture is %i bpp.", filename, img.bits_per_pixel, bits_per_pixel);
+             delete [] *pbuf;
+             *pbuf = NULL;
+         }
+@@ -1579,7 +1605,7 @@ bool LoadRGBBufferFromPNGFile(char *filename, unsigned
+     }
+     else
+     {
+-        DebugMessage(M64MSG_ERROR, "ReadPNG() returned error in LoadRGBBufferFromPNGFile!");
++        DebugMessage(M64MSG_ERROR, "ReadPNG() returned error for '%s' in LoadRGBBufferFromPNGFile!", filename);
+         *pbuf = NULL;
+         return false;
+     }
+@@ -1849,15 +1875,14 @@ void LoadHiresTexture( TxtrCacheEntry &entry )
+     }
+ 
+     // calculate the texture size magnification by comparing the N64 texture size and the hi-res texture size
+-    int scalex = width / (int)entry.ti.WidthToCreate;
+-    int scaley = height / (int)entry.ti.HeightToCreate;
++    int scale = 1 << scaleShift;
+     int mirrorx = 1;
+     int mirrory = 1;
+     if (entry.ti.WidthToCreate/entry.ti.WidthToLoad == 2) mirrorx = 2;
+     if (entry.ti.HeightToCreate/entry.ti.HeightToLoad == 2) mirrory = 2;
+-    entry.pEnhancedTexture = CDeviceBuilder::GetBuilder()->CreateTexture(entry.ti.WidthToCreate*scalex*mirrorx, entry.ti.HeightToCreate*scaley*mirrory);
++    entry.pEnhancedTexture = CDeviceBuilder::GetBuilder()->CreateTexture(entry.ti.WidthToCreate*scale, entry.ti.HeightToCreate*scale);
+     DrawInfo info;
+-
++    
+     if( entry.pEnhancedTexture && entry.pEnhancedTexture->StartUpdate(&info) )
+     {
+ 
+@@ -1913,22 +1938,22 @@ void LoadHiresTexture( TxtrCacheEntry &entry )
+ 
+         if (mirrorx == 2)
+         {
+-            //printf("Mirror: ToCreate: (%d,%d) ToLoad: (%d,%d) Scale: (%i,%i) Mirror: (%i,%i) Size: (%i,%i) Mask: %i\n", entry.ti.WidthToCreate, entry.ti.HeightToCreate, entry.ti.WidthToLoad, entry.ti.HeightToLoad, scalex, scaley, mirrorx, mirrory, width, height, entry.ti.maskS+scaleShift);
++            //printf("Mirror: ToCreate: (%d,%d) ToLoad: (%d,%d) Scale: (%i,%i) Mirror: (%i,%i) Size: (%i,%i) Mask: %i\n", entry.ti.WidthToCreate, entry.ti.HeightToCreate, entry.ti.WidthToLoad, entry.ti.HeightToLoad, scale, scale, mirrorx, mirrory, width, height, entry.ti.maskS+scaleShift);
+             gTextureManager.Mirror(info.lpSurface, width, entry.ti.maskS+scaleShift, width*2, width*2, height, S_FLAG, 4 );
+         }
+ 
+         if (mirrory == 2)
+         {
+-            //printf("Mirror: ToCreate: (%d,%d) ToLoad: (%d,%d) Scale: (%i,%i) Mirror: (%i,%i) Size: (%i,%i) Mask: %i\n", entry.ti.WidthToCreate, entry.ti.HeightToCreate, entry.ti.WidthToLoad, entry.ti.HeightToLoad, scalex, scaley, mirrorx, mirrory, width, height, entry.ti.maskT+scaleShift);
++            //printf("Mirror: ToCreate: (%d,%d) ToLoad: (%d,%d) Scale: (%i,%i) Mirror: (%i,%i) Size: (%i,%i) Mask: %i\n", entry.ti.WidthToCreate, entry.ti.HeightToCreate, entry.ti.WidthToLoad, entry.ti.HeightToLoad, scale, scale, mirrorx, mirrory, width, height, entry.ti.maskT+scaleShift);
+             gTextureManager.Mirror(info.lpSurface, height, entry.ti.maskT+scaleShift, height*2, entry.pEnhancedTexture->m_dwCreatedTextureWidth, height, T_FLAG, 4 );
+         }
+ 
+-        if( entry.ti.WidthToCreate*scalex*mirrorx < entry.pEnhancedTexture->m_dwCreatedTextureWidth )
++        if( entry.ti.WidthToCreate*scale < entry.pEnhancedTexture->m_dwCreatedTextureWidth )
+         {
+             // Clamp
+             gTextureManager.Clamp(info.lpSurface, width, entry.pEnhancedTexture->m_dwCreatedTextureWidth, entry.pEnhancedTexture->m_dwCreatedTextureWidth, height, S_FLAG, 4 );
+         }
+-        if( entry.ti.HeightToCreate*scaley*mirrory < entry.pEnhancedTexture->m_dwCreatedTextureHeight )
++        if( entry.ti.HeightToCreate*scale < entry.pEnhancedTexture->m_dwCreatedTextureHeight )
+         {
+             // Clamp
+             gTextureManager.Clamp(info.lpSurface, height, entry.pEnhancedTexture->m_dwCreatedTextureHeight, entry.pEnhancedTexture->m_dwCreatedTextureWidth, height, T_FLAG, 4 );

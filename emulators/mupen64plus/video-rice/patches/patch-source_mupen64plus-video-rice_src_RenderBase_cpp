@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_mupen64plus-video-rice_src_RenderBase_cpp,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/RenderBase.cpp.orig	Mon Dec 19 00:25:34 2011
++++ src/RenderBase.cpp	Mon Dec 19 00:25:42 2011
+@@ -384,7 +384,7 @@ __declspec( naked ) void  __fastcall SSEVec3TransformD
+ void SSEVec3Transform(int i)
+ {
+   asm volatile(" shl               $4,      %0   \n"
+-               " movsxl           %k0,     %q0   \n"
++               " movslq           %k0,     %q0   \n"
+                " movaps      (%1,%q0),  %%xmm1   \n"
+                " movaps         0(%2),  %%xmm4   \n"
+                " movaps        16(%2),  %%xmm5   \n"

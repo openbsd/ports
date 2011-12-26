@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_mupen64plus-rsp-hle_src_hle_h,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/hle.h.orig	Mon Dec 19 00:00:35 2011
++++ src/hle.h	Mon Dec 19 00:00:45 2011
+@@ -26,7 +26,7 @@
+ 
+ #define RSP_HLE_VERSION 0x016304
+ 
+-#ifdef _BIG_ENDIAN
++#ifdef M64P_BIG_ENDIAN
+ #define S 0
+ #define S16 0
+ #define S8 0

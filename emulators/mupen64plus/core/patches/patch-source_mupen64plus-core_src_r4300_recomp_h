@@ -1,0 +1,21 @@
+$OpenBSD: patch-source_mupen64plus-core_src_r4300_recomp_h,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/r4300/recomp.h.orig	Sun Dec 18 23:14:01 2011
++++ src/r4300/recomp.h	Sun Dec 18 20:04:55 2011
+@@ -88,14 +88,15 @@ typedef struct _precomp_block
+ 
+ void recompile_block(int *source, precomp_block *block, unsigned int func);
+ void init_block(int *source, precomp_block *block);
++void free_block(precomp_block *block);
+ void recompile_opcode(void);
+ void prefetch_opcode(unsigned int op);
+ void dyna_jump(void);
+ void dyna_start(void (*code)(void));
+ void dyna_stop(void);
+ void *malloc_exec(size_t size);
+-void *realloc_exec(void *ptr, size_t size, size_t newsize);
+-void free_exec(void *ptr);
++void *realloc_exec(void *ptr, size_t oldsize, size_t newsize);
++void free_exec(void *ptr, size_t length);
+ 
+ extern precomp_instr *dst; /* precomp_instr structure for instruction being recompiled */
+ 

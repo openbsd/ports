@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_mupen64plus-input-sdl_projects_unix_Makefile,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- projects/unix/Makefile.orig	Tue Nov 23 03:15:13 2010
++++ projects/unix/Makefile	Sun Dec 18 17:12:34 2011
+@@ -48,6 +48,11 @@ ifeq ("$(UNAME)","FreeBSD")
+   SO_EXTENSION = so
+   SHARED = -shared
+ endif
++ifeq ("$(UNAME)","OpenBSD")
++  OS = OPENBSD
++  SO_EXTENSION = so
++  SHARED = -shared
++endif
+ ifneq ("$(filter GNU/kFreeBSD kfreebsd,$(UNAME))","")
+   OS = LINUX
+   SO_EXTENSION = so
+@@ -255,9 +260,9 @@ targets:
+ all: $(TARGET)
+ 
+ install: $(TARGET)
+-	$(INSTALL) -d -v "$(DESTDIR)$(LIBDIR)"
++	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
+ 	$(INSTALL) -m 0644 $(TARGET) "$(DESTDIR)$(LIBDIR)"
+-	$(INSTALL) -d -v "$(DESTDIR)$(SHAREDIR)"
++	$(INSTALL) -d "$(DESTDIR)$(SHAREDIR)"
+ 	$(INSTALL) -m 0644 "../../data/InputAutoCfg.ini" "$(DESTDIR)$(SHAREDIR)"
+ 
+ uninstall:

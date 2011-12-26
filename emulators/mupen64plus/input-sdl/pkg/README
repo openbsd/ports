@@ -1,0 +1,32 @@
+$OpenBSD: README,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This file contains information taken from the wiki
+at https://code.google.com/p/mupen64plus/wiki/
+
+Keyboard Mapping
+================
+
+The keys or joystick/mouse inputs which will be mapped to the N64
+controller for playing the games are determined by the input plugin.
+The SDL-Input plugin contains an auto-configuration function which will
+provide default joystick mappings for any recognized joystick. If there
+is no supported joystick connected, the input plugin will enable a
+default keyboard control mapping, as given below:
+
+N64 Controller Action   | Keys
+------------------------+-----------------------------------
+Analog Pad              | Arrow Keys (left, right, down, up)
+C Up/Left/Down/Right    | "I", "J", "K", "L"
+DPad Up/Left/Down/Right | "W", "A", "S", "D"
+Z trigger               | "z"
+Left trigger            | "x"
+Right trigger           | "c"
+Start                   | "Enter" ("Return")
+A button                | "left shift"
+B button                | "left control"
+Select Mempack          | ","
+Select Rumblepack       | "." 

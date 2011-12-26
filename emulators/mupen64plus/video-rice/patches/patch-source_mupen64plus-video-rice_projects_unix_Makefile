@@ -1,0 +1,49 @@
+$OpenBSD: patch-source_mupen64plus-video-rice_projects_unix_Makefile,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- projects/unix/Makefile.orig	Tue Nov 23 03:15:17 2010
++++ projects/unix/Makefile	Sun Dec 18 17:12:53 2011
+@@ -49,6 +49,11 @@ ifeq ("$(UNAME)","FreeBSD")
+   SO_EXTENSION = so
+   SHARED = -shared
+ endif
++ifeq ("$(UNAME)","OpenBSD")
++  OS = OPENBSD
++  SO_EXTENSION = so
++  SHARED = -shared
++endif
+ ifneq ("$(filter GNU/kFreeBSD kfreebsd,$(UNAME))","")
+   OS = LINUX
+   SO_EXTENSION = so
+@@ -112,6 +117,10 @@ ifeq ($(OS),FREEBSD)
+   LDFLAGS += -lGL $(shell pkg-config --libs libpng)
+   CFLAGS += $(shell pkg-config --cflags libpng)
+ endif
++ifeq ($(OS),OPENBSD)
++  LDFLAGS += -lGL $(shell pkg-config --libs libpng)
++  CFLAGS += $(shell pkg-config --cflags libpng)
++endif
+ ifeq ($(OS), LINUX)
+   LDFLAGS += -ldl -lGL
+   # only export api symbols
+@@ -147,6 +156,10 @@ ifeq ($(OS),FREEBSD)
+     CFLAGS  += $(shell sdl-config --cflags) -DPIC
+     LDFLAGS += $(shell sdl-config --libs) -DPIC
+ endif
++ifeq ($(OS),OPENBSD)
++    CFLAGS  += $(shell sdl-config --cflags) -DPIC
++    LDFLAGS += $(shell sdl-config --libs) -DPIC
++endif
+ ifeq ($(OS),OSX)
+     CFLAGS  += $(shell sdl-config --cflags) -DPIC
+     # sdl-config on mac screws up when we're trying to build a library and not an executable
+@@ -294,9 +307,9 @@ targets:
+ all: $(TARGET)
+ 
+ install: $(TARGET)
+-	$(INSTALL) -d -v "$(DESTDIR)$(LIBDIR)"
++	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
+ 	$(INSTALL) -m 0644 $(TARGET) "$(DESTDIR)$(LIBDIR)"
+-	$(INSTALL) -d -v "$(DESTDIR)$(SHAREDIR)"
++	$(INSTALL) -d "$(DESTDIR)$(SHAREDIR)"
+ 	$(INSTALL) -m 0644 "../../data/RiceVideoLinux.ini" "$(DESTDIR)$(SHAREDIR)"
+ 
+ uninstall:

@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_mupen64plus-input-sdl_src_config_h,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/config.h.orig	Sun Dec 18 23:50:49 2011
++++ src/config.h	Sun Dec 18 19:51:24 2011
+@@ -23,7 +23,6 @@
+ #define __CONFIG_H__
+ 
+ extern void load_configuration(int bPrintSummary);
+-extern void save_controller_config(int iCtrlIdx);
+ 
+ #endif /* __CONFIG_H__ */
+ 

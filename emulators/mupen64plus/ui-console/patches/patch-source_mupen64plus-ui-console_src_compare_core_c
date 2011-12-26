@@ -1,0 +1,16 @@
+$OpenBSD: patch-source_mupen64plus-ui-console_src_compare_core_c,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- src/compare_core.c.orig	Mon Dec 19 00:07:20 2011
++++ src/compare_core.c	Sun Dec 18 19:51:15 2011
+@@ -51,8 +51,10 @@ static void stop_it(void)
+ 
+     errors++;
+ #if !defined(WIN32)
+-    if (errors > 7)
+-        asm("int $3;");
++    #if defined(__i386__) || defined(__x86_64__)
++        if (errors > 7)
++            asm("int $3;");
++    #endif
+ #endif
+ }
+ 

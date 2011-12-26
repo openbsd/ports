@@ -1,0 +1,45 @@
+$OpenBSD: patch-source_mupen64plus-audio-sdl_projects_unix_Makefile,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+--- projects/unix/Makefile.orig	Tue Nov 23 03:15:11 2010
++++ projects/unix/Makefile	Sun Dec 18 17:12:23 2011
+@@ -49,6 +49,11 @@ ifeq ("$(UNAME)","FreeBSD")
+   SHARED = -shared
+   SO_EXTENSION = so
+ endif
++ifeq ("$(UNAME)","OpenBSD")
++  OS = OPENBSD
++  SHARED = -shared
++  SO_EXTENSION = so
++endif
+ ifneq ("$(filter GNU/kFreeBSD kfreebsd,$(UNAME))","")
+   OS = LINUX
+   SHARED = -shared
+@@ -140,6 +145,10 @@ ifeq ($(OS),FREEBSD)
+     CFLAGS  += $(shell sdl-config --cflags)
+     LDFLAGS += $(shell sdl-config --libs)
+ endif
++ifeq ($(OS),OPENBSD)
++    CFLAGS  += $(shell sdl-config --cflags)
++    LDFLAGS += $(shell sdl-config --libs)
++endif
+ ifeq ($(OS),OSX)
+     CFLAGS  += $(shell sdl-config --cflags)
+     # sdl-config on mac screws up when we're trying to build a library and not an executable
+@@ -199,6 +208,9 @@ endif
+ ifeq ($(OS),FREEBSD)
+   STRIP	+= strip -s
+ endif
++ifeq ($(OS),OPENBSD)
++  STRIP	?= strip -s
++endif
+ 
+ # set special flags for given Makefile parameters
+ ifeq ($(DEBUG),1)
+@@ -265,7 +277,7 @@ targets:
+ all: $(TARGET)
+ 
+ install: $(TARGET)
+-	$(INSTALL) -d -v "$(DESTDIR)$(LIBDIR)"
++	$(INSTALL) -d "$(DESTDIR)$(LIBDIR)"
+ 	$(INSTALL) -m 0644 $(TARGET) "$(DESTDIR)$(LIBDIR)"
+ 
+ uninstall:
