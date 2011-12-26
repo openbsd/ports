@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/12/03 22:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/12/26 18:38:43 landry Exp $
 
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
-REVISION=	2
+XFCE_VERSION=	4.8.1
 
 SHARED_LIBS=	xfce4ui-1		0.0	\
 		xfce4kbd-private-2	0.0	# 0.0
