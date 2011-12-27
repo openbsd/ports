@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/30 21:30:20 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2011/12/27 21:10:28 kili Exp $
 
 COMMENT =	lexical analyser generator for Haskell
 
 DISTNAME =	alex-2.3.5
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/alex/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/24 19:05:32 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2011/12/27 21:25:49 kili Exp $
 
 COMMENT =		Snap project starter and glue code library
 
 DISTNAME =		snap-0.5.3.1
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 

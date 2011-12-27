@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/30 21:30:20 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/27 21:11:51 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
 DISTNAME =	cabal-install-0.10.2
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/cabal/

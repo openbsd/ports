@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/30 21:35:02 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/12/27 21:21:54 kili Exp $
 
 COMMENT =		Gradius clone
 
 DISTNAME =		Monadius-0.93
 PKGNAME =		${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 CATEGORIES =		games
 HOMEPAGE =		http://www.geocities.jp/takascience/haskell/monadius_en.html
 
