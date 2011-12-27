@@ -1,0 +1,54 @@
+$OpenBSD: patch-rts_posix_Signals_c,v 1.1 2011/12/27 20:53:01 kili Exp $
+
+There are several problems with the original code:
+
+- It doesn't work with uthreads (instead of running the default
+  handler, the custom handler is called again, which causes an
+  endless cascade of signals once the process gets a SIGTSTP).
+
+- It isn't posix compliant (sigprocmask(2) behaviour is unspecified for
+  multithreaded processes, where you would have to use
+  pthread_sigmask(3)).
+
+- It's far too complicated compared to the simple kill(getpid(),
+  SIGSTOP).
+
+--- rts/posix/Signals.c.orig	Mon Jun 13 19:10:06 2011
++++ rts/posix/Signals.c	Tue Dec 27 19:58:52 2011
+@@ -494,7 +494,7 @@ empty_handler (int sig STG_UNUSED)
+ 
+    The trick we use is:
+      - catch SIGTSTP
+-     - in the handler,  kill(getpid(),SIGTSTP)
++     - in the handler,  kill(getpid(),SIGSTOP)
+      - when this returns, restore the TTY settings
+    This means we don't have to catch SIGCONT too.
+ 
+@@ -516,17 +516,8 @@ sigtstp_handler (int sig)
+         }
+     }
+ 
+-    // de-install the SIGTSTP handler
+-    set_sigtstp_action(rtsFalse);
+-
+     // really stop the process now
+-    {
+-        sigset_t mask;
+-        sigemptyset(&mask);
+-        sigaddset(&mask, sig);
+-        sigprocmask(SIG_UNBLOCK, &mask, NULL);
+-        kill(getpid(), sig);
+-    }
++    kill(getpid(), SIGSTOP);
+ 
+     // on return, restore the TTY state
+     for (fd = 0; fd <= 2; fd++) {
+@@ -534,8 +525,6 @@ sigtstp_handler (int sig)
+             tcsetattr(0,TCSANOW,&ts[fd]);
+         }
+     }
+-
+-    set_sigtstp_action(rtsTrue);
+ }
+ 
+ static void
