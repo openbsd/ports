@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/27 09:44:15 jasper Exp $
+%%SHARED%%
+@bin bin/twolame
+include/twolame.h
+lib/libtwolame.a
+lib/libtwolame.la
+lib/pkgconfig/
+lib/pkgconfig/twolame.pc
+@man man/man1/twolame.1
+share/doc/twolame/
+share/doc/twolame/api.txt
+share/doc/twolame/html/
+share/doc/twolame/html/api.html
+share/doc/twolame/html/authors.html
+share/doc/twolame/html/changelog.html
+share/doc/twolame/html/doxygen.css
+share/doc/twolame/html/doxygen.png
+share/doc/twolame/html/index.html
+share/doc/twolame/html/nav_f.png
+share/doc/twolame/html/nav_h.png
+share/doc/twolame/html/psycho.html
+share/doc/twolame/html/readme.html
+share/doc/twolame/html/tabs.css
+share/doc/twolame/html/todo.html
+share/doc/twolame/html/twolame-manpage.css
+share/doc/twolame/html/twolame.1.html
+share/doc/twolame/html/twolame.css
+share/doc/twolame/html/twolame_8h.html
+share/doc/twolame/html/twolame_8h_source.html
+share/doc/twolame/html/vbr.html
+share/doc/twolame/psycho.txt
+share/doc/twolame/vbr.txt
