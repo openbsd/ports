@@ -1,0 +1,11 @@
+$OpenBSD: patch-i3bar_src_child_c,v 1.1 2011/12/27 09:05:17 dcoppa Exp $
+--- i3bar/src/child.c.orig	Tue Dec 27 09:42:01 2011
++++ i3bar/src/child.c	Tue Dec 27 09:42:12 2011
+@@ -80,7 +80,6 @@ void stdin_io_cb(struct ev_loop *loop, ev_io *watcher,
+             }
+ 
+             /* end of file, kill the watcher */
+-            ELOG("stdin: received EOF\n");
+             cleanup();
+             draw_bars();
+             return;

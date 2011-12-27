@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config,v 1.6 2011/12/07 09:51:26 dcoppa Exp $
---- i3.config.orig	Fri Nov 11 23:41:20 2011
-+++ i3.config	Wed Dec  7 10:35:02 2011
+$OpenBSD: patch-i3_config,v 1.7 2011/12/27 09:05:17 dcoppa Exp $
+--- i3.config.orig	Sat Dec 24 16:25:08 2011
++++ i3.config	Tue Dec 27 09:26:06 2011
 @@ -9,6 +9,8 @@
  # layout, use the i3-config-wizard
  #
@@ -35,8 +35,8 @@ $OpenBSD: patch-i3_config,v 1.6 2011/12/07 09:51:26 dcoppa Exp $
 +# Start i3bar to display a workspace bar
 +# XXX: i3status has not been ported to OpenBSD yet
  bar {
--	status_command i3status
-+	status_command /usr/bin/true
+-        status_command i3status
++        status_command /usr/bin/true
  }
 -
 -#######################################################################

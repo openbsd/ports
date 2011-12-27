@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config_keycodes,v 1.3 2011/12/07 09:51:26 dcoppa Exp $
---- i3.config.keycodes.orig	Fri Nov 11 23:41:20 2011
-+++ i3.config.keycodes	Wed Dec  7 10:35:13 2011
+$OpenBSD: patch-i3_config_keycodes,v 1.4 2011/12/27 09:05:17 dcoppa Exp $
+--- i3.config.keycodes.orig	Sat Dec 24 16:25:08 2011
++++ i3.config.keycodes	Tue Dec 27 09:30:43 2011
 @@ -17,13 +17,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier $mod
  
@@ -26,6 +26,6 @@ $OpenBSD: patch-i3_config_keycodes,v 1.3 2011/12/07 09:51:26 dcoppa Exp $
 +# Start i3bar to display a workspace bar
 +# XXX: i3status has not been ported to OpenBSD yet
  bar {
--	status_command i3status
-+	status_command /usr/bin/true
+-        status_command i3status
++        status_command /usr/bin/true
  }

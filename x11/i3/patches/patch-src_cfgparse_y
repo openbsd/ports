@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_cfgparse_y,v 1.4 2011/12/01 16:00:01 dcoppa Exp $
---- src/cfgparse.y.orig	Fri Nov 11 23:41:20 2011
-+++ src/cfgparse.y	Wed Nov 30 17:01:02 2011
-@@ -284,8 +284,8 @@ static void start_configerror_nagbar(const char *confi
+$OpenBSD: patch-src_cfgparse_y,v 1.5 2011/12/27 09:05:17 dcoppa Exp $
+--- src/cfgparse.y.orig	Sat Dec 24 16:25:08 2011
++++ src/cfgparse.y	Tue Dec 27 09:24:53 2011
+@@ -286,8 +286,8 @@ static void start_configerror_nagbar(const char *confi
      if (configerror_pid == 0) {
          char *editaction,
               *pageraction;
