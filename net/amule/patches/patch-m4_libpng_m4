@@ -1,4 +1,7 @@
-$OpenBSD: patch-m4_libpng_m4,v 1.1 2011/11/28 15:28:49 dcoppa Exp $
+$OpenBSD: patch-m4_libpng_m4,v 1.2 2011/12/27 11:51:37 dcoppa Exp $
+
+Fix configure of libpng when sh != bash
+
 --- m4/libpng.m4.orig	Mon Nov 28 09:58:11 2011
 +++ m4/libpng.m4	Mon Nov 28 10:00:37 2011
 @@ -95,9 +95,9 @@ m4_define([REQUIRED_VERSION_MICRO], [m4_bregexp(REQUIR
