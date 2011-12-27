@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.93 2011/12/21 15:54:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2011/12/27 12:21:10 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.90.1.5
+GNOME_VERSION=		2.90.1.6
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -103,9 +103,8 @@ post-install:
 
 ### XXX remove this chunk when updating to a 'real' release ############
 ### Also convert to new gnome.port.mk CONFIGURE_ARGS ############
-# Wed Dec 21 16:03:28 CET 2011
+# Tue Dec 27 13:07:07 CET 2011
 MASTER_SITES=		http://distfiles.bsdfrog.org/
-EXTRACT_SUFX=		.tar.gz
 
 BUILD_DEPENDS +=	x11/gnome/common \
 			devel/autoconf/${AUTOCONF_VERSION} \
