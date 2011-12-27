@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2011/12/03 22:17:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2011/12/27 14:15:06 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -8,6 +8,7 @@
 @extraunexec rm -rf /var/db/gdm/.dbus
 @extraunexec rm -rf /var/db/gdm/.gconf
 @extraunexec rm -rf /var/db/gdm/.gconfd
+@extraunexec rm -rf /var/db/gdm/.pulse-cookie
 @extraunexec rm -rf /var/db/gdm/.config/dconf/*
 @extraunexec rm -rf /var/db/gdm/*
 @extraunexec rm -rf /var/gdm/*
