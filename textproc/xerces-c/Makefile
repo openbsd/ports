@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/03 20:13:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/27 11:15:36 pascal Exp $
 
 COMMENT=	c++ validating XML parser
 
@@ -28,6 +28,8 @@ WANTLIB=	m stdc++
 
 XERCESCROOT=	${WRKDIR}/${DISTNAME}
 WRKSRC=		${XERCESCROOT}/src/xercesc
+
+MODULES =	gnu
 
 CONFIGURE_SCRIPT= ${XERCESCROOT}/src/xercesc/runConfigure
 CONFIGURE_STYLE= simple
