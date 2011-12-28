@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2011/12/28 08:56:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.2.1
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	panel-applet-4            1.0 # 0.0
 
