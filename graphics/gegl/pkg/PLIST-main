@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/12/10 09:13:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/12/28 09:31:58 ajacoutot Exp $
 @bin bin/gegl
 include/gegl-0.1/
 include/gegl-0.1/gegl-buffer-backend.h
@@ -101,8 +101,6 @@ lib/gegl-0.1/edge-sobel.so
 lib/gegl-0.1/exclusion.so
 @comment lib/gegl-0.1/exp-combine.la
 lib/gegl-0.1/exp-combine.so
-@comment lib/gegl-0.1/exr-save.la
-lib/gegl-0.1/exr-save.so
 @comment lib/gegl-0.1/fattal02.la
 lib/gegl-0.1/fattal02.so
 @comment lib/gegl-0.1/fractal-explorer.la
