@@ -1,7 +1,26 @@
-$OpenBSD: patch-setup_py,v 1.6 2011/10/10 10:08:05 mpi Exp $
---- setup.py.orig	Fri Aug 27 06:41:55 2010
-+++ setup.py	Sun Oct  9 17:06:47 2011
-@@ -267,9 +267,6 @@ kw = {'name':"pycrypto",
+$OpenBSD: patch-setup_py,v 1.7 2011/12/28 09:56:38 mpi Exp $
+--- setup.py.orig	Fri Nov  4 20:17:40 2011
++++ setup.py	Mon Dec 26 12:38:05 2011
+@@ -173,15 +173,14 @@
+                 # the libtomcrypt code.
+                 self.__add_compiler_option("-O")
+             else:
+-                # Speed up execution by tweaking compiler options.  This
+-                # especially helps the DES modules.
+-                self.__add_compiler_option("-O3")
+-                self.__add_compiler_option("-fomit-frame-pointer")
+                 # Don't include debug symbols unless debugging
+                 self.__remove_compiler_option("-g")
+                 # Don't include profiling information (incompatible with
+                 # -fomit-frame-pointer)
+                 self.__remove_compiler_option("-pg")
++                # Honor CFLAGS
++                for opt in os.getenv('CFLAGS').split():
++                    self.__add_compiler_option(opt)
+             if USE_GCOV:
+                 self.__add_compiler_option("-fprofile-arcs")
+                 self.__add_compiler_option("-ftest-coverage")
+@@ -413,9 +412,6 @@
                        sources=["src/_fastmath.c"]),
  
              # Hash functions
@@ -11,7 +30,7 @@ $OpenBSD: patch-setup_py,v 1.6 2011/10/10 10:08:05 mpi Exp $
              Extension("Crypto.Hash.MD4",
                        include_dirs=['src/'],
                        sources=["src/MD4.c"]),
-@@ -285,9 +282,10 @@ kw = {'name':"pycrypto",
+@@ -431,9 +427,10 @@
              Extension("Crypto.Cipher.AES",
                        include_dirs=['src/'],
                        sources=["src/AES.c"]),

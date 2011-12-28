@@ -1,10 +1,11 @@
---- lib/Crypto/SelfTest/Cipher/__init__.py.orig	Fri Aug 27 06:41:55 2010
-+++ lib/Crypto/SelfTest/Cipher/__init__.py	Sun Oct  9 17:06:47 2011
-@@ -29,7 +29,6 @@ __revision__ = "$Id: patch-lib_Crypto_SelfTest_Cipher___init___py,v 1.2 2011/10/09 15:09:55 ajacoutot Exp $"
+$OpenBSD: patch-lib_Crypto_SelfTest_Cipher___init___py,v 1.3 2011/12/28 09:56:38 mpi Exp $
+--- lib/Crypto/SelfTest/Cipher/__init__.py.orig	Fri Nov  4 20:17:40 2011
++++ lib/Crypto/SelfTest/Cipher/__init__.py	Mon Dec 26 09:48:45 2011
+@@ -29,7 +29,6 @@
  def get_tests(config={}):
      tests = []
-     import test_AES;      tests += test_AES.get_tests(config=config)
--    import test_ARC2;     tests += test_ARC2.get_tests(config=config)
-     import test_ARC4;     tests += test_ARC4.get_tests(config=config)
-     import test_Blowfish; tests += test_Blowfish.get_tests(config=config)
-     import test_CAST;     tests += test_CAST.get_tests(config=config)
+     from Crypto.SelfTest.Cipher import test_AES;      tests += test_AES.get_tests(config=config)
+-    from Crypto.SelfTest.Cipher import test_ARC2;     tests += test_ARC2.get_tests(config=config)
+     from Crypto.SelfTest.Cipher import test_ARC4;     tests += test_ARC4.get_tests(config=config)
+     from Crypto.SelfTest.Cipher import test_Blowfish; tests += test_Blowfish.get_tests(config=config)
+     from Crypto.SelfTest.Cipher import test_CAST;     tests += test_CAST.get_tests(config=config)

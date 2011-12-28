@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/10/08 14:56:34 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/12/28 09:56:38 mpi Exp $
 lib/python${MODPY_VERSION}/site-packages/Crypto/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/AES.so
@@ -21,7 +21,13 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/RIPEMD160.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA224.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA224.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA256.so
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA384.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA384.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA512.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/SHA512.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Hash/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Protocol/
@@ -44,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_RSA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_RSA.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_fastmath.so
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_slowmath.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/_slowmath.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/PublicKey/pubkey.py
@@ -112,11 +119,19 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_RIPEMD.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_RIPEMD.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA224.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA224.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA256.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA256.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA384.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA384.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA512.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Hash/test_SHA512.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/test_AllOrNothing.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/test_AllOrNothing.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/test_chaffing.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/test_chaffing.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Protocol/test_rfc1751.py
@@ -188,8 +203,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Util/asn1.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/asn1.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/number.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/number.pyc
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/python_compat.py
-lib/python${MODPY_VERSION}/site-packages/Crypto/Util/python_compat.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py21compat.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py21compat.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py3compat.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py3compat.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/randpool.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/randpool.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Util/strxor.so
@@ -200,5 +217,5 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/pct_warnings.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/pct_warnings.pyc
 lib/python${MODPY_VERSION}/site-packages/pycrypto-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-share/doc/py-crypto/
-share/doc/py-crypto/README
+share/doc/${MODPY_PY_PREFIX}crypto/
+share/doc/${MODPY_PY_PREFIX}crypto/README
