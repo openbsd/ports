@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/12/28 21:14:04 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		1.8.0
+V =		1.8.1
 DISTNAME =	gdal-${V}
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
-REVISION-main =	1
-REVISION-python =	1
 
-SHARED_LIBS =	gdal 17.0
+SHARED_LIBS =	gdal 18.0 #16.1
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -66,6 +64,7 @@ MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
+NO_REGRESS =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include \
 			  -I${LOCALBASE}/include/libpng" \
