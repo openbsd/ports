@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/29 17:51:27 espie Exp $
 
-DISTNAME =	ucpp-1.2
+DISTNAME =	ucpp-1.3.2
 COMMENT =	C preprocessor and lexer
 CATEGORIES =	devel
-HOMEPAGE =	http://pornin.nerim.net/ucpp/
-MASTER_SITES =	${HOMEPAGE}
+HOMEPAGE =	http://code.google.com/p/ucpp
+MASTER_SITES =	http://ucpp.googlecode.com/files/
 
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,6 +16,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 MAKE_FLAGS =	FLAGS='${CFLAGS} -D_POSIX_SOURCE' CC='${CC}'
 USE_GROFF =	Yes
 NO_REGRESS =	Yes
+WRKDIST =	${WRKDIR}/ucpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ucpp ${PREFIX}/bin
