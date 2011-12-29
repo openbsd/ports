@@ -1,12 +1,15 @@
-$OpenBSD: patch-tests_libedata-cal_test-cal-backend-sexp_c,v 1.1 2011/09/21 13:26:03 jasper Exp $
---- tests/libedata-cal/test-cal-backend-sexp.c.orig	Sat Sep 17 09:55:01 2011
-+++ tests/libedata-cal/test-cal-backend-sexp.c	Sat Sep 17 09:55:26 2011
+$OpenBSD: patch-tests_libedata-cal_test-cal-backend-sexp_c,v 1.2 2011/12/29 09:23:19 ajacoutot Exp $
+
+On OpenBSD, time_t is an int.
+
+--- tests/libedata-cal/test-cal-backend-sexp.c.orig	Mon Sep 19 07:03:01 2011
++++ tests/libedata-cal/test-cal-backend-sexp.c	Thu Dec 29 09:09:34 2011
 @@ -9,7 +9,7 @@ test_query (const gchar *query)
  	gboolean generator = e_cal_backend_sexp_evaluate_occur_times (sexp, &start, &end);
  
  	if (generator) {
 -		printf ("%s: %ld - %ld\n", query, start, end);
-+		 printf ("%s: %ld - %ld\n", query, (long)start, (long)end);
++		printf ("%s: %d - %d\n", query, start, end);
  	} else {
  		printf ("%s: no time prunning possible\n", query);
  	}
