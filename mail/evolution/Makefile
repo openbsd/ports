@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2011/12/03 18:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2011/12/29 09:26:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,8 +11,8 @@ GNOME_VERSION=		3.2.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		2
-REVISION-plugins=	1
+REVISION-main=		3
+REVISION-plugins=	2
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
