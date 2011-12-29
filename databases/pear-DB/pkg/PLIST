@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/03/22 22:48:03 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/29 08:48:30 giovanni Exp $
 @group daemon
 lib/
 lib/php/
@@ -52,11 +52,14 @@ pear/tests/DB/tests/driver/16tableinfo.phpt
 pear/tests/DB/tests/driver/17query.phpt
 pear/tests/DB/tests/driver/18get.phpt
 pear/tests/DB/tests/driver/19getlistof.phpt
+pear/tests/DB/tests/driver/20locale.phpt
+pear/tests/DB/tests/driver/21freeResult.phpt
 pear/tests/DB/tests/driver/connect.inc
+pear/tests/DB/tests/driver/droptable.inc
 pear/tests/DB/tests/driver/mktable.inc
 pear/tests/DB/tests/driver/multiconnect.php
 pear/tests/DB/tests/driver/run.cvs
-pear/tests/DB/tests/driver/setup.inc.cvs
+pear/tests/DB/tests/driver/setup.inc
 pear/tests/DB/tests/driver/skipif.inc
 pear/tests/DB/tests/errors.inc
 pear/tests/DB/tests/fetchmode_object.inc
