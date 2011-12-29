@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2011/09/16 13:30:22 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.38 2011/12/29 15:22:26 giovanni Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -508,6 +508,9 @@ phpMyAdmin/locale/sv/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/tr/
 phpMyAdmin/locale/tr/LC_MESSAGES/
 phpMyAdmin/locale/tr/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/uk/
+phpMyAdmin/locale/uk/LC_MESSAGES/
+phpMyAdmin/locale/uk/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/uz/
 phpMyAdmin/locale/uz/LC_MESSAGES/
 phpMyAdmin/locale/uz/LC_MESSAGES/phpmyadmin.mo
