@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1.1.1 2011/11/12 16:40:47 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2011/12/29 12:29:15 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,6 +20,14 @@ Then the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 in ~/.xinitrc when using startx(1) (console login)
 in ~/.xsession when using xdm(1) (X Display Manager login)
+
+Default limits
+==============
+GNOME can be hungry on file descriptors usage because of the kqueue(2)
+based file monitoring. While not mandatory, it is advised to bump
+"nofiles" up to 512. To do so, the following line needs to be added
+before gnome-session(1) is called:
+    ulimit -Sn 512
 
 mDNS/DNS-SD support
 ===================
