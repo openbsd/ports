@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/12/29 21:44:06 landry Exp $
 
 BROKEN-powerpc=	doesn't build, assembler error: operand out of range
 
 COMMENT =	desktop geographical information system
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+SHARED_ONLY =	Yes
 
-DISTNAME =	qgis-1.7.0
-REVISION=	1
+DISTNAME =	qgis-1.7.3
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	5.0 \
+SHARED_LIBS =	qgis_core	5.1 \
 		qgis_gui	4.0 \
 		qgis_analysis	1.3 \
 		qgispython	1.1 \
@@ -25,7 +25,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES =	${HOMEPAGE}/downloads/
 

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/07/07 20:34:27 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.9 2011/12/29 21:44:06 landry Exp $
 @bin bin/qgis
 @bin bin/qgis_mapserv.fcgi
 include/qgis/
@@ -186,6 +185,44 @@ include/qgis/ui_qgsgenericprojectionselectorbase.h
 include/qgis/ui_qgsmessageviewer.h
 include/qgis/ui_qgsprojectionselectorbase.h
 include/qgis/ui_qgsquerybuilderbase.h
+@lib lib/libqgis_analysis.so.${LIBqgis_analysis_VERSION}
+@lib lib/libqgis_core.so.${LIBqgis_core_VERSION}
+@lib lib/libqgis_gui.so.${LIBqgis_gui_VERSION}
+@lib lib/libqgispython.so.${LIBqgispython_VERSION}
+@lib lib/libqgissqlanyconnection.so.${LIBqgissqlanyconnection_VERSION}
+lib/qgis/
+lib/qgis/plugins/
+lib/qgis/plugins/libcoordinatecaptureplugin.so
+lib/qgis/plugins/libcopyrightlabelplugin.so
+lib/qgis/plugins/libdelimitedtextplugin.so
+lib/qgis/plugins/libdelimitedtextprovider.so
+lib/qgis/plugins/libdiagramoverlay.so
+lib/qgis/plugins/libdisplacementplugin.so
+lib/qgis/plugins/libdxf2shpconverterplugin.so
+lib/qgis/plugins/libevis.so
+lib/qgis/plugins/libgdalprovider.so
+lib/qgis/plugins/libgeorefplugin.so
+lib/qgis/plugins/libgpsimporterplugin.so
+lib/qgis/plugins/libgpxprovider.so
+lib/qgis/plugins/libinterpolationplugin.so
+lib/qgis/plugins/libmemoryprovider.so
+lib/qgis/plugins/libnortharrowplugin.so
+lib/qgis/plugins/libofflineeditingplugin.so
+lib/qgis/plugins/libogrprovider.so
+lib/qgis/plugins/liboracleplugin.so
+lib/qgis/plugins/libosmprovider.so
+lib/qgis/plugins/libpostgresprovider.so
+lib/qgis/plugins/librasterterrainplugin.so
+lib/qgis/plugins/libroadgraphplugin.so
+lib/qgis/plugins/libscalebarplugin.so
+lib/qgis/plugins/libspatialiteprovider.so
+lib/qgis/plugins/libspatialqueryplugin.so
+lib/qgis/plugins/libspitplugin.so
+lib/qgis/plugins/libsqlanywhereplugin.so
+lib/qgis/plugins/libsqlanywhereprovider.so
+lib/qgis/plugins/libwfsplugin.so
+lib/qgis/plugins/libwfsprovider.so
+lib/qgis/plugins/libwmsprovider.so
 @bin lib/qgis/qgis_help
 @man man/man1/qgis.1
 share/applications/qgis.desktop
@@ -197,11 +234,12 @@ share/doc/qgis/DONORS
 share/doc/qgis/INSTALL
 share/doc/qgis/SPONSORS
 share/doc/qgis/TRANSLATORS
+share/doc/qgis/changelog.html
 share/doc/qgis/favicon.ico
 share/doc/qgis/images/
 share/doc/qgis/images/qgis_new_80pct.png
 share/doc/qgis/index.html
-share/doc/qgis/qgisdoc.css
+share/doc/qgis/style.css
 share/pixmaps/
 share/pixmaps/qgis-icon.png
 share/qgis/
@@ -270,11 +308,13 @@ share/qgis/python/plugins/GdalTools/icons/
 share/qgis/python/plugins/GdalTools/icons/about.png
 share/qgis/python/plugins/GdalTools/icons/contour.png
 share/qgis/python/plugins/GdalTools/icons/dem.png
+share/qgis/python/plugins/GdalTools/icons/edit.png
 share/qgis/python/plugins/GdalTools/icons/grid.png
 share/qgis/python/plugins/GdalTools/icons/merge.png
 share/qgis/python/plugins/GdalTools/icons/nearblack.png
 share/qgis/python/plugins/GdalTools/icons/polygonize.png
 share/qgis/python/plugins/GdalTools/icons/projection-add.png
+share/qgis/python/plugins/GdalTools/icons/projection-export.png
 share/qgis/python/plugins/GdalTools/icons/proximity.png
 share/qgis/python/plugins/GdalTools/icons/raster-clip.png
 share/qgis/python/plugins/GdalTools/icons/raster-info.png
@@ -282,8 +322,10 @@ share/qgis/python/plugins/GdalTools/icons/raster-overview.png
 share/qgis/python/plugins/GdalTools/icons/raster-paletted.png
 share/qgis/python/plugins/GdalTools/icons/raster-rgb.png
 share/qgis/python/plugins/GdalTools/icons/rasterize.png
+share/qgis/python/plugins/GdalTools/icons/reset.png
 share/qgis/python/plugins/GdalTools/icons/sieve.png
 share/qgis/python/plugins/GdalTools/icons/tileindex.png
+share/qgis/python/plugins/GdalTools/icons/tooltip.png
 share/qgis/python/plugins/GdalTools/icons/translate.png
 share/qgis/python/plugins/GdalTools/icons/vrt.png
 share/qgis/python/plugins/GdalTools/icons/warp.png
@@ -557,6 +599,8 @@ share/qgis/python/qgis/__init__.pyc
 share/qgis/python/qgis/analysis.so
 share/qgis/python/qgis/console.py
 share/qgis/python/qgis/console.pyc
+share/qgis/python/qgis/core.so
+share/qgis/python/qgis/gui.so
 share/qgis/python/qgis/utils.py
 share/qgis/python/qgis/utils.pyc
 share/qgis/resources/
