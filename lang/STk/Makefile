@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/19 07:29:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/12/30 21:46:01 sthen Exp $
+
+BROKEN-sparc64=	fails in mpn_dm_1.c, error: lvalue required in asm statement
 
 COMMENT=	Scheme interpreter with Tk interface
 
@@ -16,6 +18,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	ICE SM X11 c m pthread-stubs xcb
 
 USE_GROFF =	Yes
