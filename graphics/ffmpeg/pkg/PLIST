@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/09/04 09:22:43 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/12/30 17:34:39 edd Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
@@ -17,8 +17,11 @@ include/libavcodec/xvmc.h
 include/libavdevice/
 include/libavdevice/avdevice.h
 include/libavfilter/
+include/libavfilter/avcodec.h
 include/libavfilter/avfilter.h
 include/libavfilter/avfiltergraph.h
+include/libavfilter/vsink_buffer.h
+include/libavfilter/vsrc_buffer.h
 include/libavformat/
 include/libavformat/avformat.h
 include/libavformat/avio.h
@@ -37,6 +40,7 @@ include/libavutil/bswap.h
 include/libavutil/common.h
 include/libavutil/cpu.h
 include/libavutil/crc.h
+include/libavutil/dict.h
 include/libavutil/error.h
 include/libavutil/eval.h
 include/libavutil/fifo.h
@@ -95,11 +99,11 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
 share/ffmpeg/
-share/ffmpeg/libx264-baseline.ffpreset
-share/ffmpeg/libx264-fast.ffpreset
-share/ffmpeg/libx264-fast_firstpass.ffpreset
-share/ffmpeg/libx264-faster.ffpreset
-share/ffmpeg/libx264-faster_firstpass.ffpreset
+share/ffmpeg/libvpx-1080p.ffpreset
+share/ffmpeg/libvpx-1080p50_60.ffpreset
+share/ffmpeg/libvpx-360p.ffpreset
+share/ffmpeg/libvpx-720p.ffpreset
+share/ffmpeg/libvpx-720p50_60.ffpreset
 share/ffmpeg/libx264-ipod320.ffpreset
 share/ffmpeg/libx264-ipod640.ffpreset
 share/ffmpeg/libx264-lossless_fast.ffpreset
@@ -108,20 +112,3 @@ share/ffmpeg/libx264-lossless_medium.ffpreset
 share/ffmpeg/libx264-lossless_slow.ffpreset
 share/ffmpeg/libx264-lossless_slower.ffpreset
 share/ffmpeg/libx264-lossless_ultrafast.ffpreset
-share/ffmpeg/libx264-main.ffpreset
-share/ffmpeg/libx264-medium.ffpreset
-share/ffmpeg/libx264-medium_firstpass.ffpreset
-share/ffmpeg/libx264-placebo.ffpreset
-share/ffmpeg/libx264-placebo_firstpass.ffpreset
-share/ffmpeg/libx264-slow.ffpreset
-share/ffmpeg/libx264-slow_firstpass.ffpreset
-share/ffmpeg/libx264-slower.ffpreset
-share/ffmpeg/libx264-slower_firstpass.ffpreset
-share/ffmpeg/libx264-superfast.ffpreset
-share/ffmpeg/libx264-superfast_firstpass.ffpreset
-share/ffmpeg/libx264-ultrafast.ffpreset
-share/ffmpeg/libx264-ultrafast_firstpass.ffpreset
-share/ffmpeg/libx264-veryfast.ffpreset
-share/ffmpeg/libx264-veryfast_firstpass.ffpreset
-share/ffmpeg/libx264-veryslow.ffpreset
-share/ffmpeg/libx264-veryslow_firstpass.ffpreset

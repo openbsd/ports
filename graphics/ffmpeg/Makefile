@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.83 2011/09/21 08:58:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2011/12/30 17:34:39 edd Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20110408
+V=		20111126
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	11
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	avcodec		16.0 \
-		avdevice	4.0 \
-		avfilter	2.1 \
-		avformat	14.1 \
-		avutil		8.1 \
+SHARED_LIBS=	avcodec		16.1 \
+		avdevice	4.1 \
+		avfilter	2.2 \
+		avformat	14.2 \
+		avutil		8.2 \
 		postproc	14.0 \
-		swscale		3.1
+		swscale		3.2
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -29,7 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	SDL X11 Xext Xfixes bz2 c gsm m mp3lame ogg orc-0.4 \
 		pthread schroedinger-1.0>=2 sndio speex theoradec \
-		theoraenc vorbis vorbisenc vpx x264 z
+		theoraenc vorbis vorbisenc vpx x264>=8 z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -44,7 +44,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/libtheora \
 		multimedia/libvpx \
 		multimedia/schroedinger>=1.0.10 \
-		multimedia/x264
+		multimedia/x264>=20111027
 
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -pthread -Wl,-rpath,${LOCALBASE}/lib -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lz -lavutil -lm
@@ -65,6 +65,11 @@ FFMPEG_ARCH=	generic
 FFMPEG_ARCH=	${MACHINE_ARCH}
 .endif
 
+OPTFLAGS=	${CFLAGS}
+
+# until the system headers are fixed properly.
+OPTFLAGS+=	-Wno-redundant-decls
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
@@ -81,6 +86,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-iwmmxt \
 		--disable-neon \
 		--disable-outdev=oss \
+		--disable-outdev=sdl \
 		--enable-gpl \
 		--enable-libgsm \
 		--enable-libmp3lame \
@@ -90,12 +96,12 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libvorbis \
 		--enable-libvpx \
 		--enable-libx264 \
-		--enable-postproc \
 		--enable-runtime-cpudetect \
 		--enable-x11grab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		--mandir=${PREFIX}/man
+		--mandir=${PREFIX}/man \
+		--optflags="${OPTFLAGS}"
 
 CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBavdevice_EXTRALIBS="${LIBavdevice_EXTRALIBS}" \
@@ -137,6 +143,9 @@ ALL_TARGET=	all tools/qt-faststart
 NO_REGRESS=	Yes
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
+
+post-extract:
+	@rm ${WRKSRC}/VERSION
 
 pre-configure:
 	@mkdir -p ${WRKTMP}
