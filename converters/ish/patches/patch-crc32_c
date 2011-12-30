@@ -1,0 +1,14 @@
+$OpenBSD: patch-crc32_c,v 1.1 2011/12/30 23:14:34 sthen Exp $
+
+Fix: Multi-volume format cannot handle on 64bit environment.
+
+--- crc32.c.orig	Wed Apr 20 06:23:00 1994
++++ crc32.c	Fri Dec 30 23:09:44 2011
+@@ -78,6 +78,7 @@ unsigned char *arg;
+ int len;
+ unsigned long crc;
+ {
++    crc &= 0xffffffffU;
+     while(--len >= 0) {
+ 	crc = crc >> 8 ^ crctbl[(crc & 0xff) ^ *arg++];
+     }

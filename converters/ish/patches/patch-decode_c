@@ -1,0 +1,17 @@
+$OpenBSD: patch-decode_c,v 1.1 2011/12/30 23:14:34 sthen Exp $
+
+Fix: When decoding, the status display has Y2K problem.
+
+--- decode.c.orig	Sun Jan  7 10:46:37 1996
++++ decode.c	Fri Dec 30 23:09:44 2011
+@@ -273,8 +273,8 @@ ish_head *head;
+ 	tm.tm_min = (p[1]&0x07)<<3;
+ 	tm.tm_min += p[0]>>5;
+ 	tm.tm_sec = (p[0]&0x1f)<<1;
+-	fprintf(stderr,"%02d/%02d/%02d %02d:%02d:%02d ",
+-	    tm.tm_year,tm.tm_mon+1,tm.tm_mday,tm.tm_hour,tm.tm_min,tm.tm_sec);
++	fprintf(stderr,"%04d/%02d/%02d %02d:%02d:%02d ",
++	    tm.tm_year+1900,tm.tm_mon+1,tm.tm_mday,tm.tm_hour,tm.tm_min,tm.tm_sec);
+ #ifdef __TURBOC__
+ 	memcpy( &timep[0], head->time, 4);
+ 	timep[1] = timep[0];

@@ -1,0 +1,15 @@
+$OpenBSD: patch-mvol_c,v 1.1 2011/12/30 23:14:34 sthen Exp $
+
+Fix: Multi-volume format cannot handle on 64bit environment.
+
+--- mvol.c.orig	Sun Jan  7 10:47:17 1996
++++ mvol.c	Fri Dec 30 23:09:44 2011
+@@ -248,7 +248,7 @@ unsigned char    *p;
+     }
+     close(id);
+     close(od);
+-    crc32 = ~crc32;
++    crc32 = ~crc32 & 0xffffffffU;
+     crc16 = ~crc16;
+     if (crc32 == ncrc32 && crc16 == ncrc16) {
+ 	/* checksum OK */
