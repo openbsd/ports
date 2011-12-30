@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/15 17:52:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2011/12/30 10:42:20 sthen Exp $
 
 SHARED_ONLY=	Yes
+
+BROKEN-sparc64 = vm segfaults when building openssl extension
 
 COMMENT =	Ruby virtual machine and core library
 
