@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.723 2011/12/23 15:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.724 2011/12/30 14:24:33 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -185,6 +185,7 @@
      SUBDIR += livemedia
      SUBDIR += loudmouth
      SUBDIR += luasocket
+     SUBDIR += maclookup
      SUBDIR += maradns
      SUBDIR += mbrowse
      SUBDIR += mcabber
