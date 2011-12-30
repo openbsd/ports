@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2011/09/19 14:24:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.197 2011/12/30 17:40:40 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -6,14 +6,14 @@ ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
 COMMENT =		movie player supporting many formats
 
 V =			20110309
-FFMPEG_V =		20110408
+FFMPEG_V =		20111126
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		x11 multimedia
 
@@ -43,7 +43,7 @@ MODULES +=	converters/libiconv
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/libungif \
-		graphics/ffmpeg>=20110408p5 \
+		graphics/ffmpeg>=20111126 \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \
 		audio/libogg \
@@ -96,8 +96,7 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-vidix \
 		--disable-select \
 		--disable-libcdio \
-		--disable-libmpeg2-internal \
-		--disable-pulse
+		--disable-libmpeg2-internal
 # seems stable dvdnav does not work with a new mplayer.
 # if they make a release in the future, maybe we can pull that in,
 # but for now we have to use the internal one.
@@ -140,7 +139,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-faad \
 		--disable-theora \
 		--disable-xvid \
-		--disable-xvid-lavc
+		--disable-xvid-lavc \
+		--disable-pulse
 
 # internal tremor, external tremor, external libvorbis all conflict
 # we choose libvorbis to enable encoding to vorbis

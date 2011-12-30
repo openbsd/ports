@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.59 2011/06/25 14:15:43 edd Exp $
---- configure.orig	Wed Mar  9 00:33:03 2011
-+++ configure	Fri Jun 24 12:19:32 2011
+$OpenBSD: patch-configure,v 1.60 2011/12/30 17:40:40 edd Exp $
+--- configure.orig	Tue Mar  8 19:33:03 2011
++++ configure	Sat Sep 24 15:53:18 2011
 @@ -35,29 +35,33 @@
  #
  #############################################################################
@@ -131,6 +131,15 @@ $OpenBSD: patch-configure,v 1.59 2011/06/25 14:15:43 edd Exp $
  echores "$gnu_as"
  
  fi
+@@ -3118,7 +3129,7 @@ if test "$_posix4" = yes ; then
+ fi
+ echores "$_posix4"
+ 
+-for func in exp2 exp2f llrint llrintf log2 log2f lrint lrintf round roundf truncf; do
++for func in exp2 exp2f llrint llrintf log2 log2f lrint lrintf round roundf trunc truncf; do
+ echocheck $func
+ eval _$func=no
+ statement_check math.h "${func}(2.0)" -D_ISOC99_SOURCE $_ld_lm && eval _$func=yes
 @@ -3480,7 +3491,8 @@ if test "$_memalign" = yes ; then
  else
    def_memalign='#define HAVE_MEMALIGN 0'
@@ -256,3 +265,11 @@ $OpenBSD: patch-configure,v 1.59 2011/06/25 14:15:43 edd Exp $
  $def_win32waveout
  
  $def_ladspa
+@@ -8622,6 +8661,7 @@ $def_round
+ $def_roundf
+ $def_ten_operands
+ $def_threads
++$def_trunc
+ $def_truncf
+ $def_xform_asm
+ $def_xmm_clobbers
