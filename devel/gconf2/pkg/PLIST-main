@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/10/31 17:13:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/12/30 11:15:20 ajacoutot Exp $
 @pkgpath devel/gconf2
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.mandatory/*
@@ -176,3 +176,5 @@ share/sgml/
 share/sgml/gconf/
 share/sgml/gconf/gconf-1.0.dtd
 @sample /var/db/gconf/gconf.xml.system/
+@exec %D/bin/gio-querymodules %D/lib/gio/modules/
+@unexec-delete %D/bin/gio-querymodules %D/lib/gio/modules/
