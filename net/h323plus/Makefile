@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/26 16:59:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/12/30 17:39:06 edd Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	H.323 video conferencing library
 V=		1_23_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
+REVISION=	0
 CATEGORIES=	net devel
 
 SHARED_LIBS=	h323	3.0    # 1.21.0
@@ -27,7 +28,7 @@ WANTLIB += m pt pthread sasl2 speex ssl stdc++ x264
 MASTER_SITES=	${HOMEPAGE}/source/download/
 
 LIB_DEPENDS=	devel/ptlib>=2.10.3 \
-		graphics/ffmpeg
+		graphics/ffmpeg>=20111126
 
 WRKDIST=	${WRKDIR}/h323plus
 
