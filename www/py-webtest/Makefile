@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/18 18:21:23 fgsch Exp $
+# $OpenBSD: Makefile,v 1.8 2011/12/31 15:08:35 fgsch Exp $
 
 COMMENT =	helper to test wsgi applications
 
-MODPY_EGG_VERSION = 1.3
+MODPY_EGG_VERSION = 1.3.3
 DISTNAME =	WebTest-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
 CATEGORIES =	www devel
 
-HOMEPAGE =	http://pythonpaste.org/webtest/
+HOMEPAGE =	http://webtest.pythonpaste.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -29,8 +29,7 @@ MODPY_SETUPTOOLS =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-webtest
-	${INSTALL_DATA} ${WRKSRC}/docs/index.txt \
-	    ${PREFIX}/share/doc/py-webtest
+	cd ${WRKSRC}/docs/_build && pax -rw * ${PREFIX}/share/doc/py-webtest
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests lib tests
