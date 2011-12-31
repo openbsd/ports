@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/12/05 14:54:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2011/12/31 22:19:45 kili Exp $
 
 COMMENT =		alternative parser combinator libraries
 
 DISTNAME =		polyparse-1.7
+REVISION =		0
 CATEGORIES =		textproc
 HOMEPAGE =		http://code.haskell.org/~malcolm/polyparse/
 

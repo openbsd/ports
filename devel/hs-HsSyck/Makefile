@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/12/31 22:19:45 kili Exp $
 
 COMMENT =		fast, lightweight YAML loader and dumper
 
 DISTNAME =		HsSyck-0.50
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 CATEGORIES =		devel
 

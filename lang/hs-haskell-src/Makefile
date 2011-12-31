@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/12/31 22:19:45 kili Exp $
 
 COMMENT =		manipulating Haskell source code
 
 DISTNAME =		haskell-src-1.0.1.4
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
