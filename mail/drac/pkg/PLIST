@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/22 11:05:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/12/31 08:16:56 ajacoutot Exp $
 include/drac.h
 lib/libdrac.a
 libexec/rpc.dracd
@@ -8,6 +8,5 @@ share/doc/drac/
 share/doc/drac/COPYRIGHT
 share/examples/drac/
 share/examples/drac/dracd.allow-sample
-@sample ${SYSCONFDIR}/mail/
 @sample ${SYSCONFDIR}/mail/dracd.allow
 @extra ${SYSCONFDIR}/mail/dracd.db
