@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2011/11/06 17:34:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2011/12/31 08:04:05 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main,kerberos
 @newgroup _cyrus:543
@@ -42,6 +42,7 @@ include/cyrus/prot.h
 include/cyrus/retry.h
 include/cyrus/rfc822date.h
 include/cyrus/signals.h
+include/cyrus/strarray.h
 include/cyrus/strhash.h
 include/cyrus/stristr.h
 include/cyrus/sysexits.h
