@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/12/31 22:14:12 kili Exp $
 
 COMMENT =		Scrap Your Boilerplate
 
-DISTNAME =		syb-0.3
-REVISION=		0
+DISTNAME =		syb-0.3.3
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

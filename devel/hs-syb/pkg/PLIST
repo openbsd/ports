@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/26 17:15:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/12/31 22:14:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Generics/
@@ -45,7 +45,6 @@ share/doc/hs-${DISTNAME}/html/Generics-SYB-Schemes.html
 share/doc/hs-${DISTNAME}/html/Generics-SYB-Text.html
 share/doc/hs-${DISTNAME}/html/Generics-SYB-Twins.html
 share/doc/hs-${DISTNAME}/html/Generics-SYB.html
-share/doc/hs-${DISTNAME}/html/doc-index-58.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
