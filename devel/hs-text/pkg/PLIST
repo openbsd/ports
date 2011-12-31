@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:46:30 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/12/31 22:15:04 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Text/
@@ -26,7 +26,13 @@ lib/ghc/${DISTNAME}/Data/Text/IO/Internal.hi
 lib/ghc/${DISTNAME}/Data/Text/Internal.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/
 lib/ghc/${DISTNAME}/Data/Text/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder.hi
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/Functions.hi
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/Int.hi
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/RealFloat/
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/RealFloat.hi
+lib/ghc/${DISTNAME}/Data/Text/Lazy/Builder/RealFloat/Functions.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Encoding/
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Encoding.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Encoding/Fusion.hi
@@ -37,7 +43,9 @@ lib/ghc/${DISTNAME}/Data/Text/Lazy/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Search.hi
 lib/ghc/${DISTNAME}/Data/Text/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Search.hi
+lib/ghc/${DISTNAME}/Data/Text/Unsafe/
 lib/ghc/${DISTNAME}/Data/Text/Unsafe.hi
+lib/ghc/${DISTNAME}/Data/Text/Unsafe/Base.hi
 lib/ghc/${DISTNAME}/Data/Text/UnsafeChar.hi
 lib/ghc/${DISTNAME}/Data/Text/UnsafeShift.hi
 lib/ghc/${DISTNAME}/Data/Text/Util.hi
@@ -56,6 +64,8 @@ share/doc/hs-${DISTNAME}/html/Data-Text-Encoding.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Foreign.html
 share/doc/hs-${DISTNAME}/html/Data-Text-IO.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Internal.html
+share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Builder-Int.html
+share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Builder-RealFloat.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Builder.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Encoding.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-IO.html
@@ -98,6 +108,8 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Text-Encoding.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Foreign.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Builder-Int.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Builder-RealFloat.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Builder.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Encoding.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-IO.html
