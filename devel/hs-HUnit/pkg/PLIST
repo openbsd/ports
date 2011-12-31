@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:35:15 kili Exp $
-@bin bin/basic-tests
-@bin bin/extended-tests
-@bin bin/terminal-tests
+@comment $OpenBSD: PLIST,v 1.6 2011/12/31 22:10:35 kili Exp $
+@comment bin/basic-tests
+@comment bin/extended-tests
+@comment bin/optimize-1-tests
+@comment bin/terminal-tests
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Test/
