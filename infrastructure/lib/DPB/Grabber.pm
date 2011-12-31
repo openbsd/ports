@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.18 2011/12/04 12:05:41 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.19 2011/12/31 11:20:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -36,7 +36,8 @@ sub new
 	if ($state->opt('f')) {
 		require DPB::Fetch;
 		$o->{dpb} = "fetch";
-		$o->{fetch} = DPB::Fetch->new($state->distdir);
+		$o->{fetch} = DPB::Fetch->new($state->distdir, $state->logger,
+		    $state->{fetch_only});
 	} else {
 		$o->{dpb} = "normal";
 		$o->{fetch} = DPB::FetchDummy->new;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.21 2011/12/04 12:05:41 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.22 2011/12/31 11:20:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -27,7 +27,7 @@ my $cache = {};
 
 sub create
 {
-	my ($class, $file, $short, $site, $distinfo, $v, $distdir) = @_;
+	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
 
 	my $sz = $distinfo->{size}{$file} // 0;
 	my $sha = $distinfo->{sha}{$file};
@@ -38,8 +38,20 @@ sub create
 		sha => $sha,
 		site => $site,
 		path => $v,
-		distdir => $distdir,
+		repo => $repo,
 	}, $class;
+}
+
+sub distdir
+{
+	my $self = shift;
+	return $self->{repo}->distdir;
+}
+
+sub cached
+{
+	my $self = shift;
+	return $self->{repo}{sha};
 }
 
 sub new
@@ -101,13 +113,30 @@ sub tempfilename
 sub filename
 {
 	my $self = shift;
-	return $self->{distdir}."/".$self->{name};
+	return $self->distdir."/".$self->{name};
 }
 
 sub check
 {
 	my ($self, $logger) = @_;
-	return $self->checksize($logger, $self->filename);
+	# XXX in fetch_only mode, we won't build anything, so this is
+	# the only place we can check the file is okay
+	if ($self->{repo}->{fetch_only}) {
+		return $self->checksum_and_cache($self->filename);
+	} else {
+		return $self->checksize($logger, $self->filename);
+	}
+}
+
+sub make_link
+{
+	my $self = shift;
+	my $sha = $self->{sha}->stringize;
+	if ($sha =~ m/^(..)/) {
+		my $result = $self->distdir."/by_cipher/sha256/$1/$sha";
+		File::Path::make_path($result);
+		link $self->filename, "$result/$self->{name}";
+	}
 }
 
 sub checksize
@@ -131,6 +160,56 @@ sub checksize
 	return 1;
 }
 
+sub do_cache
+{
+	my $self = shift;
+
+	print {$self->{repo}->{log}} "SHA256 ($self->{name}) = ",
+	    $self->{sha}->stringize, "\n";
+	$self->make_link;
+	# also enter ourselves into the internal repository
+	$self->cached->{$self->{name}} = $self->{sha};
+}
+
+sub checksum_and_cache
+{
+	my ($self, $name) = @_;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	if (!defined $self->{sha}) {
+		return 0;
+	}
+	if (defined $self->cached->{$self->{name}}) {
+		if ($self->cached->{$self->{name}}->equals($self->{sha})) {
+			$self->{okay} = 1;
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+	if (-f -r $name && OpenBSD::sha->new($name)->equals($self->{sha})) {
+		$self->{okay} = 1;
+		$self->do_cache;
+		return 1;
+	}
+	return 0;
+}
+
+sub cache
+{
+	my $self = shift;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	$self->{okay} = 1;
+	# already done
+	if (defined $self->cached->{$self->{name}}) {
+		if ($self->cached->{$self->{name}}->equals($self->{sha})) {
+			return;
+		}
+	}
+	$self->do_cache;
+}
+
 sub checksum
 {
 	my ($self, $name) = @_;
@@ -141,8 +220,17 @@ sub checksum
 		print "NONE\n";
 		return 0;
 	}
-		
-	if (OpenBSD::sha->new($name)->equals($self->{sha})) {
+	if (defined $self->cached->{$self->{name}}) {
+		if ($self->cached->{$self->{name}}->equals($self->{sha})) {
+			print "OK (cached)\n";
+			$self->{okay} = 1;
+			return 1;
+		} else {
+			print "BAD\n";
+			return 0;
+		}
+	}
+	if (-f -r $name && OpenBSD::sha->new($name)->equals($self->{sha})) {
 		$self->{okay} = 1;
 		print "OK\n";
 		return 1;
@@ -168,8 +256,35 @@ package DPB::Fetch;
 
 sub new
 {
-	my ($class, $distdir) = @_;
-	bless {distdir => $distdir}, $class;
+	my ($class, $distdir, $logger, $fetch_only) = @_;
+	my $o = bless {distdir => $distdir, sha => {}, 
+	    fetch_only => $fetch_only}, $class;
+	if (open(my $fh, '<', "$distdir/distinfo")) {
+		my $_;
+		while (<$fh>) {
+			if (m/^SHA256 \((.*)\) \= (.*)/) {
+				$o->{sha}{$1} = OpenBSD::sha->fromstring($2);
+			}
+		}
+	}
+	# rewrite "more or less" the same info, so we flush duplicates,
+	# e.g., keep only most recent checksum seen
+	open(my $fh, '>', "$distdir/distinfo.new");
+	for my $k (sort keys %{$o->{sha}}) {
+		print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
+		    "\n";
+	}
+	close ($fh);
+	rename("$distdir/distinfo.new", "$distdir/distinfo");
+	open($o->{log}, ">>", "$distdir/distinfo");
+	DPB::Util->make_hot($o->{log});
+	return $o;
+}
+
+sub distdir
+{
+	my $self = shift;
+	return $self->{distdir};
 }
 
 sub read_checksums
@@ -232,7 +347,7 @@ sub build_distinfo
 				die "Can't find $site for $arg";
 			}
 			return DPB::Distfile->new($arg, $dir,
-			    $info->{$site}, $checksums, $v, $self->{distdir});
+			    $info->{$site}, $checksums, $v, $self);
 		};
 
 		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
@@ -298,6 +413,7 @@ sub finalize
 		return $job->bad_file($self->{fetcher}, $core);
 	}
 	rename($job->{file}->tempfilename, $job->{file}->filename);
+	$job->{file}->cache;
 	my $sz = $job->{file}->{sz};
 	if (defined $self->{fetcher}->{initial_sz}) {
 		$sz -= $self->{fetcher}->{initial_sz};
