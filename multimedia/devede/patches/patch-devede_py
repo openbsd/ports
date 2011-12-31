@@ -1,6 +1,6 @@
-$OpenBSD: patch-devede_py,v 1.18 2011/12/09 07:25:58 ajacoutot Exp $
---- devede.py.orig	Thu Dec  8 13:22:47 2011
-+++ devede.py	Fri Dec  9 07:57:10 2011
+$OpenBSD: patch-devede_py,v 1.19 2011/12/31 08:14:33 ajacoutot Exp $
+--- devede.py.orig	Fri Dec 30 11:27:44 2011
++++ devede.py	Sat Dec 31 09:06:51 2011
 @@ -19,6 +19,13 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -18,7 +18,7 @@ $OpenBSD: patch-devede_py,v 1.18 2011/12/09 07:25:58 ajacoutot Exp $
 @@ -35,7 +42,7 @@ import pickle
  import cairo
  
- print "DeVeDe 3.20.0"
+ print "DeVeDe 3.21.0"
 -if (sys.platform!="win32") and (sys.platform!="win64"):
 +if (sys.platform!="win32") and (sys.platform!="win64") and not sys.platform.startswith('openbsd'):
  	try:

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2011/12/09 07:25:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/12/31 08:14:33 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.20.0
+DISTNAME=	devede-3.21.0
 
 CATEGORIES=	multimedia x11
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	x11/py-gtk2 \
 		multimedia/dvdauthor \
 		graphics/vcdimager \
 		sysutils/cdrtools \
-		x11/mplayer \
+		graphics/ffmpeg \
 		devel/xdg-utils \
 		devel/desktop-file-utils
 
@@ -34,8 +34,6 @@ PKG_ARCH=	${MACHINE_ARCH},${ARCH}
 .else
 PKG_ARCH=	*
 .endif
-
-WRKDIST=	${WRKDIR}/devede
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
