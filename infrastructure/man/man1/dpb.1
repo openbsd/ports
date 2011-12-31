@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.25 2011/12/05 16:10:00 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.26 2011/12/31 14:53:17 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 5 2011 $
+.Dd $Mdocdate: December 31 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -443,8 +443,24 @@ the corresponding machine.
 .Sh FILES
 Apart from producing packages,
 .Nm
-creates temporary files as
+may create temporary files as
 .Pa ${FULLDISTDIR}/${DISTFILE}.part .
+It also uses
+.Pa ${FULLDISTDIR}/distinfo
+as a cache for distfiles that have been checksummed,
+and populates
+.Pa ${FULLDISTDIR}/by_cipher/sha256
+with links.
+.Pp
+If
+.Pa ${DISTDIR}
+ever becomes corrupted,
+removing
+.Pa ${DISTDIR}/distinfo
+will force
+.Nm
+into checking all files again.
+.Pp
 .Nm
 will also create a large number of log files under
 .Pa ${PORTSDIR}/logs/{$ARCH} :
