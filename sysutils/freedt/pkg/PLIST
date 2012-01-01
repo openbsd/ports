@@ -1,17 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2003/05/28 15:39:26 lebel Exp $
-bin/anonidentd
-bin/argv0
-bin/dumblog
-bin/envdir
-bin/envuidgid
+@comment $OpenBSD: PLIST,v 1.2 2012/01/01 16:16:24 sthen Exp $
+@bin bin/anonidentd
+@bin bin/argv0
+@bin bin/dumblog
+@bin bin/envdir
+@bin bin/envuidgid
 bin/mkservice
-bin/ratelimit
+@bin bin/ratelimit
 bin/recordio
-bin/setlock
-bin/setuidgid
-bin/softlimit
-bin/supervise
-bin/svc
-bin/svok
-bin/svscan
-bin/svstat
+@bin bin/setlock
+@bin bin/setuidgid
+@bin bin/softlimit
+@bin bin/supervise
+@bin bin/svc
+@bin bin/svok
+@bin bin/svscan
+@bin bin/svstat
+@rcscript ${RCDIR}/svscan
