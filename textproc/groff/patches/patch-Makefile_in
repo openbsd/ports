@@ -1,12 +1,14 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2011/10/12 22:00:07 schwarze Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2012/01/01 21:05:33 schwarze Exp $
 # Chunk 1: Install preformatted manuals, not source pages.
-# Chunk 2: Do not depend on MAKEOVERRIDES, a GNU make extension that
+# Chunk 2: Do not use make -k unless that's really requested.
+# Chunk 3 & 4: OTHERDIRS must be done after DEVDIRS
+# Chunk 4: Do not depend on MAKEOVERRIDES, a GNU make extension that
 # prevents the recursive passing of command line assignments to sub-makes.
 # Specifically, we must not pass overrides like top_srcdir=...
 # to the sub-makes called in src/libs/gnulib where those variables
 # have different values created by the sub-configure there.
 --- Makefile.in.orig	Fri Dec 31 08:33:08 2010
-+++ Makefile.in	Tue Oct 11 01:25:20 2011
++++ Makefile.in	Mon Dec 26 17:20:22 2011
 @@ -247,15 +247,15 @@ manroot=$(mandir)
  
  # `man1ext' is the man section for user commands.
@@ -26,12 +28,40 @@ $OpenBSD: patch-Makefile_in,v 1.2 2011/10/12 22:00:07 schwarze Exp $
  
  # The configure script checks whether all necessary utility programs for
  # grohtml are available -- only then we can build the HTML documentation.
-@@ -686,7 +686,7 @@ subdir=src/roff/troff
+@@ -543,7 +543,7 @@ MDEFINES= \
+   "top_srcdir=$(top_srcdir)" \
+   "version=$(version)"
+ 
+-MAKE_K_FLAG=`case "$(MAKEFLAGS)" in *k*) echo ' -k ';; esac`
++MAKE_K_FLAG=
+ 
+ INCDIRS=\
+   src/include
+@@ -618,8 +618,8 @@ ALLDIRS=\
+   $(DEVDIRS) \
+   $(XDEVDIRS) \
+   $(OTHERDEVDIRS) \
+-  $(TTYDEVDIRS) \
+-  $(OTHERDIRS)
++  $(TTYDEVDIRS)
++# $(OTHERDIRS)
+ EXTRADIRS=\
+   font/devps/generate \
+   font/devdvi/generate \
+@@ -680,13 +680,14 @@ ENVSETUP=\
+ 	fi
+ 
+ do=all
+-dodirs=$(ALLDIRS) dot
++dodirs=$(ALLDIRS) $(OTHERDIRS) dot
+ # Default target for subdir_Makefile
+ subdir=src/roff/troff
  
  
  $(TARGETS):
 -	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) $(MDEFINES) do=$@ $(dodirs)
-+	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) do=$@ $(dodirs)
++	@$(ENVSETUP); $(MAKE) do=$@ $(ALLDIRS)
++	@$(ENVSETUP); $(MAKE) do=$@ $(OTHERDIRS) dot
  
  dot: FORCE
  	@$(ENVSETUP); \
