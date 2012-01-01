@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2011/12/29 12:29:15 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2012/01/01 09:02:47 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,10 +23,14 @@ in ~/.xsession when using xdm(1) (X Display Manager login)
 
 Default limits
 ==============
-GNOME can be hungry on file descriptors usage because of the kqueue(2)
-based file monitoring. While not mandatory, it is advised to bump
-"nofiles" up to 512. To do so, the following line needs to be added
-before gnome-session(1) is called:
+GNOME can be hungry on file descriptors due to kqueue(2) based file
+monitoring, usage of the webkit toolkit... While not mandatory, it is
+advised to bump the "openfiles" limit up to 512.
+More info is available in the README of the glib2 package under
+    ${LOCALBASE}/share/doc/pkg-readmes
+
+An alternative solution to using login.conf(5) and users class is to add
+the following line before gnome-session(1) is called:
     ulimit -Sn 512
 
 mDNS/DNS-SD support
