@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2011/11/16 15:34:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2012/01/01 09:00:46 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 CATEGORIES=		devel
 
@@ -41,11 +41,10 @@ MODPY_ADJ_FILES=	glib/gtester-report \
 			gio/gdbus-2.0/codegen/gdbus-codegen.in \
 			gio/tests/gdbus-testserver.py
 
-WANTLIB-main += ${WANTLIB} c pthread z pcre fam ffi
+WANTLIB-main += ${WANTLIB} c pthread z pcre ffi
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pcre>=8.13 \
-			sysutils/gamin,no_server,no_python,bootstrap \
 			devel/libffi
 
 PKG_ARCH-docs=		*
@@ -68,10 +67,10 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
-			--enable-fam \
 			--with-pcre=system \
 			--disable-gtk-doc \
 			--disable-Bsymbolic \
+			--disable-fam \
 			--disable-selinux \
 			--disable-systemtap \
 			--disable-xattr
@@ -88,6 +87,23 @@ CONFIGURE_ARGS +=	--disable-maintainer-mode
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-D_POSIX_MONOTONIC_CLOCK=200112L" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+
+### kqueue(1) backend ##################################################
+AUTOMAKE_VERSION=	1.11
+AUTOCONF_VERSION=	2.68
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
+PATCHFILES=		glib-gio-kqueue-2.28.8-v2.patch:0
+AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+			AUTOCONF_VERSION=${AUTOCONF_VERSION}
+post-patch:
+	perl -pi -e 's,#include <sys/event.h>,#include <sys/types.h>\n#include <sys/event.h>,' \
+		${WRKSRC}/gio/kqueue/{kqueue-helper,kqueue-thread,kqueue-utils}.c
+	cd ${WRKSRC} && ${AUTO_ENV} automake
+	cd ${WRKSRC} && ${AUTO_ENV} autoheader
+	cd ${WRKSRC} && ${AUTO_ENV} autoconf
+### end of kqueue(1) backend ###########################################
 
 pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
