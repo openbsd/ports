@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2011/09/27 08:15:24 ajacoutot Exp $
-@bin libexec/gam_server
-share/doc/pkg-readmes/${FULLPKGNAME}
-share/examples/gamin/
-@sample ${SYSCONFDIR}/gamin/
-share/examples/gamin/gaminrc
-@sample ${SYSCONFDIR}/gamin/gaminrc

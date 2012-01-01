@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/01/01 09:01:41 ajacoutot Exp $
 @conflict fam-*
+@conflict libgamin-<=0.1.10p5
+@conflict gamin-<0.1.10p18
 @pkgpath sysutils/fam
+@pkgpath sysutils/gamin,-server
 %%SHARED%%
+@bin libexec/gam_server
 include/fam.h
 lib/libfam.a
 lib/libfam.la
@@ -10,3 +14,8 @@ lib/libgamin-1.la
 lib/libgamin_shared.a
 lib/pkgconfig/
 lib/pkgconfig/gamin.pc
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/gamin/
+@sample ${SYSCONFDIR}/gamin/
+share/examples/gamin/gaminrc
+@sample ${SYSCONFDIR}/gamin/gaminrc

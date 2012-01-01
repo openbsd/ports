@@ -5,5 +5,3 @@ The main goals of the project are:
   * simplify the code base
   * provide an API and ABI compatible replacement for FAM
   * try to fix some other issues like resource consumption
-
-This package provides the gamin API and libs.
