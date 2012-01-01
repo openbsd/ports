@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/12 19:10:30 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/01 11:36:26 bluhm Exp $
 ${P5SITE}/Net/SIP/
 ${P5SITE}/Net/SIP.pm
 ${P5SITE}/Net/SIP.pod
@@ -13,6 +13,10 @@ ${P5SITE}/Net/SIP/Dispatcher.pm
 ${P5SITE}/Net/SIP/Dispatcher.pod
 ${P5SITE}/Net/SIP/Dispatcher/Eventloop.pm
 ${P5SITE}/Net/SIP/Dispatcher/Eventloop.pod
+${P5SITE}/Net/SIP/Dropper/
+${P5SITE}/Net/SIP/Dropper.pm
+${P5SITE}/Net/SIP/Dropper/ByField.pm
+${P5SITE}/Net/SIP/Dropper/ByIPPort.pm
 ${P5SITE}/Net/SIP/Endpoint/
 ${P5SITE}/Net/SIP/Endpoint.pm
 ${P5SITE}/Net/SIP/Endpoint.pod
@@ -60,6 +64,9 @@ ${P5SITE}/Net/SIP/Util.pod
 @man man/man3p/Net::SIP::Debug.3p
 @man man/man3p/Net::SIP::Dispatcher.3p
 @man man/man3p/Net::SIP::Dispatcher::Eventloop.3p
+@man man/man3p/Net::SIP::Dropper.3p
+@man man/man3p/Net::SIP::Dropper::ByField.3p
+@man man/man3p/Net::SIP::Dropper::ByIPPort.3p
 @man man/man3p/Net::SIP::Endpoint.3p
 @man man/man3p/Net::SIP::Endpoint::Context.3p
 @man man/man3p/Net::SIP::Leg.3p
