@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2011/12/16 17:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2012/01/01 09:02:11 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -20,6 +20,8 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
+
+REVISION-main=	1
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
