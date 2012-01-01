@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.22 2011/12/31 11:20:00 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.23 2012/01/01 18:34:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -164,9 +164,11 @@ sub do_cache
 {
 	my $self = shift;
 
+	eval {
+	$self->make_link;
 	print {$self->{repo}->{log}} "SHA256 ($self->{name}) = ",
 	    $self->{sha}->stringize, "\n";
-	$self->make_link;
+	};
 	# also enter ourselves into the internal repository
 	$self->cached->{$self->{name}} = $self->{sha};
 }
