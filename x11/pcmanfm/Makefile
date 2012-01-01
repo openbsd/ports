@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/01/01 09:04:13 ajacoutot Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.5.10
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	x11
 
@@ -30,8 +30,7 @@ LIB_DEPENDS=	x11/gtk+2 \
 		devel/startup-notification
 RUN_DEPENDS=	x11/gnome/icon-theme \
 		devel/desktop-file-utils \
-		misc/shared-mime-info>=0.21 \
-		sysutils/gamin,-server
+		misc/shared-mime-info>=0.21
 
 MODULES=	devel/gettext
 USE_LIBTOOL=	Yes

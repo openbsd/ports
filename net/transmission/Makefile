@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/01/01 09:04:13 ajacoutot Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
@@ -12,7 +12,7 @@ PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
-REVISION-gtk=	0
+REVISION-gtk=	1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -58,7 +58,6 @@ LIB_DEPENDS-qt=	${LIB_DEPENDS} \
 
 RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
 		devel/desktop-file-utils \
-		sysutils/gamin,-server,no_python \
 		x11/gtk+2,-guic
 RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main \
 		devel/desktop-file-utils
