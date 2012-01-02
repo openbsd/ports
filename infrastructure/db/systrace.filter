@@ -3,6 +3,7 @@
 	native-__semctl: permit
 	native-__set_tcb: permit
 	native-__sysctl: permit
+	native-__tfork: permit
 	native-accept: permit
 	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then deny[eacces]
 	native-bind: sockaddr match "/tmp" then permit
@@ -103,6 +104,7 @@
 	native-getsid: permit
 	native-getsockname: permit
 	native-getsockopt: permit
+	native-getthrid: permit
 	native-gettimeofday: permit
 	native-getuid: permit
 	native-ioctl: permit
@@ -176,6 +178,7 @@
 	native-renameat: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-renameat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-rfork: permit
+	native-sched_yield: permit
 	native-select: permit
 	native-semctl: permit
 	native-semget: permit
@@ -226,6 +229,10 @@
 	native-symlinkat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlinkat: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
+	native-threxit: permit
+	native-thrsigdivert: permit
+	native-thrsleep: permit
+	native-thrwakeup: permit
 	native-umask: permit
 	native-utimensat: permit
 	native-utimes: permit
