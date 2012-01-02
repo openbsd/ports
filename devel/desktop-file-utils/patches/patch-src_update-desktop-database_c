@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_update-desktop-database_c,v 1.7 2010/05/15 07:41:19 ajacoutot Exp $
+$OpenBSD: patch-src_update-desktop-database_c,v 1.8 2012/01/02 14:07:06 ajacoutot Exp $
 
 Quiet warnings about deprecated/discouraged and invalid MIME types.
 
@@ -6,15 +6,14 @@ Under OpenBSD, desktop files are installed using INSTALL_DATA which is
 defined in ports/infrastructure/mk/bsd.port.mk as:
     ${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE}
 SHAREMODE is defined under /usr/share/mk/bsd.own.mk as "444".
-
 That means desktop files are installed with mode 444 which is wrong
 because fd.o environments use these files to create menu structures,
 links to applications... and a user should be able to edit the link icon
 or menu he just created.
 
---- src/update-desktop-database.c.orig	Wed Mar 10 03:33:41 2010
-+++ src/update-desktop-database.c	Sat May 15 08:56:37 2010
-@@ -135,15 +135,9 @@ process_desktop_file (const char  *desktop_file,
+--- src/update-desktop-database.c.orig	Thu Dec 15 15:00:55 2011
++++ src/update-desktop-database.c	Mon Jan  2 15:00:50 2012
+@@ -142,15 +142,9 @@ process_desktop_file (const char  *desktop_file,
          case MU_VALID:
            break;
          case MU_DISCOURAGED:
@@ -30,7 +29,7 @@ or menu he just created.
            g_free (valid_error);
            /* not a break: we continue to the next mime type */
            continue;
-@@ -213,6 +207,10 @@ process_desktop_files (const char  *desktop_dir,
+@@ -220,6 +214,10 @@ process_desktop_files (const char  *desktop_dir,
          }
  
        name = g_strdup_printf ("%s%s", prefix, filename);
