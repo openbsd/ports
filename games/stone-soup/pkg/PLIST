@@ -1,45 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/07 19:54:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/01/02 11:26:20 stsp Exp $
 @bin bin/crawl-ss
 @man man/man6/crawl-ss.6
 share/crawl/
 share/crawl/dat/
-share/crawl/dat/clua/
-share/crawl/dat/clua/debug.lua
-share/crawl/dat/clua/dungeon.lua
-share/crawl/dat/clua/init.lua
-share/crawl/dat/clua/iter.lua
-share/crawl/dat/clua/lm_1way.lua
-share/crawl/dat/clua/lm_door.lua
-share/crawl/dat/clua/lm_flags.lua
-share/crawl/dat/clua/lm_fog.lua
-share/crawl/dat/clua/lm_items.lua
-share/crawl/dat/clua/lm_mon_prop.lua
-share/crawl/dat/clua/lm_monst.lua
-share/crawl/dat/clua/lm_mslav.lua
-share/crawl/dat/clua/lm_pdesc.lua
-share/crawl/dat/clua/lm_props.lua
-share/crawl/dat/clua/lm_timed.lua
-share/crawl/dat/clua/lm_tmsg.lua
-share/crawl/dat/clua/lm_toll.lua
-share/crawl/dat/clua/lm_trig.lua
-share/crawl/dat/clua/lm_trove.lua
-share/crawl/dat/clua/loadmaps.lua
-share/crawl/dat/clua/luamark.lua
-share/crawl/dat/clua/macro.lua
-share/crawl/dat/clua/mapinit.lua
-share/crawl/dat/clua/point.lua
-share/crawl/dat/clua/sanity.lua
-share/crawl/dat/clua/sprint.lua
-share/crawl/dat/clua/test.lua
-share/crawl/dat/clua/userbase.lua
-share/crawl/dat/clua/util.lua
-share/crawl/dat/clua/ziggurat.lua
 share/crawl/dat/database/
 share/crawl/dat/database/FAQ.txt
 share/crawl/dat/database/godspeak.txt
 share/crawl/dat/database/help.txt
 share/crawl/dat/database/insult.txt
 share/crawl/dat/database/miscname.txt
+share/crawl/dat/database/monflee.txt
 share/crawl/dat/database/monname.txt
 share/crawl/dat/database/monspeak.txt
 share/crawl/dat/database/monspell.txt
@@ -56,6 +26,7 @@ share/crawl/dat/des/branches/
 share/crawl/dat/des/branches/abyss.des
 share/crawl/dat/des/branches/blade.des
 share/crawl/dat/des/branches/crypt.des
+share/crawl/dat/des/branches/dwarf.des
 share/crawl/dat/des/branches/elf.des
 share/crawl/dat/des/branches/hells.des
 share/crawl/dat/des/branches/hive.des
@@ -76,7 +47,14 @@ share/crawl/dat/des/builder/didact.des
 share/crawl/dat/des/builder/dummy.des
 share/crawl/dat/des/builder/layout.des
 share/crawl/dat/des/builder/rooms.des
+share/crawl/dat/des/builder/shops.des
 share/crawl/dat/des/builder/uniques.des
+share/crawl/dat/des/entry/
+share/crawl/dat/des/entry/entry_guide.txt
+share/crawl/dat/des/entry/entry_large.des
+share/crawl/dat/des/entry/simple.des
+share/crawl/dat/des/entry/small.des
+share/crawl/dat/des/entry/twisted.des
 share/crawl/dat/des/guide.txt
 share/crawl/dat/des/portals/
 share/crawl/dat/des/portals/bailey.des
@@ -90,24 +68,49 @@ share/crawl/dat/des/portals/trove.des
 share/crawl/dat/des/portals/volcano.des
 share/crawl/dat/des/portals/wizlab.des
 share/crawl/dat/des/portals/ziggurat.des
+share/crawl/dat/des/serial/
+share/crawl/dat/des/serial/bayou.des
+share/crawl/dat/des/serial/corridors.des
+share/crawl/dat/des/serial/curves.des
+share/crawl/dat/des/serial/glass.des
+share/crawl/dat/des/serial/gnoll_camp.des
+share/crawl/dat/des/serial/ponds.des
+share/crawl/dat/des/serial/serial_guide.txt
+share/crawl/dat/des/serial/window.des
 share/crawl/dat/des/sprint/
 share/crawl/dat/des/sprint/sprint.des
 share/crawl/dat/des/sprint/sprint2.des
+share/crawl/dat/des/sprint/sprint_fedhas.des
+share/crawl/dat/des/sprint/sprint_mu.des
+share/crawl/dat/des/test.des
+share/crawl/dat/des/traps/
+share/crawl/dat/des/traps/beogh_trap.des
+share/crawl/dat/des/traps/grate.des
+share/crawl/dat/des/traps/monster_doors.des
+share/crawl/dat/des/traps/spider_basket.des
+share/crawl/dat/des/traps/xom_trap.des
 share/crawl/dat/des/tutorial/
-share/crawl/dat/des/tutorial/tutorial.des
+share/crawl/dat/des/tutorial/tutorial_lesson1.des
+share/crawl/dat/des/tutorial/tutorial_lesson2.des
+share/crawl/dat/des/tutorial/tutorial_lesson3.des
+share/crawl/dat/des/tutorial/tutorial_lesson4.des
+share/crawl/dat/des/tutorial/tutorial_lesson5.des
 share/crawl/dat/des/variable/
 share/crawl/dat/des/variable/altar.des
-share/crawl/dat/des/variable/entry.des
 share/crawl/dat/des/variable/float.des
 share/crawl/dat/des/variable/large.des
+share/crawl/dat/des/variable/large_lemuel_castle.des
 share/crawl/dat/des/variable/mini.des
 share/crawl/dat/des/variable/mini_features.des
 share/crawl/dat/des/variable/mini_monsters.des
+share/crawl/dat/des/zotdef/
+share/crawl/dat/des/zotdef/zotdef.des
 share/crawl/dat/descript/
 share/crawl/dat/descript/ability.txt
 share/crawl/dat/descript/backgrounds.txt
 share/crawl/dat/descript/branches.txt
 share/crawl/dat/descript/cards.txt
+share/crawl/dat/descript/commands.txt
 share/crawl/dat/descript/features.txt
 share/crawl/dat/descript/gods.txt
 share/crawl/dat/descript/items.txt
@@ -116,11 +119,44 @@ share/crawl/dat/descript/skills.txt
 share/crawl/dat/descript/species.txt
 share/crawl/dat/descript/spells.txt
 share/crawl/dat/descript/unident.txt
+share/crawl/dat/dlua/
+share/crawl/dat/dlua/debug.lua
+share/crawl/dat/dlua/dungeon.lua
+share/crawl/dat/dlua/fnwrap.lua
+share/crawl/dat/dlua/init.lua
+share/crawl/dat/dlua/iter.lua
+share/crawl/dat/dlua/lm_1way.lua
+share/crawl/dat/dlua/lm_door.lua
+share/crawl/dat/dlua/lm_flags.lua
+share/crawl/dat/dlua/lm_fog.lua
+share/crawl/dat/dlua/lm_items.lua
+share/crawl/dat/dlua/lm_mon_prop.lua
+share/crawl/dat/dlua/lm_monst.lua
+share/crawl/dat/dlua/lm_mslav.lua
+share/crawl/dat/dlua/lm_pdesc.lua
+share/crawl/dat/dlua/lm_props.lua
+share/crawl/dat/dlua/lm_timed.lua
+share/crawl/dat/dlua/lm_tmsg.lua
+share/crawl/dat/dlua/lm_toll.lua
+share/crawl/dat/dlua/lm_trig.lua
+share/crawl/dat/dlua/lm_trove.lua
+share/crawl/dat/dlua/loadmaps.lua
+share/crawl/dat/dlua/luamark.lua
+share/crawl/dat/dlua/macro.lua
+share/crawl/dat/dlua/mapinit.lua
+share/crawl/dat/dlua/point.lua
+share/crawl/dat/dlua/sanity.lua
+share/crawl/dat/dlua/sprint.lua
+share/crawl/dat/dlua/stress.lua
+share/crawl/dat/dlua/test.lua
+share/crawl/dat/dlua/tutorial.lua
+share/crawl/dat/dlua/userbase.lua
+share/crawl/dat/dlua/util.lua
+share/crawl/dat/dlua/ziggurat.lua
 share/crawl/dat/lua/
 share/crawl/dat/lua/autofight.lua
 share/crawl/dat/lua/gearset.lua
 share/crawl/dat/lua/kills.lua
-share/crawl/dat/lua/pickup.lua
 share/crawl/dat/lua/runrest.lua
 share/crawl/dat/lua/stash.lua
 share/crawl/dat/lua/trapwalk.lua
@@ -145,6 +181,7 @@ share/crawl/docs/crawl_manual.txt
 @comment share/crawl/docs/develop/process.txt
 @comment share/crawl/docs/develop/release.txt
 @comment share/crawl/docs/develop/save_compatibility.txt
+@comment share/crawl/docs/develop/spells.txt
 @comment share/crawl/docs/develop/testing.txt
 @comment share/crawl/docs/develop/tiles_creation.txt
 @comment share/crawl/docs/key_changes.txt
@@ -165,6 +202,9 @@ share/crawl/settings/034_command_keys.txt
 share/crawl/settings/034_monster_glyphs.txt
 share/crawl/settings/052_monster_glyphs.txt
 share/crawl/settings/060_monster_glyphs.txt
+share/crawl/settings/071_monster_glyphs.txt
+share/crawl/settings/080_monster_glyphs.txt
+share/crawl/settings/advanced_optioneering.txt
 share/crawl/settings/autopickup_exceptions.txt
 share/crawl/settings/dolls.txt
 share/crawl/settings/dvorak_command_keys.txt

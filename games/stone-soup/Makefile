@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2011/12/16 15:03:00 stsp Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/02 11:26:18 stsp Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
 
 HOMEPAGE = 	http://crawl.develz.org/
 MASTER_SITES = 	${MASTER_SITE_SOURCEFORGE:=crawl-ref/}
-VERSION = 	0.7.2
+VERSION = 	0.9.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	2
 
 BROKEN-arm=	tilegen.elf loops burning cpu
 
@@ -30,6 +29,7 @@ MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 MODULES = 	lang/lua
 WANTLIB = 	c m stdc++ lua sqlite3
 
+BUILD_DEPENDS = graphics/pngcrush
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS = 	databases/sqlite3
 
