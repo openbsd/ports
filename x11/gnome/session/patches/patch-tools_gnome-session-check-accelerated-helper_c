@@ -1,0 +1,17 @@
+$OpenBSD: patch-tools_gnome-session-check-accelerated-helper_c,v 1.1 2012/01/02 13:22:21 ajacoutot Exp $
+
+XXX remove when we have gnome-shell.
+
+--- tools/gnome-session-check-accelerated-helper.c.orig	Mon Jan  2 14:19:34 2012
++++ tools/gnome-session-check-accelerated-helper.c	Mon Jan  2 14:19:17 2012
+@@ -260,6 +260,10 @@ main (int argc, char **argv)
+         Display *display = NULL;
+         int      ret = 1;
+ 
++#ifdef __OpenBSD__
++	_print_error ("Running on OpenBSD, forcing fallback mode.");
++	goto out;
++#endif
+         display = XOpenDisplay (NULL);
+         if (!display) {
+                 _print_error ("No X display.");
