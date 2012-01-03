@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.15 2011/08/21 09:21:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.16 2012/01/03 09:58:41 robert Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -31,6 +31,7 @@ zabbix/api/classes/class.cmap.php
 zabbix/api/classes/class.cmediatype.php
 zabbix/api/classes/class.cproxy.php
 zabbix/api/classes/class.cscreen.php
+zabbix/api/classes/class.cscreenitem.php
 zabbix/api/classes/class.cscript.php
 zabbix/api/classes/class.ctemplate.php
 zabbix/api/classes/class.ctrigger.php
@@ -455,8 +456,6 @@ zabbix/styles/default.css
 zabbix/styles/div.css
 zabbix/styles/form.css
 zabbix/styles/ie.css
-zabbix/styles/ie_css_bb.css
-zabbix/styles/ie_css_ob.css
 zabbix/styles/ie_css_od.css
 zabbix/styles/link.css
 zabbix/styles/p.css
