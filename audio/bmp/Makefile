@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/11/04 08:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2012/01/03 07:03:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
                 gthread-2.0>=400.2 GL Xxf86vm drm ffi xcb-shm stdc++
 
 MODULES=	devel/gettext
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	x11/gtk+2 \
 		devel/glib2

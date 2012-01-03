@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=		curses front-end for various audio players
 
@@ -23,7 +23,6 @@ MODULES=		lang/python
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
-USE_GROFF =		Yes
 PKG_ARCH=		*
 
 do-configure:

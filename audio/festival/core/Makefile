@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/10/17 12:40:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=	general multi-lingual speech synthesis system
 V=		1.95
@@ -30,7 +30,6 @@ MAKE_ENV+=	CC="${CC}" \
 		EST_HOME="${SPEECH}" \
 		FESTIVAL_BUILD_HOME="${FESTIVAL}" \
 		FTLIBDIRC="${PREFIX}/lib/festival"
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${SPEECH} ${FESTIVAL}

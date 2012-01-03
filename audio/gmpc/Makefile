@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/12/03 18:55:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
@@ -34,7 +34,6 @@ MODULES=		devel/gettext textproc/intltool
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		x11/gob2 \

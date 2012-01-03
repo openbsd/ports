@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
@@ -29,8 +29,6 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		devel/gettext textproc/intltool
 
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

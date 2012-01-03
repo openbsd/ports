@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=	creates cover for audio cds using cddb and latex
 
@@ -22,7 +22,6 @@ RUN_DEPENDS=	print/texlive/base \
 		www/p5-libwww \
 		audio/p5-Audio-CD
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 EX_DIR=		${PREFIX}/share/examples/disc-cover

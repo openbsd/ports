@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/10/12 12:54:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=		tag editor for various audio file formats
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=		audio/id3lib \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

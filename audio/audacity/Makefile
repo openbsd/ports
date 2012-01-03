@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/28 17:51:50 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2012/01/03 07:03:54 ajacoutot Exp $
 
 COMMENT=	free audio editor
 
@@ -45,9 +45,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
 USE_LIBTOOL=		Yes
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			CFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
