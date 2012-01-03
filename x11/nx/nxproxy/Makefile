@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/03 16:29:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/03 16:58:38 ajacoutot Exp $
 
 COMMENT=		NX X proxy support tool
 
 DASHVERSION=		1
 DISTNAME=		nxproxy-${MAJOR_VERSION}-${DASHVERSION}
 PKGNAME=		nxproxy-${MAJOR_VERSION}.${DASHVERSION}
+REVISION=		0
 
 WANTLIB += c m stdc++ Xcomp
-LIB_DEPENDS =		x11/nx/nxcomp
+LIB_DEPENDS=		x11/nx/nxcomp
 
 CONFIGURE_STYLE=        gnu
-MAKE_ENV =		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include/nx" \
+MAKE_ENV=		CC=${CC} CXX=${CXX} \
+			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include/nx" \
 			CCFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-MAKE_FLAGS =		LOCAL_LIBRARIES=${X11BASE}/lib/libXau.a
+MAKE_FLAGS=		LOCAL_LIBRARIES=${X11BASE}/lib/libXau.a
 
 WRKDIST=		${WRKDIR}/nxproxy
 

@@ -1,13 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/01/03 16:29:17 sebastia Exp $
---- Makefile.in.orig	Fri Dec 30 14:52:40 2011
-+++ Makefile.in	Fri Dec 30 14:53:52 2011
-@@ -10,20 +10,20 @@ LIBVERSION=@LIBVERSION@
- #
+$OpenBSD: patch-Makefile_in,v 1.2 2012/01/03 16:58:38 ajacoutot Exp $
+--- Makefile.in.orig	Sat Jul 16 17:43:17 2005
++++ Makefile.in	Tue Jan  3 17:45:00 2012
+@@ -11,18 +11,18 @@ LIBVERSION=@LIBVERSION@
  # -Wredundant-decls
  #
--CXX      = @CXX@
+ CXX      = @CXX@
 -CXXFLAGS = @CXXFLAGS@ @X_CFLAGS@ @DEFS@ \
-+CXX      ?= @CXX@
 +CXXFLAGS += @CXXFLAGS@ @X_CFLAGS@ @DEFS@ \
             -Wall -Wpointer-arith -Wstrict-prototypes -Wmissing-prototypes \
             -Wmissing-declarations -Wnested-externs
@@ -15,19 +13,16 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/01/03 16:29:17 sebastia Exp $
 -CXXINCLUDES = -I. -I../nxcomp
 +CXXINCLUDES += -I. -I../nxcomp
  
--CC         = @CC@
+ CC         = @CC@
 -CCFLAGS    = $(CXXFLAGS)
 -CCINCLUDES = -I. -I../nxcomp
 -CCDEFINES  =
-+CC         ?= @CC@
 +CCFLAGS    += $(CXXFLAGS)
 +CCINCLUDES += -I. -I../nxcomp
 +CCDEFINES  +=
  
 -LDFLAGS = @LDFLAGS@
--LIBS    = @LIBS@
 +LDFLAGS += @LDFLAGS@
-+LIBS    += @LIBS@
+ LIBS    = @LIBS@
  
  #
- # Only if THREADS is defined.
