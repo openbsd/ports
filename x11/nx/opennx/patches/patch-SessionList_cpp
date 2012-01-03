@@ -1,0 +1,19 @@
+$OpenBSD: patch-SessionList_cpp,v 1.1 2012/01/03 19:27:30 ajacoutot Exp $
+
+https://sourceforge.net/tracker/?func=detail&aid=3469017&group_id=184662&atid=910152
+
+--- SessionList.cpp.orig	Tue Jan  3 18:31:12 2012
++++ SessionList.cpp	Tue Jan  3 18:31:20 2012
+@@ -122,11 +122,7 @@ SessionList::SessionList(wxString dir, wxEvtHandler* h
+     if (m_re->Compile(wxT("(([TF])-)?([SC])-(.*)-([[:digit:]]+)-([[:xdigit:]]{32})$"), wxRE_ADVANCED))
+         m_reValid = true;
+     if (m_reValid && (!m_dirName.IsEmpty())) {
+-        Create(
+-#ifdef __OPENBSD__
+-                32768
+-#endif
+-              );
++        Create();
+         m_thread->Run();
+     }
+ }
