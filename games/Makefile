@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.235 2011/12/06 13:11:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.236 2012/01/03 21:53:15 naddy Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -24,6 +24,7 @@
      SUBDIR += blobwars
      SUBDIR += bomberclone
      SUBDIR += boswars
+     SUBDIR += braincurses
      SUBDIR += burgerspace
      SUBDIR += bzflag
      SUBDIR += capitan-sevilla
