@@ -1,0 +1,12 @@
+$OpenBSD: patch-extres_xdg_innovidata-opennx_desktop,v 1.1 2012/01/03 16:46:36 sebastia Exp $
+--- extres/xdg/innovidata-opennx.desktop.orig	Fri Dec 30 10:36:17 2011
++++ extres/xdg/innovidata-opennx.desktop	Fri Dec 30 10:37:16 2011
+@@ -2,7 +2,7 @@
+ Version=1.0
+ Encoding=UTF-8
+ Type=Application
+-Exec=/usr/NX/bin/opennx
++Exec=${PREFIX}/NX/bin/opennx
+ Icon=nx
+ Comment=Connect to a remote NX server
+ Comment[de]=Mit einem NX-Server verbinden

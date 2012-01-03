@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/27 09:00:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/01/03 16:46:36 sebastia Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
-DISTNAME=		opennx-0.16
-REVISION=		11
+DISTNAME=		opennx-0.16.0.658
 
 CATEGORIES=		sysutils
 
@@ -34,29 +33,29 @@ BUILD_DEPENDS=		archivers/zip \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			print/cups \
 			security/opensc \
+			x11/nx/nxproxy \
 			x11/nx/nxssh
 
+WRKDIST =		${WRKDIR}/opennx-0.16
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include"
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-DOT_DESKTOP=		opennx-admin-gnome.desktop \
-			opennx-wizard-gnome.desktop \
-			opennx-gnome.desktop
+DOT_DESKTOP=		innovidata-opennx-admin.desktop \
+			innovidata-opennx-wizard.desktop \
+			innovidata-opennx.desktop
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/opennxApp.cpp
+	${SUBST_CMD} ${WRKSRC}/opennxApp.cpp \
+			${WRKSRC}/Makefile.in
 
 post-build:
-	cd ${WRKSRC}/share/applnk/network-gnome && \
+	cd ${WRKSRC}/extres/xdg && \
 		${SUBST_CMD} ${DOT_DESKTOP}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-.for file in ${DOT_DESKTOP}
-	${INSTALL_DATA} ${WRKSRC}/share/applnk/network-gnome/${file} \
-		${PREFIX}/share/applications
-.endfor
 	ln -s ${TRUEPREFIX}/NX/bin/opennx ${PREFIX}/bin/opennx
+	rm ${PREFIX}/share/applications/*beforesubst \
+		${PREFIX}/share/applications/*orig
 
 .include <bsd.port.mk>

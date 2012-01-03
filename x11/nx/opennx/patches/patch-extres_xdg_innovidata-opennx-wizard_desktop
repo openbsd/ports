@@ -1,0 +1,12 @@
+$OpenBSD: patch-extres_xdg_innovidata-opennx-wizard_desktop,v 1.1 2012/01/03 16:46:36 sebastia Exp $
+--- extres/xdg/innovidata-opennx-wizard.desktop.orig	Fri Dec 30 10:35:45 2011
++++ extres/xdg/innovidata-opennx-wizard.desktop	Fri Dec 30 10:36:09 2011
+@@ -2,7 +2,7 @@
+ Version=1.0
+ Encoding=UTF-8
+ Type=Application
+-Exec=/usr/NX/bin/opennx --wizard
++Exec=${PREFIX}/NX/bin/opennx --wizard
+ Icon=opennx-wizard
+ Comment=Create a new OpenNX session definition
+ Comment[de]=Erstelle eine neue OpenNX Sitzungs-Definition

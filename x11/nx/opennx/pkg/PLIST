@@ -1,23 +1,53 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/27 08:59:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/03 16:46:36 sebastia Exp $
 @bin NX/bin/opennx
+@bin NX/bin/pconnect
 @bin NX/bin/watchreader
 NX/share/
 NX/share/cups/
 NX/share/cups/mime.convs
 NX/share/cups/mime.types
-NX/share/icons/
-NX/share/icons/nx-desktop.png
-NX/share/icons/nx.png
-NX/share/icons/opennx-admin.png
-NX/share/icons/opennx-wizard.png
 NX/share/keyboards
 NX/share/keys/
 NX/share/keys/server.id_dsa.key
+NX/share/pconnect.html
 bin/opennx
-share/applications/opennx-admin-gnome.desktop
-share/applications/opennx-gnome.desktop
-share/applications/opennx-wizard-gnome.desktop
+share/applications/innovidata-opennx-admin.desktop
+share/applications/innovidata-opennx-wizard.desktop
+share/applications/innovidata-opennx.desktop
+share/applications/innovidata-opennx.directory
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/icons/hicolor/128x128/apps/nx.png
+share/icons/hicolor/128x128/apps/opennx-admin.png
+share/icons/hicolor/128x128/apps/opennx-wizard.png
+share/icons/hicolor/128x128/mimetypes/nx-desktop.png
+share/icons/hicolor/16x16/apps/nx.png
+share/icons/hicolor/16x16/apps/opennx-admin.png
+share/icons/hicolor/16x16/apps/opennx-wizard.png
+share/icons/hicolor/16x16/mimetypes/nx-desktop.png
+share/icons/hicolor/256x256/apps/nx.png
+share/icons/hicolor/256x256/apps/opennx-admin.png
+share/icons/hicolor/256x256/apps/opennx-wizard.png
+share/icons/hicolor/256x256/mimetypes/nx-desktop.png
+share/icons/hicolor/32x32/apps/nx.png
+share/icons/hicolor/32x32/apps/opennx-admin.png
+share/icons/hicolor/32x32/apps/opennx-wizard.png
+share/icons/hicolor/32x32/mimetypes/nx-desktop.png
+share/icons/hicolor/48x48/apps/nx.png
+share/icons/hicolor/48x48/apps/opennx-admin.png
+share/icons/hicolor/48x48/apps/opennx-wizard.png
+share/icons/hicolor/48x48/mimetypes/nx-desktop.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/nx.png
+share/icons/hicolor/512x512/apps/opennx-admin.png
+share/icons/hicolor/512x512/apps/opennx-wizard.png
+share/icons/hicolor/512x512/mimetypes/
+share/icons/hicolor/512x512/mimetypes/nx-desktop.png
+share/icons/hicolor/scalable/apps/nx.svg
+share/icons/hicolor/scalable/apps/opennx-admin.svg
+share/icons/hicolor/scalable/apps/opennx-wizard.svg
+share/icons/hicolor/scalable/mimetypes/nx-desktop.svg
 share/locale/de/LC_MESSAGES/opennx.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+share/locale/ru/LC_MESSAGES/opennx.mo
