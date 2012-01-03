@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2011/04/08 18:20:55 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2012/01/03 16:39:08 sebastia Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ CATEGORIES+=	x11/nx
 
 HOMEPAGE?=	http://www.nomachine.com/
 
-MAJOR_VERSION?=	3.4.0
+MAJOR_VERSION?=	3.5.0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
