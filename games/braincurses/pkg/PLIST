@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/03 21:52:09 naddy Exp $
+@bin bin/braincurses
+share/doc/braincurses/
+share/doc/braincurses/README
