@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.3 2011/10/16 06:29:30 ajacoutot Exp $
---- tools/Makefile.in.orig	Wed Sep 28 17:04:39 2011
-+++ tools/Makefile.in	Sun Oct 16 08:20:41 2011
-@@ -299,6 +299,7 @@ upower_LDFLAGS = -pthread
+$OpenBSD: patch-tools_Makefile_in,v 1.4 2012/01/03 21:50:06 landry Exp $
+--- tools/Makefile.in.orig	Tue Oct  4 15:53:54 2011
++++ tools/Makefile.in	Mon Jan  2 18:25:45 2012
+@@ -300,6 +300,7 @@ upower_LDFLAGS = -pthread
  upower_LDADD = \
  	$(DBUS_GLIB_LIBS)				\
  	$(UPOWER_LIBS)					\

@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.7 2012/01/02 15:13:19 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2012/01/03 21:50:06 landry Exp $
 
 Disable --as-needed to prevent undefined symbol on pthread_*
 
 Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
 
---- configure.orig	Wed Sep 28 17:04:39 2011
-+++ configure	Mon Jan  2 16:09:11 2012
-@@ -13417,10 +13417,6 @@ else
+--- configure.orig	Tue Oct  4 15:53:55 2011
++++ configure	Mon Jan  2 18:25:45 2012
+@@ -13435,10 +13435,6 @@ else
  fi
  
  
@@ -17,7 +17,7 @@ Fix DATADIRNAME: see LOCALBASE/share/aclocal/glib-gettext.m4.
  # i18n support
  
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether NLS is requested" >&5
-@@ -13966,6 +13962,9 @@ else
+@@ -13984,6 +13980,9 @@ else
    DATADIRNAME=lib
  fi
  
