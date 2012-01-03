@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/03 12:11:54 ajacoutot Exp $
 @bin bin/gnome-nettool
 share/applications/gnome-nettool.desktop
 share/glib-2.0/schemas/org.gnome.gnome-nettool.gschema.xml
+share/gnome/
 share/gnome-nettool/
 share/gnome-nettool/pixmaps/
 share/gnome-nettool/pixmaps/16_ethernet.xpm
@@ -14,6 +15,7 @@ share/gnome-nettool/pixmaps/network.png
 share/gnome-nettool/pixmaps/wavelan-16.png
 share/gnome-nettool/ui/
 share/gnome-nettool/ui/gnome-nettool.ui
+share/gnome/help/
 share/gnome/help/gnome-nettool/
 share/gnome/help/gnome-nettool/C/
 share/gnome/help/gnome-nettool/C/gnome-nettool.xml
@@ -50,26 +52,17 @@ share/gnome/help/gnome-nettool/vi/
 share/gnome/help/gnome-nettool/vi/gnome-nettool.xml
 share/gnome/help/gnome-nettool/zh_CN/
 share/gnome/help/gnome-nettool/zh_CN/gnome-nettool.xml
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-nettool.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-nettool.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-nettool.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-nettool.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-nettool.svg
 share/locale/af/LC_MESSAGES/gnome-nettool.mo
 share/locale/ar/LC_MESSAGES/gnome-nettool.mo
 share/locale/as/LC_MESSAGES/gnome-nettool.mo
 share/locale/ast/LC_MESSAGES/gnome-nettool.mo
 share/locale/az/LC_MESSAGES/gnome-nettool.mo
+share/locale/be/LC_MESSAGES/gnome-nettool.mo
 share/locale/bg/LC_MESSAGES/gnome-nettool.mo
 share/locale/bn/LC_MESSAGES/gnome-nettool.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-nettool.mo
@@ -86,6 +79,7 @@ share/locale/el/LC_MESSAGES/gnome-nettool.mo
 share/locale/en@shaw/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_CA/LC_MESSAGES/gnome-nettool.mo
 share/locale/en_GB/LC_MESSAGES/gnome-nettool.mo
+share/locale/eo/LC_MESSAGES/gnome-nettool.mo
 share/locale/es/LC_MESSAGES/gnome-nettool.mo
 share/locale/et/LC_MESSAGES/gnome-nettool.mo
 share/locale/eu/LC_MESSAGES/gnome-nettool.mo

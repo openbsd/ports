@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/01/03 12:11:53 ajacoutot Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
-GNOME_VERSION=	3.0.0
-REVISION=	8
+GNOME_VERSION=	3.0.1
 
 CATEGORIES=	net
 
@@ -13,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
@@ -31,7 +28,8 @@ MODULES=	devel/dconf \
 LIB_DEPENDS=	devel/libgtop2 \
 		x11/gtk+3
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		net/nmap
 
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=	Yes
