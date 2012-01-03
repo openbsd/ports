@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/08 18:20:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/01/03 16:35:28 sebastia Exp $
 
 COMMENT=		library to compress the standard X protocol
 
-DASHVERSION=		7
+DASHVERSION=		2
 DISTNAME=		nxcomp-${MAJOR_VERSION}-${DASHVERSION}
 PKGNAME=		nxcomp-${MAJOR_VERSION}.${DASHVERSION}
-REVISION=		0
 SHARED_LIBS=		Xcomp	1.0
 
 WANTLIB += jpeg m png stdc++ z

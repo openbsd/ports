@@ -1,0 +1,24 @@
+$OpenBSD: patch-Loop_cpp,v 1.1 2012/01/03 16:35:28 sebastia Exp $
+
+fix bounds length warnings
+
+--- Loop.cpp.orig	Tue Mar 30 15:38:11 2010
++++ Loop.cpp	Mon Jan  2 09:57:26 2012
+@@ -3770,7 +3770,7 @@ int SetupAuthInstance()
+ 
+         launchdAddrUnix.sun_family = AF_UNIX;
+ 
+-        const int launchdAddrNameLength = 108;
++        const int launchdAddrNameLength = SUN_LEN(&launchdAddrUnix);
+ 
+         int success = -1;
+ 
+@@ -4037,7 +4037,7 @@ int SetupUnixSocket()
+   snprintf(unixSocketName,  DEFAULT_STRING_LENGTH - 1, "%s/X%d",
+                dirName, proxyPort);
+ 
+-  strncpy(unixAddr.sun_path, unixSocketName, 108);
++  strncpy(unixAddr.sun_path, unixSocketName, SUN_LEN(&unixAddr));
+ 
+   #ifdef TEST
+   *logofs << "Loop: Assuming Unix socket with name '"
