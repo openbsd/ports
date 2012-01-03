@@ -1,0 +1,79 @@
+$OpenBSD: patch-jday_1,v 1.1 2012/01/03 07:01:31 ajacoutot Exp $
+
+Some formatting and macro usage fixes.
+
+--- jday.1.orig	Mon Jan  2 18:30:06 2012
++++ jday.1	Mon Jan  2 18:46:48 2012
+@@ -16,14 +16,11 @@ jday, j2d - astronomical julian date conversion utilit
+ .TP 8
+ .B  j2d [\-\-h[elp]]
+ .SH DESCRIPTION
+-.PP
+ \fIjday and j2d\fP are command line utilities to convert calendar dates
+ to astronomical julian dates, and julian dates to calendar dates.
+ There is a corresponding library \fIlibjday.a\fP
+ which can be used for the same functionality within applications.
+-.
+ .SH OPTIONS
+-.l
+ \fIjday\fP accepts the following options:
+ .TP 8
+ .B  none at all
+@@ -34,12 +31,12 @@ time found on the system.
+ Always in that order, to override that value found on the system.
+ .TP 8
+ .B  \-d [\-]year-mm-dd hh:mm:ss
+-Specify a year in the same format as that printed out by \fIj2d\fP
++Specify a year in the same format as that printed out by \fIj2d\fP.
+ .TP 8
+ \fIj2d\fP accepts the following options:
+ .TP 8
+ .B  <julian decimal date>
+-This is the only, and required argument to \fIj2d\fP
++This is the only, and required argument to \fIj2d\fP.
+ .TP 8
+ \fIboth commands\fP accept the following options:
+ .TP 8
+@@ -47,9 +44,9 @@ This is the only, and required argument to \fIj2d\fP
+ Display the version of the programs.
+ .TP 8
+ .B  \-\-h[elp]
+-Display a command help message
++Display a command help message.
+ .SH EXAMPLES
+-.B  $ jday 1970 1 1 12 0 0
++$ jday 1970 1 1 12 0 0
+ .br
+ 2440588.000000
+ .br
+@@ -86,25 +83,25 @@ Copyright \(co  1986-2005, Hiram Clawson
+ jday at hiram.ws
+ .TP 8
+ All rights reserved.
+-.TP 8
++.LP
+ Redistribution and use in source and binary forms, with or
+ without modification, are permitted provided that the following
+ conditions are met:
+-.TP 8
++.IP
+ Redistributions of source code must retain the above
+ copyright notice, this list of conditions and the
+ following disclaimer.
+-.TP 8
++.IP
+ Redistributions in binary form must reproduce the
+ above copyright notice, this list of conditions and
+ the following disclaimer in the documentation and/or
+ other materials provided with the distribution.
+-.TP 8
++.IP
+ Neither name of The Museum of Hiram nor the names of
+ its contributors may be used to endorse or promote products
+ derived from this software without specific prior
+ written permission. 
+-.TP 8
++.LP
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
