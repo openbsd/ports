@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/10/14 11:37:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/03 22:04:06 ajacoutot Exp $
 
 COMMENT =	Thunar old vfs compat
 
 XFCE_PROJECT =	thunar-vfs
 XFCE_VERSION =	1.2.0
 SHARED_LIBS +=  thunar-vfs-1              5.2 # 5.1
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,7 +22,8 @@ CONFIGURE_ENV +=	LIBS='-liconv'
 
 LIB_DEPENDS +=	x11/xfce4/exo>=0.6.0 \
 		x11/gtk+2 \
-		devel/startup-notification
+		devel/startup-notification \
+		sysutils/gamin
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm

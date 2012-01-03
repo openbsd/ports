@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/03 22:04:06 ajacoutot Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
 XFCE_VERSION=	1.2.0
 XFCE_PLUGIN=	places
-REVISION =	4
+REVISION =	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -16,6 +16,7 @@ MODULES=	x11/xfce4
 
 LIB_DEPENDS =	x11/xfce4/thunar-vfs
 LIB_DEPENDS +=	x11/xfce4/libxfcegui4
+LIB_DEPENDS +=	sysutils/gamin
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
