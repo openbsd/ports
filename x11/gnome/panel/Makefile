@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2011/12/28 16:02:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2012/01/04 10:47:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.2.1
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS=	panel-applet-4            1.0 # 0.0
 
@@ -54,7 +54,7 @@ LIB_DEPENDS=	databases/evolution-data-server \
 RUN_DEPENDS=	x11/gnome/icon-theme-symbolic
 
 # notification-area-applet
-RUN_DEPENDS +=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
+RUN_DEPENDS +=	sysutils/notification-daemon
 
 # "Lock Screen"
 RUN_DEPENDS+=	x11/gnome/screensaver
