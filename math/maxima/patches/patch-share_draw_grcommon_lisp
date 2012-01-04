@@ -1,0 +1,85 @@
+$OpenBSD: patch-share_draw_grcommon_lisp,v 1.1 2012/01/04 16:14:42 edd Exp $
+
+Plot surface when it is part of the frontier of the region.
+http://sourceforge.net/tracker/index.php?func=detail&aid=3459556&group_id=4933&atid=104933
+
+--- share/draw/grcommon.lisp.orig	Wed Jan  4 13:19:13 2012
++++ share/draw/grcommon.lisp	Wed Jan  4 13:19:20 2012
+@@ -164,6 +164,7 @@
+       (gethash '$filled_func *gr-options*)     nil         ; false, true (y axis) or an expression
+       (gethash '$xaxis_secondary *gr-options*) nil
+       (gethash '$yaxis_secondary *gr-options*) nil
++      (gethash '$draw_realpart *gr-options*)   t
+ 
+       ; transformation option
+       (gethash '$transform *gr-options*) '$none
+@@ -173,6 +174,7 @@
+       (gethash '$yv_grid *gr-options*)        30
+       (gethash '$surface_hide *gr-options*)   nil
+       (gethash '$enhanced3d *gr-options*)     '$none
++      (gethash '$wired_surface *gr-options*)  nil
+       (gethash '$contour *gr-options*)        '$none  ; other options are: $base, $surface, $both and $map
+       (gethash '$contour_levels *gr-options*) 5       ; 1-50, [lowest_level,step,highest_level] or {z1,z2,...}
+       (gethash '$colorbox *gr-options*)       t       ; in pm3d mode, always show colorbox
+@@ -683,7 +685,7 @@
+          ($dots     (setf (gethash opt *gr-options*) 0))
+          ($solid    (setf (gethash opt *gr-options*) 1))
+          ($dashes   (setf (gethash opt *gr-options*) 2))
+-         ($dot_dash (setf (gethash opt *gr-options*) 3))
++         ($dot_dash (setf (gethash opt *gr-options*) 6))
+          ($tube     (setf (gethash opt *gr-options*) -8))
+          (otherwise  (merror "draw: illegal line type: ~M" val) )))
+     ((and ($listp val)
+@@ -800,7 +802,7 @@
+         $axis_right $axis_3d $surface_hide $xaxis $yaxis $zaxis $unit_vectors
+         $xtics_rotate $ytics_rotate $xtics_secondary_rotate $ytics_secondary_rotate
+         $ztics_rotate $xtics_axis $ytics_axis $xtics_secondary_axis
+-        $ytics_secondary_axis $ztics_axis) ; true or false
++        $ytics_secondary_axis $ztics_axis $draw_realpart $wired_surface) ; true or false
+           (update-boolean-option opt val))
+       ($filled_func  ; true, false or an expression
+          (setf (gethash opt *gr-options*) val))
+@@ -961,6 +963,12 @@
+ 
+ 
+ 
++
++
++
++
++
++
+ ;;; COMMON GNUPLOT - VTK AUXILIARY FUNCTIONS
+ 
+ ;; Transforms arguments to make-scene-2d, make-scene-3d,
+@@ -1067,21 +1075,20 @@
+                  (k-1 (- k 1))
+                  (i+1 (+ i 1))
+                  (j+1 (+ j 1))
+-                 (val (make-array 8 :element-type
+-                                       'flonum
++                 (val (make-array 8 :element-type 'flonum
+                                     :initial-contents
+                                        `(,(aref oldval i j+1) ,(aref oldval i+1 j+1)
+                                          ,(aref oldval i+1 j) ,(aref oldval i j)
+                                          ,(aref newval i j+1) ,(aref newval i+1 j+1)
+                                          ,(aref newval i+1 j) ,(aref newval i j)))))
+-            (when (< (aref val 0) 0.0) (setf cubidx (logior cubidx 1)))
+-            (when (< (aref val 1) 0.0) (setf cubidx (logior cubidx 2)))
+-            (when (< (aref val 2) 0.0) (setf cubidx (logior cubidx 4)))
+-            (when (< (aref val 3) 0.0) (setf cubidx (logior cubidx 8)))
+-            (when (< (aref val 4) 0.0) (setf cubidx (logior cubidx 16)))
+-            (when (< (aref val 5) 0.0) (setf cubidx (logior cubidx 32)))
+-            (when (< (aref val 6) 0.0) (setf cubidx (logior cubidx 64)))
+-            (when (< (aref val 7) 0.0) (setf cubidx (logior cubidx 128)))
++            (when (<= (aref val 0) 0.0) (setf cubidx (logior cubidx 1)))
++            (when (<= (aref val 1) 0.0) (setf cubidx (logior cubidx 2)))
++            (when (<= (aref val 2) 0.0) (setf cubidx (logior cubidx 4)))
++            (when (<= (aref val 3) 0.0) (setf cubidx (logior cubidx 8)))
++            (when (<= (aref val 4) 0.0) (setf cubidx (logior cubidx 16)))
++            (when (<= (aref val 5) 0.0) (setf cubidx (logior cubidx 32)))
++            (when (<= (aref val 6) 0.0) (setf cubidx (logior cubidx 64)))
++            (when (<= (aref val 7) 0.0) (setf cubidx (logior cubidx 128)))
+             (setf triangles (aref *i3d_triangles* cubidx))   ; edges intersecting the surface
+             (do ((e 0 (1+ e)))
+                 ((= (aref triangles e) -1) 'done)

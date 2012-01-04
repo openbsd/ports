@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/23 19:20:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/01/04 16:14:42 edd Exp $
 
 COMMENT=		GPL computer algebra system based on DOE Macsyma
 
 VERSION=		5.25.1
-REVISION =		2
+REVISION =		3
 DISTNAME=		maxima-${VERSION}
 CATEGORIES=		math
 
