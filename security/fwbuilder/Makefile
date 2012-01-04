@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.26 2011/12/05 10:41:44 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/01/04 08:57:50 sebastia Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
 
-V =		4.1.3
 COMMENT =	firewall GUI
-DISTNAME =	fwbuilder-$V
-REVISION =	0
+DISTNAME =	fwbuilder-5.0.1.3592
 CATEGORIES =	net security
 
 HOMEPAGE =	http://www.fwbuilder.org/
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
-# GPLv2+
+# GPLv2+ mostly, some code under BSD-like
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
+
+# .orig produces too much spam in tests directories
+PATCHORIG =		.ports.orig
 
 AUTOMAKE_VERSION =	1.10
 AUTOCONF_VERSION =	2.63
@@ -28,8 +29,8 @@ CONFIGURE_STYLE =	gnu
 
 BUILD_DEPENDS +=${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/cppunit \
-		devel/libtool	# for libtoolize, required by autogen.sh
+		devel/cppunit
+COPTS =		${DEBUG}
 
 CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
 			--with-templatedir=${TRUEPREFIX}/share/fwbuilder \
@@ -38,24 +39,28 @@ CONFIGURE_ARGS +=	--with-docdir=${TRUEPREFIX}/share/doc/fwbuilder \
 			--without-distcc
 MAKE_ENV +=		QMAKE=${MODQT_QTDIR}/bin/qmake \
 			CXXFLAGS="${CXXFLAGS}" \
+			COPTS="${COPTS}" \
 			LDFLAGS="${LDFLAGS}"
 
+USE_LIBTOOL =	gnu
 MODULES =	x11/qt4 converters/libiconv
 DESTDIRNAME =	INSTALL_ROOT
-LIB_DEPENDS =	libfwbuilder-$V:security/libfwbuilder \
+LIB_DEPENDS =	net/net-snmp \
+		textproc/libxml \
+		textproc/libxslt \
 		x11/qt4
 		
-REGRESS_TARGET =tests
-USE_GROFF =	Yes
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_TARGET =	tests
+REGRESS_ENV +=		COPTS="${COPTS}"
+REGRESS_IS_INTERACTIVE =	X11
 
-WANTLIB += c crypto m netsnmp
+WANTLIB += c crypto m netsnmp QtGui QtNetwork
 WANTLIB += pthread stdc++ util xml2 xslt z
-WANTLIB += QtDBus QtGui QtNetwork QtXml
-WANTLIB += fwcompiler>=14 fwbuilder>=14
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_FILE="${INSTALL_DATA}"
-
 post-patch:
 	cd ${WRKSRC}; \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
