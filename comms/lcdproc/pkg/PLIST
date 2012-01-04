@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/02 12:39:23 edd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/01/04 14:19:09 sthen Exp $
 @newgroup _lcdproc:687
 @newuser _lcdproc:687:687:daemon:LCDproc Daemon:/var/lcdproc:/sbin/nologin
-%%SHARED%%
 bin/fortune.pl
+%%parallel%%
 bin/iosock.pl
 @bin bin/lcdexec
 bin/lcdident.pl
@@ -11,6 +11,42 @@ bin/lcdmetar.pl
 bin/tail.pl
 bin/x11amp.pl
 lib/lcdproc/
+lib/lcdproc/CFontz.so
+lib/lcdproc/CFontz633.so
+lib/lcdproc/CFontzPacket.so
+lib/lcdproc/CwLnx.so
+lib/lcdproc/EyeboxOne.so
+lib/lcdproc/IOWarrior.so
+lib/lcdproc/MD8800.so
+lib/lcdproc/MtxOrb.so
+lib/lcdproc/NoritakeVFD.so
+lib/lcdproc/SureElec.so
+lib/lcdproc/bayrad.so
+lib/lcdproc/curses.so
+lib/lcdproc/ea65.so
+lib/lcdproc/glk.so
+lib/lcdproc/hd44780.so
+lib/lcdproc/i2500vfd.so
+lib/lcdproc/icp_a106.so
+lib/lcdproc/imon.so
+lib/lcdproc/imonlcd.so
+lib/lcdproc/irtrans.so
+lib/lcdproc/lb216.so
+lib/lcdproc/lcdm001.so
+lib/lcdproc/lcterm.so
+lib/lcdproc/lis.so
+lib/lcdproc/mdm166a.so
+lib/lcdproc/ms6931.so
+lib/lcdproc/mtc_s16209x.so
+lib/lcdproc/picolcd.so
+lib/lcdproc/pyramid.so
+lib/lcdproc/serialPOS.so
+lib/lcdproc/serialVFD.so
+lib/lcdproc/shuttleVFD.so
+lib/lcdproc/sli.so
+lib/lcdproc/text.so
+lib/lcdproc/tyan.so
+lib/lcdproc/ula200.so
 @man man/man1/lcdexec.1
 @man man/man1/lcdproc.1
 @man man/man5/lcdproc-config.5

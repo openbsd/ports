@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/02 13:37:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/04 14:19:09 sthen Exp $
+
+SHARED_ONLY =		Yes
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		1
+REVISION =		2
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -44,5 +46,9 @@ post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLE_DIR}
 # lcdvc is a linux specific thing - prevent it appearing in PLIST
 	rm ${PREFIX}/bin/lcdvc ${PREFIX}/man/man1/lcdvc.1
+
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+PKG_ARGS += -Dparallel=1
+.endif
 
 .include <bsd.port.mk>

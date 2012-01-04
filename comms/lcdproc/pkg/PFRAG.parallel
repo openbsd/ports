@@ -1,0 +1,5 @@
+@comment $OpenBSD: PFRAG.parallel,v 1.1 2012/01/04 14:19:09 sthen Exp $
+lib/lcdproc/sed1330.so
+lib/lcdproc/sed1520.so
+lib/lcdproc/stv5730.so
+lib/lcdproc/t6963.so
