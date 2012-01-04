@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2011/12/20 10:49:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2012/01/04 21:41:45 sthen Exp $
 
 COMMENT=	validating DNS resolver
 
 DISTNAME=	unbound-1.4.14
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.unbound.net/downloads/
