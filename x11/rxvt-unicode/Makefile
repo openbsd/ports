@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/22 11:29:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/04 13:56:27 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
@@ -34,7 +34,8 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \
 			--with-term=rxvt-256color \
-			--disable-afterimage
+			--disable-afterimage \
+			--disable-startup-notification
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
 
