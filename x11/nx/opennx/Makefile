@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/03 19:27:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/01/04 10:15:53 ajacoutot Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16.0.658
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils
 
@@ -30,11 +30,9 @@ LIB_DEPENDS=		x11/wxWidgets \
 BUILD_DEPENDS=		archivers/zip \
 			devel/bison \
 			net/samba \
-			print/cups \
-			security/opensc
+			print/cups
 RUN_DEPENDS=		devel/desktop-file-utils \
 			print/cups \
-			security/opensc \
 			x11/nx/nxproxy \
 			x11/nx/nxssh
 
