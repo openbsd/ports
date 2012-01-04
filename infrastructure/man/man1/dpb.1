@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.26 2011/12/31 14:53:17 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.27 2012/01/04 02:08:52 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: December 31 2011 $
+.Dd $Mdocdate: January 4 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -29,6 +29,7 @@
 .Op Fl C Ar pathlist
 .Op Fl D Ar PARAM Ns = Ns Ar value
 .Op Fl f Ar m
+.Op Fl F Ar m
 .Op Fl h Ar hosts
 .Op Fl I Ar subdirlist
 .Op Fl J Ar p
@@ -147,6 +148,13 @@ Can be set to 0 to bypass fetching jobs entirely,
 and reduce
 .Nm
 memory footprint by a lot.
+.It Fl F Ar m
+Fetch-only mode, for mirroring hosts.
+Do not build any package but fetch everything, disregarding
+.Ev BROKEN
+and
+.Ev ONLY_FOR_ARCHS
+information.
 .It Fl h Ar hosts
 File with hosts to use for building.
 One host per line, plus properties, such as:
@@ -261,6 +269,13 @@ Useful to try to find missing build dependencies.
 Rebuild existing packages based on discrepancies between the package
 signature and what the port says it should be.
 Concretely, use to run a partial bulk build after some library change.
+.Pp
+Note that
+.Fl R
+won't always work, as rebuilding a package when another version is already
+installed is not supported.
+It will go into an infinite loop with always-update packages such as sqlports
+or pkglocatedb.
 .It Fl s
 Compute workdir sizes before cleaning up, and stash them in log file
 .Pa ${LOGDIR}/size.log .
@@ -608,6 +623,12 @@ ensure the machine is clean of possibly older packages first, or run
 .Nm
 with
 .Fl U .
+.Pp
+In particular
+.Fl R
+and
+.Fl J
+together may lead to strange issues.
 .Pp
 On heterogeneous networks, calibration of build info and choice of speed
 factors is not perfect, and somewhat a dark art.
