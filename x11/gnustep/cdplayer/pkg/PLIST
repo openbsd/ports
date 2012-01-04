@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 06:30:42 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/04 17:32:21 sebastia Exp $
 bin/CDPlayer
-include/CDPlayer/
-include/CDPlayer/AudioCDProtocol.h
+include/AudioCD/
+include/AudioCD/AudioCDProtocol.h
 include/Cddb/
 include/Cddb/Cddb.h
 lib/GNUstep/Bundles/AudioCD.bundle/

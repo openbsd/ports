@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 06:30:42 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/04 17:32:21 sebastia Exp $
 
 COMMENT =	GNUstep based CD player
 
 VERSION =	0.5.1
 DISTNAME =	cdplayer-${VERSION}
+REVISION =	0
 
 HOMEPAGE =	http://gsburn.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gsburn/}
@@ -17,10 +18,5 @@ LIB_DEPENDS +=	audio/libcdaudio \
 WRKDIST =	${WRKDIR}/CDPlayer-${VERSION}
 
 MAKE_FLAGS +=	prefs=sysprefs
-
-# install the header on the right spot, needed by gsburn
-post-install:
-	mv ${PREFIX}/include/AudioCD \
-		${PREFIX}/include/CDPlayer
 
 .include <bsd.port.mk>
