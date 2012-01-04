@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2011/11/30 21:19:13 dhill Exp $
+# $OpenBSD: Makefile,v 1.277 2012/01/04 08:59:57 sebastia Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -79,7 +79,6 @@
      SUBDIR += l0phtcrack
      SUBDIR += libassuan
      SUBDIR += libfprint
-     SUBDIR += libfwbuilder
      SUBDIR += libgcrypt
      SUBDIR += libgpg-error
      SUBDIR += libgringotts
