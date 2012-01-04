@@ -1,0 +1,21 @@
+$OpenBSD: patch-hotplug-diskmount_8,v 1.1 2012/01/04 08:23:22 dcoppa Exp $
+--- hotplug-diskmount.8.orig	Sun Dec 18 13:21:40 2011
++++ hotplug-diskmount.8	Wed Jan  4 09:09:36 2012
+@@ -138,7 +138,7 @@ never does force unmount.
+ .Sh EXAMPLES
+ Create directory set which will be used for storing mount points:
+ .Bd -literal -offset indent
+-/usr/local/libexec/hotplug-diskmount init
++${TRUEPREFIX}/libexec/hotplug-diskmount init
+ .Ed
+ .Pp
+ Sample
+@@ -152,7 +152,7 @@ DEVNAME=$2
+ 
+ case $DEVCLASS in
+ 2)
+-	/usr/local/libexec/hotplug-diskmount attach "$DEVNAME"
++	${TRUEPREFIX}/libexec/hotplug-diskmount attach "$DEVNAME"
+ 	;;
+ esac
+ .Ed

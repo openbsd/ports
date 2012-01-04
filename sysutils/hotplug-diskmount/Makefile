@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/27 11:36:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/04 08:23:22 dcoppa Exp $
 
 COMMENT =	disk auto-mounter
 
-DISTNAME =	hotplug-diskmount-0.5
-REVISION =	1
+DISTNAME =	hotplug-diskmount-0.7
 
 CATEGORIES =	sysutils
 
@@ -24,7 +23,7 @@ WANTLIB =	c
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hotplug-diskmount ${PREFIX}/libexec/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${WRKSRC}/hotplug-diskmount.1 \
-			${PREFIX}/man/man1/hotplug-diskmount.1
+		-c ${WRKSRC}/hotplug-diskmount.8 \
+			${PREFIX}/man/man8/hotplug-diskmount.8
 
 .include <bsd.port.mk>

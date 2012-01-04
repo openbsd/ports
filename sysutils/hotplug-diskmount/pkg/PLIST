@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/27 11:36:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/01/04 08:23:22 dcoppa Exp $
 @bin libexec/hotplug-diskmount
-@man man/man1/hotplug-diskmount.1
+@man man/man8/hotplug-diskmount.8
 share/doc/pkg-readmes/${FULLPKGNAME}
