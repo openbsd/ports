@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/18 05:38:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/04 16:24:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network-related gio modules for glib2
 
-GNOME_VERSION=	2.30.1
+GNOME_VERSION=	2.30.2
 GNOME_PROJECT=	glib-networking
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
@@ -41,5 +41,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
 		--with-ca-certificates=/etc/ssl/cert.pem
+
+REGRESS_IS_INTERACTIVE=	x11
 
 .include <bsd.port.mk>
