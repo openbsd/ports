@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/12/03 15:54:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.70 2012/01/04 12:29:01 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -6,8 +6,8 @@ ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 V = 4.2.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-BOOTSTRAP_GEN = 3
-# XXX this needs libc.so.53.0 to build on i386
+BOOTSTRAP_GEN = 4
+# XXX this needs libc.so.60.1 (from OpenBSD 5.0) to build on i386
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
@@ -75,7 +75,8 @@ DISTNAME =   	gcc-${FULL_VERSION}
 
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES0 =	http://distfiles.bsdfrog.org/
+#MASTER_SITES0 = ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
@@ -107,6 +108,9 @@ REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 
 post-extract:
+.if ${BUILD_PACKAGES:M-ada}
+	${WRKDIR}/bootstrap/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
+.endif
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
