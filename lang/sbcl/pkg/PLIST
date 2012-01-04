@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/28 20:54:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/04 20:16:43 krw Exp $
 %%amd64%%
 %%i386%%
 %%powerpc%%
@@ -65,6 +65,8 @@ lib/sbcl/sb-cltl2/sb-cltl2.asd
 lib/sbcl/sb-cltl2/sb-cltl2.fasl
 lib/sbcl/sb-cltl2/tests.lisp
 lib/sbcl/sb-concurrency/
+lib/sbcl/sb-concurrency/gate.fasl
+lib/sbcl/sb-concurrency/gate.lisp
 lib/sbcl/sb-concurrency/mailbox.fasl
 lib/sbcl/sb-concurrency/mailbox.lisp
 lib/sbcl/sb-concurrency/package.fasl
