@@ -1,7 +1,7 @@
-$OpenBSD: patch-pwlib_compat_h,v 1.4 2011/10/26 17:00:06 ajacoutot Exp $
---- pwlib_compat.h.orig	Wed Jul 20 13:26:53 2011
-+++ pwlib_compat.h	Tue Jul 26 16:23:54 2011
-@@ -170,6 +170,19 @@
+$OpenBSD: patch-pwlib_compat_h,v 1.5 2012/01/05 08:44:35 ajacoutot Exp $
+--- pwlib_compat.h.orig	Mon Nov 28 13:33:41 2011
++++ pwlib_compat.h	Thu Jan  5 09:29:45 2012
+@@ -187,6 +187,19 @@
  	#endif
  #endif
  
