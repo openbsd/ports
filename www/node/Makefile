@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/12/21 09:56:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/01/05 20:36:53 jeremy Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,6 +11,7 @@ COMMENT=	V8 JavaScript for clients and servers
 NODE_VERSION=	v0.6.6
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
+REVISION=	0
 
 CATEGORIES=	www devel
 
@@ -52,5 +53,6 @@ NO_CCACHE=	Yes
 pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
+	${SUBST_CMD} ${WRKDIST}/lib/module.js
 
 .include <bsd.port.mk>
