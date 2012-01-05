@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2011/12/09 21:46:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2012/01/05 02:10:06 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.6.5
+V =		1.6.5.1
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
-REVISION =	0
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0
