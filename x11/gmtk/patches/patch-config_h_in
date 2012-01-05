@@ -1,0 +1,17 @@
+$OpenBSD: patch-config_h_in,v 1.1.1.1 2012/01/05 14:47:10 dcoppa Exp $
+
+Detect if libm should be used and use it if needed
+(upstream svn revision r77)
+
+--- config.h.in.orig	Thu Jan  5 12:28:52 2012
++++ config.h.in	Thu Jan  5 12:30:55 2012
+@@ -69,6 +69,9 @@
+ /* Define if your <locale.h> file defines LC_MESSAGES. */
+ #undef HAVE_LC_MESSAGES
+ 
++/* Define to 1 if you have the `m' library (-lm). */
++#undef HAVE_LIBM
++
+ /* Define to 1 if you have the <locale.h> header file. */
+ #undef HAVE_LOCALE_H
+ 
