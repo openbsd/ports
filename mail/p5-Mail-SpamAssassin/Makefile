@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.76 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.77 2012/01/05 17:25:24 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.3.2
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
-REVISION=		2
+REVISION=		3
 RULESNAME=		Mail-SpamAssassin-rules-${VER}-r1104058.tar.gz
 CATEGORIES=		mail perl5
 
@@ -54,7 +54,6 @@ CONFIGURE_ARGS+=	DESTDIR=${WRKINST} \
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 LOCALSTATEDIR=		/var/db/spamassassin
 SAMPLE_CONFDIR=		${PREFIX}/share/examples/SpamAssassin
-USE_GROFF =	Yes
 
 SUBST_VARS=		CONFDIR LOCALSTATEDIR
 
