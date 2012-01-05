@@ -2,5 +2,4 @@ gmtk is a toolkit library used by gnome-mplayer and gecko-mediaplayer:
 several common functions and routines formerly in gnome-mplayer and
 gecko-mediaplayer have been moved to this library.
 Since gmtk provides a complete set of widgets to control mplayer,
-it can also be used to develop new GTK based media players very
-quickly.
+it can also be used to quickly develop new GTK based media players.
