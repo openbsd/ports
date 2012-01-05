@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2011/11/16 00:43:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.85 2012/01/05 08:52:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.1.20
+DISTNAME=	xine-lib-1.1.20.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -48,19 +48,13 @@ LIB_DEPENDS=	audio/faad \
 		devel/sdl \
 		multimedia/libdvdnav \
 		multimedia/libtheora \
-		graphics/ffmpeg \
+		graphics/ffmpeg>=20111126 \
 		graphics/libmng \
 		graphics/vcdimager
 
-.if ${MACHINE_ARCH} == "i386"
-PKG_ARGS+=	-Di386=1
-.else
-PKG_ARGS+=	-Di386=0
-.endif
-
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS+=--disable-aalib \
@@ -98,6 +92,5 @@ NO_REGRESS=	Yes
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm
-	@rm ${PREFIX}/lib/libxine.la
 
 .include <bsd.port.mk>

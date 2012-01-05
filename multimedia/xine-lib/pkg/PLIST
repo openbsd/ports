@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/11/16 00:43:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/01/05 08:52:26 ajacoutot Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -6,7 +6,6 @@
 @pkgpath ${BASE_PKGPATH},-esd
 @pkgpath ${BASE_PKGPATH},-jack
 @pkgpath ${BASE_PKGPATH},-main
-%%i386%%
 bin/xine-config
 @bin bin/xine-list-1.1
 include/xine/
@@ -50,6 +49,7 @@ include/xine/xineutils.h
 include/xine/xmllexer.h
 include/xine/xmlparser.h
 lib/libxine.a
+lib/libxine.la
 @lib lib/libxine.so.${LIBxine_VERSION}
 lib/pkgconfig/libxine.pc
 lib/xine/
@@ -62,6 +62,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_goom.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_mosaico.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_planar.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_switch.so
+lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
 @comment lib/xine/plugins/${XINEAPI_REV}/vidix/
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
@@ -123,6 +124,7 @@ lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_http.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_mms.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_net.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pnm.so
+lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_pvr.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_rtsp.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_inp_stdin_fifo.so

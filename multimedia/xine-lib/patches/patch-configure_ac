@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2011/11/16 00:43:17 sthen Exp $
---- configure.ac.orig	Sun Jul 25 10:37:30 2010
-+++ configure.ac	Wed Sep 28 03:18:47 2011
-@@ -565,9 +565,9 @@ t q
+$OpenBSD: patch-configure_ac,v 1.10 2012/01/05 08:52:26 ajacoutot Exp $
+--- configure.ac.orig	Sun Jan  1 12:30:52 2012
++++ configure.ac	Sun Jan  1 17:19:01 2012
+@@ -558,9 +558,9 @@ t q
  b
  :q
  q"
@@ -13,16 +13,7 @@ $OpenBSD: patch-configure_ac,v 1.9 2011/11/16 00:43:17 sthen Exp $
  AC_DEFINE_UNQUOTED([LIBXV_SO],  "${x_lib_location:-libXv.so}",  [The soname of libXv, needed for dlopen()])
  
  
-@@ -1309,7 +1309,7 @@ if test "x$enable_a52dec" = "xno"; then
-   AC_MSG_RESULT([a52dec support disabled])
- elif test "x$external_a52dec" = "xyes"; then
-   have_a52="yes"
--  AC_CHECK_HEADERS([a52dec/a52.h a52dec/a52_internal.h],, have_a52="no",
-+  AC_CHECK_HEADERS([a52dec/a52.h],, have_a52="no",
- [
-   #ifdef HAVE_SYS_TYPES_H
-   # include <sys/types.h>
-@@ -1402,9 +1402,10 @@ if test "x$with_mng" = "xyes"; then
+@@ -1395,9 +1395,10 @@ if test "x$with_mng" = "xyes"; then
    AC_CHECK_LIB(mng, mng_initialize,
  	[ AC_CHECK_HEADER(libmng.h,
  		[ have_libmng=yes

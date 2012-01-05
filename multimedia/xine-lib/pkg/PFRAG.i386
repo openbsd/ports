@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.i386,v 1.4 2010/01/05 11:48:51 sthen Exp $
-lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
