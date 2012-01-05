@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_gateway_cfg,v 1.8 2011/11/17 15:14:37 ajacoutot Exp $
---- installer/linux/gateway.cfg.orig	Wed Nov 16 23:01:36 2011
-+++ installer/linux/gateway.cfg	Thu Nov 17 13:59:31 2011
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.9 2012/01/05 11:08:44 ajacoutot Exp $
+--- installer/linux/gateway.cfg.orig	Wed Dec 21 20:17:06 2011
++++ installer/linux/gateway.cfg	Thu Jan  5 12:07:15 2012
 @@ -14,16 +14,16 @@ server_hostname = 
  server_hostname_greeting = no
  
@@ -35,3 +35,12 @@ $OpenBSD: patch-installer_linux_gateway_cfg,v 1.8 2011/11/17 15:14:37 ajacoutot 
  
  # Verify client certificate
  ssl_verify_client	=	no
+@@ -76,7 +76,7 @@ ssl_verify_file		=	
+ ssl_verify_path		=
+ 
+ # Process model, using pthreads (thread) or processes (fork)
+-process_model = fork
++process_model = thread
+ 
+ ##############################################################
+ # GATEWAY LOG SETTINGS
