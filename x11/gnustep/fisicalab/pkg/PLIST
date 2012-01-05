@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/26 14:22:11 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/05 14:42:57 sebastia Exp $
 bin/FisicaLab
 libexec/GNUstep/
 libexec/GNUstep/FisicaLab.app/
@@ -98,7 +98,6 @@ libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/moviles.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/p_estatica.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/p_radial.tif
-libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/par.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/periodo.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/polea.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/Fisica.gorm/potencia.tif
@@ -821,8 +820,9 @@ libexec/GNUstep/FisicaLab.app/Resources/English.lproj/mod_estat_rig.rtfd/solidoI
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/mod_estat_rig.rtfd/solidos.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/mod_estat_rig.rtfd/vigaInfo.tif
 libexec/GNUstep/FisicaLab.app/Resources/English.lproj/mod_estat_rig.rtfd/vigas.tif
-libexec/GNUstep/FisicaLab.app/Resources/FisicaLab.GNUstep.tif
 libexec/GNUstep/FisicaLab.app/Resources/FisicaLab.desktop
+libexec/GNUstep/FisicaLab.app/Resources/FisicaLab.ico
+libexec/GNUstep/FisicaLab.app/Resources/FisicaLab.tif
 libexec/GNUstep/FisicaLab.app/Resources/Info-gnustep.plist
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/
@@ -914,7 +914,6 @@ libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/moviles.tif
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/objects.gorm
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/p_estatica.tif
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/p_radial.tif
-libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/par.tif
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/periodo.tif
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/polea.tif
 libexec/GNUstep/FisicaLab.app/Resources/Spanish.lproj/Fisica.gorm/potencia.tif

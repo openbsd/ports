@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/05 14:42:57 sebastia Exp $
 
 COMMENT=	educational application to solve physics problems
 
-DISTNAME=	FisicaLab-0.2
-REVISION =	0
+DISTNAME =	FisicaLab-0.2.1
 
 HOMEPAGE=	http://www.nongnu.org/fisicalab/
-MASTER_SITES=	http://mirror.its.uidaho.edu/pub/savannah/fisicalab/
+MASTER_SITES=	http://download.savannah.gnu.org/releases/fisicalab/
 
 #GPLv3
 
