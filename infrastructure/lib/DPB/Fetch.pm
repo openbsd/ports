@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.23 2012/01/01 18:34:35 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.24 2012/01/05 21:49:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -135,7 +135,9 @@ sub make_link
 	if ($sha =~ m/^(..)/) {
 		my $result = $self->distdir."/by_cipher/sha256/$1/$sha";
 		File::Path::make_path($result);
-		link $self->filename, "$result/$self->{name}";
+		my $dest = $self->{name};
+		$dest =~ s/^.*\///;
+		link $self->filename, "$result/$dest";
 	}
 }
 
