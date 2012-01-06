@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/03 22:32:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/01/06 16:03:09 landry Exp $
 @conflict xfcalendar-*
 @bin bin/globaltime
 @bin bin/orage
@@ -16,19 +16,15 @@ share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.xfce.calendar.service
 share/dbus-1/services/org.xfce.orage.service
-share/icons/
-share/icons/hicolor/
 share/icons/hicolor/160x160/
 share/icons/hicolor/160x160/apps/
 share/icons/hicolor/160x160/apps/orage.xpm
 share/icons/hicolor/160x160/apps/orage_ice.xpm
 share/icons/hicolor/160x160/apps/orage_round.xpm
 share/icons/hicolor/160x160/apps/orage_sun.xpm
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/orage_globaltime.png
 share/icons/hicolor/48x48/apps/xfcalendar.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/orage_globaltime.svg
 share/icons/hicolor/scalable/apps/xfcalendar.svg
 share/locale/am/
 share/locale/am/LC_MESSAGES/
@@ -78,6 +74,7 @@ share/locale/he/LC_MESSAGES/orage.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/orage.mo
+share/locale/hr/LC_MESSAGES/orage.mo
 share/locale/hu/LC_MESSAGES/orage.mo
 share/locale/hy/
 share/locale/hy/LC_MESSAGES/
@@ -88,6 +85,9 @@ share/locale/ja/LC_MESSAGES/orage.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/orage.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/orage.mo
 share/locale/ko/LC_MESSAGES/orage.mo
 share/locale/ku/
 share/locale/ku/LC_MESSAGES/
@@ -115,6 +115,9 @@ share/locale/pt/LC_MESSAGES/orage.mo
 share/locale/pt_BR/LC_MESSAGES/orage.mo
 share/locale/ro/LC_MESSAGES/orage.mo
 share/locale/ru/LC_MESSAGES/orage.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/orage.mo
 share/locale/sk/LC_MESSAGES/orage.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
@@ -124,6 +127,9 @@ share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/orage.mo
 share/locale/tr/LC_MESSAGES/orage.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/orage.mo
 share/locale/uk/LC_MESSAGES/orage.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
