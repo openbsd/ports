@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_plugin_service_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
---- content/browser/plugin_service.cc.orig	Wed Dec  7 09:01:17 2011
-+++ content/browser/plugin_service.cc	Tue Dec 13 21:23:12 2011
+$OpenBSD: patch-content_browser_plugin_service_cc,v 1.3 2012/01/06 16:27:26 robert Exp $
+--- content/browser/plugin_service.cc.orig	Thu Jan  5 09:01:16 2012
++++ content/browser/plugin_service.cc	Fri Jan  6 10:08:00 2012
 @@ -37,7 +37,7 @@
  #include "webkit/plugins/npapi/plugin_list.h"
  #include "webkit/plugins/webplugininfo.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_plugin_service_cc,v 1.2 2011/12/14 16:58:19 robe
  using ::base::files::FilePathWatcher;
  #endif
  
-@@ -86,7 +86,7 @@ static void NotifyPluginsOfActivation() {
+@@ -81,7 +81,7 @@ static void NotifyPluginsOfActivation() {
      plugin->OnAppActivation();
    }
  }
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_plugin_service_cc,v 1.2 2011/12/14 16:58:19 robe
  // Delegate class for monitoring directories.
  class PluginDirWatcherDelegate : public FilePathWatcher::Delegate {
    virtual void OnFilePathChanged(const FilePath& path) OVERRIDE {
-@@ -170,7 +170,7 @@ void PluginService::StartWatchingPlugins() {
+@@ -165,7 +165,7 @@ void PluginService::StartWatchingPlugins() {
        hklm_watcher_.StartWatching(hklm_event_.get(), this);
      }
    }
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_plugin_service_cc,v 1.2 2011/12/14 16:58:19 robe
  // The FilePathWatcher produces too many false positives on MacOS (access time
  // updates?) which will lead to enforcing updates of the plugins way too often.
  // On ChromeOS the user can't install plugins anyway and on Windows all
-@@ -607,7 +607,7 @@ PepperPluginInfo* PluginService::GetRegisteredPpapiPlu
+@@ -602,7 +602,7 @@ PepperPluginInfo* PluginService::GetRegisteredPpapiPlu
    return &ppapi_plugins_[ppapi_plugins_.size() - 1];
  }
  

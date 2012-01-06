@@ -1,0 +1,31 @@
+$OpenBSD: patch-chrome_browser_ui_gtk_dialogs_common_h,v 1.1 2012/01/06 16:27:26 robert Exp $
+--- chrome/browser/ui/gtk/dialogs_common.h.orig	Thu Jan  5 09:02:35 2012
++++ chrome/browser/ui/gtk/dialogs_common.h	Fri Jan  6 13:18:13 2012
+@@ -9,9 +9,8 @@
+ #pragma once
+ 
+ #include <set>
+-#include <string>
+-#include <vector>
+ 
++#include "base/nix/xdg_util.h"
+ #include "chrome/browser/ui/shell_dialogs.h"
+ 
+ // Shared implementation SelectFileDialog used by SelectFileDialogImplGTK
+@@ -20,7 +19,9 @@ class SelectFileDialogImpl : public SelectFileDialog {
+   // Factory method for creating a GTK-styled SelectFileDialogImpl
+   static SelectFileDialogImpl* NewSelectFileDialogImplGTK(Listener* listener);
+   // Factory method for creating a KDE-styled SelectFileDialogImpl
+-  static SelectFileDialogImpl* NewSelectFileDialogImplKDE(Listener* listener);
++  static SelectFileDialogImpl* NewSelectFileDialogImplKDE(
++      Listener* listener,
++      base::nix::DesktopEnvironment desktop);
+ 
+   // BaseShellDialog implementation.
+   virtual bool IsRunning(gfx::NativeWindow parent_window) const;
+@@ -69,5 +70,3 @@ class SelectFileDialogImpl : public SelectFileDialog {
+ };
+ 
+ #endif  // CHROME_BROWSER_UI_GTK_DIALOGS_COMMON_H_
+-
+-

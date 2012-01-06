@@ -1,0 +1,188 @@
+$OpenBSD: patch-chrome_browser_ui_gtk_dialogs_kde_cc,v 1.1 2012/01/06 16:27:26 robert Exp $
+--- chrome/browser/ui/gtk/dialogs_kde.cc.orig	Thu Jan  5 09:02:35 2012
++++ chrome/browser/ui/gtk/dialogs_kde.cc	Fri Jan  6 13:20:56 2012
+@@ -4,34 +4,37 @@
+ 
+ #include <gdk/gdkx.h>
+ #include <gtk/gtk.h>
+-#include <map>
+ #include <set>
+ 
+ #include "base/bind.h"
+ #include "base/bind_helpers.h"
+ #include "base/command_line.h"
+-#include "base/file_util.h"
+ #include "base/logging.h"
+-#include "base/message_loop.h"
+ #include "base/mime_util.h"
++#include "base/nix/xdg_util.h"
+ #include "base/process_util.h"
+ #include "base/string_number_conversions.h"
+ #include "base/string_util.h"
+-#include "base/sys_string_conversions.h"
+-#include "base/threading/thread.h"
+-#include "base/threading/thread_restrictions.h"
+ #include "base/utf_string_conversions.h"
+ #include "chrome/browser/ui/gtk/dialogs_common.h"
+-#include "chrome/browser/ui/shell_dialogs.h"
+ #include "content/browser/browser_thread.h"
+ #include "grit/generated_resources.h"
+ #include "ui/base/l10n/l10n_util.h"
+ 
++namespace {
++
++std::string GetTitle(const std::string& title, int message_id) {
++  return title.empty() ? l10n_util::GetStringUTF8(message_id) : title;
++}
++
++}  // namespace
++
+ // Implementation of SelectFileDialog that shows a KDE common dialog for
+ // choosing a file or folder. This acts as a modal dialog.
+ class SelectFileDialogImplKDE : public SelectFileDialogImpl {
+  public:
+-  explicit SelectFileDialogImplKDE(Listener* listener);
++  SelectFileDialogImplKDE(Listener* listener,
++                          base::nix::DesktopEnvironment desktop);
+   ~SelectFileDialogImplKDE();
+ 
+  protected:
+@@ -102,16 +105,25 @@ class SelectFileDialogImplKDE : public SelectFileDialo
+   void OnSelectSingleFolderDialogResponse(const std::string& output,
+                                           int exit_code, void* params);
+ 
++  // Should be either DESKTOP_ENVIRONMENT_KDE3 or DESKTOP_ENVIRONMENT_KDE4.
++  base::nix::DesktopEnvironment desktop_;
++
+   DISALLOW_COPY_AND_ASSIGN(SelectFileDialogImplKDE);
+ };
+ 
++// static
+ SelectFileDialogImpl* SelectFileDialogImpl::NewSelectFileDialogImplKDE(
+-    Listener* listener) {
+-  return new SelectFileDialogImplKDE(listener);
++    Listener* listener, base::nix::DesktopEnvironment desktop) {
++  return new SelectFileDialogImplKDE(listener, desktop);
+ }
+ 
+-SelectFileDialogImplKDE::SelectFileDialogImplKDE(Listener* listener)
+-    : SelectFileDialogImpl(listener) {
++SelectFileDialogImplKDE::SelectFileDialogImplKDE(
++    Listener* listener,
++    base::nix::DesktopEnvironment desktop)
++    : SelectFileDialogImpl(listener),
++      desktop_(desktop) {
++  DCHECK(desktop_ == base::nix::DESKTOP_ENVIRONMENT_KDE3 ||
++         desktop_ == base::nix::DESKTOP_ENVIRONMENT_KDE4);
+ }
+ 
+ SelectFileDialogImplKDE::~SelectFileDialogImplKDE() {
+@@ -226,14 +238,14 @@ void SelectFileDialogImplKDE::GetKDialogCommandLine(co
+     return;
+   }
+   // Attach to the current Chrome window.
+-  GdkWindow* gdk_window =
+-      gtk_widget_get_window(GTK_WIDGET((parent)));
++  GdkWindow* gdk_window = gtk_widget_get_window(GTK_WIDGET((parent)));
+   int window_id = GDK_DRAWABLE_XID(gdk_window);
+-  command_line->AppendSwitchNative("--attach", base::IntToString(window_id));
++  command_line->AppendSwitchNative(
++      desktop_ == base::nix::DESKTOP_ENVIRONMENT_KDE3 ? "--embed" : "--attach",
++      base::IntToString(window_id));
+   // Set the correct title for the dialog.
+-  if (!title.empty()) {
++  if (!title.empty())
+     command_line->AppendSwitchNative("--title", title);
+-  }
+   // Enable multiple file selection if we need to.
+   if (multiple_selection) {
+     command_line->AppendSwitch("--multiple");
+@@ -241,16 +253,14 @@ void SelectFileDialogImplKDE::GetKDialogCommandLine(co
+   }
+   command_line->AppendSwitch(type);
+   // The path should never be empty. If it is, set it to PWD.
+-  if (path.empty()) {
++  if (path.empty())
+     command_line->AppendArgPath(FilePath("."));
+-  } else {
++  else
+     command_line->AppendArgPath(path);
+-  }
+   // Depending on the type of the operation we need, get the path to the
+   // file/folder and set up mime type filters.
+-  if (file_operation) {
++  if (file_operation)
+     command_line->AppendArg(GetMimeTypeFilterString());
+-  }
+   VLOG(1) << "KDialog command line: "
+           << command_line->GetCommandLineString() << std::endl;
+ }
+@@ -285,13 +295,11 @@ void SelectFileDialogImplKDE::FileNotSelected(void* pa
+ void SelectFileDialogImplKDE::CreateSelectFolderDialog(
+     const std::string& title, const FilePath& default_path,
+     gfx::NativeWindow parent, void *params) {
+-  std::string title_string = !title.empty() ? title :
+-        l10n_util::GetStringUTF8(IDS_SELECT_FOLDER_DIALOG_TITLE);
+-
+   Task* dialog_task =
+       NewRunnableMethod(
+           this, &SelectFileDialogImplKDE::CallKDialogOutput,
+-          std::string("--getexistingdirectory"), title,
++          std::string("--getexistingdirectory"),
++          GetTitle(title, IDS_SELECT_FOLDER_DIALOG_TITLE),
+           default_path.empty() ? *last_opened_path_ : default_path,
+           parent, false, false, params,
+           &SelectFileDialogImplKDE::OnSelectSingleFolderDialogResponse);
+@@ -301,13 +309,11 @@ void SelectFileDialogImplKDE::CreateSelectFolderDialog
+ void SelectFileDialogImplKDE::CreateFileOpenDialog(
+     const std::string& title, const FilePath& default_path,
+     gfx::NativeWindow parent, void* params) {
+-  std::string title_string = !title.empty() ? title :
+-        l10n_util::GetStringUTF8(IDS_OPEN_FILE_DIALOG_TITLE);
+-
+   Task* dialog_task =
+       NewRunnableMethod(
+           this, &SelectFileDialogImplKDE::CallKDialogOutput,
+-          std::string("--getopenfilename"), title,
++          std::string("--getopenfilename"),
++          GetTitle(title, IDS_OPEN_FILE_DIALOG_TITLE),
+           default_path.empty() ? *last_opened_path_ : default_path,
+           parent, true, false, params,
+           &SelectFileDialogImplKDE::OnSelectSingleFileDialogResponse);
+@@ -317,13 +323,11 @@ void SelectFileDialogImplKDE::CreateFileOpenDialog(
+ void SelectFileDialogImplKDE::CreateMultiFileOpenDialog(
+     const std::string& title, const FilePath& default_path,
+     gfx::NativeWindow parent, void* params) {
+-  std::string title_string = !title.empty() ? title :
+-        l10n_util::GetStringUTF8(IDS_OPEN_FILES_DIALOG_TITLE);
+-
+   Task* dialog_task =
+       NewRunnableMethod(
+           this, &SelectFileDialogImplKDE::CallKDialogOutput,
+-          std::string("--getopenfilename"), title,
++          std::string("--getopenfilename"),
++          GetTitle(title, IDS_OPEN_FILES_DIALOG_TITLE),
+           default_path.empty() ? *last_opened_path_ : default_path,
+           parent, true, true, params,
+           &SelectFileDialogImplKDE::OnSelectMultiFileDialogResponse);
+@@ -333,13 +337,11 @@ void SelectFileDialogImplKDE::CreateMultiFileOpenDialo
+ void SelectFileDialogImplKDE::CreateSaveAsDialog(
+     const std::string& title, const FilePath& default_path,
+     gfx::NativeWindow parent, void* params) {
+-  std::string title_string = !title.empty() ? title :
+-        l10n_util::GetStringUTF8(IDS_SAVE_AS_DIALOG_TITLE);
+-
+   Task* dialog_task =
+       NewRunnableMethod(
+           this, &SelectFileDialogImplKDE::CallKDialogOutput,
+-          std::string("--getsavefilename"), title,
++          std::string("--getsavefilename"),
++          GetTitle(title, IDS_SAVE_AS_DIALOG_TITLE),
+           default_path.empty() ? *last_saved_path_ : default_path,
+           parent, true, false, params,
+           &SelectFileDialogImplKDE::OnSelectSingleFileDialogResponse);
+@@ -405,4 +407,3 @@ void SelectFileDialogImplKDE::OnSelectMultiFileDialogR
+   }
+   MultiFilesSelected(filenames_fp, params);
+ }
+-
