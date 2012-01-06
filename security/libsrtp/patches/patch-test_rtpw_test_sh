@@ -1,0 +1,28 @@
+$OpenBSD: patch-test_rtpw_test_sh,v 1.1 2012/01/06 00:45:06 sthen Exp $
+--- test/rtpw_test.sh.orig	Tue Jun 13 16:17:57 2006
++++ test/rtpw_test.sh	Thu Jan  5 23:35:39 2012
+@@ -4,7 +4,7 @@
+ # 
+ # tests the rtpw sender and receiver functions
+ 
+-RTPW=rtpw
++RTPW=./rtpw
+ DEST_PORT=9999
+ DURATION=3
+ 
+@@ -12,13 +12,13 @@ key=2b2edc5034f61a72345ca5986d7bfd0189aa6dc2ecab32fd9a
+ 
+ ARGS="-k $key -ae"
+ 
+-# First, we run "killall" to get rid of all existing rtpw processes.
++# First, we run "pkill" to get rid of all existing rtpw processes.
+ # This step also enables this script to clean up after itself; if this
+ # script is interrupted after the rtpw processes are started but before
+ # they are killed, those processes will linger.  Re-running the script
+ # will get rid of them.
+ 
+-killall rtpw 2&>/dev/null
++pkill rtpw 2&>/dev/null
+ 
+ if test -x $RTPW; then
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/30 21:16:42 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/06 00:45:06 sthen Exp $
 include/srtp/
 include/srtp/aes.h
 include/srtp/aes_cbc.h
@@ -14,6 +14,7 @@ include/srtp/crypto_types.h
 include/srtp/cryptoalg.h
 include/srtp/datatypes.h
 include/srtp/err.h
+include/srtp/getopt_s.h
 include/srtp/gf2_8.h
 include/srtp/hmac.h
 include/srtp/integers.h
@@ -26,8 +27,10 @@ include/srtp/rand_source.h
 include/srtp/rdb.h
 include/srtp/rdbx.h
 include/srtp/rtp.h
+include/srtp/rtp_priv.h
 include/srtp/sha1.h
 include/srtp/srtp.h
+include/srtp/srtp_priv.h
 include/srtp/stat.h
 include/srtp/ut_sim.h
 include/srtp/xfm.h
