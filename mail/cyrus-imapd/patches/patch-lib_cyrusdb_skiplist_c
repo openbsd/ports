@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_cyrusdb_skiplist_c,v 1.1 2012/01/06 15:34:17 ajacoutot Exp $
+
+From d12eed5a26f1dd8c11a37a0949083b9d103fca54 Mon Sep 17 00:00:00 2001
+From: Bron Gondwana <brong@opera.com>
+Date: Fri, 06 Jan 2012 14:50:06 +0000
+Subject: skiplist: safe against map_nommap
+
+--- lib/cyrusdb_skiplist.c.orig	Fri Dec 30 22:19:18 2011
++++ lib/cyrusdb_skiplist.c	Fri Jan  6 16:22:20 2012
+@@ -1526,11 +1526,11 @@ int myabort(struct db *db, struct txn *tid)
+ 
+     assert(db->current_txn == tid);
+ 
+-    /* update the mmap so we can see the log entries we need to remove */
+-    update_lock(db, tid);
+-    
+     /* look at the log entries we've written, and undo their effects */
+     while (tid->logstart != tid->logend) {
++	/* update the mmap so we can see the log entries we need to remove */
++	update_lock(db, tid);
++
+ 	/* find the last log entry */
+ 	for (offset = tid->logstart, ptr = db->map_base + offset; 
+ 	     offset + RECSIZE(ptr) != (uint32_t) tid->logend;
