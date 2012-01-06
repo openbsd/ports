@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/06 16:46:13 landry Exp $
 %%SHARED%%
 @bin bin/merkaartor
 lib/merkaartor/
@@ -6,10 +6,6 @@ lib/merkaartor/plugins/
 lib/merkaartor/plugins/background/
 lib/merkaartor/plugins/styles/
 share/applications/merkaartor.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/merkaartor.png
 share/merkaartor/
 share/merkaartor/BookmarksList.xml
