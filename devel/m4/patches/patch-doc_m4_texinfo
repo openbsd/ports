@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_m4_texinfo,v 1.4 2009/04/26 19:45:53 sthen Exp $
---- doc/m4.texinfo.orig	Thu Mar  5 07:46:01 2009
-+++ doc/m4.texinfo	Tue Apr 14 01:09:24 2009
+$OpenBSD: patch-doc_m4_texinfo,v 1.5 2012/01/06 23:08:01 sthen Exp $
+--- doc/m4.texinfo.orig	Mon Feb 28 09:42:52 2011
++++ doc/m4.texinfo	Wed Jan  4 18:53:24 2012
 @@ -4,6 +4,7 @@
  @setfilename m4.info
  @include version.texi
@@ -9,7 +9,7 @@ $OpenBSD: patch-doc_m4_texinfo,v 1.4 2009/04/26 19:45:53 sthen Exp $
  @setchapternewpage odd
  @ifnothtml
  @setcontentsaftertitlepage
-@@ -58,7 +59,7 @@ entitled ``@acronym{GNU} Free Documentation License.''
+@@ -58,7 +59,7 @@ entitled ``GNU Free Documentation License.''
  
  @dircategory Text creation and manipulation
  @direntry

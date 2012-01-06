@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2012/01/06 23:08:01 sthen Exp $
 
 COMMENT=	GNU m4
 
-DISTNAME=	m4-1.4.13
+DISTNAME=	m4-1.4.16
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=m4/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.gnu.org/software/m4/
 
@@ -13,14 +14,13 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c sigsegv
+
+WANTLIB=	c sigsegv
 
 LIB_DEPENDS=	devel/libsigsegv
 
 CONFIGURE_STYLE= gnu 
 CONFIGURE_ARGS=	--program-prefix="g"
-MAKE_ENV=	V=1	# disable silent rules
-USE_GROFF =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gm4
