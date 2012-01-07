@@ -1,23 +1,6 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.2 2011/12/03 13:38:43 dcoppa Exp $
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.3 2012/01/07 22:14:51 dcoppa Exp $
 --- Modules/FindRuby.cmake.orig	Tue Oct  4 18:09:24 2011
 +++ Modules/FindRuby.cmake	Sat Dec  3 14:16:36 2011
-@@ -30,11 +30,11 @@
- # (To distribute this file outside of CMake, substitute the full
- #  License text for the above reference.)
- 
--#   RUBY_ARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"archdir"@:>@)'`
--#   RUBY_SITEARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"sitearchdir"@:>@)'`
--#   RUBY_SITEDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"sitelibdir"@:>@)'`
--#   RUBY_LIBDIR=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"libdir"@:>@)'`
--#   RUBY_LIBRUBYARG=`$RUBY -r rbconfig -e 'printf("%s",Config::CONFIG@<:@"LIBRUBYARG_SHARED"@:>@)'`
-+#   RUBY_ARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",RbConfig::CONFIG@<:@"archdir"@:>@)'`
-+#   RUBY_SITEARCHDIR=`$RUBY -r rbconfig -e 'printf("%s",RbConfig::CONFIG@<:@"sitearchdir"@:>@)'`
-+#   RUBY_SITEDIR=`$RUBY -r rbconfig -e 'printf("%s",RbConfig::CONFIG@<:@"sitelibdir"@:>@)'`
-+#   RUBY_LIBDIR=`$RUBY -r rbconfig -e 'printf("%s",RbConfig::CONFIG@<:@"libdir"@:>@)'`
-+#   RUBY_LIBRUBYARG=`$RUBY -r rbconfig -e 'printf("%s",RbConfig::CONFIG@<:@"LIBRUBYARG_SHARED"@:>@)'`
- 
- # uncomment the following line to get debug output for this file
- # SET(_RUBY_DEBUG_OUTPUT TRUE)
 @@ -62,36 +62,36 @@ FIND_PROGRAM(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EX
  
  IF(RUBY_EXECUTABLE  AND NOT  RUBY_MAJOR_VERSION)
@@ -78,12 +61,3 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.2 2011/12/03 13:38:43 dcoppa Exp $
           OUTPUT_VARIABLE RUBY_VENDORARCH_DIR)
     ENDIF(RUBY_HAS_VENDOR_RUBY)
  
-@@ -180,7 +180,7 @@ ENDIF( ${Ruby_FIND_VERSION_SHORT_NODOT} GREATER 18  OR
- 
- 
- # Determine the list of possible names for the ruby library
--SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT})
-+SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT})
- 
- IF(WIN32)
-    SET( _RUBY_MSVC_RUNTIME "" )

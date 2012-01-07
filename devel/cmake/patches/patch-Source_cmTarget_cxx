@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.10 2011/10/14 17:22:10 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Tue Oct  4 18:09:25 2011
-+++ Source/cmTarget.cxx	Fri Oct  7 09:15:20 2011
-@@ -3320,6 +3320,36 @@ void cmTarget::GetLibraryNames(std::string& name,
-   std::string suffix;
-   this->GetFullNameInternal(config, false, prefix, base, suffix);
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.11 2012/01/07 22:14:51 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Fri Dec 30 17:49:57 2011
++++ Source/cmTarget.cxx	Sat Jan  7 22:13:14 2012
+@@ -3379,9 +3379,43 @@ void cmTarget::GetLibraryNames(std::string& name,
+   // The library name.
+   name = prefix+base+suffix;
  
 +#if defined(__OpenBSD__)
 +  // Override shared library version using LIBxxx_VERSION 
@@ -14,7 +14,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.10 2011/10/14 17:22:10 dcoppa Exp $
 +    std::string env_name = "LIB" + base + "_VERSION";
 +    char *env_vers_cstr = getenv(env_name.c_str());
 +
-+    if (env_vers_cstr != NULL) {
++    if (env_vers_cstr && strlen(env_vers_cstr) > 0) {
 +      // This means an override is present.
 +      std::string env_vers = std::string(env_vers_cstr);
 +
@@ -29,40 +29,43 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.10 2011/10/14 17:22:10 dcoppa Exp $
 +        this->Makefile->IssueMessage(cmake::FATAL_ERROR, 
 +                                     msg.c_str());
 +      } else {
-+        soversion = version = env_vers_cstr;
++        version = env_vers_cstr;
 +      }
 +    }
 +  }
-+#endif
 +
-   // The library name.
-   name = prefix+base+suffix;
+   // The library's soname.
+   this->ComputeVersionedName(soName, prefix, base, suffix,
++                             name, version);
++#else
++  // The library's soname.
++  this->ComputeVersionedName(soName, prefix, base, suffix,
+                              name, soversion);
++#endif
  
-@@ -3354,8 +3384,27 @@ void cmTarget::GetLibraryNames(std::string& name,
+   // The library's real name on disk.
+   this->ComputeVersionedName(realName, prefix, base, suffix,
+@@ -3414,7 +3448,23 @@ void cmTarget::ComputeVersionedName(std::string& vName
    if(version)
      {
-     realName += ".";
+     vName += ".";
 +#if defined(__OpenBSD__)
-+    // OpenBSD-style versioning scheme for shared libraries.
++    // OpenBSD-style versioning for shared libraries.
 +    // Convert libname.so.X.X.X to libname.so.X.X
 +    int j = 0;
-+    for (int i = 0; i < (int)strlen(version); i++) 
++    for (int i = 0; i < (int)strlen(version); i++)
 +      {
-+      if (version[i] == '.') 
++      if (version[i] == '.')
 +        {
-+        j++; 
-+        if (j == 2) 
-+          {
++        j++;
++        if (j == 2)
 +          break;
-+          }
 +        }
-+      realName += version[i];
++      vName += version[i];
 +      }
-+    }
 +#else
-     realName += version;
-     }
+     vName += version;
 +#endif
-   else if(soversion)
-     {
-     realName += ".";
+     }
+   vName += this->IsApple? suffix : std::string();
+ }

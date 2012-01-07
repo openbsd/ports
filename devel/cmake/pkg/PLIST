@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/10/14 17:22:10 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/01/07 22:14:51 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -205,6 +205,7 @@ share/cmake/Modules/Compiler/SunPro-ASM.cmake
 share/cmake/Modules/Compiler/SunPro-C.cmake
 share/cmake/Modules/Compiler/SunPro-CXX.cmake
 share/cmake/Modules/Compiler/SunPro-Fortran.cmake
+share/cmake/Modules/Compiler/TinyCC-C.cmake
 share/cmake/Modules/Compiler/VisualAge-C.cmake
 share/cmake/Modules/Compiler/VisualAge-CXX.cmake
 share/cmake/Modules/Compiler/VisualAge-Fortran.cmake
@@ -215,6 +216,7 @@ share/cmake/Modules/Compiler/XL-Fortran.cmake
 share/cmake/Modules/Compiler/XL.cmake
 share/cmake/Modules/Dart.cmake
 share/cmake/Modules/DartConfiguration.tcl.in
+share/cmake/Modules/DeployQt4.cmake
 share/cmake/Modules/Documentation.cmake
 share/cmake/Modules/DummyCXXFile.cxx
 share/cmake/Modules/ExternalProject.cmake
@@ -451,6 +453,8 @@ share/cmake/Modules/Platform/Darwin.cmake
 share/cmake/Modules/Platform/DragonFly.cmake
 share/cmake/Modules/Platform/FreeBSD.cmake
 share/cmake/Modules/Platform/GNU.cmake
+share/cmake/Modules/Platform/GNUtoMS_lib.bat.in
+share/cmake/Modules/Platform/GNUtoMS_lib.cmake
 share/cmake/Modules/Platform/Generic-ADSP-ASM.cmake
 share/cmake/Modules/Platform/Generic-ADSP-C.cmake
 share/cmake/Modules/Platform/Generic-ADSP-CXX.cmake
@@ -491,6 +495,7 @@ share/cmake/Modules/Platform/Linux-PathScale-CXX.cmake
 share/cmake/Modules/Platform/Linux-PathScale-Fortran.cmake
 share/cmake/Modules/Platform/Linux-PathScale.cmake
 share/cmake/Modules/Platform/Linux-SunPro-CXX.cmake
+share/cmake/Modules/Platform/Linux-TinyCC-C.cmake
 share/cmake/Modules/Platform/Linux-VisualAge-C.cmake
 share/cmake/Modules/Platform/Linux-VisualAge-CXX.cmake
 share/cmake/Modules/Platform/Linux-VisualAge-Fortran.cmake
@@ -522,8 +527,11 @@ share/cmake/Modules/Platform/Windows-Borland-C.cmake
 share/cmake/Modules/Platform/Windows-Borland-CXX.cmake
 share/cmake/Modules/Platform/Windows-Borland.cmake
 share/cmake/Modules/Platform/Windows-G95-Fortran.cmake
+share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake
 share/cmake/Modules/Platform/Windows-GNU-C.cmake
+share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake
 share/cmake/Modules/Platform/Windows-GNU-CXX.cmake
+share/cmake/Modules/Platform/Windows-GNU-Fortran-ABI.cmake
 share/cmake/Modules/Platform/Windows-GNU-Fortran.cmake
 share/cmake/Modules/Platform/Windows-GNU.cmake
 share/cmake/Modules/Platform/Windows-Intel-ASM.cmake
