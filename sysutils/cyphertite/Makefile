@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/14 17:07:04 dhill Exp $
+# $OpenBSD: Makefile,v 1.11 2012/01/07 01:52:45 dhill Exp $
 
 COMMENT =		tar-like secure remote deduplicating archiver
 
-DISTNAME =		cyphertite-0.5.0
+DISTNAME =		cyphertite-0.6.1
 CATEGORIES =		sysutils archivers security
 
 HOMEPAGE =		https://www.cyphertite.com/
@@ -22,15 +22,10 @@ MASTER_SITES =		https://opensource.conformal.com/snapshots/cyphertite/
 LIB_DEPENDS =		archivers/libshrink>=0.3.0	\
 			databases/sqlite3		\
 			devel/libclog>=0.4.0		\
-			devel/libexude>=0.5.0		\
+			devel/libexude>=0.6.0		\
 			security/assl>=0.11.0		\
 			textproc/libxmlsd>=0.6.0
 
 NO_REGRESS =		Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/cyphertite
-	${INSTALL_DATA} ${WRKSRC}/cyphertite/cyphertite.conf \
-		${PREFIX}/share/examples/cyphertite/cyphertite.conf.sample
 
 .include <bsd.port.mk>

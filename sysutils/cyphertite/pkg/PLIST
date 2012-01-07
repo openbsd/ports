@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/08/29 21:42:54 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/07 01:52:45 dhill Exp $
 @bin bin/ct
 @bin bin/ctctl
+@bin bin/ctfb
 @bin bin/cyphertite
 @bin bin/cyphertitectl
+@bin bin/cyphertitefb
 include/cyphertite/
 include/cyphertite/ct_socket.h
 include/cyphertite/ct_xml.h
@@ -10,9 +12,7 @@ include/cyphertite/ctutil.h
 lib/libctutil.a
 lib/libctutil_p.a
 @man man/man1/ct.1
+@man man/man1/ctfb.1
 @man man/man1/cyphertite.1
+@man man/man1/cyphertitefb.1
 @man man/man5/cyphertite.conf.5
-share/examples/cyphertite/
-@sample ${SYSCONFDIR}/cyphertite/
-share/examples/cyphertite/cyphertite.conf.sample
-@sample ${SYSCONFDIR}/cyphertite/cyphertite.conf
