@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/07 08:03:41 ajacoutot Exp $
 
 COMMENT =	free Cyrillic fonts
 PKG_ARCH =	*
@@ -10,7 +10,7 @@ CATEGORIES =	fonts x11 russian
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 # Original distfile taken from http://www.fontstock.com/public/
-MASTER_SITES =	http://www.ohvost.ru/dnl/
+MASTER_SITES =	http://www.linklevel.net/distfiles/
 HOMEPAGE =	http://paratype.com/public/
 
 # OFL, http://scripts.sil.org/OFL (CC-like)
