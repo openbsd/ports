@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/01/02 14:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/01/07 10:30:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -74,7 +74,7 @@ BUILD_DEPENDS +=	x11/gnome/common \
 			devel/libtool
 
 AUTOCONF_VERSION=	2.65
-AUTOMAKE_VERSION=	1.9
+AUTOMAKE_VERSION=	1.11
 CONFIGURE_STYLE=	# empty
 
 do-configure:
