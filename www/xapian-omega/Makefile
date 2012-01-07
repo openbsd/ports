@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/28 17:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/07 12:03:29 sthen Exp $
 
 COMMENT=	web search application
 
-V=		1.2.4
+V=		1.2.8
 DISTNAME=	xapian-omega-${V}
 
 CATEGORIES=	www textproc
@@ -21,7 +21,7 @@ MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	databases/xapian-core>=1.2.4 \
+LIB_DEPENDS=	databases/xapian-core>=1.2.8 \
 		devel/pcre \
 		devel/libmagic
 

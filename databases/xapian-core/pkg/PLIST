@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/28 17:46:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/07 12:03:29 sthen Exp $
 %%SHARED%%
 @bin bin/copydatabase
 @bin bin/delve
@@ -409,6 +409,7 @@ share/doc/xapian-core/apidoc/html/weight_8h.html
 share/doc/xapian-core/apidoc/html/xapian_8h.html
 share/doc/xapian-core/bm25.html
 share/doc/xapian-core/code_structure.html
+share/doc/xapian-core/collapsing.html
 share/doc/xapian-core/deprecation.html
 share/doc/xapian-core/facets.html
 share/doc/xapian-core/glossary.html
