@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/01/07 13:47:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2012/01/07 14:50:18 sthen Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -79,5 +79,6 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/lempar.c ${PREFIX}/share/lemon
 	${INSTALL_PROGRAM} ${WRKBUILD}/lemon ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKBUILD}/sqlite3.1 ${PREFIX}/man/man1
+	@if objdump -p ${WRKINST}/${TRUEPREFIX}/lib/libsqlite3.so.${LIBsqlite3_VERSION} | grep NEEDED.*pthread; then echo "libsqlite seems to be linked with -lpthread; problem with patch-configure?"; exit 1; fi
 
 .include <bsd.port.mk>
