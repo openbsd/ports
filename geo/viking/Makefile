@@ -1,22 +1,19 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/01/07 15:45:32 landry Exp $
 
 COMMENT =	GPS track manager
 
-DISTNAME =	viking-1.0.2
-REVISION=	2
+DISTNAME =	viking-1.2.2
 
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://viking.sourceforge.net/
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
-
-EXTRACT_SUFX=		.tar.gz
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 
