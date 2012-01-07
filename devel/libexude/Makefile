@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/18 11:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/01/07 01:49:19 dhill Exp $
 
 COMMENT=	memory allocation debugger library
 
-DISTNAME=	exude-0.5.0
+DISTNAME=	exude-0.6.0
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=    	devel
-SHARED_LIBS=	exude	2.1
+SHARED_LIBS=	exude	3.0
 
 HOMEPAGE=	http://opensource.conformal.com/wiki/Exude	
 MASTER_SITES=	http://opensource.conformal.com/snapshots/exude/
