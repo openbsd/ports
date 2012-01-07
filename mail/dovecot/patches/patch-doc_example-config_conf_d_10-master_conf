@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_example-config_conf_d_10-master_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
+$OpenBSD: patch-doc_example-config_conf_d_10-master_conf,v 1.2 2012/01/07 12:14:21 sthen Exp $
 --- doc/example-config/conf.d/10-master.conf.orig	Thu Dec 30 10:42:54 2010
 +++ doc/example-config/conf.d/10-master.conf	Tue Mar 22 15:23:22 2011
 @@ -8,11 +8,11 @@
@@ -6,12 +6,12 @@ $OpenBSD: patch-doc_example-config_conf_d_10-master_conf,v 1.1 2011/05/23 22:54:
  # Login user is internally used by login processes. This is the most untrusted
  # user in Dovecot system. It shouldn't have access to anything at all.
 -#default_login_user = dovenull
-+default_login_user = _dovenull
++#default_login_user = _dovenull
  
  # Internal user is used by unprivileged processes. It should be separate from
  # login user, so that login processes can't disturb other processes.
 -#default_internal_user = dovecot
-+default_internal_user = _dovecot
++#default_internal_user = _dovecot
  
  service imap-login {
    inet_listener imap {
