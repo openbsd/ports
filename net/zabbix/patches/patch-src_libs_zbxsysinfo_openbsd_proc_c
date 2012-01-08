@@ -1,0 +1,139 @@
+$OpenBSD: patch-src_libs_zbxsysinfo_openbsd_proc_c,v 1.3 2012/01/08 18:53:23 robert Exp $
+--- src/libs/zbxsysinfo/openbsd/proc.c.orig	Sun Jan  8 19:40:59 2012
++++ src/libs/zbxsysinfo/openbsd/proc.c	Sun Jan  8 19:48:19 2012
+@@ -29,7 +29,7 @@
+ 
+ #define ARGS_START_SIZE 64
+ 
+-#ifdef KERN_PROC2
++#if defined(__OpenBSD__)
+ #	define ZBX_P_COMM	p_comm
+ #	define ZBX_P_PID	p_pid
+ #	define ZBX_P_STAT	p_stat
+@@ -119,13 +119,12 @@ int     PROC_MEM(const char *cmd, const char *param, u
+ 
+ 	struct passwd		*usrinfo;
+ 
+-#ifdef KERN_PROC2
++#if defined(__OpenBSD__)
+ 	int			mib[6];
+-	struct kinfo_proc2	*proc = NULL;
+ #else
+ 	int			mib[4];
+-	struct kinfo_proc	*proc = NULL;
+ #endif
++	struct kinfo_proc	*proc = NULL;
+ 
+ 	char	**argv = NULL, *args = NULL;
+ 	size_t	argv_alloc = 0, args_alloc = 0;
+@@ -187,40 +186,24 @@ int     PROC_MEM(const char *cmd, const char *param, u
+ 		mib[3] = 0;
+ 	}
+ 
+-#ifdef KERN_PROC2
+-	mib[1] = KERN_PROC2;
+-	mib[4] = sizeof(struct kinfo_proc2);
++	mib[1] = KERN_PROC;
++#if defined(__OpenBSD__)
++	mib[4] = sizeof(struct kinfo_proc);
+ 	mib[5] = 0;
++#endif
+ 
+ 	sz = 0;
+-	if (0 != sysctl(mib, 6, NULL, &sz, NULL, 0))
++	if (0 != sysctl(mib, (sizeof(mib) / sizeof(mib[0])), NULL, &sz, NULL, 0))
+ 		return SYSINFO_RET_FAIL;
+ 
+-	proc = (struct kinfo_proc2 *)zbx_malloc(proc, sz);
+-	mib[5] = (int)(sz / sizeof(struct kinfo_proc2));
+-	if (0 != sysctl(mib, 6, proc, &sz, NULL, 0))
+-	{
+-		zbx_free(proc);
+-		return SYSINFO_RET_FAIL;
+-	}
+-
+-	count = sz / sizeof(struct kinfo_proc2);
+-#else
+-	mib[1] = KERN_PROC;
+-
+-	sz = 0;
+-	if (0 != sysctl(mib, 4, NULL, &sz, NULL, 0))
+-		return SYSINFO_RET_FAIL;
+-
+ 	proc = (struct kinfo_proc *)zbx_malloc(proc, sz);
+-	if (0 != sysctl(mib, 4, proc, &sz, NULL, 0))
++	if (0 != sysctl(mib, (sizeof(mib) / sizeof(mib[0])), proc, &sz, NULL, 0))
+ 	{
+ 		zbx_free(proc);
+ 		return SYSINFO_RET_FAIL;
+ 	}
+ 
+ 	count = sz / sizeof(struct kinfo_proc);
+-#endif
+ 
+ 	for (i = 0; i < count; i++)
+ 	{
+@@ -288,13 +271,12 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 
+ 	struct passwd		*usrinfo;
+ 
+-#ifdef KERN_PROC2
++#if defined(__OpenBSD__)
+ 	int			mib[6];
+-	struct kinfo_proc2	*proc = NULL;
+ #else
+ 	int			mib[4];
+-	struct kinfo_proc	*proc = NULL;
+ #endif
++	struct kinfo_proc	*proc = NULL;
+ 
+ 	char	**argv = NULL, *args = NULL;
+ 	size_t	argv_alloc = 0, args_alloc = 0;
+@@ -354,40 +336,25 @@ int	PROC_NUM(const char *cmd, const char *param, unsig
+ 		mib[3] = 0;
+ 	}
+ 
+-#ifdef KERN_PROC2
+-	mib[1] = KERN_PROC2;
+-	mib[4] = sizeof(struct kinfo_proc2);
++	mib[1] = KERN_PROC;
++#if defined(__OpenBSD__)
++	mib[4] = sizeof(struct kinfo_proc);
+ 	mib[5] = 0;
++#endif
+ 
+ 	sz = 0;
+-	if (0 != sysctl(mib, 6, NULL, &sz, NULL, 0))
++	if (0 != sysctl(mib, (sizeof(mib) / sizeof(mib[0])), NULL, &sz, NULL, 0))
+ 		return SYSINFO_RET_FAIL;
+ 
+-	proc = (struct kinfo_proc2 *)zbx_malloc(proc, sz);
+-	mib[5] = (int)(sz / sizeof(struct kinfo_proc2));
+-	if (0 != sysctl(mib, 6, proc, &sz, NULL, 0))
+-	{
+-		zbx_free(proc);
+-		return SYSINFO_RET_FAIL;
+-	}
+-
+-	count = sz / sizeof(struct kinfo_proc2);
+-#else
+-	mib[1] = KERN_PROC;
+-
+-	sz = 0;
+-	if (0 != sysctl(mib, 4, NULL, &sz, NULL, 0))
+-		return SYSINFO_RET_FAIL;
+-
+ 	proc = (struct kinfo_proc *)zbx_malloc(proc, sz);
+-	if (0 != sysctl(mib, 4, proc, &sz, NULL, 0))
++	mib[5] = (int)(sz / sizeof(struct kinfo_proc));
++	if (0 != sysctl(mib, (sizeof(mib) / sizeof(mib[0])), proc, &sz, NULL, 0))
+ 	{
+ 		zbx_free(proc);
+ 		return SYSINFO_RET_FAIL;
+ 	}
+ 
+ 	count = sz / sizeof(struct kinfo_proc);
+-#endif
+ 
+ 	for (i = 0; i < count; i++)
+ 	{
