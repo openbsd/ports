@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/11/18 11:14:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/01/08 07:50:25 ajacoutot Exp $
 @bin bin/gcompris
 lib/gcompris/
 @comment lib/gcompris/libalgebra.la
@@ -1992,6 +1992,22 @@ share/gcompris/boards/instruments/violin.ogg
 share/gcompris/boards/instruments/violin.svg
 share/gcompris/boards/keyboard.svg
 share/gcompris/boards/keyboard.xml
+share/gcompris/boards/lang/
+share/gcompris/boards/lang.svg
+share/gcompris/boards/lang.xml
+share/gcompris/boards/lang/lang.xml
+share/gcompris/boards/lang/numbers/
+share/gcompris/boards/lang/numbers/banana.svg
+share/gcompris/boards/lang/numbers/empty.svg
+share/gcompris/boards/lang/numbers/lemon.svg
+share/gcompris/boards/lang/numbers/mango.svg
+share/gcompris/boards/lang/numbers/one.svg
+share/gcompris/boards/lang/numbers/orange.svg
+share/gcompris/boards/lang/numbers/peach.svg
+share/gcompris/boards/lang/numbers/pear.svg
+share/gcompris/boards/lang/numbers/pineapples.svg
+share/gcompris/boards/lang/numbers/raspberries.svg
+share/gcompris/boards/lang/numbers/strawberries.svg
 share/gcompris/boards/leftright/
 share/gcompris/boards/leftright.svg
 share/gcompris/boards/leftright.xml
@@ -2816,8 +2832,6 @@ share/gcompris/boards/railroad/wagon6.png
 share/gcompris/boards/railroad/wagon7.png
 share/gcompris/boards/railroad/wagon8.png
 share/gcompris/boards/railroad/wagon9.png
-share/gcompris/boards/read_colors/
-share/gcompris/boards/read_colors.svg
 share/gcompris/boards/reading.svg
 share/gcompris/boards/reading.xml
 share/gcompris/boards/readingh/
@@ -9714,6 +9728,9 @@ share/gcompris/python/guessnumber.py
 share/gcompris/python/hangman.py
 share/gcompris/python/hexagon.py
 share/gcompris/python/hydroelectric.py
+share/gcompris/python/lang.py
+share/gcompris/python/langFindit.py
+share/gcompris/python/langLib.py
 share/gcompris/python/lightsoff.py
 share/gcompris/python/login.py
 share/gcompris/python/louis_braille.py

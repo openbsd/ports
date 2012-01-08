@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2011/11/18 11:14:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/01/08 07:50:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
-DISTNAME=	gcompris-11.09
+DISTNAME=	gcompris-11.12
 
 CATEGORIES=	games education
 
