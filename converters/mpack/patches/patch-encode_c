@@ -1,0 +1,11 @@
+$OpenBSD: patch-encode_c,v 1.1 2012/01/08 00:12:13 sthen Exp $
+--- encode.c.orig	Sun Jan  8 00:03:01 2012
++++ encode.c	Sun Jan  8 00:03:09 2012
+@@ -24,6 +24,7 @@
+  */
+ #include <stdio.h>
+ #include <string.h>
++#include <stdlib.h>
+ 
+ extern char *magic_look(FILE *infile);
+ extern char *os_genid(void);

@@ -1,34 +1,38 @@
-$OpenBSD: patch-unixos_c,v 1.3 2005/10/06 21:09:22 aanriot Exp $
---- unixos.c.orig	Thu Feb 16 22:39:50 1995
-+++ unixos.c	Fri Aug  9 02:58:47 2002
-@@ -36,7 +36,9 @@
+$OpenBSD: patch-unixos_c,v 1.4 2012/01/08 00:12:13 sthen Exp $
+
+Fixes from Sebastian Pipping
+http://git.goodpoint.de/?p=mpack.git;a=commitdiff;h=0c87201f64491575350b18d04c62ec142e119d1f
+
+--- unixos.c.orig	Mon Jul 21 21:54:05 2003
++++ unixos.c	Sun Jan  8 00:06:09 2012
+@@ -30,6 +30,7 @@
+ #include <sys/param.h>
+ #include <netdb.h>
+ #include <fcntl.h>
++#include <stdlib.h>
+ #include "xmalloc.h"
+ #include "common.h"
+ #include "part.h"
+@@ -38,10 +39,6 @@
  #define MAXHOSTNAMELEN 64
  #endif
  
-+#ifndef errno
- extern int errno;
-+#endif
- extern char *malloc();
- extern char *getenv();
+-extern int errno;
+-extern char *malloc();
+-extern char *getenv();
+-
+ int overwrite_files = 0;
+ int didchat;
  
-@@ -89,7 +91,7 @@ char *id;
- 	strcpy(buf, getenv("TMPDIR"));
-     }
-     else {
--	strcpy(buf, "/usr/tmp");
-+	strcpy(buf, "/var/tmp");
-     }
-     strcat(buf, "/m-prts-");
-     p = getenv("USER");
-@@ -159,6 +161,11 @@ params contentParams;
+@@ -137,9 +134,9 @@ FILE *os_createnewfile(char *fname)
+     FILE *ret;
+      
+ #ifdef O_EXCL
+-    fd=open(fname, O_RDWR|O_CREAT|O_EXCL, 0644);
++    fd=open(fname, O_RDWR|O_CREAT|O_EXCL, 0600);
+ #else
+-    fd=open(fname, O_RDWR|O_CREAT|O_TRUNC, 0644);
++    fd=open(fname, O_RDWR|O_CREAT|O_TRUNC, 0600);
+ #endif
  
-     /* Get rid of leading ~ or ~/ */
-     while (*fname == '~' || *fname == '/') fname++;
-+
-+    /* Debian fix: the loop below handles internal "/../" but not
-+     * leading "../" */
-+    /* Get rid of leading "../" */
-+    while (!strncmp(fname, "../", 3)) fname += 3;
-     
-     /* Clean out bad characters, create directories along path */
-     for (p=fname; *p; p++) {
+     if (fd == -1)
