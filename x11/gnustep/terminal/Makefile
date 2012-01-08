@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/18 12:39:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/08 12:03:09 sebastia Exp $
 
 COMMENT=	a terminal emulator for GNUstep
 
@@ -8,7 +8,7 @@ PKGNAME=	gnustep-${DISTNAME:L}
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/terminal
-MASTER_SITES=	http://savannah.nongnu.org/download/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES=	converters/libiconv x11/gnustep
 WANTLIB+=	c m util pthread

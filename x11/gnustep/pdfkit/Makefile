@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/10/04 12:53:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/08 12:03:09 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
@@ -7,7 +7,7 @@ REVISION =	0
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit
-MASTER_SITES =	http://savannah.nongnu.org/download/gap/
+MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES =		x11/gnustep
 MODGNUSTEP_NEEDS_BASE =	No

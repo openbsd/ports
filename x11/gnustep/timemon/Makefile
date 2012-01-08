@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/08 12:03:09 sebastia Exp $
 
 COMMENT=	CPU load monitor
 
@@ -7,7 +7,7 @@ REVISION =	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://gap.nongnu.org/timemon/
-MASTER_SITES=	http://savannah.nongnu.org/download/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES=	x11/gnustep
 WANTLIB=	c m pthread

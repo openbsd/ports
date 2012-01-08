@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/08 12:03:09 sebastia Exp $
 
 COMMENT=	GNUstep rdesktop frontend
 DISTNAME=	RemoteDesk-0.1
@@ -6,7 +6,7 @@ REVISION =	0
 
 CATEGORIES=	x11
 HOMEPAGE=	http://gap.nongnu.org/remotedesk/
-MASTER_SITES=	http://savannah.nongnu.org/download/gap/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES=	x11/gnustep
 WANTLIB+=	c m pthread
