@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.72 2011/10/12 06:55:56 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2012/01/08 15:36:26 dcoppa Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
 COMMENT-gle=		OpenGL Extrusion library support for screensaver-data
 
-V=			5.12
+V=			5.15
 DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-data=		xscreensaver-data-${V}
 PKGNAME-gle=		xscreensaver-gle-${V}
-
-REVISION-main=		0
-REVISION-data=		0
 
 CATEGORIES=		x11
 

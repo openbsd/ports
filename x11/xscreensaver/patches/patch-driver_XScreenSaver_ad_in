@@ -1,7 +1,7 @@
-$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.9 2010/12/06 17:38:00 jasper Exp $
---- driver/XScreenSaver.ad.in.orig	Wed Sep 15 12:10:25 2010
-+++ driver/XScreenSaver.ad.in	Mon Dec  6 17:45:58 2010
-@@ -173,7 +173,7 @@ GetViewPortIsFullOfLies: False
+$OpenBSD: patch-driver_XScreenSaver_ad_in,v 1.10 2012/01/08 15:36:26 dcoppa Exp $
+--- driver/XScreenSaver.ad.in.orig	Wed Sep 28 12:54:58 2011
++++ driver/XScreenSaver.ad.in	Thu Jan  5 22:15:46 2012
+@@ -177,7 +177,7 @@ GetViewPortIsFullOfLies: False
  				bouboule -root				    \n\
  -				braid -root				    \n\
  				coral -root				    \n\

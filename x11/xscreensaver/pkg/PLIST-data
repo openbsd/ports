@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.6 2011/01/14 18:58:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-data,v 1.7 2012/01/08 15:36:26 dcoppa Exp $
 @conflict xscreensaver-<5.07p3
 @conflict xscreensaver-<5.07p3-no_gle
 libexec/xscreensaver/
@@ -32,6 +32,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/ccurve
 @bin libexec/xscreensaver/celtic
 @bin libexec/xscreensaver/cloudlife
+@bin libexec/xscreensaver/companioncube
 @bin libexec/xscreensaver/compass
 @bin libexec/xscreensaver/coral
 @bin libexec/xscreensaver/crackberg
@@ -87,6 +88,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/halftone
 @bin libexec/xscreensaver/halo
 @bin libexec/xscreensaver/helix
+@bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
 @bin libexec/xscreensaver/hypertorus
 @bin libexec/xscreensaver/hypnowheel
@@ -179,6 +181,7 @@ libexec/xscreensaver/ljlatest
 @bin libexec/xscreensaver/timetunnel
 @bin libexec/xscreensaver/topblock
 @bin libexec/xscreensaver/triangle
+@bin libexec/xscreensaver/tronbit
 @bin libexec/xscreensaver/truchet
 @bin libexec/xscreensaver/twang
 @bin libexec/xscreensaver/vermiculate
@@ -229,6 +232,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/ccurve.6
 @man man/man6/celtic.6
 @man man/man6/cloudlife.6
+@man man/man6/companioncube.6
 @man man/man6/compass.6
 @man man/man6/coral.6
 @man man/man6/crackberg.6
@@ -284,6 +288,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/halftone.6
 @man man/man6/halo.6
 @man man/man6/helix.6
+@man man/man6/hilbert.6
 @man man/man6/hopalong.6
 @man man/man6/hypertorus.6
 @man man/man6/hypnowheel.6
@@ -374,6 +379,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/timetunnel.6
 @man man/man6/topblock.6
 @man man/man6/triangle.6
+@man man/man6/tronbit.6
 @man man/man6/truchet.6
 @man man/man6/twang.6
 @man man/man6/vermiculate.6
@@ -428,6 +434,7 @@ share/applications/screensavers/carousel.desktop
 share/applications/screensavers/ccurve.desktop
 share/applications/screensavers/celtic.desktop
 share/applications/screensavers/cloudlife.desktop
+share/applications/screensavers/companioncube.desktop
 share/applications/screensavers/compass.desktop
 share/applications/screensavers/coral.desktop
 share/applications/screensavers/crackberg.desktop
@@ -488,6 +495,7 @@ share/applications/screensavers/greynetic.desktop
 share/applications/screensavers/halftone.desktop
 share/applications/screensavers/halo.desktop
 share/applications/screensavers/helix.desktop
+share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
 share/applications/screensavers/hyperball.desktop
 share/applications/screensavers/hypercube.desktop
@@ -592,6 +600,7 @@ share/applications/screensavers/thornbird.desktop
 share/applications/screensavers/timetunnel.desktop
 share/applications/screensavers/topblock.desktop
 share/applications/screensavers/triangle.desktop
+share/applications/screensavers/tronbit.desktop
 share/applications/screensavers/truchet.desktop
 share/applications/screensavers/twang.desktop
 share/applications/screensavers/vermiculate.desktop
@@ -647,6 +656,7 @@ share/xscreensaver/config/carousel.xml
 share/xscreensaver/config/ccurve.xml
 share/xscreensaver/config/celtic.xml
 share/xscreensaver/config/cloudlife.xml
+share/xscreensaver/config/companioncube.xml
 share/xscreensaver/config/compass.xml
 share/xscreensaver/config/coral.xml
 share/xscreensaver/config/crackberg.xml
@@ -702,6 +712,7 @@ share/xscreensaver/config/greynetic.xml
 share/xscreensaver/config/halftone.xml
 share/xscreensaver/config/halo.xml
 share/xscreensaver/config/helix.xml
+share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
 share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/hypnowheel.xml
@@ -793,6 +804,7 @@ share/xscreensaver/config/thornbird.xml
 share/xscreensaver/config/timetunnel.xml
 share/xscreensaver/config/topblock.xml
 share/xscreensaver/config/triangle.xml
+share/xscreensaver/config/tronbit.xml
 share/xscreensaver/config/truchet.xml
 share/xscreensaver/config/twang.xml
 share/xscreensaver/config/vermiculate.xml
