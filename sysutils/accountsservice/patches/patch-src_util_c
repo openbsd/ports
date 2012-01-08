@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_util_c,v 1.5 2011/10/29 11:00:39 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.6 2012/01/08 19:42:02 naddy Exp $
 
 We don't use /proc on OpenBSD.
 
@@ -65,13 +65,13 @@ We don't use /proc on OpenBSD.
 +  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
 +    return ret;
 +
-+  if ((kp = kvm_getproc2(kd, KERN_PROC_PID, *pid, sizeof(*kp), &nproc)) == NULL)
++  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, *pid, sizeof(*kp), &nproc)) == NULL)
 +    goto out;
 +
 +  if ((kp->p_flag & P_SYSTEM) != 0) 
 +    goto out;
 +
-+  if ((pargv = kvm_getargv2(kd, kp, 0)) == NULL)
++  if ((pargv = kvm_getargv(kd, kp, 0)) == NULL)
 +    goto out;
 +
 +  ret = g_path_get_basename(pargv[0]);
