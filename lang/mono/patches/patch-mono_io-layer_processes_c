@@ -1,0 +1,68 @@
+$OpenBSD: patch-mono_io-layer_processes_c,v 1.3 2012/01/08 20:05:45 robert Exp $
+--- mono/io-layer/processes.c.orig	Sun Jan  8 20:01:15 2012
++++ mono/io-layer/processes.c	Sun Jan  8 20:02:08 2012
+@@ -1530,13 +1530,13 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+ 	gboolean done;
+ 	size_t proclength, size;
+ #if defined(__OpenBSD__)
+-	struct kinfo_proc2 *result;
++	struct kinfo_proc *result;
+ 	int name[6];
+ 	name[0] = CTL_KERN;
+-	name[1] = KERN_PROC2;
++	name[1] = KERN_PROC;
+ 	name[2] = KERN_PROC_ALL;
+ 	name[3] = 0;
+-	name[4] = sizeof(struct kinfo_proc2);
++	name[4] = sizeof(struct kinfo_proc);
+ 	name[5] = 0;
+ #else
+ 	struct kinfo_proc *result;
+@@ -1564,7 +1564,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+ 				return FALSE;
+ 
+ #if defined(__OpenBSD__)
+-			name[5] = (int)(proclength / sizeof(struct kinfo_proc2));
++			name[5] = (int)(proclength / sizeof(struct kinfo_proc));
+ #endif
+ 
+ 			err = sysctl ((int *) name, size, result, &proclength, NULL, 0);
+@@ -1585,7 +1585,7 @@ gboolean EnumProcesses (guint32 *pids, guint32 len, gu
+ 	}	
+ 
+ #if defined(__OpenBSD__)
+-	count = proclength / sizeof(struct kinfo_proc2);
++	count = proclength / sizeof(struct kinfo_proc);
+ #else
+ 	count = proclength / sizeof(struct kinfo_proc);
+ #endif
+@@ -2341,13 +2341,13 @@ static gchar *get_process_name_from_proc (pid_t pid)
+ #elif defined(__OpenBSD__)
+ 	int mib [6];
+ 	size_t size;
+-	struct kinfo_proc2 *pi;
++	struct kinfo_proc *pi;
+ 
+ 	mib [0] = CTL_KERN;
+-	mib [1] = KERN_PROC2;
++	mib [1] = KERN_PROC;
+ 	mib [2] = KERN_PROC_PID;
+ 	mib [3] = pid;
+-	mib [4] = sizeof(struct kinfo_proc2);
++	mib [4] = sizeof(struct kinfo_proc);
+ 	mib [5] = 0;
+ 
+ retry:
+@@ -2357,10 +2357,10 @@ retry:
+ 	if ((pi = malloc(size)) == NULL)
+ 		return(ret);
+ 
+-	mib[5] = (int)(size / sizeof(struct kinfo_proc2));
++	mib[5] = (int)(size / sizeof(struct kinfo_proc));
+ 
+ 	if ((sysctl (mib, 6, pi, &size, NULL, 0) < 0) ||
+-		(size != sizeof (struct kinfo_proc2))) {
++		(size != sizeof (struct kinfo_proc))) {
+ 		if (errno == ENOMEM) {
+ 			free(pi);
+ 			goto retry;
