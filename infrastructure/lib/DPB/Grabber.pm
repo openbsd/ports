@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.19 2011/12/31 11:20:00 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.20 2012/01/08 20:28:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,6 +31,7 @@ sub new
 		engine => $state->engine,
 		state => $state,
 		keep_going => 1,
+		errors => 0,
 		endcode => $endcode
 	    }, $class;
 	if ($state->opt('f')) {
@@ -43,6 +44,14 @@ sub new
 		$o->{fetch} = DPB::FetchDummy->new;
 	}
 	return $o;
+}
+
+sub expire_old_distfiles
+{
+	my $self = shift;
+	# don't bother if dump-vars wasn't perfectly clean
+	return if $self->{errors};
+	$self->{fetch}->expire_old;
 }
 
 sub finish
@@ -132,6 +141,7 @@ sub complete_subdirs
 				$self->{engine}->add_fatal($v, "tried and didn't get it") 
 				    if !defined $v->{errored};
 				$v->{errored} = 1;
+				$self->{errors}++;
 			} elsif ($v->{wantinfo} || $v->{wantbuild}) {
 				$v->add_to_subdirlist($subdirlist);
 				$v->{tried} = 1;
