@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.724 2011/12/30 14:24:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.725 2012/01/08 14:58:37 matthieu Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -524,6 +524,7 @@
      SUBDIR += supybot
      SUBDIR += synergy
      SUBDIR += tacacs+
+     SUBDIR += tcl-snmptools
      SUBDIR += tclcurl
      SUBDIR += tcludp
      SUBDIR += tcpcat
