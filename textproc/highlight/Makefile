@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 06:16:04 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2012/01/08 07:46:19 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.6
+DISTNAME =		highlight-3.7
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -21,7 +21,6 @@ MASTER_SITES =		${HOMEPAGE}/zip/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		lang/lua
