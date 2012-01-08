@@ -1,0 +1,37 @@
+$OpenBSD: patch-dtpstree_cpp,v 1.1 2012/01/08 22:49:56 naddy Exp $
+--- dtpstree.cpp.orig	Sun Jan  8 23:02:45 2012
++++ dtpstree.cpp	Sun Jan  8 23:09:20 2012
+@@ -92,8 +92,25 @@ template <typename Type>
+ inline char *comm(Type *proc);
+ 
+ #ifndef HAVE_STRUCT_KINFO_PROC2
++#ifdef HAVE_KINFO_NEWABI
+ typedef kinfo_proc Proc;
+ 
++const int Flags(KVM_NO_FILES);
++
++template <>
++inline kinfo_proc *getprocs(kvm_t *kd, int &count)
++{
++	return kvm_getprocs(kd, All, 0, sizeof (kinfo_proc), &count);
++}
++
++template <>
++inline char **getargv(kvm_t *kd, const kinfo_proc *proc)
++{
++	return kvm_getargv(kd, proc, 0);
++}
++#else
++typedef kinfo_proc Proc;
++
+ const int Flags(O_RDONLY);
+ 
+ template <>
+@@ -107,6 +124,7 @@ inline char **getargv(kvm_t *kd, const kinfo_proc *pro
+ {
+ 	return kvm_getargv(kd, proc, 0);
+ }
++#endif
+ #else
+ typedef kinfo_proc2 Proc;
+ 

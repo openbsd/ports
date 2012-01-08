@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/01/08 22:49:56 naddy Exp $
+--- configure.ac.orig	Sat Aug 14 05:50:04 2010
++++ configure.ac	Sun Jan  8 23:31:08 2012
+@@ -124,7 +124,11 @@ AC_CHECK_TYPE([struct kinfo_proc2],
+ 	[AC_CHECK_TYPE([struct kinfo_proc],
+ 		[AC_DEFINE([HAVE_STRUCT_KINFO_PROC])
+ 		AC_CHECK_FUNC([kvm_getargv], [], [DT_MSG_KVM])
+-		AC_CHECK_FUNC([kvm_getprocs], [], [DT_MSG_KVM])
++		AC_CHECK_FUNC([kvm_getprocs],
++			[AC_TRY_COMPILE(DT_INCLUDES_KVM,
++				[kvm_getprocs(NULL, 0, 0, 0, NULL);],
++				[AC_DEFINE([HAVE_KINFO_NEWABI])]
++			)], [DT_MSG_KVM])
+ 		DT_CHECK_MEMBERS_KVM([kinfo_proc], [ki], [kp], [p])],
+ 		[DT_MSG_KVM], [DT_INCLUDES_KVM]
+ 	)], [DT_INCLUDES_KVM]
