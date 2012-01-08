@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/08 14:56:29 matthieu Exp $
+lib/tcl/snmptools1.0/
+@lib lib/tcl/snmptools1.0/libsnmptools10.so.${LIBsnmptools10_VERSION}
+lib/tcl/snmptools1.0/pkgIndex.tcl
+@man man/mann/tcl-snmptools.n

@@ -1,0 +1,5 @@
+A Tcl package that provides SNMP tools for managing remote Agents.  
+
+It uses the NetSNMP library and supports all standard SNMP v1/v2/v3
+operations and more: get, set, getnext, walk, bulkget, bulkwalk, trap,
+translate and table.
