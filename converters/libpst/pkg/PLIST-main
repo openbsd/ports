@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/04/15 09:56:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/01/09 18:25:45 ajacoutot Exp $
 @pkgpath converters/libpst
 @bin bin/lspst
+@bin bin/nick2ldif
 @bin bin/pst2dii
 @bin bin/pst2ldif
 @bin bin/readpst
@@ -30,7 +31,6 @@ share/doc/libpst/README
 share/doc/libpst/devel/
 share/doc/libpst/devel/annotated.html
 share/doc/libpst/devel/classes.html
-share/doc/libpst/devel/common_8h-source.html
 share/doc/libpst/devel/common_8h.html
 share/doc/libpst/devel/common_8h__dep__incl.map
 share/doc/libpst/devel/common_8h__dep__incl.md5
@@ -38,7 +38,10 @@ share/doc/libpst/devel/common_8h__dep__incl.png
 share/doc/libpst/devel/common_8h__incl.map
 share/doc/libpst/devel/common_8h__incl.md5
 share/doc/libpst/devel/common_8h__incl.png
-share/doc/libpst/devel/dir_000000.html
+share/doc/libpst/devel/common_8h_source.html
+share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e.html
+share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e_dep.map
+share/doc/libpst/devel/dir_b70fe5ddb0cf22452a64074199c6435e_dep.png
 share/doc/libpst/devel/dirs.html
 share/doc/libpst/devel/doxygen.css
 share/doc/libpst/devel/doxygen.png
@@ -56,7 +59,51 @@ share/doc/libpst/devel/ftv2plastnode.png
 share/doc/libpst/devel/ftv2pnode.png
 share/doc/libpst/devel/ftv2vertline.png
 share/doc/libpst/devel/functions.html
+share/doc/libpst/devel/functions_0x62.html
+share/doc/libpst/devel/functions_0x63.html
+share/doc/libpst/devel/functions_0x64.html
+share/doc/libpst/devel/functions_0x65.html
+share/doc/libpst/devel/functions_0x66.html
+share/doc/libpst/devel/functions_0x67.html
+share/doc/libpst/devel/functions_0x68.html
+share/doc/libpst/devel/functions_0x69.html
+share/doc/libpst/devel/functions_0x6a.html
+share/doc/libpst/devel/functions_0x6b.html
+share/doc/libpst/devel/functions_0x6c.html
+share/doc/libpst/devel/functions_0x6d.html
+share/doc/libpst/devel/functions_0x6e.html
+share/doc/libpst/devel/functions_0x6f.html
+share/doc/libpst/devel/functions_0x70.html
+share/doc/libpst/devel/functions_0x72.html
+share/doc/libpst/devel/functions_0x73.html
+share/doc/libpst/devel/functions_0x74.html
+share/doc/libpst/devel/functions_0x75.html
+share/doc/libpst/devel/functions_0x76.html
+share/doc/libpst/devel/functions_0x77.html
+share/doc/libpst/devel/functions_0x78.html
 share/doc/libpst/devel/functions_vars.html
+share/doc/libpst/devel/functions_vars_0x62.html
+share/doc/libpst/devel/functions_vars_0x63.html
+share/doc/libpst/devel/functions_vars_0x64.html
+share/doc/libpst/devel/functions_vars_0x65.html
+share/doc/libpst/devel/functions_vars_0x66.html
+share/doc/libpst/devel/functions_vars_0x67.html
+share/doc/libpst/devel/functions_vars_0x68.html
+share/doc/libpst/devel/functions_vars_0x69.html
+share/doc/libpst/devel/functions_vars_0x6a.html
+share/doc/libpst/devel/functions_vars_0x6b.html
+share/doc/libpst/devel/functions_vars_0x6c.html
+share/doc/libpst/devel/functions_vars_0x6d.html
+share/doc/libpst/devel/functions_vars_0x6e.html
+share/doc/libpst/devel/functions_vars_0x6f.html
+share/doc/libpst/devel/functions_vars_0x70.html
+share/doc/libpst/devel/functions_vars_0x72.html
+share/doc/libpst/devel/functions_vars_0x73.html
+share/doc/libpst/devel/functions_vars_0x74.html
+share/doc/libpst/devel/functions_vars_0x75.html
+share/doc/libpst/devel/functions_vars_0x76.html
+share/doc/libpst/devel/functions_vars_0x77.html
+share/doc/libpst/devel/functions_vars_0x78.html
 share/doc/libpst/devel/globals.html
 share/doc/libpst/devel/globals_defs.html
 share/doc/libpst/devel/globals_func.html
@@ -65,18 +112,18 @@ share/doc/libpst/devel/graph_legend.dot
 share/doc/libpst/devel/graph_legend.html
 share/doc/libpst/devel/graph_legend.png
 share/doc/libpst/devel/index.html
-share/doc/libpst/devel/libpst_8h-source.html
 share/doc/libpst/devel/libpst_8h.html
 share/doc/libpst/devel/libpst_8h__incl.map
 share/doc/libpst/devel/libpst_8h__incl.md5
 share/doc/libpst/devel/libpst_8h__incl.png
-share/doc/libpst/devel/libstrfunc_8h-source.html
+share/doc/libpst/devel/libpst_8h_source.html
 share/doc/libpst/devel/libstrfunc_8h.html
 share/doc/libpst/devel/libstrfunc_8h__incl.map
 share/doc/libpst/devel/libstrfunc_8h__incl.md5
 share/doc/libpst/devel/libstrfunc_8h__incl.png
-share/doc/libpst/devel/lzfu_8h-source.html
+share/doc/libpst/devel/libstrfunc_8h_source.html
 share/doc/libpst/devel/lzfu_8h.html
+share/doc/libpst/devel/lzfu_8h_source.html
 share/doc/libpst/devel/main.html
 share/doc/libpst/devel/structFILETIME.html
 share/doc/libpst/devel/structpst__binary.html
@@ -141,17 +188,21 @@ share/doc/libpst/devel/structpst__x__attrib__ll.html
 share/doc/libpst/devel/structpst__x__attrib__ll__coll__graph.map
 share/doc/libpst/devel/structpst__x__attrib__ll__coll__graph.md5
 share/doc/libpst/devel/structpst__x__attrib__ll__coll__graph.png
-share/doc/libpst/devel/timeconv_8h-source.html
+share/doc/libpst/devel/tab_b.gif
+share/doc/libpst/devel/tab_l.gif
+share/doc/libpst/devel/tab_r.gif
+share/doc/libpst/devel/tabs.css
 share/doc/libpst/devel/timeconv_8h.html
 share/doc/libpst/devel/timeconv_8h__incl.map
 share/doc/libpst/devel/timeconv_8h__incl.md5
 share/doc/libpst/devel/timeconv_8h__incl.png
+share/doc/libpst/devel/timeconv_8h_source.html
 share/doc/libpst/devel/tree.html
-share/doc/libpst/devel/vbuf_8h-source.html
 share/doc/libpst/devel/vbuf_8h.html
 share/doc/libpst/devel/vbuf_8h__incl.map
 share/doc/libpst/devel/vbuf_8h__incl.md5
 share/doc/libpst/devel/vbuf_8h__incl.png
+share/doc/libpst/devel/vbuf_8h_source.html
 share/doc/libpst/index.html
 share/doc/libpst/rn01re01.html
 share/doc/libpst/rn01re02.html

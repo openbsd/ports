@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/01/09 18:25:44 ajacoutot Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
 COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
-DISTNAME=		libpst-0.6.49
-SHARED_LIBS +=  pst                  1.0      # .4.1
+DISTNAME=		libpst-0.6.54
+SHARED_LIBS +=  pst                  2.0      # .4.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
-
-REVISION-main=		0
-REVISION-python=	2
 
 CATEGORIES=		converters mail
 
@@ -59,6 +56,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static-tools=no \
 			--enable-libpst-shared
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON_LDFLAGS="-L${LOCALBASE}/lib -lpython${MODPY_VERSION} -lm" \
 			PYTHON_BIN="python${MODPY_VERSION}"
 
