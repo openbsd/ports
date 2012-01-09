@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/12/03 22:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/01/09 20:07:24 landry Exp $
 
 COMMENT=	Xfce4 file manager
 
@@ -27,6 +27,8 @@ CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 
 CONFIGURE_ARGS+=	--disable-linker-opts
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
+
+BUILD_DEPENDS =	textproc/gtk-doc
 
 LIB_DEPENDS=	x11/xfce4/exo>=0.6.0 \
 		x11/xfce4/libxfce4ui>=4.8.0 \
