@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_sh,v 1.1 2011/06/22 09:20:02 sthen Exp $
---- test.sh.orig	Wed Jun 22 10:12:44 2011
-+++ test.sh	Wed Jun 22 10:12:59 2011
-@@ -1767,7 +1767,7 @@ fi
+$OpenBSD: patch-test_sh,v 1.2 2012/01/09 09:35:47 sthen Exp $
+--- test.sh.orig	Sun Jan  8 14:40:55 2012
++++ test.sh	Mon Jan  9 09:29:04 2012
+@@ -1801,7 +1801,7 @@ fi
  
  compiler_version="`$COMPILER --version 2>&1 | head -1`"
  case $compiler_version in
