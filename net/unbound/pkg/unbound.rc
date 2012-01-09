@@ -1,9 +1,25 @@
 #!/bin/sh
 #
-# $OpenBSD: unbound.rc,v 1.1 2011/03/06 09:24:41 jakob Exp $
+# $OpenBSD: unbound.rc,v 1.2 2012/01/09 11:55:10 sthen Exp $
 
-daemon="${TRUEPREFIX}/sbin/unbound"
+daemon="${TRUEPREFIX}/sbin/unbound-control"
+daemon_flags="-c /var/unbound/etc/unbound.conf"
 
 . /etc/rc.d/rc.subr
+
+pexp="unbound${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} ${daemon_flags} start"
+}
+
+rc_check() {
+	${daemon} ${daemon_flags} status
+}
+
+rc_stop() {
+	${daemon} ${daemon_flags} stop
+}
 
 rc_cmd $1
