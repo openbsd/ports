@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/26 12:14:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/09 19:57:38 landry Exp $
 @newgroup _buildslave:674
 @newuser _buildslave:674:_buildslave:daemon:BuildBot slave daemon:${HOMEDIR}:/sbin/nologin
 bin/buildslave
@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/commands/git.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/git.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/hg.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/hg.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/mtn.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/mtn.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/p4.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/p4.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/registry.py
@@ -51,6 +53,13 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/interfaces.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/__init__.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug4881.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug4881.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug5079.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/monkeypatches/bug5079.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/pbutil.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/pbutil.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/runprocess.py
@@ -76,9 +85,13 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/fake/runprocess.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/fake/runprocess.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/fake/slavebuilder.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/fake/slavebuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/test_extra_coverage.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/test_extra_coverage.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/runprocess-scripts.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/runprocess-scripts.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_bot.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_bot.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_bot_BuildSlave.py
@@ -99,6 +112,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_git.
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_git.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_hg.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_hg.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_mtn.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_mtn.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_p4.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_p4.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_registry.py
@@ -120,12 +135,15 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/command.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/command.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/compat.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/misc.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/sourcecommand.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/sourcecommand.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/util.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/util.pyc
+@man man/man1/buildslave.1
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/py-buildslave/
 share/doc/py-buildslave/README

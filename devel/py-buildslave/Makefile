@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/09 19:57:38 landry Exp $
 
 COMMENT=	buildslave implementation for the buildot system
 
-MODPY_EGG_VERSION=	0.8.3
+MODPY_EGG_VERSION=	0.8.5
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION}
-
-REVISION=	3
 
 CATEGORIES=	devel
 
@@ -38,6 +36,7 @@ SUBST_VARS +=	HOMEDIR
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-buildslave
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-buildslave
+	${INSTALL_MAN} ${WRKSRC}/docs/buildslave.1 ${PREFIX}/man/man1
 
 do-regress:
 	@${MAKE_ENV} PYTHONPATH=${WRKSRC} \
