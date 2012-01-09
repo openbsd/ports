@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.25 2012/01/08 20:28:37 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.26 2012/01/09 17:56:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -286,7 +286,7 @@ sub new
 {
 	my ($class, $distdir, $logger, $fetch_only) = @_;
 	my $o = bless {distdir => $distdir, sha => {}, reverse => {},
-	    known => {},
+	    known_sha => {}, known_files => {},
 	    fetch_only => $fetch_only}, $class;
 	if (open(my $fh, '<', "$distdir/distinfo")) {
 		my $_;
@@ -314,31 +314,71 @@ sub new
 sub known_file
 {
 	my ($self, $sha, $file) = @_;
-	$self->{known}{$sha->stringize}{$file} = 1;
+	$self->{known_sha}{$sha->stringize}{$file} = 1;
+	$self->{known_file}{$file} = 1;
+}
+
+sub run_expire_old
+{
+	my ($self, $core, $opt_e) = @_;
+	$core->start_job(DPB::Job::Normal->new(
+	    sub {
+		$self->expire_old;
+	    },
+	    sub {
+		# and we will never need this again
+		delete $self->{known_file};
+		delete $self->{known_sha};
+		if (!$opt_e) {
+			$core->mark_ready;
+		}
+		return 0;
+	    }, 
+	    "CLEAN DIST"));
 }
 
 sub expire_old
 {
 	my $self = shift;
 	my $ts = time();
-	my $extra = {};
-	if (open(my $fh, '<', $self->distdir."/history")) {
+	my $distdir = $self->distdir;
+	if (open(my $fh, '<', "$distdir/history")) {
 		my $_;
 		while (<$fh>) {
 			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*)/) {
-				$extra->{$2}{$1} = 1;
+				$self->{known_sha}{$2}{$1} = 1;
+				$self->{known_file}{$1} = 1;
 			}
 		}
 		close $fh;
 	}
-	open my $fh, ">>", $self->distdir."/history" or return;
+	open my $fh, ">>", "$distdir/history" or return;
 	while (my ($sha, $file) = each %{$self->{reverse}}) {
-		next if $self->{known}{$sha}{$file} or $extra->{$sha}{$file};
+		next if $self->{known_sha}{$sha}{$file};
 		print $fh "$ts SHA256 ($file) = $sha\n";
+		$self->{known_file}{$file} = 1;
 	}
+	for my $special (qw(Makefile distinfo history)) {
+		$self->{known_file}{$special} = 1;
+	}
+
+	# let's also scan the directory proper
+	require File::Find;
+	File::Find::find(sub {
+		if (-d $_ && $_ eq 'by_cipher') {
+			$File::Find::prune = 1;
+			return;
+		}
+		return unless -f _;
+		return if m/\.part$/;
+		my $actual = $File::Find::name;
+		$actual =~ s/^\Q$distdir\E\/?//;
+		return if $self->{known_file}{$actual};
+		my $ck = OpenBSD::sha->new($_);
+		print $fh "$ts SHA256 ($actual) = ", $ck->stringize, "\n";
+	}, $distdir);
+
 	close $fh;
-	# and we will never need this again
-	delete $self->{known};
 }
 
 sub distdir

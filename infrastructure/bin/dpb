@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.39 2012/01/08 20:28:37 espie Exp $
+# $OpenBSD: dpb,v 1.40 2012/01/09 17:56:28 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -472,19 +472,23 @@ if ($state->{all}) {
 $state->grabber->complete_subdirs($core);
 # give back "our" core to the pool.
 
-if (!$state->opt('e')) {
-	$core->mark_ready;
-}
-# and let's wait for all jobs now.
+my $occupied = 0;
 
 if ($state->{all}) {
 	$state->engine->dump_dependencies;
 	if ($state->opt('f')) {
 		DPB::Distfile->dump($state->{logger});
 	}
-	$state->grabber->expire_old_distfiles;
+	if ($state->grabber->expire_old_distfiles($core, $state->opt('e'))) {
+		$occupied  = 1;
+	}
 }
 
+if (!$state->opt('e') && !$occupied) {
+	$core->mark_ready;
+}
+
+# and let's wait for all jobs now.
 $state->engine->check_buildable(1);
 
 DPB::Core->start_clock($state->{display_timeout});
