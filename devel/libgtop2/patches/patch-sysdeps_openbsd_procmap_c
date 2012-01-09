@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.2 2011/09/18 11:46:16 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.3 2012/01/09 16:45:20 robert Exp $
 
 commit 7bd52fc397be0598638abae2bf71740af505d29c
 Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -6,9 +6,9 @@ Date:   Sun Sep 18 13:41:20 2011 +0200
 
     Extend comment a bit regarding processes dying before we get to kvm_getproc2()
 
---- sysdeps/openbsd/procmap.c.orig	Sat Sep 17 18:59:40 2011
-+++ sysdeps/openbsd/procmap.c	Sat Sep 17 19:14:25 2011
-@@ -64,7 +64,11 @@ _glibtop_init_proc_map_p (glibtop *server)
+--- sysdeps/openbsd/procmap.c.orig	Sun Jul 24 13:13:56 2011
++++ sysdeps/openbsd/procmap.c	Mon Jan  9 09:31:58 2012
+@@ -64,13 +64,17 @@ _glibtop_init_proc_map_p (glibtop *server)
  	server->sysdeps.proc_map = _glibtop_sysdeps_proc_map;
  }
  
@@ -16,11 +16,30 @@ Date:   Sun Sep 18 13:41:20 2011 +0200
 +/*
 + * Provides detailed information about a process.
 + * Due to the fact we are only requested info about one process, it's possible
-+ * the process has been reaped before we get to kvm_getproc2. Tough luck.
++ * the process has been reaped before we get to kvm_getprocs. Tough luck.
 + */
  
  glibtop_map_entry *
  glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
+ 			pid_t pid)
+ {
+-	struct kinfo_proc2 *pinfo;
++	struct kinfo_proc *pinfo;
+ 	struct vm_map_entry entry, *first;
+ 	struct vmspace vmspace;
+ 	struct vnode vnode;
+@@ -91,9 +95,9 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 	glibtop_suid_enter (server);
+ 
+ 	/* Get the process data */
+-	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc2), &count);
++	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc), &count);
+ 	if ((pinfo == NULL) || (count < 1)) {
+-		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
++		glibtop_warn_io_r (server, "kvm_getprocss (%d)", pid);
+ 		return (glibtop_map_entry*) g_array_free(maps, TRUE);
+ 	}
+ 
 @@ -124,7 +128,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
  
  	/* I tested this a few times with `mmap'; as soon as you write

@@ -1,0 +1,25 @@
+$OpenBSD: patch-sysdeps_openbsd_proclist_c,v 1.1 2012/01/09 16:45:20 robert Exp $
+--- sysdeps/openbsd/proclist.c.orig	Mon Jan  9 09:23:44 2012
++++ sysdeps/openbsd/proclist.c	Mon Jan  9 09:31:58 2012
+@@ -62,7 +62,7 @@ pid_t *
+ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
+ 			gint64 real_which, gint64 arg)
+ {
+-	struct kinfo_proc2 *pinfo;
++	struct kinfo_proc *pinfo;
+ 	unsigned *pids = NULL;
+ 	int which, count;
+ 	int i,j;
+@@ -74,10 +74,10 @@ glibtop_get_proclist_p (glibtop *server, glibtop_procl
+ 	which = (int)(real_which & GLIBTOP_KERN_PROC_MASK);
+ 
+ 	/* Get the process data */
+-	pinfo = kvm_getproc2 (server->machine.kd, which, arg,
++	pinfo = kvm_getprocs (server->machine.kd, which, arg,
+ 			      sizeof (*pinfo), &count);
+ 	if ((pinfo == NULL) || (count < 1)) {
+-		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");
++		glibtop_warn_io_r (server, "kvm_getprocss (proclist)");
+ 		return NULL;
+ 	}
+ 	count--;
