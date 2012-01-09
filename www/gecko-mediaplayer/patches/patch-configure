@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.8 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.9 2012/01/09 12:12:44 dcoppa Exp $
 
 Use '-pthread' instead of '-lpthread' for libpthread linkage
 
@@ -6,9 +6,9 @@ Remove -ldl
 
 Fix GECKO_CFLAGS and GECKO_LIBS
 
---- configure.orig	Thu Apr 21 16:59:11 2011
-+++ configure	Tue Apr 26 16:26:20 2011
-@@ -7364,8 +7364,8 @@ fi
+--- configure.orig	Thu Dec 29 15:32:00 2011
++++ configure	Mon Jan  9 12:42:11 2012
+@@ -7352,8 +7352,8 @@ fi
  if test "${with_xulrunner_sdk+set}" = set; then :
    withval=$with_xulrunner_sdk;
  	XULRUNNER_SDK_PREFIX=$with_xulrunner_sdk

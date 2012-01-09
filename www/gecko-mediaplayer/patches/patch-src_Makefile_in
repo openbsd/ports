@@ -1,47 +1,47 @@
-$OpenBSD: patch-src_Makefile_in,v 1.6 2011/07/04 13:33:30 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.7 2012/01/09 12:12:44 dcoppa Exp $
 
 Fix library linking (remove -ldl)
 
---- src/Makefile.in.orig	Tue Apr 26 16:27:58 2011
-+++ src/Makefile.in	Tue Apr 26 16:28:19 2011
-@@ -370,35 +370,35 @@ gecko_mediaplayer_so_SOURCES = \
+--- src/Makefile.in.orig	Mon Jan  9 12:44:21 2012
++++ src/Makefile.in	Mon Jan  9 12:44:47 2012
+@@ -357,35 +357,35 @@ gecko_mediaplayer_so_SOURCES = \
  
  gecko_mediaplayer_so_CFLAGS = -fPIC 
  gecko_mediaplayer_so_LDFLAGS = -shared -fPIC
--gecko_mediaplayer_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
-+gecko_mediaplayer_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
+-gecko_mediaplayer_so_LDADD = -ldl $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
++gecko_mediaplayer_so_LDADD = $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
  gecko_mediaplayer_qt_so_SOURCES = \
  	plugin_types_qt.cpp \
  	$(COMMONCODE)
  
  gecko_mediaplayer_qt_so_CFLAGS = -fPIC 
  gecko_mediaplayer_qt_so_LDFLAGS = -shared -fPIC
--gecko_mediaplayer_qt_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
-+gecko_mediaplayer_qt_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
+-gecko_mediaplayer_qt_so_LDADD = -ldl $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
++gecko_mediaplayer_qt_so_LDADD = $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
  gecko_mediaplayer_wmp_so_SOURCES = \
  	plugin_types_wmp.cpp \
  	$(COMMONCODE)
  
  gecko_mediaplayer_wmp_so_CFLAGS = -fPIC 
  gecko_mediaplayer_wmp_so_LDFLAGS = -shared -fPIC 
--gecko_mediaplayer_wmp_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
-+gecko_mediaplayer_wmp_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
+-gecko_mediaplayer_wmp_so_LDADD = -ldl $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
++gecko_mediaplayer_wmp_so_LDADD = $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
  gecko_mediaplayer_dvx_so_SOURCES = \
  	plugin_types_dvx.cpp \
  	$(COMMONCODE)
  
  gecko_mediaplayer_dvx_so_CFLAGS = -fPIC 
  gecko_mediaplayer_dvx_so_LDFLAGS = -shared -fPIC
--gecko_mediaplayer_dvx_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
-+gecko_mediaplayer_dvx_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
+-gecko_mediaplayer_dvx_so_LDADD = -ldl $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
++gecko_mediaplayer_dvx_so_LDADD = $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
  gecko_mediaplayer_rm_so_SOURCES = \
  	plugin_types_rm.cpp \
  	$(COMMONCODE)
  
  gecko_mediaplayer_rm_so_CFLAGS = -fPIC 
  gecko_mediaplayer_rm_so_LDFLAGS = -shared -fPIC
--gecko_mediaplayer_rm_so_LDADD = -ldl libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
-+gecko_mediaplayer_rm_so_LDADD = libgmlib/libgmlib.a $(GLIB_LIBS) $(DBUS_LIBS) $(GCONF_LIBS) $(CURL_LIBS) $(GIO_LIBS)
+-gecko_mediaplayer_rm_so_LDADD = -ldl $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
++gecko_mediaplayer_rm_so_LDADD = $(GLIB_LIBS) $(GMLIB_LIBS) $(DBUS_LIBS) $(CURL_LIBS) $(GIO_LIBS)
  all: all-recursive
  
  .SUFFIXES:

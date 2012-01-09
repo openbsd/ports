@@ -1,100 +1,29 @@
-$OpenBSD: patch-src_plugin_cpp,v 1.8 2011/09/21 14:19:16 dcoppa Exp $
+$OpenBSD: patch-src_plugin_cpp,v 1.9 2012/01/09 12:12:44 dcoppa Exp $
 
-When the uri is a "file://" uri, just play it directly
-(upstream svn revision r476)
+Remove useless printf's (upstream svn revision r491)
 
-Fix apple.com/trailers (upstream svn revisions r468 and r470)
-
-Fix return value for the CURLGetURLNotify function (upstream svn r473)
-
---- src/plugin.cpp.orig	Wed Sep 21 15:46:40 2011
-+++ src/plugin.cpp	Wed Sep 21 15:46:55 2011
-@@ -887,8 +887,11 @@ int32 CPlugin::Write(NPStream * stream, int32 offset, 
-         return -1;
-     }
- 
--    if (strstr((char *) buffer, "ICY 200 OK") != NULL || strstr((char *) buffer, "Content-length:") != NULL     // If item is a block of jpeg images, just stream it
--        || strstr((char *) buffer, "<HTML>") != NULL || item->streaming == TRUE) {
-+    if (strstr((char *) buffer, "ICY 200 OK") != NULL
-+        || strstr((char *) buffer, "Content-length:") != NULL
-+        || strstr((char *) buffer, "<HTML>") != NULL || item->streaming == TRUE
-+        || strstr(item->src, "file://") != NULL) {
-+        // If item is a block of jpeg images, just stream it
-         //   || stream->lastmodified == 0) {    this is not valid for many sites
- 
-         // printf("BUFFER='%s'\n", buffer);
-@@ -1320,7 +1323,7 @@ int progress_callback(void *clientp, double dltotal, d
-     ListItem *item = (ListItem *) clientp;
-     gdouble percent, rate;
-     gchar *text;
--    gboolean ok_to_play;
-+    gboolean ok_to_play = FALSE;
-     gint id;
-     gboolean ready;
-     gboolean newwindow;
-@@ -1364,8 +1367,6 @@ int progress_callback(void *clientp, double dltotal, d
-                                         rate);
-                 }
-                 send_signal_with_string(plugin, item, "SetProgressText", text);
--                if (!item->opened)
--                    send_signal_with_string(plugin, item, "SetURL", item->src);
-                 if (plugin->post_dom_events && plugin->id != NULL) {
-                     postDOMEvent(plugin->mInstance, plugin->id, "qt_progress");
-                     postDOMEvent(plugin->mInstance, plugin->id, "qt_durationchange");
-@@ -1391,7 +1392,6 @@ int progress_callback(void *clientp, double dltotal, d
+--- src/plugin.cpp.orig	Mon Jan  9 12:51:12 2012
++++ src/plugin.cpp	Mon Jan  9 12:52:15 2012
+@@ -970,13 +970,10 @@ int32 CPlugin::Write(NPStream * stream, int32 offset, 
+         }
+         if (!item->opened) {
+             if ((item->localsize >= (cache_size * 1024)) && (percent >= 0.2)) {
+-                printf("Setting to play because %i > %i\n", item->localsize, cache_size * 1024);
+                 ok_to_play = TRUE;
+             }
+             if (ok_to_play == FALSE && (item->localsize > (cache_size * 2 * 1024))
+                 && (cache_size >= 512)) {
+-                printf("Setting to play because %i > %i (double cache)\n", item->localsize,
+-                       cache_size * 2 * 1024);
+                 ok_to_play = TRUE;
+             }
              if (ok_to_play == FALSE) {
-                 if (item->bitrate == 0 && item->bitrate_requests < 5
-                     && ((gint) (percent * 100) > item->bitrate_requests)) {
--                    item->bitrate = request_bitrate(plugin, item, item->local);
-                     item->bitrate_requests++;
+@@ -987,8 +984,6 @@ int32 CPlugin::Write(NPStream * stream, int32 offset, 
                  }
                  if (item->bitrate > 0) {
-@@ -1418,6 +1418,7 @@ int progress_callback(void *clientp, double dltotal, d
-             if (!item->streaming) {
-                 printf("in progress_callback\n");
-                 plugin->playlist = list_parse_qt(plugin->playlist, item);
-+                plugin->playlist = list_parse_qt2(plugin->playlist, item);
-                 plugin->playlist = list_parse_asx(plugin->playlist, item);
-                 plugin->playlist = list_parse_qml(plugin->playlist, item);
-                 plugin->playlist = list_parse_ram(plugin->playlist, item);
-@@ -1493,13 +1494,14 @@ gpointer CURLGetURLNotify(gpointer data)
- 
-             }
-             fclose(local);
--            printf("fetched %s to %s\n", item->src, item->local);
-+            printf("fetched %s to %s opened = %i\n", item->src, item->local, item->opened);
-+            send_signal_with_double(plugin, item, "SetCachePercent", 1.0);
-             send_signal_with_double(plugin, item, "SetCachePercent", 0.0);
-             item->retrieved = TRUE;
-         }
- 
- 
--        if ((!item->opened)) {
-+        if (!item->opened) {
-             id = item->controlid;
-             path = g_strdup(item->path);
-             ready = item->playerready;
-@@ -1509,13 +1511,14 @@ gpointer CURLGetURLNotify(gpointer data)
-             if (!item->streaming) {
-                 printf("in CURLGetURLNotify\n");
-                 plugin->playlist = list_parse_qt(plugin->playlist, item);
-+                plugin->playlist = list_parse_qt2(plugin->playlist, item);
-                 plugin->playlist = list_parse_asx(plugin->playlist, item);
-                 plugin->playlist = list_parse_qml(plugin->playlist, item);
-                 plugin->playlist = list_parse_ram(plugin->playlist, item);
-             }
-             // printf("item->play = %i\n", item->play);
-             // printf("item->src = %i\n", item->src);
--            // printf("calling open_location from Write\n");
-+            // printf("calling open_location from CURLGetURLNotify\n");
-             if (item->play) {
-                 send_signal_with_integer(plugin, item, "SetGUIState", PLAYING);
-                 open_location(plugin, item, TRUE);
-@@ -1549,6 +1552,7 @@ gpointer CURLGetURLNotify(gpointer data)
- 
-         }
-     }
-+    return NULL;
- }
- 
- 
+                     if (item->localsize / item->bitrate >= 10 && (percent >= 0.2)) {
+-                        printf("Setting to play becuase %i >= 10\n",
+-                               item->localsize / item->bitrate);
+                         ok_to_play = TRUE;
+                         if (post_dom_events && this->id != NULL) {
+                             postDOMEvent(mInstance, this->id, "qt_canplay");
