@@ -1,0 +1,3 @@
+Schema migration tools for SQLAlchemy, designed to support an agile
+approach to database design, and make it easier to keep development
+and production databases in sync, as schema changes are required.
