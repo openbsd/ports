@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/11/14 11:42:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/01/09 13:39:30 ajacoutot Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -477,6 +477,7 @@ share/gtk-doc/html/camel/camel-camel-url-scanner.html
 share/gtk-doc/html/camel/camel-camel-url.html
 share/gtk-doc/html/camel/camel-camel-utf8.html
 share/gtk-doc/html/camel/camel-camel.html
+share/gtk-doc/html/camel/camel.devhelp
 share/gtk-doc/html/camel/camel.devhelp2
 share/gtk-doc/html/camel/classes.html
 share/gtk-doc/html/camel/home.png
@@ -505,6 +506,7 @@ share/gtk-doc/html/libebackend/libebackend-e-data-server-module.html
 share/gtk-doc/html/libebackend/libebackend-e-db3-utils.html
 share/gtk-doc/html/libebackend/libebackend-e-dbhash.html
 share/gtk-doc/html/libebackend/libebackend-e-sqlite3-vfs.html
+share/gtk-doc/html/libebackend/libebackend.devhelp
 share/gtk-doc/html/libebackend/libebackend.devhelp2
 share/gtk-doc/html/libebackend/right.png
 share/gtk-doc/html/libebackend/style.css
@@ -539,6 +541,7 @@ share/gtk-doc/html/libebook/libebook-EAddressWestern.html
 share/gtk-doc/html/libebook/libebook-ENameWestern.html
 share/gtk-doc/html/libebook/libebook-e-book-query.html
 share/gtk-doc/html/libebook/libebook-e-book-types.html
+share/gtk-doc/html/libebook/libebook.devhelp
 share/gtk-doc/html/libebook/libebook.devhelp2
 share/gtk-doc/html/libebook/right.png
 share/gtk-doc/html/libebook/style.css
@@ -573,6 +576,7 @@ share/gtk-doc/html/libecal/libecal-e-cal-system-timezone.html
 share/gtk-doc/html/libecal/libecal-e-cal-time-util.html
 share/gtk-doc/html/libecal/libecal-e-cal-types.html
 share/gtk-doc/html/libecal/libecal-e-cal-util.html
+share/gtk-doc/html/libecal/libecal.devhelp
 share/gtk-doc/html/libecal/libecal.devhelp2
 share/gtk-doc/html/libecal/right.png
 share/gtk-doc/html/libecal/style.css
@@ -607,6 +611,7 @@ share/gtk-doc/html/libedata-book/libedata-book-EBookBackendSqliteDB.html
 share/gtk-doc/html/libedata-book/libedata-book-EDataBookFactory.html
 share/gtk-doc/html/libedata-book/libedata-book-e-book-backend-db-cache.html
 share/gtk-doc/html/libedata-book/libedata-book-ximian-vcard.html
+share/gtk-doc/html/libedata-book/libedata-book.devhelp
 share/gtk-doc/html/libedata-book/libedata-book.devhelp2
 share/gtk-doc/html/libedata-book/right.png
 share/gtk-doc/html/libedata-book/style.css
@@ -640,6 +645,7 @@ share/gtk-doc/html/libedata-cal/libedata-cal-EDataCalFactory.html
 share/gtk-doc/html/libedata-cal/libedata-cal-EDataCalView.html
 share/gtk-doc/html/libedata-cal/libedata-cal-EIntervalTree.html
 share/gtk-doc/html/libedata-cal/libedata-cal-e-cal-backend-util.html
+share/gtk-doc/html/libedata-cal/libedata-cal.devhelp
 share/gtk-doc/html/libedata-cal/libedata-cal.devhelp2
 share/gtk-doc/html/libedata-cal/right.png
 share/gtk-doc/html/libedata-cal/style.css
@@ -685,6 +691,7 @@ share/gtk-doc/html/libedataserver/libedataserver-e-uid.html
 share/gtk-doc/html/libedataserver/libedataserver-e-url.html
 share/gtk-doc/html/libedataserver/libedataserver-e-util.html
 share/gtk-doc/html/libedataserver/libedataserver-e-xml-hash-utils.html
+share/gtk-doc/html/libedataserver/libedataserver.devhelp
 share/gtk-doc/html/libedataserver/libedataserver.devhelp2
 share/gtk-doc/html/libedataserver/right.png
 share/gtk-doc/html/libedataserver/style.css
@@ -727,6 +734,7 @@ share/gtk-doc/html/libedataserverui/libedataserverui-ECellRendererColor.html
 share/gtk-doc/html/libedataserverui/libedataserverui-EClient-Utilities.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-book-auth-util.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-passwords.html
+share/gtk-doc/html/libedataserverui/libedataserverui.devhelp
 share/gtk-doc/html/libedataserverui/libedataserverui.devhelp2
 share/gtk-doc/html/libedataserverui/right.png
 share/gtk-doc/html/libedataserverui/style.css
