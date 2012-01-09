@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.51 2012/01/09 12:10:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.52 2012/01/09 22:52:37 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-DISTNAME =		gnome-mplayer-1.0.5
+V =			1.0.5
+DISTNAME =		gnome-mplayer-${V}
+REVISION =		0
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
-HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer
+HOMEPAGE =		http://kdekorte.googlepages.com/gnomemplayer/
 
 MASTER_SITES =		http://gnome-mplayer.googlecode.com/files/
 
@@ -33,7 +35,7 @@ LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			audio/libmusicbrainz \
 			net/curl \
 			x11/dbus-glib \
-			x11/gmtk \
+			x11/gmtk>=${V} \
 			x11/gtk+2
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gnome/icon-theme \

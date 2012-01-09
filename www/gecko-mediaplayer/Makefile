@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2012/01/09 12:12:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2012/01/09 22:52:37 dcoppa Exp $
 
 COMMENT =		gnome-mplayer browser media plugin
 V =			1.0.5
 DISTNAME =		gecko-mediaplayer-${V}
+REVISION =		0
 CATEGORIES =		www
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
-HOMEPAGE =		http://kdekorte.googlepages.com/gecko-mediaplayer
+HOMEPAGE =		http://kdekorte.googlepages.com/gecko-mediaplayer/
 
 MASTER_SITES =		http://gecko-mediaplayer.googlecode.com/files/
 
@@ -24,7 +25,7 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS =		net/curl \
 			x11/dbus-glib \
-			x11/gmtk
+			x11/gmtk>=${V}
 
 BUILD_DEPENDS =		devel/xulrunner/1.9,-devel>=1.9.2
 RUN_DEPENDS =		x11/gnome-mplayer>=${V}
