@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2011/12/21 15:54:47 pea Exp $
+# $OpenBSD: Makefile,v 1.204 2012/01/09 19:35:41 landry Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -144,6 +144,7 @@
      SUBDIR += py-pygresql
      SUBDIR += py-redis
      SUBDIR += py-sqlalchemy
+     SUBDIR += py-sqlalchemy-migrate
      SUBDIR += py-sqlite
      SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject
