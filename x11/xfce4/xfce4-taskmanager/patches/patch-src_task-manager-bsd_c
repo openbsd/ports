@@ -1,0 +1,66 @@
+$OpenBSD: patch-src_task-manager-bsd_c,v 1.1 2012/01/09 16:50:19 robert Exp $
+--- src/task-manager-bsd.c.orig	Mon Jan  9 09:48:24 2012
++++ src/task-manager-bsd.c	Mon Jan  9 09:49:01 2012
+@@ -41,7 +41,7 @@ gboolean get_task_list (GArray *task_list)
+ {
+ 	int mib[6];
+ 	size_t size;
+-	struct kinfo_proc2 *kp;
++	struct kinfo_proc *kp;
+ 	Task t;
+ 	struct passwd *passwdp;
+ 	char **args, **ptr;
+@@ -49,23 +49,23 @@ gboolean get_task_list (GArray *task_list)
+ 	int nproc, i;
+ 
+ 	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC2;
++	mib[1] = KERN_PROC;
+ 	mib[2] = KERN_PROC_ALL;
+ 	mib[3] = 0;
+-	mib[4] = sizeof(struct kinfo_proc2);
++	mib[4] = sizeof(struct kinfo_proc);
+ 	mib[5] = 0;
+ 	if (sysctl(mib, 6, NULL, &size, NULL, 0) < 0)
+-		errx(1, "could not get kern.proc2 size");
++		errx(1, "could not get kern.proc size");
+ 	size = 5 * size / 4;		/* extra slop */
+ 	if ((kp = malloc(size)) == NULL)
+ 		errx(1,"failed to allocate memory for proc structures");
+-	mib[5] = (int)(size / sizeof(struct kinfo_proc2));
++	mib[5] = (int)(size / sizeof(struct kinfo_proc));
+ 	if (sysctl(mib, 6, kp, &size, NULL, 0) < 0)
+-		errx(1, "could not read kern.proc2");
+-	nproc = (int)(size / sizeof(struct kinfo_proc2));
++		errx(1, "could not read kern.proc");
++	nproc = (int)(size / sizeof(struct kinfo_proc));
+ 	for (i=0 ; i < nproc ; i++)
+ 	{
+-		struct kinfo_proc2 p = kp[i];
++		struct kinfo_proc p = kp[i];
+ 		t.pid = p.p_pid;
+ 		t.ppid = p.p_ppid;
+ 		t.uid = p.p_uid;
+@@ -117,17 +117,17 @@ gboolean
+ pid_is_sleeping (guint pid)
+ {
+ 	int mib[6];
+-	struct kinfo_proc2 kp;
+-	size_t size = sizeof(struct kinfo_proc2);
++	struct kinfo_proc kp;
++	size_t size = sizeof(struct kinfo_proc);
+ 
+ 	mib[0] = CTL_KERN;
+-	mib[1] = KERN_PROC2;
++	mib[1] = KERN_PROC;
+ 	mib[2] = KERN_PROC_PID;
+ 	mib[3] = pid;
+-	mib[4] = sizeof(struct kinfo_proc2);
++	mib[4] = sizeof(struct kinfo_proc);
+ 	mib[5] = 1;
+ 	if (sysctl(mib, 6, &kp, &size, NULL, 0) < 0)
+-		errx(1, "could not read kern.proc2 for pid %d", pid);
++		errx(1, "could not read kern.proc for pid %d", pid);
+ 	return (kp.p_stat == SSLEEP ? TRUE : FALSE);
+ }
+ 
