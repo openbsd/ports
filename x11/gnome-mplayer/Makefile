@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.50 2011/12/06 16:05:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.51 2012/01/09 12:10:22 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-DISTNAME =		gnome-mplayer-1.0.4
-REVISION =		7
+DISTNAME =		gnome-mplayer-1.0.5
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -20,10 +19,11 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB = GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 	Xinerama Xrandr Xrender Xss atk-1.0 c cairo curl dbus-1 \
 	dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 \
-	gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-	gpod gthread-2.0 gtk-x11-2.0 m musicbrainz3 neon notify \
-	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-	pthread pthread-stubs xcb xcb-render xcb-shm z
+	gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmlib gmodule-2.0 gmtk \
+	gobject-2.0 gpod gthread-2.0 gtk-x11-2.0 m musicbrainz3 \
+	neon notify pango-1.0 pangocairo-1.0 pangoft2-1.0 \
+	pixman-1 png pthread pthread-stubs xcb xcb-render \
+	xcb-shm z
 
 MODULES =		devel/gettext \
 			devel/dconf
@@ -33,10 +33,10 @@ LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			audio/libmusicbrainz \
 			net/curl \
 			x11/dbus-glib \
+			x11/gmtk \
 			x11/gtk+2
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gnome/icon-theme \
-			x11/mplayer>=20090828 \
 			x11/gtk+2,-guic
 
 USE_LIBTOOL =		Yes
@@ -51,13 +51,15 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 				-L${X11BASE}/lib -pthread"
 CONFIGURE_ARGS =	--with-dbus \
 			--with-gio \
-			--with-gpm-new-method \
 			--with-libgpod \
 			--with-libmusicbrainz3 \
 			--with-libnotify \
 			--without-alsa \
-			--without-gconf \
 			--without-pulseaudio \
+			--disable-gtk3 \
 			--disable-nautilus
+
+pre-install:
+	${SUBST_CMD} ${WRKBUILD}/apps.gnome-mplayer.preferences.gschema.xml
 
 .include <bsd.port.mk>

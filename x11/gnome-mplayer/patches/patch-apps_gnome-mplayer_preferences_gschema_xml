@@ -1,13 +1,27 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.3 2011/07/04 13:32:55 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.4 2012/01/09 12:10:22 dcoppa Exp $
 
 Set some sane defaults:
-use mplayer's software volume control
+use xv as default video output
 disable bar animation in full screen
+use mplayer's software volume control
 use xscrnsaver controls over gnome-power-manager
+set location of mplayer binary
+use /dev/rcd0c as default optical device
+use sndio as default audio device
+use English as default language
 
---- apps.gnome-mplayer.preferences.gschema.xml.orig	Mon Mar  7 22:44:54 2011
-+++ apps.gnome-mplayer.preferences.gschema.xml	Wed May  4 07:11:43 2011
-@@ -101,7 +101,7 @@
+--- apps.gnome-mplayer.preferences.gschema.xml.orig	Fri Jul 29 14:59:45 2011
++++ apps.gnome-mplayer.preferences.gschema.xml	Mon Jan  9 12:09:37 2012
+@@ -1,7 +1,7 @@
+ <schemalist>
+   <schema id="apps.gnome-mplayer.preferences" path="/apps/gnome-mplayer/preferences/">
+     <key name="vo" type="s">
+-      <default>''</default>
++      <default>'xv'</default>
+       <summary>Default video output</summary>
+       <description>Default video output</description>
+     </key>
+@@ -116,7 +116,7 @@
        <description>When set to TRUE the ability to pause on mouse click is disabled</description>
      </key>
      <key name="disable-animation" type="b">
@@ -16,7 +30,7 @@ use xscrnsaver controls over gnome-power-manager
        <summary>Disable Animation</summary>
        <description>Disable animation of fullscreen control bar sliding away</description>
      </key>
-@@ -121,7 +121,7 @@
+@@ -136,7 +136,7 @@
        <description>When set to TRUE the cache value is always used, even for streaming media</description>
      </key>
      <key name="softvol" type="b">
@@ -25,7 +39,7 @@ use xscrnsaver controls over gnome-power-manager
        <summary>Have mplayer use the softvol option</summary>
        <description>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</description>
      </key>
-@@ -246,7 +246,7 @@
+@@ -256,7 +256,7 @@
        <description>Will load and save the playlist when the program runs</description>
      </key>
      <key name="use-xscrnsaver" type="b">
@@ -34,7 +48,7 @@ use xscrnsaver controls over gnome-power-manager
        <summary>Set to TRUE if you want to use xscrnsaver controls over gnome-power-manager</summary>
        <description>When enabled directly tells the xscreensaver to inhibit itself, otherwise uses gnome-power-manager</description>
      </key>
-@@ -261,7 +261,7 @@
+@@ -271,7 +271,7 @@
        <description>Configuration value for mplayer to control the number of audio channels</description>
      </key>
      <key name="remember-softvol" type="b">
@@ -42,4 +56,40 @@ use xscrnsaver controls over gnome-power-manager
 +      <default>true</default>
        <summary>Remember the software volume</summary>
        <description>Remember the software volume value</description>
+     </key>
+@@ -306,17 +306,17 @@
+       <description>Subtitle loading</description>
+     </key>
+     <key name="mplayer-bin" type="s">
+-      <default>''</default>
++      <default>'${LOCALBASE}/bin/mplayer'</default>
+       <summary>Location of mplayer binary if not in path</summary>
+       <description>Location of mplayer binary if not in path</description>
+     </key>
+     <key name="mplayer-dvd-device" type="s">
+-      <default>''</default>
++      <default>'/dev/rcd0c'</default>
+       <summary>DVD device name</summary>
+       <description>DVD device name</description>
+     </key>
+     <key name="audio-device-name" type="s">
+-      <default>''</default>
++      <default>'SNDIO'</default>
+       <summary>Name of the preferred audio device</summary>
+       <description>Name of the preferred audio device</description>
+     </key>
+@@ -341,12 +341,12 @@
+       <description>Default Key Bindings</description>
+     </key>
+     <key name="audio-lang" type="s">
+-      <default>''</default>
++      <default>'English,eng,en'</default>
+       <summary>Preferred Audio Language</summary>
+       <description>Preferred Audio Language</description>
+     </key>
+     <key name="subtitle-lang" type="s">
+-      <default>''</default>
++      <default>'English,eng,en'</default>
+       <summary>Preferred Subtitle Language</summary>
+       <description>Preferred Subtitle Language</description>
      </key>
