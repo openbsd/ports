@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.478 2011/11/17 15:49:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.479 2012/01/09 12:08:40 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -74,6 +74,7 @@
      SUBDIR += gentoo
      SUBDIR += gigolo
      SUBDIR += gmrun
+     SUBDIR += gmtk
      SUBDIR += gnome
      SUBDIR += gnome-colors-icon-theme
      SUBDIR += gnome-mplayer
