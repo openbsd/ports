@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_proclist_c,v 1.1 2012/01/09 16:45:20 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_proclist_c,v 1.2 2012/01/09 17:22:15 robert Exp $
 --- sysdeps/openbsd/proclist.c.orig	Mon Jan  9 09:23:44 2012
 +++ sysdeps/openbsd/proclist.c	Mon Jan  9 09:31:58 2012
 @@ -62,7 +62,7 @@ pid_t *
@@ -19,7 +19,7 @@ $OpenBSD: patch-sysdeps_openbsd_proclist_c,v 1.1 2012/01/09 16:45:20 robert Exp 
  			      sizeof (*pinfo), &count);
  	if ((pinfo == NULL) || (count < 1)) {
 -		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");
-+		glibtop_warn_io_r (server, "kvm_getprocss (proclist)");
++		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");
  		return NULL;
  	}
  	count--;

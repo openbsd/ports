@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.1 2012/01/09 16:45:20 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.2 2012/01/09 17:22:15 robert Exp $
 --- sysdeps/openbsd/proctime.c.orig	Mon Jan  9 09:25:42 2012
 +++ sysdeps/openbsd/proctime.c	Mon Jan  9 09:31:59 2012
 @@ -117,7 +117,7 @@ void
@@ -19,7 +19,7 @@ $OpenBSD: patch-sysdeps_openbsd_proctime_c,v 1.1 2012/01/09 16:45:20 robert Exp 
  			      sizeof (*pinfo), &count);
  	if ((pinfo == NULL) || (count != 1)) {
 -		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
-+		glibtop_warn_io_r (server, "kvm_getprocss (%d)", pid);
++		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
  		return;
  	}
  

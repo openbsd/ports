@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.1 2012/01/09 16:45:20 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.2 2012/01/09 17:22:15 robert Exp $
 --- sysdeps/openbsd/procmem.c.orig	Mon Jan  9 09:26:01 2012
 +++ sysdeps/openbsd/procmem.c	Mon Jan  9 09:31:58 2012
 @@ -96,7 +96,7 @@ void
@@ -19,7 +19,7 @@ $OpenBSD: patch-sysdeps_openbsd_procmem_c,v 1.1 2012/01/09 16:45:20 robert Exp $
  			      sizeof (*pinfo), &count);
  	if ((pinfo == NULL) || (count < 1)) {
 -		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
-+		glibtop_warn_io_r (server, "kvm_getprocss (%d)", pid);
++		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
  		return;
  	}
  
