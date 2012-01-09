@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2011/12/03 18:35:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2012/01/09 14:31:03 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
@@ -4835,6 +4835,7 @@ share/gtk-doc/html/eshell/eshell-Shell-Utilities.html
 share/gtk-doc/html/eshell/eshell-Text-to-HTML-Conversion.html
 share/gtk-doc/html/eshell/eshell-User-Alert-Handling.html
 share/gtk-doc/html/eshell/eshell-e-signature-utils.html
+share/gtk-doc/html/eshell/eshell.devhelp
 share/gtk-doc/html/eshell/eshell.devhelp2
 share/gtk-doc/html/eshell/home.png
 share/gtk-doc/html/eshell/index.html
