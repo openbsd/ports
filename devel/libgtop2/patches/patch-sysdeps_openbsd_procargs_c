@@ -1,4 +1,4 @@
-$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.4 2012/01/09 17:22:15 robert Exp $
+$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.5 2012/01/09 17:39:19 ajacoutot Exp $
 
 commit dd46d6a00e4af444d423383abbc538436a170e2b
 Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
@@ -6,8 +6,8 @@ Date:   Sun Sep 18 13:42:13 2011 +0200
 
     Don't bother with PIDs below 20 as they are highly likely to be kernel threads anyway.
 
---- sysdeps/openbsd/procargs.c.orig	Sun Jul 24 13:13:56 2011
-+++ sysdeps/openbsd/procargs.c	Mon Jan  9 09:31:58 2012
+--- sysdeps/openbsd/procargs.c.orig	Sun Jul 24 21:13:56 2011
++++ sysdeps/openbsd/procargs.c	Mon Jan  9 18:37:24 2012
 @@ -49,7 +49,7 @@ char *
  glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
  			 pid_t pid, unsigned max_len)
@@ -17,7 +17,7 @@ Date:   Sun Sep 18 13:42:13 2011 +0200
  	char *retval, **args, **ptr;
  	size_t size = 0, pos = 0;
  	int count;
-@@ -58,21 +58,24 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
+@@ -58,13 +58,16 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
  
  	memset (buf, 0, sizeof (glibtop_proc_args));
  
@@ -37,8 +37,7 @@ Date:   Sun Sep 18 13:42:13 2011 +0200
  			       sizeof (*pinfo), &count);
  	if ((pinfo == NULL) || (count < 1)) {
  		glibtop_suid_leave (server);
--		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
-+		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
+@@ -72,7 +75,7 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
  		return NULL;
  	}
  
