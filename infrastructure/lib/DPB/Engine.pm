@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.43 2012/01/08 14:40:58 espie Exp $
+# $OpenBSD: Engine.pm,v 1.44 2012/01/09 11:54:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -657,7 +657,7 @@ sub add_fatal
 	my ($self, $v, $error, @messages) = @_;
 	push(@{$self->{errors}}, $v);
 	my $fh = $self->{locker}->lock($v);
-	print $fh "error=fetch manually\n";
+	print $fh "error=$error\n" if $fh;
 	$self->{logger}->log_error($v, @messages);
 }
 
