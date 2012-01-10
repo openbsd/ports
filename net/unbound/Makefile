@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2012/01/09 11:55:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2012/01/10 22:15:54 sthen Exp $
 
 COMMENT=	validating DNS resolver
 
 DISTNAME=	unbound-1.4.14
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.unbound.net/downloads/
@@ -23,7 +23,7 @@ AUTOCONF_VERSION=	2.68
 USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 
-SHARED_LIBS+=		unbound 3.0
+SHARED_LIBS+=		unbound 3.1
 
 WANTLIB=		c crypto event expat ldns>=4.9 ssl
 LIB_DEPENDS+=		net/ldns/libldns>=1.6.11
