@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.14 2011/11/23 12:00:46 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.15 2012/01/10 18:04:32 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-docs-<2011
@@ -20106,7 +20106,6 @@ share/texmf-dist/scripts/svn-multi/
 share/texmf-dist/scripts/svn-multi/svn-multi.pl
 share/texmf-dist/scripts/tex4ht/
 share/texmf-dist/scripts/tex4ht/ht.sh
-share/texmf-dist/scripts/tex4ht/htcontext.sh
 share/texmf-dist/scripts/tex4ht/htlatex.sh
 share/texmf-dist/scripts/tex4ht/htmex.sh
 share/texmf-dist/scripts/tex4ht/httex.sh
@@ -20129,12 +20128,6 @@ share/texmf-dist/scripts/ulqda/ulqda.pl
 share/texmf-dist/scripts/vpe/
 share/texmf-dist/scripts/vpe/vpe.pl
 share/texmf-dist/tex/
-share/texmf-dist/tex/context/
-share/texmf-dist/tex/context/third/
-share/texmf-dist/tex/context/third/gentium/
-share/texmf-dist/tex/context/third/gentium/type-gentium.tex
-share/texmf-dist/tex/context/third/semaphor/
-share/texmf-dist/tex/context/third/semaphor/t-type-semaf.tex
 share/texmf-dist/tex/generic/
 share/texmf-dist/tex/generic/2up/
 share/texmf-dist/tex/generic/2up/2up.sty
@@ -20394,7 +20387,6 @@ share/texmf-dist/tex/generic/tex4ht/color.4ht
 share/texmf-dist/tex/generic/tex4ht/colortbl.4ht
 share/texmf-dist/tex/generic/tex4ht/combine.4ht
 share/texmf-dist/tex/generic/tex4ht/cond4ht.4ht
-share/texmf-dist/tex/generic/tex4ht/context.4ht
 share/texmf-dist/tex/generic/tex4ht/covington.4ht
 share/texmf-dist/tex/generic/tex4ht/cp1250.4ht
 share/texmf-dist/tex/generic/tex4ht/cp1252.4ht
@@ -31335,5 +31327,5 @@ share/texmf/xindy/modules/tex/inputenc/latin.xdy
 share/texmf/xindy/modules/tex/inputenc/latin1.xdy
 share/texmf/xindy/modules/tex/inputenc/latin2.xdy
 share/texmf/xindy/modules/tex/inputenc/latin3.xdy
-@exec mktexlsr > /dev/null 2>&1
-@unexec-delete mktexlsr > /dev/null 2>&1
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

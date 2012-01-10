@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.9 2011/11/23 12:00:45 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.10 2012/01/10 18:04:31 edd Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-minimal-<2011
@@ -24723,5 +24723,5 @@ share/texmf/scripts/texlive/
 share/texmf/scripts/texlive/NEWS
 share/texmf/scripts/texlive/var/
 share/texmf/scripts/texlive/var/texcatalogue.keywords
-@exec mktexlsr > /dev/null 2>&1
-@unexec-delete mktexlsr > /dev/null 2>&1
+@exec %D/bin/mktexlsr > /dev/null 2>&1
+@unexec-delete %D/bin/mktexlsr > /dev/null 2>&1

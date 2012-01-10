@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: mk_openbsd_plists.sh,v 1.3 2011/11/23 12:00:45 edd Exp $
+# $OpenBSD: mk_openbsd_plists.sh,v 1.4 2012/01/10 18:04:31 edd Exp $
 #
 # This is how the texlive port packing lists were generated.
 # Please be aware that a *full* texmf/texmf-dist and texlive.tlpdb from the
@@ -38,6 +38,7 @@ cat sets/docs/PLIST | sort > sets/docs/PLIST_final
 
 echo "\ndone - PLISTS in sets/"
 echo "now inspect:"
+echo "  - move conTeXt stuff into it's own packing list"
 echo "  - share/texmf/scripts/texlive/* probably un-needed"
 echo "  - *.exe obviously a waste of space"
 echo "  - search for 'win32' and 'w32' and 'windows'"

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2011/11/23 12:00:45 edd Exp $
+$OpenBSD: README,v 1.7 2012/01/10 18:04:31 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,17 +10,24 @@ Texmf Subsets
 There are a number of texmf trees in the OpenBSD packages:
 
 texmf-minimal:
-  A teTeX like tree, suitable for casual TeX users
-  who do not need many extra macros or ConTeXt (approx 302MB).
+  A teTeX like tree, suitable for casual TeX users who do not need many
+  extra macros or ConTeXt (approx 324MB).
 
 texmf-full:
-  Extra macros and ConTeXt support (approx 163MB).
+  Extra macros (approx 191MB).
+
+texmf-context:
+  Macros for the conTeXt typesetter (approx 7MB).
+
+  This was separated because conTeXt maintains it's own hashes separate
+  from that of libkpse. As 99% of users don't use this, these hashes are
+  generated only when the conTeXt macros are installed.
 
 texmf-doc:
-  Documentation for all of TeX Live (approx 760MB).
+  Documentation for all of TeX Live (approx 890MB).
 
-All sizes are compressed package sizes and the texmf package contents do
-not overlap.
+All sizes are approximate compressed package sizes and the texmf package
+contents do not overlap.
 
 There is a *lot* of functionality in texmf-full, so before reportng
 "missing" features, please try installing texmf-full first. Eg. xindy

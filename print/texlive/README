@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/12/05 23:25:46 sthen Exp $
+$OpenBSD: README,v 1.5 2012/01/10 18:04:31 edd Exp $
 
 TeX Live 2011 - Porting progress.
 ---------------------------------------
@@ -8,8 +8,8 @@ TeX Live 2011 - Porting progress.
    -> amd64					done
    -> i386					done
    -> sparc64					done
-   -> others, anyone?				XXX
  * Do texmf split (see texmf/files/rblatter)	done
+ * Split out conTeXt (use grep)			done
  * Move manuals and pdf manuals			done
  * Remove external deps				done
    -> texworks					done
@@ -29,9 +29,7 @@ TeX Live 2011 - Porting progress.
      'updmap-sys', rm ls-R and tar up texmf-var
  * Apply any security/reliability patches	done
    Search here: http://tug.org/pipermail/tldistro/
- * Test lots:					XXX
  * @comment manpages conflicting with t1utils	done
- * Mark manpages with @man in PLIST		XXX
 
 --- KNOWN ISSUES ---
 

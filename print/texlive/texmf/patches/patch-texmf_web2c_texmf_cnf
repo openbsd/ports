@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.5 2011/11/23 12:00:45 edd Exp $
+$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.6 2012/01/10 18:04:31 edd Exp $
 --- texmf/web2c/texmf.cnf.origy	Sat Jun 18 23:10:46 2011
 +++ texmf/web2c/texmf.cnf	Wed Aug 31 17:42:50 2011
 @@ -1,6 +1,10 @@
@@ -27,7 +27,7 @@ $OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.5 2011/11/23 12:00:45 edd Exp $
 -% Redistributors will probably want $SELFAUTODIR/share, i.e., /usr/share.
 -TEXMFROOT = $SELFAUTOPARENT
 +% We use the old teTeX paths in OpenBSD, respect the legacy.
-+TEXMFROOT = ${LOCALBASE}/share
++TEXMFROOT = ${TRUEPREFIX}/share
  
  % The tree containing runtime files related to the specific
  % distribution and version.
