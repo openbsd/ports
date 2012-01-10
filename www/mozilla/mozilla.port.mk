@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.37 2011/10/03 21:04:57 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.38 2012/01/10 23:58:27 nigel Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -17,6 +17,7 @@ MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION}
 HOMEPAGE ?=	http://www.mozilla.org/projects/${MOZILLA_DIST}
 
 MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
@@ -41,7 +42,7 @@ MODMOZ_WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 
 # for all mozilla ports, build against systemwide sqlite3
 MODMOZ_WANTLIB +=	sqlite3
-MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.7.5
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.7.7.1
 CONFIGURE_ARGS +=	--enable-system-sqlite
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
 
@@ -122,7 +123,8 @@ MOZ =		${PREFIX}/${MOZILLA_PROJECT}
 MOB =		${WRKSRC}/${_MOZDIR}/dist/bin
 
 # needed for PLIST and config/autoconf.mk.in
-SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VERSION
+MOZILLA_VER =	${MOZILLA_VERSION:C/b.$//}
+SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION 
 
 MAKE_ENV +=	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
 		LD_LIBRARY_PATH=${MOB} \
