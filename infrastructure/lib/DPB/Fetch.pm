@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.26 2012/01/09 17:56:28 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.27 2012/01/10 19:35:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -292,6 +292,7 @@ sub new
 		my $_;
 		while (<$fh>) {
 			if (m/^SHA256\s*\((.*)\) \= (.*)/) {
+				next unless -f "$distdir/$1";
 				$o->{sha}{$1} = OpenBSD::sha->fromstring($2);
 				$o->{reverse}{$2} = $1;
 			}
