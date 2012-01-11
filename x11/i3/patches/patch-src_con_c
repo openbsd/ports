@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_con_c,v 1.4 2012/01/11 13:33:48 dcoppa Exp $
+
+Bugfix: don't lose focus on fullscreen windows when another window
+gets moved to that workspace
+(upstream git commit f78caf8c5815ae7a66de9e4b734546fd740cc19d)
+
+Bugfix: open new windows in the correct place when assignments match
+(upstream git commit d4238c778a199ad88ebe8540904d98f81f110621)
+
+--- src/con.c.orig	Wed Jan 11 14:13:26 2012
++++ src/con.c	Wed Jan 11 14:17:15 2012
+@@ -656,8 +656,10 @@ void con_move_to_workspace(Con *con, Con *workspace, b
+     con_fix_percent(next);
+ 
+     /* 7: focus the con on the target workspace (the X focus is only updated by
+-     * calling tree_render(), so for the "real" focus this is a no-op). */
+-    con_focus(con_descend_focused(con));
++     * calling tree_render(), so for the "real" focus this is a no-op).
++     * We don't focus when there is a fullscreen con on that workspace. */
++    if (con_get_fullscreen_con(workspace, CF_OUTPUT) == NULL)
++    	con_focus(con_descend_focused(con));
+ 
+     /* 8: when moving to a visible workspace on a different output, we keep the
+      * con focused. Otherwise, we leave the focus on the current workspace as we
+@@ -806,7 +808,7 @@ Con *con_get_next(Con *con, char way, orientation_t or
+  */
+ Con *con_descend_focused(Con *con) {
+     Con *next = con;
+-    while (!TAILQ_EMPTY(&(next->focus_head)))
++    while (next != focused && !TAILQ_EMPTY(&(next->focus_head)))
+         next = TAILQ_FIRST(&(next->focus_head));
+     return next;
+ }
+@@ -823,6 +825,8 @@ Con *con_descend_tiling_focused(Con *con) {
+     Con *next = con;
+     Con *before;
+     Con *child;
++    if (next == focused)
++	return next;
+     do {
+         before = next;
+         TAILQ_FOREACH(child, &(next->focus_head), focused) {
+@@ -832,7 +836,7 @@ Con *con_descend_tiling_focused(Con *con) {
+             next = child;
+             break;
+         }
+-    } while (before != next);
++    } while (before != next && next != focused);
+     return next;
+ }
+ 
