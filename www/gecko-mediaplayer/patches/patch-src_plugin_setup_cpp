@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugin_setup_cpp,v 1.6 2012/01/11 13:06:47 dcoppa Exp $
+
+Add rtp to the list of streaming URIs
+(upstream svn revision r494)
+
+--- src/plugin_setup.cpp.orig	Wed Jan 11 14:01:14 2012
++++ src/plugin_setup.cpp	Wed Jan 11 14:01:49 2012
+@@ -591,6 +591,9 @@ gboolean streaming(gchar * url)
+     if (g_ascii_strncasecmp(url, "rtsp://", 7) == 0)
+         ret = TRUE;
+ 
++    if (g_ascii_strncasecmp(url, "rtp://", 6) == 0)
++        ret = TRUE;
++
+     if (g_ascii_strncasecmp(url, "tv://", 5) == 0)
+         ret = TRUE;
+ 
