@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/15 23:09:44 nigel Exp $
+# $OpenBSD: Makefile,v 1.18 2012/01/11 02:17:13 nigel Exp $
 
 COMMENT =	Mozilla mobile web browser
 
-MOZILLA_VERSION =	8.0
+MOZILLA_VERSION =	9.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
-REVISION =		0
 
 
-SO_VERSION =	4.0
+SO_VERSION =	5.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozalloc xpcom xul
@@ -23,6 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/ \
+		https://ftp.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/ \
 		ftp://ftp.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/
 HOMEPAGE =	http://www.mozilla.com/en-US/mobile/
 

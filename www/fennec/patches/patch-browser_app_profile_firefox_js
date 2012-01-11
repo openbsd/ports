@@ -1,6 +1,6 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.5 2011/12/08 00:42:54 nigel Exp $
---- browser/app/profile/firefox.js.orig	Fri Nov  4 23:51:43 2011
-+++ browser/app/profile/firefox.js	Thu Nov 17 19:34:16 2011
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.6 2012/01/11 02:17:13 nigel Exp $
+--- browser/app/profile/firefox.js.orig	Fri Dec 16 21:59:03 2011
++++ browser/app/profile/firefox.js	Thu Dec 22 00:39:29 2011
 @@ -140,7 +140,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
  pref("app.update.certs.2.commonName", "aus3.mozilla.org");
  
@@ -32,7 +32,7 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.5 2011/12/08 00:42:54 nigel E
  
  // Non-enhanced mode (local url lists) URL list to check for updates
  pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -756,10 +756,8 @@ pref("browser.EULA.version", 3);
+@@ -748,10 +748,8 @@ pref("browser.EULA.version", 3);
  pref("browser.rights.version", 3);
  pref("browser.rights.3.shown", false);
  
