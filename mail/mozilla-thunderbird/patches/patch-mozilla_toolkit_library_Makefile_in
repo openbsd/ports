@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.8 2011/12/08 02:25:59 nigel Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Tue Nov  8 15:36:13 2011
-+++ mozilla/toolkit/library/Makefile.in	Tue Nov  8 16:55:35 2011
-@@ -171,12 +171,6 @@ EXTRA_DSO_LDOPTS += \
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.9 2012/01/11 01:19:43 nigel Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Thu Dec 15 01:23:07 2011
++++ mozilla/toolkit/library/Makefile.in	Mon Dec 19 22:30:27 2011
+@@ -170,12 +170,6 @@ EXTRA_DSO_LDOPTS += \
  endif
  endif
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.8 2011/12/08 02:25:59 ni
  ifdef MOZ_PLATFORM_MAEMO
  EXTRA_DSO_LDOPTS += $(MOZ_PLATFORM_MAEMO_LIBS)
  endif 
-@@ -250,6 +244,9 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
+@@ -249,6 +243,9 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
  include $(srcdir)/libxul-rules.mk
  
  ifeq ($(OS_ARCH),OpenBSD)

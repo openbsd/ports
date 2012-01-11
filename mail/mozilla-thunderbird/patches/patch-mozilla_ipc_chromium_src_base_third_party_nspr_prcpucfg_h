@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_ipc_chromium_src_base_third_party_nspr_prcpucfg_h,v 1.1 2011/07/24 07:10:12 landry Exp $
---- mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	Sat May 28 00:43:47 2011
-+++ mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg.h	Mon May 30 17:12:06 2011
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_third_party_nspr_prcpucfg_h,v 1.2 2012/01/11 01:19:43 nigel Exp $
+--- mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	Thu Dec 15 01:22:33 2011
++++ mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg.h	Mon Dec 19 22:30:24 2011
 @@ -34,7 +34,7 @@
  #include "base/third_party/nspr/prcpucfg_win.h"
  #elif defined(__APPLE__)
@@ -8,5 +8,5 @@ $OpenBSD: patch-mozilla_ipc_chromium_src_base_third_party_nspr_prcpucfg_h,v 1.1 
 -#elif defined(__linux__) || defined(ANDROID)
 +#elif defined(__linux__) || defined(ANDROID) || defined(__OpenBSD__)
  #include "base/third_party/nspr/prcpucfg_linux.h"
- #else
- #error Provide a prcpucfg.h appropriate for your platform
+ #elif defined(__OpenBSD__)
+ #include "base/third_party/nspr/prcpucfg_openbsd.h"
