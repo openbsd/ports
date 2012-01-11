@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/12/14 15:24:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/01/11 02:35:49 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -17,19 +17,17 @@ roundcubemail/SQL/sqlite.initial.sql
 roundcubemail/SQL/sqlite.update.sql
 roundcubemail/UPGRADING
 roundcubemail/bin/
-@mode 700
-@owner root
 roundcubemail/bin/cleandb.sh
 roundcubemail/bin/decrypt.sh
+roundcubemail/bin/dumpschema.sh
 roundcubemail/bin/indexcontacts.sh
 roundcubemail/bin/installto.sh
 roundcubemail/bin/jsshrink.sh
 roundcubemail/bin/jsunshrink.sh
+roundcubemail/bin/makedoc.sh
 roundcubemail/bin/msgexport.sh
 roundcubemail/bin/msgimport.sh
 roundcubemail/bin/update.sh
-@mode
-@owner
 roundcubemail/config/
 roundcubemail/config/.htaccess
 roundcubemail/config/db.inc.php.dist
@@ -587,6 +585,7 @@ roundcubemail/program/include/rcube_browser.php
 roundcubemail/program/include/rcube_cache.php
 roundcubemail/program/include/rcube_config.php
 roundcubemail/program/include/rcube_contacts.php
+roundcubemail/program/include/rcube_content_filter.php
 roundcubemail/program/include/rcube_html_page.php
 roundcubemail/program/include/rcube_imap.php
 roundcubemail/program/include/rcube_imap_cache.php
