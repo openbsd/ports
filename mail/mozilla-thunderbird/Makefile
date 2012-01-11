@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2011/12/15 23:08:50 nigel Exp $
+# $OpenBSD: Makefile,v 1.142 2012/01/11 01:10:24 nigel Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,16 +8,16 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	8.0
+MOZILLA_VERSION =	9.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-1.0beta8
+PKGNAME-lightning =	lightning-1.0beta9
 ENIG_V =		1.3.4
+REVISION-enigmail =	0
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 
@@ -27,7 +27,7 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	20.0
+SO_VERSION =	21.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
@@ -68,9 +68,9 @@ CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
 LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION:S/b/beta/}:${BUILD_PKGPATH},-main
-WANTLIB-lightning =	lib/thunderbird-${MOZILLA_VERSION:C/b.//}/xpcom \
-			lib/thunderbird-${MOZILLA_VERSION:C/b.//}/xul \
-			lib/thunderbird-${MOZILLA_VERSION:C/b.//}/mozalloc \
+WANTLIB-lightning =	lib/thunderbird-${MOZILLA_VER}/xpcom \
+			lib/thunderbird-${MOZILLA_VER}/xul \
+			lib/thunderbird-${MOZILLA_VER}/mozalloc \
 			c m stdc++ nspr4 plc4 plds4
 BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
@@ -104,7 +104,7 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	calendar-timezones calendar-timezones@mozilla.org \
 	../bin/enigmail-1.4-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
-EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/extensions/
+EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}
 	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
