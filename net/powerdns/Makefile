@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/01/11 01:41:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2012/01/11 02:01:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -51,7 +51,7 @@ MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS-mysql=	databases/mysql
 RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-mysql+= 	crypto lib/mysql/mysqlclient>=10 ssl z ${WANTLIB}
+WANTLIB-mysql+=		crypto lib/mysql/mysqlclient>=10 ssl z ${WANTLIB}
 BACKENDS+=		gmysql
 .endif
 
@@ -107,7 +107,7 @@ WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 lber-2.4 ldap_r-2.4 sasl2 ssl z 
 BACKENDS+=		ldap
 .endif
 
-BUILD_DEPENDS+=          ${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS}
 
 SYSCONFDIR=		${BASESYSCONFDIR}/pdns
 
@@ -119,10 +119,10 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--with-modules="geo" \
 			--with-dynmodules="${BACKENDS}" \
 			--disable-recursor # OpenBSD lacks ucontext.h, see PR 5099
-CONFIGURE_ENV+=         CPPFLAGS="-I${LOCALBASE}/include" \
-                        LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
-EXAMPLE_TABLES= 	tables-mysql.sql \
+EXAMPLE_TABLES=		tables-mysql.sql \
 			tables-pgsql.sql \
 			tables-sqlite.sql
 EXAMPLE_DIR=		${PREFIX}/share/examples/powerdns/
