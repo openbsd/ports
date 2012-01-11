@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2011/12/21 14:00:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2012/01/11 22:27:26 sthen Exp $
 
 COMMENT =	web-based collaborative editing environment
 
 DISTNAME =	mediawiki-1.18.0
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.mediawiki.org/
@@ -27,7 +28,7 @@ SUBST_VARS=	INSTDIR
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
-		php-mysql-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-mysql
+		php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@mv ${WRKDIST} ${INSTDIR}

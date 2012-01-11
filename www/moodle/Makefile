@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2012/01/11 22:27:26 sthen Exp $
 
 COMMENT=	learning management system
 
 DISTNAME=	moodle-1.9.7
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www education
 
 HOMEPAGE=	http://www.moodle.org/
@@ -30,7 +30,7 @@ MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-xmlrpc
-RUN_DEPENDS+=	php-mysql-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-mysql
+RUN_DEPENDS+=	php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/11 22:27:26 sthen Exp $
 
 COMMENT=	web based bug tracking
 
 V=		1.1.6
 DISTNAME=	mantisbt-${V}
 PKGNAME=	mantis-${V}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	www
 HOMEPAGE=	http://www.mantisbt.org/
 
@@ -28,7 +28,7 @@ INSTDIR=	/var/www/mantis
 SUBST_VARS=	INSTDIR
 
 RUN_DEPENDS=	mail/femail,-chroot \
-		php-mysql-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-mysql
+		php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@-test ! -d ${PREFIX}/mantis && mkdir ${PREFIX}/mantis
