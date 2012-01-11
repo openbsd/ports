@@ -4,4 +4,4 @@ zonefiles or be more dynamic in nature. Additionally, through
 use of clever programming techniques, PowerDNS offers very high
 domain resolution performance.
 
-This package contains the PostgreSQL-backend.
+This package contains the PostgreSQL backend.

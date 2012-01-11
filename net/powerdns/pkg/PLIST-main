@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/10/24 19:47:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/01/11 01:41:47 sthen Exp $
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
@@ -14,9 +14,9 @@ lib/powerdns/libgeobackend.so
 @man man/man8/zone2sql.8
 @bin sbin/pdns_server
 share/examples/powerdns/
-@sample ${SYSCONFDIR}/pdns/
+@sample ${SYSCONFDIR}/
 share/examples/powerdns/pdns.conf
-@sample ${SYSCONFDIR}/pdns/pdns.conf
+@sample ${SYSCONFDIR}/pdns.conf
 share/examples/powerdns/pdns.conf-dist
 share/examples/powerdns/tables-mysql.sql
 share/examples/powerdns/tables-pgsql.sql
