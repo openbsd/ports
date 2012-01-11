@@ -1,0 +1,21 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_dir_reader_posix_h,v 1.1 2012/01/11 03:00:02 nigel Exp $
+--- mozilla/ipc/chromium/src/base/dir_reader_posix.h.orig	Thu Dec 15 01:22:33 2011
++++ mozilla/ipc/chromium/src/base/dir_reader_posix.h	Mon Dec 19 22:41:00 2011
+@@ -18,7 +18,7 @@
+ // seems worse than falling back to enumerating all file descriptors so we will
+ // probably never implement this on the Mac.
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) && ! defined(OS_OPENBSD)
+ #include "base/dir_reader_linux.h"
+ #else
+ #include "base/dir_reader_fallback.h"
+@@ -26,7 +26,7 @@
+ 
+ namespace base {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) && ! defined(OS_OPENBSD)
+ typedef DirReaderLinux DirReaderPosix;
+ #else
+ typedef DirReaderFallback DirReaderPosix;
