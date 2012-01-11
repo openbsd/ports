@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_acpinames_Makefile,v 1.2 2012/01/11 02:35:14 sthen Exp $
---- tools/acpinames/Makefile.orig	Wed Nov 23 16:22:35 2011
-+++ tools/acpinames/Makefile	Wed Jan 11 00:27:36 2012
-@@ -157,16 +157,10 @@ CWARNINGFLAGS += \
+$OpenBSD: patch-generate_unix_Makefile_config,v 1.1 2012/01/11 02:35:14 sthen Exp $
+--- generate/unix/Makefile.config.orig	Wed Nov 23 16:22:31 2011
++++ generate/unix/Makefile.config	Wed Jan 11 00:27:25 2012
+@@ -118,16 +118,10 @@ CWARNINGFLAGS += \
      -Waddress \
      -Waggregate-return \
      -Wchar-subscripts \
@@ -18,4 +18,4 @@ $OpenBSD: patch-tools_acpinames_Makefile,v 1.2 2012/01/11 02:35:14 sthen Exp $
 +    -Wold-style-definition
  
  #
- # Rules
+ # Extra warning flags (possible future use)

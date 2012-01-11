@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/05 08:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/11 02:35:14 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-V =			20110316
-DISTNAME =		acpica-unix-${V}
-PKGNAME =		acpica-${V}
+V =			20111123
+DISTNAME =		acpica-unix-$V
+PKGNAME =		acpica-$V
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.acpica.org
-MASTER_SITES =		${HOMEPAGE}/download/
+HOMEPAGE =		http://www.acpica.org/
+MASTER_SITES =		${HOMEPAGE}download/
 
 WANTLIB =		c pthread
 
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM =export restrictions
 PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
-NO_REGRESS = 		Yes
+NO_REGRESS =		Yes
 BUILD_DEPENDS =		devel/flex devel/bison
 
 do-build:
