@@ -1,0 +1,57 @@
+$OpenBSD: patch-src_main_c,v 1.14 2012/01/11 12:45:25 dcoppa Exp $
+
+Fix problem with directory vs dvd detection
+(upstream svn revision r2201)
+
+--- src/main.c.orig	Fri Dec 16 20:55:51 2011
++++ src/main.c	Wed Jan 11 13:39:39 2012
+@@ -659,6 +659,7 @@ int main(int argc, char *argv[])
+     gchar *accelerator_keys;
+     gchar **parse;
+     GtkSettings *gtk_settings;
++    int stat_result;
+ 
+ #ifndef OS_WIN32
+     struct sigaction sa;
+@@ -1078,14 +1079,15 @@ int main(int argc, char *argv[])
+             g_object_unref(file);
+         }
+         filename = g_filename_from_uri(uri, NULL, NULL);
+-        g_stat(filename, &buf);
++        stat_result = g_stat(filename, &buf);
+         g_free(filename);
+ #else
+-        g_stat(argv[fileindex], &buf);
++        stat_result = g_stat(argv[fileindex], &buf);
+ #endif
+ 
+         if (verbose) {
+             printf("opening %s\n", argv[fileindex]);
++            printf("stat_result = %i\n", stat_result);
+             printf("is block %i\n", S_ISBLK(buf.st_mode));
+             printf("is character %i\n", S_ISCHR(buf.st_mode));
+             printf("is reg %i\n", S_ISREG(buf.st_mode));
+@@ -1093,7 +1095,7 @@ int main(int argc, char *argv[])
+             printf("playlist %i\n", playlist);
+             printf("embedded in window id 0x%x\n", embed_window);
+         }
+-        if (S_ISBLK(buf.st_mode)) {
++        if (stat_result == 0 && S_ISBLK(buf.st_mode)) {
+             // might have a block device, so could be a DVD
+ 
+ #ifdef HAVE_SYS_MOUNT_H
+@@ -1148,11 +1150,11 @@ int main(int argc, char *argv[])
+                     playiter = TRUE;
+                 }
+             }
+-        } else if (S_ISDIR(buf.st_mode)) {
++        } else if (stat_result == 0 && S_ISDIR(buf.st_mode)) {
+             uri = g_strdup_printf("%s/VIDEO_TS", argv[fileindex]);
+-            stat(uri, &buf);
++            stat_result = g_stat(uri, &buf);
+             g_free(uri);
+-            if (S_ISDIR(buf.st_mode)) {
++            if (stat_result == 0 && S_ISDIR(buf.st_mode)) {
+                 add_item_to_playlist("dvdnav://", 0);
+                 gtk_tree_model_get_iter_first(GTK_TREE_MODEL(playliststore), &iter);
+                 gmtk_media_player_set_media_type(GMTK_MEDIA_PLAYER(media), TYPE_DVD);
