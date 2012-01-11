@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2012/01/11 02:35:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2012/01/11 22:17:21 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
 DISTNAME=	roundcubemail-0.7.1
+REVISION=	0
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
 
@@ -29,7 +30,7 @@ MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mcrypt \
 		lang/php/${MODPHP_VERSION},-pspell \
 		sysutils/pecl-fileinfo \
-		php-mysql-*|php-pgsql-*|php-sqlite-*:lang/php/${MODPHP_VERSION},-sqlite
+		php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}|php-sqlite-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-sqlite
 
 do-configure:
 	perl -pi -e '$$. == 1 && s,^#!.*env.*php.*,#!${MODPHP_BIN},;' \
