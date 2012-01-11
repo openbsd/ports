@@ -1,0 +1,9 @@
+$OpenBSD: patch-scripts_msmtpq_msmtp-queue,v 1.1 2012/01/11 22:56:07 gsoares Exp $
+--- scripts/msmtpq/msmtp-queue.orig	Tue Jan 10 16:47:20 2012
++++ scripts/msmtpq/msmtp-queue	Tue Jan 10 16:49:07 2012
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ 
+ ##--------------------------------------------------------------
+ ##

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/27 14:13:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/01/11 22:56:07 gsoares Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.4.25
+DISTNAME =		msmtp-1.4.27
 CATEGORIES =		mail
 
 HOMEPAGE =		http://msmtp.sourceforge.net/
@@ -30,8 +30,6 @@ CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \
 			--with-ssl=openssl \
 			--without-gnome-keyring
-FAKE_FLAGS =		mandir="${PREFIX}/man" \
-			infodir="${PREFIX}/info"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/msmtp
@@ -41,9 +39,13 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Mutt+msmtp.txt ${PREFIX}/share/doc/msmtp
 	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpqueue/{README,ChangeLog} \
 			${PREFIX}/share/msmtp/msmtpqueue
+	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq \
+			${PREFIX}/share/msmtp
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/set_sendmail/set_sendmail.sh \
 		${PREFIX}/share/examples/msmtp
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpqueue/*.sh \
+		${PREFIX}/share/examples/msmtp
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/{msmtpq,msmtp-queue} \
 		${PREFIX}/share/examples/msmtp
 
 .include <bsd.port.mk>
