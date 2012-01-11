@@ -1,7 +1,7 @@
-$OpenBSD: patch-clients_Makefile_in,v 1.14 2011/09/19 15:59:57 sthen Exp $
---- clients/Makefile.in.orig	Thu Sep 15 12:33:21 2011
-+++ clients/Makefile.in	Mon Sep 19 09:22:02 2011
-@@ -375,10 +375,12 @@ upsmon_SOURCES = upsmon.c upsmon.h upsclient.h
+$OpenBSD: patch-clients_Makefile_in,v 1.15 2012/01/11 16:01:33 sthen Exp $
+--- clients/Makefile.in.orig	Tue Jan  3 13:36:07 2012
++++ clients/Makefile.in	Wed Jan 11 15:13:10 2012
+@@ -381,10 +381,12 @@ upsmon_SOURCES = upsmon.c upsmon.h upsclient.h
  upssched_SOURCES = upssched.c upssched.h
  upssched_LDADD = ../common/libcommon.la ../common/libparseconf.la $(NETLIBS)
  upsimage_cgi_SOURCES = upsimage.c upsclient.h upsimagearg.h cgilib.c cgilib.h

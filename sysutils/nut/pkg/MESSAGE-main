@@ -7,5 +7,4 @@ ugen device names, use "sudo usbdevs -vd".
 
 Support for some network UPS devices requires additional libraries so this
 has been split into subpackages: nut-snmp (for SNMP-based devices) and
-nut-xml (for Eaton/MGE UPS with an XML/HTTP interface card). The nut-scan
-tool is also packaged separately.
+nut-xml (for Eaton/MGE UPS with an XML/HTTP interface card).

@@ -1,23 +1,16 @@
-# $OpenBSD: Makefile,v 1.54 2011/12/12 22:16:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2012/01/11 16:01:33 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
-COMMENT-scanner=	UPS scanning tool for nut
 
-DISTNAME=		nut-2.6.2
-REVISION-main=		2
-REVISION-cgi=		2
-REVISION-scanner=	1
-REVISION-snmp=		0
-REVISION-xml=		2
+DISTNAME=		nut-2.6.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
-PKGNAME-scanner=	${DISTNAME:S/-/-scanner-/}
 
 SHARED_LIBS +=  upsclient            1.0      # 1.0
 SHARED_LIBS +=  nutscan              0.0      # 1.0
@@ -34,13 +27,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 COMMON +=	c crypto pthread
-WANTLIB-main +=	${COMMON} m ssl usb usb-1.0
+WANTLIB-main +=	${COMMON} ltdl m ssl usb usb-1.0 wrap
 WANTLIB-xml +=	${COMMON} ${MODGETTEXT_WANTLIB} asn1 expat gssapi krb5 neon ssl z
 WANTLIB-cgi +=	${COMMON} ${MODGETTEXT_WANTLIB} X11 expat fontconfig
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
 WANTLIB-snmp +=	${COMMON} m netsnmp
-WANTLIB-scanner += ${WANTLIB-main} ${WANTLIB-snmp} ${WANTLIB-xml} upsclient
-WANTLIB-scanner += avahi-client avahi-common avahi-core dbus-1
 
 MASTER_SITES=		${HOMEPAGE}source/2.6/
 
@@ -59,13 +50,17 @@ USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 SYSCONFDIR=		${BASESYSCONFDIR}/nut
-CONFIGURE_ARGS+=	A2X=${LOCALBASE}/bin/a2x.py \
-			--datadir=${PREFIX}/share/ups \
+LDFLAGS+=		-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--datadir=${PREFIX}/share/ups \
 			--with-doc=html-single \
+			--with-hal-libs="" \
 			--with-ssl \
 			--with-statepath=/var/db/nut \
 			--with-user=${NUT_USER} \
-			--with-group=${NUT_USER}
+			--with-group=${NUT_USER} \
+			A2X=${LOCALBASE}/bin/a2x.py \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS}"
 
 PSEUDO_FLAVORS=		no_snmp no_xml
 FLAVOR?=
@@ -83,11 +78,8 @@ CONFIGURE_ARGS+=	--without-neon
 MULTI_PACKAGES+=	-xml
 .endif
 
-.if ! ${FLAVOR:L:Mno_xml} && ! ${FLAVOR:L:Mno_snmp}
-MULTI_PACKAGES+=	-scanner
-.endif
-
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
+			devel/libtool,-ltdl \
 			devel/libusb-compat
 RUN_DEPENDS-main=	# empty
 
@@ -99,12 +91,6 @@ RUN_DEPENDS-xml=	${RUN_DEPENDS} \
 
 LIB_DEPENDS-snmp=	net/net-snmp
 RUN_DEPENDS-snmp=	sysutils/nut
-
-LIB_DEPENDS-scanner=	${LIB_DEPENDS-main} \
-			${LIB_DEPENDS-snmp} \
-			${LIB_DEPENDS-xml} \
-			net/avahi \
-			sysutils/nut
 
 LIB_DEPENDS-cgi=	${LIB_DEPENDS} \
 			graphics/jpeg \

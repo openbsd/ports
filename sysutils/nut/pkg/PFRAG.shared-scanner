@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-scanner,v 1.1 2011/11/14 08:58:07 sthen Exp $
-@lib lib/libnutscan.so.${LIBnutscan_VERSION}
