@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2011/12/08 01:47:02 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.41 2012/01/11 02:42:48 nigel Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @conflict mozilla-firefox-*
@@ -53,8 +53,10 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fr.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_gl.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hr.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hsb.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hu.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ia.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_is.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_it.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_kmr.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_la.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_lt.dic
@@ -67,6 +69,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ru.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sh.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sl.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sv.dic
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_tr.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_uk.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/icons/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/icons/mozicon128.png

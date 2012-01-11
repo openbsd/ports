@@ -1,7 +1,7 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.5 2011/12/08 00:33:36 nigel Exp $
---- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Fri Nov  4 21:33:58 2011
-+++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Thu Nov 10 00:21:24 2011
-@@ -63,6 +63,7 @@
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.6 2012/01/11 02:42:48 nigel Exp $
+--- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Wed Dec  7 06:27:40 2011
++++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Sat Dec 10 16:53:04 2011
+@@ -64,6 +64,7 @@
  #include "nsISimpleEnumerator.h"
  #include "nsIDirectoryEnumerator.h"
  #include "nsIFile.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.5 2011/12
  #include "nsDirectoryServiceUtils.h"
  #include "nsDirectoryServiceDefs.h"
  #include "mozISpellI18NManager.h"
-@@ -370,6 +371,16 @@ mozHunspell::LoadDictionaryList()
+@@ -404,6 +405,16 @@ mozHunspell::LoadDictionaryList()
        appDir->AppendNative(NS_LITERAL_CSTRING("dictionaries"));
        LoadDictionariesFromDir(appDir);
      }
@@ -25,4 +25,4 @@ $OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.5 2011/12
 +    LoadDictionariesFromDir(mozillaDir);
    }
  
-   nsCOMPtr<nsISimpleEnumerator> dictDirs;
+   // find dictionaries from extensions requiring restart
