@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/01/06 16:27:26 robert Exp $
+# $OpenBSD: Makefile,v 1.79 2012/01/11 16:24:07 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			16.0.912.75
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -108,8 +109,9 @@ do-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
 	${INSTALL_PROGRAM} ${BUILDDIR}/chrome ${PREFIX}/chrome
-	${INSTALL_SCRIPT} ${FILESDIR}/chrome ${PREFIX}/bin
-	@perl -pi -e "s,TRUEPREFIX,${TRUEPREFIX},g" ${PREFIX}/bin/chrome
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
+		${FILESDIR}/chrome ${PREFIX}/bin/chrome
+	chmod ${BINMODE} ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${BUILDDIR}/chrome.pak ${PREFIX}/chrome
 	${INSTALL_DATA} ${BUILDDIR}/resources.pak ${PREFIX}/chrome
