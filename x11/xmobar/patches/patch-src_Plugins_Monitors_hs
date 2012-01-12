@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
---- src/Plugins/Monitors.hs.orig	Mon May  2 19:50:32 2011
-+++ src/Plugins/Monitors.hs	Mon May  2 19:55:06 2011
-@@ -21,19 +21,19 @@ import Plugins
+$OpenBSD: patch-src_Plugins_Monitors_hs,v 1.2 2012/01/12 21:42:07 dcoppa Exp $
+--- src/Plugins/Monitors.hs.orig	Tue Jan 10 20:31:19 2012
++++ src/Plugins/Monitors.hs	Tue Jan 10 22:01:23 2012
+@@ -21,20 +21,20 @@ import Plugins
  
  import Plugins.Monitors.Common ( runM )
  import Plugins.Monitors.Weather
@@ -16,6 +16,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 +--import Plugins.Monitors.Cpu
 +--import Plugins.Monitors.MultiCpu
  import Plugins.Monitors.Batt
+-import Plugins.Monitors.Bright
 -import Plugins.Monitors.Thermal
 -import Plugins.Monitors.ThermalZone
 -import Plugins.Monitors.CpuFreq
@@ -23,6 +24,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 -import Plugins.Monitors.Disk
 -import Plugins.Monitors.Top
 -import Plugins.Monitors.Uptime
++--import Plugins.Monitors.Bright
 +--import Plugins.Monitors.Thermal
 +--import Plugins.Monitors.ThermalZone
 +--import Plugins.Monitors.CpuFreq
@@ -33,7 +35,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
  #ifdef IWLIB
  import Plugins.Monitors.Wireless
  #endif
-@@ -45,22 +45,22 @@ import Plugins.Monitors.Volume
+@@ -46,23 +46,23 @@ import Plugins.Monitors.Volume
  #endif
  
  data Monitors = Weather      Station    Args Rate
@@ -58,11 +60,13 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 +--              | Cpu          Args       Rate
 +--              | MultiCpu     Args       Rate
                | Battery      Args       Rate
+-              | Brightness   Args       Rate
 -              | CpuFreq      Args       Rate
 -              | CoreTemp     Args       Rate
 -              | TopProc      Args       Rate
 -              | TopMem       Args       Rate
 -              | Uptime       Args       Rate
++--              | Brightness   Args       Rate
 +--              | CpuFreq      Args       Rate
 +--              | CoreTemp     Args       Rate
 +--              | TopProc      Args       Rate
@@ -71,7 +75,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
  #ifdef IWLIB
                | Wireless Interface  Args Rate
  #endif
-@@ -84,22 +84,22 @@ type DiskSpec  = [(String, String)]
+@@ -86,23 +86,23 @@ type DiskSpec  = [(String, String)]
  
  instance Exec Monitors where
      alias (Weather s _ _) = s
@@ -91,6 +95,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 +--    alias (MultiCpu _ _) = "multicpu"
      alias (Battery _ _) = "battery"
 -    alias (BatteryP _ _ _)= "battery"
+-    alias (Brightness _ _) = "bright"
 -    alias (CpuFreq _ _) = "cpufreq"
 -    alias (TopProc _ _) = "top"
 -    alias (TopMem _ _) = "topmem"
@@ -99,6 +104,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 -    alias (DiskIO _ _ _) = "diskio"
 -    alias (Uptime _ _) = "uptime"
 +--    alias (BatteryP _ _ _)= "battery"
++--    alias (Brightness _ _) = "bright"
 +--    alias (CpuFreq _ _) = "cpufreq"
 +--    alias (TopProc _ _) = "top"
 +--    alias (TopMem _ _) = "topmem"
@@ -109,7 +115,7 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
  #ifdef IWLIB
      alias (Wireless i _ _) = i ++ "wi"
  #endif
-@@ -109,24 +109,24 @@ instance Exec Monitors where
+@@ -112,25 +112,25 @@ instance Exec Monitors where
  #ifdef ALSA
      alias (Volume m c _ _) = m ++ ":" ++ c
  #endif
@@ -136,12 +142,14 @@ $OpenBSD: patch-src_Plugins_Monitors_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
 +--    start (Swap a r) = runM a swapConfig runSwap r
      start (Battery a r) = runM a battConfig runBatt r
 -    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
+-    start (Brightness a r) = runM a brightConfig runBright r
 -    start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
 -    start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
 -    start (DiskU s a r) = runM a diskUConfig (runDiskU s) r
 -    start (DiskIO s a r) = startDiskIO s a r
 -    start (Uptime a r) = runM a uptimeConfig runUptime r
 +--    start (BatteryP s a r) = runM a battConfig (runBatt' s) r
++--    start (Brightness a r) = runM a brightConfig runBright r
 +--    start (CpuFreq a r) = runM a cpuFreqConfig runCpuFreq r
 +--    start (CoreTemp a r) = runM a coreTempConfig runCoreTemp r
 +--    start (DiskU s a r) = runM a diskUConfig (runDiskU s) r

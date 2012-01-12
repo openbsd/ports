@@ -8,7 +8,7 @@ import Plugins.Monitors.Batt.Binding
 battConfig :: IO MConfig
 battConfig = mkMConfig
        "Batt: <left>" -- default template
-       ["left", "leftbar", "minleft", "status"] -- progress bar, percent left, minutes left, status
+       ["left", "leftbar", "minleft", "status"] -- percent left, progress bar, minutes left, status
 
 runBatt :: [String] -> Monitor String
 runBatt _ = do

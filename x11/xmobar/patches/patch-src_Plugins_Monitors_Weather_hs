@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Plugins_Monitors_Weather_hs,v 1.1 2012/01/12 21:42:07 dcoppa Exp $
+
+Use lynx(1) from base instead of curl
+
+--- src/Plugins/Monitors/Weather.hs.orig	Thu Jan 12 11:26:16 2012
++++ src/Plugins/Monitors/Weather.hs	Thu Jan 12 11:27:20 2012
+@@ -114,7 +114,7 @@ defUrl = "http://weather.noaa.gov/pub/data/observation
+ 
+ getData :: String -> IO String
+ getData url=
+-        do (i,o,e,p) <- runInteractiveCommand ("curl " ++ defUrl ++ url ++ ".TXT")
++        do (i,o,e,p) <- runInteractiveCommand ("lynx -source " ++ defUrl ++ url ++ ".TXT")
+            exit <- waitForProcess p
+            let closeHandles = do hClose o
+                                  hClose i
