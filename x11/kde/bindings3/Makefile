@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2012/01/12 23:52:20 naddy Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -40,6 +40,6 @@ SEPARATE_BUILD =	flavored
 CONFIGURE_ENV +=	DO_NOT_COMPILE=python
 
 GNU_ARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS =		GNU_ARCH OSREV
+SUBST_VARS =		GNU_ARCH
 
 .include <bsd.port.mk>
