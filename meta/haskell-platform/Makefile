@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/31 22:25:29 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/01/12 20:20:41 kili Exp $
 
 COMMENT =	Haskell platform meta-package
 
@@ -21,8 +21,7 @@ RUN_DEPENDS +=	lang/ghc>=7.0.0,<7.1 \
 		lang/ghc,-doc>=7.0.0,<7.1
 
 # Additional libraries:
-# xhtml-3000.2.0.4 required, but xhtml-3000.2.0.1 included in our
-# ghc. This will be fixed soon.
+# xhtml-3000.2.0.4 is included in our ghc package.
 RUN_DEPENDS +=	www/hs-cgi=3001.1.7.4 \
 		devel/hs-fgl=5.4.2.4 \
 		graphics/hs-GLUT=2.1.2.1 \
