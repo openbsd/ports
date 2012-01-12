@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_ServerList_cpp,v 1.1 2012/01/12 11:30:45 dcoppa Exp $
+
+Bugfix: CServerList::LoadStaticServers() failed on empty lines
+(upstream git commit e298b38e9ce22e2861d34c5d7f6e7b2e009476b1)
+
+--- src/ServerList.cpp.orig	Wed Jan 11 16:34:34 2012
++++ src/ServerList.cpp	Wed Jan 11 16:35:21 2012
+@@ -455,7 +455,7 @@ void CServerList::LoadStaticServers()
+ 		wxString line = f.ReadLine();
+ 		
+ 		// Skip comments
+-		if ( line.GetChar(0) == '#' || line.GetChar(0) == '/') {
++		if (line.IsEmpty() || line.GetChar(0) == '#' || line.GetChar(0) == '/') {
+ 			continue;
+ 		}
+ 
