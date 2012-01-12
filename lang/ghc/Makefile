@@ -1,17 +1,23 @@
-# $OpenBSD: Makefile,v 1.62 2011/12/27 20:53:01 kili Exp $
+# $OpenBSD: Makefile,v 1.63 2012/01/12 20:13:17 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		2
+REVISION-main =		3
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
+REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
 BIN_VER =		7.0.4.20111023
+
+# xhtml replacement version (for meta/haskell-platform)
+XHTML_VER =		3000.2.0.4
+
+SUBST_VARS +=		XHTML_VER
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regress.
@@ -44,6 +50,7 @@ WANTLIB-doc =
 MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
+MASTER_SITES1 =		http://hackage.haskell.org/packages/archive/xhtml/${XHTML_VER}/
 
 DIST_SUBDIR =		ghc
 
@@ -53,6 +60,7 @@ BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
 
 DISTFILES =		ghc-${MODGHC_VER}-src.tar.bz2 \
 			testsuite-${MODGHC_VER}.tar.bz2 \
+			xhtml-${XHTML_VER}.tar.gz:1 \
 			${BINDISTFILE}
 
 .for m in amd64 i386
@@ -106,6 +114,11 @@ post-extract:
 . for f in ghc.mk doc/ghc.mk haddock.wrapper
 	cp -p ${WRKSRC}/utils/haddock{-ghcdist,}/$f
 . endfor
+# - Replace libraries/xhtml.
+	cp ${WRKSRC}/libraries/xhtml/ghc.mk ${WRKDIR}/xhtml-${XHTML_VER} 
+	cp ${WRKSRC}/libraries/xhtml/GNUmakefile ${WRKDIR}/xhtml-${XHTML_VER} 
+	mv ${WRKSRC}/libraries/xhtml{,-ghcdist}
+	mv ${WRKDIR}/xhtml-${XHTML_VER} ${WRKSRC}/libraries/xhtml
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/index.html \

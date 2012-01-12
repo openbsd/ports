@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/06/30 21:26:16 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2012/01/12 20:13:17 kili Exp $
 @conflict hs-xhtml-*
 @pkgpath lang/ghc
 @pkgpath www/hs-xhtml
@@ -2020,44 +2020,44 @@ lib/ghc/utf8-string-0.3.6/System/IO/UTF8.hi
 lib/ghc/utf8-string-0.3.6/System/IO/UTF8.p_hi
 lib/ghc/utf8-string-0.3.6/libHSutf8-string-0.3.6.a
 lib/ghc/utf8-string-0.3.6/libHSutf8-string-0.3.6_p.a
+lib/ghc/xhtml-${XHTML_VER}/
+lib/ghc/xhtml-${XHTML_VER}/HSxhtml-${XHTML_VER}.o
+lib/ghc/xhtml-${XHTML_VER}/Text/
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/BlockTable.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/BlockTable.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Debug.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Debug.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Extras.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Extras.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset/
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset/Attributes.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset/Attributes.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset/Elements.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Frameset/Elements.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Internals.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Internals.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict/
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict/Attributes.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict/Attributes.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict/Elements.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Strict/Elements.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Table.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Table.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Attributes.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Attributes.p_hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.hi
+lib/ghc/xhtml-${XHTML_VER}/Text/XHtml/Transitional/Elements.p_hi
+lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}.a
+lib/ghc/xhtml-${XHTML_VER}/libHSxhtml-${XHTML_VER}_p.a
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/register.sh
-lib/ghc/xhtml-3000.2.0.1/
-lib/ghc/xhtml-3000.2.0.1/HSxhtml-3000.2.0.1.o
-lib/ghc/xhtml-3000.2.0.1/Text/
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/BlockTable.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/BlockTable.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Debug.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Debug.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Extras.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Extras.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset/
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset/Attributes.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset/Attributes.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset/Elements.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Frameset/Elements.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Internals.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Internals.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict/
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict/Attributes.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict/Attributes.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict/Elements.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Strict/Elements.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Table.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Table.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional/
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional/Attributes.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional/Attributes.p_hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional/Elements.hi
-lib/ghc/xhtml-3000.2.0.1/Text/XHtml/Transitional/Elements.p_hi
-lib/ghc/xhtml-3000.2.0.1/libHSxhtml-3000.2.0.1.a
-lib/ghc/xhtml-3000.2.0.1/libHSxhtml-3000.2.0.1_p.a
 @man man/man1/ghc.1
