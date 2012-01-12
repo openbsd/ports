@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lib,v 1.6 2011/04/04 22:40:55 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.7 2012/01/12 11:11:58 dcoppa Exp $
 lib/ghc/
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
@@ -18,5 +18,5 @@ lib/ghc/${DISTNAME}/register.sh
 lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/CONFIG
-share/doc/hs-${DISTNAME}/LICENSE
+@comment share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/xmonad.hs

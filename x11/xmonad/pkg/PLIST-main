@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/10/28 13:55:21 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2012/01/12 11:11:58 dcoppa Exp $
 @pkgpath x11/xmonad
 @bin bin/xmonad
 @man man/man1/xmonad.1
-@comment share/doc/hs-${DISTNAME}/
-@comment share/doc/hs-${DISTNAME}/LICENSE

@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_xmonad_1,v 1.1 2011/08/21 17:32:28 kili Exp $
---- man/xmonad.1.orig	Fri Dec 24 01:42:54 2010
-+++ man/xmonad.1	Sun Aug 21 19:10:40 2011
-@@ -87,7 +87,7 @@ Launch terminal
+$OpenBSD: patch-man_xmonad_1,v 1.2 2012/01/12 11:11:58 dcoppa Exp $
+--- man/xmonad.1.orig	Sat Nov 19 00:14:36 2011
++++ man/xmonad.1	Wed Jan 11 10:04:38 2012
+@@ -96,7 +96,7 @@ Launch terminal
  .RE
  .TP
  .B mod-p
