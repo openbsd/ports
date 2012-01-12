@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_net_c,v 1.1 2012/01/12 23:37:47 gsoares Exp $
+--- src/net.c.orig	Tue Apr 26 23:36:45 2011
++++ src/net.c	Tue Jan 10 21:47:28 2012
+@@ -37,6 +37,7 @@
+ # include <sys/socket.h>
+ #endif
+ #ifdef HAVE_ARPA_INET_H
++# include <netinet/in.h>
+ # include <arpa/inet.h>
+ #endif
+ #ifdef HAVE_NETDB_H
