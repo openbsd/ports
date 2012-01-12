@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2011/07/18 20:10:11 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2012/01/12 03:17:08 bentley Exp $
 
 CATEGORIES +=	www/netsurf
 
@@ -9,6 +9,8 @@ DISTNAME ?=	${NETSURF_PROJECT}-${NETSURF_VERSION}-src
 
 HOMEPAGE ?=	http://www.netsurf-browser.org/projects/${NETSURF_PROJECT}/
 MASTER_SITES ?=	http://www.netsurf-browser.org/projects/releases/
+
+WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 
 # MIT for libs / GPLv2 for netsurf
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/18 20:10:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/12 03:17:08 bentley Exp $
 @bin bin/netsurf
 share/netsurf/
 share/netsurf/C/
@@ -27,6 +27,7 @@ share/netsurf/hotlist.glade
 share/netsurf/icons/
 share/netsurf/icons/content.png
 share/netsurf/icons/directory.png
+share/netsurf/icons/search.png
 share/netsurf/internal.css
 share/netsurf/it/
 share/netsurf/it/Messages
