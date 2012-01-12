@@ -1,7 +1,7 @@
-$OpenBSD: patch-syshead_h,v 1.1 2009/03/08 15:56:52 martin Exp $
---- syshead.h.orig	Fri Mar  6 13:56:33 2009
-+++ syshead.h	Fri Mar  6 13:56:47 2009
-@@ -37,7 +37,7 @@
+$OpenBSD: patch-syshead_h,v 1.2 2012/01/12 08:15:30 sthen Exp $
+--- syshead.h.orig	Thu Apr 21 20:13:34 2011
++++ syshead.h	Mon Jun 20 10:09:54 2011
+@@ -33,7 +33,7 @@
  #endif
  
  /* branch prediction hints */

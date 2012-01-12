@@ -1,7 +1,7 @@
-$OpenBSD: patch-route_c,v 1.5 2010/11/10 13:50:04 fkr Exp $
---- route.c.orig	Thu Nov  4 20:29:40 2010
-+++ route.c	Fri Nov  5 21:12:15 2010
-@@ -1948,7 +1948,7 @@ get_default_gateway (in_addr_t *ret, in_addr_t *netmas
+$OpenBSD: patch-route_c,v 1.6 2012/01/12 08:15:30 sthen Exp $
+--- route.c.orig	Mon Feb 21 16:38:10 2011
++++ route.c	Tue Mar 22 23:00:56 2011
+@@ -1926,7 +1926,7 @@ get_default_gateway (in_addr_t *ret, in_addr_t *netmas
      }
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-route_c,v 1.5 2010/11/10 13:50:04 fkr Exp $
  
  #include <sys/types.h>
  #include <sys/socket.h>
-@@ -1997,6 +1997,169 @@ struct rt_msghdr {
+@@ -1975,6 +1975,169 @@ struct rt_msghdr {
  	int	rtm_errno;	/* why failed */
  	int	rtm_use;	/* from rtentry */
  	u_long	rtm_inits;	/* which metrics we are initializing */

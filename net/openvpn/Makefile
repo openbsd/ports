@@ -1,38 +1,32 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/02 16:45:02 stsp Exp $
+# $OpenBSD: Makefile,v 1.38 2012/01/12 08:15:30 sthen Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-VERSION=	2.1.4
-DISTNAME=	openvpn-${VERSION}
-REVISION=	0
+DISTNAME=	openvpn-2.2.2
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
 
-MAINTAINER=	Felix Kronlage <fkr@openbsd.org>	
+MAINTAINER=	Felix Kronlage <fkr@openbsd.org>
 
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto ssl pthread lzo2
+WANTLIB += c crypto ssl lzo2
 
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 
 LIB_DEPENDS=	archivers/lzo2
 
 SEPARATE_BUILD=	concurrent
+CONFIGURE_STYLE= gnu
 
-FAKE=		lib
-CONFIGURE_STYLE=gnu
-
-CONFIGURE_ARGS+=--enable-pthread \
-		--with-lzo-headers=${DEPBASE}/include \
+CONFIGURE_ARGS+= --with-lzo-headers=${DEPBASE}/include \
 		--with-lzo-lib=${DEPBASE}/lib \
 		--enable-password-save
-USE_GROFF =	Yes
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 

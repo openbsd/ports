@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/11/02 16:45:02 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/01/12 08:15:30 sthen Exp $
 @newgroup _openvpn:577
 @newuser _openvpn:577:_openvpn:daemon:OpenVPN Daemon:/nonexistent:/sbin/nologin
 @man man/man8/openvpn.8
 @bin sbin/openvpn
-@comment share/doc/openvpn/
+share/doc/openvpn/
+share/doc/openvpn/management-notes.txt
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/openvpn/
 share/examples/openvpn/easy-rsa/
@@ -42,7 +43,8 @@ share/examples/openvpn/easy-rsa/2.0/clean-all
 share/examples/openvpn/easy-rsa/2.0/inherit-inter
 share/examples/openvpn/easy-rsa/2.0/list-crl
 @comment share/examples/openvpn/easy-rsa/2.0/openssl-0.9.6.cnf
-share/examples/openvpn/easy-rsa/2.0/openssl.cnf
+@comment share/examples/openvpn/easy-rsa/2.0/openssl-0.9.8.cnf
+share/examples/openvpn/easy-rsa/2.0/openssl-1.0.0.cnf
 share/examples/openvpn/easy-rsa/2.0/pkitool
 share/examples/openvpn/easy-rsa/2.0/revoke-full
 share/examples/openvpn/easy-rsa/2.0/sign-req
@@ -77,6 +79,7 @@ share/examples/openvpn/sample-keys/pass.key
 share/examples/openvpn/sample-keys/pkcs12.p12
 share/examples/openvpn/sample-keys/server.crt
 share/examples/openvpn/sample-keys/server.key
+share/examples/openvpn/sample-keys/ta.key
 share/examples/openvpn/sample-scripts/
 share/examples/openvpn/sample-scripts/auth-pam.pl
 share/examples/openvpn/sample-scripts/bridge-start

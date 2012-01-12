@@ -1,7 +1,7 @@
-$OpenBSD: patch-openvpn_8,v 1.3 2010/08/30 18:32:20 fkr Exp $
---- openvpn.8.orig	Tue Aug 10 19:27:02 2010
-+++ openvpn.8	Sun Aug 22 16:10:23 2010
-@@ -1326,6 +1326,11 @@ on both client and server for maximum effect.
+$OpenBSD: patch-openvpn_8,v 1.4 2012/01/12 08:15:30 sthen Exp $
+--- openvpn.8.orig	Fri Jun 24 07:13:39 2011
++++ openvpn.8	Fri Jul  8 14:30:59 2011
+@@ -1357,6 +1357,11 @@ on both client and server for maximum effect.
  Currently defaults to 100.
  .\"*********************************************************
  .TP
@@ -10,6 +10,6 @@ $OpenBSD: patch-openvpn_8,v 1.3 2010/08/30 18:32:20 fkr Exp $
 +Defaults to 0.
 +.\"*********************************************************
 +.TP
- .B --shaper n
+ .B \-\-shaper n
  Limit bandwidth of outgoing tunnel data to
  .B n
