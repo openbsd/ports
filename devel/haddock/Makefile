@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/12/27 21:17:36 kili Exp $
+# $OpenBSD: Makefile,v 1.36 2012/01/12 20:20:05 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -7,7 +7,7 @@ DISTNAME =	haddock-2.9.2
 PKGNAME-main =	${DISTNAME}
 REVISION-main =	2
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-lib =	1
+REVISION-lib =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
