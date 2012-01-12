@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/01/08 19:42:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2012/01/12 13:59:29 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
 DISTNAME=	accountsservice-0.6.15
 EXTRACT_SUFX=	.tar.xz
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 kvm pcre polkit-gobject-1 pthread
 WANTLIB += z
 
