@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_cmLocalUnixMakefileGenerator3_cxx,v 1.6 2012/01/12 13:14:33 dcoppa Exp $
+
+Fix: exit the loop when we have determined the language
+(upstream git commit c9597259eac7bf894dbf88a3b78bebedc183440b)
+
+--- Source/cmLocalUnixMakefileGenerator3.cxx.orig	Thu Jan 12 13:50:29 2012
++++ Source/cmLocalUnixMakefileGenerator3.cxx	Thu Jan 12 13:51:02 2012
+@@ -232,6 +232,7 @@ void cmLocalUnixMakefileGenerator3::WriteLocalMakefile
+       if(ei->Language == "C" || ei->Language == "CXX")
+         {
+         lang_is_c_or_cxx = true;
++        break;
+         }
+       }
+ 

@@ -1,9 +1,24 @@
-$OpenBSD: patch-Modules_FindRuby_cmake,v 1.3 2012/01/07 22:14:51 dcoppa Exp $
---- Modules/FindRuby.cmake.orig	Tue Oct  4 18:09:24 2011
-+++ Modules/FindRuby.cmake	Sat Dec  3 14:16:36 2011
-@@ -62,36 +62,36 @@ FIND_PROGRAM(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EX
+$OpenBSD: patch-Modules_FindRuby_cmake,v 1.4 2012/01/12 13:14:33 dcoppa Exp $
+
+Use 'RbConfig::CONFIG' instead of deprecated 'Config::CONFIG'
+
+Fix usage of RUBY_VERSION_MAJOR
+(upstream git commit 93c55ec1421a2cf43dbcaf9afd0528c8dda42de5)
+
+Add more possible library names
+(upstream git commit 3db2c8b9eafe4cc1d3a6e9d1f3bfc90764544d01)
+
+Add more debug output
+(upstream git commit a9bca052f8ff013d8f47cf365495d2c8d0a2e70f)
+
+--- Modules/FindRuby.cmake.orig	Fri Dec 30 17:49:56 2011
++++ Modules/FindRuby.cmake	Thu Jan 12 13:29:30 2012
+@@ -60,38 +60,38 @@ ENDIF("${Ruby_FIND_VERSION_SHORT_NODOT}" VERSION_LESS 
+ FIND_PROGRAM(RUBY_EXECUTABLE NAMES ${_RUBY_POSSIBLE_EXECUTABLE_NAMES})
  
- IF(RUBY_EXECUTABLE  AND NOT  RUBY_MAJOR_VERSION)
+ 
+-IF(RUBY_EXECUTABLE  AND NOT  RUBY_MAJOR_VERSION)
++IF(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
    # query the ruby version
 -   EXECUTE_PROCESS(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print Config::CONFIG['MAJOR']"
 +   EXECUTE_PROCESS(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['MAJOR']"
@@ -60,4 +75,33 @@ $OpenBSD: patch-Modules_FindRuby_cmake,v 1.3 2012/01/07 22:14:51 dcoppa Exp $
 +      EXECUTE_PROCESS(COMMAND ${RUBY_EXECUTABLE} -r rbconfig -e "print RbConfig::CONFIG['vendorarchdir']"
           OUTPUT_VARIABLE RUBY_VENDORARCH_DIR)
     ENDIF(RUBY_HAS_VENDOR_RUBY)
+ 
+@@ -135,7 +135,7 @@ IF(RUBY_EXECUTABLE  AND NOT  RUBY_MAJOR_VERSION)
+      RUBY_VERSION_MINOR
+      RUBY_VERSION_PATCH
+      )
+-ENDIF(RUBY_EXECUTABLE  AND NOT  RUBY_MAJOR_VERSION)
++ENDIF(RUBY_EXECUTABLE  AND NOT  RUBY_VERSION_MAJOR)
+ 
+ # In case RUBY_EXECUTABLE could not be executed (e.g. cross compiling)
+ # try to detect which version we found. This is not too good.
+@@ -180,7 +180,7 @@ ENDIF( ${Ruby_FIND_VERSION_SHORT_NODOT} GREATER 18  OR
+ 
+ 
+ # Determine the list of possible names for the ruby library
+-SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT})
++SET(_RUBY_POSSIBLE_LIB_NAMES ruby ruby-static ruby${_RUBY_VERSION_SHORT} ruby${_RUBY_VERSION_SHORT_NODOT} ruby-${_RUBY_VERSION_SHORT} ruby-${RUBY_VERSION})
+ 
+ IF(WIN32)
+    SET( _RUBY_MSVC_RUNTIME "" )
+@@ -224,6 +224,10 @@ IF(_RUBY_DEBUG_OUTPUT)
+    MESSAGE(STATUS "RUBY_POSSIBLE_LIB_DIR: ${RUBY_POSSIBLE_LIB_DIR}")
+    MESSAGE(STATUS "Found RUBY_VERSION: \"${RUBY_VERSION}\" , short: \"${_RUBY_VERSION_SHORT}\", nodot: \"${_RUBY_VERSION_SHORT_NODOT}\"")
+    MESSAGE(STATUS "_RUBY_REQUIRED_VARS: ${_RUBY_REQUIRED_VARS}")
++   MESSAGE(STATUS "RUBY_EXECUTABLE: ${RUBY_EXECUTABLE}")
++   MESSAGE(STATUS "RUBY_LIBRARY: ${RUBY_LIBRARY}")
++   MESSAGE(STATUS "RUBY_INCLUDE_DIR: ${RUBY_INCLUDE_DIR}")
++   MESSAGE(STATUS "RUBY_CONFIG_INCLUDE_DIR: ${RUBY_CONFIG_INCLUDE_DIR}")
+    MESSAGE(STATUS "--------------------")
+ ENDIF(_RUBY_DEBUG_OUTPUT)
  
