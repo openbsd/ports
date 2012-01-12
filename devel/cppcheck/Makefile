@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/26 17:37:13 gsoares Exp $
+# $OpenBSD: Makefile,v 1.10 2012/01/12 14:04:25 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.51
+DISTNAME =		cppcheck-1.52
 
 CATEGORIES =		devel
 
@@ -27,8 +27,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
 REGRESS_TARGET = 	test
-MAKE_FLAGS =		BIN=${PREFIX}/bin CXX="${CXX}" \
-			CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include -L${PREFIX}/lib"
+MAKE_FLAGS =		BIN=${PREFIX}/bin \
+			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+			CPPFLAGS="-DHAVE_RULES -I${PREFIX}/include" \
+			LDFLAGS="-L${PREFIX}/lib -lpcre"
 
 USE_GMAKE =		Yes
 
