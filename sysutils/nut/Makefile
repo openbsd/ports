@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/01/11 16:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2012/01/12 11:39:36 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
@@ -6,6 +6,7 @@ COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
 DISTNAME=		nut-2.6.3
+REVISION-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -45,7 +46,7 @@ BUILD_DEPENDS+=		textproc/asciidoc \
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
 NUT_ID=			529
-SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
+SUBST_VARS=		BASESYSCONFDIR NUT_USER NUT_ID WEB_ROOT
 USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
