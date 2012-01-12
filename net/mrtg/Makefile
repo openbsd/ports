@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.80 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2012/01/12 10:44:59 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
-DISTNAME=	mrtg-2.17.3
-REVISION=	0
+DISTNAME=	mrtg-2.17.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -15,11 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# XXX 2.17.3 release tar includes a link to an existing file causing
-# an error with tar(1) or bsdtar.
-BUILD_DEPENDS=	archivers/gtar
-TAR=		${LOCALBASE}/bin/gtar
 
 WANTLIB=	c jpeg m png z gd>=18
 
