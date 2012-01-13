@@ -1,25 +1,26 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/01/13 12:24:18 sthen Exp $
 
 COMMENT=	watch for changes to files, cross-platform style
 
 MODULES=	cpan
-DISTNAME=	File-ChangeNotify-0.13
-REVISION=	0
+DISTNAME=	File-ChangeNotify-0.20
 CATEGORIES=	devel
 
-# Perl
+# Artistic 2.0
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
 
 RUN_DEPENDS =	devel/p5-Class-MOP \
 		devel/p5-Moose \
 		devel/p5-MooseX-Params-Validate \
-		devel/p5-MooseX-SemiAffordanceAccessor
+		devel/p5-MooseX-SemiAffordanceAccessor \
+		devel/p5-namespace-autoclean
+
+REGRESS_DEPENDS =	devel/p5-Test-Exception
 
 MAKE_ENV +=	TEST_POD=1 IS_MAINTAINER=1
 
