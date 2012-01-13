@@ -1,0 +1,11 @@
+$OpenBSD: patch-upnpsoap_c,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+--- upnpsoap.c.orig	Sat Jan  7 09:32:13 2012
++++ upnpsoap.c	Sat Jan  7 09:32:32 2012
+@@ -12,6 +12,7 @@
+ #include <unistd.h>
+ #include <syslog.h>
+ #include <sys/types.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netinet/in.h>
+ #include <netdb.h>

@@ -1,0 +1,11 @@
+$OpenBSD: patch-upnphttp_c,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+--- upnphttp.c.orig	Sat Jan  7 09:31:10 2012
++++ upnphttp.c	Sat Jan  7 09:31:49 2012
+@@ -13,6 +13,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/param.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <syslog.h>
+ #include <ctype.h>

@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Before starting miniupnpd(1), a new universally unique identifier (UUID)
+needs to be generated for the gateway and "uuid=" set accordingly in
+${SYSCONFDIR}/miniupnpd.conf. To do so, either uuid(1) from the uuid
+package or uuidgen(1) from the e2fsprogs package can be used.
+
+Then the following pf(4) anchor needs to be added to pf.conf(5):
+anchor "miniupnpd"
+
+At last, multicast needs to be allowed on the internal interface of the
+gateway. To do so the following line needs to be added to pf.conf(5):
+pass on $internal_interface from any to { 224.0.0.2, 239.0.0.0/8 }
+
+Current miniupnpd(1) anchor rules can be checked by using:
+    pfctl -a "miniupnpd" -s rules
+and flushed with:
+    pfctl -a "miniupnpd" -F all

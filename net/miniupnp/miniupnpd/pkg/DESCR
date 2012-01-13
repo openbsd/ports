@@ -1,0 +1,3 @@
+The miniUPnP daemon is an UPnP IGD (Internet Gateway Device) which
+provides NAT traversal services to any UPnP enabled client as well as
+NAT Port Mapping Protocol (NAT-PMP) on the network.

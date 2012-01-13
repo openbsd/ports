@@ -1,0 +1,11 @@
+$OpenBSD: patch-upnppermissions_c,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+--- upnppermissions.c.orig	Sat Jan  7 09:34:12 2012
++++ upnppermissions.c	Sat Jan  7 09:34:19 2012
+@@ -10,6 +10,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <syslog.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <unistd.h>
+ #include "config.h"

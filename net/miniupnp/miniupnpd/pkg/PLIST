@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+@man man/man1/miniupnpd.1
+@bin sbin/miniupnpd
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/miniupnpd/
+share/examples/miniupnpd/miniupnpd.conf
+@sample ${SYSCONFDIR}/miniupnpd.conf
+@rcscript ${RCDIR}/miniupnpd

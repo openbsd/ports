@@ -1,0 +1,63 @@
+$OpenBSD: patch-miniupnpd_conf,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+--- miniupnpd.conf.orig	Tue Dec 22 23:49:09 2009
++++ miniupnpd.conf	Sat Jan  7 10:43:25 2012
+@@ -1,6 +1,5 @@
+ # WAN network interface
+-#ext_ifname=eth0
+-ext_ifname=xl1
++ext_ifname=em0
+ # if the WAN interface has several IP addresses, you
+ # can specify the one to use below
+ #ext_ip=
+@@ -24,7 +23,7 @@ port=0
+ #minissdpdsocket=/var/run/minissdpd.sock
+ 
+ # enable NAT-PMP support (default is no)
+-enable_natpmp=yes
++enable_natpmp=no
+ 
+ # enable UPNP support (default is yes)
+ enable_upnp=yes
+@@ -43,8 +42,7 @@ bitrate_down=10000000
+ 
+ # "secure" mode : when enabled, UPnP client are allowed to add mappings only
+ # to their IP.
+-#secure_mode=yes
+-secure_mode=no
++secure_mode=yes
+ 
+ # default presentation url is http address on port 80
+ # If set to an empty string, no presentationURL element will appear
+@@ -57,7 +55,6 @@ system_uptime=yes
+ 
+ # notify interval in seconds. default is 30 seconds.
+ #notify_interval=240
+-notify_interval=60
+ 
+ # unused rules cleaning.
+ # never remove any rule before this threshold for the number
+@@ -82,8 +79,8 @@ clean_ruleset_interval=600
+ # active when compiled with PF_ENABLE_FILTER_RULES (see config.h file)
+ #quickrules=no
+ 
+-# uuid : generate your own with "make genuuid"
+-uuid=fc4ec57e-b051-11db-88f8-0060085db3f6
++# uuid : generate your own with uuid(1) or uuidgen(1)
++uuid=00000000-0000-0000-0000-000000000000
+ 
+ # serial and model number the daemon will report to clients
+ # in its XML description
+@@ -97,9 +94,8 @@ model_number=1
+ # ip/mask format must be nn.nn.nn.nn/nn
+ # it is advised to only allow redirection of port above 1024
+ # and to finish the rule set with "deny 0-65535 0.0.0.0/0 0-65535"
+-allow 1024-65535 192.168.0.0/24 1024-65535
+-allow 1024-65535 192.168.1.0/24 1024-65535
+-allow 1024-65535 192.168.0.0/23 22
+-allow 12345 192.168.7.113/32 54321
++#allow 1024-65535 192.168.0.0/24 1024-65535
++#allow 1024-65535 192.168.1.0/24 1024-65535
++#allow 1024-65535 192.168.0.0/23 22
++#allow 12345 192.168.7.113/32 54321
+ deny 0-65535 0.0.0.0/0 0-65535
+-

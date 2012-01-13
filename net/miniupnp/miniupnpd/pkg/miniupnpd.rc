@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: miniupnpd.rc,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/miniupnpd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
