@@ -1,6 +1,6 @@
---- ext/openssl/config0.m4.orig.port	Thu Aug 25 19:08:39 2011
-+++ ext/openssl/config0.m4	Thu Aug 25 19:09:03 2011
-@@ -16,7 +16,7 @@
+--- ext/openssl/config0.m4.orig.port	Fri Mar 18 18:47:09 2011
++++ ext/openssl/config0.m4	Fri Jan 13 18:01:58 2012
+@@ -16,7 +16,7 @@ if test "$PHP_OPENSSL" != "no"; then
      PHP_SETUP_KERBEROS(OPENSSL_SHARED_LIBADD)
    fi
  

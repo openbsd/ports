@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-development,v 1.3 2011/06/18 19:49:50 sthen Exp $
---- php.ini-development.orig.port	Tue Dec  7 23:53:51 2010
-+++ php.ini-development	Sat Jun 18 12:14:52 2011
+$OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
+--- php.ini-development.orig.port	Wed Feb  9 00:25:44 2011
++++ php.ini-development	Fri Jan 13 18:01:59 2012
 @@ -781,11 +781,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-development,v 1.3 2011/06/18 19:49:50 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -1076,16 +1074,6 @@ pdo_mysql.default_socket=
+@@ -1080,16 +1078,6 @@ pdo_mysql.default_socket=
  define_syslog_variables  = Off
  
  [mail function]
@@ -48,7 +48,7 @@ $OpenBSD: patch-php_ini-development,v 1.3 2011/06/18 19:49:50 sthen Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ; http://php.net/sendmail-path
  ;sendmail_path =
-@@ -1884,6 +1872,446 @@ ldap.max_links = -1
+@@ -1888,6 +1876,446 @@ ldap.max_links = -1
  
  [dba]
  ;dba.default_handler=
