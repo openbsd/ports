@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.541 2011/12/15 22:19:51 fgsch Exp $
+# $OpenBSD: Makefile,v 1.542 2012/01/13 20:35:44 rpointel Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -387,6 +387,7 @@
      SUBDIR += py-requests
      SUBDIR += py-routes
      SUBDIR += py-tempita
+     SUBDIR += py-tornado
      SUBDIR += py-turbogears
      SUBDIR += py-weberror
      SUBDIR += py-webhelpers
