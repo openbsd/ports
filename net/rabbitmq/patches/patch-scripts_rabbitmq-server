@@ -1,5 +1,6 @@
---- scripts/rabbitmq-server.orig	Tue Mar 22 18:43:29 2011
-+++ scripts/rabbitmq-server	Mon Apr  4 20:19:59 2011
+$OpenBSD: patch-scripts_rabbitmq-server,v 1.3 2012/01/13 20:54:25 sthen Exp $
+--- scripts/rabbitmq-server.orig	Fri Dec 16 12:24:15 2011
++++ scripts/rabbitmq-server	Fri Jan 13 20:23:02 2012
 @@ -19,7 +19,7 @@ SERVER_ERL_ARGS="+K true +A30 +P 1048576 \
  -kernel inet_default_connect_options [{nodelay,true}]"
  CONFIG_FILE=/etc/rabbitmq/rabbitmq
@@ -7,5 +8,5 @@
 -MNESIA_BASE=/var/lib/rabbitmq/mnesia
 +MNESIA_BASE=/var/rabbitmq/mnesia
  SERVER_START_ARGS=
+ ENABLED_PLUGINS_FILE=/etc/rabbitmq/enabled_plugins
  
- . `dirname $0`/rabbitmq-env

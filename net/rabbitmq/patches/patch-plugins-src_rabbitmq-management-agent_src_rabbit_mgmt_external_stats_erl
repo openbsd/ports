@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins-src_rabbitmq-management-agent_src_rabbit_mgmt_external_stats_erl,v 1.1 2012/01/13 20:54:25 sthen Exp $
+--- plugins-src/rabbitmq-management-agent/src/rabbit_mgmt_external_stats.erl.orig	Tue Dec 20 23:10:43 2011
++++ plugins-src/rabbitmq-management-agent/src/rabbit_mgmt_external_stats.erl	Tue Dec 20 23:28:20 2011
+@@ -69,6 +69,12 @@ get_used_fd({unix, linux}) ->
+         {error, _}  -> get_used_fd({unix, generic})
+     end;
+ 
++get_used_fd({unix, openbsd}) ->
++    length(lists:filter(
++        fun (Line) -> hd(lists:nth(4, string:tokens(Line, " "))) < 58 end,
++        string:tokens(os:cmd("fstat -p " ++ os:getpid()), "\n")
++    ));
++
+ get_used_fd({unix, _}) ->
+     get_used_fd_lsof();
+ 
