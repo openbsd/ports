@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mod_compress_c,v 1.3 2012/01/13 23:02:15 sthen Exp $
+
+Fix handling if etags are disabled but cache-dir is set - may lead to double response.
+
+--- src/mod_compress.c.orig	Fri Jan 13 16:26:52 2012
++++ src/mod_compress.c	Fri Jan 13 16:28:29 2012
+@@ -826,7 +826,7 @@ PHYSICALPATH_FUNC(mod_compress_physical) {
+ 					}
+ 					response_header_overwrite(srv, con, CONST_STR_LEN("Content-Type"), CONST_BUF_LEN(sce->content_type));
+ 					/* let mod_staticfile handle the cached compressed files, physical path was modified */
+-					return p->conf.compress_cache_dir->used ? HANDLER_GO_ON : HANDLER_FINISHED;
++					return (use_etag && p->conf.compress_cache_dir->used) ? HANDLER_GO_ON : HANDLER_FINISHED;
+ 				}
+ 			}
+ 		}
