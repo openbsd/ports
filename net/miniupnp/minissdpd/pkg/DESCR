@@ -1,0 +1,7 @@
+minissdpd(1) listen to SSDP traffic on the network so miniupnpc(3) does
+not need to perform the discovery process and can work faster to set up
+a redirection. minissdpd(1) is also able to reply to M-SEARCH SSDP
+requests on behalf on miniupnpd(1) or other UPnP server software. That
+is useful in order to host several UPnP services on the same machine.
+miniupnpd(1) natively uses minissdpd(1) if run on the same machine, but
+other UPnP software may require to be patched.
