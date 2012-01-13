@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/17 16:06:32 edd Exp $
+# $OpenBSD: Makefile,v 1.39 2012/01/13 00:55:14 naddy Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -6,6 +6,7 @@ V =			5.10.5
 XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
+REVISION =		0
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	3.0
