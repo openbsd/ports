@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/07/14 12:40:48 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/01/13 17:59:08 sthen Exp $
 @option no-default-conflict
 @conflict php->=5.2,<5.3
 @conflict php5-core->=5.2
 @pkgpath lang/php/5.2
 @pkgpath www/php5/core,-main
 @pkgpath www/php5/extensions,-mbstring
-%%SHARED%%
 @exec install -d ${SYSCONFDIR}/php-${PV}/
 @exec install -d ${SYSCONFDIR}/php-${PV}.sample/
 !%%no_suhosin%%
@@ -22,6 +21,7 @@
 bin/php-config-${PV}
 bin/phpize-${PV}
 lib/php-${PV}/
+lib/php-${PV}/libphp5.so
 lib/php-${PV}/modules/
 @man man/man1/php-${PV}.1
 @man man/man1/php-config-${PV}.1

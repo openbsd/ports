@@ -1,0 +1,18 @@
+$OpenBSD: patch-sapi_fpm_php-fpm_conf_in,v 1.1 2012/01/13 17:59:08 sthen Exp $
+--- sapi/fpm/php-fpm.conf.in.orig.port	Mon Jul  4 22:22:56 2011
++++ sapi/fpm/php-fpm.conf.in	Fri Jan 13 00:28:10 2012
+@@ -168,12 +168,12 @@ pm.max_children = 50
+ ; The desired minimum number of idle server processes.
+ ; Note: Used only when pm is set to 'dynamic'
+ ; Note: Mandatory when pm is set to 'dynamic'
+-;pm.min_spare_servers = 5
++pm.min_spare_servers = 5
+ 
+ ; The desired maximum number of idle server processes.
+ ; Note: Used only when pm is set to 'dynamic'
+ ; Note: Mandatory when pm is set to 'dynamic'
+-;pm.max_spare_servers = 35
++pm.max_spare_servers = 35
+  
+ ; The number of requests each child process should execute before respawning.
+ ; This can be useful to work around memory leaks in 3rd party libraries. For

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.23 2011/11/17 12:52:27 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.24 2012/01/13 17:59:07 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -35,6 +35,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+SHARED_ONLY=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 
