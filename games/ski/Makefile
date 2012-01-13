@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/01/13 14:55:14 gsoares Exp $
 
 COMMENT=	skiing simulation game
 
 DISTNAME=	ski-6.7
-REVISION =	1
+REVISION=	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://catb.org/~esr/ski/
 MASTER_SITES=	${HOMEPAGE}
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
-# GPLv2
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
