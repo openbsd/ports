@@ -1,0 +1,3 @@
+miniupnpc, the MiniUPnP client library, enables applications to access
+the services provided by an UPnP "Internet Gateway Device" present on
+the network. In UPnP terminology, it is a UPnP Control Point.

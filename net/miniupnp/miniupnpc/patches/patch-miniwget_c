@@ -1,0 +1,11 @@
+$OpenBSD: patch-miniwget_c,v 1.1.1.1 2012/01/13 09:23:09 ajacoutot Exp $
+--- miniwget.c.orig	Sat Jan  7 10:01:18 2012
++++ miniwget.c	Sat Jan  7 10:01:28 2012
+@@ -33,6 +33,7 @@
+ #include <sys/select.h>
+ #endif /* #else defined(__amigaos__) && !defined(__amigaos4__) */
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #define closesocket close

@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2012/01/13 09:23:09 ajacoutot Exp $
+--- setup.py.orig	Sat Jan  7 10:58:45 2012
++++ setup.py	Sat Jan  7 10:58:49 2012
+@@ -7,7 +7,7 @@
+ #
+ # replace libminiupnpc.a by libminiupnpc.so for shared library usage
+ from distutils.core import setup, Extension
+-setup(name="miniupnpc", version="1.5",
++setup(name="miniupnpc", version="1.6",
+       ext_modules=[
+ 	         Extension(name="miniupnpc", sources=["miniupnpcmodule.c"],
+ 			           extra_objects=["libminiupnpc.a"])

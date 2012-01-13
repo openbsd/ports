@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/01/13 09:23:09 ajacoutot Exp $
+bin/external-ip
+@bin bin/upnpc
+include/miniupnpc/
+include/miniupnpc/declspec.h
+include/miniupnpc/igd_desc_parse.h
+include/miniupnpc/miniupnpc.h
+include/miniupnpc/miniupnpctypes.h
+include/miniupnpc/miniwget.h
+include/miniupnpc/portlistingparse.h
+include/miniupnpc/upnpcommands.h
+include/miniupnpc/upnperrors.h
+include/miniupnpc/upnpreplyparse.h
+lib/libminiupnpc.a
+@lib lib/libminiupnpc.so.${LIBminiupnpc_VERSION}
+@man man/man3/miniupnpc.3
