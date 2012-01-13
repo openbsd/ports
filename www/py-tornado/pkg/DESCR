@@ -1,0 +1,7 @@
+Tornado is an open source version of the scalable, non-blocking web
+server and tools.
+The framework is distinct from most mainstream web server frameworks
+(and certainly most Python frameworks) because it is non-blocking and
+reasonably fast. Because it is non-blocking and uses epoll or kqueue, it
+can handle thousands of simultaneous standing connections, which means
+it is ideal for real-time web services.
