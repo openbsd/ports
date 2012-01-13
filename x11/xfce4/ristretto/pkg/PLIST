@@ -1,20 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/26 18:47:10 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/01/13 19:30:18 landry Exp $
 @bin bin/ristretto
 share/applications/ristretto.desktop
-share/doc/ristretto/
-share/doc/ristretto/html/
-share/doc/ristretto/html/C/
-share/doc/ristretto/html/C/getting-started.html
-share/doc/ristretto/html/C/index.html
-share/doc/ristretto/html/C/media/
-share/doc/ristretto/html/C/media/preferences-behaviour.png
-share/doc/ristretto/html/C/media/preferences-control.png
-share/doc/ristretto/html/C/media/preferences-display.png
-share/doc/ristretto/html/C/media/preferences-slideshow.png
-share/doc/ristretto/html/C/media/ristretto.png
-share/doc/ristretto/html/C/media/view-images-1.png
-share/doc/ristretto/html/C/preferences.html
-share/doc/ristretto/html/ristretto.css
 share/icons/hicolor/16x16/apps/ristretto.png
 share/icons/hicolor/22x22/apps/ristretto.png
 share/icons/hicolor/24x24/apps/ristretto.png
@@ -41,6 +27,9 @@ share/locale/gl/LC_MESSAGES/ristretto.mo
 share/locale/hr/LC_MESSAGES/ristretto.mo
 share/locale/hu/LC_MESSAGES/ristretto.mo
 share/locale/id/LC_MESSAGES/ristretto.mo
+share/locale/is/
+share/locale/is/LC_MESSAGES/
+share/locale/is/LC_MESSAGES/ristretto.mo
 share/locale/it/LC_MESSAGES/ristretto.mo
 share/locale/ja/LC_MESSAGES/ristretto.mo
 share/locale/lv/LC_MESSAGES/ristretto.mo
