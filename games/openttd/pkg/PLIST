@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/12/03 19:49:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/01/13 07:54:43 ajacoutot Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -39,25 +39,11 @@ share/examples/openttd/on_server_connect.scr.example
 share/examples/openttd/pre_dedicated.scr.example
 share/examples/openttd/pre_server.scr.example
 share/examples/openttd/readme.txt
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/openttd.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/openttd.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/openttd.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/openttd.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/openttd.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/openttd.png
 share/openttd/
 share/openttd/ai/
@@ -177,6 +163,7 @@ share/openttd/media/extra_grf/aqueduct.nfo
 share/openttd/media/extra_grf/aqueduct.png
 share/openttd/media/extra_grf/autorail.nfo
 share/openttd/media/extra_grf/autorail.png
+share/openttd/media/extra_grf/canal_locks.png
 share/openttd/media/extra_grf/canals.nfo
 share/openttd/media/extra_grf/canals.png
 share/openttd/media/extra_grf/chars.nfo
