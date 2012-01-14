@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.27 2012/01/10 19:35:36 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.28 2012/01/14 12:26:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -284,10 +284,16 @@ package DPB::Fetch;
 
 sub new
 {
-	my ($class, $distdir, $logger, $fetch_only) = @_;
+	my ($class, $distdir, $logger, $state) = @_;
 	my $o = bless {distdir => $distdir, sha => {}, reverse => {},
 	    known_sha => {}, known_files => {},
-	    fetch_only => $fetch_only}, $class;
+	    fetch_only => $state->{fetch_only}}, $class;
+	if (defined $state->{subst}->value('FTP_ONLY')) {
+		$o->{ftp_only} = 1;
+	}
+	if (defined $state->{subst}->value('CDROM_ONLY')) {
+		$o->{cdrom_only} = 1;
+	}
 	if (open(my $fh, '<', "$distdir/distinfo")) {
 		my $_;
 		while (<$fh>) {
@@ -470,6 +476,17 @@ sub build_distinfo
 		}
 		bless $files, "AddDepends";
 		$info->{DIST} = $files;
+		if ($self->{cdrom_only} && 
+		    defined $info->{PERMIT_PACKAGE_CDROM}) {
+			$info->{DISTIGNORE} = 1;
+			$info->{IGNORE} //= AddIgnore->new(
+				"Distfile not allowed for cdrom");
+		} elsif ($self->{ftp_only} &&
+		    defined $info->{PERMIT_PACKAGE_FTP}) {
+			$info->{DISTIGNORE} = 1;
+			$info->{IGNORE} //= AddIgnore->new(
+			    "Distfile not allowed for ftp");
+		}
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.17 2011/12/02 11:40:25 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.18 2012/01/14 12:26:21 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -69,6 +69,26 @@ sub new
 {
 	my ($class, $value) = @_;
 	my $a = 1;
+	bless \$a, $class;
+}
+
+# micro-optimisation: to save space and time, we only create value if
+# PERMIT_DISTFILES* is != yes.
+
+package AddNegative;
+our @ISA = qw(AddInfo);
+
+sub add
+{
+	my ($class, $var, $o, $value, $parent) = @_;
+	return if $value =~ m/^yes$/i;
+	$o->{$var} = $class->new($value, $o, $parent);
+}
+
+sub new
+{
+	my ($class, $value) = @_;
+	my $a = 0;
 	bless \$a, $class;
 }
 
@@ -246,6 +266,8 @@ my %adder = (
 	MASTER_SITES7 => 'AddOrderedList',
 	MASTER_SITES8 => 'AddOrderedList',
 	MASTER_SITES9 => 'AddOrderedList',
+	PERMIT_DISTFILES_FTP => 'AddNegative',
+	PERMIT_DISTFILES_CDROM => 'AddNegative',
 );
 
 sub wanted

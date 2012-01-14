@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.27 2012/01/04 02:08:52 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.28 2012/01/14 12:26:21 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 4 2012 $
+.Dd $Mdocdate: January 14 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -119,6 +119,8 @@ as this does not take subpackages and flavors into account.
 Set defined parameter to value.
 Known parameters are as follows:
 .Bl -tag -width DISPLAY
+.It Ar CDROM_ONLY
+Don't fetch distfiles that are not allowed for cdrom.
 .It Ar CONNECTION_TIMEOUT
 Connection timeout for ssh.
 Defaults to 60 seconds.
@@ -126,6 +128,8 @@ Defaults to 60 seconds.
 Display timeout (in seconds) while waiting for jobs to finish, so that the
 display is updated even if jobs didn't finish.
 Defaults to 10 seconds.
+.It Ar FTP_ONLY
+Don't fetch distfiles that are not allowed for ftp.
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.
