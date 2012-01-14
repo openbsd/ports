@@ -1,0 +1,313 @@
+$OpenBSD: patch-plugins_pager_pager_c,v 1.1 2012/01/14 22:14:10 dcoppa Exp $
+
+add icon drawing support to the pager plugin
+(adapted from an older patch written for fbpanel-4.3 by daf@minuslab.net)
+
+--- plugins/pager/pager.c.orig	Wed Apr 28 13:39:20 2010
++++ plugins/pager/pager.c	Sat Jan 14 22:42:42 2012
+@@ -27,10 +27,13 @@
+ 
+ 
+ #include <gdk-pixbuf/gdk-pixbuf.h>
++#include <gdk-pixbuf-xlib/gdk-pixbuf-xlib.h>
++#include <gdk/gdk.h>
+ 
+ #include "panel.h"
+ #include "misc.h"
+ #include "plugin.h"
++#include "data/images/default.xpm"
+ #include "gtkbgbox.h"
+ 
+ //#define DEBUGPRN
+@@ -49,6 +52,7 @@ typedef struct _task {
+     char *name, *iname;
+     net_wm_state nws;
+     net_wm_window_type nwwt;
++    GdkPixbuf *pixbuf;
+ } task;
+ 
+ typedef struct _desk   desk;
+@@ -81,6 +85,7 @@ struct _pager_priv {
+     task *focusedtask;
+     FbBg *fbbg;
+     gint dah, daw;
++    GdkPixbuf *gen_pixbuf;
+ };
+ 
+ 
+@@ -152,6 +157,9 @@ task_remove_stale(Window *win, task *t, pager_priv *p)
+ static gboolean
+ task_remove_all(Window *win, task *t, pager_priv *p)
+ {
++    if (t->pixbuf != NULL)
++        gdk_pixbuf_unref(t->pixbuf);
++
+     g_free(t);
+     return TRUE;
+ }
+@@ -221,7 +229,47 @@ task_update_pix(task *t, desk *d)
+           widget->style->fg_gc[GTK_STATE_SELECTED] :
+           widget->style->fg_gc[GTK_STATE_NORMAL],
+           FALSE,
+-          x, y, w, h);
++          x, y, w-1, h);
++
++    if (w>=10 && h>=10) {
++        GdkPixbuf* source_buf = t->pixbuf;
++        if (source_buf == NULL)
++            source_buf = d->pg->gen_pixbuf;
++
++        /* determine how much to scale */
++        GdkPixbuf* scaled = source_buf;
++        int scale = 16;
++        int noscale = 1;
++        int smallest = ( (w<h) ? w : h );
++        if (smallest < 18) {
++            noscale = 0;
++            scale = smallest - 2;
++            if (scale % 2 != 0)
++                scale++;
++
++            scaled = gdk_pixbuf_scale_simple(source_buf,
++                                    scale, scale,
++                                    GDK_INTERP_BILINEAR);
++        }
++
++        /* position */
++        int pixx = x+((w/2)-(scale/2))+1;
++        int pixy = y+((h/2)-(scale/2))+1;
++
++        /* draw it */
++        gdk_draw_pixbuf(d->pix,
++                NULL,
++                scaled,
++                0, 0,
++                pixx, pixy,
++                -1, -1,
++                GDK_RGB_DITHER_NONE,
++                0, 0);
++
++        /* free it if its been scaled and its not the default */
++        if (!noscale && t->pixbuf != NULL)
++            gdk_pixbuf_unref(scaled);
++    }
+     RET();
+ }
+ 
+@@ -492,6 +540,198 @@ desk_free(pager_priv *pg, int i)
+ 
+ 
+ /*****************************************************************
++ * Stuff to grab icons from windows - ripped from taskbar.c      *
++ *****************************************************************/
++
++static GdkColormap*
++get_cmap (GdkPixmap *pixmap)
++{
++  GdkColormap *cmap;
++
++  ENTER;
++  cmap = gdk_drawable_get_colormap (pixmap);
++  if (cmap)
++    g_object_ref (G_OBJECT (cmap));
++
++  if (cmap == NULL)
++    {
++      if (gdk_drawable_get_depth (pixmap) == 1)
++        {
++          /* try null cmap */
++          cmap = NULL;
++        }
++      else
++        {
++          /* Try system cmap */
++          GdkScreen *screen = gdk_drawable_get_screen (GDK_DRAWABLE (pixmap));
++          cmap = gdk_screen_get_system_colormap (screen);
++          g_object_ref (G_OBJECT (cmap));
++        }
++    }
++
++  /* Be sure we aren't going to blow up due to visual mismatch */
++  if (cmap &&
++      (gdk_colormap_get_visual (cmap)->depth !=
++       gdk_drawable_get_depth (pixmap)))
++    cmap = NULL;
++
++  RET(cmap);
++}
++
++static GdkPixbuf*
++_wnck_gdk_pixbuf_get_from_pixmap (GdkPixbuf   *dest,
++                                  Pixmap       xpixmap,
++                                  int          src_x,
++                                  int          src_y,
++                                  int          dest_x,
++                                  int          dest_y,
++                                  int          width,
++                                  int          height)
++{
++    GdkDrawable *drawable;
++    GdkPixbuf *retval;
++    GdkColormap *cmap;
++
++    ENTER;
++    retval = NULL;
++
++    drawable = gdk_xid_table_lookup (xpixmap);
++
++    if (drawable)
++        g_object_ref (G_OBJECT (drawable));
++    else
++        drawable = gdk_pixmap_foreign_new (xpixmap);
++
++    cmap = get_cmap (drawable);
++
++    /* GDK is supposed to do this but doesn't in GTK 2.0.2,
++     * fixed in 2.0.3
++     */
++    if (width < 0)
++        gdk_drawable_get_size (drawable, &width, NULL);
++    if (height < 0)
++        gdk_drawable_get_size (drawable, NULL, &height);
++
++    retval = gdk_pixbuf_get_from_drawable (dest,
++          drawable,
++          cmap,
++          src_x, src_y,
++          dest_x, dest_y,
++          width, height);
++
++    if (cmap)
++        g_object_unref (G_OBJECT (cmap));
++    g_object_unref (G_OBJECT (drawable));
++
++    RET(retval);
++}
++
++static GdkPixbuf*
++apply_mask (GdkPixbuf *pixbuf,
++            GdkPixbuf *mask)
++{
++  int w, h;
++  int i, j;
++  GdkPixbuf *with_alpha;
++  guchar *src;
++  guchar *dest;
++  int src_stride;
++  int dest_stride;
++
++  ENTER;
++  w = MIN (gdk_pixbuf_get_width (mask), gdk_pixbuf_get_width (pixbuf));
++  h = MIN (gdk_pixbuf_get_height (mask), gdk_pixbuf_get_height (pixbuf));
++
++  with_alpha = gdk_pixbuf_add_alpha (pixbuf, FALSE, 0, 0, 0);
++
++  dest = gdk_pixbuf_get_pixels (with_alpha);
++  src = gdk_pixbuf_get_pixels (mask);
++
++  dest_stride = gdk_pixbuf_get_rowstride (with_alpha);
++  src_stride = gdk_pixbuf_get_rowstride (mask);
++
++  i = 0;
++  while (i < h)
++    {
++      j = 0;
++      while (j < w)
++        {
++          guchar *s = src + i * src_stride + j * 3;
++          guchar *d = dest + i * dest_stride + j * 4;
++
++          /* s[0] == s[1] == s[2], they are 255 if the bit was set, 0
++           * otherwise
++           */
++          if (s[0] == 0)
++            d[3] = 0;   /* transparent */
++          else
++            d[3] = 255; /* opaque */
++
++          ++j;
++        }
++
++      ++i;
++    }
++
++  RET(with_alpha);
++}
++
++static GdkPixbuf*
++get_wm_icon(Window tkwin, int iw, int ih)
++{
++    XWMHints *hints;
++    Pixmap xpixmap = None, xmask = None;
++    Window win;
++    unsigned int w, h;
++    int sd;
++    GdkPixbuf *ret, *masked, *pixmap, *mask = NULL;
++
++    ENTER;
++    hints = XGetWMHints(GDK_DISPLAY(), tkwin);
++    DBG("\nwm_hints %s\n", hints ? "ok" : "failed");
++    if (!hints)
++        RET(NULL);
++
++    if ((hints->flags & IconPixmapHint))
++        xpixmap = hints->icon_pixmap;
++    if ((hints->flags & IconMaskHint))
++        xmask = hints->icon_mask;
++    DBG("flag=%ld xpixmap=%lx flag=%ld xmask=%lx\n", (hints->flags & IconPixmapHint), xpixmap,
++         (hints->flags & IconMaskHint),  xmask);
++    XFree(hints);
++    if (xpixmap == None)
++        RET(NULL);
++
++    if (!XGetGeometry (GDK_DISPLAY(), xpixmap, &win, &sd, &sd, &w, &h,
++              (guint *)&sd, (guint *)&sd)) {
++        DBG("XGetGeometry failed for %x pixmap\n", (unsigned int)xpixmap);
++        RET(NULL);
++    }
++    DBG("tkwin=%x icon pixmap w=%d h=%d\n", tkwin, w, h);
++    pixmap = _wnck_gdk_pixbuf_get_from_pixmap (NULL, xpixmap, 0, 0, 0, 0, w, h);
++    if (!pixmap)
++        RET(NULL);
++    if (xmask != None && XGetGeometry (GDK_DISPLAY(), xmask,
++              &win, &sd, &sd, &w, &h, (guint *)&sd, (guint *)&sd)) {
++        mask = _wnck_gdk_pixbuf_get_from_pixmap (NULL, xmask, 0, 0, 0, 0, w, h);
++
++        if (mask) {
++            masked = apply_mask (pixmap, mask);
++            g_object_unref (G_OBJECT (pixmap));
++            g_object_unref (G_OBJECT (mask));
++            pixmap = masked;
++        }
++    }
++    if (!pixmap)
++        RET(NULL);
++    ret = gdk_pixbuf_scale_simple (pixmap, iw, ih, GDK_INTERP_TILES);
++    g_object_unref(pixmap);
++
++    RET(ret);
++}
++
++
++/*****************************************************************
+  * Netwm/WM Interclient Communication                            *
+  *****************************************************************/
+ 
+@@ -572,6 +812,7 @@ do_net_client_list_stacking(FbEv *ev, pager_priv *p)
+             get_net_wm_state(t->win, &t->nws);
+             get_net_wm_window_type(t->win, &t->nwwt);
+             task_get_sizepos(t);
++            t->pixbuf = get_wm_icon(t->win, 16, 16);
+             g_hash_table_insert(p->htable, &t->win, t);
+             DBG("add %lx\n", t->win);
+             desk_set_dirty_by_win(p, t);
+@@ -786,6 +1027,9 @@ pager_constructor(plugin_instance *plug)
+         g_signal_connect(G_OBJECT(pg->fbbg), "changed",
+             G_CALLBACK(pager_bg_changed), pg);
+     }
++
++    pg->gen_pixbuf = gdk_pixbuf_new_from_xpm_data((const char **)icon_xpm);
++
+     pager_rebuild_all(fbev, pg);
+ 
+     gdk_window_add_filter(NULL, (GdkFilterFunc)pager_event_filter, pg );
