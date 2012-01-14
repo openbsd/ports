@@ -1,0 +1,3 @@
+The dmtx utility programs, dmtxread and dmtxwrite, provide the
+official command line interface for libdmtx, and serve as a code
+reference for programmers wishing to use the libdmtx C API.
