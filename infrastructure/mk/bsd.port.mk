@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1153 2011/12/21 05:16:04 miod Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1154 2012/01/14 12:21:13 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1738,7 +1738,8 @@ ${_UPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating for ${FULLPKGNAME${_S}}"
-	@a=`${PKG_INFO} -e ${FULLPKGPATH${_S}} 2>/dev/null || true`; \
+	@b=`cd ${.CURDIR} && SUBPACKAGE=${_S} ${MAKE} print-plist|sed -ne '/^@pkgpath /s,,-e ,p'`; \
+	a=`${PKG_INFO} -e ${FULLPKGPATH${_S}} $$b 2>/dev/null || true`; \
 	case $$a in \
 		'') ${ECHO_MSG} "Not installed, no update";; \
 		*) cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
