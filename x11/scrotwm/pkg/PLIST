@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/08/29 13:21:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/01/14 21:48:13 sthen Exp $
 %%SHARED%%
 @bin bin/scrotwm
 @man man/man1/scrotwm.1
@@ -14,3 +14,9 @@ share/examples/scrotwm/screenshot.sh
 @mode
 share/examples/scrotwm/scrotwm.conf
 @sample ${SYSCONFDIR}/scrotwm.conf
+share/examples/scrotwm/scrotwm_cz.conf
+share/examples/scrotwm/scrotwm_es.conf
+share/examples/scrotwm/scrotwm_fr.conf
+share/examples/scrotwm/scrotwm_fr_ch.conf
+share/examples/scrotwm/scrotwm_se.conf
+share/examples/scrotwm/scrotwm_us.conf

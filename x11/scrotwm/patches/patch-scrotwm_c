@@ -1,8 +1,8 @@
-$OpenBSD: patch-scrotwm_c,v 1.17 2011/06/23 22:58:06 sthen Exp $
---- scrotwm.c.orig	Thu Jun 23 13:13:51 2011
-+++ scrotwm.c	Thu Jun 23 23:54:34 2011
-@@ -162,7 +162,7 @@ u_int32_t		swm_debug = 0
- #define SWM_FOCUS_FOLLOW	(2)
+$OpenBSD: patch-scrotwm_c,v 1.18 2012/01/14 21:48:13 sthen Exp $
+--- scrotwm.c.orig	Sat Jan 14 14:15:42 2012
++++ scrotwm.c	Sat Jan 14 14:16:35 2012
+@@ -169,7 +169,7 @@ u_int32_t		swm_debug = 0
+ #define SWM_CONF_KEYMAPPING	(1)
  
  #ifndef SWM_LIB
 -#define SWM_LIB			"/usr/local/lib/libswmhack.so"
