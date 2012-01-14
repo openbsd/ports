@@ -1,5 +1,6 @@
---- original/os_internal.c	Sun Dec 31 22:41:44 2006
-+++ os_internal.c	Fri May 18 01:49:29 2007
+$OpenBSD: patch-os_internal_c,v 1.2 2012/01/14 12:57:10 sthen Exp $
+--- os_internal.c.orig	Tue May 29 03:08:48 2007
++++ os_internal.c	Sat Jan 14 12:52:53 2012
 @@ -178,7 +178,7 @@ int os_setenv(const char *name, const char *value, int
  
  int os_unsetenv(const char *name)

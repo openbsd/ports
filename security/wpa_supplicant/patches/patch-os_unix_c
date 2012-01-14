@@ -1,5 +1,6 @@
---- original/os_unix.c	Sun Dec 31 22:41:44 2006
-+++ os_unix.c	Fri May 18 01:48:53 2007
+$OpenBSD: patch-os_unix_c,v 1.2 2012/01/14 12:57:10 sthen Exp $
+--- os_unix.c.orig	Tue May 29 03:08:48 2007
++++ os_unix.c	Sat Jan 14 12:52:53 2012
 @@ -171,7 +171,7 @@ int os_setenv(const char *name, const char *value, int
  
  int os_unsetenv(const char *name)

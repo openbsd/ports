@@ -1,5 +1,6 @@
---- original/common.h	Sun Dec 31 22:41:44 2006
-+++ common.h	Fri May 18 01:48:18 2007
+$OpenBSD: patch-common_h,v 1.2 2012/01/14 12:57:10 sthen Exp $
+--- common.h.orig	Tue May 29 03:08:48 2007
++++ common.h	Sat Jan 14 12:52:53 2012
 @@ -80,8 +80,29 @@ static inline unsigned int wpa_swap_32(unsigned int v)
  #define be_to_host32(n) wpa_swap_32(n)
  #define host_to_be32(n) wpa_swap_32(n)
