@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.28 2012/01/14 12:26:21 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.29 2012/01/14 12:40:35 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -464,12 +464,63 @@ Apart from producing packages,
 .Nm
 may create temporary files as
 .Pa ${FULLDISTDIR}/${DISTFILE}.part .
-It also uses
-.Pa ${FULLDISTDIR}/distinfo
-as a cache for distfiles that have been checksummed,
-and populates
+.Pp
+In fetch mode
+.Po
+.Fl f
+and
+.Fl F
+.Pc ,
+.Nm
+populates
 .Pa ${FULLDISTDIR}/by_cipher/sha256
 with links.
+It also uses
+.Pa ${FULLDISTDIR}/distinfo
+and
+.Pa ${FULLDISTDIR}/history
+as a
+.Sq permanent log :
+.Bl -tag -width distinfo
+.It distinfo
+cache of distfiles checksum.
+Contains all
+.Xr sha256 1
+checksums of known files under
+.Pa ${FULLDISTDIR} .
+Fetching uses this to avoid re-checksumming known files.
+.It history
+Log of old files under distinfo.
+After succesfully scanning a full ports tree
+.Po
+.Nm Fl a
+.Pc ,
+the fetch engine knows precisely which files are needed by the build
+(and their checksums).
+Anything that is
+.Bl -bullet
+.It
+recorded in distinfo but unneeded
+.It
+recorded in distinfo but with the wrong checksum
+.It
+not recorded in distinfo, but not needed
+.El
+will be entered at the end of history as a line:
+.Pp
+.Li Ar ts SHA256 (file) = value
+.Pp
+with
+.Ar ts
+a timestamp from Unix epoch.
+.Pp
+When cleaning up old files, it's vital to check both the checksum and
+the file name: since mirroring stores permanent links under 
+.Pa by_cipher ,
+files which are still needed will appear in history under their old
+checksums, as an indication the link should be removed, but possibly not
+the file itself.
+.El
 .Pp
 If
 .Pa ${DISTDIR}
