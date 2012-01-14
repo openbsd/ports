@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/14 08:55:17 sebastia Exp $
+%%SHARED%%
+include/dmtx.h
+lib/libdmtx.a
+lib/libdmtx.la
+lib/pkgconfig/
+lib/pkgconfig/libdmtx.pc
+@man man/man3/libdmtx.3
