@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1009 2011/12/29 15:13:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.1010 2012/01/15 16:59:38 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -183,6 +183,7 @@
      SUBDIR += hs-gio
      SUBDIR += hs-glade
      SUBDIR += hs-glib
+     SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-haskeline
      SUBDIR += hs-hint
