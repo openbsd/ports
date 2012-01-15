@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/06 21:03:43 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/15 17:21:48 kili Exp $
 @newgroup _hoogle:689
 @newuser _hoogle:689:_hoogle:daemon:Hoogle account:/nonexistent:/sbin/nologin
 @bin bin/hoogle
@@ -60,6 +60,7 @@ lib/ghc/${DISTNAME}/Hoogle/Type/ParseError.hi
 lib/ghc/${DISTNAME}/Hoogle/Type/Result.hi
 lib/ghc/${DISTNAME}/Hoogle/Type/TagStr.hi
 lib/ghc/${DISTNAME}/Hoogle/Type/TypeSig.hi
+lib/ghc/${DISTNAME}/Paths_hoogle.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
@@ -69,7 +70,6 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Hoogle.html
-share/doc/hs-${DISTNAME}/html/Paths_hoogle.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -78,12 +78,11 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Hoogle.html
-share/doc/hs-${DISTNAME}/html/mini_Paths_hoogle.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
-share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/pkg-readmes/hs-${DISTNAME}
 share/hs-${DISTNAME}/
 share/hs-${DISTNAME}/databases
 share/hs-${DISTNAME}/resources/
@@ -102,6 +101,7 @@ share/hs-${DISTNAME}/resources/less_small.png
 share/hs-${DISTNAME}/resources/more_blue.png
 share/hs-${DISTNAME}/resources/more_gray.png
 share/hs-${DISTNAME}/resources/more_small.png
+share/hs-${DISTNAME}/resources/search.xml
 share/hs-${DISTNAME}/resources/spinner.gif
 share/hs-${DISTNAME}/resources/template.html
 share/hs-${DISTNAME}/resources/template_example.html
