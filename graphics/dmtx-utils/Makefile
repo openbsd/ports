@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/14 08:56:53 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/15 12:16:17 nigel Exp $
 
 COMMENT =		tools for handling data matrix barcodes
 
 DISTNAME =		dmtx-utils-0.7.4
+REVISION =		0
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.libdmtx.org/
@@ -16,10 +17,11 @@ PERMIT_DISTFILES_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 
 WANTLIB += ICE MagickCore MagickWand SM X11 Xext Xt bz2 c djvulibre
-WANTLIB += expat fftw3 fontconfig freetype iconv jasper jbig jpeg
+WANTLIB += dmtx expat fftw3 fontconfig freetype iconv jasper jbig jpeg
 WANTLIB += lcms2 ltdl lzma png pthread tiff wmf wmflite xcb xml2
 WANTLIB += m z
-LIB_DEPENDS +=		graphics/ImageMagick
+LIB_DEPENDS +=		graphics/ImageMagick \
+			graphics/libdmtx
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	gnu
