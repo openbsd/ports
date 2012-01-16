@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.24 2011/11/17 10:39:01 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.25 2012/01/16 16:34:17 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -474,6 +474,7 @@ share/doc/dovecot/wiki/Debugging.Rawlog.txt
 share/doc/dovecot/wiki/Debugging.Thunderbird.txt
 share/doc/dovecot/wiki/Design.Arrays.txt
 share/doc/dovecot/wiki/Design.AuthProcess.txt
+share/doc/dovecot/wiki/Design.AuthProtocol.txt
 share/doc/dovecot/wiki/Design.Buffers.txt
 share/doc/dovecot/wiki/Design.Dsync.txt
 share/doc/dovecot/wiki/Design.Indexes.Cache.txt
@@ -508,6 +509,7 @@ share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.ImapcProxy.txt
 share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
 share/doc/dovecot/wiki/HowTo.PopRelay.txt
 share/doc/dovecot/wiki/HowTo.PostfixAndDovecotSASL.txt
@@ -620,6 +622,7 @@ share/doc/dovecot/wiki/SSL.DovecotConfiguration.txt
 share/doc/dovecot/wiki/SSL.txt
 share/doc/dovecot/wiki/Sasl.txt
 share/doc/dovecot/wiki/SecurityTuning.txt
+share/doc/dovecot/wiki/Services.txt
 share/doc/dovecot/wiki/SharedMailboxes.Permissions.txt
 share/doc/dovecot/wiki/SharedMailboxes.Public.txt
 share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
