@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/16 22:11:36 sthen Exp $
 
 SUBDIR += pear-Date-Holidays
+SUBDIR += Australia
 SUBDIR += Austria
 SUBDIR += Brazil
+SUBDIR += Croatia
 SUBDIR += Denmark
 SUBDIR += Discordian
 SUBDIR += EnglandWales
+SUBDIR += Finland
 SUBDIR += Germany
 SUBDIR += Iceland
 SUBDIR += Ireland
@@ -23,5 +26,6 @@ SUBDIR += Sweden
 SUBDIR += UNO
 SUBDIR += USA
 SUBDIR += Ukraine
+SUBDIR += Venezuela
 
 .include <bsd.port.subdir.mk>
