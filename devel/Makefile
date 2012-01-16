@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1010 2012/01/15 16:59:38 kili Exp $
+# $OpenBSD: Makefile,v 1.1011 2012/01/16 15:22:38 dhill Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -258,6 +258,7 @@
      SUBDIR += libdockapp
      SUBDIR += libdvdread
      SUBDIR += libelf
+     SUBDIR += libestr
      SUBDIR += libev
      SUBDIR += libevent2
      SUBDIR += libeventextra
