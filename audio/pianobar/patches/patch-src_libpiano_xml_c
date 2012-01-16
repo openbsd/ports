@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_libpiano_xml_c,v 1.5 2012/01/16 13:27:09 dcoppa Exp $
+--- src/libpiano/xml.c.orig	Mon Jan 16 14:03:29 2012
++++ src/libpiano/xml.c	Mon Jan 16 14:04:33 2012
+@@ -94,6 +94,8 @@ static void PianoXmlIsFaultCb (const char *key, const 
+ 						*ret = PIANO_RET_QUICKMIX_NOT_PLAYABLE;
+ 					} else if (strcmp ("REMOVING_TOO_MANY_SEEDS", matchStart) == 0) {
+ 						*ret = PIANO_RET_REMOVING_TOO_MANY_SEEDS;
++					} else if (strcmp ("EXCESSIVE_ACTIVITY", matchStart) == 0) {
++						*ret = PIANO_RET_EXCESSIVE_ACTIVITY;
+ 					} else {
+ 						*ret = PIANO_RET_ERR;
+ 						printf (PACKAGE ": Unknown error %s in %s\n",
