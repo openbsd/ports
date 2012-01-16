@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.6 2011/12/04 16:31:52 ajacoutot Exp $
+# $OpenBSD: mk.conf.template,v 1.7 2012/01/16 13:18:58 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -42,3 +42,4 @@
 .poison WKRDIST
 .poison WKRINST
 .poison WKRSRC
+.poison NO_REGRSS
