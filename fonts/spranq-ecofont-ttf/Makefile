@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/16 12:20:39 sthen Exp $
 
 COMMENT=		ink-saving font based on Vera Sans
 
@@ -23,7 +23,7 @@ MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.zip
 
 NO_BUILD=		Yes
-NO_REGRSS=		Yes
+NO_REGRESS=		Yes
 
 WRKDIST=		${WRKDIR}/
 FONTSDIR=		${PREFIX}/lib/X11/fonts/ecofont
