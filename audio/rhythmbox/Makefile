@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.95 2012/01/04 14:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2012/01/16 12:10:02 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.90.1.7
+GNOME_VERSION=		2.95
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -62,9 +62,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	goi yelp
 
-CONFIGURE_STYLE= 	gnu
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+
+CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-database=tree \
 			--with-gnome-keyring \
 			--with-ipod \
@@ -82,7 +83,7 @@ CONFIGURE_ARGS=		--with-database=tree \
 # Don't compile the vala (useless) sample plugin.
 CONFIGURE_ARGS +=	--disable-vala
 
-# XXX requires libmtp >= 0.3
+# XXX requires hal|udev
 CONFIGURE_ARGS +=	--without-mtp
 
 # XXX requires new clutter-{x11,gst,gtk} and libmx
@@ -100,29 +101,5 @@ post-install:
 	find ${PREFIX} -type d -name magnatune | xargs -r rm -rf
 # needs ZeitgeistClient
 	find ${PREFIX} -type d -name rbzeitgeist | xargs -r rm -rf
-
-### XXX remove this chunk when updating to a 'real' release ############
-### Also convert to new gnome.port.mk CONFIGURE_ARGS ############
-# Tue Dec 27 13:07:07 CET 2011
-MASTER_SITES=		http://distfiles.bsdfrog.org/
-
-BUILD_DEPENDS +=	x11/gnome/common \
-			devel/autoconf/${AUTOCONF_VERSION} \
-			devel/automake/${AUTOMAKE_VERSION} \
-			textproc/gtk-doc \
-			devel/libtool
-
-AUTOCONF_VERSION=	2.65
-AUTOMAKE_VERSION=	1.11
-CONFIGURE_STYLE=	gnu
-
-do-configure:
-	@cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		env ${CONFIGURE_ENV} \
-		./autogen.sh ${CONFIGURE_ARGS} --disable-maintainer-mode \
-			--disable-silent-rules --disable-uninstalled-build
-### end XXX ############################################################
 
 .include <bsd.port.mk>
