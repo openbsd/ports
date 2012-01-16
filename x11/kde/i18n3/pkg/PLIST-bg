@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-bg,v 1.5 2007/10/24 21:52:17 espie Exp $
+@comment $OpenBSD: PLIST-bg,v 1.6 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,bg
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/bg/

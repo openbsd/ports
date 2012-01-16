@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-da,v 1.12 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-da,v 1.13 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,da
 @conflict kdeedu-<3.4
 share/apps/khangman/
 share/apps/khangman/da.txt
@@ -1529,8 +1530,8 @@ ${DOC}kstars/blackbody.docbook
 ${DOC}kstars/calc-angdist.docbook
 ${DOC}kstars/calc-apcoords.docbook
 ${DOC}kstars/calc-apcoords.png
-${DOC}kstars/calc${FLAVORS}yduration.docbook
-${DOC}kstars/calc${FLAVORS}ylength.png
+${DOC}kstars/calc-dayduration.docbook
+${DOC}kstars/calc-daylength.png
 ${DOC}kstars/calc-ecliptic.docbook
 ${DOC}kstars/calc-eqgal.docbook
 ${DOC}kstars/calc-eqgal.png

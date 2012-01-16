@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ko,v 1.5 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-ko,v 1.6 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,ko
 share/doc/HTML/ko/
 ${DOC}common/
 ${DOC}common/1.png
@@ -55,7 +56,7 @@ ${DOC}common/qpl-license.html
 ${DOC}common/shadow.png
 ${DOC}common/top-left.png
 ${DOC}common/top-middle.png
-${DOC}common/top-right${FLAVORS}nqueror.png
+${DOC}common/top-right-konqueror.png
 ${DOC}common/web-docbottom.png
 ${DOC}common/web-doctop.png
 ${DOC}common/x11-license.html

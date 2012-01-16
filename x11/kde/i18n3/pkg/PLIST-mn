@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mn,v 1.2 2007/05/27 20:38:41 espie Exp $
+@comment $OpenBSD: PLIST-mn,v 1.3 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,mn
 share/locale/mn/30x16.png
 share/locale/mn/60x40.png
 ${LOC}appletproxy.mo

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-tr,v 1.10 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-tr,v 1.11 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,tr
 share/apps/khangman/
 share/apps/khangman/data/
 share/apps/khangman/data/tr/
@@ -40,7 +41,7 @@ ${DOC}common/fdl-notice.html
 ${DOC}common/footer.html
 ${DOC}common/gpl-license
 ${DOC}common/gpl-license.html
-${DOC}common/gpl${FLAVORS}anslated.html
+${DOC}common/gpl-translated.html
 ${DOC}common/grad.png
 ${DOC}common/header.html
 ${DOC}common/headerbg.png

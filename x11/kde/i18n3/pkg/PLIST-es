@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-es,v 1.16 2008/08/29 12:59:49 espie Exp $
+@comment $OpenBSD: PLIST-es,v 1.17 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,es
 @conflict kdeedu-<3.4
 share/apps/katepart/syntax/logohighlightstyle.es.xml
 share/apps/khangman/

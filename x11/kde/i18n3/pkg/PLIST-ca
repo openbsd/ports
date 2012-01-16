@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ca,v 1.14 2008/04/13 12:14:11 espie Exp $
+@comment $OpenBSD: PLIST-ca,v 1.15 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,ca
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -190,7 +191,7 @@ ${DOC}katomic/common
 ${DOC}katomic/${C}
 ${DOC}katomic/${I}
 ${DOC}kbabel/
-${DOC}kbabel/man${FLAVORS}talogmanager.1.docbook
+${DOC}kbabel/man-catalogmanager.1.docbook
 ${DOC}kbruch/
 ${DOC}kbruch/common
 ${DOC}kbruch/${C}
@@ -597,7 +598,7 @@ ${DOC}khelpcenter/userguide/printing-from-apps.docbook
 ${DOC}khelpcenter/userguide/programs-and-documents.docbook
 ${DOC}khelpcenter/userguide/programs-controlling.docbook
 ${DOC}khelpcenter/userguide/removable-disks.docbook
-${DOC}khelpcenter/userguide/screen${FLAVORS}ptures.docbook
+${DOC}khelpcenter/userguide/screen-captures.docbook
 ${DOC}khelpcenter/userguide/services.png
 ${DOC}khelpcenter/userguide/shared-sessions.docbook
 ${DOC}khelpcenter/userguide/standard-menu-entries.docbook

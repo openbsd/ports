@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-fr,v 1.16 2008/08/29 12:59:49 espie Exp $
+@comment $OpenBSD: PLIST-fr,v 1.17 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,fr
 @conflict kdeedu-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -900,7 +901,7 @@ ${DOC}khelpcenter/userguide/playing-audiocds.docbook
 ${DOC}khelpcenter/userguide/playing-movies.docbook
 ${DOC}khelpcenter/userguide/playing-music.docbook
 ${DOC}khelpcenter/userguide/printer-setup.docbook
-${DOC}khelpcenter/userguide/printing${FLAVORS}om-apps.docbook
+${DOC}khelpcenter/userguide/printing-from-apps.docbook
 ${DOC}khelpcenter/userguide/programs-and-documents.docbook
 ${DOC}khelpcenter/userguide/programs-controlling.docbook
 ${DOC}khelpcenter/userguide/removable-disks.docbook

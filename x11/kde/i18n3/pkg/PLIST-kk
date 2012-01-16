@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-kk,v 1.6 2007/10/24 21:52:17 espie Exp $
+@comment $OpenBSD: PLIST-kk,v 1.7 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,kk
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 ${LOC}akregator.mo

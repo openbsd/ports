@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-bn,v 1.8 2006/06/03 12:47:30 espie Exp $
+@comment $OpenBSD: PLIST-bn,v 1.9 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,bn
 ${LOC}amor.mo
 ${LOC}appletproxy.mo
 ${LOC}atlantik.mo

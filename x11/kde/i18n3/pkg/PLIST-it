@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-it,v 1.15 2008/08/29 12:59:49 espie Exp $
+@comment $OpenBSD: PLIST-it,v 1.16 2012/01/16 22:11:00 espie Exp $
+@pkgpath x11/kde/i18n3,it
 @conflict kde-i18n-ca-<3.4
 share/apps/kanagram/
 share/apps/kanagram/data/
@@ -1542,7 +1543,7 @@ ${DOC}kpilot/setup-conduit.png
 ${DOC}kpilot/setup-dbspecial.png
 ${DOC}kpilot/setup-general.png
 ${DOC}kpilot/setup-hotsync.png
-${DOC}kpilot/setup${FLAVORS}ems.png
+${DOC}kpilot/setup-items.png
 ${DOC}kpilot/setup-startup-exit.png
 ${DOC}kpilot/setup-tabs.png
 ${DOC}kpilot/setup-viewer.png
