@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/12/03 22:17:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/01/16 11:36:11 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-video-arcade
 lib/glade/
@@ -6,8 +6,6 @@ lib/glade/modules/
 @comment lib/glade/modules/libgladegva.a
 @comment lib/glade/modules/libgladegva.la
 @man man/man1/gnome-video-arcade.1
-share/GConf/
-share/GConf/gsettings/
 share/GConf/gsettings/gnome-video-arcade.convert
 share/applications/gnome-video-arcade.desktop
 share/glade/
@@ -20,9 +18,11 @@ share/glade/pixmaps/hicolor/22x22/actions/
 share/glade/pixmaps/hicolor/22x22/actions/widget-gva-column-manager.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gva-mute-button.png
 share/glib-2.0/schemas/org.gnome.VideoArcade.gschema.xml
+share/gnome/
 share/gnome-video-arcade/
 share/gnome-video-arcade/gnome-video-arcade.builder
 share/gnome-video-arcade/gnome-video-arcade.ui
+share/gnome/help/
 share/gnome/help/gnome-video-arcade/
 share/gnome/help/gnome-video-arcade/C/
 share/gnome/help/gnome-video-arcade/C/figures/
@@ -140,8 +140,6 @@ share/gtk-doc/html/gnome-video-arcade/left.png
 share/gtk-doc/html/gnome-video-arcade/right.png
 share/gtk-doc/html/gnome-video-arcade/style.css
 share/gtk-doc/html/gnome-video-arcade/up.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-video-arcade.svg
 share/locale/ca/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/cs/LC_MESSAGES/gnome-video-arcade.mo
@@ -159,6 +157,7 @@ share/locale/ro/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/ru/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/sl/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/sv/LC_MESSAGES/gnome-video-arcade.mo
+share/locale/tr/LC_MESSAGES/gnome-video-arcade.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-video-arcade.mo
 share/omf/
 share/omf/gnome-video-arcade/

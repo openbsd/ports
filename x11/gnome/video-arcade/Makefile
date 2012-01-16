@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2011/12/03 22:17:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/01/16 11:36:11 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
-GNOME_VERSION=	0.8.0
-REVISION=	9
+GNOME_VERSION=	0.8.2
 
 CATEGORIES=	emulators games
 
@@ -16,16 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += GL X11 X11-xcb XRes Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += atk-1.0 c cairo cairo-gobject drm expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 gtk-3 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
-WANTLIB += wnck-3 xcb xcb-aux xcb-render xcb-shm xml2 z stdc++
+WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 gtk-3 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs soup-2.4 sqlite3 startup-notification-1
+WANTLIB += stdc++ wnck-3 xcb xcb-aux xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -37,12 +34,16 @@ RUN_DEPENDS=	emulators/sdlmame,-main>=0.132p2 \
 		x11/gnome/icon-theme \
 		devel/gsettings-desktop-schemas
 LIB_DEPENDS=	databases/sqlite3 \
+		devel/libsoup \
 		devel/libwnck3 \
 		multimedia/gstreamer-0.10/core
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
+
+# XXX configure should do the right thing
+MODGNOME_CPPFLAGS=	$$(pkg-config --cflags libsoup-2.4)
 
 CONFIGURE_ARGS=	--with-glade-catalog \
 		--with-wnck \
