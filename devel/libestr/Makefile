@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/16 15:17:58 dhill Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/16 15:26:01 ajacoutot Exp $
 
 COMMENT =	library for string essentials
 DISTNAME =	libestr-0.1.2
 SHARED_LIBS =	estr 0.0
 CATEGORIES =	devel
+REVISION =	0
 
 HOMEPAGE =	http://libestr.adiscon.com/
 MAINTAINER =	David Hill <dhill@mindcry.org>
