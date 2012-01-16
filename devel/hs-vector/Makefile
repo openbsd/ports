@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/16 23:32:02 kili Exp $
 
 COMMENT =		Int-indexed arrays
 
-DISTNAME =		vector-0.7.0.1
-REVISION =		1
+DISTNAME =		vector-0.7.1
 CATEGORIES =		devel
 
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
+MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
+			Matthias Kilian <kili@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
