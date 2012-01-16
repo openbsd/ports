@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/08 09:39:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/16 23:10:41 sthen Exp $
 roundcubemail/plugins/sieverules/
 roundcubemail/plugins/sieverules/CHANGELOG
 roundcubemail/plugins/sieverules/README
@@ -29,12 +29,15 @@ roundcubemail/plugins/sieverules/localization/hu_HU.inc
 roundcubemail/plugins/sieverules/localization/it_IT.inc
 roundcubemail/plugins/sieverules/localization/nl_NL.inc
 roundcubemail/plugins/sieverules/localization/pl_PL.inc
+roundcubemail/plugins/sieverules/localization/pt_BR.inc
 roundcubemail/plugins/sieverules/localization/pt_PT.inc
 roundcubemail/plugins/sieverules/localization/ro_RO.inc
 roundcubemail/plugins/sieverules/localization/ru_RU.inc
 roundcubemail/plugins/sieverules/localization/sk_SK.inc
 roundcubemail/plugins/sieverules/localization/sl_SI.inc
 roundcubemail/plugins/sieverules/localization/sv_SE.inc
+roundcubemail/plugins/sieverules/localization/zh_TW.inc
+roundcubemail/plugins/sieverules/package.xml
 roundcubemail/plugins/sieverules/sieverules.js
 roundcubemail/plugins/sieverules/sieverules.php
 roundcubemail/plugins/sieverules/skins/
