@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.25 2012/01/16 16:34:17 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.26 2012/01/16 23:59:22 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -683,19 +683,31 @@ share/examples/dovecot/example-config/conf.d/90-plugin.conf
 share/examples/dovecot/example-config/conf.d/90-quota.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/90-quota.conf
 share/examples/dovecot/example-config/conf.d/auth-checkpassword.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-checkpassword.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-deny.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-deny.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-ldap.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-ldap.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-master.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-master.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-passwdfile.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-passwdfile.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-sql.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-sql.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-static.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-static.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-system.conf.ext
 @sample ${SYSCONFDIR}/dovecot/conf.d/auth-system.conf.ext
 share/examples/dovecot/example-config/conf.d/auth-vpopmail.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-vpopmail.conf.ext
 share/examples/dovecot/example-config/dovecot-db.conf.ext
+@sample ${SYSCONFDIR}/dovecot/dovecot-db.conf.ext
 share/examples/dovecot/example-config/dovecot-dict-sql.conf.ext
+@sample ${SYSCONFDIR}/dovecot/dovecot-dict-sql.conf.ext
 share/examples/dovecot/example-config/dovecot-ldap.conf.ext
+@sample ${SYSCONFDIR}/dovecot/dovecot-ldap.conf.ext
 share/examples/dovecot/example-config/dovecot-sql.conf.ext
+@sample ${SYSCONFDIR}/dovecot/dovecot-sql.conf.ext
 share/examples/dovecot/example-config/dovecot.conf
 @sample ${SYSCONFDIR}/dovecot/dovecot.conf
 @mode 755
