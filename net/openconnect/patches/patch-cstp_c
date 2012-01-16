@@ -1,0 +1,73 @@
+$OpenBSD: patch-cstp_c,v 1.1 2012/01/16 22:58:54 sthen Exp $
+
+- Fix memory leak of CSTP deflated packets, and resend current pkt on reconnect
+b39d34 upstream
+
+- Fix memory leak of zlib streams on CSTP reconnect
+85772d upstream
+
+--- cstp.c.orig	Sat Nov  5 12:41:23 2011
++++ cstp.c	Thu Jan 12 09:41:34 2012
+@@ -394,11 +394,14 @@ int make_cstp_connection(struct openconnect_info *vpni
+ 			if (!vpninfo->deflate_pkt) {
+ 				vpn_progress(vpninfo, PRG_ERR,
+ 					     _("Allocation of deflate buffer failed\n"));
++				inflateEnd(&vpninfo->inflate_strm);
++				deflateEnd(&vpninfo->deflate_strm);
+ 				vpninfo->deflate = 0;
++			} else {
++				memset(vpninfo->deflate_pkt, 0, sizeof(struct pkt));
++				memcpy(vpninfo->deflate_pkt->hdr, data_hdr, 8);
++				vpninfo->deflate_pkt->hdr[6] = AC_PKT_COMPRESSED;
+ 			}
+-			memset(vpninfo->deflate_pkt, 0, sizeof(struct pkt));
+-			memcpy(vpninfo->deflate_pkt->hdr, data_hdr, 8);
+-			vpninfo->deflate_pkt->hdr[6] = AC_PKT_COMPRESSED;
+ 		}
+ 	}
+ 
+@@ -413,11 +416,16 @@ int cstp_reconnect(struct openconnect_info *vpninfo)
+ 
+ 	openconnect_close_https(vpninfo);
+ 
+-	/* It's already deflated in the old stream. Extremely
+-	   non-trivial to reconstitute it; just throw it away */
+-	if (vpninfo->current_ssl_pkt == vpninfo->deflate_pkt)
++	/* Requeue the original packet that was deflated */
++	if (vpninfo->current_ssl_pkt == vpninfo->deflate_pkt) {
+ 		vpninfo->current_ssl_pkt = NULL;
+-
++		queue_packet(&vpninfo->outgoing_queue, vpninfo->pending_deflated_pkt);
++		vpninfo->pending_deflated_pkt = NULL;
++	}
++	if (vpninfo->deflate) {
++		inflateEnd(&vpninfo->inflate_strm);
++		deflateEnd(&vpninfo->deflate_strm);
++	}
+ 	timeout = vpninfo->reconnect_timeout;
+ 	interval = vpninfo->reconnect_interval;
+ 
+@@ -623,10 +631,11 @@ int cstp_mainloop(struct openconnect_info *vpninfo, in
+ 			return 1;
+ 		}
+ 		/* Don't free the 'special' packets */
+-		if (vpninfo->current_ssl_pkt != vpninfo->deflate_pkt &&
+-		    vpninfo->current_ssl_pkt != &dpd_pkt &&
+-		    vpninfo->current_ssl_pkt != &dpd_resp_pkt &&
+-		    vpninfo->current_ssl_pkt != &keepalive_pkt)
++		if (vpninfo->current_ssl_pkt == vpninfo->deflate_pkt)
++			free(vpninfo->pending_deflated_pkt);
++		else if (vpninfo->current_ssl_pkt != &dpd_pkt &&
++			 vpninfo->current_ssl_pkt != &dpd_resp_pkt &&
++			 vpninfo->current_ssl_pkt != &keepalive_pkt)
+ 			free(vpninfo->current_ssl_pkt);
+ 
+ 		vpninfo->current_ssl_pkt = NULL;
+@@ -722,6 +731,7 @@ int cstp_mainloop(struct openconnect_info *vpninfo, in
+ 				     _("Sending compressed data packet of %d bytes\n"),
+ 				     this->len);
+ 
++			vpninfo->pending_deflated_pkt = this;
+ 			vpninfo->current_ssl_pkt = vpninfo->deflate_pkt;
+ 		} else {
+ 		uncompr:
