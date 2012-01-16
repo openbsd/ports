@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.28 2012/01/14 12:26:21 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.29 2012/01/16 18:55:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -287,6 +287,7 @@ sub new
 	my ($class, $distdir, $logger, $state) = @_;
 	my $o = bless {distdir => $distdir, sha => {}, reverse => {},
 	    known_sha => {}, known_files => {},
+	    known_short => {},
 	    fetch_only => $state->{fetch_only}}, $class;
 	if (defined $state->{subst}->value('FTP_ONLY')) {
 		$o->{ftp_only} = 1;
@@ -318,10 +319,38 @@ sub new
 	return $o;
 }
 
+sub mark_sha
+{
+	my ($self, $sha, $file) = @_;
+
+	$self->{known_sha}{$sha}{$file} = 1;
+
+	# next cases are only needed to weed out by_cipher of extra links
+	if ($file =~ m/^.*\/([^\/]+)$/) {
+		$self->{known_short}{$sha}{$1} = 1;
+	}
+
+	# in particular, double / in $sha will vanish thanks to the fs
+	my $do = 0;
+	if ($sha =~ s/\/\//\//g) {
+		$do++;
+	}
+	if ($sha =~ s/^\///) {
+		$do++;
+	}
+	if ($do) {
+		if ($file =~ m/^.*\/([^\/]+)$/) {
+			$self->{known_short}{$sha}{$1} = 1;
+		} else {
+			$self->{known_short}{$sha}{$file} = 1;
+		}
+	}
+}
+
 sub known_file
 {
 	my ($self, $sha, $file) = @_;
-	$self->{known_sha}{$sha->stringize}{$file} = 1;
+	$self->mark_sha($sha->stringize, $file);
 	$self->{known_file}{$file} = 1;
 }
 
@@ -336,6 +365,7 @@ sub run_expire_old
 		# and we will never need this again
 		delete $self->{known_file};
 		delete $self->{known_sha};
+		delete $self->{known_short};
 		if (!$opt_e) {
 			$core->mark_ready;
 		}
@@ -352,9 +382,10 @@ sub expire_old
 	if (open(my $fh, '<', "$distdir/history")) {
 		my $_;
 		while (<$fh>) {
-			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*)/) {
-				$self->{known_sha}{$2}{$1} = 1;
-				$self->{known_file}{$1} = 1;
+			if (m/^\d+\s+SHA256\s*\((.*)\) \= (.*\=)$/) {
+				my ($file, $sha) = ($1, $2);
+				$self->mark_sha($sha, $file);
+				$self->{known_file}{$file} = 1;
 			}
 		}
 		close $fh;
@@ -381,9 +412,22 @@ sub expire_old
 		my $actual = $File::Find::name;
 		$actual =~ s/^\Q$distdir\E\/?//;
 		return if $self->{known_file}{$actual};
-		my $ck = OpenBSD::sha->new($_);
-		print $fh "$ts SHA256 ($actual) = ", $ck->stringize, "\n";
+		my $sha = OpenBSD::sha->new($_)->stringize;
+		print $fh "$ts SHA256 ($actual) = $sha\n";
+		$self->mark_sha($sha, $actual);
 	}, $distdir);
+
+	# and scan the ciphers as well !
+	File::Find::find(sub {
+		return unless -f $_;
+		if ($File::Find::dir =~ 
+		    m/^\Q$distdir\E\/by_cipher\/sha256\/..?\/(.*)$/) {
+			my $sha = $1;
+			return if $self->{known_sha}{$sha}{$_};
+			return if $self->{known_short}{$sha}{$_};
+			print $fh "$ts SHA256 ($_) = ", $sha, "\n";
+		}
+	}, "$distdir/by_cipher/sha256");
 
 	close $fh;
 }
