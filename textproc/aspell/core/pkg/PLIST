@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/10/31 10:29:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/17 10:59:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/aspell
 bin/aspell-import
@@ -86,6 +86,8 @@ lib/libpspell.la
 @man man/man1/run-with-aspell.1
 @man man/man1/word-list-compress.1
 share/aspell/
+share/aspell/american-variant_0.alias
+share/aspell/american-variant_1.alias
 share/aspell/american-w_accents.alias
 share/aspell/american-wo_accents.alias
 share/aspell/american.alias
@@ -95,9 +97,13 @@ share/aspell/british-ise.alias
 share/aspell/british-ize-w_accents.alias
 share/aspell/british-ize-wo_accents.alias
 share/aspell/british-ize.alias
+share/aspell/british-variant_0.alias
+share/aspell/british-variant_1.alias
 share/aspell/british-w_accents.alias
 share/aspell/british-wo_accents.alias
 share/aspell/british.alias
+share/aspell/canadian-variant_0.alias
+share/aspell/canadian-variant_1.alias
 share/aspell/canadian-w_accents.alias
 share/aspell/canadian-wo_accents.alias
 share/aspell/canadian.alias
@@ -111,9 +117,15 @@ share/aspell/en-variant_1.multi
 share/aspell/en-variant_1.rws
 share/aspell/en-variant_2.multi
 share/aspell/en-variant_2.rws
+share/aspell/en-w_accents-only.rws
 share/aspell/en-w_accents.multi
+share/aspell/en-wo_accents-only.rws
 share/aspell/en-wo_accents.multi
 share/aspell/en.multi
+share/aspell/en_CA-variant_0.multi
+share/aspell/en_CA-variant_0.rws
+share/aspell/en_CA-variant_1.multi
+share/aspell/en_CA-variant_1.rws
 share/aspell/en_CA-w_accents-only.rws
 share/aspell/en_CA-w_accents.multi
 share/aspell/en_CA-wo_accents-only.rws
@@ -129,9 +141,15 @@ share/aspell/en_GB-ize-w_accents.multi
 share/aspell/en_GB-ize-wo_accents-only.rws
 share/aspell/en_GB-ize-wo_accents.multi
 share/aspell/en_GB-ize.multi
+share/aspell/en_GB-variant_0.multi
+share/aspell/en_GB-variant_0.rws
+share/aspell/en_GB-variant_1.multi
+share/aspell/en_GB-variant_1.rws
 share/aspell/en_GB-w_accents.multi
 share/aspell/en_GB-wo_accents.multi
 share/aspell/en_GB.multi
+share/aspell/en_US-variant_0.multi
+share/aspell/en_US-variant_1.multi
 share/aspell/en_US-w_accents-only.rws
 share/aspell/en_US-w_accents.multi
 share/aspell/en_US-wo_accents-only.rws
@@ -151,6 +169,9 @@ share/aspell/sgml.amf
 share/aspell/tex.amf
 share/aspell/texinfo.amf
 share/aspell/url.amf
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/aspell.mo
 share/locale/be/LC_MESSAGES/aspell.mo
 share/locale/ca/LC_MESSAGES/aspell.mo
 share/locale/cs/LC_MESSAGES/aspell.mo
@@ -160,12 +181,18 @@ share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/aspell.mo
 share/locale/es/LC_MESSAGES/aspell.mo
+share/locale/fi/LC_MESSAGES/aspell.mo
 share/locale/fr/LC_MESSAGES/aspell.mo
 share/locale/ga/LC_MESSAGES/aspell.mo
+share/locale/id/LC_MESSAGES/aspell.mo
 share/locale/it/LC_MESSAGES/aspell.mo
+share/locale/ja/LC_MESSAGES/aspell.mo
 share/locale/mn/
 share/locale/mn/LC_MESSAGES/
 share/locale/mn/LC_MESSAGES/aspell.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/aspell.mo
 share/locale/nl/LC_MESSAGES/aspell.mo
 share/locale/pt_BR/LC_MESSAGES/aspell.mo
 share/locale/ro/LC_MESSAGES/aspell.mo
@@ -185,3 +212,4 @@ share/locale/vi/LC_MESSAGES/aspell.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/aspell.mo
+share/locale/zh_CN/LC_MESSAGES/aspell.mo

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/01/17 10:59:27 ajacoutot Exp $
 
 COMMENT=	spell checker designed to eventually replace Ispell
 
-DISTNAME=	aspell-0.60.6
-REVISION=	4
+DISTNAME=	aspell-0.60.6.1
 SHARED_LIBS +=  aspell               17.0     # .16.4
 SHARED_LIBS +=  pspell               17.0     # .16.4
 DIST_SUBDIR=	aspell
 CATEGORIES=	textproc
 
-DIST_EN=	aspell6-en-6.0-0
+DIST_EN=	aspell6-en-7.1-0
 
 MASTER_SITES0=	${MASTER_SITE_GNU:=aspell/}
 MASTER_SITES1=	${MASTER_SITE_GNU:=aspell/dict/en/}
@@ -25,7 +24,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ncurses stdc++ 
+WANTLIB=		c m ncursesw stdc++ 
 
 MODULES=		devel/gettext
 
@@ -36,7 +35,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
-			--enable-dict-dir=${PREFIX}/share/aspell
+			--enable-curses=ncursesw \
+			--enable-dict-dir=${PREFIX}/share/aspell \
+			--enable-docdir=${PREFIX}/share/doc/aspell
 
 post-build:
 	cd ${WRKDIR}/${DIST_EN} && \

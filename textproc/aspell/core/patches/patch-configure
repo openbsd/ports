@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.4 2008/11/13 17:07:27 ajacoutot Exp $
---- configure.orig	Mon Apr  7 06:31:31 2008
-+++ configure	Thu Nov 13 17:42:24 2008
+$OpenBSD: patch-configure,v 1.5 2012/01/17 10:59:27 ajacoutot Exp $
+--- configure.orig	Mon Jul  4 10:58:50 2011
++++ configure	Tue Jan 17 10:55:18 2012
 @@ -2645,7 +2645,7 @@ fi
  
  if test "$pkgdatadir" = "undef"
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2008/11/13 17:07:27 ajacoutot Exp $
  fi
  
  
-@@ -17899,100 +17899,7 @@ _ACEOF
+@@ -17958,100 +17958,7 @@ _ACEOF
    fi
  
  
@@ -111,7 +111,7 @@ $OpenBSD: patch-configure,v 1.4 2008/11/13 17:07:27 ajacoutot Exp $
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
  #                                                                 #
  #                     Terminal function tests                     #
-@@ -20127,10 +20034,10 @@ XGETTEXT!$XGETTEXT$ac_delim
+@@ -20216,10 +20123,10 @@ XGETTEXT!$XGETTEXT$ac_delim
  XGETTEXT_015!$XGETTEXT_015$ac_delim
  MSGMERGE!$MSGMERGE$ac_delim
  INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
