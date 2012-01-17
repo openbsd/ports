@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/25 20:43:56 rui Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/17 17:36:47 sthen Exp $
 %%SHARED%%
 @comment @bin bin/file
 include/magic.h
@@ -7,5 +7,4 @@ lib/libmagic.la
 @comment @man man/man1/file.1
 @man man/man3/libmagic.3
 @man man/man4/magic.4
-share/file/
-share/file/magic.mgc
+share/misc/magic.mgc
