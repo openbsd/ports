@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-sk,v 1.2 2010/09/22 18:24:10 stsp Exp $
+@comment $OpenBSD: PLIST-sk,v 1.3 2012/01/17 18:29:43 espie Exp $
+@pkgpath editors/vim-spell,sk
 share/vim/vim${P}/spell/sk.cp1250.spl
 share/vim/vim${P}/spell/sk.iso-8859-2.spl
 share/vim/vim${P}/spell/sk.utf-8.spl
