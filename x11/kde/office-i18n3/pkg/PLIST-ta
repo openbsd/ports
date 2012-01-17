@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ta,v 1.2 2006/04/03 14:52:19 bernd Exp $
+@comment $OpenBSD: PLIST-ta,v 1.3 2012/01/17 18:08:22 espie Exp $
+@pkgpath x11/kde/office-i18n3,ta
 ${LOC}desktop_koffice.mo
 ${LOC}example.mo
 ${LOC}karbon.mo

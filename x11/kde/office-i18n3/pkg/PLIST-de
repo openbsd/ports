@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-de,v 1.7 2007/02/23 22:24:18 espie Exp $
+@comment $OpenBSD: PLIST-de,v 1.8 2012/01/17 18:08:22 espie Exp $
+@pkgpath x11/kde/office-i18n3,de
 share/apps/koffice/
 share/apps/koffice/autocorrect/
 share/apps/koffice/autocorrect/de.xml
@@ -20,7 +21,7 @@ ${DOC}kchart/kchart-config6.png
 ${DOC}kchart/kchart-config7.png
 ${DOC}kchart/kchart-config8.png
 ${DOC}kchart/kchart-dataeditor.png
-${DOC}kchart/kchart${FLAVORS}fault.png
+${DOC}kchart/kchart-default.png
 ${DOC}kchart/kchart-example1-1.png
 ${DOC}kchart/kchart-example1-2.png
 ${DOC}kchart/kchart-example1-3.png

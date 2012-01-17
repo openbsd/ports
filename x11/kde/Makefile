@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/01/16 22:10:59 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2012/01/17 18:08:22 espie Exp $
 
      SUBDIR =
      SUBDIR += arts3
@@ -21,38 +21,7 @@
      SUBDIR += accessibility3
      SUBDIR += office3
      SUBDIR +=i18n3
-     SUBDIR +=office-i18n3,ca
-     SUBDIR +=office-i18n3,cs
-     SUBDIR +=office-i18n3,cy
-     SUBDIR +=office-i18n3,da
-     SUBDIR +=office-i18n3,de
-     SUBDIR +=office-i18n3,el
-     SUBDIR +=office-i18n3,en_gb
-     SUBDIR +=office-i18n3,es
-     SUBDIR +=office-i18n3,et
-     SUBDIR +=office-i18n3,eu
-     SUBDIR +=office-i18n3,fi
-     SUBDIR +=office-i18n3,fr
-     SUBDIR +=office-i18n3,hu
-     SUBDIR +=office-i18n3,it
-     SUBDIR +=office-i18n3,ja
-     SUBDIR +=office-i18n3,lv
-     SUBDIR +=office-i18n3,ms
-     SUBDIR +=office-i18n3,nb
-     SUBDIR +=office-i18n3,nl
-     SUBDIR +=office-i18n3,pl
-     SUBDIR +=office-i18n3,pt
-     SUBDIR +=office-i18n3,pt_br
-     SUBDIR +=office-i18n3,ru
-     SUBDIR +=office-i18n3,sk
-     SUBDIR +=office-i18n3,sl
-     SUBDIR +=office-i18n3,sr
-     SUBDIR +=office-i18n3,sr@latn
-     SUBDIR +=office-i18n3,sv
-     SUBDIR +=office-i18n3,tr
-     SUBDIR +=office-i18n3,uk
-     SUBDIR +=office-i18n3,zh_cn
-     SUBDIR +=office-i18n3,zh_tw
+     SUBDIR +=office-i18n3
      SUBDIR += kdoc3
      SUBDIR += libs3-doc
      SUBDIR += okle
