@@ -1,0 +1,5 @@
+This module simply interpolates option file hints in @ARGV by the
+contents of the pointed files. This enables option reading from files
+instead of or additional to the usual reading from the command line.
+
+Alternatively, you can process any array instead of @ARGV.
