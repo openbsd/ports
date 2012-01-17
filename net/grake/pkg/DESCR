@@ -1,0 +1,2 @@
+grake is a command line tool for scanning webpages for Youtube links. It
+prints the found URLs to the standard output, and is useful for scripts.
