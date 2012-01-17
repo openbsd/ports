@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils_c,v 1.1 2004/01/04 18:58:44 espie Exp $
---- utils.c.orig	2004-01-04 19:49:27.000000000 +0100
-+++ utils.c	2004-01-04 19:53:29.000000000 +0100
-@@ -17,7 +17,7 @@ static char rcsid[] = "$Id: utils.c,v 1.
+$OpenBSD: patch-utils_c,v 1.2 2012/01/17 17:05:14 sthen Exp $
+--- utils.c.orig	Tue Jan 17 17:04:32 2012
++++ utils.c	Tue Jan 17 17:04:33 2012
+@@ -17,7 +17,7 @@ static char rcsid[] = "$Id: utils.c,v 1.6 1997/04/24 1
  #else
  #include <strings.h>
  #endif

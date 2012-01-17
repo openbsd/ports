@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_h,v 1.1 2004/01/04 18:58:44 espie Exp $
---- utils.h.orig	2004-01-04 19:55:13.000000000 +0100
-+++ utils.h	2004-01-04 19:55:51.000000000 +0100
+$OpenBSD: patch-utils_h,v 1.2 2012/01/17 17:05:14 sthen Exp $
+--- utils.h.orig	Tue Jan 17 17:04:32 2012
++++ utils.h	Tue Jan 17 17:04:33 2012
 @@ -50,19 +50,19 @@
  
  /* Error - print like fprintf(stderr, ...) and die. Progname included at
