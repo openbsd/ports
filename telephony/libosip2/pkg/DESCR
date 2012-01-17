@@ -1,5 +1,5 @@
 oSIP provides a SIP stack with a limited set of features common to
-any kind of SIP Agents.  Thus oSIP is not oriented towards any
+any kind of SIP Agents. Thus oSIP is not oriented towards any
 particular implementations and can be used for implementing SIP
 End-Point, Proxy or any kind of more specific SIP Agent such as
 B2BUA.

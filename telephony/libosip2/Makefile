@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 07:43:05 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/17 17:29:36 sthen Exp $
 
 COMMENT=	GNU oSIP library
 
-DISTNAME=	libosip2-2.2.2
-REVISION=	0
-SHARED_LIBS=	osip2		3.1 \
-		osipparser2	3.1
+DISTNAME=	libosip2-3.5.0
+SHARED_LIBS=	osip2		4.0 \
+		osipparser2	4.0
 
 CATEGORIES=	telephony devel
 
@@ -20,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_GNU:=osip/}
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-debug \

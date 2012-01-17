@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/06/13 03:33:06 brad Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/01/17 17:29:36 sthen Exp $
 %%SHARED%%
 include/osip2/
 include/osip2/osip.h
@@ -6,7 +6,6 @@ include/osip2/osip_condv.h
 include/osip2/osip_dialog.h
 include/osip2/osip_fifo.h
 include/osip2/osip_mt.h
-include/osip2/osip_negotiation.h
 include/osip2/osip_time.h
 include/osipparser2/
 include/osipparser2/headers/
@@ -45,7 +44,6 @@ include/osipparser2/osip_md5.h
 include/osipparser2/osip_message.h
 include/osipparser2/osip_parser.h
 include/osipparser2/osip_port.h
-include/osipparser2/osip_rfc3264.h
 include/osipparser2/osip_uri.h
 include/osipparser2/sdp_message.h
 lib/libosip2.a
