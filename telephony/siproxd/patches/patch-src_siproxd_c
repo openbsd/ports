@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_siproxd_c,v 1.1 2012/01/17 17:30:33 sthen Exp $
+This prevents siproxd from creating a redundant PID file outside the chroot jail
+--- src/siproxd.c.orig	Sun Jun 12 17:10:39 2011
++++ src/siproxd.c	Sun Sep 11 20:48:04 2011
+@@ -301,13 +301,6 @@ int main (int argc, char *argv[]) 
+    /* prepare for creating PID file */
+    if (pidfilename == NULL) pidfilename = configuration.pid_file;
+ 
+-   /* If going to dive into a chroot jail, create a PID file outside
+-    * the jail, too. However, it will be owned by root and not deleted
+-    * on process termination... */
+-   if (configuration.chrootjail && ((getuid()==0) || (geteuid()==0))) {
+-      if (pidfilename) createpidfile(pidfilename);
+-   }
+-
+    /* change user and group IDs */
+    secure_enviroment();
+ 
