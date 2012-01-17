@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.64 2011/12/16 08:15:49 rpointel Exp $
+# $OpenBSD: Quirks.pm,v 1.65 2012/01/17 11:06:10 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -254,7 +254,30 @@ my $stem_extensions = {
 	'php5-mapscript' => 'php-mapscript',
 	'libusb' => 'libusb-compat',
 	'pecl-pcntl' => 'php-pcntl',
-	'distribute' => 'py3-distribute'
+	'distribute' => 'py3-distribute',
+	'aspell6-ar' => 'aspell-ar',
+	'aspell6-bg' => 'aspell-bg',
+	'aspell6-ca' => 'aspell-ca',
+	'aspell6-cs' => 'aspell-cs',
+	'aspell5-da' => 'aspell-da',
+	'aspell6-de' => 'aspell-de',
+	'aspell6-eo' => 'aspell-eo',
+	'aspell6-es' => 'aspell-es',
+	'aspell6-fa' => 'aspell-fa',
+	'aspell5-fo' => 'aspell-fo',
+	'aspell5-ga' => 'aspell-ga',
+	'aspell6-gl' => 'aspell-gl',
+	'aspell6-he' => 'aspell-he',
+	'aspell5-id' => 'aspell-id',
+	'aspell6-it' => 'aspell-it',
+	'aspell6-lt' => 'aspell-lt',
+	'aspell6-pl' => 'aspell-pl',
+	'aspell5-ro' => 'aspell-ro',
+	'aspell6-ru' => 'aspell-ru',
+	'aspell6-sk' => 'aspell-sk',
+	'aspell6-sr' => 'aspell-sr',
+	'aspell5-tn' => 'aspell-tn',
+	'aspell6-uk' => 'aspell-uk'
 };
 
 # ->is_base_system($handle, $state):
