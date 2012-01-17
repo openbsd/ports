@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.726 2012/01/13 09:24:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.727 2012/01/17 08:59:19 bentley Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -105,6 +105,7 @@
      SUBDIR += gnugk
      SUBDIR += gopher
      SUBDIR += gotthard
+     SUBDIR += grake
      SUBDIR += gsnmp
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
