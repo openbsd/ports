@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/01/17 17:22:56 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
 DISTNAME=	quagga-0.99.19
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	ospf		0.0 \
 		ospfapiclient	0.0 \
 		zebra		0.0
@@ -21,23 +21,20 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c curses m readline termcap
 
 STATEDIR?=	/var/quagga
-SUBST_VARS=	CONFDIR STATEDIR
+SUBST_VARS=	STATEDIR
 
 BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-CONFDIR=	${SYSCONFDIR}/quagga
+SYSCONFDIR=	${BASESYSCONFDIR}/quagga
 SEPARATE_BUILD=	concurrent
-CONFIGURE_STYLE= gnu old
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
-		--sysconfdir=${CONFDIR} \
 		--localstatedir=${STATEDIR} \
 		--enable-user=_quagga \
 		--enable-group=_quagga \
 		--enable-vty-group=_quagga \
-		--enable-vtysh \
-		--mandir=${LOCALBASE}/man \
-		--infodir=${LOCALBASE}/info
+		--enable-vtysh
 .if ${MACHINE_ARCH:Mhppa} || ${MACHINE_ARCH:Marm}
 CONFIGURE_ARGS+= --disable-pie
 .endif

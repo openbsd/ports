@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/09/27 09:45:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/01/17 17:22:56 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -94,5 +94,5 @@ share/examples/quagga/vtysh.conf.sample
 share/examples/quagga/zebra.conf.sample
 @owner _quagga
 @group _quagga
-@sample ${SYSCONFDIR}/quagga/
+@sample ${SYSCONFDIR}/
 @sample ${STATEDIR}/
