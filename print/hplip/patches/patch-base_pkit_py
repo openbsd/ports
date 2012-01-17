@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_pkit_py,v 1.4 2011/07/09 00:30:28 ajacoutot Exp $
---- base/pkit.py.orig	Sat May 14 20:26:06 2011
-+++ base/pkit.py	Sat Jul  9 02:05:35 2011
+$OpenBSD: patch-base_pkit_py,v 1.5 2012/01/17 09:54:27 ajacoutot Exp $
+--- base/pkit.py.orig	Fri Dec  9 12:20:37 2011
++++ base/pkit.py	Mon Jan 16 18:49:35 2012
 @@ -346,8 +346,8 @@ def copyPluginFiles(src_dir):
          SANELIBDIR = '/usr/lib64/sane'
          LIBDIR = '/usr/lib64'
@@ -12,12 +12,12 @@ $OpenBSD: patch-base_pkit_py,v 1.4 2011/07/09 00:30:28 ajacoutot Exp $
  
      copies = []
  
-@@ -482,7 +482,7 @@ def run_plugin_command(required=True, plugin_reason=PL
+@@ -483,7 +483,7 @@ def run_plugin_command(required=True, plugin_reason=PL
      if utils.which("hp-plugin"):
-         cmd = su_sudo % ("hp-plugin -u %s --reason %s" % (req, plugin_reason))
+         p_path="hp-plugin"
      else:
--        cmd = su_sudo % ("python ./plugin.py -u %s --reason %s" % (req, plugin_reason))
-+        cmd = su_sudo % ("${MODPY_BIN} ./plugin.py -u %s --reason %s" % (req, plugin_reason))
+-        p_path="python ./plugin.py"
++        p_path="${MODPY_BIN} ./plugin.py"
  
-     log.debug("%s" % cmd)
-     if password_f is not None:
+     if 'gksu' in su_sudo:
+         cmd = su_sudo % ("%s -u %s --reason %s" % (p_path, req, plugin_reason))

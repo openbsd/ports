@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-gui,v 1.6 2011/06/07 15:47:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.7 2012/01/17 09:54:27 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
+bin/hp-check-plugin
 bin/hp-colorcal
 bin/hp-devicesettings
+bin/hp-diagnose_plugin
 bin/hp-fab
 bin/hp-faxsetup
 bin/hp-firmware
@@ -204,6 +206,7 @@ share/hplip/data/images/devices/LASERJET_5550DTN.png
 share/hplip/data/images/devices/OFFICEJET_PRO_1150C.png
 share/hplip/data/images/devices/OfficeJet_5105.png
 share/hplip/data/images/devices/OfficeJet_6100_Series.png
+share/hplip/data/images/devices/OfficeJet_8500_a910.png
 share/hplip/data/images/devices/OfficeJet_G85.png
 share/hplip/data/images/devices/OfficeJet_Series_300.png
 share/hplip/data/images/devices/Officejet_6150_Series.png
@@ -420,6 +423,10 @@ share/hplip/ui4/nodevicesdialog.py
 share/hplip/ui4/nodevicesdialog.pyc
 share/hplip/ui4/nodevicesdialog_base.py
 share/hplip/ui4/nodevicesdialog_base.pyc
+share/hplip/ui4/plugindiagnose.py
+share/hplip/ui4/plugindiagnose.pyc
+share/hplip/ui4/plugindiagnose_base.py
+share/hplip/ui4/plugindiagnose_base.pyc
 share/hplip/ui4/plugindialog.py
 share/hplip/ui4/plugindialog.pyc
 share/hplip/ui4/plugindialog_base.py

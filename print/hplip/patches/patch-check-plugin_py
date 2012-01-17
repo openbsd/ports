@@ -1,0 +1,12 @@
+$OpenBSD: patch-check-plugin_py,v 1.1 2012/01/17 09:54:27 ajacoutot Exp $
+--- check-plugin.py.orig	Tue Jan 17 10:31:58 2012
++++ check-plugin.py	Tue Jan 17 10:32:09 2012
+@@ -227,7 +227,7 @@ sts,output = utils.run(cmd)
+ if sts != 0:
+     log.warn("Failed to change log file permissions: %s" %output)
+ 
+-cmd="chgrp lp "+LOG_FILE
++cmd="chgrp _cups "+LOG_FILE
+ sts,output = utils.run(cmd)
+ if sts != 0:
+     log.warn("Failed to change log file group permissions: %s" %output)
