@@ -1,26 +1,31 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/01/17 17:08:16 sthen Exp $
 
 COMMENT=	list tcp connections to/from the local machine
 
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlp64}
+BROKEN=		not lp64 compatible
+.endif
+
 DISTNAME=	tcplist-2.2
-REVISION =	1
+REVISION=	2
 CATEGORIES=	sysutils net
 
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c 
+
+WANTLIB += c
 
 RUN_DEPENDS=	sysutils/lsof
 
 WRKDIST=	${WRKDIR}
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 do-install:
