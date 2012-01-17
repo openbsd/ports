@@ -1,9 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: siproxd.rc,v 1.1 2012/01/17 17:30:33 sthen Exp $
+# $OpenBSD: siproxd.rc,v 1.2 2012/01/17 17:32:12 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/siproxd"
 
 . /etc/rc.d/rc.subr
+
+rc_reload=NO
 
 rc_cmd $1
