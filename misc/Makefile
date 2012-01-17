@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2011/11/17 00:45:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.147 2012/01/17 08:05:03 bentley Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += p5-Spreadsheet-ParseExcel
      SUBDIR += p5-Spreadsheet-WriteExcel
      SUBDIR += p5-Term-Animation
+     SUBDIR += p5-Umph-Prompt
      SUBDIR += p5-User
      SUBDIR += p5-User-Identity
      SUBDIR += pdmenu
