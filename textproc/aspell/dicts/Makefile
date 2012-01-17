@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/02 13:09:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/17 11:04:12 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += af
@@ -30,7 +30,6 @@
      SUBDIR += nb
      SUBDIR += nl
      SUBDIR += nn
-#     SUBDIR += no
      SUBDIR += pl
      SUBDIR += pt
      SUBDIR += ro

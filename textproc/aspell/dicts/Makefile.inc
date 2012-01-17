@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.12 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2012/01/17 11:04:12 ajacoutot Exp $
 
 # Check individual packages for overrides when bumping this!
-PKGNAME?=	${DISTNAME:C/-([0-9])$/_\1/}
-REVISION?=	1
+PKGNAMEBASE=	${DISTNAME:C/aspell[0-9]/aspell/}
+PKGNAME?=	${PKGNAMEBASE:C/-([0-9])$/.\1/}
+EPOCH?=		1
 
 DIST_SUBDIR?=	aspell
 
