@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1012 2012/01/16 15:32:37 dhill Exp $
+# $OpenBSD: Makefile,v 1.1013 2012/01/17 07:58:53 bentley Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -601,6 +601,7 @@
      SUBDIR += p5-Fortran-Format
      SUBDIR += p5-FreezeThaw
      SUBDIR += p5-Getargs-Long
+     SUBDIR += p5-Getopt-ArgvFile
      SUBDIR += p5-Getopt-Euclid
      SUBDIR += p5-Getopt-Long-Descriptive
      SUBDIR += p5-Getopt-Simple
