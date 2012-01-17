@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/11 06:26:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/17 13:57:24 pea Exp $
 @newgroup _pgbouncer:653
 @newuser _pgbouncer:653:653:daemon:pgbouncer:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/pgbouncer/*
@@ -9,6 +9,9 @@
 @sample ${SYSCONFDIR}/pgbouncer/
 @owner
 share/doc/pgbouncer/
+share/doc/pgbouncer/NEWS
+share/doc/pgbouncer/README
+share/doc/pkg-readmes/${FULLPKGNAME}
 @mode 640
 @group _pgbouncer
 share/doc/pgbouncer/pgbouncer.ini
@@ -16,10 +19,9 @@ share/doc/pgbouncer/pgbouncer.ini
 share/doc/pgbouncer/userlist.txt
 @sample ${SYSCONFDIR}/pgbouncer/userlist.txt
 @mode
-@group
-share/doc/pkg-readmes/${FULLPKGNAME}
-@rcscript ${RCDIR}/pgbouncer
 @owner _pgbouncer
-@group _pgbouncer
-@group
 @sample /var/log/pgbouncer/
+@owner
+@mode
+@group
+@rcscript ${RCDIR}/pgbouncer

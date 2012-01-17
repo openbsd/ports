@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_pgbouncer_ini,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
---- etc/pgbouncer.ini.orig	Wed Apr 21 12:02:50 2010
-+++ etc/pgbouncer.ini	Wed Jun 16 15:29:18 2010
-@@ -22,8 +22,8 @@ nondefaultdb = pool_size=50 reserve_pool=10
+$OpenBSD: patch-etc_pgbouncer_ini,v 1.2 2012/01/17 13:57:24 pea Exp $
+--- etc/pgbouncer.ini.orig	Mon Dec 12 18:09:54 2011
++++ etc/pgbouncer.ini	Wed Jan 11 10:02:47 2012
+@@ -27,8 +27,8 @@ nondefaultdb = pool_size=50 reserve_pool=10
  ;;; Administrative settings
  ;;;
  
@@ -12,13 +12,13 @@ $OpenBSD: patch-etc_pgbouncer_ini,v 1.1.1.1 2010/07/08 16:18:06 pea Exp $
  
  ;;;
  ;;; Where to wait for clients
-@@ -39,16 +39,16 @@ unix_socket_dir = /tmp
+@@ -47,16 +47,16 @@ listen_port = 6432
  ;;;
  
  ; any, trust, plain, crypt, md5
 -auth_type = trust
 +auth_type = md5
- #auth_file = 8.0/main/global/pg_auth
+ ;auth_file = 8.0/main/global/pg_auth
 -auth_file = etc/userlist.txt
 +auth_file = /etc/pgbouncer/userlist.txt
  
