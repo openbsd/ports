@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2011/12/08 09:39:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.274 2012/01/18 22:32:59 avsm Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -38,6 +38,7 @@
      SUBDIR += dkim-milter
      SUBDIR += dovecot
      SUBDIR += dovecot-pigeonhole
+     SUBDIR += dovecot-antispam
      SUBDIR += drac
      SUBDIR += dspam
      SUBDIR += dspam,hash
