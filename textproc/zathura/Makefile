@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/26 19:53:17 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2012/01/18 15:58:32 landry Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
-DISTNAME =		zathura-0.0.8.3
-REVISION=		2
+DISTNAME =		zathura-0.0.8.5
 
 CATEGORIES =		textproc x11
 
-HOMEPAGE =		http://zathura.pwmt.org/
+HOMEPAGE =		http://pwmt.org/projects/zathura/
 
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@the00z.org>
 
@@ -27,6 +26,7 @@ WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES =	https://pwmt.org/download/
 
+BUILD_DEPENDS =	textproc/py-docutils
 LIB_DEPENDS =	devel/atk \
 		graphics/gdk-pixbuf2 \
 		print/poppler \
