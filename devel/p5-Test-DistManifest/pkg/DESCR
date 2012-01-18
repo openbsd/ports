@@ -1,0 +1,12 @@
+This module provides a simple method of testing that a MANIFEST matches
+the distribution.
+
+It tests three things:
+- Everything in MANIFEST exists
+- Everything in the package is listed in MANIFEST,
+  or subsequently matches a regular expression mask in MANIFEST.SKIP
+- Nothing exists in MANIFEST that also matches a mask in MANIFEST.SKIP,
+  so as to avoid an unsatisfiable dependency conditions If there is no
+  MANIFEST.SKIP included in your distribution, this module will
+  replicate the toolchain behaviour of using the default system-wide
+  MANIFEST.SKIP file.
