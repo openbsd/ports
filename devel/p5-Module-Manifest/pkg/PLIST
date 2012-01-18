@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/18 16:50:57 okan Exp $
+${P5SITE}/Module/
+${P5SITE}/Module/Manifest.pm
+@man man/man3p/Module::Manifest.3p
+share/examples/p5-Module-Manifest/
+share/examples/p5-Module-Manifest/difference.pl
