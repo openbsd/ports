@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.22 2012/01/14 12:26:21 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.23 2012/01/18 15:26:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -51,8 +51,7 @@ sub expire_old_distfiles
 	my ($self, $core, $opt_e) = @_;
 	# don't bother if dump-vars wasn't perfectly clean
 	return 0 if $self->{errors};
-	$self->{fetch}->run_expire_old($core, $opt_e);
-	return 1;
+	return $self->{fetch}->run_expire_old($core, $opt_e);
 }
 
 sub finish
@@ -167,6 +166,11 @@ sub new
 
 sub build_distinfo
 {
+}
+
+sub run_expire_old
+{
+	return 0;
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.29 2012/01/16 18:55:35 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.30 2012/01/18 15:26:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -372,6 +372,7 @@ sub run_expire_old
 		return 0;
 	    }, 
 	    "CLEAN DIST"));
+	return 1;
 }
 
 sub expire_old
