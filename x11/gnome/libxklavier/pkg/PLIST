@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/03/07 19:33:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/01/18 07:29:54 ajacoutot Exp $
 %%SHARED%%
 include/libxklavier/
 include/libxklavier/xkl-enum-types.h
@@ -8,9 +8,13 @@ include/libxklavier/xkl_config_registry.h
 include/libxklavier/xkl_engine.h
 include/libxklavier/xkl_engine_marshal.h
 include/libxklavier/xklavier.h
+lib/girepository-1.0/
+lib/girepository-1.0/Xkl-1.0.typelib
 lib/libxklavier.a
 lib/libxklavier.la
 lib/pkgconfig/libxklavier.pc
+share/gir-1.0/
+share/gir-1.0/Xkl-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libxklavier/
@@ -25,7 +29,6 @@ share/gtk-doc/html/libxklavier/index.sgml
 share/gtk-doc/html/libxklavier/left.png
 share/gtk-doc/html/libxklavier/libxklavier-xkl-engine.html
 share/gtk-doc/html/libxklavier/libxklavier-xklavier.html
-share/gtk-doc/html/libxklavier/libxklavier.devhelp
 share/gtk-doc/html/libxklavier/libxklavier.devhelp2
 share/gtk-doc/html/libxklavier/right.png
 share/gtk-doc/html/libxklavier/style.css
