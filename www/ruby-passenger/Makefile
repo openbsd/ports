@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/13 18:38:17 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/01/18 16:52:06 jeremy Exp $
 
 COMMENT-main =		Nginx module for deploying ruby applications
 COMMENT-standalone =	ruby web application server
 
 PASS_VERSION =		3.0.11
-NGINX_VERSION =		1.0.10
+NGINX_VERSION =		1.0.11
 DISTNAME =		passenger-${PASS_VERSION}
 FULLPKGNAME-main =	${MODRUBY_PKG_PREFIX}-${DISTNAME}
 FULLPKGNAME-standalone = ${MODRUBY_PKG_PREFIX}-passenger-standalone-${PASS_VERSION}.${NGINX_VERSION}
