@@ -1,0 +1,7 @@
+The Dovecot antispam plugin watches a defined spam folder (defaults
+to "SPAM"). It works together with a spam system that classifies
+each message as it is delivered. When the message is classified as
+spam, it shall be delivered to the spam folder, otherwise via the
+regular filtering file the user may have (maildrop, Sieve, etc).
+Now the user has everything classified as spam in the special spam
+folder, everything else where it should be sorted to.
