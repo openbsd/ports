@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: puppetd.rc,v 1.1 2011/03/20 15:46:34 ajacoutot Exp $
+# $OpenBSD: puppetd.rc,v 1.2 2012/01/18 14:47:05 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/puppetd"
 
@@ -8,5 +8,11 @@ daemon="${TRUEPREFIX}/sbin/puppetd"
 
 pexp=".*ruby.* ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
+
+# XXX can't stop within a fair amount of time when puppetmasterd is unreachable;
+# related to: http://projects.puppetlabs.com/issues/11360 ?
+rc_stop() {
+	pkill -9 -f "^${pexp}"
+}
 
 rc_cmd $1
