@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1013 2012/01/17 07:58:53 bentley Exp $
+# $OpenBSD: Makefile,v 1.1014 2012/01/18 16:56:28 okan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -665,6 +665,7 @@
      SUBDIR += p5-MRO-Compat
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
+     SUBDIR += p5-Module-Manifest
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
      SUBDIR += p5-Module-ScanDeps
@@ -814,6 +815,7 @@
      SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
+     SUBDIR += p5-Test-DistManifest
      SUBDIR += p5-Test-Distribution
      SUBDIR += p5-Test-Exception
      SUBDIR += p5-Test-Expect
