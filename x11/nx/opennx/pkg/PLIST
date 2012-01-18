@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/03 16:46:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/18 11:57:51 ajacoutot Exp $
 @bin NX/bin/opennx
 @bin NX/bin/pconnect
 @bin NX/bin/watchreader
@@ -14,7 +14,6 @@ bin/opennx
 share/applications/innovidata-opennx-admin.desktop
 share/applications/innovidata-opennx-wizard.desktop
 share/applications/innovidata-opennx.desktop
-share/applications/innovidata-opennx.directory
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/icons/hicolor/128x128/apps/nx.png
 share/icons/hicolor/128x128/apps/opennx-admin.png

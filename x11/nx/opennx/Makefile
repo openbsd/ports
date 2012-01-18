@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2012/01/04 10:25:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/01/18 11:57:50 ajacoutot Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16.0.658
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		sysutils
 
@@ -54,5 +54,6 @@ pre-configure:
 post-install:
 	ln -s ${TRUEPREFIX}/NX/bin/opennx ${PREFIX}/bin/opennx
 	rm ${PREFIX}/share/applications/*.{beforesubst,orig}
+	rm ${PREFIX}/share/applications/innovidata-opennx.directory
 
 .include <bsd.port.mk>
