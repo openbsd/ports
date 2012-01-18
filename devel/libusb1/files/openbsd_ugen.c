@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd_ugen.c,v 1.3 2011/11/18 15:18:50 mpi Exp $	*/
+/*	$OpenBSD: openbsd_ugen.c,v 1.4 2012/01/18 14:09:53 mpi Exp $	*/
 /*
  * Copyright (c) 2011 Martin Pieuchot <mpi@openbsd.org>
  *
@@ -656,8 +656,10 @@ _access_endpoint(struct libusb_transfer *transfer)
 		s = strchr(devnode, '.');
 		snprintf(s, 4, ".%02d", endpt);
 
-		if ((fd = open(devnode, mode)) < 0)
-			return (-1);
+		/* We may need to read/write to the same endpoint later. */
+		if (((fd = open(devnode, O_RDWR)) < 0) && (errno == ENXIO))
+			if ((fd = open(devnode, mode)) < 0)
+				return (-1);
 
 		hpriv->endpoints[endpt] = fd;
 	}
@@ -669,7 +671,7 @@ int
 _sync_gen_transfer(struct usbi_transfer *itransfer)
 {
 	struct libusb_transfer *transfer;
-	int fd, err, nr = 1;
+	int fd, nr = 1;
 
 	transfer = __USBI_TRANSFER_TO_LIBUSB_TRANSFER(itransfer);
 
@@ -693,11 +695,8 @@ _sync_gen_transfer(struct usbi_transfer *itransfer)
 		nr = write(fd, transfer->buffer, transfer->length);
 	}
 
-	if (nr < 0) {
-		err = errno;
-		close(fd);
-		return _errno_to_libusb(err);
-	}
+	if (nr < 0)
+		return _errno_to_libusb(errno);
 
 	itransfer->transferred = nr;
 
