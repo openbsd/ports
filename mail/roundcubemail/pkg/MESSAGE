@@ -1,8 +1,0 @@
-With Apache, AllowOverride settings are required on the ${INSTDIR}
-directory. You can configure this as follows:
-
-# ln -s ${PREFIX}/conf/modules.sample/roundcubemail.conf \
-        ${PREFIX}/conf/modules
-# /etc/rc.d/httpd restart
-
-Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING

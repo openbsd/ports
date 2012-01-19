@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/01/11 02:35:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/01/19 13:53:48 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -1780,3 +1780,5 @@ roundcubemail/temp/
 @owner
 @group
 roundcubemail/temp/.htaccess
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

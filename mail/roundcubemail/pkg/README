@@ -1,0 +1,35 @@
+$OpenBSD: README,v 1.1 2012/01/19 13:53:48 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Setup with httpd from OpenBSD base system
+=========================================
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
+
+# ln -s ../modules.sample/roundcubemail.conf \
+        ${PREFIX}/conf/modules
+# /etc/rc.d/httpd restart
+
+Setup with other web servers
+============================
+Review the .htaccess files as you may need to use them as a template to
+adjust various PHP settings in ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
+
+With clients using certain versions of Internet Explorer, cache-control
+headers must be adjusted for file downloads to work correctly over HTTPS.
+Roundcube does this automatically but requires that the HTTPS variable
+is passed to PHP. This is normally set by Apache mod_ssl, but not by
+other servers; it will show as an environment variable in a phpinfo()
+call if you want to check.
+
+If this is not present it will need adding as a FastCGI parameter.
+For nginx, you can do this by setting 'fastcgi_param HTTPS on' in the
+appropriate location{} block for HTTPS.
+
+Standard Roundcube installation/upgrade
+=======================================
+See ${INSTDIR}/INSTALL and ${INSTDIR}/UPGRADING
+for more information.
