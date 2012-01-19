@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_MainWindow_cpp,v 1.7 2012/01/02 08:39:43 dcoppa Exp $
---- src/MainWindow.cpp.orig	Fri Oct 28 22:38:22 2011
-+++ src/MainWindow.cpp	Mon Jan  2 09:36:23 2012
-@@ -653,7 +653,9 @@ void MainWindow::visitSite() {
+$OpenBSD: patch-src_MainWindow_cpp,v 1.8 2012/01/19 08:13:30 dcoppa Exp $
+--- src/MainWindow.cpp.orig	Thu Jan  5 12:53:47 2012
++++ src/MainWindow.cpp	Mon Jan 16 19:25:09 2012
+@@ -753,7 +753,9 @@ void MainWindow::visitSite() {
  }
  
  void MainWindow::donate() {
