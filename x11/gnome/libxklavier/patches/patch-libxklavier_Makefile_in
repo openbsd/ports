@@ -1,0 +1,18 @@
+$OpenBSD: patch-libxklavier_Makefile_in,v 1.3 2012/01/19 15:37:08 ajacoutot Exp $
+
+From 57785c952444e4cb9d13e43d4f9cc9713d66958b Mon Sep 17 00:00:00 2001
+From: Martin Pitt <martin.pitt@ubuntu.com>
+Date: Mon, 16 Jan 2012 15:00:18 +0000
+Subject: Use local include files for building GIR
+
+--- libxklavier/Makefile.in.orig	Thu Jan 19 16:15:43 2012
++++ libxklavier/Makefile.in	Thu Jan 19 16:16:10 2012
+@@ -343,7 +343,7 @@ INTROSPECTION_COMPILER_ARGS = --includedir=$(srcdir)
+ # avoid introspecting private headers
+ @HAVE_INTROSPECTION_TRUE@introspection_sources = $(xklavier_headers) $(filter %.c, $(libxklavier_la_SOURCES))
+ @HAVE_INTROSPECTION_TRUE@Xkl_1_0_gir_INCLUDES = GObject-2.0 xlib-2.0
+-@HAVE_INTROSPECTION_TRUE@Xkl_1_0_gir_CFLAGS = $(INCLUDES) $(X_CFLAGS) $(XML_CFLAGS) $(GLIB_CFLAGS) $(XINPUT_CFLAGS)
++@HAVE_INTROSPECTION_TRUE@Xkl_1_0_gir_CFLAGS = -I$(top_srcdir) $(INCLUDES) $(X_CFLAGS) $(XML_CFLAGS) $(GLIB_CFLAGS) $(XINPUT_CFLAGS)
+ @HAVE_INTROSPECTION_TRUE@Xkl_1_0_gir_LIBS = libxklavier.la
+ @HAVE_INTROSPECTION_TRUE@Xkl_1_0_gir_FILES = $(xklavier_headers) $(introspection_sources)
+ @HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2012/01/19 14:25:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/01/19 15:37:08 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xklavier             17.0     # .17.0
 
@@ -16,16 +16,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xi m pcre xkbfile z ffi
-WANTLIB += xcb glib-2.0 gthread-2.0 gobject-2.0 xml2
+WANTLIB += X11 Xext Xi ffi glib-2.0 gobject-2.0 gthread-2.0 m
+WANTLIB += pcre xcb xkbfile xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-# XXX -I. -I.. missing?
-# /usr/ports/pobj/libxklavier-5.2/libxklavier-5.2/libxklavier/xkl_config_registry.h:24:36:
-# error: libxklavier/xkl_engine.h: No such file or directory
-#MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		goi
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/iso-codes
