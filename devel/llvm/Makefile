@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/12/15 08:39:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2012/01/19 08:41:13 sthen Exp $
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
@@ -15,6 +15,7 @@ HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
+NOT_FOR_ARCHS =	sparc # uses too much memory
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
