@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.118 2011/12/27 14:15:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2012/01/19 14:14:13 ajacoutot Exp $
 
-BROKEN=			greeter doesn't start; port to bsd_auth(3)
+BROKEN=			needs PAM(7)
 
 SHARED_ONLY=		Yes
 
@@ -28,7 +28,7 @@ WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
 WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3 nssutil3
-WANTLIB += ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += softokn3 sqlite3 ssl3 stdc++ upower-glib util vorbis
 WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
@@ -45,7 +45,6 @@ BUILD_DEPENDS=		x11/gnome/zenity
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			sysutils/upower \
 			sysutils/accountsservice \
-			security/libdpam \
 			x11/gnome/libxklavier \
 			devel/libexecinfo \
 			security/nss
@@ -134,6 +133,7 @@ post-install:
 	mv ${WRKINST}/etc/X11/ ${PREFIX}/share/examples/gdm/
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/db
+# XXX
 	rm -rf ${WRKINST}/etc/pam.d ${WRKINST}/var/run/gdm
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
