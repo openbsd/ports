@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/19 07:57:51 ajacoutot Exp $
 @bin bin/moserial
 @man man/man1/moserial.1
 share/applications/moserial.desktop
@@ -153,10 +153,6 @@ share/gnome/help/moserial/sv/figures/sent-tabs.png
 share/gnome/help/moserial/sv/figures/statusbar.png
 share/gnome/help/moserial/sv/figures/stop-recording.png
 share/gnome/help/moserial/sv/moserial.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/moserial.png
 share/locale/ca/LC_MESSAGES/moserial.mo
 share/locale/cs/LC_MESSAGES/moserial.mo
