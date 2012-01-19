@@ -1,3 +1,0 @@
-libdpam is a stipped down version of OpenPAM and serves as a
-"wrapper" for bsd_auth(3), therefore using external modules
-is not supported.
