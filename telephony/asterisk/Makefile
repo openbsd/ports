@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2011/12/30 22:24:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.132 2012/01/19 21:49:56 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -6,6 +6,7 @@ COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 VER=			1.8.8.1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
+REVISION-main=		0
 
 SOUNDS=			CORE MOH EXTRA
 SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.21
@@ -27,7 +28,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
-WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
+WANTLIB-main += m ogg pthread spandsp sqlite3 srtp ssl stdc++ termcap
 WANTLIB-main += tiff vorbis vorbisenc xml2 z ${MODLIBICONV_WANTLIB}
 
 MODULES=		devel/gettext converters/libiconv
@@ -44,6 +45,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			devel/libexecinfo \
 			graphics/tiff \
 			net/curl \
+			security/libsrtp \
 			telephony/spandsp \
 			textproc/iksemel \
 			textproc/libxml
