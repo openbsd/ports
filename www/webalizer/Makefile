@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2012/01/19 15:31:02 giovanni Exp $
 
 COMMENT=	web server log file analysis program
 
 V=		29
 DISTNAME=	webalizer-2.23-05-RB${V}-src
 PKGNAME=	webalizer-2.23.05.${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
@@ -18,22 +18,22 @@ LIB_DEPENDS=	databases/db/v4 \
 		net/GeoIP
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes 
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		c db jpeg m png z gd>=18 GeoIP>=5
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	GeoIP>=5 c db gd>=18 m png z
 
 WRKDIST=	${WRKDIR}/webalizer-2.23-05-RB${V}
 
-CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	--enable-dns --enable-geoip \
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--enable-dns \
+		--enable-geoip \
 		--with-db=${LOCALBASE}/include/db4 \
 		--with-dblib=${LOCALBASE}/lib/db4 \
-		--with-gd=${LOCALBASE}/include \
-		--mandir=${PREFIX}/man
+		--with-gd=${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LIBS="-ljpeg"
 
 NO_REGRESS=	Yes
 
