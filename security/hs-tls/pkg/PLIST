@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/12 10:43:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/20 20:34:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
@@ -13,6 +13,7 @@ lib/ghc/${DISTNAME}/Network/TLS/Internal.hi
 lib/ghc/${DISTNAME}/Network/TLS/MAC.hi
 lib/ghc/${DISTNAME}/Network/TLS/Packet.hi
 lib/ghc/${DISTNAME}/Network/TLS/Receiving.hi
+lib/ghc/${DISTNAME}/Network/TLS/Record.hi
 lib/ghc/${DISTNAME}/Network/TLS/Sending.hi
 lib/ghc/${DISTNAME}/Network/TLS/State.hi
 lib/ghc/${DISTNAME}/Network/TLS/Struct.hi
@@ -40,5 +41,5 @@ share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/doc/hs-${DISTNAME}/html/tls.haddock
 share/hs-${DISTNAME}/
-share/hs-${DISTNAME}/README
+share/hs-${DISTNAME}/README.md
 share/hs-${DISTNAME}/TODO

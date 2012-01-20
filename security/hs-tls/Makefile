@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/20 20:34:21 kili Exp $
 
 COMMENT=		TLS/SSL protocol native implementation
 
-DISTNAME=		tls-0.6.1
-REVISION =		0
+DISTNAME=		tls-0.8.1
 CATEGORIES=		security net
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,11 +17,13 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
+# devel/hs-vector needed because changes to it cause (ghc) signature
+# changes to cryptocipher because of broken ghc optimizations.
 RUN_DEPENDS =		devel/hs-cereal>=0.3 \
 			devel/hs-mtl \
 			devel/hs-vector \
 			security/hs-crypto-api>=0.5 \
-			security/hs-certificate>=0.7.0 \
+			security/hs-certificate>=0.9.4,<1.0 \
 			security/hs-cryptocipher>=0.2.5 \
 			security/hs-cryptohash>=0.6
 BUILD_DEPENDS = 	${RUN_DEPENDS}
