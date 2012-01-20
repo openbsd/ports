@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.19 2012/01/11 22:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2012/01/20 22:18:27 sthen Exp $
 
 COMMENT=	learning management system
 
-DISTNAME=	moodle-1.9.7
-REVISION=	4
+DISTNAME=	moodle-1.9.16
 CATEGORIES=	www education
 
 HOMEPAGE=	http://www.moodle.org/
 
-# GPL
+# GPLv2+ (note if updating Moodle 2.x is GPLv3+)
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
-MASTER_SITES=	http://download.moodle.org/stable19/
+MASTER_SITES=	http://download.moodle.org/download.php/direct/stable19/
 EXTRACT_SUFX=	.tgz
 
 EXTRACT_ONLY=
