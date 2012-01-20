@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.19 2011/10/17 19:41:23 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2012/01/20 09:53:31 sthen Exp $
 
-VERSION=	1.6.11
+VERSION=	1.6.12
 
 DISTNAME=	ldns-${VERSION}
 
@@ -17,9 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		concurrent
+USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
 			cv_prog_cc_flag_O2=
-USE_LIBTOOL=		Yes
-USE_GMAKE=		Yes
+
 NO_REGRESS=		Yes
