@@ -4,6 +4,10 @@
 	native-__set_tcb: permit
 	native-__sysctl: permit
 	native-__tfork: permit
+	native-__threxit: permit
+	native-__thrsigdivert: permit
+	native-__thrsleep: permit
+	native-__thrwakeup: permit
 	native-accept: permit
 	native-bind: sockaddr eq "inet-[0.0.0.0]:0" then deny[eacces]
 	native-bind: sockaddr match "/tmp" then permit
@@ -229,10 +233,6 @@
 	native-symlinkat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlinkat: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
-	native-threxit: permit
-	native-thrsigdivert: permit
-	native-thrsleep: permit
-	native-thrwakeup: permit
 	native-umask: permit
 	native-utimensat: permit
 	native-utimes: permit
