@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_xcb_compat_h,v 1.1 2012/01/20 15:53:18 dcoppa Exp $
+
+Bugfix: respect WM_HINTS.input for WM_TAKE_FOCUS clients. This fixes
+problems with some Qt apps
+(upstream git commit 2d14ced024416e2074b57290bf7dade7d08899e5)
+
+--- include/xcb_compat.h.orig	Fri Jan 20 15:10:01 2012
++++ include/xcb_compat.h	Fri Jan 20 15:10:52 2012
+@@ -27,6 +27,7 @@
+ #define XCB_ICCCM_SIZE_HINT_BASE_SIZE XCB_SIZE_HINT_BASE_SIZE
+ #define XCB_ICCCM_SIZE_HINT_P_ASPECT XCB_SIZE_HINT_P_ASPECT
+ #define xcb_icccm_wm_hints_t xcb_wm_hints_t
++#define xcb_icccm_get_wm_hints xcb_get_wm_hints
+ #define xcb_icccm_get_wm_hints_from_reply xcb_get_wm_hints_from_reply
+ #define xcb_icccm_get_wm_hints_reply xcb_get_wm_hints_reply
+ #define xcb_icccm_get_wm_hints_unchecked xcb_get_wm_hints_unchecked

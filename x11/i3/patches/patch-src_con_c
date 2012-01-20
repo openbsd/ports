@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_con_c,v 1.4 2012/01/11 13:33:48 dcoppa Exp $
+$OpenBSD: patch-src_con_c,v 1.5 2012/01/20 15:53:18 dcoppa Exp $
 
 Bugfix: don't lose focus on fullscreen windows when another window
 gets moved to that workspace
@@ -7,8 +7,8 @@ gets moved to that workspace
 Bugfix: open new windows in the correct place when assignments match
 (upstream git commit d4238c778a199ad88ebe8540904d98f81f110621)
 
---- src/con.c.orig	Wed Jan 11 14:13:26 2012
-+++ src/con.c	Wed Jan 11 14:17:15 2012
+--- src/con.c.orig	Sat Dec 24 16:25:08 2011
++++ src/con.c	Fri Jan 20 16:32:59 2012
 @@ -656,8 +656,10 @@ void con_move_to_workspace(Con *con, Con *workspace, b
      con_fix_percent(next);
  
@@ -18,7 +18,7 @@ Bugfix: open new windows in the correct place when assignments match
 +     * calling tree_render(), so for the "real" focus this is a no-op).
 +     * We don't focus when there is a fullscreen con on that workspace. */
 +    if (con_get_fullscreen_con(workspace, CF_OUTPUT) == NULL)
-+    	con_focus(con_descend_focused(con));
++        con_focus(con_descend_focused(con));
  
      /* 8: when moving to a visible workspace on a different output, we keep the
       * con focused. Otherwise, we leave the focus on the current workspace as we
@@ -36,7 +36,7 @@ Bugfix: open new windows in the correct place when assignments match
      Con *before;
      Con *child;
 +    if (next == focused)
-+	return next;
++        return next;
      do {
          before = next;
          TAILQ_FOREACH(child, &(next->focus_head), focused) {
