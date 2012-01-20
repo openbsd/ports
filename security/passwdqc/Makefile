@@ -1,32 +1,31 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/07 17:18:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/20 01:01:49 sthen Exp $
 
-COMMENT=		plugin password complexity checker for passwd(1)
+COMMENT=		complexity checker for passwd(1) and password generator
 
 DISTNAME=		passwdqc-1.2.2
 REVISION=		0
-CATEGORIES=     	security sysutils
+CATEGORIES=		security sysutils
 
 SHARED_LIBS=		passwdqc 0.0 # .0
 
 HOMEPAGE=		http://www.openwall.com/passwdqc/
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM= Yes 
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
 MASTER_SITES=		${HOMEPAGE}
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 ALL_TARGET=		utils
 INSTALL_TARGET=		install_lib install_utils
 
-MAKE_FLAGS=	CC=${CC} \
+MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS}" \
 		BINDIR=${PREFIX}/bin \
 		SHARED_LIBDIR=${PREFIX}/lib \
