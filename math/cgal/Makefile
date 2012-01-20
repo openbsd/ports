@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/20 14:48:50 dcoppa Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -7,7 +7,7 @@ COMMENT =		Computational Geometry Algorithms Library
 
 DISTNAME =		CGAL-3.8
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 SHARED_ONLY =		Yes
 SHARED_LIBS =		CGAL		0.0 \
@@ -38,12 +38,17 @@ LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
+CFLAGS +=		-I${X11BASE}/include
+
 CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1"
-CONFIGURE_ENV =         CFLAGS="${CFLAGS} -I${X11BASE}/include" \
-                        CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
-                        LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
+CONFIGURE_ENV =		LDFLAGS="-L${X11BASE}/lib"
 
 post-patch:
-	rm ${WRKSRC}/scripts/cgal_make_macosx_app
+	rm ${WRKSRC}/cmake/modules/FindBLAS.cmake \
+	   ${WRKSRC}/cmake/modules/FindBoost.cmake \
+	   ${WRKSRC}/cmake/modules/FindLAPACK.cmake \
+	   ${WRKSRC}/cmake/modules/FindOpenGL.cmake \
+	   ${WRKSRC}/cmake/modules/FindPackageMessage.cmake \
+	   ${WRKSRC}/scripts/cgal_make_macosx_app
 
 .include <bsd.port.mk>

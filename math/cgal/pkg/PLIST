@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/25 19:12:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/01/20 14:48:50 dcoppa Exp $
 bin/cgal_create_cmake_script
 include/CGAL/
 include/CGAL/AABB_intersections.h
@@ -2538,8 +2538,6 @@ lib/CGAL/CGAL_UseMPFI.cmake
 lib/CGAL/CGAL_UseRS.cmake
 lib/CGAL/CGAL_UseTAUCS.cmake
 lib/CGAL/CGAL_VersionUtils.cmake
-lib/CGAL/FindBLAS.cmake
-lib/CGAL/FindBoost.cmake
 lib/CGAL/FindCGAL.cmake
 lib/CGAL/FindCGAL_CORE.cmake
 lib/CGAL/FindCORE.cmake
@@ -2548,13 +2546,10 @@ lib/CGAL/FindF2C.cmake
 lib/CGAL/FindGMP.cmake
 lib/CGAL/FindGMPXX.cmake
 lib/CGAL/FindIPE.cmake
-lib/CGAL/FindLAPACK.cmake
 lib/CGAL/FindLEDA.cmake
 lib/CGAL/FindMKL.cmake
 lib/CGAL/FindMPFI.cmake
 lib/CGAL/FindMPFR.cmake
-lib/CGAL/FindOpenGL.cmake
-lib/CGAL/FindPackageMessage.cmake
 lib/CGAL/FindQGLViewer.cmake
 lib/CGAL/FindQt3-patched.cmake
 lib/CGAL/FindRS.cmake
