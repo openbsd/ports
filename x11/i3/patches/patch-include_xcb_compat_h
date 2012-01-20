@@ -1,8 +1,7 @@
-$OpenBSD: patch-include_xcb_compat_h,v 1.1 2012/01/20 15:53:18 dcoppa Exp $
+$OpenBSD: patch-include_xcb_compat_h,v 1.2 2012/01/20 20:16:32 dcoppa Exp $
 
-Bugfix: respect WM_HINTS.input for WM_TAKE_FOCUS clients. This fixes
-problems with some Qt apps
-(upstream git commit 2d14ced024416e2074b57290bf7dade7d08899e5)
+Fix xcb_compat.h to make i3 compile with older xcb versions
+(upstream git commit 07e495d2d0a2e6d7cf18f96d5584abd8b1e5dd56)
 
 --- include/xcb_compat.h.orig	Fri Jan 20 15:10:01 2012
 +++ include/xcb_compat.h	Fri Jan 20 15:10:52 2012
