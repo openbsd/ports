@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/12/31 22:19:45 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2012/01/20 20:32:16 kili Exp $
 
 COMMENT=		ASN1 data reader and writer for various forms
 
-DISTNAME=		asn1-data-0.4.6
-REVISION=		3
+DISTNAME=		asn1-data-0.6.1.2
 CATEGORIES=		security converters
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,10 +17,11 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-binary>=0.5 \
-			hs-enumerator->=0.4.5,<0.5:devel/hs-enumerator \
-			devel/hs-mtl \
-			textproc/hs-attoparsec-enumerator
+RUN_DEPENDS =		devel/hs-mtl \
+			devel/hs-enumerator>=0.4.5,<0.5 \
+			devel/hs-text>=0.11 \
+			textproc/hs-attoparsec>=0.8,<0.11 \
+			textproc/hs-attoparsec-enumerator>=0.2,<0.4
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

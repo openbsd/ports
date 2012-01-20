@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/12 10:42:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/20 20:32:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ASN1/
 lib/ghc/${DISTNAME}/Data/ASN1/BER.hi
+lib/ghc/${DISTNAME}/Data/ASN1/BitArray.hi
 lib/ghc/${DISTNAME}/Data/ASN1/CER.hi
 lib/ghc/${DISTNAME}/Data/ASN1/DER.hi
 lib/ghc/${DISTNAME}/Data/ASN1/Internal.hi
@@ -20,6 +21,7 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-ASN1-BER.html
+share/doc/hs-${DISTNAME}/html/Data-ASN1-BitArray.html
 share/doc/hs-${DISTNAME}/html/Data-ASN1-CER.html
 share/doc/hs-${DISTNAME}/html/Data-ASN1-DER.html
 share/doc/hs-${DISTNAME}/html/Data-ASN1-Raw.html
@@ -33,6 +35,7 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ASN1-BER.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ASN1-BitArray.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ASN1-CER.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ASN1-DER.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ASN1-Raw.html
