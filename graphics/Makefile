@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2012/01/14 09:16:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.314 2012/01/20 19:28:17 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -185,6 +185,7 @@
      SUBDIR += p5-Image-Imlib2
      SUBDIR += p5-Image-Info
      SUBDIR += p5-Image-MetaData-JPEG
+     SUBDIR += p5-Image-Scale
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
      SUBDIR += p5-Imager-QRCode
