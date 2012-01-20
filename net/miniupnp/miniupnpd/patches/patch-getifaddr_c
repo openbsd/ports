@@ -1,11 +1,13 @@
-$OpenBSD: patch-getifaddr_c,v 1.1.1.1 2012/01/13 09:22:50 ajacoutot Exp $
---- getifaddr.c.orig	Sat Jan  7 09:32:57 2012
-+++ getifaddr.c	Sat Jan  7 09:33:07 2012
-@@ -13,6 +13,7 @@
+$OpenBSD: patch-getifaddr_c,v 1.2 2012/01/20 07:07:23 ajacoutot Exp $
+--- getifaddr.c.orig	Sun May 15 11:00:54 2011
++++ getifaddr.c	Fri Jan 20 08:03:57 2012
+@@ -13,8 +13,8 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <net/if.h>
-+#include <netinet/in.h>
- #include <arpa/inet.h>
+-#include <arpa/inet.h>
  #include <netinet/in.h>
++#include <arpa/inet.h>
  #if defined(sun)
+ #include <sys/sockio.h>
+ #endif
