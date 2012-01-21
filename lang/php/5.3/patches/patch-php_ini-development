@@ -1,7 +1,7 @@
-$OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
---- php.ini-development.orig.port	Wed Feb  9 00:25:44 2011
-+++ php.ini-development	Fri Jan 13 18:01:59 2012
-@@ -781,11 +781,8 @@ default_mimetype = "text/html"
+$OpenBSD: patch-php_ini-development,v 1.5 2012/01/21 23:34:35 sthen Exp $
+--- php.ini-development.orig.port	Thu Dec 15 10:31:02 2011
++++ php.ini-development	Wed Jan 18 13:57:26 2012
+@@ -793,11 +793,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -14,7 +14,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -807,6 +804,7 @@ user_dir =
+@@ -819,6 +816,7 @@ user_dir =
  ; extension_dir = "./"
  ; On windows:
  ; extension_dir = "ext"
@@ -22,7 +22,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -887,7 +885,7 @@ max_file_uploads = 20
+@@ -899,7 +897,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -31,7 +31,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -1080,16 +1078,6 @@ pdo_mysql.default_socket=
+@@ -1091,16 +1089,6 @@ pdo_mysql.default_socket=
  define_syslog_variables  = Off
  
  [mail function]
@@ -48,7 +48,7 @@ $OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ; http://php.net/sendmail-path
  ;sendmail_path =
-@@ -1888,6 +1876,446 @@ ldap.max_links = -1
+@@ -1906,6 +1894,446 @@ ldap.max_links = -1
  
  [dba]
  ;dba.default_handler=
@@ -493,5 +493,5 @@ $OpenBSD: patch-php_ini-development,v 1.4 2012/01/13 18:02:54 sthen Exp $
 +; post, cookie, request, sql, upload, misc features in .htaccess
 +;suhosin.perdir = "0"
  
- ; Local Variables:
- ; tab-width: 4
+ [xsl]
+ ; Write operations from within XSLT are disabled by default.

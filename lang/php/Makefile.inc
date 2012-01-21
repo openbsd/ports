@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.24 2012/01/13 17:59:07 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.25 2012/01/21 23:34:35 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -25,8 +25,8 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://se.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
-MASTER_SITES0=		http://blade2k.humppa.hu/ \
-			http://download.suhosin.org/ \
+MASTER_SITES0=		http://download.suhosin.org/ \
+			http://blade2k.humppa.hu/ \
 			${_MASTER_SITE_FREEBSD}
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
@@ -256,7 +256,7 @@ MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php5
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	net/net-snmp
-WANTLIB-snmp=		crypto netsnmp>=6.2
+WANTLIB-snmp=		crypto m netsnmp>=6.2
 
 # sqlite
 MULTI_PACKAGES+=	-sqlite

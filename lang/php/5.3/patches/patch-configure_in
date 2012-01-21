@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
---- configure.in.orig.port	Fri Jan 13 18:01:57 2012
-+++ configure.in	Fri Jan 13 18:02:07 2012
-@@ -960,7 +960,7 @@ enable_static=yes
+$OpenBSD: patch-configure_in,v 1.6 2012/01/21 23:34:35 sthen Exp $
+--- configure.in.orig.port	Wed Jan 18 13:57:25 2012
++++ configure.in	Wed Jan 18 13:57:25 2012
+@@ -968,7 +968,7 @@ enable_static=yes
  
  case $php_build_target in
    program|static)
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
          enable_shared=no
      fi
-@@ -969,10 +969,10 @@ case $php_build_target in
+@@ -977,10 +977,10 @@ case $php_build_target in
      enable_static=no
      case $with_pic in
        yes)
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
          ;;
      esac
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
-@@ -1163,7 +1163,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1171,7 +1171,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1375,7 +1375,7 @@ else
+@@ -1383,7 +1383,7 @@ else
    pharcmd_install=
  fi;
  
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
  install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
  
  case $PHP_SAPI in
-@@ -1420,7 +1420,7 @@ esac
+@@ -1428,7 +1428,7 @@ esac
  PHP_ADD_SOURCES(Zend, \
      zend_language_parser.c zend_language_scanner.c \
      zend_ini_parser.c zend_ini_scanner.c \
@@ -50,7 +50,7 @@ $OpenBSD: patch-configure_in,v 1.5 2012/01/13 18:02:54 sthen Exp $
      zend_execute_API.c zend_highlight.c zend_llist.c \
      zend_opcode.c zend_operators.c zend_ptr_stack.c zend_stack.c \
      zend_variables.c zend.c zend_API.c zend_extensions.c zend_hash.c \
-@@ -1442,6 +1442,7 @@ else
+@@ -1450,6 +1450,7 @@ else
  fi
  
  PHP_ADD_SOURCES_X(Zend, zend_execute.c,,PHP_GLOBAL_OBJS,,$flag)
