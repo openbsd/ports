@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:54:34 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/21 12:02:18 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Attoparsec/
@@ -6,8 +6,12 @@ lib/ghc/${DISTNAME}/Data/Attoparsec.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Char8.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/FastSet.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Number.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
@@ -21,6 +25,8 @@ share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Combinator.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-FastSet.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Lazy.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Number.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Zepto.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/attoparsec.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
@@ -33,6 +39,8 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Combinator.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-FastSet.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Lazy.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Number.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Zepto.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
