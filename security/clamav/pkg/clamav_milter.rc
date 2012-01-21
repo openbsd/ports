@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: clamav_milter.rc,v 1.1 2012/01/21 23:02:58 sthen Exp $
+
+daemon="/usr/local/sbin/clamav-milter"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
