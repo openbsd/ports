@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/24 19:09:10 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/21 12:04:59 kili Exp $
 
 COMMENT =		Snap Haskell Web Framework Server
 
 DISTNAME =		snap-server-0.5.3.1
+REVISION =		0
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
+MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
+			Matthias Kilian <kili@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/27 21:25:49 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/01/21 12:05:17 kili Exp $
 
 COMMENT =		Snap project starter and glue code library
 
 DISTNAME =		snap-0.5.3.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
-MAINTAINER =		Jim Razmus II <jim@openbsd.org>
+MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
+			Matthias Kilian <kili@openbsd.org>
 
 # BSD3
 PERMIT_PACKAGE_CDROM =	Yes
