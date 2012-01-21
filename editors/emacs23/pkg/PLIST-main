@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/03/28 15:18:55 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/01/21 13:54:51 sthen Exp $
 @bin bin/b2m
 @bin bin/ctags
 @bin bin/ebrowse
@@ -283,6 +283,18 @@ share/emacs/${VERSION}/etc/gnus/
 share/emacs/${VERSION}/etc/gnus-tut.txt
 share/emacs/${VERSION}/etc/gnus/gnus-setup.ast
 share/emacs/${VERSION}/etc/gnus/news-server.ast
+share/emacs/${VERSION}/etc/grammars/
+share/emacs/${VERSION}/etc/grammars/bovine-grammar.el
+share/emacs/${VERSION}/etc/grammars/c.by
+share/emacs/${VERSION}/etc/grammars/grammar.wy
+share/emacs/${VERSION}/etc/grammars/java-tags.wy
+share/emacs/${VERSION}/etc/grammars/js.wy
+share/emacs/${VERSION}/etc/grammars/make.by
+share/emacs/${VERSION}/etc/grammars/python.wy
+share/emacs/${VERSION}/etc/grammars/README
+share/emacs/${VERSION}/etc/grammars/scheme.by
+share/emacs/${VERSION}/etc/grammars/srecode-template.wy
+share/emacs/${VERSION}/etc/grammars/wisent-grammar.el
 share/emacs/${VERSION}/etc/grep.txt
 share/emacs/${VERSION}/etc/images/
 share/emacs/${VERSION}/etc/images/README
