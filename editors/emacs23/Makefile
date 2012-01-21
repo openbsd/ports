@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/21 13:54:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/01/21 23:10:18 nigel Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -79,7 +79,7 @@ WANTLIB-main +=		GL ICE SM X11 Xdmcp Xext Xft Xpm Xrender \
 			xcb-render xcb-shm ${MODGETTEXT_WANTLIB}
 .endif
 
-RUN_DEPENDS-el =	emacs-${VERSION}:${PKGPATH}
+RUN_DEPENDS-el =	emacs-${VERSION}b:${PKGPATH}
 PKG_ARCH-el =		*
 
 post-install:
