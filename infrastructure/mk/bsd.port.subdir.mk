@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.103 2011/12/12 14:52:02 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.104 2012/01/21 14:44:40 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -33,6 +33,21 @@
 #	install, package, readmes, deinstall, reinstall,
 #	tags
 #
+
+.if defined(FLAVOR)
+ERRORS += "Fatal: can't flavor a SUBDIR"
+.endif
+.if defined(SUBPACKAGE)
+ERRORS += "Fatal: can't subpackage a SUBDIR"
+.endif
+
+.for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
+.  if defined($v)
+ERRORS += "Fatal: inclusion of bsd.port.subdir.mk from $f"
+.  endif
+.endfor
+
+_BSD_PORT_SUBDIR_MK = Done
 
 .if defined(verbose-show)
 .MAIN: verbose-show
@@ -201,6 +216,16 @@ ${READMES_TOP}/${PKGPATH}/README.html:
 		-e '/%%SUBDIR%%/r${TMPDIR}/subdirs' -e '//d' \
 		${README} > $@
 	@rm ${TMPDIR}/subdirs
+
+.if defined(ERRORS)
+.BEGIN:
+.  for _m in ${ERRORS}
+	@echo 1>&2 ${_m} "(in ${PKGPATH})"
+.  endfor
+.  if !empty(ERRORS:M"Fatal\:*") || !empty(ERRORS:M'Fatal\:*')
+	@exit 1
+.  endif
+.endif
 
 .PHONY: ${_recursive_targets} \
 	${_recursive_depends_targets} clean readmes
