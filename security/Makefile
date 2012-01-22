@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2012/01/13 12:32:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.279 2012/01/22 17:19:43 kili Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -63,6 +63,10 @@
      SUBDIR += hs-crypto
      SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
+     SUBDIR += hs-entropy
+     SUBDIR += hs-mwc-random
+     SUBDIR += hs-pwstore-fast
+     SUBDIR += hs-skein
      SUBDIR += hs-tls
      SUBDIR += hydra
      SUBDIR += ikeman
