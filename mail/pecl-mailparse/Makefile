@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/22 10:55:26 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-2.1.5
 PKGNAME =	pecl-${DISTNAME}
-REVISION =	5
+REVISION =	6
 CATEGORIES =	www mail
 
 HOMEPAGE =	http://pecl.php.net/package/mailparse
@@ -28,7 +28,6 @@ AUTOMAKE_VERSION =	1.4
 MODULES=	lang/php
 
 BUILD_DEPENDS =	www/pear \
-		lang/php/${MODPHP_VERSION},-main:patch \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
@@ -48,8 +47,5 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 MODPHP_DO_SAMPLE=	mailparse
 MODPHP_DO_PHPIZE=	Yes
-
-post-extract:
-	ln -s ${WRKDIR}/lang/php/${MODPHP_VERSION}/php-* ${WRKDIR}/php
 
 .include <bsd.port.mk>
