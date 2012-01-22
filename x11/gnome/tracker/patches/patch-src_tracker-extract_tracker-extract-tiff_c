@@ -1,21 +1,18 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-tiff_c,v 1.3 2011/12/21 14:20:06 ajacoutot Exp $
+$OpenBSD: patch-src_tracker-extract_tracker-extract-tiff_c,v 1.4 2012/01/22 15:13:23 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=666654
 
---- src/tracker-extract/tracker-extract-tiff.c.orig	Mon Sep 26 11:27:18 2011
-+++ src/tracker-extract/tracker-extract-tiff.c	Mon Sep 26 12:31:34 2011
-@@ -291,10 +291,14 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+--- src/tracker-extract/tracker-extract-tiff.c.orig	Fri Dec 16 16:24:23 2011
++++ src/tracker-extract/tracker-extract-tiff.c	Tue Jan 10 09:19:37 2012
+@@ -291,10 +291,7 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
  	metadata = tracker_extract_info_get_metadata_builder (info);
  	graph = tracker_extract_info_get_graph (info);
  
-+#if defined(__linux__)
- 	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
- 	if (fd == -1 && errno == EPERM) {
- 		fd = g_open (filename, O_RDONLY, 0);
- 	}
-+#else
-+	fd = g_open (filename, O_RDONLY, 0);
-+#endif
+-	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
+-	if (fd == -1 && errno == EPERM) {
+-		fd = g_open (filename, O_RDONLY, 0);
+-	}
++	fd = tracker_file_open_fd (filename);
  
  	if (fd == -1) {
  		g_warning ("Could not open tiff file '%s': %s\n",

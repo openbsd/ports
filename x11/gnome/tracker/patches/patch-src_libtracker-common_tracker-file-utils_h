@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libtracker-common_tracker-file-utils_h,v 1.1 2012/01/22 15:13:23 ajacoutot Exp $
+--- src/libtracker-common/tracker-file-utils.h.orig	Tue Jan 10 09:16:39 2012
++++ src/libtracker-common/tracker-file-utils.h	Tue Jan 10 09:17:10 2012
+@@ -32,6 +32,7 @@ G_BEGIN_DECLS
+ #endif
+ 
+ /* File utils */
++gint     tracker_file_open_fd                               (const gchar *path);
+ FILE*    tracker_file_open                                  (const gchar *path);
+ void     tracker_file_close                                 (FILE        *file,
+                                                              gboolean     need_again_soon);
