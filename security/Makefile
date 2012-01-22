@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2012/01/22 17:19:43 kili Exp $
+# $OpenBSD: Makefile,v 1.280 2012/01/22 17:24:24 kili Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -15,8 +15,8 @@
      SUBDIR += arirang
      SUBDIR += assl
      SUBDIR += bfbtester
-     SUBDIR += bounix
      SUBDIR += botan
+     SUBDIR += bounix
      SUBDIR += bsd-airtools
      SUBDIR += bunny
      SUBDIR += ccrypt
@@ -59,8 +59,8 @@
      SUBDIR += hlfl
      SUBDIR += hs-asn1-data
      SUBDIR += hs-certificate
-     SUBDIR += hs-crypto-api
      SUBDIR += hs-crypto
+     SUBDIR += hs-crypto-api
      SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
      SUBDIR += hs-entropy
