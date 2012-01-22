@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-bg,v 1.5 2011/12/08 02:18:36 nigel Exp $
-lib/thunderbird-${V}/extensions/langpack-bg@thunderbird.mozilla.org.xpi

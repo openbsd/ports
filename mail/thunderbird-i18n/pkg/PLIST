@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.3 2012/01/22 17:11:58 landry Exp $
+@pkgpath mail/thunderbird-i18n,-${L}
+lib/thunderbird-${V}/extensions/langpack-${L}@thunderbird.mozilla.org.xpi

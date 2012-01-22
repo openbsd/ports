@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-pa-IN,v 1.5 2011/12/08 02:18:36 nigel Exp $
-lib/thunderbird-${V}/extensions/langpack-pa-IN@thunderbird.mozilla.org.xpi

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-sl,v 1.2 2011/07/24 07:13:01 landry Exp $
-lib/thunderbird-${V}/extensions/langpack-sl@thunderbird.mozilla.org.xpi

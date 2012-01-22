@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-zh-CN,v 1.4 2011/12/08 02:18:36 nigel Exp $
-lib/thunderbird-${V}/extensions/langpack-zh-CN@thunderbird.mozilla.org.xpi

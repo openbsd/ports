@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-zh-TW,v 1.5 2011/07/24 07:13:01 landry Exp $
-lib/thunderbird-${V}/extensions/langpack-zh-TW@thunderbird.mozilla.org.xpi

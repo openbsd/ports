@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-vi,v 1.1 2011/12/08 02:18:36 nigel Exp $
-lib/thunderbird-${V}/extensions/langpack-vi@thunderbird.mozilla.org.xpi

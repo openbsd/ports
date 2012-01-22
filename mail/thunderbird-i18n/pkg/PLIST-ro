@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-ro,v 1.3 2011/12/08 02:18:36 nigel Exp $
-lib/thunderbird-${V}/extensions/langpack-ro@thunderbird.mozilla.org.xpi
