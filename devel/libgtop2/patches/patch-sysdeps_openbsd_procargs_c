@@ -1,10 +1,14 @@
-$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.5 2012/01/09 17:39:19 ajacoutot Exp $
+$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.6 2012/01/22 11:55:10 ajacoutot Exp $
+
+From b11aa1517e203e36a8901f03ea57c50a25dfbfc7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 22 Jan 2012 11:47:49 +0000
+Subject: OpenBSD: kinfo_proc2 -> kinfo_proc
 
 commit dd46d6a00e4af444d423383abbc538436a170e2b
 Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
 Date:   Sun Sep 18 13:42:13 2011 +0200
-
-    Don't bother with PIDs below 20 as they are highly likely to be kernel threads anyway.
+Don't bother with PIDs below 20 as they are highly likely to be kernel threads anyway.
 
 --- sysdeps/openbsd/procargs.c.orig	Sun Jul 24 21:13:56 2011
 +++ sysdeps/openbsd/procargs.c	Mon Jan  9 18:37:24 2012
