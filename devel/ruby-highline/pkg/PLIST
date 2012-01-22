@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/22 16:46:41 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
+${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/INSTALL
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/ansi_colors.rb
@@ -19,6 +20,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/page_and_wrap.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/password.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/trapping_eof.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/using_readline.rb
+${GEM_LIB}/gems/${DISTNAME}/highline.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline.rb
@@ -27,12 +29,22 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/highline/compatibility.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/import.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/menu.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/question.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/highline/string_extensions.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/highline/style.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/system_extensions.rb
-${GEM_LIB}/gems/${DISTNAME}/setup.rb
+${GEM_LIB}/gems/${DISTNAME}/site/
+${GEM_LIB}/gems/${DISTNAME}/site/highline.css
+${GEM_LIB}/gems/${DISTNAME}/site/images/
+${GEM_LIB}/gems/${DISTNAME}/site/images/logo.png
+${GEM_LIB}/gems/${DISTNAME}/site/index.html
 ${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/string_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tc_color_scheme.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tc_highline.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tc_import.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/tc_menu.rb
+${GEM_LIB}/gems/${DISTNAME}/test/tc_string_extension.rb
+${GEM_LIB}/gems/${DISTNAME}/test/tc_string_highline.rb
+${GEM_LIB}/gems/${DISTNAME}/test/tc_style.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/ts_all.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
