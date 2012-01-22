@@ -1,0 +1,2 @@
+A platform independent method to obtain cryptographically strong entropy 
+(CryptAPI on Windows, urandom everywhere else, patches welcome). 
