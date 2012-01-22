@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-context,v 1.1 2012/01/10 18:04:31 edd Exp $
+@comment $OpenBSD: PLIST-context,v 1.2 2012/01/22 18:52:01 edd Exp $
 man/man1/context.1
 share/texmf-dist/bibtex/bst/context/
 share/texmf-dist/bibtex/bst/context/cont-ab.bst
@@ -2165,6 +2165,7 @@ share/texmf-dist/tex/latex/context/m-pictex.sty
 share/texmf-dist/tex/xetex/zhspacing/context/
 share/texmf-dist/tex/xetex/zhspacing/context/t-zhspacing.tex
 share/texmf/web2c/context.cnf
+@unexec rm -Rf %D/share/texmf-var/luatex-cache
 @exec %D/bin/mtxrun --generate > /dev/null 2>&1
 @comment some of this could be shared with other parts of TL, hash with kpse
 @exec %D/bin/mktexlsr > /dev/null 2>&1

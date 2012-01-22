@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/11/23 12:00:45 edd Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/01/22 18:52:01 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -374,3 +374,6 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 @extra share/texmf-dist/ls-R
 @extra share/texmf-var/ls-R
 @extra share/texmf-config/ls-R
+@unexec-delete rm %D/share/texmf/ls-R
+@unexec-delete rm %D/share/texmf-dist/ls-R
+@unexec-delete rm %D/share/texmf-var/ls-R
