@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-mai,v 1.1 2011/03/30 21:42:39 landry Exp $
-lib/firefox-${V}/extensions/langpack-mai@firefox.mozilla.org.xpi

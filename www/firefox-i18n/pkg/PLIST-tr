@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-tr,v 1.3 2011/03/30 21:42:39 landry Exp $
-lib/firefox-${V}/extensions/langpack-tr@firefox.mozilla.org.xpi

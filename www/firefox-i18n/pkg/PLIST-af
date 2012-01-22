@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-af,v 1.6 2011/07/07 19:45:19 jasper Exp $
-lib/firefox-${V}/extensions/langpack-af@firefox.mozilla.org.xpi

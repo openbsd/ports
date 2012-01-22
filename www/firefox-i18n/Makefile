@@ -1,66 +1,87 @@
-# $OpenBSD: Makefile,v 1.73 2012/01/11 02:42:48 nigel Exp $
+# $OpenBSD: Makefile,v 1.74 2012/01/22 17:10:31 landry Exp $
 
-# keep in sync with working archs.. sigh
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
+SUBDIR = af
+SUBDIR += ak
+SUBDIR += ar
+SUBDIR += ast
+SUBDIR += be
+SUBDIR += bg
+SUBDIR += bn-BD
+SUBDIR += bn-IN
+SUBDIR += br
+SUBDIR += bs
+SUBDIR += ca
+SUBDIR += cs
+SUBDIR += cy
+SUBDIR += da
+SUBDIR += de
+SUBDIR += el
+SUBDIR += en-GB
+SUBDIR += en-US
+SUBDIR += en-ZA
+SUBDIR += eo
+SUBDIR += es-AR
+SUBDIR += es-CL
+SUBDIR += es-ES
+SUBDIR += es-MX
+SUBDIR += et
+SUBDIR += eu
+SUBDIR += fa
+SUBDIR += fi
+SUBDIR += fr
+SUBDIR += fy-NL
+SUBDIR += ga-IE
+SUBDIR += gd
+SUBDIR += gl
+SUBDIR += gu-IN
+SUBDIR += he
+SUBDIR += hi-IN
+SUBDIR += hr
+SUBDIR += hu
+SUBDIR += hy-AM
+SUBDIR += id
+SUBDIR += is
+SUBDIR += it
+SUBDIR += ja
+SUBDIR += kk
+SUBDIR += kn
+SUBDIR += ko
+SUBDIR += ku
+SUBDIR += lg
+SUBDIR += lt
+SUBDIR += lv
+SUBDIR += mai
+SUBDIR += mk
+SUBDIR += ml
+SUBDIR += mr
+SUBDIR += nb-NO
+SUBDIR += nl
+SUBDIR += nn-NO
+SUBDIR += nso
+SUBDIR += or
+SUBDIR += pa-IN
+SUBDIR += pl
+SUBDIR += pt-BR
+SUBDIR += pt-PT
+SUBDIR += rm
+SUBDIR += ro
+SUBDIR += ru
+SUBDIR += si
+SUBDIR += sk
+SUBDIR += sl
+SUBDIR += son
+SUBDIR += sq
+SUBDIR += sr
+SUBDIR += sv-SE
+SUBDIR += ta
+SUBDIR += ta-LK
+SUBDIR += te
+SUBDIR += th
+SUBDIR += tr
+SUBDIR += uk
+SUBDIR += vi
+SUBDIR += zh-CN
+SUBDIR += zh-TW
+SUBDIR += zu
 
-PKG_ARCH=	*
-
-FV=		9.0.1
-V=		${FV:C/b.$//}
-NAME=		firefox-i18n
-PKGNAME=	${NAME}-${FV}
-
-CATEGORIES=	www
-
-HOMEPAGE=	http://www.mozilla.org/projects/l10n/
-
-MAINTAINER=	Martynas Venckus <martynas@openbsd.org>
-
-# Mozilla public license
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
-
-MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
-		https://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FV}/linux-i686/xpi/
-
-LANGUAGES=	af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de el en-GB en-US en-ZA eo \
-		es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
-		hi-IN hr hu hy-AM id \
-		is it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO nso \
-		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE \
-		ta-LK ta te th tr uk vi zh-CN zh-TW zu
-
-BUILD_DEPENDS=	archivers/unzip
-RUN_DEPENDS=	firefox-${FV}:www/mozilla-firefox
-
-DIST_SUBDIR=	mozilla/${NAME}-${FV}
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
-EXTRACT_ONLY=
-
-# define one language for the main package
-SUBPACKAGE?=	-en-GB
-
-.for i in ${LANGUAGES}
-MULTI_PACKAGES+=-$i
-DISTFILES+=	$i.xpi
-PKGNAME-$i=	${NAME}-$i-${FV}
-COMMENT-$i=	$i language pack for Firefox
-LPACKDIR-$i=	${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org
-.endfor
-PKGNAME-en-GB=	${NAME}-en-GB-${FV}
-
-# use the same for all subpackages
-MESSAGE=	${PKGDIR}/MESSAGE
-SUBST_VARS=	V
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-$V/extensions
-.for i in ${LANGUAGES}
-	${INSTALL_DATA} ${FULLDISTDIR}/$i.xpi ${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org.xpi
-.endfor
-
-.include <bsd.port.mk>
+.include <bsd.port.subdir.mk>

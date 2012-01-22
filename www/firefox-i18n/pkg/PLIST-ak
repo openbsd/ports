@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-ak,v 1.1 2011/12/08 00:30:50 nigel Exp $
-lib/firefox-${V}/extensions/langpack-ak@firefox.mozilla.org.xpi

@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-es-ES,v 1.3 2011/03/30 21:42:39 landry Exp $
-lib/firefox-${V}/extensions/langpack-es-ES@firefox.mozilla.org.xpi
