@@ -1,0 +1,12 @@
+Skein (http://www.skein-hash.info/) is a family of fast
+secure cryptographic hash functions designed by Niels
+Ferguson, Stefan Lucks, Bruce Schneier, Doug Whiting, Mihir
+Bellare, Tadayoshi Kohno, Jon Callas and Jesse Walker.
+This package uses bindings to the optimized C implementation of
+Skein.  We provide a high-level interface (see module "Crypto.Skein")
+to some of the Skein use cases.  We also provide a low-level interface
+(see module "Crypto.Skein.Internal") should you need to use Skein
+in a different way.
+Currently we have support for Skein as cryptographic hash function
+as Skein as a message authentication code (Skein-MAC).  For examples
+of how to use this package, see "Crypto.Skein" module documentation.
