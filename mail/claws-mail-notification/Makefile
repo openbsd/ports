@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/01/23 18:57:33 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	notification plugin for Claws-mail
 
-VERSION=	0.27
+VERSION=	0.29
 DISTNAME=	notification_plugin-${VERSION}
 PKGNAME=	claws-mail-notification-${VERSION}
-REVISION=		0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
@@ -36,7 +35,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		x11/gtk+2
 
-RUN_DEPENDS=	mail/claws-mail \
+RUN_DEPENDS=	mail/claws-mail>=3.8.0 \
 		notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

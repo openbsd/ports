@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2012/01/23 18:57:33 landry Exp $
 @pkgpath mail/sylpheed-claws,-main
 @pkgpath mail/sylpheed-claws,-main,compface
 @pkgpath mail/sylpheed-claws,-main,pgpmime
@@ -129,12 +129,14 @@ include/claws-mail/gtk/combobox.h
 include/claws-mail/gtk/description_window.h
 include/claws-mail/gtk/filesel.h
 include/claws-mail/gtk/foldersort.h
+include/claws-mail/gtk/gdkkeysyms-new.h
 include/claws-mail/gtk/gtkaspell.h
 include/claws-mail/gtk/gtkcmclist.h
 include/claws-mail/gtk/gtkcmctree.h
 include/claws-mail/gtk/gtkcmoptionmenu.h
 include/claws-mail/gtk/gtksctree.h
 include/claws-mail/gtk/gtkshruler.h
+include/claws-mail/gtk/gtkunit.h
 include/claws-mail/gtk/gtkutils.h
 include/claws-mail/gtk/gtkvscrollbutton.h
 include/claws-mail/gtk/headers.h
@@ -330,7 +332,9 @@ share/locale/es/LC_MESSAGES/claws-mail.mo
 share/locale/fi/LC_MESSAGES/claws-mail.mo
 share/locale/fr/LC_MESSAGES/claws-mail.mo
 share/locale/hu/LC_MESSAGES/claws-mail.mo
-share/locale/id/LC_MESSAGES/claws-mail.mo
+share/locale/id_ID/
+share/locale/id_ID/LC_MESSAGES/
+share/locale/id_ID/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
 share/locale/ja/LC_MESSAGES/claws-mail.mo
 share/locale/lt/LC_MESSAGES/claws-mail.mo

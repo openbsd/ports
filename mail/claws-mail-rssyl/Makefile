@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/01/23 18:57:33 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	RSS aggregator plugin for Claws-mail
 
-VERSION=	0.30
+VERSION=	0.32
 DISTNAME=	rssyl-${VERSION}
 PKGNAME=	claws-mail-rssyl-${VERSION}
-REVISION=		0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
@@ -25,7 +24,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext
 
-RUN_DEPENDS=	mail/claws-mail
+RUN_DEPENDS=	mail/claws-mail>=3.8.0
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	textproc/libxml \
 		x11/gtk+2 \

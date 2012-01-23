@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/12/15 21:09:38 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2012/01/23 18:57:33 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,15 +7,11 @@ COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.7.9
+V=			3.8.0
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		4
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
-REVISION-bogofilter =	1
-REVISION-clamav =	0
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-REVISION-spamassassin =	1
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -71,7 +67,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/startup-notification \
 			textproc/enchant \
-			security/gnutls \
+			security/gnutls>=2.2 \
 			security/gpgme \
 			x11/dbus-glib
 
@@ -86,7 +82,7 @@ USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 
-AUTOCONF_VERSION=	2.67
+AUTOCONF_VERSION=	2.68
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
