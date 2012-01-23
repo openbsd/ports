@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/01/23 14:47:37 espie Exp $
+# $OpenBSD: Makefile,v 1.73 2012/01/23 14:59:57 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 V = 4.2.4
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-BOOTSTRAP_GEN = 4
+BOOTSTRAP_GEN = 5
 # XXX this needs libc.so.60.1 (from OpenBSD 5.0) to build on i386
 LIBC_VERSION = 60.1
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
@@ -76,8 +76,8 @@ DISTNAME =   	gcc-${FULL_VERSION}
 
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://distfiles.bsdfrog.org/
-#MASTER_SITES0 = ftp://quatramaran.ens.fr/pub/espie/
+#MASTER_SITES0 =	http://distfiles.bsdfrog.org/
+MASTER_SITES0 = ftp://quatramaran.ens.fr/pub/espie/
 
 CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
