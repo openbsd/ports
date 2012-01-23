@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.1 2012/01/23 11:01:34 dcoppa Exp $
+
+Add '-zoom' to mplayer when vo is x11
+(upstream svn revision r84)
+
+--- src/gmtk_media_player.c.orig	Mon Jan 23 11:52:38 2012
++++ src/gmtk_media_player.c	Mon Jan 23 11:54:58 2012
+@@ -2050,6 +2050,9 @@ gpointer launch_mplayer(gpointer data)
+                     argv[argn++] = g_strdup_printf("gl_nosw");
+                 } else {
+                     argv[argn++] = g_strdup_printf("%s", player->vo);
++                    if (g_ascii_strncasecmp(player->vo, "x11", strlen("x11")) == 0) {
++                        argv[argn++] = g_strdup_printf("-zoom");
++                    }
+                 }
+ 
+                 if (player->deinterlace) {
