@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ejabberd_cfg_example,v 1.4 2010/12/23 22:54:39 jasper Exp $
---- src/ejabberd.cfg.example.orig	Fri Mar 12 11:40:41 2010
-+++ src/ejabberd.cfg.example	Sat Mar 13 12:41:08 2010
+$OpenBSD: patch-src_ejabberd_cfg_example,v 1.5 2012/01/23 10:54:47 ajacoutot Exp $
+--- src/ejabberd.cfg.example.orig	Fri Dec 23 12:27:30 2011
++++ src/ejabberd.cfg.example	Sun Jan 22 20:11:03 2012
 @@ -115,7 +115,7 @@
  			%% certificate, specify the full path to the
  			%% file and uncomment this line:
@@ -29,7 +29,7 @@ $OpenBSD: patch-src_ejabberd_cfg_example,v 1.4 2010/12/23 22:54:39 jasper Exp $
  
    {5269, ejabberd_s2s_in, [
  			   {shaper, s2s_shaper},
-@@ -172,18 +172,18 @@
+@@ -173,18 +173,18 @@
  %% Allowed values are: false optional required required_trusted
  %% You must specify a certificate file.
  %%

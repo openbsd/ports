@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/11/22 17:11:07 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/01/23 10:54:47 ajacoutot Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -49,6 +49,7 @@ lib/ejabberd/ebin/ejabberd_odbc_sup.beam
 lib/ejabberd/ebin/ejabberd_piefxis.beam
 lib/ejabberd/ebin/ejabberd_rdbms.beam
 lib/ejabberd/ebin/ejabberd_receiver.beam
+lib/ejabberd/ebin/ejabberd_regexp.beam
 lib/ejabberd/ebin/ejabberd_router.beam
 lib/ejabberd/ebin/ejabberd_s2s.beam
 lib/ejabberd/ebin/ejabberd_s2s_in.beam

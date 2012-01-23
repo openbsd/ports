@@ -1,9 +1,10 @@
 No need to install release notes.
+ejabberdctl mode 550 is annoying, and debian doesn't do that either
 
-$OpenBSD: patch-src_Makefile_in,v 1.2 2010/09/13 17:17:06 sebastia Exp $
---- src/Makefile.in.orig	Mon Aug  2 18:33:20 2010
-+++ src/Makefile.in	Wed Aug 18 00:36:10 2010
-@@ -118,7 +118,7 @@ MSGSDIR = $(PRIVDIR)/msgs
+$OpenBSD: patch-src_Makefile_in,v 1.3 2012/01/23 10:54:47 ajacoutot Exp $
+--- src/Makefile.in.orig	Fri Dec 23 12:27:30 2011
++++ src/Makefile.in	Sun Jan 22 20:22:08 2012
+@@ -124,7 +124,7 @@ MSGSDIR = $(PRIVDIR)/msgs
  SPOOLDIR = $(DESTDIR)@localstatedir@/lib/ejabberd
  
  # /var/lock/ejabberdctl
@@ -12,7 +13,16 @@ $OpenBSD: patch-src_Makefile_in,v 1.2 2010/09/13 17:17:06 sebastia Exp $
  
  # /var/lib/ejabberd/.erlang.cookie
  COOKIEFILE = $(SPOOLDIR)/.erlang.cookie
-@@ -257,7 +257,6 @@ install: all
+@@ -202,7 +202,7 @@ install: all
+ 	#
+ 	# Administration script
+ 	[ -d $(SBINDIR) ] || install -d -m 755 $(SBINDIR)
+-	install -m 550 $(G_USER) ejabberdctl.example $(SBINDIR)/ejabberdctl
++	install -m 555 $(G_USER) ejabberdctl.example $(SBINDIR)/ejabberdctl
+ 	#
+ 	# Init script
+ 	sed -e "s*@ctlscriptpath@*$(SBINDIR)*" \
+@@ -264,7 +264,6 @@ install: all
  	install -m 644 ../doc/dev.html $(DOCDIR)
  	install -m 644 ../doc/guide.html $(DOCDIR)
  	install -m 644 ../doc/*.png $(DOCDIR)
