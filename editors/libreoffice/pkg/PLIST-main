@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/12/03 19:49:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2012/01/23 14:43:42 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -1708,6 +1708,7 @@ lib/libreoffice/basis${BV}/share/registry/binfilter.xcd
 lib/libreoffice/basis${BV}/share/registry/calc.xcd
 lib/libreoffice/basis${BV}/share/registry/draw.xcd
 lib/libreoffice/basis${BV}/share/registry/graphicfilter.xcd
+lib/libreoffice/basis${BV}/share/registry/gnome.xcd
 lib/libreoffice/basis${BV}/share/registry/impress.xcd
 lib/libreoffice/basis${BV}/share/registry/lingucomponent.xcd
 lib/libreoffice/basis${BV}/share/registry/main.xcd
@@ -2336,6 +2337,7 @@ lib/libreoffice/share/registry/
 lib/libreoffice/share/registry/brand.xcd
 lib/libreoffice/share/uno_packages/
 lib/libreoffice/share/uno_packages/cache/
+lib/libreoffice/share/uno_packages/cache/uno_packages/
 lib/libreoffice/share/xdg/
 lib/libreoffice/share/xdg/base.desktop
 lib/libreoffice/share/xdg/calc.desktop

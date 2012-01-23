@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/12/18 10:21:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/01/23 14:43:42 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.4
-VERSION=	3.4.4.2
+VERSION=	3.4.5.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-bootstrap-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,23 +16,21 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	1
-REVISION-java=	0
-
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.4.4/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.4.5/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
 		http://download.go-oo.org/src/ \
 		http://download.go-oo.org/extern/ \
 		http://www.numbertext.org/linux/ \
-		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
+		http://ooo.itc.hu/oxygenoffice/download/libreoffice/ \
+		http://dev-www.libreoffice.org/src/
 
 EDISTFILES=	libreoffice-bootstrap-${VERSION}.tar.bz2
 
@@ -56,7 +54,7 @@ DISTFILES+=	${EDISTFILES} \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
 		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
-		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip:0 \
+		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
 		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
 		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:0 \
@@ -72,7 +70,7 @@ DISTFILES+=	${EDISTFILES} \
 		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:0 \
 		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
 		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:0 \
-		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:0 \
+		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:0 \
 		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:0 \
 		48a9f787f43a09c0a9b7b00cd1fddbbf-hyphen-2.7.1.tar.gz:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
