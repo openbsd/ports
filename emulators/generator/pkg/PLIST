@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/13 07:24:46 brad Exp $
-@bin bin/generator-sdl

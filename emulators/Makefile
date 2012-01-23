@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/01/23 09:25:10 edd Exp $
+# $OpenBSD: Makefile,v 1.63 2012/01/23 10:18:47 edd Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -15,7 +15,6 @@
     SUBDIR += fuse
     SUBDIR += fuse-utils
     SUBDIR += gambatte
-    SUBDIR += generator
     SUBDIR += gns3
     SUBDIR += gxemul
     SUBDIR += ines
