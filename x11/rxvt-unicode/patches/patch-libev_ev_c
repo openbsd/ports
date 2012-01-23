@@ -1,7 +1,7 @@
-$OpenBSD: patch-libev_ev_c,v 1.1 2011/12/22 11:29:33 dcoppa Exp $
---- libev/ev.c.orig	Thu Dec 22 10:54:44 2011
-+++ libev/ev.c	Thu Dec 22 10:55:30 2011
-@@ -882,7 +882,6 @@ ecb_function_ ecb_bool ecb_little_endian (void) { retu
+$OpenBSD: patch-libev_ev_c,v 1.2 2012/01/23 08:10:41 dcoppa Exp $
+--- libev/ev.c.orig	Thu Jan 19 18:55:00 2012
++++ libev/ev.c	Sun Jan 22 18:04:25 2012
+@@ -921,7 +921,6 @@ ecb_function_ ecb_bool ecb_little_endian (void) { retu
   * alternatively, you can remove this #error and link against libpthread,
   * which will then provide the memory fences.
   */
