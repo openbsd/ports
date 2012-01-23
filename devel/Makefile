@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1015 2012/01/23 21:07:58 kili Exp $
+# $OpenBSD: Makefile,v 1.1016 2012/01/23 21:08:25 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -379,8 +379,8 @@
      SUBDIR += opencm
      SUBDIR += openmpi
      SUBDIR += openocd
-     SUBDIR += orc
      SUBDIR += ophis
+     SUBDIR += orc
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
@@ -432,9 +432,9 @@
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
      SUBDIR += p5-Class-Accessor
-     SUBDIR += p5-Class-Accessor-Lite
      SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-Accessor-Grouped
+     SUBDIR += p5-Class-Accessor-Lite
      SUBDIR += p5-Class-AutoClass
      SUBDIR += p5-Class-Autouse
      SUBDIR += p5-Class-Base
@@ -1052,8 +1052,8 @@
      SUBDIR += qt-creator
      SUBDIR += qt4-eventsview
      SUBDIR += quirks
-     SUBDIR += ragel
      SUBDIR += radare2
+     SUBDIR += ragel
      SUBDIR += rapidsvn
      SUBDIR += rats
      SUBDIR += re2c
