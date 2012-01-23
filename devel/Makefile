@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1014 2012/01/18 16:56:28 okan Exp $
+# $OpenBSD: Makefile,v 1.1015 2012/01/23 21:07:58 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -158,22 +158,31 @@
      SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickCheck
+     SUBDIR += hs-aeson
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-atom
+     SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
      SUBDIR += hs-bimap
      SUBDIR += hs-binary
      SUBDIR += hs-blaze-builder
      SUBDIR += hs-blaze-builder-enumerator
+     SUBDIR += hs-blaze-textual
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
+     SUBDIR += hs-comonad
+     SUBDIR += hs-comonad-transformers
+     SUBDIR += hs-contravariant
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
+     SUBDIR += hs-data-lens
+     SUBDIR += hs-data-lens-template
      SUBDIR += hs-dataenc
      SUBDIR += hs-deepseq
      SUBDIR += hs-directory-tree
+     SUBDIR += hs-distributive
      SUBDIR += hs-dlist
      SUBDIR += hs-enumerator
      SUBDIR += hs-failure
@@ -194,6 +203,7 @@
      SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
+     SUBDIR += hs-logict
      SUBDIR += hs-mmap
      SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
@@ -212,6 +222,8 @@
      SUBDIR += hs-regex-pcre-builtin
      SUBDIR += hs-regex-posix
      SUBDIR += hs-safe
+     SUBDIR += hs-semigroupoids
+     SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
      SUBDIR += hs-stm
      SUBDIR += hs-stringtable-atom
@@ -224,6 +236,7 @@
      SUBDIR += hs-type-level
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
+     SUBDIR += hs-unordered-containers
      SUBDIR += hs-vector
      SUBDIR += hs-vector-algorithms
      SUBDIR += hscolour
