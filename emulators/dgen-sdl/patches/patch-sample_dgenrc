@@ -1,0 +1,15 @@
+$OpenBSD: patch-sample_dgenrc,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
+
+Make joystick devices configurable via config file
+
+--- sample.dgenrc.orig	Sun Jan 22 16:50:59 2012
++++ sample.dgenrc	Sun Jan 22 16:51:24 2012
+@@ -141,6 +141,8 @@ int_scale = 1
+ 
+ # Use a joystick?
+ bool_joystick = no
++int_joystick1_dev = 0
++int_joystick2_dev = 1
+ 
+ # Use OpenGL mode?
+ bool_opengl = yes

@@ -1,0 +1,17 @@
+$OpenBSD: patch-dgenrc_5,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
+
+Document our joystick hack.
+
+--- dgenrc.5.orig	Sun Jan 22 17:45:57 2012
++++ dgenrc.5	Sun Jan 22 17:47:55 2012
+@@ -62,6 +62,10 @@ corresponding "key_pad2" field, to map to the second c
+ Use joysticks to emulate the controllers. Note that the keyboard keys will
+ still work if this value is set. This field is only available if you have
+ joystick support enabled.
++.It int_joystick1_dev [0]
++.It int_joystick2_dev [1]
++Select which joystick device to use. Parameter is an integer passed to 
++.Fn SDL_JoystickOpen .
+ .It joypadX_bY
+ Maps button number Y, on joystick X to a Genesis controller button. Valid
+ button values are "a", "b", "c", "x", "y", "z", "mode", and "start". Joystick

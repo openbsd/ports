@@ -1,0 +1,41 @@
+$OpenBSD: patch-md-phil_cpp,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
+
+Make joystick devices configurable via config file
+
+--- md-phil.cpp.orig	Thu Nov 17 21:49:02 2011
++++ md-phil.cpp	Sun Jan 22 16:50:21 2012
+@@ -165,7 +165,7 @@ void md::read_joysticks()
+ 
+ static SDL_Joystick *js_handle[2] = { NULL, NULL };
+ 
+-void md::init_joysticks() {
++void md::init_joysticks(int js1, int js2) {
+   // Initialize the joystick support
+   // Thanks to Cameron Moore <cameron@unbeatenpath.net>
+   if(SDL_Init(SDL_INIT_JOYSTICK) < 0)
+@@ -174,9 +174,11 @@ void md::init_joysticks() {
+       return;
+     }
+ 
++  printf("Initialising SDL system joysticks %d and %d\n", js1, js2);
++
+   // Open the first couple of joysticks, if possible
+-  js_handle[0] = SDL_JoystickOpen(0);
+-  js_handle[1] = SDL_JoystickOpen(1);
++  js_handle[0] = SDL_JoystickOpen(js1);
++  js_handle[1] = SDL_JoystickOpen(js2);
+ 
+   // If neither opened, quit
+   if(!(js_handle[0] || js_handle[1]))
+@@ -187,9 +189,9 @@ void md::init_joysticks() {
+ 
+   // Print the joystick names
+   printf("Using ");
+-  if(js_handle[0]) printf("%s (#0) as pad1 ", SDL_JoystickName(0));
++  if(js_handle[0]) printf("%s (#0) as pad1 ", SDL_JoystickName(js1));
+   if(js_handle[0] && js_handle[1]) printf("and ");
+-  if(js_handle[1]) printf("%s (#1) as pad2 ", SDL_JoystickName(1));
++  if(js_handle[1]) printf("%s (#1) as pad2 ", SDL_JoystickName(js2));
+   printf("\n");
+ 
+   // Enable joystick events

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
+@bin bin/dgen
+@bin bin/dgen_tobin
+@man man/man1/dgen.1
+@man man/man1/dgen_tobin.1
+@man man/man5/dgenrc.5
+share/doc/dgen-sdl/
+share/doc/dgen-sdl/cz80-readme.txt
+share/doc/dgen-sdl/musa-readme.txt
+share/doc/dgen-sdl/mz80.txt
+share/doc/dgen-sdl/stardoc.txt
+share/examples/dgen-sdl/
+share/examples/dgen-sdl/sample.dgenrc
