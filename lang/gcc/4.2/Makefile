@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/01/13 00:55:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2012/01/23 14:47:37 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -8,6 +8,7 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 4
 # XXX this needs libc.so.60.1 (from OpenBSD 5.0) to build on i386
+LIBC_VERSION = 60.1
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tgz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
@@ -108,12 +109,9 @@ REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
 
 post-extract:
-.if ${BUILD_PACKAGES:M-ada}
-	${WRKDIR}/bootstrap/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
-.endif
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
-	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
 	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
@@ -121,6 +119,9 @@ post-extract:
 .for l v in ${SHARED_LIBS}
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> ${WRKSRC}/libversions
 .endfor
+.if ${BUILD_PACKAGES:M-ada}
+	${WRKDIR}/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
+.endif
 
 post-install:
 .if ${BUILD_PACKAGES:M-ada}
@@ -213,9 +214,15 @@ ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
-	mkdir -p ${WRKDIR}/prepare/bootstrap
+.if !defined(LIBC_VERSION)
+	@echo 1>&2 "Error: you must specify a libc to bundle"
+	@exit 1
+.else
+	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cp /usr/lib/libc.so.${LIBC_VERSION} ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
 	cd ${WRKDIR}/prepare && tar zcf ${FULLDISTDIR}/${ADASTRAP} bootstrap
+.endif
 
