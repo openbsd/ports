@@ -1,7 +1,7 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.4 2012/01/09 12:10:22 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.5 2012/01/23 13:06:32 dcoppa Exp $
 
 Set some sane defaults:
-use xv as default video output
+use x11 as default video output
 disable bar animation in full screen
 use mplayer's software volume control
 use xscrnsaver controls over gnome-power-manager
@@ -11,13 +11,13 @@ use sndio as default audio device
 use English as default language
 
 --- apps.gnome-mplayer.preferences.gschema.xml.orig	Fri Jul 29 14:59:45 2011
-+++ apps.gnome-mplayer.preferences.gschema.xml	Mon Jan  9 12:09:37 2012
++++ apps.gnome-mplayer.preferences.gschema.xml	Mon Jan 23 12:05:04 2012
 @@ -1,7 +1,7 @@
  <schemalist>
    <schema id="apps.gnome-mplayer.preferences" path="/apps/gnome-mplayer/preferences/">
      <key name="vo" type="s">
 -      <default>''</default>
-+      <default>'xv'</default>
++      <default>'x11'</default>
        <summary>Default video output</summary>
        <description>Default video output</description>
      </key>
