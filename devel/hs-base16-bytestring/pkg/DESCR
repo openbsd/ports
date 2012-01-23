@@ -1,0 +1,2 @@
+This package provides a Haskell library for working with base16-encoded
+data quickly and efficiently, using the ByteString type.
