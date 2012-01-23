@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/11/14 20:48:43 edd Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/23 09:28:33 edd Exp $
 bin/maxima
 bin/rmaxima
 bin/xmaxima
@@ -416,6 +416,7 @@ share/maxima/${VERSION}/share/colnew/lisp/vwblok.lisp
 share/maxima/${VERSION}/share/colnew/load-colnew.lisp
 share/maxima/${VERSION}/share/colnew/prob1.mac
 share/maxima/${VERSION}/share/colnew/prob2.mac
+share/maxima/${VERSION}/share/colnew/prob3.mac
 share/maxima/${VERSION}/share/colnew/prob4.mac
 share/maxima/${VERSION}/share/combinatorics/
 share/maxima/${VERSION}/share/combinatorics/README
@@ -545,6 +546,7 @@ share/maxima/${VERSION}/share/contrib/ezunits/ezunits.mac
 share/maxima/${VERSION}/share/contrib/ezunits/ezunits_db.mac
 share/maxima/${VERSION}/share/contrib/ezunits/ezunits_functions.mac
 share/maxima/${VERSION}/share/contrib/ezunits/physical_constants.mac
+share/maxima/${VERSION}/share/contrib/ezunits/rtest_ezunits_frink.mac
 share/maxima/${VERSION}/share/contrib/ezunits/rtestezunits.mac
 share/maxima/${VERSION}/share/contrib/f90.lisp
 share/maxima/${VERSION}/share/contrib/finance/
@@ -652,9 +654,11 @@ share/maxima/${VERSION}/share/contrib/gentran/vaxinit.lisp
 share/maxima/${VERSION}/share/contrib/gentran/vaxlsp.lisp
 share/maxima/${VERSION}/share/contrib/gf/
 share/maxima/${VERSION}/share/contrib/gf/gf.mac
+share/maxima/${VERSION}/share/contrib/gf/gf_hard_test.ERR
 share/maxima/${VERSION}/share/contrib/gf/gf_hard_test.mac
 share/maxima/${VERSION}/share/contrib/gf/gf_manual.pdf
 share/maxima/${VERSION}/share/contrib/gf/gf_manual.tex
+share/maxima/${VERSION}/share/contrib/gf/gf_test.ERR
 share/maxima/${VERSION}/share/contrib/gf/gf_test.mac
 share/maxima/${VERSION}/share/contrib/gf/whatsnew.txt
 share/maxima/${VERSION}/share/contrib/ggf.mac
@@ -718,7 +722,9 @@ share/maxima/${VERSION}/share/contrib/mcclim/maxima-repl-mcclim.lisp
 share/maxima/${VERSION}/share/contrib/mcclim/postscriptoutput.png
 share/maxima/${VERSION}/share/contrib/meijer_g.tex
 share/maxima/${VERSION}/share/contrib/meijer_gv2.mac
-share/maxima/${VERSION}/share/contrib/mnewton.mac
+share/maxima/${VERSION}/share/contrib/mnewton/
+share/maxima/${VERSION}/share/contrib/mnewton/mnewton.mac
+share/maxima/${VERSION}/share/contrib/mnewton/rtest_mnewton.mac
 share/maxima/${VERSION}/share/contrib/multiadditive.lisp
 share/maxima/${VERSION}/share/contrib/namespaces/
 share/maxima/${VERSION}/share/contrib/namespaces/foo.mac
@@ -821,7 +827,6 @@ share/maxima/${VERSION}/share/contrib/rand/twovar.usg
 share/maxima/${VERSION}/share/contrib/rand/vandpol.mac
 share/maxima/${VERSION}/share/contrib/rand/vandpol.usg
 share/maxima/${VERSION}/share/contrib/rtest_lsquares.mac
-share/maxima/${VERSION}/share/contrib/rtest_mnewton.mac
 share/maxima/${VERSION}/share/contrib/rtest_opproperties.mac
 share/maxima/${VERSION}/share/contrib/rtest_sequence.mac
 share/maxima/${VERSION}/share/contrib/rtest_solve_rat_ineq.mac
@@ -1099,6 +1104,7 @@ share/maxima/${VERSION}/share/lapack/lapack/dgetf2.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dgetrf.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dgetrs.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dhseqr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/disnan.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlabad.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlabrd.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlacon.lisp
@@ -1108,6 +1114,7 @@ share/maxima/${VERSION}/share/lapack/lapack/dlaed6.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlaexc.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlahqr.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlahrd.lisp
+share/maxima/${VERSION}/share/lapack/lapack/dlaisnan.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlaln2.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlamc1.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlamc2.lisp
@@ -1121,6 +1128,7 @@ share/maxima/${VERSION}/share/lapack/lapack/dlanhs.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlanst.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlanv2.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlapy2.lisp
+share/maxima/${VERSION}/share/lapack/lapack/dlapy3.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlaqtr.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlarf.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dlarfb.lisp
@@ -1171,10 +1179,46 @@ share/maxima/${VERSION}/share/lapack/lapack/dtrexc.lisp
 share/maxima/${VERSION}/share/lapack/lapack/dtrsna.lisp
 share/maxima/${VERSION}/share/lapack/lapack/ieeeck.lisp
 share/maxima/${VERSION}/share/lapack/lapack/ilaenv.lisp
+share/maxima/${VERSION}/share/lapack/lapack/ilazlc.lisp
+share/maxima/${VERSION}/share/lapack/lapack/ilazlr.lisp
 share/maxima/${VERSION}/share/lapack/lapack/lapack-lisp.system
 share/maxima/${VERSION}/share/lapack/lapack/lapack-package.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zgebak.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zgebal.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zgeev.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zgehd2.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zgehrd.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zhseqr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlacgv.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlacpy.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zladiv.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlahqr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlahr2.lisp
 share/maxima/${VERSION}/share/lapack/lapack/zlange.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr0.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr1.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr2.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr3.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr4.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaqr5.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlarf.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlarfb.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlarfg.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlarft.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlartg.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlascl.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlaset.lisp
 share/maxima/${VERSION}/share/lapack/lapack/zlassq.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zlatrs.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zrot.lisp
+share/maxima/${VERSION}/share/lapack/lapack/ztrevc.lisp
+share/maxima/${VERSION}/share/lapack/lapack/ztrexc.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zung2r.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zunghr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zungqr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zunm2r.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zunmhr.lisp
+share/maxima/${VERSION}/share/lapack/lapack/zunmqr.lisp
 share/maxima/${VERSION}/share/lapack/load-lapack.lisp
 share/maxima/${VERSION}/share/lapack/rtest_dgeqrf.mac
 share/maxima/${VERSION}/share/lbfgs/
@@ -1650,6 +1694,7 @@ share/maxima/${VERSION}/src/numerical/slatec/dqag.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqage.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqagi.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqagie.lisp
+share/maxima/${VERSION}/src/numerical/slatec/dqagp.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqagpe.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqags.lisp
 share/maxima/${VERSION}/src/numerical/slatec/dqagse.lisp
