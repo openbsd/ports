@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/01/05 15:31:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/23 14:39:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		1.1
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  pulse                1.0      # .13.4
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
@@ -65,7 +65,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-fftw \
 			--without-caps \
 			--enable-oss-output \
-			--enable-oss-wrapper \
+			--disable-oss-wrapper \
 			--disable-x11 \
 			--disable-alsa \
 			--disable-asyncns \
