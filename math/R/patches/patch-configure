@@ -1,6 +1,69 @@
-$OpenBSD: patch-configure,v 1.10 2009/03/11 08:21:33 sthen Exp $
---- configure.orig	Thu Dec 18 14:03:48 2008
-+++ configure	Wed Mar 11 00:21:36 2009
+$OpenBSD: patch-configure,v 1.11 2012/01/23 10:34:27 dcoppa Exp $
+--- configure.orig	Thu Dec 18 15:03:48 2008
++++ configure	Thu Jan 19 14:38:44 2012
+@@ -31142,7 +31142,7 @@ echo "$as_me: WARNING: Use of flat namespace is reques
+   openbsd*)
+     ## looks like ${wl} is not defined here.  Perhaps in libtool code?
+     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
+-      main_ldflags="${wl}-export-dynamic"
++      main_ldflags="${wl}--export-dynamic"
+       shlib_ldflags="-shared -fPIC"
+     fi
+     ;;
+@@ -52736,13 +52736,13 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+         if test -n "$gl_have_pthread"; then
+           # The program links fine without libpthread. But it may actually
+           # need to link with libpthread in order to create multiple threads.
+-          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
++          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
++echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -52806,7 +52806,7 @@ fi
+ { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_kill" >&5
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
+ if test $ac_cv_lib_pthread_pthread_kill = yes; then
+-  LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
++  LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
+              # On Solaris and HP-UX, most pthread functions exist also in libc.
+              # Therefore pthread_in_use() needs to actually try to create a
+              # thread: pthread_create from libc will fail, whereas
+@@ -52824,13 +52824,13 @@ fi
+ 
+         else
+           # Some library is needed. Try libpthread and libc_r.
+-          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
++          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
++echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -52895,8 +52895,8 @@ fi
+ echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
+ if test $ac_cv_lib_pthread_pthread_kill = yes; then
+   gl_have_pthread=yes
+-             LIBTHREAD=-lpthread LTLIBTHREAD=-lpthread
+-             LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
++             LIBTHREAD=-pthread LTLIBTHREAD=-pthread
++             LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
+ fi
+ 
+           if test -z "$gl_have_pthread"; then
 @@ -60283,7 +60283,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
  LTLIBTHREAD!$LTLIBTHREAD$ac_delim
  LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim

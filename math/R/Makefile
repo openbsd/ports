@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2012/01/23 10:34:27 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.8.1
-REVISION=	6
+REVISION=	7
 SHARED_LIBS=	Rlapack 29.0 \
 		Rblas	29.0
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB= 	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
 		bz2 c cairo expat fontconfig freetype glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m ncurses pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png  pthread-stubs \
-		readline tiff xcb xcb-render xcb-shm z \
+		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
+		pthread-stubs readline tiff xcb xcb-render xcb-shm z \
 		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
@@ -29,7 +29,6 @@ MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		http://cran.us.r-project.org/src/base/R-2/ \
 		http://cran.dk.r-project.org/src/base/R-2/
 
-USE_GROFF=	Yes
 MODULES=	fortran devel/gettext x11/tk
 MODFORTRAN_COMPILER = g77
 

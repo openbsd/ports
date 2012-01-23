@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_main_Makefile_in,v 1.4 2012/01/23 10:34:27 dcoppa Exp $
+
+Fix runtime errors due to libpthread undefined symbols
+
+--- src/main/Makefile.in.orig	Thu Jan 19 12:12:26 2012
++++ src/main/Makefile.in	Thu Jan 19 12:13:35 2012
+@@ -91,7 +91,7 @@ MAIN_LIBS = ../unix/libunix.a ../appl/libappl.a ../nma
+ EXTRA_STATIC_LIBS = $(R_ZLIBS) $(R_BZLIBS) $(R_PCRE) $(R_XDR)$(R_LIBINTL)
+ STATIC_LIBS = $(MAIN_LIBS) $(EXTRA_STATIC_LIBS)
+ 
+-EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LIBINTL@ $(READLINE_LIBS) $(LIBS)
++EXTRA_LIBS = $(BLAS_LIBS) $(FLIBS) $(R_XTRA_LIBS) @LIBINTL@ $(READLINE_LIBS) $(LIBS) -pthread
+ 
+ R_binary = R.bin
+ R_bin_OBJECTS = Rmain.o
