@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.33 2012/01/11 22:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2012/01/23 09:47:38 sthen Exp $
 
 COMMENT =	web-based collaborative editing environment
 
-DISTNAME =	mediawiki-1.18.0
-REVISION =	0
+DISTNAME =	mediawiki-1.18.1
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.mediawiki.org/
 
 MAINTAINER =	Wen Heping <wenheping@gmail.com>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/12/21 14:00:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/01/23 09:47:38 sthen Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/COPYING
@@ -1640,6 +1640,7 @@ mediawiki/maintenance/oracle/archives/patch_create_17_functions.sql
 mediawiki/maintenance/oracle/archives/patch_fk_rename_deferred.sql
 mediawiki/maintenance/oracle/archives/patch_namespace_defaults.sql
 mediawiki/maintenance/oracle/archives/patch_rebuild_dupfunc.sql
+mediawiki/maintenance/oracle/archives/patch_recentchanges_fk2_cascade.sql
 mediawiki/maintenance/oracle/archives/patch_remove_not_null_empty_defs.sql
 mediawiki/maintenance/oracle/patch_seq_names_pre1.16.sql
 mediawiki/maintenance/oracle/tables.sql
@@ -1685,6 +1686,8 @@ mediawiki/maintenance/postgres/archives/patch-ts2pagetitle.sql
 mediawiki/maintenance/postgres/archives/patch-tsearch2funcs.sql
 mediawiki/maintenance/postgres/archives/patch-update_sequences.sql
 mediawiki/maintenance/postgres/archives/patch-updatelog.sql
+mediawiki/maintenance/postgres/archives/patch-uploadstash.sql
+mediawiki/maintenance/postgres/archives/patch-uploadstash_sequence.sql
 mediawiki/maintenance/postgres/archives/patch-user_former_groups.sql
 mediawiki/maintenance/postgres/archives/patch-user_properties.sql
 mediawiki/maintenance/postgres/archives/patch-valid_tag.sql
@@ -2227,6 +2230,9 @@ mediawiki/skins/common/images/public-domain.png
 mediawiki/skins/common/images/redirectltr.png
 mediawiki/skins/common/images/redirectrtl.png
 mediawiki/skins/common/images/remove.png
+mediawiki/skins/common/images/sort_both.gif
+mediawiki/skins/common/images/sort_down.gif
+mediawiki/skins/common/images/sort_up.gif
 mediawiki/skins/common/images/spinner.gif
 mediawiki/skins/common/images/tick-32.png
 mediawiki/skins/common/images/tipsy-arrow.gif
@@ -2597,6 +2603,7 @@ mediawiki/tests/qunit/suites/resources/jquery/jquery.byteLength.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.byteLimit.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.client.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.colorUtil.js
+mediawiki/tests/qunit/suites/resources/jquery/jquery.delayedBind.test.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.getAttrs.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.localize.js
 mediawiki/tests/qunit/suites/resources/jquery/jquery.mwPrototypes.js
