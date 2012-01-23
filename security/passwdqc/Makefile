@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/20 01:01:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/23 16:59:38 espie Exp $
 
 COMMENT=		complexity checker for passwd(1) and password generator
 
 DISTNAME=		passwdqc-1.2.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security sysutils
 
 SHARED_LIBS=		passwdqc 0.0 # .0
