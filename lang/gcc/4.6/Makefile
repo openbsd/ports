@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/01/23 15:34:01 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/23 17:04:10 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -30,7 +30,7 @@ SHARED_LIBS =	estdc++		12.0 \
 		go		0.0
 
 
-PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go
+PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada no_go full
 FLAVOR ?= 
 
 ONLY_FOR_ARCHS-ada = i386
@@ -79,15 +79,14 @@ LANGS := ${LANGS},objc
 LANGS := ${LANGS},java
 DISTFILES +=		${ECJ}:1
 BUILD_DEPENDS +=	archivers/zip>=2.3p0
-CONFIGURE_ARGS +=	--enable-libgcj
+CONFIGURE_ARGS +=	--enable-libgcj --without-jar
 VMEM_WARNING =		Yes
 .endif
 .if ${BUILD_PACKAGES:M-ada}
 LANGS := ${LANGS},ada
 DISTFILES += ${ADASTRAP}:0
 EXTRACT_ONLY += ${ADASTRAP}
-CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
-MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
+EXTRA_ENV += ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 CC = ${WRKDIR}/bin/egcc
 REGRESS_DEPENDS += ${BUILD_PKGPATH},-ada
 .endif
@@ -98,9 +97,12 @@ LANGS := ${LANGS},go
 CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
-CONFIGURE_ENV += am_cv_func_iconv=no
-CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
+EXTRA_ENV += am_cv_func_iconv=no JAR=no
+EXTRA_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
+
+CONFIGURE_ENV += ${EXTRA_ENV}
+MAKE_ENV += ${EXTRA_ENV}
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
@@ -134,9 +136,14 @@ SEPARATE_BUILD = flavored
 
 USE_GMAKE = yes
 
+.if ${FLAVOR:Mfull}
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET = bootstrap
+.else
+# skip the stage2/stage3 bullshit under normal circumstances
+ALL_TARGET = bootstrap2
+.endif
 
 MAKE_FLAGS += libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
