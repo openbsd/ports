@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.30 2012/01/18 15:26:49 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.31 2012/01/23 10:35:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -117,6 +117,12 @@ sub filename
 	return $self->distdir($self->{name});
 }
 
+sub checked_already
+{
+	my $self = shift;
+	return $self->{okay} || $self->{checked};
+}
+
 sub check
 {
 	my ($self, $logger) = @_;
@@ -154,6 +160,7 @@ sub find_copy
 			unlink($name);
 			if (link($full, $name)) {
 				$self->do_cache;
+				$self->{okay} = 1;
 				return 1;
 			}
 		}
@@ -179,6 +186,7 @@ sub checksize
 		print $fh "size does not match\n";
 		return 0;
 	}
+	$self->{checked} = 1;
 	return 1;
 }
 

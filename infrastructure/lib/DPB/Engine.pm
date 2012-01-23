@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.44 2012/01/09 11:54:30 espie Exp $
+# $OpenBSD: Engine.pm,v 1.45 2012/01/23 10:35:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -270,6 +270,9 @@ sub new_queue
 sub is_done
 {
 	my ($self, $v) = @_;
+	if ($v->checked_already) {
+		return 1;
+	}
 	if ($v->check($self->{engine}{logger})) {
 		$self->log('B', $v);
 		return 1;
