@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/11 21:11:37 pascal Exp $
+# $OpenBSD: Makefile,v 1.11 2012/01/23 15:34:01 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
 V = 4.6.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-BOOTSTRAP_GEN = 3
+BOOTSTRAP_GEN = 4
 # XXX this needs libc.so.61.0 to build on i386
+LIBC_VERSION = 60.1
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
@@ -59,7 +60,8 @@ REGRESS_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://spacehopper.org/mirrors/
+#MASTER_SITES0 =	http://spacehopper.org/mirrors/
+MASTER_SITES0 = ftp://quatramaran.ens.fr/pub/espie/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c
@@ -182,17 +184,22 @@ CONFIG = x86_64-unknown-openbsd${OSREV}
 .endif
 
 post-extract:
+	# XXX cheat a bit
+	cd ${WRKDIR}/bootstrap/system-libs && ln -sf libc.so.${LIBC_VERSION} libc.so.61.0
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
-	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
+	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
 	chmod a+x ${WRKDIR}/bin/$f
 .endfor
-	ln -s /usr/bin/nm ${WRKDIR}/bin/enm
+	ln -sf /usr/bin/nm ${WRKDIR}/bin/enm
 	echo "# This file automatically generated" >> ${WRKSRC}/libversions
 .for l v in ${SHARED_LIBS}
 	echo "LIB$l_LTVERSION = -version-info ${v:S/./:/}" >> \
 		${WRKSRC}/libversions
 .endfor
+.if ${BUILD_PACKAGES:M-ada}
+	${WRKDIR}/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
+.endif
 .if ${BUILD_PACKAGES:M-java}
 	cp ${FULLDISTDIR}/${ECJ} ${WRKSRC}/ecj.jar
 .endif
@@ -218,10 +225,16 @@ ADA_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-ada}${PKG_SUFX}
 GCC_PACKAGE = ${PACKAGE_REPOSITORY}/i386/all/${PKGNAME-main}${PKG_SUFX}
 
 adastrap: ${ADA_PACKAGE} ${GCC_PACKAGE}
-	mkdir -p ${WRKDIR}/prepare/bootstrap
+.if !defined(LIBC_VERSION)
+	@echo 1>&2 "Error: you must specify a libc to bundle"
+	@exit 1
+.else
+	mkdir -p ${WRKDIR}/prepare/bootstrap/system-libs
+	cp /usr/lib/libc.so.${LIBC_VERSION} ${WRKDIR}/prepare/bootstrap/system-libs
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${ADA_PACKAGE}
 	cd ${WRKDIR}/prepare/bootstrap && tar zxf ${GCC_PACKAGE}
 	rm -rf ${WRKDIR}/prepare/bootstrap/{+*,info,man}
 	cd ${WRKDIR}/prepare && tar cf - bootstrap | \
 		xz > ${FULLDISTDIR}/${ADASTRAP}
+.endif
 
