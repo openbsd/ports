@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/01/23 14:59:57 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2012/01/23 22:20:34 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -44,7 +44,7 @@ SHARED_LIBS =	estdc++		13.0 \
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 USE_GROFF =	Yes
-PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada
+PSEUDO_FLAVORS = no_c++ no_f95 no_objc no_java no_ada full
 FLAVOR ?= 
 
 ONLY_FOR_ARCHS-ada = i386
@@ -169,9 +169,14 @@ SEPARATE_BUILD = flavored
 
 USE_GMAKE = yes
 
+.if ${FLAVOR:Mfull}
 # you shouldn't skip bootstrap unless you know what you're doing
 # use bootstrap-lean if you're pressed for space
 ALL_TARGET = bootstrap
+.else
+# skip the stage2/stage3 bullshit under normal circumstances
+ALL_TARGET = bootstrap2
+.endif
 
 MAKE_FLAGS = libstdc___la_LDFLAGS='-version-info 31:0:0 -lm'
 
