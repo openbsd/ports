@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/24 20:00:01 nigel Exp $
+${P5ARCH}/
+${P5ARCH}/Storable/
+${P5ARCH}/Storable/AMF/
+${P5ARCH}/Storable/AMF.pm
+${P5ARCH}/Storable/AMF/Mapper.pm
+${P5ARCH}/Storable/AMF0.pm
+${P5ARCH}/Storable/AMF3.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Storable/
+${P5ARCH}/auto/Storable/AMF/
+${P5ARCH}/auto/Storable/AMF/AMF.bs
+${P5ARCH}/auto/Storable/AMF/AMF.so
+@man man/man3p/Storable::AMF.3p
+@man man/man3p/Storable::AMF0.3p
+@man man/man3p/Storable::AMF3.3p
+@man man/man3p/Storable::AMF::Mapper.3p
