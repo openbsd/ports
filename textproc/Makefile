@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.348 2011/12/23 13:05:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.349 2012/01/24 01:09:05 nigel Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -241,6 +241,7 @@
      SUBDIR += p5-XML-Simple
      SUBDIR += p5-XML-Smart
      SUBDIR += p5-XML-Stream
+     SUBDIR += p5-XML-TreePP
      SUBDIR += p5-XML-Twig
      SUBDIR += p5-XML-Validator-Schema
      SUBDIR += p5-XML-Writer
