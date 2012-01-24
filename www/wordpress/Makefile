@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/16 15:56:38 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2012/01/24 17:37:02 merdely Exp $
 
 COMMENT =	standard compliant weblog
 
-DISTNAME =	wordpress-3.2.1
+DISTNAME =	wordpress-3.3.1
 CATEGORIES =	www
-
-REVISION =	0
 
 HOMEPAGE =	http://wordpress.org/
 MAINTAINER =	Michael Erdely <merdely@openbsd.org>
