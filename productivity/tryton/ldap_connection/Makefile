@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/20 18:55:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/24 10:16:10 ajacoutot Exp $
 
+MODPY_EGG_VERSION =     2.2.0
 TRYTOND_MODULE =	ldap_connection
 
 REVISION =		0

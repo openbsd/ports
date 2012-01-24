@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/02 14:29:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/24 10:16:10 ajacoutot Exp $
 
+MODPY_EGG_VERSION =	2.2.0
 TRYTOND_MODULE =	calendar_classification
 
 RUN_DEPENDS =		productivity/tryton/calendar>=2.2.0
