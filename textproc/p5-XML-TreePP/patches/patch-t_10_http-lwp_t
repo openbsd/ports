@@ -1,0 +1,15 @@
+$OpenBSD: patch-t_10_http-lwp_t,v 1.1.1.1 2012/01/24 00:25:56 nigel Exp $
+
+use.perl.org returns http 500, use different rss feed
+
+--- t/10_http-lwp.t.orig	Sat Nov 21 05:19:02 2009
++++ t/10_http-lwp.t	Mon Jan 23 22:38:33 2012
+@@ -21,7 +21,7 @@ sub parsehttp_get {
+     my $tpp = XML::TreePP->new();
+     my $name = ( $0 =~ m#([^/:\\]+)$# )[0];
+     $tpp->set( user_agent => "$name " );
+-    my $url = "http://use.perl.org/index.rss";
++    my $url = "http://rss.slashdot.org/Slashdot/slashdot";
+     my $tree = $tpp->parsehttp( GET => $url );
+     ok( ref $tree, $url );
+     like( $tree->{"rdf:RDF"}->{channel}->{link}, qr{^http://}, "$url link" );
