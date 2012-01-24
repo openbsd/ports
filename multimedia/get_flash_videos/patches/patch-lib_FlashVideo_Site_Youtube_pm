@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.5 2012/01/24 11:59:57 sthen Exp $
+--- lib/FlashVideo/Site/Youtube.pm.orig	Tue Jan 24 11:39:13 2012
++++ lib/FlashVideo/Site/Youtube.pm	Tue Jan 24 11:54:38 2012
+@@ -62,7 +62,8 @@ sub find_video {
+   my $video_id;
+   if ($browser->content =~ /(?:var pageVideoId =|(?:CFG_)?VIDEO_ID'?\s*:)\s*'(.+?)'/
+       || $browser->content =~ /"video_id": "([^"]+)"/
+-      || $embed_url =~ /v=([^&]+)/) {
++      || $embed_url =~ /v=([^&]+)/
++      || $browser->content =~ /&amp;video_id=([^&]+)&amp;/) {
+     $video_id = $1;
+   } else {
+     check_die($browser, "Couldn't extract video ID");
