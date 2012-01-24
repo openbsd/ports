@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/24 11:59:57 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/24 22:19:28 sthen Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
@@ -30,6 +30,7 @@ ${P5SITE}/FlashVideo/Site/Cartoonnetwork.pm
 ${P5SITE}/FlashVideo/Site/Cbs.pm
 ${P5SITE}/FlashVideo/Site/Cbsnews.pm
 ${P5SITE}/FlashVideo/Site/Channel4.pm
+${P5SITE}/FlashVideo/Site/Channel5.pm
 ${P5SITE}/FlashVideo/Site/Cnet.pm
 ${P5SITE}/FlashVideo/Site/Collegehumor.pm
 ${P5SITE}/FlashVideo/Site/Ctv.pm

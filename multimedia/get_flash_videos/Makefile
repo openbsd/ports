@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2012/01/24 11:59:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/01/24 22:19:28 sthen Exp $
 
 COMMENT=		download flash video files from various sites
 
-DISTNAME=		App-get_flash_videos-1.24.20120124
-PKGNAME=		${DISTNAME:S/App-//}
+DISTNAME=		App-get_flash_videos-1.24.20120120
+#PKGNAME=		${DISTNAME:S/App-//}
+PKGNAME=		get_flash_videos-1.24.20120124
+REVISION=		0
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://get-flash-videos.googlecode.com/
@@ -19,12 +21,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		cpan
 CPAN_AUTHOR=		MONSIEUR
 # git checkout
-MASTER_SITES=		http://spacehopper.org/mirrors/
+#MASTER_SITES=		http://spacehopper.org/mirrors/
+MASTER_SITES=		https://github.com/downloads/njtaylor/get-flash-videos/
 
 BUILD_DEPENDS=		devel/p5-Tie-IxHash
 RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			devel/p5-Tie-IxHash \
+			multimedia/p5-AMF-Connection \
 			multimedia/p5-Data-AMF \
+			multimedia/p5-Storable-AMF \
 			security/p5-Crypt-Blowfish_PP \
 			security/p5-Crypt-Rijndael \
 			textproc/p5-XML-Simple \
