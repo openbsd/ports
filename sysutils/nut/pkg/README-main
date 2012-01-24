@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1 2012/01/12 11:39:36 sthen Exp $
+$OpenBSD: README-main,v 1.2 2012/01/24 12:38:44 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,8 +20,44 @@ be started first. For example you could use this line:
 
 	pkg_scripts="upsd upsmon [...any other daemons...]"
 
+Network devices
+---------------
+To reduce dependencies for the basic NUT package, some network devices
+are supported by optional subpackages: nut-snmp (for SNMP-based devices),
+nut-xml (for Eaton/MGE devices using an XML/HTTP protocol).
+
+Connecting to a remote server running nutd(8) requires only the basic
+NUT package which also includes the file you are reading now.
+
+Configuring NUT
+---------------
+The following files must be edited for a typical installation.
+
+* ups.conf
+
+Details of UPS device/s are held here. These may either be directly
+connected, or network devices (this can include a NUT server running on
+another machine). Configuration sections for this file can be generated
+for network and USB devices using nut-scanner(8). This is in the main
+NUT package but picks up dependencies at runtime, so if you wish
+to scan for network devices, just make sure the relevant package
+is installed before you run the scanner.
+
+To scan for network devices, specify start and end IP addresses:
+
+	# nut-scanner -s 192.168.17.1 -e 192.168.17.20
+
+* upsd.users
+
+upsd(8) user authentication is configured here.
+
+* upsmon.conf
+
+This file informs upsmon(8) which devices (configured in ups.conf) it
+should monitor. It also contains passwords to authenticate to upsd(8).
+
 Device permissions
-==================
+------------------
 For locally connected UPS devices, the userid running NUT (normally
 ${NUT_USER}) must have access to the relevant device nodes.
 
@@ -31,23 +67,3 @@ ownership of the relevant /dev/tty* device to ${NUT_USER}.
 USB: Change the group of the relevant /dev/ugen* and /dev/usb* devices
 to ${NUT_USER}; to identify the specific controller and ugen device
 names, use "sudo usbdevs -vd".
-
-Network devices
-===============
-To reduce dependencies for the basic NUT package, support for network
-devices has been split into subpackages. Separate packages are provided
-for SNMP-based devices, and for Eaton/MGE devices using an XML/HTTP
-protocol. Install these with pkg_add if wanted:
-
-# pkg_add nut-snmp
-# pkg_add nut-xml
-
-Configuration sections can be automatically generated for various
-device types (network/USB) using the nut-scanner tool. This is in the
-main nut package but picks up dependencies at runtime, so if you wish
-to scan for network devices, just make sure the relevant package
-is installed before you run the scanner.
-
-To scan for network devices, specify start and end IP addresses:
-
-# nut-scanner -s 192.168.17.1 -e 192.168.17.20
