@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/24 02:18:20 okan Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
-DISTNAME=	swaks-20100211.0
+DISTNAME=	swaks-20111230.0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://jetmore.org/john/code/swaks/
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	net/p5-Net-DNS \
 		security/p5-Net_SSLeay
 
-USE_GROFF =	Yes
 NO_REGRESS=	YES
 
 do-build:
