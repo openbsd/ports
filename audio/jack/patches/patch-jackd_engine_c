@@ -1,7 +1,7 @@
-$OpenBSD: patch-jackd_engine_c,v 1.8 2010/06/07 01:44:38 jakemsr Exp $
---- jackd/engine.c.orig	Tue Dec  2 08:29:23 2008
-+++ jackd/engine.c	Fri Jan  8 14:02:43 2010
-@@ -1383,7 +1383,7 @@ handle_external_client_request (jack_engine_t *engine,
+$OpenBSD: patch-jackd_engine_c,v 1.9 2012/01/24 08:03:52 ajacoutot Exp $
+--- jackd/engine.c.orig	Mon Jan 23 14:37:43 2012
++++ jackd/engine.c	Mon Jan 23 14:38:38 2012
+@@ -1491,7 +1491,7 @@ handle_external_client_request (jack_engine_t *engine,
  	if ((r = read (client->request_fd, &req, sizeof (req)))
  	    < (ssize_t) sizeof (req)) {
  		if (r == 0) {
@@ -10,7 +10,7 @@ $OpenBSD: patch-jackd_engine_c,v 1.8 2010/06/07 01:44:38 jakemsr Exp $
  			/* poll is implemented using
  			   select (see the macosx/fakepoll
  			   code). When the socket is closed
-@@ -1561,9 +1561,13 @@ jack_server_thread (void *arg)
+@@ -1676,9 +1676,13 @@ jack_server_thread (void *arg)
  			} else if (engine->pfd[i].revents & POLLIN) {
  
  				if (handle_external_client_request (engine, engine->pfd[i].fd)) {
@@ -24,52 +24,3 @@ $OpenBSD: patch-jackd_engine_c,v 1.8 2010/06/07 01:44:38 jakemsr Exp $
  				}
  			}
  		}
-@@ -2422,6 +2426,9 @@ jack_notify_all_port_interested_clients (jack_engine_t
- {
- 	JSList *node;
- 	jack_event_t event;
-+	jack_client_internal_t* src_client;
-+	jack_client_internal_t* dst_client;
-+	jack_client_internal_t* client;
-   
- 	event.type = (connected ? PortConnected : PortDisconnected);
- 	event.x.self_id = a;
-@@ -2430,11 +2437,11 @@ jack_notify_all_port_interested_clients (jack_engine_t
- 	/* GRAPH MUST BE LOCKED : see callers of jack_send_connection_notification() 
- 	 */
- 
--	jack_client_internal_t* src_client = jack_client_internal_by_id (engine, src);
--	jack_client_internal_t* dst_client = jack_client_internal_by_id (engine, dst);
-+	src_client = jack_client_internal_by_id (engine, src);
-+	dst_client = jack_client_internal_by_id (engine, dst);
- 
- 	for (node = engine->clients; node; node = jack_slist_next (node)) {
--		jack_client_internal_t* client = (jack_client_internal_t*) node->data;
-+		client = (jack_client_internal_t*) node->data;
- 		if (src_client != client &&  dst_client  != client && client->control->port_connect_cbset != FALSE) {
- 			
- 			/* one of the ports belong to this client or it has a port connect callback */
-@@ -2448,6 +2455,10 @@ jack_deliver_event (jack_engine_t *engine, jack_client
- 		    jack_event_t *event)
- {
- 	char status;
-+	jack_time_t poll_timeout;
-+	int poll_ret;
-+	jack_time_t then;
-+	jack_time_t now;
- 
- 	/* caller must hold the graph lock */
- 
-@@ -2539,10 +2550,8 @@ jack_deliver_event (jack_engine_t *engine, jack_client
-  				struct pollfd pfd[1];
-  				pfd[0].fd = client->event_fd;
-  				pfd[0].events = POLLERR|POLLIN|POLLHUP|POLLNVAL;
-- 				jack_time_t poll_timeout = JACKD_CLIENT_EVENT_TIMEOUT;
-- 				int poll_ret;
--				jack_time_t then = jack_get_microseconds ();
--				jack_time_t now;
-+ 				poll_timeout = JACKD_CLIENT_EVENT_TIMEOUT;
-+				then = jack_get_microseconds ();
- 				
- #ifdef __linux
- 			again:

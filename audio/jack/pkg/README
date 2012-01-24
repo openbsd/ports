@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:36 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2012/01/24 08:03:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -41,15 +41,15 @@ in 'jackd -d sndio -r 48000'.
 The realtime option -R is commonly used on other operating systems.
 However, this option is inconsequential on OpenBSD.
 
-It is possible to run jackd on top of aucat(1) with the 'sndio' driver.
-However, the aucat server must be running at a higher than default
-scheduling priority.  The aucat(1) manual has an example for doing this
-with renice(8). Note that jackd will use aucat's block size as it's
-period size. The following command sequence could be used to run jackd
-over aucat.
+It is possible to run jackd on top of sndiod(1) with the 'sndio' driver.
+Note that jackd will use sndiod's block size as its period size. For
+instance:
 
-  $ aucat -l -b 1024 -z 1024
-  $ sudo renice -20 `pgrep -x aucat`
-  $ jackd -d sndio -p 1024 -n 2
+  - stop sndiod(8) using rc.d(8)
+  - set sndiod_flags="-b 1024 -z 512" in /etc/rc.conf.local(8)
+  - start sndiod(8)
+  - start jackd:
+
+    $ jackd -d sndio -p 1024 -n 2
 
 There is currently no MIDI driver in jack that works on OpenBSD.

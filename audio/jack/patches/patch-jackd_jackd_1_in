@@ -1,7 +1,7 @@
-$OpenBSD: patch-jackd_jackd_1_in,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
---- jackd/jackd.1.in.orig	Sat Jan 10 02:52:33 2009
-+++ jackd/jackd.1.in	Sat Jan 10 02:58:02 2009
-@@ -35,8 +35,9 @@ For the latest JACK information, please consult the we
+$OpenBSD: patch-jackd_jackd_1_in,v 1.2 2012/01/24 08:03:52 ajacoutot Exp $
+--- jackd/jackd.1.in.orig	Thu Jun  9 01:54:48 2011
++++ jackd/jackd.1.in	Mon Jan 23 14:21:11 2012
+@@ -28,8 +28,9 @@ For the latest JACK information, please consult the we
  .br
  Select the audio interface backend.  The current list of supported
  backends is: \fBalsa\fR, \fBcoreaudio\fR, \fBdummy\fR, \fBfreebob\fR,
@@ -13,7 +13,7 @@ $OpenBSD: patch-jackd_jackd_1_in,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
  
  .TP
  \fB\-h, \-\-help\fR
-@@ -348,6 +349,43 @@ Specify output device for playback (default: /dev/audi
+@@ -417,6 +418,43 @@ Specify output device for playback (default: /dev/audi
  .TP
  \fB\-b, \-\-ignorehwbuf \fIboolean\fR
  Specify, whether to ignore hardware period size (default: false)
@@ -57,7 +57,7 @@ $OpenBSD: patch-jackd_jackd_1_in,v 1.1 2009/01/11 10:51:46 jakemsr Exp $
  .SS PORTAUDIO BACKEND PARAMETERS
  .TP
  \fB\-c \-\-channel\fR
-@@ -394,6 +432,8 @@ Print usage message for the parameters specific to eac
+@@ -467,6 +505,8 @@ Print usage message for the parameters specific to eac
  \fBjackd \-d oss \-\-help\fR
  .br
  \fBjackd \-d sun \-\-help\fR

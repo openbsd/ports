@@ -49,6 +49,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'r',
 	  JackDriverParamUInt,
 	  { .ui = SNDIO_DRIVER_DEF_FS },
+	  NULL,
 	  "sample rate",
 	  "sample rate"
 	},
@@ -56,6 +57,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'p',
 	  JackDriverParamUInt,
 	  { .ui = SNDIO_DRIVER_DEF_BLKSIZE },
+	  NULL,
 	  "period size",
 	  "period size"
 	},
@@ -63,6 +65,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'n',
 	  JackDriverParamUInt,
 	  { .ui = SNDIO_DRIVER_DEF_NPERIODS },
+	  NULL,
 	  "number of periods in buffer",
 	  "number of periods in buffer"
 	},
@@ -70,6 +73,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'w',
 	  JackDriverParamInt,
 	  { .i = SNDIO_DRIVER_DEF_BITS },
+	  NULL,
 	  "word length",
 	  "word length"
 	},
@@ -77,6 +81,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'i',
 	  JackDriverParamUInt,
 	  { .ui = SNDIO_DRIVER_DEF_INS },
+	  NULL,
 	  "capture channels",
 	  "capture channels"
 	},
@@ -84,6 +89,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'o',
 	  JackDriverParamUInt,
 	  { .ui = SNDIO_DRIVER_DEF_OUTS },
+	  NULL,
 	  "playback channels",
 	  "playback channels"
 	},
@@ -91,6 +97,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'd',
 	  JackDriverParamString,
 	  { },
+	  NULL,
 	  "device",
 	  "device"
 	},
@@ -98,6 +105,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'b',
 	  JackDriverParamBool,
 	  { },
+	  NULL,
 	  "ignore hardware period size",
 	  "ignore hardware period size"
 	},
@@ -105,6 +113,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'I',
 	  JackDriverParamUInt,
 	  { .ui = 0 },
+	  NULL,
 	  "system capture latency",
 	  "system capture latency"
 	},
@@ -112,6 +121,7 @@ const static jack_driver_param_desc_t sndio_params[SNDIO_DRIVER_N_PARAMS] = {
 	  'O',
 	  JackDriverParamUInt,
 	  { .ui = 0 },
+	  NULL,
 	  "system playback latency",
 	  "system playback latency"
 	}
@@ -542,6 +552,7 @@ sndio_driver_attach (sndio_driver_t *driver)
 	int channel;
 	char channel_name[64];
 	jack_port_t *port;
+	jack_latency_range_t range;
 
 	driver->engine->set_buffer_size(driver->engine, driver->period_size);
 	driver->engine->set_sample_rate(driver->engine, driver->sample_rate);
@@ -550,7 +561,7 @@ sndio_driver_attach (sndio_driver_t *driver)
 
 	for (channel = 0; channel < driver->capture_channels; channel++)
 	{
-		snprintf(channel_name, sizeof(channel_name), 
+		snprintf(channel_name, sizeof(channel_name),
 			"capture_%u", channel + 1);
 		port = jack_port_register(driver->client, channel_name,
 			JACK_DEFAULT_AUDIO_TYPE, port_flags, 0);
@@ -560,9 +571,10 @@ sndio_driver_attach (sndio_driver_t *driver)
 				"%s@%i", channel_name, __FILE__, __LINE__);
 			break;
 		}
-		jack_port_set_latency(port,
-			driver->period_size + driver->sys_cap_latency);
-		driver->capture_ports = 
+		range.min = range.max = driver->period_size +
+		    driver->sys_cap_latency;
+		jack_port_set_latency_range(port, JackCaptureLatency, &range);
+		driver->capture_ports =
 			jack_slist_append(driver->capture_ports, port);
 	}
 
@@ -579,8 +591,9 @@ sndio_driver_attach (sndio_driver_t *driver)
 				"%s: %s@%i", channel_name, __FILE__, __LINE__);
 			break;
 		}
-		jack_port_set_latency(port,
-			driver->period_size + driver->sys_play_latency);
+		range.min = range.max = driver->period_size +
+		    driver->sys_play_latency;
+		jack_port_set_latency_range(port, JackPlaybackLatency, &range);
 		driver->playback_ports =
 			jack_slist_append(driver->playback_ports, port);
 	}
