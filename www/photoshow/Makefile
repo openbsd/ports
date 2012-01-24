@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/04 11:04:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/24 09:28:10 ajacoutot Exp $
 
 COMMENT=	easy to use web gallery
 
-DISTNAME=	photoshow-0.0.20111203
+DISTNAME=	photoshow-0.0.20111228
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://www.photoshow-gallery.com/
@@ -32,7 +32,7 @@ RUN_DEPENDS=	archivers/pecl-zip
 
 do-install:
 	cp -R ${WRKSRC} ${INSTDIR}
-	mv ${INSTDIR}/conf.ini ${INSTDIR}/conf.ini.dist
+	mv ${INSTDIR}/config.php ${INSTDIR}/config.php.dist
 	${SUBST_CMD} -c ${FILESDIR}/photoshow.conf \
 		${INSTDIR}/photoshow.conf.dist
 	${SUBST_CMD} -c ${FILESDIR}/dot.htaccess \

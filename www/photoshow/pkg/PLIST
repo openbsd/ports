@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/04 11:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/24 09:28:10 ajacoutot Exp $
 @extraunexec rm -rf %D/photoshow/generated/*
 @extraunexec rm -rf %D/photoshow/photos/*
 photoshow/
 photoshow/.htaccess.dist
 @sample photoshow/.htaccess
 photoshow/README.md
-photoshow/conf.ini.dist
-@sample photoshow/conf.ini
+photoshow/config.php.dist
+@sample photoshow/config.php
 photoshow/inc/
 photoshow/inc/bin.png
-photoshow/inc/favicon.ico
+photoshow/inc/favico.ico
 photoshow/inc/fileupload-ui.css
 photoshow/inc/img.png
 photoshow/inc/jquery-ui.js
@@ -17,6 +17,12 @@ photoshow/inc/jquery.fileupload-ui.js
 photoshow/inc/jquery.fileupload.js
 photoshow/inc/jquery.js
 photoshow/inc/jquery.scrollTo.js
+photoshow/inc/loc/
+photoshow/inc/loc/default.ini
+photoshow/inc/loc/espanol.ini
+photoshow/inc/loc/francais.ini
+photoshow/inc/loc/greek.ini
+photoshow/inc/me.jpg
 photoshow/inc/mousewheel.js
 photoshow/inc/pbar-ani.gif
 photoshow/inc/rss.png
@@ -27,6 +33,7 @@ photoshow/src/
 photoshow/src/classes/
 photoshow/src/classes/Account.php
 photoshow/src/classes/Admin.php
+photoshow/src/classes/AdminAbout.php
 photoshow/src/classes/AdminDelete.php
 photoshow/src/classes/AdminFiles.php
 photoshow/src/classes/AdminMenu.php
@@ -35,6 +42,7 @@ photoshow/src/classes/AdminPanel.php
 photoshow/src/classes/AdminStats.php
 photoshow/src/classes/AdminUpload.php
 photoshow/src/classes/Board.php
+photoshow/src/classes/BoardDir.php
 photoshow/src/classes/BoardHeader.php
 photoshow/src/classes/BoardItem.php
 photoshow/src/classes/BoardLine.php
@@ -51,6 +59,7 @@ photoshow/src/classes/Image.php
 photoshow/src/classes/ImageBar.php
 photoshow/src/classes/ImagePanel.php
 photoshow/src/classes/Index.php
+photoshow/src/classes/Infos.php
 photoshow/src/classes/JS.php
 photoshow/src/classes/JSAccounts.php
 photoshow/src/classes/JSFiles.php
@@ -69,6 +78,7 @@ photoshow/src/js/image_panel.js
 photoshow/src/js/keyboard.js
 photoshow/src/js/menu.js
 photoshow/src/js/panel.js
+photoshow/src/js/slideshow.js
 photoshow/src/phpthumb/
 photoshow/src/phpthumb/GdThumb.inc.php
 photoshow/src/phpthumb/PhpThumb.inc.php
