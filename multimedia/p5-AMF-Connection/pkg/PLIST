@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/24 22:15:09 nigel Exp $
+${P5SITE}/AMF/
+${P5SITE}/AMF/Connection/
+${P5SITE}/AMF/Connection.pm
+${P5SITE}/AMF/Connection/InputStream.pm
+${P5SITE}/AMF/Connection/Message.pm
+${P5SITE}/AMF/Connection/MessageBody.pm
+${P5SITE}/AMF/Connection/MessageHeader.pm
+${P5SITE}/AMF/Connection/OutputStream.pm
+@man man/man3p/AMF::Connection.3p
+@man man/man3p/AMF::Connection::InputStream.3p
+@man man/man3p/AMF::Connection::Message.3p
+@man man/man3p/AMF::Connection::MessageBody.3p
+@man man/man3p/AMF::Connection::MessageHeader.3p
+@man man/man3p/AMF::Connection::OutputStream.3p
