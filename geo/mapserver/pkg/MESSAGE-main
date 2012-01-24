@@ -1,4 +1,4 @@
-If you plan to use mapserv CGI with a  chrooted httpd, make sure to
+If you plan to use mapserv CGI with a chrooted httpd, make sure to
 copy the libs needed by mapserv binary from ${LOCALBASE}/lib, but also
 the projection definitions from libgeotiff and proj packages to the
 chroot:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/08 23:42:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2012/01/24 09:21:30 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -11,13 +11,13 @@ COMMENT-perl=	Perl Mapscript binding
 V =		6.0.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main = 1
+REVISION-main = 2
 PKGNAME-utils=	mapserver-utils-${V}
-REVISION-utils = 1
+REVISION-utils = 2
 PKGNAME-php=	php-mapscript-${V}
-REVISION-php =	5
+REVISION-php =	6
 PKGNAME-perl=	p5-mapscript-${V}
-REVISION-perl = 1
+REVISION-perl = 2
 
 CATEGORIES=	geo www
 
@@ -41,12 +41,13 @@ LIB_DEPENDS=	devel/proj \
 		graphics/cairo \
 		geo/gdal \
 		geo/geos \
-		graphics/gd
+		graphics/gd \
+		www/fcgi
 
 RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
-WANTLIB += gdal geos_c gd stdc++
+WANTLIB += gdal geos_c gd stdc++ fcgi
 WANTLIB += GL X11
 WANTLIB += cairo Xrender fontconfig glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm
@@ -61,6 +62,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-png=${LOCALBASE} \
 		--with-agg=${LOCALBASE} \
+		--with-fastcgi=${LOCALBASE} \
 		--without-pdf \
 		--with-freetype=${X11BASE}/bin \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
