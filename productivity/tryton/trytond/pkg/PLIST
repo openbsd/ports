@@ -1,24 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/02 14:29:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/24 10:15:39 ajacoutot Exp $
 @newgroup _tryton:675
 @newuser _tryton:675:_tryton:daemon:Tryton Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/trytond/*
 bin/trytond
-lib/python${MODPY_VERSION}/site-packages/proteus/
-lib/python${MODPY_VERSION}/site-packages/proteus/__init__.py
-lib/python${MODPY_VERSION}/site-packages/proteus/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/config.py
-lib/python${MODPY_VERSION}/site-packages/proteus/config.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/pyson.py
-lib/python${MODPY_VERSION}/site-packages/proteus/pyson.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_config.py
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_config.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_model.py
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_model.pyc
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_wizard.py
-lib/python${MODPY_VERSION}/site-packages/proteus/tests/test_wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/
 lib/python${MODPY_VERSION}/site-packages/trytond-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/trytond-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
