@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/23 17:04:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/01/24 19:19:27 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -191,8 +191,6 @@ CONFIG = x86_64-unknown-openbsd${OSREV}
 .endif
 
 post-extract:
-	# XXX cheat a bit
-	cd ${WRKDIR}/bootstrap/system-libs && ln -sf libc.so.${LIBC_VERSION} libc.so.61.0
 .for f in egcc gnatbind gnatmake gnatlink
 	echo "#! /bin/sh" >${WRKDIR}/bin/$f
 	echo 'GNAT_ROOT=${WRKDIR}/bootstrap GCC_ROOT=${WRKDIR}/bootstrap LD_LIBRARY_PATH=${WRKDIR}/bootstrap/system-libs exec ${WRKDIR}/bootstrap/bin/$f "$$@"' >>${WRKDIR}/bin/$f
@@ -205,6 +203,8 @@ post-extract:
 		${WRKSRC}/libversions
 .endfor
 .if ${BUILD_PACKAGES:M-ada}
+	# XXX cheat a bit
+	cd ${WRKDIR}/bootstrap/system-libs && ln -sf libc.so.${LIBC_VERSION} libc.so.61.0
 	${WRKDIR}/bin/egcc -v # if this fails, you must extract suitable libraries from the relevant OpenBSD release or use the no_ada FLAVOR.
 .endif
 .if ${BUILD_PACKAGES:M-java}
