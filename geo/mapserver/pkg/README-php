@@ -1,3 +1,9 @@
+$OpenBSD: README-php,v 1.1 2012/01/24 12:03:19 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 You can enable this module by creating a symbolic
 link from ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapscript.ini to
 ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapscript.ini. 

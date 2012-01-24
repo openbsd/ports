@@ -1,2 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/01/24 12:03:19 sthen Exp $
 @bin cgi-bin/mapserv
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
