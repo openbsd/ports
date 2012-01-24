@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.53 2011/12/05 16:08:16 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2012/01/24 08:42:48 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.14.1
+GNOME_VERSION=	2.14.2
 
 CATEGORIES=	graphics
 
@@ -45,6 +47,8 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/json-glib
 RUN_DEPENDS=	misc/shared-mime-info
 
+LIBTOOL_FLAGS=		--tag=disable-static
+
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
@@ -52,11 +56,15 @@ MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=	gnu
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
-CONFIGURE_ARGS=		--disable-libopenraw \
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/gthumb/extensions
+CONFIGURE_ARGS=		--disable-static \
+			--disable-libopenraw \
 			--disable-libbrasero \
 			--enable-libsoup \
 			--enable-gnome-keyring \
 			--enable-exiv2
+
+post-install:
+	rm ${PREFIX}/lib/gthumb/extensions/*.la
 
 .include <bsd.port.mk>
