@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/02/10 19:45:42 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/24 02:20:35 okan Exp $
 @bin bin/mlmmj-bounce
 @bin bin/mlmmj-list
 @bin bin/mlmmj-maintd
@@ -95,6 +95,7 @@ share/mlmmj/text.skel/de/
 share/mlmmj/text.skel/de/access
 share/mlmmj/text.skel/de/bounce-probe
 share/mlmmj/text.skel/de/digest
+share/mlmmj/text.skel/de/listfaq
 share/mlmmj/text.skel/de/listhelp
 share/mlmmj/text.skel/de/listsubs
 share/mlmmj/text.skel/de/maxmailsize
@@ -109,6 +110,8 @@ share/mlmmj/text.skel/de/notintocc
 share/mlmmj/text.skel/de/sub-confirm
 share/mlmmj/text.skel/de/sub-confirm-digest
 share/mlmmj/text.skel/de/sub-confirm-nomail
+share/mlmmj/text.skel/de/sub-deny-digest
+share/mlmmj/text.skel/de/sub-deny-nomail
 share/mlmmj/text.skel/de/sub-ok
 share/mlmmj/text.skel/de/sub-ok-digest
 share/mlmmj/text.skel/de/sub-ok-nomail
@@ -322,3 +325,38 @@ share/mlmmj/text.skel/ru/unsub-notsubscribed
 share/mlmmj/text.skel/ru/unsub-ok
 share/mlmmj/text.skel/ru/unsub-ok-digest
 share/mlmmj/text.skel/ru/unsub-ok-nomail
+share/mlmmj/text.skel/tr/
+share/mlmmj/text.skel/tr/access
+share/mlmmj/text.skel/tr/bounce-probe
+share/mlmmj/text.skel/tr/digest
+share/mlmmj/text.skel/tr/listfaq
+share/mlmmj/text.skel/tr/listhelp
+share/mlmmj/text.skel/tr/listsubs
+share/mlmmj/text.skel/tr/maxmailsize
+share/mlmmj/text.skel/tr/moderation
+share/mlmmj/text.skel/tr/notifysub
+share/mlmmj/text.skel/tr/notifysub-digest
+share/mlmmj/text.skel/tr/notifysub-nomail
+share/mlmmj/text.skel/tr/notifyunsub
+share/mlmmj/text.skel/tr/notifyunsub-digest
+share/mlmmj/text.skel/tr/notifyunsub-nomail
+share/mlmmj/text.skel/tr/notintocc
+share/mlmmj/text.skel/tr/sub-confirm
+share/mlmmj/text.skel/tr/sub-confirm-digest
+share/mlmmj/text.skel/tr/sub-confirm-nomail
+share/mlmmj/text.skel/tr/sub-deny-digest
+share/mlmmj/text.skel/tr/sub-deny-nomail
+share/mlmmj/text.skel/tr/sub-ok
+share/mlmmj/text.skel/tr/sub-ok-digest
+share/mlmmj/text.skel/tr/sub-ok-nomail
+share/mlmmj/text.skel/tr/sub-subscribed
+share/mlmmj/text.skel/tr/submod-moderator
+share/mlmmj/text.skel/tr/submod-requester
+share/mlmmj/text.skel/tr/subonlypost
+share/mlmmj/text.skel/tr/unsub-confirm
+share/mlmmj/text.skel/tr/unsub-confirm-digest
+share/mlmmj/text.skel/tr/unsub-confirm-nomail
+share/mlmmj/text.skel/tr/unsub-notsubscribed
+share/mlmmj/text.skel/tr/unsub-ok
+share/mlmmj/text.skel/tr/unsub-ok-digest
+share/mlmmj/text.skel/tr/unsub-ok-nomail

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 19:59:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/24 02:20:35 okan Exp $
 
 COMMENT=	mailing list manager
 
-DISTNAME=	mlmmj-1.2.16
+DISTNAME=	mlmmj-1.2.17.1
 CATEGORIES=    	mail
 
 HOMEPAGE=	http://mlmmj.org/
@@ -16,11 +16,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://mlmmj.mmj.dk/files/
+MASTER_SITES=	http://mlmmj.org/releases/
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--enable-recieve-strip=yes
-USE_GROFF =	Yes
 
 DOCS=	README.access README.exim4 README.security README.sendmail TUNABLES
 
