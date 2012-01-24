@@ -1,8 +1,0 @@
-$OpenBSD: patch-conf_ini,v 1.1.1.1 2011/12/04 11:04:27 ajacoutot Exp $
---- conf.ini.orig	Sat Dec  3 10:56:45 2011
-+++ conf.ini	Sat Dec  3 10:57:21 2011
-@@ -1,2 +1,2 @@
--photos_dir 	= "path_to_your_photos_dir_goes_here"
--ps_generated 	= "path_where_photoshow_generates_files_goes_here"
-+photos_dir 	= "/photoshow/photos"
-+ps_generated 	= "/photoshow/generated"
