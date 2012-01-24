@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/08/26 09:03:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/24 00:44:47 nigel Exp $
 
 COMMENT =	simple YouTube interface for downloading videos
 
 MODULES =	cpan
-DISTNAME =	WWW-YouTube-Download-0.32
+DISTNAME =	WWW-YouTube-Download-0.40
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
@@ -20,9 +20,10 @@ CONFIGURE_STYLE =	modinst
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	eg
 
-RUN_DEPENDS =	www/p5-libwww \
+RUN_DEPENDS =	converters/p5-JSON \
+		textproc/p5-XML-TreePP \
+		www/p5-HTML-Parser \
 		www/p5-URI \
-		converters/p5-JSON \
-		www/p5-HTML-Parser
+		www/p5-libwww
 
 .include <bsd.port.mk>

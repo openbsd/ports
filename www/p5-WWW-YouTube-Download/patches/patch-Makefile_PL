@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2011/07/31 18:09:57 landry Exp $
+$OpenBSD: patch-Makefile_PL,v 1.3 2012/01/24 00:44:47 nigel Exp $
 
 Module::Install::AuthorTests is missing in ports tree,
 but not really essential.
 
---- Makefile.PL.orig	Tue Jan  4 15:17:14 2011
-+++ Makefile.PL	Mon Jan 10 22:22:02 2011
-@@ -8,7 +8,6 @@ requires 'JSON';
- requires 'HTML::Entities';
+--- Makefile.PL.orig	Tue Jan 17 16:23:57 2012
++++ Makefile.PL	Sun Jan 22 20:58:39 2012
+@@ -11,7 +11,6 @@ requires 'Term::ANSIColor'; # for youtube-download and
+ requires 'XML::TreePP'; # for youtube-playlists
  
  tests 't/*.t t/*/*.t';
 -author_tests 'xt';
  
- test_requires 'Test::More', '0.96';
- auto_include;
+ install_script 'bin/youtube-download', 'bin/youtube-playlists';
+ 
