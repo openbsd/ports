@@ -1,0 +1,19 @@
+$OpenBSD: patch-swap_h,v 1.1 2012/01/25 22:00:15 dcoppa Exp $
+--- swap.h.orig	Mon Mar 29 01:58:51 2010
++++ swap.h	Wed Jan 25 15:56:26 2012
+@@ -26,6 +26,7 @@
+ 
+ #include "config/config.h"
+ 
++#if !defined(__OpenBSD__)
+ #define swap16(x) \
+ 	((uint16_t)( \
+ 		(((uint16_t)(x) & (uint16_t)0x00ffU) << 8) | \
+@@ -48,6 +49,7 @@
+ 		(((uint64_t)(x) & (uint64_t)0x0000000000ff0000ULL) << 24) | \
+ 		(((uint64_t)(x) & (uint64_t)0x000000000000ff00ULL) << 40) | \
+ 		(((uint64_t)(x) & (uint64_t)0x00000000000000ffULL) << 56) ))
++#endif
+ 
+ #if config_endian == 0
+ # define U16LE(x)		swap16(x)

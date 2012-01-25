@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: cntlm.rc,v 1.1 2012/01/25 22:00:15 dcoppa Exp $
+
+daemon="${TRUEPREFIX}/sbin/cntlm"
+daemon_flags="-c ${SYSCONFDIR}/cntlm/cntlm.conf"
+daemon_user="_cntlm"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

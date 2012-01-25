@@ -1,3 +1,5 @@
-Cntlm is an http proxy server, written in pure C, that allows you to 
-authenticate via the proprietary NTLM protocol, so you can use web 
-sites and web proxies that require NTLM/NTLMv2 authorization.
+Cntlm is an NTLM, NTLM2SR, and NTLMv2 authenticating HTTP proxy.
+It stands between user's applications and the corporate proxy,
+adding NTLM authentication on-the-fly. Cntlm supports multiple
+parent proxies and all authenticated connections are cached and
+reused to achieve high efficiency.

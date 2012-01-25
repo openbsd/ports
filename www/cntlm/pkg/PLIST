@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/08 19:13:09 sthen Exp $
-@bin bin/cntlm
+@comment $OpenBSD: PLIST,v 1.2 2012/01/25 22:00:15 dcoppa Exp $
+@newgroup _cntlm:692
+@newuser _cntlm:692:_cntlm:daemon:Cntlm Daemon:/var/empty:/sbin/nologin
 @man man/man1/cntlm.1
+@bin sbin/cntlm
 share/examples/cntlm/
 @sample ${SYSCONFDIR}/cntlm/
 share/examples/cntlm/cntlm.conf
 @sample ${SYSCONFDIR}/cntlm/cntlm.conf
+@rcscript ${RCDIR}/cntlm
