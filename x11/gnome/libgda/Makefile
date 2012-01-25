@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/01/25 11:30:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2012/01/25 13:26:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		5.0.2
+GNOME_VERSION=		5.0.3
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -20,9 +20,6 @@ PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main=		1
-REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -72,7 +69,9 @@ BUILD_DEPENDS=		databases/db/v4 \
 
 REGRESS_DEPENDS=	devel/check
 
-MODGNOME_TOOLS= 	goi yelp vala
+# XXX check if still necessary when updating to >5.0.3:
+# vala should be added but this tarball misses a few needed files
+MODGNOME_TOOLS= 	goi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 USE_GROFF =		Yes

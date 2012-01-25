@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.15 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.16 2012/01/25 13:26:05 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -386,7 +386,6 @@ share/gnome/help/gda-browser/zh_CN/virtual-connections.page
 share/gtk-doc/html/gda-browser/
 share/gtk-doc/html/gda-browser/BrowserConnection.html
 share/gtk-doc/html/gda-browser/BrowserCore.html
-share/gtk-doc/html/gda-browser/BrowserFavorites.html
 share/gtk-doc/html/gda-browser/BrowserPerspective.html
 share/gtk-doc/html/gda-browser/BrowserWindow.html
 share/gtk-doc/html/gda-browser/CcGrayBar.html

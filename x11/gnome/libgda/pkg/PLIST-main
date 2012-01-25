@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2011/11/21 07:38:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2012/01/25 13:26:05 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @pkgpath x11/gnome/libgda,-mdb
@@ -158,6 +158,9 @@ share/examples/libgda/sales_test.db
 share/gir-1.0/Gda-${GDA_MAJOR}.gir
 share/gnome/
 share/gnome/help/
+share/gnome/help/gda-sql/
+share/gnome/help/gda-sql/C/
+share/gnome/help/gda-sql/C/gda-sql-help.xml
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html
@@ -168,6 +171,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaConnectionEvent.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataAccessWrapper.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModel.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelArray.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelBdb.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelDir.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelImport.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaDataModelIter.html
@@ -348,6 +352,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-8.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-9.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0-2.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0-3.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-5-0.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
@@ -366,7 +371,6 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Configuration.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Default-Data-handlers.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-Gda-Value.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataComparator.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataModelBdb.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaDataPivot.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaMutex.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-${GDA_MAJOR}-GdaRepetitiveStatement.html
@@ -469,6 +473,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/writable_data_model.png
 share/libgda-${GDA_MAJOR}/
 share/libgda-${GDA_MAJOR}/bdb_specs_dsn.xml
 share/libgda-${GDA_MAJOR}/dtd/
+share/libgda-${GDA_MAJOR}/dtd/gdaui-layout.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-array.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-paramlist.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-server-operation.dtd
@@ -582,6 +587,3 @@ share/locale/vi/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
-share/vala-0.14/
-share/vala-0.14/vapi/
-share/vala-0.14/vapi/libgda-${GDA_MAJOR}.vapi
