@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_main_c,v 1.1 2012/01/25 10:29:30 dcoppa Exp $
+
+Bugfix: setup the _NET_SUPPORTING_WM_CHECK atom in a standards-compliant
+way. This makes chrome (and probably other apps, too) receive changes
+of the _NET_ACTIVE_WINDOW and thus show its bookmark dialog properly
+(upstream git commit 4f26d6f2a1a0efb7fa15999f9cc00d8673220e97)
+
+--- src/main.c.orig	Sat Dec 24 16:25:08 2011
++++ src/main.c	Wed Jan 25 09:27:25 2012
+@@ -544,16 +544,7 @@ int main(int argc, char *argv[]) {
+ 
+     property_handlers_init();
+ 
+-    /* Set up the atoms we support */
+-    xcb_atom_t supported_atoms[] = {
+-#define xmacro(atom) A_ ## atom,
+-#include "atoms.xmacro"
+-#undef xmacro
+-    };
+-    xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A__NET_SUPPORTED, XCB_ATOM_ATOM, 32, 16, supported_atoms);
+-    /* Set up the window manager’s name */
+-    xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A__NET_SUPPORTING_WM_CHECK, XCB_ATOM_WINDOW, 32, 1, &root);
+-    xcb_change_property(conn, XCB_PROP_MODE_REPLACE, root, A__NET_WM_NAME, A_UTF8_STRING, 8, strlen("i3"), "i3");
++    ewmh_setup_hints();
+ 
+     keysyms = xcb_key_symbols_alloc(conn);
+ 

@@ -1,0 +1,20 @@
+$OpenBSD: patch-include_ewmh_h,v 1.3 2012/01/25 10:29:30 dcoppa Exp $
+
+Bugfix: setup the _NET_SUPPORTING_WM_CHECK atom in a standards-compliant
+way. This makes chrome (and probably other apps, too) receive changes
+of the _NET_ACTIVE_WINDOW and thus show its bookmark dialog properly
+(upstream git commit 4f26d6f2a1a0efb7fa15999f9cc00d8673220e97)
+
+--- include/ewmh.h.orig	Sat Dec 24 16:25:08 2011
++++ include/ewmh.h	Mon Jan 23 09:51:06 2012
+@@ -40,4 +40,10 @@ void ewmh_update_active_window(xcb_window_t window);
+  */
+ void ewmh_update_client_list_stacking(xcb_window_t *stack, int num_windows);
+ 
++/**
++ * Set up the EWMH hints on the root window.
++ *
++ */
++void ewmh_setup_hints();
++
+ #endif

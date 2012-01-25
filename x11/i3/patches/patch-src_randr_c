@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_randr_c,v 1.6 2012/01/25 10:29:30 dcoppa Exp $
+
+Bugfix: fix coordinates when the rect of an output changes
+(upstream git commit 077d2433a7186550ee349284b1849ec2048af69c)
+
+--- src/randr.c.orig	Sat Dec 24 16:25:08 2011
++++ src/randr.c	Mon Jan 23 09:51:06 2012
+@@ -522,6 +522,14 @@ static void output_change_mode(xcb_connection_t *conn,
+     /* Point content to the container of the workspaces */
+     content = output_get_content(output->con);
+ 
++    /* Fix the position of all floating windows on this output.
++     * The 'rect' of each workspace will be updated in src/render.c. */
++    TAILQ_FOREACH(workspace, &(content->nodes_head), nodes) {
++        TAILQ_FOREACH(child, &(workspace->floating_head), floating_windows) {
++            floating_fix_coordinates(child, &(workspace->rect), &(output->con->rect));
++        }
++    }
++
+     /* If default_orientation is NO_ORIENTATION, we change the orientation of
+      * the workspaces and their childs depending on output resolution. This is
+      * only done for workspaces with maximum one child. */
