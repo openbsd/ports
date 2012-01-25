@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.727 2012/01/17 08:59:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.728 2012/01/25 15:45:02 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -311,6 +311,7 @@
      SUBDIR += p5-Net-NTP
      SUBDIR += p5-Net-Netmask
      SUBDIR += p5-Net-OAuth
+     SUBDIR += p5-Net-OpenSSH
      SUBDIR += p5-Net-PH
      SUBDIR += p5-Net-ParseWhois
      SUBDIR += p5-Net-Patricia
