@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/12/05 12:32:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/01/25 11:30:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,7 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-ui=		0
 
 EPOCH-main=		2
@@ -156,5 +156,11 @@ WANTLIB-ldap=		${WANTLIB} crypto gda-${GDA_MAJOR} gssapi krb5 lber-2.4 \
 LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 CONFIGURE_ARGS+=	--with-ldap
+
+# XXX sync LIBdb_VERSION with databases/db/v4
+LIBdb_VERSION=	5.0
+SUBST_VARS+=	LIBdb_VERSION
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
