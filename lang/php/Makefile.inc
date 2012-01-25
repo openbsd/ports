@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.25 2012/01/21 23:34:35 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.26 2012/01/25 11:17:22 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -18,7 +18,7 @@ CATEGORIES=		lang www
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 HOMEPAGE=		http://www.php.net/
 
-SUHOSIN_V=		0.9.32.1
+SUHOSIN_V=		0.9.33
 SUHOSIN_PHPV?=		${V}
 
 MASTER_SITES=		http://us2.php.net/distributions/ \
@@ -319,10 +319,10 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 .if ${FLAVOR:L:Mno_suhosin}
-SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0 \
+SUPDISTFILES=		suhosin-${SUHOSIN_V}.tgz:0 \
 			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
 .else
-DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
+DISTFILES+=		suhosin-${SUHOSIN_V}.tgz:0
 PATCHFILES=		suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-suhosin
