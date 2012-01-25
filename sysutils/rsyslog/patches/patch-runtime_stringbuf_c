@@ -1,0 +1,15 @@
+$OpenBSD: patch-runtime_stringbuf_c,v 1.1 2012/01/25 11:03:14 ajacoutot Exp $
+
+CVE-2011-4623: http://secunia.com/advisories/47698/
+
+--- runtime/stringbuf.c.orig	Wed Jan 25 10:23:06 2012
++++ runtime/stringbuf.c	Wed Jan 25 10:23:24 2012
+@@ -156,7 +156,7 @@ rsRetVal
+ rsCStrExtendBuf(cstr_t *pThis, size_t iMinNeeded)
+ {
+ 	uchar *pNewBuf;
+-	unsigned short iNewSize;
++	size_t iNewSize;
+ 	DEFiRet;
+ 
+ 	/* first compute the new size needed */
