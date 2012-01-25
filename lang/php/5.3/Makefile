@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/01/21 23:59:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/01/25 10:03:40 sthen Exp $
 
 PV=		5.3
 V=		${PV}.9
@@ -22,6 +22,7 @@ RUN_DEPENDS-fpm=	${RUN_DEPENDS-main} \
 			php-${V}:lang/php/${PV}
 
 # pcntl
+PKGNAME-pcntl?=		php-pcntl-${V}
 MULTI_PACKAGES+=	-pcntl
 COMMENT-pcntl=		PCNTL extensions for php5
 CONFIGURE_ARGS+=	--enable-pcntl=shared
