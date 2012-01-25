@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2012/01/03 21:53:15 naddy Exp $
+# $OpenBSD: Makefile,v 1.237 2012/01/25 11:30:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -116,6 +116,7 @@
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
      SUBDIR += moria
+     SUBDIR += naev
      SUBDIR += nethack
      SUBDIR += nethack,no_x11
      SUBDIR += nethack,qt
