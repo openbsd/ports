@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_generic_configure,v 1.6 2011/08/30 18:53:24 jasper Exp $
+$OpenBSD: patch-build_generic_configure,v 1.7 2012/01/25 15:34:02 ajacoutot Exp $
 --- build/generic/configure.orig	Mon May 23 06:22:01 2011
-+++ build/generic/configure	Wed Jun 15 14:46:41 2011
++++ build/generic/configure	Sat Dec 24 11:52:46 2011
 @@ -2243,8 +2243,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-build_generic_configure,v 1.6 2011/08/30 18:53:24 jasper Exp $
  	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
  	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
 -	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -lc -lm"
-+	SPECIFIC_LDFLAGS="-shared -lm"
++	SPECIFIC_LDFLAGS="-shared -fPIC -lm"
  	SPECIFIC_CFLAGS="-fPIC"
  	;;
       [cC][yY][gG][wW][iI][nN]*|mingw32*|mks*)

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/08/30 18:53:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/01/25 15:34:02 ajacoutot Exp $
 
 COMMENT=	ISO MPEG-4 compliant video codec
 
 DISTNAME=	xvidcore-1.3.2
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xvid.org/downloads/
 
@@ -23,11 +24,18 @@ WANTLIB=	m
 WRKDIST=	${WRKDIR}/xvidcore
 WRKBUILD=	${WRKSRC}/build/generic
 
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS+=	devel/yasm
+.endif
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-assembly
 CONFIGURE_ENV=	API_MAJOR=${LIBxvidcore_VERSION:R} \
 		API_MINOR=${LIBxvidcore_VERSION:E}
+
+.if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
+CONFIGURE_ARGS+=--disable-assembly
+.endif
 
 NO_REGRESS=	Yes
 
