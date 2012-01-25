@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2011/07/07 23:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2012/01/25 14:06:43 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -33,8 +33,8 @@ CONFIGURE_STYLE ?=	autoconf
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--localstatedir=/var/db \
-			--with-default-audiosink=libsndiosink \
-			--with-default-audiosrc=libsndiosrc \
+			--with-default-audiosink=sndiosink \
+			--with-default-audiosrc=sndiosrc \
 			--with-default-videosink=xvimagesink \
 			--with-default-videosrc=v4l2src \
 			--with-default-visualizer=goom \
