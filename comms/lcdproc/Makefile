@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/04 14:19:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/01/25 16:15:22 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -49,6 +49,8 @@ post-install:
 
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 PKG_ARGS += -Dparallel=1
+.else
+PKG_ARGS += -Dparallel=0
 .endif
 
 .include <bsd.port.mk>
