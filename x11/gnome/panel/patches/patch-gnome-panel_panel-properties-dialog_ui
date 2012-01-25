@@ -1,0 +1,17 @@
+$OpenBSD: patch-gnome-panel_panel-properties-dialog_ui,v 1.1 2012/01/25 18:18:14 ajacoutot Exp $
+
+From Ubuntu: disable help buttons since gnome-panel help is no longer in
+the GNOME user guide.
+(https://bugs.launchpad.net/ubuntu/+source/gnome-panel/+bug/885959)
+
+--- gnome-panel/panel-properties-dialog.ui.orig	Mon Mar 28 23:08:42 2011
++++ gnome-panel/panel-properties-dialog.ui	Wed Jan 25 18:55:43 2012
+@@ -531,7 +531,7 @@
+             <child>
+               <object class="GtkButton" id="helpbutton1">
+                 <property name="label">gtk-help</property>
+-                <property name="visible">True</property>
++                <property name="visible">False</property>
+                 <property name="can_focus">True</property>
+                 <property name="can_default">True</property>
+                 <property name="receives_default">False</property>
