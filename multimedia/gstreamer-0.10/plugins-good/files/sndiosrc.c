@@ -15,17 +15,17 @@
  */
 
 /**
- * SECTION:element-libsndiosrc
+ * SECTION:element-sndiosrc
  * @see_also: #GstAutoAudioSrc
  *
  * <refsect2>
  * <para>
- * This element retrieves samples from a sound card using libsndio.
+ * This element retrieves samples from a sound card using sndio.
  * </para>
  * <para>
- * Simple example pipeline that plays an Ogg/Vorbis file via libsndio:
+ * Simple example pipeline that plays an Ogg/Vorbis file via sndio:
  * <programlisting>
- * gst-launch -v libsndiosrc ! audioconvert ! vorbisenc ! oggmux ! filesink location=foo.ogg 
+ * gst-launch -v sndiosrc ! audioconvert ! vorbisenc ! oggmux ! filesink location=foo.ogg 
  * </programlisting>
  * </para>
  * </refsect2>
@@ -35,20 +35,20 @@
 #include "config.h"
 #endif
 
-#include "libsndiosrc.h"
+#include "sndiosrc.h"
 #include <unistd.h>
 #include <errno.h>
 
 #include <gst/gst-i18n-plugin.h>
 
-GST_DEBUG_CATEGORY_EXTERN (libsndio_debug);
-#define GST_CAT_DEFAULT libsndio_debug
+GST_DEBUG_CATEGORY_EXTERN (sndio_debug);
+#define GST_CAT_DEFAULT sndio_debug
 
 /* elementfactory information */
-static const GstElementDetails libsndiosrc_details =
-GST_ELEMENT_DETAILS ("Libsndio audio source",
+static const GstElementDetails sndiosrc_details =
+GST_ELEMENT_DETAILS ("Sndio audio source",
     "Source/Audio",
-    "Records audio through libsndio",
+    "Records audio through sndio",
     "Jacob Meuser <jakemsr@sdf.lonestar.org>");
 
 enum
@@ -57,7 +57,7 @@ enum
   PROP_HOST
 };
 
-static GstStaticPadTemplate libsndio_src_factory =
+static GstStaticPadTemplate sndio_src_factory =
     GST_STATIC_PAD_TEMPLATE ("src",
     GST_PAD_SRC,
     GST_PAD_ALWAYS,
@@ -70,41 +70,41 @@ static GstStaticPadTemplate libsndio_src_factory =
         "channels = (int) [ 1, 16 ] ")
     );
 
-static void gst_libsndiosrc_finalize (GObject * object);
+static void gst_sndiosrc_finalize (GObject * object);
 
-static GstCaps *gst_libsndiosrc_getcaps (GstBaseSrc * bsrc);
+static GstCaps *gst_sndiosrc_getcaps (GstBaseSrc * bsrc);
 
-static gboolean gst_libsndiosrc_open (GstAudioSrc * asrc);
-static gboolean gst_libsndiosrc_close (GstAudioSrc * asrc);
-static gboolean gst_libsndiosrc_prepare (GstAudioSrc * asrc,
+static gboolean gst_sndiosrc_open (GstAudioSrc * asrc);
+static gboolean gst_sndiosrc_close (GstAudioSrc * asrc);
+static gboolean gst_sndiosrc_prepare (GstAudioSrc * asrc,
     GstRingBufferSpec * spec);
-static gboolean gst_libsndiosrc_unprepare (GstAudioSrc * asrc);
-static guint gst_libsndiosrc_read (GstAudioSrc * asrc, gpointer data,
+static gboolean gst_sndiosrc_unprepare (GstAudioSrc * asrc);
+static guint gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data,
     guint length);
-static guint gst_libsndiosrc_delay (GstAudioSrc * asrc);
-static void gst_libsndiosrc_reset (GstAudioSrc * asrc);
+static guint gst_sndiosrc_delay (GstAudioSrc * asrc);
+static void gst_sndiosrc_reset (GstAudioSrc * asrc);
 
-static void gst_libsndiosrc_set_property (GObject * object, guint prop_id,
+static void gst_sndiosrc_set_property (GObject * object, guint prop_id,
     const GValue * value, GParamSpec * pspec);
-static void gst_libsndiosrc_get_property (GObject * object, guint prop_id,
+static void gst_sndiosrc_get_property (GObject * object, guint prop_id,
     GValue * value, GParamSpec * pspec);
-static void gst_libsndiosrc_cb(void * addr, int delta);
+static void gst_sndiosrc_cb(void * addr, int delta);
 
-GST_BOILERPLATE (GstLibsndioSrc, gst_libsndiosrc, GstAudioSrc, GST_TYPE_AUDIO_SRC);
+GST_BOILERPLATE (GstSndioSrc, gst_sndiosrc, GstAudioSrc, GST_TYPE_AUDIO_SRC);
 
 static void
-gst_libsndiosrc_base_init (gpointer g_class)
+gst_sndiosrc_base_init (gpointer g_class)
 {
   GstElementClass *element_class = GST_ELEMENT_CLASS (g_class);
 
-  gst_element_class_set_details (element_class, &libsndiosrc_details);
+  gst_element_class_set_details (element_class, &sndiosrc_details);
 
   gst_element_class_add_pad_template (element_class,
-      gst_static_pad_template_get (&libsndio_src_factory));
+      gst_static_pad_template_get (&sndio_src_factory));
 }
 
 static void
-gst_libsndiosrc_class_init (GstLibsndioSrcClass * klass)
+gst_sndiosrc_class_init (GstSndioSrcClass * klass)
 {
   GObjectClass *gobject_class;
   GstBaseSrcClass *gstbasesrc_class;
@@ -118,68 +118,68 @@ gst_libsndiosrc_class_init (GstLibsndioSrcClass * klass)
 
   parent_class = g_type_class_peek_parent (klass);
 
-  gobject_class->finalize = gst_libsndiosrc_finalize;
+  gobject_class->finalize = gst_sndiosrc_finalize;
 
-  gstbasesrc_class->get_caps = GST_DEBUG_FUNCPTR (gst_libsndiosrc_getcaps);
+  gstbasesrc_class->get_caps = GST_DEBUG_FUNCPTR (gst_sndiosrc_getcaps);
 
-  gstaudiosrc_class->open = GST_DEBUG_FUNCPTR (gst_libsndiosrc_open);
-  gstaudiosrc_class->close = GST_DEBUG_FUNCPTR (gst_libsndiosrc_close);
-  gstaudiosrc_class->prepare = GST_DEBUG_FUNCPTR (gst_libsndiosrc_prepare);
-  gstaudiosrc_class->unprepare = GST_DEBUG_FUNCPTR (gst_libsndiosrc_unprepare);
-  gstaudiosrc_class->read = GST_DEBUG_FUNCPTR (gst_libsndiosrc_read);
-  gstaudiosrc_class->delay = GST_DEBUG_FUNCPTR (gst_libsndiosrc_delay);
-  gstaudiosrc_class->reset = GST_DEBUG_FUNCPTR (gst_libsndiosrc_reset);
+  gstaudiosrc_class->open = GST_DEBUG_FUNCPTR (gst_sndiosrc_open);
+  gstaudiosrc_class->close = GST_DEBUG_FUNCPTR (gst_sndiosrc_close);
+  gstaudiosrc_class->prepare = GST_DEBUG_FUNCPTR (gst_sndiosrc_prepare);
+  gstaudiosrc_class->unprepare = GST_DEBUG_FUNCPTR (gst_sndiosrc_unprepare);
+  gstaudiosrc_class->read = GST_DEBUG_FUNCPTR (gst_sndiosrc_read);
+  gstaudiosrc_class->delay = GST_DEBUG_FUNCPTR (gst_sndiosrc_delay);
+  gstaudiosrc_class->reset = GST_DEBUG_FUNCPTR (gst_sndiosrc_reset);
 
-  gobject_class->set_property = gst_libsndiosrc_set_property;
-  gobject_class->get_property = gst_libsndiosrc_get_property;
+  gobject_class->set_property = gst_sndiosrc_set_property;
+  gobject_class->get_property = gst_sndiosrc_get_property;
 
   /* default value is filled in the _init method */
   g_object_class_install_property (gobject_class, PROP_HOST,
       g_param_spec_string ("host", "Host",
-          "Device or socket libsndio will access", NULL, G_PARAM_READWRITE));
+          "Device or socket sndio will access", NULL, G_PARAM_READWRITE));
 }
 
 static void
-gst_libsndiosrc_init (GstLibsndioSrc * libsndiosrc, GstLibsndioSrcClass * klass)
+gst_sndiosrc_init (GstSndioSrc * sndiosrc, GstSndioSrcClass * klass)
 {
-  libsndiosrc->hdl = NULL;
-  libsndiosrc->host = g_strdup (g_getenv ("AUDIODEVICE"));
+  sndiosrc->hdl = NULL;
+  sndiosrc->host = g_strdup (g_getenv ("AUDIODEVICE"));
 }
 
 static void
-gst_libsndiosrc_finalize (GObject * object)
+gst_sndiosrc_finalize (GObject * object)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (object);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (object);
 
-  gst_caps_replace (&libsndiosrc->cur_caps, NULL);
-  g_free (libsndiosrc->host);
+  gst_caps_replace (&sndiosrc->cur_caps, NULL);
+  g_free (sndiosrc->host);
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static GstCaps *
-gst_libsndiosrc_getcaps (GstBaseSrc * bsrc)
+gst_sndiosrc_getcaps (GstBaseSrc * bsrc)
 {
-  GstLibsndioSrc *libsndiosrc;
+  GstSndioSrc *sndiosrc;
 
-  libsndiosrc = GST_LIBSNDIOSRC (bsrc);
+  sndiosrc = GST_SNDIOSRC (bsrc);
 
   /* no hdl, we're done with the template caps */
-  if (libsndiosrc->cur_caps == NULL) {
-    GST_LOG_OBJECT (libsndiosrc, "getcaps called, returning template caps");
+  if (sndiosrc->cur_caps == NULL) {
+    GST_LOG_OBJECT (sndiosrc, "getcaps called, returning template caps");
     return NULL;
   }
 
-  GST_LOG_OBJECT (libsndiosrc, "returning %" GST_PTR_FORMAT, libsndiosrc->cur_caps);
+  GST_LOG_OBJECT (sndiosrc, "returning %" GST_PTR_FORMAT, sndiosrc->cur_caps);
 
-  return gst_caps_ref (libsndiosrc->cur_caps);
+  return gst_caps_ref (sndiosrc->cur_caps);
 }
 
 static gboolean
-gst_libsndiosrc_open (GstAudioSrc * asrc)
+gst_sndiosrc_open (GstAudioSrc * asrc)
 {
   GstPadTemplate *pad_template;
-  GstLibsndioSrc *libsndiosrc;
+  GstSndioSrc *sndiosrc;
   struct sio_par par;
   struct sio_cap cap;
   GArray *rates, *chans;
@@ -193,24 +193,24 @@ gst_libsndiosrc_open (GstAudioSrc * asrc)
   int i, j, k;
   int nconfs;
 
-  libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  sndiosrc = GST_SNDIOSRC (asrc);
 
-  GST_DEBUG_OBJECT (libsndiosrc, "open");
+  GST_DEBUG_OBJECT (sndiosrc, "open");
 
   /* connect */
-  libsndiosrc->hdl = sio_open (libsndiosrc->host, SIO_REC, 0);
+  sndiosrc->hdl = sio_open (sndiosrc->host, SIO_REC, 0);
 
-  if (libsndiosrc->hdl == NULL)
+  if (sndiosrc->hdl == NULL)
     goto couldnt_connect;
 
-  /* Use libsndio defaults as the only encodings, but get the supported
+  /* Use sndio defaults as the only encodings, but get the supported
    * sample rates and number of channels.
    */
 
-  if (!sio_getpar(libsndiosrc->hdl, &par))
+  if (!sio_getpar(sndiosrc->hdl, &par))
     goto no_server_info;
 
-  if (!sio_getcap(libsndiosrc->hdl, &cap))
+  if (!sio_getcap(sndiosrc->hdl, &cap))
     goto no_server_info;
 
   rates = g_array_new(FALSE, FALSE, sizeof(int));
@@ -299,14 +299,14 @@ gst_libsndiosrc_open (GstAudioSrc * asrc)
   g_array_free(rates, TRUE);
   g_array_free(chans, TRUE);
 
-  pad_template = gst_static_pad_template_get (&libsndio_src_factory);
-  libsndiosrc->cur_caps = gst_caps_copy (gst_pad_template_get_caps (pad_template));
+  pad_template = gst_static_pad_template_get (&sndio_src_factory);
+  sndiosrc->cur_caps = gst_caps_copy (gst_pad_template_get_caps (pad_template));
   gst_object_unref (pad_template);
 
-  for (i = 0; i < libsndiosrc->cur_caps->structs->len; i++) {
+  for (i = 0; i < sndiosrc->cur_caps->structs->len; i++) {
     GstStructure *s;
 
-    s = gst_caps_get_structure (libsndiosrc->cur_caps, i);
+    s = gst_caps_get_structure (sndiosrc->cur_caps, i);
     gst_structure_set (s, "endianness", G_TYPE_INT, par.le ? 1234 : 4321, NULL);
     gst_structure_set (s, "signed", G_TYPE_BOOLEAN, par.sig ? TRUE : FALSE, NULL);
     gst_structure_set (s, "width", G_TYPE_INT, par.bits, NULL);
@@ -320,57 +320,57 @@ gst_libsndiosrc_open (GstAudioSrc * asrc)
   /* ERRORS */
 couldnt_connect:
   {
-    GST_ELEMENT_ERROR (libsndiosrc, RESOURCE, OPEN_READ,
-        (_("Could not establish connection to libsndio")),
-        ("can't open connection to libsndio"));
+    GST_ELEMENT_ERROR (sndiosrc, RESOURCE, OPEN_READ,
+        (_("Could not establish connection to sndio")),
+        ("can't open connection to sndio"));
     return FALSE;
   }
 no_server_info:
   {
-    GST_ELEMENT_ERROR (libsndiosrc, RESOURCE, OPEN_READ,
-        (_("Failed to query libsndio capabilities")),
-        ("couldn't get libsndio info!"));
+    GST_ELEMENT_ERROR (sndiosrc, RESOURCE, OPEN_READ,
+        (_("Failed to query sndio capabilities")),
+        ("couldn't get sndio info!"));
     return FALSE;
   }
 }
 
 static gboolean
-gst_libsndiosrc_close (GstAudioSrc * asrc)
+gst_sndiosrc_close (GstAudioSrc * asrc)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (asrc);
 
-  GST_DEBUG_OBJECT (libsndiosrc, "close");
+  GST_DEBUG_OBJECT (sndiosrc, "close");
 
-  gst_caps_replace (&libsndiosrc->cur_caps, NULL);
-  sio_close (libsndiosrc->hdl);
-  libsndiosrc->hdl = NULL;
+  gst_caps_replace (&sndiosrc->cur_caps, NULL);
+  sio_close (sndiosrc->hdl);
+  sndiosrc->hdl = NULL;
 
   return TRUE;
 }
 
 static void
-gst_libsndiosrc_cb(void *addr, int delta)
+gst_sndiosrc_cb(void *addr, int delta)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC ((GstAudioSrc *)addr);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC ((GstAudioSrc *)addr);
 
-  libsndiosrc->realpos += delta;
+  sndiosrc->realpos += delta;
 
-  if (libsndiosrc->readpos >= libsndiosrc->realpos)
-    libsndiosrc->latency = 0;
+  if (sndiosrc->readpos >= sndiosrc->realpos)
+    sndiosrc->latency = 0;
   else
-    libsndiosrc->latency = libsndiosrc->realpos - libsndiosrc->readpos;
+    sndiosrc->latency = sndiosrc->realpos - sndiosrc->readpos;
 }
 
 static gboolean
-gst_libsndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
+gst_sndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (asrc);
   struct sio_par par;
   int spec_bpf;
 
-  GST_DEBUG_OBJECT (libsndiosrc, "prepare");
+  GST_DEBUG_OBJECT (sndiosrc, "prepare");
 
-  libsndiosrc->readpos = libsndiosrc->realpos = libsndiosrc->latency = 0;
+  sndiosrc->readpos = sndiosrc->realpos = sndiosrc->latency = 0;
 
   sio_initpar(&par);
   par.sig = spec->sign;
@@ -385,10 +385,10 @@ gst_libsndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
   par.round = spec->segsize / spec_bpf;
   par.appbufsz = (spec->segsize * spec->segtotal) / spec_bpf;
 
-  if (!sio_setpar(libsndiosrc->hdl, &par))
+  if (!sio_setpar(sndiosrc->hdl, &par))
     goto cannot_configure;
 
-  sio_getpar(libsndiosrc->hdl, &par);
+  sio_getpar(sndiosrc->hdl, &par);
 
   spec->sign = par.sig;
   spec->bigend = !par.le;
@@ -397,7 +397,7 @@ gst_libsndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
   spec->rate = par.rate;
   spec->channels = par.rchan;
 
-  libsndiosrc->bpf = par.bps * par.rchan;
+  sndiosrc->bpf = par.bps * par.rchan;
 
   spec->segsize = par.round * par.rchan * par.bps;
   spec->segtotal = par.bufsz / par.round;
@@ -409,58 +409,57 @@ gst_libsndiosrc_prepare (GstAudioSrc * asrc, GstRingBufferSpec * spec)
   spec->silence_sample[2] = 0;
   spec->silence_sample[3] = 0;
 
-  sio_onmove(libsndiosrc->hdl, gst_libsndiosrc_cb, libsndiosrc);
+  sio_onmove(sndiosrc->hdl, gst_sndiosrc_cb, sndiosrc);
 
-  if (!sio_start(libsndiosrc->hdl))
+  if (!sio_start(sndiosrc->hdl))
     goto cannot_start;
 
-  GST_INFO_OBJECT (libsndiosrc, "successfully opened connection to libsndio");
+  GST_INFO_OBJECT (sndiosrc, "successfully opened connection to sndio");
 
   return TRUE;
 
   /* ERRORS */
 cannot_configure:
   {
-    GST_ELEMENT_ERROR (libsndiosrc, RESOURCE, OPEN_READ,
-        (_("Could not configure libsndio")),
-        ("can't configure libsndio"));
+    GST_ELEMENT_ERROR (sndiosrc, RESOURCE, OPEN_READ,
+        (_("Could not configure sndio")),
+        ("can't configure sndio"));
     return FALSE;
   }
 cannot_start:
   {
-    GST_ELEMENT_ERROR (libsndiosrc, RESOURCE, OPEN_READ,
-        (_("Could not start libsndio")),
-        ("can't start libsndio"));
+    GST_ELEMENT_ERROR (sndiosrc, RESOURCE, OPEN_READ,
+        (_("Could not start sndio")),
+        ("can't start sndio"));
     return FALSE;
   }
 }
 
 static gboolean
-gst_libsndiosrc_unprepare (GstAudioSrc * asrc)
+gst_sndiosrc_unprepare (GstAudioSrc * asrc)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (asrc);
 
-  if (libsndiosrc->hdl == NULL)
+  if (sndiosrc->hdl == NULL)
     return TRUE;
 
-  sio_stop(libsndiosrc->hdl);
+  sio_stop(sndiosrc->hdl);
 
   return TRUE;
 }
 
-
 static guint
-gst_libsndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length)
+gst_sndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (asrc);
   guint done;
 
-  done = sio_read (libsndiosrc->hdl, data, length);
+  done = sio_read (sndiosrc->hdl, data, length);
 
   if (done == 0)
     goto read_error;
 
-  libsndiosrc->readpos += (done / libsndiosrc->bpf);
+  sndiosrc->readpos += (done / sndiosrc->bpf);
 
   data = (char *) data + done;
 
@@ -469,45 +468,45 @@ gst_libsndiosrc_read (GstAudioSrc * asrc, gpointer data, guint length)
   /* ERRORS */
 read_error:
   {
-    GST_ELEMENT_ERROR (libsndiosrc, RESOURCE, READ,
-        ("Failed to read data from libsndio"), GST_ERROR_SYSTEM);
+    GST_ELEMENT_ERROR (sndiosrc, RESOURCE, READ,
+        ("Failed to read data from sndio"), GST_ERROR_SYSTEM);
     return 0;
   }
 }
 
 static guint
-gst_libsndiosrc_delay (GstAudioSrc * asrc)
+gst_sndiosrc_delay (GstAudioSrc * asrc)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (asrc);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (asrc);
 
-  if (libsndiosrc->latency == (guint) - 1) {
+  if (sndiosrc->latency == (guint) - 1) {
     GST_WARNING_OBJECT (asrc, "couldn't get latency");
     return 0;
   }
 
-  GST_DEBUG_OBJECT (asrc, "got latency: %u", libsndiosrc->latency);
+  GST_DEBUG_OBJECT (asrc, "got latency: %u", sndiosrc->latency);
 
-  return libsndiosrc->latency;
+  return sndiosrc->latency;
 }
 
 static void
-gst_libsndiosrc_reset (GstAudioSrc * asrc)
+gst_sndiosrc_reset (GstAudioSrc * asrc)
 {
-  /* no way to flush the buffers with libsndio ? */
+  /* no way to flush the buffers with sndio ? */
 
   GST_DEBUG_OBJECT (asrc, "reset called");
 }
 
 static void
-gst_libsndiosrc_set_property (GObject * object, guint prop_id, const GValue * value,
+gst_sndiosrc_set_property (GObject * object, guint prop_id, const GValue * value,
     GParamSpec * pspec)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (object);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (object);
 
   switch (prop_id) {
     case PROP_HOST:
-      g_free (libsndiosrc->host);
-      libsndiosrc->host = g_value_dup_string (value);
+      g_free (sndiosrc->host);
+      sndiosrc->host = g_value_dup_string (value);
       break;
     default:
       break;
@@ -515,14 +514,14 @@ gst_libsndiosrc_set_property (GObject * object, guint prop_id, const GValue * va
 }
 
 static void
-gst_libsndiosrc_get_property (GObject * object, guint prop_id, GValue * value,
+gst_sndiosrc_get_property (GObject * object, guint prop_id, GValue * value,
     GParamSpec * pspec)
 {
-  GstLibsndioSrc *libsndiosrc = GST_LIBSNDIOSRC (object);
+  GstSndioSrc *sndiosrc = GST_SNDIOSRC (object);
 
   switch (prop_id) {
     case PROP_HOST:
-      g_value_set_string (value, libsndiosrc->host);
+      g_value_set_string (value, sndiosrc->host);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);

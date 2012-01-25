@@ -1,11 +1,11 @@
-plugin_LTLIBRARIES = libgstlibsndio.la
+plugin_LTLIBRARIES = libgstsndio.la
 
-libgstlibsndio_la_SOURCES = gstlibsndio.c libsndiosink.c libsndiosrc.c 
-libgstlibsndio_la_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_CFLAGS)
-libgstlibsndio_la_LIBADD = \
+libgstsndio_la_SOURCES = gstsndio.c sndiosink.c sndiosrc.c 
+libgstsndio_la_CFLAGS = $(GST_PLUGINS_BASE_CFLAGS) $(GST_CFLAGS)
+libgstsndio_la_LIBADD = \
 	$(GST_PLUGINS_BASE_LIBS) -lgstaudio-$(GST_MAJORMINOR) \
-	$(LIBSNDIO_LIBS)
-libgstlibsndio_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
+	$(SNDIO_LIBS)
+libgstsndio_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
 
-noinst_HEADERS = libsndiosink.h libsndiosrc.h
+noinst_HEADERS = sndiosink.h sndiosrc.h
 EXTRA_DIST =

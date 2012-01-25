@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.16 2011/05/15 08:32:09 ajacoutot Exp $
---- configure.ac.orig	Mon May  9 15:41:03 2011
-+++ configure.ac	Sun May 15 01:30:06 2011
+$OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
+--- configure.ac.orig	Wed Jun 15 18:46:51 2011
++++ configure.ac	Wed Jan 25 05:45:27 2012
 @@ -515,6 +515,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
@@ -19,41 +19,41 @@ $OpenBSD: patch-configure_ac,v 1.16 2011/05/15 08:32:09 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -747,6 +751,21 @@ AG_GST_CHECK_FEATURE(ESD, [ESounD sound daemon], esdsi
+@@ -933,6 +937,21 @@ AG_GST_CHECK_FEATURE(SHOUT2, [Shoutcast/Icecast client
    fi
  ])
  
-+dnl *** libsndio ***
-+translit(dnm, m, l) AM_CONDITIONAL(USE_LIBSNDIO, true)
-+AG_GST_CHECK_FEATURE(LIBSNDIO, [libsndio audio], libsndio, [
-+  AC_CHECK_HEADER(sndio.h, HAVE_LIBSNDIO="yes", HAVE_LIBSNDIO="no")
-+  if test $HAVE_LIBSNDIO = yes
++dnl *** sndio ***
++translit(dnm, m, l) AM_CONDITIONAL(USE_SNDIO, true)
++AG_GST_CHECK_FEATURE(SNDIO, [sndio audio], sndio, [
++  AC_CHECK_HEADER(sndio.h, HAVE_SNDIO="yes", HAVE_SNDIO="no")
++  if test $HAVE_SNDIO = yes
 +  then
-+    AC_CHECK_LIB(sndio, sio_open, HAVE_LIBSNDIO="yes", HAVE_LIBSNDIO="no", [])
-+    if test $HAVE_LIBSNDIO = yes
++    AC_CHECK_LIB(sndio, sio_open, HAVE_SNDIO="yes", HAVE_SNDIO="no", [])
++    if test $HAVE_SNDIO = yes
 +    then
-+      LIBSNDIO_LIBS=-lsndio
-+      AC_SUBST(LIBSNDIO_LIBS)
++      SNDIO_LIBS=-lsndio 
++      AC_SUBST(SNDIO_LIBS)
 +    fi
 +  fi
 +])
 +
- dnl *** FLAC ***
- translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
- AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
-@@ -1054,6 +1073,7 @@ AM_CONDITIONAL(USE_CAIRO_GOBJECT, false)
- AM_CONDITIONAL(USE_DIRECTSOUND, false)
- AM_CONDITIONAL(USE_DV1394, false)
- AM_CONDITIONAL(USE_ESD, false)
-+AM_CONDITIONAL(USE_LIBSNDIO, false)
- AM_CONDITIONAL(USE_FLAC, false)
- AM_CONDITIONAL(USE_GCONF, false)
- AM_CONDITIONAL(USE_GCONFTOOL, false)
-@@ -1192,6 +1212,7 @@ ext/annodex/Makefile
- ext/cairo/Makefile
- ext/dv/Makefile
- ext/esd/Makefile
-+ext/libsndio/Makefile
- ext/flac/Makefile
- ext/gconf/Makefile
- ext/gdk_pixbuf/Makefile
+ dnl *** soup ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_SOUP, true)
+ AG_GST_CHECK_FEATURE(SOUP, [soup http client plugin (2.4)], souphttpsrc, [
+@@ -1072,6 +1091,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
+ AM_CONDITIONAL(USE_OSX_VIDEO, false)
+ AM_CONDITIONAL(USE_PULSE, false)
+ AM_CONDITIONAL(USE_SHOUT2, false)
++AM_CONDITIONAL(USE_SNDIO, false)
+ AM_CONDITIONAL(USE_SOUP, false)
+ AM_CONDITIONAL(USE_SPEEX, false)
+ AM_CONDITIONAL(USE_SUNAUDIO, false)
+@@ -1203,6 +1223,7 @@ ext/libpng/Makefile
+ ext/pulse/Makefile
+ ext/raw1394/Makefile
+ ext/shout2/Makefile
++ext/sndio/Makefile
+ ext/soup/Makefile
+ ext/speex/Makefile
+ ext/taglib/Makefile

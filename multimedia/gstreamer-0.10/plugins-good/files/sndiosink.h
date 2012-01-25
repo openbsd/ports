@@ -15,32 +15,32 @@
  */
 
 
-#ifndef __GST_LIBSNDIOSRC_H__
-#define __GST_LIBSNDIOSRC_H__
+#ifndef __GST_SNDIOSINK_H__
+#define __GST_SNDIOSINK_H__
 
 #include <sndio.h>
 
 #include <gst/gst.h>
-#include <gst/audio/gstaudiosrc.h>
+#include <gst/audio/gstaudiosink.h>
 
 G_BEGIN_DECLS
 
-#define GST_TYPE_LIBSNDIOSRC \
-  (gst_libsndiosrc_get_type())
-#define GST_LIBSNDIOSRC(obj) \
-  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_LIBSNDIOSRC,GstLibsndioSrc))
-#define GST_LIBSNDIOSRC_CLASS(klass) \
-  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_LIBSNDIOSRC,GstLibsndioSrcClass))
-#define GST_IS_LIBSNDIOSRC(obj) \
-  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_LIBSNDIOSRC))
-#define GST_IS_LIBSNDIOSRC_CLASS(klass) \
-  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_LIBSNDIOSRC))
+#define GST_TYPE_SNDIOSINK \
+  (gst_sndiosink_get_type())
+#define GST_SNDIOSINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_CAST((obj),GST_TYPE_SNDIOSINK,GstSndioSink))
+#define GST_SNDIOSINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_CAST((klass),GST_TYPE_SNDIOSINK,GstSndioSinkClass))
+#define GST_IS_SNDIOSINK(obj) \
+  (G_TYPE_CHECK_INSTANCE_TYPE((obj),GST_TYPE_SNDIOSINK))
+#define GST_IS_SNDIOSINK_CLASS(klass) \
+  (G_TYPE_CHECK_CLASS_TYPE((klass),GST_TYPE_SNDIOSINK))
 
-typedef struct _GstLibsndioSrc GstLibsndioSrc;
-typedef struct _GstLibsndioSrcClass GstLibsndioSrcClass;
+typedef struct _GstSndioSink GstSndioSink;
+typedef struct _GstSndioSinkClass GstSndioSinkClass;
 
-struct _GstLibsndioSrc {
-  GstAudioSrc   src;
+struct _GstSndioSink {
+  GstAudioSink   sink;
 
   struct sio_hdl *hdl;
   gchar    *host;
@@ -50,18 +50,18 @@ struct _GstLibsndioSrc {
 
   /* frames counts */
   volatile long long realpos;
-  volatile long long readpos;
+  volatile long long playpos;
   volatile guint latency;
 
   GstCaps  *cur_caps;
 };
 
-struct _GstLibsndioSrcClass {
-  GstAudioSrcClass parent_class;
+struct _GstSndioSinkClass {
+  GstAudioSinkClass parent_class;
 };
 
-GType gst_libsndiosrc_get_type (void);
+GType gst_sndiosink_get_type (void);
 
 G_END_DECLS
 
-#endif /* __GST_LIBSNDIOSRC_H__ */
+#endif /* __GST_SNDIOSINK_H__ */

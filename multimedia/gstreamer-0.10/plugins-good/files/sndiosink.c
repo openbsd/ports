@@ -15,17 +15,17 @@
  */
 
 /**
- * SECTION:element-libsndiosink
+ * SECTION:element-sndiosink
  * @see_also: #GstAutoAudioSink
  *
  * <refsect2>
  * <para>
- * This element outputs sound to a sound card using libsndio.
+ * This element outputs sound to a sound card using sndio.
  * </para>
  * <para>
- * Simple example pipeline that plays an Ogg/Vorbis file via libsndio:
+ * Simple example pipeline that plays an Ogg/Vorbis file via sndio:
  * <programlisting>
- * gst-launch -v filesrc location=foo.ogg ! decodebin ! audioconvert ! audioresample ! libsndiosink
+ * gst-launch -v filesrc location=foo.ogg ! decodebin ! audioconvert ! audioresample ! sndiosink
  * </programlisting>
  * </para>
  * </refsect2>
@@ -35,20 +35,20 @@
 #include "config.h"
 #endif
 
-#include "libsndiosink.h"
+#include "sndiosink.h"
 #include <unistd.h>
 #include <errno.h>
 
 #include <gst/gst-i18n-plugin.h>
 
-GST_DEBUG_CATEGORY_EXTERN (libsndio_debug);
-#define GST_CAT_DEFAULT libsndio_debug
+GST_DEBUG_CATEGORY_EXTERN (sndio_debug);
+#define GST_CAT_DEFAULT sndio_debug
 
 /* elementfactory information */
-static const GstElementDetails libsndiosink_details =
-GST_ELEMENT_DETAILS ("Libsndio audio sink",
+static const GstElementDetails sndiosink_details =
+GST_ELEMENT_DETAILS ("Sndio audio sink",
     "Sink/Audio",
-    "Plays audio through libsndio",
+    "Plays audio through sndio",
     "Jacob Meuser <jakemsr@sdf.lonestar.org>");
 
 enum
@@ -57,7 +57,7 @@ enum
   PROP_HOST
 };
 
-static GstStaticPadTemplate libsndio_sink_factory =
+static GstStaticPadTemplate sndio_sink_factory =
     GST_STATIC_PAD_TEMPLATE ("sink",
     GST_PAD_SINK,
     GST_PAD_ALWAYS,
@@ -70,41 +70,41 @@ static GstStaticPadTemplate libsndio_sink_factory =
         "channels = (int) [ 1, 16 ] ")
     );
 
-static void gst_libsndiosink_finalize (GObject * object);
+static void gst_sndiosink_finalize (GObject * object);
 
-static GstCaps *gst_libsndiosink_getcaps (GstBaseSink * bsink);
+static GstCaps *gst_sndiosink_getcaps (GstBaseSink * bsink);
 
-static gboolean gst_libsndiosink_open (GstAudioSink * asink);
-static gboolean gst_libsndiosink_close (GstAudioSink * asink);
-static gboolean gst_libsndiosink_prepare (GstAudioSink * asink,
+static gboolean gst_sndiosink_open (GstAudioSink * asink);
+static gboolean gst_sndiosink_close (GstAudioSink * asink);
+static gboolean gst_sndiosink_prepare (GstAudioSink * asink,
     GstRingBufferSpec * spec);
-static gboolean gst_libsndiosink_unprepare (GstAudioSink * asink);
-static guint gst_libsndiosink_write (GstAudioSink * asink, gpointer data,
+static gboolean gst_sndiosink_unprepare (GstAudioSink * asink);
+static guint gst_sndiosink_write (GstAudioSink * asink, gpointer data,
     guint length);
-static guint gst_libsndiosink_delay (GstAudioSink * asink);
-static void gst_libsndiosink_reset (GstAudioSink * asink);
+static guint gst_sndiosink_delay (GstAudioSink * asink);
+static void gst_sndiosink_reset (GstAudioSink * asink);
 
-static void gst_libsndiosink_set_property (GObject * object, guint prop_id,
+static void gst_sndiosink_set_property (GObject * object, guint prop_id,
     const GValue * value, GParamSpec * pspec);
-static void gst_libsndiosink_get_property (GObject * object, guint prop_id,
+static void gst_sndiosink_get_property (GObject * object, guint prop_id,
     GValue * value, GParamSpec * pspec);
-static void gst_libsndiosink_cb(void * addr, int delta);
+static void gst_sndiosink_cb(void * addr, int delta);
 
-GST_BOILERPLATE (GstLibsndioSink, gst_libsndiosink, GstAudioSink, GST_TYPE_AUDIO_SINK);
+GST_BOILERPLATE (GstSndioSink, gst_sndiosink, GstAudioSink, GST_TYPE_AUDIO_SINK);
 
 static void
-gst_libsndiosink_base_init (gpointer g_class)
+gst_sndiosink_base_init (gpointer g_class)
 {
   GstElementClass *element_class = GST_ELEMENT_CLASS (g_class);
 
-  gst_element_class_set_details (element_class, &libsndiosink_details);
+  gst_element_class_set_details (element_class, &sndiosink_details);
 
   gst_element_class_add_pad_template (element_class,
-      gst_static_pad_template_get (&libsndio_sink_factory));
+      gst_static_pad_template_get (&sndio_sink_factory));
 }
 
 static void
-gst_libsndiosink_class_init (GstLibsndioSinkClass * klass)
+gst_sndiosink_class_init (GstSndioSinkClass * klass)
 {
   GObjectClass *gobject_class;
   GstBaseSinkClass *gstbasesink_class;
@@ -118,68 +118,68 @@ gst_libsndiosink_class_init (GstLibsndioSinkClass * klass)
 
   parent_class = g_type_class_peek_parent (klass);
 
-  gobject_class->finalize = gst_libsndiosink_finalize;
+  gobject_class->finalize = gst_sndiosink_finalize;
 
-  gstbasesink_class->get_caps = GST_DEBUG_FUNCPTR (gst_libsndiosink_getcaps);
+  gstbasesink_class->get_caps = GST_DEBUG_FUNCPTR (gst_sndiosink_getcaps);
 
-  gstaudiosink_class->open = GST_DEBUG_FUNCPTR (gst_libsndiosink_open);
-  gstaudiosink_class->close = GST_DEBUG_FUNCPTR (gst_libsndiosink_close);
-  gstaudiosink_class->prepare = GST_DEBUG_FUNCPTR (gst_libsndiosink_prepare);
-  gstaudiosink_class->unprepare = GST_DEBUG_FUNCPTR (gst_libsndiosink_unprepare);
-  gstaudiosink_class->write = GST_DEBUG_FUNCPTR (gst_libsndiosink_write);
-  gstaudiosink_class->delay = GST_DEBUG_FUNCPTR (gst_libsndiosink_delay);
-  gstaudiosink_class->reset = GST_DEBUG_FUNCPTR (gst_libsndiosink_reset);
+  gstaudiosink_class->open = GST_DEBUG_FUNCPTR (gst_sndiosink_open);
+  gstaudiosink_class->close = GST_DEBUG_FUNCPTR (gst_sndiosink_close);
+  gstaudiosink_class->prepare = GST_DEBUG_FUNCPTR (gst_sndiosink_prepare);
+  gstaudiosink_class->unprepare = GST_DEBUG_FUNCPTR (gst_sndiosink_unprepare);
+  gstaudiosink_class->write = GST_DEBUG_FUNCPTR (gst_sndiosink_write);
+  gstaudiosink_class->delay = GST_DEBUG_FUNCPTR (gst_sndiosink_delay);
+  gstaudiosink_class->reset = GST_DEBUG_FUNCPTR (gst_sndiosink_reset);
 
-  gobject_class->set_property = gst_libsndiosink_set_property;
-  gobject_class->get_property = gst_libsndiosink_get_property;
+  gobject_class->set_property = gst_sndiosink_set_property;
+  gobject_class->get_property = gst_sndiosink_get_property;
 
   /* default value is filled in the _init method */
   g_object_class_install_property (gobject_class, PROP_HOST,
       g_param_spec_string ("host", "Host",
-          "Device or socket libsndio will access", NULL, G_PARAM_READWRITE));
+          "Device or socket sndio will access", NULL, G_PARAM_READWRITE));
 }
 
 static void
-gst_libsndiosink_init (GstLibsndioSink * libsndiosink, GstLibsndioSinkClass * klass)
+gst_sndiosink_init (GstSndioSink * sndiosink, GstSndioSinkClass * klass)
 {
-  libsndiosink->hdl = NULL;
-  libsndiosink->host = g_strdup (g_getenv ("AUDIODEVICE"));
+  sndiosink->hdl = NULL;
+  sndiosink->host = g_strdup (g_getenv ("AUDIODEVICE"));
 }
 
 static void
-gst_libsndiosink_finalize (GObject * object)
+gst_sndiosink_finalize (GObject * object)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (object);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (object);
 
-  gst_caps_replace (&libsndiosink->cur_caps, NULL);
-  g_free (libsndiosink->host);
+  gst_caps_replace (&sndiosink->cur_caps, NULL);
+  g_free (sndiosink->host);
 
   G_OBJECT_CLASS (parent_class)->finalize (object);
 }
 
 static GstCaps *
-gst_libsndiosink_getcaps (GstBaseSink * bsink)
+gst_sndiosink_getcaps (GstBaseSink * bsink)
 {
-  GstLibsndioSink *libsndiosink;
+  GstSndioSink *sndiosink;
 
-  libsndiosink = GST_LIBSNDIOSINK (bsink);
+  sndiosink = GST_SNDIOSINK (bsink);
 
   /* no hdl, we're done with the template caps */
-  if (libsndiosink->cur_caps == NULL) {
-    GST_LOG_OBJECT (libsndiosink, "getcaps called, returning template caps");
+  if (sndiosink->cur_caps == NULL) {
+    GST_LOG_OBJECT (sndiosink, "getcaps called, returning template caps");
     return NULL;
   }
 
-  GST_LOG_OBJECT (libsndiosink, "returning %" GST_PTR_FORMAT, libsndiosink->cur_caps);
+  GST_LOG_OBJECT (sndiosink, "returning %" GST_PTR_FORMAT, sndiosink->cur_caps);
 
-  return gst_caps_ref (libsndiosink->cur_caps);
+  return gst_caps_ref (sndiosink->cur_caps);
 }
 
 static gboolean
-gst_libsndiosink_open (GstAudioSink * asink)
+gst_sndiosink_open (GstAudioSink * asink)
 {
   GstPadTemplate *pad_template;
-  GstLibsndioSink *libsndiosink;
+  GstSndioSink *sndiosink;
   struct sio_par par;
   struct sio_cap cap;
   GArray *rates, *chans;
@@ -193,25 +193,24 @@ gst_libsndiosink_open (GstAudioSink * asink)
   int i, j, k;
   int nconfs;
 
+  sndiosink = GST_SNDIOSINK (asink);
 
-  libsndiosink = GST_LIBSNDIOSINK (asink);
-
-  GST_DEBUG_OBJECT (libsndiosink, "open");
+  GST_DEBUG_OBJECT (sndiosink, "open");
 
   /* conect */
-  libsndiosink->hdl = sio_open (libsndiosink->host, SIO_PLAY, 0);
+  sndiosink->hdl = sio_open (sndiosink->host, SIO_PLAY, 0);
 
-  if (libsndiosink->hdl == NULL)
+  if (sndiosink->hdl == NULL)
     goto couldnt_connect;
 
-  /* Use libsndio defaults as the only encodings, but get the supported
+  /* Use sndio defaults as the only encodings, but get the supported
    * sample rates and number of channels.
    */
 
-  if (!sio_getpar(libsndiosink->hdl, &par))
+  if (!sio_getpar(sndiosink->hdl, &par))
     goto no_server_info;
 
-  if (!sio_getcap(libsndiosink->hdl, &cap))
+  if (!sio_getcap(sndiosink->hdl, &cap))
     goto no_server_info;
 
   rates = g_array_new(FALSE, FALSE, sizeof(int));
@@ -300,14 +299,14 @@ gst_libsndiosink_open (GstAudioSink * asink)
   g_array_free(rates, TRUE);
   g_array_free(chans, TRUE);
 
-  pad_template = gst_static_pad_template_get (&libsndio_sink_factory);
-  libsndiosink->cur_caps = gst_caps_copy (gst_pad_template_get_caps (pad_template));
+  pad_template = gst_static_pad_template_get (&sndio_sink_factory);
+  sndiosink->cur_caps = gst_caps_copy (gst_pad_template_get_caps (pad_template));
   gst_object_unref (pad_template);
 
-  for (i = 0; i < libsndiosink->cur_caps->structs->len; i++) {
+  for (i = 0; i < sndiosink->cur_caps->structs->len; i++) {
     GstStructure *s;
 
-    s = gst_caps_get_structure (libsndiosink->cur_caps, i);
+    s = gst_caps_get_structure (sndiosink->cur_caps, i);
     gst_structure_set (s, "endianness", G_TYPE_INT, par.le ? 1234 : 4321, NULL);
     gst_structure_set (s, "signed", G_TYPE_BOOLEAN, par.sig ? TRUE : FALSE, NULL);
     gst_structure_set (s, "width", G_TYPE_INT, par.bits, NULL);
@@ -321,57 +320,57 @@ gst_libsndiosink_open (GstAudioSink * asink)
   /* ERRORS */
 couldnt_connect:
   {
-    GST_ELEMENT_ERROR (libsndiosink, RESOURCE, OPEN_WRITE,
-        (_("Could not establish connection to libsndio")),
-        ("can't open connection to libsndio"));
+    GST_ELEMENT_ERROR (sndiosink, RESOURCE, OPEN_WRITE,
+        (_("Could not establish connection to sndio")),
+        ("can't open connection to sndio"));
     return FALSE;
   }
 no_server_info:
   {
-    GST_ELEMENT_ERROR (libsndiosink, RESOURCE, OPEN_WRITE,
-        (_("Failed to query libsndio capabilities")),
-        ("couldn't get libsndio info!"));
+    GST_ELEMENT_ERROR (sndiosink, RESOURCE, OPEN_WRITE,
+        (_("Failed to query sndio capabilities")),
+        ("couldn't get sndio info!"));
     return FALSE;
   }
 }
 
 static gboolean
-gst_libsndiosink_close (GstAudioSink * asink)
+gst_sndiosink_close (GstAudioSink * asink)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (asink);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (asink);
 
-  GST_DEBUG_OBJECT (libsndiosink, "close");
+  GST_DEBUG_OBJECT (sndiosink, "close");
 
-  gst_caps_replace (&libsndiosink->cur_caps, NULL);
-  sio_close (libsndiosink->hdl);
-  libsndiosink->hdl = NULL;
+  gst_caps_replace (&sndiosink->cur_caps, NULL);
+  sio_close (sndiosink->hdl);
+  sndiosink->hdl = NULL;
 
   return TRUE;
 }
 
 static void
-gst_libsndiosink_cb(void *addr, int delta)
+gst_sndiosink_cb(void *addr, int delta)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK ((GstAudioSink *)addr);
+  GstSndioSink *sndiosink = GST_SNDIOSINK ((GstAudioSink *)addr);
 
-  libsndiosink->realpos += delta;
+  sndiosink->realpos += delta;
 
-  if (libsndiosink->realpos >= libsndiosink->playpos)
-    libsndiosink->latency = 0;
+  if (sndiosink->realpos >= sndiosink->playpos)
+    sndiosink->latency = 0;
   else
-    libsndiosink->latency = libsndiosink->playpos - libsndiosink->realpos;
+    sndiosink->latency = sndiosink->playpos - sndiosink->realpos;
 }
 
 static gboolean
-gst_libsndiosink_prepare (GstAudioSink * asink, GstRingBufferSpec * spec)
+gst_sndiosink_prepare (GstAudioSink * asink, GstRingBufferSpec * spec)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (asink);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (asink);
   struct sio_par par;
   int spec_bpf;
 
-  GST_DEBUG_OBJECT (libsndiosink, "prepare");
+  GST_DEBUG_OBJECT (sndiosink, "prepare");
 
-  libsndiosink->playpos = libsndiosink->realpos = libsndiosink->latency = 0;
+  sndiosink->playpos = sndiosink->realpos = sndiosink->latency = 0;
 
   sio_initpar(&par);
   par.sig = spec->sign;
@@ -385,10 +384,10 @@ gst_libsndiosink_prepare (GstAudioSink * asink, GstRingBufferSpec * spec)
 
   par.appbufsz = (spec->segsize * spec->segtotal) / spec_bpf;
 
-  if (!sio_setpar(libsndiosink->hdl, &par))
+  if (!sio_setpar(sndiosink->hdl, &par))
     goto cannot_configure;
 
-  sio_getpar(libsndiosink->hdl, &par);
+  sio_getpar(sndiosink->hdl, &par);
 
   spec->sign = par.sig;
   spec->bigend = !par.le;
@@ -397,7 +396,7 @@ gst_libsndiosink_prepare (GstAudioSink * asink, GstRingBufferSpec * spec)
   spec->rate = par.rate;
   spec->channels = par.pchan;
 
-  libsndiosink->bpf = par.bps * par.pchan;
+  sndiosink->bpf = par.bps * par.pchan;
 
   spec->segsize = par.round * par.pchan * par.bps;
   spec->segtotal = par.bufsz / par.round;
@@ -409,58 +408,57 @@ gst_libsndiosink_prepare (GstAudioSink * asink, GstRingBufferSpec * spec)
   spec->silence_sample[2] = 0;
   spec->silence_sample[3] = 0;
 
-  sio_onmove(libsndiosink->hdl, gst_libsndiosink_cb, libsndiosink);
+  sio_onmove(sndiosink->hdl, gst_sndiosink_cb, sndiosink);
 
-  if (!sio_start(libsndiosink->hdl))
+  if (!sio_start(sndiosink->hdl))
     goto cannot_start;
 
-  GST_INFO_OBJECT (libsndiosink, "successfully opened connection to libsndio");
+  GST_INFO_OBJECT (sndiosink, "successfully opened connection to sndio");
 
   return TRUE;
 
   /* ERRORS */
 cannot_configure:
   {
-    GST_ELEMENT_ERROR (libsndiosink, RESOURCE, OPEN_WRITE,
-        (_("Could not configure libsndio")),
-        ("can't configure libsndio"));
+    GST_ELEMENT_ERROR (sndiosink, RESOURCE, OPEN_WRITE,
+        (_("Could not configure sndio")),
+        ("can't configure sndio"));
     return FALSE;
   }
 cannot_start:
   {
-    GST_ELEMENT_ERROR (libsndiosink, RESOURCE, OPEN_WRITE,
-        (_("Could not start libsndio")),
-        ("can't start libsndio"));
+    GST_ELEMENT_ERROR (sndiosink, RESOURCE, OPEN_WRITE,
+        (_("Could not start sndio")),
+        ("can't start sndio"));
     return FALSE;
   }
 }
 
 static gboolean
-gst_libsndiosink_unprepare (GstAudioSink * asink)
+gst_sndiosink_unprepare (GstAudioSink * asink)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (asink);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (asink);
 
-  if (libsndiosink->hdl == NULL)
+  if (sndiosink->hdl == NULL)
     return TRUE;
 
-  sio_stop(libsndiosink->hdl);
+  sio_stop(sndiosink->hdl);
 
   return TRUE;
 }
 
-
 static guint
-gst_libsndiosink_write (GstAudioSink * asink, gpointer data, guint length)
+gst_sndiosink_write (GstAudioSink * asink, gpointer data, guint length)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (asink);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (asink);
   guint done;
 
-  done = sio_write (libsndiosink->hdl, data, length);
+  done = sio_write (sndiosink->hdl, data, length);
 
   if (done == 0)
     goto write_error;
 
-  libsndiosink->playpos += (done / libsndiosink->bpf);
+  sndiosink->playpos += (done / sndiosink->bpf);
 
   data = (char *) data + done;
 
@@ -469,45 +467,45 @@ gst_libsndiosink_write (GstAudioSink * asink, gpointer data, guint length)
   /* ERRORS */
 write_error:
   {
-    GST_ELEMENT_ERROR (libsndiosink, RESOURCE, WRITE,
-        ("Failed to write data to libsndio"), GST_ERROR_SYSTEM);
+    GST_ELEMENT_ERROR (sndiosink, RESOURCE, WRITE,
+        ("Failed to write data to sndio"), GST_ERROR_SYSTEM);
     return 0;
   }
 }
 
 static guint
-gst_libsndiosink_delay (GstAudioSink * asink)
+gst_sndiosink_delay (GstAudioSink * asink)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (asink);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (asink);
 
-  if (libsndiosink->latency == (guint) - 1) {
+  if (sndiosink->latency == (guint) - 1) {
     GST_WARNING_OBJECT (asink, "couldn't get latency");
     return 0;
   }
 
-  GST_DEBUG_OBJECT (asink, "got latency: %u", libsndiosink->latency);
+  GST_DEBUG_OBJECT (asink, "got latency: %u", sndiosink->latency);
 
-  return libsndiosink->latency;
+  return sndiosink->latency;
 }
 
 static void
-gst_libsndiosink_reset (GstAudioSink * asink)
+gst_sndiosink_reset (GstAudioSink * asink)
 {
-  /* no way to flush the buffers with libsndio ? */
+  /* no way to flush the buffers with sndio ? */
 
   GST_DEBUG_OBJECT (asink, "reset called");
 }
 
 static void
-gst_libsndiosink_set_property (GObject * object, guint prop_id, const GValue * value,
+gst_sndiosink_set_property (GObject * object, guint prop_id, const GValue * value,
     GParamSpec * pspec)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (object);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (object);
 
   switch (prop_id) {
     case PROP_HOST:
-      g_free (libsndiosink->host);
-      libsndiosink->host = g_value_dup_string (value);
+      g_free (sndiosink->host);
+      sndiosink->host = g_value_dup_string (value);
       break;
     default:
       break;
@@ -515,14 +513,14 @@ gst_libsndiosink_set_property (GObject * object, guint prop_id, const GValue * v
 }
 
 static void
-gst_libsndiosink_get_property (GObject * object, guint prop_id, GValue * value,
+gst_sndiosink_get_property (GObject * object, guint prop_id, GValue * value,
     GParamSpec * pspec)
 {
-  GstLibsndioSink *libsndiosink = GST_LIBSNDIOSINK (object);
+  GstSndioSink *sndiosink = GST_SNDIOSINK (object);
 
   switch (prop_id) {
     case PROP_HOST:
-      g_value_set_string (value, libsndiosink->host);
+      g_value_set_string (value, sndiosink->host);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);

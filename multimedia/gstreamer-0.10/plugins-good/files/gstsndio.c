@@ -17,24 +17,24 @@
 #ifdef HAVE_CONFIG_H
 #include "config.h"
 #endif
-#include "libsndiosink.h"
-#include "libsndiosrc.h"
+#include "sndiosink.h"
+#include "sndiosrc.h"
 
 #include "gst/gst-i18n-plugin.h"
 
-GST_DEBUG_CATEGORY (libsndio_debug);
+GST_DEBUG_CATEGORY (sndio_debug);
 
 static gboolean
 plugin_init (GstPlugin * plugin)
 {
-  if (!gst_element_register (plugin, "libsndiosrc", GST_RANK_PRIMARY,
-          GST_TYPE_LIBSNDIOSRC) ||
-      !gst_element_register (plugin, "libsndiosink", GST_RANK_PRIMARY,
-          GST_TYPE_LIBSNDIOSINK)) {
+  if (!gst_element_register (plugin, "sndiosrc", GST_RANK_PRIMARY,
+          GST_TYPE_SNDIOSRC) ||
+      !gst_element_register (plugin, "sndiosink", GST_RANK_PRIMARY,
+          GST_TYPE_SNDIOSINK)) {
     return FALSE;
   }
 
-  GST_DEBUG_CATEGORY_INIT (libsndio_debug, "libsndio", 0, "libsndio elements");
+  GST_DEBUG_CATEGORY_INIT (sndio_debug, "sndio", 0, "sndio elements");
 
 #ifdef ENABLE_NLS
   setlocale (LC_ALL, "");
@@ -46,6 +46,6 @@ plugin_init (GstPlugin * plugin)
 
 GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
     GST_VERSION_MINOR,
-    "libsndio",
-    "libsndio support for GStreamer",
+    "sndio",
+    "sndio support for GStreamer",
     plugin_init, VERSION, GST_LICENSE, GST_PACKAGE_NAME, GST_PACKAGE_ORIGIN)

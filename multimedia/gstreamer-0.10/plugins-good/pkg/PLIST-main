@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2011/05/15 08:32:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2012/01/25 14:06:27 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.22
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -84,8 +84,6 @@ lib/gstreamer-${VERSION}/libgstisomp4.so
 lib/gstreamer-${VERSION}/libgstjpeg.so
 @comment lib/gstreamer-${VERSION}/libgstlevel.la
 lib/gstreamer-${VERSION}/libgstlevel.so
-@comment lib/gstreamer-${VERSION}/libgstlibsndio.la
-lib/gstreamer-${VERSION}/libgstlibsndio.so
 @comment lib/gstreamer-${VERSION}/libgstmatroska.la
 lib/gstreamer-${VERSION}/libgstmatroska.so
 @comment lib/gstreamer-${VERSION}/libgstmulaw.la
@@ -114,6 +112,8 @@ lib/gstreamer-${VERSION}/libgstshapewipe.so
 lib/gstreamer-${VERSION}/libgstshout2.so
 @comment lib/gstreamer-${VERSION}/libgstsmpte.la
 lib/gstreamer-${VERSION}/libgstsmpte.so
+@comment lib/gstreamer-${VERSION}/libgstsndio.la
+lib/gstreamer-${VERSION}/libgstsndio.so
 @comment lib/gstreamer-${VERSION}/libgstsouphttpsrc.la
 lib/gstreamer-${VERSION}/libgstsouphttpsrc.so
 @comment lib/gstreamer-${VERSION}/libgstspectrum.la

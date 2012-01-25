@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2012/01/25 14:06:27 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -16,7 +16,7 @@ PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main = 	2
+REVISION-main = 	3
 REVISION-aalib = 	2
 REVISION-dv = 		2
 REVISION-caca = 	2
@@ -110,7 +110,7 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 
 post-extract:
-	cp -R ${FILESDIR} ${WRKSRC}/ext/libsndio
+	cp -R ${FILESDIR} ${WRKSRC}/ext/sndio
 
 AUTOMAKE_VERSION =	1.10
 BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS}
