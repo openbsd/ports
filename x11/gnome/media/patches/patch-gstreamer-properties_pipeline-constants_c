@@ -1,4 +1,4 @@
-$OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.6 2010/09/30 07:35:18 ajacoutot Exp $
+$OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.7 2012/01/25 14:07:09 ajacoutot Exp $
 --- gstreamer-properties/pipeline-constants.c.orig	Wed Aug  4 15:22:33 2010
 +++ gstreamer-properties/pipeline-constants.c	Tue Sep 28 18:59:24 2010
 @@ -82,6 +82,8 @@ GSTPPipelineDescription audiosink_pipelines[] = {
@@ -6,7 +6,7 @@ $OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.6 2010/09/30 07:35
    {PIPE_TYPE_AUDIOSINK, 0, N_("Sun Audio"),
        "sunaudiosink", NULL, FALSE, TEST_PIPE_SUPPLIED, audiosink_test_pipe, TRUE},
 +  {PIPE_TYPE_AUDIOSINK, 0, N_("SNDIO - audio access library"),
-+      "libsndiosink", NULL, FALSE, TEST_PIPE_SUPPLIED, audiosink_test_pipe, FALSE},
++      "sndiosink", NULL, FALSE, TEST_PIPE_SUPPLIED, audiosink_test_pipe, FALSE},
    {PIPE_TYPE_AUDIOSINK, 0, N_("Custom"), NULL, NULL, TRUE, TEST_PIPE_SUPPLIED,
        audiosink_test_pipe, TRUE}
  };
@@ -15,7 +15,7 @@ $OpenBSD: patch-gstreamer-properties_pipeline-constants_c,v 1.6 2010/09/30 07:35
    {PIPE_TYPE_AUDIOSRC, 0, N_("PulseAudio Sound Server"), "pulsesrc", NULL,
        FALSE, TEST_PIPE_AUDIOSINK, NULL, FALSE},
 +  {PIPE_TYPE_AUDIOSRC, 0, N_("SNDIO - audio access library"),
-+      "libsndiosrc", NULL, FALSE, TEST_PIPE_AUDIOSINK, NULL, FALSE},
++      "sndiosrc", NULL, FALSE, TEST_PIPE_AUDIOSINK, NULL, FALSE},
    /* Note: using triangle instead of sine for test sound so we
     * can test the vorbis encoder as well (otherwise it'd compress too well) */
    {PIPE_TYPE_AUDIOSRC, 0, N_("Test Sound"), "audiotestsrc wave=triangle is-live=true",

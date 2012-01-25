@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2012/01/25 14:07:09 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.91.2
-REVISION=	9
+REVISION=	10
 
 EXTRACT_SUFX=	.tar.bz2
 
