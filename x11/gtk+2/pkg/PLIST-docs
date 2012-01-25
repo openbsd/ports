@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST-docs,v 1.35 2011/12/03 18:30:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.36 2012/01/25 09:05:18 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util/
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailMisc.html
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util-GailTextUtil.html
-share/gtk-doc/html/gail-libgail-util/gail-libgail-util.devhelp
 share/gtk-doc/html/gail-libgail-util/gail-libgail-util.devhelp2
 share/gtk-doc/html/gail-libgail-util/home.png
 share/gtk-doc/html/gail-libgail-util/index.html
@@ -86,7 +85,6 @@ share/gtk-doc/html/gdk/gdk-Testing.html
 share/gtk-doc/html/gdk/gdk-Threads.html
 share/gtk-doc/html/gdk/gdk-Visuals.html
 share/gtk-doc/html/gdk/gdk-Windows.html
-share/gtk-doc/html/gdk/gdk.devhelp
 share/gtk-doc/html/gdk/gdk.devhelp2
 share/gtk-doc/html/gdk/gobbler.png
 share/gtk-doc/html/gdk/gumby.png
@@ -528,7 +526,6 @@ share/gtk-doc/html/gtk/gtk-update-icon-cache.html
 share/gtk-doc/html/gtk/gtk-windows.html
 share/gtk-doc/html/gtk/gtk-x11.html
 share/gtk-doc/html/gtk/gtk-yes.png
-share/gtk-doc/html/gtk/gtk.devhelp
 share/gtk-doc/html/gtk/gtk.devhelp2
 share/gtk-doc/html/gtk/gtk.html
 share/gtk-doc/html/gtk/gtkbase.html

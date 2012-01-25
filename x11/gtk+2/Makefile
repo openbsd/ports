@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2011/12/03 18:30:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2012/01/25 09:05:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,17 +7,13 @@ COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
 COMMENT-guic=	gtk+ icon theme caching utility
 
-V=		2.24.8
+V=		2.24.9
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
-
-REVISION-main=	0
-REVISION-cups=	0
-REVISION-docs=	0
 
 CATEGORIES=	x11 devel
 
@@ -39,7 +35,7 @@ WANTLIB += ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre png z
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
 MULTI_PACKAGES=	-main -docs -cups -guic
 

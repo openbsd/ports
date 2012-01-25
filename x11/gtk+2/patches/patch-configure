@@ -1,12 +1,10 @@
-$OpenBSD: patch-configure,v 1.33 2011/11/10 19:41:02 ajacoutot Exp $
-
-./configure[23737]: ${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}: bad substitution
+$OpenBSD: patch-configure,v 1.34 2012/01/25 09:05:18 ajacoutot Exp $
 
 Do not force enable_man to yes.
 
---- configure.orig	Thu Nov 10 18:42:06 2011
-+++ configure	Thu Nov 10 20:09:57 2011
-@@ -25103,7 +25103,7 @@ fi
+--- configure.orig	Tue Jan 24 20:38:57 2012
++++ configure	Wed Jan 25 09:01:18 2012
+@@ -25332,7 +25332,7 @@ fi
  
  # Check whether --enable-man was given.
  if test "${enable_man+set}" = set; then :
