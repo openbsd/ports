@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.180 2011/12/23 14:51:21 sthen Exp $
+$OpenBSD: user.list,v 1.181 2012/01/25 20:55:44 dcoppa Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -200,3 +200,4 @@ id  user		group		port options
 689 _hoogle		_hoogle		devel/hs-hoogle
 690 _pgpool		_pgpool		databases/pgpool
 691 _natpmpd		_natpmpd	net/natpmpd
+692 _cntlm		_cntlm		www/cntlm
