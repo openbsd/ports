@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/25 19:33:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/25 13:18:54 dcoppa Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
-DISTNAME =		predis-0.6.6
-PKGNAME =		php-${DISTNAME}
-REVISION =		2
+DISTNAME =		Predis-0.7.1
+PKGNAME =		${DISTNAME:S/^P/php-p/}
 CATEGORIES =		www databases
 
-HOMEPAGE =		http://github.com/nrk/predis/wiki
+HOMEPAGE =		http://wiki.github.com/nrk/predis
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
@@ -17,24 +16,22 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.arcane-labs.com/download/OpenBSD/
+MASTER_SITES =		http://pear.nrk.io/get/
+EXTRACT_SUFX =		.tgz
+
+MODULES =		lang/php
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
 PKG_ARCH =		*
 
-# Although this library is not PEAR, installing it into
-# ${PREFIX}/pear/lib will make sure it's picked up by PHP
-# without the need to adjust the include path in php.ini
 PREFIX =		/var/www
 INSTDIR =		${PREFIX}/pear/lib/
 SUBST_VARS =		INSTDIR
 
-PHP_VERSION =		5
-
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.php ${INSTDIR}
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
+	cp -Rp ${WRKSRC}/lib/Predis ${INSTDIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
