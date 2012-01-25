@@ -1,25 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.3 2010/11/19 08:58:39 jasper Exp $
---- configure.ac.orig	Thu Oct  7 21:28:17 2010
-+++ configure.ac	Sun Oct 17 23:55:01 2010
-@@ -80,7 +80,11 @@ THREAD_IMPL=${with_thread}
- AC_SUBST(THREAD_IMPL)
- 
- if test "x${with_thread}" = "xpthread" ; then
--  case "$host_os" in 
-+  case "$host_os" in
-+    openbsd*)
-+      PTHREAD_CFLAGS=
-+      PTHREAD_LIBS=-pthread
-+      ;;
-     *)
-       PTHREAD_CFLAGS=
-       PTHREAD_LIBS=-lpthread
-@@ -129,8 +133,6 @@ if test "x$SCHRO_CVS" = "xyes"
- then
-   AS_COMPILER_FLAG(-Werror, SCHRO_CFLAGS="$SCHRO_CFLAGS -Werror")
+$OpenBSD: patch-configure_ac,v 1.4 2012/01/25 13:50:28 ajacoutot Exp $
+--- configure.ac.orig	Sun Jan 22 20:32:45 2012
++++ configure.ac	Sun Jan 22 21:48:48 2012
+@@ -135,8 +135,6 @@ then
+   AS_COMPILER_FLAG(-Wno-strict-overflow, SCHRO_CFLAGS="$SCHRO_CFLAGS -Wno-strict-overflow")
  fi
--
--AS_COMPILER_FLAG(-O3, CFLAGS=`echo $CFLAGS | sed s/O2/O3/`)
  
+-AS_COMPILER_FLAG(-O3, CFLAGS=`echo $CFLAGS | sed s/O2/O3/`)
+-
  # Enable severe pain
  #AS_COMPILER_FLAGS(COMPANY_CFLAGS,"-Wextra -Wno-missing-field-initializers -Wno-unused-parameter -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Winline -Wformat-nonliteral -Wformat-security -Wswitch-enum -Wswitch-default")
+ #COMPANY_CFLAGS="-Wextra -Wno-missing-field-initializers -Wno-unused-parameter -Wold-style-definition -Wdeclaration-after-statement -Wmissing-declarations -Wmissing-prototypes -Wredundant-decls -Wmissing-noreturn -Wshadow -Wpointer-arith -Wcast-align -Wwrite-strings -Winline -Wformat-nonliteral -Wformat-security -Wswitch-enum -Wswitch-default"
