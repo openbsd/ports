@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/21 12:04:20 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/25 21:46:08 kili Exp $
 
 COMMENT =		adapter to convert attoparsec Parsers into Iteratees
 
-DISTNAME =		attoparsec-iteratee-0.1.1
-REVISION =		5
+DISTNAME =		attoparsec-iteratee-0.4.0
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -19,11 +18,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-iteratee \
-			devel/hs-monads-fd \
-			devel/hs-mtl \
+RUN_DEPENDS +=		devel/hs-iteratee>=0.7,<0.9 \
 			devel/hs-transformers \
-			textproc/hs-attoparsec
+			textproc/hs-attoparsec>=0.8,<0.11
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
