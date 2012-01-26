@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/07/20 14:46:20 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/01/26 08:03:57 ajacoutot Exp $
 @newgroup _vscan:530
-@newuser _vscan:530:_vscan::Amavisd-new Daemon:/var/empty:/sbin/nologin
+@newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
 @extraunexec rm -fr /var/virusmails/*
 bin/amavisd-agent

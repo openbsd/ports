@@ -1,7 +1,7 @@
 # From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
 # $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.63 2011/11/13 13:24:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2012/01/26 08:03:57 ajacoutot Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn
@@ -22,7 +22,7 @@ CATEGORIES =	japanese
 MULTI_PACKAGES =	-main -dict -zh -zhdict -ko -kodict -xwnmo -data
 
 PKGNAME-main =		ja-Wnn-4.2
-REVISION-main =		4
+REVISION-main =		5
 PKGNAME-dict =		ja-Wnndict-4.2
 REVISION-dict =		0
 PKGNAME-zh =		zh-Wnn-4.2

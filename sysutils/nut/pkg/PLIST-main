@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2012/01/12 11:39:36 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2012/01/26 08:03:57 ajacoutot Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -8,7 +8,7 @@
 @pkgpath sysutils/nut,snmp
 @pkgpath sysutils/nut,no_cgi,snmp
 @newgroup ${NUT_USER}:${NUT_ID}
-@newuser ${NUT_USER}:${NUT_ID}:${NUT_ID}::UPS User:/var/empty:/sbin/nologin
+@newuser ${NUT_USER}:${NUT_ID}:${NUT_ID}:daemon:UPS User:/var/empty:/sbin/nologin
 @bin bin/apcsmart
 @bin bin/apcsmart-old
 @bin bin/bcmxcp

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/26 08:03:57 ajacoutot Exp $
 @newgroup _majordomo:520
-@newuser _majordomo:520:_majordomo::Majordomo:/root:/sbin/nologin
+@newuser _majordomo:520:_majordomo:daemon:Majordomo:/root:/sbin/nologin
 @extraunexec rm -rf /var/spool/majordomo/*
 @mode 755
 @owner _majordomo

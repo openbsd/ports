@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/11/25 08:55:24 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2012/01/26 08:03:57 ajacoutot Exp $
 @conflict gpsd-python-<=2.38p3
 @pkgpath misc/gpsd,-python
-@newuser _gpsd:551:dialer::GPS server:/nonexistent:/sbin/nologin
+@newuser _gpsd:551:dialer:daemon:GPS server:/nonexistent:/sbin/nologin
 %%SHARED%%
 @bin bin/cgps
 bin/gpscat

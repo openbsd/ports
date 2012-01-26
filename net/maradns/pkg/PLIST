@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/01/26 08:03:57 ajacoutot Exp $
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
-@newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
+@newuser _maradns:537:_maradns:daemon:MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
 @extraunexec rm -f ${SYSCONFDIR}/maradns/*
 @bin bin/askmara
 @bin bin/duende

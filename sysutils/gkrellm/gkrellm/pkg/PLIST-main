@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/01/26 08:03:57 ajacoutot Exp $
 @pkgpath sysutils/gkrellm/gkrellm
 @pkgpath sysutils/gkrellm/gkrellm,no_client
 @newgroup _gkrellmd:607
-@newuser _gkrellmd:607:_gkrellmd::GKrellM Daemon:/var/empty:/sbin/nologin
+@newuser _gkrellmd:607:_gkrellmd:daemon:GKrellM Daemon:/var/empty:/sbin/nologin
 include/gkrellm2/gkrellmd.h
 @man man/man1/gkrellmd.1
 @mode 2755
