@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.314 2012/01/20 19:28:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.315 2012/01/26 17:19:23 sthen Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -44,7 +44,8 @@
      SUBDIR += djview4
      SUBDIR += djvulibre
      SUBDIR += djvulibre,no_x11
-     SUBDIR += dmtx-utils
+# XXX requires ImageMagick-*-!no_x11 which conflicts in bulk
+#    SUBDIR += dmtx-utils
      SUBDIR += dpic
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
