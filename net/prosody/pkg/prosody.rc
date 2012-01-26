@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: prosody.rc,v 1.1 2012/01/26 10:27:15 sthen Exp $
+# $OpenBSD: prosody.rc,v 1.2 2012/01/26 10:32:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/prosodyctl"
-daemon_user="_prosody"
 daemon_flags="start"
+daemon_user="_prosody"
 
 . /etc/rc.d/rc.subr
 
