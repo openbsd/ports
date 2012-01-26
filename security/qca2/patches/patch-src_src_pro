@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_src_pro,v 1.1 2012/01/26 09:25:46 sebastia Exp $
+
+rename library to qca2
+
+--- src/src.pro.orig	Tue Jan 24 13:00:44 2012
++++ src/src.pro	Tue Jan 24 13:00:51 2012
+@@ -6,7 +6,7 @@ QCA_SRCBASE = .
+ 
+ TEMPLATE = lib
+ QT      -= gui
+-TARGET   = qca
++TARGET   = qca2
+ DESTDIR  = $$QCA_BASE/lib
+ windows:DLLDESTDIR = $$QCA_BASE/bin
+ 

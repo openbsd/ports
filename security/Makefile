@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.280 2012/01/22 17:24:24 kili Exp $
+# $OpenBSD: Makefile,v 1.281 2012/01/26 09:25:46 sebastia Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -209,6 +209,7 @@
      SUBDIR += py-pykpass
      SUBDIR += py-sslwrapper
      SUBDIR += qca
+     SUBDIR += qca2
      SUBDIR += qca-ossl
      SUBDIR += qca-tls
      SUBDIR += radiusniff

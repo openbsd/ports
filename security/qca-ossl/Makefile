@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/07 19:09:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/01/26 09:25:46 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
+REVISION =		0
 COMMENT =		SSL/TLS plugin for QCA2
 DISTNAME =		qca-ossl-2.0.0-beta3
 PKGNAME =		${DISTNAME:S/-beta/beta/}
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://delta.affinix.com/download/qca/2.0/plugins/
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB +=		crypto m qca ssl stdc++
+WANTLIB +=		crypto m qca2 ssl stdc++
 
 MODULES =		x11/qt4
 LIB_DEPENDS =		security/qca2
