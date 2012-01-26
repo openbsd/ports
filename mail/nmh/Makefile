@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2012/01/26 07:24:08 bentley Exp $
 
 COMMENT=	new MH mail handling program
 
-DISTNAME=		nmh-1.3
+DISTNAME=		nmh-1.4
 CATEGORIES=     	mail
 MASTER_SITES=		${MASTER_SITE_SAVANNAH:=nmh/}
 HOMEPAGE=		http://www.nongnu.org/nmh/
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c termcap
 
-MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=		William Yodlowsky <william@openbsd.org>
 
 SYSCONFDIR=		${PREFIX}/lib/nmh
 CONFIGURE_STYLE=	gnu

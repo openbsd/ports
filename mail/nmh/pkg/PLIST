@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/05/16 09:35:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/01/26 07:24:08 bentley Exp $
 @bin bin/ali
 @bin bin/anno
 @bin bin/burst
@@ -6,9 +6,11 @@
 @bin bin/dist
 @bin bin/flist
 @bin bin/flists
+@bin bin/fnext
 @bin bin/folder
 @bin bin/folders
 @bin bin/forw
+@bin bin/fprev
 @bin bin/inc
 @bin bin/install-mh
 @bin bin/mark
@@ -22,6 +24,7 @@
 @bin bin/mhstore
 @bin bin/msgchk
 @bin bin/msh
+@bin bin/new
 @bin bin/next
 @bin bin/packf
 @bin bin/pick
@@ -36,6 +39,7 @@
 bin/sendfiles
 @bin bin/show
 @bin bin/sortm
+@bin bin/unseen
 @bin bin/whatnow
 @bin bin/whom
 lib/nmh/
@@ -86,9 +90,11 @@ lib/nmh/scan.unseen
 @man man/man1/dist.1
 @man man/man1/flist.1
 @man man/man1/flists.1
+@man man/man1/fnext.1
 @man man/man1/folder.1
 @man man/man1/folders.1
 @man man/man1/forw.1
+@man man/man1/fprev.1
 @man man/man1/inc.1
 @man man/man1/install-mh.1
 @man man/man1/mark.1
@@ -104,6 +110,7 @@ lib/nmh/scan.unseen
 @man man/man1/mhstore.1
 @man man/man1/msgchk.1
 @man man/man1/msh.1
+@man man/man1/new.1
 @man man/man1/next.1
 @man man/man1/nmh.1
 @man man/man1/packf.1
@@ -124,6 +131,7 @@ lib/nmh/scan.unseen
 @man man/man1/show.1
 @man man/man1/slocal.1
 @man man/man1/sortm.1
+@man man/man1/unseen.1
 @man man/man1/whatnow.1
 @man man/man1/whom.1
 @man man/man5/mh-alias.5
