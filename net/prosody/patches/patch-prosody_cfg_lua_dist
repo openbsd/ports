@@ -1,7 +1,7 @@
-$OpenBSD: patch-prosody_cfg_lua_dist,v 1.2 2010/07/26 18:11:42 jolan Exp $
---- prosody.cfg.lua.dist.orig	Sat Jun 12 19:23:02 2010
-+++ prosody.cfg.lua.dist	Mon Jul 26 12:56:05 2010
-@@ -22,8 +22,18 @@
+$OpenBSD: patch-prosody_cfg_lua_dist,v 1.3 2012/01/26 10:27:15 sthen Exp $
+--- prosody.cfg.lua.dist.orig	Tue May  3 19:18:54 2011
++++ prosody.cfg.lua.dist	Tue May  3 19:23:01 2011
+@@ -22,6 +22,14 @@
  -- Example: admins = { "user1@example.com", "user2@example.net" }
  admins = { }
  
@@ -15,26 +15,24 @@ $OpenBSD: patch-prosody_cfg_lua_dist,v 1.2 2010/07/26 18:11:42 jolan Exp $
 +
  -- Enable use of libevent for better performance under high load
  -- For more information see: http://prosody.im/doc/libevent
-+
-+--XXX libevent + daemonize don't work together for some reason
  --use_libevent = true;
- 
- -- This is the list of modules Prosody will load on startup.
-@@ -54,7 +64,7 @@ modules_enabled = {
- 		"register"; -- Allow users to register on this server using a client and change passwords
+@@ -59,7 +67,7 @@ modules_enabled = {
+ 		--"admin_telnet"; -- Opens telnet console interface on localhost port 5582
  
  	-- Other specific functionality
 -		--"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
 +		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
- 		--"console"; -- Opens admin telnet interface on localhost port 5582
  		--"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
  		--"httpserver"; -- Serve static files from a directory over HTTP
-@@ -90,7 +100,7 @@ ssl = {
- 
+ 		--"groups"; -- Shared roster support
+@@ -123,8 +131,8 @@ authentication = "internal_plain"
  -- Logging configuration
  -- For advanced logging see http://prosody.im/doc/logging
--log = "prosody.log";
-+log = "/var/prosody/prosody.log"
- debug = false; -- Log debug messages?
- 
- ----------- Virtual hosts -----------
+ log = {
+-	info = "prosody.log"; -- Change 'info' to 'debug' for verbose logging
+-	error = "prosody.err";
++	info = "/var/prosody/prosody.log"; -- Change 'info' to 'debug' for verbose logging
++	error = "/var/prosody/prosody.err";
+ 	-- "*syslog"; -- Uncomment this for logging to syslog
+ 	-- "*console"; -- Log to the console, useful for debugging with daemonize=false
+ }
