@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/26 15:37:48 okan Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-DISTNAME=	App-ClusterSSH-4.00_07
-PKGNAME=	clusterssh-4.00.07
-REVISION=		0
+DISTNAME=	App-ClusterSSH-4.01_01
+PKGNAME=	clusterssh-4.01.01
 
 CATEGORIES=	security
 
@@ -22,9 +21,18 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}
 
 MODULES=	cpan
 RUN_DEPENDS=	x11/p5-Tk \
-		x11/p5-X11-Protocol
+		x11/p5-X11-Protocol \
+		devel/p5-Try-Tiny \
+		devel/p5-Exception-Class \
+		devel/p5-Readonly \
+		sysutils/p5-File-Which
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS=devel/p5-Test-Trap
+
+# one test fails due to hard coded xterm path
+REGRESS_DEPENDS=devel/p5-Test-Trap \
+		devel/p5-Test-Pod \
+		devel/p5-Test-Pod-Coverage \
+		devel/p5-Test-DistManifest
 
 MAKE_ENV=	TEST_POD=Yes
 
