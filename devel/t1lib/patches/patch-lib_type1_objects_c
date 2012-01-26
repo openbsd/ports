@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_type1_objects_c,v 1.1 2012/01/26 08:48:54 ajacoutot Exp $
+
+CVE-2011-0764, CVE-2011-1552, CVE-2011-1553 and CVE-2011-1554
+
+--- lib/type1/objects.c.orig	Sun Dec 23 10:49:42 2007
++++ lib/type1/objects.c	Wed Jan 25 21:50:24 2012
+@@ -1137,12 +1137,13 @@ char *t1_get_abort_message( int number)
+     "Context:  out of them", /* 46 */
+     "MatrixInvert:  can't", /* 47 */
+     "xiStub called", /* 48 */
+-    "Illegal access type1 abort() message" /* 49 */
++    "Lines this big not supported", /* 49 */
++    "Illegal access type1 abort() message" /* 50 */
+   };
+ 
+-  /* no is valid from 1 to 48 */
+-  if ( (number<1)||(number>48))
+-    number=49;
++  /* no is valid from 1 to 49 */
++  if ( (number<1)||(number>49))
++    number=50;
+   return( err_msgs[number-1]);
+     
+ }

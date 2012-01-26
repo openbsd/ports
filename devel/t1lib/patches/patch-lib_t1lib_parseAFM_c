@@ -1,0 +1,24 @@
+$OpenBSD: patch-lib_t1lib_parseAFM_c,v 1.1 2012/01/26 08:48:54 ajacoutot Exp $
+
+CVE-2010-2642 and CVE-2011-0433
+
+--- lib/t1lib/parseAFM.c.orig	Sun Dec 23 10:49:42 2007
++++ lib/t1lib/parseAFM.c	Wed Jan 25 21:52:24 2012
+@@ -199,7 +199,7 @@ static char *token(stream) 
+     idx = 0;
+     
+     while (ch != EOF && ch != ' ' && ch != CR  && ch != LF &&
+-	   ch != CTRL_Z && ch != '\t' && ch != ':' && ch != ';'){
++	   ch != CTRL_Z && ch != '\t' && ch != ':' && ch != ';' && idx < (MAX_NAME - 1)){
+       ident[idx++] = ch;
+       ch = fgetc(stream);
+     } /* while */
+@@ -235,7 +235,7 @@ static char *linetoken(stream)
+     while ((ch = fgetc(stream)) == ' ' || ch == '\t' ); 
+     
+     idx = 0;
+-    while (ch != EOF && ch != CR  && ch != LF && ch != CTRL_Z) 
++    while (ch != EOF && ch != CR  && ch != LF && ch != CTRL_Z && idx < (MAX_NAME - 1)) 
+     {
+         ident[idx++] = ch;
+         ch = fgetc(stream);
