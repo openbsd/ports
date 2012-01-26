@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.8 2011/07/04 07:41:37 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.9 2012/01/26 10:13:15 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
@@ -509,7 +509,6 @@ webapps/tomcat-docs/architecture/startup.html
 webapps/tomcat-docs/architecture/startup/serverStartup.pdf
 webapps/tomcat-docs/architecture/startup/serverStartup.txt
 webapps/tomcat-docs/balancer-howto.html
-webapps/tomcat-docs/build.xml
 webapps/tomcat-docs/building.html
 webapps/tomcat-docs/catalina/
 webapps/tomcat-docs/catalina/docs/
@@ -790,6 +789,13 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/SecurityRoleRef
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-frame.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-summary.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/deploy/package-tree.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/Constants.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/FailedRequestFilter.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/SetCharacterEncodingFilter.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/package-frame.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/package-summary.html
+webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/filters/package-tree.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/launcher/
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/launcher/CatalinaLaunchFilter.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/launcher/package-frame.html
@@ -1449,6 +1455,7 @@ webapps/tomcat-docs/config/
 webapps/tomcat-docs/config/ajp.html
 webapps/tomcat-docs/config/context.html
 webapps/tomcat-docs/config/engine.html
+webapps/tomcat-docs/config/filter.html
 webapps/tomcat-docs/config/globalresources.html
 webapps/tomcat-docs/config/host.html
 webapps/tomcat-docs/config/http.html
@@ -1459,6 +1466,7 @@ webapps/tomcat-docs/config/printer/
 webapps/tomcat-docs/config/printer/ajp.html
 webapps/tomcat-docs/config/printer/context.html
 webapps/tomcat-docs/config/printer/engine.html
+webapps/tomcat-docs/config/printer/filter.html
 webapps/tomcat-docs/config/printer/globalresources.html
 webapps/tomcat-docs/config/printer/host.html
 webapps/tomcat-docs/config/printer/http.html

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/10/17 11:11:46 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2012/01/26 10:13:15 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -104,7 +104,7 @@ tomcat/common/i18n/tomcat-i18n-fr.jar
 tomcat/common/i18n/tomcat-i18n-ja.jar
 tomcat/common/lib/
 tomcat/common/lib/commons-el.jar
-tomcat/common/lib/jasper-compiler-jdt.jar
+tomcat/common/lib/ecj-3.7.jar
 tomcat/common/lib/jasper-compiler.jar
 tomcat/common/lib/jasper-runtime.jar
 tomcat/common/lib/jsp-api.jar

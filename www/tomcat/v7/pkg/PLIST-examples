@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2011/12/05 11:22:10 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.3 2012/01/26 10:13:15 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -401,6 +401,7 @@ webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.htm
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
+webapps/docs/api/org/apache/catalina/mbeans/MBeanDumper.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
 webapps/docs/api/org/apache/catalina/mbeans/MemoryUserDatabaseMBean.html
@@ -429,6 +430,7 @@ webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.html
 webapps/docs/api/org/apache/catalina/realm/MemoryRealm.html
 webapps/docs/api/org/apache/catalina/realm/MemoryRuleSet.html
+webapps/docs/api/org/apache/catalina/realm/NullRealm.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
@@ -1151,6 +1153,8 @@ webapps/docs/api/org/apache/juli/logging/
 webapps/docs/api/org/apache/juli/logging/Log.html
 webapps/docs/api/org/apache/juli/logging/LogConfigurationException.html
 webapps/docs/api/org/apache/juli/logging/LogFactory.html
+webapps/docs/api/org/apache/juli/logging/UserDataHelper.Mode.html
+webapps/docs/api/org/apache/juli/logging/UserDataHelper.html
 webapps/docs/api/org/apache/juli/logging/package-frame.html
 webapps/docs/api/org/apache/juli/logging/package-summary.html
 webapps/docs/api/org/apache/juli/logging/package-tree.html
@@ -1281,6 +1285,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/AbstractCreateStatement
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.StatementProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/AbstractQueryReport.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/ConnectionState.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/QueryTimeoutInterceptor.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/ResetAbandonedTimer.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.QueryStats.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/interceptor/SlowQueryReport.html
