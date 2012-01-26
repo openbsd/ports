@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/25 11:30:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/01/26 11:27:56 nigel Exp $
 
 COMMENT = 	naev game data
 
@@ -12,7 +12,7 @@ PKG_ARCH = 	*
 
 do-extract:
 	${INSTALL_DATA_DIR} ${WRKSRC}
-	cp ${DISTDIR}/${DISTNAME} ${WRKSRC}
+	cp ${FULLDISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/naev
