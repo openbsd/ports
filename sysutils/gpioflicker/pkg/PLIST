@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/09/15 16:16:39 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/01/26 19:31:38 sthen Exp $
 @man man/man8/gpioflicker.8
 sbin/gpioflicker
+@rcscript ${RCDIR}/gpioflicker
