@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.7 2011/12/14 18:16:51 robert Exp $
+# $OpenBSD: gcc4.port.mk,v 1.8 2012/01/26 13:17:22 pascal Exp $
 
 MODGCC4_ARCHS ?=
 MODGCC4_LANGS ?=
@@ -41,7 +41,7 @@ _MODGCC4_LINKS += egcc gcc egcc cc
 BUILD_DEPENDS += lang/gcc/4.6,-c++>=4.6,<4.7
 MODGCC4STDCPP = estdc++
 LIB_DEPENDS += lang/gcc/4.6,-estdc>=4.6,<4.7
-WANTLIB += estdc++>=12
+WANTLIB += estdc++>=14
 _MODGCC4_LINKS += eg++ g++ eg++ c++
 .  endif
 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libiberty_cp-demangle_c,v 1.1 2012/01/26 13:17:22 pascal Exp $
+--- libiberty/cp-demangle.c.orig	Wed Jan 25 10:50:45 2012
++++ libiberty/cp-demangle.c	Wed Jan 25 10:54:17 2012
+@@ -3409,7 +3409,7 @@ static inline void
+ d_append_num (struct d_print_info *dpi, long l)
+ {
+   char buf[25];
+-  sprintf (buf,"%ld", l);
++  snprintf (buf, 25, "%ld", l);
+   d_append_string (dpi, buf);
+ }
+ 
+@@ -5015,7 +5015,7 @@ __cxa_demangle (const char *mangled_name, char *output
+     {
+       if (strlen (demangled) < *length)
+ 	{
+-	  strcpy (output_buffer, demangled);
++	  strlcpy (output_buffer, demangled, *length);
+ 	  free (demangled);
+ 	  demangled = output_buffer;
+ 	}
