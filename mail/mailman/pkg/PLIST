@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/01/26 11:32:06 ajacoutot Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
@@ -2457,5 +2457,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/mailman/
 share/examples/mailman/sitelist.cfg
 @sample /var/spool/mailman/data/sitelist.cfg
+@exec ln -sf %D/lib/mailman/mail/mailman /usr/libexec/sm.bin/mailman
+@unexec-delete rm -f /usr/libexec/sm.bin/mailman
 @extra /var/cron/tabs/_mailman
 @rcscript ${RCDIR}/mailman
