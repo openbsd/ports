@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/25 22:00:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/27 09:54:45 dcoppa Exp $
 
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.92.1
+REVISION =		0
 CATEGORIES =		www
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cntlm/}
 HOMEPAGE =		http://awk.cz/cntlm/
@@ -22,7 +23,6 @@ FAKE_FLAGS =		INSTALL_DATA="${INSTALL_DATA}" \
 
 CONFIGURE_STYLE =	simple
 ALL_TARGET =		cntlm
-USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
