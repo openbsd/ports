@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/27 04:13:05 william Exp $
 
 COMMENT=	browse or page through a text file
 
 DISTNAME=	most-5.0.0a
+REVISION=	0
 CATEGORIES=	misc
 
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
-		http://openbsd.rutgers.edu/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/
 
 LIB_DEPENDS=	devel/libslang
-
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
