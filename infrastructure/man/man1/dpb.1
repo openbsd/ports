@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.29 2012/01/14 12:40:35 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.30 2012/01/27 19:03:02 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: January 14 2012 $
+.Dd $Mdocdate: January 27 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -514,7 +514,9 @@ with
 .Ar ts
 a timestamp from Unix epoch.
 .Pp
-When cleaning up old files, it's vital to check both the checksum and
+When cleaning up old files, with a tool such as
+.Xr clean-old-distfiles 1 ,
+it is vital to check both the checksum and
 the file name: since mirroring stores permanent links under 
 .Pa by_cipher ,
 files which are still needed will appear in history under their old
@@ -734,6 +736,7 @@ relying on
 .Xr ssh_config 5
 for any special cases.
 .Sh SEE ALSO
+.Xr clean-old-distfiles ,
 .Xr pkgpath 7
 .Sh AUTHOR
 Marc Espie

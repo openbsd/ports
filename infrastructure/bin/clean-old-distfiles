@@ -1,0 +1,101 @@
+#! /usr/bin/perl
+# ex:ts=8 sw=4:
+# $OpenBSD: clean-old-distfiles,v 1.1 2012/01/27 19:03:02 espie Exp $
+#
+# Copyright (c) 2012 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+use feature qw(say);
+use OpenBSD::Getopt;
+use OpenBSD::md5;
+
+our ($opt_v, $opt_n);
+getopts('vn');
+
+sub really_remove
+{
+	my $file = shift;
+	say "rm $file" if $opt_v;
+	return if $opt_n;
+	if (!unlink $file) {
+		say STDERR "Couldn't remove $file: $!";
+	}
+}
+
+sub remove_file
+{
+	my ($file, $sha) = @_;
+	# let's do i-node caching to avoid doing the same file twice.
+	my $basename = $file;
+	my $inode;
+	$basename =~ s/^.*\///; # remove directory
+	$sha =~ m/(..)/;
+	my $link = "by_cipher/sha256/$1/$sha/$basename";
+	if (-f $link) {
+		$inode = (stat _)[1];
+		really_remove($link);
+	}
+	if (-f $file) {
+		my $inode2 = (stat _)[1];
+		if (defined $inode && $inode2 == $inode) {
+			really_remove($file);
+		} else {
+			my $ck = OpenBSD::sha->new($file);
+			if ($ck->stringize eq $sha) {
+				really_remove($file);
+			} else {
+				say STDERR "SHA256 mismatch on $file\n";
+			}
+	    	}
+    	}
+}
+
+my $cutdate //=  $ARGV[1];
+
+my $PORTSDIR = $ENV{PORTSDIR} // '/usr/ports';
+my $DISTDIR = $ENV{DISTDIR} // "$PORTSDIR/distfiles";
+chdir($DISTDIR) or die "Can't chdir to $DISTDIR";
+
+open my $fh, '<', "history" or die "No history to prune";
+my $fh2;
+
+unless ($opt_n) {
+	open $fh2, '>', "history.new" or die "Can't write new history";
+}
+
+while (<$fh>) {
+	my ($ts, $file, $sha);
+	if (m/^(\d+)\s+SHA256\s*\((.*)\) \= (.*)$/) {
+		($ts, $file, $sha) = ($1, $2, $3);
+	} else {
+		die "Bad history line $_";
+	}
+	if (defined $cutdate && $ts > $cutdate) {
+		if ($fh2) {
+			print $fh2 $_;
+		}
+	} else {
+		remove_file($file, $sha);
+	}
+}
+close $fh;
+
+if ($fh2) {
+	close $fh2;
+	unlink('history');
+	rename('history.new', 'history');
+}
+
