@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/30 15:35:28 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/01/27 20:59:48 espie Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -399,10 +399,14 @@ ${DRUPAL_THEMES}/
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/sites/default/
-@mode 640
 @group www
+@mode 640
 ${DRUPAL_ROOT}/sites/default/default.settings.php
+@group www
+@mode 660
 @sample ${DRUPAL_ROOT}/sites/default/settings.php
+@mode 770
+@sample ${DRUPAL_ROOT}/sites/default/files/
 @mode
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/themes/

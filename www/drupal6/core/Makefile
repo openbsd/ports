@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2012/01/11 22:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/01/27 20:59:48 espie Exp $
 
 COMMENT =	powerful content management system
 
 DISTNAME =	drupal-6.22
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
-REVISION =	6
+REVISION =	7
 
 MODULES=	lang/php
 RUN_DEPENDS=	php-mysql-${MODPHP_VSPEC}|php-mysqli-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql \
