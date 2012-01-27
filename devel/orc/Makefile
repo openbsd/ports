@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/17 09:06:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/01/27 09:44:11 ajacoutot Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -25,5 +25,11 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
+
+# XXX segfault in orc_audio_convert_unpack_float_32() with Altivec when
+# playing a video.
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ARGS=	--enable-backend=none
+.endif
 
 .include <bsd.port.mk>
