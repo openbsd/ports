@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.30 2011/12/01 17:10:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2012/01/27 08:19:42 dcoppa Exp $
+
+BROKEN-sparc64 =	SIGBUS on sparc64 when starting
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
