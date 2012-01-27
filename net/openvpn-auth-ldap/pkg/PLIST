@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/27 13:45:50 jsing Exp $
+%%SHARED%%
+share/examples/openvpn-auth-ldap/
+share/examples/openvpn-auth-ldap/auth-ldap.conf
