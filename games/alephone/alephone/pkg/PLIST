@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/16 15:10:55 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/27 21:35:24 phessler Exp $
 @bin bin/alephone
 @man man/man6/alephone.6
 share/AlephOne/
@@ -10,7 +10,10 @@ share/AlephOne/MML/Transparent_Sprites.mml
 share/AlephOne/Themes/
 share/AlephOne/Themes/Default/
 share/AlephOne/Themes/Default/DejaVuLGCSansCondensed-Bold.ttf
+share/AlephOne/Themes/Default/DejaVuLGCSansCondensed-BoldBold.ttf
 share/AlephOne/Themes/Default/DejaVuLGCSansCondensed-BoldOblique.ttf
+share/AlephOne/Themes/Default/LICENSE-DejaVu
+share/AlephOne/Themes/Default/SquarishSansCT.README
 share/AlephOne/Themes/Default/Squarish_Sans_CT_Medium.ttf
 share/AlephOne/Themes/Default/button_c.bmp
 share/AlephOne/Themes/Default/button_c_p.bmp

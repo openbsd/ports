@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile.inc,v 1.3 2010/11/16 11:23:25 espie Exp $
+#	$OpenBSD: Makefile.inc,v 1.4 2012/01/27 21:35:24 phessler Exp $
 
 DIST_SUBDIR ?=	alephone
 
@@ -12,6 +12,7 @@ MASTER_SITES1 =	http://www.lhowon.org/
 MASTER_SITES2 =	http://nardofiles.bungie.org/
 MASTER_SITES3 =	http://www.appleswitch.com/uploads/
 MASTER_SITES4 = http://archives2.bungie.org/manuals/
+MASTER_SITES5 = http://files3.bungie.org/trilogy/
 
 RUN_DEPENDS =	games/alephone/alephone
 
