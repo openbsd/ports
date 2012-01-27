@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/27 04:12:19 william Exp $
 
 COMMENT-main=	OCR software
 COMMENT-gui=	gocr tcl/tk frontend
@@ -8,12 +8,11 @@ DISTNAME=	gocr-$V
 
 PKGNAME-main=	gocr-$V
 PKGNAME-gui=	gocr-gui-$V
-REVISION-gui =	0
+REVISION-main =	0
+REVISION-gui =	1
 
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=jocr/}
-
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 HOMEPAGE=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
