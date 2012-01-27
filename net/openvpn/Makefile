@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2012/01/23 18:07:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2012/01/27 12:30:28 jsing Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.2.2
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net security
 
 HOMEPAGE=	http://openvpn.net/
@@ -29,9 +29,13 @@ CONFIGURE_ARGS+= --with-lzo-headers=${DEPBASE}/include \
 		--with-lzo-lib=${DEPBASE}/lib \
 		--enable-password-save
 
+INCLUDE_DIR=	${PREFIX}/include/openvpn
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
 
 post-install:
+	${INSTALL_DATA_DIR} ${INCLUDE_DIR}
+	${INSTALL_DATA} ${WRKSRC}/openvpn-plugin.h \
+		${INCLUDE_DIR}/openvpn-plugin.h
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-config-files
 	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/sample-keys
