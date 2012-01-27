@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/01/27 04:14:03 william Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
 V=			12.4
-REVISION=		0
+REVISION=		1
 DISTNAME=		mailx-${V}
 PKGNAME=		nail-${V}
 CATEGORIES=		mail
 HOMEPAGE=		http://heirloom.sourceforge.net/mailx.html
-
-MAINTAINER=		William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
