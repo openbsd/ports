@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/01/11 02:01:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2012/01/28 08:07:26 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-sqlite=		SQLite database access module for PowerDNS
 COMMENT-sqlite3=	SQLite3 database access module for PowerDNS
 COMMENT-ldap=		LDAP module for PowerDNS
 
-V=			2.9.22.5
+V=			2.9.22.6
 DISTNAME=		pdns-${V}
 PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
