@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/22 10:28:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}user_import/
@@ -9,7 +9,6 @@ ${DRUPAL_MODS}user_import/supported/
 ${DRUPAL_MODS}user_import/supported/alt_login.inc
 @comment ${DRUPAL_MODS}user_import/supported/alt_login.inc.orig
 ${DRUPAL_MODS}user_import/supported/content_profile.inc
-${DRUPAL_MODS}user_import/supported/nodeprofile.inc
 ${DRUPAL_MODS}user_import/supported/profile.inc
 ${DRUPAL_MODS}user_import/supported/subscribed.inc
 ${DRUPAL_MODS}user_import/supported/user.inc
@@ -20,6 +19,9 @@ ${DRUPAL_MODS}user_import/tests/user_import.test
 ${DRUPAL_MODS}user_import/tests/user_import_basics.test
 ${DRUPAL_MODS}user_import/tests/user_import_nodeprofile.test
 ${DRUPAL_MODS}user_import/tests/user_import_profile.test
+${DRUPAL_MODS}user_import/translations/
+${DRUPAL_MODS}user_import/translations/ja.po
+${DRUPAL_MODS}user_import/translations/user_import.pot
 ${DRUPAL_MODS}user_import/user_import.info
 ${DRUPAL_MODS}user_import/user_import.install
 ${DRUPAL_MODS}user_import/user_import.module

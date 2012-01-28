@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/08 10:08:12 stephan Exp $
-@incompatibility drupal6-cck-<2.6
+@comment $OpenBSD: PLIST,v 1.7 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
+@incompatibility drupal6-cck-<2.6
 ${DRUPAL_MODS}views/
 ${DRUPAL_MODS}views/CHANGELOG.txt
 ${DRUPAL_MODS}views/LICENSE.txt
@@ -30,6 +30,7 @@ ${DRUPAL_MODS}views/handlers/views_handler_field_counter.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_custom.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_date.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_markup.inc
+${DRUPAL_MODS}views/handlers/views_handler_field_math.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_numeric.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_prerender_list.inc
 ${DRUPAL_MODS}views/handlers/views_handler_field_url.inc
@@ -153,14 +154,16 @@ ${DRUPAL_MODS}views/js/ajax_view.js
 ${DRUPAL_MODS}views/js/base.js
 ${DRUPAL_MODS}views/js/dependent.js
 ${DRUPAL_MODS}views/js/tabs.js
+${DRUPAL_MODS}views/js/view-list.js
 ${DRUPAL_MODS}views/modules/
 ${DRUPAL_MODS}views/modules/aggregator/
 ${DRUPAL_MODS}views/modules/aggregator.views.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_argument_aggregator_category_cid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_argument_aggregator_fid.inc
+${DRUPAL_MODS}views/modules/aggregator/views_handler_argument_aggregator_iid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_category.inc
-${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_item_description.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_title_link.inc
+${DRUPAL_MODS}views/modules/aggregator/views_handler_field_aggregator_xss.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_handler_filter_aggregator_category_cid.inc
 ${DRUPAL_MODS}views/modules/aggregator/views_plugin_row_aggregator_rss.inc
 ${DRUPAL_MODS}views/modules/book.views.inc
@@ -178,6 +181,7 @@ ${DRUPAL_MODS}views/modules/comment/views_handler_field_comment_link_edit.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_comment_link_reply.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_comment_node_link.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_comment_username.inc
+${DRUPAL_MODS}views/modules/comment/views_handler_field_last_comment_timestamp.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_ncs_last_comment_name.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_ncs_last_updated.inc
 ${DRUPAL_MODS}views/modules/comment/views_handler_field_node_comment.inc
@@ -366,18 +370,7 @@ ${DRUPAL_MODS}views/theme/views-view-summary.tpl.php
 ${DRUPAL_MODS}views/theme/views-view-table.tpl.php
 ${DRUPAL_MODS}views/theme/views-view-unformatted.tpl.php
 ${DRUPAL_MODS}views/theme/views-view.tpl.php
-${DRUPAL_MODS}views/translations/
-${DRUPAL_MODS}views/translations/de.po
-${DRUPAL_MODS}views/translations/eo.po
-${DRUPAL_MODS}views/translations/fr.po
-${DRUPAL_MODS}views/translations/hu.po
-${DRUPAL_MODS}views/translations/it.po
-${DRUPAL_MODS}views/translations/pl.po
-${DRUPAL_MODS}views/translations/pt-br.po
-${DRUPAL_MODS}views/translations/sv.po
-${DRUPAL_MODS}views/translations/uk-ua.po
-${DRUPAL_MODS}views/translations/uk.po
-${DRUPAL_MODS}views/translations/views.pot
+${DRUPAL_MODS}views/views.drush.inc
 ${DRUPAL_MODS}views/views.info
 ${DRUPAL_MODS}views/views.install
 ${DRUPAL_MODS}views/views.module
@@ -386,5 +379,6 @@ ${DRUPAL_MODS}views/views_export/
 ${DRUPAL_MODS}views/views_export/views_export.css
 ${DRUPAL_MODS}views/views_export/views_export.info
 ${DRUPAL_MODS}views/views_export/views_export.module
+${DRUPAL_MODS}views/views_revert.drush.inc
 ${DRUPAL_MODS}views/views_ui.info
 ${DRUPAL_MODS}views/views_ui.module

@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/03 16:25:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}scheduler/
+${DRUPAL_MODS}scheduler/.cvsignore
 ${DRUPAL_MODS}scheduler/LICENSE.txt
 ${DRUPAL_MODS}scheduler/README.txt
 ${DRUPAL_MODS}scheduler/scheduler.info
 ${DRUPAL_MODS}scheduler/scheduler.install
 ${DRUPAL_MODS}scheduler/scheduler.module
 ${DRUPAL_MODS}scheduler/scheduler.views.inc
+${DRUPAL_MODS}scheduler/scheduler_handler_field_scheduler_countdown.inc
 ${DRUPAL_MODS}scheduler/scheduler_vertical_tabs.js
 ${DRUPAL_MODS}scheduler/translations/
 ${DRUPAL_MODS}scheduler/translations/da.po
@@ -16,7 +18,9 @@ ${DRUPAL_MODS}scheduler/translations/fr.po
 ${DRUPAL_MODS}scheduler/translations/hu.po
 ${DRUPAL_MODS}scheduler/translations/ja.po
 ${DRUPAL_MODS}scheduler/translations/nl.po
+${DRUPAL_MODS}scheduler/translations/pt-pt.po
 ${DRUPAL_MODS}scheduler/translations/scheduler.pot
 ${DRUPAL_MODS}scheduler/translations/sk.po
+${DRUPAL_MODS}scheduler/translations/sv.po
 ${DRUPAL_MODS}scheduler/translations/uk-ua.po
 ${DRUPAL_MODS}scheduler/translations/uk.po

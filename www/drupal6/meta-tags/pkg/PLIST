@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/22 10:28:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}nodewords/
@@ -12,7 +12,6 @@ ${DRUPAL_MODS}nodewords/includes/image.inc
 ${DRUPAL_MODS}nodewords/includes/node.inc
 ${DRUPAL_MODS}nodewords/includes/taxonomy.inc
 ${DRUPAL_MODS}nodewords/includes/taxonomy_menu.inc
-${DRUPAL_MODS}nodewords/includes/tracker.inc
 ${DRUPAL_MODS}nodewords/includes/uc_catalog.inc
 ${DRUPAL_MODS}nodewords/includes/user.inc
 ${DRUPAL_MODS}nodewords/nodewords.admin.inc
@@ -25,27 +24,11 @@ ${DRUPAL_MODS}nodewords/nodewords_basic/
 ${DRUPAL_MODS}nodewords/nodewords_basic/nodewords_basic.info
 ${DRUPAL_MODS}nodewords/nodewords_basic/nodewords_basic.install
 ${DRUPAL_MODS}nodewords/nodewords_basic/nodewords_basic.module
-${DRUPAL_MODS}nodewords/nodewords_basic/translations/
-${DRUPAL_MODS}nodewords/nodewords_basic/translations/nodewords_basic.de.po
-${DRUPAL_MODS}nodewords/nodewords_basic/translations/nodewords_basic.pot
 ${DRUPAL_MODS}nodewords/nodewords_extra/
 ${DRUPAL_MODS}nodewords/nodewords_extra/nodewords_extra.info
 ${DRUPAL_MODS}nodewords/nodewords_extra/nodewords_extra.install
 ${DRUPAL_MODS}nodewords/nodewords_extra/nodewords_extra.module
-${DRUPAL_MODS}nodewords/nodewords_extra/translations/
-${DRUPAL_MODS}nodewords/nodewords_extra/translations/nodewords_extra.de.po
-${DRUPAL_MODS}nodewords/nodewords_extra/translations/nodewords_extra.pot
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/nodewords_verification_tags.info
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/nodewords_verification_tags.install
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/nodewords_verification_tags.module
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/translations/
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/translations/nodewords_verification_tags.de.po
-${DRUPAL_MODS}nodewords/nodewords_verification_tags/translations/nodewords_verification_tags.pot
-${DRUPAL_MODS}nodewords/translations/
-${DRUPAL_MODS}nodewords/translations/nodewords.de.po
-${DRUPAL_MODS}nodewords/translations/nodewords.fr.po
-${DRUPAL_MODS}nodewords/translations/nodewords.hu.po
-${DRUPAL_MODS}nodewords/translations/nodewords.ja.po
-${DRUPAL_MODS}nodewords/translations/nodewords.pot
-${DRUPAL_MODS}nodewords/translations/nodewords.ru.po
+${DRUPAL_MODS}nodewords/nodewords_og/
+${DRUPAL_MODS}nodewords/nodewords_og/nodewords_og.info
+${DRUPAL_MODS}nodewords/nodewords_og/nodewords_og.install
+${DRUPAL_MODS}nodewords/nodewords_og/nodewords_og.module

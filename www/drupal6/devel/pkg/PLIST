@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/08 13:31:15 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}devel/
+${DRUPAL_MODS}devel/.gitignore
 ${DRUPAL_MODS}devel/LICENSE.txt
 ${DRUPAL_MODS}devel/README.txt
 ${DRUPAL_MODS}devel/README_devel_node_access.txt
@@ -11,11 +12,13 @@ ${DRUPAL_MODS}devel/devel.drush.inc
 ${DRUPAL_MODS}devel/devel.info
 ${DRUPAL_MODS}devel/devel.install
 ${DRUPAL_MODS}devel/devel.module
+${DRUPAL_MODS}devel/develDrushTest.php
 ${DRUPAL_MODS}devel/devel_generate.drush.inc
 ${DRUPAL_MODS}devel/devel_generate.inc
 ${DRUPAL_MODS}devel/devel_generate.info
 ${DRUPAL_MODS}devel/devel_generate.module
 ${DRUPAL_MODS}devel/devel_generate_batch.inc
+${DRUPAL_MODS}devel/devel_node_access.api.php
 ${DRUPAL_MODS}devel/devel_node_access.info
 ${DRUPAL_MODS}devel/devel_node_access.install
 ${DRUPAL_MODS}devel/devel_node_access.module
@@ -111,22 +114,9 @@ ${DRUPAL_MODS}devel/krumo/skins/green/skin.css
 ${DRUPAL_MODS}devel/krumo/skins/orange/
 ${DRUPAL_MODS}devel/krumo/skins/orange/bg.gif
 ${DRUPAL_MODS}devel/krumo/skins/orange/skin.css
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/collapsed.gif
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/dotted.gif
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/empty.gif
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/expanded.gif
-${DRUPAL_MODS}devel/krumo/skins/schablon.com/skin.css
-${DRUPAL_MODS}devel/performance/
-${DRUPAL_MODS}devel/performance/README.txt
-${DRUPAL_MODS}devel/performance/performance.info
-${DRUPAL_MODS}devel/performance/performance.install
-${DRUPAL_MODS}devel/performance/performance.module
-${DRUPAL_MODS}devel/translations/
-${DRUPAL_MODS}devel/translations/da.po
-${DRUPAL_MODS}devel/translations/de.po
-${DRUPAL_MODS}devel/translations/devel.pot
-${DRUPAL_MODS}devel/translations/fr.po
-${DRUPAL_MODS}devel/translations/hu.po
-${DRUPAL_MODS}devel/translations/it.po
-${DRUPAL_MODS}devel/translations/tr.po
+${DRUPAL_MODS}devel/krumo/skins/white/
+${DRUPAL_MODS}devel/krumo/skins/white/collapsed.gif
+${DRUPAL_MODS}devel/krumo/skins/white/dotted.gif
+${DRUPAL_MODS}devel/krumo/skins/white/empty.gif
+${DRUPAL_MODS}devel/krumo/skins/white/expanded.gif
+${DRUPAL_MODS}devel/krumo/skins/white/skin.css

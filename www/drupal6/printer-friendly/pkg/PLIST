@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/08/20 14:42:56 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/01/28 10:02:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}print/
@@ -44,28 +44,3 @@ ${DRUPAL_MODS}print/print_pdf/print_pdf.module
 ${DRUPAL_MODS}print/print_pdf/print_pdf.pages.inc
 ${DRUPAL_MODS}print/tests/
 ${DRUPAL_MODS}print/tests/print_basic.test
-${DRUPAL_MODS}print/translations/
-${DRUPAL_MODS}print/translations/ca.po
-${DRUPAL_MODS}print/translations/cs.po
-${DRUPAL_MODS}print/translations/da.po
-${DRUPAL_MODS}print/translations/de.po
-${DRUPAL_MODS}print/translations/es.po
-${DRUPAL_MODS}print/translations/fi.po
-${DRUPAL_MODS}print/translations/fr.po
-${DRUPAL_MODS}print/translations/hu.po
-${DRUPAL_MODS}print/translations/id.po
-${DRUPAL_MODS}print/translations/it.po
-${DRUPAL_MODS}print/translations/ja.po
-${DRUPAL_MODS}print/translations/nb.po
-${DRUPAL_MODS}print/translations/nl.po
-${DRUPAL_MODS}print/translations/pl.po
-${DRUPAL_MODS}print/translations/print.pot
-${DRUPAL_MODS}print/translations/pt-br.po
-${DRUPAL_MODS}print/translations/pt-pt.po
-${DRUPAL_MODS}print/translations/ro.po
-${DRUPAL_MODS}print/translations/ru.po
-${DRUPAL_MODS}print/translations/sk.po
-${DRUPAL_MODS}print/translations/sv.po
-${DRUPAL_MODS}print/translations/tr.po
-${DRUPAL_MODS}print/translations/uk.po
-${DRUPAL_MODS}print/translations/vi.po
