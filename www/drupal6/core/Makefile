@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.24 2012/01/27 20:59:48 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2012/01/28 11:20:52 espie Exp $
 
 COMMENT =	powerful content management system
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME =	drupal-6.22
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX}

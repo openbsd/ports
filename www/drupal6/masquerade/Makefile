@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2012/01/28 10:02:35 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/28 11:20:53 espie Exp $
 
 COMMENT =	test site as another user
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 CATEGORIES =	devel
 
 DISTNAME =	masquerade-6.x-1.7

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/16 16:20:17 stephan Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/28 11:20:53 espie Exp $
 
 COMMENT =	database introspection
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 CATEGORIES += 	devel
 DISTNAME = 	schema-6.x-1.7

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/28 10:02:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/28 11:20:53 espie Exp $
 
 COMMENT =	create sensible urls automatically
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	pathauto-6.x-1.6
 PKGNAME =	drupal6-pathauto-1.6

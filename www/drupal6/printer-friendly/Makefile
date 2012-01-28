@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/28 10:02:35 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/01/28 11:20:53 espie Exp $
 
 COMMENT =	printer-friendly pages in drupal
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	print-6.x-1.14
 PKGNAME =	drupal6-printer-friendly-1.14

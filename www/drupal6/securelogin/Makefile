@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 09:05:41 stephan Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/28 11:20:53 espie Exp $
 
 COMMENT =	redirect login screen to https
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	securelogin-6.x-1.x-dev
 PKGNAME =	drupal6-securelogin-1

@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/08 12:54:52 stephan Exp $
+# $OpenBSD: Makefile,v 1.6 2012/01/28 11:20:52 espie Exp $
 
 COMMENT =	backup mysql database directly from drupal
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	backup_migrate-6.x-2.4
 PKGNAME =	drupal6-backup-migrate-2.4

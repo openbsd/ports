@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/30 09:38:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/01/28 11:20:52 espie Exp $
 
 COMMENT =	file cck field
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 DISTNAME = 	filefield-6.x-3.10
 PKGNAME =	drupal6-filefield-3.10
