@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/02/04 10:28:01 stephan Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/28 10:32:46 espie Exp $
 
 COMMENT =	panels custom layouts
 
-DISTNAME = 	panels-6.x-3.9
-PKGNAME =	drupal6-panels-3.9
+DISTNAME = 	panels-6.x-3.10
+PKGNAME =	drupal6-panels-3.10
 
 RUN_DEPENDS =	www/drupal6/ctools
 
