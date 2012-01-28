@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 09:05:41 stephan Exp $
+# $OpenBSD: Makefile,v 1.7 2012/01/28 11:24:10 espie Exp $
 
 COMMENT =	french translation
+MAINTAINER =	Marc Espie <espie@openbsd.org>
 LANG =		fr
 EXTRACT_ONLY =
 
