@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2012/01/28 09:33:09 landry Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
 GNOME_VERSION=		0.7.4
 GNOME_PROJECT=		libnotify
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
