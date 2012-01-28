@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/01/01 11:56:53 stephan Exp $
+# $OpenBSD: Makefile,v 1.47 2012/01/28 11:19:42 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -29,6 +29,7 @@ SUBDIR += draft
 SUBDIR += faq
 SUBDIR += filefield
 SUBDIR += filefield_sources
+SUBDIR += genpass
 SUBDIR += globalredirect
 SUBDIR += image
 SUBDIR += imageapi
@@ -62,6 +63,7 @@ SUBDIR += poormanscron
 SUBDIR += printer-friendly
 SUBDIR += publishcontent
 SUBDIR += relevant_content
+SUBDIR += rolereference
 SUBDIR += rules
 SUBDIR += scheduler
 SUBDIR += schema
@@ -78,6 +80,7 @@ SUBDIR += token
 SUBDIR += transliteration
 SUBDIR += ubercart
 SUBDIR += user_import
+SUBDIR += user_pic_perm
 SUBDIR += user_readonly
 SUBDIR += view_unpublished
 SUBDIR += views
