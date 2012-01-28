@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/28 10:02:36 espie Exp $
-${DRUPAL_MODS}webform/
+@comment $OpenBSD: PLIST,v 1.7 2012/01/28 11:44:23 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
+${DRUPAL_MODS}webform/
 ${DRUPAL_MODS}webform/CHANGELOG.txt
 ${DRUPAL_MODS}webform/LICENSE.txt
 ${DRUPAL_MODS}webform/README.txt
