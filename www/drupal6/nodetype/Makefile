@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/30 19:52:31 stephan Exp $
+# $OpenBSD: Makefile,v 1.6 2012/01/28 11:33:34 espie Exp $
 
 COMMENT =	change the content type of nodes
 
 DISTNAME = 	nodetype-6.x-1.0
 PKGNAME =	drupal6-nodetype-1.0
-REVISION =	2
+REVISION =	3
 
 .include <bsd.port.mk>

@@ -1,7 +1,5 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2009/04/03 14:07:58 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2012/01/28 11:33:33 espie Exp $
 
-
-MAINTAINER ?=	Marc Espie <espie@openbsd.org>
 
 MODULES +=	www/drupal6
 
