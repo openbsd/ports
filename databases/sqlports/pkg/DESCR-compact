@@ -78,8 +78,9 @@ All depends are stored in a single table, including the type:
 1 -> run
 2 -> build
 3 -> regress
-with FULLDEPENDS the full text of the dependency, and DEPENDSPATH the key to
-the FULLPKGPATH we depend upon.
+with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
+we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
+the rest.
 - Wantlib(FULLPKGPATH, VALUE, EXTRA)
 All the libraries the FULLPKGPATH depends upon, with optional version 
 number specification stored in EXTRA

@@ -71,14 +71,15 @@ All of these variable values are actually lists. These lists are taken apart
 and result in many entries in these secondary tables (or none if the list
 is completely empty)
 
-- Depends(FULLPKGPATH, FULLDEPENDS, DEPENDSPATH, TYPE)
+- Depends(FULLPKGPATH, FULLDEPENDS, PKGSPEC, REST, DEPENDSPATH, TYPE)
 All depends are stored in a single table, including the type:
 R -> run
 L -> lib
 B -> build
 Regress -> regress
-with FULLDEPENDS the full text of the dependency, and DEPENDSPATH the PKGPATH
-we depend upon.
+with FULLDEPENDS the full text of the dependency, DEPENDSPATH the PKGPATH
+we depend upon, PKGSPEC the spec we depend upon (if explicit), and REST
+the rest.
 - Wantlib(FULLPKGPATH, VALUE)
 All the libraries the FULLPKGPATH depends upon, with and without version number,
 coming from either the WANTLIB variable or various LIB_DEPENDS.
