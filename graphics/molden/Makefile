@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/01/29 13:18:30 espie Exp $
 
 COMMENT=	ab initio MOLecular DENsity display program
 
@@ -12,6 +12,8 @@ HOMEPAGE=	http://www.cmbi.ru.nl/molden/molden.html
 
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 BROKEN=Author keeps patching and rolling the tarball without bumping version
+# prevent mirroring from even trying to fetch until it's fixed
+DISTFILES=
 
 # Free for private, non-profit use. Commercial license required otherwise
 PERMIT_PACKAGE_CDROM=	No
