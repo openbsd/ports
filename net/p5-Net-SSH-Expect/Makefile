@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/29 02:44:10 william Exp $
 
 COMMENT =	ssh wrapper to execute remote interactive commands
 
 DISTNAME =	Net-SSH-Expect-1.09
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 MODULES =	cpan
-USE_GROFF =	Yes
-
-MAINTAINER =	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
