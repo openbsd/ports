@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-fpm,v 1.1 2011/08/27 13:13:13 robert Exp $
+@comment $OpenBSD: PLIST-fpm,v 1.2 2012/01/29 14:53:21 espie Exp $
+@option no-default-conflict
+@conflict php-fpm->=5.3,<5.4
 @man man/man8/php-fpm-${PV}.8
 @bin sbin/php-fpm-${PV}
 share/examples/php-${PV}/php-fpm.conf
