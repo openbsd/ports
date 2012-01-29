@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/29 02:26:17 william Exp $
 
 COMMENT=	high-performance server that centralizes key/data pairs
 
 DISTNAME=	sharedance-0.6
-REVISION =	0
+REVISION =	1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://sharedance.pureftpd.org/project/sharedance
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

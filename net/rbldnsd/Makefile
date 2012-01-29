@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/29 02:31:18 william Exp $
 
 COMMENT=	small daemon for DNSBLs
 
 DISTNAME=	rbldnsd_0.996a
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.corpit.ru/mjt/rbldnsd.html
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
