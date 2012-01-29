@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: clean-old-distfiles,v 1.2 2012/01/29 13:03:05 espie Exp $
+# $OpenBSD: clean-old-distfiles,v 1.3 2012/01/29 14:35:40 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -22,8 +22,26 @@ use feature qw(say);
 use OpenBSD::Getopt;
 use OpenBSD::md5;
 
+sub usage
+{
+	my $err = shift;
+	my $prog = $0;
+	$prog =~ s/.*\///;
+	$err =~ s/\sat.*//s;
+	say STDERR "$prog: $err";
+	say STDERR "Usage: $prog [-nv] [-e except] [cutdate]";
+	exit 1;
+}
+
 our ($opt_v, $opt_n, $opt_e);
-getopts('e:vn');
+eval { getopts('e:vn'); };
+if ($@) {
+	usage($@);
+}
+
+if (@ARGV > 1) {
+	usage("too many arguments");
+}
 
 sub really_remove
 {
