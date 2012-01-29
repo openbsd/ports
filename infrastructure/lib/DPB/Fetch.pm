@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.31 2012/01/23 10:35:38 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.32 2012/01/29 12:02:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,8 +29,12 @@ sub create
 {
 	my ($class, $file, $short, $site, $distinfo, $v, $repo) = @_;
 
-	my $sz = $distinfo->{size}{$file} // 0;
+	my $sz = $distinfo->{size}{$file};
 	my $sha = $distinfo->{sha}{$file};
+	if (!defined $sz || !defined $sha) {
+		$v->break("Incomplete info for $file");
+		return;
+	}
 	$repo->known_file($sha, $file);
 	bless {
 		name => $file,
@@ -450,7 +454,7 @@ sub distdir
 sub read_checksums
 {
 	my $filename = shift;
-	open my $fh, '<', $filename or die "Can't read distinfo $filename";
+	open my $fh, '<', $filename or return;
 	my $r = { size => {}, sha => {}};
 	my $_;
 	while (<$fh>) {
@@ -460,7 +464,7 @@ sub read_checksums
 		} elsif (m/^SHA256 \((.*)\) \= (.*)$/) {
 			$r->{sha}->{$1} = OpenBSD::sha->fromstring($2);
 		} else {
-			die "Unknown line in $filename: $_";
+			next;
 		}
 	}
 	return $r;
@@ -488,7 +492,8 @@ sub build_distinfo
 		my $checksum_file = $info->{CHECKSUM_FILE};
 
 		if (!defined $checksum_file) {
-			die "No checksum file for ".$v->fullpkgpath;
+			$v->break("No checksum file");
+			next;
 		}
 		$checksum_file = $checksum_file->string;
 		$distinfo->{$checksum_file} //=
@@ -504,7 +509,8 @@ sub build_distinfo
 				$site.= $2;
 			}
 			if (!defined $info->{$site}) {
-				die "Can't find $site for $arg";
+				$v->break("Can't find $site for $arg");
+				return;
 			}
 			return DPB::Distfile->new($arg, $dir,
 			    $info->{$site}, $checksums, $v, $self);
@@ -512,12 +518,12 @@ sub build_distinfo
 
 		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
 			my $file = &$build($d);
-			$files->{$file} = $file;
+			$files->{$file} = $file if defined $file;
 		}
 		for my $d (keys %{$info->{SUPDISTFILES}}) {
 			my $file = &$build($d);
 			if ($fetch_only) {
-				$files->{$file} = $file;
+				$files->{$file} = $file if defined $file;
 			}
 		}
 		for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES

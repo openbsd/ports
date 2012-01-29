@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.25 2011/12/04 12:05:41 espie Exp $
+# $OpenBSD: Vars.pm,v 1.26 2012/01/29 12:02:20 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -91,7 +91,7 @@ EOT
 		close STDIN;
 		open(STDIN, '<&', $rh);
 		exec {$make} ('make', '-f', '-');
-		die "oops";
+		die "oops couldn't exec $make";
     	}
 	return @list;
 }
@@ -133,7 +133,7 @@ sub grab_list
 		if (m/^\=\=\=\>\s*Exiting (.*) with an error$/) {
 			undef $category;
 			my $dir = DPB::PkgPath->new($1);
-			$dir->{broken} = "exiting with an error";
+			$dir->break("exiting with an error");
 			$h->{$dir} = $dir;
 			open my $quicklog,  '>>',
 			    $grabber->logger->log_pkgpath($dir);
@@ -170,11 +170,11 @@ sub grab_list
 			eval { $info->add($var, $value, $o); };
 			if ($@) {
 				print $log $@;
-				$o->{broken} = "error with adding $var=$value";
+				$o->break("error with adding $var=$value");
 			}
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = DPB::PkgPath->new($1);
-			$dir->{broken} = "broken dependency";
+			$dir->break("broken dependency");
 			$h->{$dir} = $dir;
 			print $log $_, "\n";
 			print $log "Broken ", $dir->fullpkgpath, "\n";
