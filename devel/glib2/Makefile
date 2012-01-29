@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2012/01/17 16:50:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2012/01/29 17:28:01 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		3
+REVISION-main=		4
 
 CATEGORIES=		devel
 
@@ -105,7 +105,18 @@ post-patch:
 	cd ${WRKSRC} && ${AUTO_ENV} autoconf
 ### end of kqueue(1) backend ###########################################
 
+.include <bsd.port.arch.mk>
+
 pre-configure:
+# XXX
+# SIGSEGV on LP64_ARCHS at gclosure.c:290: i = closure->n_guards;
+# -> reproduce by adding a meeting in evolution for a passed date and
+#    running /usr/local/libexec/evolution/3.2/evolution-alarm-notify
+.if ${PROPERTIES:Mlp64}
+	perl -pi -e 's,CFLAGS = \@CFLAGS\@,CFLAGS = \@CFLAGS\@ -O0,' \
+		${WRKSRC}/gobject/Makefile.in
+.endif
+
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
 		-e "s,/usr/share/locale,${LOCALBASE}/share/locale,g;" \
 		-e "s,/usr/share/applications,${LOCALBASE}/share/applications,g;" \
