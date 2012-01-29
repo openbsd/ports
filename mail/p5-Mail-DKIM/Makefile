@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/01/29 02:45:19 william Exp $
 
 COMMENT=	DKIM and DomainKeys message-signing implementation
 
 DISTNAME=	Mail-DKIM-0.38
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 CPAN_AUTHOR=	JASLONG
 
 RUN_DEPENDS=	security/p5-Crypt-OpenSSL-RSA \
