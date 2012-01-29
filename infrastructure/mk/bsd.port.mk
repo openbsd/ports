@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1157 2012/01/28 08:39:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1158 2012/01/29 11:29:51 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -714,6 +714,7 @@ _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
 .for _s in ${BUILD_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
+PKGFILES += ${PKGFILE${_s}}
 .endfor
 
 .for _s in ${MULTI_PACKAGES}
