@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/01/26 07:24:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.31 2012/01/30 17:23:41 sthen Exp $
 
 COMMENT=	new MH mail handling program
 
@@ -20,7 +20,7 @@ MAINTAINER=		William Yodlowsky <william@openbsd.org>
 SYSCONFDIR=		${PREFIX}/lib/nmh
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--libdir='$${exec_prefix}/libexec' \
-			--enable-apop \
+			--enable-pop \
 			--with-locking=fcntl
 
 FLAVORS=		sasl
@@ -31,10 +31,12 @@ USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Msasl}
+MODULES +=		converters/libiconv
 WANTLIB +=		sasl2
 LIB_DEPENDS+=		security/cyrus-sasl2
-CPPFLAGS+=		-I${LOCALBASE}/include/sasl
-CONFIGURE_ARGS+=	--with-cyrus-sasl=${PREFIX}
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-cyrus-sasl
 .endif
 
 NO_REGRESS=		Yes
