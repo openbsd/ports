@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2012/01/29 19:14:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/01/30 10:18:19 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.0.1
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -19,16 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += c cairo dbus-1 dbus-glib-1 drm expat ffi fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m ncurses
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ vte xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
+WANTLIB += ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
+WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs stdc++ vte2_90 xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		devel/vte \
+LIB_DEPENDS=		devel/vte3 \
 			x11/dbus-glib \
 			devel/libglade2 
 
@@ -43,7 +43,6 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk3
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

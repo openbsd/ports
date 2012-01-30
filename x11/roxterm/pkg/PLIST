@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/12/03 23:20:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/01/30 10:18:19 ajacoutot Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
@@ -18,10 +18,6 @@ share/doc/roxterm/lib/roxterm.css
 share/doc/roxterm/lib/roxterm_ie.css
 share/doc/roxterm/lib/roxterm_logo.png
 share/doc/roxterm/lib/sprites.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/roxterm.svg
 share/roxterm/
 share/roxterm/Config/
