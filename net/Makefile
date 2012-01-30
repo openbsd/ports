@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.728 2012/01/25 15:45:02 okan Exp $
+# $OpenBSD: Makefile,v 1.729 2012/01/30 14:17:50 jsing Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -251,6 +251,7 @@
      SUBDIR += openmdns
      SUBDIR += openvmps
      SUBDIR += openvpn
+     SUBDIR += openvpn-auth-ldap
      SUBDIR += openvpn_bsdauth
      SUBDIR += osrtspproxy
      SUBDIR += owamp
