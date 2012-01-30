@@ -68,6 +68,7 @@
 	native-fcntl: permit
 	native-flock: permit
 	native-fork: permit
+	native-fpathconf: permit
 	native-fsread: true then permit
 	native-fstat: permit
 	native-fstatfs: permit
@@ -151,8 +152,6 @@
 	native-msync: permit
 	native-munmap: permit
 	native-nanosleep: permit
-	native-ogetdirentries: permit
-	native-osigaltstack: permit
 	native-pathconf: permit
 	native-pipe: permit
 	native-poll: permit
