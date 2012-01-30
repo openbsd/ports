@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.40 2012/01/09 17:56:28 espie Exp $
+# $OpenBSD: dpb,v 1.41 2012/01/30 15:11:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -143,6 +143,19 @@ sub handle_options
 	}
 	if ($state->opt('f') !~ m/^\d+$/) {
 		$state->usage("-f takes a numerical argument");
+	}
+	if ($state->opt('f')) {
+		$state->{want_fetchinfo} = 1;
+	}
+	if (!$state->{subst}->empty('HISTORY_ONLY')) {
+		$state->{want_fetchinfo} = 1;
+		$state->{opt}{f} = 0;
+		$state->{opt}{j} = 1;
+		$state->{opt}{e} = 1;
+		$state->{all} = 1;
+		$state->{scan_only} = 1;
+		# XXX not really random, but no need to use dependencies
+		$state->{random} = 1; 
 	}
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
@@ -488,11 +501,19 @@ if (!$state->opt('e') && !$occupied) {
 	$core->mark_ready;
 }
 
-# and let's wait for all jobs now.
 $state->engine->check_buildable(1);
 
-DPB::Core->start_clock($state->{display_timeout});
-main_loop();
+if ($state->{scan_only}) {
+	# very shortened loop
+	$reporter->report;
+	if (DPB::Core->running) {
+		DPB::Core->reap_wait;
+	}
+} else {
+	# and let's wait for all jobs now.
+	DPB::Core->start_clock($state->{display_timeout});
+	main_loop();
+}
 
 $reporter->reset;
 DPB::Core->cleanup;

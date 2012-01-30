@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.45 2012/01/23 10:35:38 espie Exp $
+# $OpenBSD: Engine.pm,v 1.46 2012/01/30 15:11:04 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -319,7 +319,7 @@ sub new
 	    ignored => []}, $class;
 	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
 	    : "DPB::SubEngine::Build")->new($o, $state->builder);
-	if ($state->opt('f')) {
+	if ($state->{want_fetchinfo}) {
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
 	$o->{log} = DPB::Util->make_hot($state->logger->open("engine"));
