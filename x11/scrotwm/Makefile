@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2012/01/14 21:48:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2012/01/30 11:12:42 sthen Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 0.0
 
 DISTNAME=		scrotwm-0.10.0
+REVISION=		0
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -23,7 +24,7 @@ MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	x11/dmenu>=3.9
+RUN_DEPENDS=	x11/dmenu>=4.4.1
 
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/man" \
