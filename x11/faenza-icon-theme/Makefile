@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/12/03 19:13:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/01/30 08:49:17 dcoppa Exp $
 
 COMMENT =		complete, colourful suite of squared icons
 
@@ -9,7 +9,8 @@ CATEGORIES =		x11
 REVISION =		1
 
 HOMEPAGE =		http://tiheum.deviantart.com/
-MASTER_SITES =		http://www.deviantart.com/download/173323228/
+MASTER_SITES =		http://www.deviantart.com/download/173323228/ \
+			http://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.zip
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
