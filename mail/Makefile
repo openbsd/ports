@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.274 2012/01/18 22:32:59 avsm Exp $
+# $OpenBSD: Makefile,v 1.275 2012/01/30 17:23:59 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -104,6 +104,7 @@
      SUBDIR += mutt
      SUBDIR += nail
      SUBDIR += nmh
+     SUBDIR += nmh,sasl
      SUBDIR += nmzmail
      SUBDIR += offlineimap
      SUBDIR += openwebmail
