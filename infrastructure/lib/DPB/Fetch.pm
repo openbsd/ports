@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.32 2012/01/29 12:02:20 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.33 2012/01/30 14:19:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -383,7 +383,7 @@ sub run_expire_old
 		}
 		return 0;
 	    }, 
-	    "CLEAN DIST"));
+	    "UPDATING DISTFILES HISTORY"));
 	return 1;
 }
 
