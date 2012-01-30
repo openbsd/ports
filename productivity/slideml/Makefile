@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/01/30 12:37:23 jsing Exp $
 
 COMMENT =		HTML slide generator based on SlideML
 
-DISTNAME =		slideml-1.0
-REVISION =		1
+DISTNAME =		slideml-1.1.0
 
 CATEGORIES =		productivity
 
@@ -24,8 +23,6 @@ RUN_DEPENDS =		graphics/p5-Image-Size
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
-
-WRKDIST ?=		${WRKDIR}/slideml
 
 DATA_DIR =		${PREFIX}/share/slideml
 DOC_DIR =		${PREFIX}/share/doc/slideml
