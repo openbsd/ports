@@ -1,0 +1,19 @@
+$OpenBSD: patch-smbd_server_c,v 1.1 2012/01/31 09:12:59 sthen Exp $
+
+http://ftp.samba.org/pub/samba/patches/security/samba-3.6.2-CVE-2012-0817.patch
+
+--- smbd/server.c.orig	Tue Oct 18 19:48:48 2011
++++ smbd/server.c	Tue Jan 31 08:45:43 2012
+@@ -64,6 +64,12 @@ static void smbd_set_server_fd(int fd)
+ 	 * name, default to its address.
+ 	 */
+ 
++	if (sconn->client_id.name != NULL &&
++	    sconn->client_id.name != sconn->client_id.addr) {
++		talloc_free(discard_const_p(char, sconn->client_id.name));
++		sconn->client_id.name = NULL;
++	}
++
+ 	client_addr(fd, sconn->client_id.addr, sizeof(sconn->client_id.addr));
+ 
+ 	name = client_name(sconn->sock);
