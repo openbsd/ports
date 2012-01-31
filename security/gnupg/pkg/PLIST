@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/10/25 12:57:13 pea Exp $
+@comment $OpenBSD: PLIST,v 1.26 2012/01/31 10:51:48 espie Exp $
 @option no-default-conflict
+@conflict gnupg-<2
 @bin bin/gpg
 bin/gpg-zip
 @bin bin/gpgsplit

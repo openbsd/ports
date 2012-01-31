@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/27 12:48:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/01/31 10:51:48 espie Exp $
 @option no-default-conflict
+@conflict gnupg->=2
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
 @bin bin/gpg2
