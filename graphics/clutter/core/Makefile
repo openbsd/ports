@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/01/31 09:24:23 ajacoutot Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 DISTNAME=		clutter-${MAJOR}.6
-REVISION=		6
+REVISION=		7
 SHARED_LIBS +=  clutter-glx-1.0      0.0      # .0.6
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.0/}
