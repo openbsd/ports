@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2012/01/10 18:04:32 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2012/01/31 14:15:57 sthen Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-docs-<2011
@@ -8,246 +8,246 @@
 libdata/perl5/site_perl/TeXLive/
 libdata/perl5/site_perl/TeXLive/TLConfig.pm
 libdata/perl5/site_perl/TeXLive/TLUtils.pm
-man/man1/a2ping.1
-man/man1/afm2afm.1
-man/man1/afm2pl.1
-man/man1/afm2tfm.1
-man/man1/aleph.1
-man/man1/allcm.1
-man/man1/allec.1
-man/man1/allneeded.1
-man/man1/amstex.1
-man/man1/arlatex.1
-man/man1/asy.1
-man/man1/autoinst.1
-man/man1/bbox.1
-man/man1/bg5conv.1
-man/man1/bibtex.1
-man/man1/bundledoc.1
-man/man1/cef5conv.1
-man/man1/cefconv.1
-man/man1/cefsconv.1
-man/man1/cfftot1.1
-man/man1/chbar.1
-man/man1/chktex.1
-man/man1/chkweb.1
-man/man1/cmap2enc.1
-man/man1/ctangle.1
-man/man1/ctie.1
-man/man1/ctxtools.1
-man/man1/cweave.1
-man/man1/cweb.1
-man/man1/detex.1
-man/man1/deweb.1
-man/man1/disdvi.1
-man/man1/dt2dv.1
-man/man1/dv2dt.1
-man/man1/dvi2fax.1
-man/man1/dvi2tty.1
-man/man1/dvibook.1
-man/man1/dviconcat.1
-man/man1/dvicopy.1
-man/man1/dvidvi.1
-man/man1/dvigif.1
-man/man1/dvihp.1
-man/man1/dvilj.1
-man/man1/dvilj2p.1
-man/man1/dvilj4.1
-man/man1/dvilj4l.1
-man/man1/dvilj6.1
-man/man1/dvipdfm.1
-man/man1/dvipdft.1
-man/man1/dvipng.1
-man/man1/dvipos.1
-man/man1/dvips.1
-man/man1/dvired.1
-man/man1/dviselect.1
-man/man1/dvisvgm.1
-man/man1/dvitodvi.1
-man/man1/dvitomp.1
-man/man1/dvitype.1
-man/man1/e2pall.1
-man/man1/ebb.1
-man/man1/eplain.1
-man/man1/epsffit.1
-man/man1/epstopdf.1
-man/man1/etex.1
-man/man1/extconv.1
-man/man1/extractbb.1
-man/man1/extractres.1
-man/man1/fig2epic.1
-man/man1/findhyph.1
-man/man1/fixdlsrps.1
-man/man1/fixfmps.1
-man/man1/fixpsditps.1
-man/man1/fixpspps.1
-man/man1/fixscribeps.1
-man/man1/fixtpps.1
-man/man1/fixwfwps.1
-man/man1/fixwpps.1
-man/man1/fixwwps.1
-man/man1/fmtutil-sys.1
-man/man1/fmtutil.1
-man/man1/font2afm.1
-man/man1/fontinst.1
-man/man1/getafm.1
-man/man1/gftodvi.1
-man/man1/gftopk.1
-man/man1/gftype.1
-man/man1/gsftopk.1
-man/man1/hbf2gf.1
-man/man1/includeres.1
-man/man1/install-tl.1
-man/man1/jadetex.1
-man/man1/kpseaccess.1
-man/man1/kpsepath.1
-man/man1/kpsereadlink.1
-man/man1/kpsestat.1
-man/man1/kpsetool.1
-man/man1/kpsewhere.1
-man/man1/kpsewhich.1
-man/man1/kpsexpand.1
-man/man1/lacheck.1
-man/man1/lamed.1
-man/man1/latex.1
-man/man1/latexdiff-vc.1
-man/man1/latexdiff.1
-man/man1/latexrevise.1
-man/man1/luatex.1
-man/man1/mag.1
-man/man1/makeindex.1
-man/man1/mathspic.1
-man/man1/mendex.1
-man/man1/mf-nowin.1
-man/man1/mf.1
-man/man1/mft.1
-man/man1/mkindex.1
-man/man1/mkjobtexmf.1
-man/man1/mkocp.1
-man/man1/mkofm.1
-man/man1/mktexfmt.1
-man/man1/mktexlsr.1
-man/man1/mktexmf.1
-man/man1/mktexpk.1
-man/man1/mktextfm.1
-man/man1/mmafm.1
-man/man1/mmpfb.1
-man/man1/mpost.1
-man/man1/mptopdf.1
-man/man1/musixflx.1
-man/man1/musixtex.1
-man/man1/odvicopy.1
-man/man1/odvitype.1
-man/man1/ofm2opl.1
-man/man1/opl2ofm.1
-man/man1/ot2kpx.1
-man/man1/otangle.1
-man/man1/otfinfo.1
-man/man1/otftotfm.1
-man/man1/otp2ocp.1
-man/man1/outocp.1
-man/man1/ovf2ovp.1
-man/man1/ovp2ovf.1
-man/man1/patgen.1
-man/man1/pdf180.1
-man/man1/pdf270.1
-man/man1/pdf90.1
-man/man1/pdfbook.1
-man/man1/pdfclose.1
-man/man1/pdfetex.1
-man/man1/pdfflip.1
-man/man1/pdfjadetex.1
-man/man1/pdfjam-pocketmod.1
-man/man1/pdfjam-slides3up.1
-man/man1/pdfjam-slides6up.1
-man/man1/pdfjam.1
-man/man1/pdfjoin.1
-man/man1/pdflatex.1
-man/man1/pdfnup.1
-man/man1/pdfopen.1
-man/man1/pdfpun.1
-man/man1/pdftex.1
-man/man1/pdftosrc.1
-man/man1/perltex.1
-man/man1/pfb2pfa.1
-man/man1/pfm2kpx.1
-man/man1/pk2bm.1
-man/man1/pkfix-helper.1
-man/man1/pktogf.1
-man/man1/pktype.1
-man/man1/pltotf.1
-man/man1/pooltype.1
-man/man1/ps2eps.1
-man/man1/ps2frag.1
-man/man1/ps2pk.1
-man/man1/psbook.1
-man/man1/pslatex.1
-man/man1/psmerge.1
-man/man1/psnup.1
-man/man1/psresize.1
-man/man1/psselect.1
-man/man1/pstopdf.1
-man/man1/pstops.1
-man/man1/purifyeps.1
-man/man1/repstopdf.1
-man/man1/rubibtex.1
-man/man1/rumakeindex.1
-man/man1/showglyphs.1
-man/man1/sjisconv.1
-man/man1/splitindex.1
-man/man1/synctex.1
+@man man/man1/a2ping.1
+@man man/man1/afm2afm.1
+@man man/man1/afm2pl.1
+@man man/man1/afm2tfm.1
+@man man/man1/aleph.1
+@man man/man1/allcm.1
+@man man/man1/allec.1
+@man man/man1/allneeded.1
+@man man/man1/amstex.1
+@man man/man1/arlatex.1
+@man man/man1/asy.1
+@man man/man1/autoinst.1
+@man man/man1/bbox.1
+@man man/man1/bg5conv.1
+@man man/man1/bibtex.1
+@man man/man1/bundledoc.1
+@man man/man1/cef5conv.1
+@man man/man1/cefconv.1
+@man man/man1/cefsconv.1
+@man man/man1/cfftot1.1
+@man man/man1/chbar.1
+@man man/man1/chktex.1
+@man man/man1/chkweb.1
+@man man/man1/cmap2enc.1
+@man man/man1/ctangle.1
+@man man/man1/ctie.1
+@man man/man1/ctxtools.1
+@man man/man1/cweave.1
+@man man/man1/cweb.1
+@man man/man1/detex.1
+@man man/man1/deweb.1
+@man man/man1/disdvi.1
+@man man/man1/dt2dv.1
+@man man/man1/dv2dt.1
+@man man/man1/dvi2fax.1
+@man man/man1/dvi2tty.1
+@man man/man1/dvibook.1
+@man man/man1/dviconcat.1
+@man man/man1/dvicopy.1
+@man man/man1/dvidvi.1
+@man man/man1/dvigif.1
+@man man/man1/dvihp.1
+@man man/man1/dvilj.1
+@man man/man1/dvilj2p.1
+@man man/man1/dvilj4.1
+@man man/man1/dvilj4l.1
+@man man/man1/dvilj6.1
+@man man/man1/dvipdfm.1
+@man man/man1/dvipdft.1
+@man man/man1/dvipng.1
+@man man/man1/dvipos.1
+@man man/man1/dvips.1
+@man man/man1/dvired.1
+@man man/man1/dviselect.1
+@man man/man1/dvisvgm.1
+@man man/man1/dvitodvi.1
+@man man/man1/dvitomp.1
+@man man/man1/dvitype.1
+@man man/man1/e2pall.1
+@man man/man1/ebb.1
+@man man/man1/eplain.1
+@man man/man1/epsffit.1
+@man man/man1/epstopdf.1
+@man man/man1/etex.1
+@man man/man1/extconv.1
+@man man/man1/extractbb.1
+@man man/man1/extractres.1
+@man man/man1/fig2epic.1
+@man man/man1/findhyph.1
+@man man/man1/fixdlsrps.1
+@man man/man1/fixfmps.1
+@man man/man1/fixpsditps.1
+@man man/man1/fixpspps.1
+@man man/man1/fixscribeps.1
+@man man/man1/fixtpps.1
+@man man/man1/fixwfwps.1
+@man man/man1/fixwpps.1
+@man man/man1/fixwwps.1
+@man man/man1/fmtutil-sys.1
+@man man/man1/fmtutil.1
+@man man/man1/font2afm.1
+@man man/man1/fontinst.1
+@man man/man1/getafm.1
+@man man/man1/gftodvi.1
+@man man/man1/gftopk.1
+@man man/man1/gftype.1
+@man man/man1/gsftopk.1
+@man man/man1/hbf2gf.1
+@man man/man1/includeres.1
+@man man/man1/install-tl.1
+@man man/man1/jadetex.1
+@man man/man1/kpseaccess.1
+@man man/man1/kpsepath.1
+@man man/man1/kpsereadlink.1
+@man man/man1/kpsestat.1
+@man man/man1/kpsetool.1
+@man man/man1/kpsewhere.1
+@man man/man1/kpsewhich.1
+@man man/man1/kpsexpand.1
+@man man/man1/lacheck.1
+@man man/man1/lamed.1
+@man man/man1/latex.1
+@man man/man1/latexdiff-vc.1
+@man man/man1/latexdiff.1
+@man man/man1/latexrevise.1
+@man man/man1/luatex.1
+@man man/man1/mag.1
+@man man/man1/makeindex.1
+@man man/man1/mathspic.1
+@man man/man1/mendex.1
+@man man/man1/mf-nowin.1
+@man man/man1/mf.1
+@man man/man1/mft.1
+@man man/man1/mkindex.1
+@man man/man1/mkjobtexmf.1
+@man man/man1/mkocp.1
+@man man/man1/mkofm.1
+@man man/man1/mktexfmt.1
+@man man/man1/mktexlsr.1
+@man man/man1/mktexmf.1
+@man man/man1/mktexpk.1
+@man man/man1/mktextfm.1
+@man man/man1/mmafm.1
+@man man/man1/mmpfb.1
+@man man/man1/mpost.1
+@man man/man1/mptopdf.1
+@man man/man1/musixflx.1
+@man man/man1/musixtex.1
+@man man/man1/odvicopy.1
+@man man/man1/odvitype.1
+@man man/man1/ofm2opl.1
+@man man/man1/opl2ofm.1
+@man man/man1/ot2kpx.1
+@man man/man1/otangle.1
+@man man/man1/otfinfo.1
+@man man/man1/otftotfm.1
+@man man/man1/otp2ocp.1
+@man man/man1/outocp.1
+@man man/man1/ovf2ovp.1
+@man man/man1/ovp2ovf.1
+@man man/man1/patgen.1
+@man man/man1/pdf180.1
+@man man/man1/pdf270.1
+@man man/man1/pdf90.1
+@man man/man1/pdfbook.1
+@man man/man1/pdfclose.1
+@man man/man1/pdfetex.1
+@man man/man1/pdfflip.1
+@man man/man1/pdfjadetex.1
+@man man/man1/pdfjam-pocketmod.1
+@man man/man1/pdfjam-slides3up.1
+@man man/man1/pdfjam-slides6up.1
+@man man/man1/pdfjam.1
+@man man/man1/pdfjoin.1
+@man man/man1/pdflatex.1
+@man man/man1/pdfnup.1
+@man man/man1/pdfopen.1
+@man man/man1/pdfpun.1
+@man man/man1/pdftex.1
+@man man/man1/pdftosrc.1
+@man man/man1/perltex.1
+@man man/man1/pfb2pfa.1
+@man man/man1/pfm2kpx.1
+@man man/man1/pk2bm.1
+@man man/man1/pkfix-helper.1
+@man man/man1/pktogf.1
+@man man/man1/pktype.1
+@man man/man1/pltotf.1
+@man man/man1/pooltype.1
+@man man/man1/ps2eps.1
+@man man/man1/ps2frag.1
+@man man/man1/ps2pk.1
+@man man/man1/psbook.1
+@man man/man1/pslatex.1
+@man man/man1/psmerge.1
+@man man/man1/psnup.1
+@man man/man1/psresize.1
+@man man/man1/psselect.1
+@man man/man1/pstopdf.1
+@man man/man1/pstops.1
+@man man/man1/purifyeps.1
+@man man/man1/repstopdf.1
+@man man/man1/rubibtex.1
+@man man/man1/rumakeindex.1
+@man man/man1/showglyphs.1
+@man man/man1/sjisconv.1
+@man man/man1/splitindex.1
+@man man/man1/synctex.1
 @comment man/man1/t1ascii.1
 @comment man/man1/t1asm.1
 @comment man/man1/t1binary.1
 @comment man/man1/t1disasm.1
-man/man1/t1dotlessj.1
-man/man1/t1lint.1
+@man man/man1/t1dotlessj.1
+@man man/man1/t1lint.1
 @comment man/man1/t1mac.1
-man/man1/t1rawafm.1
-man/man1/t1reencode.1
-man/man1/t1testpage.1
+@man man/man1/t1rawafm.1
+@man man/man1/t1reencode.1
+@man man/man1/t1testpage.1
 @comment man/man1/t1unmac.1
-man/man1/tangle.1
-man/man1/tcdialog.1
-man/man1/tex.1
-man/man1/tex2xindy.1
-man/man1/texconfig-sys.1
-man/man1/texconfig.1
-man/man1/texdiff.1
-man/man1/texdirflatten.1
-man/man1/texdoc.1
-man/man1/texdoctk.1
-man/man1/texexec.1
-man/man1/texhash.1
-man/man1/texindy.1
-man/man1/texlinks.1
-man/man1/texlua.1
-man/man1/texluac.1
-man/man1/texmfstart.1
-man/man1/texshow.1
-man/man1/texsis.1
-man/man1/tftopl.1
-man/man1/thumbpdf.1
-man/man1/tie.1
-man/man1/tpic2pdftex.1
-man/man1/ttf2afm.1
-man/man1/ttf2pk.1
-man/man1/ttf2tfm.1
-man/man1/ttfdump.1
-man/man1/ttftotype42.1
-man/man1/updmap-sys.1
-man/man1/updmap.1
-man/man1/vftovp.1
-man/man1/vlna.1
-man/man1/vptovf.1
-man/man1/vxusymbol.1
-man/man1/weave.1
-man/man1/xasy.1
-man/man1/xdvi.1
-man/man1/xindy.1
-man/man5/fmtutil.cnf.5
-man/man5/synctex.5
-man/man5/updmap.cfg.5
+@man man/man1/tangle.1
+@man man/man1/tcdialog.1
+@man man/man1/tex.1
+@man man/man1/tex2xindy.1
+@man man/man1/texconfig-sys.1
+@man man/man1/texconfig.1
+@man man/man1/texdiff.1
+@man man/man1/texdirflatten.1
+@man man/man1/texdoc.1
+@man man/man1/texdoctk.1
+@man man/man1/texexec.1
+@man man/man1/texhash.1
+@man man/man1/texindy.1
+@man man/man1/texlinks.1
+@man man/man1/texlua.1
+@man man/man1/texluac.1
+@man man/man1/texmfstart.1
+@man man/man1/texshow.1
+@man man/man1/texsis.1
+@man man/man1/tftopl.1
+@man man/man1/thumbpdf.1
+@man man/man1/tie.1
+@man man/man1/tpic2pdftex.1
+@man man/man1/ttf2afm.1
+@man man/man1/ttf2pk.1
+@man man/man1/ttf2tfm.1
+@man man/man1/ttfdump.1
+@man man/man1/ttftotype42.1
+@man man/man1/updmap-sys.1
+@man man/man1/updmap.1
+@man man/man1/vftovp.1
+@man man/man1/vlna.1
+@man man/man1/vptovf.1
+@man man/man1/vxusymbol.1
+@man man/man1/weave.1
+@man man/man1/xasy.1
+@man man/man1/xdvi.1
+@man man/man1/xindy.1
+@man man/man5/fmtutil.cnf.5
+@man man/man5/synctex.5
+@man man/man5/updmap.cfg.5
 share/texmf-dist/
 share/texmf-dist/bibtex/
 share/texmf-dist/bibtex/bib/

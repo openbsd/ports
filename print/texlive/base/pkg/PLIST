@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/01/22 18:52:01 edd Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/01/31 14:15:57 sthen Exp $
 @conflict teTeX_base-*
+@conflict pdfjam-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
+@pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
 %%SHARED%%
 %%xindy%%

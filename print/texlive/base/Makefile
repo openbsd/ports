@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.55 2012/01/22 18:52:01 edd Exp $
+# $OpenBSD: Makefile,v 1.56 2012/01/31 14:15:57 sthen Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
-DISTNAME = 		texlive-${DIST_V}-source
+DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS =		kpathsea	4.0
 SHARED_LIBS +=		ptexenc		1.0
@@ -12,7 +12,7 @@ SHARED_LIBS +=		ptexenc		1.0
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
 WANTLIB +=		fontconfig freetype gd jpeg lcms m ncurses
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
-WANTLIB +=		t1>=4 ttf xcb xml2 z
+WANTLIB +=		t1>=4 tiff ttf xcb z
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -22,7 +22,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/t1utils \
 			print/latex-mk \
 			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
-			
+
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
 			graphics/gd \
@@ -47,10 +47,10 @@ CONFIGURE_STYLE =	gnu
 # TeX Live uses a modified version of icu.
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
 			CPPFLAGS="-I${TRUEPREFIX}/include/poppler -I${X11BASE}/include"
-			
+
 WRKBUILD =              ${WRKSRC}/Work # Can't build in same dir
 CONFIGURE_SCRIPT =      ../configure
-MAKE_ENV = 		${CONFIGURE_ENV}
+MAKE_ENV =		${CONFIGURE_ENV}
 NO_REGRESS =		Yes # not worth the effort.
 
 USE_GMAKE =	Yes
@@ -64,7 +64,7 @@ CFLAGS +=	-fPIC
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
 	${MACHINE} == "powerpc" || ${MACHINE} == "sparc64"
-BUILD_DEPENDS += 	lang/clisp
+BUILD_DEPENDS +=	lang/clisp
 RUN_DEPENDS +=		lang/clisp
 CONFIGURE_ARGS +=	--enable-xindy \
 			--disable-xindy-rules
@@ -124,7 +124,7 @@ pre-install:
 # symlinks that would have been installed by texlinks.
 # texlinks can not do this itself in the fake dir, as it requires
 # a fully hashed texmf tree and working kpse configuration.
-ALEPH_LN =	lamed 
+ALEPH_LN =	lamed
 LUATEX_LN =	dvilualatex dviluatex lualatex
 PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex \
 		mllatex mltex pdfcslatex pdfcsplain pdfetex pdfjadetex \

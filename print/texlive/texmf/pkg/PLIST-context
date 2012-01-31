@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-context,v 1.2 2012/01/22 18:52:01 edd Exp $
-man/man1/context.1
+@comment $OpenBSD: PLIST-context,v 1.3 2012/01/31 14:15:57 sthen Exp $
+@man man/man1/context.1
 share/texmf-dist/bibtex/bst/context/
 share/texmf-dist/bibtex/bst/context/cont-ab.bst
 share/texmf-dist/bibtex/bst/context/cont-au.bst
