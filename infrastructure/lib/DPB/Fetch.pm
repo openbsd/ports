@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.33 2012/01/30 14:19:30 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.34 2012/01/31 15:45:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -430,17 +430,20 @@ sub expire_old
 		$self->mark_sha($sha, $actual);
 	}, $distdir);
 
-	# and scan the ciphers as well !
-	File::Find::find(sub {
-		return unless -f $_;
-		if ($File::Find::dir =~ 
-		    m/^\Q$distdir\E\/by_cipher\/sha256\/..?\/(.*)$/) {
-			my $sha = $1;
-			return if $self->{known_sha}{$sha}{$_};
-			return if $self->{known_short}{$sha}{$_};
-			print $fh "$ts SHA256 ($_) = ", $sha, "\n";
-		}
-	}, "$distdir/by_cipher/sha256");
+	my $c = "$distdir/by_cipher/sha256";
+	if (-d $c) {
+		# and scan the ciphers as well !
+		File::Find::find(sub {
+			return unless -f $_;
+			if ($File::Find::dir =~ 
+			    m/^\Q$distdir\E\/by_cipher\/sha256\/..?\/(.*)$/) {
+				my $sha = $1;
+				return if $self->{known_sha}{$sha}{$_};
+				return if $self->{known_short}{$sha}{$_};
+				print $fh "$ts SHA256 ($_) = ", $sha, "\n";
+			}
+		}, $c);
+	}
 
 	close $fh;
 }
