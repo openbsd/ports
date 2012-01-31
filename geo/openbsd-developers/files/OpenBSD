@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.79 2012/01/18 16:25:46 okan Exp $
+# $OpenBSD: OpenBSD,v 1.80 2012/01/31 23:24:00 brynet Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -48,6 +48,7 @@
 43.70		-79.42		"krw"		# Kenneth R. Westerback
 43.875194	10.730377	"dcoppa"	# David Coppa
 44.01		-79.93		"ian"		# Ian Darwin
+44.1		-77.580556	"brynet"	# Bryan Steele
 44.4325		26.103889	"pirofti"	# Paul Irofti
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
