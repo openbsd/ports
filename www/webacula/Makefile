@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/01/11 22:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/01/31 08:59:29 ajacoutot Exp $
 
 COMMENT=	bacula(8) web interface
 
 DISTNAME=	webacula-5.5
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	www sysutils
 
