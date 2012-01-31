@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.17 2012/01/25 14:40:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.18 2012/01/31 07:58:19 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -445,7 +445,6 @@ share/libgda-${GDA_MAJOR}/demo/linked_model_param.c
 share/libgda-${GDA_MAJOR}/demo/login.c
 share/libgda-${GDA_MAJOR}/demo/provider_sel.c
 share/libgda-${GDA_MAJOR}/demo/tree.c
-share/libgda-${GDA_MAJOR}/dtd/gdaui-layout.dtd
 share/libgda-${GDA_MAJOR}/icons/
 share/libgda-${GDA_MAJOR}/icons/hicolor/
 share/libgda-${GDA_MAJOR}/icons/hicolor/16x16/
