@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd_ugen.c,v 1.4 2012/01/18 14:09:53 mpi Exp $	*/
+/*	$OpenBSD: openbsd_ugen.c,v 1.5 2012/02/01 13:26:20 mpi Exp $	*/
 /*
  * Copyright (c) 2011 Martin Pieuchot <mpi@openbsd.org>
  *
@@ -581,8 +581,10 @@ _cache_active_config_descriptor(struct libusb_device *dev, int fd)
 
 	usbi_dbg("index %d, len %d", ufd.ufd_config_index, len);
 
-	if ((ioctl(fd, USB_GET_FULL_DESC, &ufd)) < 0)
+	if ((ioctl(fd, USB_GET_FULL_DESC, &ufd)) < 0) {
+		free(buf);
 		return _errno_to_libusb(errno);
+	}
 
 	if (dpriv->cdesc)
 		free(dpriv->cdesc);
