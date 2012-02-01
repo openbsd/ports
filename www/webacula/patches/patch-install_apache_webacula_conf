@@ -1,6 +1,6 @@
-$OpenBSD: patch-install_apache_webacula_conf,v 1.1 2011/07/28 09:24:35 ajacoutot Exp $
---- install/apache/webacula.conf.orig	Wed May 11 10:20:56 2011
-+++ install/apache/webacula.conf	Thu Jul 28 11:15:22 2011
+$OpenBSD: patch-install_apache_webacula_conf,v 1.2 2012/02/01 12:59:06 ajacoutot Exp $
+--- install/apache/webacula.conf.orig	Sat Sep 10 22:22:55 2011
++++ install/apache/webacula.conf	Tue Jan 31 17:34:51 2012
 @@ -5,17 +5,24 @@
  # Allows only localhost by default
  #
@@ -94,7 +94,7 @@ $OpenBSD: patch-install_apache_webacula_conf,v 1.1 2011/07/28 09:24:35 ajacoutot
     Order deny,allow
     Deny from all
  </Directory>
-@@ -81,7 +88,7 @@ Alias /webacula  /usr/share/webacula/html
+@@ -83,7 +90,7 @@ Alias /webacula  /usr/share/webacula/html
  #
  # test mod_rewrite
  #

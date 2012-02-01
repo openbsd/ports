@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2012/01/31 08:59:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/02/01 12:59:06 ajacoutot Exp $
 
 COMMENT=	bacula(8) web interface
 
-DISTNAME=	webacula-5.5
-REVISION=	5
+DISTNAME=	webacula-5.5.1
 
 CATEGORIES=	www sysutils
 
@@ -32,17 +31,22 @@ INSTDIR=	${PREFIX}/webacula
 TINSTDIR=	${TRUEPREFIX}/webacula
 SUBST_VARS=	INSTDIR TINSTDIR
 
+pre-configure:
+	perl -pi -e 's,bin/bash,/bin/sh,g' \
+		${WRKSRC}/install/{MySql,PostgreSql}/{10_make_tables.sh,20_acl_make_tables.sh}
+
 do-install:
 	mv ${WRKSRC} ${INSTDIR}
 	${SUBST_CMD} ${INSTDIR}/application/config.ini \
 		${INSTDIR}/install/apache/webacula.conf
-.for i in install/db.conf application/config.ini
+.for i in install/db.conf application/config.ini html/.htaccess
 	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
 .endfor
 	${SUBST_CMD} -c ${FILESDIR}/webacula-chroot-bconsole.sh \
 		${INSTDIR}/webacula-chroot-bconsole
 	find ${INSTDIR} -type f -name \*.orig -or -name \*.gitignore \
-		-or -name \*.project -or -name \*.beforesubst | xargs rm
+		-or -name \*.project -or -name \*.beforesubst \
+		-or -name \*.original | xargs rm
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

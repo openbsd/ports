@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/28 09:24:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/02/01 12:59:06 ajacoutot Exp $
 webacula/
 webacula/4CONTRIBUTORS
 webacula/4CONTRIBUTORS.ru
@@ -18,7 +18,6 @@ webacula/application/config.ini.dist
 @sample webacula/application/config.ini
 @mode
 @group
-webacula/application/config.ini.original
 webacula/application/controllers/
 webacula/application/controllers/AdminController.php
 webacula/application/controllers/AuthController.php
@@ -228,7 +227,8 @@ webacula/docs/txt/Workflow.txt
 webacula/docs/txt/install.txt
 webacula/docs/txt/install.ubuntu.txt
 webacula/html/
-webacula/html/.htaccess
+webacula/html/.htaccess.dist
+@sample webacula/html/.htaccess
 webacula/html/.htaccess_original
 webacula/html/favicon.ico
 webacula/html/images/
@@ -335,10 +335,8 @@ webacula/install/apache/webacula.conf
 webacula/install/check_system_requirements.php
 webacula/install/db.conf.dist
 @mode 0640
-@group www
 @sample webacula/install/db.conf
 @mode
-@group
 webacula/languages/
 webacula/languages/.htaccess
 webacula/languages/cs/
