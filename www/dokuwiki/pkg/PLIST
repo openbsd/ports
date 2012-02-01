@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/21 09:52:29 pea Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/02/01 09:12:30 pea Exp $
 dokuwiki/
 dokuwiki/.htaccess.dist
 dokuwiki/COPYING
@@ -25,6 +25,7 @@ dokuwiki/conf/local.php.dist
 dokuwiki/conf/mediameta.php
 dokuwiki/conf/mime.conf
 dokuwiki/conf/mysql.conf.php.example
+dokuwiki/conf/plugins.required.php
 dokuwiki/conf/scheme.conf
 dokuwiki/conf/smileys.conf
 dokuwiki/conf/users.auth.php.dist
@@ -45,6 +46,10 @@ dokuwiki/data/locks/_dummy
 dokuwiki/data/media/
 dokuwiki/data/media/wiki/
 dokuwiki/data/media/wiki/dokuwiki-128.png
+dokuwiki/data/media_attic/
+dokuwiki/data/media_attic/_dummy
+dokuwiki/data/media_meta/
+dokuwiki/data/media_meta/_dummy
 dokuwiki/data/meta/
 dokuwiki/data/meta/_dummy
 dokuwiki/data/pages/
@@ -1224,6 +1229,8 @@ dokuwiki/inc/lang/ja/subscr_list.txt
 dokuwiki/inc/lang/ja/subscr_single.txt
 dokuwiki/inc/lang/ja/updateprofile.txt
 dokuwiki/inc/lang/ja/uploadmail.txt
+dokuwiki/inc/lang/kk/
+dokuwiki/inc/lang/kk/lang.php
 dokuwiki/inc/lang/km/
 dokuwiki/inc/lang/km/admin.txt
 dokuwiki/inc/lang/km/backlinks.txt
@@ -1488,6 +1495,8 @@ dokuwiki/inc/lang/mr/showrev.txt
 dokuwiki/inc/lang/mr/stopwords.txt
 dokuwiki/inc/lang/mr/updateprofile.txt
 dokuwiki/inc/lang/mr/uploadmail.txt
+dokuwiki/inc/lang/ms/
+dokuwiki/inc/lang/ms/lang.php
 dokuwiki/inc/lang/ne/
 dokuwiki/inc/lang/ne/admin.txt
 dokuwiki/inc/lang/ne/backlinks.txt
@@ -1575,6 +1584,10 @@ dokuwiki/inc/lang/no/revisions.txt
 dokuwiki/inc/lang/no/searchpage.txt
 dokuwiki/inc/lang/no/showrev.txt
 dokuwiki/inc/lang/no/stopwords.txt
+dokuwiki/inc/lang/no/subscr_digest.txt
+dokuwiki/inc/lang/no/subscr_form.txt
+dokuwiki/inc/lang/no/subscr_list.txt
+dokuwiki/inc/lang/no/subscr_single.txt
 dokuwiki/inc/lang/no/updateprofile.txt
 dokuwiki/inc/lang/no/uploadmail.txt
 dokuwiki/inc/lang/pl/
@@ -2153,12 +2166,6 @@ dokuwiki/install.php
 @mode 755
 dokuwiki/lib/
 @mode
-dokuwiki/lib/_fla/
-dokuwiki/lib/_fla/.htaccess
-dokuwiki/lib/_fla/MultipleUpload.as
-dokuwiki/lib/_fla/README
-dokuwiki/lib/_fla/index.html
-dokuwiki/lib/_fla/multipleUpload.fla
 dokuwiki/lib/exe/
 dokuwiki/lib/exe/ajax.php
 dokuwiki/lib/exe/css.php
@@ -2168,7 +2175,6 @@ dokuwiki/lib/exe/index.html
 dokuwiki/lib/exe/indexer.php
 dokuwiki/lib/exe/js.php
 dokuwiki/lib/exe/mediamanager.php
-dokuwiki/lib/exe/multipleUpload.swf
 dokuwiki/lib/exe/opensearch.php
 dokuwiki/lib/exe/xmlrpc.php
 dokuwiki/lib/images/
@@ -2249,6 +2255,10 @@ dokuwiki/lib/images/fileicons/xlsx.png
 dokuwiki/lib/images/fileicons/xml.png
 dokuwiki/lib/images/fileicons/zip.png
 dokuwiki/lib/images/history.png
+dokuwiki/lib/images/icon-file.png
+dokuwiki/lib/images/icon-list.png
+dokuwiki/lib/images/icon-sort.png
+dokuwiki/lib/images/icon-thumb.png
 dokuwiki/lib/images/index.html
 dokuwiki/lib/images/info.png
 dokuwiki/lib/images/interwiki/
@@ -2314,8 +2324,8 @@ dokuwiki/lib/images/media_size_large.png
 dokuwiki/lib/images/media_size_medium.png
 dokuwiki/lib/images/media_size_original.png
 dokuwiki/lib/images/media_size_small.png
+dokuwiki/lib/images/mediamanager.png
 dokuwiki/lib/images/minus.gif
-dokuwiki/lib/images/multiupload.png
 dokuwiki/lib/images/notify.png
 dokuwiki/lib/images/ns.png
 dokuwiki/lib/images/page.png
@@ -2452,6 +2462,7 @@ dokuwiki/lib/plugins/acl/lang/he/lang.php
 dokuwiki/lib/plugins/acl/lang/hi/
 dokuwiki/lib/plugins/acl/lang/hi/lang.php
 dokuwiki/lib/plugins/acl/lang/hr/
+dokuwiki/lib/plugins/acl/lang/hr/help.txt
 dokuwiki/lib/plugins/acl/lang/hr/lang.php
 dokuwiki/lib/plugins/acl/lang/hu/
 dokuwiki/lib/plugins/acl/lang/hu/help.txt
@@ -2471,6 +2482,8 @@ dokuwiki/lib/plugins/acl/lang/it/lang.php
 dokuwiki/lib/plugins/acl/lang/ja/
 dokuwiki/lib/plugins/acl/lang/ja/help.txt
 dokuwiki/lib/plugins/acl/lang/ja/lang.php
+dokuwiki/lib/plugins/acl/lang/kk/
+dokuwiki/lib/plugins/acl/lang/kk/lang.php
 dokuwiki/lib/plugins/acl/lang/ko/
 dokuwiki/lib/plugins/acl/lang/ko/help.txt
 dokuwiki/lib/plugins/acl/lang/ko/lang.php
@@ -2490,6 +2503,8 @@ dokuwiki/lib/plugins/acl/lang/mk/lang.php
 dokuwiki/lib/plugins/acl/lang/mr/
 dokuwiki/lib/plugins/acl/lang/mr/help.txt
 dokuwiki/lib/plugins/acl/lang/mr/lang.php
+dokuwiki/lib/plugins/acl/lang/ms/
+dokuwiki/lib/plugins/acl/lang/ms/lang.php
 dokuwiki/lib/plugins/acl/lang/ne/
 dokuwiki/lib/plugins/acl/lang/ne/lang.php
 dokuwiki/lib/plugins/acl/lang/nl/
@@ -2550,6 +2565,7 @@ dokuwiki/lib/plugins/acl/pix/group.png
 dokuwiki/lib/plugins/acl/pix/ns.png
 dokuwiki/lib/plugins/acl/pix/page.png
 dokuwiki/lib/plugins/acl/pix/user.png
+dokuwiki/lib/plugins/acl/plugin.info.txt
 dokuwiki/lib/plugins/acl/rtl.css
 dokuwiki/lib/plugins/acl/script.js
 dokuwiki/lib/plugins/acl/style.css
@@ -2644,6 +2660,8 @@ dokuwiki/lib/plugins/config/lang/it/lang.php
 dokuwiki/lib/plugins/config/lang/ja/
 dokuwiki/lib/plugins/config/lang/ja/intro.txt
 dokuwiki/lib/plugins/config/lang/ja/lang.php
+dokuwiki/lib/plugins/config/lang/kk/
+dokuwiki/lib/plugins/config/lang/kk/lang.php
 dokuwiki/lib/plugins/config/lang/ko/
 dokuwiki/lib/plugins/config/lang/ko/intro.txt
 dokuwiki/lib/plugins/config/lang/ko/lang.php
@@ -2664,6 +2682,8 @@ dokuwiki/lib/plugins/config/lang/mk/lang.php
 dokuwiki/lib/plugins/config/lang/mr/
 dokuwiki/lib/plugins/config/lang/mr/intro.txt
 dokuwiki/lib/plugins/config/lang/mr/lang.php
+dokuwiki/lib/plugins/config/lang/ms/
+dokuwiki/lib/plugins/config/lang/ms/lang.php
 dokuwiki/lib/plugins/config/lang/ne/
 dokuwiki/lib/plugins/config/lang/ne/lang.php
 dokuwiki/lib/plugins/config/lang/nl/
@@ -2716,6 +2736,7 @@ dokuwiki/lib/plugins/config/lang/zh-tw/intro.txt
 dokuwiki/lib/plugins/config/lang/zh-tw/lang.php
 dokuwiki/lib/plugins/config/lang/zh/intro.txt
 dokuwiki/lib/plugins/config/lang/zh/lang.php
+dokuwiki/lib/plugins/config/plugin.info.txt
 dokuwiki/lib/plugins/config/rtl.css
 dokuwiki/lib/plugins/config/settings/
 dokuwiki/lib/plugins/config/settings/config.class.php
@@ -2727,6 +2748,7 @@ dokuwiki/lib/plugins/info/
 dokuwiki/lib/plugins/info/lang/
 dokuwiki/lib/plugins/info/lang/sl/
 dokuwiki/lib/plugins/info/lang/sl/lang.php
+dokuwiki/lib/plugins/info/plugin.info.txt
 dokuwiki/lib/plugins/info/syntax.php
 dokuwiki/lib/plugins/plugin/
 dokuwiki/lib/plugins/plugin/admin.php
@@ -2818,6 +2840,8 @@ dokuwiki/lib/plugins/plugin/lang/it/lang.php
 dokuwiki/lib/plugins/plugin/lang/ja/
 dokuwiki/lib/plugins/plugin/lang/ja/admin_plugin.txt
 dokuwiki/lib/plugins/plugin/lang/ja/lang.php
+dokuwiki/lib/plugins/plugin/lang/kk/
+dokuwiki/lib/plugins/plugin/lang/kk/lang.php
 dokuwiki/lib/plugins/plugin/lang/ko/
 dokuwiki/lib/plugins/plugin/lang/ko/admin_plugin.txt
 dokuwiki/lib/plugins/plugin/lang/ko/lang.php
@@ -2838,6 +2862,8 @@ dokuwiki/lib/plugins/plugin/lang/mk/lang.php
 dokuwiki/lib/plugins/plugin/lang/mr/
 dokuwiki/lib/plugins/plugin/lang/mr/admin_plugin.txt
 dokuwiki/lib/plugins/plugin/lang/mr/lang.php
+dokuwiki/lib/plugins/plugin/lang/ms/
+dokuwiki/lib/plugins/plugin/lang/ms/lang.php
 dokuwiki/lib/plugins/plugin/lang/ne/
 dokuwiki/lib/plugins/plugin/lang/ne/lang.php
 dokuwiki/lib/plugins/plugin/lang/nl/
@@ -2940,6 +2966,7 @@ dokuwiki/lib/plugins/popularity/lang/en/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/eo/
 dokuwiki/lib/plugins/popularity/lang/eo/intro.txt
 dokuwiki/lib/plugins/popularity/lang/eo/lang.php
+dokuwiki/lib/plugins/popularity/lang/eo/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/es/
 dokuwiki/lib/plugins/popularity/lang/es/intro.txt
 dokuwiki/lib/plugins/popularity/lang/es/lang.php
@@ -2953,6 +2980,7 @@ dokuwiki/lib/plugins/popularity/lang/eu/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/fa/
 dokuwiki/lib/plugins/popularity/lang/fa/intro.txt
 dokuwiki/lib/plugins/popularity/lang/fa/lang.php
+dokuwiki/lib/plugins/popularity/lang/fa/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/fi/
 dokuwiki/lib/plugins/popularity/lang/fi/intro.txt
 dokuwiki/lib/plugins/popularity/lang/fi/lang.php
@@ -2964,6 +2992,7 @@ dokuwiki/lib/plugins/popularity/lang/fr/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/gl/
 dokuwiki/lib/plugins/popularity/lang/gl/intro.txt
 dokuwiki/lib/plugins/popularity/lang/gl/lang.php
+dokuwiki/lib/plugins/popularity/lang/gl/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/he/
 dokuwiki/lib/plugins/popularity/lang/he/intro.txt
 dokuwiki/lib/plugins/popularity/lang/he/lang.php
@@ -2993,6 +3022,8 @@ dokuwiki/lib/plugins/popularity/lang/ja/
 dokuwiki/lib/plugins/popularity/lang/ja/intro.txt
 dokuwiki/lib/plugins/popularity/lang/ja/lang.php
 dokuwiki/lib/plugins/popularity/lang/ja/submitted.txt
+dokuwiki/lib/plugins/popularity/lang/kk/
+dokuwiki/lib/plugins/popularity/lang/kk/lang.php
 dokuwiki/lib/plugins/popularity/lang/ko/
 dokuwiki/lib/plugins/popularity/lang/ko/intro.txt
 dokuwiki/lib/plugins/popularity/lang/ko/lang.php
@@ -3014,6 +3045,8 @@ dokuwiki/lib/plugins/popularity/lang/mk/lang.php
 dokuwiki/lib/plugins/popularity/lang/mr/
 dokuwiki/lib/plugins/popularity/lang/mr/intro.txt
 dokuwiki/lib/plugins/popularity/lang/mr/lang.php
+dokuwiki/lib/plugins/popularity/lang/ms/
+dokuwiki/lib/plugins/popularity/lang/ms/lang.php
 dokuwiki/lib/plugins/popularity/lang/ne/
 dokuwiki/lib/plugins/popularity/lang/ne/lang.php
 dokuwiki/lib/plugins/popularity/lang/nl/
@@ -3023,9 +3056,11 @@ dokuwiki/lib/plugins/popularity/lang/nl/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/no/
 dokuwiki/lib/plugins/popularity/lang/no/intro.txt
 dokuwiki/lib/plugins/popularity/lang/no/lang.php
+dokuwiki/lib/plugins/popularity/lang/no/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/pl/
 dokuwiki/lib/plugins/popularity/lang/pl/intro.txt
 dokuwiki/lib/plugins/popularity/lang/pl/lang.php
+dokuwiki/lib/plugins/popularity/lang/pl/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/pt/
 dokuwiki/lib/plugins/popularity/lang/pt-br/
 dokuwiki/lib/plugins/popularity/lang/pt-br/intro.txt
@@ -3045,6 +3080,7 @@ dokuwiki/lib/plugins/popularity/lang/ru/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/sk/
 dokuwiki/lib/plugins/popularity/lang/sk/intro.txt
 dokuwiki/lib/plugins/popularity/lang/sk/lang.php
+dokuwiki/lib/plugins/popularity/lang/sk/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/sl/
 dokuwiki/lib/plugins/popularity/lang/sl/intro.txt
 dokuwiki/lib/plugins/popularity/lang/sl/lang.php
@@ -3067,6 +3103,7 @@ dokuwiki/lib/plugins/popularity/lang/tr/lang.php
 dokuwiki/lib/plugins/popularity/lang/uk/
 dokuwiki/lib/plugins/popularity/lang/uk/intro.txt
 dokuwiki/lib/plugins/popularity/lang/uk/lang.php
+dokuwiki/lib/plugins/popularity/lang/uk/submitted.txt
 dokuwiki/lib/plugins/popularity/lang/zh/
 dokuwiki/lib/plugins/popularity/lang/zh-tw/
 dokuwiki/lib/plugins/popularity/lang/zh-tw/intro.txt
@@ -3159,6 +3196,8 @@ dokuwiki/lib/plugins/revert/lang/it/lang.php
 dokuwiki/lib/plugins/revert/lang/ja/
 dokuwiki/lib/plugins/revert/lang/ja/intro.txt
 dokuwiki/lib/plugins/revert/lang/ja/lang.php
+dokuwiki/lib/plugins/revert/lang/kk/
+dokuwiki/lib/plugins/revert/lang/kk/lang.php
 dokuwiki/lib/plugins/revert/lang/ko/
 dokuwiki/lib/plugins/revert/lang/ko/intro.txt
 dokuwiki/lib/plugins/revert/lang/ko/lang.php
@@ -3178,6 +3217,8 @@ dokuwiki/lib/plugins/revert/lang/mk/lang.php
 dokuwiki/lib/plugins/revert/lang/mr/
 dokuwiki/lib/plugins/revert/lang/mr/intro.txt
 dokuwiki/lib/plugins/revert/lang/mr/lang.php
+dokuwiki/lib/plugins/revert/lang/ms/
+dokuwiki/lib/plugins/revert/lang/ms/lang.php
 dokuwiki/lib/plugins/revert/lang/ne/
 dokuwiki/lib/plugins/revert/lang/ne/lang.php
 dokuwiki/lib/plugins/revert/lang/nl/
@@ -3231,6 +3272,7 @@ dokuwiki/lib/plugins/revert/lang/zh-tw/intro.txt
 dokuwiki/lib/plugins/revert/lang/zh-tw/lang.php
 dokuwiki/lib/plugins/revert/lang/zh/intro.txt
 dokuwiki/lib/plugins/revert/lang/zh/lang.php
+dokuwiki/lib/plugins/revert/plugin.info.txt
 dokuwiki/lib/plugins/safefnrecode/
 dokuwiki/lib/plugins/safefnrecode/action.php
 dokuwiki/lib/plugins/safefnrecode/plugin.info.txt
@@ -3414,6 +3456,8 @@ dokuwiki/lib/plugins/usermanager/lang/ja/edit.txt
 dokuwiki/lib/plugins/usermanager/lang/ja/intro.txt
 dokuwiki/lib/plugins/usermanager/lang/ja/lang.php
 dokuwiki/lib/plugins/usermanager/lang/ja/list.txt
+dokuwiki/lib/plugins/usermanager/lang/kk/
+dokuwiki/lib/plugins/usermanager/lang/kk/lang.php
 dokuwiki/lib/plugins/usermanager/lang/ko/
 dokuwiki/lib/plugins/usermanager/lang/ko/add.txt
 dokuwiki/lib/plugins/usermanager/lang/ko/delete.txt
@@ -3459,6 +3503,8 @@ dokuwiki/lib/plugins/usermanager/lang/mr/edit.txt
 dokuwiki/lib/plugins/usermanager/lang/mr/intro.txt
 dokuwiki/lib/plugins/usermanager/lang/mr/lang.php
 dokuwiki/lib/plugins/usermanager/lang/mr/list.txt
+dokuwiki/lib/plugins/usermanager/lang/ms/
+dokuwiki/lib/plugins/usermanager/lang/ms/lang.php
 dokuwiki/lib/plugins/usermanager/lang/ne/
 dokuwiki/lib/plugins/usermanager/lang/ne/add.txt
 dokuwiki/lib/plugins/usermanager/lang/ne/delete.txt
@@ -3585,26 +3631,55 @@ dokuwiki/lib/plugins/usermanager/lang/zh/edit.txt
 dokuwiki/lib/plugins/usermanager/lang/zh/intro.txt
 dokuwiki/lib/plugins/usermanager/lang/zh/lang.php
 dokuwiki/lib/plugins/usermanager/lang/zh/list.txt
+dokuwiki/lib/plugins/usermanager/plugin.info.txt
 dokuwiki/lib/plugins/usermanager/script.js
 dokuwiki/lib/plugins/usermanager/style.css
 dokuwiki/lib/scripts/
-dokuwiki/lib/scripts/ajax.js
+dokuwiki/lib/scripts/behaviour.js
+dokuwiki/lib/scripts/compatibility.js
 dokuwiki/lib/scripts/cookie.js
 dokuwiki/lib/scripts/delay.js
 dokuwiki/lib/scripts/drag.js
 dokuwiki/lib/scripts/edit.js
-dokuwiki/lib/scripts/events.js
+dokuwiki/lib/scripts/editor.js
+dokuwiki/lib/scripts/fileuploader.js
+dokuwiki/lib/scripts/fileuploaderextended.js
 dokuwiki/lib/scripts/helpers.js
 dokuwiki/lib/scripts/hotkeys.js
 dokuwiki/lib/scripts/index.html
 dokuwiki/lib/scripts/index.js
+dokuwiki/lib/scripts/jquery/
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_flat_0_aaaaaa_40x100.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_flat_75_ffffff_40x100.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_55_fbf9ee_1x400.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_65_ffffff_1x400.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_75_dadada_1x400.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_75_e6e6e6_1x400.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_glass_95_fef1ec_1x400.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_222222_256x240.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_2e83ff_256x240.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_454545_256x240.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_888888_256x240.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/images/ui-icons_cd0a0a_256x240.png
+dokuwiki/lib/scripts/jquery/jquery-ui-theme/smoothness.css
+dokuwiki/lib/scripts/jquery/jquery-ui.js
+dokuwiki/lib/scripts/jquery/jquery-ui.min.js
+dokuwiki/lib/scripts/jquery/jquery.cookie.js
+dokuwiki/lib/scripts/jquery/jquery.js
+dokuwiki/lib/scripts/jquery/jquery.min.js
+dokuwiki/lib/scripts/jquery/update.sh
 dokuwiki/lib/scripts/linkwiz.js
 dokuwiki/lib/scripts/locktimer.js
 dokuwiki/lib/scripts/media.js
+dokuwiki/lib/scripts/page.js
+dokuwiki/lib/scripts/qsearch.js
 dokuwiki/lib/scripts/script.js
-dokuwiki/lib/scripts/subscriptions.js
 dokuwiki/lib/scripts/textselection.js
 dokuwiki/lib/scripts/toolbar.js
+dokuwiki/lib/scripts/tree.js
 dokuwiki/lib/scripts/tw-sack.js
 dokuwiki/lib/styles/
 dokuwiki/lib/styles/all.css
@@ -3615,15 +3690,19 @@ dokuwiki/lib/styles/screen.css
 dokuwiki/lib/tpl/
 dokuwiki/lib/tpl/default/
 dokuwiki/lib/tpl/default/_admin.css
+dokuwiki/lib/tpl/default/_fileuploader.css
 dokuwiki/lib/tpl/default/_linkwiz.css
+dokuwiki/lib/tpl/default/_mediamanager.css
 dokuwiki/lib/tpl/default/_mediaoptions.css
 dokuwiki/lib/tpl/default/_subscription.css
+dokuwiki/lib/tpl/default/_tabs.css
 dokuwiki/lib/tpl/default/design.css
 dokuwiki/lib/tpl/default/detail.php
 dokuwiki/lib/tpl/default/footer.html
 dokuwiki/lib/tpl/default/images/
 dokuwiki/lib/tpl/default/images/UWEB.png
 dokuwiki/lib/tpl/default/images/UWEBshadow.png
+dokuwiki/lib/tpl/default/images/apple-touch-icon.png
 dokuwiki/lib/tpl/default/images/bullet.gif
 dokuwiki/lib/tpl/default/images/button-cc.gif
 dokuwiki/lib/tpl/default/images/button-css.png
@@ -3639,6 +3718,7 @@ dokuwiki/lib/tpl/default/images/inputshadow.png
 dokuwiki/lib/tpl/default/images/link_icon.gif
 dokuwiki/lib/tpl/default/images/mail_icon.gif
 dokuwiki/lib/tpl/default/images/open.gif
+dokuwiki/lib/tpl/default/images/resizecol.png
 dokuwiki/lib/tpl/default/images/tocdot2.gif
 dokuwiki/lib/tpl/default/images/windows.gif
 dokuwiki/lib/tpl/default/layout.css
