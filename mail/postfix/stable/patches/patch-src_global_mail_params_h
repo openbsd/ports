@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_global_mail_params_h,v 1.1 2012/02/01 19:26:33 jakob Exp $
+--- src/global/mail_params.h.orig	Sat Dec 17 02:13:28 2011
++++ src/global/mail_params.h	Wed Feb  1 21:00:57 2012
+@@ -2224,7 +2224,7 @@ extern char *var_proxy_read_maps;
+ 
+ #define VAR_PROXY_WRITE_MAPS	"proxy_write_maps"
+ #define DEF_PROXY_WRITE_MAPS	"$" VAR_SMTP_SASL_AUTH_CACHE_NAME \
+-				" $" VAR_LMTP_SASL_AUTH_CACHE_NAME
++				" $" VAR_LMTP_SASL_AUTH_CACHE_NAME \
+ 				" $" VAR_VERIFY_MAP \
+ 				" $" VAR_PSC_CACHE_MAP
+ extern char *var_proxy_write_maps;
