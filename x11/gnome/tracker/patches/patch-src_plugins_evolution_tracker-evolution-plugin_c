@@ -1,0 +1,124 @@
+$OpenBSD: patch-src_plugins_evolution_tracker-evolution-plugin_c,v 1.4 2012/02/02 07:12:23 ajacoutot Exp $
+
+From 396c1eaece1756a68441ebf49ba0de36949e9790 Mon Sep 17 00:00:00 2001
+From: Philip Van Hoof <philip@codeminded.be>
+Date: Tue, 06 Dec 2011 14:53:09 +0000
+Subject: plugins/evolution: Fixes for several crashes in the plugin
+
+--- src/plugins/evolution/tracker-evolution-plugin.c.orig	Fri Dec 16 16:23:55 2011
++++ src/plugins/evolution/tracker-evolution-plugin.c	Tue Jan 31 09:54:53 2012
+@@ -109,18 +109,6 @@
+  * during registration of accounts and folders). I know this is cruel. I know. */
+ 
+ typedef struct {
+-	TrackerSparqlConnection *connection;
+-	gchar *sparql;
+-	gboolean commit;
+-	gint prio;
+-	GMutex *mutex;
+-	GCond *cond;
+-	gboolean has_happened;
+-	gpointer pool;
+-	gboolean dont_free;
+-} PoolItem;
+-
+-typedef struct {
+ 	GThreadPool *pool;
+ 	GList *items;
+ 	GMutex *mutex;
+@@ -293,7 +281,6 @@ thread_pool_exec (gpointer data,
+                   gpointer user_data)
+ {
+ 	ThreadPool *pool = user_data;
+-	PoolItem *item;
+ 	gboolean dying;
+ 
+ 	g_mutex_lock (pool->mutex);
+@@ -304,9 +291,7 @@ thread_pool_exec (gpointer data,
+ 	if (!dying)
+ 		pool->func (data, pool->cancel);
+ 
+-	item = data;
+-	if (!item->dont_free)
+-		pool->freeup (data, pool->cancel);
++	pool->freeup (data, pool->cancel);
+ }
+ 
+ static ThreadPool*
+@@ -908,6 +893,13 @@ introduce_walk_folders_in_folder (TrackerMinerEvolutio
+ 		sqlite3_stmt *stmt = NULL;
+ 		GPtrArray *uids = g_ptr_array_new_with_free_func (g_free);
+ 
++		/* might happen when folder is not loaded/opened yet */
++		if (!priv->cached_folders || !g_hash_table_lookup (priv->cached_folders, iter->full_name)) {
++			iter = iter->next;
++			g_ptr_array_unref (uids);
++			continue;
++		}
++
+ 		did_work = TRUE;
+ 
+ 		query = sqlite3_mprintf ("SELECT uid FROM %Q "
+@@ -1215,8 +1207,13 @@ introduce_store_deal_with_deleted (TrackerMinerEvoluti
+ 			uid     = (const gchar *) sqlite3_column_text (stmt, 0);
+ 			mailbox = (const gchar *) sqlite3_column_text (stmt, 1);
+ 
+-			folder = g_hash_table_lookup (priv->cached_folders, mailbox);
++			folder = priv->cached_folders ? g_hash_table_lookup (priv->cached_folders, mailbox) : NULL;
+ 
++			/* might happen when folder is not loaded/opened yet */
++			if (!folder) {
++				more = FALSE;
++				break;
++			}
+ 
+ 			/* This is not a path but a URI, don't use the OS's
+ 			 * directory separator here */
+@@ -1411,7 +1408,7 @@ register_walk_folders_in_folder (TrackerMinerEvolution
+ 
+ 		priv->cached_folders = g_hash_table_new_full (g_str_hash, g_str_equal,
+ 		                                              (GDestroyNotify) g_free,
+-		                                              (GDestroyNotify) NULL);
++		                                              (GDestroyNotify) g_object_unref);
+ 	}
+ 
+ 	/* Recursively walks all the folders in store */
+@@ -1505,6 +1502,8 @@ unregister_on_get_folder (gchar       *uri,
+ 	g_free (info->account_uri);
+ 	g_object_unref (info->self);
+ 	g_free (info);
++
++	g_object_unref (folder);
+ }
+ 
+ static void
+@@ -1753,7 +1752,9 @@ introduce_account_to (TrackerMinerEvolution *self,
+ 	mail_get_folderinfo (store, NULL, on_got_folderinfo_introduce, intro_info);
+ #endif
+ 
++#ifndef EVOLUTION_SHELL_3_2
+ 	g_object_unref (store);
++#endif
+ 
+ }
+ 
+@@ -2085,7 +2086,9 @@ register_account (TrackerMinerEvolution *self,
+ 	mail_get_folderinfo (store, NULL, on_got_folderinfo_register, reg_info);
+ #endif
+ 
++#ifndef EVOLUTION_SHELL_3_2
+ 	g_object_unref (store);
++#endif
+ }
+ 
+ #ifdef EVOLUTION_SHELL_3_2
+@@ -2181,7 +2184,9 @@ unregister_account (TrackerMinerEvolution *self,
+ 	mail_get_folderinfo (store, NULL, on_got_folderinfo_unregister, reg_info);
+ #endif
+ 
++#ifndef EVOLUTION_SHELL_3_2
+ 	g_object_unref (store);
++#endif
+ }
+ 
+ static void
