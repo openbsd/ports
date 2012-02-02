@@ -1,0 +1,20 @@
+$OpenBSD: patch-services_cache_rrset_c,v 1.1 2012/02/02 13:42:13 sthen Exp $
+
+http://permalink.gmane.org/gmane.network.dns.unbound.user/2006
+
+Fix DNSSEC validation failures after hours or days:
+"validation failure xx: no NSEC3 closest encloser from yy for DS zz while
+building chain of trust."
+
+--- services/cache/rrset.c.orig	Thu Feb  2 11:05:28 2012
++++ services/cache/rrset.c	Thu Feb  2 11:05:49 2012
+@@ -207,7 +207,8 @@ rrset_cache_update(struct rrset_cache* r, struct rrset
+ 			/* cache is superior, return that value */
+ 			lock_rw_unlock(&e->lock);
+ 			ub_packed_rrset_parsedelete(k, alloc);
+-			return 2;
++			if(equal) return 2;
++			return 1;
+ 		}
+ 		lock_rw_unlock(&e->lock);
+ 		/* Go on and insert the passed item.
