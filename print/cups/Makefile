@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2011/12/04 15:40:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/02/02 07:11:19 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,7 @@ VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	print sysutils
 
@@ -145,12 +145,5 @@ post-install:
 # loop: cups->gtk+2,-guic->cups
 	rm -rf ${PREFIX}/share/icons
 	rm -rf ${PREFIX}/share/applications
-
-# Create a link to foomatic drivers database; we do it here instead of
-# using --enable-ppds-to-cups in the foomatic-db port so that we don't
-# need to depend on it (other printer driver packages install PPDs under
-# ${PREFIX}/share/foomatic/db/source/PPD too, e.g. foo2zjs, hpijs...).
-	ln -sf ${LOCALBASE}/share/foomatic/db/source/PPD \
-		${PREFIX}/share/cups/model/foomatic-db-ppds
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2011/12/04 15:40:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.37 2012/02/02 07:11:19 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -209,7 +209,6 @@ share/cups/mime/
 share/cups/mime/mime.convs
 share/cups/mime/mime.types
 share/cups/model/
-share/cups/model/foomatic-db-ppds
 share/cups/ppdc/
 share/cups/ppdc/epson.h
 share/cups/ppdc/escp.h

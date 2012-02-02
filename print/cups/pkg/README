@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2011/10/02 14:41:48 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2012/02/02 07:11:19 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -50,3 +50,11 @@ chown _cups:_saned /dev/ugen0.* /dev/usb1
 *** WARNING ***
 ulpt(4) needs to be disable in the kernel (see config(8)) or the printer
 will not be available to libusb.
+
+UPGRADING
+=========
+If you experience cups-driverd(8) crashes or printing issues after
+upgrading to a new major release (e.g. from 1.5 to 1.6), it may be
+necessary to remove the old CUPS cache and restart cups(8):
+    # rm /var/cache/cups/* 2>/dev/null
+    # /etc/rc.d/cupsd restart

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.9 2011/04/06 16:50:26 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.10 2012/02/02 07:11:19 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -14,6 +14,7 @@ _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
 	  /usr/share/man/cat8/lpd.0"
 
 rc_pre() {
+	${daemon} -t || return 1
 	[ -e /dev/ulpt0 ] && chown _cups /dev/ulpt[0-1]
 	[ -e /dev/lpt0 ] && chown _cups /dev/lp[a,t][0-2]
 
