@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/02 16:07:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/02/02 07:14:45 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
 
 REVISION-main=	7
-REVISION-extras=1
+REVISION-extras=2
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -75,6 +75,7 @@ RUN_DEPENDS-extras += \
 		x11/gnome/seahorse-plugins \
 		x11/gnome/seahorse-sharing \
 		x11/gnome/totem,-nautilus \
+		x11/gnome/tracker,-evolution \
 		x11/gnome/tracker,-nautilus \
 		x11/gnome/tweak-tool \
 		x11/gnome/vinagre \
@@ -82,6 +83,5 @@ RUN_DEPENDS-extras += \
 # BROKEN
 # x11/gnome/ekiga
 # x11/gnome/games-extra-data
-# x11/gnome/tracker,-evolution
 
 .include <bsd.port.mk>
