@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2012/01/29 14:53:21 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/02/02 08:48:27 sthen Exp $
 
 PV=		5.3
 V=		${PV}.9
 SUHOSIN_PHPV=	${V}
 SUHOSIN_P_V=	0.9.10
 REVISION=	0
-REVISION-main=	1
-REVISION-fastcgi= 2
-REVISION-fpm=	1
+REVISION-main=	2
+REVISION-fastcgi= 3
+REVISION-fpm=	2
 
 INI_TEMPLATES=	development production
 

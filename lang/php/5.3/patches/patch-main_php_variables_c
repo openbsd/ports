@@ -1,0 +1,16 @@
+$OpenBSD: patch-main_php_variables_c,v 1.1 2012/02/02 08:48:27 sthen Exp $
+
+http://svn.php.net/viewvc/php/php-src/branches/PHP_5_3/main/php_variables.c?r1=321634&r2=323007&pathrev=323007&view=patch
+
+--- main/php_variables.c.orig.port	Sun Jan  1 13:15:04 2012
++++ main/php_variables.c	Thu Feb  2 08:08:50 2012
+@@ -198,6 +198,9 @@ PHPAPI void php_register_variable_ex(char *var_name, z
+ 						MAKE_STD_ZVAL(gpc_element);
+ 						array_init(gpc_element);
+ 						zend_symtable_update(symtable1, escaped_index, index_len + 1, &gpc_element, sizeof(zval *), (void **) &gpc_element_p);
++					} else {
++						efree(var_orig);
++						return;
+ 					}
+ 				}
+ 				if (index != escaped_index) {
