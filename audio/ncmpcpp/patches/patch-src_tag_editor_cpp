@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_tag_editor_cpp,v 1.1 2011/11/29 12:07:18 dcoppa Exp $
+$OpenBSD: patch-src_tag_editor_cpp,v 1.2 2012/02/03 11:48:52 dcoppa Exp $
+
+fix segfault if LocateSong is used in tag editor
+(upstream git commit 70e9ebe7a309229825d157a8dd567cd4b4774a45)
 
 fix going to right column when filename is highlighted in middle
 one (upstream git commit 8e3b0620f0f7f00af76405c1ac5001dd8eb5885b)
@@ -7,8 +10,25 @@ fix going to wrong directory in tag editor
 (upstream git commit 78cd46b7568e92bbecaa358bae21f3079ecf11ae)
 
 --- src/tag_editor.cpp.orig	Tue Oct 11 21:27:41 2011
-+++ src/tag_editor.cpp	Tue Nov 29 12:26:46 2011
-@@ -809,7 +809,7 @@ void TagEditor::NextColumn()
++++ src/tag_editor.cpp	Fri Feb  3 11:24:39 2012
+@@ -39,6 +39,7 @@
+ #include "song_info.h"
+ #include "playlist.h"
+ 
++using Global::myScreen;
+ using Global::MainHeight;
+ using Global::MainStartY;
+ 
+@@ -185,8 +186,6 @@ std::basic_string<my_char_t> TagEditor::Title()
+ 
+ void TagEditor::SwitchTo()
+ {
+-	using Global::myScreen;
+-	
+ 	if (myScreen == this)
+ 		return;
+ 	
+@@ -809,7 +808,7 @@ void TagEditor::NextColumn()
  		w = TagTypes;
  		TagTypes->HighlightColor(Config.active_column_color);
  	}
@@ -17,7 +37,17 @@ fix going to wrong directory in tag editor
  	{
  		TagTypes->HighlightColor(Config.main_highlight_color);
  		w->Refresh();
-@@ -872,7 +872,11 @@ void TagEditor::LocateSong(const MPD::Song &s)
+@@ -854,6 +853,9 @@ void TagEditor::PrevColumn()
+ 
+ void TagEditor::LocateSong(const MPD::Song &s)
+ {
++	if (myScreen == this)
++		return;
++
+ 	if (s.GetDirectory().empty())
+ 		return;
+ 	
+@@ -872,7 +874,11 @@ void TagEditor::LocateSong(const MPD::Song &s)
  	if (itsBrowsedDir != s.GetDirectory())
  	{
  		itsBrowsedDir = s.GetDirectory();
