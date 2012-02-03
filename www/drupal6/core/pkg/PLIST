@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/01/27 20:59:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/02/03 10:14:12 espie Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -39,6 +39,7 @@ ${DRUPAL_ROOT}/includes/install.pgsql.inc
 ${DRUPAL_ROOT}/includes/language.inc
 ${DRUPAL_ROOT}/includes/locale.inc
 @comment ${DRUPAL_ROOT}/includes/locale.inc.orig
+${DRUPAL_ROOT}/includes/lock-install.inc
 ${DRUPAL_ROOT}/includes/lock.inc
 ${DRUPAL_ROOT}/includes/mail.inc
 ${DRUPAL_ROOT}/includes/menu.inc
@@ -49,8 +50,8 @@ ${DRUPAL_ROOT}/includes/session.inc
 ${DRUPAL_ROOT}/includes/tablesort.inc
 ${DRUPAL_ROOT}/includes/theme.inc
 ${DRUPAL_ROOT}/includes/theme.maintenance.inc
-${DRUPAL_ROOT}/includes/unicode.inc
 ${DRUPAL_ROOT}/includes/unicode.entities.inc
+${DRUPAL_ROOT}/includes/unicode.inc
 ${DRUPAL_ROOT}/includes/xmlrpc.inc
 ${DRUPAL_ROOT}/includes/xmlrpcs.inc
 ${DRUPAL_ROOT}/index.php
