@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.82 2011/11/14 17:48:59 rpointel Exp $
+# $OpenBSD: Makefile,v 1.83 2012/02/03 18:23:14 gsoares Exp $
 
 COMMENT=	library for manipulating PNG images
 
+REVISION=	0
 VERSION=	1.5.6
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
