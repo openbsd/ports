@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.14 2012/01/26 13:17:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.15 2012/02/03 17:01:17 landry Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
+BROKEN-sparc64 = gengtype looping infinitely
 
 V = 4.6.2
 FULL_VERSION = $V
