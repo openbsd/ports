@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/21 15:47:45 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2012/02/06 22:07:09 espie Exp $
 
 COMMENT=		terminal emulation library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		vte
 GNOME_VERSION=		0.30.1
 
 PKGNAME=		vte3-${GNOME_VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  vte2_90                   1.0 # 3009.0
 

@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/21 15:47:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/02/06 22:07:09 espie Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
-@pkgpath devel/vte,-main
-@pkgpath devel/vte,-pty-helper
 @bin bin/vte2_90
 include/vte-2.90/
 include/vte-2.90/vte/
