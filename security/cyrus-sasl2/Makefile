@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.64 2011/12/21 14:36:15 pea Exp $
+# $OpenBSD: Makefile,v 1.65 2012/02/07 06:36:39 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.25
+REVISION=	2
 
 SHARED_LIBS += anonymous       2.22 # 2.25
 SHARED_LIBS += crammd5         2.22 # 2.25
@@ -19,8 +20,6 @@ SHARED_LIBS += scram           0.0  # 2.25
 SHARED_LIBS += sql             2.22 # 2.25
 
 CATEGORIES=	security
-
-REVISION=	1
 
 HOMEPAGE=	http://www.cyrusimap.org/
 

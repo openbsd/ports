@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_gssapi_c,v 1.1 2012/02/07 06:36:39 ajacoutot Exp $
+
+From fa289f15ceb2b9c64bdcf057a75469808454190d Mon Sep 17 00:00:00 2001
+From: Alexey Melnikov <alexey.melnikov@isode.com>
+Date: Fri, 07 Oct 2011 11:22:47 +0000
+Subject: Fixed a segfault in gssapi.c (Patch by Phil Pennock)
+
+--- plugins/gssapi.c.orig	Wed May 11 21:25:55 2011
++++ plugins/gssapi.c	Mon Feb  6 11:48:42 2012
+@@ -370,7 +370,7 @@ sasl_gss_encode(void *context, const struct iovec *inv
+     }
+     
+     if (output_token->value && output) {
+-	unsigned char * p = (unsigned char *) text->encode_buf;
++	unsigned char * p;
+ 	
+ 	ret = _plug_buf_alloc(text->utils,
+ 			      &(text->encode_buf),
+@@ -383,6 +383,8 @@ sasl_gss_encode(void *context, const struct iovec *inv
+ 	    GSS_UNLOCK_MUTEX(text->utils);
+ 	    return ret;
+ 	}
++
++	p = (unsigned char *) text->encode_buf;
+ 	
+ 	p[0] = (output_token->length>>24) & 0xFF;
+ 	p[1] = (output_token->length>>16) & 0xFF;
