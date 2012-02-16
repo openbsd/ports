@@ -1,11 +1,14 @@
-$OpenBSD: patch-spectool_net_client_h,v 1.1.1.1 2008/06/12 21:33:57 sthen Exp $
---- spectool_net_client.h.orig	Sun Jun  8 10:27:24 2008
-+++ spectool_net_client.h	Sun Jun  8 10:27:32 2008
-@@ -23,6 +23,7 @@
+$OpenBSD: patch-spectool_net_client_h,v 1.2 2012/02/16 21:26:55 sthen Exp $
+--- spectool_net_client.h.orig	Fri Jun 10 16:53:29 2011
++++ spectool_net_client.h	Sun Jan 22 11:34:31 2012
+@@ -23,8 +23,9 @@
  #include <sys/time.h>
  #include <sys/socket.h>
  #include <sys/ioctl.h>
+-#include <arpa/inet.h>
 +#include <sys/uio.h>
- #include <arpa/inet.h>
  #include <netinet/in.h>
++#include <arpa/inet.h>
  #include <unistd.h>
+ #include <netdb.h>
+ #include <fcntl.h>

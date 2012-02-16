@@ -1,0 +1,13 @@
+$OpenBSD: patch-spectool_net_server_c,v 1.1 2012/02/16 21:26:55 sthen Exp $
+--- spectool_net_server.c.orig	Sun Jan 22 11:34:54 2012
++++ spectool_net_server.c	Sun Jan 22 11:34:57 2012
+@@ -23,8 +23,8 @@
+ #include <sys/time.h>
+ #include <sys/socket.h>
+ #include <sys/ioctl.h>
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <unistd.h>
+ #include <netdb.h>
+ #include <fcntl.h>
