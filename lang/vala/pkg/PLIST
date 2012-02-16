@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2011/11/30 15:10:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.27 2012/02/16 22:19:27 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -198,6 +198,8 @@ share/vala-${API_V}/vapi/libmagic.vapi
 share/vala-${API_V}/vapi/libnl-1.vapi
 share/vala-${API_V}/vapi/libnl-2.0.deps
 share/vala-${API_V}/vapi/libnl-2.0.vapi
+share/vala-${API_V}/vapi/libnl-3.0.deps
+share/vala-${API_V}/vapi/libnl-3.0.vapi
 share/vala-${API_V}/vapi/libnotify.deps
 share/vala-${API_V}/vapi/libnotify.vapi
 share/vala-${API_V}/vapi/liboobs-1.vapi
@@ -278,4 +280,6 @@ share/vala-${API_V}/vapi/webkit-1.0.deps
 share/vala-${API_V}/vapi/webkit-1.0.vapi
 share/vala-${API_V}/vapi/x11.vapi
 share/vala-${API_V}/vapi/xcb.vapi
+share/vala-${API_V}/vapi/xtst.deps
+share/vala-${API_V}/vapi/xtst.vapi
 share/vala-${API_V}/vapi/zlib.vapi
