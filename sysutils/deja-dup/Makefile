@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/02/16 22:25:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		20.2
 DISTNAME=	deja-dup-${V}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -60,9 +60,5 @@ FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/deja-dup
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/common/PythonChecker.c
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/gnome/help
-	mv ${PREFIX}/share/help ${PREFIX}/share/gnome/help/deja-dup
 
 .include <bsd.port.mk>
