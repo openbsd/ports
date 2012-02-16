@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/12/16 17:36:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/02/16 22:20:02 ajacoutot Exp $
+@pkgpath ${BASE_PKGPATH}
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
