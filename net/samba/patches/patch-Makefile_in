@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.17 2011/09/26 09:32:12 sthen Exp $
---- Makefile.in.orig	Tue Aug  9 13:17:47 2011
-+++ Makefile.in	Mon Sep 12 17:40:48 2011
+$OpenBSD: patch-Makefile_in,v 1.18 2012/02/16 21:36:08 sthen Exp $
+--- Makefile.in.orig	Thu Jan 26 05:26:48 2012
++++ Makefile.in	Thu Jan 26 08:46:44 2012
 @@ -28,7 +28,7 @@ SHLD=@SHLD@
  LIB_PATH_VAR=@LIB_PATH_VAR@
  
  ## Dynamic shared libraries build settings
--DSO_EXPORTS_CMD=-Wl,--version-script,$(srcdir)/exports/`basename $@ | sed 's/@SHLIBEXT@\(.[0-9]\{1,\}\)\{0,1\}$$/@SYMSEXT@/'`
+-DSO_EXPORTS_CMD=-Wl,--version-script,$(srcdir)/exports/`basename $@ | sed 's:\.@SHLIBEXT@[\.0-9]*$$:.@SYMSEXT@:'`
 +DSO_EXPORTS_CMD=-Wl,--version-script,$(srcdir)/exports/`basename $@ | sed 's/@SHLIBEXT@\(.[0-9]\{1,\}\)\{0,1\}\(.[0-9]\{1,\}\)\{0,1\}$$/@SYMSEXT@/'`
  DSO_EXPORTS=@DSO_EXPORTS@
  SHLD_DSO = $(SHLD) $(LDSHFLAGS) $(DSO_EXPORTS) -o $@
