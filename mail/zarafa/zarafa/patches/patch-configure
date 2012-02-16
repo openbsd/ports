@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.19 2012/01/12 14:17:23 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.20 2012/02/16 22:18:36 ajacoutot Exp $
 
 OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
 
---- configure.orig	Wed Dec 21 20:17:32 2011
-+++ configure	Thu Jan 12 14:51:50 2012
-@@ -21934,13 +21934,13 @@ fi
+--- configure.orig	Wed Feb  1 15:48:54 2012
++++ configure	Thu Feb  2 12:28:17 2012
+@@ -21938,13 +21938,13 @@ fi
  
  # Everything uses pthread
  # check lib, but do not set in link list, but use -pthread instead (gnu c/c++ only?)
@@ -21,7 +21,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24459,7 +24459,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+@@ -24474,7 +24474,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -30,7 +30,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24519,7 +24519,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
+@@ -24534,7 +24534,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
  #define HAVE_STRFTIME 1
  _ACEOF
  
@@ -39,7 +39,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  fi
  
  fi
-@@ -26035,7 +26035,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -26050,7 +26050,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=-I$VMIME_PREFIX
@@ -48,7 +48,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  
  else
  
-@@ -27552,84 +27552,10 @@ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -27661,84 +27661,10 @@ sed 's/^/| /' conftest.$ac_ext >&5
  	 { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
  
@@ -134,7 +134,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  CRYPT_LIBS=$LIBS
  LIBS=$LIBS_system
  
-@@ -27644,7 +27570,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
+@@ -27753,7 +27679,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -143,7 +143,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28820,7 +28746,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
+@@ -28929,7 +28855,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -152,7 +152,7 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28876,7 +28802,7 @@ fi
+@@ -28985,7 +28911,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6; }
  if test $ac_cv_lib_intl_gettext = yes; then

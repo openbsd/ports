@@ -1,10 +1,10 @@
-$OpenBSD: patch-common_Makefile_in,v 1.13 2011/11/17 15:14:37 ajacoutot Exp $
+$OpenBSD: patch-common_Makefile_in,v 1.14 2012/02/16 22:18:36 ajacoutot Exp $
 
 *** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
 
---- common/Makefile.in.orig	Wed Nov 16 23:02:03 2011
-+++ common/Makefile.in	Thu Nov 17 13:59:30 2011
-@@ -352,7 +352,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX 
+--- common/Makefile.in.orig	Wed Feb  1 15:48:56 2012
++++ common/Makefile.in	Thu Feb  2 12:28:17 2012
+@@ -353,7 +353,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX 
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy
  
@@ -13,16 +13,16 @@ $OpenBSD: patch-common_Makefile_in,v 1.13 2011/11/17 15:14:37 ajacoutot Exp $
  libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			rtfutil.cpp									\
  			codepage.cpp								\
-@@ -371,7 +371,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
- 			ECDebugPrint.cpp							\
- 			ECIterators.cpp
+@@ -373,7 +373,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+ 			ECIterators.cpp								\
+ 			MAPINotifSink.cpp
  
 -libcommon_util_la_LDFLAGS = -static
 +libcommon_util_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
  libcommon_util_la_SOURCES = platform.cpp platform.linux.cpp md5.cpp \
  	base64.cpp ECLogger.cpp ECConfig.cpp ECConfigImpl.cpp \
  	ECFifoBuffer.cpp ECSerializer.cpp ECCache.cpp my_getopt.cpp \
-@@ -381,7 +381,7 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
+@@ -383,7 +383,7 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
  	charset/localeutil.cpp TimeUtil.cpp RecurrenceState.cpp \
  	ECGetText.cpp threadutil.cpp ECRestriction.cpp userutil.cpp \
  	ECFeatures.cpp ECACL.cpp ECThreadPool.cpp $(am__append_1)

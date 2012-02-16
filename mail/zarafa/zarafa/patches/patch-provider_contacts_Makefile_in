@@ -1,0 +1,12 @@
+$OpenBSD: patch-provider_contacts_Makefile_in,v 1.1 2012/02/16 22:18:36 ajacoutot Exp $
+--- provider/contacts/Makefile.in.orig	Thu Feb  2 14:21:55 2012
++++ provider/contacts/Makefile.in	Thu Feb  2 14:22:18 2012
+@@ -291,7 +291,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX		\
+ 	-I${top_srcdir}/mapi4linux/include	\
+ 	-I${top_srcdir}/common
+ 
+-libzarafacontacts_la_LDFLAGS = -avoid-version
++libzarafacontacts_la_LDFLAGS =
+ libzarafacontacts_la_LIBADD = \
+ 	${top_builddir}/common/libcommon_util.la			\
+ 	${top_builddir}/common/libcommon_mapi.la			\

@@ -1,10 +1,10 @@
-$OpenBSD: patch-libfreebusy_Makefile_in,v 1.11 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-libfreebusy_Makefile_in,v 1.12 2012/02/16 22:18:36 ajacoutot Exp $
 
 *** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
 
---- libfreebusy/Makefile.in.orig	Tue May 31 19:10:00 2011
-+++ libfreebusy/Makefile.in	Tue May 31 19:10:13 2011
-@@ -274,7 +274,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX $(BOOST_CPPFLAGS) 
+--- libfreebusy/Makefile.in.orig	Wed Feb  1 15:48:58 2012
++++ libfreebusy/Makefile.in	Thu Feb  2 12:28:17 2012
+@@ -275,7 +275,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX $(BOOST_CPPFLAGS) 
  	-I${top_srcdir}/common
  
  libfreebusy_la_includedir = $(includedir)/libfreebusy

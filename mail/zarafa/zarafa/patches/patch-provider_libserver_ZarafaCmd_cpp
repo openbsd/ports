@@ -1,10 +1,10 @@
-$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.21 2011/12/22 17:10:04 ajacoutot Exp $
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.22 2012/02/16 22:18:36 ajacoutot Exp $
 
 OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 
---- provider/libserver/ZarafaCmd.cpp.orig	Thu Dec 22 01:02:36 2011
-+++ provider/libserver/ZarafaCmd.cpp	Thu Dec 22 12:14:20 2011
-@@ -796,11 +796,11 @@ double GetTimeOfDay();
+--- provider/libserver/ZarafaCmd.cpp.orig	Wed Feb  1 22:09:34 2012
++++ provider/libserver/ZarafaCmd.cpp	Thu Feb  2 12:28:17 2012
+@@ -798,11 +798,11 @@ double GetTimeOfDay();
  
  #define SOAP_ENTRY_FUNCTION_HEADER(resultvar, fname) \
      ECRESULT		er = erSuccess; \
@@ -18,7 +18,7 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
  	SOAP_CALLBACK(soap, pthread_self(), (std::string) "[" + PrettyIP(soap->ip) + "] " + #fname); \
  	er = g_lpSessionManager->ValidateSession(soap, ulSessionId, &lpecSession, true);\
  	const bool UNUSED_VAR bSupportUnicode = (er == erSuccess ? (lpecSession->GetCapabilities() & ZARAFA_CAP_UNICODE) != 0 : false); \
-@@ -811,11 +811,11 @@ double GetTimeOfDay();
+@@ -813,11 +813,11 @@ double GetTimeOfDay();
  #define SOAP_ENTRY_FUNCTION_FOOTER \
  __soapentry_exit: \
      *lpResultVar = er; \

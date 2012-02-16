@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2012/01/12 14:17:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2012/02/16 22:18:36 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,6 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	1
-REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -22,6 +19,7 @@ SHARED_LIBS +=  common_mapi          2.0      # 1.0
 SHARED_LIBS +=  common_ssl           2.0      # 1.0
 SHARED_LIBS +=  freebusy             2.0      # 1.0
 SHARED_LIBS +=  zarafasync           2.0      # 1.0
+SHARED_LIBS +=  zarafacontacts       0.0      # 0.0
 
 MULTI_PACKAGES=	-main -web
 
@@ -51,7 +49,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime \
+		mail/zarafa/libvmime>=0.9.2v0 \
 		textproc/libical \
 		textproc/icu4c \
 		devel/boost
@@ -98,6 +96,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-perl \
+		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
 		--enable-dependency-tracking \
@@ -119,7 +118,8 @@ CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \
 		QUOTATEMPLATEDIR=${PREFIX}/share/examples/zarafa/quotamail \
-		INDEXERSCRIPTSDIR=${PREFIX}/share/examples/zarafa/indexerscripts
+		INDEXERSCRIPTSDIR=${PREFIX}/share/examples/zarafa/indexerscripts \
+		MAPICONFIGDIR=${PREFIX}/share/examples/zarafa/mapi
 
 SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2011/12/22 17:10:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2012/02/16 22:18:36 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -125,6 +125,7 @@ include/zarafa/IECStatsCollector.h
 include/zarafa/IECTestProtocol.h
 include/zarafa/IECUnknown.h
 include/zarafa/IMAPIOffline.h
+include/zarafa/MAPINotifSink.h
 include/zarafa/RecurrenceState.h
 include/zarafa/SSLUtil.h
 include/zarafa/SymmetricCrypt.h
@@ -143,25 +144,15 @@ include/zarafa/charset/traits.h
 include/zarafa/charset/utf16string.h
 include/zarafa/charset/utf32string.h
 include/zarafa/charset/utf8string.h
-include/zarafa/checked.h
 include/zarafa/codepage.h
-include/zarafa/convert.h
-include/zarafa/convstring.h
-include/zarafa/core.h
 include/zarafa/edkguid.h
 include/zarafa/favoritesutil.h
-include/zarafa/itercomp.h
-include/zarafa/localeutil.h
-include/zarafa/mapi_array_ptr.h
-include/zarafa/mapi_memory_ptr.h
-include/zarafa/mapi_object_ptr.h
 include/zarafa/mapi_ptr/
 include/zarafa/mapi_ptr.h
 include/zarafa/mapi_ptr/mapi_array_ptr.h
 include/zarafa/mapi_ptr/mapi_memory_ptr.h
 include/zarafa/mapi_ptr/mapi_object_ptr.h
 include/zarafa/mapi_ptr/mapi_rowset_ptr.h
-include/zarafa/mapi_rowset_ptr.h
 include/zarafa/mapicontact.h
 include/zarafa/mapiext.h
 include/zarafa/mapiguidext.h
@@ -175,9 +166,7 @@ include/zarafa/restrictionutil.h
 include/zarafa/rtfutil.h
 include/zarafa/stringutil.h
 include/zarafa/threadutil.h
-include/zarafa/traits.h
 include/zarafa/tstring.h
-include/zarafa/unchecked.h
 include/zarafa/userutil.h
 include/zarafa/ustringutil/
 include/zarafa/ustringutil.h
@@ -185,17 +174,11 @@ include/zarafa/ustringutil/itercomp.h
 include/zarafa/ustringutil/utf32iter.h
 include/zarafa/ustringutil/utf8iter.h
 include/zarafa/ustringutil/utfutil.h
-include/zarafa/utf16string.h
-include/zarafa/utf32iter.h
-include/zarafa/utf32string.h
 include/zarafa/utf8/
 include/zarafa/utf8.h
 include/zarafa/utf8/checked.h
 include/zarafa/utf8/core.h
 include/zarafa/utf8/unchecked.h
-include/zarafa/utf8iter.h
-include/zarafa/utf8string.h
-include/zarafa/utfutil.h
 lib/libarchiver.la
 @lib lib/libarchiver.so.${LIBarchiver_VERSION}
 @comment lib/libcommon_mapi.la
@@ -214,6 +197,8 @@ lib/libmapi.la
 @lib lib/libmapi.so.${LIBmapi_VERSION}
 lib/libzarafaclient.la
 @lib lib/libzarafaclient.so.${LIBzarafaclient_VERSION}
+@comment lib/libzarafacontacts.la
+@lib lib/libzarafacontacts.so.${LIBzarafacontacts_VERSION}
 @comment lib/libzarafasync.la
 @lib lib/libzarafasync.so.${LIBzarafasync_VERSION}
 lib/pkgconfig/zarafa.pc
@@ -351,6 +336,12 @@ share/examples/zarafa/local_zarafa.m4
 @mode 0444
 @sample /usr/share/sendmail/feature/local_zarafa.m4
 @mode
+share/examples/zarafa/mapi/
+@sample ${SYSCONFDIR}/mapi/
+share/examples/zarafa/mapi/zarafa.inf
+@sample ${SYSCONFDIR}/mapi/zarafa.inf
+share/examples/zarafa/mapi/zcontacts.inf
+@sample ${SYSCONFDIR}/mapi/zcontacts.inf
 share/examples/zarafa/monitor.cfg
 @sample ${SYSCONFDIR}/zarafa/monitor.cfg
 share/examples/zarafa/quotamail/
@@ -415,7 +406,6 @@ share/examples/zarafa/userscripts/groups_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
-@mode
 @mode 555
 share/examples/zarafa/zarafa-client-update
 @mode

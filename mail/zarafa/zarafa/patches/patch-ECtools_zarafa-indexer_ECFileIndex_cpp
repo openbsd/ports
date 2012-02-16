@@ -1,0 +1,12 @@
+$OpenBSD: patch-ECtools_zarafa-indexer_ECFileIndex_cpp,v 1.1 2012/02/16 22:18:36 ajacoutot Exp $
+--- ECtools/zarafa-indexer/ECFileIndex.cpp.orig	Thu Feb  2 16:11:07 2012
++++ ECtools/zarafa-indexer/ECFileIndex.cpp	Thu Feb  2 16:11:21 2012
+@@ -64,7 +64,7 @@
+ #include "ECFileIndex.h"
+ #include "zarafa-indexer.h"
+ 
+- #define DEFAULT_BASE_PATH	"/var/lib/zarafa/index/"
++ #define DEFAULT_BASE_PATH	"/var/db/zarafa/index/"
+ 
+ #define BASE_PREFIX			"base: "
+ #define BASE_PREFIX_LEN		strlen("base: ")
