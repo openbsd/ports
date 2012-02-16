@@ -1,6 +1,9 @@
-$OpenBSD: patch-config_h_in,v 1.3 2011/09/26 14:32:35 ajacoutot Exp $
+$OpenBSD: patch-config_h_in,v 1.4 2012/02/16 22:17:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=652623
+From ac597c44a52a5fc4c3e20ee75e7d82f691722feb Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 18 Jan 2012 16:19:34 +0000
+Subject: build: Check for util.h to prevent implicit declaration
 
 --- config.h.in.orig	Mon Sep 26 15:23:43 2011
 +++ config.h.in	Mon Sep 26 15:43:35 2011
