@@ -1,0 +1,17 @@
+$OpenBSD: patch-gio_kqueue_kqueue-thread_c,v 1.1 2012/02/16 22:08:39 ajacoutot Exp $
+--- gio/kqueue/kqueue-thread.c.orig	Fri Feb 10 18:52:27 2012
++++ gio/kqueue/kqueue-thread.c	Fri Feb 10 18:56:23 2012
+@@ -228,8 +229,11 @@ _kqueue_thread_func (void *arg)
+ 
+     if (ret == -1)
+       {
+-        KT_W ("kevent failed");
+-        continue;
++        KT_W ("kevent failed: %d", errno);
++        if (errno == EINTR)
++          continue;
++        else
++          return NULL;
+       }
+ 
+     if (received.ident == fd)
