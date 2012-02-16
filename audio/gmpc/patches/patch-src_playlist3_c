@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_playlist3_c,v 1.1 2012/02/16 21:36:03 landry Exp $
+Fix icon warnings upon startup
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=646822
+http://repo.or.cz/w/gmpc.git/commit/ced4f26e053bff5bb04205f623a179fc97fdfe52
+--- src/playlist3.c.orig	Wed Aug 17 05:09:55 2011
++++ src/playlist3.c	Sun Feb 12 20:45:39 2012
+@@ -1632,7 +1632,8 @@ static void playlist_status_changed(MpdObj * mi, Chang
+                 gtk_action_set_stock_id(GTK_ACTION(gtk_builder_get_object(pl3_xml, "MPDPlayPause")), "gtk-media-pause");
+                 gtk_image_set_from_stock(GTK_IMAGE
+                     (gtk_builder_get_object
+-                    (pl3_xml, "play_button_image")), "gtk-media-pause", GTK_ICON_SIZE_BUTTON);
++                    (pl3_xml, "play_button_image")), "gtk-media-pause",
++					GTK_ICON_SIZE_MENU);
+ 
+                 /**
+                  * Update window title
+@@ -1669,8 +1670,8 @@ static void playlist_status_changed(MpdObj * mi, Chang
+                 gtk_action_set_stock_id(GTK_ACTION(gtk_builder_get_object(pl3_xml, "MPDPlayPause")), "gtk-media-play");
+                 gtk_image_set_from_stock(GTK_IMAGE
+                     (gtk_builder_get_object
+-                    (pl3_xml, "play_button_image")), "gtk-media-play", GTK_ICON_SIZE_BUTTON);
+-
++                    (pl3_xml, "play_button_image")), "gtk-media-play",
++					GTK_ICON_SIZE_MENU);
+                 /**
+                  * Set paused in Window string
+                  */
+@@ -1704,8 +1705,8 @@ static void playlist_status_changed(MpdObj * mi, Chang
+ 
+                 gtk_image_set_from_stock(GTK_IMAGE
+                     (gtk_builder_get_object
+-                    (pl3_xml, "play_button_image")), "gtk-media-play", GTK_ICON_SIZE_BUTTON);
+-
++                    (pl3_xml, "play_button_image")), "gtk-media-play",
++					GTK_ICON_SIZE_MENU);
+                 if (gmpc_profiles_get_number_of_profiles(gmpc_profiles) > 1)
+                 {
+                     gchar *id = gmpc_profiles_get_current(gmpc_profiles);

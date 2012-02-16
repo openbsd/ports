@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/02/16 21:36:03 landry Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES=		audio
 
@@ -35,6 +35,10 @@ MODULES=		devel/gettext textproc/intltool
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+
+# fuck you vala, for running valac without reason and generating broken code.
+post-patch:
+	touch ${WRKSRC}/src/gmpc_vala.stamp
 
 BUILD_DEPENDS=		x11/gob2 \
 			x11/gnome/doc-utils \
