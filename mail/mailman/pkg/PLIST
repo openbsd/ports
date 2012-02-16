@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.22 2012/01/26 11:32:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/02/16 22:27:56 ajacoutot Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
 @extraunexec rm -fr /var/spool/mailman/*
-@mode 775
 @owner _mailman
 @group _mailman
 lib/mailman/
+@mode 775
 lib/mailman/Mailman/
 lib/mailman/Mailman/Archiver/
 @mode
