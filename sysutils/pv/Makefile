@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/02/16 22:34:34 pascal Exp $
 
 COMMENT =		monitor the progress of data through a pipeline
 
-DISTNAME =		pv-1.1.4
+DISTNAME =		pv-1.2.0
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.ivarch.com/programs/pv.shtml
@@ -18,6 +18,5 @@ MASTER_SITES =		http://pipeviewer.googlecode.com/files/
 WANTLIB =		c
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
