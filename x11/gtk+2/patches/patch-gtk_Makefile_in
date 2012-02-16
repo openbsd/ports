@@ -1,13 +1,13 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.35 2012/01/25 09:05:18 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.36 2012/02/16 22:09:14 ajacoutot Exp $
 
 XXX Link the new icon names to their old icon names
 because some applications are broken. Use this until
 they get fixed. This is temporary.
 https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
---- gtk/Makefile.in.orig	Tue Jan 24 20:38:54 2012
-+++ gtk/Makefile.in	Wed Jan 25 09:01:18 2012
-@@ -1238,7 +1238,7 @@ SUBDIRS = theme-bits . tests
+--- gtk/Makefile.in.orig	Mon Feb  6 16:34:27 2012
++++ gtk/Makefile.in	Mon Feb  6 17:56:06 2012
+@@ -1245,7 +1245,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
@@ -16,7 +16,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
-@@ -1898,7 +1898,171 @@ GENERATED_ICONS = \
+@@ -1905,7 +1905,171 @@ GENERATED_ICONS = \
  	stock-icons/24/folder-remote.png 		\
  	stock-icons/24/user-home.png 			\
  	stock-icons/24/user-desktop.png 		\
@@ -189,7 +189,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
  @CROSS_COMPILING_FALSE@gtk_update_icon_cache_program = \
  @CROSS_COMPILING_FALSE@	   ./gtk-update-icon-cache
-@@ -5628,6 +5792,88 @@ stamp-icons: $(STOCK_ICONS)
+@@ -5358,6 +5522,88 @@ stamp-icons: $(STOCK_ICONS)
  	   && $(LN_S) folder.png user-desktop.png 			\
  	   && $(RM) user-home.png 					\
  	   && $(LN_S) folder.png user-home.png 				\

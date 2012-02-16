@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.34 2012/01/25 09:05:18 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.35 2012/02/16 22:09:14 ajacoutot Exp $
 
 Do not force enable_man to yes.
 
---- configure.orig	Tue Jan 24 20:38:57 2012
-+++ configure	Wed Jan 25 09:01:18 2012
-@@ -25332,7 +25332,7 @@ fi
+--- configure.orig	Mon Feb  6 16:34:29 2012
++++ configure	Mon Feb  6 17:56:06 2012
+@@ -25393,7 +25393,7 @@ fi
  
  # Check whether --enable-man was given.
  if test "${enable_man+set}" = set; then :
