@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/12/03 22:17:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/02/16 22:19:04 ajacoutot Exp $
+@pkgpath ${BASE_PKGPATH}
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
