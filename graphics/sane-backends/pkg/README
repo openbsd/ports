@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2012/02/16 22:29:15 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,6 +23,9 @@ addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086)
    ugen0
 
 $ sudo chgrp _saned /dev/ugen0.* /dev/usb3
+
+Alternatively, hotplugd(4) attach/detach scripts can be used to automate
+this.
 
 The reason we are changing the group and not the user is that it will
 allow for multi-function devices to work for both printing and scanning
