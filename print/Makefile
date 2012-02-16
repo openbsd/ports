@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.95 2012/01/31 14:15:57 sthen Exp $
+#	$OpenBSD: Makefile,v 1.96 2012/02/16 22:31:16 ajacoutot Exp $
 
     SUBDIR =
+    SUBDIR += a2ps
     SUBDIR += a2ps,a4
-    SUBDIR += a2ps,letter
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
@@ -42,9 +42,8 @@
     SUBDIR += lout
     SUBDIR += lss
     SUBDIR += lyx
+    SUBDIR += mpage
     SUBDIR += mpage,a4
-    SUBDIR += mpage,legal
-    SUBDIR += mpage,letter
     SUBDIR += openclipart
     SUBDIR += p5-PostScript-MailLabels
     SUBDIR += pdflib
@@ -54,8 +53,8 @@
     SUBDIR += ps2eps
     SUBDIR += pscal
     SUBDIR += psdim
+    SUBDIR += psutils
     SUBDIR += psutils,a4
-    SUBDIR += psutils,letter
     SUBDIR += ptouch-driver
     SUBDIR += py-cups
     SUBDIR += py-poppler
