@@ -1,41 +1,45 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/03 23:04:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/02/16 22:12:40 ajacoutot Exp $
 @bin bin/gtranslator
-include/gtranslator-2.0/
-include/gtranslator-2.0/gtranslator/
-include/gtranslator-2.0/gtranslator/gtr-application.h
-include/gtranslator-2.0/gtranslator/gtr-context.h
-include/gtranslator-2.0/gtranslator/gtr-debug.h
-include/gtranslator-2.0/gtranslator/gtr-header.h
-include/gtranslator-2.0/gtranslator/gtr-io-error-info-bar.h
-include/gtranslator-2.0/gtranslator/gtr-message-table.h
-include/gtranslator-2.0/gtranslator/gtr-msg.h
-include/gtranslator-2.0/gtranslator/gtr-notebook.h
-include/gtranslator-2.0/gtranslator/gtr-plugin.h
-include/gtranslator-2.0/gtranslator/gtr-po.h
-include/gtranslator-2.0/gtranslator/gtr-profile.h
-include/gtranslator-2.0/gtranslator/gtr-statusbar.h
-include/gtranslator-2.0/gtranslator/gtr-tab.h
-include/gtranslator-2.0/gtranslator/gtr-translation-memory-ui.h
-include/gtranslator-2.0/gtranslator/gtr-translation-memory.h
-include/gtranslator-2.0/gtranslator/gtr-utils.h
-include/gtranslator-2.0/gtranslator/gtr-view.h
-include/gtranslator-2.0/gtranslator/gtr-window.h
+include/gtranslator-3.0/
+include/gtranslator-3.0/gtranslator/
+include/gtranslator-3.0/gtranslator/gtr-application.h
+include/gtranslator-3.0/gtranslator/gtr-context.h
+include/gtranslator-3.0/gtranslator/gtr-debug.h
+include/gtranslator-3.0/gtranslator/gtr-header.h
+include/gtranslator-3.0/gtranslator/gtr-message-table.h
+include/gtranslator-3.0/gtranslator/gtr-msg.h
+include/gtranslator-3.0/gtranslator/gtr-notebook.h
+include/gtranslator-3.0/gtranslator/gtr-po.h
+include/gtranslator-3.0/gtranslator/gtr-profile.h
+include/gtranslator-3.0/gtranslator/gtr-statusbar.h
+include/gtranslator-3.0/gtranslator/gtr-tab-activatable.h
+include/gtranslator-3.0/gtranslator/gtr-tab.h
+include/gtranslator-3.0/gtranslator/gtr-translation-memory-ui.h
+include/gtranslator-3.0/gtranslator/gtr-translation-memory.h
+include/gtranslator-3.0/gtranslator/gtr-view.h
+include/gtranslator-3.0/gtranslator/gtr-window-activatable.h
+include/gtranslator-3.0/gtranslator/gtr-window.h
 lib/gtranslator/
+lib/gtranslator/girepository-1.0/
+lib/gtranslator/girepository-1.0/Gtranslator-3.0.typelib
 lib/gtranslator/plugins/
-lib/gtranslator/plugins/gtr-alternate-language.gtranslator.plugin
-lib/gtranslator/plugins/gtr-charmap.gtranslator.plugin
-lib/gtranslator/plugins/gtr-dict.gtranslator.plugin
-lib/gtranslator/plugins/gtr-fullscreen.gtranslator.plugin
-lib/gtranslator/plugins/gtr-insert-params.gtranslator.plugin
-lib/gtranslator/plugins/gtr-insert-tags.gtranslator.plugin
-lib/gtranslator/plugins/gtr-open-tran.gtranslator.plugin
-lib/gtranslator/plugins/gtr-source-code-view.gtranslator.plugin
+lib/gtranslator/plugins/charmap/
+lib/gtranslator/plugins/charmap/__init__.py
+lib/gtranslator/plugins/charmap/__init__.pyc
+lib/gtranslator/plugins/charmap/__init__.pyo
+lib/gtranslator/plugins/charmap/panel.py
+lib/gtranslator/plugins/charmap/panel.pyc
+lib/gtranslator/plugins/charmap/panel.pyo
+lib/gtranslator/plugins/gtr-alternate-language.plugin
+lib/gtranslator/plugins/gtr-charmap.plugin
+lib/gtranslator/plugins/gtr-codeview.plugin
+lib/gtranslator/plugins/gtr-dict.plugin
+lib/gtranslator/plugins/gtr-fullscreen.plugin
+lib/gtranslator/plugins/gtr-insert-params.plugin
+lib/gtranslator/plugins/gtr-open-tran.plugin
 @comment lib/gtranslator/plugins/libalternatelang.a
 @comment lib/gtranslator/plugins/libalternatelang.la
 lib/gtranslator/plugins/libalternatelang.so
-@comment lib/gtranslator/plugins/libcharmap.a
-@comment lib/gtranslator/plugins/libcharmap.la
-lib/gtranslator/plugins/libcharmap.so
 @comment lib/gtranslator/plugins/libdict.a
 @comment lib/gtranslator/plugins/libdict.la
 lib/gtranslator/plugins/libdict.so
@@ -45,15 +49,15 @@ lib/gtranslator/plugins/libfullscreen.so
 @comment lib/gtranslator/plugins/libinsertparams.a
 @comment lib/gtranslator/plugins/libinsertparams.la
 lib/gtranslator/plugins/libinsertparams.so
-@comment lib/gtranslator/plugins/libinserttags.a
-@comment lib/gtranslator/plugins/libinserttags.la
-lib/gtranslator/plugins/libinserttags.so
 @comment lib/gtranslator/plugins/libopentran.a
 @comment lib/gtranslator/plugins/libopentran.la
 lib/gtranslator/plugins/libopentran.so
 @comment lib/gtranslator/plugins/libsourcecodeview.a
 @comment lib/gtranslator/plugins/libsourcecodeview.la
 lib/gtranslator/plugins/libsourcecodeview.so
+lib/libgtranslator-private.a
+lib/libgtranslator-private.la
+@lib lib/libgtranslator-private.so.${LIBgtranslator-private_VERSION}
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
 share/applications/gtranslator.desktop
@@ -128,6 +132,19 @@ share/gnome/help/gtranslator/es/figures/profiles.png
 share/gnome/help/gtranslator/es/figures/tm.png
 share/gnome/help/gtranslator/es/figures/toolbar.png
 share/gnome/help/gtranslator/es/gtranslator.xml
+share/gnome/help/gtranslator/eu/
+share/gnome/help/gtranslator/eu/figures/
+share/gnome/help/gtranslator/eu/figures/closedialog.png
+share/gnome/help/gtranslator/eu/figures/mainwindow.png
+share/gnome/help/gtranslator/eu/figures/prefs-editor.png
+share/gnome/help/gtranslator/eu/figures/prefs-interface.png
+share/gnome/help/gtranslator/eu/figures/prefs-tm.png
+share/gnome/help/gtranslator/eu/figures/prefs.png
+share/gnome/help/gtranslator/eu/figures/profiles-dialog.png
+share/gnome/help/gtranslator/eu/figures/profiles.png
+share/gnome/help/gtranslator/eu/figures/tm.png
+share/gnome/help/gtranslator/eu/figures/toolbar.png
+share/gnome/help/gtranslator/eu/gtranslator.xml
 share/gnome/help/gtranslator/fr/
 share/gnome/help/gtranslator/fr/figures/
 share/gnome/help/gtranslator/fr/figures/closedialog.png
@@ -141,6 +158,45 @@ share/gnome/help/gtranslator/fr/figures/profiles.png
 share/gnome/help/gtranslator/fr/figures/tm.png
 share/gnome/help/gtranslator/fr/figures/toolbar.png
 share/gnome/help/gtranslator/fr/gtranslator.xml
+share/gnome/help/gtranslator/gl/
+share/gnome/help/gtranslator/gl/figures/
+share/gnome/help/gtranslator/gl/figures/closedialog.png
+share/gnome/help/gtranslator/gl/figures/mainwindow.png
+share/gnome/help/gtranslator/gl/figures/prefs-editor.png
+share/gnome/help/gtranslator/gl/figures/prefs-interface.png
+share/gnome/help/gtranslator/gl/figures/prefs-tm.png
+share/gnome/help/gtranslator/gl/figures/prefs.png
+share/gnome/help/gtranslator/gl/figures/profiles-dialog.png
+share/gnome/help/gtranslator/gl/figures/profiles.png
+share/gnome/help/gtranslator/gl/figures/tm.png
+share/gnome/help/gtranslator/gl/figures/toolbar.png
+share/gnome/help/gtranslator/gl/gtranslator.xml
+share/gnome/help/gtranslator/ja/
+share/gnome/help/gtranslator/ja/figures/
+share/gnome/help/gtranslator/ja/figures/closedialog.png
+share/gnome/help/gtranslator/ja/figures/mainwindow.png
+share/gnome/help/gtranslator/ja/figures/prefs-editor.png
+share/gnome/help/gtranslator/ja/figures/prefs-interface.png
+share/gnome/help/gtranslator/ja/figures/prefs-tm.png
+share/gnome/help/gtranslator/ja/figures/prefs.png
+share/gnome/help/gtranslator/ja/figures/profiles-dialog.png
+share/gnome/help/gtranslator/ja/figures/profiles.png
+share/gnome/help/gtranslator/ja/figures/tm.png
+share/gnome/help/gtranslator/ja/figures/toolbar.png
+share/gnome/help/gtranslator/ja/gtranslator.xml
+share/gnome/help/gtranslator/ru/
+share/gnome/help/gtranslator/ru/figures/
+share/gnome/help/gtranslator/ru/figures/closedialog.png
+share/gnome/help/gtranslator/ru/figures/mainwindow.png
+share/gnome/help/gtranslator/ru/figures/prefs-editor.png
+share/gnome/help/gtranslator/ru/figures/prefs-interface.png
+share/gnome/help/gtranslator/ru/figures/prefs-tm.png
+share/gnome/help/gtranslator/ru/figures/prefs.png
+share/gnome/help/gtranslator/ru/figures/profiles-dialog.png
+share/gnome/help/gtranslator/ru/figures/profiles.png
+share/gnome/help/gtranslator/ru/figures/tm.png
+share/gnome/help/gtranslator/ru/figures/toolbar.png
+share/gnome/help/gtranslator/ru/gtranslator.xml
 share/gnome/help/gtranslator/sl/
 share/gnome/help/gtranslator/sl/figures/
 share/gnome/help/gtranslator/sl/figures/closedialog.png
@@ -199,10 +255,28 @@ share/gtk-doc/html/gtranslator/SingleClassDiagram.png
 share/gtk-doc/html/gtranslator/ch01.html
 share/gtk-doc/html/gtranslator/ch01s02.html
 share/gtk-doc/html/gtranslator/ch02.html
-share/gtk-doc/html/gtranslator/gtranslator.devhelp
+share/gtk-doc/html/gtranslator/gtranslator-GtrApplication.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrContextPanel.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrHeader.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrHistoryEntry.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrMessageTable.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrMsg.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrNotebook.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrPo.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrProfile.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrStatusbar.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrTab.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrTranslationMemory.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrTranslationMemoryUi.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrView.html
+share/gtk-doc/html/gtranslator/gtranslator-GtrWindow.html
+share/gtk-doc/html/gtranslator/gtranslator-gtr-debug.html
+share/gtk-doc/html/gtranslator/gtranslator-gtr-io-error-info-bar.html
+share/gtk-doc/html/gtranslator/gtranslator-gtr-utils.html
 share/gtk-doc/html/gtranslator/gtranslator.devhelp2
 share/gtk-doc/html/gtranslator/home.png
 share/gtk-doc/html/gtranslator/index.html
+share/gtk-doc/html/gtranslator/index.sgml
 share/gtk-doc/html/gtranslator/left.png
 share/gtk-doc/html/gtranslator/right.png
 share/gtk-doc/html/gtranslator/style.css
@@ -210,9 +284,8 @@ share/gtk-doc/html/gtranslator/up.png
 share/gtranslator/
 share/gtranslator/dtd/
 share/gtranslator/dtd/umtf.dtd
-share/gtranslator/gtr-toolbar.xml
-share/gtranslator/gtranslator-ui.xml
-share/gtranslator/layout.xml
+share/gtranslator/gir-1.0/
+share/gtranslator/gir-1.0/Gtranslator-3.0.gir
 share/gtranslator/pixmaps/
 share/gtranslator/pixmaps/gtranslator-fuzzy-next.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-prev.png
@@ -222,16 +295,21 @@ share/gtranslator/pixmaps/gtranslator-logo.png
 share/gtranslator/pixmaps/gtranslator-plugin.png
 share/gtranslator/pixmaps/gtranslator-untranslated-next.png
 share/gtranslator/pixmaps/gtranslator-untranslated-prev.png
-share/gtranslator/po.lang
 share/gtranslator/ui/
+share/gtranslator/ui/gtr-codeview-dialog.ui
 share/gtranslator/ui/gtr-header-dialog.ui
 share/gtranslator/ui/gtr-jump-dialog.ui
+share/gtranslator/ui/gtr-languages-fetcher.ui
 share/gtranslator/ui/gtr-open-tran-dialog.ui
+share/gtranslator/ui/gtr-plural-forms.ini
 share/gtranslator/ui/gtr-preferences-dialog.ui
 share/gtranslator/ui/gtr-profile-dialog.ui
 share/gtranslator/ui/gtr-search-dialog.ui
-share/gtranslator/ui/gtr-source-code-view-dialog.ui
+share/gtranslator/ui/gtr-toolbar.xml
 share/gtranslator/ui/gtr-viewer.ui
+share/gtranslator/ui/gtranslator-ui.xml
+share/gtranslator/ui/layout.xml
+share/gtranslator/ui/po.lang
 share/icons/hicolor/16x16/apps/gtranslator.png
 share/icons/hicolor/22x22/apps/gtranslator.png
 share/icons/hicolor/24x24/apps/gtranslator.png
@@ -253,6 +331,7 @@ share/locale/dz/LC_MESSAGES/gtranslator.mo
 share/locale/el/LC_MESSAGES/gtranslator.mo
 share/locale/en_CA/LC_MESSAGES/gtranslator.mo
 share/locale/en_GB/LC_MESSAGES/gtranslator.mo
+share/locale/eo/LC_MESSAGES/gtranslator.mo
 share/locale/es/LC_MESSAGES/gtranslator.mo
 share/locale/et/LC_MESSAGES/gtranslator.mo
 share/locale/eu/LC_MESSAGES/gtranslator.mo
@@ -272,6 +351,7 @@ share/locale/ko/LC_MESSAGES/gtranslator.mo
 share/locale/ku/LC_MESSAGES/gtranslator.mo
 share/locale/lt/LC_MESSAGES/gtranslator.mo
 share/locale/lv/LC_MESSAGES/gtranslator.mo
+share/locale/mk/LC_MESSAGES/gtranslator.mo
 share/locale/nb/LC_MESSAGES/gtranslator.mo
 share/locale/nds/LC_MESSAGES/gtranslator.mo
 share/locale/nl/LC_MESSAGES/gtranslator.mo
@@ -290,6 +370,7 @@ share/locale/sr/LC_MESSAGES/gtranslator.mo
 share/locale/sr@latin/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/ta/LC_MESSAGES/gtranslator.mo
+share/locale/te/LC_MESSAGES/gtranslator.mo
 share/locale/th/LC_MESSAGES/gtranslator.mo
 share/locale/tk/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
@@ -305,7 +386,11 @@ share/omf/gtranslator/gtranslator-cs.omf
 share/omf/gtranslator/gtranslator-de.omf
 share/omf/gtranslator/gtranslator-el.omf
 share/omf/gtranslator/gtranslator-es.omf
+share/omf/gtranslator/gtranslator-eu.omf
 share/omf/gtranslator/gtranslator-fr.omf
+share/omf/gtranslator/gtranslator-gl.omf
+share/omf/gtranslator/gtranslator-ja.omf
+share/omf/gtranslator/gtranslator-ru.omf
 share/omf/gtranslator/gtranslator-sl.omf
 share/omf/gtranslator/gtranslator-th.omf
 share/omf/gtranslator/gtranslator-uk.omf
@@ -315,7 +400,6 @@ share/pixmaps/gtranslator/debian.png
 share/pixmaps/gtranslator/fedora.png
 share/pixmaps/gtranslator/gnome-dictionary.png
 share/pixmaps/gtranslator/gnome.png
-share/pixmaps/gtranslator/gucharmap.ico
 share/pixmaps/gtranslator/inkscape.png
 share/pixmaps/gtranslator/kde.ico
 share/pixmaps/gtranslator/mandriva.png
