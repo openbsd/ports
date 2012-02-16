@@ -6,5 +6,5 @@ transformation by ordinary PostScript means, thus bypassing the
 special CTM handling by Ghostscript's cups device (which is equivalent
 to Minus90).
 Currently, only the Landscape/Portrait orientation is handled, forcing
-the output to the orientation specified by the PPD default page size
- Any fit-to-page scaling is not yet implemented.
+the output to the orientation specified by the PPD default page size.
+Any fit-to-page scaling is not yet implemented.

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/08/25 10:40:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/02/16 22:10:59 ajacoutot Exp $
 
 COMMENT =		filter to convert PostScript or PDF to cups raster format
 
 DISTNAME =		gstoraster-1.04
+REVISION =		0
 
 CATEGORIES =		print
 
