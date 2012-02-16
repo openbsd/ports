@@ -1,25 +1,23 @@
-$OpenBSD: patch-Makedefs_in,v 1.6 2011/09/08 10:33:12 ajacoutot Exp $
+$OpenBSD: patch-Makedefs_in,v 1.7 2012/02/16 22:12:08 ajacoutot Exp $
+
+BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
+
 --- Makedefs.in.orig	Wed May  4 06:28:00 2011
-+++ Makedefs.in	Fri Sep  2 10:42:54 2011
-@@ -41,13 +41,13 @@ SHELL		=	/bin/sh
++++ Makedefs.in	Mon Feb  6 11:27:07 2012
+@@ -41,11 +41,11 @@ SHELL		=	/bin/sh
  # Installation programs...
  #
  
 -INSTALL_BIN	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
-+INSTALL_BIN	=	$(LIBTOOL) $(INSTALL) -c -m $(BINMODE) @INSTALL_STRIP@
++INSTALL_BIN	=	$(LIBTOOL) $(BSD_INSTALL_PROGRAM)
  INSTALL_CONFIG	=	$(INSTALL) -c -m @CUPS_CONFIG_FILE_PERM@
--INSTALL_DATA	=	$(INSTALL) -c -m 444
-+INSTALL_DATA	=	$(INSTALL) -c -m $(SHAREMODE)
+ INSTALL_DATA	=	$(INSTALL) -c -m 444
  INSTALL_DIR	=	$(INSTALL) -d
 -INSTALL_LIB	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
--INSTALL_MAN	=	$(INSTALL) -c -m 444
--INSTALL_SCRIPT	=	$(INSTALL) -c -m 555
-+INSTALL_LIB	=	$(LIBTOOL) $(INSTALL) -c -m $(BINMODE) @INSTALL_STRIP@
-+INSTALL_MAN	=	$(INSTALL) -c -m $(SHAREMODE)
-+INSTALL_SCRIPT	=	$(INSTALL) -c -m $(BINMODE)
++INSTALL_LIB	=	$(LIBTOOL) $(BSD_INSTALL_PROGRAM)
+ INSTALL_MAN	=	$(INSTALL) -c -m 444
+ INSTALL_SCRIPT	=	$(INSTALL) -c -m 555
  
- #
- # Default user, group, and system groups for the scheduler...
 @@ -84,15 +84,15 @@ LIBCUPSIMAGE	=	@LIBCUPSIMAGE@
  LIBCUPSMIME	=	@LIBCUPSMIME@
  LIBCUPSPPDC	=	@LIBCUPSPPDC@

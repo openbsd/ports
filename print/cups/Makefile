@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.122 2012/02/02 07:11:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2012/02/16 22:12:08 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
-VERSION=	1.5.0
+VERSION=	1.5.2
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	8
-
 CATEGORIES=	print sysutils
 
-# XXX ghostscript needs to dlopen() libcupsimage.so.5
+# XXX ghostscript needs to dlopen() libcupsimage.so.5 for the cups device.
 SHARED_LIBS+=	cupsimage	5.0
 SHARED_LIBS+=	cups		6.0
 SHARED_LIBS+=	cupscgi		1.0
@@ -81,31 +79,27 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
-		--with-cups-user=_cups \
-		--with-cups-group=_cups \
-		--with-system-groups=wheel \
 		--localstatedir=/var \
-		--without-java \
-		--with-perl="/usr/bin/perl" \
+		--with-cups-group=_cups \
+		--with-cups-user=_cups \
+		--with-system-groups=wheel \
 		--with-optim="${CFLAGS}" \
+		--with-dbusdir=${SYSCONFDIR}/dbus-1 \
+		--with-perl="/usr/bin/perl" \
+		--with-printcap=${SYSCONFDIR}/cups/printcap \
 		--with-smbconfigfile="samba:///${SYSCONFDIR}/samba/smb.conf" \
-		--with-pdftops="${LOCALBASE}/bin/gs" \
-		--without-php \
-		--without-python \
-		--enable-image \
 		--enable-dbus \
-		--enable-texttops \
 		--enable-raw-printing \
-		--enable-gssapi \
-		--enable-openssl \
 		--enable-libusb \
+		--disable-cdsassl \
+		--disable-default-shared \
+		--disable-dnssd \
 		--disable-gnutls \
-		--disable-pam \
 		--disable-launchd \
+		--disable-pam \
 		--disable-pap \
 		--disable-slp \
-		--disable-tcp-wrappers \
-		--disable-default-shared
+		--disable-tcp-wrappers
 
 FLAVORS=	ldap
 FLAVOR?=
@@ -116,11 +110,6 @@ WANTLIB +=	ldap
 LIB_DEPENDS+=	databases/openldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
-.endif
-
-# needed otherwise cups will strip binaries even with INSTALL_STRIP=
-.if defined(DEBUG)
-CONFIGURE_ARGS += --enable-debug
 .endif
 
 post-extract:

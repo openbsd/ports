@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.13 2012/02/02 07:11:19 ajacoutot Exp $
+$OpenBSD: README,v 1.14 2012/02/16 22:12:08 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,10 +9,12 @@ for a quick and easy (graphical) setup, after starting the CUPS daemon,
 point your browser to:
     http://localhost:631
 
-If you want to print to non-Postscript printers or use CUPS bundled PPD
-files (i.e. drivers), you'll need to install gstoraster.  You will also
-most probably want to install foomatic-filters which provides a
-universal filter script along with the foomatic-db-engine package which
+If you plan on printing non-Postscript files, the "ghostscript" package
+needs to be installed.
+
+By default, CUPS only supports a handful amount of printers -- you will
+most probably want to install the "foomatic-filters" packages which
+provides a universal filter script along with "foomatic-db-engine" which
 will allow you to generate a PPD (Printer Postscript Description) file
 for your printer.
 
@@ -21,7 +23,7 @@ package like (non-exhaustive list): hplip/hpijs, gutenprint, foo2zjs,
 splix...
 
 To be able to use CUPS printers from GTK applications, the corresponding
-package needs to be installed: gtk+2-cups and/or gtk+3-cups.
+package needs to be installed: "gtk+2-cups" and/or "gtk+3-cups".
 
 USB
 ===
@@ -38,6 +40,9 @@ addr 1: full speed, self powered, config 1, OHCI root hub(0x0000), ATI(0x1002), 
    ugen0
 
 $ sudo chown _cups /dev/ugen0.* /dev/usb3
+
+Alternatively, hotplugd(4) attach/detach scripts can be used to automate
+this.
 
 The reason we are changing the user and not the group is that it will
 allow for multi-function devices to work for both printing and scanning
