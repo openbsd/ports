@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_common_opt,v 1.1 2012/02/16 21:30:15 pascal Exp $
+--- gcc/common.opt.orig	Mon Apr 11 17:26:47 2011
++++ gcc/common.opt	Sat Feb 11 08:40:59 2012
+@@ -1779,7 +1779,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+ -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
+ 
+ fstack-protector
+-Common Report Var(flag_stack_protect, 1)
++Common Report Var(flag_stack_protect, 1) Init(-1)
+ Use propolice as a stack protection method
+ 
+ fstack-protector-all

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_configure,v 1.1 2012/01/26 13:17:22 pascal Exp $
+$OpenBSD: patch-gcc_configure,v 1.2 2012/02/16 21:30:15 pascal Exp $
 --- gcc/configure.orig	Wed Oct 12 20:07:25 2011
-+++ gcc/configure	Wed Jan 25 18:20:41 2012
++++ gcc/configure	Sun Feb 12 21:02:13 2012
 @@ -16927,7 +16927,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
@@ -19,3 +19,11 @@ $OpenBSD: patch-gcc_configure,v 1.1 2012/01/26 13:17:22 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
+@@ -25788,6 +25788,7 @@ else
+ fi
+ 
+         ;;
++  *-*-openbsd*) gcc_cv_libc_provides_ssp=yes ;;
+   *) gcc_cv_libc_provides_ssp=no ;;
+     esac
+ fi

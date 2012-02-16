@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_fortran_f95-lang_c,v 1.1 2012/02/16 21:30:15 pascal Exp $
+--- gcc/fortran/f95-lang.c.orig	Fri Feb 10 15:44:00 2012
++++ gcc/fortran/f95-lang.c	Fri Feb 10 15:44:40 2012
+@@ -1163,6 +1163,11 @@ gfc_maybe_initialize_eh (void)
+   using_eh_for_cleanups ();
+ }
+ 
++const char *
++fname_as_string(int pretty_p)
++{
++	return NULL;
++}
+ 
+ #include "gt-fortran-f95-lang.h"
+ #include "gtype-fortran.h"

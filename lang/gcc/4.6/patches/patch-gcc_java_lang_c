@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_java_lang_c,v 1.1 2012/02/16 21:30:15 pascal Exp $
+--- gcc/java/lang.c.orig	Fri Feb 10 15:52:19 2012
++++ gcc/java/lang.c	Fri Feb 10 15:52:42 2012
+@@ -916,4 +916,10 @@ java_eh_personality (void)
+   return java_eh_personality_decl;
+ }
+ 
++const char *
++fname_as_string(int pretty_p)
++{
++	return NULL;
++}
++
+ #include "gt-java-lang.h"

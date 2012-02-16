@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/02/03 17:01:17 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2012/02/16 21:30:15 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 BROKEN-sparc64 = gengtype looping infinitely
@@ -7,7 +7,6 @@ V = 4.6.2
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 4
-# XXX this needs libc.so.61.0 to build on i386
 LIBC_VERSION = 60.1
 ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
 
@@ -19,6 +18,15 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
+
+REVISION-main = 0
+REVISION-c++ =	0
+REVISION-estdc =0
+REVISION-f95 =	0
+REVISION-java =	0
+REVISION-objc =	0
+REVISION-ada =	0
+REVISION-go =	0
 
 SHARED_LIBS =	estdc++		14.0 \
 		gfortran	3.0 \
@@ -173,7 +181,6 @@ WANTLIB =		c gmp mpc mpfr z
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
-RUN_DEPENDS-java =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
 			${BUILD_PKGPATH},-estdc>=4.6,<4.7
