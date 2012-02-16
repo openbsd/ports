@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/08/21 08:46:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/02/16 22:35:57 ajacoutot Exp $
 
 COMMENT=	re-encode many media file formats to Ogg Theora
 
@@ -29,7 +29,7 @@ LIB_DEPENDS=	graphics/ffmpeg>=20110408p5 \
 MODULES=	devel/scons converters/libiconv
 
 MODSCONS_FLAGS=	libkate=0
-USE_GROFF=	Yes
+
 NO_REGRESS=	Yes
 
 do-install:
