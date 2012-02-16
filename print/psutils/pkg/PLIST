@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/02/06 11:26:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/02/16 22:13:24 ajacoutot Exp $
+@pkgpath print/psutils[,a3][,a5][,b5][,b4][,letter][,legal][,ledger]
+@pkgpath print/psutils[,tabloid][,statement][,executive][,folio]
+@pkgpath print/psutils[,quarto][,s10x14]
 @bin bin/epsffit
 bin/extractres
 bin/fixdlsrps

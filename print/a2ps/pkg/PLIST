@@ -1,4 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2008/11/23 20:28:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/02/16 22:13:05 ajacoutot Exp $
+@pkgpath print/a2ps,a4dj
+@pkgpath print/a2ps,letter
+@pkgpath print/a2ps,letterdj
 @bin bin/a2ps
 bin/card
 bin/composeglyphs
