@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/18 08:04:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/16 21:59:17 landry Exp $
+
+ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64 mips64 mips64el
 
 COMMENT=	Plan9 terminal emulator
 
