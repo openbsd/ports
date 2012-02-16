@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/06/01 12:23:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/02/16 22:28:23 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -28,6 +28,7 @@ include/polkit-1/polkit/polkitsystembusname.h
 include/polkit-1/polkit/polkittemporaryauthorization.h
 include/polkit-1/polkit/polkittypes.h
 include/polkit-1/polkit/polkitunixgroup.h
+include/polkit-1/polkit/polkitunixnetgroup.h
 include/polkit-1/polkit/polkitunixprocess.h
 include/polkit-1/polkit/polkitunixsession.h
 include/polkit-1/polkit/polkitunixuser.h
@@ -83,9 +84,9 @@ share/examples/polkit/dbus-1/system.d/
 share/examples/polkit/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 share/examples/polkit/polkit-1/
-@mode 0700
 @sample ${SYSCONFDIR}/polkit-1/
-@sample /var/db/polkit-1/
+@mode 0700
+share/examples/polkit/polkit-1/localauthority/
 @sample ${SYSCONFDIR}/polkit-1/localauthority/
 @mode
 share/examples/polkit/polkit-1/localauthority.conf.d/
@@ -94,16 +95,41 @@ share/examples/polkit/polkit-1/localauthority.conf.d/50-localauthority.conf
 @sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/50-localauthority.conf
 share/examples/polkit/polkit-1/localauthority.conf.d/60-desktop-policy.conf
 @sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/60-desktop-policy.conf
+share/examples/polkit/polkit-1/localauthority/10-vendor.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/10-vendor.d/
+share/examples/polkit/polkit-1/localauthority/20-org.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/20-org.d/
+share/examples/polkit/polkit-1/localauthority/30-site.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/30-site.d/
+share/examples/polkit/polkit-1/localauthority/50-local.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/50-local.d/
+share/examples/polkit/polkit-1/localauthority/90-mandatory.d/
+@sample ${SYSCONFDIR}/polkit-1/localauthority/90-mandatory.d/
 share/examples/polkit/polkit-1/nullbackend.conf.d/
 @sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/
 share/examples/polkit/polkit-1/nullbackend.conf.d/50-nullbackend.conf
 @sample ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/50-nullbackend.conf
 share/examples/polkit/var/
 share/examples/polkit/var/db/
+@mode 0700
 share/examples/polkit/var/db/polkit-1/
+@sample /var/db/polkit-1/
+@mode
 share/examples/polkit/var/db/polkit-1/localauthority/
+@sample /var/db/polkit-1/localauthority/
 share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
+@sample /var/db/polkit-1/localauthority/10-vendor.d/
+@mode 0644
 share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/10-desktop-policy.pkla
+@mode
+share/examples/polkit/var/db/polkit-1/localauthority/20-org.d/
+@sample /var/db/polkit-1/localauthority/20-org.d/
+share/examples/polkit/var/db/polkit-1/localauthority/30-site.d/
+@sample /var/db/polkit-1/localauthority/30-site.d/
+share/examples/polkit/var/db/polkit-1/localauthority/50-local.d/
+@sample /var/db/polkit-1/localauthority/50-local.d/
+share/examples/polkit/var/db/polkit-1/localauthority/90-mandatory.d/
+@sample /var/db/polkit-1/localauthority/90-mandatory.d/
 share/gir-1.0/
 share/gir-1.0/Polkit-1.0.gir
 share/gir-1.0/PolkitAgent-1.0.gir
@@ -112,16 +138,3 @@ share/polkit-1/
 share/polkit-1/actions/
 share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
 share/polkit-1/actions/org.freedesktop.policykit.policy
-@mode 0700
-@sample /var/db/polkit-1/localauthority/
-@mode
-@sample ${SYSCONFDIR}/polkit-1/localauthority/10-vendor.d/
-@sample /var/db/polkit-1/localauthority/10-vendor.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/20-org.d/
-@sample /var/db/polkit-1/localauthority/20-org.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/30-site.d/
-@sample /var/db/polkit-1/localauthority/30-site.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/50-local.d/
-@sample /var/db/polkit-1/localauthority/50-local.d/
-@sample ${SYSCONFDIR}/polkit-1/localauthority/90-mandatory.d/
-@sample /var/db/polkit-1/localauthority/90-mandatory.d/

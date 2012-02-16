@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.3 2011/04/28 13:09:07 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2012/02/16 22:28:23 ajacoutot Exp $
 
 Force disabling gtk-doc.
 Add bsd_auth(3) support.
 
---- configure.ac.orig	Thu Mar  3 19:26:20 2011
-+++ configure.ac	Wed Apr 27 16:07:00 2011
-@@ -45,8 +45,6 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
+--- configure.ac.orig	Tue Jan  3 17:25:49 2012
++++ configure.ac	Wed Feb  8 16:25:36 2012
+@@ -48,8 +48,6 @@ AC_PATH_PROG([XSLTPROC], [xsltproc])
  fi
  AM_CONDITIONAL(MAN_PAGES_ENABLED, test x$enable_man_pages = xyes)
  
@@ -14,7 +14,7 @@ Add bsd_auth(3) support.
  #### gcc warning flags
  
  if test "x$GCC" = "xyes"; then
-@@ -141,7 +139,7 @@ AC_SUBST(EXPAT_LIBS)
+@@ -144,7 +142,7 @@ AC_SUBST(EXPAT_LIBS)
  AC_CHECK_FUNCS(clearenv)
  
  if test "x$GCC" = "xyes"; then
@@ -23,7 +23,7 @@ Add bsd_auth(3) support.
  fi
  
  dnl ---------------------------------------------------------------------------
-@@ -190,6 +188,11 @@ case $POLKIT_AUTHFW in
+@@ -222,6 +220,11 @@ case $POLKIT_AUTHFW in
      AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
      ;;
  
@@ -35,7 +35,7 @@ Add bsd_auth(3) support.
    *)
      AC_MSG_ERROR([Unknown Authentication Framework: $POLKIT_AUTHFW])
      ;;
-@@ -198,6 +201,7 @@ esac
+@@ -230,6 +233,7 @@ esac
  AM_CONDITIONAL(POLKIT_AUTHFW_NONE, [test x$POLKIT_AUTHFW = xnone], [Using no authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_PAM, [test x$POLKIT_AUTHFW = xpam], [Using PAM authfw])
  AM_CONDITIONAL(POLKIT_AUTHFW_SHADOW, [test x$POLKIT_AUTHFW = xshadow], [Using Shadow authfw])
@@ -43,12 +43,3 @@ Add bsd_auth(3) support.
  
  
  dnl ---------------------------------------------------------------------------
-@@ -467,7 +471,7 @@ echo "NOTE: The directory ${sysconfdir}/polkit-1/local
- echo "      by root and have mode 700"
- echo
- 
--echo "NOTE: The directory ${localstatedir}/lib/polkit-1 must be owned"
-+echo "NOTE: The directory ${localstatedir}/db/polkit-1 must be owned"
- echo "      by root and have mode 700"
- echo
- 
