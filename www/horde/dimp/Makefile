@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/13 15:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/02/16 21:19:30 sthen Exp $
 
 COMMENT=	dynamic front-end for IMP webmail
 
 HORDE_NAME=	DIMP
 
 # GPLv2
-DISTNAME=	dimp-h3-1.1.7
-REVISION=	1
+DISTNAME=	dimp-h3-1.1.8
 CATEGORIES=	mail
 
 RUN_DEPENDS=	www/horde/imp

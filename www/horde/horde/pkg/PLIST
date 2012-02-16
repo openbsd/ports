@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/06 20:09:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/02/16 21:19:30 sthen Exp $
 @pkgpath devel/horde
 @pkgpath devel/horde,-ldap
 @pkgpath devel/horde,-mysql
@@ -37,32 +37,17 @@ ${INSTDIR}/admin/sqlshell.php
 ${INSTDIR}/admin/user.php
 @group www
 ${INSTDIR}/config/
-@mode 600
-@owner www
 ${INSTDIR}/config/.htaccess
 ${INSTDIR}/config/conf.php.dist
-@sample horde/config/conf.php
 ${INSTDIR}/config/conf.xml
 ${INSTDIR}/config/hooks.php.dist
-@sample horde/config/hooks.php
 ${INSTDIR}/config/mime_drivers.php.dist
-@sample horde/config/mime_drivers.php
 ${INSTDIR}/config/motd.php.dist
-@sample horde/config/motd.php
 ${INSTDIR}/config/nls.php.dist
-@sample horde/config/nls.php
 ${INSTDIR}/config/prefs.php.dist
-@sample horde/config/prefs.php
-@mode
-@owner
 ${INSTDIR}/config/registry.d/
 ${INSTDIR}/config/registry.d/README
-@mode 600
-@owner www
 ${INSTDIR}/config/registry.php.dist
-@sample horde/config/registry.php
-@mode
-@owner
 @group
 ${INSTDIR}/docs/
 ${INSTDIR}/docs/CHANGES
@@ -383,6 +368,7 @@ ${INSTDIR}/lib/Horde/Image/svg.php
 ${INSTDIR}/lib/Horde/Image/swf.php
 ${INSTDIR}/lib/Horde/Kolab/
 ${INSTDIR}/lib/Horde/Kolab.php
+${INSTDIR}/lib/Horde/Kolab/Deprecated.php
 ${INSTDIR}/lib/Horde/Kolab/Filter/
 ${INSTDIR}/lib/Horde/Kolab/Filter/Base.php
 ${INSTDIR}/lib/Horde/Kolab/Filter/Content.php
@@ -587,11 +573,30 @@ ${INSTDIR}/lib/Horde/Kolab/Server/Object/user.php
 ${INSTDIR}/lib/Horde/Kolab/Server/ldap.php
 ${INSTDIR}/lib/Horde/Kolab/Server/test.php
 ${INSTDIR}/lib/Horde/Kolab/Session.php
+${INSTDIR}/lib/Horde/Kolab/Storage/
+${INSTDIR}/lib/Horde/Kolab/Storage.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Cache.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Data.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Folder.php
+${INSTDIR}/lib/Horde/Kolab/Storage/List.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Config.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element/
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element/Other.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element/Personal.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element/Shared.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Element/SharedWithPrefix.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Fixed.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Namespace/Imap.php
+${INSTDIR}/lib/Horde/Kolab/Storage/Perms.php
 ${INSTDIR}/lib/Horde/Kolab/Test/
 ${INSTDIR}/lib/Horde/Kolab/Test.php
 ${INSTDIR}/lib/Horde/Kolab/Test/Filter.php
 ${INSTDIR}/lib/Horde/Kolab/Test/FreeBusy.php
 ${INSTDIR}/lib/Horde/Kolab/Test/Server.php
+${INSTDIR}/lib/Horde/Kolab/Test/Storage.php
 ${INSTDIR}/lib/Horde/LDAP.php
 ${INSTDIR}/lib/Horde/Lens/
 ${INSTDIR}/lib/Horde/Lens.php
@@ -1223,24 +1228,17 @@ ${INSTDIR}/scripts/ldap/${INSTDIR}.prefs.acl
 ${INSTDIR}/scripts/ldap/${INSTDIR}.schema
 ${INSTDIR}/scripts/set_perms.sh
 ${INSTDIR}/scripts/share-stress-test-conf.php.dist
-@sample horde/scripts/share-stress-test-conf.php
 ${INSTDIR}/scripts/share-stress-test-sql.xml
 ${INSTDIR}/scripts/share-stress-test-sqlng.xml
 ${INSTDIR}/scripts/share-stress-test.php
 ${INSTDIR}/scripts/sql/
 ${INSTDIR}/scripts/sql/README
 ${INSTDIR}/scripts/sql/README.OCI8
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.mssql.sql
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.mysql.sql
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.oci8.sql
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.pgsql.sql
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.sql
-@comment no checksum
 ${INSTDIR}/scripts/sql/create.sybase.sql
 ${INSTDIR}/scripts/sql/create.xml
 ${INSTDIR}/scripts/sql/${INSTDIR}_alarms.mssql.sql
