@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/12/19 22:18:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/02/16 21:20:11 sthen Exp $
 @extraunexec rm -rf /var/www/chive/*
 chive/
 @mode 775
@@ -125,6 +125,7 @@ chive/images/language/pt_br.png
 chive/images/language/ro_ro.png
 chive/images/language/ru_ru.png
 chive/images/language/si_si.png
+chive/images/language/sw_sw.png
 chive/images/language/tr_tr.png
 chive/images/language/uk_uk.png
 chive/images/loading.gif
@@ -375,15 +376,24 @@ chive/protected/messages/hu_hu/dataTypes.xml
 chive/protected/messages/it_it/
 chive/protected/messages/it_it/core.xml
 chive/protected/messages/it_it/dataTypes.xml
+chive/protected/messages/nl_nl/
+chive/protected/messages/nl_nl/core.xml
+chive/protected/messages/nl_nl/dataTypes.xml
 chive/protected/messages/pl_pl/
 chive/protected/messages/pl_pl/core.xml
 chive/protected/messages/pl_pl/dataTypes.xml
 chive/protected/messages/pt_br/
 chive/protected/messages/pt_br/core.xml
 chive/protected/messages/pt_br/dataTypes.xml
+chive/protected/messages/ro_ro/
+chive/protected/messages/ro_ro/core.xml
+chive/protected/messages/ro_ro/dataTypes.xml
 chive/protected/messages/ru_ru/
 chive/protected/messages/ru_ru/core.xml
 chive/protected/messages/ru_ru/dataTypes.xml
+chive/protected/messages/sw_sw/
+chive/protected/messages/sw_sw/core.xml
+chive/protected/messages/sw_sw/dataTypes.xml
 chive/protected/messages/uk_uk/
 chive/protected/messages/uk_uk/core.xml
 chive/protected/messages/uk_uk/dataTypes.xml
