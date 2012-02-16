@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.53 2011/12/12 15:39:57 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.54 2012/02/16 22:21:54 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -49,11 +49,11 @@ USE_GMAKE?=		Yes
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings.
 # * yelp: Use this if there are any files under share/gnome/help/
-#         in the pkg list and it calls gnome_help_display() -- gnome-doc-utils
-#         is here to make sure we have a dependency on rarian (scrollkeeper-*)
-#         and have access to the gnome-doc-* tools (not always needed but
-#         easier); same goes with itstool.
-#
+#         or "page" files under share/help/ in the PLIST that are opened
+#         with yelp -- gnome-doc-utils is here to make sure we have a
+#         dependency on rarian (and legacy scrollkeeper-*) and have
+#         access to the gnome-doc-* tools (not always needed but easier);
+#         same goes with itstool.
 # Please note that if you're using multi-packages, you have to use the
 # MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
 
