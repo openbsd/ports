@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/14 17:43:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/02/16 22:10:35 ajacoutot Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
-GNOME_VERSION=		0.6.3
+GNOME_VERSION=		0.6.4
 SHARED_LIBS +=	croco-0.6            4.0      # .3.1
-CATEGORIES=		www devel
+CATEGORIES=		www textproc devel
 
 HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
@@ -24,5 +24,7 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_STYLE= 	gnu
+CONFIGURE_ARGS=		--disable-Bsymbolic \
+			--disable-maintainer-mode
 
 .include <bsd.port.mk>
