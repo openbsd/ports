@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/03 19:49:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/02/16 22:20:26 ajacoutot Exp $
 @bin bin/subtitleeditor
 lib/libsubtitleeditor.la
 @lib lib/libsubtitleeditor.so.${LIBsubtitleeditor_VERSION}
@@ -23,6 +23,8 @@ lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
 lib/subtitleeditor/plugins/actions/libdialoguize.so
 @comment lib/subtitleeditor/plugins/actions/libdocumentmanagement.la
 lib/subtitleeditor/plugins/actions/libdocumentmanagement.so
+@comment lib/subtitleeditor/plugins/actions/libdocumentsnavigation.la
+lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
 @comment lib/subtitleeditor/plugins/actions/libduplicatesubtitle.la
 lib/subtitleeditor/plugins/actions/libduplicatesubtitle.so
 @comment lib/subtitleeditor/plugins/actions/libeditcell.la
@@ -37,6 +39,8 @@ lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
 lib/subtitleeditor/plugins/actions/libfindandreplace.so
 @comment lib/subtitleeditor/plugins/actions/libinsertsubtitle.la
 lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
+@comment lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.la
+lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
 @comment lib/subtitleeditor/plugins/actions/libitalicize.la
 lib/subtitleeditor/plugins/actions/libitalicize.so
 @comment lib/subtitleeditor/plugins/actions/libjoindocument.la
@@ -98,6 +102,8 @@ lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
 lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
 @comment lib/subtitleeditor/plugins/subtitleformats/libmpsub.la
 lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
+@comment lib/subtitleeditor/plugins/subtitleformats/libsami.la
+lib/subtitleeditor/plugins/subtitleformats/libsami.so
 @comment lib/subtitleeditor/plugins/subtitleformats/libsbv.la
 lib/subtitleeditor/plugins/subtitleformats/libsbv.so
 @comment lib/subtitleeditor/plugins/subtitleformats/libsprucestl.la
@@ -158,6 +164,7 @@ share/subtitleeditor/plugins-description/actions/command.se-plugin
 share/subtitleeditor/plugins-description/actions/configurekeyboardshortcuts.se-plugin
 share/subtitleeditor/plugins-description/actions/dialoguize.se-plugin
 share/subtitleeditor/plugins-description/actions/documentmanagement.se-plugin
+share/subtitleeditor/plugins-description/actions/documentsnavigation.se-plugin
 share/subtitleeditor/plugins-description/actions/duplicatesubtitle.se-plugin
 share/subtitleeditor/plugins-description/actions/editcell.se-plugin
 share/subtitleeditor/plugins-description/actions/errorchecking.se-plugin
@@ -165,6 +172,7 @@ share/subtitleeditor/plugins-description/actions/extendlength.se-plugin
 share/subtitleeditor/plugins-description/actions/externalvideoplayer.se-plugin
 share/subtitleeditor/plugins-description/actions/findandreplace.se-plugin
 share/subtitleeditor/plugins-description/actions/insertsubtitle.se-plugin
+share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
 share/subtitleeditor/plugins-description/actions/italicize.se-plugin
 share/subtitleeditor/plugins-description/actions/joindocument.se-plugin
 share/subtitleeditor/plugins-description/actions/keyframesmanagement.se-plugin
@@ -196,6 +204,7 @@ share/subtitleeditor/plugins-description/subtitleformats/bitc.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/microdvd.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/mpl2.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/mpsub.se-plugin
+share/subtitleeditor/plugins-description/subtitleformats/sami.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sbv.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/sprucestl.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/subrip.se-plugin
@@ -204,6 +213,8 @@ share/subtitleeditor/plugins-description/subtitleformats/subtitleeditorproject.s
 share/subtitleeditor/plugins-description/subtitleformats/subviewer2.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/timedtextauthoringformat1.se-plugin
 share/subtitleeditor/plugins-share/
+share/subtitleeditor/plugins-share/advancedsubstationalpha/
+share/subtitleeditor/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
 share/subtitleeditor/plugins-share/bitc/
 share/subtitleeditor/plugins-share/changeframerate/
 share/subtitleeditor/plugins-share/changeframerate/dialog-change-framerate.ui
@@ -228,6 +239,8 @@ share/subtitleeditor/plugins-share/splitdocument/
 share/subtitleeditor/plugins-share/splitdocument/dialog-split-document.ui
 share/subtitleeditor/plugins-share/styleeditor/
 share/subtitleeditor/plugins-share/styleeditor/dialog-style-editor.ui
+share/subtitleeditor/plugins-share/substationalpha/
+share/subtitleeditor/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
 share/subtitleeditor/plugins-share/textcorrection/
 share/subtitleeditor/plugins-share/textcorrection/Latn-en-US.common-error.se-pattern
 share/subtitleeditor/plugins-share/textcorrection/Latn-en.capitalization.se-pattern

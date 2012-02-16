@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/12/03 19:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/02/16 22:20:26 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,9 +6,8 @@ SHARED_ONLY=   	Yes
 
 COMMENT=	GTK+2 subtitles editor
 
-V=		0.37.1
+V=		0.39.0
 DISTNAME=	subtitleeditor-${V}
-REVISION=	2
 
 CATEGORIES=	graphics editors
 
@@ -22,30 +21,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6
+WANTLIB += c cairo cairomm-1.0 drm enchant expat ffi fontconfig
+WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4 gio-2.0
+WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
+WANTLIB += gstaudio-0.10 gstbase-0.10 gstcdda-0.10 gstcontroller-0.10
+WANTLIB += gstdataprotocol-0.10 gstinterfaces-0.10 gstnet-0.10
+WANTLIB += gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10 gstreamermm-0.10
+WANTLIB += gstrtp-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atkmm-1.6 c cairo
-WANTLIB += cairomm-1.0 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
-WANTLIB += gmodule-2.0 gobject-2.0 gstbase-0.10 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 gtkmm-2.4 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 pixman-1 png pthread sigc-2.0
-WANTLIB += xml2 z pthread-stubs xcb xcb-render gstnet-0.10 xcb-shm
-WANTLIB += pcre enchant xml++-2.6 gstaudio-0.10 gsttag-0.10
-WANTLIB += gstinterfaces-0.10 gstvideo-0.10 gstpbutils-0.10
-WANTLIB += GL Xxf86vm drm gstcontroller-0.10 gstdataprotocol-0.10
-WANTLIB += gstreamermm-0.10 gstcdda-0.10 gstnetbuffer-0.10 gstrtp-0.10
-WANTLIB += stdc++
+MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
 BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		devel/iso-codes
-LIB_DEPENDS=	devel/pcre>=6.4p2 \
-		textproc/enchant \
+LIB_DEPENDS=	textproc/enchant \
 		multimedia/gstreamer-0.10/mm \
 		multimedia/gstreamer-0.10/plugins-base \
 		x11/gtk2mm
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
+		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		devel/iso-codes \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
