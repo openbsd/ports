@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2011/11/30 11:13:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/02/16 22:22:22 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
-GNOME_VERSION=	3.2.0
-REVISION=	4
+GNOME_VERSION=	3.2.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,34 +26,27 @@ MODULES=	devel/gettext \
 		devel/dconf
 
 BUILD_DEPENDS=	textproc/xmlto \
-		devel/gsettings-desktop-schemas \
-		${MODGNU_AUTOMAKE_DEPENDS}
+		devel/gsettings-desktop-schemas
 LIB_DEPENDS=	x11/gnome/desktop>=3.2.0p0 \
 		x11/gnome/libgnomekbd
 
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		sysutils/consolekit # src/gs-listener-dbus.c
 
-AUTOCONF_VERSION= 2.68
-AUTOMAKE_VERSION= 1.11
-
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-docbook-docs \
 		--enable-locking \
-		--with-x \
+		--with-console-kit \
 		--with-mit-ext \
-		--with-xf86gamma-ext
+		--with-x \
+		--with-xf86gamma-ext \
+		--without-systemd
 
 MAKE_FLAGS=	DOCDIR="${PREFIX}/share/doc/gnome-screensaver"
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-xscreensaver
 
 post-extract:
 	cp ${FILESDIR}/gs-auth-bsdauth.c ${WRKSRC}/src/
-
-pre-configure:
-	cd ${WRKSRC} && \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 .include <bsd.port.mk>
