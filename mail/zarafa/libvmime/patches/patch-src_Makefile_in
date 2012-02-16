@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2011/09/29 17:12:11 ajacoutot Exp $
---- src/Makefile.in.orig	Tue Nov 16 13:56:03 2010
-+++ src/Makefile.in	Thu Sep 29 16:12:26 2011
-@@ -498,7 +498,7 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2012/02/16 22:18:06 ajacoutot Exp $
+--- src/Makefile.in.orig	Tue Jan 10 10:33:02 2012
++++ src/Makefile.in	Thu Feb  2 12:03:51 2012
+@@ -499,7 +499,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = no-dependencies foreign
  INTERNALS = 
  INCLUDES = -I$(prefix)/include -I$(top_srcdir) @PKGCONFIG_CFLAGS@ @EXTRA_CFLAGS@
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2011/09/29 17:12:11 ajacoutot Exp $
  libvmime_la_LDFLAGS = -export-dynamic -version-info @LIBRARY_VERSION@ @PKGCONFIG_LIBS@ @EXTRA_LIBS@
  libvmime_la_SOURCES = address.cpp addressList.cpp attachmentHelper.cpp \
  	base.cpp body.cpp bodyPart.cpp bodyPartAttachment.cpp \
-@@ -606,7 +606,7 @@ clean-libLTLIBRARIES:
+@@ -607,7 +607,7 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
