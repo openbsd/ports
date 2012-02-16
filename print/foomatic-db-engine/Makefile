@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/02/16 22:26:22 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
@@ -16,9 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
-			http://www.openprinting.org/download/foomatic/ \
-			http://www.linuxprinting.org/download/foomatic/oldstuff/ \
+MASTER_SITES=		http://www.openprinting.org/download/foomatic/ \
 			http://www.openprinting.org/download/foomatic/oldstuff/
 
 MODULES=		converters/libiconv
