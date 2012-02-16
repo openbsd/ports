@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/14 07:38:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/02/16 22:21:16 ajacoutot Exp $
 
 COMMENT=		Vala bindings to GUPnP framework
 
 GNOME_PROJECT=		gupnp-vala
-GNOME_VERSION=		0.10.2
+GNOME_VERSION=		0.10.3
 
 MODULES=		x11/gnome
 
