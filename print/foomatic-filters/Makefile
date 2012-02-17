@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2012/02/17 13:26:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/02/17 15:44:16 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
-DISTNAME=		foomatic-filters-4.0.9
+DISTNAME=		foomatic-filters-4.0.12
 CATEGORIES=		print
-REVISION=		3
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -18,9 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c dbus-1 m pthread
 
-MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
-			http://www.openprinting.org/download/foomatic/ \
-			http://www.linuxprinting.org/download/foomatic/oldstuff/ \
+MASTER_SITES=		http://www.openprinting.org/download/foomatic/ \
 			http://www.openprinting.org/download/foomatic/oldstuff/
 
 LIB_DEPENDS=		x11/dbus
@@ -32,7 +29,7 @@ RUN_DEPENDS=		print/ghostscript/gnu \
 			print/gstoraster
 
 AUTOMAKE_VERSION=1.10
-AUTOCONF_VERSION=2.61
+AUTOCONF_VERSION=2.65
 
 INSTALL_TARGET=		install-main install-cups
 
