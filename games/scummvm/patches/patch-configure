@@ -1,7 +1,29 @@
-$OpenBSD: patch-configure,v 1.8 2011/11/12 12:59:58 jsg Exp $
---- configure.orig	Fri Nov  4 05:06:06 2011
-+++ configure	Fri Nov 11 15:35:24 2011
-@@ -3048,9 +3048,11 @@ EOF
+$OpenBSD: patch-configure,v 1.9 2012/02/17 06:59:41 jsg Exp $
+--- configure.orig	Sun Jan 15 20:08:27 2012
++++ configure	Fri Feb 17 13:18:29 2012
+@@ -1613,21 +1613,6 @@ elif test "$have_icc" = yes ; then
+ 	add_line_to_config_mk 'CXX_UPDATE_DEP_FLAG = -MMD -MF "$(*D)/$(DEPDIR)/$(*F).d" -MQ "$@" -MP'
+ fi;
+ 
+-# By default, we add -pedantic to the CXXFLAGS to catch some potentially
+-# non-portable constructs, like use of GNU extensions.
+-# However, some platforms use GNU extensions in system header files, so
+-# for these we must not use -pedantic.
+-case $_host_os in
+-android | gamecube | psp | wii)
+-	;;
+-*)
+-	# ICC does not support pedantic, while GCC and clang do.
+-	if test "$have_icc" = no ; then
+-		CXXFLAGS="$CXXFLAGS -pedantic"
+-	fi
+-	;;
+-esac
+-
+ # If possible, we want to use -Wglobal-constructors
+ # However, not all compilers support that, so check whether the active one does.
+ echocheck "whether -Wglobal-constructors work"
+@@ -3076,9 +3061,11 @@ EOF
  fi
  if test "$_flac" = yes ; then
  	if test "$_vorbis" = yes ; then

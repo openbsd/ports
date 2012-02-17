@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2011/11/12 12:59:58 jsg Exp $
+# $OpenBSD: Makefile,v 1.49 2012/02/17 06:59:40 jsg Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
-DISTNAME=	scummvm-1.4.0
+DISTNAME=	scummvm-1.4.1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
