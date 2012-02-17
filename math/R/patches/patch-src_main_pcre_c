@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_main_pcre_c,v 1.1 2012/02/17 08:56:21 ajacoutot Exp $
+
+Fix build with pcre >= 8.30
+
+--- src/main/pcre.c.orig	Fri Feb 17 09:54:36 2012
++++ src/main/pcre.c	Fri Feb 17 09:54:41 2012
+@@ -236,7 +236,9 @@ do_pgsub(SEXP pat, SEXP rep, SEXP vec, int global, int
+ 		    errorptr, spat+erroffset);
+ 	error(_("invalid regular expression '%s'"), spat);
+     }
+-    re_nsub = pcre_info(re_pcre, NULL, NULL);
++    pcre_fullinfo(re_pcre, NULL,
++	 PCRE_INFO_CAPTURECOUNT, &re_nsub);
++
+     if (n > 10) {
+ 	re_pe = pcre_study(re_pcre, 0, &errorptr);
+ 	if (errorptr)

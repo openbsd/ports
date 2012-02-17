@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2012/01/23 10:34:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.46 2012/02/17 08:56:21 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	clone of S, a powerful math/statistics/graphics language
 DISTNAME=	R-2.8.1
-REVISION=	7
+REVISION=	8
 SHARED_LIBS=	Rlapack 29.0 \
 		Rblas	29.0
 
