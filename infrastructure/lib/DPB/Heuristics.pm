@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.11 2011/10/10 18:56:50 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.12 2012/02/17 07:35:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -126,7 +126,12 @@ sub finish_special
 sub set_weight
 {
 	my ($self, $v, $w) = @_;
-	$weight{$v} //= $w + 0;
+	if (ref $v && $v->{scaled}) {
+		$weight{$v} //= $w * $v->{scaled};
+		delete $v->{scaled};
+	} else {
+		$weight{$v} //= $w + 0;
+	}
 }
 
 my $cache;

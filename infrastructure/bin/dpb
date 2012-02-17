@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.41 2012/01/30 15:11:04 espie Exp $
+# $OpenBSD: dpb,v 1.42 2012/02/17 07:35:42 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,6 +25,18 @@ BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
 use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
+
+# inspired by Carp::Always
+
+$SIG{__DIE__} = sub {
+	require Carp;
+
+	die @_ if ref $_[0];
+	my $_ = pop @_;
+	s/(.*)( at .*? line .*?\n$)/$1/s;
+	push @_, $_;
+	die &Carp::longmess;
+};
 
 
 package DPB::State;
@@ -75,16 +87,30 @@ sub handle_options
 		},
 		P => sub {
 			my $file = shift;
+			my $scale;
+			if ($file =~ m/^(.*)\*(\d+)$/) {
+				($file, $scale) = ($1, $2);
+			}
+
 			open my $fh, '<', $file or die "Can't open $file\n";
 			my $_;
 			while (<$fh>) {
 				chomp;
 				next if m/^\#/;
 				push @main::ARGV, $_;
+				if (defined $scale) {
+					s/\^=.*//;
+					my $p = DPB::PkgPath->new($_);
+					$p->{scaled} = $scale;
+				}
 			}
 		},
 		I => sub {
 			my $file = shift;
+			my $scale;
+			if ($file =~ m/^(.*)\*(\d+)$/) {
+				($file, $scale) = ($1, $2);
+			}
 			open my $fh, '<', $file or die "Can't open $file\n";
 			my $_;
 			while (<$fh>) {
@@ -94,6 +120,9 @@ sub handle_options
 				s/\^=.*//;
 				my $p = DPB::PkgPath->new($_);
 				$p->{wantinstall} = 1;
+				if (defined $scale) {
+					$p->{scaled} = $scale;
+				}
 			}
 		},
 		C => sub {
@@ -351,11 +380,11 @@ if (@ARGV == 0) {
 	$state->{all} = 1;
 }
 for my $arg (@ARGV) {
-	$arg =~ s/\/+$//;
 	my ($path, $weight) = ($arg, 5000);
 	if ($arg =~ m/^(.*)\=(\d+)$/) {
 		($path, $weight) = ($1, $2);
 	}
+	$arg =~ s/\/+$//;
 	if ($arg =~ m/^\./) {
 		$state->usage("Invalid pkgpath: #1",  $arg);
 	}
