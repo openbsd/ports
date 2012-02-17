@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.8 2010/06/03 15:48:36 naddy Exp $
---- lib/Makefile.in.orig	Fri Mar 26 08:00:08 2010
-+++ lib/Makefile.in	Fri May 21 22:33:39 2010
-@@ -65,13 +65,13 @@ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
+$OpenBSD: patch-lib_Makefile_in,v 1.9 2012/02/17 22:17:52 naddy Exp $
+--- lib/Makefile.in.orig	Fri Feb  3 23:21:55 2012
++++ lib/Makefile.in	Sun Feb  5 20:12:44 2012
+@@ -82,13 +82,13 @@ libvorbis_la_OBJECTS = $(am_libvorbis_la_OBJECTS)
  libvorbis_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
  	$(libvorbis_la_LDFLAGS) $(LDFLAGS) -o $@
@@ -17,7 +17,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.8 2010/06/03 15:48:36 naddy Exp $
  am_libvorbisfile_la_OBJECTS = vorbisfile.lo
  libvorbisfile_la_OBJECTS = $(am_libvorbisfile_la_OBJECTS)
  libvorbisfile_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
-@@ -167,7 +167,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+@@ -213,7 +213,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
@@ -26,7 +26,7 @@ $OpenBSD: patch-lib_Makefile_in,v 1.8 2010/06/03 15:48:36 naddy Exp $
  LIBTOOL = @LIBTOOL@
  LIBTOOL_DEPS = @LIBTOOL_DEPS@
  LIPO = @LIPO@
-@@ -279,14 +279,14 @@ libvorbis_la_SOURCES = mdct.c smallft.c block.c envelo
+@@ -328,14 +328,14 @@ libvorbis_la_SOURCES = mdct.c smallft.c block.c envelo
  			registry.h scales.h window.h lookup.h lookup_data.h\
  			codec_internal.h backends.h bitrate.h 
  
