@@ -1,0 +1,11 @@
+--- html/log/msg.txt.orig	Sat Feb 11 13:14:40 2012
++++ html/log/msg.txt	Sun Feb 12 09:50:19 2012
+@@ -25,7 +25,7 @@ Getting started:
+ <form method="post" action="System-Files.php">
+ <input type="hidden" name="file" value="<?=$nedipath?>/inc/crontab">
+ <input type="image" src="img/32/clock.png" value="Submit" title="Edit Crontab" hspace="4">
+- Schedule discoveries based on duration of previous step. If you choose anything else than 1h, adjust rrdstep in nedi.conf and delete all files in /var/nedi/rrd now.
++ Schedule discoveries based on duration of previous step. If you choose anything else than 1h, adjust rrdstep in nedi.conf and delete all files in ${TRUEPREFIX}/nedi/rrd now.
+ </form>
+ 
+ <a href="Devices-List.php?ina=snmpversion&opa=>&sta=0&mon=1">

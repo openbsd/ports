@@ -1,0 +1,9 @@
+$OpenBSD: patch-contrib_bulkdelete_sh,v 1.1 2012/02/17 21:41:08 mglocker Exp $
+--- contrib/bulkdelete.sh.orig	Wed Jan 18 22:19:49 2012
++++ contrib/bulkdelete.sh	Wed Jan 18 22:22:06 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/ksh
+ #
+ # bulk delete of devices from NeDi DB
+ # for info, refer to command line option -h

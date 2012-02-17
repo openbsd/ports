@@ -1,0 +1,39 @@
+------------------------8<------------------------
+$OpenBSD: README,v 1.1 2012/02/17 21:41:08 mglocker Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Basic installation
+==================
+
+Initialize MySQL and PHP Apache modules (if not already done):
+	/usr/local/bin/mysql_install_db
+	${SYSCONFDIR}/rc.d/mysqld start
+	/usr/local/bin/mysqladmin -u root password 'changeme'
+
+	ln -fs /var/www/conf/modules.sample/php-${MODPHP_VERSION}.conf \
+	    /var/www/conf/modules/php.conf
+	ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mysql.ini \
+	    ${SYSCONFDIR}/php-${MODPHP_VERSION}/mysql.ini
+	ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/snmp.ini \
+	    ${SYSCONFDIR}/php-${MODPHP_VERSION}/snmp.ini
+
+Initialize the NeDi MySQL database with the 'root' database user:
+	${PREFIX}/nedi/nedi.pl -i
+
+Create a symbolic link in the Apache DocumentRoot:
+	ln -fs ../nedi/html /var/www/htdocs/nedi
+
+Enable short tags in PHP:
+	vi ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini
+	'short_open_tag = Off' -> 'short_open_tag = On'
+
+Startup Apache in non-chroot mode:
+	vi /etc/rc.conf.local
+	'httpd_flags="-u"'
+	/etc/rc.d/httpd restart
+
+Login to NeDi with user 'admin' and password 'admin':
+	http://localhost/nedi/

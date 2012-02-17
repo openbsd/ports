@@ -1,0 +1,12 @@
+$OpenBSD: patch-nedi_conf,v 1.1 2012/02/17 21:41:08 mglocker Exp $
+--- nedi.conf.orig	Wed Jan 18 21:04:01 2012
++++ nedi.conf	Wed Jan 18 21:04:48 2012
+@@ -141,7 +141,7 @@ clilib		IoPty
+ rrdcmd		rrdtool
+ 
+ # Location of NeDi
+-nedipath	/var/nedi
++nedipath	${TRUEPREFIX}/nedi
+ 
+ # Prefix to call Cacti CLI tools for adding graphs in Topology-Graph
+ ;cacticli	/usr/bin/php /usr/share/cacti/site/cli
