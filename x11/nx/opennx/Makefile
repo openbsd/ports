@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2012/01/18 11:57:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/02/17 17:22:08 ajacoutot Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16.0.658
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		sysutils
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=		archivers/zip \
 			net/samba \
 			print/cups
 RUN_DEPENDS=		devel/desktop-file-utils \
-			print/cups \
 			x11/nx/nxproxy \
 			x11/nx/nxssh
 
@@ -41,19 +40,14 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
-DOT_DESKTOP=		innovidata-opennx-admin.desktop \
-			innovidata-opennx-wizard.desktop \
-			innovidata-opennx.desktop
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/opennxApp.cpp \
 			${WRKSRC}/Makefile.in
-	cd ${WRKSRC}/extres/xdg && \
-		${SUBST_CMD} ${DOT_DESKTOP}
+	perl -pi -e 's,/usr/NX,${PREFIX}/NX,g' \
+		${WRKSRC}/extres/xdg/innovidata-opennx*.desktop
 
 post-install:
 	ln -s ${TRUEPREFIX}/NX/bin/opennx ${PREFIX}/bin/opennx
-	rm ${PREFIX}/share/applications/*.{beforesubst,orig}
 	rm ${PREFIX}/share/applications/innovidata-opennx.directory
 
 .include <bsd.port.mk>
