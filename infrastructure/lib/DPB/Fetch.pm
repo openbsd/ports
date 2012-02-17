@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.34 2012/01/31 15:45:19 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.35 2012/02/17 07:36:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -308,6 +308,7 @@ sub new
 		$o->{cdrom_only} = 1;
 	}
 	if (open(my $fh, '<', "$distdir/distinfo")) {
+		print "Reading distinfo...";
 		my $_;
 		while (<$fh>) {
 			if (m/^SHA256\s*\((.*)\) \= (.*)/) {
@@ -317,6 +318,7 @@ sub new
 			}
 		}
 	}
+	print "zap duplicates...";
 	# rewrite "more or less" the same info, so we flush duplicates,
 	# e.g., keep only most recent checksum seen
 	open(my $fh, '>', "$distdir/distinfo.new");
@@ -325,6 +327,7 @@ sub new
 		    "\n";
 	}
 	close ($fh);
+	print "Done\n";
 	rename("$distdir/distinfo.new", "$distdir/distinfo");
 	open($o->{log}, ">>", "$distdir/distinfo");
 	DPB::Util->make_hot($o->{log});
@@ -754,7 +757,7 @@ sub new
 sub name
 {
 	my $self = shift;
-	return '>'.$self->{file}->{name}."(#".$self->{tries}.")";
+	return '<'.$self->{file}->{name}."(#".$self->{tries}.")";
 }
 
 sub watched
