@@ -1,0 +1,24 @@
+$OpenBSD: patch-pngrutil_c,v 1.3 2012/02/17 15:44:13 sthen Exp $
+
+CVE-2011-3026 libpng: Heap-buffer-overflow in png_decompress_chunk
+
+--- pngrutil.c.orig	Thu Feb 16 10:01:56 2012
++++ pngrutil.c	Thu Feb 16 10:04:05 2012
+@@ -457,8 +457,15 @@ png_decompress_chunk(png_structp png_ptr, int comp_typ
+       {
+          /* Success (maybe) - really uncompress the chunk. */
+          png_size_t new_size = 0;
+-         png_charp text = (png_charp)png_malloc_warn(png_ptr,
+-             prefix_size + expanded_size + 1);
++         png_charp text = NULL;
++         /* Need to check for both truncation (64-bit platforms) and integer
++          * overflow.
++          */
++         if (prefix_size + expanded_size > prefix_size &&
++             prefix_size + expanded_size < 0xffffffffU)
++         {
++            text = png_malloc_warn(png_ptr, prefix_size + expanded_size + 1);
++         }
+ 
+          if (text != NULL)
+          {
