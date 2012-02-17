@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.79 2011/05/13 07:57:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2012/02/17 06:59:46 ajacoutot Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.13
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION =	15
+REVISION =	16
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.libsdl.org/
@@ -79,16 +79,6 @@ CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
 .else
 WANTLIB+=	X11>=10 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
-.endif
-
-.if ${FLAVOR:L:Maltivec}
-ONLY_FOR_ARCHS=	powerpc
-CONFIGURE_ARGS+=--enable-altivec
-# XXX Segmentation fault
-# Blit_RGB888_RGB565Altivec at SDL_blit_N.c:203
-BROKEN=		segfault when altivec is enabled
-.else
-CONFIGURE_ARGS+=--disable-altivec
 .endif
 
 NO_REGRESS=	Yes
