@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/12/23 15:01:59 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2012/02/17 22:07:16 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -237,16 +237,16 @@ lib/vlc/plugins/misc/libaudioscrobbler_plugin.so
 lib/vlc/plugins/misc/libdummy_plugin.so
 lib/vlc/plugins/misc/libexport_plugin.so
 lib/vlc/plugins/misc/libfreetype_plugin.so
-@comment lib/vlc/plugins/misc/libinhibit_plugin.so
+lib/vlc/plugins/misc/libinhibit_plugin.so
 lib/vlc/plugins/misc/liblogger_plugin.so
 lib/vlc/plugins/misc/libnotify_plugin.so
 lib/vlc/plugins/misc/libosd_parser_plugin.so
 lib/vlc/plugins/misc/libstats_plugin.so
 lib/vlc/plugins/misc/libtelepathy_plugin.so
 lib/vlc/plugins/misc/libvod_rtsp_plugin.so
-@comment lib/vlc/plugins/misc/libxdg_screensaver_plugin.so
+lib/vlc/plugins/misc/libxdg_screensaver_plugin.so
 lib/vlc/plugins/misc/libxml_plugin.so
-@comment lib/vlc/plugins/misc/libxscreensaver_plugin.so
+lib/vlc/plugins/misc/libxscreensaver_plugin.so
 lib/vlc/plugins/misc/libxtag_plugin.so
 lib/vlc/plugins/mux/
 lib/vlc/plugins/mux/libmux_asf_plugin.so
