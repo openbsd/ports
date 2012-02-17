@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1158 2012/01/29 11:29:51 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1159 2012/02/17 07:33:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -464,7 +464,8 @@ ERRORS += "   (Possible flavors are: ${FLAVORS})."
 .      endif
 .    endfor
 .  else
-ERRORS += "Fatal: no flavors for this port."
+ERRORS += "Fatal: Unknown flavor(s) ${FLAVOR}"
+ERRORS += "   (No flavors for this port)."
 .  endif
 .endif
 
@@ -1596,6 +1597,12 @@ _if_check_needed = \
 	${_parse_spec}; \
 	${_libs2cache}; \
 	if ${_resolve_lib} -needed ${_DEPRUNLIBS:QL} <$$cached_libs
+
+.if ${NO_SHARED_LIBS:L} == "yes"
+_warn_if_shared = :
+.else
+_warn_if_shared = echo "LIB_DEPENDS $$d not needed ?" 1>&2
+.endif
 
 # turn a list of found libraries into parameters for pkg_create,
 # zap .a in the meantime
@@ -2730,92 +2737,6 @@ _internal-clean:
 .  endfor
 .endif
 
-# mirroring utilities
-fetch-makefile:
-	@mk=`mktemp ${TMPDIR}/mk.XXXXXXX`; \
-	trap "rm -f $$mk" 0 1 2 3 13 15; \
-	if PKGPATH=${PKGPATH} ${MAKE} _fetch-makefile >$$mk; then \
-		cat $$mk >>${_FETCH_MAKEFILE}; \
-	else \
-		echo >&2 "Problem in ${PKGPATH}"; \
-	fi
-
-mirror-maker-fetch:
-	@mk=`mktemp ${TMPDIR}/mk.XXXXXXXX`; \
-	PKGPATH=${PKGPATH} ${MAKE} fetch-makefile >$$mk; \
-	echo "Check and remove $$mk"; \
-	cd ${DISTDIR} && \
-		${MAKE} -f $$mk all FETCH=${_SHSCRIPT}/fetch-all
-
-_fetch-makefile:
-.if !defined(COMES_WITH)
-	@echo -n "all"
-.  if ${PERMIT_DISTFILES_FTP:L} == "yes"
-	@echo -n " ftp"
-.  endif
-.  if ${PERMIT_DISTFILES_CDROM:L} == "yes"
-	@echo -n " cdrom"
-.  endif
-	@echo ": ${_FETCH_MAKEFILE_NAMES}"
-# write generic package dependencies
-	@echo ".PHONY: ${_FETCH_MAKEFILE_NAMES}"
-.  if ${RECURSIVE_FETCH_LIST:L} == "yes"
-	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES} "`_FULL_PACKAGE_NAME=Yes PKGPATH=${PKGPATH} ${MAKE} full-all-depends|fgrep -v ${PKGPATH}/`
-.  else
-	@echo "${_FETCH_MAKEFILE_NAMES}: ${MAKESUMFILES}"
-.  endif
-.endif
-.if !empty(MAKESUMFILES)
-.  for _F in ${MAKESUMFILES}
-	@: $${_DONE_FILES:=/dev/null}; if ! fgrep -q "|${_F}|" $${_DONE_FILES}; then \
-		echo "|${_F}|" >>$${_DONE_FILES}; \
-		PKGPATH=${PKGPATH} ${MAKE} _fetch-onefile _file=${_F}; \
-	fi
-.  endfor
-.endif
-	@echo
-
-
-_fetch-onefile:
-# XXX loop so that M${_F} will work
-.for _F in ${_file}
-	@echo '${_F}: $$F'
-	@echo '\t@lock=$${@F}; $${SIMPLE_LOCK}; \\'
-	@echo -n '\t MAINTAINER="${MAINTAINER}" '
-.  if !empty(DIST_SUBDIR)
-	@echo -n 'DIST_SUBDIR="${DIST_SUBDIR}" '
-.  endif
-	@echo '\\'
-	@select='${_EVERYTHING:M*${_F:S@^${DIST_SUBDIR}/@@}\:[0-9]}'; \
-	${_SITE_SELECTOR}; \
-	echo "\t SITES=\"$$sites\" \\"
-.  if ${FETCH_MANUALLY:L} != "no"
-	@echo '\t FETCH_MANUALLY="Yes" \\'
-.  endif
-.  if !defined(NO_CHECKSUM) && !empty(MAKESUMFILES:M${_F})
-	@if [ ! -f ${CHECKSUM_FILE} ]; then \
-	  echo >&2 "Missing checksum file: ${CHECKSUM_FILE}"; \
-	  echo '\t ERROR="no checksum file" \\'; \
-	else \
-	  for c in ${PREFERRED_CIPHERS}; do \
-		if set -- `grep -i "^$$c (${_F})" ${CHECKSUM_FILE}`; then break; fi; \
-	  done; \
-	  case "$$4" in \
-		"") \
-		  echo >&2 "No checksum recorded for ${_F}."; \
-		  echo '\t ERROR="no checksum" \\';; \
-		"IGNORE") \
-		  echo >&2 "Checksum for ${_F} is IGNORE in ${CHECKSUM_FILE}"; \
-		  echo >&2 'but file is not in $${IGNORE_FILES}'; \
-		  echo '\t ERROR="IGNORE inconsistent" \\';; \
-		*) \
-		  echo "\t CIPHER=\"$$c\" CKSUM=\"$$4\" CHECK=\""$$@"\" \\";; \
-	  esac; \
-	fi
-.  endif
-	@echo '\t $${EXEC} $${FETCH} "$$@"'
-.endfor
-
 # This target generates an index entry suitable for aggregation into
 # a large index.  Format is:
 #
@@ -3033,6 +2954,8 @@ lib-depends-args:
 		${_if_check_needed}; then \
 			${_complete_pkgspec}; \
 			echo "-P $$pkgpath:$$pkg:$$default"; \
+		else \
+			${_warn_if_shared}; \
 		fi; \
 	done
 
@@ -3358,7 +3281,7 @@ dump-vars:
 
 _all_phony = ${_recursive_depends_targets} \
 	${_recursive_targets} ${_dangerous_recursive_targets} \
-	_build-dir-depends _fetch-makefile _fetch-onefile \
+	_build-dir-depends \
 	_internal-all _internal-build _internal-build-depends \
 	_internal-buildlib-depends _internal-buildwantlib-depends \
 	_internal-checksum _internal-clean _internal-configure _internal-depends \
@@ -3383,7 +3306,7 @@ _all_phony = ${_recursive_depends_targets} \
 	pre-install pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends regress-depends-list run-depends run-depends-list \
-    show-required-by subpackage uninstall mirror-maker-fetch _print-metadata \
+    show-required-by subpackage uninstall _print-metadata \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args \
