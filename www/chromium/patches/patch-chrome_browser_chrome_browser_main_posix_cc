@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.1 2011/12/14 16:58:19 robert Exp $
---- chrome/browser/chrome_browser_main_posix.cc.orig	Tue Dec 13 21:31:50 2011
-+++ chrome/browser/chrome_browser_main_posix.cc	Tue Dec 13 21:31:59 2011
-@@ -205,7 +205,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
+$OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.2 2012/02/17 10:19:50 robert Exp $
+--- chrome/browser/chrome_browser_main_posix.cc.orig	Fri Jan 27 09:02:34 2012
++++ chrome/browser/chrome_browser_main_posix.cc	Wed Feb 15 16:42:39 2012
+@@ -210,7 +210,7 @@ void ChromeBrowserMainPartsPosix::PreEarlyInitializati
    if (!fd_limit_string.empty()) {
      base::StringToInt(fd_limit_string, &fd_limit);
    }
@@ -10,3 +10,12 @@ $OpenBSD: patch-chrome_browser_chrome_browser_main_posix_cc,v 1.1 2011/12/14 16:
    // We use quite a few file descriptors for our IPC, and the default limit on
    // the Mac is low (256), so bump it up if there is no explicit override.
    if (fd_limit == 0) {
+@@ -231,7 +231,7 @@ void ChromeBrowserMainPartsPosix::PostMainMessageLoopS
+   } else {
+     g_shutdown_pipe_read_fd = pipefd[0];
+     g_shutdown_pipe_write_fd = pipefd[1];
+-    const size_t kShutdownDetectorThreadStackSize = 4096;
++    const size_t kShutdownDetectorThreadStackSize = PTHREAD_STACK_MIN;
+     // TODO(viettrungluu,willchan): crbug.com/29675 - This currently leaks, so
+     // if you change this, you'll probably need to change the suppression.
+     if (!base::PlatformThread::CreateNonJoinable(

@@ -1,7 +1,10 @@
-$OpenBSD: patch-third_party_yasm_source_config_openbsd_config_h,v 1.1 2011/10/27 07:59:09 robert Exp $
---- third_party/yasm/source/config/openbsd/config.h.orig	Wed Oct 26 13:41:00 2011
-+++ third_party/yasm/source/config/openbsd/config.h	Wed Oct 26 13:41:00 2011
-@@ -0,0 +1,171 @@
+$OpenBSD: patch-third_party_yasm_source_config_openbsd_config_h,v 1.2 2012/02/17 10:19:51 robert Exp $
+--- third_party/yasm/source/config/openbsd/config.h.orig	Fri Jan 27 09:02:02 2012
++++ third_party/yasm/source/config/openbsd/config.h	Thu Feb  9 09:31:06 2012
+@@ -169,3 +169,174 @@
+ 
+ /* Define to `unsigned int' if <sys/types.h> does not define. */
+ /* #undef size_t */
 +/* config.h.  Generated from config.h.in by configure.  */
 +/* config.h.in.  Generated from configure.ac by autoheader.  */
 +

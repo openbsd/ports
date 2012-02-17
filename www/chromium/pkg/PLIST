@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/12/14 16:58:19 robert Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/02/17 10:19:51 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -215,12 +215,25 @@ chrome/resources/inspector/Images/warningMediumIcon.png
 chrome/resources/inspector/Images/warningOrangeDot.png
 chrome/resources/inspector/Images/warningsErrors.png
 chrome/resources/inspector/ScriptFormatterWorker.js
+chrome/resources/inspector/auditsPanel.css
 chrome/resources/inspector/dataGrid.css
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools_extension_api.js
+chrome/resources/inspector/elementsPanel.css
+chrome/resources/inspector/heapProfiler.css
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/networkLogView.css
+chrome/resources/inspector/networkPanel.css
+chrome/resources/inspector/panelEnablerView.css
+chrome/resources/inspector/profilesPanel.css
+chrome/resources/inspector/resourceView.css
+chrome/resources/inspector/resourcesPanel.css
+chrome/resources/inspector/scriptsPanel.css
+chrome/resources/inspector/splitView.css
+chrome/resources/inspector/textPrompt.css
+chrome/resources/inspector/textViewer.css
+chrome/resources/inspector/timelinePanel.css
 @man man/man1/chrome.1
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png

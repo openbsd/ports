@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_threading_worker_pool_posix_cc,v 1.4 2011/12/14 16:58:19 robert Exp $
---- base/threading/worker_pool_posix.cc.orig	Wed Dec  7 09:01:58 2011
-+++ base/threading/worker_pool_posix.cc	Tue Dec 13 21:23:11 2011
-@@ -22,7 +22,7 @@ namespace {
+$OpenBSD: patch-base_threading_worker_pool_posix_cc,v 1.5 2012/02/17 10:19:50 robert Exp $
+--- base/threading/worker_pool_posix.cc.orig	Fri Jan 27 09:02:06 2012
++++ base/threading/worker_pool_posix.cc	Thu Feb  9 09:31:06 2012
+@@ -24,7 +24,7 @@ namespace {
  const int kIdleSecondsBeforeExit = 10 * 60;
  // A stack size of 64 KB is too small for the CERT_PKIXVerifyCert
  // function of NSS because of NSS bug 439169.

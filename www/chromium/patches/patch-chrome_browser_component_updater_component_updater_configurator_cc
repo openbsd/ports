@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_component_updater_component_updater_configurator_cc,v 1.1 2011/12/14 16:58:19 robert Exp $
---- chrome/browser/component_updater/component_updater_configurator.cc.orig	Wed Dec 14 09:12:38 2011
-+++ chrome/browser/component_updater/component_updater_configurator.cc	Wed Dec 14 09:10:14 2011
-@@ -70,6 +70,12 @@ const char kExtraInfo[] =
-     // TODO(cpu): Fix this for ARM.
-     "os=cros&arch=unknown&prod=chrome&prodversion=";
+$OpenBSD: patch-chrome_browser_component_updater_component_updater_configurator_cc,v 1.2 2012/02/17 10:19:50 robert Exp $
+--- chrome/browser/component_updater/component_updater_configurator.cc.orig	Fri Jan 27 09:02:15 2012
++++ chrome/browser/component_updater/component_updater_configurator.cc	Thu Feb  9 09:31:06 2012
+@@ -81,6 +81,12 @@ const char kExtraInfo[] =
+   #else
+     "os=openbsd&arch=unknown";
    #endif
 +#elif defined(OS_OPENBSD)
 +  #if defined(__amd64__)

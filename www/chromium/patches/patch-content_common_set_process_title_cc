@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_common_set_process_title_cc,v 1.2 2011/12/14 16:58:19 robert Exp $
---- content/common/set_process_title.cc.orig	Wed Dec  7 09:01:17 2011
-+++ content/common/set_process_title.cc	Tue Dec 13 21:23:12 2011
-@@ -23,7 +23,8 @@
+$OpenBSD: patch-content_common_set_process_title_cc,v 1.3 2012/02/17 10:19:51 robert Exp $
+--- content/common/set_process_title.cc.orig	Fri Jan 27 09:01:22 2012
++++ content/common/set_process_title.cc	Thu Feb  9 09:31:06 2012
+@@ -26,7 +26,8 @@
  #include "content/common/set_process_title_linux.h"
- #endif
+ #endif  // defined(OS_LINUX)
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_SOLARIS)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_SOLARIS) && \

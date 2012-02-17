@@ -1,7 +1,10 @@
-$OpenBSD: patch-third_party_icu_public_common_unicode_popenbsd_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- third_party/icu/public/common/unicode/popenbsd.h.orig	Sun Jan 23 23:27:36 2011
-+++ third_party/icu/public/common/unicode/popenbsd.h	Sun Jan 23 23:27:36 2011
-@@ -0,0 +1,313 @@
+$OpenBSD: patch-third_party_icu_public_common_unicode_popenbsd_h,v 1.2 2012/02/17 10:19:51 robert Exp $
+--- third_party/icu/public/common/unicode/popenbsd.h.orig	Fri Jan 27 09:04:29 2012
++++ third_party/icu/public/common/unicode/popenbsd.h	Thu Feb  9 09:31:06 2012
+@@ -311,3 +311,316 @@ typedef unsigned int uint32_t;
+ /*===========================================================================*/
+ 
+ #define U_MAKE  "/usr/local/bin/gmake"
 +/*
 +******************************************************************************
 +*

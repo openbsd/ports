@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_extensions_process_map_cc,v 1.1 2012/02/17 10:19:50 robert Exp $
+--- chrome/browser/extensions/process_map.cc.orig	Thu Feb  9 11:05:55 2012
++++ chrome/browser/extensions/process_map.cc	Thu Feb  9 11:06:09 2012
+@@ -11,7 +11,9 @@ struct ProcessMap::Item {
+   Item() {
+   }
+ 
+-  explicit Item(const ProcessMap::Item& other)
++  // Purposely implicit constructor needed on older gcc's. See:
++  // http://codereview.chromium.org/8769022/
++  Item(const ProcessMap::Item& other)
+       : extension_id(other.extension_id),
+         process_id(other.process_id),
+         site_instance_id(other.site_instance_id) {

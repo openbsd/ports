@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2012/01/24 08:31:40 robert Exp $
+# $OpenBSD: Makefile,v 1.81 2012/02/17 10:19:50 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			16.0.912.77
+V=			17.0.963.56
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -26,7 +26,7 @@ MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 
 MODULES=	lang/python
 
-WANTLIB += X11 Xext Xrender Xss bz2 c cairo cups dbus-1 event
+WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0

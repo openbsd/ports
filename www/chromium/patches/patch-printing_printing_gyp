@@ -1,9 +1,9 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.9 2011/12/14 16:58:19 robert Exp $
---- printing/printing.gyp.orig	Wed Dec  7 09:01:09 2011
-+++ printing/printing.gyp	Tue Dec 13 21:23:12 2011
-@@ -238,6 +238,11 @@
-                   ],
-                 },
+$OpenBSD: patch-printing_printing_gyp,v 1.10 2012/02/17 10:19:51 robert Exp $
+--- printing/printing.gyp.orig	Fri Jan 27 09:01:11 2012
++++ printing/printing.gyp	Thu Feb  9 09:31:06 2012
+@@ -259,6 +259,11 @@
+                   '<!@(python cups_config_helper.py --cflags)',
+                 ],
                }],
 +              [ 'OS == "openbsd"', {
 +                'cflags': [

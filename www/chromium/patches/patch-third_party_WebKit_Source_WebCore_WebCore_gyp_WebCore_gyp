@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.7 2011/12/14 16:58:19 robert Exp $
---- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Wed Dec  7 09:08:15 2011
-+++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Tue Dec 13 21:23:12 2011
-@@ -1068,7 +1068,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.8 2012/02/17 10:19:51 robert Exp $
+--- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Fri Jan 27 09:07:35 2012
++++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Thu Feb  9 09:31:06 2012
+@@ -1095,7 +1095,7 @@
              'include_dirs+++': ['../dom'],
            },
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.7 
            'include_dirs': [
              '<(chromium_src_dir)/third_party/fftw/api',
            ],
-@@ -1279,7 +1279,7 @@
+@@ -1308,7 +1308,7 @@
              'include_dirs++': ['../dom'],
            },
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.7 
            # This directory needs to be on the include path for multiple sub-targets of webcore.
            'direct_dependent_settings': {
              'include_dirs': [
-@@ -1287,7 +1287,7 @@
+@@ -1316,7 +1316,7 @@
              ],
            },
          }],
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.7 
            # This directory needs to be on the include path for multiple sub-targets of webcore.
            'direct_dependent_settings': {
              'include_dirs': [
-@@ -1880,7 +1880,7 @@
+@@ -1940,7 +1940,7 @@
              'include_dirs+++': ['../dom'],
            },
          }],
