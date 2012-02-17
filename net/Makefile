@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.730 2012/02/16 22:35:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.731 2012/02/17 22:12:52 mglocker Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -210,6 +210,7 @@
      SUBDIR += natpmpd
      SUBDIR += nbtscan
      SUBDIR += ncftp
+     SUBDIR += nedi
      SUBDIR += nemesis
      SUBDIR += neon
      SUBDIR += nepenthes
