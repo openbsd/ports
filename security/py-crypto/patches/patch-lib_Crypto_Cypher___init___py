@@ -1,20 +1,20 @@
-$OpenBSD: patch-lib_Crypto_Cypher___init___py,v 1.3 2011/10/10 10:08:05 mpi Exp $
---- lib/Crypto/Cipher/__init__.py.orig	Fri Aug 27 06:41:55 2010
-+++ lib/Crypto/Cipher/__init__.py	Sun Oct  9 17:06:47 2011
-@@ -31,7 +31,6 @@ If you don't know which algorithm to choose, use AES b
- standard and has undergone a fair bit of examination.
- 
+$OpenBSD: patch-lib_Crypto_Cypher___init___py,v 1.4 2012/02/17 09:32:18 mpi Exp $
+--- lib/Crypto/Cipher/__init__.py.orig	Fri Jan 13 15:57:33 2012
++++ lib/Crypto/Cipher/__init__.py	Wed Feb  8 17:21:20 2012
+@@ -40,7 +40,6 @@ standard and has undergone a fair bit of examination.
+ Module name               Description
+ ======================    ====================
  Crypto.Cipher.AES         Advanced Encryption Standard
 -Crypto.Cipher.ARC2        Alleged RC2
  Crypto.Cipher.ARC4        Alleged RC4
- Crypto.Cipher.Blowfish
- Crypto.Cipher.CAST
-@@ -41,7 +40,7 @@ Crypto.Cipher.DES3        Triple DES.
- Crypto.Cipher.XOR         The simple XOR cipher.
+ Crypto.Cipher.Blowfish    Blowfish
+ Crypto.Cipher.CAST        CAST
+@@ -71,7 +70,7 @@ Crypto.Cipher.PKCS1_OAEP    PKCS#1 OAEP encryption, ba
+ :undocumented: __revision__, __package__
  """
  
 -__all__ = ['AES', 'ARC2', 'ARC4',
 +__all__ = ['AES', 'ARC4',
             'Blowfish', 'CAST', 'DES', 'DES3',
-            'XOR'
-            ]
+            'XOR',
+            'PKCS1_v1_5', 'PKCS1_OAEP'

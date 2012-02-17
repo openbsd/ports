@@ -1,3 +1,3 @@
-Python extensions using OpenSSL which contains hashing algorithms,
-chaffing/winnowing, random number generation, various utility modules,
-and several block encryption and digital signature algorithms.
+Python Cryptography Toolkit (pycrypto) is a collection of both secure
+hash functions (such as SHA256 and RIPEMD160), and various encryption
+algorithms (AES, DES, RSA, ElGamal, etc.).

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/12/28 09:56:38 mpi Exp $
+# $OpenBSD: Makefile,v 1.25 2012/02/17 09:32:18 mpi Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		cryptographic tools for Python
 
-MODPY_EGG_VERSION =	2.4.1
+MODPY_EGG_VERSION =	2.5
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
 CATEGORIES =    	security devel
@@ -22,6 +22,10 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/
 
 MODULES =	lang/python
+
+FLAVORS =	python3
+FLAVOR ?=
+
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/gmp
 WANTLIB =	${MODPY_WANTLIB} gmp
@@ -45,6 +49,9 @@ do-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if ${FLAVOR:L:Mpython3}
+	mv ${PREFIX}/share/doc/py-crypto ${PREFIX}/share/doc/py3-crypto
+.endif
 
 do-regress: fake
 	cd ${WRKSRC} && ${MAKE_ENV} \

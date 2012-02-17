@@ -1,0 +1,11 @@
+--- lib/Crypto/SelfTest/Signature/test_pkcs1_pss.py.orig	Wed Feb 15 17:24:43 2012
++++ lib/Crypto/SelfTest/Signature/test_pkcs1_pss.py	Wed Feb 15 17:25:08 2012
+@@ -394,7 +394,7 @@
+                             return bchr(0x00)*maskLen
+ 
+                         # Verify that PSS is friendly to all ciphers
+-                        for hashmod in (MD2,MD5,SHA,SHA224,SHA256,SHA384,RIPEMD):
++                        for hashmod in (MD5,SHA,SHA224,SHA256,SHA384,RIPEMD):
+                             h = hashmod.new()
+                             h.update(b('blah blah blah'))
+ 

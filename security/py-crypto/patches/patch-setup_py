@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.7 2011/12/28 09:56:38 mpi Exp $
---- setup.py.orig	Fri Nov  4 20:17:40 2011
-+++ setup.py	Mon Dec 26 12:38:05 2011
-@@ -173,15 +173,14 @@
+$OpenBSD: patch-setup_py,v 1.8 2012/02/17 09:32:18 mpi Exp $
+--- setup.py.orig	Fri Jan 13 18:21:31 2012
++++ setup.py	Wed Feb  8 17:26:19 2012
+@@ -128,15 +128,14 @@ class PCTBuildExt (build_ext):
                  # the libtomcrypt code.
                  self.__add_compiler_option("-O")
              else:
@@ -20,17 +20,17 @@ $OpenBSD: patch-setup_py,v 1.7 2011/12/28 09:56:38 mpi Exp $
              if USE_GCOV:
                  self.__add_compiler_option("-fprofile-arcs")
                  self.__add_compiler_option("-ftest-coverage")
-@@ -413,9 +412,6 @@
+@@ -371,9 +370,6 @@ kw = {'name':"pycrypto",
                        sources=["src/_fastmath.c"]),
  
              # Hash functions
--            Extension("Crypto.Hash.MD2",
+-            Extension("Crypto.Hash._MD2",
 -                      include_dirs=['src/'],
 -                      sources=["src/MD2.c"]),
-             Extension("Crypto.Hash.MD4",
+             Extension("Crypto.Hash._MD4",
                        include_dirs=['src/'],
                        sources=["src/MD4.c"]),
-@@ -431,9 +427,10 @@
+@@ -398,9 +394,10 @@ kw = {'name':"pycrypto",
              Extension("Crypto.Cipher.AES",
                        include_dirs=['src/'],
                        sources=["src/AES.c"]),

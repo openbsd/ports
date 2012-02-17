@@ -1,0 +1,57 @@
+--- lib/Crypto/SelfTest/Signature/test_pkcs1_15.py.orig	Wed Feb 15 17:18:43 2012
++++ lib/Crypto/SelfTest/Signature/test_pkcs1_15.py	Wed Feb 15 17:22:43 2012
+@@ -65,45 +65,6 @@
+         _testData = (
+ 
+                 #
+-                # Taken from ftp://ftp.rsa.com/pub/pkcs/ascii/examples.asc
+-                # "Some Examples of the PKCS Standards", 1999
+-                #
+-                (
+-
+-                # Private key, from 2.1
+-                {
+-                'n':'''0a 66 79 1d c6 98 81 68 de 7a b7 74 19 bb 7f b0 c0 01 c6
+-                    27 10 27 00 75 14 29 42 e1 9a 8d 8c 51 d0 53 b3 e3 78 2a 1d
+-                    e5 dc 5a f4 eb e9 94 68 17 01 14 a1 df e6 7c dc 9a 9a f5 5d
+-                    65 56 20 bb ab''',
+-                'e':'''01 00
+-                    01''',
+-                'd':'''01 23 c5 b6 1b a3 6e db 1d 36 79 90 41 99 a8 9e a8 0c 09
+-                    b9 12 2e 14 00 c0 9a dc f7 78 46 76 d0 1d 23 35 6a 7d 44 d6
+-                    bd 8b d5 0e 94 bf c7 23 fa 87 d8 86 2b 75 17 76 91 c1 1d 75
+-                    76 92 df 88 81'''
+-                },
+-                # Data to sign, from 3.1
+-                '''30 81 a4 02 01 00 30 42 31 0b 30 09 06
+-                03 55 04 06 13 02 55 53 31 1d 30 1b 06 03 55 04 0a 13 14
+-                45 78 61 6d 70 6c 65 20 4f 72 67 61 6e 69 7a 61 74 69 6f
+-                6e 31 14 30 12 06 03 55 04 03 13 0b 54 65 73 74 20 55 73
+-                65 72 20 31 30 5b 30 0d 06 09 2a 86 48 86 f7 0d 01 01 01
+-                05 00 03 4a 00 30 47 02 40
+-                0a 66 79 1d c6 98 81 68 de 7a b7 74 19 bb 7f b0
+-                c0 01 c6 27 10 27 00 75 14 29 42 e1 9a 8d 8c 51
+-                d0 53 b3 e3 78 2a 1d e5 dc 5a f4 eb e9 94 68 17
+-                01 14 a1 df e6 7c dc 9a 9a f5 5d 65 56 20 bb ab
+-                02 03 01 00 01''',
+-                # Signature, from 3.2 (at the very end)
+-                '''06 db 36 cb 18 d3 47 5b 9c 01 db 3c 78 95 28 08
+-                02 79 bb ae ff 2b 7d 55 8e d6 61 59 87 c8 51 86
+-                3f 8a 6c 2c ff bc 89 c3 f7 5a 18 d9 6b 12 7c 71
+-                7d 54 d0 d8 04 8d a8 a0 54 46 26 d1 7a 2a 8f be''',
+-                MD2
+-                ),
+-
+-                #
+                 # RSA keypair generated with openssl
+                 #
+                 (
+@@ -197,7 +158,7 @@
+                         rng = Random.new().read
+                         key = RSA.generate(1024, rng)
+ 
+-                        for hashmod in (MD2,MD5,SHA,SHA224,SHA256,SHA384,SHA512,RIPEMD):
++                        for hashmod in (MD5,SHA,SHA224,SHA256,SHA384,SHA512,RIPEMD):
+                             h = hashmod.new()
+                             h.update(b('blah blah blah'))
+ 

@@ -1,16 +1,19 @@
-$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.3 2011/10/10 10:08:05 mpi Exp $
---- lib/Crypto/Hash/__init__.py.orig	Fri Aug 27 06:41:55 2010
-+++ lib/Crypto/Hash/__init__.py	Sun Oct  9 17:06:47 2011
-@@ -32,13 +32,12 @@ The hashing modules here all support the interface des
+$OpenBSD: patch-lib_Crypto_Hash___init___py,v 1.4 2012/02/17 09:32:18 mpi Exp $
+--- lib/Crypto/Hash/__init__.py.orig	Fri Jan 13 15:57:33 2012
++++ lib/Crypto/Hash/__init__.py	Wed Feb  8 17:27:41 2012
+@@ -34,8 +34,6 @@ Submodules:
  
- Submodules:
- Crypto.Hash.HMAC          RFC 2104: Keyed-Hashing for Message Authentication
+ Crypto.Hash.HMAC
+  RFC 2104. Keyed-Hashing for Message Authentication.
 -Crypto.Hash.MD2
+- RFC1319. Rivest's Message Digest algorithm, with a 128 bit digest. This algorithm is both slow and insecure.
  Crypto.Hash.MD4
+  RFC1320. Rivest's Message Digest algorithm, with a 128 bit digest. This algorithm is insecure.
  Crypto.Hash.MD5
- Crypto.Hash.RIPEMD160
- Crypto.Hash.SHA
+@@ -55,7 +53,7 @@ Crypto.Hash.SHA512
+ 
  """
  
--__all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
-+__all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'RIPEMD160', 'SHA', 'SHA256']
+-__all__ = ['HMAC', 'MD2', 'MD4', 'MD5', 'RIPEMD', 'SHA',
++__all__ = ['HMAC', 'MD4', 'MD5', 'RIPEMD', 'SHA',
+            'SHA224', 'SHA256', 'SHA384', 'SHA512']

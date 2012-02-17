@@ -1,0 +1,4 @@
+lib/python${MODPY_VERSION}/site-packages/Crypto/Random/OSRNG/nt.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Random/OSRNG/nt.pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py21compat.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Util/py21compat.pyc
