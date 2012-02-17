@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.34 2011/09/24 07:37:34 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.35 2012/02/17 07:31:26 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,6 +92,8 @@ sub dump_dirs
 			$ENV{'REPORT_PROBLEM_LOGFILE'}= $opt_p;
 		}
 		$ENV{'NO_IGNORE'} = 'Yes';
+		delete $ENV{'SUBPACKAGE'};
+		delete $ENV{'FLAVOR'};
 		exec {'make'} ("make", "dump-vars");
 		die $!;
 	}
@@ -185,6 +187,7 @@ my $unknown = {};
 
 dump_dirs($inserter, $vars, $unknown, undef);
 
+my $i = 1;
 while (1) {
 	my $todo = {};
 	my $stuff = 0;
@@ -196,7 +199,8 @@ while (1) {
 	}
 	last if !$stuff;
 	$normal->{todo} = {};
-	print "Next pass\n";
+	$i++;
+	print "pass #$i\n";
 	dump_dirs($inserter, $vars, $unknown, $todo);
 	for my $v (keys %$todo) {
 		if (!$normal->{done}{$v}) {
