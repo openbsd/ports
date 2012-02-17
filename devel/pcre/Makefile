@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2011/12/14 21:52:42 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2012/02/17 08:32:34 ajacoutot Exp $
 
 COMMENT=	perl-compatible regular expression library
 
-DISTNAME=	pcre-8.21
+DISTNAME=	pcre-8.30
 
-SHARED_LIBS +=  pcre                 2.5      # 0.1
+SHARED_LIBS +=  pcre                 3.0      # 0.1
+SHARED_LIBS +=  pcre16               0.0      # 0.0
 SHARED_LIBS +=  pcreposix            1.5      # 0.0
 SHARED_LIBS +=  pcrecpp              3.3      # 0.0
 
@@ -23,13 +24,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m stdc++
+WANTLIB += c curses m readline stdc++
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-utf8 \
+			--enable-pcre8 \
+			--enable-pcre16 \
+			--enable-utf \
 			--enable-unicode-properties
 
 # XXX compiler bugs
