@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/01/17 09:54:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2012/02/17 15:55:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
