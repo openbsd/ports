@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.123 2012/02/16 22:12:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2012/02/17 07:45:10 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.5.2
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
+REVISION=	0
 
 CATEGORIES=	print sysutils
 
@@ -85,6 +86,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-system-groups=wheel \
 		--with-optim="${CFLAGS}" \
 		--with-dbusdir=${SYSCONFDIR}/dbus-1 \
+		--with-pdftops=${LOCALBASE}/bin/gs \
 		--with-perl="/usr/bin/perl" \
 		--with-printcap=${SYSCONFDIR}/cups/printcap \
 		--with-smbconfigfile="samba:///${SYSCONFDIR}/samba/smb.conf" \
