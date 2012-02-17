@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.105 2012/01/21 19:07:20 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.106 2012/02/17 07:41:22 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -34,12 +34,12 @@
 #	tags
 #
 
-#.if defined(FLAVOR)
-#ERRORS += "Fatal: can't flavor a SUBDIR"
-#.endif
-#.if defined(SUBPACKAGE)
-#ERRORS += "Fatal: can't subpackage a SUBDIR"
-#.endif
+.if defined(FLAVOR)
+ERRORS += "Fatal: can't flavor a SUBDIR"
+.endif
+.if defined(SUBPACKAGE)
+ERRORS += "Fatal: can't subpackage a SUBDIR"
+.endif
 
 .for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
 .  if defined($v)
