@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2012/02/16 22:13:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/02/18 09:08:16 ajacoutot Exp $
 
 COMMENT=	print multiple pages per sheet on PostScript printer
 
 DISTNAME=	mpage-2.5.6
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Ian McWilliam <kaosagnt@tpg.com.au>
 

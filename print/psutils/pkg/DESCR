@@ -3,6 +3,5 @@ documents. Page selection and rearrangement are supported, including
 arrangement into signatures for booklet printing, and page merging for
 n-up printing.
 
-Available flavors:
-    a3 a4 a5 b5 b4 letter legal ledger tabloid statement executive folio
-    quarto s10x14	- set the default input/output paper size
+Available flavor(s):
+    a4	- set the default paper size to A4 (default is letter)
