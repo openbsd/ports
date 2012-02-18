@@ -1,29 +1,27 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/02/18 22:04:07 sthen Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
-COMMENT-gui=		Tk front-end to gpsbabel
+COMMENT-tk=		Tk front-end to gpsbabel
+COMMENT-qt=		Qt front-end to gpsbabel
 
-VERSION=		1.3.6
+VERSION=		1.4.3
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
-PKGNAME-gui=		gpsbabel-gui-${VERSION}
-REVISION-main =		0
-REVISION-gui =		0
+PKGNAME-tk=		gpsbabel-tk-${VERSION}
+PKGNAME-qt=		gpsbabel-qt-${VERSION}
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
 
 MAINTAINER=		Chris Kuethe <ckuethe@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#MASTER_SITES=		${HOMEPAGE}
-MASTER_SITES=		http://comstyle.com/source/ \
-			ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES=		http://www.linklevel.net/distfiles/
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
@@ -37,11 +35,9 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			WEB=${WRKSRC}
 
-USE_GMAKE=		Yes
-MULTI_PACKAGES=		-main -gui
+MULTI_PACKAGES=		-main -tk -qt
 
-MODULES=		x11/tk
-MODTK_VERSION=		8.4
+MODULES=		x11/tk x11/qt4
 
 BUILD_DEPENDS=		textproc/libxslt \
 			textproc/docbook \
@@ -49,18 +45,31 @@ BUILD_DEPENDS=		textproc/libxslt \
 LIB_DEPENDS-main=	devel/libusb-compat \
 			devel/shapelib
 
-WANTLIB-main=		expat m c z usb shp>=1 pthread
+cWANTLIB = 		c m pthread
+WANTLIB-main += expat shp>=1 usb z ${cWANTLIB}
+WANTLIB-tk = 
+WANTLIB-qt += ICE QtCore QtGui QtNetwork QtWebKit QtXml SM X11 Xext Xi
+WANTLIB-qt += Xinerama Xrender fontconfig freetype stdc++ ${cWANTLIB}
 
-LIB_DEPENDS-gui=
-PKG_ARCH-gui=	*
-RUN_DEPENDS-gui=	geo/gpsbabel \
+LIB_DEPENDS-tk=
+PKG_ARCH-tk=	*
+RUN_DEPENDS-tk=		geo/gpsbabel \
 			${MODTK_RUN_DEPENDS}
+RUN_DEPENDS-qt=		geo/gpsbabel
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/guibabel
+post-configure:
+	cd ${WRKSRC}/gui && ${SETENV} ${CONFIGURE_ENV} qmake4 \
+		app.pro
 post-build:
-	gmake -C ${WRKSRC} doc
+	cd ${WRKSRC} && make doc
+	cd ${WRKSRC}/gui && make
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gpsbabel ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gui/objects/gpsbabelfe-bin \
+		${PREFIX}/bin/guibabel-qt
 	${INSTALL_SCRIPT} ${WRKSRC}/guibabel ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA} ${WRKSRC}/babelweb/htmldoc-*/*.html \

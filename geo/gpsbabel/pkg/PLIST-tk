@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST-tk,v 1.1 2012/02/18 22:04:08 sthen Exp $
+@pkgpath geo/gpsbabel,-gui
+bin/guibabel
