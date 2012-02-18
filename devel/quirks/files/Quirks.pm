@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.66 2012/02/06 22:07:09 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.67 2012/02/18 22:04:23 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -279,6 +279,8 @@ my $stem_extensions = {
 	'aspell5-tn' => 'aspell-tn',
 	'aspell6-uk' => 'aspell-uk',
 	'vte-ptyhelper' => 'vte',
+# 5.2
+	'gpsbabel-gui' => 'gpsbabel-tk',
 };
 
 # ->is_base_system($handle, $state):
