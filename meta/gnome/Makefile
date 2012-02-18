@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/02/02 07:14:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/02/18 23:07:18 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extras=	GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extras=	gnome-extras-${V}
 
 REVISION-main=	7
-REVISION-extras=2
+REVISION-extras=3
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -60,6 +60,7 @@ RUN_DEPENDS-extras += \
 		graphics/simple-scan \
 		mail/evolution,-plugins \
 		mail/evolution-rss \
+		net/telepathy/folks,-tracker \
 		www/epiphany-extensions \
 		sysutils/deja-dup \
 		x11/gnome/contacts \
