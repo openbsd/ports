@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/23 09:22:59 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/18 01:16:08 edd Exp $
 
 COMMENT =		Sega Megadrive/Genesis emulator
-DISTNAME =		dgen-sdl-1.28
+DISTNAME =		dgen-sdl-1.29
 CATEGORIES =		emulators games
 HOMEPAGE =		http://dgen.sourceforge.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -27,6 +27,10 @@ BUILD_DEPENDS =		devel/sdl
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS +=        devel/nasm
 .endif
+
+# when building hq4x.o:
+# cc1: out of memory allocating 4072 bytes after a total of 0 bytes
+VMEM_WARNING = Yes
 
 LIB_DEPENDS =		devel/sdl \
 			archivers/libarchive
