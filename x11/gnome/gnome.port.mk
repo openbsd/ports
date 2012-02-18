@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.54 2012/02/16 22:21:54 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.55 2012/02/18 18:19:14 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -59,7 +59,7 @@ USE_GMAKE?=		Yes
 
 MODGNOME_CONFIGURE_ARGS_gtkdoc=--disable-gtk-doc
 MODGNOME_CONFIGURE_ARGS_goi=--disable-introspection
-MODGNOME_CONFIGURE_ARGS_vala=--disable-vala
+MODGNOME_CONFIGURE_ARGS_vala=--disable-vala --disable-vala-bindings
 
 .if defined(MODGNOME_TOOLS)
 .   if ${MODGNOME_TOOLS:Mgoi}
