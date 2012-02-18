@@ -1,4 +1,4 @@
-.\"	$OpenBSD: register-plist.1,v 1.2 2010/09/09 19:17:06 jasper Exp $
+.\"	$OpenBSD: register-plist.1,v 1.3 2012/02/18 18:48:21 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 9 2010 $
+.Dd $Mdocdate: February 18 2012 $
 .Dt REGISTER-PLIST 1
 .Os
 .Sh NAME
@@ -31,6 +31,12 @@
 .Sh DESCRIPTION
 .Nm
 is used to check that a packing-list for a given package name doesn't change.
+By default, it is invoked at the end of
+.Li make package,
+see
+.Ev PLIST_DB
+in
+.Xr bsd.port.mk 5 .
 Package names (package stem plus version) are used to uniquely identify
 packages.
 When something in the package changes, the package name should change,
