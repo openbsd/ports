@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/01/23 14:43:42 robert Exp $
+# $OpenBSD: Makefile,v 1.58 2012/02/18 22:22:41 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -281,7 +281,7 @@ CONFIGURE_ARGS+=--without-java
 .if ${FLAVOR:Mparallel}
 NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
 .else
-NCPU=		1
+NCPU=		0
 .endif
 CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
 
