@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2012/01/09 18:26:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2012/02/18 18:40:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,8 +14,7 @@ PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
-# NOTE: when major version changes, increment EVO_VERSION accordingly 
-# and bump:
+# NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
 # mail/evolution-exchange
 # mail/evolution-rss

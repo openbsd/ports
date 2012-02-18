@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/01/31 07:58:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/02/18 18:40:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,9 +11,9 @@ COMMENT-ui=		GTK+ extension and tools for libgda
 GNOME_PROJECT=		libgda
 GNOME_VERSION=		5.0.3
 
-# NOTE: when major version changes, increment GDA_MAJOR accordingly and
-# bump "x11/gnome/libgdamm"
-GDA_MAJOR=		5.0
+# NOTE: when GDA_MAJOR changes, increment GDA_MAJOR accordingly and bump:
+# x11/gnome/libgdamm
+GDA_MAJOR=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}

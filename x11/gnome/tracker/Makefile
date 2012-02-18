@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2012/02/16 22:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2012/02/18 18:40:18 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,7 +21,11 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
+# Only get the first x.y which is needed in the PLIST.
+# NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
+# net/telepathy/folks
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+
 EVO_VERSION=	3.2
 SUBST_VARS=	MAJ_V EVO_VERSION
 
