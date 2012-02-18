@@ -1,46 +1,75 @@
-# $OpenBSD: Makefile,v 1.27 2011/12/14 08:25:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2012/02/18 23:05:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		people aggregation library
+COMMENT-main=		people aggregation library
+COMMENT-tracker=	(meta-)tracker backend for folks
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.6.6
 API_V=			30
 
+PKGNAME-main=		${DISTNAME}
+PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
+
+REVISION-main=		0
+
 SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
 SHARED_LIBS +=  folks                     5.0 # 29.0
 SHARED_LIBS +=  folks-eds                 0.1 # 29.0
+
+TRACKER_VERSION=	0.12
+SUBST_VARS=		API_V TRACKER_VERSION
 
 HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 
 MODULES=		devel/gettext \
 			x11/gnome
 
-WANTLIB += asn1 c camel-1.2 com_err crypto dbus-1 dbus-glib-1
-WANTLIB += ebook-1.2 edataserver-1.2 ffi gconf-2 gee gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gssapi gthread-2.0 krb5 m ncurses
-WANTLIB += nspr4 nss3 nssutil3 pcre plc4 plds4 pthread readline
-WANTLIB += smime3 softokn3 soup-2.4 sqlite3 ssl3 telepathy-glib
-WANTLIB += xml2 z
+WANTLIB += dbus-1 dbus-glib-1 ffi gconf-2 gee gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre sqlite3
 
-LIB_DEPENDS=		databases/evolution-data-server>=3.2.0p2 \
+MULTI_PACKAGES=		-main
+
+PSEUDO_FLAVORS=		no_tracker
+FLAVOR ?=
+
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += asn1 c camel-1.2 com_err crypto ebook-1.2 edataserver-1.2
+WANTLIB-main += gssapi krb5 ncurses nspr4 nss3 nssutil3 plc4 plds4
+WANTLIB-main += pthread readline smime3 softokn3 soup-2.4 ssl3 telepathy-glib
+WANTLIB-main += xml2 z
+
+LIB_DEPENDS-main=	databases/evolution-data-server>=3.2.0p2 \
 			devel/libgee \
 			net/telepathy/telepathy-glib>=0.14.3
-RUN_DEPENDS=		net/telepathy/telepathy-mission-control
+#RUN_DEPENDS-main=	net/telepathy/telepathy-mission-control
+
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 MODGNOME_TOOLS= 	goi vala
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-import-tool \
-			--enable-inspect-tool \
-			--disable-tracker-backend
+			--enable-inspect-tool
 # Don't enable this yet untill it's stable enough.
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no
 # Experimental bindings, but hey, without testing they'll never mature.
 CONFIGURE_ARGS+=	--enable-eds-backend
 
-SUBST_VARS+=		API_V
+.if ${FLAVOR:Mno_tracker}
+CONFIGURE_ARGS +=	--disable-tracker-backend
+.else
+MULTI_PACKAGES +=	-tracker
+SHARED_LIBS +=  folks-tracker        0.0     # 30.0
+CONFIGURE_ARGS +=	--enable-tracker-backend
+LIB_DEPENDS-tracker=	${BASE_PKGPATH},-main \
+			x11/gnome/tracker
+WANTLIB-tracker += ${WANTLIB}
+WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-common
+WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB-tracker += e2fs-uuid folks icui18n icuuc kvm tracker-sparql-0.12
+WANTLIB-tracker += z
+.endif
 
 .include <bsd.port.mk>
