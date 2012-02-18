@@ -1,68 +1,12 @@
-$OpenBSD: patch-lib_awful_util_lua_in,v 1.4 2011/11/30 11:50:58 dcoppa Exp $
-
-XXX THIS IS A HACK
-This is needed to workaround the effects of userland 
-threads which change I/O operations to non-blocking.
-
+$OpenBSD: patch-lib_awful_util_lua_in,v 1.5 2012/02/18 11:24:44 dcoppa Exp $
 --- lib/awful/util.lua.in.orig	Wed Nov 23 15:08:50 2011
-+++ lib/awful/util.lua.in	Wed Nov 30 11:41:52 2011
-@@ -89,19 +89,47 @@ function spawn_with_shell(cmd, screen)
-     end
- end
- 
-+local function read_all(fn)
-+    local fd = io.open(fn, _OPEN_RT)
-+    if not fd then return nil end
-+    local str = fd:read'*a'
-+    fd:close()
-+    return str
-+end
-+
- --- Read a program output and returns its output as a string.
- -- @param cmd The command to run.
---- @return A string with the program output, or the error if one occured.
-+-- @return A string with the program output, or nil if an error occurred.
- function pread(cmd)
-     if cmd and cmd ~= "" then
--        local f, err = io.popen(cmd, 'r')
--        if f then
--            local s = f:read("*all")
--            f:close()
--            return s
-+        local rc, sout
-+        local tmp1, tmp2
-+        local fd_check, serr_check
-+
-+        tmp1 = os.tmpname()
-+        tmp2 = os.tmpname()
-+
-+        rc = os.execute(cmd.." > "..tmp1.." 2> "..tmp2)
-+
-+        if rc == 0 then
-+            sout = read_all(tmp1)
-         else
--            return err
-+            return nil
-         end
-+
-+        fd_check = io.open(tmp2)
-+        if not fd_check then return nil end
-+        serr_check = fd_check:read'*l'
-+        fd_check:close()
-+
-+        os.remove(tmp1)
-+        os.remove(tmp2)
-+
-+        if serr_check then
-+            return nil
-+        else
-+            return sout
-+        end
-     end
- end
- 
-@@ -182,7 +210,7 @@ end
- -- @param dirs Table of dirs to search, otherwise { '/usr/share/pixmaps/' }
++++ lib/awful/util.lua.in	Sat Feb 18 12:18:53 2012
+@@ -179,10 +179,10 @@ end
+ -- It searches for the icon path under the directories given w/the right ext
+ -- @param iconname The name of the icon to search for.
+ -- @param exts Table of image extensions allowed, otherwise { 'png', gif' }
+--- @param dirs Table of dirs to search, otherwise { '/usr/share/pixmaps/' }
++-- @param dirs Table of dirs to search, otherwise { '${LOCALBASE}/share/pixmaps/' }
  function geticonpath(iconname, exts, dirs)
      exts = exts or { 'png', 'gif' }
 -    dirs = dirs or { '/usr/share/pixmaps/' }
