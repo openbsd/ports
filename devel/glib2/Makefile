@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.151 2012/02/16 22:08:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.152 2012/02/18 17:02:22 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -92,7 +92,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 AUTOMAKE_VERSION=	1.11
 AUTOCONF_VERSION=	2.68
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
 PATCHFILES=		glib-gio-kqueue-2.28.8-v3.patch:0
 AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
@@ -100,9 +101,7 @@ AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 post-patch:
 	perl -pi -e 's,#include <sys/event.h>,#include <sys/types.h>\n#include <sys/event.h>,' \
 		${WRKSRC}/gio/kqueue/{kqueue-helper,kqueue-thread,kqueue-utils}.c
-	cd ${WRKSRC} && ${AUTO_ENV} automake
-	cd ${WRKSRC} && ${AUTO_ENV} autoheader
-	cd ${WRKSRC} && ${AUTO_ENV} autoconf
+	cd ${WRKSRC} && ${AUTO_ENV} autoreconf --force --install
 ### end of kqueue(1) backend ###########################################
 
 .include <bsd.port.arch.mk>
