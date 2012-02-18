@@ -1,0 +1,24 @@
+$OpenBSD: patch-ext_ffmpeg_gstffmpegdemux_c,v 1.5 2012/02/18 08:32:54 ajacoutot Exp $
+
+From upstream:
+Demote SWF demuxer to GST_RANK_NONE.
+
+--- ext/ffmpeg/gstffmpegdemux.c.orig	Sat Feb 18 00:03:44 2012
++++ ext/ffmpeg/gstffmpegdemux.c	Sat Feb 18 00:04:20 2012
+@@ -1958,7 +1958,7 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+         )
+       register_typefind_func = FALSE;
+ 
+-    /* Set the rank of demuxers know to work to MARGINAL.
++    /* Set the rank of demuxers known to work to MARGINAL.
+      * Set demuxers for which we already have another implementation to NONE
+      * Set All others to NONE*/
+     if (!strcmp (in_plugin->name, "wsvqa") ||
+@@ -1966,7 +1966,6 @@ gst_ffmpegdemux_register (GstPlugin * plugin)
+         !strcmp (in_plugin->name, "wc3movie") ||
+         !strcmp (in_plugin->name, "voc") ||
+         !strcmp (in_plugin->name, "tta") ||
+-        !strcmp (in_plugin->name, "swf") ||
+         !strcmp (in_plugin->name, "sol") ||
+         !strcmp (in_plugin->name, "smk") ||
+         !strcmp (in_plugin->name, "vmd") ||
