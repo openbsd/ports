@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2012/01/18 15:58:32 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2012/02/19 20:55:33 edd Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.5
+REVISION =		0
 
 CATEGORIES =		textproc x11
 
@@ -17,12 +18,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=	GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB +=	Xinerama Xrandr Xrender atk-1.0 c cairo cairo expat
-WANTLIB +=	fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB +=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m 
-WANTLIB +=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png poppler
-WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png poppler-glib pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm z
 
 MASTER_SITES =	https://pwmt.org/download/
 
@@ -32,7 +33,8 @@ LIB_DEPENDS =	devel/atk \
 		print/poppler \
 		x11/gtk+2
 
-MAKE_FLAGS = 	MANPREFIX=${WRKINST}/${PREFIX}/man CC=${CC}
+MAKE_FLAGS = 	MANPREFIX=${WRKINST}/${PREFIX}/man \
+		DESKTOPPREFIX=${WRKINST}/${PREFIX}/share/applications CC=${CC}
 FAKE_FLAGS =	DESTDIR=''
 
 USE_GMAKE =	Yes
