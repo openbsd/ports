@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/23 21:05:45 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/19 20:40:22 kili Exp $
 
 COMMENT =		Comonad transformers
 
 DISTNAME =		comonad-transformers-2.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/23 21:07:22 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/19 20:40:22 kili Exp $
 
 COMMENT =		backtracking logic-programming monad
 
 DISTNAME =		logict-0.5.0
+REVISION =		0
 CATEGORIES =		devel
 
 # BSD3
