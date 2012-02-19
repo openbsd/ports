@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/26 18:38:43 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2012/02/19 21:23:03 landry Exp $
 
 COMMENT=	Xfce4 widget library
 
 XFCE_PROJECT=	libxfce4ui
 XFCE_VERSION=	4.8.1
+REVISION=	0
 
 SHARED_LIBS=	xfce4ui-1		0.0	\
 		xfce4kbd-private-2	0.0	# 0.0
@@ -37,5 +38,8 @@ WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
 WANTLIB += xfce4util xfconf-0 z
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfconf
+
+post-install:
+	perl -pi -e 's/Control/Primary/' ${PREFIX}/share/examples/xfconf/xfce4-keyboard-shortcuts.xml
 
 .include <bsd.port.mk>
