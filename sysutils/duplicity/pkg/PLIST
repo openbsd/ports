@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/20 21:49:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/02/19 17:49:53 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -15,6 +15,10 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_multi.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_multi.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_single.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/_boto_single.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/botobackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.py
@@ -47,6 +51,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/collections.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/collections.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/commandline.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/commandline.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/compilec.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/compilec.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/diffdir.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/diffdir.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/dup_temp.py
@@ -59,6 +65,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/errors.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/file_naming.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/filechunkio.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/filechunkio.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/globals.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/globals.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/gpg.py
@@ -98,13 +106,39 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/util.pyc
 @man man/man1/duplicity.1
 @man man/man1/rdiffdir.1
 share/locale/bg/LC_MESSAGES/duplicity.mo
+share/locale/de/LC_MESSAGES/duplicity.mo
+share/locale/el/LC_MESSAGES/duplicity.mo
+share/locale/en_AU/
+share/locale/en_AU/LC_MESSAGES/
+share/locale/en_AU/LC_MESSAGES/duplicity.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/duplicity.mo
 share/locale/eo/LC_MESSAGES/duplicity.mo
 share/locale/es/LC_MESSAGES/duplicity.mo
+share/locale/fr/LC_MESSAGES/duplicity.mo
+share/locale/he/LC_MESSAGES/duplicity.mo
+share/locale/hu/LC_MESSAGES/duplicity.mo
+share/locale/id/LC_MESSAGES/duplicity.mo
 share/locale/io/
 share/locale/io/LC_MESSAGES/
 share/locale/io/LC_MESSAGES/duplicity.mo
+share/locale/it/LC_MESSAGES/duplicity.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/duplicity.mo
+share/locale/pl/LC_MESSAGES/duplicity.mo
 share/locale/pt/LC_MESSAGES/duplicity.mo
+share/locale/pt_BR/LC_MESSAGES/duplicity.mo
+share/locale/ru/LC_MESSAGES/duplicity.mo
+share/locale/sl/LC_MESSAGES/duplicity.mo
+share/locale/sq/
+share/locale/sq/LC_MESSAGES/
+share/locale/sq/LC_MESSAGES/duplicity.mo
+share/locale/sr/LC_MESSAGES/duplicity.mo
+share/locale/sv/LC_MESSAGES/duplicity.mo
+share/locale/tr/LC_MESSAGES/duplicity.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/duplicity.mo
 share/locale/zh_CN/LC_MESSAGES/duplicity.mo

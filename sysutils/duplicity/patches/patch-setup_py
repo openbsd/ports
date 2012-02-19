@@ -1,22 +1,22 @@
-$OpenBSD: patch-setup_py,v 1.4 2009/12/05 14:45:08 jim Exp $
---- setup.py.orig	Thu Oct 29 21:51:45 2009
-+++ setup.py	Mon Nov 23 12:53:45 2009
-@@ -42,16 +42,9 @@ if os.name == 'posix':
+$OpenBSD: patch-setup_py,v 1.5 2012/02/19 17:49:53 ajacoutot Exp $
+--- setup.py.orig	Fri Nov 25 20:20:20 2011
++++ setup.py	Thu Feb 16 14:06:06 2012
+@@ -42,17 +42,9 @@ if os.name == 'posix':
          incdir_list = [os.path.join(LIBRSYNC_DIR, 'include')]
          libdir_list = [os.path.join(LIBRSYNC_DIR, 'lib')]
  
 -data_files = [('share/man/man1',
 +data_files = [('man/man1',
-                ['duplicity.1',
--                'rdiffdir.1']),
+                ['bin/duplicity.1',
+                 'bin/rdiffdir.1']),
 -              ('share/doc/duplicity-%s' % version_string,
 -               ['COPYING',
--                'REPO-README',
--                'LOG-README',
 -                'README',
+-                'README-REPO',
+-                'README-LOG',
 -                'tarfile-LICENSE',
+-                'tarfile-CHANGES',
 -                'CHANGELOG']),
-+                'rdiffdir.1'])
                ]
  
  assert os.path.exists("po"), "Missing 'po' directory."
