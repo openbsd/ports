@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.181 2012/01/25 20:55:44 dcoppa Exp $
+$OpenBSD: user.list,v 1.182 2012/02/19 15:02:56 robert Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -101,7 +101,7 @@ id  user		group		port options
 590 _smsd		_smsd		comms/smstools
 591 _bacula		_bacula		sysutils/bacula
 592 _imapproxy		_imapproxy	mail/imapproxy
-593 _nginx		_nginx		www/nginx
+#593 _nginx		_nginx		www/nginx
 594 _ejabberd		_ejabberd	net/ejabberd
 595 _poppassd		_poppassd	sysutils/openpoppassd
 596 _heartbeat		_heartbeat	sysutils/heartbeat
