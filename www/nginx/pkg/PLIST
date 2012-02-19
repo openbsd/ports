@@ -1,22 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/17 03:31:00 william Exp $
-@newgroup _nginx:593
-@newuser _nginx:593:_nginx:daemon:nginx user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.9 2012/02/19 15:02:08 robert Exp $
 @man man/man8/nginx.8
 @bin sbin/nginx
-@mode 755
-@sample ${NGINX_DIR}/
-@sample /var/log/nginx/
 @mode 700
-@owner _nginx
-@group _nginx
+@owner www
+@group www
 @sample ${NGINX_DIR}/tmp/
 @mode
 @owner
 @group
-@sample ${SYSCONFDIR}/nginx/
 share/nginx/
 share/nginx/fastcgi_params
-@sample ${SYSCONFDIR}/nginx/fastcgi_params
 share/nginx/html/
 @sample ${NGINX_DIR}/html/
 share/nginx/html/50x.html
@@ -24,17 +17,9 @@ share/nginx/html/50x.html
 share/nginx/html/index.html
 @sample ${NGINX_DIR}/html/index.html
 share/nginx/koi-utf
-@sample ${SYSCONFDIR}/nginx/koi-utf
 share/nginx/koi-win
-@sample ${SYSCONFDIR}/nginx/koi-win
 share/nginx/mime.types
-@sample ${SYSCONFDIR}/nginx/mime.types
 share/nginx/nginx.conf
-@sample ${SYSCONFDIR}/nginx/nginx.conf
 share/nginx/scgi_params
-@sample ${SYSCONFDIR}/nginx/scgi_params
 share/nginx/uwsgi_params
-@sample ${SYSCONFDIR}/nginx/uwsgi_params
 share/nginx/win-utf
-@sample ${SYSCONFDIR}/nginx/win-utf
-@rcscript ${RCDIR}/nginx

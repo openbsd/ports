@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2012/02/18 16:40:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2012/02/19 15:02:08 robert Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
 DISTNAME=	nginx-1.0.12
 CATEGORIES=	www
+
+REVISION=	0
 
 HOMEPAGE=	http://nginx.org/
 
@@ -29,16 +31,16 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--conf-path=${SYSCONFDIR}/nginx/nginx.conf \
 			--sbin-path=${PREFIX}/sbin/nginx \
 			--pid-path=/var/run/nginx.pid \
-			--lock-path=${NGINX_DIR}/tmp/nginx.lock \
+			--lock-path=/var/run/nginx.lock \
 			--http-client-body-temp-path=${NGINX_DIR}/tmp/client_body_temp \
 			--http-proxy-temp-path=${NGINX_DIR}/tmp/proxy_temp \
 			--http-fastcgi-temp-path=${NGINX_DIR}/tmp/fastcgi_temp \
 			--http-scgi-temp-path=${NGINX_DIR}/tmp/scgi_temp \
 			--http-uwsgi-temp-path=${NGINX_DIR}/tmp/uwsgi_temp \
-			--http-log-path=/var/log/nginx/access.log \
-			--error-log-path=/var/log/nginx/error.log \
-			--user=_nginx \
-			--group=_nginx \
+			--http-log-path=/var/www/logs/access.log \
+			--error-log-path=/var/www/logs/error.log \
+			--user=www \
+			--group=www \
 			--with-http_gzip_static_module \
 			--with-http_ssl_module \
 			--with-http_stub_status_module \
