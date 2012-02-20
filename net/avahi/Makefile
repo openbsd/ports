@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2012/02/20 18:01:19 espie Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -32,6 +32,8 @@ REVISION-mono=	3
 REVISION-qt3=	3
 REVISION-qt4=	3
 REVISION-ui=	1
+
+IGNORE-mono = rthreads stuck on mono
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
