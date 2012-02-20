@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2010/10/18 20:52:10 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2012/02/20 22:20:51 sthen Exp $
 # Please adjust www/faq/faq15.html if updating.
 
 COMMENT=	multi-screen window manager
@@ -7,7 +7,7 @@ VERSION=	4.0.3
 DISTNAME=	screen-${VERSION}
 REVISION=	2
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.uni-erlangen.de/pub/utilities/screen/
+MASTER_SITES=	${MASTER_SITE_GNU:=screen/}
 
 HOMEPAGE=	http://www.gnu.org/software/screen/
 
