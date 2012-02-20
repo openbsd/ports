@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/02/19 21:39:31 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2012/02/20 09:09:32 landry Exp $
 
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
@@ -31,6 +31,7 @@ CONFIGURE_ARGS +=	--disable-linker-opts
 
 FAKE_FLAGS =	menudir=${PREFIX}/share/examples/garcon
 
+# http://git.xfce.org/xfce/garcon/commit/?id=6ddc4b984723e902f6903eb644856aae48ab3ed6
 post-install:
 	# fix icon name for education category
 	perl -pi -e "s/applications-education/applications-science/" \
