@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2012/01/11 03:00:02 nigel Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2012/02/20 20:20:00 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/README
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/blocklist.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/
@@ -80,68 +79,8 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/inspector@mozi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/{59c81df5-4b7a-477b-912d-4e0fdf64e5f2}.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/distribution/extensions/{f13b157f-b174-47e7-a34d-4815ddfdfeb8}.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-be@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ca@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-cs@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-de@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-en-GB@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-en-US@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-es-AR@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-es-ES@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-fi@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-fr@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-gl@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-hu@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-it@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ja@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-lt@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-nb-NO@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-nl@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-pl@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-pt-PT@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-ru@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-sk@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-sv-SE@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-tr@${MOZILLA_PROJECT}.mozilla.org.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/langpack-zh-CN@${MOZILLA_PROJECT}.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/modern@themes.mozilla.org.xpi
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}.xpi
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_af.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_bg.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ca.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_cy.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_da.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1901.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1996.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-CH.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_en_US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_eo.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_es.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_et.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fi.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_gl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hsb.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hu.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ia.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_is.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_it.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_kmr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_la.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_lt.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_mn.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nb.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nn.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_pt.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ru.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sh.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sv.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_tr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_uk.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamAssassin.sfd
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamPal.sfd
@@ -155,7 +94,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/rss.rdf
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/license.txt
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.jar
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files

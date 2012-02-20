@@ -1,4 +1,4 @@
-$OpenBSD: patch-ldap_sdks_c-sdk_configure_in,v 1.1 2011/07/24 07:31:57 landry Exp $
+$OpenBSD: patch-ldap_sdks_c-sdk_configure_in,v 1.2 2012/02/20 20:20:00 landry Exp $
 --- ldap/sdks/c-sdk/configure.in.orig	Sun Feb 13 12:23:20 2011
 +++ ldap/sdks/c-sdk/configure.in	Sun Feb 13 12:23:37 2011
 @@ -1853,7 +1853,7 @@ mips-sony-newsos*)

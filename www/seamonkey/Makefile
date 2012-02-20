@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.97 2012/01/11 03:00:02 nigel Exp $
+# $OpenBSD: Makefile,v 1.98 2012/02/20 20:20:00 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.6.1
+MOZILLA_VERSION=	2.7.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.0beta9
-ENIG_V =		1.3.4
+PKGNAME-lightning =	lightning-seamonkey-1.2beta1
+ENIG_V =		1.3.5
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
-REVISION-enigmail =	0
 
-SO_VERSION=	21.0
+SO_VERSION=	22.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -31,29 +30,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-# url for beta releases
-#MASTER_SITES =	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/ \
-#	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/
-
-MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/ \
-		https://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/
-MASTER_SITES1 =	http://www.mozilla-enigmail.org/download/source/
-
-LANGUAGES=	be ca cs de en-GB en-US \
-		es-AR es-ES fi fr gl hu \
-		it ja lt nb-NO nl pl \
-		pt-PT ru sk sv-SE tr zh-CN
+MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		enigmail-${ENIG_V}.tar.gz
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-${ENIG_V}.tar.gz:1
-.for language in ${LANGUAGES}
-DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
-.endfor
+		enigmail-${ENIG_V}.tar.gz:0
 
 MODULES=	www/mozilla devel/gettext lang/python
 BUILD_DEPENDS+=	archivers/unzip
@@ -107,10 +91,6 @@ EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/extensions/
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
-.for language in ${LANGUAGES}
-	${INSTALL_DATA} ${FULLDISTDIR}/seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi \
-		${EXTDIR}/langpack-${language}@${MOZILLA_PROJECT}.mozilla.org.xpi
-.endfor
 
 .for xpi guid in ${GUIDS}
 	${UNZIP} -oq ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}

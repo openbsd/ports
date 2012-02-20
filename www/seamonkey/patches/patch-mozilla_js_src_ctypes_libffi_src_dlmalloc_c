@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.1 2011/07/24 07:31:57 landry Exp $
+$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.2 2012/02/20 20:20:00 landry Exp $
 --- mozilla/js/src/ctypes/libffi/src/dlmalloc.c.orig	Fri Jan 14 23:21:32 2011
 +++ mozilla/js/src/ctypes/libffi/src/dlmalloc.c	Sun Feb 13 23:01:39 2011
 @@ -2517,17 +2517,15 @@ static int init_mparams(void) {

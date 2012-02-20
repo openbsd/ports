@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js,v 1.2 2011/07/24 07:31:57 landry Exp $
+$OpenBSD: patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js,v 1.3 2012/02/20 20:20:00 landry Exp $
 --- mozilla/security/manager/pki/resources/content/exceptionDialog.js.orig	Fri Jan 14 23:21:51 2011
 +++ mozilla/security/manager/pki/resources/content/exceptionDialog.js	Sun Feb 13 23:01:39 2011
 @@ -283,6 +283,7 @@ function updateCertStatus() {

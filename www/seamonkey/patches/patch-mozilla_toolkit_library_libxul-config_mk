@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_toolkit_library_libxul-config_mk,v 1.4 2011/12/08 00:39:18 nigel Exp $
+$OpenBSD: patch-mozilla_toolkit_library_libxul-config_mk,v 1.5 2012/02/20 20:20:00 landry Exp $
 'no target to build -lnss3, needed by libxul.so.17.1'
---- mozilla/toolkit/library/libxul-config.mk.orig	Sat Sep 17 03:35:15 2011
-+++ mozilla/toolkit/library/libxul-config.mk	Mon Sep 19 10:35:58 2011
-@@ -321,13 +321,14 @@ EXTRA_DSO_LDOPTS += \
+--- mozilla/toolkit/library/libxul-config.mk.orig	Thu Dec 15 01:23:07 2011
++++ mozilla/toolkit/library/libxul-config.mk	Mon Dec 19 22:30:27 2011
+@@ -322,13 +322,14 @@ EXTRA_DSO_LDOPTS += \
  	$(PNG_LIBS) \
  	$(QCMS_LIBS) \
  	$(MOZ_JS_LIBS) \
@@ -14,7 +14,7 @@ $OpenBSD: patch-mozilla_toolkit_library_libxul-config_mk,v 1.4 2011/12/08 00:39:
  	$(SQLITE_LIBS) \
  	$(NULL)
 +
-+OS_LIBS	+= $(NSS_LIBS)
++OS_LIBS += $(NSS_LIBS)
  
  ifdef MOZ_NATIVE_ZLIB
  EXTRA_DSO_LDOPTS += $(ZLIB_LIBS)
