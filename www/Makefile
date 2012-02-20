@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.544 2012/01/26 09:00:58 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.545 2012/02/20 16:03:27 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -445,6 +445,7 @@
      SUBDIR += sogo
      SUBDIR += sope
      SUBDIR += spawn-fcgi
+     SUBDIR += sqtop
      SUBDIR += squid
      SUBDIR += squid,ldap
      SUBDIR += squid,ldap,snmp
