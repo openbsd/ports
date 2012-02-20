@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: trytond.rc,v 1.1.1.1 2011/06/10 11:49:31 ajacoutot Exp $
+# $OpenBSD: trytond.rc,v 1.2 2012/02/20 10:00:21 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/trytond"
 daemon_user="_tryton"
@@ -16,7 +16,7 @@ rc_pre() {
 	chown _tryton:_tryton /var/log/trytond
 }
 
-# XXX hangs forever (threads?)
+# XXX hangs forever
 rc_stop() {
 	pkill -9 -f "^${pexp}"
 }
