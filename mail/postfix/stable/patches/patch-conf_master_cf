@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_master_cf,v 1.3 2012/02/02 06:57:39 jakob Exp $
---- conf/master.cf.orig	Fri Dec 31 14:14:51 2010
-+++ conf/master.cf	Wed Mar  9 10:46:11 2011
+$OpenBSD: patch-conf_master_cf,v 1.4 2012/02/20 09:55:49 sthen Exp $
+--- conf/master.cf.orig	Wed Dec 14 12:44:24 2011
++++ conf/master.cf	Sat Dec 17 20:20:15 2011
 @@ -8,49 +8,49 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
@@ -17,12 +17,14 @@ $OpenBSD: patch-conf_master_cf,v 1.3 2012/02/02 06:57:39 jakob Exp $
 +#dnsblog   unix  -       -       -       -       0       dnsblog
 +#tlsproxy  unix  -       -       -       -       0       tlsproxy
 +#submission inet n       -       -       -       -       smtpd
+ #  -o syslog_name=postfix/submission
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
 -#smtps     inet  n       -       n       -       -       smtpd
 +#smtps     inet  n       -       -       -       -       smtpd
+ #  -o syslog_name=postfix/smtps
  #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
@@ -54,11 +56,9 @@ $OpenBSD: patch-conf_master_cf,v 1.3 2012/02/02 06:57:39 jakob Exp $
  proxymap  unix  -       -       n       -       -       proxymap
  proxywrite unix -       -       n       -       1       proxymap
 -smtp      unix  -       -       n       -       -       smtp
-+smtp      unix  -       -       -       -       -       smtp
- # When relaying mail as backup MX, disable fallback_relay to avoid MX loops
 -relay     unix  -       -       n       -       -       smtp
++smtp      unix  -       -       -       -       -       smtp
 +relay     unix  -       -       -       -       -       smtp
- 	-o smtp_fallback_relay=
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
