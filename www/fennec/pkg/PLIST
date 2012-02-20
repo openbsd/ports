@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/01/11 02:17:13 nigel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/02/20 20:21:43 landry Exp $
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
@@ -31,7 +31,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/HelperAppDialog.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/LoginManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/LoginManagerPrompter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/NetworkGeolocationProvider.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/OpenWebapps.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/PlacesCategoriesStarter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/PromptService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/SessionStore.js
@@ -75,7 +74,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsProxyAutoConfig.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsSearchService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsSearchSuggestions.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsTaggingService.js
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsTryToClose.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsURLFormatter.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsUpdateTimerManager.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsWebHandlerApp.js
@@ -143,6 +141,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/AddonRepository.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/AddonUpdateChecker.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CSPUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CertUtils.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/ChromeManifestParser.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CommonDialog.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/ConsoleAPIStorage.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Dict.jsm
@@ -158,7 +157,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/LightweightThemeManager.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/LocaleRepository.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Microformats.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/NetUtil.jsm
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/OpenWebapps.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PageMenu.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PerfMeasurement.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PlacesDBUtils.jsm
@@ -167,6 +165,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PluginProvider.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PluralForm.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/PopupNotifications.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Services.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/SpellCheckDictionaryBootstrap.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/WindowDraggingUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/XPCOMUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/XPIProvider.jsm

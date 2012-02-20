@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_components_certerror_content_aboutCertError_xhtml,v 1.3 2011/06/28 22:01:17 landry Exp $
+$OpenBSD: patch-browser_components_certerror_content_aboutCertError_xhtml,v 1.4 2012/02/20 20:21:43 landry Exp $
 Click the 'get certificate' checkbox ?
 --- browser/components/certerror/content/aboutCertError.xhtml.orig	Tue Aug 31 15:49:28 2010
 +++ browser/components/certerror/content/aboutCertError.xhtml	Thu Sep  9 10:28:59 2010

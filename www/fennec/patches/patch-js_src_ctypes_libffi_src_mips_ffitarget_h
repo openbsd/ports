@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_ctypes_libffi_src_mips_ffitarget_h,v 1.1 2011/06/28 22:01:18 landry Exp $
+$OpenBSD: patch-js_src_ctypes_libffi_src_mips_ffitarget_h,v 1.2 2012/02/20 20:21:43 landry Exp $
 
 There's no sgidefs on OpenBSD, so don't bother including it.
 

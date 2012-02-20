@@ -1,6 +1,6 @@
-$OpenBSD: patch-ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.3 2012/01/11 02:17:13 nigel Exp $
---- ipc/chromium/src/chrome/common/ipc_message_utils.h.orig	Wed Sep 28 22:24:48 2011
-+++ ipc/chromium/src/chrome/common/ipc_message_utils.h	Fri Oct 28 14:46:29 2011
+$OpenBSD: patch-ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.4 2012/02/20 20:21:43 landry Exp $
+--- ipc/chromium/src/chrome/common/ipc_message_utils.h.orig	Wed Jan 11 18:14:43 2012
++++ ipc/chromium/src/chrome/common/ipc_message_utils.h	Sat Jan 14 20:21:44 2012
 @@ -193,6 +193,29 @@ struct ParamTraits<unsigned long long> {
      l->append(StringPrintf(L"%ull", p));
    }
@@ -30,4 +30,4 @@ $OpenBSD: patch-ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.3 2012/01
 +};
  #endif
  
- #if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)))
+ #if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)) || defined(ARCH_CPU_S390))

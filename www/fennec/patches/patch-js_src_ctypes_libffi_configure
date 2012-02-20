@@ -1,6 +1,6 @@
-$OpenBSD: patch-js_src_ctypes_libffi_configure,v 1.4 2011/12/08 01:35:08 nigel Exp $
---- js/src/ctypes/libffi/configure.orig	Fri Nov  4 23:51:52 2011
-+++ js/src/ctypes/libffi/configure	Thu Nov 17 19:34:16 2011
+$OpenBSD: patch-js_src_ctypes_libffi_configure,v 1.5 2012/02/20 20:21:43 landry Exp $
+--- js/src/ctypes/libffi/configure.orig	Fri Nov  4 21:34:01 2011
++++ js/src/ctypes/libffi/configure	Thu Nov 10 00:21:25 2011
 @@ -11212,7 +11212,7 @@ case "$host" in
  	TARGET=FRV; TARGETDIR=frv
  	;;

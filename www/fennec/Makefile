@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2012/01/11 02:17:13 nigel Exp $
+# $OpenBSD: Makefile,v 1.19 2012/02/20 20:21:43 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
-MOZILLA_VERSION =	9.0
+MOZILLA_VERSION =	10.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
 
 
-SO_VERSION =	5.0
+SO_VERSION =	6.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozalloc xpcom xul

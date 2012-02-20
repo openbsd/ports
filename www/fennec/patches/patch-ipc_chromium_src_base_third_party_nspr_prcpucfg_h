@@ -1,6 +1,6 @@
-$OpenBSD: patch-ipc_chromium_src_base_third_party_nspr_prcpucfg_h,v 1.2 2012/01/11 02:17:13 nigel Exp $
---- ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	Fri Dec 16 21:59:11 2011
-+++ ipc/chromium/src/base/third_party/nspr/prcpucfg.h	Thu Dec 22 00:39:29 2011
+$OpenBSD: patch-ipc_chromium_src_base_third_party_nspr_prcpucfg_h,v 1.3 2012/02/20 20:21:43 landry Exp $
+--- ipc/chromium/src/base/third_party/nspr/prcpucfg.h.orig	Wed Dec  7 06:27:43 2011
++++ ipc/chromium/src/base/third_party/nspr/prcpucfg.h	Sat Dec 10 16:53:04 2011
 @@ -34,7 +34,7 @@
  #include "base/third_party/nspr/prcpucfg_win.h"
  #elif defined(__APPLE__)
