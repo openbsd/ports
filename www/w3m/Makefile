@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.79 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2012/02/20 18:25:47 sthen Exp $
 
 COMMENT=	pager/text-based web browser
 
 DISTNAME=	w3m-0.5.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 HOMEPAGE=	http://w3m.sourceforge.net/
 
@@ -35,13 +35,12 @@ USE_GROFF=	Yes
 .if ${FLAVOR:L:Mimage}
 LIB_DEPENDS+=	x11/gtk+2
 CONFIGURE_ARGS+=--with-imagelib=gtk2
-WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 cairo expat fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png Xcomposite Xdamage gio-2.0 pixman-1
-WANTLIB += pthread-stubs xcb gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
-WANTLIB += gdk-x11-2.0>=1000 gtk-x11-2.0>=1000
-WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm
 .else
 CONFIGURE_ARGS+=--enable-image=no
 .endif
