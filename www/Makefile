@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2012/02/20 16:03:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.546 2012/02/20 20:33:50 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -441,6 +441,7 @@
      SUBDIR += sabredav
      SUBDIR += sarg
      SUBDIR += seamonkey
+     SUBDIR += seamonkey-i18n
      SUBDIR += snownews
      SUBDIR += sogo
      SUBDIR += sope
