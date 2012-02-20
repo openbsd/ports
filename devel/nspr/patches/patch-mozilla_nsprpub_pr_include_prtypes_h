@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_prtypes_h,v 1.1 2011/10/27 07:58:03 robert Exp $
---- mozilla/nsprpub/pr/include/prtypes.h.orig	Wed Oct 12 11:53:51 2011
-+++ mozilla/nsprpub/pr/include/prtypes.h	Wed Oct 12 11:54:11 2011
-@@ -351,7 +351,7 @@ typedef long PRInt32;
+$OpenBSD: patch-mozilla_nsprpub_pr_include_prtypes_h,v 1.2 2012/02/20 09:17:00 landry Exp $
+--- mozilla/nsprpub/pr/include/prtypes.h.orig	Tue Feb 14 19:21:25 2012
++++ mozilla/nsprpub/pr/include/prtypes.h	Fri Feb 17 08:50:22 2012
+@@ -368,7 +368,7 @@ typedef long PRInt32;
   * match uint64_t, otherwise our uint64 typedef conflicts with the uint64
   * typedef in cssmconfig.h, which CoreServices.h includes indirectly.
   */
@@ -9,4 +9,4 @@ $OpenBSD: patch-mozilla_nsprpub_pr_include_prtypes_h,v 1.1 2011/10/27 07:58:03 r
 +#if PR_BYTES_PER_LONG == 8 && !defined(__APPLE__) && !defined(__OpenBSD__)
  typedef long PRInt64;
  typedef unsigned long PRUint64;
- #elif defined(WIN32) && !defined(__GNUC__)
+ #define PR_INT64(x)  x ## L
