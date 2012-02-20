@@ -1,15 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/09/15 09:09:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/02/20 16:43:26 sthen Exp $
 ${P5SITE}/Mail/
 ${P5SITE}/Mail/IMAPClient/
 ${P5SITE}/Mail/IMAPClient.pm
 ${P5SITE}/Mail/IMAPClient.pod
 ${P5SITE}/Mail/IMAPClient/BodyStructure/
 ${P5SITE}/Mail/IMAPClient/BodyStructure.pm
+${P5SITE}/Mail/IMAPClient/BodyStructure/Parse.grammar
 ${P5SITE}/Mail/IMAPClient/BodyStructure/Parse.pm
+${P5SITE}/Mail/IMAPClient/BodyStructure/Parse.pod
 ${P5SITE}/Mail/IMAPClient/MessageSet.pm
+${P5SITE}/Mail/IMAPClient/Thread.grammar
 ${P5SITE}/Mail/IMAPClient/Thread.pm
+${P5SITE}/Mail/IMAPClient/Thread.pod
 @man man/man3p/Mail::IMAPClient.3p
 @man man/man3p/Mail::IMAPClient::BodyStructure.3p
+@man man/man3p/Mail::IMAPClient::BodyStructure::Parse.3p
 @man man/man3p/Mail::IMAPClient::MessageSet.3p
-@man man/man3p/Mail::IMAPClient::Parse.3p
 @man man/man3p/Mail::IMAPClient::Thread.3p
