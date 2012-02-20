@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.11 2011/12/03 11:03:07 espie Exp $
+# $OpenBSD: Locks.pm,v 1.12 2012/02/20 21:18:48 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -28,7 +28,9 @@ sub new
 	my ($class, $lockdir) = @_;
 
 	File::Path::make_path($lockdir);
-	bless {lockdir => $lockdir}, $class;
+	bless {lockdir => $lockdir, 
+		dpb_pid => $$, 
+		dpb_host => DPB::Core::Local->hostname}, $class;
 }
 
 sub build_lockname
@@ -50,6 +52,8 @@ sub dolock
 	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
 		DPB::Util->make_hot($fh);
 		print $fh "locked=", $v->logname, "\n";
+		print $fh "dpb=", $self->{dpb_pid}, " on ", 
+		    $self->{dpb_host}, "\n";
 		$v->print_parent($fh);
 		return $fh;
 	} else {
