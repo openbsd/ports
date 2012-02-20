@@ -1,7 +1,6 @@
-$OpenBSD: patch-js_src_jscompartment_cpp,v 1.1 2012/01/11 02:42:48 nigel Exp $
-https://bugzilla.mozilla.org/show_bug.cgi?id=703534
---- js/src/jscompartment.cpp	Wed Dec 21 00:28:22 2011
-+++ js/src/jscompartment.cpp	Sat Dec 24 11:21:34 2011
+$OpenBSD: patch-js_src_jscompartment_cpp,v 1.2 2012/02/20 20:15:04 landry Exp $
+--- js/src/jscompartment.cpp.orig	Wed Jan 11 18:14:47 2012
++++ js/src/jscompartment.cpp	Sat Jan 14 20:21:44 2012
 @@ -50,7 +50,6 @@
  #include "jswatchpoint.h"
  #include "jswrapper.h"
