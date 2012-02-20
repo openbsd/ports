@@ -1,5 +1,5 @@
---- pflogsumm.pl.orig	Sat Mar 20 21:00:42 2010
-+++ pflogsumm.pl	Tue Apr  6 09:04:29 2010
+--- pflogsumm.pl.orig	Wed Feb  1 15:34:58 2012
++++ pflogsumm.pl	Mon Feb 20 09:50:08 2012
 @@ -4,13 +4,13 @@ eval 'exec perl -S $0 "$@"'
  
  =head1 NAME
@@ -7,25 +7,25 @@
 -pflogsumm.pl - Produce Postfix MTA logfile summary
 +pflogsumm - Produce Postfix MTA logfile summary
  
- Copyright (C) 1998-2010 by James S. Seymour, Release 1.1.3.
+ Copyright (C) 1998-2010 by James S. Seymour, Release 1.1.4
  
  =head1 SYNOPSIS
  
 -    pflogsumm.pl -[eq] [-d <today|yesterday>] [--detail <cnt>]
 +    pflogsumm -[eq] [-d <today|yesterday>] [--detail <cnt>]
- 	[--bounce_detail <cnt>] [--deferral_detail <cnt>]
- 	[-h <cnt>] [-i|--ignore_case] [--iso_date_time] [--mailq]
- 	[-m|--uucp_mung] [--no_bounce_detail] [--no_deferral_detail]
-@@ -21,7 +21,7 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
- 	[-u <cnt>] [--verbose_msg_detail] [--verp_mung[=<n>]]
- 	[--zero_fill] [file1 [filen]]
+ 	[--bounce-detail <cnt>] [--deferral-detail <cnt>]
+ 	[-h <cnt>] [-i|--ignore-case] [--iso-date-time] [--mailq]
+ 	[-m|--uucp-mung] [--no-no-msg-size] [--problems-first]
+@@ -19,7 +19,7 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
+ 	[--syslog-name=string] [-u <cnt>] [--verbose-msg-detail]
+ 	[--verp-mung[=<n>]] [--zero-fill] [file1 [filen]]
  
 -    pflogsumm.pl -[help|version]
 +    pflogsumm -[help|version]
  
      If no file(s) specified, reads from stdin.  Output is to stdout.
  
-@@ -142,7 +142,7 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
+@@ -140,7 +140,7 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
  		    The message may be delivered long-enough after the
  		    (last) qmgr log entry that the information is not in
  		    the log(s) processed by a particular run of
@@ -34,7 +34,7 @@
  		    size" and the total for "bytes delivered." These are
  		    normally reported by pflogsumm as "Messages with no
  		    size data."
-@@ -257,15 +257,15 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
+@@ -255,15 +255,15 @@ Copyright (C) 1998-2010 by James S. Seymour, Release 1
  
      Produce a report of previous day's activities:
  
@@ -53,22 +53,3 @@
  
      Crontab entry to generate a report of the previous day's activity
      at 10 minutes after midnight.
-@@ -488,7 +488,7 @@ for (0 .. 23) {
-     $smtpdPerHr[$_]  = [0,0,0];
- }
- 
--$progName = "pflogsumm.pl";
-+$progName = "pflogsumm";
- $usageMsg =
-     "usage: $progName -[eq] [-d <today|yesterday>] [--detail <cnt>]
- 	[--bounce_detail <cnt>] [--deferral_detail <cnt>]
-@@ -1421,7 +1421,8 @@ sub normalize_host {
- 
-     if((my @octets = ($norm1 =~ /^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})$/o)) == 4) {
- 	# Dotted-quad IP address
--	return(pack('C4', @octets));
-+	# Fix "Character in 'C' format wrapped in pack" warning
-+	return(pack('U4', @octets));
-     } else {
- 	# Possibly hostname or user@dom.ain
- 	return(join( '', map { lc $_ } reverse split /[.@]/, $norm1 ));
