@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.1 2012/01/22 17:10:31 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2012/02/20 20:22:04 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 PKG_ARCH =	*
 
-FV =		9.0.1
+FV =		10.0.2
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
@@ -45,7 +45,6 @@ SUPDISTFILES +=	$i.xpi
 .endfor
 
 PKGNAME =	${NAME}-$L-${FV:S/b/beta/}
-REVISION =	0
 COMMENT =	$L language pack for Firefox
 DISTFILES =	$L.xpi
 
