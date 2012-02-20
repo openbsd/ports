@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2012/01/11 01:10:24 nigel Exp $
+# $OpenBSD: Makefile,v 1.143 2012/02/20 20:17:49 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,16 +8,15 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	9.0.1
+MOZILLA_VERSION =	10.0.2
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-1.0beta9
-ENIG_V =		1.3.4
-REVISION-enigmail =	0
+PKGNAME-lightning =	lightning-1.2beta1
+ENIG_V =		1.3.5
 PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
 
@@ -27,11 +26,9 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	21.0
+SO_VERSION =	22.0
 # NOTE: Must bump minor version if any shlib's are removed from the
-# components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
-# bumped and/or SO_VERSION changes, remember to update enigmail's
-# SO_VERSION and LIB_DEPENDS to match.
+# components dir to avoid pkg_add -r issues.
 
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 xpcom xul calbasecomps enigmime ipc
 
@@ -64,6 +61,12 @@ WANTLIB +=	event
 
 # XXX solved in firefox by patch-config-autoconf_mk_in ?
 CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
+
+# XXX needed since 10.0b4, relocation overflow otherwise...
+# replaces -g by -Os
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
+.endif
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
@@ -108,8 +111,6 @@ EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}
 	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
-	# fix maxVersion
-#	perl -pi -e 's|<em:maxVersion>5.*</em:maxVersion>|<em:maxVersion>${MOZILLA_VERSION}</em:maxVersion>|' ${EXTDIR}/${guid}/install.rdf
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \

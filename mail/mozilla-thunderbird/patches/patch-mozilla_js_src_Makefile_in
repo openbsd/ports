@@ -1,0 +1,43 @@
+$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.3 2012/02/20 20:17:49 landry Exp $
+--- mozilla/js/src/Makefile.in.orig	Sun Jan 22 22:50:45 2012
++++ mozilla/js/src/Makefile.in	Mon Jan 23 07:58:28 2012
+@@ -416,15 +416,20 @@ CPPSRCS += 	checks.cc \
+ 
+ ifeq (,$(filter arm% sparc %86 x86_64,$(TARGET_CPU)))
+ 
+-VPATH +=        $(srcdir)/yarr/pcre \
++VPATH +=        $(srcdir)/assembler \
++                $(srcdir)/assembler/wtf \
++                $(srcdir)/yarr \
+ 		$(NULL)
+ 
+ CPPSRCS += \
+-                pcre_compile.cpp \
+-                pcre_exec.cpp \
+-                pcre_tables.cpp \
+-                pcre_xclass.cpp \
+-                pcre_ucp_searchfuncs.cpp \
++                Assertions.cpp \
++                OSAllocatorOS2.cpp \
++                OSAllocatorPosix.cpp \
++                OSAllocatorWin.cpp \
++                PageBlock.cpp \
++                YarrInterpreter.cpp \
++                YarrPattern.cpp \
++                YarrSyntaxChecker.cpp \
+ 		$(NULL)
+ else
+ 
+@@ -1015,10 +1020,10 @@ endif
+ # Needed to "configure" it correctly.  Unfortunately these
+ # flags wind up being applied to all code in js/src, not just
+ # the code in js/src/assembler.
+-CXXFLAGS += -DUSE_SYSTEM_MALLOC=1 -DENABLE_ASSEMBLER=1
++CXXFLAGS += -DUSE_SYSTEM_MALLOC=1
+ 
+ ifneq (,$(ENABLE_YARR_JIT)$(ENABLE_TRACEJIT)$(ENABLE_METHODJIT))
+-CXXFLAGS +=  -DENABLE_JIT=1
++CXXFLAGS +=  -DENABLE_JIT=1 -DENABLE_ASSEMBLER=1
+ endif
+ 
+ INCLUDES +=	-I$(srcdir)/assembler -I$(srcdir)/yarr

@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.3 2012/01/11 01:19:43 nigel Exp $
+$OpenBSD: patch-mozilla_ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.4 2012/02/20 20:17:49 landry Exp $
 
 Add new long long template, may not be best solution.
 
---- mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h.orig	Thu Dec 15 01:22:33 2011
-+++ mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h	Mon Dec 19 00:50:51 2011
+--- mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h.orig	Wed Jan 18 10:41:15 2012
++++ mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h	Sun Jan 22 22:18:19 2012
 @@ -193,6 +193,29 @@ struct ParamTraits<unsigned long long> {
      l->append(StringPrintf(L"%ull", p));
    }
@@ -33,4 +33,4 @@ Add new long long template, may not be best solution.
 +};
  #endif
  
- #if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)))
+ #if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)) || defined(ARCH_CPU_S390))

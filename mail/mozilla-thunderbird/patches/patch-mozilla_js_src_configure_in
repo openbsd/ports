@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_configure_in,v 1.7 2012/01/11 01:19:43 nigel Exp $
---- mozilla/js/src/configure.in.orig	Thu Dec 15 01:22:34 2011
-+++ mozilla/js/src/configure.in	Mon Dec 19 22:30:24 2011
-@@ -1236,7 +1236,7 @@ WIN_TOP_SRC=
+$OpenBSD: patch-mozilla_js_src_configure_in,v 1.8 2012/02/20 20:17:49 landry Exp $
+--- mozilla/js/src/configure.in.orig	Wed Jan 18 10:41:15 2012
++++ mozilla/js/src/configure.in	Mon Jan 23 08:01:24 2012
+@@ -1214,7 +1214,7 @@ WIN_TOP_SRC=
  MOZ_USER_DIR=".mozilla"
  
  MOZ_JS_LIBS='-L$(libdir) -lmozjs'
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.7 2012/01/11 01:19:43 nigel Exp 
  
  MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
  
-@@ -2231,7 +2231,7 @@ ia64*-hpux*)
+@@ -2457,7 +2457,7 @@ ia64*-hpux*)
      ;;
  
  *-openbsd*)
@@ -19,21 +19,33 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.7 2012/01/11 01:19:43 nigel Exp 
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2511,7 +2511,7 @@ arm*-*)
+@@ -2731,7 +2731,7 @@ arm*-*)
      AC_DEFINE(JS_CPU_ARM)
      AC_DEFINE(JS_NUNBOX32)
      ;;
 -sparc*-*)
 +sparc-*)
-     ENABLE_TRACEJIT=1
      NANOJIT_ARCH=Sparc
      ENABLE_METHODJIT=1
-@@ -2598,7 +2598,7 @@ case "$target" in
- *-solaris*)
-     AC_DEFINE(AVMPLUS_UNIX)
-     ;;
--*-freebsd*|*-kfreebsd*)
-+*-freebsd*|*-kfreebsd*|*-openbsd*)
-     AC_DEFINE(AVMPLUS_UNIX)
-     ;;
- *-openbsd*)
+     ENABLE_MONOIC=1
+@@ -2932,6 +2932,20 @@ MOZ_SIZE_OF_TYPE(JS_BYTES_PER_DOUBLE, double, 6 8 10 1
+ AC_CHECK_HEADERS(endian.h)
+ if test "$ac_cv_header_endian_h" = yes; then
+     AC_DEFINE(JS_HAVE_ENDIAN_H)
++fi
++
++AC_MSG_CHECKING(for machine/endian.h)
++AC_CACHE_VAL(ac_cv_header_machine_endian_h,
++ [AC_TRY_COMPILE([#include <sys/types.h>
++                  #include <machine/endian.h>],
++                 [int foo = 0;],
++                 [ac_cv_header_machine_endian_h = yes],
++                 [ac_cv_header_machine_endian_h = no])])
++if test "$ac_cv_header_machine_endian_h" = yes; then
++    AC_DEFINE(JS_HAVE_MACHINE_ENDIAN_H)
++    AC_MSG_RESULT(yes)
++else
++    AC_MSG_RESULT(no)
+ fi
+ 
+ AC_CHECK_HEADERS(sys/isa_defs.h)

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/01/11 01:19:43 nigel Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2012/02/20 20:17:49 landry Exp $
 @conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
 bin/${MOZILLA_PROJECT}
@@ -31,42 +31,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-32
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/icon.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/install.rdf
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-3208198ce6fd}/preview.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_af.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_bg.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ca.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_cy.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_da.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1901.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-1996.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_de-CH.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_en_US.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_eo.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_es.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_et.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fi.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_fr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_gl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hsb.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_hu.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ia.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_is.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_it.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_kmr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_la.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_lt.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_mn.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nb.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_nn.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_pt.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_ru.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sh.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sl.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_sv.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_tr.dic
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/hyphenation/hyph_uk.dic
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamAssassin.sfd
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/isp/SpamPal.sfd
@@ -81,11 +45,20 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/jsloader/resource/
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.jar
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/omni.ja
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/amazondotcom.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/aol-web-search.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/bing.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/eBay.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/google.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/twitter.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/wikipedia.xml
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/yahoo.xml
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
 share/applications/${MOZILLA_PROJECT}.desktop

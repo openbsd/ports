@@ -1,0 +1,13 @@
+$OpenBSD: patch-mozilla_js_src_yarr_wtfbridge_h,v 1.1 2012/02/20 20:17:49 landry Exp $
+--- mozilla/js/src/yarr/wtfbridge.h.orig	Wed Jan 18 10:43:18 2012
++++ mozilla/js/src/yarr/wtfbridge.h	Mon Jan 23 07:58:57 2012
+@@ -49,9 +49,7 @@
+ #include "jsprvtd.h"
+ #include "vm/String.h"
+ #include "assembler/wtf/Platform.h"
+-#if ENABLE_YARR_JIT
+ #include "assembler/jit/ExecutableAllocator.h"
+-#endif
+ 
+ namespace JSC { namespace Yarr {
+ 
