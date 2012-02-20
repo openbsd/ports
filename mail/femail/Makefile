@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/18 16:02:40 henning Exp $
+# $OpenBSD: Makefile,v 1.11 2012/02/20 07:58:31 ajacoutot Exp $
 
 COMMENT-main=	simple SMTP client
-COMMENT-chroot=	simple SMTP client for chrooted apache
+COMMENT-chroot=	simple SMTP client for chrooted web servers
 
 V=		0.98
 DISTNAME=	femail-${V}
 PKGNAME-main=	femail-${V}
 PKGNAME-chroot=	femail-chroot-${V}
 CATEGORIES=	mail
+
+REVISION-chroot=0
 
 HOMEPAGE=	http://bulabula.org/femail/
 
