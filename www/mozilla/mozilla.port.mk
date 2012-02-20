@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.38 2012/01/10 23:58:27 nigel Exp $
+# $OpenBSD: mozilla.port.mk,v 1.39 2012/02/20 20:09:02 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
 .endfor
 
-PKGNAME ?=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
+PKGNAME ?=	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/b/beta/}
 
 MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 
@@ -45,6 +45,9 @@ MODMOZ_WANTLIB +=	sqlite3
 MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.7.7.1
 CONFIGURE_ARGS +=	--enable-system-sqlite
 CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
+
+# avoids OOM when linking libxul
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--no-keep-memory"
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
@@ -151,8 +154,11 @@ post-extract:
 MOZILLA_SUBST_FILES +=	${_MOZDIR}/xpcom/io/nsAppFileLocationProvider.cpp \
 			${_MOZDIR}/build/unix/mozilla.in \
 			${_MOZDIR}/extensions/spellcheck/hunspell/src/mozHunspell.cpp \
-			${_MOZDIR}/js/src/xpconnect/shell/Makefile.in \
 			${_MOZDIR}/toolkit/xre/nsXREDirProvider.cpp
+
+.if ${MOZILLA_BRANCH} == 1.9.1 || ${MOZILLA_BRANCH} == 1.9.2
+MOZILLA_SUBST_FILES +=	${_MOZDIR}/js/src/xpconnect/shell/Makefile.in
+.endif
 
 pre-configure:
 .for d in ${MOZILLA_AUTOCONF_DIRS}
