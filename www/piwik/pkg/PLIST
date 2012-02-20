@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2011/10/19 16:44:35 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.34 2012/02/20 08:47:02 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -10,6 +10,7 @@ piwik/config/manifest.inc.php
 piwik/core/
 piwik/core/API/
 piwik/core/API/DataTableGenericFilter.php
+piwik/core/API/DataTableLabelFilter.php
 piwik/core/API/DocumentationGenerator.php
 piwik/core/API/Proxy.php
 piwik/core/API/Request.php
@@ -30,8 +31,12 @@ piwik/core/AssetManager.php
 piwik/core/Auth.php
 piwik/core/CacheFile.php
 piwik/core/Common.php
+piwik/core/Config/
 piwik/core/Config.php
+piwik/core/Config/Ini.php
+piwik/core/Controller/
 piwik/core/Controller.php
+piwik/core/Controller/Admin.php
 piwik/core/Cookie.php
 piwik/core/DataFiles/
 piwik/core/DataFiles/Countries.php
@@ -48,6 +53,8 @@ piwik/core/DataTable/Filter/AddColumnsProcessedMetrics.php
 piwik/core/DataTable/Filter/AddColumnsProcessedMetricsGoal.php
 piwik/core/DataTable/Filter/AddConstantMetadata.php
 piwik/core/DataTable/Filter/AddSummaryRow.php
+piwik/core/DataTable/Filter/BeautifyRangeLabels.php
+piwik/core/DataTable/Filter/BeautifyTimeRangeLabels.php
 piwik/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 piwik/core/DataTable/Filter/ColumnCallbackAddColumnQuotient.php
 piwik/core/DataTable/Filter/ColumnCallbackAddMetadata.php
@@ -122,7 +129,9 @@ piwik/core/Period/Range.php
 piwik/core/Period/Week.php
 piwik/core/Period/Year.php
 piwik/core/Piwik.php
+piwik/core/Plugin/
 piwik/core/Plugin.php
+piwik/core/Plugin/Config.php
 piwik/core/PluginsFunctions/
 piwik/core/PluginsFunctions/Sql.php
 piwik/core/PluginsFunctions/WidgetsList.php
@@ -239,9 +248,12 @@ piwik/core/Updates/1.5-b5.php
 piwik/core/Updates/1.5-rc6.php
 piwik/core/Updates/1.6-b1.php
 piwik/core/Updates/1.6-rc1.php
+piwik/core/Updates/1.7-b1.php
 piwik/core/Url.php
 piwik/core/Version.php
+piwik/core/View/
 piwik/core/View.php
+piwik/core/View/Interface.php
 piwik/core/ViewDataTable/
 piwik/core/ViewDataTable.php
 piwik/core/ViewDataTable/Cloud.php
@@ -268,7 +280,6 @@ piwik/core/Visualization/Chart/Pie.php
 piwik/core/Visualization/Chart/VerticalBar.php
 piwik/core/Visualization/Cloud.php
 piwik/core/Visualization/Sparkline.php
-piwik/core/iView.php
 piwik/core/testMinimumPhpVersion.php
 piwik/index.php
 piwik/js/
@@ -303,6 +314,7 @@ piwik/lang/ja.php
 piwik/lang/ka.php
 piwik/lang/ko.php
 piwik/lang/lt.php
+piwik/lang/lv.php
 piwik/lang/nb.php
 piwik/lang/nl.php
 piwik/lang/nn.php
@@ -1052,6 +1064,7 @@ piwik/libs/jqplot/
 piwik/libs/jqplot/MIT-LICENSE.txt
 piwik/libs/jqplot/excanvas.min.js
 piwik/libs/jqplot/gpl-2.0.txt
+piwik/libs/jqplot/jqplot-custom.min.js
 piwik/libs/jqplot/jqplot.axisLabelRenderer.js
 piwik/libs/jqplot/jqplot.axisTickRenderer.js
 piwik/libs/jqplot/jqplot.canvasGridRenderer.js
@@ -1106,13 +1119,16 @@ piwik/libs/jquery/themes/base/images/ui-icons_cd0a0a_256x240.png
 piwik/libs/jquery/themes/base/jquery-ui.css
 piwik/libs/jsmin/
 piwik/libs/jsmin/jsmin.php
-piwik/libs/pChart.1.27d/
-piwik/libs/pChart.1.27d/Fonts/
-piwik/libs/pChart.1.27d/Fonts/tahoma.ttf
-piwik/libs/pChart.1.27d/pChart/
-piwik/libs/pChart.1.27d/pChart/pCache.php
-piwik/libs/pChart.1.27d/pChart/pChart.php
-piwik/libs/pChart.1.27d/pChart/pData.php
+piwik/libs/pChart2.1.3/
+piwik/libs/pChart2.1.3/GPLv3.txt
+piwik/libs/pChart2.1.3/change.log
+piwik/libs/pChart2.1.3/class/
+piwik/libs/pChart2.1.3/class/pData.class.php
+piwik/libs/pChart2.1.3/class/pDraw.class.php
+piwik/libs/pChart2.1.3/class/pImage.class.php
+piwik/libs/pChart2.1.3/class/pPie.class.php
+piwik/libs/pChart2.1.3/index.php
+piwik/libs/pChart2.1.3/readme.txt
 piwik/libs/sparkline/
 piwik/libs/sparkline/CHANGES
 piwik/libs/sparkline/DESIGN
@@ -1244,6 +1260,7 @@ piwik/plugins/CoreHome/templates/datatable_actions_subdatable.tpl
 piwik/plugins/CoreHome/templates/datatable_cell.tpl
 piwik/plugins/CoreHome/templates/datatable_footer.tpl
 piwik/plugins/CoreHome/templates/datatable_js.tpl
+piwik/plugins/CoreHome/templates/datatable_rowactions.js
 piwik/plugins/CoreHome/templates/date.js
 piwik/plugins/CoreHome/templates/graph.tpl
 piwik/plugins/CoreHome/templates/header.tpl
@@ -1251,6 +1268,8 @@ piwik/plugins/CoreHome/templates/header_message.tpl
 piwik/plugins/CoreHome/templates/html_report_body.tpl
 piwik/plugins/CoreHome/templates/html_report_footer.tpl
 piwik/plugins/CoreHome/templates/html_report_header.tpl
+piwik/plugins/CoreHome/templates/iframe_buster_body.tpl
+piwik/plugins/CoreHome/templates/iframe_buster_header.tpl
 piwik/plugins/CoreHome/templates/images/
 piwik/plugins/CoreHome/templates/images/bg_header.jpg
 piwik/plugins/CoreHome/templates/images/bullet1.gif
@@ -1326,7 +1345,11 @@ piwik/plugins/ExampleFeedburner/ExampleFeedburner.php
 piwik/plugins/ExampleFeedburner/templates/
 piwik/plugins/ExampleFeedburner/templates/feedburner.tpl
 piwik/plugins/ExamplePlugin/
+piwik/plugins/ExamplePlugin/Controller.php
 piwik/plugins/ExamplePlugin/ExamplePlugin.php
+piwik/plugins/ExamplePlugin/config/
+piwik/plugins/ExamplePlugin/config/.htaccess
+piwik/plugins/ExamplePlugin/config/local.config.sample.php
 piwik/plugins/ExamplePlugin/lang/
 piwik/plugins/ExamplePlugin/lang/en.php
 piwik/plugins/ExamplePlugin/templates/
@@ -1380,7 +1403,18 @@ piwik/plugins/ImageGraph/
 piwik/plugins/ImageGraph/API.php
 piwik/plugins/ImageGraph/Controller.php
 piwik/plugins/ImageGraph/ImageGraph.php
-piwik/plugins/ImageGraph/ImageGraphObject.php
+piwik/plugins/ImageGraph/StaticGraph/
+piwik/plugins/ImageGraph/StaticGraph.php
+piwik/plugins/ImageGraph/StaticGraph/3DPie.php
+piwik/plugins/ImageGraph/StaticGraph/Evolution.php
+piwik/plugins/ImageGraph/StaticGraph/Exception.php
+piwik/plugins/ImageGraph/StaticGraph/GridGraph.php
+piwik/plugins/ImageGraph/StaticGraph/HorizontalBar.php
+piwik/plugins/ImageGraph/StaticGraph/Pie.php
+piwik/plugins/ImageGraph/StaticGraph/PieGraph.php
+piwik/plugins/ImageGraph/StaticGraph/VerticalBar.php
+piwik/plugins/ImageGraph/fonts/
+piwik/plugins/ImageGraph/fonts/tahoma.ttf
 piwik/plugins/ImageGraph/templates/
 piwik/plugins/ImageGraph/templates/debug_graphs_all_sizes.tpl
 piwik/plugins/ImageGraph/templates/index.tpl
@@ -1437,9 +1471,7 @@ piwik/plugins/Live/templates/index.tpl
 piwik/plugins/Live/templates/lastVisits.tpl
 piwik/plugins/Live/templates/live.css
 piwik/plugins/Live/templates/scripts/
-piwik/plugins/Live/templates/scripts/MIT-LICENSE.txt
 piwik/plugins/Live/templates/scripts/live.js
-piwik/plugins/Live/templates/scripts/spy.js
 piwik/plugins/Live/templates/totalVisits.tpl
 piwik/plugins/Live/templates/visitorLog.tpl
 piwik/plugins/Login/
@@ -1458,6 +1490,8 @@ piwik/plugins/Login/templates/passwordchanged.tpl
 piwik/plugins/Login/templates/passwordsent.tpl
 piwik/plugins/Login/templates/resetPassword.tpl
 piwik/plugins/MultiSites/
+piwik/plugins/MultiSites/API.php
+piwik/plugins/MultiSites/CalculateEvolutionFilter.php
 piwik/plugins/MultiSites/Controller.php
 piwik/plugins/MultiSites/MultiSites.php
 piwik/plugins/MultiSites/images/
@@ -1524,6 +1558,7 @@ piwik/plugins/Referers/images/searchEngines/blekko.com.png
 piwik/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
 piwik/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 piwik/plugins/Referers/images/searchEngines/busca.orange.es.png
+piwik/plugins/Referers/images/searchEngines/busca.uol.com.br.png
 piwik/plugins/Referers/images/searchEngines/buscador.terra.es.png
 piwik/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
 piwik/plugins/Referers/images/searchEngines/daemon-search.com.png
@@ -1595,6 +1630,7 @@ piwik/plugins/Referers/images/searchEngines/search.peoplepc.com.png
 piwik/plugins/Referers/images/searchEngines/search.qip.ru.png
 piwik/plugins/Referers/images/searchEngines/search.rr.com.png
 piwik/plugins/Referers/images/searchEngines/search.seznam.cz.png
+piwik/plugins/Referers/images/searchEngines/search.softonic.com.png
 piwik/plugins/Referers/images/searchEngines/search.tiscali.it.png
 piwik/plugins/Referers/images/searchEngines/search.winamp.com.png
 piwik/plugins/Referers/images/searchEngines/search.www.ee.png
@@ -1634,6 +1670,7 @@ piwik/plugins/Referers/images/searchEngines/www.baidu.com.png
 piwik/plugins/Referers/images/searchEngines/www.blogdigger.com.png
 piwik/plugins/Referers/images/searchEngines/www.blogpulse.com.png
 piwik/plugins/Referers/images/searchEngines/www.charter.net.png
+piwik/plugins/Referers/images/searchEngines/www.crawler.com.png
 piwik/plugins/Referers/images/searchEngines/www.cuil.com.png
 piwik/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
 piwik/plugins/Referers/images/searchEngines/www.eniro.se.png
@@ -1649,6 +1686,7 @@ piwik/plugins/Referers/images/searchEngines/www.fixsuche.de.png
 piwik/plugins/Referers/images/searchEngines/www.flix.de.png
 piwik/plugins/Referers/images/searchEngines/www.gigablast.com.png
 piwik/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
+piwik/plugins/Referers/images/searchEngines/www.gomeo.com.png
 piwik/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 piwik/plugins/Referers/images/searchEngines/www.goyellow.de.png
 piwik/plugins/Referers/images/searchEngines/www.gulesider.no.png
@@ -1683,6 +1721,7 @@ piwik/plugins/Referers/images/searchEngines/www.sharelook.fr.png
 piwik/plugins/Referers/images/searchEngines/www.skynet.be.png
 piwik/plugins/Referers/images/searchEngines/www.sogou.com.png
 piwik/plugins/Referers/images/searchEngines/www.soso.com.png
+piwik/plugins/Referers/images/searchEngines/www.startsiden.no.png
 piwik/plugins/Referers/images/searchEngines/www.suchmaschine.com.png
 piwik/plugins/Referers/images/searchEngines/www.suchnase.de.png
 piwik/plugins/Referers/images/searchEngines/www.talktalk.co.uk.png
@@ -1704,6 +1743,7 @@ piwik/plugins/Referers/images/searchEngines/www.websearch.com.png
 piwik/plugins/Referers/images/searchEngines/www.witch.de.png
 piwik/plugins/Referers/images/searchEngines/www.x-recherche.com.png
 piwik/plugins/Referers/images/searchEngines/www.yasni.de.png
+piwik/plugins/Referers/images/searchEngines/www.yatedo.com.png
 piwik/plugins/Referers/images/searchEngines/www.yougoo.fr.png
 piwik/plugins/Referers/images/searchEngines/www.zapmeta.com.png
 piwik/plugins/Referers/images/searchEngines/www.zoeken.nl.png
@@ -2025,6 +2065,7 @@ piwik/plugins/UserCountry/flags/td.png
 piwik/plugins/UserCountry/flags/tf.png
 piwik/plugins/UserCountry/flags/tg.png
 piwik/plugins/UserCountry/flags/th.png
+piwik/plugins/UserCountry/flags/ti.png
 piwik/plugins/UserCountry/flags/tj.png
 piwik/plugins/UserCountry/flags/tk.png
 piwik/plugins/UserCountry/flags/tl.png
@@ -2161,15 +2202,19 @@ piwik/plugins/UserSettings/images/os/VMS.gif
 piwik/plugins/UserSettings/images/os/W2K.gif
 piwik/plugins/UserSettings/images/os/W61.gif
 piwik/plugins/UserSettings/images/os/W65.gif
+piwik/plugins/UserSettings/images/os/W75.gif
 piwik/plugins/UserSettings/images/os/W95.gif
 piwik/plugins/UserSettings/images/os/W98.gif
 piwik/plugins/UserSettings/images/os/WCE.gif
 piwik/plugins/UserSettings/images/os/WI7.gif
+piwik/plugins/UserSettings/images/os/WI8.gif
 piwik/plugins/UserSettings/images/os/WII.gif
 piwik/plugins/UserSettings/images/os/WME.gif
+piwik/plugins/UserSettings/images/os/WMO.gif
 piwik/plugins/UserSettings/images/os/WNT.gif
 piwik/plugins/UserSettings/images/os/WOS.gif
 piwik/plugins/UserSettings/images/os/WP7.gif
+piwik/plugins/UserSettings/images/os/WPH.gif
 piwik/plugins/UserSettings/images/os/WS3.gif
 piwik/plugins/UserSettings/images/os/WVI.gif
 piwik/plugins/UserSettings/images/os/WXP.gif
@@ -2261,6 +2306,8 @@ piwik/themes/default/images/
 piwik/themes/default/images/arr_r.png
 piwik/themes/default/images/background-submit.png
 piwik/themes/default/images/chart_bar.png
+piwik/themes/default/images/chart_line_edit.png
+piwik/themes/default/images/chart_line_edit_bg.png
 piwik/themes/default/images/chart_pie.png
 piwik/themes/default/images/close.png
 piwik/themes/default/images/collapsed_arrows.gif
