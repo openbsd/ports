@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.35 2012/02/17 07:36:09 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.36 2012/02/20 16:38:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -321,6 +321,7 @@ sub new
 	print "zap duplicates...";
 	# rewrite "more or less" the same info, so we flush duplicates,
 	# e.g., keep only most recent checksum seen
+	File::Path::make_path($distdir);
 	open(my $fh, '>', "$distdir/distinfo.new");
 	for my $k (sort keys %{$o->{sha}}) {
 		print $fh "SHA256 ($k) = ", $o->{sha}{$k}->stringize,
