@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2012/01/16 12:10:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2012/02/21 11:30:12 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.95
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -22,12 +23,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
-WANTLIB += assuan atk-1.0 bz2 c cairo cairo-gobject dbus-1 drm
+WANTLIB += atk-1.0 bz2 c cairo cairo-gobject dbus-1 drm
 WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme-pthread gpod
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gpod
 WANTLIB += gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gstvideo-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 lzma m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 plist png pthread pthread-stubs soup-2.4 soup-gnome-2.4
