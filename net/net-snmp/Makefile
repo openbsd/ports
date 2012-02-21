@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/11/28 22:40:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2012/02/21 22:10:20 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -9,7 +9,7 @@ DISTNAME=	net-snmp-$V
 
 MULTI_PACKAGES=	-main -perl -tkmib
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	2
 REVISION-perl=	0
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
@@ -46,7 +46,7 @@ NET_SNMP_MIB_LIST=	smux mibII/mta_sendmail
 # - this is checked in pre-configure as we don't want it to get out of sync
 DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs)
-OPENBSD_MIBS=		OPENBSD-BASE-MIB:OPENBSD-MEM-MIB:OPENBSD-SENSORS-MIB:OPENBSD-SNMPD-CONF
+OPENBSD_MIBS=		OPENBSD-BASE-MIB:OPENBSD-CARP-MIB:OPENBSD-MEM-MIB:OPENBSD-SENSORS-MIB:OPENBSD-SNMPD-CONF
 
 USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
@@ -85,5 +85,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/net-snmp
 	${INSTALL_DATA} ${WRKBUILD}/EXAMPLE.conf \
 	    ${PREFIX}/share/examples/net-snmp
+	${INSTALL_DATA} ${FILESDIR}/OPENBSD-PF-MIB.txt ${PREFIX}/share/snmp/mibs
 
 .include <bsd.port.mk>

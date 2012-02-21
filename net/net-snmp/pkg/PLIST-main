@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2011/11/18 12:39:06 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2012/02/21 22:10:21 sthen Exp $
 @pkgpath net/net-snmp
 @extraunexec rm -rf /var/net-snmp/*
 %%SHARED%%
@@ -485,6 +485,7 @@ share/snmp/mibs/NET-SNMP-TC.txt
 share/snmp/mibs/NET-SNMP-VACM-MIB.txt
 share/snmp/mibs/NETWORK-SERVICES-MIB.txt
 share/snmp/mibs/NOTIFICATION-LOG-MIB.txt
+share/snmp/mibs/OPENBSD-PF-MIB.txt
 share/snmp/mibs/RFC-1215.txt
 share/snmp/mibs/RFC1155-SMI.txt
 share/snmp/mibs/RFC1213-MIB.txt
