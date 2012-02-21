@@ -22,7 +22,7 @@
 
 #include "gst/gst-i18n-plugin.h"
 
-GST_DEBUG_CATEGORY (sndio_debug);
+GST_DEBUG_CATEGORY (gst_sndio_debug);
 
 static gboolean
 plugin_init (GstPlugin * plugin)
@@ -34,7 +34,7 @@ plugin_init (GstPlugin * plugin)
     return FALSE;
   }
 
-  GST_DEBUG_CATEGORY_INIT (sndio_debug, "sndio", 0, "sndio elements");
+  GST_DEBUG_CATEGORY_INIT (gst_sndio_debug, "sndio", 0, "sndio elements");
 
 #ifdef ENABLE_NLS
   setlocale (LC_ALL, "");

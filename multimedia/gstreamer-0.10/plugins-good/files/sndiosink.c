@@ -41,8 +41,8 @@
 
 #include <gst/gst-i18n-plugin.h>
 
-GST_DEBUG_CATEGORY_EXTERN (sndio_debug);
-#define GST_CAT_DEFAULT sndio_debug
+GST_DEBUG_CATEGORY_EXTERN (gst_sndio_debug);
+#define GST_CAT_DEFAULT gst_sndio_debug
 
 /* elementfactory information */
 static const GstElementDetails sndiosink_details =
