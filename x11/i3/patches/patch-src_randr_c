@@ -1,22 +1,28 @@
-$OpenBSD: patch-src_randr_c,v 1.6 2012/01/25 10:29:30 dcoppa Exp $
+$OpenBSD: patch-src_randr_c,v 1.7 2012/02/21 14:05:39 dcoppa Exp $
 
-Bugfix: fix coordinates when the rect of an output changes
-(upstream git commit 077d2433a7186550ee349284b1849ec2048af69c)
+Bugfix: fix coords of floating containers when the output is disabled
+(upstream git commit 55525015cc6b1a2e41fdaf85e9f03301dd7bd63b)
 
---- src/randr.c.orig	Sat Dec 24 16:25:08 2011
-+++ src/randr.c	Mon Jan 23 09:51:06 2012
-@@ -522,6 +522,14 @@ static void output_change_mode(xcb_connection_t *conn,
-     /* Point content to the container of the workspaces */
-     content = output_get_content(output->con);
+--- src/randr.c.orig	Tue Feb 21 14:04:58 2012
++++ src/randr.c	Tue Feb 21 14:08:43 2012
+@@ -754,7 +754,8 @@ void randr_query_outputs() {
+                     DLOG("next = %p\n", next);
+                 }
  
-+    /* Fix the position of all floating windows on this output.
-+     * The 'rect' of each workspace will be updated in src/render.c. */
-+    TAILQ_FOREACH(workspace, &(content->nodes_head), nodes) {
-+        TAILQ_FOREACH(child, &(workspace->floating_head), floating_windows) {
-+            floating_fix_coordinates(child, &(workspace->rect), &(output->con->rect));
-+        }
-+    }
-+
-     /* If default_orientation is NO_ORIENTATION, we change the orientation of
-      * the workspaces and their childs depending on output resolution. This is
-      * only done for workspaces with maximum one child. */
+-                /* 2: iterate through workspaces and re-assign them */
++                /* 2: iterate through workspaces and re-assign them, fixing the coordinates
++                 * of floating containers as we go */
+                 Con *current;
+                 Con *old_content = output_get_content(output->con);
+                 while (!TAILQ_EMPTY(&(old_content->nodes_head))) {
+@@ -763,6 +764,10 @@ void randr_query_outputs() {
+                     con_detach(current);
+                     DLOG("Re-attaching current = %p / %s\n", current, current->name);
+                     con_attach(current, first_content, false);
++                    DLOG("Fixing the coordinates of floating containers\n");
++                    Con *floating_con;
++                    TAILQ_FOREACH(floating_con, &(current->floating_head), floating_windows)
++                        floating_fix_coordinates(floating_con, &(old_content->rect), &(first_content->rect));
+                     DLOG("Done, next\n");
+                 }
+                 DLOG("re-attached all workspaces\n");

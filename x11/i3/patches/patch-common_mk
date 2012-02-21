@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_mk,v 1.7 2011/12/27 09:05:17 dcoppa Exp $
+$OpenBSD: patch-common_mk,v 1.8 2012/02/21 14:05:39 dcoppa Exp $
 --- common.mk.orig	Sat Dec 24 16:25:15 2011
 +++ common.mk	Tue Dec 27 09:50:07 2011
 @@ -1,90 +1,28 @@
@@ -19,8 +19,8 @@ $OpenBSD: patch-common_mk,v 1.7 2011/12/27 09:05:17 dcoppa Exp $
 +  SYSCONFDIR=/etc
  endif
  # The escaping is absurd, but we need to escape for shell, sed, make, define
- GIT_VERSION:="4.1.1 (2011-12-24, branch \\\"master\\\")"
- VERSION:=4.1.1
+ GIT_VERSION:="4.1.2 (2012-01-27, branch \\\"release-4.1.2\\\")"
+ VERSION:=4.1.2
  
 -ifeq ($(shell which pkg-config 2>/dev/null 1>/dev/null || echo 1),1)
 -$(error "pkg-config was not found")
