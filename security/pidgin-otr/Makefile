@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/02/21 09:13:50 ajacoutot Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
@@ -35,7 +35,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib "
 
-AUTOCONF_VERSION = 2.59
+AUTOCONF_VERSION = 2.60
 AUTOMAKE_VERSION = 1.9
 BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} \
 		 ${MODGNU_AUTOMAKE_DEPENDS}
