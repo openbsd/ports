@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2012/02/21 11:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/02/21 15:26:58 ajacoutot Exp $
 
 COMMENT =		Python bindings for GStreamer
 
 V =			0.10.22
 DISTNAME =		gst-python-$V
 PKGNAME =		py-gstreamer-$V
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -16,6 +16,9 @@ WANTLIB += gstbase-0.10 gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB += gstinterfaces-0.10 gstnet-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gsttag-0.10 gstvideo-0.10 gthread-2.0 m orc-0.4 pcre
 WANTLIB += xml2 z
+
+# check-lib-depends(1) list them as extra, but they are dlopened
+WANTLIB += ${MODPY_WANTLIB} util
 
 MODULES =		devel/gettext \
 			lang/python
