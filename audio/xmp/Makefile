@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/19 13:48:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2012/02/21 22:19:31 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,7 @@ PKGNAME-audacious=	audacious-${DISTNAME}
 PKGNAME-bmp=		bmp-${DISTNAME}
 PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
+REVISION-main =		0
 REVISION-audacious =	0
 REVISION-bmp =		0
 REVISION-xmms =		0

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/02/21 22:19:31 sthen Exp $
 
 COMMENT=	Streamlined replacement for make
 
 VERSION=	2.0
 DISTNAME=	mk-${VERSION}
-REVISION =	0
+REVISION=	1
 CATEGORIES=	devel plan9
 MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	http://pdos.lcs.mit.edu/~rsc/software/
