@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2012/02/21 22:36:43 sthen Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
 GNOME_PROJECT=		ORBit2
 GNOME_VERSION=		2.14.19
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  ORBit-2              3.0      # .1.0
 SHARED_LIBS +=  ORBitCosNaming-2     3.0      # .1.0
@@ -22,14 +22,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB=		c m pcre pthread
+WANTLIB += IDL-2 c ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pcre pthread
 
 MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS =		devel/libIDL \
 			devel/glib2
-WANTLIB +=		IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 
