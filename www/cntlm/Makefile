@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/01/27 09:54:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.8 2012/02/21 17:57:31 sthen Exp $
 
 COMMENT =		fast NTLM/NTLMv2 authenticating HTTP proxy
 DISTNAME =		cntlm-0.92.1
@@ -15,6 +15,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =  Yes
 
 WANTLIB =		c pthread
+
+MAKE_FLAGS =		CC="${CC}"
 
 FAKE_FLAGS =		INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
