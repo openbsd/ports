@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_plugins_gst-plugins-base-plugins_args,v 1.4 2011/05/15 08:31:48 ajacoutot Exp $
---- docs/plugins/gst-plugins-base-plugins.args.orig	Sat Apr 16 16:45:09 2011
-+++ docs/plugins/gst-plugins-base-plugins.args	Sun May 15 00:57:16 2011
-@@ -2035,7 +2035,7 @@
+$OpenBSD: patch-docs_plugins_gst-plugins-base-plugins_args,v 1.5 2012/02/21 08:45:43 ajacoutot Exp $
+--- docs/plugins/gst-plugins-base-plugins.args.orig	Tue Feb 21 00:51:30 2012
++++ docs/plugins/gst-plugins-base-plugins.args	Tue Feb 21 08:54:45 2012
+@@ -2155,7 +2155,7 @@
  <FLAGS>rw</FLAGS>
  <NICK>Device</NICK>
  <BLURB>CD device location.</BLURB>
