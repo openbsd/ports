@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.152 2012/02/18 17:02:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.153 2012/02/21 09:22:33 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -109,8 +109,9 @@ post-patch:
 pre-configure:
 # XXX
 # SIGSEGV on LP64_ARCHS at gclosure.c:290: i = closure->n_guards;
-# -> reproduce by adding a meeting in evolution for a passed date and
-#    running /usr/local/libexec/evolution/3.2/evolution-alarm-notify
+# -> reproduce by adding a meeting|appointment under evolution into the
+# _local_ calendar for an already _passed_ date and running:
+# /usr/local/libexec/evolution/3.2/evolution-alarm-notify
 .if ${PROPERTIES:Mlp64}
 	perl -pi -e 's,CFLAGS = \@CFLAGS\@,CFLAGS = \@CFLAGS\@ -O0,' \
 		${WRKSRC}/gobject/Makefile.in
