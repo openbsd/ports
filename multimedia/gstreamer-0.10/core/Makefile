@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2012/02/21 13:38:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/02/21 15:26:26 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
 V =			0.10.36
 
 DISTNAME =		gstreamer-${V}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  gstreamer-0.10       3.0      # 30.0
 SHARED_LIBS +=  gstbase-0.10         3.0      # 30.0
@@ -15,7 +15,7 @@ SHARED_LIBS +=  gstcheck-0.10        2.0      # 30.0
 SHARED_LIBS +=  gstnet-0.10          3.0      # 30.0
 
 WANTLIB += c ffi glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre pthread util xml2 z
+WANTLIB += m pcre pthread xml2 z
 
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
