@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	X11-based presentation tool
 
@@ -32,7 +32,7 @@ MODULES=	devel/gettext
 
 USE_GROFF =	Yes
 AUTOCONF_VERSION=2.13
-CONFIGURE_STYLE=autoconf gnu imake no-autoheader
+CONFIGURE_STYLE=autoconf imake no-autoheader
 CONFIGURE_ARGS=	--disable-vflib
 CONFIGURE_ARGS+= --enable-gif
 CONFIGURE_ARGS+= --enable-freetype-charset16

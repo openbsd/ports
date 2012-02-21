@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/12/10 22:04:12 kili Exp $
+# $OpenBSD: Makefile,v 1.59 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -101,7 +101,7 @@ WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xext Xi \
 		openjpeg png poppler \
 		QtCore QtGui QtXml
 
-CONFIGURE_STYLE=gnu autoconf
+CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
 CONFIGURE_ARGS+= --enable-xpdf-headers \
 		--enable-poppler-cpp \

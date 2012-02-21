@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/10/17 12:40:44 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2012/02/21 16:21:41 ajacoutot Exp $
 
 COMMENT=	MIDI to WAV renderer and player
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP=   copyrighted patches
 
 WANTLIB=		c m ncurses sndio
 
-CONFIGURE_STYLE=autoconf automake gnu
+CONFIGURE_STYLE=autoconf automake
 AUTOCONF_VERSION = 2.59
 AUTOMAKE_VERSION = 1.9
 CONFIGURE_ARGS= --enable-audio=sndio \

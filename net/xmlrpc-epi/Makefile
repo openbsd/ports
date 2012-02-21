@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	XML-RPC C/C++ client-server implementation
 CATEGORIES=	net devel textproc
@@ -24,7 +24,7 @@ MODULES=		converters/libiconv
 BUILD_DEPENDS +=	devel/gettext
 RUN_DEPENDS +=		devel/gettext
 
-CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_STYLE=	autoconf
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 

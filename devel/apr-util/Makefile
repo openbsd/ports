@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/18 10:11:33 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2012/02/21 16:21:41 ajacoutot Exp $
 
 COMMENT=	companion library to APR
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=	databases/db/v4,no_java,no_tcl
 
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
-CONFIGURE_STYLE=gnu autoconf
+CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.59
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \

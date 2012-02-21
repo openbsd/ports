@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -24,7 +24,7 @@ FLAVOR?=
 
 SEPARATE_BUILD=	simple
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=autoconf no-autoheader gnu
+CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 CFLAGS+=	-I${X11BASE}/include

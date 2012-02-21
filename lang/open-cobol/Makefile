@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	open source COBOL compiler
 
@@ -27,7 +27,7 @@ USE_LIBTOOL=	Yes
 WANTLIB=	c db gmp m ncurses
 
 AUTOCONF_VERSION=	2.59
-CONFIGURE_STYLE=gnu autoconf
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4"

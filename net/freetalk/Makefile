@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/28 12:11:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	console based Jabber client
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=	lang/guile \
 		net/loudmouth
 
 AUTOCONF_VERSION=	2.61
-CONFIGURE_STYLE= gnu autoconf no-autoheader
+CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GROFF =	Yes

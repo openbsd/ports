@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT =		lightweight mapping application for use with or without GPS
 
@@ -44,7 +44,7 @@ CONFIGURE_ENV += 	CPPFLAGS=-I${LOCALBASE}/include \
 FAKE_FLAGS+=		localedir="${PREFIX}/share/locale"
 
 
-CONFIGURE_STYLE =	autoconf gnu
+CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.64
 NO_REGRESS = 		Yes
 

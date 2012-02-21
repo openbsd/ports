@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/07/06 13:15:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/02/21 16:21:42 ajacoutot Exp $
 
 COMMENT=	interactive utility that displays info about online users
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c kvm ncurses
 
-CONFIGURE_STYLE= autoconf gnu dest
+CONFIGURE_STYLE= autoconf dest
 AUTOCONF_VERSION=2.13
 USE_GROFF =	Yes
 

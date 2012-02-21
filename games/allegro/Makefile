@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/18 11:53:18 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2012/02/21 16:21:41 ajacoutot Exp $
 
 BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
@@ -27,7 +27,7 @@ USE_GROFF =		Yes
 MAKE_FILE =		makefile
 ALL_TARGET =		default
 
-CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61
 
 SUBST_VARS =		V

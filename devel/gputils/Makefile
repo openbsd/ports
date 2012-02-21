@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 17:47:53 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/02/21 16:21:41 ajacoutot Exp $
 
 COMMENT =		GNU PIC assembler and utilities
 
@@ -24,7 +24,7 @@ MASTER_SITES0 =		http://www.arcane-labs.net/download/OpenBSD/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} gputils-testsuite-${VERSION}${EXTRACT_SUFX}:0
 DIST_SUBDIR =		gputils
 
-CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		"CC=${CC}" "CPP=${CPP}" "CFLAGS=${CFLAGS}" "CPPFLAGS=${CPPFLAGS}" "LDFLAGS=${LDFLAGS}"
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2012/02/21 16:21:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -48,7 +48,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
-CONFIGURE_STYLE=autoconf gnu
+CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.60
 CONFIGURE_ARGS=	${MODQT_CONFIGURE_ARGS} \
 		--with-extra-libs=${LOCALBASE}/lib \
