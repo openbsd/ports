@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2012/02/19 20:55:33 edd Exp $
+# $OpenBSD: Makefile,v 1.17 2012/02/21 22:34:19 sthen Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.5
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc x11
 
@@ -28,13 +28,16 @@ WANTLIB += xcb xcb-render xcb-shm z
 MASTER_SITES =	https://pwmt.org/download/
 
 BUILD_DEPENDS =	textproc/py-docutils
+RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	devel/atk \
 		graphics/gdk-pixbuf2 \
 		print/poppler \
 		x11/gtk+2
 
-MAKE_FLAGS = 	MANPREFIX=${WRKINST}/${PREFIX}/man \
-		DESKTOPPREFIX=${WRKINST}/${PREFIX}/share/applications CC=${CC}
+MAKE_FLAGS =	MANPREFIX=${WRKINST}/${PREFIX}/man \
+		DESKTOPPREFIX=${WRKINST}/${PREFIX}/share/applications \
+		CC="${CC}" \
+		VERBOSE=1
 FAKE_FLAGS =	DESTDIR=''
 
 USE_GMAKE =	Yes
