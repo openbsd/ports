@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
---- configure.ac.orig	Wed Jun 15 18:46:51 2011
-+++ configure.ac	Wed Jan 25 05:45:27 2012
-@@ -515,6 +515,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
+$OpenBSD: patch-configure_ac,v 1.18 2012/02/21 08:46:08 ajacoutot Exp $
+--- configure.ac.orig	Tue Feb 21 00:26:32 2012
++++ configure.ac	Tue Feb 21 09:16:15 2012
+@@ -516,6 +516,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -556,6 +558,8 @@ return 0;
+@@ -557,6 +559,8 @@ return 0;
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
  #include <sys/videodev2.h>
@@ -19,8 +19,8 @@ $OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
  #else /* Linux */
  #include <linux/types.h>
  #define _LINUX_TIME_H
-@@ -933,6 +937,21 @@ AG_GST_CHECK_FEATURE(SHOUT2, [Shoutcast/Icecast client
-   fi
+@@ -903,6 +907,21 @@ AG_GST_CHECK_FEATURE(SHOUT2, [Shoutcast/Icecast client
+   AG_GST_PKG_CHECK_MODULES(SHOUT2, shout >= 2.0)
  ])
  
 +dnl *** sndio ***
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
  dnl *** soup ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_SOUP, true)
  AG_GST_CHECK_FEATURE(SOUP, [soup http client plugin (2.4)], souphttpsrc, [
-@@ -1072,6 +1091,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
+@@ -1042,6 +1061,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
  AM_CONDITIONAL(USE_OSX_VIDEO, false)
  AM_CONDITIONAL(USE_PULSE, false)
  AM_CONDITIONAL(USE_SHOUT2, false)
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_ac,v 1.17 2012/01/25 14:06:27 ajacoutot Exp $
  AM_CONDITIONAL(USE_SOUP, false)
  AM_CONDITIONAL(USE_SPEEX, false)
  AM_CONDITIONAL(USE_SUNAUDIO, false)
-@@ -1203,6 +1223,7 @@ ext/libpng/Makefile
+@@ -1173,6 +1193,7 @@ ext/libpng/Makefile
  ext/pulse/Makefile
  ext/raw1394/Makefile
  ext/shout2/Makefile

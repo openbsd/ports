@@ -1,7 +1,10 @@
-$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp $
---- sys/v4l2/gstv4l2object.c.orig	Tue Mar  8 12:34:55 2011
-+++ sys/v4l2/gstv4l2object.c	Sun May 15 01:29:56 2011
-@@ -1530,8 +1530,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+$OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.5 2012/02/21 08:46:08 ajacoutot Exp $
+
+No more anonymous unions in video(4).
+
+--- sys/v4l2/gstv4l2object.c.orig	Fri Dec 30 14:59:13 2011
++++ sys/v4l2/gstv4l2object.c	Tue Feb 21 09:20:10 2012
+@@ -1588,8 +1588,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&rate, GST_TYPE_FRACTION);
  
      do {
@@ -12,7 +15,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
  
        if (num > G_MAXINT || denom > G_MAXINT) {
          /* let us hope we don't get here... */
-@@ -1563,8 +1563,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1621,8 +1621,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      g_value_init (&max, GST_TYPE_FRACTION);
  
      /* get the min */
@@ -23,7 +26,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
      if (minnum > G_MAXINT || mindenom > G_MAXINT) {
        minnum >>= 1;
        mindenom >>= 1;
-@@ -1574,8 +1574,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1632,8 +1632,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&min, minnum, mindenom);
  
      /* get the max */
@@ -34,7 +37,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1586,8 +1586,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1644,8 +1644,8 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
      gst_value_set_fraction (&max, maxnum, maxdenom);
  
      /* get the step */
@@ -45,7 +48,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
      if (num > G_MAXINT || denom > G_MAXINT) {
        num >>= 1;
        denom >>= 1;
-@@ -1638,15 +1638,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
+@@ -1696,15 +1696,15 @@ gst_v4l2_object_probe_caps_for_format_and_size (GstV4l
  
      g_value_init (&rates, GST_TYPE_FRACTION_RANGE);
  
@@ -65,7 +68,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
      if (maxnum > G_MAXINT || maxdenom > G_MAXINT) {
        maxnum >>= 1;
        maxdenom >>= 1;
-@@ -1741,10 +1741,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1800,10 +1800,10 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    if (size.type == V4L2_FRMSIZE_TYPE_DISCRETE) {
      do {
        GST_LOG_OBJECT (v4l2object->element, "got discrete frame size %dx%d",
@@ -79,7 +82,7 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
  
        if (w && h) {
          tmp =
-@@ -1762,21 +1762,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1821,21 +1821,21 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
    } else if (size.type == V4L2_FRMSIZE_TYPE_STEPWISE) {
      GST_DEBUG_OBJECT (v4l2object->element, "we have stepwise frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
@@ -102,15 +105,15 @@ $OpenBSD: patch-sys_v4l2_gstv4l2object_c,v 1.4 2011/05/15 08:32:09 ajacoutot Exp
 +        size.un.stepwise.step_height);
  
 -    for (w = size.stepwise.min_width, h = size.stepwise.min_height;
--        w < size.stepwise.max_width && h < size.stepwise.max_height;
+-        w <= size.stepwise.max_width && h <= size.stepwise.max_height;
 -        w += size.stepwise.step_width, h += size.stepwise.step_height) {
 +    for (w = size.un.stepwise.min_width, h = size.un.stepwise.min_height;
-+        w < size.un.stepwise.max_width && h < size.un.stepwise.max_height;
++        w <= size.un.stepwise.max_width && h <= size.un.stepwise.max_height;
 +        w += size.un.stepwise.step_width, h += size.un.stepwise.step_height) {
        if (w == 0 || h == 0)
          continue;
  
-@@ -1794,18 +1794,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
+@@ -1853,18 +1853,18 @@ gst_v4l2_object_probe_caps_for_format (GstV4l2Object *
  
      GST_DEBUG_OBJECT (v4l2object->element, "we have continuous frame sizes:");
      GST_DEBUG_OBJECT (v4l2object->element, "min width:   %d",
