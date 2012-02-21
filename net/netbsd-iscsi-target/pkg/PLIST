@@ -1,6 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 10:46:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/02/21 22:41:30 sthen Exp $
+%%SHARED%%
+@bin bin/iscsi-target
+lib/libiscsi.a
+lib/libiscsi.la
+@man man/man3/libiscsi.3
 @man man/man5/targets.5
 @man man/man8/iscsi-target.8
-@bin sbin/iscsi-target
-share/doc/iscsi
+share/doc/netbsd-iscsi-target/
+share/doc/netbsd-iscsi-target/COMPATIBILITY
+share/doc/netbsd-iscsi-target/FAQ
+share/doc/netbsd-iscsi-target/HOWTO-iSCSI-encrypt.txt
+share/doc/netbsd-iscsi-target/HOWTO-iSCSI-target.txt
+share/doc/netbsd-iscsi-target/PERFORMANCE
+share/doc/netbsd-iscsi-target/README
+share/doc/netbsd-iscsi-target/README_OSD
+share/doc/netbsd-iscsi-target/license
+share/examples/netbsd-iscsi-target/
+share/examples/netbsd-iscsi-target/1.conf
+share/examples/netbsd-iscsi-target/2.conf
+share/examples/netbsd-iscsi-target/3.conf
+share/examples/netbsd-iscsi-target/4.conf
+share/examples/netbsd-iscsi-target/auths
 @sample ${SYSCONFDIR}/iscsi/
+@sample ${SYSCONFDIR}/iscsi/auths
+share/examples/netbsd-iscsi-target/targets
+@sample ${SYSCONFDIR}/iscsi/targets
+@rcscript ${RCDIR}/iscsi_target

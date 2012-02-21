@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/18 18:36:50 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/02/21 22:41:30 sthen Exp $
 
-COMMENT=	NetBSD's iSCSI (RFC 3720) target
+COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
-DISTNAME=	netbsd-iscsi-20080207
+DISTNAME=	netbsd-iscsi-20111006
 PKGNAME=	${DISTNAME:S/-iscsi/-iscsi-target/}
 
 CATEGORIES=	net sysutils
+
+MAINTAINER=	Roman Kravchuk <kravchuk.kp@gmail.com>
 
 HOMEPAGE=	http://www.alistaircrooks.co.uk/software.html
 
@@ -15,26 +17,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c pthread
+WANTLIB += c pthread
 
-MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
+SHARED_LIBS +=	iscsi                0.0      # 0.2
+
+MASTER_SITES=	http://ftp.netbsd.org/pub/NetBSD/packages/distfiles/ \
+		ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
 CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
-
-# test harness needs the initiator, not built here (needs fuse)
-NO_REGRESS=	Yes
-
-WRKSRC=		 ${WRKDIST}/src
+USE_LIBTOOL=	Yes
 
 pre-configure:
-	@perl -pi -e 's,/etc/iscsi,${SYSCONFDIR}/iscsi,g' \
-	    ${WRKSRC}/targets.5 ${WRKSRC}/iscsi-target.8
+	cd ${WRKSRC}/src/target; perl -pi -e \
+	    's,/etc/iscsi,${SYSCONFDIR}/iscsi,g' targets.5 iscsi-target.8
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iscsi-target ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKDIST}/doc/FAQ ${PREFIX}/share/doc/iscsi
-	${INSTALL_MAN} ${WRKSRC}/iscsi-target.8 ${PREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/targets.5 ${PREFIX}/man/man5
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/netbsd-iscsi-target \
+	    ${PREFIX}/share/examples/netbsd-iscsi-target
+	cd ${WRKSRC}/doc; \
+	${INSTALL_DATA} * ${PREFIX}/share/doc/netbsd-iscsi-target; \
+	cd ../src; \
+	${INSTALL_DATA} etc/auths etc/targets examples/* \
+	    ${PREFIX}/share/examples/netbsd-iscsi-target
 
 .include <bsd.port.mk>
