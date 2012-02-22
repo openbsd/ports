@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/04/01 17:41:13 kurt Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/02/22 12:31:42 kurt Exp $
 --- configure.ac.orig	Sat Jun 30 11:40:15 2007
-+++ configure.ac	Fri Feb  8 17:29:19 2008
-@@ -113,6 +113,12 @@ case "$THREADS" in
++++ configure.ac	Sun Feb 19 12:57:00 2012
+@@ -113,6 +113,11 @@ case "$THREADS" in
       *-*-hpux10*)
  	AC_MSG_WARN("Only HP-UX 11 POSIX threads are supported.")
  	;;
@@ -9,20 +9,11 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/04/01 17:41:13 kurt Exp $
 +	AC_DEFINE(GC_OPENBSD_THREADS)
 +	THREADDLLIBS=-pthread
 +	INCLUDES="$INCLUDES -pthread"
-+	openbsd_threads=true
 +      	;;
       *-*-freebsd*)
  	AC_MSG_WARN("FreeBSD does not yet fully support threads with Boehm GC.")
  	AC_DEFINE(GC_FREEBSD_THREADS)
-@@ -222,6 +228,7 @@ AM_CONDITIONAL(THREADS, test x$THREADS != xnone)
- AM_CONDITIONAL(PTHREADS, test x$THREADS = xposix)
- AM_CONDITIONAL(DARWIN_THREADS, test x$darwin_threads = xtrue)
- AM_CONDITIONAL(WIN32_THREADS, test x$win32_threads = xtrue)
-+AM_CONDITIONAL(OPENBSD_THREADS, test x$openbsd_threads = xtrue)
- 
- case "$host" in 
-    powerpc-*-darwin*)
-@@ -394,6 +401,9 @@ case "$host" in
+@@ -394,6 +399,9 @@ case "$host" in
      ;;
   sparc-*-netbsd*)
      machdep="mach_dep.lo sparc_netbsd_mach_dep.lo"
