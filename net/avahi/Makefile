@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/02/20 18:01:19 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2012/02/22 10:27:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -11,7 +11,7 @@ COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 COMMENT-ui=	common avahi-ui header for gtk+2 and gtk+3
 
-V=		0.6.30
+V=		0.6.31
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
@@ -23,15 +23,6 @@ PKGNAME-mono=	mono-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
-
-REVISION-main=	6
-REVISION-gtk=	4
-REVISION-gtk3=	2
-REVISION-gui=	2
-REVISION-mono=	3
-REVISION-qt3=	3
-REVISION-qt4=	3
-REVISION-ui=	1
 
 IGNORE-mono = rthreads stuck on mono
 
@@ -120,7 +111,7 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common GL Xxf86vm drm xcb-shm \
-		avahi-glib ffi ${MODGETTEXT_WANTLIB}
+		avahi-glib ffi stdc++ ${MODGETTEXT_WANTLIB}
 
 ### -gtk3
 SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
@@ -136,7 +127,7 @@ WANTLIB-gtk3 += dbus-1 drm expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
 WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
-WANTLIB-gtk3 += xcb-shm z ffi ${MODGETTEXT_WANTLIB}
+WANTLIB-gtk3 += xcb-shm z ffi stdc++ ${MODGETTEXT_WANTLIB}
 
 ### -gui
 LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
@@ -155,7 +146,7 @@ WANTLIB-gui += cairo cairo-gobject dbus-1 drm expat fontconfig freetype
 WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
 WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi
+WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z ffi stdc++
 WANTLIB-gui += ${MODGETTEXT_WANTLIB}
 
 ### -ui
