@@ -1,7 +1,7 @@
-$OpenBSD: patch-automake_in,v 1.1.1.1 2011/05/05 18:55:34 jasper Exp $
---- automake.in.orig	Tue Dec  8 19:15:40 2009
-+++ automake.in	Thu May  5 19:57:31 2011
-@@ -4337,7 +4337,7 @@ sub handle_configure ($$$@)
+$OpenBSD: patch-automake_in,v 1.2 2012/02/22 07:14:20 ajacoutot Exp $
+--- automake.in.orig	Wed Feb  1 05:31:13 2012
++++ automake.in	Thu Feb 16 22:24:10 2012
+@@ -4384,7 +4384,7 @@ sub handle_configure ($$$@)
        # Use $(install_sh), not $(MKDIR_P) because the latter requires
        # at least one argument, and $(mkinstalldirs) used to work
        # even without arguments (e.g. $(mkinstalldirs) $(conditional_dir)).
@@ -10,7 +10,7 @@ $OpenBSD: patch-automake_in,v 1.1.1.1 2011/05/05 18:55:34 jasper Exp $
      }
  
    reject_var ('CONFIG_HEADER',
-@@ -5240,6 +5240,7 @@ sub scan_autoconf_traces ($)
+@@ -5337,6 +5337,7 @@ sub scan_autoconf_traces ($)
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
  		m4_sinclude => 1,
@@ -18,7 +18,7 @@ $OpenBSD: patch-automake_in,v 1.1.1.1 2011/05/05 18:55:34 jasper Exp $
  		sinclude => 1,
  	      );
  
-@@ -5263,6 +5264,7 @@ sub scan_autoconf_traces ($)
+@@ -5360,6 +5361,7 @@ sub scan_autoconf_traces ($)
        my ($here, $depth, @args) = split (/::/);
        $where = new Automake::Location $here;
        my $macro = $args[0];

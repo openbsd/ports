@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/05 18:55:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/02/22 07:14:20 ajacoutot Exp $
 @option no-default-conflict
+@conflict automake->=1.11,<1.12
 @comment bin/aclocal
 bin/aclocal${SUFFIX}
 @comment bin/automake
 bin/automake${SUFFIX}
 @info info/automake${SUFFIX}.info
 @man man/man1/aclocal${SUFFIX}.1
+@comment @man man/man1/aclocal.1
 @man man/man1/automake${SUFFIX}.1
+@comment @man man/man1/automake.1
 share/aclocal${SUFFIX}/
 share/aclocal${SUFFIX}/amversion.m4
+share/aclocal${SUFFIX}/ar-lib.m4
 share/aclocal${SUFFIX}/as.m4
 share/aclocal${SUFFIX}/auxdir.m4
 share/aclocal${SUFFIX}/ccstdc.m4
@@ -55,6 +59,7 @@ share/automake${SUFFIX}/Automake/Configure_ac.pm
 share/automake${SUFFIX}/Automake/DisjConditions.pm
 share/automake${SUFFIX}/Automake/FileUtils.pm
 share/automake${SUFFIX}/Automake/General.pm
+share/automake${SUFFIX}/Automake/Getopt.pm
 share/automake${SUFFIX}/Automake/Item.pm
 share/automake${SUFFIX}/Automake/ItemDef.pm
 share/automake${SUFFIX}/Automake/Location.pm
@@ -72,6 +77,7 @@ share/automake${SUFFIX}/INSTALL
 share/automake${SUFFIX}/acinstall
 share/automake${SUFFIX}/am/
 share/automake${SUFFIX}/am/ansi2knr.am
+share/automake${SUFFIX}/am/check-html.am
 share/automake${SUFFIX}/am/check.am
 share/automake${SUFFIX}/am/check2.am
 share/automake${SUFFIX}/am/clean-hdr.am
@@ -114,6 +120,7 @@ share/automake${SUFFIX}/am/vala.am
 share/automake${SUFFIX}/am/yacc.am
 share/automake${SUFFIX}/ansi2knr.1
 share/automake${SUFFIX}/ansi2knr.c
+share/automake${SUFFIX}/ar-lib
 share/automake${SUFFIX}/compile
 share/automake${SUFFIX}/config-ml.in
 share/automake${SUFFIX}/config.guess

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/20 20:28:44 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2012/02/22 07:14:20 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.11
-DISTNAME=	automake-${VERSION}.1
-REVISION=	2
+DISTNAME=	automake-${VERSION}.3
 PKGSPEC=	automake->=${VERSION},<1.12
 
 CATEGORIES=	devel
@@ -23,7 +22,7 @@ MODULES=		lang/python
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.68
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
@@ -48,14 +47,13 @@ REGRESS_DEPENDS=	${BASE_PKGPATH} \
 			editors/emacs21 \
 			devel/dejagnu
 
-TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+REGRESS_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}
 
 do-regress:
 	    ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	    @cd ${WRKBUILD} && \
-	    	exec ${SETENV} ${MAKE_ENV} \
-		TESTS_ENVIRONMENT="${TESTS_ENVIRONMENT}" \
+	    	exec ${SETENV} ${MAKE_ENV} ${REGRESS_ENV} \
 		    ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} \
 		    -f ${MAKE_FILE} ${REGRESS_TARGET}
 
@@ -69,7 +67,7 @@ post-install:
 	perl -pi -e "s,aclocal\: \(automake\),aclocal: \(automake-1\.11\)," \
 		${PREFIX}/info/automake${SUFFIX}.info
 
-.for f in info-1 info-2
+.for f in info-1 info-2 info-3
 	cd ${PREFIX}/info && mv automake.${f} automake${SUFFIX}.${f} \
 		&& perl -pi -e "s,automake.${f},automake${SUFFIX}.${f}," \
 		${PREFIX}/info/automake${SUFFIX}.info
