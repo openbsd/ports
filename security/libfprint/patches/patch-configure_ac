@@ -1,0 +1,47 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/02/22 09:30:20 dcoppa Exp $
+--- configure.ac.orig	Fri Nov 18 19:17:48 2011
++++ configure.ac	Fri Nov 18 19:20:02 2011
+@@ -127,22 +127,17 @@ AC_SUBST(GLIB_CFLAGS)
+ AC_SUBST(GLIB_LIBS)
+ 
+ imagemagick_found=no
+-gdkpixbuf_found=no
+ 
+ if test "$require_imaging" = "yes"; then
+-	PKG_CHECK_MODULES(IMAGING, gthread-2.0 gdk-pixbuf-2.0, [gdkpixbuf_found=yes], [gdkpixbuf_found=no])
+-	if test "$gdkpixbuf_found" != "yes"; then
+-		PKG_CHECK_MODULES(IMAGING, ImageMagick, [imagemagick_found=yes], [imagemagick_found=no])
+-	fi
++	PKG_CHECK_MODULES(IMAGING, ImageMagick, [imagemagick_found=yes], [imagemagick_found=no])
+ fi
+ 
+ if test "$require_imaging" = "yes"; then
+-	if test "$gdkpixbuf_found" != "yes" && test "$imagemagick_found" != "yes"; then
+-		AC_MSG_ERROR([gdk-pixbuf or ImageMagick is required for imaging support])
++	if test "$imagemagick_found" != "yes"; then
++		AC_MSG_ERROR([ImageMagick is required for imaging support])
+ 	fi
+ fi
+ 
+-AM_CONDITIONAL([REQUIRE_GDKPIXBUF], [test "$gdkpixbuf_found" = "yes"])
+ AM_CONDITIONAL([REQUIRE_IMAGEMAGICK], [test "$imagemagick_found" = "yes"])
+ AC_SUBST(IMAGING_CFLAGS)
+ AC_SUBST(IMAGING_LIBS)
+@@ -209,15 +204,11 @@ AC_COMPILE_IFELSE(AC_LANG_PROGRAM([]), inline_cflags="
+ CFLAGS="$saved_cflags"
+ 
+ AC_DEFINE([API_EXPORTED], [__attribute__((visibility("default")))], [Default visibility])
+-AM_CFLAGS="-std=gnu99 $inline_cflags -Wall -Wundef -Wunused -Wstrict-prototypes -Werror-implicit-function-declaration -Wno-pointer-sign -Wshadow"
++AM_CFLAGS="-std=gnu99 -Wall -Wundef -Wunused -Wstrict-prototypes -Werror-implicit-function-declaration"
+ AC_SUBST(AM_CFLAGS)
+ 
+ if test "$require_imaging" = "yes"; then
+-	if test x$gdkpixbuf_found != no; then
+-		AC_MSG_NOTICE([** Using gdk-pixbuf for imaging])
+-	else
+-		AC_MSG_NOTICE([** Using ImageMagick for imaging])
+-	fi
++	AC_MSG_NOTICE([** Using ImageMagick for imaging])
+ else
+ 	AC_MSG_NOTICE([   Imaging support disabled])
+ fi
