@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.4 2012/01/01 11:21:16 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.5 2012/02/22 14:20:32 ajacoutot Exp $
 
 Recognize the gio-kqueue monitoring backend.
 (not to be pushed upstream before the glib changes are there first)
 
---- src/libtracker-miner/tracker-monitor.c.orig	Fri Dec 16 16:23:55 2011
-+++ src/libtracker-miner/tracker-monitor.c	Sun Jan  1 12:12:46 2012
+--- src/libtracker-miner/tracker-monitor.c.orig	Wed Feb 15 11:41:48 2012
++++ src/libtracker-miner/tracker-monitor.c	Wed Feb 22 15:14:08 2012
 @@ -23,6 +23,13 @@
  #include <string.h>
  #include <gio/gio.h>
@@ -29,24 +29,28 @@ Recognize the gio-kqueue monitoring backend.
  	object->priv = TRACKER_MONITOR_GET_PRIVATE (object);
  
  	priv = object->priv;
-@@ -293,6 +303,20 @@ tracker_monitor_init (TrackerMonitor *object)
- 			 * negative maximum.
+@@ -294,6 +304,24 @@ tracker_monitor_init (TrackerMonitor *object)
  			 */
  			priv->monitor_limit = MAX (priv->monitor_limit, 0);
-+		}
+ 		}
++#if defined (__OpenBSD__)
 +		else if (strcmp (name, "GKqueueDirectoryMonitor") == 0) {
 +			/* Using kqueue(2) */
 +			g_message ("Monitor backend is kqueue(2)");
-+
-+#if defined (__OpenBSD__)
 +			if (getrlimit (RLIMIT_NOFILE, &rl) == 0) {
++				rl.rlim_cur = rl.rlim_max;
++				(void)setrlimit(RLIMIT_NOFILE , &rl);
 +				priv->monitor_limit = (rl.rlim_cur*90)/100;
 +			} else {
 +				priv->monitor_limit = 128;
 +			}
-+#else
-+			priv->monitor_limit = 400;
++			/*  Prevent from opening an insame amount of FDs
++			 *  (kqueue(2) opens one file descriptor per monitor).
++			 */
++			if (priv->monitor_limit > 2048)
++				priv->monitor_limit = 2048;
++		}
 +#endif
- 		}
  		else if (strcmp (name, "GFamDirectoryMonitor") == 0) {
  			/* Using Fam */
+ 			g_message ("Monitor backend is Fam");

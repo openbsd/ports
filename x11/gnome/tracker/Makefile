@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2012/02/21 11:29:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2012/02/22 14:20:32 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,7 +21,7 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
