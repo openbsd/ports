@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/12/03 23:20:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/02/22 13:22:00 dcoppa Exp $
 bin/gnash
 bin/gnash-gtk-launcher
 @bin bin/gprocessor
@@ -45,7 +45,6 @@ include/gnash/Point_as.h
 include/gnash/RTMP.h
 include/gnash/Range2d.h
 include/gnash/Rectangle_as.h
-include/gnash/Renderer.h
 include/gnash/SWFCtype.h
 include/gnash/SharedMem.h
 include/gnash/SimpleBuffer.h
@@ -130,6 +129,7 @@ include/gnash/asobj/TextFormat_as.h
 include/gnash/asobj/TextSnapshot_as.h
 include/gnash/asobj/UserFunction.h
 include/gnash/asobj/Video.h
+include/gnash/asobj/Video_as.h
 include/gnash/asobj/XMLNode_as.h
 include/gnash/asobj/XMLSocket_as.h
 include/gnash/asobj/XML_as.h
@@ -150,7 +150,10 @@ include/gnash/geom_pkg.h
 include/gnash/getclocktime.hpp
 include/gnash/gettext.h
 include/gnash/gmemory.h
-include/gnash/jemtree.h
+include/gnash/jemalloc.h
+include/gnash/jemalloc_gnash.h
+include/gnash/jemalloc_rb.h
+include/gnash/jemalloc_types.h
 include/gnash/log.h
 include/gnash/net_pkg.h
 include/gnash/noseek_fd_adapter.h
@@ -159,7 +162,6 @@ include/gnash/parser/movie_definition.h
 include/gnash/rc.h
 include/gnash/ref_counted.h
 include/gnash/sharedlib.h
-include/gnash/smart_ptr.h
 include/gnash/snappingrange.h
 include/gnash/string_table.h
 include/gnash/text_pkg.h
@@ -181,6 +183,9 @@ lib/gnash/libgnashbase-${VER}.so
 lib/gnash/libgnashbase.so
 lib/gnash/libgnashcore-${VER}.so
 lib/gnash/libgnashcore.so
+lib/gnash/libgnashdevice-${VER}.so
+lib/gnash/libgnashdevice.la
+lib/gnash/libgnashdevice.so
 lib/gnash/libgnashmedia-${VER}.so
 lib/gnash/libgnashmedia.so
 lib/gnash/libgnashrender-${VER}.so
@@ -218,12 +223,21 @@ share/gnash/gnash-splash.swf
 share/gnash/gnash_128_96.ico
 share/icons/hicolor/32x32/apps/gnash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
+share/locale/da/LC_MESSAGES/gnash.mo
 share/locale/de/LC_MESSAGES/gnash.mo
+share/locale/el/LC_MESSAGES/gnash.mo
+share/locale/en_GB/LC_MESSAGES/gnash.mo
 share/locale/es/LC_MESSAGES/gnash.mo
 share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
 share/locale/ja/LC_MESSAGES/gnash.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/gnash.mo
+share/locale/ne/LC_MESSAGES/gnash.mo
+share/locale/ru/LC_MESSAGES/gnash.mo
+share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-desktop-database

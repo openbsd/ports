@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/12/19 21:23:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2012/02/22 13:22:00 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,12 @@ ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	SWF player with Firefox browser plugin
 
-VER=		0.8.9
+VER=		0.8.10
 DISTNAME=	gnash-${VER}
-REVISION=	6
 EPOCH=		0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://gnashdev.org
 
@@ -48,13 +48,13 @@ LIB_DEPENDS=	audio/speex \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.67
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--disable-cygnal \
 		--disable-jemalloc \
 		--enable-renderer=agg \
 		--enable-gui=gtk \
 		--enable-media=ffmpeg \
+		--without-gconf \
 		--with-npapi-plugindir=${LOCALBASE}/lib/mozilla/plugins
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
