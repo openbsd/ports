@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/06/19 18:14:59 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/02/22 14:05:01 giovanni Exp $
 %%SHARED%%
+@bin bin/chm_http
+@bin bin/enum_chmLib
+@bin bin/enumdir_chmLib
+@bin bin/extract_chmLib
+@bin bin/test_chmLib
 include/chm_lib.h
 include/lzx.h
 lib/libchm.a
