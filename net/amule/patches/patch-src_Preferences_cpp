@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_Preferences_cpp,v 1.2 2011/11/28 15:28:49 dcoppa Exp $
+$OpenBSD: patch-src_Preferences_cpp,v 1.3 2012/02/22 07:54:26 dcoppa Exp $
 
 Disable checking for new versions at startup.
 
---- src/Preferences.cpp.orig	Mon Nov 28 09:34:26 2011
-+++ src/Preferences.cpp	Mon Nov 28 09:36:11 2011
+Change nodes.dat default download URL to something actually working
+(upstream git commit 8dbe597539bcac7272ccf4d46790fde814aeded1)
+
+--- src/Preferences.cpp.orig	Sun Oct  9 02:19:08 2011
++++ src/Preferences.cpp	Tue Feb 21 15:58:53 2012
 @@ -1210,7 +1210,7 @@ void CPreferences::BuildItemList( const wxString& appd
  	/**
  	 * Version check
@@ -13,3 +16,12 @@ Disable checking for new versions at startup.
  
  	 /**
  	  * Obfuscation
+@@ -1244,7 +1244,7 @@ void CPreferences::BuildItemList( const wxString& appd
+ 
+ 	s_MiscList.push_back( new Cfg_Bool( wxT("/eMule/DropSlowSources"), 		s_DropSlowSources, false ) );
+ 
+-	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/KadNodesUrl"),			s_KadURL, wxT("http://download.tuxfamily.org/technosalad/utils/nodes.dat") ) );
++	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/KadNodesUrl"),			s_KadURL, wxT("http://upd.emule-security.org/nodes.dat") ) );
+ 	s_MiscList.push_back( new Cfg_Str(  wxT("/eMule/Ed2kServersUrl"),		s_Ed2kURL, wxT("http://gruk.org/server.met.gz") ) );
+ 	s_MiscList.push_back( MkCfg_Int( wxT("/eMule/ShowRatesOnTitle"),		s_showRatesOnTitle, 0 ));
+ 
