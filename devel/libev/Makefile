@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/04 21:30:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2012/02/22 10:50:47 dcoppa Exp $
 
 COMMENT =	high-performance event loop library
 
-DISTNAME =	libev-4.04
+DISTNAME =	libev-4.11
 CATEGORIES =	devel
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
-SHARED_LIBS=	ev 2.1 # 4.0
+SHARED_LIBS=	ev 3.0 # 4.0
 
 HOMEPAGE =	http://software.schmorp.de/pkg/libev.html
 MASTER_SITES =	http://dist.schmorp.de/libev/ \
