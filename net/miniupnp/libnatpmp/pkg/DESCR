@@ -1,0 +1,6 @@
+The NAT Port Mapping Protocol (NAT-PMP) is the direct concurrent to the
+UPnP IGD specification: it provides a way to do NAT traversal and it's
+part of the Bonjour protocol specifications.
+libnatpmp is an attempt to make a portable and fully compliant
+implementation of this protocol for the client side. It is based on
+non-blocking sockets and all calls of the API are asynchronous.

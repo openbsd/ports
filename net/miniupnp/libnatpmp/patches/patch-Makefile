@@ -1,0 +1,58 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
+--- Makefile.orig	Thu Jun 23 00:28:00 2011
++++ Makefile	Thu Feb 23 14:28:34 2012
+@@ -5,13 +5,14 @@
+ # http://miniupnp.free.fr/libnatpmp.html
+ 
+ OS = $(shell uname -s)
+-CC = gcc
++CC ?= gcc
+ INSTALL = install
+ 
+ # APIVERSION is used in soname
+ APIVERSION = 1
+ #LDFLAGS = -Wl,--no-undefined
+-CFLAGS = -O -fPIC -Wall -DENABLE_STRNATPMPERR
++CFLAGS ?= -O -Wall
++CFLAGS += -fPIC -DENABLE_STRNATPMPERR
+ 
+ LIBOBJS = natpmp.o getgateway.o
+ 
+@@ -23,8 +24,8 @@ ifeq ($(OS), Darwin)
+   SONAME = $(basename $(SHAREDLIB)).$(APIVERSION).dylib
+   CFLAGS := -DMACOSX -D_DARWIN_C_SOURCE $(CFLAGS)
+ else
+-  SHAREDLIB = libnatpmp.so
+-  SONAME = $(SHAREDLIB).$(APIVERSION)
++  SHAREDLIB ?= libnatpmp.so
++  SONAME ?= $(SHAREDLIB).$(APIVERSION)
+ endif
+ 
+ HEADERS = natpmp.h
+@@ -57,13 +58,12 @@ depend:
+ 
+ install:	$(HEADERS) $(STATICLIB) $(SHAREDLIB) natpmpc-shared
+ 	$(INSTALL) -d $(INSTALLDIRINC)
+-	$(INSTALL) -m 644 $(HEADERS) $(INSTALLDIRINC)
++	$(INSTALL_DATA) $(HEADERS) $(INSTALLDIRINC)
+ 	$(INSTALL) -d $(INSTALLDIRLIB)
+-	$(INSTALL) -m 644 $(STATICLIB) $(INSTALLDIRLIB)
+-	$(INSTALL) -m 644 $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
++	$(INSTALL_DATA) $(STATICLIB) $(INSTALLDIRLIB)
++	$(INSTALL_DATA) $(SHAREDLIB) $(INSTALLDIRLIB)/$(SONAME)
+ 	$(INSTALL) -d $(INSTALLDIRBIN)
+-	$(INSTALL) -m 755 natpmpc-shared $(INSTALLDIRBIN)/natpmpc
+-	ln -s -f $(SONAME) $(INSTALLDIRLIB)/$(SHAREDLIB)
++	$(INSTALL_PROGRAM) natpmpc-shared $(INSTALLDIRBIN)/natpmpc
+ 
+ cleaninstall:
+ 	$(RM) $(addprefix $(INSTALLDIRINC), $(HEADERS))
+@@ -86,7 +86,7 @@ $(SHAREDLIB):	$(LIBOBJS)
+ ifeq ($(OS), Darwin)
+ 	$(CC) -dynamiclib -Wl,-install_name,$(SONAME) -o $@ $^
+ else
+-	$(CC) -shared -Wl,-soname,$(SONAME) -o $@ $^
++	$(CC) -shared -o $@ $^
+ endif
+ 
+ # DO NOT DELETE

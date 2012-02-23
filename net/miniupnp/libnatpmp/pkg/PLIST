@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/23 13:56:49 dcoppa Exp $
+@bin bin/natpmpc
+include/natpmp.h
+lib/libnatpmp.a
+@lib lib/libnatpmp.so.${LIBnatpmp_VERSION}
+@man man/man1/natpmpc.1
