@@ -1,21 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/12 15:55:54 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-main,v 1.1 2012/02/23 08:32:46 ajacoutot Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-1.0/
 include/rygel-1.0/rygel.h
 lib/pkgconfig/rygel-1.0.pc
 lib/rygel-1.0/
-lib/rygel-1.0/librygel-external.a
 @comment lib/rygel-1.0/librygel-external.la
-lib/rygel-1.0/librygel-gst-launch.a
+lib/rygel-1.0/librygel-external.so
 @comment lib/rygel-1.0/librygel-gst-launch.la
-lib/rygel-1.0/librygel-media-export.a
+lib/rygel-1.0/librygel-gst-launch.so
 @comment lib/rygel-1.0/librygel-media-export.la
-lib/rygel-1.0/librygel-mpris.a
+lib/rygel-1.0/librygel-media-export.so
 @comment lib/rygel-1.0/librygel-mpris.la
-lib/rygel-1.0/librygel-playbin.a
+lib/rygel-1.0/librygel-mpris.so
 @comment lib/rygel-1.0/librygel-playbin.la
+lib/rygel-1.0/librygel-playbin.so
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
 share/applications/rygel-preferences.desktop
