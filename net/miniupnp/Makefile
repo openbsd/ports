@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.1 2012/01/13 09:24:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/23 14:00:01 dcoppa Exp $
 
      SUBDIR =
+     SUBDIR += libnatpmp
      SUBDIR += miniupnpc
      SUBDIR += miniupnpd
      SUBDIR += minissdpd
