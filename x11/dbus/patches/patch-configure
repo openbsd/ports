@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.17 2011/12/03 14:27:40 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
 --- configure.orig	Wed Sep 21 16:27:57 2011
-+++ configure	Sat Dec  3 15:10:38 2011
++++ configure	Sun Feb 19 10:14:58 2012
 @@ -18853,7 +18853,8 @@ fi
  done
  
@@ -37,6 +37,15 @@ $OpenBSD: patch-configure,v 1.17 2011/12/03 14:27:40 ajacoutot Exp $
  fi
  
  fi
+@@ -19511,7 +19512,7 @@ $as_echo "$ac_cv_search_clock_getres" >&6; }
+ ac_res=$ac_cv_search_clock_getres
+ if test "$ac_res" != no; then :
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+-  THREAD_LIBS="$THREAD_LIBS -lrt"
++  THREAD_LIBS="$THREAD_LIBS"
+ fi
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for CLOCK_MONOTONIC" >&5
 @@ -19658,13 +19659,13 @@ if test x$have_selinux = xyes ; then
  if test "x$ac_cv_func_pthread_create" = xyes; then :
  
