@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.12 2012/02/18 23:07:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/02/23 09:22:06 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
-COMMENT-extras=	GNOME desktop meta-package (full installation)
+COMMENT-extra=	GNOME desktop meta-package (full installation)
 
 V=		3.2.1
 PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
-PKGNAME-extras=	gnome-extras-${V}
+PKGNAME-extra=	gnome-extra-${V}
 
-REVISION-main=	7
-REVISION-extras=3
+REVISION-main=	8
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-MULTI_PACKAGES=	-main -extras
+MULTI_PACKAGES=	-main -extra
 
 # sync with gnome-desktop version
 RUN_DEPENDS-main += x11/gnome/desktop=${V}
@@ -53,7 +52,7 @@ RUN_DEPENDS-main += \
 		x11/gnome/gcalctool \
 		x11/xdg-user-dirs-gtk
 
-RUN_DEPENDS-extras += \
+RUN_DEPENDS-extra += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		audio/rhythmbox \
 		devel/dconf,-editor \
