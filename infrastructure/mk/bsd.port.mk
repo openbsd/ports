@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1159 2012/02/17 07:33:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1160 2012/02/23 08:32:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1601,7 +1601,7 @@ _if_check_needed = \
 .if ${NO_SHARED_LIBS:L} == "yes"
 _warn_if_shared = :
 .else
-_warn_if_shared = echo "LIB_DEPENDS $$d not needed ?" 1>&2
+_warn_if_shared = echo "LIB_DEPENDS $$d not needed for ${FULLPKGPATH${SUBPACKAGE}} ?" 1>&2
 .endif
 
 # turn a list of found libraries into parameters for pkg_create,
