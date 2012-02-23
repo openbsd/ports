@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.206 2012/02/16 22:23:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.207 2012/02/23 12:17:09 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.1
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		x11
 
@@ -32,7 +32,6 @@ BUILD_DEPENDS=	textproc/xmlto \
 LIB_DEPENDS=	devel/libexecinfo \
 		x11/gtk+3 \
 		devel/gconf2 \
-		x11/gnome/librsvg \
 		sysutils/upower \
 		devel/json-glib
 RUN_DEPENDS=	x11/gnome/settings-daemon \
