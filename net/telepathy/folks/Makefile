@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/02/18 23:05:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/02/23 07:33:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,8 @@ API_V=			30
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-tracker=	0
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
 SHARED_LIBS +=  folks                     5.0 # 29.0
@@ -43,7 +44,8 @@ WANTLIB-main += xml2 z
 LIB_DEPENDS-main=	databases/evolution-data-server>=3.2.0p2 \
 			devel/libgee \
 			net/telepathy/telepathy-glib>=0.14.3
-#RUN_DEPENDS-main=	net/telepathy/telepathy-mission-control
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			net/telepathy/telepathy-mission-control
 
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
@@ -63,6 +65,7 @@ CONFIGURE_ARGS +=	--disable-tracker-backend
 MULTI_PACKAGES +=	-tracker
 SHARED_LIBS +=  folks-tracker        0.0     # 30.0
 CONFIGURE_ARGS +=	--enable-tracker-backend
+RUN_DEPENDS-tracker=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-tracker=	${BASE_PKGPATH},-main \
 			x11/gnome/tracker
 WANTLIB-tracker += ${WANTLIB}
