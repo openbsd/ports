@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2012/02/22 14:20:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2012/02/23 11:30:58 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -26,6 +26,7 @@ REVISION-main=		1
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
 # net/telepathy/folks
+# x11/gnome/grilo-plugins
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 EVO_VERSION=	3.2
