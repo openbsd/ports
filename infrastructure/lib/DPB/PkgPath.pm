@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.26 2012/01/29 12:02:20 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.27 2012/02/23 21:42:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -196,7 +196,7 @@ sub compose
 sub fullpkgname
 {
 	my $self = shift;
-	return (defined $self->{info}) ?  $self->{info}->fullpkgname : undef;
+	return (defined $self->{info} && defined $self->{info}{FULLPKGNAME}) ?  $self->{info}->fullpkgname : undef;
 }
 
 sub may_create
