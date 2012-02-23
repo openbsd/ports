@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2012/02/23 09:39:00 sthen Exp $
+
+CVE-2012-0841
+http://git.gnome.org/browse/libxml2/commit/?id=8973d58b7498fa5100a876815476b81fd1a2412a
+
+--- configure.in.orig	Thu Nov  4 17:01:19 2010
++++ configure.in	Wed Feb 22 19:02:10 2012
+@@ -475,6 +475,7 @@ AC_CHECK_FUNCS(strdup strndup strerror)
+ AC_CHECK_FUNCS(finite isnand fp_class class fpclass)
+ AC_CHECK_FUNCS(strftime localtime gettimeofday ftime)
+ AC_CHECK_FUNCS(stat _stat signal)
++AC_CHECK_FUNCS(rand srand time)
+ 
+ dnl Checking the standard string functions availability
+ AC_CHECK_FUNCS(printf sprintf fprintf snprintf vfprintf vsprintf vsnprintf sscanf,,

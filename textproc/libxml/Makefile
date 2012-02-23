@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2012/01/23 10:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2012/02/23 09:39:00 sthen Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -9,7 +9,7 @@ PKGNAME-main=		libxml-${VERSION}
 REVISION =		4
 REVISION-python =	3
 PKGNAME-python=		py-libxml-${VERSION}
-SHARED_LIBS=		xml2	12.0
+SHARED_LIBS=		xml2	13.0
 CATEGORIES=		textproc
 MASTER_SITES=		http://fr.rpmfind.net/pub/libxml/ \
 			http://gd.tuwien.ac.at/pub/libxml/ \
@@ -23,13 +23,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m z 
+WANTLIB=		m z
 
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.68 # should be 2.66
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static
 CONFIGURE_ARGS+=	--with-html-dir="${PREFIX}/share/doc"
