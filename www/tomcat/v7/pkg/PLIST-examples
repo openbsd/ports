@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2012/01/26 10:13:15 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2012/02/24 08:45:57 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -738,6 +738,7 @@ webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
 webapps/docs/api/org/apache/catalina/util/SchemaResolver.html
 webapps/docs/api/org/apache/catalina/util/ServerInfo.html
+webapps/docs/api/org/apache/catalina/util/SessionConfig.html
 webapps/docs/api/org/apache/catalina/util/SessionIdGenerator.html
 webapps/docs/api/org/apache/catalina/util/Strftime.html
 webapps/docs/api/org/apache/catalina/util/StringParser.html
@@ -1153,8 +1154,6 @@ webapps/docs/api/org/apache/juli/logging/
 webapps/docs/api/org/apache/juli/logging/Log.html
 webapps/docs/api/org/apache/juli/logging/LogConfigurationException.html
 webapps/docs/api/org/apache/juli/logging/LogFactory.html
-webapps/docs/api/org/apache/juli/logging/UserDataHelper.Mode.html
-webapps/docs/api/org/apache/juli/logging/UserDataHelper.html
 webapps/docs/api/org/apache/juli/logging/package-frame.html
 webapps/docs/api/org/apache/juli/logging/package-summary.html
 webapps/docs/api/org/apache/juli/logging/package-tree.html
@@ -1244,6 +1243,7 @@ webapps/docs/api/org/apache/tomcat/JarScanner.html
 webapps/docs/api/org/apache/tomcat/JarScannerCallback.html
 webapps/docs/api/org/apache/tomcat/PeriodicEventListener.html
 webapps/docs/api/org/apache/tomcat/buildutil/
+webapps/docs/api/org/apache/tomcat/buildutil/CheckEol.html
 webapps/docs/api/org/apache/tomcat/buildutil/Txt2Html.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-frame.html
 webapps/docs/api/org/apache/tomcat/buildutil/package-summary.html
@@ -1498,6 +1498,7 @@ webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/HttpMessages.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
 webapps/docs/api/org/apache/tomcat/util/http/Parameters.html
+webapps/docs/api/org/apache/tomcat/util/http/RequestUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ByteArrayOutputStream.html
@@ -1572,6 +1573,8 @@ webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/log/
 webapps/docs/api/org/apache/tomcat/util/log/SystemLogHandler.html
+webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.Mode.html
+webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.html
 webapps/docs/api/org/apache/tomcat/util/log/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/log/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/log/package-tree.html
