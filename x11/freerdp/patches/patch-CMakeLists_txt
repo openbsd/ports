@@ -1,7 +1,17 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/24 09:41:43 sthen Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2012/02/24 09:56:51 sthen Exp $
 --- CMakeLists.txt.orig	Mon Jan 16 17:52:14 2012
-+++ CMakeLists.txt	Mon Feb  6 19:10:45 2012
-@@ -106,6 +106,8 @@ if(APPLE)
++++ CMakeLists.txt	Fri Feb 24 09:55:40 2012
+@@ -64,9 +64,6 @@ if(CMAKE_COMPILER_IS_GNUCC)
+ 	if(Wno-unused-but-set-variable)
+ 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-but-set-variable")
+ 	endif()
+-	if(CMAKE_BUILD_TYPE STREQUAL "Release")
+-		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2")
+-	endif()
+ 	if(WITH_SSE2_TARGET)
+ 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -msse2")
+ 	endif()
+@@ -106,6 +103,8 @@ if(APPLE)
  endif()
  
  if(NOT WIN32)
