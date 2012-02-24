@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/11/24 08:39:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/02/24 08:08:35 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -12,6 +12,7 @@ ${MODRUBY_SITEDIR}/puppet/
 ${MODRUBY_SITEDIR}/puppet.rb
 ${MODRUBY_SITEDIR}/puppet/agent/
 ${MODRUBY_SITEDIR}/puppet/agent.rb
+${MODRUBY_SITEDIR}/puppet/agent/disabler.rb
 ${MODRUBY_SITEDIR}/puppet/agent/locker.rb
 ${MODRUBY_SITEDIR}/puppet/application/
 ${MODRUBY_SITEDIR}/puppet/application.rb
@@ -34,6 +35,9 @@ ${MODRUBY_SITEDIR}/puppet/application/filebucket.rb
 ${MODRUBY_SITEDIR}/puppet/application/help.rb
 ${MODRUBY_SITEDIR}/puppet/application/indirection_base.rb
 ${MODRUBY_SITEDIR}/puppet/application/inspect.rb
+${MODRUBY_SITEDIR}/puppet/application/instrumentation_data.rb
+${MODRUBY_SITEDIR}/puppet/application/instrumentation_listener.rb
+${MODRUBY_SITEDIR}/puppet/application/instrumentation_probe.rb
 ${MODRUBY_SITEDIR}/puppet/application/key.rb
 ${MODRUBY_SITEDIR}/puppet/application/kick.rb
 ${MODRUBY_SITEDIR}/puppet/application/man.rb
@@ -100,8 +104,20 @@ ${MODRUBY_SITEDIR}/puppet/face/help/action.erb
 ${MODRUBY_SITEDIR}/puppet/face/help/face.erb
 ${MODRUBY_SITEDIR}/puppet/face/help/global.erb
 ${MODRUBY_SITEDIR}/puppet/face/help/man.erb
+${MODRUBY_SITEDIR}/puppet/face/instrumentation_data.rb
+${MODRUBY_SITEDIR}/puppet/face/instrumentation_listener.rb
+${MODRUBY_SITEDIR}/puppet/face/instrumentation_probe.rb
 ${MODRUBY_SITEDIR}/puppet/face/key.rb
 ${MODRUBY_SITEDIR}/puppet/face/man.rb
+${MODRUBY_SITEDIR}/puppet/face/module/
+${MODRUBY_SITEDIR}/puppet/face/module/build.rb
+${MODRUBY_SITEDIR}/puppet/face/module/changes.rb
+${MODRUBY_SITEDIR}/puppet/face/module/clean.rb
+${MODRUBY_SITEDIR}/puppet/face/module/generate.rb
+${MODRUBY_SITEDIR}/puppet/face/module/install.rb
+${MODRUBY_SITEDIR}/puppet/face/module/list.rb
+${MODRUBY_SITEDIR}/puppet/face/module/search.rb
+${MODRUBY_SITEDIR}/puppet/face/module/uninstall.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/
 ${MODRUBY_SITEDIR}/puppet/face/node.rb
 ${MODRUBY_SITEDIR}/puppet/face/node/clean.rb
@@ -185,6 +201,7 @@ ${MODRUBY_SITEDIR}/puppet/indirector/facts/active_record.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/couch.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/facter.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/inventory_active_record.rb
+${MODRUBY_SITEDIR}/puppet/indirector/facts/inventory_service.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/memory.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/network_device.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/facts/rest.rb
@@ -205,6 +222,18 @@ ${MODRUBY_SITEDIR}/puppet/indirector/file_metadata/file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_metadata/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/file_server.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/indirection.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data/
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data/local.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_data/rest.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_listener/
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_listener.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_listener/local.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_listener/rest.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/local.rb
+${MODRUBY_SITEDIR}/puppet/indirector/instrumentation_probe/rest.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/inventory/
 ${MODRUBY_SITEDIR}/puppet/indirector/inventory/yaml.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/key/
@@ -262,19 +291,46 @@ ${MODRUBY_SITEDIR}/puppet/interface/option_manager.rb
 ${MODRUBY_SITEDIR}/puppet/metatype/
 ${MODRUBY_SITEDIR}/puppet/metatype/manager.rb
 ${MODRUBY_SITEDIR}/puppet/module.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/
+${MODRUBY_SITEDIR}/puppet/module_tool.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/
+${MODRUBY_SITEDIR}/puppet/module_tool/applications.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/application.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/builder.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/checksummer.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/cleaner.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/generator.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/installer.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/searcher.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/uninstaller.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/applications/unpacker.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/cache.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/checksums.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/contents_description.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/dependency.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/metadata.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/modulefile.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/repository.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/Modulefile.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/README.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/manifests/init.pp.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/spec/spec_helper.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/
+${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/generator/tests/init.pp.erb
+${MODRUBY_SITEDIR}/puppet/module_tool/utils/
+${MODRUBY_SITEDIR}/puppet/module_tool/utils.rb
+${MODRUBY_SITEDIR}/puppet/module_tool/utils/interrogation.rb
 ${MODRUBY_SITEDIR}/puppet/network/
 ${MODRUBY_SITEDIR}/puppet/network.rb
 ${MODRUBY_SITEDIR}/puppet/network/authconfig.rb
 ${MODRUBY_SITEDIR}/puppet/network/authorization.rb
 ${MODRUBY_SITEDIR}/puppet/network/authstore.rb
-${MODRUBY_SITEDIR}/puppet/network/client/
-${MODRUBY_SITEDIR}/puppet/network/client.rb
-${MODRUBY_SITEDIR}/puppet/network/client/ca.rb
-${MODRUBY_SITEDIR}/puppet/network/client/file.rb
-${MODRUBY_SITEDIR}/puppet/network/client/proxy.rb
-${MODRUBY_SITEDIR}/puppet/network/client/report.rb
-${MODRUBY_SITEDIR}/puppet/network/client/runner.rb
-${MODRUBY_SITEDIR}/puppet/network/client/status.rb
 ${MODRUBY_SITEDIR}/puppet/network/client_request.rb
 ${MODRUBY_SITEDIR}/puppet/network/format.rb
 ${MODRUBY_SITEDIR}/puppet/network/format_handler.rb
@@ -310,14 +366,12 @@ ${MODRUBY_SITEDIR}/puppet/network/http_pool.rb
 ${MODRUBY_SITEDIR}/puppet/network/http_server/
 ${MODRUBY_SITEDIR}/puppet/network/http_server.rb
 ${MODRUBY_SITEDIR}/puppet/network/http_server/mongrel.rb
-${MODRUBY_SITEDIR}/puppet/network/http_server/webrick.rb
 ${MODRUBY_SITEDIR}/puppet/network/rest_authconfig.rb
 ${MODRUBY_SITEDIR}/puppet/network/rest_authorization.rb
 ${MODRUBY_SITEDIR}/puppet/network/rest_controller.rb
 ${MODRUBY_SITEDIR}/puppet/network/rights.rb
 ${MODRUBY_SITEDIR}/puppet/network/server.rb
 ${MODRUBY_SITEDIR}/puppet/network/xmlrpc/
-${MODRUBY_SITEDIR}/puppet/network/xmlrpc/client.rb
 ${MODRUBY_SITEDIR}/puppet/network/xmlrpc/processor.rb
 ${MODRUBY_SITEDIR}/puppet/network/xmlrpc/server.rb
 ${MODRUBY_SITEDIR}/puppet/network/xmlrpc/webrick_servlet.rb
@@ -438,7 +492,7 @@ ${MODRUBY_SITEDIR}/puppet/provider/exec/shell.rb
 ${MODRUBY_SITEDIR}/puppet/provider/exec/windows.rb
 ${MODRUBY_SITEDIR}/puppet/provider/file/
 ${MODRUBY_SITEDIR}/puppet/provider/file/posix.rb
-${MODRUBY_SITEDIR}/puppet/provider/file/win32.rb
+${MODRUBY_SITEDIR}/puppet/provider/file/windows.rb
 ${MODRUBY_SITEDIR}/puppet/provider/group/
 ${MODRUBY_SITEDIR}/puppet/provider/group/aix.rb
 ${MODRUBY_SITEDIR}/puppet/provider/group/directoryservice.rb
@@ -508,6 +562,8 @@ ${MODRUBY_SITEDIR}/puppet/provider/package/zypper.rb
 ${MODRUBY_SITEDIR}/puppet/provider/parsedfile.rb
 ${MODRUBY_SITEDIR}/puppet/provider/port/
 ${MODRUBY_SITEDIR}/puppet/provider/port/parsed.rb
+${MODRUBY_SITEDIR}/puppet/provider/scheduled_task/
+${MODRUBY_SITEDIR}/puppet/provider/scheduled_task/win32_taskscheduler.rb
 ${MODRUBY_SITEDIR}/puppet/provider/selboolean/
 ${MODRUBY_SITEDIR}/puppet/provider/selboolean/getsetsebool.rb
 ${MODRUBY_SITEDIR}/puppet/provider/selmodule/
@@ -569,6 +625,7 @@ ${MODRUBY_SITEDIR}/puppet/rails/puppet_tag.rb
 ${MODRUBY_SITEDIR}/puppet/rails/resource.rb
 ${MODRUBY_SITEDIR}/puppet/rails/resource_tag.rb
 ${MODRUBY_SITEDIR}/puppet/rails/source_file.rb
+${MODRUBY_SITEDIR}/puppet/rb_tree_map.rb
 ${MODRUBY_SITEDIR}/puppet/reference/
 ${MODRUBY_SITEDIR}/puppet/reference/configuration.rb
 ${MODRUBY_SITEDIR}/puppet/reference/function.rb
@@ -608,12 +665,6 @@ ${MODRUBY_SITEDIR}/puppet/ssl/certificate_revocation_list.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/host.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/inventory.rb
 ${MODRUBY_SITEDIR}/puppet/ssl/key.rb
-${MODRUBY_SITEDIR}/puppet/sslcertificates/
-${MODRUBY_SITEDIR}/puppet/sslcertificates.rb
-${MODRUBY_SITEDIR}/puppet/sslcertificates/ca.rb
-${MODRUBY_SITEDIR}/puppet/sslcertificates/certificate.rb
-${MODRUBY_SITEDIR}/puppet/sslcertificates/inventory.rb
-${MODRUBY_SITEDIR}/puppet/sslcertificates/support.rb
 ${MODRUBY_SITEDIR}/puppet/status.rb
 ${MODRUBY_SITEDIR}/puppet/transaction/
 ${MODRUBY_SITEDIR}/puppet/transaction.rb
@@ -673,6 +724,7 @@ ${MODRUBY_SITEDIR}/puppet/type/port.rb
 ${MODRUBY_SITEDIR}/puppet/type/resources.rb
 ${MODRUBY_SITEDIR}/puppet/type/router.rb
 ${MODRUBY_SITEDIR}/puppet/type/schedule.rb
+${MODRUBY_SITEDIR}/puppet/type/scheduled_task.rb
 ${MODRUBY_SITEDIR}/puppet/type/selboolean.rb
 ${MODRUBY_SITEDIR}/puppet/type/selmodule.rb
 ${MODRUBY_SITEDIR}/puppet/type/service.rb
@@ -690,6 +742,7 @@ ${MODRUBY_SITEDIR}/puppet/type/zpool.rb
 ${MODRUBY_SITEDIR}/puppet/util/
 ${MODRUBY_SITEDIR}/puppet/util.rb
 ${MODRUBY_SITEDIR}/puppet/util/adsi.rb
+${MODRUBY_SITEDIR}/puppet/util/anonymous_filelock.rb
 ${MODRUBY_SITEDIR}/puppet/util/autoload/
 ${MODRUBY_SITEDIR}/puppet/util/autoload.rb
 ${MODRUBY_SITEDIR}/puppet/util/autoload/file_cache.rb
@@ -712,6 +765,15 @@ ${MODRUBY_SITEDIR}/puppet/util/graph.rb
 ${MODRUBY_SITEDIR}/puppet/util/inifile.rb
 ${MODRUBY_SITEDIR}/puppet/util/inline_docs.rb
 ${MODRUBY_SITEDIR}/puppet/util/instance_loader.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/
+${MODRUBY_SITEDIR}/puppet/util/instrumentation.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/data.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/indirection_probe.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/instrumentable.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/listener.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/log.rb
+${MODRUBY_SITEDIR}/puppet/util/instrumentation/listeners/performance.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/
 ${MODRUBY_SITEDIR}/puppet/util/ldap.rb
 ${MODRUBY_SITEDIR}/puppet/util/ldap/connection.rb
@@ -768,6 +830,7 @@ ${MODRUBY_SITEDIR}/puppet/util/rdoc/generators/template/puppet/puppet.rb
 ${MODRUBY_SITEDIR}/puppet/util/rdoc/parser.rb
 ${MODRUBY_SITEDIR}/puppet/util/reference.rb
 ${MODRUBY_SITEDIR}/puppet/util/resource_template.rb
+${MODRUBY_SITEDIR}/puppet/util/retryaction.rb
 ${MODRUBY_SITEDIR}/puppet/util/run_mode.rb
 ${MODRUBY_SITEDIR}/puppet/util/selinux.rb
 ${MODRUBY_SITEDIR}/puppet/util/settings/
@@ -778,9 +841,14 @@ ${MODRUBY_SITEDIR}/puppet/util/settings/setting.rb
 ${MODRUBY_SITEDIR}/puppet/util/storage.rb
 ${MODRUBY_SITEDIR}/puppet/util/subclass_loader.rb
 ${MODRUBY_SITEDIR}/puppet/util/suidmanager.rb
+${MODRUBY_SITEDIR}/puppet/util/symbolic_file_mode.rb
 ${MODRUBY_SITEDIR}/puppet/util/tagging.rb
 ${MODRUBY_SITEDIR}/puppet/util/user_attr.rb
 ${MODRUBY_SITEDIR}/puppet/util/warnings.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/
+${MODRUBY_SITEDIR}/puppet/util/windows.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/error.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/security.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/semver.rb
 @man man/man5/puppet.conf.5
