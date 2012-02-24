@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- CMakeLists.txt.orig	Fri Feb 24 11:29:57 2012
++++ CMakeLists.txt	Fri Feb 24 11:29:46 2012
+@@ -64,9 +64,9 @@ if(CMAKE_COMPILER_IS_GNUCC)
+ endif()
+ 
+ check_include_files(sys/param.h HAVE_SYS_PARAM_H)
+-check_include_files(sys/socket.h HAVE_SYS_SOCKET_H)
++check_include_files("sys/types.h;sys/socket.h" HAVE_SYS_SOCKET_H)
+ check_include_files(arpa/inet.h HAVE_ARPA_INET_H)
+-check_include_files(netinet/in.h HAVE_NETINET_IN_H)
++check_include_files("sys/types.h;netinet/in.h" HAVE_NETINET_IN_H)
+ check_include_files(termios.h HAVE_TERMIOS_H)
+ check_include_files(netdb.h HAVE_NETDB_H)
+ check_include_files(fcntl.h HAVE_FCNTL_H)

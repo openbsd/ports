@@ -1,0 +1,12 @@
+$OpenBSD: patch-remmina-plugins_vnc_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- remmina-plugins/vnc/CMakeLists.txt.orig	Fri Feb 24 12:35:58 2012
++++ remmina-plugins/vnc/CMakeLists.txt	Fri Feb 24 12:36:11 2012
+@@ -27,6 +27,8 @@ set(REMMINA_PLUGIN_VNC_SRCS
+ add_library(remmina-plugin-vnc ${REMMINA_PLUGIN_VNC_SRCS})
+ set_target_properties(remmina-plugin-vnc PROPERTIES PREFIX "")
+ 
++include_directories(${LOCALBASE}/include)
++
+ include_directories(${REMMINA_COMMON_INCLUDE_DIRS} ${LIBVNCSERVER_INCLUDE_DIRS})
+ target_link_libraries(remmina-plugin-vnc ${REMMINA_COMMON_LIBRARIES} ${LIBVNCSERVER_LIBRARIES})
+ 

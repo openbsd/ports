@@ -1,0 +1,12 @@
+$OpenBSD: patch-remmina-plugins_rdp_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- remmina-plugins/rdp/CMakeLists.txt.orig	Fri Feb 24 11:59:55 2012
++++ remmina-plugins/rdp/CMakeLists.txt	Fri Feb 24 12:00:06 2012
+@@ -38,6 +38,8 @@ set(REMMINA_PLUGIN_RDP_SRCS
+ add_library(remmina-plugin-rdp ${REMMINA_PLUGIN_RDP_SRCS})
+ set_target_properties(remmina-plugin-rdp PROPERTIES PREFIX "")
+ 
++include_directories(${X11BASE}/include)
++
+ include_directories(${REMMINA_COMMON_INCLUDE_DIRS} ${FREERDP_INCLUDE_DIRS})
+ target_link_libraries(remmina-plugin-rdp ${REMMINA_COMMON_LIBRARIES} ${FREERDP_LIBRARIES})
+ 

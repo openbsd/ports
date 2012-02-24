@@ -1,0 +1,18 @@
+$OpenBSD: patch-remmina-plugins_common_remmina_plugin_h,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- remmina-plugins/common/remmina_plugin.h.orig	Fri Feb 24 11:55:15 2012
++++ remmina-plugins/common/remmina_plugin.h	Fri Feb 24 11:55:06 2012
+@@ -36,11 +36,11 @@
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
+ #endif
+-#ifdef HAVE_ARPA_INET_H
+-#include <arpa/inet.h>
+-#endif
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
++#endif
++#ifdef HAVE_ARPA_INET_H
++#include <arpa/inet.h>
+ #endif
+ #ifdef HAVE_SYS_SOCKET_H
+ #include <sys/socket.h>

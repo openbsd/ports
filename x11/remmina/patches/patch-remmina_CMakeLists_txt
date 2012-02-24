@@ -1,0 +1,13 @@
+$OpenBSD: patch-remmina_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- remmina/CMakeLists.txt.orig	Fri Feb 10 19:54:23 2012
++++ remmina/CMakeLists.txt	Fri Feb 24 11:47:36 2012
+@@ -90,6 +90,9 @@ set(REMMINA_SRCS
+ 
+ add_executable(remmina ${REMMINA_SRCS})
+ 
++include_directories(${X11BASE}/include)
++link_directories(${LOCALBASE}/lib)
++
+ include_directories(${GTK_INCLUDE_DIRS})
+ target_link_libraries(remmina ${GTK_LIBRARIES})
+ 

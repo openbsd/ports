@@ -1,0 +1,13 @@
+$OpenBSD: patch-remmina-plugins_xdmcp_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+--- remmina-plugins/xdmcp/CMakeLists.txt.orig	Fri Feb 10 19:54:23 2012
++++ remmina-plugins/xdmcp/CMakeLists.txt	Fri Feb 24 11:55:36 2012
+@@ -24,6 +24,9 @@ set(REMMINA_PLUGIN_XDMCP_SRCS
+ add_library(remmina-plugin-xdmcp ${REMMINA_PLUGIN_XDMCP_SRCS})
+ set_target_properties(remmina-plugin-xdmcp PROPERTIES PREFIX "")
+ 
++include_directories(${X11BASE}/include)
++include_directories(${LOCALBASE}/include)
++
+ include_directories(${REMMINA_COMMON_INCLUDE_DIRS})
+ target_link_libraries(remmina-plugin-xdmcp ${REMMINA_COMMON_LIBRARIES})
+ 
