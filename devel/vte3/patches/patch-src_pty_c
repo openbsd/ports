@@ -1,27 +1,90 @@
-$OpenBSD: patch-src_pty_c,v 1.1.1.1 2011/09/26 14:31:33 jasper Exp $
+$OpenBSD: patch-src_pty_c,v 1.2 2012/02/24 10:44:55 mpi Exp $
 
-Party revert to previous behaviour of returning -1, instead of failing
-to compile.
+Use openpty(3) backend instead of gnome-pty-helper
 
---- src/pty.c.orig	Mon Aug 29 13:16:26 2011
-+++ src/pty.c	Mon Sep 26 15:46:55 2011
-@@ -795,7 +795,8 @@ _vte_pty_ptsname(int master,
-                     "%s failed: %s", "ioctl(TIOCGPTN)", g_strerror(errno));
-         return NULL;
- #else
--#error no ptsname implementation for this platform
-+#warning no ptsname implementation for this platform
-+	return NULL;
+--- src/pty.c
++++ src/pty.c
+@@ -54,6 +54,9 @@
+ #include <termios.h>
  #endif
+ #include <unistd.h>
++#ifdef HAVE_UTIL_H
++#include <util.h>
++#endif
+ #ifdef HAVE_STROPTS_H
+ #include <stropts.h>
+ #endif
+@@ -734,6 +737,7 @@ vte_pty_get_size(VtePty *pty,
+ 	}
  }
  
-@@ -903,7 +904,8 @@ _vte_pty_unlockpt(int fd,
-         }
++#ifndef VTE_USE_BSD_PTY
+ /*
+  * _vte_pty_ptsname:
+  * @master: file descriptor to the PTY master
+@@ -951,6 +955,44 @@ _vte_pty_open_unix98(VtePty *pty,
          return TRUE;
- #else
--#error no unlockpt implementation for this platform
-+#warning no unlockpt implementation for this platform
-+	return -1;
- #endif
  }
  
++#else
++/*
++ * _vte_pty_open_bsd:
++ * @pty: a #VtePty
++ * @error: a location to store a #GError, or %NULL
++ *
++ * Opens new file descriptors to a new PTY master and slave.
++ *
++ * Returns: %TRUE on success, %FALSE on failure with @error filled in
++ */
++static gboolean
++_vte_pty_open_bsd(VtePty *pty,
++                  GError **error)
++{
++#ifdef HAVE_OPENPTY
++        VtePtyPrivate *priv = pty->priv;
++	int parentfd, childfd;
++
++	if (openpty(&parentfd, &childfd, NULL, NULL, NULL) != 0) {
++                int errsv = errno;
++                g_set_error(error, VTE_PTY_ERROR, VTE_PTY_ERROR_PTY98_FAILED,
++                            "%s failed: %s", "openpty", g_strerror(errsv));
++                errno = errsv;
++		return FALSE;
++	}
++
++        priv->pty_fd = parentfd;
++        priv->child_setup_data.mode = TTY_OPEN_BY_FD;
++        priv->child_setup_data.tty.fd = childfd;
++        priv->using_helper = FALSE;
++
++        return TRUE;
++#else
++#error no openpty implementation for this platform
++#endif
++}
++#endif /* VTE_USE_BSD_PTY */
++
+ #ifdef VTE_USE_GNOME_PTY_HELPER
+ #ifdef HAVE_RECVMSG
+ static void
+@@ -1511,7 +1553,7 @@ vte_pty_initable_init (GInitable *initable,
+                 }
+ 
+                 g_error_free(err);
+-                /* Fall back to unix98 PTY */
++                /* Fall back to unix98 or bsd PTY */
+         }
+ #else
+         if (priv->flags & VTE_PTY_NO_FALLBACK) {
+@@ -1521,7 +1563,11 @@ vte_pty_initable_init (GInitable *initable,
+         }
+ #endif /* VTE_USE_GNOME_PTY_HELPER */
+ 
++#ifndef VTE_USE_BSD_PTY
+         ret = _vte_pty_open_unix98(pty, error);
++#else
++	ret = _vte_pty_open_bsd(pty, error);
++#endif /* VTE_USE_BSD_PTY */
+ 
+   out:
+ 	_vte_debug_print(VTE_DEBUG_PTY,

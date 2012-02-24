@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/02/21 22:36:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/02/24 10:44:55 mpi Exp $
 
 COMMENT=		terminal emulation library
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=		vte
 GNOME_VERSION=		0.30.1
 
 PKGNAME=		vte3-${GNOME_VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  vte2_90                   1.0 # 3009.0
 
@@ -38,7 +38,12 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	goi
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--disable-Bsymbolic \
+			--disable-gnome-pty-helper \
+			--enable-bsd-pty
 
 .include <bsd.port.mk>

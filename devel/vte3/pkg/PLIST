@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/02/06 22:07:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/02/24 10:44:55 mpi Exp $
 @conflict vte-<0.28.2p3
 @conflict vte-ptyhelper-*
 @bin bin/vte2_90
@@ -19,11 +19,6 @@ lib/libvte2_90.la
 @lib lib/libvte2_90.so.${LIBvte2_90_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/vte-2.90.pc
-@mode g+s
-@group utmp
-@bin libexec/gnome-pty-helper
-@mode
-@group
 share/gir-1.0/
 share/gir-1.0/Vte-2.90.gir
 share/gtk-doc/

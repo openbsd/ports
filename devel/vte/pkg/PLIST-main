@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2012/02/06 22:07:09 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2012/02/24 10:44:55 mpi Exp $
 @conflict vte-ptyhelper-*
 @pkgpath devel/vte
 @pkgpath devel/vte,-main,gtk2
@@ -21,11 +21,6 @@ lib/libvte.la
 @lib lib/libvte.so.${LIBvte_VERSION}
 lib/pkgconfig/vte.pc
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/
-@mode g+s
-@group utmp
-@bin libexec/gnome-pty-helper2
-@mode
-@group
 share/gir-1.0/Vte-0.0.gir
 share/gtk-doc/html/vte-0.0/
 share/gtk-doc/html/vte-0.0/VteReaper.html

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2012/02/06 22:07:09 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2012/02/24 10:44:55 mpi Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -14,7 +14,7 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		5
+REVISION-main =		6
 REVISION-python = 	3
 
 CATEGORIES=		devel
@@ -39,7 +39,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
 WANTLIB += expat ffi fontconfig freetype gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m ncurses
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread-stubs stdc++ util xcb xcb-render xcb-shm z
 
 
 MODPY_RUNDEP=		No
@@ -63,8 +63,13 @@ CONFIGURE_ARGS+=	--enable-python
 
 MODGNOME_TOOLS= 	goi
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--disable-Bsymbolic \
+			--disable-gnome-pty-helper \
+			--enable-bsd-pty \
 			--with-gtk=2.0 \
 			--program-suffix=2
 
