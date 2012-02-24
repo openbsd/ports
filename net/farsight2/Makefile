@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 19:52:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/02/24 09:35:43 ajacoutot Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farsight2-0.0.30
 SHARED_LIBS +=  gstfarsight-0.10     3.0      # 9.1
 CATEGORIES=		net multimedia
+REVISION=		0
 
 HOMEPAGE=		http://farsight.freedesktop.org/
 
@@ -14,15 +15,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}/releases/farsight2/
-
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 gstnetbuffer-0.10
+WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstbase-0.10 gstnetbuffer-0.10
 WANTLIB += gstreamer-0.10 gstrtp-0.10 gthread-2.0 m nice pcre
 WANTLIB += xml2 z
 
+MASTER_SITES=		${HOMEPAGE}/releases/farsight2/
+
 BUILD_DEPENDS=		${RUN_DEPENDS}
-LIB_DEPENDS=		net/libnice>=0.1.0 \
-			${MODPY_LIB_DEPENDS}
+LIB_DEPENDS=		net/libnice>=0.1.0
 RUN_DEPENDS=		multimedia/gstreamer-0.10/plugins-farsight>=0.12.11p0 \
 			multimedia/gstreamer-0.10/py-gstreamer
 
