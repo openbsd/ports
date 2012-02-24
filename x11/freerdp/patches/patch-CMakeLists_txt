@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/24 09:41:43 sthen Exp $
+--- CMakeLists.txt.orig	Mon Jan 16 17:52:14 2012
++++ CMakeLists.txt	Mon Feb  6 19:10:45 2012
+@@ -106,6 +106,8 @@ if(APPLE)
+ endif()
+ 
+ if(NOT WIN32)
++	include_directories(/usr/X11R6/include)
++	link_directories(/usr/local/lib)
+ 	find_required_package(ZLIB)
+ 	find_optional_package(PulseAudio)
+ 	find_optional_package(PCSC)
