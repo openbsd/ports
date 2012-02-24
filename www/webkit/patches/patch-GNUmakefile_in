@@ -1,12 +1,12 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.15 2012/02/24 16:36:00 landry Exp $
 
 - install GtkLauncher, remove silent build lines, fix lpthread/pthread
 - append extra cflags for sparc64 which otherwise result in overoptimization
   by emitting a fdtox %r8, %r7 call, whose second operatand isn't even and thus invalid.
 
---- GNUmakefile.in.orig	Tue Sep 27 12:41:43 2011
-+++ GNUmakefile.in	Mon Oct 10 14:34:20 2011
-@@ -78,7 +78,7 @@ POST_UNINSTALL = :
+--- GNUmakefile.in.orig	Wed Feb  1 14:49:37 2012
++++ GNUmakefile.in	Fri Feb  3 14:25:45 2012
+@@ -85,7 +85,7 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
  bin_PROGRAMS = Programs/jsc-@WEBKITGTK_API_MAJOR_VERSION@$(EXEEXT) \
@@ -15,7 +15,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  noinst_PROGRAMS = Programs/jsc$(EXEEXT) Programs/minidom$(EXEEXT) \
  	$(am__EXEEXT_4) Programs/DumpRenderTree$(EXEEXT) \
  	Programs/GtkLauncher$(EXEEXT) $(am__EXEEXT_5) \
-@@ -10563,7 +10563,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -10572,7 +10572,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_$(V))
  am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -24,7 +24,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  AM_V_at = $(am__v_at_$(V))
  am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
  am__v_at_0 = @
-@@ -10573,12 +10573,12 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -10582,12 +10582,12 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
@@ -39,7 +39,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
-@@ -16635,9 +16635,10 @@ libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WE
+@@ -16654,9 +16654,10 @@ libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WE
  libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LIBADD = \
  	$(UNICODE_LIBS) \
  	$(GLIB_LIBS) \
@@ -52,7 +52,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CFLAGS)
-@@ -16665,7 +16666,7 @@ Programs_minidom_LDADD = \
+@@ -16684,7 +16685,7 @@ Programs_minidom_LDADD = \
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  	$(WINMM_LIBS) \
  	-lm \
@@ -61,7 +61,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  	-lstdc++
  
  Programs_minidom_LDFLAGS = \
-@@ -16686,7 +16687,7 @@ Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_CXXFLAGS = 
+@@ -16705,7 +16706,7 @@ Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_CXXFLAGS = 
  	$(UNICODE_CFLAGS)
  
  Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_LDADD = \
@@ -70,7 +70,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  	$(WINMM_LIBS)
  
-@@ -16911,12 +16912,13 @@ libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_
+@@ -16930,12 +16931,13 @@ libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_
  	$(ZLIB_CFLAGS)
  
  libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LDFLAGS = \
@@ -85,7 +85,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.14 2011/10/13 06:52:49 jasper Exp $
  	libWebCore.la \
  	libWebCoreGtk.la \
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
-@@ -59167,7 +59169,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -59308,7 +59310,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp

@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.60 2011/11/17 11:42:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2012/02/24 16:36:00 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.6.1
+V =		1.6.3
 DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
-
-REVISION =	0
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -88,12 +87,12 @@ LIB_DEPENDS +=	x11/gtk+3,-main
 WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3
 CONFIGURE_ARGS += --with-gtk=3.0
 SHARED_LIBS +=  webkitgtk-3.0            2.0      # .11.0
-SHARED_LIBS +=  javascriptcoregtk-3.0    0.0      # 0.0
+SHARED_LIBS +=  javascriptcoregtk-3.0    1.0      # 0.0
 .else
 WANTLIB +=	gailutil gdk-x11-2.0 gtk-x11-2.0
 LIB_DEPENDS +=	x11/gtk+2,-main
 CONFIGURE_ARGS += --with-gtk=2.0
-SHARED_LIBS +=  javascriptcoregtk-1.0    0.0      # .0.0
+SHARED_LIBS +=  javascriptcoregtk-1.0    1.0      # .0.0
 SHARED_LIBS +=  webkitgtk-1.0            2.0      # .11.0
 .endif
 

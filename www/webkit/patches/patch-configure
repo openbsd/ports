@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.6 2011/10/13 06:52:49 jasper Exp $
+$OpenBSD: patch-configure,v 1.7 2012/02/24 16:36:00 landry Exp $
 
 GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
@@ -8,9 +8,9 @@ Add amd64 to x86_64 host_cpu.
 Don't force the use of -O2, the ports infrastructure
 takes care of that
 
---- configure.orig	Tue Sep 27 12:41:23 2011
-+++ configure	Fri Oct  7 10:03:03 2011
-@@ -19061,22 +19061,10 @@ install-data-am: install-gsettings-schemas
+--- configure.orig	Wed Feb  1 14:49:20 2012
++++ configure	Fri Feb  3 14:25:45 2012
+@@ -19142,22 +19142,10 @@ install-data-am: install-gsettings-schemas
  
  .SECONDARY: $(gsettings_SCHEMAS)
  
@@ -35,7 +35,7 @@ takes care of that
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
-@@ -21029,7 +21017,7 @@ $as_echo "#define ENABLE_YARR 1" >>confdefs.h
+@@ -21114,7 +21102,7 @@ $as_echo "#define ENABLE_YARR 1" >>confdefs.h
  $as_echo "#define ENABLE_YARR_JIT 1" >>confdefs.h
  
          ;;
@@ -44,7 +44,7 @@ takes care of that
  
  $as_echo "#define ENABLE_JIT 1" >>confdefs.h
  
-@@ -21054,7 +21042,7 @@ $as_echo "#define ENABLE_JIT_OPTIMIZE_ARITHMETIC 1" >>
+@@ -21139,7 +21127,7 @@ $as_echo "#define ENABLE_JIT_OPTIMIZE_ARITHMETIC 1" >>
  $as_echo "#define WTF_USE_JIT_STUB_ARGUMENT_VA_LIST 1" >>confdefs.h
  
                  ;;
@@ -53,7 +53,7 @@ takes care of that
  
  $as_echo "#define WTF_USE_JIT_STUB_ARGUMENT_REGISTER 1" >>confdefs.h
  
-@@ -21346,8 +21334,8 @@ fi
+@@ -21431,8 +21419,8 @@ fi
  
  # Add the appropriate 'O' level for optimized builds
  if test "$enable_optimizations" = "yes"; then
