@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2011/11/01 16:07:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2012/02/25 10:25:57 ajacoutot Exp $
 
 COMMENT-main=	generic shared library support script
 COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
@@ -32,7 +32,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	GREP=/usr/bin/grep \
 		ac_cv_f77_compiler_gnu=yes \
-		ac_cv_path_SED=/usr/bin/sed \
 		lt_cv_prog_compiler_c_o_F77=yes \
 		lt_cv_prog_compiler_pic_works_F77=yes \
 		lt_cv_prog_compiler_static_works_F77=yes \
