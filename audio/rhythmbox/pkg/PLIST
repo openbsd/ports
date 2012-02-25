@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2012/01/16 12:10:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2012/02/25 11:24:28 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -139,6 +139,10 @@ lib/rhythmbox/plugins/generic-player/
 lib/rhythmbox/plugins/generic-player/generic-player.plugin
 @comment lib/rhythmbox/plugins/generic-player/libgeneric-player.la
 lib/rhythmbox/plugins/generic-player/libgeneric-player.so
+lib/rhythmbox/plugins/grilo/
+lib/rhythmbox/plugins/grilo/grilo.plugin
+@comment lib/rhythmbox/plugins/grilo/libgrilo.la
+lib/rhythmbox/plugins/grilo/libgrilo.so
 lib/rhythmbox/plugins/im-status/
 lib/rhythmbox/plugins/im-status/im-status.plugin
 lib/rhythmbox/plugins/im-status/im-status.py

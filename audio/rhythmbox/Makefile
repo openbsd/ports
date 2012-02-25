@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2012/02/21 11:30:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2012/02/25 11:24:28 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.95
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -23,17 +23,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
-WANTLIB += atk-1.0 bz2 c cairo cairo-gobject dbus-1 drm
-WANTLIB += expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 bz2 c cairo cairo-gobject dbus-1 drm expat
+WANTLIB += ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
-WANTLIB += gnome-keyring gobject-2.0 gpg-error gpod
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gpod grilo-0.1
 WANTLIB += gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
-WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 lzma m notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
-WANTLIB += pixman-1 plist png pthread pthread-stubs soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ tdb totem-plparser xcb xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gthread-2.0
+WANTLIB += gtk-3 json-glib-1.0 lzma m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
+WANTLIB += png pthread pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3
+WANTLIB += stdc++ tdb totem-plparser xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -43,12 +43,13 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		audio/libmusicbrainz \
 			devel/py-gobject3
 
-LIB_DEPENDS=		devel/libpeas \
-			audio/libgpod \
+LIB_DEPENDS=		audio/libgpod \
+			databases/tdb \
 			devel/json-glib \
 			devel/libnotify>=0.7.2 \
-			x11/gnome/totem-pl-parser \
-			databases/tdb
+			devel/libpeas \
+			x11/gnome/grilo \
+			x11/gnome/totem-pl-parser
 
 RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
 			x11/dbus-python \
