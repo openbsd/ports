@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libraw_cxx_cpp,v 1.1.1.1 2010/07/23 16:05:40 phessler Exp $
---- src/libraw_cxx.cpp.orig	Thu Jul  1 18:09:19 2010
-+++ src/libraw_cxx.cpp	Thu Jul  1 18:11:26 2010
-@@ -23,6 +23,8 @@ it under the terms of the one of three licenses as you
- #include <float.h>
- #include <math.h>
+$OpenBSD: patch-src_libraw_cxx_cpp,v 1.2 2012/02/26 15:07:40 ajacoutot Exp $
+--- src/libraw_cxx.cpp.orig	Sat Dec 24 15:59:38 2011
++++ src/libraw_cxx.cpp	Sun Feb 26 15:29:20 2012
+@@ -26,6 +26,8 @@ it under the terms of the one of three licenses as you
+ #include <sys/types.h>
+ #include <sys/stat.h>
  #ifndef WIN32
 +#include <sys/types.h>
 +#include <sys/socket.h>

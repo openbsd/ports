@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/24 12:13:27 phessler Exp $
+# $OpenBSD: Makefile,v 1.4 2012/02/26 15:07:39 ajacoutot Exp $
+
 COMMENT =		library for reading RAW files
 
-V =			0.9.1
+V =			0.14.5
 DISTNAME =		LibRaw-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 CATEGORIES =		graphics
+
+SHARED_LIBS +=  raw                  0.0      # 5.0
+SHARED_LIBS +=  raw_r                0.0      # 5.0
 
 HOMEPAGE =		http://www.libraw.org/
 
@@ -15,20 +18,19 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += c jasper lcms2 m pthread stdc++
+
 MASTER_SITES =		http://www.libraw.org/data/
 NO_REGRESS =		Yes
 
-#WANTLIB +=		c m pthread stdc++
+LIB_DEPENDS =		graphics/jasper \
+			graphics/lcms2
 
-pre-configure:
-	@cp ${FILESDIR}/raw.pc ${WRKBUILD}
-	@perl -pi -e 's,%%VERSION%%,${V},g' ${WRKBUILD}/raw.pc
+USE_LIBTOOL =		Yes
 
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/libraw/
-	${INSTALL_DATA} ${WRKBUILD}/libraw/* ${PREFIX}/include/libraw/
-	${INSTALL_SCRIPT} ${WRKBUILD}/lib/libraw* ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig/
-	${INSTALL_SCRIPT} ${WRKBUILD}/raw.pc ${PREFIX}/lib/pkgconfig/
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			 LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

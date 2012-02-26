@@ -1,4 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/08/22 12:12:26 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/02/26 15:07:40 ajacoutot Exp $
+%%SHARED%%
+@bin bin/4channels
+@bin bin/dcraw_emu
+@bin bin/dcraw_half
+@bin bin/half_mt
+@bin bin/mem_image
+@bin bin/multirender_test
+@bin bin/postprocessing_benchmark
+@bin bin/raw-identify
+@bin bin/simple_dcraw
+@bin bin/unprocessed_raw
 include/libraw/
 include/libraw/libraw.h
 include/libraw/libraw_alloc.h
@@ -8,6 +19,15 @@ include/libraw/libraw_internal.h
 include/libraw/libraw_types.h
 include/libraw/libraw_version.h
 lib/libraw.a
+lib/libraw.la
 lib/libraw_r.a
+lib/libraw_r.la
 lib/pkgconfig/
-lib/pkgconfig/raw.pc
+lib/pkgconfig/libraw.pc
+lib/pkgconfig/libraw_r.pc
+share/doc/libraw/
+share/doc/libraw/COPYRIGHT
+share/doc/libraw/Changelog.txt
+share/doc/libraw/LICENSE.CDDL
+share/doc/libraw/LICENSE.LGPL
+share/doc/libraw/LICENSE.LibRaw.pdf
