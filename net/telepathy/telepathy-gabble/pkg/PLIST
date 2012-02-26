@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/23 12:41:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/02/26 12:53:09 ajacoutot Exp $
 lib/telepathy/
+lib/telepathy-gabble-tests/
 lib/telepathy/gabble-0/
 lib/telepathy/gabble-0/gateways.a
 lib/telepathy/gabble-0/gateways.la
