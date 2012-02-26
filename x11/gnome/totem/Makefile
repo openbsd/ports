@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/02/21 11:29:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/02/26 08:16:22 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		14
+REVISION-main=		15
 REVISION-nautilus=	5
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
@@ -51,7 +51,6 @@ WANTLIB-main += peas-1.0 peas-gtk-1.0 pthread
 WANTLIB-nautilus += ${WANTLIB} nautilus-extension
 
 BUILD_DEPENDS+= 	devel/iso-codes \
-			lang/vala \
 			multimedia/gstreamer-0.10/plugins-good>=0.10.30 \
 			devel/py-gobject
 
@@ -82,7 +81,7 @@ PORTHOME=	${WRKDIR}
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= goi yelp
+MODGNOME_TOOLS= goi vala yelp
 USE_GROFF=	Yes
 
 # im-status gromit iplayer jamendo lirc media-player-keys ontop opensubtitles
@@ -101,7 +100,6 @@ CONFIGURE_ARGS=	--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \
 		--enable-nautilus \
 		--enable-python \
-		--enable-vala \
 		--disable-easy-codec-installation \
 		--disable-browser-plugins \
 		--disable-gmp-plugin \
