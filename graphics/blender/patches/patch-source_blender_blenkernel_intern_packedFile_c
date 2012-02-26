@@ -1,12 +1,12 @@
-$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.3 2009/10/25 22:41:25 steven Exp $
---- source/blender/blenkernel/intern/packedFile.c.orig	Tue Sep  1 17:21:17 2009
-+++ source/blender/blenkernel/intern/packedFile.c	Sat Oct 10 19:25:00 2009
-@@ -303,7 +303,7 @@ int writePackedFile(char * filename, PackedFile *pf, i
+$OpenBSD: patch-source_blender_blenkernel_intern_packedFile_c,v 1.4 2012/02/26 20:37:26 pascal Exp $
+--- source/blender/blenkernel/intern/packedFile.c.orig	Tue Dec 13 20:49:12 2011
++++ source/blender/blenkernel/intern/packedFile.c	Thu Dec 15 11:37:07 2011
+@@ -292,7 +292,7 @@ int writePackedFile(ReportList *reports, const char *f
  	// make sure the path to the file exists...
  	BLI_make_existing_file(name);
  	
 -	file = open(name, O_BINARY + O_WRONLY + O_CREAT + O_TRUNC, 0666);
-+	file = open(name, O_WRONLY|O_CREAT|O_TRUNC, 0666);
++	file = open(name, O_WRONLY | O_CREAT | O_TRUNC, 0666);
  	if (file >= 0) {
  		if (write(file, pf->data, pf->size) != pf->size) {
- 			if(guimode) error("Error writing file: %s", name);
+ 			BKE_reportf(reports, RPT_ERROR, "Error writing file: %s", name);

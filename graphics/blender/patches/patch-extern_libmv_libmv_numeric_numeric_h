@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_libmv_libmv_numeric_numeric_h,v 1.1 2012/02/26 20:37:26 pascal Exp $
+--- extern/libmv/libmv/numeric/numeric.h.orig	Thu Dec 15 12:05:36 2011
++++ extern/libmv/libmv/numeric/numeric.h	Thu Dec 15 12:05:50 2011
+@@ -33,7 +33,7 @@
+ #include <Eigen/QR>
+ #include <Eigen/SVD>
+ 
+-#if _WIN32 || __APPLE__ || __FreeBSD__
++#if _WIN32 || __APPLE__ || __FreeBSD__ || __OpenBSD__
+   void static sincos (double x, double *sinx, double *cosx) {
+     *sinx = sin(x);
+     *cosx = cos(x);

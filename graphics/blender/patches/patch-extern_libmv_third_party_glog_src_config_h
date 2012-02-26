@@ -1,0 +1,12 @@
+$OpenBSD: patch-extern_libmv_third_party_glog_src_config_h,v 1.1 2012/02/26 20:37:26 pascal Exp $
+--- extern/libmv/third_party/glog/src/config.h.orig	Wed Feb 15 20:41:04 2012
++++ extern/libmv/third_party/glog/src/config.h	Fri Feb 17 19:01:55 2012
+@@ -6,6 +6,8 @@
+  #include "config_mac.h"
+ #elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
+  #include "config_freebsd.h"
++#elif defined(__OpenBSD__)
++ #include "config_openbsd.h"
+ #elif defined(__MINGW32__)
+  #include "windows/config.h"
+ #elif defined(__linux__)

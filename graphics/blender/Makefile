@@ -1,84 +1,87 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2012/02/26 20:37:25 pascal Exp $
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.49b
-REVISION =	5
+DISTNAME =	blender-2.62
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.blender.org/
 
-# GPL
+MAINTAINER =	Pascal Stumpf <Pascal.Stumpf@cubes.de>
+
+VMEM_WARNING =	Yes
+
+# GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
-MODULES =	devel/scons lang/python
+MODULES =	devel/cmake \
+		lang/python \
+		devel/gettext
+MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =	graphics/tiff
-BUILD_DEPENDS =	graphics/tiff
+CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.so" \
+			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
+			-DPYTHON_VERSION=${MODPY_VERSION} \
+			-DWITH_BUILTIN_GLEW=OFF
+
+BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/glew \
+		graphics/openexr \
+		graphics/tiff \
+		devel/boost \
 		devel/sdl \
+		audio/openal \
+		graphics/openjpeg \
 		${MODPY_LIB_DEPENDS}
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gnome/librsvg
 
-WANTLIB =	GL GLU X11 Xi c m pthread stdc++ util z
-WANTLIB += 	${MODPY_WANTLIB}
-WANTLIB +=	png jpeg GLEW SDL
+WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
+WANTLIB += Xi Xxf86vm boost_filesystem-mt boost_regex-mt boost_system-mt
+WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
+WANTLIB += pthread ${MODPY_WANTLIB} stdc++ tiff util z
 
-SEPARATE_BUILD = simple
 NO_REGRESS =	Yes
 
-CFLAGS +=	-fPIC -funsigned-char -fno-strict-aliasing
+CFLAGS +=	-I${LOCALBASE}/include -I${X11BASE}/include
 
-post-extract:
-	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd-config.py
-
-ALL_TARGET =	blendernogame
-
-MODSCONS_ENV =	CC=${CC} CXX=${CXX} C_WARN="-Wall" \
-		CFLAGS="${CFLAGS}" CCFLAGS="${CXXFLAGS}" \
-		REL_CFLAGS= REL_CCFLAGS= \
-		BF_BUILDDIR=${WRKBUILD} \
-		BF_FANCY=0 \
-		BF_QUIET=0 \
-		BF_PYTHON=${LOCALBASE} BF_PYTHON_VERSION=${MODPY_VERSION} \
-		BF_GLEW=${LOCALBASE} \
-		BF_GLEW_LIB=GLEW BF_GLEW_LIBPATH=${LOCALBASE}/lib \
-		BF_JPEG=${LOCALBASE} \
-		BF_PNG=${LOCALBASE} \
-		BF_SDL_INC="${LOCALBASE}/include/SDL ${LOCALBASE}/include" \
-		BF_TIFF=${LOCALBASE} \
-		BF_OPENGL=${X11BASE} \
-		BF_ZLIB=/usr \
-		WITH_BF_INTERNATIONAL=false \
-		WITH_BF_STATICOPENGL=false \
-		WITH_BF_FTGL=false \
-		WITH_BF_BULLET=false
+MODPY_ADJ_FILES =	release/bin/blender-thumbnailer.py \
+			release/scripts/modules/blend_render_info.py
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/bin/blender ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/scripts/bpymodules
-	${INSTALL_DATA} ${WRKSRC}/release/scripts/*.py \
+	${INSTALL_SCRIPT} ${FILESDIR}/blender ${PREFIX}/bin
+	${SUBST_CMD} ${PREFIX}/bin/blender
+	${INSTALL_PROGRAM} ${WRKBUILD}/bin/blender ${PREFIX}/bin/blender-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/release/bin/blender-thumbnailer.py \
+		${PREFIX}/bin/blender-thumbnailer
+	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/scripts
+	${INSTALL_DATA_DIR} ${PREFIX}/share/blender/datafiles
+	cd ${WRKSRC}/release/scripts && pax -rw . \
 		${PREFIX}/share/blender/scripts
-	${INSTALL_DATA} ${WRKSRC}/release/scripts/bpymodules/*.py \
-		${PREFIX}/share/blender/scripts/bpymodules
+	cd ${WRKSRC}/release/datafiles && pax -rw . \
+		${PREFIX}/share/blender/datafiles
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/blender
-	${INSTALL_DATA} ${WRKSRC}/release/text/?lender* \
-		${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/release/text/*license* \
 		${PREFIX}/share/doc/blender
 	${INSTALL_DATA} ${WRKSRC}/release/text/copy* \
 		${PREFIX}/share/doc/blender
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/release/freedesktop/blender.desktop \
+		${PREFIX}/share/applications
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/release/freedesktop/icons/32x32/blender.png \
+	${INSTALL_DATA} \
+		${WRKSRC}/release/freedesktop/icons/scalable/apps/blender.svg \
 		${PREFIX}/share/pixmaps
+	${INSTALL_MAN} ${WRKSRC}/doc/manpage/blender.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

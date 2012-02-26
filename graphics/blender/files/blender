@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export BLENDER_SYSTEM_DATAFILES="${TRUEPREFIX}/share/blender/datafiles"
+export BLENDER_SYSTEM_SCRIPTS="${TRUEPREFIX}/share/blender/scripts"
+
+exec "${TRUEPREFIX}/bin/blender-bin" "$@"
