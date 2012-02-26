@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_rs6000_rs6000_c,v 1.1 2012/02/26 22:32:36 pascal Exp $
+http://gcc.gnu.org/bugzilla/show_bug.cgi?id=51623
+--- gcc/config/rs6000/rs6000.c.orig	Tue Feb 21 09:54:58 2012
++++ gcc/config/rs6000/rs6000.c	Tue Feb 21 09:55:36 2012
+@@ -16613,7 +16613,7 @@ rs6000_assemble_integer (rtx x, unsigned int size, int
+       if (TARGET_RELOCATABLE
+ 	  && in_section != toc_section
+ 	  && in_section != text_section
+-	  && !unlikely_text_section_p (in_section)
++	  && (in_section && (in_section->common.flags & SECTION_CODE)) == 0
+ 	  && !recurse
+ 	  && GET_CODE (x) != CONST_INT
+ 	  && GET_CODE (x) != CONST_DOUBLE
