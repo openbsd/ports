@@ -1,4 +1,4 @@
-$OpenBSD: patch-scripts_libpng_pc_in,v 1.22 2011/11/14 17:48:59 rpointel Exp $
+$OpenBSD: patch-scripts_libpng_pc_in,v 1.23 2012/02/26 14:57:54 naddy Exp $
 --- scripts/libpng.pc.in.orig	Thu Nov  3 04:42:52 2011
 +++ scripts/libpng.pc.in	Thu Nov  3 12:20:06 2011
 @@ -1,10 +1,10 @@
@@ -10,7 +10,7 @@ $OpenBSD: patch-scripts_libpng_pc_in,v 1.22 2011/11/14 17:48:59 rpointel Exp $
  
  Name: libpng
  Description: Loads and saves PNG files
- Version: 1.5.6
+ Version: 1.5.9
 -Libs: -L${libdir} -lpng15
 +Libs: -L${libdir} -lpng -lz -lm
  Cflags: -I${includedir}
