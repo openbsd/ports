@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/10/28 21:58:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/02/26 15:08:36 ajacoutot Exp $
 
 COMMENT=	GObject wrapper around exiv2
 CATEGORIES=	graphics
-DISTNAME=	libgexiv2-0.3.1
+DISTNAME=	libgexiv2-0.3.91
 
 SHARED_LIBS +=	gexiv2	1.0 # .0.0
 
