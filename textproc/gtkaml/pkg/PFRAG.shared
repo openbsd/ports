@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2012/02/26 15:09:08 ajacoutot Exp $
+@lib lib/libgtkaml.so.${LIBgtkaml_VERSION}

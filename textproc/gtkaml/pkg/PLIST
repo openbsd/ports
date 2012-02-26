@@ -1,8 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/05 18:42:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/02/26 15:09:08 ajacoutot Exp $
+%%SHARED%%
 bin/gtkaml
 @bin bin/gtkamlc
+include/gtkaml-1.0/
+include/gtkaml-1.0/gtkaml.h
+lib/libgtkaml.a
+lib/libgtkaml.la
+lib/pkgconfig/
+lib/pkgconfig/gtkaml-1.0.pc
 @man man/man1/gtkamlc.1
 share/gtkaml/
-share/gtkaml/implicits/
-share/gtkaml/implicits/Clutter.implicits
-share/gtkaml/implicits/Gtk.implicits
+share/gtkaml/markuphints/
+share/gtkaml/markuphints/clutter-1.0.markuphints
+share/gtkaml/markuphints/gtk+-2.0.markuphints
+share/gtkaml/markuphints/gtk+-3.0.markuphints
+share/gtkaml/markuphints/stk-1.0.markuphints
+share/vala/
+share/vala/vapi/
+share/vala/vapi/gtkaml-1.0.deps
+share/vala/vapi/gtkaml-1.0.vapi
