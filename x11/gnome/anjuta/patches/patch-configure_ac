@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.3 2011/11/21 15:21:33 ajacoutot Exp $
---- configure.ac.orig	Sun Sep 18 15:14:26 2011
-+++ configure.ac	Sun Sep 18 17:44:15 2011
+$OpenBSD: patch-configure_ac,v 1.4 2012/02/26 15:06:56 ajacoutot Exp $
+
+Fix build with vala>=0.15
+
+--- configure.ac.orig	Fri Nov 18 21:43:15 2011
++++ configure.ac	Sun Feb 26 10:31:29 2012
 @@ -80,10 +80,7 @@ AC_PROG_LEX
  if test "$LEX" != "flex"; then
  	AC_MSG_ERROR(flex is required)
@@ -13,3 +16,18 @@ $OpenBSD: patch-configure_ac,v 1.3 2011/11/21 15:21:33 ajacoutot Exp $
  AC_LANG([C])
  AC_LANG([C++])
  AC_PROG_CXX
+@@ -263,12 +260,12 @@ else
+ 	AC_MSG_RESULT(no)
+ 	enable_vala="yes"
+ 	PKG_CHECK_MODULES(VALA,
+-		[libvala-0.14 >= $VALA_REQUIRED],LIBVALA="libvala-0.14")
++		[libvala-0.16 >= $VALA_REQUIRED],LIBVALA="libvala-0.16")
+ 	AC_SUBST(LIBVALA)
+ fi
+ 
+ if test x$enable_vala = xyes; then
+-	AC_PATH_PROGS(VALAC, [valac-0.14 valac], valac)
++	AC_PATH_PROGS(VALAC, [valac-0.16 valac], valac)
+ 	AC_SUBST(VALAC)
+ fi
+ 

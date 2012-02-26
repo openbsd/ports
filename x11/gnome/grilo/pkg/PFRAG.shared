@@ -1,3 +1,3 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/11/06 19:05:03 jasper Exp $
-@lib lib/libgrilo-${API}.so.${LIBgrilo-0.1_VERSION}
-@lib lib/libgrlnet-${API}.so.${LIBgrlnet-0.1_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/02/26 15:06:35 ajacoutot Exp $
+@lib lib/libgrilo-0.1.so.${LIBgrilo-0.1_VERSION}
+@lib lib/libgrlnet-0.1.so.${LIBgrlnet-0.1_VERSION}

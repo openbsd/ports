@@ -1,0 +1,22 @@
+$OpenBSD: patch-configure,v 1.1 2012/02/26 15:06:35 ajacoutot Exp $
+
+Fix build with vala>=0.15
+
+--- configure.orig	Sun Feb 26 10:22:56 2012
++++ configure	Sun Feb 26 10:23:02 2012
+@@ -12287,12 +12287,12 @@ fi
+ $as_echo "$enable_vala" >&6; }
+ if test "x$enable_vala" != "xno"; then
+         if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" libvala-0.14 \""; } >&5
+-  ($PKG_CONFIG --exists --print-errors " libvala-0.14 ") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" libvala-0.16 \""; } >&5
++  ($PKG_CONFIG --exists --print-errors " libvala-0.16 ") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-   valapkg="libvala-0.14"
++   valapkg="libvala-0.16"
+ else
+    if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \" libvala-0.12 \""; } >&5
