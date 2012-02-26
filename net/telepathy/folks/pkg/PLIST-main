@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2012/02/18 23:05:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/02/26 15:08:07 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/folks-import
 @bin bin/folks-inspect
@@ -41,9 +41,12 @@ share/locale/en_GB/LC_MESSAGES/folks.mo
 share/locale/eo/LC_MESSAGES/folks.mo
 share/locale/es/LC_MESSAGES/folks.mo
 share/locale/gl/LC_MESSAGES/folks.mo
+share/locale/nb/LC_MESSAGES/folks.mo
 share/locale/pl/LC_MESSAGES/folks.mo
+share/locale/pt_BR/LC_MESSAGES/folks.mo
 share/locale/sl/LC_MESSAGES/folks.mo
 share/locale/sv/LC_MESSAGES/folks.mo
+share/locale/zh_CN/LC_MESSAGES/folks.mo
 share/vala/vapi/folks-eds.deps
 share/vala/vapi/folks-eds.vapi
 share/vala/vapi/folks-telepathy.deps

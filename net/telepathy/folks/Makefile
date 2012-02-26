@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/02/23 08:10:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2012/02/26 15:08:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,14 +6,11 @@ COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.6.6
-API_V=			30
+GNOME_VERSION=		0.6.7
+API_V=			31
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
-
-REVISION-main=		2
-REVISION-tracker=	1
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
 SHARED_LIBS +=  folks                     5.0 # 29.0
