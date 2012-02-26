@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2012/02/16 22:19:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/02/26 15:05:33 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -28,6 +28,7 @@ lib/vala-${API_V}/
 @man man/man1/vapigen-${API_V}.1
 @man man/man1/vapigen.1
 share/aclocal/vala.m4
+share/aclocal/vapigen.m4
 share/devhelp/
 share/devhelp/books/
 share/devhelp/books/vala-${API_V}/
@@ -47,6 +48,10 @@ share/devhelp/books/vala-${API_V}/statements.html
 share/devhelp/books/vala-${API_V}/structs.html
 share/devhelp/books/vala-${API_V}/types.html
 share/devhelp/books/vala-${API_V}/vala-${API_V}.devhelp2
+share/pkgconfig/
+share/pkgconfig/vapigen-${API_V}.pc
+share/pkgconfig/vapigen.pc
+share/vala/
 share/vala-${API_V}/
 share/vala-${API_V}/vapi/
 share/vala-${API_V}/vapi/alsa.deps
@@ -71,6 +76,8 @@ share/vala-${API_V}/vapi/clutter-gtk-1.0.vapi
 share/vala-${API_V}/vapi/clutter-json-1.0.vapi
 share/vala-${API_V}/vapi/cogl-1.0.deps
 share/vala-${API_V}/vapi/cogl-1.0.vapi
+share/vala-${API_V}/vapi/cogl-pango-1.0.deps
+share/vala-${API_V}/vapi/cogl-pango-1.0.vapi
 share/vala-${API_V}/vapi/curses.vapi
 share/vala-${API_V}/vapi/dbus-glib-1.vapi
 share/vala-${API_V}/vapi/enchant.vapi
@@ -89,6 +96,8 @@ share/vala-${API_V}/vapi/gdk-x11-3.0.deps
 share/vala-${API_V}/vapi/gdk-x11-3.0.vapi
 share/vala-${API_V}/vapi/gdl-1.0.deps
 share/vala-${API_V}/vapi/gdl-1.0.vapi
+share/vala-${API_V}/vapi/gdl-3.0.deps
+share/vala-${API_V}/vapi/gdl-3.0.vapi
 share/vala-${API_V}/vapi/gdu-gtk.deps
 share/vala-${API_V}/vapi/gdu-gtk.vapi
 share/vala-${API_V}/vapi/gdu.deps
@@ -283,3 +292,4 @@ share/vala-${API_V}/vapi/xcb.vapi
 share/vala-${API_V}/vapi/xtst.deps
 share/vala-${API_V}/vapi/xtst.vapi
 share/vala-${API_V}/vapi/zlib.vapi
+share/vala/Makefile.vapigen
