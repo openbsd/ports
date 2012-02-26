@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/06 14:33:10 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/02/26 15:06:10 ajacoutot Exp $
 lib/pkgconfig/gupnp-vala-1.0.pc
-share/vala/
 share/vala/vapi/
 share/vala/vapi/gssdp-1.0.deps
 share/vala/vapi/gssdp-1.0.vapi

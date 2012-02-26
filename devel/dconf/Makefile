@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/11 11:39:13 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2012/02/26 15:06:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,7 +53,7 @@ MODULES=	devel/gettext \
 
 MODGNOME_DESKTOP_FILE= Yes
 
-BUILD_DEPENDS=	lang/vala>=0.12.0
+BUILD_DEPENDS=	lang/vala
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \

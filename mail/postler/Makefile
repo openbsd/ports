@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/02/26 15:06:10 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS+=	--disable-libindicate \
 			--disable-libstemmer
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		lang/vala>=0.12.0
+		lang/vala
 
 RUN_DEPENDS =	mail/msmtp \
 		x11/gtk+2,-guic

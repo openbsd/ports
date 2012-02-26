@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/02/16 21:36:03 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2012/02/26 15:06:10 ajacoutot Exp $
 
 COMMENT=		GNOME music player client
 
@@ -42,7 +42,7 @@ post-patch:
 
 BUILD_DEPENDS=		x11/gob2 \
 			x11/gnome/doc-utils \
-			lang/vala>=0.7.10
+			lang/vala
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gnome/yelp \
