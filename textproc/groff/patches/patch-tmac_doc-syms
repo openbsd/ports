@@ -1,8 +1,9 @@
-$OpenBSD: patch-tmac_doc-syms,v 1.2 2011/12/04 15:41:26 schwarze Exp $
+$OpenBSD: patch-tmac_doc-syms,v 1.3 2012/02/26 22:28:34 schwarze Exp $
 chunk 1: One newer POSIX standard required by base manuals (accepted upstream).
-chunk 2: Sync to mandoc: more Lb arguments (accepted upstream).
+chunk 2: Correct the expansion of -xbd5 (accepted upstream).
+chunk 3: Sync to mandoc: more Lb arguments (accepted upstream).
 --- tmac/doc-syms.orig	Fri Dec 31 08:33:09 2010
-+++ tmac/doc-syms	Sun Oct 23 16:44:32 2011
++++ tmac/doc-syms	Sun Feb 26 22:56:42 2012
 @@ -617,6 +617,8 @@
  .\" POSIX Part 1: System API
  .ds doc-str-St--p1003.1        \*[doc-Tn-font-size]\%IEEE\*[doc-str-St] Std 1003.1
@@ -12,6 +13,15 @@ chunk 2: Sync to mandoc: more Lb arguments (accepted upstream).
  .ds doc-str-St--p1003.1-88     \*[doc-Tn-font-size]\%IEEE\*[doc-str-St] Std 1003.1-1988
  .as doc-str-St--p1003.1-88     " (\*[Lq]\)\*[Px]\*[doc-str-St].1\*[Rq])
  .ds doc-str-St--p1003.1-90     \*[doc-Tn-font-size]ISO/IEC\*[doc-str-St] 9945-1:1990
+@@ -657,7 +659,7 @@
+ .as doc-str-St--susv3          " (\*[Lq]\*[doc-Tn-font-size]SUSv3\*[doc-str-St]\*[Rq])
+ .ds doc-str-St--svid4          System\~V Interface Definition, Fourth Edition
+ .as doc-str-St--svid4          " (\*[Lq]\*[doc-Tn-font-size]SVID\*[doc-str-St]\^4\*[Rq])
+-.ds doc-str-St--xbd5           \*[doc-Tn-font-size]X/Open\*[doc-str-St] System Interface Definitions Issue\~5
++.ds doc-str-St--xbd5           \*[doc-Tn-font-size]X/Open\*[doc-str-St] Base Definitions Issue\~5
+ .as doc-str-St--xbd5           " (\*[Lq]\*[doc-Tn-font-size]XBD\*[doc-str-St]\^5\*[Rq])
+ .ds doc-str-St--xcu5           \*[doc-Tn-font-size]X/Open\*[doc-str-St] Commands and Utilities Issue\~5
+ .as doc-str-St--xcu5           " (\*[Lq]\*[doc-Tn-font-size]XCU\*[doc-str-St]\^5\*[Rq])
 @@ -752,36 +754,74 @@
  .\" NS
  .\" NS width register `Lb' defined in doc-common

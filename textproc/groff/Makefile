@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/13 18:16:37 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2012/02/26 22:28:34 schwarze Exp $
 
 COMMENT =		GNU troff typesetter
 DISTNAME =		groff-1.21
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.gnu.org/software/groff/
