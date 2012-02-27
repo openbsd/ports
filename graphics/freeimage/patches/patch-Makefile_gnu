@@ -1,24 +1,26 @@
-$OpenBSD: patch-Makefile_gnu,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
---- Makefile.gnu.orig	Sun Aug 26 07:44:24 2007
-+++ Makefile.gnu	Tue Feb 17 18:02:33 2009
-@@ -8,13 +8,13 @@ CC = gcc
- CXX = g++
- AR = ar
+$OpenBSD: patch-Makefile_gnu,v 1.2 2012/02/27 10:16:26 pascal Exp $
+--- Makefile.gnu.orig	Sun Feb 26 21:53:59 2012
++++ Makefile.gnu	Sun Feb 26 21:58:20 2012
+@@ -5,8 +5,8 @@ include Makefile.srcs
  
--INCDIR = /usr/include
--INSTALLDIR = /usr/lib
-+INCDIR = ${PREFIX}/include
-+INSTALLDIR = ${PREFIX}/lib
+ # General configuration variables:
+ DESTDIR ?= /
+-INCDIR ?= $(DESTDIR)/usr/include
+-INSTALLDIR ?= $(DESTDIR)/usr/lib
++INCDIR ?= $(PREFIX)/include
++INSTALLDIR ?= $(PREFIX)/lib
  
  # Converts cr/lf to just lf
  DOS2UNIX = dos2unix
+@@ -20,16 +20,15 @@ CFLAGS += $(INCLUDE)
+ CXXFLAGS ?= -O3 -fPIC -fexceptions -fvisibility=hidden -Wno-ctor-dtor-privacy
+ CXXFLAGS += $(INCLUDE)
  
--COMPILERFLAGS = -O3 -fPIC -fexceptions -fvisibility=hidden
-+COMPILERFLAGS = -O2 -fPIC
- LIBRARIES = -lstdc++
- 
- MODULES = $(SRCS:.c=.o)
-@@ -24,9 +24,8 @@ CXXFLAGS = $(COMPILERFLAGS)  -Wno-ctor-dtor-privacy $(
+-ifeq ($(shell sh -c 'uname -m 2>/dev/null || echo not'),x86_64)
++ifeq ($(shell sh -c 'uname -m 2>/dev/null || echo not'),amd64)
+ 	CFLAGS += -fPIC
+ 	CXXFLAGS += -fPIC
+ endif
  
  TARGET  = freeimage
  STATICLIB = lib$(TARGET).a
@@ -29,7 +31,7 @@ $OpenBSD: patch-Makefile_gnu,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
  HEADER = Source/FreeImage.h
  
  
-@@ -37,7 +36,7 @@ all: dist
+@@ -40,7 +39,7 @@ all: dist
  
  dist: FreeImage
  	cp *.a Dist
@@ -38,14 +40,15 @@ $OpenBSD: patch-Makefile_gnu,v 1.1.1.1 2009/03/20 13:53:04 eric Exp $
  	cp Source/FreeImage.h Dist
  
  dos2unix:
-@@ -55,15 +54,12 @@ $(STATICLIB): $(MODULES)
+@@ -58,16 +57,13 @@ $(STATICLIB): $(MODULES)
  	$(AR) r $@ $(MODULES)
  
  $(SHAREDLIB): $(MODULES)
--	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) -o $@ $(MODULES) $(LIBRARIES)
-+	$(CC) -O2 -fPIC -s -shared -o $@ $(MODULES) $(LIBRARIES)
+-	$(CC) -s -shared -Wl,-soname,$(VERLIBNAME) $(LDFLAGS) -o $@ $(MODULES) $(LIBRARIES)
++	$(CC) $(CFLAGS) -s -shared $(LDFLAGS) -o $@ $(MODULES) $(LIBRARIES)
  
  install:
+ 	install -d $(INCDIR) $(INSTALLDIR)
 -	install -m 644 -o root -g root $(HEADER) $(INCDIR)
 -	install -m 644 -o root -g root $(STATICLIB) $(INSTALLDIR)
 -	install -m 755 -o root -g root $(SHAREDLIB) $(INSTALLDIR)
