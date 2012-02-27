@@ -1,0 +1,73 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
+@pkgpath databases/maatkit
+bin/pt-align
+bin/pt-archiver
+@comment bin/pt-collect
+bin/pt-config-diff
+bin/pt-deadlock-logger
+@comment bin/pt-diskstats
+bin/pt-duplicate-key-checker
+bin/pt-fifo-split
+bin/pt-find
+bin/pt-fk-error-logger
+bin/pt-heartbeat
+bin/pt-index-usage
+@comment bin/pt-ioprofile
+bin/pt-kill
+bin/pt-log-player
+bin/pt-mext
+bin/pt-mysql-summary
+bin/pt-online-schema-change
+@comment bin/pt-pmp
+bin/pt-query-advisor
+bin/pt-query-digest
+bin/pt-show-grants
+bin/pt-sift
+bin/pt-slave-delay
+bin/pt-slave-find
+bin/pt-slave-restart
+@comment bin/pt-stalk
+bin/pt-summary
+bin/pt-table-checksum
+bin/pt-table-sync
+bin/pt-tcp-model
+bin/pt-trend
+bin/pt-upgrade
+bin/pt-variable-advisor
+bin/pt-visual-explain
+@man man/man1/percona-toolkit.1
+@man man/man1/pt-align.1
+@man man/man1/pt-archiver.1
+@comment @man man/man1/pt-collect.1
+@man man/man1/pt-config-diff.1
+@man man/man1/pt-deadlock-logger.1
+@comment @man man/man1/pt-diskstats.1
+@man man/man1/pt-duplicate-key-checker.1
+@man man/man1/pt-fifo-split.1
+@man man/man1/pt-find.1
+@man man/man1/pt-fk-error-logger.1
+@man man/man1/pt-heartbeat.1
+@man man/man1/pt-index-usage.1
+@comment @man man/man1/pt-ioprofile.1
+@man man/man1/pt-kill.1
+@man man/man1/pt-log-player.1
+@man man/man1/pt-mext.1
+@man man/man1/pt-mysql-summary.1
+@man man/man1/pt-online-schema-change.1
+@comment @man man/man1/pt-pmp.1
+@man man/man1/pt-query-advisor.1
+@man man/man1/pt-query-digest.1
+@man man/man1/pt-show-grants.1
+@man man/man1/pt-sift.1
+@man man/man1/pt-slave-delay.1
+@man man/man1/pt-slave-find.1
+@man man/man1/pt-slave-restart.1
+@comment @man man/man1/pt-stalk.1
+@man man/man1/pt-summary.1
+@man man/man1/pt-table-checksum.1
+@man man/man1/pt-table-sync.1
+@man man/man1/pt-tcp-model.1
+@man man/man1/pt-trend.1
+@man man/man1/pt-upgrade.1
+@man man/man1/pt-variable-advisor.1
+@man man/man1/pt-visual-explain.1

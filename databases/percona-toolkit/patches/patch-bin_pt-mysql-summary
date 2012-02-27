@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_pt-mysql-summary,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
+--- bin/pt-mysql-summary.orig	Mon Feb  6 21:52:31 2012
++++ bin/pt-mysql-summary	Thu Feb  9 16:49:50 2012
+@@ -155,7 +155,7 @@ shorten() {
+ # docs and tests.
+ # ##############################################################################
+ group_concat () {
+-   sed -e '{H; $!d}' -e 'x' -e 's/\n[[:space:]]*\([[:digit:]]*\)[[:space:]]*/, \1x/g' -e 's/[[:space:]][[:space:]]*/ /g' -e 's/, //' ${1}
++   sed -e 'H; $!d' -e 'x' -e 's/\n[[:space:]]*\([[:digit:]]*\)[[:space:]]*/, \1x/g' -e 's/[[:space:]][[:space:]]*/ /g' -e 's/, //' ${1}
+ }
+ 
+ # Accepts a number of seconds, and outputs a d+h:m:s formatted string

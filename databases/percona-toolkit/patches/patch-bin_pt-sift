@@ -1,0 +1,15 @@
+$OpenBSD: patch-bin_pt-sift,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
+--- bin/pt-sift.orig	Mon Feb  6 21:52:31 2012
++++ bin/pt-sift	Thu Feb  9 16:49:50 2012
+@@ -103,11 +103,6 @@ main() {
+          eval "PR_$prog_base"="./$prog"
+       elif [ -f "${BASEDIR}/$prog" -a -x "${BASEDIR}/$prog" ]; then
+          eval "PR_$prog_base"="${BASEDIR}/$prog"
+-      elif which "curl" >/dev/null 2>&1; then
+-         echo "Fetching $prog" >&2
+-         curl "http://www.percona.com/get/$prog" > "$prog" && chmod +x "$prog"
+-         eval "PR_$prog_base"="./$prog"
+-      else
+          echo "Cannot find or fetch required program: $prog" >&2
+          exit 1
+       fi 
