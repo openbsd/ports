@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2012/02/27 15:44:58 sthen Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -200,6 +200,7 @@ libexec/munin/plugins/slony_lag_
 libexec/munin/plugins/smart_
 libexec/munin/plugins/snmp__cpuload
 libexec/munin/plugins/snmp__df
+libexec/munin/plugins/snmp__df_ram
 libexec/munin/plugins/snmp__fc_if_
 libexec/munin/plugins/snmp__fc_if_err_
 libexec/munin/plugins/snmp__if_
