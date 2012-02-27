@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.32 2012/02/17 07:42:20 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.33 2012/02/27 14:51:37 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: February 17 2012 $
+.Dd $Mdocdate: February 27 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -95,6 +95,30 @@ is used to specify hosts to use,
 .Ar file
 can be as simple as a list of hosts to use, one host per line.
 .Pp
+As
+.Nm
+tends to be run on shared clusters, most filenames will go through some
+control sequence expansions.
+For instance, the default logdir location can be specified as
+.Pa %p/logs/%a .
+The following sequences are recognized:
+.Bl -tag -offset aaaa -width %aa
+.It Cm %a
+architecture being used.
+.It Cm %d
+date at start of
+.Nm ,
+GMtime, formatted as yyyy-mm-dd@hh:mm:ss.
+.It Cm %h
+hostname running
+.Nm .
+.It Cm %p
+portsdir location.
+.It Cm %t
+timestamp (number of seconds since January 1 1970) at start of
+.Nm .
+.El
+.Pp
 Options are as follows:
 .Bl -tag -width pkgpathlong
 .It Fl A Ar arch
@@ -128,6 +152,18 @@ Defaults to 60 seconds.
 Display timeout (in seconds) while waiting for jobs to finish, so that the
 display is updated even if jobs didn't finish.
 Defaults to 10 seconds.
+.It Ar DONT_BUILD_ONCE
+By default,
+.Nm
+will use the
+.Ev BUILD_ONCE
+optimization if run with
+.Fl a :
+pseudo-flavors that disable subpackages and are not necessary for bootstrap
+will be disabled, so that the same port is built once, as far as possible.
+This flag disables that optimization, which might be desireable if you want
+to build a small subset of packages which would pull in the kitchen sink
+otherwise.
 .It Ar FTP_ONLY
 Don't fetch distfiles that are not allowed for ftp.
 .It Ar HISTORY_ONLY
@@ -514,7 +550,7 @@ not recorded in distinfo, but not needed
 .El
 will be entered at the end of history as a line:
 .Pp
-.Li Ar ts SHA256 (file) = value
+.Li ts SHA256 (file) = value
 .Pp
 with
 .Ar ts

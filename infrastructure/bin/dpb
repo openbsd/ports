@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.42 2012/02/17 07:35:42 espie Exp $
+# $OpenBSD: dpb,v 1.43 2012/02/27 14:51:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -39,6 +39,16 @@ $SIG{__DIE__} = sub {
 };
 
 
+$SIG{__WARN__} = sub {
+	require Carp;
+
+	die @_ if ref $_[0];
+	my $_ = pop @_;
+	s/(.*)( at .*? line .*?\n$)/$1/s;
+	push @_, $_;
+	warn &Carp::longmess;
+};
+
 package DPB::State;
 our @ISA = qw(OpenBSD::State);
 
@@ -60,8 +70,73 @@ sub init
 	    DPB::Vars->get($self->make, 
 	    "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
 	$self->{arch} = $self->{localarch};
+	$self->{starttime} = time();
 
 	return $self;
+}
+
+sub startdate
+{
+	my $self = shift;
+	my @l = gmtime $self->{starttime};
+	$l[5] += 1900;
+	$l[4] ++;
+	return sprintf '%04d-%02d-%02d@%02d:%02d:%02d', @l[5,4,3,2,1,0];
+}
+
+sub expand_path
+{
+	my ($self, $path) = @_;
+	$path =~ s/\%p/$self->{ports}/g;
+	$path =~ s/\%h/DPB::Core::Local->hostname/ge;
+	$path =~ s/\%a/$self->{arch}/g;
+	$path =~ s/\%t/$self->{starttime}/g;
+	$path =~ s/\%d/$self->startdate/ge;
+	return $path;
+}
+
+sub interpret_path
+{
+	my ($state, $path, $do, $scale) = @_;
+
+	my $weight;
+	if ($path =~ s/\^=(.*)//) {
+		$weight = $1;
+	}
+	my $p = DPB::PkgPath->new($path);
+	if (defined $scale) {
+		$p->{scaled} = $scale;
+	}
+	if (-d join('/', $state->{ports} , $p->pkgpath)) {
+		&$do($p, $weight);
+	} else {
+		$state->usage("Bad package path: #1", $path);
+	}
+}
+
+sub interpret_paths
+{
+	my $state = shift;
+	my $do = pop;
+	for my $file (@_) {
+		my $scale;
+		if ($file =~ m/^(.*)\*(\d+)$/) {
+			($file, $scale) = ($1, $2);
+		}
+
+		if (-f $file) {
+			open my $fh, '<', $file or 
+			    $state->usage("Can't open $file");
+			my $_;
+			while (<$fh>) {
+				chomp;
+				next if m/^\#/;
+				$state->interpret_path($_, $do, $scale);
+			}
+		} else {
+			$state->interpret_path($file, $do);
+		}
+	}
 }
 
 sub handle_options
@@ -86,55 +161,13 @@ sub handle_options
 			$state->heuristics->set_threshold(shift)
 		},
 		P => sub {
-			my $file = shift;
-			my $scale;
-			if ($file =~ m/^(.*)\*(\d+)$/) {
-				($file, $scale) = ($1, $2);
-			}
-
-			open my $fh, '<', $file or die "Can't open $file\n";
-			my $_;
-			while (<$fh>) {
-				chomp;
-				next if m/^\#/;
-				push @main::ARGV, $_;
-				if (defined $scale) {
-					s/\^=.*//;
-					my $p = DPB::PkgPath->new($_);
-					$p->{scaled} = $scale;
-				}
-			}
+			push(@{$state->{paths}}, shift);
 		},
 		I => sub {
-			my $file = shift;
-			my $scale;
-			if ($file =~ m/^(.*)\*(\d+)$/) {
-				($file, $scale) = ($1, $2);
-			}
-			open my $fh, '<', $file or die "Can't open $file\n";
-			my $_;
-			while (<$fh>) {
-				chomp;
-				next if m/^\#/;
-				push @main::ARGV, $_;
-				s/\^=.*//;
-				my $p = DPB::PkgPath->new($_);
-				$p->{wantinstall} = 1;
-				if (defined $scale) {
-					$p->{scaled} = $scale;
-				}
-			}
+			push(@{$state->{ipaths}}, shift);
 		},
 		C => sub {
-			my $file = shift;
-			open my $fh, '<', $file or die "Can't open $file\n";
-			my $_;
-			while (<$fh>) {
-				chomp;
-				next if m/^\#/;
-				s/\,.*//;
-				$state->{dontclean}{$_} = 1;
-			}
+			push(@{$state->{cpaths}}, shift);
 		},
 		b => sub {
 			push(@{$state->{build_files}}, shift);
@@ -149,8 +182,7 @@ sub handle_options
     "[-P plist] [-h hosts] [-L logdir] [-b log] [-t ctimeout] [-m threshold]",
     "[path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
-	$state->{logdir} //= $ENV{LOGDIR} // 
-	    join("/", $state->ports, "logs", $state->arch);
+	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';
 	if (defined $state->{opt}{F}) {
 		if (defined $state->{opt}{j} || defined $state->{opt}{f}) {
 			$state->usage("Can't use -F with -f or -j");
@@ -186,6 +218,18 @@ sub handle_options
 		# XXX not really random, but no need to use dependencies
 		$state->{random} = 1; 
 	}
+
+	$state->{logdir} = $state->expand_path($state->{logdir});
+	if ($state->opt('h')) {
+		$state->{config} = $state->expand_path($state->opt('h'));
+	}
+	for my $cat (qw(build_files paths ipaths cpaths)) {
+		next unless defined $state->{$cat};
+		for my $f (@{$state->{$cat}}) {
+			$f = $state->expand_path($f);
+		}
+	}
+
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
 	$state->{display_timeout} = 
@@ -193,14 +237,18 @@ sub handle_options
     	$state->{connection_timeout} =
 	    $state->{subst}->value('CONNECTION_TIMEOUT') // $state->opt('t');
 	$state->{stuck_timeout} = $state->{subst}->value('STUCK_TIMEOUT');
+	$state->{build_once} = $state->{all};
+	if ($state->defines("DONT_BUILD_ONCE")) {
+		$state->{build_once} = 0;
+	}
 }
 
 sub start_cores
 {
 	my $state = shift;
 
-	if ($state->opt('h')) {
-		DPB::Core->parse_hosts_file($state->opt('h'), $state);
+	if ($state->{config}) {
+		DPB::Core->parse_hosts_file($state->{config}, $state);
 	}
 
 	my $prop = {};
@@ -211,7 +259,7 @@ sub start_cores
 		$prop->{stuck} = $state->{stuck_timeout};
 	}
 
-	if ($state->opt('j') || !$state->opt('h')) {
+	if ($state->opt('j') || !$state->{config}) {
 		DPB::Core::Factory->new('localhost', $prop);
 	}
 	DPB::Core::Factory->init_cores($state);
@@ -256,7 +304,7 @@ sub make_args
 {
 	my $self = shift;
 	my @l = ($self->{make});
-	if ($self->{all}) {
+	if ($self->{build_once}) {
 		push(@l, 'BUILD_ONCE=Yes');
 	}
 	return @l;
@@ -376,26 +424,38 @@ $state->start_cores;
 
 $state->handle_build_files;
 
-if (@ARGV == 0) {
-	$state->{all} = 1;
-}
-for my $arg (@ARGV) {
-	my ($path, $weight) = ($arg, 5000);
-	if ($arg =~ m/^(.*)\=(\d+)$/) {
-		($path, $weight) = ($1, $2);
+$state->{all} = 1;
+
+my $default_handling = 
+    sub {
+	my ($pkgpath, $weight) = @_;
+	if (defined $weight) {
+		$state->heuristics->set_weight($pkgpath);
 	}
-	$arg =~ s/\/+$//;
-	if ($arg =~ m/^\./) {
-		$state->usage("Invalid pkgpath: #1",  $arg);
-	}
-	my $pkgpath = DPB::PkgPath->new($path);
-	$state->heuristics->set_weight($pkgpath, $weight);
 	$pkgpath->add_to_subdirlist($subdirlist);
-}
+	$state->{all} = 0;
+};
+
+$state->interpret_paths(@{$state->{paths}}, @ARGV,
+    sub { 
+	my $p = shift;
+	&$default_handling($p);
+    });
+$state->interpret_paths(@{$state->{ipaths}},
+    sub { 
+	my $p = shift;
+	&$default_handling($p);
+	$p->{wantinstall} = 1;
+    });
+$state->interpret_paths(@{$state->{cpaths}},
+    sub { 
+	my $p = shift;
+	$state->{dontclean}{$p->pkgpath} = 1;
+    });
 
 $state->{builder} = DPB::PortBuilder->new($state);
 
-$state->{locker} = DPB::Locks->new(join("/", $state->logdir, "locks"));
+$state->{locker} = DPB::Locks->new($state, join("/", $state->logdir, "locks"));
 $state->{engine} = DPB::Engine->new($state);
 my $reporter = DPB::Reporter->new($state->opt('x'),
     $state->heuristics, "DPB::Core", $state->engine);

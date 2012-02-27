@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.12 2012/02/20 21:18:48 espie Exp $
+# $OpenBSD: Locks.pm,v 1.13 2012/02/27 14:51:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,12 +25,54 @@ use Fcntl;
 
 sub new
 {
-	my ($class, $lockdir) = @_;
+	my ($class, $state, $lockdir) = @_;
 
 	File::Path::make_path($lockdir);
-	bless {lockdir => $lockdir, 
+	my $o = bless {lockdir => $lockdir, 
 		dpb_pid => $$, 
 		dpb_host => DPB::Core::Local->hostname}, $class;
+	if (!$state->defines("DONT_CLEAN_LOCKS")) {
+		$o->clean_old_locks($state);
+	}
+	return $o;
+}
+
+sub clean_old_locks
+{
+	my $self = shift;
+	my $locks = {};
+	opendir(my $dir, $self->{lockdir});
+	DIR: while (my $e = readdir($dir)) {
+		my $f = "$self->{lockdir}/$e";
+		next if -d $f;
+		open my $fh, '<', $f or next;
+		my ($pid, $host);
+		while(<$fh>) {
+			if (m/^dpb\=(\d+)\s+on\s+(\S+)$/) {
+				($pid, $host) = ($1, $2);
+				next DIR unless $host eq $self->{dpb_host};
+			}
+			if (m/^(?:error|status|todo)\=/) {
+				next DIR;
+			}
+		}
+		push(@{$locks->{$pid}}, $f);
+	}
+	open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
+	my $junk = <$ps>;
+	while (<$ps>) {
+		if (m/^(\d+)\s+(.*)$/) {
+			my ($pid, $cmd) = @_;
+			if ($locks->{$pid} && $cmd =~ m/\bdpb\b/) {
+				delete $locks->{$pid};
+			}
+		}
+	}
+	for my $list (values %$locks) {
+		for my $l (@$list) {
+			unlink($l);
+		}
+	}
 }
 
 sub build_lockname
