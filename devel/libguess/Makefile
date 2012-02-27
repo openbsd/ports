@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/11 11:03:22 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/27 18:53:45 shadchin Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		high-speed character set detection library
 
-DISTNAME =		libguess-1.0
+DISTNAME =		libguess-1.1
 
 SHARED_LIBS =		guess		0.0	# 1.0
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		mowgli
 
 MASTER_SITES =		http://distfiles.atheme.org/
-EXTRACT_SUFX =		.tgz
 
 LIB_DEPENDS =		devel/mowgli
 
