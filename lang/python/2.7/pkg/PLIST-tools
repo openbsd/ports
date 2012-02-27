@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tools,v 1.1.1.1 2011/04/24 09:31:46 rpointel Exp $
+@comment $OpenBSD: PLIST-tools,v 1.2 2012/02/27 19:30:46 rpointel Exp $
 @option no-default-conflict
 @conflict python-tools->=2.7,<2.8
 lib/python2.7/Tools/
@@ -25,6 +25,14 @@ lib/python2.7/Tools/bgen/bgen/macsupport.py
 lib/python2.7/Tools/bgen/bgen/scantools.py
 lib/python2.7/Tools/buildbot/
 lib/python2.7/Tools/buildbot/README.tcltk-AMD64
+@comment lib/python2.7/Tools/buildbot/build-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/clean-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/external-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/test-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/build-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/clean-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/external-${MACHINE_ARCH}.bat
+@comment lib/python2.7/Tools/buildbot/test-${MACHINE_ARCH}.bat
 @comment lib/python2.7/Tools/buildbot/build-${MACHINE_ARCH}.bat
 @comment lib/python2.7/Tools/buildbot/build.bat
 @comment lib/python2.7/Tools/buildbot/buildmsi.bat

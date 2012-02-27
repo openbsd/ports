@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
---- setup.py.orig	Sun Oct 31 17:40:21 2010
-+++ setup.py	Wed Jul  6 14:05:41 2011
+$OpenBSD: patch-setup_py,v 1.3 2012/02/27 19:30:46 rpointel Exp $
+--- setup.py.orig	Sat Jun 11 17:46:28 2011
++++ setup.py	Sun Feb 19 19:12:04 2012
 @@ -23,6 +23,11 @@ COMPILED_WITH_PYDEBUG = hasattr(sys, 'gettotalrefcount
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -13,7 +13,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
  def add_dir_to_list(dirlist, dir):
      """Add the directory 'dir' to the list 'dirlist' (at the front) if
      1) 'dir' is not already in 'dirlist'
-@@ -347,8 +352,8 @@ class PyBuildExt(build_ext):
+@@ -369,8 +374,8 @@ class PyBuildExt(build_ext):
  
      def detect_modules(self):
          # Ensure that /usr/local is always used
@@ -21,10 +21,10 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
 -        add_dir_to_list(self.compiler.include_dirs, '/usr/local/include')
 +        add_dir_to_list(self.compiler.library_dirs, usrlocal('lib'))
 +        add_dir_to_list(self.compiler.include_dirs, usrlocal('include'))
+         self.add_multiarch_paths()
  
          # Add paths specified in the environment variables LDFLAGS and
-         # CPPFLAGS for header and library files.
-@@ -680,8 +685,6 @@ class PyBuildExt(build_ext):
+@@ -703,8 +708,6 @@ class PyBuildExt(build_ext):
                                 depends = ['socketmodule.h']) )
          # Detect SSL support for the socket module (via _ssl)
          search_for_ssl_incs_in = [
@@ -33,7 +33,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
                               ]
          ssl_incs = find_file('openssl/ssl.h', inc_dirs,
                               search_for_ssl_incs_in
-@@ -692,9 +695,7 @@ class PyBuildExt(build_ext):
+@@ -715,9 +718,7 @@ class PyBuildExt(build_ext):
              if krb5_h:
                  ssl_incs += krb5_h
          ssl_libs = find_library_file(self.compiler, 'ssl',lib_dirs,
@@ -44,7 +44,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
  
          if (ssl_incs is not None and
              ssl_libs is not None):
-@@ -793,7 +794,7 @@ class PyBuildExt(build_ext):
+@@ -816,7 +817,7 @@ class PyBuildExt(build_ext):
                  # BerkeleyDB 4.6.x is not stable on many architectures.
                  arch = platform_machine()
                  if arch not in ('i386', 'i486', 'i586', 'i686',
@@ -53,7 +53,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
                      return False
              return True
  
-@@ -856,6 +857,7 @@ class PyBuildExt(build_ext):
+@@ -879,6 +880,7 @@ class PyBuildExt(build_ext):
                  std_variants.append(os.path.join(dn, "db3.%d"%x))
  
          db_inc_paths = std_variants + db_inc_paths
@@ -61,7 +61,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
          db_inc_paths = [p for p in db_inc_paths if os.path.exists(p)]
  
          db_ver_inc_map = {}
-@@ -919,6 +921,7 @@ class PyBuildExt(build_ext):
+@@ -942,6 +944,7 @@ class PyBuildExt(build_ext):
                      db_incdir.replace("include", 'lib64'),
                      db_incdir.replace("include", 'lib'),
                  ]
@@ -69,7 +69,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
  
                  if sys.platform != 'darwin':
                      db_dirs_to_check = filter(os.path.isdir, db_dirs_to_check)
-@@ -941,6 +944,7 @@ class PyBuildExt(build_ext):
+@@ -964,6 +967,7 @@ class PyBuildExt(build_ext):
                  # symlink to more general names?
                  for dblib in (('db-%d.%d' % db_ver),
                                ('db%d%d' % db_ver),
@@ -77,7 +77,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
                                ('db%d' % db_ver[0])):
                      dblib_file = self.compiler.find_library_file(
                                      db_dirs_to_check + lib_dirs, dblib )
-@@ -988,6 +992,7 @@ class PyBuildExt(build_ext):
+@@ -1011,6 +1015,7 @@ class PyBuildExt(build_ext):
                               '/usr/local/include/sqlite',
                               '/usr/local/include/sqlite3',
                             ]
@@ -85,7 +85,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
          MIN_SQLITE_VERSION_NUMBER = (3, 0, 8)
          MIN_SQLITE_VERSION = ".".join([str(x)
                                      for x in MIN_SQLITE_VERSION_NUMBER])
-@@ -1033,6 +1038,7 @@ class PyBuildExt(build_ext):
+@@ -1056,6 +1061,7 @@ class PyBuildExt(build_ext):
                  os.path.join(sqlite_incdir, '..', '..', 'lib64'),
                  os.path.join(sqlite_incdir, '..', '..', 'lib'),
              ]
@@ -93,7 +93,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
              sqlite_libfile = self.compiler.find_library_file(
                                  sqlite_dirs_to_check + lib_dirs, 'sqlite3')
              if sqlite_libfile:
-@@ -1097,7 +1103,7 @@ class PyBuildExt(build_ext):
+@@ -1120,7 +1126,7 @@ class PyBuildExt(build_ext):
                  sysroot = macosx_sdk_root()
                  f = os.path.join(sysroot, f[1:])
  
@@ -102,7 +102,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
              data = open(f).read()
              m = re.search(r"#s*define\s+HASHVERSION\s+2\s*", data)
              if m is not None:
-@@ -1416,7 +1422,11 @@ class PyBuildExt(build_ext):
+@@ -1439,7 +1445,11 @@ class PyBuildExt(build_ext):
              libraries = []
  
          elif platform.startswith('openbsd'):
@@ -115,7 +115,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
              libraries = []
  
          elif platform.startswith('netbsd'):
-@@ -1464,6 +1474,9 @@ class PyBuildExt(build_ext):
+@@ -1487,6 +1497,9 @@ class PyBuildExt(build_ext):
                          'freebsd7', 'freebsd8')
              or platform.startswith("gnukfreebsd")):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
@@ -125,7 +125,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
          else:
              missing.append('ossaudiodev')
  
-@@ -1637,7 +1650,7 @@ class PyBuildExt(build_ext):
+@@ -1660,7 +1673,7 @@ class PyBuildExt(build_ext):
          # For 8.4a2, the X11 headers are not included. Rather than include a
          # complicated search, this is a hard-coded path. It could bail out
          # if X11 libs are not found...
@@ -134,7 +134,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
          frameworks = ['-framework', 'Tcl', '-framework', 'Tk']
  
          # All existing framework builds of Tcl/Tk don't support 64-bit
-@@ -1687,8 +1700,7 @@ class PyBuildExt(build_ext):
+@@ -1710,8 +1723,7 @@ class PyBuildExt(build_ext):
          # The versions with dots are used on Unix, and the versions without
          # dots on Windows, for detection by cygwin.
          tcllib = tklib = tcl_includes = tk_includes = None
@@ -144,7 +144,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
              tklib = self.compiler.find_library_file(lib_dirs,
                                                          'tk' + version)
              tcllib = self.compiler.find_library_file(lib_dirs,
-@@ -1731,17 +1743,9 @@ class PyBuildExt(build_ext):
+@@ -1754,17 +1766,9 @@ class PyBuildExt(build_ext):
          if platform == 'sunos5':
              include_dirs.append('/usr/openwin/include')
              added_lib_dirs.append('/usr/openwin/lib')
@@ -165,7 +165,7 @@ $OpenBSD: patch-setup_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
  
          # If Cygwin, then verify that X is installed before proceeding
          if platform == 'cygwin':
-@@ -2045,7 +2049,7 @@ def main():
+@@ -2068,7 +2072,7 @@ def main():
            # Scripts to install
            scripts = ['Tools/scripts/pydoc', 'Tools/scripts/idle',
                       'Tools/scripts/2to3',

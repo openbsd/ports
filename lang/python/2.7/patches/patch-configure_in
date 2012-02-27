@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_in,v 1.6 2011/12/10 19:06:03 naddy Exp $
+$OpenBSD: patch-configure_in,v 1.7 2012/02/27 19:30:46 rpointel Exp $
 
 Wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
 
---- configure.in.orig	Mon Nov  1 02:47:19 2010
-+++ configure.in	Thu Jul  7 22:57:06 2011
-@@ -331,7 +331,7 @@ case $ac_sys_system/$ac_sys_release in
+--- configure.in.orig	Sat Jun 11 17:46:28 2011
++++ configure.in	Sun Feb 19 19:10:29 2012
+@@ -324,7 +324,7 @@ case $ac_sys_system/$ac_sys_release in
      # As this has a different meaning on Linux, only define it on OpenBSD
      AC_DEFINE(_BSD_SOURCE, 1, [Define on OpenBSD to activate all library features])
      ;;
@@ -13,42 +13,7 @@ Wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
      # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
      # also defined. This can be overridden by defining _BSD_SOURCE
      # As this has a different meaning on Linux, only define it on OpenBSD
-@@ -1850,30 +1850,14 @@ then
- 	BSD/OS*/4*)
- 		LDSHARED="gcc -shared"
- 		LDCXXSHARED="g++ -shared";;
--	FreeBSD*)
-+	FreeBSD*|OpenBSD*)
- 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
- 		then
--			LDSHARED='$(CC) -shared ${LDFLAGS}'
--			LDCXXSHARED='$(CXX) -shared ${LDFLAGS}'
-+			LDSHARED='$(CC) -shared'
-+			LDCXXSHARED='$(CXX) -shared'
- 		else
--			LDSHARED="ld -Bshareable ${LDFLAGS}"
-+			LDSHARED="ld -Bshareable"
- 		fi;;
--	OpenBSD*)
--		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
--		then
--				LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
--				LDCXXSHARED='$(CXX) -shared $(CCSHARED) ${LDFLAGS}'
--		else
--				case `uname -r` in
--				[[01]].* | 2.[[0-7]] | 2.[[0-7]].*)
--				   LDSHARED="ld -Bshareable ${LDFLAGS}"
--				   ;;
--				*)
--				   LDSHARED='$(CC) -shared $(CCSHARED) ${LDFLAGS}'
--				   LDCXXSHARED='$(CXX) -shared $(CCSHARED) ${LDFLAGS}'
--				   ;;
--				esac
--		fi;;
- 	NetBSD*|DragonFly*)
- 		LDSHARED="cc -shared ${LDFLAGS}"
- 		LDCXXSHARED="c++ -shared ${LDFLAGS}";;
-@@ -2035,9 +2019,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
+@@ -2049,9 +2049,10 @@ AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-U
  
  # only check for sem_init if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then

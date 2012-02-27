@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2011/04/24 09:31:46 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2012/02/27 19:30:46 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -28,9 +28,33 @@ lib/python2.7/test/buffer_tests.pyc
 lib/python2.7/test/buffer_tests.pyo
 lib/python2.7/test/cfgparser.1
 lib/python2.7/test/check_soundcard.vbs
-lib/python2.7/test/cjkencodings_test.py
-lib/python2.7/test/cjkencodings_test.pyc
-lib/python2.7/test/cjkencodings_test.pyo
+lib/python2.7/test/cjkencodings/
+lib/python2.7/test/cjkencodings/big5-utf8.txt
+lib/python2.7/test/cjkencodings/big5.txt
+lib/python2.7/test/cjkencodings/big5hkscs-utf8.txt
+lib/python2.7/test/cjkencodings/big5hkscs.txt
+lib/python2.7/test/cjkencodings/cp949-utf8.txt
+lib/python2.7/test/cjkencodings/cp949.txt
+lib/python2.7/test/cjkencodings/euc_jisx0213-utf8.txt
+lib/python2.7/test/cjkencodings/euc_jisx0213.txt
+lib/python2.7/test/cjkencodings/euc_jp-utf8.txt
+lib/python2.7/test/cjkencodings/euc_jp.txt
+lib/python2.7/test/cjkencodings/euc_kr-utf8.txt
+lib/python2.7/test/cjkencodings/euc_kr.txt
+lib/python2.7/test/cjkencodings/gb18030-utf8.txt
+lib/python2.7/test/cjkencodings/gb18030.txt
+lib/python2.7/test/cjkencodings/gb2312-utf8.txt
+lib/python2.7/test/cjkencodings/gb2312.txt
+lib/python2.7/test/cjkencodings/gbk-utf8.txt
+lib/python2.7/test/cjkencodings/gbk.txt
+lib/python2.7/test/cjkencodings/hz-utf8.txt
+lib/python2.7/test/cjkencodings/hz.txt
+lib/python2.7/test/cjkencodings/johab-utf8.txt
+lib/python2.7/test/cjkencodings/johab.txt
+lib/python2.7/test/cjkencodings/shift_jis-utf8.txt
+lib/python2.7/test/cjkencodings/shift_jis.txt
+lib/python2.7/test/cjkencodings/shift_jisx0213-utf8.txt
+lib/python2.7/test/cjkencodings/shift_jisx0213.txt
 lib/python2.7/test/cmath_testcases.txt
 lib/python2.7/test/curses_tests.py
 lib/python2.7/test/curses_tests.pyc
@@ -279,6 +303,10 @@ lib/python2.7/test/ssl_key.pem
 lib/python2.7/test/string_tests.py
 lib/python2.7/test/string_tests.pyc
 lib/python2.7/test/string_tests.pyo
+lib/python2.7/test/subprocessdata/
+lib/python2.7/test/subprocessdata/sigchild_ignore.py
+lib/python2.7/test/subprocessdata/sigchild_ignore.pyc
+lib/python2.7/test/subprocessdata/sigchild_ignore.pyo
 lib/python2.7/test/svn_python_org_https_cert.pem
 lib/python2.7/test/test_MimeWriter.py
 lib/python2.7/test/test_MimeWriter.pyc
@@ -927,6 +955,9 @@ lib/python2.7/test/test_module.pyo
 lib/python2.7/test/test_modulefinder.py
 lib/python2.7/test/test_modulefinder.pyc
 lib/python2.7/test/test_modulefinder.pyo
+lib/python2.7/test/test_msilib.py
+lib/python2.7/test/test_msilib.pyc
+lib/python2.7/test/test_msilib.pyo
 lib/python2.7/test/test_multibytecodec.py
 lib/python2.7/test/test_multibytecodec.pyc
 lib/python2.7/test/test_multibytecodec.pyo
