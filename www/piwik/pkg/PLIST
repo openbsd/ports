@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2012/02/20 08:47:02 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.35 2012/02/27 10:44:15 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -1244,6 +1244,9 @@ piwik/plugins/CoreAdminHome/templates/styles.css
 piwik/plugins/CoreHome/
 piwik/plugins/CoreHome/Controller.php
 piwik/plugins/CoreHome/CoreHome.php
+piwik/plugins/CoreHome/DataTableAction/
+piwik/plugins/CoreHome/DataTableAction/MultiRowEvolution.php
+piwik/plugins/CoreHome/DataTableAction/RowEvolution.php
 piwik/plugins/CoreHome/templates/
 piwik/plugins/CoreHome/templates/autocomplete.js
 piwik/plugins/CoreHome/templates/broadcast.js
@@ -2053,6 +2056,7 @@ piwik/plugins/UserCountry/flags/sm.png
 piwik/plugins/UserCountry/flags/sn.png
 piwik/plugins/UserCountry/flags/so.png
 piwik/plugins/UserCountry/flags/sr.png
+piwik/plugins/UserCountry/flags/ss.png
 piwik/plugins/UserCountry/flags/st.png
 piwik/plugins/UserCountry/flags/su.png
 piwik/plugins/UserCountry/flags/sv.png
@@ -2353,6 +2357,7 @@ piwik/themes/default/images/search_ico.png
 piwik/themes/default/images/sites_selection.png
 piwik/themes/default/images/sort_subtable_asc.png
 piwik/themes/default/images/sort_subtable_desc.png
+piwik/themes/default/images/sort_subtable_desc_light.png
 piwik/themes/default/images/sortasc.png
 piwik/themes/default/images/sortdesc.png
 piwik/themes/default/images/success_medium.png
