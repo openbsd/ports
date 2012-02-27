@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.33 2012/02/27 14:51:37 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.34 2012/02/27 20:42:39 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -31,14 +31,14 @@
 .Op Fl f Ar m
 .Op Fl F Ar m
 .Op Fl h Ar hosts
-.Op Fl I Ar subdirlist
+.Op Fl I Ar pathlist
 .Op Fl J Ar p
 .Op Fl j Ar n
 .Op Fl L Ar logdir
 .Op Fl m Ar threshold
-.Op Fl P Ar subdirlist
+.Op Fl P Ar pathlist
 .Op Fl S Ar sizefile
-.Op Ar pkgpath ...
+.Op Ar pathlist ...
 .Ek
 .Sh DESCRIPTION
 .Nm
@@ -73,10 +73,26 @@ in order to get a more efficient build that will focus on large ports first.
 .Pp
 .Nm
 can be restricted to a subset of the tree by giving it
-.Ar pkgpath ...
-to build as parameters, as per
+.Ar pathlist ...
+to build as parameters.
+.Pp
+A
+.Ar pathlist
+is either a
 .Xr pkgpath 7
-specifications.
+to build, or a filename that contains pkgpaths (one per line).
+.Ar pathlist
+parameters can also take the form
+.Li filename*scale
+in order to multiply the weights of all
+.Xr pkgpath 7
+in a file by a given
+.Ar scale ,
+or
+.Li pkgpath=value ,
+in order to set the weight of a given
+.Xr pkgpath 7
+to a specific value.
 .Pp
 .Nm
 supports
@@ -127,7 +143,7 @@ cluster.
 By default, the current host's architecture will be used.
 .It Fl a
 Walk the whole tree and builds all packages (default if no
-.Ar pkgpath
+.Ar pathlist
 is given).
 .It Fl b Ar logfile
 Prime the heuristics module with a previous build log, so that packages that
@@ -164,6 +180,14 @@ will be disabled, so that the same port is built once, as far as possible.
 This flag disables that optimization, which might be desireable if you want
 to build a small subset of packages which would pull in the kitchen sink
 otherwise.
+.It Ar DONT_CLEAN_LOCKS
+By default,
+.Nm
+will clean old locks from dpb running on the same host that no longer exist,
+provided they didn't end in error.
+This is usually the right thing to do after a crash, or after killing dpb
+abruptly.
+Sometimes, one may want manual control over which locks to remove.
 .It Ar FTP_ONLY
 Don't fetch distfiles that are not allowed for ftp.
 .It Ar HISTORY_ONLY
@@ -248,7 +272,7 @@ There are no fine-grained options to control
 .Xr ssh 1
 options, as those can be specified through virtual host declarations in
 .Xr ssh_config 5 .
-.It Fl I Ar subdirlist
+.It Fl I Ar pathlist
 List of
 .Xr pkgpath 7
 to install, on the local box.
@@ -301,7 +325,7 @@ Avoid for now, as
 .Xr mfs 8
 has serious race conditions which yield
 random errors under stress conditions such as bulk build.
-.It Fl P Ar subdirlist
+.It Fl P Ar pathlist
 Read list of
 .Xr pkgpath 7
 from file.
