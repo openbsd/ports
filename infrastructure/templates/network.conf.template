@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.170 2011/11/11 16:58:09 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.171 2012/02/27 18:10:41 fgsch Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -270,6 +270,11 @@ MASTER_SITE_MYSQL+= \
 	http://download.softagency.net/MySQL/
 
 MASTER_SITE_PYPI +=	\
+	http://b.pypi.python.org/packages/source/ \
+	http://c.pypi.python.org/packages/source/ \
+	http://d.pypi.python.org/packages/source/ \
+	http://e.pypi.python.org/packages/source/ \
+	http://f.pypi.python.org/packages/source/ \
 	http://pypi.python.org/packages/source/
 
 MASTER_SITE_RUBYGEMS+= \
