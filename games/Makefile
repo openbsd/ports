@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.237 2012/01/25 11:30:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.238 2012/02/27 22:11:10 schwarze Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -21,6 +21,7 @@
      SUBDIR += bass
      SUBDIR += batrachians
      SUBDIR += belooted
+     SUBDIR += beret
      SUBDIR += blobwars
      SUBDIR += bomberclone
      SUBDIR += boswars
