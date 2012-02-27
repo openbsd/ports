@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2012/02/27 10:11:38 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -396,7 +396,7 @@ lib/gimp/2.0/plug-ins/palette-to-gradient.py
 @bin lib/gimp/2.0/plug-ins/polar-coords
 @bin lib/gimp/2.0/plug-ins/print
 @bin lib/gimp/2.0/plug-ins/procedure-browser
-lib/gimp/2.0/plug-ins/py-slice.py
+lib/gimp/2.0/plug-ins/${MODPY_PY_PREFIX}slice.py
 lib/gimp/2.0/plug-ins/pyconsole.py
 lib/gimp/2.0/plug-ins/python-console.py
 lib/gimp/2.0/plug-ins/python-eval.py
@@ -958,7 +958,7 @@ share/gimp/2.0/scripts/clothify.scm
 share/gimp/2.0/scripts/coffee.scm
 share/gimp/2.0/scripts/comic-logo.scm
 share/gimp/2.0/scripts/coolmetal-logo.scm
-share/gimp/2.0/scripts/copy-visible.scm
+share/gimp/2.0/scripts/co${MODPY_PY_PREFIX}visible.scm
 share/gimp/2.0/scripts/crystal-logo.scm
 share/gimp/2.0/scripts/difference-clouds.scm
 share/gimp/2.0/scripts/distress-selection.scm
@@ -1188,7 +1188,6 @@ share/gtk-doc/html/libgimp/libgimp-index-new-in-2-4.html
 share/gtk-doc/html/libgimp/libgimp-index-new-in-2-6.html
 share/gtk-doc/html/libgimp/libgimp-index.html
 share/gtk-doc/html/libgimp/libgimp-selectors.html
-share/gtk-doc/html/libgimp/libgimp.devhelp
 share/gtk-doc/html/libgimp/libgimp.devhelp2
 share/gtk-doc/html/libgimp/libgimp.html
 share/gtk-doc/html/libgimp/libgimpui-hierarchy.html
@@ -1222,7 +1221,6 @@ share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-2.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-4.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-6.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index.html
-share/gtk-doc/html/libgimpbase/libgimpbase.devhelp
 share/gtk-doc/html/libgimpbase/libgimpbase.devhelp2
 share/gtk-doc/html/libgimpbase/libgimpbase.html
 share/gtk-doc/html/libgimpbase/right.png
@@ -1245,7 +1243,6 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-2.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-4.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-6.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index.html
-share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp
 share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp2
 share/gtk-doc/html/libgimpcolor/libgimpcolor.html
 share/gtk-doc/html/libgimpcolor/right.png
@@ -1271,7 +1268,6 @@ share/gtk-doc/html/libgimpconfig/libgimpconfig-index-deprecated.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-4.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-6.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig.devhelp
 share/gtk-doc/html/libgimpconfig/libgimpconfig.devhelp2
 share/gtk-doc/html/libgimpconfig/libgimpconfig.html
 share/gtk-doc/html/libgimpconfig/right.png
@@ -1291,7 +1287,6 @@ share/gtk-doc/html/libgimpmath/libgimpmath-index-new-in-2-2.html
 share/gtk-doc/html/libgimpmath/libgimpmath-index-new-in-2-4.html
 share/gtk-doc/html/libgimpmath/libgimpmath-index-new-in-2-6.html
 share/gtk-doc/html/libgimpmath/libgimpmath-index.html
-share/gtk-doc/html/libgimpmath/libgimpmath.devhelp
 share/gtk-doc/html/libgimpmath/libgimpmath.devhelp2
 share/gtk-doc/html/libgimpmath/libgimpmath.html
 share/gtk-doc/html/libgimpmath/right.png
@@ -1309,7 +1304,6 @@ share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-2.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-4.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-6.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index.html
-share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp
 share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp2
 share/gtk-doc/html/libgimpmodule/libgimpmodule.html
 share/gtk-doc/html/libgimpmodule/right.png
@@ -1329,7 +1323,6 @@ share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-2.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-4.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-6.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index.html
-share/gtk-doc/html/libgimpthumb/libgimpthumb.devhelp
 share/gtk-doc/html/libgimpthumb/libgimpthumb.devhelp2
 share/gtk-doc/html/libgimpthumb/libgimpthumb.html
 share/gtk-doc/html/libgimpthumb/right.png
@@ -1430,7 +1423,6 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-new-in-2-6.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-utils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-widgets.html
-share/gtk-doc/html/libgimpwidgets/libgimpwidgets.devhelp
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets.devhelp2
 share/gtk-doc/html/libgimpwidgets/right.png
 share/gtk-doc/html/libgimpwidgets/stock-anchor-16.png
@@ -1825,6 +1817,7 @@ share/locale/el/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/el/LC_MESSAGES/gimp20-python.mo
 share/locale/el/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/el/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/el/LC_MESSAGES/gimp20-tips.mo
 share/locale/el/LC_MESSAGES/gimp20.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/en_CA/LC_MESSAGES/gimp20-python.mo
@@ -1841,6 +1834,7 @@ share/locale/en_GB/LC_MESSAGES/gimp20.mo
 share/locale/eo/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/eo/LC_MESSAGES/gimp20-python.mo
 share/locale/eo/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/eo/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/eo/LC_MESSAGES/gimp20-tips.mo
 share/locale/eo/LC_MESSAGES/gimp20.mo
 share/locale/es/LC_MESSAGES/gimp20-libgimp.mo
@@ -1937,6 +1931,8 @@ share/locale/ja/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ja/LC_MESSAGES/gimp20-tips.mo
 share/locale/ja/LC_MESSAGES/gimp20.mo
 share/locale/ka/LC_MESSAGES/gimp20.mo
+share/locale/kk/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/kk/LC_MESSAGES/gimp20.mo
 share/locale/km/
 share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
@@ -1960,6 +1956,10 @@ share/locale/lt/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/lt/LC_MESSAGES/gimp20-tips.mo
 share/locale/lt/LC_MESSAGES/gimp20.mo
 share/locale/lv/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/lv/LC_MESSAGES/gimp20-python.mo
+share/locale/lv/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/lv/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/lv/LC_MESSAGES/gimp20-tips.mo
 share/locale/lv/LC_MESSAGES/gimp20.mo
 share/locale/mk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/mk/LC_MESSAGES/gimp20-python.mo
@@ -2098,6 +2098,7 @@ share/locale/tr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/tr/LC_MESSAGES/gimp20-python.mo
 share/locale/tr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/tr/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/tr/LC_MESSAGES/gimp20-tips.mo
 share/locale/tr/LC_MESSAGES/gimp20.mo
 share/locale/tt/LC_MESSAGES/gimp20.mo
 share/locale/uk/LC_MESSAGES/gimp20-libgimp.mo

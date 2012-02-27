@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.10 2011/04/16 07:47:04 dcoppa Exp $
---- configure.in.orig	Sun Oct  3 14:04:42 2010
-+++ configure.in	Fri Apr 15 20:17:58 2011
-@@ -421,14 +421,7 @@ AM_GLIB_GNU_GETTEXT
+$OpenBSD: patch-configure_in,v 1.11 2012/02/27 10:11:38 giovanni Exp $
+--- configure.in.orig	Tue Jan 31 14:50:28 2012
++++ configure.in	Wed Feb  8 15:30:13 2012
+@@ -424,14 +424,7 @@ AM_GLIB_GNU_GETTEXT
  ###########
  
  AC_MSG_CHECKING([for iso-codes])
@@ -17,7 +17,7 @@ $OpenBSD: patch-configure_in,v 1.10 2011/04/16 07:47:04 dcoppa Exp $
  AC_MSG_RESULT($have_iso_codes)
  
  AC_SUBST(ISO_CODES_LOCATION)
-@@ -569,7 +562,8 @@ AC_TRY_RUN([#include <math.h>
+@@ -572,7 +565,8 @@ AC_TRY_RUN([#include <math.h>
  AC_CHECK_FUNCS(finite, , [
    AC_MSG_CHECKING(for finite in <math.h>)
    AC_TRY_LINK([#include <math.h>], [double f = 0.0; finite (f)], [
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_in,v 1.10 2011/04/16 07:47:04 dcoppa Exp $
      AC_MSG_RESULT(yes)], [
      AC_MSG_RESULT(no)
      AC_MSG_CHECKING(for isfinite in <math.h>)
-@@ -1146,10 +1140,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
+@@ -1149,10 +1143,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
     test -n "$PNG_LIBS" && test -n "$JPEG_LIBS" && test -n "$Z_LIBS"; then
    AC_CHECK_LIB(mng, mng_create,
      [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure_in,v 1.10 2011/04/16 07:47:04 dcoppa Exp $
    else
      have_libmng="no (MNG header file not found)"
    fi
-@@ -1328,19 +1322,9 @@ if test "x$with_gnomevfs" != xno; then
+@@ -1331,19 +1325,9 @@ if test "x$with_gnomevfs" != xno; then
  
  gnome_vfs_modules="gnome-vfs-2.0 >= gnome_vfs_required_version"
  

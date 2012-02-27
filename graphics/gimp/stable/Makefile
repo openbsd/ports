@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.76 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/02/27 10:11:38 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
-DISTNAME=	gimp-2.6.11
-REVISION=	5
+DISTNAME=	gimp-2.6.12
 
 SHARED_LIBS=	gimp-2.0	271.0	\
 		gimpbase-2.0	271.0	\
@@ -73,7 +72,7 @@ MODULES=	devel/gettext \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-AUTOCONF_VERSION= 2.67
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-gvfs \
