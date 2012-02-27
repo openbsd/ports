@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.315 2012/01/26 17:19:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.316 2012/02/27 08:46:22 bentley Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -233,6 +233,7 @@
      SUBDIR += sketch
      SUBDIR += smpeg-xmms
      SUBDIR += swfdec
+     SUBDIR += sxiv
      SUBDIR += synaesthesia
      SUBDIR += tesseract
      SUBDIR += tgif
