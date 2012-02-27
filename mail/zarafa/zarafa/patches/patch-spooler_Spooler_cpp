@@ -1,4 +1,4 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.9 2011/11/17 15:14:37 ajacoutot Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.10 2012/02/27 19:01:34 ajacoutot Exp $
 
 XXX to be revisited
 
@@ -17,21 +17,8 @@ XXX to be revisited
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
 +#elif defined(__OpenBSD__)
-+		bNPTL = false;
++		bNPTL = true;
 +#endif
  	}
  
  	// set socket filename
-@@ -1323,11 +1327,8 @@ int main(int argc, char *argv[]) {
- 		if (bNPTL) {
- 			g_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Joining signal thread");
- 			pthread_join(signal_thread, NULL);
--			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "Spooler shutdown complete");
--		} else {
--			// ignore the death of the pipe logger
--			signal(SIGCHLD, SIG_IGN);
- 		}
-+		g_lpLogger->Log(EC_LOGLEVEL_FATAL, "Spooler shutdown complete");
- 	}
- 
- 	MAPIUninitialize();

@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.12 2011/12/22 17:10:04 ajacoutot Exp $
+$OpenBSD: patch-common_ECLogger_cpp,v 1.13 2012/02/27 19:01:34 ajacoutot Exp $
 
 Needs newlocale(3).
 
@@ -83,7 +83,7 @@ Needs newlocale(3).
  		if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0)
  			bNPTL = false;
 +#elif defined(__OpenBSD__)
-+		bNPTL = false;
++		bNPTL = true;
 +#endif
  		
  		m_lpConfig = lpConfig;

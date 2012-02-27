@@ -1,4 +1,4 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.19 2012/02/16 22:18:36 ajacoutot Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.20 2012/02/27 19:01:34 ajacoutot Exp $
 --- provider/server/ECServer.cpp.orig	Wed Feb  1 22:09:33 2012
 +++ provider/server/ECServer.cpp	Thu Feb  2 12:28:17 2012
 @@ -86,6 +86,10 @@
@@ -40,7 +40,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.19 2012/02/16 22:18:36 ajacouto
  	if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0)
  		m_bNPTL = false;
 +#elif defined(__OpenBSD__)
-+	m_bNPTL = false;
++	m_bNPTL = true;
 +#endif
  
  	// Init random generator

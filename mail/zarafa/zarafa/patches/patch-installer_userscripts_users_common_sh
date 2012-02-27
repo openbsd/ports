@@ -1,11 +1,12 @@
-$OpenBSD: patch-installer_userscripts_users_common_sh,v 1.5 2011/11/17 15:14:37 ajacoutot Exp $
---- installer/userscripts/users_common.sh.orig	Wed Nov 16 23:01:36 2011
-+++ installer/userscripts/users_common.sh	Thu Nov 17 13:59:31 2011
+$OpenBSD: patch-installer_userscripts_users_common_sh,v 1.6 2012/02/27 19:01:34 ajacoutot Exp $
+--- installer/userscripts/users_common.sh.orig	Wed Feb  1 15:42:09 2012
++++ installer/userscripts/users_common.sh	Mon Feb 27 19:26:00 2012
 @@ -1,7 +1,7 @@
  # shell include script
  
- ZARAFA_LANG="${ZARAFA_USERSCRIPT_LOCALE:-${LC_MESSAGES:-en_US}}"
+-ZARAFA_LANG="${ZARAFA_USERSCRIPT_LOCALE:-${LC_MESSAGES:-en_US}}"
 -PATH=/bin:/usr/local/bin:/usr/bin
++ZARAFA_LANG="${ZARAFA_USERSCRIPT_LOCALE:-${LC_MESSAGES:-C}}"
 +PATH=$PATH:${PREFIX}/bin
  export ZARAFA_LANG PATH
  

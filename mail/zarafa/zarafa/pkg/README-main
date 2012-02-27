@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.15 2011/12/22 17:10:04 ajacoutot Exp $
+$OpenBSD: README-main,v 1.16 2012/02/27 19:01:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -55,6 +55,7 @@ Anyway, here are the 3 ways of integrating Zarafa with sendmail(8).
 First, install the procmail package and configure ${SYSCONFDIR}/procmailrc
 the following way:
 
+# optional: deliver mail tagged as SPAM into the Junk mail folder
 :0w
 * ^X-Spam-Status: Yes
 | ${TRUEPREFIX}/bin/zarafa-dagent -j $LOGNAME
