@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.44 2012/02/27 15:37:36 espie Exp $
+# $OpenBSD: dpb,v 1.45 2012/02/27 17:50:14 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -84,6 +84,8 @@ sub interpret_path
 	if ($path =~ s/\*(\d+)$//) {
 		$scale = $1;
 	}
+	$path =~ s/\/+$//;
+	$path =~ s/^\.\/+//;
 	my $p = DPB::PkgPath->new($path);
 	if (defined $scale) {
 		$p->{scaled} = $scale;
