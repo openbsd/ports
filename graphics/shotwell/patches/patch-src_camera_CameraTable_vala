@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_camera_CameraTable_vala,v 1.1 2011/09/12 18:22:19 jasper Exp $
---- src/camera/CameraTable.vala.orig	Mon Sep 12 18:36:24 2011
-+++ src/camera/CameraTable.vala	Mon Sep 12 18:38:06 2011
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.2 2012/02/27 19:41:55 ajacoutot Exp $
+--- src/camera/CameraTable.vala.orig	Sun Feb 26 15:04:33 2012
++++ src/camera/CameraTable.vala	Sun Feb 26 15:09:13 2012
 @@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
@@ -49,13 +49,13 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.1 2011/09/12 18:22:19 jasper Exp
          
          return cameras;
      }
-@@ -204,24 +177,8 @@ public class CameraTable {
+@@ -206,24 +179,6 @@ public class CameraTable {
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
      
 -    private string? get_name_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
--            if (volume.get_identifier(VOLUME_IDENTIFIER_KIND_UUID) == uuid) {
+-            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
 -                return volume.get_name();
 -            }
 -        }
@@ -64,18 +64,17 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.1 2011/09/12 18:22:19 jasper Exp
 -    
 -    private GLib.Icon? get_icon_for_uuid(string uuid) {
 -        foreach (Volume volume in volume_monitor.get_volumes()) {
--            if (volume.get_identifier(VOLUME_IDENTIFIER_KIND_UUID) == uuid) {
+-            if (volume.get_identifier(VolumeIdentifier.UUID) == uuid) {
 -                return volume.get_icon();
 -            }
 -        }
 -        return null;
 -    }
- 
-+
+-
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
          GPhoto.PortInfoList port_info_list;
-@@ -311,23 +268,6 @@ public class CameraTable {
+@@ -313,23 +268,6 @@ public class CameraTable {
                  continue;
              }
              
@@ -99,7 +98,7 @@ $OpenBSD: patch-src_camera_CameraTable_vala,v 1.1 2011/09/12 18:22:19 jasper Exp
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -365,13 +305,7 @@ public class CameraTable {
+@@ -367,13 +305,7 @@ public class CameraTable {
          }
      }
      

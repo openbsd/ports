@@ -1,11 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/02/27 19:41:55 ajacoutot Exp $
+
+# needs to allocate 512M
+VMEM_WARNING =	Yes
 
 COMMENT =	digital photo organizer
 
-DISTNAME =	shotwell-0.11.1
-REVISION=	2
+# git glone
+DISTNAME =	shotwell-0.11.92.20120226
 CATEGORIES =	graphics
-MASTER_SITES =	http://yorba.org/download/shotwell/0.11/
+#MASTER_SITES =	http://yorba.org/download/shotwell/0.11/
+MASTER_SITES =	http://distfiles.bsdfrog.org/
 HOMEPAGE =	http://yorba.org/shotwell/
 EXTRACT_SUFX =	.tar.bz2
 
@@ -17,31 +21,32 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += drm exif exiv2 expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gee gexiv2 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += cairo-gobject drm exif exiv2 expat fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gee gexiv2 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstbase-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 sqlite3 stdc++ unique-1.0 usb webkitgtk-1.0
-WANTLIB += xcb xcb-render xcb-shm xml2 z gconf-2
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-3 javascriptcoregtk-3.0
+WANTLIB += lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png pthread pthread-stubs raw rest-0.7 soup-2.4 sqlite3
+WANTLIB += stdc++ unique-3.0 usb webkitgtk-3.0 xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES =	devel/dconf devel/gettext x11/gnome
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE =		yes
+MODGNOME_DESKTOP_FILE =	yes
 
 RUN_DEPENDS +=	x11/gnome/librsvg \
 		x11/gtk+2,-guic
 
-BUILD_DEPENDS =	lang/vala>=0.12
+BUILD_DEPENDS =	lang/vala>=0.15.2
 
-LIB_DEPENDS =	x11/gtk+2 \
-		graphics/libgexiv2 \
-		graphics/libraw \
-		www/webkit>=1.4.0v0 \
-		devel/libunique \
+LIB_DEPENDS =	graphics/libgexiv2>=0.3.91 \
+		graphics/libraw>=0.14.5 \
+		www/webkit,gtk3>=1.6.1v0 \
+		devel/libunique3 \
 		devel/libgee \
-		graphics/libgphoto2
+		graphics/libgphoto2 \
+		net/librest
 
 NO_REGRESS =	Yes
 # beware : configure is an horrible homemade shell script
