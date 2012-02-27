@@ -1,0 +1,15 @@
+$OpenBSD: patch-plug-ins_script-fu_script-fu-server_c,v 1.1 2012/02/27 14:55:31 giovanni Exp $
+--- plug-ins/script-fu/script-fu-server.c.orig	Mon Feb 27 15:25:23 2012
++++ plug-ins/script-fu/script-fu-server.c	Mon Feb 27 15:25:51 2012
+@@ -446,7 +446,11 @@ server_start (gint         port,
+   const gchar     *progress;
+ 
+   memset (&hints, 0, sizeof (hints));
++#ifdef AI_ADDRCONFIG
+   hints.ai_flags = AI_PASSIVE | AI_ADDRCONFIG;
++#else
++  hints.ai_flags = AI_PASSIVE;
++#endif
+   hints.ai_socktype = SOCK_STREAM;
+ 
+   port_s = g_strdup_printf ("%d", port);
