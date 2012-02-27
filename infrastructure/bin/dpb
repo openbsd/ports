@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.43 2012/02/27 14:51:37 espie Exp $
+# $OpenBSD: dpb,v 1.44 2012/02/27 15:37:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,28 +26,6 @@ BEGIN {
 }
 use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
-# inspired by Carp::Always
-
-$SIG{__DIE__} = sub {
-	require Carp;
-
-	die @_ if ref $_[0];
-	my $_ = pop @_;
-	s/(.*)( at .*? line .*?\n$)/$1/s;
-	push @_, $_;
-	die &Carp::longmess;
-};
-
-
-$SIG{__WARN__} = sub {
-	require Carp;
-
-	die @_ if ref $_[0];
-	my $_ = pop @_;
-	s/(.*)( at .*? line .*?\n$)/$1/s;
-	push @_, $_;
-	warn &Carp::longmess;
-};
 
 package DPB::State;
 our @ISA = qw(OpenBSD::State);
@@ -103,6 +81,9 @@ sub interpret_path
 	if ($path =~ s/\^=(.*)//) {
 		$weight = $1;
 	}
+	if ($path =~ s/\*(\d+)$//) {
+		$scale = $1;
+	}
 	my $p = DPB::PkgPath->new($path);
 	if (defined $scale) {
 		$p->{scaled} = $scale;
@@ -120,8 +101,8 @@ sub interpret_paths
 	my $do = pop;
 	for my $file (@_) {
 		my $scale;
-		if ($file =~ m/^(.*)\*(\d+)$/) {
-			($file, $scale) = ($1, $2);
+		if ($file =~ s/\*(\d+)$//) {
+			$scale = $1;
 		}
 
 		if (-f $file) {
@@ -416,6 +397,34 @@ use DPB::Locks;
 use DPB::Job;
 use DPB::Grabber;
 
+my $reporter;
+
+# inspired by Carp::Always
+$SIG{__WARN__} = sub {
+	require Carp;
+
+	my $_ = pop @_;
+	s/(.*)( at .*? line .*?\n$)/$1/s;
+	push @_, $_;
+	if (defined $reporter) {
+		$reporter->myprint(&Carp::longmess);
+	} else {
+		warn &Carp::longmess;
+	}
+};
+
+$SIG{__DIE__} = sub {
+	require Carp;
+
+	my $_ = pop @_;
+	s/(.*)( at .*? line .*?\n$)/$1/s;
+	push @_, $_;
+	if (defined $reporter) {
+		$reporter->reset_cursor;
+	}
+	die &Carp::longmess;
+};
+
 my $subdirlist = {};
 
 my $state = DPB::State->new('dpb');
@@ -457,7 +466,7 @@ $state->{builder} = DPB::PortBuilder->new($state);
 
 $state->{locker} = DPB::Locks->new($state, join("/", $state->logdir, "locks"));
 $state->{engine} = DPB::Engine->new($state);
-my $reporter = DPB::Reporter->new($state->opt('x'),
+$reporter = DPB::Reporter->new($state->opt('x'),
     $state->heuristics, "DPB::Core", $state->engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;

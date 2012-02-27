@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.7 2011/12/10 14:47:36 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.8 2012/02/27 15:37:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -180,9 +180,6 @@ sub set_sig_handlers
 	};
 	OpenBSD::Handler->register(sub {
 		$self->reset_cursor; });
-	$SIG{'__DIE__'} = sub {
-		$self->reset_cursor;
-	};
 }
 
 sub new
@@ -345,6 +342,7 @@ sub myprint
 {
 	my $self = shift;
 	for my $string (@_) {
+		$string =~ s/^\t/       /gm; # XXX dirty hack for warn
 		$extra .= $string;
 	}
 }
