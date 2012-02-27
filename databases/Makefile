@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2012/01/09 19:35:41 landry Exp $
+# $OpenBSD: Makefile,v 1.205 2012/02/27 10:22:39 giovanni Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -28,7 +28,6 @@
      SUBDIR += libpqxx
      SUBDIR += luasqlite3
      SUBDIR += luma
-     SUBDIR += maatkit
      SUBDIR += mdbtools/snapshot
      SUBDIR += mongodb
      SUBDIR += mysql
@@ -117,6 +116,7 @@
      SUBDIR += pear-MDB2-mysql
      SUBDIR += pear-MDB2-mysqli
      SUBDIR += pear-MDB2-sqlite
+     SUBDIR += percona-toolkit
      SUBDIR += pg-toolbox
      SUBDIR += pg_top
      SUBDIR += pgadmin3
