@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/02/27 22:07:49 schwarze Exp $
+# $OpenBSD: Makefile,v 1.2 2012/02/28 10:11:43 sthen Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1
@@ -25,9 +25,11 @@ LIB_DEPENDS=	devel/sdl \
 		devel/sdl-mixer \
 		devel/sdl-ttf
 
-MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+ALL_TARGET=	beret
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/SDL -Wall
+LDFLAGS+=	-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beret ${PREFIX}/bin
