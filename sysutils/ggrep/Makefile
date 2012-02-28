@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/24 15:46:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2012/02/28 08:51:17 dcoppa Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
-DISTNAME=	grep-2.9
+DISTNAME=	grep-2.10
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.gnu.org/software/grep/grep.html
@@ -16,6 +16,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=grep/}
+
+# no .tar.gz available, GNU grep itself requires gcc >= 3
+EXTRACT_SUFX=	.tar.xz
 
 WANTLIB=	c pcre
 MODULES=	devel/gettext
