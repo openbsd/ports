@@ -1,16 +1,7 @@
-$OpenBSD: patch-boehm-gc_configure,v 1.4 2012/01/26 13:17:22 pascal Exp $
+$OpenBSD: patch-boehm-gc_configure,v 1.5 2012/02/28 20:00:16 pascal Exp $
 --- boehm-gc/configure.orig	Wed Oct 26 11:30:24 2011
-+++ boehm-gc/configure	Wed Jan 25 18:20:55 2012
-@@ -615,6 +615,8 @@ CPLUSPLUS_TRUE
- target_all
- EXTRA_TEST_LIBS
- extra_ldflags_libgc
-+OPENBSD_THREADS_TRUE
-+OPENBSD_THREADS_FALSE
- POWERPC_DARWIN_FALSE
- POWERPC_DARWIN_TRUE
- THREADLIBS
-@@ -10756,7 +10758,7 @@ netbsd*)
++++ boehm-gc/configure	Mon Feb 20 21:59:55 2012
+@@ -10756,7 +10756,7 @@ netbsd*)
    need_version=no
    if echo __ELF__ | $CC -E - | $GREP __ELF__ >/dev/null; then
      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -19,7 +10,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.4 2012/01/26 13:17:22 pascal Exp $
      dynamic_linker='NetBSD (a.out) ld.so'
    else
      library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major ${libname}${shared_ext}'
-@@ -14480,7 +14482,7 @@ openbsd*)
+@@ -14480,7 +14480,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -28,7 +19,7 @@ $OpenBSD: patch-boehm-gc_configure,v 1.4 2012/01/26 13:17:22 pascal Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -14855,6 +14857,12 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
+@@ -14855,6 +14855,11 @@ $as_echo "#define _REENTRANT 1" >>confdefs.h
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&5
  $as_echo "$as_me: WARNING: \"Only HP-UX 11 POSIX threads are supported.\"" >&2;}
  	;;
@@ -36,26 +27,19 @@ $OpenBSD: patch-boehm-gc_configure,v 1.4 2012/01/26 13:17:22 pascal Exp $
 +	$as_echo "#define GC_OPENBSD_THREADS 1" >>confdefs.h
 +	THREADLIBS=-pthread
 +	INCLUDES="$INCLUDES -pthread"
-+	openbsd_threads=true
 +	;;
        *-*-kfreebsd*-gnu)
         $as_echo "#define GC_FREEBSD_THREADS 1" >>confdefs.h
  
-@@ -14995,6 +15003,13 @@ else
+@@ -14995,7 +15000,6 @@ else
    POWERPC_DARWIN_FALSE=
  fi
  
-+if test x$openbsd_threads = xtrue; then
-+  OPENBSD_THREADS_TRUE=
-+  OPENBSD_THREADS_FALSE='#'
-+else
-+  OPENBSD_THREADS_TRUE='#'
-+  OPENBSD_THREADS_FALSE=
-+fi
- 
+-
  # Darwin needs a few extra special tests to deal with variation in the
  # system headers.
-@@ -15294,6 +15309,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
+ case "$host" in
+@@ -15294,6 +15298,9 @@ $as_echo "#define DATASTART_IS_ETEXT 1" >>confdefs.h
      ;;
   sparc-*-netbsd*)
      machdep="sparc_netbsd_mach_dep.lo"

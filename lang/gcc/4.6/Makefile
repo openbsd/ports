@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/02/16 21:30:15 pascal Exp $
+# $OpenBSD: Makefile,v 1.17 2012/02/28 20:00:16 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 BROKEN-sparc64 = gengtype looping infinitely
@@ -23,7 +23,7 @@ REVISION-main = 0
 REVISION-c++ =	0
 REVISION-estdc =0
 REVISION-f95 =	0
-REVISION-java =	0
+REVISION-java =	1
 REVISION-objc =	0
 REVISION-ada =	0
 REVISION-go =	0

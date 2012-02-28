@@ -1,7 +1,7 @@
-$OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
---- boehm-gc/os_dep.c.orig	Sun Mar 21 20:34:19 2010
-+++ boehm-gc/os_dep.c	Thu Dec  8 16:41:50 2011
-@@ -385,14 +385,111 @@ static void *tiny_sbrk(ptrdiff_t increment)
+$OpenBSD: patch-boehm-gc_os_dep_c,v 1.3 2012/02/28 20:00:16 pascal Exp $
+--- boehm-gc/os_dep.c.orig	Tue Feb 21 00:39:27 2012
++++ boehm-gc/os_dep.c	Tue Feb 21 00:40:19 2012
+@@ -385,14 +385,94 @@ static void *tiny_sbrk(ptrdiff_t increment)
  
    void GC_init_netbsd_elf()
    {
@@ -18,18 +18,6 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
 +#if defined(OPENBSD)
 +  static struct sigaction old_segv_act;
 +  sigjmp_buf GC_jmp_buf_openbsd;
-+
-+# if defined(GC_OPENBSD_THREADS)
-+#   include <sys/syscall.h>
-+    sigset_t __syscall(quad_t, ...);
-+# endif
-+
-+  /*
-+   * Dont use GC_find_limit() because siglongjmp out of the
-+   * signal handler by-passes our userland pthreads lib, leaving
-+   * SIGSEGV and SIGPROF masked. Instead use this custom one
-+   * that works-around the issues.
-+   */
 +
 +    /*ARGSUSED*/
 +    void GC_fault_handler_openbsd(int sig)
@@ -67,11 +55,6 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
 +               GC_noop1((word)(*result));
 +           }
 +       }
-+
-+# if defined(GC_OPENBSD_THREADS)
-+       /* due to the siglongjump we need to manually unmask SIGPROF */
-+       __syscall(SYS_sigprocmask, SIG_UNBLOCK, sigmask(SIGPROF));
-+# endif
 +
 +       sigaction(SIGSEGV, &old_segv_act, 0);
 +
@@ -115,7 +98,7 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
  # ifdef OS2
  
  # include <stddef.h>
-@@ -1009,7 +1106,8 @@ ptr_t GC_get_stack_base()
+@@ -1009,7 +1089,8 @@ ptr_t GC_get_stack_base()
  #endif /* FREEBSD_STACKBOTTOM */
  
  #if !defined(BEOS) && !defined(AMIGA) && !defined(MSWIN32) \
@@ -125,7 +108,7 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
  
  ptr_t GC_get_stack_base()
  {
-@@ -1069,6 +1167,25 @@ ptr_t GC_get_stack_base()
+@@ -1069,6 +1150,25 @@ ptr_t GC_get_stack_base()
  
  # endif /* ! AMIGA, !OS 2, ! MS Windows, !BEOS, !NOSYS, !ECOS */
  
@@ -151,7 +134,7 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
  /*
   * Register static data segment(s) as roots.
   * If more data segments are added later then they need to be registered
-@@ -1440,6 +1557,32 @@ int * etext_addr;
+@@ -1440,6 +1540,32 @@ int * etext_addr;
  
  #else /* !OS2 && !Windows && !AMIGA */
  
@@ -184,7 +167,7 @@ $OpenBSD: patch-boehm-gc_os_dep_c,v 1.2 2011/12/08 17:40:55 pascal Exp $
  void GC_register_data_segments()
  {
  #   if !defined(PCR) && !defined(SRC_M3) && !defined(MACOS)
-@@ -1497,6 +1640,7 @@ void GC_register_data_segments()
+@@ -1497,6 +1623,7 @@ void GC_register_data_segments()
      /* change.								*/
  }
  
