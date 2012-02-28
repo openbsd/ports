@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/02/28 05:56:11 ajacoutot Exp $
+@conflict scrotwm-*
+@pkgpath x11/scrotwm
+%%SHARED%%
+bin/scrotwm
+@bin bin/spectrwm
+@man man/man1/spectrwm.1
+share/examples/spectrwm/
+@sample share/spectrwm/
+share/examples/spectrwm/baraction.sh
+@mode 0555
+@sample share/spectrwm/baraction.sh
+share/examples/spectrwm/initscreen.sh
+@sample share/spectrwm/initscreen.sh
+share/examples/spectrwm/screenshot.sh
+@sample share/spectrwm/screenshot.sh
+share/examples/spectrwm/spectrwm.conf
+@sample ${SYSCONFDIR}/spectrwm.conf
+share/examples/spectrwm/spectrwm_cz.conf
+@sample ${SYSCONFDIR}/spectrwm_cz.conf
+share/examples/spectrwm/spectrwm_es.conf
+@sample ${SYSCONFDIR}/spectrwm_es.conf
+share/examples/spectrwm/spectrwm_fr.conf
+@sample ${SYSCONFDIR}/spectrwm_fr.conf
+share/examples/spectrwm/spectrwm_fr_ch.conf
+@sample ${SYSCONFDIR}/spectrwm_fr_ch.conf
+share/examples/spectrwm/spectrwm_se.conf
+@sample ${SYSCONFDIR}/spectrwm_se.conf
+share/examples/spectrwm/spectrwm_us.conf
+@sample ${SYSCONFDIR}/spectrwm_us.conf

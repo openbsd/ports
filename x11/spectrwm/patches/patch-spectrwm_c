@@ -1,0 +1,12 @@
+$OpenBSD: patch-spectrwm_c,v 1.1.1.1 2012/02/28 05:56:11 ajacoutot Exp $
+--- spectrwm.c.orig	Fri Feb 17 14:28:57 2012
++++ spectrwm.c	Fri Feb 17 14:29:14 2012
+@@ -193,7 +193,7 @@ u_int32_t		swm_debug = 0
+ #define SWM_CONF_KEYMAPPING	(1)
+ 
+ #ifndef SWM_LIB
+-#define SWM_LIB			"/usr/local/lib/libswmhack.so"
++#define SWM_LIB			"${PREFIX}/lib/libswmhack.so"
+ #endif
+ 
+ char			**start_argv;
