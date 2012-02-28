@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2011/12/12 14:57:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.46 2012/02/28 15:38:55 dcoppa Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.1.0
 CATEGORIES =	net
 
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
@@ -25,16 +25,18 @@ WANTLIB +=		bz2 c cairo charset expat fontconfig
 WANTLIB +=		freetype gd gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB +=		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB +=		gthread-2.0 gtk-x11-2.0 jpeg m magic
-WANTLIB +=		pixman-1 pango-1.0 pangocairo-1.0
-WANTLIB +=		pangoft2-1.0 png pthread pthread-stubs
-WANTLIB +=		rsvg-2 stdc++ xcb xcb-render xcb-shm z
+WANTLIB +=		miniupnpc natpmp pixman-1 pango-1.0
+WANTLIB +=		pangocairo-1.0 pangoft2-1.0 png pthread
+WANTLIB +=		pthread-stubs rsvg-2 stdc++ xcb
+WANTLIB +=		xcb-render xcb-shm z
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config
 AUTOCONF_VERSION =	2.68
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
-CONFIGURE_ARGS +=	--enable-gui=newgui2
+CONFIGURE_ARGS +=	--enable-gui=newgui2 \
+			--enable-upnp-natpmp
 CONFIGURE_ENV +=	CPPFLAGS='-I${LOCALBASE}/include/libpng \
 			-I${LOCALBASE}/include -I${X11BASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib' \
@@ -47,6 +49,8 @@ BUILD_DEPENDS =	x11/lablgtk2
 LIB_DEPENDS =	archivers/bzip2 \
 		devel/libmagic \
 		graphics/gd \
+		net/miniupnp/libnatpmp \
+		net/miniupnp/miniupnpc \
 		x11/gnome/librsvg \
 		x11/gtk+2
 
