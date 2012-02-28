@@ -1,0 +1,15 @@
+alac_decoder is a basic decoder for Apple Lossless Audio Codec files
+(ALAC). It is a C implementation of a decoder, written from reverse
+engineering the file format. ALAC uses an adaptive FIR prediction
+algorithm and stores the error values using a modified rice or golumb
+algorithm.
+
+The program located here will not be able to handle all ALAC files, it
+can only handle mono or stereo files. ALAC allows up to 8 channels. The
+ALAC decoder supports both 16 and 24 bit sample sizes.
+
+The decoder can read an ALAC stream from either a file or from stdin,
+and write it as raw PCM data or as a WAV file to either stdout or a
+file.
+
+An encoder is not provided.
