@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2012/02/28 17:56:53 stsp Exp $
+# $OpenBSD: Makefile,v 1.201 2012/02/28 19:48:41 sthen Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -65,7 +65,7 @@ BUILD_DEPENDS =	net/livemedia \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		audio/ladspa
-# mplayer uses non-public interfaces to ffmepg, so we still need
+# mplayer uses non-public interfaces to ffmpeg, so we still need
 # the ffmpeg source in the mplayer tree at build time.
 BUILD_DEPENDS +=graphics/ffmpeg:patch
 
