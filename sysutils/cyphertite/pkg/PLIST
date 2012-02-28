@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/07 01:52:45 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/02/28 02:26:41 dhill Exp $
 @bin bin/ct
 @bin bin/ctctl
 @bin bin/ctfb
@@ -12,7 +12,9 @@ include/cyphertite/ctutil.h
 lib/libctutil.a
 lib/libctutil_p.a
 @man man/man1/ct.1
+@man man/man1/ctctl.1
 @man man/man1/ctfb.1
 @man man/man1/cyphertite.1
+@man man/man1/cyphertitectl.1
 @man man/man1/cyphertitefb.1
 @man man/man5/cyphertite.conf.5
