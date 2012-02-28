@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2009/04/15 08:22:11 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2012/02/28 17:55:47 stsp Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	LIVE555 streaming media library
 
-DISTNAME=	live.2009.04.07
-PKGNAME=	liveMedia-20090407
+DISTNAME=	live.2012.02.04
+PKGNAME=	liveMedia-20120204
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -27,7 +27,7 @@ WRKDIST=	${WRKDIR}/live
 
 NO_REGRESS=	Yes
 
-CFLAGS+=	-fPIC
+CFLAGS+=	-fPIC -DXLOCALE_NOT_USED
 
 post-extract:
 	@cp -f ${FILESDIR}/config.fixed-openbsd ${WRKSRC}/

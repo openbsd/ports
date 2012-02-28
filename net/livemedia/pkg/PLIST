@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/07/15 16:14:24 brad Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/02/28 17:55:47 stsp Exp $
 @bin bin/openRTSP
 @bin bin/playSIP
 @bin bin/sapWatch
@@ -34,6 +34,7 @@ live/groupsock/include/groupsock_version.hh
 live/groupsock/libgroupsock.a
 live/liveMedia/
 live/liveMedia/include/
+live/liveMedia/include/AC3AudioFileServerMediaSubsession.hh
 live/liveMedia/include/AC3AudioRTPSink.hh
 live/liveMedia/include/AC3AudioRTPSource.hh
 live/liveMedia/include/AC3AudioStreamFramer.hh
@@ -52,7 +53,12 @@ live/liveMedia/include/Base64.hh
 live/liveMedia/include/BasicUDPSink.hh
 live/liveMedia/include/BasicUDPSource.hh
 live/liveMedia/include/ByteStreamFileSource.hh
+live/liveMedia/include/ByteStreamMemoryBufferSource.hh
 live/liveMedia/include/ByteStreamMultiFileSource.hh
+live/liveMedia/include/DVVideoFileServerMediaSubsession.hh
+live/liveMedia/include/DVVideoRTPSink.hh
+live/liveMedia/include/DVVideoRTPSource.hh
+live/liveMedia/include/DVVideoStreamFramer.hh
 live/liveMedia/include/DarwinInjector.hh
 live/liveMedia/include/DeviceSource.hh
 live/liveMedia/include/DigestAuthentication.hh
@@ -67,11 +73,12 @@ live/liveMedia/include/H263plusVideoFileServerMediaSubsession.hh
 live/liveMedia/include/H263plusVideoRTPSink.hh
 live/liveMedia/include/H263plusVideoRTPSource.hh
 live/liveMedia/include/H263plusVideoStreamFramer.hh
+live/liveMedia/include/H264VideoFileServerMediaSubsession.hh
 live/liveMedia/include/H264VideoFileSink.hh
 live/liveMedia/include/H264VideoRTPSink.hh
 live/liveMedia/include/H264VideoRTPSource.hh
+live/liveMedia/include/H264VideoStreamDiscreteFramer.hh
 live/liveMedia/include/H264VideoStreamFramer.hh
-live/liveMedia/include/HTTPSink.hh
 live/liveMedia/include/InputFile.hh
 live/liveMedia/include/JPEGVideoRTPSink.hh
 live/liveMedia/include/JPEGVideoRTPSource.hh
@@ -94,7 +101,6 @@ live/liveMedia/include/MPEG1or2DemuxedElementaryStream.hh
 live/liveMedia/include/MPEG1or2DemuxedServerMediaSubsession.hh
 live/liveMedia/include/MPEG1or2FileServerDemux.hh
 live/liveMedia/include/MPEG1or2VideoFileServerMediaSubsession.hh
-live/liveMedia/include/MPEG1or2VideoHTTPSink.hh
 live/liveMedia/include/MPEG1or2VideoRTPSink.hh
 live/liveMedia/include/MPEG1or2VideoRTPSource.hh
 live/liveMedia/include/MPEG1or2VideoStreamDiscreteFramer.hh
@@ -107,6 +113,7 @@ live/liveMedia/include/MPEG2TransportStreamFromPESSource.hh
 live/liveMedia/include/MPEG2TransportStreamIndexFile.hh
 live/liveMedia/include/MPEG2TransportStreamMultiplexor.hh
 live/liveMedia/include/MPEG2TransportStreamTrickModeFilter.hh
+live/liveMedia/include/MPEG2TransportUDPServerMediaSubsession.hh
 live/liveMedia/include/MPEG4ESVideoRTPSink.hh
 live/liveMedia/include/MPEG4ESVideoRTPSource.hh
 live/liveMedia/include/MPEG4GenericRTPSink.hh
@@ -117,6 +124,8 @@ live/liveMedia/include/MPEG4VideoFileServerMediaSubsession.hh
 live/liveMedia/include/MPEG4VideoStreamDiscreteFramer.hh
 live/liveMedia/include/MPEG4VideoStreamFramer.hh
 live/liveMedia/include/MPEGVideoStreamFramer.hh
+live/liveMedia/include/MatroskaFile.hh
+live/liveMedia/include/MatroskaFileServerDemux.hh
 live/liveMedia/include/Media.hh
 live/liveMedia/include/MediaSession.hh
 live/liveMedia/include/MediaSink.hh
@@ -135,13 +144,21 @@ live/liveMedia/include/RTPSink.hh
 live/liveMedia/include/RTPSource.hh
 live/liveMedia/include/RTSPClient.hh
 live/liveMedia/include/RTSPCommon.hh
-live/liveMedia/include/RTSPOverHTTPServer.hh
 live/liveMedia/include/RTSPServer.hh
+live/liveMedia/include/RTSPServerSupportingHTTPStreaming.hh
 live/liveMedia/include/SIPClient.hh
 live/liveMedia/include/ServerMediaSession.hh
 live/liveMedia/include/SimpleRTPSink.hh
 live/liveMedia/include/SimpleRTPSource.hh
+live/liveMedia/include/StreamReplicator.hh
+live/liveMedia/include/T140TextRTPSink.hh
+live/liveMedia/include/TCPStreamSink.hh
+live/liveMedia/include/TextRTPSink.hh
+live/liveMedia/include/VP8VideoRTPSink.hh
+live/liveMedia/include/VP8VideoRTPSource.hh
 live/liveMedia/include/VideoRTPSink.hh
+live/liveMedia/include/VorbisAudioRTPSink.hh
+live/liveMedia/include/VorbisAudioRTPSource.hh
 live/liveMedia/include/WAVAudioFileServerMediaSubsession.hh
 live/liveMedia/include/WAVAudioFileSource.hh
 live/liveMedia/include/liveMedia.hh
