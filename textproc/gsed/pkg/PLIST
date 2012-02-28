@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/17 08:39:53 sturm Exp $
-bin/gsed
+@comment $OpenBSD: PLIST,v 1.2 2012/02/28 08:46:27 dcoppa Exp $
+@bin bin/gsed
 @info info/sed.info
 @man man/man1/gsed.1
 share/locale/af/
@@ -13,6 +13,7 @@ share/locale/el/LC_MESSAGES/sed.mo
 share/locale/eo/LC_MESSAGES/sed.mo
 share/locale/es/LC_MESSAGES/sed.mo
 share/locale/et/LC_MESSAGES/sed.mo
+share/locale/eu/LC_MESSAGES/sed.mo
 share/locale/fi/LC_MESSAGES/sed.mo
 share/locale/fr/LC_MESSAGES/sed.mo
 share/locale/ga/LC_MESSAGES/sed.mo
@@ -26,6 +27,7 @@ share/locale/ja/LC_MESSAGES/sed.mo
 share/locale/ko/LC_MESSAGES/sed.mo
 share/locale/nl/LC_MESSAGES/sed.mo
 share/locale/pl/LC_MESSAGES/sed.mo
+share/locale/pt/LC_MESSAGES/sed.mo
 share/locale/pt_BR/LC_MESSAGES/sed.mo
 share/locale/ro/LC_MESSAGES/sed.mo
 share/locale/ru/LC_MESSAGES/sed.mo
@@ -34,4 +36,7 @@ share/locale/sl/LC_MESSAGES/sed.mo
 share/locale/sr/LC_MESSAGES/sed.mo
 share/locale/sv/LC_MESSAGES/sed.mo
 share/locale/tr/LC_MESSAGES/sed.mo
+share/locale/uk/LC_MESSAGES/sed.mo
+share/locale/vi/LC_MESSAGES/sed.mo
 share/locale/zh_CN/LC_MESSAGES/sed.mo
+share/locale/zh_TW/LC_MESSAGES/sed.mo
