@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.479 2012/01/09 12:08:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.480 2012/02/28 05:57:50 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -223,7 +223,6 @@
      SUBDIR += rxvt-unicode
      SUBDIR += sawfish
      SUBDIR += sclock
-     SUBDIR += scrotwm
      SUBDIR += sisctrl
      SUBDIR += skippy
      SUBDIR += sliderule
@@ -231,6 +230,7 @@
      SUBDIR += slim-themes
      SUBDIR += slock
      SUBDIR += smplayer
+     SUBDIR += spectrwm
      SUBDIR += st
      SUBDIR += stalonetray
      SUBDIR += swisswatch
