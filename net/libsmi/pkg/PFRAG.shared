@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/02/28 19:26:22 nigel Exp $
+@lib lib/libsmi.so.${LIBsmi_VERSION}

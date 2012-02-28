@@ -1,0 +1,6 @@
+The core of the libsmi distribution is a library that allows management
+applications to access SMI MIB module definitions. On top of this library,
+there are tools to check, analyze dump, convert, and compare MIB
+definitions. Finally, the distribution contains a steadily maintained
+and revised archive of all IETF and IANA maintained standard MIB and PIB
+modules.
