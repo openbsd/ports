@@ -1,4 +1,4 @@
-$OpenBSD: patch-game_c,v 1.1.1.1 2012/02/27 22:07:49 schwarze Exp $
+$OpenBSD: patch-game_c,v 1.2 2012/02/28 12:42:44 sthen Exp $
 --- game.c.orig	Tue Jan 10 01:55:02 2012
 +++ game.c	Thu Jan 12 11:33:20 2012
 @@ -95,7 +95,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-game_c,v 1.1.1.1 2012/02/27 22:07:49 schwarze Exp $
  #else
  #define SUPPORT_PATH ".beret/"
 -#define RESOURCE_PATH ""
-+#define RESOURCE_PATH "/usr/local/share/beret/"
++#define RESOURCE_PATH "${TRUEPREFIX}/share/beret/"
  #endif
  
  #define QUITMOD_WIN KMOD_ALT

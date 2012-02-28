@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/02/28 10:11:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/02/28 12:42:44 sthen Exp $
 
 COMMENT=	2D puzzle-platformer game
 DISTNAME=	beret-1.2.1
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://kiwisauce.com/beret/
@@ -30,6 +31,9 @@ ALL_TARGET=	beret
 CFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/SDL -Wall
 LDFLAGS+=	-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib
+
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/game.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beret ${PREFIX}/bin
