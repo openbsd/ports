@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/17 16:54:16 edd Exp $
+# $OpenBSD: Makefile,v 1.8 2012/02/28 12:28:29 dcoppa Exp $
 
 COMMENT=	Google VP8 video codec
 
-V=		0.9.6
+V=		1.0.0
 DISTNAME=	libvpx-v${V}
 PKGNAME=	libvpx-${V}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	vpx	2.0
+SHARED_LIBS=	vpx	3.0
 
 HOMEPAGE=	http://www.webmproject.org/
 
@@ -20,6 +20,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=	c m pthread
 
 BUILD_DEPENDS+=	shells/bash
@@ -59,6 +60,8 @@ post-install:
 	@chmod ${SHAREMODE} ${PREFIX}/include/vpx/*.h
 	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/lib*
 	@chmod ${SHAREMODE} ${PREFIX}/lib/lib*
+	@chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/pkgconfig/vpx.pc
+	@chmod ${SHAREMODE} ${PREFIX}/lib/pkgconfig/vpx.pc
 
 .include <bsd.port.mk>
 

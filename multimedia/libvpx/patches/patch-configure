@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.5 2011/03/17 16:54:16 edd Exp $
---- configure.orig	Fri Mar  4 15:40:37 2011
-+++ configure	Tue Mar  8 21:12:29 2011
+$OpenBSD: patch-configure,v 1.6 2012/02/28 12:28:29 dcoppa Exp $
+--- configure.orig	Fri Jan 27 13:36:39 2012
++++ configure	Sun Jan 29 21:11:03 2012
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure
  ##
-@@ -100,6 +100,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
+@@ -101,6 +101,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
  all_platforms="${all_platforms} ppc64-darwin8-gcc"
  all_platforms="${all_platforms} ppc64-darwin9-gcc"
  all_platforms="${all_platforms} ppc64-linux-gcc"
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.5 2011/03/17 16:54:16 edd Exp $
  all_platforms="${all_platforms} sparc-solaris-gcc"
  all_platforms="${all_platforms} x86-darwin8-gcc"
  all_platforms="${all_platforms} x86-darwin8-icc"
-@@ -132,19 +133,6 @@ for t in ${all_targets}; do
+@@ -136,19 +137,6 @@ for t in ${all_targets}; do
      [ -f ${source_path}/${t}.mk ] && enable ${t}
  done
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.5 2011/03/17 16:54:16 edd Exp $
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -416,12 +404,6 @@ EOF
+@@ -433,12 +421,6 @@ EOF
  }
  
  process_detect() {
