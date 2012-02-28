@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2012/02/28 02:22:13 jsg Exp $
+# $OpenBSD: Makefile,v 1.200 2012/02/28 17:56:53 stsp Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		12
+REVISION =		13
 
 CATEGORIES =		x11 multimedia
 
