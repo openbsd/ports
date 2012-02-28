@@ -1,31 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 09:16:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/02/28 11:53:04 dcoppa Exp $
 @pkgpath x11/league-fonts
-@fontdir lib/fonts/
-lib/fonts/Blackout -CCLicense.pdf
-lib/fonts/Blackout-2am.ttf
-lib/fonts/Blackout-Midnight.ttf
-lib/fonts/Chunk.otf
-lib/fonts/Chunk.ttf
-lib/fonts/Flaminia -CCLicense.pdf
-lib/fonts/Flaminia -Disclaimer.rtf
-lib/fonts/GoudyBookletter1911.otf
-lib/fonts/Junction 02.otf
-lib/fonts/Junction 02.ttf
-lib/fonts/Junction FONTLOG.txt
-lib/fonts/League Gothic.otf
-lib/fonts/LeagueScript.otf
-lib/fonts/LindenHill-Italic.otf
-lib/fonts/LindenHill.otf
-lib/fonts/OFL - Copyright.txt
-lib/fonts/OFLGoudyStM-Italic.otf
-lib/fonts/OFLGoudyStM.otf
-lib/fonts/OFLGoudyStMTT-Italic.ttf
-lib/fonts/OFLGoudyStMTT.ttf
-lib/fonts/Open Font License.txt
-lib/fonts/Orbitron_readme.txt
-lib/fonts/Prociono.otf
-lib/fonts/ProcionoTT.ttf
-lib/fonts/Sniglet_Regular.otf
-lib/fonts/Sniglet_Regular.ttf
-lib/fonts/raleway_thin.otf
-lib/fonts/raleway_thin.ttf
+lib/X11/fonts/
+@fontdir lib/X11/fonts/league-fonts/
+lib/X11/fonts/league-fonts/Blackout -CCLicense.pdf
+lib/X11/fonts/league-fonts/Blackout-2am.ttf
+lib/X11/fonts/league-fonts/Blackout-Midnight.ttf
+lib/X11/fonts/league-fonts/Chunk.otf
+lib/X11/fonts/league-fonts/Chunk.ttf
+lib/X11/fonts/league-fonts/Flaminia -CCLicense.pdf
+lib/X11/fonts/league-fonts/Flaminia -Disclaimer.rtf
+lib/X11/fonts/league-fonts/GoudyBookletter1911.otf
+lib/X11/fonts/league-fonts/Junction 02.otf
+lib/X11/fonts/league-fonts/Junction 02.ttf
+lib/X11/fonts/league-fonts/Junction FONTLOG.txt
+lib/X11/fonts/league-fonts/League Gothic.otf
+lib/X11/fonts/league-fonts/LeagueScript.otf
+lib/X11/fonts/league-fonts/LindenHill-Italic.otf
+lib/X11/fonts/league-fonts/LindenHill.otf
+lib/X11/fonts/league-fonts/OFL - Copyright.txt
+lib/X11/fonts/league-fonts/OFLGoudyStM-Italic.otf
+lib/X11/fonts/league-fonts/OFLGoudyStM.otf
+lib/X11/fonts/league-fonts/OFLGoudyStMTT-Italic.ttf
+lib/X11/fonts/league-fonts/OFLGoudyStMTT.ttf
+lib/X11/fonts/league-fonts/Open Font License.txt
+lib/X11/fonts/league-fonts/Orbitron_readme.txt
+lib/X11/fonts/league-fonts/Prociono.otf
+lib/X11/fonts/league-fonts/ProcionoTT.ttf
+lib/X11/fonts/league-fonts/Sniglet_Regular.otf
+lib/X11/fonts/league-fonts/Sniglet_Regular.ttf
+lib/X11/fonts/league-fonts/raleway_thin.otf
+lib/X11/fonts/league-fonts/raleway_thin.ttf
