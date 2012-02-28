@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.13 2012/02/27 14:51:37 espie Exp $
+# $OpenBSD: Locks.pm,v 1.14 2012/02/28 14:23:27 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -56,8 +56,10 @@ sub clean_old_locks
 				next DIR;
 			}
 		}
-		push(@{$locks->{$pid}}, $f);
+		push(@{$locks->{$pid}}, $f) if defined $pid;
 	}
+	return if keys %$locks == 0;
+
 	open(my $ps, "-|", "ps", "-axww", "-o", "pid args");
 	my $junk = <$ps>;
 	while (<$ps>) {
