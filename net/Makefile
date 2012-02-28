@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.731 2012/02/17 22:12:52 mglocker Exp $
+# $OpenBSD: Makefile,v 1.732 2012/02/28 19:30:13 nigel Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -178,6 +178,7 @@
      SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
+     SUBDIR += libsmi
      SUBDIR += libsocialweb
      SUBDIR += libst
      SUBDIR += libtorrent
