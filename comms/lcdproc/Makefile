@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/25 16:15:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/02/28 10:32:00 edd Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		interface to various LCD displays
 DISTNAME =		lcdproc-0.5.5
-REVISION =		2
+REVISION =		3
 CATEGORIES =		comms devel
 HOMEPAGE =		http://www.lcdproc.org
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
@@ -27,7 +27,7 @@ USE_GMAKE =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lcdproc/}
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${WITH_APM}" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 # xosd driver is busted, working on it upstream
 # http://lists.omnipotent.net/pipermail/lcdproc/2011-November/013871.html
@@ -51,6 +51,12 @@ post-install:
 PKG_ARGS += -Dparallel=1
 .else
 PKG_ARGS += -Dparallel=0
+.endif
+
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mapm}
+WITH_APM =	-DWITH_APM
 .endif
 
 .include <bsd.port.mk>

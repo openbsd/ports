@@ -1,19 +1,22 @@
-$OpenBSD: patch-clients_lcdproc_machine_OpenBSD_c,v 1.1.1.1 2011/12/01 19:05:11 edd Exp $
+$OpenBSD: patch-clients_lcdproc_machine_OpenBSD_c,v 1.2 2012/02/28 10:32:00 edd Exp $
 
 The code distributed with LCDproc for querying the process table is out of date.
 
---- clients/lcdproc/machine_OpenBSD.c.orig	Tue Nov 15 13:12:02 2011
-+++ clients/lcdproc/machine_OpenBSD.c	Tue Nov 15 13:34:52 2011
-@@ -50,7 +50,7 @@
+--- clients/lcdproc/machine_OpenBSD.c.orig	Mon Dec 27 13:32:56 2010
++++ clients/lcdproc/machine_OpenBSD.c	Tue Feb 21 08:40:04 2012
+@@ -49,8 +49,9 @@
+ #include <sys/mount.h>
  #include <sys/time.h>
  #include <sys/user.h>
- /* take care if $ARCH != i386! */
+-/* take care if $ARCH != i386! */
 -#include <i386/apmvar.h>
++#ifdef WITH_APM
 +#include <machine/apmvar.h>
++#endif
  #include <kvm.h>
  #include <errno.h>
  
-@@ -61,7 +61,7 @@
+@@ -61,7 +62,7 @@
  
  static int pageshift;
  #define pagetok(size) ((size) << pageshift)
@@ -22,7 +25,27 @@ The code distributed with LCDproc for querying the process table is out of date.
  
  
  int machine_init(void)
-@@ -294,7 +294,7 @@ int machine_get_procs(LinkedList *procs)
+@@ -88,6 +89,7 @@ int machine_close(void)
+ 
+ int machine_get_battstat(int *acstat, int *battflag, int *percent)
+ {
++#ifdef WITH_APM
+ 	int apmd;
+ 	struct apm_power_info api;
+ 
+@@ -145,6 +147,11 @@ int machine_get_battstat(int *acstat, int *battflag, i
+ 	*percent = api.battery_life;
+ 
+ 	close(apmd);
++#else
++	*acstat   = LCDP_AC_ON;
++	*battflag = LCDP_BATT_ABSENT;
++	*percent  = 100;
++#endif
+ 
+ 	return(TRUE);
+ }
+@@ -294,7 +301,7 @@ int machine_get_procs(LinkedList *procs)
  		return(FALSE);
  	}
  
@@ -31,7 +54,7 @@ The code distributed with LCDproc for querying the process table is out of date.
  	if (kprocs == NULL)
  	{
  		perror("kvm_getprocs");
-@@ -311,10 +311,10 @@ int machine_get_procs(LinkedList *procs)
+@@ -311,10 +318,10 @@ int machine_get_procs(LinkedList *procs)
  			kvm_close(kvmd);
  			return(FALSE);
  		}
