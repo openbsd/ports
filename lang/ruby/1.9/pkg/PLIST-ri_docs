@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.1 2011/11/08 23:38:57 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.2 2012/02/28 00:20:41 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -1756,6 +1756,7 @@ share/ri/${RUBYLIBREV}/system/Encoding/
 share/ri/${RUBYLIBREV}/system/Encoding/CompatibilityError/
 share/ri/${RUBYLIBREV}/system/Encoding/CompatibilityError/cdesc-CompatibilityError.ri
 share/ri/${RUBYLIBREV}/system/Encoding/Converter/
+share/ri/${RUBYLIBREV}/system/Encoding/Converter/%3d%3d-i.ri
 share/ri/${RUBYLIBREV}/system/Encoding/Converter/asciicompat_encoding-c.ri
 share/ri/${RUBYLIBREV}/system/Encoding/Converter/cdesc-Converter.ri
 share/ri/${RUBYLIBREV}/system/Encoding/Converter/convert-i.ri
@@ -6350,17 +6351,14 @@ share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/Cipher/
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/Cipher/cdesc-Cipher.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/CipherError/
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/CipherError/cdesc-CipherError.ri
-share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/block_size-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/cdesc-Cipher.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/ciphers-c.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/decrypt-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/encrypt-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/final-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/iv%3d-i.ri
-share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/iv_len-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/key%3d-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/key_len%3d-i.ri
-share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/key_len-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/name-i.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/new-c.ri
 share/ri/${RUBYLIBREV}/system/OpenSSL/Cipher/padding%3d-i.ri
@@ -7672,6 +7670,7 @@ share/ri/${RUBYLIBREV}/system/Psych/Nodes/Node/tag-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Node/to_ruby-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Node/to_yaml-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Node/transform-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Nodes/Node/yaml-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Scalar/
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Scalar/anchor-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Nodes/Scalar/cdesc-Scalar.ri
@@ -7780,6 +7779,7 @@ share/ri/${RUBYLIBREV}/system/Psych/Visitors/Visitor/visit-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/accept-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/binary%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/cdesc-YAMLTree.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/dump_coder-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/dump_ivars-i.ri
@@ -9363,6 +9363,7 @@ share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/normalize-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/peek-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/position-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/pull-i.ri
+share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/pull_event-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/source-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/stream%3d-i.ri
 share/ri/${RUBYLIBREV}/system/REXML/Parsers/BaseParser/unnormalize-i.ri
@@ -11247,12 +11248,6 @@ share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicModel/append_features-c.ri
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicModel/cdesc-TaxonomyTopicModel.ri
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/cdesc-Bag.ri
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/full_name-i.ri
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/new-c.ri
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/required_uri-c.ri
-share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/Bag/setup_maker-i.ri
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/cdesc-TaxonomyTopics.ri
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/full_name-i.ri
 share/ri/${RUBYLIBREV}/system/RSS/TaxonomyTopicsModel/TaxonomyTopics/maker_target-i.ri

@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.5 2011/11/08 23:38:57 jeremy Exp $
+$OpenBSD: patch-configure,v 1.6 2012/02/28 00:20:41 jeremy Exp $
 
-Fix so name, checking for DOT and DOXYGEN, and use -pthread.
+Fix so name, checking for DOT and DOXYGEN.
 
 Override the arch setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Sun Oct 30 02:55:52 2011
-+++ configure	Sun Oct 30 19:07:09 2011
-@@ -15503,13 +15503,13 @@ fi
+--- configure.orig	Thu Feb 16 01:04:54 2012
++++ configure	Thu Feb 16 08:18:24 2012
+@@ -15563,13 +15563,13 @@ fi
  if test x"$enable_pthread" = xyes; then
      for pthread_lib in thr pthread pthreads c c_r root; do
  	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
@@ -24,16 +24,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15576,7 +15576,7 @@ done
-   c_r) :
-     MAINLIBS="-pthread $MAINLIBS" ;; #(
-   *) :
--    LIBS="-l$pthread_lib $LIBS" ;;
-+    LIBS="-pthread $LIBS" ;;
- esac
-     else
- 	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Don't know how to find pthread library on your system -- thread support disabled\"" >&5
-@@ -16568,7 +16568,7 @@ case "$enable_shared" in #(
+@@ -16633,7 +16633,7 @@ case "$enable_shared" in #(
    openbsd*) :
  
  	SOLIBS='$(LIBS)'
@@ -42,7 +33,7 @@ so ports don't have to be bumped when OpenBSD version changes.
  	 ;; #(
    solaris*) :
  
-@@ -17390,7 +17390,10 @@ _ACEOF
+@@ -17455,7 +17455,10 @@ _ACEOF
  _ACEOF
  
  else
