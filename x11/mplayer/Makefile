@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.198 2012/01/26 20:21:31 ratchov Exp $
+# $OpenBSD: Makefile,v 1.199 2012/02/28 02:22:13 jsg Exp $
 
 # May not be hard to add more.
-ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
+ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		movie player supporting many formats
 
