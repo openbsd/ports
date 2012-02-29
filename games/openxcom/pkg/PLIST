@@ -1,24 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/18 10:57:01 jasper Exp $
-bin/openxcom
-@bin bin/openxcom-bin
+@comment $OpenBSD: PLIST,v 1.3 2012/02/29 08:25:32 ajacoutot Exp $
+@bin bin/openxcom
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/openxcom/
-share/openxcom/DATA/
-share/openxcom/DATA/Language/
-share/openxcom/DATA/Language/English.lng
-share/openxcom/DATA/Language/French.geo
-share/openxcom/DATA/Language/French.lng
-share/openxcom/DATA/Language/German.geo
-share/openxcom/DATA/Language/German.lng
-share/openxcom/DATA/Language/Italian.geo
-share/openxcom/DATA/Language/Italian.lng
-share/openxcom/DATA/Language/Spanish.geo
-share/openxcom/DATA/Language/Spanish.lng
-share/openxcom/DATA/README.txt
-share/openxcom/DATA/SoldierName/
-share/openxcom/DATA/SoldierName/American.nam
-share/openxcom/DATA/SoldierName/British.nam
-share/openxcom/DATA/SoldierName/French.nam
-share/openxcom/DATA/SoldierName/German.nam
-share/openxcom/DATA/SoldierName/Japanese.nam
-share/openxcom/DATA/SoldierName/Russian.nam
+share/openxcom/Language/
+share/openxcom/Language/Big.fnt
+share/openxcom/Language/Czech.lng
+share/openxcom/Language/English.lng
+share/openxcom/Language/EnglishUk.lng
+share/openxcom/Language/Font.dat
+share/openxcom/Language/French.geo
+share/openxcom/Language/French.lng
+share/openxcom/Language/German.geo
+share/openxcom/Language/German.lng
+share/openxcom/Language/Italian.geo
+share/openxcom/Language/Italian.lng
+share/openxcom/Language/Polish.geo
+share/openxcom/Language/Polish.lng
+share/openxcom/Language/Romanian.lng
+share/openxcom/Language/Russian.geo
+share/openxcom/Language/Russian.lng
+share/openxcom/Language/Small.fnt
+share/openxcom/Language/Spanish.geo
+share/openxcom/Language/Spanish.lng
+share/openxcom/README.txt
+share/openxcom/SoldierName/
+share/openxcom/SoldierName/American.nam
+share/openxcom/SoldierName/British.nam
+share/openxcom/SoldierName/French.nam
+share/openxcom/SoldierName/German.nam
+share/openxcom/SoldierName/Japanese.nam
+share/openxcom/SoldierName/Russian.nam
+share/openxcom/research.dat

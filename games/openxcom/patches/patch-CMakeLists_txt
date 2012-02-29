@@ -1,0 +1,10 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/29 08:25:32 ajacoutot Exp $
+--- CMakeLists.txt.orig	Thu Feb 16 17:24:58 2012
++++ CMakeLists.txt	Sat Feb 18 21:07:47 2012
+@@ -125,5 +125,4 @@ if ( BUILD_PACKAGE )
+ )
+ endif()
+ 
+-add_subdirectory ( docs )
+ add_subdirectory ( src )
+\ No newline at end of file

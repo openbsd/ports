@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/07/18 10:57:01 jasper Exp $
+$OpenBSD: README,v 1.3 2012/02/29 08:25:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,9 +7,7 @@ $OpenBSD: README,v 1.2 2011/07/18 10:57:01 jasper Exp $
 In order to play the game you need original data from
 "UFO: Enemy Unknown" / "X-Com: UFO Defense".
 For a system wide installation you can copy them to:
-    ${PREFIX}/share/openxcom/DATA/
+    ${PREFIX}/share/openxcom/data/
 
-For a user specific installation you can copy them to your home:
-    ~/.openxcom/DATA/ 
-
-Once data has been set up you can execute 'openxcom'.
+For a user specific installation you can copy them under:
+    ~/.local/share/openxcom/data/

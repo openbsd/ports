@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_Engine_CrossPlatform_cpp,v 1.1 2012/02/29 08:25:32 ajacoutot Exp $
+--- src/Engine/CrossPlatform.cpp.orig	Thu Feb 16 17:24:58 2012
++++ src/Engine/CrossPlatform.cpp	Fri Feb 17 21:17:42 2012
+@@ -145,6 +145,11 @@ std::vector<std::string> findDataFolders()
+ 		snprintf(path, MAXPATHLEN, "%s/Library/Application Support/OpenXcom/data/", home);
+ #else
+ 		snprintf(path, MAXPATHLEN, "%s/.local/share/openxcom/data/", home);
++	 	list.push_back(path);
++		snprintf(path, MAXPATHLEN, "%s/.openxcom/data/", home);
++	 	list.push_back(path);
++		snprintf(path, MAXPATHLEN, "%s/.openxcom/DATA/", home);
++	 	list.push_back(path);
+ #endif
+  	}
+  	list.push_back(path);
+@@ -166,8 +171,9 @@ std::vector<std::string> findDataFolders()
+ 		snprintf(path, MAXPATHLEN, "%s/Users/Shared/OpenXcom/data/", home);
+ 		list.push_back(path);
+ #else
+-		list.push_back("/usr/local/share/openxcom/data/");
+-		list.push_back("/usr/share/openxcom/data/");
++		list.push_back("${PREFIX}/share/openxcom/");
++		list.push_back("${PREFIX}/share/openxcom/data/");
++		list.push_back("${PREFIX}/share/openxcom/DATA/");
+ #endif
+ 	}
+ 	
