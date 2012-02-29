@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.546 2012/02/20 20:33:50 landry Exp $
+# $OpenBSD: Makefile,v 1.547 2012/02/29 20:58:28 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -71,6 +71,7 @@
      SUBDIR += hs-xhtml-combinators
      SUBDIR += http_load
      SUBDIR += http_ping
+     SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += japana
      SUBDIR += jesred
