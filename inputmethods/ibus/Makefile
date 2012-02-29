@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2012/01/01 09:04:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/02/29 21:09:00 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.4.0
-REVISION =	0
+DISTNAME =	ibus-1.4.1
 
-SHARED_LIBS =	ibus-1.0	0.0
+SHARED_LIBS =	ibus-1.0	1.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
@@ -41,7 +40,6 @@ BUILD_DEPENDS =	devel/gobject-introspection \
 RUN_DEPENDS =	devel/iso-codes \
 		devel/desktop-file-utils \
 		devel/py-notify \
-		devel/py-xdg \
 		x11/dbus-python \
 		x11/gnome/librsvg \
 		x11/gtk+2,-guic
@@ -56,8 +54,7 @@ USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --enable-vala \
-		 --enable-introspection \
+CONFIGURE_ARGS = --enable-introspection \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
