@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
---- texmaker.pro.orig	Thu Jul 21 14:57:13 2011
-+++ texmaker.pro	Tue Aug 16 20:12:48 2011
+$OpenBSD: patch-texmaker_pro,v 1.7 2012/03/01 17:57:45 shadchin Exp $
+--- texmaker.pro.orig	Mon Feb 27 20:45:14 2012
++++ texmaker.pro	Tue Feb 28 23:05:53 2012
 @@ -4,7 +4,8 @@ TARGET	 = texmaker
  QT += network \
        xml \
@@ -8,13 +8,13 @@ $OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=3.1
+ TEXMAKERVERSION=3.3.1
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
-@@ -62,25 +63,6 @@ HEADERS	+= texmaker.h \
- 	usercompletiondialog.h \
- 	synctex_parser.h \
+@@ -67,25 +68,6 @@ HEADERS	+= texmaker.h \
  	synctex_parser_utils.h \
+ 	usertagslistwidget.h \
+ 	addtagdialog.h \
 -	hunspell/affentry.hxx \
 -	hunspell/affixmgr.hxx \
 -	hunspell/atypes.hxx \
@@ -37,10 +37,10 @@ $OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -162,18 +144,6 @@ SOURCES	+= main.cpp \
- 	usercompletiondialog.cpp \
- 	synctex_parser.c \
+@@ -171,18 +153,6 @@ SOURCES	+= main.cpp \
  	synctex_parser_utils.c \
+ 	usertagslistwidget.cpp \
+ 	addtagdialog.cpp \
 -	hunspell/affentry.cxx \
 -	hunspell/affixmgr.cxx \
 -	hunspell/csutil.cxx \
@@ -56,11 +56,11 @@ $OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -339,26 +309,7 @@ utilities.files = doc/doc1.png \
- 	locale/texmaker_nl.qm \
- 	locale/texmaker_fa.qm \
+@@ -381,29 +351,7 @@ utilities.files = doc/doc1.png \
  	locale/texmaker_pl.qm \
--	locale/texmaker_hu.qm \
+ 	locale/texmaker_hu.qm \
+ 	locale/texmaker_sr.qm \
+-	locale/texmaker_el.qm \
 -	dictionaries/nl_NL.aff \
 -	dictionaries/nl_NL.dic \
 -	dictionaries/de_DE.aff \
@@ -77,10 +77,13 @@ $OpenBSD: patch-texmaker_pro,v 1.6 2011/11/24 13:12:47 shadchin Exp $
 -	dictionaries/hu_HU.aff \
 -	dictionaries/hu_HU.dic \
 -	dictionaries/README_hu_HU.txt \
+-	dictionaries/cs_CZ.aff \
+-	dictionaries/cs_CZ.dic \
+-	dictionaries/README_cs_CZ.txt \
 -	dictionaries/README_de_DE_frami.txt \
 -	dictionaries/README_DIC_fr_FR.txt \
 -	dictionaries/README_es_ES.txt 
-+	locale/texmaker_hu.qm
++	locale/texmaker_el.qm
  INSTALLS += utilities
  
  desktop.path = $${DESKTOPDIR}
