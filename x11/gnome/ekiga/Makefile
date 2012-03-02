@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/12/03 22:17:15 ajacoutot Exp $
-
-BROKEN=		WIP (see ajacoutot@)
+# $OpenBSD: Makefile,v 1.52 2012/03/02 09:06:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +6,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.3.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net multimedia
 
@@ -39,11 +37,12 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 LIB_DEPENDS=	net/avahi \
-		net/opal>=3.10.3 \
+		net/opal>=3.10.4 \
 		devel/sdl \
 		databases/evolution-data-server \
 		devel/libnotify>=0.7.2 \
-		devel/boost
+		devel/boost \
+		x11/gtk+2
 
 # /usr/local/include/boost/throw_exception.hpp:65: \
 # error: exception handling disabled, use -fexceptions to enable
@@ -53,7 +52,7 @@ MODGCONF2_SCHEMAS_DIR= ekiga
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-#MODGNOME_TOOLS=	yelp
+MODGNOME_TOOLS=	yelp
 MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
 
 LIBTOOL_FLAGS=	--tag=disable-static
