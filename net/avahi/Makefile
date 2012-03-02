@@ -1,11 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2012/02/29 15:43:16 ajacoutot Exp $
-
-# XXX
-# systrace: deny user: ajacoutot, prog: /usr/local/bin/gtar, pid: 1366(0)[14636],
-#     policy: /usr/bin/make, filters: 241, syscall: native-linkat(317)
-# /usr/local/bin/gtar: avahi-0.6.31/po/en_GB.po: Cannot hard link to
-#     `avahi-0.6.31/po/en_NZ.po': Operation not permitted
-NO_SYSTRACE=	Yes
+# $OpenBSD: Makefile,v 1.78 2012/03/02 07:11:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
