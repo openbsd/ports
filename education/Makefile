@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/08/23 09:31:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/02 09:36:05 fgsch Exp $
 #
 
      SUBDIR =
      SUBDIR += algotutor
+     SUBDIR += anki
      SUBDIR += drgeo
      SUBDIR += drgeo-doc
      SUBDIR += dvorak7min
