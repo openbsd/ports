@@ -5,9 +5,6 @@ software, emulators, and many popular games.
 
 Packages can be built with additional FLAVORs:
 
-  caca:	SDL built with colour ASCII art support.
-	This FLAVOR requires the libcaca package.
-
   aa:   SDL built with ASCII art support.
 	This FLAVOR requires the aalib package.
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_SDL_opengl_h,v 1.1 2010/06/15 15:29:29 espie Exp $
---- include/SDL_opengl.h.orig	Thu May 13 13:54:28 2010
-+++ include/SDL_opengl.h	Thu May 13 13:56:19 2010
-@@ -33,7 +33,11 @@
+$OpenBSD: patch-include_SDL_opengl_h,v 1.2 2012/03/02 09:10:38 dcoppa Exp $
+--- include/SDL_opengl.h.orig	Mon Oct 12 19:07:19 2009
++++ include/SDL_opengl.h	Thu Sep  2 19:02:50 2010
+@@ -35,7 +35,11 @@
  #endif
  #ifndef NO_SDL_GLEXT
  #define __glext_h_  /* Don't let gl.h include glext.h */
@@ -13,7 +13,7 @@ $OpenBSD: patch-include_SDL_opengl_h,v 1.1 2010/06/15 15:29:29 espie Exp $
  #if defined(__MACOSX__)
  #include <OpenGL/gl.h>	/* Header File For The OpenGL Library */
  #include <OpenGL/glu.h>	/* Header File For The GLU Library */
-@@ -46,6 +50,10 @@
+@@ -48,6 +52,10 @@
  #endif
  #ifndef NO_SDL_GLEXT
  #undef __glext_h_
@@ -23,4 +23,4 @@ $OpenBSD: patch-include_SDL_opengl_h,v 1.1 2010/06/15 15:29:29 espie Exp $
 +#endif
  #endif
  
- /* This file taken from "GLext.h" from the Jeff Molofee OpenGL tutorials.
+ /** @name GLext.h

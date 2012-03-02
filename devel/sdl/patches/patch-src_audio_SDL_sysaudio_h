@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.5 2009/01/24 10:56:11 jakemsr Exp $
---- src/audio/SDL_sysaudio.h.orig	Sun Dec 30 20:47:59 2007
-+++ src/audio/SDL_sysaudio.h	Sun Sep 21 10:34:09 2008
-@@ -103,6 +103,9 @@ typedef struct AudioBootStrap {
+$OpenBSD: patch-src_audio_SDL_sysaudio_h,v 1.6 2012/03/02 09:10:38 dcoppa Exp $
+--- src/audio/SDL_sysaudio.h.orig	Thu Jan 19 01:30:06 2012
++++ src/audio/SDL_sysaudio.h	Wed Feb 22 13:39:54 2012
+@@ -105,6 +105,9 @@ typedef struct AudioBootStrap {
  #if SDL_AUDIO_DRIVER_BSD
  extern AudioBootStrap BSD_AUDIO_bootstrap;
  #endif

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_cpuinfo_SDL_cpuinfo_c,v 1.1 2012/02/17 06:59:46 ajacoutot Exp $
---- src/cpuinfo/SDL_cpuinfo.c.orig	Wed Jan 25 10:22:20 2012
-+++ src/cpuinfo/SDL_cpuinfo.c	Wed Jan 25 10:33:59 2012
+$OpenBSD: patch-src_cpuinfo_SDL_cpuinfo_c,v 1.2 2012/03/02 09:10:38 dcoppa Exp $
+--- src/cpuinfo/SDL_cpuinfo.c.orig	Thu Jan 19 01:30:06 2012
++++ src/cpuinfo/SDL_cpuinfo.c	Fri Feb 24 16:08:00 2012
 @@ -28,6 +28,10 @@
  
- #if defined(__MACOSX__) && defined(__ppc__)
+ #if defined(__MACOSX__) && (defined(__ppc__) || defined(__ppc64__))
  #include <sys/sysctl.h> /* For AltiVec check */
 +#elif defined(__OpenBSD__) && defined(__powerpc__)
 +#include <sys/param.h>
@@ -12,13 +12,22 @@ $OpenBSD: patch-src_cpuinfo_SDL_cpuinfo_c,v 1.1 2012/02/17 06:59:46 ajacoutot Ex
  #elif SDL_ALTIVEC_BLITTERS && HAVE_SETJMP
  #include <signal.h>
  #include <setjmp.h>
-@@ -306,8 +310,12 @@ static __inline__ int CPU_haveSSE2(void)
+@@ -42,7 +46,7 @@
+ #define CPU_HAS_SSE2	0x00000080
+ #define CPU_HAS_ALTIVEC	0x00000100
+ 
+-#if SDL_ALTIVEC_BLITTERS && HAVE_SETJMP && !__MACOSX__
++#if SDL_ALTIVEC_BLITTERS && HAVE_SETJMP && !__MACOSX__ && !__OpenBSD__
+ /* This is the brute force way of detecting instruction sets...
+    the idea is borrowed from the libmpeg2 library - thanks!
+  */
+@@ -359,8 +363,12 @@ static __inline__ int CPU_haveSSE2(void)
  static __inline__ int CPU_haveAltiVec(void)
  {
  	volatile int altivec = 0;
--#if defined(__MACOSX__) && defined(__ppc__)
+-#if defined(__MACOSX__) && (defined(__ppc__) || defined(__ppc64__))
 -	int selectors[2] = { CTL_HW, HW_VECTORUNIT }; 
-+#if defined(__MACOSX__) && defined(__ppc__) || defined(__OpenBSD__) && defined(__powerpc__)
++#if (defined(__MACOSX__) && (defined(__ppc__) || defined(__ppc64__))) || (defined(__OpenBSD__) && defined(__powerpc__))
 +# ifdef __OpenBSD__
 +	int selectors[2] = { CTL_MACHDEP, CPU_ALTIVEC };
 +# else

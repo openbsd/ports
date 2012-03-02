@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/12/30 22:17:54 sthen Exp $
-@pkgpath ${BASE_PKGPATH},sun
+@comment $OpenBSD: PLIST,v 1.15 2012/03/02 09:10:38 dcoppa Exp $
+@pkgpath ${BASE_PKGPATH},altivec
+@pkgpath ${BASE_PKGPATH},caca
 @pkgpath ${BASE_PKGPATH},esd
+@pkgpath ${BASE_PKGPATH},sun
+%%SHARED%%
 bin/sdl-config
 include/SDL/
 include/SDL/SDL.h
@@ -38,6 +41,7 @@ include/SDL/close_code.h
 lib/libSDL.a
 lib/libSDL.la
 lib/libSDLmain.a
+lib/libSDLmain.la
 lib/pkgconfig/
 lib/pkgconfig/sdl.pc
 @man man/man3/SDLKey.3
@@ -216,4 +220,3 @@ lib/pkgconfig/sdl.pc
 @man man/man3/SDL_mutexV.3
 share/aclocal/
 share/aclocal/sdl.m4
-%%SHARED%%
