@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/10/26 16:59:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/03/02 09:04:59 ajacoutot Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -19,7 +19,13 @@ include/openh323/h225ras.h
 include/openh323/h230/
 include/openh323/h230/OID2.h
 include/openh323/h230/h230.h
+include/openh323/h235/
 include/openh323/h235.h
+include/openh323/h235/h2351.h
+include/openh323/h235/h2356.h
+include/openh323/h235/h235caps.h
+include/openh323/h235/h235chan.h
+include/openh323/h235/h235con.h
 include/openh323/h235auth.h
 include/openh323/h235plugin.h
 include/openh323/h235pluginmgr.h
