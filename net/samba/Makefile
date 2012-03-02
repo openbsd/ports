@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2012/02/16 21:36:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.156 2012/03/02 08:22:20 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,7 @@ WANTLIB=	c execinfo ncurses popt pthread readline talloc tdb>=3.0 z
 
 MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 		http://us2.samba.org/samba/ftp/ \
-		http://us2.samba.org/samba/ftp/old-versions/
+		http://ftp.samba.org/samba/ftp/old-versions/
 
 MODULES=	converters/libiconv
 
