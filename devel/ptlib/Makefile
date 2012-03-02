@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/30 12:49:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/02 09:03:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	portable tools library
 
-DISTNAME=	ptlib-2.10.3
-REVISION=	2
+DISTNAME=	ptlib-2.10.4
 
 SHARED_LIBS=	pt	4.0	# 2.10.3
 
