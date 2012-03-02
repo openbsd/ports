@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.25 2011/12/05 21:27:53 espie Exp $
+# $OpenBSD: Port.pm,v 1.26 2012/03/02 19:33:43 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -590,7 +590,7 @@ sub totaltime
 sub timings
 {
 	my $self = shift;
-	return join('/', map {sprintf("%s=%.2f", $_->name, $_->elapsed)} @{$self->{done}});
+	return join('/', "max_stuck=".$self->{watched}{max}, map {sprintf("%s=%.2f", $_->name, $_->elapsed)} @{$self->{done}});
 }
 
 my $logsize = {};

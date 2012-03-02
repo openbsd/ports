@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Clock.pm,v 1.3 2012/03/02 19:33:43 espie Exp $
 #
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
@@ -100,6 +100,7 @@ sub new
 		expected => $expected,
 		offset => $offset,
 		time => $time,
+		max => 0,
 	}, $class;
 	DPB::Clock->register($o);
 	return $o;
@@ -119,7 +120,11 @@ sub check_change
 		$self->{sz} = $sz;
 		$self->{time} = $current;
 	}
-	return $current - $self->{time};
+	my $d = $current - $self->{time};
+	if ($d > $self->{max}) {
+		$self->{max} = $d;
+	}
+	return $d;
 }
 
 sub change_message
