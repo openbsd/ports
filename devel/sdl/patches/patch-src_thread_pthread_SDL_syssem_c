@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_thread_pthread_SDL_syssem_c,v 1.1 2012/03/02 14:52:29 dcoppa Exp $
+
+Fixed bug 1426 - SDL_SemWaitTimeout returns -1 and sets error instead of
+SDL_MUTEX_TIMEDOUT on time out
+
+--- src/thread/pthread/SDL_syssem.c.orig	Fri Mar  2 04:42:50 2012
++++ src/thread/pthread/SDL_syssem.c	Fri Mar  2 04:44:23 2012
+@@ -144,8 +144,14 @@ int SDL_SemWaitTimeout(SDL_sem *sem, Uint32 timeout)
+ 		retval = sem_timedwait(&sem->sem, &ts_timeout);
+ 	while (retval == -1 && errno == EINTR);
+ 
+-	if (retval == -1)
+-		SDL_SetError(strerror(errno));
++	if (retval == -1) {
++		if (errno == ETIMEDOUT) {
++			retval = SDL_MUTEX_TIMEDOUT;
++		}
++		else {
++			SDL_SetError(strerror(errno));
++		}
++	}
+ #else
+ 	end = SDL_GetTicks() + timeout;
+ 	while ((retval = SDL_SemTryWait(sem)) == SDL_MUTEX_TIMEDOUT) {
