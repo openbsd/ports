@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.14 2012/02/28 14:23:27 espie Exp $
+# $OpenBSD: Locks.pm,v 1.15 2012/03/02 17:14:41 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -64,7 +64,7 @@ sub clean_old_locks
 	my $junk = <$ps>;
 	while (<$ps>) {
 		if (m/^(\d+)\s+(.*)$/) {
-			my ($pid, $cmd) = @_;
+			my ($pid, $cmd) = ($1, $2);
 			if ($locks->{$pid} && $cmd =~ m/\bdpb\b/) {
 				delete $locks->{$pid};
 			}
