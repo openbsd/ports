@@ -1,4 +1,4 @@
-$OpenBSD: patch-examples_gen_example_code_sh,v 1.2 2010/10/31 21:05:38 ckuethe Exp $
+$OpenBSD: patch-examples_gen_example_code_sh,v 1.3 2012/03/02 08:34:44 dcoppa Exp $
 --- examples/gen_example_code.sh.orig	Thu Oct 28 09:14:14 2010
 +++ examples/gen_example_code.sh	Thu Oct 28 21:59:18 2010
 @@ -1,4 +1,4 @@
@@ -7,12 +7,3 @@ $OpenBSD: patch-examples_gen_example_code_sh,v 1.2 2010/10/31 21:05:38 ckuethe E
  ##
  ##  Copyright (c) 2010 The WebM project authors. All Rights Reserved.
  ##
-@@ -49,7 +49,7 @@ include_block() {
-             *)
-                 if [ "x$on_block" == "xyes" ]; then
-                     local rem
--                    (( rem = 78 - indent ))
-+                    rem=$(expr 78 - $indent )
-                     case "$block_name" in
-                       \**) printf "%${indent}s * %s\n" "" "$t_line" ;;
-                         *)
