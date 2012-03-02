@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/02/23 09:22:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/02 09:07:42 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -10,6 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
 REVISION-main=	8
+REVISION-extra=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -63,6 +64,7 @@ RUN_DEPENDS-extra += \
 		www/epiphany-extensions \
 		sysutils/deja-dup \
 		x11/gnome/contacts \
+		x11/gnome/ekiga \
 		x11/gnome/empathy \
 		x11/gnome/eog-plugins \
 		x11/gnome/gedit-plugins \
@@ -81,7 +83,6 @@ RUN_DEPENDS-extra += \
 		x11/gnome/vinagre \
 		x11/gnome/vino
 # BROKEN
-# x11/gnome/ekiga
 # x11/gnome/games-extra-data
 
 .include <bsd.port.mk>
