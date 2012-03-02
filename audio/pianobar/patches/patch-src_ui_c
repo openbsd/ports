@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_ui_c,v 1.7 2012/03/02 11:42:56 dcoppa Exp $
+
+Don't use custom format output as format string: fixes a segmentation
+fault when searching for a station named '%'
+(upstream git commit e6a87e15043767c0f1f00a62110e4bbb53de4ece)
+
+--- src/ui.c.orig	Fri Mar  2 12:33:15 2012
++++ src/ui.c	Fri Mar  2 12:34:56 2012
+@@ -709,7 +709,7 @@ inline void BarUiPrintStation (const BarSettings_t *se
+ 	BarUiCustomFormat (outstr, sizeof (outstr), settings->npStationFormat,
+ 			"ni", vals);
+ 	BarUiAppendNewline (outstr, sizeof (outstr));
+-	BarUiMsg (settings, MSG_PLAYING, outstr);
++	BarUiMsg (settings, MSG_PLAYING, "%s", outstr);
+ }
+ 
+ /*	Print song infos (artist, title, album, loved)
+@@ -729,7 +729,7 @@ inline void BarUiPrintSong (const BarSettings_t *setti
+ 	BarUiCustomFormat (outstr, sizeof (outstr), settings->npSongFormat,
+ 			"talr@su", vals);
+ 	BarUiAppendNewline (outstr, sizeof (outstr));
+-	BarUiMsg (settings, MSG_PLAYING, outstr);
++	BarUiMsg (settings, MSG_PLAYING, "%s", outstr);
+ }
+ 
+ /*	Print list of songs
+@@ -756,7 +756,7 @@ size_t BarUiListSongs (const BarSettings_t *settings,
+ 			BarUiCustomFormat (outstr, sizeof (outstr), settings->listSongFormat,
+ 					"iatr", vals);
+ 			BarUiAppendNewline (outstr, sizeof (outstr));
+-			BarUiMsg (settings, MSG_LIST, outstr);
++			BarUiMsg (settings, MSG_LIST, "%s", outstr);
+ 		}
+ 		i++;
+ 		song = song->next;
