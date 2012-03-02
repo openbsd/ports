@@ -1,0 +1,13 @@
+$OpenBSD: patch-ldapvi_1,v 1.1 2012/03/02 08:01:07 sthen Exp $
+--- ldapvi.1.orig	Sat May  5 11:17:26 2007
++++ ldapvi.1	Thu Mar  1 22:04:17 2012
+@@ -36,6 +36,9 @@ Sets \fB\-\-bind\fR simple.
+ \fB\-w\fR, \fB\-\-password\fR SECRET
+ Password (also valid for SASL).
+ .TP
++\fB\-y\fR, \fB\-\-password-file\fR FILENAME
++File containing user's password (also valid for SASL).
++.TP
+ \fB\-\-bind\fR [simple,sasl]
+ Disable or enable SASL.
+ .TP

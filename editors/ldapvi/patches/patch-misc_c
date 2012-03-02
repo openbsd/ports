@@ -1,0 +1,50 @@
+$OpenBSD: patch-misc_c,v 1.1 2012/03/02 08:01:07 sthen Exp $
+
+fix possible LP64 issue (improper sentinel)
+allow editors/pagers with arguments
+getline namespace collision, upstream git 256ced029c
+
+--- misc.c.orig	Sat May  5 11:17:26 2007
++++ misc.c	Thu Mar  1 22:04:17 2012
+@@ -172,9 +172,11 @@ edit(char *pathname, long line)
+ 		if (line > 0) {
+ 			char buf[20];
+ 			snprintf(buf, 20, "+%ld", line);
+-			execlp(vi, vi, buf, pathname, 0);
++			execl("/bin/sh", "sh", "-c", "exec $0 \"$@\"", vi,
++			      buf, pathname, (char *) NULL);
+ 		} else
+-			execlp(vi, vi, pathname, 0);
++			execl("/bin/sh", "sh", "-c", "exec $0 \"$@\"", vi,
++			      pathname, (char *) NULL);
+ 		syserr();
+ 	}
+ 
+@@ -213,7 +215,8 @@ view(char *pathname)
+ 	case -1:
+ 		syserr();
+ 	case 0:
+-		execlp(pg, pg, pathname, 0);
++		execl("/bin/sh", "sh", "-c", "exec $0 \"$@\"", pg,
++		      pathname, (char *) NULL);
+ 		syserr();
+ 	}
+ 
+@@ -245,7 +248,7 @@ pipeview(int *fd)
+ 		close(fds[1]);
+ 		dup2(fds[0], 0);
+ 		close(fds[0]);
+-		execlp(pg, pg, 0);
++		execl("/bin/sh", "sh", "-c", "exec $0", pg, (char *) NULL);
+ 		syserr();
+ 	}
+ 
+@@ -315,7 +318,7 @@ write_ldapvi_history()
+ }
+ 
+ char *
+-getline(char *prompt, char *value)
++ldapvi_getline(char *prompt, char *value)
+ {
+ 	tdialog d;
+ 	init_dialog(&d, DIALOG_DEFAULT, prompt, value);

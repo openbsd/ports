@@ -1,0 +1,25 @@
+$OpenBSD: patch-ldapvi_c,v 1.1 2012/03/02 08:01:07 sthen Exp $
+
+rename getline to avoid future namespace collision, upstream git 256ced029c
+remove pointless header which vim whines about
+
+--- ldapvi.c.orig	Sat May  5 11:17:26 2007
++++ ldapvi.c	Thu Mar  1 22:04:17 2012
+@@ -470,7 +470,7 @@ change_mechanism(bind_options *bo)
+ 		bo->authmethod = LDAP_AUTH_SASL;
+ 		puts("Switching to SASL authentication.");
+ 	}
+-	bo->sasl_mech = getline("SASL mechanism", bo->sasl_mech);
++	bo->sasl_mech = ldapvi_getline("SASL mechanism", bo->sasl_mech);
+ }
+ 
+ static int
+@@ -1414,7 +1414,7 @@ write_file_header(FILE *s, cmdline *cmdline)
+ 	int nlines = 0;
+ 
+ 	if (print_binary_mode == PRINT_UTF8 && !cmdline->ldif) {
+-		fputs("# -*- coding: utf-8 -*- vim:encoding=utf-8:\n", s);
++		fputs("# -*- coding: utf-8 -*-\n", s);
+ 		nlines++;
+ 	}
+ 	if (cmdline->ldif) {

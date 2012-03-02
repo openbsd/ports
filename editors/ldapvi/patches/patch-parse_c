@@ -1,0 +1,63 @@
+$OpenBSD: patch-parse_c,v 1.1 2012/03/02 08:01:07 sthen Exp $
+
+unbreak hash generation
+http://lists.askja.de/pipermail/ldapvi/2007-October/000041.html
+
+--- parse.c.orig	Thu Mar  1 22:16:15 2012
++++ parse.c	Thu Mar  1 22:16:24 2012
+@@ -144,7 +144,7 @@ static char *
+ cryptdes(char *key)
+ {
+ 	unsigned char salt[2];
+-	int fd = open("/dev/random", 2);
++	int fd = open("/dev/random", O_RDONLY);
+ 	if (fd == -1) {
+ 		puts("Sorry, crypt not available: Cannot open /dev/random.");
+ 		return 0;
+@@ -162,7 +162,7 @@ cryptmd5(char *key)
+ 	char *result;
+ 	unsigned char salt[11];
+ 	int i;
+-	int fd = open("/dev/random", 2);
++	int fd = open("/dev/random", O_RDONLY);
+ 	if (fd == -1) {
+ 		puts("Sorry, MD5 not available: Cannot open /dev/random.");
+ 		return 0;
+@@ -261,21 +261,29 @@ read_line1(FILE *s, GString *name, GString *value)
+ 		g_string_assign(value, "{CRYPT}");
+ 		g_string_append(value, hash);
+ 	} else if (!strcasecmp(encoding, "sha")) {
+-		if (read_ldif_attrval(s, value) == -1) return -1;
++		GString *cleartext = g_string_new("");
++		if (read_ldif_attrval(s, cleartext) == -1) return -1;
+ 		g_string_assign(value, "{SHA}");
+-		if (!g_string_append_sha(value, value->str)) return -1;
++		if (!g_string_append_sha(value, cleartext->str)) return -1;
++		g_string_free(cleartext, TRUE);
+ 	} else if (!strcasecmp(encoding, "ssha")) {
+-		if (read_ldif_attrval(s, value) == -1) return -1;
++		GString *cleartext = g_string_new("");
++		if (read_ldif_attrval(s, cleartext) == -1) return -1;
+ 		g_string_assign(value, "{SSHA}");
+-		if (!g_string_append_ssha(value, value->str)) return -1;
++		if (!g_string_append_ssha(value, cleartext->str)) return -1;
++		g_string_free(cleartext, TRUE);
+ 	} else if (!strcasecmp(encoding, "md5")) {
+-		if (read_ldif_attrval(s, value) == -1) return -1;
++		GString *cleartext = g_string_new("");
++		if (read_ldif_attrval(s, cleartext) == -1) return -1;
+ 		g_string_assign(value, "{MD5}");
+-		if (!g_string_append_md5(value, value->str)) return -1;
++		if (!g_string_append_md5(value, cleartext->str)) return -1;
++		g_string_free(cleartext, TRUE);
+ 	} else if (!strcasecmp(encoding, "smd5")) {
+-		if (read_ldif_attrval(s, value) == -1) return -1;
++		GString *cleartext = g_string_new("");
++		if (read_ldif_attrval(s, cleartext) == -1) return -1;
+ 		g_string_assign(value, "{SMD5}");
+-		if (!g_string_append_smd5(value, value->str)) return -1;
++		if (!g_string_append_smd5(value, cleartext->str)) return -1;
++		g_string_free(cleartext, TRUE);
+ 	} else {
+ 		char *ptr;
+ 		int n = strtol(encoding, &ptr, 10);
