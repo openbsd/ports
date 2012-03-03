@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/02/16 21:19:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/03 13:13:47 sthen Exp $
 
 COMMENT=	modular framework for web-based applications
 
 # LGPLv2
 DISTNAME=	horde-3.3.13
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${HORDE_SITES:=horde/}
 HOMEPAGE=	http://www.horde.org/
@@ -11,7 +12,6 @@ INSTDIR=	horde
 HORDE_MODULE=
 
 RUN_DEPENDS+=	databases/pear-DB \
-		databases/pear-MDB2 \
 		devel/pear-Console-Table \
 		devel/pear-Log \
 		graphics/pecl-imagick \
@@ -28,6 +28,7 @@ RUN_DEPENDS+=	databases/pear-DB \
 		www/pecl-geoip \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mcrypt \
+		pear-MDB2-mysql-*|pear-MDB2-pgsql-*:databases/pear-MDB2-pgsql \
 		php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pgsql
 
 .include <bsd.port.mk>
