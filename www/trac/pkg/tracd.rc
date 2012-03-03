@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: tracd.rc,v 1.1 2012/03/03 11:42:06 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/tracd -d"
+daemon_flags="-p 8085 /var/www/trac"
+daemon_user="_trac"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1
