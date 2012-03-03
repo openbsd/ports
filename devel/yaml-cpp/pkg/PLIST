@@ -1,9 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/11 16:55:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/03 10:33:47 sthen Exp $
 %%SHARED%%
 include/yaml-cpp/
 include/yaml-cpp/aliasmanager.h
 include/yaml-cpp/anchor.h
-include/yaml-cpp/anchordict.h
+include/yaml-cpp/binary.h
+include/yaml-cpp/contrib/
+include/yaml-cpp/contrib/anchordict.h
+include/yaml-cpp/contrib/graphbuilder.h
 include/yaml-cpp/conversion.h
 include/yaml-cpp/dll.h
 include/yaml-cpp/emitfromevents.h
@@ -11,7 +14,6 @@ include/yaml-cpp/emitter.h
 include/yaml-cpp/emittermanip.h
 include/yaml-cpp/eventhandler.h
 include/yaml-cpp/exceptions.h
-include/yaml-cpp/graphbuilder.h
 include/yaml-cpp/iterator.h
 include/yaml-cpp/ltnode.h
 include/yaml-cpp/mark.h

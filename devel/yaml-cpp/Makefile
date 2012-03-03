@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/11 16:55:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/03 10:33:47 sthen Exp $
 
 COMMENT =		YAML parser and emitter in C++
-DISTNAME =		yaml-cpp-0.2.6
+DISTNAME =		yaml-cpp-0.3.0
 
-SHARED_LIBS =		yaml-cpp	0.0 # 0.2
+SHARED_LIBS =		yaml-cpp	1.0 # 0.3
 
 CATEGORIES =		devel
 
