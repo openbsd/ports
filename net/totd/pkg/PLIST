@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/09/06 21:14:10 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/03 15:56:18 sthen Exp $
 @man man/man8/totd.8
 @bin sbin/totd
 share/totd/
 share/totd/totd.conf.sample
 @sample ${SYSCONFDIR}/totd.conf
+@rcscript ${RCDIR}/totd

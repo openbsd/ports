@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: totd.rc,v 1.1 2012/03/03 15:56:18 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/totd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
