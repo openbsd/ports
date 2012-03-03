@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/03 11:48:44 sthen Exp $
+
+BROKEN-arm=	mktileset buggy, loops at high CPU use
 
 COMMENT=	tactical war game like Battle Isle; multiplayer
 DISTNAME=	crimson-0.5.1
