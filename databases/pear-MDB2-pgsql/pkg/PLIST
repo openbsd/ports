@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/03 12:46:58 landry Exp $
+@group daemon
+pear/data/MDB2_Driver_pgsql/
+pear/data/MDB2_Driver_pgsql/package_pgsql.xml
+pear/lib/.registry/mdb2_driver_pgsql.reg
+pear/lib/MDB2/Driver/Datatype/pgsql.php
+pear/lib/MDB2/Driver/Function/pgsql.php
+pear/lib/MDB2/Driver/Manager/pgsql.php
+pear/lib/MDB2/Driver/Native/pgsql.php
+pear/lib/MDB2/Driver/Reverse/pgsql.php
+pear/lib/MDB2/Driver/pgsql.php
+pear/tests/MDB2_Driver_pgsql/
+pear/tests/MDB2_Driver_pgsql/tests/
+pear/tests/MDB2_Driver_pgsql/tests/MDB2_nonstandard_pgsql.php
