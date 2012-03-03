@@ -1,11 +1,12 @@
-$OpenBSD: patch-gdb_python_python-config_py,v 1.1 2011/11/13 14:56:57 espie Exp $
---- gdb/python/python-config.py.orig	Thu May 27 03:36:22 2010
-+++ gdb/python/python-config.py	Sat Nov 12 23:43:37 2011
-@@ -50,5 +50,7 @@ elif opt in ('--libs', '--ldflags'):
-     # shared library in prefix/lib/.
-     if opt == '--ldflags' and not getvar('Py_ENABLE_SHARED'):
-         libs.insert(0, '-L' + getvar('LIBPL'))
-+    if opt == '--ldflags':
-+    	libs.insert(0, getvar('LDFLAGS'))
-     print ' '.join(libs)
- 
+$OpenBSD: patch-gdb_python_python-config_py,v 1.2 2012/03/03 19:22:42 pascal Exp $
+--- gdb/python/python-config.py.orig	Mon Jan 31 05:42:08 2011
++++ gdb/python/python-config.py	Wed Feb 29 00:21:30 2012
+@@ -71,6 +71,8 @@ for opt in opt_flags:
+                     libs.insert(0, '-L' + getvar('LIBPL'))
+                 elif os.name == 'nt':
+                     libs.insert(0, '-L' + sysconfig.PREFIX + '/libs')
++            if getvar('LDFLAGS') is not None:
++                libs.insert(0, getvar('LDFLAGS'))
+             if getvar('LINKFORSHARED') is not None:
+                 libs.extend(getvar('LINKFORSHARED').split())
+         print to_unix_path(' '.join(libs))

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/11/11 23:01:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/03 19:22:42 pascal Exp $
 @conflict libbfd-*
 @bin bin/egdb
 @bin bin/egdbtui
@@ -6,6 +6,8 @@ include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 include/dis-asm.h
+include/gdb/
+include/gdb/jit-reader.h
 include/symcat.h
 @info info/annotate.info
 @info info/bfd.info
@@ -18,3 +20,6 @@ lib/libopcodes.a
 lib/libopcodes.la
 @man man/man1/egdb.1
 @man man/man1/egdbtui.1
+@comment share/gdb/
+@comment share/gdb/python/
+@comment share/gdb/python/gdb/
