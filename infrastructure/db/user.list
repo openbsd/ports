@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.183 2012/02/19 17:53:38 ajacoutot Exp $
+$OpenBSD: user.list,v 1.184 2012/03/03 11:40:32 sthen Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -201,3 +201,4 @@ id  user		group		port options
 690 _pgpool		_pgpool		databases/pgpool
 691 _natpmpd		_natpmpd	net/natpmpd
 692 _cntlm		_cntlm		www/cntlm
+693 _trac		_trac		www/trac
