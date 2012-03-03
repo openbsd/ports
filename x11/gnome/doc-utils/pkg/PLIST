@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/03/22 15:48:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/03/03 10:30:56 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -24,8 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/xml2po/modes/gs.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/mallard.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.py
-@comment lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.pyc
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.py
+lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.pyc
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/ubuntu.pyo
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/xhtml.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/modes/xhtml.pyc
@@ -164,6 +164,7 @@ share/locale/as/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/be/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gnome-doc-utils.mo
@@ -293,6 +294,12 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/uk/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/uz/
+share/locale/uz/LC_MESSAGES/
+share/locale/uz/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/vi/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/wa/
 share/locale/wa/LC_MESSAGES/
@@ -300,13 +307,6 @@ share/locale/wa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-doc-utils.mo
-share/omf/
-share/omf/gnome-doc-make/
-share/omf/gnome-doc-make/gnome-doc-make-C.omf
-share/omf/gnome-doc-make/gnome-doc-make-de.omf
-share/omf/gnome-doc-xslt/
-share/omf/gnome-doc-xslt/gnome-doc-xslt-C.omf
-share/omf/gnome-doc-xslt/gnome-doc-xslt-de.omf
 share/xml/gnome/
 share/xml/gnome/xslt/
 share/xml/gnome/xslt/common/
@@ -373,7 +373,3 @@ share/xml/gnome/xslt/mallard/html/mal2html-page.xsl
 share/xml/gnome/xslt/mallard/html/mal2html-table.xsl
 share/xml/gnome/xslt/mallard/html/mal2html.xsl
 share/xml/gnome/xslt/mallard/html/mal2xhtml.xsl
-share/xml/mallard/
-share/xml/mallard/1.0/
-share/xml/mallard/1.0/mallard.rnc
-share/xml/mallard/1.0/mallard.rng
