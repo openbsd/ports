@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/04 20:04:54 landry Exp $
+${P5SITE}/Lingua/
+${P5SITE}/Lingua/EN/
+${P5SITE}/Lingua/EN/Sentence.pm
+@man man/man3p/Lingua::EN::Sentence.3p
