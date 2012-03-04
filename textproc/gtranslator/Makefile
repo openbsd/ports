@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/02/16 22:12:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/04 22:25:08 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,8 @@ MODULES=	devel/gettext \
 		lang/python
 
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/iso-codes
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		devel/json-glib \
