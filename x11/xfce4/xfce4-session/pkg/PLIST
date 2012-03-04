@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/12/03 22:32:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/03/04 18:02:58 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -34,7 +34,6 @@ lib/xfce4/session/splash-engines/
 @man man/man1/xfce4-session.1
 share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/xfce4-session/
 share/doc/xfce4-session/html/
 share/doc/xfce4-session/html/C/
