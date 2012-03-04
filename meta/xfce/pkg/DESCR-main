@@ -1,0 +1,9 @@
+The Xfce desktop, base installation. Contains core Xfce plus:
+ * theme packages
+ * a terminal (xfce4-terminal)
+ * a calendar (orage)
+ * an image viewer (ristretto)
+ * a text editor (mousepad)
+ * a sound mixer (xfce4-mixer)
+ * a thumbnailer service used by thunar (tumbler)
+ * an application finder (xfce4-appfinder)

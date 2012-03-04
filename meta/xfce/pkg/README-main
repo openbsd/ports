@@ -1,0 +1,65 @@
+$OpenBSD: README-main,v 1.1.1.1 2012/03/04 17:52:52 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+The Xfce desktop is composed of 2 meta-packages:
+    * xfce, for a base Xfce installation
+    * xfce-extras, for a full Xfce installation.
+
+Startup
+=======
+Xfce desktop environment is launched through the 'startxfce4' script.
+Simply add '${LOCALBASE}/bin/startxfce4' to your .xinitrc/.xsession
+script if you use startx, xdm or slim.
+If you use gdm or kdm, have a look at
+http://wiki.xfce.org/faq#starting_xfce. An xfce4.desktop file is
+provided for use by gdm.
+
+Logging out and shutting down the computer
+==========================================
+If your installation supports complete shutdown, clicking on the logout
+button on panel will permit you to either logout, rebooting or halt
+the computer, provided you have the needed sudo credentials.
+If you don't want to have to enter your password, simply add this line
+to the /etc/sudoers file using visudo:
+
+$your_username ALL=NOPASSWD: ${LOCALBASE}/libexec/xfsm-shutdown-helper
+
+Power management
+================
+If you use Xfce on a laptop, you can install xfce4-power-manager
+package, which will provide battery levels/information, and will allow
+to configure actions upon low battery level or AC plugging.
+
+Thunar file manager tips
+========================
+If you want to browse samba shares using GVfs, you'll need to install
+gvfs-smb package. You can also try gigolo package, which is a GUI to
+configure GVfs mounts.
+You can have a look at hotplugd(8) if you want some kind of auto-mount
+feature in thunar, provided natively by gudev on Linux and FreeBSD.
+See also http://thunar.xfce.org/pwiki/documentation/faq.
+
+Terminal, special characters and localized applications
+=======================================================
+If you use a particular non-ascii encoding and have problems seeing
+special characters in terminal (like accentued characters in french),
+you should add this line to your .xinitrc/.xsession before startxfce4:
+
+export LC_CTYPE=fr_FR.ISO8859-15
+
+where LC_CTYPE is defined by <language>_<country>.<encoding>.
+
+Similarly, if you want localized graphical applications, add this line
+too:
+
+export LC_MESSAGES=fr
+
+where 'fr' is your language tag.
+See http://www.openbsd.org/faq/faq10.html#locales for more information
+on that topic.
+
+More generally, http://wiki.xfce.org/faq and http://wiki.xfce.org/tips
+are the best resources for user-level documentation.
