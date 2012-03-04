@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.22 2012/03/02 09:10:38 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.23 2012/03/04 01:33:22 jsg Exp $
 --- configure.orig	Thu Jan 19 01:30:12 2012
-+++ configure	Wed Feb 22 13:39:54 2012
++++ configure	Sat Mar  3 05:22:20 2012
 @@ -21000,6 +21000,20 @@ _ACEOF
      fi
  }
@@ -22,7 +22,20 @@ $OpenBSD: patch-configure,v 1.22 2012/03/02 09:10:38 dcoppa Exp $
  CheckPulseAudio()
  {
      # Check whether --enable-pulseaudio was given.
-@@ -29551,6 +29565,7 @@ _ACEOF
+@@ -24073,6 +24087,12 @@ fi
+                     x11_lib='libX11.so'
+                     x11ext_lib='libXext.so'
+                     ;;
++                *-*-openbsd*)
++                    x11_lib='libX11.so'
++                    x11ext_lib='libXext.so'
++                    xrender_lib='libXrender.so'
++                    xrander_lib='libXrandr.so'
++                    ;;
+                 *)
+                     x11_lib=`find_lib "libX11.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+                     x11ext_lib=`find_lib "libXext.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`
+@@ -29551,6 +29571,7 @@ _ACEOF
          CheckALSA
          CheckARTSC
          CheckESD
@@ -30,7 +43,7 @@ $OpenBSD: patch-configure,v 1.22 2012/03/02 09:10:38 dcoppa Exp $
          CheckPulseAudio
          CheckNAS
          CheckX11
-@@ -29586,7 +29601,7 @@ _ACEOF
+@@ -29586,7 +29607,7 @@ _ACEOF
                  SOURCES="$SOURCES $srcdir/src/audio/sun/*.c"
                  have_audio=yes
              ;;

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.82 2012/03/02 09:10:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.83 2012/03/04 01:33:22 jsg Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}release/
 
@@ -58,6 +59,11 @@ CONFIGURE_ARGS+= --enable-video-aalib
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS+= --without-x \
 		 --disable-video-x11
+.else
+#
+# X11/Xext/Xrender/Xrandr are dlopen'd by SDL
+#
+WANTLIB+=	X11 Xau Xdmcp Xext Xrandr Xrender pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes
