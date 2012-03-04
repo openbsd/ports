@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_screen_c,v 1.3 2010/08/31 20:50:33 jasper Exp $
---- src/screen.c.orig	Thu Jul 15 04:01:30 2010
-+++ src/screen.c	Tue Aug 31 22:49:26 2010
+$OpenBSD: patch-src_screen_c,v 1.4 2012/03/04 16:57:19 dcoppa Exp $
+--- src/screen.c.orig	Sun Feb  5 20:04:22 2012
++++ src/screen.c	Fri Mar  2 13:18:26 2012
 @@ -40,6 +40,8 @@
  #include "screen_lyrics.h"
  #include "screen_outputs.h"
@@ -31,4 +31,4 @@ $OpenBSD: patch-src_screen_c,v 1.3 2010/08/31 20:50:33 jasper Exp $
 +
  	if (COLS<SCREEN_MIN_COLS || LINES<SCREEN_MIN_ROWS) {
  		screen_exit();
- 		fprintf(stderr, "%s", _("Error: Screen too small"));
+ 		fprintf(stderr, "%s\n", _("Error: Screen too small"));
