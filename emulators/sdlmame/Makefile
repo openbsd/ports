@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/12/20 06:56:12 fgsch Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/04 01:46:41 jsg Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			0144
+V =			0145
 DISTNAME =		mame${V}s
 PKGNAME-main =		sdlmame-${V:S/0/0./}pl3
 PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl3
@@ -74,8 +74,7 @@ pre-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
 .endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
-	    ${WRKDIST}/src/emu/fileio.h \
-	    ${WRKDIST}/src/mame/video/mcd212.c
+	    ${WRKDIST}/src/emu/fileio.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mame ${PREFIX}/bin/sdlmame
