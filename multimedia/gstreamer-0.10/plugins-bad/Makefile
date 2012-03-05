@@ -1,32 +1,30 @@
-# $OpenBSD: Makefile,v 1.63 2012/01/25 14:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/03/05 15:22:46 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
 COMMENT-mjpeg =		mplex+mpeg2enc elements for GStreamer (plugins-bad)
 
-V =			0.10.22
+V =			0.10.23
 DISTNAME =		gst-plugins-bad-${V}
 
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		6
-REVISION-neon =		1
-REVISION-mjpeg =	1
-
 MULTI_PACKAGES =	-main -neon -mjpeg
 
-SHARED_LIBS +=  gstphotography-0.10          1.0 # .0.0
-SHARED_LIBS +=  gstsignalprocessor-0.10      1.0 # .0.0
-SHARED_LIBS +=  gstbasevideo-0.10            1.0 # .0.0
+SHARED_LIBS +=  gstphotography-0.10       1.0 # 23.0
+SHARED_LIBS +=  gstsignalprocessor-0.10   1.0 # 23.0
+SHARED_LIBS +=  gstbasevideo-0.10         1.0 # 23.0
+SHARED_LIBS +=  gstbasecamerabinsrc-0.10  0.0 # 23.0
+SHARED_LIBS +=  gstcodecparsers-0.10      0.0 # 23.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 MODULES =		devel/gettext \
 			devel/dconf
 
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
-			z m pcre gstreamer-0.10
+			z m pcre gstreamer-0.10 ffi
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
@@ -47,6 +45,7 @@ WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstsdp-0.10 gsttag-0.10 gstvideo-0.10
 WANTLIB-main += idn jasper lrdf mms mpcdec orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pixman-1 png pthread-stubs raptor rsvg-2
 WANTLIB-main += schroedinger-1.0 sndfile sndio ssl stdc++ usbhid vpx
+WANTLIB-main += Xrandr fribidi gstapp-0.10 gstfft-0.10 jpeg spandsp tiff
 WANTLIB-main += xcb xcb-render xcb-shm xslt
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -60,12 +59,13 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/sdl \
 			graphics/jasper \
 			multimedia/libass \
+			multimedia/libdvdnav>=4.1.3p0v0 \
 			multimedia/libmms \
 			multimedia/libvpx \
 			multimedia/schroedinger>=1.0.10 \
-			x11/gnome/librsvg \
-			multimedia/libdvdnav>=4.1.3p0v0 \
-			textproc/liblrdf
+			telephony/spandsp \
+			textproc/liblrdf \
+			x11/gnome/librsvg
 
 RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODDCONF_RUN_DEPENDS}

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
---- configure.ac.orig	Mon May  9 16:45:37 2011
-+++ configure.ac	Wed Oct 12 17:57:00 2011
-@@ -402,7 +402,7 @@ if test "x$HAVE_WINSOCK2_H" = "xyes"; then
+$OpenBSD: patch-configure_ac,v 1.15 2012/03/05 15:22:46 ajacoutot Exp $
+--- configure.ac.orig	Tue Feb 21 02:55:15 2012
++++ configure.ac	Mon Mar  5 14:44:49 2012
+@@ -411,7 +411,7 @@ if test "x$HAVE_WINSOCK2_H" = "xyes"; then
  fi
  
  if test "x$HAVE_PTHREAD_H" = "xyes"; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
    AC_SUBST(DCCP_LIBS)
  fi
  
-@@ -832,7 +832,7 @@ return 0;
+@@ -906,7 +906,7 @@ return 0;
  dnl *** resindvd ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_RESINDVD, true)
  AG_GST_CHECK_FEATURE(RESINDVD, [resindvd plugin], resindvd, [
@@ -19,47 +19,16 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
      HAVE_RESINDVD="no"
    ])
  ])
-@@ -1042,21 +1042,25 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
-   PKG_CHECK_EXISTS(mjpegtools >= 1.8.0 mjpegtools < 1.9.0, [
-     mjpegtools_api=10800
-   ], [
--    PKG_CHECK_MODULES(MJPEG, mjpegtools >= 1.9.0, [
--      dnl logging API changed in release candidates
--      OLD_CFLAGS="$CFLAGS"
--      OLD_LIBS="$LIBS"
--      CFLAGS="$MJPEG_CFLAGS"
--      LIBS="$LIBS $MJPEG_LIBS -lmjpegutils $LIBM -lpthread"
--      AC_CHECK_FUNC(mjpeg_loglev_t, [
--        mjpegtools_api=10903
--        ], [
--        mjpegtools_api=10900
--        ])
--      CFLAGS="$OLD_CFLAGS"
--      LIBS="$OLD_LIBS"
-+    PKG_CHECK_EXISTS(mjpegtools >= 2.0.0, [
-+    mjpegtools_api=20000
-     ], [
--      mjpegtools_api=0
-+      PKG_CHECK_MODULES(MJPEG, mjpegtools >= 1.9.0 mjpegtools < 2.0.0, [
-+        dnl logging API changed in release candidates
-+        OLD_CFLAGS="$CFLAGS"
-+        OLD_LIBS="$LIBS"
-+        CFLAGS="$MJPEG_CFLAGS"
+@@ -1124,7 +1124,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
+         OLD_CFLAGS="$CFLAGS"
+         OLD_LIBS="$LIBS"
+         CFLAGS="$MJPEG_CFLAGS"
+-        LIBS="$LIBS $MJPEG_LIBS -lmjpegutils $LIBM -lpthread"
 +        LIBS="$LIBS $MJPEG_LIBS -lmjpegutils $LIBM -pthread"
-+        AC_CHECK_FUNC(mjpeg_loglev_t, [
-+          mjpegtools_api=10903
-+          ], [
-+          mjpegtools_api=10900
-+          ])
-+        CFLAGS="$OLD_CFLAGS"
-+        LIBS="$OLD_LIBS"
-+      ], [
-+        mjpegtools_api=0
-+      ])
-     ])
-   ])
- ])
-@@ -1084,7 +1088,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
+         AC_CHECK_FUNC(mjpeg_loglev_t, [
+           mjpegtools_api=10903
+           ], [
+@@ -1162,7 +1162,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
        dnl check headers
        mpeg2enc_headers_ok=no
        AC_CHECK_HEADER([mpeg2encoder.hh], [
@@ -68,40 +37,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
          OLD_LIBS="$LIBS"
          LIBS="$LIBS $MPEG2ENC_LIBS"
          AC_MSG_CHECKING([for valid mpeg2enc objects])
-@@ -1119,7 +1123,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
-           if test "x$mpeg2enc_headers_ok" = "xyes"; then
-             HAVE_MPEG2ENC="yes"
-           fi
--          CPP_FLAGS="$CPPFLAGS_GOOD"
-+          CPPFLAGS="$CPPFLAGS_GOOD"
-           AC_SUBST(MPEG2ENC_CFLAGS)
-           AC_SUBST(MPEG2ENC_LIBS)
-         ], [
-@@ -1147,10 +1151,14 @@ AG_GST_CHECK_FEATURE(MPLEX, [mplex], mplex, [
-     dnl and mpeg2enc, we check for mplex on its own, too.
-     dnl libmplex < 1.9rc? has fuzzy ABI, valgrind and other problems
-     PKG_CHECK_MODULES(MPLEX, mjpegtools >= 1.9.0, [
-+      dnl HACK because mplex 2.0.0 header files have a spurious 'include config.h'
-+      touch config.h
-       dnl switch over to c++ to test things
-       AC_LANG_CPLUSPLUS
-       OLD_CPPFLAGS="$CPPFLAGS"
--      CPPFLAGS="$CPPFLAGS $MPLEX_CFLAGS"
-+      dnl HACK as above
-+      CPPFLAGS_GOOD="$CPPFLAGS $MPLEX_CFLAGS"
-+      CPPFLAGS="$CPPFLAGS_GOOD -I."
-       AC_CHECK_HEADER(interact.hpp, [
-         MPLEX_LIBS="$MPLEX_LIBS -lmplex2 $LIBM"
-         OLD_LIBS="$LIBS"
-@@ -1187,6 +1195,7 @@ main (int   argc,
- }
-         ],[
-           HAVE_MPLEX="yes"
-+          CPPFLAGS="$CPPFLAGS_GOOD"
-           AC_SUBST(MPLEX_CFLAGS)
-           AC_SUBST(MPLEX_LIBS)
-           AC_SUBST(MPLEX_LDFLAGS)
-@@ -1467,7 +1476,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
+@@ -1593,7 +1593,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
    HAVE_XVID=no
    AC_CHECK_HEADER(xvid.h, [
      OLD_LIBS="$LIBS"
@@ -110,7 +46,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
      AC_CHECK_LIB(xvidcore, xvid_encore, [
        AC_CHECK_LIB(xvidcore, xvid_decore, [
          AC_CHECK_LIB(xvidcore, xvid_global, [
-@@ -1575,6 +1584,8 @@ AG_GST_CHECK_FEATURE(ZBAR, [ZBar barcode detector], zb
+@@ -1706,6 +1706,8 @@ AG_GST_CHECK_FEATURE(ZBAR, [ZBar barcode detector], zb
  
  dnl *** vp8 ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_VP8, vp8)
@@ -119,7 +55,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
  AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
    VPX_LIBS=""
    AG_GST_CHECK_LIBHEADER(VPX, vpx,
-@@ -1583,8 +1594,6 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+@@ -1714,8 +1716,6 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
      HAVE_VP8_ENCODER=no
      HAVE_VP8_DECODER=no
  
@@ -128,7 +64,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2011/10/13 06:02:25 ajacoutot Exp $
      AC_CHECK_LIB(vpx, vpx_codec_vp8_cx_algo, [
        HAVE_VP8=yes
        AC_DEFINE(HAVE_VP8_ENCODER, 1, [Defined if the VP8 encoder is available])
-@@ -1595,10 +1604,10 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+@@ -1740,10 +1740,10 @@ return 0;
        AC_DEFINE(HAVE_VP8_DECODER, 1, [Defined if the VP8 decoder is available])
        VPX_LIBS="-lvpx"
      ])
