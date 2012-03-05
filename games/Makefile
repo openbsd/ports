@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.238 2012/02/27 22:11:10 schwarze Exp $
+# $OpenBSD: Makefile,v 1.239 2012/03/05 18:06:56 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -56,6 +56,7 @@
      SUBDIR += dungeon-crawl
      SUBDIR += eboard
      SUBDIR += eboard-extras
+     SUBDIR += eliot
      SUBDIR += egoboo
      SUBDIR += einstein
      SUBDIR += enigma
