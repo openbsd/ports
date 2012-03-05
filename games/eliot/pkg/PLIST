@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/05 18:05:35 landry Exp $
+@bin bin/compdic
+@bin bin/eliot
+@bin bin/eliotcurses
+@bin bin/listdic
+@bin bin/regexp
+share/applications/eliot.desktop
+share/eliot/
+share/eliot/danosc.dawg
+share/eliot/eliot-dic-cs.dawg
+share/eliot/eliot-dic-fr.dawg
+share/eliot/lex-fise.dawg
+share/eliot/rak.dawg
+share/eliot/sowpods06.dawg
+share/eliot/twl06.dawg
+share/icons/
+share/icons/eliot.xpm
+share/locale/ca/LC_MESSAGES/eliot.mo
+share/locale/cs/LC_MESSAGES/eliot.mo
+share/locale/en/LC_MESSAGES/eliot.mo
+share/locale/en@boldquot/LC_MESSAGES/eliot.mo
+share/locale/en@quot/LC_MESSAGES/eliot.mo
+share/locale/fr/LC_MESSAGES/eliot.mo
+share/locale/id/LC_MESSAGES/eliot.mo
+share/locale/rs/
+share/locale/rs/LC_MESSAGES/
+share/locale/rs/LC_MESSAGES/eliot.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

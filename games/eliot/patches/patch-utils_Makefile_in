@@ -1,0 +1,12 @@
+$OpenBSD: patch-utils_Makefile_in,v 1.1.1.1 2012/03/05 18:05:35 landry Exp $
+--- utils/Makefile.in.orig	Mon Mar  5 08:50:42 2012
++++ utils/Makefile.in	Mon Mar  5 08:50:57 2012
+@@ -55,7 +55,7 @@ host_triplet = @host@
+ noinst_PROGRAMS = $(am__EXEEXT_2)
+ bin_PROGRAMS = $(am__EXEEXT_1)
+ @BUILD_TEXT_TRUE@am__append_1 = eliottxt
+-@BUILD_TEXT_TRUE@@HAS_READLINE_TRUE@am__append_2 = -lreadline
++@BUILD_TEXT_TRUE@@HAS_READLINE_TRUE@am__append_2 = -lreadline -lncursesw
+ @BUILD_TEXT_TRUE@@WITH_LOGGING_TRUE@am__append_3 = @LOG4CXX_LIBS@
+ @BUILD_NCURSES_TRUE@am__append_4 = eliotcurses
+ @BUILD_NCURSES_TRUE@@WITH_LOGGING_TRUE@am__append_5 = @LOG4CXX_LIBS@

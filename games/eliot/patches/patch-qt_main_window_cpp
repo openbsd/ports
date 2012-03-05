@@ -1,0 +1,13 @@
+$OpenBSD: patch-qt_main_window_cpp,v 1.1.1.1 2012/03/05 18:05:35 landry Exp $
+Default to where dicts are installed
+--- qt/main_window.cpp.orig	Mon Mar  5 11:45:39 2012
++++ qt/main_window.cpp	Mon Mar  5 11:45:57 2012
+@@ -823,7 +823,7 @@ void MainWindow::onSettingsPreferences()
+ void MainWindow::onSettingsChooseDic()
+ {
+     QString fileName =
+-        QFileDialog::getOpenFileName(this, _q("Choose a dictionary"), "", "*.dawg");
++        QFileDialog::getOpenFileName(this, _q("Choose a dictionary"), "${LOCALBASE}/share/eliot/", "*.dawg");
+     changeDictionary(fileName);
+ }
+ 
