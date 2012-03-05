@@ -1,0 +1,5 @@
+Arabica is an XML and HTML processing toolkit, providing SAX, DOM,
+XPath, and XSLT implementations, written in Standard C++.
+
+In addition to the XML parser, Arabica includes Taggle, an HTML
+parser derived from TagSoup.
