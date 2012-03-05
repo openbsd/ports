@@ -1,0 +1,2 @@
+gcap is a command line tool for downloading Youtube closed captions.
+The downloaded closed captions are saved in SubRip (srt) file format.
