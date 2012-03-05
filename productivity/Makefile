@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/30 09:01:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2012/03/05 21:20:20 landry Exp $
 
      SUBDIR =
      SUBDIR += bruce
      SUBDIR += calcurse
+     SUBDIR += davical
      SUBDIR += deskzilla
      SUBDIR += devtodo
      SUBDIR += entomologist
