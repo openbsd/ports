@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/05 18:02:05 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/05 18:19:55 landry Exp $
 
 COMMENT =	Andrew's web libraries for PHP
 
 DISTNAME =	awl-0.51
 PKGNAME =	php-${DISTNAME}
+REVISION =	0
 CATEGORIES =	www
+PKG_ARCH =	*
 
 HOMEPAGE =	http://andrew.mcmillan.net.nz/projects/awl
 
@@ -26,6 +28,7 @@ MODULES =	lang/php
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}
 	cp -Rp ${WRKSRC}/{README,dba,docs,inc} ${INSTDIR}
+	rm ${INSTDIR}/inc/AWLUtilities.php.in
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
