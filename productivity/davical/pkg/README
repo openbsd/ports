@@ -1,0 +1,86 @@
+$OpenBSD: README,v 1.1.1.1 2012/03/05 21:19:53 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Database Setup
+==============
+DAViCal needs two PostgreSQL users, one for administrative access and
+one for daily use. Assuming you have an administrative account named
+`postgres', you can create the users and davical database like this:
+
+createuser -U postgres --pwprompt --no-superuser --no-createdb \
+	--no-createrole davical_dba
+createuser -U postgres --pwprompt --no-superuser --no-createdb \
+	--no-createrole davical_app
+createdb -U postgres -E UTF8 -T template0 -O davical_dba davical
+createlang -U postgres plpgsql davical
+
+Now adjust /var/postgresql/data/pg_hba.conf to allow davical_dba and
+davical_app db users to access davical database.
+
+Let's fill the database using the newly created dba user:
+
+psql -U davical_dba -f ${PREFIX}/awl/dba/awl-tables.sql davical
+psql -U davical_dba -f ${PREFIX}/awl/dba/schema-management.sql davical
+psql -U davical_dba -f ${PREFIX}/davical/dba/davical.sql davical
+
+Run the administrative script to set permissions for the application DB
+user on the database. This script should be used when upgrading DAViCal
+too, so that the DB schema is consistent.
+
+${PREFIX}/davical/dba/update-davical-database --dbname davical \
+	--appuser davical_app --nopatch --owner davical_dba
+
+Finally, insert basic roles/users into the db:
+
+psql -U davical_dba -f ${PREFIX}/davical/dba/base-data.sql davical
+
+Default temporary admin password is 'nimda', stored in database as
+'**nimda', you can change it to 'temppass' with
+
+psql -U davical_dba -c \
+"UPDATE usr SET password = '**temppass' WHERE user_no = 1;" davical
+
+This is only for initial setup, and it should be changed through the
+web interface (which will crypt the new password) once logged in.
+
+Apache VHost Configuration
+==========================
+
+Davical is meant to work in its own VirtualHost, a sample config to
+adapt to fit your needs is provided below:
+
+<VirtualHost *:80>
+  DocumentRoot ${PREFIX}/davical/htdocs
+  DirectoryIndex index.php index.html
+  ServerName davical.example.net
+  ServerAlias calendar.example.net
+  Alias /images/ ${PREFIX}/davical/htdocs/images/
+
+  <IfModule mod_php5.c>
+    php_value include_path ${PREFIX}/davical/inc:${PREFIX}/awl/inc
+    php_value magic_quotes_gpc 0
+    php_value register_globals 0
+    php_value error_reporting "E_ALL & ~E_NOTICE"
+    php_value default_charset "utf-8"
+  </IfModule>
+</VirtualHost>
+
+Copy it to your httpd.conf in the VirtualHost section, and restart
+httpd. You should be able to browse to the new VHost and you should
+get a message telling you to configure DAViCal.
+
+DAViCal Configuration
+=====================
+
+The DAViCal configuration resides in
+${PREFIX}/davical/config/config.php and is a regular PHP file which
+sets (or overrides) some specific variables. You should only need to
+set pg_connect value to configure database access.
+
+Client Setup
+============
+
+More information is available at http://wiki.davical.org/w/CalDAV_Clients.
