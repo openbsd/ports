@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.19 2011/12/05 21:27:53 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.20 2012/03/05 19:43:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -163,6 +163,9 @@ sub report
 	    $job->timings;
 	if ($self->check($v)) {
 		print $log  "\n";
+		open my $fh, '>>', $self->{state}{permanent_log};
+		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz), 
+		    "\n";
 	} else {
 		open my $fh, '>>', $job->{log};
 		print $fh "Error: ", $self->pkgfile($v), " does not exist\n";

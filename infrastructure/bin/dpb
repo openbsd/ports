@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.46 2012/03/02 19:35:09 espie Exp $
+# $OpenBSD: dpb,v 1.47 2012/03/05 19:43:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -128,9 +128,6 @@ sub handle_options
 	my $state = shift;
 	$state->{dontclean} = {};
 	$state->{opt} = {
-		a => sub {
-			$state->{all} = 1;
-		},
 		A => sub {
 			$state->{arch} = shift;
 		},
@@ -177,6 +174,7 @@ sub handle_options
 		$state->{opt}{e} = 1;
 	}
 	$state->{opt}{f} //= 2;
+	$state->{opt}{J} //= 250;
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
@@ -207,12 +205,16 @@ sub handle_options
 	if ($state->opt('h')) {
 		$state->{config} = $state->expand_path($state->opt('h'));
 	}
+	if (!defined $state->{build_files}) {
+		push @{$state->{build_files}}, "%f/build-stats/%a";
+	}
 	for my $cat (qw(build_files paths ipaths cpaths)) {
 		next unless defined $state->{$cat};
 		for my $f (@{$state->{$cat}}) {
 			$f = $state->expand_path($f);
 		}
 	}
+	$state->{permanent_log} = $state->{build_files}[-1];
 
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
@@ -331,7 +333,7 @@ sub parse_build_line
 
 sub parse_build_file
 {
-	my ($state, $fname, @consumers) = @_;
+	my ($state, $fname) = @_;
 	if (!-f $fname) {
 		my $arch = $state->arch;
 		if (-f "$fname/$arch/build.log") {
@@ -340,8 +342,7 @@ sub parse_build_file
 			$fname = "$fname/build.log";
 		}
 	}
-	open my $fh, '<', $fname or 
-	    $state->fatal("Couldn't open build file #1: #2", $fname, $!);
+	open my $fh, '<', $fname or return;
 	my $_;
 	while (<$fh>) {
 		chomp;
@@ -349,20 +350,59 @@ sub parse_build_file
 		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
 		next if !defined $sz;
 		my $o = DPB::PkgPath->new($pkgpath);
+		push(@{$o->{stats}}, {host => $host, time => $time, sz => $sz});
+	}
+}
+
+sub add_build_info
+{
+	my ($state, @consumers) = @_;
+	for my $p (DPB::PkgPath->seen) {
+		next unless defined $p->{stats};
+		my ($i, $time, $sz, $host);
+		for my $s (@{$p->{stats}}) {
+			$time += $s->{time};
+			$sz += $s->{sz};
+			$i++;
+			$host = $s->{host}; # XXX
+		}
 		for my $c (@consumers) {
-			$c->add_build_info($o, $host, $time, $sz);
+			$c->add_build_info($p, $host, $time/$i, $sz/$i);
 		}
 	}
+}
+
+sub rewrite_build_info
+{
+	my $state = shift;
+	open my $f, '>', $state->{permanent_log}.'.part' or return;
+	for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
+	    DPB::PkgPath->seen) {
+		next unless defined $p->{stats};
+		shift @{$p->{stats}} while @{$p->{stats}} > 10;
+		for my $s (@{$p->{stats}}) {
+			print $f join(' ', $p->fullpkgpath, $s->{host}, 
+			    $s->{time}, $s->{sz}), "\n";
+		}
+		delete $p->{stats};
+	}
+	close $f;
+	rename $state->{permanent_log}.'.part', $state->{permanent_log};
 }
 
 sub handle_build_files
 {
 	my $state = shift;
+	return if $state->{fetch_only};
 	return unless defined $state->{build_files};
+	print "Reading build stats...";
 	for my $file (@{$state->{build_files}}) {
-		$state->parse_build_file($file, $state->heuristics, 
-		    "DPB::Job::Port");
+		$state->parse_build_file($file);
 	}
+	$state->add_build_info($state->heuristics, "DPB::Job::Port");
+	print "zapping old stuff...";
+	$state->rewrite_build_info($state->{permanent_log});
+	print "Done\n";
 	$state->heuristics->finished_parsing;
 }
 
@@ -465,6 +505,9 @@ $state->interpret_paths(@{$state->{cpaths}},
 	$state->{dontclean}{$p->pkgpath} = 1;
     });
 
+if ($state->opt('a')) {
+	$state->{all} = 1;
+}
 $state->{builder} = DPB::PortBuilder->new($state);
 
 $state->{locker} = DPB::Locks->new($state, join("/", $state->logdir, "locks"));
