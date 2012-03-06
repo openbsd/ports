@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.47 2012/03/05 19:43:09 espie Exp $
+# $OpenBSD: dpb,v 1.48 2012/03/06 11:22:40 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -35,6 +35,8 @@ use OpenBSD::Paths;
 use DPB::Heuristics;
 use DPB::PkgPath;
 use DPB::Logger;
+use File::Path;
+use File::Basename;
 
 
 sub init
@@ -375,6 +377,7 @@ sub add_build_info
 sub rewrite_build_info
 {
 	my $state = shift;
+	File::Path::mkpath(File::Basename::dirname($state->{permanent_log}));
 	open my $f, '>', $state->{permanent_log}.'.part' or return;
 	for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
 	    DPB::PkgPath->seen) {
