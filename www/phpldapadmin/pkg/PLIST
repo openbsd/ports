@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/09/20 13:55:12 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/03/06 20:35:20 sthen Exp $
 @group daemon
 phpldapadmin/
-@comment phpldapadmin/.cvsignore
 @comment phpldapadmin/.gitignore
 phpldapadmin/INSTALL
 phpldapadmin/LICENSE
 phpldapadmin/VERSION
 phpldapadmin/config/
-@comment phpldapadmin/config/.cvsignore
 phpldapadmin/config/config.php.example
 @mode 0640
 @group www
