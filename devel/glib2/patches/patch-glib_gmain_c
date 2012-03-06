@@ -1,4 +1,4 @@
-$OpenBSD: patch-glib_gmain_c,v 1.8 2011/11/16 15:34:54 ajacoutot Exp $
+$OpenBSD: patch-glib_gmain_c,v 1.9 2012/03/06 11:39:17 ajacoutot Exp $
 
 Rewrote upstream, but provides similar functionnality.
 (test with GDM that the following does not happen:
@@ -6,21 +6,6 @@ Failed to read from child watch wake up pipe: Interrupted system call)
 
 --- glib/gmain.c.orig	Fri Nov 11 18:56:52 2011
 +++ glib/gmain.c	Wed Nov 16 15:46:52 2011
-@@ -2054,10 +2054,14 @@ g_get_monotonic_time (void)
-       {
- 	clockid_t best_clockid;
- 
-+#ifndef __OpenBSD__
- 	if (sysconf (_SC_MONOTONIC_CLOCK) >= 0)
- 	  best_clockid = CLOCK_MONOTONIC;
- 	else
- 	  best_clockid = CLOCK_REALTIME;
-+#else
-+	  best_clockid = CLOCK_MONOTONIC;
-+#endif
- 	g_once_init_leave (&clockid, (gsize)best_clockid);
-       }
- #endif
 @@ -4564,7 +4568,12 @@ unix_signal_helper_thread (gpointer data) 
        gboolean sigint_received = FALSE;
        gboolean sighup_received = FALSE;
