@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.12 2012/02/17 07:35:42 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.13 2012/03/06 13:41:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -47,18 +47,17 @@ sub set_logger
 
 # we set the "unknown" weight as max if we parsed a file.
 my $default = 1;
-my $has_build_info;
 
 sub finished_parsing
 {
 	my $self = shift;
-	if (defined $has_build_info && $has_build_info == 1) {
-		while (my ($k, $v) = each %bad_weight) {
-			$self->set_weight($k, $v);
-		}
+	while (my ($k, $v) = each %bad_weight) {
+		$self->set_weight($k, $v);
 	}
-	my @l = sort values %weight;
-	$default = pop @l;
+	if (keys %weight > 0) {
+		my @l = sort values %weight;
+		$default = pop @l;
+	}
 }
 
 sub intrinsic_weight
@@ -200,10 +199,8 @@ sub add_build_info
 		$time *= $sf_per_host->{$host};
 		$time /= $max_sf;
 		$self->set_weight($pkgpath, $time);
-		$has_build_info = 2;
 	} else {
 		$bad_weight{$pkgpath} //= $time;
-		$has_build_info //= 1;
 	}
 }
 
@@ -216,7 +213,7 @@ sub compare_weights
 sub new_queue
 {
 	my $self = shift;
-	if (defined $has_build_info && $has_build_info && DPB::Core->has_sf) {
+	if (DPB::Core->has_sf) {
 		return DPB::Heuristics::Queue::Part->new($self);
 	} else {
 		return DPB::Heuristics::Queue->new($self);
