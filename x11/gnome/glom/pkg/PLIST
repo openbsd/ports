@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/12/22 13:53:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/06 13:12:47 ajacoutot Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
 @bin bin/glom_test_connection
@@ -599,6 +599,7 @@ share/locale/de/LC_MESSAGES/glom.mo
 share/locale/dz/LC_MESSAGES/glom.mo
 share/locale/en_CA/LC_MESSAGES/glom.mo
 share/locale/en_GB/LC_MESSAGES/glom.mo
+share/locale/eo/LC_MESSAGES/glom.mo
 share/locale/es/LC_MESSAGES/glom.mo
 share/locale/fi/LC_MESSAGES/glom.mo
 share/locale/fr/LC_MESSAGES/glom.mo

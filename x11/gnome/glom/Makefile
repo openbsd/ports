@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/02/16 22:23:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/03/06 13:12:47 ajacoutot Exp $
 
 COMMENT=		GNOME database designer and user interface
 
 GNOME_PROJECT=		glom
-GNOME_VERSION=		1.20.9
+GNOME_VERSION=		1.20.10
 
 SHARED_LIBS +=	glom-1.20            0.0      # 0.0
 
