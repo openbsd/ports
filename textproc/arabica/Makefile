@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/05 18:03:37 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/06 19:47:45 landry Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -18,6 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE =	gnu
 
+BUILD_DEPENDS =	devel/boost
 CONFIGURE_ENV =	CPPFLAGS='-I${LOCALBASE}/include'
 USE_LIBTOOL =	Yes
 WANTLIB +=	c expat m stdc++
