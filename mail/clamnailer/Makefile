@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 12:57:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/06 20:07:42 sthen Exp $
 
 COMMENT=	generate ScamNailer spear phishing database in ClamAV format
 
 DISTNAME=	ClamNailer-1.01
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.gz
 
 CATEGORIES=	mail security
