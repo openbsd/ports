@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/27 13:34:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/06 17:17:09 landry Exp $
 
 COMMENT =	web frontend for git repositories
 
-DISTNAME =	cgit-0.8.3.5
-REVISION = 	1
+DISTNAME =	cgit-0.9.0.2
 CATEGORIES =	www devel
 
-DISTFILES = 	cgit-0.8.3.5.tar.gz:0 \
+DISTFILES = 	cgit-0.9.0.2.tar.gz:0 \
 		git-1.7.4.5.tar.gz:1
 
-MASTER_SITES0 =		http://distfiles.nl/
+MASTER_SITES0 =		http://distfiles.bsdfrog.org/
 MASTER_SITES1 =		ftp://ftp.kernel.org/pub/software/scm/git/ \
 			ftp://ftp.de.kernel.org/pub/software/scm/git/ \
 			ftp://ftp.au.kernel.org/pub/software/scm/git/
