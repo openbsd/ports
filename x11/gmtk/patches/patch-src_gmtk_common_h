@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gmtk_common_h,v 1.1 2012/03/06 08:50:54 dcoppa Exp $
+
+Only allocate a size for the child window if the parent widget is
+realized (upstream svn revision r87)
+
+--- src/gmtk_common.h.orig	Tue Mar  6 09:30:46 2012
++++ src/gmtk_common.h	Tue Mar  6 09:31:08 2012
+@@ -46,6 +46,7 @@
+ void gmtk_get_allocation(GtkWidget * widget, GtkAllocation * allocation);
+ GdkWindow *gmtk_get_window(GtkWidget * widget);
+ gboolean gmtk_get_visible(GtkWidget * widget);
++gboolean gmtk_widget_get_realized(GtkWidget * widget);
+ const gchar *gmtk_version();
+ 
+ #endif

@@ -1,10 +1,22 @@
-$OpenBSD: patch-src_gmtk_media_player_c,v 1.1 2012/01/23 11:01:34 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.2 2012/03/06 08:50:54 dcoppa Exp $
+
+Only allocate a size for the child window if the parent widget is
+realized (upstream svn revision r87)
 
 Add '-zoom' to mplayer when vo is x11
 (upstream svn revision r84)
 
---- src/gmtk_media_player.c.orig	Mon Jan 23 11:52:38 2012
-+++ src/gmtk_media_player.c	Mon Jan 23 11:54:58 2012
+--- src/gmtk_media_player.c.orig	Tue Dec 20 21:54:35 2011
++++ src/gmtk_media_player.c	Tue Mar  6 09:35:09 2012
+@@ -632,7 +632,7 @@ static void gmtk_media_player_size_allocate(GtkWidget 
+     gdouble widget_aspect;
+     gfloat xscale, yscale;
+ 
+-    if (player->video_width == 0 || player->video_height == 0) {
++    if (player->video_width == 0 || player->video_height == 0 || !gmtk_widget_get_realized(widget)) {
+         gtk_alignment_set(GTK_ALIGNMENT(player->alignment), 0.0, 0.0, 1.0, 1.0);
+     } else {
+         switch (player->aspect_ratio) {
 @@ -2050,6 +2050,9 @@ gpointer launch_mplayer(gpointer data)
                      argv[argn++] = g_strdup_printf("gl_nosw");
                  } else {
