@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/15 08:54:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/06 10:11:47 sthen Exp $
 
 COMMENT =		ncurses-based hex-editor with diff mode
-V = 			0.62
+V =			0.66
 DISTNAME =		dhex_${V}
 PKGNAME =		dhex-${V}
 CATEGORIES =		editors
 
-MAINTAINER =		Thanasoulas Spiros <dsp@physics.uoc.gr>
+MAINTAINER =		Thanasoulas Spiros <dsp@2f30.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		http://www.dettus.net/dhex/
 
-WANTLIB = 		c ncurses
+WANTLIB =		c ncurses
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
