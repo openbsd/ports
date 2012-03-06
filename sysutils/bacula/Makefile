@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2011/12/12 09:15:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2012/03/06 20:11:33 sthen Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
-V=			5.2.2
+V=			5.2.6
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -13,12 +15,14 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-SHARED_LIBS +=  bac                  2.0      # 5.2.1
-SHARED_LIBS +=  baccfg               2.0      # 5.2.1
-SHARED_LIBS +=  bacpy                2.0      # 5.2.1
-SHARED_LIBS +=  bacfind              2.0      # 5.2.1
-SHARED_LIBS +=  bacsql               2.0      # 5.2.1
-SHARED_LIBS +=  baccats              0.0      # 5.2.1
+# XXX build fails if a previous version is installed
+SHARED_LIBS +=  bac                  3.0
+SHARED_LIBS +=  baccfg               3.0
+SHARED_LIBS +=  bacpy                3.0
+SHARED_LIBS +=  bacfind              3.0
+SHARED_LIBS +=  bacsql               3.0
+BACCATS_LIBV =	1.0
+SHARED_LIBS +=  baccats              ${BACCATS_LIBV}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bacula/}
 HOMEPAGE=		http://www.bacula.org/
@@ -42,7 +46,7 @@ SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
 USE_GROFF=		yes
-USE_LIBTOOL=		yes
+USE_LIBTOOL=		gnu # ports libtool passes libtool-only parameters to linker
 NO_REGRESS=		yes
 
 PSEUDO_FLAVORS=		no_bat no_server
@@ -113,14 +117,14 @@ CONFIGURE_ARGS+=	--enable-client-only \
 			--disable-build-dird \
 			--disable-build-stored
 .else
-SHARED_LIBS +=		baccats-${BACKEND} 0.0 # sync with LIBbaccats_VERSION
+SHARED_LIBS +=		baccats-${BACKEND} ${BACCATS_LIBV}
 CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 			--with-dir-group=_bacula \
 			--with-sd-user=_bacula-sd \
 			--with-sd-group=_bacula
 
 .  if ${FLAVOR:Mpgsql}
-WANTLIB-server += pq>=2 com_err
+WANTLIB-server += pq>=2
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
 BACKEND += 		postgresql
@@ -196,5 +200,6 @@ post-install:
 	mv ${WRKINST}/etc/bacula/* ${PREFIX}/share/examples/bacula/
 	rm ${PREFIX}/man/man1/bacula-{bwxconsole,tray-monitor}.1
 	rmdir ${WRKINST}/{etc,var}/bacula
+	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
 
 .include <bsd.port.mk>

@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2012/03/06 20:11:33 sthen Exp $
+
+stop building when an error occurs, rather than just keep on with the
+next subdir..
+
+--- Makefile.in.orig	Tue Jan 24 13:41:48 2012
++++ Makefile.in	Tue Jan 24 13:42:10 2012
+@@ -43,18 +43,18 @@ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ #-------------------------------------------------------------------------
+ 
+ all: Makefile
+-	@for I in ${all_subdirs}; \
++	@set -e; for I in ${all_subdirs}; \
+ 	  do (cd $$I; echo "==>Entering directory `pwd`"; \
+ 	      $(MAKE) DESTDIR=$(DESTDIR) $@ || (echo ""; echo ""; echo "  ====== Error in `pwd` ======"; \
+ 			    echo ""; echo ""; exit 1;)); \
+ 	done
+ 
+ depend:
+-	@for I in ${all_subdirs}; \
++	@set -e; for I in ${all_subdirs}; \
+ 	  do (cd $$I; echo "==>Entering directory `pwd`"; $(MAKE) DESTDIR=$(DESTDIR) $@ || exit 1); done
+ 	
+ bacula-fd: Makefile	   
+-	@for I in ${fd_subdirs}; \
++	@set -e; for I in ${fd_subdirs}; \
+ 	  do (cd $$I; echo "==>Entering directory `pwd`"; \
+ 	      $(MAKE) DESTDIR=$(DESTDIR) all || (echo ""; echo ""; echo "   ====== Error in `pwd` ======"; \
+ 			    echo ""; echo ""; exit 1;)); \

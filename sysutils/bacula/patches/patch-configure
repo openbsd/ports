@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
---- configure.orig	Sat Nov 26 14:08:12 2011
-+++ configure	Sun Dec  4 11:54:53 2011
+$OpenBSD: patch-configure,v 1.10 2012/03/06 20:11:33 sthen Exp $
+--- configure.orig	Wed Jan 18 14:57:49 2012
++++ configure	Tue Jan 24 01:04:36 2012
 @@ -4792,7 +4792,7 @@ $as_echo "no" >&6; }
  fi
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -29764,13 +29764,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
+@@ -29755,13 +29755,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
  fi
  
  PTHREAD_LIB=""
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -29801,7 +29801,7 @@ fi
+@@ -29792,7 +29792,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
  else
  
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthreads" >&5
-@@ -30169,7 +30169,8 @@ openbsd)
+@@ -30160,7 +30160,8 @@ openbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
@@ -73,7 +73,7 @@ $OpenBSD: patch-configure,v 1.9 2011/12/12 09:15:09 sthen Exp $
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
     CFLAGS="${CFLAGS} -pthread"
-@@ -30178,6 +30179,7 @@ openbsd)
+@@ -30169,6 +30170,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \
         platforms/openbsd/bacula-dir"

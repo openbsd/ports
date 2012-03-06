@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-bat,v 1.8 2011/11/17 23:45:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-bat,v 1.9 2012/03/06 20:11:33 sthen Exp $
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
@@ -9,7 +9,6 @@
 @sample ${BACULACONF}/
 @mode
 @group
-share/applications/
 share/applications/bat.desktop
 share/doc/bacula/html/
 share/doc/bacula/html/clients.html

@@ -1,9 +1,6 @@
-$OpenBSD: patch-scripts_mtx-changer_in,v 1.6 2011/11/17 23:45:56 ajacoutot Exp $
-
-XXX first hunk hand-rolled for CVS keyword, Id
-
---- scripts/mtx-changer.in.orig	Sun Oct 30 13:03:42 2011
-+++ scripts/mtx-changer.in	Mon Nov 14 10:19:54 2011
+$OpenBSD: patch-scripts_mtx-changer_in,v 1.7 2012/03/06 20:11:33 sthen Exp $
+--- scripts/mtx-changer.in.orig	Tue Feb 21 15:59:33 2012
++++ scripts/mtx-changer.in	Mon Mar  5 12:43:07 2012
 @@ -1,6 +1,6 @@
  #!/bin/sh
  #
@@ -25,7 +22,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
  #   exit code, Bacula will assume the request failed.
  #
  
-@@ -152,7 +152,7 @@ debug "Parms: $ctl $cmd $slot $device $drive"
+@@ -175,7 +175,7 @@ debug "Parms: $ctl $cmd $slot $device $drive"
  
  case $cmd in 
     unload)
@@ -34,23 +31,25 @@ XXX first hunk hand-rolled for CVS keyword, Id
  
        if test ${offline} -eq 1 ; then
  	mt -f $device offline
-@@ -160,12 +160,12 @@ case $cmd in 
-       if test ${offline_sleep} -ne 0 ; then
+@@ -184,7 +184,7 @@ case $cmd in 
  	sleep ${offline_sleep}
        fi
--      ${MTX} -f $ctl unload $slot $drive
-+      ${MTX} -f $ctl move drive $drive slot $slot
-       ;;
- 
+       make_err_file
+-      ${MTX} -f $ctl unload $slot $drive 2>${ERRFILE}
++      ${MTX} -f $ctl move slot $slot drive $drive 2>${ERRFILE}
+       rtn=$?
+       cat ${ERRFILE}
+       rm -f ${ERRFILE} >/dev/null 2>&1
+@@ -194,7 +194,7 @@ case $cmd in 
     load)
--      debug "Doing mtx -f $ctl load $slot $drive"
--      ${MTX} -f $ctl load $slot $drive
-+      debug "Doing chio -f $ctl move slot $slot drive $drive"
-+      ${MTX} -f $ctl move slot $slot drive $drive
+       debug "Doing mtx -f $ctl load $slot $drive"
+       make_err_file
+-      ${MTX} -f $ctl load $slot $drive 2>${ERRFILE}
++      ${MTX} -f $ctl slot $slot drive $drive 2>${ERRFILE}
        rtn=$?
        if test ${load_sleep} -ne 0 ; then
  	sleep ${load_sleep}
-@@ -175,61 +175,21 @@ case $cmd in 
+@@ -206,61 +206,21 @@ case $cmd in 
        ;;
  
     list) 
@@ -117,7 +116,7 @@ XXX first hunk hand-rolled for CVS keyword, Id
        ;;
  
     transfer)
-@@ -241,18 +201,19 @@ case $cmd in 
+@@ -272,18 +232,19 @@ case $cmd in 
        ;;
  
     loaded)

@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST-server,v 1.9 2011/11/17 23:45:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.10 2012/03/06 20:11:33 sthen Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
-%%SHARED%%
 lib/libbacsql.a
 lib/libbacsql.la
+@lib lib/libbacsql.so.${LIBbacsql_VERSION}
 lib/libbaccats-${BACKEND}.a
 lib/libbaccats-${BACKEND}.la
+@lib lib/libbaccats.so.${LIBbaccats_VERSION}
+@lib lib/libbaccats-${BACKEND}.so.${LIBbaccats-${BACKEND}_VERSION}
 libexec/bacula/
 libexec/bacula/bacula
 libexec/bacula/bacula-ctl-dir

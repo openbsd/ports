@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-server,v 1.2 2011/11/17 23:45:56 ajacoutot Exp $
-@lib lib/libbaccats.so.${LIBbaccats_VERSION}
-@lib lib/libbaccats-${BACKEND}.so.${LIBbaccats-${BACKEND}_VERSION}
-@lib lib/libbacsql.so.${LIBbacsql_VERSION}
