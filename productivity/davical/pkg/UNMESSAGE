@@ -1,0 +1,3 @@
+To completely deinstall davical you need to perform the
+following steps as root:
+    # rm -f /var/www/conf/modules/davical.conf
