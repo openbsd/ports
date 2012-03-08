@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/21 19:01:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/08 13:28:38 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.7
 CATEGORIES=	audio
 
-REVISION=	1
+REVISION=	2
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -41,6 +41,7 @@ CONFIGURE_STYLE=gnu
 
 do-configure:
 	cd ${WRKSRC} && \
+		env ${CONFIGURE_ENV} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		./autogen.sh ${CONFIGURE_ARGS}
