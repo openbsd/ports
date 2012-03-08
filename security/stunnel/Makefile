@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.61 2011/12/08 13:42:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2012/03/08 12:13:01 ajacoutot Exp $
 
 COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-4.50
+REVISION=	0
 CATEGORIES=	security
 
 MAINTAINER=     Stuart Henderson <sthen@openbsd.org>
@@ -23,13 +24,10 @@ MASTER_SITES=	http://ftp.nluug.nl/pub/networking/stunnel/archive/4.x/ \
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-random=/dev/arandom \
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ssl=/usr \
-			--enable-ipv6 \
-			--sysconfdir=${SYSCONFDIR} \
 			--with-threads=fork \
-			--localstatedir=/var \
-			${CONFIGURE_SHARED}
+			--localstatedir=/var
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/auto
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes

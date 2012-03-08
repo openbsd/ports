@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/02/22 20:00:55 landry Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/08 12:13:01 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		libraries to support development of security-enabled apps
 
 VERSION=		3.13.3
 DISTNAME=		nss-${VERSION}
+REVISION=		0
 SO_VERSION=		30.0
 .for _lib in freebl3 nss3 nssckbi nssdbm3 nssutil3 smime3 softokn3 ssl3
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -35,7 +36,7 @@ MAKE_ENV=		BUILD_OPT=1 \
 			NSS_ENABLE_ECC=1 \
 			NSS_USE_SYSTEM_SQLITE=1 \
 			SO_VERSION="${SO_VERSION}" \
-			XCFLAGS="-I${LOCALBASE}/include -DRAND_DEV=\\\"/dev/arandom\\\" ${CFLAGS}" \
+			XCFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			NSPR_INCLUDE_DIR="${LOCALBASE}/include/nspr" \
 			NSPR_LIB_DIR="${LOCALBASE}/lib"
 

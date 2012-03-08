@@ -1,6 +1,6 @@
-$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.4 2010/03/31 15:56:45 naddy Exp $
---- security/coreconf/OpenBSD.mk.orig	Mon Mar 15 15:54:06 2010
-+++ security/coreconf/OpenBSD.mk	Tue Mar 30 22:45:17 2010
+$OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.5 2012/03/08 12:13:00 ajacoutot Exp $
+--- security/coreconf/OpenBSD.mk.orig	Wed Apr 20 17:26:12 2011
++++ security/coreconf/OpenBSD.mk	Tue Mar  6 17:06:22 2012
 @@ -56,7 +56,7 @@ OS_LIBS			+= -pthread
  DSO_LDOPTS		+= -pthread
  endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-security_coreconf_OpenBSD_mk,v 1.4 2010/03/31 15:56:45 naddy Exp
  ARCH			= openbsd
  
 -DSO_CFLAGS		= -fPIC -DPIC
-+DSO_CFLAGS		= -I${LOCALBASE}/include -DRAND_DEV=\"/dev/arandom\" -fPIC -DPIC
++DSO_CFLAGS		= -I${LOCALBASE}/include -fPIC -DPIC
  DSO_LDOPTS		= -shared -fPIC -Wl,-soname,lib$(LIBRARY_NAME)$(LIBRARY_VERSION).$(DLL_SUFFIX)
  
 -MKSHLIB			= $(CC) $(DSO_LDOPTS)

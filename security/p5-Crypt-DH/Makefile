@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/19 17:16:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/08 12:13:01 ajacoutot Exp $
 
 COMMENT=	Diffie-Hellman key exchange system
 
 DISTNAME=	Crypt-DH-0.06
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 
 # perl
@@ -19,8 +19,5 @@ MODULES=	cpan
 
 # use a fast computer, tests will finish eventually
 #NO_REGRESS=	tests take ages to complete
-
-pre-build:
-	@perl -pi -e "s/urandom/arandom/g" ${WRKSRC}/lib/Crypt/DH.pm
 
 .include <bsd.port.mk>

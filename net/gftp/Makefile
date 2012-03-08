@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2012/03/08 12:13:01 ajacoutot Exp $
 
 # XXX IPv6 support is broken, see
 # http://bugzilla.gnome.org/show_bug.cgi?id=350813
@@ -6,7 +6,7 @@
 COMMENT=	multithreaded gtk2 file transfer client
 
 DISTNAME=	gftp-2.0.19
-REVISION=	8
+REVISION=	9
 CATEGORIES=	net
 
 HOMEPAGE=	http://gftp.seul.org/

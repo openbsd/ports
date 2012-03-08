@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/08 12:13:00 ajacoutot Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.8.1
-REVISION=		1
+REVISION=		2
 CATEGORIES=		mail
 
 HOMEPAGE=		http://www.mailavenger.org/
@@ -25,8 +25,7 @@ SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-db=${LOCALBASE} \
 			--with-etcdir=${SYSCONFDIR}/avenger
-CONFIGURE_ENV+=		WFLAGS="-Wall" \
-			sfs_cv_dev_random="/dev/arandom"
+CONFIGURE_ENV+=		WFLAGS="-Wall"
 
 MAKE_FLAGS+=		CFLAGS+=-DHAVE_GETPEEREID \
 			CXXFLAGS+=-DHAVE_GETPEEREID

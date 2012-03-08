@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.80 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2012/03/08 12:13:00 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
 
 V=			4.10.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
@@ -53,7 +53,6 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--enable-static \
 			--disable-root-check \
 			--with-dirsync \
-			--with-random=/dev/arandom \
 			--enable-mimecharset=iso-8859-1 \
 			--enable-unicode \
 			--with-locking-method=fcntl \
@@ -113,9 +112,9 @@ CNFFILES=		etc/courier/imapd-ssl.dist etc/courier/imapd.dist \
 NO_REGRESS=		Yes
 
 post-extract:
-	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/arandom,g' \
+	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/urandom,g' \
 	    ${WRKSRC}/imap/imapd.cnf.openssl.in
-	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/arandom,g' \
+	@perl -pi -e 's,\@datadir\@\/imapd.rand,\/dev\/urandom,g' \
 	    ${WRKSRC}/imap/pop3d.cnf.openssl.in
 
 post-install:

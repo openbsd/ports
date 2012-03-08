@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_security_nss_lib_freebl_unix_rand_c,v 1.9 2011/11/18 12:32:37 nigel Exp $
+$OpenBSD: patch-mozilla_security_nss_lib_freebl_unix_rand_c,v 1.10 2012/03/08 12:13:01 ajacoutot Exp $
 --- mozilla/security/nss/lib/freebl/unix_rand.c.orig	Thu Aug 25 00:57:44 2011
 +++ mozilla/security/nss/lib/freebl/unix_rand.c	Wed Nov  9 15:20:15 2011
 @@ -852,7 +852,6 @@ safe_pclose(FILE *fp)
@@ -9,21 +9,3 @@ $OpenBSD: patch-mozilla_security_nss_lib_freebl_unix_rand_c,v 1.9 2011/11/18 12:
  
  void RNG_SystemInfoForRNG(void)
  {
-@@ -924,7 +923,7 @@ void RNG_SystemInfoForRNG(void)
-     GiveSystemInfo();
- 
-     /* grab some data from system's PRNG before any other files. */
--    bytes = RNG_FileUpdate("/dev/urandom", SYSTEM_RNG_SEED_COUNT);
-+    bytes = RNG_FileUpdate(RAND_DEV, SYSTEM_RNG_SEED_COUNT);
- 
-     /* If the user points us to a random file, pass it through the rng */
-     randfile = getenv("NSRANDFILE");
-@@ -1169,7 +1168,7 @@ size_t RNG_SystemRNG(void *dest, size_t maxLen)
-     size_t fileBytes = 0;
-     unsigned char *buffer = dest;
- 
--    file = fopen("/dev/urandom", "r");
-+    file = fopen(RAND_DEV, "r");
-     if (file == NULL) {
- 	return rng_systemFromNoise(dest, maxLen);
-     }

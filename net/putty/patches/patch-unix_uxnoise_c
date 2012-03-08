@@ -1,6 +1,6 @@
-$OpenBSD: patch-unix_uxnoise_c,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
---- unix/uxnoise.c.orig	Wed Nov 17 02:27:00 2004
-+++ unix/uxnoise.c	Tue Sep  4 17:47:44 2007
+$OpenBSD: patch-unix_uxnoise_c,v 1.2 2012/03/08 12:13:01 ajacoutot Exp $
+--- unix/uxnoise.c.orig	Tue Nov 16 10:27:00 2004
++++ unix/uxnoise.c	Tue Mar  6 08:56:51 2012
 @@ -4,6 +4,7 @@
   */
  
@@ -9,22 +9,7 @@ $OpenBSD: patch-unix_uxnoise_c,v 1.1.1.1 2007/09/04 09:14:00 djm Exp $
  #include <fcntl.h>
  #include <unistd.h>
  #include <sys/time.h>
-@@ -18,7 +19,7 @@ static int read_dev_urandom(char *buf, int len)
-     int fd;
-     int ngot, ret;
- 
--    fd = open("/dev/urandom", O_RDONLY);
-+    fd = open("/dev/arandom", O_RDONLY);
-     if (fd < 0)
- 	return 0;
- 
-@@ -39,28 +40,16 @@ static int read_dev_urandom(char *buf, int len)
-  * This function is called once, at PuTTY startup. It will do some
-  * slightly silly things such as fetching an entire process listing
-  * and scanning /tmp, load the saved random seed from disk, and
-- * also read 32 bytes out of /dev/urandom.
-+ * also read 32 bytes out of /dev/arandom.
-  */
+@@ -44,23 +45,11 @@ static int read_dev_urandom(char *buf, int len)
  
  void noise_get_heavy(void (*func) (void *, int))
  {
