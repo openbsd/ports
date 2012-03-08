@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/08 14:53:26 pascal Exp $
+${P5SITE}/TAP/
+${P5SITE}/TAP/Harness/
+${P5SITE}/TAP/Harness/Archive/
+${P5SITE}/TAP/Harness/Archive/MultipleHarnesses.pm
+${P5SITE}/TAP/Harness/ReportByDescription.pm
+@man man/man3p/TAP::Harness::Archive::MultipleHarnesses.3p
+@man man/man3p/TAP::Harness::ReportByDescription.3p
