@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2011/12/19 22:37:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.131 2012/03/08 14:58:09 pascal Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -52,6 +52,7 @@
      SUBDIR += nbfc
      SUBDIR += newlisp
      SUBDIR += nhc98
+     SUBDIR += nqp
      SUBDIR += obc
      SUBDIR += ocaml
      SUBDIR += ocamlduce
