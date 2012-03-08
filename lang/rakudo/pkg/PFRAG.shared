@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/05/22 20:23:27 landry Exp $
-lib/parrot/${PARROT_VERSION}/dynext/perl6_group.so
-lib/parrot/${PARROT_VERSION}/dynext/perl6_ops.so

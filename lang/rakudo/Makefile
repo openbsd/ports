@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/13 16:07:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/08 15:02:06 pascal Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
 
+SHARED_ONLY =		Yes
+
 COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
-VERSION =		2011.07
+VERSION =		2012.02
 DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
 
-PARROT_VERSION =	3.6.0
+PARROT_VERSION =	4.1.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang perl6
@@ -25,22 +27,25 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c icudata icui18n icuuc m ncurses parrot pthread
+WANTLIB = 		c gmp icudata icuuc m ncurses parrot pthread
 WANTLIB += 		readline stdc++ util
 
 VMEM_WARNING =		Yes
 
 MASTER_SITES =		http://cloud.github.com/downloads/rakudo/star/
 
+BUILD_DEPENDS =		lang/nqp
 LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION} \
 			textproc/icu4c
 
-FAKE_FLAGS =		PERL6LIB="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/perl6/lib"
+FAKE_FLAGS =		PERL6LIB="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/nqp/lib:${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/perl6/lib"
+FAKE_FLAGS +=		LD_LIBRARY_PATH="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/dynext"
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	/usr/bin/perl Configure.pl
-CONFIGURE_ARGS +=	--prefix=${PREFIX} \
-			--parrot-config="${LOCALBASE}/bin/parrot_config"
+CONFIGURE_ARGS +=	--prefix="${PREFIX}" \
+			--with-parrot="${LOCALBASE}/bin/parrot" \
+			--with-nqp="${LOCALBASE}/bin/nqp"
 
 REGRESS_TARGET =	rakudo-test rakudo-spectest
 
@@ -53,6 +58,6 @@ post-install:
 pre-regress:
 	#no need to check out git repository
 	perl -pi -e 's/spectest_checkout spectest_update// if /^testable/' \
-		${WRKSRC}/rakudo/Makefile
+		${WRKSRC}/rakudo-${VERSION}/Makefile
 
 .include <bsd.port.mk>

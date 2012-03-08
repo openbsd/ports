@@ -1,0 +1,61 @@
+$OpenBSD: patch-tools_build_Makefile_in,v 1.1 2012/03/08 15:02:06 pascal Exp $
+--- tools/build/Makefile.in.orig	Sat Jan 28 00:40:15 2012
++++ tools/build/Makefile.in	Fri Feb  3 20:18:16 2012
+@@ -49,27 +49,27 @@ PERL6_EXE      = perl6$(EXE)
+ PERL6_LANG_DIR = $(PARROT_LIB_DIR)/languages/perl6
+ 
+ MODULES = \
+-  modules/zavolaj \
+-  modules/xml-writer \
+-  modules/svg \
+-  modules/svg-plot \
+-  modules/Math-RungeKutta \
+-  modules/Math-Model \
+-  modules/perl6-Term-ANSIColor \
+-  modules/test-mock \
+-  modules/Grammar-Profiler-Simple \
+-  modules/grammar-debugger \
+-  modules/Perl6-MIME-Base64 \
+-  modules/perl6-lwp-simple \
+-  modules/json \
+-  modules/perl6-digest-md5 \
+-  modules/perl6-File-Tools \
+-  modules/panda \
+-  modules/perl6-Config-INI \
+-  modules/perl6-http-status \
+-  modules/perl6-http-easy \
+-  modules/Bailador \
+-  modules/MiniDBI
++  ../modules/zavolaj \
++  ../modules/xml-writer \
++  ../modules/svg \
++  ../modules/svg-plot \
++  ../modules/Math-RungeKutta \
++  ../modules/Math-Model \
++  ../modules/perl6-Term-ANSIColor \
++  ../modules/test-mock \
++  ../modules/Grammar-Profiler-Simple \
++  ../modules/grammar-debugger \
++  ../modules/Perl6-MIME-Base64 \
++  ../modules/perl6-lwp-simple \
++  ../modules/json \
++  ../modules/perl6-digest-md5 \
++  ../modules/perl6-File-Tools \
++  ../modules/panda \
++  ../modules/perl6-Config-INI \
++  ../modules/perl6-http-status \
++  ../modules/perl6-http-easy \
++  ../modules/Bailador \
++  ../modules/MiniDBI
+ 
+ all: rakudo
+ 
+@@ -90,7 +90,7 @@ modules-install: rakudo
+ 	@echo "Installing 'ufo'"
+ 	$(CP)    modules/ufo/bin/ufo $(DESTDIR)$(PARROT_BIN_DIR)/ufo
+ 	$(CHMOD) 755                 $(DESTDIR)$(PARROT_BIN_DIR)/ufo
+-	$(PERL) tools/build/module-install.pl $(DESTDIR)$(PARROT_BIN_DIR)/$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
++	cd $(RAKUDO) && $(PERL) ../tools/build/module-install.pl ./$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
+ 	@echo "Installing 'ufobuilder'"
+ 	$(CP)    modules/panda/bin/ufobuilder $(DESTDIR)$(PARROT_BIN_DIR)/ufobuilder
+ 	$(CHMOD) 755                         $(DESTDIR)$(PARROT_BIN_DIR)/ufobuilder
