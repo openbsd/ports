@@ -1,0 +1,5 @@
+This module is a direct subclass of TAP::Harness and behaves in
+exactly the same way except for one detail. In addition to outputting
+a running progress of the tests and an ending summary it can also
+capture all of the raw TAP from the individual test files or streams
+into an archive file (".tar" or ".tar.gz").
