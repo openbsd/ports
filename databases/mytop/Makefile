@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/08 09:30:59 giovanni Exp $
 
 COMMENT=	top clone for MySQL
 
 DISTNAME=	mytop-1.6
+REVISION=	0
 CATEGORIES=	databases perl5
 
 HOMEPAGE=	http://jeremy.zawodny.com/mysql/mytop/
 
-MAINTAINER=	Dave Steinberg <dave@redterror.net>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPL / Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +23,6 @@ RUN_DEPENDS=	databases/p5-DBD-mysql>=2.9004 \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE=perl
-USE_GROFF =	Yes
 
 PKG_ARCH=	*
 
