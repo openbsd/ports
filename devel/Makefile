@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1016 2012/01/23 21:08:25 kili Exp $
+# $OpenBSD: Makefile,v 1.1017 2012/03/08 14:55:31 pascal Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -634,6 +634,7 @@
      SUBDIR += p5-I18N-LangTags
      SUBDIR += p5-IO-All
      SUBDIR += p5-IO-Capture
+     SUBDIR += p5-IO-CaptureOutput
      SUBDIR += p5-IO-Digest
      SUBDIR += p5-IO-KQueue
      SUBDIR += p5-IO-Lambda
@@ -805,6 +806,8 @@
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Sys-SigAction
      SUBDIR += p5-System-Command
+     SUBDIR += p5-TAP-Harness-Archive
+     SUBDIR += p5-TAP-Harness-Multiple
      SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
