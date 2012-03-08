@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_dird_Makefile_in,v 1.1 2011/11/24 09:29:55 ajacoutot Exp $
+$OpenBSD: patch-src_dird_Makefile_in,v 1.2 2012/03/08 17:34:34 sthen Exp $
 
 Reorder LDFLAGS (prefer -L.libs over /usr/local/lib) so that bacula can
 be rebuilt while already installed.
 
---- src/dird/Makefile.in.orig	Wed Nov 23 16:30:36 2011
-+++ src/dird/Makefile.in	Wed Nov 23 16:31:32 2011
+--- src/dird/Makefile.in.orig	Tue Feb 21 15:59:33 2012
++++ src/dird/Makefile.in	Wed Mar  7 22:15:15 2012
 @@ -68,14 +68,14 @@ bacula-dir: Makefile $(SVROBJS) ../lib/libbac$(DEFAULT
  	    ../lib/libbacpy$(DEFAULT_ARCHIVE_TYPE) ../cats/libbacsql$(DEFAULT_ARCHIVE_TYPE) \
  	    ../cats/libbaccats$(DEFAULT_ARCHIVE_TYPE) ../findlib/libbacfind$(DEFAULT_ARCHIVE_TYPE)
@@ -22,3 +22,13 @@ be rebuilt while already installed.
  	      -lbacfind -lbacsql -lbaccats -lbacpy -lbaccfg -lbac -lm $(PYTHON_LIBS) $(DLIB) $(DB_LIBS) $(LIBS) \
  	      $(WRAPLIBS) $(GETTEXT_LIBS) $(OPENSSL_LIBS) $(CAP_LIBS)
  	strip $@
+@@ -113,9 +113,6 @@ install: all
+ 	   fi; \
+ 	   echo "${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf"; \
+ 	   ${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf
+-	   @if test "x${dir_group}" != "x"; then \
+-	      chgrp -f ${dir_group} ${DESTDIR}${sysconfdir}/$$destconf ; \
+-	   fi
+ 	@if  test -f ${DESTDIR}${scriptdir}/query.sql; then \
+ 	   echo "  ==> Saving existing query.sql to query.sql.old"; \
+ 	   $(MV) -f ${DESTDIR}${scriptdir}/query.sql ${DESTDIR}${scriptdir}/query.sql.old; \

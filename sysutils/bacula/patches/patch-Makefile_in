@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.1 2012/03/06 20:11:33 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2012/03/08 17:34:34 sthen Exp $
 
 stop building when an error occurs, rather than just keep on with the
 next subdir..
 
---- Makefile.in.orig	Tue Jan 24 13:41:48 2012
-+++ Makefile.in	Tue Jan 24 13:42:10 2012
+--- Makefile.in.orig	Tue Feb 21 15:59:33 2012
++++ Makefile.in	Wed Mar  7 22:15:48 2012
 @@ -43,18 +43,18 @@ LIBTOOL_DEPS = @LIBTOOL_DEPS@
  #-------------------------------------------------------------------------
  
@@ -27,3 +27,16 @@ next subdir..
  	  do (cd $$I; echo "==>Entering directory `pwd`"; \
  	      $(MAKE) DESTDIR=$(DESTDIR) all || (echo ""; echo ""; echo "   ====== Error in `pwd` ======"; \
  			    echo ""; echo ""; exit 1;)); \
+@@ -101,12 +101,6 @@ installdirs:
+ 	-if test ! -d $(DESTDIR)$(working_dir) ; then \
+ 	   $(MKDIR) $(DESTDIR)$(working_dir); \
+ 	   chmod 770 $(DESTDIR)$(working_dir); \
+-	fi
+-	-if test "x$(dir_user)" != "x" ; then \
+-	   chown $(dir_user) $(DESTDIR)$(working_dir); \
+-	fi
+-	-if test "x$(dir_group)" != "x" ; then \
+-	   chgrp $(dir_group) $(DESTDIR)$(working_dir); \
+ 	fi
+ 
+ gnomedirs:
