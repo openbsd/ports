@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.5 2012/02/22 14:20:32 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-miner_tracker-monitor_c,v 1.6 2012/03/08 14:14:10 ajacoutot Exp $
 
 Recognize the gio-kqueue monitoring backend.
 (not to be pushed upstream before the glib changes are there first)
 
---- src/libtracker-miner/tracker-monitor.c.orig	Wed Feb 15 11:41:48 2012
-+++ src/libtracker-miner/tracker-monitor.c	Wed Feb 22 15:14:08 2012
+--- src/libtracker-miner/tracker-monitor.c.orig	Mon Jan  2 23:34:02 2012
++++ src/libtracker-miner/tracker-monitor.c	Thu Mar  8 12:49:41 2012
 @@ -23,6 +23,13 @@
  #include <string.h>
  #include <gio/gio.h>
@@ -19,7 +19,7 @@ Recognize the gio-kqueue monitoring backend.
  #include "tracker-monitor.h"
  #include "tracker-marshal.h"
  
-@@ -222,6 +229,9 @@ tracker_monitor_init (TrackerMonitor *object)
+@@ -224,6 +231,9 @@ tracker_monitor_init (TrackerMonitor *object)
  	const gchar           *name;
  	GError                *error = NULL;
  
@@ -29,7 +29,7 @@ Recognize the gio-kqueue monitoring backend.
  	object->priv = TRACKER_MONITOR_GET_PRIVATE (object);
  
  	priv = object->priv;
-@@ -294,6 +304,24 @@ tracker_monitor_init (TrackerMonitor *object)
+@@ -296,6 +306,24 @@ tracker_monitor_init (TrackerMonitor *object)
  			 */
  			priv->monitor_limit = MAX (priv->monitor_limit, 0);
  		}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2012/02/23 11:30:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2012/03/08 14:14:10 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.10
+GNOME_VERSION=	0.14.0
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -20,8 +20,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-main=		1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
@@ -32,11 +30,11 @@ MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
 SUBST_VARS=	MAJ_V EVO_VERSION
 
-SHARED_LIBS +=  tracker-common       2.0      # 1201.0
-SHARED_LIBS +=  tracker-data         2.0      # 1201.0
-SHARED_LIBS +=  tracker-sparql-0.12  0.0      # 1201.0
-SHARED_LIBS +=  tracker-extract-0.12 0.0      # 1201.0
-SHARED_LIBS +=  tracker-miner-0.12   0.0      # 1201.0
+SHARED_LIBS +=  tracker-common       2.0      # 1400.0
+SHARED_LIBS +=  tracker-data         2.0      # 1400.0
+SHARED_LIBS +=  tracker-sparql-0.14  0.0      # 1400.0
+SHARED_LIBS +=  tracker-extract-0.14 0.0      # 1400.0
+SHARED_LIBS +=  tracker-miner-0.14   0.0      # 1400.0
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -67,7 +65,7 @@ WANTLIB-main += gnome-keyring gpg-error gsf-1 gtk-3 icudata
 WANTLIB-main += icui18n icuuc jpeg lcms lzma openjpeg panel-applet-4 cue
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2 gstvideo-0.10
+WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
 WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 
 WANTLIB-evolution += ${WANTLIB}
@@ -81,7 +79,7 @@ WANTLIB-evolution += gnome-desktop-3 gnome-keyring gpg-error gssapi gtk-3
 WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
 WANTLIB-evolution += icui18n icuuc krb5 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB-evolution += pangoft2-1.0 plc4 plds4 png smime3 softokn3 soup-2.4
-WANTLIB-evolution += sqlite3 ssl3 stdc++ tracker-miner-0.12 tracker-sparql-0.12
+WANTLIB-evolution += sqlite3 ssl3 stdc++ tracker-miner-0.14 tracker-sparql-0.14
 WANTLIB-evolution += xml2 dbus-glib-1 pthread
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
@@ -98,7 +96,7 @@ WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
-WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12 stdc++
+WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \

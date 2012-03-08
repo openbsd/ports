@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/02/16 22:20:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/03/08 14:14:10 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/tracker-control
 @bin bin/tracker-explorer
@@ -24,9 +24,12 @@ include/tracker-${MAJ_V}/libtracker-extract/tracker-module-manager.h
 include/tracker-${MAJ_V}/libtracker-extract/tracker-utils.h
 include/tracker-${MAJ_V}/libtracker-extract/tracker-xmp.h
 include/tracker-${MAJ_V}/libtracker-miner/
-include/tracker-${MAJ_V}/libtracker-miner/tracker-albumart.h
 include/tracker-${MAJ_V}/libtracker-miner/tracker-crawler.h
+include/tracker-${MAJ_V}/libtracker-miner/tracker-indexing-tree.h
+include/tracker-${MAJ_V}/libtracker-miner/tracker-media-art.h
 include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-common.h
+include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-enum-types.h
+include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-enums.h
 include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-fs.h
 include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-manager.h
 include/tracker-${MAJ_V}/libtracker-miner/tracker-miner-object.h
@@ -44,11 +47,11 @@ lib/girepository-1.0/Tracker-${MAJ_V}.typelib
 lib/girepository-1.0/TrackerExtract-${MAJ_V}.typelib
 lib/girepository-1.0/TrackerMiner-${MAJ_V}.typelib
 lib/libtracker-extract-${MAJ_V}.la
-@lib lib/libtracker-extract-${MAJ_V}.so.${LIBtracker-extract-0.12_VERSION}
+@lib lib/libtracker-extract-${MAJ_V}.so.${LIBtracker-extract-0.14_VERSION}
 lib/libtracker-miner-${MAJ_V}.la
-@lib lib/libtracker-miner-${MAJ_V}.so.${LIBtracker-miner-0.12_VERSION}
+@lib lib/libtracker-miner-${MAJ_V}.so.${LIBtracker-miner-0.14_VERSION}
 lib/libtracker-sparql-${MAJ_V}.la
-@lib lib/libtracker-sparql-${MAJ_V}.so.${LIBtracker-sparql-0.12_VERSION}
+@lib lib/libtracker-sparql-${MAJ_V}.so.${LIBtracker-sparql-0.14_VERSION}
 lib/pkgconfig/tracker-extract-${MAJ_V}.pc
 lib/pkgconfig/tracker-miner-${MAJ_V}.pc
 lib/pkgconfig/tracker-sparql-${MAJ_V}.pc
@@ -173,6 +176,9 @@ share/gtk-doc/html/libtracker-extract/tracker-overview-compiling.html
 share/gtk-doc/html/libtracker-extract/tracker-overview.html
 share/gtk-doc/html/libtracker-extract/up.png
 share/gtk-doc/html/libtracker-miner/
+share/gtk-doc/html/libtracker-miner/TrackerIndexingTree.html
+share/gtk-doc/html/libtracker-miner/TrackerMiner.html
+share/gtk-doc/html/libtracker-miner/TrackerMinerFS.html
 share/gtk-doc/html/libtracker-miner/TrackerMinerManager.html
 share/gtk-doc/html/libtracker-miner/annotation-glossary.html
 share/gtk-doc/html/libtracker-miner/ch02.html
@@ -184,14 +190,14 @@ share/gtk-doc/html/libtracker-miner/home.png
 share/gtk-doc/html/libtracker-miner/index.html
 share/gtk-doc/html/libtracker-miner/index.sgml
 share/gtk-doc/html/libtracker-miner/left.png
+share/gtk-doc/html/libtracker-miner/libtracker-miner-Enumerations.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-Media-art-management.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-Thumbnailer-management.html
+share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerMinerWeb.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerNetworkProvider.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerPasswordProvider.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerStorage.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-TrackerThumbnailer.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner-reference.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-tracker-miner-fs.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-tracker-miner-web.html
-share/gtk-doc/html/libtracker-miner/libtracker-miner-tracker-miner.html
 share/gtk-doc/html/libtracker-miner/libtracker-miner.devhelp2
 share/gtk-doc/html/libtracker-miner/right.png
 share/gtk-doc/html/libtracker-miner/style.css
@@ -353,6 +359,8 @@ share/tracker/ontologies/90-tracker.description
 share/tracker/ontologies/90-tracker.ontology
 share/tracker/ontologies/92-slo.description
 share/tracker/ontologies/92-slo.ontology
+share/tracker/ontologies/93-libosinfo.description
+share/tracker/ontologies/93-libosinfo.ontology
 share/tracker/tracker-backup.xml
 share/tracker/tracker-explorer.ui
 share/tracker/tracker-extract.xml
