@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_auto_ipv6_test_in,v 1.1 2012/03/08 14:56:25 pascal Exp $
+--- config/auto/ipv6/test.in.orig	Wed Feb  8 00:18:43 2012
++++ config/auto/ipv6/test.in	Wed Feb  8 00:18:56 2012
+@@ -9,6 +9,7 @@ Copyright (C) 2010-2011, Parrot Foundation.
+ #else
+ #  include <sys/types.h>
+ #  include <sys/socket.h>
++#  include <netinet/in.h>
+ #  include <netdb.h>
+ #endif
+ 

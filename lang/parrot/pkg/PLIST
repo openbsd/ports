@@ -1,11 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/08/20 16:47:05 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.13 2012/03/08 14:56:25 pascal Exp $
 @bin bin/ops2c
 @bin bin/parrot
 @bin bin/parrot-nqp
 @bin bin/parrot-prove
 @bin bin/parrot_config
-@bin bin/parrot_debugger
 @bin bin/parrot_nci_thunk_gen
 @bin bin/pbc_disassemble
 @bin bin/pbc_dump
@@ -19,13 +17,8 @@ include/parrot/${V}/imcc/api.h
 include/parrot/${V}/imcc/embed.h
 include/parrot/${V}/imcc/yyscanner.h
 include/parrot/${V}/parrot/
+include/parrot/${V}/parrot/alarm.h
 include/parrot/${V}/parrot/api.h
-include/parrot/${V}/parrot/atomic/
-include/parrot/${V}/parrot/atomic.h
-include/parrot/${V}/parrot/atomic/fallback.h
-include/parrot/${V}/parrot/atomic/gcc_pcc.h
-include/parrot/${V}/parrot/atomic/gcc_x86.h
-include/parrot/${V}/parrot/atomic/sparc.h
 include/parrot/${V}/parrot/caches.h
 include/parrot/${V}/parrot/call.h
 include/parrot/${V}/parrot/cclass.h
@@ -36,10 +29,11 @@ include/parrot/${V}/parrot/core_pmcs.h
 include/parrot/${V}/parrot/core_types.h
 include/parrot/${V}/parrot/datatypes.h
 include/parrot/${V}/parrot/debugger.h
+include/parrot/${V}/parrot/disassemble.h
 include/parrot/${V}/parrot/dynext.h
-include/parrot/${V}/parrot/embed.h
 include/parrot/${V}/parrot/encoding.h
 include/parrot/${V}/parrot/enums.h
+include/parrot/${V}/parrot/events.h
 include/parrot/${V}/parrot/exceptions.h
 include/parrot/${V}/parrot/exit.h
 include/parrot/${V}/parrot/extend.h
@@ -80,6 +74,7 @@ include/parrot/${V}/parrot/pobj.h
 include/parrot/${V}/parrot/pointer_array.h
 include/parrot/${V}/parrot/runcore_api.h
 include/parrot/${V}/parrot/runcore_profiling.h
+include/parrot/${V}/parrot/runcore_subprof.h
 include/parrot/${V}/parrot/runcore_trace.h
 include/parrot/${V}/parrot/scheduler.h
 include/parrot/${V}/parrot/scheduler_private.h
@@ -87,21 +82,19 @@ include/parrot/${V}/parrot/settings.h
 include/parrot/${V}/parrot/string.h
 include/parrot/${V}/parrot/string_funcs.h
 include/parrot/${V}/parrot/sub.h
-include/parrot/${V}/parrot/thr_none.h
-include/parrot/${V}/parrot/thr_pthread.h
-include/parrot/${V}/parrot/thr_windows.h
-include/parrot/${V}/parrot/thread.h
 include/parrot/${V}/parrot/vtable.h
 include/parrot/${V}/parrot/vtables.h
 include/parrot/${V}/parrot/warnings.h
 include/parrot/${V}/pmc/
 include/parrot/${V}/pmc/dummy
 include/parrot/${V}/pmc/pmc_addrregistry.h
+include/parrot/${V}/pmc/pmc_alarm.h
 include/parrot/${V}/pmc/pmc_arrayiterator.h
 include/parrot/${V}/pmc/pmc_bigint.h
 include/parrot/${V}/pmc/pmc_bignum.h
 include/parrot/${V}/pmc/pmc_boolean.h
 include/parrot/${V}/pmc/pmc_bytebuffer.h
+include/parrot/${V}/pmc/pmc_callback.h
 include/parrot/${V}/pmc/pmc_callcontext.h
 include/parrot/${V}/pmc/pmc_capture.h
 include/parrot/${V}/pmc/pmc_class.h
@@ -161,7 +154,7 @@ include/parrot/${V}/pmc/pmc_packfilesegment.h
 include/parrot/${V}/pmc/pmc_packfileview.h
 include/parrot/${V}/pmc/pmc_parrotinterpreter.h
 include/parrot/${V}/pmc/pmc_parrotlibrary.h
-include/parrot/${V}/pmc/pmc_parrotthread.h
+include/parrot/${V}/pmc/pmc_pmclist.h
 include/parrot/${V}/pmc/pmc_pmcproxy.h
 include/parrot/${V}/pmc/pmc_pointer.h
 include/parrot/${V}/pmc/pmc_ptr.h
@@ -185,17 +178,31 @@ include/parrot/${V}/pmc/pmc_stringiterator.h
 include/parrot/${V}/pmc/pmc_structview.h
 include/parrot/${V}/pmc/pmc_sub.h
 include/parrot/${V}/pmc/pmc_task.h
-include/parrot/${V}/pmc/pmc_threadinterpreter.h
 include/parrot/${V}/pmc/pmc_timer.h
 include/parrot/${V}/pmc/pmc_undef.h
 include/parrot/${V}/pmc/pmc_unmanagedstruct.h
 lib/libparrot.a
+@lib lib/libparrot.so.${LIBparrot_VERSION}
 lib/parrot/
 lib/parrot/${V}/
 lib/parrot/${V}/VERSION
 lib/parrot/${V}/bin/
 lib/parrot/${V}/bin/prove.pir
 lib/parrot/${V}/dynext/
+lib/parrot/${V}/dynext/bit_ops.so
+lib/parrot/${V}/dynext/debug_ops.so
+lib/parrot/${V}/dynext/dynlexpad.so
+lib/parrot/${V}/dynext/file.so
+lib/parrot/${V}/dynext/gziphandle.so
+lib/parrot/${V}/dynext/io_ops.so
+lib/parrot/${V}/dynext/libglutcb.so
+lib/parrot/${V}/dynext/math_ops.so
+lib/parrot/${V}/dynext/obscure_ops.so
+lib/parrot/${V}/dynext/os.so
+lib/parrot/${V}/dynext/rational.so
+lib/parrot/${V}/dynext/select.so
+lib/parrot/${V}/dynext/sys_ops.so
+lib/parrot/${V}/dynext/trans_ops.so
 lib/parrot/${V}/include/
 lib/parrot/${V}/include/call_bits.pasm
 lib/parrot/${V}/include/cclass.pasm
@@ -206,6 +213,7 @@ lib/parrot/${V}/include/errors.pasm
 lib/parrot/${V}/include/except_severity.pasm
 lib/parrot/${V}/include/except_types.pasm
 lib/parrot/${V}/include/fp_equality.pasm
+lib/parrot/${V}/include/green_threads.pir
 lib/parrot/${V}/include/hash_key_type.pasm
 lib/parrot/${V}/include/hllmacros.pir
 lib/parrot/${V}/include/iglobals.pasm
@@ -217,6 +225,7 @@ lib/parrot/${V}/include/interptrace.pasm
 lib/parrot/${V}/include/iterator.pasm
 lib/parrot/${V}/include/libpaths.pasm
 lib/parrot/${V}/include/longopt.pasm
+lib/parrot/${V}/include/opengl_defines.pasm
 lib/parrot/${V}/include/parrot_version.pir
 lib/parrot/${V}/include/parrotlib.pbc
 lib/parrot/${V}/include/pmctypes.pasm
@@ -345,8 +354,11 @@ lib/parrot/${V}/library/Math/Rand.pir
 lib/parrot/${V}/library/NCI/
 lib/parrot/${V}/library/NCI/Utils.pir
 lib/parrot/${V}/library/OpenGL/
+lib/parrot/${V}/library/OpenGL.pbc
 lib/parrot/${V}/library/OpenGL.pir
 lib/parrot/${V}/library/OpenGL/Math.pir
+lib/parrot/${V}/library/OpenGL_funcs.pbc
+lib/parrot/${V}/library/OpenGL_funcs.pir
 lib/parrot/${V}/library/P6Regex.pbc
 lib/parrot/${V}/library/P6object.pbc
 lib/parrot/${V}/library/P6object.pir
@@ -487,7 +499,6 @@ lib/parrot/${V}/library/pcre.pbc
 lib/parrot/${V}/library/pcre.pir
 lib/parrot/${V}/library/postgres.declarations
 lib/parrot/${V}/library/postgres.pir
-lib/parrot/${V}/library/random_lib.pir
 lib/parrot/${V}/library/uuid.pbc
 lib/parrot/${V}/library/uuid.pir
 lib/parrot/${V}/library/yaml_dumper.pir
@@ -570,6 +581,7 @@ lib/parrot/${V}/tools/lib/Parrot/Harness/
 lib/parrot/${V}/tools/lib/Parrot/Harness/DefaultTests.pm
 lib/parrot/${V}/tools/lib/Parrot/Harness/Options.pm
 lib/parrot/${V}/tools/lib/Parrot/Harness/Smoke.pm
+lib/parrot/${V}/tools/lib/Parrot/Harness/TestSets.pm
 lib/parrot/${V}/tools/lib/Parrot/Headerizer/
 lib/parrot/${V}/tools/lib/Parrot/Headerizer.pm
 lib/parrot/${V}/tools/lib/Parrot/Headerizer/Functions.pm
@@ -608,7 +620,6 @@ lib/parrot/${V}/tools/lib/Parrot/Test/
 lib/parrot/${V}/tools/lib/Parrot/Test.pm
 lib/parrot/${V}/tools/lib/Parrot/Test/Harness.pm
 lib/parrot/${V}/tools/lib/Parrot/Test/PGE.pm
-lib/parrot/${V}/tools/lib/Parrot/Test/PIR_PGE.pm
 lib/parrot/${V}/tools/lib/Parrot/Test/Pod/
 lib/parrot/${V}/tools/lib/Parrot/Test/Pod.pm
 lib/parrot/${V}/tools/lib/Parrot/Test/Pod/Utils.pm
@@ -621,7 +632,6 @@ share/doc/parrot/${V}/
 share/doc/parrot/${V}/CREDITS
 share/doc/parrot/${V}/DONORS.pod
 share/doc/parrot/${V}/LICENSE
-share/doc/parrot/${V}/NEWS
 share/doc/parrot/${V}/PBC_COMPAT
 share/doc/parrot/${V}/PLATFORMS
 share/doc/parrot/${V}/README
@@ -731,6 +741,7 @@ share/doc/parrot/${V}/examples/compilers/japhc.c
 share/doc/parrot/${V}/examples/config/
 share/doc/parrot/${V}/examples/config/file/
 share/doc/parrot/${V}/examples/config/file/configcompiler
+share/doc/parrot/${V}/examples/config/file/configverbose
 share/doc/parrot/${V}/examples/config/file/configwithfatalstep
 share/doc/parrot/${V}/examples/embed/
 share/doc/parrot/${V}/examples/embed/Makefile
@@ -767,6 +778,8 @@ share/doc/parrot/${V}/examples/languages/squaak/
 share/doc/parrot/${V}/examples/languages/squaak/MAINTAINER
 share/doc/parrot/${V}/examples/languages/squaak/README
 share/doc/parrot/${V}/examples/languages/squaak/doc/
+share/doc/parrot/${V}/examples/languages/squaak/doc/pct-stages.png
+share/doc/parrot/${V}/examples/languages/squaak/doc/pct-stages.svg
 share/doc/parrot/${V}/examples/languages/squaak/doc/tutorial_episode_1.pod
 share/doc/parrot/${V}/examples/languages/squaak/doc/tutorial_episode_2.pod
 share/doc/parrot/${V}/examples/languages/squaak/doc/tutorial_episode_3.pod
@@ -861,6 +874,7 @@ share/doc/parrot/${V}/examples/pir/befunge/t/
 share/doc/parrot/${V}/examples/pir/befunge/t/basic.t
 share/doc/parrot/${V}/examples/pir/befunge/test.bef
 share/doc/parrot/${V}/examples/pir/circle.pir
+share/doc/parrot/${V}/examples/pir/coop_threads.pir
 share/doc/parrot/${V}/examples/pir/euclid.pir
 share/doc/parrot/${V}/examples/pir/genprog.bas
 share/doc/parrot/${V}/examples/pir/hanoi.pir
@@ -1034,6 +1048,17 @@ share/doc/parrot/${V}/examples/tutorial/82_coroutine.pir
 share/doc/parrot/${V}/examples/tutorial/83_external_libraries.pir
 share/doc/parrot/${V}/examples/tutorial/90_writing_tests.pir
 share/doc/parrot/${V}/pod/
+share/doc/parrot/${V}/pod/binaries/
+share/doc/parrot/${V}/pod/binaries/ops2c.pod
+share/doc/parrot/${V}/pod/binaries/parrot-nqp.pod
+share/doc/parrot/${V}/pod/binaries/parrot-prove.pod
+share/doc/parrot/${V}/pod/binaries/parrot.pod
+share/doc/parrot/${V}/pod/binaries/parrot_config.pod
+share/doc/parrot/${V}/pod/binaries/parrot_nci_thunk_gen.pod
+share/doc/parrot/${V}/pod/binaries/parrotbug.pod
+share/doc/parrot/${V}/pod/binaries/pbc_to_exe.pod
+share/doc/parrot/${V}/pod/binaries/plumage.pod
+share/doc/parrot/${V}/pod/binaries/winxed.pod
 share/doc/parrot/${V}/pod/book/
 share/doc/parrot/${V}/pod/book/pct/
 share/doc/parrot/${V}/pod/book/pct/ch01_introduction.pod
@@ -1074,8 +1099,8 @@ share/doc/parrot/${V}/pod/dev/infant.pod
 share/doc/parrot/${V}/pod/dev/longopt.pod
 share/doc/parrot/${V}/pod/dev/optimizer.pod
 share/doc/parrot/${V}/pod/dev/parrot_api.pod
+share/doc/parrot/${V}/pod/dev/pcc_methods.pod
 share/doc/parrot/${V}/pod/dev/pcc_state.pod
-share/doc/parrot/${V}/pod/dev/pccmethods.pod
 share/doc/parrot/${V}/pod/dev/pmc_freeze.pod
 share/doc/parrot/${V}/pod/dev/pmc_obj_design_meeting_notes.pod
 share/doc/parrot/${V}/pod/dev/profiling.pod
@@ -1197,11 +1222,13 @@ src/parrot/
 src/parrot/${V}/
 src/parrot/${V}/pmc/
 src/parrot/${V}/pmc/addrregistry.dump
+src/parrot/${V}/pmc/alarm.dump
 src/parrot/${V}/pmc/arrayiterator.dump
 src/parrot/${V}/pmc/bigint.dump
 src/parrot/${V}/pmc/bignum.dump
 src/parrot/${V}/pmc/boolean.dump
 src/parrot/${V}/pmc/bytebuffer.dump
+src/parrot/${V}/pmc/callback.dump
 src/parrot/${V}/pmc/callcontext.dump
 src/parrot/${V}/pmc/capture.dump
 src/parrot/${V}/pmc/class.dump
@@ -1261,7 +1288,7 @@ src/parrot/${V}/pmc/packfilesegment.dump
 src/parrot/${V}/pmc/packfileview.dump
 src/parrot/${V}/pmc/parrotinterpreter.dump
 src/parrot/${V}/pmc/parrotlibrary.dump
-src/parrot/${V}/pmc/parrotthread.dump
+src/parrot/${V}/pmc/pmclist.dump
 src/parrot/${V}/pmc/pmcproxy.dump
 src/parrot/${V}/pmc/pointer.dump
 src/parrot/${V}/pmc/ptr.dump
@@ -1285,7 +1312,6 @@ src/parrot/${V}/pmc/stringiterator.dump
 src/parrot/${V}/pmc/structview.dump
 src/parrot/${V}/pmc/sub.dump
 src/parrot/${V}/pmc/task.dump
-src/parrot/${V}/pmc/threadinterpreter.dump
 src/parrot/${V}/pmc/timer.dump
 src/parrot/${V}/pmc/undef.dump
 src/parrot/${V}/pmc/unmanagedstruct.dump
