@@ -1,0 +1,18 @@
+$OpenBSD: patch-backends_tracker_Makefile_am,v 1.1 2012/03/08 14:18:27 ajacoutot Exp $
+
+From 5f26596731a40c8103fe403d5aaa7049e3eae496 Mon Sep 17 00:00:00 2001
+From: Travis Reitter <travis.reitter@collabora.co.uk>
+Date: Mon, 05 Mar 2012 23:30:10 +0000
+Subject: Factor out the tracker-sparql major number.
+
+--- backends/tracker/Makefile.am.orig	Thu Jan 12 18:25:24 2012
++++ backends/tracker/Makefile.am	Thu Mar  8 14:08:34 2012
+@@ -26,7 +26,7 @@ tracker_deps = \
+ 	gee-1.0 \
+ 	gio-2.0 \
+ 	gobject-2.0 \
+-	tracker-sparql-0.12 \
++	tracker-sparql-$(TRACKER_SPARQL_MAJOR) \
+ 	$(NULL)
+ 
+ tracker_la_CPPFLAGS = \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/03/05 12:12:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/03/08 14:18:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,15 +12,15 @@ API_V=			31
 PKGNAME-main=		${DISTNAME}
 PKGNAME-tracker=	${GNOME_PROJECT}-meta-tracker-${GNOME_VERSION}
 
-REVISION-main=		0
-REVISION-tracker=	0
+REVISION-main=		1
+REVISION-tracker=	1
 
 SHARED_LIBS +=  folks-telepathy           5.0 # 29.0
 SHARED_LIBS +=  folks                     5.0 # 29.0
 SHARED_LIBS +=  folks-eds                 0.1 # 29.0
 SHARED_LIBS +=  folks-tracker             0.0 # 30.0
 
-TRACKER_VERSION=	0.12
+TRACKER_VERSION=	0.14
 SUBST_VARS=		API_V TRACKER_VERSION
 
 HOMEPAGE=		${HOMEPAGE_TP:=Folks}
@@ -49,13 +49,13 @@ RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
 WANTLIB-tracker += ${WANTLIB}
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-common
 WANTLIB-tracker += lib/tracker-${TRACKER_VERSION}/tracker-data
-WANTLIB-tracker += e2fs-uuid folks icui18n icuuc kvm tracker-sparql-0.12
+WANTLIB-tracker += e2fs-uuid folks icui18n icuuc kvm tracker-sparql-0.14
 WANTLIB-tracker += z
 
 RUN_DEPENDS-tracker=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-tracker=	${MODGETTEXT_LIB_DEPENDS} \
 			${BASE_PKGPATH},-main \
-			x11/gnome/tracker
+			x11/gnome/tracker>=0.14.0
 
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
@@ -70,5 +70,21 @@ CONFIGURE_ARGS+=	--enable-import-tool \
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no
 # Experimental bindings, but hey, without testing they'll never mature.
 CONFIGURE_ARGS+=	--enable-eds-backend
+
+# libtoolize
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+BUILD_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+			AUTOCONF_VERSION=${AUTOCONF_VERSION}
+MAKE_ENV +=		${BUILD_ENV}
+BUILD_DEPENDS +=	devel/libtool \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
+pre-configure:
+	cd ${WRKSRC} && \
+		env ${CONFIGURE_ENV} \
+		${BUILD_ENV} \
+		./autogen.sh --no-configure
 
 .include <bsd.port.mk>
