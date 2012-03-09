@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/02/20 02:31:40 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/09 12:59:25 espie Exp $
 
 COMMENT-java=	Java bindings for Berkeley DB, revision ${REV}
 
@@ -17,7 +17,6 @@ EPOCH-tcl=	0
 REVISION-java =	1
 REVISION-tcl =	0
 DBLIBDIR=	lib/db4
-IGNORE-java = 	build broken by rthreads
 
 # XXX sync LIBdb_VERSION in x11/gnome/libgda
 SHARED_LIBS +=	db                   5.0      # .0.0
