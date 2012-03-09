@@ -1,22 +1,21 @@
-$OpenBSD: patch-src_ifinfo_c,v 1.1.1.1 2010/10/25 10:14:53 pea Exp $
+$OpenBSD: patch-src_ifinfo_c,v 1.2 2012/03/09 09:33:03 pea Exp $
 
 Fixes a segfault with malloc option F
 
---- src/ifinfo.c.orig	Wed Oct  6 11:45:54 2010
-+++ src/ifinfo.c	Wed Oct  6 11:46:14 2010
-
-@@ -418,9 +418,9 @@ int readifaddrs(const char *iface)
+--- src/ifinfo.c.orig	Wed Jun  1 00:29:51 2011
++++ src/ifinfo.c	Thu Mar  8 17:30:31 2012
+@@ -420,9 +420,9 @@ int readifaddrs(const char *iface)
  			break;
  		}
  	}
 -	freeifaddrs(ifap);
- 	
+ 
  	if (check == 0) {
 +		freeifaddrs(ifap);
  		if (debug)
  			printf("Requested interface \"%s\" not found.\n", iface);
  		return 0;
-@@ -433,6 +433,7 @@ int readifaddrs(const char *iface)
+@@ -435,6 +435,7 @@ int readifaddrs(const char *iface)
  		ifinfo.filled = 1;
  	}
  
