@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.49 2012/03/09 12:51:38 espie Exp $
+# $OpenBSD: dpb,v 1.50 2012/03/09 15:16:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -140,7 +140,7 @@ sub handle_options
 			$state->{random} = 1;
 			$state->heuristics->random;
 		},
-		m => sub {
+		M => sub {
 			$state->heuristics->set_threshold(shift)
 		},
 		P => sub {
@@ -160,9 +160,9 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('acemqrRstuUvh:xA:C:f:F:I:j:J:m:P:b:L:S:',
+	$state->SUPER::handle_options('acemqrRstuUvh:xA:C:f:F:I:j:J:M:P:b:L:S:',
     "[-acemrRsuUvx] [-A arch] [-C plist] [-f N] [-F N] [-I plist] [-J p] [-j N]",
-    "[-P plist] [-h hosts] [-L logdir] [-b log] [-t ctimeout] [-m threshold]",
+    "[-P plist] [-h hosts] [-L logdir] [-b log] [-t ctimeout] [-M threshold]",
     "[path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // '%p/logs/%a';

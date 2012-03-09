@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.35 2012/03/02 19:35:09 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.36 2012/03/09 15:16:38 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: March 2 2012 $
+.Dd $Mdocdate: March 9 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl aceqrRsuUx
+.Op Fl acemqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl C Ar pathlist
@@ -35,7 +35,7 @@
 .Op Fl J Ar p
 .Op Fl j Ar n
 .Op Fl L Ar logdir
-.Op Fl m Ar threshold
+.Op Fl M Ar threshold
 .Op Fl P Ar pathlist
 .Op Fl S Ar sizefile
 .Op Ar pathlist ...
@@ -320,13 +320,15 @@ Choose a log directory.
 Defaults to
 .Pa ${PORTSDIR}/logs/${ARCH}
 .Pc .
-.It Fl m Ar threshold
+.It Fl M Ar threshold
 Build ports besides the memory threshold within
 .Pa /tmp .
 Avoid for now, as
 .Xr mfs 8
 has serious race conditions which yield
 random errors under stress conditions such as bulk build.
+.It Fl m
+Force tty-style reporting.
 .It Fl P Ar pathlist
 Read list of
 .Xr pkgpath 7
@@ -600,6 +602,12 @@ removing
 will force
 .Nm
 into checking all files again.
+.Pp
+.Nm
+also records rolling build statistics under
+.Pa ${DISTDIR}/build-stats/${ARCH} ,
+and uses them automatically in the absence of
+.Fl b Ar logfile .
 .Pp
 .Nm
 will also create a large number of log files under
