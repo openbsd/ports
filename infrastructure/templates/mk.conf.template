@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.7 2012/01/16 13:18:58 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.8 2012/03/09 11:38:56 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -34,9 +34,9 @@
 .poison REVISON
 .poison REVSION
 .poison RUN_DEPEND
+.poison SEPERATE_BUILD
 .poison WABTLIB
 .poison WATNLIB
-.poison WUBLIB
 .poison WKRBUILD
 .poison WKRCONF
 .poison WKRDIST
