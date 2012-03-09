@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.36 2012/03/09 15:16:38 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.37 2012/03/09 21:18:40 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -55,21 +55,6 @@ On a clean machine,
 will run with sensible defaults if used without options.
 Note, however, that it will produce logs, lock files, packages, and package
 installations.
-.Pp
-The file
-.Pa build.log
-.Po
-normally under
-.Pa ${PORTSDIR}/log/${ARCH}
-.Pc
-is of particular interest, as it contains build time summaries.
-After a full run of
-.Nm ,
-back-up or remove other logs, but keep the old
-.Pa build.log
-accessible, so that the next build can be primed with
-.Fl b Pa build.log
-in order to get a more efficient build that will focus on large ports first.
 .Pp
 .Nm
 can be restricted to a subset of the tree by giving it
