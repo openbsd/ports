@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_pty_c,v 1.2 2012/02/24 10:44:55 mpi Exp $
+$OpenBSD: patch-src_pty_c,v 1.3 2012/03/09 06:45:16 ajacoutot Exp $
 
-Use openpty(3) backend instead of gnome-pty-helper
+From 116fe70d32c810ccd0bb226fc0c06c74e28db075 Mon Sep 17 00:00:00 2001
+From: Martin Pieuchot <mpi@openbsd.org>
+Date: Thu, 08 Mar 2012 20:53:52 +0000
+Subject: pty: Support allocating PTYs through openpty on BSD
 
---- src/pty.c
-+++ src/pty.c
+--- src/pty.c.orig	Mon Sep 26 14:32:16 2011
++++ src/pty.c	Fri Mar  9 07:28:53 2012
 @@ -54,6 +54,9 @@
  #include <termios.h>
  #endif
@@ -14,19 +17,34 @@ Use openpty(3) backend instead of gnome-pty-helper
  #ifdef HAVE_STROPTS_H
  #include <stropts.h>
  #endif
-@@ -734,6 +737,7 @@ vte_pty_get_size(VtePty *pty,
+@@ -81,6 +84,12 @@ static pid_t _vte_pty_helper_pid = -1;
+ static int _vte_pty_helper_tunnel = -1;
+ #endif
+ 
++#if defined(HAVE_PTSNAME_R) || defined(HAVE_PTSNAME) || defined(TIOCGPTN)
++#define HAVE_UNIX98_PTY
++#else
++#undef HAVE_UNIX98_PTY
++#endif
++
+ /* Reset the handlers for all known signals to their defaults.  The parent
+  * (or one of the libraries it links to) may have changed one to be ignored. */
+ static void
+@@ -734,6 +743,8 @@ vte_pty_get_size(VtePty *pty,
  	}
  }
  
-+#ifndef VTE_USE_BSD_PTY
++#if defined(HAVE_UNIX98_PTY)
++
  /*
   * _vte_pty_ptsname:
   * @master: file descriptor to the PTY master
-@@ -951,6 +955,44 @@ _vte_pty_open_unix98(VtePty *pty,
+@@ -951,6 +962,44 @@ _vte_pty_open_unix98(VtePty *pty,
          return TRUE;
  }
  
-+#else
++#elif defined(HAVE_OPENPTY)
++
 +/*
 + * _vte_pty_open_bsd:
 + * @pty: a #VtePty
@@ -40,34 +58,33 @@ Use openpty(3) backend instead of gnome-pty-helper
 +_vte_pty_open_bsd(VtePty *pty,
 +                  GError **error)
 +{
-+#ifdef HAVE_OPENPTY
-+        VtePtyPrivate *priv = pty->priv;
++	VtePtyPrivate *priv = pty->priv;
 +	int parentfd, childfd;
 +
 +	if (openpty(&parentfd, &childfd, NULL, NULL, NULL) != 0) {
-+                int errsv = errno;
-+                g_set_error(error, VTE_PTY_ERROR, VTE_PTY_ERROR_PTY98_FAILED,
-+                            "%s failed: %s", "openpty", g_strerror(errsv));
-+                errno = errsv;
++		int errsv = errno;
++		g_set_error(error, VTE_PTY_ERROR, VTE_PTY_ERROR_PTY98_FAILED,
++			    "%s failed: %s", "openpty", g_strerror(errsv));
++		errno = errsv;
 +		return FALSE;
 +	}
 +
-+        priv->pty_fd = parentfd;
-+        priv->child_setup_data.mode = TTY_OPEN_BY_FD;
-+        priv->child_setup_data.tty.fd = childfd;
-+        priv->using_helper = FALSE;
++	priv->pty_fd = parentfd;
++	priv->child_setup_data.mode = TTY_OPEN_BY_FD;
++	priv->child_setup_data.tty.fd = childfd;
++	priv->using_helper = FALSE;
 +
-+        return TRUE;
-+#else
-+#error no openpty implementation for this platform
-+#endif
++	return TRUE;
 +}
-+#endif /* VTE_USE_BSD_PTY */
++
++#else
++#error Have neither UNIX98 PTY nor BSD openpty!
++#endif /* HAVE_UNIX98_PTY */
 +
  #ifdef VTE_USE_GNOME_PTY_HELPER
  #ifdef HAVE_RECVMSG
  static void
-@@ -1511,7 +1553,7 @@ vte_pty_initable_init (GInitable *initable,
+@@ -1511,7 +1560,7 @@ vte_pty_initable_init (GInitable *initable,
                  }
  
                  g_error_free(err);
@@ -76,15 +93,17 @@ Use openpty(3) backend instead of gnome-pty-helper
          }
  #else
          if (priv->flags & VTE_PTY_NO_FALLBACK) {
-@@ -1521,7 +1563,11 @@ vte_pty_initable_init (GInitable *initable,
+@@ -1521,7 +1570,13 @@ vte_pty_initable_init (GInitable *initable,
          }
  #endif /* VTE_USE_GNOME_PTY_HELPER */
  
-+#ifndef VTE_USE_BSD_PTY
++#if defined(HAVE_UNIX98_PTY)
          ret = _vte_pty_open_unix98(pty, error);
++#elif defined(HAVE_OPENPTY)
++        ret = _vte_pty_open_bsd(pty, error);
 +#else
-+	ret = _vte_pty_open_bsd(pty, error);
-+#endif /* VTE_USE_BSD_PTY */
++#error Have neither UNIX98 PTY nor BSD openpty!
++#endif
  
    out:
  	_vte_debug_print(VTE_DEBUG_PTY,

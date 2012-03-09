@@ -1,9 +1,12 @@
-$OpenBSD: patch-configure_in,v 1.1 2012/02/24 10:44:55 mpi Exp $
+$OpenBSD: patch-configure_in,v 1.2 2012/03/09 06:45:16 ajacoutot Exp $
 
-Support for the openpty(3) backend.
+From 116fe70d32c810ccd0bb226fc0c06c74e28db075 Mon Sep 17 00:00:00 2001
+From: Martin Pieuchot <mpi@openbsd.org>
+Date: Thu, 08 Mar 2012 20:53:52 +0000
+Subject: pty: Support allocating PTYs through openpty on BSD
 
---- configure.in
-+++ configure.in
+--- configure.in.orig	Fri Mar  9 07:27:29 2012
++++ configure.in	Fri Mar  9 07:28:53 2012
 @@ -313,7 +313,7 @@ AC_SUBST(VTE_DEFAULT_EMULATION)
  AM_CONDITIONAL(VTE_DEFAULT_EMULATION, [test "$emulation" != xterm])
  
@@ -13,7 +16,7 @@ Support for the openpty(3) backend.
  AC_HEADER_TIOCGWINSZ
  
  # Check for PTY handling functions.
-@@ -324,6 +324,7 @@ AC_CHECK_FUNCS([cfmakeraw fork setsid setpgid getpgid getpt grantpt unlockpt pts
+@@ -324,6 +324,7 @@ AC_CHECK_FUNCS([cfmakeraw fork setsid setpgid getpgid 
  AC_CHECK_FUNC(socket,[have_socket=1],AC_CHECK_LIB(socket,socket,[have_socket=1; LIBS="$LIBS -lsocket"]))
  AC_CHECK_FUNC(socketpair,[have_socketpair=1],AC_CHECK_LIB(socket,socketpair,[have_socketpair=1; LIBS="$LIBS -lsocket"]))
  AC_CHECK_FUNC(recvmsg,[have_recvmsg=1],AC_CHECK_LIB(socket,recvmsg,[have_recvmsg=1; LIBS="$LIBS -lsocket -lnsl"]))
@@ -21,31 +24,13 @@ Support for the openpty(3) backend.
  if test x$have_socket = x1 ; then
  	AC_DEFINE(HAVE_SOCKET,1,[Define if you have the socket function.])
  fi
-@@ -333,6 +334,9 @@ fi
+@@ -332,6 +333,9 @@ if test x$have_socketpair = x1 ; then
+ fi
  if test x$have_recvmsg = x1 ; then
  	AC_DEFINE(HAVE_RECVMSG,1,[Define if you have the recvmsg function.])
- fi
++fi
 +if test x$have_openpty = x1 ; then
 +	AC_DEFINE(HAVE_OPENPTY,1,[Define if you have the openpty function.])
-+fi
+ fi
  AC_CHECK_FUNC(floor,,AC_CHECK_LIB(m,floor,LIBS=["$LIBS -lm"]))
  AC_CHECK_FUNCS([ceil floor])
- 
-@@ -423,6 +427,17 @@ fi
- AM_CONDITIONAL(BUILD_GNOME_PTY_HELPER,[test "$enable_gnome_pty_helper" != no])
- 
- ################################################################################
-+# BSD PTY
-+################################################################################
-+
-+AC_ARG_ENABLE(bsd-pty, [AS_HELP_STRING(--enable-bsd-pty,Support bsd rather than unix98 ptys [default=no])], enable_bsd_pty="$enableval", enable_bsd_pty=yes)
-+if test "$enable_bsd_pty" != no; then
-+	AC_DEFINE(VTE_USE_BSD_PTY,1,[Define if you intend to use bsd-pty.])
-+	AC_CONFIG_SUBDIRS(bsd-pty)
-+fi
-+AM_CONDITIONAL(BUILD_BSD_PTY,[test "$enable_bsd_pty" != no])
-+
-+################################################################################
- # Glade catalogue
- ################################################################################
- 
