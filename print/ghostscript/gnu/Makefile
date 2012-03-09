@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2011/11/16 12:43:23 kili Exp $
+# $OpenBSD: Makefile,v 1.90 2012/03/09 10:59:54 espie Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -108,7 +108,7 @@ INSTALL_TARGET_NON_SHARED-Yes =	install
 
 SOC_LIBS =			-liconv -pthread
 
-.if ${FLAVOR:L:Ma4}
+.if ${FLAVOR:Ma4}
 CFLAGS+=	-DA4
 .endif
 
@@ -119,9 +119,9 @@ CFLAGS+=	-DA4
 # drivers, we can have a default output device set to x11 and a working
 # 'display' driver without enforcing the gtk FLAVOR.
 
-.if ${FLAVOR:L:Mgtk} && ${FLAVOR:L:Mno_x11}
+.if ${FLAVOR:Mgtk} && ${FLAVOR:Mno_x11}
 ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
-.elif ${FLAVOR:L:Mgtk}
+.elif ${FLAVOR:Mgtk}
 LIB_DEPENDS+=	x11/gtk+2
 MODULES+=	devel/gettext
 WANTLIB+=	GL Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
@@ -143,7 +143,7 @@ GTK_DEVICES=
 NOGTK_DEVICES=	display
 .endif
 
-.if !${FLAVOR:L:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 # XXX -freetype flags should be set with FT_CFLAGS and FT_LIBS
 CFLAGS+=	-I${X11BASE}/include		\
 		-I${X11BASE}/include/freetype2

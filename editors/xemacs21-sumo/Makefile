@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/03 10:44:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/03/09 10:58:36 espie Exp $
 
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
@@ -31,7 +31,7 @@ SUBST_VARS=	MULE
 FLAVORS=mule
 FLAVOR?=
 
-.if ${FLAVOR:L:Mmule}
+.if ${FLAVOR:Mmule}
 DISTFILES+=	${SUP_mule}
 .endif
 

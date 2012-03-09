@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/01 02:13:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/09 10:58:36 espie Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
@@ -27,7 +27,7 @@ WRKDIST=	${WRKDIR}/moon-lander
 FLAVORS=	no_sound
 FLAVOR?=
 
-.if ${FLAVOR:L:Mno_sound}
+.if ${FLAVOR:Mno_sound}
 CFLAGS+=	-DNOSOUND
 .endif
 
