@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/04 11:45:21 stu Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/09 14:15:32 stu Exp $
 
 COMMENT =	Tcl Standard Library
 
-DISTNAME =	tcllib-1.13
+DISTNAME =	tcllib-1.14
 CATEGORIES =	devel lang/tcl
 HOMEPAGE =	http://sourceforge.net/projects/tcllib/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -71,7 +71,7 @@ do-install:
 	@chmod ${BINMODE} ${SCRIPTS_TCLSH:S!logger!log!:S!^!${PREFIX}/share/examples/tcllib/!}
 	${SETENV} TCLLIBPATH=${DESTDIR}${MODTCL_TCLDIR} ${MODTCL_BIN} \
 		${FILESDIR}/mkindex.tcl ${PREFIX}/man/mann \
-		${PKGDIR}/DESCR ${PREFIX}/man/mann/tcllib.n tcllib "${COMMENT}" 1.13
+		${PKGDIR}/DESCR ${PREFIX}/man/mann/tcllib.n tcllib "${COMMENT}" 1.14
 	@chown ${MANOWN}:${MANGRP} ${PREFIX}/man/mann/tcllib.n
 	@chmod ${MANMODE} ${PREFIX}/man/mann/tcllib.n
 

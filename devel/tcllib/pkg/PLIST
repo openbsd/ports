@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/04 11:45:21 stu Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/03/09 14:15:32 stu Exp $
 bin/dtplite
 lib/tcl/aes/
 lib/tcl/aes/aes.tcl
@@ -274,6 +274,9 @@ lib/tcl/json/
 lib/tcl/json/json.tcl
 lib/tcl/json/json_write.tcl
 lib/tcl/json/pkgIndex.tcl
+lib/tcl/lambda/
+lib/tcl/lambda/lambda.tcl
+lib/tcl/lambda/pkgIndex.tcl
 lib/tcl/ldap/
 lib/tcl/ldap/ldap.tcl
 lib/tcl/ldap/ldapx.tcl
@@ -303,6 +306,7 @@ lib/tcl/math/calculus.tcl
 lib/tcl/math/classic_polyns.tcl
 lib/tcl/math/combinatorics.tcl
 lib/tcl/math/constants.tcl
+lib/tcl/math/decimal.tcl
 lib/tcl/math/elliptic.tcl
 lib/tcl/math/exponential.tcl
 lib/tcl/math/fourier.tcl
@@ -370,6 +374,9 @@ lib/tcl/nntp/pkgIndex.tcl
 lib/tcl/ntp/
 lib/tcl/ntp/pkgIndex.tcl
 lib/tcl/ntp/time.tcl
+lib/tcl/ooutil/
+lib/tcl/ooutil/ooutil.tcl
+lib/tcl/ooutil/pkgIndex.tcl
 lib/tcl/otp/
 lib/tcl/otp/otp.tcl
 lib/tcl/otp/pkgIndex.tcl
@@ -634,6 +641,9 @@ lib/tcl/treeql/pkgIndex.tcl
 lib/tcl/treeql/treeql.tcl
 lib/tcl/treeql/treeql84.tcl
 lib/tcl/treeql/treeql85.tcl
+lib/tcl/try/
+lib/tcl/try/pkgIndex.tcl
+lib/tcl/try/try.tcl
 lib/tcl/uev/
 lib/tcl/uev/pkgIndex.tcl
 lib/tcl/uev/uevent.tcl
@@ -648,7 +658,24 @@ lib/tcl/uri/urn-scheme.tcl
 lib/tcl/uuid/
 lib/tcl/uuid/pkgIndex.tcl
 lib/tcl/uuid/uuid.tcl
+lib/tcl/valtype/
+lib/tcl/valtype/cc_amex.tcl
+lib/tcl/valtype/cc_discover.tcl
+lib/tcl/valtype/cc_mastercard.tcl
+lib/tcl/valtype/cc_visa.tcl
+lib/tcl/valtype/ean13.tcl
+lib/tcl/valtype/iban.tcl
+lib/tcl/valtype/imei.tcl
+lib/tcl/valtype/isbn.tcl
+lib/tcl/valtype/luhn.tcl
+lib/tcl/valtype/luhn5.tcl
+lib/tcl/valtype/pkgIndex.tcl
+lib/tcl/valtype/usnpi.tcl
+lib/tcl/valtype/valtype.tcl
+lib/tcl/valtype/verhoeff.tcl
 lib/tcl/virtchannel_base/
+lib/tcl/virtchannel_base/cat.tcl
+lib/tcl/virtchannel_base/facade.tcl
 lib/tcl/virtchannel_base/fifo.tcl
 lib/tcl/virtchannel_base/fifo2.tcl
 lib/tcl/virtchannel_base/halfpipe.tcl
@@ -658,6 +685,7 @@ lib/tcl/virtchannel_base/nullzero.tcl
 lib/tcl/virtchannel_base/pkgIndex.tcl
 lib/tcl/virtchannel_base/random.tcl
 lib/tcl/virtchannel_base/randseed.tcl
+lib/tcl/virtchannel_base/std.tcl
 lib/tcl/virtchannel_base/string.tcl
 lib/tcl/virtchannel_base/textwindow.tcl
 lib/tcl/virtchannel_base/variable.tcl
@@ -734,6 +762,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/cvs.n
 @man man/mann/dacceptor.n
 @man man/mann/ddest.n
+@man man/mann/decimal.n
 @man man/mann/deleg_method.n
 @man man/mann/deleg_proc.n
 @man man/mann/des.n
@@ -807,6 +836,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/jpeg.n
 @man man/mann/json.n
 @man man/mann/json_write.n
+@man man/mann/lambda.n
 @man man/mann/ldap.n
 @man man/mann/ldapx.n
 @man man/mann/linalg.n
@@ -860,6 +890,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/nroff_manmacros.n
 @man man/mann/ntp_time.n
 @man man/mann/numtheory.n
+@man man/mann/ooutil.n
 @man man/mann/optimize.n
 @man man/mann/otp.n
 @man man/mann/page.n
@@ -988,6 +1019,7 @@ lib/tcl/yaml/yaml.tcl
 @man man/mann/traverse.n
 @man man/mann/treeql.n
 @man man/mann/trim.n
+@man man/mann/try.n
 @man man/mann/uevent.n
 @man man/mann/uevent_onidle.n
 @man man/mann/unicode.n

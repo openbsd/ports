@@ -1,7 +1,9 @@
+# $OpenBSD: mkindex.tcl,v 1.2 2012/03/09 14:15:32 stu Exp $
+
 # Generate 'index' manpage
 # Stuart Cassoff
-# Version 0.1
-# Winter 2009
+# Version 0.2
+# Winter 2012
 
 package require doctools
 
@@ -12,7 +14,8 @@ foreach fn [glob -nocomplain -dir $dir *.n] {
 	set data [read [set f [open $fn]]][close $f]
 	if {[regexp {.SH NAME\n(.*?) \\- (.*?)\n} $data -> shname shtitle] &&
 			[regexp -line {^\.TH.*$} $data th]} {
-		lappend modules [list [string map {_ ::} $shname] [lindex $th 3] [lindex $th 5] $shtitle]
+		lappend modules [list [string map {_ ::} $shname] [lindex $th 3] \
+			[string map {[ [lb] ] [rb]} [lindex $th 5]] $shtitle]
 	}
 }
 set modules [lsort -dictionary -index 0 $modules]
