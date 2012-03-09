@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.8 2012/02/27 15:37:36 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.9 2012/03/09 12:51:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -94,12 +94,20 @@ sub filter_can
 sub new
 {
 	my $class = shift;
-	my $notty = shift;
-	my $isatty = !$notty && -t STDOUT;
-	if ($isatty) {
+	my $state = shift;
+	my $dotty;
+	if ($state->opt('x')) {
+		$dotty = 0;
+	} elsif ($state->opt('m')) {
+		$dotty = 1;
+	} else {
+		$dotty = -t STDOUT;
+	}
+		
+	if ($dotty) {
 		$class->ttyclass->new(@_);
 	} else {
-		$singleton //= bless {msg => '', tty => $isatty,
+		$singleton //= bless {msg => '', tty => $dotty,
 		    producers => $class->filter_can(\@_, 'important'),
 		    continued => 0}, $class;
 	}
