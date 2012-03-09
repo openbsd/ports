@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/09 13:58:16 sthen Exp $
 @group daemon
 pear/data/Date_Holidays/
 pear/data/Date_Holidays/lang/
@@ -45,6 +45,7 @@ pear/tests/Date_Holidays/tests/Date_Holidays_Driver_TestSuite.php
 pear/tests/Date_Holidays/tests/Date_Holidays_Driver_TestSuite.xml
 pear/tests/Date_Holidays/tests/Date_Holidays_TestSuite.php
 pear/tests/Date_Holidays/tests/Example.php
+pear/tests/Date_Holidays/tests/helper.inc
 pear/tests/Date_Holidays/tests/testHolidays2005stampsAndSavingsDay.php
 pear/tests/Date_Holidays/tests/test_getHolidays.php
 pear/tests/Date_Holidays/tests/test_missingLocale.php
