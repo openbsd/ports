@@ -1,10 +1,12 @@
-$OpenBSD: patch-config_mk,v 1.3 2012/01/03 10:52:54 dcoppa Exp $
+$OpenBSD: patch-config_mk,v 1.4 2012/03/09 08:48:42 dcoppa Exp $
 
 zap redundant CFLAGS
 
---- config.mk.orig	Mon Jan  2 11:55:04 2012
-+++ config.mk	Tue Jan  3 11:43:50 2012
-@@ -15,7 +15,6 @@ example_dir = ${main_dir}/share/doc/feh/examples
+enable EXIF support
+
+--- config.mk.orig	Tue Mar  6 13:15:59 2012
++++ config.mk	Fri Mar  9 09:40:50 2012
+@@ -15,13 +15,12 @@ example_dir = ${main_dir}/share/doc/feh/examples
  
  # default CFLAGS
  CFLAGS ?= -g -O2
@@ -12,3 +14,10 @@ zap redundant CFLAGS
  
  curl ?= 1
  debug ?= 0
+ help ?= 0
+ xinerama ?= 1
+-exif ?= 0
++exif ?= 1
+ 
+ ifeq (${curl},1)
+ 	CFLAGS += -DHAVE_LIBCURL

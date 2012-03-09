@@ -1,10 +1,10 @@
-$OpenBSD: patch-man_feh_pre,v 1.11 2012/02/21 12:27:25 dcoppa Exp $
+$OpenBSD: patch-man_feh_pre,v 1.12 2012/03/09 08:48:42 dcoppa Exp $
 
 fix typo
 
---- man/feh.pre.orig	Thu Feb  2 21:10:57 2012
-+++ man/feh.pre	Tue Feb 21 12:38:52 2012
-@@ -177,7 +177,7 @@ the caption will be looked for in
+--- man/feh.pre.orig	Tue Mar  6 13:15:59 2012
++++ man/feh.pre	Fri Mar  9 09:34:02 2012
+@@ -189,7 +189,7 @@ the caption will be looked for in
  Don't display images, print image info according to
  .Ar format
  instead.  See
@@ -13,7 +13,7 @@ fix typo
  .
  .It Cm --cycle-once
  .
-@@ -837,7 +837,7 @@ which
+@@ -852,7 +852,7 @@ which
  defaults to
  .Pa ~/.config/feh/ .
  If the files are not found in that directory, it will also try
@@ -22,7 +22,7 @@ fix typo
  .Pp
  All config files treat lines starting with a
  .Qq #
-@@ -1334,7 +1334,7 @@ order it finds them on the hard disk, which is usually
+@@ -1352,7 +1352,7 @@ order it finds them on the hard disk, which is usually
  .
  Show 128x128 pixel thumbnails, limit window width to 1024 pixels.
  .
