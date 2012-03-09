@@ -1,6 +1,6 @@
-# $OpenBSD: mono.port.mk,v 1.20 2011/10/03 11:00:58 jasper Exp $
+# $OpenBSD: mono.port.mk,v 1.21 2012/03/09 10:59:11 espie Exp $
 
-# XXX see bsd.port.arch.mk
+# XXX list in infrastructure/mk/arch-defines.mk
 # XXX arm powerpc (no support for sigcontext)
 ONLY_FOR_ARCHS?=	${MONO_ARCHS}
 
