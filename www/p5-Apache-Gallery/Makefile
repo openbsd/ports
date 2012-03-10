@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/10 10:55:27 landry Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
-DISTNAME=		Apache-Gallery-1.0RC3
-REVISION=		2
+DISTNAME=		Apache-Gallery-1.0.2
+EPOCH =	0
 CATEGORIES=		www
 USE_GROFF =		Yes
-
 HOMEPAGE=		http://www.apachegallery.dk/
+MASTER_SITES =		${HOMEPAGE}/download/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -45,5 +45,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/htdocs/*.png ${ICONSDIR}
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/{README,INSTALL} ${DOCSDIR}
+
+	${SUBST_CMD} -c ${FILESDIR}/apache-gallery.conf \
+		${DOCSDIR}/apache-gallery.conf.dist
+	chown ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/apache-gallery.conf.dist
 
 .include <bsd.port.mk>

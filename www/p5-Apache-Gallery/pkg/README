@@ -1,8 +1,11 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/03/10 10:55:27 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+Installing in a chroot
+======================
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -28,13 +31,7 @@ $ cd /var/www/usr/libexec
 Next, the required shared libraries:
 
 $ cd /var/www/usr/lib
-# cp -p /usr/lib/lib{c,m,z,util,perl}.so* .
-
-$ cd /var/www${LOCALBASE}/lib
-# cp -p ${LOCALBASE}/lib/lib{jpeg,png,bz2,tiff,tiffxx,gif,Imlib2,ltdl,id3tag}.so* .
-# mkdir -p imlib2/{loaders,filters}
-# cp -pR ${LOCALBASE}/lib/imlib2/loaders/*.so imlib2/loaders
-# cp -pR ${LOCALBASE}/lib/imlib2/filters/*.so imlib2/filters
+# cp -p /usr/lib/lib{c,m,z,util,perl,ssl,stdc++}.so* .
 
 $ cd /var/www/usr/X11R6/lib
 # cp -p /usr/X11R6/lib/lib{Xext,freetype,X11,Xau,Xdmcp,xcb,pthread-stubs}.so.* .
@@ -44,68 +41,19 @@ Next, the Perl base:
 $ cd /var/www/usr/libdata
 # cp -pR /usr/libdata/perl5 .
 
-Next, the A::G images and templates:
+Finally, install p5-Apache-Gallery and all its deps in the chroot
 
-$ cd /var/www${LOCALBASE}
-# mkdir -p share libdata/perl5/site_perl/`machine`-openbsd
-# cp -pR ${TRUEPREFIX}/share/Apache-Gallery share
-
-Next, the non-base Perl stuff:
-
-$ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
-# mkdir -p {,`machine`-openbsd/{,auto/}}Apache
-# cp -p ${TRUEPREFIX}/libdata/perl5/site_perl/Apache/Gallery.pm Apache
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/Apache* \
-	`machine`-openbsd
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Apache \
-	`machine`-openbsd/auto
-# cp -p ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/mod_perl*.pm \
-	`machine`-openbsd
-
-# mkdir -p {,`machine`-openbsd/}{,auto/}Image
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Image .
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/auto/Image/Size auto/Image
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/Image* \
-	`machine`-openbsd
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/`machine`-openbsd/auto/Image \
-	`machine`-openbsd/auto
-
-# mkdir -p Text URI IO
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/Text/Template* Text
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/IO/String* String
-# cp -pR ${LOCALBASE}/libdata/perl5/site_perl/URI* .
-
+# env PKG_DBDIR=/var/www/var/db/pkg pkg_add -B /var/www p5-Apache-Gallery
 
 Setting up httpd
 ================
-<VirtualHost *>
-	ServerAdmin webmaster@host.some_domain.com
-	DocumentRoot /var/www/htdocs
-	ErrorLog    logs/gallery-error
-	CustomLog   logs/gallery-access combined
-	ServerName  gallery.site.tld
-	Alias /icons/gallery/ "${TRUEPREFIX}/share/Apache-Gallery/icons/"
-	Alias /gallery.css "${TRUEPREFIX}/share/Apache-Gallery/templates/new/gallery.css"
-	# This is necessary.
-	Options -Indexes
-	PerlSetVar  GalleryCacheDir '/tmp/'
-	PerlSetVar  GalleryTemplateDir '${TRUEPREFIX}/share/Apache-Gallery/templates/new/'
-	PerlSetVar  GalleryInfo 'Picture Taken => DateTimeOriginal, Flash => Flash'
-	PerlSetVar  GallerySizes '640 1024'
-	PerlSetVar GalleryThumbnailSize '100x75'
 
-	# Note that you will want to change this.
-	PerlSetVar GalleryCopyrightImage '${LOCALBASE}/share/Apache-Gallery/icons/c.png'
+To enable gallery you need to edit /var/www/conf/modules.sample/apache-gallery.conf
+to fit your needs then create a symlink like this :
 
-	<Directory ${TRUEPREFIX}/share/Apache-Gallery>
-		order allow,deny
-		allow from all
-	</Directory>
+# ln -s ../modules.sample/apache-gallery.conf \
+        /var/www/conf/modules
+# /etc/rc.d/httpd restart
 
-	<Location />
-		SetHandler perl-script
-		PerlHandler Apache::Gallery
-	</Location>
-
-</VirtualHost>
-
+Finally, create a /var/www/htdocs/gallery directory, put your favourite
+pictures inside it, and browse to your.server.tld/gallery.
