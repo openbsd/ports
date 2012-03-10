@@ -1,10 +1,10 @@
-$OpenBSD: patch-wscript,v 1.18 2011/12/24 07:47:23 landry Exp $
+$OpenBSD: patch-wscript,v 1.19 2012/03/10 10:25:27 landry Exp $
 
 Fix paths to config files.
 
---- wscript.orig	Sat Dec 17 23:47:28 2011
-+++ wscript	Sat Dec 24 07:53:38 2011
-@@ -70,7 +70,7 @@ def rc_file(self, node):
+--- wscript.orig	Thu Mar  8 23:34:45 2012
++++ wscript	Fri Mar  9 09:38:12 2012
+@@ -73,7 +73,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
  Task.simple_task_type ('winrc', '${WINRC} -o${TGT} ${SRC}', color='BLUE',
@@ -13,7 +13,7 @@ Fix paths to config files.
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -440,7 +440,7 @@ def build (bld):
+@@ -441,7 +441,7 @@ def build (bld):
              'AUTHORS COPYING ChangeLog EXPAT README data/faq.html data/faq.css')
  
      # Install default configuration
@@ -22,7 +22,7 @@ Fix paths to config files.
  
      if bld.env['INTLTOOL']:
          obj = bld.new_task_gen ('intltool_po')
-@@ -512,7 +512,7 @@ def build (bld):
+@@ -513,7 +513,7 @@ def build (bld):
              for extension in extensions:
                  source = 'data/extensions/' + extension +  '/config'
                  if os.path.exists (source):

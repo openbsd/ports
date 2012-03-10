@@ -1,10 +1,10 @@
-$OpenBSD: patch-midori_main_c,v 1.11 2011/12/24 07:47:23 landry Exp $
+$OpenBSD: patch-midori_main_c,v 1.12 2012/03/10 10:25:27 landry Exp $
 
 use path to our root ca list for ssl cert validation
 
---- midori/main.c.orig	Sat Dec 17 23:47:28 2011
-+++ midori/main.c	Thu Dec 22 21:04:10 2011
-@@ -999,11 +999,7 @@ midori_load_soup_session (gpointer settings)
+--- midori/main.c.orig	Thu Mar  8 23:34:45 2012
++++ midori/main.c	Fri Mar  9 09:38:12 2012
+@@ -1005,11 +1005,7 @@ midori_load_soup_session (gpointer settings)
      #elif defined (HAVE_LIBSOUP_2_29_91)
      const gchar* certificate_files[] =
      {
