@@ -1,0 +1,14 @@
+$OpenBSD: patch-config_gethostname_c,v 1.1 2012/03/11 17:42:05 dcoppa Exp $
+--- config/gethostname.c.orig	Mon Aug 20 01:23:17 2007
++++ config/gethostname.c	Sun Mar 11 16:56:20 2012
+@@ -1,7 +1,9 @@
++#include <stdio.h>
++#include <string.h>
+ #include <unistd.h>
+ 
+ int main(int argc, char **argv) {
+-	char *tmp[300];
++	char tmp[300];
+ 
+ 	memset(tmp, 0, sizeof(tmp));
+ 	gethostname(tmp, sizeof(tmp)-1);
