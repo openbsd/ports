@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.98 2012/02/25 11:24:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2012/03/12 07:42:11 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.95
-REVISION=		1
+GNOME_VERSION=		2.96
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -78,12 +77,14 @@ CONFIGURE_ARGS=		--with-database=tree \
 			--without-hal \
 			--without-gudev \
 			--without-webkit \
-			--disable-daap \
 			--disable-fm-radio \
 			--disable-lirc
 
 # Don't compile the vala (useless) sample plugin.
 CONFIGURE_ARGS +=	--disable-vala
+
+# XXX requires libdmapsharing
+CONFIGURE_ARGS +=	--disable-daap
 
 # XXX requires hal|udev
 CONFIGURE_ARGS +=	--without-mtp
@@ -99,8 +100,6 @@ CONFIGURE_ENV +=	MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
 REGRESS_IS_INTERACTIVE=	x11
 
 post-install:
-# needs gnome-keyring python bindings (used to be in py-gnome-desktop)
-	find ${PREFIX} -type d -name magnatune | xargs -r rm -rf
 # needs ZeitgeistClient
 	find ${PREFIX} -type d -name rbzeitgeist | xargs -r rm -rf
 

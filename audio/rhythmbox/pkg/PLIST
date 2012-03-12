@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2012/02/25 11:24:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2012/03/12 07:42:12 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -185,6 +185,23 @@ lib/rhythmbox/plugins/lyrics/lyrics.plugin
 lib/rhythmbox/plugins/lyrics/lyrics.py
 lib/rhythmbox/plugins/lyrics/lyrics.pyc
 lib/rhythmbox/plugins/lyrics/lyrics.pyo
+lib/rhythmbox/plugins/magnatune/
+lib/rhythmbox/plugins/magnatune/DownloadAlbumHandler.py
+lib/rhythmbox/plugins/magnatune/DownloadAlbumHandler.pyc
+lib/rhythmbox/plugins/magnatune/DownloadAlbumHandler.pyo
+lib/rhythmbox/plugins/magnatune/MagnatuneAccount.py
+lib/rhythmbox/plugins/magnatune/MagnatuneAccount.pyc
+lib/rhythmbox/plugins/magnatune/MagnatuneAccount.pyo
+lib/rhythmbox/plugins/magnatune/MagnatuneSource.py
+lib/rhythmbox/plugins/magnatune/MagnatuneSource.pyc
+lib/rhythmbox/plugins/magnatune/MagnatuneSource.pyo
+lib/rhythmbox/plugins/magnatune/TrackListHandler.py
+lib/rhythmbox/plugins/magnatune/TrackListHandler.pyc
+lib/rhythmbox/plugins/magnatune/TrackListHandler.pyo
+lib/rhythmbox/plugins/magnatune/magnatune.plugin
+lib/rhythmbox/plugins/magnatune/magnatune.py
+lib/rhythmbox/plugins/magnatune/magnatune.pyc
+lib/rhythmbox/plugins/magnatune/magnatune.pyo
 lib/rhythmbox/plugins/mmkeys/
 @comment lib/rhythmbox/plugins/mmkeys/libmmkeys.la
 lib/rhythmbox/plugins/mmkeys/libmmkeys.so
@@ -779,6 +796,9 @@ share/rhythmbox/icons/hicolor/22x22/places/library-internet-radio.png
 share/rhythmbox/icons/hicolor/22x22/places/library-podcast.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist.png
+share/rhythmbox/icons/hicolor/24x24/
+share/rhythmbox/icons/hicolor/24x24/places/
+share/rhythmbox/icons/hicolor/24x24/places/magnatune.png
 share/rhythmbox/icons/hicolor/32x32/
 share/rhythmbox/icons/hicolor/32x32/actions/
 share/rhythmbox/icons/hicolor/32x32/actions/audio-cd-duplicate.png
@@ -845,6 +865,11 @@ share/rhythmbox/plugins/iradio/iradio-ui.xml
 share/rhythmbox/plugins/iradio/station-properties.ui
 share/rhythmbox/plugins/lyrics/
 share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
+share/rhythmbox/plugins/magnatune/
+share/rhythmbox/plugins/magnatune/magnatune-loading.ui
+share/rhythmbox/plugins/magnatune/magnatune-prefs.ui
+share/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
+share/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
 share/rhythmbox/plugins/replaygain/
 share/rhythmbox/plugins/replaygain/replaygain-prefs.ui
 share/rhythmbox/podcast-feed-properties.ui

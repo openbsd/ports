@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.12 2012/01/16 12:10:02 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.13 2012/03/12 07:42:11 ajacoutot Exp $
 
 audiocd plugin requires cdda support in gvfs which we do not provide as
 this would require HAL or gudev.
 
---- configure.orig	Mon Jan 16 12:36:34 2012
-+++ configure	Mon Jan 16 12:36:58 2012
-@@ -16780,99 +16780,6 @@ fi
+--- configure.orig	Sun Mar 11 10:14:28 2012
++++ configure	Mon Mar 12 08:02:14 2012
+@@ -16833,99 +16833,6 @@ fi
  
  
  
