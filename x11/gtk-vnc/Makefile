@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.37 2011/11/10 17:01:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/12 17:00:54 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.4.4
+GNOME_VERSION=		0.5.0
 
 PKGNAME=		${DISTNAME}
 
-SHARED_LIBS +=  gtk-vnc-2.0               0.0 # 0.2
-SHARED_LIBS +=  gvnc-1.0             0.0 # 0.1
+SHARED_LIBS +=  gtk-vnc-2.0		0.0 # 0.2
+SHARED_LIBS +=  gvnc-1.0		0.0 # 0.1
 
 CATEGORIES=		x11 net
 
@@ -31,8 +31,6 @@ WANTLIB += cairo-gobject gdk-3 gtk-3 ffi stdc++
 
 MODULES=		devel/gettext \
 			x11/gnome
-
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 LIB_DEPENDS=		security/gnutls \
 			security/cyrus-sasl2 \
