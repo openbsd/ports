@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/10/07 14:12:55 giovanni Exp $
+# $OpenBSD: Makefile,v 1.40 2012/03/12 15:17:17 giovanni Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
 MAJORVERSION=	2.0
-PATCHLEVEL=	0
+PATCHLEVEL=	1
 CATEGORIES=	news
 
 MASTER_SITES=	http://ftp.funet.fi/pub/unix/news/tin-unoff/ \
@@ -30,12 +30,18 @@ WANTLIB=		c>=58.2 ncurses pcre idn
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.13
+# XXX Re-review --disable-gsasl on update, it may become useful in the future.
+#
 # --with-x does not affect the build, but let's be safe.
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell \
 			--without-metamail \
 			--without-pgp \
 			--without-pgpk \
 			--with-gpg=${LOCALBASE}/bin/gpg \
+			--without-socks \
+			--without-socks5 \
+			--without-slrnface \
+			--disable-gsasl \
 			--with-screen=ncurses \
 			--with-pcre=${LOCALBASE} \
 			--with-libdir=${PREFIX}/lib/news \
