@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/10/13 11:23:01 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2012/03/12 10:28:44 stsp Exp $
 @conflict gnome-keyring-subversion-*
 @pkgpath devel/subversion,no_bindings
 @pkgpath devel/subversion
@@ -136,6 +136,7 @@ share/examples/subversion/getfile.py
 share/examples/subversion/getlocks_test.c
 share/examples/subversion/geturl.py
 share/examples/subversion/headrev.c
+share/examples/subversion/info.rb
 share/examples/subversion/hook-scripts/
 share/examples/subversion/hook-scripts/commit-access-control.cfg.example
 share/examples/subversion/hook-scripts/commit-access-control.pl
