@@ -1,12 +1,12 @@
-$OpenBSD: patch-glib_gmain_c,v 1.9 2012/03/06 11:39:17 ajacoutot Exp $
+$OpenBSD: patch-glib_gmain_c,v 1.10 2012/03/12 07:21:06 ajacoutot Exp $
 
 Rewrote upstream, but provides similar functionnality.
 (test with GDM that the following does not happen:
 Failed to read from child watch wake up pipe: Interrupted system call)
 
---- glib/gmain.c.orig	Fri Nov 11 18:56:52 2011
-+++ glib/gmain.c	Wed Nov 16 15:46:52 2011
-@@ -4564,7 +4568,12 @@ unix_signal_helper_thread (gpointer data) 
+--- glib/gmain.c.orig	Sun Mar 11 22:43:28 2012
++++ glib/gmain.c	Mon Mar 12 07:46:36 2012
+@@ -4564,7 +4564,12 @@ unix_signal_helper_thread (gpointer data) 
        gboolean sigint_received = FALSE;
        gboolean sighup_received = FALSE;
  

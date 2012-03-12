@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.23 2011/10/14 15:25:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.24 2012/03/12 07:21:06 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
@@ -169,6 +169,8 @@ share/gtk-doc/html/gio/gio-GDBusError.html
 share/gtk-doc/html/gio/gio-GFileAttribute.html
 share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
+share/gtk-doc/html/gio/gio-GWin32InputStream.html
+share/gtk-doc/html/gio/gio-GWin32OutputStream.html
 share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
 share/gtk-doc/html/gio/gio-TLS-Overview.html
 share/gtk-doc/html/gio/gio-Unix-Mounts.html
