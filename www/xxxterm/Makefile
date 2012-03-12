@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.27 2012/01/17 19:55:53 edd Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/12 17:11:59 sthen Exp $
 
 COMMENT =		vi-like minimalists web browser
-DISTNAME =		xxxterm-1.10.0
+DISTNAME =		xxxterm-1.11.3
 EPOCH =			0
 CATEGORIES =		www
 
@@ -9,6 +9,7 @@ HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@x61.com.ar>
 
+# MPL 1.1/GPL 2.0/LGPL 2.1 for tld-rules file
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
@@ -46,6 +47,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xxxterm/
 	${INSTALL_DATA} ${WRKSRC}/xxxtermicon*.png ${PREFIX}/share/xxxterm/
 	${INSTALL_DATA} ${WRKSRC}/style.css ${PREFIX}/share/xxxterm/
+	${INSTALL_DATA} ${WRKSRC}/tld-rules ${PREFIX}/share/xxxterm/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKSRC}/xxxterm.desktop \

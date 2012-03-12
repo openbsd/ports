@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/08/26 14:31:47 gsoares Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/12 17:11:59 sthen Exp $
 @bin bin/xxxterm
 @man man/man1/xxxterm.1
 share/applications/xxxterm.desktop
@@ -8,6 +8,7 @@ share/examples/xxxterm/playflash.sh
 share/examples/xxxterm/xxxterm.conf
 share/xxxterm/
 share/xxxterm/style.css
+share/xxxterm/tld-rules
 share/xxxterm/xxxtermicon.png
 share/xxxterm/xxxtermicon128.png
 share/xxxterm/xxxtermicon16.png
