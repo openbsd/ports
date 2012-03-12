@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/12/05 22:59:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2012/03/12 07:38:25 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -11,8 +11,8 @@ SHARED_LIBS=	gpod	721.0	# 7.1
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
-REVISION-main=	0
-REVISION-python=0
+REVISION-main=	1
+REVISION-python=1
 
 HOMEPAGE=	http://www.gtkpod.org/libgpod/
 
@@ -34,13 +34,14 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 BUILD_DEPENDS=		audio/py-mutagen \
+			devel/py-gobject \
 			devel/swig
-RUN_DEPENDS-python=	audio/py-mutagen
+RUN_DEPENDS-python=	audio/py-mutagen \
+			devel/py-gobject
 LIB_DEPENDS-python=	${BUILD_PKGPATH},-main
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/glib2 \
 			devel/libplist \
-			devel/py-gobject \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml \
 			devel/libusb1
