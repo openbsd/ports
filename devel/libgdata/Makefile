@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/03 14:21:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/12 09:43:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
-GNOME_VERSION=		0.10.1
-
-REVISION=		0
+GNOME_VERSION=		0.10.2
 
 SHARED_LIBS +=  gdata                4.0      # .14.1
 
@@ -24,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += crypto curl dbus-1 gcrypt gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += crypto curl dbus-1 ffi gcrypt gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gthread-2.0 idn
 WANTLIB += m nspr4 nss3 oauth pcre plc4 plds4 smime3 softokn3
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3 xml2 z
@@ -41,7 +39,10 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 MODGNOME_TOOLS= 	goi
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-gnome
+CONFIGURE_ARGS=		--disable-static \
+			--enable-gnome \
+			--with-ca-certs=/etc/ssl/cert.pem
 
 .include <bsd.port.mk>
