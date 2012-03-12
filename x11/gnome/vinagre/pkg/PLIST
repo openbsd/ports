@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/12/03 22:17:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/03/12 17:13:46 ajacoutot Exp $
 @bin bin/vinagre
 lib/vinagre-3.0/
 lib/vinagre-3.0/plugins/
@@ -17,6 +17,8 @@ share/applications/vinagre-file.desktop
 share/applications/vinagre.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Vinagre.service
 share/glib-2.0/schemas/org.gnome.Vinagre.gschema.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/vinagre/
 share/gnome/help/vinagre/C/
 share/gnome/help/vinagre/C/connect-file.page
