@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2012/02/29 21:38:31 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/13 11:15:02 edd Exp $
 
 COMMENT =		Sega Megadrive/Genesis emulator
-DISTNAME =		dgen-sdl-1.29
-REVISION =		0
+DISTNAME =		dgen-sdl-1.30
 CATEGORIES =		emulators games
 HOMEPAGE =		http://dgen.sourceforge.net/
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
+
+FLAVORS =		debugger
+FLAVOR ?=
 
 # Various parts of dgen are under different licenses
 # Mainly a 3 clause BSD license, but also:
@@ -13,6 +15,8 @@ MAINTAINER =		Edd Barrett <edd@openbsd.org>
 #  - starscream non-commercial license
 #  - mz80 non-commercial license
 #  - cz80 non-commercial license
+#  - scale2x GPLv2
+#  - hqx LGPL
 PERMIT_PACKAGE_CDROM =	No
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =No
@@ -38,6 +42,11 @@ LIB_DEPENDS =		devel/sdl \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
+
+# m68k debugger, at a slight performance cost
+.if ${FLAVOR:Mdebugger}
+CONFIGURE_ARGS +=	--enable-debugger
+.endif
 
 SAMPLEDIR =	${PREFIX}/share/examples/dgen-sdl/
 DOCDIR =	${PREFIX}/share/doc/dgen-sdl/
