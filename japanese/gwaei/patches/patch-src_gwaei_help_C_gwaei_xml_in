@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_gwaei_help_C_gwaei_xml_in,v 1.1.1.1 2012/03/13 01:08:42 fgsch Exp $
+$OpenBSD: patch-src_gwaei_help_C_gwaei_xml_in,v 1.2 2012/03/13 10:07:45 ajacoutot Exp $
 --- src/gwaei/help/C/gwaei.xml.in.orig	Sun Sep  4 21:30:40 2011
 +++ src/gwaei/help/C/gwaei.xml.in	Sun Mar 11 01:23:10 2012
 @@ -1,6 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
 -               "/usr/share/sgml/docbook/dtd/xml/4.1.2/docbookx.dtd"
-+               "${TRUEPREFIX}/share/xml/docbook/4.1.2/docbookx.dtd"
++               "${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd"
                 [ <!ENTITY date "15 May 2009"> ]>
       
  <article id="index" lang="ja">
