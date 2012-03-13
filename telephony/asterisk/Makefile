@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.136 2012/02/27 17:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2012/03/13 23:17:46 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.8.9.3
+VER=			1.8.10.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
 SOUNDS=			CORE MOH EXTRA
-SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.21
+SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.22
 SOUNDS_MOH=		asterisk-moh-opsound-wav-2.03
 SOUNDS_EXTRA=		asterisk-extra-sounds-en-gsm-1.4.11
 
@@ -20,10 +20,11 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Mostly GPL v2 (only). "Specific permission is also granted to link
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
-# files." core-sounds-*: GPLv2/CC-BY-SA.
-PERMIT_PACKAGE_CDROM=	Yes
+# files." core-sounds-*: GPLv2/CC-BY-SA. iLBC codec has BSD-like license
+# terms, but also see patent notes in codecs/ilbc/LICENSE_ADDENDUM.
+PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_CDROM= patent licensing clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
@@ -66,7 +67,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \

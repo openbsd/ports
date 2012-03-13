@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.41 2012/01/19 21:49:56 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.42 2012/03/13 23:17:46 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -250,6 +250,7 @@ lib/asterisk/modules/codec_alaw.so
 lib/asterisk/modules/codec_g722.so
 lib/asterisk/modules/codec_g726.so
 lib/asterisk/modules/codec_gsm.so
+lib/asterisk/modules/codec_ilbc.so
 lib/asterisk/modules/codec_lpc10.so
 lib/asterisk/modules/codec_ulaw.so
 lib/asterisk/modules/format_g719.so
@@ -435,8 +436,53 @@ share/asterisk/sounds/en/conf-usermenu.gsm
 share/asterisk/sounds/en/conf-userswilljoin.gsm
 share/asterisk/sounds/en/conf-userwilljoin.gsm
 share/asterisk/sounds/en/conf-waitforleader.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-a.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-b.gsm
+share/asterisk/sounds/en/confbridge-begin-glorious-c.gsm
+share/asterisk/sounds/en/confbridge-begin-leader.gsm
+share/asterisk/sounds/en/confbridge-conf-begin.gsm
+share/asterisk/sounds/en/confbridge-conf-end.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-dec-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-has-joined.gsm
+share/asterisk/sounds/en/confbridge-has-left.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-inc-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-invalid.gsm
 share/asterisk/sounds/en/confbridge-join.gsm
+share/asterisk/sounds/en/confbridge-leave-in.gsm
+share/asterisk/sounds/en/confbridge-leave-out.gsm
 share/asterisk/sounds/en/confbridge-leave.gsm
+share/asterisk/sounds/en/confbridge-lock-extended.gsm
+share/asterisk/sounds/en/confbridge-lock-in.gsm
+share/asterisk/sounds/en/confbridge-lock-no-join.gsm
+share/asterisk/sounds/en/confbridge-lock-out.gsm
+share/asterisk/sounds/en/confbridge-locked.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-in.gsm
+share/asterisk/sounds/en/confbridge-menu-exit-out.gsm
+share/asterisk/sounds/en/confbridge-mute-extended.gsm
+share/asterisk/sounds/en/confbridge-mute-in.gsm
+share/asterisk/sounds/en/confbridge-mute-out.gsm
+share/asterisk/sounds/en/confbridge-muted.gsm
+share/asterisk/sounds/en/confbridge-only-one.gsm
+share/asterisk/sounds/en/confbridge-only-participant.gsm
+share/asterisk/sounds/en/confbridge-participants.gsm
+share/asterisk/sounds/en/confbridge-pin-bad.gsm
+share/asterisk/sounds/en/confbridge-pin.gsm
+share/asterisk/sounds/en/confbridge-remove-last-in.gsm
+share/asterisk/sounds/en/confbridge-remove-last-out.gsm
+share/asterisk/sounds/en/confbridge-removed.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-list-vol-out.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-in.gsm
+share/asterisk/sounds/en/confbridge-rest-talk-vol-out.gsm
+share/asterisk/sounds/en/confbridge-there-are.gsm
+share/asterisk/sounds/en/confbridge-unlocked.gsm
+share/asterisk/sounds/en/confbridge-unmuted.gsm
 share/asterisk/sounds/en/core-sounds-en.txt
 share/asterisk/sounds/en/demo-abouttotry.gsm
 share/asterisk/sounds/en/demo-congrats.gsm
