@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/13 10:07:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/13 19:40:27 ajacoutot Exp $
 
 COMMENT =	japanese-english dictionary program
 
 V =		3.2.0
 DISTNAME =	gwaei-${V}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	waei	0.0
 
@@ -29,22 +29,19 @@ WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=gwaei/${V}/}
 
 MODULES =	devel/gettext \
-		textproc/intltool
+		x11/gnome
 
-BUILD_DEPENDS =	x11/gnome/doc-utils
-RUN_DEPENDS =	devel/desktop-file-utils \
-		fonts/ja-kanjistrokeorders-ttf \
-		textproc/docbook \
-		x11/gtk+2,-guic
+RUN_DEPENDS =	fonts/ja-kanjistrokeorders-ttf \
+		textproc/docbook
 LIB_DEPENDS =	net/curl \
 		x11/gtk+3
 
-USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
-
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS += ${CONFIGURE_SHARED} \
-		  ENCHANT="${LOCALBASE}/bin/enchant"
+CONFIGURE_ARGS += ENCHANT="${LOCALBASE}/bin/enchant"
+
+MODGNOME_TOOLS =	yelp
+MODGNOME_DESKTOP_FILE =	Yes
+MODGNOME_ICON_CACHE =	Yes
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/src/gwaei/help/C/*.{in,xml}
