@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/01/23 10:18:47 edd Exp $
+# $OpenBSD: Makefile,v 1.64 2012/03/13 11:23:30 edd Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -7,6 +7,7 @@
     SUBDIR += coldfire
     SUBDIR += desmume
     SUBDIR += dgen-sdl
+    SUBDIR += dgen-sdl,debugger
     SUBDIR += dosbox
     SUBDIR += dynagen
     SUBDIR += dynamips
