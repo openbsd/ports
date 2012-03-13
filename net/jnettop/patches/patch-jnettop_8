@@ -1,4 +1,4 @@
-$OpenBSD: patch-jnettop_8,v 1.1.1.1 2012/03/13 09:42:22 sthen Exp $
+$OpenBSD: patch-jnettop_8,v 1.2 2012/03/13 09:57:37 sthen Exp $
 --- jnettop.8.orig	Sat Apr  8 12:50:09 2006
 +++ jnettop.8	Mon Mar 12 22:15:20 2012
 @@ -50,7 +50,7 @@ disable content filtering
@@ -6,7 +6,7 @@ $OpenBSD: patch-jnettop_8,v 1.1.1.1 2012/03/13 09:42:22 sthen Exp $
  .TP
  .B \-f, \-\-config-file filename
 -reads configuration from filename. defaults to ~/.jnettop. an example can be found at /usr/share/doc/jnettop/dot.jnettop.
-+reads configuration from filename. defaults to ~/.jnettop. an example can be found at ${PREFIX}/share/doc/jnettop/dot.jnettop.
++reads configuration from filename. defaults to ~/.jnettop. an example can be found at ${TRUEPREFIX}/share/doc/jnettop/dot.jnettop.
  or in .jnettop file from original distribution package.
  .TP
  .B \-i, \-\-interface name
@@ -15,7 +15,7 @@ $OpenBSD: patch-jnettop_8,v 1.1.1.1 2012/03/13 09:42:22 sthen Exp $
  resolve_rule "192.168.0.0" "255.255.255.0" normal
  .br
 -resolve_rule "192.168.0.0" "255.255.255.0" external "/usr/share/jnettop/jnettop-lookup-nbm"
-+resolve_rule "192.168.0.0" "255.255.255.0" external "${PREFIX}/share/jnettop/jnettop-lookup-nbm"
++resolve_rule "192.168.0.0" "255.255.255.0" external "${TRUEPREFIX}/share/jnettop/jnettop-lookup-nbm"
  .RE
  .TP
  \fBrule "<rule_name>" "<rule_definition>"\fR
