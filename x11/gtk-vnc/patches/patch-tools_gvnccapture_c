@@ -1,6 +1,9 @@
-$OpenBSD: patch-tools_gvnccapture_c,v 1.1 2012/03/12 17:00:54 ajacoutot Exp $
+$OpenBSD: patch-tools_gvnccapture_c,v 1.2 2012/03/13 18:54:03 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=667943
+From c87188617860dc38e3c7c4de43de7c0d950225a3 Mon Sep 17 00:00:00 2001
+From: Alexandre Rostovtsev <tetromino@gentoo.org>
+Date: Sun, 15 Jan 2012 04:33:24 +0000
+Subject: tools/gvnccapture: unbreak pod syntax
 
 --- tools/gvnccapture.c.orig	Wed Dec 21 18:07:38 2011
 +++ tools/gvnccapture.c	Mon Mar 12 17:45:18 2012
