@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/13 09:42:22 sthen Exp $
+@bin bin/jnettop
+@man man/man8/jnettop.8
+share/doc/jnettop/
+share/doc/jnettop/README
+share/doc/jnettop/README.UIA
+share/doc/jnettop/dot.jnettop
+share/jnettop/
+share/jnettop/jnettop-lookup-nmb

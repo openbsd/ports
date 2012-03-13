@@ -1,0 +1,11 @@
+Jnettop is a traffic visualiser, which captures traffic going through
+the host it is running from and displays streams sorted by bandwidth
+they use.
+
+  - list connections going across this host in a nice way
+  - supports IPv6
+  - supports customizable text output for further analysis
+  - supports machine-friendly mode to support further analysis
+  - allows pre-configured pcap filters in the config file
+
+If this package is not quite what you need, try iftop (and vice-versa).

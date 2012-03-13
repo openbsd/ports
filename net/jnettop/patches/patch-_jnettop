@@ -1,0 +1,11 @@
+$OpenBSD: patch-_jnettop,v 1.1.1.1 2012/03/13 09:42:22 sthen Exp $
+--- .jnettop.orig	Mon Mar 12 22:14:47 2012
++++ .jnettop	Mon Mar 12 22:15:09 2012
+@@ -30,6 +30,6 @@ local_network	"192.168.0.0" "255.255.0.0"
+ local_network	"10.0.0.0" "255.0.0.0"
+ # select_rule	"Google"
+ # resolve_rule "192.168.0.0" "255.255.0.0" normal
+-# resolve_rule "192.168.0.0" "255.255.0.0" external "/usr/share/jnettop/jnettop-lookup-nmb"
++# resolve_rule "192.168.0.0" "255.255.0.0" external "${PREFIX}/share/jnettop/jnettop-lookup-nmb"
+ # resolve off
+ 
