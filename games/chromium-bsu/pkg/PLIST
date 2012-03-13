@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/12 17:55:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/13 06:42:57 ajacoutot Exp $
 @bin bin/chromium-bsu
 @man man/man6/chromium-bsu.6
 share/applications/chromium-bsu.desktop
@@ -102,4 +102,4 @@ share/locale/zh_TW/LC_MESSAGES/chromium-bsu.mo
 share/pixmaps/
 share/pixmaps/chromium-bsu.png
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
