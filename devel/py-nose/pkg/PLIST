@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/11/02 23:06:02 rpointel Exp $
-bin/nosetests
-bin/nosetests-${MODPY_VERSION}
+@comment $OpenBSD: PLIST,v 1.7 2012/03/13 12:23:53 eric Exp $
+bin/nosetests${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/nose/
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -101,14 +100,14 @@ lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.pyc
 lib/python${MODPY_VERSION}/site-packages/nose/usage.txt
 lib/python${MODPY_VERSION}/site-packages/nose/util.py
 lib/python${MODPY_VERSION}/site-packages/nose/util.pyc
-@man man/man1/nosetests.1
-share/doc/py-nose/
-share/doc/py-nose/README.txt
-share/examples/py-nose/
-share/examples/py-nose/attrib_plugin.py
-share/examples/py-nose/html_plugin/
-share/examples/py-nose/html_plugin/htmlplug.py
-share/examples/py-nose/html_plugin/setup.py
-share/examples/py-nose/plugin/
-share/examples/py-nose/plugin/plug.py
-share/examples/py-nose/plugin/setup.py
+@man man/man1/nosetests${MODPY_BIN_SUFFIX}.1
+share/doc/${MODPY_PY_PREFIX}nose/
+share/doc/${MODPY_PY_PREFIX}nose/README.txt
+share/examples/${MODPY_PY_PREFIX}nose/
+share/examples/${MODPY_PY_PREFIX}nose/attrib_plugin.py
+share/examples/${MODPY_PY_PREFIX}nose/html_plugin/
+share/examples/${MODPY_PY_PREFIX}nose/html_plugin/htmlplug.py
+share/examples/${MODPY_PY_PREFIX}nose/html_plugin/setup.py
+share/examples/${MODPY_PY_PREFIX}nose/plugin/
+share/examples/${MODPY_PY_PREFIX}nose/plugin/plug.py
+share/examples/${MODPY_PY_PREFIX}nose/plugin/setup.py
