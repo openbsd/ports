@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_kpengine_Makefile_in,v 1.1.1.1 2012/03/13 01:08:42 fgsch Exp $
+--- src/kpengine/Makefile.in.orig	Mon Dec 19 21:50:00 2011
++++ src/kpengine/Makefile.in	Sun Mar 11 02:15:07 2012
+@@ -265,7 +265,7 @@ BINDIR = @bindir@
+ DATADIR2 = @datadir@
+ LIBDIR = $(DATADIR2)/$(PACKAGE)
+ KPGENDINEDIR = $(top_srcdir)/src/kpengine
+-libdirdir = $(libdir)/$(PACKAGE)
++libdirdir = $(libexecdir)/$(PACKAGE)
+ pkgdata_DATA = jdata.dat
+ AM_CFLAGS = $(LIBWAEI_CFLAGS) 
+ INCLUDES = -I jstroke $(am__append_1)
