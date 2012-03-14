@@ -1,4 +1,5 @@
-$OpenBSD: patch-Source_WebKit_gtk_resources_error_html,v 1.1 2011/05/11 06:00:08 ajacoutot Exp $
+$OpenBSD: patch-Source_WebKit_gtk_resources_error_html,v 1.2 2012/03/14 20:23:57 landry Exp $
+https://bugs.webkit.org/show_bug.cgi?id=39232
 --- Source/WebKit/gtk/resources/error.html.orig	Thu May  5 14:40:23 2011
 +++ Source/WebKit/gtk/resources/error.html	Thu May  5 14:40:34 2011
 @@ -21,12 +21,12 @@ body {
