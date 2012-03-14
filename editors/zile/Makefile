@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2012/03/14 15:10:54 ajacoutot Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.3.24
+DISTNAME=		zile-2.4.6
 CATEGORIES=		editors
 HOMEPAGE=		http://www.gnu.org/software/zile/
+
+MAINTAINER=		Gonzalo L. R. <gonzalo@x61.com.ar>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -13,8 +15,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=zile/}
 
-WANTLIB=		c ncursesw
+WANTLIB += c gc ncursesw pthread
 
-CONFIGURE_STYLE=	gnu
+LIB_DEPENDS=		devel/boehm-gc
+
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-gc=boehm
 
 .include <bsd.port.mk>
