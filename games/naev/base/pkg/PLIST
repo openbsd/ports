@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/25 11:30:24 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/14 22:54:28 sthen Exp $
 @bin bin/naev
 @man man/man6/naev.6
 share/applications/naev.desktop
@@ -7,6 +7,7 @@ share/doc/naev/AUTHORS
 share/doc/naev/LICENSE
 share/doc/naev/README
 share/doc/naev/TODO
+share/naev/naev-confupdate.sh
 share/pixmaps/
 share/pixmaps/naev.png
 @exec %D/bin/update-desktop-database
