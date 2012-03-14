@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/06 14:29:00 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/14 20:16:23 eric Exp $
 
 COMMENT=		implements an XML/HTML/XHTML markup safe string
 
@@ -23,5 +23,8 @@ MODULES=		lang/python
 WANTLIB+=		${MODPY_WANTLIB}
 
 MODPY_SETUPTOOLS= Yes
+
+FLAVORS=		python3
+FLAVOR?=
 
 .include <bsd.port.mk>
