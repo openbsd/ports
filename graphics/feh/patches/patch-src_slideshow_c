@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_slideshow_c,v 1.5 2012/03/14 10:15:00 dcoppa Exp $
+
+do not jump to current image on random jump
+(upstream git commit 57e2af2763ee87bafb368390fd18382c957fd27e)
+
+--- src/slideshow.c.orig	Tue Mar  6 13:15:59 2012
++++ src/slideshow.c	Wed Mar 14 11:10:50 2012
+@@ -266,8 +266,11 @@ void slideshow_change_image(winwidget winwid, int chan
+ 			current_file = feh_list_jump(filelist, current_file, BACK, 1);
+ 			break;
+ 		case SLIDE_RAND:
+-			current_file = feh_list_jump(filelist, current_file, FORWARD, rand() % filelist_len);
+-			change = SLIDE_NEXT;
++			if (filelist_len > 1) {
++				current_file = feh_list_jump(filelist, current_file, FORWARD,
++					(rand() % (filelist_len - 1)) + 1);
++				change = SLIDE_NEXT;
++			}
+ 			break;
+ 		case SLIDE_JUMP_FWD:
+ 			if (filelist_len < 5)
