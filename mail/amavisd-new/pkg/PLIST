@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/03/14 09:17:09 sthen Exp $
 @newgroup _vscan:530
 @newuser _vscan:530:_vscan:daemon:Amavisd-new Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -fr /var/amavisd/*
@@ -14,10 +14,12 @@ libdata/perl5/site_perl/JpegTester.pm
 sbin/amavisd
 share/doc/amavisd-new/
 share/doc/amavisd-new/AAAREADME.first
-share/doc/amavisd-new/AMAVIS-MIB.txt
 share/doc/amavisd-new/INSTALL
 share/doc/amavisd-new/LDAP.ldif
 share/doc/amavisd-new/LDAP.schema
+@sample ${SYSCONFDIR}/openldap/
+@sample ${SYSCONFDIR}/openldap/schema/
+@sample ${SYSCONFDIR}/openldap/schema/amavisd.schema
 share/doc/amavisd-new/LICENSE
 share/doc/amavisd-new/MANIFEST
 share/doc/amavisd-new/README.banned
@@ -51,6 +53,9 @@ share/examples/amavisd-new/
 share/examples/amavisd-new/amavisd.conf
 @sample ${SYSCONFDIR}/amavisd.conf
 share/examples/amavisd-new/amavisd.conf-default
+share/snmp/
+share/snmp/mibs/
+share/snmp/mibs/AMAVIS-MIB.txt
 @mode 0755
 @owner _vscan
 @group _vscan
