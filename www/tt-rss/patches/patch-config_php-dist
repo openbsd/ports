@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_php-dist,v 1.1 2012/03/15 09:50:23 landry Exp $
+--- config.php-dist.orig	Wed Mar 14 19:01:39 2012
++++ config.php-dist	Wed Mar 14 19:02:04 2012
+@@ -32,7 +32,7 @@
+ 	// *** Files and directories ***
+ 	// *****************************
+ 
+-	define('PHP_EXECUTABLE', '/usr/bin/php');
++	define('PHP_EXECUTABLE', '${MODPHP_BIN}');
+ 	// Path to PHP executable, used for various command-line tt-rss programs
+ 
+ 	define('LOCK_DIRECTORY', 'lock');

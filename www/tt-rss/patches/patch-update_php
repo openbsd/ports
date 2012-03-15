@@ -1,0 +1,9 @@
+$OpenBSD: patch-update_php,v 1.1 2012/03/15 09:50:23 landry Exp $
+--- update.php.orig	Wed Mar 14 19:01:19 2012
++++ update.php	Wed Mar 14 19:01:36 2012
+@@ -1,4 +1,4 @@
+-#!/usr/bin/php
++#!${MODPHP_BIN}
+ <?php
+ 	set_include_path(get_include_path() . PATH_SEPARATOR .
+ 		dirname(__FILE__) . "/include");
