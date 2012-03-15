@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/05 18:05:35 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/15 20:01:03 landry Exp $
 
 COMMENT =	scrabble game
 DISTNAME =	eliot-1.14
@@ -29,6 +29,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			 LDFLAGS="-L${X11BASE}/lib -pthread -L${LOCALBASE}/lib -liconv"
 USE_GMAKE =	Yes
 
+BUILD_DEPENDS =	devel/boost
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	textproc/arabica devel/libconfig
 WANTLIB +=	QtGui c m pthread stdc++
