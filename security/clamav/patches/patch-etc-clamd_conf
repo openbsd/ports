@@ -1,5 +1,5 @@
---- etc/clamd.conf.orig	Fri May 13 12:25:31 2011
-+++ etc/clamd.conf	Thu Jun  9 10:55:20 2011
+--- etc/clamd.conf.orig	Tue Mar  6 16:31:31 2012
++++ etc/clamd.conf	Thu Mar 15 17:06:51 2012
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -27,7 +27,7 @@
  
  # Initialize supplementary group access (clamd must be started by root).
  # Default: no
-@@ -409,7 +409,7 @@ Example
+@@ -422,7 +422,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

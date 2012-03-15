@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/01/21 23:02:58 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/03/15 22:04:44 sthen Exp $
 @newgroup _clamav:539
 @newuser _clamav:539:539:daemon:Clam AntiVirus:/nonexistent:/sbin/nologin
 @extraunexec rm -fr /var/db/clamav/*
@@ -16,10 +16,13 @@ bin/clamav-config
 include/clamav.h
 lib/libclamav.a
 lib/libclamav.la
+@lib lib/libclamav.so.${LIBclamav_VERSION}
 lib/libclamunrar.a
 lib/libclamunrar.la
+@lib lib/libclamunrar.so.${LIBclamunrar_VERSION}
 lib/libclamunrar_iface.a
 lib/libclamunrar_iface.la
+@lib lib/libclamunrar_iface.so.${LIBclamunrar_iface_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/libclamav.pc
 @man man/man1/clambc.1
@@ -44,7 +47,6 @@ share/doc/clamav/signatures.pdf
 share/examples/clamav/
 share/examples/clamav/clamav-milter.conf
 @sample ${SYSCONFDIR}/clamav-milter.conf
-%%SHARED%%
 @owner _clamav
 @group _clamav
 @sample /var/db/clamav/
