@@ -1,6 +1,6 @@
-$OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.1 2011/07/20 13:50:08 sthen Exp $
---- dialects/n+obsd/dproc.c.orig	Wed May 11 13:54:00 2005
-+++ dialects/n+obsd/dproc.c	Tue Jul 19 10:27:27 2011
+$OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.2 2012/03/15 21:39:53 sthen Exp $
+--- dialects/n+obsd/dproc.c.orig	Wed May 11 14:54:00 2005
++++ dialects/n+obsd/dproc.c	Sun Jan  8 20:40:43 2012
 @@ -172,7 +172,10 @@ gather_proc_info()
  	static int pofb = 0;
  #endif	/* defined(HASFSTRUCT) */
@@ -29,3 +29,149 @@ $OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.1 2011/07/20 13:50:08 sthen Exp $
  
  	if (!P) {
  	    (void) fprintf(stderr, "%s: can't read process table: %s\n",
+@@ -503,19 +508,98 @@ kread(addr, buf, len)
+ 	return((br == len) ? 0 : 1);
+ }
+ 
++/*
++ * Download vmmap_entries from the kernel into our address space.
++ * We fix up the addr tree while downloading.
++ *
++ * Returns: the size of the tree on success, or -1 on failure.
++ * On failure, *rptr needs to be passed to unload_vmmap_entries to free
++ * the lot.
++ */
++ssize_t
++load_vmmap_entries(KA_T kptr, struct vm_map_entry **rptr,
++    struct vm_map_entry *parent)
++{
++	struct vm_map_entry *entry;
++	KA_T left_kptr, right_kptr;
++	ssize_t left_sz;
++	ssize_t right_sz;
+ 
++	if (kptr == 0)
++		return 0;
++
++	/* Need space. */
++	entry = malloc(sizeof(*entry));
++	if (entry == NULL)
++		return -1;
++
++	/* Download entry at kptr. */
++	if (!kread(kptr, (char *)entry, sizeof(*entry))) {
++		free(entry);
++		return -1;
++	}
++
++	/*
++	 * Update addr pointers to have sane values in this address space.
++	 * We save the kernel pointers in {left,right}_kptr, so we have them
++	 * available to download children.
++	 */
++	left_kptr = (KA_T) RB_LEFT(entry, daddrs.addr_entry);
++	right_kptr = (KA_T) RB_RIGHT(entry, daddrs.addr_entry);
++	RB_LEFT(entry, daddrs.addr_entry) =
++	    RB_RIGHT(entry, daddrs.addr_entry) = NULL;
++	/* Fill in parent pointer. */
++	RB_PARENT(entry, daddrs.addr_entry) = parent;
++
++	/*
++	 * Consistent state reached, fill in *rptr.
++	 */
++	*rptr = entry;
++
++	/*
++	 * Download left, right.
++	 * On failure, our map is in a state that can be handled by
++	 * unload_vmmap_entries.
++	 */
++	left_sz = load_vmmap_entries(left_kptr,
++	    &RB_LEFT(entry, daddrs.addr_entry), entry);
++	if (left_sz == -1)
++		return -1;
++	right_sz = load_vmmap_entries(right_kptr,
++	    &RB_RIGHT(entry, daddrs.addr_entry), entry);
++	if (right_sz == -1)
++		return -1;
++
++	return 1 + left_sz + right_sz;
++}
++
+ /*
++ * Free the vmmap entries in the given tree.
++ */
++void
++unload_vmmap_entries(struct vm_map_entry *entry)
++{
++	if (entry == NULL)
++		return;
++
++	unload_vmmap_entries(RB_LEFT(entry, daddrs.addr_entry));
++	unload_vmmap_entries(RB_RIGHT(entry, daddrs.addr_entry));
++	free(entry);
++}
++
++/*
+  * process_text() - process text information
+  */
+ void
+ process_text(vm)
+ 	KA_T vm;				/* kernel vm space pointer */
+ {
+-	int i, j;
++	int j;
+ 	KA_T ka;
+ 	int n = 0;
+ 	struct vm_map_entry vmme, *e;
+ 	struct vmspace vmsp;
++	struct uvm_map_addr root;
+ 
+ #if	!defined(UVM)
+ 	struct pager_struct pg;
+@@ -536,20 +620,12 @@ process_text(vm)
+ 	    return;
+ #endif	/* !defined(UVM) */
+ 
+-	for (i = 0; i < vmsp.vm_map.nentries; i++) {
++	RB_INIT(&root);
++	if (load_vmmap_entries((KA_T) RB_ROOT(&vmsp.vm_map.addr),
++	    &RB_ROOT(&root), NULL) == -1)
++		goto do_unload;
+ 
+-	/*
+-	 * Read the next vm_map_entry.
+-	 */
+-	    if (!i)
+-		e = &vmsp.vm_map.header;
+-	    else {
+-		if (!(ka = (KA_T)e->next))
+-		    return;
+-		e = &vmme;
+-		if (kread(ka, (char *)e, sizeof(vmme)))
+-		    return;
+-	    }
++	RB_FOREACH(e, uvm_map_addr, &root) {
+ 
+ #if	defined(UVM)
+ 	/*
+@@ -581,4 +657,19 @@ process_text(vm)
+ #endif	/* defined(UVM) */
+ 
+ 	}
++
++do_unload:
++	unload_vmmap_entries(RB_ROOT(&root));
+ }
++
++/*
++ * Don't implement address comparison.
++ */
++static __inline int
++no_impl(void *p, void *q)
++{
++	abort(); /* Should not be called. */
++	return 0;
++}
++
++RB_GENERATE(uvm_map_addr, vm_map_entry, daddrs.addr_entry, no_impl);

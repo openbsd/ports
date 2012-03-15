@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2012/03/15 21:36:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.86 2012/03/15 21:39:53 sthen Exp $
 
 COMMENT=	list information about open files
 
 VERSION=	4.83
 DISTNAME=	lsof_${VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mirrorservice.org/sites/vic.cc.purdue.edu/pub/tools/unix/lsof/OLD/ \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/ \
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c kvm
+WANTLIB=		c kvm>=13
 
 MAKE_FLAGS=	DEBUG="${CFLAGS}"
 

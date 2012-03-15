@@ -1,6 +1,6 @@
-$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.3 2008/02/23 23:45:23 sturm Exp $
---- dialects/n+obsd/dlsof.h.orig	Fri Feb 22 22:18:35 2008
-+++ dialects/n+obsd/dlsof.h	Fri Feb 22 22:19:24 2008
+$OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.4 2012/03/15 21:39:53 sthen Exp $
+--- dialects/n+obsd/dlsof.h.orig	Tue Mar 28 23:54:15 2006
++++ dialects/n+obsd/dlsof.h	Wed Mar 14 10:04:34 2012
 @@ -150,6 +150,7 @@ struct uio;	/* dummy for function prototype in <sys/bu
  struct nameidata;	/* to satisfy a function prototype in msdosfsmount.h */
  #include <msdosfs/msdosfsmount.h>
@@ -9,3 +9,13 @@ $OpenBSD: patch-dialects_n+obsd_dlsof_h,v 1.3 2008/02/23 23:45:23 sturm Exp $
  #include <msdosfs/direntry.h>
  #include <msdosfs/denode.h>
  # endif	/* defined(HASMSDOSFS) */
+@@ -416,8 +417,7 @@ struct vop_advlock_args;
+ 
+ # if	defined(UVM)
+ #  if	defined(OPENBSDV)
+-#define	_UVM_UVM_FAULT_I_H_	1		/* avoid OpenBSD's
+-						/* <uvm/uvm_fault_i.h */
++#define	_UVM_UVM_FAULT_I_H_	1	/* avoid OpenBSD's <uvm/uvm_fault_i.h */
+ #  endif	/* defined(OPENBSDV) */
+ #define	FALSE	0
+ #define	TRUE	1
