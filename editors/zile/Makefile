@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/03/14 15:10:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/15 21:52:20 naddy Exp $
 
 COMMENT=		lightweight Emacs clone
 DISTNAME=		zile-2.4.6
@@ -22,6 +22,5 @@ LIB_DEPENDS=		devel/boehm-gc
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--with-gc=boehm
 
 .include <bsd.port.mk>
