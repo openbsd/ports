@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/15 13:39:22 ajacoutot Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	security x11
 
 HOMEPAGE=	http://gnomint.sourceforge.net/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

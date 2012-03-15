@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/23 11:05:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/15 13:38:33 ajacoutot Exp $
 
 COMMENT=	morphing engine
 
 DISTNAME=	animorph-0.3
 CATEGORIES=	graphics
+REVISION=	0
 
 SHARED_LIBS +=  animorph             1.0      # unknown
 
 HOMEPAGE=	http://www.dedalo-3d.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes

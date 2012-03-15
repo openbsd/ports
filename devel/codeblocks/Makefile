@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/03 19:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/15 13:38:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	3
+REVISION=	4
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -22,8 +22,6 @@ SHARED_LIBS +=  wxcustombutton       0.0      # .0.1
 CATEGORIES=	devel x11
 
 HOMEPAGE=	http://www.codeblocks.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

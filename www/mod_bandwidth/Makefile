@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/15 13:38:33 ajacoutot Exp $
 
 COMMENT=	bandwidth limiter for Apache
 
 V=		2.1
-REVISION=	4
+REVISION=	5
 DISTFILES=	mod_bandwidth.c cleanlink.pl:0
 DISTNAME=	mod_bandwidth-${V}
 CATEGORIES=     www
@@ -13,8 +13,6 @@ MASTER_SITES0=	ftp://ftp.cohprog.com/pub/apache/module/ \
 		http://distfiles.bsdfrog.org/mod_bandwidth/
 
 HOMEPAGE=	http://www.cohprog.com/mod_bandwidth.html
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 MODULES+=	apache-module
 

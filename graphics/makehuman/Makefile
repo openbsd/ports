@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/23 11:06:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/15 13:38:33 ajacoutot Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
 DISTNAME=	makehuman-0.9.1-rc1a
 PKGNAME=	makehuman-0.9.1rc1
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	http://www.dedalo-3d.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 / MIT
 PERMIT_PACKAGE_CDROM=	Yes

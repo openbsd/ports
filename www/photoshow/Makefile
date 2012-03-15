@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/24 09:28:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/15 13:38:33 ajacoutot Exp $
 
 COMMENT=	easy to use web gallery
 
 DISTNAME=	photoshow-0.0.20111228
 CATEGORIES=	www graphics
+REVISION=	0
 
 HOMEPAGE=	http://www.photoshow-gallery.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

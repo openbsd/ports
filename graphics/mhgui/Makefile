@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2011/10/23 11:06:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/15 13:38:33 ajacoutot Exp $
 
 COMMENT=	GUI widget library used in MakeHuman
 
 DISTNAME=	mhgui-0.2
 CATEGORIES=	graphics
+REVISION=	0
 
 SHARED_LIBS +=  mhgui                1.0      # unknown
 
 HOMEPAGE=	http://www.dedalo-3d.com/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
