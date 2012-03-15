@@ -1,7 +1,7 @@
-$OpenBSD: patch-pidgin_gtkdialogs_c,v 1.24 2011/08/22 07:35:34 jasper Exp $
---- pidgin/gtkdialogs.c.orig	Thu Aug 18 04:51:04 2011
-+++ pidgin/gtkdialogs.c	Sun Aug 21 02:16:05 2011
-@@ -617,6 +617,12 @@ g_string_append(str, "<br/>  <b>Library Support</b><br
+$OpenBSD: patch-pidgin_gtkdialogs_c,v 1.25 2012/03/15 21:45:07 sthen Exp $
+--- pidgin/gtkdialogs.c.orig	Wed Mar 14 01:28:02 2012
++++ pidgin/gtkdialogs.c	Wed Mar 14 23:51:26 2012
+@@ -618,6 +618,12 @@ g_string_append(str, "<br/>  <b>Library Support</b><br
  	g_string_append(str, "    <b>GtkSpell:</b> Disabled<br/>");
  #endif
  
