@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/03/15 09:50:23 landry Exp $
+$OpenBSD: README,v 1.2 2012/03/15 11:28:19 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -29,7 +29,7 @@ It is advised to run the update daemon through the provided
 tt_rss_update rc.d script or you can choose to run the update process
 as www user from a cronjob:
 
-*/5 * * * * www ${INSTDIR}/update.php -feeds
+*/5	*	*	*	*	sudo -u www ${INSTDIR}/update.php -feeds
 
 Finally you can ensure you have a working install by accessing:
-http://<localhost>/tt-rss/
+http://<hostname>/tt-rss/
