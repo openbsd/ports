@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.137 2012/03/13 23:17:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2012/03/15 22:20:50 sthen Exp $
+
+#CONFIGURE_ARGS+=	--without-kqueue
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.8.10.0
+VER=			1.8.10.1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -74,7 +76,7 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool,-ltdl # bogus dependencies in menuselect
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
-LDFLAGS+= 		-L${X11BASE}/lib -L${LOCALBASE}/lib
+LDFLAGS+=		-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
