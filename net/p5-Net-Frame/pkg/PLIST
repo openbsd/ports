@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/15 10:43:54 jasper Exp $
-${P5SITE}/Net/
+@comment $OpenBSD: PLIST,v 1.2 2012/03/15 17:38:19 gsoares Exp $
 ${P5SITE}/Net/Frame/
 ${P5SITE}/Net/Frame.pm
 ${P5SITE}/Net/Frame/Layer/

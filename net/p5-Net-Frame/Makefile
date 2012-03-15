@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/19 09:18:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/15 17:38:19 gsoares Exp $
 
 COMMENT=	base framework for frame crafting
 
 MODULES=	cpan
-DISTNAME=	Net-Frame-1.07
+DISTNAME=	Net-Frame-1.09
 CATEGORIES=	net
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
