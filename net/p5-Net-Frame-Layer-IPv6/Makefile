@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/19 18:01:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/15 17:52:21 gsoares Exp $
 
 COMMENT=	Internet Protocol v6 layer object
 
 MODULES=	cpan
-DISTNAME=	Net-Frame-Layer-IPv6-1.03
+DISTNAME=	Net-Frame-Layer-IPv6-1.04
 CATEGORIES=	net
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
