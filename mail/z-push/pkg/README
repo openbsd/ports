@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2012/03/15 13:35:53 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Z-push is installed under
+    ${INSTDIR}
+
+You should point the followings to the DocumentRoot of your web-server:
+    # ln -s ../z-push /var/www/htdocs/z-push
+(make sure you use a relative symlink since Apache is chrooted)
+
+Some non defaults PHP settings are required on the ${INSTDIR}
+directory. For Apache ou can configure this as follows:
+    # ln -s ${PREFIX}/conf/modules.sample/z-push.conf \
+        /var/www/conf/modules
+
+Proceed to complete the configuration by reading:
+    ${INSTDIR}/INSTALL

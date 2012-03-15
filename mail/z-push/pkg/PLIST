@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:50:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/15 13:35:53 ajacoutot Exp $
 z-push/
 z-push/INSTALL
 z-push/LICENSE
@@ -45,3 +45,5 @@ z-push/z-push.conf.dist
 @sample /var/www/conf/modules.sample/z-push.conf
 z-push/zpushdefs.php
 z-push/zpushdtd.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
