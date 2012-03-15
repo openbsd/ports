@@ -19,6 +19,7 @@ MD5 (openbsd_songs/song47.mp3) = brQc+VikCCwtff30Of0TIA==
 MD5 (openbsd_songs/song48.mp3) = aFgRtLOj1EanCp+GHzaVRQ==
 MD5 (openbsd_songs/song49.mp3) = JJe/rYvhS2DbrjPqI/9sNw==
 MD5 (openbsd_songs/song50.mp3) = 7wNDqrjuzyplHQfUm6RNag==
+MD5 (openbsd_songs/song51.mp3) = euiHtMirVsILdmDFeDWRPQ==
 RMD160 (openbsd_songs/song30.mp3) = kGFpce2ALluLTXodJuTawSacW7Y=
 RMD160 (openbsd_songs/song31.mp3) = SL6SNLN7CYrFE/vd1qyHXqu4qmI=
 RMD160 (openbsd_songs/song32.mp3) = jQvmZUvtyKxqKq/DrIAlxAq1keo=
@@ -40,6 +41,7 @@ RMD160 (openbsd_songs/song47.mp3) = WBRy3/iQxIBSQtupPf4dz0xjvoQ=
 RMD160 (openbsd_songs/song48.mp3) = pXZ0405goym5ztmQiC/YwLOXbVg=
 RMD160 (openbsd_songs/song49.mp3) = ixIXXjvcLLGZngsWqKHyBunMJ8k=
 RMD160 (openbsd_songs/song50.mp3) = qVc6MwksLtSz8CTA44NYJaXIeqI=
+RMD160 (openbsd_songs/song51.mp3) = KRwTC2IyNh74FVFMVLJk01+ZpiI=
 SHA1 (openbsd_songs/song30.mp3) = iCRuDHu+DI2H8MLdgdU0YV1/uFY=
 SHA1 (openbsd_songs/song31.mp3) = dGBhE4bWoAqUvSXRqFqttgB1QrA=
 SHA1 (openbsd_songs/song32.mp3) = Xjg7SNMU7dfIpE30UQmQBe7nWtU=
@@ -61,6 +63,7 @@ SHA1 (openbsd_songs/song47.mp3) = qA2UVDUGs3ca2wtUZK4dOADDMag=
 SHA1 (openbsd_songs/song48.mp3) = tLJolgi/I/6s5ZownAz7Aes0B7U=
 SHA1 (openbsd_songs/song49.mp3) = xfn4zMKwz6Qx8lmVjVxBctyh9Wg=
 SHA1 (openbsd_songs/song50.mp3) = C5/GG6wSWrhFZohTmOUYp6yXAQc=
+SHA1 (openbsd_songs/song51.mp3) = dQyEgjC+6ZwhQefye1dfJeiDaVU=
 SHA256 (openbsd_songs/song30.mp3) = Idf83yQsol5qEJdundWUD1EDhejIcBiM6+u3j4Uhpk8=
 SHA256 (openbsd_songs/song31.mp3) = KEqR4Tg2waqaPwYvhCEt6LY+IKP3EDG0RQMLLNmwgxo=
 SHA256 (openbsd_songs/song32.mp3) = GFXtE1JSWvAjMDOHWycTLzCfnvWOfSiBzZ0JvJIWM84=
@@ -82,6 +85,7 @@ SHA256 (openbsd_songs/song47.mp3) = hjDEJzafUxPMTSzQt+Mw4UJOSLOX5Yy45+IfK46IzI0=
 SHA256 (openbsd_songs/song48.mp3) = XXCcvMgG6Y9eJ4wU4qdpDA/c0WnT55eESulObd4nMNk=
 SHA256 (openbsd_songs/song49.mp3) = hsGGm3U0bJPtlVh7aUTcv7j1YCbH/Ct+go2Adg0+r/Q=
 SHA256 (openbsd_songs/song50.mp3) = uho2UEI4zYfqrNjn3YQ+lDCtYJ2mXilMmjFXH7l4IiQ=
+SHA256 (openbsd_songs/song51.mp3) = URlfRvnfMCZydJcJLqoLTfMGEuPvsR89Sy+G+klb9vs=
 SIZE (openbsd_songs/song30.mp3) = 2898547
 SIZE (openbsd_songs/song31.mp3) = 2912757
 SIZE (openbsd_songs/song32.mp3) = 2589676
@@ -103,3 +107,4 @@ SIZE (openbsd_songs/song47.mp3) = 8925935
 SIZE (openbsd_songs/song48.mp3) = 4590990
 SIZE (openbsd_songs/song49.mp3) = 7125367
 SIZE (openbsd_songs/song50.mp3) = 5834709
+SIZE (openbsd_songs/song51.mp3) = 5318111
