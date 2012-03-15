@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/02/27 15:44:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/15 13:55:45 sthen Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		1.4.6
+V =		1.4.7
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
@@ -78,10 +78,10 @@ pre-configure:
 	    -e 's,/usr/local/libexec/munin,${TRUEPREFIX}/libexec/munin,g;' \
 	    -e 's,/usr/local,${LOCALBASE},g;' \
 	    -e 's,/usr/share/munin/node/plugins-auto,${TRUEPREFIX}/libexec/munin/plugins,g;' \
-	    ${WRKSRC}/plugins/node.d/* ${WRKSRC}/plugins/node.d.openbsd/*; \
-	${MODRUBY_RUBY_ADJ} plugins/node.d/tomcat_.in
+	    ${WRKSRC}/plugins/node.d/* ${WRKSRC}/plugins/node.d.openbsd/*
 
 post-install:
+	${MODRUBY_RUBY_ADJ} ${PREFIX}/libexec/munin/plugins/tomcat_
 	${INSTALL_DATA} ${FILESDIR}/openbsd-packages \
 	    ${PREFIX}/share/examples/munin/plugin-conf.d
 # Remove some plugins which require logtail
