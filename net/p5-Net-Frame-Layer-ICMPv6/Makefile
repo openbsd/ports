@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/19 18:02:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/15 17:47:56 gsoares Exp $
 
 COMMENT=	ICMP v6 layer object
 
 MODULES=	cpan
-DISTNAME=	Net-Frame-Layer-ICMPv6-1.05
+DISTNAME=	Net-Frame-Layer-ICMPv6-1.06
 CATEGORIES=	net
 
-MAINTAINER=	Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
