@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.116 2012/02/27 19:01:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2012/03/15 17:04:31 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,6 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	0
-REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -52,7 +49,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime>=0.9.2v0 \
+		mail/zarafa/libvmime>=0.9.2p0v0 \
 		textproc/libical \
 		textproc/icu4c \
 		devel/boost
@@ -198,12 +195,14 @@ post-install:
 	rmdir ${PREFIX}/share/doc/{zarafa/example-config,zarafa-gateway}
 	rm -rf ${PREFIX}/share/examples/{cron.daily,init.d,logrotate.d,sysconfig,zarafa/zarafa-gateway,zarafa/license}
 
-	# part of zarafa-licensed (i.e. commercial edition, linux bin only)
+	# part of zarafa-licensed, Zarafa Enterprise / Hosted editions
+	# (i.e. commercial edition, linux bin only)
 	cd ${PREFIX} && rm \
 		man/man1/zarafa-licensed.1 \
 		man/man5/zarafa-licensed.cfg.5 \
 		man/man1/zarafa-restore.1 \
 		man/man1/zarafa-backup.1 \
+		man/man1/zarafa-msr-verify.1 \
 		man/man1/zarafa-report.1 \
 		man/man1/za-aclsync.1 \
 		man/man1/zarafa-msr.1 \

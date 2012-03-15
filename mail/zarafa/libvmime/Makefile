@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/02/16 22:18:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/15 17:04:31 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
@@ -6,6 +6,8 @@ VMIME_V=	0.9.2
 DISTNAME=	libvmime-${VMIME_V}+svn603
 PKGNAME=	zarafa-libvmime-${VMIME_V}
 EPOCH=		0
+
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -15,6 +17,7 @@ PATCH_DIST_STRIP= -p1
 
 PATCHFILES= \
 	vmime-0.9.2-header-value-on-next-line.diff:0 \
+	vmime-0.9.2-qp-in-buffers.diff:0 \
 	vmime-mixed-qp-in-parameter.diff:0
 
 MASTER_SITES0=	${MASTER_SITES_ZARAFA:=/vmime-patches/}

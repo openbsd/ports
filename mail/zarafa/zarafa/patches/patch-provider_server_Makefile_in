@@ -1,12 +1,12 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.12 2012/02/16 22:18:36 ajacoutot Exp $
+$OpenBSD: patch-provider_server_Makefile_in,v 1.13 2012/03/15 17:04:31 ajacoutot Exp $
 
 XXX see USE_LIBTOOL=gnu in the port Makefile
 ../../common/.libs/libcommon_mapi.so.X.X:
 undefined reference to `MAPILogonEx' (and more)
 
---- provider/server/Makefile.in.orig	Wed Feb  1 15:48:59 2012
-+++ provider/server/Makefile.in	Thu Feb  2 12:28:17 2012
-@@ -295,12 +295,13 @@ zarafa_server_LDADD = \
+--- provider/server/Makefile.in.orig	Tue Mar 13 11:28:14 2012
++++ provider/server/Makefile.in	Thu Mar 15 16:42:28 2012
+@@ -294,12 +294,13 @@ zarafa_server_LDADD = \
  	${top_builddir}/provider/soap/libgsoap.la								\
  	${top_builddir}/provider/soap/libsoapserver.la							\
  	${top_builddir}/provider/common/libzarafacommon.la						\

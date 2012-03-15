@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_zarafa-client-update_cron,v 1.1 2011/12/22 17:10:04 ajacoutot Exp $
---- installer/linux/zarafa-client-update.cron.orig	Thu Dec 22 14:22:30 2011
-+++ installer/linux/zarafa-client-update.cron	Thu Dec 22 14:23:43 2011
-@@ -1,13 +1,13 @@
+$OpenBSD: patch-installer_linux_zarafa-client-update_cron,v 1.2 2012/03/15 17:04:31 ajacoutot Exp $
+--- installer/linux/zarafa-client-update.cron.orig	Tue Mar 13 11:27:19 2012
++++ installer/linux/zarafa-client-update.cron	Thu Mar 15 16:44:17 2012
+@@ -1,16 +1,16 @@
  #!/bin/sh
  
 -CONFIG=/etc/zarafa/server.cfg
@@ -13,12 +13,15 @@ $OpenBSD: patch-installer_linux_zarafa-client-update_cron,v 1.1 2011/12/22 17:10
 -	LOGPATH=/var/lib/zarafa/client
 +	LOGPATH=/var/db/zarafa/client
  fi
+ if ! test -r "${LOGPATH}"; then
+ 	exit 0
+ fi
 -LOGPATH=$(readlink -e ${LOGPATH})
 +LOGPATH=$(readlink -f ${LOGPATH})
  if test -z "${LOGPATH}"; then
  	exit 0
  fi
-@@ -16,5 +16,5 @@ if test -n ${LOGPATH} -a ${PATHDEPTH} -gt 2 -a -d ${LO
+@@ -19,5 +19,5 @@ if test -n ${LOGPATH} -a ${PATHDEPTH} -gt 2 -a -d ${LO
  	# remove all files older than 14 days
  	find ${LOGPATH} -maxdepth 2 -type f -ctime +14 -exec rm {} \;
  	# remove all empty directories

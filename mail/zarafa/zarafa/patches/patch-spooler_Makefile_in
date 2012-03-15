@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_Makefile_in,v 1.13 2012/02/16 22:18:36 ajacoutot Exp $
---- spooler/Makefile.in.orig	Wed Feb  1 15:48:59 2012
-+++ spooler/Makefile.in	Thu Feb  2 12:28:17 2012
-@@ -300,7 +300,7 @@ zarafa_spooler_LDADD = ${top_builddir}/inetmapi/libine
+$OpenBSD: patch-spooler_Makefile_in,v 1.14 2012/03/15 17:04:31 ajacoutot Exp $
+--- spooler/Makefile.in.orig	Tue Mar 13 11:28:14 2012
++++ spooler/Makefile.in	Thu Mar 15 16:42:28 2012
+@@ -299,7 +299,7 @@ zarafa_spooler_LDADD = ${top_builddir}/inetmapi/libine
  	${top_builddir}/common/libcommon_util.la \
  	${top_builddir}/common/libcommon_ssl.la \
  	${top_builddir}/ECtools/zarafa-archiver/libarchiver.la \

@@ -1,10 +1,10 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.15 2012/02/16 22:18:36 ajacoutot Exp $
+$OpenBSD: patch-provider_client_Makefile_in,v 1.16 2012/03/15 17:04:31 ajacoutot Exp $
 
 *** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
 
---- provider/client/Makefile.in.orig	Wed Feb  1 15:48:59 2012
-+++ provider/client/Makefile.in	Thu Feb  2 12:28:17 2012
-@@ -322,7 +322,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX	
+--- provider/client/Makefile.in.orig	Tue Mar 13 11:28:13 2012
++++ provider/client/Makefile.in	Thu Mar 15 16:42:28 2012
+@@ -321,7 +321,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX	
  	-I${top_srcdir}/common						\
  	-I${top_srcdir}/zarafa-libsync
  

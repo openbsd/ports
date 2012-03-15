@@ -1,15 +1,15 @@
-$OpenBSD: patch-libfreebusy_Makefile_in,v 1.12 2012/02/16 22:18:36 ajacoutot Exp $
+$OpenBSD: patch-libfreebusy_Makefile_in,v 1.13 2012/03/15 17:04:31 ajacoutot Exp $
 
 *** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
 
---- libfreebusy/Makefile.in.orig	Wed Feb  1 15:48:58 2012
-+++ libfreebusy/Makefile.in	Thu Feb  2 12:28:17 2012
-@@ -275,7 +275,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX $(BOOST_CPPFLAGS) 
+--- libfreebusy/Makefile.in.orig	Tue Mar 13 11:28:12 2012
++++ libfreebusy/Makefile.in	Thu Mar 15 16:43:32 2012
+@@ -273,7 +273,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX $(BOOST_CPPFLAGS) 
  	-I${top_srcdir}/common
  
  libfreebusy_la_includedir = $(includedir)/libfreebusy
 -libfreebusy_la_LDFLAGS = -static
 +libfreebusy_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
- libfreebusy_la_LIBADD = ${top_builddir}/common/libcommon_util.la
  libfreebusy_la_include_HEADERS = ECEnumFBBlock.h ECFBBlockList.h		\
  	ECFreeBusyData.h ECFreeBusySupport.h ECFreeBusyUpdate.h freebusy.h	\
+ 	freebusyguid.h freebusytags.h freebusyutil.h PublishFreeBusy.h recurrence.h

@@ -1,6 +1,6 @@
-$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.5 2011/11/17 15:14:37 ajacoutot Exp $
---- php-webclient-ajax/config.php.dist.orig	Wed Nov 16 23:00:09 2011
-+++ php-webclient-ajax/config.php.dist	Thu Nov 17 13:59:31 2011
+$OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.6 2012/03/15 17:04:31 ajacoutot Exp $
+--- php-webclient-ajax/config.php.dist.orig	Tue Mar 13 11:24:11 2012
++++ php-webclient-ajax/config.php.dist	Thu Mar 15 16:42:28 2012
 @@ -11,9 +11,9 @@
  	define("CONFIG_CHECK", TRUE);
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-php-webclient-ajax_config_php_dist,v 1.5 2011/11/17 15:14:37 aja
  
  	// Define the relative URL for dialogs, this string is appended with HTTP GET arguments
  	define("DIALOG_URL", "index.php?load=dialog&");
-@@ -140,7 +141,7 @@
+@@ -146,7 +147,7 @@
  
  	// Spellchecker, change here to enable
  	define('FCKEDITOR_SPELLCHECKER_ENABLED', false);
