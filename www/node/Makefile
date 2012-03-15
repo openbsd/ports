@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/03 10:58:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/15 21:23:43 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -9,6 +9,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 COMMENT=	V8 JavaScript for clients and servers
 
 NODE_VERSION=	v0.6.12
+REVISION=	0
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
 
@@ -53,5 +54,10 @@ pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/lib/module.js
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/node/wafadmin
+
 
 .include <bsd.port.mk>
