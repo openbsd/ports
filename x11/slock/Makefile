@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/24 21:15:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/15 13:12:43 gsoares Exp $
 
 COMMENT=		simple X screen locker
 
-DISTNAME=		slock-0.9
+DISTNAME=		slock-1.0
 
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tools.suckless.org/slock
 
-MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
+MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
