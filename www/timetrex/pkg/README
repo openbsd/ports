@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/10/16 15:07:20 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2012/03/15 12:48:05 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -35,7 +35,7 @@ Installation
 
     $ ${LOCALBASE}/bin/mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 
-* Configuring your /var/www/conf/php.ini for TimeTrex:
+* Configuring ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini for TimeTrex:
   - memory_limit needs to be set to at least 512M
 
 * Configuring maintenance jobs
@@ -44,12 +44,12 @@ Installation
   jobs running TimeTrex will fail to operate correctly.
   Add the following line to root's crontab:
 
-    * * * * * sudo -u www ${LOCALBASE}/bin/php ${TRUEPREFIX}/timetrex/maint/cron.php > /dev/null 2>&1
+    * * * * * sudo -u www ${MODPHP_BIN} ${TRUEPREFIX}/timetrex/maint/cron.php > /dev/null 2>&1
 
   If the php binary cannot access the default MySQL socket using the
   same path that the PHP module uses (because the module run in a
   chrooted installation), as root:
-      # cp /var/www/conf/php.ini /var/www/conf/php-cli.ini
+      # cp ${SYSCONFDIR}/php-${MODPHP_VERSION}.ini ${SYSCONFDIR}/php-cli-${MODPHP_VERSION}.ini
   then edit the mysql.default_socket path in /var/www/conf/php-cli.ini
 
 * Finishing the installation.
