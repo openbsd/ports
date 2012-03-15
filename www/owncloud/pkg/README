@@ -1,0 +1,52 @@
+$OpenBSD: README,v 1.1.1.1 2012/03/15 16:50:45 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+ownCloud is installed under
+    ${INSTDIR}
+
+Post-installation instructions
+==============================
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
+    # ln -s ${PREFIX}/conf/modules.sample/owncloud.conf \
+        ${PREFIX}/conf/modules
+
+"allow_url_fopen" needs to be enabled in PHP using _one_ of the
+following methods:
+    1. ${SYSCONFDIR}/etc/php-{MODPHP_VERSION}.ini
+    allow_url_fopen = On
+    2. /var/www/conf/httpd.conf (main server or VirtualHost)
+    php_admin_value allow_url_fopen 1
+
+The maximum upload size for files can be modified in
+    ${INSTDIR}/.htaccess
+
+Database Configuration
+----------------------
+When using SQLite, not further configuration is required. However, with
+MySQL or PostgreSQL, the ${INSTADIR}/config/config.php file will need to
+be configured accordingly and the corresponding php database access
+extension installed (i.e. "php-mysql" or "php-pgsql").
+
+LDAP User Backend
+-----------------
+If the LDAP user backend is enabled, the "php-ldap" package will need to
+be installed.
+
+Finishing and validating the installation
+-----------------------------------------
+Accessing http://<hostname>/owncloud with a Web browser will finish the
+installation and create a new admin user.
+
+WebDAV access
+-------------
+The personnal WebDAV share can be accessed using the following URL (e.g.
+with Nautilus, Thunar or Doplhin) and the corresponding user and
+password for the share:
+    http://<hostname>/files/webdav.php
+
+NOTE that it is highly recommended to use SSL on the webserver so that
+access is done over https instead of http.
