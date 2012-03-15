@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.549 2012/03/05 18:06:56 landry Exp $
+# $OpenBSD: Makefile,v 1.550 2012/03/15 16:51:16 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -142,6 +142,7 @@
      SUBDIR += node
      SUBDIR += nostromo
      SUBDIR += opera
+     SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DB
