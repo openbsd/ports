@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/02 08:01:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/16 22:05:13 sthen Exp $
 
 COMMENT=	update LDAP entries with a text editor
 
 DISTNAME=	ldapvi-1.7
 CATEGORIES=	editors
 
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	http://www.lichteblau.com/ldapvi.html
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
