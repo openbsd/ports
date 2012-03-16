@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2011/08/16 09:45:45 sthen Exp $
+$OpenBSD: README-main,v 1.5 2012/03/16 12:39:56 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,6 +19,14 @@ You may check your configuration file format before starting Icinga:
 
 This will parse all configuration files and warn about any problems
 which have been identified.
+
+Upgrading from a previous version
+=================================
+
+If you are using IDODB, you will need to update the database schema.
+See ${PREFIX-cgi}/icinga-cgi/docs/en/upgrading_idoutils.html or
+http://docs.icinga.org/latest/en/upgrading_idoutils.html for more
+information.
 
 Chroot Considerations
 =====================
