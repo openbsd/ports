@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_media_libsydneyaudio_include_sydney_audio_h,v 1.3 2012/02/20 20:20:00 landry Exp $
+$OpenBSD: patch-mozilla_media_libsydneyaudio_include_sydney_audio_h,v 1.4 2012/03/16 21:38:33 landry Exp $
 --- mozilla/media/libsydneyaudio/include/sydney_audio.h.orig	Wed Jan 18 10:43:27 2012
 +++ mozilla/media/libsydneyaudio/include/sydney_audio.h	Sun Jan 22 22:20:44 2012
 @@ -48,7 +48,7 @@ async-signal safe.

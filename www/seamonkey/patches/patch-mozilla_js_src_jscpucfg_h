@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_js_src_jscpucfg_h,v 1.1 2012/02/20 20:20:00 landry Exp $
---- mozilla/js/src/jscpucfg.h.orig	Wed Jan 18 10:41:17 2012
-+++ mozilla/js/src/jscpucfg.h	Mon Jan 23 07:58:09 2012
+$OpenBSD: patch-mozilla_js_src_jscpucfg_h,v 1.2 2012/03/16 21:38:33 landry Exp $
+--- mozilla/js/src/jscpucfg.h.orig	Fri Mar  9 21:28:59 2012
++++ mozilla/js/src/jscpucfg.h	Sat Mar 10 13:20:27 2012
 @@ -92,6 +92,23 @@
- #error "endian.h does not define __BYTE_ORDER. Cannot determine endianness."
- #endif
+ #  error "endian.h does not define __BYTE_ORDER. Cannot determine endianness."
+ # endif
  
 +/* BSDs */
 +#elif defined(JS_HAVE_MACHINE_ENDIAN_H)
@@ -23,5 +23,5 @@ $OpenBSD: patch-mozilla_js_src_jscpucfg_h,v 1.1 2012/02/20 20:20:00 landry Exp $
 +# endif
 +
  #elif defined(JS_HAVE_SYS_ISA_DEFS_H)
- #include <sys/isa_defs.h>
+ # include <sys/isa_defs.h>
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_extensions_auth_nsAuthGSSAPI_cpp,v 1.3 2012/02/20 20:20:00 landry Exp $
+$OpenBSD: patch-mozilla_extensions_auth_nsAuthGSSAPI_cpp,v 1.4 2012/03/16 21:38:33 landry Exp $
 --- mozilla/extensions/auth/nsAuthGSSAPI.cpp.orig	Wed Jan 18 10:41:10 2012
 +++ mozilla/extensions/auth/nsAuthGSSAPI.cpp	Sun Jan 22 22:18:18 2012
 @@ -163,9 +163,8 @@ gssInit()
