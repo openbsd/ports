@@ -1,10 +1,10 @@
-$OpenBSD: patch-js_src_configure_in,v 1.10 2012/02/20 20:15:04 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.11 2012/03/16 21:31:24 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648721
 https://bugzilla.mozilla.org/show_bug.cgi?id=589754
 chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
---- js/src/configure.in.orig	Sun Jan 29 11:24:33 2012
-+++ js/src/configure.in	Tue Jan 31 08:22:16 2012
-@@ -2457,7 +2457,12 @@ ia64*-hpux*)
+--- js/src/configure.in.orig	Thu Feb  2 00:39:07 2012
++++ js/src/configure.in	Tue Feb 14 18:47:32 2012
+@@ -2559,7 +2559,12 @@ ia64*-hpux*)
      ;;
  
  *-openbsd*)
@@ -18,18 +18,18 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2731,7 +2736,7 @@ arm*-*)
+@@ -2830,7 +2835,7 @@ arm*-*)
      AC_DEFINE(JS_CPU_ARM)
      AC_DEFINE(JS_NUNBOX32)
      ;;
 -sparc*-*)
 +sparc-*)
-     NANOJIT_ARCH=Sparc
      ENABLE_METHODJIT=1
      ENABLE_MONOIC=1
-@@ -2805,6 +2810,10 @@ arm*-*)
- sparc-*)
-     AC_DEFINE(AVMPLUS_SPARC)
+     ENABLE_POLYIC=1
+@@ -2838,6 +2843,10 @@ sparc*-*)
+     AC_DEFINE(JS_CPU_SPARC)
+     AC_DEFINE(JS_NUNBOX32)
      ;;
 +sparc64-*)
 +    AC_DEFINE(AVMPLUS_SPARC)
@@ -37,9 +37,9 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
 +    ;;
  esac
  
- case "$target" in
-@@ -2932,6 +2941,20 @@ MOZ_SIZE_OF_TYPE(JS_BYTES_PER_DOUBLE, double, 6 8 10 1
- AC_CHECK_HEADERS(endian.h)
+ MOZ_ARG_DISABLE_BOOL(methodjit,
+@@ -2947,6 +2956,20 @@ MOZ_SIZE_OF_TYPE(JS_BYTES_PER_DOUBLE, double, 6 8 10 1
+ MOZ_CHECK_HEADERS(endian.h)
  if test "$ac_cv_header_endian_h" = yes; then
      AC_DEFINE(JS_HAVE_ENDIAN_H)
 +fi
@@ -58,4 +58,4 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
 +    AC_MSG_RESULT(no)
  fi
  
- AC_CHECK_HEADERS(sys/isa_defs.h)
+ MOZ_CHECK_HEADERS(sys/isa_defs.h)

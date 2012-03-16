@@ -1,9 +1,9 @@
-$OpenBSD: patch-js_src_Makefile_in,v 1.7 2012/02/20 20:15:04 landry Exp $
+$OpenBSD: patch-js_src_Makefile_in,v 1.8 2012/03/16 21:31:24 landry Exp $
 https://bug691898.bugzilla.mozilla.org/attachment.cgi?id=588391
 use yarr interpreter on ppc
---- js/src/Makefile.in.orig	Mon Jan 16 17:05:37 2012
-+++ js/src/Makefile.in	Mon Jan 16 17:07:47 2012
-@@ -416,15 +416,20 @@ CPPSRCS += 	checks.cc \
+--- js/src/Makefile.in.orig	Thu Feb  2 00:39:07 2012
++++ js/src/Makefile.in	Tue Feb 14 18:45:46 2012
+@@ -361,15 +361,20 @@ CPPSRCS += 	checks.cc \
  
  ifeq (,$(filter arm% sparc %86 x86_64,$(TARGET_CPU)))
  
@@ -30,14 +30,14 @@ use yarr interpreter on ppc
  		$(NULL)
  else
  
-@@ -1015,10 +1020,10 @@ endif
+@@ -921,10 +926,10 @@ endif
  # Needed to "configure" it correctly.  Unfortunately these
  # flags wind up being applied to all code in js/src, not just
  # the code in js/src/assembler.
 -CXXFLAGS += -DUSE_SYSTEM_MALLOC=1 -DENABLE_ASSEMBLER=1
 +CXXFLAGS += -DUSE_SYSTEM_MALLOC=1
  
- ifneq (,$(ENABLE_YARR_JIT)$(ENABLE_TRACEJIT)$(ENABLE_METHODJIT))
+ ifneq (,$(ENABLE_YARR_JIT)$(ENABLE_METHODJIT))
 -CXXFLAGS +=  -DENABLE_JIT=1
 +CXXFLAGS +=  -DENABLE_JIT=1 -DENABLE_ASSEMBLER=1
  endif

@@ -1,0 +1,16 @@
+$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_h,v 1.1 2012/03/16 21:31:24 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
+xpcshell hang during fake
+--- security/manager/ssl/src/SSLServerCertVerification.h.orig	Mon Mar 12 19:32:51 2012
++++ security/manager/ssl/src/SSLServerCertVerification.h	Mon Mar 12 19:33:31 2012
+@@ -55,6 +55,10 @@ namespace mozilla { namespace psm {
+ SECStatus AuthCertificateHook(void *arg, PRFileDesc *fd, 
+                               PRBool checkSig, PRBool isServer);
+ 
++void InitializeSSLServerCertVerificationThreads();
++void StopSSLServerCertVerificationThreads();
++void ShutdownSSLServerCertVerification();
++
+ SECStatus HandleBadCertificate(PRErrorCode defaultErrorCodeToReport,
+                                nsNSSSocketInfo * socketInfo,
+                                CERTCertificate & cert,

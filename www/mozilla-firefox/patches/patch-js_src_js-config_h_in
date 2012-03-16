@@ -1,9 +1,9 @@
-$OpenBSD: patch-js_src_js-config_h_in,v 1.1 2012/02/20 20:15:04 landry Exp $
+$OpenBSD: patch-js_src_js-config_h_in,v 1.2 2012/03/16 21:31:24 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=714312
 https://hg.mozilla.org/mozilla-central/rev/9cfdb612a026
---- js/src/js-config.h.in.orig	Wed Jan 11 18:14:47 2012
-+++ js/src/js-config.h.in	Sat Jan 14 20:54:06 2012
-@@ -63,6 +63,10 @@
+--- js/src/js-config.h.in.orig	Thu Feb  2 00:39:08 2012
++++ js/src/js-config.h.in	Tue Feb 14 18:42:03 2012
+@@ -59,6 +59,10 @@
     useable.  See jscpucfg.h.  */
  #undef JS_HAVE_ENDIAN_H
  

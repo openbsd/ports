@@ -1,0 +1,61 @@
+$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_cpp,v 1.1 2012/03/16 21:31:24 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
+xpcshell hang during fake
+--- security/manager/ssl/src/SSLServerCertVerification.cpp.orig	Mon Mar 12 19:29:40 2012
++++ security/manager/ssl/src/SSLServerCertVerification.cpp	Mon Mar 12 19:32:39 2012
+@@ -145,23 +145,25 @@ extern PRLogModuleInfo* gPIPNSSLog;
+ namespace mozilla { namespace psm {
+ 
+ namespace {
++PRCallOnceType gCreateMutexCallOnce;
+ // do not use a nsCOMPtr to avoid static initializer/destructor
++Mutex * gMutex = nsnull;
+ nsIThreadPool * gCertVerificationThreadPool = nsnull;
++
++PRStatus createMutex()
++{
++  gMutex = new Mutex("SSLServerCertVerification mutex");
++  return PR_SUCCESS;
++}
++
+ } // unnamed namespace
+ 
+-// Called when the socket transport thread starts, to initialize the SSL cert
+-// verification thread pool. By tying the thread pool startup/shutdown directly
+-// to the STS thread's lifetime, we ensure that they are *always* available for
+-// SSL connections and that there are no races during startup and especially
+-// shutdown. (Previously, we have had multiple problems with races in PSM
+-// background threads, and the race-prevention/shutdown logic used there is
+-// brittle. Since this service is critical to things like downloading updates,
+-// we take no chances.) Also, by doing things this way, we avoid the need for
+-// locks, since gCertVerificationThreadPool is only ever accessed on the socket
+-// transport thread.
+ void
+ InitializeSSLServerCertVerificationThreads()
+ {
++  (void) PR_CallOnce(&gCreateMutexCallOnce, createMutex);
++  MutexAutoLock lock(*gMutex);
++
+   // TODO: tuning, make parameters preferences
+   // XXX: instantiate nsThreadPool directly, to make this more bulletproof.
+   // Currently, the nsThreadPool.h header isn't exported for us to do so.
+@@ -189,10 +191,19 @@ InitializeSSLServerCertVerificationThreads()
+ // nsNSSShutdownPreventionLock where needed (not here) to prevent that.
+ void StopSSLServerCertVerificationThreads()
+ {
++  (void) PR_CallOnce(&gCreateMutexCallOnce, createMutex);
++  MutexAutoLock lock(*gMutex);
++
+   if (gCertVerificationThreadPool) {
+     gCertVerificationThreadPool->Shutdown();
+     NS_RELEASE(gCertVerificationThreadPool);
+   }
++}
++
++void ShutdownSSLServerCertVerification()
++{
++  delete gMutex;
++  gMutex = nsnull;
+ }
+ 
+ namespace {

@@ -1,0 +1,33 @@
+$OpenBSD: patch-js_src_jscntxt_h,v 1.1 2012/03/16 21:31:24 landry Exp $
+https://bug691898.bugzilla.mozilla.org/attachment.cgi?id=588391
+use yarr interpreter on ppc
+--- js/src/jscntxt.h.orig	Sun Mar 11 20:41:42 2012
++++ js/src/jscntxt.h	Sun Mar 11 20:42:47 2012
+@@ -153,21 +153,27 @@ struct ThreadData {
+      * Both of these allocators are used for regular expression code which is shared at the
+      * thread-data level.
+      */
++#if ENABLE_ASSEMBLER
+     JSC::ExecutableAllocator    *execAlloc;
++#endif
+     WTF::BumpPointerAllocator   *bumpAlloc;
+     js::RegExpPrivateCache      *repCache;
+ 
++#if ENABLE_ASSEMBLER
+     JSC::ExecutableAllocator *createExecutableAllocator(JSContext *cx);
++#endif
+     WTF::BumpPointerAllocator *createBumpPointerAllocator(JSContext *cx);
+     js::RegExpPrivateCache *createRegExpPrivateCache(JSContext *cx);
+ 
+   public:
++#if ENABLE_ASSEMBLER
+     JSC::ExecutableAllocator *getOrCreateExecutableAllocator(JSContext *cx) {
+         if (execAlloc)
+             return execAlloc;
+ 
+         return createExecutableAllocator(cx);
+     }
++#endif
+ 
+     WTF::BumpPointerAllocator *getOrCreateBumpPointerAllocator(JSContext *cx) {
+         if (bumpAlloc)
