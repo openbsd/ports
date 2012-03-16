@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.21 2011/12/12 10:56:56 sthen Exp $
---- configure.orig	Mon Nov 28 17:22:15 2011
-+++ configure	Mon Nov 28 18:32:45 2011
+$OpenBSD: patch-configure,v 1.22 2012/03/16 11:40:53 fgsch Exp $
+--- configure.orig	Fri Feb 17 14:45:39 2012
++++ configure	Fri Feb 17 16:02:57 2012
 @@ -235,13 +235,11 @@ sdl_config="${SDL_CONFIG-${cross_prefix}sdl-config}"
  
  # default flags for all hosts
@@ -15,15 +15,6 @@ $OpenBSD: patch-configure,v 1.21 2011/12/12 10:56:56 sthen Exp $
  
  # make source path absolute
  source_path=`cd "$source_path"; pwd`
-@@ -1116,7 +1114,7 @@ fi
- 
- if test "$pie" = ""; then
-   case "$cpu-$targetos" in
--    i386-Linux|x86_64-Linux)
-+    i386-Linux|x86_64-Linux|i386-OpenBSD|x86_64-OpenBSD)
-       ;;
-     *)
-       pie="no"
 @@ -2684,8 +2682,9 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs

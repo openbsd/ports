@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2012/01/26 19:19:15 sthen Exp $
+$OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -198,7 +198,7 @@ $OpenBSD: README,v 1.7 2012/01/26 19:19:15 sthen Exp $
    accomplish this, both in effect the same solution:
 
     a. qemu-system-i386 -vnc :0 -serial stdio .. virtual.img \
-         -cdrom install43.iso -boot d
+         -cdrom install51.iso -boot d
 
 	- this option permits you to use VNC from some system to
           connect to the QEMU instance and 'set tty com0' at the
