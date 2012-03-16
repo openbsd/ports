@@ -1,7 +1,7 @@
-$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.2 2002/07/21 01:00:19 naddy Exp $
---- RULES/i386-openbsd-cc.rul.orig	Sun Aug 29 16:09:56 1999
-+++ RULES/i386-openbsd-cc.rul	Sun Jul 21 02:55:50 2002
-@@ -30,7 +30,7 @@ CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) 
+$OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.3 2012/03/16 22:08:45 sthen Exp $
+--- RULES/i386-openbsd-cc.rul.orig	Tue Oct 15 21:43:40 2002
++++ RULES/i386-openbsd-cc.rul	Fri Mar 16 22:08:10 2012
+@@ -30,7 +30,7 @@ CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I
  COPTS=
  CWOPTS=		-Wall -Wtraditional \
  		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
@@ -10,7 +10,7 @@ $OpenBSD: patch-RULES_i386-openbsd-cc_rul,v 1.2 2002/07/21 01:00:19 naddy Exp $
  KDEFINES=	-DKERNEL -D_KERNEL
  COPTDYN=	-fpic
  COPTGPROF=	-pg
-@@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGE
+@@ -57,14 +57,14 @@ LNDYNLIB=	@$(SYMLINK) $(TARGET) $(PTARGET_BASE).so
  
  FLOAT_OPTIONS=	
  
