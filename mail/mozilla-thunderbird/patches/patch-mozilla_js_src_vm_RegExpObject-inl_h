@@ -1,45 +1,45 @@
-$OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.1 2012/02/20 20:17:49 landry Exp $
---- mozilla/js/src/vm/RegExpObject-inl.h.orig	Wed Jan 18 10:43:17 2012
-+++ mozilla/js/src/vm/RegExpObject-inl.h	Mon Jan 23 07:59:07 2012
-@@ -327,6 +327,7 @@ RegExpPrivate::create(JSContext *cx, JSString *source,
-     return RetType(self);
+$OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.2 2012/03/16 21:35:25 landry Exp $
+--- mozilla/js/src/vm/RegExpObject-inl.h.orig	Fri Mar  9 21:29:07 2012
++++ mozilla/js/src/vm/RegExpObject-inl.h	Sat Mar 10 12:26:50 2012
+@@ -367,6 +367,7 @@ detail::RegExpPrivate::create(JSContext *cx, JSLinearS
+     return RetType(priv);
  }
  
 +#if ENABLE_YARR_JIT
  /* This function should be deleted once bad Android platforms phase out. See bug 604774. */
  inline bool
- RegExpPrivateCode::isJITRuntimeEnabled(JSContext *cx)
-@@ -337,12 +338,12 @@ RegExpPrivateCode::isJITRuntimeEnabled(JSContext *cx)
+ detail::RegExpPrivateCode::isJITRuntimeEnabled(JSContext *cx)
+@@ -377,12 +378,12 @@ detail::RegExpPrivateCode::isJITRuntimeEnabled(JSConte
      return true;
  #endif
  }
 +#endif
  
  inline bool
- RegExpPrivateCode::compile(JSContext *cx, JSLinearString &pattern, TokenStream *ts,
-                            uintN *parenCount, RegExpFlag flags)
+ detail::RegExpPrivateCode::compile(JSContext *cx, JSLinearString &pattern, TokenStream *ts,
+                                    uintN *parenCount, RegExpFlag flags)
  {
 -#if ENABLE_YARR_JIT
      /* Parse the pattern. */
      ErrorCode yarrError;
      YarrPattern yarrPattern(pattern, bool(flags & IgnoreCaseFlag), bool(flags & MultilineFlag),
-@@ -359,7 +360,7 @@ RegExpPrivateCode::compile(JSContext *cx, JSLinearStri
+@@ -399,7 +400,7 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
       * case we have to bytecode compile it.
       */
  
 -#ifdef JS_METHODJIT
 +#if ENABLE_YARR_JIT && defined(JS_METHODJIT)
      if (isJITRuntimeEnabled(cx) && !yarrPattern.m_containsBackreferences) {
-         if (!cx->compartment->ensureJaegerCompartmentExists(cx))
-             return false;
-@@ -371,21 +372,11 @@ RegExpPrivateCode::compile(JSContext *cx, JSLinearStri
+         JSC::ExecutableAllocator *execAlloc = cx->threadData()->getOrCreateExecutableAllocator(cx);
+         if (!execAlloc) {
+@@ -420,21 +421,11 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
+         return false;
      }
- #endif
  
 +#if ENABLE_YARR_JIT
      codeBlock.setFallBack(true);
 +#endif
-     byteCode = byteCompile(yarrPattern, cx->compartment->regExpAllocator).get();
+     byteCode = byteCompile(yarrPattern, bumpAlloc).get();
      return true;
 -#else /* !defined(ENABLE_YARR_JIT) */
 -    int error = 0;
@@ -56,7 +56,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.1 2012/02/20 20:17:49 l
  }
  
  inline bool
-@@ -431,18 +422,11 @@ RegExpPrivateCode::execute(JSContext *cx, const jschar
+@@ -476,18 +467,11 @@ detail::RegExpPrivateCode::execute(JSContext *cx, cons
      else
          result = JSC::Yarr::execute(codeBlock, chars, start, length, output);
  #else
@@ -65,14 +65,14 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.1 2012/02/20 20:17:49 l
  #endif
  
      if (result == -1)
-         return Success_NotFound;
+         return RegExpRunStatus_Success_NotFound;
 -
 -#if !ENABLE_YARR_JIT
 -    if (result < 0) {
 -        reportPCREError(cx, result);
--        return Error;
+-        return RegExpRunStatus_Error;
 -    }
 -#endif
  
      JS_ASSERT(result >= 0);
-     return Success;
+     return RegExpRunStatus_Success;

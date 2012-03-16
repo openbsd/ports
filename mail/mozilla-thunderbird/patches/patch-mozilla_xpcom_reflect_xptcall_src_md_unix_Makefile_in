@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.5 2012/01/11 01:19:43 nigel Exp $
---- mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Dec 15 01:23:09 2011
-+++ mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in	Mon Dec 19 22:30:28 2011
-@@ -199,7 +199,7 @@ endif
+$OpenBSD: patch-mozilla_xpcom_reflect_xptcall_src_md_unix_Makefile_in,v 1.6 2012/03/16 21:35:25 landry Exp $
+--- mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Fri Mar  9 21:29:51 2012
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Mar 10 13:20:45 2012
+@@ -197,7 +197,7 @@ endif
  #
  # OpenBSD/ARM
  #

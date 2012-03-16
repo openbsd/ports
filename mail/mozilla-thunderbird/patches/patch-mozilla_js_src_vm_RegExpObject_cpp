@@ -1,15 +1,15 @@
-$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.1 2012/02/20 20:17:49 landry Exp $
---- mozilla/js/src/vm/RegExpObject.cpp.orig	Wed Jan 18 10:43:17 2012
-+++ mozilla/js/src/vm/RegExpObject.cpp	Mon Jan 23 07:59:12 2012
-@@ -251,7 +251,6 @@ Class js::RegExpClass = {
-     NULL                     /* trace */
+$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.2 2012/03/16 21:35:25 landry Exp $
+--- mozilla/js/src/vm/RegExpObject.cpp.orig	Fri Mar  9 21:29:07 2012
++++ mozilla/js/src/vm/RegExpObject.cpp	Sat Mar 10 12:27:05 2012
+@@ -392,7 +392,6 @@ Class js::RegExpClass = {
+     regexp_trace
  };
  
 -#if ENABLE_YARR_JIT
  void
  RegExpPrivateCode::reportYarrError(JSContext *cx, TokenStream *ts, ErrorCode error)
  {
-@@ -282,41 +281,6 @@ RegExpPrivateCode::reportYarrError(JSContext *cx, Toke
+@@ -423,42 +422,6 @@ RegExpPrivateCode::reportYarrError(JSContext *cx, Toke
          JS_NOT_REACHED("Unknown Yarr error code");
      }
  }
@@ -24,9 +24,9 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.1 2012/02/20 20:17:49 lan
 -    return
 -    switch (error) {
 -      case -2: REPORT(JSMSG_REGEXP_TOO_COMPLEX);
--      case 0: JS_NOT_REACHED("Precondition violation: an error must have occurred."); 
+-      case 0: JS_NOT_REACHED("Precondition violation: an error must have occurred.");
 -      case 1: REPORT(JSMSG_TRAILING_SLASH);
--      case 2: REPORT(JSMSG_TRAILING_SLASH); 
+-      case 2: REPORT(JSMSG_TRAILING_SLASH);
 -      case 3: REPORT(JSMSG_REGEXP_TOO_COMPLEX);
 -      case 4: REPORT(JSMSG_BAD_QUANTIFIER);
 -      case 5: REPORT(JSMSG_BAD_QUANTIFIER);
@@ -47,6 +47,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.1 2012/02/20 20:17:49 lan
 -    }
 -#undef REPORT
 -}
+-
 -#endif /* ENABLE_YARR_JIT */
  
  bool
