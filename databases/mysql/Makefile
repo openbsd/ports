@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2012/01/26 22:08:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.201 2012/03/16 00:47:54 william Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,7 @@ PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
 REVISION-main=	0
+REVISION-server=0
 CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}

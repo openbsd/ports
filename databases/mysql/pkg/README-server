@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.4 2011/06/22 07:28:17 sthen Exp $
+$OpenBSD: README-server,v 1.5 2012/03/16 00:47:54 william Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,7 @@ For example, add this to the login.conf(5) file:
 
 Rebuild the login.conf.db file if necessary:
 
-	# [ -f /etc/login/conf.db ] && cap_mkdb /etc/login.conf
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
 
 mysqld_safe(1) is the recommended way to start a MySQL server,
 it creates the directory for the socket and adds some safety
