@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2012/03/08 13:03:58 nigel Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/16 21:45:08 landry Exp $
 
-MOZILLA_VERSION =	1.9.2.27
+MOZILLA_VERSION =	1.9.2.28
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 MOZILLA_DIST =		firefox
-MOZILLA_DIST_VERSION =	3.6.27
-REVISION-main =		0
-REVISION-devel =	0
+MOZILLA_DIST_VERSION =	3.6.28
 
 SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the
