@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2012/03/17 20:50:14 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2012/03/17 21:25:37 kili Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-docs-<2011
@@ -39,7 +39,7 @@ libdata/perl5/site_perl/TeXLive/TLUtils.pm
 @man man/man1/cweb.1
 @man man/man1/detex.1
 @man man/man1/deweb.1
-@man man/man1/disdvi.1
+@comment man/man1/disdvi.1
 @man man/man1/dt2dv.1
 @man man/man1/dv2dt.1
 @man man/man1/dvi2fax.1

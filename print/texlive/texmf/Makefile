@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/03/17 20:50:14 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2012/03/17 21:25:37 kili Exp $
 
 COMMENT-context =	texlive texmf for conTeXt
 COMMENT-docs =		texlive documentation
@@ -16,9 +16,9 @@ PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 
-REVISION-docs =		1
+REVISION-docs =		2
 REVISION-full =		0
-REVISION-main =		3
+REVISION-main =		4
 REVISION-context =	1
 
 NO_BUILD =		Yes
