@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/17 10:57:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/17 11:00:06 sthen Exp $
 
 COMMENT=	MIME implementation
 
 DISTNAME=	mm2.7
 PKGNAME=	metamail-2.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	mail
 
 MASTER_SITES=	http://www.guppylake.com/~nsb/metamail/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c termcap
 
 WRKSRC=		${WRKDIST}/src
-
+MAKE_FLAGS=	CC="${CC}"
 NO_REGRESS=	Yes
 
 post-configure:

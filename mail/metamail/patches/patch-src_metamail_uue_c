@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_metamail_uue_c,v 1.1 2012/03/17 11:00:06 sthen Exp $
+--- src/metamail/uue.c.orig	Sat Mar 17 10:57:45 2012
++++ src/metamail/uue.c	Sat Mar 17 10:58:17 2012
+@@ -30,7 +30,7 @@ FILE *outfp;
+ }
+ 
+ 
+-getline (buf, size, fp)
++get_line (buf, size, fp)
+ char *buf;
+ int size;
+ FILE *fp;
+@@ -70,7 +70,7 @@ int *ctptr;
+     char buf[63];
+ 
+     while (1) {
+-	if (getline (buf, sizeof buf, infp) < 0) {
++	if (get_line (buf, sizeof buf, infp) < 0) {
+ 	    fprintf (stderr, "Premature EOF!\n");
+ 	    return;
+ 	}
+@@ -82,7 +82,7 @@ int *ctptr;
+ 	}
+     }	
+     while (1) {
+-	if (getline (buf, sizeof buf, infp) < 0) {
++	if (get_line (buf, sizeof buf, infp) < 0) {
+ 	    fprintf (stderr, "Premature EOF!\n");
+ 	    return;
+ 	}
