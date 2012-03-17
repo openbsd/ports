@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_showpartial,v 1.2 2010/07/12 19:03:13 naddy Exp $
---- bin/showpartial.orig	Thu Feb  3 00:21:29 1994
-+++ bin/showpartial	Mon Jul 12 21:01:43 2010
+$OpenBSD: patch-src_bin_showpartial,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/bin/showpartial.orig	Wed Feb  2 23:21:29 1994
++++ src/bin/showpartial	Sat Mar 17 10:51:52 2012
 @@ -2,23 +2,59 @@
  # (The "-fb" might need to be changed to "-f" on some systems)
  #

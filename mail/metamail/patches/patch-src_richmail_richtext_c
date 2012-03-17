@@ -1,6 +1,6 @@
-$OpenBSD: patch-richmail_richtext_c,v 1.1 2010/05/23 16:06:37 espie Exp $
---- richmail/richtext.c.orig	Sun May 23 18:01:25 2010
-+++ richmail/richtext.c	Sun May 23 18:04:30 2010
+$OpenBSD: patch-src_richmail_richtext_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/richmail/richtext.c.orig	Wed Feb  9 16:31:18 1994
++++ src/richmail/richtext.c	Sat Mar 17 10:51:52 2012
 @@ -15,12 +15,13 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  
  #include <stdio.h>

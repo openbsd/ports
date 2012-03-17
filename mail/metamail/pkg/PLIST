@@ -1,26 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/09/27 13:34:39 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/17 10:57:23 sthen Exp $
 bin/audiocompose
 bin/audiosend
 bin/extcompose
 bin/getfilename
 bin/mailserver
-bin/mailto
+@bin bin/mailto
 bin/mailto-hebrew
-bin/metamail
+@bin bin/metamail
 bin/metasend
-bin/mimencode
-bin/mmencode
+@bin bin/mimencode
+@bin bin/mmencode
 bin/patch-metamail
 bin/rcvAppleSingle
-bin/richtext
-bin/richtoatk
+@bin bin/richtext
+@bin bin/richtoatk
 bin/showaudio
 bin/showexternal
 bin/shownonascii
 bin/showpartial
 bin/showpicture
 bin/sndAppleSingle
-bin/splitmail
+@bin bin/splitmail
 bin/sun-audio-file
 bin/sun-message.csh
 bin/sun-to-mime

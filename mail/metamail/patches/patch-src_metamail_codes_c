@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_codes_c,v 1.1 2010/07/12 19:28:14 naddy Exp $
---- metamail/codes.c.orig	Mon Jul 12 21:08:58 2010
-+++ metamail/codes.c	Mon Jul 12 21:09:12 2010
+$OpenBSD: patch-src_metamail_codes_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/metamail/codes.c.orig	Mon Sep 20 14:13:22 1993
++++ src/metamail/codes.c	Sat Mar 17 10:51:52 2012
 @@ -13,6 +13,7 @@ OF THIS MATERIAL FOR ANY PURPOSE.  IT IS PROVIDED "AS 
  WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  */

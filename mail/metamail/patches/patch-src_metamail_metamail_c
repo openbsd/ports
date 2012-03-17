@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_metamail_c,v 1.4 2010/07/12 19:28:14 naddy Exp $
---- metamail/metamail.c.orig	Thu Feb 17 02:57:19 1994
-+++ metamail/metamail.c	Mon Jul 12 21:06:16 2010
+$OpenBSD: patch-src_metamail_metamail_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/metamail/metamail.c.orig	Thu Feb 17 01:57:19 1994
++++ src/metamail/metamail.c	Sat Mar 17 10:51:52 2012
 @@ -20,6 +20,8 @@ WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  
   ******************************************************* */

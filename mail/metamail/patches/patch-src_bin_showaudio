@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_showaudio,v 1.2 2010/07/12 19:03:13 naddy Exp $
---- bin/showaudio.orig	Thu Feb  3 00:21:26 1994
-+++ bin/showaudio	Mon Jul 12 21:01:43 2010
+$OpenBSD: patch-src_bin_showaudio,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/bin/showaudio.orig	Wed Feb  2 23:21:26 1994
++++ src/bin/showaudio	Sat Mar 17 10:51:52 2012
 @@ -15,11 +15,37 @@
  # WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES.
  #

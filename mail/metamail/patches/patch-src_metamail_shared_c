@@ -1,6 +1,6 @@
-$OpenBSD: patch-metamail_shared_c,v 1.1 2010/07/12 19:28:14 naddy Exp $
---- metamail/shared.c.orig	Mon Jul 12 21:09:34 2010
-+++ metamail/shared.c	Mon Jul 12 21:10:23 2010
+$OpenBSD: patch-src_metamail_shared_c,v 1.1 2012/03/17 10:57:23 sthen Exp $
+--- src/metamail/shared.c.orig	Sun May 16 19:19:32 1993
++++ src/metamail/shared.c	Sat Mar 17 10:51:52 2012
 @@ -1,4 +1,6 @@
  #include <stdio.h>
 +#include <stdlib.h>
