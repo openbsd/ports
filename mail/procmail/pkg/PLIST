@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/15 09:09:44 espie Exp $
-bin/formail
-bin/lockfile
+@comment $OpenBSD: PLIST,v 1.7 2012/03/17 10:47:19 sthen Exp $
+@bin bin/formail
+@bin bin/lockfile
 bin/mailstat
-bin/procmail
+@bin bin/procmail
 @man man/man1/formail.1
 @man man/man1/lockfile.1
 @man man/man1/procmail.1

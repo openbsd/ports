@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_formail_c,v 1.1 2012/03/17 10:47:19 sthen Exp $
+--- src/formail.c.orig	Sat Mar 17 10:43:03 2012
++++ src/formail.c	Sat Mar 17 10:43:10 2012
+@@ -819,7 +819,7 @@ splitit:       { if(!lnl)   /* did the previous mail e
+       { if(split)		       /* gobble up the next start separator */
+ 	 { buffilled=0;
+ #ifdef sMAILBOX_SEPARATOR
+-	   getline();buffilled=0;		 /* but only if it's defined */
++	   get_line();buffilled=0;		 /* but only if it's defined */
+ #endif
+ 	   if(buflast!=EOF)					   /* if any */
+ 	      goto splitit;

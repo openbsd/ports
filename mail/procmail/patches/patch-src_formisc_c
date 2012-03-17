@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_formisc_c,v 1.1 2012/03/17 10:47:19 sthen Exp $
+--- src/formisc.c.orig	Sat Mar 17 10:43:03 2012
++++ src/formisc.c	Sat Mar 17 10:43:20 2012
+@@ -115,7 +115,7 @@ void loadchar(c)const int c;		      /* append one char
+   buf[buffilled++]=c;
+ }
+ 
+-int getline P((void))			   /* read a newline-terminated line */
++int get_line P((void))			   /* read a newline-terminated line */
+ { if(buflast==EOF)			 /* at the end of our Latin already? */
+    { loadchar('\n');					  /* fake empty line */
+      return EOF;					  /* spread the word */

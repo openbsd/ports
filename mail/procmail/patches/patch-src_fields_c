@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_fields_c,v 1.1 2012/03/17 10:47:19 sthen Exp $
+--- src/fields.c.orig	Sat Mar 17 10:43:03 2012
++++ src/fields.c	Sat Mar 17 10:43:14 2012
+@@ -110,16 +110,16 @@ void dispfield(p)register const struct field*p;
+ 		    /* try and append one valid field to rdheader from stdin */
+ int readhead P((void))
+ { int idlen;
+-  getline();
++  get_line();
+   if((idlen=breakfield(buf,buffilled))<=0) /* not the start of a valid field */
+      return 0;
+   if(idlen==STRLEN(FROM)&&eqFrom_(buf))			/* it's a From_ line */
+    { if(rdheader)
+ 	return 0;			       /* the From_ line was a fake! */
+-     for(;buflast=='>';getline());	    /* gather continued >From_ lines */
++     for(;buflast=='>';get_line());	    /* gather continued >From_ lines */
+    }
+   else
+-     for(;;getline())		      /* get the rest of the continued field */
++     for(;;get_line())		      /* get the rest of the continued field */
+       { switch(buflast)			     /* will this line be continued? */
+ 	 { case ' ':case '\t':				  /* yep, it sure is */
+ 	      continue;
