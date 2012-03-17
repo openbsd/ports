@@ -1,0 +1,21 @@
+$OpenBSD: patch-SeScript_c,v 1.1 2012/03/17 10:31:48 sthen Exp $
+--- SeScript.c.orig	Sat Mar 17 10:27:07 2012
++++ SeScript.c	Sat Mar 17 10:28:13 2012
+@@ -145,7 +145,7 @@ get_line(script_fp)
+ {
+   int             i;
+ 
+-  getline(script_fp);
++  my_getline(script_fp);
+ 
+   if (eof_flag)
+     return;
+@@ -335,7 +335,7 @@ k_goto(script_fp)
+ 
+   rewind(script_fp);
+   while (!found) {
+-    getline(script_fp);
++    my_getline(script_fp);
+     if (eof_flag)
+       break;
+ 

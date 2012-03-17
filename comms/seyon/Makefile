@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.28 2011/11/04 08:21:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2012/03/17 10:31:48 sthen Exp $
 
 COMMENT=	communication package for X11
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	${DISTNAME:L}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	comms x11
 
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 EXTRACT_SUFX=	-tar.Z
 
-# License: BSD
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,7 +22,7 @@ CONFIGURE_STYLE=imake
 
 WRKDIST=	${WRKDIR}/seyon
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

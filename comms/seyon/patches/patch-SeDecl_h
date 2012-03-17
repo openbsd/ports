@@ -1,7 +1,7 @@
-$OpenBSD: patch-SeDecl_h,v 1.1 2002/02/20 21:46:49 naddy Exp $
---- SeDecl.h.orig	Fri Apr 23 12:09:50 1993
-+++ SeDecl.h	Wed Feb 20 22:31:21 2002
-@@ -23,8 +23,6 @@ extern char    *str_strip_lead_end_space
+$OpenBSD: patch-SeDecl_h,v 1.2 2012/03/17 10:31:48 sthen Exp $
+--- SeDecl.h.orig	Fri Apr 23 11:09:50 1993
++++ SeDecl.h	Sat Mar 17 10:27:59 2012
+@@ -23,8 +23,6 @@ extern char    *str_strip_lead_end_space(),
                 *expand_fname(),
                  itoa(),
                 *mport(),
@@ -14,7 +14,7 @@ $OpenBSD: patch-SeDecl_h,v 1.1 2002/02/20 21:46:49 naddy Exp $
                  dial_number(),
                  redial(),
                  readbyte(),
-+		usleep(),
++                usleep(),
  
                  CloseModem(),
                  OpenModem(),
@@ -37,3 +37,12 @@ $OpenBSD: patch-SeDecl_h,v 1.1 2002/02/20 21:46:49 naddy Exp $
                  show(),
                  showf(),
                  SeyonMessage(),
+@@ -113,7 +113,7 @@ extern void     send_break(),
+                 PortToTty(),
+                 do_exit(),
+                 get_line(),
+-                getline(),
++                my_getline(),
+                 lc_word(),
+                 toggle_flag(),
+                 cpmode(),

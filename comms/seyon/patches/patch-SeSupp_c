@@ -1,0 +1,12 @@
+$OpenBSD: patch-SeSupp_c,v 1.1 2012/03/17 10:31:48 sthen Exp $
+--- SeSupp.c.orig	Sat Mar 17 10:27:07 2012
++++ SeSupp.c	Sat Mar 17 10:28:07 2012
+@@ -198,7 +198,7 @@ lc_word(ptr)
+  */
+ 
+ void
+-getline(fp)
++my_getline(fp)
+      FILE           *fp;
+ {
+   int             l;

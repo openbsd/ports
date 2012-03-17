@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/08/06 16:06:03 espie Exp $
-bin/seyon
+@comment $OpenBSD: PLIST,v 1.5 2012/03/17 10:31:48 sthen Exp $
+@bin bin/seyon
 lib/X11/app-defaults/Seyon
 lib/X11/app-defaults/Seyon-color
 lib/X11/seyon.help
