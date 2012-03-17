@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov  6 23:34:35 1998
-+++ Makefile	Thu Jul 12 23:20:56 2001
+--- Makefile.orig	Fri Nov  6 20:34:35 1998
++++ Makefile	Sat Mar 17 11:33:21 2012
 @@ -1,8 +1,10 @@
 +PREFIX?=/usr/local
 +
@@ -14,7 +14,7 @@
  
  CFLAGS= -I. -I/usr/X11R6/include -O2 -DSOSDIR=\"$(SOSDIR)\"
  XFEDOR=	couchex.o myrast.o dialogue.o popup.o\
-@@ -23,9 +25,10 @@
+@@ -23,9 +25,10 @@ clean:
  	rm -f *.o
  	rm -f xfedor core initfont.bdf
  
