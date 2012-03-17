@@ -1,0 +1,12 @@
+$OpenBSD: patch-icb_ipcf_c,v 1.1 2012/03/17 16:55:47 naddy Exp $
+--- icb/ipcf.c.orig	Sat Mar 17 10:48:41 2012
++++ icb/ipcf.c	Sat Mar 17 10:49:17 2012
+@@ -60,7 +60,7 @@ c_userchar()
+ 	static char *s;	/* user input string */
+ 
+ 	/* user typed one or more characters - gather a line of input */
+-	s=getline(NULL, 1);
++	s=get_line(NULL, 1);
+ 
+ 	if (!s) /* EOF */
+ 	{ 	

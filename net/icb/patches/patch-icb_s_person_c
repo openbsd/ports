@@ -1,0 +1,12 @@
+$OpenBSD: patch-icb_s_person_c,v 1.1 2012/03/17 16:55:47 naddy Exp $
+--- icb/s_person.c.orig	Sat Mar 17 10:48:56 2012
++++ icb/s_person.c	Sat Mar 17 10:49:13 2012
+@@ -106,7 +106,7 @@ int echoflag;
+ 	{
+ 		do
+ 		{
+-			text = getline(">> ",0);
++			text = get_line(">> ",0);
+ 
+ 			if (!text || (!*text && !last_command_was_kill))
+ 			{

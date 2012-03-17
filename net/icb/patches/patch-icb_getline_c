@@ -1,0 +1,12 @@
+$OpenBSD: patch-icb_getline_c,v 1.1 2012/03/17 16:55:47 naddy Exp $
+--- icb/getline.c.orig	Sat Mar 17 10:48:27 2012
++++ icb/getline.c	Sat Mar 17 10:49:20 2012
+@@ -11,7 +11,7 @@ static char *line_read = (char *)NULL;
+ 
+ extern void echo();
+ 
+-char *getline(prompt, expand)
++char *get_line(prompt, expand)
+ char *prompt;
+ int expand;
+ {
