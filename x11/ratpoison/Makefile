@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/17 14:20:58 fgsch Exp $
 
 COMMENT=	minimal wm based on GNU screen
 
 DISTNAME=	ratpoison-1.4.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 HOMEPAGE=	http://www.nongnu.org/ratpoison/
@@ -23,7 +23,9 @@ MASTER_SITES=		${MASTER_SITE_SAVANNAH:=ratpoison/}
 
 USE_GROFF =		Yes
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION =	2.61
+
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ARGS+=	--with-xterm=${X11BASE}/bin/xterm \
 			--disable-history
