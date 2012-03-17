@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_actions_c,v 1.3 2012/03/17 17:32:28 dcoppa Exp $
+
+This is a backport from WindowMaker cvs which fixes the
+"periodic focus bug" described at:
+http://repo.or.cz/w/wmaker-crm.git/commitdiff/c91bb1ba1360006c568db37438779e525868cf17
+
+--- src/actions.c.orig	Fri Mar 16 17:10:27 2012
++++ src/actions.c	Fri Mar 16 17:11:57 2012
+@@ -78,6 +78,15 @@ static struct {
+ #define SHADE_STEPS	shadePars[(int)wPreferences.shade_speed].steps
+ #define SHADE_DELAY	shadePars[(int)wPreferences.shade_speed].delay
+ 
++static int
++compareTimes(Time t1, Time t2)
++{
++	Time diff;
++	if (t1 == t2)
++		return 0;
++	diff = t1 - t2;
++	return (diff < 60000) ? 1 : -1;
++}
+ 
+ /*
+  *----------------------------------------------------------------------
+@@ -99,11 +108,11 @@ wSetFocusTo(WScreen *scr, WWindow  *wwin)
+ 
+     WWindow *old_focused;
+     WWindow *focused=scr->focused_window;
+-    int timestamp=LastTimestamp;
++    Time timestamp=LastTimestamp;
+     WApplication *oapp=NULL, *napp=NULL;
+     int wasfocused;
+ 
+-    if (scr->flags.ignore_focus_events || LastFocusChange > timestamp)
++    if (scr->flags.ignore_focus_events || compareTimes(LastFocusChange, timestamp) > 0)
+         return;
+ 
+     if (!old_scr)
