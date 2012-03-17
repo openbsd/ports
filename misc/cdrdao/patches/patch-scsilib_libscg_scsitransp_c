@@ -1,0 +1,12 @@
+$OpenBSD: patch-scsilib_libscg_scsitransp_c,v 1.1 2012/03/17 16:04:34 naddy Exp $
+--- scsilib/libscg/scsitransp.c.orig	Sat Mar 17 09:40:21 2012
++++ scsilib/libscg/scsitransp.c	Sat Mar 17 09:40:43 2012
+@@ -323,7 +323,7 @@ scg_yes(msg)
+ 
+ 	js_printf("%s", msg);
+ 	flush();
+-	if (getline(okbuf, sizeof (okbuf)) == EOF)
++	if (get_line(okbuf, sizeof (okbuf)) == EOF)
+ 		exit(EX_BAD);
+ 	if (streql(okbuf, "y") || streql(okbuf, "yes") ||
+ 	    streql(okbuf, "Y") || streql(okbuf, "YES"))
