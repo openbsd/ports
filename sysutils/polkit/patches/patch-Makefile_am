@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.1 2012/02/16 22:28:23 ajacoutot Exp $
+$OpenBSD: patch-Makefile_am,v 1.2 2012/03/17 10:43:32 ajacoutot Exp $
 
-undefined references to fgetgrent, fgetpwent, getline
+undefined references to fgetgrent and fgetpwent
 
 --- Makefile.am.orig	Wed Feb  8 16:35:22 2012
 +++ Makefile.am	Wed Feb  8 16:36:07 2012
