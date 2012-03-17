@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.480 2012/02/28 05:57:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.481 2012/03/17 14:46:52 naddy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -332,7 +332,6 @@
      SUBDIR += xloadimage
      SUBDIR += xlogout
      SUBDIR += xmascot
-     SUBDIR += xmbdfed
      SUBDIR += xmobar
      SUBDIR += xmold
      SUBDIR += xmonad
