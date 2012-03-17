@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 19:26:34 espie Exp $
-bin/xfedor
+@comment $OpenBSD: PLIST,v 1.6 2012/03/17 14:44:55 sthen Exp $
+@bin bin/xfedor
 lib/X11/xfedor/
 lib/X11/xfedor/BEZIERS.sos
 lib/X11/xfedor/CIRCLE.sos

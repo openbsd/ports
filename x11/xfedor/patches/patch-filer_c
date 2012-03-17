@@ -1,0 +1,165 @@
+$OpenBSD: patch-filer_c,v 1.1 2012/03/17 14:44:55 sthen Exp $
+--- filer.c.orig	Sat Mar 17 11:31:58 2012
++++ filer.c	Sat Mar 17 11:33:15 2012
+@@ -187,7 +187,7 @@ static int fatal(msg, p1, p2, p3, p4)
+  * read the next line and keep a count for error messages
+  */
+ static char *
+-getline(s)
++get_line(s)
+     char *s;
+ {
+     s = fgets(s,256,pF);
+@@ -294,15 +294,15 @@ static int ReadFont(name,tabchar,head,pprem)
+ 
+     if ((pF = fopen( filename, "r")) == NULL) return fatal("Can't open file %s", filename);
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if ((sscanf(linebuf, "STARTFONT %s", namebuf) != 1) ||
+ 	strcmp(namebuf, "2.1"))  return fatal("bad 'STARTFONT 2.1'");
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if (sscanf(linebuf, "FONT %s", head->FamilyName) != 1)
+ 	return fatal("bad 'FONT'");
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if (!prefix(linebuf, "SIZE"))
+ 	return fatal("missing 'SIZE'");
+     if ((sscanf(linebuf, "SIZE %d%d%d",
+@@ -311,11 +311,11 @@ static int ReadFont(name,tabchar,head,pprem)
+     if (head->Resol != yRes)
+         return fatal("x and y resolution must be equal");
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if (!prefix(linebuf, "FONTBOUNDINGBOX"))
+ 	return fatal("missing 'FONTBOUNDINGBOX'");
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if (prefix(linebuf, "STARTPROPERTIES")) {
+ 	int nprops;
+ 	int prop_fontasc, prop_fontdesc ;
+@@ -327,7 +327,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	if (nprops > 50) return fatal("Too Many Properties : %d",nprops);
+ 	head->nprops = nprops ;
+ 
+-	getline(linebuf);
++	get_line(linebuf);
+ 	while((nprops-- > 0) && !prefix(linebuf, "ENDPROPERTIES")) {
+ 	    if (prefix(linebuf,"FONT_ASCENT"))
+ 		prop_fontasc = nprops ; else
+@@ -335,7 +335,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 		prop_fontdesc = nprops ; 
+ 	    strncpy(head->Properties[nprops],linebuf,80);
+ 
+-	    getline(linebuf);
++	    get_line(linebuf);
+ 	}
+ 	if (!prefix(linebuf, "ENDPROPERTIES"))
+ 	    return fatal("missing 'ENDPROPERTIES'");
+@@ -348,7 +348,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	return fatal("missing 'PROPERTIES'");
+     }
+ 
+-    getline(linebuf);
++    get_line(linebuf);
+     if (!prefix(linebuf, "CHARS"))
+         return fatal("missing 'CHARS'");
+     sscanf(linebuf, "%*s%d", &nchars);
+@@ -367,7 +367,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 			Rast_Free(&tabchar[i].image) ;
+ 		}
+ 	
+-    getline(linebuf);
++    get_line(linebuf);
+     while ((nchars-- > 0) && prefix(linebuf, "STARTCHAR"))  {
+ 	char	charName[50];
+ 	int	enc, enc2;	/* encoding */
+@@ -385,7 +385,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	if (sscanf(linebuf, "STARTCHAR %s", charName) != 1)
+ 	    return fatal("bad character name");
+ 
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if ((t=sscanf(linebuf, "ENCODING %d %d", &enc, &enc2)) < 1)
+ 	    return fatal("bad 'ENCODING'");
+ 	if ((enc < -1) || ((t == 2) && (enc2 < -1)))
+@@ -394,11 +394,11 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	    enc = enc2;
+ 	if (enc == -1) {
+ 	    do {
+-	    	char *s = getline(linebuf);
++	    	char *s = get_line(linebuf);
+ 		if (!s)
+ 		    return fatal("Unexpected EOF");
+ 	    } while (!prefix(linebuf, "ENDCHAR"));
+-	    getline(linebuf);
++	    get_line(linebuf);
+ 	    continue;
+ 	}
+ 	if (enc >= MAXFONTCARD)
+@@ -408,20 +408,20 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	  *pprem = enc ;
+ 	  first = 0 ;
+ 	}
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if (!prefix(linebuf, "SWIDTH"))
+ 	    return fatal("bad 'SWIDTH'");
+ 	sscanf( linebuf, "SWIDTH %d %d", &wx, &wy);
+ 	tabchar[enc].vadj = wx;	/* pour le stocker */
+ 
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if (!prefix(linebuf, "DWIDTH"))
+ 	    return fatal("bad 'DWIDTH'");
+ 	sscanf( linebuf, "DWIDTH %d %d", &wx, &wy);
+ 	tabchar[enc].hincr = wx ;
+ 	tabchar[enc].vincr = wy ;/* pour le stocker */
+ 
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if (!prefix(linebuf, "BBX"))
+ 	    return fatal("bad 'BBX'");
+ 	sscanf( linebuf, "BBX %d %d %d %d", &bw, &bh, &bl, &bb);
+@@ -430,9 +430,9 @@ static int ReadFont(name,tabchar,head,pprem)
+ 	tabchar[enc].hadj = bl;
+ 	tabchar[enc].hsize = bw ;
+ 
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if (prefix(linebuf, "ATTRIBUTES"))
+-	    getline( linebuf);	
++	    get_line( linebuf);	
+ 
+ 	if (!prefix(linebuf, "BITMAP"))
+ 	    return fatal("missing 'BITMAP'");
+@@ -446,7 +446,7 @@ static int ReadFont(name,tabchar,head,pprem)
+ 				   (tabchar[enc].down-tabchar[enc].up)) ;
+ 	/* transfert de l'image vers vidmem : pad 8 */
+ 	for (row=0; row < bh; row++) {
+-	    getline(linebuf);
++	    get_line(linebuf);
+ 	    p = linebuf ;
+ 	    for ( ix=0; ix < bytesperrow ; ix++)
+ 	    {
+@@ -461,13 +461,13 @@ static int ReadFont(name,tabchar,head,pprem)
+ 		 tabchar[enc].hsize,tabchar[enc].down-tabchar[enc].up);
+ 	
+ 
+-	getline( linebuf);
++	get_line( linebuf);
+ 	if (!prefix(linebuf, "ENDCHAR")) {
+ 	    sprintf(buff,"%d missing 'ENDCHAR'",enc);
+             return fatal(buff);
+ 	  }
+ 
+-	getline( linebuf);		/* get STARTCHAR or ENDFONT */
++	get_line( linebuf);		/* get STARTCHAR or ENDFONT */
+     }
+ 
+     if (!prefix(linebuf, "ENDFONT"))
