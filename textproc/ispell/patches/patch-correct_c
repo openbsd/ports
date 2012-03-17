@@ -1,0 +1,48 @@
+$OpenBSD: patch-correct_c,v 1.1 2012/03/17 17:19:59 naddy Exp $
+--- correct.c.orig	Sat Mar 17 11:14:03 2012
++++ correct.c	Sat Mar 17 11:14:41 2012
+@@ -231,7 +231,7 @@ static void	save_root_cap P ((ichar_t * word, ichar_t 
+ 		  struct flagent * sufent,
+ 		  ichar_t savearea[MAX_CAPS][INPUTWORDLEN + MAXAFFIXLEN],
+ 		  int * nsaved));
+-static char *	getline P ((char * buf));
++static char *	get_line P ((char * buf));
+ void		askmode P ((void));
+ void		copyout P ((unsigned char ** cc, int cnt));
+ static void	lookharder P ((unsigned char * string));
+@@ -546,7 +546,7 @@ checkagain:
+ 
+ 		move (li - 1, 0);
+ 		(void) putchar ('!');
+-		if (getline ((char *) buf) == NULL)
++		if (get_line ((char *) buf) == NULL)
+ 		    {
+ 		    (void) putchar (7);
+ 		    erase ();
+@@ -571,7 +571,7 @@ checkagain:
+ 		    (void) printf ("%s ", CORR_C_READONLY);
+ 		    }
+ 		(void) printf (CORR_C_REPLACE_WITH);
+-		if (getline ((char *) ctok) == NULL)
++		if (get_line ((char *) ctok) == NULL)
+ 		    {
+ 		    (void) putchar (7);
+ 		    /* Put it back */
+@@ -639,7 +639,7 @@ checkagain:
+ 		unsigned char	buf[100];
+ 		move (li - 1, 0);
+ 		(void) printf (CORR_C_LOOKUP_PROMPT);
+-		if (getline ((char *) buf) == NULL)
++		if (get_line ((char *) buf) == NULL)
+ 		    {
+ 		    (void) putchar (7);
+ 		    erase ();
+@@ -1477,7 +1477,7 @@ static void save_root_cap (word, pattern, prestrip, pr
+     return;
+     }
+ 
+-static char * getline (s)
++static char * get_line (s)
+     register char *	s;
+     {
+     register char *	p;
