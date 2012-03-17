@@ -1,0 +1,16 @@
+$OpenBSD: patch-pbx_pbx_spool_c,v 1.1 2012/03/17 23:08:20 sthen Exp $
+--- pbx/pbx_spool.c.orig	Tue Oct 25 20:08:04 2011
++++ pbx/pbx_spool.c	Sat Mar 17 22:57:23 2012
+@@ -716,6 +716,12 @@ static void *scan_thread(void *unused)
+ 		queue_created_files();
+ #else
+ 			struct timespec ts2 = { next - now, 0 };
++			/*
++			 * OpenBSD: interval timer must be <=100M seconds;
++			 * see itimerfix() in /sys/kern/kern_time.c
++			 */
++			if (ts2.tv_sec > 100000000)
++				ts2.tv_sec = 100000000;
+ 			if (kevent(inotify_fd, NULL, 0, &kev, 1, &ts2) <= 0) {
+ 				/* Interrupt or timeout, restart calculations */
+ 				continue;
