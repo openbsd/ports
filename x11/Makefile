@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2012/03/17 14:46:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.482 2012/03/17 14:52:07 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -320,7 +320,6 @@
      SUBDIR += xfce4
      SUBDIR += xfe
      SUBDIR += xfed
-     SUBDIR += xfedor
      SUBDIR += xfishtank
      SUBDIR += xfm
      SUBDIR += xforms
