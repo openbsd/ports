@@ -1,0 +1,12 @@
+$OpenBSD: patch-global_h,v 1.1 2012/03/17 22:36:26 naddy Exp $
+--- global.h.orig	Sat Mar 17 16:29:59 2012
++++ global.h	Sat Mar 17 16:30:22 2012
+@@ -258,7 +258,7 @@ int             nn_truncate(char *, off_t);
+ char           *strsave(char *);
+ char           *str3save(char *, char *, char *);
+ char           *fgetstr(FILE *);
+-int             getline(char *, int);
++int             get_line(char *, int);
+ extern char    *tmp_directory;
+ extern char    *nntp_cache_dir;
+ #endif				/* _NN_GLOBAL_H */

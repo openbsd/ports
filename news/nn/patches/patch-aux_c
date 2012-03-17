@@ -1,0 +1,12 @@
+$OpenBSD: patch-aux_c,v 1.1 2012/03/17 22:36:25 naddy Exp $
+--- aux.c.orig	Sat Mar 17 16:30:12 2012
++++ aux.c	Sat Mar 17 16:30:54 2012
+@@ -507,7 +507,7 @@ aux_sh(article_header * ah, char *script, char *prog, 
+ 		prompt_line = Lines - 1;
+ 		prompt("To: ");
+ 		unset_raw();
+-		if (getline(&cc[0], sizeof(cc)) == 0)
++		if (get_line(&cc[0], sizeof(cc)) == 0)
+ 		    cc[0] = CR;
+ 		nn_raw();
+ 		if (cc[0] != CR)
