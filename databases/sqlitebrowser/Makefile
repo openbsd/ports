@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/17 22:50:56 naddy Exp $
 
 COMMENT=	graphical interface to sqlite databases
 DISTNAME=	sqlitebrowser-1.3
-REVISION =	5
+REVISION=	6
 DISTFILES=	${DISTNAME}-src.tar.gz
 WRKDIST=	${WRKDIR}/sqlitebrowser
 CATEGORIES=	databases x11

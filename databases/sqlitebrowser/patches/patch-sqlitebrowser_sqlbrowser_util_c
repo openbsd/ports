@@ -1,6 +1,6 @@
-$OpenBSD: patch-sqlitebrowser_sqlbrowser_util_c,v 1.1 2009/08/28 07:57:03 espie Exp $
---- sqlitebrowser/sqlbrowser_util.c.orig	Fri Aug 28 09:51:37 2009
-+++ sqlitebrowser/sqlbrowser_util.c	Fri Aug 28 09:54:10 2009
+$OpenBSD: patch-sqlitebrowser_sqlbrowser_util_c,v 1.2 2012/03/17 22:50:56 naddy Exp $
+--- sqlitebrowser/sqlbrowser_util.c.orig	Sat Mar 17 16:45:31 2012
++++ sqlitebrowser/sqlbrowser_util.c	Sat Mar 17 16:49:14 2012
 @@ -53,6 +53,34 @@ static void output_quoted_string(FILE *out, const char
    }
  }
@@ -45,7 +45,7 @@ $OpenBSD: patch-sqlitebrowser_sqlbrowser_util_c,v 1.1 2009/08/28 07:57:03 espie 
            fprintf(p->out,"%s%s",zSep, azArg[i]);
          }else{
            if( zSep[0] ) fprintf(p->out,"%s",zSep);
-@@ -351,7 +379,7 @@ static int _all_whitespace(const char *z){
+@@ -351,14 +379,14 @@ static int _all_whitespace(const char *z){
  static int _is_command_terminator(const char *zLine){
    while( isspace(*zLine) ){ zLine++; };
    if( zLine[0]=='/' && _all_whitespace(&zLine[1]) ) return 1;  /* Oracle */
@@ -54,3 +54,20 @@ $OpenBSD: patch-sqlitebrowser_sqlbrowser_util_c,v 1.1 2009/08/28 07:57:03 espie 
      return 1;  /* SQL Server */
    }
    return 0;
+ }
+ 
+ 
+-char *getline(FILE *in){
++char *get_line(FILE *in){
+   char *zLine;
+   int nLine;
+   int n;
+@@ -402,7 +430,7 @@ void process_input(sqlite3 * db, FILE *in, int * lineE
+   char * zErrMsg = 0;
+   int nSql = 0;
+   int rc;
+-  while((zLine = getline(in))!=0 ){
++  while((zLine = get_line(in))!=0 ){
+     if( (zSql==0 || zSql[0]==0) && _all_whitespace(zLine) ) continue;
+ 	(*lineErr)++;
+     if( zSql==0 ){
