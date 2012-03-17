@@ -1,0 +1,48 @@
+$OpenBSD: patch-ref_c,v 1.1 2012/03/17 12:40:01 sthen Exp $
+--- ref.c.orig	Tue Oct 21 04:32:25 2003
++++ ref.c	Sat Mar 17 12:28:41 2012
+@@ -42,7 +42,7 @@ typedef enum
+ 
+ #if USE_PROTOTYPES
+ static void usage(char *argv0);
+-static char *getline(FILE *fp);
++static char *get_line(FILE *fp);
+ static void store(char *line, char **list);
+ static LINECLS classify(char *line, LINECLS prev);
+ static void lookup(TAG *tag);
+@@ -171,7 +171,7 @@ ELVBOOL ioclose()
+ /* This function reads a single line, and replaces the terminating newline with
+  * a '\0' byte.  The string will be in a static buffer.  Returns NULL at EOF.
+  */
+-static char *getline(fp)
++static char *get_line(fp)
+ 	FILE	*fp;
+ {
+ 	int	ch;
+@@ -348,7 +348,7 @@ static void lookup(tag)
+ 	}
+ 
+ 	/* for each line... */
+-	for (lnum = 1, lc = LC_COMPLETE; (line = getline(fp)) != NULL; lnum++)
++	for (lnum = 1, lc = LC_COMPLETE; (line = get_line(fp)) != NULL; lnum++)
+ 	{
+ 		/* is this the tag definition? */
+ 		if (taglnum > 0 ? taglnum == lnum : !strncmp(tagline, line, len))
+@@ -377,7 +377,7 @@ static void lookup(tag)
+ 			{
+ 				if (strchr(line, '(') != NULL)
+ 				{
+-					while ((line = getline(fp)) != NULL
++					while ((line = get_line(fp)) != NULL
+ 					    && *line
+ 					    && ((*line != '#' && *line != '{')
+ 						|| line[strlen(line) - 1] == '\\'))
+@@ -387,7 +387,7 @@ static void lookup(tag)
+ 				}
+ 				else if ((lc = classify(line, lc)) == LC_PARTIAL)
+ 				{
+-					while ((line = getline(fp)) != NULL
++					while ((line = get_line(fp)) != NULL
+ 					    && (lc = classify(line, lc)) == LC_PARTIAL)
+ 					{
+ 						puts(line);
