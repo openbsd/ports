@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/03/17 22:42:26 naddy Exp $
 
 COMMENT=	Pretty Good Privacy 2.6.3ia
 
 DISTNAME=	pgp263is
 PKGNAME=	pgp-2.6.3
+REVISION=	0
 CATEGORIES=	security
 
 MASTER_SITES=	http://www.netsw.org/crypto/systems/pgp/ \
