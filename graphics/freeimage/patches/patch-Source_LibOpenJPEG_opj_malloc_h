@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_LibOpenJPEG_opj_malloc_h,v 1.1 2012/03/17 20:54:25 pascal Exp $
+--- Source/LibOpenJPEG/opj_malloc.h.orig	Sat Mar 17 18:18:00 2012
++++ Source/LibOpenJPEG/opj_malloc.h	Sat Mar 17 18:19:23 2012
+@@ -85,7 +85,7 @@ Allocate memory aligned to a 16 byte boundry
+ 		#define HAVE_MEMALIGN
+ 	/* Linux x86_64 and OSX always align allocations to 16 bytes */
+ 	#elif !defined(__amd64__) && !defined(__APPLE__)	
+-		#define HAVE_MEMALIGN
++		#define HAVE_POSIX_MEMALIGN
+ 		#include <malloc.h>			
+ 	#endif
+ #endif
