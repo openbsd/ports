@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.10 2012/01/10 18:04:31 edd Exp $
+@comment $OpenBSD: PLIST-docs,v 1.11 2012/03/17 20:50:14 kili Exp $
 @conflict teTeX_texmf-doc-*
 @conflict texlive_base-<2011
 @conflict texlive_texmf-minimal-<2011
@@ -24333,7 +24333,7 @@ share/texmf/doc/man/man1/disdvi.man1.pdf
 share/texmf/doc/man/man1/dt2dv.man1.pdf
 share/texmf/doc/man/man1/dv2dt.man1.pdf
 share/texmf/doc/man/man1/dvi2fax.man1.pdf
-share/texmf/doc/man/man1/dvi2tty.man1.pdf
+@comment share/texmf/doc/man/man1/dvi2tty.man1.pdf
 share/texmf/doc/man/man1/dvibook.man1.pdf
 share/texmf/doc/man/man1/dviconcat.man1.pdf
 share/texmf/doc/man/man1/dvicopy.man1.pdf
