@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2011/07/25 20:08:23 dcoppa Exp $
---- doc/Makefile.in.orig	Thu Apr 21 02:33:28 2011
-+++ doc/Makefile.in	Wed Jul 20 06:52:49 2011
-@@ -283,15 +283,15 @@ uninstall-man1:
- 	  cd "$(DESTDIR)$(man1dir)" && rm -f $$files; }
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2012/03/18 17:09:27 dcoppa Exp $
+--- doc/Makefile.in.orig	Sat Mar 17 17:07:17 2012
++++ doc/Makefile.in	Sun Mar 18 17:49:13 2012
+@@ -287,15 +287,15 @@ uninstall-man1:
+ 	dir='$(DESTDIR)$(man1dir)'; $(am__uninstall_files_from_dir)
  install-docDATA: $(doc_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
