@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/18 16:15:19 dcoppa Exp $
 
 COMMENT=	managing meta-data of audio formats
 DISTNAME=	taglib-1.7
+REVISION=	0
 CATEGORIES=	audio devel
 
 MASTER_SITES=	http://developer.kde.org/~wheeler/files/src/
@@ -33,6 +34,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindCppUnit.cmake
 
 do-regress:
+	@ln -s ${WRKSRC}/tests/data ${WRKBUILD}/tests/data
 	@cd ${WRKBUILD}/tests && ./test_runner
 
 .include <bsd.port.mk>

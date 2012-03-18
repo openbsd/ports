@@ -1,10 +1,13 @@
-$OpenBSD: patch-taglib_ape_apeproperties_cpp,v 1.1 2011/10/14 09:06:57 dcoppa Exp $
+$OpenBSD: patch-taglib_ape_apeproperties_cpp,v 1.2 2012/03/18 16:15:19 dcoppa Exp $
 
 Fix: crash parsing ID3v2 tag in ape file due to null pointer
 dereference (https://bugs.kde.org/show_bug.cgi?id=278773)
 
---- taglib/ape/apeproperties.cpp.orig	Fri Mar 11 14:15:38 2011
-+++ taglib/ape/apeproperties.cpp	Thu Oct 13 12:45:05 2011
+Fix for CVE-2012-1107
+(upstream git commit 77d61c6eca4d08b9b025738acf6b926cc750db23)
+
+--- taglib/ape/apeproperties.cpp.orig	Sun Mar 18 16:00:45 2012
++++ taglib/ape/apeproperties.cpp	Sun Mar 18 16:01:58 2012
 @@ -137,7 +137,7 @@ long APE::Properties::findDescriptor()
    long ID3v2OriginalSize = 0;
    bool hasID3v2 = false;
@@ -14,3 +17,12 @@ dereference (https://bugs.kde.org/show_bug.cgi?id=278773)
      ID3v2OriginalSize = tag.header()->completeTagSize();
      if(tag.header()->tagSize() > 0)
        hasID3v2 = true;
+@@ -193,7 +193,7 @@ void APE::Properties::analyzeCurrent()
+   uint blocksPerFrame = header.mid(4, 4).toUInt(false);
+   uint finalFrameBlocks = header.mid(8, 4).toUInt(false);
+   uint totalBlocks = totalFrames > 0 ? (totalFrames -  1) * blocksPerFrame + finalFrameBlocks : 0;
+-  d->length = totalBlocks / d->sampleRate;
++  d->length = d->sampleRate > 0 ? totalBlocks / d->sampleRate : 0;
+   d->bitrate = d->length > 0 ? ((d->streamLength * 8L) / d->length) / 1000 : 0;
+ }
+ 

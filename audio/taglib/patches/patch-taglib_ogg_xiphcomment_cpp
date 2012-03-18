@@ -1,0 +1,16 @@
+$OpenBSD: patch-taglib_ogg_xiphcomment_cpp,v 1.1 2012/03/18 16:15:19 dcoppa Exp $
+
+Fix for CVE-2012-1108
+(upstream git commit ab8a0ee8937256311e649a88e8ddd7c7f870ad59)
+
+--- taglib/ogg/xiphcomment.cpp.orig	Fri Mar 11 14:15:38 2011
++++ taglib/ogg/xiphcomment.cpp	Sun Mar 18 16:01:58 2012
+@@ -287,7 +287,7 @@ void Ogg::XiphComment::parse(const ByteVector &data)
+ 
+   int pos = 0;
+ 
+-  int vendorLength = data.mid(0, 4).toUInt(false);
++  uint vendorLength = data.mid(0, 4).toUInt(false);
+   pos += 4;
+ 
+   d->vendorID = String(data.mid(pos, vendorLength), String::UTF8);
