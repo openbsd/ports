@@ -1,7 +1,7 @@
-$OpenBSD: patch-code_client_libmumblelink_c,v 1.1.1.1 2008/10/27 13:29:02 weerd Exp $
---- code/client/libmumblelink.c.orig	Thu Aug 21 23:11:45 2008
-+++ code/client/libmumblelink.c	Thu Aug 21 23:11:59 2008
-@@ -86,7 +86,11 @@ int mumble_link(const char* name)
+$OpenBSD: patch-code_client_libmumblelink_c,v 1.2 2012/03/18 15:47:28 kirby Exp $
+--- code/client/libmumblelink.c.orig	Sat Dec 24 14:29:31 2011
++++ code/client/libmumblelink.c	Tue Mar  6 22:44:31 2012
+@@ -101,7 +101,11 @@ int mumble_link(const char* name)
  		return 0;
  
  	snprintf(file, sizeof (file), "/MumbleLink.%d", getuid());

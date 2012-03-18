@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-data,v 1.3 2011/05/03 06:48:21 jasper Exp $
+@comment $OpenBSD: PLIST-data,v 1.4 2012/03/18 15:47:28 kirby Exp $
 share/openarena/
 share/openarena/baseoa/
 share/openarena/baseoa/pak0.pk3
@@ -9,5 +9,6 @@ share/openarena/baseoa/pak4-textures.pk3
 share/openarena/baseoa/pak5-TA.pk3
 share/openarena/baseoa/pak6-misc.pk3
 share/openarena/baseoa/pak6-patch085.pk3
+share/openarena/baseoa/pak6-patch088.pk3
 share/openarena/missionpack/
 share/openarena/missionpack/mp-pak0.pk3

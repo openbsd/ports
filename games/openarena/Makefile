@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/18 15:47:28 kirby Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -10,27 +10,24 @@ MULTI_PACKAGES =	-main -server -data
 
 CATEGORIES =		games x11
 
-V =			0.8.5
-E_V =			0.8.1	# engine version
+V =			0.8.8
+E_V =			${V}	# engine version
 
 PKGNAME =		openarena-${V}
 PKGNAME-main =		openarena-${V}
 PKGNAME-server =	openarena-server-${V}
 PKGNAME-data =		openarena-data-${V}
 
-REVISION-main =		0
-REVISION-server =	0
-REVISION-data =		0
-
 PKG_ARCH-data = 	*
 
-DISTNAME =		oa${V:S/.//g}
-DISTFILES =		${DISTNAME}.zip openarena-engine-${E_V}-1.tar.bz2
+DISTNAME =		openarena-${V}
+DISTFILES =		${DISTNAME}.zip openarena-engine-source-${E_V}.tar.bz2:0
 
-MS_PREFIX =		http://download.tuxfamily.org/openarena/rel/
 HOMEPAGE =		http://www.openarena.ws/
-MASTER_SITES =		${MS_PREFIX}/${V:S/.//g}/ \
-			${MS_PREFIX}/${E_V:S/.//g}/source/ \
+MS_PREFIX =		http://download.tuxfamily.org/openarena/rel/
+MASTER_SITES =		${MS_PREFIX}${V:S/.//g}/ \
+			${MS_PREFIX}${E_V:S/.//g}/source/
+MASTER_SITES0 =		http://files.poulsander.com/~poul19/public_files/oa/dev088/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
@@ -40,22 +37,25 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB-main =		GL c m pthread sndio ogg>=5 SDL>=7 vorbis>=7 \
-			vorbisfile>=5
+			vorbisfile>=5 curl
 WANTLIB-server =	c m
 
 LIB_DEPENDS-main =	audio/libogg \
+			audio/libvorbis \
 			devel/sdl \
-			audio/libvorbis
+			net/curl
 RUN_DEPENDS-main =	${BASE_PKGPATH},-data
 RUN_DEPENDS-server =	${BASE_PKGPATH},-data
 
-ALL_TARGET =		release
 USE_GMAKE =		Yes
 MAKE_FLAGS =		USE_OPENAL=0 \
-			BINEXT='' \
+			FULLBINEXT='' \
+			V=1 \
 			DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
 
-WRKDIST =		${WRKDIR}/openarena-engine-${E_V}
+NO_REGRESS =		Yes
+WRKDIST =		${WRKDIR}/openarena-engine-source-${E_V}
+ALL_TARGET =		release
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
