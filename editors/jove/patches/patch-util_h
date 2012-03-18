@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_h,v 1.1 2012/03/18 17:02:00 naddy Exp $
+--- util.h.orig	Sun Mar 18 10:54:54 2012
++++ util.h	Sun Mar 18 10:55:11 2012
+@@ -18,7 +18,7 @@ extern int
+ #define eobp()		(lastp(curline) && eolp())
+ #define eolp()		(linebuf[curchar] == '\0')
+ #define firstp(line)	((line) == curbuf->b_first)
+-#define getDOT()	getline(curline->l_dline, linebuf)
++#define getDOT()	get_line(curline->l_dline, linebuf)
+ #define lastp(line)	((line) == curbuf->b_last)
+ 
+ extern UnivPtr

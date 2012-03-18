@@ -1,0 +1,21 @@
+$OpenBSD: patch-recover_c,v 1.1 2012/03/18 17:02:00 naddy Exp $
+--- recover.c.orig	Sun Mar 18 10:53:47 2012
++++ recover.c	Sun Mar 18 10:54:19 2012
+@@ -166,7 +166,7 @@ size_t	n;
+ private char	*getblock proto((daddr atl));
+ 
+ void
+-getline(tl, buf)
++get_line(tl, buf)
+ daddr	tl;
+ char	*buf;
+ {
+@@ -597,7 +597,7 @@ FILE	*out;
+ 	Nchars = Nlines = 0L;
+ 	while (--nlines >= 0) {
+ 		addr = getaddr(ptrs_fp);
+-		getline(addr, buf);
++		get_line(addr, buf);
+ 		Nlines += 1;
+ 		Nchars += 1 + strlen(buf);
+ 		fputs(buf, out);

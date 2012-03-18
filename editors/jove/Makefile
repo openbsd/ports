@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/13 09:22:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/18 17:02:00 naddy Exp $
 
 COMMENT=	Jonathan's Own Version of Emacs
 
 V=		4.16.0.73
 DISTNAME=	jove${V}
 PKGNAME=	jove-${V}
+REVISION=	0
 CATEGORIES=	editors
 
 # BSD
