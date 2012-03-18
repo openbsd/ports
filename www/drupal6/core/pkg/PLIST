@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/02/03 10:14:12 espie Exp $
+<<<<<<< PLIST
+@comment $OpenBSD: PLIST,v 1.10 2012/03/18 16:15:16 sthen Exp $
+=======
+@comment $OpenBSD: PLIST,v 1.10 2012/03/18 16:15:16 sthen Exp $
+>>>>>>> 1.9
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
