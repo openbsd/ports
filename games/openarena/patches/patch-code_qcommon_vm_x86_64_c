@@ -1,0 +1,24 @@
+$OpenBSD: patch-code_qcommon_vm_x86_64_c,v 1.1 2012/03/18 16:48:16 kirby Exp $
+
+ * Add PROT_READ to x86 and x86_64 VM mmap calls[1]
+
+[1] According to OpenBSD's mmap(2):
+
+BUGS
+     Due to a limitation of the current vm system (see uvm(9)), mapping
+     descriptors PROT_WRITE without also specifying PROT_READ is useless
+     (results in a segmentation fault when first accessing the mapping).  This
+     means that such descriptors must be opened with O_RDWR, which requires
+     both read and write permissions on the underlying object.
+
+--- code/qcommon/vm_x86_64.c.orig	Sat Dec 24 14:29:32 2011
++++ code/qcommon/vm_x86_64.c	Sun Mar 11 15:22:24 2012
+@@ -445,7 +445,7 @@ void VM_Compile( vm_t *vm, vmHeader_t *header ) {
+ 		vm->codeLength = compiledOfs;
+ 
+ 		#ifdef VM_X86_64_MMAP
+-			vm->codeBase = mmap(NULL, compiledOfs, PROT_WRITE, MAP_SHARED|MAP_ANONYMOUS, -1, 0);
++			vm->codeBase = mmap(NULL, compiledOfs, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_ANONYMOUS, -1, 0);
+ 			if(vm->codeBase == MAP_FAILED)
+ 				Com_Error(ERR_FATAL, "VM_CompileX86_64: can't mmap memory");
+ 		#elif __WIN64__
