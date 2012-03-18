@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_linux_LinuxInputManager_cpp,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
+--- src/linux/LinuxInputManager.cpp.orig	Mon Dec 26 00:15:21 2011
++++ src/linux/LinuxInputManager.cpp	Mon Dec 26 00:17:16 2011
+@@ -22,7 +22,6 @@ restrictions:
+ */
+ #include "linux/LinuxInputManager.h"
+ #include "linux/LinuxKeyboard.h"
+-#include "linux/LinuxJoyStickEvents.h"
+ #include "linux/LinuxMouse.h"
+ #include "OISException.h"
+ #include <cstdlib>
+@@ -49,7 +48,6 @@ LinuxInputManager::LinuxInputManager() : InputManager(
+ LinuxInputManager::~LinuxInputManager()
+ {
+ 	//Close all joysticks
+-	LinuxJoyStick::_clearJoys(unusedJoyStickList);
+ }
+ 
+ //--------------------------------------------------------------------------------//
+@@ -93,8 +91,6 @@ void LinuxInputManager::_parseConfigSettings( ParamLis
+ void LinuxInputManager::_enumerateDevices()
+ {
+ 	//Enumerate all attached devices
+-	unusedJoyStickList = LinuxJoyStick::_scanJoys();
+-	joySticks = unusedJoyStickList.size();
+ }
+ 
+ //----------------------------------------------------------------------------//
+@@ -108,9 +104,6 @@ DeviceList LinuxInputManager::freeDeviceList()
+ 	if( mouseUsed == false )
+ 		ret.insert(std::make_pair(OISMouse, mInputSystemName));
+ 
+-	for(JoyStickInfoList::iterator i = unusedJoyStickList.begin(); i != unusedJoyStickList.end(); ++i)
+-		ret.insert(std::make_pair(OISJoyStick, i->vendor));
+-
+ 	return ret;
+ }
+ 
+@@ -121,7 +114,7 @@ int LinuxInputManager::totalDevices(Type iType)
+ 	{
+ 	case OISKeyboard: return 1;
+ 	case OISMouse: return 1;
+-	case OISJoyStick: return joySticks;
++	case OISJoyStick: return 0;
+ 	default: return 0;
+ 	}
+ }
+@@ -133,7 +126,7 @@ int LinuxInputManager::freeDevices(Type iType)
+ 	{
+ 	case OISKeyboard: return keyboardUsed ? 0 : 1;
+ 	case OISMouse: return mouseUsed ? 0 : 1;
+-	case OISJoyStick: return (int)unusedJoyStickList.size();
++	case OISJoyStick: return 0;
+ 	default: return 0;
+ 	}
+ }
+@@ -174,19 +167,6 @@ Object* LinuxInputManager::createObject(InputManager *
+ 			obj = new LinuxMouse(this, bufferMode, grabMouse, hideMouse);
+ 		break;
+ 	}
+-	case OISJoyStick:
+-	{
+-		for(JoyStickInfoList::iterator i = unusedJoyStickList.begin(); i != unusedJoyStickList.end(); ++i)
+-		{
+-			if(vendor == "" || i->vendor == vendor)
+-			{
+-				obj = new LinuxJoyStick(this, bufferMode, *i);
+-				unusedJoyStickList.erase(i);
+-				break;
+-			}
+-		}
+-		break;
+-	}
+ 	default:
+ 		break;
+ 	}
+@@ -202,11 +182,6 @@ void LinuxInputManager::destroyObject( Object* obj )
+ {
+ 	if( obj )
+ 	{
+-		if( obj->type() == OISJoyStick )
+-		{
+-			unusedJoyStickList.push_back( ((LinuxJoyStick*)obj)->_getJoyInfo() );
+-		}
+-
+ 		delete obj;
+ 	}
+ }

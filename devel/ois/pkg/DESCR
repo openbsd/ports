@@ -1,0 +1,4 @@
+Object Oriented Input System (OIS) is meant to be a cross platform,
+simple solution for using all kinds of Input Devices (Keyboards,
+Mice, etc) and feedback devices (e.g. force feedback).
+Written in C++ using Object Oriented Design pattern

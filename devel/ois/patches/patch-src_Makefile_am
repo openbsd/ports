@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
+--- src/Makefile.am.orig	Mon Dec 26 00:21:40 2011
++++ src/Makefile.am	Mon Dec 26 00:23:38 2011
+@@ -10,15 +10,13 @@ libOIS_la_SOURCES = OISInputManager.cpp \
+ 	OISKeyboard.cpp \
+ 	OISForceFeedback.cpp \
+ 	OISException.cpp \
+-	./linux/EventHelpers.cpp \
+ 	./linux/LinuxInputManager.cpp \
+-        ./linux/LinuxJoyStickEvents.cpp \
+-        ./linux/LinuxForceFeedback.cpp \
+ 	./linux/LinuxKeyboard.cpp \
+ 	./linux/LinuxMouse.cpp
+ 
+-libOIS_la_LDFLAGS = -release @PACKAGE_VERSION@
++#libOIS_la_LDFLAGS = -release @PACKAGE_VERSION@
+ #libOIS_la_LDFLAGS = -version-info $(shell echo "@PACKAGE_VERSION@" | tr '.' ':')
++libOIS_la_LDFLAGS = $(LIBOIS_LTVERSION)
+ 
+ libOIS_la_LIBADD = $(STLPORT_LIBS) -L/usr/X11R6/lib -lX11
+ 

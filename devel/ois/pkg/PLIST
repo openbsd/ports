@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
+%%SHARED%%
+include/OIS/
+include/OIS/OIS.h
+include/OIS/OISConfig.h
+include/OIS/OISEffect.h
+include/OIS/OISEvents.h
+include/OIS/OISException.h
+include/OIS/OISFactoryCreator.h
+include/OIS/OISForceFeedback.h
+include/OIS/OISInputManager.h
+include/OIS/OISInterface.h
+include/OIS/OISJoyStick.h
+include/OIS/OISKeyboard.h
+include/OIS/OISMouse.h
+include/OIS/OISMultiTouch.h
+include/OIS/OISObject.h
+include/OIS/OISPrereqs.h
+lib/libOIS.a
+lib/libOIS.la
+lib/pkgconfig/
+lib/pkgconfig/OIS.pc
