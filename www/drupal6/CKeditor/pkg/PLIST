@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/28 10:02:34 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/18 16:19:26 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ckeditor/
@@ -983,9 +983,9 @@ ${DRUPAL_MODS}ckeditor/includes/ckeditor.utils.js
 ${DRUPAL_MODS}ckeditor/includes/filemanager.config.php
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery-1.4.4.min.js
-${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery-ui.js
-${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.sortable.js
-${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.widget.js
+${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery-ui.min.js
+${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.sortable.min.js
+${DRUPAL_MODS}ckeditor/includes/jqueryUI/jquery.ui.widget.min.js
 ${DRUPAL_MODS}ckeditor/includes/jqueryUI/sort.js
 ${DRUPAL_MODS}ckeditor/plugins/
 ${DRUPAL_MODS}ckeditor/plugins/counter/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/28 11:20:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/18 16:19:26 sthen Exp $
 
 COMMENT =	CKeditor for drupal
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME = 	ckeditor-6.x-1.8
-PKGNAME =	drupal6-ckeditor-1.8
+DISTNAME =	ckeditor-6.x-1.10
+PKGNAME =	drupal6-ckeditor-1.10
 V =		3.6.2
 ED =		ckeditor_$V.tar.gz
 DISTFILES =	${DISTNAME}.tar.gz \
