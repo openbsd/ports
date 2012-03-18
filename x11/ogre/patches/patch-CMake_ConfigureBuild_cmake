@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMake_ConfigureBuild_cmake,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
+--- CMake/ConfigureBuild.cmake.orig	Mon Dec 26 16:10:49 2011
++++ CMake/ConfigureBuild.cmake	Mon Dec 26 16:10:57 2011
+@@ -168,7 +168,7 @@ if (UNIX)
+   set(OGRE_PREFIX_PATH ${CMAKE_INSTALL_PREFIX})
+   if (OGRE_CONFIG_THREADS GREATER 0)
+     set(OGRE_CFLAGS "-pthread")
+-    set(OGRE_ADDITIONAL_LIBS "${OGRE_ADDITIONAL_LIBS} -lpthread")
++    set(OGRE_ADDITIONAL_LIBS "${OGRE_ADDITIONAL_LIBS} -pthread")
+   endif ()
+   if (OGRE_STATIC)
+     if (OGRE_CONFIG_THREADS)

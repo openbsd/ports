@@ -1,0 +1,10 @@
+$OpenBSD: patch-Tools_XMLConverter_CMakeLists_txt,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
+--- Tools/XMLConverter/CMakeLists.txt.orig	Mon Dec 26 16:33:26 2011
++++ Tools/XMLConverter/CMakeLists.txt	Mon Dec 26 16:33:37 2011
+@@ -30,5 +30,5 @@ set(SOURCE_FILES 
+ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+ add_definitions(-DTIXML_USE_STL)
+ add_executable(OgreXMLConverter ${HEADER_FILES} ${SOURCE_FILES})
+-target_link_libraries(OgreXMLConverter ${OGRE_LIBRARIES})
++target_link_libraries(OgreXMLConverter ${OGRE_LIBRARIES} -pthread)
+ ogre_config_tool(OgreXMLConverter)
