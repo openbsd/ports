@@ -1,3 +1,4 @@
+@comment $OpenBSD: PLIST-samples,v 1.2 2012/03/18 15:11:37 pascal Exp $
 @bin bin/SampleBrowser
 lib/OGRE/Samples/
 lib/OGRE/Samples/Sample_BSP.so
