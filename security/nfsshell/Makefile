@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/18 16:50:09 naddy Exp $
 
 COMMENT=	NFS auditing tool
 
 PKGNAME=	nfsshell-1.0
-REVISION =	0
+REVISION =	1
 DISTNAME=	nfsshell
 CATEGORIES=	security
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-nfs_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
---- nfs.c.orig	Tue May 19 22:36:10 1998
-+++ nfs.c	Fri Oct 26 23:32:30 2007
+$OpenBSD: patch-nfs_c,v 1.2 2012/03/18 16:50:09 naddy Exp $
+--- nfs.c.orig	Tue May 19 14:36:10 1998
++++ nfs.c	Sun Mar 18 10:49:08 2012
 @@ -40,7 +40,6 @@
  #include <stdlib.h>
  #include <time.h>
@@ -33,7 +33,33 @@ $OpenBSD: patch-nfs_c,v 1.1 2007/10/26 21:38:24 jasper Exp $
  
  /* server information (also used as state information) */
  char *mountpath;		/* remote mount path */
-@@ -384,7 +380,7 @@ getline(char *buf, int bufsize, int *argc, char **argv
+@@ -189,7 +185,7 @@ jmp_buf intenv;			/* where to go in interrupts */
+ 
+ void interrupt(int);
+ int command(char *);
+-int getline(char *, int, int *, char **, int);
++int get_line(char *, int, int *, char **, int);
+ void do_host(int, char **);
+ void do_setuid(int, char **);
+ void do_setgid(int, char **);
+@@ -266,7 +262,7 @@ main(int argc, char **argv)
+ 
+     /* interpreter's main command loop */
+     if (setjmp(intenv)) putchar('\n');
+-    while (getline(buffer, BUFSIZ, &argcount, argvec, NARGVEC)) {
++    while (get_line(buffer, BUFSIZ, &argcount, argvec, NARGVEC)) {
+ 	if (argcount == 0) continue;
+ 	if ((cmd = command(argvec[0])) == CMD_QUIT)
+ 	    break;
+@@ -377,14 +373,14 @@ interrupt(int signo)
+  * it up into an argument vector.
+  */
+ int
+-getline(char *buf, int bufsize, int *argc, char **argv, int argvsize)
++get_line(char *buf, int bufsize, int *argc, char **argv, int argvsize)
+ {
+     register char *p;
+ 
  #ifdef READLINE
      if (interact) {
  	char *line;
