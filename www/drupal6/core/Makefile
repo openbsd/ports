@@ -1,8 +1,4 @@
-<<<<<<< Makefile
-# $OpenBSD: Makefile,v 1.27 2012/03/18 16:15:16 sthen Exp $
-=======
-# $OpenBSD: Makefile,v 1.27 2012/03/18 16:15:16 sthen Exp $
->>>>>>> 1.26
+# $OpenBSD: Makefile,v 1.28 2012/03/18 16:18:34 sthen Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
