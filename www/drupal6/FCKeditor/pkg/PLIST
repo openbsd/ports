@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/25 23:35:02 schwarze Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/18 16:16:24 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}fckeditor/
-@comment ${DRUPAL_MODS}fckeditor/.cvsignore
 ${DRUPAL_MODS}fckeditor/CHANGELOG.txt
 ${DRUPAL_MODS}fckeditor/LICENSE.txt
 ${DRUPAL_MODS}fckeditor/README.txt
@@ -19,7 +18,6 @@ ${DRUPAL_MODS}fckeditor/fckeditor.module
 ${DRUPAL_MODS}fckeditor/fckeditor.popup.html
 ${DRUPAL_MODS}fckeditor/fckeditor.user.inc
 ${DRUPAL_MODS}fckeditor/fckeditor.utils.js
-@comment ${DRUPAL_MODS}fckeditor/fckeditor/.cvsignore
 @comment ${DRUPAL_MODS}fckeditor/fckeditor/COPY_HERE.txt
 ${DRUPAL_MODS}fckeditor/fckeditor/_documentation.html
 ${DRUPAL_MODS}fckeditor/fckeditor/_samples/
@@ -723,10 +721,3 @@ ${DRUPAL_MODS}fckeditor/plugins/linktonode/jscripts/utils.js
 ${DRUPAL_MODS}fckeditor/plugins/linktonode/lang/
 ${DRUPAL_MODS}fckeditor/plugins/linktonode/lang/en.js
 ${DRUPAL_MODS}fckeditor/plugins/linktonode/lang/pl.js
-${DRUPAL_MODS}fckeditor/translations/
-${DRUPAL_MODS}fckeditor/translations/de.po
-${DRUPAL_MODS}fckeditor/translations/fckeditor.pot
-${DRUPAL_MODS}fckeditor/translations/nl.po
-${DRUPAL_MODS}fckeditor/translations/sv.po
-${DRUPAL_MODS}fckeditor/translations/uk-ua.po
-${DRUPAL_MODS}fckeditor/translations/uk.po
