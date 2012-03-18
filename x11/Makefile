@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.482 2012/03/17 14:52:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.483 2012/03/18 14:32:21 pascal Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -161,6 +161,7 @@
      SUBDIR += ogle
      SUBDIR += ogle,altivec
      SUBDIR += ogle_gui
+     SUBDIR += ogre
      SUBDIR += openbox
      SUBDIR += openmotif
      SUBDIR += oroborus
