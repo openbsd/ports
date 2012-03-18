@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/18 14:27:22 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/18 15:28:02 ajacoutot Exp $
 
 COMMENT =		object-oriented input system
 
 V =			1.3
 DISTNAME =		ois-v${V:S/./-/g}
 PKGNAME =		ois-${V}
+REVISION =		0
 
 SHARED_LIBS =		OIS	0.0
 
@@ -21,7 +22,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		X11 m stdc++ xcb
-
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wgois/}
 EXTRACT_SUFX =		.zip
