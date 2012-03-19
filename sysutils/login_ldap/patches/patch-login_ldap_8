@@ -1,6 +1,6 @@
-$OpenBSD: patch-login_ldap_8,v 1.1 2010/04/03 22:08:20 sthen Exp $
---- login_ldap.8.orig	Sat Apr  3 22:49:55 2010
-+++ login_ldap.8	Sat Apr  3 22:49:59 2010
+$OpenBSD: patch-login_ldap_8,v 1.2 2012/03/19 22:15:58 sthen Exp $
+--- login_ldap.8.orig	Thu Feb  7 16:56:28 2008
++++ login_ldap.8	Sun Mar 18 13:54:25 2012
 @@ -280,6 +280,7 @@ For more examples, please see the following files.
  .Bl -tag -compact -width x-ldap-groupfilter
  .It Pa /usr/local/share/examples/login_ldap/login_ldap.conf
@@ -9,3 +9,28 @@ $OpenBSD: patch-login_ldap_8,v 1.1 2010/04/03 22:08:20 sthen Exp $
  .Sh FILES
  .Bl -tag -compact -width x-ldap-groupfilter
  .It Pa /etc/login.conf
+@@ -309,15 +310,13 @@ in particular how servers are specified.
+ There is no SASL support. This should be present in the next version,
+ but when the next version is done is anyone's guess.
+ .Pp
+-.Ox
+-does not ship with an ldap server in the default install, however
+-OpenLDAP is available via
+-.Xr packages 7 .
+-.Pp
+-Until
+-.Ox
+-gets an nsswitch implementation or something similar, every user in the LDAP server
+-will need to have a valid passwd file entry. This can be achieved by using the
++.Nm
++does not provide user account maps, only authentication services.
++User accounts may be handled either via
++.Xr ypldap 8
++or by static entries in the
++.Xr passwd 5
++file (e.g. by using
+ .Xr useradd 8
+-utility with similar arguments to this:
+-useradd -m -d /home/peterw -s /bin/sh -L ldap peterw
++with arguments like this:
++useradd -m -d /home/peterw -s /bin/sh -L ldap peterw).
