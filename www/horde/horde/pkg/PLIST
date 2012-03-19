@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/02/16 21:19:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/19 15:44:33 sthen Exp $
 @pkgpath devel/horde
 @pkgpath devel/horde,-ldap
 @pkgpath devel/horde,-mysql
@@ -35,8 +35,11 @@ ${INSTDIR}/admin/setup/scripts.php
 ${INSTDIR}/admin/signup_confirm.php
 ${INSTDIR}/admin/sqlshell.php
 ${INSTDIR}/admin/user.php
+@mode 700
+@owner www
 @group www
 ${INSTDIR}/config/
+@mode 600
 ${INSTDIR}/config/.htaccess
 ${INSTDIR}/config/conf.php.dist
 ${INSTDIR}/config/conf.xml
@@ -45,9 +48,13 @@ ${INSTDIR}/config/mime_drivers.php.dist
 ${INSTDIR}/config/motd.php.dist
 ${INSTDIR}/config/nls.php.dist
 ${INSTDIR}/config/prefs.php.dist
+@mode 700
 ${INSTDIR}/config/registry.d/
+@mode 600
 ${INSTDIR}/config/registry.d/README
 ${INSTDIR}/config/registry.php.dist
+@mode
+@owner
 @group
 ${INSTDIR}/docs/
 ${INSTDIR}/docs/CHANGES
@@ -1234,12 +1241,19 @@ ${INSTDIR}/scripts/share-stress-test.php
 ${INSTDIR}/scripts/sql/
 ${INSTDIR}/scripts/sql/README
 ${INSTDIR}/scripts/sql/README.OCI8
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.mssql.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.mysql.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.oci8.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.pgsql.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.sybase.sql
+@comment no checksum
 ${INSTDIR}/scripts/sql/create.xml
 ${INSTDIR}/scripts/sql/${INSTDIR}_alarms.mssql.sql
 ${INSTDIR}/scripts/sql/${INSTDIR}_alarms.oci8.sql
@@ -4393,3 +4407,8 @@ ${INSTDIR}/themes/tango-blue/themed_graphics
 ${INSTDIR}/util/
 ${INSTDIR}/util/barcode.php
 ${INSTDIR}/util/icon_browser.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+@mode
+@owner
+@group
+${FULLPKGNAME}
