@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/09 16:38:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/19 09:15:26 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
@@ -9,9 +9,6 @@ share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
 share/applications/gcm-viewer.desktop
-share/dbus-1/
-share/dbus-1/services/
-share/dbus-1/services/org.gnome.ColorManager.service
 share/gnome-color-manager/
 share/gnome-color-manager/figures/
 share/gnome-color-manager/figures/viewer-example-00.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/01/09 16:38:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/19 09:15:26 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
-GNOME_VERSION=	3.2.2
+GNOME_VERSION=	3.2.3
 
 CATEGORIES=	graphics
 
@@ -21,14 +21,14 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-3 jpeg lcms2 ltdl m ncurses ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += stdc++ tiff vorbis vorbisfile vte2_90 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z util
 
 MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		devel/vte3 \
-		graphics/colord \
+		graphics/colord>=0.1.18 \
 		graphics/exiv2 \
 		graphics/libexif
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS=	--enable-exiv \
 CONFIGURE_ARGS += --disable-man-pages
 CONFIGURE_ENV += ac_cv_path_DOCBOOK2MAN=no
 
-# XXX needs a newer clutter
+# XXX needs a newer clutter and mash
 CONFIGURE_ARGS += --disable-clutter
 
 pre-configure:
