@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2007/05/23 16:40:56 ckuethe Exp $
-bin/ascii-xfr
-@mode 555
-bin/minicom
-@mode
-bin/runscript
+@comment $OpenBSD: PLIST,v 1.18 2012/03/19 22:17:43 sthen Exp $
+@bin bin/ascii-xfr
+@bin bin/minicom
+@bin bin/runscript
 bin/xminicom
 @man man/man1/ascii-xfr.1
 @man man/man1/minicom.1
@@ -34,14 +32,13 @@ share/doc/minicom/copyright.modemu
 share/doc/minicom/fselector.txt
 share/doc/minicom/japanese
 share/doc/minicom/minicom.FAQ
-share/doc/minicom/minicom.users
-@comment share/doc/minicom/minicom.users.orig
 share/doc/minicom/minirc.dfl
 share/doc/minicom/modemu.README
 share/doc/minicom/pl-translation.txt
 share/doc/minicom/portugues-brasil
 share/doc/minicom/suomeksi
 share/examples/minicom/
+@sample ${SYSCONFDIR}/minicom/
 share/examples/minicom/extras/
 share/examples/minicom/extras/htsalogin
 share/examples/minicom/extras/linux/
@@ -63,16 +60,6 @@ share/examples/minicom/extras/terminfo/
 share/examples/minicom/extras/terminfo/README
 share/examples/minicom/extras/terminfo/minicom
 share/examples/minicom/extras/unixlogin
-share/examples/minicom/minicom.users.sample
-@mode 0750
-@owner uucp
-@group dialer
-@sample ${SYSCONFDIR}/minicom/
-@mode 0644
-@owner
-@group
-@sample ${SYSCONFDIR}/minicom/minicom.users
-@mode
 share/locale/cs/LC_MESSAGES/minicom.mo
 share/locale/da/LC_MESSAGES/minicom.mo
 share/locale/de/LC_MESSAGES/minicom.mo
@@ -80,8 +67,9 @@ share/locale/es/LC_MESSAGES/minicom.mo
 share/locale/fi/LC_MESSAGES/minicom.mo
 share/locale/fr/LC_MESSAGES/minicom.mo
 share/locale/hu/LC_MESSAGES/minicom.mo
+share/locale/id/LC_MESSAGES/minicom.mo
 share/locale/ja/LC_MESSAGES/minicom.mo
-share/locale/no/LC_MESSAGES/minicom.mo
+share/locale/nb/LC_MESSAGES/minicom.mo
 share/locale/pl/LC_MESSAGES/minicom.mo
 share/locale/pt_BR/LC_MESSAGES/minicom.mo
 share/locale/ro/LC_MESSAGES/minicom.mo
