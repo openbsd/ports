@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/19 10:28:48 ajacoutot Exp $
 
 COMMENT=	tagging library for the Mono framework
 
 V=		2.0.3.7
 DISTNAME=	taglib-sharp-${V}
 PKGNAME=	mono-taglib-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
@@ -29,7 +29,5 @@ DLLMAP_FILES=	src/policy.2.0.taglib-sharp.config
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-docs
-
-FAKE_FLAGS=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
 
 .include <bsd.port.mk>

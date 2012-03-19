@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/21 12:36:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/03/19 10:28:48 ajacoutot Exp $
 bin/mm-common-prepare
-lib/pkgconfig/
-lib/pkgconfig/mm-common-libstdc++.pc
-lib/pkgconfig/mm-common-util.pc
 @man man/man1/mm-common-prepare.1
 share/aclocal/
 share/aclocal/mm-common.m4
@@ -27,3 +24,6 @@ share/mm-common/doctool/doc-install.pl
 share/mm-common/doctool/doc-postprocess.pl
 share/mm-common/doctool/doxygen.css
 share/mm-common/doctool/tagfile-to-devhelp2.xsl
+share/pkgconfig/
+share/pkgconfig/mm-common-libstdc++.pc
+share/pkgconfig/mm-common-util.pc

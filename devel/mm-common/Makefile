@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/19 10:28:48 ajacoutot Exp $
 
 COMMENT=	common build utilities for GNOME C++ binding libraries
 
 GNOME_PROJECT=	mm-common
 GNOME_VERSION=	0.9.5
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -25,7 +26,5 @@ MODULES=	x11/gnome
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_prog_WGET="" \
 		ac_cv_prog_CURL=""
-
-FAKE_FLAGS=	shared_pkgconfigdir=${TRUEPREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

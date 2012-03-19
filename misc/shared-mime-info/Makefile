@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2012/02/16 22:22:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/03/19 10:28:48 ajacoutot Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-1.0
 CATEGORIES=		misc
+REVISION=		0
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
 
@@ -31,8 +32,6 @@ USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS=		pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 pre-configure:
 	@perl -pi -e 's|/usr/local|${PREFIX}|g' \

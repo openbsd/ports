@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2011/12/03 18:45:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2012/03/19 10:28:48 ajacoutot Exp $
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	3.2.1.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -32,8 +32,6 @@ CONFIGURE_ARGS=	--enable-icon-mapping \
 		--disable-nls
 
 EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
-
-FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 # no need to build_depends on gtk+2|gtk+3, we run gtk-update-icon-cache
 # at pkg_add time if it is available

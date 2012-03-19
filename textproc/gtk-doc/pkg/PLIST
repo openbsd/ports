@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/09/14 15:35:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/03/19 10:28:48 ajacoutot Exp $
 bin/gtkdoc-check
 bin/gtkdoc-depscan
 bin/gtkdoc-fixxref
@@ -12,7 +12,6 @@ bin/gtkdoc-scan
 bin/gtkdoc-scangobj
 bin/gtkdoc-scanobj
 bin/gtkdocize
-lib/pkgconfig/gtk-doc.pc
 share/aclocal/gtk-doc.m4
 share/gnome/
 share/gnome/help/
@@ -72,5 +71,6 @@ share/omf/gtk-doc-manual/gtk-doc-manual-sl.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-sv.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-ta.omf
 share/omf/gtk-doc-manual/gtk-doc-manual-te.omf
+share/pkgconfig/gtk-doc.pc
 share/sgml/gtk-doc/
 share/sgml/gtk-doc/gtk-doc.cat

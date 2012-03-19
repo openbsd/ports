@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/03/19 07:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2012/03/19 10:28:48 ajacoutot Exp $
 
 # This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -8,6 +8,7 @@ COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.20.8
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -32,8 +33,6 @@ RUN_DEPENDS=	devel/gettext \
 
 USE_LIBTOOL=	No
 USE_GROFF=	Yes
-
-FAKE_FLAGS+=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/xml2po/xml2po.1

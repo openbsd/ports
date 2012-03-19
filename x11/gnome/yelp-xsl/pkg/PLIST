@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/10/17 17:52:11 ajacoutot Exp $
-lib/pkgconfig/
-lib/pkgconfig/yelp-xsl.pc
+@comment $OpenBSD: PLIST,v 1.5 2012/03/19 10:28:48 ajacoutot Exp $
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/yelp-xsl.mo
@@ -154,6 +152,8 @@ share/locale/wa/LC_MESSAGES/yelp-xsl.mo
 share/locale/zh_CN/LC_MESSAGES/yelp-xsl.mo
 share/locale/zh_HK/LC_MESSAGES/yelp-xsl.mo
 share/locale/zh_TW/LC_MESSAGES/yelp-xsl.mo
+share/pkgconfig/
+share/pkgconfig/yelp-xsl.pc
 share/yelp-xsl/
 share/yelp-xsl/icons/
 share/yelp-xsl/icons/hicolor/

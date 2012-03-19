@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/03/03 10:30:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/03/19 10:28:48 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
-lib/pkgconfig/gnome-doc-utils.pc
-lib/pkgconfig/xml2po.pc
 lib/python${MODPY_VERSION}/site-packages/xml2po/
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xml2po/__init__.pyc
@@ -307,6 +305,9 @@ share/locale/wa/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-doc-utils.mo
+share/pkgconfig/
+share/pkgconfig/gnome-doc-utils.pc
+share/pkgconfig/xml2po.pc
 share/xml/gnome/
 share/xml/gnome/xslt/
 share/xml/gnome/xslt/common/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/03/18 16:05:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2012/03/19 10:28:48 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -19,8 +19,6 @@ lib/libvala-${API_V}.a
 lib/libvala-${API_V}.la
 lib/pkgconfig/
 lib/pkgconfig/libvala-${API_V}.pc
-lib/pkgconfig/vapigen-${API_V}.pc
-lib/pkgconfig/vapigen.pc
 lib/vala-${API_V}/
 @bin lib/vala-${API_V}/gen-introspect-${API_V}
 @man man/man1/vala-gen-introspect-${API_V}.1
@@ -50,6 +48,9 @@ share/devhelp/books/vala-${API_V}/statements.html
 share/devhelp/books/vala-${API_V}/structs.html
 share/devhelp/books/vala-${API_V}/types.html
 share/devhelp/books/vala-${API_V}/vala-${API_V}.devhelp2
+share/pkgconfig/
+share/pkgconfig/vapigen-${API_V}.pc
+share/pkgconfig/vapigen.pc
 share/vala/
 share/vala-${API_V}/
 share/vala-${API_V}/vapi/

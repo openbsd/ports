@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/07 02:34:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/19 10:28:48 ajacoutot Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
 
 DISTNAME = 		shared-desktop-ontologies-0.7.1
 EXTRACT_SUFX =		.tar.bz2
+REVISION =		0
 
 HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
 
@@ -20,8 +21,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/cmake
-
-CONFIGURE_ARGS +=	-DPKGCONFIG_INSTALL_DIR:STRING="lib/pkgconfig/"
 
 NO_REGRESS =		Yes
 
