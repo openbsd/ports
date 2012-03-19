@@ -1,22 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/01/16 11:36:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/19 06:56:32 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-video-arcade
-lib/glade/
-lib/glade/modules/
-@comment lib/glade/modules/libgladegva.a
-@comment lib/glade/modules/libgladegva.la
 @man man/man1/gnome-video-arcade.1
 share/GConf/gsettings/gnome-video-arcade.convert
 share/applications/gnome-video-arcade.desktop
-share/glade/
-share/glade/catalogs/
-share/glade/catalogs/gva.xml
-share/glade/pixmaps/
-share/glade/pixmaps/hicolor/
-share/glade/pixmaps/hicolor/22x22/
-share/glade/pixmaps/hicolor/22x22/actions/
-share/glade/pixmaps/hicolor/22x22/actions/widget-gva-column-manager.png
-share/glade/pixmaps/hicolor/22x22/actions/widget-gva-mute-button.png
 share/glib-2.0/schemas/org.gnome.VideoArcade.gschema.xml
 share/gnome/
 share/gnome-video-arcade/

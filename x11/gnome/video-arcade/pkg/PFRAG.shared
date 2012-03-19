@@ -1,2 +1,1 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2011/09/12 07:28:55 jasper Exp $
-lib/glade/modules/libgladegva.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/03/19 06:56:32 ajacoutot Exp $

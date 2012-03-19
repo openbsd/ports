@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2012/02/16 22:46:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/19 06:56:32 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.8.3
+REVISION=	0
 
 CATEGORIES=	emulators games
 
@@ -28,8 +29,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/glade
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	emulators/sdlmame,-main>=0.132p2 \
 		x11/gnome/icon-theme \
 		devel/gsettings-desktop-schemas
@@ -45,8 +45,7 @@ MODGNOME_TOOLS= 	yelp
 # XXX configure should do the right thing
 MODGNOME_CPPFLAGS=	$$(pkg-config --cflags libsoup-2.4)
 
-CONFIGURE_ARGS=	--with-glade-catalog \
-		--with-wnck \
+CONFIGURE_ARGS=	--with-wnck \
 		--with-history-file="${LOCALBASE}/share/sdlmame/history.dat"
 
 USE_GROFF=	Yes
