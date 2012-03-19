@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/09/22 20:26:49 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2012/03/19 19:50:57 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
@@ -46,6 +46,7 @@ ${JDKHOME}/bin/java-rmi.cgi
 @bin ${JDKHOME}/bin/wsimport
 @bin ${JDKHOME}/bin/xjc
 ${JDKHOME}/demo/
+${JDKHOME}/demo/README
 ${JDKHOME}/demo/applets/
 ${JDKHOME}/demo/applets/ArcTest/
 ${JDKHOME}/demo/applets/ArcTest/ArcCanvas.class
@@ -486,6 +487,7 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjawt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjdwp.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjpeg.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsdt.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.debuginfo
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libjsound.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/liblcms.so
@@ -495,6 +497,7 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnet.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnio.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.debuginfo
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
@@ -503,7 +506,9 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.debuginfo
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.debuginfo
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
@@ -569,6 +574,7 @@ ${JDKHOME}/jre/lib/zi/Africa/Freetown
 ${JDKHOME}/jre/lib/zi/Africa/Gaborone
 ${JDKHOME}/jre/lib/zi/Africa/Harare
 ${JDKHOME}/jre/lib/zi/Africa/Johannesburg
+${JDKHOME}/jre/lib/zi/Africa/Juba
 ${JDKHOME}/jre/lib/zi/Africa/Kampala
 ${JDKHOME}/jre/lib/zi/Africa/Khartoum
 ${JDKHOME}/jre/lib/zi/Africa/Kigali
@@ -778,6 +784,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Dubai
 ${JDKHOME}/jre/lib/zi/Asia/Dushanbe
 ${JDKHOME}/jre/lib/zi/Asia/Gaza
 ${JDKHOME}/jre/lib/zi/Asia/Harbin
+${JDKHOME}/jre/lib/zi/Asia/Hebron
 ${JDKHOME}/jre/lib/zi/Asia/Ho_Chi_Minh
 ${JDKHOME}/jre/lib/zi/Asia/Hong_Kong
 ${JDKHOME}/jre/lib/zi/Asia/Hovd
@@ -1058,6 +1065,7 @@ ${JDKHOME}/lib/tools.jar
 @comment @man ${JDKHOME}/man/man1/xjc.1
 ${JDKHOME}/release
 ${JDKHOME}/sample/
+${JDKHOME}/sample/README
 ${JDKHOME}/sample/forkjoin/
 ${JDKHOME}/sample/forkjoin/mergesort/
 ${JDKHOME}/sample/forkjoin/mergesort/MergeDemo.java

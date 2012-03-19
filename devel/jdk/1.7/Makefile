@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/22 20:26:47 kurt Exp $
+# $OpenBSD: Makefile,v 1.46 2012/03/19 19:50:56 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
-V=		1.7.0.00
-B=		b147
+V=		1.7.0.02
+B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
@@ -15,11 +15,11 @@ EPOCH=		0
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
 
-JDK_SRC=	openjdk-7-fcs-src-${B}-27_jun_2011.zip
+JDK_SRC=	openjdk-7u2-fcs-src-${B}-17_nov_2011.zip
 JAXP_SRC=	jaxp145_01.zip
-JAXWS_SRC=	jdk7-jaxws2_2_4-b03-2011_05_27.zip
+JAXWS_SRC=	jdk7-jaxws2_2_4-b04-2011_06_01.zip
 JAF_SRC=	jdk7-jaf-2010_08_19.zip
-PATCH_SET=	openjdk-7-patch-set-20110922.zip
+PATCH_SET=	openjdk-7u2-patch-set-20120314.zip
 
 DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:2 ${PATCH_SET}:3
 EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
@@ -35,7 +35,7 @@ FLAVOR?=
 
 HOMEPAGE=	http://openjdk.java.net/
 
-MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/ \
+MASTER_SITES=	http://www.java.net/download/openjdk/jdk7u2/promoted/${B}/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
 MASTER_SITES0=  http://download.java.net/jaxp/1.4.5/ \
@@ -99,7 +99,8 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		CXX="${CXX}" \
 		USERNAME=${USER} \
 		MILESTONE=fcs \
-		BUILD_NUMBER=b00 \
+		BUILD_NUMBER=b13 \
+		JDK_UPDATE_VERSION=02 \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 #ALL_TARGET=	debug_build

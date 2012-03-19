@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.9 2011/09/22 20:26:49 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.10 2012/03/19 19:50:57 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 ${JREHOME}/
@@ -62,6 +62,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libjawt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjdwp.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjpeg.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsdt.so
+${JREHOME}/lib/${MACHINE_ARCH}/libjsig.debuginfo
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libjsound.so
 ${JREHOME}/lib/${MACHINE_ARCH}/liblcms.so
@@ -71,6 +72,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libnet.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/librmi.so
+${JREHOME}/lib/${MACHINE_ARCH}/libsaproc.debuginfo
 ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
@@ -78,7 +80,9 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/
 ${JREHOME}/lib/${MACHINE_ARCH}/server/Xusage.txt
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.debuginfo
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
+${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.debuginfo
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
@@ -144,6 +148,7 @@ ${JREHOME}/lib/zi/Africa/Freetown
 ${JREHOME}/lib/zi/Africa/Gaborone
 ${JREHOME}/lib/zi/Africa/Harare
 ${JREHOME}/lib/zi/Africa/Johannesburg
+${JREHOME}/lib/zi/Africa/Juba
 ${JREHOME}/lib/zi/Africa/Kampala
 ${JREHOME}/lib/zi/Africa/Khartoum
 ${JREHOME}/lib/zi/Africa/Kigali
@@ -353,6 +358,7 @@ ${JREHOME}/lib/zi/Asia/Dubai
 ${JREHOME}/lib/zi/Asia/Dushanbe
 ${JREHOME}/lib/zi/Asia/Gaza
 ${JREHOME}/lib/zi/Asia/Harbin
+${JREHOME}/lib/zi/Asia/Hebron
 ${JREHOME}/lib/zi/Asia/Ho_Chi_Minh
 ${JREHOME}/lib/zi/Asia/Hong_Kong
 ${JREHOME}/lib/zi/Asia/Hovd

@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.5 2011/09/22 20:26:47 kurt Exp $
---- hotspot/make/bsd/makefiles/vm.make.orig	Sun Sep 18 11:09:06 2011
-+++ hotspot/make/bsd/makefiles/vm.make	Sun Sep 18 14:56:19 2011
-@@ -96,6 +96,10 @@ ifdef DEFAULT_LIBPATH
+$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.6 2012/03/19 19:50:57 kurt Exp $
+--- hotspot/make/bsd/makefiles/vm.make.orig	Wed Mar 14 12:33:29 2012
++++ hotspot/make/bsd/makefiles/vm.make	Wed Mar 14 12:33:30 2012
+@@ -102,6 +102,10 @@ ifdef DEFAULT_LIBPATH
  CPPFLAGS += -DDEFAULT_LIBPATH="\"$(DEFAULT_LIBPATH)\""
  endif
  
