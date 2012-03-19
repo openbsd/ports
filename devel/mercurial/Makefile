@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/11/16 15:00:52 rpointel Exp $
+# $OpenBSD: Makefile,v 1.44 2012/03/19 06:16:22 rpointel Exp $
 
 COMMENT =		fast, lightweight source control management
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.selenic.com/mercurial/release/
+MASTER_SITES =		http://mercurial.selenic.com/release/
 
 MODULES =		lang/python
 USE_GROFF =		Yes
