@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/02 20:18:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/03/19 07:10:25 ajacoutot Exp $
 share/color/
 share/color/targets/
 share/color/targets/test.it8
@@ -75,6 +75,11 @@ share/color/targets/wolf_faust/reflective/R101208.it8
 share/color/targets/wolf_faust/reflective/R101208WhiteBacking.it8
 share/color/targets/wolf_faust/reflective/R110112.it8
 share/color/targets/wolf_faust/reflective/R110112WhiteBacking.it8
+share/color/targets/wolf_faust/reflective/R110714.it8
+share/color/targets/wolf_faust/reflective/R110714WhiteBacking.it8
+share/color/targets/wolf_faust/reflective/R110903.it8
+share/color/targets/wolf_faust/reflective/R111204.it8
+share/color/targets/wolf_faust/reflective/R111204WhiteBacking.it8
 share/color/targets/wolf_faust/transmissive/
 share/color/targets/wolf_faust/transmissive/A050407.it8
 share/color/targets/wolf_faust/transmissive/A050408.it8
@@ -93,6 +98,8 @@ share/color/targets/wolf_faust/transmissive/A091201.it8
 share/color/targets/wolf_faust/transmissive/A100610.it8
 share/color/targets/wolf_faust/transmissive/A101211.it8
 share/color/targets/wolf_faust/transmissive/A110611.it8
+share/color/targets/wolf_faust/transmissive/A111011.it8
+share/color/targets/wolf_faust/transmissive/A120115.it8
 share/color/targets/wolf_faust/transmissive/E020429.it8
 share/color/targets/wolf_faust/transmissive/E040227.it8
 share/color/targets/wolf_faust/transmissive/E040407.it8
@@ -125,6 +132,8 @@ share/color/targets/wolf_faust/transmissive/E101212.it8
 share/color/targets/wolf_faust/transmissive/E110220.it8
 share/color/targets/wolf_faust/transmissive/E110411.it8
 share/color/targets/wolf_faust/transmissive/E110803.it8
+share/color/targets/wolf_faust/transmissive/E111007.it8
+share/color/targets/wolf_faust/transmissive/E120104.it8
 share/color/targets/wolf_faust/transmissive/F020430.it8
 share/color/targets/wolf_faust/transmissive/F040218.it8
 share/color/targets/wolf_faust/transmissive/F040425.it8
@@ -141,6 +150,7 @@ share/color/targets/wolf_faust/transmissive/F100301.it8
 share/color/targets/wolf_faust/transmissive/F101122.it8
 share/color/targets/wolf_faust/transmissive/F110406.it8
 share/color/targets/wolf_faust/transmissive/F110807.it8
+share/color/targets/wolf_faust/transmissive/F111224.it8
 share/color/targets/wolf_faust/transmissive/N031018.it8
 share/color/targets/wolf_faust/transmissive/N040401.it8
 share/color/targets/wolf_faust/transmissive/N040601.it8
@@ -155,6 +165,9 @@ share/color/targets/wolf_faust/transmissive/N091125.it8
 share/color/targets/wolf_faust/transmissive/N100606.it8
 share/color/targets/wolf_faust/transmissive/N110201.it8
 share/color/targets/wolf_faust/transmissive/N110601.it8
+share/color/targets/wolf_faust/transmissive/N111122.it8
+share/color/targets/wolf_faust/transmissive/N111125.it8
+share/color/targets/wolf_faust/transmissive/N111203.it8
 share/color/targets/wolf_faust/transmissive/V030302.it8
 share/color/targets/wolf_faust/transmissive/V030303.it8
 share/color/targets/wolf_faust/transmissive/V040102.it8
@@ -182,6 +195,8 @@ share/color/targets/wolf_faust/transmissive/V100710.it8
 share/color/targets/wolf_faust/transmissive/V110202.it8
 share/color/targets/wolf_faust/transmissive/V110606.it8
 share/color/targets/wolf_faust/transmissive/V110902.it8
+share/color/targets/wolf_faust/transmissive/V111010.it8
+share/color/targets/wolf_faust/transmissive/V120101.it8
 share/shared-color-targets/
 share/shared-color-targets/wolf_faust/
 share/shared-color-targets/wolf_faust/LICENSE

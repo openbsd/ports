@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/02 20:18:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/19 07:10:25 ajacoutot Exp $
 
 COMMENT=	color targets from vendors for color calibration
 
-DISTNAME=	shared-color-targets-0.1.0
+DISTNAME=	shared-color-targets-0.1.1
 EXTRACT_SUFX=	.tar.xz
-
-REVISION=	0
 
 CATEGORIES=	graphics
 
