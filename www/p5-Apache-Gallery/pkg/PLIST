@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/03/10 10:55:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/19 07:31:11 landry Exp $
 ${P5SITE}/Apache/
 ${P5SITE}/Apache/Gallery.pm
 @man man/man3p/Apache::Gallery.3p
@@ -19,6 +19,32 @@ share/Apache-Gallery/icons/video-mpeg.png
 share/Apache-Gallery/icons/video-mpg.png
 share/Apache-Gallery/icons/video-wmv.png
 share/Apache-Gallery/templates/
+share/Apache-Gallery/templates/bright/
+share/Apache-Gallery/templates/bright/dircomment.tpl
+share/Apache-Gallery/templates/bright/directory.tpl
+share/Apache-Gallery/templates/bright/error.tpl
+share/Apache-Gallery/templates/bright/file.tpl
+share/Apache-Gallery/templates/bright/gallery.css
+share/Apache-Gallery/templates/bright/index.tpl
+share/Apache-Gallery/templates/bright/info.tpl
+share/Apache-Gallery/templates/bright/interval.tpl
+share/Apache-Gallery/templates/bright/intervalactive.tpl
+share/Apache-Gallery/templates/bright/layout.tpl
+share/Apache-Gallery/templates/bright/navdirectory.tpl
+share/Apache-Gallery/templates/bright/navpicture.tpl
+share/Apache-Gallery/templates/bright/nodircomment.tpl
+share/Apache-Gallery/templates/bright/nopictureinfo.tpl
+share/Apache-Gallery/templates/bright/orig.tpl
+share/Apache-Gallery/templates/bright/picture.tpl
+share/Apache-Gallery/templates/bright/pictureinfo.tpl
+share/Apache-Gallery/templates/bright/refresh.tpl
+share/Apache-Gallery/templates/bright/rss.tpl
+share/Apache-Gallery/templates/bright/rss_item.tpl
+share/Apache-Gallery/templates/bright/scale.tpl
+share/Apache-Gallery/templates/bright/scaleactive.tpl
+share/Apache-Gallery/templates/bright/showpicture.tpl
+share/Apache-Gallery/templates/bright/slideshowisoff.tpl
+share/Apache-Gallery/templates/bright/slideshowoff.tpl
 share/Apache-Gallery/templates/default/
 share/Apache-Gallery/templates/default/dircomment.tpl
 share/Apache-Gallery/templates/default/directory.tpl
@@ -30,6 +56,7 @@ share/Apache-Gallery/templates/default/info.tpl
 share/Apache-Gallery/templates/default/interval.tpl
 share/Apache-Gallery/templates/default/intervalactive.tpl
 share/Apache-Gallery/templates/default/layout.tpl
+share/Apache-Gallery/templates/default/navdirectory.tpl
 share/Apache-Gallery/templates/default/navpicture.tpl
 share/Apache-Gallery/templates/default/nodircomment.tpl
 share/Apache-Gallery/templates/default/nopictureinfo.tpl
@@ -37,6 +64,8 @@ share/Apache-Gallery/templates/default/orig.tpl
 share/Apache-Gallery/templates/default/picture.tpl
 share/Apache-Gallery/templates/default/pictureinfo.tpl
 share/Apache-Gallery/templates/default/refresh.tpl
+share/Apache-Gallery/templates/default/rss.tpl
+share/Apache-Gallery/templates/default/rss_item.tpl
 share/Apache-Gallery/templates/default/scale.tpl
 share/Apache-Gallery/templates/default/scaleactive.tpl
 share/Apache-Gallery/templates/default/showpicture.tpl
@@ -53,6 +82,7 @@ share/Apache-Gallery/templates/new/info.tpl
 share/Apache-Gallery/templates/new/interval.tpl
 share/Apache-Gallery/templates/new/intervalactive.tpl
 share/Apache-Gallery/templates/new/layout.tpl
+share/Apache-Gallery/templates/new/navdirectory.tpl
 share/Apache-Gallery/templates/new/navpicture.tpl
 share/Apache-Gallery/templates/new/nodircomment.tpl
 share/Apache-Gallery/templates/new/nopictureinfo.tpl
@@ -60,6 +90,8 @@ share/Apache-Gallery/templates/new/orig.tpl
 share/Apache-Gallery/templates/new/picture.tpl
 share/Apache-Gallery/templates/new/pictureinfo.tpl
 share/Apache-Gallery/templates/new/refresh.tpl
+share/Apache-Gallery/templates/new/rss.tpl
+share/Apache-Gallery/templates/new/rss_item.tpl
 share/Apache-Gallery/templates/new/scale.tpl
 share/Apache-Gallery/templates/new/scaleactive.tpl
 share/Apache-Gallery/templates/new/showpicture.tpl

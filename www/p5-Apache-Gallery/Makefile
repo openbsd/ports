@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/10 10:55:27 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/19 07:31:11 landry Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
@@ -6,6 +6,7 @@ COMMENT=		mod_perl Apache gallery handler
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-1.0.2
 EPOCH =	0
+REVISION =	0
 CATEGORIES=		www
 USE_GROFF =		Yes
 HOMEPAGE=		http://www.apachegallery.dk/
@@ -35,9 +36,10 @@ DOCSDIR=        ${PREFIX}/share/doc/Apache-Gallery
 
 post-install:
 	${INSTALL_DATA_DIR} ${TEMPLATESDIR}
-.for i in new default
+.for i in bright new default
 	${INSTALL_DATA_DIR} ${TEMPLATESDIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/templates/${i}/*.tpl ${TEMPLATESDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/templates/bright/navdirectory.tpl ${TEMPLATESDIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/templates/${i}/gallery.css \
 		${TEMPLATESDIR}/${i}
 .endfor
