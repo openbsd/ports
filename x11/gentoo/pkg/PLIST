@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/03/21 09:13:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/03/19 12:59:42 ajacoutot Exp $
 @bin bin/gentoo
 @man man/man1/gentoo.1
 share/doc/gentoo/
@@ -215,7 +215,9 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
+share/locale/ca/LC_MESSAGES/gentoo.mo
 share/locale/de/LC_MESSAGES/gentoo.mo
+share/locale/es/LC_MESSAGES/gentoo.mo
 share/locale/es_MX/
 share/locale/es_MX/LC_MESSAGES/
 share/locale/es_MX/LC_MESSAGES/gentoo.mo
