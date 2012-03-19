@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/19 08:59:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/19 18:10:35 ajacoutot Exp $
 @newgroup _colord:694
 @newuser _colord:694:_colord:daemon:colord Daemon:/nonexistent:/sbin/nologin
+@extraunexec rm -f /var/db/colord/mapping.db
+@extraunexec rm -f /var/db/colord/storage.db
 %%SHARED%%
 @bin bin/cd-create-profile
 @bin bin/cd-fix-profile
