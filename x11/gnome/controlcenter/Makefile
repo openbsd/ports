@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/02/16 22:25:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2012/03/19 11:09:10 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,8 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.2
-
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -39,7 +38,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png polkit-gobject-1 pthread pthread-stubs pulse pulse-mainloop-glib
 WANTLIB += rest-0.7 sndfile soup-2.4 soup-gnome-2.4 sqlite3 ssl
 WANTLIB += stdc++ upower-glib vorbis vorbisfile webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xkbfile xklavier xml2 xslt z
+WANTLIB += xcb xcb-render xcb-shm xkbfile xklavier xml2 xslt z orc-0.4
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -102,8 +101,7 @@ CONFIGURE_ARGS+=--without-libsocialweb
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center \
-		pkgconfigdir=${PREFIX}/lib/pkgconfig/
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
 # XXX plugins that are not fully working yet:
 # * gnome-media-panel needs udev to take appropriate action on device

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/12/03 22:17:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/03/19 11:09:10 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -40,7 +40,6 @@ lib/control-center-1/panels/libuniversal-access.so
 lib/control-center-1/panels/libuser-accounts.so
 lib/libgnome-control-center.la
 @lib lib/libgnome-control-center.so.${LIBgnome-control-center_VERSION}
-lib/pkgconfig/gnome-keybindings.pc
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-color-panel.desktop
 share/applications/gnome-control-center.desktop
@@ -572,6 +571,7 @@ share/pixmaps/faces/sunflower.jpg
 share/pixmaps/faces/sunset.jpg
 share/pixmaps/faces/tennis-ball.png
 share/pixmaps/faces/yellow-rose.jpg
+share/pkgconfig/gnome-keybindings.pc
 share/sounds/gnome/
 share/sounds/gnome/default/
 share/sounds/gnome/default/alerts/
