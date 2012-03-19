@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2012/03/19 08:59:00 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Mar 19 08:59:49 2012
++++ src/Makefile.in	Mon Mar 19 09:15:06 2012
+@@ -1415,11 +1415,6 @@ uninstall-am: uninstall-dist_introspectionDATA \
+ 
+ 
+ install-data-hook:
+-	if test -w $(DESTDIR)$(prefix)/; then \
+-		mkdir -p $(DESTDIR)$(CD_SYSTEM_PROFILES_DIR); \
+-		chown $(daemon_user) $(DESTDIR)$(localstatedir)/lib/colord; \
+-		chmod 0755 $(DESTDIR)$(localstatedir)/lib/colord; \
+-	fi
+ 
+ -include $(top_srcdir)/git.mk
+ 

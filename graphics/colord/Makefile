@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/01/09 16:28:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/19 08:59:00 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
-DISTNAME=	colord-0.1.15
+DISTNAME=	colord-0.1.18
 EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  colord               0.0      # 1.4
@@ -20,8 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += jpeg lcms2 m pcre polkit-gobject-1 pthread sane sqlite3
-WANTLIB += tiff usb usb-1.0 z
+WANTLIB += lcms2 m pcre polkit-gobject-1 pthread sqlite3 z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -32,9 +31,7 @@ BUILD_DEPENDS=	lang/vala \
 		devel/gobject-introspection \
 		textproc/docbook2x
 
-LIB_DEPENDS=	devel/libusb1 \
-		graphics/sane-backends \
-		sysutils/polkit \
+LIB_DEPENDS=	sysutils/polkit \
 		graphics/lcms2
 
 # technically not needed, however it is handy to have some profiles to
@@ -52,7 +49,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
 		--disable-gtk-doc \
 		--disable-reverse \
-		--disable-gudev
+		--disable-gudev \
+		--with-daemon-user=_colord \
+		--disable-sane # needs gudev
 
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/colord"
 
@@ -68,5 +67,9 @@ pre-configure:
 
 post-install:
 	rm -rf ${WRKINST}/lib ${PREFIX}/var
+	# needs gudev
+	rm ${PREFIX}/share/examples/colord/dbus-1/system.d/org.freedesktop.colord-sane.conf \
+		${PREFIX}/share/dbus-1/system-services/org.freedesktop.colord-sane.service \
+		${PREFIX}/share/dbus-1/interfaces/org.freedesktop.colord.sane.xml
 
 .include <bsd.port.mk>
