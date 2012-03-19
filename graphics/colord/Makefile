@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/19 08:59:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/19 12:23:13 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -51,7 +51,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-reverse \
 		--disable-gudev \
 		--with-daemon-user=_colord \
-		--disable-sane # needs gudev
+		--disable-sane # needs gudev, libgusb
 
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/colord"
 
