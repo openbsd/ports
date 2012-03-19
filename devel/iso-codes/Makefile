@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/15 15:02:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2012/03/19 10:26:42 ajacoutot Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
-DISTNAME=	iso-codes-3.28
+DISTNAME=	iso-codes-3.32.2
 
 CATEGORIES=	devel
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
-		http://distfiles.nl/
+MASTER_SITES=	http://pkg-isocodes.alioth.debian.org/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
@@ -25,8 +24,6 @@ MODULES=	lang/python
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gettext
-
-FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 post-extract:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
