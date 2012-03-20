@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_player_c,v 1.7 2011/07/10 11:01:05 dcoppa Exp $
+$OpenBSD: patch-src_player_c,v 1.8 2012/03/20 14:27:45 dcoppa Exp $
 
 Add missing include
 
 Our faad port uses a patched neaacdec.h header
 
---- src/player.c.orig	Sat Jul  9 10:40:54 2011
-+++ src/player.c	Sun Jul 10 12:40:48 2011
+--- src/player.c.orig	Tue Mar 20 14:47:07 2012
++++ src/player.c	Tue Mar 20 14:54:05 2012
 @@ -28,6 +28,7 @@ THE SOFTWARE.
  #include <math.h>
  #include <stdint.h>
@@ -14,7 +14,7 @@ Our faad port uses a patched neaacdec.h header
  #include <arpa/inet.h>
  
  #include "player.h"
-@@ -186,7 +187,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, s
+@@ -187,7 +188,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, s
  					/* +1+4 needs to be replaced by <something>! */
  					player->bufferRead += 1+4;
  					char err = NeAACDecInit2 (player->aacHandle, player->buffer +
