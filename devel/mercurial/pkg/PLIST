@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/11/16 15:00:52 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.23 2012/03/20 19:55:38 rpointel Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -201,6 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/help/hgweb.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/merge-tools.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/multirevs.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/patterns.txt
+lib/python${MODPY_VERSION}/site-packages/mercurial/help/phases.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/revisions.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/revsets.txt
 lib/python${MODPY_VERSION}/site-packages/mercurial/help/subrepos.txt
@@ -322,9 +323,10 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/node.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/node.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/parser.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/parser.pyc
-lib/python${MODPY_VERSION}/site-packages/mercurial/parsers.so
 lib/python${MODPY_VERSION}/site-packages/mercurial/patch.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/patch.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/phases.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/phases.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/posix.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/posix.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pushkey.py
