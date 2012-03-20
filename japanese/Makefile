@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/03/13 01:10:37 fgsch Exp $
+# $OpenBSD: Makefile,v 1.27 2012/03/20 23:47:17 fgsch Exp $
 
      SUBDIR =
      SUBDIR += Wnn
@@ -22,6 +22,7 @@
      SUBDIR += kterm,xaw3d
      SUBDIR += less
      SUBDIR += nkf
+     SUBDIR += mecab
      SUBDIR += onew,canna
      SUBDIR += onew,wnn4
      SUBDIR += onew,wnn4,canna
