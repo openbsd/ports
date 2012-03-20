@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_memory_details_linux_cc,v 1.1 2012/03/20 20:52:44 robert Exp $
+--- chrome/browser/memory_details_linux.cc.orig	Tue Mar 20 13:11:49 2012
++++ chrome/browser/memory_details_linux.cc	Tue Mar 20 15:26:57 2012
+@@ -240,7 +240,7 @@ void MemoryDetails::CollectProcessData(
+   }
+ 
+   std::vector<pid_t> current_browser_processes;
+-  const pid_t zygote = ZygoteHost::GetInstance()->pid();
++  const pid_t zygote = 0;
+   GetAllChildren(processes, getpid(), zygote, &current_browser_processes);
+   ProcessData current_browser;
+   GetProcessDataMemoryInformation(current_browser_processes, &current_browser);

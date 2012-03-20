@@ -1,0 +1,30 @@
+$OpenBSD: patch-content_app_content_main_cc,v 1.4 2012/03/20 20:52:44 robert Exp $
+--- content/app/content_main.cc.orig	Tue Mar 20 15:27:41 2012
++++ content/app/content_main.cc	Tue Mar 20 15:28:24 2012
+@@ -68,7 +68,7 @@ extern int PpapiBrokerMain(const content::MainFunction
+ extern int RendererMain(const content::MainFunctionParams&);
+ extern int WorkerMain(const content::MainFunctionParams&);
+ extern int UtilityMain(const content::MainFunctionParams&);
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ extern int ZygoteMain(const content::MainFunctionParams&,
+                       content::ZygoteForkDelegate* forkdelegate);
+ #endif
+@@ -181,7 +181,7 @@ struct MainFunction {
+   int (*function)(const content::MainFunctionParams&);
+ };
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ // On platforms that use the zygote, we have a special subset of
+ // subprocesses that are launched via the zygote.  This function
+ // fills in some process-launching bits around ZygoteMain().
+@@ -263,7 +263,7 @@ int RunNamedProcessTypeMain(
+       return kMainFunctions[i].function(main_function_params);
+   }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   // Zygote startup is special -- see RunZygote comments above
+   // for why we don't use ZygoteMain directly.
+   if (process_type == switches::kZygoteProcess)

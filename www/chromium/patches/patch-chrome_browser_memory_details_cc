@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.7 2012/03/20 20:52:44 robert Exp $
+--- chrome/browser/memory_details.cc.orig	Tue Mar 20 13:11:43 2012
++++ chrome/browser/memory_details.cc	Tue Mar 20 13:12:29 2012
+@@ -29,7 +29,7 @@
+ #include "grit/generated_resources.h"
+ #include "ui/base/l10n/l10n_util.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+ #include "content/browser/renderer_host/render_sandbox_host_linux.h"
+ #include "content/browser/zygote_host_linux.h"
+ #endif
+@@ -150,7 +150,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+ void MemoryDetails::CollectChildInfoOnUIThread() {
+   DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   const pid_t zygote_pid = ZygoteHost::GetInstance()->pid();
+   const pid_t sandbox_helper_pid = RenderSandboxHostLinux::GetInstance()->pid();
+ #endif
+@@ -298,7 +298,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+       }
+     }
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+     if (process.pid == zygote_pid) {
+       process.type = content::PROCESS_TYPE_ZYGOTE;
+     } else if (process.pid == sandbox_helper_pid) {

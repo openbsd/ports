@@ -1,0 +1,37 @@
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1 2012/03/20 20:52:44 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig	Tue Mar 20 13:11:46 2012
++++ chrome/browser/ui/webui/about_ui.cc	Tue Mar 20 13:13:22 2012
+@@ -81,7 +81,7 @@
+ #include "chrome/browser/chromeos/version_loader.h"
+ #include "chrome/browser/oom_priority_manager.h"
+ #include "content/browser/zygote_host_linux.h"
+-#elif defined(OS_LINUX) || defined(OS_OPENBSD)
++#elif defined(OS_LINUX)
+ #include "content/browser/zygote_host_linux.h"
+ #endif
+ 
+@@ -936,6 +936,7 @@ std::string AboutLinuxProxyConfig() {
+   return data;
+ }
+ 
++#if defined(OS_LINUX)
+ void AboutSandboxRow(std::string* data, const std::string& prefix, int name_id,
+                      bool good) {
+   data->append("<tr><td>");
+@@ -992,6 +993,7 @@ std::string AboutSandbox() {
+   return data;
+ }
+ #endif
++#endif
+ 
+ std::string AboutVersionStaticContent(const std::string& query) {
+   return ResourceBundle::GetSharedInstance().GetRawDataResource(
+@@ -1322,7 +1324,7 @@ void AboutUIHTMLSource::StartDataRequest(const std::st
+     response = ResourceBundle::GetSharedInstance().GetRawDataResource(
+         IDR_OS_CREDITS_HTML).as_string();
+ #endif
+-#if defined(OS_LINUX) || defined(OS_OPENBSD)
++#if defined(OS_LINUX)
+   } else if (host == chrome::kChromeUISandboxHost) {
+     response = AboutSandbox();
+ #endif
