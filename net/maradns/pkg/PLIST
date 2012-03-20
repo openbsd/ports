@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/03/20 22:13:49 sthen Exp $
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns:daemon:MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
@@ -23,7 +23,6 @@ share/doc/maradns/
 share/doc/maradns/Makefile
 share/doc/maradns/QuickStart
 share/doc/maradns/README
-share/doc/maradns/changelog.txt
 share/doc/maradns/credits.txt
 share/doc/maradns/faq.html
 share/doc/maradns/faq.txt
