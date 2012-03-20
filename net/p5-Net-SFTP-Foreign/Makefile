@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/10 16:51:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/20 23:53:29 gsoares Exp $
 
 COMMENT=	SSH File Transfer Protocol client
 
 MODULES=	cpan
-DISTNAME=	Net-SFTP-Foreign-1.67
+DISTNAME=	Net-SFTP-Foreign-1.71
 CATEGORIES=	net security
-USE_GROFF=	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
