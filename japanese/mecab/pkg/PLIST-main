@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/03/20 23:43:12 fgsch Exp $
+%%SHARED%%
+@bin bin/mecab
+bin/mecab-config
+include/mecab.h
+lib/libmecab.a
+lib/libmecab.la
+libexec/mecab/
+@bin libexec/mecab/mecab-cost-train
+@bin libexec/mecab/mecab-dict-gen
+@bin libexec/mecab/mecab-dict-index
+@bin libexec/mecab/mecab-system-eval
+@bin libexec/mecab/mecab-test-gen
+@man man/man1/mecab.1
+share/examples/mecab/
+share/examples/mecab/mecabrc
+@sample ${SYSCONFDIR}/mecabrc
