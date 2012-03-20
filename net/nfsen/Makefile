@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/20 13:57:44 sthen Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
@@ -42,6 +42,8 @@ pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/etc/nfsen-dist.conf
 	@cd ${WRKSRC}/html; [ -r index.php ] || echo \
 	    '<?php header("Location: nfsen.php"); ?>' > index.php
+
+# XXX installer requires /dev/log causing problems for ports builds in a jail
 
 do-install:
 	${INSTALL_DATA_DIR} ${WWWDIR}/
