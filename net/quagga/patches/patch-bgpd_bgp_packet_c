@@ -1,0 +1,23 @@
+$OpenBSD: patch-bgpd_bgp_packet_c,v 1.3 2012/03/20 20:56:26 sthen Exp $
+
+CVE-2012-0255 - Quagga bgpd DoS on malformed OPEN message
+
+--- bgpd/bgp_packet.c.orig	Mon Sep 26 15:45:54 2011
++++ bgpd/bgp_packet.c	Tue Mar 20 20:05:06 2012
+@@ -1446,9 +1446,13 @@ bgp_open_receive (struct peer *peer, bgp_size_t size)
+   /* Open option part parse. */
+   if (optlen != 0) 
+     {
+-      ret = bgp_open_option_parse (peer, optlen, &capability);
+-      if (ret < 0)
+-	return ret;
++      if ((ret = bgp_open_option_parse (peer, optlen, &capability)) < 0)
++        {
++          bgp_notify_send (peer,
++                 BGP_NOTIFY_OPEN_ERR,
++                 BGP_NOTIFY_OPEN_UNACEP_HOLDTIME);
++	  return ret;
++        }
+     }
+   else
+     {

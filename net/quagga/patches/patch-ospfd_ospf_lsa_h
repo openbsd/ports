@@ -1,0 +1,38 @@
+$OpenBSD: patch-ospfd_ospf_lsa_h,v 1.3 2012/03/20 20:56:26 sthen Exp $
+
+from 0.99.20.1 upstream
+
+--- ospfd/ospf_lsa.h.orig	Mon Sep 26 15:45:54 2011
++++ ospfd/ospf_lsa.h	Tue Mar 20 20:05:06 2012
+@@ -152,6 +152,7 @@ struct router_lsa_link
+ };
+ 
+ /* OSPF Router-LSAs structure. */
++#define OSPF_ROUTER_LSA_MIN_SIZE                  16U /* w/1 link descriptor */
+ struct router_lsa
+ {
+   struct lsa_header header;
+@@ -169,6 +170,7 @@ struct router_lsa
+ };
+ 
+ /* OSPF Network-LSAs structure. */
++#define OSPF_NETWORK_LSA_MIN_SIZE                  8U /* w/1 router-ID */
+ struct network_lsa
+ {
+   struct lsa_header header;
+@@ -177,6 +179,7 @@ struct network_lsa
+ };
+ 
+ /* OSPF Summary-LSAs structure. */
++#define OSPF_SUMMARY_LSA_MIN_SIZE                  8U /* w/1 TOS metric block */
+ struct summary_lsa
+ {
+   struct lsa_header header;
+@@ -186,6 +189,7 @@ struct summary_lsa
+ };
+ 
+ /* OSPF AS-external-LSAs structure. */
++#define OSPF_AS_EXTERNAL_LSA_MIN_SIZE             16U /* w/1 TOS forwarding block */
+ struct as_external_lsa
+ {
+   struct lsa_header header;
