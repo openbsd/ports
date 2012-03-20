@@ -1,12 +1,12 @@
-$OpenBSD: patch-m4_buildsys_m4,v 1.4 2010/12/27 11:50:45 jasper Exp $
---- m4/buildsys.m4.orig	Tue Dec  7 18:14:31 2010
-+++ m4/buildsys.m4	Sat Dec 25 20:33:20 2010
-@@ -91,7 +91,7 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
- 			LIB_CFLAGS='-fPIC'
- 			LIB_LDFLAGS='-shared -fPIC'
+$OpenBSD: patch-m4_buildsys_m4,v 1.5 2012/03/20 19:10:18 stsp Exp $
+--- m4/buildsys.m4.orig	Fri Jan 20 20:46:56 2012
++++ m4/buildsys.m4	Sun Feb  5 19:13:21 2012
+@@ -124,7 +124,7 @@ AC_DEFUN([BUILDSYS_SHARED_LIB], [
+ 			LIB_CFLAGS='-fPIC -DPIC'
+ 			LIB_LDFLAGS='-shared'
  			LIB_PREFIX='lib'
 -			LIB_SUFFIX='.so.${LIB_MAJOR}.${LIB_MINOR}'
 +			LIB_SUFFIX='.so'
  			LDFLAGS_RPATH='-Wl,-rpath,${libdir}'
- 			PLUGIN_CPPFLAGS='-DPIC'
- 			PLUGIN_CFLAGS='-fPIC'
+ 			PLUGIN_CFLAGS='-fPIC -DPIC'
+ 			PLUGIN_LDFLAGS='-shared'
