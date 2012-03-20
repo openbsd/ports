@@ -1,0 +1,12 @@
+The GNU Core Utilities are the basic file, shell and text manipulation
+utilities of the GNU operating system.
+
+Previously these utilities were offered as three individual sets of GNU
+utilities, Fileutils, Shellutils, and Textutils. Those three have been
+combined into a single set of utilities called Coreutils.
+
+All the binaries are prefixed by the letter g to differentiate them with
+the standard applications with the same name. The texinfo
+documentation will refer to them without the 'g' prefix. `id' is
+prefixed by two g (ggid) in other to avoid a conflict with gid in
+id-utils.

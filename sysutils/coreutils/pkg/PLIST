@@ -1,0 +1,346 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/20 16:34:07 naddy Exp $
+@conflict fileutils-*
+@conflict sh-utils-*
+@conflict textutils-*
+@conflict gnuls-*
+@pkgpath misc/fileutils,-main
+@pkgpath misc/fileutils,-gnuls
+@pkgpath misc/sh-utils
+@pkgpath textproc/textutils
+@bin bin/g[
+@bin bin/gbase64
+@bin bin/gbasename
+@bin bin/gcat
+@bin bin/gchcon
+@bin bin/gchgrp
+@bin bin/gchmod
+@bin bin/gchown
+@bin bin/gchroot
+@bin bin/gcksum
+@bin bin/gcomm
+@bin bin/gcp
+@bin bin/gcsplit
+@bin bin/gcut
+@bin bin/gdate
+@bin bin/gdd
+@bin bin/gdf
+@bin bin/gdir
+@bin bin/gdircolors
+@bin bin/gdirname
+@bin bin/gdu
+@bin bin/gecho
+@bin bin/genv
+@bin bin/gexpand
+@bin bin/gexpr
+@bin bin/gfactor
+@bin bin/gfalse
+@bin bin/gfmt
+@bin bin/gfold
+@bin bin/ggid
+@bin bin/ggod
+@bin bin/ggpr
+@bin bin/ggroups
+@bin bin/ghead
+@bin bin/ghostid
+@bin bin/ginstall
+@bin bin/gjoin
+@bin bin/gkill
+@bin bin/glink
+@bin bin/gln
+@bin bin/glogname
+@bin bin/gls
+@bin bin/gmd5sum
+@bin bin/gmkdir
+@bin bin/gmkfifo
+@bin bin/gmknod
+@bin bin/gmktemp
+@bin bin/gmv
+@bin bin/gnice
+@bin bin/gnl
+@bin bin/gnohup
+@bin bin/gnproc
+@bin bin/gpaste
+@bin bin/gpathchk
+@bin bin/gpinky
+@bin bin/gprintenv
+@bin bin/gprintf
+@bin bin/gptx
+@bin bin/gpwd
+@bin bin/greadlink
+@bin bin/grealpath
+@bin bin/grm
+@bin bin/grmdir
+@bin bin/gruncon
+@bin bin/gseq
+@bin bin/gsha1sum
+@bin bin/gsha224sum
+@bin bin/gsha256sum
+@bin bin/gsha384sum
+@bin bin/gsha512sum
+@bin bin/gshred
+@bin bin/gshuf
+@bin bin/gsleep
+@bin bin/gsort
+@bin bin/gsplit
+@bin bin/gstat
+@bin bin/gstdbuf
+@bin bin/gstty
+@bin bin/gsum
+@bin bin/gsync
+@bin bin/gtac
+@bin bin/gtail
+@bin bin/gtee
+@bin bin/gtest
+@bin bin/gtimeout
+@bin bin/gtouch
+@bin bin/gtr
+@bin bin/gtrue
+@bin bin/gtruncate
+@bin bin/gtsort
+@bin bin/gtty
+@bin bin/guname
+@bin bin/gunexpand
+@bin bin/guniq
+@bin bin/gunlink
+@bin bin/guptime
+@bin bin/gusers
+@bin bin/gvdir
+@bin bin/gwc
+@bin bin/gwho
+@bin bin/gwhoami
+@bin bin/gyes
+@info info/coreutils.info
+@comment lib/charset.alias
+libexec/coreutils/
+libexec/coreutils/glibstdbuf.so
+@man man/man1/gbase64.1
+@man man/man1/gbasename.1
+@man man/man1/gcat.1
+@man man/man1/gchcon.1
+@man man/man1/gchgrp.1
+@man man/man1/gchmod.1
+@man man/man1/gchown.1
+@man man/man1/gchroot.1
+@man man/man1/gcksum.1
+@man man/man1/gcomm.1
+@man man/man1/gcp.1
+@man man/man1/gcsplit.1
+@man man/man1/gcut.1
+@man man/man1/gdate.1
+@man man/man1/gdd.1
+@man man/man1/gdf.1
+@man man/man1/gdir.1
+@man man/man1/gdircolors.1
+@man man/man1/gdirname.1
+@man man/man1/gdu.1
+@man man/man1/gecho.1
+@man man/man1/genv.1
+@man man/man1/gexpand.1
+@man man/man1/gexpr.1
+@man man/man1/gfactor.1
+@man man/man1/gfalse.1
+@man man/man1/gfmt.1
+@man man/man1/gfold.1
+@man man/man1/ggid.1
+@man man/man1/ggod.1
+@man man/man1/ggpr.1
+@man man/man1/ggroups.1
+@man man/man1/ghead.1
+@man man/man1/ghostid.1
+@man man/man1/ginstall.1
+@man man/man1/gjoin.1
+@man man/man1/gkill.1
+@man man/man1/glink.1
+@man man/man1/gln.1
+@man man/man1/glogname.1
+@man man/man1/gls.1
+@man man/man1/gmd5sum.1
+@man man/man1/gmkdir.1
+@man man/man1/gmkfifo.1
+@man man/man1/gmknod.1
+@man man/man1/gmktemp.1
+@man man/man1/gmv.1
+@man man/man1/gnice.1
+@man man/man1/gnl.1
+@man man/man1/gnohup.1
+@man man/man1/gnproc.1
+@man man/man1/gpaste.1
+@man man/man1/gpathchk.1
+@man man/man1/gpinky.1
+@man man/man1/gprintenv.1
+@man man/man1/gprintf.1
+@man man/man1/gptx.1
+@man man/man1/gpwd.1
+@man man/man1/greadlink.1
+@man man/man1/grealpath.1
+@man man/man1/grm.1
+@man man/man1/grmdir.1
+@man man/man1/gruncon.1
+@man man/man1/gseq.1
+@man man/man1/gsha1sum.1
+@man man/man1/gsha224sum.1
+@man man/man1/gsha256sum.1
+@man man/man1/gsha384sum.1
+@man man/man1/gsha512sum.1
+@man man/man1/gshred.1
+@man man/man1/gshuf.1
+@man man/man1/gsleep.1
+@man man/man1/gsort.1
+@man man/man1/gsplit.1
+@man man/man1/gstat.1
+@man man/man1/gstdbuf.1
+@man man/man1/gstty.1
+@man man/man1/gsum.1
+@man man/man1/gsync.1
+@man man/man1/gtac.1
+@man man/man1/gtail.1
+@man man/man1/gtee.1
+@man man/man1/gtest.1
+@man man/man1/gtimeout.1
+@man man/man1/gtouch.1
+@man man/man1/gtr.1
+@man man/man1/gtrue.1
+@man man/man1/gtruncate.1
+@man man/man1/gtsort.1
+@man man/man1/gtty.1
+@man man/man1/guname.1
+@man man/man1/gunexpand.1
+@man man/man1/guniq.1
+@man man/man1/gunlink.1
+@man man/man1/guptime.1
+@man man/man1/gusers.1
+@man man/man1/gvdir.1
+@man man/man1/gwc.1
+@man man/man1/gwho.1
+@man man/man1/gwhoami.1
+@man man/man1/gyes.1
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/coreutils.mo
+share/locale/af/LC_TIME/
+share/locale/af/LC_TIME/coreutils.mo
+share/locale/be/LC_MESSAGES/coreutils.mo
+share/locale/be/LC_TIME/
+share/locale/be/LC_TIME/coreutils.mo
+share/locale/bg/LC_MESSAGES/coreutils.mo
+share/locale/bg/LC_TIME/
+share/locale/bg/LC_TIME/coreutils.mo
+share/locale/ca/LC_MESSAGES/coreutils.mo
+share/locale/ca/LC_TIME/
+share/locale/ca/LC_TIME/coreutils.mo
+share/locale/cs/LC_MESSAGES/coreutils.mo
+share/locale/cs/LC_TIME/
+share/locale/cs/LC_TIME/coreutils.mo
+share/locale/da/LC_MESSAGES/coreutils.mo
+share/locale/da/LC_TIME/
+share/locale/da/LC_TIME/coreutils.mo
+share/locale/de/LC_MESSAGES/coreutils.mo
+share/locale/de/LC_TIME/
+share/locale/de/LC_TIME/coreutils.mo
+share/locale/el/LC_MESSAGES/coreutils.mo
+share/locale/el/LC_TIME/
+share/locale/el/LC_TIME/coreutils.mo
+share/locale/eo/LC_MESSAGES/coreutils.mo
+share/locale/eo/LC_TIME/
+share/locale/eo/LC_TIME/coreutils.mo
+share/locale/es/LC_MESSAGES/coreutils.mo
+share/locale/es/LC_TIME/
+share/locale/es/LC_TIME/coreutils.mo
+share/locale/et/LC_MESSAGES/coreutils.mo
+share/locale/et/LC_TIME/
+share/locale/et/LC_TIME/coreutils.mo
+share/locale/eu/LC_MESSAGES/coreutils.mo
+share/locale/eu/LC_TIME/
+share/locale/eu/LC_TIME/coreutils.mo
+share/locale/fi/LC_MESSAGES/coreutils.mo
+share/locale/fi/LC_TIME/
+share/locale/fi/LC_TIME/coreutils.mo
+share/locale/fr/LC_MESSAGES/coreutils.mo
+share/locale/fr/LC_TIME/
+share/locale/fr/LC_TIME/coreutils.mo
+share/locale/ga/LC_MESSAGES/coreutils.mo
+share/locale/ga/LC_TIME/
+share/locale/ga/LC_TIME/coreutils.mo
+share/locale/gl/LC_MESSAGES/coreutils.mo
+share/locale/gl/LC_TIME/
+share/locale/gl/LC_TIME/coreutils.mo
+share/locale/hu/LC_MESSAGES/coreutils.mo
+share/locale/hu/LC_TIME/
+share/locale/hu/LC_TIME/coreutils.mo
+share/locale/id/LC_MESSAGES/coreutils.mo
+share/locale/id/LC_TIME/
+share/locale/id/LC_TIME/coreutils.mo
+share/locale/it/LC_MESSAGES/coreutils.mo
+share/locale/it/LC_TIME/
+share/locale/it/LC_TIME/coreutils.mo
+share/locale/ja/LC_MESSAGES/coreutils.mo
+share/locale/ja/LC_TIME/
+share/locale/ja/LC_TIME/coreutils.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/coreutils.mo
+share/locale/kk/LC_TIME/
+share/locale/kk/LC_TIME/coreutils.mo
+share/locale/ko/LC_MESSAGES/coreutils.mo
+share/locale/ko/LC_TIME/
+share/locale/ko/LC_TIME/coreutils.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
+share/locale/lg/LC_MESSAGES/coreutils.mo
+share/locale/lg/LC_TIME/
+share/locale/lg/LC_TIME/coreutils.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/coreutils.mo
+share/locale/lt/LC_TIME/
+share/locale/lt/LC_TIME/coreutils.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/coreutils.mo
+share/locale/ms/LC_TIME/
+share/locale/ms/LC_TIME/coreutils.mo
+share/locale/nb/LC_MESSAGES/coreutils.mo
+share/locale/nb/LC_TIME/
+share/locale/nb/LC_TIME/coreutils.mo
+share/locale/nl/LC_MESSAGES/coreutils.mo
+share/locale/nl/LC_TIME/
+share/locale/nl/LC_TIME/coreutils.mo
+share/locale/pl/LC_MESSAGES/coreutils.mo
+share/locale/pl/LC_TIME/
+share/locale/pl/LC_TIME/coreutils.mo
+share/locale/pt/LC_MESSAGES/coreutils.mo
+share/locale/pt/LC_TIME/
+share/locale/pt/LC_TIME/coreutils.mo
+share/locale/pt_BR/LC_MESSAGES/coreutils.mo
+share/locale/pt_BR/LC_TIME/
+share/locale/pt_BR/LC_TIME/coreutils.mo
+share/locale/ro/LC_MESSAGES/coreutils.mo
+share/locale/ro/LC_TIME/
+share/locale/ro/LC_TIME/coreutils.mo
+share/locale/ru/LC_MESSAGES/coreutils.mo
+share/locale/ru/LC_TIME/
+share/locale/ru/LC_TIME/coreutils.mo
+share/locale/sk/LC_MESSAGES/coreutils.mo
+share/locale/sk/LC_TIME/
+share/locale/sk/LC_TIME/coreutils.mo
+share/locale/sl/LC_MESSAGES/coreutils.mo
+share/locale/sl/LC_TIME/
+share/locale/sl/LC_TIME/coreutils.mo
+share/locale/sv/LC_MESSAGES/coreutils.mo
+share/locale/sv/LC_TIME/
+share/locale/sv/LC_TIME/coreutils.mo
+share/locale/tr/LC_MESSAGES/coreutils.mo
+share/locale/tr/LC_TIME/
+share/locale/tr/LC_TIME/coreutils.mo
+share/locale/uk/LC_MESSAGES/coreutils.mo
+share/locale/uk/LC_TIME/
+share/locale/uk/LC_TIME/coreutils.mo
+share/locale/vi/LC_MESSAGES/coreutils.mo
+share/locale/vi/LC_TIME/
+share/locale/vi/LC_TIME/coreutils.mo
+share/locale/zh_CN/LC_MESSAGES/coreutils.mo
+share/locale/zh_CN/LC_TIME/
+share/locale/zh_CN/LC_TIME/coreutils.mo
+share/locale/zh_TW/LC_MESSAGES/coreutils.mo
+share/locale/zh_TW/LC_TIME/
+share/locale/zh_TW/LC_TIME/coreutils.mo
