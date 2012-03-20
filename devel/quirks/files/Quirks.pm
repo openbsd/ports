@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.70 2012/02/28 05:58:15 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.71 2012/03/20 16:36:16 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -283,7 +283,11 @@ my $stem_extensions = {
 	'gpsbabel-gui' => 'gpsbabel-tk',
 	'gnome-extras' => 'gnome-extra',
 	'maatkit' => 'percona-toolkit',
-	'scrotwm' => 'spectrwm'
+	'scrotwm' => 'spectrwm',
+	'gnuls' => 'coreutils',
+	'sh-utils' => 'coreutils',
+	'fileutils' => 'coreutils',
+	'textutils' => 'coreutils'
 };
 
 # ->is_base_system($handle, $state):

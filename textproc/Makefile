@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.351 2012/03/05 18:06:56 landry Exp $
+# $OpenBSD: Makefile,v 1.352 2012/03/20 16:36:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -343,7 +343,6 @@
      SUBDIR += swish-e
      SUBDIR += tcpdf
      SUBDIR += texi2html
-     SUBDIR += textutils
      SUBDIR += tre
      SUBDIR += txt2tags
      SUBDIR += uncrustify

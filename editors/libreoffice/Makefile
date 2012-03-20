@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2012/02/18 22:22:41 robert Exp $
+# $OpenBSD: Makefile,v 1.59 2012/03/20 16:36:16 naddy Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -128,9 +128,8 @@ BUILD_DEPENDS+=	archivers/zip \
 		archivers/p5-Archive-Zip \
 		print/cups \
 		boost->=1.41.0:devel/boost \
-		misc/fileutils \
 		misc/findutils \
-		textproc/textutils
+		sysutils/coreutils
 
 MODULES+=	lang/python \
 		devel/gettext

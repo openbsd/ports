@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.147 2012/01/17 08:05:03 bentley Exp $
+# $OpenBSD: Makefile,v 1.148 2012/03/20 16:36:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -24,7 +24,6 @@
      SUBDIR += dvtm
      SUBDIR += ent
      SUBDIR += figlet
-     SUBDIR += fileutils
      SUBDIR += findutils
      SUBDIR += ftdi-eeprom
      SUBDIR += garmin-utils
@@ -87,7 +86,6 @@
      SUBDIR += screen
      SUBDIR += screen,shm
      SUBDIR += screen,static
-     SUBDIR += sh-utils
      SUBDIR += shared-desktop-ontologies
      SUBDIR += shared-mime-info
      SUBDIR += spdrs60

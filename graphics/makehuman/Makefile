@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/15 13:38:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/20 16:36:16 naddy Exp $
 
 COMMENT=	parametrical modeling of 3D humanoid characters
 
@@ -23,7 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=makehuman/}
 # gtar(1), PaxHeaders
 # gcp(1), see pre-configure
 TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS=	misc/fileutils \
+BUILD_DEPENDS=	sysutils/coreutils \
 		archivers/gtar
 
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.252 2011/11/15 21:40:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.253 2012/03/20 16:36:16 naddy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -31,6 +31,7 @@
      SUBDIR += conky,no_x11
      SUBDIR += conky,xmms2
      SUBDIR += consolekit
+     SUBDIR += coreutils
      SUBDIR += crashme
      SUBDIR += cyphertite
      SUBDIR += d-feet
