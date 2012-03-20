@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/03/19 10:28:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/03/20 06:59:25 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -374,3 +374,7 @@ share/xml/gnome/xslt/mallard/html/mal2html-page.xsl
 share/xml/gnome/xslt/mallard/html/mal2html-table.xsl
 share/xml/gnome/xslt/mallard/html/mal2html.xsl
 share/xml/gnome/xslt/mallard/html/mal2xhtml.xsl
+share/xml/mallard/
+share/xml/mallard/1.0/
+share/xml/mallard/1.0/mallard.rnc
+share/xml/mallard/1.0/mallard.rng
