@@ -1,0 +1,31 @@
+$OpenBSD: patch-doc_dwood3rc,v 1.1.1.1 2012/03/21 16:17:58 sthen Exp $
+--- doc/dwood3rc.orig	Wed Feb 29 07:59:53 2012
++++ doc/dwood3rc	Tue Mar 20 22:28:45 2012
+@@ -6,7 +6,7 @@ bind_address="127.0.0.1" # IP we bind to
+ # The following line is disabled by being commented out
+ #bind_address="::1" # We have optional IPv6 support
+ 
+-chroot_dir = "/etc/deadwood" # Directory we run program from (not used in Win32)
++chroot_dir = "/var/deadwood" # Directory we run program from (not used in Win32)
+ 
+ # The following upstream DNS servers are Google's newly-announced (as of
+ # December, 2009) public DNS servers.  For more information, see
+@@ -44,8 +44,8 @@ recursive_acl = "127.0.0.1/16" # Who is allowed to use
+ maxprocs = 8 # Maximum number of pending requests
+ handle_overload = 1 # Send SERVER FAIL when overloaded
+ 
+-maradns_uid = 99 # UID Deadwood runs as
+-maradns_gid = 99 # GID Deadwood runs as
++maradns_uid = 695 # UID Deadwood runs as
++maradns_gid = 695 # GID Deadwood runs as
+ 
+ maximum_cache_elements = 60000
+ 
+@@ -64,3 +64,7 @@ resurrections = 1
+ # on an internal network, uncomment the following line:
+ #filter_rfc1918 = 0
+ 
++# By default, Deadwood does not allow MX records to be resolved as
++# some protection against spam zombies.  To permit this, uncomment the
++# following line:
++#reject_mx = 0

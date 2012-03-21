@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/21 16:17:58 sthen Exp $
+@newgroup _deadwood:695
+@newuser _deadwood:695:_deadwood:daemon:maradns-deadwood user:/nonexistent:/sbin/nologin
+@man man/man1/Deadwood.1
+@bin sbin/Deadwood
+share/examples/maradns-deadwood/
+share/examples/maradns-deadwood/dwood3rc
+@sample ${SYSCONFDIR}/dwood3rc
+@group _deadwood
+@mode 770
+@sample /var/deadwood/
+@group
+@mode
+@rcscript ${RCDIR}/deadwood

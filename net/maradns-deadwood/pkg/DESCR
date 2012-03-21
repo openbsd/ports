@@ -1,0 +1,5 @@
+Deadwood is the recursive DNS daemon (service) for MaraDNS 2.0.
+MaraDNS 2.0 uses separate programs for authoritative records
+(maradns) and recursive records (Deadwood). Deadwood is a
+standalone recursive server that can either be used in
+conjunction with MaraDNS's authoritative server, or by itself.
