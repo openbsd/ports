@@ -1,0 +1,57 @@
+$OpenBSD: patch-m4_gettext_m4,v 1.1.1.1 2012/03/21 14:41:22 ajacoutot Exp $
+--- m4/gettext.m4.orig	Tue Nov 23 20:16:40 2010
++++ m4/gettext.m4	Wed Mar 21 08:59:11 2012
+@@ -158,7 +158,7 @@ return * gettext ("")]ifelse([$2], [need-ngettext], [ 
+            [gt_save_CPPFLAGS="$CPPFLAGS"
+             CPPFLAGS="$CPPFLAGS $INCINTL"
+             gt_save_LIBS="$LIBS"
+-            LIBS="$LIBS $LIBINTL"
++            LIBS="$LIBS $LTLIBINTL"
+             dnl Now see whether libintl exists and does not depend on libiconv.
+             AC_TRY_LINK([#include <libintl.h>
+ ]ifelse([$2], [need-formatstring-macros],
+@@ -180,7 +180,7 @@ return * gettext ("")]ifelse([$2], [need-ngettext], [ 
+               gt_cv_func_gnugettext_libintl=no)
+             dnl Now see whether libintl exists and depends on libiconv.
+             if test "$gt_cv_func_gnugettext_libintl" != yes && test -n "$LIBICONV"; then
+-              LIBS="$LIBS $LIBICONV"
++              LIBS="$LIBS $LTLIBICONV"
+               AC_TRY_LINK([#include <libintl.h>
+ ]ifelse([$2], [need-formatstring-macros],
+ [#ifndef __GNU_GETTEXT_SUPPORTED_REVISION
+@@ -197,7 +197,7 @@ extern
+ const char *_nl_expand_alias (const char *);],
+                 [bindtextdomain ("", "");
+ return * gettext ("")]ifelse([$2], [need-ngettext], [ + * ngettext ("", "", 0)], [])[ + _nl_msg_cat_cntr + *_nl_expand_alias ("")],
+-               [LIBINTL="$LIBINTL $LIBICONV"
++               [LIBINTL="$LTLIBINTL $LTLIBICONV"
+                 LTLIBINTL="$LTLIBINTL $LTLIBICONV"
+                 gt_cv_func_gnugettext_libintl=yes
+                ])
+@@ -234,7 +234,7 @@ return * gettext ("")]ifelse([$2], [need-ngettext], [ 
+         dnl Mark actions used to generate GNU NLS library.
+         BUILD_INCLUDED_LIBINTL=yes
+         USE_INCLUDED_LIBINTL=yes
+-        LIBINTL="ifelse([$3],[],\${top_builddir}/intl,[$3])/libintl.[]gt_libtool_suffix_prefix[]a $LIBICONV"
++        LIBINTL="ifelse([$3],[],\${top_builddir}/intl,[$3])/libintl.[]gt_libtool_suffix_prefix[]a $LTLIBICONV"
+         LTLIBINTL="ifelse([$3],[],\${top_builddir}/intl,[$3])/libintl.[]gt_libtool_suffix_prefix[]a $LTLIBICONV"
+         LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
+       fi
+@@ -287,7 +287,7 @@ return * gettext ("")]ifelse([$2], [need-ngettext], [ 
+     if test "$gt_use_preinstalled_gnugettext" = "yes"; then
+       if test "$gt_cv_func_gnugettext_libintl" = "yes"; then
+         AC_MSG_CHECKING([how to link with libintl])
+-        AC_MSG_RESULT([$LIBINTL])
++        AC_MSG_RESULT([$LTLIBINTL])
+         AC_LIB_APPENDTOVAR([CPPFLAGS], [$INCINTL])
+       fi
+ 
+@@ -343,7 +343,7 @@ return * gettext ("")]ifelse([$2], [need-ngettext], [ 
+   ])
+ 
+   dnl For backward compatibility. Some Makefiles may be using this.
+-  INTLLIBS="$LIBINTL"
++  INTLLIBS="$LTLIBINTL"
+   AC_SUBST(INTLLIBS)
+ 
+   dnl Make all documented variables known to autoconf.

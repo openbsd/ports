@@ -1,0 +1,21 @@
+$OpenBSD: patch-m4_iconv_m4,v 1.1.1.1 2012/03/21 14:41:22 ajacoutot Exp $
+--- m4/iconv.m4.orig	Wed Mar 21 08:33:32 2012
++++ m4/iconv.m4	Wed Mar 21 08:34:08 2012
+@@ -44,7 +44,7 @@ AC_DEFUN([AM_ICONV_LINK],
+       am_cv_func_iconv=yes)
+     if test "$am_cv_func_iconv" != yes; then
+       am_save_LIBS="$LIBS"
+-      LIBS="$LIBS $LIBICONV"
++      LIBS="$LIBS $LTLIBICONV"
+       AC_TRY_LINK([#include <stdlib.h>
+ #include <iconv.h>],
+         [iconv_t cd = iconv_open("","");
+@@ -60,7 +60,7 @@ AC_DEFUN([AM_ICONV_LINK],
+   fi
+   if test "$am_cv_lib_iconv" = yes; then
+     AC_MSG_CHECKING([how to link with libiconv])
+-    AC_MSG_RESULT([$LIBICONV])
++    AC_MSG_RESULT([$LTLIBICONV])
+   else
+     dnl If $LIBICONV didn't lead to a usable library, we don't need $INCICONV
+     dnl either.

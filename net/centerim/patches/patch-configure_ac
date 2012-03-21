@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/03/21 14:41:22 ajacoutot Exp $
+--- configure.ac.orig	Wed Mar 21 09:10:42 2012
++++ configure.ac	Wed Mar 21 09:10:47 2012
+@@ -376,7 +376,7 @@ AC_C_BIGENDIAN
+ 
+ AM_ICONV_LINK
+ 
+-LIBS="$LIBS $LIBICONV"
++LIBS="$LIBS $LTLIBICONV"
+ 
+ AC_CHECK_SIZEOF([int])
+ AC_CHECK_SIZEOF([short])
