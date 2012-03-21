@@ -28,4 +28,4 @@ sub2pgm: ${OBJ_SUB}
 .SUFFIXES: .c .o
 
 .c.o:
-	${CC} -c ${CFLAGS} -I. $*.c
+	${CC} -c -DHAVE_GETLINE ${CFLAGS} -I. $*.c

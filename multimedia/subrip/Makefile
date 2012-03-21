@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 10:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/21 23:50:19 fgsch Exp $
 
 COMMENT=	extract subtitles from dvds
 DISTNAME=	ogmrip-0.10.0
 PKGNAME=	subrip-0.10.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia converters
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ogmrip/}
 

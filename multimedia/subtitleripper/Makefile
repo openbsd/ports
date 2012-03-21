@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/21 23:52:16 fgsch Exp $
 
 COMMENT=	subtitle ripper, used with transcode
 
 DISTNAME=	subtitleripper-0.3-4
 PKGNAME=	subtitleripper-0.3.4
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	multimedia
 
