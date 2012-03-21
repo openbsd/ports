@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2012/03/20 19:10:18 stsp Exp $
+# $OpenBSD: Makefile,v 1.33 2012/03/21 16:13:25 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		gtk+3 media player based on BMP and XMMS
 
 DISTNAME =		audacious-3.2
+
+REVISION =		0
 
 SHARED_LIBS =		audclient	2.0 	# 2.0
 SHARED_LIBS +=		audcore		1.0 	# 1.0
@@ -23,9 +25,9 @@ PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += c cairo cairo-gobject dbus-1>=6 dbus-glib-1 execinfo expat
+WANTLIB += c cairo cairo-gobject dbus-1>=6 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gtk-3
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 guess
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += z
@@ -39,9 +41,7 @@ MODULES =		devel/gettext
 BUILD_DEPENDS =		textproc/libxml
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+2,-guic
-LIB_DEPENDS =		devel/libexecinfo \
-			devel/libguess \
-			devel/mcs>=0.7.0 \
+LIB_DEPENDS =		devel/libguess \
 			x11/dbus-glib \
 			x11/dbus \
 			x11/gtk+3
@@ -55,10 +55,6 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
-
-.if ${MACHINE_ARCH} != "amd64"
-CONFIGURE_ARGS +=	--disable-sse2
-.endif
 
 NO_REGRESS =	Yes
 

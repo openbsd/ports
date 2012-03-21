@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/03/20 19:10:56 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.1 2012/03/21 16:13:25 dcoppa Exp $
+@pkgpath audio/audacious-plugins,-main
 lib/audacious/
 lib/audacious/Container/
 lib/audacious/Container/asx.so
@@ -35,11 +36,13 @@ lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 lib/audacious/General/statusicon.so
 lib/audacious/Input/
+lib/audacious/Input/aac.so
 lib/audacious/Input/cdaudio-ng.so
 lib/audacious/Input/console.so
 lib/audacious/Input/flacng.so
 lib/audacious/Input/madplug.so
 lib/audacious/Input/metronom.so
+lib/audacious/Input/modplug.so
 lib/audacious/Input/psf2.so
 lib/audacious/Input/sndfile.so
 lib/audacious/Input/tonegen.so

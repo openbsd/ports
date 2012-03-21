@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-audacious,v 1.2 2010/08/23 18:13:58 jasper Exp $
-lib/audacious/
-lib/audacious/Input/
-lib/audacious/Input/xmp-audacious.so
