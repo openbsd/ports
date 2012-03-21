@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/31 02:33:21 shadchin Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/21 10:30:22 sthen Exp $
 
 COMMENT=		library for reading, creating and modifying zip archives
 
-DISTNAME=		libzip-0.10
-REVISION=		1
+DISTNAME=		libzip-0.10.1
 CATEGORIES=		archivers
 SHARED_LIBS +=  zip                  0.0      # 1.0
 
