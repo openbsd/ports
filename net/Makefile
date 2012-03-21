@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.734 2012/03/21 14:41:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.735 2012/03/21 16:18:32 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -190,6 +190,7 @@
      SUBDIR += luasocket
      SUBDIR += maclookup
      SUBDIR += maradns
+     SUBDIR += maradns-deadwood
      SUBDIR += mbrowse
      SUBDIR += mcabber
      SUBDIR += meanwhile
