@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.733 2012/03/13 09:43:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.734 2012/03/21 14:41:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += castget
      SUBDIR += cftp
      SUBDIR += charm
+     SUBDIR += centerim
      SUBDIR += cjc
      SUBDIR += climm
      SUBDIR += clive
