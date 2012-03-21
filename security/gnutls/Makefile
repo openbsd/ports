@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2012/03/06 16:37:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/03/21 16:05:36 sthen Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=	gnutls-2.12.17
+DISTNAME=	gnutls-2.12.18
 CATEGORIES=	security
 
 SHARED_LIBS +=  gnutls               18.2     # 47.4
