@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2012/02/17 22:07:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2012/03/21 08:27:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-web=	Mozilla plugin for embedded media playback
 V=		1.1.13
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-jack=	vlc-jack-${V}
 PKGNAME-web=	vlc-web-${V}
 CATEGORIES=	x11
