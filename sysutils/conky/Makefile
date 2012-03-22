@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2012/03/21 09:33:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2012/03/22 08:37:49 dcoppa Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-REVISION=	6
+REVISION=	7
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -58,8 +58,8 @@ CONFIGURE_ARGS+=--enable-audacious=yes
 LIB_DEPENDS+=	audio/audacious
 WANTLIB +=	GL Xcomposite Xcursor Xi Xinerama Xrandr Xxf86vm \
 		atk-1.0 audclient audcore audgui cairo \
-		cairo-gobject dbus-1 dbus-glib-1 drm execinfo \
-		ffi gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 \
+		cairo-gobject dbus-1 dbus-glib-1 drm ffi \
+		gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png stdc++ \
 		xcb-render xcb-shm
