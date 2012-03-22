@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/02/19 17:49:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/03/22 06:43:19 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -85,8 +85,6 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/patchdir.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/patchdir.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/path.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/path.pyc
-lib/python${MODPY_VERSION}/site-packages/duplicity/pexpect.py
-lib/python${MODPY_VERSION}/site-packages/duplicity/pexpect.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/robust.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/robust.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/selection.py
