@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/06/14 18:18:24 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/03/22 06:45:46 ajacoutot Exp $
 @bin bin/mc
 bin/mcdiff
 bin/mcedit
@@ -53,6 +53,7 @@ libexec/mc/fish/mv
 libexec/mc/fish/rmdir
 libexec/mc/fish/send
 libexec/mc/fish/unlink
+libexec/mc/fish/utime
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
@@ -112,6 +113,9 @@ share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
+share/locale/de_CH/
+share/locale/de_CH/LC_MESSAGES/
+share/locale/de_CH/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
 share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
@@ -123,8 +127,14 @@ share/locale/fi_FI/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
 share/locale/gl/LC_MESSAGES/mc.mo
 share/locale/hu/LC_MESSAGES/mc.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/mc.mo
 share/locale/id/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
+share/locale/it_IT/
+share/locale/it_IT/LC_MESSAGES/
+share/locale/it_IT/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
@@ -148,6 +158,9 @@ share/locale/sk/LC_MESSAGES/mc.mo
 share/locale/sl/LC_MESSAGES/mc.mo
 share/locale/sr/LC_MESSAGES/mc.mo
 share/locale/sv/LC_MESSAGES/mc.mo
+share/locale/sv_SE/
+share/locale/sv_SE/LC_MESSAGES/
+share/locale/sv_SE/LC_MESSAGES/mc.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/mc.mo
