@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.37 2012/02/21 10:37:26 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.38 2012/03/22 16:09:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -420,7 +420,9 @@ sub expire_old
 	# let's also scan the directory proper
 	require File::Find;
 	File::Find::find(sub {
-		if (-d $_ && $_ eq 'by_cipher') {
+		if (-d $_ && 
+		    ($File::Find::name eq "$distdir/by_cipher" || 
+		    $File::Find::name eq "$distdir/build-stats")) {
 			$File::Find::prune = 1;
 			return;
 		}
