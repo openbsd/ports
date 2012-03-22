@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/20 12:56:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/22 09:35:27 ajacoutot Exp $
 
 COMMENT=	translate XML documents with PO files
 
-DISTNAME=	itstool-1.1.0
+DISTNAME=	itstool-1.1.2
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	textproc
