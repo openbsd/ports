@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/22 21:31:18 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
 
-DISTNAME=	appkonference-1.5
-REVISION=	0
+DISTNAME=	appkonference-2.1
 
 CATEGORIES=	telephony
 
@@ -24,8 +23,12 @@ USE_GMAKE=	Yes
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	telephony/asterisk>=1.8,<1.9
 
-MAKE_ENV+=	LOCALBASE=${LOCALBASE} \
-		ASTERISK_INCLUDE_DIR=${LOCALBASE}/include
+MAKE_FLAGS+=	LOCALBASE=${LOCALBASE} \
+		DEBUG="${CFLAGS}" \
+		ASTERISK=18 \
+		ASTERISK_INCLUDE_DIR=${LOCALBASE}/include \
+		ASTERISK_INSTALL_MODULES_DIR=${PREFIX}/lib/asterisk/modules \
+		ASTERISK_SRC_VERSION=release
 
 WRKDIST=	${WRKDIR}/appkonference
 WRKSRC=		${WRKDIST}/konference
