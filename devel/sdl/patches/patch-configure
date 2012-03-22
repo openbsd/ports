@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.23 2012/03/04 01:33:22 jsg Exp $
---- configure.orig	Thu Jan 19 01:30:12 2012
-+++ configure	Sat Mar  3 05:22:20 2012
+$OpenBSD: patch-configure,v 1.24 2012/03/22 13:00:42 dcoppa Exp $
+--- configure.orig	Thu Jan 19 07:30:12 2012
++++ configure	Thu Mar 22 13:52:46 2012
 @@ -21000,6 +21000,20 @@ _ACEOF
      fi
  }
@@ -30,7 +30,7 @@ $OpenBSD: patch-configure,v 1.23 2012/03/04 01:33:22 jsg Exp $
 +                    x11_lib='libX11.so'
 +                    x11ext_lib='libXext.so'
 +                    xrender_lib='libXrender.so'
-+                    xrander_lib='libXrandr.so'
++                    xrandr_lib='libXrandr.so'
 +                    ;;
                  *)
                      x11_lib=`find_lib "libX11.so.*" "$X_LIBS -L/usr/X11/$base_libdir -L/usr/X11R6/$base_libdir" | sed 's/.*\/\(.*\)/\1/; q'`

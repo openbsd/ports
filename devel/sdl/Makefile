@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2012/03/04 01:33:22 jsg Exp $
+# $OpenBSD: Makefile,v 1.84 2012/03/22 13:00:42 dcoppa Exp $
 
 COMMENT=	cross-platform multimedia library
 
 VERSION=	1.2.15
 DISTNAME=	SDL-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${HOMEPAGE}release/
 
