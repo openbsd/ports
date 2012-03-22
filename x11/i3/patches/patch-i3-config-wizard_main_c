@@ -1,7 +1,4 @@
-$OpenBSD: patch-i3-config-wizard_main_c,v 1.3 2012/02/21 14:05:39 dcoppa Exp $
-
-Bugfix: for systems without getline, fall back to fgetln
-(upstream git commit 891831be3a751ce7700099e3de5048ab50a2867b)
+$OpenBSD: patch-i3-config-wizard_main_c,v 1.4 2012/03/22 09:53:50 dcoppa Exp $
 
 Bugfix: fix a memory leak
 (upstream git commit b3e3ecf722abc6540a5a975a4e643c7d207d356f)
@@ -9,29 +6,9 @@ Bugfix: fix a memory leak
 Bugfix: keep the indentation of config.keycodes
 (upstream git commit 4f148501736d9b58c6ba113af2df82e1c7e3decb)
 
---- i3-config-wizard/main.c.orig	Tue Feb 21 14:26:26 2012
-+++ i3-config-wizard/main.c	Tue Feb 21 14:32:20 2012
-@@ -8,6 +8,19 @@
-  *                   keysyms.
-  *
-  */
-+#if defined(__FreeBSD__)
-+#include <sys/param.h>
-+#endif
-+
-+/* For systems without getline, fall back to fgetln */
-+#if defined(__APPLE__) || (defined(__FreeBSD__) && __FreeBSD_version < 800000) || defined(__OpenBSD__)
-+#define USE_FGETLN
-+#elif defined(__FreeBSD__)
-+/* Defining this macro before including stdio.h is necessary in order to have
-+ * a prototype for getline in FreeBSD. */
-+#define _WITH_GETLINE
-+#endif
-+
- #include <ev.h>
- #include <stdio.h>
- #include <sys/types.h>
-@@ -280,10 +293,11 @@ static void finish() {
+--- i3-config-wizard/main.c.orig	Fri Jan 27 20:24:09 2012
++++ i3-config-wizard/main.c	Thu Mar 22 10:10:20 2012
+@@ -280,6 +280,7 @@ static void finish() {
      FILE *ks_config = fopen(config_path, "w");
      if (ks_config == NULL)
          err(1, "Could not open output config file \"%s\"", config_path);
@@ -39,23 +16,9 @@ Bugfix: keep the indentation of config.keycodes
  
      char *line = NULL;
      size_t len = 0;
--#if !defined(__APPLE__)
-+#ifndef USE_FGETLN
-     ssize_t read;
- #endif
-     bool head_of_file = true;
-@@ -296,10 +310,16 @@ static void finish() {
-     fputs("# this file and re-run i3-config-wizard(1).\n", ks_config);
-     fputs("#\n", ks_config);
- 
--#if defined(__APPLE__)
--    while ((line = fgetln(kc_config, &len)) != NULL) {
-+#ifdef USE_FGETLN
-+    char *buf = NULL;
-+    while ((buf = fgetln(kc_config, &len)) != NULL) {
-+        /* fgetln does not return null-terminated strings */
-+        FREE(line);
-+        sasprintf(&line, "%.*s", len, buf);
+@@ -299,7 +300,9 @@ static void finish() {
+ #if defined(__APPLE__)
+     while ((line = fgetln(kc_config, &len)) != NULL) {
  #else
 -    while ((read = getline(&line, &len, kc_config)) != -1) {
 +    size_t linecap = 0;
@@ -64,19 +27,20 @@ Bugfix: keep the indentation of config.keycodes
  #endif
          /* skip the warning block at the beginning of the input file */
          if (head_of_file &&
-@@ -310,8 +330,10 @@ static void finish() {
+@@ -310,8 +313,11 @@ static void finish() {
  
          /* Skip leading whitespace */
          char *walk = line;
 -        while (isspace(*walk) && walk < (line + len))
 +        while (isspace(*walk) && walk < (line + len)) {
 +            /* Pre-output the skipped whitespaces to keep proper indentation */
++            fputc(*walk, ks_config);
              walk++;
 +        }
  
          /* Set the modifier the user chose */
          if (strncmp(walk, "set $mod ", strlen("set $mod ")) == 0) {
-@@ -324,7 +346,7 @@ static void finish() {
+@@ -324,7 +330,7 @@ static void finish() {
          /* Check for 'bindcode'. If it’s not a bindcode line, we
           * just copy it to the output file */
          if (strncmp(walk, "bindcode", strlen("bindcode")) != 0) {
@@ -85,14 +49,3 @@ Bugfix: keep the indentation of config.keycodes
              continue;
          }
          char *result = rewrite_binding(walk);
-@@ -336,7 +358,10 @@ static void finish() {
-     fflush(ks_config);
-     fsync(fileno(ks_config));
- 
-+#ifndef USE_FGETLN
-     free(line);
-+#endif
-+
-     fclose(kc_config);
-     fclose(ks_config);
- 
