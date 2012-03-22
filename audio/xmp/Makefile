@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/03/21 16:13:25 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2012/03/22 13:32:55 dcoppa Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,14 +6,11 @@ COMMENT-main=		extended module player
 COMMENT-bmp=		extended module player plugin for BMP
 COMMENT-xmms=		extended module player plugin for XMMS
 
-DISTNAME=		xmp-3.4.1
+DISTNAME=		xmp-3.5.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bmp=		bmp-${DISTNAME}
 PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
-REVISION-main =		0
-REVISION-bmp =		0
-REVISION-xmms =		0
 
 HOMEPAGE=		http://xmp.sourceforge.net/
 
@@ -52,15 +49,16 @@ WANTLIB-xmms=		X11 Xext Xi gdk glib gmodule gtk m xmms ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/scripts
-CONFIGURE_ARGS+=	--disable-oss \
-			--disable-alsa \
-			--disable-pulseaudio \
+CONFIGURE_ARGS+=	--disable-alsa \
+			--disable-arts \
 			--disable-audacious-plugin \
+			--disable-esd \
+			--disable-oss \
+			--disable-pulseaudio \
 			--enable-bmp-plugin \
 			--enable-xmms-plugin
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS=-lsndio
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 MAKE_FLAGS+=		V=1
 
