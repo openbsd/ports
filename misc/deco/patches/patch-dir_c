@@ -1,7 +1,7 @@
-$OpenBSD: patch-dir_c,v 1.1 2002/03/21 09:59:48 form Exp $
---- dir.c.orig	Thu Mar 21 15:29:13 2002
-+++ dir.c	Thu Mar 21 15:29:44 2002
-@@ -358,8 +358,11 @@ int setdir (struct dir *d, char *dirname
+$OpenBSD: patch-dir_c,v 1.2 2012/03/23 20:59:35 naddy Exp $
+--- dir.c.orig	Sat Jul 12 21:19:05 1997
++++ dir.c	Fri Mar 23 21:59:00 2012
+@@ -358,8 +358,11 @@ int setdir (struct dir *d, char *dirname)
  
  	d->topfile = d->curfile = 0;
  
