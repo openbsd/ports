@@ -1,10 +1,22 @@
-$OpenBSD: patch-src_floating_c,v 1.9 2012/02/21 14:05:39 dcoppa Exp $
+$OpenBSD: patch-src_floating_c,v 1.10 2012/03/23 08:43:54 dcoppa Exp $
 
 Bugfix: obey workspace_layout when re-inserting floating containers
 (upstream git commit 4f98bbf5ffc18a7b53c5545ce403e4667d75a703)
 
+Bugfix: Fix restart with for_window floating configuration
+(upstream git commit afed6da0e5f555003ace074bf627c9a7e1c14106)
+
 --- src/floating.c.orig	Fri Jan 27 20:24:09 2012
-+++ src/floating.c	Tue Feb 21 14:24:56 2012
++++ src/floating.c	Fri Mar 23 09:16:41 2012
+@@ -223,7 +223,7 @@ void floating_disable(Con *con, bool automatic) {
+     /* 2: kill parent container */
+     TAILQ_REMOVE(&(con->parent->parent->floating_head), con->parent, floating_windows);
+     TAILQ_REMOVE(&(con->parent->parent->focus_head), con->parent, focused);
+-    tree_close(con->parent, DONT_KILL_WINDOW, false, false);
++    tree_close(con->parent, DONT_KILL_WINDOW, true, false);
+ 
+     /* 3: re-attach to the parent of the currently focused con on the workspace
+      * this floating con was on */
 @@ -238,10 +238,9 @@ void floating_disable(Con *con, bool automatic) {
      /* con_fix_percent will adjust the percent value */
      con->percent = 0.0;

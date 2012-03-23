@@ -1,0 +1,24 @@
+$OpenBSD: patch-i3bar_src_xcb_c,v 1.3 2012/03/23 08:43:54 dcoppa Exp $
+
+Fix i3bar when using multiple displays
+(upstream git commit 8b4ad8c6bdc73d8950b9ac67316811377acbf7b3)
+
+--- i3bar/src/xcb.c.orig	Fri Mar 23 09:13:28 2012
++++ i3bar/src/xcb.c	Fri Mar 23 09:15:28 2012
+@@ -10,6 +10,7 @@
+ #include <xcb/xcb.h>
+ #include <xcb/xproto.h>
+ #include <xcb/xcb_atom.h>
++#include <xcb/xcb_aux.h>
+ 
+ #ifdef XCB_COMPAT
+ #include "xcb_compat.h"
+@@ -784,7 +785,7 @@ char *init_xcb_early() {
+     #define ATOM_DO(name) atom_cookies[name] = xcb_intern_atom(xcb_connection, 0, strlen(#name), #name);
+     #include "xcb_atoms.def"
+ 
+-    xcb_screen = xcb_setup_roots_iterator(xcb_get_setup(xcb_connection)).data;
++    xcb_screen = xcb_aux_get_screen(xcb_connection, screen);
+     xcb_root = xcb_screen->root;
+ 
+     /* We draw the statusline to a seperate pixmap, because it looks the same on all bars and
