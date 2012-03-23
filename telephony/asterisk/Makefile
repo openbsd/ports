@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.139 2012/03/17 23:08:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2012/03/23 22:42:25 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 VER=			1.8.10.1
-REVISION-main=		0
+REVISION-main=		1
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -125,17 +125,8 @@ CONFIGURE_ARGS+=	--with-jack=no \
 
 FLAVOR?=
 FLAVORS=		imap
-#FLAVORS+=		h323 # XXX requires older h323
 
 ## flavours:
-
-.if ${FLAVOR:Mh323}
-LIB_DEPENDS-main+=	net/h323plus
-WANTLIB-main+=		SDL avutil expat h323.>=3 lber ldap ldap_r pt.>=3 sasl2
-.else
-CONFIGURE_ARGS+=	--with-pwlib=no \
-			--with-h323=no
-.endif
 
 .if ${FLAVOR:Mimap}
 CONFIGURE_ARGS+=	--with-imap=yes

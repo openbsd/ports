@@ -1,11 +1,11 @@
-$OpenBSD: patch-channels_chan_unistim_c,v 1.6 2011/12/16 14:50:09 sthen Exp $
+$OpenBSD: patch-channels_chan_unistim_c,v 1.7 2012/03/23 22:42:25 sthen Exp $
 
 Patch is from https://issues.asterisk.org/jira/browse/18229
 https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-9.diff
 
 --- channels/chan_unistim.c.orig	Fri Sep  9 17:09:09 2011
 +++ channels/chan_unistim.c	Sat Dec 10 14:34:33 2011
-@@ -73,6 +73,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.6 $")
+@@ -73,6 +73,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.7 $")
  #include "asterisk/musiconhold.h"
  #include "asterisk/causes.h"
  #include "asterisk/indications.h"
@@ -14,7 +14,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  /*! Beware, G729 and G723 are not supported by asterisk, except with the proper licence */
  #define CAPABILITY AST_FORMAT_ALAW | AST_FORMAT_ULAW    /* | AST_FORMAT_G729A | AST_FORMAT_G723_1 */
-@@ -82,11 +84,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.6 $")
+@@ -82,11 +84,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.7 $")
  #define DEFAULTCALLERNAME       " "
  #define DEFAULTHEIGHT	 3
  #define USTM_LOG_DIR	    "unistimHistory"
@@ -29,7 +29,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  /*! Try x times before removing the phone */
  #define NB_MAX_RETRANSMIT       8
  /*! Nb of milliseconds waited when no events are scheduled */
-@@ -103,8 +108,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.6 $")
+@@ -103,8 +108,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.7 $")
  #define MAX_ENTRY_LOG	   30
  
  #define SUB_REAL		0
@@ -446,7 +446,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  }
  
  static unsigned int get_tick_count(void)
-@@ -955,10 +1096,44 @@ static void send_start_timer(struct unistimsession *pt
+@@ -956,10 +1097,44 @@ static void send_start_timer(struct unistimsession *pt
  	BUFFSEND;
  	if (unistimdebug)
  		ast_verb(0, "Sending start timer\n");
@@ -493,7 +493,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  static void send_stop_timer(struct unistimsession *pte)
  {
  	BUFFSEND;
-@@ -968,7 +1143,7 @@ static void send_stop_timer(struct unistimsession *pte
+@@ -969,7 +1144,7 @@ static void send_stop_timer(struct unistimsession *pte
  	send_client(SIZE_HEADER + sizeof(packet_send_stop_timer), buffsend, pte);
  }
  
@@ -502,7 +502,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  {
  	BUFFSEND;
  	if (unistimdebug)
-@@ -1026,9 +1201,9 @@ static void send_tone(struct unistimsession *pte, uint
+@@ -1027,9 +1202,9 @@ static void send_tone(struct unistimsession *pte, uint
  
  /* Positions for favorites
   |--------------------|
@@ -515,7 +515,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  */
  
  /* status (icons) : 00 = nothing, 2x/3x = see parser.h, 4x/5x = blink fast, 6x/7x = blink slow */
-@@ -1045,44 +1220,122 @@ send_favorite(unsigned char pos, unsigned char status,
+@@ -1046,44 +1221,122 @@ send_favorite(unsigned char pos, unsigned char status,
  	buffsend[10] = pos;
  	buffsend[24] = pos;
  	buffsend[25] = status;
@@ -652,7 +652,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			if (d->sp[i] == pte->device) {  /* It's us ? */
  				if (d->softkeyicon[i] != status) {      /* Avoid resending the same icon */
  					d->softkeyicon[i] = status;
-@@ -1095,30 +1348,40 @@ static void change_favorite_icon(struct unistimsession
+@@ -1096,30 +1349,40 @@ static void change_favorite_icon(struct unistimsession
  	}
  }
  
@@ -702,7 +702,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	struct unistimsession *cur, *prev = NULL;
  	ast_mutex_lock(&sessionlock);
  	cur = sessions;
-@@ -1132,12 +1395,11 @@ static void close_client(struct unistimsession *s)
+@@ -1133,12 +1396,11 @@ static void close_client(struct unistimsession *s)
  	if (cur) {				      /* Session found ? */
  		if (cur->device) {	      /* This session was registered ? */
  			s->state = STATE_CLEANING;
@@ -718,7 +718,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			if (sub) {
  				if (sub->owner) {       /* Call in progress ? */
  					if (unistimdebug)
-@@ -1147,7 +1409,7 @@ static void close_client(struct unistimsession *s)
+@@ -1148,7 +1410,7 @@ static void close_client(struct unistimsession *s)
  			} else
  				ast_log(LOG_WARNING, "Freeing a client with no subchannel !\n");
  			if (!ast_strlen_zero(s->device->extension_number))
@@ -727,7 +727,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			cur->device->session = NULL;
  		} else {
  			if (unistimdebug)
-@@ -1211,6 +1473,12 @@ send_text(unsigned char pos, unsigned char inverse, st
+@@ -1212,6 +1474,12 @@ send_text(unsigned char pos, unsigned char inverse, st
  {
  	int i;
  	BUFFSEND;
@@ -740,7 +740,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (unistimdebug)
  		ast_verb(0, "Sending text at pos %d, inverse flag %d\n", pos, inverse);
  	memcpy(buffsend + SIZE_HEADER, packet_send_text, sizeof(packet_send_text));
-@@ -1370,12 +1638,21 @@ static void send_texttitle(struct unistimsession *pte,
+@@ -1371,12 +1639,21 @@ static void send_texttitle(struct unistimsession *pte,
  
  }
  
@@ -762,7 +762,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (unistimdebug)
  		ast_verb(0, "Sending Time & Date\n");
  	memcpy(buffsend + SIZE_HEADER, packet_send_date_time, sizeof(packet_send_date_time));
-@@ -1448,6 +1725,43 @@ static void send_cursor_pos(struct unistimsession *pte
+@@ -1449,6 +1726,43 @@ static void send_cursor_pos(struct unistimsession *pte
  	return;
  }
  
@@ -806,7 +806,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  static void rcv_resume_connection_with_server(struct unistimsession *pte)
  {
  	BUFFSEND;
-@@ -1488,37 +1802,91 @@ static int unistim_register(struct unistimsession *s)
+@@ -1489,37 +1803,91 @@ static int unistim_register(struct unistimsession *s)
  	return 1;
  }
  
@@ -917,7 +917,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  static void rcv_mac_addr(struct unistimsession *pte, const unsigned char *buf)
  {
  	BUFFSEND;
-@@ -1552,6 +1920,7 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1553,6 +1921,7 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  				d = devices;
  				while (d) {
  					if (!strcasecmp(d->name, "template")) {
@@ -925,7 +925,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  						/* Found, cloning this entry */
  						if (!(newd = ast_malloc(sizeof(*newd)))) {
  							ast_mutex_unlock(&devicelock);
-@@ -1565,8 +1934,9 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1566,8 +1935,9 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  							return;
  						}
  
@@ -937,7 +937,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  							ast_free(newd);
  							ast_free(newl);
  							ast_mutex_unlock(&devicelock);
-@@ -1577,16 +1947,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1578,16 +1948,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  						ast_copy_string(newd->name, addrmac, sizeof(newd->name));
  						if (newd->extension == EXTENSION_NONE)
  							newd->extension = EXTENSION_ASK;
@@ -958,7 +958,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  						snprintf(newl->fullname, sizeof(newl->fullname), "USTM/%s@%s",
  								 newl->name, newd->name);
  						/* Go to the end of the linked chain */
-@@ -1630,16 +2000,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1631,16 +2001,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  				pte->state = STATE_EXTENSION;
  			else {
  				/* Yes, because of a phone reboot. We don't ask again for the TN */
@@ -978,7 +978,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  				pte->state = STATE_EXTENSION;
  			else
  				pte->state = STATE_MAINPAGE;
-@@ -1724,20 +2094,18 @@ static int write_history(struct unistimsession *pte, c
+@@ -1725,20 +2095,18 @@ static int write_history(struct unistimsession *pte, c
  
  	snprintf(tmp, sizeof(tmp), "%s/%s", ast_config_AST_LOG_DIR, USTM_LOG_DIR);
  	if (ast_mkdir(tmp, 0770)) {
@@ -1004,7 +1004,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	snprintf(line1, sizeof(line1), "%04d/%02d/%02d %02d:%02d:%02d %s",
  			 atm.tm_year + 1900, atm.tm_mon + 1, atm.tm_mday, atm.tm_hour,
  			 atm.tm_min, atm.tm_sec, tmp2);
-@@ -1855,41 +2223,14 @@ static int write_history(struct unistimsession *pte, c
+@@ -1856,41 +2224,14 @@ static int write_history(struct unistimsession *pte, c
  	return 0;
  }
  
@@ -1052,7 +1052,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  }
  
  static int attempt_transfer(struct unistim_subchannel *p1, struct unistim_subchannel *p2)
-@@ -1919,25 +2260,13 @@ static int attempt_transfer(struct unistim_subchannel 
+@@ -1920,25 +2261,13 @@ static int attempt_transfer(struct unistim_subchannel 
  	}
  
  	if (peera && peerb && peerc && (peerb != peerc)) {
@@ -1084,7 +1084,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		if (ast_channel_masquerade(peerb, peerc)) {
  			ast_log(LOG_WARNING, "Failed to masquerade %s into %s\n", peerb->name,
  					peerc->name);
-@@ -1975,32 +2304,122 @@ void change_callerid(struct unistimsession *pte, int t
+@@ -1976,32 +2305,122 @@ void change_callerid(struct unistimsession *pte, int t
  	memcpy(data, callerid, size);
  }
  
@@ -1220,7 +1220,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	change_callerid(pte, 1, "");
  	write_history(pte, 'o', pte->device->missed_call);
  	pte->device->missed_call = 0;
-@@ -2008,9 +2427,10 @@ static void close_call(struct unistimsession *pte)
+@@ -2009,9 +2428,10 @@ static void close_call(struct unistimsession *pte)
  	return;
  }
  
@@ -1232,7 +1232,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	return;
  }
  
-@@ -2022,7 +2442,7 @@ static void *unistim_ss(void *data)
+@@ -2023,7 +2443,7 @@ static void *unistim_ss(void *data)
  	struct unistimsession *s = l->parent->session;
  	int res;
  
@@ -1241,7 +1241,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	ast_copy_string(chan->exten, s->device->phone_number, sizeof(chan->exten));
  	ast_copy_string(s->device->redial_number, s->device->phone_number,
  					sizeof(s->device->redial_number));
-@@ -2030,85 +2450,50 @@ static void *unistim_ss(void *data)
+@@ -2031,85 +2451,50 @@ static void *unistim_ss(void *data)
  	res = ast_pbx_run(chan);
  	if (res) {
  		ast_log(LOG_WARNING, "PBX exited non-zero\n");
@@ -1359,7 +1359,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	/* Setting up RTP of the phone */
  	if (public_ip.sin_family == 0)  /* NAT IP override ?   */
  		memcpy(&public, &us, sizeof(public));   /* No defined, using IP from recvmsg  */
-@@ -2121,35 +2506,35 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2122,35 +2507,35 @@ static void start_rtp(struct unistim_subchannel *sub)
  		ast_verb(0, "Starting phone RTP stack. Our public IP is %s\n",
  					ast_inet_ntoa(public.sin_addr));
  	}
@@ -1405,7 +1405,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			memcpy(buffsend + 28, &public.sin_addr, sizeof(public.sin_addr));
  			buffsend[20] = (htons(sin.sin_port) & 0xff00) >> 8;
  			buffsend[21] = (htons(sin.sin_port) & 0x00ff);
-@@ -2168,18 +2553,17 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2169,18 +2554,17 @@ static void start_rtp(struct unistim_subchannel *sub)
  			buffsend[11] = codec;
  		}
  		buffsend[12] = codec;
@@ -1427,7 +1427,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			memcpy(buffsend + 28, &public.sin_addr, sizeof(public.sin_addr));
  			buffsend[20] = (htons(sin.sin_port) & 0xff00) >> 8;
  			buffsend[21] = (htons(sin.sin_port) & 0x00ff);
-@@ -2198,8 +2582,7 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2199,8 +2583,7 @@ static void start_rtp(struct unistim_subchannel *sub)
  			buffsend[12] = codec;
  		}
  		buffsend[11] = codec;
@@ -1437,7 +1437,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	} else {
  		uint16_t rtcpsin_port = htons(us.sin_port) + 1; /* RTCP port is RTP + 1 */
  
-@@ -2233,73 +2616,152 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2234,73 +2617,152 @@ static void start_rtp(struct unistim_subchannel *sub)
  		buffsend[46] = (htons(sin.sin_port) & 0x00ff);
  		buffsend[47] = (rtcpsin_port & 0xff00) >> 8;
  		buffsend[48] = (rtcpsin_port & 0x00ff);
@@ -1638,7 +1638,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			send_led_update(pte, 0);
  			return;
  		}
-@@ -2309,191 +2771,268 @@ static void handle_dial_page(struct unistimsession *pt
+@@ -2310,191 +2772,268 @@ static void handle_dial_page(struct unistimsession *pt
  			send_select_output(pte, OUTPUT_SPEAKER, pte->device->volume, MUTE_OFF);
  		else
  			send_select_output(pte, pte->device->output, pte->device->volume, MUTE_OFF);
@@ -2025,7 +2025,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		ast_verb(0, "Handle Call Incoming for %s@%s\n", sub->parent->name,
  					s->device->name);
  	start_rtp(sub);
-@@ -2501,16 +3040,16 @@ static void HandleCallIncoming(struct unistimsession *
+@@ -2502,16 +3041,16 @@ static void HandleCallIncoming(struct unistimsession *
  		ast_log(LOG_WARNING, "Unable to create channel for %s@%s\n", sub->parent->name,
  				s->device->name);
  	ast_queue_control(sub->owner, AST_CONTROL_ANSWER);
@@ -2046,7 +2046,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	write_history(s, 'i', 0);
  	return;
  }
-@@ -2519,8 +3058,10 @@ static int unistim_do_senddigit(struct unistimsession 
+@@ -2520,8 +3059,10 @@ static int unistim_do_senddigit(struct unistimsession 
  {
  	struct ast_frame f = { .frametype = AST_FRAME_DTMF, .subclass.integer = digit, .src = "unistim" };
  	struct unistim_subchannel *sub;
@@ -2059,7 +2059,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		ast_log(LOG_WARNING, "Unable to find subchannel in dtmf senddigit\n");
  		return -1;
  	}
-@@ -2530,65 +3071,80 @@ static int unistim_do_senddigit(struct unistimsession 
+@@ -2531,65 +3072,80 @@ static int unistim_do_senddigit(struct unistimsession 
  
  	if (unistimdebug)
  		ast_verb(0, "Send Digit %c\n", digit);
@@ -2192,7 +2192,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if ((keycode >= KEY_0) && (keycode <= KEY_SHARP)) {
  		if (keycode == KEY_SHARP)
  			keycode = '#';
-@@ -2605,9 +3161,17 @@ static void key_call(struct unistimsession *pte, char 
+@@ -2606,9 +3162,17 @@ static void key_call(struct unistimsession *pte, char 
  		close_call(pte);
  		break;
  	case KEY_FUNC2:
@@ -2212,7 +2212,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		if (pte->device->output == OUTPUT_HEADPHONE)
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
  		else
-@@ -2621,82 +3185,71 @@ static void key_call(struct unistimsession *pte, char 
+@@ -2622,82 +3186,71 @@ static void key_call(struct unistimsession *pte, char 
  							 MUTE_OFF);
  		break;
  	case KEY_MUTE:
@@ -2335,7 +2335,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (keycode == KEY_FUNC3) {
  		if (pte->device->size_phone_number <= 1)
  			keycode = KEY_FUNC4;
-@@ -2705,50 +3258,32 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2706,50 +3259,32 @@ static void key_dial_page(struct unistimsession *pte, 
  			keycode = pte->device->phone_number[pte->device->size_phone_number] + 0x10;
  		}
  	}
@@ -2397,7 +2397,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	}
  
  	if (pte->device->call_forward[0] == -1) {
-@@ -2758,7 +3293,9 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2759,7 +3294,9 @@ static void key_dial_page(struct unistimsession *pte, 
  			show_main_page(pte);
  		} else if ((keycode == KEY_FUNC2) || (keycode == KEY_HANGUP)) {
  			pte->device->call_forward[0] = '\0';
@@ -2408,7 +2408,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		}
  		return;
  	}
-@@ -2769,40 +3306,43 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2770,40 +3307,43 @@ static void key_dial_page(struct unistimsession *pte, 
  		ast_copy_string(pte->device->phone_number, pte->device->redial_number,
  						sizeof(pte->device->phone_number));
  	case KEY_FUNC1:
@@ -2473,7 +2473,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		break;
  	case KEY_LOUDSPK:
  		if (pte->device->output == OUTPUT_SPEAKER) {
-@@ -2827,16 +3367,56 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2828,16 +3368,56 @@ static void key_dial_page(struct unistimsession *pte, 
  	return;
  }
  
@@ -2533,7 +2533,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	strcat(buf, buf2);
  	strcat(buf, " (G711u=0,");
  
-@@ -2846,7 +3426,7 @@ static void HandleSelectCodec(struct unistimsession *p
+@@ -2847,7 +3427,7 @@ static void HandleSelectCodec(struct unistimsession *p
  	send_blink_cursor(pte);
  	send_cursor_pos(pte, TEXT_LINE2 + SELECTCODEC_START_ENTRY_POS);
  	pte->size_buff_entry = 0;
@@ -2542,7 +2542,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	return;
  }
  
-@@ -2904,19 +3484,110 @@ static void key_select_codec(struct unistimsession *pt
+@@ -2905,19 +3485,110 @@ static void key_select_codec(struct unistimsession *pt
  	return;
  }
  
@@ -2657,7 +2657,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	pte->size_buff_entry = 0;
  	return;
  }
-@@ -2988,8 +3659,8 @@ static void key_select_extension(struct unistimsession
+@@ -2989,8 +3660,8 @@ static void key_select_extension(struct unistimsession
  				d = d->next;
  			}
  			ast_mutex_unlock(&devicelock);
@@ -2668,7 +2668,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			send_cursor_pos(pte,
  						  (unsigned char) (TEXT_LINE2 + SELECTEXTENSION_START_ENTRY_POS +
  										   pte->size_buff_entry));
-@@ -2997,9 +3668,9 @@ static void key_select_extension(struct unistimsession
+@@ -2998,9 +3669,9 @@ static void key_select_extension(struct unistimsession
  		} else {
  			ast_copy_string(pte->device->extension_number, pte->buff_entry,
  							pte->size_buff_entry + 1);
@@ -2681,7 +2681,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  				send_cursor_pos(pte,
  							  (unsigned char) (TEXT_LINE2 +
  											   SELECTEXTENSION_START_ENTRY_POS +
-@@ -3019,12 +3690,13 @@ static void key_select_extension(struct unistimsession
+@@ -3020,12 +3691,13 @@ static void key_select_extension(struct unistimsession
  	return;
  }
  
@@ -2697,7 +2697,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			if (i == pos) {
  				pos++;
  				continue;
-@@ -3048,22 +3720,37 @@ static void show_entry_history(struct unistimsession *
+@@ -3049,22 +3721,37 @@ static void show_entry_history(struct unistimsession *
  		return;
  	}
  	line[sizeof(line) - 1] = '\0';
@@ -2740,7 +2740,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	fclose(*f);
  
  	snprintf(line, sizeof(line), "Call %03d/%03d", pte->buff_entry[2],
-@@ -3073,20 +3760,20 @@ static void show_entry_history(struct unistimsession *
+@@ -3074,20 +3761,20 @@ static void show_entry_history(struct unistimsession *
  	if (pte->buff_entry[2] == 1)
  		strcpy(func1, "       ");
  	else
@@ -2767,7 +2767,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  {
  	char tmp[AST_CONFIG_MAX_PATH];
  	char count;
-@@ -3121,12 +3808,13 @@ static void show_history(struct unistimsession *pte, c
+@@ -3122,12 +3809,13 @@ static void show_history(struct unistimsession *pte, c
  		return;
  	if (!pte->device->callhistory)
  		return;
@@ -2782,7 +2782,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	show_entry_history(pte, &f);
  	pte->state = STATE_HISTORY;
  }
-@@ -3134,60 +3822,73 @@ static void show_history(struct unistimsession *pte, c
+@@ -3135,60 +3823,73 @@ static void show_history(struct unistimsession *pte, c
  static void show_main_page(struct unistimsession *pte)
  {
  	char tmpbuf[TEXT_LENGTH_MAX + 1];
@@ -2881,7 +2881,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		pte->device->missed_call = 0;
  	}
  	if ((keycode >= KEY_0) && (keycode <= KEY_SHARP)) {
-@@ -3197,6 +3898,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3198,6 +3899,7 @@ static void key_main_page(struct unistimsession *pte, 
  	}
  	switch (keycode) {
  	case KEY_FUNC1:
@@ -2889,7 +2889,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		handle_dial_page(pte);
  		break;
  	case KEY_FUNC2:
-@@ -3210,7 +3912,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3211,7 +3913,7 @@ static void key_main_page(struct unistimsession *pte, 
  
  		ast_copy_string(pte->device->phone_number, pte->device->redial_number,
  						sizeof(pte->device->phone_number));
@@ -2898,7 +2898,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		break;
  	case KEY_FUNC3:
  		if (!ast_strlen_zero(pte->device->call_forward)) {
-@@ -3218,7 +3920,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3219,7 +3921,7 @@ static void key_main_page(struct unistimsession *pte, 
  			memmove(pte->device->call_forward + 1, pte->device->call_forward,
  					sizeof(pte->device->call_forward));
  			pte->device->call_forward[0] = '\0';
@@ -2907,7 +2907,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			pte->device->output = OUTPUT_HANDSET;   /* Seems to be reseted somewhere */
  			show_main_page(pte);
  			break;
-@@ -3228,9 +3930,9 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3229,9 +3931,9 @@ static void key_main_page(struct unistimsession *pte, 
  		break;
  	case KEY_FUNC4:
  		if (pte->device->extension == EXTENSION_ASK) {
@@ -2919,7 +2919,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		} else if (pte->device->extension == EXTENSION_TN) {
  			ast_mutex_lock(&devicelock);
  			strcpy(pte->device->id, pte->device->extension_number);
-@@ -3239,26 +3941,25 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3240,26 +3942,25 @@ static void key_main_page(struct unistimsession *pte, 
  			pte->device->session = NULL;
  			pte->device = NULL;
  			ast_mutex_unlock(&devicelock);
@@ -2957,7 +2957,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		break;
  	case KEY_LOUDSPK:
  		send_select_output(pte, OUTPUT_SPEAKER, pte->device->volume, MUTE_OFF);
-@@ -3283,44 +3984,41 @@ static void key_history(struct unistimsession *pte, ch
+@@ -3284,44 +3985,41 @@ static void key_history(struct unistimsession *pte, ch
  	FILE *f;
  	char count;
  	long offset;
@@ -3023,7 +3023,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			break;
  		ast_copy_string(pte->device->redial_number, pte->device->lst_cid,
  						sizeof(pte->device->redial_number));
-@@ -3343,6 +4041,20 @@ static void key_history(struct unistimsession *pte, ch
+@@ -3344,6 +4042,20 @@ static void key_history(struct unistimsession *pte, ch
  			show_history(pte, 'i');
  		break;
  	}
@@ -3044,7 +3044,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	return;
  }
  
-@@ -3353,7 +4065,7 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3354,7 +4066,7 @@ static void init_phone_step2(struct unistimsession *pt
  		ast_verb(0, "Sending S4\n");
  	memcpy(buffsend + SIZE_HEADER, packet_send_s4, sizeof(packet_send_s4));
  	send_client(SIZE_HEADER + sizeof(packet_send_s4), buffsend, pte);
@@ -3053,7 +3053,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	send_date_time3(pte);
  	if (unistimdebug)
  		ast_verb(0, "Sending S7\n");
-@@ -3378,9 +4090,13 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3379,9 +4091,13 @@ static void init_phone_step2(struct unistimsession *pt
  	send_client(SIZE_HEADER + sizeof(packet_send_S7), buffsend, pte);
  	send_led_update(pte, 0);
  	send_ping(pte);
@@ -3069,7 +3069,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			return;
  		} else {
  			int i;
-@@ -3388,8 +4104,8 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3389,8 +4105,8 @@ static void init_phone_step2(struct unistimsession *pt
  
  			for (i = 1; i < 6; i++)
  				send_favorite(i, 0, pte, "");
@@ -3080,7 +3080,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			strcpy(tmp, "MAC = ");
  			strcat(tmp, pte->macaddr);
  			send_text(TEXT_LINE2, TEXT_NORMAL, pte, tmp);
-@@ -3443,8 +4159,8 @@ static void process_request(int size, unsigned char *b
+@@ -3444,8 +4160,8 @@ static void process_request(int size, unsigned char *b
  		char keycode = buf[13];
  
  		if (unistimdebug)
@@ -3091,7 +3091,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  		switch (pte->state) {
  		case STATE_INIT:
-@@ -3470,10 +4186,19 @@ static void process_request(int size, unsigned char *b
+@@ -3471,10 +4187,19 @@ static void process_request(int size, unsigned char *b
  		case STATE_EXTENSION:
  			key_select_extension(pte, keycode);
  			break;
@@ -3112,7 +3112,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			key_history(pte, keycode);
  			break;
  		default:
-@@ -3491,13 +4216,15 @@ static void process_request(int size, unsigned char *b
+@@ -3492,13 +4217,15 @@ static void process_request(int size, unsigned char *b
  			send_select_output(pte, OUTPUT_HEADPHONE, pte->device->volume, MUTE_OFF);
  		else
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
@@ -3131,7 +3131,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
  			handle_dial_page(pte);
  		}
-@@ -3511,7 +4238,7 @@ static void process_request(int size, unsigned char *b
+@@ -3512,7 +4239,7 @@ static void process_request(int size, unsigned char *b
  		pte->device->receiver_state = STATE_ONHOOK;
  		if (pte->state == STATE_CALL)
  			close_call(pte);
@@ -3140,7 +3140,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			close_call(pte);
  		else if (pte->state == STATE_EXTENSION)
  			return;
-@@ -3709,13 +4436,52 @@ static struct unistimsession *channel_to_session(struc
+@@ -3710,13 +4437,52 @@ static struct unistimsession *channel_to_session(struc
  	return sub->parent->parent->session;
  }
  
@@ -3195,7 +3195,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  	session = channel_to_session(ast);
  	if (!session) {
-@@ -3724,6 +4490,7 @@ static int unistim_call(struct ast_channel *ast, char 
+@@ -3725,6 +4491,7 @@ static int unistim_call(struct ast_channel *ast, char 
  	}
  
  	sub = ast->tech_pvt;
@@ -3203,7 +3203,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if ((ast->_state != AST_STATE_DOWN) && (ast->_state != AST_STATE_RESERVED)) {
  		ast_log(LOG_WARNING, "unistim_call called on %s, neither down nor reserved\n",
  				ast->name);
-@@ -3734,58 +4501,49 @@ static int unistim_call(struct ast_channel *ast, char 
+@@ -3735,58 +4502,49 @@ static int unistim_call(struct ast_channel *ast, char 
  		ast_verb(3, "unistim_call(%s)\n", ast->name);
  
  	session->state = STATE_RINGING;
@@ -3297,7 +3297,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  	s = channel_to_session(ast);
  	sub = ast->tech_pvt;
-@@ -3805,32 +4563,43 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3806,32 +4564,43 @@ static int unistim_hangup(struct ast_channel *ast)
  		return 0;
  	}
  	l = sub->parent;
@@ -3354,7 +3354,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		return 0;
  	}
  	ast_mutex_lock(&sub->lock);
-@@ -3838,34 +4607,26 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3839,34 +4608,26 @@ static int unistim_hangup(struct ast_channel *ast)
  	ast->tech_pvt = NULL;
  	sub->alreadygone = 0;
  	ast_mutex_unlock(&sub->lock);
@@ -3408,7 +3408,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (sub->rtp) {
  		if (unistimdebug)
  			ast_verb(0, "Destroying RTP session\n");
-@@ -3873,16 +4634,27 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3874,16 +4635,27 @@ static int unistim_hangup(struct ast_channel *ast)
  		sub->rtp = NULL;
  	} else if (unistimdebug)
  		ast_verb(0, "No RTP session to destroy\n");
@@ -3446,7 +3446,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	return 0;
  }
  
-@@ -3892,6 +4664,7 @@ static int unistim_answer(struct ast_channel *ast)
+@@ -3893,6 +4665,7 @@ static int unistim_answer(struct ast_channel *ast)
  	int res = 0;
  	struct unistim_subchannel *sub;
  	struct unistim_line *l;
@@ -3454,7 +3454,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	struct unistimsession *s;
  
  	s = channel_to_session(ast);
-@@ -3901,18 +4674,19 @@ static int unistim_answer(struct ast_channel *ast)
+@@ -3902,18 +4675,19 @@ static int unistim_answer(struct ast_channel *ast)
  	}
  	sub = ast->tech_pvt;
  	l = sub->parent;
@@ -3481,7 +3481,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (ast->_state != AST_STATE_UP)
  		ast_setstate(ast, AST_STATE_UP);
  	return res;
-@@ -4050,14 +4824,16 @@ static int unistim_write(struct ast_channel *ast, stru
+@@ -4051,14 +4825,16 @@ static int unistim_write(struct ast_channel *ast, stru
  			return 0;
  		}
  	} else {
@@ -3501,7 +3501,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			return -1;
  		}
  	}
-@@ -4126,7 +4902,13 @@ static char *control2str(int ind)
+@@ -4127,7 +4903,13 @@ static char *control2str(int ind)
  		return "Key Radio";
  	case AST_CONTROL_RADIO_UNKEY:
  		return "Un-Key Radio";
@@ -3516,7 +3516,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		return "Stop tone";
  	}
  	return "UNKNOWN";
-@@ -4153,8 +4935,8 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4154,8 +4936,8 @@ static int unistim_indicate(struct ast_channel *ast, i
  	struct unistimsession *s;
  
  	if (unistimdebug) {
@@ -3527,7 +3527,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	}
  
  	s = channel_to_session(ast);
-@@ -4167,7 +4949,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4168,7 +4950,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	switch (ind) {
  	case AST_CONTROL_RINGING:
  		if (ast->_state != AST_STATE_UP) {
@@ -3536,7 +3536,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			in_band_indication(ast, l->parent->tz, "ring");
  			s->device->missed_call = -1;
  			break;
-@@ -4176,7 +4958,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4177,7 +4959,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	case AST_CONTROL_BUSY:
  		if (ast->_state != AST_STATE_UP) {
  			sub->alreadygone = 1;
@@ -3545,7 +3545,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			in_band_indication(ast, l->parent->tz, "busy");
  			s->device->missed_call = -1;
  			break;
-@@ -4189,7 +4971,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4190,7 +4972,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	case AST_CONTROL_CONGESTION:
  		if (ast->_state != AST_STATE_UP) {
  			sub->alreadygone = 1;
@@ -3554,7 +3554,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			in_band_indication(ast, l->parent->tz, "congestion");
  			s->device->missed_call = -1;
  			break;
-@@ -4203,13 +4985,23 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4204,13 +4986,23 @@ static int unistim_indicate(struct ast_channel *ast, i
  		break;
  	case AST_CONTROL_PROGRESS:
  	case AST_CONTROL_SRCUPDATE:
@@ -3580,7 +3580,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	default:
  		ast_log(LOG_WARNING, "Don't know how to indicate condition %d\n", ind);
  		return -1;
-@@ -4222,6 +5014,7 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4223,6 +5015,7 @@ static struct unistim_subchannel *find_subchannel_by_n
  {
  	struct unistim_line *l;
  	struct unistim_device *d;
@@ -3588,7 +3588,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	char line[256];
  	char *at;
  	char *device;
-@@ -4245,12 +5038,22 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4246,12 +5039,22 @@ static struct unistim_subchannel *find_subchannel_by_n
  			if (unistimdebug)
  				ast_verb(0, "Found device: %s\n", d->name);
  			/* Found the device */
@@ -3615,7 +3615,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  					if (at) {       /* Other options ? */
  						at++;   /* Skip slash */
  						if (*at == 'r') {       /* distinctive ring */
-@@ -4266,16 +5069,20 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4267,16 +5070,20 @@ static struct unistim_subchannel *find_subchannel_by_n
  								if (unistimdebug)
  									ast_verb(0, "Distinctive ring : style #%d volume %d\n",
  										 ring_style, ring_volume);
@@ -3641,7 +3641,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		}
  		d = d->next;
  	}
-@@ -4301,9 +5108,9 @@ static int unistim_senddigit_end(struct ast_channel *a
+@@ -4302,9 +5109,9 @@ static int unistim_senddigit_end(struct ast_channel *a
  	struct ast_frame f = { 0, };
  	struct unistim_subchannel *sub;
  
@@ -3653,7 +3653,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		ast_log(LOG_WARNING, "Unable to find subchannel in dtmf senddigit_end\n");
  		return -1;
  	}
-@@ -4436,7 +5243,7 @@ static int unistim_sendtext(struct ast_channel *ast, c
+@@ -4437,7 +5244,7 @@ static int unistim_sendtext(struct ast_channel *ast, c
  		if (pte->device->height == 1) {
  			send_text(TEXT_LINE0, TEXT_NORMAL, pte, text);
  		} else {
@@ -3662,7 +3662,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			send_text(TEXT_LINE1, TEXT_NORMAL, pte, text);
  		}
  		if (size <= TEXT_LENGTH_MAX) {
-@@ -4464,7 +5271,7 @@ static int unistim_send_mwi_to_peer(struct unistimsess
+@@ -4465,7 +5272,7 @@ static int unistim_send_mwi_to_peer(struct unistimsess
  	struct ast_event *event;
  	int new;
  	char *mailbox, *context;
@@ -3671,7 +3671,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  	context = mailbox = ast_strdupa(peer->mailbox);
  	strsep(&context, "@");
-@@ -4518,9 +5325,9 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4519,9 +5326,9 @@ static struct ast_channel *unistim_new(struct unistim_
  	}
  	l = sub->parent;
  	tmp = ast_channel_alloc(1, state, l->cid_num, NULL, l->accountcode, l->exten,
@@ -3683,7 +3683,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (!tmp) {
  		ast_log(LOG_WARNING, "Unable to allocate channel structure\n");
  		return NULL;
-@@ -4558,8 +5365,8 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4559,8 +5366,8 @@ static struct ast_channel *unistim_new(struct unistim_
  	tmp->rawreadformat = fmt;
  	tmp->tech_pvt = sub;
  	tmp->tech = &unistim_tech;
@@ -3694,7 +3694,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	sub->owner = tmp;
  	ast_mutex_lock(&usecnt_lock);
  	usecnt++;
-@@ -4583,14 +5390,14 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4584,14 +5391,14 @@ static struct ast_channel *unistim_new(struct unistim_
  		}
  	}
  	tmp->priority = 1;
@@ -3717,7 +3717,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	}
  
  	return tmp;
-@@ -4639,8 +5446,8 @@ static void *do_monitor(void *data)
+@@ -4640,8 +5447,8 @@ static void *do_monitor(void *data)
  				dw_timeout = cur->timeout - tick;
  			/* Checking if the phone is logged on for a new MWI */
  			if (cur->device) {
@@ -3728,7 +3728,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  					DEBUG_TIMER("Checking mailbox for MWI\n");
  					unistim_send_mwi_to_peer(cur, tick);
  					break;
-@@ -4710,7 +5517,8 @@ static struct ast_channel *unistim_request(const char 
+@@ -4711,7 +5518,8 @@ static struct ast_channel *unistim_request(const char 
  										   int *cause)
  {
  	format_t oldformat;
@@ -3738,7 +3738,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	struct ast_channel *tmpc = NULL;
  	char tmp[256];
  	char *dest = data;
-@@ -4734,22 +5542,39 @@ static struct ast_channel *unistim_request(const char 
+@@ -4735,22 +5543,39 @@ static struct ast_channel *unistim_request(const char 
  		ast_log(LOG_NOTICE, "Unistim channels require a device\n");
  		return NULL;
  	}
@@ -3784,7 +3784,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	sub->parent->capability = format;
  	tmpc = unistim_new(sub, AST_STATE_DOWN, requestor ? requestor->linkedid : NULL);
  	if (!tmpc)
-@@ -4768,7 +5593,6 @@ static char *unistim_info(struct ast_cli_entry *e, int
+@@ -4769,7 +5594,6 @@ static char *unistim_info(struct ast_cli_entry *e, int
  	struct unistim_line *line;
  	struct unistim_subchannel *sub;
  	struct unistimsession *s;
@@ -3792,7 +3792,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	struct ast_channel *tmp;
  
  	switch (cmd) {
-@@ -4786,44 +5610,55 @@ static char *unistim_info(struct ast_cli_entry *e, int
+@@ -4787,44 +5611,55 @@ static char *unistim_info(struct ast_cli_entry *e, int
  	if (a->argc != e->args)
  		return CLI_SHOWUSAGE;
  
@@ -3876,7 +3876,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  				s->device, s);
  		s = s->next;
  	}
-@@ -4981,7 +5816,7 @@ static void unquote(char *out, const char *src, int ma
+@@ -4982,7 +5817,7 @@ static void unquote(char *out, const char *src, int ma
  	return;
  }
  
@@ -3885,7 +3885,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  {
  	char line[256];
  	char *at;
-@@ -5056,7 +5891,7 @@ static int ParseBookmark(const char *text, struct unis
+@@ -5057,7 +5892,7 @@ static int ParseBookmark(const char *text, struct unis
  	ast_copy_string(d->softkeylabel[p], line, sizeof(d->softkeylabel[p]));
  	ast_copy_string(d->softkeynumber[p], number, sizeof(d->softkeynumber[p]));
  	if (unistimdebug)
@@ -3894,7 +3894,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  					p, d->softkeylabel[p], d->softkeynumber[p], d->softkeyicon[p]);
  	return 1;
  }
-@@ -5087,15 +5922,29 @@ static void finish_bookmark(void)
+@@ -5088,15 +5923,29 @@ static void finish_bookmark(void)
  	}
  }
  
@@ -3927,7 +3927,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  
  	/* First, we need to know if we already have this name in our list */
  	/* Get a lock for the device chained list */
-@@ -5112,22 +5961,39 @@ static struct unistim_device *build_device(const char 
+@@ -5113,22 +5962,39 @@ static struct unistim_device *build_device(const char 
  			}
  			/* we're reloading right now */
  			create = 0;
@@ -3974,7 +3974,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	ast_copy_string(context, DEFAULTCONTEXT, sizeof(context));
  	d->contrast = -1;
  	d->output = OUTPUT_HANDSET;
-@@ -5135,12 +6001,16 @@ static struct unistim_device *build_device(const char 
+@@ -5136,12 +6002,16 @@ static struct unistim_device *build_device(const char 
  	d->volume = VOLUME_LOW;
  	d->mute = MUTE_OFF;
  	d->height = DEFAULTHEIGHT;
@@ -3991,7 +3991,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	nbsoftkey = 0;
  	while (v) {
  		if (!strcasecmp(v->name, "rtp_port"))
-@@ -5181,19 +6051,25 @@ static struct unistim_device *build_device(const char 
+@@ -5182,19 +6052,25 @@ static struct unistim_device *build_device(const char 
  			ringvolume = atoi(v->value);
  		else if (!strcasecmp(v->name, "ringstyle"))
  			ringstyle = atoi(v->value);
@@ -4023,7 +4023,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		else if (!strcasecmp(v->name, "amaflags")) {
  			int y;
  			y = ast_cdr_amaflags2int(v->value);
-@@ -5201,17 +6077,17 @@ static struct unistim_device *build_device(const char 
+@@ -5202,17 +6078,17 @@ static struct unistim_device *build_device(const char 
  				ast_log(LOG_WARNING, "Invalid AMA flags: %s at line %d\n", v->value,
  						v->lineno);
  			else
@@ -4047,7 +4047,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  		else if (!strcasecmp(v->name, "linelabel"))
  			unquote(linelabel, v->value, sizeof(linelabel) - 1);
  		else if (!strcasecmp(v->name, "extension")) {
-@@ -5228,103 +6104,93 @@ static struct unistim_device *build_device(const char 
+@@ -5229,103 +6105,93 @@ static struct unistim_device *build_device(const char 
  				ast_log(LOG_WARNING,
  						"More than 6 softkeys defined. Ignoring new entries.\n");
  			else {
@@ -4208,7 +4208,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if ((autoprovisioning == AUTOPROVISIONING_TN) &&
  		(!ast_strlen_zero(d->extension_number))) {
  		d->extension = EXTENSION_TN;
-@@ -5337,8 +6203,6 @@ static struct unistim_device *build_device(const char 
+@@ -5338,8 +6204,6 @@ static struct unistim_device *build_device(const char 
  	} else if (ast_strlen_zero(d->id)) {
  		if (strcmp(d->name, "template")) {
  			ast_log(LOG_ERROR, "You must specify the mac address with device=\n");
@@ -4217,7 +4217,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			if (d->tz) {
  				d->tz = ast_tone_zone_unref(d->tz);
  			}
-@@ -5351,8 +6215,6 @@ static struct unistim_device *build_device(const char 
+@@ -5352,8 +6216,6 @@ static struct unistim_device *build_device(const char 
  		d->rtp_port = 10000;
  	if (d->contrast == -1)
  		d->contrast = 8;
@@ -4226,7 +4226,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	if (ast_strlen_zero(d->maintext1))
  		strcpy(d->maintext1, d->name);
  	if (ast_strlen_zero(d->titledefault)) {
-@@ -5360,7 +6222,7 @@ static struct unistim_device *build_device(const char 
+@@ -5361,7 +6223,7 @@ static struct unistim_device *build_device(const char 
  		struct timeval cur_time = ast_tvnow();
  
  		if ((ast_localtime(&cur_time, &tm, 0)) == 0 || ast_strlen_zero(tm.tm_zone)) {
@@ -4235,7 +4235,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			ast_copy_string(d->titledefault, "UNISTIM for*", 12);
  		} else {
  			if (strlen(tm.tm_zone) < 4) {
-@@ -5438,8 +6300,13 @@ static int reload_config(void)
+@@ -5439,8 +6301,13 @@ static int reload_config(void)
                  } else if (!strcasecmp(v->name, "cos_audio")) {
                          if (ast_str2cos(v->value, &qos.cos_audio))
                              ast_log(LOG_WARNING, "Invalid cos_audio value at line %d, refer to QoS documentation\n", v->lineno);
@@ -4250,7 +4250,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  				autoprovisioning = AUTOPROVISIONING_NO;
  			else if (!strcasecmp(v->value, "yes"))
  				autoprovisioning = AUTOPROVISIONING_YES;
-@@ -5497,44 +6364,57 @@ static int reload_config(void)
+@@ -5498,44 +6365,57 @@ static int reload_config(void)
  	d = devices;
  	while (d) {
  		if (d->to_delete) {
@@ -4339,7 +4339,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  			if (d->session) {
  				if (sessions == d->session)
  					sessions = d->session->next;
-@@ -5578,9 +6458,15 @@ static int reload_config(void)
+@@ -5579,9 +6459,15 @@ static int reload_config(void)
  	ast_mutex_lock(&sessionlock);
  	s = sessions;
  	while (s) {
@@ -4357,7 +4357,7 @@ https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-
  	}
  	ast_mutex_unlock(&sessionlock);
  	/* We don't recreate a socket when reloading (locks would be necessary). */
-@@ -5693,8 +6579,9 @@ buff_failed:
+@@ -5694,8 +6580,9 @@ buff_failed:
  static int unload_module(void)
  {
  	/* First, take us out of the channel loop */

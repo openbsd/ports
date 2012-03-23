@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.21 2012/03/13 23:17:46 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.22 2012/03/23 22:42:25 sthen Exp $
 --- configure.ac.orig	Sat Jan 14 16:40:17 2012
 +++ configure.ac	Tue Mar  6 14:19:49 2012
 @@ -55,7 +55,7 @@ AC_SUBST([astvarrundir],      ['${localstatedir}/run/a
@@ -28,22 +28,11 @@ $OpenBSD: patch-configure_ac,v 1.21 2012/03/13 23:17:46 sthen Exp $
  
  AST_EXT_LIB_CHECK([OGG], [ogg], [ogg_sync_init], [])
  
-@@ -1925,7 +1925,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
- 	AST_CHECK_OPENH323()
- 	AST_CHECK_PWLIB_VERSION([OpenH323], [OPENH323], [openh323buildopts.h], [1], [17], [3], [], [1], [19], [0])
- 	AST_CHECK_OPENH323_BUILD()
--	PLATFORM_OPENH323="h323_${PWLIB_PLATFORM}_${OPENH323_SUFFIX}"
-+	dnl PLATFORM_OPENH323="h323_${PWLIB_PLATFORM}_${OPENH323_SUFFIX}"
-+	PLATFORM_OPENH323="h323"
- 	AST_CHECK_PWLIB_BUILD([OpenH323], [OPENH323],
- 		[Define if your system has the OpenH323 libraries.],
- 		[#include "ptlib.h"
-@@ -2077,7 +2078,8 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
+@@ -2077,7 +2077,7 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
  
  if test "${OSARCH}" = "OpenBSD";
  then
 -	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc -logg])
-+dnl XXX should use pkg-config
 +	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc -lvorbis -logg])
  else
  	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc])

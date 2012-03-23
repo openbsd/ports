@@ -1,0 +1,14 @@
+$OpenBSD: patch-addons_chan_ooh323_c,v 1.1 2012/03/23 22:42:25 sthen Exp $
+--- addons/chan_ooh323.c.orig	Fri Mar 23 22:26:55 2012
++++ addons/chan_ooh323.c	Fri Mar 23 22:29:25 2012
+@@ -2723,8 +2723,10 @@ int reload_config(int reload)
+ 				gTOS = IPTOS_THROUGHPUT;
+ 			else if (!strcasecmp(v->value, "reliability"))
+ 				gTOS = IPTOS_RELIABILITY;
++#ifdef IPTOS_MINCOST
+ 			else if (!strcasecmp(v->value, "mincost"))
+ 				gTOS = IPTOS_MINCOST;
++#endif
+ 			else if (!strcasecmp(v->value, "none"))
+ 				gTOS = 0;
+ 			else
