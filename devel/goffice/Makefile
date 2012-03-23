@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/10/29 08:12:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/03/23 09:44:44 ajacoutot Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric, bump PKGNAME then change the
@@ -10,13 +10,13 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.8.17
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 
 CATEGORIES=	devel
 
-# GPLv2
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
