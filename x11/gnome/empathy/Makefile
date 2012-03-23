@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2012/02/18 23:06:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2012/03/23 09:45:17 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -67,9 +67,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS= 	yelp
 
-CONFIGURE_ARGS+=	--enable-spell=Yes \
-			--enable-location=Yes \
+CONFIGURE_ARGS+=	--enable-spell=yes \
+			--enable-location=yes \
 			--enable-control-center-embedding=no \
+			--enable-geocode=no \
 			--with-eds \
 			--with-ca-file=/etc/ssl/cert.pem \
 			--disable-Werror \
