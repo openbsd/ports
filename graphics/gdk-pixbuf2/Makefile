@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2011/12/17 21:20:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/23 13:20:55 ajacoutot Exp $
 
 COMMENT=	graphic library for GTK+2
 
-V=		2.24.1
+V=		2.25.2
 DISTNAME=	gdk-pixbuf-${V}
 
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	graphics
 
-SHARED_LIBS +=  gdk_pixbuf-2.0            2200.1 # 2300.3
-SHARED_LIBS +=  gdk_pixbuf_xlib-2.0       2200.1 # 2300.3
+SHARED_LIBS +=  gdk_pixbuf-2.0       2600.0   # 2502.0
+SHARED_LIBS +=  gdk_pixbuf_xlib-2.0  2600.0   # 2502.0
 
 HOMEPAGE=	http://www.gtk.org/
 
