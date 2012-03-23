@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2012/03/23 13:21:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.6 2012/03/23 15:49:11 ajacoutot Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util3/
@@ -463,6 +463,7 @@ share/gtk-doc/html/gtk3/gradient3.png
 share/gtk-doc/html/gtk3/gradient4.png
 share/gtk-doc/html/gtk3/grid-packing.png
 share/gtk-doc/html/gtk3/gtk-apply.png
+share/gtk-doc/html/gtk3/gtk-broadway.html
 share/gtk-doc/html/gtk3/gtk-building.html
 share/gtk-doc/html/gtk3/gtk-cancel.png
 share/gtk-doc/html/gtk3/gtk-caps-lock-warning.png
@@ -559,6 +560,7 @@ share/gtk-doc/html/gtk3/link-button.png
 share/gtk-doc/html/gtk3/list-add.png
 share/gtk-doc/html/gtk3/list-and-tree.png
 share/gtk-doc/html/gtk3/list-remove.png
+share/gtk-doc/html/gtk3/lock-button.png
 share/gtk-doc/html/gtk3/lockbutton-locked.png
 share/gtk-doc/html/gtk3/lockbutton-sorry.png
 share/gtk-doc/html/gtk3/lockbutton-unlocked.png
