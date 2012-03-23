@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/06/05 22:31:44 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/23 09:05:22 rfreeman Exp $
 
 COMMENT =		DOOM I data files
 
 DISTFILES =		doom.wad
 PKGNAME =		doom1data-1.0
+REVISION =		0
 CATEGORIES =		games
 
 EXTRACT_ONLY =
@@ -27,8 +28,7 @@ FETCH_MANUALLY +=	"${FULLDISTDIR}."
 do-build:
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/games/doom/
-	${INSTALL_DATA} ${FULLDISTDIR}/doom.wad \
-		${PREFIX}/share/games/doom/doom.wad
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doom/
+	${INSTALL_DATA} ${FULLDISTDIR}/doom.wad ${PREFIX}/share/doom/doom.wad
 
 .include <bsd.port.mk>
