@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.27 2012/02/17 22:10:34 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.28 2012/03/23 17:51:18 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -638,6 +638,7 @@ share/doc/dovecot/wiki/Upgrading.1.0.txt
 share/doc/dovecot/wiki/Upgrading.1.1.txt
 share/doc/dovecot/wiki/Upgrading.1.2.txt
 share/doc/dovecot/wiki/Upgrading.2.0.txt
+share/doc/dovecot/wiki/Upgrading.2.1.txt
 share/doc/dovecot/wiki/Upgrading.txt
 share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
 share/doc/dovecot/wiki/UserDatabase.NSS.txt
