@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_server_poll_inetd_cpp,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- src/server_poll/inetd.cpp.orig	Tue Mar 20 10:52:16 2012
++++ src/server_poll/inetd.cpp	Tue Mar 20 10:52:27 2012
+@@ -17,7 +17,7 @@
+  */
+ 
+ #include <cassert>
+-#include <glib/gmain.h>
++#include <glib.h>
+ 
+ #include "inetd.h"
+ #include "irc/irc.h"

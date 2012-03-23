@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/23 13:28:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Equinox GTK+2 engine
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	0
+REVISION=	1
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}
@@ -28,7 +28,7 @@ WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z ffi stdc++
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 
@@ -42,8 +42,7 @@ LIB_DEPENDS=	x11/gtk+2
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
-		--enable-animation
+		--disable-static
 
 _DNAME=		equinox-gtk-engine-${V:C/^([0-9]+\.[0-9]+).*/\1/}
 WRKDIST=	${WRKDIR}/${_DNAME:S/-gtk-engine//}

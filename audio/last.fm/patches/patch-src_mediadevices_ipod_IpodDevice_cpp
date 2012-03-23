@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_mediadevices_ipod_IpodDevice_cpp,v 1.2 2011/10/18 12:17:26 dcoppa Exp $
---- src/mediadevices/ipod/IpodDevice.cpp.orig	Tue Oct 18 11:12:40 2011
-+++ src/mediadevices/ipod/IpodDevice.cpp	Tue Oct 18 11:30:05 2011
-@@ -24,12 +24,11 @@
+$OpenBSD: patch-src_mediadevices_ipod_IpodDevice_cpp,v 1.3 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- src/mediadevices/ipod/IpodDevice.cpp.orig	Fri Mar 23 13:02:31 2012
++++ src/mediadevices/ipod/IpodDevice.cpp	Fri Mar 23 13:02:49 2012
+@@ -24,18 +24,17 @@
  
  #include "logger.h"
  
@@ -15,6 +18,13 @@ $OpenBSD: patch-src_mediadevices_ipod_IpodDevice_cpp,v 1.2 2011/10/18 12:17:26 d
  #include <QSettings>
  
  extern "C"
+ {
+     #include <gpod/itdb.h>
+-    #include <glib/glist.h>
++    #include <glib.h>
+ }
+ 
+ #define TABLE_NAME "IpodDeviceTracks"
 @@ -78,8 +77,9 @@ IpodDevice::open()
  
      if ( m_uid.isEmpty() )

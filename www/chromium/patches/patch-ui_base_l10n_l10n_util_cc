@@ -1,0 +1,15 @@
+$OpenBSD: patch-ui_base_l10n_l10n_util_cc,v 1.4 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- ui/base/l10n/l10n_util.cc.orig	Tue Mar 20 12:03:16 2012
++++ ui/base/l10n/l10n_util.cc	Tue Mar 20 12:03:31 2012
+@@ -5,7 +5,7 @@
+ #include "ui/base/l10n/l10n_util.h"
+ 
+ #if defined(USE_X11)
+-#include <glib/gutils.h>
++#include <glib.h>
+ #endif
+ 
+ #include <algorithm>

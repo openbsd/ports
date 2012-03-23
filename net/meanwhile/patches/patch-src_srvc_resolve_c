@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_srvc_resolve_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/srvc_resolve.c.orig	Thu Oct 27 02:10:06 2005
++++ src/srvc_resolve.c	Sat Mar 17 08:06:35 2012
+@@ -18,7 +18,7 @@
+   Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+ 
+-#include <glib/ghash.h>
++#include <glib.h>
+ 
+ #include "mw_channel.h"
+ #include "mw_common.h"

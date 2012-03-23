@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mw_srvc_resolve_h,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/mw_srvc_resolve.h.orig	Thu Dec 15 01:30:28 2005
++++ src/mw_srvc_resolve.h	Sat Mar 17 08:06:35 2012
+@@ -23,7 +23,6 @@
+ 
+ 
+ #include <glib.h>
+-#include <glib/glist.h>
+ 
+ 
+ #ifdef __cplusplus

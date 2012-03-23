@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_test-boundingbox_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- tests/test-boundingbox.c.orig	Sat Nov  7 15:28:35 2009
++++ tests/test-boundingbox.c	Wed Mar 21 20:59:52 2012
+@@ -28,9 +28,6 @@
+ #include <glib.h>
+ #include <glib-object.h>
+ 
+-#if GLIB_CHECK_VERSION(2,16,0)
+-#include <glib/gtestutils.h>
+-#endif
+ #include "dialib.h"
+ 
+ /*

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/23 13:28:25 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
@@ -6,6 +6,12 @@ DISTNAME=	inkscape-0.48.2
 REVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
+
+# error: #error "Only <glib.h> can be included directly."
+# (patch from Fedora)
+PATCHFILES=	inkscape-glib-2.32.patch:0
+PATCH_DIST_STRIP=-p1
+MASTER_SITES0=	http://distfiles.bsdfrog.org/
 
 HOMEPAGE=	http://www.inkscape.org/
 

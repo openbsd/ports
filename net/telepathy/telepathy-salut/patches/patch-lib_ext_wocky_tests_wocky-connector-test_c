@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_ext_wocky_tests_wocky-connector-test_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- lib/ext/wocky/tests/wocky-connector-test.c.orig	Tue Mar 20 09:51:53 2012
++++ lib/ext/wocky/tests/wocky-connector-test.c	Tue Mar 20 09:52:00 2012
+@@ -11,7 +11,6 @@
+ #include <arpa/inet.h>
+ 
+ #include <glib.h>
+-#include <glib/gstdio.h>
+ 
+ #include <wocky/wocky-connector.h>
+ #include <wocky/wocky-namespaces.h>

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_srvc_place_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/srvc_place.c.orig	Sat Dec  3 03:00:29 2005
++++ src/srvc_place.c	Sat Mar 17 08:06:35 2012
+@@ -19,8 +19,6 @@
+ */
+ 
+ #include <glib.h>
+-#include <glib/ghash.h>
+-#include <glib/glist.h>
+ 
+ #include <stdio.h>
+ #include <stdlib.h>

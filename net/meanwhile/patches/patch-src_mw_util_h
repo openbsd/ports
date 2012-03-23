@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_mw_util_h,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/mw_util.h.orig	Tue Dec 28 21:41:26 2004
++++ src/mw_util.h	Sat Mar 17 08:06:35 2012
+@@ -23,9 +23,6 @@
+ 
+ 
+ #include <glib.h>
+-#include <glib/ghash.h>
+-#include <glib/glist.h>
+-
+ 
+ #define map_guint_new() \
+   g_hash_table_new(g_direct_hash, g_direct_equal)

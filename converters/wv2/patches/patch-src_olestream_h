@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_olestream_h,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- src/olestream.h.orig	Sun Mar 18 08:15:14 2012
++++ src/olestream.h	Sun Mar 18 08:15:23 2012
+@@ -23,7 +23,7 @@
+ #include "global.h"  // U8,... typedefs
+ #include <stack>
+ 
+-#include <glib/giochannel.h> // GSeekType
++#include <glib.h> // GSeekType
+ 
+ namespace wvWare {
+ 

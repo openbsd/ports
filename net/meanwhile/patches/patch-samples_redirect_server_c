@@ -1,0 +1,14 @@
+$OpenBSD: patch-samples_redirect_server_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- samples/redirect_server.c.orig	Mon Dec  5 02:08:25 2005
++++ samples/redirect_server.c	Sat Mar 17 08:06:35 2012
+@@ -22,7 +22,6 @@
+ #include <unistd.h>
+ 
+ #include <glib.h>
+-#include <glib/glist.h>
+ 
+ #include <mw_common.h>
+ #include <mw_message.h>

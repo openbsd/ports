@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_server_poll_daemon_fork_cpp,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- src/server_poll/daemon_fork.cpp.orig	Tue Mar 20 10:53:15 2012
++++ src/server_poll/daemon_fork.cpp	Tue Mar 20 10:53:26 2012
+@@ -20,7 +20,7 @@
+ #include <cassert>
+ #include <cstring>
+ #include <cerrno>
+-#include <glib/gmain.h>
++#include <glib.h>
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <arpa/inet.h>

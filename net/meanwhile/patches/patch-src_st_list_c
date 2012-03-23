@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_st_list_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/st_list.c.orig	Thu Dec  8 23:01:27 2005
++++ src/st_list.c	Sat Mar 17 08:06:35 2012
+@@ -20,7 +20,7 @@
+ 
+ #include <stdio.h>
+ #include <string.h>
+-#include <glib/gstring.h>
++#include <glib.h>
+ 
+ #include "mw_debug.h"
+ #include "mw_util.h"

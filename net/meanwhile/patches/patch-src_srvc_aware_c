@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_srvc_aware_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/srvc_aware.c.orig	Thu Dec  8 23:02:11 2005
++++ src/srvc_aware.c	Sat Mar 17 08:06:35 2012
+@@ -19,8 +19,6 @@
+ */
+ 
+ #include <glib.h>
+-#include <glib/ghash.h>
+-#include <glib/glist.h>
+ #include <string.h>
+ 
+ #include "mw_channel.h"

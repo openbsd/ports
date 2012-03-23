@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mw_message_h,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/mw_message.h.orig	Thu Dec 15 01:30:28 2005
++++ src/mw_message.h	Sat Mar 17 08:06:35 2012
+@@ -22,7 +22,7 @@
+ #define _MW_MESSAGE_H
+ 
+ 
+-#include <glib/glist.h>
++#include <glib.h>
+ #include "mw_common.h"
+ 
+ 

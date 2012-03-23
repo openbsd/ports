@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/02/26 12:53:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/03/23 13:28:25 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=		devel/libsoup \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--disable-gtk-doc \
+			--disable-Werror \
 			--enable-plugins \
 			--with-tls=openssl
 CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"

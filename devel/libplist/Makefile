@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/15 11:05:22 mpi Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/23 13:28:25 ajacoutot Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
@@ -9,6 +9,9 @@ VERSION =		1.4
 DISTNAME =		libplist-${VERSION}
 PKGNAME-main =		${DISTNAME}	
 PKGNAME-python =	py-plist-${VERSION}
+
+REVISION-main =		0
+REVISION-python =	0
 
 SHARED_LIBS +=		plist		0.0 # 1.1
 SHARED_LIBS +=		plist++		0.0 # 1.1
@@ -38,9 +41,9 @@ LIB_DEPENDS =		devel/glib2 \
 			textproc/libxml
 
 WANTLIB +=		glib-2.0 m stdc++ xml2
-WANTLIB-main += 	c ${WANTLIB}
+WANTLIB-main += 	${WANTLIB} c pthread
 WANTLIB-python += 	${WANTLIB} plist plist++ python${MODPY_VERSION}
 
-CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include"
+CONFIGURE_ARGS =	-DCMAKE_C_FLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread"
 
 .include <bsd.port.mk>

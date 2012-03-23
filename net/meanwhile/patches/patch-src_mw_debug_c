@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mw_debug_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- src/mw_debug.c.orig	Sat Dec  3 04:46:10 2005
++++ src/mw_debug.c	Sat Mar 17 08:06:35 2012
+@@ -19,7 +19,7 @@
+ */
+ 
+ 
+-#include <glib/gstring.h>
++#include <glib.h>
+ 
+ #include "mw_debug.h"
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-opensync_opensync_list_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- opensync/opensync_list.c.orig	Fri Mar 23 07:48:25 2012
++++ opensync/opensync_list.c	Fri Mar 23 07:48:36 2012
+@@ -30,7 +30,7 @@
+  * MT safe
+  */
+ 
+-#include <glib/gmem.h>
++#include <glib.h>
+ #include "opensync_list.h"
+ #include "opensync_internals.h"
+ 

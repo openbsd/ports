@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_notebuffer_cpp,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+From 7364a6fd55c46db5c5dbae6df6ac377d48919fa9 Mon Sep 17 00:00:00 2001
+From: Hub Figuiere <hub@figuiere.net>
+Date: Fri, 06 Jan 2012 05:19:49 +0000
+Subject: Fix missing header for Glib::signal_idle. Closes #667349
+
+--- src/notebuffer.cpp.orig	Mon Mar 19 07:54:57 2012
++++ src/notebuffer.cpp	Mon Mar 19 07:55:05 2012
+@@ -23,6 +23,7 @@
+ #include <algorithm>
+ #include <tr1/array>
+ 
++#include <glibmm/main.h>
+ 
+ #include "debug.hpp"
+ #include "notebuffer.hpp"

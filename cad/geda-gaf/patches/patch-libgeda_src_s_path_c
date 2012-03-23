@@ -1,0 +1,17 @@
+$OpenBSD: patch-libgeda_src_s_path_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- libgeda/src/s_path.c.orig	Fri Mar 23 11:14:48 2012
++++ libgeda/src/s_path.c	Fri Mar 23 11:14:57 2012
+@@ -37,9 +37,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#include <glib/gmem.h>
+-#include <glib/gmessages.h>
+-#include <glib/gtypes.h>
++#include <glib.h>
+ 
+ #include "libgeda_priv.h"
+ 

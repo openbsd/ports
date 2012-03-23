@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/23 13:28:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Aurora GTK+2 engine
 V=		1.5.1
 DISTNAME=	56438-aurora-${V}
 PKGNAME=	gtk2-aurora-engine-${V}
-REVISION=	2
+REVISION=	3
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -36,11 +36,11 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += GL Xxf86vm drm ffi gthread-2.0 stdc++ xcb-render xcb-shm
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
-		--enable-animation
+		--disable-static
 
 _DNAME=		aurora-gtk-engine-${V:C/^([0-9]+\.[0-9]+).*/\1/}
 WRKDIST=	${WRKDIR}/${_DNAME:S/-gtk-engine//}

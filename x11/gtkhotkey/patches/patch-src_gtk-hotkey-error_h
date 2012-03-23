@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gtk-hotkey-error_h,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- src/gtk-hotkey-error.h.orig	Sun Mar 18 10:54:52 2012
++++ src/gtk-hotkey-error.h	Sun Mar 18 10:55:02 2012
+@@ -23,7 +23,7 @@
+ #ifndef __GTK_HOTKEY_ERROR_H__
+ #define __GTK_HOTKEY_ERROR_H__
+ 
+-#include <glib/gquark.h>
++#include <glib.h>
+ 
+ G_BEGIN_DECLS
+ 

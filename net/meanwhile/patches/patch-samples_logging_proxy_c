@@ -1,0 +1,14 @@
+$OpenBSD: patch-samples_logging_proxy_c,v 1.1 2012/03/23 13:28:25 ajacoutot Exp $
+
+https://bugzilla.redhat.com/show_bug.cgi?id=750023
+
+--- samples/logging_proxy.c.orig	Mon Dec  5 01:51:58 2005
++++ samples/logging_proxy.c	Sat Mar 17 08:06:35 2012
+@@ -25,7 +25,6 @@
+ #include <unistd.h>
+ 
+ #include <glib.h>
+-#include <glib/glist.h>
+ 
+ #include <mw_cipher.h>
+ #include <mw_common.h>

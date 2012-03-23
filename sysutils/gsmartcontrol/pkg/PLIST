@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/03 23:04:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/03/23 13:28:25 ajacoutot Exp $
 @bin bin/gsmartcontrol
 bin/gsmartcontrol-root
 @man man/man1/gsmartcontrol-root.1
@@ -28,31 +28,13 @@ share/doc/gsmartcontrol/contrib/cron-based_noadmin/smartctl_subst.sh
 share/gsmartcontrol/
 share/gsmartcontrol/icon_cddvd.png
 share/gsmartcontrol/icon_hdd.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/gsmartcontrol.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gsmartcontrol.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gsmartcontrol.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gsmartcontrol.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/gsmartcontrol.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gsmartcontrol.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gsmartcontrol.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/gsmartcontrol.png
 share/pixmaps/
 share/pixmaps/gsmartcontrol.png
