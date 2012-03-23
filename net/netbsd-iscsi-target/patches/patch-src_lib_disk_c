@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_lib_disk_c,v 1.1 2012/03/23 13:39:28 claudio Exp $
+--- src/lib/disk.c.orig	Tue Mar 16 15:27:17 2010
++++ src/lib/disk.c	Tue Mar 20 08:03:58 2012
+@@ -1057,7 +1057,7 @@ device_vpd(iscsi_target_t *tgt, uint8_t *data, uint8_t
+ 	cp[0] = (INQUIRY_DEVICE_ISCSI_PROTOCOL << 4) |
+ 		INQUIRY_DEVICE_CODESET_UTF8;
+ 	cp[1] = (INQUIRY_DEVICE_PIV << 7) |
+-		(INQUIRY_DEVICE_ASSOCIATION_TARGET_DEVICE << 4) |
++		(INQUIRY_DEVICE_ASSOCIATION_LOGICAL_UNIT << 4) |
+ 		INQUIRY_IDENTIFIER_TYPE_T10;
+ 	strpadcpy(&cp[4], 8, ISCSI_VENDOR, strlen(ISCSI_VENDOR), ' ');
+ 	len = 8;

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/02/21 22:41:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/23 13:39:28 claudio Exp $
 
 COMMENT=	iSCSI (RFC 3720) target from NetBSD
 
 DISTNAME=	netbsd-iscsi-20111006
 PKGNAME=	${DISTNAME:S/-iscsi/-iscsi-target/}
+REVISION=	0
 
 CATEGORIES=	net sysutils
 
