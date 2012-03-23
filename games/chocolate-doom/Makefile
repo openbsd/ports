@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/24 00:11:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/23 08:47:03 rfreeman Exp $
 
 COMMENT =	portable version of iD Software's Doom
 DISTNAME =	chocolate-doom-1.6.0
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.chocolate-doom.org/
@@ -28,14 +29,24 @@ USE_GROFF =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--without-python
 
-MAN_5=		chocolate-doom.cfg default.cfg
-MAN_6=		chocolate-doom chocolate-server chocolate-setup
+# we don't need to require python to build
+CONFIGURE_ENV +=	HAVE_PYTHON=false
+
+# set correct program directory
+MAKE_FLAGS =	gamesdir="${TRUEPREFIX}/bin"
+
+MAN_5 =		chocolate-doom.cfg default.cfg
+MAN_6 =		chocolate-doom chocolate-server chocolate-setup
+
+post-extract:
+	# set correct data directory
+	@perl -pi -e "s,/usr/share/games/doom,${TRUEPREFIX}/share/doom," \
+		${WRKSRC}/src/d_iwad.c
 
 post-install:
 	# Data files get installed to this directory.
-	${INSTALL_DATA_DIR} ${PREFIX}/share/games/doom/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doom/
 .for m in ${MAN_5}
 	${INSTALL_MAN} ${WRKBUILD}/man/$m.5 ${PREFIX}/man/man5/
 .endfor
