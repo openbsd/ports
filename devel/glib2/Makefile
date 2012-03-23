@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.155 2012/03/12 07:21:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2012/03/23 13:19:32 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.30.3
+VERSION=		2.31.20
 DISTNAME=		glib-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
@@ -16,11 +16,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             2992.0   # 2992.0
-SHARED_LIBS +=  gmodule-2.0          2992.0   # 2992.0
-SHARED_LIBS +=  gthread-2.0          2992.0   # 2992.0
-SHARED_LIBS +=  gobject-2.0          2992.0   # 2992.0
-SHARED_LIBS +=  gio-2.0              2992.0   # 2992.0
+SHARED_LIBS +=  glib-2.0             3200.0   # 3120.0
+SHARED_LIBS +=  gmodule-2.0          3200.0   # 3120.0
+SHARED_LIBS +=  gthread-2.0          3200.0   # 3120.0
+SHARED_LIBS +=  gobject-2.0          3200.0   # 3120.0
+SHARED_LIBS +=  gio-2.0              3200.0   # 3120.0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -78,7 +78,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 CONFIGURE_ARGS +=	--disable-maintainer-mode
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 ### kqueue(1) backend ##################################################
 AUTOMAKE_VERSION=	1.11
@@ -86,8 +86,10 @@ AUTOCONF_VERSION=	2.68
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
-MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
-PATCHFILES=		glib-gio-kqueue-2.28.8-v3.patch:0
+#MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
+MASTER_SITES0=		http://distfiles.bsdfrog.org/
+PATCH_DIST_STRIP=	-p2
+PATCHFILES=		glib-gio-kqueue-2.28.8-v3.1.patch:0
 AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 post-patch:

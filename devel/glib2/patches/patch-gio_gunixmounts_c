@@ -1,22 +1,22 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.5 2011/09/27 06:05:28 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.6 2012/03/23 13:19:32 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
---- gio/gunixmounts.c.orig	Wed Sep 21 21:17:06 2011
-+++ gio/gunixmounts.c	Tue Sep 27 07:52:34 2011
-@@ -153,6 +153,9 @@ struct _GUnixMountMonitor {
- 
-   GFileMonitor *fstab_monitor;
+--- gio/gunixmounts.c.orig	Tue Feb 21 01:10:54 2012
++++ gio/gunixmounts.c	Fri Mar 16 12:38:35 2012
+@@ -156,6 +156,9 @@ struct _GUnixMountMonitor {
    GFileMonitor *mtab_monitor;
+ 
+   GSource *proc_mounts_watch_source;
 +
 +  guint mount_poller_source;
 +  GList *mount_poller_mounts;
  };
  
  struct _GUnixMountMonitorClass {
-@@ -164,6 +167,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
+@@ -167,6 +170,8 @@ static GUnixMountMonitor *the_mount_monitor = NULL;
  static GList *_g_get_unix_mounts (void);
  static GList *_g_get_unix_mount_points (void);
  
@@ -25,7 +25,7 @@ on checking for mtab updates like other systems.
  G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor, G_TYPE_OBJECT);
  
  #define MOUNT_POLL_INTERVAL 4000
-@@ -190,6 +195,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
+@@ -193,6 +198,7 @@ G_DEFINE_TYPE (GUnixMountMonitor, g_unix_mount_monitor
  #endif
  
  #if (defined(HAVE_GETVFSSTAT) || defined(HAVE_GETFSSTAT)) && defined(HAVE_FSTAB_H) && defined(HAVE_SYS_MOUNT_H)
@@ -33,7 +33,7 @@ on checking for mtab updates like other systems.
  #include <sys/ucred.h>
  #include <sys/mount.h>
  #include <fstab.h>
-@@ -240,11 +246,14 @@ g_unix_is_mount_path_system_internal (const char *moun
+@@ -243,11 +249,14 @@ g_unix_is_mount_path_system_internal (const char *moun
      "/",              /* we already have "Filesystem root" in Nautilus */ 
      "/bin",
      "/boot",
@@ -48,7 +48,7 @@ on checking for mtab updates like other systems.
      "/live/cow",
      "/live/image",
      "/media",
-@@ -255,7 +264,12 @@ g_unix_is_mount_path_system_internal (const char *moun
+@@ -258,7 +267,12 @@ g_unix_is_mount_path_system_internal (const char *moun
      "/srv",
      "/tmp",
      "/usr",
@@ -61,7 +61,7 @@ on checking for mtab updates like other systems.
      "/var",
      "/var/crash",
      "/var/local",
-@@ -1111,6 +1125,10 @@ get_mounts_timestamp (void)
+@@ -1122,6 +1136,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;
      }
@@ -72,7 +72,7 @@ on checking for mtab updates like other systems.
    return 0;
  }
  
-@@ -1253,6 +1271,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1267,6 +1285,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -86,8 +86,8 @@ on checking for mtab updates like other systems.
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1333,6 +1358,51 @@ mtab_file_changed (GFileMonitor      *monitor,
-   g_signal_emit (mount_monitor, signals[MOUNTS_CHANGED], 0);
+@@ -1358,6 +1383,51 @@ proc_mounts_changed (GIOChannel   *channel,
+   return TRUE;
  }
  
 +static gboolean
@@ -138,16 +138,20 @@ on checking for mtab updates like other systems.
  static void
  g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
  {
-@@ -1354,6 +1424,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
-       g_object_unref (file);
-       
-       g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
-+    }
-+  else
-+    {
-+      monitor->mount_poller_mounts = _g_get_unix_mounts ();
-+      mount_poller_time = (guint64)time (NULL);
-+      monitor->mount_poller_source = g_timeout_add_seconds (3, (GSourceFunc)mount_change_poller, monitor);
+@@ -1406,10 +1476,16 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
+         }
+       else
+         {
++#if defined __linux__
+           file = g_file_new_for_path (mtab_path);
+           monitor->mtab_monitor = g_file_monitor_file (file, 0, NULL, NULL);
+           g_object_unref (file);
+           g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
++#else
++          monitor->mount_poller_mounts = _g_get_unix_mounts ();
++          mount_poller_time = (guint64)time (NULL);
++          monitor->mount_poller_source = g_timeout_add_seconds (3, (GSourceFunc)mount_change_poller, monitor);
++#endif
+         }
      }
  }
- 

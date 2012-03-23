@@ -1,9 +1,9 @@
-$OpenBSD: patch-glib_tests_Makefile_am,v 1.1 2012/02/02 07:10:18 ajacoutot Exp $
---- glib/tests/Makefile.am.orig	Mon Jan 30 13:48:23 2012
-+++ glib/tests/Makefile.am	Mon Jan 30 13:48:51 2012
-@@ -193,7 +193,7 @@ unix_nothreads_LDADD  = $(progs_ldadd)
- noinst_PROGRAMS += atomic
- atomic_CFLAGS = $(INCLUDES)
+$OpenBSD: patch-glib_tests_Makefile_am,v 1.2 2012/03/23 13:19:32 ajacoutot Exp $
+--- glib/tests/Makefile.am.orig	Mon Feb 20 21:23:17 2012
++++ glib/tests/Makefile.am	Fri Mar 16 12:10:00 2012
+@@ -190,7 +190,7 @@ sort_LDADD     = $(progs_ldadd)
+ TEST_PROGS    += atomic
+ atomic_CFLAGS  = $(INCLUDES)
  if HAVE_GCC
 -atomic_CFLAGS += -Wstrict-aliasing=2
 +atomic_CFLAGS += -Wstrict-aliasing
