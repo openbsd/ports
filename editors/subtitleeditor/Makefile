@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/02/16 22:20:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/23 13:26:40 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,7 +6,7 @@ SHARED_ONLY=   	Yes
 
 COMMENT=	GTK+2 subtitles editor
 
-V=		0.39.0
+V=		0.40.0
 DISTNAME=	subtitleeditor-${V}
 
 CATEGORIES=	graphics editors
@@ -32,7 +32,7 @@ WANTLIB += gstnetbuffer-0.10 gstpbutils-0.10 gstreamer-0.10 gstreamermm-0.10
 WANTLIB += gstrtp-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
 WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
-WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml++-2.6 xml2 z orc-0.4
 
 MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
