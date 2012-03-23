@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.64 2012/02/19 20:38:53 kili Exp $
+# $OpenBSD: Makefile,v 1.65 2012/03/23 20:17:06 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		4
+REVISION-main =		5
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 REVISION-doc =		0
 CATEGORIES =		lang devel
@@ -79,8 +79,7 @@ CONFIGURE_ARGS +=	--with-gmp-includes=${LOCALBASE}/include \
 
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
-			HSCOLOUR_SRCS=NO \
-			GhcThreaded=NO
+			HSCOLOUR_SRCS=NO
 
 # Thank god that they're only building compilers and no nuclear
 # power plants.
