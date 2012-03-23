@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/23 11:17:01 sthen Exp $
 
 COMMENT=	perl scripts for migrating system information to LDAP
 
-DISTNAME=	MigrationTools-46
+DISTNAME=	MigrationTools-47
 PKGNAME=	${DISTNAME:L}
-REVISION=		0
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.padl.com/download/
@@ -25,10 +24,10 @@ MTSDIR=		${PREFIX}/share/migrationtools/
 
 do-install:
 	${INSTALL_DATA_DIR} ${MTSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/*.ph ${MTSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/migrate_common.ph \
+	    ${MTSDIR}/migrate_common.ph.dist
 	${INSTALL_SCRIPT} ${WRKSRC}/*.pl ${MTSDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.sh ${MTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${MTSDIR}
-
 
 .include <bsd.port.mk>

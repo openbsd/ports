@@ -1,0 +1,15 @@
+$OpenBSD: patch-migrate_all_online_sh,v 1.1 2012/03/23 11:17:02 sthen Exp $
+
+This is where it lives on OpenBSD.
+
+--- migrate_all_online.sh.orig	Fri Mar  2 23:43:07 2012
++++ migrate_all_online.sh	Fri Mar  2 23:43:41 2012
+@@ -41,7 +41,7 @@ export SHELL
+ DB=/tmp/nis.$$.ldif
+ 
+ if [ "X$ETC_ALIASES" = "X" ]; then
+-	ETC_ALIASES=/etc/aliases
++	ETC_ALIASES=/etc/mail/aliases
+ fi
+ #if [ "X$ETC_FSTAB" = "X" ]; then
+ #	ETC_FSTAB=/etc/fstab

@@ -1,6 +1,9 @@
-$OpenBSD: patch-migrate_passwd_pl,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
---- migrate_passwd.pl.orig	Sun Oct 13 01:19:14 2002
-+++ migrate_passwd.pl	Sun Oct 13 01:19:46 2002
+$OpenBSD: patch-migrate_passwd_pl,v 1.2 2012/03/23 11:17:02 sthen Exp $
+
+Our master.passwd differs from linux shadow, reflect this.
+
+--- migrate_passwd.pl.orig	Wed Jan 25 05:18:16 2006
++++ migrate_passwd.pl	Fri Mar  2 23:42:40 2012
 @@ -32,7 +32,7 @@
  # SUCH DAMAGE.
  #
@@ -10,7 +13,7 @@ $OpenBSD: patch-migrate_passwd_pl,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
  #
  # Thanks to Peter Jacob Slot <peter@vision.auk.dk>.
  #
-@@ -181,7 +181,7 @@ if (OUTFILE != STDOUT) { close(OUTFILE);
+@@ -185,7 +185,7 @@ if (OUTFILE != STDOUT) { close(OUTFILE); }
  
  sub read_shadow_file
  {
@@ -19,3 +22,12 @@ $OpenBSD: patch-migrate_passwd_pl,v 1.1.1.1 2002/10/12 17:31:43 shell Exp $
  	while(<SHADOW>) {
  		chop;
  		($shadowUser) = split(/:/, $_);
+@@ -196,7 +196,7 @@ sub read_shadow_file
+ 
+ sub dump_shadow_attributes
+ {
+-	local($HANDLE, $user, $pwd, $lastchg, $min, $max, $warn, $inactive, $expire, $flag) = @_;
++	local($HANDLE, $user, $pwd, $uid, $gid, $class, $max, $expire, $gecos, $home, $shell) = @_;
+ 
+ 	print $HANDLE "objectClass: shadowAccount\n";
+ 	if ($pwd) {

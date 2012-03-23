@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/11/11 18:36:52 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/03/23 11:17:02 sthen Exp $
 share/migrationtools/
 share/migrationtools/README
 share/migrationtools/migrate_aliases.pl
@@ -12,7 +12,8 @@ share/migrationtools/migrate_all_offline.sh
 share/migrationtools/migrate_all_online.sh
 share/migrationtools/migrate_automount.pl
 share/migrationtools/migrate_base.pl
-share/migrationtools/migrate_common.ph
+share/migrationtools/migrate_common.ph.dist
+@sample share/migrationtools/migrate_common.ph
 share/migrationtools/migrate_fstab.pl
 share/migrationtools/migrate_group.pl
 share/migrationtools/migrate_hosts.pl
