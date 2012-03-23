@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/12/03 19:13:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/23 13:23:49 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
-GNOME_VERSION=		3.2.1
-REVISION=		3
+GNOME_VERSION=		3.3.92
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +24,7 @@ WANTLIB += xml2 z stdc++
 MODULES=		devel/gettext \
 			x11/gnome
 
-LIB_DEPENDS=		x11/gtk+3 \
+LIB_DEPENDS=		x11/gtk+3>=3.3.18 \
 			x11/gnome/librsvg
 
 MODGNOME_ICON_CACHE=	Yes
@@ -37,7 +36,7 @@ RUN_DEPENDS+=		x11/gtk-engines2
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	--disable-static
+CONFIGURE_ARGS=		--disable-static
 
 # set the global cursor theme
 # https://bugzilla.gnome.org/show_bug.cgi?id=660353
@@ -45,5 +44,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/default
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
 		${PREFIX}/share/icons/default
+	rm ${PREFIX}/share/icons/HighContrast/icon-theme.cache
 
 .include <bsd.port.mk>
