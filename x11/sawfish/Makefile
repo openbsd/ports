@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.58 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2012/03/23 13:29:30 ajacoutot Exp $
+
+BROKEN=		pthread_mutex_trylock, lazy binding failed!
 
 COMMENT=	extensible window manager
 
@@ -48,7 +50,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--without-kde4session \
 		--with-gnome2session \
 		--with-xdmsession
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include -pthread" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
