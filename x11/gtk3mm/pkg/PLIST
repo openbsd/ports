@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/09/27 12:57:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/03/23 13:22:16 ajacoutot Exp $
 %%SHARED%%
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
@@ -55,6 +55,7 @@ include/gtkmm-3.0/gtkmm/accelkey.h
 include/gtkmm-3.0/gtkmm/accellabel.h
 include/gtkmm-3.0/gtkmm/accelmap.h
 include/gtkmm-3.0/gtkmm/action.h
+include/gtkmm-3.0/gtkmm/actionable.h
 include/gtkmm-3.0/gtkmm/actiongroup.h
 include/gtkmm-3.0/gtkmm/activatable.h
 include/gtkmm-3.0/gtkmm/adjustment.h
@@ -63,6 +64,8 @@ include/gtkmm-3.0/gtkmm/appchooser.h
 include/gtkmm-3.0/gtkmm/appchooserbutton.h
 include/gtkmm-3.0/gtkmm/appchooserdialog.h
 include/gtkmm-3.0/gtkmm/appchooserwidget.h
+include/gtkmm-3.0/gtkmm/application.h
+include/gtkmm-3.0/gtkmm/applicationwindow.h
 include/gtkmm-3.0/gtkmm/arrow.h
 include/gtkmm-3.0/gtkmm/aspectframe.h
 include/gtkmm-3.0/gtkmm/assistant.h
@@ -95,6 +98,8 @@ include/gtkmm-3.0/gtkmm/checkbutton.h
 include/gtkmm-3.0/gtkmm/checkmenuitem.h
 include/gtkmm-3.0/gtkmm/clipboard.h
 include/gtkmm-3.0/gtkmm/colorbutton.h
+include/gtkmm-3.0/gtkmm/colorchooser.h
+include/gtkmm-3.0/gtkmm/colorchooserdialog.h
 include/gtkmm-3.0/gtkmm/colorselection.h
 include/gtkmm-3.0/gtkmm/combobox.h
 include/gtkmm-3.0/gtkmm/comboboxtext.h
@@ -174,6 +179,7 @@ include/gtkmm-3.0/gtkmm/private/aboutdialog_p.h
 include/gtkmm-3.0/gtkmm/private/accelgroup_p.h
 include/gtkmm-3.0/gtkmm/private/accellabel_p.h
 include/gtkmm-3.0/gtkmm/private/action_p.h
+include/gtkmm-3.0/gtkmm/private/actionable_p.h
 include/gtkmm-3.0/gtkmm/private/actiongroup_p.h
 include/gtkmm-3.0/gtkmm/private/activatable_p.h
 include/gtkmm-3.0/gtkmm/private/adjustment_p.h
@@ -182,6 +188,8 @@ include/gtkmm-3.0/gtkmm/private/appchooser_p.h
 include/gtkmm-3.0/gtkmm/private/appchooserbutton_p.h
 include/gtkmm-3.0/gtkmm/private/appchooserdialog_p.h
 include/gtkmm-3.0/gtkmm/private/appchooserwidget_p.h
+include/gtkmm-3.0/gtkmm/private/application_p.h
+include/gtkmm-3.0/gtkmm/private/applicationwindow_p.h
 include/gtkmm-3.0/gtkmm/private/arrow_p.h
 include/gtkmm-3.0/gtkmm/private/aspectframe_p.h
 include/gtkmm-3.0/gtkmm/private/assistant_p.h
@@ -212,6 +220,8 @@ include/gtkmm-3.0/gtkmm/private/checkbutton_p.h
 include/gtkmm-3.0/gtkmm/private/checkmenuitem_p.h
 include/gtkmm-3.0/gtkmm/private/clipboard_p.h
 include/gtkmm-3.0/gtkmm/private/colorbutton_p.h
+include/gtkmm-3.0/gtkmm/private/colorchooser_p.h
+include/gtkmm-3.0/gtkmm/private/colorchooserdialog_p.h
 include/gtkmm-3.0/gtkmm/private/colorselection_p.h
 include/gtkmm-3.0/gtkmm/private/combobox_p.h
 include/gtkmm-3.0/gtkmm/private/comboboxtext_p.h
@@ -559,6 +569,9 @@ share/doc/gtkmm-3.0/reference/html/classGtk_1_1ActionGroup-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ActionGroup.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ActionGroup__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Action__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Actionable-members.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Actionable.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Actionable__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Activatable-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Activatable.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Activatable__inherit__graph.png
@@ -580,6 +593,12 @@ share/doc/gtkmm-3.0/reference/html/classGtk_1_1AppChooserWidget-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1AppChooserWidget.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1AppChooserWidget__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1AppChooser__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Application-members.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Application.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ApplicationWindow-members.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ApplicationWindow.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ApplicationWindow__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1Application__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Arrow-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Arrow.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1Arrow__inherit__graph.png
@@ -672,6 +691,12 @@ share/doc/gtkmm-3.0/reference/html/classGtk_1_1Clipboard__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorButton-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorButton.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorButton__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooser-members.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooser.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooserDialog-members.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooserDialog.html
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooserDialog__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorChooser__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorSelection-members.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorSelection.html
 share/doc/gtkmm-3.0/reference/html/classGtk_1_1ColorSelectionDialog-members.html
@@ -1516,6 +1541,7 @@ share/doc/gtkmm-3.0/reference/html/since_2_6.html
 share/doc/gtkmm-3.0/reference/html/since_2_8.html
 share/doc/gtkmm-3.0/reference/html/since_3_0.html
 share/doc/gtkmm-3.0/reference/html/since_3_2.html
+share/doc/gtkmm-3.0/reference/html/since_3_4.html
 share/doc/gtkmm-3.0/reference/html/spinbutton1.png
 share/doc/gtkmm-3.0/reference/html/statusbar1.png
 share/doc/gtkmm-3.0/reference/html/structGtk_1_1BuiltinStockID-members.html
