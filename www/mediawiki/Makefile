@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2012/01/23 09:47:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2012/03/23 12:59:58 sthen Exp $
 
 COMMENT =	web-based collaborative editing environment
 
-DISTNAME =	mediawiki-1.18.1
+DISTNAME =	mediawiki-1.18.2
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.mediawiki.org/
@@ -30,7 +30,8 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		php-mysql-${MODPHP_VSPEC}|php-pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
-	@mv ${WRKDIST} ${INSTDIR}
+	@${INSTALL_DATA_DIR} ${INSTDIR}
+	@cd ${WRKSRC} && pax -rw * ${INSTDIR}
 	@find ${PREFIX} -name '.cvsignore' -or -name \*.orig -exec rm {} \;
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
 

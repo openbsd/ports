@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/01/23 09:47:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/03/23 12:59:58 sthen Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/COPYING
@@ -325,6 +325,7 @@ mediawiki/includes/ChangesList.php
 mediawiki/includes/Collation.php
 mediawiki/includes/ConfEditor.php
 mediawiki/includes/Cookie.php
+mediawiki/includes/CryptRand.php
 mediawiki/includes/DefaultSettings.php
 mediawiki/includes/Defines.php
 mediawiki/includes/DjVuImage.php
