@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2011/11/04 08:16:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2012/03/23 13:30:03 ajacoutot Exp $
+
+BROKEN=		needs an update (version 1.3.4 is in Fedora)
 
 COMMENT=	GTK-based LDAP client
 
