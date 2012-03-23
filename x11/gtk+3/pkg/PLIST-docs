@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2011/09/26 07:14:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2012/03/23 13:21:27 ajacoutot Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util3/
@@ -23,6 +23,7 @@ share/gtk-doc/html/gdk3/X_cursor.png
 share/gtk-doc/html/gdk3/annotation-glossary.html
 share/gtk-doc/html/gdk3/api-index-3-0.html
 share/gtk-doc/html/gdk3/api-index-3-2.html
+share/gtk-doc/html/gdk3/api-index-3-4.html
 share/gtk-doc/html/gdk3/api-index-deprecated.html
 share/gtk-doc/html/gdk3/api-index-full.html
 share/gtk-doc/html/gdk3/arrow.png
@@ -66,7 +67,6 @@ share/gtk-doc/html/gdk3/gdk3-Points-Rectangles-and-Regions.html
 share/gtk-doc/html/gdk3/gdk3-Properties-and-Atoms.html
 share/gtk-doc/html/gdk3/gdk3-RGBA-Colors.html
 share/gtk-doc/html/gdk3/gdk3-Selections.html
-share/gtk-doc/html/gdk3/gdk3-Testing.html
 share/gtk-doc/html/gdk3/gdk3-Threads.html
 share/gtk-doc/html/gdk3/gdk3-Visuals.html
 share/gtk-doc/html/gdk3/gdk3-Windows.html
@@ -144,6 +144,7 @@ share/gtk-doc/html/gtk3/GtkAccelLabel.html
 share/gtk-doc/html/gtk3/GtkAccessible.html
 share/gtk-doc/html/gtk3/GtkAction.html
 share/gtk-doc/html/gtk3/GtkActionGroup.html
+share/gtk-doc/html/gtk3/GtkActionable.html
 share/gtk-doc/html/gtk3/GtkActivatable.html
 share/gtk-doc/html/gtk3/GtkAdjustment.html
 share/gtk-doc/html/gtk3/GtkAlignment.html
@@ -152,6 +153,7 @@ share/gtk-doc/html/gtk3/GtkAppChooserButton.html
 share/gtk-doc/html/gtk3/GtkAppChooserDialog.html
 share/gtk-doc/html/gtk3/GtkAppChooserWidget.html
 share/gtk-doc/html/gtk3/GtkApplication.html
+share/gtk-doc/html/gtk3/GtkApplicationWindow.html
 share/gtk-doc/html/gtk3/GtkArrow.html
 share/gtk-doc/html/gtk3/GtkAspectFrame.html
 share/gtk-doc/html/gtk3/GtkAssistant.html
@@ -180,6 +182,9 @@ share/gtk-doc/html/gtk3/GtkCellView.html
 share/gtk-doc/html/gtk3/GtkCheckButton.html
 share/gtk-doc/html/gtk3/GtkCheckMenuItem.html
 share/gtk-doc/html/gtk3/GtkColorButton.html
+share/gtk-doc/html/gtk3/GtkColorChooser.html
+share/gtk-doc/html/gtk3/GtkColorChooserDialog.html
+share/gtk-doc/html/gtk3/GtkColorChooserWidget.html
 share/gtk-doc/html/gtk3/GtkColorSelection.html
 share/gtk-doc/html/gtk3/GtkColorSelectionDialog.html
 share/gtk-doc/html/gtk3/GtkComboBox.html
@@ -203,6 +208,7 @@ share/gtk-doc/html/gtk3/GtkFixed.html
 share/gtk-doc/html/gtk3/GtkFontButton.html
 share/gtk-doc/html/gtk3/GtkFontChooser.html
 share/gtk-doc/html/gtk3/GtkFontChooserDialog.html
+share/gtk-doc/html/gtk3/GtkFontChooserWidget.html
 share/gtk-doc/html/gtk3/GtkFontSelection.html
 share/gtk-doc/html/gtk3/GtkFontSelectionDialog.html
 share/gtk-doc/html/gtk3/GtkFrame.html
@@ -341,6 +347,7 @@ share/gtk-doc/html/gtk3/accel-label.png
 share/gtk-doc/html/gtk3/annotation-glossary.html
 share/gtk-doc/html/gtk3/api-index-3-0.html
 share/gtk-doc/html/gtk3/api-index-3-2.html
+share/gtk-doc/html/gtk3/api-index-3-4.html
 share/gtk-doc/html/gtk3/api-index-deprecated.html
 share/gtk-doc/html/gtk3/api-index-full.html
 share/gtk-doc/html/gtk3/appchooserbutton.png
@@ -349,6 +356,9 @@ share/gtk-doc/html/gtk3/application-exit.png
 share/gtk-doc/html/gtk3/arrows.png
 share/gtk-doc/html/gtk3/assistant.png
 share/gtk-doc/html/gtk3/background.png
+share/gtk-doc/html/gtk3/bloatpad-gnome.png
+share/gtk-doc/html/gtk3/bloatpad-osx.png
+share/gtk-doc/html/gtk3/bloatpad-xfce.png
 share/gtk-doc/html/gtk3/border1.png
 share/gtk-doc/html/gtk3/border2.png
 share/gtk-doc/html/gtk3/border3.png
@@ -357,10 +367,10 @@ share/gtk-doc/html/gtk3/box-packing.png
 share/gtk-doc/html/gtk3/button.png
 share/gtk-doc/html/gtk3/ch02.html
 share/gtk-doc/html/gtk3/ch03.html
-share/gtk-doc/html/gtk3/ch25s02.html
+share/gtk-doc/html/gtk3/ch24s02.html
+share/gtk-doc/html/gtk3/ch26s02.html
 share/gtk-doc/html/gtk3/ch28s02.html
-share/gtk-doc/html/gtk3/ch29s02.html
-share/gtk-doc/html/gtk3/ch29s03.html
+share/gtk-doc/html/gtk3/ch28s03.html
 share/gtk-doc/html/gtk3/chap-drawing-model.html
 share/gtk-doc/html/gtk3/check-button.png
 share/gtk-doc/html/gtk3/checklist-gdkeventexpose-region.html
@@ -368,6 +378,7 @@ share/gtk-doc/html/gtk3/checklist-modifiers.html
 share/gtk-doc/html/gtk3/checklist-named-icons.html
 share/gtk-doc/html/gtk3/checks.png
 share/gtk-doc/html/gtk3/color-button.png
+share/gtk-doc/html/gtk3/colorchooser.png
 share/gtk-doc/html/gtk3/colorsel.png
 share/gtk-doc/html/gtk3/combo-box-entry.png
 share/gtk-doc/html/gtk3/combo-box.png
@@ -413,6 +424,7 @@ share/gtk-doc/html/gtk3/filechooser.png
 share/gtk-doc/html/gtk3/focus.png
 share/gtk-doc/html/gtk3/folder.png
 share/gtk-doc/html/gtk3/font-button.png
+share/gtk-doc/html/gtk3/fontchooser.png
 share/gtk-doc/html/gtk3/fontsel.png
 share/gtk-doc/html/gtk3/format-indent-less-ltr.png
 share/gtk-doc/html/gtk3/format-indent-less-rtl.png
@@ -466,7 +478,6 @@ share/gtk-doc/html/gtk3/gtk-font.png
 share/gtk-doc/html/gtk3/gtk-getting-started.html
 share/gtk-doc/html/gtk3/gtk-index.png
 share/gtk-doc/html/gtk3/gtk-migrating-2-to-3.html
-share/gtk-doc/html/gtk3/gtk-migrating-GtkApplication.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkGrid.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-bonus-points.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-checklist.html
@@ -475,7 +486,9 @@ share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-parser-extensions.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext-parsing.html
 share/gtk-doc/html/gtk3/gtk-migrating-GtkStyleContext.html
 share/gtk-doc/html/gtk3/gtk-migrating-checklist.html
+share/gtk-doc/html/gtk3/gtk-migrating-smclient-GtkApplication.html
 share/gtk-doc/html/gtk3/gtk-migrating-theme-GtkStyleContext-engines.html
+share/gtk-doc/html/gtk3/gtk-migrating-unique-GtkApplication.html
 share/gtk-doc/html/gtk3/gtk-no.png
 share/gtk-doc/html/gtk3/gtk-ok.png
 share/gtk-doc/html/gtk3/gtk-orientation-landscape.png
