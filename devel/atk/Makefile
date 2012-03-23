@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/28 09:51:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2012/03/23 13:19:59 ajacoutot Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
 GNOME_PROJECT=	atk
-GNOME_VERSION=	2.2.0
+GNOME_VERSION=	2.3.93
 
-SHARED_LIBS +=	atk-1.0          2801.0   # 20209.1
+SHARED_LIBS +=	atk-1.0          20402.1   # 20402.1
 
 CATEGORIES=	devel
 
@@ -27,7 +27,7 @@ MODULES=	devel/gettext \
 
 MODGNOME_TOOLS= goi
 
-LIB_DEPENDS=	devel/glib2>=2.29.92
+LIB_DEPENDS=	devel/glib2>=2.31.20
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
