@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/02/16 22:25:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/23 11:38:05 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 @comment lib/nautilus/extensions-3.0/libdeja-dup.la
@@ -13,6 +13,10 @@ man/ast/
 man/ast/man1/
 @man man/ast/man1/deja-dup-preferences.1
 @man man/ast/man1/deja-dup.1
+man/be/
+man/be/man1/
+@man man/be/man1/deja-dup-preferences.1
+@man man/be/man1/deja-dup.1
 man/bg/
 man/bg/man1/
 @man man/bg/man1/deja-dup-preferences.1
@@ -97,6 +101,10 @@ man/fr/
 man/fr/man1/
 @man man/fr/man1/deja-dup-preferences.1
 @man man/fr/man1/deja-dup.1
+man/fy/
+man/fy/man1/
+@man man/fy/man1/deja-dup-preferences.1
+@man man/fy/man1/deja-dup.1
 man/gl/
 man/gl/man1/
 @man man/gl/man1/deja-dup-preferences.1
@@ -105,6 +113,10 @@ man/he/
 man/he/man1/
 @man man/he/man1/deja-dup-preferences.1
 @man man/he/man1/deja-dup.1
+man/hi/
+man/hi/man1/
+@man man/hi/man1/deja-dup-preferences.1
+@man man/hi/man1/deja-dup.1
 man/hr/
 man/hr/man1/
 @man man/hr/man1/deja-dup-preferences.1
@@ -129,6 +141,14 @@ man/ja/
 man/ja/man1/
 @man man/ja/man1/deja-dup-preferences.1
 @man man/ja/man1/deja-dup.1
+man/kk/
+man/kk/man1/
+@man man/kk/man1/deja-dup-preferences.1
+@man man/kk/man1/deja-dup.1
+man/km/
+man/km/man1/
+@man man/km/man1/deja-dup-preferences.1
+@man man/km/man1/deja-dup.1
 man/ko/
 man/ko/man1/
 @man man/ko/man1/deja-dup-preferences.1
@@ -171,6 +191,10 @@ man/oc/
 man/oc/man1/
 @man man/oc/man1/deja-dup-preferences.1
 @man man/oc/man1/deja-dup.1
+man/pa/
+man/pa/man1/
+@man man/pa/man1/deja-dup-preferences.1
+@man man/pa/man1/deja-dup.1
 man/pl/
 man/pl/man1/
 @man man/pl/man1/deja-dup-preferences.1
@@ -195,6 +219,10 @@ man/ru/
 man/ru/man1/
 @man man/ru/man1/deja-dup-preferences.1
 @man man/ru/man1/deja-dup.1
+man/shn/
+man/shn/man1/
+@man man/shn/man1/deja-dup-preferences.1
+@man man/shn/man1/deja-dup.1
 man/sk/
 man/sk/man1/
 @man man/sk/man1/deja-dup-preferences.1
@@ -239,6 +267,10 @@ man/uk/
 man/uk/man1/
 @man man/uk/man1/deja-dup-preferences.1
 @man man/uk/man1/deja-dup.1
+man/uz/
+man/uz/man1/
+@man man/uz/man1/deja-dup-preferences.1
+@man man/uz/man1/deja-dup.1
 man/vi/
 man/vi/man1/
 @man man/vi/man1/deja-dup-preferences.1
@@ -368,6 +400,20 @@ share/help/el/deja-dup/restore-lost.page
 share/help/el/deja-dup/restore-revert.page
 share/help/el/deja-dup/restore-worst-case.page
 share/help/el/deja-dup/support.page
+share/help/en_AU/
+share/help/en_AU/deja-dup/
+share/help/en_AU/deja-dup/backup-auto.page
+share/help/en_AU/deja-dup/backup-first.page
+share/help/en_AU/deja-dup/contribute.page
+share/help/en_AU/deja-dup/credits.page
+share/help/en_AU/deja-dup/index.page
+share/help/en_AU/deja-dup/license.page
+share/help/en_AU/deja-dup/prefs.page
+share/help/en_AU/deja-dup/restore-full.page
+share/help/en_AU/deja-dup/restore-lost.page
+share/help/en_AU/deja-dup/restore-revert.page
+share/help/en_AU/deja-dup/restore-worst-case.page
+share/help/en_AU/deja-dup/support.page
 share/help/en_GB/
 share/help/en_GB/deja-dup/
 share/help/en_GB/deja-dup/backup-auto.page
@@ -578,6 +624,20 @@ share/help/nl/deja-dup/restore-lost.page
 share/help/nl/deja-dup/restore-revert.page
 share/help/nl/deja-dup/restore-worst-case.page
 share/help/nl/deja-dup/support.page
+share/help/pa/
+share/help/pa/deja-dup/
+share/help/pa/deja-dup/backup-auto.page
+share/help/pa/deja-dup/backup-first.page
+share/help/pa/deja-dup/contribute.page
+share/help/pa/deja-dup/credits.page
+share/help/pa/deja-dup/index.page
+share/help/pa/deja-dup/license.page
+share/help/pa/deja-dup/prefs.page
+share/help/pa/deja-dup/restore-full.page
+share/help/pa/deja-dup/restore-lost.page
+share/help/pa/deja-dup/restore-revert.page
+share/help/pa/deja-dup/restore-worst-case.page
+share/help/pa/deja-dup/support.page
 share/help/pl/
 share/help/pl/deja-dup/
 share/help/pl/deja-dup/backup-auto.page
@@ -770,6 +830,7 @@ share/icons/hicolor/scalable/apps/deja-dup-symbolic.svg
 share/icons/hicolor/scalable/devices/deja-dup-cloud.svg
 share/locale/ar/LC_MESSAGES/deja-dup.mo
 share/locale/ast/LC_MESSAGES/deja-dup.mo
+share/locale/be/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
 share/locale/bo/
@@ -793,14 +854,18 @@ share/locale/fa/LC_MESSAGES/deja-dup.mo
 share/locale/fi/LC_MESSAGES/deja-dup.mo
 share/locale/fo/LC_MESSAGES/deja-dup.mo
 share/locale/fr/LC_MESSAGES/deja-dup.mo
+share/locale/fy/LC_MESSAGES/deja-dup.mo
 share/locale/gl/LC_MESSAGES/deja-dup.mo
 share/locale/he/LC_MESSAGES/deja-dup.mo
+share/locale/hi/LC_MESSAGES/deja-dup.mo
 share/locale/hr/LC_MESSAGES/deja-dup.mo
 share/locale/hu/LC_MESSAGES/deja-dup.mo
 share/locale/id/LC_MESSAGES/deja-dup.mo
 share/locale/io/LC_MESSAGES/deja-dup.mo
 share/locale/it/LC_MESSAGES/deja-dup.mo
 share/locale/ja/LC_MESSAGES/deja-dup.mo
+share/locale/kk/LC_MESSAGES/deja-dup.mo
+share/locale/km/LC_MESSAGES/deja-dup.mo
 share/locale/ko/LC_MESSAGES/deja-dup.mo
 share/locale/ku/LC_MESSAGES/deja-dup.mo
 share/locale/lt/LC_MESSAGES/deja-dup.mo
@@ -811,12 +876,16 @@ share/locale/nb/LC_MESSAGES/deja-dup.mo
 share/locale/nl/LC_MESSAGES/deja-dup.mo
 share/locale/nn/LC_MESSAGES/deja-dup.mo
 share/locale/oc/LC_MESSAGES/deja-dup.mo
+share/locale/pa/LC_MESSAGES/deja-dup.mo
 share/locale/pl/LC_MESSAGES/deja-dup.mo
 share/locale/ps/LC_MESSAGES/deja-dup.mo
 share/locale/pt/LC_MESSAGES/deja-dup.mo
 share/locale/pt_BR/LC_MESSAGES/deja-dup.mo
 share/locale/ro/LC_MESSAGES/deja-dup.mo
 share/locale/ru/LC_MESSAGES/deja-dup.mo
+share/locale/shn/
+share/locale/shn/LC_MESSAGES/
+share/locale/shn/LC_MESSAGES/deja-dup.mo
 share/locale/sk/LC_MESSAGES/deja-dup.mo
 share/locale/sl/LC_MESSAGES/deja-dup.mo
 share/locale/sq/LC_MESSAGES/deja-dup.mo
@@ -828,6 +897,7 @@ share/locale/th/LC_MESSAGES/deja-dup.mo
 share/locale/tr/LC_MESSAGES/deja-dup.mo
 share/locale/ug/LC_MESSAGES/deja-dup.mo
 share/locale/uk/LC_MESSAGES/deja-dup.mo
+share/locale/uz/LC_MESSAGES/deja-dup.mo
 share/locale/vi/LC_MESSAGES/deja-dup.mo
 share/locale/zh_CN/LC_MESSAGES/deja-dup.mo
 share/locale/zh_HK/LC_MESSAGES/deja-dup.mo

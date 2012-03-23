@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2012/02/16 22:25:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/23 11:38:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	simple encrypted backup tool for GNOME
 
-V=		20.2
-DISTNAME=	deja-dup-${V}
-EXTRACT_SUFX=	.tar.bz2
-
-REVISION=	1
+GNOME_VERSION=	22.0
+GNOME_PROJECT=	deja-dup
 
 CATEGORIES=	sysutils x11/gnome
 
@@ -31,7 +28,7 @@ WANTLIB += m nautilus-extension notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z stdc++
 
-MASTER_SITES=	http://launchpad.net/deja-dup/20/${V}/+download/
+MASTER_SITES=	https://launchpad.net/deja-dup/${GNOME_VERSION:C/^([0-9]+).*/\1/}/${GNOME_VERSION}/+download/
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -59,6 +56,6 @@ CONFIGURE_ARGS += --without-ccpanel
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/deja-dup
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/common/PythonChecker.c
+	${SUBST_CMD} ${WRKSRC}/common/PythonChecker.vala
 
 .include <bsd.port.mk>

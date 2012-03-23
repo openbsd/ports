@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_PythonChecker_vala,v 1.1 2012/03/23 11:38:05 ajacoutot Exp $
+--- common/PythonChecker.vala.orig	Fri Mar 23 12:14:25 2012
++++ common/PythonChecker.vala	Fri Mar 23 12:14:38 2012
+@@ -53,7 +53,7 @@ class PythonChecker : Checker
+   AsyncCommand cmd;
+   construct {
+     string import = "import %s".printf(module);
+-    string[] argv = {"python", "-c", import};
++    string[] argv = {"${MODPY_BIN}", "-c", import};
+     cmd = new AsyncCommand(argv);
+     cmd.done.connect((s) => {
+       available = s;

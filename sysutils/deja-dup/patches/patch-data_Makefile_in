@@ -1,7 +1,7 @@
-$OpenBSD: patch-data_Makefile_in,v 1.1.1.1 2011/09/24 12:21:03 ajacoutot Exp $
---- data/Makefile.in.orig	Tue Sep 20 14:41:14 2011
-+++ data/Makefile.in	Tue Sep 20 14:41:24 2011
-@@ -616,7 +616,7 @@ uninstall-am: uninstall-autostartDATA uninstall-deskto
+$OpenBSD: patch-data_Makefile_in,v 1.2 2012/03/23 11:38:05 ajacoutot Exp $
+--- data/Makefile.in.orig	Thu Mar 22 13:03:37 2012
++++ data/Makefile.in	Fri Mar 23 12:13:36 2012
+@@ -626,7 +626,7 @@ uninstall-am: uninstall-autostartDATA uninstall-deskto
  
  deja-dup-preferences.desktop.in: deja-dup-preferences.desktop.in.in
  	$(install_sh_DATA) $^ $@
