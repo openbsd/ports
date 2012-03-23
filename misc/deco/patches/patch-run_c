@@ -1,0 +1,19 @@
+$OpenBSD: patch-run_c,v 1.1 2012/03/23 21:08:09 naddy Exp $
+--- run.c.orig	Fri Mar 23 21:56:54 2012
++++ run.c	Fri Mar 23 21:57:30 2012
+@@ -58,6 +58,7 @@ void runcancel ()
+ 	free (arg);
+ }
+ 
++#if !HAVE_EXECVPE
+ static char *execat (char *s1, char *s2, char *si)
+ {
+ 	register char *s;
+@@ -127,6 +128,7 @@ retry:          (void) execve (fname, argv, envstr);
+ 		errno = EACCES;
+ 	return (-1);
+ }
++#endif	/* !HAVE_EXECVPE */
+ 
+ int runl (int silent, char *name, ...)
+ {
