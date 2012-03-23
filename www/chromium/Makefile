@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/03/20 20:52:44 robert Exp $
+# $OpenBSD: Makefile,v 1.87 2012/03/23 13:31:25 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -98,7 +98,6 @@ pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
-	${SUBST_CMD} ${WRKSRC}/build/common.gypi
 
 # gyp_chromium generates all the Makefiles from gyp
 do-configure:
