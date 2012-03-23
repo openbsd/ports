@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/10/29 22:55:40 kili Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/23 21:33:45 kili Exp $
 %%SHARED%%
 bin/cpphs-hugs
 @bin bin/ffihugs
@@ -644,7 +644,6 @@ lib/hugs/packages/base/Foreign/Marshal/Utils.hs
 lib/hugs/packages/base/Foreign/Ptr.hs
 lib/hugs/packages/base/Foreign/StablePtr.hs
 lib/hugs/packages/base/Foreign/Storable.hs
-lib/hugs/packages/base/LICENSE
 lib/hugs/packages/base/Numeric.hs
 lib/hugs/packages/base/Paths_base.hs
 lib/hugs/packages/base/Prelude.hs
@@ -690,6 +689,8 @@ lib/hugs/packages/base/Text/Read/Lex.hs
 lib/hugs/packages/base/Text/Show/
 lib/hugs/packages/base/Text/Show.hs
 lib/hugs/packages/base/Text/Show/Functions.hs
+lib/hugs/packages/base/autogen/
+lib/hugs/packages/base/autogen/Paths_base.hs
 lib/hugs/packages/cpphs/
 lib/hugs/packages/cpphs/Language/
 lib/hugs/packages/cpphs/Language/Preprocessor/
