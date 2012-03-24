@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.484 2012/03/19 06:38:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.485 2012/03/24 21:45:03 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -62,6 +62,7 @@
      SUBDIR += flvw
      SUBDIR += flwm
      SUBDIR += freerdp
+     SUBDIR += freerdp,no_cups
      SUBDIR += fsv
      SUBDIR += fvwm2
      SUBDIR += fvwm95
