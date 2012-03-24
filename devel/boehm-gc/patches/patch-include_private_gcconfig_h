@@ -1,5 +1,5 @@
 --- include/private/gcconfig.h.orig	Thu Jun 28 20:00:09 2007
-+++ include/private/gcconfig.h	Mon Feb 20 12:54:53 2012
++++ include/private/gcconfig.h	Fri Mar 16 17:43:45 2012
 @@ -64,7 +64,7 @@
  /* Determine the machine type: */
  # if defined(__arm__) || defined(__thumb__)
@@ -107,8 +107,8 @@
 +#   ifdef OPENBSD
 +#     define OS_TYPE "OPENBSD"
 +#     define ALIGNMENT 4
-+#     define SIG_SUSPEND SIGUSR1
-+#     define SIG_THR_RESTART SIGUSR2
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
 +#     ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -130,8 +130,8 @@
 -#     define STACKBOTTOM ((ptr_t) 0xf8000000)
 -      extern int etext[];
 -#     define DATASTART ((ptr_t)(etext))
-+#     define SIG_SUSPEND SIGUSR1
-+#     define SIG_THR_RESTART SIGUSR2
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
 +#     ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -149,8 +149,8 @@
  #   endif
  #   ifdef OPENBSD
  #	define OS_TYPE "OPENBSD"
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -180,8 +180,8 @@
 +#  ifdef OPENBSD
 +#	define OS_TYPE "OPENBSD"
 +#       define ALIGNMENT 4
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -211,8 +211,8 @@
  #   endif /* LINUX */
 +#  ifdef OPENBSD
 +#	define OS_TYPE "OPENBSD"
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -241,8 +241,8 @@
 -#   	   define DATASTART ((ptr_t) 0x140000000)
 -#   	endif
 +#	define ELF_CLASS ELFCLASS64
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -271,8 +271,8 @@
 +#   ifdef OPENBSD
 +#     define ALIGNMENT 4
 +#     define OS_TYPE "OPENBSD"
-+#     define SIG_SUSPEND SIGUSR1
-+#     define SIG_THR_RESTART SIGUSR2
++#     define SIG_SUSPEND SIGXFSZ
++#     define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -293,8 +293,8 @@
  #   endif
 +#   ifdef OPENBSD
 +#	define OS_TYPE "OPENBSD"
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
@@ -317,8 +317,8 @@
 +#   ifdef OPENBSD
 +#       define OS_TYPE "OPENBSD"
 +#       define ELF_CLASS ELFCLASS64
-+#       define SIG_SUSPEND SIGUSR1
-+#       define SIG_THR_RESTART SIGUSR2
++#       define SIG_SUSPEND SIGXFSZ
++#       define SIG_THR_RESTART SIGXCPU
 +#    ifndef GC_OPENBSD_THREADS
 +#       include <sys/param.h>
 +#       include <uvm/uvm_extern.h>
