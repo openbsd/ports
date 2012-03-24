@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/06 20:27:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/03/24 21:42:58 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 bin/znc-config
@@ -34,7 +34,6 @@ lib/znc/
 lib/znc/admin.so
 lib/znc/adminlog.so
 lib/znc/autoattach.so
-lib/znc/autocycle.so
 lib/znc/autoop.so
 lib/znc/autoreply.so
 lib/znc/awaynick.so

@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_Makefile_in,v 1.5 2011/11/06 20:27:14 kili Exp $
---- man/Makefile.in.orig	Wed Sep 21 16:20:19 2011
-+++ man/Makefile.in	Mon Oct 24 00:19:53 2011
+$OpenBSD: patch-man_Makefile_in,v 1.6 2012/03/24 21:42:58 sthen Exp $
+--- man/Makefile.in.orig	Sun Jan 22 12:13:48 2012
++++ man/Makefile.in	Sat Mar 24 14:22:21 2012
 @@ -11,7 +11,7 @@ mandir      := @mandir@
  INSTALL      := @INSTALL@
  INSTALL_DATA := @INSTALL_DATA@
@@ -13,7 +13,7 @@ $OpenBSD: patch-man_Makefile_in,v 1.5 2011/11/06 20:27:14 kili Exp $
 @@ -35,7 +35,7 @@ clean:
  
  install: $(MAN1)
- 	mkdir -p $(DESTDIR)$(mandir)/man1
+ 	test -d $(DESTDIR)$(mandir)/man1 || $(INSTALL) -d $(DESTDIR)$(mandir)/man1
 -	$(INSTALL_DATA) $(MAN1) $(DESTDIR)$(mandir)/man1
 +	cd $(VPATH) && $(INSTALL_DATA) $(MAN1) $(DESTDIR)$(mandir)/man1
  
