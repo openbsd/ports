@@ -1,0 +1,15 @@
+$OpenBSD: patch-IndexSearch_cjkv_CJKVTokenizer_h,v 1.1 2012/03/25 10:10:22 ajacoutot Exp $
+
+error: #error "Only <glib.h> can be included directly."
+
+--- IndexSearch/cjkv/CJKVTokenizer.h.orig	Sun Mar 25 12:01:02 2012
++++ IndexSearch/cjkv/CJKVTokenizer.h	Sun Mar 25 12:01:10 2012
+@@ -25,7 +25,7 @@
+ #ifdef HAVE_UNICODE_H
+ #include <unicode.h>
+ #else
+-#include <glib/gunicode.h>
++#include <glib.h>
+ #define unicode_char_t gunichar
+ #endif
+ 
