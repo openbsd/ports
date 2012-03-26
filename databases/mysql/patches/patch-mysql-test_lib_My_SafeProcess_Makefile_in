@@ -1,7 +1,7 @@
-$OpenBSD: patch-mysql-test_lib_My_SafeProcess_Makefile_in,v 1.5 2010/12/26 08:23:17 ajacoutot Exp $
---- mysql-test/lib/My/SafeProcess/Makefile.in.orig	Mon Nov 29 05:42:30 2010
-+++ mysql-test/lib/My/SafeProcess/Makefile.in	Tue Dec 14 20:38:01 2010
-@@ -395,7 +395,7 @@ yassl_libs = @yassl_libs@
+$OpenBSD: patch-mysql-test_lib_My_SafeProcess_Makefile_in,v 1.6 2012/03/26 08:05:01 giovanni Exp $
+--- mysql-test/lib/My/SafeProcess/Makefile.in.orig	Fri Dec 16 20:07:28 2011
++++ mysql-test/lib/My/SafeProcess/Makefile.in	Wed Mar 21 09:20:44 2012
+@@ -396,7 +396,7 @@ yassl_libs = @yassl_libs@
  yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
  yassl_thread_cxxflags = @yassl_thread_cxxflags@
  zlib_dir = @zlib_dir@

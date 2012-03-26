@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2012/03/16 00:47:54 william Exp $
+# $OpenBSD: Makefile,v 1.202 2012/03/26 08:05:01 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,11 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.1.60
+VERSION=	5.1.62
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
 PKGNAME-server=	mysql-server-${VERSION}
 PKGNAME-tests= 	mysql-tests-${VERSION}
-REVISION-main=	0
-REVISION-server=0
 CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
@@ -80,13 +78,12 @@ WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl wrap z
 WANTLIB-main=		${WANTLIB} crypto ncursesw readline ssl z
 WANTLIB-tests=		${WANTLIB}
 
+REGRESS_TARGET=		test-force
+
 post-install:
 	cd ${PREFIX}/lib && \
 		ln -sf mysql/libmysqlclient.so.${LIBmysqlclient_VERSION} . && \
 		ln -sf mysql/libmysqlclient_r.so.${LIBmysqlclient_r_VERSION} .
 	${INSTALL_DATA} ${WRKSRC}/Docs/mysql.info ${PREFIX}/info
-
-do-regress:
-	@cd ${WRKSRC}/mysql-test && ./mysql-test-run --force
 
 .include <bsd.port.mk>
