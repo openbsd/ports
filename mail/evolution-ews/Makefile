@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/09 14:37:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/26 16:32:53 ajacoutot Exp $
+
+BROKEN=		needs an update
 
 SHARED_ONLY=	Yes
 
