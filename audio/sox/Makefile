@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/03/23 13:16:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.51 2012/03/26 20:37:07 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -17,25 +17,27 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		converters/libiconv
 
-WANTLIB += c m ogg sndio z
-WANTLIB += vorbis vorbisenc vorbisfile FLAC magic
-WANTLIB += mad id3tag mp3lame wavpack png gsm
-WANTLIB += sndfile twolame
+WANTLIB += c m z sndio
+WANTLIB += ogg vorbis vorbisenc vorbisfile FLAC
+WANTLIB += mad id3tag mp3lame twolame
+WANTLIB += wavpack gsm sndfile
+WANTLIB += magic png
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sox/}
 
 # see CONFIGURE_ARGS below
-LIB_DEPENDS=	audio/libvorbis \
-		audio/flac \
-		devel/libmagic \
-		audio/libmad \
-		audio/libid3tag \
-		audio/libsndfile \
-		audio/twolame \
-		audio/lame \
-		audio/wavpack \
-		graphics/png \
-		audio/gsm
+LIB_DEPENDS=			\
+	devel/libmagic		\
+	graphics/png		\
+	audio/libmad		\
+	audio/libid3tag		\
+	audio/lame		\
+	audio/twolame		\
+	audio/libvorbis		\
+	audio/flac		\
+	audio/wavpack		\
+	audio/libsndfile	\
+	audio/gsm
 
 USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
@@ -48,31 +50,34 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=--without-libltdl
 
 # Sound drivers
-CONFIGURE_ARGS+=--without-ao \
-		--without-oss \
-		--without-alsa		\
-		--without-coreaudio	\
-		--without-pulseaudio	\
-		--without-waveaudio	\
-		--with-sndio \
-		--without-sunaudio
+CONFIGURE_ARGS+=		\
+	--without-ao		\
+	--without-oss		\
+	--without-alsa		\
+	--without-coreaudio	\
+	--without-pulseaudio	\
+	--without-waveaudio	\
+	--without-sunaudio	\
+	--with-sndio
 
 # Additional file formats
-CONFIGURE_ARGS+=--with-sndfile \
-		--with-oggvorbis \
-		--with-flac \
-		--without-ffmpeg \
-		--with-magic \
-		--with-mad \
-		--with-id3tag \
-		--with-lame \
-		--with-twolame 	\
-		--without-amrwb \
-		--without-amrnb \
-		--with-wavpack \
-		--with-png \
-		--with-gsm \
-		--without-ladspa
+CONFIGURE_ARGS+=		\
+	--with-magic		\
+	--with-png		\
+	--without-ladspa	\
+	--with-mad		\
+	--with-id3tag		\
+	--with-lame		\
+	--with-twolame		\
+	--with-oggvorbis	\
+	--with-flac		\
+	--without-amrwb		\
+	--without-amrnb		\
+	--with-wavpack		\
+	--with-sndfile		\
+	--without-ffmpeg	\
+	--with-mp3		\
+	--with-gsm
 
 CONFIGURE_ENV= \
 	CPPFLAGS="-I${LOCALBASE}/include" \
