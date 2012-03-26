@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/06 08:50:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/26 14:41:16 dcoppa Exp $
 
 COMMENT =	gnome-mplayer toolkit
-DISTNAME =	gmtk-1.0.5
-REVISION =	2
+DISTNAME =	gmtk-1.0.6b1
+PKGNAME =	${DISTNAME:S/b1/beta1/}
 
 SHARED_LIBS =	gmlib	0.0 \
 		gmtk	0.0
@@ -40,10 +40,10 @@ RUN_DEPENDS =		x11/mplayer
 
 USE_LIBTOOL =		yes
 
-CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.68
+CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-gsettings \

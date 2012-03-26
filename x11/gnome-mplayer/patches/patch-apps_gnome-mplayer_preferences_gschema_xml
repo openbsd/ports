@@ -1,17 +1,19 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.6 2012/01/23 16:14:40 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.7 2012/03/26 14:41:16 dcoppa Exp $
 
 Set some sane defaults:
 use xv as default video output
 disable bar animation in full screen
 use mplayer's software volume control
+disable pulseaudio flat volume option
 use xscrnsaver controls over gnome-power-manager
 set location of mplayer binary
 use /dev/rcd0c as default optical device
 use sndio as default audio device
 use English as default language
+disable nautilus plugin
 
---- apps.gnome-mplayer.preferences.gschema.xml.orig	Fri Jul 29 14:59:45 2011
-+++ apps.gnome-mplayer.preferences.gschema.xml	Mon Jan 23 12:05:04 2012
+--- apps.gnome-mplayer.preferences.gschema.xml.orig	Wed Jan  4 21:12:33 2012
++++ apps.gnome-mplayer.preferences.gschema.xml	Mon Mar 26 15:51:22 2012
 @@ -1,7 +1,7 @@
  <schemalist>
    <schema id="apps.gnome-mplayer.preferences" path="/apps/gnome-mplayer/preferences/">
@@ -38,6 +40,15 @@ use English as default language
 +      <default>true</default>
        <summary>Have mplayer use the softvol option</summary>
        <description>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</description>
+     </key>
+@@ -246,7 +246,7 @@
+       <description>Place status icon in the tray</description>
+     </key>
+     <key name="use-pulse-flat-volume" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Set to TRUE if using with pulseaudio 0.9.15</summary>
+       <description>PulseAudio started using a flat volume option by default in 0.9.15 (you can disable however)</description>
      </key>
 @@ -256,7 +256,7 @@
        <description>Will load and save the playlist when the program runs</description>
@@ -78,7 +89,7 @@ use English as default language
        <summary>Name of the preferred audio device</summary>
        <description>Name of the preferred audio device</description>
      </key>
-@@ -341,12 +341,12 @@
+@@ -341,17 +341,17 @@
        <description>Default Key Bindings</description>
      </key>
      <key name="audio-lang" type="s">
@@ -93,3 +104,9 @@ use English as default language
        <summary>Preferred Subtitle Language</summary>
        <description>Preferred Subtitle Language</description>
      </key>
+     <key name="enable-nautilus-plugin" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <summary>Enable Audio/Video plugin in Nautilus</summary>
+       <description>Enable Audio/Video plugin in Nautilus</description>
+     </key>    
