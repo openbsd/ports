@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1018 2012/03/18 14:28:18 pascal Exp $
+# $OpenBSD: Makefile,v 1.1019 2012/03/26 09:08:01 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -331,6 +331,7 @@
      SUBDIR += libyajl
      SUBDIR += libyaml
      SUBDIR += llvm
+     SUBDIR += log4cplus
      SUBDIR += lpc21isp
      SUBDIR += lpeg
      SUBDIR += luaalarm
