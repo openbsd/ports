@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/03/26 09:06:35 sthen Exp $
+--- src/Makefile.in.orig	Sun Jan 16 10:27:34 2011
++++ src/Makefile.in	Thu Mar 15 00:58:22 2012
+@@ -412,7 +412,8 @@ LIB_SRC = $(SINGLE_THREADED_SRC) \
+ liblog4cplus_la_SOURCES = $(LIB_SRC)
+ 
+ #liblog4cplus_a_LIBADD = @LIBOBJS@ @ALLOCA@
+-liblog4cplus_la_LDFLAGS = -no-undefined -version-info @LT_VERSION@ -release 1.0
++include ../libversions
++liblog4cplus_la_LDFLAGS = -no-undefined ${LIBlog4cplus_LTVERSION}
+ all: all-am
+ 
+ .SUFFIXES:

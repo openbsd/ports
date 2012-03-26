@@ -1,0 +1,7 @@
+Log4cplus is a package for providing a logging framework for C++ based
+on log4j ideas.
+
+It provides various filters, run-time re-configurations, Wide
+Character (UNICODE) support, log levels, hierarchal loggers, NDC
+(Nested Diagnostic Context), and log rotation support. It can log
+to the console, files, syslog, Windows events, or via sockets.
