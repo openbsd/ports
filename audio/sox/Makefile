@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/03/26 20:37:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2012/03/26 20:38:49 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -8,6 +8,7 @@ SHARED_LIBS +=	sox 3.0 # .2.0
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
