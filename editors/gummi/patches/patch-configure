@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2012/03/26 19:33:47 kili Exp $
+--- configure.orig	Sun Mar 18 10:38:37 2012
++++ configure	Sat Mar 24 21:22:46 2012
+@@ -5383,7 +5383,7 @@ fi
+ fi
+ 
+ # Add explicit linking flags
+-GUI_LIBS="$GUI_LIBS -pthread -lm -lz -lrt"
++GUI_LIBS="$GUI_LIBS -pthread -lm -lz"
+ 
+ # Checks for header files.
+ ac_ext=c
