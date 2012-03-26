@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/03/20 06:59:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/03/26 23:19:36 ajacoutot Exp $
 
 # This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -7,7 +7,7 @@
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
-GNOME_VERSION=	0.20.9
+GNOME_VERSION=	0.20.10
 
 CATEGORIES=	textproc
 

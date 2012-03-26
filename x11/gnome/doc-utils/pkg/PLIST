@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/03/20 06:59:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/03/26 23:19:36 ajacoutot Exp $
 bin/gnome-doc-prepare
 bin/gnome-doc-tool
 bin/xml2po
@@ -221,6 +221,9 @@ share/locale/ja/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/gnome-doc-utils.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/gnome-doc-utils.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gnome-doc-utils.mo
