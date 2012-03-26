@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/03/05 06:43:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/03/26 10:28:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.90.8
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gtranslator-private       0.0 # 0.0
 
@@ -51,7 +51,7 @@ LIB_DEPENDS=	devel/gobject-introspection \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	goi yelp gtk-doc
 MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/db4
 
 CONFIGURE_STYLE=gnu
