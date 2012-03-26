@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/03/26 10:28:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/26 10:34:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -51,6 +51,9 @@ LIB_DEPENDS=	devel/gobject-introspection \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
+# If gtkdoc-rebase is detected at configure time, it will be run at fake
+# stage even if we configure with --disable-gtk-doc; so just add gtk-doc
+# as a BUILD_DEPENDS.
 MODGNOME_TOOLS= 	goi yelp gtk-doc
 MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/db4
 
