@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1019 2012/03/26 09:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.1020 2012/03/26 19:06:46 eric Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1030,6 +1030,7 @@
      SUBDIR += py-subvertpy
      SUBDIR += py-suds
      SUBDIR += py-symboltype
+     SUBDIR += py-test
      SUBDIR += py-testtools
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
