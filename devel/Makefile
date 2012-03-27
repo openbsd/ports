@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1021 2012/03/27 18:21:04 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1022 2012/03/27 18:24:25 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1186,6 +1186,7 @@
      SUBDIR += tklib
      SUBDIR += tla
      SUBDIR += tmake
+     SUBDIR += tortoisehg
      SUBDIR += ucpp
      SUBDIR += udis86
      SUBDIR += uisp
