@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2012/03/23 22:42:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2012/03/27 19:48:03 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -114,6 +114,7 @@ CONFIGURE_ARGS+=	--with-asound=no \
 CONFIGURE_ARGS+=	--with-jack=no \
 			--with-lua=no \
 			--with-portaudio=no \
+			--with-pwlib=no \
 			--with-radius=no \
 			--with-resample=no \
 			--with-tds=no
@@ -197,7 +198,7 @@ CONFIGURE_ARGS+=	--with-postgres=no
 # snmp
 COMMENT-snmp=		Net-SNMP support for Asterisk
 WANTLIB-snmp=		m netsnmp netsnmpagent netsnmpmibs crypto kvm wrap
-LIB_DEPENDS-snmp=	net/net-snmp 
+LIB_DEPENDS-snmp=	net/net-snmp
 
 .if !${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=no
