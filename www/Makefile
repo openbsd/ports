@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.550 2012/03/15 16:51:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.551 2012/03/27 14:21:46 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -46,6 +46,7 @@
      SUBDIR += epiphany-extensions
      SUBDIR += ezpublish
      SUBDIR += fcgi
+     SUBDIR += fcgi-cgi
      SUBDIR += fennec
      SUBDIR += ffproxy
      SUBDIR += firefox-i18n
