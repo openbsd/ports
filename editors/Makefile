@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2012/01/20 20:20:04 espie Exp $
+# $OpenBSD: Makefile,v 1.85 2012/03/27 18:17:17 rpointel Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -41,6 +41,7 @@
      SUBDIR += nedit
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
+     SUBDIR += py-qscintilla
      SUBDIR += qscintilla
      SUBDIR += scintilla
      SUBDIR += scite
