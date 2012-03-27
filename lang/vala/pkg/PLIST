@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2012/03/19 10:28:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2012/03/27 22:00:09 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -278,6 +278,8 @@ share/vala-${API_V}/vapi/tokyocabinet.vapi
 share/vala-${API_V}/vapi/tracker-indexer-module-1.0.vapi
 share/vala-${API_V}/vapi/twitter-glib-1.0.deps
 share/vala-${API_V}/vapi/twitter-glib-1.0.vapi
+share/vala-${API_V}/vapi/udisks2.deps
+share/vala-${API_V}/vapi/udisks2.vapi
 share/vala-${API_V}/vapi/unique-1.0.deps
 share/vala-${API_V}/vapi/unique-1.0.vapi
 share/vala-${API_V}/vapi/v4l2.vapi
