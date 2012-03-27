@@ -1,0 +1,3 @@
+fcgi-cgi is a wrapper around CGI applications to support running them under
+FastCGI for use with webservers such as nginx and lighttpd 2.x which do not
+support running cgi scripts/binaries directly.

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/27 14:21:26 sthen Exp $
+@bin bin/fcgi-cgi
+@man man/man1/fcgi-cgi.1
+@rcscript ${RCDIR}/fcgi_cgi
