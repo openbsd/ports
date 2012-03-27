@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1020 2012/03/26 19:06:46 eric Exp $
+# $OpenBSD: Makefile,v 1.1021 2012/03/27 18:21:04 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -993,6 +993,7 @@
      SUBDIR += py-guppy
      SUBDIR += py-hg-git
      SUBDIR += py-html5lib
+     SUBDIR += py-iniparse
      SUBDIR += py-kid
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
