@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: fcgi_cgi.rc,v 1.1.1.1 2012/03/27 14:21:26 sthen Exp $
+# $OpenBSD: fcgi_cgi.rc,v 1.2 2012/03/27 15:35:37 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/spawn-fcgi"
-daemon_flags="-a 127.0.0.1 -p 9001 -u www -U www -c /var/www -- ${TRUEPREFIX}/bin/fcgi-cgi"
-pexp="${TRUEPREFIX}/bin/fcgi-cgi"
+daemon_flags="-a 127.0.0.1 -p 9001 -u www -U www -- ${TRUEPREFIX}/bin/fcgi-cgi"
 
 . /etc/rc.d/rc.subr
 
+pexp="${TRUEPREFIX}/bin/fcgi-cgi"
 rc_reload=NO
 
 rc_cmd $1

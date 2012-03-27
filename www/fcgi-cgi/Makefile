@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/27 14:21:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/27 15:35:37 sthen Exp $
 
 COMMENT=	wrapper to run CGI applications via FastCGI
 
 DISTNAME=	fcgi-cgi-0.1.8
+REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://nginx.localdomain.pl/wiki/FcgiWrap
