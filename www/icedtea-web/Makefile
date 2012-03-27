@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/02/29 20:57:52 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/27 09:04:53 landry Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Java web browser plugin
-DISTNAME =	icedtea-web-1.1.2
+DISTNAME =	icedtea-web-1.2
 CATEGORIES =	www
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
