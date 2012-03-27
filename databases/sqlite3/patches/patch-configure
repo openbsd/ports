@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2012/01/07 13:47:52 sthen Exp $
+$OpenBSD: patch-configure,v 1.14 2012/03/27 18:34:04 sthen Exp $
 
 XXX careful! this must apply to pthread and not any other lib.
 
@@ -6,9 +6,9 @@ if updating, to include additional context to help avoid problems later,
 use a hand-rolled patch or 'make update-patches DIFF_ARGS=-u6'.
 
 
---- configure.orig	Tue Nov  1 12:31:18 2011
-+++ configure	Fri Jan  6 22:20:01 2012
-@@ -10540,14 +10540,14 @@ return pthread_create ();
+--- configure.orig	Tue Mar 20 14:20:13 2012
++++ configure	Mon Mar 26 11:16:23 2012
+@@ -12494,14 +12494,14 @@ return pthread_create ();
  }
  _ACEOF
  for ac_lib in '' pthread; do
@@ -20,8 +20,8 @@ use a hand-rolled patch or 'make update-patches DIFF_ARGS=-u6'.
 +    ac_res=-$ac_lib
 +    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
    fi
-   if ac_fn_c_try_link "$LINENO"; then :
-   ac_cv_search_pthread_create=$ac_res
- fi
- rm -f core conftest.err conftest.$ac_objext \
-     conftest$ac_exeext
+   rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (ac_try="$ac_link"
+ case "(($ac_try" in
+   *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+   *) ac_try_echo=$ac_try;;

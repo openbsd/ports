@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sqliteInt_h,v 1.9 2011/12/21 00:38:11 nigel Exp $
---- src/sqliteInt.h.orig	Tue Nov  1 12:31:18 2011
-+++ src/sqliteInt.h	Sun Dec 18 11:43:24 2011
+$OpenBSD: patch-src_sqliteInt_h,v 1.10 2012/03/27 18:34:04 sthen Exp $
+--- src/sqliteInt.h.orig	Tue Mar 20 14:20:13 2012
++++ src/sqliteInt.h	Mon Mar 26 11:17:20 2012
 @@ -61,11 +61,6 @@
  #pragma warn -spa /* Suspicious pointer arithmetic */
  #endif
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_sqliteInt_h,v 1.9 2011/12/21 00:38:11 nigel Exp $
  /*
  ** Include standard header files as necessary
  */
-@@ -456,33 +451,26 @@ typedef INT8_TYPE i8;              /* 1-byte signed in
+@@ -464,33 +459,26 @@ typedef INT8_TYPE i8;              /* 1-byte signed in
   typedef u32 tRowcnt;    /* 32-bit is the default */
  #endif
  
