@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/26 19:33:47 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/28 19:27:04 kili Exp $
 
 COMMENT =		simple LaTeX editor
 
-DISTNAME =		gummi-0.6.2
+DISTNAME =		gummi-0.6.3
 
 CATEGORIES =		editors
 
@@ -25,7 +25,7 @@ WANTLIB =	GL X11 Xcomposite Xcursor Xdamage Xext \
                 gthread-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
                 pangoft2-1.0 png
 
-MASTER_SITES =		http://dev.midnightcoding.org/attachments/download/258/
+MASTER_SITES =		http://dev.midnightcoding.org/attachments/download/263/
 
 MODULES =		devel/gettext textproc/intltool
 
