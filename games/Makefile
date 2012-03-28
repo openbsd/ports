@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2012/03/12 17:56:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.241 2012/03/28 12:58:17 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -111,6 +111,7 @@
      SUBDIR += love
      SUBDIR += maelstrom
      SUBDIR += manaplus
+     SUBDIR += meandmyshadow
      SUBDIR += micropolis
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
@@ -139,6 +140,7 @@
      SUBDIR += pioneers
      SUBDIR += pokerth
      SUBDIR += prboom
+     SUBDIR += puzzles
      SUBDIR += qgo
      SUBDIR += qstat
      SUBDIR += quake
