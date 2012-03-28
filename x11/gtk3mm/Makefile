@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/23 13:22:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/28 09:46:35 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk3+
 
 GNOME_PROJECT=	gtkmm
-GNOME_VERSION=	3.3.18
+GNOME_VERSION=	3.3.20
 
 PKGNAME=	gtk3mm-${GNOME_VERSION}
 
@@ -34,7 +34,7 @@ MODULES=	devel/gettext \
 
 LIB_DEPENDS=	devel/atk2mm \
 		devel/pangomm>=2.28 \
-		x11/gtk+3
+		x11/gtk+3>=3.4.0
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static \

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/23 13:22:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/28 09:46:35 ajacoutot Exp $
 %%SHARED%%
 include/gdkmm-3.0/
 include/gdkmm-3.0/gdkmm/
 include/gdkmm-3.0/gdkmm.h
+include/gdkmm-3.0/gdkmm/applaunchcontext.h
 include/gdkmm-3.0/gdkmm/color.h
 include/gdkmm-3.0/gdkmm/cursor.h
 include/gdkmm-3.0/gdkmm/device.h
@@ -18,6 +19,7 @@ include/gdkmm-3.0/gdkmm/pixbufanimationiter.h
 include/gdkmm-3.0/gdkmm/pixbufformat.h
 include/gdkmm-3.0/gdkmm/pixbufloader.h
 include/gdkmm-3.0/gdkmm/private/
+include/gdkmm-3.0/gdkmm/private/applaunchcontext_p.h
 include/gdkmm-3.0/gdkmm/private/color_p.h
 include/gdkmm-3.0/gdkmm/private/cursor_p.h
 include/gdkmm-3.0/gdkmm/private/device_p.h
@@ -493,6 +495,9 @@ share/doc/gtkmm-3.0/reference/html/calendar1.png
 share/doc/gtkmm-3.0/reference/html/checkbutton1.png
 share/doc/gtkmm-3.0/reference/html/classAtk_1_1Implementor.html
 share/doc/gtkmm-3.0/reference/html/classAtk_1_1Implementor__inherit__graph.png
+share/doc/gtkmm-3.0/reference/html/classGdk_1_1AppLaunchContext-members.html
+share/doc/gtkmm-3.0/reference/html/classGdk_1_1AppLaunchContext.html
+share/doc/gtkmm-3.0/reference/html/classGdk_1_1AppLaunchContext__inherit__graph.png
 share/doc/gtkmm-3.0/reference/html/classGdk_1_1Color-members.html
 share/doc/gtkmm-3.0/reference/html/classGdk_1_1Color.html
 share/doc/gtkmm-3.0/reference/html/classGdk_1_1Cursor-members.html
