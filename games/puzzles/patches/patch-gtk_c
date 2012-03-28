@@ -1,0 +1,33 @@
+$OpenBSD: patch-gtk_c,v 1.1.1.1 2012/03/28 12:53:53 landry Exp $
+Add 'online help' menu entry to open help in browser
+--- gtk.c.orig	Wed Dec 28 19:17:30 2011
++++ gtk.c	Wed Mar 28 14:03:00 2012
+@@ -1977,6 +1977,15 @@ static void menu_config_event(GtkMenuItem *menuitem, g
+     resize_fe(fe);
+ }
+ 
++static void menu_help_event(GtkMenuItem *menuitem, gpointer data)
++{
++    gchar *game = g_ascii_strdown(thegame.name, -1);
++    gchar *cmd = g_strconcat("xdg-open http://www.chiark.greenend.org.uk/~sgtatham/puzzles/doc/" ,game ,".html" , NULL);
++    g_spawn_command_line_async(cmd, NULL);
++    g_free(cmd);
++    g_free(game);
++}
++
+ static void menu_about_event(GtkMenuItem *menuitem, gpointer data)
+ {
+     frontend *fe = (frontend *)data;
+@@ -2258,6 +2267,12 @@ static frontend *new_window(char *arg, int argtype, ch
+     gtk_container_add(GTK_CONTAINER(menu), menuitem);
+     gtk_signal_connect(GTK_OBJECT(menuitem), "activate",
+ 		       GTK_SIGNAL_FUNC(menu_about_event), fe);
++    gtk_widget_show(menuitem);
++
++    menuitem = gtk_menu_item_new_with_label("Online Help");
++    gtk_container_add(GTK_CONTAINER(menu), menuitem);
++    gtk_signal_connect(GTK_OBJECT(menuitem), "activate",
++		       GTK_SIGNAL_FUNC(menu_help_event), fe);
+     gtk_widget_show(menuitem);
+ 
+ #ifdef STYLUS_BASED
