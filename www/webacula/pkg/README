@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2011/10/16 15:20:33 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2012/03/28 07:47:47 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,7 +7,7 @@ $OpenBSD: README,v 1.6 2011/10/16 15:20:33 ajacoutot Exp $
 Webacula has been installed into ${INSTDIR}
 
 *** Upgrading users: refer to the "Update from prior version" section in
-*** ${INSTDIR}/webacula/docs/txt/install.txt
+*** ${INSTDIR}/docs/txt/install.txt
 
 Database creation
 =================
