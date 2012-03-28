@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_util_c,v 1.6 2012/01/08 19:42:02 naddy Exp $
+$OpenBSD: patch-src_util_c,v 1.7 2012/03/28 09:05:54 ajacoutot Exp $
 
 We don't use /proc on OpenBSD.
 
---- src/util.c.orig	Mon Oct 17 21:30:22 2011
-+++ src/util.c	Sat Oct 29 12:43:45 2011
-@@ -35,6 +35,14 @@
+--- src/util.c.orig	Mon Mar 26 22:39:21 2012
++++ src/util.c	Wed Mar 28 10:52:44 2012
+@@ -32,6 +32,14 @@
  
  #include <polkit/polkit.h>
  
@@ -19,7 +19,7 @@ We don't use /proc on OpenBSD.
  #include "util.h"
  
  
-@@ -43,11 +51,13 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+@@ -40,11 +48,13 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
  {
    PolkitSubject *process;
    gchar *ret;
@@ -34,7 +34,7 @@ We don't use /proc on OpenBSD.
  
    g_return_val_if_fail (subject != NULL, NULL);
  
-@@ -55,8 +65,10 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+@@ -52,8 +62,10 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
  
    ret = NULL;
    process = NULL;
@@ -45,7 +45,7 @@ We don't use /proc on OpenBSD.
  
    if (POLKIT_IS_UNIX_PROCESS (subject))
     {
-@@ -85,6 +97,7 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+@@ -82,6 +94,7 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
    *pid = polkit_unix_process_get_pid (POLKIT_UNIX_PROCESS (process));
    *uid = polkit_unix_process_get_uid (POLKIT_UNIX_PROCESS (process));
  
@@ -53,7 +53,7 @@ We don't use /proc on OpenBSD.
    filename = g_strdup_printf ("/proc/%d/cmdline", *pid);
  
    if (!g_file_get_contents (filename,
-@@ -113,6 +126,28 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+@@ -110,6 +123,28 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
    g_free (contents);
    if (process != NULL)
      g_object_unref (process);
@@ -82,7 +82,7 @@ We don't use /proc on OpenBSD.
    return ret;
  }
  
-@@ -167,14 +202,17 @@ get_caller_loginuid (DBusGMethodInvocation *context, g
+@@ -164,14 +199,17 @@ get_caller_loginuid (GDBusMethodInvocation *context, g
          gchar *cmdline;
          gint pid;
          gint uid;
@@ -91,7 +91,7 @@ We don't use /proc on OpenBSD.
          gchar *buf;
 +#endif
  
-         subject = polkit_system_bus_name_new (dbus_g_method_get_sender (context));
+         subject = polkit_system_bus_name_new (g_dbus_method_invocation_get_sender (context));
          cmdline = _polkit_subject_get_cmdline (subject, &pid, &uid);
          g_free (cmdline);
          g_object_unref (subject);
@@ -100,7 +100,7 @@ We don't use /proc on OpenBSD.
          path = g_strdup_printf ("/proc/%d/loginuid", pid);
          if (g_file_get_contents (path, &buf, NULL, NULL)) {
                  strncpy (loginuid, buf, size);
-@@ -185,17 +223,22 @@ get_caller_loginuid (DBusGMethodInvocation *context, g
+@@ -182,17 +220,22 @@ get_caller_loginuid (GDBusMethodInvocation *context, g
          }
  
          g_free (path);

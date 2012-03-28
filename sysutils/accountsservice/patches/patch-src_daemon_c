@@ -1,36 +1,28 @@
-$OpenBSD: patch-src_daemon_c,v 1.12 2012/01/12 13:59:29 ajacoutot Exp $
---- src/daemon.c.orig	Mon Oct 17 21:30:22 2011
-+++ src/daemon.c	Thu Jan 12 14:44:19 2012
-@@ -54,11 +54,15 @@
- #define PATH_LOGIN_DEFS "/etc/login.defs"
- #define PATH_GDM_CUSTOM "${SYSCONFDIR}/gdm/custom.conf"
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+#define FALLBACK_MINIMAL_UID 1000
-+#endif
-+
- #ifndef FALLBACK_MINIMAL_UID
- #define FALLBACK_MINIMAL_UID 500
- #endif
+$OpenBSD: patch-src_daemon_c,v 1.13 2012/03/28 09:05:54 ajacoutot Exp $
+--- src/daemon.c.orig	Tue Mar 27 17:47:56 2012
++++ src/daemon.c	Wed Mar 28 10:51:34 2012
+@@ -52,7 +52,7 @@
+ #define PATH_FALSE "/bin/false"
+ #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
  
 -#define USERDIR LOCALSTATEDIR "/lib/AccountsService/users"
 +#define USERDIR LOCALSTATEDIR "/db/AccountsService/users"
  
  static const char *default_excludes[] = {
          "bin",
-@@ -1023,7 +1027,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -904,7 +904,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
 +#ifndef __OpenBSD__
-         gchar *argv[9];
+         const gchar *argv[9];
 +#else
-+        gchar *argv[13];
++	gchar *argv[13];
 +#endif
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1040,14 +1048,31 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -921,14 +925,31 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
@@ -62,7 +54,7 @@ $OpenBSD: patch-src_daemon_c,v 1.12 2012/01/12 13:59:29 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1117,6 +1142,28 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -999,6 +1020,28 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
