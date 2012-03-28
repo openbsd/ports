@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/03/23 13:21:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/03/28 09:24:14 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -10,6 +10,7 @@ include/giomm-${V}/giomm/action.h
 include/giomm-${V}/giomm/actiongroup.h
 include/giomm-${V}/giomm/actionmap.h
 include/giomm-${V}/giomm/appinfo.h
+include/giomm-${V}/giomm/applaunchcontext.h
 include/giomm-${V}/giomm/application.h
 include/giomm-${V}/giomm/applicationcommandline.h
 include/giomm-${V}/giomm/asyncinitable.h
@@ -27,11 +28,13 @@ include/giomm-${V}/giomm/dbusauthobserver.h
 include/giomm-${V}/giomm/dbusconnection.h
 include/giomm-${V}/giomm/dbuserror.h
 include/giomm-${V}/giomm/dbuserrorutils.h
+include/giomm-${V}/giomm/dbusinterface.h
 include/giomm-${V}/giomm/dbusinterfacevtable.h
 include/giomm-${V}/giomm/dbusintrospection.h
 include/giomm-${V}/giomm/dbusmenumodel.h
 include/giomm-${V}/giomm/dbusmessage.h
 include/giomm-${V}/giomm/dbusmethodinvocation.h
+include/giomm-${V}/giomm/dbusobject.h
 include/giomm-${V}/giomm/dbusownname.h
 include/giomm-${V}/giomm/dbusproxy.h
 include/giomm-${V}/giomm/dbusserver.h
@@ -67,7 +70,9 @@ include/giomm-${V}/giomm/iostream.h
 include/giomm-${V}/giomm/loadableicon.h
 include/giomm-${V}/giomm/memoryinputstream.h
 include/giomm-${V}/giomm/memoryoutputstream.h
+include/giomm-${V}/giomm/menu.h
 include/giomm-${V}/giomm/menuattributeiter.h
+include/giomm-${V}/giomm/menuitem.h
 include/giomm-${V}/giomm/menulinkiter.h
 include/giomm-${V}/giomm/menumodel.h
 include/giomm-${V}/giomm/mount.h
@@ -80,6 +85,7 @@ include/giomm-${V}/giomm/private/action_p.h
 include/giomm-${V}/giomm/private/actiongroup_p.h
 include/giomm-${V}/giomm/private/actionmap_p.h
 include/giomm-${V}/giomm/private/appinfo_p.h
+include/giomm-${V}/giomm/private/applaunchcontext_p.h
 include/giomm-${V}/giomm/private/application_p.h
 include/giomm-${V}/giomm/private/applicationcommandline_p.h
 include/giomm-${V}/giomm/private/asyncinitable_p.h
@@ -96,11 +102,13 @@ include/giomm-${V}/giomm/private/dbusauthobserver_p.h
 include/giomm-${V}/giomm/private/dbusconnection_p.h
 include/giomm-${V}/giomm/private/dbuserror_p.h
 include/giomm-${V}/giomm/private/dbuserrorutils_p.h
+include/giomm-${V}/giomm/private/dbusinterface_p.h
 include/giomm-${V}/giomm/private/dbusinterfacevtable_p.h
 include/giomm-${V}/giomm/private/dbusintrospection_p.h
 include/giomm-${V}/giomm/private/dbusmenumodel_p.h
 include/giomm-${V}/giomm/private/dbusmessage_p.h
 include/giomm-${V}/giomm/private/dbusmethodinvocation_p.h
+include/giomm-${V}/giomm/private/dbusobject_p.h
 include/giomm-${V}/giomm/private/dbusownname_p.h
 include/giomm-${V}/giomm/private/dbusproxy_p.h
 include/giomm-${V}/giomm/private/dbusserver_p.h
@@ -135,7 +143,9 @@ include/giomm-${V}/giomm/private/iostream_p.h
 include/giomm-${V}/giomm/private/loadableicon_p.h
 include/giomm-${V}/giomm/private/memoryinputstream_p.h
 include/giomm-${V}/giomm/private/memoryoutputstream_p.h
+include/giomm-${V}/giomm/private/menu_p.h
 include/giomm-${V}/giomm/private/menuattributeiter_p.h
+include/giomm-${V}/giomm/private/menuitem_p.h
 include/giomm-${V}/giomm/private/menulinkiter_p.h
 include/giomm-${V}/giomm/private/menumodel_p.h
 include/giomm-${V}/giomm/private/mount_p.h
@@ -435,10 +445,13 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Connection__inherit__gr
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Error-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Error.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Error__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Interface-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Interface.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1InterfaceInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1InterfaceInfo.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1InterfaceVTable-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1InterfaceVTable.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Interface__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1MenuModel-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1MenuModel.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1MenuModel__inherit__graph.png
@@ -452,6 +465,9 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1MethodInvocation.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1MethodInvocation__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1NodeInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1NodeInfo.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Object__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1PropertyInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1PropertyInfo.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1DBus_1_1Proxy-members.html
@@ -551,15 +567,21 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1MemoryInputStream__inherit__gra
 share/doc/glibmm-${V}/reference/html/classGio_1_1MemoryOutputStream-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MemoryOutputStream.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MemoryOutputStream__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1Menu-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1Menu.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuAttributeIter-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuAttributeIter.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuAttributeIter__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1MenuItem-members.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1MenuItem.html
+share/doc/glibmm-${V}/reference/html/classGio_1_1MenuItem__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuLinkIter-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuLinkIter.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuLinkIter__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuModel-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuModel.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MenuModel__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGio_1_1Menu__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Mount-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Mount.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1MountOperation-members.html
@@ -959,6 +981,12 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__String__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ValueBase__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01T_01_4_01_4__inherit__graph.png
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4-members.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4.html
+share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01const_01T_01_4_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Value_3_01Glib_1_1ustring_01_4__inherit__graph.png
@@ -1411,6 +1439,7 @@ share/doc/glibmm-${V}/reference/html/since_2_26.html
 share/doc/glibmm-${V}/reference/html/since_2_28.html
 share/doc/glibmm-${V}/reference/html/since_2_30.html
 share/doc/glibmm-${V}/reference/html/since_2_32.html
+share/doc/glibmm-${V}/reference/html/since_2_34.html
 share/doc/glibmm-${V}/reference/html/since_2_6.html
 share/doc/glibmm-${V}/reference/html/since_3_2.html
 share/doc/glibmm-${V}/reference/html/structGlib_1_1Container__Helpers_1_1TypeTraits-members.html
