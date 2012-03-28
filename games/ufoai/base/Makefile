@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/12/18 11:36:49 stsp Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/28 20:53:58 kirby Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -8,29 +8,29 @@ COMMENT-editor = 	UFO:AI map editor
 V = 			2.3.1
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
-REVISION-main = 	2
+REVISION-main = 	3
 PKGNAME-editor = 	uforadiant-${V}
-REVISION-editor = 	2
+REVISION-editor = 	3
 
 EXTRACT_SUFX =		.tar.bz2
 
 MULTI_PACKAGES = 	-main -editor
 
 cWANTLIB += GL SDL SDL_image c jpeg m ogg png pthread tiff 
-cWANTLIB += vorbis vorbisfile z
+cWANTLIB += vorbis vorbisfile z execinfo ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += FLAC SDL_mixer SDL_ttf crypto curl curses 
 WANTLIB-main += idn mikmod smpeg ssl theora
-WANTLIB-main += xvidcore ${MODGETTEXT_WANTLIB} ${cWANTLIB}
+WANTLIB-main += xvidcore ${cWANTLIB}
 
-WANTLIB-editor += GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB-editor += Xdmcp Xext Xfixes Xi Xinerama Xmu Xrandr Xrender
-WANTLIB-editor += Xt Xxf86vm atk-1.0 cairo drm expat fontconfig
+WANTLIB-editor += GLU ICE SM X11 Xcomposite Xcursor Xdamage
+WANTLIB-editor += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender
+WANTLIB-editor += Xt atk-1.0 cairo expat fontconfig
 WANTLIB-editor += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkglext-x11-1.0
 WANTLIB-editor += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-editor += gtk-x11-2.0 gtkglext-x11-1.0 gtksourceview-2.0
 WANTLIB-editor += openal pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-editor += pangox-1.0 pixman-1 pthread-stubs sndio stdc++ xcb
+WANTLIB-editor += pangox-1.0 pixman-1 pthread-stubs stdc++ xcb
 WANTLIB-editor += xcb-render xcb-shm xml2 ${cWANTLIB}
 
 MODULES = 		devel/gettext
@@ -52,9 +52,11 @@ LIB_DEPENDS-main =	devel/sdl-image \
 
 LIB_DEPENDS-editor = 	audio/libvorbis \
 			audio/openal \
+			devel/libexecinfo \
 			devel/sdl-image \
 			x11/gtkglext \
-			x11/gtksourceview
+			x11/gtksourceview \
+			${MODGETTEXT_LIB_DEPENDS}
 
 USE_GMAKE =		Yes
 MAKE_FLAGS += 		${CONFIGURE_ENV}
@@ -72,7 +74,7 @@ CONFIGURE_ARGS =	--enable-release=yes \
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 				-I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -liconv -lexecinfo"
 
 NO_REGRESS = 		Yes
 
