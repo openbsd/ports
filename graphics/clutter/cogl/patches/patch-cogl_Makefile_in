@@ -1,12 +1,12 @@
-$OpenBSD: patch-cogl_Makefile_in,v 1.1.1.1 2011/09/28 12:29:39 robert Exp $
---- cogl/Makefile.in.orig	Tue Sep 20 14:45:41 2011
-+++ cogl/Makefile.in	Tue Sep 20 14:45:47 2011
-@@ -110,7 +110,7 @@ DIST_COMMON = $(am__coglinclude_HEADERS_DIST) $(srcdir
- @SUPPORT_EGL_TRUE@       $(srcdir)/winsys/cogl-winsys-egl-feature-functions.h \
- @SUPPORT_EGL_TRUE@       $(srcdir)/winsys/cogl-winsys-egl-private.h
+$OpenBSD: patch-cogl_Makefile_in,v 1.2 2012/03/28 18:04:11 ajacoutot Exp $
+--- cogl/Makefile.in.orig	Tue Mar 20 18:13:47 2012
++++ cogl/Makefile.in	Wed Mar 28 19:59:28 2012
+@@ -153,7 +153,7 @@ DIST_COMMON = $(am__coglinclude_HEADERS_DIST) $(srcdir
+ @SUPPORT_SDL_TRUE@       $(srcdir)/winsys/cogl-winsys-sdl-private.h \
+ @SUPPORT_SDL_TRUE@       $(srcdir)/winsys/cogl-winsys-sdl.c
  
--@SUPPORT_GLX_TRUE@am__append_11 = -ldl
-+@SUPPORT_GLX_TRUE@am__append_11 =
- @HAVE_INTROSPECTION_TRUE@am__append_12 = Cogl-1.0.gir
- @HAVE_INTROSPECTION_TRUE@am__append_13 = $(gir_DATA) $(typelib_DATA)
+-@SUPPORT_GLX_TRUE@am__append_22 = -ldl
++@SUPPORT_GLX_TRUE@am__append_22 =
+ @HAVE_INTROSPECTION_TRUE@am__append_23 = Cogl-1.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_24 = $(gir_DATA) $(typelib_DATA)
  subdir = cogl
