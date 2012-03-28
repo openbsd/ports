@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/27 15:35:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/28 08:57:40 sthen Exp $
 
 COMMENT=	wrapper to run CGI applications via FastCGI
 
@@ -35,7 +35,7 @@ post-patch:
 	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
-CONFIGURE_ARGS=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
 		LDFLAGS="-lm -L${LOCALBASE}/lib ${LDFLAGS}"
 
 .include <bsd.port.mk>
