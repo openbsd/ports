@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/31 10:51:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/28 12:35:41 pea Exp $
 @option no-default-conflict
 @conflict gnupg->=2
 @bin bin/gpg-agent
@@ -110,6 +110,7 @@ share/locale/ru/LC_MESSAGES/gnupg2.mo
 share/locale/sk/LC_MESSAGES/gnupg2.mo
 share/locale/sv/LC_MESSAGES/gnupg2.mo
 share/locale/tr/LC_MESSAGES/gnupg2.mo
+share/locale/uk/LC_MESSAGES/gnupg2.mo
 share/locale/zh_CN/LC_MESSAGES/gnupg2.mo
 share/locale/zh_TW/LC_MESSAGES/gnupg2.mo
 %%ldap%%
