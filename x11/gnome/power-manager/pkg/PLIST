@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/29 06:58:43 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/applications/gnome-power-statistics.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
 share/gnome-power-manager/
-share/gnome-power-manager/gpm-statistics.ui
 share/gnome-power-manager/icons/
 share/gnome-power-manager/icons/hicolor/
 share/gnome-power-manager/icons/hicolor/16x16/
@@ -257,25 +256,11 @@ share/gnome-power-manager/icons/hicolor/scalable/status/gpm-ups-080.svg
 share/gnome-power-manager/icons/hicolor/scalable/status/gpm-ups-100-charging.svg
 share/gnome-power-manager/icons/hicolor/scalable/status/gpm-ups-100.svg
 share/gnome-power-manager/icons/hicolor/scalable/status/gpm-ups-missing.svg
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-power-statistics.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-power-statistics.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-power-statistics.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-power-statistics.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-power-statistics.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-power-statistics.svg
 share/locale/af/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-power-manager.mo
@@ -326,6 +311,9 @@ share/locale/mg/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mk/LC_MESSAGES/gnome-power-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-power-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-power-manager.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
+share/locale/my/LC_MESSAGES/gnome-power-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-power-manager.mo
 share/locale/nl/LC_MESSAGES/gnome-power-manager.mo
 share/locale/nn/LC_MESSAGES/gnome-power-manager.mo
