@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/02/17 07:42:25 bentley Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	X.10 firecracker interface
 
@@ -11,7 +11,7 @@ MASTER_SITES =	${HOMEPAGE}
 
 CONFIGURE_STYLE=gnu
 
-SEPARATE_BUILD= simple
+SEPARATE_BUILD= Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

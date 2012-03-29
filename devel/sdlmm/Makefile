@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	C++ wrapper for the Simple DirectMedia Layer
 
@@ -30,7 +30,7 @@ MODULES=	converters/libiconv
 
 LIB_DEPENDS=	devel/sdl
 
-SEPARATE_BUILD= concurrent
+SEPARATE_BUILD= Yes
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

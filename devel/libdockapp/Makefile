@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=		dockapp-making standard library for Window Maker
 
@@ -20,7 +20,7 @@ MASTER_SITES=		ftp://shadowmere.student.utwente.nl/pub/WindowMaker/
 
 USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} --enable-static
 

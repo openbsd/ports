@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT =	toolkit for OATH/HOTP and TOTP
 DISTNAME =	oath-toolkit-1.6.2
@@ -22,7 +22,7 @@ WANTLIB += c
 
 MASTER_SITES = ${MASTER_SITE_SAVANNAH:=oath-toolkit/}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

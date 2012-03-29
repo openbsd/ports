@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2011/12/26 15:51:55 kili Exp $
+# $OpenBSD: Makefile,v 1.96 2012/03/29 13:39:01 sthen Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -94,7 +94,7 @@ MAKE_ENV =	QTDIR="${WRKDIST}" EXTRA_SAMPLES="${EXTRA_SAMPLES}" \
 PORTHOME =	${WRKDIST}
 
 CONFIGURE_STYLE =	simple
-SEPARATE_BUILD = 	simple
+SEPARATE_BUILD = 	Yes
 CONFIGURE_ARGS =	-qt-gif -system-libpng -system-libjpeg -system-zlib \
 			-sm -system-sqlite \
 			-v -stl -xrender -fast \

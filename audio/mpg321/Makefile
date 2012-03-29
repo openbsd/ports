@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/15 13:08:37 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/29 13:38:13 sthen Exp $
 
 # not very useful with static libao
 SHARED_ONLY=	Yes
@@ -26,7 +26,7 @@ LIB_DEPENDS=	audio/libao \
 		audio/libid3tag \
 		audio/libmad
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-mpg123-symlink

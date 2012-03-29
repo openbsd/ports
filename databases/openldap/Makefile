@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/03/09 09:48:32 pea Exp $
+# $OpenBSD: Makefile,v 1.112 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -34,7 +34,7 @@ MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 
 EXTRACT_SUFX=		.tgz
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 USE_GROFF=		Yes

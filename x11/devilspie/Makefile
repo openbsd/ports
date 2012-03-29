@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	window manipulation tool
 
@@ -29,7 +29,7 @@ MODULES=	devel/gettext textproc/intltool
 
 LIB_DEPENDS=	devel/libwnck
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/26 14:13:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:39:00 sthen Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -35,7 +35,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/argp-standalone
 LIB_DEPENDS=	security/libgcrypt
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

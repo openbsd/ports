@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=	devel/libidn \
 		security/libgcrypt
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

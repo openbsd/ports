@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT-main= 		GNU versions of common file management utilities
 COMMENT-ls=		colorized GNU 'ls'
@@ -27,7 +27,7 @@ MASTER_SITES=		http://distfiles.nl/ \
 
 MODULES=		devel/gettext
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

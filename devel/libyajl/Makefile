@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/10 13:43:30 armani Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
@@ -26,7 +26,7 @@ WANTLIB =	c
 
 MODULES =	devel/cmake
 
-SEPARATE_BUILD =simple
+SEPARATE_BUILD =Yes
 
 WRKDIST =	${WRKDIR}/lloyd-yajl-f4b2b1a
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/23 13:04:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 13:39:00 sthen Exp $
 
 V =			0.2.1
 COMMENT =		accessing and converting various ebook file formats
@@ -23,7 +23,7 @@ BUILD_DEPENDS =		devel/doxygen
 LIB_DEPENDS =		textproc/libxml \
 			archivers/libzip \
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 NO_REGRESS =		Yes
 
 MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}

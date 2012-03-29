@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:13 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	rdf framework
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES +=		devel/cmake x11/qt4
 CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 LIB_DEPENDS += 	textproc/clucene \
 	    	databases/iodbc,-main \

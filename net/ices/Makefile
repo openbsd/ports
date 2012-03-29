@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/02/21 16:21:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	icecast source for streaming MP3
 
@@ -54,7 +54,7 @@ WANTLIB +=	faad mp4v2
 CONFIGURE_ARGS+=--without-faad
 .endif
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 

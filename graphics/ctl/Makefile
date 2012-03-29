@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =		Color Transformation Language interpreter
 
@@ -23,7 +23,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ampasctl/}
 
 LIB_DEPENDS =		graphics/ilmbase
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

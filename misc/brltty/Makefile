@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	access software for a blind person using a braille terminal
 
@@ -27,7 +27,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/aux
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 post-install:
 	rm -f ${PREFIX}/bin/brltty-install

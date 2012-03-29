@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/05 18:16:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:40 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -28,7 +28,7 @@ RUN_DEPENDS =		${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =		PKG_DIR=memchan \
 			INSTALL_PROGRAM='${INSTALL_DATA}'
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/29 13:38:49 sthen Exp $
 
 # varargs misuse, and unportable software
 ONLY_FOR_ARCHS= 	i386 sparc sparc64
@@ -29,7 +29,7 @@ WANTLIB =		ICE SM X11 Xau Xdmcp Xt m pthread-stubs xcb
 
 MASTER_SITES=		${HOMEPAGE}
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	GNU help2man
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 

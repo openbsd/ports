@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/07/25 08:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT-main=		callback framework for C++
 COMMENT-docs=		callback framework for C++ documentation
@@ -30,7 +30,7 @@ MULTI_PACKAGES=		-main -docs
 
 PKG_ARCH-docs=		*
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu

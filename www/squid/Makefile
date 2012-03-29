@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2011/09/20 19:34:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.125 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -39,7 +39,7 @@ DIGEST_AUTH=	password
 EXTERNAL_ACL=	ip_user unix_group
 STOREIO=	aufs ufs diskd null
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION= 2.62
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux

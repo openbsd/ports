@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/01/20 11:53:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.63 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
@@ -36,7 +36,7 @@ USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 
 LIB_DEPENDS=		devel/fribidi>=0.19.2 \
 			graphics/imlib2

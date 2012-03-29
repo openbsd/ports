@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/29 13:38:40 sthen Exp $
 
 
 COMMENT =	smalltalk system, vm
@@ -12,7 +12,7 @@ REVISION =	1
 WRKDIST =	${WRKDIR}/Squeak-$V-${SRCV}
 WRKSRC =	${WRKDIST}/platforms/unix/config
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 MASTER_SITES =	${SQUEAK_SITE}unix-linux/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--without-kate
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/vorbis-tools

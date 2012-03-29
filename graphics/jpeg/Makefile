@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	IJG's JPEG compression utilities
 
@@ -19,7 +19,7 @@ DISTFILES=	jpegsrc.v$V.tar.gz
 
 WANTLIB=	c
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

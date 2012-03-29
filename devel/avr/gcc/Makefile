@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/11 18:33:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC
 
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+= 			\
 MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include"
 MAKE_ENV=	MACHINE_ARCH=avr
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 YACC=		bison

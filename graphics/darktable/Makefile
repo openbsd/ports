@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/22 15:20:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:30 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -49,7 +49,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 		x11/gnome/librsvg \
 		x11/gtk+2
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 

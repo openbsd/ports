@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/08 20:38:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT =		compressing non-caching HTTP proxy
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =		graphics/libungif \
 			graphics/jpeg \
 			graphics/jasper
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.61

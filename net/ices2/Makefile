@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=	net/libshout \
 		audio/speex \
 		textproc/libxml
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 post-extract:
 	cp ${FILESDIR}/im_sndio.{c,h} ${WRKSRC}/src/

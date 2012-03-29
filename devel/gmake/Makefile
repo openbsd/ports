@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/03/22 20:23:40 robert Exp $
+# $OpenBSD: Makefile,v 1.47 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	GNU make
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --program-prefix="g"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

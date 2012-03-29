@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/29 13:38:40 sthen Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 BROKEN=adjust for types changes
@@ -129,7 +129,7 @@ CONFIGURE_ARGS += --with-gnu-as
 CONFIGURE_ARGS += --with-gnu-ld 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=concurrent
+SEPARATE_BUILD=Yes
 
 USE_GMAKE= yes
 

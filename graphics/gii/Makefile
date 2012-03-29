@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2012/03/29 13:38:31 sthen Exp $
 # Uses pthreads
 
 COMMENT=	General Input Library (used by libggi)
@@ -26,7 +26,7 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CFLAGS+=	-pthread
-SEPARATE_BUILD= concurrent
+SEPARATE_BUILD= Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --enable-mutexes="int"

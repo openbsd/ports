@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/11 12:35:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	GNOME http client library
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

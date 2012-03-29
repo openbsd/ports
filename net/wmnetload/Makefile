@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=		wm-dockapp; simple network interface monitoring tool
 
@@ -21,7 +21,7 @@ MASTER_SITES=		ftp://truffula.com/pub/
 
 LIB_DEPENDS=		devel/libdockapp
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
 NO_REGRESS=		Yes

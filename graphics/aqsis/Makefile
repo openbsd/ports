@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:30 sthen Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=	x11/fltk>=1.1.7p2 \
 
 NO_REGRESS=	Yes
 MODCMAKE_WANTCOLOR=No
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 MAKE_FLAGS=	VERBOSE=1
 
 CFLAGS+=	-pthread

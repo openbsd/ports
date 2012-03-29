@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/07/31 14:48:19 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:39:00 sthen Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		utilities to manipulate ext2 filesystems
@@ -27,7 +27,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=e2fsprogs/}
 
 MODULES=		devel/gettext
 
-SEPARATE_BUILD= 	concurrent
+SEPARATE_BUILD= 	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-elf-shlibs --disable-tls
 USE_GMAKE=		Yes

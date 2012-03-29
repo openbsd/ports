@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/16 21:21:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	mikmod sound library
 
@@ -22,7 +22,7 @@ MASTER_SITES=	${HOMEPAGE}/files/libmikmod/ \
 
 WANTLIB=	sndio
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

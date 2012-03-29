@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/10/18 18:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2012/03/29 13:38:41 sthen Exp $
 
 COMMENT=	(E)nhanced (P)rogrammable (I)RC-II (C)lient
 
@@ -24,7 +24,7 @@ DESTDIRNAME=	IP
 FAKE_FLAGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_DATA="${INSTALL_DATA}"
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=	gnu
 # conflict between Perl embed headers and uvm_map's {max,min}_offset defines.
 CONFIGURE_ENV=		ac_cv_header_sys_sysctl_h=no

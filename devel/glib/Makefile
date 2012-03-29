@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2012/03/29 13:38:13 sthen Exp $
 # Uses pthreads
 
 COMMENT=	useful routines for C programming
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		pthread
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

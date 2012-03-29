@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/12/03 23:04:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	video player for KDE
 
@@ -45,7 +45,7 @@ PORTHOME=	${WRKDIR}
 MAKE_ENV=	${CONFIGURE_ENV}
 MAKE_FLAGS=	${MODKDE_MAKE_FLAGS}
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63

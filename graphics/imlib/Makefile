@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2012/03/29 13:38:31 sthen Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
@@ -30,7 +30,7 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --disable-modules

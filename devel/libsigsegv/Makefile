@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/04/22 21:53:29 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:30 sthen Exp $
 
 ONLY_FOR_ARCHS = 	alpha amd64 arm i386 hppa m68k mips64 mips64el powerpc sparc64 sparc sh
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libsigsegv/}
 
-SEPARATE_BUILD = 	concurrent
+SEPARATE_BUILD = 	Yes
 
 USE_LIBTOOL =		Yes
 

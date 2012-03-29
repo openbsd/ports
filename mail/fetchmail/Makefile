@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2011/11/16 00:02:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
@@ -23,7 +23,7 @@ MODPY_ADJ_FILES=	fetchmailconf.py
 SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CFLAGS=			-I${LOCALBASE}/include
 CONFIGURE_ENV=		PYTHON=: YACC="bison -y"

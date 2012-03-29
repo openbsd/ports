@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=		intelligent n-up printing
 
@@ -27,7 +27,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-metric
 USE_GROFF =		Yes
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 
 FLAVORS=		a4
 FLAVOR?=

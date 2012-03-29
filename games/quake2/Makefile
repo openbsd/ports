@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:30 sthen Exp $
 
 ONLY_FOR_ARCHS= 	amd64 i386
 SHARED_ONLY=		Yes
@@ -27,7 +27,7 @@ MASTER_SITES=		http://distfiles.nl/
 MODULES=		converters/libiconv
 LIB_DEPENDS=		devel/sdl
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	gnu

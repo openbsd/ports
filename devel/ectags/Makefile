@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/10 14:54:52 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	multilanguage implementation of ctags
 
@@ -30,6 +30,6 @@ do-install:
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
-SEPARATE_BUILD= simple
+SEPARATE_BUILD= Yes
 
 .include <bsd.port.mk>

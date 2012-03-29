@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/05 18:08:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,7 +22,7 @@ MODULES =	lang/tcl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =	PKG_DIR=tcludp
-SEPARATE_BUILD =concurrent
+SEPARATE_BUILD =Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

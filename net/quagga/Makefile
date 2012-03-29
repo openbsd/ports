@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/20 20:56:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS=	lang/gawk
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 SYSCONFDIR=	${BASESYSCONFDIR}/quagga
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --includedir=${LOCALBASE}/include/quagga \
 		--localstatedir=${STATEDIR} \

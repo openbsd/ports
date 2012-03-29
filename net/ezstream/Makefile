@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	streaming source client that uses external en-/decoders
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	net/libshout \
 		textproc/libxml \
 		audio/taglib
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-taglib="${LOCALBASE}"

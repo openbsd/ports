@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/01/16 11:01:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	SGI audiofile library clone
 
@@ -22,7 +22,7 @@ WANTLIB += c m stdc++
 
 USE_LIBTOOL=	Yes
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	ac_cv_path_ASCIIDOC=no

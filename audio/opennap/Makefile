@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/11 06:22:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	opensource Napster(tm) server
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c z
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-email \

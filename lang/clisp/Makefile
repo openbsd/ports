@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:40 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc64
 
@@ -29,7 +29,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu old
 CONFIGURE_ARGS=		--fsstnd=openbsd \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/08 20:38:00 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:31 sthen Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -26,7 +26,7 @@ WANTLIB +=		c m z png
 LIB_DEPENDS =		graphics/png
 
 USE_LIBTOOL =		Yes
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.63
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--with-libpng=${LOCALBASE}

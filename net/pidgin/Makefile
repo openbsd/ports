@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2012/03/15 21:45:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2012/03/29 13:38:48 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -74,7 +74,7 @@ LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf

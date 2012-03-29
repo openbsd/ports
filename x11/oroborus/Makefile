@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT=	minimalistic X11 window manager
 
@@ -21,6 +21,6 @@ WANTLIB=		ICE SM X11 Xext Xpm c
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
-SEPARATE_BUILD= simple
+SEPARATE_BUILD= Yes
 
 .include <bsd.port.mk>

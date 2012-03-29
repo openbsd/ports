@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/02/23 06:58:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	message bus system
 
@@ -23,7 +23,7 @@ WANTLIB += ICE SM X11 c expat pthread xcb
 
 MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 USE_LIBTOOL=	Yes
 

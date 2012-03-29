@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	mpeg-1 video player
 
@@ -22,7 +22,7 @@ LIB_DEPENDS =	devel/smpeg
 WANTLIB =	SDL c pthread smpeg>=1.3
 
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 post-install:

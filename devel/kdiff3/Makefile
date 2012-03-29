@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/21 08:08:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =	compares and merges multiple files or directories
 
@@ -21,7 +21,7 @@ WANTLIB =	QtGui c m pthread stdc++
 
 MODULES =	x11/qt4
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 MAKE_FLAGS =	CXX="${CXX}" CXXFLAGS='${CXXFLAGS} -fno-wrapv -pthread -Wall -W $$(DEFINES)' \
 		LINK="${CXX}"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/01/27 12:30:28 jsing Exp $
+# $OpenBSD: Makefile,v 1.41 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
@@ -22,7 +22,7 @@ MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 
 LIB_DEPENDS=	archivers/lzo2
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 CONFIGURE_ARGS+= --with-lzo-headers=${DEPBASE}/include \

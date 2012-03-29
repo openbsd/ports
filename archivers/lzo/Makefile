@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2010/07/11 15:57:47 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2012/03/29 13:38:12 sthen Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

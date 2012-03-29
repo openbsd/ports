@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	library for reading ID3 tags
 
@@ -25,7 +25,7 @@ WANTLIB=	z
 BUILD_DEPENDS=	devel/gperf
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

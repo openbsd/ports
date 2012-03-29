@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/02/21 16:21:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	sophisticated scripter based on Tcl/Tk
 
@@ -22,7 +22,7 @@ WANTLIB += c util m
 FLAVORS=	no_tk
 FLAVOR?=
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION=	2.59
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}

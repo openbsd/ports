@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT =		library for processing panoramic images
 DISTNAME =		libpano13-2.9.18
@@ -27,7 +27,7 @@ USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	automake
 # builds work with SEPARATE_BUILD, but tests don't.
-#SEPARATE_BUILD =	simple
+#SEPARATE_BUILD =	Yes
 AUTOCONF_VERSION =	2.59
 AUTOMAKE_VERSION =	1.9
 

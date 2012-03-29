@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/07/19 09:28:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	SDL TrueType fonts library
 
@@ -24,7 +24,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

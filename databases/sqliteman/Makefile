@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/04 08:16:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 
 MODULES =		devel/cmake
 CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 LIB_DEPENDS =	x11/qt4 \
 		editors/qscintilla

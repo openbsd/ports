@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:13 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
@@ -38,7 +38,7 @@ WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender bz2 c clucene>=1 dbus-1 exiv2 \
 
 MODULES +=		devel/cmake converters/libiconv
 CONFIGURE_STYLE =	cmake
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_ARGS +=	-DHyperEstraier_FOUND:BOOL=0
 

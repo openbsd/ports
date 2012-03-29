@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT =		OpenEXR bindings for CTL
 DISTNAME =		openexr_ctl-1.0.1
@@ -25,7 +25,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ampasctl/}
 LIB_DEPENDS =		graphics/openexr \
 			graphics/ctl
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

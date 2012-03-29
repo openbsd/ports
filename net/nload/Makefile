@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/02/19 14:03:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=		network traffic and bandwidth usage in real time
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 
 WANTLIB=		c form m ncurses stdc++
 

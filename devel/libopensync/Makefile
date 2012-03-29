@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +25,7 @@ MASTER_SITES=	http://www.opensync.org/download/releases/${V}/
 WANTLIB=	c pthread sqlite3>=8 xml2>=9 glib-2.0>=1200 \
 		gmodule-2.0>=1200 gthread-2.0>=1200
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 MODULES=	devel/cmake \
 		devel/gettext

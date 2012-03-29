@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/08 22:41:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT =		Tool Command Language
 
@@ -34,7 +34,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			MANN_INSTALL_DIR='$$(MAN_INSTALL_DIR)/catn'
 
 REGRESS_FLAGS =		HOME=${TESTHOME}
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
 

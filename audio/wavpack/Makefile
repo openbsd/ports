@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		converters/libiconv 
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \

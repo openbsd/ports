@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/01/28 10:41:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		International Components for Unicode
 
@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-extras \
 			--disable-samples
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 
 WRKDIST=		${WRKDIR}/icu
 WRKSRC=			${WRKDIST}/source

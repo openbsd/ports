@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/24 21:42:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:49 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=	net/libcares
 
 MAKE_FLAGS=	VERBOSE=1
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS= --disable-optimization

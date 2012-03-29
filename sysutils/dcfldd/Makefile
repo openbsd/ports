@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		GNU dd with added forensic/security features
 
@@ -20,7 +20,7 @@ WANTLIB += c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=dcfldd/}
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 USE_GROFF =		Yes
 

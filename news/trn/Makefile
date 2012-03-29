@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/12 11:53:07 schwarze Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	threaded newsreader
 
@@ -22,7 +22,7 @@ WANTLIB=c curses m
 CONFIGURE_STYLE=simple
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=-dse -Doptimize="${CFLAGS}" -Dlocal=${PREFIX}
-SEPARATE_BUILD=concurrent
+SEPARATE_BUILD=Yes
 
 pre-configure: 
 	cp ${FILESDIR}/openbsd-hints ${WRKSRC}/hints/openbsd.sh

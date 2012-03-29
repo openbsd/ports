@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT =		viewers for OpenEXR
 DISTNAME =		openexr_viewers-1.0.1
@@ -25,7 +25,7 @@ MASTER_SITES =		${MASTER_SITE_SAVANNAH:=openexr/}
 LIB_DEPENDS =		graphics/openexr-ctl \
 			x11/fltk
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

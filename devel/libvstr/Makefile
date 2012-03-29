@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =	string library designed for network communication
 
@@ -22,7 +22,7 @@ MASTER_SITES =		ftp://ftp.and.org/pub/james/vstr/$V/
 
 REGRESS_FLAGS =		CPPFLAGS="${CPPFLAGS} -I${WRKSRC}/include"
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes

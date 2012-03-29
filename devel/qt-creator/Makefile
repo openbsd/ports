@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/06 08:36:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:38:30 sthen Exp $
 
 BROKEN-powerpc =	qdoc3 goes into an infinite loop
 
@@ -48,7 +48,7 @@ RUN_DEPENDS = 	x11/qt4,-sqlite devel/gmake
 
 PORTHOME =		${WRKDIR}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 ALL_TARGET = 		all qch_docs
 

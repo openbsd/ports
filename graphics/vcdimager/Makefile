@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	(S)VCD authoring software
 
@@ -34,6 +34,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 
 .include <bsd.port.mk>

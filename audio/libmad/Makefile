@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	high-quality MPEG audio decoder
 
@@ -20,7 +20,7 @@ MASTER_SITES=	ftp://ftp.mars.org/pub/mpeg/ \
 		${MASTER_SITE_SOURCEFORGE:=mad/}
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

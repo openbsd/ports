@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/28 10:52:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/29 13:38:48 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
@@ -29,7 +29,7 @@ WANTLIB=		c z
 MODULES=		lang/python
 
 CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 SYSCONFDIR=		${BASESYSCONFDIR}/flow-tools
 CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools
 

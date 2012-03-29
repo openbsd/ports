@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	send ICMP nasty garbage
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c pcap lib/libnet-1.0/net=0
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	INCLUDES="-L${LOCALBASE}/include/libnet-1.0" \

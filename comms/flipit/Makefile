@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	x10 firecracker utility
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://www.lickey.com/flipit/
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 
-SEPARATE_BUILD= simple
+SEPARATE_BUILD= Yes
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

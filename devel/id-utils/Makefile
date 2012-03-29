@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	gid/lid tools for looking up variables in code
 
@@ -32,7 +32,7 @@ post-install:
 
 # International files don't want to be built separately
 #
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

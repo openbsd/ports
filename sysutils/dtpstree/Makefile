@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/01/08 22:49:55 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT =		display a tree of processes
 
@@ -22,7 +22,7 @@ MASTER_SITES =		http://code.douglasthrift.net/files/dtpstree/ \
 			http://apt.douglasthrift.net/files/dtpstree/
 EXTRACT_SUFX =		.tar.bz2
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 MAKE_FILE =		GNUmakefile
 USE_GMAKE =		Yes

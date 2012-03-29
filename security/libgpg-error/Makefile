@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/07 19:26:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	error codes for GnuPG related software
 
@@ -27,7 +27,7 @@ MODULES=	devel/gettext
 
 USE_LIBTOOL=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

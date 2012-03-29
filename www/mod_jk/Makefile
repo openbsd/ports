@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		Apache-Tomcat AJP Connector
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_APACHE:=tomcat/tomcat-connectors/jk/source/jk-$V/}
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 NO_REGRESS=		Yes
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

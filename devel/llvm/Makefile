@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/01/19 08:41:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:30 sthen Exp $
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
@@ -44,7 +44,7 @@ MAKE_FLAGS =	OPTIMIZE_OPTION="${CFLAGS}" \
 
 REGRESS_FLAGS =	RUNTESTFLAGS=
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_LIBTOOL =		Yes
 MAKE_ENV =		REQUIRES_RTTI=1
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/24 09:40:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2012/03/29 13:38:40 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -63,7 +63,7 @@ RUN_DEPENDS=	audio/sox \
 
 BUILD_DEPENDS+=	devel/libtool
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes

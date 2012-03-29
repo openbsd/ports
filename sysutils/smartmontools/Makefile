@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/10 18:41:22 giovanni Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:39:00 sthen Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386 powerpc
 
@@ -14,7 +14,7 @@ MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 USE_GMAKE=      	Yes
 USE_GROFF =		Yes
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=       	gnu 
 CONFIGURE_ARGS=		--with-docdir=${PREFIX}/share/doc/smartmontools \
 			--with-libcap-ng=no \

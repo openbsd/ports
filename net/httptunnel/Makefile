@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	HTTP tunneling utility
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 

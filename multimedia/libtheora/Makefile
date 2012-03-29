@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/01/27 07:49:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	open video codec
 
@@ -28,7 +28,7 @@ WANTLIB=	ogg
 LIB_DEPENDS=	audio/libogg
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS=	--disable-examples --disable-spec

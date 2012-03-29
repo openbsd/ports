@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	benchmarking tool for analysing TCP and UDP performance
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c 
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 WRKDIST=	${WRKDIR}
 

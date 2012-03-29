@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/07 19:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT=	window manager improved - key driven window manager
 
@@ -21,7 +21,7 @@ WANTLIB += freetype m stdc++ z pthread-stubs xcb
 
 MASTER_SITES=	http://code.suckless.org/dl/misc/
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes
 

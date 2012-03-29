@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/03/17 17:32:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.83 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -26,7 +26,7 @@ MASTER_SITES=		${MASTER_SITE_WINDOWMAKER:=source/release/}
 EXTRACT_SUFX=		.tar.bz2
 
 NO_REGRESS=		Yes
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu

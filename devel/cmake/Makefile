@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/01/12 13:14:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.51 2012/03/29 13:38:13 sthen Exp $
 
 VMEM_WARNING =	Yes
 BROKEN-arm =	build fails since move to gcc4
@@ -32,7 +32,7 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 
 PORTHOME =		${WRKDIR}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 
 REGRESS_TARGET =	test

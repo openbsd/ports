@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/16 12:08:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
@@ -26,7 +26,7 @@ PATCH_DIST_STRIP=-p1
 LIB_DEPENDS=	devel/gmp>=4.2.0
 WANTLIB=	gmp
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

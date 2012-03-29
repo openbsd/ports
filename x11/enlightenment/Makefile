@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/10/21 17:43:30 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	themed window manager
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=	audio/esound \
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes

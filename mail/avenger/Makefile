@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/03/08 12:13:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=		anti-spam SMTP server
 DISTNAME=		avenger-0.8.1
@@ -21,7 +21,7 @@ USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 LIB_DEPENDS=		databases/db/v4
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-db=${LOCALBASE} \
 			--with-etcdir=${SYSCONFDIR}/avenger

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/10/18 16:52:46 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	gnu curses-based napster client
 
@@ -21,7 +21,7 @@ WANTLIB=		c ncurses
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nap/} \
 		http://www.mathstat.dal.ca/~selinger/nap/dist/
 	      	
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 

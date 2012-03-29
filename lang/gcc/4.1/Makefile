@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/03/07 18:59:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:40 sthen Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN=adjust for types changes
@@ -184,7 +184,7 @@ CONFIGURE_ARGS += ${CONFIGURE_SHARED}
 post-patch:
 	cd ${WRKDIST}/libstdc++-v3 && AUTOCONF_VERSION=2.59 autoconf
 
-SEPARATE_BUILD=concurrent
+SEPARATE_BUILD=Yes
 
 USE_GMAKE= yes
 

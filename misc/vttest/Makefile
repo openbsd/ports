@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/14 22:26:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	test VT100-type terminal
 
@@ -19,7 +19,7 @@ EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 MAKE_FILE=	makefile
 

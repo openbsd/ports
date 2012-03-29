@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/08 20:56:03 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	top for monitoring PostgreSQL processes
 
@@ -23,7 +23,7 @@ WANTLIB =	c kvm m termcap
 LIB_DEPENDS = 	databases/postgresql
 WANTLIB +=	pq>=5
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-postgresql=${LOCALBASE}
 USE_GROFF =	Yes

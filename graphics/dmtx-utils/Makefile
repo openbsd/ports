@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/01/26 17:19:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT =		tools for handling data matrix barcodes
 
@@ -25,7 +25,7 @@ WANTLIB += m z
 LIB_DEPENDS +=		ImageMagick-*-!no_x11:graphics/ImageMagick \
 			graphics/libdmtx
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	creating & editing GIF images and animations
 
@@ -26,7 +26,7 @@ FLAVOR?=
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-gifdiff
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_GROFF =	Yes
 
 .if ${FLAVOR:Mno_x11}

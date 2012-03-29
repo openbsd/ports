@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	speech synthesizer
 DISTNAME=	rsynth-2.0
@@ -21,7 +21,7 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS=	`$(CC) -dumpmachine`
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 pre-configure:
 	@cp ${FILESDIR}/openbsdplay.c ${WRKSRC}/config/openbsdplay.c

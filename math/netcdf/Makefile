@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/03 20:28:09 jasper Exp $ 
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:40 sthen Exp $ 
 # $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/netcdf

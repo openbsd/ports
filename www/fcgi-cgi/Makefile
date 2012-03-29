@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/03/28 08:57:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	wrapper to run CGI applications via FastCGI
 
@@ -19,7 +19,7 @@ WANTLIB += c ev glib-2.0
 MASTER_SITES=	http://cgit.lighttpd.net/fcgi-cgi.git/snapshot/ \
 		http://spacehopper.org/mirrors/
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 RUN_DEPENDS=	www/spawn-fcgi
 LIB_DEPENDS=	devel/libev \

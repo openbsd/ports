@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
@@ -22,7 +22,7 @@ LIB_DEPENDS =	net/curl \
 		math/fftw3 \
 
 USE_LIBTOOL =		Yes
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
@@ -29,7 +29,7 @@ WANTLIB += gdk-x11-2.0>=1000 gtk-x11-2.0>=1000
 WANTLIB += GL gthread-2.0 pthread xcb-render xcb-shm
 
 USE_GROFF =	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 .include <bsd.port.mk>

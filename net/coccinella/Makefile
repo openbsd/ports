@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/21 13:37:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:40 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =		audio/snack \
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 COCCINELLALIB =		${LOCALBASE}/lib/coccinella
 SUBST_VARS =		COCCINELLALIB
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/27 13:45:50 jsing Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT =		LDAP authentication plugin for OpenVPN 2.x
 
@@ -26,7 +26,7 @@ LIB_DEPENDS =		databases/openldap
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/re2c
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	gnu
 

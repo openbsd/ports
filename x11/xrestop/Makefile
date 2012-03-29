@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT=	top-like X server resources usage display tool
 DISTNAME=	xrestop-0.4
@@ -20,7 +20,7 @@ MASTER_SITES=	http://projects.o-hand.com/sources/xrestop/
 
 WANTLIB=	XRes Xext X11 Xau Xdmcp ncurses c pthread-stubs xcb
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu

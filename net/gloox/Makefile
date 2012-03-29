@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/11 14:04:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
@@ -24,7 +24,7 @@ LIB_DEPENDS =			devel/libidn
 
 USE_GMAKE =			Yes
 USE_LIBTOOL =			Yes
-SEPARATE_BUILD =		simple
+SEPARATE_BUILD =		Yes
 CONFIGURE_STYLE	=		gnu
 CONFIGURE_ARGS =	--with-openssl --with-zlib --with-libidn=${LOCALBASE} \
 			--without-gnutls

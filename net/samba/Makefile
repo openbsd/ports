@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2012/03/02 08:22:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.157 2012/03/29 13:38:49 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -54,7 +54,7 @@ SUBST_VARS=		CONFDIR
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
-#SEPARATE_BUILD=		simple
+#SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.63
 

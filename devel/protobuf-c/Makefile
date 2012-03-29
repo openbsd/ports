@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/08 08:58:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =		c protocol buffers
 
@@ -30,6 +30,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"                                     
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>

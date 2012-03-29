@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	opendivx decoding API
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM=	No commercial use plus patent issue
 PERMIT_DISTFILES_FTP=	Yes
 
 USE_LIBTOOL=		Yes
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 

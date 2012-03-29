@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/24 20:27:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 13:39:00 sthen Exp $
 
 CATEGORIES =		textproc devel
 COMMENT =		C library for handling WBXML documents
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c expat
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_LIBTOOL =		Yes
 
 MODULES =		devel/cmake

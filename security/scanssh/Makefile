@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	SSH remote version scanner
 
@@ -20,7 +20,7 @@ WANTLIB=		c event pcap dnet>=1
 
 LIB_DEPENDS=	net/libdnet
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 USE_GROFF =	Yes
 

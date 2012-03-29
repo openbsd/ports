@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		voice over misconfigured internet telephones
 
@@ -24,7 +24,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 LIB_DEPENDS=		net/libnet/1.0
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libnet=${LOCALBASE}
 USE_GROFF =		Yes

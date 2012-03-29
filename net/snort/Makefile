@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/11/16 00:20:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2012/03/29 13:38:49 sthen Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -29,7 +29,7 @@ WANTLIB =		c m pcap
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--enable-dynamicplugin \

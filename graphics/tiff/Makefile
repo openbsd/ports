@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/05/09 08:14:43 giovanni Exp $
+# $OpenBSD: Makefile,v 1.61 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	tools and library routines for working with TIFF images
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-jpeg-include-dir="${LOCALBASE}/include" \
 		--with-jpeg-lib-dir="${LOCALBASE}/lib" \
 		--without-x
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/12 15:32:32 giovanni Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c z
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=/var/db \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/26 14:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	gcc for arm-elf cross-development
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_FLAGS=	LANGUAGES="c c++" CFLAGS="-I/usr/local/include"
 MAKE_ENV=	MACHINE_ARCH=arm-elf
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 YACC=		bison
 

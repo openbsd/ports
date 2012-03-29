@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	image viewer for X
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	devel/sdl-image
 
 USE_GROFF =	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib"

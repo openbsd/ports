@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	C++ reference implementation of the Atlas protocol
 
@@ -30,7 +30,7 @@ WANTLIB+=	m stdc++
 
 USE_LIBTOOL=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 

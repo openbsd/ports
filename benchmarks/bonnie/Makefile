@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/18 16:57:46 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	performance test of filesystem I/O
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 NO_REGRESS=	Yes
 USE_GROFF =	Yes
 

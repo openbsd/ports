@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2009/05/23 15:35:12 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	astronomic computations as a library
 
@@ -18,7 +18,7 @@ WANTLIB +=		c m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libnova/}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_LIBTOOL =		Yes
 
 CONFIGURE_STYLE =	gnu

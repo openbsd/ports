@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/06/09 15:25:50 shadchin Exp $
+# $OpenBSD: Makefile,v 1.54 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -67,7 +67,7 @@ SUBST_VARS=	VERSION
 
 USE_GROFF =	Yes
 
-SEPARATE_BUILD= concurrent
+SEPARATE_BUILD= Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS +=	--disable-bidi \
 			--disable-gtk \

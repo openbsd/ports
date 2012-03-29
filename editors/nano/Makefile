@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/11/14 09:48:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.68 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext
 WANTLIB=	c ncursesw
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

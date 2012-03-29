@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/10/16 07:03:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT =	Red Hat package manager
 
@@ -36,7 +36,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV +=	varprefix=/var
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 post-install:
 	rm -rf ${PREFIX}/src/

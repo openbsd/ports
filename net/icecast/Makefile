@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	server for streaming various media formats
 
@@ -33,6 +33,6 @@ LIB_DEPENDS =	net/curl \
 		audio/speex \
 		multimedia/libtheora
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 .include <bsd.port.mk>

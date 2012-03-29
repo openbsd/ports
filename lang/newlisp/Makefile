@@ -1,4 +1,4 @@
-#       $OpenBSD: Makefile,v 1.3 2011/07/27 18:17:27 todd Exp $
+#       $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:40 sthen Exp $
 # Makefile prepared Sat Feb 13 11:r7:14 PST 2010 by Ted Walther <ted@reactor-core.org>
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
@@ -19,7 +19,7 @@ WANTLIB += c m ncurses readline
 MASTER_SITES=		http://dpkg.reactor-core.org/port/
 EXTRACT_SUFX=		.tgz
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	simple
 CONFIGURE_SCRIPT=	configure-alt
 CONFIGURE_ARGS +=	--enable-readline

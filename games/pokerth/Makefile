@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
@@ -43,7 +43,7 @@ MAKE_FLAGS=	QMAKE_CXX=${CXX} \
 
 FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 VMEM_WARNING=	Yes
 NO_REGRESS=	Yes

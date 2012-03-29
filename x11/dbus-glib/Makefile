@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/10/16 06:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	glib bindings for dbus message system
 
@@ -29,7 +29,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	x11/dbus>=1.4.10v0 \
 		devel/glib2
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 

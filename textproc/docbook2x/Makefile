@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =		textproc/libxml \
 			textproc/p5-XML-SAX
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu

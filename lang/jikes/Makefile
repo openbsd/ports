@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/05/02 19:02:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=compile Java source into .class files (quickly!)
 
@@ -23,7 +23,7 @@ WANTLIB=		c m stdc++
 
 MODULES=	converters/libiconv
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 USE_GROFF=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2012/01/20 09:53:31 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2012/03/29 13:38:48 sthen Exp $
 
 VERSION=	1.6.12
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		ac_cv_prog_doxygen= \

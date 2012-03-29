@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		lightweight HTTP/SSL proxy
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-config=${SYSCONFDIR}/tinyproxy/tinyproxy.conf
 USE_GROFF =		Yes

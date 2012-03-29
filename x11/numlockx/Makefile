@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT=		start X11 with NumLock turned on
 
@@ -18,7 +18,7 @@ WANTLIB=		X11 Xext c
 
 MASTER_SITES=	${HOMEPAGE}
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 
 post-install:

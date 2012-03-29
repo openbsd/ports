@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	extensible shell, derived from plan9's rc
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu dest
 
 WANTLIB=	c 

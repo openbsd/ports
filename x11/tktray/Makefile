@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/05 17:47:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:39:01 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -28,7 +28,7 @@ RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 FAKE_FLAGS =	PKG_DIR=tktray \
 		INSTALL_LIBRARY='${INSTALL_DATA}'
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	command line double-entry accounting ledger
 
@@ -25,7 +25,7 @@ WANTLIB=	c gmp>=4 m pcre stdc++
 LIB_DEPENDS=	devel/gmp \
 		devel/pcre
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 USE_LIBTOOL=	Yes
 

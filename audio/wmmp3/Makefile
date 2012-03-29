@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=		wm-dockapp; front end for an mp3 player
 
@@ -22,7 +22,7 @@ MASTER_SITES=		${HOMEPAGE}
 
 RUN_DEPENDS=		audio/madplay
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu
 

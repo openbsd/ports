@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.16 2010/11/15 00:22:47 espie Exp $
+#$OpenBSD: Makefile,v 1.17 2012/03/29 13:38:13 sthen Exp $
 
 CATEGORIES =	audio
 
@@ -15,7 +15,7 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/autotools
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT = 			seam-carving smart rescale library
 CATEGORIES =			graphics devel
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 CONFIGURE_STYLE =		gnu
 USE_LIBTOOL =			Yes
-SEPARATE_BUILD =		simple
+SEPARATE_BUILD =		Yes
 #CONFIGURE_ENV =			CFLAGS="${CFLAGS} ${COPTS}"
 
 SHARED_LIBS +=	lqr-1           0.0           # .0.0

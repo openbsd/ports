@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	sends AM radio signals using a monitor
 
@@ -26,7 +26,7 @@ RUN_DEPENDS=	audio/madplay \
 LIB_DEPENDS=	devel/sdl
 
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 SONGS=	forelise jonny saints ungarian fruehling oldmacdonald tempest

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/13 00:55:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:40 sthen Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -101,7 +101,7 @@ CONFIGURE_ARGS += \
 	--disable-cpp \
 	${CONFIGURE_SHARED}
 
-SEPARATE_BUILD = simple
+SEPARATE_BUILD = Yes
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS += -DPIC=1

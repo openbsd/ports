@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
@@ -31,7 +31,7 @@ LIB_DEPENDS =	databases/iodbc \
 		devel/pcre
 
 USE_GMAKE =		Yes
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--config=OpenBSD --no-tests --no-samples \
 			--unbundled --include-path=${LOCALBASE}/include \

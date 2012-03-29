@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/10/01 14:31:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/29 13:38:40 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 sparc64
 
@@ -33,7 +33,7 @@ RUN_DEPENDS=	lang/classpath>=0.98
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include/jamvm \
 		--libdir=${LOCALBASE}/lib/jamvm \

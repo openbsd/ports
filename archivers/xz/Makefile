@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/12/18 09:01:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:12 sthen Exp $
 
 NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
@@ -26,7 +26,7 @@ MODULES=	devel/gettext
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threads

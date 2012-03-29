@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2012/03/13 22:21:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.59 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
@@ -22,7 +22,7 @@ WANTLIB=	c ltdl m sndio
 LIB_DEPENDS=	devel/libtool,-ltdl
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--disable-lfs-alias \

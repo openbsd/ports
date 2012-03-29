@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/06/08 20:00:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	portable audio output library
 
@@ -20,7 +20,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 WANTLIB=	sndio
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \

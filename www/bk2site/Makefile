@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	convert Netscape bookmarks into a Yahoo-like website
 
@@ -15,7 +15,7 @@ WANTLIB=		c m stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bk2site/}
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-standard-datadir
 MAKE_FLAGS=		CXXFLAGS="${CXXFLAGS}"

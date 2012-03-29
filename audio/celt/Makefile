@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/05 14:33:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	ultra-low delay audio codec
 
@@ -33,6 +33,6 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV =		CPPFLAGS="-DUSE_SNDIO"
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 .include <bsd.port.mk>

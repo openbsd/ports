@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/17 10:29:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		module that embeds Ruby into Apache
 
@@ -31,7 +31,7 @@ CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs
 
 NO_REGRESS=		Yes
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 INSTALL_TARGET=		install-ruby
 
 SUBST_VARS=		PKGNAME

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	graphically improved game of yore
 
@@ -67,7 +67,7 @@ FULLPKGNAME =	heroes-${VERSION}
 CONFIGURE_ARGS += --without-ggi
 .endif
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/tools
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

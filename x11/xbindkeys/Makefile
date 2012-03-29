@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT =	bind keys or mouse buttons to shell commands under X11
 DISTNAME =	xbindkeys-1.8.4
@@ -20,7 +20,7 @@ MASTER_SITES =	http://www.nongnu.org/xbindkeys/
 
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
-SEPARATE_BUILD =concurrent
+SEPARATE_BUILD =Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-guile

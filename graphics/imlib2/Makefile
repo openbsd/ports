@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	image manipulation library
 
@@ -27,7 +27,7 @@ LIB_DEPENDS+=	graphics/jpeg \
 		audio/libid3tag
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 .if ${MACHINE_ARCH} == "i386"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT=	dump frames from mpeg-1 movies
 
@@ -24,7 +24,7 @@ WANTLIB =	SDL c pthread smpeg>=1.3
 
 USE_GROFF =	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

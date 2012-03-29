@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/16 21:13:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-history
 

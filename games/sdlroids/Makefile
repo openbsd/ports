@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	essentially an Asteroids clone
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	devel/sdl-mixer
 
 USE_GROFF =	Yes
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 
 post-extract:

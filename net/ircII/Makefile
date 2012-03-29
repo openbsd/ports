@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	Internet Relay Chat client
 
@@ -28,7 +28,7 @@ SUBST_VARS=	VERSION
 FAKE_FLAGS=	INSTALL_IRC_NAME="ircII" \
 		INSTALL="${INSTALL_PROGRAM}" INSTALL_DATA="${INSTALL_DATA}"
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--exec-prefix="${PREFIX}"
 CONFIGURE_ENV+=	IRCLIB='$$(DESTDIR)${PREFIX}/share/ircII'

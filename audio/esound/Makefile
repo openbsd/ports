@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/10/18 08:44:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	sound library for Enlightenment
 
@@ -24,7 +24,7 @@ WANTLIB=	audiofile c m sndio wrap
 
 USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION=2.61
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

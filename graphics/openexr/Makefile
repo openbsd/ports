@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -35,7 +35,7 @@ LIB_DEPENDS-tools=	${LIB_DEPENDS-main} graphics/openexr
 PKG_ARCH-doc=		*
 
 # Regress unhappy with separate build
-#SEPARATE_BUILD=		simple
+#SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=	gnu
 USE_GMAKE=		Yes

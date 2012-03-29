@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	GNUstep/OPENSTEP property lists compatibility library
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static

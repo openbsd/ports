@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/01/16 19:53:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	library for communicating with an icecast server
 
@@ -28,7 +28,7 @@ FAKE_FLAGS=	docdir='${PREFIX}/share/examples/libshout'
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 
 .include <bsd.port.mk>

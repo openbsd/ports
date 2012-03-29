@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/15 17:57:59 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT-main =	Tcl/Tk snack sound toolkit
 COMMENT-python = Python bindings for Tcl/Tk snack sound toolkit
@@ -36,7 +36,7 @@ RUN_DEPENDS-main =	${MODTK_RUN_DEPENDS}
 RUN_DEPENDS-python =	${BASE_PKGPATH} \
 			lang/python/${MODPY_VERSION},-tkinter
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_SCRIPT =	unix/configure
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \

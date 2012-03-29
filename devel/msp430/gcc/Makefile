@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/11 18:38:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -31,7 +31,7 @@ NO_REGRESS=		Yes
 
 LANGS=			c,c++
 
-SEPARATE_BUILD= 	concurrent
+SEPARATE_BUILD= 	Yes
 
 SUBST_VARS+=		VERSION
 

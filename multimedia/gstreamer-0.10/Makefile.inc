@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2012/01/25 14:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2012/03/29 13:38:40 sthen Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -17,7 +17,7 @@ EXTRACT_SUFX ?=		.tar.bz2
 VERSION =		0.10
 SUBST_VARS +=		VERSION
 SHARED_ONLY =		Yes
-SEPARATE_BUILD ?=	simple
+SEPARATE_BUILD ?=	Yes
 P =			multimedia/gstreamer-${VERSION}
 
 USE_GMAKE ?=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/03/09 10:58:36 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:30 sthen Exp $
 
 VERSION=		2010-07-27
 PKGNAME=		xemacs-sumo-21.${VERSION:S/-//g}
@@ -23,7 +23,7 @@ MASTER_SITES= 	http://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/packages/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 MULE=		mule
 SUBST_VARS=	MULE

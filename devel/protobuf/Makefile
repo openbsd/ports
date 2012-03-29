@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/11 05:25:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT =		c++ protocol buffers
 
@@ -26,7 +26,7 @@ MASTER_SITES =		http://protobuf.googlecode.com/files/
 
 REGRESS_DEPENDS =	devel/gtest
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu

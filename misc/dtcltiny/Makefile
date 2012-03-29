@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT =		small SRCP client to control digital model trains
 
@@ -20,7 +20,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=dtcltiny/}
 MODULES =		x11/qt3
 WANTLIB += 		ICE SM X11 Xext c jpeg m pthread stdc++ z
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS=-L${LOCALBASE}/lib CFLAGS=-I${LOCALBASE}/include \

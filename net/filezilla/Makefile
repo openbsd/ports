@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/01/19 15:41:13 giovanni Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -43,7 +43,7 @@ BUILD_DEPENDS=	devel/cppunit \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils
 
-SEPARATE_BUILD= concurrent
+SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-dbus \
 		--with-tinyxml=builtin \

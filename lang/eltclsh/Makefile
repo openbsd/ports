@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/01/05 18:40:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
@@ -22,7 +22,7 @@ MODULES +=	x11/tk
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c edit expat fontconfig
 WANTLIB += freetype m pthread-stubs termcap xcb z
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR}

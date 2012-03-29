@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/04 09:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT =	C++ unit test framework
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://googletest.googlecode.com/files/
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 
 WANTLIB =		m stdc++
 

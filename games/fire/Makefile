@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	organic fireworks demo
 
@@ -21,7 +21,7 @@ WANTLIB=		X11 Xext c m pthread pthread-stubs usbhid xcb SDL
 LIB_DEPENDS=	devel/sdl
 
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 post-install:

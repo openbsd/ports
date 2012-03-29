@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/13 09:57:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	capture network traffic, display streams sorted by bandwidth
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=	devel/glib2
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS}"
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	The Dungeons of Moria
 
@@ -24,7 +24,7 @@ NO_REGRESS=	Yes
 WRKDIST=	${WRKDIR}/umoria
 WRKSRC=		${WRKDIST}
 
-SEPARATE_BUILD= concurrent
+SEPARATE_BUILD= Yes
 MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-build:

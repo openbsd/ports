@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/07/17 08:34:46 matthieu Exp $
+# $OpenBSD: Makefile,v 1.24 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT =	X11 Cursors themes generator
 DIST_VERS =	1.0.4
@@ -24,7 +24,7 @@ MASTER_SITES =	ftp://ftp.x.org/pub/individual/app/ \
 
 WANTLIB =		Xcursor X11 c m png z
 
-SEPARATE_BUILD = 	concurrent
+SEPARATE_BUILD = 	Yes
 USE_GROFF =		Yes
 AUTOCONF_VERSION =	2.65
 CONFIGURE_STYLE =	gnu

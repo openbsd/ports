@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	GNU versions of the diff utilities
 
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=diffutils/}
 
 MODULES=	devel/gettext
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

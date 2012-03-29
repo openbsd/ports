@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/04/17 18:13:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
@@ -31,7 +31,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 
 REGRESS_FLAGS =		HOME=${TESTHOME}
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader old
 

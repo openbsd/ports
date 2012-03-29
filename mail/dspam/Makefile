@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=	anti-spam filter
 
@@ -24,7 +24,7 @@ WANTLIB=		c m
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 CONFIGURE_ARGS+=	--with-dspam-home=/var/dspam \
 			--with-dspam-home-owner=_dspam \
 			--with-dspam-home-group=_dspam \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/29 13:38:13 sthen Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -38,7 +38,7 @@ LIB_DEPENDS+=	devel/libelf
 WANTLIB +=	elf
 .endif
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 
 LIB_DEPENDS+=		x11/openmotif
 

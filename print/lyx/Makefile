@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -30,7 +30,7 @@ WANTLIB += QtGui>=8 X11 aspell c m pthread stdc++ z
 WANTLIB += boost_filesystem-mt>=1 boost_iostreams-mt>=1
 WANTLIB += boost_regex-mt>=1 boost_signals-mt>=1
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

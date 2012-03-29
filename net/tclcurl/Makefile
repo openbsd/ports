@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/30 07:23:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -27,7 +27,7 @@ RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 FAKE_FLAGS =	PKG_DIR=tclcurl \
 		INSTALL_LIBRARY='${INSTALL_DATA}'
 
-SEPARATE_BUILD =concurrent
+SEPARATE_BUILD =Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2012/03/22 13:00:42 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.85 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	cross-platform multimedia library
 
@@ -34,7 +34,7 @@ FLAVOR?=
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/test
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \

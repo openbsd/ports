@@ -1,4 +1,4 @@
-# $OpenBSD: cmake.port.mk,v 1.11 2011/11/08 09:30:52 dcoppa Exp $
+# $OpenBSD: cmake.port.mk,v 1.12 2012/03/29 13:38:13 sthen Exp $
 
 BUILD_DEPENDS+=	devel/cmake>=2.8.0
 
@@ -31,7 +31,7 @@ MODCMAKE_configure=	cd ${WRKBUILD} && ${_SYSTRACE_CMD} ${SETENV} \
 		-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY:Bool=True \
 			${CONFIGURE_ARGS} ${WRKSRC}
 
-SEPARATE_BUILD ?=	simple
+SEPARATE_BUILD ?=	Yes
 
 REGRESS_TARGET ?=	test
 

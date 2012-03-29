@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/07/27 18:21:48 kili Exp $
+# $OpenBSD: Makefile,v 1.43 2012/03/29 13:38:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.6 1998/06/21 02:42:33 jseger Exp $
 
 COMMENT-main=	free and portable TrueType font rendering engine
@@ -27,7 +27,7 @@ WANTLIB=		m
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ARGS+= --enable-static --disable-nls

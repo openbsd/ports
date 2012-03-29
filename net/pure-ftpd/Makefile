@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/12/08 08:03:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/29 13:38:49 sthen Exp $
 
 COMMENT=	small, easy to set up, fast and very secure FTP server
 
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ssl
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-everything \
 		 --with-paranoidmsg \

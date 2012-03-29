@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT=		wm-dockapp; mail notifier
 
@@ -19,7 +19,7 @@ WANTLIB=		X11 Xext Xpm Xt c pthread-stubs xcb PropList>=2
 RUN_DEPENDS=		x11/windowmaker
 LIB_DEPENDS=		devel/libproplist
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 CONFIGURE_STYLE=	gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/01/13 00:05:15 gsoares Exp $
+# $OpenBSD: Makefile,v 1.32 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
@@ -26,7 +26,7 @@ LIB_DEPENDS =		devel/libidn
 
 MODULES =		devel/gettext
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-libgsasl=no \
 			--with-libidn=yes \

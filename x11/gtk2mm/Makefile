@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	devel/atk2mm \
 		devel/pangomm>=2.27 \
 		x11/gtk+2
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-static \

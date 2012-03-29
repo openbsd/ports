@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/03 07:40:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/29 13:38:40 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS =		${MODTK_BUILD_DEPENDS} \
 RUN_DEPENDS =		${MODTK_RUN_DEPENDS}
 REGRESS_DEPENDS =	${PKGPATH}
 
-SEPARATE_BUILD =	simple
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS= --libdir=${MODTCL_TCLDIR} \
 		--with-tcl=${MODTCL_LIBDIR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	anti-grain geometry graphics library
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
 		devel/libtool \
 		devel/metaauto
 
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=automake
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/16 22:17:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 13:38:39 sthen Exp $
 
 COMMENT =		library for rasterizing 2-D vector graphics
 
@@ -20,7 +20,7 @@ WANTLIB +=		m
 
 MASTER_SITES =		${MASTER_SITE_GNU:=libxmi/}
 
-SEPARATE_BUILD =	concurrent
+SEPARATE_BUILD =	Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}

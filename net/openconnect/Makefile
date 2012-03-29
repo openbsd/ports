@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/16 22:58:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=		textproc/libxml \
 			net/libproxy>=0.4.6p7
 FAKE_FLAGS=		pkgdatadir=${PREFIX}/share/doc/openconnect
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 

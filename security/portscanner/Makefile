@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:47 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/29 13:38:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.5 1999/01/26 22:19:07 billf Exp $
 
 COMMENT=	simple and easy to use TCP port scanner
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS=	Yes

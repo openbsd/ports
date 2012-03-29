@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/03/29 13:39:01 sthen Exp $
 
 COMMENT=	command-line program for managing X selection contents
 
@@ -18,7 +18,7 @@ WANTLIB=	X11 c
 
 MASTER_SITES=	http://www.vergenet.net/~conrad/software/xsel/download/
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	LDFLAGS="-L${X11BASE}/lib"

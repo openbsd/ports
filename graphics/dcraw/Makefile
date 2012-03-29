@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/06 11:42:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:31 sthen Exp $
 
 COMMENT =	digital camera RAW format conversion tool
 
@@ -21,7 +21,7 @@ LIB_DEPENDS =	graphics/jpeg \
 		graphics/lcms
 
 NO_REGRESS =	Yes
-SEPARATE_BUILD = simple
+SEPARATE_BUILD = Yes
 USE_GROFF =	Yes
 
 WRKDIST =	${WRKDIR}/dcraw

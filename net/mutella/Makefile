@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:56:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:48 sthen Exp $
 
 COMMENT=		gnutella client with an easy to use interface
 
@@ -17,7 +17,7 @@ WANTLIB=		c curses m pthread readline stdc++ z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mutella/}
 
-SEPARATE_BUILD=		simple
+SEPARATE_BUILD=		Yes
 
 CONFIGURE_STYLE=	gnu
 USE_GROFF =		Yes

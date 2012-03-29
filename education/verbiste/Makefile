@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/03 16:49:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	French and Italian conjugation system
 
@@ -33,7 +33,7 @@ WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
 
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
-SEPARATE_BUILD=	simple
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
 		--with-gtk-app

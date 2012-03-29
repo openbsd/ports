@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/29 13:39:00 sthen Exp $
 
 COMMENT=		SSH monitoring
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX=		.tgz
 USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
-SEPARATE_BUILD=		concurrent
+SEPARATE_BUILD=		Yes
 
 DEFS=			-D"SSH_PATH=\"/usr/bin/ssh\"" -D"VER=\"${VERSION}\""
 

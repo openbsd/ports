@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/24 18:52:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	getopt(3)-like library with a number of enhancements
 
@@ -18,7 +18,7 @@ MODULES=	devel/gettext
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

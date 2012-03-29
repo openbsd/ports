@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/08 14:47:31 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/03/29 13:38:40 sthen Exp $
 
 COMMENT-main=	C routines for computing the Discrete Fourier Transform
 COMMENT-common=	common files for the fftw3 packages
@@ -28,7 +28,7 @@ MASTER_SITES=	ftp://ftp.fftw.org/pub/fftw/ \
 		http://fftw.mirror.fr/ \
 		ftp://ftp.fftw.org/pub/fftw/old/
 
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 
 MULTI_PACKAGES=	-main -common
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2012/01/21 07:53:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:30 sthen Exp $
 
 COMMENT=	MPEG video player library with sound support
 
@@ -25,7 +25,7 @@ MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl
 
 USE_LIBTOOL=	Yes
-SEPARATE_BUILD=	concurrent
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		 --disable-opengl-player \
