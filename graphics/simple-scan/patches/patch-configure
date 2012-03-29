@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2011/11/02 16:44:00 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.6 2012/03/29 06:42:00 ajacoutot Exp $
 
 No gudev under OpenBSD.
 
---- configure.orig	Mon Sep 12 05:32:13 2011
-+++ configure	Thu Sep 22 16:57:43 2011
-@@ -4799,7 +4799,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
+--- configure.orig	Sat Mar 17 02:44:57 2012
++++ configure	Fri Mar 23 22:12:11 2012
+@@ -4717,7 +4717,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -12,7 +12,7 @@ No gudev under OpenBSD.
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "
      gtk+-3.0
-@@ -4808,7 +4807,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
+@@ -4726,7 +4725,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -20,7 +20,7 @@ No gudev under OpenBSD.
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -4820,7 +4818,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
+@@ -4738,7 +4736,6 @@ if test -n "$SIMPLE_SCAN_CFLAGS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -28,7 +28,7 @@ No gudev under OpenBSD.
  " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
-@@ -4840,7 +4837,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
+@@ -4758,7 +4755,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -36,7 +36,7 @@ No gudev under OpenBSD.
  \""; } >&5
    ($PKG_CONFIG --exists --print-errors "
      gtk+-3.0
-@@ -4849,7 +4845,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
+@@ -4767,7 +4763,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -44,7 +44,7 @@ No gudev under OpenBSD.
  ") 2>&5
    ac_status=$?
    $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-@@ -4861,7 +4856,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
+@@ -4779,7 +4774,6 @@ if test -n "$SIMPLE_SCAN_LIBS"; then
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -52,7 +52,7 @@ No gudev under OpenBSD.
  " 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
-@@ -4890,7 +4884,6 @@ fi
+@@ -4808,7 +4802,6 @@ fi
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -60,7 +60,7 @@ No gudev under OpenBSD.
  " 2>&1`
          else
  	        SIMPLE_SCAN_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "
-@@ -4900,7 +4893,6 @@ fi
+@@ -4818,7 +4811,6 @@ fi
      zlib
      cairo
      gdk-pixbuf-2.0
@@ -68,7 +68,7 @@ No gudev under OpenBSD.
  " 2>&1`
          fi
  	# Put the nasty error message in config.log where it belongs
-@@ -4913,7 +4905,6 @@ fi
+@@ -4831,7 +4823,6 @@ fi
      zlib
      cairo
      gdk-pixbuf-2.0
