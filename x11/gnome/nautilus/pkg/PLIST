@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.36 2012/03/29 07:02:18 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -16,7 +16,6 @@ include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
-lib/girepository-1.0/
 lib/girepository-1.0/Nautilus-3.0.typelib
 lib/libnautilus-extension.a
 lib/libnautilus-extension.la
@@ -31,8 +30,7 @@ lib/pkgconfig/libnautilus-extension.pc
 share/GConf/gsettings/nautilus.convert
 share/applications/nautilus-autorun-software.desktop
 share/applications/nautilus.desktop
-share/dbus-1/
-share/dbus-1/services/
+share/dbus-1/services/org.freedesktop.FileManager1.service
 share/dbus-1/services/org.gnome.Nautilus.service
 share/examples/nautilus/
 share/examples/nautilus/xdg/
@@ -41,7 +39,6 @@ share/examples/nautilus/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/nautilus/xdg/autostart/nautilus-autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/nautilus-autostart.desktop
-share/gir-1.0/
 share/gir-1.0/Nautilus-3.0.gir
 share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 share/gtk-doc/html/libnautilus-extension/
@@ -160,6 +157,9 @@ share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
 share/locale/mr/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
+share/locale/my/
+share/locale/my/LC_MESSAGES/
+share/locale/my/LC_MESSAGES/nautilus.mo
 share/locale/nb/LC_MESSAGES/nautilus.mo
 share/locale/nds/LC_MESSAGES/nautilus.mo
 share/locale/ne/LC_MESSAGES/nautilus.mo
@@ -229,18 +229,6 @@ share/nautilus/icons/hicolor/48x48/emblems/
 share/nautilus/icons/hicolor/48x48/emblems/emblem-note.png
 share/nautilus/nautilus-extras.placeholder
 share/nautilus/nautilus-suggested.placeholder
-share/nautilus/ui/
-share/nautilus/ui/nautilus-bookmarks-window.ui
-share/nautilus/ui/nautilus-desktop-icon-view-ui.xml
-share/nautilus/ui/nautilus-directory-view-ui.xml
-share/nautilus/ui/nautilus-file-management-properties.ui
-share/nautilus/ui/nautilus-icon-view-ui.xml
-share/nautilus/ui/nautilus-list-view-ui.xml
-share/nautilus/ui/nautilus-shell-ui.xml
-share/nautilus/ui/nautilus-toolbar-ui.xml
-share/pixmaps/nautilus/
-share/pixmaps/nautilus/knob.png
-share/pixmaps/nautilus/thumbnail_frame.png
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
