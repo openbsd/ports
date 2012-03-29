@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.71 2012/03/20 16:36:16 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.72 2012/03/29 07:37:53 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -287,7 +287,8 @@ my $stem_extensions = {
 	'gnuls' => 'coreutils',
 	'sh-utils' => 'coreutils',
 	'fileutils' => 'coreutils',
-	'textutils' => 'coreutils'
+	'textutils' => 'coreutils',
+	'gnome-utils' => 'gnome-search-tool'
 };
 
 # ->is_base_system($handle, $state):
