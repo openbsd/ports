@@ -1,12 +1,16 @@
-$OpenBSD: patch-src_state_c,v 1.3 2009/01/26 18:17:25 jasper Exp $
---- src/state.c.orig	Mon Nov  3 22:19:54 2003
-+++ src/state.c	Sun Oct 12 17:01:58 2008
-@@ -754,7 +754,7 @@ static void state_valueE(struct parser_context *ctx,
- 	}
-     }
+$OpenBSD: patch-src_state_c,v 1.4 2012/03/29 12:43:22 ajacoutot Exp $
+
+#error "Only <glib.h> can be included directly."
+
+--- src/state.c.orig	Wed Jan  9 17:35:12 2008
++++ src/state.c	Thu Mar 29 14:00:06 2012
+@@ -35,8 +35,8 @@
+ #include <fcntl.h>
+ #include <errno.h>
  
--    if (n != NULL && v->type != 0) {
-+    if (n != NULL && v != NULL && v->type != 0) {
- 	char *ep;
++#include <glib.h>
+ #include <glib/gi18n.h>
+-#include <glib/gmessages.h>
+ #include <gtk/gtk.h>
  
- 	assert(v);
+ #include "configfile.h"

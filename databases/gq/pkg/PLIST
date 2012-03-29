@@ -1,14 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/21 21:16:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/03/29 12:43:22 ajacoutot Exp $
 @bin bin/gq
 share/applications/gq.desktop
+share/gnome/
+share/gnome/help/
+share/gnome/help/gq-manual/
+share/gnome/help/gq-manual/C/
+share/gnome/help/gq-manual/C/gq-manual.xml
+share/gnome/help/gq-manual/C/legal.xml
+share/gnome/help/gq-manual/de/
+share/gnome/help/gq-manual/de/gq-manual.xml
+share/gnome/help/gq-manual/de/legal.xml
+share/gq/
+share/gq/gq.glade
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/ldap-group.png
+share/icons/hicolor/16x16/apps/ldap-organization.png
+share/icons/hicolor/16x16/apps/ldap-person.png
+share/locale/cs/LC_MESSAGES/gq.mo
+share/locale/de/LC_MESSAGES/gq.mo
+share/locale/ja/LC_MESSAGES/gq.mo
+share/locale/zh_CN/LC_MESSAGES/gq.mo
+share/mime/
+share/mime/packages/
+share/mime/packages/gq-ldif.xml
+share/omf/
+share/omf/gq-manual/
+share/omf/gq-manual/gq-manual-C.omf
+share/omf/gq-manual/gq-manual-de.omf
 share/pixmaps/
 share/pixmaps/gq/
 share/pixmaps/gq/bomb.xpm
+share/pixmaps/gq/entry.png
+share/pixmaps/gq/gq.xpm
 share/pixmaps/gq/hide.xpm
-share/pixmaps/gq/line.xpm
-share/pixmaps/gq/logo.xpm
 share/pixmaps/gq/new.xpm
-share/pixmaps/gq/textarea.xpm
+share/pixmaps/gq/textview.png
 share/pixmaps/gq/warning.xpm
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
