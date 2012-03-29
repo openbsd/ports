@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2011/10/13 14:08:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2012/03/29 06:52:10 ajacoutot Exp $
 @pkgpath x11/gnome/metacity,gtk2
 @bin bin/metacity
 @bin bin/metacity-message
@@ -21,16 +21,16 @@ lib/pkgconfig/libmetacity-private.pc
 @man man/man1/metacity-theme-viewer.1
 @man man/man1/metacity-window-demo.1
 @man man/man1/metacity.1
+share/GConf/gsettings/metacity-schemas.convert
 share/applications/metacity.desktop
 share/doc/metacity/
 share/doc/metacity/README
 share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
+share/glib-2.0/schemas/org.gnome.metacity.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
-share/gnome-control-center/keybindings/50-metacity-launchers.xml
 share/gnome-control-center/keybindings/50-metacity-navigation.xml
-share/gnome-control-center/keybindings/50-metacity-screenshot.xml
 share/gnome-control-center/keybindings/50-metacity-system.xml
 share/gnome-control-center/keybindings/50-metacity-windows.xml
 share/gnome/help/creating-metacity-themes/
@@ -143,10 +143,6 @@ share/locale/zh_TW/LC_MESSAGES/metacity.mo
 share/metacity/
 share/metacity/icons/
 share/metacity/icons/metacity-window-demo.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/metacity.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/themes/AgingGorilla/
 share/themes/AgingGorilla/metacity-1/
 share/themes/AgingGorilla/metacity-1/active-button.png
@@ -262,5 +258,7 @@ share/themes/Simple/metacity-1/maximize.png
 share/themes/Simple/metacity-1/maximized.png
 share/themes/Simple/metacity-1/metacity-theme-1.xml
 share/themes/Simple/metacity-1/minimize.png
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
