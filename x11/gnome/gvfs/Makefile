@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2012/03/29 06:34:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2012/03/29 07:49:23 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.11.5
+GNOME_VERSION=	1.12.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -49,9 +49,6 @@ RUN_DEPENDS-smb= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 		${BASE_PKGPATH},-main \
 		net/samba
-
-AUTOCONF_VERSION=2.68
-CONFIGURE_STYLE=autoconf
 
 CONFIGURE_ARGS=	--disable-cdda \
 		--disable-bluray \
