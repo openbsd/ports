@@ -1,14 +1,14 @@
-$OpenBSD: patch-libproxy_cmake_modules_cmk,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
---- libproxy/cmake/modules.cmk.orig	Tue Mar 22 11:03:08 2011
-+++ libproxy/cmake/modules.cmk	Tue Mar 22 11:05:20 2011
-@@ -17,10 +17,10 @@ include(cmake/modules/pacrunner_mozjs.cmk)
+$OpenBSD: patch-libproxy_cmake_modules_cmk,v 1.2 2012/03/29 14:58:24 ajacoutot Exp $
+--- libproxy/cmake/modules.cmk.orig	Mon Jun  6 23:44:37 2011
++++ libproxy/cmake/modules.cmk	Thu Mar 29 11:30:44 2012
+@@ -19,10 +19,10 @@ include(cmake/modules/pacrunner_natus.cmk)
  include(cmake/modules/pacrunner_webkit.cmk)
  
  # Build the pacrunner into libproxy unless we are building for multiple engines
 -set(BIPR 1)
--if(MOZJS_FOUND AND WEBKIT_FOUND)
+-if((MOZJS_FOUND AND WEBKIT_FOUND) OR (MOZJS_FOUND AND NATUS_FOUND) OR (WEBKIT_FOUND AND NATUS_FOUND))
 +#set(BIPR 1)
-+#if(MOZJS_FOUND AND WEBKIT_FOUND)
++#if((MOZJS_FOUND AND WEBKIT_FOUND) OR (MOZJS_FOUND AND NATUS_FOUND) OR (WEBKIT_FOUND AND NATUS_FOUND))
    set(BIPR 0)
 -endif()
 +#endif()

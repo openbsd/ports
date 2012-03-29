@@ -1,10 +1,10 @@
-$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.2 2012/03/29 14:58:24 ajacoutot Exp $
 
 error: '::wcstof' has not been declared
 
---- libproxy/CMakeLists.txt.orig	Tue Mar 22 09:13:30 2011
-+++ libproxy/CMakeLists.txt	Tue Mar 22 09:13:36 2011
-@@ -6,7 +6,7 @@ set_project_version(0 4 6)
+--- libproxy/CMakeLists.txt.orig	Mon Jun  6 23:44:37 2011
++++ libproxy/CMakeLists.txt	Thu Mar 29 11:29:08 2012
+@@ -6,7 +6,7 @@ set_project_version(0 4 7)
  if (WIN32)
    add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
  else(WIN32)
