@@ -1,6 +1,6 @@
-$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.3 2010/05/05 17:03:19 giovanni Exp $
+$OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.4 2012/03/29 09:30:05 giovanni Exp $
 --- usr/bin/mysql-zrm-backup.orig	Thu Feb  4 01:19:25 2010
-+++ usr/bin/mysql-zrm-backup	Wed May  5 12:11:16 2010
++++ usr/bin/mysql-zrm-backup	Thu Mar 29 11:05:57 2012
 @@ -40,7 +40,7 @@ $SIG{'TERM'} = sub { $abort_flag = 1; };
  $SIG{'PIPE'} = sub { &printWarning( "Communication pipe broke. Continuing\n" ); };
  
@@ -10,12 +10,14 @@ $OpenBSD: patch-usr_bin_mysql-zrm-backup,v 1.3 2010/05/05 17:03:19 giovanni Exp 
  
  
  my $MAILCMD="";
-@@ -1889,7 +1889,7 @@ sub totalSize()
+@@ -1889,8 +1889,9 @@ sub totalSize()
  				    $inputs{"synchronous-checksum"} == 1 ){
  					my $file = $File::Find::fullname;
  					if( -f $file ){
 -						my $x = $MD5SUM." -b "."\"$file\"";
-+						my $x = $MD5SUM." -bq "."\"$file\"";
++						my $x = $MD5SUM." -q "."\"$file\"";
          					$x = &execCmdAndGetOutput($x);
++						chomp($x);
  						if( !defined $x ){
  							&printError( "Could not get md5 checksum\n" );
+ 						}else{
