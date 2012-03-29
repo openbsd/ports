@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_org_gnome_gtranslator_gschema_xml_in_in,v 1.1 2012/03/29 13:35:44 ajacoutot Exp $
+$OpenBSD: patch-data_org_gnome_gtranslator_gschema_xml_in_in,v 1.2 2012/03/29 13:39:16 ajacoutot Exp $
 
-Warning: undefined reference to <schema id='org.gnome.gtranslator.preferences.tm'/>
+https://bugzilla.gnome.org/show_bug.cgi?id=673076
 
 --- data/org.gnome.gtranslator.gschema.xml.in.in.orig	Thu Mar 29 15:29:50 2012
 +++ data/org.gnome.gtranslator.gschema.xml.in.in	Thu Mar 29 15:30:05 2012
