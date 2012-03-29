@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/09/26 06:20:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/03/29 06:46:31 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-thumbnail.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-desktop-utils.h
+include/gnome-desktop-3.0/libgnome-desktop/gnome-pnp-ids.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-config.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr-labeler.h
 include/gnome-desktop-3.0/libgnome-desktop/gnome-rr.h
@@ -35,6 +36,8 @@ share/gnome/help/fdl/eu/
 share/gnome/help/fdl/eu/fdl.xml
 share/gnome/help/fdl/fr/
 share/gnome/help/fdl/fr/fdl.xml
+share/gnome/help/fdl/gl/
+share/gnome/help/fdl/gl/fdl.xml
 share/gnome/help/fdl/hu/
 share/gnome/help/fdl/hu/fdl.xml
 share/gnome/help/fdl/ko/
@@ -86,6 +89,10 @@ share/gnome/help/gpl/pa/
 share/gnome/help/gpl/pa/gpl.xml
 share/gnome/help/gpl/sl/
 share/gnome/help/gpl/sl/gpl.xml
+share/gnome/help/gpl/sr/
+share/gnome/help/gpl/sr/gpl.xml
+share/gnome/help/gpl/sr@latin/
+share/gnome/help/gpl/sr@latin/gpl.xml
 share/gnome/help/gpl/sv/
 share/gnome/help/gpl/sv/gpl.xml
 share/gnome/help/gpl/uk/
@@ -142,7 +149,6 @@ share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr-labeler.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr-mode.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr-output.html
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3-gnome-rr-screen.html
-share/gtk-doc/html/gnome-desktop3/gnome-desktop3.devhelp
 share/gtk-doc/html/gnome-desktop3/gnome-desktop3.devhelp2
 share/gtk-doc/html/gnome-desktop3/home.png
 share/gtk-doc/html/gnome-desktop3/index.html
@@ -215,6 +221,7 @@ share/locale/ja/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ka/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/kg/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/kk/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/km/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/kn/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ko/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/ku/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -287,6 +294,7 @@ share/omf/fdl/fdl-el.omf
 share/omf/fdl/fdl-es.omf
 share/omf/fdl/fdl-eu.omf
 share/omf/fdl/fdl-fr.omf
+share/omf/fdl/fdl-gl.omf
 share/omf/fdl/fdl-hu.omf
 share/omf/fdl/fdl-ko.omf
 share/omf/fdl/fdl-oc.omf
@@ -313,6 +321,8 @@ share/omf/gpl/gpl-nds.omf
 share/omf/gpl/gpl-oc.omf
 share/omf/gpl/gpl-pa.omf
 share/omf/gpl/gpl-sl.omf
+share/omf/gpl/gpl-sr.omf
+share/omf/gpl/gpl-sr@latin.omf
 share/omf/gpl/gpl-sv.omf
 share/omf/gpl/gpl-uk.omf
 share/omf/gpl/gpl-vi.omf
