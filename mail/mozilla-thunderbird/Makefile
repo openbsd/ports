@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2012/03/16 21:35:25 landry Exp $
+# $OpenBSD: Makefile,v 1.146 2012/03/29 05:52:07 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,7 +8,7 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	11.0
+MOZILLA_VERSION =	11.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
