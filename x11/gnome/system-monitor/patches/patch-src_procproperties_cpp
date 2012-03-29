@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_procproperties_cpp,v 1.1 2012/03/29 07:14:28 ajacoutot Exp $
+--- src/procproperties.cpp.orig	Wed Mar 28 15:58:09 2012
++++ src/procproperties.cpp	Wed Mar 28 15:58:59 2012
+@@ -24,7 +24,9 @@
+ #include <glibtop/procmem.h>
+ #include <glibtop/procmap.h>
+ #include <glibtop/procstate.h>
++#ifdef __linux__
+ #include <asm/param.h>
++#endif
+ 
+ #include "procman.h"
+ #include "procproperties.h"
+@@ -120,7 +122,11 @@ fill_proc_properties (GtkWidget *tree, ProcInfo *info)
+         { N_("Shared Memory"), format_memsize(info->memshared)},
+         { N_("X Server Memory"), format_memsize(info->memxserver)},
+         { N_("CPU"), g_strdup_printf("%d%%", info->pcpu)},
++#ifdef __linux__
+         { N_("CPU Time"), g_strdup_printf(ngettext("%lld second", "%lld seconds", info->cpu_time/HZ), (unsigned long long)info->cpu_time/HZ) },
++#else
++        { N_("CPU Time"), g_strdup_printf(ngettext("%lld second", "%lld seconds", info->cpu_time), (unsigned long long)info->cpu_time) },
++#endif
+         { N_("Started"), g_strdup_printf("%s", ctime((const time_t*)(&info->start_time)))},
+         { N_("Nice"), g_strdup_printf("%d", info->nice)},
+         { N_("Priority"), g_strdup_printf("%s", procman::get_nice_level(info->nice)) },

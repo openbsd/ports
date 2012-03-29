@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2011/10/18 08:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2012/03/29 07:14:28 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
-GNOME_VERSION=	3.2.1
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	sysutils
 
@@ -37,5 +37,7 @@ LIB_DEPENDS=	devel/libgtop2>=2.28.3p23 \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= yelp
+
+CONFIGURE_ARGS=	--disable-systemd
 
 .include <bsd.port.mk>
