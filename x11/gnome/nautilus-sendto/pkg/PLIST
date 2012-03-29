@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/26 10:57:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/29 07:10:32 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
@@ -21,6 +21,7 @@ lib/pkgconfig/nautilus-sendto.pc
 share/GConf/gsettings/nautilus-sendto-convert
 share/glib-2.0/schemas/org.gnome.Nautilus.Sendto.gschema.xml
 share/gtk-doc/html/nautilus-sendto/
+share/gtk-doc/html/nautilus-sendto/api-index-deprecated.html
 share/gtk-doc/html/nautilus-sendto/api-index-full.html
 share/gtk-doc/html/nautilus-sendto/ch01.html
 share/gtk-doc/html/nautilus-sendto/home.png
