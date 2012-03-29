@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/12/03 19:38:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/03/29 07:19:46 ajacoutot Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -61,7 +61,6 @@ share/glade/pixmaps/atk.png
 share/glade/pixmaps/deprecated-16x16.png
 share/glade/pixmaps/deprecated-22x22.png
 share/glade/pixmaps/devhelp.png
-share/glade/pixmaps/drag-resize.png
 share/glade/pixmaps/fixed-bg.png
 share/glade/pixmaps/hicolor/
 share/glade/pixmaps/hicolor/16x16/
@@ -128,6 +127,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-iconfactory.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-iconview.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-image.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-imagemenuitem.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-infobar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-inputdialog.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-label.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-layout.png
@@ -166,6 +166,7 @@ share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinbutton.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-spinner.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusbar.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-statusicon.png
+share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-switch.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-table.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-tearoffmenuitem.png
 share/glade/pixmaps/hicolor/16x16/actions/widget-gtk-textbuffer.png
@@ -260,6 +261,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-iconfactory.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-iconview.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-image.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-imagemenuitem.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-infobar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-inputdialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-label.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-layout.png
@@ -298,6 +300,7 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinbutton.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-spinner.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusbar.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-statusicon.png
+share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-switch.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-table.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-tearoffmenuitem.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-textbuffer.png
@@ -330,7 +333,6 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-window.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-windowgroup.png
 share/glade/pixmaps/placeholder.png
 share/glade/pixmaps/plus.png
-share/glade/pixmaps/selector.png
 share/gnome/
 share/gnome/help/
 share/gnome/help/glade/
@@ -344,6 +346,11 @@ share/gnome/help/glade/bg/figures/
 share/gnome/help/glade/bg/figures/main-window.png
 share/gnome/help/glade/bg/glade.xml
 share/gnome/help/glade/bg/legal.xml
+share/gnome/help/glade/ca/
+share/gnome/help/glade/ca/figures/
+share/gnome/help/glade/ca/figures/main-window.png
+share/gnome/help/glade/ca/glade.xml
+share/gnome/help/glade/ca/legal.xml
 share/gnome/help/glade/cs/
 share/gnome/help/glade/cs/figures/
 share/gnome/help/glade/cs/figures/main-window.png
@@ -379,6 +386,11 @@ share/gnome/help/glade/fr/figures/
 share/gnome/help/glade/fr/figures/main-window.png
 share/gnome/help/glade/fr/glade.xml
 share/gnome/help/glade/fr/legal.xml
+share/gnome/help/glade/gl/
+share/gnome/help/glade/gl/figures/
+share/gnome/help/glade/gl/figures/main-window.png
+share/gnome/help/glade/gl/glade.xml
+share/gnome/help/glade/gl/legal.xml
 share/gnome/help/glade/hi/
 share/gnome/help/glade/hi/figures/
 share/gnome/help/glade/hi/figures/main-window.png
@@ -505,6 +517,7 @@ share/locale/hy/LC_MESSAGES/glade.mo
 share/locale/id/LC_MESSAGES/glade.mo
 share/locale/it/LC_MESSAGES/glade.mo
 share/locale/ja/LC_MESSAGES/glade.mo
+share/locale/km/LC_MESSAGES/glade.mo
 share/locale/ko/LC_MESSAGES/glade.mo
 share/locale/lt/LC_MESSAGES/glade.mo
 share/locale/lv/LC_MESSAGES/glade.mo
@@ -545,6 +558,7 @@ share/omf/
 share/omf/glade/
 share/omf/glade/glade-C.omf
 share/omf/glade/glade-bg.omf
+share/omf/glade/glade-ca.omf
 share/omf/glade/glade-cs.omf
 share/omf/glade/glade-de.omf
 share/omf/glade/glade-el.omf
@@ -552,6 +566,7 @@ share/omf/glade/glade-en_GB.omf
 share/omf/glade/glade-es.omf
 share/omf/glade/glade-eu.omf
 share/omf/glade/glade-fr.omf
+share/omf/glade/glade-gl.omf
 share/omf/glade/glade-hi.omf
 share/omf/glade/glade-it.omf
 share/omf/glade/glade-ja.omf

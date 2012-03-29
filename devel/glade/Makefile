@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.44 2011/12/03 19:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/03/29 07:19:46 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
-GNOME_VERSION=	3.10.2
+GNOME_VERSION=	3.12.0
 GNOME_PROJECT= 	glade
-REVISION=	3
 
 CATEGORIES=	devel
 
-SHARED_LIBS +=  gladeui-2                 0.0 # 0.0
+SHARED_LIBS +=  gladeui-2                 1.0 # 0.0
 
 HOMEPAGE=	http://glade.gnome.org/
 
