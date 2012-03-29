@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2009/07/14 15:35:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 15:45:43 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
-DISTNAME=		openjpeg_v1_3
-PKGNAME=		openjpeg-1.3
+DISTNAME=		openjpeg-1.5.0
 
-SHARED_LIBS=		openjpeg	4.0
+SHARED_LIBS +=	openjpeg             5.0      # 6.0
 
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.openjpeg.org/
 
-MAINTAINER=		Todd T. Fries <todd@OpenBSD.org>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,15 +18,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${HOMEPAGE}
+WANTLIB += c m z
 
-MAKE_ENV=		LIBopenjpeg_VERSION=${LIBopenjpeg_VERSION}
-MAKE_FLAGS=		CC="${CC}" COMPILERFLAGS="${CFLAGS}"
-WRKDIST=		${WRKDIR}/${DISTNAME:S/openjpeg/OpenJPEG/}
+MASTER_SITES=		http://openjpeg.googlecode.com/files/
 
-NO_REGRESS=		Yes
+CONFIGURE_STYLE=	gnu
+SEPARATE_BUILD=		Yes
+USE_LIBTOOL=		Yes
 
-pre-patch:
-	cd ${WRKSRC}/libopenjpeg; perl -i -pe 's/\r$$//' `find . -type f`
+# static linked
+BUILD_DEPENDS=		graphics/lcms2 \
+			graphics/png \
+			graphics/tiff
+
+post-install:
+	cd ${PREFIX}/share/doc/ && mv openjpeg-* openjpeg
 
 .include <bsd.port.mk>

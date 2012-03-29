@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2012/03/29 15:45:43 sthen Exp $
+--- configure.orig	Thu Mar 29 15:00:02 2012
++++ configure	Thu Mar 29 15:00:05 2012
+@@ -15734,7 +15734,7 @@ else
+ 
+ 
+ CFLAGS_save="${CFLAGS}"
+-CFLAGS="${CFLAGS} -O3"
++CFLAGS="${CFLAGS}"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
