@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_winwidget_c,v 1.9 2012/03/29 12:29:10 dcoppa Exp $
+
+winwidget_allocate: memset winwid to zero
+(upstream git commit 82a976e0909e02ba8c25e4fd10d0e56a3e5c13ca)
+
+--- src/winwidget.c.orig	Thu Mar 29 14:20:29 2012
++++ src/winwidget.c	Thu Mar 29 14:21:00 2012
+@@ -42,6 +42,7 @@ static winwidget winwidget_allocate(void)
+ 	winwidget ret = NULL;
+ 
+ 	ret = emalloc(sizeof(_winwidget));
++	memset(ret, 0, sizeof(_winwidget));
+ 
+ 	ret->win = 0;
+ 	ret->w = 0;
