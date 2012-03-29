@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/02/27 19:41:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/03/29 07:37:16 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 @bin bin/shotwell-video-thumbnailer
@@ -171,7 +171,6 @@ share/shotwell/icons/crop-pivot-reticle.png
 share/shotwell/icons/crop.svg
 share/shotwell/icons/drag_nub.png
 share/shotwell/icons/enhance.png
-share/shotwell/icons/faces-tool.png
 share/shotwell/icons/filter-flagged.png
 share/shotwell/icons/filter-photos.png
 share/shotwell/icons/filter-raw.png
@@ -187,13 +186,11 @@ share/shotwell/icons/image-adjust.svg
 share/shotwell/icons/import-all.png
 share/shotwell/icons/import.svg
 share/shotwell/icons/make-primary.svg
-share/shotwell/icons/many-faces.png
 share/shotwell/icons/merge.svg
 share/shotwell/icons/multiple-events.png
 share/shotwell/icons/multiple-tags.png
 share/shotwell/icons/noninterpretable-video.png
 share/shotwell/icons/one-event.png
-share/shotwell/icons/one-face.png
 share/shotwell/icons/one-star-filter-plus.svg
 share/shotwell/icons/one-star.svg
 share/shotwell/icons/one-tag.png
@@ -223,7 +220,6 @@ share/shotwell/ui/collection.ui
 share/shotwell/ui/direct.ui
 share/shotwell/ui/event.ui
 share/shotwell/ui/events_directory.ui
-share/shotwell/ui/faces.ui
 share/shotwell/ui/fullscreen.ui
 share/shotwell/ui/import.ui
 share/shotwell/ui/import_queue.ui
