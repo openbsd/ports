@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/15 17:11:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/29 06:59:13 ajacoutot Exp $
 include/evolution-data-server-${EVO_VERSION}/ews/
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-connection.h
 include/evolution-data-server-${EVO_VERSION}/ews/e-ews-folder.h
@@ -24,7 +24,16 @@ lib/evolution/${EVO_VERSION}/plugins/org-gnome-exchange-ews.eplug
 lib/liblzx.la
 @lib lib/liblzx.so.${LIBlzx_VERSION}
 lib/pkgconfig/libeews-1.2.pc
+share/locale/cs/LC_MESSAGES/evolution-ews.mo
+share/locale/da/LC_MESSAGES/evolution-ews.mo
 share/locale/de/LC_MESSAGES/evolution-ews.mo
 share/locale/es/LC_MESSAGES/evolution-ews.mo
+share/locale/hu/LC_MESSAGES/evolution-ews.mo
+share/locale/nb/LC_MESSAGES/evolution-ews.mo
 share/locale/pl/LC_MESSAGES/evolution-ews.mo
+share/locale/pt_BR/LC_MESSAGES/evolution-ews.mo
 share/locale/sl/LC_MESSAGES/evolution-ews.mo
+share/locale/sr/LC_MESSAGES/evolution-ews.mo
+share/locale/sr@latin/LC_MESSAGES/evolution-ews.mo
+share/locale/sv/LC_MESSAGES/evolution-ews.mo
+share/locale/zh_CN/LC_MESSAGES/evolution-ews.mo
