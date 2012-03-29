@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/09/26 13:05:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/03/29 06:42:45 ajacoutot Exp $
 @pkgpath x11/gnome/gucharmap,gtk2
 bin/charmap
 bin/gnome-character-map
@@ -24,6 +24,8 @@ lib/libgucharmap_2_90.la
 lib/pkgconfig/gucharmap-2.90.pc
 share/applications/gucharmap.desktop
 share/gir-1.0/Gucharmap-2.90.gir
+share/glib-2.0/schemas/org.gnome.Charmap.enums.xml
+share/glib-2.0/schemas/org.gnome.Charmap.gschema.xml
 share/gnome/
 share/gnome/help/
 share/gnome/help/gucharmap/
@@ -230,9 +232,7 @@ share/omf/gucharmap/gucharmap-sl.omf
 share/omf/gucharmap/gucharmap-sv.omf
 share/omf/gucharmap/gucharmap-vi.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gucharmap.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
