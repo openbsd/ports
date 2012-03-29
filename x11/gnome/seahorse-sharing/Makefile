@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/03/29 07:16:43 ajacoutot Exp $
 
 COMMENT=	PGP public keys sharing via DNS-SD and HKP
 
 GNOME_PROJECT=	seahorse-sharing
-GNOME_VERSION=	3.2.1
-REVISION=	0
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	net security
 
