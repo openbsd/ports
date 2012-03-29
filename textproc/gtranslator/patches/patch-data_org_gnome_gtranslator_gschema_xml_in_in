@@ -1,6 +1,9 @@
-$OpenBSD: patch-data_org_gnome_gtranslator_gschema_xml_in_in,v 1.2 2012/03/29 13:39:16 ajacoutot Exp $
+$OpenBSD: patch-data_org_gnome_gtranslator_gschema_xml_in_in,v 1.3 2012/03/29 13:42:38 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=673076
+From 4b013aa90f04a336e09669bd5e05434c1fb7ac3f Mon Sep 17 00:00:00 2001
+From: Ignacio Casal Quinteiro <icq@gnome.org>
+Date: Thu, 29 Mar 2012 13:42:36 +0000
+Subject: Fix schema
 
 --- data/org.gnome.gtranslator.gschema.xml.in.in.orig	Thu Mar 29 15:29:50 2012
 +++ data/org.gnome.gtranslator.gschema.xml.in.in	Thu Mar 29 15:30:05 2012
