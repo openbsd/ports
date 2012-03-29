@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2011/11/11 15:51:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.173 2012/03/29 06:50:50 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -25,6 +25,7 @@
      SUBDIR += games
      SUBDIR += games-extra-data
      SUBDIR += gcalctool
+     SUBDIR += gcr
      SUBDIR += gdl
      SUBDIR += gdl1
      SUBDIR += gdm
