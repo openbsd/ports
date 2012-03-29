@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2012/03/08 14:14:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2012/03/29 07:28:05 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,13 +21,17 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
+REVISION-main=		0
+REVISION-evolution=	0
+REVISION-nautilus=	0
+
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
 # net/telepathy/folks
 # x11/gnome/grilo-plugins
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
-EVO_VERSION=	3.2
+EVO_VERSION=	3.4
 SUBST_VARS=	MAJ_V EVO_VERSION
 
 SHARED_LIBS +=  tracker-common       2.0      # 1400.0
@@ -67,20 +71,21 @@ WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
 WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
+WANTLIB-main += crypto curl idn lua quvi ssl
 
 WANTLIB-evolution += ${WANTLIB}
-WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
-WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
-WANTLIB-evolution += ICE SM asn1 atk-1.0 cairo cairo-gobject camel-1.2
-WANTLIB-evolution += camel-provider-1.2 com_err crypto db dbus-1 e2fs-uuid
-WANTLIB-evolution += ebackend-1.2 ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0
+WANTLIB-evolution += asn1 atk-1.0 cairo cairo-gobject camel-1.2
+WANTLIB-evolution += com_err crypto dbus-1 e2fs-uuid
+WANTLIB-evolution += ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0
 WANTLIB-evolution += enchant gailutil-3 gconf-2 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB-evolution += gnome-desktop-3 gnome-keyring gpg-error gssapi gtk-3
+WANTLIB-evolution += gnome-keyring gpg-error gssapi gtk-3
 WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
 WANTLIB-evolution += icui18n icuuc krb5 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB-evolution += pangoft2-1.0 plc4 plds4 png smime3 softokn3 soup-2.4
 WANTLIB-evolution += sqlite3 ssl3 stdc++ tracker-miner-0.14 tracker-sparql-0.14
-WANTLIB-evolution += xml2 dbus-glib-1 pthread
+WANTLIB-evolution += xml2 dbus-glib-1 ICE SM db ebackend-1.2 gnome-desktop-3
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable
@@ -92,18 +97,18 @@ WANTLIB-evolution += lib/evolution/${EVO_VERSION}/gnomecanvas
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/menus
 
 WANTLIB-nautilus += ${WANTLIB}
-WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
-WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \
 			x11/gnome/totem-pl-parser \
 			print/poppler \
 			devel/libgsf \
-			devel/libgee \
+			devel/libgee06 \
 			net/librest \
 			sysutils/upower \
 			textproc/exempi \
@@ -115,7 +120,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
 			x11/gnome/tracker,-main \
-			mail/evolution>=3.0.0
+			mail/evolution,-main>=3.4.0
 
 RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
