@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2012/03/17 12:07:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/03/29 08:59:58 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
-DISTNAME=		telepathy-glib-0.16.5
+DISTNAME=		telepathy-glib-0.17.7
 
-SHARED_LIBS +=	telepathy-glib       10.0      # .63.3
+SHARED_LIBS +=	telepathy-glib       69.0      # 69.0
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy GLib}
 
@@ -26,11 +26,11 @@ LIB_DEPENDS=		x11/dbus-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
 			--enable-introspection \
 			--enable-vala-bindings
 #CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_prog_PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
