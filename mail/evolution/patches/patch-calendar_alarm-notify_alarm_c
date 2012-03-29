@@ -1,0 +1,24 @@
+$OpenBSD: patch-calendar_alarm-notify_alarm_c,v 1.1 2012/03/29 06:56:25 ajacoutot Exp $
+
+On OpenBSD, time_t is an int.
+
+--- calendar/alarm-notify/alarm.c.orig	Wed Mar 28 09:20:43 2012
++++ calendar/alarm-notify/alarm.c	Wed Mar 28 09:22:27 2012
+@@ -76,7 +76,7 @@ pop_alarm (void)
+ static gboolean
+ alarm_ready_cb (gpointer data)
+ {
+-	time_t now;
++	long int now;
+ 
+ 	if (!alarms) {
+ 		g_warning ("Alarm triggered, but no alarm present\n");
+@@ -131,7 +131,7 @@ setup_timeout (void)
+ {
+ 	const AlarmRecord *ar;
+ 	guint diff;
+-	time_t now;
++	long int now;
+ 
+ 	if (!alarms) {
+ 		g_warning ("No alarm to setup\n");

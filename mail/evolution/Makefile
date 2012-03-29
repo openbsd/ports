@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.155 2012/02/18 18:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.156 2012/03/29 06:56:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,10 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.2.3
+GNOME_VERSION=		3.4.0.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
@@ -29,14 +27,15 @@ HOMEPAGE=		http://www.gnome.org/projects/evolution/
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		6.0
+SO_VERSION=		7.0
 
 .for _lib in \
-gnomecanvas eutil evolution-a11y filter emiscwidgets etext \
-etimezonedialog etable menus eshell essmime evolution-smime emformat \
-eabutil evolution-addressbook-importers econtacteditor \
-econtactlisteditor composer evolution-mail evolution-mail-importers \
-evolution-calendar evolution-mail-settings evolution-calendar-importers
+gnomecanvas evolution-utils filter email-utils email-engine eutil \
+evolution-a11y emiscwidgets etext etimezonedialog etable menus eshell \
+essmime evolution-smime emformat eabutil \
+evolution-addressbook-importers econtacteditor econtactlisteditor \
+composer evolution-mail evolution-mail-importers \
+evolution-calendar-importers evolution-calendar evolution-mail-settings
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
@@ -49,7 +48,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
-WANTLIB += camel-provider-1.2 canberra com_err crypto
+WANTLIB += canberra com_err crypto
 WANTLIB += db dbus-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
 WANTLIB += edataserver-1.2 edataserverui-3.0 enchant
 WANTLIB += expat fontconfig freetype gailutil-3
@@ -70,6 +69,8 @@ WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += gstreamer-0.10 pst
 WANTLIB-plugins += lib/evolution/${R}/composer
 WANTLIB-plugins += lib/evolution/${R}/eabutil
+WANTLIB-plugins += lib/evolution/${R}/email-engine
+WANTLIB-plugins += lib/evolution/${R}/email-utils
 WANTLIB-plugins += lib/evolution/${R}/emformat
 WANTLIB-plugins += lib/evolution/${R}/emiscwidgets
 WANTLIB-plugins += lib/evolution/${R}/eshell
@@ -87,7 +88,8 @@ MULTI_PACKAGES=		-main -plugins
 
 MODULES=		devel/gettext \
 			x11/gnome \
-			devel/gconf2
+			devel/gconf2 \
+			devel/dconf
 
 BUILD_DEPENDS=		devel/bison \
 			misc/shared-mime-info \
@@ -95,23 +97,25 @@ BUILD_DEPENDS=		devel/bison \
 			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
-RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			x11/gnome/icon-theme \
-			devel/gsettings-desktop-schemas
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			databases/evolution-data-server>=3.2.2 \
-			databases/openldap \
+LIB_DEPENDS=		databases/evolution-data-server>=3.2.2 \
 			devel/libnotify>=0.7.2 \
 			security/nss \
 			x11/gnome/desktop \
-			www/gtkhtml4>=4.1.91 \
+			www/gtkhtml4>=4.1.91
+
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			databases/openldap \
 			audio/libcanberra,-gtk3
+
+RUN_DEPENDS-main=	${RUN_DEPENDS} \
+			x11/gnome/icon-theme \
+			devel/gsettings-desktop-schemas
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 			mail/evolution,-main=${GNOME_VERSION} \
 			converters/libpst>=0.6.54 \
 			multimedia/gstreamer-0.10/core
-# needed for the audio-inline plugin
+# gstreamer-plugins-good is needed for the audio-inline plugin
 RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-good
 
@@ -150,7 +154,49 @@ CONFIGURE_ARGS+=	--disable-image-inline
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
+# Revert 160006402248075b95c98e9e34d4538670ba7480
+# (Add -avoid-version to LDFLAGS)
+# https://bugzilla.gnome.org/show_bug.cgi?id=591436
+# This is needed because OpenBSD cannot link to unversioned SOLIBS
+# (evolution-rss needs to link to eutil, eshell, email-engine...).
+.for _lib in \
+composer eabutil econtacteditor econtactlisteditor email-engine \
+email-utils emformat emiscwidgets eshell essmime etable etext \
+etimezonedialog eutil evolution-a11y evolution-addressbook-importers \
+evolution-calendar-importers evolution-calendar \
+evolution-mail-importers evolution-mail-settings evolution-mail \
+evolution-smime filter gnomecanvas menus
+SHARED_LIBS+=   ${_lib} ${SO_VERSION}
+.endfor
+REVERT_BZ591436=a11y/Makefile.in \
+		addressbook/gui/contact-editor/Makefile.in \
+		addressbook/gui/contact-list-editor/Makefile.in \
+		addressbook/importers/Makefile.in \
+		addressbook/util/Makefile.in \
+		calendar/gui/Makefile.in \
+		calendar/importers/Makefile.in \
+		capplet/settings/Makefile.in \
+		composer/Makefile.in \
+		e-util/Makefile.in \
+		em-format/Makefile.in \
+		filter/Makefile.in \
+		libemail-engine/Makefile.in \
+		libemail-utils/Makefile.in \
+		libgnomecanvas/Makefile.in \
+		mail/Makefile.in \
+		mail/importers/Makefile.in \
+		shell/Makefile.in \
+		smclient/Makefile.in \
+		smime/gui/Makefile.in \
+		smime/lib/Makefile.in \
+		widgets/e-timezone-dialog/Makefile.in \
+		widgets/menus/Makefile.in \
+		widgets/misc/Makefile.in \
+		widgets/table/Makefile.in \
+		widgets/text/Makefile.in
+
 pre-configure:
+	for i in ${REVERT_BZ591436}; do perl -pi -e 's,-avoid-version,,g' ${WRKSRC}/$${i}; done
 	${SUBST_CMD} ${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
 

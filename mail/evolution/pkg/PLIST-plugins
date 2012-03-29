@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-plugins,v 1.10 2011/11/28 12:32:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-plugins,v 1.11 2012/03/29 06:56:25 ajacoutot Exp $
 @conflict evolution-<=3.2.2p0
 lib/evolution/${R}/plugins/liborg-gnome-audio-inline.so
 lib/evolution/${R}/plugins/liborg-gnome-backup-restore.so
@@ -36,6 +36,10 @@ share/evolution/${R}/errors/org-gnome-backup-restore.error
 share/evolution/${R}/errors/org-gnome-face.error
 share/evolution/${R}/errors/org-gnome-mailing-list-actions.error
 share/evolution/${R}/ui/org-gnome-email-custom-header.ui
+share/glib-2.0/schemas/org.gnome.evolution.plugin.email-custom-header.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.attachment-reminder.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.mail-notification.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.plugin.face-picture.gschema.xml
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/apps-evolution-attachment-reminder.schemas
 ${SCHEMAS_INSTDIR}/apps-evolution-mail-notification.schemas
@@ -44,3 +48,5 @@ ${SCHEMAS_INSTDIR}/apps-evolution-template-placeholders.schemas
 ${SCHEMAS_INSTDIR}/apps_evolution_email_custom_header.schemas
 ${SCHEMAS_INSTDIR}/apps_evolution_eplugin_face.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_bogofilter_evolution-bogofilter_c,v 1.1 2011/10/03 16:33:53 ajacoutot Exp $
---- modules/bogofilter/evolution-bogofilter.c.orig	Mon Oct  3 17:31:15 2011
-+++ modules/bogofilter/evolution-bogofilter.c	Mon Oct  3 17:31:29 2011
-@@ -34,7 +34,7 @@
+$OpenBSD: patch-modules_bogofilter_evolution-bogofilter_c,v 1.2 2012/03/29 06:56:25 ajacoutot Exp $
+--- modules/bogofilter/evolution-bogofilter.c.orig	Fri Mar  9 17:33:42 2012
++++ modules/bogofilter/evolution-bogofilter.c	Wed Mar 28 09:19:52 2012
+@@ -33,7 +33,7 @@
  	((obj), E_TYPE_BOGOFILTER, EBogofilter))
  
  #ifndef BOGOFILTER_BINARY
