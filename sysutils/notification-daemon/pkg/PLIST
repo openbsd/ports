@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/10/17 18:03:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/03/29 06:25:42 ajacoutot Exp $
 @conflict notification-daemon-xfce-*
 @conflict xfce4-notifyd-*
 @bin libexec/notification-daemon
@@ -52,6 +52,9 @@ share/locale/hu/LC_MESSAGES/notification-daemon.mo
 share/locale/id/LC_MESSAGES/notification-daemon.mo
 share/locale/it/LC_MESSAGES/notification-daemon.mo
 share/locale/ja/LC_MESSAGES/notification-daemon.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/notification-daemon.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/notification-daemon.mo
@@ -60,8 +63,12 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/notification-daemon.mo
 share/locale/lv/LC_MESSAGES/notification-daemon.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/notification-daemon.mo
 share/locale/nb/LC_MESSAGES/notification-daemon.mo
 share/locale/nl/LC_MESSAGES/notification-daemon.mo
+share/locale/nn/LC_MESSAGES/notification-daemon.mo
 share/locale/or/
 share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/notification-daemon.mo
@@ -94,6 +101,9 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/notification-daemon.mo
 share/locale/uk/LC_MESSAGES/notification-daemon.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/notification-daemon.mo
 share/locale/vi/LC_MESSAGES/notification-daemon.mo
 share/locale/zh_CN/LC_MESSAGES/notification-daemon.mo
 share/locale/zh_HK/LC_MESSAGES/notification-daemon.mo
