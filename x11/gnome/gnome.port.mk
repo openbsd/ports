@@ -1,7 +1,6 @@
-# $OpenBSD: gnome.port.mk,v 1.59 2012/03/29 07:45:55 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.60 2012/03/29 16:34:43 ajacoutot Exp $
 #
 # Module for GNOME related ports
-#
 
 .if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
@@ -26,6 +25,13 @@ MODULES+=		textproc/intltool
         # "lib" which resulted in locale files being installed under the
         # wrong directory.
         CONFIGURE_ENV += DATADIRNAME=share
+        # If one of these tools is found at configure stage, it might be used, no
+        # matter whether we use --disable-gtk-doc or not.
+.       if !defined(MODGNOME_TOOLS) || defined(MODGNOME_TOOLS) && ! ${MODGNOME_TOOLS:Mgtk-doc}
+            CONFIGURE_ENV += ac_cv_path_GTKDOC_CHECK="" \
+                             ac_cv_path_GTKDOC_REBASE="" \
+                             ac_cv_path_GTKDOC_MKPDF=""
+.       endif
 .   endif
 .endif
 
