@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2012/03/29 07:03:31 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -54,17 +54,17 @@ include/evince/${MAJ_V}/libview/ev-view-presentation.h
 include/evince/${MAJ_V}/libview/ev-view-type-builtins.h
 include/evince/${MAJ_V}/libview/ev-view.h
 lib/evince/
-lib/evince/3/
-lib/evince/3/backends/
-@comment lib/evince/3/backends/libpdfdocument.la
-lib/evince/3/backends/libpdfdocument.so
-@comment lib/evince/3/backends/libpsdocument.la
-lib/evince/3/backends/libpsdocument.so
-@comment lib/evince/3/backends/libtiffdocument.la
-lib/evince/3/backends/libtiffdocument.so
-lib/evince/3/backends/pdfdocument.evince-backend
-lib/evince/3/backends/psdocument.evince-backend
-lib/evince/3/backends/tiffdocument.evince-backend
+lib/evince/4/
+lib/evince/4/backends/
+@comment lib/evince/4/backends/libpdfdocument.la
+lib/evince/4/backends/libpdfdocument.so
+@comment lib/evince/4/backends/libpsdocument.la
+lib/evince/4/backends/libpsdocument.so
+@comment lib/evince/4/backends/libtiffdocument.la
+lib/evince/4/backends/libtiffdocument.so
+lib/evince/4/backends/pdfdocument.evince-backend
+lib/evince/4/backends/psdocument.evince-backend
+lib/evince/4/backends/tiffdocument.evince-backend
 lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
 lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
 lib/libevdocument3.la
@@ -182,6 +182,7 @@ share/gnome/help/evince/C/figures/annotations-nav-to-page.png
 share/gnome/help/evince/C/figures/annotations-navigate.png
 share/gnome/help/evince/C/figures/evince-toolbar-default.png
 share/gnome/help/evince/C/figures/evince-toolbar-editor.png
+share/gnome/help/evince/C/figures/evince-trail.png
 share/gnome/help/evince/C/figures/evincelogo.png
 share/gnome/help/evince/C/figures/gconf-editor.png
 share/gnome/help/evince/C/figures/list-add-tabs.png
@@ -261,6 +262,7 @@ share/gnome/help/evince/bg/figures/annotations-nav-to-page.png
 share/gnome/help/evince/bg/figures/annotations-navigate.png
 share/gnome/help/evince/bg/figures/evince-toolbar-default.png
 share/gnome/help/evince/bg/figures/evince-toolbar-editor.png
+share/gnome/help/evince/bg/figures/evince-trail.png
 share/gnome/help/evince/bg/figures/evincelogo.png
 share/gnome/help/evince/bg/figures/gconf-editor.png
 share/gnome/help/evince/bg/figures/list-add-tabs.png
@@ -340,6 +342,7 @@ share/gnome/help/evince/ca/figures/annotations-nav-to-page.png
 share/gnome/help/evince/ca/figures/annotations-navigate.png
 share/gnome/help/evince/ca/figures/evince-toolbar-default.png
 share/gnome/help/evince/ca/figures/evince-toolbar-editor.png
+share/gnome/help/evince/ca/figures/evince-trail.png
 share/gnome/help/evince/ca/figures/evincelogo.png
 share/gnome/help/evince/ca/figures/gconf-editor.png
 share/gnome/help/evince/ca/figures/list-add-tabs.png
@@ -419,6 +422,7 @@ share/gnome/help/evince/cs/figures/annotations-nav-to-page.png
 share/gnome/help/evince/cs/figures/annotations-navigate.png
 share/gnome/help/evince/cs/figures/evince-toolbar-default.png
 share/gnome/help/evince/cs/figures/evince-toolbar-editor.png
+share/gnome/help/evince/cs/figures/evince-trail.png
 share/gnome/help/evince/cs/figures/evincelogo.png
 share/gnome/help/evince/cs/figures/gconf-editor.png
 share/gnome/help/evince/cs/figures/list-add-tabs.png
@@ -498,6 +502,7 @@ share/gnome/help/evince/da/figures/annotations-nav-to-page.png
 share/gnome/help/evince/da/figures/annotations-navigate.png
 share/gnome/help/evince/da/figures/evince-toolbar-default.png
 share/gnome/help/evince/da/figures/evince-toolbar-editor.png
+share/gnome/help/evince/da/figures/evince-trail.png
 share/gnome/help/evince/da/figures/evincelogo.png
 share/gnome/help/evince/da/figures/gconf-editor.png
 share/gnome/help/evince/da/figures/list-add-tabs.png
@@ -577,6 +582,7 @@ share/gnome/help/evince/de/figures/annotations-nav-to-page.png
 share/gnome/help/evince/de/figures/annotations-navigate.png
 share/gnome/help/evince/de/figures/evince-toolbar-default.png
 share/gnome/help/evince/de/figures/evince-toolbar-editor.png
+share/gnome/help/evince/de/figures/evince-trail.png
 share/gnome/help/evince/de/figures/evincelogo.png
 share/gnome/help/evince/de/figures/gconf-editor.png
 share/gnome/help/evince/de/figures/list-add-tabs.png
@@ -656,6 +662,7 @@ share/gnome/help/evince/el/figures/annotations-nav-to-page.png
 share/gnome/help/evince/el/figures/annotations-navigate.png
 share/gnome/help/evince/el/figures/evince-toolbar-default.png
 share/gnome/help/evince/el/figures/evince-toolbar-editor.png
+share/gnome/help/evince/el/figures/evince-trail.png
 share/gnome/help/evince/el/figures/evincelogo.png
 share/gnome/help/evince/el/figures/gconf-editor.png
 share/gnome/help/evince/el/figures/list-add-tabs.png
@@ -735,6 +742,7 @@ share/gnome/help/evince/en_GB/figures/annotations-nav-to-page.png
 share/gnome/help/evince/en_GB/figures/annotations-navigate.png
 share/gnome/help/evince/en_GB/figures/evince-toolbar-default.png
 share/gnome/help/evince/en_GB/figures/evince-toolbar-editor.png
+share/gnome/help/evince/en_GB/figures/evince-trail.png
 share/gnome/help/evince/en_GB/figures/evincelogo.png
 share/gnome/help/evince/en_GB/figures/gconf-editor.png
 share/gnome/help/evince/en_GB/figures/list-add-tabs.png
@@ -814,6 +822,7 @@ share/gnome/help/evince/es/figures/annotations-nav-to-page.png
 share/gnome/help/evince/es/figures/annotations-navigate.png
 share/gnome/help/evince/es/figures/evince-toolbar-default.png
 share/gnome/help/evince/es/figures/evince-toolbar-editor.png
+share/gnome/help/evince/es/figures/evince-trail.png
 share/gnome/help/evince/es/figures/evincelogo.png
 share/gnome/help/evince/es/figures/gconf-editor.png
 share/gnome/help/evince/es/figures/list-add-tabs.png
@@ -893,6 +902,7 @@ share/gnome/help/evince/eu/figures/annotations-nav-to-page.png
 share/gnome/help/evince/eu/figures/annotations-navigate.png
 share/gnome/help/evince/eu/figures/evince-toolbar-default.png
 share/gnome/help/evince/eu/figures/evince-toolbar-editor.png
+share/gnome/help/evince/eu/figures/evince-trail.png
 share/gnome/help/evince/eu/figures/evincelogo.png
 share/gnome/help/evince/eu/figures/gconf-editor.png
 share/gnome/help/evince/eu/figures/list-add-tabs.png
@@ -972,6 +982,7 @@ share/gnome/help/evince/fi/figures/annotations-nav-to-page.png
 share/gnome/help/evince/fi/figures/annotations-navigate.png
 share/gnome/help/evince/fi/figures/evince-toolbar-default.png
 share/gnome/help/evince/fi/figures/evince-toolbar-editor.png
+share/gnome/help/evince/fi/figures/evince-trail.png
 share/gnome/help/evince/fi/figures/evincelogo.png
 share/gnome/help/evince/fi/figures/gconf-editor.png
 share/gnome/help/evince/fi/figures/list-add-tabs.png
@@ -1051,6 +1062,7 @@ share/gnome/help/evince/fr/figures/annotations-nav-to-page.png
 share/gnome/help/evince/fr/figures/annotations-navigate.png
 share/gnome/help/evince/fr/figures/evince-toolbar-default.png
 share/gnome/help/evince/fr/figures/evince-toolbar-editor.png
+share/gnome/help/evince/fr/figures/evince-trail.png
 share/gnome/help/evince/fr/figures/evincelogo.png
 share/gnome/help/evince/fr/figures/gconf-editor.png
 share/gnome/help/evince/fr/figures/list-add-tabs.png
@@ -1130,6 +1142,7 @@ share/gnome/help/evince/gl/figures/annotations-nav-to-page.png
 share/gnome/help/evince/gl/figures/annotations-navigate.png
 share/gnome/help/evince/gl/figures/evince-toolbar-default.png
 share/gnome/help/evince/gl/figures/evince-toolbar-editor.png
+share/gnome/help/evince/gl/figures/evince-trail.png
 share/gnome/help/evince/gl/figures/evincelogo.png
 share/gnome/help/evince/gl/figures/gconf-editor.png
 share/gnome/help/evince/gl/figures/list-add-tabs.png
@@ -1209,6 +1222,7 @@ share/gnome/help/evince/hu/figures/annotations-nav-to-page.png
 share/gnome/help/evince/hu/figures/annotations-navigate.png
 share/gnome/help/evince/hu/figures/evince-toolbar-default.png
 share/gnome/help/evince/hu/figures/evince-toolbar-editor.png
+share/gnome/help/evince/hu/figures/evince-trail.png
 share/gnome/help/evince/hu/figures/evincelogo.png
 share/gnome/help/evince/hu/figures/gconf-editor.png
 share/gnome/help/evince/hu/figures/list-add-tabs.png
@@ -1288,6 +1302,7 @@ share/gnome/help/evince/it/figures/annotations-nav-to-page.png
 share/gnome/help/evince/it/figures/annotations-navigate.png
 share/gnome/help/evince/it/figures/evince-toolbar-default.png
 share/gnome/help/evince/it/figures/evince-toolbar-editor.png
+share/gnome/help/evince/it/figures/evince-trail.png
 share/gnome/help/evince/it/figures/evincelogo.png
 share/gnome/help/evince/it/figures/gconf-editor.png
 share/gnome/help/evince/it/figures/list-add-tabs.png
@@ -1367,6 +1382,7 @@ share/gnome/help/evince/ja/figures/annotations-nav-to-page.png
 share/gnome/help/evince/ja/figures/annotations-navigate.png
 share/gnome/help/evince/ja/figures/evince-toolbar-default.png
 share/gnome/help/evince/ja/figures/evince-toolbar-editor.png
+share/gnome/help/evince/ja/figures/evince-trail.png
 share/gnome/help/evince/ja/figures/evincelogo.png
 share/gnome/help/evince/ja/figures/gconf-editor.png
 share/gnome/help/evince/ja/figures/list-add-tabs.png
@@ -1411,6 +1427,86 @@ share/gnome/help/evince/ja/synctex-support.page
 share/gnome/help/evince/ja/synctex.page
 share/gnome/help/evince/ja/textselection.page
 share/gnome/help/evince/ja/toolbar.page
+share/gnome/help/evince/lv/
+share/gnome/help/evince/lv/annotation-properties.page
+share/gnome/help/evince/lv/annotations-delete.page
+share/gnome/help/evince/lv/annotations-disabled.page
+share/gnome/help/evince/lv/annotations-navigate.page
+share/gnome/help/evince/lv/annotations-save.page
+share/gnome/help/evince/lv/annotations.page
+share/gnome/help/evince/lv/bookmarks.page
+share/gnome/help/evince/lv/bug-filing.page
+share/gnome/help/evince/lv/commandline.page
+share/gnome/help/evince/lv/convertPostScript.page
+share/gnome/help/evince/lv/convertSVG.page
+share/gnome/help/evince/lv/convertpdf.page
+share/gnome/help/evince/lv/duplex-10pages.page
+share/gnome/help/evince/lv/duplex-11pages.page
+share/gnome/help/evince/lv/duplex-12pages.page
+share/gnome/help/evince/lv/duplex-13pages.page
+share/gnome/help/evince/lv/duplex-14pages.page
+share/gnome/help/evince/lv/duplex-15pages.page
+share/gnome/help/evince/lv/duplex-16pages.page
+share/gnome/help/evince/lv/duplex-3pages.page
+share/gnome/help/evince/lv/duplex-4pages.page
+share/gnome/help/evince/lv/duplex-5pages.page
+share/gnome/help/evince/lv/duplex-6pages.page
+share/gnome/help/evince/lv/duplex-7pages.page
+share/gnome/help/evince/lv/duplex-8pages.page
+share/gnome/help/evince/lv/duplex-9pages.page
+share/gnome/help/evince/lv/duplex-npages.page
+share/gnome/help/evince/lv/editing.page
+share/gnome/help/evince/lv/figures/
+share/gnome/help/evince/lv/figures/add-text-annotation.png
+share/gnome/help/evince/lv/figures/annotations-nav-to-page.png
+share/gnome/help/evince/lv/figures/annotations-navigate.png
+share/gnome/help/evince/lv/figures/evince-toolbar-default.png
+share/gnome/help/evince/lv/figures/evince-toolbar-editor.png
+share/gnome/help/evince/lv/figures/evince-trail.png
+share/gnome/help/evince/lv/figures/evincelogo.png
+share/gnome/help/evince/lv/figures/gconf-editor.png
+share/gnome/help/evince/lv/figures/list-add-tabs.png
+share/gnome/help/evince/lv/figures/print-2sided.png
+share/gnome/help/evince/lv/figures/print-select.png
+share/gnome/help/evince/lv/figures/reverse-collate.png
+share/gnome/help/evince/lv/figures/synctex_screencast.ogv
+share/gnome/help/evince/lv/figures/zoom.png
+share/gnome/help/evince/lv/finding.page
+share/gnome/help/evince/lv/formats.page
+share/gnome/help/evince/lv/forms-saving.page
+share/gnome/help/evince/lv/forms.page
+share/gnome/help/evince/lv/index.page
+share/gnome/help/evince/lv/introduction.page
+share/gnome/help/evince/lv/invert-colors.page
+share/gnome/help/evince/lv/legal.xml
+share/gnome/help/evince/lv/movingaround.page
+share/gnome/help/evince/lv/noprint.page
+share/gnome/help/evince/lv/openerror.page
+share/gnome/help/evince/lv/opening.page
+share/gnome/help/evince/lv/password.page
+share/gnome/help/evince/lv/presentations.page
+share/gnome/help/evince/lv/print-2sided.page
+share/gnome/help/evince/lv/print-booklet.page
+share/gnome/help/evince/lv/print-differentsize.page
+share/gnome/help/evince/lv/print-order.page
+share/gnome/help/evince/lv/print-select.page
+share/gnome/help/evince/lv/printing.page
+share/gnome/help/evince/lv/reload.page
+share/gnome/help/evince/lv/shortcuts.page
+share/gnome/help/evince/lv/singlesided-13-16pages.page
+share/gnome/help/evince/lv/singlesided-17-20pages.page
+share/gnome/help/evince/lv/singlesided-3-4pages.page
+share/gnome/help/evince/lv/singlesided-5-8pages.page
+share/gnome/help/evince/lv/singlesided-9-12pages.page
+share/gnome/help/evince/lv/singlesided-npages.page
+share/gnome/help/evince/lv/synctex-beamer.page
+share/gnome/help/evince/lv/synctex-compile.page
+share/gnome/help/evince/lv/synctex-editors.page
+share/gnome/help/evince/lv/synctex-search.page
+share/gnome/help/evince/lv/synctex-support.page
+share/gnome/help/evince/lv/synctex.page
+share/gnome/help/evince/lv/textselection.page
+share/gnome/help/evince/lv/toolbar.page
 share/gnome/help/evince/nl/
 share/gnome/help/evince/nl/annotation-properties.page
 share/gnome/help/evince/nl/annotations-delete.page
@@ -1446,6 +1542,7 @@ share/gnome/help/evince/nl/figures/annotations-nav-to-page.png
 share/gnome/help/evince/nl/figures/annotations-navigate.png
 share/gnome/help/evince/nl/figures/evince-toolbar-default.png
 share/gnome/help/evince/nl/figures/evince-toolbar-editor.png
+share/gnome/help/evince/nl/figures/evince-trail.png
 share/gnome/help/evince/nl/figures/evincelogo.png
 share/gnome/help/evince/nl/figures/gconf-editor.png
 share/gnome/help/evince/nl/figures/list-add-tabs.png
@@ -1525,6 +1622,7 @@ share/gnome/help/evince/oc/figures/annotations-nav-to-page.png
 share/gnome/help/evince/oc/figures/annotations-navigate.png
 share/gnome/help/evince/oc/figures/evince-toolbar-default.png
 share/gnome/help/evince/oc/figures/evince-toolbar-editor.png
+share/gnome/help/evince/oc/figures/evince-trail.png
 share/gnome/help/evince/oc/figures/evincelogo.png
 share/gnome/help/evince/oc/figures/gconf-editor.png
 share/gnome/help/evince/oc/figures/list-add-tabs.png
@@ -1604,6 +1702,7 @@ share/gnome/help/evince/pt_BR/figures/annotations-nav-to-page.png
 share/gnome/help/evince/pt_BR/figures/annotations-navigate.png
 share/gnome/help/evince/pt_BR/figures/evince-toolbar-default.png
 share/gnome/help/evince/pt_BR/figures/evince-toolbar-editor.png
+share/gnome/help/evince/pt_BR/figures/evince-trail.png
 share/gnome/help/evince/pt_BR/figures/evincelogo.png
 share/gnome/help/evince/pt_BR/figures/gconf-editor.png
 share/gnome/help/evince/pt_BR/figures/list-add-tabs.png
@@ -1683,6 +1782,7 @@ share/gnome/help/evince/ru/figures/annotations-nav-to-page.png
 share/gnome/help/evince/ru/figures/annotations-navigate.png
 share/gnome/help/evince/ru/figures/evince-toolbar-default.png
 share/gnome/help/evince/ru/figures/evince-toolbar-editor.png
+share/gnome/help/evince/ru/figures/evince-trail.png
 share/gnome/help/evince/ru/figures/evincelogo.png
 share/gnome/help/evince/ru/figures/gconf-editor.png
 share/gnome/help/evince/ru/figures/list-add-tabs.png
@@ -1762,6 +1862,7 @@ share/gnome/help/evince/sl/figures/annotations-nav-to-page.png
 share/gnome/help/evince/sl/figures/annotations-navigate.png
 share/gnome/help/evince/sl/figures/evince-toolbar-default.png
 share/gnome/help/evince/sl/figures/evince-toolbar-editor.png
+share/gnome/help/evince/sl/figures/evince-trail.png
 share/gnome/help/evince/sl/figures/evincelogo.png
 share/gnome/help/evince/sl/figures/gconf-editor.png
 share/gnome/help/evince/sl/figures/list-add-tabs.png
@@ -1841,6 +1942,7 @@ share/gnome/help/evince/sr/figures/annotations-nav-to-page.png
 share/gnome/help/evince/sr/figures/annotations-navigate.png
 share/gnome/help/evince/sr/figures/evince-toolbar-default.png
 share/gnome/help/evince/sr/figures/evince-toolbar-editor.png
+share/gnome/help/evince/sr/figures/evince-trail.png
 share/gnome/help/evince/sr/figures/evincelogo.png
 share/gnome/help/evince/sr/figures/gconf-editor.png
 share/gnome/help/evince/sr/figures/list-add-tabs.png
@@ -1920,6 +2022,7 @@ share/gnome/help/evince/sv/figures/annotations-nav-to-page.png
 share/gnome/help/evince/sv/figures/annotations-navigate.png
 share/gnome/help/evince/sv/figures/evince-toolbar-default.png
 share/gnome/help/evince/sv/figures/evince-toolbar-editor.png
+share/gnome/help/evince/sv/figures/evince-trail.png
 share/gnome/help/evince/sv/figures/evincelogo.png
 share/gnome/help/evince/sv/figures/gconf-editor.png
 share/gnome/help/evince/sv/figures/list-add-tabs.png
@@ -1964,6 +2067,86 @@ share/gnome/help/evince/sv/synctex-support.page
 share/gnome/help/evince/sv/synctex.page
 share/gnome/help/evince/sv/textselection.page
 share/gnome/help/evince/sv/toolbar.page
+share/gnome/help/evince/te/
+share/gnome/help/evince/te/annotation-properties.page
+share/gnome/help/evince/te/annotations-delete.page
+share/gnome/help/evince/te/annotations-disabled.page
+share/gnome/help/evince/te/annotations-navigate.page
+share/gnome/help/evince/te/annotations-save.page
+share/gnome/help/evince/te/annotations.page
+share/gnome/help/evince/te/bookmarks.page
+share/gnome/help/evince/te/bug-filing.page
+share/gnome/help/evince/te/commandline.page
+share/gnome/help/evince/te/convertPostScript.page
+share/gnome/help/evince/te/convertSVG.page
+share/gnome/help/evince/te/convertpdf.page
+share/gnome/help/evince/te/duplex-10pages.page
+share/gnome/help/evince/te/duplex-11pages.page
+share/gnome/help/evince/te/duplex-12pages.page
+share/gnome/help/evince/te/duplex-13pages.page
+share/gnome/help/evince/te/duplex-14pages.page
+share/gnome/help/evince/te/duplex-15pages.page
+share/gnome/help/evince/te/duplex-16pages.page
+share/gnome/help/evince/te/duplex-3pages.page
+share/gnome/help/evince/te/duplex-4pages.page
+share/gnome/help/evince/te/duplex-5pages.page
+share/gnome/help/evince/te/duplex-6pages.page
+share/gnome/help/evince/te/duplex-7pages.page
+share/gnome/help/evince/te/duplex-8pages.page
+share/gnome/help/evince/te/duplex-9pages.page
+share/gnome/help/evince/te/duplex-npages.page
+share/gnome/help/evince/te/editing.page
+share/gnome/help/evince/te/figures/
+share/gnome/help/evince/te/figures/add-text-annotation.png
+share/gnome/help/evince/te/figures/annotations-nav-to-page.png
+share/gnome/help/evince/te/figures/annotations-navigate.png
+share/gnome/help/evince/te/figures/evince-toolbar-default.png
+share/gnome/help/evince/te/figures/evince-toolbar-editor.png
+share/gnome/help/evince/te/figures/evince-trail.png
+share/gnome/help/evince/te/figures/evincelogo.png
+share/gnome/help/evince/te/figures/gconf-editor.png
+share/gnome/help/evince/te/figures/list-add-tabs.png
+share/gnome/help/evince/te/figures/print-2sided.png
+share/gnome/help/evince/te/figures/print-select.png
+share/gnome/help/evince/te/figures/reverse-collate.png
+share/gnome/help/evince/te/figures/synctex_screencast.ogv
+share/gnome/help/evince/te/figures/zoom.png
+share/gnome/help/evince/te/finding.page
+share/gnome/help/evince/te/formats.page
+share/gnome/help/evince/te/forms-saving.page
+share/gnome/help/evince/te/forms.page
+share/gnome/help/evince/te/index.page
+share/gnome/help/evince/te/introduction.page
+share/gnome/help/evince/te/invert-colors.page
+share/gnome/help/evince/te/legal.xml
+share/gnome/help/evince/te/movingaround.page
+share/gnome/help/evince/te/noprint.page
+share/gnome/help/evince/te/openerror.page
+share/gnome/help/evince/te/opening.page
+share/gnome/help/evince/te/password.page
+share/gnome/help/evince/te/presentations.page
+share/gnome/help/evince/te/print-2sided.page
+share/gnome/help/evince/te/print-booklet.page
+share/gnome/help/evince/te/print-differentsize.page
+share/gnome/help/evince/te/print-order.page
+share/gnome/help/evince/te/print-select.page
+share/gnome/help/evince/te/printing.page
+share/gnome/help/evince/te/reload.page
+share/gnome/help/evince/te/shortcuts.page
+share/gnome/help/evince/te/singlesided-13-16pages.page
+share/gnome/help/evince/te/singlesided-17-20pages.page
+share/gnome/help/evince/te/singlesided-3-4pages.page
+share/gnome/help/evince/te/singlesided-5-8pages.page
+share/gnome/help/evince/te/singlesided-9-12pages.page
+share/gnome/help/evince/te/singlesided-npages.page
+share/gnome/help/evince/te/synctex-beamer.page
+share/gnome/help/evince/te/synctex-compile.page
+share/gnome/help/evince/te/synctex-editors.page
+share/gnome/help/evince/te/synctex-search.page
+share/gnome/help/evince/te/synctex-support.page
+share/gnome/help/evince/te/synctex.page
+share/gnome/help/evince/te/textselection.page
+share/gnome/help/evince/te/toolbar.page
 share/gnome/help/evince/uk/
 share/gnome/help/evince/uk/annotation-properties.page
 share/gnome/help/evince/uk/annotations-delete.page
@@ -1999,6 +2182,7 @@ share/gnome/help/evince/uk/figures/annotations-nav-to-page.png
 share/gnome/help/evince/uk/figures/annotations-navigate.png
 share/gnome/help/evince/uk/figures/evince-toolbar-default.png
 share/gnome/help/evince/uk/figures/evince-toolbar-editor.png
+share/gnome/help/evince/uk/figures/evince-trail.png
 share/gnome/help/evince/uk/figures/evincelogo.png
 share/gnome/help/evince/uk/figures/gconf-editor.png
 share/gnome/help/evince/uk/figures/list-add-tabs.png
@@ -2078,6 +2262,7 @@ share/gnome/help/evince/vi/figures/annotations-nav-to-page.png
 share/gnome/help/evince/vi/figures/annotations-navigate.png
 share/gnome/help/evince/vi/figures/evince-toolbar-default.png
 share/gnome/help/evince/vi/figures/evince-toolbar-editor.png
+share/gnome/help/evince/vi/figures/evince-trail.png
 share/gnome/help/evince/vi/figures/evincelogo.png
 share/gnome/help/evince/vi/figures/gconf-editor.png
 share/gnome/help/evince/vi/figures/list-add-tabs.png
@@ -2157,6 +2342,7 @@ share/gnome/help/evince/zh_CN/figures/annotations-nav-to-page.png
 share/gnome/help/evince/zh_CN/figures/annotations-navigate.png
 share/gnome/help/evince/zh_CN/figures/evince-toolbar-default.png
 share/gnome/help/evince/zh_CN/figures/evince-toolbar-editor.png
+share/gnome/help/evince/zh_CN/figures/evince-trail.png
 share/gnome/help/evince/zh_CN/figures/evincelogo.png
 share/gnome/help/evince/zh_CN/figures/gconf-editor.png
 share/gnome/help/evince/zh_CN/figures/list-add-tabs.png
@@ -2236,6 +2422,7 @@ share/gnome/help/evince/zh_HK/figures/annotations-nav-to-page.png
 share/gnome/help/evince/zh_HK/figures/annotations-navigate.png
 share/gnome/help/evince/zh_HK/figures/evince-toolbar-default.png
 share/gnome/help/evince/zh_HK/figures/evince-toolbar-editor.png
+share/gnome/help/evince/zh_HK/figures/evince-trail.png
 share/gnome/help/evince/zh_HK/figures/evincelogo.png
 share/gnome/help/evince/zh_HK/figures/gconf-editor.png
 share/gnome/help/evince/zh_HK/figures/list-add-tabs.png
@@ -2315,6 +2502,7 @@ share/gnome/help/evince/zh_TW/figures/annotations-nav-to-page.png
 share/gnome/help/evince/zh_TW/figures/annotations-navigate.png
 share/gnome/help/evince/zh_TW/figures/evince-toolbar-default.png
 share/gnome/help/evince/zh_TW/figures/evince-toolbar-editor.png
+share/gnome/help/evince/zh_TW/figures/evince-trail.png
 share/gnome/help/evince/zh_TW/figures/evincelogo.png
 share/gnome/help/evince/zh_TW/figures/gconf-editor.png
 share/gnome/help/evince/zh_TW/figures/list-add-tabs.png
@@ -2423,6 +2611,7 @@ share/gtk-doc/html/libevdocument-${MAJ_V}/EvLayer.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvPage.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvRenderContext.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/EvSelection.html
+share/gtk-doc/html/libevdocument-${MAJ_V}/annotation-glossary.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/api-index-full.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/document-data.html
 share/gtk-doc/html/libevdocument-${MAJ_V}/document-helpers.html
@@ -2532,6 +2721,7 @@ share/locale/ml/LC_MESSAGES/evince.mo
 share/locale/mn/LC_MESSAGES/evince.mo
 share/locale/mr/LC_MESSAGES/evince.mo
 share/locale/ms/LC_MESSAGES/evince.mo
+share/locale/my/LC_MESSAGES/evince.mo
 share/locale/nb/LC_MESSAGES/evince.mo
 share/locale/nds/LC_MESSAGES/evince.mo
 share/locale/ne/LC_MESSAGES/evince.mo
