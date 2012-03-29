@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/03/29 07:07:28 ajacoutot Exp $
 @pkgpath x11/gnome/media
 @pkgpath x11/gnome/media,-main
 @pkgpath x11/gnome/media,-glade3
@@ -162,26 +162,12 @@ share/gstreamer-properties/
 share/gstreamer-properties/gstreamer-properties.ui
 share/gstreamer-properties/icons/
 share/gstreamer-properties/icons/gstreamer-properties.png
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-sound-recorder.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-sound-recorder.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-sound-recorder.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-sound-recorder.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-sound-recorder.png
 share/icons/hicolor/48x48/apps/gstreamer-properties.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-sound-recorder.svg
 share/locale/af/LC_MESSAGES/gnome-media-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-media-2.0.mo

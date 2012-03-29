@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2012/01/25 14:07:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/03/29 07:07:28 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
-GNOME_VERSION=	2.91.2
-REVISION=	10
-
-EXTRACT_SUFX=	.tar.bz2
+GNOME_VERSION=	3.4.0
 
 # GPLv2/GFDLv1.1/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,20 +21,17 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
 WANTLIB += z stdc++
 
-TAR=		${LOCALBASE}/bin/gtar
-
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	archivers/gtar \
-		multimedia/gstreamer-0.10/plugins-good
+BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
 		x11/gnome/libgnome-media-profiles \
 		x11/gtk+3
 
-MODGNOME_TOOLS= yelp
+MODGNOME_TOOLS=		yelp
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-media
