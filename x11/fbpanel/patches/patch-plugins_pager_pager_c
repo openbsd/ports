@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_pager_pager_c,v 1.1 2012/01/14 22:14:10 dcoppa Exp $
+$OpenBSD: patch-plugins_pager_pager_c,v 1.2 2012/03/29 08:17:41 dcoppa Exp $
 
 add icon drawing support to the pager plugin
 (adapted from an older patch written for fbpanel-4.3 by daf@minuslab.net)
 
 --- plugins/pager/pager.c.orig	Wed Apr 28 13:39:20 2010
-+++ plugins/pager/pager.c	Sat Jan 14 22:42:42 2012
++++ plugins/pager/pager.c	Thu Mar 29 10:04:48 2012
 @@ -27,10 +27,13 @@
  
  
@@ -19,15 +19,16 @@ add icon drawing support to the pager plugin
  #include "gtkbgbox.h"
  
  //#define DEBUGPRN
-@@ -49,6 +52,7 @@ typedef struct _task {
+@@ -49,6 +52,8 @@ typedef struct _task {
      char *name, *iname;
      net_wm_state nws;
      net_wm_window_type nwwt;
 +    GdkPixbuf *pixbuf;
++    unsigned int using_netwm_icon:1;
  } task;
  
  typedef struct _desk   desk;
-@@ -81,6 +85,7 @@ struct _pager_priv {
+@@ -81,6 +86,7 @@ struct _pager_priv {
      task *focusedtask;
      FbBg *fbbg;
      gint dah, daw;
@@ -35,17 +36,17 @@ add icon drawing support to the pager plugin
  };
  
  
-@@ -152,6 +157,9 @@ task_remove_stale(Window *win, task *t, pager_priv *p)
+@@ -152,6 +158,9 @@ task_remove_stale(Window *win, task *t, pager_priv *p)
  static gboolean
  task_remove_all(Window *win, task *t, pager_priv *p)
  {
 +    if (t->pixbuf != NULL)
-+        gdk_pixbuf_unref(t->pixbuf);
++        g_object_unref(t->pixbuf);
 +
      g_free(t);
      return TRUE;
  }
-@@ -221,7 +229,47 @@ task_update_pix(task *t, desk *d)
+@@ -221,7 +230,47 @@ task_update_pix(task *t, desk *d)
            widget->style->fg_gc[GTK_STATE_SELECTED] :
            widget->style->fg_gc[GTK_STATE_NORMAL],
            FALSE,
@@ -89,12 +90,12 @@ add icon drawing support to the pager plugin
 +
 +        /* free it if its been scaled and its not the default */
 +        if (!noscale && t->pixbuf != NULL)
-+            gdk_pixbuf_unref(scaled);
++            g_object_unref(scaled);
 +    }
      RET();
  }
  
-@@ -492,6 +540,198 @@ desk_free(pager_priv *pg, int i)
+@@ -492,6 +541,315 @@ desk_free(pager_priv *pg, int i)
  
  
  /*****************************************************************
@@ -234,6 +235,123 @@ add icon drawing support to the pager plugin
 +  RET(with_alpha);
 +}
 +
++static void
++free_pixels (guchar *pixels, gpointer data)
++{
++    ENTER;
++    g_free (pixels);
++    RET();
++}
++
++static guchar *
++argbdata_to_pixdata (gulong *argb_data, int len)
++{
++    guchar *p, *ret;
++    int i;
++
++    ENTER;
++    ret = p = g_new (guchar, len * 4);
++    if (!ret)
++        RET(NULL);
++    /* One could speed this up a lot. */
++    i = 0;
++    while (i < len) {
++        guint32 argb;
++        guint32 rgba;
++      
++        argb = argb_data[i];
++        rgba = (argb << 8) | (argb >> 24);
++      
++        *p = rgba >> 24;
++        ++p;
++        *p = (rgba >> 16) & 0xff;
++        ++p;
++        *p = (rgba >> 8) & 0xff;
++        ++p;
++        *p = rgba & 0xff;
++        ++p;
++      
++        ++i;
++    }
++    RET(ret);
++}
++
++static GdkPixbuf *
++get_netwm_icon(Window tkwin, int iw, int ih)
++{
++    gulong *data;
++    GdkPixbuf *ret = NULL;
++    int n;
++    guchar *p;
++    GdkPixbuf *src;
++    int w, h;
++
++    ENTER;
++    data = get_xaproperty(tkwin, a_NET_WM_ICON, XA_CARDINAL, &n);
++    if (!data)
++        RET(NULL);
++
++    /* loop through all icons in data to find best fit */
++    if (0) {
++        gulong *tmp;
++        int len;
++        
++        len = n/sizeof(gulong);
++        tmp = data;
++        while (len > 2) {
++            int size = tmp[0] * tmp[1];
++            DBG("sub-icon: %dx%d %d bytes\n", tmp[0], tmp[1], size * 4);
++            len -= size + 2;
++            tmp += size;
++        }
++    }
++
++    if (0) {
++        int i, j, nn;
++    
++        nn = MIN(10, n);
++        p = (guchar *) data;
++        for (i = 0; i < nn; i++) {
++            for (j = 0; j < sizeof(gulong); j++)
++                ERR("%02x ", (guint) p[i*sizeof(gulong) + j]);
++            ERR("\n");
++        }
++    }
++    
++    /* check that data indeed represents icon in w + h + ARGB[] format
++     * with 16x16 dimension at least */
++    if (n < (16 * 16 + 1 + 1)) {
++        ERR("win %lx: icon is too small or broken (size=%d)\n", tkwin, n);
++        goto out;
++    }
++    w = data[0];
++    h = data[1];
++    /* check that sizes are in 64-256 range */
++    if (w < 16 || w > 256 || h < 16 || h > 256) {
++        ERR("win %lx: icon size (%d, %d) is not in 64-256 range\n",
++            tkwin, w, h);
++        goto out;
++    }
++    
++    DBG("orig  %dx%d dest %dx%d\n", w, h, iw, ih);
++    p = argbdata_to_pixdata(data + 2, w * h);
++    if (!p)
++        goto out;
++    src = gdk_pixbuf_new_from_data (p, GDK_COLORSPACE_RGB, TRUE,
++        8, w, h, w * 4, free_pixels, NULL);
++    if (src == NULL)
++        goto out;
++    ret = src;
++    if (w != iw || h != ih) {
++        ret = gdk_pixbuf_scale_simple(src, iw, ih, GDK_INTERP_HYPER);
++        g_object_unref(src);
++    }
++
++out:
++    XFree(data);
++    RET(ret);
++}
++
 +static GdkPixbuf*
 +get_wm_icon(Window tkwin, int iw, int ih)
 +{
@@ -293,15 +411,19 @@ add icon drawing support to the pager plugin
   * Netwm/WM Interclient Communication                            *
   *****************************************************************/
  
-@@ -572,6 +812,7 @@ do_net_client_list_stacking(FbEv *ev, pager_priv *p)
+@@ -572,6 +930,11 @@ do_net_client_list_stacking(FbEv *ev, pager_priv *p)
              get_net_wm_state(t->win, &t->nws);
              get_net_wm_window_type(t->win, &t->nwwt);
              task_get_sizepos(t);
-+            t->pixbuf = get_wm_icon(t->win, 16, 16);
++            t->pixbuf = get_netwm_icon(t->win, 16, 16);
++            t->using_netwm_icon = (t->pixbuf != NULL);
++            if (!t->using_netwm_icon) {
++                t->pixbuf = get_wm_icon(t->win, 16, 16);
++            }
              g_hash_table_insert(p->htable, &t->win, t);
              DBG("add %lx\n", t->win);
              desk_set_dirty_by_win(p, t);
-@@ -786,6 +1027,9 @@ pager_constructor(plugin_instance *plug)
+@@ -786,6 +1149,9 @@ pager_constructor(plugin_instance *plug)
          g_signal_connect(G_OBJECT(pg->fbbg), "changed",
              G_CALLBACK(pager_bg_changed), pg);
      }

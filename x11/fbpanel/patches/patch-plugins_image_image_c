@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins_image_image_c,v 1.1 2012/03/29 08:17:41 dcoppa Exp $
+
+gdk_pixbuf_unref() has been deprecated with gdk-pixbuf-2.25
+
+--- plugins/image/image.c.orig	Thu Mar 29 10:04:11 2012
++++ plugins/image/image.c	Thu Mar 29 10:04:30 2012
+@@ -68,8 +68,8 @@ image_constructor(plugin_instance *p)
+               ratio * ((float) gdk_pixbuf_get_height(gp)),
+               GDK_INTERP_HYPER);
+         gdk_pixbuf_render_pixmap_and_mask(gps, &img->pix, &img->mask, 127);
+-        gdk_pixbuf_unref(gp);
+-        gdk_pixbuf_unref(gps);
++        g_object_unref(gp);
++        g_object_unref(gps);
+         wid = gtk_image_new_from_pixmap(img->pix, img->mask);
+ 
+     }
