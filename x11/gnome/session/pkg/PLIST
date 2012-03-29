@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2011/12/03 22:17:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2012/03/29 07:23:22 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-quit
@@ -15,6 +15,7 @@ share/doc/gnome-session/dbus/gnome-session.html
 share/glib-2.0/schemas/org.gnome.SessionManager.gschema.xml
 share/gnome-session/
 share/gnome-session/gsm-inhibit-dialog.ui
+share/gnome-session/hardware-compatibility
 share/gnome-session/session-properties.ui
 share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-fallback.session

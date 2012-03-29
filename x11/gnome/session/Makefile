@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.207 2012/02/23 12:17:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.208 2012/03/29 07:23:21 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.2.1
-REVISION=		11
+GNOME_VERSION=		3.4.0
 
 CATEGORIES=		x11
 
@@ -65,7 +64,7 @@ MODGNOME_ICON_CACHE=	Yes
 MODGNOME_CPPFLAGS=-I${X11BASE}/include
 MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
-CONFIGURE_ARGS=	--disable-rebuilds \
+CONFIGURE_ARGS=	--disable-systemd \
 		--enable-docbook-docs
 
 .include <bsd.port.mk>
