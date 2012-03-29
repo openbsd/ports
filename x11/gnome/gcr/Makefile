@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/28 06:16:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/03/29 06:50:16 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
 GNOME_VERSION=	3.4.0
+REVISION=	0
 
-SHARED_LIBS +=  gck-1                     0.0 # 0.0
-SHARED_LIBS +=  gcr-3                     0.0 # 1.0
+SHARED_LIBS +=  gck-1                     1.0 # 0.0
+SHARED_LIBS +=  gcr-3                     2.0 # 1.0
 SHARED_LIBS +=  gcr-base-3                0.0 # 1.0
 
 # LGPLv2
@@ -31,6 +32,9 @@ MODGNOME_TOOLS=	goi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
+# XXX
+# In function `_gck_stringize_rv': gck/gck-misc.c:132: multiple definition of `SECMEM_pool_data_v1_0'
+# gck/tests/test-gck-attributes.c:34: first defined here
 USE_LIBTOOL=	gnu
 
 RUN_DEPENDS=	misc/shared-mime-info
