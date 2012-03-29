@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/09 15:16:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/29 06:54:47 ajacoutot Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -158,6 +158,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/po.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/prolog.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/protobuf.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/python.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/python3.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/rpmspec.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ruby.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/scheme.lang
