@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/27 06:07:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/29 07:04:56 ajacoutot Exp $
 @conflict at-spi-<=1.32.0p3
 lib/gnome-settings-daemon-3.0/
 lib/gnome-settings-daemon-3.0/gtk-modules/
@@ -50,11 +50,14 @@ share/locale/hu/LC_MESSAGES/at-spi2-atk.mo
 share/locale/id/LC_MESSAGES/at-spi2-atk.mo
 share/locale/it/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ja/LC_MESSAGES/at-spi2-atk.mo
+share/locale/km/LC_MESSAGES/at-spi2-atk.mo
 share/locale/kn/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ko/LC_MESSAGES/at-spi2-atk.mo
 share/locale/lt/LC_MESSAGES/at-spi2-atk.mo
 share/locale/lv/LC_MESSAGES/at-spi2-atk.mo
+share/locale/ml/LC_MESSAGES/at-spi2-atk.mo
 share/locale/mr/LC_MESSAGES/at-spi2-atk.mo
+share/locale/ms/LC_MESSAGES/at-spi2-atk.mo
 share/locale/nb/LC_MESSAGES/at-spi2-atk.mo
 share/locale/nl/LC_MESSAGES/at-spi2-atk.mo
 share/locale/nn/LC_MESSAGES/at-spi2-atk.mo
@@ -77,6 +80,7 @@ share/locale/th/LC_MESSAGES/at-spi2-atk.mo
 share/locale/tr/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ug/LC_MESSAGES/at-spi2-atk.mo
 share/locale/uk/LC_MESSAGES/at-spi2-atk.mo
+share/locale/uz@cyrillic/LC_MESSAGES/at-spi2-atk.mo
 share/locale/vi/LC_MESSAGES/at-spi2-atk.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi2-atk.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi2-atk.mo

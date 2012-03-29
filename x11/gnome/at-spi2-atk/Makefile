@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/14 23:54:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/03/29 07:04:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	atk-bridge for at-spi2
 
 GNOME_PROJECT=	at-spi2-atk
-GNOME_VERSION=	2.2.2
+GNOME_VERSION=	2.4.0
 
 HOMEPAGE=	http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
