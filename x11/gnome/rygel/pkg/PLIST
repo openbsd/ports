@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/02/23 09:40:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/29 07:01:08 ajacoutot Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-1.0/
@@ -25,14 +25,10 @@ share/dbus-1/services/org.gnome.Rygel1.service
 share/examples/rygel/
 share/examples/rygel/rygel.conf
 @sample ${SYSCONFDIR}/rygel.conf
-share/icons/hicolor/120x120/
-share/icons/hicolor/120x120/apps/
-share/icons/hicolor/120x120/apps/rygel.jpg
-share/icons/hicolor/120x120/apps/rygel.png
+share/icons/hicolor/128x128/apps/rygel.png
 share/icons/hicolor/32x32/apps/rygel.png
-share/icons/hicolor/48x48/apps/rygel.jpg
 share/icons/hicolor/48x48/apps/rygel.png
-share/icons/hicolor/scalable/apps/rygel-small.svg
+share/icons/hicolor/scalable/apps/rygel-full.svg
 share/icons/hicolor/scalable/apps/rygel.svg
 share/locale/af/LC_MESSAGES/rygel.mo
 share/locale/ar/LC_MESSAGES/rygel.mo
@@ -82,6 +78,13 @@ share/locale/zh_CN/LC_MESSAGES/rygel.mo
 share/locale/zh_HK/LC_MESSAGES/rygel.mo
 share/locale/zh_TW/LC_MESSAGES/rygel.mo
 share/rygel/
+share/rygel/icons/
+share/rygel/icons/120x120/
+share/rygel/icons/120x120/rygel.jpg
+share/rygel/icons/120x120/rygel.png
+share/rygel/icons/48x48/
+share/rygel/icons/48x48/rygel.jpg
+share/rygel/icons/48x48/rygel.png
 share/rygel/rygel-preferences.ui
 share/rygel/xml/
 share/rygel/xml/AVTransport2.xml
