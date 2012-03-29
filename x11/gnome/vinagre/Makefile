@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2012/03/12 17:13:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2012/03/29 07:21:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	remote desktop viewer for GNOME
 
-GNOME_VERSION=	3.2.2
+GNOME_VERSION=	3.4.0
 GNOME_PROJECT=	vinagre
-REVISION=	2
 
 CATEGORIES=	net
 
@@ -18,17 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
-WANTLIB += avahi-common avahi-glib avahi-gobject avahi-ui-gtk3
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
-WANTLIB += ffi fontconfig freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring gnutls
-WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
-WANTLIB += gvnc-1.0 hogweed m ncurses nettle p11-kit pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sasl2 tasn1 telepathy-glib util vte2_90
-WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
+WANTLIB += GL X11 Xrender atk-1.0 avahi-client avahi-common avahi-glib
+WANTLIB += avahi-gobject avahi-ui-gtk3 c cairo cairo-gobject dbus-1
+WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gnome-keyring gobject-2.0 gthread-2.0
+WANTLIB += gtk-3 gtk-vnc-2.0 gvnc-1.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs telepathy-glib
+WANTLIB += util vte2_90 xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
