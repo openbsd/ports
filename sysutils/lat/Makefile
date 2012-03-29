@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/14 18:48:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/03/29 08:14:22 ajacoutot Exp $
 
 COMMENT=	LDAP Administration Tool
 
 DISTNAME=	lat-1.2.3
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	sysutils
 
@@ -18,11 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ldap-at/}
 
 BUILD_DEPENDS=	textproc/rarian \
-		x11/gnome/keyring \
+		x11/gnome/gcr \
 		x11/gnome/mono-gnome
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gnome/yelp \
-		x11/gnome/keyring \
 		x11/gnome/mono-gnome
 
 # do not use the devel/gettext MODULE to prevent port-lib-depends-check
