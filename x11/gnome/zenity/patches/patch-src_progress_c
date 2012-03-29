@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_progress_c,v 1.7 2012/03/29 11:44:21 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=653468
+--auto-close broken by fix for #540560
+
+--- src/progress.c.orig	Tue Aug 16 15:52:42 2011
++++ src/progress.c	Thu Mar 29 13:42:33 2012
+@@ -183,7 +183,7 @@ zenity_progress_handle_stdin (GIOChannel   *channel,
+     g_string_free (string, TRUE);
+   }
+ 
+-  if ((condition != G_IO_IN) && (condition != G_IO_IN + G_IO_HUP)) {
++  if (condition != G_IO_IN) {
+     /* We assume that we are done, so stop the pulsating and de-sensitize the buttons */
+     GtkWidget *button;
+ 
