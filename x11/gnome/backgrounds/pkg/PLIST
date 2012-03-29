@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/12 07:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/29 07:03:58 ajacoutot Exp $
 share/backgrounds/
 share/backgrounds/gnome/
 share/backgrounds/gnome/Aqua.jpg
@@ -11,6 +11,7 @@ share/backgrounds/gnome/GreenMeadow.jpg
 share/backgrounds/gnome/Spaceflare-nova.jpg
 share/backgrounds/gnome/Spaceflare-supernova.jpg
 share/backgrounds/gnome/Spaceflare.jpg
+share/backgrounds/gnome/Stripes.jpg
 share/backgrounds/gnome/SundownDunes.jpg
 share/backgrounds/gnome/Terraform-blue.jpg
 share/backgrounds/gnome/Terraform-green.jpg
@@ -147,6 +148,9 @@ share/locale/ka/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gnome-backgrounds.mo
@@ -279,6 +283,9 @@ share/locale/uz@cyrillic/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/vi/
 share/locale/vi/LC_MESSAGES/
 share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/xh/
+share/locale/xh/LC_MESSAGES/
+share/locale/xh/LC_MESSAGES/gnome-backgrounds.mo
 share/locale/zh_CN/
 share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
