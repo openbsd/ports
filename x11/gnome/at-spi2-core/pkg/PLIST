@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/11/14 23:52:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/03/29 07:04:30 ajacoutot Exp $
 %%SHARED%%
 include/at-spi-2.0/
 include/at-spi-2.0/atspi/
@@ -127,6 +127,7 @@ share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/at-spi2-core.mo
 share/locale/eo/LC_MESSAGES/at-spi2-core.mo
 share/locale/es/LC_MESSAGES/at-spi2-core.mo
+share/locale/et/LC_MESSAGES/at-spi2-core.mo
 share/locale/eu/LC_MESSAGES/at-spi2-core.mo
 share/locale/fa/
 share/locale/fa/LC_MESSAGES/
@@ -144,6 +145,10 @@ share/locale/hi/LC_MESSAGES/at-spi2-core.mo
 share/locale/hu/LC_MESSAGES/at-spi2-core.mo
 share/locale/id/LC_MESSAGES/at-spi2-core.mo
 share/locale/it/LC_MESSAGES/at-spi2-core.mo
+share/locale/ja/LC_MESSAGES/at-spi2-core.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/at-spi2-core.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/at-spi2-core.mo
@@ -152,9 +157,15 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/at-spi2-core.mo
 share/locale/lv/LC_MESSAGES/at-spi2-core.mo
+share/locale/ml/
+share/locale/ml/LC_MESSAGES/
+share/locale/ml/LC_MESSAGES/at-spi2-core.mo
 share/locale/mr/
 share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/at-spi2-core.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/at-spi2-core.mo
 share/locale/nb/LC_MESSAGES/at-spi2-core.mo
 share/locale/nl/LC_MESSAGES/at-spi2-core.mo
 share/locale/or/
@@ -188,6 +199,9 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/at-spi2-core.mo
 share/locale/uk/LC_MESSAGES/at-spi2-core.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/at-spi2-core.mo
 share/locale/vi/LC_MESSAGES/at-spi2-core.mo
 share/locale/zh_CN/LC_MESSAGES/at-spi2-core.mo
 share/locale/zh_HK/LC_MESSAGES/at-spi2-core.mo
