@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/11 07:52:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/29 06:36:20 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -21,6 +21,7 @@ share/icons/gnome/scalable/actions/edit-paste-symbolic.svg
 share/icons/gnome/scalable/actions/edit-redo-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/edit-redo-symbolic.svg
 share/icons/gnome/scalable/actions/edit-select-all-symbolic.svg
+share/icons/gnome/scalable/actions/edit-select-symbolic.svg
 share/icons/gnome/scalable/actions/edit-undo-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/edit-undo-symbolic.svg
 share/icons/gnome/scalable/actions/find-location-symbolic.svg
@@ -42,6 +43,8 @@ share/icons/gnome/scalable/actions/go-bottom-symbolic.svg
 share/icons/gnome/scalable/actions/go-down-symbolic.svg
 share/icons/gnome/scalable/actions/go-first-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-first-symbolic.svg
+share/icons/gnome/scalable/actions/go-jump-rtl-symbolic.svg
+share/icons/gnome/scalable/actions/go-jump-symbolic.svg
 share/icons/gnome/scalable/actions/go-last-rtl-symbolic.svg
 share/icons/gnome/scalable/actions/go-last-symbolic.svg
 share/icons/gnome/scalable/actions/go-next-rtl-symbolic.svg
@@ -93,6 +96,8 @@ share/icons/gnome/scalable/apps/
 share/icons/gnome/scalable/apps/accessories-calculator-symbolic.svg
 share/icons/gnome/scalable/apps/accessories-character-map-symbolic.svg
 share/icons/gnome/scalable/apps/accessories-text-editor-symbolic.svg
+share/icons/gnome/scalable/apps/applets-screenshooter-symbolic.svg
+share/icons/gnome/scalable/apps/gnome-power-manager-symbolic.svg
 share/icons/gnome/scalable/apps/help-browser-symbolic.svg
 share/icons/gnome/scalable/apps/preferences-desktop-accessibility-symbolic.svg
 share/icons/gnome/scalable/apps/preferences-desktop-display-symbolic.svg
@@ -101,25 +106,35 @@ share/icons/gnome/scalable/apps/preferences-desktop-remote-desktop-symbolic.svg
 share/icons/gnome/scalable/apps/preferences-desktop-screensaver-symbolic.svg
 share/icons/gnome/scalable/apps/preferences-desktop-wallpaper-symbolic.svg
 share/icons/gnome/scalable/apps/preferences-system-date-and-time-symbolic.svg
+share/icons/gnome/scalable/apps/preferences-system-network-proxy-symbolic.svg
 share/icons/gnome/scalable/apps/system-file-manager-symbolic.svg
 share/icons/gnome/scalable/apps/system-users-symbolic.svg
 share/icons/gnome/scalable/apps/user-info-symbolic.svg
 share/icons/gnome/scalable/apps/utilities-system-monitor-symbolic.svg
 share/icons/gnome/scalable/apps/utilities-terminal-symbolic.svg
+share/icons/gnome/scalable/apps/web-browser-symbolic.svg
 share/icons/gnome/scalable/categories/
+share/icons/gnome/scalable/categories/applications-engineering-symbolic.svg
+share/icons/gnome/scalable/categories/applications-science-symbolic.svg
+share/icons/gnome/scalable/categories/applications-utilities-symbolic.svg
+share/icons/gnome/scalable/categories/preferences-other-symbolic.svg
 share/icons/gnome/scalable/categories/preferences-system-symbolic.svg
+share/icons/gnome/scalable/categories/system-help-symbolic.svg
 share/icons/gnome/scalable/devices/
+share/icons/gnome/scalable/devices/audio-card-symbolic.svg
 share/icons/gnome/scalable/devices/audio-input-microphone-symbolic.svg
 share/icons/gnome/scalable/devices/camera-photo-symbolic.svg
 share/icons/gnome/scalable/devices/camera-web-symbolic.svg
 share/icons/gnome/scalable/devices/computer-symbolic.svg
 share/icons/gnome/scalable/devices/drive-harddisk-symbolic.svg
 share/icons/gnome/scalable/devices/input-dialpad-symbolic.svg
+share/icons/gnome/scalable/devices/input-gaming-symbolic.svg
 share/icons/gnome/scalable/devices/input-keyboard-symbolic.svg
 share/icons/gnome/scalable/devices/input-touchpad-symbolic.svg
 share/icons/gnome/scalable/devices/media-optical-symbolic.svg
 share/icons/gnome/scalable/devices/phone-symbolic.svg
 share/icons/gnome/scalable/devices/printer-symbolic.svg
+share/icons/gnome/scalable/devices/scanner-symbolic.svg
 share/icons/gnome/scalable/devices/video-display-symbolic.svg
 share/icons/gnome/scalable/emblems/
 share/icons/gnome/scalable/emblems/emblem-default-symbolic.svg
@@ -137,7 +152,9 @@ share/icons/gnome/scalable/emotes/face-angel-symbolic.svg
 share/icons/gnome/scalable/emotes/face-angry-symbolic.svg
 share/icons/gnome/scalable/emotes/face-sad-symbolic.svg
 share/icons/gnome/scalable/emotes/face-smile-symbolic.svg
+share/icons/gnome/scalable/emotes/face-worried-symbolic.svg
 share/icons/gnome/scalable/mimetypes/
+share/icons/gnome/scalable/mimetypes/application-certificate-symbolic.svg
 share/icons/gnome/scalable/mimetypes/audio-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/package-x-generic-symbolic.svg
 share/icons/gnome/scalable/mimetypes/text-x-generic-symbolic.svg
@@ -146,6 +163,7 @@ share/icons/gnome/scalable/places/folder-documents-symbolic.svg
 share/icons/gnome/scalable/places/folder-download-symbolic.svg
 share/icons/gnome/scalable/places/folder-music-symbolic.svg
 share/icons/gnome/scalable/places/folder-pictures-symbolic.svg
+share/icons/gnome/scalable/places/folder-publicshare-symbolic.svg
 share/icons/gnome/scalable/places/folder-remote-symbolic.svg
 share/icons/gnome/scalable/places/folder-saved-search-symbolic.svg
 share/icons/gnome/scalable/places/folder-symbolic.svg
@@ -158,6 +176,8 @@ share/icons/gnome/scalable/places/user-bookmarks-symbolic.svg
 share/icons/gnome/scalable/places/user-home-symbolic.svg
 share/icons/gnome/scalable/places/user-trash-symbolic.svg
 share/icons/gnome/scalable/status/
+share/icons/gnome/scalable/status/appointment-missed-symbolic.svg
+share/icons/gnome/scalable/status/appointment-soon-symbolic.svg
 share/icons/gnome/scalable/status/audio-volume-high-symbolic.svg
 share/icons/gnome/scalable/status/audio-volume-low-symbolic.svg
 share/icons/gnome/scalable/status/audio-volume-medium-symbolic.svg
