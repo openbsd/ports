@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/03/19 09:15:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/03/29 06:55:35 ajacoutot Exp $
 @bin bin/gcm-calibrate
 @bin bin/gcm-import
 @bin bin/gcm-inspect
 @bin bin/gcm-picker
 @bin bin/gcm-viewer
+@bin libexec/gcm-calibrate-helper
 @bin libexec/gcm-helper-exiv
 share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
@@ -15,18 +16,18 @@ share/gnome-color-manager/figures/viewer-example-00.png
 share/gnome-color-manager/figures/viewer-example-01.png
 share/gnome-color-manager/figures/viewer-example-02.png
 share/gnome-color-manager/figures/viewer-example-03.png
-share/gnome-color-manager/gcm-picker.ui
-share/gnome-color-manager/gcm-viewer.ui
 share/gnome-color-manager/icons/
 share/gnome-color-manager/icons/calibration-long.svg
 share/gnome-color-manager/icons/calibration-normal.svg
 share/gnome-color-manager/icons/calibration-short.svg
 share/gnome-color-manager/icons/clock.svg
+share/gnome-color-manager/icons/colorhug-attach.svg
 share/gnome-color-manager/icons/crt.svg
 share/gnome-color-manager/icons/dtp94-attach.svg
 share/gnome-color-manager/icons/hcfr-attach.svg
 share/gnome-color-manager/icons/huey-attach.svg
 share/gnome-color-manager/icons/i1-display3-attach.svg
+share/gnome-color-manager/icons/i1-monitor-attach.svg
 share/gnome-color-manager/icons/i1-pro-attach.svg
 share/gnome-color-manager/icons/lcd.svg
 share/gnome-color-manager/icons/munki-ambient.svg
@@ -38,7 +39,8 @@ share/gnome-color-manager/icons/projector.svg
 share/gnome-color-manager/icons/scan-target-bad.svg
 share/gnome-color-manager/icons/scan-target-good.svg
 share/gnome-color-manager/icons/scan-target.svg
-share/gnome-color-manager/icons/spyder-attach.svg
+share/gnome-color-manager/icons/spyder2-attach.svg
+share/gnome-color-manager/icons/spyder3-attach.svg
 share/gnome-color-manager/targets/
 share/gnome-color-manager/targets/CMP-DigitalTarget3.png
 share/gnome-color-manager/targets/CMP_DT_003.png
@@ -51,6 +53,13 @@ share/gnome-color-manager/targets/QPcard_201.png
 share/gnome-color-manager/targets/QPcard_202.png
 share/gnome-color-manager/targets/i1_RGB_Scan_14.png
 share/gnome-color-manager/targets/unknown.png
+share/gnome-color-manager/ti1/
+share/gnome-color-manager/ti1/display-long.ti1
+share/gnome-color-manager/ti1/display-normal.ti1
+share/gnome-color-manager/ti1/display-short.ti1
+share/gnome-color-manager/ti1/printer-long.ti1
+share/gnome-color-manager/ti1/printer-normal.ti1
+share/gnome-color-manager/ti1/printer-short.ti1
 share/icons/hicolor/16x16/apps/gnome-color-manager.png
 share/icons/hicolor/16x16/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/22x22/apps/gnome-color-manager.png
@@ -89,6 +98,7 @@ share/locale/it/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ja/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ko/LC_MESSAGES/gnome-color-manager.mo
 share/locale/lt/LC_MESSAGES/gnome-color-manager.mo
+share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-color-manager.mo

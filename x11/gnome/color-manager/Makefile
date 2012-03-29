@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/19 09:15:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/03/29 06:55:35 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
-GNOME_VERSION=	3.2.3
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	graphics
 
@@ -17,11 +17,11 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB += cairo-gobject canberra canberra-gtk3 colord drm exif
 WANTLIB += exiv2 expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 jpeg lcms2 ltdl m ncurses ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ tiff vorbis vorbisfile vte2_90 xcb xcb-render
-WANTLIB += xcb-shm z util
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 jpeg lcms2 ltdl m ncurses ogg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs stdc++ tiff util vorbis vorbisfile vte2_90
+WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -30,7 +30,8 @@ LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		devel/vte3 \
 		graphics/colord>=0.1.18 \
 		graphics/exiv2 \
-		graphics/libexif
+		graphics/libexif \
+		x11/gnome/desktop
 
 RUN_DEPENDS=	graphics/argyll \
 		graphics/shared-color-profiles,-extra \
