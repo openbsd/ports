@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2012/03/23 09:45:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2012/03/29 08:15:17 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.2.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -34,7 +34,7 @@ WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib smime3 sndfile softokn3 soup-2.4
 WANTLIB += sqlite3 ssl3 stdc++ tasn1 telepathy-farsight telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisfile webkitgtk-3.0 xcb
-WANTLIB += xcb-render xcb-shm xml2 xslt z
+WANTLIB += xcb-render xcb-shm xml2 xslt z gcr-base-3 orc-0.4
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -51,7 +51,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			net/telepathy/telepathy-farsight \
 			net/telepathy/telepathy-logger>=0.2.10 \
 			textproc/enchant \
-			x11/gnome/keyring \
+			x11/gnome/gcr \
 			x11/gnome/online-accounts
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
@@ -59,7 +59,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			net/telepathy/telepathy-gabble \
 			net/telepathy/telepathy-idle \
 			net/telepathy/telepathy-salut \
-			x11/gnome/icon-theme>=2.30.3
+			x11/gnome/icon-theme
 # XXX: need to address "Disconnected, network error" first.
 #RUN_DEPENDS+=		net/telepathy/telepathy-butterfly
 
