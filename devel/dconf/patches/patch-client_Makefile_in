@@ -1,6 +1,6 @@
-$OpenBSD: patch-client_Makefile_in,v 1.6 2011/09/27 06:25:10 ajacoutot Exp $
---- client/Makefile.in.orig	Mon Sep 26 23:20:35 2011
-+++ client/Makefile.in	Tue Sep 27 08:11:51 2011
+$OpenBSD: patch-client_Makefile_in,v 1.7 2012/03/29 06:26:38 ajacoutot Exp $
+--- client/Makefile.in.orig	Mon Mar 19 19:08:41 2012
++++ client/Makefile.in	Fri Mar 23 16:09:20 2012
 @@ -34,7 +34,7 @@ POST_INSTALL = :
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
@@ -10,7 +10,16 @@ $OpenBSD: patch-client_Makefile_in,v 1.6 2011/09/27 06:25:10 ajacoutot Exp $
  subdir = client
  DIST_COMMON = $(dconfinclude_HEADERS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/dconf.pc.in dconf-client.c \
-@@ -230,13 +230,13 @@ top_srcdir = @top_srcdir@
+@@ -128,7 +128,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@ -Wno-error -Wno-unused-but-set-variable \
++CFLAGS = @CFLAGS@ -Wno-error \
+ 	-Wno-unused-variable
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+@@ -237,13 +237,13 @@ top_srcdir = @top_srcdir@
  AM_CFLAGS = -std=c89 -Wall -Wmissing-prototypes -Wwrite-strings -D__dconf_h__ -fPIC -DPIC
  INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/gvdb -I$(top_srcdir)/engine $(gio_CFLAGS)
  shlibdir = $(libdir)
@@ -26,18 +35,18 @@ $OpenBSD: patch-client_Makefile_in,v 1.6 2011/09/27 06:25:10 ajacoutot Exp $
  libdconf_so_0_0_0_SOURCES = \
  	../common/dconf-shmdir.c	\
  	../common/dconf-paths.c		\
-@@ -324,8 +324,8 @@ uninstall-shlibPROGRAMS:
+@@ -331,8 +331,8 @@ uninstall-shlibPROGRAMS:
  
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
--libdconf.so.0.0.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
+-libdconf.so.0.0.0$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_0_0_0_DEPENDENCIES) 
 -	@rm -f libdconf.so.0.0.0$(EXEEXT)
-+libdconf.so.${LIBdconf_VERSION}$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) 
++libdconf.so.${LIBdconf_VERSION}$(EXEEXT): $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_DEPENDENCIES) $(EXTRA_libdconf_so_0_0_0_DEPENDENCIES) 
 +	@rm -f libdconf.so.${LIBdconf_VERSION}$(EXEEXT)
  	$(AM_V_CCLD)$(libdconf_so_0_0_0_LINK) $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -697,17 +697,12 @@ uninstall-am: uninstall-dconfincludeHEADERS uninstall-
+@@ -694,17 +694,12 @@ uninstall-am: uninstall-dconfincludeHEADERS uninstall-
  	uninstall-vapiDATA
  
  

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/06/03 13:26:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @extraunexec rm -rf ${SYSCONFDIR}/dconf/db/*
@@ -10,8 +10,6 @@ include/dconf-dbus-1/dconf-dbus-1.h
 include/dconf/dconf-client.h
 include/dconf/dconf-engine.h
 include/dconf/dconf-paths.h
-include/dconf/dconf-readtype.h
-include/dconf/dconf-resetlist.h
 include/dconf/dconf.h
 lib/gio/modules/libdconfsettings.so
 @lib lib/libdconf-dbus-1.so.${LIBdconf-dbus-1_VERSION}
@@ -20,7 +18,6 @@ lib/pkgconfig/dconf-dbus-1.pc
 lib/pkgconfig/dconf.pc
 @bin libexec/dconf-service
 share/dbus-1/services/ca.desrt.dconf.service
-share/dbus-1/system-services/ca.desrt.dconf.service
 share/examples/dconf/
 share/examples/dconf/bash_completion.d/
 @sample ${SYSCONFDIR}/bash_completion.d/
@@ -34,7 +31,6 @@ share/gtk-doc/html/dconf/annotation-glossary.html
 share/gtk-doc/html/dconf/api-index-full.html
 share/gtk-doc/html/dconf/ch01.html
 share/gtk-doc/html/dconf/dconf-DConf-Paths.html
-share/gtk-doc/html/dconf/dconf.devhelp
 share/gtk-doc/html/dconf/dconf.devhelp2
 share/gtk-doc/html/dconf/home.png
 share/gtk-doc/html/dconf/index.html

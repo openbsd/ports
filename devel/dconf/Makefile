@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/02/26 15:06:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/03/29 06:26:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.10.0
+GNOME_VERSION=	0.12.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
-
-REVISION-main=0
-REVISION-editor=1
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
@@ -30,17 +27,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pthread
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 pthread
 
 WANTLIB-main += ${WANTLIB} dbus-1
 
 WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
-WANTLIB-editor += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes
-WANTLIB-editor += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
-WANTLIB-editor += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB-editor += GL X11 Xrender atk-1.0 cairo cairo-gobject dconf expat
+WANTLIB-editor += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gmodule-2.0
 WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z dconf
+WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z
 
 MULTI_PACKAGES=	-main -editor
 

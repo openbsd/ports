@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.5 2011/09/27 06:25:10 ajacoutot Exp $
---- bin/Makefile.in.orig	Mon Sep 26 23:20:35 2011
-+++ bin/Makefile.in	Tue Sep 27 08:14:49 2011
+$OpenBSD: patch-bin_Makefile_in,v 1.6 2012/03/29 06:26:38 ajacoutot Exp $
+--- bin/Makefile.in.orig	Mon Mar 19 19:08:41 2012
++++ bin/Makefile.in	Fri Mar 23 16:08:11 2012
 @@ -51,7 +51,7 @@ am_dconf_OBJECTS = dconf.$(OBJEXT) dconf-update.$(OBJE
  	dconf-dump.$(OBJEXT) gvdb-builder.$(OBJEXT)
  dconf_OBJECTS = $(am_dconf_OBJECTS)
@@ -10,12 +10,21 @@ $OpenBSD: patch-bin_Makefile_in,v 1.5 2011/09/27 06:25:10 ajacoutot Exp $
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/aux/depcomp
  am__depfiles_maybe = depfiles
-@@ -223,7 +223,7 @@ top_srcdir = @top_srcdir@
- AM_CFLAGS = -std=c89 -Wall -Wmissing-prototypes -Wwrite-strings
+@@ -121,7 +121,7 @@ AUTOMAKE = @AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@ -Wno-error -Wno-unused-but-set-variable \
++CFLAGS = @CFLAGS@ -Wno-error \
+ 	-Wno-unused-variable
+ CPPFLAGS = @CPPFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+@@ -230,7 +230,7 @@ top_srcdir = @top_srcdir@
+ AM_CFLAGS = -Wall -Wmissing-prototypes -Wwrite-strings
  INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/engine -I$(top_srcdir)/client -I$(top_srcdir)/gvdb $(gio_CFLAGS)
  dconf_VALAFLAGS = --vapidir ../client --pkg=gio-2.0 --pkg=posix --pkg=dconf
 -dconf_LDADD = $(gio_LIBS) ../client/libdconf.so.0
 +dconf_LDADD = $(gio_LIBS) ../client/libdconf.so.${LIBdconf_VERSION}
- dconf_SOURCES = dconf.vala dconf-update.vala dconf-dump.vala ../gvdb/gvdb-builder.c gvdb.vapi fixes.vapi
+ dconf_SOURCES = dconf.vala dconf-update.vala dconf-dump.vala ../gvdb/gvdb-builder.c gvdb.vapi
  completiondir = $(sysconfdir)/bash_completion.d
  completion_DATA = dconf-bash-completion.sh
