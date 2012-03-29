@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2012/03/29 06:56:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.157 2012/03/29 16:39:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		3.4.0.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
@@ -203,7 +205,7 @@ pre-configure:
 # needed to prevent lazy bindings failures on pthreads(3) functions
 post-configure:
 	perl -pi -e 's|-Wl,--as-needed||g' \
-		${WRKBUILD}/{shell,calendar/gui/alarm-notify,plugins/backup-restore,capplet,capplet/settings}/Makefile
+		${WRKBUILD}/{shell,calendar/alarm-notify,plugins/backup-restore,capplet,capplet/settings}/Makefile
 
 post-install:
 	rm ${PREFIX}/lib/evolution/${R}/{modules,plugins}/*.la
