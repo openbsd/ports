@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/03/29 13:35:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2012/03/29 16:35:46 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	2.91.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gtranslator-private       0.0 # 0.0
 
@@ -51,10 +51,7 @@ LIB_DEPENDS=	devel/gobject-introspection \
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-# If gtkdoc-rebase is detected at configure time, it will be run at fake
-# stage even if we configure with --disable-gtk-doc; so just add gtk-doc
-# as a BUILD_DEPENDS.
-MODGNOME_TOOLS= 	goi yelp gtk-doc
+MODGNOME_TOOLS= 	goi yelp
 MODGNOME_CPPFLAGS=-I${LOCALBASE}/include/db4
 
 CONFIGURE_STYLE=gnu
