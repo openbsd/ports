@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_libwaitress_waitress_c,v 1.1 2012/03/29 13:54:17 dcoppa Exp $
+
+Correctly initialize fd using -1
+(upstream git commit 7d659d4bd624b3100b0c0852039648d7803cbaf9)
+
+--- src/libwaitress/waitress.c.orig	Thu Mar 29 15:45:05 2012
++++ src/libwaitress/waitress.c	Thu Mar 29 15:47:03 2012
+@@ -1063,6 +1063,7 @@ WaitressReturn_t WaitressFetchCall (WaitressHandle_t *
+ 
+ 	/* initialize */
+ 	memset (&waith->request, 0, sizeof (waith->request));
++	waith->request.sockfd = -1;
+ 	waith->request.dataHandler = WaitressHandleIdentity;
+ 	waith->request.read = WaitressOrdinaryRead;
+ 	waith->request.write = WaitressOrdinaryWrite;
+@@ -1104,7 +1105,9 @@ WaitressReturn_t WaitressFetchCall (WaitressHandle_t *
+ 		gnutls_deinit (waith->request.tlsSession);
+ 		gnutls_certificate_free_credentials (waith->tlsCred);
+ 	}
+-	close (waith->request.sockfd);
++	if (waith->request.sockfd != -1) {
++		close (waith->request.sockfd);
++	}
+ 	free (waith->request.buf);
+ 
+ 	if (wRet == WAITRESS_RET_OK &&
