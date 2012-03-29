@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2011/11/04 09:56:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2012/03/29 07:09:28 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.2.1
-REVISION=		0
+GNOME_VERSION=		3.3.4
 
 CATEGORIES=		editors
 
@@ -35,11 +34,15 @@ LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte3 \
 			x11/dbus-python \
-			x11/gnome/gedit>=3.2.1 \
+			x11/gnome/gedit>=3.4.0 \
 			x11/gnome/gucharmap
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS+=	--with-plugins=all
+
+# needed for the Vte plugin (-lvte2_90)
+MODGNOME_CPPFLAGS=	-I${X11BASE}/include -pthread
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -pthread
 
 .include <bsd.port.mk>
