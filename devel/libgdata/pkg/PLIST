@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/21 13:25:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/03/29 06:39:20 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -47,6 +47,7 @@ include/libgdata/gdata/gdata-query.h
 include/libgdata/gdata/gdata-service.h
 include/libgdata/gdata/gdata-types.h
 include/libgdata/gdata/gdata-upload-stream.h
+include/libgdata/gdata/gdata-version.h
 include/libgdata/gdata/gdata.h
 include/libgdata/gdata/media/
 include/libgdata/gdata/media/gdata-media-category.h
@@ -202,6 +203,7 @@ share/gtk-doc/html/gdata/ch16.html
 share/gtk-doc/html/gdata/ch17.html
 share/gtk-doc/html/gdata/data-flow.png
 share/gtk-doc/html/gdata/gdata-GData-Types.html
+share/gtk-doc/html/gdata/gdata-Version-Information.html
 share/gtk-doc/html/gdata/gdata-overview.html
 share/gtk-doc/html/gdata/gdata-running.html
 share/gtk-doc/html/gdata/gdata.devhelp2
@@ -219,6 +221,7 @@ share/gtk-doc/html/gdata/ix10.html
 share/gtk-doc/html/gdata/ix11.html
 share/gtk-doc/html/gdata/ix12.html
 share/gtk-doc/html/gdata/ix13.html
+share/gtk-doc/html/gdata/ix14.html
 share/gtk-doc/html/gdata/left.png
 share/gtk-doc/html/gdata/pt01.html
 share/gtk-doc/html/gdata/pt02.html
@@ -230,6 +233,7 @@ share/gtk-doc/html/gdata/structure.png
 share/gtk-doc/html/gdata/style.css
 share/gtk-doc/html/gdata/up.png
 share/locale/as/LC_MESSAGES/gdata.mo
+share/locale/be/LC_MESSAGES/gdata.mo
 share/locale/bg/LC_MESSAGES/gdata.mo
 share/locale/bn_IN/LC_MESSAGES/gdata.mo
 share/locale/ca/LC_MESSAGES/gdata.mo
@@ -270,10 +274,12 @@ share/locale/sr/LC_MESSAGES/gdata.mo
 share/locale/sr@latin/LC_MESSAGES/gdata.mo
 share/locale/sv/LC_MESSAGES/gdata.mo
 share/locale/ta/LC_MESSAGES/gdata.mo
+share/locale/te/LC_MESSAGES/gdata.mo
 share/locale/th/LC_MESSAGES/gdata.mo
 share/locale/tr/LC_MESSAGES/gdata.mo
 share/locale/ug/LC_MESSAGES/gdata.mo
 share/locale/uk/LC_MESSAGES/gdata.mo
+share/locale/vi/LC_MESSAGES/gdata.mo
 share/locale/zh_CN/LC_MESSAGES/gdata.mo
 share/locale/zh_HK/LC_MESSAGES/gdata.mo
 share/locale/zh_TW/LC_MESSAGES/gdata.mo
