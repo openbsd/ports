@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.107 2012/01/09 13:39:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2012/03/29 06:45:21 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.2.3
+GNOME_VERSION=		3.4.0
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -13,14 +13,13 @@ SUBST_VARS=		R
 
 CATEGORIES=		databases
 
-SHARED_LIBS +=  edataserver-1.2      13.0     # 15.0
-SHARED_LIBS +=  ebackend-1.2         2.0      # 1.0
-SHARED_LIBS +=  camel-1.2            17.0     # 29.0
-SHARED_LIBS +=  camel-provider-1.2   17.0     # 29.0
-SHARED_LIBS +=  ebook-1.2            15.0     # 15.1
-SHARED_LIBS +=  edata-book-1.2       9.0      # 11.0
-SHARED_LIBS +=  ecal-1.2             12.0     # 12.2
-SHARED_LIBS +=  edata-cal-1.2        9.0      # 13.0
+SHARED_LIBS +=  camel-1.2            33.0     # 33.0
+SHARED_LIBS +=  edataserver-1.2      16.0     # 16.0
+SHARED_LIBS +=  ebackend-1.2         2.0      # 2.0
+SHARED_LIBS +=  ebook-1.2            16.1     # 16.1
+SHARED_LIBS +=  edata-book-1.2       13.0     # 13.0
+SHARED_LIBS +=  ecal-1.2             13.2     # 13.2
+SHARED_LIBS +=  edata-cal-1.2        15.0     # 15.0
 SHARED_LIBS +=  edataserverui-3.0    1.0      # 1.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evolution/
@@ -47,6 +46,7 @@ WANTLIB += sasl2 smime3 softokn3 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl ssl3 stdc++ xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
+			devel/dconf \
 			lang/python \
 			x11/gnome
 

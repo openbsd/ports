@@ -1,60 +1,60 @@
-$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.5 2011/12/29 09:23:19 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.6 2012/03/29 06:45:21 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
---- camel/camel-search-sql-sexp.c.orig	Mon Sep 19 07:03:01 2011
-+++ camel/camel-search-sql-sexp.c	Thu Dec 29 09:11:34 2011
-@@ -188,7 +188,7 @@ eval_eq (struct _ESExp *f,
- 		if (r1->type == ESEXP_RES_INT)
+--- camel/camel-search-sql-sexp.c.orig	Fri Mar 23 23:14:46 2012
++++ camel/camel-search-sql-sexp.c	Fri Mar 23 23:15:37 2012
+@@ -188,7 +188,7 @@ eval_eq (struct _CamelSExp *f,
+ 		if (r1->type == CAMEL_SEXP_RES_INT)
  			g_string_append_printf(str, "%d", r1->value.number);
- 		else if (r1->type == ESEXP_RES_TIME)
+ 		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
 +			g_string_append_printf(str, "%d", r1->value.time);
- 		else if (r1->type == ESEXP_RES_STRING)
+ 		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
-@@ -206,7 +206,7 @@ eval_eq (struct _ESExp *f,
- 			if (r2->type == ESEXP_RES_BOOL)
+@@ -206,7 +206,7 @@ eval_eq (struct _CamelSExp *f,
+ 			if (r2->type == CAMEL_SEXP_RES_BOOL)
  				g_string_append_printf(str, "%d", r2->value.boolean);
- 			else if (r2->type == ESEXP_RES_TIME)
+ 			else if (r2->type == CAMEL_SEXP_RES_TIME)
 -				g_string_append_printf(str, "%ld", r2->value.time);
 +				g_string_append_printf(str, "%d", r2->value.time);
- 			else if (r2->type == ESEXP_RES_STRING) {
+ 			else if (r2->type == CAMEL_SEXP_RES_STRING) {
  				gchar *tmp = g_strdup_printf("%c%s%c", ut ? '%':' ', r2->value.string, ut?'%':' ');
  				gchar *safe = get_db_safe_string (tmp);
-@@ -244,7 +244,7 @@ eval_lt (struct _ESExp *f,
- 		if (r1->type == ESEXP_RES_INT)
+@@ -244,7 +244,7 @@ eval_lt (struct _CamelSExp *f,
+ 		if (r1->type == CAMEL_SEXP_RES_INT)
  			g_string_append_printf(str, "%d", r1->value.number);
- 		else if (r1->type == ESEXP_RES_TIME)
+ 		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
 +			g_string_append_printf(str, "%d", r1->value.time);
- 		else if (r1->type == ESEXP_RES_STRING)
+ 		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
-@@ -254,7 +254,7 @@ eval_lt (struct _ESExp *f,
- 		if (r2->type == ESEXP_RES_BOOL)
+@@ -254,7 +254,7 @@ eval_lt (struct _CamelSExp *f,
+ 		if (r2->type == CAMEL_SEXP_RES_BOOL)
  			g_string_append_printf(str, "%d", r2->value.boolean);
- 		else if (r2->type == ESEXP_RES_TIME)
+ 		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r2->value.time);
 +			g_string_append_printf(str, "%d", r2->value.time);
- 		else if (r2->type == ESEXP_RES_STRING)
+ 		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r2->value.string);
- 		e_sexp_result_free (f, r1);
-@@ -286,7 +286,7 @@ eval_gt (struct _ESExp *f,
- 		if (r1->type == ESEXP_RES_INT)
+ 		camel_sexp_result_free (f, r1);
+@@ -286,7 +286,7 @@ eval_gt (struct _CamelSExp *f,
+ 		if (r1->type == CAMEL_SEXP_RES_INT)
  			g_string_append_printf(str, "%d", r1->value.number);
- 		else if (r1->type == ESEXP_RES_TIME)
+ 		else if (r1->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
 +			g_string_append_printf(str, "%d", r1->value.time);
- 		else if (r1->type == ESEXP_RES_STRING)
+ 		else if (r1->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
-@@ -296,7 +296,7 @@ eval_gt (struct _ESExp *f,
- 		if (r2->type == ESEXP_RES_BOOL)
+@@ -296,7 +296,7 @@ eval_gt (struct _CamelSExp *f,
+ 		if (r2->type == CAMEL_SEXP_RES_BOOL)
  			g_string_append_printf(str, "%d", r2->value.boolean);
- 		else if (r2->type == ESEXP_RES_TIME)
+ 		else if (r2->type == CAMEL_SEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r2->value.time);
 +			g_string_append_printf(str, "%d", r2->value.time);
- 		else if (r2->type == ESEXP_RES_STRING)
+ 		else if (r2->type == CAMEL_SEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r2->value.string);
- 		e_sexp_result_free (f, r1);
+ 		camel_sexp_result_free (f, r1);

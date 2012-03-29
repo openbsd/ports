@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2012/01/09 13:39:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2012/03/29 06:45:21 ajacoutot Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -29,11 +29,12 @@ include/evolution-data-server-${R}/camel/camel-iconv.h
 include/evolution-data-server-${R}/camel/camel-index.h
 include/evolution-data-server-${R}/camel/camel-internet-address.h
 include/evolution-data-server-${R}/camel/camel-junk-filter.h
-include/evolution-data-server-${R}/camel/camel-list-utils.h
+include/evolution-data-server-${R}/camel/camel-local-settings.h
 include/evolution-data-server-${R}/camel/camel-lock-client.h
 include/evolution-data-server-${R}/camel/camel-lock-helper.h
 include/evolution-data-server-${R}/camel/camel-lock.h
 include/evolution-data-server-${R}/camel/camel-medium.h
+include/evolution-data-server-${R}/camel/camel-memchunk.h
 include/evolution-data-server-${R}/camel/camel-mempool.h
 include/evolution-data-server-${R}/camel/camel-mime-filter-basic.h
 include/evolution-data-server-${R}/camel/camel-mime-filter-bestenc.h
@@ -91,6 +92,7 @@ include/evolution-data-server-${R}/camel/camel-search-sql.h
 include/evolution-data-server-${R}/camel/camel-service.h
 include/evolution-data-server-${R}/camel/camel-session.h
 include/evolution-data-server-${R}/camel/camel-settings.h
+include/evolution-data-server-${R}/camel/camel-sexp.h
 include/evolution-data-server-${R}/camel/camel-smime-context.h
 include/evolution-data-server-${R}/camel/camel-store-settings.h
 include/evolution-data-server-${R}/camel/camel-store-summary.h
@@ -121,10 +123,16 @@ include/evolution-data-server-${R}/camel/camel-vee-summary.h
 include/evolution-data-server-${R}/camel/camel-vtrash-folder.h
 include/evolution-data-server-${R}/camel/camel.h
 include/evolution-data-server-${R}/libebackend/
-include/evolution-data-server-${R}/libebackend/e-data-server-module.h
+include/evolution-data-server-${R}/libebackend/e-backend-factory.h
+include/evolution-data-server-${R}/libebackend/e-backend.h
+include/evolution-data-server-${R}/libebackend/e-data-factory.h
 include/evolution-data-server-${R}/libebackend/e-db3-utils.h
 include/evolution-data-server-${R}/libebackend/e-dbhash.h
+include/evolution-data-server-${R}/libebackend/e-dbus-server.h
+include/evolution-data-server-${R}/libebackend/e-extensible.h
+include/evolution-data-server-${R}/libebackend/e-extension.h
 include/evolution-data-server-${R}/libebackend/e-file-cache.h
+include/evolution-data-server-${R}/libebackend/e-module.h
 include/evolution-data-server-${R}/libebackend/e-offline-listener.h
 include/evolution-data-server-${R}/libebackend/e-sqlite3-vfs.h
 include/evolution-data-server-${R}/libebook/
@@ -188,6 +196,8 @@ include/evolution-data-server-${R}/libedataserver/e-credentials.h
 include/evolution-data-server-${R}/libedataserver/e-data-server-util.h
 include/evolution-data-server-${R}/libedataserver/e-debug-log.h
 include/evolution-data-server-${R}/libedataserver/e-flag.h
+include/evolution-data-server-${R}/libedataserver/e-gdbus-marshallers.h
+include/evolution-data-server-${R}/libedataserver/e-gdbus-templates.h
 include/evolution-data-server-${R}/libedataserver/e-iterator.h
 include/evolution-data-server-${R}/libedataserver/e-list-iterator.h
 include/evolution-data-server-${R}/libedataserver/e-list.h
@@ -293,9 +303,6 @@ lib/girepository-1.0/EDataServer-1.2.typelib
 lib/libcamel-1.2.a
 lib/libcamel-1.2.la
 @lib lib/libcamel-1.2.so.${LIBcamel-1.2_VERSION}
-lib/libcamel-provider-1.2.a
-lib/libcamel-provider-1.2.la
-@lib lib/libcamel-provider-1.2.so.${LIBcamel-provider-1.2_VERSION}
 lib/libebackend-1.2.a
 lib/libebackend-1.2.la
 @lib lib/libebackend-1.2.so.${LIBebackend-1.2_VERSION}
@@ -318,7 +325,6 @@ lib/libedataserverui-3.0.a
 lib/libedataserverui-3.0.la
 @lib lib/libedataserverui-3.0.so.${LIBedataserverui-3.0_VERSION}
 lib/pkgconfig/camel-1.2.pc
-lib/pkgconfig/camel-provider-1.2.pc
 lib/pkgconfig/evolution-data-server-1.2.pc
 lib/pkgconfig/libebackend-1.2.pc
 lib/pkgconfig/libebook-1.2.pc
@@ -331,8 +337,9 @@ lib/pkgconfig/libedataserverui-3.0.pc
 @mode 4555
 @bin libexec/camel-lock-helper-1.2
 @mode
-@bin libexec/e-addressbook-factory
-@bin libexec/e-calendar-factory
+@bin libexec/evolution-addressbook-factory
+@bin libexec/evolution-calendar-factory
+share/GConf/gsettings/libedataserver.convert
 share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/evolution-data-server-${R}/
@@ -340,6 +347,8 @@ share/evolution-data-server-${R}/evolutionperson.schema
 share/gir-1.0/EBook-1.2.gir
 share/gir-1.0/ECalendar-1.2.gir
 share/gir-1.0/EDataServer-1.2.gir
+share/glib-2.0/schemas/org.gnome.evolution.eds-shell.gschema.xml
+share/glib-2.0/schemas/org.gnome.evolution.shell.network-config.gschema.xml
 share/gtk-doc/html/camel/
 share/gtk-doc/html/camel/Addresses.html
 share/gtk-doc/html/camel/CamelAddress.html
@@ -394,6 +403,7 @@ share/gtk-doc/html/camel/CamelOfflineFolder.html
 share/gtk-doc/html/camel/CamelOfflineJournal.html
 share/gtk-doc/html/camel/CamelOfflineSettings.html
 share/gtk-doc/html/camel/CamelOfflineStore.html
+share/gtk-doc/html/camel/CamelSExp.html
 share/gtk-doc/html/camel/CamelSMIMEContext.html
 share/gtk-doc/html/camel/CamelSasl.html
 share/gtk-doc/html/camel/CamelSaslAnonymous.html
@@ -447,10 +457,12 @@ share/gtk-doc/html/camel/api-index-2.28.html
 share/gtk-doc/html/camel/api-index-2.30.html
 share/gtk-doc/html/camel/api-index-2.32.html
 share/gtk-doc/html/camel/api-index-3.0.html
+share/gtk-doc/html/camel/api-index-3.2.html
 share/gtk-doc/html/camel/api-index-${R}.html
 share/gtk-doc/html/camel/api-index-deprecated.html
 share/gtk-doc/html/camel/api-index-full.html
 share/gtk-doc/html/camel/camel-CamelDB.html
+share/gtk-doc/html/camel/camel-CamelLocalSettings.html
 share/gtk-doc/html/camel/camel-CamelMsgPort.html
 share/gtk-doc/html/camel/camel-CamelTcpStreamSSL.html
 share/gtk-doc/html/camel/camel-camel-charset-map.html
@@ -459,9 +471,9 @@ share/gtk-doc/html/camel/camel-camel-file-utils.html
 share/gtk-doc/html/camel/camel-camel-filter-search.html
 share/gtk-doc/html/camel/camel-camel-folder-thread.html
 share/gtk-doc/html/camel/camel-camel-iconv.html
-share/gtk-doc/html/camel/camel-camel-list-utils.html
 share/gtk-doc/html/camel/camel-camel-lock-client.html
 share/gtk-doc/html/camel/camel-camel-lock.html
+share/gtk-doc/html/camel/camel-camel-memchunk.html
 share/gtk-doc/html/camel/camel-camel-mempool.html
 share/gtk-doc/html/camel/camel-camel-mime-utils.html
 share/gtk-doc/html/camel/camel-camel-movemail.html
@@ -477,7 +489,6 @@ share/gtk-doc/html/camel/camel-camel-url-scanner.html
 share/gtk-doc/html/camel/camel-camel-url.html
 share/gtk-doc/html/camel/camel-camel-utf8.html
 share/gtk-doc/html/camel/camel-camel.html
-share/gtk-doc/html/camel/camel.devhelp
 share/gtk-doc/html/camel/camel.devhelp2
 share/gtk-doc/html/camel/classes.html
 share/gtk-doc/html/camel/home.png
@@ -488,12 +499,19 @@ share/gtk-doc/html/camel/right.png
 share/gtk-doc/html/camel/style.css
 share/gtk-doc/html/camel/up.png
 share/gtk-doc/html/libebackend/
+share/gtk-doc/html/libebackend/EBackend.html
+share/gtk-doc/html/libebackend/EBackendFactory.html
+share/gtk-doc/html/libebackend/EDataFactory.html
+share/gtk-doc/html/libebackend/EExtensible.html
+share/gtk-doc/html/libebackend/EExtension.html
 share/gtk-doc/html/libebackend/EFileCache.html
+share/gtk-doc/html/libebackend/EModule.html
 share/gtk-doc/html/libebackend/EOfflineListener.html
 share/gtk-doc/html/libebackend/api-index-2.24.html
 share/gtk-doc/html/libebackend/api-index-2.26.html
 share/gtk-doc/html/libebackend/api-index-2.28.html
 share/gtk-doc/html/libebackend/api-index-2.30.html
+share/gtk-doc/html/libebackend/api-index-3.2.html
 share/gtk-doc/html/libebackend/api-index-${R}.html
 share/gtk-doc/html/libebackend/api-index-deprecated.html
 share/gtk-doc/html/libebackend/ch01.html
@@ -502,11 +520,9 @@ share/gtk-doc/html/libebackend/index.html
 share/gtk-doc/html/libebackend/index.sgml
 share/gtk-doc/html/libebackend/ix01.html
 share/gtk-doc/html/libebackend/left.png
-share/gtk-doc/html/libebackend/libebackend-e-data-server-module.html
 share/gtk-doc/html/libebackend/libebackend-e-db3-utils.html
 share/gtk-doc/html/libebackend/libebackend-e-dbhash.html
 share/gtk-doc/html/libebackend/libebackend-e-sqlite3-vfs.html
-share/gtk-doc/html/libebackend/libebackend.devhelp
 share/gtk-doc/html/libebackend/libebackend.devhelp2
 share/gtk-doc/html/libebackend/right.png
 share/gtk-doc/html/libebackend/style.css
@@ -528,7 +544,7 @@ share/gtk-doc/html/libebook/api-index-2.28.html
 share/gtk-doc/html/libebook/api-index-2.30.html
 share/gtk-doc/html/libebook/api-index-2.32.html
 share/gtk-doc/html/libebook/api-index-3.0.html
-share/gtk-doc/html/libebook/api-index-${R}.html
+share/gtk-doc/html/libebook/api-index-3.2.html
 share/gtk-doc/html/libebook/api-index-deprecated.html
 share/gtk-doc/html/libebook/api-index-full.html
 share/gtk-doc/html/libebook/ch01.html
@@ -541,7 +557,6 @@ share/gtk-doc/html/libebook/libebook-EAddressWestern.html
 share/gtk-doc/html/libebook/libebook-ENameWestern.html
 share/gtk-doc/html/libebook/libebook-e-book-query.html
 share/gtk-doc/html/libebook/libebook-e-book-types.html
-share/gtk-doc/html/libebook/libebook.devhelp
 share/gtk-doc/html/libebook/libebook.devhelp2
 share/gtk-doc/html/libebook/right.png
 share/gtk-doc/html/libebook/style.css
@@ -561,7 +576,7 @@ share/gtk-doc/html/libecal/api-index-2.28.html
 share/gtk-doc/html/libecal/api-index-2.30.html
 share/gtk-doc/html/libecal/api-index-2.32.html
 share/gtk-doc/html/libecal/api-index-3.0.html
-share/gtk-doc/html/libecal/api-index-${R}.html
+share/gtk-doc/html/libecal/api-index-3.2.html
 share/gtk-doc/html/libecal/api-index-deprecated.html
 share/gtk-doc/html/libecal/api-index-full.html
 share/gtk-doc/html/libecal/ch01.html
@@ -576,7 +591,6 @@ share/gtk-doc/html/libecal/libecal-e-cal-system-timezone.html
 share/gtk-doc/html/libecal/libecal-e-cal-time-util.html
 share/gtk-doc/html/libecal/libecal-e-cal-types.html
 share/gtk-doc/html/libecal/libecal-e-cal-util.html
-share/gtk-doc/html/libecal/libecal.devhelp
 share/gtk-doc/html/libecal/libecal.devhelp2
 share/gtk-doc/html/libecal/right.png
 share/gtk-doc/html/libecal/style.css
@@ -599,7 +613,7 @@ share/gtk-doc/html/libedata-book/api-index-2.28.html
 share/gtk-doc/html/libedata-book/api-index-2.30.html
 share/gtk-doc/html/libedata-book/api-index-2.32.html
 share/gtk-doc/html/libedata-book/api-index-3.0.html
-share/gtk-doc/html/libedata-book/api-index-${R}.html
+share/gtk-doc/html/libedata-book/api-index-3.2.html
 share/gtk-doc/html/libedata-book/api-index-deprecated.html
 share/gtk-doc/html/libedata-book/api-index-full.html
 share/gtk-doc/html/libedata-book/ch01.html
@@ -611,7 +625,6 @@ share/gtk-doc/html/libedata-book/libedata-book-EBookBackendSqliteDB.html
 share/gtk-doc/html/libedata-book/libedata-book-EDataBookFactory.html
 share/gtk-doc/html/libedata-book/libedata-book-e-book-backend-db-cache.html
 share/gtk-doc/html/libedata-book/libedata-book-ximian-vcard.html
-share/gtk-doc/html/libedata-book/libedata-book.devhelp
 share/gtk-doc/html/libedata-book/libedata-book.devhelp2
 share/gtk-doc/html/libedata-book/right.png
 share/gtk-doc/html/libedata-book/style.css
@@ -623,6 +636,7 @@ share/gtk-doc/html/libedata-cal/ECalBackendFactory.html
 share/gtk-doc/html/libedata-cal/ECalBackendSExp.html
 share/gtk-doc/html/libedata-cal/ECalBackendSync.html
 share/gtk-doc/html/libedata-cal/EDataCal.html
+share/gtk-doc/html/libedata-cal/annotation-glossary.html
 share/gtk-doc/html/libedata-cal/api-index-1.12.html
 share/gtk-doc/html/libedata-cal/api-index-2.22.html
 share/gtk-doc/html/libedata-cal/api-index-2.24.html
@@ -631,7 +645,7 @@ share/gtk-doc/html/libedata-cal/api-index-2.28.html
 share/gtk-doc/html/libedata-cal/api-index-2.30.html
 share/gtk-doc/html/libedata-cal/api-index-2.32.html
 share/gtk-doc/html/libedata-cal/api-index-3.0.html
-share/gtk-doc/html/libedata-cal/api-index-${R}.html
+share/gtk-doc/html/libedata-cal/api-index-3.2.html
 share/gtk-doc/html/libedata-cal/api-index-deprecated.html
 share/gtk-doc/html/libedata-cal/api-index-full.html
 share/gtk-doc/html/libedata-cal/ch01.html
@@ -645,7 +659,6 @@ share/gtk-doc/html/libedata-cal/libedata-cal-EDataCalFactory.html
 share/gtk-doc/html/libedata-cal/libedata-cal-EDataCalView.html
 share/gtk-doc/html/libedata-cal/libedata-cal-EIntervalTree.html
 share/gtk-doc/html/libedata-cal/libedata-cal-e-cal-backend-util.html
-share/gtk-doc/html/libedata-cal/libedata-cal.devhelp
 share/gtk-doc/html/libedata-cal/libedata-cal.devhelp2
 share/gtk-doc/html/libedata-cal/right.png
 share/gtk-doc/html/libedata-cal/style.css
@@ -670,7 +683,7 @@ share/gtk-doc/html/libedataserver/api-index-2.28.html
 share/gtk-doc/html/libedataserver/api-index-2.30.html
 share/gtk-doc/html/libedataserver/api-index-2.32.html
 share/gtk-doc/html/libedataserver/api-index-3.0.html
-share/gtk-doc/html/libedataserver/api-index-${R}.html
+share/gtk-doc/html/libedataserver/api-index-3.2.html
 share/gtk-doc/html/libedataserver/api-index-deprecated.html
 share/gtk-doc/html/libedataserver/api-index-full.html
 share/gtk-doc/html/libedataserver/ch01.html
@@ -691,7 +704,6 @@ share/gtk-doc/html/libedataserver/libedataserver-e-uid.html
 share/gtk-doc/html/libedataserver/libedataserver-e-url.html
 share/gtk-doc/html/libedataserver/libedataserver-e-util.html
 share/gtk-doc/html/libedataserver/libedataserver-e-xml-hash-utils.html
-share/gtk-doc/html/libedataserver/libedataserver.devhelp
 share/gtk-doc/html/libedataserver/libedataserver.devhelp2
 share/gtk-doc/html/libedataserver/right.png
 share/gtk-doc/html/libedataserver/style.css
@@ -721,7 +733,7 @@ share/gtk-doc/html/libedataserverui/api-index-2.28.html
 share/gtk-doc/html/libedataserverui/api-index-2.30.html
 share/gtk-doc/html/libedataserverui/api-index-2.32.html
 share/gtk-doc/html/libedataserverui/api-index-3.0.html
-share/gtk-doc/html/libedataserverui/api-index-${R}.html
+share/gtk-doc/html/libedataserverui/api-index-3.2.html
 share/gtk-doc/html/libedataserverui/api-index-deprecated.html
 share/gtk-doc/html/libedataserverui/api-index-full.html
 share/gtk-doc/html/libedataserverui/ch01.html
@@ -734,7 +746,6 @@ share/gtk-doc/html/libedataserverui/libedataserverui-ECellRendererColor.html
 share/gtk-doc/html/libedataserverui/libedataserverui-EClient-Utilities.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-book-auth-util.html
 share/gtk-doc/html/libedataserverui/libedataserverui-e-passwords.html
-share/gtk-doc/html/libedataserverui/libedataserverui.devhelp
 share/gtk-doc/html/libedataserverui/libedataserverui.devhelp2
 share/gtk-doc/html/libedataserverui/right.png
 share/gtk-doc/html/libedataserverui/style.css
@@ -780,6 +791,7 @@ share/locale/is/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/it/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ja/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ka/LC_MESSAGES/evolution-data-server-${R}.mo
+share/locale/km/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/kn/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ko/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/ku/LC_MESSAGES/evolution-data-server-${R}.mo
@@ -823,6 +835,7 @@ share/locale/xh/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_CN/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_HK/LC_MESSAGES/evolution-data-server-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-data-server-${R}.mo
+share/pixmaps/
 share/pixmaps/evolution-data-server/
 share/pixmaps/evolution-data-server/category_birthday_16.png
 share/pixmaps/evolution-data-server/category_business_16.png
@@ -847,5 +860,7 @@ share/vala/vapi/libebook-1.2.vapi
 share/vala/vapi/libecalendar-1.2.deps
 share/vala/vapi/libecalendar-1.2.vapi
 share/vala/vapi/libedataserver-1.2.vapi
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

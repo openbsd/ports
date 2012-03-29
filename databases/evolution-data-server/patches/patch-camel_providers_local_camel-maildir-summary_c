@@ -1,10 +1,10 @@
-$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.6 2011/12/29 09:23:19 ajacoutot Exp $
+$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.7 2012/03/29 06:45:21 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
---- camel/providers/local/camel-maildir-summary.c.orig	Thu Oct 20 12:32:50 2011
-+++ camel/providers/local/camel-maildir-summary.c	Thu Dec 29 09:10:22 2011
-@@ -378,7 +378,7 @@ static gchar *maildir_summary_next_uid_string (CamelFo
+--- camel/providers/local/camel-maildir-summary.c.orig	Tue Feb 21 09:04:18 2012
++++ camel/providers/local/camel-maildir-summary.c	Fri Mar 23 23:05:20 2012
+@@ -377,7 +377,7 @@ static gchar *maildir_summary_next_uid_string (CamelFo
  				g_free (uid);
  				g_usleep (2 * G_USEC_PER_SEC);
  			}

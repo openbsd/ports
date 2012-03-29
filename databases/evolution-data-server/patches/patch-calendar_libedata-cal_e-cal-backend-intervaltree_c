@@ -1,10 +1,10 @@
-$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.6 2011/12/29 09:23:19 ajacoutot Exp $
+$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.7 2012/03/29 06:45:21 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
---- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Mon Sep 19 07:03:01 2011
-+++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Thu Dec 29 09:15:18 2011
-@@ -608,7 +608,7 @@ e_intervaltree_node_dump (EIntervalTree *tree,
+--- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Tue Feb 21 09:04:18 2012
++++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Fri Mar 23 23:05:19 2012
+@@ -613,7 +613,7 @@ e_intervaltree_node_dump (EIntervalTree *tree,
  	*/
  	EIntervalTreePrivate *priv = tree->priv;
  	if (node != priv->nil)
