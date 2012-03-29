@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.69 2012/02/16 22:16:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2012/03/29 06:31:59 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.36.1
-
-REVISION-main =		0
+GNOME_VERSION =		2.38.0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
 
-SHARED_LIBS +=  soup-2.4             3.1      # .5.0
-SHARED_LIBS +=  soup-gnome-2.4       1.2      # .5.0
+SHARED_LIBS +=  soup-2.4             6.0      # 6.0
+SHARED_LIBS +=  soup-gnome-2.4       6.0      # 6.0
 
 API_VERSION =		2.4
 
@@ -36,18 +34,20 @@ MULTI_PACKAGES =	-main -gnome
 
 MODGNOME_TOOLS= 	goi
 
-RUN_DEPENDS =		net/glib2-networking>=2.30.0
+BUILD_DEPENDS =		net/glib2-networking>=2.31.22 \
+			net/curl # needed to build tests
+RUN_DEPENDS =		net/glib2-networking>=2.31.22
 
 LIB_DEPENDS =		devel/glib2>=2.22.2 \
 			textproc/libxml
 
 WANTLIB-gnome =		${WANTLIB-main} dbus-1 sqlite3 \
-			soup-2.4 gnome-keyring>=6 gcrypt gpg-error
+			soup-2.4 gnome-keyring gcrypt gpg-error
 
 RUN_DEPENDS-gnome=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			${BUILD_PKGPATH},-main \
-			x11/gnome/libgnome-keyring \
+			x11/gnome/libgnome-keyring>=3.4.0 \
 			databases/sqlite3
 
 MODULES =		devel/gettext \
@@ -62,7 +62,5 @@ CONFIGURE_ARGS +=	--disable-more-warnings \
 CONFIGURE_ARGS+=	--with-apache-httpd="/usr/sbin/httpd"
 
 SUBST_VARS =		API_VERSION
-
-NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
