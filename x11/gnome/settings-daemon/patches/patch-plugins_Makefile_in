@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_Makefile_in,v 1.3 2012/03/29 06:47:51 ajacoutot Exp $
+
+No libwacom on OpenBSD (depends on gudev).
+
+--- plugins/Makefile.in.orig	Mon Mar 26 18:16:49 2012
++++ plugins/Makefile.in	Mon Mar 26 18:33:34 2012
+@@ -314,7 +314,7 @@ top_srcdir = @top_srcdir@
+ NULL = 
+ enabled_plugins = a11y-keyboard a11y-settings automount background \
+ 	clipboard color cursor dummy power housekeeping keyboard \
+-	media-keys mouse sound wacom xrandr xsettings $(NULL) \
++	media-keys mouse sound xrandr xsettings $(NULL) \
+ 	$(am__append_1) $(am__append_3) $(am__append_5) \
+ 	$(am__append_7)
+ disabled_plugins = $(NULL) $(am__append_2) $(am__append_4) \
