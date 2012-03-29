@@ -1,0 +1,11 @@
+$OpenBSD: patch-pan_gui_render-bytes_h,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/gui/render-bytes.h.orig	Wed Mar 28 18:11:32 2012
++++ pan/gui/render-bytes.h	Wed Mar 28 18:11:42 2012
+@@ -1,6 +1,6 @@
+ #ifndef RENDER_BYTES_H
+ #define RENDER_BYTES_H
+-#include <glib/gtypes.h>
++#include <glib.h>
+ namespace pan {
+   extern char* render_bytes (guint64);
+ }

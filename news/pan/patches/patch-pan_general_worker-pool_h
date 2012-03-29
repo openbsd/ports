@@ -1,0 +1,13 @@
+$OpenBSD: patch-pan_general_worker-pool_h,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/general/worker-pool.h.orig	Wed Mar 28 17:41:29 2012
++++ pan/general/worker-pool.h	Wed Mar 28 17:41:41 2012
+@@ -24,8 +24,7 @@
+ #define _Worker_Pool_H_
+ 
+ #include <set>
+-#include <glib/gtypes.h>
+-#include <glib/gthreadpool.h>
++#include <glib.h>
+ 
+ namespace pan
+ {

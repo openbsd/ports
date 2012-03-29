@@ -1,0 +1,12 @@
+$OpenBSD: patch-pan_usenet-utils_mime-utils_h,v 1.3 2012/03/29 12:09:55 naddy Exp $
+--- pan/usenet-utils/mime-utils.h.orig	Wed Mar 28 17:43:38 2012
++++ pan/usenet-utils/mime-utils.h	Wed Mar 28 17:43:47 2012
+@@ -21,7 +21,7 @@
+ #define _UtilMime_h_
+ 
+ #include <vector>
+-#include <glib/gtypes.h>
++#include <glib.h>
+ #include <gmime/gmime-filter.h>
+ #include <gmime/gmime-stream.h>
+ #include <gmime/gmime-message.h>

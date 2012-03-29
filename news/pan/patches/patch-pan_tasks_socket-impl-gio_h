@@ -1,0 +1,13 @@
+$OpenBSD: patch-pan_tasks_socket-impl-gio_h,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/tasks/socket-impl-gio.h.orig	Wed Mar 28 17:59:47 2012
++++ pan/tasks/socket-impl-gio.h	Wed Mar 28 17:59:59 2012
+@@ -21,8 +21,7 @@
+ #define __SocketGIO_h__
+ 
+ #include <string>
+-#include <glib/giochannel.h>
+-#include <glib/gstring.h>
++#include <glib.h>
+ #include <pan/tasks/socket.h>
+ 
+ namespace pan

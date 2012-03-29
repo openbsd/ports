@@ -1,0 +1,14 @@
+$OpenBSD: patch-pan_general_time-elapsed_h,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/general/time-elapsed.h.orig	Wed Mar 28 18:06:09 2012
++++ pan/general/time-elapsed.h	Wed Mar 28 18:06:45 2012
+@@ -1,9 +1,7 @@
+ #ifndef __Time_Elapsed_h__
+ #define __Time_Elapsed_h__
+ 
+-#include <glib/gtypes.h> // for GTimeVal
+-#include <glib/gmain.h> // for g_get_current_time
+-#include <glib/gtimer.h> // for GUSEC_PER_SEC
++#include <glib.h> // for GTimeVal, g_get_current_time and GUSEC_PER_SEC
+ 
+ namespace pan
+ {

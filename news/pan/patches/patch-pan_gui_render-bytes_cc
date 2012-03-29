@@ -1,0 +1,9 @@
+$OpenBSD: patch-pan_gui_render-bytes_cc,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/gui/render-bytes.cc.orig	Wed Mar 28 18:12:49 2012
++++ pan/gui/render-bytes.cc	Wed Mar 28 18:13:08 2012
+@@ -1,4 +1,4 @@
+-#include <glib/gutils.h> // g_snprintf
++#include <glib.h> // g_snprintf
+ #include "render-bytes.h"
+ 
+ namespace pan

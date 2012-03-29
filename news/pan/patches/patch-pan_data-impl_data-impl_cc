@@ -1,0 +1,12 @@
+$OpenBSD: patch-pan_data-impl_data-impl_cc,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/data-impl/data-impl.cc.orig	Wed Mar 28 18:07:54 2012
++++ pan/data-impl/data-impl.cc	Wed Mar 28 18:08:12 2012
+@@ -24,7 +24,7 @@
+ #include <config.h>
+ extern "C" {
+   #include <glib/gi18n.h>
+-  #include <glib/gfileutils.h> // for g_build_filename
++  #include <glib.h> // for g_build_filename
+ }
+ #include <pan/general/debug.h>
+ #include <pan/general/file-util.h>

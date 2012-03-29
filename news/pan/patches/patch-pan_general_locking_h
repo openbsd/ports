@@ -1,0 +1,12 @@
+$OpenBSD: patch-pan_general_locking_h,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/general/locking.h.orig	Wed Mar 28 17:53:37 2012
++++ pan/general/locking.h	Wed Mar 28 17:53:46 2012
+@@ -22,7 +22,7 @@
+ #ifndef _Mutex_h_
+ #define _Mutex_h_
+ 
+-#include <glib/gthread.h>
++#include <glib.h>
+ 
+ namespace pan
+ {

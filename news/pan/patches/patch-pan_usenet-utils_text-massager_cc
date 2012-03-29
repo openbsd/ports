@@ -1,0 +1,11 @@
+$OpenBSD: patch-pan_usenet-utils_text-massager_cc,v 1.1 2012/03/29 12:09:55 naddy Exp $
+--- pan/usenet-utils/text-massager.cc.orig	Wed Mar 28 17:45:00 2012
++++ pan/usenet-utils/text-massager.cc	Wed Mar 28 17:45:32 2012
+@@ -25,7 +25,6 @@
+ extern "C" {
+ #include <glib/gi18n.h>
+ }
+-#include <glib/gunicode.h>
+ #include "text-massager.h"
+ #include <pan/general/log.h>
+ using namespace pan;
