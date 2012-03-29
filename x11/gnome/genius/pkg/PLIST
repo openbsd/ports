@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/29 07:06:02 ajacoutot Exp $
 @bin bin/genius
 @bin bin/gnome-genius
 include/genius/
@@ -38,6 +38,9 @@ share/genius/gel/combinatorics/factorial.gel
 share/genius/gel/combinatorics/loader.gel
 share/genius/gel/combinatorics/misc.gel
 share/genius/gel/combinatorics/recursive_sequences.gel
+share/genius/gel/commutative_algebra/
+share/genius/gel/commutative_algebra/loader.gel
+share/genius/gel/commutative_algebra/macaulay.gel
 share/genius/gel/equation_solving/
 share/genius/gel/equation_solving/diffeqs.gel
 share/genius/gel/equation_solving/find_root.gel
@@ -85,69 +88,56 @@ share/genius/gtksourceview/
 share/genius/gtksourceview/genius.lang
 share/genius/plugins/
 share/genius/plugins/test.plugin
+share/gnome/
+share/gnome/help/
 share/gnome/help/genius/
 share/gnome/help/genius/C/
 share/gnome/help/genius/C/figures/
-share/gnome/help/genius/C/figures/genius_window.eps
 share/gnome/help/genius/C/figures/genius_window.png
-share/gnome/help/genius/C/figures/line_plot.eps
 share/gnome/help/genius/C/figures/line_plot.png
-share/gnome/help/genius/C/figures/line_plot_graph.eps
 share/gnome/help/genius/C/figures/line_plot_graph.png
-share/gnome/help/genius/C/figures/parametric.eps
 share/gnome/help/genius/C/figures/parametric.png
-share/gnome/help/genius/C/figures/parametric_graph.eps
 share/gnome/help/genius/C/figures/parametric_graph.png
-share/gnome/help/genius/C/figures/surface_graph.eps
 share/gnome/help/genius/C/figures/surface_graph.png
 share/gnome/help/genius/C/gel-function-list.xml
 share/gnome/help/genius/C/genius.xml
 share/gnome/help/genius/C/legal.xml
 share/gnome/help/genius/cs/
 share/gnome/help/genius/cs/figures/
-share/gnome/help/genius/cs/figures/genius_window.eps
 share/gnome/help/genius/cs/figures/genius_window.png
-share/gnome/help/genius/cs/figures/line_plot.eps
 share/gnome/help/genius/cs/figures/line_plot.png
-share/gnome/help/genius/cs/figures/line_plot_graph.eps
 share/gnome/help/genius/cs/figures/line_plot_graph.png
-share/gnome/help/genius/cs/figures/parametric.eps
 share/gnome/help/genius/cs/figures/parametric.png
-share/gnome/help/genius/cs/figures/parametric_graph.eps
 share/gnome/help/genius/cs/figures/parametric_graph.png
-share/gnome/help/genius/cs/figures/surface_graph.eps
 share/gnome/help/genius/cs/figures/surface_graph.png
 share/gnome/help/genius/cs/genius.xml
 share/gnome/help/genius/de/
 share/gnome/help/genius/de/figures/
-share/gnome/help/genius/de/figures/genius_window.eps
 share/gnome/help/genius/de/figures/genius_window.png
-share/gnome/help/genius/de/figures/line_plot.eps
 share/gnome/help/genius/de/figures/line_plot.png
-share/gnome/help/genius/de/figures/line_plot_graph.eps
 share/gnome/help/genius/de/figures/line_plot_graph.png
-share/gnome/help/genius/de/figures/parametric.eps
 share/gnome/help/genius/de/figures/parametric.png
-share/gnome/help/genius/de/figures/parametric_graph.eps
 share/gnome/help/genius/de/figures/parametric_graph.png
-share/gnome/help/genius/de/figures/surface_graph.eps
 share/gnome/help/genius/de/figures/surface_graph.png
 share/gnome/help/genius/de/genius.xml
 share/gnome/help/genius/es/
 share/gnome/help/genius/es/figures/
-share/gnome/help/genius/es/figures/genius_window.eps
 share/gnome/help/genius/es/figures/genius_window.png
-share/gnome/help/genius/es/figures/line_plot.eps
 share/gnome/help/genius/es/figures/line_plot.png
-share/gnome/help/genius/es/figures/line_plot_graph.eps
 share/gnome/help/genius/es/figures/line_plot_graph.png
-share/gnome/help/genius/es/figures/parametric.eps
 share/gnome/help/genius/es/figures/parametric.png
-share/gnome/help/genius/es/figures/parametric_graph.eps
 share/gnome/help/genius/es/figures/parametric_graph.png
-share/gnome/help/genius/es/figures/surface_graph.eps
 share/gnome/help/genius/es/figures/surface_graph.png
 share/gnome/help/genius/es/genius.xml
+share/gnome/help/genius/fr/
+share/gnome/help/genius/fr/figures/
+share/gnome/help/genius/fr/figures/genius_window.png
+share/gnome/help/genius/fr/figures/line_plot.png
+share/gnome/help/genius/fr/figures/line_plot_graph.png
+share/gnome/help/genius/fr/figures/parametric.png
+share/gnome/help/genius/fr/figures/parametric_graph.png
+share/gnome/help/genius/fr/figures/surface_graph.png
+share/gnome/help/genius/fr/genius.xml
 share/icons/hicolor/32x32/apps/genius-stock-plot.png
 share/icons/hicolor/32x32/apps/gnome-genius.png
 share/icons/hicolor/48x48/apps/genius-stock-plot.png
@@ -183,6 +173,7 @@ share/locale/pa/LC_MESSAGES/genius.mo
 share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
 share/locale/pt_BR/LC_MESSAGES/genius.mo
+share/locale/ro/LC_MESSAGES/genius.mo
 share/locale/rw/LC_MESSAGES/genius.mo
 share/locale/sl/LC_MESSAGES/genius.mo
 share/locale/sq/LC_MESSAGES/genius.mo
@@ -197,11 +188,13 @@ share/mime-info/
 share/mime-info/genius.keys
 share/mime-info/genius.mime
 share/mime/packages/genius.xml
+share/omf/
 share/omf/genius/
 share/omf/genius/genius-C.omf
 share/omf/genius/genius-cs.omf
 share/omf/genius/genius-de.omf
 share/omf/genius/genius-es.omf
+share/omf/genius/genius-fr.omf
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
