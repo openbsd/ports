@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/11/14 18:00:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2012/03/29 06:32:39 ajacoutot Exp $
 %%SHARED%%
 @bin bin/rsvg-convert
 include/librsvg-2.0/
@@ -41,7 +41,6 @@ share/gtk-doc/html/rsvg-2.0/left.png
 share/gtk-doc/html/rsvg-2.0/licence.html
 share/gtk-doc/html/rsvg-2.0/object-tree.html
 share/gtk-doc/html/rsvg-2.0/right.png
-share/gtk-doc/html/rsvg-2.0/rsvg-2.0.devhelp
 share/gtk-doc/html/rsvg-2.0/rsvg-2.0.devhelp2
 share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GIO.html
 share/gtk-doc/html/rsvg-2.0/rsvg-Using-RSVG-with-GdkPixbuf.html
@@ -50,7 +49,5 @@ share/gtk-doc/html/rsvg-2.0/rsvg-Version-check-and-feature-tests.html
 share/gtk-doc/html/rsvg-2.0/rsvg.html
 share/gtk-doc/html/rsvg-2.0/style.css
 share/gtk-doc/html/rsvg-2.0/up.png
-share/pixmaps/
-share/pixmaps/svg-viewer.svg
 @exec %D/bin/gdk-pixbuf-query-loaders --update-cache
 @unexec-delete %D/bin/gdk-pixbuf-query-loaders --update-cache
