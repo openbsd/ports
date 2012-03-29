@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/02/26 15:08:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/03/29 07:12:00 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/folks-import
 @bin bin/folks-inspect
 include/folks/
 include/folks/folks-eds.h
+include/folks/folks-libsocialweb.h
 include/folks/folks-telepathy.h
 include/folks/folks.h
 lib/folks/
@@ -17,6 +18,10 @@ lib/folks/${API_V}/backends/key-file/
 @comment lib/folks/${API_V}/backends/key-file/key-file.a
 @comment lib/folks/${API_V}/backends/key-file/key-file.la
 lib/folks/${API_V}/backends/key-file/key-file.so
+lib/folks/${API_V}/backends/libsocialweb/
+@comment lib/folks/${API_V}/backends/libsocialweb/libsocialweb.a
+@comment lib/folks/${API_V}/backends/libsocialweb/libsocialweb.la
+lib/folks/${API_V}/backends/libsocialweb/libsocialweb.so
 lib/folks/${API_V}/backends/telepathy/
 @comment lib/folks/${API_V}/backends/telepathy/telepathy.a
 @comment lib/folks/${API_V}/backends/telepathy/telepathy.la
@@ -25,6 +30,9 @@ lib/girepository-1.0/Folks-0.6.typelib
 lib/libfolks-eds.a
 lib/libfolks-eds.la
 @lib lib/libfolks-eds.so.${LIBfolks-eds_VERSION}
+lib/libfolks-libsocialweb.a
+lib/libfolks-libsocialweb.la
+@lib lib/libfolks-libsocialweb.so.${LIBfolks-libsocialweb_VERSION}
 lib/libfolks-telepathy.a
 lib/libfolks-telepathy.la
 @lib lib/libfolks-telepathy.so.${LIBfolks-telepathy_VERSION}
@@ -32,6 +40,7 @@ lib/libfolks.a
 lib/libfolks.la
 @lib lib/libfolks.so.${LIBfolks_VERSION}
 lib/pkgconfig/folks-eds.pc
+lib/pkgconfig/folks-libsocialweb.pc
 lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
 share/gir-1.0/Folks-0.6.gir
@@ -46,9 +55,12 @@ share/locale/pl/LC_MESSAGES/folks.mo
 share/locale/pt_BR/LC_MESSAGES/folks.mo
 share/locale/sl/LC_MESSAGES/folks.mo
 share/locale/sv/LC_MESSAGES/folks.mo
+share/locale/uk/LC_MESSAGES/folks.mo
 share/locale/zh_CN/LC_MESSAGES/folks.mo
 share/vala/vapi/folks-eds.deps
 share/vala/vapi/folks-eds.vapi
+share/vala/vapi/folks-libsocialweb.deps
+share/vala/vapi/folks-libsocialweb.vapi
 share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
 share/vala/vapi/folks.deps
