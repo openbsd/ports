@@ -1,0 +1,132 @@
+$OpenBSD: patch-configure,v 1.15 2012/03/29 06:57:03 ajacoutot Exp $
+
+No libwacom on OpenBSD (depends on gudev; gnome-bluetooth is needed for
+the wacom panel).
+
+--- configure.orig	Wed Mar 28 10:27:58 2012
++++ configure	Wed Mar 28 10:27:45 2012
+@@ -15644,124 +15644,6 @@ $as_echo "yes" >&6; }
+ 
+ fi
+ 
+-pkg_failed=no
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for WACOM_PANEL" >&5
+-$as_echo_n "checking for WACOM_PANEL... " >&6; }
+-
+-if test -n "$WACOM_PANEL_CFLAGS"; then
+-    pkg_cv_WACOM_PANEL_CFLAGS="$WACOM_PANEL_CFLAGS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$COMMON_MODULES
+-                  gnome-settings-daemon >= \$GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= \$LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= \$GNOME_DESKTOP_REQUIRED_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_WACOM_PANEL_CFLAGS=`$PKG_CONFIG --cflags "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-if test -n "$WACOM_PANEL_LIBS"; then
+-    pkg_cv_WACOM_PANEL_LIBS="$WACOM_PANEL_LIBS"
+- elif test -n "$PKG_CONFIG"; then
+-    if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$COMMON_MODULES
+-                  gnome-settings-daemon >= \$GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= \$LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= \$GNOME_DESKTOP_REQUIRED_VERSION\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION") 2>&5
+-  ac_status=$?
+-  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+-  test $ac_status = 0; }; then
+-  pkg_cv_WACOM_PANEL_LIBS=`$PKG_CONFIG --libs "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION" 2>/dev/null`
+-else
+-  pkg_failed=yes
+-fi
+- else
+-    pkg_failed=untried
+-fi
+-
+-
+-
+-if test $pkg_failed = yes; then
+-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-
+-if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
+-        _pkg_short_errors_supported=yes
+-else
+-        _pkg_short_errors_supported=no
+-fi
+-        if test $_pkg_short_errors_supported = yes; then
+-	        WACOM_PANEL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION" 2>&1`
+-        else
+-	        WACOM_PANEL_PKG_ERRORS=`$PKG_CONFIG --print-errors "$COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION" 2>&1`
+-        fi
+-	# Put the nasty error message in config.log where it belongs
+-	echo "$WACOM_PANEL_PKG_ERRORS" >&5
+-
+-	as_fn_error $? "Package requirements ($COMMON_MODULES
+-                  gnome-settings-daemon >= $GSD_REQUIRED_VERSION
+-                  xi >= 1.2 x11 libwacom >= $LIBWACOM_REQUIRED_VERSION
+-                  gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION) were not met:
+-
+-$WACOM_PANEL_PKG_ERRORS
+-
+-Consider adjusting the PKG_CONFIG_PATH environment variable if you
+-installed software in a non-standard prefix.
+-
+-Alternatively, you may set the environment variables WACOM_PANEL_CFLAGS
+-and WACOM_PANEL_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details." "$LINENO" 5
+-
+-elif test $pkg_failed = untried; then
+-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	{ { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+-$as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+-as_fn_error $? "The pkg-config script could not be found or is too old.  Make sure it
+-is in your PATH or set the PKG_CONFIG environment variable to the full
+-path to pkg-config.
+-
+-Alternatively, you may set the environment variables WACOM_PANEL_CFLAGS
+-and WACOM_PANEL_LIBS to avoid the need to call pkg-config.
+-See the pkg-config man page for more details.
+-
+-To get pkg-config, see <http://pkg-config.freedesktop.org/>.
+-See \`config.log' for more details" "$LINENO" 5; }
+-
+-else
+-	WACOM_PANEL_CFLAGS=$pkg_cv_WACOM_PANEL_CFLAGS
+-	WACOM_PANEL_LIBS=$pkg_cv_WACOM_PANEL_LIBS
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-fi
+-
+ GDESKTOP_PREFIX=`$PKG_CONFIG --variable prefix gsettings-desktop-schemas`
+ 
+ 

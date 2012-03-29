@@ -1,10 +1,10 @@
-$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.4 2012/02/16 22:25:47 ajacoutot Exp $
+$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.5 2012/03/29 06:57:03 ajacoutot Exp $
 
 On OpenBSD, crypt() is part of libc.
 
---- panels/user-accounts/Makefile.in.orig	Tue Nov  8 21:24:27 2011
-+++ panels/user-accounts/Makefile.in	Mon Nov 14 14:18:50 2011
-@@ -381,7 +381,7 @@ ccpanelsdir = $(PANELS_DIR)
+--- panels/user-accounts/Makefile.in.orig	Mon Mar 26 19:01:06 2012
++++ panels/user-accounts/Makefile.in	Wed Mar 28 10:25:04 2012
+@@ -378,7 +378,7 @@ ccpanelsdir = $(PANELS_DIR)
  ccpanels_LTLIBRARIES = libuser-accounts.la
  AM_CPPFLAGS = -DDATADIR=\""$(datadir)"\" \
  	-DUIDIR=\""$(pkgdatadir)/ui/user-accounts"\" \
@@ -12,8 +12,8 @@ On OpenBSD, crypt() is part of libc.
 +	-DLIBLOCALEDIR=\""/usr/share/locale"\" \
  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
  	-DUM_PIXMAP_DIR=\""$(pkgdatadir)/pixmaps"\" \
- 	-I$(srcdir)/../common/ \
-@@ -424,7 +424,7 @@ libuser_accounts_la_SOURCES = \
+ 	-I$(srcdir)/../common/ -I$(srcdir)/../../shell/ \
+@@ -414,7 +414,7 @@ libuser_accounts_la_SOURCES = \
  	um-user-module.c
  
  libuser_accounts_la_LIBADD = $(PANEL_LIBS) $(USER_ACCOUNTS_PANEL_LIBS) \
@@ -21,4 +21,4 @@ On OpenBSD, crypt() is part of libc.
 +	$(top_builddir)/panels/common/liblanguage.la -lm \
  	$(am__append_2)
  libuser_accounts_la_LDFLAGS = $(PANEL_LDFLAGS)
- EXTRA_DIST = \
+ CLEANFILES = \

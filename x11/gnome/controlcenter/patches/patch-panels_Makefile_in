@@ -1,0 +1,25 @@
+$OpenBSD: patch-panels_Makefile_in,v 1.5 2012/03/29 06:57:03 ajacoutot Exp $
+
+No libwacom on OpenBSD (depends on gudev; gnome-bluetooth is needed for
+the wacom panel).
+
+--- panels/Makefile.in.orig	Wed Mar 28 10:34:58 2012
++++ panels/Makefile.in	Wed Mar 28 10:35:08 2012
+@@ -73,7 +73,7 @@ ETAGS = etags
+ CTAGS = ctags
+ DIST_SUBDIRS = common background screen power color display mouse \
+ 	online-accounts region info sound keyboard universal-access \
+-	user-accounts datetime wacom printers network bluetooth
++	user-accounts datetime printers network bluetooth
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ am__relativize = \
+   dir0=`pwd`; \
+@@ -305,7 +305,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = common background screen power color display mouse \
+ 	online-accounts region info sound keyboard universal-access \
+-	user-accounts datetime wacom $(am__append_1) $(am__append_2) \
++	user-accounts datetime $(am__append_1) $(am__append_2) \
+ 	$(am__append_3)
+ all: all-recursive
+ 

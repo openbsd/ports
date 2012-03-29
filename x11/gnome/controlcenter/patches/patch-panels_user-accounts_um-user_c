@@ -1,6 +1,6 @@
-$OpenBSD: patch-panels_user-accounts_um-user_c,v 1.1 2012/02/16 22:25:47 ajacoutot Exp $
---- panels/user-accounts/um-user.c.orig	Thu Sep  1 12:01:01 2011
-+++ panels/user-accounts/um-user.c	Wed Feb  1 08:27:41 2012
+$OpenBSD: patch-panels_user-accounts_um-user_c,v 1.2 2012/03/29 06:57:03 ajacoutot Exp $
+--- panels/user-accounts/um-user.c.orig	Tue Feb 14 11:13:17 2012
++++ panels/user-accounts/um-user.c	Wed Mar 28 10:25:04 2012
 @@ -19,7 +19,11 @@
    * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
    */
@@ -23,7 +23,7 @@ $OpenBSD: patch-panels_user-accounts_um-user_c,v 1.1 2012/02/16 22:25:47 ajacout
  #include <unistd.h>
  
  #include <glib.h>
-@@ -948,6 +955,7 @@ salt_char (GRand *rand)
+@@ -924,6 +931,7 @@ salt_char (GRand *rand)
  static gchar *
  make_crypted (const gchar *plain)
  {
@@ -31,7 +31,7 @@ $OpenBSD: patch-panels_user-accounts_um-user_c,v 1.1 2012/02/16 22:25:47 ajacout
          GString *salt;
          gchar *result;
          GRand *rand;
-@@ -967,6 +975,18 @@ make_crypted (const gchar *plain)
+@@ -943,6 +951,18 @@ make_crypted (const gchar *plain)
  
          g_string_free (salt, TRUE);
          g_rand_free (rand);
