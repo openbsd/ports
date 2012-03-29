@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/12/03 22:17:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/03/29 07:15:37 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -92,35 +92,22 @@ share/gnome/help/seahorse/zh_CN/
 share/gnome/help/seahorse/zh_CN/figures/
 share/gnome/help/seahorse/zh_CN/figures/seahorse-window.png
 share/gnome/help/seahorse/zh_CN/seahorse.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/seahorse.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
 share/locale/as/LC_MESSAGES/seahorse.mo
 share/locale/ast/LC_MESSAGES/seahorse.mo
 share/locale/az/LC_MESSAGES/seahorse.mo
+share/locale/be/LC_MESSAGES/seahorse.mo
 share/locale/be@latin/LC_MESSAGES/seahorse.mo
 share/locale/bg/LC_MESSAGES/seahorse.mo
 share/locale/bn/LC_MESSAGES/seahorse.mo
@@ -214,35 +201,30 @@ share/omf/seahorse/seahorse-sl.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
 share/omf/seahorse/seahorse-zh_CN.omf
-share/pixmaps/
-share/pixmaps/seahorse/
-share/pixmaps/seahorse/22x22/
-share/pixmaps/seahorse/22x22/seahorse-key-personal.png
-share/pixmaps/seahorse/22x22/seahorse-key-ssh.png
-share/pixmaps/seahorse/22x22/seahorse-key.png
-share/pixmaps/seahorse/22x22/seahorse-person.png
-share/pixmaps/seahorse/22x22/seahorse-sign-bad.png
-share/pixmaps/seahorse/22x22/seahorse-sign-ok.png
-share/pixmaps/seahorse/22x22/seahorse-sign.png
-share/pixmaps/seahorse/48x48/
-share/pixmaps/seahorse/48x48/seahorse-key-personal.png
-share/pixmaps/seahorse/48x48/seahorse-key-ssh.png
-share/pixmaps/seahorse/48x48/seahorse-key.png
-share/pixmaps/seahorse/48x48/seahorse-person.png
-share/pixmaps/seahorse/48x48/seahorse-sign-bad.png
-share/pixmaps/seahorse/48x48/seahorse-sign-ok.png
-share/pixmaps/seahorse/48x48/seahorse-sign-unknown.png
-share/pixmaps/seahorse/48x48/seahorse-sign.png
-share/pixmaps/seahorse/scalable/
-share/pixmaps/seahorse/scalable/seahorse-key-personal.svg
-share/pixmaps/seahorse/scalable/seahorse-key-ssh.svg
-share/pixmaps/seahorse/scalable/seahorse-key.svg
-share/pixmaps/seahorse/scalable/seahorse-person.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
-share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
-share/pixmaps/seahorse/scalable/seahorse-sign.svg
 share/seahorse/
+share/seahorse/icons/
+share/seahorse/icons/hicolor/
+share/seahorse/icons/hicolor/22x22/
+share/seahorse/icons/hicolor/22x22/apps/
+share/seahorse/icons/hicolor/22x22/apps/seahorse-key-personal.png
+share/seahorse/icons/hicolor/22x22/apps/seahorse-key-ssh.png
+share/seahorse/icons/hicolor/22x22/apps/seahorse-key.png
+share/seahorse/icons/hicolor/22x22/apps/seahorse-person.png
+share/seahorse/icons/hicolor/22x22/status/
+share/seahorse/icons/hicolor/22x22/status/seahorse-sign-bad.png
+share/seahorse/icons/hicolor/22x22/status/seahorse-sign-ok.png
+share/seahorse/icons/hicolor/22x22/status/seahorse-sign.png
+share/seahorse/icons/hicolor/48x48/
+share/seahorse/icons/hicolor/48x48/apps/
+share/seahorse/icons/hicolor/48x48/apps/seahorse-key-personal.png
+share/seahorse/icons/hicolor/48x48/apps/seahorse-key-ssh.png
+share/seahorse/icons/hicolor/48x48/apps/seahorse-key.png
+share/seahorse/icons/hicolor/48x48/apps/seahorse-person.png
+share/seahorse/icons/hicolor/48x48/status/
+share/seahorse/icons/hicolor/48x48/status/seahorse-sign-bad.png
+share/seahorse/icons/hicolor/48x48/status/seahorse-sign-ok.png
+share/seahorse/icons/hicolor/48x48/status/seahorse-sign-unknown.png
+share/seahorse/icons/hicolor/48x48/status/seahorse-sign.png
 share/seahorse/ui/
 share/seahorse/ui/seahorse-add-keyring.xml
 share/seahorse/ui/seahorse-add-keyserver.xml
@@ -263,6 +245,8 @@ share/seahorse/ui/seahorse-keyserver-sync.xml
 share/seahorse/ui/seahorse-pgp-generate.xml
 share/seahorse/ui/seahorse-pgp-private-key-properties.xml
 share/seahorse/ui/seahorse-pgp-public-key-properties.xml
+share/seahorse/ui/seahorse-pkcs11-generate.xml
+share/seahorse/ui/seahorse-pkcs11-request.xml
 share/seahorse/ui/seahorse-prefs.xml
 share/seahorse/ui/seahorse-progress.xml
 share/seahorse/ui/seahorse-revoke.xml
@@ -271,6 +255,7 @@ share/seahorse/ui/seahorse-signer.xml
 share/seahorse/ui/seahorse-ssh-generate.xml
 share/seahorse/ui/seahorse-ssh-key-properties.xml
 share/seahorse/ui/seahorse-ssh-upload.xml
+share/seahorse/ui/seahorse.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

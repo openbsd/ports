@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/03/29 07:15:37 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		3.2.2
-REVISION=		0
+GNOME_VERSION=		3.4.0
 
 CATEGORIES=		security
 
@@ -25,11 +24,11 @@ WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gpgme
 WANTLIB += gssapi gthread-2.0 gtk-3 krb5 lber-2.4 ldap-2.4
 WANTLIB += m p11-kit pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread pthread-stubs sasl2 soup-2.4 ssl
-WANTLIB += tasn1 xcb xcb-render xcb-shm xml2 z stdc++
+WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++ gcr-base-3
 
 LIB_DEPENDS=		databases/openldap \
 			x11/gnome/libgnome-keyring>=3.1.92 \
-			x11/gnome/keyring>=3.2.0 \
+			x11/gnome/gcr \
 			devel/libsoup \
 			security/gpgme \
 			net/avahi
@@ -47,8 +46,7 @@ CONFIGURE_ARGS=		--enable-hkp \
 			--enable-pkcs11 \
 			--enable-pgp \
 			--enable-ssh \
-			--enable-sharing \
-			--disable-update-mime-database
+			--enable-sharing
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/seahorse
 
