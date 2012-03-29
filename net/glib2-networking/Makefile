@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 06:28:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 15:00:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	network-related gio modules for glib2
 
 GNOME_VERSION=	2.32.0
 GNOME_PROJECT=	glib-networking
+REVISION=	0
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
 
@@ -22,8 +23,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
-WANTLIB += gthread-2.0 hogweed m modman nettle p11-kit pcre proxy
-WANTLIB += pthread stdc++ tasn1 z
+WANTLIB += gthread-2.0 hogweed m nettle p11-kit pcre proxy pthread
+WANTLIB += stdc++ tasn1 z
 
 MODULES=	devel/gettext \
 		x11/gnome

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2012/03/23 10:36:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2012/03/29 15:00:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-web=	Mozilla plugin for embedded media playback
 V=		1.1.13
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	2
+REVISION-main=	3
 PKGNAME-jack=	vlc-jack-${V}
 PKGNAME-web=	vlc-web-${V}
 CATEGORIES=	x11
@@ -36,7 +36,7 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui SM SDL SDL_image X11 X11-xcb Xau \
 		bz2 c cairo cddb drm dvbpsi dvdnav dvdread ebml enca expat \
 		ffi fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0 \
-		gtk-x11-2.0 jpeg matroska modman mp3lame notify orc-0.4 \
+		gtk-x11-2.0 jpeg matroska mp3lame notify orc-0.4 \
 		ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png postproc proxy pthread-stubs pthread stdc++ \
 		schroedinger-1.0>=2.0 sndio speex swscale tag tiff \
