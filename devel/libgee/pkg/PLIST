@@ -1,15 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/07 07:56:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/03/29 07:24:25 ajacoutot Exp $
 %%SHARED%%
-include/gee-1.0/
-include/gee-1.0/gee.h
+include/gee-0.8/
+include/gee-0.8/gee.h
 lib/girepository-1.0/
-lib/girepository-1.0/Gee-1.0.typelib
-lib/libgee.a
-lib/libgee.la
+lib/girepository-1.0/Gee-0.8.typelib
+lib/libgee-0.8.a
+lib/libgee-0.8.la
 lib/pkgconfig/
-lib/pkgconfig/gee-1.0.pc
+lib/pkgconfig/gee-0.8.pc
 share/gir-1.0/
-share/gir-1.0/Gee-1.0.gir
+share/gir-1.0/Gee-0.8.gir
 share/vala/
 share/vala/vapi/
-share/vala/vapi/gee-1.0.vapi
+share/vala/vapi/gee-0.8.vapi
