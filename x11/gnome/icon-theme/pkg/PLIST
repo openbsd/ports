@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2012/03/19 10:28:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2012/03/29 06:35:37 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/examples/gnome-icon-theme/
 share/examples/gnome-icon-theme/gtk-2.0/
@@ -516,6 +516,7 @@ share/icons/gnome/16x16/devices/3floppy_unmount.png
 share/icons/gnome/16x16/devices/ac-adapter.png
 share/icons/gnome/16x16/devices/audio-card.png
 share/icons/gnome/16x16/devices/audio-input-microphone.png
+share/icons/gnome/16x16/devices/audio-speakers.png
 share/icons/gnome/16x16/devices/battery.png
 share/icons/gnome/16x16/devices/camera-photo.png
 share/icons/gnome/16x16/devices/camera-video.png
@@ -601,12 +602,12 @@ share/icons/gnome/16x16/devices/printer.png
 share/icons/gnome/16x16/devices/printer1.png
 share/icons/gnome/16x16/devices/printmgr.png
 share/icons/gnome/16x16/devices/scanner.png
-share/icons/gnome/16x16/devices/speaker.png
 share/icons/gnome/16x16/devices/stock_cell-phone.png
 share/icons/gnome/16x16/devices/stock_mic.png
 share/icons/gnome/16x16/devices/stock_printers.png
 share/icons/gnome/16x16/devices/system-floppy.png
 share/icons/gnome/16x16/devices/system.png
+share/icons/gnome/16x16/devices/uninterruptible-power-supply.png
 share/icons/gnome/16x16/devices/usbpendrive_unmount.png
 share/icons/gnome/16x16/devices/video-display.png
 share/icons/gnome/16x16/devices/xfce-printer.png
@@ -1031,6 +1032,9 @@ share/icons/gnome/16x16/status/sunny.png
 share/icons/gnome/16x16/status/task-due.png
 share/icons/gnome/16x16/status/task-past-due.png
 share/icons/gnome/16x16/status/trashcan_full.png
+share/icons/gnome/16x16/status/trophy-bronze.png
+share/icons/gnome/16x16/status/trophy-gold.png
+share/icons/gnome/16x16/status/trophy-silver.png
 share/icons/gnome/16x16/status/user-available.png
 share/icons/gnome/16x16/status/user-away.png
 share/icons/gnome/16x16/status/user-busy.png
@@ -1560,6 +1564,7 @@ share/icons/gnome/22x22/devices/3floppy_unmount.png
 share/icons/gnome/22x22/devices/ac-adapter.png
 share/icons/gnome/22x22/devices/audio-card.png
 share/icons/gnome/22x22/devices/audio-input-microphone.png
+share/icons/gnome/22x22/devices/audio-speakers.png
 share/icons/gnome/22x22/devices/battery.png
 share/icons/gnome/22x22/devices/camera-photo.png
 share/icons/gnome/22x22/devices/camera-video.png
@@ -1645,12 +1650,12 @@ share/icons/gnome/22x22/devices/printer.png
 share/icons/gnome/22x22/devices/printer1.png
 share/icons/gnome/22x22/devices/printmgr.png
 share/icons/gnome/22x22/devices/scanner.png
-share/icons/gnome/22x22/devices/speaker.png
 share/icons/gnome/22x22/devices/stock_cell-phone.png
 share/icons/gnome/22x22/devices/stock_mic.png
 share/icons/gnome/22x22/devices/stock_printers.png
 share/icons/gnome/22x22/devices/system-floppy.png
 share/icons/gnome/22x22/devices/system.png
+share/icons/gnome/22x22/devices/uninterruptible-power-supply.png
 share/icons/gnome/22x22/devices/usbpendrive_unmount.png
 share/icons/gnome/22x22/devices/video-display.png
 share/icons/gnome/22x22/devices/xfce-printer.png
@@ -2075,6 +2080,9 @@ share/icons/gnome/22x22/status/sunny.png
 share/icons/gnome/22x22/status/task-due.png
 share/icons/gnome/22x22/status/task-past-due.png
 share/icons/gnome/22x22/status/trashcan_full.png
+share/icons/gnome/22x22/status/trophy-bronze.png
+share/icons/gnome/22x22/status/trophy-gold.png
+share/icons/gnome/22x22/status/trophy-silver.png
 share/icons/gnome/22x22/status/user-available.png
 share/icons/gnome/22x22/status/user-away.png
 share/icons/gnome/22x22/status/user-busy.png
@@ -2601,6 +2609,7 @@ share/icons/gnome/24x24/devices/3floppy_unmount.png
 share/icons/gnome/24x24/devices/ac-adapter.png
 share/icons/gnome/24x24/devices/audio-card.png
 share/icons/gnome/24x24/devices/audio-input-microphone.png
+share/icons/gnome/24x24/devices/audio-speakers.png
 share/icons/gnome/24x24/devices/battery.png
 share/icons/gnome/24x24/devices/camera-photo.png
 share/icons/gnome/24x24/devices/camera-video.png
@@ -2686,12 +2695,12 @@ share/icons/gnome/24x24/devices/printer.png
 share/icons/gnome/24x24/devices/printer1.png
 share/icons/gnome/24x24/devices/printmgr.png
 share/icons/gnome/24x24/devices/scanner.png
-share/icons/gnome/24x24/devices/speaker.png
 share/icons/gnome/24x24/devices/stock_cell-phone.png
 share/icons/gnome/24x24/devices/stock_mic.png
 share/icons/gnome/24x24/devices/stock_printers.png
 share/icons/gnome/24x24/devices/system-floppy.png
 share/icons/gnome/24x24/devices/system.png
+share/icons/gnome/24x24/devices/uninterruptible-power-supply.png
 share/icons/gnome/24x24/devices/usbpendrive_unmount.png
 share/icons/gnome/24x24/devices/video-display.png
 share/icons/gnome/24x24/devices/xfce-printer.png
@@ -3115,6 +3124,9 @@ share/icons/gnome/24x24/status/sunny.png
 share/icons/gnome/24x24/status/task-due.png
 share/icons/gnome/24x24/status/task-past-due.png
 share/icons/gnome/24x24/status/trashcan_full.png
+share/icons/gnome/24x24/status/trophy-bronze.png
+share/icons/gnome/24x24/status/trophy-gold.png
+share/icons/gnome/24x24/status/trophy-silver.png
 share/icons/gnome/24x24/status/user-available.png
 share/icons/gnome/24x24/status/user-away.png
 share/icons/gnome/24x24/status/user-busy.png
@@ -3365,6 +3377,7 @@ share/icons/gnome/256x256/categories/xfce-system-settings.png
 share/icons/gnome/256x256/devices/
 share/icons/gnome/256x256/devices/ac-adapter.png
 share/icons/gnome/256x256/devices/audio-input-microphone.png
+share/icons/gnome/256x256/devices/audio-speakers.png
 share/icons/gnome/256x256/devices/battery.png
 share/icons/gnome/256x256/devices/camera-photo.png
 share/icons/gnome/256x256/devices/camera-web.png
@@ -3434,11 +3447,11 @@ share/icons/gnome/256x256/devices/printer.png
 share/icons/gnome/256x256/devices/printer1.png
 share/icons/gnome/256x256/devices/printmgr.png
 share/icons/gnome/256x256/devices/scanner.png
-share/icons/gnome/256x256/devices/speaker.png
 share/icons/gnome/256x256/devices/stock_cell-phone.png
 share/icons/gnome/256x256/devices/stock_mic.png
 share/icons/gnome/256x256/devices/stock_printers.png
 share/icons/gnome/256x256/devices/system.png
+share/icons/gnome/256x256/devices/uninterruptible-power-supply.png
 share/icons/gnome/256x256/devices/usbpendrive_unmount.png
 share/icons/gnome/256x256/devices/video-display.png
 share/icons/gnome/256x256/devices/xfce-printer.png
@@ -3800,6 +3813,9 @@ share/icons/gnome/256x256/status/stock_volume-min.png
 share/icons/gnome/256x256/status/stock_volume-mute.png
 share/icons/gnome/256x256/status/stock_volume.png
 share/icons/gnome/256x256/status/trashcan_full.png
+share/icons/gnome/256x256/status/trophy-bronze.png
+share/icons/gnome/256x256/status/trophy-gold.png
+share/icons/gnome/256x256/status/trophy-silver.png
 share/icons/gnome/256x256/status/user-available.png
 share/icons/gnome/256x256/status/user-away.png
 share/icons/gnome/256x256/status/user-busy.png
@@ -4315,6 +4331,7 @@ share/icons/gnome/32x32/devices/3floppy_unmount.png
 share/icons/gnome/32x32/devices/ac-adapter.png
 share/icons/gnome/32x32/devices/audio-card.png
 share/icons/gnome/32x32/devices/audio-input-microphone.png
+share/icons/gnome/32x32/devices/audio-speakers.png
 share/icons/gnome/32x32/devices/battery.png
 share/icons/gnome/32x32/devices/camera-photo.png
 share/icons/gnome/32x32/devices/camera-video.png
@@ -4400,12 +4417,12 @@ share/icons/gnome/32x32/devices/printer.png
 share/icons/gnome/32x32/devices/printer1.png
 share/icons/gnome/32x32/devices/printmgr.png
 share/icons/gnome/32x32/devices/scanner.png
-share/icons/gnome/32x32/devices/speaker.png
 share/icons/gnome/32x32/devices/stock_cell-phone.png
 share/icons/gnome/32x32/devices/stock_mic.png
 share/icons/gnome/32x32/devices/stock_printers.png
 share/icons/gnome/32x32/devices/system-floppy.png
 share/icons/gnome/32x32/devices/system.png
+share/icons/gnome/32x32/devices/uninterruptible-power-supply.png
 share/icons/gnome/32x32/devices/usbpendrive_unmount.png
 share/icons/gnome/32x32/devices/video-display.png
 share/icons/gnome/32x32/devices/xfce-printer.png
@@ -4826,6 +4843,9 @@ share/icons/gnome/32x32/status/sunny.png
 share/icons/gnome/32x32/status/task-due.png
 share/icons/gnome/32x32/status/task-past-due.png
 share/icons/gnome/32x32/status/trashcan_full.png
+share/icons/gnome/32x32/status/trophy-bronze.png
+share/icons/gnome/32x32/status/trophy-gold.png
+share/icons/gnome/32x32/status/trophy-silver.png
 share/icons/gnome/32x32/status/user-available.png
 share/icons/gnome/32x32/status/user-away.png
 share/icons/gnome/32x32/status/user-busy.png
@@ -5352,6 +5372,7 @@ share/icons/gnome/48x48/devices/3floppy_unmount.png
 share/icons/gnome/48x48/devices/ac-adapter.png
 share/icons/gnome/48x48/devices/audio-card.png
 share/icons/gnome/48x48/devices/audio-input-microphone.png
+share/icons/gnome/48x48/devices/audio-speakers.png
 share/icons/gnome/48x48/devices/battery.png
 share/icons/gnome/48x48/devices/camera-photo.png
 share/icons/gnome/48x48/devices/camera-video.png
@@ -5437,12 +5458,12 @@ share/icons/gnome/48x48/devices/printer.png
 share/icons/gnome/48x48/devices/printer1.png
 share/icons/gnome/48x48/devices/printmgr.png
 share/icons/gnome/48x48/devices/scanner.png
-share/icons/gnome/48x48/devices/speaker.png
 share/icons/gnome/48x48/devices/stock_cell-phone.png
 share/icons/gnome/48x48/devices/stock_mic.png
 share/icons/gnome/48x48/devices/stock_printers.png
 share/icons/gnome/48x48/devices/system-floppy.png
 share/icons/gnome/48x48/devices/system.png
+share/icons/gnome/48x48/devices/uninterruptible-power-supply.png
 share/icons/gnome/48x48/devices/usbpendrive_unmount.png
 share/icons/gnome/48x48/devices/video-display.png
 share/icons/gnome/48x48/devices/xfce-printer.png
@@ -5864,6 +5885,9 @@ share/icons/gnome/48x48/status/sunny.png
 share/icons/gnome/48x48/status/task-due.png
 share/icons/gnome/48x48/status/task-past-due.png
 share/icons/gnome/48x48/status/trashcan_full.png
+share/icons/gnome/48x48/status/trophy-bronze.png
+share/icons/gnome/48x48/status/trophy-gold.png
+share/icons/gnome/48x48/status/trophy-silver.png
 share/icons/gnome/48x48/status/user-available.png
 share/icons/gnome/48x48/status/user-away.png
 share/icons/gnome/48x48/status/user-busy.png
