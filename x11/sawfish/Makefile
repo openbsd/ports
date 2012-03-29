@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/03/23 13:29:30 ajacoutot Exp $
-
-BROKEN=		pthread_mutex_trylock, lazy binding failed!
+# $OpenBSD: Makefile,v 1.60 2012/03/29 18:57:41 ajacoutot Exp $
 
 COMMENT=	extensible window manager
 
@@ -10,7 +8,7 @@ VERSION=	1.8.2
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 EXTRACT_SUFX=	.tar.xz
