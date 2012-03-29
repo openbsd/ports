@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/03/29 06:48:20 ajacoutot Exp $
 
 COMMENT=	extra icons for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme-extras
-GNOME_VERSION=	3.0.0
-REVISION=	3
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	x11
 
@@ -13,8 +12,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	x11/gnome
 
