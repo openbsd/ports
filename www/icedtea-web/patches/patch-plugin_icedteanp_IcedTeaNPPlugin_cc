@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugin_icedteanp_IcedTeaNPPlugin_cc,v 1.1 2012/03/29 12:28:27 kurt Exp $
+--- plugin/icedteanp/IcedTeaNPPlugin.cc.orig	Wed Mar 28 15:02:49 2012
++++ plugin/icedteanp/IcedTeaNPPlugin.cc	Wed Mar 28 15:11:30 2012
+@@ -261,8 +261,6 @@ int plugin_debug = getenv ("ICEDTEAPLUGIN_DEBUG") != N
+ int plugin_debug_suspend = (getenv("ICEDTEAPLUGIN_DEBUG") != NULL) &&
+         (strcmp(getenv("ICEDTEAPLUGIN_DEBUG"), "suspend") == 0);
+ 
+-pthread_cond_t cond_message_available = PTHREAD_COND_INITIALIZER;
+-
+ 
+ #ifdef LEGACY_GLIB
+ // Returns key from first item stored in hashtable

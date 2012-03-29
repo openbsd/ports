@@ -1,0 +1,13 @@
+$OpenBSD: patch-plugin_icedteanp_IcedTeaNPPlugin_h,v 1.1 2012/03/29 12:28:27 kurt Exp $
+--- plugin/icedteanp/IcedTeaNPPlugin.h.orig	Wed Mar 28 15:02:58 2012
++++ plugin/icedteanp/IcedTeaNPPlugin.h	Wed Mar 28 15:11:17 2012
+@@ -91,9 +91,6 @@ static pthread_t plugin_request_processor_thread1;
+ static pthread_t plugin_request_processor_thread2;
+ static pthread_t plugin_request_processor_thread3;
+ 
+-// Condition on which the queue processor waits
+-extern pthread_cond_t cond_message_available;
+-
+ // ID of plug-in thread
+ extern pthread_t itnp_plugin_thread_id;
+ 
