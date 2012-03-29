@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/21 13:59:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/03/29 06:29:08 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
-bin/g-ir-doc-tool
 @bin bin/g-ir-generate
 bin/g-ir-scanner
 include/gobject-introspection-1.0/
@@ -65,12 +64,6 @@ lib/gobject-introspection/giscanner/cachestore.pyo
 lib/gobject-introspection/giscanner/codegen.py
 lib/gobject-introspection/giscanner/codegen.pyc
 lib/gobject-introspection/giscanner/codegen.pyo
-lib/gobject-introspection/giscanner/docbookdescription.py
-lib/gobject-introspection/giscanner/docbookdescription.pyc
-lib/gobject-introspection/giscanner/docbookdescription.pyo
-lib/gobject-introspection/giscanner/docbookwriter.py
-lib/gobject-introspection/giscanner/docbookwriter.pyc
-lib/gobject-introspection/giscanner/docbookwriter.pyo
 lib/gobject-introspection/giscanner/docmain.py
 lib/gobject-introspection/giscanner/docmain.pyc
 lib/gobject-introspection/giscanner/docmain.pyo
@@ -95,6 +88,24 @@ lib/gobject-introspection/giscanner/libtoolimporter.pyo
 lib/gobject-introspection/giscanner/maintransformer.py
 lib/gobject-introspection/giscanner/maintransformer.pyc
 lib/gobject-introspection/giscanner/maintransformer.pyo
+lib/gobject-introspection/giscanner/mallard-C-class.tmpl
+lib/gobject-introspection/giscanner/mallard-C-default.tmpl
+lib/gobject-introspection/giscanner/mallard-C-enum.tmpl
+lib/gobject-introspection/giscanner/mallard-C-function.tmpl
+lib/gobject-introspection/giscanner/mallard-C-namespace.tmpl
+lib/gobject-introspection/giscanner/mallard-C-property.tmpl
+lib/gobject-introspection/giscanner/mallard-C-record.tmpl
+lib/gobject-introspection/giscanner/mallard-C-signal.tmpl
+lib/gobject-introspection/giscanner/mallard-C-vfunc.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-class.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-default.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-enum.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-function.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-namespace.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-property.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-record.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-signal.tmpl
+lib/gobject-introspection/giscanner/mallard-Python-vfunc.tmpl
 lib/gobject-introspection/giscanner/mallardwriter.py
 lib/gobject-introspection/giscanner/mallardwriter.pyc
 lib/gobject-introspection/giscanner/mallardwriter.pyo

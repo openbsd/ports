@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.55 2011/11/18 11:11:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2012/03/29 06:29:08 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.30.0
+GNOME_VERSION=		1.31.22
 GNOME_PROJECT=		gobject-introspection
-REVISION=		4
 CATEGORIES=		devel
 
-SHARED_LIBS +=  girepository-1.0     2.0      # 1.0
+SHARED_LIBS +=  girepository-1.0     3.0      # 1.0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -28,8 +27,7 @@ MODULES=		devel/gettext \
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread z
 
-LIB_DEPENDS=		devel/glib2>=2.29.7 \
-			devel/libffi
+LIB_DEPENDS=		devel/glib2>=2.32.0
 BUILD_DEPENDS=		devel/bison \
 			graphics/cairo
 RUN_DEPENDS=		graphics/cairo
