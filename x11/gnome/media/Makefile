@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/03/29 07:07:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/03/29 07:08:47 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
@@ -26,6 +26,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
+# gstreamer-plugins-good needed for sndio(7)
 RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
 		x11/gnome/libgnome-media-profiles \
