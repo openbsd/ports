@@ -1,22 +1,11 @@
-$OpenBSD: patch-src_if_gnet_property_c,v 1.3 2010/03/20 17:02:07 jasper Exp $
---- src/if/gnet_property.c.orig	Sat Mar  6 23:42:56 2010
-+++ src/if/gnet_property.c	Thu Mar 18 19:05:29 2010
-@@ -417,8 +417,8 @@ gboolean gnet_property_variable_download_require_urn  
- static const gboolean gnet_property_variable_download_require_urn_default = FALSE;
- gboolean gnet_property_variable_download_require_server_name     = TRUE;
- static const gboolean gnet_property_variable_download_require_server_name_default = TRUE;
--guint32  gnet_property_variable_max_ultrapeers     = 3;
--static const guint32  gnet_property_variable_max_ultrapeers_default = 3;
-+guint32  gnet_property_variable_max_ultrapeers     = 4;
-+static const guint32  gnet_property_variable_max_ultrapeers_default = 4;
- guint32  gnet_property_variable_quick_connect_pool_size     = 10;
- static const guint32  gnet_property_variable_quick_connect_pool_size_default = 10;
- guint32  gnet_property_variable_max_leaves     = 150;
-@@ -4353,7 +4353,7 @@ gnet_prop_init(void) {
+$OpenBSD: patch-src_if_gnet_property_c,v 1.4 2012/03/29 06:19:12 ajacoutot Exp $
+--- src/if/gnet_property.c.orig	Sun Sep 11 11:28:28 2011
++++ src/if/gnet_property.c	Wed Mar 14 14:32:05 2012
+@@ -4500,7 +4500,7 @@ gnet_prop_init(void) {
      gnet_property->props[182].data.guint32.def   = (void *) &gnet_property_variable_max_ultrapeers_default;
      gnet_property->props[182].data.guint32.value = (void *) &gnet_property_variable_max_ultrapeers;
      gnet_property->props[182].data.guint32.choices = NULL;
--    gnet_property->props[182].data.guint32.max   = 4;
+-    gnet_property->props[182].data.guint32.max   = 5;
 +    gnet_property->props[182].data.guint32.max   = 64;
      gnet_property->props[182].data.guint32.min   = 0;
  

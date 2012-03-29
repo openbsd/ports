@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.20 2009/12/22 00:31:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/03/29 06:19:12 ajacoutot Exp $
 @bin bin/gtk-gnutella
 @man man/man1/gtk-gnutella.1
 share/applications/gtk-gnutella.desktop
 share/gtk-gnutella/
+share/gtk-gnutella/OpenBSD.${MACHINE_ARCH}-openbsd/
+share/gtk-gnutella/OpenBSD.${MACHINE_ARCH}-openbsd/gtk-gnutella.nm
 share/gtk-gnutella/bogons.txt
 share/gtk-gnutella/el/
 share/gtk-gnutella/el/FAQ
@@ -44,12 +46,23 @@ share/gtk-gnutella/pixmaps/magnet.64x64.png
 share/gtk-gnutella/pixmaps/no_firewall.xpm
 share/gtk-gnutella/pixmaps/offline.xpm
 share/gtk-gnutella/pixmaps/online.xpm
+share/gtk-gnutella/pixmaps/pause.xpm
 share/gtk-gnutella/pixmaps/save.xpm
 share/gtk-gnutella/pixmaps/smallserver.xpm
+share/gtk-gnutella/pixmaps/star-black.xpm
+share/gtk-gnutella/pixmaps/star-blue.xpm
+share/gtk-gnutella/pixmaps/star-green.xpm
+share/gtk-gnutella/pixmaps/star-red.xpm
+share/gtk-gnutella/pixmaps/star-violet.xpm
+share/gtk-gnutella/pixmaps/star-yellow.xpm
 share/gtk-gnutella/pixmaps/stock_form-time-field-16.xpm
 share/gtk-gnutella/pixmaps/thaw.xpm
 share/gtk-gnutella/pixmaps/ultra.xpm
+share/gtk-gnutella/pixmaps/upload-red.xpm
+share/gtk-gnutella/pixmaps/upload-yellow.xpm
 share/gtk-gnutella/pixmaps/upload.xpm
+share/gtk-gnutella/pixmaps/upnp-unusable.xpm
+share/gtk-gnutella/pixmaps/upnp.xpm
 share/gtk-gnutella/pixmaps/warning.xpm
 share/gtk-gnutella/robots.txt
 share/gtk-gnutella/spam.txt
