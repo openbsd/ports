@@ -1,80 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.29 2011/12/03 22:17:16 ajacoutot Exp $
-%%SHARED%%
-@bin bin/gcr-viewer
+@comment $OpenBSD: PLIST,v 1.30 2012/03/29 06:51:38 ajacoutot Exp $
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
 @bin bin/gnome-keyring-daemon
-include/gck-1/
-include/gck-1/gck/
-include/gck-1/gck/gck.h
-include/gck-1/gck/pkcs11.h
-include/gck-1/gck/pkcs11n.h
-include/gck-1/gck/pkcs11x.h
-include/gcr-3/
-include/gcr-3/gcr/
-include/gcr-3/gcr/gcr-certificate-basics-widget.h
-include/gcr-3/gcr/gcr-certificate-chain.h
-include/gcr-3/gcr/gcr-certificate-details-widget.h
-include/gcr-3/gcr/gcr-certificate-renderer.h
-include/gcr-3/gcr/gcr-certificate-widget.h
-include/gcr-3/gcr/gcr-certificate.h
-include/gcr-3/gcr/gcr-collection-model.h
-include/gcr-3/gcr/gcr-collection.h
-include/gcr-3/gcr/gcr-column.h
-include/gcr-3/gcr/gcr-combo-selector.h
-include/gcr-3/gcr/gcr-comparable.h
-include/gcr-3/gcr/gcr-deprecated.h
-include/gcr-3/gcr/gcr-enum-types.h
-include/gcr-3/gcr/gcr-importer.h
-include/gcr-3/gcr/gcr-key-renderer.h
-include/gcr-3/gcr/gcr-key-widget.h
-include/gcr-3/gcr/gcr-library.h
-include/gcr-3/gcr/gcr-list-selector.h
-include/gcr-3/gcr/gcr-parser.h
-include/gcr-3/gcr/gcr-pkcs11-certificate.h
-include/gcr-3/gcr/gcr-renderer.h
-include/gcr-3/gcr/gcr-simple-certificate.h
-include/gcr-3/gcr/gcr-simple-collection.h
-include/gcr-3/gcr/gcr-tree-selector.h
-include/gcr-3/gcr/gcr-trust.h
-include/gcr-3/gcr/gcr-types.h
-include/gcr-3/gcr/gcr-unlock-options-widget.h
-include/gcr-3/gcr/gcr-unlock-options.h
-include/gcr-3/gcr/gcr-viewer-window.h
-include/gcr-3/gcr/gcr-viewer.h
-include/gcr-3/gcr/gcr.h
 lib/gnome-keyring/
 lib/gnome-keyring/devel/
 @comment lib/gnome-keyring/devel/gkm-gnome2-store-standalone.a
 @comment lib/gnome-keyring/devel/gkm-gnome2-store-standalone.la
+lib/gnome-keyring/devel/gkm-gnome2-store-standalone.so
 @comment lib/gnome-keyring/devel/gkm-roots-store-standalone.a
 @comment lib/gnome-keyring/devel/gkm-roots-store-standalone.la
+lib/gnome-keyring/devel/gkm-roots-store-standalone.so
 @comment lib/gnome-keyring/devel/gkm-secret-store-standalone.a
 @comment lib/gnome-keyring/devel/gkm-secret-store-standalone.la
+lib/gnome-keyring/devel/gkm-secret-store-standalone.so
 @comment lib/gnome-keyring/devel/gkm-ssh-store-standalone.a
 @comment lib/gnome-keyring/devel/gkm-ssh-store-standalone.la
+lib/gnome-keyring/devel/gkm-ssh-store-standalone.so
 @comment lib/gnome-keyring/devel/gkm-xdg-store-standalone.a
 @comment lib/gnome-keyring/devel/gkm-xdg-store-standalone.la
-lib/libgck-1.a
-lib/libgck-1.la
-lib/libgcr-3.a
-lib/libgcr-3.la
+lib/gnome-keyring/devel/gkm-xdg-store-standalone.so
 lib/pkcs11/
 @comment lib/pkcs11/gnome-keyring-pkcs11.a
 @comment lib/pkcs11/gnome-keyring-pkcs11.la
-lib/pkgconfig/gck-1.pc
-lib/pkgconfig/gcr-3.pc
-libexec/gnome-keyring-prompt
-@bin libexec/gnome-keyring-prompt-3
-share/GConf/
-share/GConf/gsettings/
+lib/pkcs11/gnome-keyring-pkcs11.so
 share/GConf/gsettings/org.gnome.crypto.cache.convert
-share/GConf/gsettings/org.gnome.crypto.pgp.convert
-share/GConf/gsettings/org.gnome.crypto.pgp_keyservers.convert
-share/applications/gcr-viewer.desktop
-share/applications/gnome-keyring-prompt.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.secrets.service
 share/dbus-1/services/org.gnome.keyring.service
 share/examples/gnome-keyring/
@@ -96,97 +45,7 @@ share/examples/gnome-keyring/xdg/autostart/gnome-keyring-secrets.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-secrets.desktop
 share/examples/gnome-keyring/xdg/autostart/gnome-keyring-ssh.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-keyring-ssh.desktop
-share/gcr-3/
-share/gcr-3/ui/
-share/gcr-3/ui/gcr-import-dialog.ui
-share/gcr-3/ui/gcr-unlock-options-widget.ui
 share/glib-2.0/schemas/org.gnome.crypto.cache.gschema.xml
-share/glib-2.0/schemas/org.gnome.crypto.pgp.gschema.xml
-share/gnome-keyring-3/
-share/gnome-keyring-3/ui/
-share/gnome-keyring-3/ui/gku-prompt.ui
-share/gtk-doc/html/gck/
-share/gtk-doc/html/gck/gck-Errors.html
-share/gtk-doc/html/gck/gck-GckAttribute.html
-share/gtk-doc/html/gck/gck-GckAttributes.html
-share/gtk-doc/html/gck/gck-GckEnumerator.html
-share/gtk-doc/html/gck/gck-GckModule-lists.html
-share/gtk-doc/html/gck/gck-GckModule.html
-share/gtk-doc/html/gck/gck-GckObject.html
-share/gtk-doc/html/gck/gck-GckSession.html
-share/gtk-doc/html/gck/gck-GckSlot.html
-share/gtk-doc/html/gck/gck-Miscellaneous-Functions.html
-share/gtk-doc/html/gck/gck-PKCS11-URIs.html
-share/gtk-doc/html/gck/gck.devhelp2
-share/gtk-doc/html/gck/home.png
-share/gtk-doc/html/gck/index.html
-share/gtk-doc/html/gck/index.sgml
-share/gtk-doc/html/gck/left.png
-share/gtk-doc/html/gck/pkcs11-links.html
-share/gtk-doc/html/gck/reference.html
-share/gtk-doc/html/gck/right.png
-share/gtk-doc/html/gck/style.css
-share/gtk-doc/html/gck/up.png
-share/gtk-doc/html/gcr-3/
-share/gtk-doc/html/gcr-3/GcrCertificateChain.html
-share/gtk-doc/html/gcr-3/GcrImporter.html
-share/gtk-doc/html/gcr-3/GcrParser.html
-share/gtk-doc/html/gcr-3/GcrPkcs11Certificate.html
-share/gtk-doc/html/gcr-3/GcrSimpleCertificate.html
-share/gtk-doc/html/gcr-3/certificate-widget.png
-share/gtk-doc/html/gcr-3/certificates.html
-share/gtk-doc/html/gcr-3/ch01.html
-share/gtk-doc/html/gcr-3/collections.html
-share/gtk-doc/html/gcr-3/combo-selector.png
-share/gtk-doc/html/gcr-3/gcr-3.devhelp2
-share/gtk-doc/html/gcr-3/gcr-GcrCertificate.html
-share/gtk-doc/html/gcr-3/gcr-GcrCertificateWidget.html
-share/gtk-doc/html/gcr-3/gcr-GcrCollection.html
-share/gtk-doc/html/gcr-3/gcr-GcrCollectionModel.html
-share/gtk-doc/html/gcr-3/gcr-GcrColumn.html
-share/gtk-doc/html/gcr-3/gcr-GcrComboSelector.html
-share/gtk-doc/html/gcr-3/gcr-GcrComparable.html
-share/gtk-doc/html/gcr-3/gcr-GcrKeyWidget.html
-share/gtk-doc/html/gcr-3/gcr-GcrListSelector.html
-share/gtk-doc/html/gcr-3/gcr-GcrRenderer.html
-share/gtk-doc/html/gcr-3/gcr-GcrSimpleCollection.html
-share/gtk-doc/html/gcr-3/gcr-GcrTreeSelector.html
-share/gtk-doc/html/gcr-3/gcr-GcrViewer.html
-share/gtk-doc/html/gcr-3/gcr-Library-Settings.html
-share/gtk-doc/html/gcr-3/gcr-Trust-Storage-and-Lookups.html
-share/gtk-doc/html/gcr-3/home.png
-share/gtk-doc/html/gcr-3/index.html
-share/gtk-doc/html/gcr-3/index.sgml
-share/gtk-doc/html/gcr-3/key-widget.png
-share/gtk-doc/html/gcr-3/left.png
-share/gtk-doc/html/gcr-3/list-selector.png
-share/gtk-doc/html/gcr-3/misc.html
-share/gtk-doc/html/gcr-3/right.png
-share/gtk-doc/html/gcr-3/storage.html
-share/gtk-doc/html/gcr-3/style.css
-share/gtk-doc/html/gcr-3/tree-selector.png
-share/gtk-doc/html/gcr-3/up.png
-share/gtk-doc/html/gcr-3/widgets.html
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
-share/icons/hicolor/16x16/apps/gcr-key-pair.png
-share/icons/hicolor/16x16/apps/gcr-key.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
-share/icons/hicolor/24x24/apps/gcr-key-pair.png
-share/icons/hicolor/24x24/apps/gcr-key.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
-share/icons/hicolor/32x32/apps/gcr-key-pair.png
-share/icons/hicolor/32x32/apps/gcr-key.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/gcr-key-pair.png
-share/icons/hicolor/48x48/apps/gcr-key.png
 share/locale/af/LC_MESSAGES/gnome-keyring.mo
 share/locale/ar/LC_MESSAGES/gnome-keyring.mo
 share/locale/as/LC_MESSAGES/gnome-keyring.mo
@@ -228,6 +87,7 @@ share/locale/is/LC_MESSAGES/gnome-keyring.mo
 share/locale/it/LC_MESSAGES/gnome-keyring.mo
 share/locale/ja/LC_MESSAGES/gnome-keyring.mo
 share/locale/ka/LC_MESSAGES/gnome-keyring.mo
+share/locale/km/LC_MESSAGES/gnome-keyring.mo
 share/locale/kn/LC_MESSAGES/gnome-keyring.mo
 share/locale/ko/LC_MESSAGES/gnome-keyring.mo
 share/locale/lt/LC_MESSAGES/gnome-keyring.mo
@@ -270,12 +130,5 @@ share/locale/xh/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-keyring.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
-share/mime/packages/gcr-crypto-types.xml
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@exec %D/bin/update-mime-database %D/share/mime
-@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
