@@ -1,16 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/25 17:32:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/29 06:30:50 ajacoutot Exp $
 %%SHARED%%
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring-memory.h
 include/gnome-keyring-1/gnome-keyring-result.h
 include/gnome-keyring-1/gnome-keyring.h
+lib/girepository-1.0/
+lib/girepository-1.0/GnomeKeyring-1.0.typelib
 lib/libgnome-keyring.a
 lib/libgnome-keyring.la
 lib/pkgconfig/
 lib/pkgconfig/gnome-keyring-1.pc
+share/gir-1.0/
+share/gir-1.0/GnomeKeyring-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gnome-keyring/
+share/gtk-doc/html/gnome-keyring/annotation-glossary.html
 share/gtk-doc/html/gnome-keyring/ch01.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring-Callbacks.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring-Daemon-Management-Functions.html
@@ -86,6 +91,9 @@ share/locale/hu/LC_MESSAGES/libgnome-keyring.mo
 share/locale/id/LC_MESSAGES/libgnome-keyring.mo
 share/locale/it/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ja/LC_MESSAGES/libgnome-keyring.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/libgnome-keyring.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/libgnome-keyring.mo
@@ -141,6 +149,9 @@ share/locale/ug/
 share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/libgnome-keyring.mo
 share/locale/uk/LC_MESSAGES/libgnome-keyring.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
+share/locale/uz@cyrillic/LC_MESSAGES/libgnome-keyring.mo
 share/locale/vi/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-keyring.mo
 share/locale/zh_HK/LC_MESSAGES/libgnome-keyring.mo
