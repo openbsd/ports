@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/17 14:01:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/29 07:22:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	extra plugins for Anjuta IDE
 
 GNOME_PROJECT=	anjuta-extras
-GNOME_VERSION=	3.2.0
-REVISION=	0
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	devel
 
@@ -34,7 +33,7 @@ MODULES=	devel/dconf \
 # https://bugzilla.gnome.org/show_bug.cgi?id=631157
 CFLAGS +=	-DMAX_PATH=PATH_MAX
 
-LIB_DEPENDS=	x11/gnome/anjuta>=3.2.0
+LIB_DEPENDS=	x11/gnome/anjuta>=${GNOME_VERSION}
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
