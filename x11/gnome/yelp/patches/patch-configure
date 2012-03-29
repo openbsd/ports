@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2011/09/27 07:39:07 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.6 2012/03/29 06:41:05 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=627126
 
---- configure.orig	Tue Sep 27 09:31:29 2011
-+++ configure	Tue Sep 27 09:32:00 2011
-@@ -11369,22 +11369,10 @@ install-data-am: install-gsettings-schemas
+--- configure.orig	Mon Mar 19 21:11:55 2012
++++ configure	Fri Mar 23 22:06:09 2012
+@@ -11372,22 +11372,10 @@ install-data-am: install-gsettings-schemas
  
  .SECONDARY: $(gsettings_SCHEMAS)
  
