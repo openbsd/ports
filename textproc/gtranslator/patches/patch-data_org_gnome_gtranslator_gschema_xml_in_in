@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_org_gnome_gtranslator_gschema_xml_in_in,v 1.1 2012/03/29 13:35:44 ajacoutot Exp $
+
+Warning: undefined reference to <schema id='org.gnome.gtranslator.preferences.tm'/>
+
+--- data/org.gnome.gtranslator.gschema.xml.in.in.orig	Thu Mar 29 15:29:50 2012
++++ data/org.gnome.gtranslator.gschema.xml.in.in	Thu Mar 29 15:30:05 2012
+@@ -16,7 +16,6 @@
+   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gtranslator.preferences" path="/org/gnome/gtranslator/preferences/">
+     <child name="files" schema="org.gnome.gtranslator.preferences.files"/>
+     <child name="editor" schema="org.gnome.gtranslator.preferences.editor"/>
+-    <child name="tm" schema="org.gnome.gtranslator.preferences.tm"/>
+     <child name="ui" schema="org.gnome.gtranslator.preferences.ui"/>
+   </schema>
+   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gtranslator.preferences.files" path="/org/gnome/gtranslator/preferences/files/">
