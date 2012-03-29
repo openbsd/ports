@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/12 07:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/03/29 07:17:38 ajacoutot Exp $
 %%SHARED%%
 include/libgdl-3.0/
 include/libgdl-3.0/gdl/
@@ -18,9 +18,6 @@ lib/libgdl-3.a
 lib/libgdl-3.la
 lib/pkgconfig/
 lib/pkgconfig/gdl-3.0.pc
-share/gdl-3/
-share/gdl-3/ui/
-share/gdl-3/ui/layout.ui
 share/gir-1.0/
 share/gir-1.0/Gdl-3.gir
 share/gtk-doc/
@@ -33,7 +30,6 @@ share/gtk-doc/html/gdl-3.0/GdlDockLayout.html
 share/gtk-doc/html/gdl-3.0/GdlDockMaster.html
 share/gtk-doc/html/gdl-3.0/GdlDockObject.html
 share/gtk-doc/html/gdl-3.0/GdlDockPlaceholder.html
-share/gtk-doc/html/gdl-3.0/gdl-3.0.devhelp
 share/gtk-doc/html/gdl-3.0/gdl-3.0.devhelp2
 share/gtk-doc/html/gdl-3.0/gdl-main.html
 share/gtk-doc/html/gdl-3.0/home.png
@@ -49,6 +45,9 @@ share/locale/am/LC_MESSAGES/gdl-3.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gdl-3.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/gdl-3.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gdl-3.mo
@@ -103,6 +102,9 @@ share/locale/hy/LC_MESSAGES/gdl-3.mo
 share/locale/id/LC_MESSAGES/gdl-3.mo
 share/locale/it/LC_MESSAGES/gdl-3.mo
 share/locale/ja/LC_MESSAGES/gdl-3.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/gdl-3.mo
 share/locale/ko/LC_MESSAGES/gdl-3.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
