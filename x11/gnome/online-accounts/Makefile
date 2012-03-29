@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/29 06:43:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/03/29 07:51:25 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
-GNOME_VERSION=	3.3.92
+GNOME_VERSION=	3.4.0
 
 SHARED_LIBS +=  goa-1.0              0.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      0.0      # .0.0
@@ -36,7 +36,7 @@ BUILD_DEPENDS=		textproc/docbook-xsl
 LIB_DEPENDS=		devel/json-glib \
 			devel/libnotify \
 			net/librest \
-			www/webkit,gtk3>=1.6.1v0
+			www/webkit,gtk3
 
 MODGNOME_TOOLS= 	goi
 MODGNOME_ICON_CACHE=	Yes
