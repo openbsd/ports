@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2011/12/03 22:17:15 ajacoutot Exp $
-
-# Don't forget to check eog-plugins when updating this port!
+# $OpenBSD: Makefile,v 1.79 2012/03/29 07:12:38 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
-GNOME_VERSION=		3.2.2
-REVISION=		0
+GNOME_VERSION=		3.4.0
 
 CATEGORIES=		graphics
 
@@ -38,8 +35,8 @@ LIB_DEPENDS=		devel/libpeas \
 			x11/gnome/desktop \
 			graphics/lcms2
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			misc/shared-mime-info>=0.21 \
-			x11/gnome/icon-theme>=3.0.0
+			misc/shared-mime-info \
+			x11/gnome/icon-theme
 
 MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
