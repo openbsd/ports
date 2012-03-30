@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/03/29 07:22:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/03/30 14:11:39 ajacoutot Exp $
 
 # XXX remove the post-patch chunk on update
 
@@ -8,6 +8,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.4.0
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -68,8 +69,9 @@ MODGNOME_ICON_CACHE=	Yes
 
 MODGNOME_TOOLS= 	goi vala yelp
 
+YACC=			bison -y
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		YACC="bison -y"
 CONFIGURE_ARGS+=	--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
 
