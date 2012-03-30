@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_clplumbing_realtime_c,v 1.1 2012/03/30 06:09:54 ajacoutot Exp $
+--- lib/clplumbing/realtime.c.orig	Fri Mar 23 18:05:27 2012
++++ lib/clplumbing/realtime.c	Sat Mar 24 10:19:25 2012
+@@ -31,7 +31,7 @@
+ #	include <sys/time.h>
+ #	include <sys/resource.h>
+ #endif
+-#ifdef _POSIX_PRIORITY_SCHEDULING
++#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
+ #	include <sched.h>
+ #endif
+ #include <string.h>
+@@ -44,7 +44,7 @@
+ static gboolean	cl_realtimepermitted = TRUE;
+ static void cl_rtmalloc_setup(void);
+ 
+-#if defined(SCHED_RR) && defined(_POSIX_PRIORITY_SCHEDULING) && !defined(ON_DARWIN)
++#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0) && defined(SCHED_RR) && !defined(ON_DARWIN)
+ #	define DEFAULT_REALTIME	SCHED_RR
+ #endif
+ 

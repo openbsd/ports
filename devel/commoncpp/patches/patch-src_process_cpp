@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_process_cpp,v 1.1 2012/03/30 06:09:54 ajacoutot Exp $
+--- src/process.cpp.orig	Fri Jan 16 07:27:00 2009
++++ src/process.cpp	Sat Mar 24 10:15:59 2012
+@@ -526,7 +526,7 @@ void    Process::attach(const char *dev)
+ 
+ void Process::setScheduler(const char *pol)
+ {
+-#ifdef	_POSIX_PRIORITY_SCHEDULING
++#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
+ 	struct sched_param p;
+ 	int policy;
+ 
+@@ -582,7 +582,7 @@ void Process::setScheduler(const char *pol)
+ 
+ void Process::setPriority(int pri)
+ {
+-#ifdef  _POSIX_PRIORITY_SCHEDULING
++#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
+ 	struct sched_param p;
+ 	int policy = sched_getscheduler(0);
+ 	int min = sched_get_priority_min(policy);
+@@ -607,7 +607,7 @@ void Process::setPriority(int pri)
+ 
+ bool Process::isScheduler(void)
+ {
+-#ifdef  _POSIX_PRIORITY_SCHEDULING
++#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
+ 	return true;
+ #else
+ 	return false;
