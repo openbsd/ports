@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2012/02/28 02:26:41 dhill Exp $
+# $OpenBSD: Makefile,v 1.13 2012/03/30 22:53:18 ajacoutot Exp $
 
 COMMENT =		tar-like secure remote deduplicating archiver
 
-DISTNAME =		cyphertite-1.0.1
+DISTNAME =		cyphertite-1.1.1
 CATEGORIES =		sysutils archivers security
 
 HOMEPAGE =		https://www.cyphertite.com/
-MAINTAINER =		David Hill <dhill@openbsd.org>
+MAINTAINER =		David Hill <dhill@mindcry.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		assl>=3 c clog crypto edit event expat exude>=2 \
-			ncurses shrink>=1 sqlite3 ssl util xmlsd>=2
+			ncurses pthread shrink>=1 sqlite3 ssl util xmlsd>=2
 
 MASTER_SITES =		https://opensource.conformal.com/snapshots/cyphertite/
 
