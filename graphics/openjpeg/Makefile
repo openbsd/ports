@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/29 15:45:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/03/30 07:09:26 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
@@ -30,6 +30,9 @@ USE_LIBTOOL=		Yes
 BUILD_DEPENDS=		graphics/lcms2 \
 			graphics/png \
 			graphics/tiff
+
+pre-patch:
+	perl -i -pe 's/\r$$//; s/\t*$$//;' ${WRKSRC}/libopenjpeg/opj_malloc.h
 
 post-install:
 	cd ${PREFIX}/share/doc/ && mv openjpeg-* openjpeg
