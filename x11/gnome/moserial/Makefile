@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2012/03/03 09:39:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/03/30 14:09:59 ajacoutot Exp $
 
 COMMENT=		serial terminal for GNOME
 
 GNOME_PROJECT=		moserial
 GNOME_VERSION=		3.0.6
+REVISION=		0
 
 CATEGORIES=		comms
+
+HOMEPAGE=		https://live.gnome.org/moserial
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.79 2012/03/29 07:12:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/03/30 14:09:59 ajacoutot Exp $
 
 COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.4.0
+REVISION=		0
 
 CATEGORIES=		graphics
+
+HOMEPAGE=		https://live.gnome.org/EyeOfGnome/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
