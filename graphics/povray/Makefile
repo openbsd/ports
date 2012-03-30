@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/02/26 14:59:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/30 19:44:39 naddy Exp $
 
 COMMENT=	3D image rendering package
 
 DISTNAME=	povray-3.6.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://www.povray.org/
@@ -22,7 +22,7 @@ EXTRACT_SUFX=		.tar.bz2
 # We replace the included ancient copy of libpng with a later release
 # from the 1.2 branch.
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-PNG_V=			1.2.47
+PNG_V=			1.2.48
 MASTER_SITES0=		${MASTER_SITE_SOURCEFORGE:=libpng/}
 DISTFILES=		${EXTRACT_ONLY} libpng-${PNG_V}.tar.gz:0
 
