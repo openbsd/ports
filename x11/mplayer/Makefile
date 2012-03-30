@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.201 2012/02/28 19:48:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.202 2012/03/30 13:23:03 phessler Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		13
+REVISION =		14
 
 CATEGORIES =		x11 multimedia
 
@@ -26,7 +26,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
-		avformat avutil bz2 c cdda_interface cdda_paranoia \
+		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
 		crypto dv enca fontconfig freetype fribidi gsm jpeg lcms \
 		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
 		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
@@ -48,6 +48,7 @@ LIB_DEPENDS =	graphics/png \
 		audio/speex \
 		audio/libogg \
 		audio/lame \
+		multimedia/libbluray \
 		multimedia/libdv \
 		devel/fribidi \
 		graphics/lcms \
