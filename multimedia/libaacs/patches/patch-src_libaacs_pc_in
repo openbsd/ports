@@ -1,0 +1,10 @@
+$OpenBSD: patch-src_libaacs_pc_in,v 1.1.1.1 2012/03/30 13:15:59 phessler Exp $
+--- src/libaacs.pc.in.orig	Mon Mar 26 20:02:48 2012
++++ src/libaacs.pc.in	Mon Mar 26 20:03:01 2012
+@@ -6,5 +6,5 @@ includedir=@includedir@
+ Name: libaacs
+ Description: AACS support library for Blu-ray playback
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -laacs
++Libs: -L${libdir} -laacs -pthread
+ Cflags: -I${includedir}

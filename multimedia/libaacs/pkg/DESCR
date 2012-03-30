@@ -1,0 +1,11 @@
+libaacs is a research project to implement the Advanced Access Content
+System specification.
+
+This research project provides, through an open-source library, a way to
+understand how the AACS works.
+
+This research project is mainly developed by an international team of
+developers from Doom9.
+
+NB: this project doesn't offer any key or certificate that could be used
+to decode encrypted copyrighted material.
