@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/03/30 06:47:40 ajacoutot Exp $
 
 COMMENT=	UPnP A/V media server
 
 DISTNAME=	ushare-1.1a
-REVISION=	5
+REVISION=	6
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	http://ushare.geexbox.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
