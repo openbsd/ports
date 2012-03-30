@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.316 2012/02/27 08:46:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.317 2012/03/30 07:14:06 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -210,6 +210,7 @@
      SUBDIR += py-opengl
      SUBDIR += py-pigment
      SUBDIR += py-pyx
+     SUBDIR += py3-cairo
      SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += quesoglc
