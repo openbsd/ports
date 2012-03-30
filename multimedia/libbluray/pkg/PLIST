@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/30 13:16:33 phessler Exp $
+include/libbluray/
+include/libbluray/bluray-version.h
+include/libbluray/bluray.h
+include/libbluray/clpi_data.h
+include/libbluray/filesystem.h
+include/libbluray/keys.h
+include/libbluray/log_control.h
+include/libbluray/meta_data.h
+include/libbluray/overlay.h
+lib/libbluray.a
+lib/libbluray.la
+@lib lib/libbluray.so.${LIBbluray_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libbluray.pc
