@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/03/29 14:58:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/03/30 16:28:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -81,8 +81,7 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
 			-DWITH_VALA:BOOL=ON \
 			-DWITH_KDE4:BOOL=OFF \
 			-DWITH_DOTNET:BOOL=OFF \
-			-DWITH_NM:BOOL=OFF \
-			-DWITH_WEBKIT:BOOL=OFF
+			-DWITH_NM:BOOL=OFF
 
 .if ${FLAVOR:L:Mmozilla}
 BUILD_DEPENDS +=	devel/xulrunner/1.9,-devel>=1.9.1
@@ -96,7 +95,7 @@ CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=OFF
 MULTI_PACKAGES +=	-webkit
 CONFIGURE_ARGS +=	-DWITH_WEBKIT3:BOOL=ON
 .else
-CONFIGURE_ARGS +=	-DWITH_WEBKIT3:BOOL=OFF
+CONFIGURE_ARGS +=	-DWITH_WEBKIT:BOOL=OFF
 .endif
 
 pre-configure:
