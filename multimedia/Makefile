@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/01/24 22:24:11 nigel Exp $
+# $OpenBSD: Makefile,v 1.60 2012/03/30 13:17:28 phessler Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -21,7 +21,9 @@
      SUBDIR += k3b
      SUBDIR += kaffeine
      SUBDIR += kguitar
+     SUBDIR += libaacs
      SUBDIR += libass
+     SUBDIR += libbluray
      SUBDIR += libdv
      SUBDIR += libdvdnav
      SUBDIR += libmatroska
