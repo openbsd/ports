@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/03/29 06:41:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2012/03/30 11:48:49 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
@@ -29,7 +29,8 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-BUILD_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0
+BUILD_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0 \
+			textproc/itstool
 RUN_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0
 
 LIB_DEPENDS=		www/webkit,gtk3>=1.6.1v0
