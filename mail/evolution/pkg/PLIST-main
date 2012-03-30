@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.30 2012/03/29 06:56:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.31 2012/03/30 09:00:29 ajacoutot Exp $
 @conflict evolution-plugins-<=3.2.2p0
 @pkgpath mail/evolution
 @bin bin/evolution
-@bin bin/evolution-settings
 include/evolution-${R}/
 include/evolution-${R}/addressbook/
 include/evolution-${R}/addressbook/gui/

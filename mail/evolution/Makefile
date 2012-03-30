@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2012/03/29 16:39:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.158 2012/03/30 09:00:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=		3.4.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
@@ -65,7 +65,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += canberra-gtk3 gdata gweather-3 ldap-2.4 ltdl ogg
-WANTLIB-main += vorbis vorbisfile goa-1.0
+WANTLIB-main += vorbis vorbisfile goa-1.0 soup-gnome-2.4
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += gstreamer-0.10 pst
@@ -211,6 +211,7 @@ post-install:
 	rm ${PREFIX}/lib/evolution/${R}/{modules,plugins}/*.la
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
 # originally designed for MeeGo (https://bugzilla.gnome.org/show_bug.cgi?id=654525)
+	rm ${PREFIX}/bin/evolution-settings
 	rm ${PREFIX}/share/applications/evolution-settings.desktop
 
 .include <bsd.port.mk>
