@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2012/03/29 08:11:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.176 2012/03/30 14:30:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -65,6 +65,7 @@
      SUBDIR += libgnomeui
      SUBDIR += libgweather
      SUBDIR += librsvg
+     SUBDIR += libsecret
      SUBDIR += libxklavier
      SUBDIR += media
      SUBDIR += menus
