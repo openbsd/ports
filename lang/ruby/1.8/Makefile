@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/03/30 19:03:24 phessler Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -37,7 +37,12 @@ LIB_DEPENDS-main=
 RUN_DEPENDS-main=
 
 PSEUDO_FLAVORS= 	no_x11 no_ri_docs
+# Do not build the RI docs on slow arches
+.if ${MACHINE_ARCH:Marm} || ${MACHINE_ARCH:Msparc} || ${MACHINE_ARCH:Mvax}
+FLAVOR?=		no_ri_docs
+.else
 FLAVOR?=
+.endif
 
 MULTI_PACKAGES=		-main -iconv -gdbm
 
