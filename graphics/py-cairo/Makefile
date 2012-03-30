@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/03/27 06:30:40 eric Exp $
+# $OpenBSD: Makefile,v 1.30 2012/03/30 07:05:50 ajacoutot Exp $
 
 COMMENT=	cairo bindings for Python
 
@@ -6,6 +6,8 @@ VERSION=	1.10.0
 DISTNAME=	py2cairo-${VERSION}
 PKGNAME=	py-cairo-${VERSION}
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -21,18 +23,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://cairographics.org/releases/
 
+WANTLIB += ${MODPY_WANTLIB}
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo drm expat fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += m pcre pixman-1 png pthread-stubs python2.7 util xcb
-WANTLIB += xcb-render xcb-shm z
+WANTLIB += m pcre pixman-1 png pthread-stubs util xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=	lang/python \
 		devel/gettext
 
-LIB_DEPENDS=	graphics/cairo
-REGRESS_DEPENDS=devel/py-test
+LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
+		graphics/cairo
 
-USE_LIBTOOL=	Yes
+REGRESS_DEPENDS=devel/py-test
 
 do-configure:
 	cd ${WRKSRC} && env PYTHON=${MODPY_BIN} \
