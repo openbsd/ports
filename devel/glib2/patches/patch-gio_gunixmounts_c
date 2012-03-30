@@ -1,11 +1,11 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.6 2012/03/23 13:19:32 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.7 2012/03/30 10:25:35 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
---- gio/gunixmounts.c.orig	Tue Feb 21 01:10:54 2012
-+++ gio/gunixmounts.c	Fri Mar 16 12:38:35 2012
+--- gio/gunixmounts.c.orig	Sun Mar 18 03:35:25 2012
++++ gio/gunixmounts.c	Fri Mar 30 12:12:34 2012
 @@ -156,6 +156,9 @@ struct _GUnixMountMonitor {
    GFileMonitor *mtab_monitor;
  
@@ -138,20 +138,16 @@ on checking for mtab updates like other systems.
  static void
  g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
  {
-@@ -1406,10 +1476,16 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
-         }
-       else
-         {
-+#if defined __linux__
-           file = g_file_new_for_path (mtab_path);
-           monitor->mtab_monitor = g_file_monitor_file (file, 0, NULL, NULL);
+@@ -1411,6 +1481,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
            g_object_unref (file);
            g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
-+#else
-+          monitor->mount_poller_mounts = _g_get_unix_mounts ();
-+          mount_poller_time = (guint64)time (NULL);
-+          monitor->mount_poller_source = g_timeout_add_seconds (3, (GSourceFunc)mount_change_poller, monitor);
-+#endif
          }
++    }
++  else
++    {
++      monitor->mount_poller_mounts = _g_get_unix_mounts ();
++      mount_poller_time = (guint64)time (NULL);
++      monitor->mount_poller_source = g_timeout_add_seconds (3, (GSourceFunc)mount_change_poller, monitor);
      }
  }
+ 
