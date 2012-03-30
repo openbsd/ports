@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/29 07:22:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/30 14:18:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -28,6 +28,8 @@ WANTLIB += xcb-shm xml2 z ffi
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
+
+MODGNOME_TOOLS=	yelp
 
 # plugins/scintilla/{FilePath.cxx,aneditor-priv.h,aneditor.cxx}
 # https://bugzilla.gnome.org/show_bug.cgi?id=631157
