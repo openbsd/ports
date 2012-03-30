@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/12/11 18:04:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2012/03/30 12:03:03 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	3
-REVISION-media =0
+REVISION-main =	4
+REVISION-media =1
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
@@ -49,7 +49,7 @@ MULTI_PACKAGES = -main -media
 WANTLIB += GL SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangoft2-1.0 pixman-1 png pthread-stubs
 WANTLIB += stdc++ tiff xcb xcb-render xcb-shm z
 
@@ -66,11 +66,13 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 WANTLIB-main += ${WANTLIB} GLU SDL c iodbc mspack pthread
 
 LIB_DEPENDS-media = ${LIB_DEPENDS} \
+		    devel/gconf2 \
 		    multimedia/gstreamer-0.10/core \
 		    multimedia/gstreamer-0.10/plugins-base \
 		    ${BASE_PKGPATH},-main>=${V}
 WANTLIB-media += ${WANTLIB} gconf-2 gstinterfaces-0.10 \
-		 gstreamer-0.10 wx_base wx_gtk2_core xml2
+		 gstreamer-0.10 wx_base wx_gtk2_core xml2 \
+		 gmodule-2.0
 
 VMEM_WARNING =	Yes
 
