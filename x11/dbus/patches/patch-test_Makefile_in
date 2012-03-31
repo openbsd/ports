@@ -1,0 +1,38 @@
+$OpenBSD: patch-test_Makefile_in,v 1.3 2012/03/31 17:56:44 ajacoutot Exp $
+--- test/Makefile.in.orig	Sat Mar 31 18:55:08 2012
++++ test/Makefile.in	Sat Mar 31 18:58:02 2012
+@@ -1418,14 +1418,14 @@ installcheck-local:
+ @DBUS_ENABLE_INSTALLED_TESTS_TRUE@		$(testexec_PROGRAMS)
+ 
+ all-local:
+-	$(AM_V_at)$(INSTALL) -d data/valid-config-files/session.d
++	$(AM_V_at)$(mkinstalldirs) -d data/valid-config-files/session.d
+ 	$(AM_V_at)set -e && \
+ 	if test $(srcdir) = . || test $(srcdir) -ef .; then \
+ 		echo '-- No need to copy test data as srcdir = builddir'; \
+ 	else \
+ 		for F in $(static_data); do \
+-			$(INSTALL) -d $${F%/*}; \
+-			$(INSTALL_DATA) $(srcdir)/$$F $$F; \
++			$(mkinstalldirs) $${F%/*}; \
++			$(install_sh_DATA) $(srcdir)/$$F $$F; \
+ 		done; \
+ 	fi
+ 
+@@ -1437,12 +1437,12 @@ clean-local:
+ 	fi
+ 
+ data/valid-config-files/session.conf: $(top_builddir)/bus/session.conf
+-	$(AM_V_at)$(INSTALL) -d data/valid-config-files
+-	$(AM_V_GEN)$(INSTALL_DATA) $< $@
++	$(AM_V_at)$(mkinstalldirs) data/valid-config-files
++	$(AM_V_GEN)$(install_sh_DATA) $< $@
+ 
+ data/valid-config-files/system.conf: $(top_builddir)/bus/system.conf
+-	$(AM_V_at)$(INSTALL) -d data/valid-config-files
+-	$(AM_V_GEN)$(INSTALL_DATA) $< $@
++	$(AM_V_at)$(mkinstalldirs) data/valid-config-files
++	$(AM_V_GEN)$(install_sh_DATA) $< $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

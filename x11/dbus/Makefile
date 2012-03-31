@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.78 2012/03/31 17:56:44 ajacoutot Exp $
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.4.16
-REVISION=	3
+DISTNAME=	dbus-1.4.20
 EPOCH=		0
 
-SHARED_LIBS +=	dbus-1	9.1 # .8.6
+SHARED_LIBS +=	dbus-1	9.1 # .8.9
 CATEGORIES=	x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
@@ -26,6 +25,7 @@ MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 SEPARATE_BUILD=	Yes
 
 USE_LIBTOOL=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -33,17 +33,26 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-dbus-user=_dbus \
 		--with-xml=expat \
+		--with-x \
 		--enable-kqueue \
 		--disable-xml-docs \
 		--disable-doxygen-docs \
 		--disable-abstract-sockets \
+		--disable-launchd \
 		--disable-selinux \
 		--disable-libaudit \
 		--disable-dnotify \
 		--disable-inotify
 
-# Tests are disabled as they change the final dbus binaries
-#CONFIGURE_ARGS+=	--enable-tests
+# gives no chance of picking up devel/libexecinfo
+CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
+		ac_cv_func_backtrace=no
+
+# Full test coverage is disabled:
+# * changes the final dbus binaries
+# * requires glib2 and dbus-python (which creates 2 dependency loops)
+# * requires the python MODULE
+#CONFIGURE_ARGS+=	--enable-tests=yes
 #CONFIGURE_ARGS+=	--enable-verbose-mode
 
 FAKE_FLAGS=	sysconfdir=${TRUEPREFIX}/share/examples/dbus

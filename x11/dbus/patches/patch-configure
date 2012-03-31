@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
---- configure.orig	Wed Sep 21 16:27:57 2011
-+++ configure	Sun Feb 19 10:14:58 2012
-@@ -18853,7 +18853,8 @@ fi
+$OpenBSD: patch-configure,v 1.19 2012/03/31 17:56:44 ajacoutot Exp $
+--- configure.orig	Tue Mar 27 14:01:10 2012
++++ configure	Sat Mar 31 10:32:00 2012
+@@ -18938,7 +18938,8 @@ fi
  done
  
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  "
  if test "x$ac_cv_have_decl_MSG_NOSIGNAL" = xyes; then :
    ac_have_decl=1
-@@ -19406,13 +19407,13 @@ fi
+@@ -19491,13 +19492,13 @@ fi
  # Thread lib detection
  ac_fn_c_check_func "$LINENO" "pthread_cond_timedwait" "ac_cv_func_pthread_cond_timedwait"
  if test "x$ac_cv_func_pthread_cond_timedwait" = xyes; then :
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -19443,7 +19444,7 @@ fi
+@@ -19528,7 +19529,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_cond_timedwait" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = xyes; then :
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  fi
  
  fi
-@@ -19511,7 +19512,7 @@ $as_echo "$ac_cv_search_clock_getres" >&6; }
+@@ -19596,7 +19597,7 @@ $as_echo "$ac_cv_search_clock_getres" >&6; }
  ac_res=$ac_cv_search_clock_getres
  if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  fi
  
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for CLOCK_MONOTONIC" >&5
-@@ -19658,13 +19659,13 @@ if test x$have_selinux = xyes ; then
+@@ -19743,13 +19744,13 @@ if test x$have_selinux = xyes ; then
  if test "x$ac_cv_func_pthread_create" = xyes; then :
  
  else
@@ -63,7 +63,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -19695,7 +19696,7 @@ fi
+@@ -19780,7 +19781,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
@@ -72,7 +72,7 @@ $OpenBSD: patch-configure,v 1.18 2012/02/23 06:58:11 ajacoutot Exp $
  fi
  
  fi
-@@ -20085,6 +20086,7 @@ $as_echo_n "checking for SCM_RIGHTS... " >&6; }
+@@ -20170,6 +20171,7 @@ $as_echo_n "checking for SCM_RIGHTS... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
