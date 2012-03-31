@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2012/01/08 20:05:45 robert Exp $
+# $OpenBSD: Makefile,v 1.69 2012/03/31 18:50:17 ajacoutot Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 DISTNAME=	mono-2.10.6
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang devel
 
@@ -48,7 +48,7 @@ RUN_DEPENDS=	x11/libgdiplus
 LIB_DEPENDS=	devel/boehm-gc
 WANTLIB +=	gc
 
-AUTOCONF_VERSION=2.63
+AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
