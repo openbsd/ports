@@ -1,0 +1,5 @@
+PyWBEM is a Python library for making CIM operations over HTTP using the
+WBEM CIM-XML protocol. It is based on the idea that a good WBEM client
+should be easy to use and not necessarily require a large amount of
+programming knowledge. PyWBEM is suitable for a large range of tasks
+from simply poking around to writing web and GUI applications.
