@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/12/22 14:53:26 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2012/03/31 11:10:57 naddy Exp $
 
 COMMENT=	small and fast window manager
 
@@ -38,6 +38,14 @@ CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
 		--enable-corefonts \
 		--enable-i18n
 
+# XXX TODO
+#CONFIGURE_ARGS+=--with-icesound=sndio
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+.include <bsd.port.arch.mk>
+
 # XXX rendering bug on big-endian systems 
 .if ${MACHINE_ARCH} != "hppa" && ${MACHINE_ARCH} != "m68k" && \
 ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "mips64" && \
@@ -46,19 +54,11 @@ ${MACHINE_ARCH} != "sparc64"
 CONFIGURE_ARGS+= --enable-gradients
 .endif
 
-# XXX TODO
-#CONFIGURE_ARGS+=--with-icesound=sndio
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+.if ${PROPERTIES:Mapm}
+PATCH_LIST=	patch-* apm-*
+.endif
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/doc/icewm-7.html
 
 .include <bsd.port.mk>
-
-.for m in ${MACHINE_ARCH} ${MACHINE}
-.if ${APM_ARCHS:L:M$m}
-PATCH_LIST=	patch-* apm-*
-.endif
-.endfor
