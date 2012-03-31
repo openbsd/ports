@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1023 2012/03/29 07:25:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1024 2012/03/31 08:31:06 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1044,6 +1044,7 @@
      SUBDIR += py-unit,no_x11
      SUBDIR += py-urwid
      SUBDIR += py-virtualenv
+     SUBDIR += py-wbem
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-xmlrunner
