@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/30 14:29:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/03/31 08:52:03 ajacoutot Exp $
+%%SHARED%%
 @bin bin/secret-tool
 include/secret-0/
 include/secret-0/secret/
@@ -18,10 +19,12 @@ lib/girepository-1.0/
 lib/girepository-1.0/Secret-0.typelib
 lib/libsecret-0.a
 lib/libsecret-0.la
-@lib lib/libsecret-0.so.${LIBsecret-0_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/libsecret-0.pc
 share/gir-1.0/
 share/gir-1.0/Secret-0.gir
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/libsecret-0/
 share/gtk-doc/html/libsecret-0/SecretCollection.html
 share/gtk-doc/html/libsecret-0/SecretError.html
