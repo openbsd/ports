@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2012/03/30 10:25:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2012/03/31 18:27:35 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		devel
 
@@ -41,12 +41,11 @@ MODPY_ADJ_FILES=	glib/gtester-report \
 			gio/gdbus-2.0/codegen/gdbus-codegen.in \
 			gio/tests/gdbus-testserver.py
 
-BUILD_DEPENDS=		devel/libelf
-
-WANTLIB-main += ${WANTLIB} c pthread z pcre ffi
+WANTLIB-main += ${WANTLIB} c elf ffi pcre pthread z
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/pcre>=8.13 \
+			devel/pcre \
+			devel/libelf \
 			devel/libffi
 
 PKG_ARCH-docs=		*
@@ -76,10 +75,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-selinux \
 			--disable-systemtap \
 			--disable-xattr
-
-# XXX tries to run automake-1.11 if installed
-# (check again when updating to a stable release)
-CONFIGURE_ARGS +=	--disable-maintainer-mode
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

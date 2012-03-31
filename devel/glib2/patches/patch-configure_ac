@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/03/31 18:27:35 ajacoutot Exp $
+
+From 14945449580d394b5e1e009f71792ccac51fc41e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sat, 31 Mar 2012 18:20:19 +0000
+Subject: gresource: libelf, try pkg-config first then fall-back to AC_CHECK_LIB
+
+--- configure.ac.orig	Sat Mar 31 19:31:43 2012
++++ configure.ac	Sat Mar 31 19:34:28 2012
+@@ -1810,12 +1810,13 @@ dnl ************************
+ dnl *** check for libelf ***
+ dnl ************************
+ 
+-AC_CHECK_LIB([elf], [elf_begin], have_libelf=yes, have_libelf=no)
++PKG_CHECK_MODULES([LIBELF], [libelf], [have_libelf=yes], [
++  AC_CHECK_LIB([elf], [elf_begin], have_libelf=yes, have_libelf=no)
++  ])
+ if test $have_libelf = yes; then
+   AC_DEFINE(HAVE_LIBELF, 1, [Define if libelf is available])
+-  ELF_LIBS=-lelf
++  LIBELF_LIBS=-lelf
+ fi
+-AC_SUBST(ELF_LIBS)
+ 
+ dnl ****************************************
+ dnl *** platform dependent source checks ***
