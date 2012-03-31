@@ -1,9 +1,7 @@
-# $OpenBSD: python.port.mk,v 1.50 2011/12/20 13:08:06 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.51 2012/03/31 08:53:57 ajacoutot Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
-
-SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python
 
@@ -72,6 +70,10 @@ BUILD_DEPENDS+=		${_MODPY_BUILD_DEPENDS}
 .endif
 .if ${MODPY_RUNDEP:L} == "yes"
 RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
+.endif
+
+.if ${MODPY_BUILDDEP:L} == "yes" || ${MODPY_RUNDEP:L} == "yes"
+SHARED_ONLY=		Yes
 .endif
 
 MODPY_PRE_BUILD_STEPS = @:
