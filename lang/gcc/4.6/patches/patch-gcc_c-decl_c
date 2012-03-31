@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_c-decl_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/c-decl.c.orig	Thu Feb 23 18:38:13 2012
++++ gcc/c-decl.c	Mon Mar 12 08:42:51 2012
+@@ -4788,6 +4788,8 @@ warn_variable_length_array (tree name, tree size)
+ 		     "variable length array is used");
+ 	}
+     }
++    if (warn_variable_decl)
++      warning (OPT_Wvariable_decl, "variable-sized array %qE", name);
+ }
+ 
+ /* Given a size SIZE that may not be a constant, return a SAVE_EXPR to

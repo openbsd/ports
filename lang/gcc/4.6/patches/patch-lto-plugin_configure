@@ -1,7 +1,7 @@
-$OpenBSD: patch-lto-plugin_configure,v 1.1 2012/01/26 13:17:22 pascal Exp $
---- lto-plugin/configure.orig	Wed Jan 25 17:52:19 2012
-+++ lto-plugin/configure	Wed Jan 25 17:52:28 2012
-@@ -9920,7 +9920,7 @@ openbsd*)
+$OpenBSD: patch-lto-plugin_configure,v 1.2 2012/03/31 20:02:03 pascal Exp $
+--- lto-plugin/configure.orig	Tue Jan  3 14:15:21 2012
++++ lto-plugin/configure	Sun Mar 11 19:10:42 2012
+@@ -9960,7 +9960,7 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

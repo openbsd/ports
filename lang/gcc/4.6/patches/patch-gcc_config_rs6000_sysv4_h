@@ -1,13 +1,11 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1 2011/11/14 22:37:23 pascal Exp $
---- gcc/config/rs6000/sysv4.h.orig	Mon Nov 14 14:22:43 2011
-+++ gcc/config/rs6000/sysv4.h	Mon Nov 14 14:23:22 2011
-@@ -405,7 +405,9 @@ do {									\
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.2 2012/03/31 20:02:03 pascal Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Mon Mar  7 08:50:23 2011
++++ gcc/config/rs6000/sysv4.h	Sun Mar 11 19:27:20 2012
+@@ -405,6 +405,7 @@ do {									\
    asm_fprintf (FILE, "%L%s", PREFIX)
  
  /* Globalizing directive for a label.  */
-+#ifndef GLOBAL_ASM_OP
++#undef GLOBAL_ASM_OP
  #define GLOBAL_ASM_OP "\t.globl "
-+#endif
  
  /* This says how to output assembler code to declare an
-    uninitialized internal linkage data object.  Under SVR4,

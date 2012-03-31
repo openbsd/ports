@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_c-family_c-opts_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/c-family/c-opts.c.orig	Sun Mar 11 19:21:01 2012
++++ gcc/c-family/c-opts.c	Sun Mar 11 19:21:20 2012
+@@ -405,8 +405,6 @@ c_common_handle_option (size_t scode, const char *arg,
+       cpp_opts->warn_comments = value;
+       cpp_opts->warn_num_sign_change = value;
+ 
+-      if (warn_pointer_sign == -1)
+-	warn_pointer_sign = value;
+       break;
+ 
+     case OPT_Wbuiltin_macro_redefined:

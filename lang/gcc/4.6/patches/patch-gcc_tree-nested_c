@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_tree-nested_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/tree-nested.c.orig	Sat Nov 27 16:53:23 2010
++++ gcc/tree-nested.c	Mon Mar 12 08:44:07 2012
+@@ -1907,6 +1907,17 @@ convert_tramp_reference_op (tree *tp, int *walk_subtre
+       if (TREE_NO_TRAMPOLINE (t))
+ 	break;
+ 
++      if (!flag_trampolines)
++	{
++	error ("trampoline code generation is not allowed without -ftrampolines");
++	return NULL_TREE;
++	}
++      if (warn_trampolines)
++	{
++	warning (OPT_Wtrampolines, 
++		"local function address taken needing trampoline generation");
++	}
++
+       /* Lookup the immediate parent of the callee, as that's where
+ 	 we need to insert the trampoline.  */
+       for (i = info; i->context != target_context; i = i->outer)

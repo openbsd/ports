@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_openbsd64_h,v 1.1.1.1 2011/11/14 13:00:56 pascal Exp $
---- gcc/config/i386/openbsd64.h.orig	Tue Nov  1 15:32:54 2011
-+++ gcc/config/i386/openbsd64.h	Tue Nov  1 15:33:56 2011
-@@ -0,0 +1,121 @@
+$OpenBSD: patch-gcc_config_i386_openbsd64_h,v 1.2 2012/03/31 20:02:03 pascal Exp $
+--- gcc/config/i386/openbsd64.h.orig	Sun Mar 11 19:10:40 2012
++++ gcc/config/i386/openbsd64.h	Sun Mar 11 19:54:21 2012
+@@ -0,0 +1,122 @@
 +/* Configuration for an OpenBSD x86-64 target.
 +   
 +   Copyright (C) 2003 Free Software Foundation, Inc.
@@ -116,6 +116,7 @@ $OpenBSD: patch-gcc_config_i386_openbsd64_h,v 1.1.1.1 2011/11/14 13:00:56 pascal
 +   %{shared:-shared} %{R*} \
 +   %{static:-Bstatic} \
 +   %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
 +   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
 +

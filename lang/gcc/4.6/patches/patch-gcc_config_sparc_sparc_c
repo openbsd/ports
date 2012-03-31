@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_config_sparc_sparc_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/config/sparc/sparc.c.orig	Sat Dec 17 00:38:34 2011
++++ gcc/config/sparc/sparc.c	Mon Mar 12 08:48:46 2012
+@@ -4540,6 +4540,9 @@ sparc_expand_prologue (void)
+   actual_fsize
+     = sparc_compute_frame_size (get_frame_size(), sparc_leaf_function_p);
+ 
++  if (warn_stack_larger_than && actual_fsize > stack_larger_than_size)
++    warning (OPT_Wstack_larger_than_, "stack usage is %d bytes", actual_fsize);
++
+   /* Advertise that the data calculated just above are now valid.  */
+   sparc_prologue_data_valid_p = true;
+ 

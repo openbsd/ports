@@ -1,2 +1,3 @@
-- test all arches (only sparc and sparc64 left)
-- fails on alpha at bootstrap comparison
+Failures:
+- alpha (bootstrap comparison)
+- gengtype loops on sparc64 with -O2, fine with -O0

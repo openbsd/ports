@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
---- gcc/config/alpha/openbsd.h.orig	Sat Nov 12 13:28:07 2011
-+++ gcc/config/alpha/openbsd.h	Sat Nov 12 13:32:57 2011
-@@ -19,6 +19,27 @@ along with GCC; see the file COPYING3.  If not see
+$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2012/03/31 20:02:03 pascal Exp $
+--- gcc/config/alpha/openbsd.h.orig	Sun Sep 27 15:20:23 2009
++++ gcc/config/alpha/openbsd.h	Sun Mar 11 19:52:18 2012
+@@ -19,6 +19,28 @@ along with GCC; see the file COPYING3.  If not see
  
  /* Controlling the compilation driver.  */
  
@@ -14,6 +14,7 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2011/11/14 13:00:57 pascal 
 +   %{shared:-shared} %{R*} \
 +   %{static:-Bstatic} \
 +   %{!static:-Bdynamic} \
++   %{rdynamic:-export-dynamic} \
 +   %{assert*} \
 +   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
 +
@@ -29,7 +30,7 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2011/11/14 13:00:57 pascal 
  /* run-time target specifications */
  #define TARGET_OS_CPP_BUILTINS()		\
      do {					\
-@@ -28,18 +49,27 @@ along with GCC; see the file COPYING3.  If not see
+@@ -28,18 +50,27 @@ along with GCC; see the file COPYING3.  If not see
  
  /* Layout of source language data types.  */
  

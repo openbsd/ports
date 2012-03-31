@@ -1,0 +1,15 @@
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/config/openbsd.h.orig	Sun Mar 11 19:12:59 2012
++++ gcc/config/openbsd.h	Sun Mar 11 19:19:46 2012
+@@ -296,5 +296,11 @@ __enable_execute_stack (void *addr)					\
+     perror ("mprotect of trampoline code");				\
+ }
+ 
++/*
++ * Disable the use of unsafe builtin functions, (strcat, strcpy, stpcpy),
++ * making them easier to spot in the object files.
++ */
++#define NO_UNSAFE_BUILTINS
++
+ #include <sys/types.h>
+ #include <sys/mman.h>

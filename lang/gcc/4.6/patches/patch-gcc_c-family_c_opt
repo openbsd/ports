@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_c-family_c_opt,v 1.1 2012/03/31 20:02:03 pascal Exp $
+--- gcc/c-family/c.opt.orig	Tue Mar 29 16:24:42 2011
++++ gcc/c-family/c.opt	Sun Mar 11 23:00:25 2012
+@@ -993,6 +993,10 @@ fthreadsafe-statics
+ C++ ObjC++ Optimization Var(flag_threadsafe_statics) Init(1)
+ -fno-threadsafe-statics	Do not generate thread-safe code for initializing local statics
+ 
++ftrampolines
++Common Var(flag_trampolines)
++Allows trampolines
++
+ funsigned-bitfields
+ C ObjC C++ ObjC++ Var(flag_signed_bitfields, 0)
+ When \"signed\" or \"unsigned\" is not given make the bitfield unsigned
