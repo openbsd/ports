@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.485 2012/03/24 21:45:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.486 2012/03/31 20:50:26 sthen Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -347,6 +347,7 @@
      SUBDIR += xscreensaver,
      SUBDIR += xscribble
      SUBDIR += xsel
+     SUBDIR += xsettingsd
      SUBDIR += xsnow
      SUBDIR += xtacy
      SUBDIR += xtattr
