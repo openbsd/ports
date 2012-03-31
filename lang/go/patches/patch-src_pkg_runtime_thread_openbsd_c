@@ -1,0 +1,60 @@
+$OpenBSD: patch-src_pkg_runtime_thread_openbsd_c,v 1.1.1.1 2012/03/31 12:37:16 jsing Exp $
+--- src/pkg/runtime/thread_openbsd.c.orig	Mon Mar 19 00:13:54 2012
++++ src/pkg/runtime/thread_openbsd.c	Mon Mar 19 00:13:54 2012
+@@ -20,8 +20,11 @@ enum
+ 
+ extern SigTab runtime·sigtab[];
+ 
++static Sigset sigset_all = ~(Sigset)0;
++static Sigset sigset_none;
++
+ extern int64 runtime·rfork_thread(int32 flags, void *stack, M *m, G *g, void (*fn)(void));
+-extern int32 runtime·thrsleep(void *ident, int32 clock_id, void *tsp, void *lock);
++extern int32 runtime·thrsleep(void *ident, int32 clock_id, void *tsp, void *lock, const int32 *abort);
+ extern int32 runtime·thrwakeup(void *ident, int32 n);
+ 
+ // From OpenBSD's <sys/sysctl.h>
+@@ -69,12 +72,12 @@ runtime·semasleep(int64 ns)
+ 			// sleep until semaphore != 0 or timeout.
+ 			// thrsleep unlocks m->waitsemalock.
+ 			if(ns < 0)
+-				runtime·thrsleep(&m->waitsemacount, 0, nil, &m->waitsemalock);
++				runtime·thrsleep(&m->waitsemacount, 0, nil, &m->waitsemalock, nil);
+ 			else {
+ 				ns += runtime·nanotime();
+ 				ts.tv_sec = ns/1000000000LL;
+ 				ts.tv_nsec = ns%1000000000LL;
+-				runtime·thrsleep(&m->waitsemacount, CLOCK_REALTIME, &ts, &m->waitsemalock);
++				runtime·thrsleep(&m->waitsemacount, CLOCK_REALTIME, &ts, &m->waitsemalock, nil);
+ 			}
+ 			// reacquire lock
+ 			while(runtime·xchg(&m->waitsemalock, 1))
+@@ -128,6 +131,7 @@ runtime·semawakeup(M *mp)
+ void
+ runtime·newosproc(M *m, G *g, void *stk, void (*fn)(void))
+ {
++	Sigset oset;
+ 	int32 flags;
+ 	int32 ret;
+ 
+@@ -141,7 +145,11 @@ runtime·newosproc(M *m, G *g, void *stk, void (*fn)(v
+ 
+ 	m->tls[0] = m->id;	// so 386 asm can find it
+ 
+-	if((ret = runtime·rfork_thread(flags, stk, m, g, fn)) < 0) {
++	oset = runtime·sigprocmask(SIG_SETMASK, sigset_all);
++	ret = runtime·rfork_thread(flags, stk, m, g, fn);
++	runtime·sigprocmask(SIG_SETMASK, oset);
++
++	if(ret < 0) {
+ 		runtime·printf("runtime: failed to create new OS thread (have %d already; errno=%d)\n", runtime·mcount() - 1, -ret);
+ 		if (ret == -ENOTSUP)
+ 			runtime·printf("runtime: is kern.rthreads disabled?\n");
+@@ -168,6 +176,7 @@ runtime·minit(void)
+ 	// Initialize signal handling
+ 	m->gsignal = runtime·malg(32*1024);
+ 	runtime·signalstack(m->gsignal->stackguard - StackGuard, 32*1024);
++	runtime·sigprocmask(SIG_SETMASK, sigset_none);
+ }
+ 
+ void
