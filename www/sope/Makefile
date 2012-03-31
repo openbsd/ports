@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/18 11:12:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2012/03/31 16:55:57 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		1.3.9
+VERSION =		1.3.14
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
@@ -49,6 +49,8 @@ LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION} \
 			databases/mysql
 LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION} \
 			databases/postgresql
+
+WRKDIST =		${WRKDIR}/SOPE
 
 CONFIGURE_STYLE=simple dest
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
