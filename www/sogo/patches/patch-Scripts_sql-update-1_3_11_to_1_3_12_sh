@@ -1,0 +1,43 @@
+$OpenBSD: patch-Scripts_sql-update-1_3_11_to_1_3_12_sh,v 1.1 2012/03/31 17:02:23 sebastia Exp $
+
+make script sh compatible
+
+--- Scripts/sql-update-1.3.11_to_1.3.12.sh.orig	Wed Feb 15 08:50:28 2012
++++ Scripts/sql-update-1.3.11_to_1.3.12.sh	Wed Feb 15 09:04:20 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ # This script only works with PostgreSQL
+ 
+@@ -7,9 +7,9 @@ defaulthostname=localhost
+ defaultdatabase=$USER
+ indextable=sogo_folder_info
+ 
+-read -p "Username ($defaultusername): " username
+-read -p "Hostname ($defaulthostname): " hostname
+-read -p "Database ($defaultdatabase): " database
++read username?"Username ($defaultusername): "
++read hostname?"Hostname ($defaulthostname): "
++read database?"Database ($defaultdatabase): "
+ 
+ if [ -z "$username" ]
+ then
+@@ -26,7 +26,7 @@ fi
+ 
+ sqlscript=""
+ 
+-function convVCtoText() {
++convVCtoText() {
+     oldIFS="$IFS"
+     IFS=" "
+     part="`echo -e \"ALTER TABLE $table ALTER COLUMN c_content TYPE TEXT;\\n\"`";
+@@ -45,7 +45,7 @@ done
+ echo "$sqlscript" | psql -q -e -U $username -h $hostname $database
+ 
+ echo "Step 2 - Fix primary key for the sogo_sessions table" >&2
+-SESSIONTBL=$(su - sogo -c "defaults read sogod OCSSessionsFolderURL" | awk -F/ '{print $NF}')
++SESSIONTBL=$(defaults read sogod OCSSessionsFolderURL | awk -F/ '{print $NF}')
+ if [ -z "$SESSIONTBL" ]; then
+   echo "Failed to obtain session table name" >&2
+   exit 1
