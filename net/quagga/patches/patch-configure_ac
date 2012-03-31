@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/03/31 10:51:47 sthen Exp $
+--- configure.ac.orig	Tue Mar 20 20:59:59 2012
++++ configure.ac	Tue Mar 20 21:00:03 2012
+@@ -935,7 +935,7 @@ AC_CHECK_MEMBERS([struct ip_mreqn.imr_ifindex], [], []
+ AC_MSG_CHECKING([for BSD struct ip_mreq hack])
+ AC_TRY_COMPILE([#ifdef HAVE_SYS_PARAM_H
+ #include <sys/param.h>
+-#endif],[#if (defined(__FreeBSD__) && ((__FreeBSD_version >= 500022 && __FreeBSD_version < 700000) || (__FreeBSD_version < 500000 && __FreeBSD_version >= 440000))) || (defined(__NetBSD__) && defined(__NetBSD_Version__) && __NetBSD_Version__ >= 106010000)
++#endif],[#if (defined(__FreeBSD__) && ((__FreeBSD_version >= 500022 && __FreeBSD_version < 700000) || (__FreeBSD_version < 500000 && __FreeBSD_version >= 440000))) || (defined(__NetBSD__) && defined(__NetBSD_Version__) && __NetBSD_Version__ >= 106010000) || defined(__OpenBSD__)
+   return (0);
+ #else
+   #error No support for BSD struct ip_mreq hack detected
