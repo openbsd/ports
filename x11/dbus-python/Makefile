@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2012/02/21 22:36:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/03/31 08:45:09 ajacoutot Exp $
 
 COMMENT =	dbus bindings for Python
 
-DISTNAME =	dbus-python-0.84.0
-REVISION =	2
+DISTNAME =	dbus-python-1.0.0
 
 CATEGORIES =	x11
 
@@ -32,5 +31,7 @@ USE_LIBTOOL =	Yes
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		 --disable-html-docs
+
+REGRESS_FLAGS =	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
