@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2012/03/08 14:58:09 pascal Exp $
+# $OpenBSD: Makefile,v 1.132 2012/03/31 12:40:59 jsing Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -30,6 +30,7 @@
      SUBDIR += gforth
      SUBDIR += gfortran
      SUBDIR += ghc
+     SUBDIR += go
      SUBDIR += gprolog
      SUBDIR += guile
      SUBDIR += hs-haskell-src
