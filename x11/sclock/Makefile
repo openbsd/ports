@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/23 22:50:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/01 06:36:18 ajacoutot Exp $
 
 COMMENT=	simple digital clock
 
 DISTNAME=	sclock-0.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11
 
 HOMEPAGE=	http://spootnik.org/sclock/
@@ -22,5 +22,8 @@ NO_REGRESS=	Yes
 WANTLIB=	c X11
 
 FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
