@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/04/01 19:38:57 sthen Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -29,6 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_BERLIOS:=gpsd/}
 
 MODULES +=		lang/python lang/php
+MODPHP_BUILDDEP=	No
 USE_LIBTOOL=		yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
