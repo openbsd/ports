@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/23 11:38:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/01 09:59:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,7 @@ MODULES=	devel/dconf \
 		x11/gnome \
 		lang/python
 
-MODGNOME_TOOLS=	yelp
+MODGNOME_TOOLS=	vala yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
