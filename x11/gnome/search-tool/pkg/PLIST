@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/28 15:37:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/01 16:01:11 ajacoutot Exp $
 @conflict gnome-utils-*
+@pkgpath x11/gnome/utils
 @bin bin/gnome-search-tool
 @man man/man1/gnome-search-tool.1
 share/applications/gnome-search-tool.desktop
