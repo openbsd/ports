@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/29 07:16:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/01 15:04:00 ajacoutot Exp $
 @bin bin/seahorse-sharing
 @man man/man1/seahorse-sharing.1
 share/examples/seahorse-sharing/
@@ -8,6 +8,7 @@ share/examples/seahorse-sharing/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/seahorse-sharing/xdg/autostart/seahorse-sharing.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/seahorse-sharing.desktop
+share/locale/pl/LC_MESSAGES/seahorse-sharing.mo
 share/pixmaps/
 share/pixmaps/seahorse/
 share/pixmaps/seahorse/22x22/
