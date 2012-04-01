@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/04/01 21:05:20 sthen Exp $
 
 COMMENT=		Media Transfer Protocol (MTP) implementation
 
 DISTNAME=		libmtp-1.0.3
-REVISION=		2
+REVISION=		3
 SHARED_LIBS=		mtp	4.0
 CATEGORIES=		devel
 
@@ -23,6 +23,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libmtp/}
 
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		devel/doxygen
+MAKE_ENV+=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 LIB_DEPENDS=		devel/libusb-compat
 
 USE_LIBTOOL=		Yes
