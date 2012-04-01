@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/03 22:39:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/01 11:14:24 ajacoutot Exp $
 
 COMMENT =	Xfce4 power manager
 
 XFCE_VERSION =	1.0.10
 XFCE_GOODIE =	xfce4-power-manager
-REVISION =      1
+REVISION =      2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,6 +20,9 @@ LIB_DEPENDS =	x11/xfce4/xfce4-panel \
 		devel/libnotify
 
 RUN_DEPENDS =	sysutils/upower
+
+# share/polkit-1/actions/org.xfce.power.policy
+RUN_DEPENDS +=	sysutils/polkit
 
 CONFIGURE_ENV +=ac_cv_lib_Xext_DPMSQueryExtension=yes
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-power-manager
