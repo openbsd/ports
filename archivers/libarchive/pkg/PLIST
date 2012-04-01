@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/30 17:27:04 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/04/01 10:50:47 naddy Exp $
 %%SHARED%%
 @bin bin/bsdcpio
 @bin bin/bsdtar
@@ -11,11 +11,19 @@ lib/pkgconfig/libarchive.pc
 @man man/man1/bsdcpio.1
 @man man/man1/bsdtar.1
 @man man/man3/archive_entry.3
+@man man/man3/archive_entry_acl.3
+@man man/man3/archive_entry_linkify.3
+@man man/man3/archive_entry_paths.3
+@man man/man3/archive_entry_perms.3
+@man man/man3/archive_entry_stat.3
+@man man/man3/archive_entry_time.3
 @man man/man3/archive_read.3
 @man man/man3/archive_read_disk.3
+@man man/man3/archive_read_set_options.3
 @man man/man3/archive_util.3
 @man man/man3/archive_write.3
 @man man/man3/archive_write_disk.3
+@man man/man3/archive_write_set_options.3
 @man man/man3/libarchive.3
 @man man/man3/libarchive_internals.3
 @man man/man5/cpio.5

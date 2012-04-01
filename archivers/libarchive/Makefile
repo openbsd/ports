@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 15:06:19 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/01 10:50:47 naddy Exp $
 
-COMMENT=	library for reading and writing streaming archives
+COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-2.8.5
-SHARED_LIBS=	archive		6.0	# .10.3
+DISTNAME=	libarchive-3.0.3
+SHARED_LIBS=	archive		7.0	# .12.3
 CATEGORIES=	archivers
-HOMEPAGE=	http://code.google.com/p/libarchive/
+HOMEPAGE=	http://libarchive.github.com/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -15,9 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://libarchive.googlecode.com/files/
+MASTER_SITES=	https://github.com/downloads/libarchive/libarchive/
 
-WANTLIB=	c expat z bz2 lzma
+MODULES=	converters/libiconv
+WANTLIB=	bz2 c expat lzma z
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
@@ -25,6 +26,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-lzmadec	# old LZMA utils
+CONFIGURE_ARGS+=--without-nettle	# prefer OpenSSL
 CONFIGURE_ARGS+=--without-xml2		# expat suffices
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,8 +1,8 @@
-$OpenBSD: patch-tar_bsdtar_1,v 1.7 2010/09/13 17:10:31 naddy Exp $
---- tar/bsdtar.1.orig	Fri Apr 23 22:34:09 2010
-+++ tar/bsdtar.1	Mon Sep 13 18:04:52 2010
+$OpenBSD: patch-tar_bsdtar_1,v 1.8 2012/04/01 10:50:47 naddy Exp $
+--- tar/bsdtar.1.orig	Sat Mar 31 21:50:32 2012
++++ tar/bsdtar.1	Sat Mar 31 21:51:27 2012
 @@ -28,7 +28,7 @@
- .Dt BSDTAR 1
+ .Dt TAR 1
  .Os
  .Sh NAME
 -.Nm tar
@@ -10,24 +10,17 @@ $OpenBSD: patch-tar_bsdtar_1,v 1.7 2010/09/13 17:10:31 naddy Exp $
  .Nd manipulate tape archives
  .Sh SYNOPSIS
  .Nm
-@@ -179,9 +179,9 @@ The filename can be
+@@ -194,11 +194,8 @@ The filename can be
  for standard input or standard output.
- If not specified, the default tape device will be used.
- (On
+ The default varies by system;
+ on
 -.Fx ,
+-the default is
+-.Pa /dev/sa0 ;
+-on Linux, the default is
+-.Pa /dev/st0 .
 +.Ox ,
- the default tape device is
--.Pa /dev/sa0 . )
-+.Pa /dev/rst0 . )
- .It Fl H
- (c and r mode only)
- Symbolic links named on the command line will be followed; the
-@@ -558,7 +558,7 @@ for more information.
- .El
- .Sh FILES
- .Bl -tag -width ".Ev BLOCKSIZE"
--.It Pa /dev/sa0
-+.It Pa /dev/rst0
- The default tape device, if not overridden by the
- .Ev TAPE
- environment variable or the
++.Pa /dev/rst0 .
+ .It Fl Fl gid Ar id
+ Use the provided group id number.
+ On extract, this overrides the group id in the archive;
