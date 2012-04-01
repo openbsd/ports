@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/03 19:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/01 13:59:33 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -53,14 +53,9 @@ LIBTOOL_FLAGS=	--tag=disable-static
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
+		--disable-glade-catalog \
 		--enable-gjs \
 		--enable-seed \
 		--enable-python
-
-# XXX
-# glade looks for libpeas-gtk-1.0.so instead of libpeas-gtk-1.0.so.XX
-# "library" should be s/libpeas-gtk-1.0/peas-gtk-1.0/ in the catalog
-#BUILD_DEPENDS+=devel/glade
-CONFIGURE_ARGS+=--disable-glade-catalog
 
 .include <bsd.port.mk>
