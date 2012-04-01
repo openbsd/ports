@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/29 08:14:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/01 15:58:31 ajacoutot Exp $
 
 COMMENT=	LDAP Administration Tool
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ldap-at/}
 
 BUILD_DEPENDS=	textproc/rarian \
-		x11/gnome/gcr \
 		x11/gnome/mono-gnome
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gnome/yelp \
