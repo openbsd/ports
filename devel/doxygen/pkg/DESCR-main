@@ -26,6 +26,7 @@ ports should be installed:
 
 Flavors:
         * gui -- build Qt frontend
+        * english_only -- only build English support
 
 Note:
 

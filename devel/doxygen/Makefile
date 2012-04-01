@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/13 22:29:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/01 21:02:30 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
+# XXX check with different optimizer level? see doc/install.doc
 NOT_FOR_ARCHS=	sh
 
 COMMENT-main=	source code documentation generator tool
@@ -10,8 +11,8 @@ VERSION=	1.7.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
-REVISION-main=	0
-CATEGORIES=	devel textproc 
+REVISION-main=	1
+CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.doxygen.org/
 
@@ -21,20 +22,29 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
+MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
+		ftp://ftp.stack.nl/pub/users/dimitri/
 
 PSEUDO_FLAVORS=	no_gui bootstrap
+FLAVORS= english_only
+.if ${ARCH:Mmips64el}
+# ld(1) fails
+FLAVOR?= no_gui english_only
+.else
 FLAVOR?= no_gui
+.endif
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MODULES=	converters/libiconv
-
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
 		--install /usr/bin/install \
 		--dot ${LOCALBASE}/bin/dot
+
+.if ${FLAVOR:Menglish_only}
+CONFIGURE_ARGS+= --english-only
+.endif
 
 MULTI_PACKAGES=	-main -gui
 
