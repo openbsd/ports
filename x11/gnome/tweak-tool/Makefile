@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/01 07:00:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/01 09:28:41 ajacoutot Exp $
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
@@ -33,7 +33,7 @@ MODGNOME_DESKTOP_FILE=		Yes
 # https://bugzilla.gnome.org/show_bug.cgi?id=647132
 #RUN_DEPENDS +=	x11/gnome/shell
 
-# XXX 	 
+# https://bugzilla.gnome.org/show_bug.cgi?id=673287
 pre-configure: 	 
 	perl -pi -e 's,PYGOBJECT_REQUIRED_VERSION\),PYGOBJECT_REQUIRED_VERSION,g' \
 		${WRKSRC}/configure
