@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2012/03/31 20:02:03 pascal Exp $
---- gcc/config/sparc/openbsd64.h.orig	Sun Mar 11 19:27:37 2012
-+++ gcc/config/sparc/openbsd64.h	Sun Mar 11 19:55:59 2012
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/04/02 08:51:30 pascal Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Thu Dec  9 17:31:47 2010
++++ gcc/config/sparc/openbsd64.h	Sun Apr  1 17:09:13 2012
 @@ -23,7 +23,7 @@ along with GCC; see the file COPYING3.  If not see
  /* XXX - do we really want HARD_QUAD? */
  #undef TARGET_DEFAULT
@@ -18,7 +18,7 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2012/03/31 20:02:03 pascal Ex
 -	builtin_define ("__OpenBSD__");		\
 -	builtin_assert ("system=unix");		\
 -	builtin_assert ("system=OpenBSD");	\
-+	OPENBSD_OS_CPP_BUILTINS();
++	OPENBSD_OS_CPP_BUILTINS();		\
  	builtin_define ("__sparc64__");		\
  	builtin_define ("__sparcv9__");		\
  	builtin_define ("__sparc_v9__");	\

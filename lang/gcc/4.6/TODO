@@ -1,3 +1,4 @@
 Failures:
-- alpha (bootstrap comparison)
-- gengtype loops on sparc64 with -O2, fine with -O0
+- alpha (bootstrap comparison opts.o)
+
+WIP: hppa
