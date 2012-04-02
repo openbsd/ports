@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.736 2012/03/29 19:04:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.737 2012/04/02 12:59:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -447,7 +447,6 @@
      SUBDIR += py-irclib
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
-     SUBDIR += py-msnp
      SUBDIR += py-nmap
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
