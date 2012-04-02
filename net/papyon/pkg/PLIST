@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/21 10:50:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/02 06:20:33 ajacoutot Exp $
 @pkgpath net/pymsn
 lib/python${MODPY_VERSION}/site-packages/papyon/
 lib/python${MODPY_VERSION}/site-packages/papyon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -21,6 +21,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/event/client.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/client.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/contact.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/contact.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/event/content_roaming.py
+lib/python${MODPY_VERSION}/site-packages/papyon/event/content_roaming.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/conversation.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/conversation.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/invite.py
@@ -204,12 +206,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/con
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/allow_contact.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/block_contact.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/block_contact.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/check_pending_invite.py
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/check_pending_invite.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_delete.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_delete.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_find.py
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_find.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_update_properties.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/contact_update_properties.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/contacts/decline_invite.py
@@ -242,8 +240,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/gro
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/initial_sync.py
-lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/initial_sync.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/sync.py
+lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/scenario/sync/sync.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/sharing.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/AddressBook/sharing.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/ContentRoaming/
