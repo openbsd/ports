@@ -1,0 +1,29 @@
+--- specs	Thu Nov 17 15:46:31 2011
++++ specs	Tue Nov 29 08:24:57 2011
+@@ -15,7 +15,7 @@
+  as %(asm_options) %m.s %A }
+ 
+ *cpp:
+-%{posix:-D_POSIX_SOURCE} %{mthreads:-D_MT}
++%{posix:-D_POSIX_SOURCE} %{mthreads:-D_MT} -I${LOCALBASE}/mingw32/include
+ 
+ *cpp_options:
+ %(cpp_unique_options) %1 %{m*} %{std*&ansi&trigraphs} %{W*&pedantic*} %{w} %{f*} %{g*:%{!g0:%{!fno-working-directory:-fworking-directory}}} %{O*} %{undef}
+@@ -54,7 +54,7 @@
+ %{mthreads:-lmingwthrd} -lmingw32 -lgcc -lmoldname -lmingwex -lmsvcrt
+ 
+ *startfile:
+-%{shared|mdll:dllcrt2%O%s}   %{!shared:%{!mdll:crt2%O%s}} %{pg:gcrt2%O%s}    %{!fno-exceptions:crtbegin%O%s}
++%{shared|mdll:${LOCALBASE}/mingw32/lib/dllcrt2%O%s}   %{!shared:%{!mdll:${LOCALBASE}/mingw32/lib/crt2%O%s}} %{pg:${LOCALBASE}/mingw32/lib/gcrt2%O%s}    %{!fno-exceptions:${LOCALBASE}/mingw32/lib/gcc/i386-mingw32/3.4.5/crtbegin%O%s}
+ 
+ *switches_need_spaces:
+ 
+@@ -87,7 +87,7 @@
+ collect2
+ 
+ *link_libgcc:
+-%D
++%D -L${LOCALBASE}/mingw32/lib
+ 
+ *md_exec_prefix:
+ 

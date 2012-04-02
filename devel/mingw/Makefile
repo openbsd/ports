@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/11/17 15:52:39 pirofti Exp $
+# $OpenBSD: Makefile,v 1.4 2012/04/02 03:18:17 jeremy Exp $
 
 COMMENT =	development environment for native Windows applications
 
 V = 		1.0.1
-REVISION =	1
+REVISION =	2
 BASENAME =	x86-mingw32-build
 DISTNAME =	${BASENAME}-${V}-sh
 PKGNAME =	mingw-${V}
@@ -69,6 +69,9 @@ do-build:
 	    CONFIG_SHELL=${LOCALBASE}/bin/bash \
 	    /bin/sh ${WRKBUILD}/${BASENAME}.sh --no-pre-clean --no-post-clean \
 	    --unattended
+	cd ${MINGW32_OUT}/lib/gcc/i386-mingw32/3.4.5/ && \
+		patch < ${FILESDIR}/specs.diff && \
+		${SUBST_CMD} specs
 
 do-install:
 	# Fix the autoconf mess

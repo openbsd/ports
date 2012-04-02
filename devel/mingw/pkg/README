@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/11/17 14:41:59 pirofti Exp $
+$OpenBSD: README,v 1.3 2012/04/02 03:18:17 jeremy Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,8 +27,7 @@ int main (void)
         return 0;
 }
 
-$ g++ -L/usr/local/mingw32/lib -I/usr/local/mingw32/include \
-     CreateFile_test.cpp -o CreateFile_test.exe
+$ g++ CreateFile_test.cpp -o CreateFile_test.exe
 $ file CreateFile_test.exe
 CreateFile_test.exe: MS-DOS executable PE  for MS Windows (console)
 Intel 80386 32-bit
