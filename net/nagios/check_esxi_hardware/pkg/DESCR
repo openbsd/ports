@@ -1,0 +1,3 @@
+This script is a Nagios plugin to monitor the hardware of ESX and ESXi
+servers. It can also be used as standalone script to check the hardware -
+Nagios isn't necessary to run it.
