@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/05/02 11:18:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/02 16:51:31 merdely Exp $
 
   SUBDIR =
   SUBDIR += check_bioctl
   SUBDIR += check_email_delivery
+  SUBDIR += check_esxi_hardware
   SUBDIR += check_hw_sensors
   SUBDIR += check_mssql_health
   SUBDIR += check_openbgpd
