@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/02 13:06:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,10 @@ COMMENT=	Python wrapper for the GD library
 
 DISTNAME=	gdmodule-0.56
 PKGNAME=	py-${DISTNAME:L:S/module//}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://newcenturycomputers.net/projects/gdmodule.html
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

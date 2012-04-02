@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/02 13:06:42 ajacoutot Exp $
 
 COMMENT=	parser generator in Python
 
 DISTNAME=	TPG-3.1.0
 PKGNAME=	py-${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 CATEGORIES=	devel
 
 HOMEPAGE=	http://christophe.delord.free.fr/en/tpg/
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # LGPL 
 PERMIT_PACKAGE_CDROM=	Yes

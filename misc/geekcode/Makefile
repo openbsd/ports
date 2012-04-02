@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/02 13:06:42 ajacoutot Exp $
 
 COMMENT=	geek code generator
 
 DISTNAME=	geekcode-1.7.3
 CATEGORIES=	misc
+REVISION=	0
 
 HOMEPAGE=	http://geekcode.sourceforge.net/
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=geekcode/}
-
-MAINTAINER=	Xavier Santolaria <xsa@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
