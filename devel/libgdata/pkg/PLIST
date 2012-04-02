@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/03/29 06:39:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/02 15:59:08 ajacoutot Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -232,6 +232,7 @@ share/gtk-doc/html/gdata/right.png
 share/gtk-doc/html/gdata/structure.png
 share/gtk-doc/html/gdata/style.css
 share/gtk-doc/html/gdata/up.png
+share/locale/ar/LC_MESSAGES/gdata.mo
 share/locale/as/LC_MESSAGES/gdata.mo
 share/locale/be/LC_MESSAGES/gdata.mo
 share/locale/bg/LC_MESSAGES/gdata.mo
@@ -260,6 +261,7 @@ share/locale/kn/LC_MESSAGES/gdata.mo
 share/locale/ko/LC_MESSAGES/gdata.mo
 share/locale/lt/LC_MESSAGES/gdata.mo
 share/locale/lv/LC_MESSAGES/gdata.mo
+share/locale/ml/LC_MESSAGES/gdata.mo
 share/locale/mr/LC_MESSAGES/gdata.mo
 share/locale/nb/LC_MESSAGES/gdata.mo
 share/locale/or/LC_MESSAGES/gdata.mo
