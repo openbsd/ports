@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_gameengine_VideoTexture_VideoFFmpeg_h,v 1.1 2012/04/02 07:11:46 pascal Exp $
+--- source/gameengine/VideoTexture/VideoFFmpeg.h.orig	Sat Mar 31 16:36:14 2012
++++ source/gameengine/VideoTexture/VideoFFmpeg.h	Sat Mar 31 16:36:19 2012
+@@ -29,7 +29,6 @@ http://www.gnu.org/copyleft/lesser.txt.
+ 
+ #ifdef WITH_FFMPEG
+ extern "C" {
+-#undef __cplusplus
+ #include <pthread.h>
+ 
+ #include "ffmpeg_compat.h"

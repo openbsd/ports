@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2012/03/30 14:51:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2012/04/02 07:11:46 pascal Exp $
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.62
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -51,6 +51,16 @@ WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
 WANTLIB += Xi Xxf86vm boost_filesystem-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
 WANTLIB += pthread ${MODPY_WANTLIB} stdc++ tiff util z
+
+# until ffmpeg works on mips64el, make it a FLAVOR
+FLAVORS =	ffmpeg
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mffmpeg}
+CONFIGURE_ARGS += -DWITH_CODEC_FFMPEG=ON
+LIB_DEPENDS += graphics/ffmpeg>=20111126
+WANTLIB += avcodec avdevice avformat avutil
+.endif
 
 NO_REGRESS =	Yes
 

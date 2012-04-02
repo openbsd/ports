@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/02/26 20:37:26 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/04/02 07:11:46 pascal Exp $
 bin/blender
 @bin bin/blender-bin
 bin/blender-thumbnailer
+@comment bin/blender.beforesubst
 @man man/man1/blender.1
 share/applications/blender.desktop
 share/blender/
