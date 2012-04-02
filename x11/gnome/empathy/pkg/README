@@ -1,16 +1,16 @@
-$OpenBSD: README,v 1.3 2011/10/21 10:59:44 jasper Exp $
+$OpenBSD: README,v 1.4 2012/04/02 06:40:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 Empathy is able to use several Telepathy connection managers.
-By default the following managers are installed:
+By default the following managers are installed with empathy:
 
-  * Jabber 		(Gabble)
-  * Zeroconf/Bonjour	(Salut)
-  * IRC			(Idle)
+  * telepathy-gabble	Jabber/XMPP & MSN (Windows Live)
+  * telepathy-salut	Zeroconf/Bonjour
+  * telepathy-idle	IRC
 
-It is also possible to use the protocols supported by Pidgin's Purple
-(MSN, SILC, Facebook, etc) by installing the Haze connection manager
-(telepathy-haze).
+It is also possible to use the protocols supported by Pidgin's libpurple
+(Yahoo!, SILC, Facebook, etc) by installing the Haze connection manager
+package: "telepathy-haze".
