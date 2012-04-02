@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_redis_c,v 1.8 2012/03/19 09:27:36 dcoppa Exp $
---- src/redis.c.orig	Sun Mar 18 22:14:28 2012
-+++ src/redis.c	Mon Mar 19 10:19:36 2012
+$OpenBSD: patch-src_redis_c,v 1.9 2012/04/02 12:14:31 dcoppa Exp $
+--- src/redis.c.orig	Fri Mar 30 13:07:18 2012
++++ src/redis.c	Mon Apr  2 14:09:02 2012
 @@ -33,7 +33,9 @@
  
  #ifdef HAVE_BACKTRACE
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_redis_c,v 1.8 2012/03/19 09:27:36 dcoppa Exp $
  #include <arpa/inet.h>
  #include <sys/stat.h>
  #include <fcntl.h>
-@@ -1806,7 +1809,9 @@ int main(int argc, char **argv) {
+@@ -1801,7 +1804,9 @@ int main(int argc, char **argv) {
  
  #ifdef HAVE_BACKTRACE
  static void *getMcontextEip(ucontext_t *uc) {
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_redis_c,v 1.8 2012/03/19 09:27:36 dcoppa Exp $
      return (void*) uc->uc_mcontext.mc_eip;
  #elif defined(__dietlibc__)
      return (void*) uc->uc_mcontext.eip;
-@@ -1835,14 +1840,6 @@ static void *getMcontextEip(ucontext_t *uc) {
+@@ -1830,14 +1835,6 @@ static void *getMcontextEip(ucontext_t *uc) {
  #endif
  }
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_redis_c,v 1.8 2012/03/19 09:27:36 dcoppa Exp $
  static void sigsegvHandler(int sig, siginfo_t *info, void *secret) {
      void *trace[100];
      char **messages = NULL;
-@@ -1918,7 +1915,7 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
+@@ -1913,7 +1910,7 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
  "=== REDIS BUG REPORT END. Make sure to include from START to END. ===\n\n"
  "       Please report the crash opening an issue on github:\n\n"
  "           http://github.com/antirez/redis/issues\n\n"
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_redis_c,v 1.8 2012/03/19 09:27:36 dcoppa Exp $
  );
      /* free(messages); Don't call free() with possibly corrupted memory. */
      if (server.daemonize) unlink(server.pidfile);
-@@ -1934,6 +1931,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
+@@ -1929,6 +1926,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
      kill(getpid(),sig);
  }
  #endif /* HAVE_BACKTRACE */
