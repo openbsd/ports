@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.50 2012/03/09 15:16:38 espie Exp $
+# $OpenBSD: dpb,v 1.51 2012/04/02 15:51:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -46,10 +46,12 @@ sub init
 	$self->{no_exports} = 1;
 	$self->{heuristics} = DPB::Heuristics->new($self);
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
-	($self->{ports}, $self->{repo}, $self->{localarch}, $self->{distdir}) =
-	    DPB::Vars->get($self->make, 
-	    "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
+	($self->{ports}, $self->{portspath}, $self->{repo}, $self->{localarch}, $self->{distdir}) =
+	    DPB::Vars->get($self->make,
+	    "PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
+	    "MACHINE_ARCH", "DISTDIR");
 	$self->{arch} = $self->{localarch};
+	$self->{portspath} = [ split(/:/, $self->{portspath}) ];
 	$self->{starttime} = time();
 
 	return $self;
@@ -93,11 +95,13 @@ sub interpret_path
 	if (defined $scale) {
 		$p->{scaled} = $scale;
 	}
-	if (-d join('/', $state->{ports} , $p->pkgpath)) {
-		&$do($p, $weight);
-	} else {
-		$state->usage("Bad package path: #1", $path);
+	for my $d (@{$state->{portspath}}) {
+		if (-d join('/', $d , $p->pkgpath)) {
+			&$do($p, $weight);
+			return;
+	   	} 
 	}
+	$state->usage("Bad package path: #1", $path);
 }
 
 sub interpret_paths
@@ -111,7 +115,7 @@ sub interpret_paths
 		}
 
 		if (-f $file) {
-			open my $fh, '<', $file or 
+			open my $fh, '<', $file or
 			    $state->usage("Can't open $file");
 			my $_;
 			while (<$fh>) {
@@ -200,7 +204,7 @@ sub handle_options
 		$state->{all} = 1;
 		$state->{scan_only} = 1;
 		# XXX not really random, but no need to use dependencies
-		$state->{random} = 1; 
+		$state->{random} = 1;
 	}
 
 	$state->{logdir} = $state->expand_path($state->{logdir});
@@ -220,7 +224,7 @@ sub handle_options
 
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
-	$state->{display_timeout} = 
+	$state->{display_timeout} =
 	    $state->{subst}->value('DISPLAY_TIMEOUT') // $state->opt('T') // 10;
     	$state->{connection_timeout} =
 	    $state->{subst}->value('CONNECTION_TIMEOUT') // $state->opt('t');
@@ -379,12 +383,12 @@ sub rewrite_build_info
 	my $state = shift;
 	File::Path::mkpath(File::Basename::dirname($state->{permanent_log}));
 	open my $f, '>', $state->{permanent_log}.'.part' or return;
-	for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath} 
+	for my $p (sort {$a->fullpkgpath cmp $b->fullpkgpath}
 	    DPB::PkgPath->seen) {
 		next unless defined $p->{stats};
 		shift @{$p->{stats}} while @{$p->{stats}} > 10;
 		for my $s (@{$p->{stats}}) {
-			print $f join(' ', $p->fullpkgpath, $s->{host}, 
+			print $f join(' ', $p->fullpkgpath, $s->{host},
 			    $s->{time}, $s->{sz}), "\n";
 		}
 		delete $p->{stats};
@@ -412,7 +416,7 @@ sub handle_build_files
 sub parse_size_file
 {
 	my ($state, $fname, @consumers) = @_;
-	open my $fh, '<', $fname or 
+	open my $fh, '<', $fname or
 	    $state->fatal("Couldn't open build file #1: #2", $fname, $!);
 	my $_;
 	while (<$fh>) {
@@ -479,7 +483,7 @@ $state->start_cores;
 
 $state->{all} = 1;
 
-my $default_handling = 
+my $default_handling =
     sub {
 	my ($pkgpath, $weight) = @_;
 	if (defined $weight) {
@@ -490,18 +494,18 @@ my $default_handling =
 };
 
 $state->interpret_paths(@{$state->{paths}}, @ARGV,
-    sub { 
+    sub {
 	my $p = shift;
 	&$default_handling($p);
     });
 $state->interpret_paths(@{$state->{ipaths}},
-    sub { 
+    sub {
 	my $p = shift;
 	&$default_handling($p);
 	$p->{wantinstall} = 1;
     });
 $state->interpret_paths(@{$state->{cpaths}},
-    sub { 
+    sub {
 	my $p = shift;
 	$state->{dontclean}{$p->pkgpath} = 1;
     });
@@ -526,7 +530,7 @@ my $core = DPB::Core->get;
 #my $dump = DPB::Util->make_hot($state->logger->open('dump'));
 $SIG{INFO} = sub {
 	$state->engine->info_dump($state->logger->open('info'));
-	# perl status may spew some garbage on the display, 
+	# perl status may spew some garbage on the display,
 	# remove it during next refresh
 	$reporter->refresh;
 };
@@ -550,7 +554,7 @@ sub handle_non_waiting_jobs
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
 		$state->engine->start_new_job;
 	}
-	while ($keep_going && DPB::Core::Fetcher->avail && 
+	while ($keep_going && DPB::Core::Fetcher->avail &&
 	    $state->engine->can_fetch) {
 	    	if (!$checked) {
 			$state->engine->check_buildable(1);
@@ -602,7 +606,7 @@ sub main_loop
 	}
 }
 
-$state->{grabber} = DPB::Grabber->new($state, 
+$state->{grabber} = DPB::Grabber->new($state,
     sub { handle_non_waiting_jobs(1) });
 
 if ($state->{all} && !$state->{random}) {
