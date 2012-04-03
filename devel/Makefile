@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1024 2012/03/31 08:31:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.1025 2012/04/03 18:58:01 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -373,6 +373,8 @@
      SUBDIR += nant
      SUBDIR += nasm
      SUBDIR += netbeans
+     SUBDIR += node-fibers
+     SUBDIR += node-generic-pool
      SUBDIR += nspr
      SUBDIR += ocaml-calendar
      SUBDIR += ocaml-pcre

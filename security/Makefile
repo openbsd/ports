@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2012/03/19 17:20:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.283 2012/04/03 18:58:01 jeremy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -110,6 +110,7 @@
      SUBDIR += nfsshell
      SUBDIR += nikto
      SUBDIR += nipper
+     SUBDIR += node-bcrypt
      SUBDIR += nss
      SUBDIR += oath-toolkit
      SUBDIR += onesixtyone
