@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2012/04/03 15:40:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,7 @@ COMMENT=	GNOME web browser based on webkit
 # www/epiphany-extensions
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.2.1
-REVISION=	2
+GNOME_VERSION=	3.4.0.1
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -31,45 +30,43 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += c cairo cairo-gobject dbus-1 drm enchant execinfo expat
-WANTLIB += ffi fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-keyring
-WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0 jpeg
-WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs seed-gtk3 soup-2.4
+WANTLIB += avahi-client avahi-common avahi-glib avahi-gobject
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
+WANTLIB += execinfo expat ffi fontconfig freetype gailutil-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 girepository-1.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gstapp-0.10 gstaudio-0.10 gstbase-0.10 gstfft-0.10
+WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-3 icudata icui18n icuuc javascriptcoregtk-3.0
+WANTLIB += jpeg m notify orc-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs seed-gtk3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
 WANTLIB += xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \
-		devel/gsettings-desktop-schemas \
-		x11/gtk+2,-guic
+		devel/gsettings-desktop-schemas
 LIB_DEPENDS=	textproc/libxslt \
 		devel/libexecinfo \
-		devel/libnotify>=0.7.2 \
+		devel/libnotify \
 		devel/libsoup,-gnome \
-		x11/gnome/seed>=3.2.0p0
+		x11/gnome/seed
 
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
 LIBTOOL_FLAGS=		--tag=disable-static
+
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= goi yelp
+MODGNOME_TOOLS=		goi yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-static \
-		--disable-zeroconf \
-		--with-distributor-name="OpenBSD ports" \
-		--with-ca-file=/etc/ssl/cert.pem \
+		--disable-nss \
 		--enable-seed \
-		--disable-nss
+		--with-distributor-name="OpenBSD ports"
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-CONFIGURE_ENV=		HOME=/tmp
 
 .include <bsd.port.mk>

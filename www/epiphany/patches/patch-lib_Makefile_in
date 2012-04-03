@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_Makefile_in,v 1.1 2011/10/13 06:56:30 jasper Exp $
---- lib/Makefile.in.orig	Fri Oct  7 22:59:30 2011
-+++ lib/Makefile.in	Fri Oct  7 23:00:22 2011
-@@ -489,7 +489,8 @@ ephy_profile_migrator_SOURCES = ephy-profile-migrator.
+$OpenBSD: patch-lib_Makefile_in,v 1.2 2012/04/03 15:40:29 ajacoutot Exp $
+--- lib/Makefile.in.orig	Tue Mar 27 22:25:08 2012
++++ lib/Makefile.in	Sun Apr  1 15:39:59 2012
+@@ -487,7 +487,8 @@ ephy_profile_migrator_SOURCES = ephy-profile-migrator.
  ephy_profile_migrator_CFLAGS = \
  	$(DEPENDENCIES_CFLAGS) \
  	$(NSS_CFLAGS) \
@@ -9,5 +9,5 @@ $OpenBSD: patch-lib_Makefile_in,v 1.1 2011/10/13 06:56:30 jasper Exp $
 +	$(AM_CFLAGS) \
 +	-lexecinfo
  
- ephy_profile_migrator_LDADD = $(DEPENDENCIES_LIBS) $(am__append_2)
- ephy_profile_migrator_CPPFLAGS = \
+ ephy_profile_migrator_LDADD =  \
+ 	$(top_builddir)/lib/history/libephyhistory.la libephymisc.la \
