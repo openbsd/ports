@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2010/07/21 14:07:43 landry Exp $
+$OpenBSD: patch-configure,v 1.3 2012/04/03 16:37:42 sthen Exp $
 
 use '-pthread' instead of '-lpthread'
 
---- configure.orig	Sun Nov  8 02:41:02 2009
-+++ configure	Wed Jul 21 16:06:24 2010
-@@ -6733,12 +6733,12 @@ return pthread_create ();
+--- configure.orig	Thu Feb  2 21:24:20 2012
++++ configure	Fri Mar 30 21:27:25 2012
+@@ -5912,12 +5912,12 @@ return pthread_create ();
    return 0;
  }
  _ACEOF
@@ -18,9 +18,9 @@ use '-pthread' instead of '-lpthread'
 +    ac_res=-$ac_lib
 +    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
    fi
-   rm -f conftest.$ac_objext conftest$ac_exeext
- if { (ac_try="$ac_link"
-@@ -7819,7 +7819,7 @@ _ACEOF
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_pthread_create=$ac_res
+@@ -6261,7 +6261,7 @@ $as_echo "#define _GNU_SOURCE 1" >>confdefs.h
  elif test "$GCC" = "yes"
  then
    GCC_VERSION=`$CC -dumpversion`
