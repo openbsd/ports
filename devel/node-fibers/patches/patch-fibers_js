@@ -1,0 +1,21 @@
+$OpenBSD: patch-fibers_js,v 1.1.1.1 2012/04/03 18:46:03 jeremy Exp $
+
+Don't check mtimes against process, as it appears to break things
+and should not be a problem with ports.
+
+--- fibers.js.orig	Wed Feb  1 13:54:47 2012
++++ fibers.js	Wed Feb  1 13:55:09 2012
+@@ -1,13 +1,2 @@
+-var fs = require('fs'), path = require('path');
+-
+-if (fs.statSync(process.execPath).mtime >
+-		fs.statSync(require.resolve('./src/fibers')).mtime) {
+-	throw new Error(
+-		'`node` has a newer mtime than `fiber`; it is possible your build is out of date. This ' +
+-		'could happen if you upgrade node. Try `npm rebuild fibers` to rebuild. If that doesn\'t ' +
+-		'work you could consider running `touch ' + __dirname + 'src/fibers` and maybe there won\'t ' +
+-		'be a problem.');
+-}
+-
+ // Injects `Fiber` and `yield` in to global
+ require('./src/fibers');

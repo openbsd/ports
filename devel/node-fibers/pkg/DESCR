@@ -1,0 +1,4 @@
+This extension provides a fiber/coroutine implementation for nodejs.  It
+also ships with a futures implementation that wraps existing nodejs
+async functions, allowing synchronous style code that handles exceptions
+properly and doesn't block the nodejs event loop.
