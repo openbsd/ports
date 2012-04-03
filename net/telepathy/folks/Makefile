@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/03/29 07:12:00 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.35 2012/04/03 09:37:37 ajacoutot Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
