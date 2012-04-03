@@ -1,10 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/02/26 12:53:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/03 07:13:00 ajacoutot Exp $
+bin/telepathy-gabble-xmpp-console
 lib/telepathy/
 lib/telepathy-gabble-tests/
 lib/telepathy/gabble-0/
-lib/telepathy/gabble-0/gateways.a
-lib/telepathy/gabble-0/gateways.la
-lib/telepathy/gabble-0/gateways.so
+lib/telepathy/gabble-0/lib/
+lib/telepathy/gabble-0/lib/libgabble-plugins-0.16.0.so
+@comment lib/telepathy/gabble-0/lib/libgabble-plugins.a
+@comment lib/telepathy/gabble-0/lib/libgabble-plugins.la
+lib/telepathy/gabble-0/lib/libgabble-plugins.so
+lib/telepathy/gabble-0/lib/libwocky-telepathy-gabble-0.16.0.so
+@comment lib/telepathy/gabble-0/lib/libwocky.a
+@comment lib/telepathy/gabble-0/lib/libwocky.la
+lib/telepathy/gabble-0/lib/libwocky.so
+lib/telepathy/gabble-0/plugins/
+@comment lib/telepathy/gabble-0/plugins/libconsole.a
+@comment lib/telepathy/gabble-0/plugins/libconsole.la
+lib/telepathy/gabble-0/plugins/libconsole.so
+@comment lib/telepathy/gabble-0/plugins/libgateways.a
+@comment lib/telepathy/gabble-0/plugins/libgateways.la
+lib/telepathy/gabble-0/plugins/libgateways.so
 @bin libexec/telepathy-gabble
 @man man/man8/telepathy-gabble.8
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.gabble.service

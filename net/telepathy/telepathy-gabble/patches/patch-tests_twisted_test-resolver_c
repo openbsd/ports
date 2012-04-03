@@ -1,19 +1,11 @@
-$OpenBSD: patch-tests_twisted_test-resolver_c,v 1.1 2010/04/23 12:41:16 jasper Exp $
---- tests/twisted/test-resolver.c.orig	Fri Apr 23 00:06:14 2010
-+++ tests/twisted/test-resolver.c	Fri Apr 23 00:06:40 2010
-@@ -30,11 +30,13 @@
-  * test_resolver_add_A (TEST_RESOLVER (kludged), "localhost", "127.0.1.1");
-  */
- 
--#include <stdio.h>
--#include <glib.h>
+$OpenBSD: patch-tests_twisted_test-resolver_c,v 1.2 2012/04/03 07:13:00 ajacoutot Exp $
+--- tests/twisted/test-resolver.c.orig	Mon Jan 30 20:40:56 2012
++++ tests/twisted/test-resolver.c	Tue Apr  3 08:48:39 2012
+@@ -36,6 +36,7 @@
+ #ifdef G_OS_WIN32
+ #include <windows.h>
+ #else
 +#include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
  #include <arpa/inet.h>
-+
-+#include <stdio.h>
-+#include <glib.h>
- 
- #include "test-resolver.h"
- 
