@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/17 14:58:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/04/03 06:47:50 ajacoutot Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
-DISTNAME=		telepathy-mission-control-5.10.1
+DISTNAME=		telepathy-mission-control-5.12.0
 
-SHARED_LIBS +=  mission-control-plugins 1.0      # 3.0
+SHARED_LIBS +=  mission-control-plugins 1.1      # 3.1
 
 HOMEPAGE=		http://mission-control.sourceforge.net/
 
@@ -17,7 +17,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 BUILD_DEPENDS=		textproc/libxslt
-LIB_DEPENDS=		net/telepathy/telepathy-glib
+LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
