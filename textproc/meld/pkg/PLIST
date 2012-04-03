@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/01/27 09:44:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/03 05:43:22 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/
@@ -182,6 +182,7 @@ share/locale/dz/LC_MESSAGES/meld.mo
 share/locale/el/LC_MESSAGES/meld.mo
 share/locale/en_CA/LC_MESSAGES/meld.mo
 share/locale/en_GB/LC_MESSAGES/meld.mo
+share/locale/eo/LC_MESSAGES/meld.mo
 share/locale/es/LC_MESSAGES/meld.mo
 share/locale/fi/LC_MESSAGES/meld.mo
 share/locale/fr/LC_MESSAGES/meld.mo
