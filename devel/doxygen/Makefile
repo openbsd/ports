@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/01 21:02:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/03 23:15:23 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -11,7 +11,7 @@ VERSION=	1.7.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME-main=	doxygen-${VERSION}
 FULLPKGNAME-gui=doxygen-gui-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.doxygen.org/
@@ -26,13 +26,6 @@ MASTER_SITES=	http://ftp.stack.nl/pub/users/dimitri/ \
 		ftp://ftp.stack.nl/pub/users/dimitri/
 
 PSEUDO_FLAVORS=	no_gui bootstrap
-FLAVORS= english_only
-.if ${ARCH:Mmips64el}
-# ld(1) fails
-FLAVOR?= no_gui english_only
-.else
-FLAVOR?= no_gui
-.endif
 
 USE_GMAKE=	Yes
 MODULES=	converters/libiconv
@@ -42,10 +35,6 @@ CONFIGURE_ARGS=	--prefix ${WRKINST}${LOCALBASE} \
 		--install /usr/bin/install \
 		--dot ${LOCALBASE}/bin/dot
 
-.if ${FLAVOR:Menglish_only}
-CONFIGURE_ARGS+= --english-only
-.endif
-
 MULTI_PACKAGES=	-main -gui
 
 .include <bsd.port.arch.mk>
@@ -54,6 +43,10 @@ CONFIGURE_ARGS+=--with-doxywizard
 CONFIGURE_ENV=	QTDIR=${LOCALBASE}
 
 MODULES+=	x11/qt4
+.endif
+.if ${ARCH:Mmips64el}
+# ld(1) fails
+CONFIGURE_ARGS+= --english-only
 .endif
 
 BUILD_DEPENDS +=	devel/bison
