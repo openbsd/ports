@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST-bat,v 1.9 2012/03/06 20:11:33 sthen Exp $
-@newgroup _bacula:591
-@newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
-@newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST-bat,v 1.10 2012/04/03 10:05:47 sthen Exp $
 @man man/man1/bat.1
 @bin sbin/bat
 @mode 750

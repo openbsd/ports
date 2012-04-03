@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/03/08 17:34:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2012/04/03 10:05:47 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
 V=			5.2.6
-REVISION=		0
+REVISION=		1
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -128,7 +128,7 @@ CONFIGURE_ARGS+=	--with-dir-user=_bacula \
 WANTLIB-server += pq>=2
 CONFIGURE_ARGS+=	--with-postgresql
 LIB_DEPENDS-server+=	databases/postgresql
-BACKEND += 		postgresql
+BACKEND +=		postgresql
 .  else
 CONFIGURE_ARGS+=	--without-postgresql
 .  endif
@@ -187,7 +187,7 @@ post-install:
 	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
 	rm ${PREFIX}/lib/libbaccats.*
 	cd ${PREFIX}/lib && \
-		ln -sf libbaccats-${BACKEND}.so.${LIBbaccats_VERSION} libbaccats.so.${LIBbaccats_VERSION} 
+		ln -sf libbaccats-${BACKEND}.so.${LIBbaccats_VERSION} libbaccats.so.${LIBbaccats_VERSION}
 .endif
 .if ${BUILD_PACKAGES:M-bat}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
