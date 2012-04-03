@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1 2011/10/13 06:52:49 jasper Exp $
---- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Fri Oct  7 09:56:22 2011
-+++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Fri Oct  7 09:57:12 2011
-@@ -366,8 +366,10 @@ static size_t getPlatformThreadRegisters(const Platfor
+$OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.2 2012/04/03 15:39:35 landry Exp $
+--- Source/JavaScriptCore/heap/MachineStackMarker.cpp.orig	Wed Dec 28 09:50:13 2011
++++ Source/JavaScriptCore/heap/MachineStackMarker.cpp	Mon Jan 16 17:54:07 2012
+@@ -365,8 +365,10 @@ static size_t getPlatformThreadRegisters(const Platfor
  #elif USE(PTHREADS)
      pthread_attr_init(&regs);
  #if HAVE(PTHREAD_NP_H) || OS(NETBSD)
@@ -12,7 +12,7 @@ $OpenBSD: patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp,v 1.1 2011/10/
  #else
      // FIXME: this function is non-portable; other POSIX systems may have different np alternatives
      pthread_getattr_np(platformThread, &regs);
-@@ -431,7 +433,14 @@ static inline void* otherThreadStackPointer(const Plat
+@@ -430,7 +432,14 @@ static inline void* otherThreadStackPointer(const Plat
  #elif USE(PTHREADS)
      void* stackBase = 0;
      size_t stackSize = 0;
