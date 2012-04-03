@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/04/03 07:13:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/04/03 07:29:09 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -19,12 +19,15 @@ WANTLIB += sqlite3 ssl telepathy-glib xml2 z
 MODULES=		devel/gettext \
 			lang/python
 
-BUILD_DEPENDS=		textproc/libxslt \
-			devel/py-twisted/words \
-			net/py-xmpp
+BUILD_DEPENDS=		textproc/libxslt
+
 LIB_DEPENDS=		devel/libsoup \
 			net/libnice>=0.0.13 \
 			net/telepathy/telepathy-glib>=0.18.0
+
+# needed for the tests
+BUILD_DEPENDS +=	devel/py-twisted/words \
+			x11/dbus-python
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
