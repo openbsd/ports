@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2011/11/17 14:33:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2012/04/03 07:34:35 ajacoutot Exp $
 
 COMMENT=	flexible communications framework, logger component
 
-DISTNAME=	telepathy-logger-0.2.12
+DISTNAME=	telepathy-logger-0.2.13
 
-SHARED_LIBS +=  telepathy-logger     3.0      # 4.0
+SHARED_LIBS +=  telepathy-logger     3.1      # 4.1
 SHARED_LIBS +=  tpl-extensions       0.0      # 2.0
-
 
 HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 
@@ -36,7 +35,6 @@ MODPY_RUNDEP=		No
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-call \
 			--enable-public-extensions
-CONFIGURE_ENV=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 REGRESS_IS_INTERACTIVE=x11
 
