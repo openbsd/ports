@@ -1,16 +1,27 @@
-$OpenBSD: patch-tasks_bin_cross-ruby_rake,v 1.2 2010/12/21 17:15:14 jeremy Exp $
+$OpenBSD: patch-tasks_bin_cross-ruby_rake,v 1.3 2012/04/03 18:15:18 jeremy Exp $
 
-Don't have it accidently use gmake, because the makefiles
-created can use BSD make extensions.
+Include the mingw directory in the PATH as this file is only used
+for cross-compilation.
 
---- tasks/bin/cross-ruby.rake.orig	Fri Dec 10 12:16:03 2010
-+++ tasks/bin/cross-ruby.rake	Fri Dec 10 12:16:26 2010
-@@ -33,7 +33,7 @@ end
+Add the j flag to tar as all downloaded files are .tar.bz2.
+
+--- tasks/bin/cross-ruby.rake.orig	Wed Dec 31 16:00:00 1969
++++ tasks/bin/cross-ruby.rake	Wed Nov 30 04:23:04 2011
+@@ -17,6 +17,8 @@
+ # for cross-compilation.
+ #
  
- require 'rake/extensioncompiler'
++ENV['PATH'] = "${LOCALBASE}/mingw32/bin:#{ENV['PATH']}"
++
+ require 'rake'
+ require 'rake/clean'
  
--MAKE = ENV['MAKE'] || %w[gmake make].find { |c| system("#{c} -v > /dev/null 2>&1") }
-+MAKE = ENV['MAKE'] || '${MAKE_PROGRAM}'
- USER_HOME = File.expand_path("~/.rake-compiler")
- RUBY_CC_VERSION = "ruby-#{ENV['VERSION'] || '1.8.6-p398'}"
- RUBY_SOURCE = ENV['SOURCE']
+@@ -84,7 +86,7 @@ end
+ source_file = RUBY_SOURCE ? RUBY_SOURCE.split('/').last : "#{RUBY_CC_VERSION}.tar.bz2"
+ file "#{USER_HOME}/sources/#{RUBY_CC_VERSION}" => ["#{USER_HOME}/sources/#{source_file}"] do |t|
+   chdir File.dirname(t.name) do
+-    t.prerequisites.each { |f| sh "tar xf #{File.basename(f)}" }
++    t.prerequisites.each { |f| sh "tar jxf #{File.basename(f)}" }
+   end
+ end
+ 

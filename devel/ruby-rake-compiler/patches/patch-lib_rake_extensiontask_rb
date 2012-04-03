@@ -1,16 +1,29 @@
-$OpenBSD: patch-lib_rake_extensiontask_rb,v 1.2 2010/12/21 17:15:14 jeremy Exp $
+$OpenBSD: patch-lib_rake_extensiontask_rb,v 1.3 2012/04/03 18:15:18 jeremy Exp $
+
+Include the mingw directory in the PATH if cross compiling.
 
 Don't have it accidently use gmake, because the makefiles
 created can use BSD make extensions.
 
---- lib/rake/extensiontask.rb.orig	Fri Dec 10 12:15:51 2010
-+++ lib/rake/extensiontask.rb	Fri Dec 10 12:16:20 2010
-@@ -349,7 +349,5 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
+--- lib/rake/extensiontask.rb.orig	Wed Dec 31 16:00:00 1969
++++ lib/rake/extensiontask.rb	Wed Nov 30 04:25:41 2011
+@@ -70,6 +70,8 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
+       # only define cross platform functionality when enabled
+       return unless @cross_compile
+ 
++      ENV['PATH'] = "${LOCALBASE}/mingw32/bin:#{ENV['PATH']}"
++
+       if cross_platform.is_a?(Array) then
+         cross_platform.each { |platf| define_cross_platform_tasks(platf) }
+       else
+@@ -359,9 +361,7 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
            if RUBY_PLATFORM =~ /mswin/ then
              'nmake'
            else
 -            ENV['MAKE'] || %w[gmake make].find { |c|
-+            ENV['MAKE'] || '${MAKE_PROGRAM}'
 -              system("#{c} -v >> #{dev_null} 2>&1")
 -            }
++            ENV['MAKE'] || 'make'
            end
+       end
+       @make
