@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.8 2012/04/03 15:39:35 landry Exp $
+$OpenBSD: patch-configure,v 1.9 2012/04/03 15:41:07 landry Exp $
 
 GNOME Bug 627126 - gsettings schema files don't get installed on FreeBSD
 glib commit 136e705e8383ff8848e425ac01278102d7badc52
@@ -6,6 +6,9 @@ glib commit 136e705e8383ff8848e425ac01278102d7badc52
 Don't force the use of -O2, the ports infrastructure
 takes care of that
 
+OpenBSD doesnt have libdl
+
+Fix gstreamer detection : https://bugs.webkit.org/show_bug.cgi?id=82580
 --- configure.orig	Tue Mar 27 18:31:16 2012
 +++ configure	Fri Mar 30 22:01:48 2012
 @@ -18544,8 +18544,8 @@ GSTREAMER_0_11_REQUIRED_VERSION=0.11
