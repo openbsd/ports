@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1 2012/03/20 20:52:44 robert Exp $
---- chrome/browser/ui/webui/about_ui.cc.orig	Tue Mar 20 13:11:46 2012
-+++ chrome/browser/ui/webui/about_ui.cc	Tue Mar 20 13:13:22 2012
-@@ -81,7 +81,7 @@
+$OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.2 2012/04/03 13:59:35 robert Exp $
+--- chrome/browser/ui/webui/about_ui.cc.orig	Tue Mar 27 03:02:15 2012
++++ chrome/browser/ui/webui/about_ui.cc	Sun Apr  1 20:04:43 2012
+@@ -83,7 +83,7 @@
  #include "chrome/browser/chromeos/version_loader.h"
  #include "chrome/browser/oom_priority_manager.h"
  #include "content/browser/zygote_host_linux.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1 2012/03/20 20:52:44 ro
  #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -936,6 +936,7 @@ std::string AboutLinuxProxyConfig() {
+@@ -940,6 +940,7 @@ std::string AboutLinuxProxyConfig() {
    return data;
  }
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1 2012/03/20 20:52:44 ro
  void AboutSandboxRow(std::string* data, const std::string& prefix, int name_id,
                       bool good) {
    data->append("<tr><td>");
-@@ -992,6 +993,7 @@ std::string AboutSandbox() {
+@@ -996,6 +997,7 @@ std::string AboutSandbox() {
    return data;
  }
  #endif
@@ -26,7 +26,7 @@ $OpenBSD: patch-chrome_browser_ui_webui_about_ui_cc,v 1.1 2012/03/20 20:52:44 ro
  
  std::string AboutVersionStaticContent(const std::string& query) {
    return ResourceBundle::GetSharedInstance().GetRawDataResource(
-@@ -1322,7 +1324,7 @@ void AboutUIHTMLSource::StartDataRequest(const std::st
+@@ -1334,7 +1336,7 @@ void AboutUIHTMLSource::StartDataRequest(const std::st
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_OS_CREDITS_HTML).as_string();
  #endif

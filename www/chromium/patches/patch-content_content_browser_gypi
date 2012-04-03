@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_content_browser_gypi,v 1.8 2012/03/20 20:52:44 robert Exp $
---- content/content_browser.gypi.orig	Tue Mar 20 12:57:50 2012
-+++ content/content_browser.gypi	Tue Mar 20 12:57:59 2012
-@@ -636,9 +636,6 @@
-     'browser/worker_host/worker_service.cc',
-     'browser/worker_host/worker_service.h',
-     'browser/worker_host/worker_service_observer.h',
+$OpenBSD: patch-content_content_browser_gypi,v 1.9 2012/04/03 13:59:35 robert Exp $
+--- content/content_browser.gypi.orig	Sun Apr  1 20:05:38 2012
++++ content/content_browser.gypi	Sun Apr  1 20:05:43 2012
+@@ -668,9 +668,6 @@
+     'browser/worker_host/worker_process_host.h',
+     'browser/worker_host/worker_service_impl.cc',
+     'browser/worker_host/worker_service_impl.h',
 -    'browser/zygote_host_linux.cc',
 -    'browser/zygote_host_linux.h',
 -    'browser/zygote_main_linux.cc',
-   ],
-   'conditions': [
-     ['p2p_apis==1', {
+     '<(SHARED_INTERMEDIATE_DIR)/webkit/grit/devtools_resources.h',
+     '<(SHARED_INTERMEDIATE_DIR)/webkit/grit/devtools_resources_map.cc',
+     '<(SHARED_INTERMEDIATE_DIR)/webkit/grit/devtools_resources_map.h',

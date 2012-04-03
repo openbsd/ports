@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2012/02/17 10:19:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/04/03 13:59:35 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -37,6 +37,7 @@ chrome/locales/lt.pak
 chrome/locales/lv.pak
 chrome/locales/ml.pak
 chrome/locales/mr.pak
+chrome/locales/ms.pak
 chrome/locales/nb.pak
 chrome/locales/nl.pak
 chrome/locales/pl.pak
@@ -92,6 +93,7 @@ chrome/resources/inspector/Images/disclosureTriangleSmallRightDown.png
 chrome/resources/inspector/Images/disclosureTriangleSmallRightDownBlack.png
 chrome/resources/inspector/Images/disclosureTriangleSmallRightDownWhite.png
 chrome/resources/inspector/Images/disclosureTriangleSmallRightWhite.png
+chrome/resources/inspector/Images/domain.png
 chrome/resources/inspector/Images/errorIcon.png
 chrome/resources/inspector/Images/errorMediumIcon.png
 chrome/resources/inspector/Images/errorRedDot.png
@@ -221,6 +223,7 @@ chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
 chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elementsPanel.css
+chrome/resources/inspector/filteredItemSelectionDialog.css
 chrome/resources/inspector/heapProfiler.css
 chrome/resources/inspector/inspectorCommon.css
 chrome/resources/inspector/networkLogView.css
@@ -231,6 +234,7 @@ chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
 chrome/resources/inspector/scriptsPanel.css
 chrome/resources/inspector/splitView.css
+chrome/resources/inspector/tabbedPane.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/textViewer.css
 chrome/resources/inspector/timelinePanel.css

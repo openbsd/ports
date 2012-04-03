@@ -1,0 +1,19 @@
+$OpenBSD: patch-content_renderer_render_view_impl_cc,v 1.1 2012/04/03 13:59:35 robert Exp $
+--- content/renderer/render_view_impl.cc.orig	Mon Apr  2 10:59:45 2012
++++ content/renderer/render_view_impl.cc	Mon Apr  2 11:06:13 2012
+@@ -3088,6 +3088,7 @@ void RenderViewImpl::EnsureMediaStreamImpl() {
+     p2p_socket_dispatcher_ = new content::P2PSocketDispatcher(this);
+ #endif
+ 
++#if defined(ENABLE_WEBRTC)
+   if (!media_stream_dispatcher_)
+     media_stream_dispatcher_ = new MediaStreamDispatcher(this);
+ 
+@@ -3099,6 +3100,7 @@ void RenderViewImpl::EnsureMediaStreamImpl() {
+         RenderThreadImpl::current()->video_capture_impl_manager(),
+         factory);
+   }
++#endif
+ }
+ 
+ void RenderViewImpl::didChangeContentsSize(WebFrame* frame,

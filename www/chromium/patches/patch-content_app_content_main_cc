@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_app_content_main_cc,v 1.4 2012/03/20 20:52:44 robert Exp $
---- content/app/content_main.cc.orig	Tue Mar 20 15:27:41 2012
-+++ content/app/content_main.cc	Tue Mar 20 15:28:24 2012
+$OpenBSD: patch-content_app_content_main_cc,v 1.5 2012/04/03 13:59:35 robert Exp $
+--- content/app/content_main.cc.orig	Tue Mar 27 03:01:20 2012
++++ content/app/content_main.cc	Sun Apr  1 20:04:43 2012
 @@ -68,7 +68,7 @@ extern int PpapiBrokerMain(const content::MainFunction
  extern int RendererMain(const content::MainFunctionParams&);
  extern int WorkerMain(const content::MainFunctionParams&);
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_app_content_main_cc,v 1.4 2012/03/20 20:52:44 robert Exp
  // On platforms that use the zygote, we have a special subset of
  // subprocesses that are launched via the zygote.  This function
  // fills in some process-launching bits around ZygoteMain().
-@@ -263,7 +263,7 @@ int RunNamedProcessTypeMain(
+@@ -264,7 +264,7 @@ int RunNamedProcessTypeMain(
        return kMainFunctions[i].function(main_function_params);
    }
  

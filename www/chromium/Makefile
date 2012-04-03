@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2012/03/24 07:36:43 robert Exp $
+# $OpenBSD: Makefile,v 1.89 2012/04/03 13:59:35 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			17.0.963.83
+V=			18.0.1025.142
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -24,21 +24,26 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
 		http://commondatastorage.googleapis.com/chromium-browser-official/
 
-MODULES=	lang/python
+MODULES=	gcc4 lang/python
+
+MODGCC4_ARCHS=	*
+MODGCC4_LANGS=	c++
+MODGCC4_VERSION=4.6
+
+MODPY_RUNDEP=	No
 
 WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += plc4 png pthread pthread-stubs smime3 speex stdc++
+WANTLIB += plc4 png pthread pthread-stubs smime3 speex estdc++
 WANTLIB += xml2 xslt
-
-MODPY_RUNDEP=	No
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
 		x11/gtk+2,-cups \
 		x11/gnome/icon-theme \
+		x11/gnome/libgnome-keyring \
 		x11/gtk+2,-guic
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
@@ -50,7 +55,6 @@ LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		security/nss \
 		devel/gconf2 \
-		x11/gnome/libgnome-keyring \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \

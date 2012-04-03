@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.1 2012/03/20 20:52:44 robert Exp $
---- content/browser/browser_main_loop.cc.orig	Tue Mar 20 12:51:42 2012
-+++ content/browser/browser_main_loop.cc	Tue Mar 20 12:56:04 2012
-@@ -51,7 +51,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.2 2012/04/03 13:59:35 robert Exp $
+--- content/browser/browser_main_loop.cc.orig	Tue Mar 27 03:01:21 2012
++++ content/browser/browser_main_loop.cc	Sun Apr  1 20:04:43 2012
+@@ -56,7 +56,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.1 2012/03/20 20:52:44 r
  #include <sys/stat.h>
  #include "content/browser/renderer_host/render_sandbox_host_linux.h"
  #include "content/browser/zygote_host_linux.h"
-@@ -59,7 +59,7 @@
+@@ -68,7 +68,7 @@
  
  namespace {
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.1 2012/03/20 20:52:44 r
  void SetupSandbox(const CommandLine& parsed_command_line) {
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
    // code en masse out of chrome_main for now.
-@@ -165,7 +165,7 @@ class BrowserShutdownImpl {
+@@ -175,7 +175,7 @@ class BrowserShutdownImpl {
      // At this point the message loop is still running yet we've shut everything
      // down. If any messages are processed we'll likely crash. Exit now.
      ExitProcess(content::RESULT_CODE_NORMAL_EXIT);
@@ -28,7 +28,7 @@ $OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.1 2012/03/20 20:52:44 r
      _exit(content::RESULT_CODE_NORMAL_EXIT);
  #else
      NOTIMPLEMENTED();
-@@ -233,7 +233,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -252,7 +252,7 @@ void BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(USE_OPENSSL)
  
