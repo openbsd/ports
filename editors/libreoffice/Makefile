@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/04/03 08:56:50 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2012/04/03 09:27:15 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -90,7 +90,8 @@ DISTFILES+=	${EDISTFILES} \
 		7c2549f6b0a8bb604e6c4c729ffdcfe6-libcmis-0.1.0.tar.gz:0 \
 		d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2:0 \
 		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
-		d7a242ca43e33e1b63d3073f9d46a6a8-librsvg-2.32.1.tar.gz:0
+		d7a242ca43e33e1b63d3073f9d46a6a8-librsvg-2.32.1.tar.gz:0 \
+		bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
