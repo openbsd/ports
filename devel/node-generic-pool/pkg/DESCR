@@ -1,0 +1,2 @@
+Generic resource pool. Can be used to reuse or throttle expensive
+resources such as database connections.

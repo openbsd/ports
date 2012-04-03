@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/03 18:47:26 jeremy Exp $
+lib/node_modules/generic-pool/
+lib/node_modules/generic-pool/.npmignore
+lib/node_modules/generic-pool/README.md
+lib/node_modules/generic-pool/fabfile.py
+lib/node_modules/generic-pool/lib/
+lib/node_modules/generic-pool/lib/generic-pool.js
+lib/node_modules/generic-pool/package.json
+lib/node_modules/generic-pool/test/
+lib/node_modules/generic-pool/test/generic-pool.test.js
