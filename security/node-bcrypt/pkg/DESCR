@@ -1,0 +1,2 @@
+BCrypt password hashing library for nodejs, with both asynchronous and
+synchronous versions.
