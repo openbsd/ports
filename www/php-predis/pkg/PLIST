@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/01/25 13:18:54 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/03 08:44:07 dcoppa Exp $
 @group daemon
 pear/
 pear/lib/
@@ -95,6 +95,7 @@ pear/lib/Predis/Commands/ServerScript.php
 pear/lib/Predis/Commands/ServerShutdown.php
 pear/lib/Predis/Commands/ServerSlaveOf.php
 pear/lib/Predis/Commands/ServerSlowlog.php
+pear/lib/Predis/Commands/ServerTime.php
 pear/lib/Predis/Commands/SetAdd.php
 pear/lib/Predis/Commands/SetCardinality.php
 pear/lib/Predis/Commands/SetDifference.php
@@ -211,6 +212,7 @@ pear/lib/Predis/Profiles/ServerVersion12.php
 pear/lib/Predis/Profiles/ServerVersion20.php
 pear/lib/Predis/Profiles/ServerVersion22.php
 pear/lib/Predis/Profiles/ServerVersion24.php
+pear/lib/Predis/Profiles/ServerVersion26.php
 pear/lib/Predis/Profiles/ServerVersionNext.php
 pear/lib/Predis/Protocol/
 pear/lib/Predis/Protocol/ICommandSerializer.php
