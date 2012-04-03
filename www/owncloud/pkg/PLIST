@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/15 16:50:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/03 16:31:00 ajacoutot Exp $
 owncloud/
 owncloud/.htaccess.dist
 @sample owncloud/.htaccess
@@ -499,7 +499,6 @@ owncloud/apps/calendar/resettimezone.php
 owncloud/apps/calendar/settings.php
 owncloud/apps/calendar/templates/
 owncloud/apps/calendar/templates/calendar.php
-owncloud/apps/calendar/templates/lAfix.php
 owncloud/apps/calendar/templates/part.choosecalendar.php
 owncloud/apps/calendar/templates/part.choosecalendar.rowfields.php
 owncloud/apps/calendar/templates/part.editcalendar.php
@@ -601,6 +600,7 @@ owncloud/apps/contacts/templates/part.details.php
 owncloud/apps/contacts/templates/part.editaddressbook.php
 owncloud/apps/contacts/templates/part.messagebox.php
 owncloud/apps/contacts/templates/part.property.FN.php
+owncloud/apps/contacts/templates/part.property.N.php
 owncloud/apps/contacts/templates/part.property.php
 owncloud/apps/contacts/templates/part.setpropertyform.php
 owncloud/apps/contacts/templates/settings.php
@@ -1023,6 +1023,32 @@ owncloud/apps/remoteStorage/appinfo/info.xml
 owncloud/apps/remoteStorage/auth.php
 owncloud/apps/remoteStorage/lib_remoteStorage.php
 owncloud/apps/remoteStorage/oauth_ro_auth.php
+owncloud/apps/tasks/
+owncloud/apps/tasks/ajax/
+owncloud/apps/tasks/ajax/addtask.php
+owncloud/apps/tasks/ajax/addtaskform.php
+owncloud/apps/tasks/ajax/delete.php
+owncloud/apps/tasks/ajax/edittask.php
+owncloud/apps/tasks/ajax/edittaskform.php
+owncloud/apps/tasks/ajax/getdetails.php
+owncloud/apps/tasks/appinfo/
+owncloud/apps/tasks/appinfo/app.php
+owncloud/apps/tasks/appinfo/info.xml
+owncloud/apps/tasks/css/
+owncloud/apps/tasks/css/style.css
+owncloud/apps/tasks/index.php
+owncloud/apps/tasks/js/
+owncloud/apps/tasks/js/tasks.js
+owncloud/apps/tasks/lib/
+owncloud/apps/tasks/lib/vtodo.php
+owncloud/apps/tasks/templates/
+owncloud/apps/tasks/templates/part.addtaskform.php
+owncloud/apps/tasks/templates/part.details.php
+owncloud/apps/tasks/templates/part.edittaskform.php
+owncloud/apps/tasks/templates/part.property.php
+owncloud/apps/tasks/templates/part.taskform.php
+owncloud/apps/tasks/templates/part.tasks.php
+owncloud/apps/tasks/templates/tasks.php
 owncloud/apps/user_ldap/
 owncloud/apps/user_ldap/appinfo/
 owncloud/apps/user_ldap/appinfo/app.php
