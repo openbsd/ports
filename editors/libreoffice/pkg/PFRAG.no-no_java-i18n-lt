@@ -1,15 +1,8 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-lt,v 1.4 2011/06/20 13:29:35 robert Exp $
-lib/libreoffice/share/extensions/presenter-screen/help/lt/
-lib/libreoffice/share/extensions/presenter-screen/help/lt/com.sun.PresenterScreen-openbsd_${OA}/
-lib/libreoffice/share/extensions/presenter-screen/help/lt/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
-lib/libreoffice/share/extensions/presenter-screen/help/lt/help.db_
-lib/libreoffice/share/extensions/presenter-screen/help/lt/help.ht_
+@comment $OpenBSD: PFRAG.no-no_java-i18n-lt,v 1.5 2012/04/03 08:56:50 robert Exp $
 lib/libreoffice/share/extensions/presenter-screen/help/lt/help.idxl/
 lib/libreoffice/share/extensions/presenter-screen/help/lt/help.idxl/_0.cfs
 lib/libreoffice/share/extensions/presenter-screen/help/lt/help.idxl/segments.gen
 lib/libreoffice/share/extensions/presenter-screen/help/lt/help.idxl/segments_3
-lib/libreoffice/share/extensions/presenter-screen/help/lt/help.jar
-lib/libreoffice/share/extensions/presenter-screen/help/lt/help.key_
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/wiki.xhp
@@ -17,11 +10,5 @@ lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/w
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/wikiformats.xhp
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/wikisend.xhp
 lib/libreoffice/share/extensions/wiki-publisher/help/lt/com.sun.wiki-publisher/wikisettings.xhp
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.db_
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.ht_
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.idxl/
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.idxl/_0.cfs
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.idxl/segments.gen
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.idxl/segments_3
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.jar
-lib/libreoffice/share/extensions/wiki-publisher/help/lt/help.key_
+lib/libreoffice/share/extensions/report-builder/description-lt.txt
+lib/libreoffice/share/extensions/wiki-publisher/description-lt.txt

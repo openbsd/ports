@@ -1,0 +1,16 @@
+$OpenBSD: patch-sw_Module_sw_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- sw/Module_sw.mk.orig.port	Tue Mar 27 18:22:01 2012
++++ sw/Module_sw.mk	Fri Mar 30 10:45:31 2012
+@@ -40,12 +40,6 @@ $(eval $(call gb_Module_add_targets,sw,\
+     Package_xml \
+ ))
+ 
+-$(eval $(call gb_Module_add_check_targets,sw,\
+-    CppunitTest_sw_filters_test \
+-    CppunitTest_sw_macros_test \
+-    CppunitTest_sw_swdoc_test \
+-))
+-
+ $(eval $(call gb_Module_add_subsequentcheck_targets,sw,\
+     JunitTest_sw_complex \
+     JunitTest_sw_unoapi \

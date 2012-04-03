@@ -1,0 +1,33 @@
+$OpenBSD: patch-oox_Library_oox_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- oox/Library_oox.mk.orig.port	Mon Mar 19 15:55:25 2012
++++ oox/Library_oox.mk	Mon Mar 19 15:56:20 2012
+@@ -79,6 +79,16 @@ $(eval $(call gb_Library_use_external,oox,openssl))
+ 
+ $(eval $(call gb_Library_set_componentfile,oox,oox/util/oox))
+ 
++$(eval $(call gb_Library_add_cxxobjects,oox,\
++    oox/source/drawingml/customshapepresets1 \
++    oox/source/drawingml/customshapepresets2 \
++    oox/source/drawingml/customshapepresets3 \
++    oox/source/drawingml/customshapepresets4 \
++    oox/source/drawingml/customshapepresets5 \
++    oox/source/drawingml/customshapepresets6 \
++    , $(gb_COMPILERNOOPTFLAGS) $(gb_LinkTarget_EXCEPTIONFLAGS) \
++))
++
+ $(eval $(call gb_Library_add_exception_objects,oox,\
+     oox/source/core/binarycodec \
+     oox/source/core/binaryfilterbase \
+@@ -130,12 +140,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+     oox/source/drawingml/color \
+     oox/source/drawingml/connectorshapecontext \
+     oox/source/drawingml/customshapegeometry \
+-    oox/source/drawingml/customshapepresets1 \
+-    oox/source/drawingml/customshapepresets2 \
+-    oox/source/drawingml/customshapepresets3 \
+-    oox/source/drawingml/customshapepresets4 \
+-    oox/source/drawingml/customshapepresets5 \
+-    oox/source/drawingml/customshapepresets6 \
+     oox/source/drawingml/customshapeproperties \
+     oox/source/drawingml/diagram/constraintlistcontext \
+     oox/source/drawingml/diagram/datamodelcontext \

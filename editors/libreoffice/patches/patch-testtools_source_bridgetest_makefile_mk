@@ -1,0 +1,12 @@
+$OpenBSD: patch-testtools_source_bridgetest_makefile_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- testtools/source/bridgetest/makefile.mk.orig.port	Fri Mar 30 09:19:21 2012
++++ testtools/source/bridgetest/makefile.mk	Fri Mar 30 09:19:43 2012
+@@ -146,7 +146,7 @@ ALLTAR: \
+ runtest : $(DLLDEST)$/uno_types.rdb $(DLLDEST)$/uno_services.rdb makefile.mk \
+         $(SHL1TARGETN) $(SHL2TARGETN) $(SHL3TARGETN)
+ .IF "$(CROSS_COMPILING)"!="YES"
+-.IF "$(COM)$(OS)$(CPU)" == "GCCMACOSXP"
++.IF "$(COM)$(OS)" == "GCCOPENBSD"
+     @echo "Mac OSX PPC GCC fails this test!, likely broken UNO bridge. Fix me."
+ .ELSE
+         cd $(DLLDEST) && $(AUGMENT_LIBRARY_PATH) $(SOLARBINDIR)/uno \

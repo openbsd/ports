@@ -1,0 +1,11 @@
+$OpenBSD: patch-svtools_qa_cppunit_filters-test_cxx,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- svtools/qa/cppunit/filters-test.cxx.orig.port	Sat Mar 17 18:25:38 2012
++++ svtools/qa/cppunit/filters-test.cxx	Sat Mar 17 18:25:41 2012
+@@ -54,7 +54,6 @@ class SvtoolsFiltersTest (public)
+     void testCVEs();
+ 
+     CPPUNIT_TEST_SUITE(SvtoolsFiltersTest);
+-    CPPUNIT_TEST(testCVEs);
+     CPPUNIT_TEST_SUITE_END();
+ };
+ 

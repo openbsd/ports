@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure_in,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- configure.in.orig.port	Thu Mar 29 23:47:31 2012
++++ configure.in	Thu Mar 29 23:48:24 2012
+@@ -2705,7 +2705,7 @@ define d2
+ endef
+ 
+ %.b : %.a
+-	\$(eval CHECKSUM := \$(word 1,\$(shell cat \$^ | sha1sum))) \$(if \$(wildcard \$(CACHEDIR)/\$(CHECKSUM)),\
++	\$(eval CHECKSUM := \$(word 1,\$(shell cat \$^ | sha1))) \$(if \$(wildcard \$(CACHEDIR)/\$(CHECKSUM)),\
+ 	\$(call d1,\$(CHECKSUM)),\
+ 	\$(call d2,\$(CHECKSUM)))
+ EOF
+@@ -5036,7 +5036,7 @@ if test $enable_python = system; then
+         python_libdir=`$PYTHON -c "import distutils.sysconfig; print(distutils.sysconfig.get_config_var('LIBDIR'));"`
+         if $PKG_CONFIG --exists python-$python_version; then
+             PYTHON_CFLAGS="`$PKG_CONFIG --cflags python-$python_version`"
+-            PYTHON_LIBS="`$PKG_CONFIG --libs python-$python_version`"
++            PYTHON_LIBS="`$PKG_CONFIG --libs python-$python_version` $python_libs"
+         else
+             PYTHON_CFLAGS="-I$python_include"
+             PYTHON_LIBS="-L$python_libdir -lpython$python_version $python_libs"

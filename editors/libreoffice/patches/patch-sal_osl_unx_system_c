@@ -1,0 +1,27 @@
+$OpenBSD: patch-sal_osl_unx_system_c,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- sal/osl/unx/system.c.orig.port	Tue Mar 27 18:22:01 2012
++++ sal/osl/unx/system.c	Fri Mar 30 23:14:11 2012
+@@ -33,12 +33,12 @@
+ static pthread_mutex_t getrtl_mutex = PTHREAD_MUTEX_INITIALIZER;
+ 
+ /* struct passwd differs on some platforms */
+-#if defined(MACOSX) || defined(IOS) || defined(NETBSD)
++#if defined(MACOSX) || defined(IOS) || defined(OPENBSD) || defined(NETBSD)
+ 
+ extern int h_errno;
+ 
+ struct hostent *gethostbyname_r(const char *name, struct hostent *result,
+-                                char *buffer, int buflen, int *h_errnop)
++                                char *buffer, size_t buflen, int *h_errnop)
+ {
+     /* buffer layout:   name\0
+      *                  array_of_pointer_to_aliases
+@@ -124,7 +124,7 @@ struct hostent *gethostbyname_r(const char *name, stru
+ 
+       return res;
+ }
+-#endif // OSX || IOS || NETBSD
++#endif // OSX || IOS || OPENBSD || NETBSD
+ 
+ #if defined(MACOSX)
+ /*

@@ -1,0 +1,11 @@
+$OpenBSD: patch-desktop_Executable_soffice_bin_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
+--- desktop/Executable_soffice.bin.mk.orig.port	Thu Mar  8 09:12:12 2012
++++ desktop/Executable_soffice.bin.mk	Thu Mar  8 09:11:41 2012
+@@ -42,6 +42,7 @@ $(eval $(call gb_Executable_set_include,$(sofficebin),
+ 
+ $(eval $(call gb_Executable_add_linked_libs,$(sofficebin),\
+     sal \
++    pthread \
+     sofficeapp \
+ ))
+ 
