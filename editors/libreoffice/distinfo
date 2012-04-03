@@ -31,6 +31,7 @@ MD5 (libreoffice/ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip) = raJNN
 MD5 (libreoffice/af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz) = rzw6z2GN5hCNZfzckrSS4Q==
 MD5 (libreoffice/b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2) = tMrgcAqhwq736380U2Xm8Q==
 MD5 (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = uikwIAyfAZwtk6jIjGUaDw==
+MD5 (libreoffice/bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz) = vTDpz1UjzfwBm5T14df9GQ==
 MD5 (libreoffice/c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2) = wBNR19srIF3nVdWHaSiCJA==
 MD5 (libreoffice/d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2) = 0ohk6ytZu1ewNMDUZio87g==
 MD5 (libreoffice/d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip) = 1MTZGrOo5SouadSNNO9N9A==
@@ -84,6 +85,7 @@ RMD160 (libreoffice/ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip) = KL
 RMD160 (libreoffice/af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz) = CDlTcL1R2Ucc+/797QUet4iagYg=
 RMD160 (libreoffice/b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2) = cENZZNGMSzxjPdUCJcF3ykVGJpo=
 RMD160 (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = 7PFMRt3wlXNHUu8mATTJexdyvlc=
+RMD160 (libreoffice/bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz) = xfOLHSAa/Lp5E/K1P7dVit09IfU=
 RMD160 (libreoffice/c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2) = v/Uh3zjbRKyXCv3vvfVaXoD9ZB0=
 RMD160 (libreoffice/d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2) = NXbxr8fomwRLNwhvWnJQEy2N408=
 RMD160 (libreoffice/d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip) = X38kq4aisdBR39d1tmx2gcISvmo=
@@ -137,6 +139,7 @@ SHA1 (libreoffice/ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip) = Uo3I
 SHA1 (libreoffice/af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz) = 1JCpuzDqnouVwlD02WhC4M4MYNc=
 SHA1 (libreoffice/b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2) = StlfXQfq5Q3E+VsE65AMOeIC/SE=
 SHA1 (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = Gs12zWP3sZ9qAlLrApw8sTolqps=
+SHA1 (libreoffice/bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz) = 8auJhq96H/pnYPS6z1YikkY5v0o=
 SHA1 (libreoffice/c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2) = hWKxeYY9jOy+QrUTXp7SrMmNQYs=
 SHA1 (libreoffice/d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2) = orAxSPTxf8czpcO/oDC9o0AFeAk=
 SHA1 (libreoffice/d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip) = Ymcxy4nmnYZND1KlcfcfRNkNs5Q=
@@ -190,6 +193,7 @@ SHA256 (libreoffice/ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip) = ZP
 SHA256 (libreoffice/af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz) = Eu/88/6gJb007b/sYKYhbKRT+yfngdjleDyvdf0z2Q4=
 SHA256 (libreoffice/b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2) = LD7TZHbhJ5ujXXxnWWG/qcQLE2AVNHLoBQipmWPI1Gw=
 SHA256 (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = Iz9m6NJcXdlxcW1CACA6YSpAdklobvO1IHXQS0yd8N0=
+SHA256 (libreoffice/bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz) = rCigTI5skhfZELCucSKDLSjZkX+maLzJ4LiwmstOpEo=
 SHA256 (libreoffice/c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2) = eJXwzwesmL2I9tXPJrp/HXL9isrrQ7J/+iSEb8zIA0M=
 SHA256 (libreoffice/d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2) = hDP0CdNrumcrgAYvn3KEKhdK60Nj/1QoixMvBaiJQNs=
 SHA256 (libreoffice/d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip) = yOFLtobhE7Em3IAtki+6/Pj8pZLqIw/8B8RnKjqwqXk=
@@ -243,6 +247,7 @@ SIZE (libreoffice/ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip) = 2732
 SIZE (libreoffice/af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz) = 80427
 SIZE (libreoffice/b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2) = 11922684
 SIZE (libreoffice/ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip) = 743031
+SIZE (libreoffice/bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz) = 762803
 SIZE (libreoffice/c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2) = 629054
 SIZE (libreoffice/d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2) = 382285
 SIZE (libreoffice/d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip) = 764464
