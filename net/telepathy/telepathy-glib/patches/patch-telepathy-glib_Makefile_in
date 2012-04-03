@@ -1,11 +1,11 @@
-$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.14 2012/03/29 08:59:58 ajacoutot Exp $
+$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.15 2012/04/03 06:45:53 ajacoutot Exp $
 
 - For some reason on mips64(el), nm doesn't create the _gen/abi.nm file,
 but returns 1. This patch lets the build continue.
 
---- telepathy-glib/Makefile.in.orig	Thu Mar 22 22:35:36 2012
-+++ telepathy-glib/Makefile.in	Thu Mar 29 10:32:03 2012
-@@ -1734,7 +1734,7 @@ check-local: check-coding-style
+--- telepathy-glib/Makefile.in.orig	Mon Apr  2 22:31:39 2012
++++ telepathy-glib/Makefile.in	Tue Apr  3 08:35:24 2012
+@@ -1738,7 +1738,7 @@ check-local: check-coding-style
  @HAVE_LD_VERSION_SCRIPT_TRUE@	diff -c _gen/versioned-abi.txt _gen/abi.txt
  
  @HAVE_LD_VERSION_SCRIPT_TRUE@_gen/abi.txt: libtelepathy-glib-internal.la abi.am
