@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/04/03 08:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2012/04/03 09:26:37 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -7,15 +7,10 @@ REVISION=		0
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-gabble/}
 
-SHARED_LIBS +=  wocky                0.0      # unknown
-SHARED_LIBS +=  gabble-plugins       0.0      # unknown
-SHARED_LIBS +=  test                 0.0      # unknown
-SHARED_LIBS +=  console              0.0      # unknown
-SHARED_LIBS +=  gateways             0.0      # unknown
-
-WANTLIB += c crypto dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m nice pcre pthread soup-2.4
-WANTLIB += sqlite3 ssl telepathy-glib xml2 z
+WANTLIB += c dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gmp gnutls gobject-2.0 gthread-2.0 hogweed m nettle
+WANTLIB += nice p11-kit pcre pthread soup-2.4 sqlite3 tasn1 telepathy-glib
+WANTLIB += xml2 z
 
 MODULES=		devel/gettext \
 			lang/python
@@ -37,8 +32,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--disable-gtk-doc \
 			--disable-Werror \
-			--enable-plugins \
-			--with-tls=openssl
+			--enable-plugins
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/lib/ext/wocky
 
