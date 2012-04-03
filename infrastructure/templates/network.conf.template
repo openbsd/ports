@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.171 2012/02/27 18:10:41 fgsch Exp $
+# $OpenBSD: network.conf.template,v 1.172 2012/04/03 19:00:29 jeremy Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -277,8 +277,11 @@ MASTER_SITE_PYPI +=	\
 	http://f.pypi.python.org/packages/source/ \
 	http://pypi.python.org/packages/source/
 
-MASTER_SITE_RUBYGEMS+= \
+MASTER_SITE_RUBYGEMS += \
 	http://rubygems.org/downloads/
+
+MASTER_SITE_NPM += \
+	https://registry.npmjs.org/
 
 MASTER_SITE_ISC +=	\
 	http://ftp.isc.org/isc/ \
