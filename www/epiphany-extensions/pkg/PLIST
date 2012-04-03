@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/10/13 06:58:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/03 15:41:28 ajacoutot Exp $
 lib/epiphany/
 lib/epiphany/${M}/
 lib/epiphany/${M}/extensions/
 lib/epiphany/${M}/extensions/actions.ephy-extension
 lib/epiphany/${M}/extensions/adblock.ephy-extension
 lib/epiphany/${M}/extensions/auto-reload.ephy-extension
-lib/epiphany/${M}/extensions/certificates.ephy-extension
 lib/epiphany/${M}/extensions/extensions-manager-ui.ephy-extension
 lib/epiphany/${M}/extensions/gestures.ephy-extension
 lib/epiphany/${M}/extensions/greasemonkey.ephy-extension
@@ -16,8 +15,6 @@ lib/epiphany/${M}/extensions/libactionsextension.so
 lib/epiphany/${M}/extensions/libadblockextension.so
 @comment lib/epiphany/${M}/extensions/libautoreloadextension.la
 lib/epiphany/${M}/extensions/libautoreloadextension.so
-@comment lib/epiphany/${M}/extensions/libcertificatesextension.la
-lib/epiphany/${M}/extensions/libcertificatesextension.so
 @comment lib/epiphany/${M}/extensions/libextensionsmanageruiextension.la
 lib/epiphany/${M}/extensions/libextensionsmanageruiextension.so
 @comment lib/epiphany/${M}/extensions/libgesturesextension.la
@@ -42,7 +39,6 @@ lib/epiphany/${M}/extensions/soup-fly.ephy-extension
 lib/epiphany/${M}/extensions/tab-key-tab-navigate.ephy-extension
 lib/epiphany/${M}/extensions/tab-states.ephy-extension
 share/epiphany-extensions/
-share/epiphany-extensions/adblock-patterns
 share/epiphany-extensions/ephy-gestures.xml
 share/epiphany-extensions/ui/
 share/epiphany-extensions/ui/action-properties.ui
@@ -50,13 +46,25 @@ share/epiphany-extensions/ui/actions-editor.ui
 share/epiphany-extensions/ui/adblock.ui
 share/epiphany-extensions/ui/extensions-manager-ui.ui
 share/epiphany-extensions/ui/rss-ui.ui
+share/epiphany/icons/
+share/epiphany/icons/hicolor/
+share/epiphany/icons/hicolor/16x16/
+share/epiphany/icons/hicolor/16x16/status/
 share/epiphany/icons/hicolor/16x16/status/ad-blocked.png
 share/epiphany/icons/hicolor/16x16/status/feed-presence.png
+share/epiphany/icons/hicolor/22x22/
+share/epiphany/icons/hicolor/22x22/status/
 share/epiphany/icons/hicolor/22x22/status/ad-blocked.png
 share/epiphany/icons/hicolor/22x22/status/feed-presence.png
+share/epiphany/icons/hicolor/24x24/
+share/epiphany/icons/hicolor/24x24/status/
 share/epiphany/icons/hicolor/24x24/status/ad-blocked.png
 share/epiphany/icons/hicolor/24x24/status/feed-presence.png
+share/epiphany/icons/hicolor/32x32/
+share/epiphany/icons/hicolor/32x32/status/
 share/epiphany/icons/hicolor/32x32/status/feed-presence.png
+share/epiphany/icons/hicolor/scalable/
+share/epiphany/icons/hicolor/scalable/status/
 share/epiphany/icons/hicolor/scalable/status/feed-presence.svg
 share/glib-2.0/schemas/org.gnome.epiphanyextensions.gschema.xml
 share/gnome/help/epiphany-extensions/
@@ -65,7 +73,6 @@ share/gnome/help/epiphany-extensions/C/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/C/figures/
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/C/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/C/figures/epi-ext-gestures-close.png
@@ -89,7 +96,6 @@ share/gnome/help/epiphany-extensions/de/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/de/figures/
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/de/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/de/figures/epi-ext-gestures-close.png
@@ -112,7 +118,6 @@ share/gnome/help/epiphany-extensions/es/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/es/figures/
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/es/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/es/figures/epi-ext-gestures-close.png
@@ -135,7 +140,6 @@ share/gnome/help/epiphany-extensions/fr/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/fr/figures/
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/fr/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/fr/figures/epi-ext-gestures-close.png
@@ -158,7 +162,6 @@ share/gnome/help/epiphany-extensions/oc/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/oc/figures/
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/oc/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/oc/figures/epi-ext-gestures-close.png
@@ -181,7 +184,6 @@ share/gnome/help/epiphany-extensions/sl/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/sl/figures/
 share/gnome/help/epiphany-extensions/sl/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/sl/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/sl/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/sl/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/sl/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/sl/figures/epi-ext-gestures-close.png
@@ -204,7 +206,6 @@ share/gnome/help/epiphany-extensions/sv/epiphany-extensions.xml
 share/gnome/help/epiphany-extensions/sv/figures/
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-action-create.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-actions-use.png
-share/gnome/help/epiphany-extensions/sv/figures/epi-ext-adblocker.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-gestures-back.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-gestures-close-2.png
 share/gnome/help/epiphany-extensions/sv/figures/epi-ext-gestures-close.png
