@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/04/03 09:27:06 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=		devel/py-gobject \
 			x11/py-gtk2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 USE_LIBTOOL=		No
 

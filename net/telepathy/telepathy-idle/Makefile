@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/11/17 14:25:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2012/04/03 09:27:06 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -20,8 +20,7 @@ LIB_DEPENDS=		net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
-			ac_cv_prog_PYTHON="${MODPY_BIN}"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GROFF =		Yes
 

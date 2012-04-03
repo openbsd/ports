@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/03 09:27:06 ajacoutot Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=		devel/libglade2 \
 			net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 USE_LIBTOOL=		No
 
 .include <bsd.port.mk>
