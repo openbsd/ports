@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_gsl_3,v 1.1 2012/04/04 12:55:59 jasper Exp $
+
+Fix rendering with mandoc(1).
+
+--- doc/gsl.3.orig	Wed Apr  4 14:53:16 2012
++++ doc/gsl.3	Wed Apr  4 14:53:25 2012
+@@ -11,9 +11,8 @@ team in C, and present a modern Applications Programmi
+ level languages.
+ .PP
+ The library covers the following areas,
+-.TP
++.PP
+ .nf
+-.BR
+ Complex Numbers
+ Roots of Polynomials
+ Special Functions

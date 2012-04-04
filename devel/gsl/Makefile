@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2012/04/04 12:55:59 jasper Exp $
 
 COMMENT=	GNU Scientific Library
 
 DISTNAME=	gsl-1.15
+REVISION=	0
 SHARED_LIBS +=	gslcblas             1.0      # .0.0
 SHARED_LIBS +=	gsl                  12.0     # .16.0
 
