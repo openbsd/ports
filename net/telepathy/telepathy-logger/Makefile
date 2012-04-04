@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.34 2012/04/03 07:34:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2012/04/04 13:02:30 ajacoutot Exp $
 
 COMMENT=	flexible communications framework, logger component
 
-DISTNAME=	telepathy-logger-0.2.13
+DISTNAME=	telepathy-logger-0.4.0
 
 SHARED_LIBS +=  telepathy-logger     3.1      # 4.1
 SHARED_LIBS +=  tpl-extensions       0.0      # 2.0
