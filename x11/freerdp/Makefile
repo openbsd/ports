@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/03/24 18:53:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/04 00:52:21 merdely Exp $
 
 SHARED_ONLY =		Yes
 
@@ -19,7 +19,7 @@ HOMEPAGE =		http://www.freerdp.com/
 
 MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 
-# GPLv2+
+# Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
