@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/03 09:27:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/04/04 14:41:34 jasper Exp $
 
 COMMENT=	display information about a given connection manager
 
 DISTNAME=	telepathy-inspector-0.5.3
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	${HOMEPAGE_TP:=Telepathy Inspector}
 
@@ -19,6 +19,7 @@ WANTLIB += xcb-render-util xml2 z glade-2.0 telepathy-glib
 
 MODULES=	devel/gettext \
 		lang/python
+MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/libglade2 \

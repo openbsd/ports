@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/03 09:27:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/04/04 14:41:34 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
 DISTNAME=		telepathy-mission-control-5.12.0
+REVISION=		0
 
 SHARED_LIBS +=  mission-control-plugins 1.1      # 3.1
 
@@ -15,6 +16,7 @@ WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z telepathy-glib ffi
 
 MODULES=		devel/gettext \
 			lang/python
+MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
