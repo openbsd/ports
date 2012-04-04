@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2012/04/02 06:40:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.91 2012/04/04 14:34:12 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -82,7 +82,8 @@ CONFIGURE_ARGS+=	--without-connectivity
 # XXX: Disable map plugin as this requires libchamplain (+clutter)
 CONFIGURE_ARGS+=	--disable-map
 # XXX: Disable call plugin as this requires a newer clutter
-CONFIGURE_ARGS+=	--disable-call
+CONFIGURE_ARGS+=	--disable-call \
+			--disable-call-logs
 # XXX lots of 'libnstempathy.so: undefined symbol' at runtime
 # revisit when telepathy-yell is moved out from empathy(?)
 CONFIGURE_ARGS+=	--disable-nautilus-sendto
