@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/12/09 21:46:15 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/04 20:24:00 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -20,7 +20,6 @@ jruby/lib/native/include/
 jruby/lib/native/include/config.h
 jruby/lib/native/include/ruby/
 jruby/lib/native/include/ruby.h
-jruby/lib/native/include/ruby/asprintf.h
 jruby/lib/native/include/ruby/defines.h
 jruby/lib/native/include/ruby/dl.h
 jruby/lib/native/include/ruby/intern.h
@@ -1550,6 +1549,7 @@ jruby/lib/ruby/site_ruby/1.8/rubygems/server.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/source_index.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/spec_fetcher.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/specification.rb
+jruby/lib/ruby/site_ruby/1.8/rubygems/syck_hack.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/test_case.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/test_utilities.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/text.rb

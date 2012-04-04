@@ -1,7 +1,4 @@
-$OpenBSD: patch-build_xml,v 1.4 2011/11/14 11:38:16 jeremy Exp $
-
-Fix build by removing ri cache generation, backported from git
-commit a760b4aea4b5aa9b38da4bd3334d8355a83f60fa.
+$OpenBSD: patch-build_xml,v 1.5 2012/04/04 20:24:00 jeremy Exp $
 
 Don't install the jruby launcher when running the regress specs,
 as it fails due to a make error and it isn't necessary for the
@@ -10,25 +7,9 @@ regress tests.
 Also, don't fork for the regress tests, as otherwise the JVM
 exits abnormally.
 
---- build.xml.orig	Tue Oct 25 16:54:51 2011
-+++ build.xml	Sun Nov 13 23:49:50 2011
-@@ -379,7 +379,6 @@
-       </jar>
- 
-       <antcall target="add-emma-jars"/>
--      <antcall target="generate-ri-cache"/>
- 
-       <property name="jar-jruby.hasrun" value="true"/>
-   </target>
-@@ -484,7 +483,6 @@
-         <param name="bar.wrap" value="${lib.dir}/jruby.bar" />
-       </antcall>
-       
--      <antcall target="generate-ri-cache"/>
-   </target>
-   <target name="jarjar" depends="jar-jruby-dist"/>
- 
-@@ -806,13 +804,6 @@
+--- build.xml.orig	Wed Feb 22 09:14:56 2012
++++ build.xml	Wed Feb 22 14:22:46 2012
+@@ -809,13 +809,6 @@
        <env key="GEM_PATH" value=""/> <!-- to ignore any gems installed in ~/.gem -->
        <arg line="-S gem uninstall --all jruby-launcher"/>
      </java>
@@ -42,7 +23,7 @@ exits abnormally.
    </target>
  
    <target name="test" depends="
-@@ -967,7 +958,7 @@
+@@ -916,7 +909,7 @@
        <echo message="compile=@{compile.mode}, jit.threshold=@{jit.threshold}, jit.maxsize=@{jit.maxsize}, jit.max=@{jit.max}, objectspace=@{objectspace.enabled} threadpool=@{thread.pooling} reflection=@{reflection} version=@{jruby.version}"/>
        <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask" classpath="${build.lib.dir}/junit.jar"/>
  
@@ -50,4 +31,4 @@ exits abnormally.
 +      <junit jvm="${jruby.test.jvm}" haltonfailure="false" dir="${basedir}" maxmemory="${jruby.test.memory}" showoutput="true" timeout="1800000">
  	<classpath refid="test.class.path"/>
  
- 	<sysproperty key="java.awt.headless" value="true"/>
+         <sysproperty key="jruby.compile.invokedynamic" value="true"/>
