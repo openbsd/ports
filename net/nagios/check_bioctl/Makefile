@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/04 21:49:44 merdely Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		Nagios plugin to check RAID status with bioctl
 
-DISTNAME =		check_bioctl-1.9
+DISTNAME =		check_bioctl-1.16
 CATEGORIES =		net
 
 MAINTAINER =		Michael Erdely <merdely@openbsd.org>
 
-HOMEPAGE =		http://openbsd.somedomain.net/nagios/check_bioctl.html
-MASTER_SITES =		http://www.nagiosexchange.org/attachment/download/Check-Plugins/Hardware/Devices/RAID-Controller/check_bioctl/
+HOMEPAGE =		https://www.monitoringexchange.org/inventory/Check-Plugins/Hardware/Devices/RAID-Controller/check_bioctl
+MASTER_SITES =		https://www.monitoringexchange.org/attachment/download/Check-Plugins/Hardware/Devices/RAID-Controller/check_bioctl/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
-WRKDIST =		${WRKDIR}
 
 RUN_DEPENDS =		net/nagios/plugins,-main
 
