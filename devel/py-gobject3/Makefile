@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/29 06:30:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/04 07:37:18 landry Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
 GNOME_VERSION=	3.2.0
+REVISION=	0
 
 PKGNAME=	py-gobject3-${GNOME_VERSION}
 
@@ -33,7 +34,7 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	graphics/py-cairo
-LIB_DEPENDS=	devel/gobject-introspection>=1.30.0
+LIB_DEPENDS=	devel/gobject-introspection>=1.31.20
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-cairo
