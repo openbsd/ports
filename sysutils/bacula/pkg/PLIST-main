@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2012/04/03 10:05:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2012/04/04 21:30:56 merdely Exp $
 @conflict bacula-server-<5.2.1
 @pkgpath sysutils/bacula,-client
 @newgroup _bacula:591
@@ -21,9 +21,6 @@ libexec/bacula/
 libexec/bacula/bacula-ctl-fd
 libexec/bacula/bacula_config
 libexec/bacula/bconsole
-libexec/bacula/mtx-changer.conf
-libexec/bacula/query.sql.dist
-@sample libexec/bacula/query.sql
 @man man/man8/bacula-fd.8
 @man man/man8/bconsole.8
 @man man/man8/bregex.8

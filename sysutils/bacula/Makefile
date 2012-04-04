@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/04/03 10:05:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2012/04/04 21:30:56 merdely Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
 V=			5.2.6
-REVISION=		1
+REVISION=		2
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -188,6 +188,8 @@ post-install:
 	rm ${PREFIX}/lib/libbaccats.*
 	cd ${PREFIX}/lib && \
 		ln -sf libbaccats-${BACKEND}.so.${LIBbaccats_VERSION} libbaccats.so.${LIBbaccats_VERSION}
+	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
+	mv ${PREFIX}/libexec/bacula/mtx-changer.conf{,.dist}
 .endif
 .if ${BUILD_PACKAGES:M-bat}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
@@ -201,6 +203,5 @@ post-install:
 	mv ${WRKINST}/etc/bacula/* ${PREFIX}/share/examples/bacula/
 	rm ${PREFIX}/man/man1/bacula-{bwxconsole,tray-monitor}.1
 	rmdir ${WRKINST}/{etc,var}/bacula
-	mv ${PREFIX}/libexec/bacula/query.sql{,.dist}
 
 .include <bsd.port.mk>
