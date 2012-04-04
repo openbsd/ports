@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/03 18:46:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/04 05:48:15 ajacoutot Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS= amd64 i386
 
 COMMENT =	fiber/coroutine support for nodejs
 
-VERSION =	0.6.4
+NPM_VERSION =	0.6.4
 NPM_NAME =	fibers
 CATEGORIES =	devel
 

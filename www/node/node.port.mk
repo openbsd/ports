@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.1 2012/04/03 18:32:12 jeremy Exp $
+# $OpenBSD: node.port.mk,v 1.2 2012/04/04 05:48:15 ajacoutot Exp $
 
 # node module
 
@@ -25,11 +25,11 @@ PKG_ARCH ?=	*
 .  endif
 
 # The npm package repository separates packages in different directories,
-# so to eliminate duplication, you need to set the NPM_NAME and VERSION
+# so to eliminate duplication, you need to set the NPM_NAME and NPM_VERSION
 # variables so it can use the correct DISTNAME and MASTER_SITES.
 # The NPM_NAME is required anyway during the install tasks, so it may as
 # well be used here.
-DISTNAME ?=	${NPM_NAME}-${VERSION}
+DISTNAME ?=	${NPM_NAME}-${NPM_VERSION}
 MASTER_SITES ?=	${MASTER_SITE_NPM}${NPM_NAME}/-/
 EXTRACT_SUFX ?=	.tgz
 PKGNAME ?=	node-${DISTNAME}
