@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.317 2012/03/30 07:14:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.318 2012/04/04 03:39:42 bentley Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -262,5 +262,6 @@
      SUBDIR += xzgv
      SUBDIR += zbar
      SUBDIR += zint
+     SUBDIR += zxing
 
 .include <bsd.port.subdir.mk>
