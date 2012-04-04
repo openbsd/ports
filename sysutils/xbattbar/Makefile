@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/22 13:44:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/04 02:19:16 brynet Exp $
 
 ONLY_FOR_ARCHS = ${APM_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT =	show battery status as a simple bar in X11
 
 DISTNAME =	xbattbar_1.4.2
 PKGNAME =	${DISTNAME:S/_/-/}
+REVISION = 	0
 WRKDIST =	${WRKDIR}/${DISTNAME:S/_/-/}
 CATEGORIES =	sysutils x11
 

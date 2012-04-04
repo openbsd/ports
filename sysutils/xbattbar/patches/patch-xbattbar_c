@@ -1,7 +1,101 @@
-$OpenBSD: patch-xbattbar_c,v 1.1.1.1 2011/05/22 12:32:41 schwarze Exp $
---- xbattbar.c.orig	Tue May 17 12:29:19 2011
-+++ xbattbar.c	Tue May 17 12:32:20 2011
-@@ -575,7 +575,7 @@ void battery_check(void)
+$OpenBSD: patch-xbattbar_c,v 1.2 2012/04/04 02:19:16 brynet Exp $
+--- xbattbar.c.orig	Tue Apr  3 23:30:11 2012
++++ xbattbar.c	Tue Apr  3 23:30:17 2012
+@@ -29,6 +29,9 @@ static char *ReleaseVersion="1.4.2";
+ #include <sys/time.h>
+ #include <signal.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include <time.h>
+ #include <unistd.h>
+ #include <sys/file.h>
+ #include <sys/ioctl.h>
+@@ -67,6 +70,8 @@ char *ONOUT_C  = "olive drab";
+ char *OFFIN_C  = "blue";
+ char *OFFOUT_C = "red";
+ 
++char *clockfmt = "%+";
++int displayclock = False;
+ int alwaysontop = False;
+ 
+ struct itimerval IntervalTimer;     /* APM polling interval timer */
+@@ -118,7 +123,7 @@ void usage(char **argv)
+   fprintf(stderr,
+     "\n"	  
+     "usage:\t%s [-a] [-h|v] [-p sec] [-t thickness]\n"
+-    "\t\t[-I color] [-O color] [-i color] [-o color]\n"
++    "\t\t[-I color] [-O color] [-i color] [-o color] [-T time-format]\n"
+     "\t\t[ top | bottom | left | right ]\n"
+     "-a:     always on top.\n"
+     "-v, -h: show this message.\n"
+@@ -126,6 +131,7 @@ void usage(char **argv)
+     "-p:     polling interval. [def: 10 sec.]\n"
+     "-I, -O: bar colors in AC on-line. [def: \"green\" & \"olive drab\"]\n"
+     "-i, -o: bar colors in AC off-line. [def: \"blue\" and \"red\"]\n"
++    "-T:     show time in popup window. [def: %%+]\n"
+     "top, bottom, left, right: bar localtion. [def: \"bottom\"]\n",
+ 	  argv[0]);
+   exit(0);
+@@ -223,7 +229,7 @@ main(int argc, char **argv)
+   int ch;
+ 
+   about_this_program();
+-  while ((ch = getopt(argc, argv, "at:f:hI:i:O:o:p:v")) != -1)
++  while ((ch = getopt(argc, argv, "at:f:hI:i:O:o:p:T::v")) != -1)
+     switch (ch) {
+     case 'a':
+       alwaysontop = True;
+@@ -251,6 +257,12 @@ main(int argc, char **argv)
+       bi_interval = atoi(optarg);
+       break;
+ 
++    case 'T':
++      if (optarg)
++        clockfmt = optarg;
++      displayclock = 1;
++      break;
++
+     case 'h':
+     case 'v':
+       usage(argv);
+@@ -339,7 +351,14 @@ void showdiagbox(void)
+   int pixw, pixh;
+   int boxw, boxh;
+   char diagmsg[64];
++  char timemsg[64];
++  time_t now;
+ 
++  /* compose time and date message */
++  if (displayclock) {
++    time(&now);
++    strftime(timemsg, 64, clockfmt, localtime(&now));
++  }
+   /* compose diag message and calculate its size in pixels */
+   sprintf(diagmsg,
+          "AC %s-line: battery level is %d%%",
+@@ -349,6 +368,8 @@ void showdiagbox(void)
+   pixh = fontp->ascent + fontp->descent;
+   boxw = pixw + DiagXMergin * 2;
+   boxh = pixh + DiagYMergin * 2;
++  if (displayclock)
++	  boxh += pixh + DiagYMergin;
+ 
+   /* create status window */
+   if(winstat != -1) disposediagbox();
+@@ -367,6 +388,11 @@ void showdiagbox(void)
+              gcstat,
+              DiagXMergin, fontp->ascent+DiagYMergin,
+              diagmsg, strlen(diagmsg));
++  if (displayclock)
++    XDrawString(disp, winstat, gcstat,
++               boxw/2 - XTextWidth(fontp, timemsg, strlen(timemsg))/2,
++               2*fontp->ascent+2*DiagYMergin,
++               timemsg, strlen(timemsg));
+ }
+ 
+ void disposediagbox(void)
+@@ -575,7 +601,7 @@ void battery_check(void)
  
  #endif /* __FreeBSD__ */
  
