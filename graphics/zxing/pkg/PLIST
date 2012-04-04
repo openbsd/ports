@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/04 03:38:45 bentley Exp $
+@bin bin/zxing
+lib/libzxing.a

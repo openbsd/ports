@@ -1,0 +1,17 @@
+$OpenBSD: patch-cpp_SConscript,v 1.1.1.1 2012/04/04 03:38:45 bentley Exp $
+--- cpp/SConscript.orig	Sat Jan 14 11:38:44 2012
++++ cpp/SConscript	Sun Feb 26 16:42:32 2012
+@@ -22,11 +22,12 @@ if env['PIC']:
+ 	flags.append("-fPIC")
+ 
+ flags.append("-Wextra -Werror")
++flags.append("-I${LOCALBASE}/include -I${LOCALBASE}/include/ImageMagick")
+ # Can't enable unless we get rid of the dynamic variable length arrays
+ # flags.append("-pedantic")
+ 
+ compile_options['CXXFLAGS'] = ' '.join(flags)
+-compile_options['LINKFLAGS'] = "-ldl -L/usr/lib -L/opt/local/lib"
++compile_options['LINKFLAGS'] = '-L/usr/lib -L/opt/local/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -pthread'
+ 
+ def all_files(dir, ext='.cpp', level=6):
+ 	files = []
