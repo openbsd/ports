@@ -1,9 +1,11 @@
-$OpenBSD: patch-test_Makefile_in,v 1.4 2012/03/31 18:14:39 ajacoutot Exp $
+$OpenBSD: patch-test_Makefile_in,v 1.5 2012/04/04 06:19:01 ajacoutot Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=48127
 
---- test/Makefile.in.orig	Sat Mar 31 18:55:08 2012
-+++ test/Makefile.in	Sat Mar 31 18:58:02 2012
+https://bugs.freedesktop.org/show_bug.cgi?id=48277
+
+--- test/Makefile.in.orig	Tue Mar 27 14:01:13 2012
++++ test/Makefile.in	Wed Apr  4 08:02:08 2012
 @@ -1418,14 +1418,14 @@ installcheck-local:
  @DBUS_ENABLE_INSTALLED_TESTS_TRUE@		$(testexec_PROGRAMS)
  
@@ -29,13 +31,13 @@ https://bugs.freedesktop.org/show_bug.cgi?id=48127
 -	$(AM_V_at)$(INSTALL) -d data/valid-config-files
 -	$(AM_V_GEN)$(INSTALL_DATA) $< $@
 +	$(AM_V_at)$(mkinstalldirs) data/valid-config-files
-+	$(AM_V_GEN)$(install_sh_DATA) $< $@
++	$(AM_V_GEN)$(install_sh_DATA) $(top_builddir)/bus/session.conf $@
  
  data/valid-config-files/system.conf: $(top_builddir)/bus/system.conf
 -	$(AM_V_at)$(INSTALL) -d data/valid-config-files
 -	$(AM_V_GEN)$(INSTALL_DATA) $< $@
 +	$(AM_V_at)$(mkinstalldirs) data/valid-config-files
-+	$(AM_V_GEN)$(install_sh_DATA) $< $@
++	$(AM_V_GEN)$(install_sh_DATA) $(top_builddir)/bus/system.conf $@
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

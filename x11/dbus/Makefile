@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/03/31 17:56:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2012/04/04 06:19:01 ajacoutot Exp $
 
 COMMENT=	message bus system
 
@@ -25,7 +25,6 @@ MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 SEPARATE_BUILD=	Yes
 
 USE_LIBTOOL=	Yes
-USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
