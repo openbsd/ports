@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/03/21 16:05:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2012/04/04 06:27:38 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -25,7 +25,7 @@ WANTLIB += readline stdc++ tasn1 z
 
 EXTRACT_SUFX=	.tar.bz2
 
-MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/
+MASTER_SITES=	${MASTER_SITE_GNU:=gnutls/}
 
 MODULES=	devel/gettext
 
