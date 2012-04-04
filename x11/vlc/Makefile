@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2012/03/29 15:00:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.144 2012/04/04 12:07:50 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -169,7 +169,6 @@ CONFIGURE_ARGS+=--enable-jack
 BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
 CONFIGURE_ARGS+=--enable-mozilla \
 		--with-mozilla-sdk-path=${LOCALBASE}/xulrunner1.9
-CONFIGURE_ENV+=	with_mozilla_pkg="libxul"
 CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/xulrunner1.9/include -DOPENBSD
 PORTPATH=	${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${DEPBASE}/bin:${LOCALBASE}/bin:${X11BASE}/bin:${LOCALBASE}/xulrunner1.9
 .endif
