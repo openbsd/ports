@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2012/03/25 11:18:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2012/04/04 13:41:38 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
@@ -337,6 +337,9 @@ share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/glib2/
+share/examples/glib2/gio-kqueue.conf
+@sample ${SYSCONFDIR}/gio-kqueue.conf
 share/gdb/
 share/gdb/auto-load/
 share/gdb/auto-load/libglib-2.0.so.0.3200.0-gdb.py

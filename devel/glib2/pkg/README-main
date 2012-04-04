@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2012/04/01 13:38:07 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2012/04/04 13:41:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,3 +12,6 @@ If gio-kqueue needs to handle large directories, the kern.maxfiles
 sysctl(8) should be increased by adding an entry in sysctl.conf(5) and
 the user's login(1) class modified accordingly by bumping the "cur" and
 "max" openfiles limit in login.conf(5).
+
+The ${SYSCONFDIR}/gio-kqueue.conf file contains the paths that should be
+monitored using traditional polling instead of kqueue(2).

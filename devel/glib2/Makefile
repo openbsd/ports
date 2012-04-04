@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2012/04/01 13:38:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2012/04/04 13:41:38 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 
 CATEGORIES=		devel
 
@@ -87,13 +87,10 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 #MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
 MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCH_DIST_STRIP=	-p2
-PATCHFILES=		glib-gio-kqueue-2.28.8-v3.1.patch:0
+PATCHFILES=		glib-gio-kqueue-2.28.8-v4.patch:0
 AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 post-patch:
-	perl -pi -e 's,#include <sys/event.h>,#include <sys/types.h>\n#include <sys/event.h>,' \
-		${WRKSRC}/gio/kqueue/{kqueue-helper,kqueue-thread,kqueue-utils}.c
 	cd ${WRKSRC} && ${AUTO_ENV} autoreconf --force --install
 ### end of kqueue(1) backend ###########################################
 
@@ -112,5 +109,10 @@ pre-configure:
 		${WRKSRC}/gio/gdbusconnection.c \
 		${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/glib2
+	${INSTALL_DATA} ${FILESDIR}/gio-kqueue.conf \
+		${PREFIX}/share/examples/glib2
 
 .include <bsd.port.mk>
