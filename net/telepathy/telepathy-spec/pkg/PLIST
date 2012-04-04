@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/17 16:45:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/04 17:51:54 jasper Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/telepathy-spec/
@@ -12,6 +12,8 @@ share/gtk-doc/html/telepathy-spec/Account_Manager.html
 share/gtk-doc/html/telepathy-spec/Account_Manager_Interface_Hidden.html
 share/gtk-doc/html/telepathy-spec/Authentication_TLS_Certificate.html
 share/gtk-doc/html/telepathy-spec/Call_Content.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Audio_Control.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Interface_DTMF.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Media.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Video_Control.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Media_Description.html
@@ -32,11 +34,13 @@ share/gtk-doc/html/telepathy-spec/Channel_Handler.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Addressing.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Anonymity.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Call_State.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_Captcha_Authentication.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Chat_State.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Conference.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Credentials_Storage.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_DTMF.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Destroyable.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_File_Transfer_Metadata.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Group.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_HTML.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Hold.html
@@ -44,6 +48,7 @@ share/gtk-doc/html/telepathy-spec/Channel_Interface_Media_Signalling.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Mergeable_Conference.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Messages.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Password.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_Picture.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Room.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Room_Config.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_SASL_Authentication.html
