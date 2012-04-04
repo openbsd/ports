@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/04 07:54:55 ajacoutot Exp $
 
-# XXX Are we affected by CVE-2008-0386? Our sed(1) does not behave as
-# the GNU version.
+# Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
+# gtk-update-icon-cache, shared-mime-info... on purpose as it should
+# only use whatever is available on the system at runtime.
 
 COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.0.2
+EXTRACT_SUFX=	.tgz
+
 CATEGORIES=	devel
 
 REVISION=	12
@@ -22,9 +25,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://portland.freedesktop.org/download/
 
-EXTRACT_SUFX=	.tgz
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
