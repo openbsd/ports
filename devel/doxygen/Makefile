@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/03 23:15:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/04/04 10:15:32 sthen Exp $
 
 # Memory hog, stuck for days on the same file during build.
 # XXX check with different optimizer level? see doc/install.doc
@@ -44,7 +44,7 @@ CONFIGURE_ENV=	QTDIR=${LOCALBASE}
 
 MODULES+=	x11/qt4
 .endif
-.if ${ARCH:Mmips64el}
+.if ${ARCH:Mmips64} || ${ARCH:Mmips64el}
 # ld(1) fails
 CONFIGURE_ARGS+= --english-only
 .endif
