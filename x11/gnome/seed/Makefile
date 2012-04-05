@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/02 19:48:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/05 10:22:29 ajacoutot Exp $
 
 BROKEN-sparc64= 	bus error webkit's JSC::Lexer::lex()
 
@@ -6,7 +6,8 @@ COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
 GNOME_VERSION=		3.2.0
-REVISION=		2
+REVISION=		3
+
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
@@ -34,12 +35,16 @@ WANTLIB += icui18n icuuc jpeg m mpfr pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += readline soup-2.4 sqlite3 stdc++ termcap util webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z javascriptcoregtk-3.0
+WANTLIB += geoclue gstaudio-0.10 gstfft-0.10 orc-0.4
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/js-common
 LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 			devel/mpfr>=3.0.1 \
 			www/webkit,gtk3>=1.6.1v0
+
+# warning: libXxf86vm.so.5.0, needed by /usr/local/lib/libwebkitgtk-3.0.so.3.0, not found
+MODGNOME_LDFLAGS=	-pthread -L${X11BASE}/lib
 
 CONFIGURE_ARGS+=	--enable-readline-module \
 			--enable-multiprocessing-module \
