@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/05 16:11:01 jasper Exp $
+
+# XXX: cannot be updated to a newer version before the binutils in base
+# is updated to 2.17.
 
 # m88k - not tested yet, will it ever?
 # vax - libffi hasn't been ported to vax, and most likely never will.
