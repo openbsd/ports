@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/03/22 21:31:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/05 21:15:29 landry Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
+# konference/libwebrtc/typedefs.h
+# #error Please add support for your architecture in typedefs.h
+ONLY_FOR_ARCHS=	i386 amd64
 
 DISTNAME=	appkonference-2.1
 
