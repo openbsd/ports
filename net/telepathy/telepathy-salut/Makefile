@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2012/04/04 14:41:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2012/04/05 09:08:12 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
-DISTNAME=		telepathy-salut-0.6.0
-REVISION=		1
+DISTNAME=		telepathy-salut-0.8.0
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 
@@ -19,6 +18,9 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/libxslt \
 			devel/check
+# needed for the tests
+BUILD_DEPENDS +=	devel/py-twisted/words \
+			x11/dbus-python
 LIB_DEPENDS=		net/avahi \
 			devel/libsoup \
 			net/telepathy/telepathy-glib \

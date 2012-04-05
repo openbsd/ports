@@ -1,12 +1,11 @@
-$OpenBSD: patch-src_contact_h,v 1.1 2011/11/02 10:08:51 ajacoutot Exp $
---- src/contact.h.orig	Mon Oct 31 11:11:14 2011
-+++ src/contact.h	Mon Oct 31 11:11:25 2011
-@@ -20,6 +20,8 @@
- #ifndef __SALUT_CONTACT_H__
- #define __SALUT_CONTACT_H__
- 
+$OpenBSD: patch-src_contact_h,v 1.2 2012/04/05 09:08:12 jasper Exp $
+--- src/contact.h.orig	Wed Apr  4 19:54:31 2012
++++ src/contact.h	Wed Apr  4 19:55:29 2012
+@@ -40,6 +40,7 @@
+ /* Winsock makes some inappropriately-namespaced definitions */
+ #undef interface
+ #else
 +#include <sys/socket.h>
-+
  #include <netinet/in.h>
- #include <glib-object.h>
+ #endif
  

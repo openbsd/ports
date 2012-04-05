@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_util_c,v 1.1 2011/11/02 10:08:51 ajacoutot Exp $
---- src/util.c.orig	Mon Oct 31 11:30:31 2011
-+++ src/util.c	Mon Oct 31 11:30:21 2011
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-src_util_c,v 1.2 2012/04/05 09:08:12 jasper Exp $
+--- src/util.c.orig	Tue Apr  3 23:24:48 2012
++++ src/util.c	Wed Apr  4 19:55:36 2012
+@@ -30,7 +30,7 @@
  #include "contact.h"
  
  #ifdef HAVE_UUID
