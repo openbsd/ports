@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/08 14:37:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/05 10:04:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -61,6 +61,9 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-bliptv \
 		--enable-filesystem \
 		--enable-youtube
+
+# from the configure script: "Do not build SHOUTCast by default; it is broken"
+CONFIGURE_ARGS += --disable-shoutcast
 
 # XXX remove on next upgrade
 pre-configure:
