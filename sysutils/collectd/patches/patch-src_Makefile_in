@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.2 2010/09/07 11:12:05 landry Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.3 2012/04/05 09:20:12 jasper Exp $
 Install config file in examples/
---- src/Makefile.in.orig	Fri Jul  9 12:02:16 2010
-+++ src/Makefile.in	Thu Aug  5 15:09:27 2010
+--- src/Makefile.in.orig	Sat Nov 27 11:10:51 2010
++++ src/Makefile.in	Thu Apr  5 11:12:50 2012
 @@ -37,7 +37,7 @@ build_triplet = @build@
  host_triplet = @host@
  @BUILD_WITH_OWN_LIBIPTC_TRUE@am__append_1 = owniptc
@@ -38,7 +38,12 @@ Install config file in examples/
  @BUILD_PLUGIN_SNMP_TRUE@am__append_293 = "-dlopen" snmp.la
  @BUILD_PLUGIN_SNMP_TRUE@am__append_294 = snmp.la
  @BUILD_PLUGIN_SWAP_TRUE@am__append_295 = swap.la
-@@ -1840,7 +1840,7 @@ SUBDIRS = libcollectdclient $(am__append_1) $(am__appe
+@@ -1836,11 +1836,11 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = libcollectdclient $(am__append_1) $(am__append_2)
+-@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall -Werror
++@COMPILER_IS_GCC_TRUE@AM_CFLAGS = -Wall
  AM_CPPFLAGS = -DPREFIX='"${prefix}"' \
  	-DCONFIGFILE='"${sysconfdir}/${PACKAGE_NAME}.conf"' \
  	-DLOCALSTATEDIR='"${localstatedir}"' \
