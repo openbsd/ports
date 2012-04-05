@@ -1,29 +1,28 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/04/05 11:40:46 ajacoutot Exp $
 
 COMMENT=	SDL image library
 
-DISTNAME=	SDL_image-1.2.10
+DISTNAME=	SDL_image-1.2.12
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	0
 CATEGORIES=	devel graphics
-MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
-		http://www.libsdl.org/projects/SDL_image/release/
+MASTER_SITES=	${HOMEPAGE}release/
 
-SHARED_LIBS=	SDL_image	3.0
+SHARED_LIBS=	SDL_image	3.1
 
 HOMEPAGE=	http://www.libsdl.org/projects/SDL_image/
 
-# LGPLv2.1+
+# Zlib
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	SDL jpeg m png tiff sndio usbhid z
+WANTLIB=	SDL jpeg m png sndio tiff usbhid webp z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/sdl \
 		graphics/jpeg \
+		graphics/libwebp \
 		graphics/png \
 		graphics/tiff
 
@@ -32,8 +31,9 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-jpg-shared \
 		--disable-png-shared \
-		--disable-tif-shared
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" \
+		--disable-tif-shared \
+		--disable-webp-shared
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
