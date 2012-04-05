@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/05 21:20:29 merdely Exp $
 
 COMMENT=	interface for getting PID info
 
-DISTNAME=	Unix-PID-0.21
-REVISION=	0
+DISTNAME=	Unix-PID-0.23
 CATEGORIES=	sysutils
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>
@@ -15,11 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
-RUN_DEPENDS=	devel/p5-Class-Std \
-		devel/p5-Class-Std-Utils \
-		devel/p5-List-Cycle \
+RUN_DEPENDS=	devel/p5-List-Cycle \
 		math/p5-Math-Fibonacci-Phi
 BUILD_DEPENDS=	${RUN_DEPENDS}
 

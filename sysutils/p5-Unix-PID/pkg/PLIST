@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/17 20:23:33 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/05 21:20:29 merdely Exp $
 ${P5SITE}/Unix/
 ${P5SITE}/Unix/PID.pm
+${P5SITE}/Unix/PID.pod
 @man man/man3p/Unix::PID.3p
