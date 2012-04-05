@@ -1,8 +1,9 @@
-#$OpenBSD: Makefile,v 1.20 2011/09/23 20:57:16 sthen Exp $
+#$OpenBSD: Makefile,v 1.21 2012/04/05 16:08:55 jasper Exp $
 
 COMMENT=	open source MSN Messenger clone
 
 V=		0.98.4
+REVISION=	0
 DISTNAME=	amsn-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	net
@@ -22,11 +23,11 @@ EXTRACT_SUFX=	.tar.bz2
 
 WANTLIB=	ICE SM X11 m stdc++ z glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 gstbase-0.10 gstinterfaces-0.10 \
-		gstreamer-0.10 xml2 jpeg png gstfarsight-0.10
+		gstreamer-0.10 xml2 jpeg png farstream-0.1
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
-		net/farsight2
+		net/farstream
 RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 		security/tcltls \
 		x11/bwidget \
@@ -42,6 +43,7 @@ MODULES=	devel/gettext \
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	verbose=yes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-libv4l \
 		--disable-upnp \

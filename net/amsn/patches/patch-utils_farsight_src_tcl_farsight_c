@@ -1,0 +1,187 @@
+$OpenBSD: patch-utils_farsight_src_tcl_farsight_c,v 1.1 2012/04/05 16:08:55 jasper Exp $
+
+Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
+
+--- utils/farsight/src/tcl_farsight.c.orig	Mon Dec 14 21:21:11 2009
++++ utils/farsight/src/tcl_farsight.c	Thu Apr  5 14:02:00 2012
+@@ -14,12 +14,12 @@
+ #include <math.h>
+ 
+ #include <gst/gst.h>
+-#include <gst/farsight/fs-conference-iface.h>
+-#include <gst/farsight/fs-stream-transmitter.h>
++#include <farstream/fs-conference.h>
++#include <farstream/fs-stream-transmitter.h>
+ #include <gst/interfaces/propertyprobe.h>
+ #include <gst/interfaces/xoverlay.h>
+ 
+-#include <gst/farsight/fs-element-added-notifier.h>
++#include <farstream/fs-element-added-notifier.h>
+ 
+ #ifdef G_OS_WIN32
+ #include <winsock2.h>
+@@ -1630,22 +1630,22 @@ static int Farsight_BusEventProc (Tcl_Event *evPtr, in
+     case GST_MESSAGE_ELEMENT:
+       {
+         const GstStructure *s = gst_message_get_structure (message);
+-        if (gst_structure_has_name (s, "farsight-error")) {
++        if (gst_structure_has_name (s, "farstream-error")) {
+           const GValue *errorvalue, *debugvalue, *error_no;
+ 
+           error_no = gst_structure_get_value (message->structure, "error-no");
+           errorvalue = gst_structure_get_value (message->structure, "error-msg");
+           debugvalue = gst_structure_get_value (message->structure, "debug-msg");
+ 
+-          if (g_value_get_enum (error_no) != FS_ERROR_UNKNOWN_CNAME)  {
++          if (g_value_get_enum (error_no))  {
+             _notify_debug ("Error on BUS (%d) %s .. %s", g_value_get_enum (error_no),
+                 g_value_get_string (errorvalue),
+                 g_value_get_string (debugvalue));
+           }
+-          if (g_value_get_enum (error_no) != FS_ERROR_UNKNOWN_CNAME)  {
+-            _notify_error ("Farsight error");
++          if (g_value_get_enum (error_no))  {
++            _notify_error ("Farstream error");
+           }
+-        } else if (gst_structure_has_name (s, "farsight-new-local-candidate")) {
++        } else if (gst_structure_has_name (s, "farstream-new-local-candidate")) {
+           FsStream *stream;
+           FsCandidate *candidate;
+           const GValue *value;
+@@ -1658,7 +1658,7 @@ static int Farsight_BusEventProc (Tcl_Event *evPtr, in
+ 
+           _new_local_candidate (stream, candidate);
+         } else if (gst_structure_has_name (s,
+-                "farsight-local-candidates-prepared")) {
++                "farstream-local-candidates-prepared")) {
+           FsStream *stream;
+           const GValue *value;
+ 
+@@ -1667,7 +1667,7 @@ static int Farsight_BusEventProc (Tcl_Event *evPtr, in
+ 
+ 
+           _local_candidates_prepared (stream);
+-        } else if (gst_structure_has_name (s, "farsight-codecs-changed")) {
++        } else if (gst_structure_has_name (s, "farstream-codecs-changed")) {
+           gboolean ready;
+ 
+           if (!audio_codecs_ready) {
+@@ -1682,7 +1682,7 @@ static int Farsight_BusEventProc (Tcl_Event *evPtr, in
+               _codecs_ready (video_session);
+             }
+           }
+-        } else if (gst_structure_has_name (s, "farsight-new-active-candidate-pair")) {
++        } else if (gst_structure_has_name (s, "farstream-new-active-candidate-pair")) {
+           FsCandidate *local;
+           FsCandidate *remote;
+           FsStream *stream;
+@@ -1856,16 +1856,16 @@ _bus_callback (GstBus *bus, GstMessage *message, gpoin
+     case GST_MESSAGE_ELEMENT:
+       {
+         const GstStructure *s = gst_message_get_structure (message);
+-        if (gst_structure_has_name (s, "farsight-error")) {
++        if (gst_structure_has_name (s, "farstream-error")) {
+           goto drop;
+-        } else if (gst_structure_has_name (s, "farsight-new-local-candidate")) {
++        } else if (gst_structure_has_name (s, "farstream-new-local-candidate")) {
+           goto drop;
+         } else if (gst_structure_has_name (s,
+-                "farsight-local-candidates-prepared")) {
++                "farstream-local-candidates-prepared")) {
+           goto drop;
+-        } else if (gst_structure_has_name (s, "farsight-codecs-changed")) {
++        } else if (gst_structure_has_name (s, "farstream-codecs-changed")) {
+           goto drop;
+-        } else if (gst_structure_has_name (s, "farsight-new-active-candidate-pair")) {
++        } else if (gst_structure_has_name (s, "farstream-new-active-candidate-pair")) {
+           goto drop;
+         } else if (gst_structure_has_name (s, "level")) {
+           goto drop;
+@@ -2918,7 +2918,7 @@ int Farsight_Prepare _ANSI_ARGS_((ClientData clientDat
+       G_CALLBACK (_conference_element_added), NULL);
+ 
+   participant = fs_conference_new_participant (FS_CONFERENCE (conference),
+-      "", &error);
++      &error);
+   if (error) {
+     char temp[1000];
+     snprintf (temp, 1000, "Error while creating new participant (%d): %s",
+@@ -3157,8 +3157,15 @@ int Farsight_Prepare _ANSI_ARGS_((ClientData clientDat
+   }
+ 
+   audio_stream = fs_session_new_stream (audio_session, participant, FS_DIRECTION_BOTH,
+-      "nice", total_params, transmitter_params, &error);
++      &error);
+ 
++  if(!fs_stream_set_transmitter(audio_stream, "nice",
++                                transmitter_params, total_params, &error)) {
++    char temp[1000];
++    snprintf (temp, 1000, "Could not set transmitter \"nice\" (%d): %s.", error->code, error->message);
++    goto error;
++  }
++
+   if (error) {
+     char temp[1000];
+     snprintf (temp, 1000, "Error while creating new audio_stream (%d): %s",
+@@ -3310,8 +3317,15 @@ int Farsight_Prepare _ANSI_ARGS_((ClientData clientDat
+     }
+ 
+     video_stream = fs_session_new_stream (video_session, participant,
+-        FS_DIRECTION_BOTH, "nice", total_params, transmitter_params, &error);
++        FS_DIRECTION_BOTH, &error);
+ 
++    if(!fs_stream_set_transmitter(video_stream, "nice",
++                               	  transmitter_params, total_params, &error)) {
++      char temp[1000];
++      snprintf (temp, 1000, "Could not set transmitter \"nice\" (%d): %s.", error->code, error->message);
++      goto error;
++    }
++
+     if (error) {
+       char temp[1000];
+       snprintf (temp, 1000, "Error while creating new video_stream (%d): %s",
+@@ -3391,7 +3405,7 @@ int Farsight_Start _ANSI_ARGS_((ClientData clientData,
+ 
+ 
+   if (pipeline == NULL) {
+-    Tcl_AppendResult (interp, "Farsight needs to be prepared first",
++    Tcl_AppendResult (interp, "Farstream needs to be prepared first",
+         (char *) NULL);
+     return TCL_ERROR;
+   }
+@@ -3568,7 +3582,7 @@ static int _SetMute (GstElement *element, Tcl_Interp *
+   if (element) {
+     g_object_set (element, "mute", mute, NULL);
+   } else {
+-    Tcl_AppendResult (interp, "Farsight isn't running", (char *) NULL);
++    Tcl_AppendResult (interp, "Farstream isn't running", (char *) NULL);
+     return TCL_ERROR;
+   }
+ 
+@@ -3602,7 +3616,7 @@ static int _GetMute (GstElement *element, Tcl_Interp *
+     g_object_get (element, "mute", &mute, NULL);
+     Tcl_SetObjResult(interp, Tcl_NewBooleanObj(mute));
+   } else {
+-    Tcl_AppendResult (interp, "Farsight isn't running", (char *) NULL);
++    Tcl_AppendResult (interp, "Farstream isn't running", (char *) NULL);
+     return TCL_ERROR;
+   }
+ 
+@@ -3641,7 +3655,7 @@ static int _SetVolume (GstElement *element, Tcl_Interp
+   if (element) {
+     g_object_set (element, "volume", volume, NULL);
+   } else {
+-    Tcl_AppendResult (interp, "Farsight isn't running", (char *) NULL);
++    Tcl_AppendResult (interp, "Farstream isn't running", (char *) NULL);
+     return TCL_ERROR;
+   }
+ 
+@@ -3676,7 +3690,7 @@ static int _GetVolume (GstElement *element, Tcl_Interp
+     g_object_get (element, "volume", &volume, NULL);
+     Tcl_SetObjResult(interp, Tcl_NewDoubleObj(volume));
+   } else {
+-    Tcl_AppendResult (interp, "Farsight isn't running", (char *) NULL);
++    Tcl_AppendResult (interp, "Farstream isn't running", (char *) NULL);
+     return TCL_ERROR;
+   }
+ 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_common_helpers_py,v 1.1 2012/04/05 16:08:56 jasper Exp $
+
+port Gajim to use Farstream instead of Farsight2.
+from upstream changeset dfd58bb1ad06.
+
+--- src/common/helpers.py.orig	Thu Apr  5 11:34:52 2012
++++ src/common/helpers.py	Thu Apr  5 11:35:01 2012
+@@ -1330,7 +1330,7 @@ def update_optional_features(account = None):
+             gajim.gajim_optional_features[a].append(xmpp.NS_ESESSION)
+         if gajim.config.get_per('accounts', a, 'answer_receipts'):
+             gajim.gajim_optional_features[a].append(xmpp.NS_RECEIPTS)
+-        if gajim.HAVE_FARSIGHT:
++        if gajim.HAVE_FARSTREAM:
+             gajim.gajim_optional_features[a].append(xmpp.NS_JINGLE)
+             gajim.gajim_optional_features[a].append(xmpp.NS_JINGLE_RTP)
+             gajim.gajim_optional_features[a].append(xmpp.NS_JINGLE_RTP_AUDIO)

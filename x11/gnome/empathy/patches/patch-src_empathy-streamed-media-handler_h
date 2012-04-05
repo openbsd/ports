@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_empathy-streamed-media-handler_h,v 1.1 2012/04/05 16:08:56 jasper Exp $
+
+From 57a7b1ba43133f3f3097d00b89a8d8f7f246ccdb Mon Sep 17 00:00:00 2001
+From: Guillaume Desmottes <guillaume.desmottes@collabora.co.uk>
+Date: Tue, 28 Feb 2012 12:05:43 +0000
+Subject: Allow to build with empathy-av
+
+--- src/empathy-streamed-media-handler.h.orig	Thu Apr  5 14:24:33 2012
++++ src/empathy-streamed-media-handler.h	Thu Apr  5 14:24:46 2012
+@@ -24,7 +24,7 @@
+ #include <glib-object.h>
+ 
+ #include <gst/gst.h>
+-#include <gst/farsight/fs-conference-iface.h>
++#include <farstream/fs-conference.h>
+ 
+ #include <libempathy/empathy-tp-streamed-media.h>
+ #include <libempathy/empathy-contact.h>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2011/07/07 13:14:29 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.6 2012/04/05 16:08:55 jasper Exp $
 --- Makefile.in.orig	Thu Mar 18 20:58:48 2010
-+++ Makefile.in	Tue Jun 21 11:02:26 2011
++++ Makefile.in	Thu Apr  5 14:03:25 2012
 @@ -11,10 +11,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
@@ -35,6 +35,26 @@ $OpenBSD: patch-Makefile_in,v 1.5 2011/07/07 13:14:29 jasper Exp $
  else
  CXXFLAGS   += -g3 -DDEBUG
  endif
+@@ -127,8 +127,8 @@ endif
+ 
+ GST_LIBS        := @GST_LIBS@ @GST_INTERFACES_LIBS@
+ GST_CFLAGS      := @GST_CFLAGS@ @GST_INTERFACES_CFLAGS@
+-FARSIGHT2_LIBS  := @FARSIGHT2_LIBS@
+-FARSIGHT2_CFLAGS := @FARSIGHT2_CFLAGS@
++FARSTREAM_LIBS  := @FARSTREAM_LIBS@
++FARSTREAM_CFLAGS := @FARSTREAM_CFLAGS@
+ 
+ 
+ # for gcc3
+@@ -169,7 +169,7 @@ ifeq (@HAVE_GUPNP@,yes)
+   FILES_TO_INSTALL += utils/gupnp/gupnp.$(SHLIB_EXTENSION) utils/gupnp/pkgIndex.tcl
+ endif
+ 
+-ifeq (@HAVE_FARSIGHT@,yes)
++ifeq (@HAVE_FARSTREAM@,yes)
+   FILES_TO_INSTALL += utils/farsight/tcl_farsight.$(SHLIB_EXTENSION) utils/farsight/pkgIndex.tcl
+ endif
+ 
 @@ -234,9 +234,9 @@ install:: $(FILES_TO_INSTALL)
  		rm -Rf $(DESTDIR)$(dstdir)/$(PACKAGE)/$$p; \
  	done
@@ -48,3 +68,12 @@ $OpenBSD: patch-Makefile_in,v 1.5 2011/07/07 13:14:29 jasper Exp $
  
  	cp $(srcdir)/amsn.desktop $(DESTDIR)$(dstdir)/applications/
  
+@@ -319,7 +319,7 @@ include $(tclISF_dir)/src/Rules.mk
+ include $(async_dir)/Rules.mk
+ include $(async_dir)/src/Rules.mk
+ 
+-ifeq (@HAVE_FARSIGHT@,yes)
++ifeq (@HAVE_FARSTREAM@,yes)
+   include $(tcl_farsight_dir)/Rules.mk
+   include $(tcl_farsight_dir)/src/Rules.mk
+ endif

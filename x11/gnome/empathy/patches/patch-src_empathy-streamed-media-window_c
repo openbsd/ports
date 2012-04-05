@@ -1,0 +1,76 @@
+$OpenBSD: patch-src_empathy-streamed-media-window_c,v 1.1 2012/04/05 16:08:56 jasper Exp $
+
+From 57a7b1ba43133f3f3097d00b89a8d8f7f246ccdb Mon Sep 17 00:00:00 2001
+From: Guillaume Desmottes <guillaume.desmottes@collabora.co.uk>
+Date: Tue, 28 Feb 2012 12:05:43 +0000
+Subject: Allow to build with empathy-av
+
+From e35c34e3935d055c6cd5db1c0808f9906488627b Mon Sep 17 00:00:00 2001
+From: Olivier Crete <olivier.crete@collabora.com>
+Date: Thu, 01 Mar 2012 16:52:56 +0000
+Subject: Port Empathy-av to Telepathy Farstream
+
+--- src/empathy-streamed-media-window.c.orig	Mon Nov 14 15:41:42 2011
++++ src/empathy-streamed-media-window.c	Thu Apr  5 14:38:58 2012
+@@ -31,10 +31,10 @@
+ #include <glib/gi18n.h>
+ 
+ #include <telepathy-glib/util.h>
+-#include <telepathy-farsight/channel.h>
+-#include <telepathy-glib/util.h>
++#include <telepathy-farstream/telepathy-farstream.h>
+ 
+-#include <gst/farsight/fs-element-added-notifier.h>
++#include <farstream/fs-element-added-notifier.h>
++#include <farstream/fs-utils.h>
+ 
+ #include <libempathy/empathy-tp-contact-factory.h>
+ #include <libempathy/empathy-utils.h>
+@@ -1765,8 +1765,8 @@ empathy_streamed_media_window_conference_added_cb (Emp
+ }
+ 
+ static gboolean
+-empathy_streamed_media_window_request_resource_cb (EmpathyStreamedMediaHandler *handler,
+-  FsMediaType type, FsStreamDirection direction, gpointer user_data)
++empathy_streamed_media_window_start_receiving_cb (EmpathyStreamedMediaHandler *handler,
++  FsMediaType type,gpointer user_data)
+ {
+   EmpathyStreamedMediaWindow *self = EMPATHY_STREAMED_MEDIA_WINDOW (user_data);
+   EmpathyStreamedMediaWindowPriv *priv = GET_PRIV (self);
+@@ -1774,9 +1774,6 @@ empathy_streamed_media_window_request_resource_cb (Emp
+   if (type != FS_MEDIA_TYPE_VIDEO)
+     return TRUE;
+ 
+-  if (direction == FS_DIRECTION_RECV)
+-    return TRUE;
+-
+   /* video and direction is send */
+   return priv->video_input != NULL;
+ }
+@@ -1958,13 +1955,13 @@ empathy_streamed_media_window_channel_closed_cb (Empat
+ 
+ static void
+ empathy_streamed_media_window_channel_stream_closed_cb (EmpathyStreamedMediaHandler *handler,
+-    TfStream *stream, gpointer user_data)
++    TfContent *content, gpointer user_data)
+ {
+   EmpathyStreamedMediaWindow *self = EMPATHY_STREAMED_MEDIA_WINDOW (user_data);
+   EmpathyStreamedMediaWindowPriv *priv = GET_PRIV (self);
+   guint media_type;
+ 
+-  g_object_get (stream, "media-type", &media_type, NULL);
++  g_object_get (content, "media-type", &media_type, NULL);
+ 
+   /*
+    * This assumes that there is only one video stream per channel...
+@@ -2725,8 +2722,8 @@ empathy_streamed_media_window_realized_cb (GtkWidget *
+ 
+   g_signal_connect (priv->handler, "conference-added",
+     G_CALLBACK (empathy_streamed_media_window_conference_added_cb), window);
+-  g_signal_connect (priv->handler, "request-resource",
+-    G_CALLBACK (empathy_streamed_media_window_request_resource_cb), window);
++  g_signal_connect (priv->handler, "start-receiving",
++    G_CALLBACK (empathy_streamed_media_window_start_receiving_cb), window);
+   g_signal_connect (priv->handler, "closed",
+     G_CALLBACK (empathy_streamed_media_window_channel_closed_cb), window);
+   g_signal_connect (priv->handler, "src-pad-added",

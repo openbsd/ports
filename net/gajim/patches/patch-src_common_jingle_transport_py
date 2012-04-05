@@ -1,0 +1,81 @@
+$OpenBSD: patch-src_common_jingle_transport_py,v 1.1 2012/04/05 16:08:56 jasper Exp $
+
+port Gajim to use Farstream instead of Farsight2.
+from upstream changeset dfd58bb1ad06.
+
+--- src/common/jingle_transport.py.orig	Thu Apr  5 11:36:35 2012
++++ src/common/jingle_transport.py	Thu Apr  5 11:37:41 2012
+@@ -73,7 +73,7 @@ class JingleTransport(object):
+ 
+ 
+ try:
+-    import farsight
++    import farstream
+ except Exception:
+     pass
+ 
+@@ -82,11 +82,11 @@ class JingleTransportICEUDP(JingleTransport):
+         JingleTransport.__init__(self, TransportType.datagram)
+ 
+     def make_candidate(self, candidate):
+-        types = {farsight.CANDIDATE_TYPE_HOST: 'host',
+-                farsight.CANDIDATE_TYPE_SRFLX: 'srflx',
+-                farsight.CANDIDATE_TYPE_PRFLX: 'prflx',
+-                farsight.CANDIDATE_TYPE_RELAY: 'relay',
+-                farsight.CANDIDATE_TYPE_MULTICAST: 'multicast'}
++        types = {farstream.CANDIDATE_TYPE_HOST: 'host',
++                farstream.CANDIDATE_TYPE_SRFLX: 'srflx',
++                farstream.CANDIDATE_TYPE_PRFLX: 'prflx',
++                farstream.CANDIDATE_TYPE_RELAY: 'relay',
++                farstream.CANDIDATE_TYPE_MULTICAST: 'multicast'}
+         attrs = {
+                 'component': candidate.component_id,
+                 'foundation': '1', # hack
+@@ -98,7 +98,7 @@ class JingleTransportICEUDP(JingleTransport):
+         }
+         if candidate.type in types:
+             attrs['type'] = types[candidate.type]
+-        if candidate.proto == farsight.NETWORK_PROTOCOL_UDP:
++        if candidate.proto == farstream.NETWORK_PROTOCOL_UDP:
+             attrs['protocol'] = 'udp'
+         else:
+             # we actually don't handle properly different tcp options in jingle
+@@ -117,29 +117,29 @@ class JingleTransportICEUDP(JingleTransport):
+     def parse_transport_stanza(self, transport):
+         candidates = []
+         for candidate in transport.iterTags('candidate'):
+-            cand = farsight.Candidate()
++            cand = farstream.Candidate()
+             cand.component_id = int(candidate['component'])
+             cand.ip = str(candidate['ip'])
+             cand.port = int(candidate['port'])
+             cand.foundation = str(candidate['foundation'])
+-            #cand.type = farsight.CANDIDATE_TYPE_LOCAL
++            #cand.type = farstream.CANDIDATE_TYPE_LOCAL
+             cand.priority = int(candidate['priority'])
+ 
+             if candidate['protocol'] == 'udp':
+-                cand.proto = farsight.NETWORK_PROTOCOL_UDP
++                cand.proto = farstream.NETWORK_PROTOCOL_UDP
+             else:
+                 # we actually don't handle properly different tcp options in jingle
+-                cand.proto = farsight.NETWORK_PROTOCOL_TCP
++                cand.proto = farstream.NETWORK_PROTOCOL_TCP
+ 
+             cand.username = str(transport['ufrag'])
+             cand.password = str(transport['pwd'])
+ 
+             #FIXME: huh?
+-            types = {'host': farsight.CANDIDATE_TYPE_HOST,
+-                                    'srflx': farsight.CANDIDATE_TYPE_SRFLX,
+-                                    'prflx': farsight.CANDIDATE_TYPE_PRFLX,
+-                                    'relay': farsight.CANDIDATE_TYPE_RELAY,
+-                                    'multicast': farsight.CANDIDATE_TYPE_MULTICAST}
++            types = {'host': farstream.CANDIDATE_TYPE_HOST,
++                                    'srflx': farstream.CANDIDATE_TYPE_SRFLX,
++                                    'prflx': farstream.CANDIDATE_TYPE_PRFLX,
++                                    'relay': farstream.CANDIDATE_TYPE_RELAY,
++                                    'multicast': farstream.CANDIDATE_TYPE_MULTICAST}
+             if 'type' in candidate and candidate['type'] in types:
+                 cand.type = types[candidate['type']]
+             else:
