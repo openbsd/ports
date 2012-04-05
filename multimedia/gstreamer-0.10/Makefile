@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/08 21:46:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/05 16:06:12 jasper Exp $
 
     SUBDIR =
     SUBDIR += core
     SUBDIR += mm
     SUBDIR += plugins-base
-    SUBDIR += plugins-farsight
     SUBDIR += plugins-ffmpeg
     SUBDIR += plugins-gl
     SUBDIR += plugins-good
