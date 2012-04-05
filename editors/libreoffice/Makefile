@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/04/03 09:27:15 robert Exp $
+# $OpenBSD: Makefile,v 1.62 2012/04/05 07:44:14 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,6 +16,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
+REVISION-main=	0
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -347,7 +348,7 @@ post-install:
 
 	for _d in base calc draw impress math \
 		qstart startcenter writer; do \
-		perl -pi -e "s,Icon=libreoffice34-,Icon=libreoffice-,g" \
+		perl -pi -e "s,Icon=libreoffice3.5-,Icon=libreoffice-,g" \
 			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
 		ln -sf ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
 			${PREFIX}/share/applications/$${_d}.desktop; done
