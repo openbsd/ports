@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/02 06:20:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/05 07:48:19 ajacoutot Exp $
 
 COMMENT=		MSN client library for python
 
 MODPY_EGG_VERSION=	0.5.6
 DISTNAME=		papyon-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/papyon
@@ -18,9 +19,9 @@ MASTER_SITES=		http://www.freedesktop.org/software/papyon/releases/
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		security/py-crypto \
-			security/py-openssl
-RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
+BUILD_DEPENDS=		security/py-crypto
+RUN_DEPENDS=		devel/py-gobject \
+			multimedia/gstreamer-0.10/py-gstreamer \
 			net/farsight2 \
 			security/py-crypto \
 			security/py-openssl
