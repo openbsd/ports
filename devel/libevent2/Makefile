@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/17 21:09:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/05 14:07:44 dcoppa Exp $
 
 COMMENT=	event notification library
 
-V=		2.0.17
+V=		2.0.18
 DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
