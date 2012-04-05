@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/03 07:39:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/05 16:07:18 jasper Exp $
 
     SUBDIR =
     SUBDIR += folks
-    SUBDIR += telepathy-farsight
+    SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble
     SUBDIR += telepathy-glib
     SUBDIR += telepathy-haze
