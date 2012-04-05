@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/05 16:02:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/05 16:21:43 ajacoutot Exp $
 @conflict farsight2-*
 include/farstream-0.1/
 include/farstream-0.1/farstream/
@@ -29,22 +29,22 @@ lib/farstream-0.1/librawudp-transmitter.so
 @comment lib/farstream-0.1/libshm-transmitter.la
 lib/farstream-0.1/libshm-transmitter.so
 lib/girepository-1.0/Farstream-0.1.typelib
-lib/gstreamer-0.10/libfsfunnel.a
+@comment lib/gstreamer-0.10/libfsfunnel.a
 @comment lib/gstreamer-0.10/libfsfunnel.la
 lib/gstreamer-0.10/libfsfunnel.so
-lib/gstreamer-0.10/libfsmsnconference.a
+@comment lib/gstreamer-0.10/libfsmsnconference.a
 @comment lib/gstreamer-0.10/libfsmsnconference.la
 lib/gstreamer-0.10/libfsmsnconference.so
-lib/gstreamer-0.10/libfsrawconference.a
+@comment lib/gstreamer-0.10/libfsrawconference.a
 @comment lib/gstreamer-0.10/libfsrawconference.la
 lib/gstreamer-0.10/libfsrawconference.so
-lib/gstreamer-0.10/libfsrtcpfilter.a
+@comment lib/gstreamer-0.10/libfsrtcpfilter.a
 @comment lib/gstreamer-0.10/libfsrtcpfilter.la
 lib/gstreamer-0.10/libfsrtcpfilter.so
-lib/gstreamer-0.10/libfsrtpconference.a
+@comment lib/gstreamer-0.10/libfsrtpconference.a
 @comment lib/gstreamer-0.10/libfsrtpconference.la
 lib/gstreamer-0.10/libfsrtpconference.so
-lib/gstreamer-0.10/libfsvideoanyrate.a
+@comment lib/gstreamer-0.10/libfsvideoanyrate.a
 @comment lib/gstreamer-0.10/libfsvideoanyrate.la
 lib/gstreamer-0.10/libfsvideoanyrate.so
 lib/libfarstream-0.1.a

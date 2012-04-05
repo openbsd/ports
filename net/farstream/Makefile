@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/05 16:02:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/05 16:21:43 ajacoutot Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farstream-0.1.2
 CATEGORIES=		net devel
+REVISION=		0
+
 SHARED_LIBS +=  farstream-0.1        0.0      # 0.1
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/Farstream
