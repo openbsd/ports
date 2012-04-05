@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/13 01:48:10 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/05 20:36:03 jasper Exp $
 @newgroup _xcept:522
-@newuser _xcept:522:_xcept:daemon:xcept account:/nonexistent:/bin/sh
+@newuser _xcept:522:_xcept:daemon:xcept account:/nonexistent:/sbin/nologin
 bin/xcept
 lib/xcept/
 lib/xcept/Bundesbahn.xcept
