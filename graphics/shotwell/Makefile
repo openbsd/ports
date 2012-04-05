@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 07:37:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/04/05 17:44:17 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
 
 COMMENT =	digital photo organizer
 
-# git glone
-DISTNAME =	shotwell-0.11.93
+DISTNAME =	shotwell-0.12.1
 CATEGORIES =	graphics
-MASTER_SITES =	http://yorba.org/download/shotwell/0.11/unstable/
+MASTER_SITES =	http://yorba.org/download/shotwell/stable/
 HOMEPAGE =	http://yorba.org/shotwell/
 EXTRACT_SUFX =	.tar.bz2
 
@@ -37,9 +36,9 @@ MODGNOME_DESKTOP_FILE =	yes
 RUN_DEPENDS +=	x11/gnome/librsvg \
 		x11/gtk+2,-guic
 
-BUILD_DEPENDS =	lang/vala>=0.15.2
+BUILD_DEPENDS =	lang/vala>=0.16.0
 
-LIB_DEPENDS =	graphics/libgexiv2>=0.3.91 \
+LIB_DEPENDS =	graphics/libgexiv2>=0.4.1 \
 		graphics/libraw>=0.14.5 \
 		www/webkit,gtk3>=1.6.1v0 \
 		devel/libunique3 \

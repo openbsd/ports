@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/03/29 07:37:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/04/05 17:44:17 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 @bin bin/shotwell-video-thumbnailer
@@ -104,10 +104,14 @@ share/locale/gl/LC_MESSAGES/shotwell-extras.mo
 share/locale/gl/LC_MESSAGES/shotwell.mo
 share/locale/he/LC_MESSAGES/shotwell-extras.mo
 share/locale/he/LC_MESSAGES/shotwell.mo
+share/locale/hi/LC_MESSAGES/shotwell.mo
 share/locale/hr/LC_MESSAGES/shotwell-extras.mo
 share/locale/hr/LC_MESSAGES/shotwell.mo
 share/locale/hu/LC_MESSAGES/shotwell-extras.mo
 share/locale/hu/LC_MESSAGES/shotwell.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/shotwell.mo
 share/locale/id/LC_MESSAGES/shotwell-extras.mo
 share/locale/id/LC_MESSAGES/shotwell.mo
 share/locale/it/LC_MESSAGES/shotwell-extras.mo
@@ -150,8 +154,14 @@ share/locale/sv/LC_MESSAGES/shotwell-extras.mo
 share/locale/sv/LC_MESSAGES/shotwell.mo
 share/locale/ta/LC_MESSAGES/shotwell-extras.mo
 share/locale/ta/LC_MESSAGES/shotwell.mo
+share/locale/ta_IN/
+share/locale/ta_IN/LC_MESSAGES/
+share/locale/ta_IN/LC_MESSAGES/shotwell.mo
 share/locale/te/LC_MESSAGES/shotwell-extras.mo
 share/locale/te/LC_MESSAGES/shotwell.mo
+share/locale/te_IN/
+share/locale/te_IN/LC_MESSAGES/
+share/locale/te_IN/LC_MESSAGES/shotwell.mo
 share/locale/th/LC_MESSAGES/shotwell-extras.mo
 share/locale/th/LC_MESSAGES/shotwell.mo
 share/locale/tr/LC_MESSAGES/shotwell-extras.mo
@@ -198,8 +208,6 @@ share/shotwell/icons/pin-toolbar.svg
 share/shotwell/icons/publish.png
 share/shotwell/icons/redeye.png
 share/shotwell/icons/rejected.svg
-share/shotwell/icons/searchbox-clear.svg
-share/shotwell/icons/searchbox-find.svg
 share/shotwell/icons/shotwell-16.svg
 share/shotwell/icons/shotwell-24.svg
 share/shotwell/icons/shotwell-street.jpg
@@ -218,6 +226,7 @@ share/shotwell/icons/zoom-out.png
 share/shotwell/ui/
 share/shotwell/ui/collection.ui
 share/shotwell/ui/direct.ui
+share/shotwell/ui/direct_context.ui
 share/shotwell/ui/event.ui
 share/shotwell/ui/events_directory.ui
 share/shotwell/ui/fullscreen.ui
@@ -226,6 +235,7 @@ share/shotwell/ui/import_queue.ui
 share/shotwell/ui/media.ui
 share/shotwell/ui/offline.ui
 share/shotwell/ui/photo.ui
+share/shotwell/ui/photo_context.ui
 share/shotwell/ui/savedsearch.ui
 share/shotwell/ui/search_bar.ui
 share/shotwell/ui/search_sidebar_context.ui
@@ -235,6 +245,7 @@ share/shotwell/ui/shotwell.xml
 share/shotwell/ui/sidebar_default_context.ui
 share/shotwell/ui/tag_sidebar_context.ui
 share/shotwell/ui/tags.ui
+share/shotwell/ui/top.ui
 share/shotwell/ui/trash.ui
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

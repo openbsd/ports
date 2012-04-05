@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.7 2012/02/27 19:41:55 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.8 2012/04/05 17:44:17 ajacoutot Exp $
 
 remove gudev requirement
 
---- Makefile.orig	Sun Feb 26 15:04:33 2012
-+++ Makefile	Sun Feb 26 15:09:41 2012
-@@ -33,7 +33,7 @@ EXTRAS_SUPPORTED_LANGUAGES=fr de it es pl et sv sk lv 
+--- Makefile.orig	Thu Mar 29 00:35:57 2012
++++ Makefile	Thu Apr  5 14:27:42 2012
+@@ -34,7 +34,7 @@ EXTRAS_SUPPORTED_LANGUAGES=fr de it es pl et sv sk lv 
  LOCAL_LANG_DIR=locale-langpack
  SYSTEM_LANG_DIR := $(DESTDIR)$(PREFIX)/share/locale
  
@@ -13,7 +13,7 @@ remove gudev requirement
  ifdef UNITY_SUPPORT
  VALAFLAGS := $(VALAFLAGS) --define UNITY_SUPPORT
  endif
-@@ -278,7 +278,6 @@ EXT_PKGS = \
+@@ -280,7 +280,6 @@ EXT_PKGS = \
  	gstreamer-base-0.10 \
  	gstreamer-pbutils-0.10 \
  	gtk+-3.0 \
@@ -21,7 +21,7 @@ remove gudev requirement
  	libexif \
  	libgphoto2 \
  	libsoup-2.4 \
-@@ -314,7 +313,6 @@ EXT_PKG_VERSIONS = \
+@@ -316,7 +315,6 @@ EXT_PKG_VERSIONS = \
  	gstreamer-plugins-base-0.10 >= 0.10.32 \
  	gstreamer-pbutils-0.10 >= 0.10.32 \
  	gtk+-3.0 >= 3.0.11 \
@@ -29,7 +29,7 @@ remove gudev requirement
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libsoup-2.4 >= 2.26.0 \
-@@ -439,9 +437,8 @@ CFLAGS += -DG_UDEV_API_IS_SUBJECT_TO_CHANGE
+@@ -441,9 +439,8 @@ CFLAGS += -DG_UDEV_API_IS_SUBJECT_TO_CHANGE
  LIBRAW_CONFIG=./libraw-config
  
  define check_valac_version
@@ -41,7 +41,7 @@ remove gudev requirement
  endef
  
  define check_valadate_version
-@@ -560,8 +557,8 @@ ifndef DISABLE_SCHEMAS_COMPILE
+@@ -562,8 +559,8 @@ ifndef DISABLE_SCHEMAS_COMPILE
  	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL
@@ -52,7 +52,7 @@ remove gudev requirement
  endif
  ifndef DISABLE_ICON_UPDATE
  	-gtk-update-icon-cache -t -f $(DESTDIR)$(PREFIX)/share/icons/hicolor || :
-@@ -681,10 +678,10 @@ $(EXPANDED_C_FILES): $(VALA_STAMP)
+@@ -683,10 +680,10 @@ $(EXPANDED_C_FILES): $(VALA_STAMP)
  	@
  
  $(EXPANDED_OBJ_FILES): %.o: %.c $(CONFIG_IN) Makefile
@@ -65,7 +65,7 @@ remove gudev requirement
  	glib-compile-schemas misc
  
  $(THUMBNAILER_BIN): $(EXPANDED_THUMBNAILER_SRC_FILES)
-@@ -713,7 +710,7 @@ docs:
+@@ -715,7 +712,7 @@ docs:
  glade: lib$(PROGRAM).so
  
  lib$(PROGRAM).so: $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
@@ -74,7 +74,7 @@ remove gudev requirement
  
  .PHONY: pkgcheck
  pkgcheck:
-@@ -725,6 +722,6 @@ ifdef EXT_PKGS
+@@ -727,6 +724,6 @@ ifdef EXT_PKGS
  	@pkg-config --print-errors --exists $(EXT_PKGS) $(DIRECT_LIBS_VERSIONS)
  endif
  # Check for libraw manually
