@@ -1,0 +1,36 @@
+$OpenBSD: patch-gio_gio-types_defs,v 1.1 2012/04/05 12:08:25 ajacoutot Exp $
+
+From 42d01f060c5d764baa881d13c103d68897163a49 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Mon, 12 Mar 2012 20:44:14 +0000
+Subject: gio-types.defs: change some enums to flags
+
+--- gio/gio-types.defs.orig	Mon Jun 13 18:33:49 2011
++++ gio/gio-types.defs	Thu Apr  5 14:02:24 2012
+@@ -526,7 +526,7 @@
+   )
+ )
+ 
+-(define-enum MountMountFlags
++(define-flags MountMountFlags
+   (in-module "gio")
+   (c-name "GMountMountFlags")
+   (gtype-id "G_TYPE_MOUNT_MOUNT_FLAGS")
+@@ -545,7 +545,7 @@
+   )
+ )
+ 
+-(define-enum DriveStartFlags
++(define-flags DriveStartFlags
+   (in-module "gio")
+   (c-name "GDriveStartFlags")
+   (gtype-id "G_TYPE_DRIVE_START_FLAGS")
+@@ -770,7 +770,7 @@
+   )
+ )
+ 
+-(define-enum SocketMsgFlags
++(define-flags SocketMsgFlags
+   (in-module "gio")
+   (c-name "GSocketMsgFlags")
+   (gtype-id "G_TYPE_SOCKET_MSG_FLAGS")
