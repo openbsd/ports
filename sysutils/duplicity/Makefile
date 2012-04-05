@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2012/03/22 06:43:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/05 10:33:45 ajacoutot Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
 MODPY_EGG_VERSION = 0.6.18
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -32,5 +33,10 @@ RUN_DEPENDS +=	net/py-boto \
 MAKE_ENV +=	LIBRSYNC_DIR=${LOCALBASE}
 
 NO_REGRESS =	Yes
+
+# XXX 600 mode prevents from reading the man page;
+# check if still required at next update
+post-extract:
+	chmod 644 ${WRKSRC}/bin/*.1
 
 .include <bsd.port.mk>
