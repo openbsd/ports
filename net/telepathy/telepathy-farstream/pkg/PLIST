@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/05 16:04:01 jasper Exp $
+include/telepathy-1.0/telepathy-farstream/
+include/telepathy-1.0/telepathy-farstream/channel.h
+include/telepathy-1.0/telepathy-farstream/content.h
+include/telepathy-1.0/telepathy-farstream/telepathy-farstream.h
+lib/libtelepathy-farstream.a
+lib/libtelepathy-farstream.la
+@lib lib/libtelepathy-farstream.so.${LIBtelepathy-farstream_VERSION}
+lib/pkgconfig/telepathy-farstream.pc
+@comment lib/python${MODPY_VERSION}/site-packages/tpfarstream.a
+@comment lib/python${MODPY_VERSION}/site-packages/tpfarstream.la
+lib/python${MODPY_VERSION}/site-packages/tpfarstream.so
+share/gtk-doc/html/telepathy-farstream/
+share/gtk-doc/html/telepathy-farstream/TfChannel.html
+share/gtk-doc/html/telepathy-farstream/TfContent.html
+share/gtk-doc/html/telepathy-farstream/ch01.html
+share/gtk-doc/html/telepathy-farstream/home.png
+share/gtk-doc/html/telepathy-farstream/index.html
+share/gtk-doc/html/telepathy-farstream/index.sgml
+share/gtk-doc/html/telepathy-farstream/left.png
+share/gtk-doc/html/telepathy-farstream/right.png
+share/gtk-doc/html/telepathy-farstream/style.css
+share/gtk-doc/html/telepathy-farstream/telepathy-farstream.devhelp2
+share/gtk-doc/html/telepathy-farstream/up.png
