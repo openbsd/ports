@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2011/03/14 18:30:33 jeremy Exp $
---- CMakeLists.txt.orig	Wed Jan 12 18:27:58 2011
-+++ CMakeLists.txt	Wed Jan 19 11:05:22 2011
-@@ -32,7 +32,7 @@ IF (PQ_FOUND)
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2012/04/06 19:25:23 jeremy Exp $
+--- CMakeLists.txt.orig	Wed Mar 28 22:09:47 2012
++++ CMakeLists.txt	Thu Mar 29 16:09:46 2012
+@@ -35,7 +35,7 @@ IF (PQ_FOUND)
      TARGET_LINK_LIBRARIES(dbdpg ${PQ_LIBRARIES})
    ENDIF()
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2011/03/14 18:30:33 jeremy Exp $
    INSTALL(TARGETS dbdpg
      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/dbic++
      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/dbic++)
-@@ -47,7 +47,7 @@ IF (MYSQL_FOUND)
+@@ -50,7 +50,7 @@ IF (MYSQL_FOUND)
    ELSE()
      TARGET_LINK_LIBRARIES(dbdmysql ${MYSQL_LIBRARIES})
    ENDIF()
@@ -19,7 +19,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2011/03/14 18:30:33 jeremy Exp $
    INSTALL(TARGETS dbdmysql
      LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/dbic++
      ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/dbic++)
-@@ -62,19 +62,19 @@ IF (SQLITE3_FOUND)
+@@ -65,19 +65,19 @@ IF (SQLITE3_FOUND)
    ELSE()
      TARGET_LINK_LIBRARIES(dbdsqlite3 ${SQLITE3_LIBRARIES})
    ENDIF()
@@ -35,11 +35,11 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2011/03/14 18:30:33 jeremy Exp $
 +TARGET_LINK_LIBRARIES(demo/demo dbic++ ${UUID_LIBRARIES} ${PCRE_LIBRARIES})
  
  ADD_EXECUTABLE(demo/async src/examples/async.cc)
--TARGET_LINK_LIBRARIES(demo/async dbic++ dl ${UUID_LIBRARIES} ${PCRE_LIBRARIES} ${EVENT_LIBRARIES})
-+TARGET_LINK_LIBRARIES(demo/async dbic++ ${UUID_LIBRARIES} ${PCRE_LIBRARIES} ${EVENT_LIBRARIES})
+-TARGET_LINK_LIBRARIES(demo/async dbic++ dl ${UUID_LIBRARIES} ${PCRE_LIBRARIES})
++TARGET_LINK_LIBRARIES(demo/async dbic++ ${UUID_LIBRARIES} ${PCRE_LIBRARIES})
  
--ADD_DEFINITIONS(-Wall -Wno-sign-compare -rdynamic -fopenmp -fPIC -O3)
-+ADD_DEFINITIONS(-Wall -Wno-sign-compare -rdynamic -fopenmp -fPIC)
- ADD_DEFINITIONS(${UUID_DEFINITIONS} ${EVENT_DEFINITIONS} ${PCRE_DEFINITIONS})
+-ADD_DEFINITIONS(-Wall -Wno-sign-compare -rdynamic -fopenmp -fPIC -O3 -Wno-non-virtual-dtor)
++ADD_DEFINITIONS(-Wall -Wno-sign-compare -rdynamic -fopenmp -fPIC -Wno-non-virtual-dtor)
+ ADD_DEFINITIONS(${UUID_DEFINITIONS} ${PCRE_DEFINITIONS})
  
  # Use -DCMAKE_INSTALL_PREFIX:PATH=<path> to override /usr/local

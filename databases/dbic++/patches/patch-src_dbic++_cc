@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dbic++_cc,v 1.1 2011/03/14 18:30:33 jeremy Exp $
---- src/dbic++.cc.orig	Wed Jan 12 18:27:58 2011
-+++ src/dbic++.cc	Wed Jan 19 11:06:17 2011
-@@ -106,8 +106,7 @@ namespace dbi {
+$OpenBSD: patch-src_dbic++_cc,v 1.2 2012/04/06 19:25:23 jeremy Exp $
+--- src/dbic++.cc.orig	Tue Jul  5 17:42:19 2011
++++ src/dbic++.cc	Mon Nov  7 12:46:57 2011
+@@ -110,8 +110,7 @@ namespace dbi {
  
      void initCheck(string driver_name) {
          if (!drivers.size()) {

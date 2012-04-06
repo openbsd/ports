@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/06 19:25:23 jeremy Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		C++ database API
 
-DISTNAME=		deepfryed-dbicpp-g466860f
-PKGNAME=		dbic++-0.5.6
+DISTNAME=		deepfryed-dbicpp-v0.6.0
+PKGNAME=		dbic++-0.6.0
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
-REVISION =		0
 
-SHARED_LIBS +=  dbdmysql                  1.0 # 0.0
-SHARED_LIBS +=  dbdpg                     1.0 # 0.0
-SHARED_LIBS +=  dbdsqlite3                0.0 # 0.0
+SHARED_LIBS +=  dbdmysql                  2.0 # 1.0
+SHARED_LIBS +=  dbdpg                     2.0 # 1.0
+SHARED_LIBS +=  dbdsqlite3                1.0 # 1.0
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,18 +35,21 @@ LIB_DEPENDS=		mysql-client->=5:databases/mysql \
 			sysutils/e2fsprogs
 
 CONFIGURE_STYLE=	none
-WRKDIST=		${WRKDIR}/deepfryed-dbicpp-4fe45f7
+WRKDIST=		${WRKDIR}/deepfryed-dbicpp
 
 NO_REGRESS=		Yes
+
+post-extract:
+	mv ${WRKDIR}/deepfryed-dbicpp-* ${WRKDIR}/deepfryed-dbicpp
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{CMakeLists.txt,inc/dbic++.h,src/dbic++.cc,pkgconfig/dbic++.pc}
 
 do-build:
-	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh
+	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build
 
 do-install:
 	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/bash build.sh -i
+		${LOCALBASE}/bin/bash build -i
 
 .include <bsd.port.mk>
