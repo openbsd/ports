@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/06 09:25:08 sthen Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/Dumper/
+${P5SITE}/Data/Dumper/Concise/
+${P5SITE}/Data/Dumper/Concise.pm
+${P5SITE}/Data/Dumper/Concise/Sugar.pm
+${P5SITE}/Devel/
+${P5SITE}/Devel/Dwarn.pm
+@man man/man3p/Data::Dumper::Concise.3p
+@man man/man3p/Data::Dumper::Concise::Sugar.3p
+@man man/man3p/Devel::Dwarn.3p
