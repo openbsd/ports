@@ -1,15 +1,23 @@
-$OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2010/12/20 17:43:58 jeremy Exp $
---- ext/extconf.rb.orig	Thu Oct 28 17:03:48 2010
-+++ ext/extconf.rb	Thu Oct 28 17:05:57 2010
-@@ -4,7 +4,7 @@ require 'mkmf'
+$OpenBSD: patch-ext_extconf_rb,v 1.2 2012/04/06 19:26:13 jeremy Exp $
+--- ext/extconf.rb.orig	Wed Dec 31 16:00:00 1969
++++ ext/extconf.rb	Wed Feb 22 13:58:58 2012
+@@ -4,14 +4,14 @@ require 'mkmf'
  Config::CONFIG['CC']  = 'g++'
  Config::CONFIG['CPP'] = 'g++'
  
--$CFLAGS  = '-fPIC -Os'
-+$CFLAGS  = '-fPIC'
+-$CFLAGS  = '-fPIC -Os -I/usr/include -I/opt/local/include -I/usr/local/include'
++$CFLAGS  = "-fPIC -I#{ENV['LOCALBASE']}/include"
  
  def apt_install_hint pkg
    "sudo apt-get install #{pkg}"
+ end
+ 
+ def library_installed? name, hint
+-  if find_library(name, 'main', *%w(/usr/lib /usr/local/lib /opt/lib /opt/local/lib /sw/lib))
++  if find_library(name, 'main', *%w(/usr/lib #{ENV['LOCALBASE']}/lib))
+     true
+   else
+     $stderr.puts <<-ERROR
 @@ -34,7 +34,7 @@ end
  
  def assert_dbicpp_version ver
@@ -27,4 +35,4 @@ $OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2010/12/20 17:43:58 jeremy Exp $
 +exit 1 unless library_installed? 'e2fs-uuid',    apt_install_hint('uuid-dev')
  exit 1 unless library_installed? 'dbic++',  apt_install_hint('dbic++-dev')
  
- assert_dbicpp_version '0.4.0'
+ assert_dbicpp_version '0.5.9'

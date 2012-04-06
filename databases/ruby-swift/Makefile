@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 08:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/06 19:26:13 jeremy Exp $
 
 COMMENT =	fast database API and ORM for ruby 1.9
 
-DISTNAME =	swift-0.9.1
+DISTNAME =	swift-0.14.0
 CATEGORIES =	databases
-REVISION =	0
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
@@ -19,7 +18,7 @@ FLAVOR =	ruby19
 
 WANTLIB =	c m stdc++ e2fs-uuid pcrecpp
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	databases/dbic++>=0.5.4
+RUN_DEPENDS =	databases/dbic++>=0.6.0
 
 CONFIGURE_STYLE = ruby gem ext
 
