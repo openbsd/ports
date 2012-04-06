@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/06 14:38:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/06 17:56:03 jasper Exp $
 
 COMMENT=	Yubikey OTP library
 
 DISTNAME=	libyubikey-1.8
-REVISION=	0
+REVISION=	1
+SHARED_LIBS +=  yubikey              0.0      # 1.3
 CATEGORIES=	devel security
 
 HOMEPAGE=	http://yubico-c.googlecode.com/
@@ -18,16 +19,16 @@ MASTER_SITES=	${HOMEPAGE}/files/
 
 WANTLIB += c
 
-USE_GMAKE=	Yes
-MAKE_FILE=	simple.mk
+AUTOMAKE_VERSION=	1.11
+AUTOCONF_VERSION=	2.68
 
-MAKE_FLAGS +=	CFLAGS="${CFLAGS} -I."
+CONFIGURE_STYLE=	gnu
 
-REGRESS_TARGET=	check
+USE_LIBTOOL=		Yes
 
-do-install:
-.for p in modhex ykgenerate ykparse
-	${INSTALL_PROGRAM} ${WRKBUILD}/$p ${PREFIX}/bin/
-.endfor
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} -i AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+				AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+				autoreconf --install
 
 .include <bsd.port.mk>
