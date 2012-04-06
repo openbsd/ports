@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/06 10:00:53 sthen Exp $
 
 COMMENT=        load mix-ins or components to your C3-based class
 
 MODULES=	cpan
-DISTNAME=	Class-C3-Componentised-1.0005
-REVISION=	0
+DISTNAME=	Class-C3-Componentised-1.001000
 CATEGORIES=     devel
 USE_GROFF =	Yes
 

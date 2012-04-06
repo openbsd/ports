@@ -1,3 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/25 21:22:22 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/06 10:00:53 sthen Exp $
 ${P5SITE}/Class/C3/Componentised.pm
+${P5SITE}/Class/C3/Componentised/
+${P5SITE}/Class/C3/Componentised/ApplyHooks.pm
 @man man/man3p/Class::C3::Componentised.3p
+@man man/man3p/Class::C3::Componentised::ApplyHooks.3p
