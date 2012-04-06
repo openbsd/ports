@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2012/02/24 08:45:57 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.5 2012/04/06 08:16:59 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -434,6 +434,8 @@ webapps/docs/api/org/apache/catalina/realm/NullRealm.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.AllRolesMode.html
 webapps/docs/api/org/apache/catalina/realm/RealmBase.html
 webapps/docs/api/org/apache/catalina/realm/UserDatabaseRealm.html
+webapps/docs/api/org/apache/catalina/realm/X509SubjectDnRetriever.html
+webapps/docs/api/org/apache/catalina/realm/X509UsernameRetriever.html
 webapps/docs/api/org/apache/catalina/realm/package-frame.html
 webapps/docs/api/org/apache/catalina/realm/package-summary.html
 webapps/docs/api/org/apache/catalina/realm/package-tree.html
@@ -719,6 +721,7 @@ webapps/docs/api/org/apache/catalina/util/
 webapps/docs/api/org/apache/catalina/util/Base64.html
 webapps/docs/api/org/apache/catalina/util/CharsetMapper.html
 webapps/docs/api/org/apache/catalina/util/ContextName.html
+webapps/docs/api/org/apache/catalina/util/Conversions.html
 webapps/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
 webapps/docs/api/org/apache/catalina/util/DOMWriter.html
 webapps/docs/api/org/apache/catalina/util/DateTool.html
@@ -805,6 +808,18 @@ webapps/docs/api/org/apache/catalina/valves/ValveBase.html
 webapps/docs/api/org/apache/catalina/valves/package-frame.html
 webapps/docs/api/org/apache/catalina/valves/package-summary.html
 webapps/docs/api/org/apache/catalina/valves/package-tree.html
+webapps/docs/api/org/apache/catalina/websocket/
+webapps/docs/api/org/apache/catalina/websocket/Constants.html
+webapps/docs/api/org/apache/catalina/websocket/MessageInbound.html
+webapps/docs/api/org/apache/catalina/websocket/StreamInbound.html
+webapps/docs/api/org/apache/catalina/websocket/Utf8Decoder.html
+webapps/docs/api/org/apache/catalina/websocket/WebSocketServlet.html
+webapps/docs/api/org/apache/catalina/websocket/WsFrame.html
+webapps/docs/api/org/apache/catalina/websocket/WsInputStream.html
+webapps/docs/api/org/apache/catalina/websocket/WsOutbound.html
+webapps/docs/api/org/apache/catalina/websocket/package-frame.html
+webapps/docs/api/org/apache/catalina/websocket/package-summary.html
+webapps/docs/api/org/apache/catalina/websocket/package-tree.html
 webapps/docs/api/org/apache/coyote/
 webapps/docs/api/org/apache/coyote/AbstractProcessor.html
 webapps/docs/api/org/apache/coyote/AbstractProtocol.AbstractConnectionHandler.html
@@ -893,6 +908,17 @@ webapps/docs/api/org/apache/coyote/http11/filters/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/package-frame.html
 webapps/docs/api/org/apache/coyote/http11/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/package-tree.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/
+webapps/docs/api/org/apache/coyote/http11/upgrade/Constants.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeAprProcessor.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeBioProcessor.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeInbound.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeNioProcessor.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeOutbound.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessor.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/package-frame.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/package-summary.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/package-tree.html
 webapps/docs/api/org/apache/coyote/package-frame.html
 webapps/docs/api/org/apache/coyote/package-summary.html
 webapps/docs/api/org/apache/coyote/package-tree.html
@@ -1261,6 +1287,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/ConnectionPool.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/DataSource.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/DataSourceFactory.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/DataSourceProxy.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/DisposableConnectionFacade.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.ExchangeCountDownLatch.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.FairIterator.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/FairBlockingQueue.ItemFuture.html
@@ -1271,6 +1298,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.FairIter
 webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.ItemFuture.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/MultiLockFairBlockingQueue.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolConfiguration.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolExhaustedException.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.InterceptorDefinition.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.InterceptorProperty.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolProperties.html
@@ -1571,6 +1599,27 @@ webapps/docs/api/org/apache/tomcat/util/http/mapper/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/http/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/package-tree.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstAttribute.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstMediaType.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstParameter.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstSubType.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstType.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/AstValue.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserConstants.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserTokenManager.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParserTreeConstants.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/JJTHttpParserState.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Node.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/ParseException.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/SimpleCharStream.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/SimpleNode.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/Token.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/TokenMgrError.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-frame.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/log/
 webapps/docs/api/org/apache/tomcat/util/log/SystemLogHandler.html
 webapps/docs/api/org/apache/tomcat/util/log/UserDataHelper.Mode.html
@@ -2063,6 +2112,7 @@ webapps/docs/tribes/setup.html
 webapps/docs/tribes/status.html
 webapps/docs/tribes/transport.html
 webapps/docs/virtual-hosting-howto.html
+webapps/docs/web-socket-howto.html
 webapps/docs/windows-auth-howto.html
 webapps/docs/windows-service-howto.html
 webapps/examples/
@@ -2196,6 +2246,32 @@ webapps/examples/WEB-INF/classes/util/HTMLFilter.java
 webapps/examples/WEB-INF/classes/validators/
 webapps/examples/WEB-INF/classes/validators/DebugValidator.class
 webapps/examples/WEB-INF/classes/validators/DebugValidator.java
+webapps/examples/WEB-INF/classes/websocket/
+webapps/examples/WEB-INF/classes/websocket/chat/
+webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$1.class
+webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$ChatMessageInbound.class
+webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.class
+webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.java
+webapps/examples/WEB-INF/classes/websocket/echo/
+webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage$EchoMessageInbound.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.java
+webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$1.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$EchoStreamInbound.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.class
+webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.java
+webapps/examples/WEB-INF/classes/websocket/snake/
+webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
+webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
+webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
+webapps/examples/WEB-INF/classes/websocket/snake/Location.class
+webapps/examples/WEB-INF/classes/websocket/snake/Location.java
+webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
+webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
+webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$1.class
+webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$SnakeMessageInbound.class
+webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.class
+webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.java
 webapps/examples/WEB-INF/jsp/
 webapps/examples/WEB-INF/jsp/applet/
 webapps/examples/WEB-INF/jsp/applet/Clock2.java
@@ -2433,6 +2509,11 @@ webapps/examples/servlets/reqheaders.html
 webapps/examples/servlets/reqinfo.html
 webapps/examples/servlets/reqparams.html
 webapps/examples/servlets/sessions.html
+webapps/examples/websocket/
+webapps/examples/websocket/chat.html
+webapps/examples/websocket/echo.html
+webapps/examples/websocket/index.html
+webapps/examples/websocket/snake.html
 @cwd ${CONFDIR}
 Catalina/
 Catalina/localhost/
