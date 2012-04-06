@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/25 18:42:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/06 13:48:18 sthen Exp $
+@bin bin/makehrtf
 @bin bin/openal-info
 include/AL/
 include/AL/al.h
@@ -6,6 +7,7 @@ include/AL/alc.h
 include/AL/alext.h
 %%SHARED%%
 include/AL/efx-creative.h
+include/AL/efx-presets.h
 include/AL/efx.h
 lib/pkgconfig/
 lib/pkgconfig/openal.pc
