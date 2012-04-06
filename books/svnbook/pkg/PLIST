@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/29 12:55:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/06 15:39:07 merdely Exp $
 share/doc/svnbook/
 share/doc/svnbook/images/
 share/doc/svnbook/images/ch01dia1.png
@@ -15,6 +15,7 @@ share/doc/svnbook/images/ch04dia3.png
 share/doc/svnbook/images/ch04dia4.png
 share/doc/svnbook/images/ch08dia1.png
 share/doc/svnbook/images/ch08dia2.png
+share/doc/svnbook/images/draft.png
 share/doc/svnbook/images/note.png
 share/doc/svnbook/images/tip.png
 share/doc/svnbook/images/warning.png
@@ -38,9 +39,8 @@ share/doc/svnbook/svn.advanced.summary.html
 share/doc/svnbook/svn.advanced.vendorbr.html
 share/doc/svnbook/svn.basic.html
 share/doc/svnbook/svn.basic.in-action.html
-share/doc/svnbook/svn.basic.repository.html
 share/doc/svnbook/svn.basic.summary.html
-share/doc/svnbook/svn.basic.vsn-models.html
+share/doc/svnbook/svn.basic.version-control-basics.html
 share/doc/svnbook/svn.branchmerge.advanced.html
 share/doc/svnbook/svn.branchmerge.basicmerging.html
 share/doc/svnbook/svn.branchmerge.commonpatterns.html
@@ -55,7 +55,6 @@ share/doc/svnbook/svn.copyright.html
 share/doc/svnbook/svn.customization.html
 share/doc/svnbook/svn.customization.summary.html
 share/doc/svnbook/svn.developer.html
-share/doc/svnbook/svn.developer.insidewc.html
 share/doc/svnbook/svn.developer.layerlib.html
 share/doc/svnbook/svn.developer.summary.html
 share/doc/svnbook/svn.developer.usingapi.html
@@ -79,7 +78,6 @@ share/doc/svnbook/svn.intro.quickstart.html
 share/doc/svnbook/svn.intro.whatis.html
 share/doc/svnbook/svn.preface.acks.html
 share/doc/svnbook/svn.preface.audience.html
-share/doc/svnbook/svn.preface.conventions.html
 share/doc/svnbook/svn.preface.free.html
 share/doc/svnbook/svn.preface.howread.html
 share/doc/svnbook/svn.preface.html
@@ -121,11 +119,13 @@ share/doc/svnbook/svn.ref.svn.c.merge.html
 share/doc/svnbook/svn.ref.svn.c.mergeinfo.html
 share/doc/svnbook/svn.ref.svn.c.mkdir.html
 share/doc/svnbook/svn.ref.svn.c.move.html
+share/doc/svnbook/svn.ref.svn.c.patch.html
 share/doc/svnbook/svn.ref.svn.c.propdel.html
 share/doc/svnbook/svn.ref.svn.c.propedit.html
 share/doc/svnbook/svn.ref.svn.c.propget.html
 share/doc/svnbook/svn.ref.svn.c.proplist.html
 share/doc/svnbook/svn.ref.svn.c.propset.html
+share/doc/svnbook/svn.ref.svn.c.relocate.html
 share/doc/svnbook/svn.ref.svn.c.resolve.html
 share/doc/svnbook/svn.ref.svn.c.resolved.html
 share/doc/svnbook/svn.ref.svn.c.revert.html
@@ -133,6 +133,7 @@ share/doc/svnbook/svn.ref.svn.c.status.html
 share/doc/svnbook/svn.ref.svn.c.switch.html
 share/doc/svnbook/svn.ref.svn.c.unlock.html
 share/doc/svnbook/svn.ref.svn.c.update.html
+share/doc/svnbook/svn.ref.svn.c.upgrade.html
 share/doc/svnbook/svn.ref.svn.html
 share/doc/svnbook/svn.ref.svnadmin.c.crashtest.html
 share/doc/svnbook/svn.ref.svnadmin.c.create.html
@@ -145,6 +146,7 @@ share/doc/svnbook/svn.ref.svnadmin.c.list-unused-dblogs.html
 share/doc/svnbook/svn.ref.svnadmin.c.load.html
 share/doc/svnbook/svn.ref.svnadmin.c.lslocks.html
 share/doc/svnbook/svn.ref.svnadmin.c.lstxns.html
+share/doc/svnbook/svn.ref.svnadmin.c.pack.html
 share/doc/svnbook/svn.ref.svnadmin.c.recover.html
 share/doc/svnbook/svn.ref.svnadmin.c.rmlocks.html
 share/doc/svnbook/svn.ref.svnadmin.c.rmtxns.html
@@ -164,6 +166,7 @@ share/doc/svnbook/svn.ref.svnlook.c.changed.html
 share/doc/svnbook/svn.ref.svnlook.c.date.html
 share/doc/svnbook/svn.ref.svnlook.c.diff.html
 share/doc/svnbook/svn.ref.svnlook.c.dirs-changed.html
+share/doc/svnbook/svn.ref.svnlook.c.filesize.html
 share/doc/svnbook/svn.ref.svnlook.c.help.html
 share/doc/svnbook/svn.ref.svnlook.c.history.html
 share/doc/svnbook/svn.ref.svnlook.c.info.html
@@ -175,9 +178,14 @@ share/doc/svnbook/svn.ref.svnlook.c.tree.html
 share/doc/svnbook/svn.ref.svnlook.c.uuid.html
 share/doc/svnbook/svn.ref.svnlook.c.youngest.html
 share/doc/svnbook/svn.ref.svnlook.html
+share/doc/svnbook/svn.ref.svnrdump.c.dump.html
+share/doc/svnbook/svn.ref.svnrdump.c.help.html
+share/doc/svnbook/svn.ref.svnrdump.c.load.html
+share/doc/svnbook/svn.ref.svnrdump.html
 share/doc/svnbook/svn.ref.svnserve.html
 share/doc/svnbook/svn.ref.svnsync.c.copy-revprops.html
 share/doc/svnbook/svn.ref.svnsync.c.help.html
+share/doc/svnbook/svn.ref.svnsync.c.info.html
 share/doc/svnbook/svn.ref.svnsync.c.init.html
 share/doc/svnbook/svn.ref.svnsync.c.sync.html
 share/doc/svnbook/svn.ref.svnsync.html
@@ -195,6 +203,8 @@ share/doc/svnbook/svn.serverconfig.html
 share/doc/svnbook/svn.serverconfig.httpd.html
 share/doc/svnbook/svn.serverconfig.multimethod.html
 share/doc/svnbook/svn.serverconfig.netmodel.html
+share/doc/svnbook/svn.serverconfig.operational-logging.html
+share/doc/svnbook/svn.serverconfig.optimization.html
 share/doc/svnbook/svn.serverconfig.overview.html
 share/doc/svnbook/svn.serverconfig.pathbasedauthz.html
 share/doc/svnbook/svn.serverconfig.svnserve.html
@@ -207,6 +217,7 @@ share/doc/svnbook/svn.tour.importing.html
 share/doc/svnbook/svn.tour.initial.html
 share/doc/svnbook/svn.tour.revs.specifiers.html
 share/doc/svnbook/svn.tour.summary.html
+share/doc/svnbook/svn.tour.treeconflicts.html
 share/doc/svnbook/svn.webdav.autoversioning.html
 share/doc/svnbook/svn.webdav.basic.html
 share/doc/svnbook/svn.webdav.clients.html
