@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/06 14:09:13 jasper Exp $
+@bin bin/modhex
+@bin bin/ykgenerate
+@bin bin/ykparse
