@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/04/06 15:39:07 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/06 20:39:39 sthen Exp $
 
 COMMENT =		Version Control with Subversion
 
 V =			1.7
-DISTNAME =		svn-book-html-chunk
+REVISION =		0
+DISTNAME =		svn-book-html-chunk-$V
 PKGNAME =		svnbook-${V}
 CATEGORIES =		books devel
 
@@ -15,10 +16,11 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/en/$V/
+# ${HOMEPAGE}/en/$V/svn-book-html-chunk.tar.bz2 appears to be auto-generated
+MASTER_SITES =		http://spacehopper.org/mirrors/
 EXTRACT_SUFX =		.tar.bz2
 
-EXTRACT_ONLY =	
+EXTRACT_ONLY =
 BUILD_DEPENDS =		archivers/bzip2
 
 NO_BUILD =		Yes
