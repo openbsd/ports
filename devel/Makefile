@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1025 2012/04/03 18:58:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1026 2012/04/06 09:30:14 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -479,6 +479,7 @@
      SUBDIR += p5-Class-Std-Utils
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
+     SUBDIR += p5-Class-Unload
      SUBDIR += p5-Class-Virtual
      SUBDIR += p5-Class-WhiteHole
      SUBDIR += p5-Class-XPath
@@ -499,9 +500,11 @@
      SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Alias
      SUBDIR += p5-Data-Buffer
+     SUBDIR += p5-Data-Compare
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Dump-Streamer
      SUBDIR += p5-Data-Dumper-Simple
+     SUBDIR += p5-Data-Dumper-Concise
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-HexDump
@@ -679,6 +682,7 @@
      SUBDIR += p5-Log-Dispatch-FileRotate
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-Log-Trace
+     SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-MRO-Compat
