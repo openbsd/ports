@@ -1,7 +1,17 @@
-$OpenBSD: patch-configure_ac,v 1.10 2012/03/21 16:13:25 dcoppa Exp $
---- configure.ac.orig	Fri Jan 20 20:48:30 2012
-+++ configure.ac	Wed Mar 21 12:36:48 2012
-@@ -95,7 +95,7 @@ dnl ===============
+$OpenBSD: patch-configure_ac,v 1.11 2012/04/06 11:50:20 dcoppa Exp $
+--- configure.ac.orig	Fri Jan 20 14:48:30 2012
++++ configure.ac	Mon Apr  2 18:11:01 2012
+@@ -41,9 +41,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.2],
+     [AC_MSG_ERROR([Cannot find Audacious 3.2; have you installed Audacious yet?])]
+ )
+ 
+-CPPFLAGS="$CPPFLAGS $AUDACIOUS_CFLAGS"
+-LIBS="$LIBS $AUDACIOUS_LIBS"
+-
+ dnl Default Set of Plugins
+ dnl ======================
+ 
+@@ -95,7 +92,7 @@ dnl ===============
  PTHREAD_LIBS=
  PTHREAD_CFLAGS=
  
@@ -10,43 +20,25 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/03/21 16:13:25 dcoppa Exp $
    [AC_CHECK_LIB(pthreads, pthread_create, PTHREAD_LIBS="-lpthreads",
  	[AC_CHECK_LIB(pthreadGC2, pthread_create, PTHREAD_LIBS="-lpthreadGC2")]
    )]
-@@ -490,7 +490,7 @@ if test x$enable_aac = xyes; then
- 		AC_CHECK_DECL(NeAACDecInit2,,enable_aac=no,[#include <neaacdec.h>])
- 	fi
- 	if test x$enable_aac = xyes; then
--		AC_CHECK_LIB(faad,NeAACDecInit2,enable_aac=yes,enable_aac=no)
-+		AC_CHECK_LIB(faad -lGL -lXau -lXdmcp -lXxf86vm -ldrm -lxcb -pthread,NeAACDecInit2,enable_aac=yes,enable_aac=no)
- 	fi
- fi
- 
-@@ -862,7 +862,7 @@ AC_ARG_ENABLE(neon,
- 
- if test "x$have_neon" = "xyes"; then
-     PKG_CHECK_MODULES(NEON, [neon >= 0.26], [TRANSPORT_PLUGINS="$TRANSPORT_PLUGINS neon" ], [have_neon="no"])
--    AC_CHECK_LIB([neon], [ne_set_connect_timeout], [AC_DEFINE(HAVE_NE_SET_CONNECT_TIMEOUT, 1, [Whether we have ne_set_connect_timeout])], [], [$NEON_LIBS])
-+    AC_CHECK_LIB(neon -pthread, [ne_set_connect_timeout], [AC_DEFINE(HAVE_NE_SET_CONNECT_TIMEOUT, 1, [Whether we have ne_set_connect_timeout])], [], [$NEON_LIBS])
- else
-     have_neon="no"
- fi
-@@ -969,7 +969,7 @@ AC_ARG_ENABLE(filewriter_mp3,
+@@ -969,7 +966,7 @@ AC_ARG_ENABLE(filewriter_mp3,
  )
  
  if test "x$enable_filewriter_mp3" = "xyes"; then
 -   AC_CHECK_LIB(mp3lame -lm, lame_get_id3v2_tag, [have_lame=yes], [have_lame=no])
-+   AC_CHECK_LIB(mp3lame -lm -pthread, lame_get_id3v2_tag, [have_lame=yes], [have_lame=no])
++   AC_CHECK_LIB(mp3lame, lame_get_id3v2_tag, [have_lame=yes], [have_lame=no])
     if test "x$have_lame" = "xyes"; then
        AC_DEFINE(FILEWRITER_MP3, 1, [Define if MP3 output part should be built])
  	  FILEWRITER_LIBS="$FILEWRITER_LIBS -lmp3lame"
-@@ -1092,6 +1092,20 @@ if test "x$enable_lyricwiki" = "xyes"; then
+@@ -1092,8 +1089,25 @@ if test "x$enable_lyricwiki" = "xyes"; then
      GENERAL_PLUGINS="$GENERAL_PLUGINS lyricwiki"
  fi
  
-+dnl *** sndio
++dnl *** sndio output
 +
 +AC_ARG_ENABLE(sndio,
-+    [  --enable-sndio          enable sndio output plugin (default=disabled) ],
++    [  --disable-sndio         disable sndio output plugin (default=enabled) ],
 +    [have_sndio=$enableval],
-+    [have_sndio=no]
++    [have_sndio=yes]
 +)
 +
 +if test "x$have_sndio" = "xyes"; then
@@ -57,7 +49,12 @@ $OpenBSD: patch-configure_ac,v 1.10 2012/03/21 16:13:25 dcoppa Exp $
 +
  dnl *** End of all plugin checks ***
  
++CPPFLAGS="$CPPFLAGS $AUDACIOUS_CFLAGS"
++LIBS="$LIBS $AUDACIOUS_LIBS"
++
  plugindir=`pkg-config audacious --variable=plugin_dir`
+ AC_SUBST(plugindir)
+ 
 @@ -1163,6 +1177,7 @@ echo "    -> FileWriter Vorbis output part:     $have_
  echo "    -> FileWriter FLAC output part:       $have_writer_flac"
  echo "  Null Audio output (null):               yes"
