@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2012/04/04 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2012/04/06 12:06:51 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -54,7 +54,7 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 # need X11 because DBus is used in the GDBus test cases;
-# also requires bumped limits (nofiles >= 512)
+# also requires bumped limits (stack >= 24576)
 BUILD_DEPENDS +=	x11/dbus
 REGRESS_IS_INTERACTIVE=	x11
 REGRESS_FLAGS=		GTESTER="${WRKBUILD}/glib/gtester -k"
