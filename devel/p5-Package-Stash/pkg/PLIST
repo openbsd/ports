@@ -1,4 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/29 13:56:06 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/06 10:01:33 sthen Exp $
+bin/package-stash-conflicts
 ${P5SITE}/Package/
+${P5SITE}/Package/Stash/
 ${P5SITE}/Package/Stash.pm
+${P5SITE}/Package/Stash/Conflicts.pm
+${P5SITE}/Package/Stash/PP.pm
 @man man/man3p/Package::Stash.3p
+@man man/man3p/Package::Stash::PP.3p
