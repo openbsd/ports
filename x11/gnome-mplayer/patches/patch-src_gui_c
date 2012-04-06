@@ -1,10 +1,65 @@
-$OpenBSD: patch-src_gui_c,v 1.23 2012/04/06 07:01:38 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.24 2012/04/06 10:14:44 dcoppa Exp $
+
+Separate delete and destroy events
+(upstream svn revisions r2232 & r2233)
 
 Remove deprecated slide_away code to unbreak with glib-2.32
+(upstream svn revision r2234)
 
---- src/gui.c.orig	Fri Apr  6 08:48:48 2012
-+++ src/gui.c	Fri Apr  6 08:50:42 2012
-@@ -2453,51 +2453,6 @@ void vol_button_value_changed_callback(GtkScaleButton 
+--- src/gui.c.orig	Thu Mar 22 05:58:16 2012
++++ src/gui.c	Fri Apr  6 11:44:16 2012
+@@ -1274,6 +1274,7 @@ gboolean set_quit(void *data)
+ {
+ 
+     delete_callback(NULL, NULL, NULL);
++    g_idle_add(set_destroy, NULL);
+     return FALSE;
+ }
+ 
+@@ -1516,6 +1517,18 @@ gboolean notification_handler(GtkWidget * widget, GdkE
+     return FALSE;
+ }
+ 
++gboolean set_destroy(gpointer data)
++{
++    gtk_widget_destroy(window);
++    return FALSE;
++}
++
++
++static void destroy_callback(GtkWidget * widget, gpointer data)
++{
++    gtk_main_quit();
++}
++
+ gboolean delete_callback(GtkWidget * widget, GdkEvent * event, void *data)
+ {
+     loop = 0;
+@@ -1568,7 +1581,6 @@ gboolean delete_callback(GtkWidget * widget, GdkEvent 
+     if (use_defaultpl && embed_window == 0)
+         save_playlist_pls(default_playlist);
+ 
+-    gtk_main_quit();
+     return FALSE;
+ }
+ 
+@@ -1940,6 +1952,7 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+             return FALSE;
+         case GDK_q:
+             delete_callback(NULL, NULL, NULL);
++            g_idle_add(set_destroy, NULL);
+             return FALSE;
+         case GDK_v:
+             /*
+@@ -1980,6 +1993,7 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+                     gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_fullscreen), !fullscreen);
+             } else {
+                 delete_callback(NULL, NULL, NULL);
++                g_idle_add(set_destroy, NULL);
+             }
+             return FALSE;
+         case GDK_f:
+@@ -2453,51 +2467,6 @@ void vol_button_value_changed_callback(GtkScaleButton 
  }
  #endif
  
@@ -56,7 +111,7 @@ Remove deprecated slide_away code to unbreak with glib-2.32
  gboolean make_panel_and_mouse_invisible(gpointer data)
  {
      GTimeVal currenttime;
-@@ -2515,10 +2470,6 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
+@@ -2515,10 +2484,6 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
          g_get_current_time(&currenttime);
          g_time_val_add(&currenttime, -auto_hide_timeout * G_USEC_PER_SEC);
          if (last_movement_time > 0 && currenttime.tv_sec > last_movement_time) {
@@ -67,7 +122,7 @@ Remove deprecated slide_away code to unbreak with glib-2.32
              hide_fs_controls();
          }
  
-@@ -2569,7 +2520,6 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
+@@ -2569,7 +2534,6 @@ gboolean make_panel_and_mouse_invisible(gpointer data)
  gboolean make_panel_and_mouse_visible(gpointer data)
  {
  
@@ -75,3 +130,19 @@ Remove deprecated slide_away code to unbreak with glib-2.32
      if (showcontrols && GTK_IS_WIDGET(controls_box)) {
          //gtk_widget_set_size_request(controls_box, -1, -1);
          //gtk_widget_show(controls_box);
+@@ -3247,6 +3211,7 @@ void menuitem_save_callback(GtkMenuItem * menuitem, vo
+ void menuitem_quit_callback(GtkMenuItem * menuitem, void *data)
+ {
+     delete_callback(NULL, NULL, NULL);
++    gtk_widget_destroy(window);
+ }
+ 
+ void menuitem_prev_callback(GtkMenuItem * menuitem, void *data)
+@@ -6888,6 +6853,7 @@ GtkWidget *create_window(gint windowid)
+     gtk_widget_add_events(window, GDK_STRUCTURE_MASK);
+     gtk_widget_add_events(window, GDK_POINTER_MOTION_MASK);
+     delete_signal_id = g_signal_connect(G_OBJECT(window), "delete_event", G_CALLBACK(delete_callback), NULL);
++    g_signal_connect(G_OBJECT(window), "destroy", G_CALLBACK(destroy_callback), NULL);
+     g_signal_connect(G_OBJECT(window), "motion_notify_event", G_CALLBACK(motion_notify_callback), NULL);
+     g_signal_connect(G_OBJECT(window), "window_state_event", G_CALLBACK(window_state_callback), NULL);
+     g_signal_connect(G_OBJECT(window), "configure_event", G_CALLBACK(configure_callback), NULL);

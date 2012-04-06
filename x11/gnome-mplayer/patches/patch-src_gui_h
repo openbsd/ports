@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gui_h,v 1.5 2012/04/06 10:14:44 dcoppa Exp $
+
+Separate delete and destroy events
+(upstream svn revisions r2232 & r2233)
+
+--- src/gui.h.orig	Tue Feb 21 19:04:44 2012
++++ src/gui.h	Fri Apr  6 11:42:28 2012
+@@ -362,3 +362,4 @@ gint get_index_from_key_and_modifier(guint key, GdkMod
+ 
+ void show_fs_controls();
+ void hide_fs_controls();
++gboolean set_destroy(gpointer data);

@@ -1,0 +1,318 @@
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.4 2012/04/06 10:13:55 dcoppa Exp $
+
+Fix error when shifting protocol from mms to mmsh
+(upstream svn revision r92)
+
+Allow one decoding error restart
+(upstream svn revision r93)
+
+Only do the restart on decoding error if the position is 0
+(upstream svn revision r94)
+
+Fix a crash by resetting codecs variables to NULL after
+g_free has been called (upstream svn revision r95)
+
+Kill GTK widget oversize warning
+(upstream svn revision r98)
+
+Assign NULL to freed strings
+(upstream svn revision r102)
+
+--- src/gmtk_media_player.c.orig	Mon Feb 20 21:40:13 2012
++++ src/gmtk_media_player.c	Fri Apr  6 11:01:10 2012
+@@ -89,13 +89,15 @@ gboolean signal_event(gpointer data)
+             break;
+ 
+         case EVENT_TYPE_ALLOCATION:
+-            g_signal_emit_by_name(event->player, event->event_name, event->event_allocation);
++            if (!(event->event_allocation->width >= 65535 || event->event_allocation->height >= 65535))
++                g_signal_emit_by_name(event->player, event->event_name, event->event_allocation);
+             break;
+ 
+         default:
+             printf("undefined event %s\n", event->event_name);
+         }
+         g_free(event->event_name);
++        event->event_name = NULL;
+     }
+     if (event)
+         g_free(event);
+@@ -752,6 +754,7 @@ void gmtk_media_player_set_uri(GmtkMediaPlayer * playe
+         g_free(cmd);
+         if (filename != NULL) {
+             g_free(filename);
++            filename = NULL;
+         }
+         if (player->media_state == MEDIA_STATE_STOP) {
+             gmtk_media_player_set_state(player, MEDIA_STATE_PLAY);
+@@ -892,6 +895,7 @@ void gmtk_media_player_send_command(GmtkMediaPlayer * 
+                                 g_dgettext(GETTEXT_PACKAGE, "Frame Dropping"));
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+             break;
+ 
+         default:
+@@ -913,6 +917,7 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+             cmd = g_strdup_printf("set_property sub_visibility %i\n", value);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+             if (value) {
+                 cmd =
+                     g_strdup_printf("osd_show_property_text \"%s\"\n",
+@@ -923,6 +928,7 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+             }
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -932,6 +938,7 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+             cmd = g_strdup_printf("frame_drop %i\n", value);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -953,6 +960,7 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+             cmd = g_strdup_printf("mute %i\n", value);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1142,6 +1150,7 @@ void gmtk_media_player_set_attribute_double(GmtkMediaP
+             }
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1151,6 +1160,7 @@ void gmtk_media_player_set_attribute_double(GmtkMediaP
+             cmd = g_strdup_printf("speed_set %f\n", player->speed_multiplier);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1160,6 +1170,7 @@ void gmtk_media_player_set_attribute_double(GmtkMediaP
+             cmd = g_strdup_printf("sub_scale %f 1\n", player->subtitle_scale);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1169,6 +1180,7 @@ void gmtk_media_player_set_attribute_double(GmtkMediaP
+             cmd = g_strdup_printf("set_property sub_delay %f 1\n", player->subtitle_delay);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1178,6 +1190,7 @@ void gmtk_media_player_set_attribute_double(GmtkMediaP
+             cmd = g_strdup_printf("set_property audio_delay %f 1\n", player->audio_delay);
+             write_to_mplayer(player, cmd);
+             g_free(cmd);
++            cmd = NULL;
+         }
+         break;
+ 
+@@ -1278,6 +1291,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_VO:
+         if (player->vo != NULL) {
+             g_free(player->vo);
++            player->vo = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->vo = NULL;
+@@ -1289,6 +1303,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_AO:
+         if (player->ao != NULL) {
+             g_free(player->ao);
++            player->ao = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->ao = NULL;
+@@ -1300,6 +1315,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_MEDIA_DEVICE:
+         if (player->media_device != NULL) {
+             g_free(player->media_device);
++            player->media_device = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->media_device = NULL;
+@@ -1311,6 +1327,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_EXTRA_OPTS:
+         if (player->extra_opts != NULL) {
+             g_free(player->extra_opts);
++            player->extra_opts = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->extra_opts = NULL;
+@@ -1322,6 +1339,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_MPLAYER_BINARY:
+         if (player->mplayer_binary != NULL) {
+             g_free(player->mplayer_binary);
++            player->mplayer_binary = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->mplayer_binary = NULL;
+@@ -1334,6 +1352,7 @@ void gmtk_media_player_set_attribute_string(GmtkMediaP
+     case ATTRIBUTE_AUDIO_TRACK_FILE:
+         if (player->audio_track_file != NULL) {
+             g_free(player->audio_track_file);
++            player->audio_track_file = NULL;
+         }
+         if (value == NULL || strlen(value) == 0) {
+             player->audio_track_file = NULL;
+@@ -1941,6 +1960,7 @@ gpointer launch_mplayer(gpointer data)
+     gchar *codecs_vdpau = NULL;
+     gchar *codecs_crystalhd = NULL;
+     gchar *codecs = NULL;
++    GmtkMediaPlayerPlaybackError last_error = NO_ERROR;
+ #ifdef GIO_ENABLED
+     GFile *file;
+ #endif
+@@ -2086,18 +2106,23 @@ gpointer launch_mplayer(gpointer data)
+             codecs = g_strconcat(codecs_vdpau, codecs_crystalhd, NULL);
+             g_free(codecs_vdpau);
+             g_free(codecs_crystalhd);
++            codecs_vdpau = NULL;
++            codecs_crystalhd = NULL;
+         } else if (codecs_vdpau) {
+             codecs = g_strdup(codecs_vdpau);
+             g_free(codecs_vdpau);
++            codecs_vdpau = NULL;
+         } else if (codecs_crystalhd) {
+             codecs = g_strdup(codecs_crystalhd);
+             g_free(codecs_crystalhd);
++            codecs_crystalhd = NULL;
+         }
+ 
+         if (codecs != NULL) {
+             argv[argn++] = g_strdup_printf("-vc");
+             argv[argn++] = g_strdup_printf("%s", codecs);
+             g_free(codecs);
++            codecs = NULL;
+         }
+ 
+         if (player->ao != NULL) {
+@@ -2535,7 +2560,7 @@ gpointer launch_mplayer(gpointer data)
+             break;
+ 
+         case ERROR_RETRY_WITH_MMSHTTP:
+-            tmp = gmtk_media_player_switch_protocol(player->uri, "http");
++            tmp = gmtk_media_player_switch_protocol(player->uri, "mmsh");
+             g_free(player->uri);
+             player->uri = tmp;
+             break;
+@@ -2551,6 +2576,14 @@ gpointer launch_mplayer(gpointer data)
+         case ERROR_RETRY_ALSA_BUSY:
+         case ERROR_RETRY_VDPAU:
+             break;
++        case ERROR_RETRY:
++            if (last_error == NO_ERROR) {
++                last_error == ERROR_RETRY;
++            } else {
++                last_error == NO_ERROR;
++                player->playback_error == NO_ERROR;
++            }
++            break;
+ 
+         case ERROR_RETRY_WITHOUT_HARDWARE_CODECS:
+             player->enable_hardware_codecs = FALSE;
+@@ -2641,7 +2674,14 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+     }
+ 
+     if (strstr(mplayer_output->str, "signal") != NULL) {
+-        error_msg = g_strdup(mplayer_output->str);
++        if (strstr(mplayer_output->str, "decode") != NULL) {
++            create_event_int(player, "attribute-changed", ATTRIBUTE_SIZE);
++            if (player->position == 0) {
++                player->playback_error = ERROR_RETRY;
++            }
++        } else {
++            error_msg = g_strdup(mplayer_output->str);
++        }
+     }
+ 
+     if (strstr(mplayer_output->str, "Failed creating VDPAU decoder") != NULL) {
+@@ -2688,6 +2728,11 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+         }
+     }
+ 
++    if (strstr(mplayer_output->str, "MPlayer interrupted by signal 13 in module: open_stream") != NULL
++        && g_strrstr(player->uri, "mms://") != NULL) {
++        player->playback_error = ERROR_RETRY_WITH_MMSHTTP;
++    }
++
+     if (strstr(mplayer_output->str, "No stream found to handle url mmshttp://") != NULL) {
+         player->playback_error = ERROR_RETRY_WITH_HTTP;
+     }
+@@ -2751,13 +2796,14 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+         create_event_int(player, "attribute-changed", ATTRIBUTE_TITLE);
+     }
+ 
+-    if (error_msg != NULL) {
++    if (error_msg != NULL && player->playback_error == NO_ERROR) {
+         dialog = gtk_message_dialog_new(NULL, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR,
+                                         GTK_BUTTONS_CLOSE, "%s", error_msg);
+         gtk_window_set_title(GTK_WINDOW(dialog), g_dgettext(GETTEXT_PACKAGE, "GNOME MPlayer Error"));
+         gtk_dialog_run(GTK_DIALOG(dialog));
+         gtk_widget_destroy(dialog);
+         g_free(error_msg);
++        error_msg = NULL;
+     }
+ 
+     g_string_free(mplayer_output, TRUE);
+@@ -3373,6 +3419,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+ 
+                 }
+                 g_free(icy);
++                icy = NULL;
+                 g_free(message);
+                 message = NULL;
+             }
+@@ -3411,6 +3458,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+ 
+             }
+             g_free(icy);
++            icy = NULL;
+             g_free(message);
+             message = NULL;
+         }
+@@ -3536,10 +3584,14 @@ gboolean detect_mplayer_features(GmtkMediaPlayer * pla
+         printf("Error when running: %s\n", error->message);
+         g_error_free(error);
+         error = NULL;
+-        if (out != NULL)
++        if (out != NULL) {
+             g_free(out);
+-        if (err != NULL)
++            out = NULL;
++        }
++        if (err != NULL) {
+             g_free(err);
++            err = NULL;
++        }
+         return FALSE;
+     }
+     output = g_strsplit(out, "\n", 0);
+@@ -3555,7 +3607,9 @@ gboolean detect_mplayer_features(GmtkMediaPlayer * pla
+     }
+     g_strfreev(output);
+     g_free(out);
++    out = NULL;
+     g_free(err);
++    err = NULL;
+ 
+     player->features_detected = TRUE;
+     if (!ret) {

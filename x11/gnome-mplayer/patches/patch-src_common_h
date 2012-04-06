@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_common_h,v 1.5 2012/04/06 07:01:38 dcoppa Exp $
+$OpenBSD: patch-src_common_h,v 1.6 2012/04/06 10:14:44 dcoppa Exp $
 
 Remove deprecated slide_away code to unbreak with glib-2.32
+(upstream svn revision r2234)
 
 --- src/common.h.orig	Fri Apr  6 08:48:38 2012
 +++ src/common.h	Fri Apr  6 08:49:16 2012
