@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/04/06 11:50:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2012/04/06 14:38:01 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		input and output plugins for audacious
 
 V =			3.2
 DISTNAME =		audacious-plugins-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio multimedia
 
@@ -60,8 +60,7 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
-CONFIGURE_ARGS +=	--enable-gio \
-			--enable-ipv6 \
+CONFIGURE_ARGS +=	--enable-ipv6 \
 			--disable-pulse \
 			--disable-adplug \
 			--disable-sid \
