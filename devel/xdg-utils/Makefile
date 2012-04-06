@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/04 07:54:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/06 07:53:38 ajacoutot Exp $
 
 # Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
 # gtk-update-icon-cache, shared-mime-info... on purpose as it should
@@ -8,10 +8,9 @@ COMMENT=	utilities to assist desktop integration tasks
 
 DISTNAME=	xdg-utils-1.0.2
 EXTRACT_SUFX=	.tgz
+REVISION=	13
 
 CATEGORIES=	devel
-
-REVISION=	12
 
 HOMEPAGE=	http://portland.freedesktop.org/wiki/
 

@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/04/06 07:53:38 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-xdg-utils is patched to permit customized start scripts when opening
-files, URLs or emails.  Example scripts can be found in
-${TRUEPREFIX}/share/examples/xdg-utils.  Just copy these into your PATH
-as xdg-email-hook or xdg-open-hook.
+Overriding xdg system scripts with specific ones can be done by creating
+a script called xdg-XXX-hook into the PATH, where XXX is the
+corresponding overriden action (e.g. xdg-open-hook or xdg-email-hook).
+Some examples scripts are provided under:
+    ${TRUEPREFIX}/share/examples/xdg-utils
