@@ -1,62 +1,74 @@
-# $OpenBSD: Makefile,v 1.37 2011/04/21 15:25:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/04/06 13:46:11 sthen Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
-DISTNAME =	abuse-0.7.1
-REVISION =	1
+DISTNAME =	abuse-free-0.8
+PKGNAME =	abuse-0.8
 EPOCH =		0
-ABUSE_FRABS = 	abuse-frabs-2.11
+ABUSE_SFX =	abuse-free-sounds-20120309
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://abuse.zoy.org/
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
 
-# GPLv2 and public domain
+# Abuse: GPLv2 and public domain
+# Abuse-free-sounds: various free licenses
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c m pthread GL stdc++ usbhid SDL sndio X11 Xau Xdamage \
-		Xdmcp Xext Xfixes Xxf86vm drm pthread-stubs xcb
+WANTLIB += FLAC GL SDL SDL_mixer X11 Xdamage Xext Xfixes Xrandr
+WANTLIB += Xrender Xxf86vm c drm iconv m mikmod ogg pthread smpeg
+WANTLIB += sndio stdc++ usbhid vorbis vorbisfile xcb
 
-MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/Downloads/
+MASTER_SITES =	${HOMEPAGE}raw-attachment/wiki/download/
+MASTER_SITES0 =	http://openbsd.fi/dist/
 
 MODULES =	converters/libiconv
 # Needs AC_PROG_LIBTOOL
 BUILD_DEPENDS =	devel/libtool \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-LIB_DEPENDS =	devel/sdl
+RUN_DEPENDS = 	audio/timidity
+LIB_DEPENDS =	devel/sdl-mixer \
+		devel/smpeg \
+		audio/flac \
+		audio/libogg \
+		audio/libmikmod \
+		audio/libvorbis
 
-DISTFILES = 	${DISTNAME}.tar.gz ${ABUSE_FRABS}.tar.gz
-EXTRACT_ONLY =	${DISTNAME}.tar.gz
+DISTFILES = 	${DISTNAME}.tar.gz \
+		${ABUSE_SFX}.tar.gz:0
 
+SEPARATE_BUILD =Yes
 USE_LIBTOOL =	Yes
 
-AUTOCONF_VERSION =	2.61
-AUTOMAKE_VERSION =	1.10
 CONFIGURE_STYLE =	gnu
-
-CONFIGURE_ENV =	CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ARGS =	--enable-release \
+			--disable-nonfree \
+			--with-assetdir=${PREFIX}/share/abuse \
+			--datadir=${PREFIX}/share/abuse
+AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.68
 
 NO_REGRESS =	Yes
-DATADIR =	${PREFIX}/share/abuse/frabs
-SUBST_VARS =	DATADIR
+
+post-patch:
+	cd "${WRKSRC}" && \
+		find "${WRKDIR}/${ABUSE_SFX}/patches/" -name 'patch-*' \
+		-exec patch -z .afs-orig -i {} \;
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/sdlport/setup.cpp
-	cd ${WRKSRC}; \
+	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		autoreconf -fi
 
 post-install:
-	cd ${PREFIX}/share/abuse && \
-		gzip -dc ${FULLDISTDIR}/${ABUSE_FRABS}.tar.gz | \
-		tar xf - && \
-		mv ${ABUSE_FRABS} frabs
+	${INSTALL_DATA_DIR} ${PREFIX}/share/abuse/sfx
+	cd ${WRKDIR}/${ABUSE_SFX}/sfx && find . -type f -exec \
+		${INSTALL_DATA} {} ${PREFIX}/share/abuse/sfx/ \;
 
 .include <bsd.port.mk>

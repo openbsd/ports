@@ -1,25 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.2 2011/04/21 15:25:08 jasper Exp $
---- configure.ac.orig	Sun Mar  2 20:42:24 2008
-+++ configure.ac	Thu Apr 21 17:20:55 2011
-@@ -18,7 +18,7 @@ AC_PATH_X
- X_LIBS=-L$x_libraries
+$OpenBSD: patch-configure_ac,v 1.3 2012/04/06 13:46:11 sthen Exp $
+--- configure.ac.orig	Fri Mar  9 21:16:53 2012
++++ configure.ac	Fri Mar  9 21:16:55 2012
+@@ -69,7 +69,7 @@ if test "${enable_debug}" = "yes"; then
+   AC_DEFINE(HAVE_DEBUG, 1, Define to 1 to activate debug)
+   OPT="-O0"
+ else
+-  OPT="-O2 -fno-strength-reduce -fomit-frame-pointer"
++  OPT="-fno-strength-reduce -fomit-frame-pointer"
+ fi
  
- dnl Figure out where the datafiles will be
--EXPDATADIR="-DEXPDATADIR=\\\"$datadir/games/abuse\\\""
-+EXPDATADIR="-DEXPDATADIR=\\\"$datadir/abuse/frabs\\\""
- AC_SUBST(EXPDATADIR)
- 
- dnl Checks for libraries
-@@ -37,10 +37,10 @@ SDL_VERSION=1.1.6
- AM_PATH_SDL($SDL_VERSION, :,
-     AC_MSG_ERROR([*** SDL version $SDL_VERSION or above not found!]))
- CFLAGS="$CFLAGS $SDL_CFLAGS"
--LIBS="$LIBS $SDL_LIBS $X_LIBS -L/usr/lib"
-+LIBS="$LIBS $SDL_LIBS $X_LIBS"
- 
- # Optimizations
--CPPFLAGS="${CPPFLAGS} -g -O2 -fno-strength-reduce -fomit-frame-pointer"
-+CPPFLAGS="${CPPFLAGS} -O2 -fno-strength-reduce -fomit-frame-pointer"
- # Code qui fait des warnings == code de porc == deux baffes dans ta gueule
- CPPFLAGS="${CPPFLAGS} -Wall -Wpointer-arith -Wcast-align -Wcast-qual -Waggregate-return -Wsign-compare"
- 
+ if test "${enable_release}" = "yes"; then
