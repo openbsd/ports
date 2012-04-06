@@ -1,12 +1,15 @@
-$OpenBSD: README,v 1.1 2011/09/22 10:23:33 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2012/04/06 07:26:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 To be able to display popup notifications one of the following
-notification daemons for DBus need to be installed:
+notification daemons needs to be installed:
 
     * notification-daemon
     * xfce4-notifyd
     * notification-daemon-xfce (deprecated)
+
+Note that gnome-shell also acts as a notification daemon in which case
+it is not necessary to install another one.
