@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/06 09:26:54 sthen Exp $
+${P5SITE}/Lingua/EN/
+${P5SITE}/Lingua/EN/Tagger/
+${P5SITE}/Lingua/EN/Tagger.pm
+${P5SITE}/Lingua/EN/Tagger/pos_tags.hash
+${P5SITE}/Lingua/EN/Tagger/pos_words.hash
+${P5SITE}/Lingua/EN/Tagger/tags.yml
+${P5SITE}/Lingua/EN/Tagger/unknown.yml
+${P5SITE}/Lingua/EN/Tagger/words.yml
+@man man/man3p/Lingua::EN::Tagger.3p
