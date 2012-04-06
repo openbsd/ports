@@ -1,33 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/10/25 21:26:47 simon Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/06 10:00:10 sthen Exp $
 bin/dbicadmin
-${P5SITE}/DBIx/
-${P5SITE}/DBIx/Class/
 ${P5SITE}/DBIx/Class.pm
 ${P5SITE}/DBIx/Class/AccessorGroup.pm
+${P5SITE}/DBIx/Class/Admin/
+${P5SITE}/DBIx/Class/Admin.pm
+${P5SITE}/DBIx/Class/Admin/Descriptive.pm
+${P5SITE}/DBIx/Class/Admin/Types.pm
+${P5SITE}/DBIx/Class/Admin/Usage.pm
 ${P5SITE}/DBIx/Class/CDBICompat/
 ${P5SITE}/DBIx/Class/CDBICompat.pm
+${P5SITE}/DBIx/Class/CDBICompat/AbstractSearch.pm
 ${P5SITE}/DBIx/Class/CDBICompat/AccessorMapping.pm
 ${P5SITE}/DBIx/Class/CDBICompat/AttributeAPI.pm
 ${P5SITE}/DBIx/Class/CDBICompat/AutoUpdate.pm
 ${P5SITE}/DBIx/Class/CDBICompat/ColumnCase.pm
 ${P5SITE}/DBIx/Class/CDBICompat/ColumnGroups.pm
+${P5SITE}/DBIx/Class/CDBICompat/ColumnsAsHash.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Constraints.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Constructor.pm
+${P5SITE}/DBIx/Class/CDBICompat/Copy.pm
 ${P5SITE}/DBIx/Class/CDBICompat/DestroyWarning.pm
 ${P5SITE}/DBIx/Class/CDBICompat/GetSet.pm
-${P5SITE}/DBIx/Class/CDBICompat/HasA.pm
-${P5SITE}/DBIx/Class/CDBICompat/HasMany.pm
 ${P5SITE}/DBIx/Class/CDBICompat/ImaDBI.pm
+${P5SITE}/DBIx/Class/CDBICompat/Iterator.pm
 ${P5SITE}/DBIx/Class/CDBICompat/LazyLoading.pm
 ${P5SITE}/DBIx/Class/CDBICompat/LiveObjectIndex.pm
-${P5SITE}/DBIx/Class/CDBICompat/MightHave.pm
-${P5SITE}/DBIx/Class/CDBICompat/ObjIndexStubs.pm
+${P5SITE}/DBIx/Class/CDBICompat/NoObjectIndex.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Pager.pm
 ${P5SITE}/DBIx/Class/CDBICompat/ReadOnly.pm
+${P5SITE}/DBIx/Class/CDBICompat/Relationship.pm
+${P5SITE}/DBIx/Class/CDBICompat/Relationships.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Retrieve.pm
+${P5SITE}/DBIx/Class/CDBICompat/SQLTransformer.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Stringify.pm
 ${P5SITE}/DBIx/Class/CDBICompat/TempColumns.pm
 ${P5SITE}/DBIx/Class/CDBICompat/Triggers.pm
+${P5SITE}/DBIx/Class/Carp.pm
 ${P5SITE}/DBIx/Class/ClassResolver/
 ${P5SITE}/DBIx/Class/ClassResolver/PassThrough.pm
 ${P5SITE}/DBIx/Class/Componentised.pm
@@ -35,6 +43,7 @@ ${P5SITE}/DBIx/Class/Core.pm
 ${P5SITE}/DBIx/Class/Cursor.pm
 ${P5SITE}/DBIx/Class/DB.pm
 ${P5SITE}/DBIx/Class/Exception.pm
+${P5SITE}/DBIx/Class/FilterColumn.pm
 ${P5SITE}/DBIx/Class/InflateColumn/
 ${P5SITE}/DBIx/Class/InflateColumn.pm
 ${P5SITE}/DBIx/Class/InflateColumn/DateTime.pm
@@ -46,10 +55,15 @@ ${P5SITE}/DBIx/Class/Manual/Cookbook.pod
 ${P5SITE}/DBIx/Class/Manual/DocMap.pod
 ${P5SITE}/DBIx/Class/Manual/Example.pod
 ${P5SITE}/DBIx/Class/Manual/FAQ.pod
+${P5SITE}/DBIx/Class/Manual/Features.pod
 ${P5SITE}/DBIx/Class/Manual/Glossary.pod
 ${P5SITE}/DBIx/Class/Manual/Intro.pod
 ${P5SITE}/DBIx/Class/Manual/Joining.pod
+${P5SITE}/DBIx/Class/Manual/Reading.pod
 ${P5SITE}/DBIx/Class/Manual/Troubleshooting.pod
+${P5SITE}/DBIx/Class/Optional/
+${P5SITE}/DBIx/Class/Optional/Dependencies.pm
+${P5SITE}/DBIx/Class/Optional/Dependencies.pod
 ${P5SITE}/DBIx/Class/Ordered.pm
 ${P5SITE}/DBIx/Class/PK/
 ${P5SITE}/DBIx/Class/PK.pm
@@ -74,49 +88,106 @@ ${P5SITE}/DBIx/Class/Relationship/ManyToMany.pm
 ${P5SITE}/DBIx/Class/Relationship/ProxyMethods.pm
 ${P5SITE}/DBIx/Class/ResultClass/
 ${P5SITE}/DBIx/Class/ResultClass/HashRefInflator.pm
+${P5SITE}/DBIx/Class/ResultSet/
 ${P5SITE}/DBIx/Class/ResultSet.pm
+${P5SITE}/DBIx/Class/ResultSet/Pager.pm
 ${P5SITE}/DBIx/Class/ResultSetColumn.pm
 ${P5SITE}/DBIx/Class/ResultSetManager.pm
 ${P5SITE}/DBIx/Class/ResultSetProxy.pm
 ${P5SITE}/DBIx/Class/ResultSource/
 ${P5SITE}/DBIx/Class/ResultSource.pm
 ${P5SITE}/DBIx/Class/ResultSource/Table.pm
+${P5SITE}/DBIx/Class/ResultSource/View.pm
 ${P5SITE}/DBIx/Class/ResultSourceHandle.pm
 ${P5SITE}/DBIx/Class/ResultSourceProxy/
 ${P5SITE}/DBIx/Class/ResultSourceProxy.pm
 ${P5SITE}/DBIx/Class/ResultSourceProxy/Table.pm
 ${P5SITE}/DBIx/Class/Row.pm
+${P5SITE}/DBIx/Class/SQLAHacks/
+${P5SITE}/DBIx/Class/SQLAHacks.pm
+${P5SITE}/DBIx/Class/SQLAHacks/MSSQL.pm
+${P5SITE}/DBIx/Class/SQLAHacks/MySQL.pm
+${P5SITE}/DBIx/Class/SQLAHacks/Oracle.pm
+${P5SITE}/DBIx/Class/SQLAHacks/OracleJoins.pm
+${P5SITE}/DBIx/Class/SQLAHacks/SQLite.pm
+${P5SITE}/DBIx/Class/SQLMaker/
+${P5SITE}/DBIx/Class/SQLMaker.pm
+${P5SITE}/DBIx/Class/SQLMaker/ACCESS.pm
+${P5SITE}/DBIx/Class/SQLMaker/LimitDialects.pm
+${P5SITE}/DBIx/Class/SQLMaker/MSSQL.pm
+${P5SITE}/DBIx/Class/SQLMaker/MySQL.pm
+${P5SITE}/DBIx/Class/SQLMaker/Oracle.pm
+${P5SITE}/DBIx/Class/SQLMaker/OracleJoins.pm
+${P5SITE}/DBIx/Class/SQLMaker/SQLite.pm
 ${P5SITE}/DBIx/Class/Schema/
 ${P5SITE}/DBIx/Class/Schema.pm
 ${P5SITE}/DBIx/Class/Schema/Versioned.pm
 ${P5SITE}/DBIx/Class/Serialize/
 ${P5SITE}/DBIx/Class/Serialize/Storable.pm
-${P5SITE}/DBIx/Class/Storage/
+${P5SITE}/DBIx/Class/StartupCheck.pm
 ${P5SITE}/DBIx/Class/Storage.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/
 ${P5SITE}/DBIx/Class/Storage/DBI.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ACCESS.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ADO/
+${P5SITE}/DBIx/Class/Storage/DBI/ADO.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ADO/MS_Jet/
+${P5SITE}/DBIx/Class/Storage/DBI/ADO/MS_Jet.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ADO/MS_Jet/Cursor.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ADO/Microsoft_SQL_Server.pm
+${P5SITE}/DBIx/Class/Storage/DBI/AutoCast.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Cursor.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/DB2.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Firebird/
+${P5SITE}/DBIx/Class/Storage/DBI/Firebird.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Firebird/Common.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Informix.pm
+${P5SITE}/DBIx/Class/Storage/DBI/InterBase.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/MSSQL.pm
-${P5SITE}/DBIx/Class/Storage/DBI/MultiDistinctEmulation.pm
+${P5SITE}/DBIx/Class/Storage/DBI/MultiColumnIn.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/NoBindVars.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC/
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ODBC/ACCESS.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/ODBC/DB2_400_SQL.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ODBC/Firebird.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ODBC/Microsoft_SQL_Server.pm
+${P5SITE}/DBIx/Class/Storage/DBI/ODBC/SQL_Anywhere.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Oracle/
 ${P5SITE}/DBIx/Class/Storage/DBI/Oracle.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Oracle/Generic.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Oracle/WhereJoins.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Pg.pm
-${P5SITE}/DBIx/Class/Storage/DBI/Replication.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Balancer/
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Balancer.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Balancer/First.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Balancer/Random.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Introduction.pod
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Pool.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Replicant.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/Types.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Replicated/WithDSN.pm
+${P5SITE}/DBIx/Class/Storage/DBI/SQLAnywhere/
+${P5SITE}/DBIx/Class/Storage/DBI/SQLAnywhere.pm
+${P5SITE}/DBIx/Class/Storage/DBI/SQLAnywhere/Cursor.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/SQLite.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Sybase/
 ${P5SITE}/DBIx/Class/Storage/DBI/Sybase.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/ASE/
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/ASE.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/ASE/NoBindVars.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/FreeTDS.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/Sybase/MSSQL.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server/
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server.pm
+${P5SITE}/DBIx/Class/Storage/DBI/Sybase/Microsoft_SQL_Server/NoBindVars.pm
+${P5SITE}/DBIx/Class/Storage/DBI/UniqueIdentifier.pm
 ${P5SITE}/DBIx/Class/Storage/DBI/mysql.pm
+${P5SITE}/DBIx/Class/Storage/DBIHacks.pm
 ${P5SITE}/DBIx/Class/Storage/Statistics.pm
-${P5SITE}/DBIx/Class/Test/
-${P5SITE}/DBIx/Class/Test/SQLite.pm
+${P5SITE}/DBIx/Class/Storage/TxnScopeGuard.pm
 ${P5SITE}/DBIx/Class/UTF8Columns.pm
 ${P5SITE}/SQL/Translator/
 ${P5SITE}/SQL/Translator/Parser/
@@ -129,11 +200,22 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man1/dbicadmin.1
 @man man/man3p/DBIx::Class.3p
 @man man/man3p/DBIx::Class::AccessorGroup.3p
+@man man/man3p/DBIx::Class::Admin.3p
 @man man/man3p/DBIx::Class::CDBICompat.3p
+@man man/man3p/DBIx::Class::CDBICompat::AbstractSearch.3p
+@man man/man3p/DBIx::Class::CDBICompat::ColumnsAsHash.3p
+@man man/man3p/DBIx::Class::CDBICompat::Copy.3p
+@man man/man3p/DBIx::Class::CDBICompat::Iterator.3p
+@man man/man3p/DBIx::Class::CDBICompat::NoObjectIndex.3p
+@man man/man3p/DBIx::Class::CDBICompat::Relationship.3p
+@man man/man3p/DBIx::Class::CDBICompat::Relationships.3p
+@man man/man3p/DBIx::Class::CDBICompat::SQLTransformer.3p
+@man man/man3p/DBIx::Class::Carp.3p
 @man man/man3p/DBIx::Class::Core.3p
 @man man/man3p/DBIx::Class::Cursor.3p
 @man man/man3p/DBIx::Class::DB.3p
 @man man/man3p/DBIx::Class::Exception.3p
+@man man/man3p/DBIx::Class::FilterColumn.3p
 @man man/man3p/DBIx::Class::InflateColumn.3p
 @man man/man3p/DBIx::Class::InflateColumn::DateTime.3p
 @man man/man3p/DBIx::Class::InflateColumn::File.3p
@@ -143,10 +225,13 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::Manual::DocMap.3p
 @man man/man3p/DBIx::Class::Manual::Example.3p
 @man man/man3p/DBIx::Class::Manual::FAQ.3p
+@man man/man3p/DBIx::Class::Manual::Features.3p
 @man man/man3p/DBIx::Class::Manual::Glossary.3p
 @man man/man3p/DBIx::Class::Manual::Intro.3p
 @man man/man3p/DBIx::Class::Manual::Joining.3p
+@man man/man3p/DBIx::Class::Manual::Reading.3p
 @man man/man3p/DBIx::Class::Manual::Troubleshooting.3p
+@man man/man3p/DBIx::Class::Optional::Dependencies.3p
 @man man/man3p/DBIx::Class::Ordered.3p
 @man man/man3p/DBIx::Class::PK.3p
 @man man/man3p/DBIx::Class::PK::Auto.3p
@@ -158,38 +243,72 @@ ${P5SITE}/SQL/Translator/Producer/DBIx/Class/File.pm
 @man man/man3p/DBIx::Class::PK::Auto::SQLite.3p
 @man man/man3p/DBIx::Class::Relationship.3p
 @man man/man3p/DBIx::Class::Relationship::Base.3p
-@man man/man3p/DBIx::Class::Relationship::BelongsTo.3p
 @man man/man3p/DBIx::Class::ResultClass::HashRefInflator.3p
 @man man/man3p/DBIx::Class::ResultSet.3p
 @man man/man3p/DBIx::Class::ResultSetColumn.3p
 @man man/man3p/DBIx::Class::ResultSetManager.3p
 @man man/man3p/DBIx::Class::ResultSource.3p
 @man man/man3p/DBIx::Class::ResultSource::Table.3p
+@man man/man3p/DBIx::Class::ResultSource::View.3p
 @man man/man3p/DBIx::Class::ResultSourceHandle.3p
 @man man/man3p/DBIx::Class::ResultSourceProxy::Table.3p
 @man man/man3p/DBIx::Class::Row.3p
+@man man/man3p/DBIx::Class::SQLMaker.3p
+@man man/man3p/DBIx::Class::SQLMaker::LimitDialects.3p
+@man man/man3p/DBIx::Class::SQLMaker::OracleJoins.3p
 @man man/man3p/DBIx::Class::Schema.3p
 @man man/man3p/DBIx::Class::Schema::Versioned.3p
 @man man/man3p/DBIx::Class::Serialize::Storable.3p
+@man man/man3p/DBIx::Class::StartupCheck.3p
 @man man/man3p/DBIx::Class::Storage.3p
 @man man/man3p/DBIx::Class::Storage::DBI.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ACCESS.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ADO.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ADO::MS_Jet.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ADO::MS_Jet::Cursor.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ADO::Microsoft_SQL_Server.3p
+@man man/man3p/DBIx::Class::Storage::DBI::AutoCast.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Cursor.3p
 @man man/man3p/DBIx::Class::Storage::DBI::DB2.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Firebird.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Firebird::Common.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Informix.3p
+@man man/man3p/DBIx::Class::Storage::DBI::InterBase.3p
 @man man/man3p/DBIx::Class::Storage::DBI::MSSQL.3p
-@man man/man3p/DBIx::Class::Storage::DBI::MultiDistinctEmulation.3p
+@man man/man3p/DBIx::Class::Storage::DBI::MultiColumnIn.3p
 @man man/man3p/DBIx::Class::Storage::DBI::NoBindVars.3p
 @man man/man3p/DBIx::Class::Storage::DBI::ODBC.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ODBC::ACCESS.3p
 @man man/man3p/DBIx::Class::Storage::DBI::ODBC::DB2_400_SQL.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ODBC::Firebird.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ODBC::Microsoft_SQL_Server.3p
+@man man/man3p/DBIx::Class::Storage::DBI::ODBC::SQL_Anywhere.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Oracle.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Oracle::Generic.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Oracle::WhereJoins.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Pg.3p
-@man man/man3p/DBIx::Class::Storage::DBI::Replication.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Balancer.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Balancer::First.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Balancer::Random.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Introduction.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Pool.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::Replicant.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Replicated::WithDSN.3p
+@man man/man3p/DBIx::Class::Storage::DBI::SQLAnywhere.3p
+@man man/man3p/DBIx::Class::Storage::DBI::SQLAnywhere::Cursor.3p
 @man man/man3p/DBIx::Class::Storage::DBI::SQLite.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Sybase.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Sybase::ASE.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Sybase::ASE::NoBindVars.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Sybase::FreeTDS.3p
 @man man/man3p/DBIx::Class::Storage::DBI::Sybase::MSSQL.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server.3p
+@man man/man3p/DBIx::Class::Storage::DBI::Sybase::Microsoft_SQL_Server::NoBindVars.3p
+@man man/man3p/DBIx::Class::Storage::DBI::UniqueIdentifier.3p
 @man man/man3p/DBIx::Class::Storage::DBI::mysql.3p
 @man man/man3p/DBIx::Class::Storage::Statistics.3p
-@man man/man3p/DBIx::Class::Test::SQLite.3p
+@man man/man3p/DBIx::Class::Storage::TxnScopeGuard.3p
 @man man/man3p/DBIx::Class::UTF8Columns.3p
+@man man/man3p/SQL::Translator::Parser::DBIx::Class.3p
 @man man/man3p/SQL::Translator::Producer::DBIx::Class::File.3p
