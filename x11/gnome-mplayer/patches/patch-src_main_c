@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_main_c,v 1.18 2012/04/06 07:01:39 dcoppa Exp $
+
+Remove deprecated slide_away code to unbreak with glib-2.32
+
+--- src/main.c.orig	Fri Apr  6 08:48:41 2012
++++ src/main.c	Fri Apr  6 08:49:39 2012
+@@ -734,7 +734,6 @@ int main(int argc, char *argv[])
+     subtitle_fuzziness = 0;
+     disable_embeddedfonts = FALSE;
+     quit_on_complete = FALSE;
+-    slide_away = NULL;
+     verbose = 0;
+     reallyverbose = 0;
+     embedding_disabled = FALSE;
+@@ -1066,8 +1065,6 @@ int main(int argc, char *argv[])
+     create_window(embed_window);
+ 
+     autopause = FALSE;
+-    slide_away = g_mutex_new();
+-    mplayer_complete_cond = g_cond_new();
+ #ifdef GIO_ENABLED
+     idledata->caching = g_mutex_new();
+     idledata->caching_complete = g_cond_new();
