@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/06 09:54:30 sthen Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
 MODULES =	cpan
-DISTNAME =	namespace-clean-0.18
-REVISION =	0
+DISTNAME =	namespace-clean-0.22
 CATEGORIES =	devel
 USE_GROFF =	Yes
 
@@ -17,6 +16,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	devel/p5-B-Hooks-EndOfScope>=0.07 \
+		devel/p5-Package-DeprecationManager \
 		devel/p5-Package-Stash \
 		devel/p5-Sub-Identify \
 		devel/p5-Sub-Name
