@@ -1,0 +1,5 @@
+For the theory of Memoization, please see the Memoize module
+documentation. This module implements an expiry policy for Memoize
+that follows LRU semantics, that is, the last n results, where n
+is specified as the argument to the CACHESIZE parameter, will be
+cached.

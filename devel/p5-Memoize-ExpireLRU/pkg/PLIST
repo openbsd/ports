@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/06 09:25:46 sthen Exp $
+${P5SITE}/Memoize/
+${P5SITE}/Memoize/ExpireLRU.pm
+${P5SITE}/auto/
+${P5SITE}/auto/Memoize/
+${P5SITE}/auto/Memoize/ExpireLRU/
+${P5SITE}/auto/Memoize/ExpireLRU/DumpCache.al
+${P5SITE}/auto/Memoize/ExpireLRU/ShowStats.al
+${P5SITE}/auto/Memoize/ExpireLRU/autosplit.ix
+@man man/man3p/Memoize::ExpireLRU.3p
