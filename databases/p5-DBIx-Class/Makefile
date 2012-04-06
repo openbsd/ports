@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/06 10:00:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/06 10:04:39 sthen Exp $
 
 COMMENT= 	object-oriented database access
 
@@ -54,7 +54,5 @@ MAKE_ENV=	DATA_DUMPER_TEST=Yes \
 		DBICTEST_MYSQL_DSN='dbi:mysql:database=test;host=localhost' \
 		DBICTEST_MYSQL_USER=root \
 		DBICTEST_MYSQL_PASS=
-USE_GROFF =	Yes
-
 
 .include <bsd.port.mk>

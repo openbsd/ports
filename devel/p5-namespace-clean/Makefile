@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/06 09:54:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/06 10:07:20 sthen Exp $
 
 COMMENT =	keep imports and functions out of your namespace
 
 MODULES =	cpan
 DISTNAME =	namespace-clean-0.22
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/06 10:01:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/06 10:07:20 sthen Exp $
 
 COMMENT=		routines for manipulating stashes
 
 MODULES=		cpan
 DISTNAME=		Package-Stash-0.33
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
