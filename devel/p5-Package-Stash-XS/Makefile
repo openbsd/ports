@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/22 23:18:07 simon Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/06 10:01:51 sthen Exp $
 
 COMMENT =	faster and more correct implementation of Package::Stash
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
-DISTNAME =	Package-Stash-XS-0.22
+DISTNAME =	Package-Stash-XS-0.25
 CATEGORIES =	devel
 
 # Perl
