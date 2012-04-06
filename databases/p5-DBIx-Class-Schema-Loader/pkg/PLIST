@@ -1,23 +1,95 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/11/23 22:08:14 simon Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/06 09:59:14 sthen Exp $
+bin/dbicdump
 ${P5SITE}/DBIx/Class/Schema/Loader/
 ${P5SITE}/DBIx/Class/Schema/Loader.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/Base.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ADO/
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ADO.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ADO/MS_Jet.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ADO/Microsoft_SQL_Server.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Component/
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Component/QuotedDefault.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/DB2.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Firebird.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Informix.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/InterBase.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/MSSQL.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC/
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC/ACCESS.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC/Firebird.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC/Microsoft_SQL_Server.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/ODBC/SQL_Anywhere.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/Oracle.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/Pg.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/SQLAnywhere.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/SQLite.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Sybase/
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Sybase.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Sybase/Common.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBI/Sybase/Microsoft_SQL_Server.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/Writing.pm
 ${P5SITE}/DBIx/Class/Schema/Loader/DBI/mysql.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBObject/
+${P5SITE}/DBIx/Class/Schema/Loader/DBObject.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBObject/Informix.pm
+${P5SITE}/DBIx/Class/Schema/Loader/DBObject/Sybase.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Manual/
+${P5SITE}/DBIx/Class/Schema/Loader/Manual/UpgradingFromV4.pod
+${P5SITE}/DBIx/Class/Schema/Loader/Optional/
+${P5SITE}/DBIx/Class/Schema/Loader/Optional/Dependencies.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Optional/Dependencies.pod
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/
 ${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder.pm
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/Compat/
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_040.pm
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_05.pm
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_06.pm
+${P5SITE}/DBIx/Class/Schema/Loader/RelBuilder/Compat/v0_07.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Table/
+${P5SITE}/DBIx/Class/Schema/Loader/Table.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Table/Informix.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Table/Sybase.pm
+${P5SITE}/DBIx/Class/Schema/Loader/Utils.pm
+@man man/man1/dbicdump.1
 @man man/man3p/DBIx::Class::Schema::Loader.3p
 @man man/man3p/DBIx::Class::Schema::Loader::Base.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ADO.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ADO::MS_Jet.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ADO::Microsoft_SQL_Server.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Component::QuotedDefault.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::DB2.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Firebird.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Informix.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::InterBase.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::MSSQL.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ODBC.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ODBC::ACCESS.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ODBC::Firebird.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ODBC::Microsoft_SQL_Server.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::ODBC::SQL_Anywhere.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::Oracle.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::Pg.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::SQLAnywhere.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::SQLite.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Sybase.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Sybase::Common.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBI::Sybase::Microsoft_SQL_Server.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::Writing.3p
 @man man/man3p/DBIx::Class::Schema::Loader::DBI::mysql.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBObject.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBObject::Informix.3p
+@man man/man3p/DBIx::Class::Schema::Loader::DBObject::Sybase.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Manual::UpgradingFromV4.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Optional::Dependencies.3p
 @man man/man3p/DBIx::Class::Schema::Loader::RelBuilder.3p
+@man man/man3p/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_040.3p
+@man man/man3p/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_05.3p
+@man man/man3p/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_06.3p
+@man man/man3p/DBIx::Class::Schema::Loader::RelBuilder::Compat::v0_07.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Table.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Table::Informix.3p
+@man man/man3p/DBIx::Class::Schema::Loader::Table::Sybase.3p
