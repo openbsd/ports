@@ -1,38 +1,39 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 16:57:48 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2012/04/06 15:57:52 merdely Exp $
 
-COMMENT=	serial and network communications package
+COMMENT =		serial and network communications package
 
-PKGNAME=	kermit-8.0.211
-DISTNAME=	cku211
-CATEGORIES=	comms
-HOMEPAGE=	http://www.kermit-project.org/
+PKGNAME =		kermit-9.0.302
+DISTNAME =		cku302
+CATEGORIES =		comms
+HOMEPAGE =		http://www.kermitproject.org/
 
-PERMIT_PACKAGE_CDROM=	discriminatory license
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	discriminatory license
-PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c curses m util
+# THE C-KERMIT 9.0 LICENSE (Revised 3-Clause BSD License)
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
-		ftp://ftp.icm.edu.pl/pub/kermit/archives/
+WANTLIB =		c curses m util
 
-WRKDIST=	${WRKDIR}
+MASTER_SITES =		ftp://ftp.kermitproject.org/kermit/archives/
 
-MAKE_FILE=	makefile
-ALL_TARGET=	xermit
-MAKE_FLAGS=	KTARGET=openbsd CC="${CC}" CC2="${CC}" \
-		CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
-		-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT -DUSE_STRERROR \
-		-DCKHTTP" \
-		LIBS="-lcurses -lutil -lm"
+WRKDIST =		${WRKDIR}
 
-USE_GROFF =	Yes
-NO_REGRESS=	Yes
+MAKE_FILE =		makefile
+ALL_TARGET =		xermit
+MAKE_FLAGS =		KTARGET=openbsd CC="${CC}" CC2="${CC}" \
+			CFLAGS="${CFLAGS} -DBSD44 -DCK_CURSES -DCK_NEWTERM \
+			-DTCPSOCKET -DOPENBSD -DUSE_UU_LOCK -DFNFLOAT \
+			-DUSE_STRERROR -DCKHTTP" \
+			LIBS="-lcurses -lutil -lm"
 
-DOCDIR=		${PREFIX}/share/doc/kermit
-DOCS=		COPYING.TXT ckaaaa.txt ckcbwr.txt ckccfg.txt ckcplm.txt \
-		ckermit70.txt ckermit80.txt ckubwr.txt ckuins.txt ckututor.txt
-EXAMPLEDIR=	${PREFIX}/share/examples/kermit
+NO_REGRESS =		Yes
+
+DOCDIR =		${PREFIX}/share/doc/kermit
+DOCS =			COPYING.TXT ckaaaa.txt ckcbwr.txt ckc302.txt \
+			ckccfg.txt ckcplm.txt ckermit70.txt ckermit80.txt \
+			ckermit90.txt ckubwr.txt ckuins.txt ckututor.txt
+EXAMPLEDIR =		${PREFIX}/share/examples/kermit
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/wermit ${PREFIX}/bin/kermit
@@ -42,7 +43,7 @@ do-install:
 	    ${INSTALL_DATA} ${WRKSRC}/$$file ${DOCDIR}; \
 	done
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/ckermit.ini ${EXAMPLEDIR}/dot.kermrc
-	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLEDIR}/dot.mykermrc
+	${INSTALL_DATA} ${WRKSRC}/ockermit.ini ${EXAMPLEDIR}/dot.kermrc
+	${INSTALL_DATA} ${WRKSRC}/ockermod.ini ${EXAMPLEDIR}/dot.mykermrc
 
 .include <bsd.port.mk>
