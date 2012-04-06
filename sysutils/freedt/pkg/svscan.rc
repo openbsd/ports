@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: svscan.rc,v 1.2 2012/04/06 11:47:54 sthen Exp $
+# $OpenBSD: svscan.rc,v 1.3 2012/04/06 11:59:48 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/svscan"
 daemon_flags="/service/"
@@ -10,8 +10,7 @@ daemon_flags="/service/"
 rc_bg=YES
 rc_reload=NO
 
-rc_stop() {
-	pkill -f "^${pexp}"
+rc_post() {
 	sleep 1
 	${TRUEPREFIX}/bin/svc -X ${daemon_flags}/*
 	${TRUEPREFIX}/bin/svc -X ${daemon_flags}/*/log
