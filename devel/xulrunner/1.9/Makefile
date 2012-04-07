@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.60 2012/03/16 21:45:08 landry Exp $
+# $OpenBSD: Makefile,v 1.61 2012/04/07 13:10:50 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.28
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 MOZILLA_DIST =		firefox
 MOZILLA_DIST_VERSION =	3.6.28
+REVISION-devel =	0
+REVISION-main =		0
 
 SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -34,6 +36,9 @@ PCFILES =		libxul.pc libxul-embedding.pc mozilla-js.pc \
 			mozilla-plugin.pc mozilla-gtkmozembed.pc \
 			mozilla-gtkmozembed-embedding.pc
 
+WANTLIB-devel =		${MOZILLA_PROJECT}/mozjs ${MOZILLA_PROJECT}/xpcom \
+			${MOZILLA_PROJECT}/xul
+
 post-build:
 	cd ${WRKSRC}/xulrunner/installer && env -i ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} ${PCFILES}
@@ -59,11 +64,13 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/xulrunner/installer/${pcfile} \
 		${PREFIX}/lib/pkgconfig/${pcfile:S/mozilla/xulrunner/}
 .endfor
-	perl -pi -e 's|libxul-embedding-unstable|libxul-embedding|g; ' \
-		-e 's|libxul-unstable|libxul|g; s|unstable|stable|g; ' \
+	perl -pi -e 's|libxul|libxul19|g; s|/lib||g; ' \
 		-e 's|^(Libs:.*)|\1 -Wl,-rpath,${LOCALBASE}/xulrunner1.9|g; ' \
 		-e 's|-lxpcomglue |-lxpcomglue_pic |g; s|-lxpcomglue_s |-lxpcomglue_s_pic |; ' \
-		-e 's|/lib||g; s|/stable||g; s|/\$${includetype}||g; ' \
 		${PREFIX}/lib/pkgconfig/*.pc
+
+	# avoid conflicts with newer xulrunners
+	mv ${PREFIX}/lib/pkgconfig/libxul{,19}.pc
+	mv ${PREFIX}/lib/pkgconfig/libxul{,19}-embedding.pc
 
 .include <bsd.port.mk>
