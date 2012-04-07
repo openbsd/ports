@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/06 09:59:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/07 08:35:10 sthen Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
@@ -27,7 +27,10 @@ RUN_DEPENDS=	databases/p5-DBIx-Class \
 		textproc/p5-String-CamelCase
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		databases/p5-DBD-SQLite
+		databases/p5-DBD-SQLite \
+		devel/p5-Test-Warn \
+		devel/p5-Task-Weaken \
+		devel/p5-Try-Tiny
 REGRESS_DEPENDS=databases/p5-DBD-SQLite
 
 MAKE_ENV=	TEST_POD=Yes
