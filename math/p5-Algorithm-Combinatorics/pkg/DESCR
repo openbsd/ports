@@ -1,0 +1,5 @@
+Efficient generator of combinatorial sequences. Algorithms are selected
+from the literature (work in progress, see REFERENCES). Iterators do not
+use recursion, nor stacks, and are written in C.
+
+Tuples are generated in lexicographic order, except in `subsets()'.

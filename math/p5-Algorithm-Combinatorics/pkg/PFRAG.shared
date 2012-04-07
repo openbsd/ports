@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/04/07 03:24:14 jim Exp $
+${P5ARCH}/auto/Algorithm/Combinatorics/Combinatorics.so
