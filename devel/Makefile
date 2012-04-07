@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1027 2012/04/06 14:10:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.1028 2012/04/07 13:49:14 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1176,6 +1176,7 @@
      SUBDIR += smarty
      SUBDIR += smpeg
      SUBDIR += spe
+     SUBDIR += spidermonkey
      SUBDIR += splint
      SUBDIR += srecord
      SUBDIR += startup-notification
