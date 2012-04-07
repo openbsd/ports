@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/08/22 20:54:06 simon Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/04/07 19:58:53 sthen Exp $
+bin/l4p-tmpl
 ${P5SITE}/Log/
 ${P5SITE}/Log/Log4perl/
 ${P5SITE}/Log/Log4perl.pm
@@ -17,6 +18,7 @@ ${P5SITE}/Log/Log4perl/Appender/Synchronized.pm
 ${P5SITE}/Log/Log4perl/Appender/TestArrayBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestBuffer.pm
 ${P5SITE}/Log/Log4perl/Appender/TestFileCreeper.pm
+${P5SITE}/Log/Log4perl/Catalyst.pm
 ${P5SITE}/Log/Log4perl/Config/
 ${P5SITE}/Log/Log4perl/Config.pm
 ${P5SITE}/Log/Log4perl/Config/BaseConfigurator.pm
@@ -31,6 +33,7 @@ ${P5SITE}/Log/Log4perl/Filter/Boolean.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelMatch.pm
 ${P5SITE}/Log/Log4perl/Filter/LevelRange.pm
 ${P5SITE}/Log/Log4perl/Filter/StringMatch.pm
+${P5SITE}/Log/Log4perl/InternalDebug.pm
 ${P5SITE}/Log/Log4perl/JavaMap/
 ${P5SITE}/Log/Log4perl/JavaMap.pm
 ${P5SITE}/Log/Log4perl/JavaMap/ConsoleAppender.pm
@@ -55,6 +58,8 @@ ${P5SITE}/Log/Log4perl/Resurrector.pm
 ${P5SITE}/Log/Log4perl/Util/
 ${P5SITE}/Log/Log4perl/Util.pm
 ${P5SITE}/Log/Log4perl/Util/Semaphore.pm
+${P5SITE}/Log/Log4perl/Util/TimeTracker.pm
+@man man/man1/l4p-tmpl.1
 @man man/man3p/Log::Log4perl.3p
 @man man/man3p/Log::Log4perl::Appender.3p
 @man man/man3p/Log::Log4perl::Appender::Buffer.3p
@@ -70,6 +75,7 @@ ${P5SITE}/Log/Log4perl/Util/Semaphore.pm
 @man man/man3p/Log::Log4perl::Appender::TestArrayBuffer.3p
 @man man/man3p/Log::Log4perl::Appender::TestBuffer.3p
 @man man/man3p/Log::Log4perl::Appender::TestFileCreeper.3p
+@man man/man3p/Log::Log4perl::Catalyst.3p
 @man man/man3p/Log::Log4perl::Config.3p
 @man man/man3p/Log::Log4perl::Config::BaseConfigurator.3p
 @man man/man3p/Log::Log4perl::Config::DOMConfigurator.3p
@@ -82,6 +88,7 @@ ${P5SITE}/Log/Log4perl/Util/Semaphore.pm
 @man man/man3p/Log::Log4perl::Filter::LevelMatch.3p
 @man man/man3p/Log::Log4perl::Filter::LevelRange.3p
 @man man/man3p/Log::Log4perl::Filter::StringMatch.3p
+@man man/man3p/Log::Log4perl::InternalDebug.3p
 @man man/man3p/Log::Log4perl::JavaMap.3p
 @man man/man3p/Log::Log4perl::JavaMap::ConsoleAppender.3p
 @man man/man3p/Log::Log4perl::JavaMap::FileAppender.3p
@@ -102,3 +109,4 @@ ${P5SITE}/Log/Log4perl/Util/Semaphore.pm
 @man man/man3p/Log::Log4perl::Resurrector.3p
 @man man/man3p/Log::Log4perl::Util.3p
 @man man/man3p/Log::Log4perl::Util::Semaphore.3p
+@man man/man3p/Log::Log4perl::Util::TimeTracker.3p
