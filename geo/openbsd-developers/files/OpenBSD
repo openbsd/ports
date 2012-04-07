@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.80 2012/01/31 23:24:00 brynet Exp $
+# $OpenBSD: OpenBSD,v 1.81 2012/04/07 14:01:04 jim Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -35,7 +35,6 @@
 41.92		-87.70		"jcs"		# joshua stein
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.49538	-82.89954	"nick"		# Nick Holland
-42.861267	-85.747117	"jim"		# Jim Razmus II
 43.0277		-86.13		"dhill"		# David Hill
 43.064216	-89.406185	"wcmaier"	# Will Maier
 43.240537 	5.384159	"pea"		# Pierre-Emmanuel Andre
@@ -50,6 +49,7 @@
 44.01		-79.93		"ian"		# Ian Darwin
 44.1		-77.580556	"brynet"	# Bryan Steele
 44.4325		26.103889	"pirofti"	# Paul Irofti
+45.095683	-93.4982	"jim"		# Jim Razmus II
 45.43		12.13		"michele"	# Michele Marchetto
 45.4745		-73.6556	"msf"		# Mathieu Sauve-Frankel
 45.5		-122.5		"joshe"		# Joshua Elsasser
