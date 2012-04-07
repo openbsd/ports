@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_audio_out_audio_file_out_c,v 1.3 2012/04/07 05:48:49 ajacoutot Exp $
+
+Check for failed write.
+
+--- src/audio_out/audio_file_out.c.orig	Fri Feb 17 22:37:27 2012
++++ src/audio_out/audio_file_out.c	Fri Feb 17 22:37:51 2012
+@@ -274,10 +274,20 @@ static void ao_file_close(ao_driver_t *this_gen)
+ 		 this->fname, this->bytes_written / 1024);
+ 
+ 	if (lseek(this->fd, 40, SEEK_SET) != -1) {
+-		write(this->fd, &len, 4);
++		if (write(this->fd, &len, 4) != 4) {
++			xprintf (this->xine, XINE_VERBOSITY_LOG, "audio_file_out: Failed to write header to file '%s': %s\n",
++                                 this->fname, strerror(errno));
++		}
++
+ 		len = le2me_32(this->bytes_written + 0x24);
+-		if (lseek(this->fd, 4, SEEK_SET) != -1)
+-			write(this->fd, &len, 4);
++		if (lseek(this->fd, 4, SEEK_SET) != -1) {
++			if (write(this->fd, &len, 4) != 4) {
++				xprintf (this->xine, XINE_VERBOSITY_LOG,
++                                         "audio_file_out: Failed to write header to file '%s': %s\n",
++                                         this->fname, strerror(errno));
++                        }
++		}
++
+ 	}
+ 
+ 	close(this->fd);

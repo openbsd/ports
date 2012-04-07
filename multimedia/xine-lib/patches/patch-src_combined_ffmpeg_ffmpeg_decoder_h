@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_combined_ffmpeg_ffmpeg_decoder_h,v 1.1 2012/04/07 05:48:49 ajacoutot Exp $
+
+Moved FFmpeg API version checks to single header.
+
+--- src/combined/ffmpeg/ffmpeg_decoder.h.orig	Fri Feb 17 22:46:46 2012
++++ src/combined/ffmpeg/ffmpeg_decoder.h	Fri Feb 17 22:46:49 2012
+@@ -33,10 +33,6 @@
+ #  include "../../libffmpeg/libavcodec/avcodec.h"
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_MAJOR > 51
+-#define bits_per_sample bits_per_coded_sample
+-#endif
+-
+ typedef struct ff_codec_s {
+   uint32_t          type;
+   enum CodecID      id;

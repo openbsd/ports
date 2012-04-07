@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.85 2012/01/05 08:52:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2012/04/07 05:48:49 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.20.1
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz

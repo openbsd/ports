@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.9 2012/04/07 05:48:49 ajacoutot Exp $
+
+Fix Matroska header compression when using lacing (ex. multiple audio frames in one block).
+
+--- src/demuxers/demux_matroska.c.orig	Fri Feb 17 22:55:21 2012
++++ src/demuxers/demux_matroska.c	Fri Feb 17 22:55:59 2012
+@@ -2049,6 +2049,13 @@ static int parse_block (demux_matroska_t *this, size_t
+     }
+     /* send each frame to the decoder */
+     for (i = 0; i <= lace_num; i++) {
++
++      if (headers_len) {
++        data -= headers_len;
++        xine_fast_memcpy(data, track->compress_settings, headers_len);
++        frame[i] += headers_len;
++      }
++
+       if (track->handle_content != NULL) {
+         track->handle_content((demux_plugin_t *)this, track,
+                                decoder_flags,

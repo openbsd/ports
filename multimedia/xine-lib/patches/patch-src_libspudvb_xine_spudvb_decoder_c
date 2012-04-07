@@ -1,0 +1,155 @@
+$OpenBSD: patch-src_libspudvb_xine_spudvb_decoder_c,v 1.1 2012/04/07 05:48:49 ajacoutot Exp $
+
+- Fix region size check (HD can have 1920x1080 regions).
+- Skip display descriptor segments.
+- Use PTS timestamps with DVB subtitles.
+- Make sure we don't use old PTS.
+- Added config option to ignore DVB SPU PTS timestamps.
+- Fix #include.
+
+--- src/libspudvb/xine_spudvb_decoder.c.orig	Fri Feb 17 23:20:13 2012
++++ src/libspudvb/xine_spudvb_decoder.c	Fri Feb 17 23:20:22 2012
+@@ -25,8 +25,9 @@
+  * - Implement support for teletext based subtitles
+  */
+ 
+-#include "pthread.h"
++#include <pthread.h>
+ #include <errno.h>
++
+ #include "xine_internal.h"
+ #include "bswap.h"
+ #include "osd.h"
+@@ -79,6 +80,8 @@ typedef struct {
+ typedef struct		dvb_spu_class_s {
+   spu_decoder_class_t	class;
+   xine_t	       *xine;
++
++  int                   ignore_pts;
+ } dvb_spu_class_t;
+ 
+ typedef struct dvb_spu_decoder_s {
+@@ -97,9 +100,8 @@ typedef struct dvb_spu_decoder_s {
+   char                 *pes_pkt_wrptr;
+   unsigned int	pes_pkt_size;
+ 
+-  uint64_t		pts;
+-  uint64_t		vpts;
+-  uint64_t		end_vpts;
++  int64_t		vpts;
++  int64_t		end_vpts;
+ 
+   pthread_t	dvbsub_timer_thread;
+   struct timespec       dvbsub_hide_timeout;
+@@ -695,7 +697,7 @@ static void draw_subtitles (dvb_spu_decoder_t * this)
+ 
+   pthread_mutex_lock(&this->dvbsub_osd_mutex);
+ #ifdef LOG
+-  printf("SPUDVB: this->vpts=%llu\n",this->vpts);
++  printf("SPUDVB: this->vpts=%"PRId64"\n", this->vpts);
+ #endif
+   for ( r=0; r<MAX_REGIONS; r++ ) {
+ #ifdef LOG
+@@ -752,27 +754,29 @@ static void spudec_decode_data (spu_decoder_t * this_g
+     }
+     return;
+   }
+-  else {
+-    if (buf->decoder_info[2]) {
+-      memset (this->pes_pkt, 0xff, 64*1024);
+-      this->pes_pkt_wrptr = this->pes_pkt;
+-      this->pes_pkt_size = buf->decoder_info[2];
+-      this->pts = buf->pts;
+ 
+-      xine_fast_memcpy (this->pes_pkt, buf->content, buf->size);
++  /* accumulate data */
++  if (buf->decoder_info[2]) {
++    memset (this->pes_pkt, 0xff, 64*1024);
++    this->pes_pkt_wrptr = this->pes_pkt;
++    this->pes_pkt_size = buf->decoder_info[2];
++
++    xine_fast_memcpy (this->pes_pkt, buf->content, buf->size);
++    this->pes_pkt_wrptr += buf->size;
++
++    this->vpts = 0;
++  }
++  else {
++    if (this->pes_pkt && (this->pes_pkt_wrptr != this->pes_pkt)) {
++      xine_fast_memcpy (this->pes_pkt_wrptr, buf->content, buf->size);
+       this->pes_pkt_wrptr += buf->size;
+     }
+-    else {
+-      if (this->pes_pkt && (this->pes_pkt_wrptr != this->pes_pkt)) {
+-	xine_fast_memcpy (this->pes_pkt_wrptr, buf->content, buf->size);
+-	this->pes_pkt_wrptr += buf->size;
+-      }
+-    }
+   }
++
+   /* don't ask metronom for a vpts but rather do the calculation
+    * because buf->pts could be too far in future and metronom won't accept
+    * further backwards pts (see metronom_got_spu_packet) */
+-  if (buf->pts) {
++  if (!this->class->ignore_pts && buf->pts > 0) {
+     metronom_t *const metronom = this->stream->metronom;
+     const int64_t vpts_offset = metronom->get_option( metronom, METRONOM_VPTS_OFFSET );
+     const int64_t spu_offset = metronom->get_option( metronom, METRONOM_SPU_OFFSET );
+@@ -781,7 +785,7 @@ static void spudec_decode_data (spu_decoder_t * this_g
+     const int64_t curvpts = clock->get_current_time( clock );
+     /* if buf->pts is unreliable, show page asap (better than nothing) */
+ #ifdef LOG
+-    printf("SPUDVB: spu_vpts=%lld - current_vpts=%lld\n", vpts, curvpts);
++    printf("SPUDVB: spu_vpts=%"PRId64" - current_vpts=%"PRId64"\n", vpts, curvpts);
+ #endif
+     if ( vpts<=curvpts || (vpts-curvpts)>(5*90000) )
+       this->vpts = 0;
+@@ -790,7 +794,7 @@ static void spudec_decode_data (spu_decoder_t * this_g
+   }
+ 
+   /* completely ignore pts since it makes a lot of problems with various providers */
+-  this->vpts = 0;
++  /* this->vpts = 0; */
+ 
+   /* process the pes section */
+ 
+@@ -925,8 +929,12 @@ static spu_decoder_t *dvb_spu_class_open_plugin (spu_d
+   return (spu_decoder_t *) this;
+ }
+ 
+-static void dvb_spu_class_dispose (spu_decoder_class_t * this)
++static void dvb_spu_class_dispose (spu_decoder_class_t * this_gen)
+ {
++  dvb_spu_class_t *this = (dvb_spu_class_t *) this_gen;
++
++  this->xine->config->unregister_callback(this->xine->config, "subtitles.dvb.ignore_pts");
++
+   free (this);
+ }
+ 
+@@ -940,6 +948,13 @@ static char *dvb_spu_class_get_description (spu_decode
+   return "DVB subtitle decoder plugin";
+ }
+ 
++static void spu_dvb_ignore_pts_change(void *this_gen, xine_cfg_entry_t *value)
++{
++  dvb_spu_class_t *this = (dvb_spu_class_t *) this_gen;
++
++  this->ignore_pts = value->num_value;
++}
++
+ static void *init_spu_decoder_plugin (xine_t * xine, void *data)
+ {
+   dvb_spu_class_t *this = calloc(1, sizeof (dvb_spu_class_t));
+@@ -950,6 +965,12 @@ static void *init_spu_decoder_plugin (xine_t * xine, v
+   this->class.dispose = dvb_spu_class_dispose;
+ 
+   this->xine = xine;
++
++  this->ignore_pts = xine->config->register_bool(xine->config,
++                                                 "subtitles.dvb.ignore_pts", 0,
++                                                 _("Ignore DVB subtitle timing"),
++                                                 _("Do not use PTS timestamps for DVB subtitle timing"),
++                                                 1, spu_dvb_ignore_pts_change, this);
+ 
+   return &this->class;
+ }
