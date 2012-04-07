@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/25 11:30:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/07 07:31:36 kirby Exp $
 
 COMMENT =		2D space trading and combat game
 
@@ -10,7 +10,7 @@ WANTLIB += GL SDL SDL_mixer c freetype lua m ogg png pthread vorbis
 WANTLIB += vorbisfile xml2 z
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			games/naev/data
+			games/naev/data=${VERSION}
 LIB_DEPENDS =		devel/sdl-mixer \
 			graphics/png \
 			lang/lua \

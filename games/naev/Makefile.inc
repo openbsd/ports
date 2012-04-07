@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2012/03/14 22:54:28 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2012/04/07 07:31:36 kirby Exp $
 
-VERSION = 		0.5.1
+VERSION = 		0.5.2
 
 CATEGORIES = 		games x11
 
