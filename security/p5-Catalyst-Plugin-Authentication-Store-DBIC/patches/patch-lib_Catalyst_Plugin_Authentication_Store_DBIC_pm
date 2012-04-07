@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_Catalyst_Plugin_Authentication_Store_DBIC_pm,v 1.1 2012/04/07 16:46:05 sthen Exp $
+--- lib/Catalyst/Plugin/Authentication/Store/DBIC.pm.orig	Wed Jul 16 11:21:52 2008
++++ lib/Catalyst/Plugin/Authentication/Store/DBIC.pm	Sun Nov  6 08:40:56 2011
+@@ -7,6 +7,7 @@ our $VERSION = '0.11';
+ 
+ use Catalyst::Plugin::Authentication::Store::DBIC::Backend;
+ use Catalyst::Utils ();
++use MRO::Compat;
+ 
+ sub setup {
+     my $c = shift;
+@@ -27,13 +28,13 @@ sub setup {
+         } )
+     );
+ 
+-    $c->NEXT::setup(@_);
++    $c->maybe::next::method(@_);
+ }
+ 
+ sub setup_finished {
+     my $c = shift;
+ 
+-    return $c->NEXT::setup_finished unless @_;
++    return $c->maybe::next::method unless @_;
+ 
+     my $config = $c->default_auth_store;
+     if (my $user_class = $config->{auth}{user_class}) {
+@@ -61,7 +62,7 @@ sub setup_finished {
+         $config->{authz}{user_role_class} = _get_instance( $c, $user_role_class );
+     }
+ 
+-    $c->NEXT::setup_finished(@_);
++    $c->maybe::next::method(@_);
+ }
+ 
+ sub _get_instance {

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 17:04:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/07 16:46:05 sthen Exp $
 ${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/
 ${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC.pm
 ${P5SITE}/Catalyst/Plugin/Authentication/Store/DBIC/Backend.pm
