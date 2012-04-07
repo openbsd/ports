@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/10/07 13:54:30 kurt Exp $
+# $OpenBSD: Makefile,v 1.68 2012/04/07 13:11:27 landry Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -18,7 +18,7 @@ REVISION-swt=		4
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
 REVISION-gnome=		4
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
-REVISION-browser=	6
+REVISION-browser=	7
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
