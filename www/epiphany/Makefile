@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/04/03 15:40:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/04/07 13:31:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,8 +12,11 @@ COMMENT=	GNOME web browser based on webkit
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	3.4.0.1
 
+# NOTE: when M changes, increment M accordingly and bump:
+# www/epiphany-extensions
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
+
 CATEGORIES=	www
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/04/03 15:41:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/04/07 13:31:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,6 @@ COMMENT=		collection of extensions for Epiphany
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		3.4.0
 
-# sync with www/epiphany
 M=			${GNOME_VERSION:R}
 SUBST_VARS=		M
 
