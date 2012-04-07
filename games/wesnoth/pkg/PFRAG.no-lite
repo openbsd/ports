@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.no-lite,v 1.9 2010/10/12 20:33:18 jasper Exp $
+@comment $OpenBSD: PFRAG.no-lite,v 1.10 2012/04/07 08:32:32 kirby Exp $
 share/wesnoth/data/core/music/
+share/wesnoth/data/core/music/battle-epic.ogg
 share/wesnoth/data/core/music/battle.ogg
 share/wesnoth/data/core/music/breaking_the_chains.ogg
 share/wesnoth/data/core/music/casualties_of_war.ogg
@@ -24,6 +25,7 @@ share/wesnoth/data/core/music/revelation.ogg
 share/wesnoth/data/core/music/sad.ogg
 share/wesnoth/data/core/music/siege_of_laurelmor.ogg
 share/wesnoth/data/core/music/silence.ogg
+share/wesnoth/data/core/music/silvan_sanctuary.ogg
 share/wesnoth/data/core/music/suspense.ogg
 share/wesnoth/data/core/music/the_city_falls.ogg
 share/wesnoth/data/core/music/the_dangerous_symphony.ogg
@@ -185,6 +187,7 @@ share/wesnoth/data/core/sounds/magic-thorns-2.ogg
 share/wesnoth/data/core/sounds/magic-thorns-miss-1.ogg
 share/wesnoth/data/core/sounds/magic-thorns-miss-2.ogg
 share/wesnoth/data/core/sounds/magicmissile.wav
+share/wesnoth/data/core/sounds/melee-fire.ogg
 share/wesnoth/data/core/sounds/mermaid-die.ogg
 share/wesnoth/data/core/sounds/mermaid-hit.ogg
 share/wesnoth/data/core/sounds/mermen-die.ogg
@@ -268,12 +271,18 @@ share/wesnoth/data/core/sounds/wail-long.wav
 share/wesnoth/data/core/sounds/wail-sml.wav
 share/wesnoth/data/core/sounds/wail.wav
 share/wesnoth/data/core/sounds/water-blast.wav
-share/wesnoth/data/core/sounds/wolf-big-bite-miss.ogg
-share/wesnoth/data/core/sounds/wolf-big-bite.ogg
-share/wesnoth/data/core/sounds/wolf-bite-miss.ogg
-share/wesnoth/data/core/sounds/wolf-bite.ogg
-share/wesnoth/data/core/sounds/wolf-die.wav
-share/wesnoth/data/core/sounds/wolf-hit.wav
+share/wesnoth/data/core/sounds/wolf-die-1.ogg
+share/wesnoth/data/core/sounds/wolf-die-2.ogg
+share/wesnoth/data/core/sounds/wolf-die-3.ogg
+share/wesnoth/data/core/sounds/wolf-die-4.ogg
+share/wesnoth/data/core/sounds/wolf-growl-1.ogg
+share/wesnoth/data/core/sounds/wolf-growl-2.ogg
+share/wesnoth/data/core/sounds/wolf-growl-3.ogg
+share/wesnoth/data/core/sounds/wolf-growl-4.ogg
+share/wesnoth/data/core/sounds/wolf-hit-1.ogg
+share/wesnoth/data/core/sounds/wolf-hit-2.ogg
+share/wesnoth/data/core/sounds/wolf-hit-3.ogg
+share/wesnoth/data/core/sounds/wolf-hit-4.ogg
 share/wesnoth/data/core/sounds/wose-attack.ogg
 share/wesnoth/data/core/sounds/wose-die.ogg
 share/wesnoth/data/core/sounds/wose-hit.ogg

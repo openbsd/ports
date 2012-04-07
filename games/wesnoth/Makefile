@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2012/04/07 08:32:32 kirby Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.8.6
-REVISION=	1
+DISTNAME=	wesnoth-1.10.1
 
 CATEGORIES=	games x11
 
@@ -20,68 +19,41 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xrender c cairo expat fontconfig freetype
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 m pixman-1 png
-WANTLIB += pthread pthread-stubs stdc++ xcb z boost_iostreams-mt
-WANTLIB += gthread-2.0 xcb-render xcb-render-util
-WANTLIB += boost_regex-mt SDL SDL_image SDL_net SDL_ttf fribidi
-WANTLIB += pango-1.0 pangoft2-1.0 pangocairo-1.0 lua dbus-1
-WANTLIB += SDL_mixer
+WANTLIB += GL ICE SDL SDL_image SDL_mixer SDL_net SDL_ttf SM X11
+WANTLIB += Xext Xrender boost_iostreams-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_system-mt c cairo dbus-1 expat
+WANTLIB += fontconfig freetype fribidi glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 png pthread pthread-stubs stdc++ xcb xcb-render
+WANTLIB += xcb-shm z
 
-
-MODULES=	devel/gettext
+MODULES=	devel/cmake devel/gettext
 
 LIB_DEPENDS=	devel/boost \
-		devel/sdl \
 		devel/sdl-image \
 		devel/sdl-net \
 		devel/sdl-mixer \
 		devel/sdl-ttf \
 		devel/fribidi \
 		devel/pango \
-		lang/lua \
 		x11/dbus
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/libxslt
 
-BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-
-CONFIGURE_STYLE=	gnu
-AUTOMAKE_VERSION=	1.9
-AUTOCONF_VERSION=	2.60
-
-CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
-
-CONFIGURE_ARGS+=--enable-server \
-		--enable-campaign-server \
-		--enable-editor \
-		--with-fifodir=/var/run \
-		--enable-desktop-entry \
-		--with-desktopdir=${PREFIX}/share/applications \
-		--with-icondir=${PREFIX}/share/pixmaps
-
-MAKE_FLAGS=	LIBINTL="-L${LOCALBASE}/lib -lintl -liconv"
+CONFIGURE_ARGS+=-DFIFO_DIR=/var/run/ \
+		-DENABLE_CAMPAIGN_SERVER=ON \
+		-DENABLE_STRICT_COMPILATION=OFF \
+		-DMANDIR=${PREFIX}/man
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+SEPARATE_BUILD=	flavored
 
-FLAVORS=	lite tinygui
+FLAVORS=	lite
 FLAVOR?=
 
 .if ${FLAVOR:Mlite}
-CONFIGURE_ARGS+=--enable-lowmem
+CONFIGURE_ARGS+=-DENABLE_LOW_MEM=ON
 .endif
-
-.if ${FLAVOR:Mtinygui}
-BUILD_DEPENDS+=graphics/ImageMagick
-CONFIGURE_ARGS+=--enable-tinygui
-.endif
-
-pre-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
 
 .include <bsd.port.mk>
