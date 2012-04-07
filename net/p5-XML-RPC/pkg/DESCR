@@ -1,0 +1,3 @@
+XML::RPC module provides simple Pure Perl methods for XML-RPC
+communication. It's goals are simplicity and flexibility. XML::RPC
+uses XML::TreePP for parsing.
