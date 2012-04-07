@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/11/15 16:05:19 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2012/04/07 10:55:04 naddy Exp $
 @pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
@@ -19,31 +19,8 @@ share/transmission/
 share/transmission/web/
 share/transmission/web/LICENSE
 share/transmission/web/images/
-share/transmission/web/images/buttons/
-share/transmission/web/images/buttons/cancel.png
-share/transmission/web/images/buttons/file_priority_buttons.png
-share/transmission/web/images/buttons/file_wanted_buttons.png
-share/transmission/web/images/buttons/info_activity.png
-share/transmission/web/images/buttons/info_files.png
-share/transmission/web/images/buttons/info_general.png
-share/transmission/web/images/buttons/info_peers.png
-share/transmission/web/images/buttons/info_trackers.png
-share/transmission/web/images/buttons/tab_backgrounds.png
-share/transmission/web/images/buttons/tab_backgrounds_highlight.png
-share/transmission/web/images/buttons/toolbar_buttons.png
-share/transmission/web/images/buttons/torrent_buttons.png
 share/transmission/web/images/favicon.ico
 share/transmission/web/images/favicon.png
-share/transmission/web/images/graphics/
-share/transmission/web/images/graphics/blue-turtle.png
-share/transmission/web/images/graphics/chrome.png
-share/transmission/web/images/graphics/filter_bar.png
-share/transmission/web/images/graphics/filter_icon.png
-share/transmission/web/images/graphics/iphone_chrome.png
-share/transmission/web/images/graphics/lock_icon.png
-share/transmission/web/images/graphics/logo.png
-share/transmission/web/images/progress/
-share/transmission/web/images/progress/progress.png
 share/transmission/web/images/webclip-icon.png
 share/transmission/web/index.html
 share/transmission/web/javascript/
@@ -56,18 +33,58 @@ share/transmission/web/javascript/jquery/
 share/transmission/web/javascript/jquery/jquery.contextmenu.min.js
 share/transmission/web/javascript/jquery/jquery.form.js
 share/transmission/web/javascript/jquery/jquery.form.min.js
+share/transmission/web/javascript/jquery/jquery.min.js
 share/transmission/web/javascript/jquery/jquery.transmenu.min.js
+share/transmission/web/javascript/jquery/jqueryui-1.8.16.min.js
 share/transmission/web/javascript/jquery/json2.min.js
 share/transmission/web/javascript/prefs-dialog.js
 share/transmission/web/javascript/remote.js
 share/transmission/web/javascript/torrent-row.js
 share/transmission/web/javascript/torrent.js
 share/transmission/web/javascript/transmission.js
-share/transmission/web/stylesheets/
-share/transmission/web/stylesheets/common.css
-share/transmission/web/stylesheets/ie7.css
-share/transmission/web/stylesheets/ieAll.css
-share/transmission/web/stylesheets/mobile.css
+share/transmission/web/style/
+share/transmission/web/style/jqueryui/
+share/transmission/web/style/jqueryui/images/
+share/transmission/web/style/jqueryui/images/ui-bg_flat_75_ffffff_40x100.png
+share/transmission/web/style/jqueryui/images/ui-bg_glass_65_ffffff_1x400.png
+share/transmission/web/style/jqueryui/images/ui-bg_glass_75_dadada_1x400.png
+share/transmission/web/style/jqueryui/images/ui-bg_glass_75_e6e6e6_1x400.png
+share/transmission/web/style/jqueryui/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+share/transmission/web/style/jqueryui/images/ui-icons_222222_256x240.png
+share/transmission/web/style/jqueryui/images/ui-icons_454545_256x240.png
+share/transmission/web/style/jqueryui/jqueryui-1.8.16.css
+share/transmission/web/style/transmission/
+share/transmission/web/style/transmission/common.css
+share/transmission/web/style/transmission/images/
+share/transmission/web/style/transmission/images/arrow-down.png
+share/transmission/web/style/transmission/images/arrow-up.png
+share/transmission/web/style/transmission/images/blue-turtle.png
+share/transmission/web/style/transmission/images/buttons/
+share/transmission/web/style/transmission/images/buttons/torrent_buttons.png
+share/transmission/web/style/transmission/images/compact.png
+share/transmission/web/style/transmission/images/file-priority-high.png
+share/transmission/web/style/transmission/images/file-priority-low.png
+share/transmission/web/style/transmission/images/file-priority-normal.png
+share/transmission/web/style/transmission/images/filter_bar.png
+share/transmission/web/style/transmission/images/filter_icon.png
+share/transmission/web/style/transmission/images/inspector-files.png
+share/transmission/web/style/transmission/images/inspector-info.png
+share/transmission/web/style/transmission/images/inspector-peers.png
+share/transmission/web/style/transmission/images/inspector-trackers.png
+share/transmission/web/style/transmission/images/lock_icon.png
+share/transmission/web/style/transmission/images/logo.png
+share/transmission/web/style/transmission/images/progress.png
+share/transmission/web/style/transmission/images/settings.png
+share/transmission/web/style/transmission/images/toolbar-close.png
+share/transmission/web/style/transmission/images/toolbar-folder.png
+share/transmission/web/style/transmission/images/toolbar-info.png
+share/transmission/web/style/transmission/images/toolbar-pause-all.png
+share/transmission/web/style/transmission/images/toolbar-pause.png
+share/transmission/web/style/transmission/images/toolbar-start-all.png
+share/transmission/web/style/transmission/images/toolbar-start.png
+share/transmission/web/style/transmission/images/turtle.png
+share/transmission/web/style/transmission/images/wrench.png
+share/transmission/web/style/transmission/mobile.css
 @rcscript ${RCDIR}/transmission_daemon
 @mode 750
 @owner _transmission

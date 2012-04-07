@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.73 2012/01/01 09:04:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2012/04/07 10:55:04 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.42
+VER=		2.50
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
-
-REVISION-gtk=	1
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -36,7 +34,8 @@ FLAVOR?=
 # MODULES adds to WANTLIB and LIB_DEPENDS
 # WANTLIB-main and LIB_DEPENDS-main default to WANTLIB and LIB_DEPENDS
 
-WANTLIB=	c crypto curl event_core event_extra idn m pthread ssl z
+WANTLIB=	c crypto curl event_core event_extra idn m miniupnpc \
+		natpmp pthread ssl z
 WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm GL atk-1.0 cairo \
 		cairo-gobject drm expat ffi fontconfig freetype \
@@ -44,13 +43,16 @@ WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gobject-2.0 gthread-2.0 gtk-3 pango-1.0 pangoft2-1.0 \
 		pangocairo-1.0 pixman-1 png pcre pthread-stubs stdc++ xcb \
 		xcb-render xcb-shm
-WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
+WANTLIB-qt=	${WANTLIB} ICE SM QtCore QtDBus QtGui QtNetwork QtXml \
+		X11 Xext Xi Xinerama Xrender \
 		expat fontconfig freetype stdc++
 
 MODULES=	devel/gettext textproc/intltool
 
 LIB_DEPENDS=	devel/libevent2 \
-		net/curl
+		net/curl \
+		net/miniupnp/libnatpmp \
+		net/miniupnp/miniupnpc
 LIB_DEPENDS-gtk=${LIB_DEPENDS} \
 		x11/gtk+3
 LIB_DEPENDS-qt=	${LIB_DEPENDS} \
@@ -68,11 +70,15 @@ TAR=		${LOCALBASE}/bin/gtar
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-shared
+CONFIGURE_ARGS=	--disable-shared \
+		--enable-external-natpmp
 # unaligned accesses throughout
 CONFIGURE_ARGS+=--disable-utp
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+# -I$(top_builddir)/third-party is required, but configure fails to
+# set it if we use external miniupnp libs.
+
+CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.arch.mk>
