@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/13 06:59:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/07 15:46:23 gsoares Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
 MODULES =	cpan
-DISTNAME =	Git-Repository-1.22
+DISTNAME =	Git-Repository-1.25
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Wen Heping <wenheping@gmail.com>
 
@@ -15,6 +14,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS =	devel/p5-System-Command
+RUN_DEPENDS =		devel/p5-System-Command
+REGRESS_DEPENDS =	devel/git
+MAKE_ENV +=		TEST_POD=1
 
 .include <bsd.port.mk>
