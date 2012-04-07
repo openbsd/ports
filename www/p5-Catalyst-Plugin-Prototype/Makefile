@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/07 20:50:23 sthen Exp $
 
 COMMENT=		catalyst plugin for prototype
 
@@ -23,7 +23,8 @@ RUN_DEPENDS=		www/p5-Catalyst-Runtime \
 MAKE_ENV=		TEST_POD=Yes
 CONFIGURE_STYLE=	modinst
 
+# we shan't be needing MacOS resource forks in these parts!
 post-extract:
-	@rm ${WRKSRC}/lib/Catalyst/Plugin/._Prototype.pm
+	@find ${WRKSRC} -name '._*' -exec rm {} +
 
 .include <bsd.port.mk>
