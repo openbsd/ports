@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.46 2012/01/30 15:11:04 espie Exp $
+# $OpenBSD: Engine.pm,v 1.47 2012/04/07 12:16:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -421,6 +421,16 @@ sub statline
 	    $self->fetchcount($q, $t));
 }
 
+sub may_add
+{
+	my ($self, $prefix, $s) = @_;
+	if ($s eq '') {
+		return '';
+	} else {
+		return "$prefix$s\n";
+	}
+}
+
 sub report
 {
 	my $self = shift;
@@ -429,8 +439,8 @@ sub report
 	return join(" ",
 	    $self->statline,
 	    "!=".$self->count("ignored"))."\n".
-	    "L=".$self->lock_errors_string('locks')."\n".
-	    "E=".$self->errors_string('errors')."\n";
+	    $self->may_add("L=", $self->lock_errors_string("locks")).
+	    $self->may_add("E=", $self->errors_string("errors"));
 }
 
 sub stats
