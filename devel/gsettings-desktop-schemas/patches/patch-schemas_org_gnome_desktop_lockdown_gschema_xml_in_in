@@ -1,0 +1,16 @@
+$OpenBSD: patch-schemas_org_gnome_desktop_lockdown_gschema_xml_in_in,v 1.1 2012/04/07 12:21:48 ajacoutot Exp $
+
+By default it is not possible to run >1 instance of X(7) under OpenBSD
+at securelevel(7) 1, hence it is not possible to switch user.
+
+--- schemas/org.gnome.desktop.lockdown.gschema.xml.in.in.orig	Sat Apr  7 13:55:34 2012
++++ schemas/org.gnome.desktop.lockdown.gschema.xml.in.in	Sat Apr  7 13:55:44 2012
+@@ -34,7 +34,7 @@
+       </_description>
+     </key>
+     <key name="disable-user-switching" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Disable user switching</_summary>
+       <_description>
+         Prevent the user from switching to another account while his session 
