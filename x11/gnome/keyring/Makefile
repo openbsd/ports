@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/04/07 06:24:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2012/04/07 07:36:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
 GNOME_VERSION=	3.4.0
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://live.gnome.org/GnomeKeyring
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	x11/gnome/gcr
 LIBTOOL_ARGS=	--tag=disable-static
 
 CONFIGURE_ARGS=	--disable-static \
-		--with-ca-certificates=/etc/ssl \
+		--with-root-certs=/etc/ssl \
 		--disable-pam \
 		--disable-selinux \
 		--without-libcap-ng
