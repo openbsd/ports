@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/04/07 05:48:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2012/04/07 17:24:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -90,6 +90,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
+
+post-extract:
+	@perl -pi -e 's/\r\n/\n/g' ${WRKSRC}/src/demuxers/asfheader.c
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm
