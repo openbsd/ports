@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/08 12:50:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/07 08:29:48 sthen Exp $
 bin/shorten.pl
 ${P5SITE}/WWW/Shorten/
 ${P5SITE}/WWW/Shorten.pm
@@ -9,6 +9,7 @@ ${P5SITE}/WWW/Shorten/Metamark.pm
 ${P5SITE}/WWW/Shorten/TinyClick.pm
 ${P5SITE}/WWW/Shorten/TinyURL.pm
 ${P5SITE}/WWW/Shorten/Tinylink.pm
+${P5SITE}/WWW/Shorten/UserAgent.pm
 ${P5SITE}/WWW/Shorten/_dead.pm
 ${P5SITE}/WWW/Shorten/generic.pm
 @man man/man1/shorten.pl.1
@@ -20,5 +21,6 @@ ${P5SITE}/WWW/Shorten/generic.pm
 @man man/man3p/WWW::Shorten::TinyClick.3p
 @man man/man3p/WWW::Shorten::TinyURL.3p
 @man man/man3p/WWW::Shorten::Tinylink.3p
+@man man/man3p/WWW::Shorten::UserAgent.3p
 @man man/man3p/WWW::Shorten::_dead.3p
 @man man/man3p/WWW::Shorten::generic.3p
