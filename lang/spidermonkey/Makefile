@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/07 13:39:02 landry Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT =	Mozilla C implementation of JavaScript
 
-MOZILLA_VERSION =	1.9.2.16
-FFX_VERSION =	3.6.16
+MOZILLA_VERSION =	1.9.2.28
+FFX_VERSION =	3.6.28
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	spidermonkey
 DISTNAME =		firefox-${FFX_VERSION}.source
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
 EPOCH =		0
-REVISION =	2
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs ${SO_VERSION}

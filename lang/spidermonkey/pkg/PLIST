@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 20:02:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/04/07 13:39:02 landry Exp $
+@option no-default-conflict
+@conflict spidermonkey->=1.9.2
 %%jit%%
 %%amd64%%
 @bin bin/js
