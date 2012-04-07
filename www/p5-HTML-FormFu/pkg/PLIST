@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:10 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/07 19:50:59 sthen Exp $
 bin/html_formfu_deploy.pl
 bin/html_formfu_dumpconf.pl
 ${P5SITE}/HTML/FormFu/
@@ -34,6 +34,8 @@ ${P5SITE}/HTML/FormFu/Constraint/Number.pm
 ${P5SITE}/HTML/FormFu/Constraint/Printable.pm
 ${P5SITE}/HTML/FormFu/Constraint/Range.pm
 ${P5SITE}/HTML/FormFu/Constraint/Regex.pm
+${P5SITE}/HTML/FormFu/Constraint/Repeatable/
+${P5SITE}/HTML/FormFu/Constraint/Repeatable/Any.pm
 ${P5SITE}/HTML/FormFu/Constraint/Required.pm
 ${P5SITE}/HTML/FormFu/Constraint/Set.pm
 ${P5SITE}/HTML/FormFu/Constraint/SingleValue.pm
@@ -42,8 +44,11 @@ ${P5SITE}/HTML/FormFu/Constraint/_others.pm
 ${P5SITE}/HTML/FormFu/Constraint/reCAPTCHA.pm
 ${P5SITE}/HTML/FormFu/Deflator/
 ${P5SITE}/HTML/FormFu/Deflator.pm
+${P5SITE}/HTML/FormFu/Deflator/Callback.pm
 ${P5SITE}/HTML/FormFu/Deflator/CompoundDateTime.pm
 ${P5SITE}/HTML/FormFu/Deflator/CompoundSplit.pm
+${P5SITE}/HTML/FormFu/Deflator/FormatNumber.pm
+${P5SITE}/HTML/FormFu/Deflator/PathClassFile.pm
 ${P5SITE}/HTML/FormFu/Deflator/Strftime.pm
 ${P5SITE}/HTML/FormFu/Deploy.pm
 ${P5SITE}/HTML/FormFu/Element/
@@ -62,7 +67,9 @@ ${P5SITE}/HTML/FormFu/Element/File.pm
 ${P5SITE}/HTML/FormFu/Element/Hidden.pm
 ${P5SITE}/HTML/FormFu/Element/Hr.pm
 ${P5SITE}/HTML/FormFu/Element/Image.pm
+${P5SITE}/HTML/FormFu/Element/Label.pm
 ${P5SITE}/HTML/FormFu/Element/Multi.pm
+${P5SITE}/HTML/FormFu/Element/Number.pm
 ${P5SITE}/HTML/FormFu/Element/Password.pm
 ${P5SITE}/HTML/FormFu/Element/Radio.pm
 ${P5SITE}/HTML/FormFu/Element/Radiogroup.pm
@@ -97,6 +104,7 @@ ${P5SITE}/HTML/FormFu/Filter/CompoundJoin.pm
 ${P5SITE}/HTML/FormFu/Filter/CompoundSprintf.pm
 ${P5SITE}/HTML/FormFu/Filter/CopyValue.pm
 ${P5SITE}/HTML/FormFu/Filter/Encode.pm
+${P5SITE}/HTML/FormFu/Filter/FormatNumber.pm
 ${P5SITE}/HTML/FormFu/Filter/HTMLEscape.pm
 ${P5SITE}/HTML/FormFu/Filter/HTMLScrubber.pm
 ${P5SITE}/HTML/FormFu/Filter/LowerCase.pm
@@ -109,6 +117,7 @@ ${P5SITE}/HTML/FormFu/Filter/Whitespace.pm
 ${P5SITE}/HTML/FormFu/Filter/_Compound.pm
 ${P5SITE}/HTML/FormFu/I18N/
 ${P5SITE}/HTML/FormFu/I18N.pm
+${P5SITE}/HTML/FormFu/I18N/bg.pm
 ${P5SITE}/HTML/FormFu/I18N/da.pm
 ${P5SITE}/HTML/FormFu/I18N/de.pm
 ${P5SITE}/HTML/FormFu/I18N/en.pm
@@ -116,6 +125,7 @@ ${P5SITE}/HTML/FormFu/I18N/es.pm
 ${P5SITE}/HTML/FormFu/I18N/fr.pm
 ${P5SITE}/HTML/FormFu/I18N/it.pm
 ${P5SITE}/HTML/FormFu/I18N/ja.pm
+${P5SITE}/HTML/FormFu/I18N/no.pm
 ${P5SITE}/HTML/FormFu/I18N/pt_br.pm
 ${P5SITE}/HTML/FormFu/I18N/pt_pt.pm
 ${P5SITE}/HTML/FormFu/I18N/ro.pm
@@ -123,6 +133,7 @@ ${P5SITE}/HTML/FormFu/I18N/ru.pm
 ${P5SITE}/HTML/FormFu/I18N/ua.pm
 ${P5SITE}/HTML/FormFu/Inflator/
 ${P5SITE}/HTML/FormFu/Inflator.pm
+${P5SITE}/HTML/FormFu/Inflator/Callback.pm
 ${P5SITE}/HTML/FormFu/Inflator/CompoundDateTime.pm
 ${P5SITE}/HTML/FormFu/Inflator/DateTime.pm
 ${P5SITE}/HTML/FormFu/Literal.pm
@@ -130,7 +141,9 @@ ${P5SITE}/HTML/FormFu/Localize.pm
 ${P5SITE}/HTML/FormFu/Manual/
 ${P5SITE}/HTML/FormFu/Manual/Cookbook.pod
 ${P5SITE}/HTML/FormFu/Manual/Unicode.pod
+${P5SITE}/HTML/FormFu/Model/
 ${P5SITE}/HTML/FormFu/Model.pm
+${P5SITE}/HTML/FormFu/Model/HashRef.pm
 ${P5SITE}/HTML/FormFu/MultiForm.pm
 ${P5SITE}/HTML/FormFu/ObjectUtil.pm
 ${P5SITE}/HTML/FormFu/OutputProcessor/
@@ -172,6 +185,7 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/form
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/input_tag
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label
+${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/label_tag
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/multi
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/non_block
 ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/recaptcha
@@ -211,6 +225,7 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 @man man/man3p/HTML::FormFu::Constraint::Printable.3p
 @man man/man3p/HTML::FormFu::Constraint::Range.3p
 @man man/man3p/HTML::FormFu::Constraint::Regex.3p
+@man man/man3p/HTML::FormFu::Constraint::Repeatable::Any.3p
 @man man/man3p/HTML::FormFu::Constraint::Required.3p
 @man man/man3p/HTML::FormFu::Constraint::Set.3p
 @man man/man3p/HTML::FormFu::Constraint::SingleValue.3p
@@ -218,8 +233,11 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 @man man/man3p/HTML::FormFu::Constraint::_others.3p
 @man man/man3p/HTML::FormFu::Constraint::reCAPTCHA.3p
 @man man/man3p/HTML::FormFu::Deflator.3p
+@man man/man3p/HTML::FormFu::Deflator::Callback.3p
 @man man/man3p/HTML::FormFu::Deflator::CompoundDateTime.3p
 @man man/man3p/HTML::FormFu::Deflator::CompoundSplit.3p
+@man man/man3p/HTML::FormFu::Deflator::FormatNumber.3p
+@man man/man3p/HTML::FormFu::Deflator::PathClassFile.3p
 @man man/man3p/HTML::FormFu::Deflator::Strftime.3p
 @man man/man3p/HTML::FormFu::Element.3p
 @man man/man3p/HTML::FormFu::Element::Blank.3p
@@ -236,7 +254,9 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 @man man/man3p/HTML::FormFu::Element::Hidden.3p
 @man man/man3p/HTML::FormFu::Element::Hr.3p
 @man man/man3p/HTML::FormFu::Element::Image.3p
+@man man/man3p/HTML::FormFu::Element::Label.3p
 @man man/man3p/HTML::FormFu::Element::Multi.3p
+@man man/man3p/HTML::FormFu::Element::Number.3p
 @man man/man3p/HTML::FormFu::Element::Password.3p
 @man man/man3p/HTML::FormFu::Element::Radio.3p
 @man man/man3p/HTML::FormFu::Element::Radiogroup.3p
@@ -262,6 +282,7 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 @man man/man3p/HTML::FormFu::Filter::CompoundSprintf.3p
 @man man/man3p/HTML::FormFu::Filter::CopyValue.3p
 @man man/man3p/HTML::FormFu::Filter::Encode.3p
+@man man/man3p/HTML::FormFu::Filter::FormatNumber.3p
 @man man/man3p/HTML::FormFu::Filter::HTMLEscape.3p
 @man man/man3p/HTML::FormFu::Filter::HTMLScrubber.3p
 @man man/man3p/HTML::FormFu::Filter::LowerCase.3p
@@ -273,11 +294,13 @@ ${P5SITE}/auto/share/dist/HTML-FormFu/templates/tt/xhtml/textarea_tag
 @man man/man3p/HTML::FormFu::Filter::Whitespace.3p
 @man man/man3p/HTML::FormFu::Filter::_Compound.3p
 @man man/man3p/HTML::FormFu::Inflator.3p
+@man man/man3p/HTML::FormFu::Inflator::Callback.3p
 @man man/man3p/HTML::FormFu::Inflator::CompoundDateTime.3p
 @man man/man3p/HTML::FormFu::Inflator::DateTime.3p
 @man man/man3p/HTML::FormFu::Manual::Cookbook.3p
 @man man/man3p/HTML::FormFu::Manual::Unicode.3p
 @man man/man3p/HTML::FormFu::Model.3p
+@man man/man3p/HTML::FormFu::Model::HashRef.3p
 @man man/man3p/HTML::FormFu::MultiForm.3p
 @man man/man3p/HTML::FormFu::OutputProcessor.3p
 @man man/man3p/HTML::FormFu::OutputProcessor::Indent.3p
