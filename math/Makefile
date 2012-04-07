@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2011/10/07 09:01:20 edd Exp $
+# $OpenBSD: Makefile,v 1.106 2012/04/07 03:46:16 jim Exp $
 #
 
      SUBDIR =
@@ -60,6 +60,7 @@
      SUBDIR += p5-AI-NeuralNet-Kohonen-Visual
      SUBDIR += p5-AI-NeuralNet-Mesh
      SUBDIR += p5-AI-Perceptron
+     SUBDIR += p5-Algorithm-Combinatorics
      SUBDIR += p5-Algorithm-NaiveBayes
      SUBDIR += p5-Bit-Vector
      SUBDIR += p5-Chart-Math-Axis
