@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/16 11:17:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/07 13:48:31 ajacoutot Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.30.1
+GNOME_VERSION=		1.32.0
 
 SHARED_LIBS +=  gjs                  1.0      # 0.0
 SHARED_LIBS +=  gjs-dbus             1.0      # 0.0
-SHARED_LIBS +=  gjs-gdbus             1.0      # 0.0
+SHARED_LIBS +=  gjs-gdbus            1.0      # 0.0
 
 CATEGORIES=		devel
 
@@ -21,6 +21,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
+WANTLIB += ffi fontconfig freetype gio-2.0 girepository-1.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m mozjs185 ncurses
+WANTLIB += ncursesw nspr4 pcre pixman-1 plc4 plds4 png pthread
+WANTLIB += pthread-stubs readline stdc++ xcb xcb-render xcb-shm
+WANTLIB += z
+
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
@@ -31,23 +39,10 @@ MODPY_ADJ_FILES=	scripts/make-tests
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
-WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
-WANTLIB += ffi fontconfig freetype gio-2.0 girepository-1.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m mozjs ncurses
-WANTLIB += ncursesw nspr4 pcre pixman-1 plc4 plds4 png pthread
-WANTLIB += pthread-stubs readline stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
-
-LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
-			lang/spidermonkey \
+LIB_DEPENDS=		devel/gobject-introspection>=1.32.0 \
+			devel/spidermonkey>=1.8,<1.9 \
 			x11/dbus-glib
-REGRESS_DEPENDS=	sysutils/e2fsprogs
-
-CONFIGURE_ARGS+=	--with-js-package="mozilla-js"
-
-pre-configure:
-	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure
+REGRESS_DEPENDS=	sysutils/e2fsprogs # uuidgen(1)
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/

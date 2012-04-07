@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/09/21 14:00:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/07 13:48:31 ajacoutot Exp $
 bin/gjs
 @bin bin/gjs-console
 include/gjs-1.0/
@@ -9,6 +9,8 @@ include/gjs-1.0/gi/closure.h
 include/gjs-1.0/gi/enumeration.h
 include/gjs-1.0/gi/foreign.h
 include/gjs-1.0/gi/function.h
+include/gjs-1.0/gi/gtype.h
+include/gjs-1.0/gi/interface.h
 include/gjs-1.0/gi/keep-alive.h
 include/gjs-1.0/gi/ns.h
 include/gjs-1.0/gi/object.h
@@ -29,7 +31,7 @@ include/gjs-1.0/gjs/importer.h
 include/gjs-1.0/gjs/jsapi-util.h
 include/gjs-1.0/gjs/mem.h
 include/gjs-1.0/gjs/native.h
-lib/gjs/
+lib/girepository-1.0/GjsDBus-1.0.typelib
 lib/gjs-1.0/
 @comment lib/gjs-1.0/cairoNative.la
 lib/gjs-1.0/cairoNative.so
@@ -45,13 +47,13 @@ lib/gjs-1.0/gettextNative.so
 lib/gjs-1.0/langNative.so
 @comment lib/gjs-1.0/mainloop.la
 lib/gjs-1.0/mainloop.so
-lib/gjs/GjsDBus-1.0.gir
-lib/gjs/GjsDBus-1.0.typelib
-@comment lib/libgjs-dbus.la
+@comment lib/gjs-1.0/system.la
+lib/gjs-1.0/system.so
+lib/libgjs-dbus.la
 @lib lib/libgjs-dbus.so.${LIBgjs-dbus_VERSION}
-@comment lib/libgjs-gdbus.la
+lib/libgjs-gdbus.la
 @lib lib/libgjs-gdbus.so.${LIBgjs-gdbus_VERSION}
-@comment lib/libgjs.la
+lib/libgjs.la
 @lib lib/libgjs.so.${LIBgjs_VERSION}
 lib/pkgconfig/gjs-1.0.pc
 lib/pkgconfig/gjs-dbus-1.0.pc
@@ -62,6 +64,7 @@ share/examples/gjs/gio-cat.js
 share/examples/gjs/gtk.js
 share/examples/gjs/http-server.js
 share/examples/gjs/test.jpg
+share/gir-1.0/GjsDBus-1.0.gir
 share/gjs-1.0/
 share/gjs-1.0/cairo.js
 share/gjs-1.0/dbus.js
@@ -70,6 +73,7 @@ share/gjs-1.0/jsUnit.js
 share/gjs-1.0/lang.js
 share/gjs-1.0/overrides/
 share/gjs-1.0/overrides/GLib.js
+share/gjs-1.0/overrides/GObject.js
 share/gjs-1.0/overrides/Gio.js
 share/gjs-1.0/promise.js
 share/gjs-1.0/signals.js
