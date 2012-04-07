@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/07 14:28:57 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		roles which support overloading
 
 MODULES=		cpan
-DISTNAME=		MooseX-Role-WithOverloading-0.06
-REVISION=		2
+DISTNAME=		MooseX-Role-WithOverloading-0.09
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
 MAINTAINER=		Jim Razmus II <jim@openbsd.org>
 
@@ -23,6 +21,5 @@ RUN_DEPENDS=		devel/p5-Moose>=0.94 \
 			devel/p5-aliased \
 			devel/p5-namespace-autoclean \
 			devel/p5-namespace-clean
-BUILD_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>

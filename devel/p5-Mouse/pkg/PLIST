@@ -1,33 +1,72 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/05/06 22:54:06 simon Exp $
-${P5SITE}/Mouse/
-${P5SITE}/Mouse.pm
-${P5SITE}/Mouse/Meta/
-${P5SITE}/Mouse/Meta/Attribute.pm
-${P5SITE}/Mouse/Meta/Class.pm
-${P5SITE}/Mouse/Meta/Method/
-${P5SITE}/Mouse/Meta/Method/Accessor.pm
-${P5SITE}/Mouse/Meta/Method/Constructor.pm
-${P5SITE}/Mouse/Meta/Method/Destructor.pm
-${P5SITE}/Mouse/Meta/Role.pm
-${P5SITE}/Mouse/Meta/TypeConstraint.pm
-${P5SITE}/Mouse/Object.pm
-${P5SITE}/Mouse/Role.pm
-${P5SITE}/Mouse/Tiny.pm
-${P5SITE}/Mouse/TypeRegistry.pm
-${P5SITE}/Mouse/Util/
-${P5SITE}/Mouse/Util.pm
-${P5SITE}/Mouse/Util/TypeConstraints.pm
-${P5SITE}/Squirrel/
-${P5SITE}/Squirrel.pm
-${P5SITE}/Squirrel/Role.pm
-${P5SITE}/ouse.pm
+@comment $OpenBSD: PLIST,v 1.4 2012/04/07 14:28:57 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Mouse/
+${P5ARCH}/Mouse.pm
+${P5ARCH}/Mouse/Exporter.pm
+${P5ARCH}/Mouse/Meta/
+${P5ARCH}/Mouse/Meta/Attribute.pm
+${P5ARCH}/Mouse/Meta/Class.pm
+${P5ARCH}/Mouse/Meta/Method/
+${P5ARCH}/Mouse/Meta/Method.pm
+${P5ARCH}/Mouse/Meta/Method/Accessor.pm
+${P5ARCH}/Mouse/Meta/Method/Constructor.pm
+${P5ARCH}/Mouse/Meta/Method/Delegation.pm
+${P5ARCH}/Mouse/Meta/Method/Destructor.pm
+${P5ARCH}/Mouse/Meta/Module.pm
+${P5ARCH}/Mouse/Meta/Role/
+${P5ARCH}/Mouse/Meta/Role.pm
+${P5ARCH}/Mouse/Meta/Role/Application.pm
+${P5ARCH}/Mouse/Meta/Role/Composite.pm
+${P5ARCH}/Mouse/Meta/Role/Method.pm
+${P5ARCH}/Mouse/Meta/TypeConstraint.pm
+${P5ARCH}/Mouse/Object.pm
+${P5ARCH}/Mouse/PurePerl.pm
+${P5ARCH}/Mouse/Role.pm
+${P5ARCH}/Mouse/Spec.pm
+${P5ARCH}/Mouse/Tiny.pm
+${P5ARCH}/Mouse/Tiny.pod
+${P5ARCH}/Mouse/TypeRegistry.pm
+${P5ARCH}/Mouse/Util/
+${P5ARCH}/Mouse/Util.pm
+${P5ARCH}/Mouse/Util/MetaRole.pm
+${P5ARCH}/Mouse/Util/TypeConstraints.pm
+${P5ARCH}/Mouse/XS.pod
+${P5ARCH}/Squirrel/
+${P5ARCH}/Squirrel.pm
+${P5ARCH}/Squirrel/Role.pm
+${P5ARCH}/Test/
+${P5ARCH}/Test/Mouse.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Mouse/
+${P5ARCH}/auto/Mouse/Mouse.bs
+${P5ARCH}/auto/Mouse/Mouse.so
+${P5ARCH}/ouse.pm
 @man man/man3p/Mouse.3p
+@man man/man3p/Mouse::Exporter.3p
 @man man/man3p/Mouse::Meta::Attribute.3p
 @man man/man3p/Mouse::Meta::Class.3p
+@man man/man3p/Mouse::Meta::Method.3p
+@man man/man3p/Mouse::Meta::Method::Accessor.3p
+@man man/man3p/Mouse::Meta::Method::Constructor.3p
+@man man/man3p/Mouse::Meta::Method::Delegation.3p
+@man man/man3p/Mouse::Meta::Method::Destructor.3p
+@man man/man3p/Mouse::Meta::Module.3p
+@man man/man3p/Mouse::Meta::Role.3p
+@man man/man3p/Mouse::Meta::Role::Application.3p
+@man man/man3p/Mouse::Meta::Role::Composite.3p
+@man man/man3p/Mouse::Meta::Role::Method.3p
 @man man/man3p/Mouse::Meta::TypeConstraint.3p
 @man man/man3p/Mouse::Object.3p
+@man man/man3p/Mouse::PurePerl.3p
 @man man/man3p/Mouse::Role.3p
+@man man/man3p/Mouse::Spec.3p
+@man man/man3p/Mouse::Tiny.3p
+@man man/man3p/Mouse::TypeRegistry.3p
 @man man/man3p/Mouse::Util.3p
+@man man/man3p/Mouse::Util::MetaRole.3p
 @man man/man3p/Mouse::Util::TypeConstraints.3p
+@man man/man3p/Mouse::XS.3p
 @man man/man3p/Squirrel.3p
+@man man/man3p/Squirrel::Role.3p
+@man man/man3p/Test::Mouse.3p
 @man man/man3p/ouse.3p

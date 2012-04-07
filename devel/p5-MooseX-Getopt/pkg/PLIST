@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/02 04:29:32 jim Exp $
-${P5SITE}/MooseX/
+@comment $OpenBSD: PLIST,v 1.2 2012/04/07 14:28:57 sthen Exp $
 ${P5SITE}/MooseX/Getopt/
 ${P5SITE}/MooseX/Getopt.pm
 ${P5SITE}/MooseX/Getopt/Basic.pm
@@ -13,6 +12,7 @@ ${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait/
 ${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait.pm
 ${P5SITE}/MooseX/Getopt/Meta/Attribute/Trait/NoGetopt.pm
 ${P5SITE}/MooseX/Getopt/OptionTypeMap.pm
+${P5SITE}/MooseX/Getopt/ProcessedArgv.pm
 ${P5SITE}/MooseX/Getopt/Strict.pm
 @man man/man3p/MooseX::Getopt.3p
 @man man/man3p/MooseX::Getopt::Basic.3p
@@ -23,4 +23,5 @@ ${P5SITE}/MooseX/Getopt/Strict.pm
 @man man/man3p/MooseX::Getopt::Meta::Attribute::Trait.3p
 @man man/man3p/MooseX::Getopt::Meta::Attribute::Trait::NoGetopt.3p
 @man man/man3p/MooseX::Getopt::OptionTypeMap.3p
+@man man/man3p/MooseX::Getopt::ProcessedArgv.3p
 @man man/man3p/MooseX::Getopt::Strict.3p

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/07 14:28:57 sthen Exp $
 
 COMMENT =	code attribute introspection
 
 MODULES =	cpan
-DISTNAME =	MooseX-MethodAttributes-0.23
-REVISION =	0
+DISTNAME =	MooseX-MethodAttributes-0.25
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
