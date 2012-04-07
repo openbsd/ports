@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.738 2012/04/05 16:05:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.739 2012/04/07 12:44:56 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -375,6 +375,7 @@
      SUBDIR += p5-Sys-Hostname-Long
      SUBDIR += p5-Test-TCP
      SUBDIR += p5-Validate-Net
+     SUBDIR += p5-XML-RPC
      SUBDIR += p5-flowd
      SUBDIR += packit
      SUBDIR += papyon
