@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.9 2012/03/09 12:51:38 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.10 2012/04/07 12:13:36 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -34,13 +34,13 @@ sub term_send
 sub reset_cursor
 {
 	my $self = shift;
-	$self->term_send("ve");
+	print $self->{visible} if defined $self->{visible};
 }
 
 sub set_cursor
 {
 	my $self = shift;
-	$self->term_send("vi");
+	print $self->{invisible} if defined $self->{invisible};
 }
 
 sub reset
@@ -105,7 +105,7 @@ sub new
 	}
 		
 	if ($dotty) {
-		$class->ttyclass->new(@_);
+		$class->ttyclass->new($state, @_);
 	} else {
 		$singleton //= bless {msg => '', tty => $dotty,
 		    producers => $class->filter_can(\@_, 'important'),
@@ -193,6 +193,7 @@ sub set_sig_handlers
 sub new
 {
 	my $class = shift;
+	my $state = shift;
 	$singleton //= bless {msg => '',
 	    producers => $class->filter_can(\@_, 'report'),
 	    continued => 0}, $class;
@@ -213,6 +214,12 @@ sub new
 	$singleton->{down} = $singleton->{terminal}->Tputs("do", 1);
 	$singleton->{glitch} = $singleton->{terminal}->Tputs("xn", 1);
 	$singleton->{cleareol} = $singleton->{terminal}->Tputs("", 1);
+	if ($state->{subst}->value("NO_CURSOR")) {
+		$singleton->{invisible} = 
+		    $singleton->{terminal}->Tputs("vi", 1);
+		$singleton->{visible} = 
+		    $singleton->{terminal}->Tputs("ve", 1);
+	}
 	if ($singleton->{home}) {
 		$singleton->{write} = "go_write_home";
 	} else {
