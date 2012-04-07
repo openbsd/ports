@@ -1,0 +1,18 @@
+$OpenBSD: patch-data_libpeas-1_0_pc_in,v 1.1 2012/04/07 13:48:45 ajacoutot Exp $
+
+From 2d6ea307cf45af6b92b1cd708d0ee288aca0b3fe Mon Sep 17 00:00:00 2001
+From: Olav Vitters <olav@vitters.nl>
+Date: Wed, 28 Mar 2012 13:28:40 +0000
+Subject: fix forgotten @ in pkgconfig file
+
+--- data/libpeas-1.0.pc.in.orig	Thu Apr  5 11:30:31 2012
++++ data/libpeas-1.0.pc.in	Thu Apr  5 11:30:40 2012
+@@ -5,7 +5,7 @@ includedir=@includedir@
+ 
+ Name: libpeas
+ Description: libpeas, a GObject plugins library
+-Requires: glib-2.0 >= @GLIB_REQUIRED@, gobject-2.0 >= @GLIB_REQUIRED@, gmodule-2.0 >= @GLIB_REQUIRED@, gio-2.0 >= @GIO_REQUIRED gobject-introspection-1.0 >= @INTROSPECTION_REQUIRED@
++Requires: glib-2.0 >= @GLIB_REQUIRED@, gobject-2.0 >= @GLIB_REQUIRED@, gmodule-2.0 >= @GLIB_REQUIRED@, gio-2.0 >= @GIO_REQUIRED@ gobject-introspection-1.0 >= @INTROSPECTION_REQUIRED@
+ Version: @VERSION@
+ Cflags: -I${includedir}/libpeas-1.0
+ Libs: -L${libdir} -lpeas-1.0

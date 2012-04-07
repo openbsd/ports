@@ -1,15 +1,23 @@
-$OpenBSD: patch-tests_libpeas_plugins_extension-js_Makefile_in,v 1.1 2011/09/23 11:25:12 jasper Exp $
+$OpenBSD: patch-tests_libpeas_plugins_extension-js_Makefile_in,v 1.2 2012/04/07 13:48:45 ajacoutot Exp $
 
 sed(1) doesn't support -i, so use perl(1) instead.
 
---- tests/libpeas/plugins/extension-js/Makefile.in.orig	Fri Sep 23 13:16:18 2011
-+++ tests/libpeas/plugins/extension-js/Makefile.in	Fri Sep 23 13:16:45 2011
-@@ -471,7 +471,7 @@ extension-js.%:
+--- tests/libpeas/plugins/extension-js/Makefile.in.orig	Wed Mar 28 13:10:20 2012
++++ tests/libpeas/plugins/extension-js/Makefile.in	Thu Apr  5 11:18:31 2012
+@@ -508,14 +508,14 @@ extension-js.%:
  
- %.plugin: extension-js.plugin
+ extension-gjs.gschema.xml extension-seed.gschema.xml: extension-js.gschema.xml
  	$(AM_V_GEN) cp $< $@ && \
--	$(SED) -i -e 's/JS_LOADER/$(@:extension-%.plugin=%)/' $@
-+	/usr/bin/perl -pi -e 's/JS_LOADER/$(@:extension-%.plugin=%)/' $@
+-	$(SED) -i -e 's%JS_LOADER%$(@:extension-%.gschema.xml=%)%g' $@
++	/usr/bin/perl -pi -e 's%JS_LOADER%$(@:extension-%.gschema.xml=%)%g' $@
+ 
+ extension-gjs.js extension-seed.js: extension-js.js
+ 	$(AM_V_GEN) $(LN_S) $< $@
+ 
+ extension-gjs.plugin extension-seed.plugin: extension-js.plugin
+ 	$(AM_V_GEN) cp $< $@ && \
+-	$(SED) -i -e 's%JS_LOADER%$(@:extension-%.plugin=%)%g' $@
++	/usr/bin/perl -pi -e 's%JS_LOADER%$(@:extension-%.plugin=%)%g' $@
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
