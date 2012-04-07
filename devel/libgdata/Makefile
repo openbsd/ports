@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/02 15:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/04/07 07:29:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,6 @@ LIBTOOL_FLAGS+= 	--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-static \
-			--enable-gnome \
-			--with-ca-certs=/etc/ssl/cert.pem
+			--enable-gnome
 
 .include <bsd.port.mk>
