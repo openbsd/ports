@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/07 19:59:59 sthen Exp $
 
-COMMENT= 	perl implementation of XML-RPC
+COMMENT=	perl implementation of XML-RPC
 
 MODULES=	cpan
-DISTNAME=	RPC-XML-0.59
-REVISION=	0
+DISTNAME=	RPC-XML-0.76
 CATEGORIES=	net devel
 USE_GROFF =	Yes
 
@@ -16,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_GMAKE=		Yes
 RUN_DEPENDS=		www/p5-libwww \
 			textproc/p5-XML-Parser
 REGRESS_DEPENDS=	www/mod_perl \
+			devel/p5-DateTime-Format-ISO8601 \
 			devel/p5-Net-Server \
 			devel/p5-Test-Pod \
 			devel/p5-Test-Pod-Coverage
