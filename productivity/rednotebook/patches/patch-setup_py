@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.5 2011/04/15 06:32:42 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.6 2012/04/07 13:14:17 ajacoutot Exp $
 
 Fix build on clean system.
 
---- setup.py.orig	Thu Apr 14 23:28:44 2011
-+++ setup.py	Thu Apr 14 23:29:10 2011
-@@ -220,7 +220,7 @@ if set(['build', 'install', 'bdist', 'py2exe', 'i18n']
+--- setup.py.orig	Sat Jan 21 17:26:25 2012
++++ setup.py	Sat Apr  7 15:06:50 2012
+@@ -222,7 +222,7 @@ if set(['build', 'install', 'bdist', 'py2exe', 'i18n']
  
  # Freedesktop parameters
  share_dir = join(get_data_base_dir(), 'share')
