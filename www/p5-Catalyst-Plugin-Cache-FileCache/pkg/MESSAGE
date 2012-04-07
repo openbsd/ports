@@ -1,0 +1,3 @@
+Catalyst::Plugin::Cache::FileCache has been deprecated in favor of
+Catalyst::Plugin::Cache.  You can configure that module to use a
+FileCache backend.
