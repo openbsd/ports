@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/29 06:50:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/07 06:24:46 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
@@ -36,6 +36,9 @@ MODGNOME_ICON_CACHE=	Yes
 # In function `_gck_stringize_rv': gck/gck-misc.c:132: multiple definition of `SECMEM_pool_data_v1_0'
 # gck/tests/test-gck-attributes.c:34: first defined here
 USE_LIBTOOL=	gnu
+
+# only required during build for parsing ASN.1 files
+BUILD_DEPENDS += security/libtasn1
 
 RUN_DEPENDS=	misc/shared-mime-info
 
