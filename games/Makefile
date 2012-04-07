@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.241 2012/03/28 12:58:17 landry Exp $
+# $OpenBSD: Makefile,v 1.242 2012/04/07 15:26:31 espie Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -194,7 +194,6 @@
      SUBDIR += warzone2100
      SUBDIR += wesnoth
      SUBDIR += wesnoth,lite
-     SUBDIR += wesnoth,tinygui
      SUBDIR += widelands
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
