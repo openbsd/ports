@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/07 08:35:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/07 14:49:04 sthen Exp $
 
 COMMENT=	dynamic definition of a DBIx::Class::Schema
 
@@ -31,8 +31,35 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/p5-Test-Warn \
 		devel/p5-Task-Weaken \
 		devel/p5-Try-Tiny
-REGRESS_DEPENDS=databases/p5-DBD-SQLite
+REGRESS_DEPENDS=devel/p5-Config-Any \
+		devel/p5-Config-General \
+		databases/p5-DBD-SQLite \
+		databases/p5-DBI \
+		devel/p5-Moose \
+		devel/p5-MooseX-MarkAsMethods \
+		devel/p5-MooseX-NonMoose \
+		devel/p5-Test-Exception \
+		devel/p5-Test-Warn \
+		devel/p5-namespace-autoclean
 
-MAKE_ENV=	TEST_POD=Yes
+MAKE_ENV=	SCHEMA_LOADER_TESTS_BACKCOMPAT=Yes \
+		TEST_POD=Yes
+
+TEST_PG ?=	No
+.if ${TEST_PG:L:Myes}
+MAKE_ENV +=	DBICTEST_PG_DSN='dbi:Pg:dbname=test;host=localhost' \
+		DBICTEST_PG_USER=postgres \
+		DBICTEST_PG_PASS=
+REGRESS_DEPENDS +=	databases/p5-DBD-Pg
+.endif
+
+TEST_MYSQL ?=	No
+.if ${TEST_MYSQL:L:Myes}
+MAKE_ENV +=	DBICTEST_MYSQL_DSN='dbi:mysql:database=test;host=localhost' \
+		DBICTEST_MYSQL_USER=root \
+		DBICTEST_MYSQL_PASS= \
+		DBICTEST_MYSQL_INNODB=1
+REGRESS_DEPENDS +=	databases/p5-DBD-mysql
+.endif
 
 .include <bsd.port.mk>
