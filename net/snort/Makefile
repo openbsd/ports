@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2012/04/07 08:31:39 mcbride Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -9,7 +9,7 @@ COMMENT =		highly flexible sniffer/NIDS
 # The following hack allows it to work but XXX if updating, the
 # MASTER_SITES URL will need to be adjusted, not just DISTNAME.
 DISTNAME = 		snort-2.8.6
-REVISION=		1
+REVISION=		2
 MASTER_SITES = 		http://dl.snort.org/downloads/14?/ \
 			http://distfiles.nl/
 
