@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/07 03:24:14 jim Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/07 03:42:53 jim Exp $
+
+SHARED_ONLY =		yes
 
 COMMENT =		efficient generation of combinatorial sequences
 
