@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/08 21:58:56 sthen Exp $
 
-COMMENT= 	map subrequests to actions in Catalyst
+COMMENT=	map subrequests to actions in Catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-SubRequest-0.16
-REVISION=	0
+DISTNAME=	Catalyst-Plugin-SubRequest-0.17
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -17,7 +16,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime>=5.7012
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=yes
 
