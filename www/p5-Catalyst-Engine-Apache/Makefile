@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/08 21:58:14 sthen Exp $
 
-COMMENT= 	Catalyst Apache engine
+COMMENT=	Catalyst Apache engine
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Engine-Apache-1.12
-REVISION=	0
+DISTNAME=	Catalyst-Engine-Apache-1.16
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -18,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		mod_perl-*|ap2-mod_perl-*:www/mod_perl
-BUILD_DEPENDS=	www/p5-Catalyst-Runtime
 
 MAKE_ENV=	TEST_POD=Yes
 
