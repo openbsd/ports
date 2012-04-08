@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_am_header-vars_am,v 1.1 2011/05/18 19:38:15 matthieu Exp $
---- lib/am/header-vars.am.orig	Tue Dec  8 19:02:32 2009
-+++ lib/am/header-vars.am	Mon May 16 08:18:03 2011
-@@ -34,9 +34,9 @@ pkglibdir = $(libdir)/@PACKAGE@
+$OpenBSD: patch-lib_am_header-vars_am,v 1.2 2012/04/08 07:12:56 ajacoutot Exp $
+--- lib/am/header-vars.am.orig	Mon Apr  2 06:09:39 2012
++++ lib/am/header-vars.am	Sat Apr  7 22:15:00 2012
+@@ -63,9 +63,9 @@ pkglibdir = $(libdir)/@PACKAGE@
  pkglibexecdir = $(libexecdir)/@PACKAGE@
  
  am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd

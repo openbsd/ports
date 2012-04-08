@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/02/22 07:14:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/08 07:12:56 ajacoutot Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.11
-DISTNAME=	automake-${VERSION}.3
+DISTNAME=	automake-${VERSION}.4
 PKGSPEC=	automake->=${VERSION},<1.12
 
 CATEGORIES=	devel
