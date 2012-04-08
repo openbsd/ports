@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/07/02 04:37:36 jim Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/08 21:49:58 sthen Exp $
 @conflict p5-Catalyst-Manual-<5.701003
 bin/catalyst.pl
 ${P5SITE}/Catalyst/
@@ -24,9 +24,8 @@ ${P5SITE}/Catalyst/DispatchType/Regex.pm
 ${P5SITE}/Catalyst/Dispatcher.pm
 ${P5SITE}/Catalyst/Engine/
 ${P5SITE}/Catalyst/Engine.pm
-${P5SITE}/Catalyst/Engine/CGI.pm
-${P5SITE}/Catalyst/Engine/FastCGI.pm
 ${P5SITE}/Catalyst/Engine/HTTP.pm
+${P5SITE}/Catalyst/EngineLoader.pm
 ${P5SITE}/Catalyst/Exception/
 ${P5SITE}/Catalyst/Exception.pm
 ${P5SITE}/Catalyst/Exception/Basic.pm
@@ -35,6 +34,7 @@ ${P5SITE}/Catalyst/Exception/Go.pm
 ${P5SITE}/Catalyst/Exception/Interface.pm
 ${P5SITE}/Catalyst/Log.pm
 ${P5SITE}/Catalyst/Model.pm
+${P5SITE}/Catalyst/PSGI.pod
 ${P5SITE}/Catalyst/Request/
 ${P5SITE}/Catalyst/Request.pm
 ${P5SITE}/Catalyst/Request/Upload.pm
@@ -73,9 +73,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::DispatchType::Regex.3p
 @man man/man3p/Catalyst::Dispatcher.3p
 @man man/man3p/Catalyst::Engine.3p
-@man man/man3p/Catalyst::Engine::CGI.3p
-@man man/man3p/Catalyst::Engine::FastCGI.3p
-@man man/man3p/Catalyst::Engine::HTTP.3p
+@man man/man3p/Catalyst::EngineLoader.3p
 @man man/man3p/Catalyst::Exception.3p
 @man man/man3p/Catalyst::Exception::Basic.3p
 @man man/man3p/Catalyst::Exception::Detach.3p
@@ -83,6 +81,7 @@ ${P5SITE}/Catalyst/View.pm
 @man man/man3p/Catalyst::Exception::Interface.3p
 @man man/man3p/Catalyst::Log.3p
 @man man/man3p/Catalyst::Model.3p
+@man man/man3p/Catalyst::PSGI.3p
 @man man/man3p/Catalyst::Request.3p
 @man man/man3p/Catalyst::Request::Upload.3p
 @man man/man3p/Catalyst::Response.3p
