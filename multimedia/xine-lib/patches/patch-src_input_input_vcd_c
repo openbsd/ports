@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_input_input_vcd_c,v 1.7 2012/04/08 19:33:31 ajacoutot Exp $
+--- src/input/input_vcd.c.orig	Sun Oct 16 14:59:32 2011
++++ src/input/input_vcd.c	Sun Apr  8 14:39:38 2012
+@@ -53,6 +53,8 @@
+ 
+ #if defined(__sun)
+ #define	CDROM	       "/vol/dev/aliases/cdrom0"
++#elif defined(__OpenBSD__)
++#define CDROM          "/dev/rcd0c"
+ #else
+ /* for FreeBSD make a link to the right devnode, like /dev/acd0c */
+ #define CDROM          "/dev/cdrom"
