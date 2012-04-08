@@ -1,0 +1,4 @@
+Using Catalyst::Plugin::FormValidator is not recommended as the module
+takes over the global $c->form method, rather than being applicable in
+only part of your Catalyst application.  Furthermore,
+Data::FormValidator itself is not recommended for use.
