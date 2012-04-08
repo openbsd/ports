@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/07 13:48:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/08 17:21:49 ajacoutot Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
 GNOME_VERSION=		1.32.0
+REVISION=		0
 
 SHARED_LIBS +=  gjs                  1.0      # 0.0
 SHARED_LIBS +=  gjs-dbus             1.0      # 0.0
@@ -40,7 +41,7 @@ MODPY_ADJ_FILES=	scripts/make-tests
 LIBTOOL_FLAGS=		--tag=disable-static
 
 LIB_DEPENDS=		devel/gobject-introspection>=1.32.0 \
-			devel/spidermonkey>=1.8,<1.9 \
+			devel/spidermonkey \
 			x11/dbus-glib
 REGRESS_DEPENDS=	sysutils/e2fsprogs # uuidgen(1)
 
