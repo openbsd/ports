@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/08 22:04:40 sthen Exp $
 
-COMMENT= 	use shorter names in catalyst tt views
+COMMENT=	use shorter names in catalyst tt views (deprecated)
 
 MODULES=	cpan
-DISTNAME=	Catalyst-View-TT-FunctionGenerator-0.01
-REVISION=	0
+DISTNAME=	Catalyst-View-TT-FunctionGenerator-0.02
 CATEGORIES=	textproc devel
 USE_GROFF =	Yes
 
@@ -15,8 +14,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	textproc/p5-Catalyst-View-TT \
-		www/p5-Catalyst-Plugin-Singleton
+		www/p5-Catalyst-Plugin-Singleton \
+		devel/p5-MRO-Compat
 
-MAKE_ENV=	TEST_POD=Yes
+post-build:
+	@rm -f ${WRKBUILD}/blib/lib/Catalyst/View/TT/FunctionGenerator.pm.orig
 
 .include <bsd.port.mk>
