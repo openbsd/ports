@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/08 21:59:00 sthen Exp $
 
-COMMENT= 	Catalyst views using Mason components
+COMMENT=	Catalyst views using Mason components
 
 MODULES=	cpan
-DISTNAME=	Catalyst-View-Mason-0.08
-REVISION=	0
+DISTNAME=	Catalyst-View-Mason-0.18
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -15,9 +14,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Runtime \
-		www/p5-HTML-Mason
+		www/p5-HTML-Mason \
+		devel/p5-MRO-Compat
+REGRESS_DEPENDS=devel/p5-IO-Capture \
+		devel/p5-Test-File
 
-CONFIGURE_STYLE=modbuild
 MAKE_ENV=	TEST_POD=Yes
 
 .include <bsd.port.mk>
