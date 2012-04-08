@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/08 21:58:28 sthen Exp $
 
-COMMENT=		sensible default end action
+COMMENT=		sensible default end action (deprecated)
 
 MODULES=		cpan
-DISTNAME=		Catalyst-Plugin-DefaultEnd-0.06
-REVISION=		1
+DISTNAME=		Catalyst-Plugin-DefaultEnd-0.08
 CATEGORIES=		www devel
 USE_GROFF =		Yes
 
