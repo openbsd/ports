@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2011/03/02 06:39:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/04/08 16:32:29 ajacoutot Exp $
 
 COMMENT=	chess program
 
-DISTNAME=	gnuchess-5.08
-DISTFILES=	${DISTNAME}.tar.gz book_1.01.pgn.gz
+DISTNAME=	gnuchess-6.0.1
+DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
 
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
@@ -14,19 +14,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c ncurses pthread readline
+WANTLIB += c m ncurses pthread readline stdc++
 
 CONFIGURE_STYLE=	gnu
 
-MAKE_FLAGS+=		CFLAGS="${CFLAGS} -DBOOK_PREFIX=\\\"${TRUEPREFIX}\\\""
+#MAKE_FLAGS+=		CFLAGS="${CFLAGS} -DBOOK_PREFIX=\\\"${TRUEPREFIX}\\\""
 
-README=			${WRKSRC}/doc/README
-BOOK_FILE=		${WRKSRC}/src/book.dat
+README=			${WRKSRC}/README
+BOOK_FILE=		${WRKSRC}/src/book.bin
 
 post-build:
-		cd ${WRKSRC}/src && ln -sf ../../book_1.01.pgn
+		cd ${WRKSRC}/src && ln -sf ../../book_1.02.pgn
 		cd ${WRKSRC}/src && \
-		printf "book add book_1.01.pgn\nquit\n" | ./gnuchess ; echo
+		printf "book add book_1.02.pgn\nquit\n" | ./gnuchess ; echo
 
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/share/gnuchess
