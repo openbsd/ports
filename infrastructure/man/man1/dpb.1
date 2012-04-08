@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.37 2012/03/09 21:18:40 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.38 2012/04/08 10:20:42 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: March 9 2012 $
+.Dd $Mdocdate: April 8 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -183,6 +183,9 @@ Only run
 .Nm
 to figure out old distfiles and update
 .Pa ${FULLDISTDIR}/history .
+.It Ar NO_CURSOR
+Make the terminal cursor invisible if possible.
+Avoids flickering on slow graphics cards.
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.
@@ -405,7 +408,7 @@ process (note that fetch jobs are always local).
 a progress percentage.
 .El
 .Pp
-This is followed by a three-line display:
+This is followed by a summary display:
 .Bl -tag -width BB=
 .It I=
 number of built packages that can be installed.
@@ -431,6 +434,7 @@ list of packages that cannot currently be built because of locks.
 list of packages in error, that cannot currently be built.
 .El
 .Pp
+If those two lists are empty, they won't even show up.
 Note that those numbers refer to pkgpaths known to
 .Nm .
 In general, those numbers will be slightly higher than the actual number
