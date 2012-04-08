@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:03:35 sthen Exp $
+${P5SITE}/MooseX/Daemonize/
+${P5SITE}/MooseX/Daemonize.pm
+${P5SITE}/MooseX/Daemonize/Core.pm
+${P5SITE}/MooseX/Daemonize/Pid/
+${P5SITE}/MooseX/Daemonize/Pid.pm
+${P5SITE}/MooseX/Daemonize/Pid/File.pm
+${P5SITE}/MooseX/Daemonize/WithPidFile.pm
+${P5SITE}/Test/MooseX/
+${P5SITE}/Test/MooseX/Daemonize.pm
+@man man/man3p/MooseX::Daemonize.3p
+@man man/man3p/MooseX::Daemonize::Core.3p
+@man man/man3p/MooseX::Daemonize::Pid.3p
+@man man/man3p/MooseX::Daemonize::Pid::File.3p
+@man man/man3p/MooseX::Daemonize::WithPidFile.3p
+@man man/man3p/Test::MooseX::Daemonize.3p
