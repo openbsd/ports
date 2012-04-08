@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/08 21:58:42 sthen Exp $
 
-COMMENT= 	per-user session for catalyst
+COMMENT=	per-user session for catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-PerUser-0.03
-REVISION=	0
+DISTNAME=	Catalyst-Plugin-Session-PerUser-0.05
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -15,11 +14,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	www/p5-Catalyst-Plugin-Session \
-		devel/p5-Hash-Merge
+		security/p5-Catalyst-Plugin-Authentication \
+		devel/p5-Hash-Merge \
+		devel/p5-Moose \
+		devel/p5-MRO-Compat \
+		devel/p5-namespace-autoclean \
+		devel/p5-Object-Signature
 
-REGRESS_DEPENDS=devel/p5-Test-WWW-Mechanize-Catalyst \
-		security/p5-Catalyst-Plugin-Authentication
+REGRESS_DEPENDS=devel/p5-Test-WWW-Mechanize-Catalyst
 
-CONFIGURE_STYLE=modbuild
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
