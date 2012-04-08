@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.22 2012/03/23 22:42:25 sthen Exp $
---- configure.ac.orig	Sat Jan 14 16:40:17 2012
-+++ configure.ac	Tue Mar  6 14:19:49 2012
+$OpenBSD: patch-configure_ac,v 1.23 2012/04/08 22:34:51 sthen Exp $
+--- configure.ac.orig	Thu Feb 16 19:26:16 2012
++++ configure.ac	Fri Mar 30 01:18:07 2012
 @@ -55,7 +55,7 @@ AC_SUBST([astvarrundir],      ['${localstatedir}/run/a
  
  case "${host_os}" in
@@ -28,12 +28,3 @@ $OpenBSD: patch-configure_ac,v 1.22 2012/03/23 22:42:25 sthen Exp $
  
  AST_EXT_LIB_CHECK([OGG], [ogg], [ogg_sync_init], [])
  
-@@ -2077,7 +2077,7 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
- 
- if test "${OSARCH}" = "OpenBSD";
- then
--	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc -logg])
-+	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc -lvorbis -logg])
- else
- 	AST_EXT_LIB_CHECK([VORBIS], [vorbis], [vorbis_info_init], [vorbis/codec.h], [-lm -lvorbisenc])
- fi
