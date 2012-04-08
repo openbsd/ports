@@ -1,0 +1,2 @@
+DBIx::Class::Cursor::Cached provides a query cursor on a
+DBIx::Class::ResultSet with built-in caching support.
