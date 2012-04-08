@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/27 21:23:30 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 21:58:07 sthen Exp $
 ${P5SITE}/Catalyst/Controller/
 ${P5SITE}/Catalyst/Controller/FormBuilder/
 ${P5SITE}/Catalyst/Controller/FormBuilder.pm
