@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/08 21:58:26 sthen Exp $
 
 COMMENT =	configure your application with environment variables
 
 MODULES =	cpan
-DISTNAME =	Catalyst-Plugin-ConfigLoader-Environment-0.05
-REVISION =	0
+DISTNAME =	Catalyst-Plugin-ConfigLoader-Environment-0.07
 CATEGORIES =	www
 USE_GROFF =	Yes
 
@@ -17,7 +16,9 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 RUN_DEPENDS =	converters/p5-JSON-Any \
+		devel/p5-MRO-Compat \
 		www/p5-Catalyst-Runtime
-BUILD_DEPENDS =	${RUN_DEPENDS}
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
