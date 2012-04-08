@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/05 16:04:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 15:39:52 jasper Exp $
+@pkgpath net/telepathy/telepathy-farsight
 include/telepathy-1.0/telepathy-farstream/
 include/telepathy-1.0/telepathy-farstream/channel.h
 include/telepathy-1.0/telepathy-farstream/content.h
