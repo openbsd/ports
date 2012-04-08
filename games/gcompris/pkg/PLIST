@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/01/08 07:50:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/04/08 15:54:25 ajacoutot Exp $
 @bin bin/gcompris
 lib/gcompris/
 @comment lib/gcompris/libalgebra.la
@@ -681,6 +681,7 @@ share/gcompris/boards/clockgame/
 share/gcompris/boards/clockgame.svg
 share/gcompris/boards/clockgame.xml
 share/gcompris/boards/clockgame/clockgame-bg.svgz
+share/gcompris/boards/clockgame/clockgame-bg0.svgz
 share/gcompris/boards/colors/
 share/gcompris/boards/colors.svg
 share/gcompris/boards/colors.xml
