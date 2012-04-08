@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/08 21:58:53 sthen Exp $
 
-COMMENT=		singleton for the catalyst context
+COMMENT=		singleton for the catalyst context (deprecated)
 
 MODULES=		cpan
 DISTNAME=		Catalyst-Plugin-Singleton-0.02
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 USE_GROFF =		Yes
 
