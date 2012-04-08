@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/08 22:04:33 sthen Exp $
 
 COMMENT =	persistent Markdown processor for Catalyst
 
@@ -22,7 +22,5 @@ RUN_DEPENDS =	textproc/p5-Text-Markdown \
 		www/p5-Catalyst-Runtime
 
 CONFIGURE_STYLE =	modbuild
-
-MAKE_ENV +=	TEST_POD=1
 
 .include <bsd.port.mk>
