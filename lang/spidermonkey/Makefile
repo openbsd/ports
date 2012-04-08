@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/07 13:39:02 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/08 17:21:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	spidermonkey
 DISTNAME =		firefox-${FFX_VERSION}.source
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
+PKGSPEC =	spidermonkey->=1.9v0,<1.10v0
 EPOCH =		0
 
 SO_VERSION =	0.0
