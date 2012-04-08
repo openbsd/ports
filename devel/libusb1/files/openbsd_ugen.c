@@ -1,4 +1,4 @@
-/*	$OpenBSD: openbsd_ugen.c,v 1.5 2012/02/01 13:26:20 mpi Exp $	*/
+/*	$OpenBSD: openbsd_ugen.c,v 1.6 2012/04/08 13:14:54 mpi Exp $	*/
 /*
  * Copyright (c) 2011 Martin Pieuchot <mpi@openbsd.org>
  *
@@ -432,7 +432,7 @@ ugen_submit_transfer(struct usbi_transfer *itransfer)
 		err = _sync_control_transfer(itransfer);
 		break;
 	case LIBUSB_TRANSFER_TYPE_ISOCHRONOUS:
-		if (transfer->endpoint & LIBUSB_ENDPOINT_OUT) {
+		if (0 == transfer->endpoint & LIBUSB_ENDPOINT_IN) {
 			/* Isochronous write is not supported */
 			err = LIBUSB_ERROR_NOT_SUPPORTED;
 			break;
@@ -474,7 +474,7 @@ ugen_handle_events(struct libusb_context *ctx, struct pollfd *fds, nfds_t nfds,
     int num_ready)
 {
 	struct libusb_device_handle *handle;
-	struct handle_priv *hpriv;
+	struct handle_priv *hpriv = NULL;
 	struct usbi_transfer *itransfer;
 	struct pollfd *pollfd;
 	int i, err = 0;
@@ -488,12 +488,21 @@ ugen_handle_events(struct libusb_context *ctx, struct pollfd *fds, nfds_t nfds,
 		if (!pollfd->revents)
 			continue;
 
+		hpriv = NULL;
 		num_ready--;
 		list_for_each_entry(handle, &ctx->open_devs, list) {
 			hpriv = (struct handle_priv *)handle->os_priv;
 
 			if (hpriv->pipe[0] == pollfd->fd)
 				break;
+
+			hpriv = NULL;
+		}
+
+		if (NULL == hpriv) {
+			usbi_dbg("fd %d is not an event pipe!", pollfd->fd);
+			err = ENOENT;
+			break;
 		}
 
 		if (pollfd->revents & POLLERR) {
