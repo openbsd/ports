@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/09/13 15:27:51 simon Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/08 22:02:33 sthen Exp $
 ${P5SITE}/Catalyst/Authentication/
 ${P5SITE}/Catalyst/Authentication/Credential/
 ${P5SITE}/Catalyst/Authentication/Credential/Password.pm
+${P5SITE}/Catalyst/Authentication/Credential/Remote.pm
 ${P5SITE}/Catalyst/Authentication/Realm/
 ${P5SITE}/Catalyst/Authentication/Realm.pm
 ${P5SITE}/Catalyst/Authentication/Realm/Compatibility.pm
+${P5SITE}/Catalyst/Authentication/Realm/Progressive.pm
 ${P5SITE}/Catalyst/Authentication/Store/
 ${P5SITE}/Catalyst/Authentication/Store.pod
 ${P5SITE}/Catalyst/Authentication/Store/Minimal.pm
@@ -23,8 +25,10 @@ ${P5SITE}/Catalyst/Plugin/Authentication/User/
 ${P5SITE}/Catalyst/Plugin/Authentication/User.pm
 ${P5SITE}/Catalyst/Plugin/Authentication/User/Hash.pm
 @man man/man3p/Catalyst::Authentication::Credential::Password.3p
+@man man/man3p/Catalyst::Authentication::Credential::Remote.3p
 @man man/man3p/Catalyst::Authentication::Realm.3p
 @man man/man3p/Catalyst::Authentication::Realm::Compatibility.3p
+@man man/man3p/Catalyst::Authentication::Realm::Progressive.3p
 @man man/man3p/Catalyst::Authentication::Store.3p
 @man man/man3p/Catalyst::Authentication::Store::Minimal.3p
 @man man/man3p/Catalyst::Authentication::Store::Null.3p
