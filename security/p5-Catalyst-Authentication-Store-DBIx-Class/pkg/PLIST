@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/05/29 18:36:02 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 22:02:31 sthen Exp $
+${P5SITE}/Catalyst/Authentication/Realm/SimpleDB.pm
 ${P5SITE}/Catalyst/Authentication/Store/DBIx/
 ${P5SITE}/Catalyst/Authentication/Store/DBIx/Class/
 ${P5SITE}/Catalyst/Authentication/Store/DBIx/Class.pm
 ${P5SITE}/Catalyst/Authentication/Store/DBIx/Class/User.pm
+@man man/man3p/Catalyst::Authentication::Realm::SimpleDB.3p
 @man man/man3p/Catalyst::Authentication::Store::DBIx::Class.3p
 @man man/man3p/Catalyst::Authentication::Store::DBIx::Class::User.3p
