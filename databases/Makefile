@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.208 2012/04/06 09:30:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.209 2012/04/08 21:09:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -76,6 +76,7 @@
      SUBDIR += p5-DBI
      SUBDIR += p5-DBI-Shell
      SUBDIR += p5-DBIx-Class
+     SUBDIR += p5-DBIx-Class-Cursor-Cached
      SUBDIR += p5-DBIx-Class-HTMLWidget
      SUBDIR += p5-DBIx-Class-IntrospectableM2M
      SUBDIR += p5-DBIx-Class-Schema-Loader

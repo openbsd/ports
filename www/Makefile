@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.551 2012/03/27 14:21:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.552 2012/04/08 21:09:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -212,6 +212,7 @@
      SUBDIR += p5-Catalyst-Plugin-XMLRPC
      SUBDIR += p5-Catalyst-Runtime
      SUBDIR += p5-Catalyst-View-Mason
+     SUBDIR += p5-CatalystX-Component-Traits
      SUBDIR += p5-Config-ApacheFormat
      SUBDIR += p5-Data-URIEncode
      SUBDIR += p5-Drupal-Admin
@@ -291,6 +292,8 @@
      SUBDIR += p5-PHP-Session
      SUBDIR += p5-PSGI
      SUBDIR += p5-Plack
+     SUBDIR += p5-Plack-Middleware-ReverseProxy
+     SUBDIR += p5-Plack-Test-ExternalServer
      SUBDIR += p5-Plagger
      SUBDIR += p5-PodToHTML
      SUBDIR += p5-RTx-Tags

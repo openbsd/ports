@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1028 2012/04/07 13:49:14 landry Exp $
+# $OpenBSD: Makefile,v 1.1029 2012/04/08 21:09:49 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -464,6 +464,7 @@
      SUBDIR += p5-Class-Inner
      SUBDIR += p5-Class-InsideOut
      SUBDIR += p5-Class-Inspector
+     SUBDIR += p5-Class-Load
      SUBDIR += p5-Class-Loader
      SUBDIR += p5-Class-MOP
      SUBDIR += p5-Class-MakeMethods
@@ -692,6 +693,7 @@
      SUBDIR += p5-Module-Manifest
      SUBDIR += p5-Module-Pluggable-Fast
      SUBDIR += p5-Module-Refresh
+     SUBDIR += p5-Module-Runtime
      SUBDIR += p5-Module-ScanDeps
      SUBDIR += p5-Module-Starter
      SUBDIR += p5-Module-Starter-Plugin-CGIApp
@@ -701,6 +703,7 @@
      SUBDIR += p5-MooseX-AttributeHelpers
      SUBDIR += p5-MooseX-Clone
      SUBDIR += p5-MooseX-ConfigFromFile
+     SUBDIR += p5-MooseX-Daemonize
      SUBDIR += p5-MooseX-Declare
      SUBDIR += p5-MooseX-Emulate-Class-Accessor-Fast
      SUBDIR += p5-MooseX-Getopt
@@ -708,19 +711,23 @@
      SUBDIR += p5-MooseX-LazyRequire
      SUBDIR += p5-MooseX-Log-Log4perl
      SUBDIR += p5-MooseX-LogDispatch
+     SUBDIR += p5-MooseX-MarkAsMethods
      SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
      SUBDIR += p5-MooseX-Method-Signatures
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
+     SUBDIR += p5-MooseX-NonMoose
      SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Params-Validate
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
      SUBDIR += p5-MooseX-Traits
+     SUBDIR += p5-MooseX-Traits-Pluggable
      SUBDIR += p5-MooseX-Types
      SUBDIR += p5-MooseX-Types-Common
      SUBDIR += p5-MooseX-Types-DateTime
+     SUBDIR += p5-MooseX-Types-LoadableClass
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
@@ -754,6 +761,7 @@
      SUBDIR += p5-Parallel-Forker
      SUBDIR += p5-Parallel-Prefork
      SUBDIR += p5-Params-CallbackRequest
+     SUBDIR += p5-Params-Classify
      SUBDIR += p5-Params-Coerce
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
