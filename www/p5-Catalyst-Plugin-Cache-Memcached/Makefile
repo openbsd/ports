@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/08 21:58:20 sthen Exp $
 
-COMMENT =	distributed cache for Catalyst
+COMMENT =	distributed cache for Catalyst (deprecated)
 
 MODULES =	cpan
-DISTNAME =	Catalyst-Plugin-Cache-Memcached-0.71
-REVISION =	0
+DISTNAME =	Catalyst-Plugin-Cache-Memcached-0.8
+EPOCH =		0
 CATEGORIES =	www
 USE_GROFF =	Yes
 
@@ -16,12 +16,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-CPAN_AUTHOR =	MRAMBERG
-
 RUN_DEPENDS =	devel/p5-Cache-Memcached \
 		www/p5-Catalyst-Runtime
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV +=	TEST_POD=1
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
