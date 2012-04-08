@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_input_input_bluray_c,v 1.1 2012/04/08 07:37:25 ajacoutot Exp $
+$OpenBSD: patch-src_input_input_bluray_c,v 1.2 2012/04/08 19:19:04 ajacoutot Exp $
 
 Add BluRay input plugin.
 
---- src/input/input_bluray.c.orig	Sat Apr  7 13:17:42 2012
-+++ src/input/input_bluray.c	Sat Apr  7 13:17:36 2012
-@@ -0,0 +1,1744 @@
+--- src/input/input_bluray.c.orig	Sun Apr  8 14:39:52 2012
++++ src/input/input_bluray.c	Sun Apr  8 14:39:38 2012
+@@ -0,0 +1,1753 @@
 +/*
 + * Copyright (C) 2000-2011 the xine project
 + * Copyright (C) 2009-2011 Petri Hintukainen <phintuka@users.sourceforge.net>
@@ -80,6 +80,15 @@ Add BluRay input plugin.
 +#define TICKS_IN_MS       45
 +
 +#define MIN_TITLE_LENGTH  180
++
++#define BLURAY_MNT_PATH "/mnt/bluray"
++#if defined(__sun)
++#define BLURAY_PATH "/vol/dev/aliases/cdrom0"
++#elif defined(__OpenBSD__)
++#define BLURAY_PATH "/dev/rcd0c"
++#else
++#define BLURAY_PATH "/dev/dvd"
++#endif
 +
 +/* */
 +
@@ -1651,13 +1660,13 @@ Add BluRay input plugin.
 +
 +  this->mountpoint =
 +    config->register_filename(config, "media.bluray.mountpoint",
-+                              "/mnt/bluray", XINE_CONFIG_STRING_IS_DIRECTORY_NAME,
++                              BLURAY_MNT_PATH, XINE_CONFIG_STRING_IS_DIRECTORY_NAME,
 +                              _("BluRay mount point"),
 +                              _("Default mount location for BluRay discs."),
 +                              0, mountpoint_change_cb, (void *) this);
 +  this->device =
 +    config->register_filename(config, "media.bluray.device",
-+                              "/dev/dvd", XINE_CONFIG_STRING_IS_DIRECTORY_NAME,
++                              BLURAY_PATH, XINE_CONFIG_STRING_IS_DIRECTORY_NAME,
 +                              _("device used for BluRay playback"),
 +                              _("The path to the device "
 +                                "which you intend to use for playing BluRy discs."),
