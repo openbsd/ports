@@ -1,12 +1,24 @@
-$OpenBSD: patch-makefile_unix,v 1.13 2011/03/18 20:14:58 naddy Exp $
---- makefile.unix.orig	Wed Mar  9 17:40:47 2011
-+++ makefile.unix	Wed Mar  9 17:41:01 2011
-@@ -107,6 +107,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
+$OpenBSD: patch-makefile_unix,v 1.14 2012/04/08 16:36:12 naddy Exp $
+--- makefile.unix.orig	Tue Mar 30 17:26:26 2010
++++ makefile.unix	Fri Apr  6 00:30:46 2012
+@@ -8,9 +8,10 @@
+ # Linux using GCC
+ #CXX=g++
+ #CXXFLAGS=-O2
+-DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
++DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DOPENSSL
+ STRIP=strip
+ DESTDIR=/usr
++LIBS=-lcrypto
+ 
+ # Linux using LCC
+ #CXX=lcc
+@@ -106,6 +107,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
+ 	archive.o arcread.o unicode.o system.o isnt.o crypt.o crc.o rawread.o encname.o \
  	resource.o match.o timefn.o rdwrfn.o consio.o options.o ulinks.o errhnd.o rarvm.o \
  	rijndael.o getbits.o sha1.o extinfo.o extract.o volume.o list.o find.o unpack.o cmddata.o
- 
-+.SUFFIXES: .cpp
 +
++.SUFFIXES: .cpp
+ 
  .cpp.o:
  	$(COMPILE) -D$(WHAT) -c $<
- 

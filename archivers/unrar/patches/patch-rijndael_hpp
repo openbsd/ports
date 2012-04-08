@@ -1,0 +1,25 @@
+$OpenBSD: patch-rijndael_hpp,v 1.1 2012/04/08 16:36:12 naddy Exp $
+--- rijndael.hpp.orig	Wed Mar  2 08:43:13 2011
++++ rijndael.hpp	Fri Apr  6 00:32:04 2012
+@@ -18,15 +18,21 @@ class Rijndael
+   public:
+     enum Direction { Encrypt , Decrypt };
+   private:
++#ifndef OPENSSL
+     void keySched(byte key[_MAX_KEY_COLUMNS][4]);
+     void keyEncToDec();
+     void encrypt(const byte a[16], byte b[16]);
+     void decrypt(const byte a[16], byte b[16]);
+     void GenerateTables();
++#endif
+ 
++#ifdef OPENSSL
++    EVP_CIPHER_CTX ctx;
++#else
+     Direction m_direction;
+     byte     m_initVector[MAX_IV_SIZE];
+     byte     m_expandedKey[_MAX_ROUNDS+1][4][4];
++#endif
+   public:
+     Rijndael();
+     void init(Direction dir,const byte *key,byte *initVector);

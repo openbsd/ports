@@ -1,7 +1,18 @@
-$OpenBSD: patch-os_hpp,v 1.6 2010/12/30 07:51:31 benoit Exp $
---- os.hpp.orig	Fri Nov 26 08:20:01 2010
-+++ os.hpp	Mon Dec  6 07:49:22 2010
-@@ -262,12 +262,12 @@
+$OpenBSD: patch-os_hpp,v 1.7 2012/04/08 16:36:12 naddy Exp $
+--- os.hpp.orig	Wed Mar  2 08:43:12 2011
++++ os.hpp	Fri Apr  6 00:30:19 2012
+@@ -192,6 +192,10 @@
+ #include <utime.h>
+ #include <locale.h>
+ 
++#ifdef OPENSSL
++#include <openssl/evp.h>
++#endif
++
+ #ifdef  S_IFLNK
+ #define SAVE_LINKS
+ #endif
+@@ -262,12 +266,12 @@
    #endif
  #endif
  
