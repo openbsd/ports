@@ -1,0 +1,12 @@
+$OpenBSD: patch-consio_cpp,v 1.1 2012/04/08 11:30:25 naddy Exp $
+--- consio.cpp.orig	Sun Apr  8 00:33:34 2012
++++ consio.cpp	Sun Apr  8 00:33:48 2012
+@@ -127,7 +127,7 @@ void GetPasswordText(wchar *Str,uint MaxLength)
+   SetConsoleMode(hConOut,ConOutMode);
+ #else
+   char StrA[MAXPASSWORD];
+-#if defined(_EMX) || defined(_BEOS) || defined(__sparc) || defined(sparc) || defined (__VMS)
++#if defined(_EMX) || defined(_BEOS) || defined (__VMS)
+   fgets(StrA,ASIZE(StrA)-1,stdin);
+ #else
+   strncpyz(StrA,getpass(""),ASIZE(StrA));
