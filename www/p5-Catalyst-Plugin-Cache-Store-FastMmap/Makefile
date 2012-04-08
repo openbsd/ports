@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/07 16:48:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/08 21:58:22 sthen Exp $
 
 COMMENT =	FastMmap cache store for Catalyst (deprecated)
 
