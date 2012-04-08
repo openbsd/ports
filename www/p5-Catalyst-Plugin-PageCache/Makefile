@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/08 21:58:36 sthen Exp $
 
 COMMENT =	cache the output of entire pages
 
 MODULES =	cpan
-DISTNAME =	Catalyst-Plugin-PageCache-0.21
-REVISION =	0
+DISTNAME =	Catalyst-Plugin-PageCache-0.31
 CATEGORIES =	www
 USE_GROFF =	Yes
 
@@ -17,9 +16,14 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	www/p5-Catalyst-Runtime \
-		www/p5-Catalyst-Plugin-Cache-FileCache
-BUILD_DEPENDS =	${RUN_DEPENDS}
+		www/p5-Catalyst-Plugin-Cache>=0.10 \
+		security/p5-Digest-SHA1 \
+		devel/p5-MRO-Compat
+REGRESS_DEPENDS =	devel/p5-Cache-Cache \
+			www/p5-Catalyst-Plugin-I18N
 
 MAKE_ENV +=	TEST_POD=1
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
