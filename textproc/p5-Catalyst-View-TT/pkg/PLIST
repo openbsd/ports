@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 09:47:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 22:04:37 sthen Exp $
 ${P5SITE}/Catalyst/Helper/
 ${P5SITE}/Catalyst/Helper/View/
 ${P5SITE}/Catalyst/Helper/View/TT.pm
