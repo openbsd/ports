@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/08 21:58:16 sthen Exp $
 
-COMMENT=		Log::Log4perl logging for Catalyst
+COMMENT=		Log::Log4perl logging for Catalyst (deprecated)
 
 MODULES=		cpan
-DISTNAME=		Catalyst-Log-Log4perl-1.00
-REVISION=		0
+DISTNAME=		Catalyst-Log-Log4perl-1.05
 CATEGORIES=		www devel
 USE_GROFF =		Yes
 
@@ -17,9 +16,11 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=		www/p5-Catalyst-Runtime \
-			devel/p5-Log-Log4perl \
+			devel/p5-Log-Log4perl>=1.28 \
+			devel/p5-MRO-Compat \
 			devel/p5-Params-Validate \
 			devel/p5-Sub-Install
-BUILD_DEPENDS=		${RUN_DEPENDS}
+
+CONFIGURE_ARGS +=	--skipdeps
 
 .include <bsd.port.mk>

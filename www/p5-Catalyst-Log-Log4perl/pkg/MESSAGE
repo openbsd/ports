@@ -1,0 +1,2 @@
+Catalyst::Log::Log4perl is deprecated.  Use Log::Log4perl::Catalyst
+instead.
