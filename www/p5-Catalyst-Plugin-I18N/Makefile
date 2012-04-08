@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/08 21:58:32 sthen Exp $
 
-COMMENT= 	I18N for Catalyst
+COMMENT=	I18N for Catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-I18N-0.08
-REVISION=	1
+DISTNAME=	Catalyst-Plugin-I18N-0.10
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -17,10 +16,12 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Locale-Maketext-Lexicon \
+		devel/p5-MRO-Compat \
 		devel/p5-I18N-LangTags \
 		www/p5-Catalyst-Runtime
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MAKE_ENV=	TEST_POD=Yes
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
