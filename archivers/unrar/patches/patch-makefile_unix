@@ -1,10 +1,10 @@
-$OpenBSD: patch-makefile_unix,v 1.14 2012/04/08 16:36:12 naddy Exp $
---- makefile.unix.orig	Tue Mar 30 17:26:26 2010
-+++ makefile.unix	Fri Apr  6 00:30:46 2012
+$OpenBSD: patch-makefile_unix,v 1.15 2012/04/08 17:04:20 naddy Exp $
+--- makefile.unix.orig	Mon May 30 18:47:49 2011
++++ makefile.unix	Sun Apr  8 18:41:22 2012
 @@ -8,9 +8,10 @@
  # Linux using GCC
- #CXX=g++
- #CXXFLAGS=-O2
+ CXX=g++
+ CXXFLAGS=-O2
 -DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE
 +DEFINES=-D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -DOPENSSL
  STRIP=strip

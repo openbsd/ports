@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/04/08 16:36:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2012/04/08 17:04:20 naddy Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -9,10 +9,9 @@ COMMENT=	extract, list, and test RAR archives
 # to 0 for a non-beta release, e.g., "4.00 beta 6" was succeeded
 # by "4.00".
 
-PKGNAME=	unrar-4.00
+PKGNAME=	unrar-4.10
 EPOCH=		1
-REVISION=	1
-DISTNAME=	unrarsrc-4.0.7
+DISTNAME=	unrarsrc-4.1.4
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/

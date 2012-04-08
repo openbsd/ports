@@ -1,7 +1,7 @@
-$OpenBSD: patch-os_hpp,v 1.7 2012/04/08 16:36:12 naddy Exp $
---- os.hpp.orig	Wed Mar  2 08:43:12 2011
-+++ os.hpp	Fri Apr  6 00:30:19 2012
-@@ -192,6 +192,10 @@
+$OpenBSD: patch-os_hpp,v 1.8 2012/04/08 17:04:20 naddy Exp $
+--- os.hpp.orig	Mon Jan  9 14:46:08 2012
++++ os.hpp	Sun Apr  8 18:41:22 2012
+@@ -193,6 +193,10 @@
  #include <utime.h>
  #include <locale.h>
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-os_hpp,v 1.7 2012/04/08 16:36:12 naddy Exp $
  #ifdef  S_IFLNK
  #define SAVE_LINKS
  #endif
-@@ -262,12 +266,12 @@
+@@ -263,12 +267,12 @@
    #endif
  #endif
  
