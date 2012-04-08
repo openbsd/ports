@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.353 2012/04/06 09:30:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.354 2012/04/08 11:27:14 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -74,6 +74,7 @@
      SUBDIR += ispell
      SUBDIR += itstool
      SUBDIR += latex2html
+     SUBDIR += latexmk
      SUBDIR += lgrind
      SUBDIR += libebml
      SUBDIR += libical
