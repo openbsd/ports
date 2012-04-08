@@ -1,0 +1,5 @@
+Params::Classify provides various type-testing functions.  These are
+intended for functions that, unlike most Perl code, care what type of
+data they are operating on.  For example, some functions wish to behave
+differently depending on the type of their arguments (like overloaded
+functions in C++).
