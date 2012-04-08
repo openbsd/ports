@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/08 22:04:39 sthen Exp $
 
-COMMENT= 	catalyst TT views with explicit UTF8 encoding
+COMMENT=	catalyst TT views with explicit UTF8 encoding (deprecated)
 
 MODULES=	cpan
-REVISION=	1
-DISTNAME=	Catalyst-View-TT-ForceUTF8-0.06
+DISTNAME=	Catalyst-View-TT-ForceUTF8-0.13
 CATEGORIES=	textproc devel
 USE_GROFF =	Yes
 
@@ -19,5 +18,7 @@ RUN_DEPENDS=	textproc/p5-Catalyst-View-TT \
 		textproc/p5-Template-Provider-Encoding
 
 MAKE_ENV=	TEST_POD=Yes
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
