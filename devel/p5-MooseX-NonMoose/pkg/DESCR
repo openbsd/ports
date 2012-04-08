@@ -1,0 +1,5 @@
+MooseX::NonMoose allows for easily subclassing non-Moose classes with
+Moose, taking care of the annoying details connected with doing this,
+such as setting up proper inheritance from Moose::Object and installing
+(and inlining, at make_immutable time) a constructor that makes sure
+things like BUILD methods are called.

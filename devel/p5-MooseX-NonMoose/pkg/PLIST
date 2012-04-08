@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 21:04:36 sthen Exp $
+${P5SITE}/MooseX/
+${P5SITE}/MooseX/NonMoose/
+${P5SITE}/MooseX/NonMoose.pm
+${P5SITE}/MooseX/NonMoose/InsideOut.pm
+${P5SITE}/MooseX/NonMoose/Meta/
+${P5SITE}/MooseX/NonMoose/Meta/Role/
+${P5SITE}/MooseX/NonMoose/Meta/Role/Class.pm
+${P5SITE}/MooseX/NonMoose/Meta/Role/Constructor.pm
+@man man/man3p/MooseX::NonMoose.3p
+@man man/man3p/MooseX::NonMoose::InsideOut.3p
+@man man/man3p/MooseX::NonMoose::Meta::Role::Class.3p
+@man man/man3p/MooseX::NonMoose::Meta::Role::Constructor.3p
