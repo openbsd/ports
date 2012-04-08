@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/04/08 16:32:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/04/08 16:36:09 ajacoutot Exp $
 
 COMMENT=	chess program
 
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c m ncurses pthread readline stdc++
 
 CONFIGURE_STYLE=	gnu
-
-#MAKE_FLAGS+=		CFLAGS="${CFLAGS} -DBOOK_PREFIX=\\\"${TRUEPREFIX}\\\""
 
 README=			${WRKSRC}/README
 BOOK_FILE=		${WRKSRC}/src/book.bin
