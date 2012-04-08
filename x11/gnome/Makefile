@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2012/03/30 14:30:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2012/04/08 11:28:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -52,6 +52,7 @@
      SUBDIR += js-common
      SUBDIR += keyring
      SUBDIR += krb5-auth-dialog
+     SUBDIR += latexila
      SUBDIR += libbonobo
      SUBDIR += libbonoboui
      SUBDIR += libcryptui
