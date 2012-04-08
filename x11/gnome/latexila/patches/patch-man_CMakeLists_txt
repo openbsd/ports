@@ -1,0 +1,6 @@
+$OpenBSD: patch-man_CMakeLists_txt,v 1.1.1.1 2012/04/08 11:28:04 ajacoutot Exp $
+--- man/CMakeLists.txt.orig	Sun Apr  8 10:06:47 2012
++++ man/CMakeLists.txt	Sun Apr  8 10:06:53 2012
+@@ -1 +1 @@
+-install (FILES latexila.1 DESTINATION share/man/man1)
++install (FILES latexila.1 DESTINATION man/man1)
