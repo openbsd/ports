@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 14:04:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 21:58:38 sthen Exp $
 ${P5SITE}/Catalyst/Plugin/
 ${P5SITE}/Catalyst/Plugin/Session/
 ${P5SITE}/Catalyst/Plugin/Session.pm
