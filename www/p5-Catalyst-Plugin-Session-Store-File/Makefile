@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/08 21:58:51 sthen Exp $
 
-COMMENT= 	catalyst file storage backend for session data
+COMMENT=	catalyst file storage backend for session data
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-Store-File-0.13
-REVISION=	2
+DISTNAME=	Catalyst-Plugin-Session-Store-File-0.18
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -18,9 +17,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	devel/p5-Cache-Cache \
 		devel/p5-Class-Data-Inheritable \
-		www/p5-Catalyst-Plugin-Session
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		devel/p5-MRO-Compat \
+		www/p5-Catalyst-Plugin-Session \
+		www/p5-Catalyst-Runtime
 
 MAKE_ENV=	TEST_POD=Yes
+
+CONFIGURE_STYLE =	modinst
 
 .include <bsd.port.mk>
