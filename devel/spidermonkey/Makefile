@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/07 13:48:18 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/08 17:21:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,8 @@ COMMENT =	Mozilla C implementation of JavaScript
 MOZILLA_VERSION =	1.8.5
 DISTNAME =		js185-1.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
+PKGSPEC =		spidermonkey->=1.8,<1.9
+REVISION =		0
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs185 ${SO_VERSION}
