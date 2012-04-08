@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/02 04:03:32 jim Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/04/08 22:01:39 sthen Exp $
 ${P5SITE}/Catalyst/
 ${P5SITE}/Catalyst/Manual/
 @comment ${P5SITE}/Catalyst/Manual.pm
@@ -7,6 +7,20 @@ ${P5SITE}/Catalyst/Manual/Actions.pod
 ${P5SITE}/Catalyst/Manual/CatalystAndMoose.pod
 ${P5SITE}/Catalyst/Manual/Components.pod
 ${P5SITE}/Catalyst/Manual/Cookbook.pod
+${P5SITE}/Catalyst/Manual/Deployment/
+${P5SITE}/Catalyst/Manual/Deployment.pod
+${P5SITE}/Catalyst/Manual/Deployment/Apache/
+${P5SITE}/Catalyst/Manual/Deployment/Apache/FastCGI.pod
+${P5SITE}/Catalyst/Manual/Deployment/Apache/mod_perl.pod
+${P5SITE}/Catalyst/Manual/Deployment/DevelopmentServer.pod
+${P5SITE}/Catalyst/Manual/Deployment/FastCGI.pod
+${P5SITE}/Catalyst/Manual/Deployment/IIS/
+${P5SITE}/Catalyst/Manual/Deployment/IIS/FastCGI.pod
+${P5SITE}/Catalyst/Manual/Deployment/SharedHosting.pod
+${P5SITE}/Catalyst/Manual/Deployment/lighttpd/
+${P5SITE}/Catalyst/Manual/Deployment/lighttpd/FastCGI.pod
+${P5SITE}/Catalyst/Manual/Deployment/nginx/
+${P5SITE}/Catalyst/Manual/Deployment/nginx/FastCGI.pod
 ${P5SITE}/Catalyst/Manual/DevelopmentProcess.pod
 ${P5SITE}/Catalyst/Manual/ExtendingCatalyst.pod
 ${P5SITE}/Catalyst/Manual/Internals.pod
@@ -14,6 +28,7 @@ ${P5SITE}/Catalyst/Manual/Intro.pod
 ${P5SITE}/Catalyst/Manual/Plugins.pm
 ${P5SITE}/Catalyst/Manual/Tutorial/
 ${P5SITE}/Catalyst/Manual/Tutorial.pod
+@comment ${P5SITE}/Catalyst/Manual/Tutorial/.gitignore
 ${P5SITE}/Catalyst/Manual/Tutorial/01_Intro.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/02_CatalystBasics.pod
 ${P5SITE}/Catalyst/Manual/Tutorial/03_MoreCatalystBasics.pod
@@ -35,6 +50,15 @@ ${P5SITE}/Catalyst/Manual/WritingPlugins.pod
 @man man/man3p/Catalyst::Manual::CatalystAndMoose.3p
 @man man/man3p/Catalyst::Manual::Components.3p
 @man man/man3p/Catalyst::Manual::Cookbook.3p
+@man man/man3p/Catalyst::Manual::Deployment.3p
+@man man/man3p/Catalyst::Manual::Deployment::Apache::FastCGI.3p
+@man man/man3p/Catalyst::Manual::Deployment::Apache::mod_perl.3p
+@man man/man3p/Catalyst::Manual::Deployment::DevelopmentServer.3p
+@man man/man3p/Catalyst::Manual::Deployment::FastCGI.3p
+@man man/man3p/Catalyst::Manual::Deployment::IIS::FastCGI.3p
+@man man/man3p/Catalyst::Manual::Deployment::SharedHosting.3p
+@man man/man3p/Catalyst::Manual::Deployment::lighttpd::FastCGI.3p
+@man man/man3p/Catalyst::Manual::Deployment::nginx::FastCGI.3p
 @man man/man3p/Catalyst::Manual::DevelopmentProcess.3p
 @man man/man3p/Catalyst::Manual::ExtendingCatalyst.3p
 @man man/man3p/Catalyst::Manual::Internals.3p

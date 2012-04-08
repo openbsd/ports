@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/08 22:01:39 sthen Exp $
 
 COMMENT=	catalyst documentation
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Manual-5.8004
-REVISION=	0
+DISTNAME=	Catalyst-Manual-5.9002
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
-# there was a version with six digits behind the dot and we need to pad
-# to that or updates would fail
-PKGNAME=	p5-${DISTNAME}00
+# there was a version with six digits behind the dot
+EPOCH=		0
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,5 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MAKE_ENV+=	TEST_POD=1
+
+CONFIGURE_ARGS+=	--skipdeps
 
 .include <bsd.port.mk>
