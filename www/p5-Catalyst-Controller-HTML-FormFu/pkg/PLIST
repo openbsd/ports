@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:13 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 21:58:09 sthen Exp $
 ${P5SITE}/Catalyst/Controller/
 ${P5SITE}/Catalyst/Controller/HTML/
 ${P5SITE}/Catalyst/Controller/HTML/FormFu/
@@ -10,8 +10,14 @@ ${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/FormMethod.pm
 ${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiForm.pm
 ${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiFormConfig.pm
 ${P5SITE}/Catalyst/Controller/HTML/FormFu/Action/MultiFormMethod.pm
+${P5SITE}/Catalyst/Controller/HTML/FormFu/ActionBase/
+${P5SITE}/Catalyst/Controller/HTML/FormFu/ActionBase/Form.pm
 ${P5SITE}/Catalyst/Helper/
 ${P5SITE}/Catalyst/Helper/HTML/
 ${P5SITE}/Catalyst/Helper/HTML/FormFu.pm
+${P5SITE}/HTML/FormFu/Constraint/RequestToken.pm
+${P5SITE}/HTML/FormFu/Element/RequestToken.pm
+${P5SITE}/HTML/FormFu/Plugin/RequestToken.pm
 @man man/man3p/Catalyst::Controller::HTML::FormFu.3p
 @man man/man3p/Catalyst::Helper::HTML::FormFu.3p
+@man man/man3p/HTML::FormFu::Element::RequestToken.3p
