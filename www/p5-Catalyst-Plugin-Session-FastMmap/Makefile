@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/08 21:58:40 sthen Exp $
 
-COMMENT= 	FastMmap sessions for Catalyst
+COMMENT=	FastMmap sessions for Catalyst (deprecated)
 
 MODULES=	cpan
-DISTNAME=	Catalyst-Plugin-Session-FastMmap-0.12
-REVISION=	2
+DISTNAME=	Catalyst-Plugin-Session-FastMmap-0.13
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -20,6 +19,7 @@ RUN_DEPENDS=	www/p5-Catalyst-Runtime \
 		devel/p5-Cache-FastMmap \
 		devel/p5-Class-Accessor \
 		devel/p5-Class-Data-Inheritable \
+		devel/p5-MRO-Compat \
 		www/p5-URI \
 		www/p5-URI-Find
 

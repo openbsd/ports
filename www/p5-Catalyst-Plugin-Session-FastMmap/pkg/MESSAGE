@@ -1,0 +1,2 @@
+Catalyst::Plugin::Session::FastMmap is deprecated in favor of
+Catalyst::Plugin::Session.
