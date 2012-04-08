@@ -1,0 +1,2 @@
+The functions exported by Module::Runtime deal with runtime handling of
+Perl modules, which are normally handled at compile time.
