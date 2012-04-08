@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/06 17:56:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/04/08 17:40:41 jasper Exp $
 
 COMMENT=	Yubikey OTP library
 
@@ -29,6 +29,6 @@ USE_LIBTOOL=		Yes
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} -i AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 				AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-				autoreconf --install
+				autoreconf-${AUTOCONF_VERSION} --install
 
 .include <bsd.port.mk>
