@@ -1,10 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/11/05 11:53:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/08 22:01:20 sthen Exp $
 ${P5SITE}/Catalyst/Helper/
 ${P5SITE}/Catalyst/Helper/Model/
 ${P5SITE}/Catalyst/Helper/Model/DBIC/
 ${P5SITE}/Catalyst/Helper/Model/DBIC/Schema.pm
 ${P5SITE}/Catalyst/Model/
 ${P5SITE}/Catalyst/Model/DBIC/
+${P5SITE}/Catalyst/Model/DBIC/Schema/
 ${P5SITE}/Catalyst/Model/DBIC/Schema.pm
+${P5SITE}/Catalyst/Model/DBIC/Schema/Types.pm
+${P5SITE}/Catalyst/TraitFor/
+${P5SITE}/Catalyst/TraitFor/Model/
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/Schema/
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/Schema/Caching.pm
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/Schema/PerRequestSchema.pm
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/Schema/Replicated.pm
+${P5SITE}/Catalyst/TraitFor/Model/DBIC/Schema/SchemaProxy.pm
 @man man/man3p/Catalyst::Helper::Model::DBIC::Schema.3p
 @man man/man3p/Catalyst::Model::DBIC::Schema.3p
+@man man/man3p/Catalyst::TraitFor::Model::DBIC::Schema::Caching.3p
+@man man/man3p/Catalyst::TraitFor::Model::DBIC::Schema::PerRequestSchema.3p
+@man man/man3p/Catalyst::TraitFor::Model::DBIC::Schema::Replicated.3p
+@man man/man3p/Catalyst::TraitFor::Model::DBIC::Schema::SchemaProxy.3p
