@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2012/04/03 13:59:35 robert Exp $
+# $OpenBSD: Makefile,v 1.90 2012/04/08 07:56:21 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			18.0.1025.142
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -50,7 +51,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		devel/bison \
 		devel/flex \
 		shells/bash \
-		sysutils/flock
+		sysutils/flock \
+		x11/gnome/libgnome-keyring
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		security/nss \
