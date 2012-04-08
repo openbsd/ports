@@ -1,0 +1,3 @@
+Plack::Test::ExternalServer allows your to run your Plack::Test tests
+against an external server instead of just against a local application
+through either mocked HTTP or a locally spawned server.
