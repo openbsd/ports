@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/08 21:58:35 sthen Exp $
 
 COMMENT =	log Perl warnings to your Catalyst log object
 
 MODULES =	cpan
-DISTNAME =	Catalyst-Plugin-LogWarnings-0.02
-REVISION =	0
+DISTNAME =	Catalyst-Plugin-LogWarnings-0.03
 CATEGORIES =	www
 USE_GROFF =	Yes
 
@@ -16,10 +15,8 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-RUN_DEPENDS =	converters/p5-JSON-Any \
-		devel/p5-Catalyst-Plugin-C3 \
+RUN_DEPENDS =	devel/p5-MRO-Compat \
 		www/p5-Catalyst-Runtime
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV +=	TEST_POD=1
 
