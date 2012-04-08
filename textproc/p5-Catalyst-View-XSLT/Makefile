@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/08 22:04:42 sthen Exp $
 
-COMMENT= 	XSLT Views for catalyst
+COMMENT=	XSLT Views for catalyst
 
 MODULES=	cpan
-DISTNAME=	Catalyst-View-XSLT-0.06
-REVISION=	0
+DISTNAME=	Catalyst-View-XSLT-0.08
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 
@@ -15,7 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	textproc/p5-XML-LibXSLT>=1.60 \
-		www/p5-Catalyst-Runtime
+		www/p5-Catalyst-Runtime \
+		devel/p5-Path-Class
 
 MAKE_ENV=	TEST_POD=Yes
 
