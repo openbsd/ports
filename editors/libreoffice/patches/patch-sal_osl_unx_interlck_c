@@ -1,0 +1,21 @@
+$OpenBSD: patch-sal_osl_unx_interlck_c,v 1.1 2012/04/08 07:52:01 robert Exp $
+--- sal/osl/unx/interlck.c.orig.port	Fri Apr  6 11:30:06 2012
++++ sal/osl/unx/interlck.c	Fri Apr  6 11:30:29 2012
+@@ -60,7 +60,7 @@ oslInterlockedCount SAL_CALL osl_incrementInterlockedC
+         :   "memory");
+         return ++nCount;
+     }
+-#if ( __GNUC__ > 4 ) || (( __GNUC__ == 4)  && ( __GNUC_MINOR__ >= 4 ))
++#if ( __GNUC__ > 4 ) || (( __GNUC__ == 4)  && ( __GNUC_MINOR__ >= 4 )) && !defined(X86)
+     else
+         return __sync_add_and_fetch (pCount, 1);
+ #else
+@@ -89,7 +89,7 @@ oslInterlockedCount SAL_CALL osl_decrementInterlockedC
+         :   "memory");
+         return --nCount;
+     }
+-#if ( __GNUC__ > 4 ) || (( __GNUC__ == 4)  && ( __GNUC_MINOR__ >= 4 ))
++#if ( __GNUC__ > 4 ) || (( __GNUC__ == 4)  && ( __GNUC_MINOR__ >= 4 )) && !defined(X86)
+     else
+         return __sync_sub_and_fetch (pCount, 1);
+ #else
