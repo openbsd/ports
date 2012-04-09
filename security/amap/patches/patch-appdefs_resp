@@ -1,12 +1,12 @@
-$OpenBSD: patch-appdefs_resp,v 1.1 2010/12/06 12:08:55 stephan Exp $
+$OpenBSD: patch-appdefs_resp,v 1.2 2012/04/09 15:04:53 gonzalo Exp $
 
 # packaged appdefs.resp db is out of date, patch it using a newer
 # one provided at http://freeworld.thc.org/thc-amap/appdefs.resp
 
---- appdefs.resp.orig	Mon Dec  6 12:20:40 2010
-+++ appdefs.resp	Mon Dec  6 12:21:07 2010
+--- appdefs.resp.orig	Wed Apr 20 12:10:17 2011
++++ appdefs.resp	Sun Apr  8 19:15:13 2012
 @@ -1,4 +1,4 @@
--###V:8#P:5.2#M:Please send in triggers for databases other stuff!##DO NOT EDIT THIS LINE!
+-###V:9#P:5.4#M:This tool is not maintained anymore##DO NOT EDIT THIS LINE!
 +###V:13#P:5.2#M:Please send in triggers for databases other stuff!##DO NOT EDIT THIS LINE!
  #
  # This is the responses file "appdefs.resp" for amap
@@ -257,53 +257,3 @@ $OpenBSD: patch-appdefs_resp,v 1.1 2010/12/06 12:08:55 stephan Exp $
  svrloc::tcp::^\x02\x05\x00\x2e\x40\x00
  ssh::tcp::^SSH-
  ssh-openssh::tcp::^SSH-.*openssh
-@@ -375,35 +407,45 @@ streaming-server::tcp::^RTSP/1.0 [1-5]
- sybase::tcp::^\x04\x01\x00
- syntellect-vista::tcp::^89:[A-Za-z]+.*:\n
- systat::::^USER   
-+systat:::: http://procps.sf.net/faq.html
- tcpmux::::-service not available
--teamspeak2::::[ts].error
-+teamspeak2::tcp::^\[TS\]
- teamspeakserver::::^\x5b\x54\x53\x5d\x0d\x0a
- telnet::tcp::^\xff\xfd
- telnet::tcp::Telnet is disabled now
- telnet-aix::tcp::^\xff\xfe
- telnet-raptor-firewall::tcp::raptor
- telnet-t-rex-proxy::tcp::^\xff\xfb
-+telnet-stonegate-firewall::tcp::^StoneGate firewall 
- tftp::udp::^\x00[\x03\x05]\x00
- timbuktu-pro::::^\x00\x25\xd1\x1f
- time:::4:^\xc2
- time:::4:^\xc3
- time:::4:^\xc4
- time:::4:^\xc5
-+time:::4:^\xc6
-+time:::4:^\xc7
-+time:::4:^\xc8
-+time:::4:^\xc9
- timesync::tcp::TimeSync Server
- tivoli_tsm-server::tcp::^\x00\x3b\x1e\xa5
-+tivoli_tsm-http-server::tcp::.*ADSM_HTTP
-+tomcat::tcp::.*Servlet-Engine
- uucp::::^login: password: 
- vmware-authd::tcp::^220 VMware Authentication
- vnc::tcp::^RFB
- vtun::::vtun server
--webmin:webmin:tcp::^HTTP/
--webseal::tcp::\x80\x03\x00\x00
-+webmin::tcp::.*MiniServ
-+webmin-miniserv::udp::^0\.0\.0\.0:.*:[0-9]
-+webseal::tcp::^\x80\x03\x00\x00
- websm::tcp::Language received from client:.*Setlocale:
- websphere-javaw::tcp::^\x15\x00\x00\x00\x02\x02\x0a
- wins::tcp::^\x00\x00\x1e\xff
-+wins::tcp::^\x00\x00\x00\x1e\xff\x53\xad\x80
- x-windows:x-windows:tcp::MIT-MAGIC-COOKIE
- x-windows:x-windows:tcp::^\x01\x00\x0b\x00\x00
- zannet::tcp::^ZanNet login:
- zebra::tcp::this is zebra
-+9grid-9p::tcp::^cpu: authenticating: 
- (response_of_many_applications)::tcp:1:\x01
- echo:ssl:::^\x80\x80\x01\x03\x01\x00
--
