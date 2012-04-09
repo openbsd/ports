@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1029 2012/04/08 21:09:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.1030 2012/04/09 09:29:46 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -470,7 +470,6 @@
      SUBDIR += p5-Class-MakeMethods
      SUBDIR += p5-Class-Meta
      SUBDIR += p5-Class-Meta-Express
-     SUBDIR += p5-Class-Method-Modifiers
      SUBDIR += p5-Class-MethodMaker
      SUBDIR += p5-Class-MethodMapper
      SUBDIR += p5-Class-Multimethods
