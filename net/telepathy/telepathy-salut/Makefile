@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/04/05 09:08:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/04/09 08:00:00 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=		textproc/libxslt \
 			devel/check
 # needed for the tests
 BUILD_DEPENDS +=	devel/py-twisted/words \
-			x11/dbus-python
+			net/avahi,-gui,no_mono,no_qt3,no_qt4
 LIB_DEPENDS=		net/avahi \
 			devel/libsoup \
 			net/telepathy/telepathy-glib \
