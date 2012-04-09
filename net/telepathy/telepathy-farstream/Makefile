@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/08 15:39:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/09 08:59:08 ajacoutot Exp $
 
 COMMENT=		flexible communications framework, farstream component
 
 DISTNAME=		telepathy-farstream-0.2.3
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/Farstream
 
@@ -18,8 +18,7 @@ WANTLIB += gthread-2.0 m pcre telepathy-glib xml2 z
 MODULES=		devel/gettext \
 			lang/python
 
-LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			net/farstream \
+LIB_DEPENDS=		net/farstream \
 			net/telepathy/telepathy-glib>=0.17.5
 
 CONFIGURE_STYLE=	gnu
