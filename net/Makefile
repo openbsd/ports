@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.739 2012/04/07 12:44:56 landry Exp $
+# $OpenBSD: Makefile,v 1.740 2012/04/09 17:17:10 stsp Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -199,6 +199,7 @@
      SUBDIR += miniupnp
      SUBDIR += mirmon
      SUBDIR += mirror
+     SUBDIR += mktorrent
      SUBDIR += mldonkey
      SUBDIR += mon
      SUBDIR += mono-zeroconf
