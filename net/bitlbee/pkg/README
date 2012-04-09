@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/10/03 14:41:45 okan Exp $
+$OpenBSD: README,v 1.3 2012/04/09 15:37:53 okan Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,7 +6,7 @@ $OpenBSD: README,v 1.2 2011/10/03 14:41:45 okan Exp $
 
 To enable bitlbee, add a line such as:
 
-127.0.0.1:6667    stream  tcp     nowait _bitlbee ${TRUEPREFIX}/libexec/bitlbee bitlbee
+127.0.0.1:6667    stream  tcp     nowait _bitlbee ${TRUEPREFIX}/sbin/bitlbee bitlbee
 
 to your /etc/inetd.conf and restart inetd:
 

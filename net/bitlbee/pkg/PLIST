@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/10/03 14:33:14 okan Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/04/09 15:37:52 okan Exp $
 @pkgpath net/bitlbee,no_ssl
 @newgroup _bitlbee:509
 @newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${DB_DIR}/*
-@bin libexec/bitlbee
 @man man/man5/bitlbee.conf.5
 @man man/man8/bitlbee.8
+@bin sbin/bitlbee
 share/bitlbee/
 share/bitlbee/help.txt
 share/doc/bitlbee/
