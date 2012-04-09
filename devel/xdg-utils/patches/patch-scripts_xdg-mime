@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_xdg-mime,v 1.6 2010/05/28 12:41:26 ajacoutot Exp $
---- scripts/xdg-mime.orig	Sun Jun 24 21:57:57 2007
-+++ scripts/xdg-mime	Fri May 28 14:17:21 2010
-@@ -557,11 +557,14 @@ defapp_generic()
+$OpenBSD: patch-scripts_xdg-mime,v 1.7 2012/04/09 09:39:15 ajacoutot Exp $
+--- scripts/xdg-mime.orig	Sat Jan  1 11:03:14 2011
++++ scripts/xdg-mime	Mon Apr  9 10:42:20 2012
+@@ -676,11 +676,14 @@ defapp_generic()
      [ -n "$xdg_user_dir" ] || xdg_user_dir="$HOME/.local/share"
      xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
      xdg_system_dirs="$XDG_DATA_DIRS"
@@ -17,7 +17,7 @@ $OpenBSD: patch-scripts_xdg-mime,v 1.6 2010/05/28 12:41:26 ajacoutot Exp $
         if [ -n "$trader_result" ] ; then
            echo $trader_result
            exit_success
-@@ -827,7 +830,7 @@ xdg_user_dir="$XDG_DATA_HOME"
+@@ -952,7 +955,7 @@ xdg_user_dir="$XDG_DATA_HOME"
  xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  
  xdg_system_dirs="$XDG_DATA_DIRS"
@@ -26,7 +26,7 @@ $OpenBSD: patch-scripts_xdg-mime,v 1.6 2010/05/28 12:41:26 ajacoutot Exp $
  for x in `echo $xdg_system_dirs | sed 's/:/ /g'`; do
      if [ -w $x/$xdg_dir_name ] ; then
          [ x"$mode" = x"system" ] && xdg_base_dir="$x/mime"
-@@ -859,7 +862,7 @@ DEBUG 3 "kde_global_dir: $kde_global_dir"
+@@ -984,7 +987,7 @@ DEBUG 3 "kde_global_dir: $kde_global_dir"
  # TODO: Gnome legacy support
  # See http://forums.fedoraforum.org/showthread.php?t=26875
  gnome_user_dir="$HOME/.gnome/apps"
@@ -35,12 +35,3 @@ $OpenBSD: patch-scripts_xdg-mime,v 1.6 2010/05/28 12:41:26 ajacoutot Exp $
  [ -w $gnome_global_dir ] || gnome_global_dir=
  DEBUG 3 "gnome_user_dir: $gnome_user_dir"
  DEBUG 3 "gnome_global_dir: $gnome_global_dir"
-@@ -1076,7 +1079,7 @@ END {
- 
-         # No quotes around $mimetypes
-         for x in $mimetypes ; do 
--            if grep '^# Installed by xdg-mime' $kde_dir/$x.desktop &>/dev/null ; then
-+            if grep '^# Installed by xdg-mime' $kde_dir/$x.desktop >/dev/null 2>&1; then
-                 DEBUG 1 "Removing $kde_dir/$x.desktop (KDE 3.x support)"
-                 rm -f $kde_dir/$x.desktop
-             fi

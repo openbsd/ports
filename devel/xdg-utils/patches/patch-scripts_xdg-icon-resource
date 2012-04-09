@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_xdg-icon-resource,v 1.1.1.1 2008/10/30 14:28:36 ajacoutot Exp $
---- scripts/xdg-icon-resource.orig	Thu Oct 30 14:48:27 2008
-+++ scripts/xdg-icon-resource	Thu Oct 30 14:48:47 2008
-@@ -610,7 +610,7 @@ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
+$OpenBSD: patch-scripts_xdg-icon-resource,v 1.2 2012/04/09 09:39:15 ajacoutot Exp $
+--- scripts/xdg-icon-resource.orig	Sat Jan  1 11:03:14 2011
++++ scripts/xdg-icon-resource	Mon Apr  9 10:42:20 2012
+@@ -615,7 +615,7 @@ xdg_user_dir="$xdg_user_dir/$xdg_dir_name"
  xdg_global_dir=
  xdg_global_prefix=
  xdg_system_dirs="$XDG_DATA_DIRS"

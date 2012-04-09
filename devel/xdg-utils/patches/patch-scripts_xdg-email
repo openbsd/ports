@@ -1,30 +1,7 @@
-$OpenBSD: patch-scripts_xdg-email,v 1.4 2011/05/19 18:35:43 ajacoutot Exp $
-
-Merge part of:
-From 79fe2261b0025b36515d17d3c22c162bf1c7efb3 Mon Sep 17 00:00:00 2001
-From: Rex Dieter <rdieter@math.unl.edu>
-Date: Fri, 16 Oct 2009 17:10:55 +0000
-Subject: * prefer gvfs-open over gnome-open
-
---- scripts/xdg-email.orig	Sun Jun 24 21:58:04 2007
-+++ scripts/xdg-email	Thu May 19 20:23:55 2011
-@@ -406,8 +406,13 @@ open_kde()
- 
- open_gnome()
- {
--    DEBUG 1 "Running gnome-open \"$1\""
--    gnome-open "$1"
-+    if gvfs-open --help 2>/dev/null 1>&2; then
-+        DEBUG 1 "Running gvfs-open \"$1\"" 
-+        gvfs-open "$1"
-+    else
-+        DEBUG 1 "Running gnome-open \"$1\""
-+        gnome-open "$1"
-+    fi
- 
-     if [ $? -eq 0 ]; then
-         exit_success
-@@ -480,7 +485,7 @@ result=$(echo "$1" | $utf8 | awk '
+$OpenBSD: patch-scripts_xdg-email,v 1.5 2012/04/09 09:39:15 ajacoutot Exp $
+--- scripts/xdg-email.orig	Sat Jan  1 11:03:14 2011
++++ scripts/xdg-email	Mon Apr  9 10:57:05 2012
+@@ -562,7 +562,7 @@ result=$(echo "$1" | $utf8 | awk '
  
  options=
  mailto=
@@ -33,26 +10,12 @@ Subject: * prefer gvfs-open over gnome-open
  while [ $# -gt 0 ] ; do
      parm="$1"
      shift
-@@ -607,12 +612,21 @@ if which xdg-email-hook.sh > /dev/null 2> /dev/null; t
+@@ -699,7 +699,7 @@ fi
+ if [ x"$BROWSER" = x"" ]; then
+     BROWSER=links2:links:lynx:w3m
+     if [ -n "$DISPLAY" ]; then
+-        BROWSER=firefox:mozilla:epiphany:konqueror:chromium-browser:google-chrome:$BROWSER
++        BROWSER=firefox:chrome:seamonkey:mozilla:epiphany:midori:konqueror:opera:firefox35:firefox36:$BROWSER
      fi
  fi
  
-+if which xdg-email-hook > /dev/null 2> /dev/null; then
-+    xdg-email-hook "${mailto}"
-+    if [ $? -eq 0 ]; then
-+        exit_success
-+    else
-+        exit_failure_operation_failed
-+    fi
-+fi
-+
- detectDE
- 
- if [ x"$DE" = x"" ]; then
-     # if BROWSER variable is not set, check some well known browsers instead
-     if [ x"$BROWSER" = x"" ]; then
--        BROWSER=firefox:mozilla:netscape
-+        BROWSER=firefox:seamonkey:epiphany:opera:mozilla:netscape
-     fi
-     DE=generic
- fi

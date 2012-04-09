@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/04/06 07:53:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/09 09:39:15 ajacoutot Exp $
 
 # Does _not_ depend on desktop-file-utils, hicolor-icon-theme,
 # gtk-update-icon-cache, shared-mime-info... on purpose as it should
@@ -6,9 +6,8 @@
 
 COMMENT=	utilities to assist desktop integration tasks
 
-DISTNAME=	xdg-utils-1.0.2
-EXTRACT_SUFX=	.tgz
-REVISION=	13
+DISTNAME=	xdg-utils-1.1.0-rc1
+PKGNAME=	xdg-utils-1.1.0rc1
 
 CATEGORIES=	devel
 
@@ -27,21 +26,21 @@ MASTER_SITES=	http://portland.freedesktop.org/download/
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
-USE_GROFF =	Yes
-
-CONFIGURE_STYLE= gnu
-CONFIGURE_ENV=	XMLTO=${LOCALBASE}/bin/xmlto
+CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	ac_cv_path_XMLTO=""
 
 pre-configure:
 	${SUBST_CMD} \
-		${WRKSRC}/scripts/{xdg-desktop-menu,xdg-icon-resource,xdg-mime}
+		${WRKSRC}/scripts/xdg-desktop-menu \
+		${WRKSRC}/scripts/xdg-icon-resource \
+		${WRKSRC}/scripts/xdg-mime \
+		${WRKSRC}/scripts/xdg-open \
+		${WRKSRC}/scripts/xdg-settings
 
 post-install:
 	# Official NetBeans does not know about OpenBSD, thus at least
 	# some java apps use 'email' and 'open' as fallbacks.
 	ln -s xdg-email ${PREFIX}/bin/email
 	ln -s xdg-open ${PREFIX}/bin/open
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdg-utils
-	${INSTALL_SCRIPT} ${FILESDIR}/x* ${PREFIX}/share/examples/xdg-utils
 
 .include <bsd.port.mk>
