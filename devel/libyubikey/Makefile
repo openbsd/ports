@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/04/08 17:40:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/09 07:17:20 landry Exp $
 
 COMMENT=	Yubikey OTP library
 
@@ -23,6 +23,9 @@ AUTOMAKE_VERSION=	1.11
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_STYLE=	gnu
+BUILD_DEPENDS += ${MODGNU_AUTOMAKE_DEPENDS}
+BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS += devel/libtool #libtoolize
 
 USE_LIBTOOL=		Yes
 
