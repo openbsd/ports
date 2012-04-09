@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/18 12:33:36 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/09 17:54:20 sebastia Exp $
 include/HighlighterKit
 lib/GNUstep/
 lib/GNUstep/Frameworks/
@@ -7,25 +7,27 @@ lib/GNUstep/Frameworks/HighlighterKit.framework/Headers
 lib/GNUstep/Frameworks/HighlighterKit.framework/HighlighterKit
 lib/GNUstep/Frameworks/HighlighterKit.framework/Resources
 lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKSyntaxDefinition.h
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKSyntaxHighlighter.h
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKTextPattern.h
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HighlighterKit.h
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/HighlighterKit
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C++.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C-Header.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/GNUmakefile.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/GSmarkup.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Info-gnustep.plist
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/ObjC++.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/ObjC.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Plist.syntax
-lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Strings.syntax
-@lib lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/libHighlighterKit.so.${LIBHighlighterKit_VERSION}
+${LIBDIR}/
+${LIBDIR}/Headers/
+${LIBDIR}/Headers/HKSyntaxDefinition.h
+${LIBDIR}/Headers/HKSyntaxHighlighter.h
+${LIBDIR}/Headers/HKTextPattern.h
+${LIBDIR}/Headers/HighlighterKit.h
+${LIBDIR}/HighlighterKit
+${LIBDIR}/Resources/
+${LIBDIR}/Resources/C++.syntax
+${LIBDIR}/Resources/C-Header.syntax
+${LIBDIR}/Resources/C.syntax
+${LIBDIR}/Resources/ChangeLog.syntax
+${LIBDIR}/Resources/GNUmakefile.syntax
+${LIBDIR}/Resources/GSmarkup.syntax
+${LIBDIR}/Resources/Generic.syntax
+${LIBDIR}/Resources/Info-gnustep.plist
+${LIBDIR}/Resources/ObjC++.syntax
+${LIBDIR}/Resources/ObjC.syntax
+${LIBDIR}/Resources/Plist.syntax
+${LIBDIR}/Resources/Strings.syntax
+@lib ${LIBDIR}/libHighlighterKit.so.${LIBHighlighterKit_VERSION}
 lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/Current
 @lib lib/GNUstep/Frameworks/HighlighterKit.framework/libHighlighterKit.so.${LIBHighlighterKit_VERSION}
 @lib lib/libHighlighterKit.so.${LIBHighlighterKit_VERSION}

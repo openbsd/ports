@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/20 07:29:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/09 17:54:20 sebastia Exp $
 
 COMMENT =	framework for highlighting and coloring syntax
 
-DISTNAME =	HighlighterKit-0.1.1
+DISTNAME =	HighlighterKit-0.1.2
 
-SHARED_LIBS =	HighlighterKit 0.0
+SHARED_LIBS =	HighlighterKit 0.1
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/HighlighterKit
 MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
@@ -14,6 +14,9 @@ MODGNUSTEP_NEEDS_BASE =	NO
 MODGNUSTEP_NEEDS_GUI = 	NO
 
 BUILD_DEPENDS +=	x11/gnustep/gui
+
+LIBDIR =	lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/${LIBHighlighterKit_VERSION}
+SUBST_VARS +=	LIBDIR
 
 MAKE_FLAGS =	HighlighterKit_INTERFACE_VERSION=${LIBHighlighterKit_VERSION}
 
