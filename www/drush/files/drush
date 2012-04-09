@@ -1,2 +1,2 @@
 #! /bin/sh
-exec php ${PREFIX}/libexec/drush/drush.php "$@"
+exec php-${MODPHP_VERSION} ${PREFIX}/libexec/drush/drush.php "$@"
