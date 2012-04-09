@@ -1,9 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/07 07:35:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/09 17:54:57 sebastia Exp $
 bin/Gemas
 libexec/GNUstep/
 libexec/GNUstep/Gemas.app/
 @bin libexec/GNUstep/Gemas.app/Gemas
 libexec/GNUstep/Gemas.app/Resources/
+libexec/GNUstep/Gemas.app/Resources/AppResources/
+libexec/GNUstep/Gemas.app/Resources/AppResources/AppController.h
+libexec/GNUstep/Gemas.app/Resources/AppResources/AppController.m
+libexec/GNUstep/Gemas.app/Resources/AppResources/AppMain.m
+libexec/GNUstep/Gemas.app/Resources/AppResources/GNUmakefile
+libexec/GNUstep/Gemas.app/Resources/AppResources/GNUmakefile.postamble
+libexec/GNUstep/Gemas.app/Resources/AppResources/GNUmakefile.preamble
+libexec/GNUstep/Gemas.app/Resources/AppResources/Info.plist
+libexec/GNUstep/Gemas.app/Resources/AppResources/interface.gorm/
+libexec/GNUstep/Gemas.app/Resources/AppResources/interface.gorm/data.classes
+libexec/GNUstep/Gemas.app/Resources/AppResources/interface.gorm/data.info
+libexec/GNUstep/Gemas.app/Resources/AppResources/interface.gorm/objects.gorm
 libexec/GNUstep/Gemas.app/Resources/English.lproj/
 libexec/GNUstep/Gemas.app/Resources/English.lproj/Editor.gorm/
 libexec/GNUstep/Gemas.app/Resources/English.lproj/Editor.gorm/data.classes
@@ -53,4 +65,10 @@ libexec/GNUstep/Gemas.app/Resources/Spanish.lproj/Preferences.gorm/
 libexec/GNUstep/Gemas.app/Resources/Spanish.lproj/Preferences.gorm/data.classes
 libexec/GNUstep/Gemas.app/Resources/Spanish.lproj/Preferences.gorm/data.info
 libexec/GNUstep/Gemas.app/Resources/Spanish.lproj/Preferences.gorm/objects.gorm
+libexec/GNUstep/Gemas.app/Resources/ToolResources/
+libexec/GNUstep/Gemas.app/Resources/ToolResources/GNUmakefile
+libexec/GNUstep/Gemas.app/Resources/ToolResources/GNUmakefile.postamble
+libexec/GNUstep/Gemas.app/Resources/ToolResources/GNUmakefile.preamble
+libexec/GNUstep/Gemas.app/Resources/ToolResources/main.m
+libexec/GNUstep/Gemas.app/Resources/nonEnglishCharacters.plist
 libexec/GNUstep/Gemas.app/stamp.make
