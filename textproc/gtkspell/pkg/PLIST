@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/02 17:50:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/04/09 17:09:28 ajacoutot Exp $
 %%SHARED%%
 include/gtkspell-2.0/
 include/gtkspell-2.0/gtkspell/
@@ -7,6 +7,23 @@ lib/libgtkspell.a
 lib/libgtkspell.la
 lib/pkgconfig/
 lib/pkgconfig/gtkspell-2.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/gtkspell/
+share/gtk-doc/html/gtkspell/chapter-tutorial.html
+share/gtk-doc/html/gtkspell/gtkspell-gtkspell.html
+share/gtk-doc/html/gtkspell/gtkspell.devhelp
+share/gtk-doc/html/gtkspell/gtkspell.devhelp2
+share/gtk-doc/html/gtkspell/home.png
+share/gtk-doc/html/gtkspell/index.html
+share/gtk-doc/html/gtkspell/index.sgml
+share/gtk-doc/html/gtkspell/left.png
+share/gtk-doc/html/gtkspell/reference.html
+share/gtk-doc/html/gtkspell/right.png
+share/gtk-doc/html/gtkspell/style.css
+share/gtk-doc/html/gtkspell/tutorial-building.html
+share/gtk-doc/html/gtkspell/tutorial.html
+share/gtk-doc/html/gtkspell/up.png
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gtkspell.mo
