@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/20 11:50:06 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/10 12:56:40 jim Exp $
 
 COMMENT =	session management for Mojo
 
 MODULES =	cpan
-DISTNAME =	MojoX-Session-0.23
+DISTNAME =	MojoX-Session-0.25
 CATEGORIES =	www
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
