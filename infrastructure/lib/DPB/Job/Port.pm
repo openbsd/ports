@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.26 2012/03/02 19:33:43 espie Exp $
+# $OpenBSD: Port.pm,v 1.27 2012/04/10 17:06:15 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -334,7 +334,7 @@ sub run
 
 	my $sudo = OpenBSD::Paths->sudo;
 	$self->handle_output($job);
-	
+
 	$self->junk_lock($core);
 	my @d = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
@@ -495,7 +495,7 @@ sub new
 		$class;
 
 	if ($builder->{rebuild}) {
-		push(@{$job->{tasks}}, 
+		push(@{$job->{tasks}},
 		    DPB::Task::Port::Signature->new('signature'));
 	} else {
 		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath});
@@ -636,7 +636,7 @@ sub watched
 	my $stuck = $core->stuck_timeout;
 	if (defined $stuck) {
 		if ($diff > $stuck) {
-			$self->{stuck} = 
+			$self->{stuck} =
 			    "KILLED: $self->{current} stuck at $msg";
 			kill 9, $core->{pid};
 			return $self->{stuck};
@@ -672,7 +672,7 @@ sub new
 	    builder => $builder, endcode => $e},
 		$class;
 
-	push(@{$job->{tasks}}, 
+	push(@{$job->{tasks}},
 		    DPB::Task::Port::Install->new('install'));
 	return $job;
 }

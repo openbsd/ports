@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.20 2012/03/05 19:43:09 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.21 2012/04/10 17:06:15 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -164,7 +164,7 @@ sub report
 	if ($self->check($v)) {
 		print $log  "\n";
 		open my $fh, '>>', $self->{state}{permanent_log};
-		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz), 
+		print $fh join(' ', $pkgpath, $host, $job->totaltime, $sz),
 		    "\n";
 	} else {
 		open my $fh, '>>', $job->{log};
@@ -216,7 +216,7 @@ sub install
 {
 	my ($self, $v, $core) = @_;
 	my $log = $self->logger->make_logs($v);
-	my $job = DPB::Job::Port::Install->new($log, $v, $self, 
+	my $job = DPB::Job::Port::Install->new($log, $v, $self,
 	    sub {$core->mark_ready; });
 	$core->start_job($job, $v);
 	return $core;
