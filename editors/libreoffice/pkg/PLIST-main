@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2012/04/03 08:56:50 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2012/04/10 13:34:13 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -2835,7 +2835,6 @@ lib/libreoffice/ure/share/java/
 lib/libreoffice/ure/share/misc/
 lib/libreoffice/ure/share/misc/services.rdb
 lib/libreoffice/ure/share/misc/types.rdb
-share/applications/base.desktop
 share/applications/calc.desktop
 share/applications/draw.desktop
 share/applications/impress.desktop
@@ -2978,3 +2977,9 @@ share/icons/hicolor/48x48/mimetypes/spreadsheet.png
 share/icons/hicolor/48x48/mimetypes/text-template.png
 share/icons/hicolor/48x48/mimetypes/text.png
 share/mime/packages/openoffice.org.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
