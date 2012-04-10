@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2012/03/23 17:51:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.184 2012/04/10 22:39:08 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT-sqlite=	SQLite authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.0
-V_DOVECOT=	2.0.19
+V_DOVECOT=	2.0.20
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
