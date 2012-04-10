@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2012/02/01 11:24:46 dcoppa Exp $
-
-BROKEN-sparc64 =	SIGBUS during startup when built with gcc 4.2.1
+# $OpenBSD: Makefile,v 1.33 2012/04/10 13:57:10 dcoppa Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.8.9
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://libtorrent.rakshasa.no/
@@ -17,13 +16,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c crypto idn m ncursesw pthread \
-			sigc-2.0 ssl stdc++ z torrent>=18 \
-			curl>=14
+WANTLIB=		c crypto curl>=14 idn m ncursesw \
+			pthread sigc-2.0 ssl stdc++ \
+			torrent>=18 z
 
 MASTER_SITES=		${HOMEPAGE}downloads/
 
-MODULES=		devel/gettext
+MODULES=		gcc4 devel/gettext
+
+# SIGBUS during startup on sparc64 when built using gcc 4.2.1
+# https://github.com/rakshasa/rtorrent/issues/28
+MODGCC4_ARCHS=		sparc64
+MODGCC4_LANGS=		c++
+MODGCC4_VERSION=	4.6
 
 BUILD_DEPENDS=		devel/cppunit
 LIB_DEPENDS=		net/libtorrent>=0.12.9 \
