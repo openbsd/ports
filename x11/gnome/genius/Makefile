@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/03/29 07:06:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2012/04/10 08:27:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.15
+REVISION=	0
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
