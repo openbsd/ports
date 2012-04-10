@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.22 2011/10/21 20:10:51 sthen Exp $
---- configure.in.orig	Tue Oct 18 19:48:48 2011
-+++ configure.in	Fri Oct 21 13:04:40 2011
+$OpenBSD: patch-source3_configure_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
+--- source3/configure.in.orig	Sat Apr  7 14:23:20 2012
++++ source3/configure.in	Tue Apr 10 22:56:36 2012
 @@ -1640,8 +1640,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"

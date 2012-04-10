@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.18 2012/02/16 21:36:08 sthen Exp $
---- Makefile.in.orig	Thu Jan 26 05:26:48 2012
-+++ Makefile.in	Thu Jan 26 08:46:44 2012
+$OpenBSD: patch-source3_Makefile_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
+--- source3/Makefile.in.orig	Sat Apr  7 14:23:20 2012
++++ source3/Makefile.in	Tue Apr 10 22:56:36 2012
 @@ -28,7 +28,7 @@ SHLD=@SHLD@
  LIB_PATH_VAR=@LIB_PATH_VAR@
  
