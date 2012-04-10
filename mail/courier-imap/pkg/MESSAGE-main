@@ -5,4 +5,4 @@ Pay particular attention to the details in imapd.cnf, and read ssl(8) if
 necessary. You MUST set the CN in imapd.cnf to the hostname by which
 your IMAP server is accessed, or else clients will complain. When this
 is done, you can use the 'mkimapdcert' script to automatically generate
-a server certificate, which is installed into /etc/ssl/private/imapd.pem
+a server certificate, which is installed into /etc/ssl/imapd.pem
