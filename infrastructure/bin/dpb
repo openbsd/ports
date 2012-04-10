@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.51 2012/04/02 15:51:24 espie Exp $
+# $OpenBSD: dpb,v 1.52 2012/04/10 16:58:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -37,7 +37,6 @@ use DPB::PkgPath;
 use DPB::Logger;
 use File::Path;
 use File::Basename;
-
 
 sub init
 {
@@ -211,7 +210,7 @@ sub handle_options
 	if ($state->opt('h')) {
 		$state->{config} = $state->expand_path($state->opt('h'));
 	}
-	if (!defined $state->{build_files}) {
+	if (!$state->{subst}->value("NO_BUILD_STATS")) {
 		push @{$state->{build_files}}, "%f/build-stats/%a";
 	}
 	for my $cat (qw(build_files paths ipaths cpaths)) {
