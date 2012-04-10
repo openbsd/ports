@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.15 2012/03/04 16:57:19 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.16 2012/04/10 15:12:54 dcoppa Exp $
 
 Don't reset CPPFLAGS...stupid configure.
 
---- configure.orig	Sat Feb  4 23:31:35 2012
-+++ configure	Fri Mar  2 10:43:25 2012
-@@ -8840,7 +8840,7 @@ if test x$enable_aac = xyes; then
+--- configure.orig	Thu Apr  5 03:37:06 2012
++++ configure	Tue Apr 10 17:05:50 2012
+@@ -8844,7 +8844,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -I."
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
@@ -13,7 +13,7 @@ Don't reset CPPFLAGS...stupid configure.
  	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
  if test "x$ac_cv_header_faad_h" = xyes; then :
  
-@@ -9094,7 +9094,7 @@ if test x$enable_aac = xyes; then
+@@ -9098,7 +9098,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -Werror"
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
@@ -22,7 +22,7 @@ Don't reset CPPFLAGS...stupid configure.
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken libfaad headers" >&5
  $as_echo_n "checking for broken libfaad headers... " >&6; }
-@@ -9140,7 +9140,7 @@ if test x$enable_aac = xyes; then
+@@ -9144,7 +9144,7 @@ if test x$enable_aac = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS $MP4FF_LIBS"
@@ -31,7 +31,7 @@ Don't reset CPPFLAGS...stupid configure.
  
  	ac_fn_c_check_header_mongrel "$LINENO" "mp4ff.h" "ac_cv_header_mp4ff_h" "$ac_includes_default"
  if test "x$ac_cv_header_mp4ff_h" = xyes; then :
-@@ -10647,7 +10647,7 @@ if test x$enable_mpc = xyes; then
+@@ -10651,7 +10651,7 @@ if test x$enable_mpc = xyes; then
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $MPCDEC_CFLAGS -I."
  	LIBS="$LIBS $MPD_LIBS $MPCDEC_LIBS"

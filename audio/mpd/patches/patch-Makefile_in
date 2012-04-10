@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2012/03/04 16:57:19 dcoppa Exp $
---- Makefile.in.orig	Sat Feb  4 23:31:35 2012
-+++ Makefile.in	Fri Mar  2 10:43:25 2012
-@@ -2291,7 +2291,7 @@ SPARSE_CPPFLAGS = $(DEFAULT_INCLUDES) -I$(shell $(CC) 
+$OpenBSD: patch-Makefile_in,v 1.6 2012/04/10 15:12:54 dcoppa Exp $
+--- Makefile.in.orig	Thu Apr  5 03:37:06 2012
++++ Makefile.in	Tue Apr 10 17:05:49 2012
+@@ -2361,7 +2361,7 @@ SPARSE_CPPFLAGS = $(DEFAULT_INCLUDES) -I$(shell $(CC) 
  # Documentation
  #
  man_MANS = doc/mpd.1 doc/mpd.conf.5
