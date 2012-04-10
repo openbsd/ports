@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.38 2012/04/08 10:20:42 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.39 2012/04/10 17:00:29 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 8 2012 $
+.Dd $Mdocdate: April 10 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -186,6 +186,9 @@ to figure out old distfiles and update
 .It Ar NO_CURSOR
 Make the terminal cursor invisible if possible.
 Avoids flickering on slow graphics cards.
+.It Ar NO_BUILD_STATS
+Disable reading/saving of default build stats under
+.Pa ${DISTDIR}/build-stats/${ARCH} .
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.
