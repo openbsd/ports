@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/10/21 20:10:51 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2012/04/10 22:37:02 sthen Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -73,6 +73,7 @@ lib/samba/vfs/cap.so
 lib/samba/vfs/catia.so
 lib/samba/vfs/crossrename.so
 lib/samba/vfs/default_quota.so
+lib/samba/vfs/dirsort.so
 lib/samba/vfs/expand_msdfs.so
 lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
@@ -89,6 +90,7 @@ lib/samba/vfs/shadow_copy2.so
 lib/samba/vfs/smb_traffic_analyzer.so
 lib/samba/vfs/streams_depot.so
 lib/samba/vfs/streams_xattr.so
+lib/samba/vfs/syncops.so
 lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
 @bin libexec/nmbd
