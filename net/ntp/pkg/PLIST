@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/07/11 17:43:14 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/04/10 15:06:29 gonzalo Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man1/ntp-keygen.1
@@ -121,6 +121,7 @@ share/doc/ntp/manyopt.html
 share/doc/ntp/miscopt.html
 share/doc/ntp/monopt.html
 share/doc/ntp/msyslog.html
+share/doc/ntp/ntp-wait.html
 share/doc/ntp/ntp_conf.html
 share/doc/ntp/ntpd.html
 share/doc/ntp/ntpdate.html
