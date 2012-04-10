@@ -1,12 +1,21 @@
-$OpenBSD: patch-samples_cvsyncd-OpenBSD_conf,v 1.1 2008/08/25 17:13:22 naddy Exp $
---- samples/cvsyncd-OpenBSD.conf.orig	Mon Aug 25 19:07:48 2008
-+++ samples/cvsyncd-OpenBSD.conf	Mon Aug 25 19:08:22 2008
-@@ -32,4 +32,8 @@ config {
+$OpenBSD: patch-samples_cvsyncd-OpenBSD_conf,v 1.2 2012/04/10 19:52:44 phessler Exp $
+--- samples/cvsyncd-OpenBSD.conf.orig	Wed Sep  3 09:56:24 2003
++++ samples/cvsyncd-OpenBSD.conf	Tue Apr 10 14:22:16 2012
+@@ -3,6 +3,7 @@
+ #
+ config {
+ 	base-prefix	/cvsroot/OpenBSD
++	pidfile 	/var/run/cvsyncd/cvsyncd.pid
+ 
+ 	collection {
+ 		name openbsd release rcs
+@@ -31,5 +32,9 @@ config {
+ 	collection {
  		super openbsd release rcs
  		name openbsd-xf4 prefix XF4
- 	}
++	}
 +	collection {
 +		super openbsd release rcs
 +		name openbsd-xenocara prefix xenocara
-+	}
+ 	}
  }

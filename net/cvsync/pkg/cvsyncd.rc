@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: cvsyncd.rc,v 1.1 2012/04/10 19:52:44 phessler Exp $
+
+daemon="${TRUEPREFIX}/bin/cvsyncd"
+daemon_user="_cvsyncd"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -o _cvsyncd -d /var/run/cvsyncd
+}
+
+rc_cmd $1
