@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/16 09:57:35 simon Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/10 13:32:45 jim Exp $
 
 COMMENT =	next generation web framework
 
 MODULES =	cpan
-DISTNAME =	Mojolicious-1.16
+DISTNAME =	Mojolicious-2.76
 CATEGORIES =	www
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
@@ -17,8 +16,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 HOMEPAGE =	http://mojolicio.us/
 
-CPAN_AUTHOR =	KRAIH
+CPAN_AUTHOR =	SRI
 
-MAKE_ENV +=	TEST_POD=1
+RUN_DEPENDS =	security/p5-IO-Socket-SSL>=1.37
 
 .include <bsd.port.mk>

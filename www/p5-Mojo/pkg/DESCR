@@ -7,4 +7,4 @@ Mojolicious is a MVC web framework that supports following features:
 * Automatic CGI, FastCGI and PSGI detection.
 * JSON and XML/HTML5 parser with CSS3 selector support.
 * Very clean, portable and Object Oriented pure Perl API without any hidden
-  magic and no requirements besides Perl 5.8.7.
+  magic
