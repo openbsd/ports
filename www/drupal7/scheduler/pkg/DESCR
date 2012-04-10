@@ -1,0 +1,8 @@
+This module allows nodes to be published and unpublished on specified dates.
+
+If JSCalendar is enabled, a popup Javascript
+calendar is used to select the date and time for (un)publishing of nodes, 
+otherwise it defaults to text input.
+
+This module requires a cron facility to work, either poormanscron or an
+actual cron job.
