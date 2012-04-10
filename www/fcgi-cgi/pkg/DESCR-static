@@ -1,0 +1,2 @@
+This package contains a statically-linked version of fcgi-cgi for easier
+use when CGI applications are run in a chroot() jail.

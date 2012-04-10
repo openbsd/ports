@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/04/10 19:34:52 sthen Exp $
+--- configure.ac.orig	Tue Apr 10 15:49:39 2012
++++ configure.ac	Tue Apr 10 15:49:32 2012
+@@ -22,7 +22,7 @@ PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.16.0, [
+ # lib ev
+ AC_CHECK_HEADERS([ev.h], [], [AC_MSG_ERROR("ev.h not found")])
+ AC_CHECK_LIB([ev], [ev_time], [
+-	LIBS="-lev ${LIBS}"
++	LIBS="-lev -lm ${LIBS}"
+ 	AC_DEFINE([HAVE_LIBEV], [1], [ev_time in -lev])
+ 	], [AC_MSG_ERROR("libev not found")])
+ 
