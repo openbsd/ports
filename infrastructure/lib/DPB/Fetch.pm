@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.39 2012/04/02 09:21:18 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.40 2012/04/10 16:50:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -70,7 +70,7 @@ sub dump
 {
 	my ($class, $logger) = @_;
 	my $log = $logger->create("fetch/distfiles");
-	for my $f (sort map {$_->{name}} values %$cache) {
+	for my $f (sort map {$_->{name}} grep {defined $_} values %$cache) {
 		print $log $f, "\n";
 	}
 }
