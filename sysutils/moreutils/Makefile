@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/20 14:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/11 14:41:40 sthen Exp $
 
 COMMENT =	miscellaneous unix tools
 
-DISTNAME =	moreutils_0.45
+DISTNAME =	moreutils_0.46
 PKGNAME =	${DISTNAME:S/_/-/}
 WRKDIST =	${WRKDIR}/moreutils
 
