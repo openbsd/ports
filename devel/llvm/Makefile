@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2012/04/11 13:05:45 sthen Exp $
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
@@ -14,8 +14,9 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
-ONLY_FOR_ARCHS = ${GCC4_ARCHS}
-NOT_FOR_ARCHS =	sparc # uses too much memory
+ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
+# some chance of building on other GCC4 arch, but is known to be
+# broken on alpha/sparc.
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
