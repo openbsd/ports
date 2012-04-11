@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/11 13:35:47 gsoares Exp $
 
 COMMENT= 	check for POD errors in files
 
 MODULES=	cpan
-DISTNAME=	Test-Pod-1.44
-REVISION=	0
+DISTNAME=	Test-Pod-1.45
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
