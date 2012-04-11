@@ -1,16 +1,7 @@
-$OpenBSD: patch-cupsconnection_c,v 1.11 2011/10/06 06:00:02 ajacoutot Exp $
---- cupsconnection.c.orig	Mon Oct  3 18:13:58 2011
-+++ cupsconnection.c	Thu Oct  6 07:56:10 2011
-@@ -3606,7 +3606,7 @@ Connection_getPPD3 (Connection *self, PyObject *args, 
-   PyTuple_SetItem (ret, 2, obj);
- 
-   debugprintf ("<- Connection_getPPD3() = (%d,%ld,%s)\n",
--	       status, modtime, fname);
-+	       status, (long)modtime, fname);
-   return ret;
- }
- #endif /* HAVE_CUPS_1_4 */
-@@ -3666,8 +3666,7 @@ Connection_printTestPage (Connection *self, PyObject *
+$OpenBSD: patch-cupsconnection_c,v 1.12 2012/04/11 16:03:36 ajacoutot Exp $
+--- cupsconnection.c.orig	Tue Dec  6 18:55:28 2011
++++ cupsconnection.c	Wed Apr 11 17:56:09 2012
+@@ -3644,8 +3644,7 @@ Connection_printTestPage (Connection *self, PyObject *
  	  break;
        }
      } else {
