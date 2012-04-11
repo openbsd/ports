@@ -1,0 +1,15 @@
+$OpenBSD: patch-glom_main_local_options_cc,v 1.1 2012/04/11 15:32:24 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=673914
+
+--- glom/main_local_options.cc.orig	Wed Apr 11 16:39:33 2012
++++ glom/main_local_options.cc	Wed Apr 11 16:39:42 2012
+@@ -20,6 +20,8 @@
+ 
+ #include "config.h"
+ 
++#include <iostream>
++
+ #include <glom/main_local_options.h>
+ 
+ // For sanity checks:

@@ -1,0 +1,15 @@
+$OpenBSD: patch-glom_main_cc,v 1.4 2012/04/11 15:32:24 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=673914
+
+--- glom/main.cc.orig	Wed Apr 11 16:38:05 2012
++++ glom/main.cc	Wed Apr 11 16:38:13 2012
+@@ -20,6 +20,8 @@
+ 
+ #include "config.h"
+ 
++#include <iostream>
++
+ //We use Python for calculated fields.
+ //#include <Python.h> //Include it before anything else to avoid "_POSIX_C_SOURCE redefined".
+ #include <boost/python.hpp>

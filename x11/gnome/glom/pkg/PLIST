@@ -1,11 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/03/06 13:12:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/04/11 15:32:24 ajacoutot Exp $
 @bin bin/glom
 @bin bin/glom_create_from_example
+@bin bin/glom_export_po
+@bin bin/glom_export_po_all
+@bin bin/glom_import_po_all
 @bin bin/glom_test_connection
 include/glom-${API_V}/
 include/glom-${API_V}/libglom/
 include/glom-${API_V}/libglom/appstate.h
 include/glom-${API_V}/libglom/data_structure/
+include/glom-${API_V}/libglom/data_structure/choicevalue.h
+include/glom-${API_V}/libglom/data_structure/database_title.h
 include/glom-${API_V}/libglom/data_structure/field.h
 include/glom-${API_V}/libglom/data_structure/fieldtypes.h
 include/glom-${API_V}/libglom/data_structure/foundset.h
@@ -14,7 +19,7 @@ include/glom-${API_V}/libglom/data_structure/groupinfo.h
 include/glom-${API_V}/libglom/data_structure/has_title_singular.h
 include/glom-${API_V}/libglom/data_structure/layout/
 include/glom-${API_V}/libglom/data_structure/layout/custom_title.h
-include/glom-${API_V}/libglom/data_structure/layout/fieldformatting.h
+include/glom-${API_V}/libglom/data_structure/layout/formatting.h
 include/glom-${API_V}/libglom/data_structure/layout/layoutgroup.h
 include/glom-${API_V}/libglom/data_structure/layout/layoutitem.h
 include/glom-${API_V}/libglom/data_structure/layout/layoutitem_button.h
@@ -36,7 +41,6 @@ include/glom-${API_V}/libglom/data_structure/layout/report_parts/layoutitem_summ
 include/glom-${API_V}/libglom/data_structure/layout/report_parts/layoutitem_verticalgroup.h
 include/glom-${API_V}/libglom/data_structure/layout/usesrelationship.h
 include/glom-${API_V}/libglom/data_structure/numeric_format.h
-include/glom-${API_V}/libglom/data_structure/parameternamegenerator.h
 include/glom-${API_V}/libglom/data_structure/print_layout.h
 include/glom-${API_V}/libglom/data_structure/privileges.h
 include/glom-${API_V}/libglom/data_structure/relationship.h
@@ -60,14 +64,15 @@ include/glom-${API_V}/libglom/libglom_config.h
 include/glom-${API_V}/libglom/report_builder.h
 include/glom-${API_V}/libglom/sharedptr.h
 include/glom-${API_V}/libglom/standard_table_prefs_fields.h
+include/glom-${API_V}/libglom/translations_po.h
 include/glom-${API_V}/libglom/utils.h
 lib/libglom-${API_V}.a
 lib/libglom-${API_V}.la
-@lib lib/libglom-${API_V}.so.${LIBglom-1.20_VERSION}
+@lib lib/libglom-${API_V}.so.${LIBglom-1.22_VERSION}
 lib/pkgconfig/glom-${API_V}.pc
-@comment lib/python${MODPY_VERSION}/site-packages/glom_1_20.a
-@comment lib/python${MODPY_VERSION}/site-packages/glom_1_20.la
-lib/python${MODPY_VERSION}/site-packages/glom_1_20.so
+@comment lib/python${MODPY_VERSION}/site-packages/glom_1_22.a
+@comment lib/python${MODPY_VERSION}/site-packages/glom_1_22.la
+lib/python${MODPY_VERSION}/site-packages/glom_1_22.so
 share/applications/glom.desktop
 share/devhelp/books/libglom-${API_V}/
 share/devhelp/books/libglom-${API_V}/libglom-${API_V}.devhelp2
@@ -106,26 +111,32 @@ share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1View__coll__graph.p
 share/doc/libglom-${API_V}/reference/html/classGlomBakery_1_1View__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1AppState__coll__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ChoiceValue-members.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ChoiceValue.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ChoiceValue__coll__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1ChoiceValue__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1CustomTitle__inherit__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1DatabaseTitle-members.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1DatabaseTitle.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1DatabaseTitle__coll__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1DatabaseTitle__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Document__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting-members.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting__coll__graph.png
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldFormatting__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1FieldTypes__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Field__inherit__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1Formatting-members.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1Formatting.html
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1Formatting__coll__graph.png
+share/doc/libglom-${API_V}/reference/html/classGlom_1_1Formatting__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FoundSet-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FoundSet.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1FoundSet__coll__graph.png
@@ -212,9 +223,6 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1LayoutItem__inherit__grap
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1NumericFormat-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1NumericFormat.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1NumericFormat__coll__graph.png
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator-members.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1ParameterNameGenerator__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1PrintLayout__coll__graph.png
@@ -229,7 +237,6 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1ReportBuilder__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1Report__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1SystemPrefs-members.html
@@ -241,24 +248,19 @@ share/doc/libglom-${API_V}/reference/html/classGlom_1_1TableInfo__coll__graph.pn
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TableInfo__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1TranslatableItem__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1UsesRelationship__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__FieldHasName__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField.html
-share/doc/libglom-${API_V}/reference/html/classGlom_1_1predicate__LayoutItem__Field__IsSameField__coll__graph.png
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr-members.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr.html
 share/doc/libglom-${API_V}/reference/html/classGlom_1_1sharedptr__inherit__graph.png
 share/doc/libglom-${API_V}/reference/html/classes.html
 share/doc/libglom-${API_V}/reference/html/closed.png
-share/doc/libglom-${API_V}/reference/html/deprecated.html
 share/doc/libglom-${API_V}/reference/html/doxygen.css
 share/doc/libglom-${API_V}/reference/html/doxygen.png
 share/doc/libglom-${API_V}/reference/html/functions.html
@@ -315,7 +317,6 @@ share/doc/libglom-${API_V}/reference/html/inherit_graph_1.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_10.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_11.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_12.png
-share/doc/libglom-${API_V}/reference/html/inherit_graph_13.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_2.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_3.png
 share/doc/libglom-${API_V}/reference/html/inherit_graph_4.png
@@ -339,35 +340,43 @@ share/doc/libglom-${API_V}/reference/html/namespaces.html
 share/doc/libglom-${API_V}/reference/html/nav_f.png
 share/doc/libglom-${API_V}/reference/html/nav_h.png
 share/doc/libglom-${API_V}/reference/html/open.png
-share/doc/libglom-${API_V}/reference/html/pages.html
 share/doc/libglom-${API_V}/reference/html/tab_a.png
 share/doc/libglom-${API_V}/reference/html/tab_b.png
 share/doc/libglom-${API_V}/reference/html/tab_h.png
 share/doc/libglom-${API_V}/reference/html/tab_s.png
 share/doc/libglom-${API_V}/reference/html/tabs.css
 share/doc/libglom-${API_V}/reference/libglom-${API_V}.tag
-share/doc/pyglom_1_20/
-share/doc/pyglom_1_20/reference/
-share/doc/pyglom_1_20/reference/html/
-share/doc/pyglom_1_20/reference/html/_sources/
-share/doc/pyglom_1_20/reference/html/_sources/index.txt
-share/doc/pyglom_1_20/reference/html/_static/
-share/doc/pyglom_1_20/reference/html/_static/basic.css
-share/doc/pyglom_1_20/reference/html/_static/default.css
-share/doc/pyglom_1_20/reference/html/_static/doctools.js
-share/doc/pyglom_1_20/reference/html/_static/file.png
-share/doc/pyglom_1_20/reference/html/_static/jquery.js
-share/doc/pyglom_1_20/reference/html/_static/minus.png
-share/doc/pyglom_1_20/reference/html/_static/plus.png
-share/doc/pyglom_1_20/reference/html/_static/pygments.css
-share/doc/pyglom_1_20/reference/html/_static/searchtools.js
-share/doc/pyglom_1_20/reference/html/_static/sidebar.js
-share/doc/pyglom_1_20/reference/html/_static/underscore.js
-share/doc/pyglom_1_20/reference/html/genindex.html
-share/doc/pyglom_1_20/reference/html/index.html
-share/doc/pyglom_1_20/reference/html/objects.inv
-share/doc/pyglom_1_20/reference/html/search.html
-share/doc/pyglom_1_20/reference/html/searchindex.js
+share/doc/pyglom_1_22/
+share/doc/pyglom_1_22/reference/
+share/doc/pyglom_1_22/reference/html/
+share/doc/pyglom_1_22/reference/html/_sources/
+share/doc/pyglom_1_22/reference/html/_sources/index.txt
+share/doc/pyglom_1_22/reference/html/_static/
+share/doc/pyglom_1_22/reference/html/_static/ajax-loader.gif
+share/doc/pyglom_1_22/reference/html/_static/basic.css
+share/doc/pyglom_1_22/reference/html/_static/comment-bright.png
+share/doc/pyglom_1_22/reference/html/_static/comment-close.png
+share/doc/pyglom_1_22/reference/html/_static/comment.png
+share/doc/pyglom_1_22/reference/html/_static/default.css
+share/doc/pyglom_1_22/reference/html/_static/doctools.js
+share/doc/pyglom_1_22/reference/html/_static/down-pressed.png
+share/doc/pyglom_1_22/reference/html/_static/down.png
+share/doc/pyglom_1_22/reference/html/_static/file.png
+share/doc/pyglom_1_22/reference/html/_static/jquery.js
+share/doc/pyglom_1_22/reference/html/_static/minus.png
+share/doc/pyglom_1_22/reference/html/_static/plus.png
+share/doc/pyglom_1_22/reference/html/_static/pygments.css
+share/doc/pyglom_1_22/reference/html/_static/searchtools.js
+share/doc/pyglom_1_22/reference/html/_static/sidebar.js
+share/doc/pyglom_1_22/reference/html/_static/underscore.js
+share/doc/pyglom_1_22/reference/html/_static/up-pressed.png
+share/doc/pyglom_1_22/reference/html/_static/up.png
+share/doc/pyglom_1_22/reference/html/_static/websupport.js
+share/doc/pyglom_1_22/reference/html/genindex.html
+share/doc/pyglom_1_22/reference/html/index.html
+share/doc/pyglom_1_22/reference/html/objects.inv
+share/doc/pyglom_1_22/reference/html/search.html
+share/doc/pyglom_1_22/reference/html/searchindex.js
 share/glom/
 share/glom/glade/
 share/glom/glade/developer/
@@ -385,7 +394,6 @@ share/glom/glade/developer/dialog_field_summary.glade
 share/glom/glade/developer/dialog_fieldslist.glade
 share/glom/glade/developer/dialog_flowtable.glade
 share/glom/glade/developer/dialog_group_by.glade
-share/glom/glade/developer/dialog_groupby_sort_fields.glade
 share/glom/glade/developer/dialog_initial_password.glade
 share/glom/glade/developer/dialog_layout_field_properties.glade
 share/glom/glade/developer/dialog_line.glade
@@ -394,6 +402,7 @@ share/glom/glade/developer/dialog_new_library_script.glade
 share/glom/glade/developer/dialog_notebook.glade
 share/glom/glade/developer/dialog_relationships_overview.glade
 share/glom/glade/developer/dialog_script_library.glade
+share/glom/glade/developer/dialog_sort_fields.glade
 share/glom/glade/developer/dialog_translation_copy.glade
 share/glom/glade/developer/dialog_translation_identify_original.glade
 share/glom/glade/developer/dialog_user.glade
@@ -422,6 +431,7 @@ share/glom/glade/operator/dialog_image_load_progress.glade
 share/glom/glade/operator/dialog_image_save_progress.glade
 share/glom/glade/operator/dialog_import_csv.glade
 share/glom/glade/operator/dialog_import_csv_progress.glade
+share/glom/glade/operator/dialog_new_record.glade
 share/glom/glade/operator/window_main.glade
 share/glom/glom_document.dtd
 share/glom/pixmaps/
