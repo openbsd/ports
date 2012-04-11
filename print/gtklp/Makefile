@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/11 15:59:56 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
 DISTNAME=	gtklp-1.2.8
 CATEGORIES=	print sysutils x11
 
-REVISION=	1
+REVISION=	2
 
 EXTRACT_SUFX=	.src.tar.gz
 
-HOMEPAGE=	http://gtklp.sourceforge.net/
+HOMEPAGE=	http://gtklp.sirtobi.com/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
