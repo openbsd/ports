@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/11 16:16:33 edd Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
 COMMENT-no_x11=		rogue-like game
 
-V =			3.3.1
+V =			3.3.2
 V_DLDIR =		${V:C/\.[0-9]$//}
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
@@ -52,6 +52,7 @@ PKG_ARGS +=		-Dsdl=1
 LIB_DEPENDS +=		devel/sdl-mixer \
 			devel/sdl-image \
 			devel/sdl-ttf
+RUN_DEPENDS +=		devel/desktop-file-utils
 WANTLIB +=		SDL SDL_image SDL_mixer SDL_ttf pthread	
 .else
 CONFIGURE_ARGS +=	--disable-sdl-mixer	# defaults to ON
@@ -59,5 +60,14 @@ PKG_ARGS +=		-Dsdl=0
 .endif
 
 NO_REGRESS =		Yes
+
+pre-configure:
+	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share," \
+		${WRKSRC}/lib/xtra/icon/angband*.desktop
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	mv ${PREFIX}/share/angband/xtra/icon/*.desktop \
+		${PREFIX}/share/applications
 
 .include <bsd.port.mk>

@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.sdl,v 1.1 2011/10/03 10:59:33 edd Exp $
-share/angband/xtra/
+@comment $OpenBSD: PFRAG.sdl,v 1.2 2012/04/11 16:16:33 edd Exp $
 share/angband/xtra/angband.glade
 share/angband/xtra/font/
 share/angband/xtra/font/10x14x.fon
@@ -29,12 +28,6 @@ share/angband/xtra/graf/16x16.png
 share/angband/xtra/graf/32x32.png
 share/angband/xtra/graf/8x16.png
 share/angband/xtra/graf/8x8.png
-share/angband/xtra/icon/
-share/angband/xtra/icon/att-128.png
-share/angband/xtra/icon/att-16.png
-share/angband/xtra/icon/att-256.png
-share/angband/xtra/icon/att-32.png
-share/angband/xtra/icon/att-512.png
 share/angband/xtra/sound/
 share/angband/xtra/sound/breath.wav
 share/angband/xtra/sound/clunk.wav
@@ -57,3 +50,4 @@ share/angband/xtra/sound/shutdoor.wav
 share/angband/xtra/sound/sound.cfg
 share/angband/xtra/sound/thump.wav
 share/angband/xtra/sound/vomit.wav
+share/applications/angband-sdl.desktop

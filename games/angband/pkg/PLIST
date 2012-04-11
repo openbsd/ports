@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/10/03 10:59:33 edd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/11 16:16:33 edd Exp $
 %%sdl%%
 @extraunexec rm /var/games/angband/*/* 2>/dev/null || true
-@group games
 @mode g+s
+@group games
 @bin bin/angband
 @mode
 share/angband/
@@ -69,8 +69,22 @@ share/angband/pref/xtra-dvg.prf
 share/angband/pref/xtra-new.prf
 share/angband/pref/xtra-nmd.prf
 share/angband/pref/xtra-xxx.prf
+share/angband/xtra/
+share/angband/xtra/icon/
+share/angband/xtra/icon/att-128.png
+share/angband/xtra/icon/att-16.png
+share/angband/xtra/icon/att-256.png
+share/angband/xtra/icon/att-32.png
+share/angband/xtra/icon/att-512.png
+share/applications/
+@comment share/applications/angband-gtk.desktop
+share/applications/angband-x11.desktop
 @mode 775
 @sample /var/games/angband/
 @sample /var/games/angband/apex/
 @sample /var/games/angband/save/
 @sample /var/games/angband/user/
+@mode
+@group
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
