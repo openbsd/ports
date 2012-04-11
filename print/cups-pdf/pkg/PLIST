@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/08 14:02:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/11 17:29:50 ajacoutot Exp $
 bin/cups-pdf-dispatch
 @mode 0700
 @bin libexec/cups/backend/cups-pdf
 @mode
 share/cups/model/CUPS-PDF.ppd
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/cups/cups-pdf-dispatch-ldap.conf
 share/examples/cups/cups-pdf-dispatch.conf
 @sample ${SYSCONFDIR}/cups/cups-pdf-dispatch.conf
 share/examples/cups/cups-pdf.conf
 @sample ${SYSCONFDIR}/cups/cups-pdf.conf
+@extraunexec rm -rf /var/spool/cups-pdf/

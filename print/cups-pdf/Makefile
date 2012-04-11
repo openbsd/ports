@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/31 08:32:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/11 17:29:50 ajacoutot Exp $
 
 COMMENT=		PDF backend for CUPS
 
-DISTNAME=		cups-pdf-2.5.1
+DISTNAME=		cups-pdf-2.6.1
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.cups-pdf.de/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB += c
 
 RUN_DEPENDS=		print/cups \
 			print/ghostscript/gnu \
@@ -24,12 +24,13 @@ RUN_DEPENDS=		print/cups \
 
 NO_REGRESS=		Yes
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/extra/cups-pdf.conf \
+		${WRKSRC}/src/cups-pdf.h
+
 do-build:
 	cd ${WRKDIR} && \
 	${CC} ${CFLAGS} -o bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
-
-pre-install:
-	${SUBST_CMD} ${WRKBUILD}/extra/cups-pdf.conf
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/libexec/cups/backend

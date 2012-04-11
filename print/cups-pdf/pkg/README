@@ -1,0 +1,10 @@
+$OpenBSD: README,v 1.1 2012/04/11 17:29:50 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+A PDF printer can be added using the following command:
+    # lpadmin -p pdfprinter -v cups-pdf:/ -m CUPS-PDF.ppd -E
+
+Print outputs (i.e. PDF) will be stored under the user's home directory.
