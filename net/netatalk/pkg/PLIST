@@ -1,67 +1,61 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/03/01 13:41:31 espie Exp $
-@bin bin/achfile
-bin/acleandir.rc
+@comment $OpenBSD: PLIST,v 1.8 2012/04/11 18:39:13 sthen Exp $
+@bin bin/ad
 @bin bin/adv1tov2
-@bin bin/aecho
-@bin bin/afile
-bin/afpd-mtab.pl
+@bin bin/afpldaptest
 @mode 4755
 @bin bin/afppasswd
 @mode
-bin/apple_cp
-bin/apple_mv
-bin/apple_rm
+bin/apple_dump
 bin/asip-status.pl
 bin/binheader
-bin/cleanappledouble.pl
 bin/cnid2_create
-@bin bin/cnid_index
-bin/cnid_maint
-@bin bin/getzones
+@bin bin/dbd
 bin/hqx2bin
 bin/lp2pap.sh
 bin/macbinary
 bin/macusers
 @bin bin/megatron
 bin/nadheader
-@bin bin/nbplkup
-@bin bin/nbprgstr
-@bin bin/nbpunrgstr
 bin/netatalk-config
-bin/nu
-@bin bin/pap
-@bin bin/papstatus
-@bin bin/psorder
-@bin bin/showppd
 bin/single2bin
-@bin bin/timeout
 bin/unbin
 bin/unhex
 @bin bin/uniconv
 bin/unsingle
 include/atalk/
+include/atalk/acl.h
 include/atalk/adouble.h
 include/atalk/aep.h
 include/atalk/afp.h
 include/atalk/asp.h
 include/atalk/atp.h
-include/atalk/boolean.h
 include/atalk/cnid.h
 include/atalk/compat.h
 include/atalk/ddp.h
+include/atalk/directory.h
 include/atalk/dsi.h
+include/atalk/ea.h
+include/atalk/hash.h
+include/atalk/ldapconfig.h
 include/atalk/list.h
 include/atalk/logger.h
 include/atalk/nbp.h
 include/atalk/netddp.h
 include/atalk/pap.h
 include/atalk/paths.h
+include/atalk/queue.h
 include/atalk/rtmp.h
 include/atalk/server_child.h
+include/atalk/server_ipc.h
 include/atalk/tdb.h
 include/atalk/uam.h
 include/atalk/unicode.h
+include/atalk/unix.h
 include/atalk/util.h
+include/atalk/uuid.h
+include/atalk/vfs.h
+include/atalk/volinfo.h
+include/atalk/volume.h
 include/atalk/zip.h
 include/netatalk/
 include/netatalk/aarp.h
@@ -77,102 +71,47 @@ lib/netatalk/
 lib/netatalk/uams/
 lib/netatalk/uams/uams_clrtxt.so
 lib/netatalk/uams/uams_dhx.so
-lib/netatalk/uams/uams_dhx_passwd.a
-lib/netatalk/uams/uams_dhx_passwd.la
+lib/netatalk/uams/uams_dhx2.so
+lib/netatalk/uams/uams_dhx2_passwd.so
 lib/netatalk/uams/uams_dhx_passwd.so
-lib/netatalk/uams/uams_guest.a
-lib/netatalk/uams/uams_guest.la
+lib/netatalk/uams/uams_gss.so
 lib/netatalk/uams/uams_guest.so
-lib/netatalk/uams/uams_passwd.a
-lib/netatalk/uams/uams_passwd.la
 lib/netatalk/uams/uams_passwd.so
-lib/netatalk/uams/uams_randnum.a
-lib/netatalk/uams/uams_randnum.la
 lib/netatalk/uams/uams_randnum.so
-libexec/etc2ps.sh
-libexec/ifmpap
-libexec/ifmpaprev
-libexec/ifpap
-libexec/ifpaprev
-libexec/ifwmpap
-libexec/ifwmpaprev
-libexec/ifwpap
-libexec/ifwpaprev
-libexec/ofmpap
-libexec/ofpap
-libexec/ofwmpap
-libexec/ofwpap
-@bin libexec/psa
-@bin libexec/psf
-libexec/tfmpap
-libexec/tfmpaprev
-libexec/tfpap
-libexec/tfpaprev
-libexec/tfwmpap
-libexec/tfwmpaprev
-libexec/tfwpap
-libexec/tfwpaprev
-@man man/man1/achfile.1
-@man man/man1/acleandir.1
-@man man/man1/aecho.1
-@man man/man1/afile.1
+@man man/man1/ad.1
+@man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
-@man man/man1/apple_cp.1
-@man man/man1/apple_mv.1
-@man man/man1/apple_rm.1
+@man man/man1/apple_dump.1
 @man man/man1/asip-status.pl.1
-@man man/man1/cnid_index.1
-@man man/man1/getzones.1
+@man man/man1/dbd.1
 @man man/man1/hqx2bin.1
 @man man/man1/macbinary.1
+@man man/man1/macusers.1
 @man man/man1/megatron.1
-@man man/man1/nbp.1
-@man man/man1/nbplkup.1
-@man man/man1/nbprgstr.1
-@man man/man1/nbpunrgstr.1
 @man man/man1/netatalk-config.1
-@man man/man1/pap.1
-@man man/man1/papstatus.1
-@man man/man1/psorder.1
 @man man/man1/single2bin.1
-@man man/man1/timeout.1
 @man man/man1/unbin.1
 @man man/man1/unhex.1
 @man man/man1/uniconv.1
 @man man/man1/unsingle.1
-@man man/man3/atalk_aton.3
-@man man/man3/nbp_name.3
-@man man/man4/atalk.4
+@man man/man5/AppleVolumes.5
 @man man/man5/AppleVolumes.default.5
+@man man/man5/AppleVolumes.system.5
+@man man/man5/afp_ldap.conf.5
+@man man/man5/afp_signature.conf.5
+@man man/man5/afp_voluuid.conf.5
 @man man/man5/afpd.conf.5
-@man man/man5/atalkd.conf.5
 @man man/man5/netatalk.conf.5
-@man man/man5/papd.conf.5
 @man man/man8/afpd.8
-@man man/man8/atalkd.8
 @man man/man8/cnid_dbd.8
 @man man/man8/cnid_metad.8
-@man man/man8/papd.8
-@man man/man8/papstatus.8
-@man man/man8/psf.8
 @man man/man8/timelord.8
 @bin sbin/afpd
-@bin sbin/atalkd
 @bin sbin/cnid_dbd
 @bin sbin/cnid_metad
-@bin sbin/papd
-share/aclocal/
 share/aclocal/netatalk.m4
 share/doc/netatalk/
-share/doc/netatalk/COPYING
-share/doc/netatalk/COPYRIGHT
-share/doc/netatalk/FAQ
-share/doc/netatalk/Netatalk-Manual.pdf
-share/doc/netatalk/Netatalk-Manual.txt
-share/doc/netatalk/README.hidden-items
-share/doc/netatalk/README.ids
-share/doc/netatalk/README.logger
-share/doc/netatalk/README.platforms
+share/doc/netatalk/README.AppleTalk
 share/examples/netatalk/
 @mode 750
 @sample ${SYSCONFDIR}/netatalk/
@@ -183,13 +122,9 @@ share/examples/netatalk/AppleVolumes.system
 @sample ${SYSCONFDIR}/netatalk/AppleVolumes.system
 share/examples/netatalk/afpd.conf
 @sample ${SYSCONFDIR}/netatalk/afpd.conf
-share/examples/netatalk/atalkd.conf
-@sample ${SYSCONFDIR}/netatalk/atalkd.conf
 share/examples/netatalk/netatalk.conf
 @sample ${SYSCONFDIR}/netatalk/netatalk.conf
-share/examples/netatalk/papd.conf
-@sample ${SYSCONFDIR}/netatalk/papd.conf
-share/examples/netatalk/rc.atalk.bsd
-@sample ${SYSCONFDIR}/netatalk/rc.atalk
-share/netatalk/
-share/netatalk/pagecount.ps
+@mode
+@rcscript ${RCDIR}/afpd
+@rcscript ${RCDIR}/cnid_metad
+@rcscript ${RCDIR}/netatalk
