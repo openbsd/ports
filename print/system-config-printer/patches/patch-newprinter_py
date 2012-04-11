@@ -1,13 +1,13 @@
-$OpenBSD: patch-newprinter_py,v 1.6 2012/02/26 07:13:26 ajacoutot Exp $
---- newprinter.py.orig	Fri Jan  6 15:20:36 2012
-+++ newprinter.py	Sun Feb 26 08:11:19 2012
+$OpenBSD: patch-newprinter_py,v 1.7 2012/04/11 16:04:03 ajacoutot Exp $
+--- newprinter.py.orig	Mon Jan 30 17:04:54 2012
++++ newprinter.py	Wed Apr 11 17:58:23 2012
 @@ -1527,7 +1527,7 @@ class NewPrinterGUI(GtkGUI):
                  host = device.uri[s:s+e]
          # Try to get make and model via SNMP
          if host:
 -            args = ["/usr/lib/cups/backend/snmp", host]
 +            args = ["${LOCALBASE}/libexec/cups/backend/snmp", host]
-             debugprint (host + ": " + args)
+             debugprint (host + ": " + repr(args))
              stdout = None
              try:
 @@ -3391,7 +3391,7 @@ class NewPrinterGUI(GtkGUI):
