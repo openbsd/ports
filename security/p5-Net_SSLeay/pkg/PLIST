@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/07/26 10:51:16 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/11 18:51:49 bluhm Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/SSLeay/
 ${P5ARCH}/Net/SSLeay.pm
+${P5ARCH}/Net/SSLeay.pod
 ${P5ARCH}/Net/SSLeay/Handle.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
@@ -40,6 +41,7 @@ ${P5ARCH}/auto/Net/SSLeay/head_httpx4.al
 ${P5ARCH}/auto/Net/SSLeay/http_cat.al
 ${P5ARCH}/auto/Net/SSLeay/https_cat.al
 ${P5ARCH}/auto/Net/SSLeay/httpx_cat.al
+${P5ARCH}/auto/Net/SSLeay/initialize.al
 ${P5ARCH}/auto/Net/SSLeay/make_form.al
 ${P5ARCH}/auto/Net/SSLeay/make_headers.al
 ${P5ARCH}/auto/Net/SSLeay/new_x_ctx.al
@@ -109,3 +111,4 @@ share/examples/p5-Net-SSLeay/sslecho.pl
 share/examples/p5-Net-SSLeay/stdio_bulk.pl
 share/examples/p5-Net-SSLeay/tcpcat.pl
 share/examples/p5-Net-SSLeay/tcpecho.pl
+share/examples/p5-Net-SSLeay/x509_cert_details.pl
