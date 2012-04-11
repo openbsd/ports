@@ -1,0 +1,12 @@
+$OpenBSD: patch-ev_c,v 1.1 2012/04/11 13:57:17 naddy Exp $
+--- ev.c.orig	Wed Apr 11 13:06:15 2012
++++ ev.c	Wed Apr 11 13:19:45 2012
+@@ -579,6 +579,8 @@ struct signalfd_siginfo
+       #define ECB_MEMORY_FENCE_RELEASE __asm__ __volatile__ ("membar #LoadStore |             #StoreStore")
+     #elif defined(__s390__) || defined(__s390x__)
+       #define ECB_MEMORY_FENCE         __asm__ __volatile__ ("bcr 15,0" : : : "memory")
++    #elif defined(__alpha__)
++      #define ECB_MEMORY_FENCE         __asm__ __volatile__ ("mb" : : : "memory")
+     #endif
+   #endif
+ #endif
