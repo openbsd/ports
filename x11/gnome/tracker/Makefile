@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2012/03/29 07:28:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2012/04/11 07:39:37 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,8 +21,8 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		0
-REVISION-evolution=	0
+REVISION-main=		1
+REVISION-evolution=	1
 REVISION-nautilus=	0
 
 # Only get the first x.y which is needed in the PLIST.
@@ -87,6 +87,8 @@ WANTLIB-evolution += xml2 dbus-glib-1 ICE SM db ebackend-1.2 gnome-desktop-3
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/email-engine
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/email-utils
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etext
