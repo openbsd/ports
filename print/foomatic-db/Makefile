@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2012/02/17 15:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/11 16:16:08 ajacoutot Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Foomatic PPD data
 
-V=			20120112
+V=			20120411
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 CATEGORIES=		print
@@ -33,8 +33,7 @@ NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 pre-configure:
-	perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure
 
 # From Fedora ; these files are already shipped by the foo2zjs package
 # RH #208851 #438319 #518267
