@@ -1,6 +1,9 @@
-$OpenBSD: patch-glom_main_cc,v 1.4 2012/04/11 15:32:24 ajacoutot Exp $
+$OpenBSD: patch-glom_main_cc,v 1.5 2012/04/12 08:14:56 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=673914
+From 6d5db9687e9aa5bd8fc324b5fa6adea3faae5fb0 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Wed, 11 Apr 2012 14:56:38 +0000
+Subject: build: std:cerr needs <iostream>
 
 --- glom/main.cc.orig	Wed Apr 11 16:38:05 2012
 +++ glom/main.cc	Wed Apr 11 16:38:13 2012
