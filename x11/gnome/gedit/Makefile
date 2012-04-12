@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/04/09 08:38:47 ajacoutot Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.82 2012/04/12 17:29:27 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
