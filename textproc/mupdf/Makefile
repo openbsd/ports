@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/05 13:24:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2012/04/12 13:31:01 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
 V =		0.9
+REVISION =	0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 WRKDIST =	${WRKDIR}/mupdf-$V
@@ -31,10 +32,6 @@ LIB_DEPENDS =	graphics/jbig2dec \
 		graphics/openjpeg
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
-
-VMEM_WARNING =	Yes
-
 NO_REGRESS =	Yes
 
 MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} CXX=${CXX} \

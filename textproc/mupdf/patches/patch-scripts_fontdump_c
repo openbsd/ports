@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_fontdump_c,v 1.1 2012/04/12 13:31:01 sthen Exp $
+--- scripts/fontdump.c.orig	Thu Apr 12 14:05:45 2012
++++ scripts/fontdump.c	Thu Apr 12 14:05:54 2012
+@@ -48,7 +48,7 @@ main(int argc, char **argv)
+ 	}
+ 
+ 	fprintf(fo, "#ifndef __STRICT_ANSI__\n");
+-	fprintf(fo, "#if defined(__linux__) || defined(__FreeBSD__)\n");
++	fprintf(fo, "#if defined(__linux__) || defined(__FreeBSD__) || defined(__OpenBSD__)\n");
+ 	fprintf(fo, "#define HAVE_INCBIN\n");
+ 	fprintf(fo, "#endif\n");
+ 	fprintf(fo, "#endif\n");
