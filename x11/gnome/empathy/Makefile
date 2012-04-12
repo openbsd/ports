@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2012/04/05 16:08:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.93 2012/04/12 18:00:14 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
@@ -67,7 +67,7 @@ MODGNOME_TOOLS= 	yelp
 
 AUTOCONF_VERSION=	2.67
 
-CONFIGURE_STYLE=	autoconf gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--enable-spell \
 			--enable-location \
 			--enable-goa \

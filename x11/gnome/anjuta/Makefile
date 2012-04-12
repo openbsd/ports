@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2012/04/12 17:25:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2012/04/12 18:00:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,6 @@ MODGNOME_TOOLS= 	goi vala yelp
 
 YACC=			bison -y
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
 

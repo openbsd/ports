@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/03/30 14:09:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/04/12 18:00:14 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
@@ -36,7 +36,6 @@ LIB_DEPENDS=	x11/gnome/desktop>=3.2.0p0 \
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		sysutils/consolekit # src/gs-listener-dbus.c
 
-CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-docbook-docs \
 		--enable-locking \
