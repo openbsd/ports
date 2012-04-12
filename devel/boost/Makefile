@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/01/06 07:39:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/04/12 20:28:47 espie Exp $
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
@@ -39,6 +39,7 @@ CATEGORIES=	devel
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 HOMEPAGE=	http://www.boost.org/
+VMEM_WARNING =	Yes
 
 # MIT-like
 PERMIT_PACKAGE_CDROM=	Yes
