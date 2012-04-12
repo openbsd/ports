@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/03/30 14:11:39 ajacoutot Exp $
-
-# XXX remove the post-patch chunk on update
+# $OpenBSD: Makefile,v 1.58 2012/04/12 17:25:29 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
