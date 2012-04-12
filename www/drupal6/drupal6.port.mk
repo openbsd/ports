@@ -1,10 +1,10 @@
-# $OpenBSD: drupal6.port.mk,v 1.7 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: drupal6.port.mk,v 1.8 2012/04/12 08:16:06 naddy Exp $
 
 
 # three types of things we can install, by default plugin
 MODDRUPAL_THEME ?=	No
 
-.if defined(LANG)
+.if defined(DRUPAL_LANG)
 MODDRUPAL_LANG ?=	Yes
 .else
 MODDRUPAL_LANG ?=	No
@@ -43,7 +43,7 @@ MODDRUPAL_INSTALL = \
 	mkdir -p ${PREFIX}/${DRUPAL_ROOT}; \
 	cp -R ${WRKDIST}/* ${PREFIX}/${DRUPAL_ROOT}; \
 	chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_ROOT}
-SUBST_VARS += LANG
+SUBST_VARS += DRUPAL_LANG
 .else
 MODDRUPAL_INSTALL = \
 		mkdir -p ${PREFIX}/${DRUPAL_MODS}; \

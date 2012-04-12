@@ -1,10 +1,10 @@
-# $OpenBSD: drupal7.port.mk,v 1.1.1.1 2012/04/10 12:49:31 espie Exp $
+# $OpenBSD: drupal7.port.mk,v 1.2 2012/04/12 08:16:06 naddy Exp $
 
 
 # three types of things we can install, by default plugin
 MODDRUPAL_THEME ?=	No
 
-.if defined(LANG)
+.if defined(DRUPAL_LANG)
 MODDRUPAL_LANG ?=	Yes
 .else
 MODDRUPAL_LANG ?=	No
@@ -16,12 +16,12 @@ CATEGORIES +=	www www/drupal7
 
 .if ${MODDRUPAL_LANG:L} == "yes"
 SUBDIR = translations/7.x
-COMMENT = drupal ${LANG} translation
+COMMENT = drupal ${DRUPAL_LANG} translation
 EXTRACT_SUFX ?=
-HOMEPAGE ?= http://localize.drupal.org/translate/languages/${LANG}/
+HOMEPAGE ?= http://localize.drupal.org/translate/languages/${DRUPAL_LANG}/
 MASTER_SITES ?=	ftp://ftp.drupal.org/pub/drupal/files/${SUBDIR}/
 .  for p v in ${LANGFILES}
-DISTFILES += $p/$p-7.x-$v.${LANG}.po
+DISTFILES += $p/$p-7.x-$v.${DRUPAL_LANG}.po
 .  endfor
 .else
 SUBDIR = projects
@@ -59,7 +59,7 @@ MODDRUPAL_INSTALL = \
 	    cp ${FULLDISTDIR}/$$i ${PREFIX}/${DRUPAL_TRANSLATIONS}; \
 	done; \
 	chown -R ${DRUPAL_OWNER}.${DRUPAL_GROUP} ${PREFIX}/${DRUPAL_TRANSLATIONS}; 
-SUBST_VARS += LANG
+SUBST_VARS += DRUPAL_LANG
 .else
 MODDRUPAL_INSTALL = \
 		mkdir -p ${PREFIX}/${DRUPAL_MODS}; \

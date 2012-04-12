@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2012/01/28 11:24:10 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/12 08:16:06 naddy Exp $
 
 COMMENT =	french translation
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-LANG =		fr
+DRUPAL_LANG =		fr
 EXTRACT_ONLY =
 
-DISTNAME =	${LANG}-6.x-1.0
-PKGNAME =	drupal6-${LANG}-1.0
+DISTNAME =	${DRUPAL_LANG}-6.x-1.0
+PKGNAME =	drupal6-${DRUPAL_LANG}-1.0
 REVISION =	3
 
 post-extract:

@@ -1,4 +1,4 @@
-${LANG} translation of drupal 7 modules,includes :
+${DRUPAL_LANG} translation of drupal 7 modules,includes :
 - drupal 7.11
 - auto_nodetitle 1.0
 - backup_migrate 2.2
