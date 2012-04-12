@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_client_c,v 1.2 2011/10/30 16:05:35 dcoppa Exp $
---- src/client.c.orig	Tue Oct 11 12:44:58 2011
-+++ src/client.c	Sun Oct 30 16:33:19 2011
+$OpenBSD: patch-src_client_c,v 1.3 2012/04/12 10:03:19 dcoppa Exp $
+--- src/client.c.orig	Sun Mar 18 20:26:26 2012
++++ src/client.c	Thu Apr 12 11:36:49 2012
 @@ -28,6 +28,7 @@
     NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_client_c,v 1.2 2011/10/30 16:05:35 dcoppa Exp $
  #include <sys/poll.h>
  #include <sys/socket.h>
  #include <fcntl.h>
-@@ -195,7 +196,7 @@ void Client_token_free(client_t *client)
+@@ -197,7 +198,7 @@ void Client_token_free(client_t *client)
  void recheckCodecVersions()
  {
  	client_t *client_itr = NULL;
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_client_c,v 1.2 2011/10/30 16:05:35 dcoppa Exp $
  	message_t *sendmsg;
  	struct dlist codec_list, *itr, *save;
  	codec_t *codec_itr, *cd;
-@@ -560,6 +561,7 @@ int Client_send_message_ver(client_t *client, message_
+@@ -574,6 +575,7 @@ int Client_send_message_ver(client_t *client, message_
  		return Client_send_message(client, msg);
  	else
  		Msg_free(msg);

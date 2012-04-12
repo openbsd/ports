@@ -1,67 +1,70 @@
-$OpenBSD: patch-src_main_c,v 1.2 2012/03/30 06:09:54 ajacoutot Exp $
---- src/main.c.orig	Tue Oct 11 06:44:58 2011
-+++ src/main.c	Sat Mar 24 10:57:15 2012
-@@ -41,7 +41,7 @@
+$OpenBSD: patch-src_main_c,v 1.3 2012/04/12 10:03:19 dcoppa Exp $
+--- src/main.c.orig	Tue Apr 10 16:19:33 2012
++++ src/main.c	Tue Apr 10 16:23:39 2012
+@@ -41,12 +41,9 @@
  #include <errno.h>
  #include <string.h>
  #include <stdlib.h>
 -#ifdef _POSIX_PRIORITY_SCHEDULING
+-#if (_POSIX_PRIORITY_SCHEDULING > 0)
+-#define POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  #include <sched.h>
  #endif
+-#endif
  #include "server.h"
-@@ -200,7 +200,7 @@ void daemonize()
+ #include "ssl.h"
+ #include "channel.h"
+@@ -203,7 +200,7 @@ void daemonize()
  		
  }
  
--#ifdef _POSIX_PRIORITY_SCHEDULING
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  void setscheduler()
  {
  	int rc;
-@@ -219,7 +219,7 @@ void printhelp()
- 	printf("uMurmur version %s. Mumble protocol %d.%d.%d\n", UMURMUR_VERSION, PROTVER_MAJOR, PROTVER_MINOR, PROTVER_PATCH);
+@@ -223,7 +220,7 @@ void printhelp()
+ 	       UMURMUR_CODENAME, PROTVER_MAJOR, PROTVER_MINOR, PROTVER_PATCH);
  	printf("Usage: umurmurd [-d] [-r] [-h] [-p <pidfile>] [-t] [-c <conf file>] [-a <addr>] [-b <port>]\n");
  	printf("       -d             - Do not daemonize - run in foreground.\n");
--#ifdef _POSIX_PRIORITY_SCHEDULING
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  	printf("       -r             - Run with realtime priority\n");
  #endif
  	printf("       -p <pidfile>   - Write PID to this file\n");
-@@ -234,15 +234,16 @@ void printhelp()
+@@ -238,7 +235,7 @@ void printhelp()
  int main(int argc, char **argv)
  {
  	bool_t nodaemon = false;
--#ifdef _POSIX_PRIORITY_SCHEDULING
--	bool_t realtime = false, testconfig = false;
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
-+	bool_t realtime = false;
+ 	bool_t realtime = false;
  #endif
-+	bool_t testconfig = false;
- 	char *conffile = NULL, *pidfile = NULL;
- 	int c;
+ 	bool_t testconfig = false;
+@@ -247,7 +244,7 @@ int main(int argc, char **argv)
  	struct utsname utsbuf;
  	
  	/* Arguments */
--#ifdef _POSIX_PRIORITY_SCHEDULING
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  	while ((c = getopt(argc, argv, "drp:c:a:b:ht")) != EOF) {
  #else
  	while ((c = getopt(argc, argv, "dp:c:a:b:ht")) != EOF) {
-@@ -269,7 +270,7 @@ int main(int argc, char **argv)
+@@ -274,7 +271,7 @@ int main(int argc, char **argv)
  		case 't':
  			testconfig = true;
  			break;
--#ifdef _POSIX_PRIORITY_SCHEDULING
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  		case 'r':
  			realtime = true;
  			break;
-@@ -333,7 +334,7 @@ int main(int argc, char **argv)
- 	Chan_init();
+@@ -339,7 +336,7 @@ int main(int argc, char **argv)
  	Client_init();
+ 	Ban_init();
  
--#ifdef _POSIX_PRIORITY_SCHEDULING
+-#ifdef POSIX_PRIORITY_SCHEDULING
 +#if defined(_POSIX_PRIORITY_SCHEDULING) && (_POSIX_PRIORITY_SCHEDULING > 0)
  	if (realtime)
  		setscheduler();
