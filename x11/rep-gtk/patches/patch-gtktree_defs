@@ -1,0 +1,24 @@
+$OpenBSD: patch-gtktree_defs,v 1.1 2012/04/12 21:00:37 naddy Exp $
+
+Breaks on architectures where va_list is not a pointer, e.g. alpha.
+http://git.tuxfamily.org/librep/gtk.git?p=librep/gtk.git;a=commit;h=3d374a34da0c6c6ca014591e2ef042ebbcd305ed
+
+--- gtktree.defs.orig	Thu Apr 12 22:23:33 2012
++++ gtktree.defs	Thu Apr 12 22:24:50 2012
+@@ -249,11 +249,11 @@
+   ((GtkTreeModel model)
+    (GtkTreeIter iter)))
+ 
+-(define-func gtk_tree_model_get_valist
+-  none
+-  ((GtkTreeModel model)
+-   (GtkTreeIter iter)
+-   (string valist)))
++;(define-func gtk_tree_model_get_valist
++;  none
++;  ((GtkTreeModel model)
++;   (GtkTreeIter iter)
++;   (string valist)))
+ 
+ ;; XXX not working
+ ;(define-func gtk_tree_model_foreach
