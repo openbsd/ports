@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2012/03/20 16:36:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.254 2012/04/12 14:56:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -50,6 +50,7 @@
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
+     SUBDIR += entr
      SUBDIR += eventlog
      SUBDIR += faubackup
      SUBDIR += fdupes
