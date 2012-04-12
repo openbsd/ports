@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2012/03/29 06:58:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/12 06:23:23 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
 GNOME_VERSION=		3.4.0
+REVISION=		0
 
 HOMEPAGE=		http://projects.gnome.org/gnome-power-manager/
 
@@ -30,10 +31,6 @@ WANTLIB += upower-glib xcb xcb-render xcb-shm z stdc++
 
 LIB_DEPENDS=	sysutils/upower \
 		x11/gtk+3
-
-AUTOCONF_VERSION=	2.68
-
-CONFIGURE_STYLE=	autoconf
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
