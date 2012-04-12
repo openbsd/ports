@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/04/12 17:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2012/04/12 17:30:47 ajacoutot Exp $
 
 COMMENT=		lightweight GNOME text editor
 
@@ -46,7 +46,8 @@ MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS=		--enable-python \
+CONFIGURE_ARGS=		--disable-static \
+			--enable-python \
 			--enable-spell \
 			--enable-gvfs-metadata \
 			--disable-updater \
