@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/04/12 13:46:36 jasper Exp $
+--- Makefile.orig	Tue Dec  6 21:51:24 2011
++++ Makefile	Tue Dec  6 21:51:30 2011
+@@ -6,7 +6,7 @@
+ #
+ 
+ VERSION = 0.4
+-MAKE ?= make
++MAKE ?= ${MAKE}
+ 
+ ROCK = lgi-$(VERSION)-1.rockspec
+ 

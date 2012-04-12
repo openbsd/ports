@@ -1,0 +1,6 @@
+LGI is gobject-introspection based dynamic Lua binding to GObject based
+libraries. It allows using GObject-based libraries directly from Lua.
+
+If you see errors like "undefined symbol 'pthread_mutex_unlock'", you
+will need to manually load the pthread shared library; you can do this
+by setting "LD_PRELOAD=/usr/lib/libpthread.so" in the environment.
