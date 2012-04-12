@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2012/04/07 03:46:16 jim Exp $
+# $OpenBSD: Makefile,v 1.107 2012/04/12 14:03:32 gsoares Exp $
 #
 
      SUBDIR =
@@ -78,6 +78,7 @@
      SUBDIR += p5-Math-GMP
      SUBDIR += p5-Math-MatrixReal
      SUBDIR += p5-Math-Pari
+     SUBDIR += p5-Math-Random-ISAAC
      SUBDIR += p5-Math-Round
      SUBDIR += p5-Math-Spline
      SUBDIR += p5-Math-Symbolic
