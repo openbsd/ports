@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1030 2012/04/09 09:29:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.1031 2012/04/12 13:47:22 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -336,6 +336,7 @@
      SUBDIR += log4cplus
      SUBDIR += lpc21isp
      SUBDIR += lpeg
+     SUBDIR += lua-lgi
      SUBDIR += luaalarm
      SUBDIR += luabitop
      SUBDIR += luacopas
