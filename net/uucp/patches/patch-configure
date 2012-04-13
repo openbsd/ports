@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2003/12/14 01:39:18 naddy Exp $
---- configure.orig	2003-11-11 18:15:02.000000000 +0100
-+++ configure	2003-11-11 20:24:38.000000000 +0100
-@@ -3939,12 +3939,14 @@ else
+$OpenBSD: patch-configure,v 1.2 2012/04/13 13:58:31 naddy Exp $
+--- configure.orig	Fri May 30 03:31:40 2003
++++ configure	Fri Apr 13 15:57:26 2012
+@@ -3939,11 +3939,13 @@ else
    echo "$ac_t""no" 1>&6
  fi
  
@@ -11,8 +11,7 @@ $OpenBSD: patch-configure,v 1.1 2003/12/14 01:39:18 naddy Exp $
  #define HAVE_FTIME 1
  EOF
  
- fi
 +fi
+ fi
  for ac_func in times
  do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
