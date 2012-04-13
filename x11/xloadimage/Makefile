@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2011/11/15 16:52:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2012/04/13 10:56:41 naddy Exp $
 
 COMMENT=	graphics file viewer for X11
 
 VERSION=	4.1
-REV=		16.3	# Debian
+REV=		17	# Debian
 
 DISTNAME=	xloadimage.${VERSION}
 PKGNAME=	xloadimage-${VERSION}.${REV}
@@ -22,8 +22,8 @@ MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
 MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
 		ftp://ftp.de.debian.org/debian/pool/main/x/xloadimage/
 
-PATCHFILES=	xloadimage_${VERSION}-${REV}.diff.gz:0
-PATCH_DIST_STRIP= -p1
+DISTFILES=	${DISTNAME}.tar.gz \
+		xloadimage_${VERSION}-${REV}.debian.tar.gz:0
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff
@@ -36,8 +36,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \
 		LDFLAGS="-L${LOCALBASE}/lib"
 NO_REGRESS=	Yes
 
-post-distpatch:
-	@for p in ${WRKDIST}/debian/patches/*.dpatch; do \
+PATCH_DIST_STRIP= -p1
+
+do-distpatch:
+	@for p in ${WRKDIR}/debian/patches/*.dpatch; do \
 		${PATCH} ${PATCH_DIST_ARGS} < $$p; \
 	done
 
