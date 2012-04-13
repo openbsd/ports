@@ -1,9 +1,9 @@
-$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.1 2010/11/04 07:20:57 robert Exp $
---- lib/puppet/provider/user/useradd.rb.orig	Wed Nov  3 18:21:13 2010
-+++ lib/puppet/provider/user/useradd.rb	Wed Nov  3 18:21:18 2010
-@@ -3,7 +3,7 @@ require 'puppet/provider/nameservice/objectadd'
- Puppet::Type.type(:user).provide :useradd, :parent => Puppet::Provider::NameService::ObjectAdd do
-   desc "User management via `useradd` and its ilk.  Note that you will need to install the `Shadow Password` Ruby library often known as ruby-libshadow to manage user passwords."
+$OpenBSD: patch-lib_puppet_provider_user_useradd_rb,v 1.2 2012/04/13 08:18:30 jasper Exp $
+--- lib/puppet/provider/user/useradd.rb.orig	Tue Apr 10 20:23:16 2012
++++ lib/puppet/provider/user/useradd.rb	Fri Apr 13 09:29:03 2012
+@@ -5,7 +5,7 @@ Puppet::Type.type(:user).provide :useradd, :parent => 
+     install Ruby's shadow password library (often known as `ruby-libshadow`)
+     if you wish to manage user passwords."
  
 -  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "chage"
 +  commands :add => "useradd", :delete => "userdel", :modify => "usermod", :password => "passwd"

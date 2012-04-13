@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/02/24 08:08:35 robert Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/04/13 08:18:30 jasper Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -12,7 +12,6 @@ ${MODRUBY_SITEDIR}/puppet/
 ${MODRUBY_SITEDIR}/puppet.rb
 ${MODRUBY_SITEDIR}/puppet/agent/
 ${MODRUBY_SITEDIR}/puppet/agent.rb
-${MODRUBY_SITEDIR}/puppet/agent/disabler.rb
 ${MODRUBY_SITEDIR}/puppet/agent/locker.rb
 ${MODRUBY_SITEDIR}/puppet/application/
 ${MODRUBY_SITEDIR}/puppet/application.rb
@@ -163,6 +162,10 @@ ${MODRUBY_SITEDIR}/puppet/file_serving/mount/file.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/modules.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/mount/plugins.rb
 ${MODRUBY_SITEDIR}/puppet/file_serving/terminus_helper.rb
+${MODRUBY_SITEDIR}/puppet/forge/
+${MODRUBY_SITEDIR}/puppet/forge.rb
+${MODRUBY_SITEDIR}/puppet/forge/cache.rb
+${MODRUBY_SITEDIR}/puppet/forge/repository.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/
 ${MODRUBY_SITEDIR}/puppet/indirector.rb
 ${MODRUBY_SITEDIR}/puppet/indirector/active_record.rb
@@ -304,13 +307,11 @@ ${MODRUBY_SITEDIR}/puppet/module_tool/applications/installer.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/searcher.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/uninstaller.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/applications/unpacker.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/cache.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/checksums.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/contents_description.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/dependency.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/metadata.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/modulefile.rb
-${MODRUBY_SITEDIR}/puppet/module_tool/repository.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton.rb
 ${MODRUBY_SITEDIR}/puppet/module_tool/skeleton/templates/
@@ -742,7 +743,6 @@ ${MODRUBY_SITEDIR}/puppet/type/zpool.rb
 ${MODRUBY_SITEDIR}/puppet/util/
 ${MODRUBY_SITEDIR}/puppet/util.rb
 ${MODRUBY_SITEDIR}/puppet/util/adsi.rb
-${MODRUBY_SITEDIR}/puppet/util/anonymous_filelock.rb
 ${MODRUBY_SITEDIR}/puppet/util/autoload/
 ${MODRUBY_SITEDIR}/puppet/util/autoload.rb
 ${MODRUBY_SITEDIR}/puppet/util/autoload/file_cache.rb
@@ -750,6 +750,7 @@ ${MODRUBY_SITEDIR}/puppet/util/backups.rb
 ${MODRUBY_SITEDIR}/puppet/util/cacher.rb
 ${MODRUBY_SITEDIR}/puppet/util/checksums.rb
 ${MODRUBY_SITEDIR}/puppet/util/classgen.rb
+${MODRUBY_SITEDIR}/puppet/util/colors.rb
 ${MODRUBY_SITEDIR}/puppet/util/command_line.rb
 ${MODRUBY_SITEDIR}/puppet/util/constant_inflector.rb
 ${MODRUBY_SITEDIR}/puppet/util/diff.rb
@@ -848,7 +849,9 @@ ${MODRUBY_SITEDIR}/puppet/util/warnings.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/
 ${MODRUBY_SITEDIR}/puppet/util/windows.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/error.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/process.rb
 ${MODRUBY_SITEDIR}/puppet/util/windows/security.rb
+${MODRUBY_SITEDIR}/puppet/util/windows/user.rb
 ${MODRUBY_SITEDIR}/puppet/util/zaml.rb
 ${MODRUBY_SITEDIR}/semver.rb
 @man man/man5/puppet.conf.5

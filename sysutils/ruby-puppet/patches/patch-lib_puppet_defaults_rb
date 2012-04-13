@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_puppet_defaults_rb,v 1.5 2011/10/05 07:41:43 jasper Exp $
---- lib/puppet/defaults.rb.orig	Fri Sep 30 19:51:10 2011
-+++ lib/puppet/defaults.rb	Tue Oct  4 23:26:25 2011
-@@ -400,8 +400,8 @@ module Puppet
+$OpenBSD: patch-lib_puppet_defaults_rb,v 1.6 2012/04/13 08:18:30 jasper Exp $
+--- lib/puppet/defaults.rb.orig	Tue Apr 10 20:23:15 2012
++++ lib/puppet/defaults.rb	Fri Apr 13 09:29:03 2012
+@@ -466,8 +466,8 @@ EOT
    )
  
    setdefaults(:master,
