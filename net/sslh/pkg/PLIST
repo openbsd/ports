@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/13 14:14:21 sthen Exp $
+@newgroup _sslh:696
+@newuser _sslh:696:696:daemon:sslh:/nonexistent:/sbin/nologin
+@man man/man8/sslh.8
+@bin sbin/sslh-fork
+@bin sbin/sslh-select
+share/doc/sslh/
+share/doc/sslh/README
+@rcscript ${RCDIR}/sslh_fork
+@rcscript ${RCDIR}/sslh_select

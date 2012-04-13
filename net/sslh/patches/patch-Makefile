@@ -1,0 +1,46 @@
+--- Makefile.orig	Sat Nov 26 19:06:58 2011
++++ Makefile	Fri Mar 23 19:53:40 2012
+@@ -5,26 +5,19 @@
+ COV_TEST= 	# Perform test coverage?
+ PREFIX=/usr/local
+ 
+-MAN=sslh.8.gz	# man page name
++MAN=sslh.8	# man page name
+ 
+ # End of configuration -- the rest should take care of
+ # itself
+ 
+-ifneq ($(strip $(COV_TEST)),)
+-    CFLAGS_COV=-fprofile-arcs -ftest-coverage
+-endif
+-
+ CC = gcc
+-CFLAGS=-Wall -g $(CFLAGS_COV)
+ 
+ #LIBS=-lnet
+ LIBS=
+ OBJS=common.o sslh-main.o
+ 
+-ifneq ($(strip $(USELIBWRAP)),)
+-	LIBS:=$(LIBS) -lwrap
+-	CFLAGS:=$(CFLAGS) -DLIBWRAP
+-endif
++LIBS:=$(LIBS) -lwrap
++CFLAGS:=$(CFLAGS) -Wall -DLIBWRAP
+ 
+ all: sslh $(MAN) echosrv
+ 
+@@ -46,7 +39,7 @@
+ 	$(CC) $(CFLAGS) -o echosrv echosrv.o common.o $(LIBS)
+ 
+ $(MAN): sslh.pod Makefile
+-	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod | gzip -9 - > $(MAN)
++	pod2man --section=8 --release=$(VERSION) --center=" " sslh.pod > $(MAN)
+ 
+ # generic install: install binary and man page
+ install: sslh $(MAN)
+@@ -72,4 +65,3 @@
+ 
+ test:
+ 	./t
+-
