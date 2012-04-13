@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/13 14:14:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/13 14:21:45 ajacoutot Exp $
 
 COMMENT =	ssl/ssh multiplexer
 
 VERSION =	1.10
 DISTNAME =	sslh-${VERSION}
 CATEGORIES =	security net
+REVISION =	0
 
 HOMEPAGE =	http://www.rutschle.net/tech/sslh.shtml
 

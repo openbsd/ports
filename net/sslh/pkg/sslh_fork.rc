@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: sslh_fork.rc,v 1.1.1.1 2012/04/13 14:14:21 sthen Exp $
+# $OpenBSD: sslh_fork.rc,v 1.2 2012/04/13 14:21:45 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/sslh-fork"
 daemon_flags="--listen 0.0.0.0:443 --ssh 127.0.0.1:22 --ssl 127.0.0.1:443"
@@ -11,7 +11,7 @@ pexp="${daemon}"
 rc_reload=NO
 
 rc_pre() {
-        install -d -o _sslh /var/run/sslh
+	install -d -o _sslh /var/run/sslh
 }
 
 rc_cmd $1
