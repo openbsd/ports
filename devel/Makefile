@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1031 2012/04/12 13:47:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.1032 2012/04/13 20:41:47 okan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -616,6 +616,7 @@
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
      SUBDIR += p5-File-Tempdir
+     SUBDIR += p5-File-Touch
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-FileHandle-Unget
