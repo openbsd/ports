@@ -1,13 +1,32 @@
-$OpenBSD: patch-src_openbsd_c,v 1.13 2011/09/11 18:53:28 dcoppa Exp $
+$OpenBSD: patch-src_openbsd_c,v 1.14 2012/04/13 21:21:10 pascal Exp $
 
 declarations in common.h got changed, but upstream forgot to do the
 corresponding changes into openbsd.c
 
 Adapt to new OpenBSD kinfo_proc API.
 
+Protect kvm_getprocs and global vars with mutexes.
+
 --- src/openbsd.c.orig	Tue Oct  5 23:29:36 2010
-+++ src/openbsd.c	Mon Jul 18 14:04:55 2011
-@@ -140,7 +140,7 @@ int check_mount(char *s)
++++ src/openbsd.c	Wed Apr 11 17:39:26 2012
+@@ -53,6 +53,7 @@
+ #include <ifaddrs.h>
+ #include <limits.h>
+ #include <unistd.h>
++#include <pthread.h>
+ #include <machine/apmvar.h>
+ 
+ #include <net80211/ieee80211.h>
+@@ -81,6 +82,8 @@ size_t len = 0;
+ int init_kvm = 0;
+ int init_sensors = 0;
+ 
++pthread_mutex_t kvm_mutex = PTHREAD_MUTEX_INITIALIZER;
++
+ static int kvm_init()
+ {
+ 	if (init_kvm) {
+@@ -140,7 +143,7 @@ int check_mount(char *s)
  	return 0;
  }
  
@@ -16,7 +35,7 @@ Adapt to new OpenBSD kinfo_proc API.
  {
  	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
  	struct timeval boottime;
-@@ -155,9 +155,10 @@ void update_uptime()
+@@ -155,9 +158,10 @@ void update_uptime()
  		NORM_ERR("Could not get uptime");
  		info.uptime = 0;
  	}
@@ -28,7 +47,7 @@ Adapt to new OpenBSD kinfo_proc API.
  {
  	static int mib[2] = { CTL_VM, VM_METER };
  	struct vmtotal vmtotal;
-@@ -194,9 +195,10 @@ void update_meminfo()
+@@ -194,9 +198,10 @@ void update_meminfo()
  		info.swap = 0;
  		info.swapfree = 0;
  	}
@@ -40,7 +59,7 @@ Adapt to new OpenBSD kinfo_proc API.
  {
  	struct net_stat *ns;
  	double delta;
-@@ -207,11 +209,11 @@ void update_net_stats()
+@@ -207,11 +212,11 @@ void update_net_stats()
  	/* get delta */
  	delta = current_update_time - last_update_time;
  	if (delta <= 0.0001) {
@@ -54,7 +73,7 @@ Adapt to new OpenBSD kinfo_proc API.
  	}
  
  	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
-@@ -266,28 +268,32 @@ void update_net_stats()
+@@ -266,28 +271,36 @@ void update_net_stats()
  	}
  
  	freeifaddrs(ifap);
@@ -64,13 +83,16 @@ Adapt to new OpenBSD kinfo_proc API.
 -void update_total_processes()
 +int update_total_processes()
  {
- 	int n_processes;
+-	int n_processes;
++	int n_processes = 0;
  
 +	int max_size = sizeof(struct kinfo_proc);
 +
  	kvm_init();
 -	kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
++	pthread_mutex_lock(&kvm_mutex);
 +	kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++	pthread_mutex_unlock(&kvm_mutex);
  
  	info.procs = n_processes;
 +	return 0;
@@ -80,8 +102,9 @@ Adapt to new OpenBSD kinfo_proc API.
 +int update_running_processes()
  {
 -	struct kinfo_proc2 *p;
+-	int n_processes;
 +	struct kinfo_proc *p;
- 	int n_processes;
++	int n_processes = 0;
  	int i, cnt = 0;
  
  	kvm_init();
@@ -89,36 +112,133 @@ Adapt to new OpenBSD kinfo_proc API.
 +	int max_size = sizeof(struct kinfo_proc);
  
 -	p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++	pthread_mutex_lock(&kvm_mutex);
 +	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++	pthread_mutex_unlock(&kvm_mutex);
  	for (i = 0; i < n_processes; i++) {
  		if (p[i].p_stat == SRUN) {
  			cnt++;
-@@ -295,10 +301,11 @@ void update_running_processes()
+@@ -295,96 +308,64 @@ void update_running_processes()
  	}
  
  	info.run_procs = cnt;
 +	return 0;
  }
  
- /* new SMP code can be enabled by commenting the following line */
+-/* new SMP code can be enabled by commenting the following line */
 -#define OLDCPU
-+/* #define OLDCPU */
+-
+-#ifdef OLDCPU
+-struct cpu_load_struct {
+-	unsigned long load[5];
+-};
+-
+-struct cpu_load_struct fresh = { {0, 0, 0, 0, 0} };
+-long cpu_used, oldtotal, oldused;
+-#else
+ #include <assert.h>
+ int64_t *fresh = NULL;
  
- #ifdef OLDCPU
- struct cpu_load_struct {
-@@ -343,7 +350,7 @@ void get_cpu_count()
- #endif
+ /* XXX is 8 enough? - What's the constant for MAXCPU? */
+ /* allocate this with malloc would be better */
+ int64_t oldtotal[8], oldused[8];
+-#endif
+ 
+ void get_cpu_count()
+ {
+ 	int cpu_count = 1;	/* default to 1 cpu */
+-#ifndef OLDCPU
++	static pthread_mutex_t count_mutex = PTHREAD_MUTEX_INITIALIZER;
++
+ 	int mib[2] = { CTL_HW, HW_NCPU };
+ 	size_t len = sizeof(cpu_count);
+ 
+ 	if (sysctl(mib, 2, &cpu_count, &len, NULL, 0) != 0) {
+ 		NORM_ERR("error getting cpu count, defaulting to 1");
+ 	}
+-#endif
++
++	pthread_mutex_lock(&count_mutex);
++
++	if (info.cpu_count == cpu_count) {
++		pthread_mutex_unlock(&count_mutex);
++		return;
++	}
++
+ 	info.cpu_count = cpu_count;
+ 
++	free(info.cpu_usage);
++
+ 	info.cpu_usage = malloc(info.cpu_count * sizeof(float));
+ 	if (info.cpu_usage == NULL) {
+ 		CRIT_ERR(NULL, NULL, "malloc");
+ 	}
+ 
+-#ifndef OLDCPU
+-	assert(fresh == NULL);	/* XXX Is this leaking memory? */
++	free(fresh);
+ 	/* XXX Where shall I free this? */
+ 	if (NULL == (fresh = calloc(cpu_count, sizeof(int64_t) * CPUSTATES))) {
+ 		CRIT_ERR(NULL, NULL, "calloc");
+ 	}
+-#endif
++
++	pthread_mutex_unlock(&count_mutex);
  }
  
 -void update_cpu_usage()
 +int update_cpu_usage()
  {
- #ifdef OLDCPU
- 	int mib[2] = { CTL_KERN, KERN_CPTIME };
-@@ -427,9 +434,10 @@ void update_cpu_usage()
+-#ifdef OLDCPU
+-	int mib[2] = { CTL_KERN, KERN_CPTIME };
+-	long used, total;
+-	long cp_time[CPUSTATES];
+-	size_t len = sizeof(cp_time);
+-#else
+ 	size_t size;
+ 	unsigned int i;
+-#endif
+ 
+ 	/* add check for !info.cpu_usage since that mem is freed on a SIGUSR1 */
+ 	if ((cpu_setup == 0) || (!info.cpu_usage)) {
+ 		get_cpu_count();
+ 		cpu_setup = 1;
+ 	}
+-
+-#ifdef OLDCPU
+-	if (sysctl(mib, 2, &cp_time, &len, NULL, 0) < 0) {
+-		NORM_ERR("Cannot get kern.cp_time");
+-	}
+-
+-	fresh.load[0] = cp_time[CP_USER];
+-	fresh.load[1] = cp_time[CP_NICE];
+-	fresh.load[2] = cp_time[CP_SYS];
+-	fresh.load[3] = cp_time[CP_IDLE];
+-	fresh.load[4] = cp_time[CP_IDLE];
+-
+-	used = fresh.load[0] + fresh.load[1] + fresh.load[2];
+-	total = fresh.load[0] + fresh.load[1] + fresh.load[2] + fresh.load[3];
+-
+-	if ((total - oldtotal) != 0) {
+-		info.cpu_usage[0] = ((double) (used - oldused)) /
+-			(double) (total - oldtotal);
+-	} else {
+-		info.cpu_usage[0] = 0;
+-	}
+-
+-	oldused = used;
+-	oldtotal = total;
+-#else
++	
+ 	if (info.cpu_count > 1) {
+ 		size = CPUSTATES * sizeof(int64_t);
+ 		for (i = 0; i < info.cpu_count; i++) {
+@@ -426,10 +407,11 @@ void update_cpu_usage()
+ 		oldused[i] = used;
  		oldtotal[i] = total;
  	}
- #endif
+-#endif
++
 +	return 0;
  }
  
@@ -127,7 +247,7 @@ Adapt to new OpenBSD kinfo_proc API.
  {
  	double v[3];
  
-@@ -438,6 +446,7 @@ void update_load_average()
+@@ -438,6 +420,7 @@ void update_load_average()
  	info.loadavg[0] = (float) v[0];
  	info.loadavg[1] = (float) v[1];
  	info.loadavg[2] = (float) v[2];
@@ -135,7 +255,7 @@ Adapt to new OpenBSD kinfo_proc API.
  }
  
  #define OBSD_MAX_SENSORS 256
-@@ -606,10 +615,11 @@ char get_freq(char *p_client_buffer, size_t client_buf
+@@ -606,10 +589,11 @@ char get_freq(char *p_client_buffer, size_t client_buf
  	return 1;
  }
  
@@ -148,7 +268,7 @@ Adapt to new OpenBSD kinfo_proc API.
  }
  
  #if 0
-@@ -665,19 +675,11 @@ cleanup:
+@@ -665,19 +649,11 @@ cleanup:
  }
  #endif
  
@@ -170,16 +290,18 @@ Adapt to new OpenBSD kinfo_proc API.
  /* While topless is obviously better, top is also not bad. */
  
  int comparecpu(const void *a, const void *b)
-@@ -708,7 +710,7 @@ int comparemem(const void *a, const void *b)
+@@ -708,8 +684,8 @@ int comparemem(const void *a, const void *b)
  
  inline void proc_find_top(struct process **cpu, struct process **mem)
  {
 -	struct kinfo_proc2 *p;
+-	int n_processes;
 +	struct kinfo_proc *p;
- 	int n_processes;
++	int n_processes = 0;
  	int i, j = 0;
  	struct process *processes;
-@@ -730,9 +732,9 @@ inline void proc_find_top(struct process **cpu, struct
+ 	int mib[2];
+@@ -730,9 +706,11 @@ inline void proc_find_top(struct process **cpu, struct
  	/* translate bytes into page count */
  	total_pages = usermem / pagesize;
  
@@ -187,11 +309,13 @@ Adapt to new OpenBSD kinfo_proc API.
 +	int max_size = sizeof(struct kinfo_proc);
  
 -	p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++
++	pthread_mutex_lock(&kvm_mutex);
 +	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
  	processes = malloc(n_processes * sizeof(struct process));
  
  	for (i = 0; i < n_processes; i++) {
-@@ -740,6 +742,8 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -740,9 +718,12 @@ inline void proc_find_top(struct process **cpu, struct
  			processes[j].pid = p[i].p_pid;
  			processes[j].name = strndup(p[i].p_comm, text_buffer_size);
  			processes[j].amount = 100.0 * p[i].p_pctcpu / FSCALE;
@@ -200,7 +324,11 @@ Adapt to new OpenBSD kinfo_proc API.
  			j++;
  		}
  	}
-@@ -752,6 +756,8 @@ inline void proc_find_top(struct process **cpu, struct
++	pthread_mutex_unlock(&kvm_mutex);
+ 
+ 	qsort(processes, j - 1, sizeof(struct process), comparemem);
+ 	for (i = 0; i < 10; i++) {
+@@ -752,6 +733,8 @@ inline void proc_find_top(struct process **cpu, struct
  		tmp->pid = processes[i].pid;
  		tmp->amount = processes[i].amount;
  		tmp->name = strndup(processes[i].name, text_buffer_size);
@@ -209,7 +337,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  		ttmp = mem[i];
  		mem[i] = tmp;
-@@ -769,6 +775,8 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -769,6 +752,8 @@ inline void proc_find_top(struct process **cpu, struct
  		tmp->pid = processes[i].pid;
  		tmp->amount = processes[i].amount;
  		tmp->name = strndup(processes[i].name, text_buffer_size);
@@ -218,7 +346,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  		ttmp = cpu[i];
  		cpu[i] = tmp;
-@@ -784,7 +792,6 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -784,7 +769,6 @@ inline void proc_find_top(struct process **cpu, struct
  	free(processes);
  }
  
@@ -226,7 +354,7 @@ Adapt to new OpenBSD kinfo_proc API.
  #define	APMDEV		"/dev/apm"
  #define	APM_UNKNOWN	255
  
-@@ -908,7 +915,6 @@ char *get_apm_battery_time()
+@@ -908,7 +892,6 @@ char *get_apm_battery_time()
  	return out;
  }
  
@@ -234,7 +362,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  /* empty stubs so conky links */
  void prepare_update()
-@@ -923,8 +929,4 @@ int get_entropy_avail(unsigned int *val)
+@@ -923,8 +906,4 @@ int get_entropy_avail(unsigned int *val)
  int get_entropy_poolsize(unsigned int *val)
  {
  	return 1;
