@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/26 14:13:26 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/13 20:53:19 sthen Exp $
 %%SHARED%%
 include/freeipmi/
 include/freeipmi/fiid.h
@@ -163,18 +163,17 @@ share/doc/freeipmi/freeipmi-coding.txt
 share/doc/freeipmi/freeipmi-hostrange.txt
 share/doc/freeipmi/freeipmi-libraries.txt
 share/examples/freeipmi/
+@sample /var/db/freeipmi/
+share/examples/freeipmi/bmc-config-template
+@sample /var/db/freeipmi/bmc-config-template
+share/examples/freeipmi/ipckey
+@sample /var/db/freeipmi/ipckey
 share/examples/freeipmi/ipmi_monitoring_sensors.conf
 @sample ${SYSCONFDIR}/ipmi_monitoring_sensors.conf
 share/examples/freeipmi/sysconfig/
 @sample ${SYSCONFDIR}/sysconfig/
 share/examples/freeipmi/sysconfig/freeipmi-bmc-watchdog
 @sample ${SYSCONFDIR}/sysconfig/freeipmi-bmc-watchdog
-@comment var/
-var/cache/
-var/cache/ipmimonitoringsdrcache/
-var/lib/
-var/lib/freeipmi/
-var/lib/freeipmi/bmc-config-template
-var/lib/freeipmi/ipckey
-@comment var/log/
-var/log/freeipmi/
+@sample /var/cache/ipmimonitoringsdrcache/
+@sample /var/log/freeipmi/
+@sample /var/log/ipmiconsole/
