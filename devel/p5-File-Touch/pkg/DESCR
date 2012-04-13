@@ -1,0 +1,2 @@
+This module updates access and modification timestamps, creating
+nonexistent files where necessary.  In a fashion similar to touch(1).
