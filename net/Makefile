@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.740 2012/04/09 17:17:10 stsp Exp $
+# $OpenBSD: Makefile,v 1.741 2012/04/13 14:14:54 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -528,6 +528,7 @@
      SUBDIR += spectrum
      SUBDIR += spectrum-tools
      SUBDIR += ssldump
+     SUBDIR += sslh
      SUBDIR += sslsniffer
      SUBDIR += ssvnc
      SUBDIR += supybot
