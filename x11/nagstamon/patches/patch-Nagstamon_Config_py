@@ -1,15 +1,23 @@
---- Nagstamon/Config.py.orig	Thu May 26 11:42:37 2011
-+++ Nagstamon/Config.py	Wed Oct  5 20:59:12 2011
-@@ -95,9 +95,9 @@ class Config(object):
-             self.app_vnc_options = ""
+--- Nagstamon/Config.py.orig	Mon Feb 20 08:57:28 2012
++++ Nagstamon/Config.py	Fri Apr 13 17:30:52 2012
+@@ -584,15 +584,15 @@ class Config(object):
          else:
              # the Linux settings
--            self.app_ssh_bin = "/usr/bin/gnome-terminal -x ssh"
--            self.app_rdp_bin = "/usr/bin/rdesktop"
--            self.app_vnc_bin = "/usr/bin/vncviewer"
-+            self.app_ssh_bin = "${X11BASE}/bin/xterm -e ssh"
-+            self.app_rdp_bin = "${LOCALBASE}/bin/rdesktop"
-+            self.app_vnc_bin = "${LOCALBASE}/bin/vncviewer"
-             self.app_ssh_options = "-l root"
-             self.app_rdp_options = "-g 1024x768"
-             self.app_vnc_options = ""
+             defaultactions = { "RDP": Action(name="RDP", description="Connect via RDP.",\
+-                                    type="command", string="/usr/bin/rdesktop -g 1024x768 $ADDRESS$"),\
++                                    type="command", string="${LOCALBASE}/bin/rdesktop -g 1024x768 $ADDRESS$"),\
+                                "VNC": Action(name="VNC", description="Connect via VNC.",\
+-                                    type="command", string="/usr/bin/vncviewer $ADDRESS$"),\
++                                    type="command", string="${LOCALBASE}/bin/vncviewer $ADDRESS$"),\
+                                "SSH": Action(name="SSH", description="Connect via SSH.",\
+-                                    type="command", string="/usr/bin/gnome-terminal -x ssh root@$ADDRESS$"),\
++                                    type="command", string="${X11BASE}/bin/xterm -e ssh root@$ADDRESS$"),\
+                                "Telnet": Action(name="Telnet", description="Connect via Telnet.",\
+-                                    type="command", string="/usr/bin/gnome-terminal -x telnet root@$ADDRESS$"),\
++                                    type="command", string="${X11BASE}/bin/xterm -e telnet root@$ADDRESS$"),\
+                                "Update-Linux": Action(name="Update-Linux", description="Run remote update script.",\
+-                                    type="command", string="/usr/bin/terminator -x ssh root@$HOST$ update.sh",\
++                                    type="command", string="${LOCALBASE}/bin/terminator -x ssh root@$HOST$ update.sh",\
+                                     enabled=False)\
+                                }
+         # OS agnostic actions as examples
