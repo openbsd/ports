@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2012/03/20 16:36:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.149 2012/04/13 13:20:13 espie Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -83,9 +83,7 @@
      SUBDIR += rocrail
      SUBDIR += rpm
      SUBDIR += ruby-spreadsheet
-     SUBDIR += screen
      SUBDIR += screen,shm
-     SUBDIR += screen,static
      SUBDIR += shared-desktop-ontologies
      SUBDIR += shared-mime-info
      SUBDIR += spdrs60
