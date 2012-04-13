@@ -1,20 +1,30 @@
 Deal with _POSIX_SAVED_IDS when relinquishing privileges
 use MAXHOSTNAMELEN
 
-$OpenBSD: patch-unix_init_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
---- unix/init.c.orig	2003-05-29 08:08:49.000000000 +0200
-+++ unix/init.c	2003-11-11 21:28:58.000000000 +0100
-@@ -209,7 +209,8 @@ usysdep_initialize (puuconf,iflags)
+$OpenBSD: patch-unix_init_c,v 1.3 2012/04/13 14:12:52 naddy Exp $
+--- unix/init.c.orig	Thu May 29 08:08:49 2003
++++ unix/init.c	Fri Apr 13 15:54:54 2012
+@@ -49,6 +49,10 @@
+ #if ! HAVE_GETHOSTNAME && HAVE_UNAME
+ #include <sys/utsname.h>
+ #endif
++#if HAVE_GETHOSTNAME
++/* Get a value for MAXHOSTNAMELEN. */
++#include <sys/param.h>
++#endif
+ 
+ /* Use getcwd in preference to getwd; if we have neither, we will be
+    using a getcwd replacement.  */
+@@ -209,7 +213,7 @@ usysdep_initialize (puuconf,iflags)
    if (iuuconf == UUCONF_NOT_FOUND)
      {
  #if HAVE_GETHOSTNAME
 -      char ab[256];
-+#include <sys/param.h>
 +      char ab[MAXHOSTNAMELEN];
  
        if (gethostname (ab, sizeof ab - 1) < 0)
  	ulog (LOG_FATAL, "gethostname: %s", strerror (errno));
-@@ -271,8 +272,10 @@ usysdep_initialize (puuconf,iflags)
+@@ -271,8 +275,10 @@ usysdep_initialize (puuconf,iflags)
        && geteuid () == 0)
      {
        q = getpwnam (OWNER);
@@ -26,7 +36,7 @@ $OpenBSD: patch-unix_init_c,v 1.2 2003/12/14 01:39:18 naddy Exp $
      }
  
    if ((iflags & INIT_GETCWD) != 0)
-@@ -370,8 +373,10 @@ usysdep_exit (fsuccess)
+@@ -370,8 +376,10 @@ usysdep_exit (fsuccess)
  boolean fsysdep_other_config (z)
       const char *z ATTRIBUTE_UNUSED;
  {
