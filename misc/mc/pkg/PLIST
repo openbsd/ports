@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/22 06:45:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/13 13:42:21 robert Exp $
 @bin bin/mc
 bin/mcdiff
 bin/mcedit
@@ -11,15 +11,18 @@ libexec/mc/extfs.d/a+
 libexec/mc/extfs.d/apt+
 libexec/mc/extfs.d/audio
 libexec/mc/extfs.d/bpp
+libexec/mc/extfs.d/changesetfs
 libexec/mc/extfs.d/deb
 libexec/mc/extfs.d/deba
 libexec/mc/extfs.d/debd
 libexec/mc/extfs.d/dpkg+
+libexec/mc/extfs.d/gitfs+
 libexec/mc/extfs.d/hp48+
 libexec/mc/extfs.d/iso9660
 libexec/mc/extfs.d/lslR
 libexec/mc/extfs.d/mailfs
 libexec/mc/extfs.d/patchfs
+libexec/mc/extfs.d/patchsetfs
 libexec/mc/extfs.d/rpm
 libexec/mc/extfs.d/rpms+
 libexec/mc/extfs.d/s3+
@@ -81,8 +84,6 @@ man/sr/man1/
 @man man/sr/man1/mc.1
 share/examples/mc/
 @sample ${SYSCONFDIR}/mc/
-share/examples/mc/cedit.menu
-@sample ${SYSCONFDIR}/mc/cedit.menu
 share/examples/mc/edit.indent.rc
 @sample ${SYSCONFDIR}/mc/edit.indent.rc
 share/examples/mc/edit.spell.rc
@@ -102,6 +103,8 @@ share/examples/mc/mc.menu
 @sample ${SYSCONFDIR}/mc/mc.menu
 share/examples/mc/mc.menu.sr
 @sample ${SYSCONFDIR}/mc/mc.menu.sr
+share/examples/mc/mcedit.menu
+@sample ${SYSCONFDIR}/mc/mcedit.menu
 share/examples/mc/sfs.ini
 @sample ${SYSCONFDIR}/mc/sfs.ini
 share/locale/az/
@@ -113,9 +116,6 @@ share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
-share/locale/de_CH/
-share/locale/de_CH/LC_MESSAGES/
-share/locale/de_CH/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
 share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
@@ -173,6 +173,15 @@ share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN/LC_MESSAGES/mc.mo
 share/locale/zh_TW/LC_MESSAGES/mc.mo
 share/mc/
+share/mc/examples/
+share/mc/examples/macros.d/
+share/mc/examples/macros.d/macro.0.sh
+share/mc/examples/macros.d/macro.1.sh
+share/mc/examples/macros.d/macro.3.sh
+share/mc/examples/macros.d/macro.4.sh
+share/mc/examples/macros.d/macro.5.sh
+share/mc/examples/macros.d/macro.6.sh
+share/mc/examples/macros.d/macro.7.sh
 share/mc/help/
 share/mc/help/mc.hlp
 share/mc/help/mc.hlp.es
@@ -204,10 +213,13 @@ share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
 share/mc/skins/mc46.ini
 share/mc/skins/nicedark.ini
+share/mc/skins/sand256.ini
+share/mc/skins/xoria256.ini
 share/mc/syntax/
 share/mc/syntax/PKGBUILD.syntax
 share/mc/syntax/Syntax
 share/mc/syntax/ada95.syntax
+share/mc/syntax/as.syntax
 share/mc/syntax/aspx.syntax
 share/mc/syntax/assembler.syntax
 share/mc/syntax/awk.syntax
