@@ -1,12 +1,12 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.3 2011/11/03 09:55:12 ajacoutot Exp $
---- mono/profiler/Makefile.in.orig	Tue Aug 23 02:11:01 2011
-+++ mono/profiler/Makefile.in	Thu Nov  3 08:54:56 2011
-@@ -346,7 +346,7 @@ libmono_profiler_aot_la_LIBADD = $(top_builddir)/mono/
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.4 2012/04/13 11:51:49 robert Exp $
+--- mono/profiler/Makefile.in.orig	Wed Apr 11 13:12:23 2012
++++ mono/profiler/Makefile.in	Wed Apr 11 13:12:39 2012
+@@ -344,7 +344,7 @@ libmono_profiler_aot_la_LIBADD = $(LIBMONO)
  #libmono_profiler_logging_la_SOURCES = mono-profiler-logging.c
- #libmono_profiler_logging_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la $(GLIB_LIBS)
+ #libmono_profiler_logging_la_LIBADD = $(LIBMONO) $(GLIB_LIBS)
  libmono_profiler_iomap_la_SOURCES = mono-profiler-iomap.c
--libmono_profiler_iomap_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la $(GLIB_LIBS)
-+libmono_profiler_iomap_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la
+-libmono_profiler_iomap_la_LIBADD = $(LIBMONO) $(GLIB_LIBS)
++libmono_profiler_iomap_la_LIBADD = $(LIBMONO)
  libmono_profiler_log_la_SOURCES = proflog.c
- libmono_profiler_log_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la $(Z_LIBS)
+ libmono_profiler_log_la_LIBADD = $(LIBMONO) $(Z_LIBS)
  mprof_report_SOURCES = decode.c

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.11 2012/01/08 20:05:45 robert Exp $
---- mono/utils/mono-proclib.c.orig	Fri Aug 26 03:06:57 2011
-+++ mono/utils/mono-proclib.c	Sun Jan  8 20:01:05 2012
-@@ -24,17 +24,17 @@
+$OpenBSD: patch-mono_utils_mono-proclib_c,v 1.12 2012/04/13 11:51:49 robert Exp $
+--- mono/utils/mono-proclib.c.orig	Mon Dec 19 22:10:27 2011
++++ mono/utils/mono-proclib.c	Tue Mar 20 22:40:12 2012
+@@ -25,17 +25,17 @@
  #ifdef HAVE_SYS_USER_H
  #include <sys/user.h>
  #endif
@@ -25,7 +25,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.11 2012/01/08 20:05:45 robert Exp 
  #endif
  #define USE_SYSCTL 1
  #endif
-@@ -51,15 +51,13 @@ mono_process_list (int *size)
+@@ -52,15 +52,13 @@ mono_process_list (int *size)
  {
  #if USE_SYSCTL
  	int res, i;
@@ -43,7 +43,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.11 2012/01/08 20:05:45 robert Exp 
  	void **buf = NULL;
  
  	if (size)
-@@ -67,33 +65,22 @@ mono_process_list (int *size)
+@@ -68,33 +66,22 @@ mono_process_list (int *size)
  	if (!processes)
  		return NULL;
  
@@ -82,7 +82,7 @@ $OpenBSD: patch-mono_utils_mono-proclib_c,v 1.11 2012/01/08 20:05:45 robert Exp 
  	buf = g_realloc (buf, res * sizeof (void*));
  	for (i = 0; i < res; ++i)
  		buf [i] = GINT_TO_POINTER (processes [i].kinfo_pid_member);
-@@ -187,42 +174,30 @@ mono_process_get_name (gpointer pid, char *buf, int le
+@@ -188,42 +175,30 @@ mono_process_get_name (gpointer pid, char *buf, int le
  {
  #if USE_SYSCTL
  	int res;

@@ -1,0 +1,15 @@
+$OpenBSD: patch-mono_metadata_threadpool_c,v 1.1 2012/04/13 11:51:49 robert Exp $
+--- mono/metadata/threadpool.c.orig	Thu Apr 12 17:40:21 2012
++++ mono/metadata/threadpool.c	Thu Apr 12 17:40:34 2012
+@@ -1479,11 +1479,7 @@ async_invoke_thread (gpointer data)
+ 			gboolean res;
+ 
+ 			InterlockedIncrement (&tp->waiting);
+-#if defined(__OpenBSD__)
+-			while (mono_cq_count (tp->queue) == 0 && (res = mono_sem_wait (&tp->new_job, TRUE)) == -1) {// && errno == EINTR) {
+-#else
+ 			while (mono_cq_count (tp->queue) == 0 && (res = mono_sem_timedwait (&tp->new_job, 2000, TRUE)) == -1) {// && errno == EINTR) {
+-#endif
+ 				if (mono_runtime_is_shutting_down ())
+ 					break;
+ 				if (THREAD_WANTS_A_BREAK (thread))

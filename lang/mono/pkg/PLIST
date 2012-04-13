@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/27 08:50:16 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/04/13 11:51:49 robert Exp $
 %%SHARED%%
 bin/al
 bin/al2
@@ -315,6 +315,7 @@ lib/mono/4.0/Microsoft.Build.Engine.dll
 lib/mono/4.0/Microsoft.Build.Framework.dll
 lib/mono/4.0/Microsoft.Build.Tasks.v4.0.dll
 lib/mono/4.0/Microsoft.Build.Utilities.v4.0.dll
+lib/mono/4.0/Microsoft.Build.dll
 lib/mono/4.0/Microsoft.Build.xsd
 lib/mono/4.0/Microsoft.CSharp.dll
 lib/mono/4.0/Microsoft.CSharp.targets
@@ -597,6 +598,7 @@ lib/mono/gac/ICSharpCode.SharpZipLib/2.84.0.0__1b03e6acf1164f73/ICSharpCode.Shar
 lib/mono/gac/ICSharpCode.SharpZipLib/4.84.0.0__1b03e6acf1164f73/
 lib/mono/gac/ICSharpCode.SharpZipLib/4.84.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll
 lib/mono/gac/ICSharpCode.SharpZipLib/4.84.0.0__1b03e6acf1164f73/ICSharpCode.SharpZipLib.dll.mdb
+lib/mono/gac/Microsoft.Build/
 lib/mono/gac/Microsoft.Build.Engine/
 lib/mono/gac/Microsoft.Build.Engine/2.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/Microsoft.Build.Engine/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Engine.dll
@@ -641,6 +643,9 @@ lib/mono/gac/Microsoft.Build.Utilities.v4.0/4.0.0.0__b03f5f7f11d50a3a/Microsoft.
 lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll
 lib/mono/gac/Microsoft.Build.Utilities/2.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.dll.mdb
+lib/mono/gac/Microsoft.Build/4.0.0.0__b03f5f7f11d50a3a/
+lib/mono/gac/Microsoft.Build/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.dll
+lib/mono/gac/Microsoft.Build/4.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.dll.mdb
 lib/mono/gac/Microsoft.CSharp/
 lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/
 lib/mono/gac/Microsoft.CSharp/4.0.0.0__b03f5f7f11d50a3a/Microsoft.CSharp.dll
@@ -883,9 +888,9 @@ lib/mono/gac/System.Data.OracleClient/4.0.0.0__b77a5c561934e089/System.Data.Orac
 lib/mono/gac/System.Data.OracleClient/4.0.0.0__b77a5c561934e089/System.Data.OracleClient.dll.mdb
 lib/mono/gac/System.Data.Services/
 lib/mono/gac/System.Data.Services.Client/
-lib/mono/gac/System.Data.Services.Client/3.5.0.0__b03f5f7f11d50a3a/
-lib/mono/gac/System.Data.Services.Client/3.5.0.0__b03f5f7f11d50a3a/System.Data.Services.Client.dll
-lib/mono/gac/System.Data.Services.Client/3.5.0.0__b03f5f7f11d50a3a/System.Data.Services.Client.dll.mdb
+lib/mono/gac/System.Data.Services.Client/3.5.0.0__b77a5c561934e089/
+lib/mono/gac/System.Data.Services.Client/3.5.0.0__b77a5c561934e089/System.Data.Services.Client.dll
+lib/mono/gac/System.Data.Services.Client/3.5.0.0__b77a5c561934e089/System.Data.Services.Client.dll.mdb
 lib/mono/gac/System.Data.Services.Client/4.0.0.0__b77a5c561934e089/
 lib/mono/gac/System.Data.Services.Client/4.0.0.0__b77a5c561934e089/System.Data.Services.Client.dll
 lib/mono/gac/System.Data.Services.Client/4.0.0.0__b77a5c561934e089/System.Data.Services.Client.dll.mdb
