@@ -1,0 +1,12 @@
+$OpenBSD: patch-tmake_lib_openbsd-g++_tmake_conf,v 1.1 2012/04/13 16:08:20 sthen Exp $
+--- tmake/lib/openbsd-g++/tmake.conf.orig	Fri Apr 13 17:02:30 2012
++++ tmake/lib/openbsd-g++/tmake.conf	Fri Apr 13 17:02:44 2012
+@@ -11,7 +11,7 @@ TMAKE_CC		= gcc
+ TMAKE_CFLAGS		=
+ TMAKE_CFLAGS_WARN_ON	= -Wall -W
+ TMAKE_CFLAGS_WARN_OFF	=
+-TMAKE_CFLAGS_RELEASE	= -O2
++TMAKE_CFLAGS_RELEASE	=
+ TMAKE_CFLAGS_DEBUG	= -g
+ TMAKE_CFLAGS_SHLIB	= -fPIC
+ TMAKE_CFLAGS_YACC	= -Wno-unused -Wno-parentheses
