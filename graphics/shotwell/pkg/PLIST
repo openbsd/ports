@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/04/05 17:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/14 20:10:43 ajacoutot Exp $
 %%SHARED%%
 @bin bin/shotwell
 @bin bin/shotwell-video-thumbnailer
@@ -33,6 +33,7 @@ share/gnome/help/shotwell/C/edit-external.page
 share/gnome/help/shotwell/C/edit-nondestructive.page
 share/gnome/help/shotwell/C/edit-redeye.page
 share/gnome/help/shotwell/C/edit-rotate.page
+share/gnome/help/shotwell/C/edit-straighten.page
 share/gnome/help/shotwell/C/edit-time-date.page
 share/gnome/help/shotwell/C/edit-undo.page
 share/gnome/help/shotwell/C/figures/
@@ -57,6 +58,8 @@ share/gnome/help/shotwell/C/organize-title.page
 share/gnome/help/shotwell/C/other-files.page
 share/gnome/help/shotwell/C/other-missing.page
 share/gnome/help/shotwell/C/other-multiple.page
+share/gnome/help/shotwell/C/other-plugins.page
+share/gnome/help/shotwell/C/raw.page
 share/gnome/help/shotwell/C/running.page
 share/gnome/help/shotwell/C/share-background.page
 share/gnome/help/shotwell/C/share-export.page
