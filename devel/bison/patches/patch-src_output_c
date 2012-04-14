@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_output_c,v 1.4 2008/07/08 00:24:17 brad Exp $
---- src/output.c.orig	Sun May 14 16:40:35 2006
-+++ src/output.c	Sun Jun 29 22:15:11 2008
+$OpenBSD: patch-src_output_c,v 1.5 2012/04/14 12:22:25 espie Exp $
+--- src/output.c.orig	Sun May 14 22:40:35 2006
++++ src/output.c	Fri Apr 13 20:38:39 2012
 @@ -501,7 +501,8 @@ output_skeleton (void)
    FILE *in;
    FILE *out;
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_output_c,v 1.4 2008/07/08 00:24:17 brad Exp $
    char const *pkgdatadir = (p = getenv ("BISON_PKGDATADIR")) ? p : PKGDATADIR;
    size_t skeleton_size = strlen (skeleton) + 1;
    size_t pkgdatadirlen = strlen (pkgdatadir);
-@@ -534,12 +535,16 @@ output_skeleton (void)
+@@ -534,12 +535,21 @@ output_skeleton (void)
      fprintf (stderr, "running: %s %s - %s\n",
  	     m4, full_m4sugar, full_skeleton);
  
@@ -32,7 +32,12 @@ $OpenBSD: patch-src_output_c,v 1.4 2008/07/08 00:24:17 brad Exp $
 -  argv[5] = NULL;
 +  i = 0;
 +  argv[i++] = m4;
-+  if (strcmp(m4, "/usr/bin/m4") == 0) {
++  p = strrchr(m4, '/');
++  if (p)
++  	p++;
++  else
++  	p = m4;
++  if (strcmp(p, "m4") == 0) {
 +       argv[i++] = "-g";
 +  }
 +  argv[i++] = full_m4sugar;
