@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/06/30 17:10:08 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/04/14 15:09:56 naddy Exp $
 @bin bin/bmp2tiff
 @bin bin/fax2ps
 @bin bin/fax2tiff
@@ -32,6 +32,8 @@ lib/libtiff.a
 lib/libtiff.la
 lib/libtiffxx.a
 lib/libtiffxx.la
+lib/pkgconfig/
+lib/pkgconfig/libtiff-4.pc
 @man man/man1/bmp2tiff.1
 @man man/man1/fax2ps.1
 @man man/man1/fax2tiff.1
@@ -97,7 +99,14 @@ lib/libtiffxx.la
 @man man/man3/TIFFtile.3
 @man man/man3/libtiff.3
 share/doc/tiff/
+share/doc/tiff/COPYRIGHT
+share/doc/tiff/ChangeLog
+share/doc/tiff/README
+share/doc/tiff/README.vms
+share/doc/tiff/RELEASE-DATE
 share/doc/tiff/TIFFTechNote2.html
+share/doc/tiff/TODO
+share/doc/tiff/VERSION
 share/doc/tiff/addingtags.html
 share/doc/tiff/bugs.html
 share/doc/tiff/build.html
@@ -228,3 +237,4 @@ share/doc/tiff/v3.8.2.html
 share/doc/tiff/v3.9.0beta.html
 share/doc/tiff/v3.9.1.html
 share/doc/tiff/v3.9.2.html
+share/doc/tiff/v4.0.0.html

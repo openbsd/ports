@@ -1,11 +1,11 @@
-$OpenBSD: patch-libtiff_tiffiop_h,v 1.3 2012/04/09 17:35:38 naddy Exp $
+$OpenBSD: patch-libtiff_tiffiop_h,v 1.4 2012/04/14 15:09:56 naddy Exp $
 
 CVE-2012-1173: integer overflow
 
---- libtiff/tiffiop.h.orig	Mon Mar 28 15:43:43 2011
-+++ libtiff/tiffiop.h	Mon Apr  9 19:26:57 2012
-@@ -246,7 +246,7 @@ struct tiff {
- #define	TIFFroundup(x, y) (TIFFhowmany(x,y)*(y))
+--- libtiff/tiffiop.h.orig	Wed Apr 11 18:56:30 2012
++++ libtiff/tiffiop.h	Wed Apr 11 18:56:58 2012
+@@ -250,7 +250,7 @@ struct tiff {
+ #define TIFFroundup_64(x, y) (TIFFhowmany_64(x,y)*(y))
  
  /* Safe multiply which returns zero if there is an integer overflow */
 -#define TIFFSafeMultiply(t,v,m) ((((t)m != (t)0) && (((t)((v*m)/m)) == (t)v)) ? (t)(v*m) : (t)0)

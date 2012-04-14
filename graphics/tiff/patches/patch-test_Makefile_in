@@ -1,10 +1,10 @@
-$OpenBSD: patch-test_Makefile_in,v 1.3 2012/04/09 17:21:05 naddy Exp $
+$OpenBSD: patch-test_Makefile_in,v 1.4 2012/04/14 15:09:56 naddy Exp $
 
 Avoid picking up an old libtiff in ${LOCALBASE}.
 
---- test/Makefile.in.orig	Sat Feb 18 23:27:08 2012
-+++ test/Makefile.in	Mon Apr  9 19:13:44 2012
-@@ -293,10 +293,10 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+--- test/Makefile.in.orig	Sat Feb 18 23:02:56 2012
++++ test/Makefile.in	Wed Apr 11 19:06:33 2012
+@@ -300,10 +300,10 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_SCRIPT = @INSTALL_SCRIPT@
  INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
  LD = @LD@

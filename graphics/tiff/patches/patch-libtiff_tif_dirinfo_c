@@ -1,9 +1,9 @@
-$OpenBSD: patch-libtiff_tif_dirinfo_c,v 1.5 2011/05/09 08:14:43 giovanni Exp $
---- libtiff/tif_dirinfo.c.orig	Thu Jul  8 18:17:59 2010
-+++ libtiff/tif_dirinfo.c	Thu Apr 21 15:35:54 2011
-@@ -869,7 +869,7 @@ _TIFFCreateAnonFieldInfo(TIFF *tif, ttag_t tag, TIFFDa
+$OpenBSD: patch-libtiff_tif_dirinfo_c,v 1.6 2012/04/14 15:09:55 naddy Exp $
+--- libtiff/tif_dirinfo.c.orig	Tue May 31 16:33:06 2011
++++ libtiff/tif_dirinfo.c	Wed Apr 11 18:25:33 2012
+@@ -661,7 +661,7 @@ _TIFFCreateAnonField(TIFF *tif, uint32 tag, TIFFDataTy
  	 * note that this name is a special sign to TIFFClose() and
- 	 * _TIFFSetupFieldInfo() to free the field
+ 	 * _TIFFSetupFields() to free the field
  	 */
 -	sprintf(fld->field_name, "Tag %d", (int) tag);
 +	snprintf(fld->field_name, 32, "Tag %d", (int) tag);

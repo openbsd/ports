@@ -1,4 +1,4 @@
-$OpenBSD: patch-libtiff_tif_getimage_c,v 1.6 2012/04/09 17:35:38 naddy Exp $
+$OpenBSD: patch-libtiff_tif_getimage_c,v 1.7 2012/04/14 15:09:55 naddy Exp $
 
 1. sprintf()
 This one is slightly problematic.  If an application allocates less
@@ -7,9 +7,9 @@ buffer will still overflow.
 
 2. CVE-2012-1173: integer overflow.
 
---- libtiff/tif_getimage.c.orig	Thu Jul  8 18:17:59 2010
-+++ libtiff/tif_getimage.c	Mon Apr  9 19:26:57 2012
-@@ -76,7 +76,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+--- libtiff/tif_getimage.c.orig	Wed Apr 11 18:42:32 2012
++++ libtiff/tif_getimage.c	Wed Apr 11 18:53:00 2012
+@@ -80,7 +80,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  	int colorchannels;
  
  	if (!tif->tif_decodestatus) {
@@ -18,7 +18,7 @@ buffer will still overflow.
  		return (0);
  	}
  	switch (td->td_bitspersample) {
-@@ -87,7 +87,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -91,7 +91,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  		case 16:
  			break;
  		default:
@@ -27,7 +27,7 @@ buffer will still overflow.
  			    td->td_bitspersample);
  			return (0);
  	}
-@@ -101,7 +101,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -105,7 +105,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  				photometric = PHOTOMETRIC_RGB;
  				break;
  			default:
@@ -36,7 +36,7 @@ buffer will still overflow.
  				return (0);
  		}
  	}
-@@ -112,7 +112,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -116,7 +116,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			if (td->td_planarconfig == PLANARCONFIG_CONTIG
  			    && td->td_samplesperpixel != 1
  			    && td->td_bitspersample < 8 ) {
@@ -45,7 +45,7 @@ buffer will still overflow.
  				    "Sorry, can not handle contiguous data with %s=%d, "
  				    "and %s=%d and Bits/Sample=%d",
  				    photoTag, photometric,
-@@ -136,7 +136,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -140,7 +140,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			break;
  		case PHOTOMETRIC_RGB:
  			if (colorchannels < 3) {
@@ -54,7 +54,7 @@ buffer will still overflow.
  				    "Color channels", colorchannels);
  				return (0);
  			}
-@@ -146,13 +146,13 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -150,13 +150,13 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  				uint16 inkset;
  				TIFFGetFieldDefaulted(tif, TIFFTAG_INKSET, &inkset);
  				if (inkset != INKSET_CMYK) {
@@ -70,7 +70,7 @@ buffer will still overflow.
  					    "Sorry, can not handle separated image with %s=%d",
  					    "Samples/pixel", td->td_samplesperpixel);
  					return 0;
-@@ -161,7 +161,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -165,7 +165,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  			}
  		case PHOTOMETRIC_LOGL:
  			if (td->td_compression != COMPRESSION_SGILOG) {
@@ -79,7 +79,7 @@ buffer will still overflow.
  				    "Compression", COMPRESSION_SGILOG);
  				return (0);
  			}
-@@ -169,12 +169,12 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -173,12 +173,12 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  		case PHOTOMETRIC_LOGLUV:
  			if (td->td_compression != COMPRESSION_SGILOG &&
  			    td->td_compression != COMPRESSION_SGILOG24) {
@@ -94,7 +94,7 @@ buffer will still overflow.
  				    "Planarconfiguration", td->td_planarconfig);
  				return (0);
  			}
-@@ -182,7 +182,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
+@@ -186,7 +186,7 @@ TIFFRGBAImageOK(TIFF* tif, char emsg[1024])
  		case PHOTOMETRIC_CIELAB:
  			break;
  		default:
@@ -103,43 +103,43 @@ buffer will still overflow.
  			    photoTag, photometric);
  			return (0);
  	}
-@@ -250,7 +250,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -260,7 +260,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case 16:
  			break;
  		default:
 -			sprintf(emsg, "Sorry, can not handle images with %d-bit samples",
 +			snprintf(emsg, 1024, "Sorry, can not handle images with %d-bit samples",
  			    img->bitspersample);
- 			return (0);
+ 			goto fail_return;
  	}
-@@ -300,7 +300,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -310,7 +310,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  				img->photometric = PHOTOMETRIC_RGB;
  				break;
  			default:
 -				sprintf(emsg, "Missing needed %s tag", photoTag);
 +				snprintf(emsg, 1024, "Missing needed %s tag", photoTag);
- 				return (0);
+                                 goto fail_return;
  		}
  	}
-@@ -308,7 +308,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -318,7 +318,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case PHOTOMETRIC_PALETTE:
  			if (!TIFFGetField(tif, TIFFTAG_COLORMAP,
  			    &red_orig, &green_orig, &blue_orig)) {
 -				sprintf(emsg, "Missing required \"Colormap\" tag");
 +				snprintf(emsg, 1024, "Missing required \"Colormap\" tag");
- 				return (0);
+                                 goto fail_return;
  			}
  
-@@ -318,7 +318,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -328,7 +328,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			img->greencmap = (uint16 *) _TIFFmalloc(sizeof(uint16)*n_color);
  			img->bluecmap = (uint16 *) _TIFFmalloc(sizeof(uint16)*n_color);
  			if( !img->redcmap || !img->greencmap || !img->bluecmap ) {
 -				sprintf(emsg, "Out of memory for colormap copy");
 +				snprintf(emsg, 1024, "Out of memory for colormap copy");
- 				return (0);
+                                 goto fail_return;
  			}
  
-@@ -332,7 +332,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -342,7 +342,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			if (planarconfig == PLANARCONFIG_CONTIG
  			    && img->samplesperpixel != 1
  			    && img->bitspersample < 8 ) {
@@ -148,47 +148,47 @@ buffer will still overflow.
  				    "Sorry, can not handle contiguous data with %s=%d, "
  				    "and %s=%d and Bits/Sample=%d",
  				    photoTag, img->photometric,
-@@ -369,7 +369,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -379,7 +379,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_RGB:
  			if (colorchannels < 3) {
 -				sprintf(emsg, "Sorry, can not handle RGB image with %s=%d",
 +				snprintf(emsg, 1024, "Sorry, can not handle RGB image with %s=%d",
  				    "Color channels", colorchannels);
- 				return (0);
+                                 goto fail_return;
  			}
-@@ -379,12 +379,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -389,12 +389,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  				uint16 inkset;
  				TIFFGetFieldDefaulted(tif, TIFFTAG_INKSET, &inkset);
  				if (inkset != INKSET_CMYK) {
 -					sprintf(emsg, "Sorry, can not handle separated image with %s=%d",
 +					snprintf(emsg, 1024, "Sorry, can not handle separated image with %s=%d",
  					    "InkSet", inkset);
- 					return (0);
+                                         goto fail_return;
  				}
  				if (img->samplesperpixel < 4) {
 -					sprintf(emsg, "Sorry, can not handle separated image with %s=%d",
 +					snprintf(emsg, 1024, "Sorry, can not handle separated image with %s=%d",
  					    "Samples/pixel", img->samplesperpixel);
- 					return (0);
+                                         goto fail_return;
  				}
-@@ -392,7 +392,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -402,7 +402,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_LOGL:
  			if (compress != COMPRESSION_SGILOG) {
 -				sprintf(emsg, "Sorry, LogL data must have %s=%d",
 +				snprintf(emsg, 1024, "Sorry, LogL data must have %s=%d",
  				    "Compression", COMPRESSION_SGILOG);
- 				return (0);
+                                 goto fail_return;
  			}
-@@ -402,12 +402,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -412,12 +412,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  			break;
  		case PHOTOMETRIC_LOGLUV:
  			if (compress != COMPRESSION_SGILOG && compress != COMPRESSION_SGILOG24) {
 -				sprintf(emsg, "Sorry, LogLuv data must have %s=%d or %d",
 +				snprintf(emsg, 1024, "Sorry, LogLuv data must have %s=%d or %d",
  				    "Compression", COMPRESSION_SGILOG, COMPRESSION_SGILOG24);
- 				return (0);
+                                 goto fail_return;
  			}
  			if (planarconfig != PLANARCONFIG_CONTIG) {
 -				sprintf(emsg, "Sorry, can not handle LogLuv images with %s=%d",
@@ -196,50 +196,52 @@ buffer will still overflow.
  				    "Planarconfiguration", planarconfig);
  				return (0);
  			}
-@@ -418,7 +418,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+@@ -428,7 +428,7 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
  		case PHOTOMETRIC_CIELAB:
  			break;
  		default:
 -			sprintf(emsg, "Sorry, can not handle image with %s=%d",
 +			snprintf(emsg, 1024, "Sorry, can not handle image with %s=%d",
  			    photoTag, img->photometric);
- 			return (0);
+                         goto fail_return;
  	}
-@@ -434,12 +434,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
- 	    !(planarconfig == PLANARCONFIG_SEPARATE && colorchannels > 1);
+@@ -446,12 +446,12 @@ TIFFRGBAImageBegin(TIFFRGBAImage* img, TIFF* tif, int 
+ 	    !(planarconfig == PLANARCONFIG_SEPARATE && img->samplesperpixel > 1);
  	if (img->isContig) {
  		if (!PickContigCase(img)) {
 -			sprintf(emsg, "Sorry, can not handle image");
 +			snprintf(emsg, 1024, "Sorry, can not handle image");
- 			return 0;
+ 			goto fail_return;
  		}
  	} else {
  		if (!PickSeparateCase(img)) {
 -			sprintf(emsg, "Sorry, can not handle image");
 +			snprintf(emsg, 1024, "Sorry, can not handle image");
- 			return 0;
+ 			goto fail_return;
  		}
  	}
-@@ -673,18 +673,24 @@ gtTileSeparate(TIFFRGBAImage* img, uint32* raster, uin
+@@ -692,6 +692,7 @@ gtTileSeparate(TIFFRGBAImage* img, uint32* raster, uin
  	unsigned char* p2;
  	unsigned char* pa;
- 	tsize_t tilesize;
-+	tsize_t bufsize;
+ 	tmsize_t tilesize;
++	tmsize_t bufsize;
  	int32 fromskew, toskew;
  	int alpha = img->alpha;
  	uint32 nrow;
- 	int ret = 1, flip;
+@@ -699,12 +700,18 @@ gtTileSeparate(TIFFRGBAImage* img, uint32* raster, uin
+         int colorchannels;
  
- 	tilesize = TIFFTileSize(tif);
+ 	tilesize = TIFFTileSize(tif);  
 -	buf = (unsigned char*) _TIFFmalloc((alpha?4:3)*tilesize);
-+	bufsize = TIFFSafeMultiply(tsize_t,alpha?4:3,tilesize);
++	
++	bufsize = TIFFSafeMultiply(tmsize_t,alpha?4:3,tilesize);
 +	if (bufsize == 0) {
 +		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "Integer overflow in %s", "gtTileSeparate");
 +		return (0);
 +	}
 +	buf = (unsigned char*) _TIFFmalloc(bufsize);
  	if (buf == 0) {
- 		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "No space for tile buffer");
+ 		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "%s", "No space for tile buffer");
  		return (0);
  	}
 -	_TIFFmemset(buf, 0, (alpha?4:3)*tilesize);
@@ -247,18 +249,18 @@ buffer will still overflow.
  	p0 = buf;
  	p1 = p0 + tilesize;
  	p2 = p1 + tilesize;
-@@ -880,17 +886,23 @@ gtStripSeparate(TIFFRGBAImage* img, uint32* raster, ui
+@@ -917,17 +924,23 @@ gtStripSeparate(TIFFRGBAImage* img, uint32* raster, ui
  	uint32 rowsperstrip, offset_row;
  	uint32 imagewidth = img->width;
- 	tsize_t stripsize;
-+	tsize_t bufsize;
+ 	tmsize_t stripsize;
++	tmsize_t bufsize;
  	int32 fromskew, toskew;
  	int alpha = img->alpha;
- 	int ret = 1, flip;
+ 	int ret = 1, flip, colorchannels;
  
- 	stripsize = TIFFStripSize(tif);
+ 	stripsize = TIFFStripSize(tif);  
 -	p0 = buf = (unsigned char *)_TIFFmalloc((alpha?4:3)*stripsize);
-+	bufsize = TIFFSafeMultiply(tsize_t,alpha?4:3,stripsize);
++	bufsize = TIFFSafeMultiply(tmsize_t,alpha?4:3,stripsize);
 +	if (bufsize == 0) {
 +		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "Integer overflow in %s", "gtStripSeparate");
 +		return (0);

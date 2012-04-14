@@ -1,18 +1,21 @@
-$OpenBSD: patch-libtiff_tif_open_c,v 1.1 2010/06/30 17:10:08 naddy Exp $
---- libtiff/tif_open.c.orig	Sun Jun 27 01:10:42 2010
-+++ libtiff/tif_open.c	Sun Jun 27 01:11:52 2010
-@@ -154,18 +154,20 @@ TIFFClientOpen(
+$OpenBSD: patch-libtiff_tif_open_c,v 1.2 2012/04/14 15:09:55 naddy Exp $
+--- libtiff/tif_open.c.orig	Wed Apr 11 18:54:12 2012
++++ libtiff/tif_open.c	Wed Apr 11 18:55:56 2012
+@@ -86,6 +86,7 @@ TIFFClientOpen(
  	TIFF *tif;
  	int m;
  	const char* cp;
 +	size_t namelen;
  
+ 	/* The following are configuration checks. They should be redundant, but should not
+ 	 * compile to any actual code in an optimised release build anyway. If any of them
+@@ -116,14 +117,15 @@ TIFFClientOpen(
  	m = _TIFFgetMode(mode, module);
  	if (m == -1)
  		goto bad2;
--	tif = (TIFF *)_TIFFmalloc(sizeof (TIFF) + strlen(name) + 1);
+-	tif = (TIFF *)_TIFFmalloc((tmsize_t)(sizeof (TIFF) + strlen(name) + 1));
 +	namelen = strlen(name);
-+	tif = (TIFF *)_TIFFmalloc(sizeof (TIFF) + namelen + 1);
++	tif = (TIFF *)_TIFFmalloc((tmsize_t)(sizeof (TIFF) + namelen + 1));
  	if (tif == NULL) {
  		TIFFErrorExt(clientdata, module, "%s: Out of memory (TIFF structure)", name);
  		goto bad2;
@@ -22,5 +25,5 @@ $OpenBSD: patch-libtiff_tif_open_c,v 1.1 2010/06/30 17:10:08 naddy Exp $
 -	strcpy(tif->tif_name, name);
 +	strlcpy(tif->tif_name, name, namelen+1);
  	tif->tif_mode = m &~ (O_CREAT|O_TRUNC);
- 	tif->tif_curdir = (tdir_t) -1;		/* non-existent directory */
+ 	tif->tif_curdir = (uint16) -1;		/* non-existent directory */
  	tif->tif_curoff = 0;
