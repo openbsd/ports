@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_tiffread_c,v 1.1 2012/04/14 15:13:30 naddy Exp $
+--- src/tiffread.c.orig	Sat Apr 14 16:50:59 2012
++++ src/tiffread.c	Sat Apr 14 16:51:49 2012
+@@ -26,8 +26,13 @@
+ #define uint16 uint16tiff
+ #define int32 int32tiff
+ #define uint32 uint32tiff
++#define int64 int64tiff
++#define uint64 uint64tiff
+ 
+ #include <tiffio.h>
++
++#undef int64
++#undef uint64
+ 
+ extern value *imglib_error;
+ 

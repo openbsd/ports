@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.10 2011/05/24 16:24:35 giovanni Exp $
+$OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
 --- configure.orig	Wed Sep 15 16:42:36 2010
-+++ configure	Fri Apr 22 10:34:34 2011
++++ configure	Fri Apr 13 16:05:41 2012
 @@ -73,13 +73,13 @@ NLS=auto
  OPTIMIZER="-O"
  LIBCRYPT=
@@ -36,7 +36,15 @@ $OpenBSD: patch-configure,v 1.10 2011/05/24 16:24:35 giovanni Exp $
  }
  
  if [ "$SGI2FAX" = auto ]; then
-@@ -3383,19 +3383,8 @@ fi
+@@ -2552,6 +2552,7 @@ EOF
+ 	    case ${lib_ver} in
+ 		3.4)		tiff_runlen_t="uint16" ;;
+ 		3.[56789])	tiff_runlen_t="uint32" ;;
++		4.[0-9])	tiff_runlen_t="uint32" ;;
+ 	    esac
+ 	fi
+     else
+@@ -3383,19 +3384,8 @@ fi
  HAVE_JBIGTIFF="/*#define HAVE_JBIGTIFF 1*/"
  if [ "$DISABLE_JBIG" != "yes" ]; then
      Note "Checking JBIG-in-TIFF conversion support."
@@ -58,7 +66,7 @@ $OpenBSD: patch-configure,v 1.10 2011/05/24 16:24:35 giovanni Exp $
  fi
  
  Note "Done checking TIFF support."
-@@ -4659,10 +4648,10 @@ case $MANSCHEME in
+@@ -4659,10 +4649,10 @@ case $MANSCHEME in
  *-0|*-0.gz|*-0.Z|*-gz|*-Z|*-z)
      suf=`echo $MANSCHEME | $SED 's/.*-/./'`
      A='`echo $$i | sed' B='`'		# workaround shell bugs
