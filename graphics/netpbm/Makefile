@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2011/12/13 21:39:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.58 2012/04/14 20:24:02 naddy Exp $
 
 COMMENT=	toolkit for converting images between different formats
 
-DISTNAME=	netpbm-10.35.83
+DISTNAME=	netpbm-10.35.84
 SHARED_LIBS=	netpbm	2.0
 CATEGORIES=	graphics
 HOMEPAGE=	http://netpbm.sourceforge.net/
@@ -51,6 +51,7 @@ pre-build:
 	    -e 's#%%X11BASE%%#${X11BASE}#g;' \
 	    -e 's#%%PREFIX%%#${PREFIX}#g;' ${WRKSRC}/pm_config.in.h
 	cp ${FILESDIR}/Makefile.config.OpenBSD ${WRKSRC}/Makefile.config
+	cd ${WRKSRC}; buildtools/stamp-date >lib/compile.h
 
 NO_REGRESS=	Yes
 
