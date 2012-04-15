@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_detectsys_py,v 1.1 2011/10/21 13:04:17 ajacoutot Exp $
+$OpenBSD: patch-build_detectsys_py,v 1.2 2012/04/15 17:47:00 bentley Exp $
 
-Recognize macppc, socppc.
+Recognize macppc, socppc. Added to upstream in r12471.
 
 --- build/detectsys.py.orig	Fri Oct 21 03:19:41 2011
 +++ build/detectsys.py	Fri Oct 21 03:19:05 2011

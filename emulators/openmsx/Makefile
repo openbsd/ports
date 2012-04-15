@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/26 08:53:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/15 17:47:00 bentley Exp $
 
 BROKEN-powerpc =CPUCore.cc:2347: error: insn does not satisfy its constraints
 
 COMMENT =	MSX home computer emulator
 
-DISTNAME =	openmsx-0.8.1
-REVISION =	2
+DISTNAME =	openmsx-0.8.2
 
 CATEGORIES =	emulators
 
@@ -24,10 +23,11 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_SHARE_DIR=${PREFIX}/share/openmsx \
 		INSTALL_DOC_DIR=${PREFIX}/share/doc/openmsx
 
-WANTLIB +=	GL c freetype m pthread stdc++ z ${MODTCL_LIB}
+WANTLIB +=	GL c freetype m pthread stdc++ z ${MODTCL_LIB} ao
 WANTLIB +=	GLEW SDL SDL_ttf ogg png theoradec vorbis xml2
 
-LIB_DEPENDS =	audio/libvorbis \
+LIB_DEPENDS =	audio/libao \
+		audio/libvorbis \
 		devel/sdl-ttf \
 		graphics/glew \
 		graphics/png \
@@ -44,6 +44,9 @@ MODULES =	converters/libiconv \
 MODPY_RUNDEP =	No
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
+
+MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/build/python-search.sh

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/28 18:57:51 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/15 17:47:00 bentley Exp $
 @bin bin/openmsx
 share/doc/openmsx/
 share/doc/openmsx/GPL.txt
@@ -58,6 +58,10 @@ share/openmsx/extensions/Konami_SD-Snatcher_Sound_Cartridge/
 share/openmsx/extensions/Konami_SD-Snatcher_Sound_Cartridge/hardwareconfig.xml
 share/openmsx/extensions/Konami_Snatcher_Sound_Cartridge/
 share/openmsx/extensions/Konami_Snatcher_Sound_Cartridge/hardwareconfig.xml
+share/openmsx/extensions/Lascom_Kanji/
+share/openmsx/extensions/Lascom_Kanji/hardwareconfig.xml
+share/openmsx/extensions/Lascom_Kanji/roms/
+share/openmsx/extensions/Lascom_Kanji/roms/lascom_kanji.rom.gz
 share/openmsx/extensions/MegaRAM_Disk/
 share/openmsx/extensions/MegaRAM_Disk/hardwareconfig.xml
 share/openmsx/extensions/MegaRAM_Disk/roms/
@@ -103,6 +107,10 @@ share/openmsx/extensions/Sony_HBD-F1/
 share/openmsx/extensions/Sony_HBD-F1/hardwareconfig.xml
 share/openmsx/extensions/Sony_HBD-F1/roms/
 share/openmsx/extensions/Sony_HBD-F1/roms/SHA1SUMS
+share/openmsx/extensions/Sony_HBI-232/
+share/openmsx/extensions/Sony_HBI-232/hardwareconfig.xml
+share/openmsx/extensions/Sony_HBI-232/roms/
+share/openmsx/extensions/Sony_HBI-232/roms/SHA1SUMS
 share/openmsx/extensions/Sony_HBI-55/
 share/openmsx/extensions/Sony_HBI-55/hardwareconfig.xml
 share/openmsx/extensions/Sony_HBK-30/
@@ -185,11 +193,12 @@ share/openmsx/machines/Al_Alamiah_AX170/
 share/openmsx/machines/Al_Alamiah_AX170/hardwareconfig.xml
 share/openmsx/machines/Al_Alamiah_AX170/roms/
 share/openmsx/machines/Al_Alamiah_AX170/roms/SHA1SUMS
+share/openmsx/machines/Boosted_MSX2+_JP/
+share/openmsx/machines/Boosted_MSX2+_JP/README
+share/openmsx/machines/Boosted_MSX2+_JP/hardwareconfig.xml
 share/openmsx/machines/Boosted_MSX2_EN/
 share/openmsx/machines/Boosted_MSX2_EN/README
 share/openmsx/machines/Boosted_MSX2_EN/hardwareconfig.xml
-share/openmsx/machines/Boosted_MSX2_EN/roms/
-share/openmsx/machines/Boosted_MSX2_EN/roms/README
 share/openmsx/machines/C-BIOS_MSX1/
 share/openmsx/machines/C-BIOS_MSX1/hardwareconfig.xml
 share/openmsx/machines/C-BIOS_MSX1/roms/
@@ -562,6 +571,14 @@ share/openmsx/machines/Sony_HB-F9P_Russian/
 share/openmsx/machines/Sony_HB-F9P_Russian/hardwareconfig.xml
 share/openmsx/machines/Sony_HB-F9P_Russian/roms/
 share/openmsx/machines/Sony_HB-F9P_Russian/roms/SHA1SUMS
+share/openmsx/machines/Sony_HB-F9S/
+share/openmsx/machines/Sony_HB-F9S/hardwareconfig.xml
+share/openmsx/machines/Sony_HB-F9S/roms/
+share/openmsx/machines/Sony_HB-F9S/roms/SHA1SUMS
+share/openmsx/machines/Sony_HB-G900P/
+share/openmsx/machines/Sony_HB-G900P/hardwareconfig.xml
+share/openmsx/machines/Sony_HB-G900P/roms/
+share/openmsx/machines/Sony_HB-G900P/roms/SHA1SUMS
 share/openmsx/machines/Spectravideo_SVI-728/
 share/openmsx/machines/Spectravideo_SVI-728/hardwareconfig.xml
 share/openmsx/machines/Spectravideo_SVI-728/roms/
