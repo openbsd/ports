@@ -1,0 +1,15 @@
+$OpenBSD: patch-avidemux_ADM_script_ADM_JSFunctions_cpp,v 1.4 2012/04/15 11:37:41 naddy Exp $
+--- avidemux/ADM_script/ADM_JSFunctions.cpp.orig	Sun Apr 15 13:20:44 2012
++++ avidemux/ADM_script/ADM_JSFunctions.cpp	Sun Apr 15 13:21:00 2012
+@@ -370,9 +370,9 @@ JSBool systemExecute(JSContext *cx, JSObject *obj, uin
+ 
+         enterLock();
+ 	// clear file descriptor table of forked process and fork
+-#if defined( __linux__) || defined(__macosx__) || defined(__APPLE__)
++#if defined( __linux__) || defined(__macosx__) || defined(__APPLE__) || defined(__OpenBSD__)
+ 	pid_t pidRtn = fork();
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__)
++#elif defined(__FreeBSD__)
+ 	pid_t pidRtn = rfork(RFPROC|RFCFDG);
+ #endif
+ 
