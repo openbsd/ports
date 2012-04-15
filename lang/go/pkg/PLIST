@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/31 12:37:16 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/15 13:19:15 jsing Exp $
 %%amd64%%
 %%i386%%
 bin/go
@@ -126,7 +126,7 @@ go/doc/help.html
 go/doc/ie.css
 go/doc/install-source.html
 go/doc/install.html
-go/doc/lo${FULLPKGNAME}53x55.png
+go/doc/logo-153x55.png
 go/doc/play/
 go/doc/play/fib.go
 go/doc/play/hello.go
