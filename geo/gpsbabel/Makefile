@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/02/18 22:04:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/15 20:03:16 kirby Exp $
 
 COMMENT-main=		GPS waypoint, track, and route conversion tool
 COMMENT-tk=		Tk front-end to gpsbabel
@@ -7,8 +7,10 @@ COMMENT-qt=		Qt front-end to gpsbabel
 VERSION=		1.4.3
 DISTNAME=		gpsbabel-${VERSION}
 PKGNAME-main=		gpsbabel-${VERSION}
+REVISION-main=		0
 PKGNAME-tk=		gpsbabel-tk-${VERSION}
 PKGNAME-qt=		gpsbabel-qt-${VERSION}
+REVISION-qt=		0
 CATEGORIES=		geo
 
 HOMEPAGE=		http://www.gpsbabel.org/
@@ -55,10 +57,13 @@ LIB_DEPENDS-tk=
 PKG_ARCH-tk=	*
 RUN_DEPENDS-tk=		geo/gpsbabel \
 			${MODTK_RUN_DEPENDS}
-RUN_DEPENDS-qt=		geo/gpsbabel
+RUN_DEPENDS-qt=		geo/gpsbabel \
+			devel/desktop-file-utils
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/guibabel
+	@perl -pi -e 's/gpsbabelfe-bin/guibabel-qt/' \
+		${WRKSRC}/gui/gpsbabel.desktop
 post-configure:
 	cd ${WRKSRC}/gui && ${SETENV} ${CONFIGURE_ENV} qmake4 \
 		app.pro
@@ -75,5 +80,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/babelweb/htmldoc-*/*.html \
 		${PREFIX}/share/doc/gpsbabel
 	${INSTALL_DATA} ${WRKSRC}/README* ${PREFIX}/share/doc/gpsbabel
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/gui/gpsbabel.desktop \
+		${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gui/images/appicon.png \
+		${PREFIX}/share/pixmaps/gpsbabel.png
 
 .include <bsd.port.mk>
