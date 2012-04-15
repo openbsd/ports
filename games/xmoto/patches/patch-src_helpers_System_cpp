@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_helpers_System_cpp,v 1.1 2012/04/15 08:49:05 kirby Exp $
+--- src/helpers/System.cpp.orig	Sat Sep 10 22:34:36 2011
++++ src/helpers/System.cpp	Sat Sep 10 22:35:18 2011
+@@ -81,7 +81,7 @@ std::string System::getMemoryInfo() {
+   std::string v_res;
+ 
+ // note that apple don't know getline
+-#if defined(WIN32) || defined(__APPLE__)
++#if defined(WIN32) || defined(__APPLE__) || defined(__OpenBSD__)
+   return "No available information";
+ #else
+   // grep -E '^Vm' /proc/2532/status

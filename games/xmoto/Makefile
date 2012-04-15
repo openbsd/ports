@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/15 08:49:05 kirby Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
-V =	 	0.5.2
+V =	 	0.5.9
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
-REVISION=		0
 CATEGORIES =	games
 
-MAINTAINER =	Jonathan Armani <dbd@asystant.net>
+MAINTAINER =	Antti Harri <iku@openbsd.fi>
 HOMEPAGE =	http://xmoto.tuxfamily.org/
 
 MASTER_SITES =	http://download.tuxfamily.org/xmoto/xmoto/${V}/
@@ -19,31 +18,43 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += GL GLU SDL X11 c m pthread pthread-stubs stdc++ xcb z
-WANTLIB += SDL_mixer SDL_net SDL_ttf bz2 curl jpeg ode lua png sqlite3
+WANTLIB += GL GLU SDL SDL_mixer SDL_net SDL_ttf X11 bz2 c curl jpeg 
+WANTLIB += lua m ode png pthread sqlite3 stdc++ xdg-basedir xml2 z 
 
 MODULES=	devel/gettext
-
-LIB_DEPENDS =	devel/sdl-mixer \
+BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
+LIB_DEPENDS =	archivers/bzip2 \
+		databases/sqlite3 \
+		devel/ode \
+		devel/sdl-mixer \
 		devel/sdl-net \
 		devel/sdl-ttf \
-		archivers/bzip2 \
-		net/curl \
 		graphics/jpeg \
-		devel/ode \
-		lang/lua \
 		graphics/png \
-		databases/sqlite3
+		lang/lua \
+		net/curl \
+		textproc/libxml \
+		x11/libxdg-basedir
 
-USE_GMAKE =		Yes
+SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
-			    -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			LIBS="-lGL -lm -pthread"
+CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl` -DSVN_REV='\"${V}\"'" \
+			LDFLAGS="`pkg-config --libs libpng sdl` -lGL"
+AUTOMAKE_VERSION =	1.11
+AUTOCONF_VERSION =	2.68
+
+NO_REGRESS =		Yes
 
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
+
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		autoreconf -fi
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/xmoto/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/09/27 17:20:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/15 08:49:05 kirby Exp $
 @bin bin/xmoto
 @man man/man6/xmoto.6
 share/doc/xmoto/
@@ -34,6 +34,9 @@ share/locale/fi_FI/LC_MESSAGES/xmoto.mo
 share/locale/fr_FR/
 share/locale/fr_FR/LC_MESSAGES/
 share/locale/fr_FR/LC_MESSAGES/xmoto.mo
+share/locale/gl_ES/
+share/locale/gl_ES/LC_MESSAGES/
+share/locale/gl_ES/LC_MESSAGES/xmoto.mo
 share/locale/hu_HU/
 share/locale/hu_HU/LC_MESSAGES/
 share/locale/hu_HU/LC_MESSAGES/xmoto.mo
@@ -79,9 +82,11 @@ share/xmoto/
 share/xmoto/Textures/
 share/xmoto/Textures/Fonts/
 share/xmoto/Textures/Fonts/DejaVuSans.ttf
+share/xmoto/Textures/Fonts/DejaVuSansMono.ttf
 share/xmoto/Textures/Musics/
 share/xmoto/Textures/Musics/MadeiraStew.ogg
 share/xmoto/Textures/Musics/batcave.ogg
+share/xmoto/Textures/Musics/foxrun.ogg
 share/xmoto/Textures/Musics/legolodio.ogg
 share/xmoto/Textures/Musics/menu.ogg
 share/xmoto/Textures/Musics/ridealong.ogg
