@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.1.1.1 2012/03/31 12:37:16 jsing Exp $
---- src/pkg/runtime/sys_openbsd_386.s.orig	Mon Mar 19 00:13:54 2012
-+++ src/pkg/runtime/sys_openbsd_386.s	Mon Mar 19 00:13:54 2012
+$OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.2 2012/04/15 13:37:27 jsing Exp $
+--- src/pkg/runtime/sys_openbsd_386.s.orig	Wed Mar 28 15:49:26 2012
++++ src/pkg/runtime/sys_openbsd_386.s	Fri Mar  2 02:14:56 2012
 @@ -12,14 +12,16 @@
  TEXT runtime·exit(SB),7,$-4
  	MOVL	$1, AX
@@ -50,7 +50,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.1.1.1 2012/03/31 12:37:16 
  TEXT runtime·sigtramp(SB),7,$44
  	get_tls(CX)
  
-@@ -174,7 +184,7 @@ TEXT runtime·sigtramp(SB),7,$44
+@@ -174,40 +184,46 @@ TEXT runtime·sigtramp(SB),7,$44
  	MOVL	AX, 4(SP)		// arg 1 - sigcontext
  	MOVL	$103, AX		// sys_sigreturn
  	INT	$0x80
@@ -58,8 +58,61 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.1.1.1 2012/03/31 12:37:16 
 +	MOVL	$0xf1, 0xf1		// crash
  	RET
  
- // int32 rfork_thread(int32 flags, void *stack, M *m, G *g, void (*fn)(void));
-@@ -286,7 +296,7 @@ TEXT runtime·settls(SB),7,$16
+-// int32 rfork_thread(int32 flags, void *stack, M *m, G *g, void (*fn)(void));
+-TEXT runtime·rfork_thread(SB),7,$8
+-	MOVL	flags+8(SP), AX
+-	MOVL	stack+12(SP), CX
++// int32 tfork_thread(void *stack, M *m, G *g, void (*fn)(void));
++TEXT runtime·tfork_thread(SB),7,$20
+ 
+ 	// Copy m, g, fn off parent stack for use by child.
++	MOVL	stack+4(FP), CX
+ 	SUBL	$16, CX
+-	MOVL	mm+16(SP), SI
++	MOVL	mm+8(FP), SI
+ 	MOVL	SI, 0(CX)
+-	MOVL	gg+20(SP), SI
++	MOVL	gg+12(FP), SI
+ 	MOVL	SI, 4(CX)
+-	MOVL	fn+24(SP), SI
++	MOVL	fn+16(FP), SI
+ 	MOVL	SI, 8(CX)
+ 	MOVL	$1234, 12(CX)
+ 	MOVL	CX, SI
+ 
++	LEAL	8(SP), AX
++	MOVL	$0, 0(AX)		// tf_tcb
++	MOVL	$0, 4(AX)		// tf_tid
++	MOVL	$0, 8(AX)		// tf_flags
++
+ 	MOVL	$0, 0(SP)		// syscall gap
+-	MOVL	AX, 4(SP)		// arg 1 - flags
+-	MOVL	$251, AX		// sys_rfork
++	MOVL	AX, 4(SP)		// arg 1 - params
++	MOVL	$328, AX		// sys___tfork
+ 	INT	$0x80
+ 
+-	// Return if rfork syscall failed
+-	JCC	4(PC)
++	// Return if tfork syscall failed.
++	JCC	5(PC)
+ 	NEGL	AX
+-	MOVL	AX, 48(SP)
++	MOVL	ret+0(FP), DX
++	MOVL	AX, 0(DX)
+ 	RET
+ 
+ 	// In parent, return.
+ 	CMPL	AX, $0
+-	JEQ	3(PC)
+-	MOVL	AX, 48(SP)
++	JEQ	4(PC)
++	MOVL	ret+0(FP), DX
++	MOVL	AX, 0(DX)
+ 	RET
+ 
+ 	// In child, on new stack.
+@@ -286,7 +302,7 @@ TEXT runtime·settls(SB),7,$16
  	MOVL	$165, AX		// sys_sysarch
  	INT	$0x80
  	JCC	2(PC)
@@ -68,7 +121,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_386_s,v 1.1.1.1 2012/03/31 12:37:16 
  	RET
  
  TEXT runtime·osyield(SB),7,$-4
-@@ -295,12 +305,12 @@ TEXT runtime·osyield(SB),7,$-4
+@@ -295,12 +311,12 @@ TEXT runtime·osyield(SB),7,$-4
  	RET
  
  TEXT runtime·thrsleep(SB),7,$-4

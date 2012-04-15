@@ -1,7 +1,41 @@
-$OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:16 jsing Exp $
---- src/pkg/runtime/sys_openbsd_amd64.s.orig	Mon Mar 19 00:13:54 2012
-+++ src/pkg/runtime/sys_openbsd_amd64.s	Mon Mar 19 00:13:54 2012
-@@ -53,7 +53,8 @@ TEXT runtime·rfork_thread(SB),7,$0
+$OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.2 2012/04/15 13:37:27 jsing Exp $
+--- src/pkg/runtime/sys_openbsd_amd64.s.orig	Wed Mar 28 15:49:26 2012
++++ src/pkg/runtime/sys_openbsd_amd64.s	Fri Mar  2 02:03:18 2012
+@@ -8,20 +8,23 @@
+ 
+ #include "zasm_GOOS_GOARCH.h"
+ 
+-// int64 rfork_thread(int32 flags, void *stack, M *m, G *g, void (*fn)(void));
+-TEXT runtime·rfork_thread(SB),7,$0
+-	MOVL	flags+8(SP), DI
+-	MOVQ	stack+16(SP), SI
++// int64 tfork_thread(void *stack, M *m, G *g, void (*fn)(void));
++TEXT runtime·tfork_thread(SB),7,$32
+ 
+-	// Copy m, g, fn off parent stack for use by child.
+-	MOVQ	mm+24(SP), R8
+-	MOVQ	gg+32(SP), R9
+-	MOVQ	fn+40(SP), R12
++	// Copy stack, m, g, fn off parent stack for use by child.
++	MOVQ	stack+0(FP), SI
++	MOVQ	mm+8(FP), R8
++	MOVQ	gg+16(FP), R9
++	MOVQ	fn+24(FP), R12
+ 
+-	MOVL	$251, AX		// sys_rfork
++	LEAQ	8(SP), DI
++	MOVQ	$0, 0(DI)		// tf_tcb
++	MOVQ	$0, 8(DI)		// tf_tid
++	MOVL	$0, 16(DI)		// tf_flags
++	MOVL	$328, AX		// sys___tfork
+ 	SYSCALL
+ 
+-	// Return if rfork syscall failed
++	// Return if tfork syscall failed
+ 	JCC	3(PC)
+ 	NEGL	AX
+ 	RET
+@@ -53,7 +56,8 @@ TEXT runtime·rfork_thread(SB),7,$0
  	CALL	R12
  
  	// It shouldn't return.  If it does, exit
@@ -11,7 +45,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	SYSCALL
  	JMP	-3(PC)			// keep exiting
  
-@@ -67,14 +68,15 @@ TEXT runtime·thrsleep(SB),7,$0
+@@ -67,14 +71,15 @@ TEXT runtime·thrsleep(SB),7,$0
  	MOVL	16(SP), SI		// arg 2 - clock_id
  	MOVQ	24(SP), DX		// arg 3 - tp
  	MOVQ	32(SP), R10		// arg 4 - lock
@@ -29,7 +63,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	SYSCALL
  	RET
  
-@@ -83,13 +85,14 @@ TEXT runtime·exit(SB),7,$-8
+@@ -83,13 +88,14 @@ TEXT runtime·exit(SB),7,$-8
  	MOVL	8(SP), DI		// arg 1 - exit status
  	MOVL	$1, AX			// sys_exit
  	SYSCALL
@@ -47,7 +81,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	RET
  
  TEXT runtime·write(SB),7,$-8
-@@ -140,7 +143,7 @@ TEXT time·now(SB), 7, $32
+@@ -140,7 +146,7 @@ TEXT time·now(SB), 7, $32
  	MOVL	$116, AX		// sys_gettimeofday
  	SYSCALL
  	MOVQ	8(SP), AX		// sec
@@ -56,7 +90,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  
  	// sec is in AX, usec in DX
  	MOVQ	AX, sec+0(FP)
-@@ -154,7 +157,7 @@ TEXT runtime·nanotime(SB),7,$32
+@@ -154,7 +160,7 @@ TEXT runtime·nanotime(SB),7,$32
  	MOVL	$116, AX		// sys_gettimeofday
  	SYSCALL
  	MOVQ	8(SP), AX		// sec
@@ -65,7 +99,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  
  	// sec is in AX, usec in DX
  	// return nsec in AX
-@@ -170,9 +173,19 @@ TEXT runtime·sigaction(SB),7,$-8
+@@ -170,9 +176,19 @@ TEXT runtime·sigaction(SB),7,$-8
  	MOVL	$46, AX
  	SYSCALL
  	JCC	2(PC)
@@ -86,7 +120,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  TEXT runtime·sigtramp(SB),7,$64
  	get_tls(BX)
  	
-@@ -226,7 +239,7 @@ TEXT runtime·munmap(SB),7,$0
+@@ -226,7 +242,7 @@ TEXT runtime·munmap(SB),7,$0
  	MOVL	$73, AX			// sys_munmap
  	SYSCALL
  	JCC	2(PC)
@@ -95,7 +129,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	RET
  
  TEXT runtime·sigaltstack(SB),7,$-8
-@@ -235,7 +248,7 @@ TEXT runtime·sigaltstack(SB),7,$-8
+@@ -235,7 +251,7 @@ TEXT runtime·sigaltstack(SB),7,$-8
  	MOVQ	$288, AX		// sys_sigaltstack
  	SYSCALL
  	JCC	2(PC)
@@ -104,7 +138,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	RET
  
  // set tls base to DI
-@@ -248,7 +261,7 @@ TEXT runtime·settls(SB),7,$8
+@@ -248,7 +264,7 @@ TEXT runtime·settls(SB),7,$8
  	MOVQ	$165, AX		// sys_sysarch
  	SYSCALL
  	JCC	2(PC)
@@ -113,7 +147,7 @@ $OpenBSD: patch-src_pkg_runtime_sys_openbsd_amd64_s,v 1.1.1.1 2012/03/31 12:37:1
  	RET
  
  TEXT runtime·sysctl(SB),7,$0
-@@ -260,7 +273,7 @@ TEXT runtime·sysctl(SB),7,$0
+@@ -260,7 +276,7 @@ TEXT runtime·sysctl(SB),7,$0
  	MOVQ	48(SP), R9		// arg 6 - newlen
  	MOVQ	$202, AX		// sys___sysctl
  	SYSCALL
