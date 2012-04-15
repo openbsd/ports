@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/15 18:38:53 gonzalo Exp $
 
 COMMENT =		file editor/viewer/analyzer for executables
 
-DISTNAME =		ht-2.0.18
+DISTNAME =		ht-2.0.20
 CATEGORIES =		editors
 
 HOMEPAGE =		http://hte.sourceforge.net/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m ncurses stdc++
+WANTLIB =		c m ncursesw stdc++
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hte/}
 
