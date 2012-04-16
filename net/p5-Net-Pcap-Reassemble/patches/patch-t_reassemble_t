@@ -1,0 +1,23 @@
+$OpenBSD: patch-t_reassemble_t,v 1.1.1.1 2012/04/16 20:13:25 okan Exp $
+
+test 7 requires DLT_LINUX_SLL
+
+--- t/reassemble.t.orig	Thu May 13 12:27:05 2010
++++ t/reassemble.t	Mon Apr 16 13:57:26 2012
+@@ -9,7 +9,7 @@
+ # Change 1..1 below to 1..last_test_to_print .
+ # (It may become useful if the test is moved to ./t subdirectory.)
+ 
+-BEGIN { $| = 1; print "1..7\n"; }
++BEGIN { $| = 1; print "1..6\n"; }
+ END {print "not ok 1\n" unless $loaded;}
+ use Net::Pcap::Reassemble;
+ $loaded = 1;
+@@ -90,6 +90,7 @@ if (!defined($pcap_t)) {
+ }
+ print "ok 6\n";
+ 
++=head
+ #
+ # Test 7: Read from a LINUX_SLL dump file. It contains one whole datagram
+ #         and one datagram in three fragments. The callback should

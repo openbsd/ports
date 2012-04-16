@@ -1,0 +1,4 @@
+Net::Pcap::Reassemble performs reassembly of fragmented datagrams in
+libpcap packet capture data returned by the Net::Pcap loop() function.
+Net::Pcap::Reassemble module supports reassembly of IPv4 and IPv6
+fragments.

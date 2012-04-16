@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/16 20:13:25 okan Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Pcap/
+${P5SITE}/Net/Pcap/Reassemble.pm
+@man man/man3p/Net::Pcap::Reassemble.3p
