@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.46 2012/03/10 10:25:27 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2012/04/16 10:08:43 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.4.4
+XFCE_VERSION =	0.4.5
 XFCE_GOODIE =	midori
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -42,6 +42,6 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 javascriptcoregtk-1.0 m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 unique-1.0 webkitgtk-1.0 xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z pcre
 
 .include <bsd.port.mk>
