@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/13 13:15:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/16 18:48:40 okan Exp $
 
 COMMENT=	persistent session data in CGI applications
 
 MODULES=	cpan
-DISTNAME=	CGI-Session-4.42
+DISTNAME=	CGI-Session-4.48
 CATEGORIES=	www
-USE_GROFF=	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
