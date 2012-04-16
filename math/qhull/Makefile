@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/16 08:07:39 jasper Exp $
 
 COMMENT =		computing the convex hull
 
-VERSION =		2010.1
+VERSION =		2011.1
 DISTNAME =		qhull-${VERSION}
 
-SHARED_LIBS =		qhull		0.0
+SHARED_LIBS =		qhull6		0.0 # 6.2
 
 CATEGORIES =		math
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m
+WANTLIB =		c m stdc++
 
 MASTER_SITES =		${HOMEPAGE}download/
 DISTFILES =		${DISTNAME}-src${EXTRACT_SUFX}
@@ -28,5 +28,6 @@ MODULES =		devel/cmake
 NO_REGRESS =		Yes
 
 CFLAGS +=		-fno-strict-aliasing
+CONFIGURE_ARGS +=	-DDOC_INSTALL_DIR=${PREFIX}/share/doc/qhull
 
 .include <bsd.port.mk>

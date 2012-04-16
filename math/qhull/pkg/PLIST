@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/19 09:01:12 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/16 08:07:39 jasper Exp $
 %%SHARED%%
 @bin bin/qconvex
 @bin bin/qdelaunay
@@ -6,17 +6,86 @@
 @bin bin/qhull
 @bin bin/qvoronoi
 @bin bin/rbox
-include/qhull/
-include/qhull/geom.h
-include/qhull/io.h
-include/qhull/libqhull.h
-include/qhull/mem.h
-include/qhull/merge.h
-include/qhull/poly.h
-include/qhull/qhull.h
-include/qhull/qhull_a.h
-include/qhull/qset.h
-include/qhull/random.h
-include/qhull/stat.h
-include/qhull/user.h
-lib/libqhull.a
+@bin bin/user_eg
+@bin bin/user_eg2
+@bin bin/user_eg3
+include/libqhull/
+include/libqhull/geom.h
+include/libqhull/io.h
+include/libqhull/libqhull.h
+include/libqhull/mem.h
+include/libqhull/merge.h
+include/libqhull/poly.h
+include/libqhull/qhull_a.h
+include/libqhull/qset.h
+include/libqhull/random.h
+include/libqhull/stat.h
+include/libqhull/user.h
+include/libqhullcpp/
+include/libqhullcpp/Coordinates.h
+include/libqhullcpp/PointCoordinates.h
+include/libqhullcpp/Qhull.h
+include/libqhullcpp/QhullError.h
+include/libqhullcpp/QhullFacet.h
+include/libqhullcpp/QhullFacetList.h
+include/libqhullcpp/QhullFacetSet.h
+include/libqhullcpp/QhullHyperplane.h
+include/libqhullcpp/QhullIterator.h
+include/libqhullcpp/QhullLinkedList.h
+include/libqhullcpp/QhullPoint.h
+include/libqhullcpp/QhullPointSet.h
+include/libqhullcpp/QhullPoints.h
+include/libqhullcpp/QhullQh.h
+include/libqhullcpp/QhullRidge.h
+include/libqhullcpp/QhullSet.h
+include/libqhullcpp/QhullSets.h
+include/libqhullcpp/QhullStat.h
+include/libqhullcpp/QhullVertex.h
+include/libqhullcpp/QhullVertexSet.h
+include/libqhullcpp/RboxPoints.h
+include/libqhullcpp/UsingLibQhull.h
+include/libqhullcpp/functionObjects.h
+include/road/
+include/road/RoadError.h
+include/road/RoadLogEvent.h
+include/road/RoadTest.h
+lib/libqhullcpp.a
+lib/libqhullstatic.a
+lib/libqhullstatic_p.a
+@man man/man1/qhull.1
+@man man/man1/rbox.1
+share/doc/qhull/
+share/doc/qhull/index.htm
+share/doc/qhull/normal_voronoi_knauss_oesterle.jpg
+share/doc/qhull/qconvex.htm
+share/doc/qhull/qdelau_f.htm
+share/doc/qhull/qdelaun.htm
+share/doc/qhull/qh--4d.gif
+share/doc/qhull/qh--cone.gif
+share/doc/qhull/qh--dt.gif
+share/doc/qhull/qh--geom.gif
+share/doc/qhull/qh--half.gif
+share/doc/qhull/qh--rand.gif
+share/doc/qhull/qh-code.htm
+share/doc/qhull/qh-eg.htm
+share/doc/qhull/qh-faq.htm
+share/doc/qhull/qh-get.htm
+share/doc/qhull/qh-impre.htm
+share/doc/qhull/qh-optc.htm
+share/doc/qhull/qh-optf.htm
+share/doc/qhull/qh-optg.htm
+share/doc/qhull/qh-opto.htm
+share/doc/qhull/qh-optp.htm
+share/doc/qhull/qh-optq.htm
+share/doc/qhull/qh-optt.htm
+share/doc/qhull/qh-quick.htm
+share/doc/qhull/qhalf.htm
+share/doc/qhull/qhull-cpp.xml
+share/doc/qhull/qhull.htm
+share/doc/qhull/qhull.man
+share/doc/qhull/qhull.txt
+share/doc/qhull/qvoron_f.htm
+share/doc/qhull/qvoronoi.htm
+share/doc/qhull/rbox.htm
+share/doc/qhull/rbox.man
+share/doc/qhull/rbox.txt
