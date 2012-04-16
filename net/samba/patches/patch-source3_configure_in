@@ -1,7 +1,47 @@
-$OpenBSD: patch-source3_configure_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
+$OpenBSD: patch-source3_configure_in,v 1.2 2012/04/16 21:58:34 sthen Exp $
 --- source3/configure.in.orig	Sat Apr  7 14:23:20 2012
-+++ source3/configure.in	Tue Apr 10 22:56:36 2012
-@@ -1640,8 +1640,7 @@ DSO_EXPORTS=""
++++ source3/configure.in	Tue Apr 10 23:47:13 2012
+@@ -834,9 +834,15 @@ if test x$enable_cups != xno; then
+ 
+         if test "x$CUPS_CONFIG" != x; then
+ 
++		CUPS_CFLAGS="`$CUPS_CONFIG --cflags`"
++		CUPS_LDFLAGS="`$CUPS_CONFIG --ldflags`"
++		CUPS_LIBS="`$CUPS_CONFIG --libs`"
++		ac_save_CPPFLAGS=$CPPFLAGS
+ 		ac_save_LDFLAGS=$LDFLAGS
+ 		ac_save_PRINT_LIBS=$PRINT_LIBS
++		CPPFLAGS="$CUPS_CFLAGS"
+ 		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
++		CPPFLAGS=$ac_save_CPPFLAGS
+ 
+ 		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
+ 		        x"$ac_cv_header_cups_language_h" = xyes; then
+@@ -844,18 +850,19 @@ if test x$enable_cups != xno; then
+ 			# underlinked. With cups-config --libs we pull in unwanted and unneeded
+ 			# dendencies including thread libraries - use cups-config only if really
+ 			# required. 
++			LDFLAGS="$CUPS_LDFLAGS"
+ 			AC_CHECK_LIB_EXT(cups, ac_save_PRINT_LIBS , httpConnect,
+-				[PRINT_LIBS="$ac_save_PRINT_LIBS -lcups"],
++				[PRINT_LIBS="$CUPS_LDFLAGS -lcups $ac_save_PRINT_LIBS"],
+ 				[AC_MSG_WARN([your cups library doesn't link with -lcups alone, it might be underlinked.]) ;
+-				 PRINT_LIBS="$ac_save_PRINT_LIBS `$CUPS_CONFIG --libs`"])
++				 PRINT_LIBS="$CUPS_LDFLAGS $CUPS_LIBS"])
+ 
+ 			AC_DEFINE(HAVE_CUPS,1,[Whether we have CUPS])
+ 			samba_cv_HAVE_CUPS=yes
++			SAMBA_CPPFLAGS="${SAMBA_CPPFLAGS} $CUPS_CFLAGS"
+ 			AC_CHECK_LIB_EXT(cups, PRINT_LIBS, httpConnectEncrypt)
++			LDFLAGS=$ac_save_LDFLAGS
+ 		else
+ 			AC_MSG_WARN([cups-config around but cups-devel not installed])
+-			CFLAGS=$ac_save_CFLAGS
+-			LDFLAGS=$ac_save_LDFLAGS
+ 			PRINT_LIBS=$ac_save_PRINT_LIBS
+ 		fi
+ 
+@@ -1640,8 +1647,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -11,3 +51,48 @@ $OpenBSD: patch-source3_configure_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
+@@ -6747,13 +6753,43 @@ fi
+ 
+ CFLAGS=$CFLAGS_SAVE
+ 
++# Checks for *BSD bsd_statvfs() function
++# Start
++AC_CHECK_HEADERS(sys/param.h sys/mount.h)
++
++AC_MSG_CHECKING([bsd_statvfs: checking for statfs() and struct statfs.bsize])
++AC_CACHE_VAL(bsdstatvfs_cv_statfs,[
++             AC_TRY_RUN([
++                #ifdef HAVE_SYS_PARAM_H
++                #include <sys/param.h>
++                #endif
++                #ifdef HAVE_SYS_MOUNT_H
++                #include <sys/mount.h>
++                #endif
++                int main (void)
++                {
++                        struct statfs fsd;
++                        fsd.f_bsize = 0;
++                        exit (statfs (".", &fsd));
++                }],
++                bsdstatvfs_cv_statfs=yes,
++                bsdstatvfs_cv_statfs=no,
++                bsdstatvfs_cv_statfs=no)])
++AC_MSG_RESULT($bsdstatvfs_cv_statfs)
++
++if test $bsdstatvfs_cv_statfs = yes; then
++  AC_DEFINE(BSD_STATVFS_BSIZE,1,[Whether statfs exists and struct statfs has bsize property])
++fi
++
++# End
++
+ # Checks for the vfs_fileid module
+ # Start
+ AC_CHECK_FUNC(getmntent)
+ 
+ AC_CHECK_HEADERS(sys/statfs.h)
+ 
+-AC_MSG_CHECKING([vfs_fileid: checking for statfs() and struct statfs.f_fsid)])
++AC_MSG_CHECKING([vfs_fileid: checking for statfs() and struct statfs.f_fsid])
+ AC_CACHE_VAL(vfsfileid_cv_statfs,[
+ 	     AC_TRY_RUN([
+ 		#include <sys/types.h>
