@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/23 13:23:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/16 11:56:10 ajacoutot Exp $
 share/doc/gtkmm-3.0/
 share/doc/gtkmm-3.0/tutorial/
 share/doc/gtkmm-3.0/tutorial/html/
@@ -59,6 +59,7 @@ share/doc/gtkmm-3.0/tutorial/html/figures/combobox_text.png
 share/doc/gtkmm-3.0/tutorial/html/figures/comboboxentry_complex.png
 share/doc/gtkmm-3.0/tutorial/html/figures/comboboxentry_text.png
 share/doc/gtkmm-3.0/tutorial/html/figures/custom_container.png
+share/doc/gtkmm-3.0/tutorial/html/figures/custom_widget.png
 share/doc/gtkmm-3.0/tutorial/html/figures/dialogs_about.png
 share/doc/gtkmm-3.0/tutorial/html/figures/dialogs_colorchooserdialog.png
 share/doc/gtkmm-3.0/tutorial/html/figures/dialogs_filechooser.png
@@ -75,6 +76,8 @@ share/doc/gtkmm-3.0/tutorial/html/figures/drawingarea_text.png
 share/doc/gtkmm-3.0/tutorial/html/figures/drawingarea_thin_lines.png
 share/doc/gtkmm-3.0/tutorial/html/figures/entry.png
 share/doc/gtkmm-3.0/tutorial/html/figures/entry_completion.png
+share/doc/gtkmm-3.0/tutorial/html/figures/entry_icon.png
+share/doc/gtkmm-3.0/tutorial/html/figures/entry_progress.png
 share/doc/gtkmm-3.0/tutorial/html/figures/eventbox.png
 share/doc/gtkmm-3.0/tutorial/html/figures/expander.png
 share/doc/gtkmm-3.0/tutorial/html/figures/filechooserbutton.png
@@ -245,6 +248,7 @@ share/gnome/help/gtkmm-tutorial/C/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/C/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/C/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/C/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/C/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/C/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/C/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/C/figures/dialogs_filechooser.png
@@ -261,6 +265,8 @@ share/gnome/help/gtkmm-tutorial/C/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/C/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/C/figures/entry.png
 share/gnome/help/gtkmm-tutorial/C/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/C/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/C/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/C/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/C/figures/expander.png
 share/gnome/help/gtkmm-tutorial/C/figures/filechooserbutton.png
@@ -322,6 +328,7 @@ share/gnome/help/gtkmm-tutorial/de/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/de/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/de/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/de/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/de/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/de/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/de/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/de/figures/dialogs_filechooser.png
@@ -338,6 +345,8 @@ share/gnome/help/gtkmm-tutorial/de/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/de/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/de/figures/entry.png
 share/gnome/help/gtkmm-tutorial/de/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/de/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/de/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/de/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/de/figures/expander.png
 share/gnome/help/gtkmm-tutorial/de/figures/filechooserbutton.png
@@ -399,6 +408,7 @@ share/gnome/help/gtkmm-tutorial/es/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/es/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/es/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/es/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/es/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/es/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/es/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/es/figures/dialogs_filechooser.png
@@ -415,6 +425,8 @@ share/gnome/help/gtkmm-tutorial/es/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/es/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/es/figures/entry.png
 share/gnome/help/gtkmm-tutorial/es/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/es/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/es/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/es/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/es/figures/expander.png
 share/gnome/help/gtkmm-tutorial/es/figures/filechooserbutton.png
@@ -476,6 +488,7 @@ share/gnome/help/gtkmm-tutorial/fr/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/fr/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/fr/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/fr/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/fr/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/fr/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/fr/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/fr/figures/dialogs_filechooser.png
@@ -492,6 +505,8 @@ share/gnome/help/gtkmm-tutorial/fr/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/fr/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/fr/figures/entry.png
 share/gnome/help/gtkmm-tutorial/fr/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/fr/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/fr/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/fr/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/fr/figures/expander.png
 share/gnome/help/gtkmm-tutorial/fr/figures/filechooserbutton.png
@@ -553,6 +568,7 @@ share/gnome/help/gtkmm-tutorial/pt_BR/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/pt_BR/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/dialogs_filechooser.png
@@ -569,6 +585,8 @@ share/gnome/help/gtkmm-tutorial/pt_BR/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/entry.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/pt_BR/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/pt_BR/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/expander.png
 share/gnome/help/gtkmm-tutorial/pt_BR/figures/filechooserbutton.png
@@ -630,6 +648,7 @@ share/gnome/help/gtkmm-tutorial/sl/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/sl/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/sl/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/sl/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/sl/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/sl/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/sl/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/sl/figures/dialogs_filechooser.png
@@ -646,6 +665,8 @@ share/gnome/help/gtkmm-tutorial/sl/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/sl/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/sl/figures/entry.png
 share/gnome/help/gtkmm-tutorial/sl/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/sl/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/sl/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/sl/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/sl/figures/expander.png
 share/gnome/help/gtkmm-tutorial/sl/figures/filechooserbutton.png
@@ -707,6 +728,7 @@ share/gnome/help/gtkmm-tutorial/zh_CN/figures/combobox_text.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/comboboxentry_complex.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/comboboxentry_text.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/custom_container.png
+share/gnome/help/gtkmm-tutorial/zh_CN/figures/custom_widget.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/dialogs_about.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/dialogs_colorchooserdialog.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/dialogs_filechooser.png
@@ -723,6 +745,8 @@ share/gnome/help/gtkmm-tutorial/zh_CN/figures/drawingarea_text.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/drawingarea_thin_lines.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/entry.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/entry_completion.png
+share/gnome/help/gtkmm-tutorial/zh_CN/figures/entry_icon.png
+share/gnome/help/gtkmm-tutorial/zh_CN/figures/entry_progress.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/eventbox.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/expander.png
 share/gnome/help/gtkmm-tutorial/zh_CN/figures/filechooserbutton.png
