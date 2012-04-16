@@ -1,13 +1,7 @@
-$OpenBSD: patch-glib_gmain_c,v 1.12 2012/04/16 10:04:49 landry Exp $
-gmain: block child sources when blocking the parent
+$OpenBSD: patch-glib_gmain_c,v 1.13 2012/04/16 11:47:42 ajacoutot Exp $
 
-When blocking a source that has child sources, we need to consider the
-children blocked as well. Otherwise they will still trigger repeatedly
-in an inner loop started from the parent source's callback.
-
-patch from https://bugzilla.gnome.org/attachment.cgi?id=212002
 https://bugzilla.gnome.org/show_bug.cgi?id=669260
-Fixes https://bugs.launchpad.net/midori/+bug/780133
+
 --- glib/gmain.c.orig	Mon Apr  2 05:08:41 2012
 +++ glib/gmain.c	Mon Apr 16 10:41:41 2012
 @@ -191,7 +191,8 @@ typedef struct _GSourceCallback GSourceCallback;
