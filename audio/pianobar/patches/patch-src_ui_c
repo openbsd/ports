@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_ui_c,v 1.9 2012/04/16 13:09:26 dcoppa Exp $
+
+Add option to enable TLS for all actions (not just sending login
+credentials). Useful to get around GeoIP restrictions.
+(upstream git commit 35763dea799c96361e288a10eab0fbd16c36e880)
+
+--- src/ui.c.orig	Tue Mar 20 14:47:07 2012
++++ src/ui.c	Mon Apr 16 14:57:08 2012
+@@ -134,14 +134,15 @@ void BarUiMsg (const BarSettings_t *settings, const Ba
+ /*	fetch http resource (post request)
+  *	@param waitress handle
+  *	@param piano request (initialized by PianoRequest())
++ *	@param ignore libpiano TLS hint and use it always
+  */
+ static WaitressReturn_t BarPianoHttpRequest (WaitressHandle_t *waith,
+-		PianoRequest_t *req) {
++		PianoRequest_t *req, bool forceTls) {
+ 	waith->extraHeaders = "Content-Type: text/xml\r\n";
+ 	waith->postData = req->postData;
+ 	waith->method = WAITRESS_METHOD_POST;
+ 	waith->url.path = req->urlPath;
+-	waith->url.tls = req->secure;
++	waith->url.tls = req->secure || forceTls;
+ 
+ 	return WaitressFetchBuf (waith, &req->responseData);
+ }
+@@ -172,7 +173,7 @@ int BarUiPianoCall (BarApp_t * const app, PianoRequest
+ 			return 0;
+ 		}
+ 
+-		*wRet = BarPianoHttpRequest (&app->waith, &req);
++		*wRet = BarPianoHttpRequest (&app->waith, &req, app->settings.forceTls);
+ 		if (*wRet != WAITRESS_RET_OK) {
+ 			BarUiMsg (&app->settings, MSG_NONE, "Network error: %s\n", WaitressErrorToStr (*wRet));
+ 			if (req.responseData != NULL) {
