@@ -1,7 +1,7 @@
-$OpenBSD: patch-library_tests_Makefile_in,v 1.1.1.1 2012/03/30 14:29:58 ajacoutot Exp $
---- library/tests/Makefile.in.orig	Fri Mar 30 15:32:54 2012
-+++ library/tests/Makefile.in	Fri Mar 30 15:33:06 2012
-@@ -807,7 +807,7 @@ test-js:
+$OpenBSD: patch-library_tests_Makefile_in,v 1.2 2012/04/16 12:00:25 ajacoutot Exp $
+--- library/tests/Makefile.in.orig	Mon Apr 16 13:48:50 2012
++++ library/tests/Makefile.in	Mon Apr 16 13:56:56 2012
+@@ -799,7 +799,7 @@ test-js:
  	@for js in $(JS_TESTS); do echo "TEST: $$js"; $(JS_ENV) gjs $(srcdir)/$$js; done
  
  test-py:
