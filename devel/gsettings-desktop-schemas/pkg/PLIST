@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/03/29 06:27:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/04/16 13:34:34 jasper Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 share/GConf/
@@ -29,6 +29,7 @@ share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/eo/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/gl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/it/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/pl/LC_MESSAGES/gsettings-desktop-schemas.mo

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/03/29 07:18:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/04/16 13:39:33 jasper Exp $
 @bin bin/mousetweaks
 @man man/man1/mousetweaks.1
 share/GConf/gsettings/mousetweaks.convert
@@ -229,6 +229,9 @@ share/gnome/help/mousetweaks/zh_CN/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/zh_CN/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/zh_CN/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/zh_CN/mousetweaks.xml
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/mousetweaks.mo
 share/locale/ar/LC_MESSAGES/mousetweaks.mo
 share/locale/as/LC_MESSAGES/mousetweaks.mo
 share/locale/ast/LC_MESSAGES/mousetweaks.mo
