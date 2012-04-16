@@ -1,6 +1,9 @@
-$OpenBSD: patch-glib_gmain_c,v 1.13 2012/04/16 11:47:42 ajacoutot Exp $
+$OpenBSD: patch-glib_gmain_c,v 1.14 2012/04/16 22:56:33 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=669260
+From a49568ceccb133c5a99524f3fdb842f0c05eb0b3 Mon Sep 17 00:00:00 2001
+From: Dan Winship <danw@gnome.org>
+Date: Wed, 11 Apr 2012 19:21:17 +0000
+Subject: gmain: block child sources when blocking the parent
 
 --- glib/gmain.c.orig	Mon Apr  2 05:08:41 2012
 +++ glib/gmain.c	Mon Apr 16 10:41:41 2012
