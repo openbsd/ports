@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_ac,v 1.4 2012/04/16 23:40:10 kili Exp $
+
+Disable the Cocoa check (x11/gnustep/base installs Foundation/Foundation.h,
+which causes this autoshit to assume we're MacOS).
+
+--- configure.ac.orig	Tue Apr 17 01:30:33 2012
++++ configure.ac	Tue Apr 17 01:31:58 2012
+@@ -176,12 +176,6 @@ AC_TRY_CPP([
+ AC_MSG_RESULT([$glib_have_carbon])
+ 
+ glib_have_cocoa=no
+-AC_MSG_CHECKING([for Mac OS X Cocoa support])
+-AC_TRY_CPP([
+-#include <Foundation/Foundation.h>
+-], glib_have_cocoa=yes)
+-
+-AC_MSG_RESULT([$glib_have_cocoa])
+ 
+ AM_CONDITIONAL(OS_WIN32, [test "$glib_native_win32" = "yes"])
+ AM_CONDITIONAL(OS_WIN32_X64, [test "$LIB_EXE_MACHINE_FLAG" = "X64"])
