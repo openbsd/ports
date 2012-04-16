@@ -1,4 +1,7 @@
-$OpenBSD: patch-metadata_metatree_c,v 1.5 2011/04/05 14:43:25 ajacoutot Exp $
+$OpenBSD: patch-metadata_metatree_c,v 1.6 2012/04/16 23:16:52 ajacoutot Exp $
+
+XXX push upstream.
+
 --- metadata/metatree.c.orig	Mon Apr  4 16:49:12 2011
 +++ metadata/metatree.c	Mon Apr  4 19:37:55 2011
 @@ -302,7 +302,7 @@ is_on_nfs (char *filename)
