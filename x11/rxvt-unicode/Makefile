@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2012/01/23 08:10:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2012/04/16 18:08:09 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.15
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -22,20 +23,21 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =	X11 Xau Xdmcp Xft Xrender c expat ffi \
 		fontconfig freetype gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		m pcre perl png pthread-stubs pthread util \
-		xcb z
+		m pcre perl png pthread-stubs pthread \
+		startup-notification-1 util xcb z
 
 MODULES =	devel/gettext
 
-LIB_DEPENDS =	graphics/gdk-pixbuf2
+LIB_DEPENDS =	devel/startup-notification \
+		graphics/gdk-pixbuf2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-256-color \
 			--enable-perl \
 			--enable-pixbuf \
+			--enable-startup-notification \
 			--with-term=rxvt-256color \
-			--disable-afterimage \
-			--disable-startup-notification
+			--disable-afterimage
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
 
