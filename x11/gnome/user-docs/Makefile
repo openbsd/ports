@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2012/04/10 08:27:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/16 23:29:07 ajacoutot Exp $
 
 COMMENT=		general user documentation for GNOME
 
 GNOME_PROJECT=		gnome-user-docs
-GNOME_VERSION=		3.4.0
-REVISION=		0
+GNOME_VERSION=		3.4.1
 
 # CC Attribution 3.0
 PERMIT_PACKAGE_CDROM=	Yes
