@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/03/29 06:45:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.30 2012/04/16 14:22:30 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -501,6 +501,7 @@ share/gtk-doc/html/camel/up.png
 share/gtk-doc/html/libebackend/
 share/gtk-doc/html/libebackend/EBackend.html
 share/gtk-doc/html/libebackend/EBackendFactory.html
+share/gtk-doc/html/libebackend/EDBusServer.html
 share/gtk-doc/html/libebackend/EDataFactory.html
 share/gtk-doc/html/libebackend/EExtensible.html
 share/gtk-doc/html/libebackend/EExtension.html
@@ -545,6 +546,7 @@ share/gtk-doc/html/libebook/api-index-2.30.html
 share/gtk-doc/html/libebook/api-index-2.32.html
 share/gtk-doc/html/libebook/api-index-3.0.html
 share/gtk-doc/html/libebook/api-index-3.2.html
+share/gtk-doc/html/libebook/api-index-${R}.html
 share/gtk-doc/html/libebook/api-index-deprecated.html
 share/gtk-doc/html/libebook/api-index-full.html
 share/gtk-doc/html/libebook/ch01.html
@@ -577,6 +579,7 @@ share/gtk-doc/html/libecal/api-index-2.30.html
 share/gtk-doc/html/libecal/api-index-2.32.html
 share/gtk-doc/html/libecal/api-index-3.0.html
 share/gtk-doc/html/libecal/api-index-3.2.html
+share/gtk-doc/html/libecal/api-index-${R}.html
 share/gtk-doc/html/libecal/api-index-deprecated.html
 share/gtk-doc/html/libecal/api-index-full.html
 share/gtk-doc/html/libecal/ch01.html
@@ -614,6 +617,7 @@ share/gtk-doc/html/libedata-book/api-index-2.30.html
 share/gtk-doc/html/libedata-book/api-index-2.32.html
 share/gtk-doc/html/libedata-book/api-index-3.0.html
 share/gtk-doc/html/libedata-book/api-index-3.2.html
+share/gtk-doc/html/libedata-book/api-index-${R}.html
 share/gtk-doc/html/libedata-book/api-index-deprecated.html
 share/gtk-doc/html/libedata-book/api-index-full.html
 share/gtk-doc/html/libedata-book/ch01.html
@@ -646,6 +650,7 @@ share/gtk-doc/html/libedata-cal/api-index-2.30.html
 share/gtk-doc/html/libedata-cal/api-index-2.32.html
 share/gtk-doc/html/libedata-cal/api-index-3.0.html
 share/gtk-doc/html/libedata-cal/api-index-3.2.html
+share/gtk-doc/html/libedata-cal/api-index-${R}.html
 share/gtk-doc/html/libedata-cal/api-index-deprecated.html
 share/gtk-doc/html/libedata-cal/api-index-full.html
 share/gtk-doc/html/libedata-cal/ch01.html
@@ -684,6 +689,7 @@ share/gtk-doc/html/libedataserver/api-index-2.30.html
 share/gtk-doc/html/libedataserver/api-index-2.32.html
 share/gtk-doc/html/libedataserver/api-index-3.0.html
 share/gtk-doc/html/libedataserver/api-index-3.2.html
+share/gtk-doc/html/libedataserver/api-index-${R}.html
 share/gtk-doc/html/libedataserver/api-index-deprecated.html
 share/gtk-doc/html/libedataserver/api-index-full.html
 share/gtk-doc/html/libedataserver/ch01.html
@@ -734,6 +740,7 @@ share/gtk-doc/html/libedataserverui/api-index-2.30.html
 share/gtk-doc/html/libedataserverui/api-index-2.32.html
 share/gtk-doc/html/libedataserverui/api-index-3.0.html
 share/gtk-doc/html/libedataserverui/api-index-3.2.html
+share/gtk-doc/html/libedataserverui/api-index-${R}.html
 share/gtk-doc/html/libedataserverui/api-index-deprecated.html
 share/gtk-doc/html/libedataserverui/api-index-full.html
 share/gtk-doc/html/libedataserverui/ch01.html

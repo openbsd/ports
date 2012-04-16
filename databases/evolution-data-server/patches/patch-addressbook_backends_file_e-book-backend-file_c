@@ -1,10 +1,10 @@
-$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.10 2012/03/29 06:45:21 ajacoutot Exp $
+$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.11 2012/04/16 14:22:30 jasper Exp $
 
 On OpenBSD, time_t is an int.
 
---- addressbook/backends/file/e-book-backend-file.c.orig	Mon Mar 19 05:20:21 2012
-+++ addressbook/backends/file/e-book-backend-file.c	Fri Mar 23 23:05:19 2012
-@@ -769,7 +769,7 @@ e_book_backend_file_create_unique_id (void)
+--- addressbook/backends/file/e-book-backend-file.c.orig	Mon Apr  9 07:00:58 2012
++++ addressbook/backends/file/e-book-backend-file.c	Mon Apr 16 15:42:48 2012
+@@ -758,7 +758,7 @@ e_book_backend_file_create_unique_id (void)
  	 * it's doubtful 2^32 id's will be created in a second, so we
  	 * should be okay. */
  	static guint c = 0;
