@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/03/29 07:02:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/04/16 20:28:08 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/file-roller
 libexec/file-roller/
@@ -546,6 +546,9 @@ share/locale/bs/LC_MESSAGES/file-roller.mo
 share/locale/ca/LC_MESSAGES/file-roller.mo
 share/locale/ca@valencia/LC_MESSAGES/file-roller.mo
 share/locale/cs/LC_MESSAGES/file-roller.mo
+share/locale/csb/
+share/locale/csb/LC_MESSAGES/
+share/locale/csb/LC_MESSAGES/file-roller.mo
 share/locale/cy/LC_MESSAGES/file-roller.mo
 share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
