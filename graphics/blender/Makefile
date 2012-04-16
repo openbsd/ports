@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2012/04/02 07:11:46 pascal Exp $
+# $OpenBSD: Makefile,v 1.41 2012/04/16 12:03:25 naddy Exp $
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.62
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	graphics
 
