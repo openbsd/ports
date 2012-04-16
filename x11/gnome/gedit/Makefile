@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.83 2012/04/12 17:30:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/04/16 18:15:53 jasper Exp $
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.4.0
-REVISION=		0
+GNOME_VERSION=		3.4.1
 
 CATEGORIES=		editors
 
@@ -52,6 +51,8 @@ CONFIGURE_ARGS=		--disable-static \
 			--enable-gvfs-metadata \
 			--disable-updater \
 			--disable-zeitgeist
+
+REGRESS_IS_INTERACTIVE=	X11
 
 USE_GROFF=		Yes
 
