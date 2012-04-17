@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/17 13:07:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/17 18:12:38 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -7,7 +7,7 @@ TOOL_V= 		4.6.3
 
 GNU_TOOL=		Yes
 
-MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(TOOL_V)/}
 
 DISTFILES=		gcc-core-${TOOL_V}${EXTRACT_SUFX} \
 			gcc-g++-${TOOL_V}${EXTRACT_SUFX}
