@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/17 12:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/17 12:46:17 jasper Exp $
 
 COMMENT=		GNU debugger for msp430
 
@@ -17,8 +17,9 @@ WANTLIB=		c expat m ncurses z
 
 CONFIGURE_ARGS+=	--disable-werror
 
-NO_REGRESS=		Yes
-
 WRKDIST=		${WRKDIR}/${DISTNAME:S/a$//}
+
+# XXX: Tries to install the xml syscall files?
+SEPARATE_BUILD= 	No
 
 .include <bsd.port.mk>

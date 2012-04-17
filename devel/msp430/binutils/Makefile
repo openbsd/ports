@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/17 12:20:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/17 12:46:17 jasper Exp $
 
 COMMENT=		GNU binutils for msp430
 
@@ -14,5 +14,7 @@ WANTLIB=		c z
 CONFIGURE_ARGS+=	--enable-commonbfdlib=no
 
 WRKDIST=		${WRKDIR}/${DISTNAME:S/a$//}
+
+NO_REGRESS=		No
 
 .include <bsd.port.mk>

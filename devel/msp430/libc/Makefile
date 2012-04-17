@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/17 12:21:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/17 12:46:17 jasper Exp $
 
 COMMENT=		libc for msp430
 
@@ -15,6 +15,6 @@ WRKSRC= 		${WRKDIST}/src/
 
 CONFIGURE_STYLE=	# This space intentionally left blank.
 
-NO_REGRESS=		Yes
+SEPARATE_BUILD= 	No
 
 .include <bsd.port.mk>

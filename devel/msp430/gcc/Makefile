@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/17 12:20:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/04/17 12:46:17 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -18,11 +18,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/msp430/binutils>=2.21.1a
 LIB_DEPENDS=            devel/libmpc
 
-NO_REGRESS=		Yes
-
 LANGS=			c,c++
-
-SEPARATE_BUILD= 	Yes
 
 SUBST_VARS+=		VERSION
 

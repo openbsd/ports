@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/17 12:22:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/17 12:46:17 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -12,7 +12,6 @@ CONFIGURE_STYLE=# This space intentionally left blank
 RUN_DEPENDS=	devel/msp430/libc>=20120224
 
 NO_BUILD=	Yes
-NO_REGRESS=	Yes
 
 do-install:
 	cd ${WRKSRC} && \
