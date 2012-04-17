@@ -1,0 +1,30 @@
+$OpenBSD: patch-gio_gresource_c,v 1.1 2012/04/17 13:29:24 jasper Exp $
+
+From 5ef34e5f11b4f71a66615b6506108ee540cc3420 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@gnome.org>
+Date: Mon, 09 Apr 2012 13:34:10 +0000
+Subject: resources: compiler: Fix resources on big endian architectures
+
+https://bugzilla.gnome.org/show_bug.cgi?id=673409
+
+--- gio/gresource.c.orig	Fri Apr 13 15:39:41 2012
++++ gio/gresource.c	Tue Apr 17 15:25:54 2012
+@@ -287,7 +287,7 @@ gboolean do_lookup (GResource             *resource,
+       free_path[path_len-1] = 0;
+     }
+ 
+-  value = gvdb_table_get_value (resource->table, path);
++  value = gvdb_table_get_raw_value (resource->table, path);
+ 
+   if (value == NULL)
+     {
+@@ -304,6 +304,9 @@ gboolean do_lookup (GResource             *resource,
+                      &_size,
+                      &_flags,
+                      &array);
++
++      _size = GUINT32_FROM_LE (_size);
++      _flags = GUINT32_FROM_LE (_flags);
+ 
+       if (size)
+         *size = _size;
