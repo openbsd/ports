@@ -1,0 +1,64 @@
+$OpenBSD: README,v 1.1.1.1 2012/04/17 13:12:28 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Configuring Tomcat to support Railo
+===================================
+Railo is a Java-based CFML engine. It runs as a servlet in a container;
+this package is designed to work with the Apache Tomcat servlet container,
+you will need to make a few configuration changes to tomcat to use it.
+Tomcat's ${CATALINA_BASE}/conf/web.xml file should be edited as follows:
+
+- Add lines after the first <?xml...?> line at the top of the file, so it
+looks like this:
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE root [
+    <!ENTITY railo SYSTEM "./web-railo.xml" >
+]>
+
+- Towards the bottom of web.xml, add the CFML-related file extensions
+to the <welcome-file-list> section:
+
+	<welcome-file-list>
+	    <welcome-file>index.cfm</welcome-file>
+	    <welcome-file>index.cfml</welcome-file>
+	    <welcome-file>index.html</welcome-file>
+	    <welcome-file>index.htm</welcome-file>
+	    <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+- Add "&railo;" at the bottom of the </web-app> section to include the
+"railo" xml entity defined above. This just includes the contents of the
+web-railo.xml file containing the CF-related settings.
+
+	&railo;
+	</web-app>
+
+- Start/restart tomcat:
+
+	/etc/rc.d/tomcat restart
+
+- Connect to http://localhost:8080/. If all goes well you should see the
+default Railo homepage including a couple of samples and links to the
+admin pages.
+
+- Connect to the admin pages and set passwords:
+
+	http://localhost:8080/railo-context/admin/server.cfm
+	http://localhost:8080/railo-context/admin/web.cfm
+
+- You can add pages to /var/tomcat/webapps/ROOT to be used for "localhost".
+Additional host configurations can be added to ${CATALINA_BASE}/conf/server.xml.
+Use the localhost configuration as a template; the _tomcat user will need to be
+able to write to <appBase>/ROOT/WEB-INF, so set ownership and permissions
+accordingly.
+
+- Log files are kept in several locations. Consult them if things don't work
+as expected, and don't forget to rotate/archive them as appropriate.
+
+	${CATALINA_BASE}/logs
+	${CATALINA_BASE}/railo/server-config/railo-server/context/logs
+	${CATALINA_BASE}/railo/web-config/*/logs (various dirs, per-context)

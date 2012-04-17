@@ -1,0 +1,59 @@
+$OpenBSD: patch-WEB-INF_web_xml,v 1.1.1.1 2012/04/17 13:12:28 sthen Exp $
+
+- Strip anything outside of <web-app> tag so this file can be used
+directly as an include in the main tomcat web.xml <web-app> section.
+
+- Specifically set server-root/web-configuration directories rather
+than defaulting to lib/. These must be writable by _tomcat.
+
+- Also note the servlet names are renamed via a regex in the port's
+Makefile. This is because this package installs servlets globally for
+use on multiple hosts, and avoids conflicting servlet names with any
+alternative versions of Railo that are installed via .WAR files in
+a single host.
+http://jamiekrug.com/blog/index.cfm/2009/4/1/railo-jars-on-jboss-or-tomcat-tips-and-tricks
+
+
+--- WEB-INF/web.xml.orig	Mon Apr  9 14:27:42 2012
++++ WEB-INF/web.xml	Mon Apr  9 14:27:42 2012
+@@ -1,8 +1,3 @@
+-<?xml version="1.0" encoding="ISO-8859-1"?>
+-<!DOCTYPE web-app
+-     PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+-    "http://java.sun.com/dtd/web-app_2_3.dtd">
+-<web-app>
+ 	<display-name>Railo</display-name>
+ 	<servlet>
+ 		<servlet-name>PKG_CFMLServlet</servlet-name>
+@@ -10,14 +5,14 @@
+ 		<servlet-class>railo.loader.servlet.CFMLServlet</servlet-class>
+ 		<init-param>
+ 	      <param-name>configuration</param-name>
+-	      <param-value>/WEB-INF/railo/</param-value>
++	      <param-value>/var/tomcat/railo/web-config/{web-context-hash}/</param-value>
+ 	      <description>Configuraton directory</description>
+ 	    </init-param>
+-		<!-- init-param>
++		<init-param>
+ 	      <param-name>railo-server-root</param-name>
+-	      <param-value>.</param-value>
++	      <param-value>/var/tomcat/railo/server-config/</param-value>
+ 	      <description>directory where railo root directory is stored</description>
+-	    </init-param -->
++	    </init-param>
+ 		<load-on-startup>1</load-on-startup>
+ 	</servlet>
+ 	<servlet>
+@@ -96,12 +91,3 @@
+ 		<url-pattern>/</url-pattern>
+ 	</servlet-mapping>
+ 	-->
+-<welcome-file-list>
+-	<welcome-file>index.cfm</welcome-file>
+-	<welcome-file>index.cfml</welcome-file>
+-    <welcome-file>index.html</welcome-file>
+-    <welcome-file>index.htm</welcome-file>
+-    <welcome-file>index.jsp</welcome-file>
+-</welcome-file-list>
+-
+-</web-app>

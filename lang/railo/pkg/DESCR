@@ -1,0 +1,8 @@
+Railo is a high-performance open-source CFML engine. It has good
+compatibility with other CFML engines. Most sites can be ported to
+Railo with very little effort and all of the major CFML frameworks
+support Railo out of the box.
+
+Railo will very probably run your sites faster than any other CFML
+engine, allowing you to handle more load and to provide a better
+experience for end users.

@@ -1,0 +1,135 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/17 13:12:28 sthen Exp $
+@extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
+@extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
+conf/web-railo.xml.dist
+@owner _tomcat
+@group _tomcat
+@sample conf/web-railo.xml
+@group
+@owner
+lib/
+lib/PDFBox.jar
+lib/PDFRenderer.jar
+lib/antlr.jar
+lib/apache-jakarta-commons-codec.jar
+lib/apache-jakarta-commons-collections.jar
+lib/apache-jakarta-commons-compress.jar
+lib/apache-jakarta-commons-discovery.jar
+lib/apache-jakarta-commons-email.jar
+lib/apache-jakarta-commons-fileupload.jar
+lib/apache-jakarta-commons-httpclient.jar
+lib/apache-jakarta-commons-io.jar
+lib/apache-jakarta-commons-lang.jar
+lib/apache-jakarta-commons-logging-adapters.jar
+lib/apache-jakarta-commons-logging-api.jar
+lib/apache-jakarta-commons-logging.jar
+lib/apache-jakarta-commons-net-ftp.jar
+lib/apache-jakarta-commons-net.jar
+lib/apache-jakarta-oro.jar
+lib/apache-logging-log4j.jar
+lib/apache-lucene-analyzers.jar
+lib/apache-lucene-highlighter.jar
+lib/apache-lucene-misc.jar
+lib/apache-lucene-similarity.jar
+lib/apache-lucene-snowball.jar
+lib/apache-lucene-spellchecker.jar
+lib/apache-lucene.jar
+lib/apache-poi-tm-extractors.jar
+lib/apache-ws-axis-ant.jar
+lib/apache-ws-axis.jar
+lib/apache-xml-xalan.jar
+lib/apache-xml-xerces.jar
+lib/backport-util-concurrent.jar
+lib/bcprov-jdk14.jar
+lib/com.naryx.tagfusion.cfx.jar
+lib/concurrent.jar
+lib/dom4j.jar
+lib/ehcache.jar
+lib/flex-messaging-common.jar
+lib/flex-messaging-core.jar
+lib/flex-messaging-opt.jar
+lib/flex-messaging-proxy.jar
+lib/flex-messaging-remoting.jar
+lib/fonts.jar
+lib/fusiondebug-api-server.jar
+lib/h2.jar
+lib/hibernate.jar
+lib/hypersonic-hsqldb.jar
+lib/icepdf-core.jar
+lib/jacob.jar
+lib/javaparser.jar
+lib/javassist.jar
+lib/jcommon.jar
+lib/jencrypt.jar
+lib/jffmpeg.jar
+lib/jfreechart-patch.jar
+lib/jfreechart.jar
+lib/jmimemagic.jar
+lib/joda-time.jar
+lib/jpedal_gpl.jar
+lib/jta.jar
+lib/jtds.jar
+lib/jug.jar
+lib/license-apache.txt
+lib/license-eclipse.txt
+lib/license-hypersonic.txt
+lib/license-jacob.txt
+lib/license-janino.txt
+lib/license-jencrypt.txt
+lib/license-jmimemagic.txt
+lib/license-joda.txt
+lib/license-jtds.txt
+lib/license-mssql.txt
+lib/license-mysql.txt
+lib/license-openamf.txt
+lib/license-pd4ml.txt
+lib/license-pdfbox.txt
+lib/license-sun.txt
+lib/license-tagsoup.txt
+lib/lowagie.itext.jar
+lib/metadata-extractor.jar
+lib/microsoft-msbase.jar
+lib/microsoft-mssqlserver.jar
+lib/microsoft-msutil.jar
+lib/microsoft-sqljdbc.jar
+lib/mysql-connector-java-bin.jar
+lib/objectweb-asm-all.jar
+lib/openamf-astranslator.jar
+lib/openamf.jar
+lib/postgresql.jar
+lib/railo-sl4j.jar
+lib/railo.jar
+lib/serializer.jar
+lib/slf4j-api.jar
+lib/ss_css2.jar
+lib/sun-activation.jar
+lib/sun-jai_codec.jar
+lib/sun-jai_core.jar
+lib/sun-jndi-ldap.jar
+lib/sun-jndi-ldapbp.jar
+lib/sun-jndi-ldapsec.jar
+lib/sun-jndi-providerutil.jar
+lib/sun-mail.jar
+lib/sun-security-jaas.jar
+lib/sun-xml-jaxrpc.jar
+lib/sun-xml-wsdl4j.jar
+lib/sun-xml.saaj.jar
+lib/tagsoup.jar
+lib/versions
+lib/w3c-dom.jar
+lib/xdb.jar
+lib/xml-apis.jar
+lib/xmlparserv2.jar
+@owner _tomcat
+@group _tomcat
+railo/
+@sample railo/server-config/
+@sample railo/web-config/
+railo/index.cfm.dist
+@sample webapps/
+@sample webapps/ROOT/
+@sample webapps/ROOT/index.cfm
+@owner
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
