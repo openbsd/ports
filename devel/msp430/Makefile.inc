@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2012/04/17 13:10:57 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2012/04/17 13:27:17 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -53,7 +53,7 @@ PATCH_DIST_STRIP?=	-p1
 
 EXTRACT_SUFX?=		.tar.bz2
 
-DIST_SUBDIR?=		msp430
+DIST_SUBDIR?=		${TARGET}
 
 CONFIGURE_STYLE?=	gnu
 CONFIGURE_ARGS+=	--target=msp430		\
