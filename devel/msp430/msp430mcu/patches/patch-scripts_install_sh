@@ -1,0 +1,20 @@
+$OpenBSD: patch-scripts_install_sh,v 1.1 2012/04/17 12:22:02 jasper Exp $
+--- scripts/install.sh.orig	Fri Apr  6 15:19:43 2012
++++ scripts/install.sh	Sun Apr 15 19:37:11 2012
+@@ -33,10 +33,15 @@ install -p -m 0644 ${ANALYSIS}/msp430mcu.spec ${LIBPAT
+ cp -pr ${ANALYSIS}/ldscripts ${LIBPATH}
+ chmod -R og+rX ${LIBPATH}/ldscripts
+ 
++# After doing fancy pansy stuff with the previously set variables, correct
++# it so that it doesn't contain the build directory anymore.
++INCPATH=${TRUEPREFIX}/msp430/include
++LIBPATH=${TRUEPREFIX}/msp430/lib
++
+ # Install utility that tells where everything got installed
+ cat bin/msp430mcu-config.in \
+ | sed \
+-    -e 's!@PREFIX@!'"${PREFIX}"'!g' \
++    -e 's!@PREFIX@!'"${TRUEPREFIX}"'!g' \
+     -e 's!@SCRIPTPATH@!'"${LIBPATH}/ldscripts"'!g' \
+     -e 's!@INCPATH@!'"${INCPATH}"'!g' \
+     -e 's!@VERSION@!'"${VERSION}"'!g' \
