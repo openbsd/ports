@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2012/03/29 07:21:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2012/04/17 08:19:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	remote desktop viewer for GNOME
 
-GNOME_VERSION=	3.4.0
 GNOME_PROJECT=	vinagre
+GNOME_VERSION=	3.4.1
 
 CATEGORIES=	net
 
