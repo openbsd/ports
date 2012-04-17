@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.13 2012/04/17 12:23:10 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2012/04/17 12:25:01 jasper Exp $
+
+#
+# XXX: Don't forget to adjust meta/msp430 when updating to new LTS
+#
 
 TARGET=			msp430
 
