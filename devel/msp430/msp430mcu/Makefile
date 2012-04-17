@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/17 13:01:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/17 13:07:36 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -6,8 +6,6 @@ COMMENT=	C headers and binutils linker scripts for msp430
 
 TOOL=		msp430mcu
 TOOL_V= 	${LTS_V}
-
-PKGNAME=	${DISTNAME} # We don't want 'msp430' prepended.
 
 PATCHFILES=	# This space intentionally left blank.
 CONFIGURE_STYLE=# This space intentionally left blank

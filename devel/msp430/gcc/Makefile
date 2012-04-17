@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/17 13:01:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/17 13:07:36 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
+
+GNU_TOOL=		Yes
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 
@@ -18,7 +20,7 @@ LIB_DEPENDS=            devel/libmpc
 
 LANGS=			c,c++
 
-SUBST_VARS+=		VERSION
+SUBST_VARS+=		TOOL_V
 
 CONFIGURE_ARGS+= 	--enable-languages=${LANGS} 	\
 			--enable-cpp			\

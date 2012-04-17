@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2012/04/17 13:01:56 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2012/04/17 13:07:36 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -7,7 +7,10 @@
 TARGET=			msp430
 
 DISTNAME?=		${TOOL}-${TOOL_V}
+
+.if defined(GNU_TOOL) && ${GNU_TOOL:L:Myes}
 PKGNAME?=		${TARGET}-${DISTNAME}
+.endif
 
 LTS_V?=			20120406
 
