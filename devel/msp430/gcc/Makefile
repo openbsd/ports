@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.19 2012/04/17 12:46:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2012/04/17 13:01:56 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
-VERSION=		4.6.3
-R=			20120406
-DISTNAME=		gcc-${VERSION}
+TOOL=			gcc
+TOOL_V= 		4.6.3
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
-PATCHFILES=		msp430-gcc-${VERSION}-${R}.patch:0
 
-DISTFILES=		gcc-core-${VERSION}${EXTRACT_SUFX} \
-			gcc-g++-${VERSION}${EXTRACT_SUFX}
+DISTFILES=		gcc-core-${TOOL_V}${EXTRACT_SUFX} \
+			gcc-g++-${TOOL_V}${EXTRACT_SUFX}
 
 WANTLIB +=		c gmp mpc mpfr
 
@@ -33,6 +31,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/lib/gcc/${TARGET}/${VERSION}/
+		${PREFIX}/lib/gcc/${TARGET}/${TOOL_V}/
 
 .include <bsd.port.mk>
