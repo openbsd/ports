@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2011/11/11 18:38:17 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2012/04/17 12:23:10 jasper Exp $
 
 TARGET=			msp430
 
@@ -30,7 +30,7 @@ MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 MASTER_SITES0=		http://distfiles.nl/mspgcc/
 
 # These are the patches intended for the LTS releases.
-MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/20110716/}
+#MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/20120406/}
 
 .for p in ${LTS_PATCHES}
 PATCHFILES += $p:1
