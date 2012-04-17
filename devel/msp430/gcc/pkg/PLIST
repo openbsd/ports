@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/05 08:00:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/17 12:20:46 jasper Exp $
 @bin bin/msp430-c++
 @bin bin/msp430-cpp
 @bin bin/msp430-g++
 @bin bin/msp430-gcc
-@bin bin/msp430-gcc-${VERSION}
-bin/msp430-gccbug
+@bin bin/${FULLPKGNAME}
 @bin bin/msp430-gcov
 lib/gcc/
 lib/gcc/msp430/
@@ -62,6 +61,136 @@ lib/gcc/msp430/${VERSION}/mmpy-16/libcrt0.a
 lib/gcc/msp430/${VERSION}/mmpy-16/libcrt0dwdt.a
 lib/gcc/msp430/${VERSION}/mmpy-16/libgcc.a
 lib/gcc/msp430/${VERSION}/mmpy-16/libgcov.a
+lib/gcc/msp430/${VERSION}/plugin/
+lib/gcc/msp430/${VERSION}/plugin/include/
+lib/gcc/msp430/${VERSION}/plugin/include/alias.h
+lib/gcc/msp430/${VERSION}/plugin/include/all-tree.def
+lib/gcc/msp430/${VERSION}/plugin/include/ansidecl.h
+lib/gcc/msp430/${VERSION}/plugin/include/auto-host.h
+lib/gcc/msp430/${VERSION}/plugin/include/b-header-vars
+lib/gcc/msp430/${VERSION}/plugin/include/basic-block.h
+lib/gcc/msp430/${VERSION}/plugin/include/bitmap.h
+lib/gcc/msp430/${VERSION}/plugin/include/builtins.def
+lib/gcc/msp430/${VERSION}/plugin/include/bversion.h
+lib/gcc/msp430/${VERSION}/plugin/include/c-common.h
+lib/gcc/msp430/${VERSION}/plugin/include/c-family/
+lib/gcc/msp430/${VERSION}/plugin/include/c-family/c-common.def
+lib/gcc/msp430/${VERSION}/plugin/include/c-objc.h
+lib/gcc/msp430/${VERSION}/plugin/include/c-pragma.h
+lib/gcc/msp430/${VERSION}/plugin/include/c-pretty-print.h
+lib/gcc/msp430/${VERSION}/plugin/include/cfghooks.h
+lib/gcc/msp430/${VERSION}/plugin/include/cfgloop.h
+lib/gcc/msp430/${VERSION}/plugin/include/cgraph.h
+lib/gcc/msp430/${VERSION}/plugin/include/cif-code.def
+lib/gcc/msp430/${VERSION}/plugin/include/config/
+lib/gcc/msp430/${VERSION}/plugin/include/config.h
+lib/gcc/msp430/${VERSION}/plugin/include/config/dbxelf.h
+lib/gcc/msp430/${VERSION}/plugin/include/config/msp430/
+lib/gcc/msp430/${VERSION}/plugin/include/config/msp430/msp430-protos.h
+lib/gcc/msp430/${VERSION}/plugin/include/config/msp430/msp430.h
+lib/gcc/msp430/${VERSION}/plugin/include/configargs.h
+lib/gcc/msp430/${VERSION}/plugin/include/coretypes.h
+lib/gcc/msp430/${VERSION}/plugin/include/cp/
+lib/gcc/msp430/${VERSION}/plugin/include/cp/cp-tree.def
+lib/gcc/msp430/${VERSION}/plugin/include/cp/cp-tree.h
+lib/gcc/msp430/${VERSION}/plugin/include/cp/cxx-pretty-print.h
+lib/gcc/msp430/${VERSION}/plugin/include/cp/name-lookup.h
+lib/gcc/msp430/${VERSION}/plugin/include/cppdefault.h
+lib/gcc/msp430/${VERSION}/plugin/include/cpplib.h
+lib/gcc/msp430/${VERSION}/plugin/include/debug.h
+lib/gcc/msp430/${VERSION}/plugin/include/defaults.h
+lib/gcc/msp430/${VERSION}/plugin/include/diagnostic-core.h
+lib/gcc/msp430/${VERSION}/plugin/include/diagnostic.def
+lib/gcc/msp430/${VERSION}/plugin/include/diagnostic.h
+lib/gcc/msp430/${VERSION}/plugin/include/double-int.h
+lib/gcc/msp430/${VERSION}/plugin/include/emit-rtl.h
+lib/gcc/msp430/${VERSION}/plugin/include/except.h
+lib/gcc/msp430/${VERSION}/plugin/include/filenames.h
+lib/gcc/msp430/${VERSION}/plugin/include/fixed-value.h
+lib/gcc/msp430/${VERSION}/plugin/include/flag-types.h
+lib/gcc/msp430/${VERSION}/plugin/include/flags.h
+lib/gcc/msp430/${VERSION}/plugin/include/function.h
+lib/gcc/msp430/${VERSION}/plugin/include/gcc-plugin.h
+lib/gcc/msp430/${VERSION}/plugin/include/genrtl.h
+lib/gcc/msp430/${VERSION}/plugin/include/ggc.h
+lib/gcc/msp430/${VERSION}/plugin/include/gimple.def
+lib/gcc/msp430/${VERSION}/plugin/include/gimple.h
+lib/gcc/msp430/${VERSION}/plugin/include/gsstruct.def
+lib/gcc/msp430/${VERSION}/plugin/include/gtype-desc.h
+lib/gcc/msp430/${VERSION}/plugin/include/hard-reg-set.h
+lib/gcc/msp430/${VERSION}/plugin/include/hashtab.h
+lib/gcc/msp430/${VERSION}/plugin/include/highlev-plugin-common.h
+lib/gcc/msp430/${VERSION}/plugin/include/hwint.h
+lib/gcc/msp430/${VERSION}/plugin/include/incpath.h
+lib/gcc/msp430/${VERSION}/plugin/include/input.h
+lib/gcc/msp430/${VERSION}/plugin/include/insn-constants.h
+lib/gcc/msp430/${VERSION}/plugin/include/insn-flags.h
+lib/gcc/msp430/${VERSION}/plugin/include/insn-modes.h
+lib/gcc/msp430/${VERSION}/plugin/include/insn-notes.def
+lib/gcc/msp430/${VERSION}/plugin/include/intl.h
+lib/gcc/msp430/${VERSION}/plugin/include/ipa-prop.h
+lib/gcc/msp430/${VERSION}/plugin/include/ipa-ref-inline.h
+lib/gcc/msp430/${VERSION}/plugin/include/ipa-ref.h
+lib/gcc/msp430/${VERSION}/plugin/include/ipa-reference.h
+lib/gcc/msp430/${VERSION}/plugin/include/ipa-utils.h
+lib/gcc/msp430/${VERSION}/plugin/include/langhooks.h
+lib/gcc/msp430/${VERSION}/plugin/include/libiberty.h
+lib/gcc/msp430/${VERSION}/plugin/include/line-map.h
+lib/gcc/msp430/${VERSION}/plugin/include/machmode.h
+lib/gcc/msp430/${VERSION}/plugin/include/md5.h
+lib/gcc/msp430/${VERSION}/plugin/include/mode-classes.def
+lib/gcc/msp430/${VERSION}/plugin/include/obstack.h
+lib/gcc/msp430/${VERSION}/plugin/include/omp-builtins.def
+lib/gcc/msp430/${VERSION}/plugin/include/options.h
+lib/gcc/msp430/${VERSION}/plugin/include/opts.h
+lib/gcc/msp430/${VERSION}/plugin/include/output.h
+lib/gcc/msp430/${VERSION}/plugin/include/params.def
+lib/gcc/msp430/${VERSION}/plugin/include/params.h
+lib/gcc/msp430/${VERSION}/plugin/include/plugin-api.h
+lib/gcc/msp430/${VERSION}/plugin/include/plugin-version.h
+lib/gcc/msp430/${VERSION}/plugin/include/plugin.def
+lib/gcc/msp430/${VERSION}/plugin/include/plugin.h
+lib/gcc/msp430/${VERSION}/plugin/include/pointer-set.h
+lib/gcc/msp430/${VERSION}/plugin/include/predict.def
+lib/gcc/msp430/${VERSION}/plugin/include/predict.h
+lib/gcc/msp430/${VERSION}/plugin/include/prefix.h
+lib/gcc/msp430/${VERSION}/plugin/include/pretty-print.h
+lib/gcc/msp430/${VERSION}/plugin/include/real.h
+lib/gcc/msp430/${VERSION}/plugin/include/reg-notes.def
+lib/gcc/msp430/${VERSION}/plugin/include/rtl.def
+lib/gcc/msp430/${VERSION}/plugin/include/rtl.h
+lib/gcc/msp430/${VERSION}/plugin/include/safe-ctype.h
+lib/gcc/msp430/${VERSION}/plugin/include/sbitmap.h
+lib/gcc/msp430/${VERSION}/plugin/include/splay-tree.h
+lib/gcc/msp430/${VERSION}/plugin/include/statistics.h
+lib/gcc/msp430/${VERSION}/plugin/include/symtab.h
+lib/gcc/msp430/${VERSION}/plugin/include/sync-builtins.def
+lib/gcc/msp430/${VERSION}/plugin/include/system.h
+lib/gcc/msp430/${VERSION}/plugin/include/target.def
+lib/gcc/msp430/${VERSION}/plugin/include/target.h
+lib/gcc/msp430/${VERSION}/plugin/include/timevar.def
+lib/gcc/msp430/${VERSION}/plugin/include/timevar.h
+lib/gcc/msp430/${VERSION}/plugin/include/tm-preds.h
+lib/gcc/msp430/${VERSION}/plugin/include/tm.h
+lib/gcc/msp430/${VERSION}/plugin/include/tm_p.h
+lib/gcc/msp430/${VERSION}/plugin/include/toplev.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-check.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-dump.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-flow-inline.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-flow.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-inline.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-iterator.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-pass.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-ssa-alias.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-ssa-operands.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree-ssa-sccvn.h
+lib/gcc/msp430/${VERSION}/plugin/include/tree.def
+lib/gcc/msp430/${VERSION}/plugin/include/tree.h
+lib/gcc/msp430/${VERSION}/plugin/include/treestruct.def
+lib/gcc/msp430/${VERSION}/plugin/include/vec.h
+lib/gcc/msp430/${VERSION}/plugin/include/vecir.h
+lib/gcc/msp430/${VERSION}/plugin/include/vecprim.h
+lib/gcc/msp430/${VERSION}/plugin/include/version.h
 libexec/gcc/
 libexec/gcc/msp430/
 libexec/gcc/msp430/${VERSION}/
@@ -78,3 +207,6 @@ libexec/gcc/msp430/${VERSION}/install-tools/mkinstalldirs
 @man man/man1/msp430-g++.1
 @man man/man1/msp430-gcc.1
 @man man/man1/msp430-gcov.1
+msp430/lib/mcpu-430x/
+msp430/lib/mcpu-430x/mmpy-16/
+msp430/lib/mmpy-16/

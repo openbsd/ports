@@ -1,21 +1,21 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.2 2011/09/05 08:00:33 jasper Exp $
+$OpenBSD: patch-libgcc_Makefile_in,v 1.3 2012/04/17 12:20:46 jasper Exp $
 
 Using $(INSTALL_DATA) and chmod generates errors as the operation
 is not permitted. So use plain copy mode and chown/chgrp
 in the post-install target.
 
---- libgcc/Makefile.in.orig	Tue Mar 30 15:08:52 2010
-+++ libgcc/Makefile.in	Thu Sep  1 18:58:32 2011
-@@ -901,7 +901,7 @@ gcc-extra-parts:
+--- libgcc/Makefile.in.orig	Sun Apr 15 18:47:00 2012
++++ libgcc/Makefile.in	Sun Apr 15 18:48:38 2012
+@@ -912,7 +912,7 @@ gcc-extra-parts:
  	parts="$(GCC_EXTRA_PARTS)";				\
  	for file in $$parts; do					\
  	  rm -f $(gcc_objdir)$(MULTISUBDIR)/$$file;		\
 -	  $(INSTALL_DATA) $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
 +	  install -c $$file $(gcc_objdir)$(MULTISUBDIR)/;	\
- 	done
- 
- all: $(extra-parts)
-@@ -946,17 +946,15 @@ install-shared:
+ 	  case $$file in 					\
+ 	    *.a)						\
+ 	      $(RANLIB) $(gcc_objdir)$(MULTISUBDIR)/$$file ;;	\
+@@ -961,17 +961,15 @@ install-shared:
  install-leaf: $(install-shared) $(install-libunwind)
  	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
  
@@ -33,6 +33,6 @@ in the post-install target.
  	  rm -f $(DESTDIR)$(inst_libdir)/$$file;		\
 -	  $(INSTALL_DATA) $$file $(DESTDIR)$(inst_libdir)/;	\
 +	  install -c $$file $(DESTDIR)$(inst_libdir)/;	\
- 	done
- 
- install: install-leaf
+ 	  case $$file in 					\
+ 	    *.a)						\
+ 	      $(RANLIB) $(gcc_objdir)$(MULTISUBDIR)/$$file ;;	\

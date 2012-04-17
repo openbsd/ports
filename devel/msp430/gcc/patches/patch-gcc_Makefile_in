@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_Makefile_in,v 1.2 2011/09/05 08:00:33 jasper Exp $
---- gcc/Makefile.in.orig	Thu Sep  2 15:05:30 2010
-+++ gcc/Makefile.in	Thu Sep  1 18:58:32 2011
-@@ -4380,13 +4380,7 @@ install-driver: installdirs xgcc$(exeext)
+$OpenBSD: patch-gcc_Makefile_in,v 1.3 2012/04/17 12:20:46 jasper Exp $
+--- gcc/Makefile.in.orig	Sat Aug 20 09:51:09 2011
++++ gcc/Makefile.in	Sun Apr 15 18:49:58 2012
+@@ -4607,13 +4607,7 @@ install-driver: installdirs xgcc$(exeext)
  # Install the info files.
  # $(INSTALL_DATA) might be a relative pathname, so we can't cd into srcdir
  # to do the install.
@@ -16,7 +16,7 @@ $OpenBSD: patch-gcc_Makefile_in,v 1.2 2011/09/05 08:00:33 jasper Exp $
  
  $(DESTDIR)$(infodir)/%.info: doc/%.info installdirs
  	rm -f $@
-@@ -4438,10 +4432,7 @@ install-html: $(HTMLS_BUILD) lang.install-html
+@@ -4665,10 +4659,7 @@ install-html: $(HTMLS_BUILD) lang.install-html
  install-man: lang.install-man \
  	$(DESTDIR)$(man1dir)/$(GCC_INSTALL_NAME)$(man1ext) \
  	$(DESTDIR)$(man1dir)/$(CPP_INSTALL_NAME)$(man1ext) \

@@ -1,12 +1,12 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2011/09/05 08:00:33 jasper Exp $
---- libiberty/Makefile.in.orig	Tue Mar  2 07:09:56 2010
-+++ libiberty/Makefile.in	Thu Sep  1 18:58:32 2011
-@@ -321,7 +321,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
+$OpenBSD: patch-libiberty_Makefile_in,v 1.3 2012/04/17 12:20:46 jasper Exp $
+--- libiberty/Makefile.in.orig	Sun Apr 15 18:48:58 2012
++++ libiberty/Makefile.in	Sun Apr 15 18:49:14 2012
+@@ -340,7 +340,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@
 -install: install_to_$(INSTALL_DEST) install-subdir
 +install:
+ install-strip: install
  
- # This is tricky.  Even though CC in the Makefile contains
- # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
+ .PHONY: install install-strip
