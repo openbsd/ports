@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/17 13:07:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/17 13:10:58 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -7,7 +7,6 @@ COMMENT=	C headers and binutils linker scripts for msp430
 TOOL=		msp430mcu
 TOOL_V= 	${LTS_V}
 
-PATCHFILES=	# This space intentionally left blank.
 CONFIGURE_STYLE=# This space intentionally left blank
 
 RUN_DEPENDS=	devel/msp430/libc>=20120224
