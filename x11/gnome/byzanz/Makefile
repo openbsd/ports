@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/12/03 22:17:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/17 10:51:11 jasper Exp $
 
 COMMENT=		simple desktop recording tool
 
-# git clone of b5a46ddca3b2b207f7f6ba444f9e0f02dc23128e
-GNOME_VERSION=		0.2.3.1
+# git clone of b362a1af7cd50f5752ec1114311fe24a188b31d1
+GNOME_VERSION=		0.2.3.2
 GNOME_PROJECT=		byzanz
-REVISION=		3
 
 CATEGORIES=		multimedia
 

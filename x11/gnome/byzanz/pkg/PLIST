@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/03 22:17:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/17 10:51:11 jasper Exp $
 @bin bin/byzanz-playback
 @bin bin/byzanz-record
 @bin libexec/byzanz-applet
@@ -6,30 +6,32 @@
 @man man/man1/byzanz-record.1
 share/byzanz/
 share/byzanz/byzanzapplet.xml
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.gnome.panel.applet.ByzanzAppletFactory.service
 share/gnome-panel/
 share/gnome-panel/4.0/
 share/gnome-panel/4.0/applets/
 share/gnome-panel/4.0/applets/org.gnome.ByzanzApplet.panel-applet
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/byzanz-record-area.png
 share/icons/hicolor/22x22/apps/byzanz-record-desktop.png
 share/icons/hicolor/22x22/apps/byzanz-record-window.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/byzanz-record-area.svg
 share/icons/hicolor/scalable/apps/byzanz-record-desktop.svg
 share/icons/hicolor/scalable/apps/byzanz-record-window.svg
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/byzanz.mo
 share/locale/ca/LC_MESSAGES/byzanz.mo
 share/locale/cs/LC_MESSAGES/byzanz.mo
 share/locale/da/LC_MESSAGES/byzanz.mo
 share/locale/de/LC_MESSAGES/byzanz.mo
+share/locale/dz/
+share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/byzanz.mo
 share/locale/el/LC_MESSAGES/byzanz.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/byzanz.mo
 share/locale/es/LC_MESSAGES/byzanz.mo
 share/locale/fi/LC_MESSAGES/byzanz.mo
@@ -40,6 +42,8 @@ share/locale/id/LC_MESSAGES/byzanz.mo
 share/locale/it/LC_MESSAGES/byzanz.mo
 share/locale/ja/LC_MESSAGES/byzanz.mo
 share/locale/nb/LC_MESSAGES/byzanz.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
 share/locale/oc/LC_MESSAGES/byzanz.mo
 share/locale/pl/LC_MESSAGES/byzanz.mo
 share/locale/pt_BR/LC_MESSAGES/byzanz.mo
