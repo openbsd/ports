@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2012/03/31 12:40:59 jsing Exp $
+# $OpenBSD: Makefile,v 1.133 2012/04/17 13:12:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -69,6 +69,7 @@
      SUBDIR += processing
      SUBDIR += pugs
      SUBDIR += python
+     SUBDIR += railo
      SUBDIR += rakudo
      SUBDIR += rubinius
      SUBDIR += ruby
