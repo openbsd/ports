@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2012/03/29 06:47:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2012/04/17 10:48:00 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	3.4.0
+GNOME_VERSION=	3.4.1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

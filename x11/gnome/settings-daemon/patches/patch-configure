@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.7 2012/03/29 06:47:51 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.8 2012/04/17 10:48:01 jasper Exp $
 
 No libwacom on OpenBSD (depends on gudev).
 
---- configure.orig	Mon Mar 26 18:16:51 2012
-+++ configure	Mon Mar 26 18:33:34 2012
-@@ -19121,98 +19121,6 @@ fi
+--- configure.orig	Mon Apr 16 14:37:16 2012
++++ configure	Tue Apr 17 12:42:32 2012
+@@ -19009,98 +19009,6 @@ fi
  
  
  
