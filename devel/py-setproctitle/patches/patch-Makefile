@@ -1,0 +1,27 @@
+$OpenBSD: patch-Makefile,v 1.1 2012/04/17 13:00:43 mpi Exp $
+
+Copy missing file for python3 flavor and remove non supported cp option.
+
+--- Makefile.orig	Mon Feb  6 13:49:36 2012
++++ Makefile	Sun Apr  8 15:58:50 2012
+@@ -29,7 +29,7 @@
+ check: build tests/pyrun2
+ 	PYTHONPATH=`pwd`/$(BUILD_DIR):$$PYTHONPATH \
+ 	ROOT_PATH=$(ROOT_PATH) \
+-	$(PYTHON) `which nosetests` -v -s -w tests
++	$(PYTHON) tests/setproctitle_test.py -v
+ 
+ tests/pyrun2: tests/pyrun.c
+ 	$(CC) $(PYINC) -o $@ $< $(PYLIB)
+@@ -48,9 +48,10 @@
+ 	$(MKDIR) py3
+ 	$(MKDIR) py3/src
+ 	$(MKDIR) py3/tests
+-	for f in `grep -v "#" MANIFEST`; do cp -v $$f py3/$$f; done
++	for f in `grep -v "#" MANIFEST`; do cp $$f py3/$$f; done
+ 	# setup.py should be executable with python3 as distribute
+ 	# currenlty doesn't seem to try to convert it
++	cp tests/setproctitle_test.py py3/tests
+ 	$(PY2TO3) -w --no-diffs py3/tests
+ 
+ tests/pyrun3: tests/pyrun.c

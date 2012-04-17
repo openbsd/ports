@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/19 10:37:41 mpi Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/17 13:00:43 mpi Exp $
 
 COMMENT =		library for getting/setting process names
 
-MODPY_EGG_VERSION=	1.1.3
+MODPY_EGG_VERSION=	1.1.5
 DISTNAME =		setproctitle-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -22,6 +22,9 @@ MASTER_SITES=		${MASTER_SITE_PYPI:=s/setproctitle/}
 
 MODULES =		lang/python
 
+FLAVORS =		python3
+FLAVOR ?=
+
 WANTLIB +=		${MODPY_WANTLIB}
 
 BUILD_DIR =		build/lib.${MODPY_VERSION}
@@ -29,10 +32,10 @@ MODPY_DISTUTILS_BUILDARGS = --build-lib ${BUILD_DIR}
 
 REGRESS_DEPENDS =	devel/gmake
 
-MAKE_ENV +=		PYTHON="${MODPY_BIN}" PYCONFIG="${MODPY_BIN}-config"
+MAKE_ENV +=		PYTHON="${MODPY_BIN}" PYCONFIG="${MODPY_BIN}-config" \
+			PY2TO3="2to3-${MODPY_VERSION}"
 
 do-regress:
-	cd ${WRKSRC} && gmake ${MAKE_ENV} tests/pyrun && \
-	PYTHONPATH=${BUILD_DIR} ${MODPY_BIN} tests/setproctitle_test.py
+	cd ${WRKSRC} && gmake ${MAKE_ENV} check
 
 .include <bsd.port.mk>
