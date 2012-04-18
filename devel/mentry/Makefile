@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/10/21 16:23:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/18 09:42:19 stu Exp $
 
 COMMENT =	multi-entry widget package for Tcl/Tk
 
 N =		mentry
-DISTNAME =	$N3.4
-PKGNAME =	$N-3.4
+DISTNAME =	$N3.6
+PKGNAME =	$N-3.6
 CATEGORIES =	devel
 HOMEPAGE =	http://www.nemethi.de/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
