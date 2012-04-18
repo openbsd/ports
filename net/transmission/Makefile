@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.74 2012/04/07 10:55:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.75 2012/04/18 10:46:07 naddy Exp $
 
 COMMENT-main=	BitTorrent command line and daemon client
 COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
-VER=		2.50
+VER=		2.51
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
@@ -81,6 +81,9 @@ CONFIGURE_ARGS+=--disable-utp
 CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/third-party -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+QMAKE_ARGS=	QMAKE_CXX="${CXX}" \
+		QMAKE_CXXFLAGS="${CXXFLAGS}"
+
 .include <bsd.port.arch.mk>
 
 .if !${BUILD_PACKAGES:M-gtk}
@@ -89,7 +92,7 @@ CONFIGURE_ARGS+=--without-gtk
 
 .if ${BUILD_PACKAGES:M-qt}
 post-build:
-	cd ${WRKSRC}/qt; qmake4 qtr.pro; make ${MAKE_FLAGS}
+	cd ${WRKSRC}/qt; qmake4 ${QMAKE_ARGS} qtr.pro; make ${MAKE_FLAGS}
 
 post-install:
 	cd ${WRKSRC}/qt; make ${MAKE_FLAGS} install INSTALL_ROOT=${PREFIX} \
