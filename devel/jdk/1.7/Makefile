@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.47 2012/04/12 22:27:20 matthew Exp $
+# $OpenBSD: Makefile,v 1.48 2012/04/18 03:41:56 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT-main=	Java2(TM) SE Dev Kit v${V}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
-V=		1.7.0.02
+V=		1.7.0.03
 B=		b13
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}
 PKGNAME-jre=	jre-${V}
 EPOCH=		0
-REVISION=	0
 
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
@@ -21,9 +20,10 @@ JAXP_SRC=	jaxp145_01.zip
 JAXWS_SRC=	jdk7-jaxws2_2_4-b04-2011_06_01.zip
 JAF_SRC=	jdk7-jaf-2010_08_19.zip
 PATCH_SET=	openjdk-7u2-patch-set-20120314.zip
+PATCH_SET2=	openjdk-7u3-patch-set-20120417.zip
 
-DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:2 ${PATCH_SET}:3
-EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
+DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:2 ${PATCH_SET}:3 ${PATCH_SET2}:3
+EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET} ${PATCH_SET2}
 DIST_SUBDIR=	jdk
 
 CATEGORIES=	devel/jdk java
@@ -100,8 +100,8 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		CXX="${CXX}" \
 		USERNAME=${USER} \
 		MILESTONE=fcs \
-		BUILD_NUMBER=b13 \
-		JDK_UPDATE_VERSION=02 \
+		BUILD_NUMBER=b04 \
+		JDK_UPDATE_VERSION=03 \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 #ALL_TARGET=	debug_build
@@ -185,6 +185,8 @@ post-extract:
 		${WRKDIST}/jdk/src/solaris/native/com/sun/media/sound
 	@cd ${WRKDIST} && \
 		${PATCH} -p0 -z .orig.linux --quiet < ${WRKDIR}/${PATCH_SET:R}
+	@cd ${WRKDIST} && \
+		${PATCH} -p0 -z .orig.u2 --quiet < ${WRKDIR}/${PATCH_SET2:R}
 	@perl -pi -e 's|build-policy install-limited|build-policy install-unlimited|' \
 		${WRKDIST}/jdk/make/javax/crypto/Makefile
 
