@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1032 2012/04/13 20:41:47 okan Exp $
+# $OpenBSD: Makefile,v 1.1033 2012/04/18 09:36:26 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -841,6 +841,7 @@
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Term-Shell
+     SUBDIR += p5-Term-Size
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-CheckManifest
