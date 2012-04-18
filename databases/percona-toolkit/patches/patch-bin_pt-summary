@@ -1,64 +1,9 @@
-$OpenBSD: patch-bin_pt-summary,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
---- bin/pt-summary.orig	Mon Feb  6 21:52:31 2012
-+++ bin/pt-summary	Fri Feb 24 09:22:49 2012
+$OpenBSD: patch-bin_pt-summary,v 1.2 2012/04/18 13:24:21 giovanni Exp $
+--- bin/pt-summary.orig	Tue Apr  3 21:51:38 2012
++++ bin/pt-summary	Wed Apr 18 15:08:55 2012
 @@ -1,4 +1,4 @@
 -#!/bin/sh
 +#!${LOCALBASE}/bin/bash
  
  # This program is part of Percona Toolkit: http://www.percona.com/software/
  # See "COPYRIGHT, LICENSE, AND WARRANTY" at the end of this file for legal
-@@ -219,6 +219,15 @@ parse_sysctl_cpu_freebsd() {
- }
- 
- # ##############################################################################
-+# Detect cpu info on OpenBSD, and format it as CPU info
-+# ##############################################################################
-+parse_sysctl_cpu_openbsd() {
-+   name_val "Processors" "$(sysctl -n hw.ncpu)"
-+   name_val "Speeds" "$(sysctl -n hw.cpuspeed)"
-+   name_val "Models" "$(sysctl -n hw.model)"
-+}
-+
-+# ##############################################################################
- # Parse CPU info from psrinfo -v
- # ##############################################################################
- parse_psrinfo_cpus() {
-@@ -274,6 +283,17 @@ parse_memory_sysctl_freebsd() {
- }
- 
- # ##############################################################################
-+# Parse OpenBSD memory info from sysctl output.
-+# ##############################################################################
-+parse_memory_sysctl_openbsd() {
-+   swap_mem=$(swapctl -s | awk '{print $2;}')
-+   swap_mem=$(bc -e $swap_mem*512 -e quit)
-+   name_val Total   $(shorten $(sysctl -n hw.physmem) 1)
-+   name_val User    $(shorten $(sysctl -n hw.usermem) 1)
-+   name_val Swap    $(shorten ${swap_mem} 1)
-+}
-+
-+# ##############################################################################
- # Parse memory devices from the output of 'dmidecode'.
- # ##############################################################################
- parse_dmidecode_mem_devices () {
-@@ -929,6 +949,9 @@ main () {
-    elif [ "${platform}" = "FreeBSD" ]; then
-       release="$(uname -r)"
-       kernel="$(sysctl -n kern.osrevision)"
-+   elif [ "${platform}" = "OpenBSD" ]; then
-+      release="$(uname -r)"
-+      kernel="$(sysctl -n kern.version | awk '{print $2;}')"
-    elif [ "${platform}" = "SunOS" ]; then
-       release="$(head -n1 /etc/release)"
-       if [ -z "${release}" ]; then
-@@ -947,6 +970,10 @@ main () {
-       fi
-    elif [ "${platform}" = "FreeBSD" ]; then
-       if sysctl hw.machine_arch | grep -v 'i[36]86' >/dev/null; then
-+         CPU_ARCH='64-bit'
-+      fi
-+   elif [ "${platform}" = "OpenBSD" ]; then
-+      if arch -s | grep '64' >/dev/null; then
-          CPU_ARCH='64-bit'
-       fi
-    elif [ "${platform}" = "SunOS" ]; then
