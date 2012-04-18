@@ -1,0 +1,11 @@
+Command line interface to a local Icinga server (mostly compatible
+with Nagios), featuring:
+
+- Listing of service/host states, check queue or downtimes
+- Detailed service/host info
+- Scheduling of service rechecks, acknowledging of problems
+- Detailed filtering (host/group/service name, state, acknowledged, etc.)
+
+Flavors:
+	(default):	use file locations for Icinga
+	nagios:		use file locations for Nagios
