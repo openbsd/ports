@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/30 19:40:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/04/18 20:18:43 jasper Exp $
 bin/clojure
 clojure/
 clojure/clj_completions
@@ -19,6 +19,7 @@ clojure/src/clj/clojure/data.clj
 clojure/src/clj/clojure/genclass.clj
 clojure/src/clj/clojure/gvec.clj
 clojure/src/clj/clojure/inspector.clj
+clojure/src/clj/clojure/instant.clj
 clojure/src/clj/clojure/java/
 clojure/src/clj/clojure/java/browse.clj
 clojure/src/clj/clojure/java/browse_ui.clj
@@ -48,6 +49,7 @@ clojure/src/clj/clojure/test/
 clojure/src/clj/clojure/test.clj
 clojure/src/clj/clojure/test/junit.clj
 clojure/src/clj/clojure/test/tap.clj
+clojure/src/clj/clojure/uuid.clj
 clojure/src/clj/clojure/walk.clj
 clojure/src/clj/clojure/xml.clj
 clojure/src/clj/clojure/zip.clj
@@ -117,6 +119,7 @@ clojure/src/jvm/clojure/lang/Counted.java
 clojure/src/jvm/clojure/lang/Delay.java
 clojure/src/jvm/clojure/lang/DynamicClassLoader.java
 clojure/src/jvm/clojure/lang/EnumerationSeq.java
+clojure/src/jvm/clojure/lang/ExceptionInfo.java
 clojure/src/jvm/clojure/lang/Fn.java
 clojure/src/jvm/clojure/lang/FnLoaderThunk.java
 clojure/src/jvm/clojure/lang/IBlockingDeref.java
@@ -125,6 +128,7 @@ clojure/src/jvm/clojure/lang/IChunkedSeq.java
 clojure/src/jvm/clojure/lang/IDeref.java
 clojure/src/jvm/clojure/lang/IEditableCollection.java
 clojure/src/jvm/clojure/lang/IFn.java
+clojure/src/jvm/clojure/lang/IHashEq.java
 clojure/src/jvm/clojure/lang/IKeywordLookup.java
 clojure/src/jvm/clojure/lang/ILookup.java
 clojure/src/jvm/clojure/lang/ILookupSite.java
