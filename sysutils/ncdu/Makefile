@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/18 19:51:33 gonzalo Exp $
 
 COMMENT=		ncurses-based du(1)
 
-DISTNAME=		ncdu-1.7
+DISTNAME=		ncdu-1.8
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://dev.yorhel.nl/ncdu/
@@ -15,9 +15,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
 WANTLIB=		c ncursesw
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
