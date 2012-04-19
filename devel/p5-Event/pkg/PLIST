@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/09/01 07:31:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/19 14:49:43 gsoares Exp $
 ${P5ARCH}/
 ${P5ARCH}/Event/
 ${P5ARCH}/Event.pm
@@ -25,3 +25,15 @@ ${P5ARCH}/auto/Event/Event.so
 @man man/man3p/Event::generic.3p
 share/doc/p5-Event/
 share/doc/p5-Event/Tutorial.pdf
+share/examples/p5-Event/
+share/examples/p5-Event/echo.t
+share/examples/p5-Event/group.t
+share/examples/p5-Event/idle2.t
+share/examples/p5-Event/msg.pm
+share/examples/p5-Event/perlqt.t
+share/examples/p5-Event/process.pm
+share/examples/p5-Event/queue_pending.t
+share/examples/p5-Event/rand_interval.t
+share/examples/p5-Event/readline.t
+share/examples/p5-Event/repeat.t
+share/examples/p5-Event/semaphore.pm
