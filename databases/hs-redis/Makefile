@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2012/03/01 09:27:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/19 07:29:15 dcoppa Exp $
 
 COMMENT =		Haskell driver for Redis
 
-DISTNAME =		redis-0.12
+DISTNAME =		redis-0.12.1
 CATEGORIES =		databases
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -18,6 +18,7 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 RUN_DEPENDS +=		devel/hs-MonadCatchIO-mtl \
+			devel/hs-concurrent-extra \
 			devel/hs-mtl \
 			devel/hs-network
 BUILD_DEPENDS +=	${RUN_DEPENDS}
