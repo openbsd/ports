@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1033 2012/04/18 09:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.1034 2012/04/19 07:27:14 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -161,6 +161,7 @@
      SUBDIR += hs-aeson
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-atom
+     SUBDIR += hs-base-unicode-symbols
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
      SUBDIR += hs-bimap
@@ -173,6 +174,7 @@
      SUBDIR += hs-cmdargs
      SUBDIR += hs-comonad
      SUBDIR += hs-comonad-transformers
+     SUBDIR += hs-concurrent-extra
      SUBDIR += hs-contravariant
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
@@ -234,6 +236,7 @@
      SUBDIR += hs-text
      SUBDIR += hs-transformers
      SUBDIR += hs-type-level
+     SUBDIR += hs-unbounded-delays
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-unordered-containers
