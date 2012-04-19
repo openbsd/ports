@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_ffi_pcre_are,v 1.1 2012/04/19 06:46:41 jasper Exp $
+
+Fix dyn_open() call.
+
+--- examples/ffi_pcre.are.orig	Thu Apr 19 08:45:17 2012
++++ examples/ffi_pcre.are	Thu Apr 19 08:45:24 2012
+@@ -7,7 +7,7 @@ template pcre
+   {
+     if (!dyn_supported()) throw "dynamic loading not supported";
+ 
+-    this.lib = dyn_open("libpcre.so.0");
++    this.lib = dyn_open("libpcre.so");
+     if (!is_resource(this.lib)) throw "libpcre not found";
+ 
+     err = malloc(8);
