@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/19 14:47:17 okan Exp $
+@bin bin/pcc
+lib/pcc/
+lib/pcc/${CONFIG}/
+lib/pcc/${CONFIG}/${PCCVER}.RELEASE/
+lib/pcc/${CONFIG}/${PCCVER}.RELEASE/include/
+lib/pcc/${CONFIG}/${PCCVER}.RELEASE/lib/
+@bin libexec/ccom
+@bin libexec/cpp
+@man man/man1/ccom.1
+@man man/man1/cpp.1
+@man man/man1/pcc.1

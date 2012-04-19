@@ -1,0 +1,19 @@
+The compiler is based on the original Portable C Compiler by S. C.
+Johnson, written in the late 70's. Even though much of the compiler has
+been rewritten, some of the basics still remain.
+
+The intention is to write a C99 compiler while still keeping it small,
+simple, fast and understandable. Think of it as if it shall be able to
+compile and run on PDP11 (even if it may not happen in reality). But
+with this in mind it becomes important to think twice about what
+algorithms are used.
+
+The compiler is conceptually structured in two parts; pass1 which is
+language-dependent, does parsing, typechecking and build trees, and
+pass2 which is mostly language-independent.
+
+About 50% of the frontend code and 80% of the backend code has been
+rewritten. Most stuff is written by Anders Magnusson, with the
+exception of the data-flow analysis part and the SSA conversion code
+which is written by Peter A Jonsson, and the Mips port that were written
+as part of a project by undergraduate students at LTU.
