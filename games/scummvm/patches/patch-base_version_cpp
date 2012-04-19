@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_version_cpp,v 1.1 2012/04/19 07:43:47 ratchov Exp $
+--- base/version.cpp.orig	Wed Apr 11 15:32:53 2012
++++ base/version.cpp	Wed Apr 11 15:29:14 2012
+@@ -94,6 +94,10 @@ const char *gScummVMFeatures = ""
+ 	"SEQ "
+ #endif
+ 
++#ifdef USE_SNDIO
++	"sndio "
++#endif
++
+ #ifdef USE_TIMIDITY
+ 	"TiMidity "
+ #endif

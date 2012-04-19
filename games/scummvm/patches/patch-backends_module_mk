@@ -1,0 +1,11 @@
+$OpenBSD: patch-backends_module_mk,v 1.1 2012/04/19 07:43:47 ratchov Exp $
+--- backends/module.mk.orig	Wed Apr 11 09:08:02 2012
++++ backends/module.mk	Wed Apr 11 09:08:28 2012
+@@ -11,6 +11,7 @@ MODULE_OBJS := \
+ 	midi/alsa.o \
+ 	midi/dmedia.o \
+ 	midi/seq.o \
++	midi/sndio.o \
+ 	midi/stmidi.o \
+ 	midi/timidity.o \
+ 	saves/savefile.o \

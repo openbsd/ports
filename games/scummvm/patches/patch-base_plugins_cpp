@@ -1,0 +1,13 @@
+$OpenBSD: patch-base_plugins_cpp,v 1.1 2012/04/19 07:43:47 ratchov Exp $
+--- base/plugins.cpp.orig	Wed Apr 11 15:27:38 2012
++++ base/plugins.cpp	Wed Apr 11 15:28:37 2012
+@@ -202,6 +202,9 @@ class StaticPluginProvider : public PluginProvider { (
+ 		#if defined(USE_SEQ_MIDI)
+ 		LINK_PLUGIN(SEQ)
+ 		#endif
++		#if defined(USE_SNDIO)
++		LINK_PLUGIN(SNDIO)
++		#endif
+ 		#if defined(__MINT__)
+ 		LINK_PLUGIN(STMIDI)
+ 		#endif

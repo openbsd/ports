@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2012/02/20 11:18:33 jsg Exp $
+# $OpenBSD: Makefile,v 1.51 2012/04/19 07:43:47 ratchov Exp $
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.4.1
+REVISION=	1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -15,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	FLAC>=5 SDL c faad m mad>=2 pthread stdc++ theoradec z
+WANTLIB=	FLAC>=5 SDL c faad m mad>=2 pthread sndio stdc++ theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
@@ -29,7 +30,7 @@ LIB_DEPENDS=	audio/libmad \
 		multimedia/libtheora
 
 CONFIGURE_STYLE=simple
-CONFIGURE_ARGS+=--disable-alsa --disable-debug
+CONFIGURE_ARGS+=--disable-alsa --disable-debug --disable-seq-midi --enable-sndio
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =	Yes
@@ -64,5 +65,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dists/scummvm.desktop \
 	    ${PREFIX}/share/applications
 	${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
+
+post-patch:
+	@cp ${FILESDIR}/sndio.cpp ${WRKSRC}/backends/midi
 
 .include <bsd.port.mk>
