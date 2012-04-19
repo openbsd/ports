@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/04/07 08:32:32 kirby Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/04/19 08:19:34 jasper Exp $
 @pkgpath games/wesnoth,tinygui
 !%%lite%%
 @bin bin/campaignd
@@ -124,7 +124,7 @@ share/doc/wesnoth/images/es/right_pane-1.9.14.jpg
 share/doc/wesnoth/images/es/top_pane-1.9.14.jpg
 share/doc/wesnoth/images/fr/
 share/doc/wesnoth/images/fr/game-screen-1.9.4.jpg
-share/doc/wesnoth/images/fr/main-menu-1.9.4.jpg
+share/doc/wesnoth/images/fr/main-menu-1.10.1.jpg
 share/doc/wesnoth/images/fr/multiplayer-1.9.4.jpg
 share/doc/wesnoth/images/fr/recruit-1.9.4.jpg
 share/doc/wesnoth/images/fr/right_pane-1.9.4.jpg
@@ -364,6 +364,8 @@ share/wesnoth/data/campaigns/Dead_Water/images/items/large_cage.png
 share/wesnoth/data/campaigns/Dead_Water/images/items/storm-trident-buried.png
 share/wesnoth/data/campaigns/Dead_Water/images/items/underwater_rock1.png
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/
+share/wesnoth/data/campaigns/Dead_Water/images/l10n/fr/
+share/wesnoth/data/campaigns/Dead_Water/images/l10n/fr/dead-water-map--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/it/
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/it/dead-water-map--overlay.png
 share/wesnoth/data/campaigns/Dead_Water/images/l10n/lt/
@@ -1421,6 +1423,8 @@ share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/flags/black-flag-icon.p
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/items/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/items/barrel-floating.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/fr/
+share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/fr/farnorth--overlay.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/hu/
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/hu/farnorth.png
 share/wesnoth/data/campaigns/Son_Of_The_Black_Eye/images/l10n/it/
@@ -3314,6 +3318,8 @@ share/wesnoth/data/core/images/misc/l10n/en@shaw/
 share/wesnoth/data/core/images/misc/l10n/en@shaw/logo.png
 share/wesnoth/data/core/images/misc/l10n/es/
 share/wesnoth/data/core/images/misc/l10n/es/logo.png
+share/wesnoth/data/core/images/misc/l10n/fr/
+share/wesnoth/data/core/images/misc/l10n/fr/logo.png
 share/wesnoth/data/core/images/misc/l10n/hu/
 share/wesnoth/data/core/images/misc/l10n/hu/logo.png
 share/wesnoth/data/core/images/misc/l10n/la/
@@ -11752,7 +11758,9 @@ share/wesnoth/data/tools/unit_tree/TeamColorizer
 share/wesnoth/data/tools/unit_tree/__init__.py
 share/wesnoth/data/tools/unit_tree/animations.py
 share/wesnoth/data/tools/unit_tree/helpers.py
+share/wesnoth/data/tools/unit_tree/html_output.py
 share/wesnoth/data/tools/unit_tree/menu.js
+share/wesnoth/data/tools/unit_tree/overview.py
 share/wesnoth/data/tools/unit_tree/style.css
 share/wesnoth/data/tools/vim/
 share/wesnoth/data/tools/vim/formulaai.vim
@@ -12536,6 +12544,8 @@ share/wesnoth/images/misc/l10n/en@shaw/
 share/wesnoth/images/misc/l10n/en@shaw/logo.png
 share/wesnoth/images/misc/l10n/es/
 share/wesnoth/images/misc/l10n/es/logo.png
+share/wesnoth/images/misc/l10n/fr/
+share/wesnoth/images/misc/l10n/fr/logo.png
 share/wesnoth/images/misc/l10n/hu/
 share/wesnoth/images/misc/l10n/hu/logo.png
 share/wesnoth/images/misc/l10n/la/
