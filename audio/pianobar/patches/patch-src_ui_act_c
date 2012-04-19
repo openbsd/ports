@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ui_act_c,v 1.1 2012/04/19 21:39:08 dcoppa Exp $
+
+Bandaid fix to avoid unlocking a non-locked mutex.
+
+--- src/ui_act.c.orig	Thu Apr 19 22:12:37 2012
++++ src/ui_act.c	Thu Apr 19 22:14:18 2012
+@@ -50,6 +50,7 @@ static inline void BarUiDoSkipSong (struct audioPlayer
+ 	assert (player != NULL);
+ 
+ 	player->doQuit = 1;
++	pthread_mutex_trylock (&player->pauseMutex);
+ 	pthread_mutex_unlock (&player->pauseMutex);
+ }
+ 
