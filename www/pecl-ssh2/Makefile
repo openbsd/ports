@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/17 12:29:40 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/19 21:30:38 sthen Exp $
 
-SHARED_ONLY=	Yes
-
-COMMENT=	php bindings for the libssh2 library
+COMMENT=	PHP bindings for the libssh2 library
 
 DISTNAME=	ssh2-0.11.3
-EXTRACT_SUFX=	.tgz
-PKGNAME=	pecl-${DISTNAME}
-CATEGORIES=	www
+REVISION=	0
 
-HOMEPAGE=	http://pecl.php.net/package/ssh2/
-
-# PHP License
+# PHP
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,29 +13,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += crypto ssh2 ssl z
 
-MASTER_SITES=	http://pecl.php.net/get/
-EXTRACT_SUFX=	.tgz
+MODULES=	lang/php/pecl
+CONFIGURE_STYLE= gnu
 
-AUTOCONF_VERSION=	2.62
-AUTOMAKE_VERSION=	1.9
-
-MODULES=	lang/php
-BUILD_DEPENDS=	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	security/libssh2
-
-CONFIGURE_STYLE=gnu
-
-DESTDIRNAME=	INSTALL_ROOT
-
-# needs PHP CLI sapi to run
-NO_REGRESS=	Yes
-
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
-
-MODPHP_DO_SAMPLE=	ssh2
-MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>

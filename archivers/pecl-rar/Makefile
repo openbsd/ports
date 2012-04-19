@@ -1,42 +1,20 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:36 robert Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.9 2012/04/19 21:30:26 sthen Exp $
 
 COMMENT=	PHP support for rar archives
+
 DISTNAME=	rar-2.0.0
-PKGNAME=	pecl-${DISTNAME}
-EXTRACT_SUFX=	.tgz
-MASTER_SITES=	http://pecl.php.net/get/
-CATEGORIES=	archivers www
+CATEGORIES=	archivers
+REVISION=	5
 
-REVISION=	4
-
-HOMEPAGE=	http://pecl.php.net/package/rar/
-
-# PHP License
+# PHP
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-AUTOCONF_VERSION=	2.62
-AUTOMAKE_VERSION=	1.9
-
-MODULES=	lang/php
-BUILD_DEPENDS=	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 WANTLIB=	m stdc++
 
-CONFIGURE_STYLE=gnu
-DESTDIRNAME=	INSTALL_ROOT
-
-NO_REGRESS=	Yes
-
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
-
-MODPHP_DO_SAMPLE=	rar
-MODPHP_DO_PHPIZE=	Yes
+MODULES=	lang/php/pecl
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

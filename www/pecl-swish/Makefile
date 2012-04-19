@@ -1,17 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/17 12:44:21 robert Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/19 21:30:38 sthen Exp $
 
-SHARED_ONLY =	Yes
 COMMENT =	PHP interface to swish-e
 
 DISTNAME =	swish-0.4.0
-PKGNAME =	pecl-${DISTNAME}
-CATEGORIES =	www
-EXTRACT_SUFX =	.tgz
+REVISION =	0
 
-HOMEPAGE =	http://pecl.php.net/package/swish
-MASTER_SITES =	http://pecl.php.net/get/
-
-# PHP License
+# PHP
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
@@ -19,24 +13,12 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	m pcre pcreposix swish-e z
 
-AUTOCONF_VERSION =	2.59
-AUTOMAKE_VERSION =	1.4
+MODULES =	lang/php/pecl
+CONFIGURE_STYLE =  gnu
+AUTOCONF_VERSION = 2.59
+AUTOMAKE_VERSION = 1.4
 
-MODULES =	lang/php
 LIB_DEPENDS =	textproc/swish-e
-BUILD_DEPENDS =	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-
-DESTDIRNAME =	INSTALL_ROOT
-
-USE_LIBTOOL =	Yes
-NO_REGRESS =	Yes
-
-CONFIGURE_STYLE =	gnu
-
-MODPHP_DO_SAMPLE=	swish
-MODPHP_DO_PHPIZE=	Yes
 
 post-configure:
 	@perl -pi -e 's,(finish_cmds=").*,\1" #,g' ${WRKSRC}/libtool
