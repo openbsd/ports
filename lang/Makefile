@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2012/04/17 13:12:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2012/04/19 14:48:16 okan Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += open-cobol
      SUBDIR += otcl
      SUBDIR += parrot
+     SUBDIR += pcc
      SUBDIR += petite-chez
      SUBDIR += pfe
      SUBDIR += php
