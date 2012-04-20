@@ -1,0 +1,56 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/20 10:47:40 jasper Exp $
+@conflict scheme48-*
+bin/gambc-cc
+bin/gambc-doc
+@bin bin/gsc
+bin/gsc-script
+@bin bin/gsi
+bin/gsi-script
+bin/scheme-ieee-1178-1990
+bin/scheme-r4rs
+bin/scheme-r5rs
+bin/scheme-srfi-0
+bin/six
+bin/six-script
+include/gambit-c/
+include/gambit-c/gambit-not406005.h
+include/gambit-c/gambit.h
+@info info/gambit-c.info
+lib/gambit-c/
+lib/gambit-c/_asm#.scm
+lib/gambit-c/_assert#.scm
+lib/gambit-c/_codegen#.scm
+lib/gambit-c/_eval#.scm
+lib/gambit-c/_gambc.c
+lib/gambit-c/_gambcgsc.c
+lib/gambit-c/_gambcgsi.c
+lib/gambit-c/_gambit#.scm
+lib/gambit-c/_io#.scm
+lib/gambit-c/_kernel#.scm
+lib/gambit-c/_nonstd#.scm
+lib/gambit-c/_num#.scm
+lib/gambit-c/_repl#.scm
+lib/gambit-c/_std#.scm
+lib/gambit-c/_system#.scm
+lib/gambit-c/_thread#.scm
+lib/gambit-c/_x86#.scm
+lib/gambit-c/digest#.scm
+lib/gambit-c/digest.scm
+lib/gambit-c/gambit#.scm
+lib/gambit-c/libgambc.so
+lib/gambit-c/libgambcgsc.so
+lib/gambit-c/libgambcgsi.so
+lib/gambit-c/r4rs#.scm
+lib/gambit-c/r5rs#.scm
+lib/gambit-c/syntax-case.scm
+lib/libgambc.so
+lib/libgambcgsc.so
+lib/libgambcgsi.so
+@man man/man1/gsi.1
+share/doc/gambit-c/
+share/doc/gambit-c/gambit-c.html
+share/doc/gambit-c/gambit-c.pdf
+share/doc/gambit-c/gambit-c.txt
+share/emacs/
+share/emacs/site-lisp/
+share/emacs/site-lisp/gambit.el
