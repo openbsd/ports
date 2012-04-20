@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/10 06:42:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/04/20 20:21:05 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -297,18 +297,8 @@ share/gtranslator/pixmaps/gtranslator-plugin.png
 share/gtranslator/pixmaps/gtranslator-untranslated-next.png
 share/gtranslator/pixmaps/gtranslator-untranslated-prev.png
 share/gtranslator/ui/
-share/gtranslator/ui/gtr-codeview-dialog.ui
-share/gtranslator/ui/gtr-header-dialog.ui
-share/gtranslator/ui/gtr-jump-dialog.ui
-share/gtranslator/ui/gtr-languages-fetcher.ui
-share/gtranslator/ui/gtr-open-tran-dialog.ui
 share/gtranslator/ui/gtr-plural-forms.ini
-share/gtranslator/ui/gtr-preferences-dialog.ui
-share/gtranslator/ui/gtr-profile-dialog.ui
-share/gtranslator/ui/gtr-search-dialog.ui
 share/gtranslator/ui/gtr-toolbar.xml
-share/gtranslator/ui/gtr-viewer.ui
-share/gtranslator/ui/gtranslator-ui.xml
 share/gtranslator/ui/layout.xml
 share/gtranslator/ui/po.lang
 share/icons/hicolor/16x16/apps/gtranslator.png
