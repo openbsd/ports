@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/08/19 22:20:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/20 10:48:40 jasper Exp $
 @conflict scsh-*
+@conflict gambit-*
 %%SHARED%%
 @bin bin/scheme-r5rs
 @bin bin/scheme-srfi-7
