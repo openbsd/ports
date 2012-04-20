@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2012/04/19 21:39:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2012/04/20 08:22:34 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2012.03.17
+DISTNAME =	pianobar-2012.04.14
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	3
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -37,6 +36,7 @@ CFLAGS +=	-DNDEBUG
 .endif
 
 MAKE_FLAGS =	DYNLINK=1 \
+		CC=${CC} \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBpiano_VERSION="${LIBpiano_VERSION}" \
 		MANDIR="${PREFIX}/man"
