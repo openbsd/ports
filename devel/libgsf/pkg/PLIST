@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/12/16 08:10:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/04/20 12:32:01 ajacoutot Exp $
 @conflict libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
@@ -58,6 +58,8 @@ include/libgsf-1/gsf/gsf-structured-blob.h
 include/libgsf-1/gsf/gsf-timestamp.h
 include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
+lib/girepository-1.0/
+lib/girepository-1.0/Gsf-1.typelib
 lib/libgsf-1.a
 lib/libgsf-1.la
 lib/pkgconfig/
@@ -65,16 +67,16 @@ lib/pkgconfig/libgsf-1.pc
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
+share/gir-1.0/
+share/gir-1.0/Gsf-1.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gsf/
 share/gtk-doc/html/gsf/api.html
 share/gtk-doc/html/gsf/dependencies.html
-share/gtk-doc/html/gsf/gsf-Bononbo.html
 share/gtk-doc/html/gsf/gsf-Compression.html
 share/gtk-doc/html/gsf/gsf-GIO.html
 share/gtk-doc/html/gsf/gsf-GIOChannel.html
-share/gtk-doc/html/gsf/gsf-GnomeVFS.html
 share/gtk-doc/html/gsf/gsf-Infile-reading-structed-files.html
 share/gtk-doc/html/gsf/gsf-Input-from-unstructured-files.html
 share/gtk-doc/html/gsf/gsf-MS-OLE2.html
@@ -135,7 +137,15 @@ share/locale/pt_BR/LC_MESSAGES/libgsf.mo
 share/locale/ro/LC_MESSAGES/libgsf.mo
 share/locale/ru/LC_MESSAGES/libgsf.mo
 share/locale/sl/LC_MESSAGES/libgsf.mo
+share/locale/sr/LC_MESSAGES/libgsf.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libgsf.mo
 share/locale/sv/LC_MESSAGES/libgsf.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/libgsf.mo
+share/locale/tr/LC_MESSAGES/libgsf.mo
 share/locale/uk/LC_MESSAGES/libgsf.mo
 share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo

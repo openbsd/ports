@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2011/12/16 08:10:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/04/20 12:32:01 ajacoutot Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.22
+GNOME_VERSION=		1.14.23
 
 CATEGORIES=		devel
 
@@ -26,6 +26,8 @@ WANTLIB += gobject-2.0 gthread-2.0 m pcre png pthread xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
+MODGNOME_TOOLS=		goi
+
 LIB_DEPENDS=		archivers/bzip2 \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml
@@ -34,7 +36,5 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-python \
 			--with-bz2 \
 			--with-gio
-
-USE_GROFF=		Yes
 
 .include <bsd.port.mk>
