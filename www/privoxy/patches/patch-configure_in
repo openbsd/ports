@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.4 2009/03/26 18:58:03 merdely Exp $
---- configure.in.orig	Wed Aug 13 12:53:50 2008
-+++ configure.in	Thu Mar 26 14:29:02 2009
-@@ -842,24 +842,6 @@ fi
+$OpenBSD: patch-configure_in,v 1.5 2012/04/20 09:27:29 pascal Exp $
+--- configure.in.orig	Mon Dec 26 18:03:31 2011
++++ configure.in	Wed Apr 18 12:38:38 2012
+@@ -332,24 +332,6 @@ fi
  AC_SUBST(WDUMP)
  AC_SUBST(DB2HTML)
  
@@ -26,12 +26,12 @@ $OpenBSD: patch-configure_in,v 1.4 2009/03/26 18:58:03 merdely Exp $
  dnl Set doc status flag for conditional content inclusions
  DOC_STATUS=p-not-stable
  if  test $CODE_STATUS = stable; then
-@@ -1399,7 +1381,7 @@ if test $have_pcre = "yes"; then
+@@ -958,7 +940,7 @@ if test $have_pcre = "yes"; then
    echo "using libpcre"
    pcre_dyn=yes
    STATIC_PCRE_ONLY=#
 -  LIBS="$LIBS -lpcre -lpcreposix"
 +  LIBS="$LIBS -lpcreposix -lpcre"
  else
-   AC_MSG_WARN([You are using the static PCRE code which is scheduled for removal, for details see: 
-     https://sourceforge.net/mailarchive/message.php?msg_id=20080511195555.2dc6cfdc%40fabiankeil.de])
+   AC_MSG_WARN([You are using the static PCRE code which is out of date and scheduled for removal, for details see:
+     http://sourceforge.net/mailarchive/forum.php?thread_name=20080511195555.2dc6cfdc%40fabiankeil.de&forum_name=ijbswa-developers])
