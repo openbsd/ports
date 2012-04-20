@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1034 2012/04/19 07:27:14 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.1035 2012/04/20 10:57:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -508,8 +508,8 @@
      SUBDIR += p5-Data-Compare
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Dump-Streamer
-     SUBDIR += p5-Data-Dumper-Simple
      SUBDIR += p5-Data-Dumper-Concise
+     SUBDIR += p5-Data-Dumper-Simple
      SUBDIR += p5-Data-Flow
      SUBDIR += p5-Data-FormValidator
      SUBDIR += p5-Data-HexDump
@@ -688,10 +688,10 @@
      SUBDIR += p5-Log-Dispatch-FileRotate
      SUBDIR += p5-Log-Log4perl
      SUBDIR += p5-Log-Trace
-     SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-MLDBM
      SUBDIR += p5-MLDBM-Sync
      SUBDIR += p5-MRO-Compat
+     SUBDIR += p5-Memoize-ExpireLRU
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Install
      SUBDIR += p5-Module-Manifest

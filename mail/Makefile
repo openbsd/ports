@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.275 2012/01/30 17:23:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.276 2012/04/20 10:57:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -37,8 +37,8 @@
      SUBDIR += cyrus-imapd,drac
      SUBDIR += dkim-milter
      SUBDIR += dovecot
-     SUBDIR += dovecot-pigeonhole
      SUBDIR += dovecot-antispam
+     SUBDIR += dovecot-pigeonhole
      SUBDIR += drac
      SUBDIR += dspam
      SUBDIR += dspam,hash
@@ -173,8 +173,8 @@
      SUBDIR += poppassd
      SUBDIR += poppy
      SUBDIR += postfix
-     SUBDIR += postler
      SUBDIR += postgrey
+     SUBDIR += postler
      SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += py-milter

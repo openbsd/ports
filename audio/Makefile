@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.275 2012/03/27 19:46:10 ratchov Exp $
+# $OpenBSD: Makefile,v 1.276 2012/04/20 10:57:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -24,9 +24,9 @@
      SUBDIR += celt
      SUBDIR += cmixer
      SUBDIR += cmt
-     SUBDIR += cmus
      SUBDIR += cmu-sphinx3
      SUBDIR += cmu-sphinxbase
+     SUBDIR += cmus
      SUBDIR += cplay
      SUBDIR += daapd
      SUBDIR += disc-cover
@@ -161,8 +161,8 @@
      SUBDIR += pms
      SUBDIR += portaudio-svn
      SUBDIR += pulseaudio
-     SUBDIR += py-audio
      SUBDIR += py-ao
+     SUBDIR += py-audio
      SUBDIR += py-cddb
      SUBDIR += py-eyed3
      SUBDIR += py-id3
