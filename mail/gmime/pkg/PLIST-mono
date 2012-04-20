@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-mono,v 1.2 2011/08/30 07:12:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST-mono,v 1.3 2012/04/20 12:44:51 ajacoutot Exp $
 @pkgpath mail/gmime24,-mono
-lib/mono/
-lib/mono/gac/
 lib/mono/gac/gmime-sharp/
 lib/mono/gac/gmime-sharp/2.6.0.0__2b75c2ad004c52e4/
 lib/mono/gac/gmime-sharp/2.6.0.0__2b75c2ad004c52e4/gmime-sharp.dll
