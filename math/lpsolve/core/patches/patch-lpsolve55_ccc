@@ -1,0 +1,81 @@
+$OpenBSD: patch-lpsolve55_ccc,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
+
+* We don't use -ldl
+* Don't use platform specific paths
+* Honour CFLAGS and CC
+* Don't write to /tmp during build
+
+--- lpsolve55/ccc.orig	Wed Mar 25 00:27:18 2009
++++ lpsolve55/ccc	Fri Apr 20 10:02:22 2012
+@@ -1,50 +1,50 @@
+ :
+ src='../lp_MDO.c ../shared/commonlib.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../colamd/colamd.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
+-c=cc
++c=${CC}
+ 
+ #determine platform (32/64 bit)
+->/tmp/platform.c
+-echo '#include <stdlib.h>'>>/tmp/platform.c
+-echo '#include <stdio.h>'>>/tmp/platform.c
+-echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>/tmp/platform.c
+-$c /tmp/platform.c -o /tmp/platform
+-PLATFORM=`/tmp/platform`
+-rm /tmp/platform /tmp/platform.c >/dev/null 2>&1
++>${WRKDIR}/tmp/platform.c
++echo '#include <stdlib.h>'>>${WRKDIR}/tmp/platform.c
++echo '#include <stdio.h>'>>${WRKDIR}/tmp/platform.c
++echo 'main(){printf("ux%d", (int) (sizeof(void *)*8));}'>>${WRKDIR}/tmp/platform.c
++$c ${WRKDIR}/tmp/platform.c -o ${WRKDIR}/tmp/platform
++PLATFORM=`${WRKDIR}/tmp/platform`
++rm ${WRKDIR}/tmp/platform ${WRKDIR}/tmp/platform.c >/dev/null 2>&1
+ 
+-mkdir bin bin/$PLATFORM >/dev/null 2>&1
++mkdir bin >/dev/null 2>&1
+ 
+ #check if this system has the isnan function
+->/tmp/isnan.c
+-echo '#include <stdio.h>'>>/tmp/isnan.c
+-echo '#include <stdlib.h>'>>/tmp/isnan.c
+-echo '#include <math.h>'>>/tmp/isnan.c
+-echo 'main(){isnan(0);}'>>/tmp/isnan.c
+-$c /tmp/isnan.c -o /tmp/isnan $math >/dev/null 2>&1
++>${WRKDIR}/tmp/isnan.c
++echo '#include <stdio.h>'>>${WRKDIR}/tmp/isnan.c
++echo '#include <stdlib.h>'>>${WRKDIR}/tmp/isnan.c
++echo '#include <math.h>'>>${WRKDIR}/tmp/isnan.c
++echo 'main(){isnan(0);}'>>${WRKDIR}/tmp/isnan.c
++$c ${WRKDIR}/tmp/isnan.c -o ${WRKDIR}/tmp/isnan $math >/dev/null 2>&1
+ if [ $? = 0 ]
+ then NOISNAN=
+ else NOISNAN=-DNOISNAN
+ fi
+-rm /tmp/isnan.c /tmp/isnan >/dev/null 2>&1
++rm ${WRKDIR}/tmp/isnan.c ${WRKDIR}/tmp/isnan >/dev/null 2>&1
+ 
+ def=
+ so=
+ if [ "$PLATFORM" = "SCO_UNIX" ]
+ then def='-dy -K PIC -DNOLONGLONG'
+      dl=-lc
+-else dl=-ldl
++else dl=
+      so=y
+ fi
+ 
+-opts='-O3'
++opts=${CFLAGS}
+ 
+ $c -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
+-ar rv bin/$PLATFORM/liblpsolve55.a `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'`
+-ranlib bin/$PLATFORM/liblpsolve55.a
++ar rv bin/liblpsolve55.a `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'`
++ranlib bin/liblpsolve55.a
+ 
+ if [ "$so" != "" ]
+ then
+   $c -fpic -s -c -I.. -I../shared -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I. $opts $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src
+-  $c -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so -o bin/$PLATFORM/liblpsolve55.so `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm -ldl
++  $c -shared -Wl,-Bsymbolic -Wl,-soname,liblpsolve55.so.${LIBlpsolve55_VERSION} -o bin/liblpsolve55.so.${LIBlpsolve55_VERSION} `echo $src|sed s/[.]c/.o/g|sed 's/[^ ]*\///g'` -lc -lm 
+ fi
+ 
+ rm *.o 2>/dev/null
