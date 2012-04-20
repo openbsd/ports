@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/02 09:04:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/20 13:28:50 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
 DISTNAME=	opal-3.10.4
+
+REVISION=	0
 
 SHARED_LIBS=	opal	2.0	# 3.10.3
 
@@ -22,13 +24,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c celt0 crypto gsm m ogg pt pthread spandsp speex speexdsp
-WANTLIB += stdc++ theora tiff x264
+WANTLIB += c celt0>=1 crypto gsm m ogg pt pthread spandsp speex
+WANTLIB += speexdsp stdc++ theora tiff x264
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
 LIB_DEPENDS=	devel/ptlib>=2.10.4 \
-		audio/celt \
+		audio/celt>=0.11.0 \
 		telephony/spandsp
 
 # dlopen(3) libavcodec.so; shows as Extra: in check-lib-depends but

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/01/24 08:03:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/20 13:28:50 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,6 +7,7 @@ COMMENT =		low latency sound server
 V =			0.121.3
 DISTNAME =		jack-audio-connection-kit-${V}
 PKGNAME =		jack-${V}
+REVISION =		0
 
 SHARED_LIBS +=		jack		0.0	# 0.28
 SHARED_LIBS +=		jackserver	0.0	# 0.28
@@ -22,14 +23,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c celt0 m pthread readline samplerate sndfile sndio
-WANTLIB += termcap
+WANTLIB += c celt0>=1 m pthread readline samplerate sndfile
+WANTLIB += sndio termcap
 
 MASTER_SITES =		${HOMEPAGE}downloads/
 
 LIB_DEPENDS =		audio/libsndfile \
 			audio/libsamplerate \
-			audio/celt
+			audio/celt>=0.11.0
 
 # uses macros from libtool.m4
 BUILD_DEPENDS =		devel/libtool
