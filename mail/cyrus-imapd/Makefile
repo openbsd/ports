@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2012/03/12 17:21:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/04/20 20:54:16 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.4.14
+V=		2.4.16
 DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
@@ -25,13 +27,20 @@ MASTER_SITES=	http://cyrusimap.org/releases/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/ \
 		ftp://ftp.cyrusimap.org/cyrus-imapd/OLD-VERSIONS/
 
+MULTI_PACKAGES=	-main -perl
+
 WANTLIB +=	crypto ssl z sasl2 lib/db4/db>=4
+WANTLIB-main += ${WANTLIB} asn1 c com_err gssapi krb5 pthread
+WANTLIB-main += pcre pcreposix
+WANTLIB-perl += ${WANTLIB}
 
 LIB_DEPENDS=	security/cyrus-sasl2 \
 		databases/db/v4
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		devel/pcre
 RUN_DEPENDS-main=${RUN_DEPENDS}
+
+NO_REGRESS=	Yes
 
 PATCH_LIST=	patch-*
 
@@ -61,16 +70,11 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--without-libwrap \
 		--without-zephyr \
 		--without-snmp \
+		--with-perl \
 		--with-ldap=no \
 		--with-mysql=no \
 		--with-pgsql=no \
 		--with-sqlite=no
-
-# this is a needed hack; to update PLIST:
-# make SHARED_ONLY=Yes plist
-MULTI_PACKAGES=	-main ${NO_SHARED_LIBS:S/Yes//:S/No/-perl/}
-CONFIGURE_ARGS+=--with${NO_SHARED_LIBS:S/Yes/out/:S/No//}-perl
-USE_GROFF =	Yes
 
 FLAVORS=	drac
 FLAVOR?=
@@ -81,12 +85,6 @@ PATCH_LIST+=	drac-patch-imap_Makefile_in
 pre-patch:
 	cd ${WRKSRC} && ${PATCH} -s -z .drac -p1 < contrib/drac_auth.patch
 .endif
-
-WANTLIB-main +=	${WANTLIB} asn1 c com_err gssapi krb5 pthread
-WANTLIB-main +=	pcre pcreposix
-WANTLIB-perl +=	${WANTLIB}
-
-NO_REGRESS=	Yes
 
 MAN8=		fetchnews idled master imapd deliver
 SIEVEREF=	lib/imapoptions man/imapd.conf.5 \
