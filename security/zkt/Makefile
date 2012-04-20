@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/20 20:04:34 gonzalo Exp $
 
 COMMENT=	DNSsec Zone Key Tool
 
-DISTNAME=	zkt-1.0
+DISTNAME=	zkt-1.1.0
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.hznet.de/dns/zkt/
@@ -21,7 +21,6 @@ MASTER_SITES=	${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-configpath=/var/named/etc
-USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_zkt-signer_8,v 1.1 2010/06/20 14:01:35 jakob Exp $
---- man/zkt-signer.8.orig	Fri Jun 11 10:47:53 2010
-+++ man/zkt-signer.8	Fri Jun 11 11:22:02 2010
-@@ -226,7 +226,7 @@ Print out the online help.
+$OpenBSD: patch-man_zkt-signer_8,v 1.2 2012/04/20 20:04:34 gonzalo Exp $
+--- man/zkt-signer.8.orig	Sat Nov 27 16:13:04 2010
++++ man/zkt-signer.8	Thu Apr  5 19:47:00 2012
+@@ -225,7 +225,7 @@ Print out the online help.
  .SH SAMPLE USAGE
  .TP 
  .fam C
