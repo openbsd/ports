@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.743 2012/04/18 09:50:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.744 2012/04/20 10:53:00 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -106,6 +106,7 @@
      SUBDIR += gnugk
      SUBDIR += gopher
      SUBDIR += gotthard
+     SUBDIR += gpodder
      SUBDIR += grake
      SUBDIR += gsnmp
      SUBDIR += gssdp
@@ -212,6 +213,7 @@
      SUBDIR += mudix
      SUBDIR += munin
      SUBDIR += mutella
+     SUBDIR += mygpoclient
      SUBDIR += nagios
      SUBDIR += nam
      SUBDIR += natpmpd
