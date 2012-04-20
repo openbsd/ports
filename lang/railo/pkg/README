@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/04/17 13:12:28 sthen Exp $
+$OpenBSD: README,v 1.2 2012/04/20 15:08:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,17 @@ Configuring Tomcat to support Railo
 Railo is a Java-based CFML engine. It runs as a servlet in a container;
 this package is designed to work with the Apache Tomcat servlet container,
 you will need to make a few configuration changes to tomcat to use it.
-Tomcat's ${CATALINA_BASE}/conf/web.xml file should be edited as follows:
+If you have not yet modified Tomcat's configuration, this readme includes
+a patch which can be used:
+
+	# patch -d ${CATALINA_BASE}/conf < \
+	    ${LOCALBASE}/share/doc/pkg-readmes/${FULLPKGNAME}
+
+Then skip to the next section in this file, "Starting the service
+and online configuration".
+
+If you need to edit manually, Tomcat's ${CATALINA_BASE}/conf/web.xml file
+should have these changes:
 
 - Add lines after the first <?xml...?> line at the top of the file, so it
 looks like this:
@@ -37,6 +47,9 @@ web-railo.xml file containing the CF-related settings.
 	&railo;
 	</web-app>
 
+Starting the service and online configuration
+=============================================
+
 - Start/restart tomcat:
 
 	/etc/rc.d/tomcat restart
@@ -62,3 +75,31 @@ as expected, and don't forget to rotate/archive them as appropriate.
 	${CATALINA_BASE}/logs
 	${CATALINA_BASE}/railo/server-config/railo-server/context/logs
 	${CATALINA_BASE}/railo/web-config/*/logs (various dirs, per-context)
+
+Patch to unmodified Tomcat web.xml
+==================================
+
+--- web.xml.orig	Fri Apr 20 13:16:35 2012
++++ web.xml	Fri Apr 20 16:06:21 2012
+@@ -1,4 +1,8 @@
+ <?xml version="1.0" encoding="ISO-8859-1"?>
++<!DOCTYPE root [
++    <!ENTITY railo SYSTEM "./web-railo.xml" >
++]>
++
+ <!--
+   Licensed to the Apache Software Foundation (ASF) under one or more
+   contributor license agreements.  See the NOTICE file distributed with
+@@ -4275,9 +4279,12 @@
+   <!-- to use within your application.                                       -->
+ 
+     <welcome-file-list>
++        <welcome-file>index.cfml</welcome-file>
++        <welcome-file>index.cfm</welcome-file>
+         <welcome-file>index.html</welcome-file>
+         <welcome-file>index.htm</welcome-file>
+         <welcome-file>index.jsp</welcome-file>
+     </welcome-file-list>
+ 
++&railo;
+ </web-app>
