@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2012/02/19 07:23:42 benoit Exp $
+# $OpenBSD: Makefile,v 1.53 2012/04/21 14:16:04 benoit Exp $
 # $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
 
 COMMENT =		optimizer for PNG files
 
-DISTNAME =		pngcrush-1.7.25
+DISTNAME =		pngcrush-1.7.27
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://pmt.sourceforge.net/pngcrush/
@@ -20,7 +20,7 @@ WANTLIB =		c m
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pmt/}
 
-MAKE_FLAGS =		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -I."
+MAKE_FLAGS =		CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS} -I. -DZ_SOLO"
 
 NO_REGRESS =		Yes
 
