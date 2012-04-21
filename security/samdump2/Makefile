@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/04/21 15:16:27 benoit Exp $
 
 COMMENT =		retrieves syskey and extract hashes
 
-DISTNAME =		samdump2-2.0.1
+DISTNAME =		samdump2-3.0.0
 CATEGORIES =		security
 
 HOMEPAGE =		http://ophcrack.sourceforge.net/
@@ -24,7 +24,6 @@ EXTRACT_SUFX =		.tar.bz2
 MAKE_FLAGS =		CC="${CC}" CFLAGS="${CFLAGS}"
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 
