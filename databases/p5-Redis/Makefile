@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/24 15:48:10 benoit Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/21 14:29:33 benoit Exp $
 
 COMMENT =	perl binding for Redis database
 
-DISTNAME =	Redis-1.904
+DISTNAME =	Redis-1.951
 CATEGORIES =	databases
 
 EPOCH =		0
@@ -18,7 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		cpan
 
 REGRESS_DEPENDS =	devel/p5-Test-Deep \
+			devel/p5-Test-Fatal \
 			devel/p5-Test-Exception \
+			devel/p5-Try-Tiny \
 			devel/p5-IO-String \
 			databases/redis
 
