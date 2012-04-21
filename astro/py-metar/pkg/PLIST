@@ -1,10 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/21 11:49:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/21 14:56:24 benoit Exp $
 bin/pymet
 lib/python${MODPY_VERSION}/site-packages/pymetar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pymetar.py
 lib/python${MODPY_VERSION}/site-packages/pymetar.pyc
-share/doc/py-metar/
-share/doc/py-metar/COPYING
-share/doc/py-metar/README
-share/doc/py-metar/THANKS
-share/doc/py-metar/librarydoc.txt
+share/doc/${MODPY_PY_PREFIX}metar/
+share/doc/${MODPY_PY_PREFIX}metar/COPYING
+share/doc/${MODPY_PY_PREFIX}metar/README
+share/doc/${MODPY_PY_PREFIX}metar/THANKS
+share/doc/${MODPY_PY_PREFIX}metar/librarydoc.txt
+share/man/
+share/man/man1/
+@man share/man/man1/pymetar.1
