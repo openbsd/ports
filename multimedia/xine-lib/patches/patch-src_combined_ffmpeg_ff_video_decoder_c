@@ -1,11 +1,13 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.8 2012/04/07 05:48:49 ajacoutot Exp $
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31 ajacoutot Exp $
 
 - Moved FFmpeg API version checks to single header.
 - Frame garbage collector in ff_reset.
 - Fix compile against recent FFmpeg.
+- Fix multithreaded initialization with API change.
+- Fix decoding of full range YUV420 H.264 videos.
 
---- src/combined/ffmpeg/ff_video_decoder.c.orig	Fri Feb 17 22:42:05 2012
-+++ src/combined/ffmpeg/ff_video_decoder.c	Fri Feb 17 22:42:10 2012
+--- src/combined/ffmpeg/ff_video_decoder.c.orig	Sat Dec 31 11:25:26 2011
++++ src/combined/ffmpeg/ff_video_decoder.c	Sat Apr 21 01:25:36 2012
 @@ -51,6 +51,8 @@
  #  include <libpostproc/postprocess.h>
  #endif
@@ -60,7 +62,48 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.8 2012/04/07 05:48:49
  
    av_frame->type= FF_BUFFER_TYPE_USER;
  
-@@ -1044,7 +1032,9 @@ static void ff_handle_special_buffer (ff_video_decoder
+@@ -341,6 +329,13 @@ static void init_video_codec (ff_video_decoder_t *this
+   if (this->class->choose_speed_over_accuracy)
+     this->context->flags2 |= CODEC_FLAG2_FAST;
+ 
++#ifdef DEPRECATED_AVCODEC_THREAD_INIT
++  if (this->class->thread_count > 1) {
++    if (this->codec->id != CODEC_ID_SVQ3)
++      this->context->thread_count = this->class->thread_count;
++  }
++#endif
++
+   pthread_mutex_lock(&ffmpeg_lock);
+   if (avcodec_open (this->context, this->codec) < 0) {
+     pthread_mutex_unlock(&ffmpeg_lock);
+@@ -368,14 +363,13 @@ static void init_video_codec (ff_video_decoder_t *this
+     }
+   }
+ 
++#ifndef DEPRECATED_AVCODEC_THREAD_INIT
+   if (this->class->thread_count > 1) {
+     if (this->codec->id != CODEC_ID_SVQ3
+-#ifndef DEPRECATED_AVCODEC_THREAD_INIT
+-	&& avcodec_thread_init(this->context, this->class->thread_count) != -1
+-#endif
+-	)
++	&& avcodec_thread_init(this->context, this->class->thread_count) != -1)
+       this->context->thread_count = this->class->thread_count;
+   }
++#endif
+ 
+   this->context->skip_loop_filter = skip_loop_filter_enum_values[this->class->skip_loop_filter_enum];
+ 
+@@ -834,7 +828,7 @@ static void ff_convert_frame(ff_video_decoder_t *this,
+       du += img->pitches[1];
+       dv += img->pitches[2];
+ 
+-      if (this->context->pix_fmt != PIX_FMT_YUV420P) {
++      if (this->context->pix_fmt != PIX_FMT_YUV420P && this->context->pix_fmt != PIX_FMT_YUVJ420P) {
+         su += 2*this->av_frame->linesize[1];
+         sv += 2*this->av_frame->linesize[2];
+       } else {
+@@ -1044,7 +1038,9 @@ static void ff_handle_special_buffer (ff_video_decoder
      memcpy(this->context->extradata, buf->decoder_info_ptr[2],
        buf->decoder_info[2]);
  
@@ -71,7 +114,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.8 2012/04/07 05:48:49
      unsigned int i;
  
      palette_entry_t *demuxer_palette;
-@@ -1063,7 +1053,9 @@ static void ff_handle_special_buffer (ff_video_decoder
+@@ -1063,7 +1059,9 @@ static void ff_handle_special_buffer (ff_video_decoder
      }
      decoder_palette->palette_changed = 1;
  
@@ -82,7 +125,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.8 2012/04/07 05:48:49
      int i;
  
      lprintf("BUF_SPECIAL_RV_CHUNK_TABLE\n");
-@@ -1663,8 +1655,22 @@ static void ff_reset (video_decoder_t *this_gen) {
+@@ -1663,8 +1661,22 @@ static void ff_reset (video_decoder_t *this_gen) {
    this->size = 0;
  
    if(this->context && this->decoder_ok)
@@ -105,7 +148,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.8 2012/04/07 05:48:49
    if (this->is_mpeg12)
      mpeg_parser_reset(this->mpeg_parser);
  
-@@ -1796,7 +1802,9 @@ static video_decoder_t *ff_video_open_plugin (video_de
+@@ -1796,7 +1808,9 @@ static video_decoder_t *ff_video_open_plugin (video_de
    this->av_frame          = avcodec_alloc_frame();
    this->context           = avcodec_alloc_context();
    this->context->opaque   = this;
