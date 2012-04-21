@@ -1,5 +1,5 @@
 The ZendFramework has been installed into ${INSTDIR}
 
-You should add this to your include_path in php.ini:
+You should add this to your include_path in php-${MODPHP_VERSION}.ini:
 
 include_path = ".:/pear/lib:/var/www/pear/lib:/zendframework:${INSTDIR}"
