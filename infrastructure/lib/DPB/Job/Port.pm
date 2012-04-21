@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.29 2012/04/21 14:41:37 espie Exp $
+# $OpenBSD: Port.pm,v 1.30 2012/04/21 21:09:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -81,27 +81,32 @@ sub run
 	if ($builder->{fetch}) {
 		push(@args, "NO_CHECKSUM=Yes");
 	}
+
+	my @l = $builder->make_args;
+	my $make = $builder->make;
+	if (defined $builder->{rsslog}) {
+		unless ($self->notime) {
+			$make = $builder->{wrapper};
+			$l[0] = $make;
+		}
+	}
+
 	if (defined $shell) {
-		unshift(@args, $builder->make_args);
+		unshift(@args, @l);
 		if ($self->{sudo}) {
 			unshift(@args, $sudo, "-E");
 		}
-		$shell->run("cd $ports && SUBDIR=".
-		    $fullpkgpath." ".join(' ', @args));
+		$shell->run("cd $ports && ".
+		    join(' ', "SUBDIR=$fullpkgpath",
+		    "PHASE=$t",
+		    "WRAPPER_OUTPUT=$builder->{rsslog}",
+		    @args));
 	} else {
 		chdir($ports) or
 		    die "Wrong ports tree $ports";
 		$ENV{SUBDIR} = $fullpkgpath;
 		$ENV{PHASE} = $t;
-		my @l = $builder->make_args;
-		my $make = $builder->make;
-		if (defined $builder->{rsslog}) {
-			unless ($self->notime) {
-				$make = $builder->{wrapper};
-				$l[0] = $make;
-				$ENV{WRAPPER_OUTPUT} = $builder->{rsslog};
-			}
-		}
+		$ENV{WRAPPER_OUTPUT} = $builder->{rsslog};
 		if ($self->{sudo}) {
 			exec {$sudo}("sudo", "-E", @l, @args);
 		} else {
