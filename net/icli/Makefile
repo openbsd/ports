@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/18 14:10:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/21 11:51:30 sthen Exp $
 
 COMMENT=	command-line interface to Icinga
 
 DISTNAME=	icli-0.41
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -21,10 +21,12 @@ MASTER_SITES=		${HOMEPAGE}
 
 FLAVORS=		nagios
 FLAVOR?=
+PATCH_LIST=		patch-*
 .if ${FLAVOR:Mnagios}
-PATCH_LIST=		nagios-*
+PATCH_LIST+=		nagios-*
 RUN_DEPENDS=		net/nagios/nagios
 .else
+PATCH_LIST+=		icinga-*
 RUN_DEPENDS=		net/icinga/core
 .endif
 
