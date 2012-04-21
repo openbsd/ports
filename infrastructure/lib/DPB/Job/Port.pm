@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.27 2012/04/10 17:06:15 espie Exp $
+# $OpenBSD: Port.pm,v 1.28 2012/04/21 11:30:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -92,10 +92,20 @@ sub run
 		chdir($ports) or
 		    die "Wrong ports tree $ports";
 		$ENV{SUBDIR} = $fullpkgpath;
+		$ENV{PHASE} = $t;
+		my @l = $builder->make_args;
+		my $make = $builder->make;
+		if (defined $builder->{rsslog}) {
+			unless ($self->notime) {
+				$make = $builder->{wrapper};
+				$l[0] = $make;
+				$ENV{OUTPUT} = $builder->{rsslog};
+			}
+		}
 		if ($self->{sudo}) {
-			exec {$sudo}("sudo", "-E", $builder->make_args, @args);
+			exec {$sudo}("sudo", "-E", @l, @args);
 		} else {
-			exec {$builder->make} ($builder->make_args, @args);
+			exec {$make} (@l, @args);
 		}
 	}
 	exit(1);

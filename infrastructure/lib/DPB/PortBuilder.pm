@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.21 2012/04/10 17:06:15 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.22 2012/04/21 11:30:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -83,6 +83,10 @@ sub init
 	my $self = shift;
 	File::Path::make_path($self->{fullrepo});
 	$self->{global} = $self->logger->open("build");
+	if ($self->{state}->defines("WRAP_MAKE")) {
+		$self->{rsslog} = $self->logger->logfile("rss");
+		$self->{wrapper} = $self->{state}->defines("WRAP_MAKE");
+	}
 	if ($self->{rebuild}) {
 		require OpenBSD::PackageRepository;
 		$self->{repository} = OpenBSD::PackageRepository->new(
