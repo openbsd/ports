@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/22 12:13:22 jasper Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
-MODPY_EGG_VERSION =	1.7.2
+MODPY_EGG_VERSION =	1.7.5.1
 DISTNAME =		Paste-${MODPY_EGG_VERSION}
 PKGNAME =		py-paste-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		www
 
 HOMEPAGE =		http://pythonpaste.org/
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,7 +21,9 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=P/Paste/}
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-flup
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
-			devel/py-py
+			${BASE_PKGPATH} \
+			devel/py-py \
+			devel/py-test
 
 MODPY_SETUPTOOLS =	Yes
 
