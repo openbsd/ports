@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/22 11:43:37 ajacoutot Exp $
 bin/BackupPC
 bin/BackupPC_Admin
 bin/BackupPC_Admin.fcgi
@@ -155,5 +155,5 @@ share/examples/backuppc/httpd-backuppc.conf
 @group
 @exec cp -pr ${PREFIX}/share/backuppc/ /var/www/
 @unexec rm -Rf /var/www/backuppc/
-@rcscript /etc/rc.d/backuppc
-@rcscript /etc/rc.d/wwbackuppc
+@rcscript ${RCDIR}/backuppc
+@rcscript ${RCDIR}/wwbackuppc
