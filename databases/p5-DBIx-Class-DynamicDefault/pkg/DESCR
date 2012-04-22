@@ -1,0 +1,2 @@
+DBIx::Class::DynamicDefault automatically sets and updates columns in a
+database table with values calculated at runtime.
