@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/04/16 23:36:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2012/04/22 14:25:36 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -38,9 +38,9 @@ CONFIGURE_ARGS=	--disable-gtk-theme \
 		--disable-tools \
 		--disable-Bsymbolic
 
-# these wil be built if gtk+2 and gtk+3 are installed at compile time,
+# these will be built if gtk+2 and gtk+3 are installed at compile time,
 # but we don't want to add these dependencies (not really needed for
-# proper functionnality)
+# proper functionality)
 post-install:
 	rm -f ${PREFIX}/bin/rsvg-view-3 # gtk+3
 	rm -f ${PREFIX}/man/man1/rsvg.1 # gtk+2
