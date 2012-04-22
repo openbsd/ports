@@ -1,0 +1,4 @@
+DBIx::Class::TimeStamp automatically sets and updates time based columns
+in a table.  The module effectively emulates triggers to get consistent
+behavior across databases that either implement them poorly or not at
+all.
