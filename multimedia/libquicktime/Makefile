@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2012/04/22 12:12:30 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library for reading and writing QuickTime files
 
-DISTNAME=	libquicktime-1.2.3
-REVISION=		0
+DISTNAME=	libquicktime-1.2.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
-SHARED_LIBS=	quicktime	5.0
+SHARED_LIBS=	quicktime	5.1
 
 HOMEPAGE=	http://libquicktime.sourceforge.net/
 
@@ -22,13 +21,13 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xv
 WANTLIB += Xxf86vm atk-1.0 avcodec avutil c cairo drm dv expat
-WANTLIB += faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += ffi faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += schroedinger-1.0 sndio speex swscale theoradec theoraenc
-WANTLIB += vorbis vorbisenc vorbisfile vpx x264 xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += schroedinger-1.0 sndio speex stdc++ swscale theoradec
+WANTLIB += theoraenc vorbis vorbisenc vorbisfile vpx x264 xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/doxygen>=1.7.2
