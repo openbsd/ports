@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/22 09:17:50 jasper Exp $
 
 COMMENT =		JSON encoder/decoder
 
-MODPY_EGG_VERSION =	2.0.9
+MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		simplejson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		devel
 
@@ -24,13 +23,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=s/simplejson/}
 MODULES =		lang/python
 REGRESS_DEPENDS =	devel/py-nose
 
-MODPY_SETUPTOOLS =	Yes
-
 WANTLIB +=		${MODPY_WANTLIB}
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-simplejson
-	cd ${WRKSRC}/docs && pax -rw * ${PREFIX}/share/doc/py-simplejson
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests
