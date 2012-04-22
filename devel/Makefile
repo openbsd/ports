@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1035 2012/04/20 10:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.1036 2012/04/22 20:33:19 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -546,6 +546,7 @@
      SUBDIR += p5-DateTime-Format-MySQL
      SUBDIR += p5-DateTime-Format-Natural
      SUBDIR += p5-DateTime-Format-Pg
+     SUBDIR += p5-DateTime-Format-SQLite
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
@@ -735,6 +736,7 @@
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
+     SUBDIR += p5-MouseX-Types
      SUBDIR += p5-Net-Server
      SUBDIR += p5-Number-Compare
      SUBDIR += p5-Number-Compare-Date
@@ -922,6 +924,7 @@
      SUBDIR += p5-Time-Piece-MySQL
      SUBDIR += p5-Time-Progress
      SUBDIR += p5-Time-TimeDate
+     SUBDIR += p5-Time-Warp
      SUBDIR += p5-Time-modules
      SUBDIR += p5-Tree-DAG_Node
      SUBDIR += p5-Tree-Simple
