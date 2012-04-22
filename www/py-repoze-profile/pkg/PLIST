@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/27 23:16:23 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/22 09:21:18 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/repoze/
 lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -13,10 +13,12 @@ lib/python${MODPY_VERSION}/site-packages/repoze.profile-${MODPY_EGG_VERSION}-py$
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/__init__.py
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/compat.py
+lib/python${MODPY_VERSION}/site-packages/repoze/profile/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.html
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.py
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/profiler.pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/tests.py
 lib/python${MODPY_VERSION}/site-packages/repoze/profile/tests.pyc
-share/doc/py-repoze-profile/
-share/doc/py-repoze-profile/README.txt
+share/doc/${MODPY_PY_PREFIX}repoze-profile/
+share/doc/${MODPY_PY_PREFIX}repoze-profile/README.txt
