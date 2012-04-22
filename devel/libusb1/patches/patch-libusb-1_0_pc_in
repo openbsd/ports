@@ -1,0 +1,12 @@
+$OpenBSD: patch-libusb-1_0_pc_in,v 1.1 2012/04/22 19:52:05 mpi Exp $
+--- libusb-1.0.pc.in.orig	Fri Apr 20 08:44:27 2012
++++ libusb-1.0.pc.in	Sun Apr 22 21:40:12 2012
+@@ -6,7 +6,7 @@ includedir=@includedir@
+ Name: libusb-1.0
+ Description: C API for USB device access from Linux, Mac OS X, OpenBSD, NetBSD and Windows userspace
+ Version: @VERSION@
+-Libs: -L${libdir} -lusb-1.0
++Libs: -L${libdir} -lusb-1.0 -pthread
+ Libs.private: @PC_LIBS_PRIVATE@
+ Cflags: -I${includedir}/libusb-1.0
+ 
