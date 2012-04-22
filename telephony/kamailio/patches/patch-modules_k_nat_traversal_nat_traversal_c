@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_k_nat_traversal_nat_traversal_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- modules_k/nat_traversal/nat_traversal.c.orig	Sun Apr 22 22:28:08 2012
++++ modules_k/nat_traversal/nat_traversal.c	Sun Apr 22 22:28:15 2012
+@@ -28,6 +28,8 @@
+ #include <errno.h>
+ #include <time.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "../../sr_module.h"

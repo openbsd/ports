@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_s_ldap_ld_con_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- modules_s/ldap/ld_con.c.orig	Sun Apr 22 22:29:03 2012
++++ modules_s/ldap/ld_con.c	Sun Apr 22 22:30:13 2012
+@@ -37,6 +37,7 @@
+ #include "../../dprint.h"
+ #include "../../ut.h"
+ 
++#define LDAP_DEPRECATED
+ #include <ldap.h>
+ #include <stdlib.h>
+ #include <string.h>

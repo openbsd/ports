@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_k_seas_seas_h,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- modules_k/seas/seas.h.orig	Sun Apr 22 22:14:38 2012
++++ modules_k/seas/seas.h	Sun Apr 22 22:15:57 2012
+@@ -21,6 +21,9 @@
+ 
+ #ifndef _SEAS_H
+ #define _SEAS_H
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "../../str.h"/*str*/

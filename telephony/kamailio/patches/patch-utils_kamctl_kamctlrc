@@ -1,7 +1,16 @@
-$OpenBSD: patch-scripts_kamctlrc,v 1.2 2009/09/12 09:42:04 sthen Exp $
---- scripts/kamctlrc.orig	Tue Jul 14 15:48:56 2009
-+++ scripts/kamctlrc	Fri Sep 11 23:39:57 2009
-@@ -135,8 +135,12 @@
+$OpenBSD: patch-utils_kamctl_kamctlrc,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- utils/kamctl/kamctlrc.orig	Fri Feb  3 16:46:23 2012
++++ utils/kamctl/kamctlrc	Fri Feb  3 16:47:08 2012
+@@ -61,7 +61,7 @@
+ 
+ 
+ # Program to calculate a message-digest fingerprint 
+-# MD5="md5sum"
++MD5="md5"
+ 
+ # awk tool
+ # AWK="awk"
+@@ -137,8 +137,11 @@
  
  ## OPENSER START Options
  ## PID file path - default is: /var/run/kamailio.pid
@@ -14,4 +23,3 @@ $OpenBSD: patch-scripts_kamctlrc,v 1.2 2009/09/12 09:42:04 sthen Exp $
 +
 +# Disable colour highlighting at the terminal
 +NOHLPRINT=1
-+

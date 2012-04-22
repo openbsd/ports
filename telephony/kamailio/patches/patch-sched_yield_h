@@ -1,0 +1,12 @@
+$OpenBSD: patch-sched_yield_h,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- sched_yield.h.orig	Fri Feb  3 15:23:17 2012
++++ sched_yield.h	Fri Feb  3 15:23:35 2012
+@@ -35,7 +35,7 @@
+ #else
+ #include <unistd.h>
+ 	/* fake sched_yield */
+-#ifndef sched_yield()
++#ifndef sched_yield
+ 	#define sched_yield()	sleep(0)
+ #endif
+ #endif

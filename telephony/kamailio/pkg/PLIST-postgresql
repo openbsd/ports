@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST-postgresql,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
+@comment $OpenBSD: PLIST-postgresql,v 1.2 2012/04/22 21:44:24 sthen Exp $
 lib/kamailio/kamctl/kamctl.pgsql
 lib/kamailio/kamctl/kamdbctl.pgsql
 lib/kamailio/modules/db_postgres.so
-share/doc/kamailio/README.db_postgres
+share/doc/kamailio/modules/README.db_postgres
 share/kamailio/postgres/
 share/kamailio/postgres/acc-create.sql
 share/kamailio/postgres/alias_db-create.sql
@@ -15,13 +15,17 @@ share/kamailio/postgres/dialplan-create.sql
 share/kamailio/postgres/dispatcher-create.sql
 share/kamailio/postgres/domain-create.sql
 share/kamailio/postgres/domainpolicy-create.sql
+share/kamailio/postgres/drouting-create.sql
 share/kamailio/postgres/group-create.sql
 share/kamailio/postgres/htable-create.sql
 share/kamailio/postgres/imc-create.sql
 share/kamailio/postgres/lcr-create.sql
+share/kamailio/postgres/matrix-create.sql
 share/kamailio/postgres/msilo-create.sql
+share/kamailio/postgres/mtree-create.sql
 share/kamailio/postgres/pdt-create.sql
 share/kamailio/postgres/permissions-create.sql
+share/kamailio/postgres/pipelimit-create.sql
 share/kamailio/postgres/presence-create.sql
 share/kamailio/postgres/purple-create.sql
 share/kamailio/postgres/registrar-create.sql
@@ -29,6 +33,7 @@ share/kamailio/postgres/rls-create.sql
 share/kamailio/postgres/siptrace-create.sql
 share/kamailio/postgres/speeddial-create.sql
 share/kamailio/postgres/standard-create.sql
+share/kamailio/postgres/uac-create.sql
 share/kamailio/postgres/uri_db-create.sql
 share/kamailio/postgres/userblacklist-create.sql
 share/kamailio/postgres/usrloc-create.sql

@@ -1,0 +1,45 @@
+$OpenBSD: patch-Makefile_defs,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- Makefile.defs.orig	Tue Jan 31 16:47:59 2012
++++ Makefile.defs	Tue Feb  7 00:05:46 2012
+@@ -422,7 +422,7 @@ endif
+ endif
+ 
+ # dirs
+-cfg_dir = etc/$(MAIN_NAME)/
++cfg_dir = share/examples/$(MAIN_NAME)/
+ bin_dir = sbin/
+ share_dir = share/$(MAIN_NAME)/
+ # lib/$(MAIN_NAME)/modules , lib/$(MAIN_NAME)/modules-s, lib/$(MAIN_NAME)/modules-k
+@@ -504,7 +504,7 @@ data_prefix = $(basedir)$(prefix)
+ 
+ 
+ # target dirs for various stuff
+-cfg_target = $(prefix)/$(cfg_dir)
++cfg_target = $(SYSCONFDIR)/$(MAIN_NAME)/
+ bin_target = $(prefix)/$(bin_dir)
+ #modules_target = $(prefix)/$(modules_dir)
+ lib_target = $(prefix)/$(lib_dir)
+@@ -940,7 +940,7 @@ ifeq	($(ARCH), x86_64)
+ ifeq		($(CC_NAME), gcc)
+ 				C_DEFS+=-DCC_GCC_LIKE_ASM
+ 				#common stuff
+-				CFLAGS=-g -O9 -funroll-loops  -Wcast-align $(PROFILE)
++				CFLAGS=
+ 			#if gcc 4.5+
+ 			# don't add '-mtune=$(CPU)' - gcc failure
+ ifeq			($(CC_SHORTVER), 4.5+)
+@@ -954,12 +954,8 @@ else
+ 			#if gcc 4.2+
+ ifeq			($(CC_SHORTVER), 4.2+)
+ $(call				set_if_empty,CPU,opteron)
+-					CFLAGS+=-m64 -minline-all-stringops \
+-							-falign-loops \
+-							-ftree-vectorize \
+-							-fno-strict-overflow \
+-							-mtune=$(CPU)
+-					LDFLAGS+=-m64
++					CFLAGS+=
++					LDFLAGS+=
+ else
+ 			#if gcc 4.0+
+ ifeq			($(CC_SHORTVER), 4.x)

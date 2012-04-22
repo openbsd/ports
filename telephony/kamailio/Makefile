@@ -1,31 +1,23 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/03 07:40:20 jasper Exp $
+# $OpenBSD:
 
 COMMENT-main =		mature and flexible open source SIP server
 
 SHARED_ONLY =		Yes
 
-VERSION =		1.5.4
-DISTNAME =		kamailio-${VERSION}-tls_src
+VERSION =		3.2.3
+DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
-REVISION-main =		2
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
-REVISION-mysql =	0
 PKGNAME-postgresql =	kamailio-postgresql-${VERSION}
-REVISION-postgresql =	0
-#PKGNAME-radius =	kamailio-radius-${VERSION}		TODO
 PKGNAME-ldap =		kamailio-ldap-${VERSION}
-REVISION-ldap =		0
 PKGNAME-xmlrpc =	kamailio-xmlrpc-${VERSION}
-REVISION-xmlrpc =	0
 PKGNAME-carrierroute =	kamailio-carrierroute-${VERSION}
-REVISION-carrierroute =	1
 PKGNAME-snmpstats =	kamailio-snmpstats-${VERSION}
-REVISION-snmpstats =	1
 PKGNAME-perl =		kamailio-perl-${VERSION}
-REVISION-perl =		1
+#PKGNAME-radius =	kamailio-radius-${VERSION}	TODO
 
 CATEGORIES =		telephony
-MAINTAINER =		Don Jackson <port-pkg-maint@clark-communications.com>
+MAINTAINER =		Roman Kravchuk <kravchuk.kp@gmail.com>
 
 HOMEPAGE =		http://www.kamailio.org/
 
@@ -35,22 +27,31 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MAKE_ENV =		CC=${CC} FREERADIUS=1 LDFLAGS="${LDFLAGS} -pthread"
+SHARED_LIBS =		kcore	0.0	# 1.0
+SHARED_LIBS +=		kmi	0.0	# 1.0
+SHARED_LIBS +=		ser_cds	0.0	# 0.1
+SHARED_LIBS +=		srdb1	0.0	# 1.0
+SHARED_LIBS +=		srdb2	0.0	# 1.0
+SHARED_LIBS +=		trie	0.0	# 1.0
+
+MAKE_ENV =		CC="${CC}" LDFLAGS="${LDFLAGS} -pthread" QUIET=verbose
 
 MASTER_SITES =		http://www.kamailio.org/pub/kamailio/${VERSION}/src/
-WRKDIST =		${WRKDIR}/kamailio-${VERSION}-tls
+WRKDIST =		${WRKDIR}/kamailio-${VERSION}
 
 MODULES =		devel/gettext
-WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2
+WANTLIB-main =		c crypto curl db expat pcre pthread ssl xml2 \
+			idn ncurses readline z ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main =	net/curl \
 			databases/db/v4 \
 			devel/pcre \
-			textproc/libxml,-main,no_python
+			textproc/libxml,-main,no_python \
+			${MODGETTEXT_LIB_DEPENDS}
 
 KAMAILIO_MODULES =	cpl-c db_berkeley dialplan jabber lcr \
 			presence presence_dialoginfo presence_mwi presence_xml \
 			pua pua_bla pua_dialoginfo pua_mi pua_usrloc pua_xmpp \
-			regex rls seas utils xcap_client xmpp
+			regex rls seas utils xcap_client xmpp tls
 
 FLAVOR ?=
 MULTI_PACKAGES =	-main
@@ -59,14 +60,20 @@ USE_GMAKE =		Yes
 USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
-MAKE_FLAGS =	TLS=1 \
+MAKE_FLAGS =	FLAVOUR=kamailio \
 		LIBDIR=lib \
 		PREFIX=${TRUEPREFIX} \
 		BASEDIR=${WRKINST} \
 		cfg-prefix=${WRKINST} \
-		cfg-target=${SYSCONFDIR}/kamailio/ \
-		cfg-dir=${TRUEPREFIX}/share/examples/kamailio/ \
-		include_modules="${KAMAILIO_MODULES}"
+		SYSCONFDIR=${SYSCONFDIR} \
+		C_INCLUDES="-I${LOCALBASE}/include" \
+		include_modules="${KAMAILIO_MODULES}" \
+		LIBkcore_VERSION=${LIBkcore_VERSION} \
+		LIBkmi_VERSION=${LIBkmi_VERSION} \
+		LIBser_cds_VERSION=${LIBser_cds_VERSION} \
+		LIBsrdb1_VERSION=${LIBsrdb1_VERSION} \
+		LIBsrdb2_VERSION=${LIBsrdb2_VERSION} \
+		LIBtrie_VERSION=${LIBtrie_VERSION}
 
 PSEUDO_FLAVORS +=	no_postgresql
 .if !${FLAVOR:L:Mno_postgresql}
@@ -82,19 +89,9 @@ PSEUDO_FLAVORS +=	no_mysql
 MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_MODULES +=	db_mysql
-WANTLIB-mysql =		crypto m mysqlclient ssl z
+WANTLIB-mysql =		crypto m ssl z mysqlclient
 LIB_DEPENDS-mysql =	databases/mysql,-main
 .endif
-
-# TODO
-#PSEUDO_FLAVORS +=	no_radius
-#.if !${FLAVOR:L:Mno_radius}
-#MULTI_PACKAGES +=	-radius
-#COMMENT-radius =	kamailio RADIUS modules
-#KAMAILIO_MODULES +=	auth_radius misc_radius peering
-#WANTLIB-radius =	freeradius-client
-#LIB_DEPENDS-radius =	net/freeradius-client
-#.endif
 
 PSEUDO_FLAVORS +=	no_ldap
 .if !${FLAVOR:L:Mno_ldap}
@@ -130,9 +127,9 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	confuse
-LIB_DEPENDS-carrierroute = devel/libconfuse
-RUN_DEPENDS-carrierroute = ${MODGETTEXT_RUN_DEPENDS}
+WANTLIB-carrierroute =	confuse ${MODGETTEXT_WANTLIB}
+LIB_DEPENDS-carrierroute = devel/libconfuse \
+			${MODGETTEXT_LIB_DEPENDS}
 .endif
 
 PSEUDO_FLAVORS +=	no_perl
@@ -145,13 +142,23 @@ LIB_DEPENDS-perl =
 RUN_DEPENDS-perl =	databases/p5-ldap
 .endif
 
+# TODO
+#PSEUDO_FLAVORS +=	no_radius
+#.if !${FLAVOR:L:Mno_radius}
+#MULTI_PACKAGES +=	-radius
+#COMMENT-radius =	kamailio RADIUS modules
+#KAMAILIO_MODULES +=	auth_radius misc_radius peering
+#WANTLIB-radius =	freeradius-client
+#LIB_DEPENDS-radius =	net/freeradius-client
+#.endif
+
 .for i in ${MULTI_PACKAGES:S/-main//}
 FULLPKGNAME$i ?=	kamailio$i-${VERSION}
 RUN_DEPENDS$i +=	kamailio-${VERSION}:telephony/kamailio
 .endfor
 
 pre-configure:
-	@perl -pi -e '$$. == 1 && s,#!/bin/bash,#!/bin/sh,;' \
-	    -e 's,exit -1,exit 255,' ${WRKSRC}/scripts/kam*
+	@perl -pi -e 's,#!/bin/bash,#!/bin/sh,;' \
+	    -e 's,exit -1,exit 255,' ${WRKSRC}/utils/kamctl/kam*
 
 .include <bsd.port.mk>

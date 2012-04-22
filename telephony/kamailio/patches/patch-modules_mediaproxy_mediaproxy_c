@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_mediaproxy_mediaproxy_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
+--- modules/mediaproxy/mediaproxy.c.orig	Sun Apr 22 22:26:56 2012
++++ modules/mediaproxy/mediaproxy.c	Sun Apr 22 22:27:32 2012
+@@ -19,6 +19,9 @@
+  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  */
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>

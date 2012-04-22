@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-perl,v 1.1.1.1 2009/06/04 13:44:09 sthen Exp $
-lib/kamailio/modules/perl.so
-lib/kamailio/modules/perlvdb.so
+@comment $OpenBSD: PLIST-perl,v 1.2 2012/04/22 21:44:24 sthen Exp $
+lib/kamailio/modules_k/perl.so
+lib/kamailio/modules_k/perlvdb.so
 lib/kamailio/perl/
 lib/kamailio/perl/OpenSER/
 lib/kamailio/perl/OpenSER.pm
@@ -27,5 +27,5 @@ lib/kamailio/perl/OpenSER/VDB/ReqCond.pm
 lib/kamailio/perl/OpenSER/VDB/Result.pm
 lib/kamailio/perl/OpenSER/VDB/VTab.pm
 lib/kamailio/perl/OpenSER/VDB/Value.pm
-share/doc/kamailio/README.perl
-share/doc/kamailio/README.perlvdb
+share/doc/kamailio/modules_k/README.perl
+share/doc/kamailio/modules_k/README.perlvdb
