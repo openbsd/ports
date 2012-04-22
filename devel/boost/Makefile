@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2012/04/13 06:22:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2012/04/22 10:18:13 ajacoutot Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	free peer-reviewed portable C++ source libraries
 
 PKGNAME=	boost-${VERSION}
-REVISION=	13
+REVISION=	14
 
 VERSION=	1.42.0
 DISTNAME=	boost_${VERSION:S/./_/g}
