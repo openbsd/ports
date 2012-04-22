@@ -1,0 +1,4 @@
+DateTime::Format::SQLite understands the formats used by SQLite for its
+date, datetime and time functions.  It can be used to parse these
+formats in order to create DateTime objects, and it can take a DateTime
+object and produce a timestring accepted by SQLite.
