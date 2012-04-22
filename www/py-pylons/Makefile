@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/22 12:15:23 jasper Exp $
 
 COMMENT =	rapid web application development framework
 
-MODPY_EGG_VERSION = 0.9.7
-DISTNAME =	Pylons-${MODPY_EGG_VERSION}
+# "Pylons 1.0 series is stable and production ready."
+MODPY_EGG_VERSION = 1.0.1
+DISTNAME =	Pylons-${MODPY_EGG_VERSION}rc1
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
@@ -23,12 +23,13 @@ MODULES =	lang/python
 
 RUN_DEPENDS =	devel/py-decorator \
 		devel/py-nose \
+		devel/py-simplejson \
 		www/py-beaker \
 		www/py-formencode \
 		www/py-mako \
-		www/py-paste \
-		www/py-paste-deploy \
-		www/py-paste-script \
+		www/py-paste>=1.7.5.1 \
+		www/py-paste-deploy>=1.5.0 \
+		www/py-paste-script>=1.7.4.2 \
 		www/py-routes \
 		www/py-tempita \
 		www/py-weberror \
