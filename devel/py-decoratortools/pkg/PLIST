@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/13 17:15:14 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/22 09:04:33 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/DecoratorTools-${VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/DecoratorTools-${VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/DecoratorTools-${VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -10,5 +10,5 @@ lib/python${MODPY_VERSION}/site-packages/peak/
 lib/python${MODPY_VERSION}/site-packages/peak/util/
 lib/python${MODPY_VERSION}/site-packages/peak/util/decorators.py
 lib/python${MODPY_VERSION}/site-packages/peak/util/decorators.pyc
-share/doc/py-decoratortools/
-share/doc/py-decoratortools/README.txt
+share/doc/${MODPY_PY_PREFIX}decoratortools/
+share/doc/${MODPY_PY_PREFIX}decoratortools/README.txt
