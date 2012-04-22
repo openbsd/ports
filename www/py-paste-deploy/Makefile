@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/22 12:13:41 jasper Exp $
 
 COMMENT =		load, configure, compose WSGI applications and servers
 
-MODPY_EGG_VERSION =	1.3.3
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		PasteDeploy-${MODPY_EGG_VERSION}
 PKGNAME =		py-paste-deploy-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		www
 
 HOMEPAGE =		http://pythonpaste.org/deploy/
-
-MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,6 +21,7 @@ MASTER_SITES =		${MASTER_SITE_PYPI:=P/PasteDeploy/}
 MODULES =		lang/python
 RUN_DEPENDS =		www/py-paste
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
+			devel/py-nose \
 			devel/py-py
 
 MODPY_SETUPTOOLS =	Yes
@@ -31,8 +29,5 @@ MODPY_SETUPTOOLS =	Yes
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-paste-deploy
 	cd ${WRKSRC}/docs && pax -rw * ${PREFIX}/share/doc/py-paste-deploy/
-
-do-regress:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/py.test .
 
 .include <bsd.port.mk>
