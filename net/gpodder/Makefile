@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/20 10:51:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/22 18:43:12 ajacoutot Exp $
 
 COMMENT=		media aggregator and podcast client
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://distfiles.nl/
 
 MODULES=		devel/gettext \
-			lang/python
+			lang/python \
+			textproc/intltool
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-minimock \
