@@ -1,0 +1,14 @@
+$OpenBSD: README,v 1.1 2012/04/22 10:49:11 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Additional patterns for NEdit have been installed under:
+    ${TRUEPREFIX}/share/nedit/patterns/
+
+To load them into NEdit, run the following command:
+    $ nedit -import PATTERN_FILE.pats
+
+The patterns can then be saved permanently into nedit's own resource
+file by using "Save Defaults" from the "Preferences" menu.
