@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.209 2012/04/08 21:09:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.210 2012/04/22 20:40:28 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -75,11 +75,14 @@
      SUBDIR += p5-DBD-mysqlPP
      SUBDIR += p5-DBI
      SUBDIR += p5-DBI-Shell
+     SUBDIR += p5-DBICx-TestDatabase
      SUBDIR += p5-DBIx-Class
      SUBDIR += p5-DBIx-Class-Cursor-Cached
+     SUBDIR += p5-DBIx-Class-DynamicDefault
      SUBDIR += p5-DBIx-Class-HTMLWidget
      SUBDIR += p5-DBIx-Class-IntrospectableM2M
      SUBDIR += p5-DBIx-Class-Schema-Loader
+     SUBDIR += p5-DBIx-Class-TimeStamp
      SUBDIR += p5-DBIx-Class-UUIDColumns
      SUBDIR += p5-DBIx-Class-Validation
      SUBDIR += p5-DBIx-ContextualFetch
