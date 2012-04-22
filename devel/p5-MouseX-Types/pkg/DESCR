@@ -1,0 +1,5 @@
+The type system provided by Mouse effectively makes all types global,
+which can be a problem when different parts of the code base want to use
+the same name for different things.  MouseX::Types lets you declare
+types using short names, but behind the scenes it namespaces all your
+type declarations, preventing name clashes between packages.

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/22 20:30:38 sthen Exp $
+${P5SITE}/MouseX/
+${P5SITE}/MouseX/Types/
+${P5SITE}/MouseX/Types.pm
+${P5SITE}/MouseX/Types/Moose.pm
+${P5SITE}/MouseX/Types/Mouse.pm
+${P5SITE}/MouseX/Types/TypeDecorator.pm
+@man man/man3p/MouseX::Types.3p
+@man man/man3p/MouseX::Types::Moose.3p
+@man man/man3p/MouseX::Types::Mouse.3p
