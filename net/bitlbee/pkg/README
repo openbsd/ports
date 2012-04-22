@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/04/09 15:37:53 okan Exp $
+$OpenBSD: README,v 1.4 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ To enable bitlbee, add a line such as:
 
 to your /etc/inetd.conf and restart inetd:
 
-# /etc/rc.d/inetd reload
+# ${RCDIR}/inetd reload
 
 If a libpurple flavored bitlbee port was previously used, be aware that
 "classic" bitlbee cannot support all protocols supported with purple

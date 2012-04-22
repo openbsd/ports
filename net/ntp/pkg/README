@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/07/11 17:43:14 landry Exp $
+$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,7 +13,7 @@ Several steps need to be taken to properly configure the NTP daemon.
 
 2. Now xntpd can be started with:
 
-     /etc/rc.d/xntpd start
+     ${RCDIR}/xntpd start
 
    Or to start 'xntpd' at every boot, add it to pkg_scripts in
    /etc/rc.conf.local.

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/22 08:19:12 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,7 +31,7 @@ Make sure to set the 'tryton' DB user password to the value of
 First start
 ===========
 Start the trytond server:
-    # /etc/rc.d/trytond start
+    # ${RCDIR}/trytond start
 
 Database initialization
 -----------------------

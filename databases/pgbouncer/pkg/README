@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ Post-installation steps
    # install -d -o _pgbouncer /var/run/pgbouncer
    # pgbouncer -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
 
-3. Launch pgbouncer with /etc/rc.d/pgbouncer start
+3. Launch pgbouncer with ${RCDIR}/pgbouncer start
 
 Random hints
 ============

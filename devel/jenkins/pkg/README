@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/07/08 02:14:58 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ HTTPS and AJP, since the former is extra overhead on localhost and
 the latter conflicts with most Java application servers' AJP port.
 
 To change any of these options, carefully copy the line
-starting daemon_flags= from /etc/rc.d/jenkins into /etc/rc.conf.local
+starting daemon_flags= from ${RCDIR}/jenkins into /etc/rc.conf.local
 and change the daemon_flags to jenkins_flags in addition to any
 changes to the ports and other options.
 

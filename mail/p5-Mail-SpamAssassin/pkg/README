@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2011/09/21 08:02:07 sthen Exp $
+$OpenBSD: README,v 1.2 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,7 +17,7 @@ spamassassin from pkg_scripts as usual in /etc/rc.conf.local:
 
 pkg_scripts="${pkg_scripts} spamassassin"
 
-(Use "/etc/rc.d/spamassassin start" to start the daemon right away).
+(Use "${RCDIR}/spamassassin start" to start the daemon right away).
 
 The final step: put this at the top of your .procmailrc.
 

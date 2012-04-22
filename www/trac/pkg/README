@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/03/03 11:42:06 sthen Exp $
+$OpenBSD: README,v 1.3 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,7 +26,7 @@ tracd_flags="-p 8085 </path/to/projectenv>"
 
 And start the daemon:
 
-# /etc/rc.d/tracd start
+# ${RCDIR}/tracd start
 
 Now you can open up a web brower and go to http://localhost:8085/. You
 should see a single link for the project you just created. If you follow

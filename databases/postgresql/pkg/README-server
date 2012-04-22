@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.11 2012/04/12 11:47:05 sthen Exp $
+$OpenBSD: README-server,v 1.12 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -129,7 +129,7 @@ you must adapt these instructions to your setup.
 # sudo -u _postgresql pg_dumpall -U postgres > /var/postgresql/full.sqldump
 
 2) Shutdown the server:
-# /etc/rc.d/postgresql stop
+# ${RCDIR}/postgresql stop
 
 3) Upgrade your PostgreSQL package with pkg_add.
 # pkg_add -ui postgresql-server
@@ -151,7 +151,7 @@ Some postgresql.conf settings changed or disappeared in this version.
 Examine your old file for local changes and apply them to the new version.
 
 7) Start PostgreSQL:
-# /etc/rc.d/postgresql start
+# ${RCDIR}/postgresql start
 
 8) Restore your data:
 # sudo -u _postgresql psql -U postgres < /var/postgresql/full.sqldump

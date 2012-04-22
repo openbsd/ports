@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2012/03/28 07:47:47 sthen Exp $
+$OpenBSD: README,v 1.8 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -94,4 +94,4 @@ Messages {
 }
 
 Then reload bacula-dir(8):
-    # /etc/rc.d/bacula_dir reload
+    # ${RCDIR}/bacula_dir reload

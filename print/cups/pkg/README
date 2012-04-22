@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2012/02/16 22:12:08 ajacoutot Exp $
+$OpenBSD: README,v 1.15 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -62,4 +62,4 @@ If you experience cups-driverd(8) crashes or printing issues after
 upgrading to a new major release (e.g. from 1.5 to 1.6), it may be
 necessary to remove the old CUPS cache and restart cups(8):
     # rm /var/cache/cups/* 2>/dev/null
-    # /etc/rc.d/cupsd restart
+    # ${RCDIR}/cupsd restart

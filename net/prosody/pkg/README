@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/01/26 10:27:15 sthen Exp $
+$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,7 +19,7 @@ Using Prosody in an OpenBSD environment
 2) Prosody includes an rc script for starting and stopping. You can
    start it by running:
 
-   # /etc/rc.d/prosody start
+   # ${RCDIR}/prosody start
 
    You can have it start automatically on boot by adding prosody to your
    pkg_scripts line in /etc/rc.conf.local

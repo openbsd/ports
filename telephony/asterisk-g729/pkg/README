@@ -1,11 +1,11 @@
-$OpenBSD: README,v 1.1.1.1 2011/06/04 17:14:58 jolan Exp $
+$OpenBSD: README,v 1.2 2012/04/22 11:41:55 ajacoutot Exp $
 
 G.729 codec for the Asterisk open source PBX.
 
 After installing this package, you will need to either restart Asterisk
 or manually load the module:
 
-$ sudo /etc/rc.d/asterisk restart
+$ sudo ${RCDIR}/asterisk restart
 $ asterisk -rx 'module load codec_g729.so'
 
 You can verify the module has been loaded using the following command:
