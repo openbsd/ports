@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: zarafa.rc,v 1.8 2011/07/08 02:14:59 ajacoutot Exp $
+# $OpenBSD: zarafa.rc,v 1.9 2012/04/22 13:44:09 ajacoutot Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument
 _pkg_scripts="zarafa_server zarafa_spooler zarafa_monitor zarafa_gateway zarafa_ical"
@@ -11,8 +11,8 @@ if [ "$1" = stop ]; then
 	i=$(echo ${_pkg_scripts} | wc -w)
 	while [ $i -ne 0 ]; do
 		i=$((i-1))
-		/etc/rc.d/${_s[$i]} $1
+		${RCDIR}/${_s[$i]} $1
 	done
 else
-	for i in ${_pkg_scripts}; do /etc/rc.d/$i $1; done
+	for i in ${_pkg_scripts}; do ${RCDIR}/$i $1; done
 fi

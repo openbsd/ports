@@ -1,4 +1,4 @@
-$OpenBSD: patch-troubleshoot_SchedulerNotRunning_py,v 1.2 2011/05/04 09:10:52 ajacoutot Exp $
+$OpenBSD: patch-troubleshoot_SchedulerNotRunning_py,v 1.3 2012/04/22 13:44:09 ajacoutot Exp $
 --- troubleshoot/SchedulerNotRunning.py.orig	Fri Apr  1 16:23:58 2011
 +++ troubleshoot/SchedulerNotRunning.py	Wed May  4 08:37:29 2011
 @@ -27,10 +27,9 @@ class SchedulerNotRunning(Question):
@@ -10,7 +10,7 @@ $OpenBSD: patch-troubleshoot_SchedulerNotRunning_py,v 1.2 2011/05/04 09:10:52 aj
 -                                    "the main menu and look for the 'cups' "
 -                                    "service."))
 +                                    "to be running.  To correct this, run "
-+                                    "'/etc/rc.d/cups start' "
++                                    "'${RCDIR}/cups start' "
 +                                    "as root in a terminal."))
          troubleshooter.new_page (page, self)
  

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2012/04/11 18:39:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2012/04/22 13:44:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	AFP file and print services for IP networks
 
 DISTNAME=	netatalk-2.2.2
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netatalk/}
 EXTRACT_SUFX=	.tar.bz2
