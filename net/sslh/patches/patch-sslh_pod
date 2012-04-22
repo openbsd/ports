@@ -1,8 +1,8 @@
---- sslh.pod.orig	Sat Nov 26 22:15:31 2011
-+++ sslh.pod	Fri Mar 23 19:50:40 2012
+--- sslh.pod.orig	Sat Apr 21 18:34:14 2012
++++ sslh.pod	Sun Apr 22 09:45:36 2012
 @@ -16,12 +16,19 @@
- firewall, which almost never block port 443) while still
- serving HTTPS on that port. 
+ inside a corporate firewall, which almost never block port
+ 443) while still serving HTTPS on that port. 
  
 -
  The idea is to have B<sslh> listen to the external 443 port,
@@ -39,23 +39,7 @@
  =head1 OPTIONS
  
  =over 4
-@@ -124,13 +120,12 @@
- =item B<-u> I<username>, B<--user> I<username>
- 
- Requires to run under the specified username. Defaults to
--I<nobody> (which is not perfect -- ideally B<sslh> should
--run under its own UID).
-+I<_sslh>.
- 
- =item B<-P> I<pidfile>, B<--pid-file> I<pidfile>
- 
- Specifies the file in which to write the PID of the main
--server. Defaults to I</var/run/sslh.pid>.
-+server. Defaults to I</var/run/sslh/sslh.pid>.
- 
- =item B<-i>, B<--inetd>
- 
-@@ -142,24 +137,6 @@
+@@ -140,24 +136,6 @@
  Runs in foreground. The server will not fork and will remain connected
  to the terminal. Messages normally sent to B<syslog> will also be sent
  to I<stderr>.

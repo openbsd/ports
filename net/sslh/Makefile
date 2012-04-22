@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/13 14:21:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/22 20:50:12 sthen Exp $
 
 COMMENT =	ssl/ssh multiplexer
 
-VERSION =	1.10
+VERSION =	1.11
 DISTNAME =	sslh-${VERSION}
 CATEGORIES =	security net
 REVISION =	0
