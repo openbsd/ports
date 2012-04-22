@@ -1,11 +1,9 @@
-$OpenBSD: patch-gio_gresource_c,v 1.1 2012/04/17 13:29:24 jasper Exp $
+$OpenBSD: patch-gio_gresource_c,v 1.2 2012/04/22 16:58:42 ajacoutot Exp $
 
 From 5ef34e5f11b4f71a66615b6506108ee540cc3420 Mon Sep 17 00:00:00 2001
 From: Christian Persch <chpe@gnome.org>
 Date: Mon, 09 Apr 2012 13:34:10 +0000
 Subject: resources: compiler: Fix resources on big endian architectures
-
-https://bugzilla.gnome.org/show_bug.cgi?id=673409
 
 --- gio/gresource.c.orig	Fri Apr 13 15:39:41 2012
 +++ gio/gresource.c	Tue Apr 17 15:25:54 2012
