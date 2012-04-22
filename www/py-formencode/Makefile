@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/22 09:18:00 jasper Exp $
 
 COMMENT =		HTML form validation, generation, and conversion
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.2.4
 DISTNAME =		FormEncode-${MODPY_EGG_VERSION}
 PKGNAME =		py-formencode-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		www
 
@@ -30,12 +29,8 @@ REGRESS_DEPENDS =	databases/py-sqlobject \
 MODPY_SETUPTOOLS =	Yes
 
 post-install:
-	rm -f ${WRKSRC}/docs/test_docs.py{.orig,c}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-formencode
 	cd ${WRKSRC}/docs && pax -rw * ${PREFIX}/share/doc/py-formencode/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-formencode
-	cd ${WRKSRC}/examples && pax -rw * \
-	    ${PREFIX}/share/examples/py-formencode/
 
 do-regress:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests tests
