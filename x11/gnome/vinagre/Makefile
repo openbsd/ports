@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/04/17 08:19:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2012/04/22 14:11:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	remote desktop viewer for GNOME
 
 GNOME_PROJECT=	vinagre
 GNOME_VERSION=	3.4.1
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -44,8 +45,5 @@ MODGNOME_TOOLS= 	yelp
 CONFIGURE_ARGS=	--with-avahi \
 		--with-telepathy \
 		--disable-spice
-
-post-extract:
-	cp ${FILESDIR}/vinagre-utils.h ${WRKSRC}/vinagre/
 
 .include <bsd.port.mk>
