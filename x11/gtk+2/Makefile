@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2012/02/16 22:09:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2012/04/23 07:34:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -104,7 +104,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--enable-introspection \
 		--with-xinput \
-		--disable-man \
 		--disable-papi
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+2
