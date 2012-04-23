@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/09 11:55:53 pascal Exp $
+# $OpenBSD: Makefile,v 1.23 2012/04/23 14:16:34 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -18,14 +18,14 @@ PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 
-REVISION-main = 1
-REVISION-c++ = 1
+REVISION-main = 2
+REVISION-c++ = 2
 REVISION-estdc = 1
-REVISION-f95 = 1
-REVISION-java = 1
-REVISION-objc = 1
-REVISION-ada = 1
-REVISION-go = 1
+REVISION-f95 = 2
+REVISION-java = 2
+REVISION-objc = 2
+REVISION-ada = 2
+REVISION-go = 2
 
 SHARED_LIBS =	estdc++		14.0 \
 		gfortran	3.0 \
@@ -106,7 +106,7 @@ CONFIGURE_STYLE =		gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 EXTRA_ENV += am_cv_func_iconv=no JAR=no
-EXTRA_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
+EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}

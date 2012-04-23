@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-family_c-format_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp $
+$OpenBSD: patch-gcc_c-family_c-format_c,v 1.2 2012/04/23 14:16:34 pascal Exp $
 --- gcc/c-family/c-format.c.orig	Mon Dec  6 01:56:06 2010
-+++ gcc/c-family/c-format.c	Sat Nov 12 12:39:38 2011
++++ gcc/c-family/c-format.c	Thu Apr 12 14:26:08 2012
 @@ -61,6 +61,7 @@ set_Wformat (int setting)
     format_type_error.  Target-specific format types do not have
     matching enum values.  */
@@ -23,10 +23,10 @@ $OpenBSD: patch-gcc_c-family_c-format_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp
  
 +static const format_length_info kprintf_length_specs[] =
 +{
-+  { "h", FMT_LEN_h, STD_C89, NULL, 0, 0, 0 },
++  { "h", FMT_LEN_h, STD_C89, NO_FMT, 0 },
 +  { "l", FMT_LEN_l, STD_C89, "ll", FMT_LEN_ll, STD_C9L, 0 },
-+  { "q", FMT_LEN_ll, STD_EXT, NULL, 0, 0, 0 },
-+  { "L", FMT_LEN_L, STD_C89, NULL, 0, 0, 0 },
++  { "q", FMT_LEN_ll, STD_EXT, NO_FMT, 0 },
++  { "L", FMT_LEN_L, STD_C89, NO_FMT, 0 },
 +  { NO_FMT, NO_FMT, 0 }
 +};
 +
@@ -41,26 +41,24 @@ $OpenBSD: patch-gcc_c-family_c-format_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp
  static const format_char_info print_char_table[] =
  {
    /* C89 conversion specifiers.  */
-@@ -664,6 +674,46 @@ static const format_char_info asm_fprintf_char_table[]
+@@ -664,6 +674,44 @@ static const format_char_info asm_fprintf_char_table[]
    { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL }
  };
  
 +static const format_char_info kprint_char_table[] =
 +{
 +  /* C89 conversion specifiers.  */
-+  { "di",  0, STD_C89, { T89_I,   T99_SC,  T89_S,   T89_L,   T9L_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i", NULL  },
-+  { "oxX", 0, STD_C89, { T89_UI,  T99_UC,  T89_US,  T89_UL,  T9L_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i", NULL  },
-+  { "u",   0, STD_C89, { T89_UI,  T99_UC,  T89_US,  T89_UL,  T9L_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0'I",   "i", NULL  },
-+  { "c",   0, STD_C89, { T89_I,   BADLEN,  BADLEN,  T94_WI,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-w",       "", NULL   },
-+  { "s",   1, STD_C89, { T89_C,   BADLEN,  BADLEN,  T94_W,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp",      "cR", NULL },
-+  { "p",   1, STD_C89, { T89_V,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-w",       "c", NULL  },
++  { "di",  0, STD_C89, { T89_I,   BADLEN,  T89_S,   T89_L,   T9L_LL,  BADLEN,  T99_SST, BADLEN,  BADLEN, BADLEN,  BADLEN,  BADLEN  }, "-wp0 +'I", "i", NULL },
++  { "oxX", 0, STD_C89, { T89_UI,  BADLEN,  T89_US,  T89_UL,  T9L_ULL, BADLEN, T99_ST,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "-wp0#",    "i", NULL },
++  { "u",   0, STD_C89, { T89_UI,  BADLEN,  T89_US,  T89_UL,  T9L_ULL, BADLEN, T99_ST,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "-wp0'I",   "i", NULL },
++  { "c",   0, STD_C89, { T89_I,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN, BADLEN,  BADLEN,  BADLEN  }, "-w",       "", NULL },
++  { "s",   1, STD_C89, { T89_C,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN, BADLEN, BADLEN,  BADLEN,   BADLEN,  BADLEN  }, "-wp",      "cR", NULL },
++  { "p",   1, STD_C89, { T89_V,   BADLEN,  BADLEN,  T89_UL,  T9L_LL,  BADLEN,  BADLEN, BADLEN, BADLEN,  BADLEN,   BADLEN,  BADLEN  }, "-wp0",      "c", NULL },
 +/* Kernel bitmap formatting */
-+  { "b",   1, STD_C89, { T89_C,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "",		"", NULL   },
-+/* Kernel recursive format */
-+  { ":",   1, STD_C89, { T89_V,	  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN }, "",		"", NULL   },
-+/* Kernel debugger auto-radix printing */
-+  { "nrz", 0, STD_C89, { T89_I,	  T89_I,   T89_I,   T89_L,   T9L_LL,  TEX_LL,  BADLEN,	BADLEN,  BADLEN }, "-wp0# +",	"", NULL   },
-+  { NULL,  0, 0, NOLENGTHS, NULL, NULL, NULL }
++  { "b",   0, STD_C89, { T89_I,   BADLEN,  T89_S,  T89_L,  T9L_LL,  BADLEN,  T99_SST,  BADLEN,  BADLEN, BADLEN,   BADLEN,  BADLEN }, "",    "", kprint_char_table + 8   },
++  { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL },
++/* Kernel bitmap formatting, second part - similar to "s" except for types[] */
++  { "b",   1, STD_C89, { T89_C,   BADLEN,  T89_C,  T89_C,  T89_C,  BADLEN,  T89_C,  BADLEN,  BADLEN, BADLEN, BADLEN, BADLEN }, NULL,		"cR", NULL   }
 +};
 +
 +static const format_char_info syslog_char_table[] =
@@ -82,13 +80,13 @@ $OpenBSD: patch-gcc_c-family_c-format_c,v 1.1.1.1 2011/11/14 13:00:57 pascal Exp
 +  { "C",   0, STD_EXT, { TEX_WI,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-w",       "", NULL   },
 +  { "S",   1, STD_EXT, { TEX_W,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp",      "R", NULL  },
 +  { "m",   0, STD_C89, { T89_V,   BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN,  BADLEN  }, "-wp",      "", NULL   },
-+  { NULL,  0, 0, NOLENGTHS, NULL, NULL, NULL }
++  { NULL,  0, STD_C89, NOLENGTHS, NULL, NULL, NULL }
 +};
 +
  static const format_char_info gcc_diag_char_table[] =
  {
    /* C89 conversion specifiers.  */
-@@ -839,6 +889,18 @@ static const format_kind_info format_types_orig[] =
+@@ -839,6 +887,18 @@ static const format_kind_info format_types_orig[] =
      FMT_FLAG_ARG_CONVERT|FMT_FLAG_EMPTY_PREC_OK,
      'w', 0, 'p', 0, 'L', 0,
      NULL, NULL

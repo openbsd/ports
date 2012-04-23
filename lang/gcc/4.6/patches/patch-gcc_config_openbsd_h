@@ -1,15 +1,28 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1 2012/03/31 20:02:03 pascal Exp $
---- gcc/config/openbsd.h.orig	Sun Mar 11 19:12:59 2012
-+++ gcc/config/openbsd.h	Sun Mar 11 19:19:46 2012
-@@ -296,5 +296,11 @@ __enable_execute_stack (void *addr)					\
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2012/04/23 14:16:34 pascal Exp $
+--- gcc/config/openbsd.h.orig	Wed Dec 22 13:06:01 2010
++++ gcc/config/openbsd.h	Thu Apr 12 14:17:05 2012
+@@ -109,9 +109,9 @@ while (0)
+    This two-stage defines makes it easy to pick that for targets that
+    have subspecs.  */
+ #ifdef CPP_CPU_SPEC
+-#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #else
+-#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #endif
+ 
+ #undef LIB_SPEC
+@@ -295,6 +295,12 @@ __enable_execute_stack (void *addr)					\
+   if (mprotect (page, end - page, PROT_READ | PROT_WRITE | PROT_EXEC) < 0) \
      perror ("mprotect of trampoline code");				\
  }
- 
++
 +/*
 + * Disable the use of unsafe builtin functions, (strcat, strcpy, stpcpy),
 + * making them easier to spot in the object files.
 + */
 +#define NO_UNSAFE_BUILTINS
-+
+ 
  #include <sys/types.h>
  #include <sys/mman.h>
