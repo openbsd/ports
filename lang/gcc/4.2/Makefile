@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/02/22 12:40:04 kurt Exp $
+# $OpenBSD: Makefile,v 1.76 2012/04/23 14:12:18 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -19,13 +19,13 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
-REVISION-main = 7
-REVISION-c++ = 10
+REVISION-main = 8
+REVISION-c++ = 11
 REVISION-estdc = 1
-REVISION-f95 = 9
-REVISION-java = 8
-REVISION-objc = 8
-REVISION-ada = 7
+REVISION-f95 = 10
+REVISION-java = 9
+REVISION-objc = 9
+REVISION-ada = 8
 EPOCH = 0
 
 SHARED_LIBS =	estdc++		13.0 \
@@ -130,7 +130,7 @@ post-install:
 .endif
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/include
 CONFIGURE_ENV += am_cv_func_iconv=no
-CONFIGURE_ENV += ac_cv_prog_CONFIGURED_M4=/usr/bin/m4
+CONFIGURE_ENV += ac_cv_prog_M4=/usr/bin/m4
 
 # Note: the configure target passes CFLAGS to the configure script anyways.
 
