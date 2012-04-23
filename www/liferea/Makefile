@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2012/04/07 13:21:53 landry Exp $
+# $OpenBSD: Makefile,v 1.50 2012/04/23 17:15:19 espie Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.8.4
+REVISION =		0
 CATEGORIES=		www x11
 
 HOMEPAGE=		http://liferea.sourceforge.net/
@@ -40,7 +41,6 @@ LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			devel/libsoup,-main \
 			devel/libunique \
 			devel/json-glib \
-			databases/sqlite3 \
 			textproc/enchant \
 			www/webkit>=1.6.1v0
 

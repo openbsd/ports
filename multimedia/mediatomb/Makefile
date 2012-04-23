@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/08 17:21:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =	UPnP media server
 
@@ -24,7 +24,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mediatomb/}
 MODULES =	converters/libiconv
 
 LIB_DEPENDS =	audio/taglib \
-		databases/sqlite3 \
 		devel/libmagic \
 		graphics/ffmpegthumbnailer \
 		graphics/libexif \

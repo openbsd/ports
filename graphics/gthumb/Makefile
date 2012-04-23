@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/01/24 08:42:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2012/04/23 17:15:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	2.14.2
+REVISION =	0
 
 CATEGORIES=	graphics
 
@@ -38,8 +39,7 @@ MODULES=	devel/gconf2 \
 # web albums
 BUILD_DEPENDS +=	devel/bison
 
-LIB_DEPENDS=	databases/sqlite3 \
-		devel/libsoup,-gnome \
+LIB_DEPENDS=	devel/libsoup,-gnome \
 		devel/libunique \
 		graphics/clutter/clutter-gtk \
 		graphics/exiv2>=0.22 \

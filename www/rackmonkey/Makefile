@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/23 17:15:19 espie Exp $
 
 COMMENT=	web-based tool for managing racks of equipment
 
@@ -25,7 +25,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=rackmonkey/}
 # to setup a sample database (not strictly necessary, but makes for
 # easy end-user configuration for the simplest case). sqlite databases
 # are arch-independent so PKG_ARCH=* is ok.
-BUILD_DEPENDS=	databases/sqlite3
+BUILD_DEPENDS=
 
 RUN_DEPENDS=	p5-DBD-SQLite-*|p5-DBD-Pg-*|p5-DBD-mysql-*:databases/p5-DBD-SQLite \
 		misc/p5-Spreadsheet-WriteExcel \
@@ -45,9 +45,9 @@ do-configure:
 SAMPLEDB = db/rackmonkey.db.sample
 do-build:
 	cd ${WRKSRC}; mkdir db; \
-	${LOCALBASE}/bin/sqlite3 ${SAMPLEDB} < sql/schema/schema.sqlite.sql; \
-	${LOCALBASE}/bin/sqlite3 ${SAMPLEDB} < sql/data/default_data.sql; \
-	${LOCALBASE}/bin/sqlite3 ${SAMPLEDB} < sql/data/sample_data.sql
+	/usr/bin/sqlite3 ${SAMPLEDB} < sql/schema/schema.sqlite.sql; \
+	/usr/bin/sqlite3 ${SAMPLEDB} < sql/data/default_data.sql; \
+	/usr/bin/sqlite3 ${SAMPLEDB} < sql/data/sample_data.sql
 	
 do-install:
 	find ${WRKSRC} -type f -and -name '*.orig' -print0 | xargs -r0 rm

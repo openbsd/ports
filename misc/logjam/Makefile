@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2012/03/30 18:01:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.1
 CATEGORIES =	misc x11
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://andy-shev.github.com/LogJam/
 
@@ -29,8 +29,7 @@ EXTRACT_SUFX =	.tar.bz2
 MODULES =	devel/gettext \
 		textproc/intltool
 
-LIB_DEPENDS =	databases/sqlite3 \
-		devel/libsoup \
+LIB_DEPENDS =	devel/libsoup \
 		textproc/libxml \
 		www/gtkhtml3
 

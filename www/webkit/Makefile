@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/04/03 15:39:35 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2012/04/23 17:15:19 espie Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT =	open source web browser engine for Gtk+
 V =		1.8.0
 DISTNAME =	webkit-${V}
 EPOCH =		0
+REVISION =	0
 CATEGORIES =	www
 EXTRACT_SUFX=	.tar.xz
 
@@ -73,7 +74,6 @@ WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
 		textproc/icu4c>=4.4 \
-		databases/sqlite3 \
 		textproc/libxslt \
 		textproc/enchant \
 		geo/geoclue \

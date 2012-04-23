@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2012/02/18 18:40:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2012/04/23 17:15:19 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -66,8 +66,7 @@ MULTI_PACKAGES=		-main
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
-BUILD_DEPENDS=		databases/db/v4 \
-			databases/sqlite3
+BUILD_DEPENDS=		databases/db/v4
 
 REGRESS_DEPENDS=	devel/check
 

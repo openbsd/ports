@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/04/16 22:52:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/04/23 17:15:18 espie Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -8,6 +8,7 @@ GNOME_VERSION =		2.38.1
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
+REVISION-gnome =	0
 
 SHARED_LIBS +=  soup-2.4             6.0      # 6.0
 SHARED_LIBS +=  soup-gnome-2.4       6.0      # 6.0
@@ -47,8 +48,7 @@ WANTLIB-gnome =		${WANTLIB-main} dbus-1 sqlite3 \
 RUN_DEPENDS-gnome=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			${BUILD_PKGPATH},-main \
-			x11/gnome/libgnome-keyring>=3.4.0 \
-			databases/sqlite3
+			x11/gnome/libgnome-keyring>=3.4.0
 
 MODULES =		devel/gettext \
 			x11/gnome

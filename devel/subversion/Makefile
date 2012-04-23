@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2012/03/12 10:28:40 stsp Exp $
+# $OpenBSD: Makefile,v 1.106 2012/04/23 17:15:18 espie Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -17,6 +17,7 @@ FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
+REVISION =		0
 
 SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
@@ -66,7 +67,6 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/apr \
 		devel/apr-util \
 		security/cyrus-sasl2 \
-		databases/sqlite3 \
 		devel/libmagic
 
 WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl \

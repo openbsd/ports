@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/02 14:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =	bayesian spam filter
 
 DISTNAME =	bogofilter-1.1.6
-REVISION =	4
+REVISION =	5
 CATEGORIES =	mail
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -30,7 +30,6 @@ LIB_DEPENDS +=		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
 .elif ${FLAVOR} == "sqlite3"
 DB_ENGINE =		sqlite3
-LIB_DEPENDS +=		databases/sqlite3
 WANTLIB +=		sqlite3>=8
 .elif ${FLAVOR} == "qdbm"
 DB_ENGINE =		qdbm

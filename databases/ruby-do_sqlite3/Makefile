@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/06 19:28:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =	DataObjects driver for SQLite3
 
 VERSION =	0.10.8
 DISTNAME =	do_sqlite3-${VERSION}
 CATEGORIES =	databases
+REVISION =	0
 
 # MIT
 PERMIT_PACKAGE_CDROM = Yes
@@ -20,7 +21,6 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		databases/ruby-data_objects,${MODRUBY_FLAVOR}>=${VERSION}
 
 WANTLIB =		sqlite3
-LIB_DEPENDS =		databases/sqlite3
 
 REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/ruby-bacon,${MODRUBY_FLAVOR}

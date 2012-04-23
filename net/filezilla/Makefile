@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/04/23 17:15:18 espie Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
@@ -6,6 +6,7 @@ V=		3.5.3
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
+REVISION =	0
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -35,8 +36,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn \
 		security/gnutls \
 		x11/dbus \
-		x11/wxWidgets>=2.8.6 \
-		databases/sqlite3
+		x11/wxWidgets>=2.8.6
 
 BUILD_DEPENDS=	devel/cppunit \
 		devel/xdg-utils

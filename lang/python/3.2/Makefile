@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/27 21:27:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/23 17:15:18 espie Exp $
 
 VERSION =		3.2
 PATCHLEVEL =		.2
 SHARED_LIBS =		python3.2m 1.0
-REVISION =		1
+REVISION =		2
 VERSION_SPEC =		>=3.2,<3.3
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>

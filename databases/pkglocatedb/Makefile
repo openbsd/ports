@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/24 07:37:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/23 17:15:17 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
-DISTNAME =		pkglocatedb-0.3
+# locate data is NOT MI, unfortunately
+# PKG_ARCH = ${ARCH}....
+DISTNAME =		pkglocatedb-0.4
 DISTFILES =
 
 CATEGORIES =		databases
@@ -12,8 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-BUILD_DEPENDS =	databases/sqlports,-compact>=1.18 \
-		databases/sqlite3
+BUILD_DEPENDS =	databases/sqlports,-compact>=1.18
 
 do-build: 
 	@if test -s ${WRKBUILD}/ouch; then \

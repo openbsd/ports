@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/11/27 10:57:24 fgsch Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/23 17:15:18 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ DISTNAME =	ircd-ratbox-3.0.7
 CATEGORIES =	net
 MASTER_SITES =	${HOMEPAGE}download/
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 HOMEPAGE =	http://www.ratbox.org/
 
@@ -21,8 +22,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =		c crypto ltdl sqlite3 ssl z
 
-LIB_DEPENDS =		databases/sqlite3 \
-			devel/libtool,-ltdl
+LIB_DEPENDS =		devel/libtool,-ltdl
 
 CONFDIR =		${SYSCONFDIR}/ircd-ratbox
 LOGDIR =		/var/log/ircd-ratbox

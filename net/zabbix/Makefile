@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/03/20 12:00:37 robert Exp $
+# $OpenBSD: Makefile,v 1.70 2012/04/23 17:15:18 espie Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -12,6 +12,7 @@ PKGNAME-server =	zabbix-server-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
+REVISION-server =	0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -94,7 +95,6 @@ CONFIGURE_ARGS +=	--with-pgsql
 WANTLIB-server += pq
 .elif ${BACKEND} == "sqlite3"
 MULTI_PACKAGES += -server
-LIB_DEPENDS-server +=	databases/sqlite3,-main
 CONFIGURE_ARGS +=	--with-sqlite3
 WANTLIB-server += sqlite3
 .elif ${BACKEND} == "no_server"

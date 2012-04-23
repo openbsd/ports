@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2012/04/23 17:15:18 espie Exp $
 
 COMMENT=	anti-spam filter
 
 VERSION=	3.8.0
 DISTNAME=	dspam-${VERSION}
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	dspam	8.0
 CATEGORIES=	mail
 
@@ -92,7 +92,6 @@ WANTLIB +=		sqlite>=8
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite3_drv \
 			--with-sqlite-includes=${LOCALBASE}/include \
 			--with-sqlite-libraries=${LOCALBASE}/lib
-LIB_DEPENDS+=		databases/sqlite3
 WANTLIB +=		sqlite3>=8
 DRIVER =		sqlite
 .endif

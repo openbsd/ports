@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.65 2012/02/07 06:36:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/04/23 17:15:18 espie Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.25
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS += anonymous       2.22 # 2.25
 SHARED_LIBS += crammd5         2.22 # 2.25
@@ -114,7 +114,6 @@ CFLAGS+=	-I${LOCALBASE}/include/postgresql
 ERRORS+=		${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	databases/sqlite3
 WANTLIB +=	sqlite3
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \

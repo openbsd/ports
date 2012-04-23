@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/12 12:07:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/23 17:15:18 espie Exp $
 
 COMMENT=	IP accounting software
 
 DISTNAME=	pmacct-0.12.5
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -17,8 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m pcap z sqlite3>=8
 
 MASTER_SITES=	${HOMEPAGE}
-
-LIB_DEPENDS+=	databases/sqlite3
 
 NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu

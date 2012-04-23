@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/29 14:53:20 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/04/23 17:15:18 espie Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -13,6 +13,7 @@ REVISION-main=		8
 REVISION-fastcgi=	9
 REVISION-snmp=		6
 REVISION-gd=		6
+REVISION-pdo_sqlite =	6
 
 INI_TEMPLATES=	dist recommended
 

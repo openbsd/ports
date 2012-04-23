@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/02/03 08:44:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/23 17:15:18 espie Exp $
 
 PV=		5.3
 V=		${PV}.10
 SUHOSIN_PHPV=	5.3.9
 SUHOSIN_P_V=	0.9.10
+REVISION-pdo_sqlite = 0
 
 INI_TEMPLATES=	development production
 

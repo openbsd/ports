@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/23 17:15:19 espie Exp $
 
 # Some assembly required
 ONLY_FOR_ARCHS =i386 amd64
@@ -7,7 +7,7 @@ SHARED_ONLY =	Yes
 COMMENT =	language agnostic asynchronous web server
 
 DISTNAME =	mongrel2-1.7.5
-REVISION=	0
+REVISION=	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://mongrel2.org/
@@ -23,8 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 WANTLIB += c pthread sqlite3 zmq
 
-LIB_DEPENDS =		net/zeromq \
-			databases/sqlite3
+LIB_DEPENDS =		net/zeromq
 
 USE_GMAKE =		Yes
 MAKE_ARGS =		OPTFLAGS="-I${LOCALBASE}/include" \

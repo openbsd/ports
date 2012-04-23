@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/01/29 10:37:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/23 17:15:18 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,8 +24,7 @@ WANTLIB += pthread sasl2 ssh ssl stdc++
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=openh323gk/}
 
 BUILD_DEPENDS=	databases/mysql \
-		databases/postgresql \
-		databases/sqlite3
+		databases/postgresql
 
 LIB_DEPENDS=	net/h323plus \
 		security/libssh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/04 22:49:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -6,6 +6,7 @@ DISTNAME =		fossil-src-20120317175325
 PKGNAME =		fossil-1.22
 EPOCH =			0
 CATEGORIES =		devel www
+REVISION =		0
 
 MAINTAINER =		James Turner <james@calminferno.net>
 
@@ -25,7 +26,6 @@ WANTLIB =		c crypto ssl sqlite3 z
 
 MODULES =		lang/tcl
 
-LIB_DEPENDS =		databases/sqlite3
 BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE =	simple

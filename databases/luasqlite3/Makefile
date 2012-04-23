@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/23 17:15:17 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	binding of sqlite3 for lua
 PKGNAME=	luasqlite3-0.4.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	lua-sqlite3-0.4.1
 CATEGORIES=	databases
 MASTER_SITES=	${HOMEPAGE}
@@ -25,7 +25,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--with-lua-dir=${PREFIX}
 CFLAGS+=	-fPIC -DPIC
 
-LIB_DEPENDS=	databases/sqlite3
 REGRESS_DEPENDS=databases/luasqlite3
 REGRESS_TARGET=	check
 

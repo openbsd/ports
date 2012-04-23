@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/23 17:15:18 espie Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
 DISTNAME =	cvstrac-2.0.1
 PKGNAME =	${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel www
 
 HOMEPAGE =	http://www.cvstrac.org/
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =	${HOMEPAGE}
 
 WANTLIB =	c m sqlite3
-LIB_DEPENDS =	databases/sqlite3
 
 USE_GMAKE =	Yes
 MAKE_FILE =	bsd-gcc.mk
