@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/12/08 11:02:30 ajacoutot Exp $
-lib/abiword-${MAJORVER}/plugins/opendocument.so
-lib/abiword-${MAJORVER}/plugins/openxml.so
-@lib lib/libabiword-${MAJORVER}.so.${LIBabiword-2.8_VERSION}
