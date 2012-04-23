@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2012/04/11 13:05:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2012/04/23 23:11:01 sthen Exp $
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
 LLVM_V =	3.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	llvm-${LLVM_V}
 
 CATEGORIES =	devel
