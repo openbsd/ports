@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2012/04/07 13:31:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2012/04/23 06:59:23 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,12 +6,10 @@ COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.4.0.1
+GNOME_VERSION=		3.4.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		1
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
