@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.745 2012/04/20 10:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.746 2012/04/23 15:49:51 okan Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -274,6 +274,7 @@
      SUBDIR += p5-Danga-Socket
      SUBDIR += p5-Event-RPC
      SUBDIR += p5-Filesys-Virtual-DAAP
+     SUBDIR += p5-GRID-Machine
      SUBDIR += p5-Geo-IP
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-INET6
