@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.52 2011/08/18 19:14:26 naddy Exp $
+# $OpenBSD: i386,v 1.53 2012/04/23 17:54:15 naddy Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -21,11 +21,11 @@ net/samba
 shells/zsh
 shells/bash
 shells/tcsh
-devel/autoconf/2.62
-devel/automake/1.9
-devel/metaauto
-devel/libtool
-books/autobook
+#devel/autoconf/2.62
+#devel/automake/1.9
+#devel/metaauto
+#devel/libtool
+#books/autobook
 devel/bison
 sysutils/colorls
 archivers/gtar
@@ -65,7 +65,6 @@ lang/python/2.7,-tools
 www/mod_perl
 games/xkobo,harder
 games/xlife
-cad/qcad
 x11/p5-Tk
 x11/xglobe
 graphics/mpeg_play
@@ -77,7 +76,7 @@ net/irssi
 security/bsd-airtools
 editors/abiword
 archivers/zip
-net/snort
+#net/snort
 x11/aterm
 net/ettercap
 security/stunnel
@@ -91,7 +90,6 @@ devel/gmake
 misc/tpwireless
 sysutils/tphdisk
 www/squid
-www/transproxy
 security/aide
 security/dsniff
 net/ntop
@@ -138,7 +136,7 @@ lang/ruby/1.8
 lang/g77
 devel/libf2c
 devel/git
-devel/subversion
+#devel/subversion
 net/openvpn
 net/rtorrent
 www/lighttpd
