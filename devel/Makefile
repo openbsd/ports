@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1036 2012/04/22 20:33:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.1037 2012/04/23 15:44:56 okan Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -703,6 +703,7 @@
      SUBDIR += p5-Module-Starter
      SUBDIR += p5-Module-Starter-Plugin-CGIApp
      SUBDIR += p5-Module-Versions-Report
+     SUBDIR += p5-Module-Which
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
      SUBDIR += p5-MooseX-AttributeHelpers
@@ -821,6 +822,7 @@
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
      SUBDIR += p5-String-Scanf
+     SUBDIR += p5-String-Truncate
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Identify
      SUBDIR += p5-Sub-Install
