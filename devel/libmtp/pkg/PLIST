@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/01 21:05:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/23 13:39:50 jasper Exp $
 %%SHARED%%
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
@@ -7,11 +7,11 @@ bin/mtp-delfile
 @bin bin/mtp-detect
 @bin bin/mtp-emptyfolders
 @bin bin/mtp-files
+@bin bin/mtp-filetree
 @bin bin/mtp-folders
 @bin bin/mtp-format
 bin/mtp-getfile
 @bin bin/mtp-getplaylist
-@bin bin/mtp-hotplug
 bin/mtp-newfolder
 @bin bin/mtp-newplaylist
 @bin bin/mtp-playlists
@@ -85,7 +85,6 @@ share/doc/libmtp/html/index.html
 share/doc/libmtp/html/libmtp_8c.html
 share/doc/libmtp/html/libmtp_8h.html
 share/doc/libmtp/html/libmtp_8h_source.html
-share/doc/libmtp/html/libptp-stdint_8h_source.html
 share/doc/libmtp/html/libusb-glue_8h.html
 share/doc/libmtp/html/libusb-glue_8h_source.html
 share/doc/libmtp/html/mainpage_8h_source.html
@@ -105,6 +104,7 @@ share/doc/libmtp/html/sendtr_8c-example.html
 share/doc/libmtp/html/structLIBMTP__album__struct.html
 share/doc/libmtp/html/structLIBMTP__allowed__values__struct.html
 share/doc/libmtp/html/structLIBMTP__device__entry__struct.html
+share/doc/libmtp/html/structLIBMTP__device__extension__struct.html
 share/doc/libmtp/html/structLIBMTP__devicestorage__struct.html
 share/doc/libmtp/html/structLIBMTP__error__struct.html
 share/doc/libmtp/html/structLIBMTP__file__struct.html
@@ -150,6 +150,7 @@ share/doc/libmtp/html/struct__PTP__USB.html
 share/doc/libmtp/html/structfilemap__struct.html
 share/doc/libmtp/html/structmtpdevice__list__struct.html
 share/doc/libmtp/html/structpropertymap__struct.html
+share/doc/libmtp/html/structtagptp__chdk__videosettings.html
 share/doc/libmtp/html/structtext__struct.html
 share/doc/libmtp/html/tab_a.png
 share/doc/libmtp/html/tab_b.png
