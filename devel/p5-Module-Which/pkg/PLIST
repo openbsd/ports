@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/23 15:42:12 okan Exp $
+bin/which_pm
+${P5SITE}/Data/Hash/
+${P5SITE}/Data/Hash/Transform.pm
+${P5SITE}/Module/
+${P5SITE}/Module/Which/
+${P5SITE}/Module/Which.pm
+${P5SITE}/Module/Which/List.pm
+${P5SITE}/Module/Which/P5Path.pm
+@man man/man1/which_pm.1
+@man man/man3p/Data::Hash::Transform.3p
+@man man/man3p/Module::Which.3p
+@man man/man3p/Module::Which::List.3p
+@man man/man3p/Module::Which::P5Path.3p
