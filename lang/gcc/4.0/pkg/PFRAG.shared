@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/09 15:31:48 espie Exp $
-@lib lib/libmudflap.so.${LIBmudflap_VERSION}
-@lib lib/libmudflapth.so.${LIBmudflapth_VERSION}
