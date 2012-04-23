@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/22 19:52:05 mpi Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/23 08:48:08 mpi Exp $
 
 COMMENT =		library for USB device access from userspace
 
@@ -22,9 +22,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=libusb/}
 EXTRACT_SUFX =		.tar.bz2
-
-# XXX Depends on libtool macros
-BUILD_DEPENDS =		devel/libtool
 
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
