@@ -1,0 +1,61 @@
+$OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+--- gcc/common.opt.orig	Wed Feb  1 10:20:32 2012
++++ gcc/common.opt	Mon Apr  2 16:38:17 2012
+@@ -562,6 +562,10 @@ Wlarger-than=
+ Common RejectNegative Joined UInteger Warning
+ -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
+ 
++Wstack-larger-than-
++Common RejectNegative Joined UInteger
++-Wstack-larger-than-<number> Warn if a function is using more than <number> bytes of stack space for its local variables.
++
+ Wunsafe-loop-optimizations
+ Common Var(warn_unsafe_loop_optimizations) Warning
+ Warn if the loop cannot be optimized due to nontrivial assumptions.
+@@ -635,7 +639,7 @@ Common Var(warn_switch_enum) Warning
+ Warn about all enumerated switches missing a specific case
+ 
+ Wsystem-headers
+-Common Var(warn_system_headers) Warning
++Common Var(warn_system_headers) Init(1) Warning
+ Do not suppress warnings from system headers
+ 
+ Wtrampolines
+@@ -690,6 +694,10 @@ Wunused-variable
+ Common Var(warn_unused_variable) Init(-1) Warning
+ Warn when a variable is unused
+ 
++Wvariable-decl
++Common Var(warn_variable_decl)
++Warn about variable-sized declarations
++
+ Wcoverage-mismatch
+ Common Var(warn_coverage_mismatch) Init(1) Warning
+ Warn in case profiles in -fprofile-use do not match
+@@ -975,7 +983,7 @@ Common Report Var(flag_delayed_branch) Optimization
+ Attempt to fill delay slots of branch instructions
+ 
+ fdelete-null-pointer-checks
+-Common Report Var(flag_delete_null_pointer_checks) Init(1) Optimization
++Common Report Var(flag_delete_null_pointer_checks)
+ Delete useless null pointer checks
+ 
+ fdevirtualize
+@@ -1214,7 +1222,7 @@ Enable guessing of branch probabilities
+ ; On SVR4 targets, it also controls whether or not to emit a
+ ; string identifying the compiler.
+ fident
+-Common Report Var(flag_no_ident,0)
++Common Report Var(flag_no_ident,0) Init(1)
+ Process #ident directives
+ 
+ fif-conversion
+@@ -1829,7 +1837,7 @@ Common RejectNegative Joined Var(common_deferred_optio
+ -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
+ 
+ fstack-protector
+-Common Report Var(flag_stack_protect, 1)
++Common Report Var(flag_stack_protect, 1) Init(-1)
+ Use propolice as a stack protection method
+ 
+ fstack-protector-all

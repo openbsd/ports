@@ -1,0 +1,63 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+--- gcc/config.gcc.orig	Mon Mar  5 11:43:22 2012
++++ gcc/config.gcc	Sun Apr 15 22:24:13 2012
+@@ -684,6 +684,14 @@ case ${target} in
+     *-*-openbsd2.*|*-*-openbsd3.[012])
+       tm_defines="${tm_defines} HAS_LIBC_R=1" ;;
+   esac
++  case ${target} in
++    *-*-openbsd[0-3].*|*-*-openbsd4.[012])
++      # keep default of no cxa_atexit support for these older releases
++      ;;
++    *)
++      default_use_cxa_atexit=yes
++      ;;
++  esac
+   ;;
+ *-*-rtems*)
+   case ${enable_threads} in
+@@ -1225,6 +1233,14 @@ i[34567]86-*-openbsd*)
+ 	gas=yes
+ 	gnu_ld=yes
+ 	;;
++x86_64-*-openbsd*)
++	tm_file="i386/biarch64.h i386/i386.h i386/unix.h i386/att.h dbxelf.h elfos.h openbsd.h openbsd-libpthread.h i386/x86-64.h i386/openbsd64.h"
++	tm_file="${tm_file} exec-stack.h"
++	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
++	extra_options="${extra_options} openbsd.opt"
++	gas=yes
++	gnu_ld=yes
++	;;
+ i[34567]86-*-linux* | i[34567]86-*-kfreebsd*-gnu | i[34567]86-*-knetbsd*-gnu | i[34567]86-*-gnu* | i[34567]86-*-kopensolaris*-gnu)
+ 			# Intel 80386's running GNU/*
+ 			# with ELF format using glibc 2
+@@ -1925,11 +1941,11 @@ picochip-*)
+ 	use_gcc_stdint=wrap
+ 	tmake_file="picochip/t-picochip t-pnt16-warn"
+         ;;
+-# port not yet contributed
+-#powerpc-*-openbsd*)
+-#	tmake_file="${tmake_file} rs6000/t-fprules"
+-#	extra_headers=
+-#	;;
++powerpc-*-openbsd*)
++	tm_file="${tm_file} dbxelf.h elfos.h openbsd.h openbsd-libpthread.h freebsd-spec.h rs6000/sysv4.h rs6000/openbsd.h"
++	tmake_file="${tmake_file} rs6000/t-openbsd"
++	extra_options="${extra_options} rs6000/sysv4.opt"
++	;;
+ powerpc-*-darwin*)
+ 	extra_options="${extra_options} rs6000/darwin.opt"
+ 	case ${target} in
+@@ -2629,6 +2645,12 @@ case ${target} in
+     else
+       arch=i386
+     fi
++    cpu=generic
++    arch_without_sse2=yes
++    arch_without_64bit=yes
++    ;;
++  i386-*-openbsd*)
++    arch=i486
+     cpu=generic
+     arch_without_sse2=yes
+     arch_without_64bit=yes

@@ -1,0 +1,13 @@
+$OpenBSD: patch-gcc_ada_adaint_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+--- gcc/ada/adaint.c.orig	Wed Dec 21 14:34:12 2011
++++ gcc/ada/adaint.c	Sat Apr 14 18:09:40 2012
+@@ -3869,3 +3869,9 @@ void __gnat_cpu_set (int cpu, size_t count ATTRIBUTE_U
+ #ifdef __cplusplus
+ }
+ #endif
++
++const char *
++fname_as_string(int pretty_p)
++{
++	return NULL;
++}

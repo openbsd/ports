@@ -1,0 +1,11 @@
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+--- gcc/config/rs6000/sysv4.h.orig	Mon Apr 11 20:46:05 2011
++++ gcc/config/rs6000/sysv4.h	Mon Apr  2 16:38:17 2012
+@@ -403,6 +403,7 @@ do {									\
+   asm_fprintf (FILE, "%L%s", PREFIX)
+ 
+ /* Globalizing directive for a label.  */
++#undef GLOBAL_ASM_OP
+ #define GLOBAL_ASM_OP "\t.globl "
+ 
+ /* This says how to output assembler code to declare an

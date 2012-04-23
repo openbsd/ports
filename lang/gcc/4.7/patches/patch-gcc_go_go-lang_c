@@ -1,0 +1,16 @@
+$OpenBSD: patch-gcc_go_go-lang_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+--- gcc/go/go-lang.c.orig	Wed Feb  1 19:58:44 2012
++++ gcc/go/go-lang.c	Mon Apr  2 16:38:17 2012
+@@ -441,6 +441,12 @@ go_localize_identifier (const char *ident)
+   return identifier_to_locale (ident);
+ }
+ 
++const char *
++fname_as_string(int pretty_p)
++{
++	return NULL;
++}
++
+ #undef LANG_HOOKS_NAME
+ #undef LANG_HOOKS_INIT
+ #undef LANG_HOOKS_OPTION_LANG_MASK

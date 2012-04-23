@@ -1,0 +1,28 @@
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
+--- gcc/config/openbsd.h.orig	Tue Oct 18 01:31:25 2011
++++ gcc/config/openbsd.h	Sat Apr 14 13:14:06 2012
+@@ -109,9 +109,9 @@ while (0)
+    This two-stage defines makes it easy to pick that for targets that
+    have subspecs.  */
+ #ifdef CPP_CPU_SPEC
+-#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #else
+-#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #endif
+ 
+ #undef LIB_SPEC
+@@ -279,6 +279,12 @@ do {									 \
+ #endif
+ 
+ /* Storage layout.  */
++
++/*
++ * Disable the use of unsafe builtin functions, (strcat, strcpy, stpcpy),
++ * making them easier to spot in the object files.
++ */
++#define NO_UNSAFE_BUILTINS
+ 
+ 
+ #define HAVE_ENABLE_EXECUTE_STACK
