@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
+$OpenBSD: patch-gcc_config_openbsd_h,v 1.2 2012/04/23 14:06:42 pascal Exp $
 --- gcc/config/openbsd.h.orig	Tue Nov 26 05:54:46 2002
-+++ gcc/config/openbsd.h	Mon Jan  3 10:17:43 2005
++++ gcc/config/openbsd.h	Thu Apr 12 17:42:38 2012
 @@ -52,20 +52,20 @@ Boston, MA 02111-1307, USA.  */
  
  #ifdef OPENBSD_NATIVE
@@ -26,7 +26,7 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
  #define STANDARD_STARTFILE_PREFIX	"/usr/lib/"
  
  #endif
-@@ -73,8 +73,39 @@ Boston, MA 02111-1307, USA.  */
+@@ -73,22 +73,48 @@ Boston, MA 02111-1307, USA.  */
  
  /* Controlling the compilation driver.  */
  
@@ -67,8 +67,12 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
     since all code must be compiled with -pthread to work. 
     This two-stage defines makes it easy to pick that for targets that
     have subspecs.  */
-@@ -84,11 +115,6 @@ Boston, MA 02111-1307, USA.  */
- #define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
+ #ifdef CPP_CPU_SPEC
+-#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%(cpp_cpu) %{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #else
+-#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define OBSD_CPP_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
  #endif
  
 -/* LIB_SPEC appropriate for OpenBSD.  Select the appropriate libc, 
@@ -90,7 +94,17 @@ $OpenBSD: patch-gcc_config_openbsd_h,v 1.1.1.1 2005/01/03 15:21:26 espie Exp $
  #undef LIB_SPEC
  #define LIB_SPEC OBSD_LIB_SPEC
  #endif
-@@ -289,3 +319,11 @@ do {									 \
+@@ -279,13 +309,17 @@ do {									 \
+ /* Storage layout.  */
+ 
+ 
+-/* Otherwise, since we support weak, gthr.h erroneously tries to use
+-   #pragma weak.  */
+-#define GTHREAD_USE_WEAK 0
+-
+ /* bug work around: we don't want to support #pragma weak, but the current
+    code layout needs HANDLE_PRAGMA_WEAK asserted for __attribute((weak)) to
+    work.  On the other hand, we don't define HANDLE_PRAGMA_WEAK directly,
     as this depends on a few other details as well...  */
  #define HANDLE_SYSV_PRAGMA 1
  

@@ -1,7 +1,12 @@
-$OpenBSD: patch-gcc_config_m88k_openbsd_h,v 1.1 2006/01/13 20:07:53 espie Exp $
---- gcc/config/m88k/openbsd.h.orig	Fri Jan 13 20:45:07 2006
-+++ gcc/config/m88k/openbsd.h	Fri Jan 13 20:45:21 2006
-@@ -39,12 +39,12 @@ Boston, MA 02111-1307, USA.  */
+$OpenBSD: patch-gcc_config_m88k_openbsd_h,v 1.2 2012/04/23 14:06:42 pascal Exp $
+--- gcc/config/m88k/openbsd.h.orig	Wed Feb 27 19:47:38 2002
++++ gcc/config/m88k/openbsd.h	Thu Apr 12 14:44:55 2012
+@@ -35,16 +35,16 @@ Boston, MA 02111-1307, USA.  */
+ 		  %{!m88000:%{!m88100:%{m88110:-D__mc88110__}}} \
+ 		  %{!m88000:%{!m88110:-D__mc88100__ -D__mc88100}} \
+ 		  %{posix:-D_POSIX_SOURCE} \
+-		  %{pthread:-D_POSIX_THREADS}"
++		  %{pthread:-D_REENTRANT}"
  
  /* Layout of source language data types. */
  

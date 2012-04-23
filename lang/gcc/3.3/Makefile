@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/01/13 00:55:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2012/04/23 14:06:42 pascal Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -15,7 +15,7 @@ PKGNAME-g77 =	g77-${FULL_PKGVERSION}
 PKGNAME-java =	gcj-${FULL_PKGVERSION}
 PKGNAME-objc =	gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =	gnat-${FULL_PKGVERSION}
-SHARED_LIBS =	estdc++		6.0 \
+SHARED_LIBS =	estdc++		7.0 \
 		g2c		1.0 \
 		-org-w3c-dom	1.0 \
 		-org-xml-sax	1.0 \
@@ -23,13 +23,13 @@ SHARED_LIBS =	estdc++		6.0 \
 		objc		2.0 \
 		objc_gc		2.0
 
-REVISION-main =		1
-REVISION-c++ =		2
+REVISION-main =		2
+REVISION-c++ =		3
 #REVISION-estdc =
-REVISION-g77 =		2
-REVISION-java =		2
-REVISION-objc =		2
-REVISION-ada =		2
+REVISION-g77 =		3
+REVISION-java =		3
+REVISION-objc =		3
+REVISION-ada =		3
 EPOCH = 		0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -140,10 +140,7 @@ CONFIGURE_ARGS += --enable-sjlj-exceptions
 BUILD_DEPENDS += devel/bison
 .endif
 
-
-# if you wish to try your luck
-#CONFIGURE_ARGS += --enable-threads=posix
-
+CONFIGURE_ARGS += --enable-threads=posix
 CONFIGURE_ARGS += --with-gnu-as 
 CONFIGURE_ARGS += --with-gnu-ld 
 CONFIGURE_ARGS += ${CONFIGURE_SHARED}
