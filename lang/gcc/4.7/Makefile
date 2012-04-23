@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/23 15:56:40 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/23 16:30:48 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 hppa powerpc sparc sparc64
 
@@ -61,8 +61,9 @@ REGRESS_DEPENDS = 	devel/dejagnu \
 			devel/autogen
 
 MASTER_SITES =	${MASTER_SITE_GCC:=releases/gcc-$(FULL_VERSION)/}
-MASTER_SITES0 =	http://spacehopper.org/mirrors/
+#MASTER_SITES0 = http://spacehopper.org/mirrors/
 #MASTER_SITES0 = ftp://quatramaran.ens.fr/pub/espie/
+MASTER_SITES0 =	http://distfiles.bsdfrog.org/
 MASTER_SITES1 =	ftp://sources.redhat.com/pub/java/
 
 LANGS = c
