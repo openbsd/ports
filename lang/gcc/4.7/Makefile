@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/23 16:30:48 pascal Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/23 21:22:09 espie Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 hppa powerpc sparc sparc64
 
@@ -7,7 +7,7 @@ FULL_VERSION = $V
 FULL_PKGVERSION = $V
 BOOTSTRAP_GEN = 0
 LIBC_VERSION = 63.0
-#ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
+ADASTRAP = adastrap-i386-$V-${BOOTSTRAP_GEN}.tar.xz
 
 PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
