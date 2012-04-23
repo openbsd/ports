@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/10/23 09:15:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/23 08:57:46 bentley Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
@@ -33,15 +33,10 @@ LIB_DEPENDS=	devel/sdl \
 		graphics/png \
 		graphics/jpeg
 
+SUBST_VARS +=	CFLAGS CXXFLAGS CC CXX
+
 pre-configure:
-	perl -pi -e 's,!!CFLAGS!!,${CFLAGS},g;' \
-		-e 's,!!CXXFLAGS!!,${CXXFLAGS},g;' \
-		-e 's,!!CC!!,${CC},g;' \
-		-e 's,!!CXX!!,${CXX},g;' \
-		-e 's,!!PREFIX!!,${PREFIX},g;' \
-		-e 's,!!LOCALBASE!!,${LOCALBASE},g;' \
-		-e 's,!!X11BASE!!,${X11BASE},g;' \
-		${WRKSRC}/SConstruct
+	${SUBST_CMD} ${WRKSRC}/SConstruct
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/gaia ${PREFIX}/bin

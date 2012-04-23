@@ -1,6 +1,6 @@
-$OpenBSD: patch-SConstruct,v 1.3 2012/04/20 08:00:48 bentley Exp $
---- SConstruct.orig	Tue Dec  5 07:31:42 2006
-+++ SConstruct	Tue Oct  7 00:07:28 2008
+$OpenBSD: patch-SConstruct,v 1.4 2012/04/23 08:57:46 bentley Exp $
+--- SConstruct.orig	Tue Dec  5 05:31:42 2006
++++ SConstruct	Fri Apr 20 23:45:24 2012
 @@ -8,7 +8,7 @@ version="0.1.2"
  #######################################
  # OPTIONS
@@ -20,12 +20,12 @@ $OpenBSD: patch-SConstruct,v 1.3 2012/04/20 08:00:48 bentley Exp $
  		print "Compiling for OpenBSD"
 -		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include' ])
 -		env.Append(LIBPATH = [ '/usr/local/lib', '/usr/X11R6/lib' ])
-+		env.Append(CPPPATH = [ '!!LOCALBASE!!/include', '!!X11BASE!!/include' ])
-+		env.Append(LIBPATH = [ '!!LOCALBASE!!/lib', '!!X11BASE!!/lib' ])
-+		env.Append(CCFLAGS = [ Split("!!CFLAGS!!") ])
-+		env.Append(CXXFLAGS = [ Split("!!CXXFLAGS!!") ])
-+		env['CC'] = "!!CC!!"
-+		env['CXX'] = "!!CXX!!"
++		env.Append(CPPPATH = [ '${LOCALBASE}/include', '${X11BASE}/include' ])
++		env.Append(LIBPATH = [ '${LOCALBASE}/lib', '${X11BASE}/lib' ])
++		env.Append(CCFLAGS = [ Split("${CFLAGS}") ])
++		env.Append(CXXFLAGS = [ Split("${CXXFLAGS}") ])
++		env['CC'] = "${CC}"
++		env['CXX'] = "${CXX}"
  	elif sys.platform == 'darwin':
  		print "Compiling for MacOSX"
  		env.Append(CPPPATH = [ '/usr/local/include', '/usr/X11R6/include', '/opt/local/include', '/sw/include' ])
