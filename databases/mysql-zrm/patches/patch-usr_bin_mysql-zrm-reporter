@@ -1,0 +1,12 @@
+$OpenBSD: patch-usr_bin_mysql-zrm-reporter,v 1.1 2012/04/24 15:56:25 giovanni Exp $
+--- usr/bin/mysql-zrm-reporter.orig	Tue Apr 24 17:48:04 2012
++++ usr/bin/mysql-zrm-reporter	Tue Apr 24 17:48:45 2012
+@@ -413,7 +413,7 @@ $RSSChannelData{"language"} = "en-us";
+ $RSSChannelData{"updateperiod"} = "Daily";
+ $RSSChannelData{"updatefrequency"} = "1";
+ 
+-	my $date = `date -R`;
++	my $date = `date "+%a, %d %b %Y %T %z"`;
+         chomp($date);
+ 
+         my $titleTime = `date "+%r"`;
