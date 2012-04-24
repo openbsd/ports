@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/03/15 16:50:45 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2012/04/24 10:15:57 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,6 +23,9 @@ following methods:
 
 The maximum upload size for files can be modified in
     ${INSTDIR}/.htaccess
+
+When not using Apache, make _sure_ to set the data directory to a
+location outside of the document root.
 
 Database Configuration
 ----------------------
