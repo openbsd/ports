@@ -1,0 +1,14 @@
+$OpenBSD: patch-madtty_c,v 1.1 2012/04/24 19:28:31 naddy Exp $
+--- madtty.c.orig	Tue Apr 24 21:20:01 2012
++++ madtty.c	Tue Apr 24 21:22:45 2012
+@@ -47,6 +47,10 @@
+ 
+ #include "madtty.h"
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)	__builtin_alloca(size)
++#endif
++
+ #ifndef NCURSES_ATTR_SHIFT
+ # define NCURSES_ATTR_SHIFT 8
+ #endif
