@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/09/17 15:58:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/04/24 12:55:12 dcoppa Exp $
 bin/mlbt
 bin/mlbt+gui
 bin/mldc
@@ -75,6 +75,7 @@ share/mldonkey/distrib/i18n/mlnet_strings.sp
 share/mldonkey/distrib/i18n/mlnet_strings.sv
 share/mldonkey/distrib/kill_mldonkey
 share/mldonkey/distrib/make_buginfo
+share/mldonkey/distrib/mldonkey.desktop
 share/mldonkey/distrib/mldonkey_command
 share/mldonkey/distrib/mldonkey_gui_started_for_macosx
 share/mldonkey/distrib/mldonkey_previewer

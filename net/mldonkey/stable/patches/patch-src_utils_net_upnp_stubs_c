@@ -1,10 +1,18 @@
-$OpenBSD: patch-src_utils_net_upnp_stubs_c,v 1.1 2012/02/28 15:38:55 dcoppa Exp $
+$OpenBSD: patch-src_utils_net_upnp_stubs_c,v 1.2 2012/04/24 12:55:12 dcoppa Exp $
 
 Fix build with latest libnatpmp/miniupnpc
 
 --- src/utils/net/upnp_stubs.c.orig	Mon Nov  1 18:19:23 2010
-+++ src/utils/net/upnp_stubs.c	Mon Feb 27 15:35:59 2012
-@@ -501,7 +501,7 @@ natpmpPulse( ml_upnpmp_t * map )
++++ src/utils/net/upnp_stubs.c	Tue Apr 24 14:41:55 2012
+@@ -164,7 +164,6 @@ static int g_inited = 0;
+ static int g_running = 0;
+ static int g_stop = 0;
+ static pthread_t g_pthread;
+-//static pthread_cond_t cond;
+ static pthread_mutex_t g_mutex;
+ static pthread_mutex_t g_delay_mutex;
+ 
+@@ -501,7 +500,7 @@ natpmpPulse( ml_upnpmp_t * map )
  
      if( map->enabled && ( map->natpmpState == ML_NATPMP_DISCOVER ) )
      {
@@ -13,7 +21,7 @@ Fix build with latest libnatpmp/miniupnpc
          dbg_printf( "initnatpmp = %d\n", val );
          val = sendpublicaddressrequest( &map->natpmp );
          dbg_printf( "sendpublicaddressrequest = %d\n", val );
-@@ -639,7 +639,7 @@ upnpPulse( ml_upnpmp_t * map )
+@@ -639,7 +638,7 @@ upnpPulse( ml_upnpmp_t * map )
      {
          struct UPNPDev * devlist;
          errno = 0;
@@ -22,7 +30,7 @@ Fix build with latest libnatpmp/miniupnpc
          if( devlist == NULL )
          {
              dbg_printf( "upnpDiscover failed (errno %d - %s)\n", errno,  str_errno( errno ) );
-@@ -680,7 +680,7 @@ upnpPulse( ml_upnpmp_t * map )
+@@ -680,7 +679,7 @@ upnpPulse( ml_upnpmp_t * map )
          snprintf( type, sizeof( type ), "%s", ( map->isTcp ? "TCP" : "UDP" ) );
          i = UPNP_GetSpecificPortMappingEntry( map->upnpUrls.controlURL,
                                                map->upnpData.first.servicetype, portStr,
@@ -31,7 +39,7 @@ Fix build with latest libnatpmp/miniupnpc
          if( i != UPNPCOMMAND_SUCCESS )
          {
              dbg_printf( "Port %d isn't forwarded\n", map->extPort );
-@@ -730,7 +730,7 @@ upnpPulse( ml_upnpmp_t * map )
+@@ -730,7 +729,7 @@ upnpPulse( ml_upnpmp_t * map )
              err = UPNP_AddPortMapping( map->upnpUrls.controlURL,
                                         map->upnpData.first.servicetype,
                                         extPortStr, intPortStr, map->lanaddr,
@@ -40,3 +48,14 @@ Fix build with latest libnatpmp/miniupnpc
              map->upnpMapped = !err;
          }
          dbg_printf( "Port forwarding through \"%s\", service \"%s\". (local address[%s:%d])\n", map->upnpUrls.controlURL, map->upnpData.first.servicetype, map->lanaddr, map->intPort );
+@@ -898,9 +897,9 @@ upnp_thread_start( )
+ 	    pthread_attr_init(&attr);
+ 	    pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
+ 
+-	    //pthread_cond_init(&cond, NULL);
+ 	    pthread_mutex_init(&g_mutex, NULL);
+ 	    pthread_mutex_init(&g_delay_mutex, NULL);
++	    pthread_mutex_trylock(&g_mutex);
+ 	    pthread_mutex_unlock(&g_mutex);
+ 
+ 	    err = pthread_create(&g_pthread, &attr, upnpNatpmpThread, NULL);
