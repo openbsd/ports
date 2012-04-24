@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# $OpenBSD: arduinoproject,v 1.1.1.1 2011/09/17 16:41:30 jasper Exp $
+# $OpenBSD: arduinoproject,v 1.2 2012/04/24 06:37:32 jasper Exp $
 # Copyright (c) 2011 Chris Kuethe <ckuethe@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -52,6 +52,6 @@ cd $P || exit 1
 D=`date "+.%s"`
 cmp -s ${ASE}/Makefile.in Makefile || \
 	install -b -B $D -S ${ASE}/BSDmakefile BSDmakefile
-cmp -s ${ASE}/template.pde "${P}.pde" || \
-	install -b -B $D -S ${ASE}/template.pde "${P}.pde"
+cmp -s ${ASE}/template.ino "${P}.ino" || \
+	install -b -B $D -S ${ASE}/template.ino "${P}.ino"
 mkdir -p applet

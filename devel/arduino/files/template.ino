@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: template.pde,v 1.1.1.1 2011/09/17 16:41:30 jasper Exp $
+ * $OpenBSD: template.ino,v 1.1 2012/04/24 06:37:32 jasper Exp $
  *
  * Arduino projects run something like this:
  *	main() {
@@ -13,12 +13,20 @@
  * Arduino reference is at ${TRUEPREFIX}/share/doc/arduino/reference/
  */
 
-void setup() {
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void setup(void) {
 	/* your code here */
 	return;
 }
 
-void loop() {
+void loop(void) {
 	/* more of your code here */
 	return ;
 }
+
+#ifdef __cplusplus
+}
+#endif

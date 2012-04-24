@@ -1,4 +1,4 @@
-# $OpenBSD: BSDmakefile,v 1.2 2011/12/09 11:55:46 jasper Exp $
+# $OpenBSD: BSDmakefile,v 1.3 2012/04/24 06:37:32 jasper Exp $
 # Arduino Makefile
 # Arduino adaptation by mellis, eighthave, oli.keller
 #
@@ -11,8 +11,8 @@
 # Detailed instructions for using the makefile:
 #
 #  1. Copy this file into the folder with your sketch. There should be a
-#     file with the same name as the folder and with the extension .pde
-#     (e.g. foo.pde in the foo/ folder).
+#     file with the same name as the folder and with the extension .ino
+#     (e.g. foo.ino in the foo/ folder).
 #
 #  2. Modify the line containing "PORT" to refer to the filename
 #     representing the USB or serial connection to your Arduino board
@@ -32,7 +32,7 @@
 #  6. Type "make upload", reset your Arduino board, and press enter to
 #     upload your program to the Arduino board.
 #
-# $Id: BSDmakefile,v 1.2 2011/12/09 11:55:46 jasper Exp $
+# $Id: BSDmakefile,v 1.3 2012/04/24 06:37:32 jasper Exp $
 
 TARGET = ${.CURDIR:C/.*\///g}
 
@@ -57,13 +57,17 @@ F_CPU = 16000000
 #LIBRARIES=EEPROM LiquidCrystal Wire
 LIBRARIES=
 
+# Arduino variant, one of: "eightanaloginputs", "leonardo", "mega",
+# "micro" or "standard".
+VARIANT = standard
+
 ############################################################################
 # Below here nothing should be changed...
 
 ARDUINO = ${TRUEPREFIX}/share/arduino/
 .PATH: $(ARDUINO)/cores/arduino ${LIBRARIES:S|^|$(ARDUINO)/libraries/|g}
 AVR_TOOLS_PATH = ${TRUEPREFIX}/bin
-SRC = pins_arduino.c wiring.c wiring_analog.c wiring_digital.c \
+SRC = wiring.c wiring_analog.c wiring_digital.c \
 wiring_pulse.c wiring_shift.c WInterrupts.c
 CXXSRC = HardwareSerial.cpp WMath.cpp Print.cpp WString.cpp \
 	${LIBRARIES:S|$|.cpp|g}
@@ -85,9 +89,9 @@ CDEFS = -DF_CPU=$(F_CPU)
 CXXDEFS = -DF_CPU=$(F_CPU)
 
 # Place -I options here
-LIBINC=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g}
-CINCS = -I$(ARDUINO)/cores/arduino $(LIBINC)
-CXXINCS = -I$(ARDUINO)/cores/arduino $(LIBINC)
+LIBINC=${LIBRARIES:S|^|-I$(ARDUINO)/libraries/|g} -I$(ARDUINO)/variants/$(VARIANT)
+CINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
+CXXINCS = -I$(ARDUINO)/cores/arduino $(LIBINC) -I$(ARDUINO)/variants/$(VARIANT)
 
 # Compiler flag to set the C Standard level.
 # c89   - "ANSI" C
@@ -144,16 +148,16 @@ all: applet_files build sizeafter
 build: elf hex
 
 # Here is the "preprocessing".
-# It creates a .cpp file based with the same name as the .pde file.
-# On top of the new .cpp file comes the WProgram.h header.
+# It creates a .cpp file based with the same name as the .ino file.
+# On top of the new .cpp file comes the Arduino.h header.
 # At the end there is a generic main() function attached.
 # Then the .cpp file will be compiled. Errors during compile will
 # refer to this new, automatically generated, file.
-# Not the original .pde file you actually edit...
-applet_files: $(TARGET).pde
+# Not the original .ino file you actually edit...
+applet_files: $(TARGET).ino
 	test -d applet || mkdir applet
-	echo '#include "WProgram.h"' > applet/$(TARGET).cpp
-	cat $(TARGET).pde >> applet/$(TARGET).cpp
+	echo '#include "Arduino.h"' > applet/$(TARGET).cpp
+	cat $(TARGET).ino >> applet/$(TARGET).cpp
 	cat $(ARDUINO)/cores/arduino/main.cpp >> applet/$(TARGET).cpp
 
 elf: applet/$(TARGET).elf
@@ -211,7 +215,7 @@ extcoff: $(TARGET).elf
 	$(NM) -n $< > $@
 
 # Link: create ELF output file from library.
-applet/$(TARGET).elf: $(TARGET).pde applet/core.a
+applet/$(TARGET).elf: $(TARGET).ino applet/core.a
 	$(CXX) $(ALL_CXXFLAGS) -o $@ applet/$(TARGET).cpp -L. applet/core.a $(LDFLAGS)
 
 applet/core.a: $(OBJ)

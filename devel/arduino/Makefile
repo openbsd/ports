@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/09 11:55:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/24 06:37:32 jasper Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
-V=		22
+V=		1.0
 PKGNAME=	arduino-${V}
-DISTNAME=	arduino-00${V}-src
-REVISION=	0
+DISTNAME=	arduino-${V}-src
+EPOCH=		0
 CATEGORIES=	devel
 HOMEPAGE=	http://www.arduino.cc/
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	archivers/unzip
 NO_BUILD=       Yes
 NO_REGRESS=     Yes
 PKG_ARCH=       *
-WRKDIST=	${WRKDIR}/arduino-00${V}
+WRKDIST=	${WRKDIR}/arduino-${V}
 
 do-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/{,doc,examples}/arduino
@@ -40,8 +40,8 @@ do-install:
 	@chmod ${BINMODE} ${PREFIX}/bin/*
 	@${SUBST_CMD} -c ${FILESDIR}/BSDmakefile \
                 ${PREFIX}/share/examples/arduino/BSDmakefile
-	@${SUBST_CMD} -c ${FILESDIR}/template.pde \
-                ${PREFIX}/share/examples/arduino/template.pde
+	@${SUBST_CMD} -c ${FILESDIR}/template.ino \
+                ${PREFIX}/share/examples/arduino/template.ino
 	@chmod	a+r ${PREFIX}/share/examples/arduino/*
 	@cp -r	${WRKSRC}/build/shared/examples/* \
 		${PREFIX}/share/examples/arduino
