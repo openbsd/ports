@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.17 2012/04/24 15:10:32 ajacoutot Exp $
+$OpenBSD: README-main,v 1.18 2012/04/24 15:20:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -115,6 +115,9 @@ ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini to ${SYSCONFDIR}/p
 
     # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini \
         ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+
+The Zarafa webaccess will be accessible from
+    http://<hostname>/webaccess/
 
 The PHP mapi module and OpenBSD Apache
 --------------------------------------

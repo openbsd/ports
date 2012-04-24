@@ -4,5 +4,5 @@ issuing the following command:
     # rm -f ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 
 To completely deinstall zarafa-webaccess you need to perform the
-following steps as root:
+following step as root:
     # rm -f /var/www/conf/modules/zarafa.conf
