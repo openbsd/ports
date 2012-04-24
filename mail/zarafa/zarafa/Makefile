@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2012/04/22 13:44:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2012/04/24 15:10:32 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,7 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	mail www productivity
 

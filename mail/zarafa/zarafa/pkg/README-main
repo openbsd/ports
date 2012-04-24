@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.16 2012/02/27 19:01:34 ajacoutot Exp $
+$OpenBSD: README-main,v 1.17 2012/04/24 15:10:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -95,8 +95,8 @@ Zarafa webaccess
 Zarafa webaccess is installed under
     ${INSTDIR}
 
-You need to edit the config.php file installed under
-${INSTDIR} for regular web client access.
+Configuration is done in the file
+    ${INSTDIR}/config.php
 
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
