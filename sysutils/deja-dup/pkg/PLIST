@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/23 11:38:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/04/24 07:59:26 ajacoutot Exp $
 @bin bin/deja-dup
 @bin bin/deja-dup-preferences
 @comment lib/nautilus/extensions-3.0/libdeja-dup.la
@@ -428,6 +428,20 @@ share/help/en_GB/deja-dup/restore-lost.page
 share/help/en_GB/deja-dup/restore-revert.page
 share/help/en_GB/deja-dup/restore-worst-case.page
 share/help/en_GB/deja-dup/support.page
+share/help/eo/
+share/help/eo/deja-dup/
+share/help/eo/deja-dup/backup-auto.page
+share/help/eo/deja-dup/backup-first.page
+share/help/eo/deja-dup/contribute.page
+share/help/eo/deja-dup/credits.page
+share/help/eo/deja-dup/index.page
+share/help/eo/deja-dup/license.page
+share/help/eo/deja-dup/prefs.page
+share/help/eo/deja-dup/restore-full.page
+share/help/eo/deja-dup/restore-lost.page
+share/help/eo/deja-dup/restore-revert.page
+share/help/eo/deja-dup/restore-worst-case.page
+share/help/eo/deja-dup/support.page
 share/help/es/
 share/help/es/deja-dup/
 share/help/es/deja-dup/backup-auto.page
@@ -833,8 +847,6 @@ share/locale/ast/LC_MESSAGES/deja-dup.mo
 share/locale/be/LC_MESSAGES/deja-dup.mo
 share/locale/bg/LC_MESSAGES/deja-dup.mo
 share/locale/bn/LC_MESSAGES/deja-dup.mo
-share/locale/bo/
-share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/deja-dup.mo
 share/locale/bs/LC_MESSAGES/deja-dup.mo
 share/locale/ca/LC_MESSAGES/deja-dup.mo
