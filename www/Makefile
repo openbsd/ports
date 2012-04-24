@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.555 2012/04/24 09:53:13 pea Exp $
+# $OpenBSD: Makefile,v 1.556 2012/04/24 11:41:06 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -78,6 +78,7 @@
      SUBDIR += http_ping
      SUBDIR += icedtea-web
      SUBDIR += igal
+     SUBDIR += igal2
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
