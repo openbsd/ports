@@ -1,0 +1,5 @@
+ASQL is a simple tool to allow you to query Apache common logfiles 
+via SQL. (Only "Apache common" logfiles are currently supported.)
+When asql starts up it creates a temporary SQLite database to hold 
+the contents of the parsed logfile(s) you might load. This temporary 
+database may then be queried directly via SQL.
