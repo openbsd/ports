@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/07 06:24:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/04/24 14:00:05 ajacoutot Exp $
 
 COMMENT=	library for bits of crypto UI and parsing
 
 GNOME_PROJECT=	gcr
-GNOME_VERSION=	3.4.0
-REVISION=	0
+GNOME_VERSION=	3.4.1
 
 SHARED_LIBS +=  gck-1                     1.0 # 0.0
 SHARED_LIBS +=  gcr-3                     2.0 # 1.0
@@ -28,7 +27,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-MODGNOME_TOOLS=	goi
+MODGNOME_TOOLS=		goi
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
@@ -47,5 +46,10 @@ LIB_DEPENDS=	x11/gtk+3 \
 		security/p11-kit
 
 CONFIGURE_ARGS=	--disable-update-mime
+
+pre-configure:
+	find ${WRKSRC} -name Makefile.in | xargs \
+		perl -pi -e 's|sed -i -e|perl -pi -e|g;' \
+			 -e 's|sed -i|perl -pi -e|g'
 
 .include <bsd.port.mk>
