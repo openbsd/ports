@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:39:32 espie Exp $
-bin/autossh
+@comment $OpenBSD: PLIST,v 1.3 2012/04/24 12:37:44 gonzalo Exp $
+@bin bin/autossh
 @man man/man1/autossh.1
 share/doc/autossh/
+share/doc/autossh/CHANGES
 share/doc/autossh/README
 share/examples/autossh/
 share/examples/autossh/autossh.host

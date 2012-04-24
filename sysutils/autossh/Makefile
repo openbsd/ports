@@ -1,48 +1,29 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/04/24 12:37:44 gonzalo Exp $
 
 COMMENT=		SSH monitoring
 
-VERSION=		1.3
-DISTNAME=		autossh-${VERSION}
+DISTNAME=		autossh-1.4c
 CATEGORIES=		sysutils
 
 MASTER_SITES=		${HOMEPAGE}
 
 HOMEPAGE=		http://www.harding.motd.ca/autossh/
 
-MAINTAINER=		Johan Fredin <johan@spelaroll.se>
+MAINTAINER=		Gonzalo L. R. <gonzalo@openbsd.org>
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 EXTRACT_SUFX=		.tgz
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
-SEPARATE_BUILD=		Yes
-
-DEFS=			-D"SSH_PATH=\"/usr/bin/ssh\"" -D"VER=\"${VERSION}\""
-
-DOCS=			README
-EXAMPLES=		autossh.host rscreen
-
-do-build:
-	cd ${WRKBUILD}; \
-		${CC} ${CFLAGS} ${DEFS} -c ${WRKSRC}/autossh.c -o autossh.o; \
-		${CC} -o autossh autossh.o
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/autossh
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/autossh
-	cd ${WRKBUILD} && ${INSTALL_PROGRAM} autossh ${PREFIX}/bin
-	cd ${WRKSRC} && ${INSTALL_MAN} autossh.1 ${PREFIX}/man/man1
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/autossh
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} \
-			${PREFIX}/share/examples/autossh
+CONFIGURE_STYLE=	gnu dest
 
 .include <bsd.port.mk>
