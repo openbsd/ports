@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.145 2012/04/23 13:47:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2012/04/24 20:47:39 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -182,7 +182,7 @@ PKG_ARGS+=-Di386=0
 pre-configure:
 	@cp ${FILESDIR}/sndio.c ${WRKSRC}/modules/audio_output
 	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    bootstrap
+	    ./bootstrap
 
 post-install:
 	@find ${PREFIX}/lib/vlc -name '*.la' -print | xargs rm
