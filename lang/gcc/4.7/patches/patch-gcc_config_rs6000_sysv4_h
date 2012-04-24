@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.2 2012/04/24 07:05:34 pascal Exp $
 --- gcc/config/rs6000/sysv4.h.orig	Mon Apr 11 20:46:05 2011
-+++ gcc/config/rs6000/sysv4.h	Mon Apr  2 16:38:17 2012
++++ gcc/config/rs6000/sysv4.h	Tue Apr 24 09:04:37 2012
 @@ -403,6 +403,7 @@ do {									\
    asm_fprintf (FILE, "%L%s", PREFIX)
  
@@ -9,3 +9,12 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2012/04/23 15:56:41 pascal E
  #define GLOBAL_ASM_OP "\t.globl "
  
  /* This says how to output assembler code to declare an
+@@ -878,7 +879,7 @@ ncrtn.o%s"
+ #endif
+ 
+ #ifndef CPP_OS_OPENBSD_SPEC
+-#define CPP_OS_OPENBSD_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_POSIX_THREADS}"
++#define CPP_OS_OPENBSD_SPEC "%{posix:-D_POSIX_SOURCE} %{pthread:-D_REENTRANT}"
+ #endif
+ 
+ /* Define any extra SPECS that the compiler needs to generate.  */
