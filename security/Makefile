@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2012/04/19 14:53:39 okan Exp $
+# $OpenBSD: Makefile,v 1.285 2012/04/25 14:07:38 okan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -75,6 +75,7 @@
      SUBDIR += its4
      SUBDIR += jailkit
      SUBDIR += john
+     SUBDIR += kc
      SUBDIR += kedpm
      SUBDIR += keepassx
      SUBDIR += keychain
