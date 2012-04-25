@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_fontdump_c,v 1.1 2012/04/12 13:31:01 sthen Exp $
---- scripts/fontdump.c.orig	Thu Apr 12 14:05:45 2012
-+++ scripts/fontdump.c	Thu Apr 12 14:05:54 2012
-@@ -48,7 +48,7 @@ main(int argc, char **argv)
+$OpenBSD: patch-scripts_fontdump_c,v 1.2 2012/04/25 13:55:12 sthen Exp $
+--- scripts/fontdump.c.orig	Thu Mar 29 11:46:53 2012
++++ scripts/fontdump.c	Thu Apr 12 14:31:51 2012
+@@ -49,7 +49,7 @@ main(int argc, char **argv)
  	}
  
  	fprintf(fo, "#ifndef __STRICT_ANSI__\n");

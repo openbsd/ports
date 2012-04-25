@@ -1,15 +1,15 @@
-$OpenBSD: patch-Makerules,v 1.4 2011/07/13 21:48:48 sthen Exp $
---- Makerules.orig	Fri Apr 29 20:06:09 2011
-+++ Makerules	Wed Jul 13 21:37:52 2011
+$OpenBSD: patch-Makerules,v 1.5 2012/04/25 13:55:12 sthen Exp $
+--- Makerules.orig	Tue Apr 24 17:41:33 2012
++++ Makerules	Wed Apr 25 14:21:09 2012
 @@ -5,6 +5,7 @@ OS := $(OS:MINGW%=MINGW)
  
  CFLAGS += -Wall
  
 +ifneq "$(OS)" "OpenBSD" # don't override C optimizer flags for ports builds
  ifeq "$(build)" "debug"
- CFLAGS += -pipe -g
+ CFLAGS += -pipe -g -DDEBUG
  else ifeq "$(build)" "profile"
-@@ -17,6 +18,7 @@ CFLAGS += -pipe -O2 -DNDEBUG -fomit-frame-pointer -mar
+@@ -19,6 +20,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
  else
  $(error unknown build setting: '$(build)')
  endif
@@ -17,7 +17,7 @@ $OpenBSD: patch-Makerules,v 1.4 2011/07/13 21:48:48 sthen Exp $
  
  ifeq "$(OS)" "Linux"
  SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
-@@ -27,6 +29,13 @@ ifeq "$(OS)" "FreeBSD"
+@@ -29,6 +31,13 @@ ifeq "$(OS)" "FreeBSD"
  SYS_FREETYPE_INC := `pkg-config --cflags freetype2`
  LDFLAGS += -L/usr/local/lib
  X11_LIBS := -lX11 -lXext

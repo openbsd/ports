@@ -1,23 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/13 21:48:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/04/25 13:55:12 sthen Exp $
+@bin bin/mudraw
 @bin bin/mupdf
-@bin bin/pdfclean
-@bin bin/pdfdraw
-@bin bin/pdfextract
-@bin bin/pdfinfo_mupdf
-@bin bin/pdfshow
-@bin bin/xpsdraw
+@bin bin/mupdfclean
+@bin bin/mupdfextract
+@bin bin/mupdfinfo
+@bin bin/mupdfshow
 include/fitz.h
+include/memento.h
+include/mucbz.h
 include/mupdf.h
 include/muxps.h
 lib/libfitz.a
-lib/libmupdf.a
-lib/libmuxps.a
 lib/pkgconfig/
 lib/pkgconfig/mupdf.pc
+@man man/man1/mudraw.1
 @man man/man1/mupdf.1
-@man man/man1/pdfclean.1
-@man man/man1/pdfdraw.1
-@man man/man1/pdfshow.1
+@man man/man1/mupdfclean.1
+@man man/man1/mupdfshow.1
 share/application-registry/
 share/application-registry/mupdf.applications
 share/applications/mupdf.desktop
