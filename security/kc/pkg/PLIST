@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/25 14:04:06 okan Exp $
+@bin bin/kc
+man/cat1/kc.1
