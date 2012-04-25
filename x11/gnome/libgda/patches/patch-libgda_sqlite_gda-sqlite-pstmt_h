@@ -1,0 +1,21 @@
+$OpenBSD: patch-libgda_sqlite_gda-sqlite-pstmt_h,v 1.1 2012/04/25 06:23:16 espie Exp $
+--- libgda/sqlite/gda-sqlite-pstmt.h.orig	Tue Apr 24 19:47:33 2012
++++ libgda/sqlite/gda-sqlite-pstmt.h	Tue Apr 24 19:48:27 2012
+@@ -21,10 +21,14 @@
+ #define __GDA_SQLITE_PSTMT_H__
+ 
+ #include <libgda/providers-support/gda-pstmt.h>
+-#ifdef HAVE_SQLITE
+-#include <sqlite3.h>
+-#else
++#ifdef STATIC_SQLITE
+ #include "sqlite-src/sqlite3.h"
++#else
++#  ifdef HAVE_SQLITE
++#    include <sqlite3.h>
++#  else
++#    include "sqlite-src/sqlite3.h"
++#endif
+ #endif
+ 
+ G_BEGIN_DECLS

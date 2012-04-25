@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/04/23 17:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2012/04/25 06:23:16 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -21,7 +21,8 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-ui=		1
+REVISION =		0
+REVISION-ui=		2
 
 EPOCH-main=		2
 EPOCH-ldap=		0
