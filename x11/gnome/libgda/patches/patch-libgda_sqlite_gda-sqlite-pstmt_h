@@ -1,4 +1,7 @@
-$OpenBSD: patch-libgda_sqlite_gda-sqlite-pstmt_h,v 1.1 2012/04/25 06:23:16 espie Exp $
+$OpenBSD: patch-libgda_sqlite_gda-sqlite-pstmt_h,v 1.2 2012/04/25 09:48:10 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=674781
+
 --- libgda/sqlite/gda-sqlite-pstmt.h.orig	Tue Apr 24 19:47:33 2012
 +++ libgda/sqlite/gda-sqlite-pstmt.h	Tue Apr 24 19:48:27 2012
 @@ -21,10 +21,14 @@
