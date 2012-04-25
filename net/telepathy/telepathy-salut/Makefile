@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/04/09 08:00:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/04/25 14:46:16 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -32,7 +32,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-Werror
+			--disable-Werror \
+			--disable-avahi-tests
 
 REGRESS_DEPENDS=	textproc/py-xmldiff
 
