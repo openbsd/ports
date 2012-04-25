@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/25 14:39:17 espie Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -20,7 +20,7 @@ USE_GMAKE = 	Yes
 MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 		LUA_INCLUDE_DIR=${LOCALBASE}/include \
 		LUA_LIB=-llua \
-		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
+		SQLITE_INCLUDE_DIR=/usr/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		INSTALL_UGRP=root:wheel \
 		prefix=${PREFIX} \
