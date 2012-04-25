@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/23 05:22:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/04/25 11:41:45 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -31,6 +31,9 @@ MULTI_PACKAGES=	-main -mono
 
 MODULES +=	devel/gettext \
 		x11/gnome
+
+# needed to build the tests
+BUILD_DEPENDS += security/libgpg-error
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2
