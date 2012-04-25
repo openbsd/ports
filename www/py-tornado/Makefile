@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/09 18:12:46 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2012/04/25 15:08:20 rpointel Exp $
 
 COMMENT =		scalable, non-blocking web server
 
-MODPY_EGG_VERSION =	2.2
+MODPY_EGG_VERSION =	2.2.1
 DISTNAME =		tornado-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
