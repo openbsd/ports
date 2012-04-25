@@ -1,0 +1,40 @@
+$OpenBSD: README,v 1.1.1.1 2012/04/25 06:56:47 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Zarafa webapp is installed under
+    ${INSTDIR}
+
+Configuration is done in the file
+    ${INSTDIR}/config.php
+
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
+    # ln -s ${PREFIX}/conf/modules.sample/zarafa-webapp.conf \
+        /var/www/conf/modules
+
+You need to enable the PHP mapi module using the following command:
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/mapi.ini \
+        ${SYSCONFDIR}/php-${MODPHP_VERSION}/mapi.ini
+
+(the PHP mapi module is provided by the "zarafa-webaccess" package)
+
+The Zarafa webapp will be accessible from
+    http://<hostname>/webapp/
+
+The PHP mapi module and OpenBSD Apache
+--------------------------------------
+When using the OpenBSD Apache server, the runtime loader will need to
+pre-load the pthread shared library. While the php binary is linked with
+-pthread, httpd is not and the PHP mapi module needs the
+pthread_mutex_init(3) function. LANG will also need to be set to an
+UTF-8 compliant locale.
+To do so, create a login(1) class under /etc/login.conf(5) called after
+the Apache rc.d(8) script, i.e. "httpd":
+
+httpd:\
+	:setenv=LANG=en_US.UTF-8\
+	,LD_PRELOAD=/usr/lib/libpthread.so:\
+	:tc=daemon:
