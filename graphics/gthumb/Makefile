@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/04/24 10:55:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2012/04/25 06:04:13 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.0.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -38,7 +39,9 @@ BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	devel/libsoup,-gnome \
 		graphics/exiv2>=0.22 \
-		multimedia/gstreamer-0.10/plugins-base
+		multimedia/gstreamer-0.10/plugins-base \
+		x11/gnome/librsvg \
+		x11/gtk+3
 RUN_DEPENDS=	misc/shared-mime-info
 
 LIBTOOL_FLAGS=		--tag=disable-static
