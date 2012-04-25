@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2007/04/25 01:08:34 msf Exp $
-bin/mairix
+@comment $OpenBSD: PLIST,v 1.3 2012/04/25 13:07:26 gonzalo Exp $
+@bin bin/mairix
 @man man/man1/mairix.1
 @man man/man5/mairixrc.5
