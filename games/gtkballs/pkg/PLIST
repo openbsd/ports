@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.8 2006/01/19 17:11:21 steven Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/04/26 09:58:17 ajacoutot Exp $
 @mode g+s
 @group games
-bin/gtkballs
+@bin bin/gtkballs
 @mode
 @group
 @man man/man6/gtkballs.6x
+share/examples/gtkballs/
+share/examples/gtkballs/gtkballs-scores
 @mode g+w
 @group games
 @sample /var/games/gtkballs-scores
 @mode
 @group
-share/examples/gtkballs-scores
 share/gtkballs/
 share/gtkballs/COPYING
 share/gtkballs/gtkballs-logo.png
