@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2012/04/12 17:31:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.44 2012/04/26 19:18:35 jasper Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 DISTNAME=	AfterStep-2.2.9
 PKGNAME=	${DISTNAME:L}
-REVISION=	4
+REVISION=	5
 CATEGORIES=     x11
 MASTER_SITES=   http://distfiles.nl/ \
 		ftp://ftp.afterstep.org/stable/
@@ -30,7 +30,7 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/libexecinfo
 RUN_DEPENDS=	shells/bash \
 		x11/asclock,classic,english \
-		x11/aterm
+		x11/rxvt-unicode
 LIB_DEPENDS=	x11/dbus \
 		x11/gnome/librsvg \
 		x11/gtk+2
@@ -38,7 +38,7 @@ LIB_DEPENDS=	x11/dbus \
 FAKE=		lib
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--with-helpcommand="aterm -e man" \
+CONFIGURE_ARGS=	--with-helpcommand="urxvt -e man" \
 		--with-jpeg-includes=${LOCALBASE}/include \
 		--with-jpeg-library=${LOCALBASE}/lib \
 		--with-png-includes=${LOCALBASE}/include/libpng \
