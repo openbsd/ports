@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/04/04 06:19:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/04/26 09:25:40 ajacoutot Exp $
 
 COMMENT=	message bus system
 
@@ -24,6 +24,7 @@ MASTER_SITES=	${HOMEPAGE}/releases/dbus/
 
 SEPARATE_BUILD=	Yes
 
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE= gnu
