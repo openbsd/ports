@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2012/03/23 08:43:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2012/04/26 10:55:10 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.1.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -17,23 +17,30 @@ PERMIT_PACKAGE_FTP =     Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
-WANTLIB +=	X11 Xcursor c ev m xcb xcb-atom xcb-aux
-WANTLIB +=	xcb-event xcb-icccm xcb-keysyms
-WANTLIB +=	xcb-property xcb-randr xcb-xinerama yajl
-WANTLIB +=	pcre startup-notification-1
+WANTLIB =	X11 X11-xcb Xau Xcursor Xdmcp Xfixes \
+		Xrender c ev m pcre pthread-stubs \
+		startup-notification-1 xcb xcb-atom \
+		xcb-aux xcb-event xcb-icccm \
+		xcb-keysyms xcb-property xcb-randr \
+		xcb-xinerama yajl
 
 MODULES =	converters/libiconv
+
 LIB_DEPENDS =	devel/libev \
 		devel/libyajl>=2.0.0 \
 		devel/pcre \
 		devel/startup-notification
+
 BUILD_DEPENDS =	devel/bison \
 		devel/flex
+
 RUN_DEPENDS =	x11/dmenu
 
 USE_GMAKE =	Yes
 
 NO_REGRESS =	Yes
+
+MAKE_FLAGS =	CC="${CC}"
 
 .if defined(DEBUG)
 MAKE_FLAGS +=	DEBUG=1

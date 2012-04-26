@@ -1,16 +1,7 @@
-$OpenBSD: patch-i3_config,v 1.7 2011/12/27 09:05:17 dcoppa Exp $
---- i3.config.orig	Sat Dec 24 16:25:08 2011
-+++ i3.config	Tue Dec 27 09:26:06 2011
-@@ -9,6 +9,8 @@
- # layout, use the i3-config-wizard
- #
- 
-+set $mod Mod1
-+
- # font for window titles. ISO 10646 = Unicode
- font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
- 
-@@ -16,13 +18,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
+$OpenBSD: patch-i3_config,v 1.8 2012/04/26 10:55:10 dcoppa Exp $
+--- i3.config.orig	Fri Jan 27 20:24:09 2012
++++ i3.config	Thu Apr 26 12:13:23 2012
+@@ -16,13 +16,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier Mod1
  
  # start a terminal
@@ -26,7 +17,7 @@ $OpenBSD: patch-i3_config,v 1.7 2011/12/27 09:05:17 dcoppa Exp $
  
  # change focus
  bindsym Mod1+j focus left
-@@ -145,19 +147,8 @@ mode "resize" {
+@@ -145,19 +145,8 @@ mode "resize" {
  
  bindsym Mod1+r mode "resize"
  
