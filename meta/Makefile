@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.5 2012/03/04 17:53:24 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/26 17:20:59 jasper Exp $
 
      SUBDIR =
+     SUBDIR += geda
      SUBDIR += gnome
      SUBDIR += gnustep
      SUBDIR += haskell-platform
