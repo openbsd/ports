@@ -1,4 +1,4 @@
-# $OpenBSD: mips64el,v 1.1 2010/02/08 12:57:02 jasper Exp $
+# $OpenBSD: mips64el,v 1.2 2012/04/26 19:18:50 jasper Exp $
 # This is the master list of subdirs used to choose mips64el packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -20,7 +20,6 @@ misc/screen
 archivers/bzip2
 archivers/unzip
 archivers/zip
-x11/aterm
 x11/wmi
 x11/xautolock
 www/elinks
