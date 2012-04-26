@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/05 21:02:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/26 19:08:00 jasper Exp $
 @bin bin/Fritzing
 bin/fritzing
 share/applications/fritzing.desktop
@@ -14,9 +14,13 @@ share/fritzing/bins/more/sparkfun.fzb
 share/fritzing/parts/
 share/fritzing/parts/contrib/
 share/fritzing/parts/contrib/Dial Potentiometer with switch.fzp
+share/fritzing/parts/contrib/Digital_Panel_Meter__Voltage__DMS_20PC.fzp
 share/fritzing/parts/contrib/HCMS-29xx.fzp
+share/fritzing/parts/contrib/New_Aries_28W_ZIF.fzp
 share/fritzing/parts/contrib/Peppermill Power Board.fzp
 share/fritzing/parts/contrib/Pushbutton.fzp
+share/fritzing/parts/contrib/RFM12B_Transceiver_DIP_Package.fzp
+share/fritzing/parts/contrib/RFM12b_HopeRF_Transceiver.fzp
 share/fritzing/parts/contrib/Round Pushbutton.fzp
 share/fritzing/parts/contrib/SN74LS14N Schmitt Trigger.fzp
 share/fritzing/parts/contrib/TPA2000D1 Audio Amplifier dip double.fzp
@@ -110,6 +114,7 @@ share/fritzing/parts/core/Breadboard Power Supply - SMD v13.fzp
 share/fritzing/parts/core/Buzzer-v15.fzp
 share/fritzing/parts/core/CRYSTAL - kHz.fzp
 share/fritzing/parts/core/Color-LCD-Shield-v14.fzp
+share/fritzing/parts/core/Color_Sensor_Breakout_ADJD_S311.fzp
 share/fritzing/parts/core/DB25F.fzp
 share/fritzing/parts/core/DB25M.fzp
 share/fritzing/parts/core/DIP_Relay_D31A.fzp
@@ -134,6 +139,7 @@ share/fritzing/parts/core/HIH-4030_Breakout-v10.fzp
 share/fritzing/parts/core/HMC5883L_Breakout-v11.fzp
 share/fritzing/parts/core/HMC6352-v18.fzp
 share/fritzing/parts/core/Half_breadboard.fzp
+share/fritzing/parts/core/Humidity_Sensor_SHT15.fzp
 share/fritzing/parts/core/Humidity_and_Temperature_Sensor_RHT03.fzp
 share/fritzing/parts/core/IOIO-v15.fzp
 share/fritzing/parts/core/IR_Receiver_v14.fzp
@@ -166,6 +172,7 @@ share/fritzing/parts/core/LilyPad-XBee-v15.fzp
 share/fritzing/parts/core/LilyPad-slide-switch13.fzp
 share/fritzing/parts/core/LilyPad_LED-v14.fzp
 share/fritzing/parts/core/Lilypad_PowerSupply-v16.fzp
+share/fritzing/parts/core/M5450_LED_Driver.fzp
 share/fritzing/parts/core/MIDI Music Shield-v13.fzp
 share/fritzing/parts/core/MIDI_Shield-v13.fzp
 share/fritzing/parts/core/MP3 Shield-v13.fzp
@@ -201,6 +208,7 @@ share/fritzing/parts/core/PICAXE_40X.fzp
 share/fritzing/parts/core/PICAXE_40X1.fzp
 share/fritzing/parts/core/PICAXE_40X2.fzp
 share/fritzing/parts/core/PICAXE_40X2_3V.fzp
+share/fritzing/parts/core/PIC_16F877A.fzp
 share/fritzing/parts/core/PWM-Shield-v12.fzp
 share/fritzing/parts/core/Power Screwshield 1.0a.fzp
 share/fritzing/parts/core/Power plug.fzp
@@ -345,6 +353,7 @@ share/fritzing/parts/core/diode_schottky_1N5817_300mil.fzp
 share/fritzing/parts/core/diode_zener_0_5w_3_6v_300mil.fzp
 share/fritzing/parts/core/generic_female_pin_header_2_100mil.fzp
 share/fritzing/parts/core/generic_ic_dip_8_300mil.fzp
+share/fritzing/parts/core/generic_shrouded_pin_header_10_100mil.fzp
 share/fritzing/parts/core/generic_sip_2_300mil.fzp
 share/fritzing/parts/core/gogoboard 4.0.fzp
 share/fritzing/parts/core/gs1011_breakout-v11.fzp
@@ -723,18 +732,26 @@ share/fritzing/parts/subparts/breadboard/xbee-smd.svg
 share/fritzing/parts/svg/
 share/fritzing/parts/svg/contrib/
 share/fritzing/parts/svg/contrib/breadboard/
+share/fritzing/parts/svg/contrib/breadboard/Digital_Panel_Meter__Voltage__DMS_20PC__.svg
 share/fritzing/parts/svg/contrib/breadboard/HCMS-29xxff.svg
+share/fritzing/parts/svg/contrib/breadboard/New_Aries_28W_ZIF4.svg
 share/fritzing/parts/svg/contrib/breadboard/Peppermill_Power_Board__a40e6dc7c979bcff.svg
 share/fritzing/parts/svg/contrib/breadboard/Pushbuttonc.svg
+share/fritzing/parts/svg/contrib/breadboard/RFM12B_Transceiver_DIP_Package__581e0231.svg
+share/fritzing/parts/svg/contrib/breadboard/RFM12b_HopeRF_Transceiver__9c603c735b502.svg
 share/fritzing/parts/svg/contrib/breadboard/Round_Pushbuttonba.svg
 share/fritzing/parts/svg/contrib/breadboard/SN74HC14N_Schmitt_Trigger_breadboard.svg
 share/fritzing/parts/svg/contrib/breadboard/TPA2000D1_Audio_Amplifier.svg
 share/fritzing/parts/svg/contrib/breadboard/potentiometer_w_switch.svg
 share/fritzing/parts/svg/contrib/icon/
 share/fritzing/parts/svg/contrib/icon/Dial_Potentiometer_with_switch.svg
+share/fritzing/parts/svg/contrib/icon/Digital_Panel_Meter__Voltage__DMS_20PC__.svg
 share/fritzing/parts/svg/contrib/icon/HCMS-29xxff.svg
+share/fritzing/parts/svg/contrib/icon/New_Aries_28W_ZIF4.svg
 share/fritzing/parts/svg/contrib/icon/Peppermill_Power_Board__d66eefd2b869d709.svg
 share/fritzing/parts/svg/contrib/icon/Pushbuttonc.svg
+share/fritzing/parts/svg/contrib/icon/RFM12B_Transceiver_DIP_Package__581e0231.svg
+share/fritzing/parts/svg/contrib/icon/RFM12b_HopeRF_Transceiver__9c603c735b502.svg
 share/fritzing/parts/svg/contrib/icon/Round_Pushbuttonba.svg
 share/fritzing/parts/svg/contrib/icon/SN74LS14N.svg
 share/fritzing/parts/svg/contrib/icon/TPA2000D1_Audio_Amplifier.svg
@@ -1170,6 +1187,7 @@ share/fritzing/parts/svg/contrib/pcb/DO214AB.svg
 share/fritzing/parts/svg/contrib/pcb/DW 24.svg
 share/fritzing/parts/svg/contrib/pcb/DW 28.svg
 share/fritzing/parts/svg/contrib/pcb/Dial_Potentiometer_with_switch_pcb.svg
+share/fritzing/parts/svg/contrib/pcb/Digital_Panel_Meter__Voltage__DMS_20PC__.svg
 share/fritzing/parts/svg/contrib/pcb/EIA3216.svg
 share/fritzing/parts/svg/contrib/pcb/EIA3528.svg
 share/fritzing/parts/svg/contrib/pcb/EIA6032.svg
@@ -1347,6 +1365,7 @@ share/fritzing/parts/svg/contrib/pcb/NICHICON_WT_CAP_6p3_5p8.svg
 share/fritzing/parts/svg/contrib/pcb/NICHICON_WT_CAP_6p3_7p7.svg
 share/fritzing/parts/svg/contrib/pcb/NICHICON_WT_CAP_8_10.svg
 share/fritzing/parts/svg/contrib/pcb/NICHICON_WT_CAP_8_5p4.svg
+share/fritzing/parts/svg/contrib/pcb/New_Aries_28W_ZIF4.svg
 share/fritzing/parts/svg/contrib/pcb/OLD_QFP 44 150.svg
 share/fritzing/parts/svg/contrib/pcb/OPA340_SOT23-5.svg
 share/fritzing/parts/svg/contrib/pcb/OPTEK_OVSRWACR6.svg
@@ -1493,6 +1512,8 @@ share/fritzing/parts/svg/contrib/pcb/RESCAX-16N__CTS_741X163-Series.svg
 share/fritzing/parts/svg/contrib/pcb/RESCAX-4N__CTS_740X043-Series.svg
 share/fritzing/parts/svg/contrib/pcb/RESCAX-4N__CTS_741X043-Series.svg
 share/fritzing/parts/svg/contrib/pcb/RESCAX-8N__CTS_741X083-Series.svg
+share/fritzing/parts/svg/contrib/pcb/RFM12B_Transceiver_DIP_Package__581e0231.svg
+share/fritzing/parts/svg/contrib/pcb/RFM12b_HopeRF_Transceiver__9c603c735b502.svg
 share/fritzing/parts/svg/contrib/pcb/RN55_type_0.1W_Resistor.svg
 share/fritzing/parts/svg/contrib/pcb/RightAngleSMA.svg
 share/fritzing/parts/svg/contrib/pcb/SC70_3.svg
@@ -2447,8 +2468,12 @@ share/fritzing/parts/svg/contrib/pcb/smt2416.svg
 share/fritzing/parts/svg/contrib/pcb/test_filter.svg
 share/fritzing/parts/svg/contrib/schematic/
 share/fritzing/parts/svg/contrib/schematic/Dial_Potentiometer_with_switch_schematic.svg
+share/fritzing/parts/svg/contrib/schematic/Digital_Panel_Meter__Voltage__DMS_20PC__.svg
 share/fritzing/parts/svg/contrib/schematic/HCMS-29xxff.svg
+share/fritzing/parts/svg/contrib/schematic/New_Aries_28W_ZIF4.svg
 share/fritzing/parts/svg/contrib/schematic/Peppermill_Power_Board__a40e6dc7c979bcff.svg
+share/fritzing/parts/svg/contrib/schematic/RFM12B_Transceiver_DIP_Package__581e0231.svg
+share/fritzing/parts/svg/contrib/schematic/RFM12b_HopeRF_Transceiver__9c603c735b502.svg
 share/fritzing/parts/svg/contrib/schematic/SN74HC14N_SchmittTrigger_schematic.svg
 share/fritzing/parts/svg/contrib/schematic/TPA2000D1_AudioAmplifier_schematic.svg
 share/fritzing/parts/svg/core/
@@ -2530,6 +2555,7 @@ share/fritzing/parts/svg/core/breadboard/Breadboard Power Supply - SMD v13_bread
 share/fritzing/parts/svg/core/breadboard/Buzzer-v15_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/CRYSTAL_-_kHz_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/Color-LCD-Shield-v14_breadboard.svg
+share/fritzing/parts/svg/core/breadboard/Color_Sensor_Breakout_ADJD_S311_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/DB25F.svg
 share/fritzing/parts/svg/core/breadboard/DB25M.svg
 share/fritzing/parts/svg/core/breadboard/DIP_Relay_D31A_breadboard.svg
@@ -2556,6 +2582,7 @@ share/fritzing/parts/svg/core/breadboard/HMC5883L_Breakout-v11_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/HMC6352-v18_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/HTSSOP28.svg
 share/fritzing/parts/svg/core/breadboard/Half_breadboard56a.svg
+share/fritzing/parts/svg/core/breadboard/Humidity_Sensor_SHT15_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/Humidity_and_Temperature_Sensor_RHT03_6.svg
 share/fritzing/parts/svg/core/breadboard/IOIO-v15_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/IR_Receiver_v14_breadboard.svg
@@ -2588,6 +2615,7 @@ share/fritzing/parts/svg/core/breadboard/LilyPad-XBee-v15_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/LilyPad-slide-switch13_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/LilyPad_LED-v14_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/Lilypad_PowerSupply-v16_breadboard.svg
+share/fritzing/parts/svg/core/breadboard/M5450_LED_Driver_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/MIDI Music Shield-v13_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/MIDI_Shield-v13_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/MP3 Shield-v13_breadboard.svg
@@ -2623,6 +2651,7 @@ share/fritzing/parts/svg/core/breadboard/PICAXE_40X1_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/PICAXE_40X2_3V_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/PICAXE_40X2_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/PICAXE_40X_breadboard.svg
+share/fritzing/parts/svg/core/breadboard/PIC_16F877A_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/PWM-Shield-v12_breadboard.svg
 share/fritzing/parts/svg/core/breadboard/Parallax_Propeller.svg
 share/fritzing/parts/svg/core/breadboard/Power Screwshield 1.0a_breadboard.svg
@@ -2728,6 +2757,7 @@ share/fritzing/parts/svg/core/breadboard/generic_female_pin_header_1_100mil_brea
 share/fritzing/parts/svg/core/breadboard/generic_ic_dip_4_300mil_bread.svg
 share/fritzing/parts/svg/core/breadboard/generic_male_pin_header_1_100mil_bread.svg
 share/fritzing/parts/svg/core/breadboard/generic_rounded_female_pin_header_1_100mil_bread.svg
+share/fritzing/parts/svg/core/breadboard/generic_shrouded_pin_header_10_100mil_bread.svg
 share/fritzing/parts/svg/core/breadboard/generic_sip_2_300mil_bread.svg
 share/fritzing/parts/svg/core/breadboard/gogoboard_4.043282.svg
 share/fritzing/parts/svg/core/breadboard/gs1011_breakout-v11_breadboard.svg
@@ -2846,6 +2876,7 @@ share/fritzing/parts/svg/core/icon/BASIC_Stamp_2sx.svg
 share/fritzing/parts/svg/core/icon/Barometric_Pressure_Sensor__2eaec138e035.svg
 share/fritzing/parts/svg/core/icon/Basic_Force_Sensing_Resistor_(FSR)__a4ff.svg
 share/fritzing/parts/svg/core/icon/Battery_block_9V82.svg
+share/fritzing/parts/svg/core/icon/Color_Sensor_Breakout_ADJD_S311_icon.svg
 share/fritzing/parts/svg/core/icon/DB25F.svg
 share/fritzing/parts/svg/core/icon/DB25M.svg
 share/fritzing/parts/svg/core/icon/DIP_Relay_D31A_icon.svg
@@ -2860,6 +2891,7 @@ share/fritzing/parts/svg/core/icon/Fuse_with_Handler_icon.svg
 share/fritzing/parts/svg/core/icon/GLCD_128x64.svg
 share/fritzing/parts/svg/core/icon/HCF_4067397.svg
 share/fritzing/parts/svg/core/icon/HEF4094228f.svg
+share/fritzing/parts/svg/core/icon/Humidity_Sensor_SHT15_icon.svg
 share/fritzing/parts/svg/core/icon/Humidity_and_Temperature_Sensor_RHT03_6.svg
 share/fritzing/parts/svg/core/icon/L293D_icon.svg
 share/fritzing/parts/svg/core/icon/LED-SuperFlux-blue.svg
@@ -2869,6 +2901,7 @@ share/fritzing/parts/svg/core/icon/LED-rgb-5mmicon.svg
 share/fritzing/parts/svg/core/icon/LED_Matrix_Kingbright.svg
 share/fritzing/parts/svg/core/icon/LED_Prolight_RGB.svg
 share/fritzing/parts/svg/core/icon/LICENSE.txt
+share/fritzing/parts/svg/core/icon/M5450_LED_Driver_icon.svg
 share/fritzing/parts/svg/core/icon/Optocoupler_TLP621_icon.svg
 share/fritzing/parts/svg/core/icon/PICAXE_08M_icon.svg
 share/fritzing/parts/svg/core/icon/PICAXE_08_icon.svg
@@ -2889,6 +2922,7 @@ share/fritzing/parts/svg/core/icon/PICAXE_40X1_icon.svg
 share/fritzing/parts/svg/core/icon/PICAXE_40X2_3V_icon.svg
 share/fritzing/parts/svg/core/icon/PICAXE_40X2_icon.svg
 share/fritzing/parts/svg/core/icon/PICAXE_40X_icon.svg
+share/fritzing/parts/svg/core/icon/PIC_16F877A_icon.svg
 share/fritzing/parts/svg/core/icon/Real_Time_Clock_Module___DS1307_RTC_Brea.svg
 share/fritzing/parts/svg/core/icon/Rotary_Encoder.svg
 share/fritzing/parts/svg/core/icon/SN74LS14N_icon.svg
@@ -3022,6 +3056,7 @@ share/fritzing/parts/svg/core/pcb/Breadboard Power Supply - SMD v13_pcb.svg
 share/fritzing/parts/svg/core/pcb/Buzzer-v15_pcb.svg
 share/fritzing/parts/svg/core/pcb/CRYSTAL_-_kHz_pcb.svg
 share/fritzing/parts/svg/core/pcb/Color-LCD-Shield-v14_pcb.svg
+share/fritzing/parts/svg/core/pcb/Color_Sensor_Breakout_ADJD_S311_pcb.svg
 share/fritzing/parts/svg/core/pcb/DB25F.svg
 share/fritzing/parts/svg/core/pcb/DB25M.svg
 share/fritzing/parts/svg/core/pcb/DIN5_midi_5_pcb.svg
@@ -3049,6 +3084,7 @@ share/fritzing/parts/svg/core/pcb/HIH-4030_Breakout-v10_pcb.svg
 share/fritzing/parts/svg/core/pcb/HMC5883L_Breakout-v11_pcb.svg
 share/fritzing/parts/svg/core/pcb/HMC6352-v18_pcb.svg
 share/fritzing/parts/svg/core/pcb/HTSSOP28.svg
+share/fritzing/parts/svg/core/pcb/Humidity_Sensor_SHT15_pcb.svg
 share/fritzing/parts/svg/core/pcb/Humidity_and_Temperature_Sensor_RHT03_6.svg
 share/fritzing/parts/svg/core/pcb/IOIO-v15_pcb.svg
 share/fritzing/parts/svg/core/pcb/IR_Receiver_v14_pcb.svg
@@ -3079,6 +3115,7 @@ share/fritzing/parts/svg/core/pcb/LilyPad-XBee-v15_pcb.svg
 share/fritzing/parts/svg/core/pcb/LilyPad-slide-switch13_pcb.svg
 share/fritzing/parts/svg/core/pcb/LilyPad_LED-v14_pcb.svg
 share/fritzing/parts/svg/core/pcb/Lilypad_PowerSupply-v16_pcb.svg
+share/fritzing/parts/svg/core/pcb/M5450_LED_Driver_pcb.svg
 share/fritzing/parts/svg/core/pcb/MIDI Music Shield-v13_pcb.svg
 share/fritzing/parts/svg/core/pcb/MIDI_Shield-v13_pcb.svg
 share/fritzing/parts/svg/core/pcb/MP3 Shield-v13_pcb.svg
@@ -3095,6 +3132,7 @@ share/fritzing/parts/svg/core/pcb/OSHW logo.svg
 share/fritzing/parts/svg/core/pcb/Op Amp Breakout-v16_pcb.svg
 share/fritzing/parts/svg/core/pcb/OpenLog_pcb.svg
 share/fritzing/parts/svg/core/pcb/Optocoupler_TLP621_pcb.svg
+share/fritzing/parts/svg/core/pcb/PIC_16F877A_pcb.svg
 share/fritzing/parts/svg/core/pcb/PWM-Shield-v12_pcb.svg
 share/fritzing/parts/svg/core/pcb/Power Screwshield 1.0a_pcb.svg
 share/fritzing/parts/svg/core/pcb/PowerDriver-Shield-v13_pcb.svg
@@ -3204,6 +3242,7 @@ share/fritzing/parts/svg/core/pcb/connector_power_pj202ah.svg
 share/fritzing/parts/svg/core/pcb/connector_usb_b.svg
 share/fritzing/parts/svg/core/pcb/crystal_HC18.svg
 share/fritzing/parts/svg/core/pcb/crystal_hc49u.svg
+share/fritzing/parts/svg/core/pcb/dip_24_300mil_pcb.svg
 share/fritzing/parts/svg/core/pcb/dip_4_100mil_pcb.svg
 share/fritzing/parts/svg/core/pcb/dip_4_300mil_pcb.svg
 share/fritzing/parts/svg/core/pcb/gogoboard_4.043282.svg
@@ -3241,6 +3280,7 @@ share/fritzing/parts/svg/core/pcb/resonator-3pin.svg
 share/fritzing/parts/svg/core/pcb/rfid_reader_id12.svg
 share/fritzing/parts/svg/core/pcb/screw_terminal_2_100mil_pcb.svg
 share/fritzing/parts/svg/core/pcb/screwshield-v15_pcb.svg
+share/fritzing/parts/svg/core/pcb/shrouded_10_100mil_pcb.svg
 share/fritzing/parts/svg/core/pcb/stereo-jack-3_5mm-PG203J_h.svg
 share/fritzing/parts/svg/core/pcb/switch-4lead.svg
 share/fritzing/parts/svg/core/pcb/thermalprinter_pcb.svg
@@ -3340,6 +3380,7 @@ share/fritzing/parts/svg/core/schematic/Battery_block_9V82.svg
 share/fritzing/parts/svg/core/schematic/Breadboard Power Supply - SMD v13_schematic.svg
 share/fritzing/parts/svg/core/schematic/Buzzer-v15_schematic.svg
 share/fritzing/parts/svg/core/schematic/Color-LCD-Shield-v14_schematic.svg
+share/fritzing/parts/svg/core/schematic/Color_Sensor_Breakout_ADJD_S311_schematic.svg
 share/fritzing/parts/svg/core/schematic/DB25F.svg
 share/fritzing/parts/svg/core/schematic/DB25M.svg
 share/fritzing/parts/svg/core/schematic/DIP_Relay_D31A_schematic.svg
@@ -3365,6 +3406,7 @@ share/fritzing/parts/svg/core/schematic/HIH-4030_Breakout-v10_schematic.svg
 share/fritzing/parts/svg/core/schematic/HMC5883L_Breakout-v11_schematic.svg
 share/fritzing/parts/svg/core/schematic/HMC6352-v18_schematic.svg
 share/fritzing/parts/svg/core/schematic/HTSSOP28.svg
+share/fritzing/parts/svg/core/schematic/Humidity_Sensor_SHT15_schematic.svg
 share/fritzing/parts/svg/core/schematic/Humidity_and_Temperature_Sensor_RHT03_6.svg
 share/fritzing/parts/svg/core/schematic/IOIO-v15_schematic.svg
 share/fritzing/parts/svg/core/schematic/IR_Receiver_v14_schematic.svg
@@ -3396,6 +3438,7 @@ share/fritzing/parts/svg/core/schematic/LilyPad-XBee-v15_schematic.svg
 share/fritzing/parts/svg/core/schematic/LilyPad-slide-switch13_schematic.svg
 share/fritzing/parts/svg/core/schematic/LilyPad_LED-v14_schematic.svg
 share/fritzing/parts/svg/core/schematic/Lilypad_PowerSupply-v16_schematic.svg
+share/fritzing/parts/svg/core/schematic/M5450_LED_Driver_schematic.svg
 share/fritzing/parts/svg/core/schematic/MIDI Music Shield-v13_schematic.svg
 share/fritzing/parts/svg/core/schematic/MIDI_Shield-v13_schematic.svg
 share/fritzing/parts/svg/core/schematic/MP3 Shield-v13_schematic.svg
@@ -3430,6 +3473,7 @@ share/fritzing/parts/svg/core/schematic/PICAXE_40X1_schematic.svg
 share/fritzing/parts/svg/core/schematic/PICAXE_40X2_3V_schematic.svg
 share/fritzing/parts/svg/core/schematic/PICAXE_40X2_schematic.svg
 share/fritzing/parts/svg/core/schematic/PICAXE_40X_schematic.svg
+share/fritzing/parts/svg/core/schematic/PIC_16F877A_schematic.svg
 share/fritzing/parts/svg/core/schematic/PWM-Shield-v12_schematic.svg
 share/fritzing/parts/svg/core/schematic/Parallax_Propeller.svg
 share/fritzing/parts/svg/core/schematic/Power Screwshield 1.0a_schematic.svg
@@ -3531,6 +3575,7 @@ share/fritzing/parts/svg/core/schematic/fet_n.svg
 share/fritzing/parts/svg/core/schematic/fet_p.svg
 share/fritzing/parts/svg/core/schematic/generic_female_pin_header_1_100mil_schem.svg
 share/fritzing/parts/svg/core/schematic/generic_ic_dip_4_schem.svg
+share/fritzing/parts/svg/core/schematic/generic_male_pin_header_10_100mil_schem.svg
 share/fritzing/parts/svg/core/schematic/generic_male_pin_header_1_100mil_schem.svg
 share/fritzing/parts/svg/core/schematic/generic_sip_1_300mil_schem.svg
 share/fritzing/parts/svg/core/schematic/gogoboard_4.043282.svg
@@ -4146,6 +4191,7 @@ share/fritzing/resources/images/itemselection/selectionRingRight.png
 share/fritzing/resources/images/itemselection/selectionRingTop.png
 share/fritzing/resources/images/itemselection/selectionRingTopLeft.png
 share/fritzing/resources/images/itemselection/selectionRingTopRight.png
+share/fritzing/resources/images/part_lock.svg
 share/fritzing/resources/images/pcb_grid_tile.png
 share/fritzing/resources/images/pcb_icon.png
 share/fritzing/resources/images/remove_prop_enter.png
@@ -4337,154 +4383,9 @@ share/fritzing/sketches/core/npnPowerTransistor.fzz
 share/fritzing/sketches/core/treeduino.fzz
 share/fritzing/sketches/index.xml
 share/fritzing/tools/
-share/fritzing/tools/artreeno/
-share/fritzing/tools/artreeno/artreeno.cpp
-share/fritzing/tools/artreeno/artreeno.pro
-share/fritzing/tools/artreeno/hackamila.svg
-share/fritzing/tools/fixfz/
-share/fritzing/tools/fixfz/fixfz.cpp
-share/fritzing/tools/fixfz/fixfz.h
-share/fritzing/tools/fixfz/fixfz.pro
-share/fritzing/tools/gerb-merge/
-share/fritzing/tools/gerb-merge/COPYING
-share/fritzing/tools/gerb-merge/PKG-INFO
-share/fritzing/tools/gerb-merge/README
-share/fritzing/tools/gerb-merge/doc/
-share/fritzing/tools/gerb-merge/doc/autosearch.html
-share/fritzing/tools/gerb-merge/doc/cfgfile.html
-share/fritzing/tools/gerb-merge/doc/ex1.png
-share/fritzing/tools/gerb-merge/doc/ex1a.png
-share/fritzing/tools/gerb-merge/doc/ex1b.png
-share/fritzing/tools/gerb-merge/doc/ex1c.png
-share/fritzing/tools/gerb-merge/doc/ex1d.png
-share/fritzing/tools/gerb-merge/doc/ex1e.png
-share/fritzing/tools/gerb-merge/doc/ex1f.png
-share/fritzing/tools/gerb-merge/doc/ex1g.png
-share/fritzing/tools/gerb-merge/doc/gpl.html
-share/fritzing/tools/gerb-merge/doc/index.html
-share/fritzing/tools/gerb-merge/doc/layout1.cfg
-share/fritzing/tools/gerb-merge/doc/layout1.def
-share/fritzing/tools/gerb-merge/doc/layout2.cfg
-share/fritzing/tools/gerb-merge/doc/layout2.def
-share/fritzing/tools/gerb-merge/doc/layoutfile.html
-share/fritzing/tools/gerb-merge/doc/sample.png
-share/fritzing/tools/gerb-merge/doc/sample2.png
-share/fritzing/tools/gerb-merge/gerbmerge/
-share/fritzing/tools/gerb-merge/gerbmerge/__init__.py
-share/fritzing/tools/gerb-merge/gerbmerge/amacro.py
-share/fritzing/tools/gerb-merge/gerbmerge/aptable.py
-share/fritzing/tools/gerb-merge/gerbmerge/config.py
-share/fritzing/tools/gerb-merge/gerbmerge/drillcluster.py
-share/fritzing/tools/gerb-merge/gerbmerge/fabdrawing.py
-share/fritzing/tools/gerb-merge/gerbmerge/geometry.py
-share/fritzing/tools/gerb-merge/gerbmerge/gerbmerge.py
-share/fritzing/tools/gerb-merge/gerbmerge/jobs.py
-share/fritzing/tools/gerb-merge/gerbmerge/makestroke.py
-share/fritzing/tools/gerb-merge/gerbmerge/parselayout.py
-share/fritzing/tools/gerb-merge/gerbmerge/placement.py
-share/fritzing/tools/gerb-merge/gerbmerge/schwartz.py
-share/fritzing/tools/gerb-merge/gerbmerge/scoring.py
-share/fritzing/tools/gerb-merge/gerbmerge/strokes.py
-share/fritzing/tools/gerb-merge/gerbmerge/tilesearch1.py
-share/fritzing/tools/gerb-merge/gerbmerge/tilesearch2.py
-share/fritzing/tools/gerb-merge/gerbmerge/tiling.py
-share/fritzing/tools/gerb-merge/gerbmerge/util.py
-share/fritzing/tools/gerb-merge/misc/
-share/fritzing/tools/gerb-merge/misc/gerbmerge.bat
-share/fritzing/tools/gerb-merge/setup.cfg
-share/fritzing/tools/gerb-merge/setup.py
-share/fritzing/tools/gerb-merge/testdata/
-share/fritzing/tools/gerb-merge/testdata/Makefile
-share/fritzing/tools/gerb-merge/testdata/README
-share/fritzing/tools/gerb-merge/testdata/fabdwg.txt
-share/fritzing/tools/gerb-merge/testdata/hexapod.bor
-share/fritzing/tools/gerb-merge/testdata/hexapod.brd
-share/fritzing/tools/gerb-merge/testdata/hexapod.cam
-share/fritzing/tools/gerb-merge/testdata/hexapod.cmp
-share/fritzing/tools/gerb-merge/testdata/hexapod.dri
-share/fritzing/tools/gerb-merge/testdata/hexapod.gpi
-share/fritzing/tools/gerb-merge/testdata/hexapod.plc
-share/fritzing/tools/gerb-merge/testdata/hexapod.sch
-share/fritzing/tools/gerb-merge/testdata/hexapod.sol
-share/fritzing/tools/gerb-merge/testdata/hexapod.xln
-share/fritzing/tools/gerb-merge/testdata/layout1.cfg
-share/fritzing/tools/gerb-merge/testdata/layout1.def
-share/fritzing/tools/gerb-merge/testdata/layout2.cfg
-share/fritzing/tools/gerb-merge/testdata/layout2.def
-share/fritzing/tools/gerb-merge/testdata/merge1.bor
-share/fritzing/tools/gerb-merge/testdata/merge1.cmp
-share/fritzing/tools/gerb-merge/testdata/merge1.fab
-share/fritzing/tools/gerb-merge/testdata/merge1.oln
-share/fritzing/tools/gerb-merge/testdata/merge1.plc
-share/fritzing/tools/gerb-merge/testdata/merge1.pls
-share/fritzing/tools/gerb-merge/testdata/merge1.sco
-share/fritzing/tools/gerb-merge/testdata/merge1.sol
-share/fritzing/tools/gerb-merge/testdata/merge1.stc
-share/fritzing/tools/gerb-merge/testdata/merge1.sts
-share/fritzing/tools/gerb-merge/testdata/merge1.xln
-share/fritzing/tools/gerb-merge/testdata/placement.merge1.txt
-share/fritzing/tools/gerb-merge/testdata/proj1.bor
-share/fritzing/tools/gerb-merge/testdata/proj1.brd
-share/fritzing/tools/gerb-merge/testdata/proj1.cam
-share/fritzing/tools/gerb-merge/testdata/proj1.cmp
-share/fritzing/tools/gerb-merge/testdata/proj1.dri
-share/fritzing/tools/gerb-merge/testdata/proj1.drl
-share/fritzing/tools/gerb-merge/testdata/proj1.gpi
-share/fritzing/tools/gerb-merge/testdata/proj1.plc
-share/fritzing/tools/gerb-merge/testdata/proj1.pls
-share/fritzing/tools/gerb-merge/testdata/proj1.sch
-share/fritzing/tools/gerb-merge/testdata/proj1.sol
-share/fritzing/tools/gerb-merge/testdata/proj1.stc
-share/fritzing/tools/gerb-merge/testdata/proj1.sts
-share/fritzing/tools/gerb-merge/testdata/proj1.xln
-share/fritzing/tools/gerb-merge/testdata/toollist.merge1.drl
 share/fritzing/tools/linux_release_script/
 share/fritzing/tools/linux_release_script/release.all.sh
 share/fritzing/tools/linux_release_script/release.sh
-share/fritzing/tools/qlalr/
-share/fritzing/tools/qlalr/README
-share/fritzing/tools/qlalr/examples/
-share/fritzing/tools/qlalr/examples/dummy-xml/
-share/fritzing/tools/qlalr/examples/dummy-xml/dummy-xml.pro
-share/fritzing/tools/qlalr/examples/dummy-xml/ll/
-share/fritzing/tools/qlalr/examples/dummy-xml/ll/dummy-xml-ll.cpp
-share/fritzing/tools/qlalr/examples/dummy-xml/xml.g
-share/fritzing/tools/qlalr/examples/glsl/
-share/fritzing/tools/qlalr/examples/glsl/build.sh
-share/fritzing/tools/qlalr/examples/glsl/glsl
-share/fritzing/tools/qlalr/examples/glsl/glsl-lex.l
-share/fritzing/tools/qlalr/examples/glsl/glsl.g
-share/fritzing/tools/qlalr/examples/glsl/glsl.pro
-share/fritzing/tools/qlalr/examples/lambda/
-share/fritzing/tools/qlalr/examples/lambda/COMPILE
-share/fritzing/tools/qlalr/examples/lambda/lambda.g
-share/fritzing/tools/qlalr/examples/lambda/lambda.pro
-share/fritzing/tools/qlalr/examples/lambda/main.cpp
-share/fritzing/tools/qlalr/examples/qparser/
-share/fritzing/tools/qlalr/examples/qparser/COMPILE
-share/fritzing/tools/qlalr/examples/qparser/calc.g
-share/fritzing/tools/qlalr/examples/qparser/calc.l
-share/fritzing/tools/qlalr/examples/qparser/qparser.cpp
-share/fritzing/tools/qlalr/examples/qparser/qparser.h
-share/fritzing/tools/qlalr/examples/qparser/qparser.pro
-share/fritzing/tools/qlalr/src/
-share/fritzing/tools/qlalr/src/compress.cpp
-share/fritzing/tools/qlalr/src/compress.h
-share/fritzing/tools/qlalr/src/cppgenerator.cpp
-share/fritzing/tools/qlalr/src/cppgenerator.h
-share/fritzing/tools/qlalr/src/dotgraph.cpp
-share/fritzing/tools/qlalr/src/dotgraph.h
-share/fritzing/tools/qlalr/src/grammar.cpp
-share/fritzing/tools/qlalr/src/grammar_p.h
-share/fritzing/tools/qlalr/src/lalr.cpp
-share/fritzing/tools/qlalr/src/lalr.g
-share/fritzing/tools/qlalr/src/lalr.h
-share/fritzing/tools/qlalr/src/main.cpp
-share/fritzing/tools/qlalr/src/parsetable.cpp
-share/fritzing/tools/qlalr/src/parsetable.h
-share/fritzing/tools/qlalr/src/recognizer.cpp
-share/fritzing/tools/qlalr/src/recognizer.h
-share/fritzing/tools/qlalr/src/src.pro
 share/fritzing/translations/
 share/fritzing/translations/fritzing_ar.qm
 share/fritzing/translations/fritzing_ar.ts
@@ -4510,6 +4411,8 @@ share/fritzing/translations/fritzing_hi.qm
 share/fritzing/translations/fritzing_hi.ts
 share/fritzing/translations/fritzing_hu.qm
 share/fritzing/translations/fritzing_hu.ts
+share/fritzing/translations/fritzing_id.qm
+share/fritzing/translations/fritzing_id.ts
 share/fritzing/translations/fritzing_it.qm
 share/fritzing/translations/fritzing_it.ts
 share/fritzing/translations/fritzing_ja.qm
