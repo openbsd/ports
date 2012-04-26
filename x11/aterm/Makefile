@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.49 2011/07/19 19:55:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2012/04/26 11:23:33 jasper Exp $
 
 COMMENT=	color vt102 terminal emulator with transparency support
 
 DISTNAME=	aterm-0.4.2
-REVISION=	5
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
+REVISION=	6
 
 CATEGORIES=	x11
 
