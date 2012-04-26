@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2012/03/31 20:50:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.487 2012/04/26 19:18:14 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -13,8 +13,6 @@
      SUBDIR += asclock
      SUBDIR += asfiles
      SUBDIR += astime
-     SUBDIR += aterm
-     SUBDIR += aterm,big5
      SUBDIR += autocutsel
      SUBDIR += awesome
      SUBDIR += awn
