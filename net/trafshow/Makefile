@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/27 09:16:17 sthen Exp $
 
 COMMENT=	full screen visualization of network traffic
 
 DISTNAME=	trafshow-3.1
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoft/
+MASTER_SITES=	http://spacehopper.org/mirrors \
+		ftp://ftp.nsk.su/pub/RinetSoft/
 MASTER_SITES0=	ftp://ftp.kame.net/pub/kame/misc/
 EXTRACT_SUFX=	.tgz
 
@@ -21,7 +22,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c ncurses pcap termcap 
+
+WANTLIB=		c ncurses pcap termcap
 
 CONFIGURE_STYLE= gnu
 #CONFIGURE_ENV=	CPPFLAGS="-DINET6"

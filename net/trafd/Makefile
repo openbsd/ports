@@ -1,19 +1,21 @@
 # $FreeBSD: ports/net/trafd/Makefile,v 1.4 2000/07/07 19:22:10 steve Exp $
-# $OpenBSD: Makefile,v 1.9 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/27 09:19:31 sthen Exp $
 
 COMMENT=	BPF traffic collector
 
 DISTNAME=	trafd-3.0.1
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
+MASTER_SITES=	http://spacehopper.org/mirrors/ \
+		ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 EXTRACT_SUFX=	.tgz
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pcap 
+
+WANTLIB=	c pcap
 
 NO_REGRESS=	Yes
 
