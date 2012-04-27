@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/01 10:50:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/27 23:01:52 naddy Exp $
 
 COMMENT=	multi-format archive and compression library
 
-DISTNAME=	libarchive-3.0.3
-SHARED_LIBS=	archive		7.0	# .12.3
+DISTNAME=	libarchive-3.0.4
+SHARED_LIBS=	archive		8.0	# .12.4
 CATEGORIES=	archivers
 HOMEPAGE=	http://libarchive.github.com/
 
@@ -23,6 +23,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
 USE_LIBTOOL=	Yes
+SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-lzmadec	# old LZMA utils
