@@ -1,13 +1,13 @@
-$OpenBSD: patch-setup_py,v 1.2 2011/09/27 10:17:12 giovanni Exp $
---- setup.py.orig	Sun Nov 28 04:58:03 2010
-+++ setup.py	Wed Aug 24 16:17:26 2011
+$OpenBSD: patch-setup_py,v 1.3 2012/04/27 13:53:15 giovanni Exp $
+--- setup.py.orig	Sun Mar 18 04:51:37 2012
++++ setup.py	Thu Apr 19 12:23:05 2012
 @@ -14,11 +14,13 @@ setup(name='python-policyd-spf',
        py_modules=['policydspfsupp', 'policydspfuser'],
        keywords = ['Postfix','spf','email'],
        scripts = ['policyd-spf'],
 -      data_files=[(os.path.join('share', 'man', 'man1'),
 -          ['policyd-spf.1']), (os.path.join('share', 'man', 'man5'),
--          ['policyd-spf.conf.5']), (os.path.join('../etc', 'python-policyd-spf'),
+-          ['policyd-spf.conf.5']), (os.path.join('/etc', 'python-policyd-spf'),
 -          ['policyd-spf.conf']), (os.path.join('share', 'man', 'man5'),
 -          ['policyd-spf.peruser.5'])],
 +      data_files=[

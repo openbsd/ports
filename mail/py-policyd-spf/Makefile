@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2011/10/05 08:53:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/27 13:53:15 giovanni Exp $
 
 COMMENT=	external SPF policy checker for postfix
 
-MODPY_EGG_VERSION=	0.8.1
+MODPY_EGG_VERSION=	1.0
 DISTNAME=	pypolicyd-spf-${MODPY_EGG_VERSION}
 PKGNAME=	py-policyd-spf-${MODPY_EGG_VERSION}
-REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.openspf.org
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://launchpad.net/pypolicyd-spf/${MODPY_EGG_VERSION:R}/${MODPY_EGG_VERSION}/+download/
+MASTER_SITES=	http://launchpad.net/pypolicyd-spf/${MODPY_EGG_VERSION}/${MODPY_EGG_VERSION}/+download/
 
 MODULES=        lang/python
 USE_GROFF =	Yes
