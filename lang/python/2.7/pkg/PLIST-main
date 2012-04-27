@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/02/27 19:30:46 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/04/27 08:18:59 rpointel Exp $
 @option no-default-conflict
 @conflict python->=2.7,<2.8
 @conflict python-bz2->=2.7,<2.8
@@ -10,6 +10,7 @@
 @comment bin/pydoc
 bin/pydoc2.7
 @comment bin/python-config
+@comment bin/python2-config
 @bin bin/python2.7
 bin/python2.7-2to3
 bin/python2.7-config
@@ -109,6 +110,7 @@ include/python2.7/weakrefobject.h
 @lib lib/libpython2.7.so.${LIBpython2.7_VERSION}
 lib/pkgconfig/python-2.7.pc
 lib/pkgconfig/python.pc
+lib/pkgconfig/python2.pc
 lib/python2.7/
 lib/python2.7/BaseHTTPServer.py
 lib/python2.7/BaseHTTPServer.pyc
@@ -454,6 +456,7 @@ lib/python2.7/distutils/command/upload.pyo
 @comment lib/python2.7/distutils/command/wininst-6.0.exe
 @comment lib/python2.7/distutils/command/wininst-7.1.exe
 @comment lib/python2.7/distutils/command/wininst-8.0.exe
+@comment lib/python2.7/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
 @comment lib/python2.7/distutils/command/wininst-9.0.exe
 lib/python2.7/distutils/config.py
 lib/python2.7/distutils/config.pyc
@@ -640,6 +643,7 @@ lib/python2.7/distutils/tests/test_version.pyo
 lib/python2.7/distutils/tests/test_versionpredicate.py
 lib/python2.7/distutils/tests/test_versionpredicate.pyc
 lib/python2.7/distutils/tests/test_versionpredicate.pyo
+lib/python2.7/distutils/tests/xxmodule.c
 lib/python2.7/distutils/text_file.py
 lib/python2.7/distutils/text_file.pyc
 lib/python2.7/distutils/text_file.pyo
@@ -1335,7 +1339,7 @@ lib/python2.7/keyword.py
 lib/python2.7/keyword.pyc
 lib/python2.7/keyword.pyo
 lib/python2.7/lib-dynload/
-lib/python2.7/lib-dynload/Python-2.7.2-py2.7.egg-info
+lib/python2.7/lib-dynload/Python-2.7.3-py2.7.egg-info
 lib/python2.7/lib-dynload/_bisect.so
 lib/python2.7/lib-dynload/_codecs_cn.so
 lib/python2.7/lib-dynload/_codecs_hk.so
@@ -1397,9 +1401,9 @@ lib/python2.7/lib-dynload/unicodedata.so
 lib/python2.7/lib-dynload/zlib.so
 lib/python2.7/lib2to3/
 lib/python2.7/lib2to3/Grammar.txt
-lib/python2.7/lib2to3/Grammar2.7.2.final.0.pickle
+lib/python2.7/lib2to3/Grammar2.7.3.final.0.pickle
 lib/python2.7/lib2to3/PatternGrammar.txt
-lib/python2.7/lib2to3/PatternGrammar2.7.2.final.0.pickle
+lib/python2.7/lib2to3/PatternGrammar2.7.3.final.0.pickle
 lib/python2.7/lib2to3/__init__.py
 lib/python2.7/lib2to3/__init__.pyc
 lib/python2.7/lib2to3/__init__.pyo

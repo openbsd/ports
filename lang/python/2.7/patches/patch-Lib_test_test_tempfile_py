@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_test_tempfile_py,v 1.1 2011/07/07 21:32:39 jasper Exp $
---- Lib/test/test_tempfile.py.orig	Wed Jul  6 15:48:23 2011
-+++ Lib/test/test_tempfile.py	Wed Jul  6 15:48:31 2011
-@@ -23,7 +23,7 @@ has_spawnl = hasattr(os, 'spawnl')
+$OpenBSD: patch-Lib_test_test_tempfile_py,v 1.2 2012/04/27 08:18:59 rpointel Exp $
+--- Lib/test/test_tempfile.py.orig	Tue Apr 10 01:07:32 2012
++++ Lib/test/test_tempfile.py	Fri Apr 13 07:45:43 2012
+@@ -24,7 +24,7 @@ has_spawnl = hasattr(os, 'spawnl')
  
  # TEST_FILES may need to be tweaked for systems depending on the maximum
  # number of files that can be opened at one time (see ulimit -n)

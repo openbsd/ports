@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.2 2012/02/27 19:30:46 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.3 2012/04/27 08:18:59 rpointel Exp $
 @option no-default-conflict
 @conflict python-tests->=2.7,<2.8
 lib/python2.7/test/
@@ -49,6 +49,10 @@ lib/python2.7/test/cjkencodings/gbk-utf8.txt
 lib/python2.7/test/cjkencodings/gbk.txt
 lib/python2.7/test/cjkencodings/hz-utf8.txt
 lib/python2.7/test/cjkencodings/hz.txt
+lib/python2.7/test/cjkencodings/iso2022_jp-utf8.txt
+lib/python2.7/test/cjkencodings/iso2022_jp.txt
+lib/python2.7/test/cjkencodings/iso2022_kr-utf8.txt
+lib/python2.7/test/cjkencodings/iso2022_kr.txt
 lib/python2.7/test/cjkencodings/johab-utf8.txt
 lib/python2.7/test/cjkencodings/johab.txt
 lib/python2.7/test/cjkencodings/shift_jis-utf8.txt
@@ -244,6 +248,7 @@ lib/python2.7/test/mapping_tests.py
 lib/python2.7/test/mapping_tests.pyc
 lib/python2.7/test/mapping_tests.pyo
 lib/python2.7/test/math_testcases.txt
+lib/python2.7/test/nokia.pem
 lib/python2.7/test/nullcert.pem
 lib/python2.7/test/outstanding_bugs.py
 lib/python2.7/test/outstanding_bugs.pyc
@@ -272,9 +277,6 @@ lib/python2.7/test/randv3.pck
 lib/python2.7/test/re_tests.py
 lib/python2.7/test/re_tests.pyc
 lib/python2.7/test/re_tests.pyo
-lib/python2.7/test/regex_tests.py
-lib/python2.7/test/regex_tests.pyc
-lib/python2.7/test/regex_tests.pyo
 lib/python2.7/test/regrtest.py
 lib/python2.7/test/regrtest.pyc
 lib/python2.7/test/regrtest.pyo
@@ -307,7 +309,6 @@ lib/python2.7/test/subprocessdata/
 lib/python2.7/test/subprocessdata/sigchild_ignore.py
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyc
 lib/python2.7/test/subprocessdata/sigchild_ignore.pyo
-lib/python2.7/test/svn_python_org_https_cert.pem
 lib/python2.7/test/test_MimeWriter.py
 lib/python2.7/test/test_MimeWriter.pyc
 lib/python2.7/test/test_MimeWriter.pyo
@@ -476,6 +477,9 @@ lib/python2.7/test/test_codecencodings_cn.pyo
 lib/python2.7/test/test_codecencodings_hk.py
 lib/python2.7/test/test_codecencodings_hk.pyc
 lib/python2.7/test/test_codecencodings_hk.pyo
+lib/python2.7/test/test_codecencodings_iso2022.py
+lib/python2.7/test/test_codecencodings_iso2022.pyc
+lib/python2.7/test/test_codecencodings_iso2022.pyo
 lib/python2.7/test/test_codecencodings_jp.py
 lib/python2.7/test/test_codecencodings_jp.pyc
 lib/python2.7/test/test_codecencodings_jp.pyo
@@ -1105,6 +1109,9 @@ lib/python2.7/test/test_pwd.pyo
 lib/python2.7/test/test_py3kwarn.py
 lib/python2.7/test/test_py3kwarn.pyc
 lib/python2.7/test/test_py3kwarn.pyo
+lib/python2.7/test/test_py_compile.py
+lib/python2.7/test/test_py_compile.pyc
+lib/python2.7/test/test_py_compile.pyo
 lib/python2.7/test/test_pyclbr.py
 lib/python2.7/test/test_pyclbr.pyc
 lib/python2.7/test/test_pyclbr.pyo

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
---- Modules/ossaudiodev.c.orig	Mon Jun  9 14:58:54 2008
-+++ Modules/ossaudiodev.c	Mon Aug 25 08:48:37 2008
+$OpenBSD: patch-Modules_ossaudiodev_c,v 1.2 2012/04/27 08:18:59 rpointel Exp $
+--- Modules/ossaudiodev.c.orig	Tue Apr 10 01:07:34 2012
++++ Modules/ossaudiodev.c	Fri Apr 13 07:45:43 2012
 @@ -30,7 +30,7 @@
  #endif
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp
  
  #if defined(linux)
  
-@@ -1040,6 +1040,7 @@ initossaudiodev(void)
+@@ -1046,6 +1046,7 @@ initossaudiodev(void)
  
      /* Expose all the ioctl numbers for masochists who like to do this
         stuff directly. */
@@ -18,7 +18,7 @@ $OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp
      _EXPORT_INT(m, SNDCTL_COPR_HALT);
      _EXPORT_INT(m, SNDCTL_COPR_LOAD);
      _EXPORT_INT(m, SNDCTL_COPR_RCODE);
-@@ -1050,6 +1051,7 @@ initossaudiodev(void)
+@@ -1056,6 +1057,7 @@ initossaudiodev(void)
      _EXPORT_INT(m, SNDCTL_COPR_SENDMSG);
      _EXPORT_INT(m, SNDCTL_COPR_WCODE);
      _EXPORT_INT(m, SNDCTL_COPR_WDATA);
@@ -26,7 +26,7 @@ $OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp
  #ifdef SNDCTL_DSP_BIND_CHANNEL
      _EXPORT_INT(m, SNDCTL_DSP_BIND_CHANNEL);
  #endif
-@@ -1092,18 +1094,25 @@ initossaudiodev(void)
+@@ -1098,18 +1100,25 @@ initossaudiodev(void)
      _EXPORT_INT(m, SNDCTL_DSP_STEREO);
      _EXPORT_INT(m, SNDCTL_DSP_SUBDIVIDE);
      _EXPORT_INT(m, SNDCTL_DSP_SYNC);
@@ -52,7 +52,7 @@ $OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp
      _EXPORT_INT(m, SNDCTL_SEQ_NRMIDIS);
      _EXPORT_INT(m, SNDCTL_SEQ_NRSYNTHS);
      _EXPORT_INT(m, SNDCTL_SEQ_OUTOFBAND);
-@@ -1114,17 +1123,21 @@ initossaudiodev(void)
+@@ -1120,17 +1129,21 @@ initossaudiodev(void)
      _EXPORT_INT(m, SNDCTL_SEQ_SYNC);
      _EXPORT_INT(m, SNDCTL_SEQ_TESTMIDI);
      _EXPORT_INT(m, SNDCTL_SEQ_THRESHOLD);
@@ -74,7 +74,7 @@ $OpenBSD: patch-Modules_ossaudiodev_c,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp
      _EXPORT_INT(m, SNDCTL_TMR_CONTINUE);
      _EXPORT_INT(m, SNDCTL_TMR_METRONOME);
      _EXPORT_INT(m, SNDCTL_TMR_SELECT);
-@@ -1133,4 +1146,5 @@ initossaudiodev(void)
+@@ -1139,4 +1152,5 @@ initossaudiodev(void)
      _EXPORT_INT(m, SNDCTL_TMR_STOP);
      _EXPORT_INT(m, SNDCTL_TMR_TEMPO);
      _EXPORT_INT(m, SNDCTL_TMR_TIMEBASE);

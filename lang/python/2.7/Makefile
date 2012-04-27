@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/04/27 08:18:59 rpointel Exp $
 
 VERSION =		2.7
-PATCHLEVEL =		.2
+PATCHLEVEL =		.3
 SHARED_LIBS =		python2.7 0.0
 VERSION_SPEC =		>=2.7,<2.8
-REVISION =		0
 
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.67
 CONFIGURE_ARGS +=	--with-cxx_main \
 			--with-system-expat
 
