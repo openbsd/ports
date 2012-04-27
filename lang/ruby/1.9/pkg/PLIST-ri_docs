@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ri_docs,v 1.2 2012/02/28 00:20:41 jeremy Exp $
+@comment $OpenBSD: PLIST-ri_docs,v 1.3 2012/04/27 18:40:02 jeremy Exp $
 @option no-default-conflict
 @conflict ruby-ri_docs->=1.9,<1.10
 share/ri/${RUBYLIBREV}/system/ACL/
@@ -2643,6 +2643,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/cdesc-SetupCommand.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/check_ruby_version-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/execute-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/generate_default_dirs-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/install_executables-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/install_lib-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Commands/SetupCommand/install_rdoc-i.ri
@@ -2713,6 +2714,8 @@ share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/path-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/really_verbose-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/rubygems_api_key%3d-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/rubygems_api_key-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/ssl_ca_cert-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/ssl_verify_mode-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/update_sources-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/verbose-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/ConfigFile/write-i.ri
@@ -3016,6 +3019,11 @@ share/ri/${RUBYLIBREV}/system/Gem/MockGemUi/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/MockGemUi/output-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/MockGemUi/terminate_interaction-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/MockGemUi/terminated%3f-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/NoAliasYAMLTree/
+share/ri/${RUBYLIBREV}/system/Gem/NoAliasYAMLTree/cdesc-NoAliasYAMLTree.ri
+share/ri/${RUBYLIBREV}/system/Gem/NoAliasYAMLTree/format_time-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/NoAliasYAMLTree/register-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/NoAliasYAMLTree/visit_String-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/OldFormat/
 share/ri/${RUBYLIBREV}/system/Gem/OldFormat/cdesc-OldFormat.ri
 share/ri/${RUBYLIBREV}/system/Gem/OldFormat/file_entries-i.ri
@@ -3090,7 +3098,9 @@ share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/FetchError/
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/FetchError/cdesc-FetchError.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/FetchError/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/FetchError/uri-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/add_rubygems_trusted_certs-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/cdesc-RemoteFetcher.ri
+share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/configure_connection_for_https-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/connection_for-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/correct_for_windows_path-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/download-i.ri
@@ -3104,6 +3114,7 @@ share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/fetch_size-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/fetcher%3d-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/fetcher-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/get_proxy_from_env-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/https%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/new-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/normalize_uri-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/RemoteFetcher/open_uri_or_path-i.ri
@@ -3525,6 +3536,7 @@ share/ri/${RUBYLIBREV}/system/Gem/Version/release-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Version/spermy_recommendation-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Version/to_s-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/Version/version-i.ri
+share/ri/${RUBYLIBREV}/system/Gem/Version/yaml_initialize-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/VersionOption/
 share/ri/${RUBYLIBREV}/system/Gem/VersionOption/add_platform_option-i.ri
 share/ri/${RUBYLIBREV}/system/Gem/VersionOption/add_prerelease_option-i.ri
@@ -3549,6 +3561,7 @@ share/ri/${RUBYLIBREV}/system/Gem/default_bindir-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_dir-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_exec_format-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_path-c.ri
+share/ri/${RUBYLIBREV}/system/Gem/default_rubygems_dirs-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_sources-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_system_source_cache_dir-c.ri
 share/ri/${RUBYLIBREV}/system/Gem/default_user_source_cache_dir-c.ri
@@ -3770,6 +3783,8 @@ share/ri/${RUBYLIBREV}/system/IO/close_write-i.ri
 share/ri/${RUBYLIBREV}/system/IO/closed%3f-i.ri
 share/ri/${RUBYLIBREV}/system/IO/codepoints-i.ri
 share/ri/${RUBYLIBREV}/system/IO/console-c.ri
+share/ri/${RUBYLIBREV}/system/IO/cooked%21-i.ri
+share/ri/${RUBYLIBREV}/system/IO/cooked-i.ri
 share/ri/${RUBYLIBREV}/system/IO/copy_stream-c.ri
 share/ri/${RUBYLIBREV}/system/IO/each-i.ri
 share/ri/${RUBYLIBREV}/system/IO/each_byte-i.ri
@@ -3821,6 +3836,15 @@ share/ri/${RUBYLIBREV}/system/IO/raw-i.ri
 share/ri/${RUBYLIBREV}/system/IO/read-c.ri
 share/ri/${RUBYLIBREV}/system/IO/read-i.ri
 share/ri/${RUBYLIBREV}/system/IO/read_nonblock-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/
+share/ri/${RUBYLIBREV}/system/IO/readable/cdesc-readable.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/getch-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/read_nonblock-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/readbyte-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/readchar-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/readline-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/readpartial-i.ri
+share/ri/${RUBYLIBREV}/system/IO/readable/sysread-i.ri
 share/ri/${RUBYLIBREV}/system/IO/readbyte-i.ri
 share/ri/${RUBYLIBREV}/system/IO/readchar-i.ri
 share/ri/${RUBYLIBREV}/system/IO/readline-i.ri
@@ -3852,6 +3876,12 @@ share/ri/${RUBYLIBREV}/system/IO/ungetc-i.ri
 share/ri/${RUBYLIBREV}/system/IO/wait-i.ri
 share/ri/${RUBYLIBREV}/system/IO/winsize%3d-i.ri
 share/ri/${RUBYLIBREV}/system/IO/winsize-i.ri
+share/ri/${RUBYLIBREV}/system/IO/writable/
+share/ri/${RUBYLIBREV}/system/IO/writable/%3c%3c-i.ri
+share/ri/${RUBYLIBREV}/system/IO/writable/cdesc-writable.ri
+share/ri/${RUBYLIBREV}/system/IO/writable/print-i.ri
+share/ri/${RUBYLIBREV}/system/IO/writable/printf-i.ri
+share/ri/${RUBYLIBREV}/system/IO/writable/puts-i.ri
 share/ri/${RUBYLIBREV}/system/IO/write-c.ri
 share/ri/${RUBYLIBREV}/system/IO/write-i.ri
 share/ri/${RUBYLIBREV}/system/IO/write_nonblock-i.ri
@@ -7579,6 +7609,8 @@ share/ri/${RUBYLIBREV}/system/Profiler__/print_profile-i.ri
 share/ri/${RUBYLIBREV}/system/Profiler__/start_profile-i.ri
 share/ri/${RUBYLIBREV}/system/Profiler__/stop_profile-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/
+share/ri/${RUBYLIBREV}/system/Psych/BadAlias/
+share/ri/${RUBYLIBREV}/system/Psych/BadAlias/cdesc-BadAlias.ri
 share/ri/${RUBYLIBREV}/system/Psych/Coder/
 share/ri/${RUBYLIBREV}/system/Psych/Coder/%5b%5d%3d-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Coder/%5b%5d-i.ri
@@ -7635,6 +7667,8 @@ share/ri/${RUBYLIBREV}/system/Psych/Handler/start_mapping-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/start_sequence-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/start_stream-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Handler/streaming%3f-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Handlers/
+share/ri/${RUBYLIBREV}/system/Psych/Handlers/cdesc-Handlers.ri
 share/ri/${RUBYLIBREV}/system/Psych/JSON/
 share/ri/${RUBYLIBREV}/system/Psych/JSON/Stream/
 share/ri/${RUBYLIBREV}/system/Psych/JSON/Stream/cdesc-Stream.ri
@@ -7698,11 +7732,13 @@ share/ri/${RUBYLIBREV}/system/Psych/Parser/
 share/ri/${RUBYLIBREV}/system/Psych/Parser/Mark/
 share/ri/${RUBYLIBREV}/system/Psych/Parser/Mark/cdesc-Mark.ri
 share/ri/${RUBYLIBREV}/system/Psych/Parser/cdesc-Parser.ri
-share/ri/${RUBYLIBREV}/system/Psych/Parser/external_encoding%3d-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Parser/external_encoding-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Parser/handler-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Parser/mark-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Parser/new-c.ri
 share/ri/${RUBYLIBREV}/system/Psych/Parser/parse-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/PrivateType/
+share/ri/${RUBYLIBREV}/system/Psych/PrivateType/cdesc-PrivateType.ri
 share/ri/${RUBYLIBREV}/system/Psych/ScalarScanner/
 share/ri/${RUBYLIBREV}/system/Psych/ScalarScanner/cdesc-ScalarScanner.ri
 share/ri/${RUBYLIBREV}/system/Psych/ScalarScanner/new-c.ri
@@ -7719,6 +7755,13 @@ share/ri/${RUBYLIBREV}/system/Psych/Streaming/register-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Streaming/start-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/
 share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/cdesc-SyntaxError.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/column-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/context-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/file-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/line-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/new-c.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/offset-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/SyntaxError/problem-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/TreeBuilder/
 share/ri/${RUBYLIBREV}/system/Psych/TreeBuilder/alias-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/TreeBuilder/cdesc-TreeBuilder.ri
@@ -7760,9 +7803,11 @@ share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/accept-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/build_exception-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/cdesc-ToRuby.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/deserialize-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/init_with-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/new-c.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/path2class-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/register-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/resolve_class-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/revive-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/ToRuby/revive_hash-i.ri
@@ -7783,6 +7828,7 @@ share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/binary%3f-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/cdesc-YAMLTree.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/dump_coder-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/dump_ivars-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/dump_list-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/emit_coder-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/find_ivars-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/finish-i.ri
@@ -7800,6 +7846,7 @@ share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/tree-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Array-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Class-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Complex-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_BigDecimal-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Date-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_DateTime-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Exception-i.ri
@@ -7820,6 +7867,7 @@ share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Struct-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Symbol-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_Time-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_TrueClass-i.ri
+share/ri/${RUBYLIBREV}/system/Psych/Visitors/YAMLTree/visit_array_subclass-i.ri
 share/ri/${RUBYLIBREV}/system/Psych/Visitors/cdesc-Visitors.ri
 share/ri/${RUBYLIBREV}/system/Psych/add_private_type-c.ri
 share/ri/${RUBYLIBREV}/system/Psych/add_ruby_type-c.ri
@@ -12906,7 +12954,6 @@ share/ri/${RUBYLIBREV}/system/String/upcase-i.ri
 share/ri/${RUBYLIBREV}/system/String/upto-i.ri
 share/ri/${RUBYLIBREV}/system/String/valid_encoding%3f-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/
-share/ri/${RUBYLIBREV}/system/StringIO/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/binmode-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/bytes-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/cdesc-StringIO.ri
@@ -12944,17 +12991,9 @@ share/ri/${RUBYLIBREV}/system/StringIO/open-c.ri
 share/ri/${RUBYLIBREV}/system/StringIO/pid-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/pos%3d-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/pos-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/print-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/printf-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/putc-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/puts-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/read-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/read_nonblock-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/readbyte-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/readchar-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/readline-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/readlines-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/readpartial-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/reopen-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/rewind-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/seek-i.ri
@@ -12964,15 +13003,12 @@ share/ri/${RUBYLIBREV}/system/StringIO/string%3d-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/string-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/sync%3d-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/sync-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/sysread-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/syswrite-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/tell-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/truncate-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/tty%3f-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/ungetbyte-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/ungetc-i.ri
 share/ri/${RUBYLIBREV}/system/StringIO/write-i.ri
-share/ri/${RUBYLIBREV}/system/StringIO/write_nonblock-i.ri
 share/ri/${RUBYLIBREV}/system/StringScanner/
 share/ri/${RUBYLIBREV}/system/StringScanner/%3c%3c-i.ri
 share/ri/${RUBYLIBREV}/system/StringScanner/%5b%5d-i.ri
@@ -13219,10 +13255,12 @@ share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_no_match-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_not_equal-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_not_nil-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_not_same-i.ri
+share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_not_send-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_nothing_raised-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_nothing_thrown-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_raise-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_respond_to-i.ri
+share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/assert_send-i.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/Assertions/cdesc-Assertions.ri
 share/ri/${RUBYLIBREV}/system/Test/Unit/AutoRunner/
 share/ri/${RUBYLIBREV}/system/Test/Unit/AutoRunner/Runner/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/11/08 23:38:57 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2012/04/27 18:40:02 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=1.9,<1.10
 bin/erb19
@@ -231,8 +231,9 @@ lib/ruby/${RUBYLIBREV}/psych/coder.rb
 lib/ruby/${RUBYLIBREV}/psych/core_ext.rb
 lib/ruby/${RUBYLIBREV}/psych/deprecated.rb
 lib/ruby/${RUBYLIBREV}/psych/handler.rb
+lib/ruby/${RUBYLIBREV}/psych/handlers/
+lib/ruby/${RUBYLIBREV}/psych/handlers/document_stream.rb
 lib/ruby/${RUBYLIBREV}/psych/json/
-lib/ruby/${RUBYLIBREV}/psych/json.rb
 lib/ruby/${RUBYLIBREV}/psych/json/ruby_events.rb
 lib/ruby/${RUBYLIBREV}/psych/json/stream.rb
 lib/ruby/${RUBYLIBREV}/psych/json/tree_builder.rb
@@ -252,6 +253,7 @@ lib/ruby/${RUBYLIBREV}/psych/scalar_scanner.rb
 lib/ruby/${RUBYLIBREV}/psych/set.rb
 lib/ruby/${RUBYLIBREV}/psych/stream.rb
 lib/ruby/${RUBYLIBREV}/psych/streaming.rb
+lib/ruby/${RUBYLIBREV}/psych/syntax_error.rb
 lib/ruby/${RUBYLIBREV}/psych/tree_builder.rb
 lib/ruby/${RUBYLIBREV}/psych/visitors/
 lib/ruby/${RUBYLIBREV}/psych/visitors.rb
@@ -623,6 +625,8 @@ lib/ruby/${RUBYLIBREV}/rubygems/package/tar_writer.rb
 lib/ruby/${RUBYLIBREV}/rubygems/package_task.rb
 lib/ruby/${RUBYLIBREV}/rubygems/path_support.rb
 lib/ruby/${RUBYLIBREV}/rubygems/platform.rb
+lib/ruby/${RUBYLIBREV}/rubygems/psych_additions.rb
+lib/ruby/${RUBYLIBREV}/rubygems/psych_tree.rb
 lib/ruby/${RUBYLIBREV}/rubygems/remote_fetcher.rb
 lib/ruby/${RUBYLIBREV}/rubygems/require_paths_builder.rb
 lib/ruby/${RUBYLIBREV}/rubygems/requirement.rb
@@ -631,6 +635,12 @@ lib/ruby/${RUBYLIBREV}/rubygems/server.rb
 lib/ruby/${RUBYLIBREV}/rubygems/source_index.rb
 lib/ruby/${RUBYLIBREV}/rubygems/spec_fetcher.rb
 lib/ruby/${RUBYLIBREV}/rubygems/specification.rb
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/AddTrustExternalCARoot.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/Entrust_net-Secure-Server-Certification-Authority.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/VerisignClass3PublicPrimaryCertificationAuthority-G2.pem
+lib/ruby/${RUBYLIBREV}/rubygems/ssl_certs/ca-bundle.pem
+lib/ruby/${RUBYLIBREV}/rubygems/syck_hack.rb
 lib/ruby/${RUBYLIBREV}/rubygems/test_case.rb
 lib/ruby/${RUBYLIBREV}/rubygems/test_utilities.rb
 lib/ruby/${RUBYLIBREV}/rubygems/text.rb
