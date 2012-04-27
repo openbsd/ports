@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/04 03:38:45 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/27 19:55:53 naddy Exp $
 
 COMMENT =		barcode image processing library
 
 DISTNAME =		ZXing-2.0
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		graphics
 
@@ -27,7 +28,7 @@ LIB_DEPENDS =		graphics/ImageMagick
 WRKDIST =		${WRKDIR}/${DISTNAME:L}
 WRKSRC =		${WRKDIST}/cpp
 
-SUBST_VARS +=		WRKDIST WRKSRC
+SUBST_VARS +=		WRKDIST WRKSRC CXX CXXFLAGS
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/SConscript ${WRKSRC}/blackboxtest.sh
