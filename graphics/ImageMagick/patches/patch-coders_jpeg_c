@@ -1,0 +1,29 @@
+$OpenBSD: patch-coders_jpeg_c,v 1.1 2012/04/27 08:09:56 jasper Exp $
+
+Security fix for CVE-2012-0260, Excessive memory use with JPEG restart markers.
+
+--- coders/jpeg.c.orig	Fri Apr 27 09:40:28 2012
++++ coders/jpeg.c	Fri Apr 27 09:57:14 2012
+@@ -210,6 +210,8 @@ static MagickBooleanType IsJPEG(const unsigned char *m
+ 
+ static MagickBooleanType EmitMessage(j_common_ptr jpeg_info,int level)
+ {
++#define JPEGExcessiveWarnings  1000
++
+   char
+     message[JMSG_LENGTH_MAX];
+ 
+@@ -224,11 +226,11 @@ static MagickBooleanType EmitMessage(j_common_ptr jpeg
+   image=error_manager->image;
+   if (level < 0)
+     {
+-      if ((jpeg_info->err->num_warnings == 0) ||
++      if ((jpeg_info->err->num_warnings++ > JPEGExcessiveWarnings) ||
++	  (jpeg_info->err->num_warnings == 0) ||
+           (jpeg_info->err->trace_level >= 3))
+         ThrowBinaryException(CorruptImageWarning,(char *) message,
+           image->filename);
+-      jpeg_info->err->num_warnings++;
+     }
+   else
+     if (jpeg_info->err->trace_level >= level)
