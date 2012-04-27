@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/03/29 06:47:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/04/27 10:59:31 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -76,7 +76,6 @@ share/examples/gnome-settings-daemon/xdg/autostart/gnome-settings-daemon.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gnome-settings-daemon.desktop
 share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
-share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.housekeeping.gschema.xml

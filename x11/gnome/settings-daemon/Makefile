@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2012/04/17 10:48:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2012/04/27 10:59:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.4.1
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -65,5 +66,17 @@ CONFIGURE_ARGS=	--disable-static \
 FAKE_FLAGS+=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
+
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+BUILD_DEPENDS +=devel/autoconf/${AUTOCONF_VERSION} \
+		devel/automake/${AUTOMAKE_VERSION} \
+		devel/libtool
+
+pre-configure:
+	@cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 
 .include <bsd.port.mk>
