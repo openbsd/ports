@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/24 19:21:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/28 08:18:33 ajacoutot Exp $
 
 COMMENT=	asynchronous resolver library
 
-V=		1.7.5
+V=		1.8.0
 DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
 MASTER_SITES=	${HOMEPAGE}download/
 
-SHARED_LIBS=	cares	2.2
+SHARED_LIBS=	cares	2.3
 
 HOMEPAGE=	http://c-ares.haxx.se/
 
