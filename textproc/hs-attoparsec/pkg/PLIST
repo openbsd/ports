@@ -1,16 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/21 12:02:18 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/28 19:27:13 kili Exp $
+@conflict hs-attoparsec-text-*
+@pkgpath textproc/hs-attoparsec-text
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Attoparsec/
 lib/ghc/${DISTNAME}/Data/Attoparsec.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Char8.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/FastSet.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/ByteString/Lazy.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Char8.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Combinator.hi
-lib/ghc/${DISTNAME}/Data/Attoparsec/FastSet.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/
-lib/ghc/${DISTNAME}/Data/Attoparsec/Internal.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Internal/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Lazy.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Number.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/FastSet.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Internal.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Text/Lazy.hi
+lib/ghc/${DISTNAME}/Data/Attoparsec/Types.hi
 lib/ghc/${DISTNAME}/Data/Attoparsec/Zepto.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
@@ -21,11 +33,16 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-ByteString-Char8.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-ByteString-Lazy.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-ByteString.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Combinator.html
-share/doc/hs-${DISTNAME}/html/Data-Attoparsec-FastSet.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Number.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Text-Lazy.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Text.html
+share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Types.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec-Zepto.html
 share/doc/hs-${DISTNAME}/html/Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/attoparsec.haddock
@@ -35,11 +52,16 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString-Char8.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString-Lazy.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-ByteString.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Char8.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Combinator.html
-share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-FastSet.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Lazy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Number.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Text-Lazy.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Text.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec-Zepto.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Attoparsec.html
 share/doc/hs-${DISTNAME}/html/minus.gif
