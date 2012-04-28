@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/01/05 19:06:06 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/28 18:07:57 stu Exp $
 @bin bin/ns
 @man man/man1/ns.1
 share/examples/ns2/
 share/examples/ns2/agent-gen-script.tcl
 share/examples/ns2/agent-gen.tcl
+share/examples/ns2/aomdv.tcl
 share/examples/ns2/callback_demo.tcl
+share/examples/ns2/dccp.tcl
 share/examples/ns2/diffusion-prob-run.tcl
 share/examples/ns2/diffusion-rate-run.tcl
 share/examples/ns2/dumbbell.tcl
@@ -34,6 +36,7 @@ share/examples/ns2/nam-separate-trace.tcl
 share/examples/ns2/nam-simplexlink.tcl
 share/examples/ns2/omni-run.tcl
 share/examples/ns2/pkts.tcl
+share/examples/ns2/puma.tcl
 share/examples/ns2/ranvar.tcl
 share/examples/ns2/rbp_demo.tcl
 share/examples/ns2/rc.tcl
