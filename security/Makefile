@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2012/04/25 14:07:38 okan Exp $
+# $OpenBSD: Makefile,v 1.286 2012/04/28 19:45:39 kili Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += hlfl
      SUBDIR += hs-asn1-data
      SUBDIR += hs-certificate
+     SUBDIR += hs-cprng-aes
      SUBDIR += hs-crypto
      SUBDIR += hs-crypto-api
      SUBDIR += hs-cryptocipher
