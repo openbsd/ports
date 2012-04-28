@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/24 19:09:59 kili Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/28 19:27:59 kili Exp $
 
 COMMENT=		convert an Attoparsec parser into an iteratee
 
-DISTNAME=		attoparsec-enumerator-0.2.0.3
-REVISION=		3
+DISTNAME=		attoparsec-enumerator-0.3
 CATEGORIES=		textproc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,8 +17,9 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-enumerator \
-			textproc/hs-attoparsec
+RUN_DEPENDS =		devel/hs-enumerator>=0.4,<0.5 \
+			devel/hs-text \
+			textproc/hs-attoparsec>=0.10,<0.11
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
