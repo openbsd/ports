@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2012/04/20 12:44:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2012/04/28 08:00:56 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime24
 @pkgpath mail/gmime24,-main
@@ -62,8 +62,6 @@ lib/libgmime-2.6.a
 lib/libgmime-2.6.la
 lib/pkgconfig/
 lib/pkgconfig/gmime-2.6.pc
-share/gapi-2.0/
-share/gapi-2.0/gmime-api.xml
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gmime-2.6/
