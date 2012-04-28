@@ -1,77 +1,41 @@
-$OpenBSD: patch-configure,v 1.6 2011/01/05 18:49:20 sebastia Exp $
---- configure.orig	Sun Feb 18 23:19:10 2007
-+++ configure	Thu Dec 23 11:24:03 2010
-@@ -4163,6 +4163,7 @@ TCL_H_PLACES=" \
- 		/usr/local/lib/tcl$TCL_HI_VERS \
- 		/usr/local/lib/tcl$TCL_ALT_VERS \
- 		/usr/local/include/tcl$TCL_VERS \
-+		/usr/local/include/tcl$TCL_HI_VERS/generic \
- 		/usr/local/include/tcl$TCL_HI_VERS \
- 		/usr/local/include/tcl$TCL_ALT_VERS \
- 		/usr/local/include \
-@@ -4257,7 +4258,7 @@ else
- echo "$as_me: error: $d is not a directory" >&2;}
-    { (exit 1); exit 1; }; }
- 		fi
--		places="$TCL_H_PLACES_D"
-+		places="$TCL_H_PLACES_D $TCL_H_PLACES"
- 	fi
+$OpenBSD: patch-configure,v 1.7 2012/04/28 18:06:29 stu Exp $
+--- configure.orig	Sun Sep  5 00:33:59 2010
++++ configure	Mon Apr 23 11:16:49 2012
+@@ -4814,6 +4814,7 @@ TCL_OLD_ALT_VERS=`echo $TCL_OLD_VERS | sed 's/\.//'`
  
- 	V_INCLUDE_TCL=""
-@@ -4311,7 +4312,7 @@ else
- echo "$as_me: error: $d is not a directory" >&2;}
-    { (exit 1); exit 1; }; }
- 		fi
--		places="$TCL_H_PLACES_D"
-+		places="$TCL_H_PLACES_D $TCL_H_PLACES"
- 	fi
+ TCL_TCL_PLACES_D="$d \
  
- 	V_INCLUDE_TCL=""
-@@ -4365,7 +4366,7 @@ else
- echo "$as_me: error: $d is not a directory" >&2;}
-    { (exit 1); exit 1; }; }
- 		fi
--		places="$TCL_LIB_PLACES_D"
-+		places="$TCL_LIB_PLACES_D $TCL_LIB_PLACES"
- 	fi
++		$d/lib/tcl/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_HI_VERS \
+ 		$d/lib64/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_ALT_VERS \
+@@ -5429,6 +5430,7 @@ TK_OLD_VERS=8.4
+ TK_OLD_ALT_VERS=`echo $TK_OLD_VERS | sed 's/\.//'`
  
- 	V_LIB_TCL=""
-@@ -4824,7 +4825,7 @@ else
- echo "$as_me: error: $d is not a directory" >&2;}
-    { (exit 1); exit 1; }; }
- 		fi
--		places="$TK_H_PLACES_D"
-+		places="$TK_H_PLACES_D $TK_H_PLACES"
- 	fi
+ TK_TCL_PLACES_D="$d \
++                $d/lib/tcl/tk$TK_VERS \
+                 $d/lib64/tk$TK_VERS \
+                 $d/lib64/tk$TK_ALT_VERS \
+ 		$d/lib64/tk$TK_HI_VERS \
+@@ -6866,9 +6868,9 @@ fi
+ if test "x$ac_cv_header_dlfcn_h" = x""yes; then
  
- 	V_INCLUDE_TK=""
-@@ -4878,7 +4879,7 @@ else
- echo "$as_me: error: $d is not a directory" >&2;}
-    { (exit 1); exit 1; }; }
- 		fi
--		places="$TK_LIB_PLACES_D"
-+		places="$TK_LIB_PLACES_D $TK_LIB_PLACES"
- 	fi
+ 	    SHLIB_CFLAGS="-fpic"
+-	    SHLIB_LD="ld -Bshareable -x"
++	    SHLIB_LD="cc -shared"
+ 	    SHLIB_LD_LIBS=""
+-	    SHLIB_SUFFIX=".so"
++	    SHLIB_SUFFIX=".so.${LIBotcl_VERSION}"
+ 	    DL_LIBS=""
+ 	    DL_LD_FLAGS=""
+ 	    DL_LD_SEARCH_FLAGS=""
+@@ -7122,9 +7124,6 @@ fi
+ #
  
- 	V_LIB_TK=""
-@@ -5532,16 +5533,16 @@ case $system in
-         DL_LIBS="-ldl"
-         SHLD_FLAGS="-Wl,-Bexport"
-         ;;
--    NetBSD-*|FreeBSD-*)
-+    NetBSD-*|FreeBSD-*|OpenBSD-*)
-         # Not available on all versions:  check for include file.
-         if test -e /usr/include/dlfcn.h; then
-             SHLIB_CFLAGS="-fpic"
--            SHLIB_LD="ld -Bshareable"
--            SHLIB_SUFFIX=".so"
-+            SHLIB_LD="cc -shared"
-+            SHLIB_SUFFIX=".so.${LIBotcl_VERSION}"
-             DL_LIBS=""
-             SHLD_FLAGS=""
-         else
--            echo "NetBSD/FreeBSD with no support for dynamic loading"
-+            echo "NetBSD/FreeBSD/OpenBSD with no support for dynamic loading"
-             echo " or shared libraries on this system."
-             SHLIB_CFLAGS=""
-             SHLIB_LD=":  Skipping shared libaries"
+ INST_OLIBSH="${prefix}/lib"
+-if test -d ${prefix}/shlib ; then
+-  INST_OLIBSH="${prefix}/shlib"
+-fi
+ 
+ 
+ 
