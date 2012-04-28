@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/18 20:59:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/04/28 13:00:48 ajacoutot Exp $
 @comment bin/fbxine
 @bin bin/xine
 bin/xine-bugreport
@@ -176,5 +176,7 @@ share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
 share/xine/visuals/
 share/xine/visuals/default.avi
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2012/03/29 12:43:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/04/28 13:00:48 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.3.4
+REVISION=	0
+
 CATEGORIES=	databases sysutils
 
 HOMEPAGE=	http://www.gq-project.org/
@@ -30,6 +32,8 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	databases/openldap \
 		devel/libglade2 \
 		x11/gnome/libgnome-keyring
+
+RUN_DEPENDS=	misc/shared-mime-info
 
 USE_LIBTOOL=	No
 MODGNOME_TOOLS=	yelp

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/04/28 13:00:48 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -8,7 +8,7 @@ COMMENT=	photorealistic 3D rendering solution
 
 V=		1.6.0
 DISTNAME=	aqsis-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 
 SO_VERSION=	0.0 # 1.6
@@ -35,6 +35,7 @@ WANTLIB += boost_system-mt boost_thread-mt boost_wave-mt tiffxx
 MODULES=	devel/cmake
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		x11/gtk+2,-guic
 BUILD_DEPENDS=	textproc/libxslt \
 		devel/bison

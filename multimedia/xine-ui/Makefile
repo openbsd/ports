@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/24 07:42:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/04/28 13:00:48 ajacoutot Exp $
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -20,7 +20,8 @@ WANTLIB += X11 Xext Xft Xinerama Xtst Xv Xxf86vm c curl m ncurses
 WANTLIB += png pthread readline xine z
 
 MODULES=	devel/gettext
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info
 LIB_DEPENDS=	multimedia/xine-lib \
 		net/curl \
 		graphics/png
