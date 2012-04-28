@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/04/28 13:57:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/04/28 14:20:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.4.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -49,7 +49,7 @@ BUILD_DEPENDS=		devel/autogen>=5.6.5 \
 RUN_DEPENDS=		misc/shared-mime-info
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
-			devel/subversion,-gnome-keyring \
+			devel/subversion \
 			devel/vte3 \
 			lang/vala>=0.15.2 \
 			textproc/icu4c \
@@ -60,6 +60,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 
 # needed by plugins/class-gen/plugin.c
 RUN_DEPENDS += devel/autogen
+
+# we already depend on libgnome-keyring so it's cheap
+RUN_DEPENDS += devel/subversion,-gnome-keyring
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=	Yes
