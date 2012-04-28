@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/28 08:28:22 benoit Exp $
 
 COMMENT =		password cracker based on rainbow tables
 
-DISTNAME =		ophcrack-3.3.1
+DISTNAME =		ophcrack-3.4.0
 CATEGORIES =		security
 
 HOMEPAGE =		http://ophcrack.sourceforge.net/
