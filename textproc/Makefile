@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.355 2012/04/12 18:04:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.356 2012/04/28 19:48:00 kili Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -51,7 +51,6 @@
      SUBDIR += hs-attoparsec
      SUBDIR += hs-attoparsec-enumerator
      SUBDIR += hs-attoparsec-iteratee
-     SUBDIR += hs-attoparsec-text
      SUBDIR += hs-blaze-html
      SUBDIR += hs-bytestring-nums
      SUBDIR += hs-bytestring-show
