@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/04/28 11:06:12 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,8 +11,8 @@ The local (OpenBSD) differences are:
 - sample error message files are in	${TRUEPREFIX}/share/examples/squid/errors
 - icons are in				${TRUEPREFIX}/share/squid/icons
 - sample icons are in			${TRUEPREFIX}/share/examples/squid/icons
-- the cache is in			${SQUIDDIR}/cache
-- logs are stored in			${SQUIDDIR}/logs
+- the cache is in			${LOCALSTATEDIR}/cache
+- logs are stored in			${LOCALSTATEDIR}/logs
 - the ugid squid runs as is		_squid:_squid
 
 Please remember to initialize the cache by running "squid -z" before

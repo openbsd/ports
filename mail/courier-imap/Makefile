@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/04/28 11:06:12 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -9,8 +9,8 @@ PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-pop3=	courier-pop3-${V}
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
-REVISION-main=		2
-REVISION-pop3=		1
+REVISION-main=		3
+REVISION-pop3=		2
 
 CATEGORIES=		mail
 
@@ -41,12 +41,10 @@ CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 LIB_DEPENDS=		mail/courier-authlib \
 			devel/libidn
 
-COURIERSTATE=           /var/run/courier
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/run/courier
 EXAMPLE_DIR=		${PREFIX}/share/examples/courier
-SUBST_VARS=		COURIERSTATE
+SUBST_VARS=		LOCALSTATEDIR
 SYSCONFDIR=		/etc/courier
-
-LOCALSTATEDIR=		${COURIERSTATE}
 
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--datadir=${PREFIX}/sbin \
@@ -60,7 +58,7 @@ CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--enable-unicode \
 			--with-locking-method=fcntl \
 			--with-mailuser=_courier \
-			--with-piddir=${COURIERSTATE} \
+			--with-piddir=${LOCALSTATEDIR} \
 			--with-makedatprog \
 			--with-db=gdbm \
 			--with-certsdir=/etc/ssl \

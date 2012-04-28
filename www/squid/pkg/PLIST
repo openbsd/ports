@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.33 2011/05/30 20:56:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.34 2012/04/28 11:06:12 ajacoutot Exp $
 @pkgpath www/squid,transparent
 @pkgpath www/squid,snmp,transparent
 @newgroup _squid:515
 @newuser _squid:515:_squid:daemon:Squid Account:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${SQUIDDIR}/cache/*
-@extraunexec rm -rf ${SQUIDDIR}/logs/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/cache/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/logs/*
 bin/RunCache
 @bin bin/squidclient
 @bin libexec/cachemgr.cgi
@@ -2203,11 +2203,11 @@ share/examples/squid/squid.conf
 @mode 771
 @owner _squid
 @group _squid
-@sample ${SQUIDDIR}/
-@sample ${SQUIDDIR}/cache/
+@sample ${LOCALSTATEDIR}/
+@sample ${LOCALSTATEDIR}/cache/
 @mode 775
-@sample ${SQUIDDIR}/logs/
-@exec ln -sf ${SQUIDDIR}/logs/squid.pid /var/run/squid.pid
+@sample ${LOCALSTATEDIR}/logs/
+@exec ln -sf ${LOCALSTATEDIR}/logs/squid.pid /var/run/squid.pid
 @unexec rm -f /var/run/squid.pid
 @comment share/examples/squid/squid.conf.default
 @owner

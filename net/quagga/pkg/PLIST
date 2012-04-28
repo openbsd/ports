@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/01/17 17:22:56 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/04/28 11:06:12 ajacoutot Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
-@extraunexec rm -rf ${STATEDIR}/*
+@extraunexec rm -rf ${LOCALSTATEDIR}/*
 %%SHARED%%
 @bin bin/vtysh
 include/quagga/
@@ -95,4 +95,4 @@ share/examples/quagga/zebra.conf.sample
 @owner _quagga
 @group _quagga
 @sample ${SYSCONFDIR}/
-@sample ${STATEDIR}/
+@sample ${LOCALSTATEDIR}/
