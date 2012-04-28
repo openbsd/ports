@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/24 19:08:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/28 19:32:21 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Snap/
+lib/ghc/${DISTNAME}/Snap/Core.hi
 lib/ghc/${DISTNAME}/Snap/Internal/
 lib/ghc/${DISTNAME}/Snap/Internal/Debug.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/
@@ -10,11 +11,19 @@ lib/ghc/${DISTNAME}/Snap/Internal/Instances.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/
 lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/BoyerMooreHorspool.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/Debug.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Parsing/
 lib/ghc/${DISTNAME}/Snap/Internal/Parsing.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Parsing/FastSet.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Routing.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Test/
+lib/ghc/${DISTNAME}/Snap/Internal/Test/Assertions.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Test/RequestBuilder.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Types.hi
 lib/ghc/${DISTNAME}/Snap/Iteratee.hi
+lib/ghc/${DISTNAME}/Snap/Test.hi
+lib/ghc/${DISTNAME}/Snap/Types/
 lib/ghc/${DISTNAME}/Snap/Types.hi
+lib/ghc/${DISTNAME}/Snap/Types/Headers.hi
 lib/ghc/${DISTNAME}/Snap/Util/
 lib/ghc/${DISTNAME}/Snap/Util/FileServe.hi
 lib/ghc/${DISTNAME}/Snap/Util/FileUploads.hi
@@ -28,11 +37,14 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Snap-Core.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Debug.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Iteratee-Debug.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Parsing.html
 share/doc/hs-${DISTNAME}/html/Snap-Iteratee.html
+share/doc/hs-${DISTNAME}/html/Snap-Test.html
+share/doc/hs-${DISTNAME}/html/Snap-Types-Headers.html
 share/doc/hs-${DISTNAME}/html/Snap-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-FileServe.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-FileUploads.html
@@ -71,11 +83,14 @@ share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Core.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Debug.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Iteratee-Debug.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Parsing.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Iteratee.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Test.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Types-Headers.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileServe.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileUploads.html
