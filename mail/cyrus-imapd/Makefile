@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/04/20 20:54:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/04/28 10:20:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,8 @@ DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
+
+REVISION-main=	0
 
 CATEGORIES=	mail
 
@@ -49,7 +51,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I/usr/include/kerberosV" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_resolv_res_search=no \
 		ac_cv_sys_long_file_names=yes \
-		MAKEDEPEND=""
+		MAKEDEPEND="makedepend"
 CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-bdb \
 		--with-bdb-libdir=${LOCALBASE}/lib/db4 \
