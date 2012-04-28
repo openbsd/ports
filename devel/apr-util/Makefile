@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.35 2012/02/21 16:21:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/04/28 09:49:43 stsp Exp $
 
 COMMENT=	companion library to APR
 
-V=		1.2.10
+V=		1.4.1
 DISTNAME=	apr-util-$V
-FULLPKGNAME=	apr-util${MT}-$V${FLAVOR_EXT:S/-mt//}
-REVISION =	8
-SHARED_LIBS +=	aprutil-1${MT}          2.11     # .2.11
+SHARED_LIBS +=	aprutil-1          4.1     # .4.1
 
 CATEGORIES=	devel
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 HOMEPAGE=	http://apr.apache.org/
 
-FLAVORS=	mt ldap
+FLAVORS=	ldap
 FLAVOR?=
 
 # Apache License 2.0
@@ -31,13 +29,19 @@ LIB_DEPENDS=	databases/db/v4,no_java,no_tcl
 MODULES=	converters/libiconv		
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=autoconf
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.68
 CONFIGURE_ARGS=	--with-apr=${LOCALBASE} \
 		--with-dbm=db4 \
 		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib/db4 \
 		--with-iconv=${LOCALBASE} \
-		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
-		--with-apr=${LOCALBASE}/bin/apr-1${MT}-config
+		--includedir=${LOCALBASE}/include/apr-1/ \
+		--with-apr=${LOCALBASE}/bin/apr-1-config \
+		--with-sqlite3=no \
+		--with-pgsql=no \
+		--with-mysql=no \
+		--with-oracle=no \
+		--with-freetds=no \
+		--with-odbc=no
 
 .if ${FLAVOR:Mldap}
 CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
@@ -45,24 +49,12 @@ CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap
 LIB_DEPENDS+=		databases/openldap
 WANTLIB+=		asn1 com_err crypto gssapi krb5 sasl2 ssl lber-2.4 ldap-2.4
-.endif
-
-MT?=
-.if ${FLAVOR:Mmt}
-MT=-mt
-CONFIGURE_ENV+=	APRUTIL_EXPORT_LIBS=-pthread
-LIB_DEPENDS+=	apr-mt-1.2.11:devel/apr,mt
-WANTLIB +=	apr-1-mt=3
-
-post-install:
-	sed 's/{APRUTIL_LIBNAME}/{APRUTIL_LIBNAME}-mt/g' ${WRKSRC}/apu-config.out > ${PREFIX}/bin/apu-1-mt-config
-
 .else
-LIB_DEPENDS+=	apr-1.2.11:devel/apr
-WANTLIB+=	apr-1=3
+CONFIGURE_ARGS+=	--with-ldap=no
 .endif
 
-SUBST_VARS+=	MT
-MAKE_ENV+=	MT=${MT}
+CONFIGURE_ENV+=	APRUTIL_EXPORT_LIBS=-pthread
+LIB_DEPENDS+=	apr-1.4.6:devel/apr
+WANTLIB+=	apr-1=4
 
 .include <bsd.port.mk>
