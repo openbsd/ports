@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_http_auth_c,v 1.5 2012/04/28 09:25:25 sthen Exp $
+
+Fix digest "md5-sess" implementation (Errata ID 1649, RFC 2617).
+
+--- src/http_auth.c.orig	Tue Nov 29 06:36:18 2011
++++ src/http_auth.c	Mon Apr 23 00:09:35 2012
+@@ -1095,7 +1095,9 @@ int http_auth_digest_check(server *srv, connection *co
+ 	if (algorithm &&
+ 	    strcasecmp(algorithm, "md5-sess") == 0) {
+ 		li_MD5_Init(&Md5Ctx);
+-		li_MD5_Update(&Md5Ctx, (unsigned char *)HA1, 16);
++		/* Errata ID 1649: http://www.rfc-editor.org/errata_search.php?rfc=2617 */
++		CvtHex(HA1, a1);
++		li_MD5_Update(&Md5Ctx, (unsigned char *)a1, 32);
+ 		li_MD5_Update(&Md5Ctx, (unsigned char *)":", 1);
+ 		li_MD5_Update(&Md5Ctx, (unsigned char *)nonce, strlen(nonce));
+ 		li_MD5_Update(&Md5Ctx, (unsigned char *)":", 1);

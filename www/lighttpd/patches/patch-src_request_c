@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_request_c,v 1.3 2012/04/28 09:25:25 sthen Exp $
+
+Fix handling of empty header list entries in http_request_split_value.
+
+--- src/request.c.orig	Wed Nov 30 15:42:19 2011
++++ src/request.c	Mon Apr 23 00:07:25 2012
+@@ -241,9 +241,11 @@ static int http_request_split_value(array *vals, buffe
+ 			start = s;
+ 
+ 			for (; *s != ',' && i < b->used - 1; i++, s++);
++			if (start == s) break; /* empty fields are skipped */
+ 			end = s - 1;
+ 
+-			for (; (*end == ' ' || *end == '\t') && end > start; end--);
++			for (; end > start && (*end == ' ' || *end == '\t'); end--);
++			if (start == end) break; /* empty fields are skipped */
+ 
+ 			if (NULL == (ds = (data_string *)array_get_unused_element(vals, TYPE_STRING))) {
+ 				ds = data_string_init();
