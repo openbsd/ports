@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/04/28 13:44:56 espie Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -24,7 +24,6 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 PKGNAME-ui=	avahi-ui-${V}
 
-IGNORE-mono = rthreads stuck on mono
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
