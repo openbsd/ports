@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2012/02/17 08:33:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/04/28 09:54:44 stsp Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.2.20
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www net
 
@@ -21,7 +21,7 @@ SHARED_ONLY=		Yes
 USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
-WANTLIB += c crypto m ssl expat apr-1-mt db>=4 z pcre pthread aprutil-1-mt>=2
+WANTLIB += c crypto m ssl expat apr-1 db>=4 z pcre pthread aprutil-1>=2
 
 LIB_DEPENDS=		devel/pcre
 
@@ -32,9 +32,9 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--with-ldap --enable-ldap --enable-authnz-ldap
 WANTLIB+=		asn1 com_err gssapi krb5 sasl2 ldap lber
 LIB_DEPENDS+=		databases/openldap
-LIB_DEPENDS+=		apr-util-mt-*-ldap:devel/apr-util,ldap,mt
+LIB_DEPENDS+=		apr-util-*-ldap:devel/apr-util,ldap
 .else
-LIB_DEPENDS+=		apr-util-mt-*-!ldap:devel/apr-util,mt
+LIB_DEPENDS+=		apr-util-*-!ldap:devel/apr-util
 .endif
 
 MODULES=		converters/libiconv
@@ -52,8 +52,8 @@ CONFIGURE_ARGS+=	--enable-layout=OpenBSD \
 			--prefix=${HTTPD_DIR} \
 			--exec-prefix=${LOCALBASE} \
 			--sysconfdir=${CONFDIR} \
-			--with-apr=${LOCALBASE}/bin/apr-1-mt-config  \
-			--with-apr-util=${LOCALBASE}/bin/apu-1-mt-config \
+			--with-apr=${LOCALBASE}/bin/apr-1-config  \
+			--with-apr-util=${LOCALBASE}/bin/apu-1-config \
 			--enable-ssl --with-ssl=/usr \
 			--with-mpm=prefork \
 			--with-program-name=httpd2 \
