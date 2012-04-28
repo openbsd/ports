@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.27 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.28 2012/04/28 08:34:56 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -338,7 +338,8 @@ DESTDIRNAME=	INSTALL_ROOT
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/main/php_ini.c
-	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
+	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g;" \
+		-e "s,OPENBSD_PREFIX,${TRUEPREFIX},;" \
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
