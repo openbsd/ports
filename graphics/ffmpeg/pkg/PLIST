@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/12/30 17:34:39 edd Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/04/28 08:41:32 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
@@ -104,6 +104,7 @@ share/ffmpeg/libvpx-1080p50_60.ffpreset
 share/ffmpeg/libvpx-360p.ffpreset
 share/ffmpeg/libvpx-720p.ffpreset
 share/ffmpeg/libvpx-720p50_60.ffpreset
+share/ffmpeg/libx264-baseline.ffpreset
 share/ffmpeg/libx264-ipod320.ffpreset
 share/ffmpeg/libx264-ipod640.ffpreset
 share/ffmpeg/libx264-lossless_fast.ffpreset

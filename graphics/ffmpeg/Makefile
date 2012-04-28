@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.85 2012/04/08 16:56:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2012/04/28 08:41:32 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
-V=		20111126
+V=		20120422
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	avcodec		16.2 \
-		avdevice	4.1 \
-		avfilter	2.2 \
-		avformat	14.2 \
-		avutil		8.2 \
+SHARED_LIBS=	avcodec		17.0 \
+		avdevice	5.0 \
+		avfilter	3.0 \
+		avformat	15.0 \
+		avutil		9.0 \
 		postproc	14.0 \
-		swscale		3.2
+		swscale		4.0
 
 HOMEPAGE=	http://ffmpeg.org/
 
@@ -67,11 +66,6 @@ FFMPEG_ARCH=	generic
 FFMPEG_ARCH=	${MACHINE_ARCH}
 .endif
 
-OPTFLAGS=	${CFLAGS}
-
-# until the system headers are fixed properly.
-OPTFLAGS+=	-Wno-redundant-decls
-
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
@@ -103,8 +97,7 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-x11grab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		--extra-libs="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		--mandir=${PREFIX}/man \
-		--optflags="${OPTFLAGS}"
+		--mandir=${PREFIX}/man
 
 CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBavdevice_EXTRALIBS="${LIBavdevice_EXTRALIBS}" \
