@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2012/03/30 13:23:03 phessler Exp $
+# $OpenBSD: Makefile,v 1.203 2012/04/28 08:42:07 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -6,14 +6,14 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 COMMENT =		movie player supporting many formats
 
 V =			20110309
-FFMPEG_V =		20111126
+FFMPEG_V =		20120422
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		14
+REVISION =		15
 
 CATEGORIES =		x11 multimedia
 
@@ -31,7 +31,7 @@ WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
 		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
 		swscale theoradec theoraenc ungif util vpx x264>=5 \
-		z
+		xvidcore z
 
 # we use a snapshot
 MASTER_SITES =	http://theunixzoo.co.uk/distfiles/
@@ -43,7 +43,7 @@ MODULES +=	converters/libiconv
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/libungif \
-		graphics/ffmpeg>=20111126 \
+		graphics/ffmpeg>=20120422 \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \
 		audio/libogg \
@@ -139,8 +139,6 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-faac-lavc \
 		--disable-faad \
 		--disable-theora \
-		--disable-xvid \
-		--disable-xvid-lavc \
 		--disable-pulse
 
 # internal tremor, external tremor, external libvorbis all conflict
