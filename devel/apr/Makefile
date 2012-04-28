@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.25 2011/11/18 10:11:32 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/28 09:48:17 stsp Exp $
 
 COMMENT=	Apache Portable Runtime
 
-V=		1.2.11
+V=		1.4.6
 DISTNAME=	apr-$V
-FULLPKGNAME=	apr${MT}-$V
-REVISION=	5
-SHARED_LIBS +=	apr-1${MT}             3.0     # .2.11
+SHARED_LIBS +=	apr-1             4.6     # .4.6
 
 CATEGORIES=	devel
 
-MAINTAINER=	Aleksander Piotrowski <alek@openbsd.org>
+MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
 HOMEPAGE=	http://apr.apache.org/
 
@@ -25,28 +23,11 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=apr/}
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
-		--with-installbuilddir=${LOCALBASE}/lib/apr-1${MT}/ \
+		--includedir=${LOCALBASE}/include/apr-1/ \
+		--with-installbuilddir=${LOCALBASE}/lib/apr-1/ \
 		--enable-other-child \
+		--enable-threads \
 		ac_cv_prog_AWK=awk
-
-FLAVORS=	mt
-FLAVOR?=
-
-SUBST_VARS+=	MT
-
-.if ${FLAVOR:Mmt}
-MT=-mt
-CONFIGURE_ARGS+=	--enable-threads
-
-post-install:
-	sed 's/{APR_LIBNAME}/{APR_LIBNAME}-mt/g' ${WRKSRC}/apr-config.out > ${PREFIX}/bin/apr-1-mt-config
-
-.else
-MT=
-CONFIGURE_ARGS+=	--disable-threads
-.endif
-MAKE_ENV+=	MT=${MT}
 
 pre-install:
 	rm -f ${WRKSRC}/libtool

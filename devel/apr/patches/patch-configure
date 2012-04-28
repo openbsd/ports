@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
---- configure.orig	Tue Sep  4 03:42:02 2007
-+++ configure	Tue Oct 30 17:41:25 2007
-@@ -4326,6 +4326,11 @@ if test "x$apr_preload_done" != "xyes" ; then
+$OpenBSD: patch-configure,v 1.9 2012/04/28 09:48:20 stsp Exp $
+--- configure.orig	Wed Feb  8 00:17:57 2012
++++ configure	Fri Apr 27 09:51:08 2012
+@@ -6633,6 +6633,11 @@ if test "x$apr_preload_done" != "xyes" ; then
          ;;
      *-openbsd*)
  
@@ -13,16 +13,16 @@ $OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
    if test "x$CPPFLAGS" = "x"; then
      test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
      CPPFLAGS="-D_POSIX_THREADS"
-@@ -23954,7 +23959,7 @@ fi
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
+@@ -13934,7 +13939,7 @@ fi
+ LIBTOOL_DEPS="$ltmain"
  
  # Always use our own libtool.
 -LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
 +#LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
  
- # Prevent multiple expansion
  
-@@ -26156,7 +26161,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
+ 
+@@ -19343,7 +19348,7 @@ if ${apr_cv_pthreads_lib+:} false; then :
  else
  
    apr_ptc_libs=$LIBS
@@ -30,8 +30,8 @@ $OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
 +  for lib in -pthread -lpthread -lpthreads -lc_r; do
      LIBS="$apr_ptc_libs $lib"
  
- if test "$cross_compiling" = yes; then
-@@ -26714,7 +26719,7 @@ if test "${apr_cv_pthreads_lib+set}" = set; then
+ if test "$cross_compiling" = yes; then :
+@@ -19591,7 +19596,7 @@ if ${apr_cv_pthreads_lib+:} false; then :
  else
  
    apr_ptc_libs=$LIBS
@@ -39,8 +39,8 @@ $OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
 +  for lib in -pthread -lpthread -lpthreads -lc_r; do
      LIBS="$apr_ptc_libs $lib"
  
- if test "$cross_compiling" = yes; then
-@@ -39676,7 +39681,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
+ if test "$cross_compiling" = yes; then :
+@@ -25452,7 +25457,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
  done
  if test ".$ac_rc" = .yes; then
      :
@@ -49,12 +49,3 @@ $OpenBSD: patch-configure,v 1.8 2007/10/30 16:47:50 steven Exp $
  else
      :
      hassysvser="0"
-@@ -43711,7 +43716,7 @@ esac
- 
- 
- 
--                                                            ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-$APR_MAJOR_VERSION-config:apr-config.in apr.pc"
-+                                                            ac_config_files="$ac_config_files Makefile include/apr.h build/apr_rules.mk build/pkg/pkginfo apr-$APR_MAJOR_VERSION-config:apr-config.in apr.pc apr-mt.pc"
- 
- 
- if test -d $srcdir/test; then
