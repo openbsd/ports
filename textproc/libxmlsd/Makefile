@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/07 01:48:20 dhill Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/28 09:28:47 ajacoutot Exp $
 
 COMMENT=	XML validation library
 
-DISTNAME=	xmlsd-0.7.0
+DISTNAME=	xmlsd-0.8.0
 PKGNAME=	lib${DISTNAME}
 CATEGORIES=    	textproc devel
 SHARED_LIBS=	xmlsd	2.1
@@ -10,7 +10,7 @@ SHARED_LIBS=	xmlsd	2.1
 HOMEPAGE=	https://opensource.conformal.com/wiki/Xmlsd
 MASTER_SITES=	https://opensource.conformal.com/snapshots/xmlsd/
 
-MAINTAINER=	David Hill <dhill@openbsd.org>
+MAINTAINER=	David Hill <dhill@mindcry.org>
 
 WANTLIB= 	expat
 
