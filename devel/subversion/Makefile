@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.106 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.107 2012/04/28 09:53:38 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
 COMMENT-python=		python interface to subversion
 COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
+COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
 VERSION=		1.7.4
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
+REVISION=		0
+REVISION-main=		1
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
@@ -17,13 +20,17 @@ FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
-REVISION =		0
+FULLPKGNAME-gnome-keyring= gnome-keyring-subversion-${VERSION}
+FULLPKGPATH-gnome-keyring= devel/subversion,-gnome
 
 SO_VERSION=	1.3
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
-		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_neon-1 \
-		svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
-.for _lib in ${SVN_LIBS} svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1
+		svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 \
+		svn_ra_neon-1 svn_ra_local-1 svn_ra_neon-1 \
+		svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+SVN_EXT_LIBS=	svn_swig_perl-1 svn_swig_py-1 svn_swig_ruby-1 \
+		svn_auth_gnome_keyring-1
+.for _lib in ${SVN_LIBS} ${SVN_EXT_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -43,23 +50,21 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=subversion/}
 EXTRACT_SUFX=	.tar.bz2
 
 PSEUDO_FLAVORS=	no_bindings no_ap2 no_perl no_python no_ruby
-FLAVORS=	gnome_keyring maintainer_mode
+FLAVORS=	maintainer_mode
 FLAVOR?=
 .if ${FLAVOR:Mno_bindings}
 FLAVOR += no_perl no_python no_ruby
 .endif
 
 MODULES=	devel/gettext lang/python
-USE_GROFF =	Yes
 
 WANTLIB=	expat db magic z
-
 
 # autogen.sh checks for libtoolize
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/libtool
 
-MULTI_PACKAGES = -main -ap2 -perl -python -ruby
+MULTI_PACKAGES = -main -ap2 -perl -python -ruby -gnome-keyring
 
 MAINSPEC =	${PKGNAME}:devel/subversion,-main
 LIB_DEPENDS-main = ${LIB_DEPENDS} \
@@ -70,7 +75,7 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		devel/libmagic
 
 WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl \
-		neon>=26 apr-1 aprutil-1 sasl2>=2 sqlite3
+		neon>=26 pthread apr-1 aprutil-1 sasl2>=2 sqlite3
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
@@ -120,26 +125,19 @@ LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 WANTLIB-ruby +=	${_lib}>=${SO_VERSION}
 .endfor
 
-.if ${FLAVOR:Mgnome_keyring}
-SHARED_ONLY=	Yes
-MODULES+=	converters/libiconv
-LIB_DEPENDS-main += 	x11/dbus \
-			devel/glib2 \
-			x11/gnome/libgnome-keyring \
-			devel/pcre \
-			${MODGETTEXT_LIB_DEPENDS}
-WANTLIB-main+=	apr-1 aprutil-1 gcrypt gpg-error \
-		dbus-1>=7 glib-2.0 gnome-keyring>=6 pcre>=2
-SHARED_LIBS+=	svn_auth_gnome_keyring-1 ${SO_VERSION}
-# gnome-keyring depends on dbus depends on pthread, so svn won't be able
-# to load libsvn_auth_gnome_keyring without the main executable being compiled
-# and linked with -pthread. We want to avoid this as it causes problems with
-# our current threading implementation (which has to force stdin/stdout to
-# be non-blocking). As this affects -main it must be a FLAVOR.
-WANTLIB-main+=	pthread
-CFLAGS+=	-pthread
-.endif
+WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
+		dbus-1>=7 glib-2.0 gnome-keyring>=6 pcre>=2 sqlite3 \
+		svn_subr-1>=${SO_VERSION} ffi gmodule-2.0 gobject-2.0 \
+		gthread-2.0
+LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
+		${MODGETTEXT_LIB_DEPENDS} \
+		databases/sqlite3 \
+		devel/glib2 \
+		devel/pcre \
+		x11/dbus \
+		x11/gnome/libgnome-keyring
 
+CFLAGS+=	-pthread
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
 AUTOCONF_VERSION=2.64
@@ -147,6 +145,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN} MKDIR="/bin/mkdir -p"
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-sasl=${LOCALBASE} \
+		--with-gnome-keyring \
 		--without-jikes \
 		--without-jdk \
 		--with-libmagic=${LOCALBASE}
@@ -192,10 +191,6 @@ pre-configure:
 		${WRKSRC}/subversion/libsvn_subr/auth.c
 	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} ./autogen.sh
-
-.if ${FLAVOR:Mgnome_keyring}
-CONFIGURE_ARGS+=--with-gnome-keyring
-.endif
 
 .if ${BUILD_PACKAGES:M-python}
 REGRESS_DEPENDS+=	${FULLPKGNAME-python}:${BUILD_PKGPATH},-python

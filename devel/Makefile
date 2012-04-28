@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1038 2012/04/28 09:50:49 stsp Exp $
+# $OpenBSD: Makefile,v 1.1039 2012/04/28 09:53:38 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1198,7 +1198,6 @@
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
-     SUBDIR += subversion,gnome_keyring
      SUBDIR += svk
      SUBDIR += swig
      SUBDIR += t1lib
