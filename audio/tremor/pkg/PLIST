@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/04/15 02:21:31 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/28 09:03:08 ajacoutot Exp $
 %%SHARED%%
 include/tremor/
 include/tremor/config_types.h
 include/tremor/ivorbiscodec.h
 include/tremor/ivorbisfile.h
-include/tremor/ogg.h
-include/tremor/os_types.h
 lib/libvorbisidec.a
 lib/libvorbisidec.la
+lib/pkgconfig/
+lib/pkgconfig/vorbisidec.pc
