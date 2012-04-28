@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	Open source LDAP software (server)
 
@@ -31,7 +31,6 @@ CONFIGURE_STYLE=	gnu
 USE_GROFF=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--localstatedir="/var" \
 			--enable-ipv6
 
 # slapd options

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.186 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -57,8 +57,7 @@ RUN_DEPENDS-sqlite= ${BASE_PKGPATH}=${V_DOVECOT}
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-gssapi \
+CONFIGURE_ARGS=	--with-gssapi \
 		--with-rundir=/var/dovecot \
 		--with-sql=plugin \
 		--with-statedir=/var/dovecot \

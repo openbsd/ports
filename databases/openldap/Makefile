@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.113 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -40,7 +40,6 @@ CONFIGURE_STYLE=	autoconf
 USE_GROFF=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--localstatedir="/var" \
 			--enable-ipv6 \
 			--with-tls=openssl
 

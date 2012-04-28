@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/04/27 10:59:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/04/28 10:52:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -58,7 +58,6 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=	--disable-static \
-		--localstatedir=/var \
 		--disable-packagekit \
 		--disable-gudev \
 		--disable-systemd

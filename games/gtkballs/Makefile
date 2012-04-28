@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2012/04/26 09:58:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	gtk+ clone of the lines ball logic game
 
 DISTNAME=	gtkballs-3.1.5
-REVISION=	12
+REVISION=	13
 CATEGORIES=	games x11
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${MASTER_SITE_SUNSITE:=games/strategy/}
@@ -33,9 +33,10 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--localstatedir=/var
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
 
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/gtkballs
 

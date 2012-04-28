@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/06 18:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	build molecules out of single atoms
 
@@ -33,8 +33,6 @@ MODULES=	textproc/intltool \
 LIB_DEPENDS=	x11/gnome/libgnome \
 		x11/gnome/libgnomeui
 RUN_DEPENDS=	devel/desktop-file-utils
-
-CONFIGURE_ARGS+=--localstatedir=/var
 
 USE_GMAKE=	Yes
 

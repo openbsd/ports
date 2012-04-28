@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	NetFlow collector
 
@@ -21,7 +21,6 @@ USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--localstatedir=/var
 
 post-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/examples/flowd

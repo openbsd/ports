@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/12/16 20:08:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	anonymity service using onion routing
 
@@ -19,7 +19,7 @@ WANTLIB += c crypto event m pthread ssl z
 MASTER_SITES=	${HOMEPAGE}dist/
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-ssl-dir=/usr --localstatedir=/var
+CONFIGURE_ARGS=	--with-ssl-dir=/usr
 
 DB_DIR=		/var/tor
 SUBST_VARS+=	DB_DIR

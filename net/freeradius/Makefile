@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/12/28 10:44:43 pea Exp $
+# $OpenBSD: Makefile,v 1.42 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -46,7 +46,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--localstatedir='$${DESTDIR}/var' \
 		--with-large-files \
 		--with-snmp \
 		--with-pic \

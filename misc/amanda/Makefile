@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/19 10:14:04 nigel Exp $
+# $OpenBSD: Makefile,v 1.41 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=	network-capable tape backup (client and tape server)
 COMMENT-client=	network-capable tape backup (client only)
@@ -63,7 +63,6 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 # shared libraries, we disable the generation of shared libraries.
 CONFIGURE_ARGS=	--disable-shared \
 		--libexecdir=${PREFIX}/libexec/amanda \
-		--localstatedir=/var \
 		--with-configdir=${SYSCONFDIR}/amanda \
 		--with-user=operator \
 		--with-group=operator

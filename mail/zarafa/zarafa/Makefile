@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2012/04/26 11:28:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -98,7 +98,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--localstatedir=/var \
 		--disable-perl \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2012/04/22 11:41:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -80,7 +80,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
-		--localstatedir=/var \
 		--with-cups-group=_cups \
 		--with-cups-user=_cups \
 		--with-system-groups=wheel \

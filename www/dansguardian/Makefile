@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/28 10:52:09 ajacoutot Exp $
 
 COMMENT =	content scanning web filter
 DISTNAME =	dansguardian-2.10.1.1
@@ -29,8 +29,7 @@ LIB_DEPENDS =		devel/pcre \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS =	--localstatedir=/var \
-			--with-proxygroup=_dansguardian \
+CONFIGURE_ARGS =	--with-proxygroup=_dansguardian \
 			--with-proxyuser=_dansguardian \
 			--enable-segv-backtrace \
 			--enable-clamd

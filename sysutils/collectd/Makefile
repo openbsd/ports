@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/18 01:08:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -71,7 +71,6 @@ CONFIGURE_ARGS +=--with-ltdl-include=${LOCALBASE}/include \
 		--with-librrd=${LOCALBASE} \
 		--with-libstatgrab=${LOCALBASE} \
 		--with-libnetsnmp=${LOCALBASE}/bin/net-snmp-config \
-		--localstatedir=/var \
 		--without-python \
 		--enable-all-plugins=no
 

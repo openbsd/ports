@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/04/17 11:48:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/28 10:52:09 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
@@ -41,7 +41,5 @@ LIB_DEPENDS=		devel/json-glib \
 
 MODGNOME_TOOLS= 	goi
 MODGNOME_ICON_CACHE=	Yes
-
-CONFIGURE_ARGS=		--localstatedir=/var
 
 .include <bsd.port.mk>

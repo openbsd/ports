@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/04/26 09:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2012/04/28 10:52:09 ajacoutot Exp $
 
 COMMENT=	message bus system
 
@@ -30,8 +30,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--with-dbus-user=_dbus \
+CONFIGURE_ARGS=	--with-dbus-user=_dbus \
 		--with-xml=expat \
 		--with-x \
 		--enable-kqueue \

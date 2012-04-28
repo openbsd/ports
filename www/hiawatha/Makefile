@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2012/04/28 10:52:09 ajacoutot Exp $
 
 COMMENT=	secure webserver
 
@@ -27,8 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libxml2" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		webrootdir=${WEBROOTDIR}
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--enable-xslt
+CONFIGURE_ARGS=	--enable-xslt
 
 USE_GROFF =	Yes
 

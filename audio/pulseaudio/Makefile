@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/01/23 14:39:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -84,8 +84,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-waveout \
 			--disable-gconf \
 			--disable-avahi \
-			--disable-orc \
-			--localstatedir=/var
+			--disable-orc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/" \

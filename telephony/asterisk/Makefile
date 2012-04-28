@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2012/04/23 21:35:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.145 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -83,8 +83,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			NOISY_BUILD="Yes" \
 			OPTIMIZE=
 
-CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-sounds-cache=${DISTDIR}
+CONFIGURE_ARGS+=	--with-sounds-cache=${DISTDIR}
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-avcodec=no \

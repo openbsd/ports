@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2012/04/22 13:44:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -60,7 +60,6 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.63
 
 CONFIGURE_ARGS=		--disable-fam \
-			--localstatedir="/var" \
 			--libdir="${PREFIX}/lib/samba" \
 			--sbindir="${PREFIX}/libexec" \
 			--with-configdir="${CONFDIR}" \

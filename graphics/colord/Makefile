@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/13 15:03:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
@@ -47,7 +47,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--localstatedir=/var \
 		--enable-introspection \
 		--disable-gtk-doc \
 		--disable-reverse \

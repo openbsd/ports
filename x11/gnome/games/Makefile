@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/12/03 22:17:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2012/04/28 10:52:09 ajacoutot Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -54,8 +54,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games
 
-CONFIGURE_ARGS+= 	--localstatedir="/var" \
-			--with-scores-group="games"
+CONFIGURE_ARGS+= 	--with-scores-group="games"
 
 # XXX
 # lightsoff and swell-foop need seed

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=		lightweight C library that eases the writing of daemons
 
@@ -18,7 +18,6 @@ MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--localstatedir=/var \
 			--disable-lynx
 
 USE_LIBTOOL=		Yes

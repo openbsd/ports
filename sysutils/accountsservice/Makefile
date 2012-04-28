@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/04/23 13:37:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
@@ -41,7 +41,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--localstatedir=/var \
 		--enable-introspection \
 		--disable-docbook-docs
 

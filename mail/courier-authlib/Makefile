@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/02/21 22:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -67,7 +67,6 @@ CONFIGURE_ARGS+=	--enable-static \
 			--with-mailgroup=_courier \
 			--with-pkgconfdir=${SYSCONFDIR}/courier \
 			--with-authdaemonvar=${COURIERSTATE} \
-			--localstatedir=/var \
 			--libdir=${PREFIX}/lib \
 			--includedir=${PREFIX}/include \
 			--enable-ltdl-install=no \

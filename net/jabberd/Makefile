@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/25 13:57:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
@@ -35,8 +35,7 @@ FLAVOR?=		mysql
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--localstatedir=/var \
-			--enable-debug \
+CONFIGURE_ARGS=		--enable-debug \
 			--enable-ssl \
 			--disable-idn \
 			--with-extra-include-path="${EXTRA_INCLUDE_PATH}" \

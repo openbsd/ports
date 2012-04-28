@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2007/11/11 09:25:18 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2012/04/28 10:52:08 ajacoutot Exp $
 
 V=		2.2.9
 CATEGORIES=	security
@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${V}/src/
 
 CONFIGURE_STYLE=gnu
 
-CONFIGURE_ARGS+=--localstatedir=/var	\
-		--sharedstatedir=/var	\
+CONFIGURE_ARGS+=--sharedstatedir=/var	\
 		--disable-nessuspcap	\
 		--enable-bpf-sharing	\
 		--enable-shared

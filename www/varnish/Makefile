@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/26 22:26:39 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/28 10:52:09 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -29,7 +29,6 @@ USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.68
-CONFIGURE_ARGS =	--localstatedir=/var
 
 REGRESS_TARGET =	check
 

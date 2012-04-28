@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/03/29 18:07:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -35,7 +35,7 @@ GCCARCH =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 AUTOCONF_VERSION =	2.67
 CONFIGURE_STYLE =	autoconf
-CONFIGURE_ARGS =	${GCCARCH} --localstatedir=/var
+CONFIGURE_ARGS =	${GCCARCH}
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \

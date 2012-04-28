@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/04 08:42:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -90,7 +90,6 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	 gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--localstatedir="/var" \
 			--enable-sndio \
 			--disable-gstreamer \
 			--disable-oss \

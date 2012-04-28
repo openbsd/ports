@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -49,8 +49,7 @@ CONFIGURE_ARGS+=	--enable-ssl \
 			--disable-gdbm \
 			--disable-odbc \
 			--with-user=_perdition \
-			--with-group=_perdition \
-			--localstatedir=/var
+			--with-group=_perdition
 
 NO_REGRESS=Yes
 

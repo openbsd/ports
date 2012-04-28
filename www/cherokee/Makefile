@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -95,7 +95,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
 			--sysconfdir=${SYSCONFDIR} \
-			--localstatedir=/var \
 			--with-wwwroot=/var/cherokee \
 			--with-wwwuser=_cherokee \
 			--with-wwwgroup=_cherokee \

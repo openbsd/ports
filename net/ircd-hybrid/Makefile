@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/10/19 13:46:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -26,7 +26,6 @@ USE_GROFF =	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS=	--localstatedir=/var
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

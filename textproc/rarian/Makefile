@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/28 09:51:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/04/28 10:52:08 ajacoutot Exp $
 
 COMMENT=		documentation metadata library
 
@@ -29,8 +29,7 @@ RUN_DEPENDS=		shells/bash \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-convert-dir=${PREFIX}/share/omf \
+CONFIGURE_ARGS+=	--with-convert-dir=${PREFIX}/share/omf \
 			--enable-installed \
 			--enable-scrollkeeper-compat \
 			--enable-omf-read \

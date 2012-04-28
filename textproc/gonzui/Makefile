@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/28 10:52:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,8 +47,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-user="_gonzui" \
 			--with-group="_gonzui" \
 			--with-rundir="/var/run/gonzui" \
-			--with-logdir="/var/log" \
-			--localstatedir="/var"
+			--with-logdir="/var/log"
 
 # Tests want to do cvs checkouts, apt-get, etc.
 NO_REGRESS=		Yes
