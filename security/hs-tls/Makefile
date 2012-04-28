@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/21 12:03:50 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/28 19:36:11 kili Exp $
 
 COMMENT=		TLS/SSL protocol native implementation
 
 DISTNAME=		tls-0.8.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security net
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
