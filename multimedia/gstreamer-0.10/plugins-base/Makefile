@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/02/21 08:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2012/04/28 09:03:45 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -7,6 +7,7 @@ V =			0.10.36
 DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
+REVISION-main =		0
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
 MULTI_PACKAGES =	-main -cdda
@@ -46,14 +47,14 @@ WANTLIB-main += Xv Xxf86vm c cairo drm expat fontconfig freetype gio-2.0
 WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB-main += ogg orc-0.4 orc-test-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png pthread pthread-stubs stdc++ theoradec
-WANTLIB-main += theoraenc vorbis vorbisenc vorbisidec xcb xcb-render
+WANTLIB-main += theoraenc vorbis vorbisenc vorbisidec>=3 xcb xcb-render
 WANTLIB-main += xcb-shm
 LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			devel/orc>=0.4.11 \
 			audio/libvorbis \
 			devel/pango \
 			multimedia/libtheora \
-			audio/tremor
+			audio/tremor>=20120410
 RUN_DEPENDS-main +=	${MODGETTEXT_RUN_DEPENDS}
 # needed for the gio plugin
 RUN_DEPENDS-main +=	x11/gnome/gvfs

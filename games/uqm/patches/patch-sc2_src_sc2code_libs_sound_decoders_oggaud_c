@@ -1,0 +1,14 @@
+$OpenBSD: patch-sc2_src_sc2code_libs_sound_decoders_oggaud_c,v 1.1 2012/04/28 09:04:14 ajacoutot Exp $
+--- sc2/src/sc2code/libs/sound/decoders/oggaud.c.orig	Fri Apr 13 01:18:24 2012
++++ sc2/src/sc2code/libs/sound/decoders/oggaud.c	Fri Apr 13 01:28:54 2012
+@@ -270,10 +270,6 @@ ova_GetFrame (THIS_PTR)
+ 	TFB_OggSoundDecoder* ova = (TFB_OggSoundDecoder*) This;
+ 	// this is the closest to a frame there is in ogg vorbis stream
+ 	// doesn't seem to be a func to retrive it
+-#ifdef OVCODEC_TREMOR
+-	return ova->vf.os->pageno;
+-#else
+ 	return ova->vf.os.pageno;
+-#endif  /* OVCODEC_TREMOR */
+ }
+ 
