@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/24 19:03:33 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/28 19:25:25 kili Exp $
 
+BROKEN=			doesn't build with newer attoparsec
 COMMENT=		fast combinator parsing for texts
 
 DISTNAME=		attoparsec-text-0.8.5.1
