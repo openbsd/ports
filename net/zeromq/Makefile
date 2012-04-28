@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/12/27 13:03:37 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2012/04/28 10:05:30 rpointel Exp $
 
 COMMENT =		open source message queue optimised for performance
 
-DISTNAME =		zeromq-2.1.11
+DISTNAME =		zeromq-2.2.0
 
 SHARED_ONLY =		Yes
 SHARED_LIBS +=		zmq                       1.0 # 1.0
@@ -28,5 +28,7 @@ USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	${CONFIGURE_SHARED}
+
+# Note: use ulimit -n 1024 for regress tests
 
 .include <bsd.port.mk>
