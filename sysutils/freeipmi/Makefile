@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/13 20:53:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/28 10:51:44 ajacoutot Exp $
 
 # needs machine/sysarch.h & machine/pio.h
 ONLY_FOR_ARCHS=	amd64 arm i386
@@ -40,8 +40,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=--disable-dependency-tracking \
-		--localstatedir=/var
+CONFIGURE_ARGS+=--disable-dependency-tracking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	localstatedir=${PREFIX}/share/examples/freeipmi \
 		sysconfdir=${PREFIX}/share/examples/freeipmi

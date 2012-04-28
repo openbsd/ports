@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2012/04/05 16:24:35 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2012/04/28 10:51:44 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -36,8 +36,9 @@ BUILD_DEPENDS +=	devel/bison \
 AUTOCONF_VERSION ?=	2.68
 CONFIGURE_STYLE ?=	autoconf
 
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db
+
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--localstatedir=/var/db \
 			--with-default-audiosink=sndiosink \
 			--with-default-audiosrc=sndiosrc \
 			--with-default-videosink=xvimagesink \

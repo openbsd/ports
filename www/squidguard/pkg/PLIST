@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/04/09 23:53:13 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/04/28 10:51:44 ajacoutot Exp $
 @bin bin/squidGuard
 share/doc/squidguard/
 share/doc/squidguard/LDAPFlow.txt
@@ -53,9 +53,9 @@ share/examples/squidguard/squidGuard.cgi
 @mode 771
 @owner _squid
 @group _squid
-@sample ${SG_DIR}/
-@sample ${SG_DIR}/db/
+@sample ${LOCALSTATEDIR}/
+@sample ${LOCALSTATEDIR}/db/
 @sample /var/log/squidguard/
 @extraunexec rm -fr ${CONFIG_DIR}
-@extraunexec rm -fr ${SG_DIR}
+@extraunexec rm -fr ${LOCALSTATEDIR}
 @extraunexec rm -fr /var/log/squidguard/

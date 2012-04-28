@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT=		Nebulous rewrite of Tower Toppler
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=		devel/desktop-file-utils
 MODULES=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--localstatedir=/var/games
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/games
 
 USE_LIBTOOL=		Yes
 USE_GROFF =	Yes

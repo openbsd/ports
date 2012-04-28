@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/02/16 22:29:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -37,6 +37,8 @@ USE_GROFF=	Yes
 
 NO_REGRESS=	Yes
 
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/spool
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread" \
@@ -44,7 +46,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--sbindir=${PREFIX}/libexec \
 		--with-docdir=${PREFIX}/share/doc/sane-backends \
-		--localstatedir=/var/spool \
 		--without-gphoto2 \
 		--with-group=553 \
 		--disable-latex

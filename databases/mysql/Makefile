@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.202 2012/03/26 08:05:01 giovanni Exp $
+# $OpenBSD: Makefile,v 1.203 2012/04/28 10:51:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,13 +42,14 @@ CXXFLAGS=	${CFLAGS} -felide-constructors -fno-exceptions -fno-rtti
 
 VMEM_WARNING=	Yes
 
+LOCALSTATEDIR=	${DB_DIR}
+
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
-		 --with-big-tables \
+CONFIGURE_ARGS+= --with-big-tables \
 		 --with-comment='OpenBSD port: ${FULLPKGNAME-server}' \
 		 --with-libwrap \
 		 --with-low-memory \

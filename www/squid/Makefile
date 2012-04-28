@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
@@ -43,6 +43,9 @@ SEPARATE_BUILD=	Yes
 AUTOCONF_VERSION= 2.62
 CONFIGURE_STYLE= autoconf
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/cfgaux
+
+LOCALSTATEDIR=	${SQUIDDIR}
+
 CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--enable-auth="${AUTH}" \
 		--enable-arp-acl \
@@ -56,7 +59,6 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--enable-ssl \
 		--enable-storeio="${STOREIO}" \
 		--with-pthreads \
-		--localstatedir="${SQUIDDIR}" \
 		--enable-follow-x-forwarded-for
 
 .if ${FLAVOR:L:Mldap}

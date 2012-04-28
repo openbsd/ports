@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/19 13:37:17 benoit Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
@@ -27,9 +27,10 @@ RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GMAKE =	Yes
 
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--localstatedir=/var/games \
-			--with-docdir=${PREFIX}/share/doc
+CONFIGURE_ARGS +=	--with-docdir=${PREFIX}/share/doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			LIBS="-lintl -liconv"

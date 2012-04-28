@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.53 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
@@ -21,6 +21,8 @@ MODULES+=	devel/gettext
 LIB_DEPENDS+=   devel/glib2
 WANTLIB +=	gio-2.0 glib-2.0
 
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/games
+
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
@@ -29,8 +31,7 @@ CONFIGURE_ARGS+= --enable-nls \
 		 --without-esd \
 		 --disable-gui-server \
 		 --disable-plugins \
-		 --disable-sdl \
-		 --localstatedir="/var/games"
+		 --disable-sdl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

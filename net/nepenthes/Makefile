@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/21 17:20:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2012/04/28 10:51:44 ajacoutot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
@@ -36,6 +36,8 @@ WANTLIB=	c crypto idn m ssl stdc++ pcap z \
 FAKE_FLAGS+=	localstatedir='/var/nepenthes' \
 		sysconfdir='${PREFIX}/share/examples'
 
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/nepenthes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/postgresql"
@@ -43,7 +45,6 @@ CONFIGURE_ARGS+=--enable-debug-logging \
 		--disable-mysql \
 		--enable-postgre \
 		--disable-capabilities \
-		--localstatedir='/var/nepenthes' \
 		--with-curl-lib=${PREFIX}/lib
 
 FLAVORS=        prelude

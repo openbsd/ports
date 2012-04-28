@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/16 12:39:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -38,13 +38,14 @@ RUN_DEPENDS-cgi =
 
 FAKE_FLAGS =		CFGDIR=${TRUEPREFIX}/share/examples/icinga
 
+LOCALSTATEDIR =		${BASELOCALSTATEDIR}/icinga
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_STYLE +=	old # don't override sysconfdir
 CONFIGURE_ARGS += \
 	--sysconfdir=${SYSCONFDIR}/icinga \
 	--datarootdir=/var/www/icinga-cgi \
 	--libexecdir=${PREFIX}/libexec/nagios \
-	--localstatedir=/var/icinga \
 	--sbindir=/var/www/cgi-bin/icinga \
 	--with-command-group=www \
 	--with-cgiurl=/cgi-bin/icinga \

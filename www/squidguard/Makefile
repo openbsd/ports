@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT =		filter, redirector and access controller for Squid
 
 DISTNAME =		squidGuard-1.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		www
 
 HOMEPAGE =		http://www.squidguard.org/
@@ -19,9 +19,9 @@ WANTLIB =		c lib/db4/db pthread
 
 MASTER_SITES =		http://www.squidguard.org/Downloads/
 
-SG_DIR =		/var/db/squidGuard
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db/squidGuard
 CONFIG_DIR =		${SYSCONFDIR}/squidguard
-SUBST_VARS =		SG_DIR CONFIG_DIR
+SUBST_VARS =		LOCALSTATEDIR CONFIG_DIR
 
 LIB_DEPENDS =		databases/db/v4
 RUN_DEPENDS =		www/squid
@@ -30,12 +30,10 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 CONFIGURE_ENV =		CFLAGS='${CFLAGS} -I${LOCALBASE}/include' \
 			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib' \
 			ac_cv_path_LYNX=false
-
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-squiduser='_squid' \
-			--localstatedir=${SG_DIR} \
 			--with-sg-logdir=/var/log/squidguard \
-			--with-sg-dbhome=${SG_DIR}/db \
+			--with-sg-dbhome=${LOCALSTATEDIR}/db \
 			--with-sg-config=${CONFIG_DIR}/squidguard.conf \
 			--with-db-lib=${LOCALBASE}/lib/db4 \
 			--with-db-inc=${LOCALBASE}/include/db4

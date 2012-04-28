@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/03 15:01:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/28 10:51:44 ajacoutot Exp $
 
 # Work in progress. Not yet linked to the build.
 
@@ -18,11 +18,12 @@ RUN_DEPENDS =	www/pear \
 MAKE_FLAGS =	PREFIX=/var/www/icinga-web
 FAKE_FLAGS =	CFGDIR=${TRUEPREFIX}/share/examples/icinga
 
+LOCALSTATEDIR =	${BASELOCALSTATEDIR}/icinga
+
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV +=  PHP="${MODPHP_BIN}"
 CONFIGURE_ARGS += \
 	--datarootdir=/var/www \
-	--localstatedir=/var/icinga \
 	--sbindir=/var/www/cgi-bin/icinga \
 	--with-web-apache-path=/var/www/conf/modules.sample \
 	--with-api-cmd-file=/var/icinga/rw/icinga.cmd \

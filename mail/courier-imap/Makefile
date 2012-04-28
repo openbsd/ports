@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/04/10 22:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -46,9 +46,10 @@ EXAMPLE_DIR=		${PREFIX}/share/examples/courier
 SUBST_VARS=		COURIERSTATE
 SYSCONFDIR=		/etc/courier
 
+LOCALSTATEDIR=		${COURIERSTATE}
+
 CONFIGURE_ARGS=		--sbindir=${PREFIX}/sbin \
 			--datadir=${PREFIX}/sbin \
-			--localstatedir=${COURIERSTATE} \
 			--prefix=${PREFIX} \
 			--bindir=${PREFIX}/bin \
 			--mandir=${PREFIX}/man \

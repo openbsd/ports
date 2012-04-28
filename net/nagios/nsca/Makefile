@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/11/12 00:49:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/28 10:51:44 ajacoutot Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
@@ -25,10 +25,11 @@ MASTER_SITES=		http://spacehopper.org/mirrors/
 WANTLIB=		c mcrypt>=8
 LIB_DEPENDS=		security/libmcrypt
 
+LOCALSTATEDIR=		${BASELOCALSTATEDIR}/nagios
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-nsca-user=_nagios \
-			--with-nsca-grp=_nagios \
-			--localstatedir=/var/nagios
+			--with-nsca-grp=_nagios
 
 MULTI_PACKAGES=		-main -client
 
