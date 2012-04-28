@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/30 06:13:25 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/28 10:06:16 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zmq/
 lib/python${MODPY_VERSION}/site-packages/zmq/__init__.py
@@ -6,6 +6,8 @@ lib/python${MODPY_VERSION}/site-packages/zmq/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/core/
 lib/python${MODPY_VERSION}/site-packages/zmq/core/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/core/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/core/_poll.so
+lib/python${MODPY_VERSION}/site-packages/zmq/core/_version.so
 lib/python${MODPY_VERSION}/site-packages/zmq/core/constants.so
 lib/python${MODPY_VERSION}/site-packages/zmq/core/context.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/core/context.so
@@ -14,12 +16,16 @@ lib/python${MODPY_VERSION}/site-packages/zmq/core/error.so
 lib/python${MODPY_VERSION}/site-packages/zmq/core/libzmq.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/core/message.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/core/message.so
-lib/python${MODPY_VERSION}/site-packages/zmq/core/poll.so
+lib/python${MODPY_VERSION}/site-packages/zmq/core/poll.py
+lib/python${MODPY_VERSION}/site-packages/zmq/core/poll.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/core/pysocket.py
+lib/python${MODPY_VERSION}/site-packages/zmq/core/pysocket.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/core/socket.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/core/socket.so
 lib/python${MODPY_VERSION}/site-packages/zmq/core/stopwatch.pxd
 lib/python${MODPY_VERSION}/site-packages/zmq/core/stopwatch.so
-lib/python${MODPY_VERSION}/site-packages/zmq/core/version.so
+lib/python${MODPY_VERSION}/site-packages/zmq/core/version.py
+lib/python${MODPY_VERSION}/site-packages/zmq/core/version.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zmq/devices/__init__.pyc
@@ -94,6 +100,8 @@ lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_stopwatch.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_stopwatch.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_version.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_version.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_web.py
+lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_web.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_zmqstream.py
 lib/python${MODPY_VERSION}/site-packages/zmq/tests/test_zmqstream.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/
@@ -109,3 +117,10 @@ lib/python${MODPY_VERSION}/site-packages/zmq/utils/rebuffer.so
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/strtypes.py
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/strtypes.pyc
 lib/python${MODPY_VERSION}/site-packages/zmq/utils/zmq_compat.h
+lib/python${MODPY_VERSION}/site-packages/zmq/web/
+lib/python${MODPY_VERSION}/site-packages/zmq/web/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zmq/web/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/web/proxy.py
+lib/python${MODPY_VERSION}/site-packages/zmq/web/proxy.pyc
+lib/python${MODPY_VERSION}/site-packages/zmq/web/zmqweb.py
+lib/python${MODPY_VERSION}/site-packages/zmq/web/zmqweb.pyc
