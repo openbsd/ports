@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/28 14:08:54 ajacoutot Exp $
 
 COMMENT =	management tool for sensitive data
 
 DISTNAME =	keepassx-0.4.3
-REVISION =	1
+REVISION =	2
 CATEGORIES =	security
 
 HOMEPAGE =	http://www.keepassx.org/

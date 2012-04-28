@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/28 13:00:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/28 14:08:54 ajacoutot Exp $
 @comment bin/fbxine
 @bin bin/xine
 bin/xine-bugreport
@@ -99,8 +99,6 @@ share/locale/sk/LC_MESSAGES/xine-ui.mo
 share/locale/sk/LC_MESSAGES/xitk.mo
 share/locale/uk/LC_MESSAGES/xine-ui.mo
 share/locale/uk/LC_MESSAGES/xitk.mo
-share/mime/
-share/mime/packages/
 share/mime/packages/xine-ui.xml
 share/pixmaps/
 share/pixmaps/xine.xpm

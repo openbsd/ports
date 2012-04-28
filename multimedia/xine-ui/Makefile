@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/04/28 13:00:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/04/28 14:08:54 ajacoutot Exp $
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/03 20:30:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/04/28 14:08:53 ajacoutot Exp $
 @bin bin/aqsis
 @bin bin/aqsl
 @bin bin/aqsltell
@@ -243,13 +243,7 @@ share/aqsis/shaders/volume/fog.slx
 share/examples/aqsis/
 share/examples/aqsis/aqsisrc
 @sample ${SYSCONFDIR}/aqsisrc
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/192x192/
-share/icons/hicolor/192x192/mimetypes/
 share/icons/hicolor/192x192/mimetypes/aqsis-doc.png
-share/mime/
-share/mime/packages/
 share/mime/packages/aqsis.xml
 share/pixmaps/
 share/pixmaps/aqsis.png

@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 14:39:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/28 14:08:54 ajacoutot Exp $
 @bin bin/keepassx
-share/applications/
 share/applications/keepassx.desktop
 share/keepassx/
 share/keepassx/i18n/
@@ -93,8 +92,6 @@ share/keepassx/icons/text_under.png
 share/keepassx/icons/trashcan.png
 share/keepassx/icons/up.png
 share/keepassx/license.html
-share/mime/
-share/mime/packages/
 share/mime/packages/keepassx.xml
 share/mimelnk/
 share/mimelnk/application/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2012/04/28 13:00:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/04/28 14:08:53 ajacoutot Exp $
 
 COMMENT=	GTK-based LDAP client
 
 DISTNAME=	gq-1.3.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases sysutils
 
