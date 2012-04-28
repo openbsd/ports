@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1039 2012/04/28 09:53:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.1040 2012/04/28 19:41:14 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -172,6 +172,7 @@
      SUBDIR += hs-comonad
      SUBDIR += hs-comonad-transformers
      SUBDIR += hs-concurrent-extra
+     SUBDIR += hs-configurator
      SUBDIR += hs-contravariant
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
