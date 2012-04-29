@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/04/28 15:32:47 espie Exp $
+# $OpenBSD: Makefile,v 1.109 2012/04/29 12:43:25 ajacoutot Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -12,7 +12,7 @@ DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
 REVISION=		0
 REVISION-main=		1
-REVISION-gnome-keyring = 1
+REVISION-gnome-keyring = 2
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
@@ -132,10 +132,6 @@ WANTLIB-gnome-keyring=	${WANTLIB} apr-1 aprutil-1 gcrypt gpg-error \
 		gthread-2.0
 LIB_DEPENDS-gnome-keyring= ${MAINSPEC} \
 		${MODGETTEXT_LIB_DEPENDS} \
-		databases/sqlite3 \
-		devel/glib2 \
-		devel/pcre \
-		x11/dbus \
 		x11/gnome/libgnome-keyring
 
 CFLAGS+=	-pthread
