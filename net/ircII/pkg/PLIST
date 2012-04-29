@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.19 2009/06/02 17:59:43 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/04/29 19:00:14 naddy Exp $
 @bin bin/ircII
 bin/ircbug
 @bin bin/ircflush
-@bin bin/ircio
-@bin bin/wserv
+@bin libexec/ircio
+@bin libexec/wserv
 @comment @man man/man1/irc.1
 @man man/man1/ircII.1
 @man man/man1/ircbug.1
@@ -246,6 +246,7 @@ share/ircII/help/note/wall
 share/ircII/help/note/wallops
 share/ircII/help/notice
 share/ircII/help/notify
+share/ircII/help/nuser
 share/ircII/help/on/
 share/ircII/help/on/action
 share/ircII/help/on/channel_nick
