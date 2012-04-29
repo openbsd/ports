@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 18:31:21 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/29 11:14:01 mpi Exp $
 @comment bin/pip
 bin/pip-${MODPY_VERSION}
 lib/python${MODPY_VERSION}/site-packages/pip/
@@ -54,6 +54,8 @@ lib/python${MODPY_VERSION}/site-packages/pip/req.py
 lib/python${MODPY_VERSION}/site-packages/pip/req.pyc
 lib/python${MODPY_VERSION}/site-packages/pip/runner.py
 lib/python${MODPY_VERSION}/site-packages/pip/runner.pyc
+lib/python${MODPY_VERSION}/site-packages/pip/status_codes.py
+lib/python${MODPY_VERSION}/site-packages/pip/status_codes.pyc
 lib/python${MODPY_VERSION}/site-packages/pip/util.py
 lib/python${MODPY_VERSION}/site-packages/pip/util.pyc
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/
@@ -67,5 +69,3 @@ lib/python${MODPY_VERSION}/site-packages/pip/vcs/mercurial.py
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/mercurial.pyc
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/subversion.py
 lib/python${MODPY_VERSION}/site-packages/pip/vcs/subversion.pyc
-lib/python${MODPY_VERSION}/site-packages/pip/venv.py
-lib/python${MODPY_VERSION}/site-packages/pip/venv.pyc
