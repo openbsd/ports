@@ -1,6 +1,6 @@
-$OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.4 2010/05/26 21:41:56 jakemsr Exp $
---- akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp.orig	Thu Aug 10 11:37:20 2006
-+++ akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp	Wed May 19 03:20:55 2010
+$OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.5 2012/04/29 07:09:23 ajacoutot Exp $
+--- akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp.orig	Thu Aug 10 14:37:20 2006
++++ akode/plugins/ffmpeg_decoder/ffmpeg_decoder.cpp	Sat Apr 28 23:59:11 2012
 @@ -26,9 +26,11 @@
  #include "decoder.h"
  
@@ -35,6 +35,19 @@ $OpenBSD: patch-akode_plugins_ffmpeg_decoder_ffmpeg_decoder_cpp,v 1.4 2010/05/26
      int buffer_size;
  };
  
+@@ -200,10 +203,10 @@ bool FFMPEGDecoder::openFile() {
+     d->audioStream = -1;
+     d->videoStream = -1;
+     for (int i = 0; i < d->ic->nb_streams; i++) {
+-        if (d->ic->streams[i]->codec->codec_type == CODEC_TYPE_AUDIO)
++        if (d->ic->streams[i]->codec->codec_type == AVMEDIA_TYPE_AUDIO)
+             d->audioStream = i;
+         else
+-        if (d->ic->streams[i]->codec->codec_type == CODEC_TYPE_VIDEO)
++        if (d->ic->streams[i]->codec->codec_type == AVMEDIA_TYPE_VIDEO)
+             d->videoStream = i;
+     }
+     if (d->audioStream == -1)
 @@ -313,10 +316,12 @@ bool FFMPEGDecoder::readFrame(AudioFrame* frame)
  
      assert(d->packet.stream_index == d->audioStream);
