@@ -1,48 +1,46 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/22 22:04:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/04/30 12:57:27 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
 @bin bin/xfce4-accessibility-settings
 @bin bin/xfce4-appearance-settings
 @bin bin/xfce4-display-settings
 @bin bin/xfce4-keyboard-settings
+@bin bin/xfce4-mime-settings
 @bin bin/xfce4-mouse-settings
 @bin bin/xfce4-settings-editor
-@bin bin/xfce4-settings-helper
 @bin bin/xfce4-settings-manager
 @bin bin/xfsettingsd
+lib/xfce4/settings/
+lib/xfce4/settings/appearance-install-theme
 share/applications/xfce-display-settings.desktop
 share/applications/xfce-keyboard-settings.desktop
 share/applications/xfce-mouse-settings.desktop
 share/applications/xfce-settings-manager.desktop
 share/applications/xfce-ui-settings.desktop
 share/applications/xfce4-accessibility-settings.desktop
+share/applications/xfce4-mime-settings.desktop
 share/applications/xfce4-settings-editor.desktop
 share/examples/xfce4-settings/
 @sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/xfce4/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/
 @sample ${SYSCONFDIR}/xdg/autostart/
-share/examples/xfce4-settings/xfce4-settings-helper-autostart.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/xfce4-settings-helper-autostart.desktop
+share/examples/xfce4-settings/xfce-settings-manager.menu
+@sample ${SYSCONFDIR}/xdg/menus/xfce-settings-manager.menu
+share/examples/xfce4-settings/xfsettingsd.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/xfsettingsd.desktop
 share/examples/xfce4-settings/xsettings.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xfce4-settings.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/xfce4-settings.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/xfce4-settings.mo
 share/locale/ca/LC_MESSAGES/xfce4-settings.mo
 share/locale/cs/LC_MESSAGES/xfce4-settings.mo
 share/locale/da/LC_MESSAGES/xfce4-settings.mo
 share/locale/de/LC_MESSAGES/xfce4-settings.mo
 share/locale/el/LC_MESSAGES/xfce4-settings.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce4-settings.mo
 share/locale/es/LC_MESSAGES/xfce4-settings.mo
 share/locale/eu/LC_MESSAGES/xfce4-settings.mo
@@ -53,44 +51,30 @@ share/locale/he/LC_MESSAGES/xfce4-settings.mo
 share/locale/hr/LC_MESSAGES/xfce4-settings.mo
 share/locale/hu/LC_MESSAGES/xfce4-settings.mo
 share/locale/id/LC_MESSAGES/xfce4-settings.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/xfce4-settings.mo
 share/locale/it/LC_MESSAGES/xfce4-settings.mo
 share/locale/ja/LC_MESSAGES/xfce4-settings.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/xfce4-settings.mo
 share/locale/ko/LC_MESSAGES/xfce4-settings.mo
+share/locale/lt/LC_MESSAGES/xfce4-settings.mo
 share/locale/lv/LC_MESSAGES/xfce4-settings.mo
 share/locale/nb/LC_MESSAGES/xfce4-settings.mo
 share/locale/nl/LC_MESSAGES/xfce4-settings.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
+share/locale/nn/LC_MESSAGES/xfce4-settings.mo
 share/locale/pa/LC_MESSAGES/xfce4-settings.mo
 share/locale/pl/LC_MESSAGES/xfce4-settings.mo
 share/locale/pt/LC_MESSAGES/xfce4-settings.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-settings.mo
 share/locale/ro/LC_MESSAGES/xfce4-settings.mo
 share/locale/ru/LC_MESSAGES/xfce4-settings.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/xfce4-settings.mo
 share/locale/sk/LC_MESSAGES/xfce4-settings.mo
 share/locale/sv/LC_MESSAGES/xfce4-settings.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/xfce4-settings.mo
 share/locale/tr/LC_MESSAGES/xfce4-settings.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/xfce4-settings.mo
 share/locale/uk/LC_MESSAGES/xfce4-settings.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-settings.mo
-share/locale/ur_PK/
-share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfce4-settings.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-settings.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-settings.mo
