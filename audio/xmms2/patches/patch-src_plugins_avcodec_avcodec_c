@@ -1,12 +1,97 @@
-$OpenBSD: patch-src_plugins_avcodec_avcodec_c,v 1.1 2011/08/21 16:37:08 jasper Exp $
+$OpenBSD: patch-src_plugins_avcodec_avcodec_c,v 1.2 2012/04/30 06:05:17 ajacoutot Exp $
 
-fix libavcodec initialisation. from upstream git:
+- fix libavcodec initialisation.
+- update for newer libavcodec API.
+
+from upstream git:
 
 http://git.xmms.se/xmms2/xmms2-devel/commit/?id=71666f5ac8465fc40c8220043174f45e7088c3f0
+http://git.xmms.se/xmms2/xmms2-devel/commit/?id=247ca0a17334b19f30ff271fa19a450dc0e5ed86
 
---- src/plugins/avcodec/avcodec.c.orig	Thu Aug 11 17:03:17 2011
-+++ src/plugins/avcodec/avcodec.c	Thu Aug 11 17:03:39 2011
-@@ -219,6 +219,8 @@ xmms_avcodec_init (xmms_xform_t *xform)
+--- src/plugins/avcodec/avcodec.c.orig	Fri Feb 19 12:43:54 2010
++++ src/plugins/avcodec/avcodec.c	Sat Apr 28 20:32:49 2012
+@@ -31,6 +31,12 @@
+ # include "avcodec.h"
+ #endif
+ 
++/* Map avcodec_decode_audio2 into the deprecated version
++ * avcodec_decode_audio in versions earlier than 51.28 */
++#if LIBAVCODEC_VERSION_INT < 0x331c00
++# define avcodec_decode_audio2 avcodec_decode_audio
++#endif
++
+ /* Handle API change that happened in libavcodec 52.00 */
+ #if LIBAVCODEC_VERSION_INT < 0x340000
+ # define CONTEXT_BPS(codecctx) (codecctx)->bits_per_sample
+@@ -38,12 +44,20 @@
+ # define CONTEXT_BPS(codecctx) (codecctx)->bits_per_coded_sample
+ #endif
+ 
+-/* Map avcodec_decode_audio2 into the deprecated version
+- * avcodec_decode_audio in versions earlier than 51.28 */
+-#if LIBAVCODEC_VERSION_INT < 0x331c00
+-# define avcodec_decode_audio2 avcodec_decode_audio
++/* Map avcodec_decode_audio3 into the deprecated version
++ * avcodec_decode_audio2 in versions earlier than 52.26 */
++#if LIBAVCODEC_VERSION_INT < 0x341a00
++# define avcodec_decode_audio3(avctx, samples, frame_size_ptr, avpkt) \
++    avcodec_decode_audio2(avctx, samples, frame_size_ptr, \
++                          (avpkt)->data, (avpkt)->size)
++# define AVMEDIA_TYPE_AUDIO CODEC_TYPE_AUDIO
+ #endif
+ 
++/* Handle API change that happened in libavcodec 52.64 */
++#if LIBAVCODEC_VERSION_INT < 0x344000
++# define AVMEDIA_TYPE_AUDIO CODEC_TYPE_AUDIO
++#endif
++
+ #define AVCODEC_BUFFER_SIZE 16384
+ 
+ typedef struct {
+@@ -121,6 +135,7 @@ xmms_avcodec_destroy (xmms_xform_t *xform)
+ 	g_return_if_fail (data);
+ 
+ 	avcodec_close (data->codecctx);
++	av_free (data->codecctx);
+ 
+ 	g_string_free (data->outbuf, TRUE);
+ 	g_free (data->buffer);
+@@ -135,7 +150,7 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 	AVCodec *codec;
+ 	const gchar *mimetype;
+ 	const guchar *tmpbuf;
+-	gssize tmpbuflen;
++	gsize tmpbuflen;
+ 	gint ret;
+ 
+ 	g_return_val_if_fail (xform, FALSE);
+@@ -144,6 +159,7 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 	data->outbuf = g_string_new (NULL);
+ 	data->buffer = g_malloc (AVCODEC_BUFFER_SIZE);
+ 	data->buffer_size = AVCODEC_BUFFER_SIZE;
++	data->codecctx = NULL;
+ 
+ 	xmms_xform_private_data_set (xform, data);
+ 
+@@ -160,7 +176,7 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 		goto err;
+ 	}
+ 
+-	if (codec->type != CODEC_TYPE_AUDIO) {
++	if (codec->type != AVMEDIA_TYPE_AUDIO) {
+ 		XMMS_DBG ("Codec '%s' found but its type is not audio", data->codec_id);
+ 		goto err;
+ 	}
+@@ -211,7 +227,7 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 		}
+ 	}
+ 
+-	data->codecctx = g_new0 (AVCodecContext, 1);
++	data->codecctx = avcodec_alloc_context ();
+ 	data->codecctx->sample_rate = data->samplerate;
+ 	data->codecctx->channels = data->channels;
+ 	data->codecctx->bit_rate = data->bitrate;
+@@ -219,6 +235,8 @@ xmms_avcodec_init (xmms_xform_t *xform)
  	data->codecctx->block_align = data->block_align;
  	data->codecctx->extradata = data->extradata;
  	data->codecctx->extradata_size = data->extradata_size;
@@ -15,3 +100,57 @@ http://git.xmms.se/xmms2/xmms2-devel/commit/?id=71666f5ac8465fc40c8220043174f45e
  
  	if (avcodec_open (data->codecctx, codec) < 0) {
  		XMMS_DBG ("Opening decoder '%s' failed", codec->name);
+@@ -257,6 +275,9 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 	return TRUE;
+ 
+ err:
++	if (data->codecctx) {
++		av_free (data->codecctx);
++	}
+ 	g_string_free (data->outbuf, TRUE);
+ 	g_free (data->extradata);
+ 	g_free (data);
+@@ -278,6 +299,9 @@ xmms_avcodec_read (xmms_xform_t *xform, xmms_sample_t 
+ 
+ 	size = MIN (data->outbuf->len, len);
+ 	while (size == 0) {
++		AVPacket packet;
++		av_init_packet (&packet);
++
+ 		if (data->buffer_length == 0) {
+ 			gint read_total;
+ 
+@@ -331,10 +355,12 @@ xmms_avcodec_read (xmms_xform_t *xform, xmms_sample_t 
+ 			data->buffer_length = read_total;
+ 		}
+ 
++		packet.data = data->buffer_pos;
++		packet.size = data->buffer_length;
++
+ 		outbufsize = sizeof (outbuf);
+-		bytes_read = avcodec_decode_audio2 (data->codecctx, (short *) outbuf,
+-		                                    &outbufsize, data->buffer_pos,
+-		                                    data->buffer_length);
++		bytes_read = avcodec_decode_audio3 (data->codecctx, (short *) outbuf,
++		                                    &outbufsize, &packet);
+ 
+ 		if (bytes_read < 0 || bytes_read > data->buffer_length) {
+ 			XMMS_DBG ("Error decoding data!");
+@@ -381,10 +407,14 @@ xmms_avcodec_seek (xmms_xform_t *xform, gint64 samples
+ 	/* The buggy ape decoder doesn't flush buffers, so we need to finish decoding
+ 	 * the frame before seeking to avoid segfaults... this hack sucks */
+ 	while (data->buffer_length > 0) {
++		AVPacket packet;
++		av_init_packet (&packet);
++		packet.data = data->buffer;
++		packet.size = data->buffer_length;
++
+ 		outbufsize = sizeof (outbuf);
+-		bytes_read = avcodec_decode_audio2 (data->codecctx, (short *) outbuf,
+-		                                    &outbufsize, data->buffer,
+-		                                    data->buffer_length);
++		bytes_read = avcodec_decode_audio3 (data->codecctx, (short *) outbuf,
++		                                    &outbufsize, &packet);
+ 
+ 		if (bytes_read < 0 || bytes_read > data->buffer_length) {
+ 			XMMS_DBG ("Error decoding data!");
