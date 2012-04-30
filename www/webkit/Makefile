@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.64 2012/04/23 17:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2012/04/30 13:31:06 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.8.0
+V =		1.8.1
 DISTNAME =	webkit-${V}
 EPOCH =		0
-REVISION =	0
 CATEGORIES =	www
 EXTRACT_SUFX=	.tar.xz
 
@@ -78,7 +77,7 @@ LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		textproc/enchant \
 		geo/geoclue \
 		devel/glib2>=2.31.2 \
-		devel/libsoup>=2.37.2.1
+		devel/libsoup>=2.37.92
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \
@@ -103,8 +102,8 @@ WEBKIT_API_VERSION =	1.0
 GTK_API_VERSION =	2.0
 .endif
 CONFIGURE_ARGS += --with-gtk=${GTK_API_VERSION}
-SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	2.0 #.13.1
-SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		3.0 #.13.1
+SHARED_LIBS += javascriptcoregtk-${WEBKIT_API_VERSION}	2.0 #.13.2
+SHARED_LIBS += webkitgtk-${WEBKIT_API_VERSION}		4.0 #.13.2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp

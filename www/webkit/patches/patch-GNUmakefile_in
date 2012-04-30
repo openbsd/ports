@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.17 2012/04/30 13:31:06 landry Exp $
 
 - install GtkLauncher, remove silent build lines, fix lpthread/pthread
 - install gtk-doc in a versionned dir to avoid conflicts
@@ -6,9 +6,9 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
 - append extra cflags for sparc64 which otherwise result in overoptimization
   by emitting a fdtox %r8, %r7 call, whose second operand isn't even and thus invalid.
 (on Source/JavaScriptCore/runtime/NumberPrototype.cpp)
---- GNUmakefile.in.orig	Tue Mar 27 18:31:16 2012
-+++ GNUmakefile.in	Fri Mar 30 11:32:32 2012
-@@ -11355,7 +11355,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+--- GNUmakefile.in.orig	Tue Apr 24 07:17:27 2012
++++ GNUmakefile.in	Tue Apr 24 09:56:57 2012
+@@ -11360,7 +11360,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_$(V))
  am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -17,7 +17,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  AM_V_at = $(am__v_at_$(V))
  am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
  am__v_at_0 = @
-@@ -11365,12 +11365,12 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -11370,12 +11370,12 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
@@ -32,7 +32,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  CXXLD = $(CXX)
  CXXLINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(AM_CXXFLAGS) \
-@@ -11774,7 +11774,7 @@ pkgconfigdir := $(libdir)/pkgconfig
+@@ -11780,7 +11780,7 @@ pkgconfigdir := $(libdir)/pkgconfig
  libwebkitgtkincludedir := $(prefix)/include/webkitgtk-@WEBKITGTK_API_VERSION@
  
  # Libraries and support components
@@ -41,7 +41,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  noinst_HEADERS := 
  
  # We have a different library with only the files that require GTK+. It allows us
-@@ -18909,6 +18909,7 @@ pkgconfig_DATA := Source/JavaScriptCore/javascriptcore
+@@ -18918,6 +18918,7 @@ pkgconfig_DATA := Source/JavaScriptCore/javascriptcore
  @OS_GNU_TRUE@version_script = -Wl,--version-script,$(srcdir)/Source/autotools/symbols.filter
  @OS_WIN32_TRUE@version_script = -export-symbols-regex "^(webkit_|k?JS).*"
  libWTF_la_LDFLAGS = \
@@ -49,7 +49,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	$(no_undefined)
  
  libWTF_la_SOURCES = \
-@@ -18917,8 +18918,7 @@ libWTF_la_SOURCES = \
+@@ -18926,8 +18927,7 @@ libWTF_la_SOURCES = \
  libWTF_la_LIBADD = \
  	$(UNICODE_LIBS) \
  	$(GLIB_LIBS) \
@@ -59,7 +59,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  
  libWTF_la_CXXFLAGS = \
  	$(global_cxxflags) \
-@@ -18969,7 +18969,7 @@ libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WE
+@@ -18978,7 +18978,7 @@ libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WE
  	$(javascriptcore_sources)
  
  libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LIBADD = \
@@ -68,7 +68,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	libWTF.la \
  	$(UNICODE_LIBS) \
  	$(GLIB_LIBS) \
-@@ -19002,7 +19002,7 @@ Programs_minidom_LDADD = \
+@@ -19011,7 +19011,7 @@ Programs_minidom_LDADD = \
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  	$(WINMM_LIBS) \
  	-lm \
@@ -77,7 +77,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	-lstdc++
  
  Programs_minidom_LDFLAGS = \
-@@ -19023,7 +19023,7 @@ Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_CXXFLAGS = 
+@@ -19032,7 +19032,7 @@ Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_CXXFLAGS = 
  	$(UNICODE_CFLAGS)
  
  Programs_jsc_@WEBKITGTK_API_MAJOR_VERSION@_LDADD = \
@@ -86,7 +86,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  	$(WINMM_LIBS)
  
-@@ -19262,12 +19262,13 @@ libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_
+@@ -19271,12 +19271,13 @@ libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_
  	$(ZLIB_CFLAGS)
  
  libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LDFLAGS = \
@@ -101,7 +101,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	libWebCore.la \
  	libWebCoreGtk.la \
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
-@@ -19882,7 +19883,7 @@ libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK
+@@ -19891,7 +19892,7 @@ libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK
  	$(no_undefined)
  
  libwebkit2gtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LIBADD = \
@@ -110,7 +110,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	libWebCore.la \
  	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  	libWebCoreGtk.la \
-@@ -20038,7 +20039,7 @@ Programs_WebKitWebProcess_LDFLAGS = \
+@@ -20047,7 +20048,7 @@ Programs_WebKitWebProcess_LDFLAGS = \
  @ENABLE_PLUGIN_PROCESS_TRUE@	$(webkit2_plugin_process_sources)
  
  @ENABLE_PLUGIN_PROCESS_TRUE@Programs_WebKitPluginProcess_LDADD = \
@@ -119,7 +119,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  @ENABLE_PLUGIN_PROCESS_TRUE@	libWebCore.la \
  @ENABLE_PLUGIN_PROCESS_TRUE@	libjavascriptcoregtk-@WEBKITGTK_API_MAJOR_VERSION@.@WEBKITGTK_API_MINOR_VERSION@.la \
  @ENABLE_PLUGIN_PROCESS_TRUE@	libWebCoreGtk2.la \
-@@ -65247,7 +65248,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
+@@ -65284,7 +65285,7 @@ Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WE
  @am__fastdepCXX_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CPPFLAGS) $(CPPFLAGS) $(libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_CXXFLAGS) $(CXXFLAGS) -c -o Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberObject.lo `test -f 'Source/JavaScriptCore/runtime/NumberObject.cpp' || echo '$(srcdir)/'`Source/JavaScriptCore/runtime/NumberObject.cpp
  
  Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo: Source/JavaScriptCore/runtime/NumberPrototype.cpp
@@ -128,7 +128,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Tpo Source/JavaScriptCore/runtime/$(DEPDIR)/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.Plo
  @am__fastdepCXX_FALSE@	$(AM_V_CXX) @AM_BACKSLASH@
  @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='Source/JavaScriptCore/runtime/NumberPrototype.cpp' object='Source/JavaScriptCore/runtime/libjavascriptcoregtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la-NumberPrototype.lo' libtool=yes @AMDEPBACKSLASH@
-@@ -74013,7 +74014,7 @@ install-data-local:
+@@ -74050,7 +74051,7 @@ install-data-local:
  	  if test -n "$(DOC_MODULE_VERSION)"; then \
  	    installdir="$(DESTDIR)$(HTML_DIR)/webkitgtk-$(DOC_MODULE_VERSION)"; \
  	  else \
@@ -137,7 +137,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.16 2012/04/03 15:39:35 landry Exp $
  	  fi; \
  	  $(mkinstalldirs) $${installdir} ; \
  	  for i in $$installfiles; do \
-@@ -74045,7 +74046,7 @@ install-data-local:
+@@ -74082,7 +74083,7 @@ install-data-local:
  @ENABLE_WEBKIT2_TRUE@	      $${installdir}/webkit2gtk-$(DOC_MODULE_VERSION).devhelp2; \
  @ENABLE_WEBKIT2_TRUE@	  fi; \
  @ENABLE_WEBKIT2_TRUE@	fi
