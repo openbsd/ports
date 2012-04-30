@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/30 19:22:08 jasper Exp $
 
 COMMENT=	Arabeyes TrueType Arabic fonts
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ftp.nl.debian.org/debian/pool/main/t/ttf-arabeyes/
+MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/t/ttf-arabeyes/}
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes

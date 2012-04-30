@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/04/30 19:22:08 jasper Exp $
 
 COMMENT=		simple slang-based menu program
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c curses m slang
 
-MASTER_SITES=		http://ftp.de.debian.org/debian/pool/main/p/pdmenu/
+MASTER_SITES=		${MASTER_SITE_DEBIAN:=main/p/pdmenu/}
 
 LIB_DEPENDS=		devel/libslang
 MODULES=		devel/gettext

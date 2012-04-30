@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/19 20:20:42 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/30 19:22:08 jasper Exp $
 
 COMMENT=	Bible reading, browsing, and searching tool
 
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c curses readline
 
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/b/bible-kjv/ \
-		ftp://ftp.de.debian.org/debian/pool/main/b/bible-kjv/
+MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/bible-kjv/}
 
 WRKDIST=	${WRKDIR}/bible-kjv
 

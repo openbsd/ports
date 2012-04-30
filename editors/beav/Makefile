@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 18:00:16 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2012/04/30 19:22:08 jasper Exp $
 
 COMMENT=	binary editor and viewer
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses
 
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/b/beav/
+MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/b/beav/}
 
 WRKDIST=	${WRKDIR}/beav-1.40
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/04/13 10:56:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.46 2012/04/30 19:22:08 jasper Exp $
 
 COMMENT=	graphics file viewer for X11
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_R5CONTRIB}
-MASTER_SITES0=	ftp://ftp.debian.org/debian/pool/main/x/xloadimage/ \
-		ftp://ftp.de.debian.org/debian/pool/main/x/xloadimage/
+MASTER_SITES0=	${MASTER_SITE_DEBIAN:=main/x/xloadimage/}
 
 DISTFILES=	${DISTNAME}.tar.gz \
 		xloadimage_${VERSION}-${REV}.debian.tar.gz:0
