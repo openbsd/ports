@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2012/03/20 19:55:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.46 2012/04/30 17:01:02 rpointel Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	2.1.1
+MODPY_EGG_VERSION =	2.1.2
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
@@ -24,7 +24,7 @@ USE_GROFF =		Yes
 BUILD_DEPENDS =		devel/gettext
 REGRESS_DEPENDS =	${RUN_DEPENDS} \
 			archivers/unzip \
-			textproc/gsed
+			devel/git
 
 FILES =			hgeditor hgweb.cgi
 
