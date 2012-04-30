@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2011/01/18 20:16:18 landry Exp $
-lib/libglade/2.0/libxfce4.so
-@lib lib/libxfcegui4.so.${LIBxfcegui4_VERSION}
