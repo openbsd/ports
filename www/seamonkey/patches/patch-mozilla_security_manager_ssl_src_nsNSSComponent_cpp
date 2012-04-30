@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.8 2012/04/30 15:38:09 landry Exp $
 --- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Tue Mar 13 03:43:40 2012
 +++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Thu Mar 15 08:47:21 2012
 @@ -112,6 +112,7 @@

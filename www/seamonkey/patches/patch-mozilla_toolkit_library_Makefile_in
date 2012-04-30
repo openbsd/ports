@@ -1,26 +1,29 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.7 2012/03/16 21:38:33 landry Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Fri Mar  9 21:29:43 2012
-+++ mozilla/toolkit/library/Makefile.in	Sat Mar 10 13:20:44 2012
-@@ -503,12 +503,6 @@ OS_LIBS += \
- endif
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.8 2012/04/30 15:38:09 landry Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Sat Apr 21 00:40:25 2012
++++ mozilla/toolkit/library/Makefile.in	Wed Apr 25 17:50:16 2012
+@@ -484,6 +484,12 @@ OS_LIBS += \
+   $(NULL)
  endif
  
--ifneq (,$(filter NetBSD OpenBSD,$(OS_ARCH)))
--ifdef MOZ_SYDNEYAUDIO
--EXTRA_DSO_LDOPTS += -lossaudio
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef MOZ_SYDNEYAUDIO
++EXTRA_DSO_LDOPTS += -lsndio
++endif
++endif
++
+ ifeq ($(OS_ARCH),Darwin)
+ ifdef MOZ_SYDNEYAUDIO
+ OS_LIBS += \
+@@ -495,12 +501,6 @@ OS_LIBS += \
+   -framework Foundation \
+   -framework AppKit \
+   $(NULL)
 -endif
 -endif
 -
- ifdef MOZ_PLATFORM_MAEMO
- EXTRA_DSO_LDOPTS += $(MOZ_PLATFORM_MAEMO_LIBS)
+-ifneq (,$(filter NetBSD OpenBSD,$(OS_ARCH)))
+-ifdef MOZ_SYDNEYAUDIO
+-EXTRA_DSO_LDOPTS += -lossaudio
  endif
-@@ -600,6 +594,9 @@ OS_LIBS += $(call EXPAND_LIBNAME,usp10 oleaut32)
  endif
  
- ifeq ($(OS_ARCH),OpenBSD)
-+# GTK2 widget and Sydney audio sndio backends.
-+EXTRA_DSO_LDOPTS += -lsndio
-+
- # Needed by nsAuthGSSAPI
- EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
- endif

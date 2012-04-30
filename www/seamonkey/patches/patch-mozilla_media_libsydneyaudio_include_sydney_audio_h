@@ -1,12 +1,12 @@
-$OpenBSD: patch-mozilla_media_libsydneyaudio_include_sydney_audio_h,v 1.4 2012/03/16 21:38:33 landry Exp $
---- mozilla/media/libsydneyaudio/include/sydney_audio.h.orig	Wed Jan 18 10:43:27 2012
-+++ mozilla/media/libsydneyaudio/include/sydney_audio.h	Sun Jan 22 22:20:44 2012
+$OpenBSD: patch-mozilla_media_libsydneyaudio_include_sydney_audio_h,v 1.5 2012/04/30 15:38:09 landry Exp $
+--- mozilla/media/libsydneyaudio/include/sydney_audio.h.orig	Sat Apr 21 00:40:17 2012
++++ mozilla/media/libsydneyaudio/include/sydney_audio.h	Wed Apr 25 17:50:16 2012
 @@ -48,7 +48,7 @@ async-signal safe.
  #if !defined (WIN32)
  #include <sys/param.h>
  #include <inttypes.h>
 -#if defined(__FreeBSD__) || defined(ANDROID)
-+#if defined(__FreeBSD__) || defined(ANDROID) || defined(__OpenBSD__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(ANDROID)
  #include <sys/endian.h>
  #endif
  #else

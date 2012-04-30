@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_ipc_chromium_src_base_third_party_nspr_prcpucfg_linux_h,v 1.3 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_third_party_nspr_prcpucfg_linux_h,v 1.4 2012/04/30 15:38:09 landry Exp $
 --- mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg_linux.h.orig	Sat May 28 00:43:47 2011
 +++ mozilla/ipc/chromium/src/base/third_party/nspr/prcpucfg_linux.h	Mon May 30 17:12:06 2011
 @@ -42,10 +42,6 @@

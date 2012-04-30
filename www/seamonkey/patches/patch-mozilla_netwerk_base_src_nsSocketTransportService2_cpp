@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.1 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.2 2012/04/30 15:38:09 landry Exp $
 --- mozilla/netwerk/base/src/nsSocketTransportService2.cpp.orig	Tue Mar 13 03:43:37 2012
 +++ mozilla/netwerk/base/src/nsSocketTransportService2.cpp	Thu Mar 15 08:39:59 2012
 @@ -54,14 +54,6 @@

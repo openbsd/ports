@@ -1,0 +1,18 @@
+$OpenBSD: patch-mozilla_js_src_jsprvtd_h,v 1.1 2012/04/30 15:38:09 landry Exp $
+--- mozilla/js/src/jsprvtd.h.orig	Sat Apr 21 00:40:08 2012
++++ mozilla/js/src/jsprvtd.h	Wed Apr 25 19:01:18 2012
+@@ -329,12 +329,13 @@ typedef Handle<Value>              HandleValue;
+ 
+ } /* namespace js */
+ 
++#if ENABLE_ASSEMBLER
+ namespace JSC {
+ 
+ class ExecutableAllocator;
+ 
+ } /* namespace JSC */
+-
++#endif
+ namespace WTF {
+ 
+ class BumpPointerAllocator;

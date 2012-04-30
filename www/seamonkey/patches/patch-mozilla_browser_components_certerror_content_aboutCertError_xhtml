@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_browser_components_certerror_content_aboutCertError_xhtml,v 1.4 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_browser_components_certerror_content_aboutCertError_xhtml,v 1.5 2012/04/30 15:38:09 landry Exp $
 --- mozilla/browser/components/certerror/content/aboutCertError.xhtml.orig	Fri Mar  9 21:28:36 2012
 +++ mozilla/browser/components/certerror/content/aboutCertError.xhtml	Sat Mar 10 13:20:26 2012
 @@ -136,6 +136,9 @@

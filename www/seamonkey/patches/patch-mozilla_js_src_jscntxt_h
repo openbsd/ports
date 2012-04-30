@@ -1,15 +1,15 @@
-$OpenBSD: patch-mozilla_js_src_jscntxt_h,v 1.1 2012/03/16 21:38:33 landry Exp $
---- mozilla/js/src/jscntxt.h.orig	Tue Mar 13 03:43:15 2012
-+++ mozilla/js/src/jscntxt.h	Wed Mar 14 22:27:48 2012
-@@ -153,21 +153,27 @@ struct ThreadData {
+$OpenBSD: patch-mozilla_js_src_jscntxt_h,v 1.2 2012/04/30 15:38:09 landry Exp $
+--- mozilla/js/src/jscntxt.h.orig	Sat Apr 21 00:40:08 2012
++++ mozilla/js/src/jscntxt.h	Wed Apr 25 17:50:16 2012
+@@ -221,18 +221,24 @@ struct JSRuntime
       * Both of these allocators are used for regular expression code which is shared at the
       * thread-data level.
       */
 +#if ENABLE_ASSEMBLER
-     JSC::ExecutableAllocator    *execAlloc;
+     JSC::ExecutableAllocator *execAlloc_;
 +#endif
-     WTF::BumpPointerAllocator   *bumpAlloc;
-     js::RegExpPrivateCache      *repCache;
+     WTF::BumpPointerAllocator *bumpAlloc_;
+     js::RegExpPrivateCache *repCache_;
  
 +#if ENABLE_ASSEMBLER
      JSC::ExecutableAllocator *createExecutableAllocator(JSContext *cx);
@@ -19,13 +19,10 @@ $OpenBSD: patch-mozilla_js_src_jscntxt_h,v 1.1 2012/03/16 21:38:33 landry Exp $
  
    public:
 +#if ENABLE_ASSEMBLER
-     JSC::ExecutableAllocator *getOrCreateExecutableAllocator(JSContext *cx) {
-         if (execAlloc)
-             return execAlloc;
- 
-         return createExecutableAllocator(cx);
+     JSC::ExecutableAllocator *getExecutableAllocator(JSContext *cx) {
+         return execAlloc_ ? execAlloc_ : createExecutableAllocator(cx);
      }
 +#endif
- 
-     WTF::BumpPointerAllocator *getOrCreateBumpPointerAllocator(JSContext *cx) {
-         if (bumpAlloc)
+     WTF::BumpPointerAllocator *getBumpPointerAllocator(JSContext *cx) {
+         return bumpAlloc_ ? bumpAlloc_ : createBumpPointerAllocator(cx);
+     }

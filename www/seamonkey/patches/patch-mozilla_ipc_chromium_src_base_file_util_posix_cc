@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_ipc_chromium_src_base_file_util_posix_cc,v 1.3 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_file_util_posix_cc,v 1.4 2012/04/30 15:38:09 landry Exp $
 --- mozilla/ipc/chromium/src/base/file_util_posix.cc.orig	Thu Dec 15 01:22:33 2011
 +++ mozilla/ipc/chromium/src/base/file_util_posix.cc	Mon Dec 19 22:30:24 2011
 @@ -76,8 +76,8 @@ int CountFilesCreatedAfter(const FilePath& path,

@@ -1,24 +1,23 @@
-# $OpenBSD: Makefile,v 1.101 2012/04/24 06:14:53 espie Exp $
+# $OpenBSD: Makefile,v 1.102 2012/04/30 15:38:09 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.8
+MOZILLA_VERSION=	2.9.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-seamonkey-1.3beta1
-ENIG_V =		1.4
-PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
+PKGNAME-lightning =	lightning-seamonkey-1.4beta1
+ENIG_V =		1.4.1
+PKGNAME-enigmail =	enigmail-seamonkey-1.5pre
 EPOCH-lightning =	0
 
-SO_VERSION=	23.0
+SO_VERSION=	24.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -67,6 +66,11 @@ CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
 
+# XXX needed since 2.7b?, relocation overflow otherwise...
+# replaces -g by -Os
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
+.endif
 ALL_TARGET=	default
 
 MOZILLA_AUTOCONF_DIRS =	ldap/sdks/c-sdk mozilla mozilla/js/src
@@ -86,7 +90,7 @@ GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103} \
 	calendar-timezones calendar-timezones@mozilla.org \
-	../bin/enigmail-1.4-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
+	../bin/enigmail-1.5-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/extensions/
 

@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_security_manager_ssl_src_Makefile_in,v 1.4 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mozilla_security_manager_ssl_src_Makefile_in,v 1.5 2012/04/30 15:38:09 landry Exp $
 --- mozilla/security/manager/ssl/src/Makefile.in.orig	Wed Jan 18 10:44:10 2012
 +++ mozilla/security/manager/ssl/src/Makefile.in	Sun Jan 22 22:18:19 2012
 @@ -115,7 +115,10 @@ CSRCS += md4.c

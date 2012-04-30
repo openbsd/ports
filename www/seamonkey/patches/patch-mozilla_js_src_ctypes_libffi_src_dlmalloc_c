@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.3 2012/03/08 12:13:01 ajacoutot Exp $
---- mozilla/js/src/ctypes/libffi/src/dlmalloc.c.orig	Thu Feb 16 09:09:04 2012
-+++ mozilla/js/src/ctypes/libffi/src/dlmalloc.c	Wed Mar  7 00:13:44 2012
+$OpenBSD: patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c,v 1.4 2012/04/30 15:38:09 landry Exp $
+--- mozilla/js/src/ctypes/libffi/src/dlmalloc.c.orig	Thu Feb 16 05:25:02 2012
++++ mozilla/js/src/ctypes/libffi/src/dlmalloc.c	Tue Mar  6 13:23:24 2012
 @@ -2517,7 +2517,6 @@ static int init_mparams(void) {
  
  #if (FOOTERS && !INSECURE)

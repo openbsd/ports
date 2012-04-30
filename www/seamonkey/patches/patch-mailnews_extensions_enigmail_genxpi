@@ -1,4 +1,4 @@
-$OpenBSD: patch-mailnews_extensions_enigmail_genxpi,v 1.4 2012/03/16 21:38:33 landry Exp $
+$OpenBSD: patch-mailnews_extensions_enigmail_genxpi,v 1.5 2012/04/30 15:38:09 landry Exp $
 Remove ABI=xxx marker and xpcomAbi from lib naming.
 --- mailnews/extensions/enigmail/genxpi.orig	Mon Aug 15 17:59:15 2011
 +++ mailnews/extensions/enigmail/genxpi	Tue Sep 27 18:59:33 2011

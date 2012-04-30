@@ -1,0 +1,15 @@
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.1 2012/04/30 15:38:09 landry Exp $
+Don't install the sdk
+--- suite/installer/Makefile.in.orig	Thu Apr 26 20:29:23 2012
++++ suite/installer/Makefile.in	Thu Apr 26 20:29:41 2012
+@@ -150,10 +150,6 @@ NON_OMNIJAR_FILES = \
+ 	defaults/profile/panels.rdf \
+ 	$(NULL)
+ 
+-ifndef LIBXUL_SDK
+-INSTALL_SDK = 1
+-endif
+- 
+ GENERATE_CACHE=1
+ 
+ include $(MOZILLA_SRCDIR)/toolkit/mozapps/installer/packager.mk

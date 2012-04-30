@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.7 2012/03/16 21:38:33 landry Exp $
---- mozilla/browser/app/profile/firefox.js.orig	Fri Mar  9 21:28:36 2012
-+++ mozilla/browser/app/profile/firefox.js	Sat Mar 10 13:20:26 2012
+$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.8 2012/04/30 15:38:09 landry Exp $
+--- mozilla/browser/app/profile/firefox.js.orig	Sat Apr 21 00:39:54 2012
++++ mozilla/browser/app/profile/firefox.js	Wed Apr 25 17:49:59 2012
 @@ -152,7 +152,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
  pref("app.update.certs.2.commonName", "aus3.mozilla.org");
  
@@ -10,7 +10,16 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.7 2012/03/16 21:38:33
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
-@@ -708,10 +708,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+@@ -589,7 +589,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
+ pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
+ 
+ // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
+-pref("plugins.hide_infobar_for_missing_plugin", false);
++pref("plugins.hide_infobar_for_missing_plugin", true);
+ pref("plugins.hide_infobar_for_outdated_plugin", false);
+ 
+ #ifdef XP_MACOSX
+@@ -713,10 +713,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
  // Safe browsing does nothing unless this pref is set
@@ -23,7 +32,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.7 2012/03/16 21:38:33
  
  // Non-enhanced mode (local url lists) URL list to check for updates
  pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -765,10 +765,8 @@ pref("browser.EULA.version", 3);
+@@ -770,10 +770,8 @@ pref("browser.EULA.version", 3);
  pref("browser.rights.version", 3);
  pref("browser.rights.3.shown", false);
  
