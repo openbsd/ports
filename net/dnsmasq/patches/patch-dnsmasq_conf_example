@@ -1,6 +1,6 @@
-$OpenBSD: patch-dnsmasq_conf_example,v 1.1 2009/06/14 17:07:25 kili Exp $
---- dnsmasq.conf.example.orig	Mon Jun  8 23:05:30 2009
-+++ dnsmasq.conf.example	Sat Jun 13 12:34:06 2009
+$OpenBSD: patch-dnsmasq_conf_example,v 1.2 2012/04/30 06:02:51 ajacoutot Exp $
+--- dnsmasq.conf.example.orig	Mon Apr 16 12:26:19 2012
++++ dnsmasq.conf.example	Mon Apr 16 20:42:36 2012
 @@ -2,7 +2,7 @@
  #
  # Format is one option per line, legal options are the same
@@ -8,5 +8,5 @@ $OpenBSD: patch-dnsmasq_conf_example,v 1.1 2009/06/14 17:07:25 kili Exp $
 -# "/usr/sbin/dnsmasq --help" or "man 8 dnsmasq" for details.
 +# "${LOCALBASE}/sbin/dnsmasq --help" or "man 8 dnsmasq" for details.
  
- # The following two options make you a better netizen, since they
- # tell dnsmasq to filter out queries which the public DNS cannot
+ # Listen on this specific port instead of the standard DNS port
+ # (53). Setting this to zero completely disables DNS function,

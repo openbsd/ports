@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: dnsmasq.rc,v 1.1 2012/04/30 06:02:51 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/dnsmasq"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
