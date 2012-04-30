@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2012/04/30 13:12:15 espie Exp $
 
 COMMENT =		simple distributed software configuration management
 
@@ -36,8 +36,7 @@ CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	--static --with-openssl=none
 .endif
 
-REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS} \
-			databases/sqlite3
+REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 do-regress:
 	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil
