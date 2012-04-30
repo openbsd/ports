@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.88 2012/04/30 13:07:58 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2012/04/30 13:08:18 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
 COMMENT-eximon =	X11 monitor tool for Exim MTA
 VERSION =		4.77
-REVISION =		0
+REVISION =		1
 DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
