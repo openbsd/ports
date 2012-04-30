@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/03 22:32:21 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2012/04/30 13:26:39 landry Exp $
 @comment lib/thunarx-2/thunar-archive-plugin.a
 @comment lib/thunarx-2/thunar-archive-plugin.la
+lib/thunarx-2/thunar-archive-plugin.so
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/file-roller.tap
 libexec/thunar-archive-plugin/gnome-file-roller.tap

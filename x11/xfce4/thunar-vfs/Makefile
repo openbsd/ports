@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/01/03 22:04:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/04/30 13:26:39 landry Exp $
 
 COMMENT =	Thunar old vfs compat
 
 XFCE_PROJECT =	thunar-vfs
 XFCE_VERSION =	1.2.0
 SHARED_LIBS +=  thunar-vfs-1              5.2 # 5.1
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,6 +32,6 @@ WANTLIB += gamin-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
-WANTLIB += xcb-aux xcb-render xcb-shm xfce4util z
+WANTLIB += xcb-aux xcb-render xcb-shm xfce4util z stdc++
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/12/03 22:32:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/30 13:26:39 landry Exp $
 @conflict thunar-vcs-plugin-*
-%%SHARED%%
 @comment lib/thunarx-2/thunar-vcs-plugin.a
 @comment lib/thunarx-2/thunar-vcs-plugin.la
+lib/thunarx-2/thunar-vcs-plugin.so
 @bin libexec/tvp-git-helper
 @bin libexec/tvp-svn-helper
 share/icons/hicolor/24x24/apps/git.png

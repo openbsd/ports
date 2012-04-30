@@ -1,21 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/26 18:44:29 landry Exp $
-%%SHARED%%
-lib/thunarx-2/
+@comment $OpenBSD: PLIST,v 1.6 2012/04/30 13:26:39 landry Exp $
 @comment lib/thunarx-2/thunar-media-tags-plugin.a
 @comment lib/thunarx-2/thunar-media-tags-plugin.la
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
+lib/thunarx-2/thunar-media-tags-plugin.so
 share/locale/ar/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ca/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/cs/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/da/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/de/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/el/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/es/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/eu/LC_MESSAGES/thunar-media-tags-plugin.mo
@@ -27,34 +20,22 @@ share/locale/hu/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/id/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/it/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ja/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/lv/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/nb/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/nl/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/pl/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/pt/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/sk/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/sv/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/tr/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/uk/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/thunar-media-tags-plugin.mo
-share/locale/ur_PK/
-share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/thunar-media-tags-plugin.mo
