@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/04/30 14:54:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2012/04/30 14:54:55 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,8 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.4.10
 DOC_VERSION = 	2.2.0
 EXTRACT_SUFX =	.tar.bz2
+
+REVISION=	0
 
 SHARED_LIBS +=  gnc-qof              1.4      # 1.4
 SHARED_LIBS +=  gnc-core-utils       0.0      # unknown
