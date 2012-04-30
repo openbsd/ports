@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/03/29 07:22:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/04/30 11:28:27 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -248,7 +248,7 @@ share/anjuta/class-templates/cc-source.tpl
 share/anjuta/class-templates/go-header.tpl
 share/anjuta/class-templates/go-source.tpl
 share/anjuta/class-templates/js-source.tpl
-share/anjuta/class-templates/py-source.tpl
+share/anjuta/class-templates/${MODPY_PY_PREFIX}source.tpl
 share/anjuta/class-templates/vala-source.tpl
 share/anjuta/gdb.init
 share/anjuta/glade/
