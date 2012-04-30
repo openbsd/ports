@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/26 18:40:14 landry Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2012/04/30 12:50:14 landry Exp $
 include/tumbler-1/
 include/tumbler-1/tumbler/
 include/tumbler-1/tumbler/tumbler-abstract-thumbnailer.h
@@ -21,33 +20,37 @@ include/tumbler-1/tumbler/tumbler-util.h
 include/tumbler-1/tumbler/tumbler.h
 lib/libtumbler-1.a
 lib/libtumbler-1.la
-lib/pkgconfig/
+@lib lib/libtumbler-1.so.${LIBtumbler-1_VERSION}
 lib/pkgconfig/tumbler-1.pc
 lib/tumbler-1/
 lib/tumbler-1/plugins/
 lib/tumbler-1/plugins/cache/
+lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
 @comment lib/tumbler-1/plugins/cache/tumbler-xdg-cache.a
 @comment lib/tumbler-1/plugins/cache/tumbler-xdg-cache.la
+lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
+@comment lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.a
+@comment lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
 @comment lib/tumbler-1/plugins/tumbler-font-thumbnailer.a
 @comment lib/tumbler-1/plugins/tumbler-font-thumbnailer.la
-@comment lib/tumbler-1/plugins/tumbler-gst-thumbnailer.a
-@comment lib/tumbler-1/plugins/tumbler-gst-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
 @comment lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.a
 @comment lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
 @comment lib/tumbler-1/plugins/tumbler-odf-thumbnailer.a
 @comment lib/tumbler-1/plugins/tumbler-odf-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-odf-thumbnailer.so
 @comment lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.a
 @comment lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
 @comment lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.a
 @comment lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.la
+lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
 @bin lib/tumbler-1/tumblerd
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.xfce.Tumbler.Cache1.service
 share/dbus-1/services/org.xfce.Tumbler.Manager1.service
 share/dbus-1/services/org.xfce.Tumbler.Thumbnailer1.service
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/tumbler/
 share/gtk-doc/html/tumbler/api-index-full.html
 share/gtk-doc/html/tumbler/extension-api.html
@@ -74,22 +77,15 @@ share/gtk-doc/html/tumbler/tumbler-tumbler-provider-factory.html
 share/gtk-doc/html/tumbler/tumbler-tumbler-provider-plugin.html
 share/gtk-doc/html/tumbler/tumbler.devhelp2
 share/gtk-doc/html/tumbler/up.png
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/tumbler.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/tumbler.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
+share/locale/bg/LC_MESSAGES/tumbler.mo
 share/locale/bn/LC_MESSAGES/tumbler.mo
 share/locale/ca/LC_MESSAGES/tumbler.mo
 share/locale/cs/LC_MESSAGES/tumbler.mo
 share/locale/da/LC_MESSAGES/tumbler.mo
 share/locale/de/LC_MESSAGES/tumbler.mo
 share/locale/el/LC_MESSAGES/tumbler.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/tumbler.mo
 share/locale/es/LC_MESSAGES/tumbler.mo
 share/locale/eu/LC_MESSAGES/tumbler.mo
@@ -99,40 +95,28 @@ share/locale/gl/LC_MESSAGES/tumbler.mo
 share/locale/he/LC_MESSAGES/tumbler.mo
 share/locale/hu/LC_MESSAGES/tumbler.mo
 share/locale/id/LC_MESSAGES/tumbler.mo
-share/locale/is/
-share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/tumbler.mo
 share/locale/it/LC_MESSAGES/tumbler.mo
 share/locale/ja/LC_MESSAGES/tumbler.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/tumbler.mo
 share/locale/ko/LC_MESSAGES/tumbler.mo
+share/locale/lt/LC_MESSAGES/tumbler.mo
 share/locale/lv/LC_MESSAGES/tumbler.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/tumbler.mo
 share/locale/nb/LC_MESSAGES/tumbler.mo
 share/locale/nl/LC_MESSAGES/tumbler.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
+share/locale/nn/LC_MESSAGES/tumbler.mo
 share/locale/pa/LC_MESSAGES/tumbler.mo
 share/locale/pl/LC_MESSAGES/tumbler.mo
 share/locale/pt/LC_MESSAGES/tumbler.mo
 share/locale/pt_BR/LC_MESSAGES/tumbler.mo
 share/locale/ro/LC_MESSAGES/tumbler.mo
 share/locale/ru/LC_MESSAGES/tumbler.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/tumbler.mo
 share/locale/sk/LC_MESSAGES/tumbler.mo
 share/locale/sv/LC_MESSAGES/tumbler.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/tumbler.mo
 share/locale/tr/LC_MESSAGES/tumbler.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/tumbler.mo
 share/locale/uk/LC_MESSAGES/tumbler.mo
 share/locale/zh_CN/LC_MESSAGES/tumbler.mo
