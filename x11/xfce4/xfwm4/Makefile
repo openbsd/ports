@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.37 2011/12/26 18:38:01 landry Exp $
+# $OpenBSD: Makefile,v 1.38 2012/04/30 13:01:51 landry Exp $
 
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
-XFCE_VERSION=	4.8.3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
 
-LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.8.0 \
+LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.9.0 \
 		devel/libwnck \
 		x11/xfce4/xfconf>=4.8.0
 
