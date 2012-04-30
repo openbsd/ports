@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/04 17:52:52 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/04/30 13:11:17 landry Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 
-V =		4.8
+V =		4.10
 PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
@@ -16,7 +16,6 @@ MULTI_PACKAGES =	-main -extras
 # minimal dependencies for a working desktop
 # will install garcon/exo/libxfce4util/libxfce4ui
 RUN_DEPENDS-main += \
-		x11/xfce4/xfce-utils \
 		x11/xfce4/xfce4-panel \
 		x11/xfce4/xfce4-session \
 		x11/xfce4/xfce4-settings \
@@ -39,7 +38,7 @@ RUN_DEPENDS-main += \
 		x11/xfce4/mousepad \
 		x11/xfce4/xfce4-appfinder \
 		x11/xfce4/xfce4-mixer \
-		x11/xfce4/xfce4-notifyd \
+		xfce4-notifyd-*|notification-daemon-xfce-*:x11/xfce4/xfce4-notifyd \
 		x11/xfce4/xfce4-taskmanager \
 		x11/xfce4/tumbler
 
@@ -53,7 +52,6 @@ RUN_DEPENDS-extras += \
 RUN_DEPENDS-extras += \
 		x11/xfce4/thunar-archive \
 		x11/xfce4/thunar-media-tags \
-		x11/xfce4/thunar-thumbnailers \
 		x11/xfce4/thunar-vcs
 
 # panel plugins

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.1.1.1 2012/03/04 17:52:52 landry Exp $
+$OpenBSD: README-main,v 1.2 2012/04/30 13:11:17 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,13 +25,27 @@ the computer, provided you have the needed sudo credentials.
 If you don't want to have to enter your password, simply add this line
 to the /etc/sudoers file using visudo:
 
-$your_username ALL=NOPASSWD: ${LOCALBASE}/libexec/xfsm-shutdown-helper
+$your_username ALL=NOPASSWD: ${LOCALBASE}/lib/xfce4/session/xfsm-shutdown-helper
+
+An alternative is to use consolekit and policykit, but you'll need to
+run a systemwide D-BUS service (add dbus_daemon to pkg_scripts in
+rc.local) and pass --with-ck-launch argument to startxfce4. If you run
+a systemwide D-BUS service, have consolekit/policykit installed and
+don't use --with-ck-launch you will not be able to shutdown/reboot.
 
 Power management
 ================
 If you use Xfce on a laptop, you can install xfce4-power-manager
 package, which will provide battery levels/information, and will allow
-to configure actions upon low battery level or AC plugging.
+to configure actions upon low battery level or AC plugging. If using
+consolekit and policykit, it will also allow you to suspend the laptop
+from the logout dialog.
+
+Screensaver management
+======================
+xflock4 can make use of xscreensaver or gnome-screensaver. If installed,
+a 'Screensaver' icon will appear in settings manager/menu. Otherwise,
+xflock4 defaults to call xlock.
 
 Thunar file manager tips
 ========================
