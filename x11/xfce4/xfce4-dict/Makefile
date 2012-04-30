@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/12/03 22:39:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/04/30 13:29:03 landry Exp $
 
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	xfce4-dict
-REVISION=	5
+REVISION=	6
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -30,6 +30,6 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
-WANTLIB += xfce4panel-1.0 xfce4util xfcegui4 z
+WANTLIB += xfce4panel-1.0 xfce4util xfcegui4 z stdc++
 
 .include <bsd.port.mk>

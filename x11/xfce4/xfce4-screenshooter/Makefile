@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/12/03 22:39:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/30 13:29:04 landry Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.7.9
 XFCE_GOODIE=	xfce4-screenshooter
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -28,6 +28,6 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 startup-notification-1 xcb xcb-aux xcb-render
-WANTLIB += xcb-shm xfce4panel-1.0 xfce4util xfcegui4 xml2 z
+WANTLIB += xcb-shm xfce4panel-1.0 xfce4util xfcegui4 xml2 z stdc++
 
 .include <bsd.port.mk>

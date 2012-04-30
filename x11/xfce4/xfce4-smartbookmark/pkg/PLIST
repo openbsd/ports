@@ -1,19 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/26 18:42:13 landry Exp $
-%%SHARED%%
-lib/xfce4/
+@comment $OpenBSD: PLIST,v 1.5 2012/04/30 13:29:04 landry Exp $
 lib/xfce4/panel-plugins/
 @comment lib/xfce4/panel-plugins/libsmartbookmark.a
 @comment lib/xfce4/panel-plugins/libsmartbookmark.la
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
+lib/xfce4/panel-plugins/libsmartbookmark.so
 share/locale/ast/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/eu/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
@@ -31,23 +26,14 @@ share/locale/pt/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/locale/ur_PK/
-share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-smartbookmark-plugin.mo
-share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/smartbookmark.desktop

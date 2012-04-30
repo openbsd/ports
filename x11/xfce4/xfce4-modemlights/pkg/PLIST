@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/04 04:18:39 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/04/30 13:29:04 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 @bin libexec/xfce4/panel-plugins/xfce4-modemlights-plugin
@@ -13,10 +13,8 @@ share/locale/nl/LC_MESSAGES/xfce4-modemlights-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-modemlights-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-modemlights-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-modemlights-plugin.mo
-share/pixmaps/
 share/pixmaps/modem-connected.png
 share/pixmaps/modem-dialing.png
 share/pixmaps/modem-disconnected.png
-share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/modemlights.desktop

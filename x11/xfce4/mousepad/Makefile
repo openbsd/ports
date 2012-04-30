@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/04/30 13:29:03 landry Exp $
 
 COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.2.16
 XFCE_GOODIE=	mousepad
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://www.xfce.org/projects/mousepad
 # GPLv2
@@ -24,7 +24,7 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
-		xcb-aux xfcegui4 X11-xcb ffi \
+		xcb-aux xfcegui4 X11-xcb ffi stdc++ \
 		gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
 
 .include <bsd.port.mk>

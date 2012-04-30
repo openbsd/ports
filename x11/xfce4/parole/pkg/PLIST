@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/12/03 22:32:21 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2012/04/30 13:29:03 landry Exp $
 @bin bin/parole
 include/parole/
 include/parole/parole-debug.h
@@ -13,27 +12,18 @@ include/parole/parole.h
 lib/parole-0/
 @comment lib/parole-0/stream-properties.a
 @comment lib/parole-0/stream-properties.la
+lib/parole-0/stream-properties.so
 @comment lib/parole-0/tray-icon.a
 @comment lib/parole-0/tray-icon.la
+lib/parole-0/tray-icon.so
 @comment lib/parole-0/window-title.a
 @comment lib/parole-0/window-title.la
+lib/parole-0/window-title.so
 share/applications/parole.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/parole.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/parole.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/parole.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/parole.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/parole.svg
 share/locale/ast/LC_MESSAGES/parole.mo
 share/locale/ca/LC_MESSAGES/parole.mo

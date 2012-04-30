@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/04/30 13:29:04 landry Exp $
 
 COMMENT=	Xfce4 task manager and system monitor
 
 XFCE_VERSION=	1.0.0
 XFCE_GOODIE=	xfce4-taskmanager
-REVISION=	4
+REVISION=	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -25,6 +25,6 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 wnck-1 xcb xcb-aux xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z stdc++
 
 .include <bsd.port.mk>

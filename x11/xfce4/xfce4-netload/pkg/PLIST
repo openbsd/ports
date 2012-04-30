@@ -1,20 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/01/13 19:42:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/04/30 13:29:04 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 @bin libexec/xfce4/panel-plugins/xfce4-netload-plugin
 share/icons/hicolor/24x24/apps/xfce4-netload-plugin.png
 share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/da/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/de/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/eo/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/es/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -27,42 +23,27 @@ share/locale/hu/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ko/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/nb/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/xfce4-netload-plugin.mo
-share/locale/ur_PK/
-share/locale/ur_PK/LC_MESSAGES/
 share/locale/ur_PK/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-netload-plugin.mo
-share/xfce4/
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/netload.desktop
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true

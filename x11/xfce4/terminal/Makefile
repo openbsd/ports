@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/12/03 22:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2012/04/30 13:29:03 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -6,7 +6,7 @@ XFCE_VERSION=	0.4.8
 XFCE_GOODIE=	Terminal
 # :L is here for a reason
 PKGNAME=	xfce4-${DISTNAME:L}
-REVISION=	4
+REVISION=	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -31,6 +31,6 @@ WANTLIB=	X11 atk-1.0 c dbus-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		gmodule-2.0 gthread-2.0 m ncurses pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		xcb xcb-render GL Xxf86vm drm xcb-shm z exo-1 dbus-glib-1 vte \
-		glib-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 xfce4util ffi
+		glib-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 xfce4util ffi stdc++ util
 
 .include <bsd.port.mk>

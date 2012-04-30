@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2011/10/14 12:22:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2012/04/30 13:29:04 landry Exp $
 
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
-REVISION=	1
+XFCE_VERSION=	4.8.0
+REVISION=	2
 HOMEPAGE=	http://www.xfce.org/projects/xfce4-mixer
 
 # GPLv2
@@ -34,6 +35,6 @@ WANTLIB += gstinterfaces-0.10 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1 xcb
 WANTLIB += xcb-aux xcb-render xcb-shm xfce4panel-1.0 xfce4ui-1
-WANTLIB += xfce4util xfconf-0 xml2 z
+WANTLIB += xfce4util xfconf-0 xml2 z gstpbutils-0.10 stdc++
 
 .include <bsd.port.mk>

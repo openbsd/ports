@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2009/03/08 17:21:56 landry Exp $
-@lib lib/libxfprint.so.${LIBxfprint_VERSION}
-lib/xfce4/xfprint-plugins/bsdlpr_plugin.so
-lib/xfce4/xfprint-plugins/cups_plugin.so
