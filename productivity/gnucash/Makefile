@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/03/29 14:57:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2012/04/30 14:54:09 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -69,6 +69,11 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
 MODGNOME_CPPFLAGS =	-I${X11BASE}/include
+# configure checks for pthread_mutex_init(3)
+MODGNOME_LDFLAGS =	-pthread
+
+# see patch-src_core-utils_gnc-path_c
+CFLAGS +=	-DGCONFDIR='\"/var/db\"'
 
 FAKE_FLAGS =	sysconfdir=${PREFIX}/share/examples/
 
