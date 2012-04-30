@@ -1,12 +1,62 @@
-$OpenBSD: patch-lib_codec_ffmpeg_c,v 1.1 2010/06/18 17:32:21 sebastia Exp $
---- lib/codec_ffmpeg.c.orig	Sat Nov 14 14:01:02 2009
-+++ lib/codec_ffmpeg.c	Sat Nov 14 14:02:59 2009
-@@ -25,6 +25,8 @@
+$OpenBSD: patch-lib_codec_ffmpeg_c,v 1.2 2012/04/30 09:48:21 sebastia Exp $
+
+Update for newer FFmpeg API.
+
+--- lib/codec_ffmpeg.c.orig	Mon Apr  7 12:05:42 2008
++++ lib/codec_ffmpeg.c	Sat Apr 28 23:31:52 2012
+@@ -23,11 +23,7 @@
+ #include "codec_ffmpeg.h"
+ #include "iaxclient_lib.h"
  
- #ifdef WIN32
+-#ifdef WIN32
  #include "libavcodec/avcodec.h"
-+#elif defined(__OpenBSD__) 
-+#include "libavcodec/avcodec.h"
- #else
- #include <ffmpeg/avcodec.h>
- #endif
+-#else
+-#include <ffmpeg/avcodec.h>
+-#endif
+ 
+ struct slice_header_t
+ {
+@@ -165,10 +161,14 @@ static int pass_frame_to_decoder(AVCodecContext * avct
+ {
+ 	int bytes_decoded;
+ 	int got_picture;
++	AVPacket pkt;
+ 
+-	bytes_decoded = avcodec_decode_video(avctx, picture, &got_picture,
+-			in, inlen);
++	pkt.data = in;
++	pkt.size = inlen;
+ 
++	bytes_decoded = avcodec_decode_video2(avctx, picture, &got_picture,
++			&pkt);
++
+ 	if ( bytes_decoded != inlen )
+ 	{
+ 		fprintf(stderr,
+@@ -309,10 +309,14 @@ static int decode_rtp_slice(struct iaxc_video_codec * 
+ 	{
+ 		int bytes_decoded;
+ 		int got_picture;
++		AVPacket pkt;
+ 
+-		bytes_decoded = avcodec_decode_video(d->avctx, d->picture,
+-				&got_picture, (unsigned char *)in, inlen);
++		pkt.data = (unsigned char *)in;
++		pkt.size = inlen;
+ 
++		bytes_decoded = avcodec_decode_video2(d->avctx, d->picture,
++				&got_picture, &pkt);
++
+ 		if ( bytes_decoded < 0 )
+ 		{
+ 			fprintf(stderr,
+@@ -523,9 +527,6 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 	e->avctx->gop_size = framerate * 3;
+ 	e->avctx->pix_fmt = PIX_FMT_YUV420P;
+ 	e->avctx->has_b_frames = 0;
+-
+-	e->avctx->mb_qmin = e->avctx->qmin = 10;
+-	e->avctx->mb_qmax = e->avctx->qmax = 10;
+ 
+ 	e->avctx->lmin = 2 * FF_QP2LAMBDA;
+ 	e->avctx->lmax = 10 * FF_QP2LAMBDA;
