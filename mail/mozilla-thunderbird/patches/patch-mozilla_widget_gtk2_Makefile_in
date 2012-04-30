@@ -1,0 +1,15 @@
+$OpenBSD: patch-mozilla_widget_gtk2_Makefile_in,v 1.1 2012/04/30 15:32:06 landry Exp $
+--- mozilla/widget/gtk2/Makefile.in.orig	Sat Apr 21 00:40:26 2012
++++ mozilla/widget/gtk2/Makefile.in	Wed Apr 25 17:50:16 2012
+@@ -53,6 +53,11 @@ LIBXUL_LIBRARY = 1
+ NATIVE_THEME_SUPPORT = 1
+ 
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef MOZ_SYDNEYAUDIO
++EXTRA_DSO_LDOPTS += -lsndio
++endif
++endif
+ 
+ CSRCS		= \
+ 		mozcontainer.c \

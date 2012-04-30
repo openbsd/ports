@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.4 2012/03/16 21:35:25 landry Exp $
---- mozilla/js/src/Makefile.in.orig	Fri Mar  9 21:28:55 2012
-+++ mozilla/js/src/Makefile.in	Sat Mar 10 13:20:44 2012
-@@ -361,15 +361,20 @@ CPPSRCS += 	checks.cc \
+$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.5 2012/04/30 15:32:06 landry Exp $
+--- mozilla/js/src/Makefile.in.orig	Sat Apr 21 00:40:07 2012
++++ mozilla/js/src/Makefile.in	Wed Apr 25 17:50:15 2012
+@@ -354,15 +354,20 @@ CPPSRCS += 	checks.cc \
  
- ifeq (,$(filter arm% sparc %86 x86_64,$(TARGET_CPU)))
+ ifeq (,$(filter arm% sparc %86 x86_64 mips%,$(TARGET_CPU)))
  
 -VPATH +=        $(srcdir)/yarr/pcre \
 +VPATH +=        $(srcdir)/assembler \
@@ -28,7 +28,7 @@ $OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.4 2012/03/16 21:35:25 landry Exp 
  		$(NULL)
  else
  
-@@ -921,10 +926,10 @@ endif
+@@ -896,10 +901,10 @@ endif
  # Needed to "configure" it correctly.  Unfortunately these
  # flags wind up being applied to all code in js/src, not just
  # the code in js/src/assembler.
