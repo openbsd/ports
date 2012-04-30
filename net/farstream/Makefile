@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/08 15:39:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/04/30 09:38:37 ajacoutot Exp $
 
 COMMENT=		audio/video communications framework
 
 DISTNAME=		farstream-0.1.2
 CATEGORIES=		net devel
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  farstream-0.1        0.0      # 0.1
 
@@ -31,8 +31,7 @@ WANTLIB += pcre soup-2.4 xml2 z
 BUILD_DEPENDS=		devel/gobject-introspection \
 			multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
-			net/gupnp/igd \
-			net/libnice
+			net/libnice>=0.1.2
 RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer
 
 USE_GMAKE=		Yes
