@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2011/03/07 19:22:02 ajacoutot Exp $
-@lib lib/libexo-1.so.${LIBexo-1_VERSION}
