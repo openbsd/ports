@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/01/09 18:25:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/04/30 17:04:28 jasper Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -30,7 +30,8 @@ WANTLIB-main += gd>=20 z
 WANTLIB-python += ${cWANTLIB}
 WANTLIB-python += pst>=1 util boost_python
 
-MASTER_SITES=		${HOMEPAGE}/packages/
+MASTER_SITES=		${HOMEPAGE}/packages/ \
+			http://distfiles.nl/
 
 MULTI_PACKAGES=		-main -python
 
