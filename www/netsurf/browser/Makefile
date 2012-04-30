@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/12 03:17:08 bentley Exp $
+# $OpenBSD: Makefile,v 1.11 2012/04/30 07:11:58 bentley Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	2.8
+NETSURF_VERSION =	2.9
 
 CATEGORIES=		www
 
@@ -17,14 +17,15 @@ LIB_DEPENDS =		www/netsurf/hubbub>=0.1.0 \
 			www/netsurf/libnsgif>=0.0.3 \
 			www/netsurf/libnsbmp>=0.0.3 \
 			graphics/libmng \
+			graphics/libwebp \
 			x11/gtk+2 \
 			devel/libglade2 \
 			x11/gnome/librsvg \
 			net/curl
 
 WANTLIB +=		atk-1.0 cairo gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB +=		gthread-2.0 jpeg lcms pango-1.0 pangocairo-1.0
-WANTLIB +=		pangoft2-1.0 parserutils png wapcaplet xml2
+WANTLIB +=		gthread-2.0 jpeg lcms pango-1.0 pangocairo-1.0 pcre
+WANTLIB +=		pangoft2-1.0 parserutils png wapcaplet xml2 webp
 WANTLIB += 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += 		Xi Xinerama Xrandr Xrender c crypto expat fontconfig
 WANTLIB += 		freetype m pixman-1 pthread pthread-stubs ssl xcb
@@ -39,6 +40,7 @@ do-configure:
 		"NETSURF_USE_LIBICONV_PLUG := NO\n" \
 		"NETSURF_USE_RSVG := YES\n" \
 		"NETSURF_USE_NSSVG := NO\n" \
-		"NETSURF_USE_ROSPRITE := NO" > ${WRKSRC}/Makefile.config
+		"NETSURF_USE_ROSPRITE := NO\n" \
+		"NETSURF_USE_WEBP := YES" > ${WRKSRC}/Makefile.config
 
 .include <bsd.port.mk>
