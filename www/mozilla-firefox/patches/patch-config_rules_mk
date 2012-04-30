@@ -1,9 +1,9 @@
-$OpenBSD: patch-config_rules_mk,v 1.16 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-config_rules_mk,v 1.17 2012/04/30 15:28:42 landry Exp $
 Add -rpath $(installdir) to be sure libxul/libxpcom can open their
 depending libs when being dlopen()'ed themselves
---- config/rules.mk.orig	Thu Feb  2 00:38:54 2012
-+++ config/rules.mk	Tue Feb 14 18:42:02 2012
-@@ -593,6 +593,14 @@ EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
+--- config/rules.mk.orig	Wed Apr 11 15:54:48 2012
++++ config/rules.mk	Wed Apr 18 22:08:47 2012
+@@ -601,6 +601,14 @@ EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
  endif
  endif
  

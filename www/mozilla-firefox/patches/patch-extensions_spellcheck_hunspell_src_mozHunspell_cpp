@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.8 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.9 2012/04/30 15:28:42 landry Exp $
 --- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Thu Feb  2 00:39:01 2012
 +++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Tue Feb 14 18:42:02 2012
 @@ -64,6 +64,7 @@
@@ -9,7 +9,7 @@ $OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.8 2012/03
  #include "nsDirectoryServiceUtils.h"
  #include "nsDirectoryServiceDefs.h"
  #include "mozISpellI18NManager.h"
-@@ -410,6 +411,16 @@ mozHunspell::LoadDictionaryList()
+@@ -400,6 +401,16 @@ mozHunspell::LoadDictionaryList()
        appDir->AppendNative(NS_LITERAL_CSTRING("dictionaries"));
        LoadDictionariesFromDir(appDir);
      }

@@ -1,10 +1,10 @@
-$OpenBSD: patch-js_src_configure_in,v 1.11 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.12 2012/04/30 15:28:42 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648721
 https://bugzilla.mozilla.org/show_bug.cgi?id=589754
 chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
---- js/src/configure.in.orig	Thu Feb  2 00:39:07 2012
-+++ js/src/configure.in	Tue Feb 14 18:47:32 2012
-@@ -2559,7 +2559,12 @@ ia64*-hpux*)
+--- js/src/configure.in.orig	Wed Apr 11 15:55:00 2012
++++ js/src/configure.in	Wed Apr 18 22:24:28 2012
+@@ -2534,7 +2534,12 @@ ia64*-hpux*)
      ;;
  
  *-openbsd*)
@@ -18,7 +18,7 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2830,7 +2835,7 @@ arm*-*)
+@@ -2805,7 +2810,7 @@ arm*-*)
      AC_DEFINE(JS_CPU_ARM)
      AC_DEFINE(JS_NUNBOX32)
      ;;
@@ -27,35 +27,14 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
      ENABLE_METHODJIT=1
      ENABLE_MONOIC=1
      ENABLE_POLYIC=1
-@@ -2838,6 +2843,10 @@ sparc*-*)
-     AC_DEFINE(JS_CPU_SPARC)
+@@ -2820,6 +2825,10 @@ mips*-*)
+     ENABLE_METHODJIT_TYPED_ARRAY=1
+     AC_DEFINE(JS_CPU_MIPS)
      AC_DEFINE(JS_NUNBOX32)
-     ;;
++    ;;
 +sparc64-*)
 +    AC_DEFINE(AVMPLUS_SPARC)
 +    AC_DEFINE(AVMPLUS_64BIT)
-+    ;;
+     ;;
  esac
  
- MOZ_ARG_DISABLE_BOOL(methodjit,
-@@ -2947,6 +2956,20 @@ MOZ_SIZE_OF_TYPE(JS_BYTES_PER_DOUBLE, double, 6 8 10 1
- MOZ_CHECK_HEADERS(endian.h)
- if test "$ac_cv_header_endian_h" = yes; then
-     AC_DEFINE(JS_HAVE_ENDIAN_H)
-+fi
-+
-+AC_MSG_CHECKING(for machine/endian.h)
-+AC_CACHE_VAL(ac_cv_header_machine_endian_h,
-+ [AC_TRY_COMPILE([#include <sys/types.h>
-+                  #include <machine/endian.h>],
-+                 [int foo = 0;],
-+                 [ac_cv_header_machine_endian_h = yes],
-+                 [ac_cv_header_machine_endian_h = no])])
-+if test "$ac_cv_header_machine_endian_h" = yes; then
-+    AC_DEFINE(JS_HAVE_MACHINE_ENDIAN_H)
-+    AC_MSG_RESULT(yes)
-+else
-+    AC_MSG_RESULT(no)
- fi
- 
- MOZ_CHECK_HEADERS(sys/isa_defs.h)

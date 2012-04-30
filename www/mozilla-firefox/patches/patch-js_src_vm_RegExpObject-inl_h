@@ -1,9 +1,9 @@
-$OpenBSD: patch-js_src_vm_RegExpObject-inl_h,v 1.2 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-js_src_vm_RegExpObject-inl_h,v 1.3 2012/04/30 15:28:42 landry Exp $
 https://bug691898.bugzilla.mozilla.org/attachment.cgi?id=588391
 use yarr interpreter on ppc
---- js/src/vm/RegExpObject-inl.h.orig	Thu Feb  2 00:39:11 2012
-+++ js/src/vm/RegExpObject-inl.h	Tue Feb 14 18:49:53 2012
-@@ -367,6 +367,7 @@ detail::RegExpPrivate::create(JSContext *cx, JSLinearS
+--- js/src/vm/RegExpObject-inl.h.orig	Wed Apr 11 15:55:04 2012
++++ js/src/vm/RegExpObject-inl.h	Wed Apr 18 22:09:15 2012
+@@ -357,6 +357,7 @@ detail::RegExpPrivate::create(JSContext *cx, JSLinearS
      return RetType(priv);
  }
  
@@ -11,7 +11,7 @@ use yarr interpreter on ppc
  /* This function should be deleted once bad Android platforms phase out. See bug 604774. */
  inline bool
  detail::RegExpPrivateCode::isJITRuntimeEnabled(JSContext *cx)
-@@ -377,12 +378,12 @@ detail::RegExpPrivateCode::isJITRuntimeEnabled(JSConte
+@@ -367,12 +368,12 @@ detail::RegExpPrivateCode::isJITRuntimeEnabled(JSConte
      return true;
  #endif
  }
@@ -25,16 +25,16 @@ use yarr interpreter on ppc
      /* Parse the pattern. */
      ErrorCode yarrError;
      YarrPattern yarrPattern(pattern, bool(flags & IgnoreCaseFlag), bool(flags & MultilineFlag),
-@@ -399,7 +400,7 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
+@@ -389,7 +390,7 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
       * case we have to bytecode compile it.
       */
  
 -#ifdef JS_METHODJIT
 +#if ENABLE_YARR_JIT && defined(JS_METHODJIT)
      if (isJITRuntimeEnabled(cx) && !yarrPattern.m_containsBackreferences) {
-         JSC::ExecutableAllocator *execAlloc = cx->threadData()->getOrCreateExecutableAllocator(cx);
+         JSC::ExecutableAllocator *execAlloc = cx->runtime->getExecutableAllocator(cx);
          if (!execAlloc) {
-@@ -420,21 +421,11 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
+@@ -410,21 +411,11 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
          return false;
      }
  
@@ -58,7 +58,7 @@ use yarr interpreter on ppc
  }
  
  inline bool
-@@ -476,18 +467,11 @@ detail::RegExpPrivateCode::execute(JSContext *cx, cons
+@@ -466,18 +457,11 @@ detail::RegExpPrivateCode::execute(JSContext *cx, cons
      else
          result = JSC::Yarr::execute(codeBlock, chars, start, length, output);
  #else

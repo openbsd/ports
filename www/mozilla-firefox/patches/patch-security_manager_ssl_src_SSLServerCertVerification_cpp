@@ -1,12 +1,12 @@
-$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_cpp,v 1.1 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-security_manager_ssl_src_SSLServerCertVerification_cpp,v 1.2 2012/04/30 15:28:42 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
 xpcshell hang during fake
---- security/manager/ssl/src/SSLServerCertVerification.cpp.orig	Mon Mar 12 19:29:40 2012
-+++ security/manager/ssl/src/SSLServerCertVerification.cpp	Mon Mar 12 19:32:39 2012
-@@ -145,23 +145,25 @@ extern PRLogModuleInfo* gPIPNSSLog;
- namespace mozilla { namespace psm {
+--- security/manager/ssl/src/SSLServerCertVerification.cpp.orig	Wed Apr 11 15:55:18 2012
++++ security/manager/ssl/src/SSLServerCertVerification.cpp	Thu Apr 19 10:40:52 2012
+@@ -164,23 +164,25 @@ NS_DEFINE_CID(kNSSComponentCID, NS_NSSCOMPONENT_CID);
+ NSSCleanupAutoPtrClass(CERTCertificate, CERT_DestroyCertificate)
+ NSSCleanupAutoPtrClass_WithParam(PRArenaPool, PORT_FreeArena, FalseParam, false)
  
- namespace {
 +PRCallOnceType gCreateMutexCallOnce;
  // do not use a nsCOMPtr to avoid static initializer/destructor
 +Mutex * gMutex = nsnull;
@@ -39,7 +39,7 @@ xpcshell hang during fake
    // TODO: tuning, make parameters preferences
    // XXX: instantiate nsThreadPool directly, to make this more bulletproof.
    // Currently, the nsThreadPool.h header isn't exported for us to do so.
-@@ -189,10 +191,19 @@ InitializeSSLServerCertVerificationThreads()
+@@ -208,10 +210,19 @@ InitializeSSLServerCertVerificationThreads()
  // nsNSSShutdownPreventionLock where needed (not here) to prevent that.
  void StopSSLServerCertVerificationThreads()
  {
