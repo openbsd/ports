@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2012/04/30 13:07:58 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -64,8 +64,7 @@ WANTLIB-main +=		pq>=2
 
 .if ${FLAVOR:Msqlite3}
 EXIM_MAKECAT +=		"LOOKUP_SQLITE=yes\n"
-EXIM_LOOKUP_LIBS +=	-L${LOCALBASE}/lib/ -lsqlite3
-LIB_DEPENDS-main +=	databases/sqlite3
+EXIM_LOOKUP_LIBS +=	-lsqlite3
 WANTLIB-main +=		sqlite3>=8
 .endif
 
