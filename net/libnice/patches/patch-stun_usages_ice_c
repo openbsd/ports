@@ -1,0 +1,11 @@
+$OpenBSD: patch-stun_usages_ice_c,v 1.1 2012/04/30 09:38:13 ajacoutot Exp $
+--- stun/usages/ice.c.orig	Mon Apr 30 10:44:00 2012
++++ stun/usages/ice.c	Mon Apr 30 10:44:16 2012
+@@ -49,6 +49,7 @@
+ #else
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 

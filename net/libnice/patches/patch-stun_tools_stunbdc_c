@@ -1,19 +1,16 @@
-$OpenBSD: patch-stun_tools_stunbdc_c,v 1.3 2011/03/02 07:32:04 jasper Exp $
---- stun/tools/stunbdc.c.orig	Thu Mar 18 21:02:53 2010
-+++ stun/tools/stunbdc.c	Sat Feb 19 09:45:19 2011
-@@ -41,7 +41,6 @@
+$OpenBSD: patch-stun_tools_stunbdc_c,v 1.4 2012/04/30 09:38:13 ajacoutot Exp $
+--- stun/tools/stunbdc.c.orig	Mon Apr 30 10:41:35 2012
++++ stun/tools/stunbdc.c	Mon Apr 30 10:41:45 2012
+@@ -43,11 +43,11 @@
+ #ifdef _WIN32
+ #  include <winsock2.h>
+ #else
++#  include <sys/types.h>
+ #  include <sys/socket.h>
+ #  include <netdb.h>
  #endif
  
- #ifndef _WIN32
--#include <sys/socket.h>
- #include <netdb.h>
- 
- #include <sys/types.h>
-@@ -54,6 +53,7 @@
- #include <stdlib.h>
- #include <stdio.h>
- #include <string.h>
-+#include <netinet/in.h>
- 
- static int ai_flags = 0;
+-#include <sys/types.h>
+ #include "stun/stunagent.h"
+ #include "stun/usages/bind.h"
  
