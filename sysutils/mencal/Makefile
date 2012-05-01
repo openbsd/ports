@@ -1,20 +1,21 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/15 21:14:02 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/01 05:32:41 gsoares Exp $
 
 COMMENT=	cal that can use color to display calendar
 
-DISTNAME=	mencal-2.3
+DISTNAME=	mencal-2.4
 CATEGORIES=	sysutils
 
-HOMEPAGE=	http://mencal.kyberdigi.cz/english.html
+HOMEPAGE=	http://www.kyberdigi.cz/projects/mencal/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=  Yes
-PERMIT_PACKAGE_FTP=    Yes
-PERMIT_DISTFILES_CDROM=Yes
-PERMIT_DISTFILES_FTP=  Yes
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://mencal.kyberdigi.cz/
+MASTER_SITES=	${HOMEPAGE}files/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
