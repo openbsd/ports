@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/01 20:30:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/01 16:10:07 pascal Exp $
 
 COMMENT =		open source alternative to glut
 DISTNAME =		freeglut-2.6.0
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		glut 4.1
 CATEGORIES =		graphics
 HOMEPAGE =		http://freeglut.sourceforge.net/
