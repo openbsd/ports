@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/06 15:35:08 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/01 15:32:20 merdely Exp $
 
 PKG_ARCH =		*
 
 COMMENT =		Nagios plugin to the status of ESX/i hardware
 
-V =			20120405
+V =			20120501
 DISTNAME =		check_esxi_hardware.py.$V
 PKGNAME =		check_esxi_hardware-$V
 CATEGORIES =		net
