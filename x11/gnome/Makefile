@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2012/05/01 06:49:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.183 2012/05/01 07:39:43 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -34,6 +34,7 @@
      SUBDIR += gdlmm
      SUBDIR += gdm
      SUBDIR += gedit
+     SUBDIR += gedit-code-assistance
      SUBDIR += gedit-cossa
      SUBDIR += gedit-latex
      SUBDIR += gedit-plugins
