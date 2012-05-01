@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/03/29 06:26:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2012/05/01 06:17:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.12.0
+GNOME_VERSION=	0.12.1
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}

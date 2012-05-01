@@ -1,6 +1,6 @@
-$OpenBSD: patch-dbus-1_Makefile_in,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
---- dbus-1/Makefile.in.orig	Mon Mar 19 19:08:42 2012
-+++ dbus-1/Makefile.in	Fri Mar 23 16:06:18 2012
+$OpenBSD: patch-dbus-1_Makefile_in,v 1.6 2012/05/01 06:17:38 ajacoutot Exp $
+--- dbus-1/Makefile.in.orig	Tue May  1 07:09:12 2012
++++ dbus-1/Makefile.in	Tue May  1 07:28:38 2012
 @@ -34,7 +34,7 @@ POST_INSTALL = :
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
@@ -10,7 +10,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
  subdir = dbus-1
  DIST_COMMON = $(dconf_dbus_1include_HEADERS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/dconf-dbus-1.pc.in
-@@ -238,14 +238,14 @@ pkgconfigdir = $(libdir)/pkgconfig
+@@ -239,14 +239,14 @@ pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = dconf-dbus-1.pc
  shlibdir = $(libdir)
  libdconf_dbus_1_so_0_0_0_LDADD = $(glib_LIBS) $(dbus_LIBS)
@@ -27,7 +27,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
  CLEANFILES = libdconf-dbus-1.so.0 libdconf-dbus-1.so
  all: all-am
  
-@@ -320,8 +320,8 @@ uninstall-shlibPROGRAMS:
+@@ -321,8 +321,8 @@ uninstall-shlibPROGRAMS:
  
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
@@ -38,7 +38,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_dbus_1_so_0_0_0_LINK) $(libdconf_dbus_1_so_0_0_0_OBJECTS) $(libdconf_dbus_1_so_0_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -637,14 +637,6 @@ uninstall-am: uninstall-dconf_dbus_1includeHEADERS \
+@@ -638,14 +638,6 @@ uninstall-am: uninstall-dconf_dbus_1includeHEADERS \
  	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
  	uninstall-am uninstall-dconf_dbus_1includeHEADERS \
  	uninstall-hook uninstall-pkgconfigDATA uninstall-shlibPROGRAMS

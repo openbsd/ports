@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.6 2012/03/29 06:26:38 ajacoutot Exp $
---- bin/Makefile.in.orig	Mon Mar 19 19:08:41 2012
-+++ bin/Makefile.in	Fri Mar 23 16:08:11 2012
-@@ -51,7 +51,7 @@ am_dconf_OBJECTS = dconf.$(OBJEXT) dconf-update.$(OBJE
+$OpenBSD: patch-bin_Makefile_in,v 1.7 2012/05/01 06:17:38 ajacoutot Exp $
+--- bin/Makefile.in.orig	Tue May  1 07:09:12 2012
++++ bin/Makefile.in	Tue May  1 07:28:38 2012
+@@ -52,7 +52,7 @@ am_dconf_OBJECTS = dconf.$(OBJEXT) dconf-update.$(OBJE
  	dconf-dump.$(OBJEXT) gvdb-builder.$(OBJEXT)
  dconf_OBJECTS = $(am_dconf_OBJECTS)
  am__DEPENDENCIES_1 =
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_Makefile_in,v 1.6 2012/03/29 06:26:38 ajacoutot Exp $
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
  depcomp = $(SHELL) $(top_srcdir)/aux/depcomp
  am__depfiles_maybe = depfiles
-@@ -121,7 +121,7 @@ AUTOMAKE = @AUTOMAKE@
+@@ -122,7 +122,7 @@ AUTOMAKE = @AUTOMAKE@
  AWK = @AWK@
  CC = @CC@
  CCDEPMODE = @CCDEPMODE@
@@ -19,7 +19,7 @@ $OpenBSD: patch-bin_Makefile_in,v 1.6 2012/03/29 06:26:38 ajacoutot Exp $
  	-Wno-unused-variable
  CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
-@@ -230,7 +230,7 @@ top_srcdir = @top_srcdir@
+@@ -231,7 +231,7 @@ top_srcdir = @top_srcdir@
  AM_CFLAGS = -Wall -Wmissing-prototypes -Wwrite-strings
  INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/engine -I$(top_srcdir)/client -I$(top_srcdir)/gvdb $(gio_CFLAGS)
  dconf_VALAFLAGS = --vapidir ../client --pkg=gio-2.0 --pkg=posix --pkg=dconf

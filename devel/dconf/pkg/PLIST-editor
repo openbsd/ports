@@ -1,23 +1,13 @@
-@comment $OpenBSD: PLIST-editor,v 1.5 2012/03/29 06:26:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-editor,v 1.6 2012/05/01 06:17:38 ajacoutot Exp $
 @conflict dconf-<0.5.1p5
 @bin bin/dconf-editor
 share/applications/dconf-editor.desktop
 share/dconf-editor/
 share/dconf-editor/dconf-editor.ui
 share/glib-2.0/schemas/ca.desrt.dconf-editor.gschema.xml
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/dconf-editor.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/dconf-editor.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/dconf-editor.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/dconf-editor.png
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
