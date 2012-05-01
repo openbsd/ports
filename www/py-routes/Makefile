@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/01 12:22:46 jasper Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
-MODPY_EGG_VERSION = 1.11
+MODPY_EGG_VERSION = 1.13
 DISTNAME =	Routes-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
@@ -23,6 +22,7 @@ MODULES =	lang/python
 
 MODPY_SETUPTOOLS =	Yes
 
+RUN_DEPENDS =	www/py-repoze-lru
 REGRESS_DEPENDS = devel/py-coverage \
 		  devel/py-nose \
 		  www/py-paste \
