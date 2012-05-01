@@ -1,0 +1,18 @@
+$OpenBSD: patch-pgp_seahorse-gpgme-keyring_c,v 1.1 2012/05/01 18:46:25 ajacoutot Exp $
+
+From f8a0cfcfc78f487447a347309affa6acadcfe77f Mon Sep 17 00:00:00 2001
+From: Stef Walter <stefw@gnome.org>
+Date: Mon, 30 Apr 2012 18:29:42 +0000
+Subject: Fix typo in finalizing of GPGME keyring
+
+--- pgp/seahorse-gpgme-keyring.c.orig	Fri Jan 27 14:50:26 2012
++++ pgp/seahorse-gpgme-keyring.c	Tue May  1 20:40:25 2012
+@@ -859,7 +859,7 @@ seahorse_gpgme_keyring_finalize (GObject *object)
+ {
+ 	SeahorseGpgmeKeyring *self = SEAHORSE_GPGME_KEYRING (object);
+ 
+-	g_clear_object (self->pv->actions);
++	g_clear_object (&self->pv->actions);
+ 	g_hash_table_destroy (self->pv->keys);
+ 
+ 	/* All monitoring and scheduling should be done */
