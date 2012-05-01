@@ -1,8 +1,8 @@
 --- pkgIndex.tcl.in.orig	Fri Jul 15 18:34:43 2011
-+++ pkgIndex.tcl.in	Sun Oct  9 19:00:41 2011
++++ pkgIndex.tcl.in	Tue May  1 08:55:27 2012
 @@ -1,4 +1,4 @@
  # Tcl package index file, version 1.0
  
--if {![package vsatisfies [package present Tcl] @TCL_VERSION@]} {return}
+ if {![package vsatisfies [package present Tcl] @TCL_VERSION@]} {return}
+-package ifneeded Itcl @PACKAGE_VERSION@ [list load [file join $dir "@PKG_LIB_FILE@"] Itcl]
 +package ifneeded Itcl @PACKAGE_VERSION@ [list load [file join $dir ../.. "@PKG_LIB_FILE@"] Itcl]
- package ifneeded Itcl @PACKAGE_VERSION@ [list load [file join $dir "@PKG_LIB_FILE@"] Itcl]
