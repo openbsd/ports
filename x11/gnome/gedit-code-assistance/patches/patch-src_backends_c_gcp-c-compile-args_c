@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_backends_c_gcp-c-compile-args_c,v 1.1.1.1 2012/05/01 07:38:47 jasper Exp $
+--- src/backends/c/gcp-c-compile-args.c.orig	Mon Apr 30 21:28:24 2012
++++ src/backends/c/gcp-c-compile-args.c	Mon Apr 30 21:31:07 2012
+@@ -1848,7 +1848,7 @@ static void gcp_c_compile_args_find_for_makefile (GcpC
+ 				_vala_array_add3 (&args, &args_length1, &_args_size_, _tmp26_);
+ 				_tmp27_ = args;
+ 				_tmp27__length1 = args_length1;
+-				_tmp28_ = g_strdup ("/usr/lib/clang/2.9/include");
++				_tmp28_ = g_strdup ("${LOCALBASE}/lib/clang/3.0/include");
+ 				_vala_array_add4 (&args, &args_length1, &_args_size_, _tmp28_);
+ 			}
+ 		}

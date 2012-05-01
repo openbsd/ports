@@ -1,0 +1,2 @@
+gedit-code-assistance is a plugin for gedit which provides code
+assistance for C, C++ and Objective-C by utilizing clang.
