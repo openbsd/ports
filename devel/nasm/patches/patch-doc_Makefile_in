@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2011/07/08 11:32:17 jasper Exp $
---- doc/Makefile.in.orig	Wed Mar 10 23:24:07 2010
-+++ doc/Makefile.in	Fri Jul  8 13:28:21 2011
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2012/05/01 15:25:26 ajacoutot Exp $
+--- doc/Makefile.in.orig	Mon Mar 12 16:44:04 2012
++++ doc/Makefile.in	Wed Apr 25 16:26:57 2012
 @@ -8,7 +8,7 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@
@@ -69,9 +69,9 @@ $OpenBSD: patch-doc_Makefile_in,v 1.1 2011/07/08 11:32:17 jasper Exp $
  clean:
 -	-rm -f *.rtf *.hpj *.texi *.gid *.ipf *.dip
  	-rm -f *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
+ 	-rm -f inslist.src
  
- spotless: clean
-@@ -99,4 +94,4 @@ install: all
+@@ -100,4 +95,4 @@ install: all
  	$(INSTALL_DATA) info/* $(INSTALLROOT)$(infodir)
  	mkdir -p $(INSTALLROOT)$(docdir)/html
  	$(INSTALL_DATA) html/* $(INSTALLROOT)$(docdir)/html

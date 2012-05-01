@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.30 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2012/05/01 15:25:26 ajacoutot Exp $
+
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	general-purpose multi-platform x86 assembler
 
-ONLY_FOR_ARCHS=	i386 amd64
-
-VERSION=	2.08.01
+VERSION=	2.10
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
+MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://www.nasm.us/
-MASTER_SITES=	${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/
 
 MAINTAINER=	Gallon Sylvestre <ccna.syl@gmail.com>
 
@@ -18,11 +19,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c
 
-CONFIGURE_STYLE= gnu dest
+WANTLIB=	c
 
-USE_GROFF =	Yes
+USE_GMAKE=	Yes
+USE_GROFF=	Yes
+CONFIGURE_STYLE= gnu
+
+DESTDIRNAME=	INSTALLROOT
+
 ALL_TARGET=	everything
 INSTALL_TARGET=	install_everything
 
