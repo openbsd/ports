@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_print_ip_addr_c,v 1.1.1.1 2012/05/02 07:37:10 jasper Exp $
+
+Fix include order; fixes build on OpenBSD (committed upstream).
+
+--- src/print_ip_addr.c.orig	Fri Apr 27 16:00:41 2012
++++ src/print_ip_addr.c	Fri Apr 27 16:03:29 2012
+@@ -1,7 +1,8 @@
+ // vim:ts=8:expandtab
+-#include <netinet/in.h>
+-#include <sys/socket.h>
+ #include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>

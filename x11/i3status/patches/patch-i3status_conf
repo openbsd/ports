@@ -1,0 +1,66 @@
+$OpenBSD: patch-i3status_conf,v 1.1.1.1 2012/05/02 07:37:10 jasper Exp $
+
+Adjust config file to be reasonably useful on OpenBSD out of the box.
+
+--- i3status.conf.orig	Mon Apr 30 16:27:29 2012
++++ i3status.conf	Mon Apr 30 16:27:35 2012
+@@ -5,38 +5,28 @@ general {
+ 
+ order += "ipv6"
+ order += "disk /"
+-order += "run_watch DHCP"
+-order += "run_watch VPN"
+-order += "wireless wlan0"
+-order += "ethernet eth0"
++#order += "wireless iwn0"
++order += "ethernet em0"
+ order += "battery 0"
+ order += "cpu_temperature 0"
+ order += "load"
+ order += "time"
++order += "volume master"
+ 
+-wireless wlan0 {
+-        format_up = "W: (%quality at %essid) %ip"
+-        format_down = "W: down"
+-}
++#wireless iwn0 {
++#        format_up = "W: (%quality at %essid) %ip"
++#        format_down = "W: down"
++#}
+ 
+-ethernet eth0 {
+-        # if you use %speed, i3status requires root privileges
+-        format_up = "E: %ip (%speed)"
++ethernet em0 {
++        format_up = "E: %ip"
+         format_down = "E: down"
+ }
+ 
+ battery 0 {
+-        format = "%status %percentage %remaining"
++        format = "%status %percentage \% %remaining min."
+ }
+ 
+-run_watch DHCP {
+-        pidfile = "/var/run/dhclient*.pid"
+-}
+-
+-run_watch VPN {
+-        pidfile = "/var/run/vpnc/pid"
+-}
+-
+ time {
+         format = "%Y-%m-%d %H:%M:%S"
+ }
+@@ -51,4 +41,8 @@ cpu_temperature 0 {
+ 
+ disk "/" {
+         format = "%free"
+-}
++}
++
++volume master {
++	format = "vol: %volume"
++}
+\ No newline at end of file

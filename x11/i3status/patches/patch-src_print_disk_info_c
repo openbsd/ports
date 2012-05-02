@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_print_disk_info_c,v 1.1.1.1 2012/05/02 07:37:10 jasper Exp $
+
+Fix disk usage printing on OpenBSD (committed upstream).
+
+--- src/print_disk_info.c.orig	Fri Apr 27 18:35:05 2012
++++ src/print_disk_info.c	Fri Apr 27 18:35:08 2012
+@@ -6,7 +6,7 @@
+ #include <stdint.h>
+ #include <sys/statvfs.h>
+ #include <sys/types.h>
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || (__OpenBSD__)
+ #include <sys/param.h>
+ #include <sys/mount.h>
+ #endif
+@@ -49,7 +49,7 @@ void print_disk_info(yajl_gen json_gen, char *buffer, 
+ 
+         INSTANCE(path);
+ 
+-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
++#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__OpenBSD__)
+         struct statfs buf;
+ 
+         if (statfs(path, &buf) == -1)

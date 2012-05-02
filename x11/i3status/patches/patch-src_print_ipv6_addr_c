@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_print_ipv6_addr_c,v 1.1.1.1 2012/05/02 07:37:10 jasper Exp $
+
+Fix include order; fixes build on OpenBSD (committed upstream).
+
+--- src/print_ipv6_addr.c.orig	Fri Apr 27 16:00:41 2012
++++ src/print_ipv6_addr.c	Fri Apr 27 16:03:29 2012
+@@ -1,13 +1,15 @@
+ // vim:ts=8:expandtab
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
++#include <arpa/inet.h>
++
+ #include <stdio.h>
+ #include <stdbool.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+-#include <sys/types.h>
+-#include <sys/socket.h>
+ #include <netdb.h>
+ #include <string.h>
+-#include <arpa/inet.h>
+ #include <yajl/yajl_gen.h>
+ #include <yajl/yajl_version.h>
+ 
