@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/23 12:26:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/02 08:30:24 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += account
@@ -19,6 +19,9 @@
      SUBDIR += calendar_classification
      SUBDIR += calendar_scheduling
      SUBDIR += calendar_todo
+     SUBDIR += carrier
+     SUBDIR += carrier_percentage
+     SUBDIR += carrier_weight
      SUBDIR += company
      SUBDIR += company_work_time
      SUBDIR += country
@@ -33,15 +36,18 @@
      SUBDIR += product
      SUBDIR += product_cost_fifo
      SUBDIR += product_cost_history
+     SUBDIR += product_measurements
      SUBIDR += product_price_list
      SUBDIR += project
      SUBDIR += project_plan
      SUBDIR += project_revenue
      SUBDIR += purchase
      SUBDIR += purchase_invoice_line_standalone
+     SUBDIR += purchase_shipment_cost
      SUBDIR += sale
      SUBDIR += sale_opportunity
      SUBDIR += sale_price_list
+     SUBDIR += sale_shipment_cost
      SUBDIR += stock
      SUBDIR += stock_forecast
      SUBDIR += stock_inventory_location
@@ -49,6 +55,7 @@
      SUBDIR += stock_product_location
      SUBDIR += stock_supply
      SUBDIR += stock_supply_day
+     SUBDIR += stock_supply_forecast
      SUBDIR += timesheet
      SUBDIR += tryton
      SUBDIR += trytond
