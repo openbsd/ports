@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/02 06:57:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/02 07:49:00 ajacoutot Exp $
 
 MODPY_EGG_VERSION =	2.4.0
 TRYTOND_MODULE =	stock_product_location
+REVISION =		0
 
-RUN_DEPENDS =		productivity/tryton/product>=2.2.0 \
-			productivity/tryton/stock>=2.2.0
+RUN_DEPENDS =		productivity/tryton/product \
+			productivity/tryton/stock
 
 .include <bsd.port.mk>

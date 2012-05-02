@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/02 06:57:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/02 07:48:59 ajacoutot Exp $
 
 TRYTOND_MODULE =	account_product
+REVISION =		0
 
-RUN_DEPENDS =		productivity/tryton/account>=2.2.0 \
-			productivity/tryton/company>=2.2.0 \
-			productivity/tryton/product>=2.2.0
+RUN_DEPENDS =		productivity/tryton/account \
+			productivity/tryton/company \
+			productivity/tryton/product
 
 .include <bsd.port.mk>
