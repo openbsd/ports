@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2012/04/26 19:18:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.488 2012/05/02 07:38:14 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -113,6 +113,7 @@
      SUBDIR += hs-xmonad-contrib
      SUBDIR += human-icon-theme
      SUBDIR += i3
+     SUBDIR += i3status
      SUBDIR += icewm
      SUBDIR += icon-naming-utils
      SUBDIR += icontool
