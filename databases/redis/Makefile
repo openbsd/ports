@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/20 11:39:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2012/05/02 07:26:00 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.4.11
+DISTNAME =		redis-2.4.12
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
