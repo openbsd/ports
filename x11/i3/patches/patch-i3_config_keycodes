@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config_keycodes,v 1.4 2011/12/27 09:05:17 dcoppa Exp $
---- i3.config.keycodes.orig	Sat Dec 24 16:25:08 2011
-+++ i3.config.keycodes	Tue Dec 27 09:30:43 2011
+$OpenBSD: patch-i3_config_keycodes,v 1.5 2012/05/02 07:39:08 jasper Exp $
+--- i3.config.keycodes.orig	Fri Jan 27 20:24:09 2012
++++ i3.config.keycodes	Wed May  2 09:31:03 2012
 @@ -17,13 +17,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier $mod
  
@@ -17,15 +17,14 @@ $OpenBSD: patch-i3_config_keycodes,v 1.4 2011/12/27 09:05:17 dcoppa Exp $
  
  # change focus
  bindcode $mod+44 focus left
-@@ -146,8 +146,8 @@ mode "resize" {
+@@ -146,8 +146,7 @@ mode "resize" {
  
  bindcode $mod+27 mode "resize"
  
 -# Start i3bar to display a workspace bar (plus the system information i3status
 -# finds out, if available)
 +# Start i3bar to display a workspace bar
-+# XXX: i3status has not been ported to OpenBSD yet
  bar {
 -        status_command i3status
-+        status_command /usr/bin/true
++	status_command ${LOCALBASE}/bin/i3status
  }
