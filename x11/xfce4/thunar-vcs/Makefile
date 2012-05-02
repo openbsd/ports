@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/30 13:26:39 landry Exp $
+# $OpenBSD: Makefile,v 1.21 2012/05/02 19:01:53 naddy Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
@@ -13,6 +13,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	x11/xfce4
+
+AUTOCONF_VERSION =	2.68
+CONFIGURE_STYLE =	autoconf
 
 # --as-needed fucks linking with pthread
 CONFIGURE_ARGS +=	--disable-linker-opts
