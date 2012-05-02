@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.7 2012/01/24 10:16:09 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2012/05/02 06:56:27 ajacoutot Exp $
 
-MODPY_EGG_VERSION ?=	2.2.1
+MODPY_EGG_VERSION ?=	2.4.1
 
 CATEGORIES +=		productivity
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS=	Yes
 
 REGRESS_DEPENDS ?=	${RUN_DEPENDS}
 
-# XXX needs py-dateutil>=2 (downloaded automatically)
+# needs py-dateutil>=2 (downloaded automatically)
 # Some regression tests need read access to /etc/trytond.conf (not
 # available for unprivilege users) and a trytond server running.
 REGRESS_IS_INTERACTIVE=	Yes
