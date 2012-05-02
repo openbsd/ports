@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__init__.pyc
@@ -6,13 +6,15 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/caldav.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/caldav.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.py
-lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar_.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/calendar_.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/calendar/locale/fr_FR.po

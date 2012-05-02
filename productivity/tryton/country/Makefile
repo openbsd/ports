@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/24 10:16:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/02 06:57:53 ajacoutot Exp $
 
-MODPY_EGG_VERSION =	2.2.0
+MODPY_EGG_VERSION =	2.4.0
 TRYTOND_MODULE =	country
 
 .include <bsd.port.mk>

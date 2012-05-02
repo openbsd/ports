@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/11/02 14:29:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/02 06:57:53 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/__init__.pyc
@@ -9,8 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_st
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/invoice.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_line_standalone/locale/fr_FR.po
