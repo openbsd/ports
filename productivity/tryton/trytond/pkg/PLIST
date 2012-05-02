@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/24 10:15:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/05/02 06:57:01 ajacoutot Exp $
 @newgroup _tryton:675
 @newuser _tryton:675:_tryton:daemon:Tryton Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/trytond/*
@@ -93,8 +93,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/ir/lang.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/lang.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/locale/fr_FR.po
@@ -118,6 +120,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/ir/rule.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/sequence.py
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/sequence.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/sequence.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/ir/session.py
+lib/python${MODPY_VERSION}/site-packages/trytond/ir/session.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/time_locale.py
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/time_locale.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/ir/translation.py
@@ -213,8 +217,8 @@ lib/python${MODPY_VERSION}/site-packages/trytond/model/modelstorage.py
 lib/python${MODPY_VERSION}/site-packages/trytond/model/modelstorage.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/model/modelview.py
 lib/python${MODPY_VERSION}/site-packages/trytond/model/modelview.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/model/modelworkflow.py
-lib/python${MODPY_VERSION}/site-packages/trytond/model/modelworkflow.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/model/workflow.py
+lib/python${MODPY_VERSION}/site-packages/trytond/model/workflow.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/modules/__init__.pyc
@@ -227,8 +231,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/protocols/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/common.py
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/common.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/protocols/datatype.py
-lib/python${MODPY_VERSION}/site-packages/trytond/protocols/datatype.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/dispatcher.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/protocols/jsonrpc.py
@@ -259,8 +261,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/res/ir.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/res/ir.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/res/locale/fr_FR.po
@@ -277,8 +281,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/security.py
 lib/python${MODPY_VERSION}/site-packages/trytond/security.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/server.py
 lib/python${MODPY_VERSION}/site-packages/trytond/server.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/session.py
-lib/python${MODPY_VERSION}/site-packages/trytond/session.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/test/
 lib/python${MODPY_VERSION}/site-packages/trytond/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/test/__init__.pyc
@@ -302,6 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/test/trigger.py
 lib/python${MODPY_VERSION}/site-packages/trytond/test/trigger.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/test/wizard.py
 lib/python${MODPY_VERSION}/site-packages/trytond/test/wizard.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/test/wizard.xml
 lib/python${MODPY_VERSION}/site-packages/trytond/test/workflow.py
 lib/python${MODPY_VERSION}/site-packages/trytond/test/workflow.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/test/workflow.xml
@@ -324,18 +327,20 @@ lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_modelsingleton.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_modelsingleton.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_mptt.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_mptt.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_protocols_datatype.py
-lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_protocols_datatype.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_pyson.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_pyson.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_sequence.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_sequence.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tools.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tools.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_transaction.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_transaction.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_trigger.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_trigger.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tryton.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_tryton.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_wizard.py
+lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_workflow.py
 lib/python${MODPY_VERSION}/site-packages/trytond/tests/test_workflow.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/tools/
@@ -362,8 +367,10 @@ lib/python${MODPY_VERSION}/site-packages/trytond/webdav/__tryton__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/__tryton__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/bg_BG.po
+lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/ca_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/cs_CZ.po
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/es_AR.po
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/es_CO.po
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/es_ES.po
 lib/python${MODPY_VERSION}/site-packages/trytond/webdav/locale/fr_FR.po
@@ -377,23 +384,6 @@ lib/python${MODPY_VERSION}/site-packages/trytond/wizard/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/wizard.py
 lib/python${MODPY_VERSION}/site-packages/trytond/wizard/wizard.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/__init__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/__tryton__.py
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/__tryton__.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/bg_BG.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/cs_CZ.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/de_DE.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/es_CO.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/es_ES.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/fr_FR.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/nl_NL.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/locale/ru_RU.po
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.py
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.pyc
-lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.xml
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/trytond/
 share/examples/trytond/trytond.conf

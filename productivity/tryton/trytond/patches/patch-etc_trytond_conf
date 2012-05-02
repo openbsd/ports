@@ -1,14 +1,14 @@
-$OpenBSD: patch-etc_trytond_conf,v 1.2 2011/11/02 14:29:39 ajacoutot Exp $
---- etc/trytond.conf.orig	Wed Oct 19 16:22:59 2011
-+++ etc/trytond.conf	Wed Nov  2 11:24:48 2011
+$OpenBSD: patch-etc_trytond_conf,v 1.3 2012/05/02 06:57:01 ajacoutot Exp $
+--- etc/trytond.conf.orig	Tue Apr 24 12:02:15 2012
++++ etc/trytond.conf	Wed May  2 08:01:56 2012
 @@ -1,5 +1,3 @@
 -#This file is part of Tryton.  The COPYRIGHT file at the top level of
 -#this repository contains the full copyright notices and license terms.
  [options]
  
- # This is the hostname used when generating tryton URI
+ # Activate the json-rpc protocol
 @@ -10,7 +8,7 @@ jsonrpc = localhost:8000
- #ssl_jsonrpc = False
+ #hostname_jsonrpc =
  
  # Configure the path of json-rpc data
 -#jsondata_path = /var/www/localhost/tryton
@@ -16,7 +16,7 @@ $OpenBSD: patch-etc_trytond_conf,v 1.2 2011/11/02 14:29:39 ajacoutot Exp $
  
  # Activate the xml-rpc protocol
  #xmlrpc = *:8069
-@@ -22,16 +20,16 @@ jsonrpc = localhost:8000
+@@ -25,16 +23,16 @@ jsonrpc = localhost:8000
  
  # Configure the database type
  # allowed values are postgresql, sqlite, mysql
@@ -38,7 +38,7 @@ $OpenBSD: patch-etc_trytond_conf,v 1.2 2011/11/02 14:29:39 ajacoutot Exp $
  #db_minconn = 1
  #db_maxconn = 64
  
-@@ -39,25 +37,26 @@ jsonrpc = localhost:8000
+@@ -42,25 +40,26 @@ jsonrpc = localhost:8000
  #pg_path = None
  
  # Configure the Tryton server password
