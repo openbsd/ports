@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: tt_rss_update.rc,v 1.2 2012/03/15 11:28:19 ajacoutot Exp $
+# $OpenBSD: tt_rss_update.rc,v 1.3 2012/05/03 18:45:39 landry Exp $
 
 daemon="${INSTDIR}/update.php -daemon"
 daemon_user="www"
@@ -13,7 +13,7 @@ rc_bg=YES
 rc_reload=NO
 
 rc_post() {
-	rm ${INSTDIR}lock/update_daemon.lock
+	rm ${INSTDIR}/lock/update_daemon.lock
 }
 
 rc_cmd $1
