@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/03 22:07:44 pascal Exp $
 bin/arm
 @man man/man1/arm.1
+share/applications/tor-arm.desktop
+share/arm-${V}-py${MODPY_VERSION}.egg-info
 share/arm/
-share/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
 share/arm/TorCtl/
 share/arm/TorCtl/GeoIPSupport.py
 share/arm/TorCtl/GeoIPSupport.pyc
@@ -167,5 +168,7 @@ share/arm/version.py
 share/arm/version.pyc
 share/doc/arm/
 share/doc/arm/armrc.sample
+share/pixmaps/
+share/pixmaps/tor-arm.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/03 22:07:44 pascal Exp $
 
 COMMENT =		terminal status monitor for Tor
 
-DISTNAME =		arm-1.4.5.0
+V =			1.4.5.0
+DISTNAME =		arm-${V}
+REVISION =		0
+
+SUBST_VARS +=		V
 
 CATEGORIES =		net
 
@@ -39,5 +43,12 @@ MODPY_ADJ_FILES += src/TorCtl/${i}
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/arm ${WRKSRC}/install \
 		${WRKSRC}/src/resources/arm.1
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	cd ${PREFIX}/share/applications && ln -s \
+		../arm/resources/tor-arm.desktop .
+	cd ${PREFIX}/share/pixmaps && ln -s ../arm/resources/tor-arm.svg .
 
 .include <bsd.port.mk>
