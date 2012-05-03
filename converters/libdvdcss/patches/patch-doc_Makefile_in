@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.1 2011/08/29 09:54:51 espie Exp $
---- doc/Makefile.in.orig	Wed Aug 17 11:05:03 2011
-+++ doc/Makefile.in	Wed Aug 17 11:05:16 2011
-@@ -335,7 +335,7 @@ all: stamp-doxygen stamp-latex
+$OpenBSD: patch-doc_Makefile_in,v 1.2 2012/05/03 06:50:09 ajacoutot Exp $
+--- doc/Makefile.in.orig	Sun Mar 11 19:09:48 2012
++++ doc/Makefile.in	Mon Mar 12 05:55:37 2012
+@@ -364,7 +364,7 @@ all: stamp-doxygen stamp-latex
  
  doxygen.cfg: $(srcdir)/doxygen.cfg.in
  	-rm -f $@
