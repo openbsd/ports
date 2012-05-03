@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/14 13:47:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/03 14:11:55 sthen Exp $
 
 COMMENT=	optimise a list of route prefixes
 
 DISTNAME=	aggregate-1.6
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_ISC:=aggregate/}
@@ -16,7 +17,6 @@ WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
