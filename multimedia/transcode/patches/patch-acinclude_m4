@@ -1,16 +1,10 @@
-$OpenBSD: patch-acinclude_m4,v 1.1 2010/01/11 08:49:27 jakemsr Exp $
---- acinclude.m4.orig	Sat Oct 31 09:39:02 2009
-+++ acinclude.m4	Wed Jan  6 01:37:50 2010
-@@ -271,6 +271,38 @@ if test x"$enable_sunau" = x"yes" ; then
-     ifelse([$1], , :, [$1])
-   else
-     AC_MSG_ERROR([sunau is requested, but cannot find headers])
-+  fi
-+fi
-+])
-+
-+dnl -----------------------------------------------------------------------
-+
+$OpenBSD: patch-acinclude_m4,v 1.2 2012/05/03 06:06:59 ajacoutot Exp $
+--- acinclude.m4.orig	Sat Nov 19 11:50:27 2011
++++ acinclude.m4	Sun Apr 29 00:25:46 2012
+@@ -284,6 +284,38 @@ fi
+ 
+ dnl -----------------------------------------------------------------------
+ 
 +dnl TC_CHECK_SNDIO([ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
 +dnl Test for sndio headers
 +dnl
@@ -37,6 +31,12 @@ $OpenBSD: patch-acinclude_m4,v 1.1 2010/01/11 08:49:27 jakemsr Exp $
 +    ifelse([$1], , :, [$1])
 +  else
 +    AC_MSG_ERROR([sndio is requested, but cannot find headers])
-   fi
- fi
- ])
++  fi
++fi
++])
++
++dnl -----------------------------------------------------------------------
++
+ dnl TC_CHECK_OSS([ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND]])
+ dnl Test for OSS headers
+ dnl

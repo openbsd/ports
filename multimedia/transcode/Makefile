@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2012/05/03 06:06:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
-DISTNAME=	transcode-1.1.5
-REVISION=	12
+DISTNAME=	transcode-1.1.7
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
+MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.transcoding.org/
@@ -69,8 +68,8 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf automake
-AUTOCONF_VERSION= 2.61
-AUTOMAKE_VERSION= 1.9
+AUTOCONF_VERSION= 2.68
+AUTOMAKE_VERSION= 1.11
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 CONFIGURE_ARGS+=--enable-a52 \
 		--enable-bktr \
@@ -108,7 +107,7 @@ PKG_ARGS+=	-Dlzo=0
 
 .if ${FLAVOR:L:Mmjpegtools}
 CONFIGURE_ARGS+=--enable-mjpegtools
-WANTLIB +=	mjpegutils>=3
+WANTLIB +=	mjpegutils-1.9
 LIB_DEPENDS+=	multimedia/mjpegtools
 RUN_DEPENDS+=	multimedia/mjpegtools
 PKG_ARGS+=	-Dmjpegtools=1
