@@ -1,0 +1,92 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+--- setup.py.orig	Thu Sep 29 17:46:08 2011
++++ setup.py	Fri Oct 21 13:32:56 2011
+@@ -35,7 +35,7 @@ for arg in sys.argv:
+     isDebInstall = True
+     break
+ 
+-docPath = "/usr/share/doc/%s" % ("tor-arm" if isDebInstall else "arm")
++docPath = "${PREFIX}/share/doc/%s" % ("tor-arm" if isDebInstall else "arm")
+ 
+ # Allow the docPath to be overridden via a '--docPath' argument. This is to
+ # support custom documentation locations on Gentoo, as discussed in:
+@@ -54,44 +54,17 @@ try:
+     sys.exit(1)
+ except ValueError: pass # --docPath flag not found
+ 
+-# Provides the configuration option to install to "/usr/share" rather than as a
++# Provides the configuration option to install to "${PREFIX}/share" rather than as a
+ # python module. Alternatives are to either provide this as an input argument
+ # (not an option for deb/rpm builds) or add a setup.cfg with:
+ #   [install]
+-#   install-purelib=/usr/share
++#   install-purelib=${PREFIX}/share
+ # which would mean a bit more unnecessary clutter.
+ 
+-manFilename = "src/resoureces/arm.1"
++manFilename = "src/resources/arm.1"
+ if "install" in sys.argv:
+-  sys.argv += ["--install-purelib", "/usr/share"]
++  sys.argv += ["--install-purelib", "${PREFIX}/share"]
+   
+-  # Compresses the man page. This is a temporary file that we'll install. If
+-  # something goes wrong then we'll print the issue and use the uncompressed man
+-  # page instead.
+-  
+-  try:
+-    manInputFile = open('src/resources/arm.1', 'r')
+-    manContents = manInputFile.read()
+-    manInputFile.close()
+-    
+-    # temporary destination for the man page guarenteed to be unoccupied (to
+-    # avoid conflicting with files that are already there)
+-    tmpFilename = tempfile.mktemp("/arm.1.gz")
+-    
+-    # make dir if the path doesn't already exist
+-    baseDir = os.path.dirname(tmpFilename)
+-    if not os.path.exists(baseDir): os.makedirs(baseDir)
+-    
+-    manOutputFile = gzip.open(tmpFilename, 'wb')
+-    manOutputFile.write(manContents)
+-    manOutputFile.close()
+-    
+-    # places in tmp rather than a relative path to avoid having this copy appear
+-    # in the deb and rpm builds
+-    manFilename = tmpFilename
+-  except IOError, exc:
+-    print "Unable to compress man page: %s" % exc
+-
+ # When installing we include a bundled copy of TorCtl. However, when creating
+ # a deb we have a dependency on the python-torctl package instead:
+ # http://packages.debian.org/unstable/main/python-torctl
+@@ -108,23 +81,23 @@ setup(name='arm',
+       url='http://www.atagar.com/arm/',
+       packages=installPackages,
+       package_dir={'arm': 'src'},
+-      data_files=[("/usr/bin", ["arm"]),
+-                  ("/usr/share/man/man1", [manFilename]),
++      data_files=[("${PREFIX}/bin", ["arm"]),
++                  ("${PREFIX}/man/man1", [manFilename]),
+                   (docPath, ["armrc.sample"]),
+-                  ("/usr/share/arm/gui", ["src/gui/arm.xml"]),
+-                  ("/usr/share/arm", ["src/settings.cfg", "src/uninstall"])] + 
+-                  getResources("/usr/share/arm", "resources"),
++                  ("${PREFIX}/share/arm/gui", ["src/gui/arm.xml"]),
++                  ("${PREFIX}/share/arm", ["src/settings.cfg", "src/uninstall"])] + 
++                  getResources("${PREFIX}/share/arm", "resources"),
+      )
+ 
+ # Cleans up the temporary compressed man page.
+-if manFilename != 'src/resoureces/arm.1' and os.path.isfile(manFilename):
++if manFilename != 'src/resources/arm.1' and os.path.isfile(manFilename):
+   if "-q" not in sys.argv: print "Removing %s" % manFilename
+   os.remove(manFilename)
+ 
+ # Removes the egg_info file. Apparently it is not optional during setup
+ # (hardcoded in distutils/command/install.py), nor are there any arguments to
+ # bypass its creation. The deb build removes this as part of its rules script.
+-eggPath = '/usr/share/arm-%s.egg-info' % VERSION
++eggPath = '${PREFIX}/share/arm-%s.egg-info' % VERSION
+ 
+ if not isDebInstall and os.path.isfile(eggPath):
+   if "-q" not in sys.argv: print "Removing %s" % eggPath

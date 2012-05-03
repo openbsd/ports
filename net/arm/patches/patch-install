@@ -1,0 +1,12 @@
+$OpenBSD: patch-install,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+--- install.orig	Fri Oct 21 13:11:59 2011
++++ install	Fri Oct 21 13:12:11 2011
+@@ -6,7 +6,7 @@ if [ $? = 0 ]; then
+   
+   # provide notice if we installed successfully
+   if [ $? = 0 ]; then
+-    echo "installed to /usr/share/arm"
++    echo "installed to ${PREFIX}/share/arm"
+   fi
+   
+   # cleans up the automatically built temporary files

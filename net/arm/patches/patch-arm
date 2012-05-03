@@ -1,0 +1,21 @@
+$OpenBSD: patch-arm,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+--- arm.orig	Thu Sep 29 17:46:08 2011
++++ arm	Fri Oct 21 13:57:38 2011
+@@ -1,13 +1,13 @@
+ #!/bin/sh
+-if [ "$0" = /usr/bin/arm ]; then
+-  arm_base=/usr/share/arm/
++if [ "$0" = ${PREFIX}/bin/arm ]; then
++  arm_base=${PREFIX}/share/arm/
+ else
+   arm_base=$( dirname "$0" )/src/
+ fi
+ 
+-python "${arm_base}prereq.py" $*
++python${MODPY_VERSION} "${arm_base}prereq.py" $*
+ 
+ if [ $? = 0 ]; then
+-  exec python -W ignore::DeprecationWarning "${arm_base}starter.py" $*
++  exec python${MODPY_VERSION} -W ignore::DeprecationWarning "${arm_base}starter.py" $*
+ fi
+ 

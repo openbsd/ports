@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_resources_arm_1,v 1.1.1.1 2012/05/03 18:00:51 pascal Exp $
+--- src/resources/arm.1.orig	Fri Oct 21 13:29:00 2011
++++ src/resources/arm.1	Fri Oct 21 13:29:21 2011
+@@ -66,7 +66,7 @@ provides usage information
+ Your personal arm configuration file
+ 
+ .TP
+-\fB/usr/share/doc/arm/armrc.sample\fR
++\fB${PREFIX}/share/doc/arm/armrc.sample\fR
+ Sample armrc configuration file that documents all options
+ 
+ .SH AUTHOR
