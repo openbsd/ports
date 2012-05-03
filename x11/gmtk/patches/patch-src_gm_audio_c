@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gm_audio_c,v 1.1 2012/05/03 15:18:50 dcoppa Exp $
+
+Replace deprecated g_strncasecmp with g_ascii_strncasecmp
+(upstream svn revision r106)
+
+--- src/gm_audio.c.orig	Sun Apr  1 15:20:59 2012
++++ src/gm_audio.c	Thu May  3 14:02:32 2012
+@@ -518,7 +518,8 @@ void gm_audio_pa_server_info_cb(pa_context * c, const 
+         for (iter = gm_audio_devices; iter != NULL; iter = g_list_next(iter)) {
+             device = (AudioDevice *) iter->data;
+             if (device->pulse_sink_name != NULL) {
+-                if (g_strncasecmp(i->default_sink_name, device->pulse_sink_name, strlen(i->default_sink_name)) == 0) {
++                if (g_ascii_strncasecmp(i->default_sink_name, device->pulse_sink_name, strlen(i->default_sink_name)) ==
++                    0) {
+                     // printf("The default output sink name is '%s'\n", i->default_sink_name);
+                     device->pulse_default = 1;
+                     pa_context_get_sink_info_by_index(c, device->pulse_index, gm_audio_pa_sink_update_volume_cb, NULL);

@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_gm_common_h,v 1.1 2012/05/03 15:18:50 dcoppa Exp $
+--- src/gm_common.h.orig	Thu May  3 14:42:49 2012
++++ src/gm_common.h	Thu May  3 14:45:23 2012
+@@ -26,9 +26,7 @@
+ #include <config.h>
+ #endif
+ #include <glib.h>
+-#ifndef GLIB2_18_ENABLED
+ #include <libintl.h>
+-#endif
+ 
+ #ifndef __GM_COMMON_H__
+ #define __GM_COMMON_H__
