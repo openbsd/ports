@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/03 06:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/05/03 08:14:59 ajacoutot Exp $
 
 COMMENT=	print information about the content and structure of a DVD
 
 DISTNAME=	lsdvd-0.16
-REVISION=	1
+REVISION=	2
 CATEGORIES=	multimedia
 
 HOMEPAGE=	http://lsdvd.sourceforge.net/
