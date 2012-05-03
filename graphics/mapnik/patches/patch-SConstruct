@@ -1,15 +1,24 @@
-$OpenBSD: patch-SConstruct,v 1.1.1.1 2010/10/24 22:41:09 landry Exp $
---- SConstruct.orig	Mon Mar 22 17:40:47 2010
-+++ SConstruct	Sun Oct 24 12:14:27 2010
-@@ -725,6 +726,11 @@ if not preconfigured:
+$OpenBSD: patch-SConstruct,v 1.2 2012/05/03 08:48:26 landry Exp $
+--- SConstruct.orig	Tue Apr 10 00:56:48 2012
++++ SConstruct	Wed May  2 22:39:34 2012
+@@ -1028,6 +1028,11 @@ if not preconfigured:
          thread_suffix = ''
          env.Append(LIBS = 'pthread')
-     
+ 
 +    if env['PLATFORM'] == 'OpenBSD':
 +        thread_suffix = '-mt'
 +        env.Append(LIBS = 'pthread')
 +        env.Append(LINKFLAGS = ['-lstdc++'])
 +
-     if env['SYSTEM_FONTS']:
-         if not os.path.isdir(env['SYSTEM_FONTS']):
-             color_print(1,'Warning: Directory specified for SYSTEM_FONTS does not exist!')
+     # Solaris & Sun Studio settings (the `SUNCC` flag will only be
+     # set if the `CXX` option begins with `CC`)
+     SOLARIS = env['PLATFORM'] == 'SunOS'
+@@ -1145,6 +1150,8 @@ if not preconfigured:
+         # of attaching to cxxflags after configure
+         if env['PLATFORM'] == 'SunOS':
+             env.Append(CXXFLAGS = '-pthreads')
++        if env['PLATFORM'] == 'OpenBSD':
++            env.Append(CXXFLAGS = '-pthread')
+ 
+     # if requested, sort LIBPATH and CPPPATH before running CheckLibWithHeader tests
+     if env['PRIORITIZE_LINKING']:
