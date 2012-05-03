@@ -1,6 +1,9 @@
-$OpenBSD: patch-modules_highgui_src_cap_ffmpeg_cpp,v 1.4 2011/11/15 00:09:31 sthen Exp $
+$OpenBSD: patch-modules_highgui_src_cap_ffmpeg_cpp,v 1.5 2012/05/03 06:35:31 ajacoutot Exp $
+
+Update for newer FFmpeg API.
+
 --- modules/highgui/src/cap_ffmpeg.cpp.orig	Sat Dec  4 22:35:25 2010
-+++ modules/highgui/src/cap_ffmpeg.cpp	Mon Nov  7 21:38:46 2011
++++ modules/highgui/src/cap_ffmpeg.cpp	Wed May  2 22:28:51 2012
 @@ -53,7 +53,7 @@ extern "C" {
  #define UINT64_C
  #define __STDC_CONSTANT_MACROS
@@ -10,3 +13,99 @@ $OpenBSD: patch-modules_highgui_src_cap_ffmpeg_cpp,v 1.4 2011/11/15 00:09:31 sth
  #include <stdint.h>
  #endif
  #include <errno.h>
+@@ -466,7 +466,7 @@ bool CvCapture_FFMPEG::open( const char* _filename )
+         AVCodecContext *enc = &ic->streams[i]->codec;
+ #endif
+ 
+-        if( CODEC_TYPE_VIDEO == enc->codec_type && video_stream < 0) {
++        if( AVMEDIA_TYPE_VIDEO == enc->codec_type && video_stream < 0) {
+             AVCodec *codec = avcodec_find_decoder(enc->codec_id);
+             if (!codec ||
+             avcodec_open(enc, codec) < 0)
+@@ -551,9 +551,9 @@ bool CvCapture_FFMPEG::grabFrame()
+     		}
+ 
+ #if LIBAVFORMAT_BUILD > 4628
+-        avcodec_decode_video(video_st->codec,
++        avcodec_decode_video2(video_st->codec,
+                              picture, &got_picture,
+-                             packet.data, packet.size);
++                             &packet);
+ #else
+         avcodec_decode_video(&video_st->codec,
+                              picture, &got_picture,
+@@ -806,15 +806,15 @@ class CvVideoWriter_FFMPEG : public CvVideoWriter (pro
+ static const char * icvFFMPEGErrStr(int err)
+ {
+     switch(err) {
+-    case AVERROR_NUMEXPECTED:
++    case AVERROR(EDOM):
+ 		return "Incorrect filename syntax";
+-    case AVERROR_INVALIDDATA:
++    case AVERROR(EINVAL):
+ 		return "Invalid data in header";
+-    case AVERROR_NOFMT:
++    case AVERROR(EILSEQ):
+ 		return "Unknown format";
+-    case AVERROR_IO:
++    case AVERROR(EIO):
+ 		return "I/O error occurred";
+-    case AVERROR_NOMEM:
++    case AVERROR(ENOMEM):
+ 		return "Memory allocation error";
+     default:
+ 		break;
+@@ -899,7 +899,7 @@ static AVStream *icv_add_video_stream_FFMPEG(AVFormatC
+ #endif
+ 
+ #if LIBAVFORMAT_BUILD > 4621
+-	c->codec_id = av_guess_codec(oc->oformat, NULL, oc->filename, NULL, CODEC_TYPE_VIDEO);
++	c->codec_id = av_guess_codec(oc->oformat, NULL, oc->filename, NULL, AVMEDIA_TYPE_VIDEO);
+ #else
+ 	c->codec_id = oc->oformat->video_codec;
+ #endif
+@@ -911,7 +911,7 @@ static AVStream *icv_add_video_stream_FFMPEG(AVFormatC
+     //if(codec_tag) c->codec_tag=codec_tag;
+ 	codec = avcodec_find_encoder(c->codec_id);
+ 
+-	c->codec_type = CODEC_TYPE_VIDEO;
++	c->codec_type = AVMEDIA_TYPE_VIDEO;
+ 
+ 	/* put sample parameters */
+ 	c->bit_rate = bitrate;
+@@ -998,7 +998,7 @@ int icv_av_write_frame_FFMPEG( AVFormatContext * oc, A
+         AVPacket pkt;
+         av_init_packet(&pkt);
+ 
+-        pkt.flags |= PKT_FLAG_KEY;
++        pkt.flags |= AV_PKT_FLAG_KEY;
+         pkt.stream_index= video_st->index;
+         pkt.data= (uint8_t *)picture;
+         pkt.size= sizeof(AVPicture);
+@@ -1018,7 +1018,7 @@ int icv_av_write_frame_FFMPEG( AVFormatContext * oc, A
+ 			pkt.pts = c->coded_frame->pts;
+ #endif
+             if(c->coded_frame->key_frame)
+-                pkt.flags |= PKT_FLAG_KEY;
++                pkt.flags |= AV_PKT_FLAG_KEY;
+             pkt.stream_index= video_st->index;
+             pkt.data= outbuf;
+             pkt.size= out_size;
+@@ -1215,7 +1215,7 @@ bool CvVideoWriter_FFMPEG::open( const char * filename
+ 	av_register_all ();
+ 
+ 	/* auto detect the output format from the name and fourcc code. */
+-	fmt = guess_format(NULL, filename, NULL);
++	fmt = av_guess_format(NULL, filename, NULL);
+ 	if (!fmt)
+         return false;
+ 
+@@ -1238,7 +1238,7 @@ bool CvVideoWriter_FFMPEG::open( const char * filename
+ #endif
+ 
+     // alloc memory for context
+-	oc = av_alloc_format_context();
++	oc = avformat_alloc_context();
+ 	assert (oc);
+ 
+ 	/* set file name */
