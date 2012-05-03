@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.145 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.146 2012/05/03 11:25:27 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.8.11.1
+VER=			1.8.12.0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -28,13 +28,16 @@ PERMIT_DISTFILES_CDROM= patent licensing clauses
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main +=	c crypto curl execinfo gsm idn iksemel
-WANTLIB-main += m ogg pthread spandsp sqlite3 srtp ssl stdc++ termcap
-WANTLIB-main += tiff vorbis vorbisenc xml2 z ${MODLIBICONV_WANTLIB}
+WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
+WANTLIB-main += tiff vorbis vorbisenc vorbisfile xml2 z
+WANTLIB-main += ${MODGETTEXT_WANTLIB}
 
-MODULES=		devel/gettext converters/libiconv
+MODULES=		devel/gettext
 
-MULTI_PACKAGES=		-main -calendar -ldap -odbc -pgsql -snmp -speex
-PSEUDO_FLAVORS=		no_calendar no_ldap no_odbc no_pgsql no_snmp no_speex
+MULTI_PACKAGES=		-main -calendar -http_post -ldap -odbc \
+			-pgsql -snmp -speex
+PSEUDO_FLAVORS=		no_calendar no_http_post no_ldap no_odbc \
+			no_pgsql no_snmp no_speex
 
 SUBST_VARS+=		${SOUNDS:S/^/SOUNDS_/}
 
@@ -44,10 +47,12 @@ LIB_DEPENDS-main=	audio/gsm \
 			devel/libexecinfo \
 			graphics/tiff \
 			net/curl \
-			security/libsrtp>=1.4.4 \
 			telephony/spandsp \
 			textproc/iksemel \
-			textproc/libxml
+			textproc/libxml \
+			${MODGETTEXT_LIB_DEPENDS}
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
+BUILD_DEPENDS-main=	security/libsrtp>=1.4.4 # statically linked
 
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk/releases/ \
 		http://downloads.digium.com/pub/telephony/asterisk/old-releases/
@@ -90,7 +95,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-cap=no \
 			--with-dahdi=no \
 			--with-gtk2=no \
-			--with-gmime=no \
 			--with-isdnnet=no \
 			--with-misdn=no \
 			--with-nbs=no \
@@ -105,7 +109,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-suppserv=no \
 			--with-tinfo=no \
 			--with-tonezone=no \
-			--with-usb=no \
 			--with-vpb=no
 
 CONFIGURE_ARGS+=	--with-jack=no \
@@ -146,16 +149,23 @@ WANTLIB-calendar=	${MODGETTEXT_WANTLIB} asn1 crypto expat gssapi \
 LIB_DEPENDS-calendar=	net/neon \
 			textproc/libical \
 			${MODGETTEXT_LIB_DEPENDS}
-
 .if !${BUILD_PACKAGES:M-calendar}
 CONFIGURE_ARGS+=	--with-ical=no
+.endif
+
+# http_post
+COMMENT-http_post=	HTTP POST support for Asterisk
+LIB_DEPENDS-http_post=	mail/gmime ${MODGETTEXT_LIB_DEPENDS}
+WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 \
+			${MODGETTEXT_WANTLIB}
+.if !${BUILD_PACKAGES:M-http_post}
+CONFIGURE_ARGS+=	--with-gmime=no
 .endif
 
 # ldap
 COMMENT-ldap=		LDAP support for Asterisk
 LIB_DEPENDS-ldap=	databases/openldap,-main
 WANTLIB-ldap=		ldap
-
 .if !${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=no
 .endif
@@ -168,7 +178,6 @@ CONFIGURE_ARGS+=	--with-ldap=no
 #COMMENT-mysql=		MySQL support for Asterisk
 #WANTLIB-mysql=		mysqlclient
 #LIB_DEPENDS-mysql=	databases/mysql
-#
 #.if !${BUILD_PACKAGES:M-mysql}
 #CONFIGURE_ARGS+=	--with-mysqlclient=no
 #.endif
@@ -177,7 +186,6 @@ CONFIGURE_ARGS+=	--with-ldap=no
 COMMENT-odbc=		ODBC support for Asterisk
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc
-
 .if !${BUILD_PACKAGES:M-odbc}
 CONFIGURE_ARGS+=	--with-iodbc=no \
 			--with-ltdl=no
@@ -187,7 +195,6 @@ CONFIGURE_ARGS+=	--with-iodbc=no \
 COMMENT-pgsql=		PostgreSQL support for Asterisk
 WANTLIB-pgsql=		pq z
 LIB_DEPENDS-pgsql=	databases/postgresql
-
 .if !${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-postgres=no
 .endif
@@ -196,7 +203,6 @@ CONFIGURE_ARGS+=	--with-postgres=no
 COMMENT-snmp=		Net-SNMP support for Asterisk
 WANTLIB-snmp=		m netsnmp netsnmpagent netsnmpmibs crypto kvm wrap
 LIB_DEPENDS-snmp=	net/net-snmp
-
 .if !${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=no
 .endif
@@ -205,7 +211,6 @@ CONFIGURE_ARGS+=	--with-snmp=no
 COMMENT-speex=		Speex codec for Asterisk
 WANTLIB-speex=		m speex speexdsp
 LIB_DEPENDS-speex=	audio/speex>=1.2rc1
-
 .if !${BUILD_PACKAGES:M-speex}
 CONFIGURE_ARGS+=	--with-speex=no
 .endif
