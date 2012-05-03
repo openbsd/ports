@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/03/05 15:22:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/03 06:51:24 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -10,6 +10,8 @@ DISTNAME =		gst-plugins-bad-${V}
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -45,7 +47,7 @@ WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstsdp-0.10 gsttag-0.10 gstvideo-0.10
 WANTLIB-main += idn jasper lrdf mms mpcdec orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pixman-1 png pthread-stubs raptor rsvg-2
 WANTLIB-main += schroedinger-1.0 sndfile sndio ssl stdc++ usbhid vpx
-WANTLIB-main += Xrandr fribidi gstapp-0.10 gstfft-0.10 jpeg spandsp tiff
+WANTLIB-main += fribidi gstapp-0.10 gstfft-0.10 jpeg spandsp tiff
 WANTLIB-main += xcb xcb-render xcb-shm xslt
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -59,7 +61,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/sdl \
 			graphics/jasper \
 			multimedia/libass \
-			multimedia/libdvdnav>=4.1.3p0v0 \
+			multimedia/libdvdnav>=4.2.0 \
 			multimedia/libmms \
 			multimedia/libvpx \
 			multimedia/schroedinger>=1.0.10 \

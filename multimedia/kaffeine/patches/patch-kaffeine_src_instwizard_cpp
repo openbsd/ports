@@ -1,31 +1,6 @@
-$OpenBSD: patch-kaffeine_src_instwizard_cpp,v 1.4 2007/06/18 23:24:06 jakemsr Exp $
+$OpenBSD: patch-kaffeine_src_instwizard_cpp,v 1.5 2012/05/03 06:51:24 ajacoutot Exp $
 --- kaffeine/src/instwizard.cpp.orig	Fri Apr 13 07:54:43 2007
 +++ kaffeine/src/instwizard.cpp	Mon Jun 18 01:07:55 2007
-@@ -107,7 +107,7 @@ void InstWizard::internalWizard()
- 	*/
- 	//WIN32-CODECS
- 	info << "<hr><b>" << i18n("WIN32 Codecs") << "...</b><br>";
--	QDir d("/usr/lib/win32");
-+	QDir d("/usr/local/lib/win32");
- 	QStringList entries = d.entryList("wmv*");
- 	if (entries.count())
- 		info << "<font color=\"DarkGreen\">" << i18n("Ok.") << "</font>";
-@@ -125,13 +125,13 @@ void InstWizard::internalWizard()
- 	else
- 	{
- 		d = QDir("/usr/local/lib");
--		entries = d.entryList("libdvdcss.so*");
-+		entries = d.entryList("libdvd.so*");
- 		if (entries.count())
- 			dvdcss = true;
- 		else
- 		{
- 			d = QDir("/usr/lib64");
--			entries = d.entryList("libdvdcss.so*");
-+			entries = d.entryList("libdvd.so*");
- 			if (entries.count())
- 				dvdcss = true;
- 		}
 @@ -142,6 +142,7 @@ void InstWizard::internalWizard()
  	else
  		info << "<font color=\"DarkGreen\">" << i18n("Ok.") << "</font>";

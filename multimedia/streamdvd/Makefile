@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/03 06:51:25 ajacoutot Exp $
 
-COMMENT=	Fast tool to backup Video DVDs 'on the fly'
+COMMENT=	fast tool to backup video DVDs 'on the fly'
+
 DISTNAME=	streamdvd-0.4
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.badabum.de/down/
 
@@ -17,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_REGRESS=	Yes
 
-LIB_DEPENDS=	devel/libdvdread
+LIB_DEPENDS=	devel/libdvdread>=4.2.0
 WANTLIB=	c m stdc++ dvdread
 
 WRKDIST=	${WRKDIR}/StreamDVD-0.4
@@ -30,7 +32,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/streamdvd ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/streamanalyze ${PREFIX}/bin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/streamdvd
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/streamdvd/README.streamdvd
-	${INSTALL_DATA} ${WRKSRC}/contrib/StreamAnalyze/README ${PREFIX}/share/doc/streamdvd/README.streamanalyze
+	${INSTALL_DATA} ${WRKSRC}/README \
+	    ${PREFIX}/share/doc/streamdvd/README.streamdvd
+	${INSTALL_DATA} ${WRKSRC}/contrib/StreamAnalyze/README \
+	    ${PREFIX}/share/doc/streamdvd/README.streamanalyze
 
 .include <bsd.port.mk>

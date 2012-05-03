@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2012/04/28 08:42:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2012/05/03 06:51:24 ajacoutot Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		15
+REVISION =		16
 
 CATEGORIES =		x11 multimedia
 
@@ -27,10 +27,10 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bluray bz2 c cdda_interface cdda_paranoia \
-		crypto dv enca fontconfig freetype fribidi gsm jpeg lcms \
-		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
-		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
-		swscale theoradec theoraenc ungif util vpx x264>=5 \
+		crypto dv dvdnavmini dvdread enca fontconfig freetype \
+		fribidi gsm jpeg lcms m mng mp3lame ncurses ogg>=5 orc-0.4 \
+		png postproc pthread SDL schroedinger-1.0>=2.0 sndio speex \
+		stdc++ swscale theoradec theoraenc ungif util vpx x264>=5 \
 		xvidcore z
 
 # we use a snapshot
@@ -57,7 +57,9 @@ LIB_DEPENDS =	graphics/png \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264>=20101023 \
 		devel/sdl>=1.2.5 \
-		multimedia/libass
+		multimedia/libass \
+		devel/libdvdread>=4.2.0 \
+		multimedia/libdvdnav>=4.2.0
 
 BUILD_DEPENDS =	net/livemedia \
 		audio/rtunes>=0.8 \
@@ -89,6 +91,7 @@ CONFIGURE_ARGS += --confdir=${CONFDIR} \
 		--extra-libs-mplayer="-lrtunes -lcrypto"
 
 # CONFIGURE_ARGS that disable internal stuff
+# gui is not supported anymore and we have better ones in ports
 CONFIGURE_ARGS += --disable-alsa \
 		--disable-arts \
 		--disable-esd \
@@ -97,17 +100,10 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-vidix \
 		--disable-select \
 		--disable-libcdio \
-		--disable-libmpeg2-internal
-# seems stable dvdnav does not work with a new mplayer.
-# if they make a release in the future, maybe we can pull that in,
-# but for now we have to use the internal one.
-#		--disable-dvdread-internal \
-#		--disable-libdvdcss-internal \
-# If re-adding external libdvd*, don't forget the LIB_DEPENDS:
-#		multimedia/libdvdnav>=4.1.3 \
-#		devel/libdvdread \
-# gui is not supported anymore and we have better ones in ports
-CONFIGURE_ARGS += --disable-gui \
+		--disable-libmpeg2-internal \
+		--disable-dvdread-internal \
+		--disable-libdvdcss-internal \
+		--disable-gui \
 		--disable-ffmpeg_a	# link ffmpeg .so (graphics/ffmpeg)
 
 # CONFIGURE_ARGS that enable internal stuff
@@ -128,6 +124,7 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-liba52 \
 		--disable-libmpeg2 \
 		--disable-toolame \
+		--disable-twolame \
 		--disable-win32dll \
 		--disable-ggi \
 		--disable-libopencore_amrnb \

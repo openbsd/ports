@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
---- configure.orig	Wed Mar  9 01:33:03 2011
-+++ configure	Wed Jan 25 10:27:59 2012
+$OpenBSD: patch-configure,v 1.62 2012/05/03 06:51:24 ajacoutot Exp $
+--- configure.orig	Tue Mar  8 19:33:03 2011
++++ configure	Fri Mar 30 17:05:21 2012
 @@ -35,29 +35,33 @@
  #
  #############################################################################
@@ -244,19 +244,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
  fi
  if test "$_bluray" = yes ; then
    def_bluray='#define CONFIG_LIBBLURAY 1'
-@@ -5832,8 +5874,9 @@ if test "$_dvdread_internal" = auto ; then
- elif test "$_dvdread" = auto ; then
-   _dvdread=no
-   if test "$_dl" = yes; then
--    _dvdreadcflags=$($_dvdreadconfig --cflags 2> /dev/null)
--    _dvdreadlibs=$($_dvdreadconfig --libs 2> /dev/null)
-+# OpenBSD - we do not use dvdread-config, picked up anyway without
-+#    _dvdreadcflags=$($_dvdreadconfig --cflags 2> /dev/null)
-+#    _dvdreadlibs=$($_dvdreadconfig --libs 2> /dev/null)
-     if header_check dvdread/dvd_reader.h $_dvdreadcflags $_dvdreadlibs $_ld_dl ; then
-       _dvdread=yes
-       extra_cflags="$extra_cflags $_dvdreadcflags"
-@@ -6521,7 +6564,7 @@ echores "$_libmpeg2"
+@@ -6521,7 +6563,7 @@ echores "$_libmpeg2"
  echocheck "libdca support"
  if test "$_libdca" = auto ; then
    _libdca=no
@@ -265,7 +253,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
      statement_check_broken stdint.h dts.h 'dts_init(0)' $_ld_dca $_ld_lm &&
        extra_ldflags="$extra_ldflags $_ld_dca" && _libdca=yes && break
    done
-@@ -7360,6 +7403,8 @@ if test "$_tv_v4l2" = auto ; then
+@@ -7360,6 +7402,8 @@ if test "$_tv_v4l2" = auto ; then
    _tv_v4l2=no
    if test "$_tv" = yes && linux ; then
      header_check_broken sys/time.h linux/videodev2.h && _tv_v4l2=yes
@@ -274,7 +262,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
    fi
  fi
  if test "$_tv_v4l2" = yes ; then
-@@ -8069,6 +8114,7 @@ SPEEX = $_speex
+@@ -8069,6 +8113,7 @@ SPEEX = $_speex
  STREAM_CACHE = $_stream_cache
  SGIAUDIO = $_sgiaudio
  SUNAUDIO = $_sunaudio
@@ -282,7 +270,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
  SVGA = $_svga
  TDFXFB = $_tdfxfb
  TDFXVID = $_tdfxvid
-@@ -8357,6 +8403,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
+@@ -8357,6 +8402,7 @@ $(ff_config_enable "$cpuexts_all" "$cpuexts" "#" "HAVE
  /* Blu-ray/DVD/VCD/CD */
  #define DEFAULT_CDROM_DEVICE "$default_cdrom_device"
  #define DEFAULT_DVD_DEVICE   "$default_dvd_device"
@@ -290,7 +278,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
  $def_bluray
  $def_bsdi_dvd
  $def_cddb
-@@ -8445,6 +8492,7 @@ $def_ossaudio_devmixer
+@@ -8445,6 +8491,7 @@ $def_ossaudio_devmixer
  $def_pulse
  $def_sgiaudio
  $def_sunaudio
@@ -298,7 +286,7 @@ $OpenBSD: patch-configure,v 1.61 2012/03/30 13:23:03 phessler Exp $
  $def_win32waveout
  
  $def_ladspa
-@@ -8622,6 +8670,7 @@ $def_round
+@@ -8622,6 +8669,7 @@ $def_round
  $def_roundf
  $def_ten_operands
  $def_threads

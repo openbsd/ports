@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2012/05/03 06:51:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	alpha i386 powerpc sparc64 amd64
 
@@ -6,7 +6,7 @@ CATEGORIES =	x11
 
 COMMENT =	DVD player
 DISTNAME =	ogle-0.9.2
-REVISION =	14
+REVISION =	15
 SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_FTP =	Yes
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xinerama Xv Xxf86vm a52 c
-WANTLIB += dvdread jpeg m mad pthread-stubs sndio xcb xml2 z
+WANTLIB += ICE SM X11 Xext Xinerama Xv Xxf86vm a52 c
+WANTLIB += dvdread jpeg m mad sndio xcb xml2 z
 
 MODULES =	converters/libiconv
 

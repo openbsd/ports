@@ -1,0 +1,21 @@
+$OpenBSD: patch-vmg_Makefile_in,v 1.1 2012/05/03 06:51:24 ajacoutot Exp $
+--- vmg/Makefile.in.orig	Tue Nov  4 06:33:56 2003
++++ vmg/Makefile.in	Fri Dec 16 08:16:25 2011
+@@ -139,7 +139,7 @@ am__quote = @am__quote@
+ install_sh = @install_sh@
+ 
+ pkglib_PROGRAMS = ogle_nav
+-bin_PROGRAMS = ifo_dump
++bin_PROGRAMS = 
+ noinst_PROGRAMS = vmg_dump dump
+ 
+ AM_CPPFLAGS = @TOP_INCLUDES@ @DVDREAD_CPPFLAGS@ @XML_CFLAGS@
+@@ -182,7 +182,7 @@ ogle_nav_SOURCES = nav.c \
+ subdir = vmg
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES =
+-bin_PROGRAMS = ifo_dump$(EXEEXT)
++bin_PROGRAMS = 
+ noinst_PROGRAMS = vmg_dump$(EXEEXT) dump$(EXEEXT)
+ pkglib_PROGRAMS = ogle_nav$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS) $(pkglib_PROGRAMS)

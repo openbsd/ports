@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2012/04/24 20:47:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.147 2012/05/03 06:51:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ COMMENT-jack=	JACK audio output module for VLC
 V=		2.0.1
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
@@ -63,7 +64,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		audio/speex \
 		audio/taglib \
 		devel/fribidi \
-		devel/libdvdread \
+		devel/libdvdread>=4.2.0 \
 		devel/libnotify>=0.7.2 \
 		devel/sdl \
 		devel/sdl-image \
@@ -72,7 +73,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		graphics/png \
 		multimedia/libass \
 		multimedia/libbluray \
-		multimedia/libdvdnav \
+		multimedia/libdvdnav>=4.2.0 \
 		multimedia/libmatroska \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264 \
@@ -113,7 +114,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-decklink \
 		--disable-dirac \
 		--disable-dv \
-		--disable-dvdread \
 		--disable-flac \
 		--disable-fluidsynth \
 		--disable-gme \

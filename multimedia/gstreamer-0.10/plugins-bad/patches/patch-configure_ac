@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.15 2012/03/05 15:22:46 ajacoutot Exp $
---- configure.ac.orig	Tue Feb 21 02:55:15 2012
-+++ configure.ac	Mon Mar  5 14:44:49 2012
+$OpenBSD: patch-configure_ac,v 1.16 2012/05/03 06:51:24 ajacoutot Exp $
+--- configure.ac.orig	Mon Feb 20 20:55:15 2012
++++ configure.ac	Sat Mar 10 00:49:46 2012
 @@ -411,7 +411,7 @@ if test "x$HAVE_WINSOCK2_H" = "xyes"; then
  fi
  
@@ -10,15 +10,6 @@ $OpenBSD: patch-configure_ac,v 1.15 2012/03/05 15:22:46 ajacoutot Exp $
    AC_SUBST(DCCP_LIBS)
  fi
  
-@@ -906,7 +906,7 @@ return 0;
- dnl *** resindvd ***
- translit(dnm, m, l) AM_CONDITIONAL(USE_RESINDVD, true)
- AG_GST_CHECK_FEATURE(RESINDVD, [resindvd plugin], resindvd, [
--  PKG_CHECK_MODULES(DVDNAV, dvdnav >= 4.1.2 dvdread >= 4.1.2, HAVE_RESINDVD="yes", [
-+  PKG_CHECK_MODULES(DVDNAV, dvdnav >= 4.1.2, HAVE_RESINDVD="yes", [
-     HAVE_RESINDVD="no"
-   ])
- ])
 @@ -1124,7 +1124,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
          OLD_CFLAGS="$CFLAGS"
          OLD_LIBS="$LIBS"

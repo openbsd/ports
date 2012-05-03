@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2012/04/23 13:47:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2012/05/03 06:51:25 ajacoutot Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -121,6 +121,7 @@ lib/vlc/plugins/access/libaccess_udp_plugin.so
 lib/vlc/plugins/access/libaccess_vdr_plugin.so
 lib/vlc/plugins/access/libcdda_plugin.so
 lib/vlc/plugins/access/libdvdnav_plugin.so
+lib/vlc/plugins/access/libdvdread_plugin.so
 lib/vlc/plugins/access/libfilesystem_plugin.so
 lib/vlc/plugins/access/libidummy_plugin.so
 lib/vlc/plugins/access/liblibbluray_plugin.so
