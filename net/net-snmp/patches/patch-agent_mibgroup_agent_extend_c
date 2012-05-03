@@ -1,0 +1,20 @@
+$OpenBSD: patch-agent_mibgroup_agent_extend_c,v 1.1 2012/05/03 20:06:51 jasper Exp $
+
+Security fix for CVE-2012-2141 net-snmp: Array index error, leading to
+out-of heap-based buffer read (snmpd crash)
+
+Fix from https://bugzilla.redhat.com/show_bug.cgi?id=815813
+
+--- agent/mibgroup/agent/extend.c.orig	Thu May  3 21:46:19 2012
++++ agent/mibgroup/agent/extend.c	Thu May  3 21:46:45 2012
+@@ -1380,6 +1380,10 @@ handle_nsExtendOutput2Table(netsnmp_mib_handler       
+                  * Determine which line we've been asked for....
+                  */
+                 line_idx = *table_info->indexes->next_variable->val.integer;
++                if (line_idx < 1 || line_idx > extension->numlines) {
++                    netsnmp_set_request_error(reqinfo, request, SNMP_NOSUCHINSTANCE);
++                    continue;
++                }
+                 cp  = extension->lines[line_idx-1];
+ 
+                 /* 

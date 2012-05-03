@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/04/11 16:31:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/03 20:06:51 jasper Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -9,7 +9,7 @@ DISTNAME=	net-snmp-$V
 
 MULTI_PACKAGES=	-main -perl -tkmib
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	3
+REVISION-main=	4
 REVISION-perl=	0
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
