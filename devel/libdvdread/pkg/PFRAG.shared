@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2006/01/03 14:55:18 bernd Exp $
-@lib lib/libdvdread.so.${LIBdvdread_VERSION}
