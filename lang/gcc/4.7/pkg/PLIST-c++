@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.1.1.1 2012/04/23 15:56:43 pascal Exp $
+@comment $OpenBSD: PLIST-c++,v 1.2 2012/05/03 11:22:29 espie Exp $
 @conflict libstdc++->=4.8
 @bin bin/ec++
 @bin bin/eg++
@@ -494,6 +494,13 @@ include/c++/${V}/ext/vstring.h
 include/c++/${V}/ext/vstring.tcc
 include/c++/${V}/ext/vstring_fwd.h
 include/c++/${V}/ext/vstring_util.h
+include/c++/${V}/initializer_list
+include/c++/${V}/iomanip
+include/c++/${V}/ios
+include/c++/${V}/iosfwd
+include/c++/${V}/iostream
+include/c++/${V}/istream
+include/c++/${V}/iterator
 include/c++/${V}/fenv.h
 include/c++/${V}/forward_list
 include/c++/${V}/fstream

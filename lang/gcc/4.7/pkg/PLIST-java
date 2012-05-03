@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.1.1.1 2012/04/23 15:56:45 pascal Exp $
+@comment $OpenBSD: PLIST-java,v 1.2 2012/05/03 11:22:29 espie Exp $
 %%SHARED%%
 bin/eaot-compile
 @bin bin/egappletviewer
@@ -1528,13 +1528,6 @@ include/c++/${V}/gnu/javax/swing/text/html/parser/support/parameterDefaulter.h
 include/c++/${V}/gnu/javax/swing/text/html/parser/support/textPreProcessor.h
 include/c++/${V}/gnu/javax/swing/tree/
 include/c++/${V}/gnu/javax/swing/tree/GnuPath.h
-include/c++/${V}/initializer_list
-include/c++/${V}/iomanip
-include/c++/${V}/ios
-include/c++/${V}/iosfwd
-include/c++/${V}/iostream
-include/c++/${V}/istream
-include/c++/${V}/iterator
 include/c++/${V}/java/
 include/c++/${V}/java/applet/
 include/c++/${V}/java/applet/Applet.h
