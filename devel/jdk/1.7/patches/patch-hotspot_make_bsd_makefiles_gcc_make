@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.4 2011/09/22 20:26:47 kurt Exp $
---- hotspot/make/bsd/makefiles/gcc.make.orig	Sun Sep 18 10:12:24 2011
-+++ hotspot/make/bsd/makefiles/gcc.make	Sun Sep 18 10:12:36 2011
+$OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.5 2012/05/03 21:48:21 kurt Exp $
+--- hotspot/make/bsd/makefiles/gcc.make.orig	Wed May  2 17:55:28 2012
++++ hotspot/make/bsd/makefiles/gcc.make	Wed May  2 18:48:33 2012
 @@ -130,7 +130,7 @@ else
  endif
  
@@ -10,3 +10,12 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_gcc_make,v 1.4 2011/09/22 20:26:47 ku
  
  # Except for a few acceptable ones
  # Since GCC 4.3, -Wconversion has changed its meanings to warn these implicit
+@@ -259,7 +259,7 @@ ifneq ($(OBJCOPY),)
+   endif
+ 
+   OPT_CFLAGS/ia64  = -g
+-  OPT_CFLAGS/amd64 = -g
++  OPT_CFLAGS/amd64 = -gstabs
+   OPT_CFLAGS/arm   = -g
+   OPT_CFLAGS/ppc   = -g
+   OPT_CFLAGS += $(OPT_CFLAGS/$(BUILDARCH))
