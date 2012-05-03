@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/04/11 07:39:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2012/05/03 18:52:11 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.14.0
+GNOME_VERSION=	0.14.1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -20,10 +20,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-main=		1
-REVISION-evolution=	1
-REVISION-nautilus=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
