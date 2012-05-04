@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/17 13:10:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/05/04 08:56:23 jasper Exp $
 
 COMMENT=		libc for msp430
 
 TOOL=			${TARGET}-libc
 TOOL_V= 		20120224
+
+LTS_PATCHES=		msp430-libc-20120224-sf3522752.patch
 
 CONFIGURE_STYLE=	# This space intentionally left blank.
 
