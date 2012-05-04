@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/03 19:22:42 pascal Exp $
+# $OpenBSD: Makefile,v 1.21 2012/05/04 21:09:29 pascal Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-7.4
+DISTNAME=	gdb-7.4.1
 
 HOMEPAGE=	http://www.gnu.org/software/gdb/
 
