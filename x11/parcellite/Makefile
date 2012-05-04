@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/20 09:04:41 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/04 07:47:30 sthen Exp $
 
 COMMENT=	lightweight GTK+ clipboard manager
 
 DISTNAME=	parcellite-1.0.2rc5
+REVISION=	0
 CATEGORIES=	x11
 
-MAINTAINER=	Lawrence Teo <lteo@devio.us>
+MAINTAINER=	Lawrence Teo <lteo@lteo.net>
 
 HOMEPAGE=	http://parcellite.sourceforge.net/
 
@@ -40,11 +41,5 @@ RUN_DEPENDS=	devel/desktop-file-utils
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/parcellite/xdg/autostart/
 
 USE_GMAKE=	yes
-
-# Author accidentally included the parcellite binary and *.o files in the
-# source tarball for 1.0.2rc5, so a clean is needed before build. Author
-# has been notified via their project bug tracker (Bug ID 3411337).
-pre-build:
-	( cd ${WRKBUILD} && ${MAKE_PROGRAM} clean )
 
 .include <bsd.port.mk>
