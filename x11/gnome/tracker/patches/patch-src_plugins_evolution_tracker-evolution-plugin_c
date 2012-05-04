@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_plugins_evolution_tracker-evolution-plugin_c,v 1.6 2012/05/04 09:16:04 ajacoutot Exp $
+$OpenBSD: patch-src_plugins_evolution_tracker-evolution-plugin_c,v 1.7 2012/05/04 15:42:39 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=675437
+From 36ae98cd502d2ba8dc36ff281ef1b0258f61bd8c Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 04 May 2012 09:10:48 +0000
+Subject: evolution plugin: include missing header
 
 --- src/plugins/evolution/tracker-evolution-plugin.c.orig	Fri May  4 10:57:05 2012
 +++ src/plugins/evolution/tracker-evolution-plugin.c	Fri May  4 10:56:52 2012
