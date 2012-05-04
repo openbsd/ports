@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in_in,v 1.7 2012/04/13 06:24:19 ajacoutot Exp $
---- configure.in.in.orig	Fri Feb  6 14:07:37 2009
-+++ configure.in.in	Wed Apr 11 15:44:50 2012
+$OpenBSD: patch-configure_in_in,v 1.8 2012/05/04 10:09:22 ajacoutot Exp $
+--- configure.in.in.orig	Fri Feb  6 12:07:37 2009
++++ configure.in.in	Fri May  4 02:38:56 2012
 @@ -740,6 +740,37 @@ if test "x$with_esd" != "xno"; then
  	fi
  fi
@@ -88,6 +88,15 @@ $OpenBSD: patch-configure_in_in,v 1.7 2012/04/13 06:24:19 ajacoutot Exp $
  		have_little_endian=no;
  		LMPG_OPT="";
  		AC_DEFINE(FPM_PPC,1,[Mad ])       
+@@ -1184,7 +1244,7 @@ case $host_cpu in
+ 		AC_DEFINE(ARCH_POWERPC,1,[Enable PowerPC optim])		
+ 		AC_ARG_ENABLE(altivec, 
+ 			AC_HELP_STRING([--enable-altivec], [enable AltiVec acceleration (PowerPC)]),
+-			have_altivec=yes)
++			have_altivec=${enableval}, have_altivec=yes)
+ 		AC_DEFINE(WORDS_BIGENDIAN,1,[Big endian CPU - SPARC or PowerPC])
+ 		AC_DEFINE(ENABLE_MMX,0,[post proc])       
+ 		;;
 @@ -1321,15 +1381,6 @@ if test "x$use_debug" = "xyes"; then
  	AC_DEFINE(ADM_DEBUG,1,[be verbose])
  	CXXFLAGS="$CXXFLAGS -O1 -g3"
