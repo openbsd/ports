@@ -1,7 +1,28 @@
-$OpenBSD: patch-doc_siproxd_conf_example,v 1.3 2012/01/21 22:02:13 sthen Exp $
+$OpenBSD: patch-doc_siproxd_conf_example,v 1.4 2012/05/04 21:42:18 sthen Exp $
 --- doc/siproxd.conf.example.orig	Mon Jun 20 16:25:27 2011
-+++ doc/siproxd.conf.example	Fri Jan 20 22:31:42 2012
-@@ -78,8 +78,8 @@ silence_log = 1
++++ doc/siproxd.conf.example	Thu May  3 22:57:55 2012
+@@ -9,6 +9,9 @@
+ ######################################################################
+ # The interface names of INBOUND and OUTBOUND interface.
+ #
++#    if_inbound:  the name of the internal interface
++#    if_outbound: the name of the external interface
++#
+ #    If siproxd is not running on the host doing the masquerading
+ #    but on a host within the private network segment, "in front" of
+ #    the masquerading router: define if_inbound and if_outbound to
+@@ -17,8 +20,8 @@
+ #    or a hostname that resolves to that address (use a dyndns address for
+ #    example).
+ #
+-if_inbound  = eth0
+-if_outbound = ppp0
++if_inbound  = em0
++if_outbound = pppoe0
+ # uncomment the following line ONLY IF YOU KNOW WHAT YOU ARE DOING!
+ # READ THE FAQ FIRST!
+ #host_outbound = 1.2.3.4
+@@ -78,8 +81,8 @@ silence_log = 1
  # Secure Enviroment settings:
  #   user:	uid/gid to switch to after startup
  #   chrootjail:	path to chroot to (chroot jail)
@@ -12,7 +33,7 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.3 2012/01/21 22:02:13 sthen Exp $
  
  ######################################################################
  # Memory settings
-@@ -100,7 +100,7 @@ user = nobody
+@@ -100,7 +103,7 @@ user = nobody
  #   the specified directory path does exist!
  #   Note: If running in chroot jail, this path starts relative
  #         to the jail.
@@ -21,7 +42,7 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.3 2012/01/21 22:02:13 sthen Exp $
  
  ######################################################################
  # Automatically save current registrations every 'n' seconds
-@@ -113,7 +113,7 @@ autosave_registrations = 300
+@@ -113,7 +116,7 @@ autosave_registrations = 300
  #   This file holds the PID of the main thread of siproxd.
  #   Note: If running in chroot jail, this path starts relative
  #         to the jail.
@@ -30,7 +51,7 @@ $OpenBSD: patch-doc_siproxd_conf_example,v 1.3 2012/01/21 22:02:13 sthen Exp $
  
  ######################################################################
  # global switch to control the RTP proxy behaviour
-@@ -322,18 +322,18 @@ debug_port = 0
+@@ -322,18 +325,18 @@ debug_port = 0
  # The plugins are loaded in the order they appear here. Also
  # the processing order is given by the load order.
  #
