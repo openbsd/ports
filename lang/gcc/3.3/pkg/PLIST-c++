@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-c++,v 1.2 2005/09/14 10:41:02 espie Exp $
+@comment $OpenBSD: PLIST-c++,v 1.3 2012/05/04 08:47:55 pascal Exp $
 @conflict egcs-*-core
+@conflict libstdc++->=3.4
 @pkgpath lang/egcs/stable,-c++
 bin/ec++
 bin/eg++
