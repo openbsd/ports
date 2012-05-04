@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2012/04/28 11:06:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.205 2012/05/04 07:57:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,8 +15,8 @@ CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
 
-REVISION-main=	0
-REVISION-server=0
+REVISION-main=	1
+REVISION-server=1
 
 SHARED_LIBS=	mysqlclient_r	21.0 \
 		mysqlclient	21.0

@@ -1,0 +1,24 @@
+$OpenBSD: patch-sql_sql_select_cc,v 1.1 2012/05/04 07:57:18 ajacoutot Exp $
+
+Fix for security issue. Bug #59387.
+
+--- sql/sql_select.cc.orig	Thu May  3 16:30:53 2012
++++ sql/sql_select.cc	Thu May  3 16:32:26 2012
+@@ -5781,7 +5781,7 @@ static bool create_ref_for_key(JOIN *join, JOIN_TAB *j
+     */
+     do
+     {
+-      if (!(~used_tables & keyuse->used_tables))
++      if (!(~used_tables & (keyuse->used_tables & ~OUTER_REF_TABLE_BIT)))
+       {
+ 	if (keyparts == keyuse->keypart &&
+ 	    !(found_part_ref_or_null & keyuse->optimize))
+@@ -5834,7 +5834,7 @@ static bool create_ref_for_key(JOIN *join, JOIN_TAB *j
+     for (i=0 ; i < keyparts ; keyuse++,i++)
+     {
+       while (keyuse->keypart != i ||
+-	     ((~used_tables) & keyuse->used_tables))
++	     ((~used_tables) & (keyuse->used_tables & ~OUTER_REF_TABLE_BIT)))
+ 	keyuse++;				/* Skip other parts */
+ 
+       uint maybe_null= test(keyinfo->key_part[i].null_bit);
