@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/04 06:24:04 ajacoutot Exp $
 
 COMMENT =		automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	0.12.1
+MODPY_EGG_VERSION =	0.16
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		2
 
 CATEGORIES =		audio
 
@@ -32,7 +31,8 @@ MODPY_DISTUTILS_INSTALL=install --prefix=${LOCALBASE} --root=${DESTDIR}
 # msgfmt
 BUILD_DEPENDS =		devel/gettext
 
-LIB_DEPENDS =		audio/libofa graphics/ffmpeg
+LIB_DEPENDS =		audio/libofa \
+			graphics/ffmpeg
 
 RUN_DEPENDS =		x11/py-qt4>=4.1 \
 			audio/py-mutagen>=1.9 \
@@ -41,21 +41,31 @@ RUN_DEPENDS =		x11/py-qt4>=4.1 \
 REGRESS_DEPENDS =	${BASE_PKGPATH}
 
 PLUGINS_DIRS =		lastfm \
+			lastfmplus \
 			replaygain
-PLUGINS =		addrelease.py \
+PLUGINS =		classicdiscnumber.py \
 			coverart.py \
 			cuesheet.py \
 			discnumber.py \
 			featartist.py \
-			fix_mp4_meta.py \
+			featartistsintitles.py \
 			lastfm/__init__.py \
 			lastfm/options_lastfm.ui \
 			lastfm/ui_options_lastfm.py \
-			originalreleasedate.py \
+			lastfmplus/__init__.py \
+			lastfmplus/ui_options_lastfm.py \
+			no_release.py \
+			open_in_gui.py \
+			release_type.py \
 			replaygain/__init__.py \
 			replaygain/options_replaygain.ui \
 			replaygain/ui_options_replaygain.py \
-			titlecase.py
+			swapprefix.py \
+			titlecase.py \
+			tracks2clipboard.py
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/setup.py
 
 post-install:
 .for dir in ${PLUGINS_DIRS}
