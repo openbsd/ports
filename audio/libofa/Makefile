@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/04 06:34:53 ajacoutot Exp $
 
 COMMENT =	Open Fingerprint Architecture library
 
 DISTNAME =	libofa-0.9.3
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio devel
 HOMEPAGE =	http://code.google.com/p/musicip-libofa/
 SHARED_LIBS +=	ofa	0.0
@@ -18,8 +18,11 @@ MASTER_SITES =	http://musicip-libofa.googlecode.com/files/
 
 WANTLIB +=	m stdc++ fftw3
 
-LIB_DEPENDS =	net/curl \
-		math/fftw3 \
+# needed to build the examples
+BUILD_DEPENDS =	net/curl \
+		devel/gettext
+
+LIB_DEPENDS =	math/fftw3
 
 USE_LIBTOOL =		Yes
 SEPARATE_BUILD =	Yes
