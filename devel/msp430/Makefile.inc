@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2012/04/17 13:27:17 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2012/05/04 08:56:39 jasper Exp $
 
 #
 # XXX: Don't forget to adjust meta/msp430 when updating to new LTS
@@ -43,7 +43,7 @@ MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 MASTER_SITES0=		http://distfiles.nl/mspgcc/
 
 # These are the patches intended for the LTS releases.
-#MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/${LTS_V}/}
+MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/${LTS_V}/}
 
 .for p in ${LTS_PATCHES}
 PATCHFILES += $p:1
