@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/04 20:24:00 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/05/04 20:15:53 jeremy Exp $
 bin/jruby
 jruby/
 jruby/bin/
@@ -1549,6 +1549,8 @@ jruby/lib/ruby/site_ruby/1.8/rubygems/server.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/source_index.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/spec_fetcher.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/specification.rb
+jruby/lib/ruby/site_ruby/1.8/rubygems/ssl_certs/
+jruby/lib/ruby/site_ruby/1.8/rubygems/ssl_certs/ca-bundle.pem
 jruby/lib/ruby/site_ruby/1.8/rubygems/syck_hack.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/test_case.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/test_utilities.rb

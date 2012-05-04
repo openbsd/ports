@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2012/04/04 20:23:59 jeremy Exp $
+# $OpenBSD: Makefile,v 1.32 2012/05/04 20:15:53 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.6.7
+V =		1.6.7.2
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
