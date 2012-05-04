@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 08:48:05 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/05/04 20:17:50 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
-PKGNAME=	ldap-0.9.8
-REVISION=	2
+PKGNAME=	ldap-0.9.12
 DISTNAME=	ruby-${PKGNAME}
 CATEGORIES=	databases
 
-HOMEPAGE=	http://ruby-ldap.sourceforge.net/
+HOMEPAGE=	https://github.com/alexey-chebotar/ruby-ldap
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 
@@ -17,16 +16,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ruby-ldap/}
-EXTRACT_SUFX =		.tar.bz2
-
 MODULES=		lang/ruby
 
-WANTLIB=		crypto pthread ssl ldap ldap_r lber
+WANTLIB=		crypto pthread ssl ldap lber
 
 LIB_DEPENDS=		databases/openldap
 
-CONFIGURE_STYLE=	ruby extconf
+CONFIGURE_STYLE=	ruby gem ext
+CONFIGURE_ARGS=		--without-libldap
 
 REGRESS_TARGET=		test
 REGRESS_DEPENDS=	databases/openldap,-server
