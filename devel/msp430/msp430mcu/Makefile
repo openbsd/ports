@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/17 13:10:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/04 08:58:55 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -6,6 +6,9 @@ COMMENT=	C headers and binutils linker scripts for msp430
 
 TOOL=		msp430mcu
 TOOL_V= 	${LTS_V}
+
+# msp430mcu-20120406-sf3522088.patch doesn't apply to us, since ${BINDIR}
+# is already created by mtree.
 
 CONFIGURE_STYLE=# This space intentionally left blank
 
