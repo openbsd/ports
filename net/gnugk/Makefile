@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/05/05 06:12:13 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-3.0.1
+DISTNAME=	gnugk-3.0.2
 
 CATEGORIES=	net telephony
 
@@ -35,7 +35,8 @@ NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTLIBDIR=`ptlib-config --ptlibdir`
 CONFIGURE_ARGS=	--enable-radius \
 		--enable-sqlite \
 		--enable-mysql \

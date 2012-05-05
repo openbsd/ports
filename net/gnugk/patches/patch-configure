@@ -1,19 +1,6 @@
-$OpenBSD: patch-configure,v 1.9 2012/01/05 08:44:35 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.10 2012/05/05 06:12:13 ajacoutot Exp $
 --- configure.orig	Mon Nov 28 13:46:08 2011
 +++ configure	Thu Jan  5 09:33:19 2012
-@@ -3633,9 +3633,9 @@ fi
- 
-       if test "${HAS_OPENH323_VERSIONFILE:-unset}" != "unset"; then
-         OPENH323_VERSION_FILE=${OPENH323MAKEDIR}/../../include/openh323/openh323buildopts.h
--        OPENH323_MAJOR_VERSION=`cat ${OPENH323_VERSION_FILE} | grep OPENH323_MAJOR | cut -f2 -d' '`
--        OPENH323_MINOR_VERSION=`cat ${OPENH323_VERSION_FILE} | grep OPENH323_MINOR | cut -f2 -d' '`
--        OPENH323_BUILD_NUMBER=`cat ${OPENH323_VERSION_FILE} | grep "OPENH323_BUILD " | cut -f2 -d' '`
-+        OPENH323_MAJOR_VERSION=`cat ${OPENH323_VERSION_FILE} | grep OPENH323_MAJOR | cut -f3 -d' '`
-+        OPENH323_MINOR_VERSION=`cat ${OPENH323_VERSION_FILE} | grep OPENH323_MINOR | cut -f3 -d' '`
-+        OPENH323_BUILD_NUMBER=`cat ${OPENH323_VERSION_FILE} | grep "OPENH323_BUILD " | cut -f3 -d' '`
-       fi
-     fi
-   fi
 @@ -3689,7 +3689,7 @@ else
  fi
  
