@@ -1,8 +1,18 @@
-$OpenBSD: patch-src_build_py,v 1.1 2012/05/03 08:48:26 landry Exp $
-Set shlib version, don't do stupid symlinks
+$OpenBSD: patch-src_build_py,v 1.2 2012/05/05 07:05:16 landry Exp $
+Set shlib version, don't do stupid symlinks, dont call ldconfig
 --- src/build.py.orig	Tue Apr 10 00:56:48 2012
-+++ src/build.py	Wed May  2 22:39:34 2012
-@@ -81,7 +81,7 @@ if not env['RUNTIME_LINK'] == 'static':
++++ src/build.py	Sat May  5 08:15:49 2012
+@@ -37,9 +37,6 @@ def call(cmd, silent=True):
+     elif not silent:
+         print stderr
+ 
+-def ldconfig(*args,**kwargs):
+-    call('ldconfig')
+-
+ if env['LINKING'] == 'static':
+     lib_env.Append(CXXFLAGS="-fPIC")
+ 
+@@ -81,7 +78,7 @@ if not env['RUNTIME_LINK'] == 'static':
  if env['PLATFORM'] == 'Darwin':
      mapnik_libname = 'libmapnik.dylib'
  else:
@@ -11,7 +21,7 @@ Set shlib version, don't do stupid symlinks
  
  if env['PLATFORM'] == 'Darwin':
      if env['FULL_LIB_PATH']:
-@@ -325,9 +325,7 @@ if env['PLATFORM'] != 'Darwin':
+@@ -325,30 +322,13 @@ if env['PLATFORM'] != 'Darwin':
              os.remove(trgt)
          os.symlink(os.path.basename(src), trgt)
  
@@ -22,9 +32,10 @@ Set shlib version, don't do stupid symlinks
      target = os.path.join(env['MAPNIK_LIB_BASE_DEST'], soFile)
      
      if 'uninstall' not in COMMAND_LINE_TARGETS:
-@@ -336,19 +334,6 @@ if env['PLATFORM'] != 'Darwin':
-       if result:
-             env.AddPostAction(result, ldconfig)
+       result = env.InstallAs(target=target, source=mapnik)
+       env.Alias(target='install', source=result)
+-      if result:
+-            env.AddPostAction(result, ldconfig)
  
 -    
 -    # Install symlinks
