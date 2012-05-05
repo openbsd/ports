@@ -1,10 +1,10 @@
-$OpenBSD: patch-aconfigure_ac,v 1.3 2010/09/14 07:37:19 dcoppa Exp $
+$OpenBSD: patch-aconfigure_ac,v 1.4 2012/05/05 19:54:04 dcoppa Exp $
 
 zap CROSS_COMPILE variable
 use -pthread instead of -lpthread
 
---- aconfigure.ac.orig	Thu Aug  5 08:27:20 2010
-+++ aconfigure.ac	Mon Sep 13 13:22:45 2010
+--- aconfigure.ac.orig	Fri Apr 27 03:22:15 2012
++++ aconfigure.ac	Sat May  5 21:30:07 2012
 @@ -41,13 +41,6 @@ AC_PROG_CC
  AC_PROG_CXX
  AC_LANG_C
@@ -19,7 +19,7 @@ use -pthread instead of -lpthread
  if test "$AR" = ""; then AR="${CROSS_COMPILE}ar rv"; fi
  AC_SUBST(AR)
  if test "$LD" = ""; then LD="$CC"; fi
-@@ -92,7 +85,23 @@ case $host in 
+@@ -105,7 +98,23 @@ case $target in
  	;;
  esac
  
