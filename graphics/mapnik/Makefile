@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/03 08:48:26 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/05 01:16:44 naddy Exp $
+
+BROKEN =	resets ld.so search path
 
 COMMENT =	toolkit for developing mapping applications
 
