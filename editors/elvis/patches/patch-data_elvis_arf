@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_elvis_arf,v 1.1 2012/05/05 14:03:15 sthen Exp $
+
+Make file/syntax detection work for scripts that use env
+in their shebang line. From Debian.
+
+--- data/elvis.arf.orig	Tue Oct 21 04:32:25 2003
++++ data/elvis.arf	Sat May  5 13:40:29 2012
+@@ -10,6 +10,8 @@ then {
+  if os=="unix" && buflines >= 1
+  then {
+   try 1s/\V^#! *[^ ]*\/\([^ ]\+\).*/set! bufdisplay="syntax \1"/x
++  if bufdisplay=="syntax env"
++  then try 1s/\V^#! *[^ ]*\/[^ ]\+ \([^ ]\+\).*/set! bufdisplay="syntax \1"/x
+   if bufdisplay<<11=="syntax perl"
+   then set! bufdisplay="syntax perl"
+   if bufdisplay<<12=="syntax tclsh"

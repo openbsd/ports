@@ -1,0 +1,27 @@
+$OpenBSD: patch-tagelvis_c,v 1.1 2012/05/05 14:03:15 sthen Exp $
+
+From Debian:
+  "Elvis 2.2.0 has a bug causing it to exit 1 and not save any
+  files if started in a directory which contains a directory
+  "tags". This is fixed by the following patch."
+
+--- tagelvis.c.orig	Tue Oct 21 04:32:25 2003
++++ tagelvis.c	Sat May  5 13:17:33 2012
+@@ -672,6 +672,7 @@ void tebuilddef(buf)
+ 	CHAR	*cp;		/* for scanning the line */
+ 	long	offset;		/* offset of the tag within this buffer */
+ 	int	i;
++	DIRPERM	perm;
+ 
+ 	/* Destroy the old list, if any */
+ 	tefreedef(buf);
+@@ -701,7 +702,8 @@ void tebuilddef(buf)
+ 	 * necessary because the ioopen() function displays an error
+ 	 * message when the file it's trying to read doesn't exist.
+ 	 */
+-	if (dirperm("tags") == DIR_NEW)
++	perm = dirperm("tags");
++	if (perm == DIR_NEW || perm == DIR_DIRECTORY)
+ 		return;
+ 
+ 	/* open the file */

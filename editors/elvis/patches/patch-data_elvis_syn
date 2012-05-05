@@ -1,0 +1,17 @@
+$OpenBSD: patch-data_elvis_syn,v 1.1 2012/05/05 14:03:15 sthen Exp $
+
+Add "return" to the list of keywords for shell scripts.
+
+--- data/elvis.syn.orig	Tue Oct 21 04:32:25 2003
++++ data/elvis.syn	Sat May  5 13:33:21 2012
+@@ -209,8 +209,8 @@ keyword $* $@ $# $? $- $$ $! & | ; [ ] < > ( )
+ keyword alias autoload bg break case cd continue do done echo elif else esac
+ keyword eval exec exit export false fc fg fi for getopts hash history
+ keyword if in integer jobs kill let newgrp nohup print pwd r read readonly
+-keyword select set shift source stop suspend test then time times trap type
+-keyword typeset ulimit umask unalias unset until wait whence while
++keyword return select set shift source stop suspend test then time times trap
++keyword type typeset ulimit umask unalias unset until wait whence while
+ function (
+ comment #
+ startword /?-*!.

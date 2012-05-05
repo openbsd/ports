@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/17 12:40:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2012/05/05 14:03:15 sthen Exp $
 
 COMMENT=	clone of the ex/vi text editor
 
 DISTNAME=	elvis-2.2_0
 PKGNAME=	${DISTNAME:S/_/./}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	editors
 HOMEPAGE=	http://elvis.the-little-red-haired-girl.org/
 
@@ -24,7 +24,9 @@ FLAVOR?=
 
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	--bindir=${PREFIX}/bin \
-		--datadir=${PREFIX}/share/elvis
+		--datadir=${PREFIX}/share/elvis \
+		--docdir=${PREFIX}/share/doc/elvis \
+		--verbose
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+= --with-x=no
@@ -39,7 +41,7 @@ WANTLIB+=	X11 Xft Xpm pthread-stubs xcb
 NO_REGRESS=	Yes
 
 do-install:
-	@rm -f ${WRKSRC}/doc/ctags.man.orig
+	@rm -f ${WRKSRC}/{doc,data}/*.orig
 	${INSTALL_DATA_DIR} ${PREFIX}/share/elvis
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/elvis
 .for prog in elvfmt elvis ref
