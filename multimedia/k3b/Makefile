@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/12/03 18:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/05/05 07:49:28 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-1.0.4
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
