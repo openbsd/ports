@@ -1,11 +1,11 @@
-$OpenBSD: patch-sonata_info_py,v 1.1 2011/11/14 08:47:16 mpi Exp $
+$OpenBSD: patch-sonata_info_py,v 1.2 2012/05/05 09:40:43 ajacoutot Exp $
 
 https://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=3004&group_id=7323
 https://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=3193&group_id=7323
 
---- sonata/info.py
-+++ sonata/info.py
-@@ -289,7 +289,7 @@
+--- sonata/info.py.orig	Mon Sep 21 23:02:16 2009
++++ sonata/info.py	Sat May  5 11:37:48 2012
+@@ -289,7 +289,7 @@ class Info(object):
  					if album is not None:
  						albuminfo = album + "\n"
  					playtime = 0
@@ -14,7 +14,7 @@ https://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=3193&grou
  						tracks.sort(key=lambda x: int(mpdh.getnum(x, 'track', '0', True, 0)))
  						for track in tracks:
  							playtime += int(mpdh.get(track, 'time', 0))
-@@ -350,7 +350,7 @@
+@@ -350,7 +350,7 @@ class Info(object):
  	def lyricwiki_editlink(self, songinfo):
  		artist, title = [self.lyricwiki_format(mpdh.get(songinfo, key))
  				 for key in ('artist', 'title')]
@@ -23,7 +23,7 @@ https://developer.berlios.de/patch/index.php?func=detailpatch&patch_id=3193&grou
  
  	def get_lyrics_thread(self, search_artist, search_title, filename_artist, filename_title, song_dir):
  		filename_artist = misc.strip_all_slashes(filename_artist)
-@@ -385,17 +385,18 @@
+@@ -385,17 +385,18 @@ class Info(object):
  		else:
  			# Use default filename:
  			filename = self.target_lyrics_filename(filename_artist, filename_title, song_dir)
