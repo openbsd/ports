@@ -1,16 +1,16 @@
-$OpenBSD: patch-lib_facter_virtual_rb,v 1.2 2011/12/06 14:39:01 robert Exp $
---- lib/facter/virtual.rb.orig	Thu Jun 16 20:24:42 2011
-+++ lib/facter/virtual.rb	Tue Dec  6 15:34:17 2011
-@@ -98,7 +98,11 @@ Facter.add("virtual") do
-         end
+$OpenBSD: patch-lib_facter_virtual_rb,v 1.3 2012/05/05 19:29:49 robert Exp $
+--- lib/facter/virtual.rb.orig	Sat May  5 21:25:43 2012
++++ lib/facter/virtual.rb	Sat May  5 21:26:54 2012
+@@ -89,7 +89,11 @@ Facter.add("virtual") do
+     end
  
-         if result == "physical"
--            output = Facter::Util::Resolution.exec('lspci')
-+            if Facter.value(:kernel) == "OpenBSD"
-+                output = Facter::Util::Resolution.exec('pcidump')
-+	    else
-+                output = Facter::Util::Resolution.exec('lspci')
-+	    end
-             if not output.nil?
-                 output.each_line do |p|
-                     # --- look for the vmware video card to determine if it is virtual => vmware.
+     if result == "physical"
+-      output = Facter::Util::Resolution.exec('lspci 2>/dev/null')
++      if Facter.value(:kernel) == "OpenBSD"
++        output = Facter::Util::Resolution.exec('pcidump 2>/dev/null')
++      else
++        output = Facter::Util::Resolution.exec('lspci 2>/dev/null')
++      end
+       if not output.nil?
+         output.each_line do |p|
+           # --- look for the vmware video card to determine if it is virtual => vmware.
