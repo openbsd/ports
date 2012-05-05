@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2012/05/05 16:56:17 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,9 +6,6 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
-
-REVISION-main=	3
-REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -40,7 +37,7 @@ WANTLIB += m pthread stdc++ z ${MODGETTEXT_WANTLIB}
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
 WANTLIB-main += crypto execinfo gssapi ical icalss icudata icui18n
-WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncurses
+WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncursesw
 WANTLIB-main += sasl2 ssl util uuid vmime-zarafa xml2
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
@@ -52,7 +49,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime>=0.9.2p0v0 \
+		mail/zarafa/libvmime>=0.9.2p1v0 \
 		textproc/libical \
 		textproc/icu4c \
 		devel/boost
@@ -172,8 +169,8 @@ post-install:
 	find ${PREFIX}/share/php -type f \
 		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
 	for i in ${WRKINST}${INSTDIR}/server/language/* ; do \
-		msgfmt -f -v -o $$i/LC_MESSAGES/zarafa.mo $$i/LC_MESSAGES/zarafa.po ; \
-		rm $$i/LC_MESSAGES/zarafa.po ; \
+		msgfmt -f -v -o $$i/LC_MESSAGES/zarafa_webaccess.mo $$i/LC_MESSAGES/zarafa_webaccess.po ; \
+		rm $$i/LC_MESSAGES/zarafa_webaccess.po ; \
 	done
 
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4

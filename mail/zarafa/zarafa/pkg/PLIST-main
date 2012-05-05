@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2012/03/15 17:04:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2012/05/05 16:56:17 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -284,8 +284,8 @@ share/doc/zarafa/eula.txt
 @mode 0555
 share/doc/zarafa/ldap-switch-sendas.pl
 share/doc/zarafa/optimize-imap.py
-share/doc/zarafa/zarafa7-upgrade
 share/doc/zarafa/zarafa.ldif
+share/doc/zarafa/zarafa7-upgrade
 @mode
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/

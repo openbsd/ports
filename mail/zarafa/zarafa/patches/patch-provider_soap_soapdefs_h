@@ -1,10 +1,10 @@
-$OpenBSD: patch-provider_soap_soapdefs_h,v 1.4 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-provider_soap_soapdefs_h,v 1.5 2012/05/05 16:56:17 ajacoutot Exp $
 
 Needs newlocale(3) and xlocale.h.
 
---- provider/soap/soapdefs.h.orig	Tue Mar 29 00:04:06 2011
-+++ provider/soap/soapdefs.h	Mon Apr  4 12:26:24 2011
-@@ -2,11 +2,18 @@
+--- provider/soap/soapdefs.h.orig	Thu May  3 16:37:07 2012
++++ provider/soap/soapdefs.h	Sat May  5 17:41:56 2012
+@@ -2,7 +2,9 @@
  #define SOAPDEFS_H_
  
  /* we want soap to use strtod_l */
@@ -14,12 +14,17 @@ Needs newlocale(3) and xlocale.h.
  
  #include <platform.h>
  
-+#ifdef __OpenBSD__ 
-+#include <sys/types.h>
-+#include <sys/select.h>
-+#else
- #include <bits/types.h>
-+#endif
- #undef __FD_SETSIZE
- #define __FD_SETSIZE 8192
- 
+@@ -12,7 +14,12 @@
+  * this limit.
+  */
+ #ifndef _FORTIFY_SOURCE
+-# include <bits/types.h>
++# ifdef __OpenBSD__ 
++#  include <sys/types.h>
++#  include <sys/select.h>
++# else
++#  include <bits/types.h>
++# endif
+ # undef __FD_SETSIZE
+ # define __FD_SETSIZE 8192
+ #endif

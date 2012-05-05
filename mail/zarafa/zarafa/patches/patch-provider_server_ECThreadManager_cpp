@@ -1,16 +1,16 @@
-$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.1 2011/06/02 12:46:37 ajacoutot Exp $
---- provider/server/ECThreadManager.cpp.orig	Thu Jun  2 11:46:06 2011
-+++ provider/server/ECThreadManager.cpp	Thu Jun  2 11:46:35 2011
-@@ -149,7 +149,7 @@ void *ECWorkerThread::Work(void *lpParam)
+$OpenBSD: patch-provider_server_ECThreadManager_cpp,v 1.2 2012/05/05 16:56:17 ajacoutot Exp $
+--- provider/server/ECThreadManager.cpp.orig	Thu May  3 16:37:11 2012
++++ provider/server/ECThreadManager.cpp	Sat May  5 17:42:32 2012
+@@ -164,7 +164,7 @@ void *ECWorkerThread::Work(void *lpParam)
      bool fStop = false;
  	int err = 0;
  
--    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started thread %08x", (ULONG)pthread_self());
-+    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started thread %08x", (uintptr_t)pthread_self());
+-    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started%sthread %08x", lpPrio ? " priority " : " ", (ULONG)pthread_self());
++    lpThis->m_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Started%sthread %08x", lpPrio ? " priority " : " ", (uintptr_t)pthread_self());
      
      while(1) {
          // Get the next work item, don't wait for new items
-@@ -159,7 +159,7 @@ void *ECWorkerThread::Work(void *lpParam)
+@@ -174,7 +174,7 @@ void *ECWorkerThread::Work(void *lpParam)
              
              // We were requested to exit due to idle state
              if(fStop) {
