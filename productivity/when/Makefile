@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/06 18:22:43 jasper Exp $
 
 COMMENT=		simple but effective personal calendar
 
-DISTNAME=		when-1.1.21
+DISTNAME=		when-1.1.29
 CATEGORIES=		productivity
 
 HOMEPAGE=		http://www.lightandmatter.com/when/when.html
@@ -16,8 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://distfiles.nl/
 
 NO_BUILD=		Yes
-USE_GROFF=		Yes
 PKG_ARCH=		*
+
+WRKDIST=		${WRKDIR}/when_dist/
 
  # Requires interactive terminal and other hoops not worth going through.
 NO_REGRESS=		Yes
