@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/04/20 20:21:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/05/06 09:43:24 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -20,6 +20,9 @@ include/gtranslator-3.0/gtranslator/gtr-window.h
 lib/gtranslator/
 lib/gtranslator/girepository-1.0/
 lib/gtranslator/girepository-1.0/Gtranslator-3.0.typelib
+@comment lib/gtranslator/libgtranslator-private.a
+@comment lib/gtranslator/libgtranslator-private.la
+lib/gtranslator/libgtranslator-private.so
 lib/gtranslator/plugins/
 lib/gtranslator/plugins/charmap/
 lib/gtranslator/plugins/charmap/__init__.py
@@ -57,9 +60,6 @@ lib/gtranslator/plugins/libsourcecodeview.so
 @comment lib/gtranslator/plugins/libtranslation-memory.a
 @comment lib/gtranslator/plugins/libtranslation-memory.la
 lib/gtranslator/plugins/libtranslation-memory.so
-lib/libgtranslator-private.a
-lib/libgtranslator-private.la
-@lib lib/libgtranslator-private.so.${LIBgtranslator-private_VERSION}
 lib/pkgconfig/gtranslator.pc
 @man man/man1/gtranslator.1
 share/applications/gtranslator.desktop
