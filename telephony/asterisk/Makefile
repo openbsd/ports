@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2012/05/03 11:25:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.147 2012/05/06 13:58:23 naddy Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -52,7 +52,7 @@ LIB_DEPENDS-main=	audio/gsm \
 			textproc/libxml \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
-BUILD_DEPENDS-main=	security/libsrtp>=1.4.4 # statically linked
+BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk/releases/ \
 		http://downloads.digium.com/pub/telephony/asterisk/old-releases/
