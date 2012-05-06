@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/08 14:56:25 pascal Exp $
+# $OpenBSD: Makefile,v 1.19 2012/05/06 07:35:32 ajacoutot Exp $
+
+BROKEN-powerpc=	segfault while building
 
 SHARED_ONLY =	Yes
 
