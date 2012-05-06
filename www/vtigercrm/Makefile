@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/16 15:56:38 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2012/05/06 15:29:35 ajacoutot Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
-DISTNAME=	vtigercrm-5.3.0
+DISTNAME=	vtigercrm-5.4.0
 CATEGORIES=	www
-
-REVISION=	0
 
 HOMEPAGE=	http://www.vtiger.com/crmproducts/vtiger-crm-open-source
 
-# GPLv2 - LGPLv2 - BSD
-# SugarCRM Public License (SPL) 1.1.2
+MAINTAINER=	Wen Heping <wenheping@gmail.com>
+
+# Mozilla Public License Version 1.1
+# vtiger Public License Version 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -34,6 +34,6 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 
 do-install:
 	cp -Rp ${WRKSRC} ${PREFIX}
-	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
+	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
