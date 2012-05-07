@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/04/02 07:11:46 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/05/07 15:45:42 pascal Exp $
+@pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
 bin/blender-thumbnailer
@@ -18,6 +19,7 @@ share/blender/datafiles/brushicons/add.png
 share/blender/datafiles/brushicons/blob.png
 share/blender/datafiles/brushicons/blur.png
 share/blender/datafiles/brushicons/clay.png
+share/blender/datafiles/brushicons/claystrips.png
 share/blender/datafiles/brushicons/clone.png
 share/blender/datafiles/brushicons/crease.png
 share/blender/datafiles/brushicons/darken.png
@@ -71,9 +73,6 @@ share/blender/datafiles/locale/es/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/es_ES/
 share/blender/datafiles/locale/es_ES/LC_MESSAGES/
 share/blender/datafiles/locale/es_ES/LC_MESSAGES/blender.mo
-share/blender/datafiles/locale/es_MX/
-share/blender/datafiles/locale/es_MX/LC_MESSAGES/
-share/blender/datafiles/locale/es_MX/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/fa/
 share/blender/datafiles/locale/fa/LC_MESSAGES/
 share/blender/datafiles/locale/fa/LC_MESSAGES/blender.mo
@@ -83,6 +82,9 @@ share/blender/datafiles/locale/fi/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/fr/
 share/blender/datafiles/locale/fr/LC_MESSAGES/
 share/blender/datafiles/locale/fr/LC_MESSAGES/blender.mo
+share/blender/datafiles/locale/hr/
+share/blender/datafiles/locale/hr/LC_MESSAGES/
+share/blender/datafiles/locale/hr/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/id/
 share/blender/datafiles/locale/id/LC_MESSAGES/
 share/blender/datafiles/locale/id/LC_MESSAGES/blender.mo
@@ -101,9 +103,9 @@ share/blender/datafiles/locale/ne/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/pl/
 share/blender/datafiles/locale/pl/LC_MESSAGES/
 share/blender/datafiles/locale/pl/LC_MESSAGES/blender.mo
-share/blender/datafiles/locale/pt_BR/
-share/blender/datafiles/locale/pt_BR/LC_MESSAGES/
-share/blender/datafiles/locale/pt_BR/LC_MESSAGES/blender.mo
+share/blender/datafiles/locale/pt/
+share/blender/datafiles/locale/pt/LC_MESSAGES/
+share/blender/datafiles/locale/pt/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/ru/
 share/blender/datafiles/locale/ru/LC_MESSAGES/
 share/blender/datafiles/locale/ru/LC_MESSAGES/blender.mo
@@ -116,6 +118,12 @@ share/blender/datafiles/locale/sr@latin/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/sv/
 share/blender/datafiles/locale/sv/LC_MESSAGES/
 share/blender/datafiles/locale/sv/LC_MESSAGES/blender.mo
+share/blender/datafiles/locale/tr/
+share/blender/datafiles/locale/tr/LC_MESSAGES/
+share/blender/datafiles/locale/tr/LC_MESSAGES/blender.mo
+share/blender/datafiles/locale/uk/
+share/blender/datafiles/locale/uk/LC_MESSAGES/
+share/blender/datafiles/locale/uk/LC_MESSAGES/blender.mo
 share/blender/datafiles/locale/zh_CN/
 share/blender/datafiles/locale/zh_CN/LC_MESSAGES/
 share/blender/datafiles/locale/zh_CN/LC_MESSAGES/blender.mo
@@ -209,6 +217,7 @@ share/blender/scripts/addons/io_import_scene_unreal_psk.py
 share/blender/scripts/addons/io_mesh_pdb/
 share/blender/scripts/addons/io_mesh_pdb/__init__.py
 share/blender/scripts/addons/io_mesh_pdb/atom_info.dat
+share/blender/scripts/addons/io_mesh_pdb/export_pdb.py
 share/blender/scripts/addons/io_mesh_pdb/import_pdb.py
 share/blender/scripts/addons/io_mesh_ply/
 share/blender/scripts/addons/io_mesh_ply/__init__.py
@@ -262,7 +271,6 @@ share/blender/scripts/addons/mesh_inset/geom.py
 share/blender/scripts/addons/mesh_inset/model.py
 share/blender/scripts/addons/mesh_inset/offset.py
 share/blender/scripts/addons/mesh_inset/triquad.py
-share/blender/scripts/addons/mesh_looptools.py
 share/blender/scripts/addons/mesh_relax.py
 share/blender/scripts/addons/mocap/
 share/blender/scripts/addons/mocap/__init__.py
@@ -270,7 +278,6 @@ share/blender/scripts/addons/mocap/mocap_constraints.py
 share/blender/scripts/addons/mocap/mocap_tools.py
 share/blender/scripts/addons/mocap/retarget.py
 share/blender/scripts/addons/modules/
-share/blender/scripts/addons/modules/add_utils.py
 share/blender/scripts/addons/modules/constants_utils.py
 share/blender/scripts/addons/modules/cursor_utils.py
 share/blender/scripts/addons/modules/extensions_framework/
@@ -404,7 +411,18 @@ share/blender/scripts/addons/system_demo_mode/demo_mode.py
 share/blender/scripts/addons/system_property_chart.py
 share/blender/scripts/addons/texture_paint_layer_manager.py
 share/blender/scripts/addons_contrib/
+share/blender/scripts/addons_contrib/add_curve_objects/
+share/blender/scripts/addons_contrib/add_curve_objects/__init__.py
+share/blender/scripts/addons_contrib/add_curve_objects/add_curve_rectangle_259.py
+share/blender/scripts/addons_contrib/add_curve_objects/add_curve_spirals.py
+share/blender/scripts/addons_contrib/add_curve_objects/cotejrp1_particle_tracer.py
+share/blender/scripts/addons_contrib/add_curve_objects/cotejrp1_string_it.py
+share/blender/scripts/addons_contrib/add_curve_objects/curve_simplify.py
 share/blender/scripts/addons_contrib/add_mesh_beam_builder.py
+share/blender/scripts/addons_contrib/add_mesh_chain_rope/
+share/blender/scripts/addons_contrib/add_mesh_chain_rope/__init__.py
+share/blender/scripts/addons_contrib/add_mesh_chain_rope/oscurart_chain_maker.py
+share/blender/scripts/addons_contrib/add_mesh_chain_rope/oscurart_rope_maker.py
 share/blender/scripts/addons_contrib/add_mesh_column.py
 share/blender/scripts/addons_contrib/add_mesh_rocks/
 share/blender/scripts/addons_contrib/add_mesh_rocks/__init__.py
@@ -503,6 +521,7 @@ share/blender/scripts/addons_contrib/io_export_dxf/primitive_exporters/lamp_expo
 share/blender/scripts/addons_contrib/io_export_dxf/primitive_exporters/mesh_exporter.py
 share/blender/scripts/addons_contrib/io_export_dxf/primitive_exporters/text_exporter.py
 share/blender/scripts/addons_contrib/io_export_dxf/primitive_exporters/viewborder_exporter.py
+share/blender/scripts/addons_contrib/io_export_marmalade.py
 share/blender/scripts/addons_contrib/io_export_md3.py
 share/blender/scripts/addons_contrib/io_import_BrushSet.py
 share/blender/scripts/addons_contrib/io_import_LRO_Lola_MGS_Mola_img.py
@@ -518,6 +537,12 @@ share/blender/scripts/addons_contrib/io_points_pcd/__init__.py
 share/blender/scripts/addons_contrib/io_points_pcd/pcd_utils.py
 share/blender/scripts/addons_contrib/io_points_pcd/pcdparser.py
 share/blender/scripts/addons_contrib/io_points_pcd/test.pcd
+share/blender/scripts/addons_contrib/io_scene_cod/
+share/blender/scripts/addons_contrib/io_scene_cod/__init__.py
+share/blender/scripts/addons_contrib/io_scene_cod/export_xanim.py
+share/blender/scripts/addons_contrib/io_scene_cod/export_xmodel.py
+share/blender/scripts/addons_contrib/io_scene_cod/import_xanim.py
+share/blender/scripts/addons_contrib/io_scene_cod/import_xmodel.py
 share/blender/scripts/addons_contrib/io_scene_ms3d/
 share/blender/scripts/addons_contrib/io_scene_ms3d/__README__.txt
 share/blender/scripts/addons_contrib/io_scene_ms3d/__init__.py
@@ -525,30 +550,47 @@ share/blender/scripts/addons_contrib/io_scene_ms3d/ms3d_export.py
 share/blender/scripts/addons_contrib/io_scene_ms3d/ms3d_import.py
 share/blender/scripts/addons_contrib/io_scene_ms3d/ms3d_spec.py
 share/blender/scripts/addons_contrib/io_scene_ms3d/ms3d_utils.py
+share/blender/scripts/addons_contrib/io_scene_open_street_map.py
 share/blender/scripts/addons_contrib/io_sequencer_edl/
 share/blender/scripts/addons_contrib/io_sequencer_edl/import_edl.py
 share/blender/scripts/addons_contrib/lamp_geographical_sun.py
+share/blender/scripts/addons_contrib/mesh_bevel_round.py
 share/blender/scripts/addons_contrib/mesh_edge_intersection_tools.py
+share/blender/scripts/addons_contrib/mesh_face_info_select.py
 share/blender/scripts/addons_contrib/mesh_inset_extrude.py
+share/blender/scripts/addons_contrib/mesh_looptools.py
+share/blender/scripts/addons_contrib/mesh_mextrude.py
 share/blender/scripts/addons_contrib/mesh_normal_smooth.py
 share/blender/scripts/addons_contrib/mesh_seam_from_uv_isles.py
 share/blender/scripts/addons_contrib/mesh_select_vertex_groups.py
+share/blender/scripts/addons_contrib/mesh_show_vgroup_weights.py
+share/blender/scripts/addons_contrib/mesh_solidify_wireframe.py
 share/blender/scripts/addons_contrib/mesh_vertex_slide.py
 share/blender/scripts/addons_contrib/object_batch_rename_datablocks.py
 share/blender/scripts/addons_contrib/object_drop_to_ground.py
+share/blender/scripts/addons_contrib/object_edit_linked.py
 share/blender/scripts/addons_contrib/object_laplace_lightning.py
+share/blender/scripts/addons_contrib/object_mangle_tools.py
+share/blender/scripts/addons_contrib/object_render_wire.py
 share/blender/scripts/addons_contrib/oscurart_futurism.py
+share/blender/scripts/addons_contrib/oscurart_mesh_thread.py
+share/blender/scripts/addons_contrib/oscurart_tools.py
+share/blender/scripts/addons_contrib/particle_hair_lab.py
 share/blender/scripts/addons_contrib/presets/
 share/blender/scripts/addons_contrib/presets/interface_theme/
-share/blender/scripts/addons_contrib/presets/interface_theme/default_theme.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_3ds_max.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_blender_25x.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_maya.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_pinkified.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_softblend.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_softdefault.xml
-share/blender/scripts/addons_contrib/presets/interface_theme/theme_zbrush.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/3ds_max.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/default.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/maya.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/modo.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/pinkified.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/softblend.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/softdefault.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/toxic.xml
+share/blender/scripts/addons_contrib/presets/interface_theme/zbrush.xml
+share/blender/scripts/addons_contrib/presets/keyconfig/
+share/blender/scripts/addons_contrib/presets/keyconfig/blender_2012_experimental.py
 share/blender/scripts/addons_contrib/render_clay.py
+share/blender/scripts/addons_contrib/render_time.py
 share/blender/scripts/addons_contrib/render_to_print.py
 share/blender/scripts/addons_contrib/space_view3d_add_surround_cameras.py
 share/blender/scripts/addons_contrib/space_view3d_enhanced_3d_cursor.py
@@ -556,9 +598,12 @@ share/blender/scripts/addons_contrib/space_view3d_game_props_visualiser.py
 share/blender/scripts/addons_contrib/space_view3d_manipulator_Menu.py
 share/blender/scripts/addons_contrib/space_view3d_multiselect_menu.py
 share/blender/scripts/addons_contrib/space_view3d_objects_panel.py
+share/blender/scripts/addons_contrib/space_view3d_paint_bprojection.py
 share/blender/scripts/addons_contrib/space_view3d_simple_align.py
 share/blender/scripts/addons_contrib/system_keyboard_svg.py
+share/blender/scripts/addons_contrib/system_project_folder.py
 share/blender/scripts/addons_contrib/text_editor_pasteall.py
+share/blender/scripts/addons_contrib/text_intellisense.py
 share/blender/scripts/addons_contrib/wetted_mesh.py
 share/blender/scripts/modules/
 share/blender/scripts/modules/addon_utils.py
@@ -643,6 +688,10 @@ share/blender/scripts/presets/ffmpeg/VCD.py
 share/blender/scripts/presets/ffmpeg/h264.py
 share/blender/scripts/presets/ffmpeg/theora.py
 share/blender/scripts/presets/ffmpeg/xvid.py
+share/blender/scripts/presets/fluid/
+share/blender/scripts/presets/fluid/honey.py
+share/blender/scripts/presets/fluid/oil.py
+share/blender/scripts/presets/fluid/water.py
 share/blender/scripts/presets/framerate/
 share/blender/scripts/presets/framerate/23.98.py
 share/blender/scripts/presets/framerate/24.py
@@ -799,12 +848,14 @@ share/blender/scripts/templates/
 share/blender/scripts/templates/addon_add_object.py
 share/blender/scripts/templates/background_job.py
 share/blender/scripts/templates/batch_export.py
+share/blender/scripts/templates/bmesh_simple.py
 share/blender/scripts/templates/builtin_keyingset.py
 share/blender/scripts/templates/driver_functions.py
 share/blender/scripts/templates/gamelogic.py
-share/blender/scripts/templates/gamelogic_basic.py
 share/blender/scripts/templates/gamelogic_module.py
-share/blender/scripts/templates/operator_export.py
+share/blender/scripts/templates/gamelogic_simple.py
+share/blender/scripts/templates/operator_file_export.py
+share/blender/scripts/templates/operator_file_import.py
 share/blender/scripts/templates/operator_mesh_add.py
 share/blender/scripts/templates/operator_modal.py
 share/blender/scripts/templates/operator_modal_draw.py
@@ -819,6 +870,7 @@ share/doc/blender/
 share/doc/blender/GPL-license.txt
 share/doc/blender/Python-license.txt
 share/doc/blender/copyright.txt
+share/pixmaps/
 share/pixmaps/blender.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

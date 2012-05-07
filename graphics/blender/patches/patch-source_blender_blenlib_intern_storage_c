@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.5 2012/04/16 12:03:25 naddy Exp $
---- source/blender/blenlib/intern/storage.c.orig	Sun Apr 15 23:46:30 2012
-+++ source/blender/blenlib/intern/storage.c	Sun Apr 15 23:49:16 2012
+$OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.6 2012/05/07 15:45:42 pascal Exp $
+--- source/blender/blenlib/intern/storage.c.orig	Thu Apr 26 22:51:28 2012
++++ source/blender/blenlib/intern/storage.c	Mon Apr 30 23:03:52 2012
 @@ -43,13 +43,13 @@
  #include <time.h>
  #include <sys/stat.h>
@@ -17,7 +17,7 @@ $OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.5 2012/04/16 12:03:2
  #include <sys/param.h>
  #include <sys/mount.h>
  #endif
-@@ -162,7 +162,7 @@ double BLI_dir_free_space(const char *dir)
+@@ -166,7 +166,7 @@ double BLI_dir_free_space(const char *dir)
  	return (double) (freec*bytesps*sectorspc);
  #else
  
@@ -26,9 +26,9 @@ $OpenBSD: patch-source_blender_blenlib_intern_storage_c,v 1.5 2012/04/16 12:03:2
  	struct statvfs disk;
  #else
  	struct statfs disk;
-@@ -180,11 +180,11 @@ double BLI_dir_free_space(const char *dir)
- 		if (slash) slash[1] = 0;
- 	} else strcpy(name,"/");
+@@ -185,11 +185,11 @@ double BLI_dir_free_space(const char *dir)
+ 	}
+ 	else strcpy(name,"/");
  
 -#if defined (__FreeBSD__) || defined (linux) || defined (__OpenBSD__) || defined (__APPLE__) || defined(__GNU__) || defined(__GLIBC__)
 +#if defined (__FreeBSD__) || defined (linux) || defined (__APPLE__) || defined(__GNU__) || defined(__GLIBC__)

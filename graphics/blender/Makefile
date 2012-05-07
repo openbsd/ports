@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2012/04/16 12:03:25 naddy Exp $
+# $OpenBSD: Makefile,v 1.42 2012/05/07 15:45:42 pascal Exp $
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.62
-REVISION =	2
+DISTNAME =	blender-2.63
 
 CATEGORIES =	graphics
 
@@ -31,7 +30,8 @@ MODPY_VERSION = ${MODPY_DEFAULT_VERSION_3}
 CONFIGURE_ARGS =	-DPYTHON_LIBRARY="${LOCALBASE}/lib/libpython${MODPY_VERSION}m.so" \
 			-DPYTHON_INCLUDE_DIR="${MODPY_INCDIR}" \
 			-DPYTHON_VERSION=${MODPY_VERSION} \
-			-DWITH_BUILTIN_GLEW=OFF
+			-DWITH_BUILTIN_GLEW=OFF \
+			-DWITH_CODEC_FFMPEG=ON
 
 BUILD_DEPENDS =	devel/gflags
 LIB_DEPENDS =	graphics/png \
@@ -43,6 +43,7 @@ LIB_DEPENDS =	graphics/png \
 		devel/sdl \
 		audio/openal \
 		graphics/openjpeg \
+		graphics/ffmpeg>=20111126 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gnome/librsvg
@@ -51,16 +52,7 @@ WANTLIB += GL GLEW GLU Half Iex IlmImf IlmThread Imath SDL X11
 WANTLIB += Xi Xxf86vm boost_filesystem-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt c freetype jpeg m openal openjpeg png
 WANTLIB += pthread ${MODPY_WANTLIB} stdc++ tiff util z
-
-# until ffmpeg works on mips64el, make it a FLAVOR
-FLAVORS =	ffmpeg
-FLAVOR ?=
-
-.if ${FLAVOR:L:Mffmpeg}
-CONFIGURE_ARGS += -DWITH_CODEC_FFMPEG=ON
-LIB_DEPENDS += graphics/ffmpeg>=20111126
-WANTLIB += avcodec avdevice avformat avutil
-.endif
+WANTLIB += avcodec avdevice avformat avutil swscale
 
 NO_REGRESS =	Yes
 
