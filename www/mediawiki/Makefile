@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2012/03/23 12:59:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2012/05/07 13:35:47 okan Exp $
 
 COMMENT =	web-based collaborative editing environment
 
-DISTNAME =	mediawiki-1.18.2
+DISTNAME =	mediawiki-1.19.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.mediawiki.org/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.18/
+MASTER_SITES=	http://download.wikimedia.org/mediawiki/1.19/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -32,7 +32,7 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 do-install:
 	@${INSTALL_DATA_DIR} ${INSTDIR}
 	@cd ${WRKSRC} && pax -rw * ${INSTDIR}
-	@find ${PREFIX} -name '.cvsignore' -or -name \*.orig -exec rm {} \;
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}
+	@find ${INSTDIR} \( -name '.cvsignore' -or -name \*.orig \) -exec rm -f {} +
+	@chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
 
 .include <bsd.port.mk>

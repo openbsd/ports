@@ -1,0 +1,16 @@
+$OpenBSD: README,v 1.1 2012/05/07 13:35:47 okan Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Setup with httpd from OpenBSD base system
+=========================================
+The MediaWiki has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web server:
+   # ln -s ../mediawiki /var/www/htdocs/mediawiki
+(make sure you use a relative symlink since Apache is chrooted)
+
+You can ensure you have a working install by accessing:
+http://<localhost>/mediawiki/
