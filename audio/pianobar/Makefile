@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.35 2012/05/04 10:32:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.36 2012/05/07 11:04:21 dcoppa Exp $
+
+SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2012.05.02
+DISTNAME =	pianobar-2012.05.06
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/projects/pianobar/
-MASTER_SITES =	http://spacehopper.org/mirrors/
+MASTER_SITES =	${HOMEPAGE} \
+		http://spacehopper.org/mirrors/
 
-SHARED_ONLY =	Yes
-
-SHARED_LIBS =	piano	1.0	# 0.0.0
+SHARED_LIBS =	piano	1.1	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -30,15 +31,12 @@ LIB_DEPENDS =	audio/faad \
 		security/gnutls>=2.10.0 \
 		security/libgcrypt
 
-CFLAGS +=	-I${LOCALBASE}/include
-
 .if !defined(DEBUG)
 CFLAGS +=	-DNDEBUG
 .endif
 
 MAKE_FLAGS =	DYNLINK=1 \
 		CC=${CC} \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBpiano_VERSION="${LIBpiano_VERSION}" \
 		MANDIR="${PREFIX}/man"
 
@@ -49,11 +47,14 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 
 USE_GMAKE =	Yes
 
-NO_REGRESS =	Yes
+REGRESS_TARGET = test
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pianobar
 	${INSTALL_DATA} ${WRKSRC}/contrib/config-example \
 		${PREFIX}/share/examples/pianobar/config
+
+pre-regress:
+	@touch ${WRKSRC}/src/libwaitress/waitress.c
 
 .include <bsd.port.mk>
