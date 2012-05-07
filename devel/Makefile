@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1041 2012/05/04 09:37:35 stsp Exp $
+# $OpenBSD: Makefile,v 1.1042 2012/05/07 18:53:16 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -157,6 +157,7 @@
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-aeson
      SUBDIR += hs-ansi-terminal
+     SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-atom
      SUBDIR += hs-base-unicode-symbols
      SUBDIR += hs-base16-bytestring
@@ -169,6 +170,7 @@
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
+     SUBDIR += hs-cmdlib
      SUBDIR += hs-comonad
      SUBDIR += hs-comonad-transformers
      SUBDIR += hs-concurrent-extra
@@ -225,12 +227,18 @@
      SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
+     SUBDIR += hs-shellish
+     SUBDIR += hs-split
      SUBDIR += hs-stm
+     SUBDIR += hs-strict
      SUBDIR += hs-stringtable-atom
      SUBDIR += hs-syb
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
      SUBDIR += hs-terminfo
+     SUBDIR += hs-test-framework
+     SUBDIR += hs-test-framework-hunit
+     SUBDIR += hs-test-framework-quickcheck
      SUBDIR += hs-text
      SUBDIR += hs-transformers
      SUBDIR += hs-type-level
