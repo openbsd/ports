@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1165 2012/04/28 10:50:35 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1166 2012/05/07 21:11:43 halex Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1533,7 +1533,9 @@ _DO_LOCK = \
 .  endfor
 
 _SIMPLE_LOCK = \
-	${_LOCK}; locked=true; trap 'if $$locked; then ${_UNLOCK}; locked=false; fi' 0 1 2 3 13 15
+	${_LOCK}; locked=true; \
+	trap 'if $$locked; then ${_UNLOCK}; locked=false; fi' 0; \
+	trap 'exit 1' 1 2 3 13 15
 
 .endif
 _SIMPLE_LOCK ?= :
@@ -2814,13 +2816,15 @@ describe:
 
 readme:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
+	trap "rm -r $$tmpdir" 0; \
+	trap 'exit 1' 1 2 3 13 15; \
 	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}.html
 
 readmes:
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap "rm -r $$tmpdir" 0 1 2 3 13 15; \
+	trap "rm -r $$tmpdir" 0; \
+	trap 'exit 1' 1 2 3 13 15; \
 	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
 		${_READMES}
 

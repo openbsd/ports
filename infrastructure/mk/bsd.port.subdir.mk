@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.106 2012/02/17 07:41:22 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.107 2012/05/07 21:11:44 halex Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -193,7 +193,8 @@ clean:
 readmes:
 	@${_subdir_fragment}
 	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap 'rm -r $$tmpdir' 0 1 2 3 13 15; \
+	trap 'rm -r $$tmpdir' 0; \
+	trap 'exit 1' 1 2 3 13 15; \
 	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir \
 		${READMES_TOP}/${PKGPATH}/README.html
 

@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.44 2012/02/17 07:40:35 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.45 2012/05/07 21:11:44 halex Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -95,7 +95,8 @@ _depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \
 		X) _DEPENDS_FILE=`mktemp ${TMPDIR}/depends.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_FILE; \
-		trap "rm -f $${_DEPENDS_FILE}" 0 1 2 3 13 15;; \
+		trap "rm -f $${_DEPENDS_FILE}" 0; \
+		trap 'exit 1' 1 2 3 13 15;; \
 	esac
 
 # the cache may be filled in as root, so try to remove as normal user, THEN
@@ -104,7 +105,8 @@ _cache_fragment = \
 	case X$${_DEPENDS_CACHE} in \
 		X) _DEPENDS_CACHE=`mktemp -d ${TMPDIR}/dep_cache.XXXXXXXXX|| exit 1`; \
 		export _DEPENDS_CACHE; \
-		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0 1 2 3 13 15;; \
+		trap "rm -rf 2>/dev/null $${_DEPENDS_CACHE} || ${SUDO} rm -rf $${_DEPENDS_CACHE}" 0; \
+		trap 'exit 1' 1 2 3 13 15;; \
 	esac; PKGPATH=${PKGPATH}; export PKGPATH
 
 HTMLIFY =	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
