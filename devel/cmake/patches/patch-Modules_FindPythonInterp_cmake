@@ -1,24 +1,31 @@
-$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.4 2011/10/14 17:22:10 dcoppa Exp $
---- Modules/FindPythonInterp.cmake.orig	Tue Oct  4 18:09:24 2011
-+++ Modules/FindPythonInterp.cmake	Fri Oct  7 09:15:16 2011
-@@ -29,11 +29,17 @@
- # Search for the current active python version first
- find_program(PYTHON_EXECUTABLE NAMES python)
+$OpenBSD: patch-Modules_FindPythonInterp_cmake,v 1.5 2012/05/07 07:06:20 dcoppa Exp $
+--- Modules/FindPythonInterp.cmake.orig	Mon Apr 30 11:57:33 2012
++++ Modules/FindPythonInterp.cmake	Mon Apr 30 12:07:14 2012
+@@ -29,6 +29,8 @@
+ # (To distribute this file outside of CMake, substitute the full
+ #  License text for the above reference.)
  
 +SET(MODPY_VERSION $ENV{MODPY_VERSION})
 +
+ unset(_Python_NAMES)
+ 
+ set(_PYTHON1_VERSIONS 1.6 1.5)
+@@ -65,10 +67,14 @@ find_program(PYTHON_EXECUTABLE NAMES ${_Python_NAMES})
+ 
  # Set up the versions we know about, in the order we will search. Always add
  # the user supplied additional versions to the front.
 -set(_Python_VERSIONS
 -  ${Python_ADDITIONAL_VERSIONS}
--  2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
+-  ${_PYTHON_FIND_OTHER_VERSIONS}
+-  )
 +IF(MODPY_VERSION)
 +  set(_Python_VERSIONS ${MODPY_VERSION})
 +ELSE(MODPY_VERSION)
 +  set(_Python_VERSIONS
 +    ${Python_ADDITIONAL_VERSIONS}
-+    2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
++    ${_PYTHON_FIND_OTHER_VERSIONS}
++    )
 +ENDIF(MODPY_VERSION)
  
- # Search for newest python version if python executable isn't found
- if(NOT PYTHON_EXECUTABLE)
+ unset(_PYTHON_FIND_OTHER_VERSIONS)
+ unset(_PYTHON1_VERSIONS)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2012/01/07 22:14:51 dcoppa Exp $
---- CMakeLists.txt.orig	Fri Dec 30 17:49:56 2011
-+++ CMakeLists.txt	Mon Jan  2 14:50:01 2012
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2012/05/07 07:06:20 dcoppa Exp $
+--- CMakeLists.txt.orig	Wed Apr 18 20:10:54 2012
++++ CMakeLists.txt	Mon Apr 30 11:07:24 2012
 @@ -258,6 +258,15 @@ MACRO (CMAKE_BUILD_UTILITIES)
    # (a macro defined in this file)
    CMAKE_HANDLE_SYSTEM_LIBRARIES()
@@ -17,7 +17,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.9 2012/01/07 22:14:51 dcoppa Exp $
    #---------------------------------------------------------------------
    # Build zlib library for Curl, CMake, and CTest.
    SET(CMAKE_ZLIB_HEADER "cm_zlib.h")
-@@ -396,26 +405,7 @@ MACRO (CMAKE_BUILD_UTILITIES)
+@@ -397,26 +406,7 @@ MACRO (CMAKE_BUILD_UTILITIES)
    ELSE (UNIX)
      SET(BUILD_CursesDialog 0)
    ENDIF (UNIX)

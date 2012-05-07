@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/01/07 22:14:51 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/05/07 07:06:20 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -20,6 +20,7 @@ share/cmake/Modules/
 share/cmake/Modules/AddFileDependencies.cmake
 share/cmake/Modules/AutomocInfo.cmake.in
 share/cmake/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in
+share/cmake/Modules/BasicConfigVersion-ExactVersion.cmake.in
 share/cmake/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
 share/cmake/Modules/BundleUtilities.cmake
 share/cmake/Modules/CMake.cmake
@@ -28,6 +29,10 @@ share/cmake/Modules/CMakeASMCompiler.cmake.in
 share/cmake/Modules/CMakeASMInformation.cmake
 share/cmake/Modules/CMakeASM_MASMInformation.cmake
 share/cmake/Modules/CMakeASM_NASMInformation.cmake
+share/cmake/Modules/CMakeAddFortranSubdirectory/
+share/cmake/Modules/CMakeAddFortranSubdirectory.cmake
+share/cmake/Modules/CMakeAddFortranSubdirectory/build_mingw.cmake.in
+share/cmake/Modules/CMakeAddFortranSubdirectory/config_mingw.cmake.in
 share/cmake/Modules/CMakeAddNewLanguage.txt
 share/cmake/Modules/CMakeBackwardCompatibilityC.cmake
 share/cmake/Modules/CMakeBackwardCompatibilityCXX.cmake
@@ -58,6 +63,7 @@ share/cmake/Modules/CMakeDetermineJavaCompiler.cmake
 share/cmake/Modules/CMakeDetermineRCCompiler.cmake
 share/cmake/Modules/CMakeDetermineSystem.cmake
 share/cmake/Modules/CMakeDetermineVSServicePack.cmake
+share/cmake/Modules/CMakeExpandImportedTargets.cmake
 share/cmake/Modules/CMakeExportBuildSettings.cmake
 share/cmake/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake
 share/cmake/Modules/CMakeFindBinUtils.cmake
@@ -81,6 +87,8 @@ share/cmake/Modules/CMakeJavaInformation.cmake
 share/cmake/Modules/CMakeMSYSFindMake.cmake
 share/cmake/Modules/CMakeMinGWFindMake.cmake
 share/cmake/Modules/CMakeNMakeFindMake.cmake
+share/cmake/Modules/CMakeNinjaFindMake.cmake
+share/cmake/Modules/CMakePackageConfigHelpers.cmake
 share/cmake/Modules/CMakeParseArguments.cmake
 share/cmake/Modules/CMakeParseImplicitLinkInfo.cmake
 share/cmake/Modules/CMakePlatformId.h.in
@@ -130,8 +138,11 @@ share/cmake/Modules/CPack.cmake
 share/cmake/Modules/CPack.distribution.dist.in
 share/cmake/Modules/CPackBundle.cmake
 share/cmake/Modules/CPackComponent.cmake
+share/cmake/Modules/CPackCygwin.cmake
+share/cmake/Modules/CPackDMG.cmake
 share/cmake/Modules/CPackDeb.cmake
 share/cmake/Modules/CPackNSIS.cmake
+share/cmake/Modules/CPackPackageMaker.cmake
 share/cmake/Modules/CPackRPM.cmake
 share/cmake/Modules/CPackZIP.cmake
 share/cmake/Modules/CTest.cmake
@@ -153,6 +164,7 @@ share/cmake/Modules/CheckIncludeFile.cmake
 share/cmake/Modules/CheckIncludeFile.cxx.in
 share/cmake/Modules/CheckIncludeFileCXX.cmake
 share/cmake/Modules/CheckIncludeFiles.cmake
+share/cmake/Modules/CheckLanguage.cmake
 share/cmake/Modules/CheckLibraryExists.cmake
 share/cmake/Modules/CheckLibraryExists.lists.in
 share/cmake/Modules/CheckPrototypeDefinition.c.in
@@ -348,7 +360,9 @@ share/cmake/Modules/FindosgGA.cmake
 share/cmake/Modules/FindosgIntrospection.cmake
 share/cmake/Modules/FindosgManipulator.cmake
 share/cmake/Modules/FindosgParticle.cmake
+share/cmake/Modules/FindosgPresentation.cmake
 share/cmake/Modules/FindosgProducer.cmake
+share/cmake/Modules/FindosgQt.cmake
 share/cmake/Modules/FindosgShadow.cmake
 share/cmake/Modules/FindosgSim.cmake
 share/cmake/Modules/FindosgTerrain.cmake
@@ -525,7 +539,9 @@ share/cmake/Modules/Platform/UnixPaths.cmake
 share/cmake/Modules/Platform/UnixWare.cmake
 share/cmake/Modules/Platform/Windows-Borland-C.cmake
 share/cmake/Modules/Platform/Windows-Borland-CXX.cmake
-share/cmake/Modules/Platform/Windows-Borland.cmake
+share/cmake/Modules/Platform/Windows-Embarcadero-C.cmake
+share/cmake/Modules/Platform/Windows-Embarcadero-CXX.cmake
+share/cmake/Modules/Platform/Windows-Embarcadero.cmake
 share/cmake/Modules/Platform/Windows-G95-Fortran.cmake
 share/cmake/Modules/Platform/Windows-GNU-C-ABI.cmake
 share/cmake/Modules/Platform/Windows-GNU-C.cmake
