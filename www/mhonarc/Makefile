@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/13 09:53:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2012/05/07 20:13:50 pascal Exp $
 
 COMMENT=		highly customizable e-mail to HTML converter
 
 DISTNAME=		MHonArc-2.6.18
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 CATEGORIES=		www mail
 
 HOMEPAGE=		http://www.mhonarc.org/
@@ -14,7 +15,7 @@ MASTER_SITES=		http://www.mhonarc.org/release/MHonArc/tar/ \
 
 MAINTAINER=		Christian Rueger <cr+openbsd@rueger-net.de>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -29,7 +30,6 @@ CONFIGURE_ARGS=		PREFIX='$${${DESTDIRNAME}}${PREFIX}' \
 			INSTALLMAN3DIR='$${${DESTDIRNAME}}${PREFIX}/man/man3p'
 
 ALL_TARGET=		default
-USE_GROFF =		Yes
 
 EXAMPLES=		mha-preview mhasiteinit.pl mhonarc.vim *.mrc
 EXTRAS=			mha-mhedit/*

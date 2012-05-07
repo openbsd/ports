@@ -1,8 +1,9 @@
-$OpenBSD: patch-examples_mha-preview,v 1.3 2011/01/13 09:53:50 jasper Exp $
+$OpenBSD: patch-examples_mha-preview,v 1.4 2012/05/07 20:13:50 pascal Exp $
 --- examples/mha-preview.orig	Tue Jul  5 04:06:21 2005
-+++ examples/mha-preview	Sun Jan  9 17:21:01 2011
++++ examples/mha-preview	Mon May  7 12:00:13 2012
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
  ##---------------------------------------------------------------------------##
  ##  File:
+ ##	$Id: patch-examples_mha-preview,v 1.4 2012/05/07 20:13:50 pascal Exp $

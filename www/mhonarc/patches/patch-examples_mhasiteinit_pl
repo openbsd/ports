@@ -1,7 +1,9 @@
-$OpenBSD: patch-examples_mhasiteinit_pl,v 1.3 2011/01/13 09:53:50 jasper Exp $
+$OpenBSD: patch-examples_mhasiteinit_pl,v 1.4 2012/05/07 20:13:50 pascal Exp $
 --- examples/mhasiteinit.pl.orig	Mon Jan  3 07:42:39 2011
-+++ examples/mhasiteinit.pl	Sun Jan  9 17:21:01 2011
++++ examples/mhasiteinit.pl	Mon May  7 12:00:13 2012
 @@ -1,4 +1,4 @@
 -##---------------------------------------------------------------------------##
 +#!/usr/bin/perl
  ##  File:
+ ##      $Id: patch-examples_mhasiteinit_pl,v 1.4 2012/05/07 20:13:50 pascal Exp $
+ ##  Description:
