@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/05/06 07:35:32 ajacoutot Exp $
-
-BROKEN-powerpc=	segfault while building
+# $OpenBSD: Makefile,v 1.20 2012/05/07 09:17:41 pascal Exp $
 
 SHARED_ONLY =	Yes
 
@@ -46,12 +44,6 @@ CONFIGURE_ARGS+= \
 	--ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 	--parrot_is_shared \
 	--icu-config="${LOCALBASE}/bin/icu-config"
-
-# XXX The default (gms) garbage collector has issues on powerpc. Until
-# XXX it's fixed, use the old one (ms2).
-.if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS+=	--gc=ms2
-.endif
 
 CONFIGURE_ENV =		LIBparrot_VERSION=${LIBparrot_VERSION}
 
