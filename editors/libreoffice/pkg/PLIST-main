@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2012/04/10 13:34:13 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2012/05/07 07:17:15 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -2842,6 +2842,7 @@ share/applications/math.desktop
 share/applications/qstart.desktop
 share/applications/startcenter.desktop
 share/applications/writer.desktop
+share/icons/hicolor/128x128/apps/libreoffice-base.png
 share/icons/hicolor/128x128/apps/libreoffice-calc.png
 share/icons/hicolor/128x128/apps/libreoffice-draw.png
 share/icons/hicolor/128x128/apps/libreoffice-impress.png
@@ -2861,6 +2862,7 @@ share/icons/hicolor/128x128/mimetypes/oasis-spreadsheet.png
 share/icons/hicolor/128x128/mimetypes/oasis-text-template.png
 share/icons/hicolor/128x128/mimetypes/oasis-text.png
 share/icons/hicolor/128x128/mimetypes/oasis-web-template.png
+share/icons/hicolor/16x16/apps/libreoffice-base.png
 share/icons/hicolor/16x16/apps/libreoffice-calc.png
 share/icons/hicolor/16x16/apps/libreoffice-draw.png
 share/icons/hicolor/16x16/apps/libreoffice-impress.png
@@ -2893,6 +2895,7 @@ share/icons/hicolor/16x16/mimetypes/spreadsheet-template.png
 share/icons/hicolor/16x16/mimetypes/spreadsheet.png
 share/icons/hicolor/16x16/mimetypes/text-template.png
 share/icons/hicolor/16x16/mimetypes/text.png
+share/icons/hicolor/256x256/apps/libreoffice-base.png
 share/icons/hicolor/256x256/apps/libreoffice-calc.png
 share/icons/hicolor/256x256/apps/libreoffice-draw.png
 share/icons/hicolor/256x256/apps/libreoffice-impress.png
@@ -2912,6 +2915,7 @@ share/icons/hicolor/256x256/mimetypes/oasis-spreadsheet.png
 share/icons/hicolor/256x256/mimetypes/oasis-text-template.png
 share/icons/hicolor/256x256/mimetypes/oasis-text.png
 share/icons/hicolor/256x256/mimetypes/oasis-web-template.png
+share/icons/hicolor/32x32/apps/libreoffice-base.png
 share/icons/hicolor/32x32/apps/libreoffice-calc.png
 share/icons/hicolor/32x32/apps/libreoffice-draw.png
 share/icons/hicolor/32x32/apps/libreoffice-impress.png
@@ -2944,6 +2948,7 @@ share/icons/hicolor/32x32/mimetypes/spreadsheet-template.png
 share/icons/hicolor/32x32/mimetypes/spreadsheet.png
 share/icons/hicolor/32x32/mimetypes/text-template.png
 share/icons/hicolor/32x32/mimetypes/text.png
+share/icons/hicolor/48x48/apps/libreoffice-base.png
 share/icons/hicolor/48x48/apps/libreoffice-calc.png
 share/icons/hicolor/48x48/apps/libreoffice-draw.png
 share/icons/hicolor/48x48/apps/libreoffice-impress.png

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/04/10 13:34:13 robert Exp $
+# $OpenBSD: Makefile,v 1.64 2012/05/07 07:17:15 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.5
-VERSION=	3.5.2.2
+VERSION=	3.5.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-core-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,15 +16,13 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	1
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 
-MASTER_SITES=	http://dev-builds.libreoffice.org/pre-releases/src/ \
-		http://download.documentfoundation.org/libreoffice/src/3.5.1/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.5.3/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
@@ -45,54 +43,46 @@ EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
 		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:0 \
-		128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz:0 \
+		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:0 \
+		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:0 \
 		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
 		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:0 \
 		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
 		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
 		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
+		2fa6028324347860e684e75310818d43-libvisio-0.0.16.tar.bz2:0 \
+		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
+		34dd7951abbda99b7a75a09993a37965-libwps-0.2.4.tar.bz2:0 \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
 		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
-		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
+		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
 		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
+		48a9f787f43a09c0a9b7b00cd1fddbbf-hyphen-2.7.1.tar.gz:0 \
 		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:0 \
-		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
-		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
 		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
-		34dd7951abbda99b7a75a09993a37965-libwps-0.2.4.tar.bz2:0 \
-		8294d6c42e3553229af9934c5c0ed997-stax-api-1.0-2-sources.jar:0 \
-		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		7c2549f6b0a8bb604e6c4c729ffdcfe6-libcmis-0.1.0.tar.gz:0 \
+		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
+		9d283e02441d8cebdcd1e5d9df227d67-libwpg-0.2.1.tar.bz2:0 \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
+		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
 		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:0 \
 		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
+		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
+		bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:0 \
+		c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2:0 \
+		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
+		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
+		e1c178b18f130b40494561f02bc1a948-libexttextcat-3.2.0.tar.bz2:0 \
 		e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip:0 \
-		0be45d54cc5e1c2e3102e32b8c190346-liberation-fonts-ttf-1.07.1.tar.gz:0 \
-		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:0 \
-		48a9f787f43a09c0a9b7b00cd1fddbbf-hyphen-2.7.1.tar.gz:0 \
-		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
-		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:0 \
-		9d283e02441d8cebdcd1e5d9df227d67-libwpg-0.2.1.tar.bz2:0 \
-		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
 		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
 		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
-		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
-		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
-		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:0 \
-		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip:0 \
-		c01351d7db2b205de755d58769288224-libwpd-0.9.4.tar.bz2:0 \
-		b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2:0 \
-		7a0dcb3fe1e8c7229ab4fb868b7325e6-mdds_0.5.2.tar.bz2:0 \
-		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0 \
-		e1c178b18f130b40494561f02bc1a948-libexttextcat-3.2.0.tar.bz2:0 \
-		7c2549f6b0a8bb604e6c4c729ffdcfe6-libcmis-0.1.0.tar.gz:0 \
-		d28864eb2b59bb57b034c0d4662a3cee-libvisio-0.0.15.tar.bz2:0 \
-		1f24ab1d39f4a51faf22244c94a6203f-xmlsec1-1.2.14.tar.gz:0 \
-		d7a242ca43e33e1b63d3073f9d46a6a8-librsvg-2.32.1.tar.gz:0 \
-		bd30e9cf5523cdfc019b94f5e1d7fd19-cppunit-1.12.1.tar.gz:0
+		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		f872f4ac066433d8ff92f5e316b36ff9-dejavu-fonts-ttf-2.33.zip:0 \
+		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
+		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -195,10 +185,10 @@ MODULES+=		java
 MODJAVA_VER=		1.6
 MODJAVA_JRERUN=		Yes
 .endif
-LIB_DEPENDS-java=	databases/db/v4,-java \
-			devel/apache-ant>=1.8.2 \
-			lang/gcc/4.6,-estdc>=4.6,<4.7
+BUILD_DEPENDS-java=	devel/apache-ant>=1.8.2
+LIB_DEPENDS-java=	lang/gcc/4.6,-estdc>=4.6,<4.7
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
+			databases/db/v4,-java \
 			editors/libreoffice \
 			java/javaPathHelper
 WANTLIB-java=		c estdc++ m pthread
@@ -289,8 +279,7 @@ CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 		--with-java \
 		--with-java-target-version=1.5 \
 		--with-jdk-home=${JAVA_HOME} \
-		--with-ant-home=${LOCALBASE}/ant \
-		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
+		--with-ant-home=${LOCALBASE}/ant
 .else
 CONFIGURE_ARGS+=--without-java
 .endif
