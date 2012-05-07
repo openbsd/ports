@@ -1,0 +1,2 @@
+Provides a wide range of strategies and a unified combinator framework
+for splitting lists with respect to some sort of delimiter.
