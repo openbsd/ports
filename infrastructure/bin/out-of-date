@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: out-of-date,v 1.4 2011/11/16 23:05:28 espie Exp $
+# $OpenBSD: out-of-date,v 1.5 2012/05/07 15:57:51 espie Exp $
 #
 # Copyright (c) 2005 Bernd Ahlers <bernd@openbsd.org>
 #
@@ -63,20 +63,14 @@ sub collect_installed
 	return $pkg;
 }
 
-sub fh_open
+sub open_cmd
 {
-	open(my $fh, shift);
-	my $old = select $fh;
-	$| = 1;
-	select STDERR;
-	return $fh, $old;
-}
-
-sub fh_close
-{
-	my ($fh, $old) = @_;
-	close($fh);
-	select $old;
+	my $cmd = shift;
+	open my $fh, "-|", $cmd;
+#	my $old = select $fh;
+#	$| = 1;
+#	select $old;
+	return $fh;
 }
 
 sub collect_port_versions
@@ -95,7 +89,7 @@ sub collect_port_versions
 
 	my $cmd = "cd $portsdir && SUBDIR=\"".join(' ', @subdirs)
 	    ."\" FULLPATH=Yes REPORT_PROBLEM=true make ".'show=FULLPKGNAME\${SUBPACKAGE} '
-	    ."2>&1 |";
+	    ."2>&1";
 
 	my $port  = {};
 	my $error = {};
@@ -103,7 +97,7 @@ sub collect_port_versions
 	my $total = scalar @subdirs;
 
 	$state->progress->set_header("Collecting port versions");
-	my ($fh, $old) = fh_open($cmd);
+	my $fh = open_cmd($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
 		chomp;
@@ -126,7 +120,7 @@ sub collect_port_versions
 		$port->{$subdir}->{stem}    = $stem;
 		$port->{$subdir}->{version} = $version;
 	}
-	fh_close($fh, $old);
+	close($fh);
 	$state->progress->next;
 
 	return $port, $error;
@@ -150,12 +144,12 @@ sub collect_port_signatures
 	my $tempdir = File::Temp::tempdir("libcache.XXXXXXX", DIR => $TMPDIR, CLEANUP => 1);
 	$ENV{'_DEPENDS_CACHE'} = $tempdir;
 	my $cmd = "cd $portsdir && FULLPATH=Yes SUBDIR=\"".join(' ', @subdirs)
-	    ."\" REPORT_PROBLEM=true make print-package-signature |";
+	    ."\" REPORT_PROBLEM=true make print-package-signature";
 
 	my $count = 0;
 	my $total = scalar @subdirs;
 	$state->progress->set_header("Collecting port signatures");
-	my ($fh, $old) = fh_open($cmd);
+	my $fh = open_cmd($cmd);
 	my $subdir     = "";
 	while (<$fh>) {
 		chomp;
@@ -168,7 +162,6 @@ sub collect_port_signatures
 		next unless $_ or $subdir;
 		$port->{$subdir}->{signature} = $_;
 	}
-	fh_close($fh, $old);
 	$state->progress->next;
 }
 
