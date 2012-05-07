@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.747 2012/05/03 18:01:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.748 2012/05/07 18:52:26 kili Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -119,6 +119,7 @@
      SUBDIR += hping
      SUBDIR += hpodder
      SUBDIR += hs-HTTP
+     SUBDIR += hs-hostname
      SUBDIR += hs-pb
      SUBDIR += httptunnel
      SUBDIR += icb
