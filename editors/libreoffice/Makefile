@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/05/07 07:17:15 robert Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/07 09:52:56 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -185,7 +185,6 @@ MODULES+=		java
 MODJAVA_VER=		1.6
 MODJAVA_JRERUN=		Yes
 .endif
-BUILD_DEPENDS-java=	devel/apache-ant>=1.8.2
 LIB_DEPENDS-java=	lang/gcc/4.6,-estdc>=4.6,<4.7
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			databases/db/v4,-java \
@@ -275,6 +274,8 @@ CONFIGURE_ARGS+=--disable-build-mozilla \
 		--without-unix-wrapper
 
 .if !${FLAVOR:Mno_java}
+BUILD_DEPENDS+=	devel/apache-ant
+
 CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
 		--with-java \
 		--with-java-target-version=1.5 \
