@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/07 12:07:07 sthen Exp $
+@bin bin/dos2unix
+bin/mac2unix
+@bin bin/unix2dos
+bin/unix2mac
+man/es/
+man/es/man1/
+@man man/es/man1/dos2unix.1
+@man man/es/man1/mac2unix.1
+@man man/es/man1/unix2dos.1
+@man man/es/man1/unix2mac.1
+@man man/man1/dos2unix.1
+@man man/man1/mac2unix.1
+@man man/man1/unix2dos.1
+@man man/man1/unix2mac.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/dos2unix.1
+@man man/nl/man1/mac2unix.1
+@man man/nl/man1/unix2dos.1
+@man man/nl/man1/unix2mac.1
+share/doc/dos2unix/
+share/doc/dos2unix/BUGS.txt
+share/doc/dos2unix/COPYING.txt
+share/doc/dos2unix/ChangeLog.txt
+share/doc/dos2unix/NEWS.txt
+share/doc/dos2unix/README.txt
+share/doc/dos2unix/TODO.txt
+share/doc/dos2unix/dos2unix.htm
+share/doc/dos2unix/dos2unix.txt
+share/locale/de/LC_MESSAGES/dos2unix.mo
+share/locale/eo/LC_MESSAGES/dos2unix.mo
+share/locale/es/LC_MESSAGES/dos2unix.mo
+share/locale/nl/LC_MESSAGES/dos2unix.mo

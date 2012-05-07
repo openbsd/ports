@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/05/07 12:07:07 sthen Exp $
+--- Makefile.orig	Mon May  7 09:04:29 2012
++++ Makefile	Mon May  7 09:06:36 2012
+@@ -195,6 +195,16 @@ endif
+ endif
+ endif
+ 
++ifndef OS
++ifeq (OpenBSD, $(shell uname -s))
++	OS = openbsd
++ifdef ENABLE_NLS
++	CFLAGS_OS     = -I/usr/local/include
++	LDFLAGS_EXTRA = -liconv -lintl -L/usr/local/lib
++endif
++endif
++endif
++
+ ifeq (Darwin, $(shell uname -s))
+ 	OS = Darwin
+ ifdef ENABLE_NLS
+@@ -240,7 +250,7 @@ EO_NOTATION = -x
+ endif
+ 
+ CFLAGS_USER	=
+-CFLAGS		= -O2 -Wall $(RPM_OPT_FLAGS) $(CPPFLAGS) $(CFLAGS_USER)
++CFLAGS		+= -Wall $(RPM_OPT_FLAGS) $(CPPFLAGS) $(CFLAGS_USER)
+ 
+ EXTRA_CFLAGS	= -DVER_REVISION=\"$(DOS2UNIX_VERSION)\" \
+ 		  -DVER_DATE=\"$(DOS2UNIX_DATE)\" \
