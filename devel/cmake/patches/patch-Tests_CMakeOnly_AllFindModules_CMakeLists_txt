@@ -1,0 +1,21 @@
+$OpenBSD: patch-Tests_CMakeOnly_AllFindModules_CMakeLists_txt,v 1.1 2012/05/07 13:58:18 dcoppa Exp $
+
+FindPkgConfig.cmake: fix documented output variable not set
+(upstream git commit 3ea850a5023060b84dcc0e6f0098c32c28b15807)
+
+--- Tests/CMakeOnly/AllFindModules/CMakeLists.txt.orig	Wed Apr 18 20:10:54 2012
++++ Tests/CMakeOnly/AllFindModules/CMakeLists.txt	Mon May  7 13:45:28 2012
+@@ -71,7 +71,7 @@ endmacro(check_version_string)
+ # reported.
+ 
+ foreach(VTEST ALSA ARMADILLO BZIP2 CUPS CURL EXPAT FREETYPE GETTEXT GIT HSPELL
+-        JASPER LIBXML2 LIBXSLT PERL PostgreSQL TIFF ZLIB)
++        JASPER LIBXML2 LIBXSLT PERL PKG_CONFIG PostgreSQL TIFF ZLIB)
+     check_version_string(${VTEST} ${VTEST}_VERSION_STRING)
+ endforeach(VTEST)
+ 
+@@ -82,4 +82,3 @@ endforeach(VTEST)
+ 
+ check_version_string(PYTHONINTERP PYTHON_VERSION_STRING)
+ check_version_string(SUBVERSION Subversion_VERSION_SVN)
+-check_version_string(PKGCONFIG PKG_CONFIG_VERSION_STRING)

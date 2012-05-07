@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindPkgConfig_cmake,v 1.1 2012/05/07 07:06:20 dcoppa Exp $
+$OpenBSD: patch-Modules_FindPkgConfig_cmake,v 1.2 2012/05/07 13:58:18 dcoppa Exp $
 
-Unbreak FindPkgConfig.cmake
+FindPkgConfig.cmake: fix documented output variable not set
 (upstream git commit 3ea850a5023060b84dcc0e6f0098c32c28b15807)
 
 --- Modules/FindPkgConfig.cmake.orig	Thu May  3 09:28:55 2012

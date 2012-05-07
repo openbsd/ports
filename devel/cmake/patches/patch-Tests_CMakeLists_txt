@@ -1,0 +1,62 @@
+$OpenBSD: patch-Tests_CMakeLists_txt,v 1.1 2012/05/07 13:58:18 dcoppa Exp $
+
+Remove troublesome "Qt4Deploy" and "CTest.UpdateCVS" tests
+(from gentoo's package/dev-util/cmake/files/)
+
+--- Tests/CMakeLists.txt.orig	Wed Apr 18 20:10:54 2012
++++ Tests/CMakeLists.txt	Mon May  7 13:45:40 2012
+@@ -273,23 +273,6 @@ IF(BUILD_TESTING)
+       )
+     LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/BundleUtilities")
+ 
+-    # run test for DeployQt4 on supported platforms/compilers (which depends on BundleUtilities)
+-    # this test also depends on the existence of the standard qtiff plugin
+-    if(QT4_WORKS AND QT_QTSQL_FOUND)
+-      ADD_TEST(Qt4Deploy ${CMAKE_CTEST_COMMAND}
+-        --build-and-test
+-        "${CMake_SOURCE_DIR}/Tests/Qt4Deploy"
+-        "${CMake_BINARY_DIR}/Tests/Qt4Deploy"
+-        --build-generator ${CMAKE_TEST_GENERATOR}
+-        --build-makeprogram ${CMAKE_TEST_MAKEPROGRAM}
+-        --build-project Qt4Deploy
+-        --build-options
+-        -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+-        -DQT_QMAKE_EXECUTABLE:FILEPATH=${QT_QMAKE_EXECUTABLE}
+-        )
+-      LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/Qt4Deploy")
+-    endif()
+-
+   endif()
+   endif()
+ 
+@@ -1547,30 +1530,6 @@ ${CMake_BINARY_DIR}/bin/cmake -DVERSION=master -P ${CM
+         )
+       LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/${CTestUpdateSVN_DIR}")
+     ENDIF(Subversion_FOUND)
+-
+-    # Test CTest Update with CVS
+-    IF(EXISTS ${CMAKE_ROOT}/Modules/FindCVS.cmake)
+-      FIND_PACKAGE(CVS QUIET)
+-    ELSE(EXISTS ${CMAKE_ROOT}/Modules/FindCVS.cmake)
+-      FIND_PROGRAM(CVS_EXECUTABLE NAMES cvs)
+-      SET(CVS_FOUND ${CVS_EXECUTABLE})
+-    ENDIF(EXISTS ${CMAKE_ROOT}/Modules/FindCVS.cmake)
+-    SET(CTEST_TEST_UPDATE_CVS ${CVS_FOUND})
+-    IF(CTEST_TEST_UPDATE_CVS AND NOT UNIX)
+-      IF("${CVS_EXECUTABLE}" MATCHES "cygwin")
+-        MESSAGE(STATUS "No CTest.UpdateCVS test with cygwin cvs.exe outside cygwin!")
+-        SET(CTEST_TEST_UPDATE_CVS 0)
+-      ENDIF("${CVS_EXECUTABLE}" MATCHES "cygwin")
+-    ENDIF(CTEST_TEST_UPDATE_CVS AND NOT UNIX)
+-    IF(CTEST_TEST_UPDATE_CVS)
+-      SET(CTestUpdateCVS_DIR "CTest UpdateCVS")
+-      CONFIGURE_FILE("${CMake_SOURCE_DIR}/Tests/CTestUpdateCVS.cmake.in"
+-        "${CMake_BINARY_DIR}/Tests/CTestUpdateCVS.cmake" @ONLY)
+-      ADD_TEST(CTest.UpdateCVS ${CMAKE_CMAKE_COMMAND}
+-        -P "${CMake_BINARY_DIR}/Tests/CTestUpdateCVS.cmake"
+-        )
+-      LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/${CTestUpdateCVS_DIR}")
+-    ENDIF(CTEST_TEST_UPDATE_CVS)
+ 
+     # Test CTest Update with BZR
+     FIND_PROGRAM(BZR_EXECUTABLE NAMES bzr)
