@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/04 08:47:55 pascal Exp $
+# $OpenBSD: Makefile,v 1.25 2012/05/07 10:34:33 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -22,7 +22,7 @@ REVISION-main = 2
 REVISION-c++ = 3
 REVISION-estdc = 2
 REVISION-f95 = 2
-REVISION-java = 2
+REVISION-java = 3
 REVISION-objc = 2
 REVISION-ada = 2
 REVISION-go = 2

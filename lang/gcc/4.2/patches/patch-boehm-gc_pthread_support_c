@@ -1,17 +1,16 @@
-$OpenBSD: patch-boehm-gc_pthread_support_c,v 1.1 2009/06/04 18:24:20 kurt Exp $
+$OpenBSD: patch-boehm-gc_pthread_support_c,v 1.2 2012/05/07 10:34:33 pascal Exp $
 --- boehm-gc/pthread_support.c.orig	Sat Oct 13 11:01:29 2007
-+++ boehm-gc/pthread_support.c	Tue Apr 21 17:22:05 2009
-@@ -892,6 +892,9 @@ void GC_thr_init()
- 	  GC_nprocs = sysconf(_SC_NPROC_ONLN);
- 	  if (GC_nprocs <= 0) GC_nprocs = 1;
++++ boehm-gc/pthread_support.c	Tue May  1 03:54:08 2012
+@@ -884,7 +884,7 @@ void GC_thr_init()
+ 	  GC_nprocs = pthread_num_processors_np();
  #       endif
-+#       if defined(GC_OPENBSD_THREADS)
-+	  GC_nprocs = 1;
-+#       endif
- #       if defined(GC_DARWIN_THREADS) || defined(GC_FREEBSD_THREADS)
- 	  int ncpus = 1;
- 	  size_t len = sizeof(ncpus);
-@@ -966,7 +969,7 @@ void GC_init_parallel()
+ #	if defined(GC_OSF1_THREADS) || defined(GC_AIX_THREADS) \
+-	   || defined(GC_SOLARIS_PTHREADS)
++	   || defined(GC_SOLARIS_PTHREADS) || defined(GC_OPENBSD_THREADS)
+ 	  GC_nprocs = sysconf(_SC_NPROCESSORS_ONLN);
+ 	  if (GC_nprocs <= 0) GC_nprocs = 1;
+ #	endif
+@@ -966,7 +966,7 @@ void GC_init_parallel()
  }
  
  
