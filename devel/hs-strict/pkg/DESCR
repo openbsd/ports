@@ -1,0 +1,2 @@
+Provides strict versions of some standard Haskell data types (pairs,
+Maybe and Either). Also contains strict IO operations.
