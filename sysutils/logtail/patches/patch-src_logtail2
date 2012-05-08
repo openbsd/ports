@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_logtail2,v 1.1.1.1 2012/05/08 02:54:10 william Exp $
+--- src/logtail2.orig	Sat Mar  3 23:02:29 2012
++++ src/logtail2	Sat Mar  3 23:02:10 2012
+@@ -109,7 +109,7 @@ sub determine_rotated_logfile {
+     # function with dateext magic added.
+ 
+     #print "determine_rotated_logfile $filename $inode\n";
+-    for my $codefile (glob("/usr/share/logtail/detectrotate/*.dtr")) {
++    for my $codefile (glob("${LOCALBASE}/share/logtail/detectrotate/*.dtr")) {
+         my $func = do $codefile;
+         if (!$func) {
+ 	    print STDERR "cannot compile $codefile: $!";

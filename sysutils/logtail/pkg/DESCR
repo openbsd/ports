@@ -1,0 +1,7 @@
+logtail displays lines from a standard text file and keeps track of the
+offset of the end of the file so that subsequent runs only display new
+lines. The file's inode is also recorded so that rotated logs can be
+detected.
+
+logtail2 is similar but also uses heuristic plugins so that new lines
+in old (uncompressed) log files can also be printed.

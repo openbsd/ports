@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/08 02:54:10 william Exp $
+bin/logtail
+bin/logtail2
+@man man/man8/logtail.8
+@man man/man8/logtail2.8
+share/logtail/
+share/logtail/detectrotate/
+share/logtail/detectrotate/10-savelog.dtr
+share/logtail/detectrotate/20-logrotate.dtr
+share/logtail/detectrotate/30-logrotate-dateext.dtr
