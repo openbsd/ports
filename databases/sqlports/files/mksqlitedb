@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.36 2012/04/29 16:34:53 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.37 2012/05/08 17:22:00 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -83,7 +83,7 @@ sub dump_dirs
 	}
 	if ($pid) {
 		parse_dump($inserter, $vars, $fd, $unknown);
-		close $fd || warn $!;
+		close $fd || die $!;
 	} else {
 		if (defined $todo) {
 			$ENV{'SUBDIR'} = join(' ', keys %$todo);
