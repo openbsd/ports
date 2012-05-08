@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2012/04/22 20:40:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.211 2012/05/08 09:22:26 espie Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -134,6 +134,7 @@
      SUBDIR += pgtcl
      SUBDIR += pgworksheet
      SUBDIR += pkglocatedb
+     SUBDIR += pkglocatedb,src
      SUBDIR += postgresql
      SUBDIR += postgresql-jdbc
      SUBDIR += postgresql-odbc
