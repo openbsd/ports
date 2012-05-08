@@ -1,6 +1,11 @@
-$OpenBSD: patch-config_Makefile_in,v 1.16 2011/09/16 10:04:32 dcoppa Exp $
---- config/Makefile.in.orig	Sun Jan 23 16:20:25 2011
-+++ config/Makefile.in	Fri Sep 16 11:46:16 2011
+$OpenBSD: patch-config_Makefile_in,v 1.17 2012/05/08 08:24:40 dcoppa Exp $
+
+Fix install on non-native architectures
+
+Remove excessive optimization
+
+--- config/Makefile.in.orig	Wed Apr  4 22:22:49 2012
++++ config/Makefile.in	Tue May  8 09:22:18 2012
 @@ -633,6 +633,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
@@ -10,25 +15,35 @@ $OpenBSD: patch-config_Makefile_in,v 1.16 2011/09/16 10:04:32 dcoppa Exp $
  install:: opt 
  	mkdir -p $(DESTDIR)$(prefix)/bin
  	if test -f mlnet; then \
-@@ -652,6 +654,21 @@ install:: opt 
+@@ -652,7 +654,22 @@ install:: opt 
               done; \
           fi
  
 +else
-+
+ 
 +install::
 +	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet
 +	for link in mlslsk mldonkey mlgnut mldc mlbt; do \
 +	  ln -s mlnet $(DESTDIR)$(prefix)/bin/$$link; \
 +	done
 +	cp -f mlgui.byte $(DESTDIR)$(prefix)/bin/mlgui
-+	ln -s $(DESTDIR)$(prefix)/bin/mlgui $(DESTDIR)$(prefix)/bin/mldonkey_gui
++	ln -s mlgui $(DESTDIR)$(prefix)/bin/mldonkey_gui
 +	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet+gui
 +	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
 +	  ln -s mlnet+gui $(DESTDIR)$(prefix)/bin/$$link; \
 +	done
 +
 +endif
- 
++
  ifneq ("$(GUI)" , "no")
    ifeq ("$(GUI)", "newgui2")
+     SUBDIRS += $(SRC_GUI) $(SRC_GUI)/x11 $(SRC_GUI)/win32 $(ICONS_CHOICE) +lablgtk2
+@@ -1434,7 +1451,7 @@ ocamldoc_html: $(CORE_DOC) $(libclient_DOC)
+ 	$(OCAMLDOC) -sort -dump ocamldoc/ocamldocdump -html -d ocamldoc $(INCLUDES) $(libclient_DOC) $(CORE_DOC)
+ 
+ $(LIB)/md4_cc.o: $(LIB)/md4.c
+-	$(OCAMLC) -ccopt "$(CFLAGS) -O3 -o $(LIB)/md4_cc.o" -ccopt "" -c $(LIB)/md4.c
++	$(OCAMLC) -ccopt "$(CFLAGS) -o $(LIB)/md4_cc.o" -ccopt "" -c $(LIB)/md4.c
+ 
+ $(CDK)/heap_c.o: $(CDK)/heap_c.c
+ 	$(OCAMLC) -ccopt "$(CFLAGS) $(MORECFLAGS) -o $(CDK)/heap_c.o" -ccopt "" -c $(CDK)/heap_c.c

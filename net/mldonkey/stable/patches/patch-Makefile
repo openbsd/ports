@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1 2012/05/08 08:24:40 dcoppa Exp $
+
+Remove excessive optimization
+
+--- Makefile.orig	Tue May  8 09:21:31 2012
++++ Makefile	Tue May  8 09:21:48 2012
+@@ -5033,7 +5033,7 @@ ocamldoc_html: $(CORE_DOC) $(libclient_DOC)
+ 	$(OCAMLDOC) -sort -dump ocamldoc/ocamldocdump -html -d ocamldoc $(INCLUDES) $(libclient_DOC) $(CORE_DOC)
+ 
+ $(LIB)/md4_cc.o: $(LIB)/md4.c
+-	$(OCAMLC) -ccopt "$(CFLAGS) -O3 -o $(LIB)/md4_cc.o" -ccopt "" -c $(LIB)/md4.c
++	$(OCAMLC) -ccopt "$(CFLAGS) -o $(LIB)/md4_cc.o" -ccopt "" -c $(LIB)/md4.c
+ 
+ $(CDK)/heap_c.o: $(CDK)/heap_c.c
+ 	$(OCAMLC) -ccopt "$(CFLAGS) $(MORECFLAGS) -o $(CDK)/heap_c.o" -ccopt "" -c $(CDK)/heap_c.c
