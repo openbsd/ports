@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_mupdfclean_c,v 1.1 2012/05/08 22:49:46 sthen Exp $
+--- apps/mupdfclean.c.orig	Tue May  8 23:18:05 2012
++++ apps/mupdfclean.c	Tue May  8 23:18:11 2012
+@@ -36,7 +36,7 @@ static fz_context *ctx = NULL;
+ static void usage(void)
+ {
+ 	fprintf(stderr,
+-		"usage: pdfclean [options] input.pdf [output.pdf] [pages]\n"
++		"usage: mupdfclean [options] input.pdf [output.pdf] [pages]\n"
+ 		"\t-p -\tpassword\n"
+ 		"\t-g\tgarbage collect unused objects\n"
+ 		"\t-gg\tin addition to -g compact xref table\n"
