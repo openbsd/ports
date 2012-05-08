@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.5 2011/10/18 08:40:55 ajacoutot Exp $
---- configure.in.orig	Wed Feb  4 19:55:38 2009
-+++ configure.in	Wed Jun 29 17:49:41 2011
+$OpenBSD: patch-configure_in,v 1.6 2012/05/08 12:49:45 landry Exp $
+--- configure.in.orig	Thu Feb  5 01:55:38 2009
++++ configure.in	Wed May  2 16:43:37 2012
 @@ -1,7 +1,7 @@
  AC_PREREQ(2.50)
  AC_INIT(FAAC, 1.28, faac-dev@lists.sourceforge.net)
@@ -19,8 +19,9 @@ $OpenBSD: patch-configure_in,v 1.5 2011/10/18 08:40:55 ajacoutot Exp $
  AC_CHECK_DECLS([MP4Create, MP4MetadataDelete],
                 AC_CHECK_LIB(mp4v2, MP4MetadataDelete, external_mp4v2=yes,
 -                            external_mp4v2=no, -lstdc++),
+-               external_mp4v2=no, [#include <mp4.h>])
 +                            external_mp4v2=no, -lstdc++ -lm),
-                external_mp4v2=no, [#include <mp4.h>])
++               external_mp4v2=no, [#include <mp4v2/mp4v2.h>])
  
  if test x$external_mp4v2 = xyes; then
    AC_MSG_NOTICE([*** Building with external mp4v2 ***])

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/10/18 08:40:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/08 12:49:45 landry Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
 
 DISTNAME=	faac-1.28
-REVISION=	2
+REVISION=	3
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 
@@ -23,7 +23,7 @@ WANTLIB=	c m stdc++ mp4v2>=3
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
-LIB_DEPENDS=	multimedia/libmp4v2
+LIB_DEPENDS=	multimedia/libmp4v2>=1.9.1
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
