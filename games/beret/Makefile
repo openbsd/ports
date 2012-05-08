@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/04 18:05:09 schwarze Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/08 15:57:38 sthen Exp $
 
 COMMENT=	2D puzzle-platformer game
-DISTNAME=	beret-1.2.1
-REVISION=	1
+DISTNAME=	beret-1.2.1pl1
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://kiwisauce.com/beret/
@@ -19,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c m SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf pthread
 
-MASTER_SITES=	http://devio.us/~bcallah/
+MASTER_SITES=	http://devio.us/~bcallah/source/
 
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
