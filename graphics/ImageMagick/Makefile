@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2012/04/27 08:09:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.120 2012/05/08 15:31:58 okan Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0
@@ -33,20 +33,28 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB =		c bz2>=10 djvulibre fftw3 jasper>=1 jbig>=1.2 jpeg \
 			lcms2 lzma ltdl m perl png>=4 pthread stdc++ \
-			tiff>=36 z
+			tiff>=36 z ICE SM X11 Xext Xt expat fontconfig \
+			freetype wmf-0.2 wmflite-0.2>=7 xcb xml2>=9
+
+MODULES =		converters/libiconv
 
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz \
 			devel/libtool,-ltdl \
+			graphics/djvulibre \
 			graphics/jbigkit \
 			graphics/png \
 			graphics/tiff \
 			graphics/lcms2 \
+			graphics/libwmf \
 			graphics/jasper \
-			math/fftw3
+			math/fftw3 \
+			textproc/libxml
 
-RUN_DEPENDS=		graphics/netpbm
-BUILD_DEPENDS=		graphics/netpbm
+RUN_DEPENDS =		graphics/netpbm \
+			print/ghostscript/gnu \
+			print/transfig
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 ALL_TARGET=		all perl-build
 
@@ -55,6 +63,7 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
+			--with-wmf \
 			--without-dps \
 			--without-fpx \
 			--without-gvc \
@@ -71,31 +80,6 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
 			PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread" \
 			ac_cv_path_LaunchDelegate=no
-
-FLAVORS=		no_x11
-FLAVOR?=
-
-.if ${FLAVOR:Mno_x11}
-LIB_DEPENDS +=		graphics/djvulibre,no_x11
-RUN_DEPENDS +=		print/ghostscript/gnu,no_x11
-BUILD_DEPENDS +=	print/ghostscript/gnu,no_x11
-CONFIGURE_ENV +=	ac_cv_path_FIGDecodeDelegate=no
-CONFIGURE_ARGS +=	--without-x \
-			--without-freetype \
-			--without-wmf
-.else
-MODULES +=		converters/libiconv
-WANTLIB +=	 ICE SM X11 Xext Xt expat fontconfig freetype wmf wmf-0.2 \
-	wmflite-0.2>=7 wmflite>=7 xcb xml2>=9
-LIB_DEPENDS +=		graphics/libwmf \
-			textproc/libxml \
-			graphics/djvulibre
-RUN_DEPENDS +=		print/ghostscript/gnu
-RUN_DEPENDS +=		print/transfig
-BUILD_DEPENDS +=	print/ghostscript/gnu
-BUILD_DEPENDS +=	print/transfig
-CONFIGURE_ARGS +=	--with-wmf
-.endif
 
 post-install:
 	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
