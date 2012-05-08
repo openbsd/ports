@@ -1,4 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2012/05/08 09:21:45 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/08 10:58:45 espie Exp $
+
+# NOTE for FLAVOR=src
+# - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
+# and ${XSRCDIR}/distrrib/sets/lists prior to building
+# - or you can fetch them on the fly through anoncvs
+# you need to set PKGLOCATEDB_WANTANONCVS=Yes in /etc/mk.conf
+# and you may possibly want to set PKG_LOCATEDB_CVSROOT
+# The port *will go interactive* the first time around, until you
+# have the correct key in your ssh config !
+#
+# The port *will fail if the installation is not more or less uptodate wrt to
+# the set lists...
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -20,10 +32,23 @@ FLAVOR ?=
 
 ARGS = -a -p ${PORTSDIR}
 .if ${FLAVOR:Msrc}
+ARGS += -C -s ${BSDSRCDIR} -x ${XSRCDIR}
+
+.  include <bsd.own.mk>
+
+PKGLOCATEDB_WANTANONCVS ?= No
+.  if ${PKGLOCATEDB_WANTANONCVS:L} == "yes"
+PKGLOCATEDB_CVSROOT ?= anoncvs@anoncvs1.ca.openbsd.org:/cvs
+
+BSDSRCDIR = ${WRKDIR}/src
+XSRCDIR = ${WRKDIR}/xenocara
+post-extract:
+	cd ${WRKDIR} && cvs -d ${PKGLOCATEDB_CVSROOT} co src/distrib/sets/lists
+	cd ${WRKDIR} && cvs -d ${PKGLOCATEDB_CVSROOT} co xenocara/distrib/sets/lists
+
+.  else
 BSDSRCDIR ?= /usr/src
 XSRCDIR ?= /usr/xenocara
-ARGS += -s ${BSDSRCDIR} -x ${XSRCDIR}
-
 
 post-extract:
 	if ! test -d ${BSDSRCDIR}/distrib/sets/lists; then \
@@ -34,6 +59,7 @@ post-extract:
 		echo 1>&2 "set XSRCDIR to a valid xenocara dir"; \
 		exit 1; \
 	fi
+.  endif
 .endif
 
 do-build: 
@@ -58,4 +84,4 @@ do-build: ${WRKBUILD}/pkglocatedb
 ${WRKBUILD}/subdirlist:
 	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath||ports.pseudo_flavor) from paths join ports on paths.id=ports.fullpkgpath group by fullpkgname order by paths.fullpkgpath' >$@
 ${WRKBUILD}/pkglocatedb: ${WRKBUILD}/subdirlist
-	SUBDIRLIST=${WRKBUILD}/subdirlist FULLPATH=Yes REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
+	SUBDIRLIST=${WRKBUILD}/subdirlist FULLPATH=Yes REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
