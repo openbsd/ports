@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/29 08:51:35 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/05/08 09:21:45 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -20,13 +20,13 @@ FLAVOR ?=
 
 ARGS = -a -p ${PORTSDIR}
 .if ${FLAVOR:Msrc}
-SRCDIR ?= /usr/src
+BSDSRCDIR ?= /usr/src
 XSRCDIR ?= /usr/xenocara
-ARGS += -s ${SRCDIR} -x ${XSRCDIR}
+ARGS += -s ${BSDSRCDIR} -x ${XSRCDIR}
 
 
 post-extract:
-	if ! test -d ${SRCDIR}/distrib/sets/lists; then \
+	if ! test -d ${BSDSRCDIR}/distrib/sets/lists; then \
 		echo 1>&2 "set SRCDIR to a valid src dir"; \
 		exit 1; \
 	fi
