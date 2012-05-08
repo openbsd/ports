@@ -1,14 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/15 23:02:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/05/08 11:04:27 sthen Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.nta-monitor.com/tools/arp-scan/
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 MASTER_SITES =	${HOMEPAGE}download/
+MASTER_SITES0 =	http://spacehopper.org/mirrors/
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		oui-iab-20120508.tar.bz2:0
 
 # GPLv3+
 PERMIT_DISTFILES_CDROM =Yes
@@ -21,7 +24,25 @@ WANTLIB =		c pcap
 CONFIGURE_STYLE =	gnu
 USE_GROFF =		Yes
 
+pre-configure:
+	cd ${WRKSRC} && \
+	    ./get-iab -f ieee-iab.txt -u file://${WRKDIR}/oui-iab/iab.txt && \
+	    ./get-oui -f ieee-oui.txt -u file://${WRKDIR}/oui-iab/oui.txt
+
 post-install:
 	cd ${PREFIX}/share/arp-scan; mv mac-vendor.txt mac-vendor.txt.dist
+
+# maintainer convenience target
+listing:
+	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
+	    f=oui-iab-`date +%Y%m%d`.tar.bz2; \
+	    cd $$t; \
+	    mkdir oui-iab; \
+	    cd oui-iab; \
+	    ftp http://standards.ieee.org/develop/regauth/iab/iab.txt; \
+	    ftp http://standards.ieee.org/develop/regauth/oui/oui.txt; \
+	    cd ..; \
+	    tar cjf $$f oui-iab; \
+	    scp $$f naiad:mirrors/
 
 .include <bsd.port.mk>
