@@ -1,0 +1,9 @@
+Fasd is a tool for quick access to files for POSIX shells. Fasd keeps
+track of files you have accessed, so that you can quickly reference
+them in the command line.
+
+The name fasd comes from the default suggested aliases f(files),
+a(files/directories), s(show/search/select), d(directories).
+
+Fasd ranks files and directories by "frecency," that is, by both
+"frequency" and "recency."
