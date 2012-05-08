@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2008/04/03 12:42:46 jasper Exp $
-bin/aafire
-bin/aainfo
+@comment $OpenBSD: PLIST,v 1.8 2012/05/08 12:28:03 okan Exp $
+@pkgpath graphics/aalib,no_x11
+@bin bin/aafire
+@bin bin/aainfo
 bin/aalib-config
-bin/aasavefont
-bin/aatest
+@bin bin/aasavefont
+@bin bin/aatest
 include/aalib.h
 @info info/aalib.info
 lib/libaa.a
