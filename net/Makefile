@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.748 2012/05/07 18:52:26 kili Exp $
+# $OpenBSD: Makefile,v 1.749 2012/05/08 06:53:45 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -418,6 +418,7 @@
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-facebookchat
      SUBDIR += pidgin-icb
+     SUBDIR += pidgin-sipe
      SUBDIR += pidgin-tlen
      SUBDIR += pktstat
      SUBDIR += plushs
