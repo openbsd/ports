@@ -1,24 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/09/23 13:44:35 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/05/08 13:04:48 okan Exp $
 %%SHARED%%
-bin/cbcodec
-bin/cbtest
-bin/crmgr
-bin/crtest
-bin/crtsv
-bin/dpmgr
-bin/dptest
-bin/dptsv
-bin/hvmgr
-bin/hvtest
-bin/odidx
-bin/odmgr
-bin/odtest
-bin/qmttest
-bin/rlmgr
-bin/rltest
-bin/vlmgr
-bin/vltest
-bin/vltsv
+@bin bin/cbcodec
+@bin bin/cbtest
+@bin bin/crmgr
+@bin bin/crtest
+@bin bin/crtsv
+@bin bin/dpmgr
+@bin bin/dptest
+@bin bin/dptsv
+@bin bin/hvmgr
+@bin bin/hvtest
+@bin bin/odidx
+@bin bin/odmgr
+@bin bin/odtest
+@bin bin/qmttest
+@bin bin/rlmgr
+@bin bin/rltest
+@bin bin/vlmgr
+@bin bin/vltest
+@bin bin/vltsv
 include/cabin.h
 include/curia.h
 include/depot.h
@@ -67,5 +67,3 @@ share/doc/qdbm/COPYING
 share/doc/qdbm/ChangeLog
 share/doc/qdbm/NEWS
 share/doc/qdbm/THANKS
-share/doc/qdbm/spex-ja.html
-share/doc/qdbm/spex.html
