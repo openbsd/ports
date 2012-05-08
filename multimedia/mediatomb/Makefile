@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/29 07:11:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/08 12:50:29 landry Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	multimedia
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/libmagic \
 		graphics/ffmpegthumbnailer \
 		graphics/libexif \
-		lang/spidermonkey \
+		lang/spidermonkey>=1.9 \
 		net/curl \
 		multimedia/libmp4v2
 
