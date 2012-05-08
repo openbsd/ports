@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/08 06:52:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/08 07:11:48 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		SIPE plugin for Pidgin
 
 DISTNAME =		pidgin-sipe-1.13.1
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -26,6 +27,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sipe/}
 LIB_DEPENDS =		mail/gmime \
 			net/pidgin,-libpurple \
 			security/nss
+RUN_DEPENDS =		net/pidgin
 
 MODULES =		devel/gettext
 
