@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.319 2012/05/08 03:04:18 okan Exp $
+# $OpenBSD: Makefile,v 1.320 2012/05/08 12:27:36 okan Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -8,7 +8,6 @@
      SUBDIR += GraphicsMagick,no_x11
      SUBDIR += ImageMagick
      SUBDIR += aalib
-     SUBDIR += aalib,no_x11
      SUBDIR += agg
      SUBDIR += allegropng
      SUBDIR += amide
