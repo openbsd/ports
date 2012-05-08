@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1042 2012/05/07 18:53:16 kili Exp $
+# $OpenBSD: Makefile,v 1.1043 2012/05/08 11:35:27 naddy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -238,7 +238,7 @@
      SUBDIR += hs-terminfo
      SUBDIR += hs-test-framework
      SUBDIR += hs-test-framework-hunit
-     SUBDIR += hs-test-framework-quickcheck
+     SUBDIR += hs-test-framework-quickcheck2
      SUBDIR += hs-text
      SUBDIR += hs-transformers
      SUBDIR += hs-type-level
