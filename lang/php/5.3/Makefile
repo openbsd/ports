@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2012/05/05 14:26:14 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2012/05/08 21:29:16 sthen Exp $
 
 PV=		5.3
-V=		${PV}.12
+V=		${PV}.13
 SUHOSIN_PHPV=	5.3.9
 SUHOSIN_P_V=	0.9.10
 
