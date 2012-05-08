@@ -1,0 +1,43 @@
+$OpenBSD: patch-schema_murrine_xml_in_in,v 1.1 2012/05/08 10:05:54 dcoppa Exp $
+
+Fix typos: "Increse" --> "Increase"
+(upstream git commit 6d0103c682c763f194ae620aae70b5107dac42ee)
+
+--- schema/murrine.xml.in.in.orig	Wed Jan 25 14:59:04 2012
++++ schema/murrine.xml.in.in	Tue May  8 11:45:28 2012
+@@ -179,7 +179,7 @@
+ 
+ 	<option type="real" name="highlight_shade" default="1.1">
+ 		<_long_name>Highlight Shade</_long_name>
+-		<_description>Increse/Decrease the highlight shade</_description>
++		<_description>Increase/Decrease the highlight shade</_description>
+ 		<section>General</section>
+ 		<minimum>0</minimum>
+ 		<maximum>2</maximum>
+@@ -188,7 +188,7 @@
+ 
+ 	<option type="real" name="lightborder_shade" default="1.1">
+ 		<_long_name>Lightborder Shade</_long_name>
+-		<_description>Increse/Decrease the lightborder shade</_description>
++		<_description>Increase/Decrease the lightborder shade</_description>
+ 		<section>General</section>
+ 		<minimum>0</minimum>
+ 		<maximum>2</maximum>
+@@ -298,7 +298,7 @@
+ 
+ 	<option type="real" name="prelight_shade" default="1.0">
+ 		<_long_name>Prelight Shade</_long_name>
+-		<_description>Increse/Decrease the prelight shade</_description>
++		<_description>Increase/Decrease the prelight shade</_description>
+ 		<section>General</section>
+ 		<minimum>0</minimum>
+ 		<maximum>2</maximum>
+@@ -452,7 +452,7 @@
+ 
+ 	<option type="enumeration" name="text_shade"  default="1.06">
+ 		<_long_name>Text Shade</_long_name>
+-		<_description>Increse/Decrease the text shadow shade</_description>
++		<_description>Increase/Decrease the text shadow shade</_description>
+ 		<section>General</section>
+ 		<minimum>0</minimum>
+ 		<maximum>2</maximum>

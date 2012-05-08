@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2012/05/08 10:05:54 dcoppa Exp $
+
+Add -lm to ensure linking with the math library
+(upstream git commit 6e8eb24497d38a68bb4b884ea25accd18fc524e8)
+
+--- Makefile.in.orig	Tue May  8 11:43:24 2012
++++ Makefile.in	Tue May  8 11:44:02 2012
+@@ -349,7 +349,7 @@ libmurrine_la_SOURCES = \
+ 	./src/stack-blur.h
+ 
+ libmurrine_la_LDFLAGS = -module -avoid-version -no-undefined
+-libmurrine_la_LIBADD = $(GTK_LIBS) $(pixman_LIBS)
++libmurrine_la_LIBADD = $(GTK_LIBS) $(pixman_LIBS) -lm
+ all: all-recursive
+ 
+ .SUFFIXES:

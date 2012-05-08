@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/01/25 16:03:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/05/08 10:05:54 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	beautiful glass-like GTK+ 2.x engine and themes
 GNOME_VERSION =	0.98.2
 GNOME_PROJECT =	murrine
 PKGNAME =	gtk2-murrine-engine-${GNOME_VERSION}
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://cimitan.com/murrine/
