@@ -1,11 +1,11 @@
-# $OpenBSD: node.port.mk,v 1.2 2012/04/04 05:48:15 ajacoutot Exp $
+# $OpenBSD: node.port.mk,v 1.3 2012/05/08 17:10:43 jasper Exp $
 
 # node module
 
 CATEGORIES +=	www/node
 
-BUILD_DEPENDS +=	www/node
-RUN_DEPENDS += 		www/node
+BUILD_DEPENDS +=	www/node>=0.6.17p1
+RUN_DEPENDS += 		www/node>=0.6.17p1
 
 .if ${CONFIGURE_STYLE:L:Mnpm}
 .  if ${CONFIGURE_STYLE:L:Mext}
@@ -43,7 +43,7 @@ NO_REGRESS ?= Yes
 
 # List of npm package names to depend on.  Only necessary
 # if the current port depends on other node ports.
-MODNODE_DEPENDS ?=		
+MODNODE_DEPENDS ?=
 
 # Link all dependencies first so that npm will install without complaining.
 # Then rebuild the distfile, since it may contain local patches.
@@ -74,11 +74,11 @@ MODNODE_INSTALL_TARGET = \
 	fi;
 
 .  if !target(do-build)
-do-build: 
+do-build:
 	${MODNODE_BUILD_TARGET}
 .  endif
 .  if !target(do-install)
-do-install: 
+do-install:
 	${MODNODE_INSTALL_TARGET}
 .  endif
 .endif
