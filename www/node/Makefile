@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/05/07 20:11:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2012/05/08 15:38:01 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,7 +11,7 @@ COMMENT=	V8 JavaScript for clients and servers
 NODE_VERSION=	v0.6.17
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www devel
 
@@ -36,6 +36,8 @@ WANTLIB +=	c crypto execinfo kvm m pthread ssl stdc++ util z
 LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
+
+RUN_DEPENDS=	devel/gmake # node-gyp uses it at runtime
 
 MODPY_ADJ_FILES=wscript \
 		tools/node-waf \
