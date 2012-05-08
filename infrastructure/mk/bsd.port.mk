@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1166 2012/05/07 21:11:43 halex Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1167 2012/05/08 17:38:21 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1639,7 +1639,7 @@ _list_port_libs = \
 		${_flavor_fragment}; \
 		${_libs2cache}; \
 		cat $$cached_libs; \
- 	done; ${_list_system_libs}; }
+	done; ${_list_system_libs}; }
 
 .if empty(PLIST_DB)
 _register_plist =:
