@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/03/15 13:55:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/05/08 09:25:20 sthen Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -69,6 +69,9 @@ post-extract:
 	chmod -R +x ${WRKSRC}/plugins/node.d.openbsd
 	rm ${WRKSRC}/plugins/node.d.openbsd/memory.in # not yet ported
 
+# Fixup hardcoded paths in plugins to use TRUEPREFIX/LOCALBASE as appropriate,
+# there are far too many to handle this via patches/SUBST_CMD, and this method
+# plays nicer with update-patches.
 pre-configure:
 	cd ${WRKSRC}/node/sbin; \
 	${SUBST_CMD} munin-node munin-node-configure munin-run; \
