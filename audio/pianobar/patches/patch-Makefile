@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.14 2012/05/07 11:04:21 dcoppa Exp $
+$OpenBSD: patch-Makefile,v 1.15 2012/05/09 09:35:08 dcoppa Exp $
 --- Makefile.orig	Sun May  6 16:33:54 2012
-+++ Makefile	Mon May  7 12:26:23 2012
++++ Makefile	Wed May  9 11:29:37 2012
 @@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -18,8 +18,13 @@ $OpenBSD: patch-Makefile,v 1.14 2012/05/07 11:04:21 dcoppa Exp $
  PIANOBAR_DIR=src
  PIANOBAR_SRC=\
  		${PIANOBAR_DIR}/main.c \
-@@ -76,8 +69,8 @@ else
- 	LIBMAD_LDFLAGS=-lmad
+@@ -73,11 +66,12 @@ ifeq (${DISABLE_MAD}, 1)
+ 	LIBMAD_LDFLAGS=
+ else
+ 	LIBMAD_CFLAGS=-DENABLE_MAD
+-	LIBMAD_LDFLAGS=-lmad
++	LIBMAD_CFLAGS+=$(shell pkg-config --cflags mad)
++	LIBMAD_LDFLAGS=$(shell pkg-config --libs mad)
  endif
  
 -LIBGNUTLS_CFLAGS=
@@ -29,7 +34,7 @@ $OpenBSD: patch-Makefile,v 1.14 2012/05/07 11:04:21 dcoppa Exp $
  
  LIBGCRYPT_CFLAGS=
  LIBGCRYPT_LDFLAGS=-lgcrypt
-@@ -87,50 +80,41 @@ LIBJSONC_LDFLAGS=$(shell pkg-config --libs json)
+@@ -87,50 +81,41 @@ LIBJSONC_LDFLAGS=$(shell pkg-config --libs json)
  
  # build pianobar
  ifeq (${DYNLINK},1)
@@ -93,7 +98,7 @@ $OpenBSD: patch-Makefile,v 1.14 2012/05/07 11:04:21 dcoppa Exp $
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} pianobar libpiano.so* \
  			libpiano.a waitress-test
  
-@@ -177,17 +161,15 @@ else
+@@ -177,17 +162,15 @@ else
  install: pianobar
  endif
  	install -d ${DESTDIR}/${BINDIR}/
