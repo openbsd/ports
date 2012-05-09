@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/05/08 15:38:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.36 2012/05/09 06:37:49 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,7 +11,7 @@ COMMENT=	V8 JavaScript for clients and servers
 NODE_VERSION=	v0.6.17
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www devel
 
@@ -37,7 +37,9 @@ LIB_DEPENDS=	devel/libexecinfo
 
 USE_GMAKE=	Yes
 
-RUN_DEPENDS=	devel/gmake # node-gyp uses it at runtime
+# node-gyp uses it at runtime
+RUN_DEPENDS=	devel/gmake \
+		sysutils/flock
 
 MODPY_ADJ_FILES=wscript \
 		tools/node-waf \
@@ -47,6 +49,7 @@ REGRESS_TARGET= test
 CONFIGURE_STYLE= simple
 
 SUBST_VARS+=	CFLAGS
+SUBST_VARS+= 	DISTDIR
 
 MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
@@ -56,7 +59,8 @@ pre-configure:
 	@# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
 	${SUBST_CMD} ${WRKDIST}/lib/module.js \
-		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js
+		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/configure.js \
+		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
