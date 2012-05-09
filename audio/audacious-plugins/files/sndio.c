@@ -15,11 +15,13 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include <errno.h>
+#include <poll.h>
+#include <pthread.h>
 #include <sndio.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <pthread.h>
 #include <gtk/gtk.h>
 #include <audacious/plugin.h>
 #include <audacious/misc.h>
@@ -39,6 +41,8 @@ void	sndio_get_volume(int *, int *);
 void	sndio_set_volume(int, int);
 bool_t	sndio_open(int, int, int);
 void	sndio_close(void);
+int	sndio_buffer_free(void);
+void    sndio_period_wait(void);
 void	sndio_write(void *, int);
 void	sndio_pause(bool_t);
 void	sndio_flush(int);
@@ -56,12 +60,10 @@ static struct sio_par par;
 static struct sio_hdl *hdl;
 static long long rdpos;
 static long long wrpos;
-static int paused, flushed, volume;
-static int flush_time, pause_flag, volume_target;
-static int writing, pause_pending, flush_pending, volume_pending;
+static int paused, restarted, volume;
+static int pause_pending, flush_pending, volume_pending;
 static int bytes_per_sec;
 static pthread_mutex_t mtx;
-static pthread_t sndio_thread;
 
 static GtkWidget *configure_win;
 static GtkWidget *adevice_entry;
@@ -80,6 +82,8 @@ AUD_OUTPUT_PLUGIN
 	.open_audio = sndio_open,
 	.write_audio = sndio_write,
 	.close_audio = sndio_close,
+	.buffer_free = sndio_buffer_free,
+	.period_wait = sndio_period_wait,
 	.flush = sndio_flush,
 	.pause = sndio_pause,
 	.output_time = sndio_output_time,
@@ -100,69 +104,61 @@ static struct fmt_to_par {
 	{FMT_U32_LE, 32, 0, 1},	{FMT_U32_BE, 32, 0, 0}
 };
 
+static const gchar * const sndio_defaults[] = {
+	"volume", "100",
+	"audiodev", "",
+	NULL,
+};
+
 static void
-volume_do(int v)
+reset(void)
 {
-	if (writing) {
-		volume_target = v;
-		volume_pending = 1;
-	} else {
-		if (hdl)
-			sio_setvol(hdl, v * SIO_MAXVOL / 100);
+	if (!restarted) {
+		restarted = 1;
+		sio_stop(hdl);
+		sio_start(hdl);
+		rdpos = wrpos;
+	}
+}
+
+static void
+wait_ready(void)
+{
+	int n;
+	struct pollfd pfds[16];
+
+	if (volume_pending) {
+		sio_setvol(hdl, volume * SIO_MAXVOL / 100);
 		volume_pending = 0;
 	}
-}
-
-static void
-pause_do(int flag)
-{
-	if (writing) {
-		pause_flag = flag;
-		pause_pending = 1;
-	} else {
-		if (flag && !paused && !flushed) {
-			sio_stop(hdl);
-			sio_start(hdl);
-			rdpos = wrpos;
-		}
-		paused = flag;
+	if (flush_pending) {
+		reset();
+		flush_pending = 0;
+	}
+	if (pause_pending) {
+		if (paused)
+			reset();
 		pause_pending = 0;
 	}
-}
-
-static void
-flush_do(int time)
-{
-	if (writing) {
-		flush_time = time;
-		flush_pending = 1;
-	} else {
-		if (!paused && !flushed) {
-			sio_stop(hdl);
-			sio_start(hdl);
-		}
-		rdpos = wrpos = (long long)time * bytes_per_sec / 1000;
-		flush_pending = 0;
-		flushed = 1;
+	if (paused) {
+		pthread_mutex_unlock(&mtx);
+		usleep(20000);
+		pthread_mutex_lock(&mtx);
+		return;
 	}
+	n = sio_pollfd(hdl, pfds, POLLOUT);
+	if (n != 0) {
+		pthread_mutex_unlock(&mtx);
+		while (poll(pfds, n, -1) < 0) {
+			if (errno != EINTR) {
+				perror("poll");
+				exit(1);
+			}
+		}
+		pthread_mutex_lock(&mtx);
+	}
+	(void)sio_revents(hdl, pfds);
 }
-
-void
-sndio_about(void)
-{
-	static GtkWidget *about = NULL;
-
-	audgui_simple_message(&about, GTK_MESSAGE_INFO,
-	    _("About Sndio Output Plugin"),
-	    _("Sndio Output Plugin\n\n"
-	    "Written by Thomas Pfaff <tpfaff@tp76.info>\n"));
-}
-
-static const gchar * const sndio_defaults[] = {
- "volume", "100",
- "audiodev", "",
- NULL,
-};
 
 bool_t
 sndio_init(void)
@@ -185,6 +181,17 @@ sndio_cleanup(void)
 }
 
 void
+sndio_about(void)
+{
+	static GtkWidget *about = NULL;
+
+	audgui_simple_message(&about, GTK_MESSAGE_INFO,
+	    _("About Sndio Output Plugin"),
+	    _("Sndio Output Plugin\n\n"
+	    "Written by Thomas Pfaff <tpfaff@tp76.info>\n"));
+}
+
+void
 sndio_get_volume(int *l, int *r)
 {
 	pthread_mutex_lock(&mtx);
@@ -198,7 +205,7 @@ sndio_set_volume(int l, int r)
 	/* Ignore balance control, so use unattenuated channel. */
 	pthread_mutex_lock(&mtx);
 	volume = l > r ? l : r;
-	volume_do(volume);
+	volume_pending = 1;
 	pthread_mutex_unlock(&mtx);
 }
 
@@ -209,7 +216,7 @@ sndio_open(int fmt, int rate, int nch)
 	struct sio_par askpar;
 	GtkWidget *dialog = NULL;
 
-	hdl = sio_open(strlen(audiodev) > 0 ? audiodev : NULL, SIO_PLAY, 0);
+	hdl = sio_open(strlen(audiodev) > 0 ? audiodev : NULL, SIO_PLAY, 1);
 	if (!hdl) {
 		g_warning("failed to open audio device %s", audiodev);
 		return (0);
@@ -256,7 +263,7 @@ sndio_open(int fmt, int rate, int nch)
 	wrpos = 0;
 	sio_onmove(hdl, onmove_cb, NULL);
 	sio_onvol(hdl, onvol_cb, NULL);
-	volume_do(volume);
+	sio_setvol(hdl, volume * SIO_MAXVOL / 100);
 	if (!sio_start(hdl)) {
 		g_warning("failed to start audio device");
 		sndio_close();
@@ -264,7 +271,7 @@ sndio_open(int fmt, int rate, int nch)
 	}
 	pause_pending = flush_pending = volume_pending = 0;
 	bytes_per_sec = par.bps * par.pchan * par.rate;
-	flushed = 1;
+	restarted = 1;
 	paused = 0;
 	return (1);
 }
@@ -275,25 +282,19 @@ sndio_write(void *ptr, int length)
 	unsigned n;
 
 	pthread_mutex_lock(&mtx);
-	flushed = 0;
-	if (!paused) {	
-		writing = 1;
-		pthread_mutex_unlock(&mtx);
+	for (;;) {
+		if (paused)
+			break;
+		restarted = 0;
 		n = sio_write(hdl, ptr, length);
-		pthread_mutex_lock(&mtx);
-		writing = 0;
+		if (n == 0 && sio_eof(hdl))
+			return;
 		wrpos += n;
-	}
-	if (volume_pending)
-		volume_do(volume);
-	if (flush_pending)
-		flush_do(flush_time);
-	if (pause_pending)
-		pause_do(pause_flag);
-	if (paused) {
-		pthread_mutex_unlock(&mtx);
-		usleep(10000);
-		pthread_mutex_lock(&mtx);
+		length -= n;
+		ptr = (char *)ptr + n;
+		if (length == 0)
+			break;
+		wait_ready();
 	}
 	pthread_mutex_unlock(&mtx);
 }
@@ -307,11 +308,26 @@ sndio_close(void)
 	hdl = NULL;
 }
 
+int
+sndio_buffer_free(void)
+{
+	return paused ? 0 : par.round * par.pchan * par.bps;
+}
+
+void
+sndio_period_wait(void)
+{
+	pthread_mutex_lock(&mtx);
+	wait_ready();
+	pthread_mutex_unlock(&mtx);
+}
+
 void
 sndio_flush(int time)
 {
 	pthread_mutex_lock(&mtx);
-	flush_do(time);
+	rdpos = wrpos = (long long)time * bytes_per_sec / 1000;
+	flush_pending = 1;
 	pthread_mutex_unlock(&mtx);
 }
 
@@ -319,7 +335,8 @@ void
 sndio_pause(bool_t flag)
 {	
 	pthread_mutex_lock(&mtx);
-	pause_do(flag);
+	paused = flag;
+	pause_pending = 1;
 	pthread_mutex_unlock(&mtx);
 }
 
@@ -367,19 +384,15 @@ sndio_set_written_time(int time)
 void
 onmove_cb(void *addr, int delta)
 {
-	pthread_mutex_lock(&mtx);
 	rdpos += delta * (int)(par.bps * par.pchan);
-	pthread_mutex_unlock(&mtx);
 }
 
 void
 onvol_cb(void *addr, unsigned ctl)
 {
 	/* Update volume only if it actually changed */
-	pthread_mutex_lock(&mtx);
 	if (ctl != volume * SIO_MAXVOL / 100)
 		volume = ctl * 100 / SIO_MAXVOL;
-	pthread_mutex_unlock(&mtx);
 }
 
 void
