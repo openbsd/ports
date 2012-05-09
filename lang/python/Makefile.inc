@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.91 2012/04/27 08:18:59 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.92 2012/05/09 06:21:12 ajacoutot Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -121,10 +121,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
 CONFIGURE_ARGS+=	--enable-ipv6
 
-# THREAD_STACK_SIZE value might be changed by particular python release
-THREAD_STACK_SIZE?=0x20000
-
-CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
+CONFIGURE_ENV+= OPT='${CFLAGS} -fPIC' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
