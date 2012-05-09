@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gmtk_media_player_c,v 1.6 2012/05/03 15:18:50 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.7 2012/05/09 14:19:37 dcoppa Exp $
 
 Set black background color for all GTK states on media widget
 (upstream svn revision r105)
@@ -8,6 +8,9 @@ or incorrect (upstream svn revision r109)
 
 Protect against possible divide by zero in gmtk_media_player_size_allocate
 (upstream svn revision r111)
+
+Monitor subtitle visibility better
+(upstream svn revision r112)
 
 Fix logic error in ERROR_RETRY
 (upstream svn revision r107)
@@ -19,7 +22,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
 (upstream svn revision r106)
 
 --- src/gmtk_media_player.c.orig	Fri Apr  6 15:19:32 2012
-+++ src/gmtk_media_player.c	Thu May  3 14:25:30 2012
++++ src/gmtk_media_player.c	Wed May  9 15:26:51 2012
 @@ -56,6 +56,11 @@ static void socket_realized(GtkWidget * widget, gpoint
      player->socket_id = GPOINTER_TO_INT(gtk_socket_get_id(GTK_SOCKET(widget)));
      style = gtk_widget_get_style(GTK_WIDGET(player));
@@ -48,7 +51,18 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
      if (player->video_width == 0 || player->video_height == 0 || !gmtk_widget_get_realized(widget)) {
          gtk_alignment_set(GTK_ALIGNMENT(player->alignment), 0.0, 0.0, 1.0, 1.0);
      } else {
-@@ -2578,10 +2592,10 @@ gpointer launch_mplayer(gpointer data)
+@@ -1018,9 +1032,7 @@ gboolean gmtk_media_player_get_attribute_boolean(GmtkM
+ 
+     switch (attribute) {
+     case ATTRIBUTE_SUB_VISIBLE:
+-        if (g_list_length(player->subtitles) != 0) {
+-            ret = player->sub_visible;
+-        }
++        ret = player->sub_visible;
+         break;
+ 
+     case ATTRIBUTE_ENABLE_FRAME_DROP:
+@@ -2578,10 +2590,10 @@ gpointer launch_mplayer(gpointer data)
              break;
          case ERROR_RETRY:
              if (last_error == NO_ERROR) {
@@ -62,7 +76,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
              }
              break;
  
-@@ -2679,10 +2693,18 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+@@ -2679,10 +2691,18 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
              if (player->position == 0) {
                  player->playback_error = ERROR_RETRY;
              }
@@ -81,7 +95,30 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
  
      if (strstr(mplayer_output->str, "Failed creating VDPAU decoder") != NULL) {
          if (player->enable_divx && (g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0))
-@@ -3463,6 +3485,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -2886,6 +2906,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+                 create_event_allocation(player, "size_allocate", &allocation);
+                 player->video_present = TRUE;
+                 write_to_mplayer(player, "get_property sub_source\n");
++                write_to_mplayer(player, "get_property sub_visibility\n");
+                 create_event_int(player, "attribute-changed", ATTRIBUTE_SIZE);
+                 create_event_int(player, "attribute-changed", ATTRIBUTE_VIDEO_PRESENT);
+                 create_event_int(player, "subtitles-changed", g_list_length(player->subtitles));
+@@ -2993,6 +3014,14 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+             create_event_int(player, "attribute-changed", ATTRIBUTE_SUBTITLE);
+         }
+ 
++        if (strstr(mplayer_output->str, "ANS_sub_visibility") != 0) {
++            if (strstr(mplayer_output->str, "ANS_sub_visibility=yes") != 0) {
++                player->sub_visible = TRUE;
++            } else {
++                player->sub_visible = FALSE;
++            }
++            create_event_int(player, "attribute-changed", ATTRIBUTE_SUB_VISIBLE);
++        }
+ 
+         if (strstr(mplayer_output->str, "DVDNAV_TITLE_IS_MENU") != 0) {
+             player->title_is_menu = TRUE;
+@@ -3463,6 +3492,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
              message = NULL;
          }
  
@@ -94,7 +131,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
      }
  
      g_string_free(mplayer_output, TRUE);
-@@ -3521,7 +3549,7 @@ gboolean write_to_mplayer(GmtkMediaPlayer * player, co
+@@ -3521,7 +3556,7 @@ gboolean write_to_mplayer(GmtkMediaPlayer * player, co
          if (player->use_mplayer2) {
              pkf_cmd = g_strdup(cmd);
          } else {
