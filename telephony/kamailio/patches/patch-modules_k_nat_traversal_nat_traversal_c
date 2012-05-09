@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_k_nat_traversal_nat_traversal_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
+$OpenBSD: patch-modules_k_nat_traversal_nat_traversal_c,v 1.2 2012/05/09 21:27:47 sthen Exp $
 --- modules_k/nat_traversal/nat_traversal.c.orig	Sun Apr 22 22:28:08 2012
-+++ modules_k/nat_traversal/nat_traversal.c	Sun Apr 22 22:28:15 2012
++++ modules_k/nat_traversal/nat_traversal.c	Tue Apr 24 00:35:08 2012
 @@ -28,6 +28,8 @@
  #include <errno.h>
  #include <time.h>
@@ -10,3 +10,21 @@ $OpenBSD: patch-modules_k_nat_traversal_nat_traversal_c,v 1.1 2012/04/22 21:44:2
  #include <arpa/inet.h>
  
  #include "../../sr_module.h"
+@@ -1643,7 +1645,7 @@ static void
+ restore_keepalive_state(void)
+ {
+     char uri[64], socket[64];
+-    time_t rtime, stime, now;
++    long rtime, stime, now;
+     NAT_Contact *contact;
+     struct socket_info *sock;
+     int port, proto, res;
+@@ -1661,7 +1663,7 @@ restore_keepalive_state(void)
+         return;
+     }
+ 
+-    now = time(NULL);
++    now = (long)time(NULL);
+ 
+     res = fscanf(f, STATE_FILE_HEADER); // skip header
+ 

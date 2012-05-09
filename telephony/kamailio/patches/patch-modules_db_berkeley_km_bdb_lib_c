@@ -1,0 +1,21 @@
+$OpenBSD: patch-modules_db_berkeley_km_bdb_lib_c,v 1.1 2012/05/09 21:27:47 sthen Exp $
+--- modules/db_berkeley/km_bdb_lib.c.orig	Mon Apr 23 07:29:39 2012
++++ modules/db_berkeley/km_bdb_lib.c	Mon Apr 23 07:30:26 2012
+@@ -724,7 +724,7 @@ int km_bdblib_create_journal(table_p _tp)
+ {
+ 	char *s;
+ 	char fn[1024];
+-	char d[64];
++	char d[128];
+ 	FILE *fp = NULL;
+ 	struct tm *t;
+ 	int bl;
+@@ -745,7 +745,7 @@ int km_bdblib_create_journal(table_p _tp)
+ 	s+=_tp->name.len;
+ 	
+ 	t = localtime( &tim );
+-	bl=strftime(d,128,"-%Y%m%d%H%M%S.jnl",t);
++	bl=strftime(d,sizeof(d),"-%Y%m%d%H%M%S.jnl",t);
+ 	strncpy(s, d, bl);
+ 	s+= bl;
+ 	*s = 0;

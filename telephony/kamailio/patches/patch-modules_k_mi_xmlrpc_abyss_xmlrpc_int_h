@@ -1,0 +1,14 @@
+$OpenBSD: patch-modules_k_mi_xmlrpc_abyss_xmlrpc_int_h,v 1.1 2012/05/09 21:27:47 sthen Exp $
+--- modules_k/mi_xmlrpc/abyss_xmlrpc_int.h.orig	Wed May  9 08:26:54 2012
++++ modules_k/mi_xmlrpc/abyss_xmlrpc_int.h	Wed May  9 08:27:26 2012
+@@ -48,8 +48,10 @@ typedef enum {
+ 	true = 1
+ } bool;
+ 
++#ifndef MIN
+ #define MIN(a,b) ((a) < (b) ? (a) : (b))
+ #define MAX(a,b) ((a) > (b) ? (a) : (b))
++#endif /* MIN */
+ 
+ /* When we deallocate a pointer in a struct, we often replace it with
+ ** this and throw in a few assertions here and there. */

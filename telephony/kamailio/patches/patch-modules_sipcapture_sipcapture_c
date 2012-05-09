@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_sipcapture_sipcapture_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
+$OpenBSD: patch-modules_sipcapture_sipcapture_c,v 1.2 2012/05/09 21:27:47 sthen Exp $
 --- modules/sipcapture/sipcapture.c.orig	Fri Feb  3 14:37:04 2012
-+++ modules/sipcapture/sipcapture.c	Fri Feb  3 14:37:49 2012
++++ modules/sipcapture/sipcapture.c	Mon Apr 23 23:04:10 2012
 @@ -48,6 +48,7 @@
  #ifndef __USE_BSD
  #define __USE_BSD  /* on linux use bsd version of iphdr (more portable) */
@@ -9,3 +9,21 @@ $OpenBSD: patch-modules_sipcapture_sipcapture_c,v 1.1 2012/04/22 21:44:24 sthen 
  #include <netinet/ip.h>
  #define __FAVOR_BSD /* on linux use bsd version of udphdr (more portable) */
  #include <netinet/udp.h>
+@@ -764,6 +765,7 @@ static int sip_capture_store(struct _sipcapture_object
+ 	char tmptable[TABLE_LEN];
+         int ret = 0;
+         struct tm *t;
++        time_t tmp;
+         str dbtable;
+ 	               	
+ 	if(sco==NULL)
+@@ -774,7 +776,8 @@ static int sip_capture_store(struct _sipcapture_object
+ 	
+ 	gettimeofday( &tvb, &tz );
+ 	
+-	t = localtime(&tvb.tv_sec);
++	tmp = tvb.tv_sec;
++	t = localtime(&tmp);
+ 
+ 	db_keys[0] = &id_column;			
+         db_vals[0].type = DB1_INT;
