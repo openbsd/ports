@@ -1,25 +1,31 @@
-$OpenBSD: patch-js_src_Makefile_in,v 1.9 2012/04/30 15:28:42 landry Exp $
-https://bug691898.bugzilla.mozilla.org/attachment.cgi?id=588391
-use yarr interpreter on ppc
---- js/src/Makefile.in.orig	Wed Apr 11 15:55:00 2012
-+++ js/src/Makefile.in	Wed Apr 18 22:08:49 2012
-@@ -354,15 +354,20 @@ CPPSRCS += 	checks.cc \
+$OpenBSD: patch-js_src_Makefile_in,v 1.10 2012/05/09 20:36:40 landry Exp $
+https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
+--- js/src/Makefile.in.orig	Sat Apr 21 00:03:53 2012
++++ js/src/Makefile.in	Wed May  9 22:03:57 2012
+@@ -349,20 +349,24 @@ CPPSRCS += 	checks.cc \
+ # END enclude sources for V8 dtoa
+ #############################################
+ 
+-# For architectures without YARR JIT, PCRE is faster than the YARR
+-# interpreter (bug 684559).
  
  ifeq (,$(filter arm% sparc %86 x86_64 mips%,$(TARGET_CPU)))
  
 -VPATH +=        $(srcdir)/yarr/pcre \
 +VPATH +=        $(srcdir)/assembler \
 +                $(srcdir)/assembler/wtf \
++                $(srcdir)/assembler/jit \
 +                $(srcdir)/yarr \
  		$(NULL)
  
- CPPSRCS += \
+-CPPSRCS += \
 -                pcre_compile.cpp \
 -                pcre_exec.cpp \
 -                pcre_tables.cpp \
 -                pcre_xclass.cpp \
 -                pcre_ucp_searchfuncs.cpp \
-+                Assertions.cpp \
++CPPSRCS +=      ExecutableAllocator.cpp \
++                ExecutableAllocatorPosix.cpp \
 +                OSAllocatorOS2.cpp \
 +                OSAllocatorPosix.cpp \
 +                OSAllocatorWin.cpp \
@@ -30,16 +36,3 @@ use yarr interpreter on ppc
  		$(NULL)
  else
  
-@@ -896,10 +901,10 @@ endif
- # Needed to "configure" it correctly.  Unfortunately these
- # flags wind up being applied to all code in js/src, not just
- # the code in js/src/assembler.
--CXXFLAGS += -DUSE_SYSTEM_MALLOC=1 -DENABLE_ASSEMBLER=1
-+CXXFLAGS += -DUSE_SYSTEM_MALLOC=1
- 
- ifneq (,$(ENABLE_YARR_JIT)$(ENABLE_METHODJIT))
--CXXFLAGS +=  -DENABLE_JIT=1
-+CXXFLAGS +=  -DENABLE_JIT=1 -DENABLE_ASSEMBLER=1
- endif
- 
- INCLUDES +=	-I$(srcdir)/assembler -I$(srcdir)/yarr
