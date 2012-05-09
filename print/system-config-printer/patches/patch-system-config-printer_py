@@ -1,0 +1,16 @@
+$OpenBSD: patch-system-config-printer_py,v 1.12 2012/05/09 15:24:17 ajacoutot Exp $
+
+https://fedorahosted.org/system-config-printer/ticket/222
+
+--- system-config-printer.py.orig	Wed May  9 17:10:37 2012
++++ system-config-printer.py	Wed May  9 17:11:21 2012
+@@ -1974,7 +1974,9 @@ def main():
+     mainwindow = GUI()
+ 
+     if gtk.__dict__.has_key("main"):
++        gtk.gdk.threads_enter()
+         gtk.main()
++        gtk.gdk.threads_leave()
+     else:
+         gtk.mainloop()
+ 
