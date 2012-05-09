@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/05/03 06:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/05/09 06:17:36 fgsch Exp $
 
 COMMENT=	DVD navigation library
 
 DISTNAME=	libdvdnav-4.2.0
 EPOCH=		0
+REVISION =	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}releases/
 EXTRACT_SUFX=	.tar.bz2

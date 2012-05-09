@@ -1,6 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.4 2012/05/03 06:50:37 ajacoutot Exp $
---- configure.ac.orig	Fri Oct  7 16:20:59 2011
-+++ configure.ac	Thu Dec 15 13:32:10 2011
+$OpenBSD: patch-configure_ac,v 1.5 2012/05/09 06:17:36 fgsch Exp $
+
+Second part of this patch is to allow to compile libdvdnav with another
+version installed.
+
+--- configure.ac.orig	Fri Oct  7 21:20:59 2011
++++ configure.ac	Tue May  8 18:05:16 2012
 @@ -143,6 +143,11 @@ case $host in
      THREAD_CFLAGS="-I/usr/local/include -D_THREAD_SAFE"
      CFLAGS="$THREAD_CFLAGS $CFLAGS"
@@ -22,3 +26,12 @@ $OpenBSD: patch-configure_ac,v 1.4 2012/05/03 06:50:37 ajacoutot Exp $
  DEBUG_CFLAGS="-g -DDEBUG $CFLAGS"
  
  AC_SUBST(DEBUG_CFLAGS)
+@@ -214,7 +219,7 @@ AC_CHECK_PROG(DOXYGEN, doxygen, doxygen, no)
+ dnl ---------------------------------------------
+ dnl Some include paths ( !!! DO NOT REMOVE !!! )
+ dnl ---------------------------------------------
+-INCLUDES='-I$(top_srcdir) $(DVDNAV_CFLAGS)'
++INCLUDES='-I$(top_srcdir) -I$(top_srcdir)/src $(DVDNAV_CFLAGS)'
+ AC_SUBST(INCLUDES)
+ 
+ dnl ---------------------------------------------
