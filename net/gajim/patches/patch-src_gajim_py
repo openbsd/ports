@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_gajim_py,v 1.1 2012/05/09 08:29:37 ajacoutot Exp $
+
+https://trac.gajim.org/ticket/7155
+
+--- src/gajim.py.orig	Sun May  6 09:46:01 2012
++++ src/gajim.py	Sun May  6 09:46:52 2012
+@@ -453,6 +453,10 @@ if __name__ == '__main__':
+             # This makes Gajim unusable under windows, and threads are used only
+             # for GPG, so not under windows
+             gtk.gdk.threads_init()
++            gtk.gdk.threads_enter()
+         gtk.main()
++        if os.name != 'nt':
++            gtk.gdk.threads_leave()
++      
+     except KeyboardInterrupt:
+         print >> sys.stderr, 'KeyboardInterrupt'
