@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_gen_makefiles_root_in,v 1.4 2012/03/08 14:56:25 pascal Exp $
---- config/gen/makefiles/root.in.orig	Tue Feb 21 21:00:46 2012
-+++ config/gen/makefiles/root.in	Sun Mar  4 20:19:15 2012
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.5 2012/05/09 13:36:45 pascal Exp $
+--- config/gen/makefiles/root.in.orig	Sun Apr  8 05:00:24 2012
++++ config/gen/makefiles/root.in	Mon Apr 30 19:28:49 2012
+@@ -20,7 +20,7 @@
  
  DEVEL           = @DEVEL@
  VERSION         = @VERSION@$(DEVEL)
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_gen_makefiles_root_in,v 1.4 2012/03/08 14:56:25 pascal Ex
  
  CONFIG_ARGS     = @configure_args@
  #IF(win32):SHELL           = CMD
-@@ -1068,7 +1068,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
+@@ -1084,7 +1084,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
  #IF(win32 and cc==gcc):		-Wl,--out-implib=libparrot.lib \
  		$(O_FILES) $(C_LIBS) $(ICU_SHARED)
  #IF(win32):	if exist $@.manifest mt.exe -nologo -manifest $@.manifest -outputresource:$@;2

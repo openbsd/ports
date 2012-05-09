@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/08 14:56:25 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/05/09 13:36:45 pascal Exp $
 @bin bin/ops2c
 @bin bin/parrot
 @bin bin/parrot-nqp
@@ -1188,6 +1188,7 @@ share/doc/parrot/${V}/pod/project/hacking_tips.pod
 share/doc/parrot/${V}/pod/project/merge_review_guidelines.pod
 share/doc/parrot/${V}/pod/project/metacommitter_guide.pod
 share/doc/parrot/${V}/pod/project/release_manager_guide.pod
+share/doc/parrot/${V}/pod/project/release_parrot_github_guide.pod
 share/doc/parrot/${V}/pod/project/roles_responsibilities.pod
 share/doc/parrot/${V}/pod/project/support_policy.pod
 share/doc/parrot/${V}/pod/project/ticket_triaging.pod
