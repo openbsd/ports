@@ -1,51 +1,15 @@
-$OpenBSD: patch-i3-config-wizard_main_c,v 1.4 2012/03/22 09:53:50 dcoppa Exp $
+$OpenBSD: patch-i3-config-wizard_main_c,v 1.5 2012/05/09 11:56:49 dcoppa Exp $
 
-Bugfix: fix a memory leak
-(upstream git commit b3e3ecf722abc6540a5a975a4e643c7d207d356f)
+We have getline(3) now
 
-Bugfix: keep the indentation of config.keycodes
-(upstream git commit 4f148501736d9b58c6ba113af2df82e1c7e3decb)
-
---- i3-config-wizard/main.c.orig	Fri Jan 27 20:24:09 2012
-+++ i3-config-wizard/main.c	Thu Mar 22 10:10:20 2012
-@@ -280,6 +280,7 @@ static void finish() {
-     FILE *ks_config = fopen(config_path, "w");
-     if (ks_config == NULL)
-         err(1, "Could not open output config file \"%s\"", config_path);
-+    free(config_path);
- 
-     char *line = NULL;
-     size_t len = 0;
-@@ -299,7 +300,9 @@ static void finish() {
- #if defined(__APPLE__)
-     while ((line = fgetln(kc_config, &len)) != NULL) {
- #else
--    while ((read = getline(&line, &len, kc_config)) != -1) {
-+    size_t linecap = 0;
-+    while ((read = getline(&line, &linecap, kc_config)) != -1) {
-+        len = strlen(line);
+--- i3-config-wizard/main.c.orig	Tue May  8 16:42:21 2012
++++ i3-config-wizard/main.c	Tue May  8 16:42:37 2012
+@@ -13,7 +13,7 @@
  #endif
-         /* skip the warning block at the beginning of the input file */
-         if (head_of_file &&
-@@ -310,8 +313,11 @@ static void finish() {
  
-         /* Skip leading whitespace */
-         char *walk = line;
--        while (isspace(*walk) && walk < (line + len))
-+        while (isspace(*walk) && walk < (line + len)) {
-+            /* Pre-output the skipped whitespaces to keep proper indentation */
-+            fputc(*walk, ks_config);
-             walk++;
-+        }
- 
-         /* Set the modifier the user chose */
-         if (strncmp(walk, "set $mod ", strlen("set $mod ")) == 0) {
-@@ -324,7 +330,7 @@ static void finish() {
-         /* Check for 'bindcode'. If it’s not a bindcode line, we
-          * just copy it to the output file */
-         if (strncmp(walk, "bindcode", strlen("bindcode")) != 0) {
--            fputs(line, ks_config);
-+            fputs(walk, ks_config);
-             continue;
-         }
-         char *result = rewrite_binding(walk);
+ /* For systems without getline, fall back to fgetln */
+-#if defined(__APPLE__) || (defined(__FreeBSD__) && __FreeBSD_version < 800000) || defined(__OpenBSD__)
++#if defined(__APPLE__) || (defined(__FreeBSD__) && __FreeBSD_version < 800000)
+ #define USE_FGETLN
+ #elif defined(__FreeBSD__)
+ /* Defining this macro before including stdio.h is necessary in order to have

@@ -1,0 +1,17 @@
+$OpenBSD: patch-include_log_h,v 1.1 2012/05/09 11:56:49 dcoppa Exp $
+
+OpenBSD lacks POSIX shared memory support (shm_open() and friends)
+
+--- include/log.h.orig	Wed Apr 25 23:21:25 2012
++++ include/log.h	Wed May  9 12:12:28 2012
+@@ -21,8 +21,10 @@
+ 
+ extern char *loglevels[];
+ extern char *errorfilename;
++#if !defined(__OpenBSD__)
+ extern char *shmlogname;
+ extern int shmlog_size;
++#endif
+ 
+ /**
+  * Initializes logging by creating an error logfile in /tmp (or

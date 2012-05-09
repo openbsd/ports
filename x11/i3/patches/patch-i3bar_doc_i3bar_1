@@ -1,15 +1,11 @@
-$OpenBSD: patch-i3bar_doc_i3bar_1,v 1.2 2011/12/01 16:00:01 dcoppa Exp $
+$OpenBSD: patch-i3bar_doc_i3bar_1,v 1.3 2012/05/09 11:56:49 dcoppa Exp $
 
-fix "AUTHOR" section
+Fix "AUTHORS" section
 
---- i3bar/doc/i3bar.1.orig	Thu Dec  1 14:57:52 2011
-+++ i3bar/doc/i3bar.1	Thu Dec  1 15:01:19 2011
-@@ -79,12 +79,6 @@ Instead, see the i3 documentation, especially the User
- i3status(1) or conky(1) for programs generating a statusline\&.
- .sp
- dzen2(1) or xmobar(1) for similar programs to i3bar\&.
--.SH "AUTHORS"
-+.SH "AUTHOR"
+--- i3bar/doc/i3bar.1.orig	Wed Apr 25 23:21:40 2012
++++ i3bar/doc/i3bar.1	Wed May  9 09:17:37 2012
+@@ -82,9 +82,3 @@ dzen2(1) or xmobar(1) for similar programs to i3bar\&.
+ .SH "AUTHORS"
  .sp
  Axel Wagner and contributors
 -.SH "AUTHOR"

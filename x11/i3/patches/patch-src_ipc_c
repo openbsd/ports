@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_ipc_c,v 1.6 2011/12/01 16:00:01 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.7 2012/05/09 11:56:49 dcoppa Exp $
 
-missing header
+Add missing header
 
---- src/ipc.c.orig	Wed Nov 30 17:03:50 2011
-+++ src/ipc.c	Wed Nov 30 17:04:05 2011
+--- src/ipc.c.orig	Mon May  7 17:04:44 2012
++++ src/ipc.c	Mon May  7 17:04:58 2012
 @@ -9,6 +9,7 @@
   */
  #include "all.h"

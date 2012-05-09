@@ -1,15 +1,15 @@
-$OpenBSD: patch-man_i3-migrate-config-to-v4_1,v 1.4 2012/02/21 14:05:39 dcoppa Exp $
+$OpenBSD: patch-man_i3-migrate-config-to-v4_1,v 1.5 2012/05/09 11:56:49 dcoppa Exp $
 
-fix fatal error
+Fix fatal error: "argument count wrong: line arguments >= 2 (have 1)"
 
---- man/i3-migrate-config-to-v4.1.orig	Fri Jan 27 20:24:23 2012
-+++ man/i3-migrate-config-to-v4.1	Tue Feb 21 14:00:57 2012
+--- man/i3-migrate-config-to-v4.1.orig	Mon May  7 16:54:51 2012
++++ man/i3-migrate-config-to-v4.1	Mon May  7 16:55:03 2012
 @@ -7,7 +7,7 @@
  .\"    Source: i3 4.1.2
  .\"  Language: English
  .\"
--.TH "I3\-MIGRATE\-CONFIG\" "1" "01/27/2012" "i3 4\&.1\&.2" "i3 Manual"
-+.TH "I3\-MIGRATE\-CONFIG" "1" "01/27/2012" "i3 4\&.1\&.2" "i3 Manual"
+-.TH "I3\-MIGRATE\-CONFIG\" "1" "04/25/2012" "i3 4\&.1\&.2" "i3 Manual"
++.TH "I3\-MIGRATE\-CONFIG" "1" "04/25/2012" "i3 4\&.1\&.2" "i3 Manual"
  .\" -----------------------------------------------------------------
  .\" * Define some portability stuff
  .\" -----------------------------------------------------------------

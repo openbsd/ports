@@ -1,0 +1,96 @@
+$OpenBSD: patch-src_main_c,v 1.3 2012/05/09 11:56:49 dcoppa Exp $
+
+OpenBSD lacks POSIX shared memory support (shm_open() and friends)
+
+--- src/main.c.orig	Wed Apr 25 23:21:25 2012
++++ src/main.c	Wed May  9 12:26:49 2012
+@@ -220,11 +220,13 @@ static void i3_exit(void) {
+     ev_loop_destroy(main_loop);
+ #endif
+ 
++#if !defined(__OpenBSD__)
+     if (*shmlogname != '\0') {
+         fprintf(stderr, "Closing SHM log \"%s\"\n", shmlogname);
+         fflush(stderr);
+         shm_unlink(shmlogname);
+     }
++#endif
+ }
+ 
+ /*
+@@ -235,10 +237,12 @@ static void i3_exit(void) {
+  */
+ static void handle_signal(int sig, siginfo_t *info, void *data) {
+     fprintf(stderr, "Received signal %d, terminating\n", sig);
++#if !defined(__OpenBSD__)
+     if (*shmlogname != '\0') {
+         fprintf(stderr, "Closing SHM log \"%s\"\n", shmlogname);
+         shm_unlink(shmlogname);
+     }
++#endif
+     fflush(stderr);
+     raise(sig);
+ }
+@@ -264,8 +268,10 @@ int main(int argc, char *argv[]) {
+         {"force-xinerama", no_argument, 0, 0},
+         {"force_xinerama", no_argument, 0, 0},
+         {"disable-signalhandler", no_argument, 0, 0},
++#if !defined(__OpenBSD__)
+         {"shmlog-size", required_argument, 0, 0},
+         {"shmlog_size", required_argument, 0, 0},
++#endif
+         {"get-socketpath", no_argument, 0, 0},
+         {"get_socketpath", no_argument, 0, 0},
+         {"fake_outputs", required_argument, 0, 0},
+@@ -299,8 +305,10 @@ int main(int argc, char *argv[]) {
+      * determine whether this is a git version or a release version. */
+     debug_build = ((strchr(i3_version, '(') - i3_version) > 10);
+ 
++#if !defined(__OpenBSD__)
+     /* On non-release builds, disable SHM logging by default. */
+     shmlog_size = (debug_build ? 25 * 1024 * 1024 : 0);
++#endif
+ 
+     start_argv = argv;
+ 
+@@ -358,6 +366,7 @@ int main(int argc, char *argv[]) {
+                     }
+ 
+                     return 1;
++#if !defined(__OpenBSD__)
+                 } else if (strcmp(long_options[option_index].name, "shmlog-size") == 0 ||
+                            strcmp(long_options[option_index].name, "shmlog_size") == 0) {
+                     shmlog_size = atoi(optarg);
+@@ -366,6 +375,7 @@ int main(int argc, char *argv[]) {
+                     init_logging();
+                     LOG("Limiting SHM log size to %d bytes\n", shmlog_size);
+                     break;
++#endif
+                 } else if (strcmp(long_options[option_index].name, "restart") == 0) {
+                     FREE(layout_path);
+                     layout_path = sstrdup(optarg);
+@@ -397,11 +407,13 @@ int main(int argc, char *argv[]) {
+                 fprintf(stderr, "\t--get-socketpath\n"
+                                 "\tRetrieve the i3 IPC socket path from X11, print it, then exit.\n");
+                 fprintf(stderr, "\n");
++#if !defined(__OpenBSD__)
+                 fprintf(stderr, "\t--shmlog-size <limit>\n"
+                                 "\tLimits the size of the i3 SHM log to <limit> bytes. Setting this\n"
+                                 "\tto 0 disables SHM logging entirely.\n"
+                                 "\tThe default is %d bytes.\n", shmlog_size);
+                 fprintf(stderr, "\n");
++#endif
+                 fprintf(stderr, "If you pass plain text arguments, i3 will interpret them as a command\n"
+                                 "to send to a currently running i3 (like i3-msg). This allows you to\n"
+                                 "use nice and logical commands, such as:\n"
+@@ -471,8 +483,10 @@ int main(int argc, char *argv[]) {
+         return 0;
+     }
+ 
++#if !defined(__OpenBSD__)
+     /* Enable logging to handle the case when the user did not specify --shmlog-size */
+     init_logging();
++#endif
+ 
+     /* Try to enable core dumps by default when running a debug build */
+     if (debug_build) {

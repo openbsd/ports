@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2012/05/02 08:31:48 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2012/05/09 11:56:49 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-4.1.2
-REVISION =	4
+DISTNAME =	i3-4.2
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -34,14 +33,17 @@ LIB_DEPENDS =	devel/libev \
 BUILD_DEPENDS =	devel/bison \
 		devel/flex
 
-RUN_DEPENDS =	x11/dmenu \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/dmenu \
 		x11/i3status
 
 USE_GMAKE =	Yes
 
 NO_REGRESS =	Yes
 
-MAKE_FLAGS =	CC="${CC}"
+MAKE_FLAGS =	CC="${CC}" \
+		BISON="${LOCALBASE}/bin/bison" \
+		FLEX="${LOCALBASE}/bin/gflex"
 
 .if defined(DEBUG)
 MAKE_FLAGS +=	DEBUG=1
@@ -68,7 +70,8 @@ post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKBUILD}/man/i3.1 \
 			${PREFIX}/man/man1/i3.1
-	@rm -f ${PREFIX}/man/man1/i3-wsbar.1 \
-		${PREFIX}/man/man1/i3-sensible*.1
+	@rm ${PREFIX}/man/man1/i3-dump-log.1 \
+		${PREFIX}/man/man1/i3-sensible*.1 \
+			${PREFIX}/man/man1/i3-wsbar.1
 
 .include <bsd.port.mk>
