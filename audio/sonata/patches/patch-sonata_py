@@ -1,0 +1,15 @@
+$OpenBSD: patch-sonata_py,v 1.1 2012/05/09 08:30:14 ajacoutot Exp $
+
+http://codingteam.net/project/sonata/bugs/show/2870
+
+--- sonata.py.orig	Sun May  6 09:42:49 2012
++++ sonata.py	Sun May  6 09:42:43 2012
+@@ -166,6 +166,8 @@ from sonata import main
+ 
+ app = main.Base(args)
+ try:
++	gtk.gdk.threads_enter()
+ 	app.main()
++	gtk.gdk.threads_leave()
+ except KeyboardInterrupt:
+ 	pass
