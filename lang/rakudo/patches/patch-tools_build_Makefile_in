@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_build_Makefile_in,v 1.1 2012/03/08 15:02:06 pascal Exp $
---- tools/build/Makefile.in.orig	Sat Jan 28 00:40:15 2012
-+++ tools/build/Makefile.in	Fri Feb  3 20:18:16 2012
-@@ -49,27 +49,27 @@ PERL6_EXE      = perl6$(EXE)
+$OpenBSD: patch-tools_build_Makefile_in,v 1.2 2012/05/09 13:51:35 pascal Exp $
+--- tools/build/Makefile.in.orig	Mon Apr 30 21:47:34 2012
++++ tools/build/Makefile.in	Mon Apr 30 21:48:40 2012
+@@ -49,28 +49,28 @@ PERL6_EXE      = perl6$(EXE)
  PERL6_LANG_DIR = $(PARROT_LIB_DIR)/languages/perl6
  
  MODULES = \
@@ -21,11 +21,12 @@ $OpenBSD: patch-tools_build_Makefile_in,v 1.1 2012/03/08 15:02:06 pascal Exp $
 -  modules/perl6-digest-md5 \
 -  modules/perl6-File-Tools \
 -  modules/panda \
--  modules/perl6-Config-INI \
 -  modules/perl6-http-status \
 -  modules/perl6-http-easy \
 -  modules/Bailador \
--  modules/MiniDBI
+-  modules/MiniDBI \
+-  modules/uri \
+-  modules/jsonrpc \
 +  ../modules/zavolaj \
 +  ../modules/xml-writer \
 +  ../modules/svg \
@@ -42,20 +43,21 @@ $OpenBSD: patch-tools_build_Makefile_in,v 1.1 2012/03/08 15:02:06 pascal Exp $
 +  ../modules/perl6-digest-md5 \
 +  ../modules/perl6-File-Tools \
 +  ../modules/panda \
-+  ../modules/perl6-Config-INI \
 +  ../modules/perl6-http-status \
 +  ../modules/perl6-http-easy \
 +  ../modules/Bailador \
-+  ../modules/MiniDBI
++  ../modules/MiniDBI \
++  ../modules/uri \
++  ../modules/jsonrpc \
  
  all: rakudo
  
-@@ -90,7 +90,7 @@ modules-install: rakudo
- 	@echo "Installing 'ufo'"
+@@ -92,7 +92,7 @@ modules-install: rakudo
+ 	@echo "== Installing 'ufo'"
  	$(CP)    modules/ufo/bin/ufo $(DESTDIR)$(PARROT_BIN_DIR)/ufo
  	$(CHMOD) 755                 $(DESTDIR)$(PARROT_BIN_DIR)/ufo
 -	$(PERL) tools/build/module-install.pl $(DESTDIR)$(PARROT_BIN_DIR)/$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
-+	cd $(RAKUDO) && $(PERL) ../tools/build/module-install.pl ./$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
- 	@echo "Installing 'ufobuilder'"
++	cd $(RAKUDO) && $(PERL) ../tools/build/module-install.pl $(DESTDIR)$(PARROT_BIN_DIR)/$(PERL6_EXE) $(DESTDIR)$(PERL6_LANG_DIR)/lib $(MODULES)
+ 	@echo "== Installing 'ufobuilder'"
  	$(CP)    modules/panda/bin/ufobuilder $(DESTDIR)$(PARROT_BIN_DIR)/ufobuilder
  	$(CHMOD) 755                         $(DESTDIR)$(PARROT_BIN_DIR)/ufobuilder
