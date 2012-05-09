@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2012/05/08 17:58:12 okan Exp $
+# $OpenBSD: Makefile,v 1.322 2012/05/09 12:43:19 pascal Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -163,6 +163,7 @@
      SUBDIR += openexr
      SUBDIR += openexr-ctl
      SUBDIR += openexr-viewers
+     SUBDIR += openimageio
      SUBDIR += openjpeg
      SUBDIR += p5-Cairo
      SUBDIR += p5-Captcha-reCAPTCHA
