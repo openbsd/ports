@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_include_tbb_tbb_machine_h,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
+--- src/include/tbb/tbb_machine.h.orig	Mon Apr  2 00:17:44 2012
++++ src/include/tbb/tbb_machine.h	Mon Apr  2 00:17:59 2012
+@@ -53,7 +53,7 @@ extern "C" __declspec(dllimport) int __stdcall SwitchT
+ #pragma managed(pop)
+ #endif
+ 
+-#elif __linux__ || __FreeBSD__
++#elif __linux__ || __FreeBSD__ || __OpenBSD__
+ 
+ #if __i386__
+ #include "machine/linux_ia32.h"

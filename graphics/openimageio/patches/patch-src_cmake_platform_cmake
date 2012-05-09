@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_cmake_platform_cmake,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
+--- src/cmake/platform.cmake.orig	Thu Apr 19 18:51:13 2012
++++ src/cmake/platform.cmake	Fri Apr 20 14:51:41 2012
+@@ -23,6 +23,10 @@ if (UNIX)
+     else ()
+         string (TOLOWER ${CMAKE_SYSTEM_NAME} platform)
+     endif ()
++    if (${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
++        message (STATUS "OpenBSD!")
++        set (platform "openbsd")
++    endif ()
+ endif ()
+ 
+ if (WIN32)

@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_make_detectplatform_mk,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
+--- src/make/detectplatform.mk.orig	Sun Apr  1 23:51:00 2012
++++ src/make/detectplatform.mk	Sun Apr  1 23:52:57 2012
+@@ -25,7 +25,9 @@ ifneq (${hw},x86)
+   ifneq (${hw},x86_64)
+     ifneq (${hw},i386)
+       ifneq (${hw},i686)
+-        $(error "ERROR: Unknown hardware architecture")
++        ifneq (${hw},amd64)
++          $(error "ERROR: Unknown hardware architecture")
++        endif
+       endif
+     endif
+   endif
+@@ -57,6 +59,10 @@ ifeq (${platform},unknown)
+   # Mac OS X
+   ifeq (${uname},darwin)
+     platform := macosx
++  endif
++
++  ifeq (${uname},openbsd)
++    platform := openbsd
+   endif
+ 
+   # If we haven't been able to determine the platform from uname, use

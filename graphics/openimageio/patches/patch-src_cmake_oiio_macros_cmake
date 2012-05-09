@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_cmake_oiio_macros_cmake,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
+--- src/cmake/oiio_macros.cmake.orig	Thu Apr 19 18:51:13 2012
++++ src/cmake/oiio_macros.cmake	Mon May  7 14:52:40 2012
+@@ -103,7 +103,7 @@ macro (oiio_add_tests)
+             if (_has_generator_expr)
+                 set (_add_test_args NAME ${_testname} 
+ #                                    WORKING_DIRECTORY ${_testdir}
+-                                    COMMAND python)
++                                    COMMAND ${PYTHON_EXECUTABLE})
+                 if (MSVC_IDE)
+                     set (_extra_test_args
+                         --devenv-config $<CONFIGURATION>
+@@ -112,7 +112,7 @@ macro (oiio_add_tests)
+                     set (_extra_test_args "")
+                 endif ()
+             else ()
+-                set (_add_test_args ${_testname} python)
++                set (_add_test_args ${_testname} ${PYTHON_EXECUTABLE})
+                 set (_extra_test_args "")
+             endif ()
+             message (STATUS "TEST ${_testname}: ${CMAKE_BINARY_DIR}/testsuite/runtest.py ${_testdir} ${_extra_test_args}")
