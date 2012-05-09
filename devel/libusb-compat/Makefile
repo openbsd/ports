@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/13 13:49:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/09 09:43:07 mpi Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
-DISTNAME=	libusb-compat-0.1.3
+DISTNAME=	libusb-compat-0.1.4
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=  usb                  10.0      # 8.4
@@ -12,6 +12,8 @@ MODGNU_SHARED_LIBS= usb '-export-dynamic'
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libusb.sourceforge.net/
+
+MAINTAINER=	Martin Pieuchot <mpi@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=   Yes
