@@ -1,9 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/11/02 20:22:35 kili Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/05/09 21:00:20 kili Exp $
 @bin bin/darcs
+@comment bin/darcs-test
 @man man/man1/darcs.1
 share/doc/darcs/
 @comment share/doc/${DISTNAME}/
 @comment share/doc/${DISTNAME}/COPYING
+share/doc/darcs/About_this.html
+share/doc/darcs/Best_practices.html
+share/doc/darcs/Building_darcs.html
+share/doc/darcs/Configuring_darcs.html
+share/doc/darcs/Contents.html
+share/doc/darcs/Darcs_commands.html
+share/doc/darcs/Getting_started.html
+share/doc/darcs/Introduction.html
+share/doc/darcs/License.html
 @comment share/doc/darcs/WARNINGS
 share/doc/darcs/darcs.css
 share/doc/darcs/darcs.html
@@ -15,55 +25,8 @@ share/doc/darcs/footnode.html
 @comment share/doc/darcs/images.pl
 @comment share/doc/darcs/images.tex
 share/doc/darcs/img1.png
-share/doc/darcs/img10.png
-share/doc/darcs/img11.png
-share/doc/darcs/img12.png
-share/doc/darcs/img13.png
-share/doc/darcs/img14.png
-share/doc/darcs/img15.png
-share/doc/darcs/img16.png
-share/doc/darcs/img17.png
-share/doc/darcs/img18.png
-share/doc/darcs/img19.png
 share/doc/darcs/img2.png
-share/doc/darcs/img20.png
-share/doc/darcs/img21.png
-share/doc/darcs/img22.png
-share/doc/darcs/img23.png
-share/doc/darcs/img24.png
-share/doc/darcs/img25.png
-share/doc/darcs/img26.png
-share/doc/darcs/img27.png
-share/doc/darcs/img28.png
-share/doc/darcs/img29.png
 share/doc/darcs/img3.png
-share/doc/darcs/img30.png
-share/doc/darcs/img31.png
-share/doc/darcs/img32.png
-share/doc/darcs/img33.png
-share/doc/darcs/img34.png
-share/doc/darcs/img35.png
-share/doc/darcs/img36.png
-share/doc/darcs/img37.png
-share/doc/darcs/img38.png
-share/doc/darcs/img4.png
-share/doc/darcs/img5.png
-share/doc/darcs/img6.png
-share/doc/darcs/img7.png
-share/doc/darcs/img8.png
-share/doc/darcs/img9.png
 share/doc/darcs/index.html
 @comment share/doc/darcs/internals.pl
 @comment share/doc/darcs/labels.pl
-share/doc/darcs/node1.html
-share/doc/darcs/node10.html
-share/doc/darcs/node11.html
-share/doc/darcs/node12.html
-share/doc/darcs/node2.html
-share/doc/darcs/node3.html
-share/doc/darcs/node4.html
-share/doc/darcs/node5.html
-share/doc/darcs/node6.html
-share/doc/darcs/node7.html
-share/doc/darcs/node8.html
-share/doc/darcs/node9.html
