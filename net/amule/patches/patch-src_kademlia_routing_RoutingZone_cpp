@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_kademlia_routing_RoutingZone_cpp,v 1.1 2012/05/09 12:51:01 dcoppa Exp $
+
+Disable another Kad assertion probably resulting from bad data from
+external sources
+(upstream git commit 7d6176bf769edf8f3076889a57361a3abb2fae57)
+
+--- src/kademlia/routing/RoutingZone.cpp.orig	Wed May  9 13:14:57 2012
++++ src/kademlia/routing/RoutingZone.cpp	Wed May  9 13:17:12 2012
+@@ -807,12 +807,10 @@ void CRoutingZone::OnSmallTimer()
+ 				CKademlia::GetPrefs()->StatsIncUDPFirewalledNodes(false);
+ 				CKademlia::GetPrefs()->StatsIncTCPFirewalledNodes(false);
+ 			}
+-		} else if (c->GetVersion() >= 2) {
++		} else {
+ 			DebugSend(Kad2HelloReq, c->GetIPAddress(), c->GetUDPPort());
+ 			CKademlia::GetUDPListener()->SendMyDetails(KADEMLIA2_HELLO_REQ, c->GetIPAddress(), c->GetUDPPort(), c->GetVersion(), 0, NULL, false);
+ 			wxASSERT(c->GetUDPKey() == CKadUDPKey(0));
+-		} else {
+-			wxFAIL;
+ 		}
+ 	}
+ }
