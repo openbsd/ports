@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/05/09 12:45:50 pascal Exp $
+--- CMakeLists.txt.orig	Mon May  7 17:41:38 2012
++++ CMakeLists.txt	Mon May  7 17:42:02 2012
+@@ -658,7 +658,7 @@ if(UNIX AND NOT APPLE)
+ 	endif()
+ 
+ 	# OpenSuse needs lutil, ArchLinux not, for now keep, can avoid by using --as-needed
+-	set(PLATFORM_LINKLIBS "-lutil -lc -lm -lpthread -lstdc++")
++	set(PLATFORM_LINKLIBS "-lutil -lc -lm -pthread -lstdc++")
+ 
+ 	if((NOT WITH_HEADLESS) AND (NOT WITH_GHOST_SDL))
+ 		find_package(X11 REQUIRED)

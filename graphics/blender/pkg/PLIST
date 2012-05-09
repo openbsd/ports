@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/05/07 15:45:42 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/05/09 12:45:50 pascal Exp $
 @pkgpath graphics/blender,ffmpeg
 bin/blender
 @bin bin/blender-bin
@@ -176,6 +176,13 @@ share/blender/scripts/addons/animation_add_corrective_shape_key.py
 share/blender/scripts/addons/animation_animall.py
 share/blender/scripts/addons/animation_rotobezier.py
 share/blender/scripts/addons/curve_simplify.py
+share/blender/scripts/addons/cycles/
+share/blender/scripts/addons/cycles/__init__.py
+share/blender/scripts/addons/cycles/engine.py
+share/blender/scripts/addons/cycles/enums.py
+share/blender/scripts/addons/cycles/presets.py
+share/blender/scripts/addons/cycles/properties.py
+share/blender/scripts/addons/cycles/ui.py
 share/blender/scripts/addons/development_api_navigator.py
 share/blender/scripts/addons/development_icon_get.py
 share/blender/scripts/addons/game_engine_save_as_runtime.py
