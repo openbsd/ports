@@ -1,11 +1,11 @@
-# $OpenBSD: node.port.mk,v 1.3 2012/05/08 17:10:43 jasper Exp $
+# $OpenBSD: node.port.mk,v 1.4 2012/05/09 06:39:04 jasper Exp $
 
 # node module
 
 CATEGORIES +=	www/node
 
-BUILD_DEPENDS +=	www/node>=0.6.17p1
-RUN_DEPENDS += 		www/node>=0.6.17p1
+BUILD_DEPENDS +=	www/node>=0.6.17p2
+RUN_DEPENDS += 		www/node>=0.6.17p2
 
 .if ${CONFIGURE_STYLE:L:Mnpm}
 .  if ${CONFIGURE_STYLE:L:Mext}
