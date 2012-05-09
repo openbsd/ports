@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/04/28 09:28:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/05/09 14:35:53 ajacoutot Exp $
 
 COMMENT=		configurable logging library
 
-DISTNAME=		clog-0.5.0
+DISTNAME=		clog-0.6.1
 PKGNAME=		lib${DISTNAME}
 CATEGORIES=		devel
-SHARED_LIBS=		clog 1.5
+SHARED_LIBS=		clog 1.6
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/Copious_Logger
 MASTER_SITES=		http://opensource.conformal.com/snapshots/clog/
