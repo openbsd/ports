@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/09 15:26:10 jasper Exp $
+lib/node_modules/node-syslog/
+lib/node_modules/node-syslog/.lock-wscript
+lib/node_modules/node-syslog/.npmignore
+lib/node_modules/node-syslog/Changelog.md
+lib/node_modules/node-syslog/README.md
+lib/node_modules/node-syslog/build/
+lib/node_modules/node-syslog/build/.wafpickle-7
+lib/node_modules/node-syslog/build/Release/
+@bin lib/node_modules/node-syslog/build/Release/syslog.node
+lib/node_modules/node-syslog/build/Release/syslog_1.o
+lib/node_modules/node-syslog/build/c4che/
+lib/node_modules/node-syslog/build/c4che/Release.cache.py
+lib/node_modules/node-syslog/build/c4che/build.config.py
+lib/node_modules/node-syslog/build/config.log
+lib/node_modules/node-syslog/node-syslog.h
+lib/node_modules/node-syslog/node-syslog.js
+lib/node_modules/node-syslog/package.json
+lib/node_modules/node-syslog/syslog.cc
+lib/node_modules/node-syslog/syslog.node
+lib/node_modules/node-syslog/test.js
+lib/node_modules/node-syslog/wscript

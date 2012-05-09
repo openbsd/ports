@@ -1,0 +1,2 @@
+node-syslog is a Node.JS module to work with the system log (syslog)
+daemon on UNIX system.
