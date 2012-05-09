@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.4 2012/05/09 06:39:04 jasper Exp $
+# $OpenBSD: node.port.mk,v 1.5 2012/05/09 15:32:25 sthen Exp $
 
 # node module
 
@@ -32,7 +32,7 @@ PKG_ARCH ?=	*
 DISTNAME ?=	${NPM_NAME}-${NPM_VERSION}
 MASTER_SITES ?=	${MASTER_SITE_NPM}${NPM_NAME}/-/
 EXTRACT_SUFX ?=	.tgz
-PKGNAME ?=	node-${DISTNAME}
+PKGNAME ?=	node-${DISTNAME:S/^node-//}
 
 MODNODE_BIN_NPM =	${LOCALBASE}/bin/npm
 NPM_INSTALL_FILE =	${WRKDIR}/${DISTNAME}.tgz
