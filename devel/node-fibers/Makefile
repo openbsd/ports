@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/09 06:39:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/10 08:41:39 jasper Exp $
 
 # Currently node itself is only for amd64 and i386, but
 # the coroutine library this uses only works on amd64
@@ -29,6 +29,8 @@ MODULES =		www/node
 CONFIGURE_STYLE =	npm ext
 USE_GMAKE =		Yes
 SUBST_VARS =		CFLAGS
+
+REGRESS_TARGET =	test
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/src/platform.mk
