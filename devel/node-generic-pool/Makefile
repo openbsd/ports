@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/10 08:41:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/10 13:17:48 jasper Exp $
 
 COMMENT =	generic resource pool for nodejs
 
@@ -20,9 +20,6 @@ PERMIT_DISTFILES_FTP = Yes
 
 MODULES =		www/node
 
-CONFIGURE_STYLE =	npm
-
-# needs expresso
-NO_REGRESS =	Yes
+CONFIGURE_STYLE =	npm expresso
 
 .include <bsd.port.mk>
