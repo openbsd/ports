@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1044 2012/05/09 15:25:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.1045 2012/05/10 13:16:26 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -384,6 +384,7 @@
      SUBDIR += nant
      SUBDIR += nasm
      SUBDIR += netbeans
+     SUBIDR += node-expresso
      SUBDIR += node-fibers
      SUBDIR += node-generic-pool
      SUBDIR += node-mnm
