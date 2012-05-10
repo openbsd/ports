@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/08/18 12:53:35 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/05/10 08:47:28 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -44,6 +44,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Freetown
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Gaborone
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Harare
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Johannesburg
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Juba
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Kampala
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Khartoum
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Africa/Kigali
@@ -117,6 +118,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Chihuahua
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Coral_Harbour
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Cordoba
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Costa_Rica
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Creston
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Cuiaba
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Curacao
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Danmarkshavn
@@ -282,6 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dubai
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Dushanbe
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Gaza
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Harbin
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hebron
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Ho_Chi_Minh
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hong_Kong
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Hovd
