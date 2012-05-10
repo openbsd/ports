@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.5 2012/05/09 15:32:25 sthen Exp $
+# $OpenBSD: node.port.mk,v 1.6 2012/05/10 08:39:47 jasper Exp $
 
 # node module
 
@@ -39,7 +39,7 @@ NPM_INSTALL_FILE =	${WRKDIR}/${DISTNAME}.tgz
 NPM_TAR_DIR =		package
 WRKDIST =		${WRKDIR}/${NPM_TAR_DIR}
 
-NO_REGRESS ?= Yes
+REGRESS_TARGET ?=	test
 
 # List of npm package names to depend on.  Only necessary
 # if the current port depends on other node ports.
