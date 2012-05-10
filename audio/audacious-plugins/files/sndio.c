@@ -32,6 +32,11 @@
 
 #include "config.h"
 
+/*
+ * minimum output buffer size in milliseconds
+ */
+#define BUFFER_SIZE_MIN	250
+
 bool_t	sndio_init(void);
 void	sndio_cleanup(void);
 void	sndio_about(void);
@@ -215,6 +220,7 @@ sndio_open(int fmt, int rate, int nch)
 	int i;
 	struct sio_par askpar;
 	GtkWidget *dialog = NULL;
+	unsigned buffer_size;
 
 	hdl = sio_open(strlen(audiodev) > 0 ? audiodev : NULL, SIO_PLAY, 1);
 	if (!hdl) {
@@ -238,7 +244,10 @@ sndio_open(int fmt, int rate, int nch)
 		askpar.le = fmt_to_par[i].le;
 	askpar.pchan = nch;
 	askpar.rate = rate;
-	askpar.appbufsz = aud_get_int(NULL, "output_buffer_size");
+	buffer_size = aud_get_int(NULL, "output_buffer_size");
+	if (buffer_size < BUFFER_SIZE_MIN)
+		buffer_size = BUFFER_SIZE_MIN;
+	askpar.appbufsz = buffer_size * rate / 1000;
 	if (!sio_setpar(hdl, &askpar) || !sio_getpar(hdl, &par)) {
 		g_warning("failed to set parameters");
 		sndio_close();
