@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2012/04/20 10:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.277 2012/05/10 15:06:07 giovanni Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -177,6 +177,7 @@
      SUBDIR += postler
      SUBDIR += prepop
      SUBDIR += procmail
+     SUBDIR += py-authres
      SUBDIR += py-milter
      SUBDIR += py-policyd-spf
      SUBDIR += py-spf
