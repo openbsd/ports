@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/04/10 11:53:21 pea Exp $
+# $OpenBSD: Makefile,v 1.66 2012/05/10 13:49:56 ajacoutot Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -24,7 +24,7 @@ MODULES=	converters/libiconv
 
 LIB_DEPENDS=	devel/pcre
 
-AUTOCONF_VERSION=2.61
+AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
