@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config,v 1.10 2012/05/09 11:56:49 dcoppa Exp $
+$OpenBSD: patch-i3_config,v 1.11 2012/05/10 09:27:37 dcoppa Exp $
 --- i3.config.orig	Wed Apr 25 23:21:25 2012
-+++ i3.config	Wed May  9 10:03:18 2012
++++ i3.config	Thu May 10 09:31:36 2012
 @@ -16,13 +16,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier Mod1
  
@@ -17,21 +17,12 @@ $OpenBSD: patch-i3_config,v 1.10 2012/05/09 11:56:49 dcoppa Exp $
  
  # change focus
  bindsym Mod1+j focus left
-@@ -134,16 +134,5 @@ bindsym Mod1+r mode "resize"
+@@ -134,7 +134,7 @@ bindsym Mod1+r mode "resize"
  # Start i3bar to display a workspace bar (plus the system information i3status
  # finds out, if available)
  bar {
 -        status_command i3status
 +        status_command ${LOCALBASE}/bin/i3status
  }
--
--#######################################################################
--# automatically start i3-config-wizard to offer the user to create a
--# keysym-based config which used his favorite modifier (alt or windows)
--#
--# i3-config-wizard will not launch if there already is a config file
--# in ~/.i3/config.
--#
--# Please remove the following exec line:
--#######################################################################
--exec i3-config-wizard
+ 
+ #######################################################################

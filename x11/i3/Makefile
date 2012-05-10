@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2012/05/09 11:56:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2012/05/10 09:27:37 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.2
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -55,7 +56,7 @@ FAKE_FLAGS =	PREFIX=${PREFIX} \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
-pre-configure:
+post-configure:
 	${SUBST_CMD} ${WRKSRC}/i3.config \
 		${WRKSRC}/i3.config.keycodes \
 		${WRKSRC}/src/cfgparse.y \
