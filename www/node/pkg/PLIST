@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/05/03 17:16:27 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/05/10 18:29:52 sthen Exp $
 @bin bin/node
 bin/node-waf
 bin/npm
@@ -30,6 +30,7 @@ include/node/v8-testing.h
 include/node/v8.h
 include/node/v8stdint.h
 lib/node/
+lib/node/${DISTFILES}
 lib/node/wafadmin/
 lib/node/wafadmin/Build.py
 lib/node/wafadmin/Build.pyc

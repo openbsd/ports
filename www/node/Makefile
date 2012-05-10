@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/05/09 06:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2012/05/10 18:29:52 sthen Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -11,7 +11,7 @@ COMMENT=	V8 JavaScript for clients and servers
 NODE_VERSION=	v0.6.17
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www devel
 
@@ -49,7 +49,8 @@ REGRESS_TARGET= test
 CONFIGURE_STYLE= simple
 
 SUBST_VARS+=	CFLAGS
-SUBST_VARS+= 	DISTDIR
+SUBST_VARS+= 	PREFIX
+SUBST_VARS+= 	DISTFILES
 
 MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
@@ -65,6 +66,8 @@ pre-configure:
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/node/wafadmin
+	${INSTALL_DATA} ${FULLDISTDIR}/${DISTFILES} \
+		${PREFIX}/lib/node/${DISTFILES}
 
 
 .include <bsd.port.mk>
