@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/10 15:02:57 giovanni Exp $
+lib/python${MODPY_VERSION}/site-packages/authres/
+lib/python${MODPY_VERSION}/site-packages/authres-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/authres/__init__.py
+lib/python${MODPY_VERSION}/site-packages/authres/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/core.py
+lib/python${MODPY_VERSION}/site-packages/authres/core.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/dkim_adsp.py
+lib/python${MODPY_VERSION}/site-packages/authres/dkim_adsp.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/dkim_b.py
+lib/python${MODPY_VERSION}/site-packages/authres/dkim_b.pyc
+lib/python${MODPY_VERSION}/site-packages/authres/tests
+lib/python${MODPY_VERSION}/site-packages/authres/vbr.py
+lib/python${MODPY_VERSION}/site-packages/authres/vbr.pyc

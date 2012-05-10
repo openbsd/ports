@@ -1,0 +1,6 @@
+RFC 5451 Authentication-Results Headers generation and parsing for
+Python.
+
+It also supports Authentication Results extensions: RFC 5617 DKIM/ADSP
+RFC 6008 DKIM signature identification (header.b) RFC 6212 Vouch
+By Reference (VBR)
