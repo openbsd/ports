@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_default_config_ini,v 1.7 2010/12/15 16:01:45 ajacoutot Exp $
---- data/default_config.ini.orig	Sun Dec  5 17:31:00 2010
-+++ data/default_config.ini	Wed Dec 15 16:35:33 2010
+$OpenBSD: patch-data_default_config_ini,v 1.8 2012/05/10 17:43:30 ajacoutot Exp $
+--- data/default_config.ini.orig	Sat Mar 10 07:00:24 2012
++++ data/default_config.ini	Thu May 10 19:18:40 2012
 @@ -9,9 +9,9 @@ SolarSystemEditor              = true
  TimeZoneConfiguration          = true
  
@@ -11,6 +11,6 @@ $OpenBSD: patch-data_default_config_ini,v 1.7 2010/12/15 16:01:45 ajacoutot Exp 
 +fullscreen                     = false
 +screen_w                       = 640
 +screen_h                       = 480
+ screen_x                       = 0
+ screen_y                       = 0
  horizontal_offset              = 0
- vertical_offset                = 0
- minimum_fps                    = 18

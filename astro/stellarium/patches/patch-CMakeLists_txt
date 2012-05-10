@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.4 2011/07/03 18:49:17 ajacoutot Exp $
---- CMakeLists.txt.orig	Sat Jul  2 15:22:18 2011
-+++ CMakeLists.txt	Sun Jul  3 19:26:14 2011
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2012/05/10 17:43:30 ajacoutot Exp $
+--- CMakeLists.txt.orig	Sat Mar 10 07:01:05 2012
++++ CMakeLists.txt	Thu May 10 19:18:06 2012
 @@ -33,8 +33,8 @@ ENDIF()
  
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2011/07/03 18:49:17 ajacoutot Exp $
  ELSE()
   SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -fexceptions -fident -mthreads")
   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wsign-promo -fexceptions -fident -mthreads")
-@@ -161,12 +161,12 @@ IF (BUILD_STATIC_PLUGINS)
+@@ -163,12 +163,12 @@ IF (BUILD_STATIC_PLUGINS)
  	## Library for loading FITS image files
  	FIND_PATH(CFITSIO_INCLUDE_DIR fitsio.h
  	  /usr/include
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.4 2011/07/03 18:49:17 ajacoutot Exp $
  	  /opt/local/lib
  	  DOC "cfitsio link options")
  	SET(QT_USE_QTXML TRUE) # For VirGO we also need QtXml module
-@@ -210,12 +210,12 @@ IF(ENABLE_NLS)
+@@ -212,12 +212,12 @@ IF(ENABLE_NLS)
  	PATHS
  	/usr/include
  	/sw/include
