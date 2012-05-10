@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/05/10 15:11:59 giovanni Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
-MODPY_EGG_VERSION=2.0.5
+MODPY_EGG_VERSION=2.0.7
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
-REVISION =	5
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bmsi.com/python/milter.html
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
 # Python
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +22,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pymilter/}
 MODULES=        lang/python
 
 BUILD_DEPENDS=	net/py-dns
+
+RUN_DEPENDS=	mail/py-authres
 
 REGRESS_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
 		textproc/py-yaml
