@@ -1,0 +1,3 @@
+Expresso is a JavaScript TDD framework written for nodejs. Expresso is
+extremely fast, and is packed with features such as additional assertion
+methods, code coverage reporting, CI support, and more.
