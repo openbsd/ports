@@ -1,6 +1,9 @@
-$OpenBSD: patch-mirage_py,v 1.1.1.1 2011/03/29 07:07:12 ajacoutot Exp $
+$OpenBSD: patch-mirage_py,v 1.2 2012/05/10 07:43:17 ajacoutot Exp $
+
+https://developer.berlios.de/bugs/?func=detailbug&bug_id=18604&group_id=6637
+
 --- mirage.py.orig	Sun Feb 13 23:40:05 2011
-+++ mirage.py	Mon Mar 28 08:50:08 2011
++++ mirage.py	Wed May  9 17:50:50 2012
 @@ -157,7 +157,7 @@ class Base:
  		self.preloading_images = True
  		self.action_names = ["Open in GIMP", "Create Thumbnail", "Create Thumbnails", "Move to Favorites"]
@@ -41,3 +44,16 @@ $OpenBSD: patch-mirage_py,v 1.1.1.1 2011/03/29 07:07:12 ajacoutot Exp $
  
  	def close_about(self, event, data=None):
  		self.about_dialog.hide()
+@@ -4575,10 +4560,10 @@ class Base:
+ 				timer_screensaver = gobject.timeout_add(1000, self.disable_screensaver_in_slideshow_mode)
+ 
+ 	def main(self):
++		gtk.gdk.threads_enter()
+ 		gtk.main()
++		gtk.gdk.threads_leave()
+ 
+ if __name__ == "__main__":
+ 	base = Base()
+-	gtk.gdk.threads_enter()
+ 	base.main()
+-	gtk.gdk.threads_leave()
