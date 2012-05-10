@@ -1,0 +1,21 @@
+$OpenBSD: patch-ee_c,v 1.5 2012/05/10 19:30:31 gonzalo Exp $
+--- ee.c.orig	Thu May 10 19:35:13 2012
++++ ee.c	Thu May 10 19:35:19 2012
+@@ -111,6 +111,8 @@ nl_catd catalog;
+ #define SIGCHLD SIGCLD
+ #endif
+ 
++#define SIGUNUSED 31
++
+ #define TAB 9
+ #define max(a, b)	(a > b ? a : b)
+ #define min(a, b)	(a < b ? a : b)
+@@ -4124,7 +4126,7 @@ Format()	/* format the paragraph according to set marg
+ }
+ 
+ unsigned char *init_name[3] = {
+-	"/usr/local/lib/init.ee", 
++	SYSCONFDIR "/init.ee", 
+ 	NULL, 
+ 	".init.ee"
+ 	};
