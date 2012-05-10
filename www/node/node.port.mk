@@ -1,4 +1,4 @@
-# $OpenBSD: node.port.mk,v 1.6 2012/05/10 08:39:47 jasper Exp $
+# $OpenBSD: node.port.mk,v 1.7 2012/05/10 13:17:30 jasper Exp $
 
 # node module
 
@@ -39,7 +39,17 @@ NPM_INSTALL_FILE =	${WRKDIR}/${DISTNAME}.tgz
 NPM_TAR_DIR =		package
 WRKDIST =		${WRKDIR}/${NPM_TAR_DIR}
 
+.if ${CONFIGURE_STYLE:L:Mexpresso}
+REGRESS_DEPENDS += devel/node-expresso
+MODNODE_REGRESS_TARGET = \
+	cd ${WRKDIST} && ${LOCALBASE}/bin/expresso;
+.if !defined(do-regress)
+do-regress:
+	${MODNODE_REGRESS_TARGET}
+.endif
+.else
 REGRESS_TARGET ?=	test
+.endif
 
 # List of npm package names to depend on.  Only necessary
 # if the current port depends on other node ports.
