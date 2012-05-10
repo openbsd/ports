@@ -1,0 +1,23 @@
+$OpenBSD: patch-binding_gyp,v 1.1.1.1 2012/05/10 10:46:17 jasper Exp $
+
+Build against the system sqlite3.
+
+--- binding.gyp.orig	Wed May  9 22:13:31 2012
++++ binding.gyp	Wed May  9 22:14:00 2012
+@@ -7,9 +7,13 @@
+         'src/node_sqlite3.cc',
+         'src/statement.cc'
+       ],
+-      'dependencies': [
+-        'deps/sqlite3/binding.gyp:sqlite3'
+-      ]
++      'link_settings': {
++        'libraries': [
++          '-lsqlite3',
++          '-lm',
++          '-lstdc++'
++        ],
++      }  
+     }
+   ]
+ }
