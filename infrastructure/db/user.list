@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.188 2012/04/10 19:51:13 phessler Exp $
+$OpenBSD: user.list,v 1.189 2012/05/11 09:39:51 robert Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -206,3 +206,4 @@ id  user		group		port options
 695 _deadwood		_deadwood	net/maradns-deadwood
 696 _sslh		_sslh		net/sslh
 697 _cvsyncd		_cvsyncd	net/cvsync
+698 _yule		_yule		security/samhain
