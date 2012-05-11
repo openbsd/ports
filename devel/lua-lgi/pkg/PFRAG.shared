@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/04/12 13:46:36 jasper Exp $
-lib/lua/5.1/lgi/corelgilua51.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/05/11 20:51:03 jasper Exp $
+lib/lua/${MODLUA_VERSION}/lgi/corelgilua51.so

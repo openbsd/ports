@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/03 19:36:10 jolan Exp $
-lib/lua/5.1/luaevent/
-lib/lua/5.1/luaevent/core.so
-share/lua/5.1/luaevent.lua
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 20:51:04 jasper Exp $
+lib/lua/${MODLUA_VERSION}/luaevent/
+lib/lua/${MODLUA_VERSION}/luaevent/core.so
+share/lua/${MODLUA_VERSION}/luaevent.lua

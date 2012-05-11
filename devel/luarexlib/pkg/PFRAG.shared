@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2009/09/09 18:02:01 jolan Exp $
-lib/lua/5.1/rex_onig.so
-lib/lua/5.1/rex_pcre.so
-lib/lua/5.1/rex_posix.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2012/05/11 20:51:04 jasper Exp $
+lib/lua/${MODLUA_VERSION}/rex_onig.so
+lib/lua/${MODLUA_VERSION}/rex_pcre.so
+lib/lua/${MODLUA_VERSION}/rex_posix.so

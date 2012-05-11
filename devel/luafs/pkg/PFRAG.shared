@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2006/07/30 04:38:39 pedro Exp $
-lib/lua/5.1/lfs.so
+@comment $OpenBSD: PFRAG.shared,v 1.4 2012/05/11 20:51:04 jasper Exp $
+lib/lua/${MODLUA_VERSION}/lfs.so
