@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libaudcore_audio_c,v 1.2 2012/03/20 19:10:18 stsp Exp $
---- src/libaudcore/audio.c.orig	Fri Jan 20 20:46:56 2012
-+++ src/libaudcore/audio.c	Sun Feb  5 19:18:18 2012
-@@ -63,22 +63,22 @@ TO_INT_LOOP (to_u24, int32_t, noop32, 0x800000, 0x7fff
+$OpenBSD: patch-src_libaudcore_audio_c,v 1.3 2012/05/11 10:53:54 dcoppa Exp $
+--- src/libaudcore/audio.c.orig	Sat Mar 31 19:45:52 2012
++++ src/libaudcore/audio.c	Fri May 11 12:30:32 2012
+@@ -64,22 +64,22 @@ TO_INT_LOOP (to_u24, int32_t, noop32, 0x800000, 0x7fff
  TO_INT_LOOP (to_s32, int32_t, noop32, 0x00000000, 0x7fffffff)
  TO_INT_LOOP (to_u32, int32_t, noop32, 0x80000000, 0x7fffffff)
  

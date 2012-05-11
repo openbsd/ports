@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/03/21 16:13:25 dcoppa Exp $
---- configure.ac.orig	Wed Mar 21 11:08:40 2012
-+++ configure.ac	Wed Mar 21 11:09:01 2012
-@@ -226,7 +226,7 @@ dnl ===============
+$OpenBSD: patch-configure_ac,v 1.2 2012/05/11 10:53:54 dcoppa Exp $
+--- configure.ac.orig	Sat Mar 31 19:45:52 2012
++++ configure.ac	Fri May 11 12:30:38 2012
+@@ -241,7 +241,7 @@ dnl ===============
  PTHREAD_LIBS=
  PTHREAD_CFLAGS=
  
