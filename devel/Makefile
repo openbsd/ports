@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1045 2012/05/10 13:16:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.1046 2012/05/11 11:44:27 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -342,6 +342,7 @@
      SUBDIR += libyaml
      SUBDIR += libyubikey
      SUBDIR += llvm
+     SUBDIR += log4c
      SUBDIR += log4cplus
      SUBDIR += lpc21isp
      SUBDIR += lpeg
