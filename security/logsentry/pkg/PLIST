@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/11 08:24:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/05/11 03:35:03 william Exp $
 @conflict logcheck-1.1.1
+@conflict logtail-*
 @extraunexec rm -rf /var/tmp/logsentry/*
 bin/logtail
 share/doc/logsentry/
