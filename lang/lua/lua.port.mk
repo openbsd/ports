@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.7 2011/11/17 23:48:13 sthen Exp $
+# $OpenBSD: lua.port.mk,v 1.8 2012/05/11 20:48:38 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -23,3 +23,5 @@ BUILD_DEPENDS+=	lang/lua
 .if !defined(SHARED_ONLY) || ${SHARED_ONLY:L} == "no"
 PKG_ARCH=*
 .endif
+
+SUBST_VARS+=	MODLUA_VERSION
