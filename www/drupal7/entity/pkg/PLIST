@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 06:59:28 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}entity/
 ${DRUPAL_MODS}entity/LICENSE.txt
 ${DRUPAL_MODS}entity/README.txt
+${DRUPAL_MODS}entity/ctools/
+${DRUPAL_MODS}entity/ctools/content_types/
+${DRUPAL_MODS}entity/ctools/content_types/entity_view.inc
 ${DRUPAL_MODS}entity/entity.api.php
 ${DRUPAL_MODS}entity/entity.features.inc
+${DRUPAL_MODS}entity/entity.i18n.inc
 ${DRUPAL_MODS}entity/entity.info
 ${DRUPAL_MODS}entity/entity.info.inc
 ${DRUPAL_MODS}entity/entity.install
@@ -27,6 +31,7 @@ ${DRUPAL_MODS}entity/modules/book.info.inc
 ${DRUPAL_MODS}entity/modules/callbacks.inc
 ${DRUPAL_MODS}entity/modules/comment.info.inc
 ${DRUPAL_MODS}entity/modules/field.info.inc
+${DRUPAL_MODS}entity/modules/locale.info.inc
 ${DRUPAL_MODS}entity/modules/node.info.inc
 ${DRUPAL_MODS}entity/modules/poll.info.inc
 ${DRUPAL_MODS}entity/modules/statistics.info.inc
@@ -39,11 +44,14 @@ ${DRUPAL_MODS}entity/tests/entity_feature.module
 ${DRUPAL_MODS}entity/tests/entity_test.info
 ${DRUPAL_MODS}entity/tests/entity_test.install
 ${DRUPAL_MODS}entity/tests/entity_test.module
+${DRUPAL_MODS}entity/tests/entity_test_i18n.info
+${DRUPAL_MODS}entity/tests/entity_test_i18n.module
 ${DRUPAL_MODS}entity/views/
 ${DRUPAL_MODS}entity/views/entity.views.inc
 ${DRUPAL_MODS}entity/views/entity_views_example_query.php
 ${DRUPAL_MODS}entity/views/handlers/
 ${DRUPAL_MODS}entity/views/handlers/entity_views_field_handler_helper.inc
+${DRUPAL_MODS}entity/views/handlers/entity_views_handler_area_entity.inc
 ${DRUPAL_MODS}entity/views/handlers/entity_views_handler_field_boolean.inc
 ${DRUPAL_MODS}entity/views/handlers/entity_views_handler_field_date.inc
 ${DRUPAL_MODS}entity/views/handlers/entity_views_handler_field_duration.inc
