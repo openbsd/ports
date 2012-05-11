@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.14 2012/04/23 13:37:55 ajacoutot Exp $
---- src/daemon.c.orig	Tue Apr 10 03:01:29 2012
-+++ src/daemon.c	Mon Apr 23 15:31:12 2012
+$OpenBSD: patch-src_daemon_c,v 1.15 2012/05/11 15:32:46 ajacoutot Exp $
+--- src/daemon.c.orig	Fri May  4 15:52:03 2012
++++ src/daemon.c	Fri May 11 16:16:02 2012
 @@ -52,7 +52,7 @@
  #define PATH_FALSE "/bin/false"
  #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_daemon_c,v 1.14 2012/04/23 13:37:55 ajacoutot Exp $
  
  static const char *default_excludes[] = {
          "bin",
-@@ -908,7 +908,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -909,7 +909,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_daemon_c,v 1.14 2012/04/23 13:37:55 ajacoutot Exp $
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -925,14 +929,31 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -926,14 +930,31 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_daemon_c,v 1.14 2012/04/23 13:37:55 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1003,6 +1024,28 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1004,6 +1025,28 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
