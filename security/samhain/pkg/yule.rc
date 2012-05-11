@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: yule.rc,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/yule"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

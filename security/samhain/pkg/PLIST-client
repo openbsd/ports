@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-client,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+@man man/man5/samhainrc.5
+@man man/man8/samhain.8
+@bin sbin/samhain
+share/examples/samhain/
+share/examples/samhain/samhainrc
+@sample ${SYSCONFDIR}/samhainrc
+@sample /var/samhain/
+@rcscript ${RCDIR}/samhain

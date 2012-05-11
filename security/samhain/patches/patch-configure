@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+--- configure.orig	Thu May  3 09:25:02 2012
++++ configure	Thu May  3 09:25:11 2012
+@@ -896,11 +896,6 @@ do
+ 		ac_enable_check_opt=yes
+ 	fi
+     done
+-    if test x${ac_enable_check_opt} = xno
+-    then
+-	as_fn_error $? "unrecognized option: $ac_option
+-Try \`$0 --help' for more information."
+-    fi
+     eval "enable_$ac_feature=no" ;;
+ 
+   -enable-* | --enable-*)

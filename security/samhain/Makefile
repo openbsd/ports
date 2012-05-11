@@ -1,0 +1,86 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+
+COMMENT-main=		Samhain Intrusion Detection System
+COMMENT-client=		Samhain Intrusion Detection System - client
+COMMENT-server=		Samhain Intrusion Detection System - server
+
+VERSION=		3.0.4
+DISTNAME=		samhain-${VERSION}
+FULLPKGNAME-main=	samhain-docs-${VERSION}
+FULLPKGPATH-main=	security/samhain,-main
+FULLPKGNAME-client=	samhain-${VERSION}
+FULLPKGPATH-client=	security/samhain,-client
+PKGNAME-server=		samhain-server-${VERSION}
+
+CATEGORIES=		security
+
+HOMEPAGE=		http://la-samhna.de/samhain/
+MASTER_SITES=		http://blade2k.humppa.hu/
+
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
+
+# GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV=		CPPFLAGS="-DAI_ADDRCONFIG=0"
+CONFIGURE_ARGS=		--enable-login-watch \
+			--localstatedir=/var \
+			--with-state-dir=/var/samhain \
+			--enable-suidcheck \
+			--enable-identity=_yule \
+			--enable-network=server
+
+NO_REGRESS=		Yes
+
+MULTI_PACKAGES=		-main
+PSEUDO_FLAVORS=		no_server
+FLAVORS=		mysql postgresql
+FLAVOR?=		no_server
+
+SUBST_VARS=		FLAVOR
+
+#if non-backend-related flavors are added, add them to
+#the following line as ":L:Nflavor1:Nflavor2" so that
+#they don't trigger a "Conflicting flavors" error.
+BACKEND=		${FLAVOR}
+.if ${BACKEND} == "mysql"
+MULTI_PACKAGES+=	-server
+LIB_DEPENDS-server+=	databases/mysql,-main
+WANTLIB-server+=	c crypto m mysqlclient ssl z
+CONFIGURE_ARGS+=	--with-database=mysql \
+			--enable-xml-log \
+			--with-cflags=-I${LOCALBASE}/include/mysql \
+			--with-libs=-L${LOCALBASE}/lib/mysql
+.elif ${BACKEND} == "postgresql"
+MULTI_PACKAGES+=	-server
+LIB_DEPENDS-server+=	databases/postgresql,-main
+WANTLIB-server+=	c m pq
+CONFIGURE_ARGS+=	--with-database=postgresql \
+			--enable-xml-log
+.elif ${BACKEND} == "no_server"
+MULTI_PACKAGES+=	-client
+WANTLIB-client+=	c pthread z
+CONFIGURE_ARGS+=	--enable-network=client
+.else
+ERRORS+=		"Fatal: Conflicting flavors: ${FLAVOR}";
+.endif
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samhain
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/samhain/README
+.if ${FLAVOR:L:Mno_server}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samhain
+	${INSTALL_DATA} ${WRKSRC}/samhainrc ${PREFIX}/share/examples/samhain/
+.else
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/yule
+	${INSTALL_DATA} ${WRKSRC}/yulerc.template \
+		${PREFIX}/share/examples/yule/yulerc
+	${INSTALL_DATA} ${WRKSRC}/sql_init/samhain.${FLAVOR:S/postgresql/postgres/}.init \
+		${PREFIX}/share/examples/yule/samhain.${FLAVOR}.init
+.endif
+
+.include <bsd.port.mk>
