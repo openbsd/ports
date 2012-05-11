@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.49 2012/03/26 08:05:01 giovanni Exp $
+@comment $OpenBSD: PLIST-tests,v 1.50 2012/05/11 14:32:36 giovanni Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -881,6 +881,7 @@ share/mysql-test/r/partition_archive.result
 share/mysql-test/r/partition_binlog_stmt.result
 share/mysql-test/r/partition_blackhole.result
 share/mysql-test/r/partition_bug18198.result
+share/mysql-test/r/partition_cache.result
 share/mysql-test/r/partition_charset.result
 share/mysql-test/r/partition_csv.result
 share/mysql-test/r/partition_datatype.result
@@ -2723,9 +2724,11 @@ share/mysql-test/suite/innodb/r/innodb-ucs2.result
 share/mysql-test/suite/innodb/r/innodb.result
 share/mysql-test/suite/innodb/r/innodb_autoinc_lock_mode_zero.result
 share/mysql-test/suite/innodb/r/innodb_bug11754376.result
+share/mysql-test/suite/innodb/r/innodb_bug11766634.result
 share/mysql-test/suite/innodb/r/innodb_bug12400341.result
 share/mysql-test/suite/innodb/r/innodb_bug12661768.result
 share/mysql-test/suite/innodb/r/innodb_bug13510739.result
+share/mysql-test/suite/innodb/r/innodb_bug13635833.result
 share/mysql-test/suite/innodb/r/innodb_bug21704.result
 share/mysql-test/suite/innodb/r/innodb_bug30423.result
 share/mysql-test/suite/innodb/r/innodb_bug30919.result
@@ -2783,10 +2786,12 @@ share/mysql-test/suite/innodb/t/innodb.test
 share/mysql-test/suite/innodb/t/innodb_autoinc_lock_mode_zero-master.opt
 share/mysql-test/suite/innodb/t/innodb_autoinc_lock_mode_zero.test
 share/mysql-test/suite/innodb/t/innodb_bug11754376.test
+share/mysql-test/suite/innodb/t/innodb_bug11766634.test
 share/mysql-test/suite/innodb/t/innodb_bug12400341-master.opt
 share/mysql-test/suite/innodb/t/innodb_bug12400341.test
 share/mysql-test/suite/innodb/t/innodb_bug12661768.test
 share/mysql-test/suite/innodb/t/innodb_bug13510739.test
+share/mysql-test/suite/innodb/t/innodb_bug13635833.test
 share/mysql-test/suite/innodb/t/innodb_bug21704.test
 share/mysql-test/suite/innodb/t/innodb_bug30423.test
 share/mysql-test/suite/innodb/t/innodb_bug30919-master.opt
@@ -2868,8 +2873,10 @@ share/mysql-test/suite/innodb_plugin/r/innodb-zip.result
 share/mysql-test/suite/innodb_plugin/r/innodb.result
 share/mysql-test/suite/innodb_plugin/r/innodb_autoinc_lock_mode_zero.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug11754376.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug11766634.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug12400341.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug13510739.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug13635833.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug21704.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug30423.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug30919.result
@@ -2962,9 +2969,11 @@ share/mysql-test/suite/innodb_plugin/t/innodb.test
 share/mysql-test/suite/innodb_plugin/t/innodb_autoinc_lock_mode_zero-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb_autoinc_lock_mode_zero.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug11754376.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug11766634.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug12400341-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb_bug12400341.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug13510739.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug13635833.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug21704.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug30423.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug30919-master.opt
@@ -3975,6 +3984,7 @@ share/mysql-test/suite/rpl/r/rpl_stm_max_relay_size.result
 share/mysql-test/suite/rpl/r/rpl_stm_mixing_engines.result
 share/mysql-test/suite/rpl/r/rpl_stm_multi_query.result
 share/mysql-test/suite/rpl/r/rpl_stm_no_op.result
+share/mysql-test/suite/rpl/r/rpl_stm_relay_ign_space.result
 share/mysql-test/suite/rpl/r/rpl_stm_reset_slave.result
 share/mysql-test/suite/rpl/r/rpl_stm_sql_mode.result
 share/mysql-test/suite/rpl/r/rpl_stm_until.result
@@ -4316,6 +4326,8 @@ share/mysql-test/suite/rpl/t/rpl_stm_max_relay_size.test
 share/mysql-test/suite/rpl/t/rpl_stm_mixing_engines.test
 share/mysql-test/suite/rpl/t/rpl_stm_multi_query.test
 share/mysql-test/suite/rpl/t/rpl_stm_no_op.test
+share/mysql-test/suite/rpl/t/rpl_stm_relay_ign_space-slave.opt
+share/mysql-test/suite/rpl/t/rpl_stm_relay_ign_space.test
 share/mysql-test/suite/rpl/t/rpl_stm_reset_slave.test
 share/mysql-test/suite/rpl/t/rpl_stm_sql_mode.test
 share/mysql-test/suite/rpl/t/rpl_stm_until.test
@@ -4534,7 +4546,6 @@ share/mysql-test/t/bug46760.test
 share/mysql-test/t/bug47671-master.opt
 share/mysql-test/t/bug47671.test
 share/mysql-test/t/bulk_replace.test
-share/mysql-test/t/cache_innodb-master.opt
 share/mysql-test/t/cache_innodb.test
 share/mysql-test/t/case.test
 share/mysql-test/t/cast.test
@@ -4881,6 +4892,7 @@ share/mysql-test/t/partition_archive.test
 share/mysql-test/t/partition_binlog_stmt.test
 share/mysql-test/t/partition_blackhole.test
 share/mysql-test/t/partition_bug18198.test
+share/mysql-test/t/partition_cache.test
 share/mysql-test/t/partition_charset.test
 share/mysql-test/t/partition_csv.test
 share/mysql-test/t/partition_datatype.test
