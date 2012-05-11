@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/02 09:48:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 21:36:48 jasper Exp $
+%%SHARED%%
 @bin bin/datalog
 include/datalog.h
 @info info/datalog.info
 lib/libdatalog.a
+lib/libdatalog.la
+@man man/man1/datalog.1
 share/datalog/
 share/datalog/datalog.html
 share/datalog/datalog.lua
