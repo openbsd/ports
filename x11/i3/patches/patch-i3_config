@@ -1,6 +1,6 @@
-$OpenBSD: patch-i3_config,v 1.11 2012/05/10 09:27:37 dcoppa Exp $
+$OpenBSD: patch-i3_config,v 1.12 2012/05/11 09:35:17 dcoppa Exp $
 --- i3.config.orig	Wed Apr 25 23:21:25 2012
-+++ i3.config	Thu May 10 09:31:36 2012
++++ i3.config	Fri May 11 11:21:17 2012
 @@ -16,13 +16,13 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-is
  floating_modifier Mod1
  
@@ -26,3 +26,9 @@ $OpenBSD: patch-i3_config,v 1.11 2012/05/10 09:27:37 dcoppa Exp $
  }
  
  #######################################################################
+@@ -146,4 +146,4 @@ bar {
+ #
+ # Please remove the following exec line:
+ #######################################################################
+-exec i3-config-wizard
++exec ${TRUEPREFIX}/bin/i3-config-wizard
