@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 12:33:03 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 07:46:35 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}linkchecker/
@@ -14,7 +14,3 @@ ${DRUPAL_MODS}linkchecker/linkchecker.install
 ${DRUPAL_MODS}linkchecker/linkchecker.module
 ${DRUPAL_MODS}linkchecker/tests/
 ${DRUPAL_MODS}linkchecker/tests/linkchecker_extract_links.test
-${DRUPAL_MODS}linkchecker/translations/
-${DRUPAL_MODS}linkchecker/translations/linkchecker.cs.po
-${DRUPAL_MODS}linkchecker/translations/linkchecker.de.po
-${DRUPAL_MODS}linkchecker/translations/linkchecker.pot
