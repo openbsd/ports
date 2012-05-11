@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.324 2012/05/10 12:39:30 okan Exp $
+# $OpenBSD: Makefile,v 1.325 2012/05/11 06:20:47 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -155,6 +155,7 @@
      SUBDIR += mplex
      SUBDIR += mscgen
      SUBDIR += netpbm
+     SUBDIR += node-canvas
      SUBDIR += ocrad
      SUBDIR += opencsg
      SUBDIR += opencv
