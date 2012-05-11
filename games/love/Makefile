@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/11 21:38:29 jasper Exp $
 
 COMMENT=		2D games framework for use with Lua
 
-V=			0.7.2
+V=			0.8.0
 DISTNAME=		love-$V-linux-src
 PKGNAME=		love-$V
-REVISION=		0
 
 HOMEPAGE=		http://love2d.org/
 
@@ -24,7 +23,7 @@ MODULES=		converters/libiconv
 
 WANTLIB += GL Half IL Iex IlmImf IlmThread Imath SDL X11 Xdamage
 WANTLIB += Xext Xfixes Xxf86vm c drm freetype jasper jpeg lcms
-WANTLIB += ltdl lua m mng modplug mpg123 ogg openal physfs-1.0
+WANTLIB += ltdl lua m modplug mpg123 ogg openal physfs-1.0
 WANTLIB += png pthread sndio stdc++ tiff usbhid vorbis vorbisfile
 WANTLIB += xcb z
 
@@ -36,7 +35,6 @@ LIB_DEPENDS=		audio/libmodplug \
 			devel/sdl \
 			graphics/DevIL \
 			graphics/ilmbase \
-			graphics/libmng \
 			graphics/openexr \
 			lang/lua
 
@@ -47,7 +45,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL/ \
 				-I${X11BASE}/include/ -I${X11BASE}/include/freetype2" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread"
 
-WRKDIST=		${WRKDIR}/love-HEAD/
+WRKDIST=		${WRKDIR}/love-$V/
 
 post-extract:
 # Add missing newlines
