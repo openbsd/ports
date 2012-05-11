@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/04 12:10:43 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/11 09:44:13 jasper Exp $
 
 COMMENT =	command line todo list manager
 
-VERSION =	1.9.4
+VERSION =	2.0.0
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
-REVISION =	0
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.taskwarrior.org/
@@ -32,7 +31,9 @@ CONFIGURE_ARGS +=	-DTASK_DOCDIR=share/taskwarrior \
 			-DTASK_MAN5DIR=man/man5
 
 CONFIGURE_ENV +=	CFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -le2fs-uuid"
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+NO_REGRESS =		Yes
 
 pre-configure:
 	@perl -pi -e 's|share/doc/task/|share/taskwarrior/|g' \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/03 21:07:10 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 09:44:14 jasper Exp $
 @bin bin/task
 @man man/man1/task.1
 @man man/man5/task-color.5
@@ -14,14 +14,10 @@ share/taskwarrior/AUTHORS
 @comment share/taskwarrior/NEWS
 @comment share/taskwarrior/README
 share/taskwarrior/i18n/
-share/taskwarrior/i18n/strings.de-DE
-share/taskwarrior/i18n/strings.en-US
-share/taskwarrior/i18n/strings.es-ES
-share/taskwarrior/i18n/strings.fr-FR
-share/taskwarrior/i18n/strings.nl-NL
-share/taskwarrior/i18n/strings.sv-SE
 share/taskwarrior/i18n/tips.de-DE
 share/taskwarrior/i18n/tips.en-US
+share/taskwarrior/i18n/tips.it-IT
+share/taskwarrior/i18n/tips.ja-JP
 share/taskwarrior/i18n/tips.sv-SE
 share/taskwarrior/rc/
 share/taskwarrior/rc/dark-16.theme
@@ -32,31 +28,50 @@ share/taskwarrior/rc/dark-green-256.theme
 share/taskwarrior/rc/dark-red-256.theme
 share/taskwarrior/rc/dark-violets-256.theme
 share/taskwarrior/rc/dark-yellow-green.theme
-share/taskwarrior/rc/holidays-AT.rc
-share/taskwarrior/rc/holidays-CA.rc
-share/taskwarrior/rc/holidays-DE.rc
-share/taskwarrior/rc/holidays-DK.rc
-share/taskwarrior/rc/holidays-ES.rc
-share/taskwarrior/rc/holidays-FR.rc
-share/taskwarrior/rc/holidays-IT.rc
-share/taskwarrior/rc/holidays-NL.rc
-share/taskwarrior/rc/holidays-NO.rc
-share/taskwarrior/rc/holidays-NZ.rc
-share/taskwarrior/rc/holidays-SE.rc
-share/taskwarrior/rc/holidays-UK.rc
-share/taskwarrior/rc/holidays-US.rc
+share/taskwarrior/rc/holidays.be-BY.rc
+share/taskwarrior/rc/holidays.cs-CZ.rc
+share/taskwarrior/rc/holidays.da-DK.rc
+share/taskwarrior/rc/holidays.de-AT.rc
+share/taskwarrior/rc/holidays.de-DE.rc
+share/taskwarrior/rc/holidays.en-CA.rc
+share/taskwarrior/rc/holidays.en-GB.rc
+share/taskwarrior/rc/holidays.en-NZ.rc
+share/taskwarrior/rc/holidays.en-US.rc
+share/taskwarrior/rc/holidays.es-ES.rc
+share/taskwarrior/rc/holidays.fr-FR.rc
+share/taskwarrior/rc/holidays.it-IT.rc
+share/taskwarrior/rc/holidays.jp-JP.rc
+share/taskwarrior/rc/holidays.nb-NO.rc
+share/taskwarrior/rc/holidays.nl-NL.rc
+share/taskwarrior/rc/holidays.sv-SE.rc
 share/taskwarrior/rc/light-16.theme
 share/taskwarrior/rc/light-256.theme
+share/taskwarrior/rc/refresh
+share/taskwarrior/rc/solarized-dark-256.theme
+share/taskwarrior/rc/solarized-light-256.theme
 share/taskwarrior/scripts/
 share/taskwarrior/scripts/add-ons/
 share/taskwarrior/scripts/add-ons/export-csv.pl
+share/taskwarrior/scripts/add-ons/export-html.pl
 share/taskwarrior/scripts/add-ons/export-ical.pl
+share/taskwarrior/scripts/add-ons/export-sql.py
 share/taskwarrior/scripts/add-ons/export-xml.pl
 share/taskwarrior/scripts/add-ons/export-xml.py
 share/taskwarrior/scripts/add-ons/export-xml.rb
+share/taskwarrior/scripts/add-ons/export-yad.pl
 share/taskwarrior/scripts/add-ons/export-yaml.pl
+share/taskwarrior/scripts/add-ons/import-todo.sh.pl
+share/taskwarrior/scripts/add-ons/import-yaml.pl
+share/taskwarrior/scripts/add-ons/update-holidays.pl
 share/taskwarrior/scripts/bash/
 share/taskwarrior/scripts/bash/task_completion.sh
+share/taskwarrior/scripts/extensions/
+share/taskwarrior/scripts/extensions/command.lua
+share/taskwarrior/scripts/extensions/dom.lua
+share/taskwarrior/scripts/extensions/format.lua
+share/taskwarrior/scripts/extensions/program_hook.lua
+share/taskwarrior/scripts/extensions/task_hook.lua
+share/taskwarrior/scripts/extensions/uda.lua
 share/taskwarrior/scripts/fish/
 share/taskwarrior/scripts/fish/task.fish
 share/taskwarrior/scripts/vim/
@@ -69,3 +84,4 @@ share/taskwarrior/scripts/vim/syntax/taskedit.vim
 share/taskwarrior/scripts/vim/syntax/taskrc.vim
 share/taskwarrior/scripts/zsh/
 share/taskwarrior/scripts/zsh/_task
+share/taskwarrior/task-ref.pdf
