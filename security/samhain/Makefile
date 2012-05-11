@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/11 09:38:28 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -11,6 +11,8 @@ FULLPKGPATH-main=	security/samhain,-main
 FULLPKGNAME-client=	samhain-${VERSION}
 FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
+
+REVISION-client=	0
 
 CATEGORIES=		security
 
@@ -28,7 +30,6 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-DAI_ADDRCONFIG=0"
 CONFIGURE_ARGS=		--enable-login-watch \
-			--localstatedir=/var \
 			--with-state-dir=/var/samhain \
 			--enable-suidcheck \
 			--enable-identity=_yule \
@@ -43,9 +44,9 @@ FLAVOR?=		no_server
 
 SUBST_VARS=		FLAVOR
 
-#if non-backend-related flavors are added, add them to
-#the following line as ":L:Nflavor1:Nflavor2" so that
-#they don't trigger a "Conflicting flavors" error.
+# if non-backend-related flavors are added, add them to
+# the following line as ":L:Nflavor1:Nflavor2" so that
+# they don't trigger a "Conflicting flavors" error.
 BACKEND=		${FLAVOR}
 .if ${BACKEND} == "mysql"
 MULTI_PACKAGES+=	-server

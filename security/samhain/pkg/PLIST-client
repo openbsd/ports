@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-client,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+@comment $OpenBSD: PLIST-client,v 1.2 2012/05/11 09:38:28 ajacoutot Exp $
+@extraunexec rm -rf /var/samhain/*
 @man man/man5/samhainrc.5
 @man man/man8/samhain.8
 @bin sbin/samhain
