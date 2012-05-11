@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1 2012/05/11 23:29:30 edd Exp $
+lib/python${MODPY_VERSION}/site-packages/lp_maker.py
+lib/python${MODPY_VERSION}/site-packages/lp_maker.pyc
+lib/python${MODPY_VERSION}/site-packages/lp_solve.py
+lib/python${MODPY_VERSION}/site-packages/lp_solve.pyc
+lib/python${MODPY_VERSION}/site-packages/lpsolve55-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/lpsolve55.so

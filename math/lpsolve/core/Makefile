@@ -1,31 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/11 23:29:30 edd Exp $
 
 COMMENT =		mixed integer linear programming solver
 
-V_MAJOR =		5.5
-V =			${V_MAJOR}.2.0
 DISTNAME =		lp_solve_${V}_source
 PKGNAME =		lpsolve-${V}
 WRKDIST =		${WRKDIR}/lp_solve_${V_MAJOR}
 
 SHARED_LIBS =		lpsolve55	0.0	# unversioned upstream
 
-CATEGORIES =		math devel
-
-HOMEPAGE =		http://lpsolve.sourceforge.net
-
-MAINTAINER =		Edd Barrett <edd@openbsd.org>
-
-# LGPLv2.1
-# Also contains static LUSOL library which is also LGPLv2.1
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
-
 WANTLIB +=		c m
-
-MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lpsolve/}
 
 # Docs are distributed separately
 DOCDISTFILE =		lp_solve_5.5.2.0_doc${EXTRACT_SUFX}
@@ -36,6 +19,7 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 # Build is a series of shell scripts
 MAKE_ENV +=	CC=${CC} LIBlpsolve55_VERSION=${LIBlpsolve55_VERSION} \
 		WRKDIR=${WRKDIR}
+
 do-build:
 	mkdir ${WRKDIR}/tmp	# builds programs here to check for features
 	cd ${WRKSRC}/lpsolve55 && \

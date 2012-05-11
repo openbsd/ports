@@ -1,4 +1,4 @@
-$OpenBSD: patch-lp_solve_ccc,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
+$OpenBSD: patch-lp_solve_ccc,v 1.2 2012/05/11 23:29:30 edd Exp $
 
 * We don't use -ldl
 * Don't use platform specific paths
@@ -6,7 +6,7 @@ $OpenBSD: patch-lp_solve_ccc,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
 * Don't write to /tmp suring build
 
 --- lp_solve/ccc.orig	Sun Jan 25 18:39:03 2009
-+++ lp_solve/ccc	Fri Apr 20 10:04:09 2012
++++ lp_solve/ccc	Wed May  2 14:35:02 2012
 @@ -1,41 +1,41 @@
  :
  src='../lp_MDO.c ../shared/commonlib.c ../colamd/colamd.c ../shared/mmio.c ../shared/myblas.c ../ini.c ../fortify.c ../lp_rlp.c ../lp_crash.c ../bfp/bfp_LUSOL/lp_LUSOL.c ../bfp/bfp_LUSOL/LUSOL/lusol.c ../lp_Hash.c ../lp_lib.c ../lp_wlp.c ../lp_matrix.c ../lp_mipbb.c ../lp_MPS.c ../lp_params.c ../lp_presolve.c ../lp_price.c ../lp_pricePSE.c ../lp_report.c ../lp_scale.c ../lp_simplex.c lp_solve.c ../lp_SOS.c ../lp_utils.c ../yacc_read.c'
@@ -63,7 +63,7 @@ $OpenBSD: patch-lp_solve_ccc,v 1.1.1.1 2012/04/20 09:54:11 edd Exp $
       def='-dy -K PIC -DLLONG=long'
       dl=-ldl
 -else dl=-ldl
-+else dl=-lcompat
++else dl=
  fi
  
 -$c -I.. -I../bfp -I../bfp/bfp_LUSOL -I../bfp/bfp_LUSOL/LUSOL -I../colamd -I../shared $opts $def $NOISNAN -DYY_NEVER_INTERACTIVE -DPARSER_LP -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine $src -o bin/$PLATFORM/lp_solve $math $dl
