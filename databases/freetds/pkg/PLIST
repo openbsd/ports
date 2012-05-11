@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/09/08 17:13:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/05/11 09:57:02 sthen Exp $
 @pkgpath databases/freetds,-msdblib
+@pkgpath databases/freetds,-openssl
 @bin bin/bsqldb
 @bin bin/bsqlodbc
 @bin bin/datacopy

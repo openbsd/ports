@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.54 2011/11/11 11:37:54 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2012/05/11 09:57:02 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.91
-REVISION=	0
+REVISION=	1
 
-SHARED_LIBS += ct                   4.0      # .4.0
-SHARED_LIBS += sybdb                6.0      # .5.0
-SHARED_LIBS += tdsodbc              0.0      # .0.0
+SHARED_LIBS += ct                   5.0      # .4.0
+SHARED_LIBS += sybdb                7.0      # .5.0
+SHARED_LIBS += tdsodbc              1.0      # .0.0
 
 CATEGORIES=	databases
 
@@ -15,10 +15,16 @@ HOMEPAGE=	http://www.freetds.org/
 # also http://freetds.schemamania.org/ http://freetds.sourceforge.net/
 
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
+# No specific exception for OpenSSL, however the GPL has a special
+# exception for "anything that is normally distributed...with the major
+# components...of the operating system on which the executable runs,
+# unless that component itself accompanies the executable."
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c iodbc iodbcinst ncurses pthread readline
+WANTLIB += c crypto iodbc iodbcinst ncurses pthread readline ssl
 
 MASTER_SITES=	http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
@@ -44,22 +50,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-static \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}" \
+		--with-openssl \
 		--with-tdsver=7.1
-
-FLAVOR?=
-FLAVORS=	openssl
-.if ${FLAVOR:Mopenssl}
-CONFIGURE_ARGS+=	--with-openssl
-WANTLIB+=		crypto ssl
-PERMIT_PACKAGE_CDROM=	incompatible license
-PERMIT_PACKAGE_FTP=	incompatible license
-.else
-LIB_DEPENDS+=		security/gnutls
-CONFIGURE_ARGS+=	--with-gnutls
-WANTLIB+=		gmp gnutls hogweed nettle p11-kit tasn1 z
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-.endif
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 

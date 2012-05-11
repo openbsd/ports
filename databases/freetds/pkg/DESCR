@@ -13,7 +13,3 @@ webservers to present data stored in SQL Server to the web, to port
 SQL Server database code from NT to Unix, to import data into SQL
 Server from a Unix source, and to provide database access on platforms
 (such as realtime systems) that have no native drivers.
-
-FLAVORS:
-openssl   use OpenSSL instead of GnuTLS for encrypted connections.
-          Avoids uthread problems but may not be redistributed; see README.
