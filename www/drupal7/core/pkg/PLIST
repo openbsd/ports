@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/04/10 12:52:32 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 06:59:16 espie Exp $
 @option no-default-conflict
 @conflict drupal->=7,<8
 @owner ${DRUPAL_OWNER}
@@ -331,6 +331,7 @@ ${DRUPAL_ROOT}/modules/contextual/contextual.css
 ${DRUPAL_ROOT}/modules/contextual/contextual.info
 ${DRUPAL_ROOT}/modules/contextual/contextual.js
 ${DRUPAL_ROOT}/modules/contextual/contextual.module
+${DRUPAL_ROOT}/modules/contextual/contextual.test
 ${DRUPAL_ROOT}/modules/contextual/images/
 ${DRUPAL_ROOT}/modules/contextual/images/gear-select.png
 ${DRUPAL_ROOT}/modules/dashboard/
@@ -758,8 +759,11 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.file.inc
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.install
 ${DRUPAL_ROOT}/modules/simpletest/tests/module_test.module
+${DRUPAL_ROOT}/modules/simpletest/tests/pager.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/password.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/path.test
+${DRUPAL_ROOT}/modules/simpletest/tests/path_test.info
+${DRUPAL_ROOT}/modules/simpletest/tests/path_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/registry.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/requirements1_test.install
@@ -788,6 +792,7 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/taxonomy_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/taxonomy_test.install
 ${DRUPAL_ROOT}/modules/simpletest/tests/taxonomy_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme.test
+${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.inc
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.info
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.module
 ${DRUPAL_ROOT}/modules/simpletest/tests/theme_test.template_test.tpl.php
@@ -818,13 +823,19 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.locale.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.menu.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.node_type_broken.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.translatable.database.php
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.trigger.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.upload.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.user-no-password-token.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-6.user-password-token.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.bare.minimal.database.php.gz
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.bare.standard_all.database.php.gz
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.field.database.php
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.filled.minimal.database.php.gz
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.filled.standard_all.database.php.gz
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/drupal-7.trigger.database.php
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/update.field.test
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/update.trigger.test
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/update.user.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.comment.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.filter.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.forum.test
@@ -835,6 +846,7 @@ ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.poll.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.taxonomy.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.translatable.test
+${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.trigger.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.upload.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/upgrade/upgrade.user.test
 ${DRUPAL_ROOT}/modules/simpletest/tests/url_alter_test.info
@@ -859,6 +871,7 @@ ${DRUPAL_ROOT}/modules/syslog/syslog.test
 ${DRUPAL_ROOT}/modules/system/
 ${DRUPAL_ROOT}/modules/system/html.tpl.php
 ${DRUPAL_ROOT}/modules/system/image.gd.inc
+${DRUPAL_ROOT}/modules/system/language.api.php
 ${DRUPAL_ROOT}/modules/system/maintenance-page.tpl.php
 ${DRUPAL_ROOT}/modules/system/page.tpl.php
 ${DRUPAL_ROOT}/modules/system/region.tpl.php
@@ -1010,6 +1023,7 @@ ${DRUPAL_ROOT}/profiles/testing/modules/
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_compatible_test/
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.info
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.module
+${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_compatible_test/drupal_system_listing_compatible_test.test
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_incompatible_test/
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.info
 ${DRUPAL_ROOT}/profiles/testing/modules/drupal_system_listing_incompatible_test/drupal_system_listing_incompatible_test.module
