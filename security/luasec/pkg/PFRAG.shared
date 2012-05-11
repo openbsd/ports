@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2009/09/06 14:29:32 jolan Exp $
-lib/lua/5.1/ssl.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/05/11 20:51:57 jasper Exp $
+lib/lua/${MODLUA_VERSION}/ssl.so

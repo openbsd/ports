@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/09/06 13:46:58 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/05/11 20:51:48 jasper Exp $
 share/doc/luasocket/
 share/doc/luasocket/dns.html
 share/doc/luasocket/ftp.html
@@ -27,13 +27,13 @@ share/examples/luasocket/lpr.lua
 share/examples/luasocket/talker.lua
 share/examples/luasocket/tinyirc.lua
 %%SHARED%%
-share/lua/5.1/ltn12.lua
-share/lua/5.1/mime/
-share/lua/5.1/mime.lua
-share/lua/5.1/socket/
-share/lua/5.1/socket.lua
-share/lua/5.1/socket/ftp.lua
-share/lua/5.1/socket/http.lua
-share/lua/5.1/socket/smtp.lua
-share/lua/5.1/socket/tp.lua
-share/lua/5.1/socket/url.lua
+share/lua/${MODLUA_VERSION}/ltn12.lua
+share/lua/${MODLUA_VERSION}/mime/
+share/lua/${MODLUA_VERSION}/mime.lua
+share/lua/${MODLUA_VERSION}/socket/
+share/lua/${MODLUA_VERSION}/socket.lua
+share/lua/${MODLUA_VERSION}/socket/ftp.lua
+share/lua/${MODLUA_VERSION}/socket/http.lua
+share/lua/${MODLUA_VERSION}/socket/smtp.lua
+share/lua/${MODLUA_VERSION}/socket/tp.lua
+share/lua/${MODLUA_VERSION}/socket/url.lua

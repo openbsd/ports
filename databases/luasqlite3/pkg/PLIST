@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2006/07/30 04:51:39 pedro Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/11 20:50:12 jasper Exp $
 %%SHARED%%
 share/doc/luasqlite3/
 share/doc/luasqlite3/documentation.html
@@ -10,4 +10,4 @@ share/examples/luasqlite3/simple.lua
 share/examples/luasqlite3/smart.lua
 share/examples/luasqlite3/statement.lua
 share/examples/luasqlite3/tracing.lua
-share/lua/5.1/sqlite3.lua
+share/lua/${MODLUA_VERSION}/sqlite3.lua

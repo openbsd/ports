@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/09 17:34:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/11 20:55:00 jasper Exp $
 
 COMMENT =	encapsulate protected Lua calls with a coroutine based loop
 
 DISTNAME =	coxpcall-1.13.0
-REVISION=	0
+REVISION=	1
 CATEGORIES =	devel
 HOMEPAGE =	http://coxpcall.luaforge.net/
 

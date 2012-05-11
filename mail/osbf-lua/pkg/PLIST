@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/03/17 21:37:08 jolan Exp $
-lib/lua/5.1/osbf.so
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 20:51:32 jasper Exp $
+lib/lua/${MODLUA_VERSION}/osbf.so
 share/osbf-lua/
 share/osbf-lua/cache_report.lua
 share/osbf-lua/classify.sample

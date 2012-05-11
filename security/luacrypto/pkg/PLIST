@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/18 18:12:47 jasper Exp $
-lib/lua/5.1/crypto.so
+@comment $OpenBSD: PLIST,v 1.5 2012/05/11 20:51:57 jasper Exp $
+lib/lua/${MODLUA_VERSION}/crypto.so
 share/doc/luacrypto/
 share/doc/luacrypto/examples.html
 share/doc/luacrypto/index.html

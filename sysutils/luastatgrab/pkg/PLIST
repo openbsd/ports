@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/01 20:17:47 jasper Exp $
-lib/lua/5.1/libstatgrab.so
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 20:52:12 jasper Exp $
+lib/lua/${MODLUA_VERSION}/libstatgrab.so
 share/doc/luastatgrab/
 share/doc/luastatgrab/API.txt
-share/lua/5.1/statgrab.lua
+share/lua/${MODLUA_VERSION}/statgrab.lua
