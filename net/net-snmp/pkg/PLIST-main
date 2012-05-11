@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2012/04/11 16:31:14 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2012/05/11 13:14:43 sthen Exp $
 @pkgpath net/net-snmp
 @extraunexec rm -rf /var/net-snmp/*
 %%SHARED%%
@@ -340,12 +340,12 @@ lib/libnetsnmptrapd.la
 @man man/man5/mib2c.conf.5
 @man man/man5/snmp.conf.5
 @man man/man5/snmp_config.5
-@man man/man5/snmpd.conf.5
+@man man/man5/netsnmp-snmpd.conf.5
 @man man/man5/snmpd.examples.5
 @man man/man5/snmpd.internal.5
 @man man/man5/snmptrapd.conf.5
 @man man/man5/variables.5
-@man man/man8/snmpd.8
+@man man/man8/netsnmp-snmpd.8
 @man man/man8/snmptrapd.8
 @bin sbin/snmpd
 @bin sbin/snmptrapd

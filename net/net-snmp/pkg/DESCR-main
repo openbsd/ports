@@ -17,3 +17,6 @@ line applications to:
   (snmpdf, snmpnetstat, snmpstatus).
 - convert between numerical and textual forms of MIB OIDs, and display
   MIB content and structure (snmptranslate).
+
+Note that to avoid conflicts, the snmpd.conf(5) and snmpd(8) manpages
+are installed with a "netsnmp-" prefix e.g. netsnmp-snmpd(8).

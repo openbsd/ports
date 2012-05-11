@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.65 2012/05/03 20:06:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2012/05/11 13:14:43 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.7.1
-DISTNAME=	net-snmp-$V
 
+DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -perl -tkmib
+REVISION-main=	5
+REVISION-perl=	1
+REVISION-tkmib=	0
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	4
-REVISION-perl=	0
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
 
@@ -48,7 +49,6 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
-USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=  autoconf
@@ -72,6 +72,7 @@ pre-configure:
 	@if ! fgrep '#define NETSNMP_DEFAULT_MIBS "${DEFAULT_MIBS}"' \
 	    ${WRKSRC}/include/net-snmp/net-snmp-config.h.in > /dev/null; then \
 	    echo 'DEFAULT_MIBS in the port Makefile is out of sync'; exit 1; fi
+	@perl -pi -e 's,(snmpd\(8\)|snmpd\.conf\(5\)),netsnmp-\1,' ${WRKSRC}/man/*
 
 post-install:
 	@perl -pi -e 's,^(#define[ ]PACKAGE_.*)$$,/* $$1 */,' \
@@ -85,5 +86,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/net-snmp
 	${INSTALL_DATA} ${WRKBUILD}/EXAMPLE.conf \
 	    ${PREFIX}/share/examples/net-snmp
+.for i j in man5 snmpd.conf.5 man8 snmpd.8
+	mv ${PREFIX}/man/$i/$j ${PREFIX}/man/$i/netsnmp-$j
+.endfor
 
 .include <bsd.port.mk>
