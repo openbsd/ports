@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/12 13:46:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/11 21:19:48 jasper Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
-DISTNAME=	lgi-0.4
+DISTNAME=	lgi-0.5
 PKGNAME=	lua-${DISTNAME}
 CATEGORIES=	devel
 
