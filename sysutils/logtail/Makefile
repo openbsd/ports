@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/08 19:05:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/11 03:35:29 william Exp $
 
 COMMENT=	mail anomalies in the system logfiles to the administrator
 
 V=		1.3.14
 DISTNAME=	logcheck_${V}
-REVISION=	0
+REVISION=	1
 PKGNAME=	logtail-${V}
 CATEGORIES=	sysutils
 

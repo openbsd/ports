@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/08 02:54:10 william Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/11 03:35:29 william Exp $
+@conflict logsentry-*
 bin/logtail
 bin/logtail2
 @man man/man8/logtail.8
