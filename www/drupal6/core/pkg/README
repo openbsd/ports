@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/05/11 07:46:56 espie Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -26,6 +26,9 @@ Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot.
 
 	[mysqld]
 	socket = /var/www/var/run/mysql/mysql.sock
+
+If you intend to install lots of modules, you may need to have the
+max_allowed_packet value larger than 1M to be able to check for updates.
 
 Don't forget to set the character set to utf8 in your database.
 
