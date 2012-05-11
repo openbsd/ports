@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2012/04/28 19:45:39 kili Exp $
+# $OpenBSD: Makefile,v 1.287 2012/05/11 09:39:28 robert Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -225,6 +225,9 @@
      SUBDIR += ruby-openid
      SUBDIR += ruby-yadis
      SUBDIR += samdump2
+     SUBDIR += samhain
+     SUBDIR += samhain,mysql
+     SUBDIR += samhain,postgresql
      SUBDIR += scanlogd
      SUBDIR += scanssh
      SUBDIR += scrypt
