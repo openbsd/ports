@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/03/20 19:55:38 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/05/11 05:32:50 rpointel Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -49,6 +49,8 @@ lib/python${MODPY_VERSION}/site-packages/hgext/eol.py
 lib/python${MODPY_VERSION}/site-packages/hgext/eol.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/extdiff.py
 lib/python${MODPY_VERSION}/site-packages/hgext/extdiff.pyc
+lib/python${MODPY_VERSION}/site-packages/hgext/factotum.py
+lib/python${MODPY_VERSION}/site-packages/hgext/factotum.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/fetch.py
 lib/python${MODPY_VERSION}/site-packages/hgext/fetch.pyc
 lib/python${MODPY_VERSION}/site-packages/hgext/gpg.py
@@ -182,6 +184,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/filemerge.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/filemerge.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/fileset.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/fileset.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/formatter.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/formatter.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/graphmod.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/graphmod.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/hbisect.py
@@ -331,6 +335,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/posix.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/posix.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/pushkey.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/pushkey.pyc
+lib/python${MODPY_VERSION}/site-packages/mercurial/pvec.py
+lib/python${MODPY_VERSION}/site-packages/mercurial/pvec.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/py3kcompat.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/py3kcompat.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/repair.py
