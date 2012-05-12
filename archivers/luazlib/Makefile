@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/10/12 08:37:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/12 13:16:50 jasper Exp $
 
 COMMENT=	lua binding of zlib
 SHARED_ONLY=	Yes
 DISTNAME=	luazlib-20100731
 REVISION=	0
 CATEGORIES=	archivers
-MASTER_SITES=	${MASTER_SITE_BACKUP}	
+MASTER_SITES=	http://distfiles.nl/
 
 HOMEPAGE=	http://github.com/brimworks/lua-zlib/
 
@@ -16,10 +16,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	lang/lua
-REGRESS_DEPENDS += archivers/luazlib
+REGRESS_DEPENDS += ${BASE_PKGPATH}
 WANTLIB+=	lua m z
 
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	`pkg-config --cflags lua`
 LINK=		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
 do-build:
