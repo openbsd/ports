@@ -1,3 +1,11 @@
+$OpenBSD: README-chroot,v 1.1 2012/05/13 17:03:43 okan Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Setup with httpd from OpenBSD base system
+=========================================
 By default, femail will use `localhost' for smtphost.  Make sure to
 review FAQ Section 10.16 discussing name resolution with httpd(8)'s
 default chroot(2).
