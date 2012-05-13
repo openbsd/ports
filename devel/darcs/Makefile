@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/05/11 20:59:47 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2012/05/13 21:27:38 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -30,6 +30,7 @@ BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
 			devel/hs-text>=0.11.0.6,<0.12.0.0 \
 			devel/hs-vector>=0.7 \
 			www/hs-html>=1.0,<1.1 \
+			print/texlive/texmf,-full \
  			textproc/latex2html \
 			${RUN_DEPENDS}
 
