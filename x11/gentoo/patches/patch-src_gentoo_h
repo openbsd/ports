@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gentoo_h,v 1.1 2012/05/13 03:19:53 okan Exp $
+--- src/gentoo.h.orig	Sat May 12 16:26:06 2012
++++ src/gentoo.h	Sat May 12 16:25:48 2012
+@@ -13,7 +13,7 @@
+ 
+ #include "config.h"
+ 
+-#if !(defined __osf__ && defined __alpha__) && !defined __NetBSD__ && !defined __FreeBSD__ && !defined __sgi
++#if !(defined __osf__ && defined __alpha__) && !defined __NetBSD__ && !defined __FreeBSD__ && !defined __OpenBSD__ && !defined __sgi
+  #if !defined __EXTENSIONS__
+   #define __EXTENSIONS__
+  #endif
