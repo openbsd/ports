@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/04/30 13:29:04 landry Exp $
-libexec/xfce4/
-libexec/xfce4/panel-plugins/
-@bin libexec/xfce4/panel-plugins/xfce4-genmon-plugin
+@comment $OpenBSD: PLIST,v 1.8 2012/05/13 20:37:17 landry Exp $
+@comment lib/xfce4/panel/plugins/libgenmon.a
+@comment lib/xfce4/panel/plugins/libgenmon.la
+lib/xfce4/panel/plugins/libgenmon.so
+share/locale/ar/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-genmon-plugin.mo
@@ -19,6 +20,7 @@ share/locale/id/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ja/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/kk/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/locale/ko/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/lv/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/nl/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-genmon-plugin.mo
@@ -34,5 +36,5 @@ share/locale/uk/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-genmon-plugin.mo
-share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/genmon.desktop
+share/locale/zh_TW/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/xfce4/panel/plugins/genmon.desktop
