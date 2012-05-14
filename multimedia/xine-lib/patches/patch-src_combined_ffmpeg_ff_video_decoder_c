@@ -1,13 +1,15 @@
-$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31 ajacoutot Exp $
+$OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.10 2012/05/14 13:48:49 ajacoutot Exp $
 
 - Moved FFmpeg API version checks to single header.
 - Frame garbage collector in ff_reset.
 - Fix compile against recent FFmpeg.
 - Fix multithreaded initialization with API change.
 - Fix decoding of full range YUV420 H.264 videos.
+- Convert full range YUV to MPEG range.
+- Fix cropping.
 
 --- src/combined/ffmpeg/ff_video_decoder.c.orig	Sat Dec 31 11:25:26 2011
-+++ src/combined/ffmpeg/ff_video_decoder.c	Sat Apr 21 01:25:36 2012
++++ src/combined/ffmpeg/ff_video_decoder.c	Sun May 13 03:26:03 2012
 @@ -51,6 +51,8 @@
  #  include <libpostproc/postprocess.h>
  #endif
@@ -42,7 +44,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
  typedef struct ff_video_decoder_s ff_video_decoder_t;
  
  typedef struct ff_video_class_s {
-@@ -146,7 +130,9 @@ struct ff_video_decoder_s {
+@@ -146,14 +130,46 @@ struct ff_video_decoder_s {
  
    yuv_planes_t      yuv;
  
@@ -50,9 +52,65 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
    AVPaletteControl  palette_control;
 +#endif
  
++  int               color_matrix, full2mpeg;
++  unsigned char     ytab[256], ctab[256];
++
  #ifdef LOG
    enum PixelFormat  debug_fmt;
-@@ -234,7 +220,9 @@ static int get_buffer(AVCodecContext *context, AVFrame
+ #endif
+ };
+ 
++static void ff_check_colorspace (ff_video_decoder_t *this) {
++  int i, cm;
+ 
++  cm = this->context->colorspace << 1;
++  /* ffmpeg bug: color_range not set by svq3 decoder */
++  i = this->context->pix_fmt;
++  if (cm && ((i == PIX_FMT_YUVJ420P) || (i == PIX_FMT_YUVJ444P) ||
++    (this->context->color_range == AVCOL_RANGE_JPEG)))
++    cm |= 1;
++
++  /* report changes of colorspyce and/or color range */
++  if (cm != this->color_matrix) {
++    this->color_matrix = cm;
++    xprintf (this->stream->xine, XINE_VERBOSITY_LOG,
++      "ffmpeg_video_dec: color matrix #%d\n", cm >> 1);
++
++    this->full2mpeg = 0;
++    if (cm & 1) {
++      /* sigh. fall back to manual conversion */
++      this->full2mpeg = 1;
++      for (i = 0; i < 256; i++) {
++        this->ytab[i] = (219 * i + 127) / 255 + 16;
++        this->ctab[i] = 112 * (i - 128) / 127 + 128;
++      }
++    }
++  }
++}
++
+ static void set_stream_info(ff_video_decoder_t *this) {
+   _x_stream_info_set(this->stream, XINE_STREAM_INFO_VIDEO_WIDTH,  this->bih.biWidth);
+   _x_stream_info_set(this->stream, XINE_STREAM_INFO_VIDEO_HEIGHT, this->bih.biHeight);
+@@ -168,6 +184,8 @@ static int get_buffer(AVCodecContext *context, AVFrame
+   int width  = context->width;
+   int height = context->height;
+ 
++  ff_check_colorspace (this);
++
+   if (!this->bih.biWidth || !this->bih.biHeight) {
+     this->bih.biWidth = width;
+     this->bih.biHeight = height;
+@@ -182,7 +200,8 @@ static int get_buffer(AVCodecContext *context, AVFrame
+ 
+   avcodec_align_dimensions(context, &width, &height);
+ 
+-  if( this->context->pix_fmt != PIX_FMT_YUV420P && this->context->pix_fmt != PIX_FMT_YUVJ420P ) {
++  if (this->full2mpeg || (this->context->pix_fmt != PIX_FMT_YUV420P &&
++    this->context->pix_fmt != PIX_FMT_YUVJ420P)) {
+     if (!this->is_direct_rendering_disabled) {
+       xprintf(this->stream->xine, XINE_VERBOSITY_LOG,
+               _("ffmpeg_video_dec: unsupported frame format, DR1 disabled.\n"));
+@@ -234,7 +253,9 @@ static int get_buffer(AVCodecContext *context, AVFrame
    /* We should really keep track of the ages of xine frames (see
     * avcodec_default_get_buffer in libavcodec/utils.c)
     * For the moment tell ffmpeg that every frame is new (age = bignumber) */
@@ -62,7 +120,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
  
    av_frame->type= FF_BUFFER_TYPE_USER;
  
-@@ -341,6 +329,13 @@ static void init_video_codec (ff_video_decoder_t *this
+@@ -341,6 +362,13 @@ static void init_video_codec (ff_video_decoder_t *this
    if (this->class->choose_speed_over_accuracy)
      this->context->flags2 |= CODEC_FLAG2_FAST;
  
@@ -76,7 +134,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
    pthread_mutex_lock(&ffmpeg_lock);
    if (avcodec_open (this->context, this->codec) < 0) {
      pthread_mutex_unlock(&ffmpeg_lock);
-@@ -368,14 +363,13 @@ static void init_video_codec (ff_video_decoder_t *this
+@@ -368,14 +396,13 @@ static void init_video_codec (ff_video_decoder_t *this
      }
    }
  
@@ -94,16 +152,145 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
  
    this->context->skip_loop_filter = skip_loop_filter_enum_values[this->class->skip_loop_filter_enum];
  
-@@ -834,7 +828,7 @@ static void ff_convert_frame(ff_video_decoder_t *this,
-       du += img->pitches[1];
-       dv += img->pitches[2];
+@@ -563,6 +590,8 @@ static void ff_convert_frame(ff_video_decoder_t *this,
+     printf ("frame format == %08x\n", this->debug_fmt = this->context->pix_fmt);
+ #endif
  
++  ff_check_colorspace (this);
++
+   dy = img->base[0];
+   du = img->base[1];
+   dv = img->base[2];
+@@ -793,54 +822,92 @@ static void ff_convert_frame(ff_video_decoder_t *this,
+ 
+   } else {
+ 
+-    for (y = 0; y < this->bih.biHeight; y++) {
+-      xine_fast_memcpy (dy, sy, img->width);
++    int subsamph = (this->context->pix_fmt == PIX_FMT_YUV444P)
++                || (this->context->pix_fmt == PIX_FMT_YUVJ444P);
++    int subsampv = (this->context->pix_fmt != PIX_FMT_YUV420P)
++                && (this->context->pix_fmt != PIX_FMT_YUVJ420P);
+ 
+-      dy += img->pitches[0];
++    if (this->full2mpeg) {
+ 
+-      sy += this->av_frame->linesize[0];
+-    }
++      uint8_t *ytab = this->ytab;
++      uint8_t *ctab = this->ctab;
++      uint8_t *p, *q;
++      int x;
+ 
+-    for (y = 0; y < this->bih.biHeight / 2; y++) {
++      for (y = 0; y < this->bih.biHeight; y++) {
++        p = sy;
++        q = dy;
++        for (x = img->width; x > 0; x--) *q++ = ytab[*p++];
++        dy += img->pitches[0];
++        sy += this->av_frame->linesize[0];
+ 
+-      if (this->context->pix_fmt != PIX_FMT_YUV444P) {
++      }
+ 
+-        xine_fast_memcpy (du, su, img->width/2);
+-        xine_fast_memcpy (dv, sv, img->width/2);
++      for (y = 0; y < this->bih.biHeight / 2; y++) {
++        if (!subsamph) {
++          p = su, q = du;
++          for (x = img->width / 2; x > 0; x--) *q++ = ctab[*p++];
++          p = sv, q = dv;
++          for (x = img->width / 2; x > 0; x--) *q++ = ctab[*p++];
++        } else {
++          p = su, q = sv;
++          for (x = img->width / 2; x > 0; x--) {*q++ = ctab[*p]; p += 2;}
++          p = sv, q = dv;
++          for (x = img->width / 2; x > 0; x--) {*q++ = ctab[*p]; p += 2;}
++        }
++        du += img->pitches[1];
++        dv += img->pitches[2];
++        if (subsampv) {
++          su += 2 * this->av_frame->linesize[1];
++          sv += 2 * this->av_frame->linesize[2];
++        } else {
++          su += this->av_frame->linesize[1];
++          sv += this->av_frame->linesize[2];
++        }
++      }
+ 
+-      } else {
++    } else {
+ 
+-        int x;
+-        uint8_t *src;
+-        uint8_t *dst;
++      for (y = 0; y < this->bih.biHeight; y++) {
++        xine_fast_memcpy (dy, sy, img->width);
++        dy += img->pitches[0];
++        sy += this->av_frame->linesize[0];
++      }
+ 
+-        /* subsample */
+-
+-        src = su; dst = du;
+-        for (x=0; x<(img->width/2); x++) {
+-          *dst = *src;
+-          dst++;
+-          src += 2;
++      for (y = 0; y < this->bih.biHeight / 2; y++) {
++        if (!subsamph) {
++          xine_fast_memcpy (du, su, img->width/2);
++          xine_fast_memcpy (dv, sv, img->width/2);
++        } else {
++          int x;
++          uint8_t *src;
++          uint8_t *dst;
++          src = su;
++          dst = du;
++          for (x = 0; x < (img->width / 2); x++) {
++            *dst = *src;
++            dst++;
++            src += 2;
++          }
++          src = sv;
++          dst = dv;
++          for (x = 0; x < (img->width / 2); x++) {
++            *dst = *src;
++            dst++;
++            src += 2;
++          }
+         }
+-        src = sv; dst = dv;
+-        for (x=0; x<(img->width/2); x++) {
+-          *dst = *src;
+-          dst++;
+-          src += 2;
++        du += img->pitches[1];
++        dv += img->pitches[2];
++        if (subsampv) {
++          su += 2*this->av_frame->linesize[1];
++          sv += 2*this->av_frame->linesize[2];
++        } else {
++          su += this->av_frame->linesize[1];
++          sv += this->av_frame->linesize[2];
+         }
+-
+       }
+ 
+-      du += img->pitches[1];
+-      dv += img->pitches[2];
+-
 -      if (this->context->pix_fmt != PIX_FMT_YUV420P) {
-+      if (this->context->pix_fmt != PIX_FMT_YUV420P && this->context->pix_fmt != PIX_FMT_YUVJ420P) {
-         su += 2*this->av_frame->linesize[1];
-         sv += 2*this->av_frame->linesize[2];
-       } else {
-@@ -1044,7 +1038,9 @@ static void ff_handle_special_buffer (ff_video_decoder
+-        su += 2*this->av_frame->linesize[1];
+-        sv += 2*this->av_frame->linesize[2];
+-      } else {
+-        su += this->av_frame->linesize[1];
+-        sv += this->av_frame->linesize[2];
+-      }
+     }
+   }
+ }
+@@ -1044,7 +1111,9 @@ static void ff_handle_special_buffer (ff_video_decoder
      memcpy(this->context->extradata, buf->decoder_info_ptr[2],
        buf->decoder_info[2]);
  
@@ -114,7 +301,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
      unsigned int i;
  
      palette_entry_t *demuxer_palette;
-@@ -1063,7 +1059,9 @@ static void ff_handle_special_buffer (ff_video_decoder
+@@ -1063,7 +1132,9 @@ static void ff_handle_special_buffer (ff_video_decoder
      }
      decoder_palette->palette_changed = 1;
  
@@ -125,7 +312,29 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
      int i;
  
      lprintf("BUF_SPECIAL_RV_CHUNK_TABLE\n");
-@@ -1663,8 +1661,22 @@ static void ff_reset (video_decoder_t *this_gen) {
+@@ -1549,8 +1620,8 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+           img->duration = video_step_to_use;
+ 
+         /* additionally crop away the extra pixels due to adjusting frame size above */
+-        img->crop_right  = this->crop_right  + (img->width  - this->bih.biWidth);
+-        img->crop_bottom = this->crop_bottom + (img->height - this->bih.biHeight);
++        img->crop_right  = img->width  - this->bih.biWidth;
++        img->crop_bottom = img->height - this->bih.biHeight;
+ 
+         /* transfer some more frame settings for deinterlacing */
+         img->progressive_frame = !this->av_frame->interlaced_frame;
+@@ -1586,8 +1657,8 @@ static void ff_handle_buffer (ff_video_decoder_t *this
+       img->duration  = video_step_to_use;
+ 
+       /* additionally crop away the extra pixels due to adjusting frame size above */
+-      img->crop_right  = ((this->bih.biWidth  <= 0) ? 0 : this->crop_right)  + (img->width  - this->bih.biWidth);
+-      img->crop_bottom = ((this->bih.biHeight <= 0) ? 0 : this->crop_bottom) + (img->height - this->bih.biHeight);
++      img->crop_right  = this->bih.biWidth  <= 0 ? 0 : (img->width  - this->bih.biWidth);
++      img->crop_bottom = this->bih.biHeight <= 0 ? 0 : (img->height - this->bih.biHeight);
+ 
+       img->bad_frame = 1;
+       this->skipframes = img->draw(img, this->stream);
+@@ -1663,8 +1734,22 @@ static void ff_reset (video_decoder_t *this_gen) {
    this->size = 0;
  
    if(this->context && this->decoder_ok)
@@ -148,7 +357,7 @@ $OpenBSD: patch-src_combined_ffmpeg_ff_video_decoder_c,v 1.9 2012/04/21 12:36:31
    if (this->is_mpeg12)
      mpeg_parser_reset(this->mpeg_parser);
  
-@@ -1796,7 +1808,9 @@ static video_decoder_t *ff_video_open_plugin (video_de
+@@ -1796,7 +1881,9 @@ static video_decoder_t *ff_video_open_plugin (video_de
    this->av_frame          = avcodec_alloc_frame();
    this->context           = avcodec_alloc_context();
    this->context->opaque   = this;
