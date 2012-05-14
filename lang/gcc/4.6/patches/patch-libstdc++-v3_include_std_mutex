@@ -1,0 +1,12 @@
+$OpenBSD: patch-libstdc++-v3_include_std_mutex,v 1.1 2012/05/14 23:39:39 pascal Exp $
+--- libstdc++-v3/include/std/mutex.orig	Fri May  4 18:32:34 2012
++++ libstdc++-v3/include/std/mutex	Fri May  4 18:33:39 2012
+@@ -789,7 +789,7 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
+   __get_once_mutex();
+ #endif
+ 
+-  extern "C" void __once_proxy();
++  extern "C" void __once_proxy(void);
+ 
+   /// call_once
+   template<typename _Callable, typename... _Args>
