@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.18 2009/02/04 10:40:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/05/14 09:08:56 sthen Exp $
+@comment ${P5ARCH}/Net/DNS/FAQ.pod
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/DNS/
 ${P5ARCH}/Net/DNS.pm
-@comment ${P5ARCH}/Net/DNS/FAQ.pod
+${P5ARCH}/Net/DNS/Domain.pm
+${P5ARCH}/Net/DNS/DomainName.pm
+${P5ARCH}/Net/DNS/FAQ.pod
 ${P5ARCH}/Net/DNS/Header.pm
+${P5ARCH}/Net/DNS/Mailbox.pm
 ${P5ARCH}/Net/DNS/Nameserver.pm
 ${P5ARCH}/Net/DNS/Packet.pm
 ${P5ARCH}/Net/DNS/Question.pm
@@ -17,11 +21,14 @@ ${P5ARCH}/Net/DNS/RR/APL.pm
 ${P5ARCH}/Net/DNS/RR/APL/ApItem.pm
 ${P5ARCH}/Net/DNS/RR/CERT.pm
 ${P5ARCH}/Net/DNS/RR/CNAME.pm
+${P5ARCH}/Net/DNS/RR/DHCID.pm
 ${P5ARCH}/Net/DNS/RR/DNAME.pm
 ${P5ARCH}/Net/DNS/RR/EID.pm
 ${P5ARCH}/Net/DNS/RR/HINFO.pm
+${P5ARCH}/Net/DNS/RR/HIP.pm
 ${P5ARCH}/Net/DNS/RR/IPSECKEY.pm
 ${P5ARCH}/Net/DNS/RR/ISDN.pm
+${P5ARCH}/Net/DNS/RR/KX.pm
 ${P5ARCH}/Net/DNS/RR/LOC.pm
 ${P5ARCH}/Net/DNS/RR/MB.pm
 ${P5ARCH}/Net/DNS/RR/MG.pm
@@ -54,14 +61,18 @@ ${P5ARCH}/Net/DNS/Resolver/Cygwin.pm
 ${P5ARCH}/Net/DNS/Resolver/Recurse.pm
 ${P5ARCH}/Net/DNS/Resolver/UNIX.pm
 ${P5ARCH}/Net/DNS/Resolver/Win32.pm
+${P5ARCH}/Net/DNS/Text.pm
 ${P5ARCH}/Net/DNS/Update.pm
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/DNS/
 ${P5ARCH}/auto/Net/DNS/DNS.bs
 ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS.3p
+@man man/man3p/Net::DNS::Domain.3p
+@man man/man3p/Net::DNS::DomainName.3p
 @man man/man3p/Net::DNS::FAQ.3p
 @man man/man3p/Net::DNS::Header.3p
+@man man/man3p/Net::DNS::Mailbox.3p
 @man man/man3p/Net::DNS::Nameserver.3p
 @man man/man3p/Net::DNS::Packet.3p
 @man man/man3p/Net::DNS::Question.3p
@@ -73,11 +84,14 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::RR::APL::ApItem.3p
 @man man/man3p/Net::DNS::RR::CERT.3p
 @man man/man3p/Net::DNS::RR::CNAME.3p
+@man man/man3p/Net::DNS::RR::DHCID.3p
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::EID.3p
 @man man/man3p/Net::DNS::RR::HINFO.3p
+@man man/man3p/Net::DNS::RR::HIP.3p
 @man man/man3p/Net::DNS::RR::IPSECKEY.3p
 @man man/man3p/Net::DNS::RR::ISDN.3p
+@man man/man3p/Net::DNS::RR::KX.3p
 @man man/man3p/Net::DNS::RR::LOC.3p
 @man man/man3p/Net::DNS::RR::MB.3p
 @man man/man3p/Net::DNS::RR::MG.3p
@@ -109,4 +123,5 @@ ${P5ARCH}/auto/Net/DNS/DNS.so
 @man man/man3p/Net::DNS::Resolver::Recurse.3p
 @man man/man3p/Net::DNS::Resolver::UNIX.3p
 @man man/man3p/Net::DNS::Resolver::Win32.3p
+@man man/man3p/Net::DNS::Text.3p
 @man man/man3p/Net::DNS::Update.3p
