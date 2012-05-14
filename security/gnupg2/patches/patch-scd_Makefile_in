@@ -1,0 +1,15 @@
+$OpenBSD: patch-scd_Makefile_in,v 1.1 2012/05/14 08:49:54 dcoppa Exp $
+
+No PC/SC-Lite (pcsc-lite) support for now
+
+--- scd/Makefile.in.orig	Tue Mar 27 10:22:48 2012
++++ scd/Makefile.in	Sun May 13 18:23:49 2012
+@@ -70,7 +70,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ bin_PROGRAMS = scdaemon$(EXEEXT)
+-@HAVE_W32_SYSTEM_FALSE@libexec_PROGRAMS = gnupg-pcsc-wrapper$(EXEEXT)
++@HAVE_W32_SYSTEM_FALSE@libexec_PROGRAMS =
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in \
+ 	$(top_srcdir)/am/cmacros.am
+ @HAVE_DOSISH_SYSTEM_FALSE@am__append_1 = -DGNUPG_BINDIR="\"$(bindir)\""            \

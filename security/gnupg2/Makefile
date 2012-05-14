@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/28 12:35:41 pea Exp $
+# $OpenBSD: Makefile,v 1.19 2012/05/14 08:49:54 dcoppa Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
 DISTNAME = 	gnupg-2.0.19
+REVISION =	0
 CATEGORIES = 	security
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/gnupg/ \
@@ -25,8 +26,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP = 	Yes
 
 WANTLIB +=		assuan bz2 c crypto curl gcrypt
-WANTLIB +=		gpg-error idn ksba pth readline
-WANTLIB +=		ssl termcap z
+WANTLIB +=		gpg-error idn ksba pth pthread
+WANTLIB +=		readline ssl termcap usb z
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -36,6 +37,7 @@ FLAVORS = 		ldap
 FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
+			devel/libusb-compat \
 			security/libassuan \
 			security/libgcrypt \
 			security/libksba \
@@ -60,13 +62,9 @@ USE_GROFF =		Yes
 
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS = 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 			--enable-gpgtar
-
-# XXX GNU-Pth/libpthread segfault woes:
-# http://marc.info/?l=openbsd-ports&m=132197024628355
-CONFIGURE_ARGS +=	--disable-scdaemon
 
 # Avoid conflict with gnupg-1.x
 post-install:
