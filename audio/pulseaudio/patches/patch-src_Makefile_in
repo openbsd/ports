@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2011/12/07 20:25:35 robert Exp $
---- src/Makefile.in.orig	Wed Dec  7 21:15:43 2011
-+++ src/Makefile.in	Wed Dec  7 21:17:10 2011
-@@ -3116,7 +3116,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS
+$OpenBSD: patch-src_Makefile_in,v 1.4 2012/05/14 17:45:16 ajacoutot Exp $
+--- src/Makefile.in.orig	Fri May 11 15:31:10 2012
++++ src/Makefile.in	Mon May 14 16:19:22 2012
+@@ -3308,7 +3308,7 @@ libpulsecommon_@PA_MAJORMINOR@_la_CFLAGS = $(AM_CFLAGS
  libpulsecommon_@PA_MAJORMINOR@_la_LDFLAGS = $(AM_LDFLAGS) \
  	-avoid-version $(am__append_18)
  libpulsecommon_@PA_MAJORMINOR@_la_LIBADD = $(AM_LIBADD) \
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2011/12/07 20:25:35 robert Exp $
  	$(LIBSNDFILE_LIBS) $(am__append_24) $(am__append_28)
  
  ###################################
-@@ -3635,7 +3635,7 @@ module_x11_cork_request_la_LIBADD = $(MODULE_LIBADD) $
+@@ -3821,7 +3821,7 @@ module_x11_cork_request_la_LIBADD = $(MODULE_LIBADD) $
  # OSS
  liboss_util_la_SOURCES = modules/oss/oss-util.c modules/oss/oss-util.h
  liboss_util_la_LDFLAGS = -avoid-version
@@ -19,13 +19,13 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2011/12/07 20:25:35 robert Exp $
  module_oss_la_SOURCES = modules/oss/module-oss.c
  module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
  module_oss_la_LIBADD = $(MODULE_LIBADD) liboss-util.la
-@@ -8628,8 +8628,7 @@ info: info-am
+@@ -8620,8 +8620,7 @@ info: info-am
  
  info-am:
  
 -install-data-am: install-dbuspolicyDATA install-dist_alsapathsDATA \
 -	install-dist_alsaprofilesetsDATA install-dist_udevrulesDATA \
 +install-data-am: install-dbuspolicyDATA \
- 	install-pulseconfDATA install-pulseincludeHEADERS \
- 	install-xdgautostartDATA
+ 	install-padsplibLTLIBRARIES install-pulseconfDATA \
+ 	install-pulseincludeHEADERS install-xdgautostartDATA
  

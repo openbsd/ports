@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/01/23 14:39:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/05/14 17:45:16 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -55,8 +55,6 @@ lib/libpulse-simple.la
 @lib lib/libpulse-simple.so.${LIBpulse-simple_VERSION}
 lib/libpulse.la
 @lib lib/libpulse.so.${LIBpulse_VERSION}
-lib/libpulsecommon-${VERSION}.la
-lib/libpulsecommon-${VERSION}.so
 lib/libpulsecore-${VERSION}.la
 lib/libpulsecore-${VERSION}.so
 lib/pkgconfig/libpulse-mainloop-glib.pc
@@ -67,7 +65,6 @@ lib/pulse-${VERSION}/modules/
 lib/pulse-${VERSION}/modules/libcli.so
 lib/pulse-${VERSION}/modules/liboss-util.so
 lib/pulse-${VERSION}/modules/libprotocol-cli.so
-lib/pulse-${VERSION}/modules/libprotocol-esound.so
 lib/pulse-${VERSION}/modules/libprotocol-http.so
 lib/pulse-${VERSION}/modules/libprotocol-native.so
 lib/pulse-${VERSION}/modules/libprotocol-simple.so
@@ -81,17 +78,11 @@ lib/pulse-${VERSION}/modules/module-cli-protocol-unix.so
 lib/pulse-${VERSION}/modules/module-cli.so
 lib/pulse-${VERSION}/modules/module-combine-sink.so
 lib/pulse-${VERSION}/modules/module-combine.so
-lib/pulse-${VERSION}/modules/module-cork-music-on-phone.so
 lib/pulse-${VERSION}/modules/module-default-device-restore.so
 lib/pulse-${VERSION}/modules/module-detect.so
 lib/pulse-${VERSION}/modules/module-device-manager.so
 lib/pulse-${VERSION}/modules/module-device-restore.so
 lib/pulse-${VERSION}/modules/module-echo-cancel.so
-lib/pulse-${VERSION}/modules/module-esound-compat-spawnfd.so
-lib/pulse-${VERSION}/modules/module-esound-compat-spawnpid.so
-lib/pulse-${VERSION}/modules/module-esound-protocol-tcp.so
-lib/pulse-${VERSION}/modules/module-esound-protocol-unix.so
-lib/pulse-${VERSION}/modules/module-esound-sink.so
 lib/pulse-${VERSION}/modules/module-filter-apply.so
 lib/pulse-${VERSION}/modules/module-filter-heuristics.so
 lib/pulse-${VERSION}/modules/module-http-protocol-tcp.so
@@ -112,6 +103,7 @@ lib/pulse-${VERSION}/modules/module-position-event-sounds.so
 lib/pulse-${VERSION}/modules/module-raop-sink.so
 lib/pulse-${VERSION}/modules/module-remap-sink.so
 lib/pulse-${VERSION}/modules/module-rescue-streams.so
+lib/pulse-${VERSION}/modules/module-role-cork.so
 lib/pulse-${VERSION}/modules/module-rtp-recv.so
 lib/pulse-${VERSION}/modules/module-rtp-send.so
 lib/pulse-${VERSION}/modules/module-simple-protocol-tcp.so
@@ -121,11 +113,16 @@ lib/pulse-${VERSION}/modules/module-sine.so
 lib/pulse-${VERSION}/modules/module-stream-restore.so
 lib/pulse-${VERSION}/modules/module-suspend-on-idle.so
 lib/pulse-${VERSION}/modules/module-switch-on-connect.so
+lib/pulse-${VERSION}/modules/module-switch-on-port-available.so
 lib/pulse-${VERSION}/modules/module-tunnel-sink.so
 lib/pulse-${VERSION}/modules/module-tunnel-source.so
 lib/pulse-${VERSION}/modules/module-virtual-sink.so
 lib/pulse-${VERSION}/modules/module-virtual-source.so
+lib/pulse-${VERSION}/modules/module-virtual-surround-sink.so
 lib/pulse-${VERSION}/modules/module-volume-restore.so
+lib/pulseaudio/
+lib/pulseaudio/libpulsecommon-${VERSION}.la
+lib/pulseaudio/libpulsecommon-${VERSION}.so
 libexec/pulse/
 @man man/man1/esdcompat.1
 @man man/man1/pacat.1
@@ -136,6 +133,7 @@ libexec/pulse/
 @man man/man1/pasuspender.1
 @man man/man1/pulseaudio.1
 @man man/man5/default.pa.5
+@man man/man5/pulse-cli-syntax.5
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
 share/examples/pulseaudio/

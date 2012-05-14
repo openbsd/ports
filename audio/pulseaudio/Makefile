@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/05/14 17:45:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		1.1
+VERSION=		2.0
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		2
 
-SHARED_LIBS +=  pulse                1.0      # .13.4
+SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3
 SHARED_LIBS +=  pulse-mainloop-glib  0.0      # .0.4
 
@@ -26,7 +25,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto execinfo gdbm glib-2.0 json ltdl m ossaudio
-WANTLIB += pcre pthread sndfile speexdsp ssl
+WANTLIB += pcre pthread sndfile speexdsp ssl stdc++
 
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar
@@ -67,14 +66,17 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-oss-output \
 			--disable-oss-wrapper \
 			--disable-x11 \
+			--disable-adrian-aec \
 			--disable-alsa \
 			--disable-asyncns \
 			--disable-bluez \
 			--disable-dbus \
+			--disable-esound \
 			--disable-gtk2 \
 			--disable-jack \
 			--disable-hal \
 			--disable-hal-compat \
+			--disable-systemd \
 			--disable-udev \
 			--disable-lirc \
 			--disable-samplerate \

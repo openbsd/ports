@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.4 2011/12/07 20:25:35 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2012/05/14 17:45:16 ajacoutot Exp $
 
 - Fix path to soundcard.h
 - Fix path to DBus machine-id
 - Use /var/db instead of /var/lib
 
---- configure.ac.orig	Thu Oct 20 15:12:05 2011
-+++ configure.ac	Wed Dec  7 21:15:20 2011
-@@ -151,7 +151,7 @@ esac
+--- configure.ac.orig	Fri May 11 13:43:03 2012
++++ configure.ac	Mon May 14 16:18:28 2012
+@@ -161,7 +161,7 @@ esac
  #### Compiler flags ####
  
  AX_APPEND_COMPILE_FLAGS(
@@ -14,8 +14,8 @@ $OpenBSD: patch-configure_ac,v 1.4 2011/12/07 20:25:35 robert Exp $
 +    [-Wall -W -Wextra -pipe -Wno-long-long -Wvla -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option],
      [], [-pedantic -Werror])
  
- 
-@@ -679,7 +679,7 @@ AC_ARG_ENABLE([oss-wrapper],
+ # Only enable fastpath asserts when doing a debug build, e.g. from bootstrap.sh.
+@@ -687,7 +687,7 @@ AC_ARG_ENABLE([oss-wrapper],
      AS_HELP_STRING([--disable-oss-wrapper],[Disable optional OSS wrapper support]))
  
  AS_IF([test "x$enable_oss_output" != "xno" -o "x$enable_oss_wrapper" != "xno"],
@@ -24,16 +24,16 @@ $OpenBSD: patch-configure_ac,v 1.4 2011/12/07 20:25:35 robert Exp $
      HAVE_OSS=0)
  
  AS_IF([test "x$enable_oss_output" = "xyes" -o "x$enable_oss_wrapper" = "xyes" && test "x$HAVE_OSS" = "x0"],
-@@ -930,7 +930,7 @@ AC_SUBST(HAVE_DBUS)
+@@ -945,7 +945,7 @@ AC_SUBST(HAVE_DBUS)
  AM_CONDITIONAL([HAVE_DBUS], [test "x$HAVE_DBUS" = x1])
  AS_IF([test "x$HAVE_DBUS" = "x1"], AC_DEFINE([HAVE_DBUS], 1, [Have D-Bus.]))
  
 -PA_MACHINE_ID="${localstatedir}/lib/dbus/machine-id"
 +PA_MACHINE_ID="${localstatedir}/db/dbus/machine-id"
  AX_DEFINE_DIR(PA_MACHINE_ID, PA_MACHINE_ID, [D-Bus machine-id file])
- 
- #### HAL support (optional), dependant on D-Bus ####
-@@ -1097,9 +1097,9 @@ fi
+ PA_MACHINE_ID_FALLBACK="${sysconfdir}/machine-id"
+ AX_DEFINE_DIR(PA_MACHINE_ID_FALLBACK, PA_MACHINE_ID_FALLBACK,
+@@ -1174,9 +1174,9 @@ fi
  
  PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
  AX_DEFINE_DIR(PA_SYSTEM_RUNTIME_PATH, PA_SYSTEM_RUNTIME_PATH, [System runtime dir])
