@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/14 06:27:12 ajacoutot Exp $
 
 COMMENT=		library for audio metadata lookup
 
 DISTNAME=		libmusicbrainz-3.0.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS=		musicbrainz3	0.0	# .6.1
 CATEGORIES=		audio
@@ -28,6 +28,6 @@ LIB_DEPENDS=		net/neon
 
 USE_GMAKE=		Yes
 
-CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -liconv"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -liconv -pthread"
 
 .include <bsd.port.mk>
