@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_dnsmasq_c,v 1.1 2012/05/14 13:57:09 ajacoutot Exp $
+
+code-size tweak.
+
+--- src/dnsmasq.c.orig	Sun May 13 00:37:29 2012
++++ src/dnsmasq.c	Sun May 13 00:38:19 2012
+@@ -1209,13 +1209,9 @@ void clear_cache_and_reload(time_t now)
+     }
+ #ifdef HAVE_DHCP6
+   else if (daemon->ra_contexts)
+-    {
+-      /* Not doing DHCP, so no lease system, manage 
+-	 alarms for ra only */
+-      time_t next_event = periodic_ra(now);
+-      if (next_event != 0)
+-	alarm((unsigned)difftime(next_event, now)); 
+-    }
++    /* Not doing DHCP, so no lease system, manage 
++       alarms for ra only */
++    send_alarm(periodic_ra(now), now);
+ #endif
+ #endif
+ }
