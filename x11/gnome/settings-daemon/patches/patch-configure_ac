@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/04/27 10:59:31 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/05/14 17:46:22 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=674935
 
@@ -7,29 +7,29 @@ Date: Wed, 21 Mar 2012 17:40:06 +0000
 Subject: disable wacom support on s390/s390x
 
 --- configure.ac.orig	Mon Apr 16 14:34:35 2012
-+++ configure.ac	Fri Apr 27 12:43:20 2012
++++ configure.ac	Fri Apr 27 13:40:54 2012
 @@ -197,10 +197,23 @@ dnl --------------------------------------------------
  PKG_CHECK_MODULES(COLOR, [colord >= 0.1.9 gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION libcanberra-gtk3])
  
  dnl ---------------------------------------------------------------------------
 -dnl - wacom
-+dnl - wacom (disabled for s390/s390x and OpenBSD)
++dnl - wacom (disabled for s390/s390x and non Linux platforms)
  dnl ---------------------------------------------------------------------------
  
 -PKG_CHECK_MODULES(WACOM, [libwacom >= $LIBWACOM_REQUIRED_VERSION x11 xi xtst $GUDEV_PKG gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION xorg-wacom])
-+if test "$host_cpu" = s390 -o "$host_cpu" = s390x; then
++case $host_os in
++  linux*)
++    if test "$host_cpu" = s390 -o "$host_cpu" = s390x; then
++      have_wacom=no
++    else
++      PKG_CHECK_MODULES(WACOM, [libwacom >= $LIBWACOM_REQUIRED_VERSION x11 xi xtst $GUDEV_PKG gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION xorg-wacom])
++      have_wacom=yes
++    fi
++    ;;
++  *)
 +    have_wacom=no
-+else
-+    case $host_os in
-+      openbsd*)
-+        have_wacom=no
-+        ;;
-+      *)
-+        PKG_CHECK_MODULES(WACOM, [libwacom >= $LIBWACOM_REQUIRED_VERSION x11 xi xtst $GUDEV_PKG gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION xorg-wacom])
-+        have_wacom=yes
-+        ;;
-+    esac
-+fi
++    ;;
++esac
 +AM_CONDITIONAL(HAVE_WACOM, test x$have_wacom = xyes)
  
  dnl ==============================================

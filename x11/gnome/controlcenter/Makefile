@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/04/17 11:02:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2012/05/14 17:46:22 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,6 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -52,10 +53,10 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			audio/libcanberra,-gtk3 \
 			graphics/colord
 
-BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.2.0p1 \
-			devel/gsettings-desktop-schemas>=3.0.2
-RUN_DEPENDS=		x11/gnome/settings-daemon>=3.2.0p1 \
-			devel/gsettings-desktop-schemas>=3.0.2
+BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.4.1p1 \
+			devel/gsettings-desktop-schemas
+RUN_DEPENDS=		x11/gnome/settings-daemon>=3.4.1p1 \
+			devel/gsettings-desktop-schemas
 
 # NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
 # enforced on purpose.
@@ -103,7 +104,7 @@ CONFIGURE_ARGS=	--disable-static \
 CONFIGURE_ARGS+=--without-libsocialweb
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
-MODGNOME_LDFLAGS=	-L${X11BASE}/lib
+MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${LOCALBASE}/lib/pulseaudio
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
