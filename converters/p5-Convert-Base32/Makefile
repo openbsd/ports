@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/11 13:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/14 09:52:26 sthen Exp $
 
 COMMENT =	encoding and decoding of base32 (RFC4648) strings
 
-DISTNAME =	Convert-Base32-0.05
+DISTNAME =	Convert-Base32-0.06
 
 CATEGORIES =	converters
 
