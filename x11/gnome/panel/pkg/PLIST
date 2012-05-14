@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.49 2012/04/18 08:25:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.50 2012/05/14 14:30:32 jasper Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -407,6 +407,9 @@ share/locale/ca/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/crh/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/cs/LC_MESSAGES/gnome-panel-3.0.mo
+share/locale/csb/
+share/locale/csb/LC_MESSAGES/
+share/locale/csb/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/cy/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/da/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/de/LC_MESSAGES/gnome-panel-3.0.mo
