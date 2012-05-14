@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/23 07:05:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/14 09:59:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	evolution connector for MS Exchange via EWS
 
 GNOME_PROJECT=	evolution-ews
-GNOME_VERSION=	3.4.1
+GNOME_VERSION=	3.4.2
 
 CATEGORIES=	mail
 
@@ -55,7 +55,7 @@ WANTLIB += lib/evolution/${EVO_VERSION}/menus
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	mail/evolution,-main>=3.4.1
+LIB_DEPENDS=	mail/evolution,-main>=3.4.2
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
