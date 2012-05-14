@@ -1,10 +1,10 @@
-$OpenBSD: patch-i3status_conf,v 1.1.1.1 2012/05/02 07:37:10 jasper Exp $
+$OpenBSD: patch-i3status_conf,v 1.2 2012/05/14 07:54:23 jasper Exp $
 
 Adjust config file to be reasonably useful on OpenBSD out of the box.
 
---- i3status.conf.orig	Mon Apr 30 16:27:29 2012
-+++ i3status.conf	Mon Apr 30 16:27:35 2012
-@@ -5,38 +5,28 @@ general {
+--- i3status.conf.orig	Mon May 14 09:52:33 2012
++++ i3status.conf	Mon May 14 09:52:36 2012
+@@ -5,37 +5,28 @@ general {
  
  order += "ipv6"
  order += "disk /"
@@ -15,9 +15,9 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
 +#order += "wireless iwn0"
 +order += "ethernet em0"
  order += "battery 0"
- order += "cpu_temperature 0"
  order += "load"
  order += "time"
++order += "cpu_temperature 0"
 +order += "volume master"
  
 -wireless wlan0 {
@@ -53,14 +53,12 @@ Adjust config file to be reasonably useful on OpenBSD out of the box.
  time {
          format = "%Y-%m-%d %H:%M:%S"
  }
-@@ -51,4 +41,8 @@ cpu_temperature 0 {
+@@ -46,4 +37,8 @@ load {
  
  disk "/" {
          format = "%free"
--}
 +}
 +
 +volume master {
 +	format = "vol: %volume"
-+}
-\ No newline at end of file
+ }
