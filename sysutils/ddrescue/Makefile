@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/14 09:56:13 pascal Exp $
 
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.12
+DISTNAME =		ddrescue-1.15
 
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://www.gnu.org/software/ddrescue/ddrescue.html
 
-# GPLv3
+# GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -23,6 +23,5 @@ BUILD_DEPENDS = 	devel/help2man
 CONFIGURE_STYLE =	gnu
 ALL_TARGET =		all doc
 INSTALL_TARGET =	install install-man
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
