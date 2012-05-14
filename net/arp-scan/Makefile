@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/05/08 11:04:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/14 14:59:58 espie Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
@@ -23,6 +23,7 @@ WANTLIB =		c pcap
 
 CONFIGURE_STYLE =	gnu
 USE_GROFF =		Yes
+BUILD_DEPENDS +=	www/p5-libwww
 
 pre-configure:
 	cd ${WRKSRC} && \
