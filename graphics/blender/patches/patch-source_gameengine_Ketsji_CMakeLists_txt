@@ -1,16 +1,17 @@
-$OpenBSD: patch-source_gameengine_Ketsji_CMakeLists_txt,v 1.1 2012/02/26 20:37:26 pascal Exp $
---- source/gameengine/Ketsji/CMakeLists.txt.orig	Tue Dec 13 20:47:26 2011
-+++ source/gameengine/Ketsji/CMakeLists.txt	Thu Dec 15 11:37:07 2011
-@@ -52,12 +52,12 @@ set(INC
+$OpenBSD: patch-source_gameengine_Ketsji_CMakeLists_txt,v 1.2 2012/05/14 18:31:43 pascal Exp $
+--- source/gameengine/Ketsji/CMakeLists.txt.orig	Thu May 10 16:48:58 2012
++++ source/gameengine/Ketsji/CMakeLists.txt	Mon May 14 17:43:31 2012
+@@ -52,13 +52,13 @@ set(INC
  	../../../intern/guardedalloc
  	../../../intern/moto/include
  	../../../intern/string
++	${GLEW_INCLUDE_PATH}
 +	../../../extern/recastnavigation/Recast/Include
 +	../../../extern/recastnavigation/Detour/Include
-+	${GLEW_INCLUDE_PATH}
  )
  
  set(INC_SYS
+ 	${PTHREADS_INCLUDE_DIRS}
 -	${GLEW_INCLUDE_PATH}
 -	../../../extern/recastnavigation/Recast/Include
 -	../../../extern/recastnavigation/Detour/Include

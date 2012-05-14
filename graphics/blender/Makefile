@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2012/05/09 12:45:50 pascal Exp $
+# $OpenBSD: Makefile,v 1.44 2012/05/14 18:31:43 pascal Exp $
 
 COMMENT =	3D creation software
 
-DISTNAME =	blender-2.63
-REVISION =	0
+DISTNAME =	blender-2.63a
 
 CATEGORIES =	graphics
 
@@ -20,8 +19,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://download.blender.org/source/ \
-		http://mirror.cs.umn.edu/blender.org/source/ \
-		http://public.planetmirror.com/pub/blender/source/
+		http://mirror.cs.umn.edu/blender.org/source/
 
 MODULES =	devel/cmake \
 		lang/python \
