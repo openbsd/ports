@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/20 09:19:23 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/14 10:06:49 sthen Exp $
 ${P5SITE}/Sys/
+@comment ${P5SITE}/Sys/README.pod
 ${P5SITE}/Sys/Syscall.pm
+@comment @man man/man3p/Sys::README.3p
 @man man/man3p/Sys::Syscall.3p
