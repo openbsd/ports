@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/11/13 13:14:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/05/14 06:26:19 ajacoutot Exp $
+%%SHARED%%
 bin/neon-config
 include/neon/
 include/neon/ne_207.h
 include/neon/ne_acl.h
+include/neon/ne_acl3744.h
 include/neon/ne_alloc.h
 include/neon/ne_auth.h
 include/neon/ne_basic.h
@@ -62,7 +64,10 @@ lib/pkgconfig/neon.pc
 @man man/man3/ne_iaddr_cmp.3
 @man man/man3/ne_iaddr_free.3
 @man man/man3/ne_iaddr_make.3
+@man man/man3/ne_iaddr_parse.3
 @man man/man3/ne_iaddr_print.3
+@man man/man3/ne_iaddr_raw.3
+@man man/man3/ne_iaddr_reverse.3
 @man man/man3/ne_iaddr_typeof.3
 @man man/man3/ne_malloc.3
 @man man/man3/ne_oom_callback.3
@@ -170,6 +175,7 @@ share/doc/neon/html/refstatus.html
 share/doc/neon/html/reftok.html
 share/doc/neon/html/refvers.html
 share/doc/neon/html/refxml.html
+share/doc/neon/html/security.html
 share/doc/neon/html/using.html
 share/doc/neon/html/xml.html
 share/locale/cs/LC_MESSAGES/neon.mo
@@ -184,8 +190,8 @@ share/locale/zh_CN/LC_MESSAGES/neon.mo
 share/neon/
 share/neon/macros/
 share/neon/macros/ChangeLog
+share/neon/macros/ld-version-script.m4
 share/neon/macros/neon-test.m4
 share/neon/macros/neon-xml-parser.m4
 share/neon/macros/neon.m4
 share/neon/macros/socklen-arg-type.m4
-%%SHARED%%
