@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2012/04/01 09:28:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/05/14 13:35:44 ajacoutot Exp $
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=	gnome-tweak-tool
-GNOME_VERSION=	3.3.4
-REVISION=	1
+GNOME_VERSION=	3.4.0
 
 CATEGORIES=	sysutils
 
