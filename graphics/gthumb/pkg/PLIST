@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/04/24 10:55:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/05/14 20:11:50 jasper Exp $
 @bin bin/gthumb
 include/gthumb-3.0/
 include/gthumb-3.0/gthumb/
@@ -187,6 +187,7 @@ lib/gthumb/extensions/selections.extension
 lib/gthumb/extensions/slideshow.extension
 lib/gthumb/extensions/webalbums.extension
 lib/pkgconfig/gthumb-3.0.pc
+@man man/man1/gthumb.1
 share/GConf/gsettings/gthumb.convert
 share/aclocal/gthumb.m4
 share/applications/gthumb-import.desktop
