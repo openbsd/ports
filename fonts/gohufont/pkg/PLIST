@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/14 11:15:41 dcoppa Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/gohufont/
+@comment lib/X11/fonts/gohufont/fonts.dir
+lib/X11/fonts/gohufont/gohufont-11.pcf.gz
+lib/X11/fonts/gohufont/gohufont-11b.pcf.gz
+lib/X11/fonts/gohufont/gohufont-14.pcf.gz
+lib/X11/fonts/gohufont/gohufont-14b.pcf.gz
+lib/X11/fonts/gohufont/gohufont-uni-11.pcf.gz
+lib/X11/fonts/gohufont/gohufont-uni-11b.pcf.gz
+lib/X11/fonts/gohufont/gohufont-uni-14.pcf.gz
+lib/X11/fonts/gohufont/gohufont-uni-14b.pcf.gz
+share/doc/gohufont/
+share/doc/gohufont/COPYING-LICENSE
+share/doc/gohufont/README
