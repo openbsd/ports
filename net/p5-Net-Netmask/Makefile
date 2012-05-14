@@ -1,14 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/05/14 10:03:58 sthen Exp $
 
 COMMENT =	parse, manipulate and lookup IPv4 CIDR blocks
 
 MODULES =	cpan
-DISTNAME =	Net-Netmask-1.9015
-REVISION =	0
+DISTNAME =	Net-Netmask-1.9016
 CATEGORIES =	net
-USE_GROFF =	Yes
-
-MAINTAINER =	Toni Mueller <support@oeko.net>
 
 # custom
 PERMIT_PACKAGE_CDROM =		Yes
