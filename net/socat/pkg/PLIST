@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/08/12 22:29:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/05/14 20:58:14 sthen Exp $
 @bin bin/filan
 @bin bin/procan
 @bin bin/socat
@@ -24,6 +24,7 @@ share/examples/socat/proxy.sh
 share/examples/socat/proxyecho.sh
 share/examples/socat/readline-test.sh
 share/examples/socat/readline.sh
+share/examples/socat/socat_buildscript_for_android.sh
 share/examples/socat/socks4a-echo.sh
 share/examples/socat/socks4echo.sh
 share/examples/socat/test.sh
