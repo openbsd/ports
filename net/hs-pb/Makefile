@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/27 21:25:03 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/14 08:26:11 jasper Exp $
+
+BROKEN=		github and pastebin APIs changed
 
 COMMENT=	pastebin command line application
 
