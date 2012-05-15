@@ -1,9 +1,12 @@
-# $OpenBSD: lua.port.mk,v 1.9 2012/05/15 12:25:17 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.10 2012/05/15 15:11:06 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
 # Major.Minor of current lua version provided by lang/lua
 MODLUA_VERSION=	5.1
+
+# Where the example will be installed
+MODLUA_EXAMPLEDIR=	${PREFIX}/share/examples/${FULLPKGNAME}/
 
 # Where the docs will be installed
 MODLUA_DOCDIR=	${PREFIX}/share/doc/${FULLPKGNAME}/
