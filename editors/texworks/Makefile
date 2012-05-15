@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/20 08:41:27 edd Exp $
+# $OpenBSD: Makefile,v 1.15 2012/05/15 18:22:18 jasper Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -35,7 +35,7 @@ WANTLIB += ICE QtDBus QtGui QtScript QtScriptTools QtXml SM X11
 WANTLIB += Xext Xi Xinerama Xrender c fontconfig freetype hunspell-1.2
 WANTLIB += m poppler-qt4 pthread stdc++ z
 
-WANTLIB-lua =	lua
+WANTLIB-lua =	${MODLUA_WANTLIB}
 WANTLIB-lua +=	ICE QtCore QtGui QtXml SM X11 Xext Xi Xinerama Xrender
 WANTLIB-lua +=	fontconfig freetype m stdc++
 
@@ -52,7 +52,7 @@ LIB_DEPENDS-main =	qt4->=4.7.2:${MODQT4_LIB_DEPENDS} \
 			x11/dbus \
 			print/poppler,-qt4
 LIB_DEPENDS-lua =	${MODQT4_LIB_DEPENDS} \
-			lang/lua
+			${MODLUA_LIB_DEPENDS}
 LIB_DEPENDS-python =	${MODQT4_LIB_DEPENDS} \
 			${MODPY_LIB_DEPENDS}
 
@@ -74,15 +74,15 @@ pre-configure:
 	${SUBST_CMD} ${PLUGIN_SRC}/TWPythonPlugin/TWPythonPlugin.pro
 
 do-configure:
-	cd ${PLUGIN_SRC}/TWPythonPlugin && qmake4	
-	cd ${PLUGIN_SRC}/TWLuaPlugin && qmake4	
+	cd ${PLUGIN_SRC}/TWPythonPlugin && qmake4
+	cd ${PLUGIN_SRC}/TWLuaPlugin && qmake4
 	cd ${WRKSRC} && qmake4
 
 # build plugins first
 pre-build:
 	cd ${PLUGIN_SRC}/TWPythonPlugin && ${MAKE_PROGRAM}
 	cd ${PLUGIN_SRC}/TWLuaPlugin && ${MAKE_PROGRAM}
-	
+
 # install main stuff and then plugins
 PLUGIN_INSTALLS =	${PLUGIN_SRC}/TWPythonPlugin \
 			${PLUGIN_SRC}/TWLuaPlugin
