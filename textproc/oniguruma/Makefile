@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/01 02:13:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/15 15:38:30 jasper Exp $
 
 COMMENT=	regular expressions library
-DISTNAME=	onig-5.9.1
+DISTNAME=	onig-5.9.2
 SHARED_LIBS=	onig 2.0
-PKGNAME=	oniguruma-5.9.1
-REVISION=	0
-MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/
+PKGNAME=	oniguruma-5.9.2
+MASTER_SITES=	${HOMEPAGE}/archive/
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.geocities.jp/kosako3/oniguruma/
