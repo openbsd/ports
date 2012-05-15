@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.12 2012/05/15 18:14:44 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.13 2012/05/15 19:24:21 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -23,14 +23,14 @@ MODLUA_LIBDIR=	${PREFIX}/lib/lua/${MODLUA_VERSION}/
 # Where the lua modules will be installed to
 MODLUA_DATADIR=	${PREFIX}/share/lua/${MODLUA_VERSION}/
 
-MODLUA_RUN_DEP?=	Yes
-MODLUA_BUILD_DEP?=	Yes
+MODLUA_RUNDEP?=		Yes
+MODLUA_BUILDDEP?=	Yes
 
-.if ${MODLUA_RUN_DEP:L} == yes
+.if ${MODLUA_RUNDEP:L} == yes
 RUN_DEPENDS+=	${MODLUA_RUN_DEPENDS}
 .endif
 
-.if ${NO_BUILD:L} == "no" && ${MODLUA_BUILD_DEP:L} == "yes"
+.if ${NO_BUILD:L} == "no" && ${MODLUA_BUILDDEP:L} == "yes"
 BUILD_DEPENDS+=	${_MODLUA_BUILD_DEPENDS}
 .endif
 

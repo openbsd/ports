@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/15 18:15:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/05/15 19:24:21 jasper Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -31,7 +31,7 @@ WANTLIB +=		Xdmcp Xext Xrandr Xrender c freetype m pthread stdc++
 USE_GMAKE =		Yes
 MODULES +=		devel/cmake \
 			lang/lua
-MODLUA_BUILD_DEP =	No
+MODLUA_BUILDDEP =	No
 CONFIGURE_STYLE =	cmake
 WRKDIST =		${WRKDIR}/blinkensisters/lostpixels/game/software/
 
