@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2012/04/30 00:54:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2012/05/15 18:04:13 jasper Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	7
+REVISION=	8
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -19,18 +19,19 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m mp3lame ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread samplerate sndfile sndio stdc++
 WANTLIB += vorbis vorbisenc vorbisfile z gtk-x11-2.0 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 xml2 lua mac mad mpcdec FLAC avcodec
+WANTLIB += gdk_pixbuf-2.0 xml2 mac mad mpcdec FLAC avcodec
 WANTLIB += avformat avutil jack wavpack lrdf oggz speex cddb cdio
-WANTLIB += cdio_cdda cdio_paranoia modplug
+WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
 WANTLIB += GL pixman-1 png pthread-stubs xcb xcb-render xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/lua
 
 LIB_DEPENDS=	audio/flac \
 		audio/jack \
@@ -43,11 +44,11 @@ LIB_DEPENDS=	audio/flac \
 		audio/speex \
 		audio/wavpack \
 		graphics/ffmpeg \
-		lang/lua \
 		multimedia/oggz \
 		textproc/liblrdf \
 		textproc/libxml \
-		x11/gtk+2
+		x11/gtk+2 \
+		${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS=	devel/desktop-file-utils
 
