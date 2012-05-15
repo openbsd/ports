@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2012/05/11 20:51:04 jasper Exp $
-lib/lua/${MODLUA_VERSION}/lfs.so

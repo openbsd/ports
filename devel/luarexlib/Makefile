@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/05/15 19:48:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/15 20:45:12 jasper Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	lua binding of posix and pcre regex libraries
 DISTNAME=	lrexlib-2.4.0
 PKGNAME=	luarexlib-2.4.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3599/

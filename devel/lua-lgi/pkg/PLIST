@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/15 15:16:29 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2012/05/15 20:45:12 jasper Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
+lib/lua/${MODLUA_VERSION}/lgi/corelgilua51.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/clutterdemo.lua
 share/examples/${FULLPKGNAME}/console.lua

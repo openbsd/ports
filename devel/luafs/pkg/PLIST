@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/15 15:16:29 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2012/05/15 20:45:12 jasper Exp $
+lib/lua/${MODLUA_VERSION}/lfs.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/examples.html
 share/doc/${FULLPKGNAME}/index.html

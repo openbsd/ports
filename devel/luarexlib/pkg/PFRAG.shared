@@ -1,4 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2012/05/11 20:51:04 jasper Exp $
-lib/lua/${MODLUA_VERSION}/rex_onig.so
-lib/lua/${MODLUA_VERSION}/rex_pcre.so
-lib/lua/${MODLUA_VERSION}/rex_posix.so
