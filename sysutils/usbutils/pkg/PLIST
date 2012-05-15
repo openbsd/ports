@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+@bin bin/lsusb
+@comment bin/lsusb.py
+@comment bin/usb-devices
+lib/pkgconfig/
+lib/pkgconfig/usbutils.pc
+@comment man/man1/usb-devices.1
+@man man/man8/lsusb.8
+@comment sbin/update-usbids.sh
+share/usbutils/
+share/usbutils/usb.ids
+share/usbutils/usb.ids.gz

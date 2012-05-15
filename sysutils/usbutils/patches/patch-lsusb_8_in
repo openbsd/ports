@@ -1,0 +1,19 @@
+$OpenBSD: patch-lsusb_8_in,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+
+No '-t' under OpenBSD
+
+--- lsusb.8.in.orig	Tue May 15 14:27:23 2012
++++ lsusb.8.in	Tue May 15 14:27:43 2012
+@@ -41,12 +41,6 @@ The device file should be something like /dev/bus/usb/
+ This option displays detailed information like the \fBv\fP option;
+ you must be root to do this.
+ .TP
+-.B \-t
+-Tells
+-.I lsusb
+-to dump the physical USB device hierarchy as a tree. This overrides the
+-\fBv\fP option.
+-.TP
+ .B \-V, \-\-version
+ Print  version information on standard output,
+ then exit successfully.
