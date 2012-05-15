@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/11 09:38:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/15 07:20:37 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -67,7 +67,7 @@ MULTI_PACKAGES+=	-client
 WANTLIB-client+=	c pthread z
 CONFIGURE_ARGS+=	--enable-network=client
 .else
-ERRORS+=		"Fatal: Conflicting flavors: ${FLAVOR}";
+ERRORS+=		"Fatal: conflicting or unknown flavors: ${FLAVOR}";
 .endif
 
 post-install:
