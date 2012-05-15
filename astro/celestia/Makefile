@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/10/12 08:57:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/05/15 18:03:59 jasper Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	astro x11
 
@@ -25,13 +25,14 @@ WANTLIB += c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
-WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0 lua theora
+WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0 ${MODLUA_WANTLIB} theora
 WANTLIB += Xxf86vm drm gthread-2.0 xcb-render xcb-shm ffi
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/lua
 LIB_DEPENDS=	x11/gtkglext \
-		lang/lua \
-		multimedia/libtheora
+		multimedia/libtheora \
+		${MODLUA_LIB_DEPENDS}
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_LIBTOOL=	Yes
