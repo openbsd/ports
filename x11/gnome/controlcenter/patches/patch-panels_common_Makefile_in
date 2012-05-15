@@ -1,7 +1,7 @@
-$OpenBSD: patch-panels_common_Makefile_in,v 1.4 2012/04/17 11:02:32 jasper Exp $
---- panels/common/Makefile.in.orig	Mon Apr 16 15:25:09 2012
-+++ panels/common/Makefile.in	Tue Apr 17 12:52:09 2012
-@@ -338,7 +338,7 @@ AM_CPPFLAGS = \
+$OpenBSD: patch-panels_common_Makefile_in,v 1.5 2012/05/15 14:31:18 ajacoutot Exp $
+--- panels/common/Makefile.in.orig	Tue May 15 12:20:17 2012
++++ panels/common/Makefile.in	Tue May 15 16:22:04 2012
+@@ -350,7 +350,7 @@ AM_CPPFLAGS = \
  	$(LIBLANGUAGE_CFLAGS)				\
  	-DDATADIR=\""$(datadir)"\"			\
  	-DUIDIR=\""$(pkgdatadir)/ui"\"			\

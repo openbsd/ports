@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.16 2012/04/17 11:02:32 jasper Exp $
+$OpenBSD: patch-configure,v 1.17 2012/05/15 14:31:18 ajacoutot Exp $
 
 No libwacom on OpenBSD (depends on gudev; gnome-bluetooth is needed for
 the wacom panel).
 
---- configure.orig	Mon Apr 16 15:25:07 2012
-+++ configure	Tue Apr 17 12:52:09 2012
-@@ -15558,124 +15558,6 @@ $as_echo "yes" >&6; }
+--- configure.orig	Tue May 15 12:20:15 2012
++++ configure	Tue May 15 16:22:04 2012
+@@ -15671,124 +15671,6 @@ $as_echo "yes" >&6; }
  
  fi
  
