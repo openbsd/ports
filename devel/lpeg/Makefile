@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/22 18:09:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/15 15:16:29 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	parsing expression grammars library for lua
 DISTNAME=	lpeg-0.10.2
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.inf.puc-rio.br/~roberto/lpeg/
 
@@ -24,10 +25,9 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/makefile
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lpeg
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR} ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKBUILD}/lpeg.so ${MODLUA_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/{lpeg,re}.html ${PREFIX}/share/doc/lpeg
+	${INSTALL_DATA} ${WRKSRC}/{lpeg,re}.html ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/re.lua ${MODLUA_DATADIR}
 
 do-regress:

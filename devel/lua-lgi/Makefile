@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/11 21:19:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/15 15:16:29 jasper Exp $
 
 COMMENT=	lua bindings to libraries using GObject-Introspection
 
 DISTNAME=	lgi-0.5
 PKGNAME=	lua-${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	https://github.com/pavouk/lgi
@@ -31,8 +32,8 @@ MAKE_ENV=	MAKE=${MAKE_PROGRAM}
 REGRESS_TARGET= check
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/lua-lgi/
+	${INSTALL_DATA_DIR} ${MODLUA_EXAMPLEDIR}
 	cd ${WRKSRC}/samples/ && umask 022 && \
-		pax -rw . ${PREFIX}/share/examples/lua-lgi/
+		pax -rw . ${MODLUA_EXAMPLEDIR}
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/11 21:24:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/15 15:19:37 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lua binding to OpenSSL to provide TLS/SSL communication
 DISTNAME=	luasec-0.4.1
+REVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${HOMEPAGE}/download/
 
@@ -24,16 +25,15 @@ WANTLIB+=	crypto ssl
 
 MAKE_ENV+=	INCDIR="-I${LOCALBASE}/include/" SAVECFLAGS="${CFLAGS}"
 ALL_TARGET=	bsd
-EXAMPLEDIR=	${PREFIX}/share/examples/luasec
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR} ${EXAMPLEDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR} ${MODLUA_EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/ssl.so ${MODLUA_LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/ssl.lua ${MODLUA_DATADIR}
 	cd ${WRKSRC}/samples && \
 		find . -type d \
-			-exec ${INSTALL_DATA_DIR} ${EXAMPLEDIR}/{} \; && \
+			-exec ${INSTALL_DATA_DIR} ${MODLUA_EXAMPLEDIR}/{} \; && \
 		find . ! -type d \
-			-exec ${INSTALL_DATA} -m 644 {} ${EXAMPLEDIR}/{} \;
+			-exec ${INSTALL_DATA} -m 644 {} ${MODLUA_EXAMPLEDIR}/{} \;
 
 .include <bsd.port.mk>

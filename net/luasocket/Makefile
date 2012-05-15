@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/06/18 18:11:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2012/05/15 15:16:05 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	network support for the lua language
 DISTNAME=	luasocket-2.0.2
+REVISION=	0
 CATEGORIES=	net
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2664/
@@ -23,8 +24,7 @@ MAKE_FILE=	makefile
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/socket ${MODLUA_DATADIR}/mime
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}/socket ${MODLUA_LIBDIR}/mime
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luasocket
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/luasocket
+	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR} ${MODLUA_EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/src/socket.so ${MODLUA_LIBDIR}/socket/core.so
 	${INSTALL_DATA} ${WRKSRC}/src/unix.so ${MODLUA_LIBDIR}/socket/unix.so
 	${INSTALL_DATA} ${WRKSRC}/src/mime.so ${MODLUA_LIBDIR}/mime/core.so
@@ -36,7 +36,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/smtp.lua ${MODLUA_DATADIR}/socket
 	${INSTALL_DATA} ${WRKSRC}/src/tp.lua ${MODLUA_DATADIR}/socket
 	${INSTALL_DATA} ${WRKSRC}/src/url.lua ${MODLUA_DATADIR}/socket
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/luasocket
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${PREFIX}/share/examples/luasocket
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${MODLUA_DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${MODLUA_EXAMPLEDIR}
 
 .include <bsd.port.mk>

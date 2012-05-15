@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/05/11 20:51:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/15 15:16:29 jasper Exp $
 lib/lua/${MODLUA_VERSION}/pack.so
-share/doc/luapack/
-share/doc/luapack/README
-share/examples/luapack/
-share/examples/luapack/test.lua
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/README
+share/examples/${FULLPKGNAME}/
+share/examples/${FULLPKGNAME}/test.lua

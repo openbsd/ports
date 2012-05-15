@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/11 20:51:04 jasper Exp $
-share/doc/luacopas/
-share/doc/luacopas/copas.png
-share/doc/luacopas/index.html
-share/doc/luacopas/license.html
-share/doc/luacopas/manual.html
-share/doc/luacopas/reference.html
+@comment $OpenBSD: PLIST,v 1.6 2012/05/15 15:16:29 jasper Exp $
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/copas.png
+share/doc/${FULLPKGNAME}/index.html
+share/doc/${FULLPKGNAME}/license.html
+share/doc/${FULLPKGNAME}/manual.html
+share/doc/${FULLPKGNAME}/reference.html
 share/lua/${MODLUA_VERSION}/copas.lua

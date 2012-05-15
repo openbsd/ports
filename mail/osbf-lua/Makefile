@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/05/15 15:16:05 jasper Exp $
 
 COMMENT=	lua text classification module and anti-spam solution
 
 DISTNAME=	osbf-lua-2.0.4
-REVISION =	1
+REVISION =	2
 CATEGORIES=	mail
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/2094/
@@ -28,11 +28,11 @@ do-build:
 		${WRKDIST}/osbf_aux.o -L${LOCALBASE}/lib -o ${WRKDIST}/osbf.so
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/osbf-lua
 	${INSTALL_DATA} ${WRKSRC}/osbf.so ${MODLUA_LIBDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/spamfilter/*.lua ${PREFIX}/share/osbf-lua
-	${INSTALL_DATA} ${WRKSRC}/spamfilter/*sample ${PREFIX}/share/osbf-lua
-	${INSTALL_DATA} ${WRKSRC}/spamfilter/*help ${PREFIX}/share/osbf-lua
+	${INSTALL_SCRIPT} ${WRKSRC}/spamfilter/*.lua ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/spamfilter/*sample ${MODLUA_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/spamfilter/*help ${MODLUA_DATADIR}
 
 .include <bsd.port.mk>
