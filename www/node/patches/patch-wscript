@@ -1,7 +1,7 @@
-$OpenBSD: patch-wscript,v 1.11 2012/05/07 18:11:29 jasper Exp $
---- wscript.orig	Fri May  4 22:12:52 2012
-+++ wscript	Mon May  7 20:09:43 2012
-@@ -540,7 +540,7 @@ def configure(conf):
+$OpenBSD: patch-wscript,v 1.12 2012/05/15 17:37:34 jasper Exp $
+--- wscript.orig	Tue May 15 02:30:00 2012
++++ wscript	Tue May 15 19:17:28 2012
+@@ -537,7 +537,7 @@ def configure(conf):
  
    # Configure default variant
    conf.setenv('Release')

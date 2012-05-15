@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_module_js,v 1.2 2012/05/07 18:11:29 jasper Exp $
---- lib/module.js.orig	Fri May  4 22:12:52 2012
-+++ lib/module.js	Mon May  7 20:09:43 2012
-@@ -482,6 +482,8 @@ Module.runMain = function() {
+$OpenBSD: patch-lib_module_js,v 1.3 2012/05/15 17:37:34 jasper Exp $
+--- lib/module.js.orig	Tue May 15 02:30:00 2012
++++ lib/module.js	Tue May 15 19:17:28 2012
+@@ -487,6 +487,8 @@ Module.runMain = function() {
  Module._initPaths = function() {
    var paths = [path.resolve(process.execPath, '..', '..', 'lib', 'node')];
  
