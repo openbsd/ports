@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/23 09:39:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2012/05/15 19:48:30 jasper Exp $
 
 COMMENT =	lua binding of libevent
 SHARED_ONLY =	Yes
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	event lua
+WANTLIB =	event ${MODLUA_WANTLIB}
 
 MASTER_SITES =	http://matthewwild.co.uk/uploads/
 
@@ -41,5 +41,5 @@ do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}/luaevent
 	${INSTALL_DATA} ${WRKSRC}/lua/luaevent.lua ${MODLUA_DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/src/*.so ${MODLUA_LIBDIR}/luaevent
-                                        
+
 .include <bsd.port.mk>
