@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2012/02/20 07:59:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/15 06:26:37 ajacoutot Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
-V =		0.10.10.1
+V =		0.10.10.2
 NAME =		gstreamermm
 DISTNAME =	${NAME}-${V}
 
@@ -17,7 +17,7 @@ WANTLIB += gstcdda-0.10 gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB += gstinterfaces-0.10 gstnet-0.10 gstnetbuffer-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 m pcre pthread sigc-2.0 stdc++ xml++-2.6
-WANTLIB += xml2 z
+WANTLIB += xml2 z orc-0.4
 
 MASTER_SITES =	${MASTER_SITE_GNOME:=sources/${NAME}/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
