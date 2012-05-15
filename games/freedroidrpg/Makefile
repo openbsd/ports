@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/15 07:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/05/15 18:21:12 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT=	isometric RPG game
 
 M_V=		0.15
 DISTNAME=	freedroidrpg-${M_V}rc2
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://freedroid.sourceforge.net/
@@ -19,15 +20,17 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
-WANTLIB += lua m ogg png pthread vorbis z
+WANTLIB += ${MODLUA_WANTLIB} m ogg png pthread vorbis z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/freedroidRPG/freedroidRPG-${M_V}/}
+
+MODULES=	lang/lua
 
 LIB_DEPENDS=	devel/libexecinfo \
 		devel/sdl-gfx \
 		devel/sdl-image \
 		devel/sdl-mixer \
-		lang/lua
+		${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

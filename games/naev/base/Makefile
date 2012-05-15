@@ -1,20 +1,22 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/07 07:31:36 kirby Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/15 18:21:12 jasper Exp $
 
 COMMENT =		2D space trading and combat game
 
 DISTNAME =		naev-${VERSION}
+REVISION =		0
 
 EXTRACT_SUFX = 		.tar.bz2
 
-WANTLIB += GL SDL SDL_mixer c freetype lua m ogg png pthread vorbis
-WANTLIB += vorbisfile xml2 z
+WANTLIB += GL SDL SDL_mixer c freetype m ogg png pthread vorbis
+WANTLIB += vorbisfile xml2 z ${MODLUA_WANTLIB}
 
+MODULES =		lang/lua
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/naev/data=${VERSION}
 LIB_DEPENDS =		devel/sdl-mixer \
 			graphics/png \
-			lang/lua \
-			textproc/libxml
+			textproc/libxml \
+			${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-shave \

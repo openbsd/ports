@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/15 18:14:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/15 18:21:12 jasper Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -37,7 +37,8 @@ LIB_DEPENDS=		audio/libmodplug \
 			devel/sdl \
 			graphics/DevIL \
 			graphics/ilmbase \
-			graphics/openexr
+			graphics/openexr \
+			${MODLUA_LIB_DEPENDS}
 
 USE_LIBTOOL=		Yes
 
