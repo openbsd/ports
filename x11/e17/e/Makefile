@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/01/13 00:55:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2012/05/15 19:38:01 jasper Exp $
 
 COMMENT =		the enlightened window manager
 
@@ -8,7 +8,7 @@ SHARED_ONLY =		Yes
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION =		4
+REVISION =		5
 EPOCH =			0
 
 # BSD
@@ -26,8 +26,8 @@ WANTLIB += curl dbus-1 ebluez econnman ecore ecore_con ecore_evas
 WANTLIB += ecore_file ecore_imf ecore_imf_evas ecore_input ecore_input_evas
 WANTLIB += ecore_ipc ecore_x edbus edje eet efreet efreet_mime
 WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo
-WANTLIB += expat fribidi fontconfig freetype glib-2.0 idn jpeg lua m pcre
-WANTLIB += pthread ssl xcb z
+WANTLIB += expat fribidi fontconfig freetype glib-2.0 idn jpeg ${MODLUA_WANTLIB}
+WANTLIB += m pcre pthread ssl xcb z
 
 LIB_DEPENDS =		x11/e17/edje>=1.0 \
 			x11/e17/efreet>=1.0 \

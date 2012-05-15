@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2012/04/13 21:21:10 pascal Exp $
+# $OpenBSD: Makefile,v 1.31 2012/05/15 19:38:01 jasper Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-REVISION=	8
+REVISION=	9
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -20,15 +20,16 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=	c crypto kvm idn m ncurses ossaudio pthread ssl z \
-		glib-2.0 pcre curl xml2 lua>=5.1
+		glib-2.0 pcre curl xml2 ${MODLUA_WANTLIB}
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/lua
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/pcre \
 		net/curl \
 		textproc/libxml \
-		lang/lua
+		${MODLUA_LIB_DEPENDS}
 
 USE_LIBTOOL=	Yes
 
