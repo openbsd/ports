@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2012/05/09 15:26:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.257 2012/05/15 13:46:03 mpi Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -192,6 +192,7 @@
      SUBDIR += upower
      SUBDIR += upsd
      SUBDIR += usbutil
+     SUBDIR += usbutils
      SUBDIR += vifm
      SUBDIR += vmwh
      SUBDIR += wdsetup
