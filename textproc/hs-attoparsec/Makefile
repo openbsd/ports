@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/28 19:27:13 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/15 08:07:27 jasper Exp $
 
 COMMENT =		fast combinator parsing for bytestrings
 
 DISTNAME =		attoparsec-0.10.1.0
+REVISION =		0
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>, \
@@ -20,9 +21,6 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 RUN_DEPENDS =		devel/hs-deepseq \
 			devel/hs-text>=0.11.1.5
-BUILD_DEPENDS =		${RUN_DEPENDS}
-
-RUN_DEPENDS =		devel/hs-deepseq
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
