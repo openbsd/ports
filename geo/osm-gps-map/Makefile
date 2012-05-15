@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/05/15 11:48:14 jasper Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
 DISTNAME=		osm-gps-map-0.5.0
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  osmgpsmap 0.0 # .0.0
 CATEGORIES=		geo x11
 
@@ -37,5 +37,7 @@ AUTOMAKE_VERSION=	1.8
 AUTOCONF_VERSION=	2.64
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=		osm_gps_mapdocdir=${PREFIX}/share/doc/osm-gps-map/
 
 .include <bsd.port.mk>
