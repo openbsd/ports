@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/07/09 12:53:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2012/05/15 18:28:36 jasper Exp $
 
 COMMENT=	remote IMAP filtering utility
 
 DISTNAME=	imapfilter-2.2.3
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://imapfilter.hellug.gr/
@@ -18,10 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c crypto m ssl pcre lua
+WANTLIB=	c crypto m ssl pcre ${MODLUA_WANTLIB}
+
+MODULES=	lang/lua
 
 LIB_DEPENDS=	devel/pcre \
-		lang/lua
+		${MODLUA_LIB_DEPENDS}
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS=	-p ${PREFIX} \
