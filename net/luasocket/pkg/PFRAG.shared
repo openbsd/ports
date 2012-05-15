@@ -1,6 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.6 2012/05/11 20:51:48 jasper Exp $
-lib/lua/${MODLUA_VERSION}/mime/
-lib/lua/${MODLUA_VERSION}/mime/core.so
-lib/lua/${MODLUA_VERSION}/socket/
-lib/lua/${MODLUA_VERSION}/socket/core.so
-lib/lua/${MODLUA_VERSION}/socket/unix.so

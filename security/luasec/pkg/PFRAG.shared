@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2012/05/11 20:51:57 jasper Exp $
-lib/lua/${MODLUA_VERSION}/ssl.so

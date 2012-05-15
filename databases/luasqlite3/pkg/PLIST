@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/15 17:34:05 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.5 2012/05/15 20:36:28 jasper Exp $
+lib/lua/${MODLUA_VERSION}/sqlite3/
+lib/lua/${MODLUA_VERSION}/sqlite3/core.so
 share/doc/${FULLPKGNAME}/
 share/doc/${FULLPKGNAME}/documentation.html
 share/examples/${FULLPKGNAME}/
