@@ -1,13 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/11 20:50:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/05/15 17:34:05 jasper Exp $
 %%SHARED%%
-share/doc/luasqlite3/
-share/doc/luasqlite3/documentation.html
-share/examples/luasqlite3/
-share/examples/luasqlite3/aggregate.lua
-share/examples/luasqlite3/function.lua
-share/examples/luasqlite3/order.lua
-share/examples/luasqlite3/simple.lua
-share/examples/luasqlite3/smart.lua
-share/examples/luasqlite3/statement.lua
-share/examples/luasqlite3/tracing.lua
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/documentation.html
+share/examples/${FULLPKGNAME}/
+share/examples/${FULLPKGNAME}/aggregate.lua
+share/examples/${FULLPKGNAME}/function.lua
+share/examples/${FULLPKGNAME}/order.lua
+share/examples/${FULLPKGNAME}/simple.lua
+share/examples/${FULLPKGNAME}/smart.lua
+share/examples/${FULLPKGNAME}/statement.lua
+share/examples/${FULLPKGNAME}/tracing.lua
 share/lua/${MODLUA_VERSION}/sqlite3.lua
