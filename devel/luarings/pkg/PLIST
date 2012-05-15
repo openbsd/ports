@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/05/11 20:51:04 jasper Exp $
-doc/
-doc/luarings/
-doc/luarings/index.html
-doc/luarings/license.html
-doc/luarings/manual.html
-doc/luarings/rings.png
+@comment $OpenBSD: PLIST,v 1.5 2012/05/15 08:45:11 jasper Exp $
+share/doc/luarings/
+share/doc/luarings/index.html
+share/doc/luarings/license.html
+share/doc/luarings/manual.html
+share/doc/luarings/rings.png
 lib/lua/${MODLUA_VERSION}/rings.so
 share/lua/${MODLUA_VERSION}/stable.lua
