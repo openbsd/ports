@@ -1,77 +1,35 @@
-$OpenBSD: patch-Makefile,v 1.4 2012/03/11 17:42:05 dcoppa Exp $
+$OpenBSD: patch-Makefile,v 1.5 2012/05/15 08:05:19 dcoppa Exp $
 --- Makefile.orig	Fri Mar  2 14:18:35 2012
-+++ Makefile	Sun Mar 11 16:43:56 2012
-@@ -2,10 +2,10 @@
- # You can tweak these three variables to make things install where you
- # like, but do not touch more unless you know what you are doing. ;)
- #
--DESTDIR=
--SYSCONFDIR=$(DESTDIR)/etc
--BINDIR=$(DESTDIR)/usr/sbin
--MANDIR=$(DESTDIR)/usr/share/man
-+DESTDIR?=
-+SYSCONFDIR=$(DESTDIR)/etc/${NAME}
-+BINDIR=${PREFIX}/sbin
-+MANDIR=${PREFIX}/man
- 
- #
- # Careful now...
-@@ -13,34 +13,26 @@ MANDIR=$(DESTDIR)/usr/share/man
- # _ALL_SOURCE is for AIX 5.3 LOG_PERROR constant
- #
++++ Makefile	Tue May 15 09:59:18 2012
+@@ -15,7 +15,7 @@ MANDIR=$(DESTDIR)/usr/share/man
  NAME=cntlm
--CC=gcc
-+CC?=gcc
+ CC=gcc
  VER=`cat VERSION`
 -CFLAGS+=$(FLAGS) -std=c99 -Wall -Wno-unused-but-set-variable -pedantic -O3 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"`cat VERSION`\"
-+OBJS=utils.o ntlm.o xcrypt.o config.o socket.o acl.o auth.o http.o forward.o direct.o scanner.o pages.o main.o
-+CFLAGS+=$(FLAGS) -std=c99 -pedantic -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"`cat VERSION`\"
++CFLAGS+=-std=c99 -D__BSD_VISIBLE -D_ALL_SOURCE -D_XOPEN_SOURCE=600 -D_POSIX_C_SOURCE=200112 -D_ISOC99_SOURCE -D_REENTRANT -D_BSD_SOURCE -DVERSION=\"`cat VERSION`\"
  OS=$(shell uname -s)
  OSLDFLAGS=$(shell [ $(OS) = "SunOS" ] && echo "-lrt -lsocket -lnsl")
--LDFLAGS:=-lpthread $(OSLDFLAGS)
-+LDFLAGS:=-pthread $(OSLDFLAGS)
+ LDFLAGS:=-lpthread $(OSLDFLAGS)
+@@ -28,19 +28,20 @@ endif
  
--ifeq ($(findstring CYGWIN,$(OS)),)
--	OBJS=utils.o ntlm.o xcrypt.o config.o socket.o acl.o auth.o http.o forward.o direct.o scanner.o pages.o main.o
--else
--	OBJS=utils.o ntlm.o xcrypt.o config.o socket.o acl.o auth.o http.o forward.o direct.o scanner.o pages.o main.o win/resources.o
--endif
--
  $(NAME): configure-stamp $(OBJS)
--	@echo "Linking $@"
+ 	@echo "Linking $@"
 -	@$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
 +	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
  
  main.o: main.c
--	@echo "Compiling $<"
--	@if [ -z "$(SYSCONFDIR)" ]; then \
-+	if [ -z "$(SYSCONFDIR)" ]; then \
+ 	@echo "Compiling $<"
+ 	@if [ -z "$(SYSCONFDIR)" ]; then \
  		$(CC) $(CFLAGS) -c main.c -o $@; \
  	else \
++		echo $(CC) $(CFLAGS) -DSYSCONFDIR=\"$(SYSCONFDIR)\" -c main.c -o $@; \
  		$(CC) $(CFLAGS) -DSYSCONFDIR=\"$(SYSCONFDIR)\" -c main.c -o $@; \
  	fi
  
  .c.o:
--	@echo "Compiling $<"
+ 	@echo "Compiling $<"
 -	@$(CC) $(CFLAGS) -c -o $@ $<
 +	$(CC) $(CFLAGS) -c -o $@ $<
  
  install: $(NAME)
  	# Special handling for install(1)
-@@ -54,12 +46,11 @@ install: $(NAME)
- 		[ -f $(SYSCONFDIR)/$(NAME).conf -o -z "$(SYSCONFDIR)" ] \
- 			|| install -d -m 600 doc/$(NAME).conf $(SYSCONFDIR)/$(NAME).conf; \
- 	else \
--		install -D -m 755 -s $(NAME) $(BINDIR)/$(NAME); \
--		install -D -m 644 doc/$(NAME).1 $(MANDIR)/man1/$(NAME).1; \
--		[ -f $(SYSCONFDIR)/$(NAME).conf -o -z "$(SYSCONFDIR)" ] \
--			|| install -D -m 600 doc/$(NAME).conf $(SYSCONFDIR)/$(NAME).conf; \
-+		${INSTALL_PROGRAM} $(NAME) $(BINDIR)/$(NAME); \
-+		${INSTALL_MAN} doc/$(NAME).1 $(MANDIR)/man1/$(NAME).1; \
-+		${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}; \
-+		${INSTALL_DATA} doc/$(NAME).conf ${PREFIX}/share/examples/${NAME}/${NAME}.conf; \
- 	fi
--	@echo; echo "Cntlm will look for configuration in $(SYSCONFDIR)/$(NAME).conf"
- 
- tgz:
- 	mkdir -p tmp
