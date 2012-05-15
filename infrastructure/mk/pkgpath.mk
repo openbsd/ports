@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.45 2012/05/07 21:11:44 halex Exp $
+# $OpenBSD: pkgpath.mk,v 1.46 2012/05/15 11:48:07 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -66,6 +66,12 @@ _pflavor_fragment = \
 	toset="PKGPATH=$$dir ARCH=${ARCH}"; \
 	case X$$multi in "X");; *) \
 		toset="$$toset SUBPACKAGE=\"$$multi\"";; \
+	esac; \
+	case $$dir in \
+	*/) echo 1>&2 ">> Broken dependency, $$dir ends with / - $$extra_msg"; \
+		reported=true;; \
+	*//*) echo 1>&2 ">> Broken dependency, $$dir contains // - $$extra_msg"; \
+		reported=true;; \
 	esac; \
 	if $$sawflavor; then \
 		toset="$$toset FLAVOR=\"$$flavor\""; \
