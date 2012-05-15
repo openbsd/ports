@@ -5,4 +5,8 @@ from cron, if a file is modified you will get only one report, while
 subsequent checks of that file will ignore the modification as it is
 already reported (unless the file is modified again).
 
+Samhain can optionally be used as client/server system to provide
+centralized monitoring for multiple host. Logging to a (MySQL or
+PostgreSQL) database is supported.
+
 This package contains the client part.
