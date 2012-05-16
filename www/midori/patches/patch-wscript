@@ -1,11 +1,9 @@
-$OpenBSD: patch-wscript,v 1.21 2012/04/16 21:10:06 landry Exp $
+$OpenBSD: patch-wscript,v 1.22 2012/05/16 07:16:13 landry Exp $
 
 Fix paths to config files.
 
-chunk 2 : fix libsoup detection defines
-http://git.xfce.org/apps/midori/commit/?id=c7c172f7ffc9316be5954c920654e1deb9f470b7
---- wscript.orig	Sat Apr 14 21:17:35 2012
-+++ wscript	Mon Apr 16 23:01:15 2012
+--- wscript.orig	Tue May 15 00:13:42 2012
++++ wscript	Tue May 15 17:12:44 2012
 @@ -73,7 +73,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
@@ -15,22 +13,7 @@ http://git.xfce.org/apps/midori/commit/?id=c7c172f7ffc9316be5954c920654e1deb9f47
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -260,11 +260,11 @@ def configure (conf):
-     check_pkg ('libsoup-2.4', '2.27.90')
-     conf.define ('LIBSOUP_VERSION', conf.check_cfg (modversion='libsoup-2.4'))
-     if check_version (conf.env['LIBSOUP_VERSION'], 2, 29, 3):
--        conf.define ('LIBSOUP_2_29_3', 1)
-+        conf.define ('HAVE_LIBSOUP_2_29_3', 1)
-     if check_version (conf.env['LIBSOUP_VERSION'], 2, 29, 91):
--        conf.define ('LIBSOUP_2_29_91', 1)
-+        conf.define ('HAVE_LIBSOUP_2_29_91', 1)
-     if check_version (conf.env['LIBSOUP_VERSION'], 2, 37, 1):
--        conf.define ('LIBSOUP_2_37_1', 1)
-+        conf.define ('HAVE_LIBSOUP_2_37_1', 1)
-     check_pkg ('libxml-2.0', '2.6')
-     check_pkg ('sqlite3', '3.0', True, var='SQLITE')
- 
-@@ -459,7 +459,7 @@ def build (bld):
+@@ -461,7 +461,7 @@ def build (bld):
              'AUTHORS COPYING ChangeLog EXPAT README data/faq.html data/faq.css')
  
      # Install default configuration
@@ -39,7 +22,7 @@ http://git.xfce.org/apps/midori/commit/?id=c7c172f7ffc9316be5954c920654e1deb9f47
  
      if bld.env['INTLTOOL']:
          obj = bld.new_task_gen ('intltool_po')
-@@ -531,7 +531,7 @@ def build (bld):
+@@ -533,7 +533,7 @@ def build (bld):
              for extension in extensions:
                  source = 'data/extensions/' + extension +  '/config'
                  if os.path.exists (source):
