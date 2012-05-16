@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/15 15:16:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/16 12:04:19 jasper Exp $
 
 COMMENT=	documentation generation tool for Lua
 
 DISTNAME=	luadoc-3.0.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://luadoc.luaforge.net/
@@ -24,19 +24,17 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
 LUADOC_DIR =	${MODLUA_DATADIR}/luadoc
-DOCLET_DIR =	${MODLUA_DOCDIR}/doclet
+DOCLET_DIR =	${MODLUA_DATADIR}/luadoc/doclet
+TAGLET_DIR =	${MODLUA_DATADIR}/luadoc/taglet
 HTML_DIR =	${DOCLET_DIR}/html
-TAGLET_DIR =	${MODLUA_DOCDIR}/taglet
 STANDARD_DIR =	${TAGLET_DIR}/standard
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/luadoc.lua.in ${PREFIX}/bin/luadoc
 	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR}
-	${INSTALL_DATA_DIR} ${DOCLET_DIR}
-	${INSTALL_DATA_DIR} ${HTML_DIR}
-	${INSTALL_DATA_DIR} ${TAGLET_DIR}
-	${INSTALL_DATA_DIR} ${STANDARD_DIR}
-	${INSTALL_DATA} ${WRKSRC}/src/luadoc/*.lua ${MODLUA_DOCDIR}/
+	${INSTALL_DATA_DIR} ${DOCLET_DIR} ${TAGLET_DIR}
+	${INSTALL_DATA_DIR} ${HTML_DIR} ${STANDARD_DIR}
+	${INSTALL_DATA} ${WRKSRC}/src/luadoc/*.lua ${LUADOC_DIR}/
 	${INSTALL_DATA} ${WRKSRC}/src/luadoc/doclet/*.lua \
 		${DOCLET_DIR}/
 	${INSTALL_DATA} ${WRKSRC}/src/luadoc/doclet/html/*.{css,lp} \
@@ -47,8 +45,6 @@ do-install:
 		${STANDARD_DIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/us/examples/lfs/lfs.luadoc \
 		${MODLUA_DOCDIR}/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luadoc/
-	${INSTALL_DATA} ${WRKSRC}/doc/us/*.{html,png,vsd} \
-		${PREFIX}/share/doc/luadoc/
+	${INSTALL_DATA} ${WRKSRC}/doc/us/*.{html,png,vsd} ${MODLUA_DOCDIR}
 
 .include <bsd.port.mk>
