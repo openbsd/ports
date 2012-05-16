@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/16 07:47:21 ajacoutot Exp $
 
-COMMENT =	EventLog library
+COMMENT =	replacement for the syslog() API
 
 V =		0.2.12
 DISTNAME =	eventlog-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils
 
 SHARED_LIBS =	evtlog	1.0
