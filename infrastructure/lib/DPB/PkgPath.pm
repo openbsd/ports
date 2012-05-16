@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.29 2012/05/15 10:10:13 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.30 2012/05/16 08:22:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -53,6 +53,7 @@ sub fullpkgname
 	}
 }
 
+# requires flavor as a hash
 sub flavor
 {
 	my $self = shift;
@@ -62,7 +63,11 @@ sub flavor
 sub subpackage
 {
 	my $self = shift;
-	return $self->{info}{SUBPACKAGE};
+	if (defined $self->{info} && defined $self->{info}{SUBPACKAGE}) {
+		return ${$self->{info}{SUBPACKAGE}};
+	} else {
+		return undef;
+	}
 }
 
 sub dump

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.1 2012/05/15 10:10:13 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.2 2012/05/16 08:22:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -209,7 +209,7 @@ sub zap_default
 {
 	my ($self, $subpackage) = @_;
 	return $self unless defined $subpackage and defined $self->multi;
-	if ($subpackage->string eq $self->multi) {
+	if ($subpackage eq $self->multi) {
 		my $o = bless {p => $self->{p}}, ref($self);
 		if (defined $self->{f}) {
 			$o->{f} = $self->{f};
