@@ -5,10 +5,10 @@ different.
 
 Extra features always included:
 
-- table lookups using PCRE (Perl-Compatible Regular Expression)
+- table lookups using PCRE (Perl-Compatible Regular Expression), SQLite
 - authenticated SMTP using Dovecot SASL
 
 Optional features included using flavors:
 
 - authenticated SMTP using Cyrus SASL v2
-- table lookups using LDAP, MySQL, PostgreSQL, BerkeleyDB, SQLite
+- table lookups using LDAP, MySQL, PostgreSQL, BerkeleyDB

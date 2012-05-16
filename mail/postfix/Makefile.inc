@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.84 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.85 2012/05/16 14:40:08 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -32,17 +32,18 @@ MAKE_DEBUG?=
 MAKE_CCARGS+=	-I. -I../../include
 MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
 MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
+MAKE_CCARGS+=	-DHAS_SQLITE
 MAKE_CCARGS+=	-DUSE_TLS
 MAKE_CCARGS+=	-DUSE_SASL_AUTH
-MAKE_AUXLIBS+=	-lssl -lcrypto
+MAKE_AUXLIBS+=	-lssl -lcrypto -lsqlite3 -pthread
 
-WANTLIB=	c crypto ssl pcre
+WANTLIB=	c crypto pcre pthread sqlite3 ssl
 
 ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS+=	sasl2 ldap mysql pgsql db4 sqlite
+FLAVORS+=	sasl2 ldap mysql pgsql db4
 FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
@@ -78,12 +79,6 @@ LIB_DEPENDS+=	databases/db/v4>=4,<5
 WANTLIB+=	lib/db4/db>=4
 MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
-.endif
-
-.if ${FLAVOR:L:Msqlite}
-WANTLIB+=	pthread sqlite3
-MAKE_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
-MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3 -pthread
 .endif
 
 pre-configure:
