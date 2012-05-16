@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/15 09:47:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/05/16 09:36:53 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -12,9 +12,9 @@ FULLPKGNAME-client=	samhain-${VERSION}
 FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
 
-REVISION-main=		0
-REVISION-client=	1
-REVISION-server=	0
+REVISION-main=		1
+REVISION-client=	2
+REVISION-server=	1
 
 CATEGORIES=		security
 
@@ -52,7 +52,7 @@ SUBST_VARS=		FLAVOR
 BACKEND=		${FLAVOR}
 .if ${BACKEND} == "mysql"
 MULTI_PACKAGES+=	-server
-RUN_DEPENDS+=		${BASE_PKGPATH},-main
+RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/mysql,-main
 WANTLIB-server+=	c crypto m mysqlclient ssl z
 CONFIGURE_ARGS+=	--with-database=mysql \
@@ -61,14 +61,14 @@ CONFIGURE_ARGS+=	--with-database=mysql \
 			--with-libs=-L${LOCALBASE}/lib/mysql
 .elif ${BACKEND} == "postgresql"
 MULTI_PACKAGES+=	-server
-RUN_DEPENDS+=		${BASE_PKGPATH},-main
+RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/postgresql,-main
 WANTLIB-server+=	c m pq
 CONFIGURE_ARGS+=	--with-database=postgresql \
 			--enable-xml-log
 .elif ${BACKEND} == "no_server"
 MULTI_PACKAGES+=	-client
-RUN_DEPENDS+=		${BASE_PKGPATH},-main
+RUN_DEPENDS-client+=	security/samhain,-main
 WANTLIB-client+=	c pthread z
 CONFIGURE_ARGS+=	--enable-network=client
 .else
