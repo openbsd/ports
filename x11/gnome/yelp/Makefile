@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2012/04/17 08:27:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.82 2012/05/16 06:12:04 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
-GNOME_VERSION=		3.4.1
+GNOME_VERSION=		3.4.2
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 
@@ -17,15 +17,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
-WANTLIB += bz2 c cairo cairo-gobject drm enchant expat exslt fontconfig
-WANTLIB += freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gstapp-0.10
-WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += bz2 c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
+WANTLIB += expat exslt ffi fontconfig freetype gailutil-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gstapp-0.10 gstaudio-0.10 gstbase-0.10
+WANTLIB += gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 icudata icui18n icuuc
-WANTLIB += jpeg lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += stdc++ webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z ffi javascriptcoregtk-3.0 orc-0.4
+WANTLIB += javascriptcoregtk-3.0 jpeg lzma m orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB += pthread-stubs soup-2.4 sqlite3 stdc++ webkitgtk-3.0
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 
 MODULES=		devel/gettext \
 			x11/gnome \
