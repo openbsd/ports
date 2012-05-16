@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_include_thread_h,v 1.1 2012/05/16 12:09:35 sthen Exp $
+--- src/include/thread.h.orig	Wed May 16 05:35:18 2012
++++ src/include/thread.h	Wed May 16 05:36:30 2012
+@@ -103,7 +103,7 @@
+ #endif
+ 
+ #if defined(__GNUC__) && (defined(_GLIBCXX_ATOMIC_BUILTINS) || (__GNUC__ * 100 + __GNUC_MINOR__ >= 401))
+-#if !defined(__FreeBSD__) || defined(__x86_64__)
++#if !(defined(__FreeBSD__) || defined(__OpenBSD__)) || defined(__x86_64__)
+ #define USE_GCC_ATOMICS
+ #endif
+ #endif
