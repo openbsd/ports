@@ -1,0 +1,7 @@
+The logfmon daemon monitors a set of syslog log files and matches each
+new entry against the rules defined in its configuration file.  Each
+rule may be tested against entries from a single file, a set of files or
+from all files. Depending on the rule, a command may be executed or the
+entry may be ignored. All unmatched messages are batched together and
+mailed every 15 minutes, or whatever alternative time is specified in
+the configuration file.

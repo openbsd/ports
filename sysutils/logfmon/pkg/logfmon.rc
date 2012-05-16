@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: logfmon.rc,v 1.1.1.1 2012/05/16 06:10:18 jasper Exp $
+
+daemon="${TRUEPREFIX}/sbin/logfmon"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/05/16 06:10:18 jasper Exp $
+
+cc1: note: obsolete option -I- used, please use -iquote instead
+NB: The hardcoded /usr/local in this Makefile does not affect OpenBSD's build.
+
+--- Makefile.orig	Mon May 14 09:53:28 2012
++++ Makefile	Mon May 14 09:53:57 2012
+@@ -34,7 +34,7 @@ PREFIX?= /usr/local
+ INSTALLBIN= install -g bin -o root -m 555
+ INSTALLMAN= install -g bin -o root -m 444
+ 
+-INCDIRS= -I- -I. -I/usr/local/include
++INCDIRS= -iquote -I. -I/usr/local/include
+ LDFLAGS+= -L/usr/local/lib
+ LIBS= -lm
+ .if ${OS} == "OpenBSD" || ${OS} == "FreeBSD"
