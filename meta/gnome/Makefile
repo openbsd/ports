@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/05/14 13:53:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/05/16 11:15:23 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -8,6 +8,8 @@ PKGNAME=	gnome-${V}
 
 PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
+
+REVISION-extra=	0
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -61,7 +63,6 @@ RUN_DEPENDS-main += \
 RUN_DEPENDS-extra += \
 		STEM-=${V}:${BASE_PKGPATH},-main \
 		audio/rhythmbox \
-		devel/dconf,-editor \
 		graphics/simple-scan \
 		mail/evolution,-plugins \
 		mail/evolution-rss \
