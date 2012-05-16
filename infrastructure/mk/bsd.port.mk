@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1167 2012/05/08 17:38:21 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1168 2012/05/16 06:36:56 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -358,7 +358,7 @@ MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 USE_CCACHE ?= No
 NO_CCACHE ?= No
-.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
+.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no" && ${NO_BUILD:L} == "no"
 CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
 MAKE_ENV += CCACHE_DIR=${CCACHE_DIR}
 .  if defined(CCACHE_ENV)
