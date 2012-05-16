@@ -13,4 +13,4 @@ This package contains the server parts.
 
 Available flavors:
 	mysql - build with support for MySQL
-	pgsql - build with support for PostgreSQL
+	postgresql - build with support for PostgreSQL

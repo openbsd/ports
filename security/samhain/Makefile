@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/16 09:36:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/16 13:47:18 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -12,9 +12,9 @@ FULLPKGNAME-client=	samhain-${VERSION}
 FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
 
-REVISION-main=		1
-REVISION-client=	2
-REVISION-server=	1
+REVISION-main=		2
+REVISION-client=	3
+REVISION-server=	2
 
 CATEGORIES=		security
 
@@ -40,17 +40,12 @@ CONFIGURE_ARGS=		--enable-login-watch \
 NO_REGRESS=		Yes
 
 MULTI_PACKAGES=		-main
-PSEUDO_FLAVORS=		no_server
 FLAVORS=		mysql postgresql
-FLAVOR?=		no_server
+FLAVOR?=
 
 SUBST_VARS=		FLAVOR
 
-# if non-backend-related flavors are added, add them to
-# the following line as ":L:Nflavor1:Nflavor2" so that
-# they don't trigger a "Conflicting flavors" error.
-BACKEND=		${FLAVOR}
-.if ${BACKEND} == "mysql"
+.if ${FLAVOR} == "mysql"
 MULTI_PACKAGES+=	-server
 RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/mysql,-main
@@ -59,14 +54,14 @@ CONFIGURE_ARGS+=	--with-database=mysql \
 			--enable-xml-log \
 			--with-cflags=-I${LOCALBASE}/include/mysql \
 			--with-libs=-L${LOCALBASE}/lib/mysql
-.elif ${BACKEND} == "postgresql"
+.elif ${FLAVOR} == "postgresql"
 MULTI_PACKAGES+=	-server
 RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/postgresql,-main
 WANTLIB-server+=	c m pq
 CONFIGURE_ARGS+=	--with-database=postgresql \
 			--enable-xml-log
-.elif ${BACKEND} == "no_server"
+.elif empty(FLAVOR)
 MULTI_PACKAGES+=	-client
 RUN_DEPENDS-client+=	security/samhain,-main
 WANTLIB-client+=	c pthread z
@@ -78,7 +73,7 @@ ERRORS+=		"Fatal: conflicting or unknown flavors: ${FLAVOR}";
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/samhain
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/samhain/README
-.if ${FLAVOR:L:Mno_server}
+.if empty(FLAVOR)
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/samhain
 	${INSTALL_DATA} ${WRKSRC}/samhainrc ${PREFIX}/share/examples/samhain/
 .else
