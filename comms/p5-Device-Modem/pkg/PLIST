@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/07/30 18:13:53 simon Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/05/17 08:56:47 sthen Exp $
 ${P5SITE}/Device/
 ${P5SITE}/Device/Modem/
 ${P5SITE}/Device/Modem.pm
+${P5SITE}/Device/Modem/FAQ.pod
 ${P5SITE}/Device/Modem/Log/
 ${P5SITE}/Device/Modem/Log/File.pm
 ${P5SITE}/Device/Modem/Log/Syslog.pm
@@ -9,6 +10,7 @@ ${P5SITE}/Device/Modem/Protocol/
 ${P5SITE}/Device/Modem/Protocol/Xmodem.pm
 ${P5SITE}/Device/Modem/UsRobotics.pm
 @man man/man3p/Device::Modem.3p
+@man man/man3p/Device::Modem::FAQ.3p
 @man man/man3p/Device::Modem::Log::File.3p
 @man man/man3p/Device::Modem::Log::Syslog.3p
 @man man/man3p/Device::Modem::Protocol::Xmodem.3p
