@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_NSThread_m,v 1.1 2012/05/17 05:01:35 ajacoutot Exp $
+--- Source/NSThread.m.orig	Tue May 15 23:49:22 2012
++++ Source/NSThread.m	Tue May 15 23:50:42 2012
+@@ -557,7 +557,7 @@ unregisterActiveThread(NSThread *thread)
+  */
+ + (void) setThreadPriority: (double)pri
+ {
+-#ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+   int	policy;
+   struct sched_param param;
+ 
+@@ -595,7 +595,7 @@ unregisterActiveThread(NSThread *thread)
+ + (double) threadPriority
+ {
+   double pri = 0;
+-#ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+   int policy;
+   struct sched_param param;
+ 

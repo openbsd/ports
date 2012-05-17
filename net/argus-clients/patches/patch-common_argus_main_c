@@ -1,0 +1,21 @@
+$OpenBSD: patch-common_argus_main_c,v 1.1 2012/05/17 05:01:35 ajacoutot Exp $
+--- common/argus_main.c.orig	Tue May 15 22:45:33 2012
++++ common/argus_main.c	Tue May 15 22:47:16 2012
+@@ -112,7 +112,7 @@ main (int argc, char **argv)
+ #if defined(ARGUS_THREADS)
+    int hosts = 0;
+    pthread_attr_t attr;
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !defined(sun) && !defined(CYGWIN)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0) && !defined(sun) && !defined(CYGWIN)
+    int thread_policy;
+    struct sched_param thread_param;
+ #if defined(HAVE_SCHED_GET_PRIORITY_MIN)
+@@ -136,7 +136,7 @@ main (int argc, char **argv)
+    if ((status = pthread_attr_init(&attr)) != 0)
+       ArgusLog (LOG_ERR, "pthreads init error");
+  
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !defined(sun) && !defined(CYGWIN)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0) && !defined(sun) && !defined(CYGWIN)
+    if ((status = pthread_attr_getschedpolicy(&attr, &thread_policy)) != 0)
+       ArgusLog (LOG_ERR, "pthreads get policy error");
+    if ((status = pthread_attr_getschedparam(&attr, &thread_param)) != 0)

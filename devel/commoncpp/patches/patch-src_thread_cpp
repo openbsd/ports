@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_thread_cpp,v 1.1 2012/05/17 05:01:35 ajacoutot Exp $
+--- src/thread.cpp.orig	Fri Jan 16 07:27:00 2009
++++ src/thread.cpp	Tue May 15 21:52:18 2012
+@@ -632,10 +632,7 @@ _cancel(cancelDefault), _start(NULL), priv(new ThreadI
+ 	}
+ #endif
+ 
+-#ifndef	__FreeBSD__
+-#ifdef	_POSIX_THREAD_PRIORITY_SCHEDULING
+-#ifdef HAVE_SCHED_GETSCHEDULER
+-#define	__HAS_PRIORITY_SCHEDULING__
++#if defined(HAVE_SCHED_GETSCHEDULER) && defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+ 	if(pri < 0 && Process::isRealtime())
+ 		pri = 0;
+ 
+@@ -676,16 +673,10 @@ _cancel(cancelDefault), _start(NULL), priv(new ThreadI
+ 		pthread_attr_setschedpolicy(&priv->_attr, policy);
+ 		pthread_attr_setschedparam(&priv->_attr, &sched);
+ 	}
+-#endif // ifdef HAVE_SCHED_GETSCHEDULER
+-#endif // ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
+-#endif // ifndef __FreeBSD__
+ 
+-#ifdef	__HAS_PRIORITY_SCHEDULING__
+ 	if(!pri)
+ 	        pthread_attr_setinheritsched(&priv->_attr, PTHREAD_INHERIT_SCHED);
+-#else
+-	pthread_attr_setinheritsched(&priv->_attr, PTHREAD_INHERIT_SCHED);
+-#endif
++#endif // ifdef _POSIX_THREAD_PRIORITY_SCHEDULING
+ 
+ 	_parent = getThread();
+ 	priv->_throw = _parent->priv->_throw;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Unix_main_unix_cpp,v 1.4 2012/05/17 05:01:35 ajacoutot Exp $
+--- src/Unix/main_unix.cpp.orig	Tue May 15 22:25:15 2012
++++ src/Unix/main_unix.cpp	Tue May 15 22:26:08 2012
+@@ -981,7 +981,7 @@ static void sigint_handler(...)
+ void Set_pthread_attr(pthread_attr_t *attr, int priority)
+ {
+ 	pthread_attr_init(attr);
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+ 	// Some of these only work for superuser
+ 	if (geteuid() == 0) {
+ 		pthread_attr_setinheritsched(attr, PTHREAD_EXPLICIT_SCHED);

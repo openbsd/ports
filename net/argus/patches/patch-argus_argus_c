@@ -1,6 +1,6 @@
-$OpenBSD: patch-argus_argus_c,v 1.1 2010/11/12 21:03:45 steven Exp $
---- argus/argus.c.orig	Tue Nov 10 16:43:21 2009
-+++ argus/argus.c	Fri Nov 12 21:14:47 2010
+$OpenBSD: patch-argus_argus_c,v 1.2 2012/05/17 05:01:35 ajacoutot Exp $
+--- argus/argus.c.orig	Tue Nov 10 10:43:21 2009
++++ argus/argus.c	Tue May 15 22:43:51 2012
 @@ -243,6 +243,7 @@ main (int argc, char *argv[])
     uflag = 0;
     pflag = 6;
@@ -30,6 +30,15 @@ $OpenBSD: patch-argus_argus_c,v 1.1 2010/11/12 21:03:45 steven Exp $
        if (stat (path, &statbuf) == 0) {
           ArgusParseResourceFile (ArgusModel, path);
        }
+@@ -506,7 +506,7 @@ main (int argc, char *argv[])
+    if ((status = pthread_attr_init(&attr)) != 0)
+       ArgusLog (LOG_ERR, "pthreads init error");
+  
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !defined(sun) && !defined(CYGWIN) && !defined(OpenBSD)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0) && !defined(sun) && !defined(CYGWIN)
+    if ((status = pthread_attr_getschedpolicy(&attr, &thread_policy)) != 0)
+       ArgusLog (LOG_ERR, "pthreads get policy error");
+    if ((status = pthread_attr_getschedparam(&attr, &thread_param)) != 0)
 @@ -556,7 +556,7 @@ main (int argc, char *argv[])
        ArgusLog(LOG_WARNING, "started");
  

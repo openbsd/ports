@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.4 2012/05/17 05:01:35 ajacoutot Exp $
+--- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Sat May 12 17:33:01 2012
++++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sat May 12 17:35:46 2012
+@@ -59,6 +59,10 @@
+ #undef _POSIX_THREAD_PRIORITY_SCHEDULING
+ #endif
+ 
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !(_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
++#undef _POSIX_THREAD_PRIORITY_SCHEDULING
++#endif
++
+ /*
+  * Record whether or not we have the privilege to set the scheduling
+  * policy and priority of threads.  0 means that privilege is available.
