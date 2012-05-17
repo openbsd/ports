@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/05/17 11:06:33 sthen Exp $
 
 # Work in progress. Not yet linked to the build.
 
-V =		1.6.0
 COMMENT =	web UI for icinga
 DISTNAME =	icinga-web-$V
 
@@ -10,13 +9,10 @@ MODULES=	lang/php
 
 RUN_DEPENDS =	www/pear \
 		lang/php/${MODPHP_VERSION},-ldap \
-		lang/php/${MODPHP_VERSION},-pdo_mysql \
-		lang/php/${MODPHP_VERSION},-xsl
+		lang/php/${MODPHP_VERSION},-xsl \
+		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql
 # Optional php extensions: gd soap xmlrpc
-# Does this work with pgo_pgsql? So far haven't worked out how.
-
-MAKE_FLAGS =	PREFIX=/var/www/icinga-web
-FAKE_FLAGS =	CFGDIR=${TRUEPREFIX}/share/examples/icinga
+# memcache
 
 LOCALSTATEDIR =	${BASELOCALSTATEDIR}/icinga
 
@@ -25,44 +21,37 @@ CONFIGURE_ENV +=  PHP="${MODPHP_BIN}"
 CONFIGURE_ARGS += \
 	--datarootdir=/var/www \
 	--sbindir=/var/www/cgi-bin/icinga \
-	--with-web-apache-path=/var/www/conf/modules.sample \
+	--with-web-apache-path=${PREFIX}/etc \
 	--with-api-cmd-file=/var/icinga/rw/icinga.cmd \
 	--with-web-user=www \
 	--with-web-group=www \
 	--with-bin-user=${SHAREOWN} \
 	--with-bin-group=${SHAREGRP} \
 	--with-db-socket=/var/run/mysql/mysql.sock
-
-#		--with-db-type=DBTYPE   Type of dbms (default mysql)
-#		--with-db-host=HOST     Host of dbms (default localhost)
-#		--with-db-port=PORT     Port of the dbms (default 3306)
-#		--with-api-type=APICON  API type (default CONNECTION_IDO)
-#		--with-api-subtype=TYPE DB driver or network connection
+# override default ("localhost") to allow tcp connections; makes mysql easier
+CONFIGURE_ARGS += \
+	--with-api-host=127.0.0.1 \
+	--with-db-host=127.0.0.1
 
 NO_REGRESS =	Yes
 NO_BUILD =	Yes
 
 INSTALL_TARGET = install install-apache-config
 
-PREFIX =	/var/www
+PREFIX =	/var/www/icinga-web
 
 pre-install:
-	cd ${WRKINST}; ${INSTALL_DATA_DIR} \
-	    ${WRKINST}/var/www/etc/schema/model \
-	    ${WRKINST}/var/www/etc/schema/updates \
-	    ${WRKINST}/var/www/icinga-web \
-	    ${WRKINST}/var/www/conf/modules.sample
+	${INSTALL_DATA_DIR} ${WRKINST}/var/www/conf/modules.sample
 
 post-install:
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
-	cd ${PREFIX}; mv app bin doc etc lib pub icinga-web/ ; \
-	mv conf/modules.sample/icinga-web.conf \
-	    conf/modules.sample/icinga-web.conf.dist
+	cd ${PREFIX}; \
 	find ${PREFIX} -name '*.site.xml' -exec mv {} {}.dist \;
-	${INSTALL_DATA_DIR} ${WRKINST}/var/www/icinga-web/etc/schema/updates
+	mv ${PREFIX}/app/config/databases.xml{,.dist}
+	${INSTALL_DATA_DIR} ${PREFIX}/etc/schema/updates
 	cd ${WRKSRC}/etc/schema; \
-	${INSTALL_DATA} *sql ${WRKINST}/var/www/icinga-web/etc/schema; \
-	${INSTALL_DATA} updates/*sql \
-	    ${WRKINST}/var/www/icinga-web/etc/schema/updates
+	${INSTALL_DATA} *sql ${PREFIX}/etc/schema; \
+	${INSTALL_DATA} updates/*sql ${PREFIX}/etc/schema/updates
+	for i in ${PREFIX}/etc/conf.d/*xml; do mv $$i $$i.dist; done
 
 .include <bsd.port.mk>
