@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/05/17 10:27:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/05/17 21:39:44 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,8 +27,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m stdc++
-WANTLIB-main=		c pthread sqlite3>=8 z ${WANTLIB}
+WANTLIB=		m stdc++ z
+WANTLIB-main=		c pthread sqlite3>=8 ${WANTLIB}
 
 MASTER_SITES=		http://downloads.powerdns.com/releases/
 
@@ -49,7 +49,7 @@ MULTI_PACKAGES+=	-mysql
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 LIB_DEPENDS-mysql=	databases/mysql
 RUN_DEPENDS-mysql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-mysql+=		crypto lib/mysql/mysqlclient>=10 ssl z ${WANTLIB}
+WANTLIB-mysql+=		crypto lib/mysql/mysqlclient>=10 ssl ${WANTLIB}
 BACKENDS+=		gmysql
 .endif
 
@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE} \
 			--with-pgsql-includes=${LOCALBASE}/include/postgresql
 LIB_DEPENDS-pgsql=	databases/postgresql,-main
 RUN_DEPENDS-pgsql=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-pgsql=		com_err crypto pq>=2 ssl z ${WANTLIB}
+WANTLIB-pgsql=		com_err crypto pq>=2 ssl ${WANTLIB}
 BACKENDS+=		gpgsql
 .endif
 
@@ -75,7 +75,7 @@ LIB_DEPENDS-ldap=	databases/openldap
 RUN_DEPENDS-ldap=	${FULLPKGNAME-main}:net/powerdns
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE} \
 			--with-ldap-includes=${LOCALBASE}/include
-WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 lber-2.4 ldap_r-2.4 sasl2 ssl z ${WANTLIB}
+WANTLIB-ldap+=		asn1 com_err crypto gssapi krb5 lber-2.4 ldap_r-2.4 sasl2 ssl ${WANTLIB}
 BACKENDS+=		ldap
 .endif
 
