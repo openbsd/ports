@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2012/03/16 12:39:56 sthen Exp $
+$OpenBSD: README-main,v 1.6 2012/05/17 11:05:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -27,6 +27,10 @@ If you are using IDODB, you will need to update the database schema.
 See ${PREFIX-cgi}/icinga-cgi/docs/en/upgrading_idoutils.html or
 http://docs.icinga.org/latest/en/upgrading_idoutils.html for more
 information.
+
+In 1.7.0, the IDO plugin was renamed from ${TRUEPREFIX}/bin/idomod.o to
+${TRUEPREFIX}/lib/idomod.so - change your broker_module setting in
+${SYSCONFDIR}/icinga/icinga.cfg.
 
 Chroot Considerations
 =====================

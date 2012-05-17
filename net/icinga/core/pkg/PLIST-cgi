@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.7 2011/12/03 15:01:38 sthen Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.8 2012/05/17 11:05:40 sthen Exp $
 cgi-bin/icinga/
 @bin cgi-bin/icinga/avail.cgi
 @bin cgi-bin/icinga/cmd.cgi
@@ -156,8 +156,10 @@ icinga-cgi/docs/de/ix01.html
 icinga-cgi/docs/de/largeinstalltweaks.html
 icinga-cgi/docs/de/macrolist.html
 icinga-cgi/docs/de/macros.html
+icinga-cgi/docs/de/modified_attr.html
 icinga-cgi/docs/de/monitoring-linux.html
 icinga-cgi/docs/de/monitoring-netware.html
+icinga-cgi/docs/de/monitoring-overview.html
 icinga-cgi/docs/de/monitoring-printers.html
 icinga-cgi/docs/de/monitoring-publicservices.html
 icinga-cgi/docs/de/monitoring-routers.html
@@ -165,6 +167,7 @@ icinga-cgi/docs/de/monitoring-windows.html
 icinga-cgi/docs/de/mrtggraphs.html
 icinga-cgi/docs/de/networkreachability.html
 icinga-cgi/docs/de/notifications.html
+icinga-cgi/docs/de/notifications2.html
 icinga-cgi/docs/de/nrpe.html
 icinga-cgi/docs/de/nsca.html
 icinga-cgi/docs/de/objectdefinitions.html
@@ -182,6 +185,7 @@ icinga-cgi/docs/de/quickstart-icinga.html
 icinga-cgi/docs/de/quickstart-idoutils-freebsd.html
 icinga-cgi/docs/de/quickstart-idoutils.html
 icinga-cgi/docs/de/quickstart.html
+icinga-cgi/docs/de/recurring_downtimes.html
 icinga-cgi/docs/de/redundancy.html
 icinga-cgi/docs/de/reporting.html
 icinga-cgi/docs/de/reporting_1.6.html
@@ -272,8 +276,10 @@ icinga-cgi/docs/en/ix01.html
 icinga-cgi/docs/en/largeinstalltweaks.html
 icinga-cgi/docs/en/macrolist.html
 icinga-cgi/docs/en/macros.html
+icinga-cgi/docs/en/modified_attr.html
 icinga-cgi/docs/en/monitoring-linux.html
 icinga-cgi/docs/en/monitoring-netware.html
+icinga-cgi/docs/en/monitoring-overview.html
 icinga-cgi/docs/en/monitoring-printers.html
 icinga-cgi/docs/en/monitoring-publicservices.html
 icinga-cgi/docs/en/monitoring-routers.html
@@ -281,6 +287,7 @@ icinga-cgi/docs/en/monitoring-windows.html
 icinga-cgi/docs/en/mrtggraphs.html
 icinga-cgi/docs/en/networkreachability.html
 icinga-cgi/docs/en/notifications.html
+icinga-cgi/docs/en/notifications2.html
 icinga-cgi/docs/en/nrpe.html
 icinga-cgi/docs/en/nsca.html
 icinga-cgi/docs/en/objectdefinitions.html
@@ -298,6 +305,7 @@ icinga-cgi/docs/en/quickstart-icinga.html
 icinga-cgi/docs/en/quickstart-idoutils-freebsd.html
 icinga-cgi/docs/en/quickstart-idoutils.html
 icinga-cgi/docs/en/quickstart.html
+icinga-cgi/docs/en/recurring_downtimes.html
 icinga-cgi/docs/en/redundancy.html
 icinga-cgi/docs/en/reporting.html
 icinga-cgi/docs/en/reporting_1.6.html
@@ -316,6 +324,7 @@ icinga-cgi/docs/en/verifyconfig.html
 icinga-cgi/docs/en/volatileservices.html
 icinga-cgi/docs/en/whatsnew.html
 icinga-cgi/docs/images/
+icinga-cgi/docs/images/Architecture_1.5_800px.png
 icinga-cgi/docs/images/MyServiceStatus.png
 icinga-cgi/docs/images/activechecks.png
 icinga-cgi/docs/images/cachedcheckgraphs.png
@@ -409,16 +418,20 @@ icinga-cgi/docs/images/icinga-web-cronks1.png
 icinga-cgi/docs/images/icinga-web-cronks1_1.3.png
 icinga-cgi/docs/images/icinga-web-cronks1_1.5.png
 icinga-cgi/docs/images/icinga-web-cronks1_1.6.png
+icinga-cgi/docs/images/icinga-web-cronks1_1.7.png
 icinga-cgi/docs/images/icinga-web-cronks2.png
 icinga-cgi/docs/images/icinga-web-cronks2_1.3.png
 icinga-cgi/docs/images/icinga-web-cronks2_1.5.png
 icinga-cgi/docs/images/icinga-web-cronks2_1.6.png
+icinga-cgi/docs/images/icinga-web-cronks2_1.7.png
 icinga-cgi/docs/images/icinga-web-cronks2a.png
 icinga-cgi/docs/images/icinga-web-cronks2a_1.6.png
+icinga-cgi/docs/images/icinga-web-cronks2a_1.7.png
 icinga-cgi/docs/images/icinga-web-cronks3.png
 icinga-cgi/docs/images/icinga-web-cronks3_1.3.png
 icinga-cgi/docs/images/icinga-web-cronks3_1.5.png
 icinga-cgi/docs/images/icinga-web-cronks3_1.6.png
+icinga-cgi/docs/images/icinga-web-cronks3_1.7.png
 icinga-cgi/docs/images/icinga-web-filter1.png
 icinga-cgi/docs/images/icinga-web-filter1_1.3.png
 icinga-cgi/docs/images/icinga-web-filter1_1.6.png
@@ -443,9 +456,11 @@ icinga-cgi/docs/images/icinga-web-overview.png
 icinga-cgi/docs/images/icinga-web-overview_1.3.png
 icinga-cgi/docs/images/icinga-web-overview_1.5.png
 icinga-cgi/docs/images/icinga-web-overview_1.6.png
+icinga-cgi/docs/images/icinga-web-overview_1.7.png
 icinga-cgi/docs/images/icinga-web-search1.png
 icinga-cgi/docs/images/icinga-web-search1_1.3.png
 icinga-cgi/docs/images/icinga-web-search1_1.6.png
+icinga-cgi/docs/images/icinga-web-search1_1.7.png
 icinga-cgi/docs/images/icinga-web-settings.png
 icinga-cgi/docs/images/icinga-web-settings_1.5.png
 icinga-cgi/docs/images/icinga-web-srv_1.5.png
@@ -459,6 +474,7 @@ icinga-cgi/docs/images/icinga-web-tackle3.png
 icinga-cgi/docs/images/icinga-web-tackle4.png
 icinga-cgi/docs/images/icinga-web-topmenu1.png
 icinga-cgi/docs/images/icinga-web-topmenu1_1.6.png
+icinga-cgi/docs/images/icinga-web-topmenu1_1.7.png
 icinga-cgi/docs/images/icinga-web-topmenu2.png
 icinga-cgi/docs/images/icinga-web-topmenu2_1.3.png
 icinga-cgi/docs/images/idoutils.png
@@ -573,6 +589,7 @@ icinga-cgi/images/hourglass-exclamation.png
 icinga-cgi/images/icinga-logo.png
 icinga-cgi/images/icon_collapse.gif
 icinga-cgi/images/icon_expand.gif
+icinga-cgi/images/icon_reload.png
 icinga-cgi/images/info.png
 icinga-cgi/images/interface/
 icinga-cgi/images/interface/bar.gif
@@ -585,9 +602,12 @@ icinga-cgi/images/interface/menu_more.gif
 icinga-cgi/images/left.gif
 icinga-cgi/images/logofullsize.png
 icinga-cgi/images/logos/
+icinga-cgi/images/logos/Stats1.gif
+icinga-cgi/images/logos/Stats2.png
 icinga-cgi/images/logos/icinga.gd2
 icinga-cgi/images/logos/icinga.gif
 icinga-cgi/images/logos/icingavrml.png
+icinga-cgi/images/logos/s.gif
 icinga-cgi/images/logos/unknown.gd2
 icinga-cgi/images/logos/unknown.gif
 icinga-cgi/images/logrotate.png
@@ -639,6 +659,7 @@ icinga-cgi/js/checkbox_functions.js
 icinga-cgi/js/jquery-1.6.2.min.js
 icinga-cgi/js/jquery.dd.js
 icinga-cgi/js/menu.js
+icinga-cgi/js/page_refresh.js
 icinga-cgi/js/skinnytip.js
 icinga-cgi/log/
 icinga-cgi/log/.htaccess

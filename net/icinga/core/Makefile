@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/05/17 11:05:40 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -6,7 +6,6 @@ COMMENT-ido =		store Icinga configuration and events in a database
 
 DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
-REVISION-main =		1
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 
@@ -73,6 +72,8 @@ INSTALL_TARGET = install-unstripped install-idoutils \
 # perl tests work; C tests require --enable-libtap in configure and
 # fixing up WRKSRC/tap/configure
 REGRESS_TARGET = test
+REGRESS_DEPENDS = devel/p5-IPC-Run3 \
+		devel/p5-Test-Most
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${PREFIX-cgi}/conf/modules.sample

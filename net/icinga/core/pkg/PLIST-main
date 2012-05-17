@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/12/03 15:01:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/05/17 11:05:40 sthen Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/www/icinga:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/icinga/*
@@ -17,6 +17,8 @@ share/examples/icinga/cgi.cfg
 @sample ${SYSCONFDIR}/icinga/cgi.cfg
 share/examples/icinga/cgiauth.cfg
 @sample ${SYSCONFDIR}/icinga/cgiauth.cfg
+share/examples/icinga/conf.d/
+@sample ${SYSCONFDIR}/icinga/conf.d/
 share/examples/icinga/icinga.cfg
 @sample ${SYSCONFDIR}/icinga/icinga.cfg
 share/examples/icinga/modules/

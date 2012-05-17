@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
---- configure.orig	Wed Nov 30 12:08:58 2011
-+++ configure	Wed Nov 30 19:35:06 2011
-@@ -4819,20 +4819,20 @@ fi
+$OpenBSD: patch-configure,v 1.5 2012/05/17 11:05:40 sthen Exp $
+--- configure.orig	Tue May 15 14:00:56 2012
++++ configure	Thu May 17 10:19:15 2012
+@@ -4859,20 +4859,20 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cma_pthread_create" >&5
  $as_echo "$ac_cv_lib_cma_pthread_create" >&6; }
  if test "x$ac_cv_lib_cma_pthread_create" = xyes; then :
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -4863,7 +4863,7 @@ fi
+@@ -4903,7 +4903,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  fi
  
  if test $ac_cv_lib_pthread_pthread_create = yes; then
-@@ -5154,7 +5154,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -5194,7 +5194,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
  _ACEOF
  
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  
  
  
-@@ -5175,7 +5175,7 @@ fi
+@@ -5215,7 +5215,7 @@ fi
  
  
  
@@ -53,7 +53,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  
  
  
-@@ -5636,7 +5636,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+@@ -5819,7 +5819,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
    $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  	/* Override any gcc2 internal prototype to avoid an error.  */
-@@ -5667,7 +5667,7 @@ fi
+@@ -5850,7 +5850,7 @@ fi
  $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yep
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure,v 1.4 2011/12/03 15:01:38 sthen Exp $
  
  	else
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -6931,7 +6931,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+@@ -7117,7 +7117,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
  		found_ssl=no
  		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
  			ssllibdir="$dir"
