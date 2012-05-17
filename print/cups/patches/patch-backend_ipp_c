@@ -1,10 +1,10 @@
-$OpenBSD: patch-backend_ipp_c,v 1.1 2012/02/16 22:12:08 ajacoutot Exp $
+$OpenBSD: patch-backend_ipp_c,v 1.2 2012/05/17 10:11:23 ajacoutot Exp $
 
 Increase timeout so that it doesn't fail on low-end configurations.
 
---- backend/ipp.c.orig	Mon Feb  6 11:17:34 2012
-+++ backend/ipp.c	Mon Feb  6 11:17:43 2012
-@@ -634,7 +634,7 @@ main(int  argc,				/* I - Number of command-line args 
+--- backend/ipp.c.orig	Sat May  5 01:00:01 2012
++++ backend/ipp.c	Wed May 16 08:18:58 2012
+@@ -644,7 +644,7 @@ main(int  argc,				/* I - Number of command-line args 
    }
  
    http = _httpCreate(hostname, port, addrlist, cupsEncryption(), AF_UNSPEC);
@@ -13,12 +13,12 @@ Increase timeout so that it doesn't fail on low-end configurations.
  
   /*
    * See if the printer supports SNMP...
-@@ -1980,7 +1980,7 @@ monitor_printer(
+@@ -2084,7 +2084,7 @@ monitor_printer(
  
    http = _httpCreate(monitor->hostname, monitor->port, NULL, monitor->encryption,
                       AF_UNSPEC);
 -  httpSetTimeout(http, 30.0, timeout_cb, NULL);
 +  httpSetTimeout(http, 90.0, timeout_cb, NULL);
+   if (username[0])
+     cupsSetUser(username);
    cupsSetPasswordCB(password_cb);
- 
-  /*

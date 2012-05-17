@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2012/02/16 22:12:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2012/05/17 10:11:23 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -203,6 +203,7 @@ share/cups/ipptool/document-letter.pdf
 share/cups/ipptool/document-letter.ps
 share/cups/ipptool/get-completed-jobs.test
 share/cups/ipptool/get-jobs.test
+share/cups/ipptool/get-printer-attributes.test
 share/cups/ipptool/gray.jpg
 share/cups/ipptool/ipp-1.1.test
 share/cups/ipptool/ipp-2.0.test

@@ -1,7 +1,7 @@
-$OpenBSD: patch-config-scripts_cups-common_m4,v 1.7 2012/02/16 22:12:08 ajacoutot Exp $
---- config-scripts/cups-common.m4.orig	Sun Feb  5 19:56:14 2012
-+++ config-scripts/cups-common.m4	Mon Feb  6 11:14:32 2012
-@@ -134,7 +134,6 @@ AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.8 2012/05/17 10:11:23 ajacoutot Exp $
+--- config-scripts/cups-common.m4.orig	Tue May 15 16:08:06 2012
++++ config-scripts/cups-common.m4	Wed May 16 08:17:43 2012
+@@ -135,7 +135,6 @@ AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
  AC_CHECK_HEADER(usersec.h,AC_DEFINE(HAVE_USERSEC_H))
  AC_CHECK_HEADER(sys/ioctl.h,AC_DEFINE(HAVE_SYS_IOCTL_H))
  AC_CHECK_HEADER(sys/param.h,AC_DEFINE(HAVE_SYS_PARAM_H))
