@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.8 2012/01/11 16:24:07 ajacoutot Exp $
+# $OpenBSD: chrome,v 1.9 2012/05/17 08:52:59 robert Exp $
 
 DATASIZE="716800"
 OPENFILES="400"
@@ -20,6 +20,18 @@ if [ $(ulimit -Sn) -lt ${OPENFILES} ]; then
 	ulimit -Sn ${OPENFILES} || \
 		xm_log "Cannot increase openfiles-cur to at least ${OPENFILES}"
 		[ $? -eq 0 ] || exit
+fi
+
+#
+# Temporary workaround for the case when chromium crashes and leaves
+# the SingletonLock, which prevents chromium to start up.
+#
+if [ -h ${HOME}/.config/chromium/SingletonLock ]; then
+	_pid=`readlink ${HOME}/.config/chromium/SingletonLock | cut -d '-' -f 2`
+	kill -0 ${_pid} 2>/dev/null
+	if [ $? -gt 0 ]; then
+		rm ${HOME}/.config/chromium/SingletonLock
+	fi
 fi
 
 exec "${TRUEPREFIX}/chrome/chrome" "${@}"
