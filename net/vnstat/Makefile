@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/05 19:58:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/17 07:30:27 sthen Exp $
 
-COMMENT = 	network traffic monitor
+COMMENT =	network traffic monitor
 
-DISTNAME = 	vnstat-1.11
-REVISION =	0
-CATEGORIES = 	net sysutils
+DISTNAME =	vnstat-1.11
+REVISION =	1
+CATEGORIES =	net sysutils
 
-HOMEPAGE = 	http://humdi.net/vnstat/
+HOMEPAGE =	http://humdi.net/vnstat/
 
 MASTER_SITES = ${HOMEPAGE}
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM = 	Yes
-PERMIT_PACKAGE_FTP = 	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP = 	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 	c gd m
+WANTLIB =	c gd m
 
-LIB_DEPENDS = 	graphics/gd
+LIB_DEPENDS =	graphics/gd
 
-USE_GMAKE = 	Yes
+USE_GMAKE =	Yes
 
-NO_REGRESS = 	Yes
+NO_REGRESS =	Yes
 
 INSTALL_TARGET = bsdinstall
 
-MAKE_FLAGS = 	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
