@@ -1,4 +1,5 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_include_prtypes_h,v 1.2 2012/02/20 09:17:00 landry Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_include_prtypes_h,v 1.3 2012/05/17 08:59:00 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=634793
 --- mozilla/nsprpub/pr/include/prtypes.h.orig	Tue Feb 14 19:21:25 2012
 +++ mozilla/nsprpub/pr/include/prtypes.h	Fri Feb 17 08:50:22 2012
 @@ -368,7 +368,7 @@ typedef long PRInt32;
