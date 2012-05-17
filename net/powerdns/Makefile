@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/25 23:03:09 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/05/17 10:27:02 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		modern authoritative nameserver
 COMMENT-mysql=		MySQL database access module for PowerDNS
 COMMENT-pgsql=		PGSQL database access module for PowerDNS
-COMMENT-sqlite=		SQLite database access module for PowerDNS
-COMMENT-sqlite3=	SQLite3 database access module for PowerDNS
 COMMENT-ldap=		LDAP module for PowerDNS
 
 V=			2.9.22.6
@@ -15,11 +13,11 @@ PKGNAME=		powerdns-${V}
 PKGNAME-main=		powerdns-${V}
 PKGNAME-mysql=		powerdns-mysql-${V}
 PKGNAME-pgsql=		powerdns-pgsql-${V}
-PKGNAME-sqlite=		powerdns-sqlite-${V}
-PKGNAME-sqlite3=	powerdns-sqlite3-${V}
 PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
+
+REVISION-main=		0
 
 MULTI_PACKAGES=		-main
 
@@ -30,7 +28,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		m stdc++
-WANTLIB-main=		c pthread z ${WANTLIB}
+WANTLIB-main=		c pthread sqlite3>=8 z ${WANTLIB}
 
 MASTER_SITES=		http://downloads.powerdns.com/releases/
 
@@ -38,10 +36,10 @@ NO_REGRESS=		Yes
 
 BUILD_DEPENDS=		devel/boost
 
-PSEUDO_FLAVORS+=	no_mysql no_pgsql no_sqlite no_sqlite3
+PSEUDO_FLAVORS+=	no_mysql no_pgsql
 FLAVOR?=
 
-BACKENDS=
+BACKENDS=		gsqlite3
 
 # MySQL
 .if ${FLAVOR:L:Mno_mysql}
@@ -68,33 +66,6 @@ WANTLIB-pgsql=		com_err crypto pq>=2 ssl z ${WANTLIB}
 BACKENDS+=		gpgsql
 .endif
 
-# SQLite
-.if ${FLAVOR:L:Mno_sqlite}
-CONFIGURE_ARGS+=	--without-sqlite
-.else
-MULTI_PACKAGES+=	-sqlite
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE} \
-			--with-sqlite-includes=${LOCALBASE}/include
-LIB_DEPENDS-sqlite=	databases/sqlite
-RUN_DEPENDS-sqlite=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-sqlite+=	sqlite>=8 z ${WANTLIB}
-BACKENDS+=		gsqlite
-.endif
-
-# SQLite3
-.if ${FLAVOR:L:Mno_sqlite3}
-CONFIGURE_ARGS+=	--without-sqlite3
-.else
-MULTI_PACKAGES+=	-sqlite3
-CONFIGURE_ARGS+=	--with-sqlite3=/usr \
-			--with-sqlite3-includes=/usr/include
-LIB_DEPENDS-sqlite3=	
-RUN_DEPENDS-sqlite3=	${FULLPKGNAME-main}:net/powerdns
-WANTLIB-sqlite3+=	sqlite3>=8 z ${WANTLIB}
-BACKENDS+=		gsqlite3
-REVISION-sqlite3 =		0
-.endif
-
 # LDAP
 .if ${FLAVOR:L:Mno_ldap}
 CONFIGURE_ARGS+=	--without-ldap
@@ -119,6 +90,9 @@ CONFIGURE_ARGS+=	--disable-shared \
 			--libdir="${PREFIX}/lib/powerdns" \
 			--with-modules="geo" \
 			--with-dynmodules="${BACKENDS}" \
+			--with-sqlite3=/usr \
+			--with-sqlite3-includes=/usr/include \
+			--without-sqlite \
 			--disable-recursor # OpenBSD lacks ucontext.h, see PR 5099
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

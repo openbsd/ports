@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2012/01/11 01:41:47 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/05/17 10:27:02 sthen Exp $
+@conflict powerdns-sqlite-*
+@conflict powerdns-sqlite3-*
+@pkgpath net/powerdns,-sqlite
+@pkgpath net/powerdns,-sqlite3
 @newgroup _powerdns:609
 @newuser _powerdns:609:_powerdns:daemon:Proxy DNS Server:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/pdnsd/*
@@ -9,6 +13,9 @@ lib/powerdns/
 @comment lib/powerdns/libgeobackend.a
 @comment lib/powerdns/libgeobackend.la
 lib/powerdns/libgeobackend.so
+@comment lib/powerdns/libgsqlite3backend.a
+@comment lib/powerdns/libgsqlite3backend.la
+lib/powerdns/libgsqlite3backend.so
 @man man/man8/pdns_control.8
 @man man/man8/pdns_server.8
 @man man/man8/zone2sql.8
