@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.29 2012/04/10 22:39:08 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.30 2012/05/17 07:48:15 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -11,6 +11,8 @@
 @pkgpath mail/dovecot,mysql
 @pkgpath mail/dovecot,postgresql
 @pkgpath mail/dovecot,sqlite
+@pkgpath mail/dovecot,-sqlite
+@conflict dovecot-sqlite-*
 @ask-update dovecot-<2.0 You will need to change your conf
 @newgroup _dovecot:518
 @newgroup _dovenull:666
@@ -343,7 +345,9 @@ include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
 lib/dovecot/
 lib/dovecot/auth/
+lib/dovecot/auth/libdriver_sqlite.so
 lib/dovecot/dict/
+lib/dovecot/dict/libdriver_sqlite.so
 lib/dovecot/doveadm/
 lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
@@ -372,6 +376,7 @@ lib/dovecot/lib30_imap_zlib_plugin.so
 @lib lib/dovecot/libdovecot-sql.so.${LIBdovecot-sql_VERSION}
 @lib lib/dovecot/libdovecot-storage.so.${LIBdovecot-storage_VERSION}
 @lib lib/dovecot/libdovecot.so.${LIBdovecot_VERSION}
+lib/dovecot/libdriver_sqlite.so
 libexec/dovecot/
 @bin libexec/dovecot/anvil
 @bin libexec/dovecot/auth
