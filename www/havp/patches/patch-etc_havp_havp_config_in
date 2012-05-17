@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_havp_havp_config_in,v 1.1.1.1 2008/06/04 10:56:15 sthen Exp $
---- etc/havp/havp.config.in.orig	Tue Apr 15 10:55:20 2008
-+++ etc/havp/havp.config.in	Fri May 23 10:39:10 2008
+$OpenBSD: patch-etc_havp_havp_config_in,v 1.2 2012/05/17 09:10:44 ajacoutot Exp $
+--- etc/havp/havp.config.in.orig	Fri Apr  2 15:33:34 2010
++++ etc/havp/havp.config.in	Wed May 16 19:41:48 2012
 @@ -24,8 +24,8 @@ REMOVETHISLINE deleteme
  # used by any other program.
  #
@@ -12,7 +12,7 @@ $OpenBSD: patch-etc_havp_havp_config_in,v 1.1.1.1 2008/06/04 10:56:15 sthen Exp 
  
  # If this is true HAVP is running as daemon in background.
  # For testing you may run HAVP at your text console.
-@@ -430,7 +430,7 @@ ENABLECLAMD false
+@@ -479,7 +479,7 @@ ENABLECLAMD false
  # Path to clamd socket
  #
  # Default:
