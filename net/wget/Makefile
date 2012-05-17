@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/10/12 10:14:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2012/05/17 11:49:07 naddy Exp $
 
 COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
@@ -24,7 +24,6 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS +=	--with-ssl=openssl
-USE_GROFF =		Yes
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
