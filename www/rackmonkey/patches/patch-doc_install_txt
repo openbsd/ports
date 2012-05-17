@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_install_txt,v 1.1.1.1 2010/10/28 14:33:54 sthen Exp $
+$OpenBSD: patch-doc_install_txt,v 1.2 2012/05/17 23:13:52 sthen Exp $
 --- doc/install.txt.orig	Sun Sep 13 12:21:15 2009
 +++ doc/install.txt	Thu Oct 28 14:13:35 2010
 @@ -142,6 +142,16 @@ settings for http://<yourserver>/rackmonkey. If you ar
@@ -13,7 +13,7 @@ $OpenBSD: patch-doc_install_txt,v 1.1.1.1 2010/10/28 14:33:54 sthen Exp $
 +
 +Then reload apache:
 +
-+    # apachectl stop; apachectl start
++    # /etc/rc.d/httpd restart
 +
  Linux
  -----
