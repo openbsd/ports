@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2012/04/20 10:57:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.277 2012/05/18 01:30:55 bentley Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -187,6 +187,7 @@
      SUBDIR += ruby-vorbis_comment,ruby19
      SUBDIR += scmpc
      SUBDIR += shell-fm
+     SUBDIR += shntool
      SUBDIR += shorten
      SUBDIR += sidplay
      SUBDIR += snack
