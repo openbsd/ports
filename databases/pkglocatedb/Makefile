@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/05/14 20:08:23 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/05/18 12:12:09 espie Exp $
 
 # NOTE for FLAVOR=src
 # - you can have up-to-date ${BSDSRCDIR}/distrib/sets/lists 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-BUILD_DEPENDS =	databases/sqlports,-compact>=1.18
+BUILD_DEPENDS =	databases/sqlports,-compact>=2.0
 FLAVORS = src
 FLAVOR ?=
 
@@ -82,6 +82,6 @@ NO_REGRESS =		Yes
 do-build: ${WRKBUILD}/pkglocatedb
 
 ${WRKBUILD}/subdirlist:
-	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath||ports.pseudo_flavor) from paths join ports on paths.id=ports.fullpkgpath group by fullpkgname order by paths.fullpkgpath' |sed -e 's@security/samhain,-main$$@security/samhain,-main,no_server@' >$@
+	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath) from paths join ports on paths.id=ports.fullpkgpath group by fullpkgname order by paths.fullpkgpath' >$@
 ${WRKBUILD}/pkglocatedb: ${WRKBUILD}/subdirlist
-	SUBDIRLIST=${WRKBUILD}/subdirlist FULLPATH=Yes REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
+	SUBDIRLIST=${WRKBUILD}/subdirlist REPORT_PROBLEM_LOGFILE=${WRKBUILD}/ouch ${SUDO} pkg_mklocatedb ${ARGS} > $@.tmp && mv $@.tmp $@
