@@ -1,9 +1,12 @@
-$OpenBSD: patch-i3_config_keycodes,v 1.7 2012/05/10 09:27:37 dcoppa Exp $
+$OpenBSD: patch-i3_config_keycodes,v 1.8 2012/05/18 08:26:05 dcoppa Exp $
 
 Fix keycodes for the "Left", "Down", "Up" and "Right" keys: they're
 different between Linux and OpenBSD.
 
-Fix a pasto too: "bindsym" --> "bindcode"
+From 7d657a6a65fb3d5b1a4392132fcd40a7afd18373 Mon Sep 17 00:00:00 2001
+From: David Coppa <dcoppa@gmail.com>
+Date: Thu, 17 May 2012 10:31:36 +0000
+Subject: Fix errors in i3.config.keycodes (bindsym -> bindcode)
 
 --- i3.config.keycodes.orig	Wed Apr 25 23:21:25 2012
 +++ i3.config.keycodes	Thu May 10 11:00:55 2012
