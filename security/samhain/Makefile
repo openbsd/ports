@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/05/18 11:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/18 13:05:15 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -13,7 +13,7 @@ FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
 
 REVISION-main=		2
-REVISION-client=	4
+REVISION-client=	5
 REVISION-server=	4
 
 CATEGORIES=		security
