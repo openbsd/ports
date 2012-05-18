@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.560 2012/05/18 19:51:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.561 2012/05/18 20:54:25 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -363,6 +363,7 @@
      SUBDIR += phpicalendar
      SUBDIR += phpldapadmin
      SUBDIR += phplist
+     SUBDIR += phpmemcachedadmin
      SUBDIR += phpmyadmin
      SUBDIR += phppgadmin
      SUBDIR += piwik
