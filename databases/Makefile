@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2012/05/10 10:46:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.213 2012/05/18 20:59:30 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -226,6 +226,7 @@
      SUBDIR += sqlports
      SUBDIR += sqsh
      SUBDIR += tdb
+     SUBDIR += tinycdb
      SUBDIR += xapian-core
      SUBDIR += xmysql
 
