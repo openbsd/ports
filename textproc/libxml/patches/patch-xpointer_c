@@ -1,13 +1,44 @@
-$OpenBSD: patch-xpointer_c,v 1.1 2012/01/23 10:17:49 ajacoutot Exp $
+$OpenBSD: patch-xpointer_c,v 1.2 2012/05/18 13:25:46 jasper Exp $
+
+From d8e1faeaa99c7a7c07af01c1c72de352eb590a3e Mon Sep 17 00:00:00 2001
+From: Jüri Aedla <asd@ut.ee>
+Date: Mon, 07 May 2012 07:06:56 +0000
+Subject: Fix an off by one pointer access
 
 From f5048b3e71fc30ad096970b8df6e7af073bae4cb Mon Sep 17 00:00:00 2001
 From: Daniel Veillard <veillard@redhat.com>
 Date: Thu, 18 Aug 2011 09:10:13 +0000
 Subject: Hardening of XPath evaluation
 
---- xpointer.c.orig	Tue Oct 12 08:25:33 2010
-+++ xpointer.c	Mon Jan 23 08:15:53 2012
-@@ -1269,6 +1269,7 @@ xmlXPtrEvalXPointer(xmlXPathParserContextPtr ctxt) {
+--- xpointer.c.orig	Fri May 18 15:16:18 2012
++++ xpointer.c	Fri May 18 15:16:15 2012
+@@ -1007,21 +1007,14 @@ xmlXPtrEvalXPtrPart(xmlXPathParserContextPtr ctxt, xml
+ 		NEXT;
+ 		break;
+ 	    }
+-	    *cur++ = CUR;
+ 	} else if (CUR == '(') {
+ 	    level++;
+-	    *cur++ = CUR;
+ 	} else if (CUR == '^') {
+-	    NEXT;
+-	    if ((CUR == ')') || (CUR == '(') || (CUR == '^')) {
+-		*cur++ = CUR;
+-	    } else {
+-		*cur++ = '^';
+-		*cur++ = CUR;
+-	    }
+-	} else {
+-	    *cur++ = CUR;
++            if ((NXT(1) == ')') || (NXT(1) == '(') || (NXT(1) == '^')) {
++                NEXT;
++            }
+ 	}
++        *cur++ = CUR;
+ 	NEXT;
+     }
+     *cur = 0;
+@@ -1269,6 +1262,7 @@ xmlXPtrEvalXPointer(xmlXPathParserContextPtr ctxt) {
  	ctxt->valueNr = 0;
  	ctxt->valueMax = 10;
  	ctxt->value = NULL;
