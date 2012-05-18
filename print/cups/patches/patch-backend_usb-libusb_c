@@ -1,18 +1,24 @@
-$OpenBSD: patch-backend_usb-libusb_c,v 1.1 2012/05/17 10:11:23 ajacoutot Exp $
+$OpenBSD: patch-backend_usb-libusb_c,v 1.2 2012/05/18 16:31:22 ajacoutot Exp $
 
 http://www.cups.org/str.php?L4088
 
---- backend/usb-libusb.c.orig	Thu May 17 11:33:51 2012
-+++ backend/usb-libusb.c	Thu May 17 11:45:41 2012
-@@ -1150,7 +1150,10 @@ open_device(usb_printer_t *printer,	/* I - Printer */
+--- backend/usb-libusb.c.orig	Sun Feb 12 09:35:28 2012
++++ backend/usb-libusb.c	Fri May 18 18:17:38 2012
+@@ -1148,9 +1148,14 @@ open_device(usb_printer_t *printer,	/* I - Printer */
+   else
+   {
      printer->usblp_attached = 0;
-     fprintf(stderr, "DEBUG: Failed to check whether %04x:%04x has the \"usblp\" kernel module attached\n",
- 	      devdesc.idVendor, devdesc.idProduct);
+-    fprintf(stderr, "DEBUG: Failed to check whether %04x:%04x has the \"usblp\" kernel module attached\n",
+-	      devdesc.idVendor, devdesc.idProduct);
 -    goto error;
-+    if (errcode == LIBUSB_ERROR_NOT_SUPPORTED)
-+      fprintf(stderr, "DEBUG: Unsupported platform, assuming no kernel module is attached to the device\n");
-+    else
++
++    if (errcode != LIBUSB_ERROR_NOT_SUPPORTED)
++    {
++      fprintf(stderr,
++              "DEBUG: Failed to check whether %04x:%04x has the \"usblp\" "
++              "kernel module attached\n", devdesc.idVendor, devdesc.idProduct);
 +      goto error;
++    }
    }
  
   /*
