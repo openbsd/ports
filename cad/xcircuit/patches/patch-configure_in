@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.3 2011/10/30 05:12:15 stu Exp $
---- configure.in.orig	Thu Oct 27 17:18:48 2011
-+++ configure.in	Thu Oct 27 17:24:56 2011
-@@ -735,6 +735,12 @@ if test "x$xc_with_tcl" != "x" ; then
+$OpenBSD: patch-configure_in,v 1.4 2012/05/18 16:40:43 gonzalo Exp $
+--- configure.in.orig	Thu Mar 29 12:08:59 2012
++++ configure.in	Mon May 14 14:10:39 2012
+@@ -736,6 +736,12 @@ if test "x$xc_with_tcl" != "x" ; then
  fi
  
  if test "x$xc_with_tcl" != "x" ; then

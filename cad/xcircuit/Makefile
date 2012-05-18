@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/31 17:07:19 stu Exp $
+# $OpenBSD: Makefile,v 1.20 2012/05/18 16:40:43 gonzalo Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	circuit drawing and schematic capture
 
 BASEVER =	3.7
-DISTNAME =	xcircuit-${BASEVER}.26
-REVISION =	0
+DISTNAME =	xcircuit-${BASEVER}.39
 CATEGORIES =	cad
 HOMEPAGE =	http://opencircuitdesign.com/xcircuit/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -26,7 +25,6 @@ MODULES =	x11/tk
 LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.59
