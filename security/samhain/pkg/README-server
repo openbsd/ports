@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.1 2012/05/18 10:28:05 robert Exp $
+$OpenBSD: README-server,v 1.2 2012/05/18 11:30:09 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ A manual is available at:
 MySQL (InnoDB)
 ==============
 
-Connect to MySQL, and create a user and database for Zabbix;
+Connect to MySQL, and create a user and database for Samhain;
 
     $ mysql -u root -p
     mysql> create user samhain@localhost identified by 'password';
@@ -31,9 +31,9 @@ PostgreSQL
 Assuming you have an administrative account named `postgres',
 you can create the 'samhain' user and database like this:
 
-    createuser -U postgres --pwprompt --no-superuser \
+    $ createuser -U postgres --pwprompt --no-superuser \
       --createdb --no-createrole samhain
-    createdb -U samhain samhain
+    $ createdb -U samhain samhain
 
 And initialize the database:
 
