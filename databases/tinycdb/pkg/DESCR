@@ -1,0 +1,3 @@
+tinycdb is a small, fast and reliable utility and subroutine library for
+creating and reading constant databases. The database structure is tuned
+for fast reading.
