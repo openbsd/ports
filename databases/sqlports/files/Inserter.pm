@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.9 2011/03/02 16:19:54 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.10 2012/05/18 12:11:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,14 +89,6 @@ sub add_error
 {
 }
 
-sub add_todo
-{
-}
-
-sub mark_done
-{
-}
-
 sub write_log
 {
 }
@@ -107,8 +99,7 @@ sub create_tables
 
 	$self->create_path_table;
 	while (my ($name, $varclass) = each %$vars) {
-		$self->handle_column($varclass->column($name));
-		$varclass->create_table($self);
+		$varclass->prepare_tables($self, $name);
 	}
 
 	$self->create_ports_table;
@@ -437,18 +428,6 @@ sub add_error
 {
 	my ($self, $msg) = @_;
 	push(@{$self->{errors}}, $msg);
-}
-
-sub add_todo
-{
-	my ($self, $path) = @_;
-	$self->{todo}{$path} = 1;
-}
-
-sub mark_done
-{
-	my ($self, $path) = @_;
-	$self->{done}{$path} = 1;
 }
 
 sub write_log

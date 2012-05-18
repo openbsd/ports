@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.12 2011/11/26 22:30:30 kili Exp $
+# $OpenBSD: Var.pm,v 1.13 2012/05/18 12:11:28 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -72,6 +72,13 @@ sub column
 	return $self->columntype->new($name)->set_vartype($self);
 }
 
+sub prepare_tables
+{
+	my ($self, $inserter, $name) = @_;
+	$inserter->handle_column($self->column($name));
+	$self->create_tables($inserter);
+}
+
 sub keyword
 {
 	my ($self, $ins, $value) = @_;
@@ -86,7 +93,7 @@ sub create_keyword_table
 	}
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -161,7 +168,7 @@ sub add
 	$self->normal_insert($ins, $arch, $self->value);
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -260,15 +267,17 @@ sub add
 			print STDERR "Wrong depends $depends\n";
 			return;
 		}
+		my $p = PkgPath->new($pkgpath2);
+		$p->{want} = 1;
 		$self->normal_insert($ins, $depends,
 		    $ins->find_pathkey($pkgpath2),
 		    $ins->convert_depends($self->depends_type),
 		    $pkgspec, $rest);
-		    $ins->add_todo($pkgpath2);
+# XXX		    $ins->add_todo($pkgpath2);
 	}
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$inserter->make_table($self, undef,
@@ -314,7 +323,7 @@ sub add_keyword
 	$self->add_value($ins, $self->keyword($ins, $value));
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -339,7 +348,7 @@ sub add
 	$self->normal_insert($ins, $n, $self->value);
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -487,7 +496,7 @@ sub add_value
 	}
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -530,7 +539,7 @@ sub add
 	}
 }
 
-sub create_table
+sub create_tables
 {
 	my ($self, $inserter) = @_;
 	$self->create_keyword_table($inserter);
@@ -551,5 +560,16 @@ sub keyword_table() { 'Keywords2' }
 package AutoVersionVar;
 our @ISA = qw(OptKeyVar);
 sub keyword_table() { 'AutoVersion' }
+
+package IgnoredVar;
+our @ISA = qw(AnyVar);
+
+sub add
+{
+}
+
+sub prepare_tables
+{
+}
 
 1;
