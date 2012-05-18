@@ -1,4 +1,4 @@
-/* 	$OpenBSD: config_unix.h,v 1.2 2006/12/23 09:32:03 jolan Exp $ */
+/* 	$OpenBSD: config_unix.h,v 1.3 2012/05/18 05:22:48 bentley Exp $ */
 
 /* This file contains some compile-time configuration options for *nix
  * systems.
@@ -37,6 +37,10 @@
 /* Defined if your system has strupr of its own */
 #undef HAVE_STRUPR
 
+/* Defined if your system has strcasecmp of its own */
+#define HAVE_STRCASECMP_UQM
+		// Not using "HAVE_STRCASECMP" as that conflicts with SDL.
+
 /* Defined if your system has stricmp of its own */
 #undef HAVE_STRICMP
 
@@ -51,5 +55,8 @@
 
 /* Defined if your system has wint_t of its own */
 #define HAVE_WINT_T
+
+/* Defined if your system has _Bool of its own */
+#define HAVE__BOOL
 
 #endif  /* _CONFIG_UNIX_H */

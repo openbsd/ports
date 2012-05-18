@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-content,v 1.4 2006/12/23 09:32:03 jolan Exp $
+@comment $OpenBSD: PLIST-content,v 1.5 2012/05/18 05:22:48 bentley Exp $
 share/uqm/
 share/uqm/content/
 share/uqm/content/packages/
-share/uqm/content/packages/uqm-0.6.0-content.uqm
+share/uqm/content/addons/
+share/uqm/content/packages/uqm-0.7.0-content.uqm
 share/uqm/content/version
