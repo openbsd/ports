@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.1.1.1 2012/05/11 09:24:23 robert Exp $
+@comment $OpenBSD: PLIST-server,v 1.2 2012/05/18 10:28:05 robert Exp $
 @newgroup _yule:698
 @newuser _yule:698:_yule:daemon:samhain user:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/log/yule/*
@@ -14,6 +14,7 @@
 @bin sbin/yule
 @bin sbin/yule_setpwd
 @bin sbin/yulectl
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/yule/
 share/examples/yule/samhain.${FLAVOR}.init
 share/examples/yule/yulerc

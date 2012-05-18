@@ -1,0 +1,42 @@
+$OpenBSD: README-client,v 1.1 2012/05/18 10:28:05 robert Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+A manual is available at:
+	http://la-samhna.de/samhain/manual/
+
+By default, samhain uses the SRP (Secure Remote Password) protocol, with
+a password that is embedded in the client binary, and a corresponding
+verifier that is in the server configuration file.
+
+To embed the password in the binary, there is a dummy password compiled in
+as placeholder, and a utility called samhain_setpwd is provided which can
+be used to change the embedded password.
+
+For convenience, the server has functions to generate a random password
+in the correct format.
+
+Server side
+===========
+
+generate a random password in the correct format:
+    $ yule -G
+
+and generate a corresponding entry for the server configuration file:
+    $ yule -P GENERATED_PASSWORD
+
+The generated entry has a string 'HOSTNAME' that you should replace with
+the fully qualified name of the client.
+This entry must then be placed in the [Clients] section of the yule
+configuration file.
+
+Client side
+===========
+
+change the password in the samhain binary:
+    $ samhain_setpwd ${TRUEPREFIX}/sbin/samhain signed GENERATED_PASSWORD
+
+This command will create the ${TRUEPREFIX}/sbin/samhain.signed binary
+which has to be used when you are connecting to the server.

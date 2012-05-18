@@ -1,0 +1,41 @@
+$OpenBSD: README-server,v 1.1 2012/05/18 10:28:05 robert Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+A manual is available at:
+	http://la-samhna.de/samhain/manual/
+
+MySQL (InnoDB)
+==============
+
+Connect to MySQL, and create a user and database for Zabbix;
+
+    $ mysql -u root -p
+    mysql> create user samhain@localhost identified by 'password';
+    mysql> create database samhain;
+    mysql> grant all privileges on samhain.* to samhain@localhost;
+    mysql> flush privileges;
+    mysql> quit
+
+Then initialize the database from the files installed in
+${TRUEPREFIX}/share/examples/yule:
+
+    $ cd ${TRUEPREFIX}/share/examples/yule
+    $ mysql -usamhain -p samhain < mysql.sql
+
+PostgreSQL
+==========
+
+Assuming you have an administrative account named `postgres',
+you can create the 'samhain' user and database like this:
+
+    createuser -U postgres --pwprompt --no-superuser \
+      --createdb --no-createrole samhain
+    createdb -U samhain samhain
+
+And initialize the database:
+
+    $ cd ${TRUEPREFIX}/share/examples/yule
+    $ psql -U samhain samhain < samhain.postgresql.init

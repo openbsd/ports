@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: samhain_signed.rc,v 1.1 2012/05/18 10:28:05 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/samhain.signed"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
