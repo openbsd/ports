@@ -1,4 +1,5 @@
-$OpenBSD: patch-Source_JavaScriptCore_wtf_Atomics_h,v 1.1 2012/05/18 07:45:57 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_wtf_Atomics_h,v 1.2 2012/05/18 09:56:04 landry Exp $
+https://bugs.webkit.org/show_bug.cgi?id=86835
 Fix build failure on sparc64 since 1.8.1, provide atomic{In,De}crement implems based on __sync_fetch_and_add builtin
 --- Source/JavaScriptCore/wtf/Atomics.h.orig	Thu May 17 11:42:51 2012
 +++ Source/JavaScriptCore/wtf/Atomics.h	Thu May 17 11:45:22 2012
