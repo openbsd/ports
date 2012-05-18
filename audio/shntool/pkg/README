@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2012/05/18 01:29:56 bentley Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Format Modules
+==============
+shntool supports .wav files by default, but has support for reading and
+writing other losslessly-compressed formats by using helper programs.
+To support these extra formats, install the following packages:
+
+- sox (.aiff)
+- shorten (.shn)
+- flac (.flac)
+- mac (.ape)
+- wavepack (.wv)
+- bonk (.bonk)
