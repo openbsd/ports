@@ -1,0 +1,17 @@
+$OpenBSD: patch-Source_JavaScriptCore_wtf_Atomics_h,v 1.1 2012/05/18 07:45:57 landry Exp $
+Fix build failure on sparc64 since 1.8.1, provide atomic{In,De}crement implems based on __sync_fetch_and_add builtin
+--- Source/JavaScriptCore/wtf/Atomics.h.orig	Thu May 17 11:42:51 2012
++++ Source/JavaScriptCore/wtf/Atomics.h	Thu May 17 11:45:22 2012
+@@ -116,6 +116,12 @@ inline int atomicDecrement(int volatile* addend) { ret
+ inline int atomicIncrement(int volatile* addend) { return __gnu_cxx::__exchange_and_add(addend, 1) + 1; }
+ inline int atomicDecrement(int volatile* addend) { return __gnu_cxx::__exchange_and_add(addend, -1) - 1; }
+ 
++#elif COMPILER(GCC) && CPU(SPARC64)
++#define WTF_USE_LOCKFREE_THREADSAFEREFCOUNTED 1
++
++inline int atomicIncrement(int volatile* addend) { return __sync_fetch_and_add(addend, 1) + 1; }
++inline int atomicDecrement(int volatile* addend) { return __sync_fetch_and_add(addend, -1) - 1; }
++
+ #endif
+ 
+ inline bool weakCompareAndSwap(unsigned* location, unsigned expected, unsigned newValue)
