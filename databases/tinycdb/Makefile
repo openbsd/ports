@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/18 20:59:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/19 08:14:38 sthen Exp $
 
 COMMENT =	creating and reading constant databases
 
 V =		0.77
+REVISION =	0
 DISTNAME =	tinycdb_$V
 PKGNAME =	tinycdb-$V
 CATEGORIES =	databases
