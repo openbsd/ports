@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/18 19:51:35 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/19 02:47:37 william Exp $
 htdocs/racktables/
 htdocs/racktables/css/
 htdocs/racktables/css/jquery.contextmenu.css
 htdocs/racktables/css/pi.css
 htdocs/racktables/inc/
+htdocs/racktables/inc/IPv6.php
 htdocs/racktables/inc/ajax-interface.php
 htdocs/racktables/inc/auth.php
 htdocs/racktables/inc/caching.php
@@ -24,9 +25,6 @@ htdocs/racktables/inc/navigation.php
 htdocs/racktables/inc/ophandlers.php
 htdocs/racktables/inc/popup.php
 htdocs/racktables/inc/pre-init.php
-htdocs/racktables/inc/remote.php
-htdocs/racktables/inc/slb-interface.php
-htdocs/racktables/inc/slb.php
 htdocs/racktables/inc/snmp.php
 htdocs/racktables/inc/solutions.php
 htdocs/racktables/inc/triggers.php
@@ -83,10 +81,8 @@ htdocs/racktables/js/codepress/languages/xsl.js
 htdocs/racktables/js/inplace-edit.js
 htdocs/racktables/js/jquery-1.4.4.min.js
 htdocs/racktables/js/jquery.contextmenu.js
-htdocs/racktables/js/jquery.optionTree.js
 htdocs/racktables/js/jquery.thumbhover.js
 htdocs/racktables/js/live_validation.js
-htdocs/racktables/js/net-usage.js
 htdocs/racktables/js/portinfo.js
 htdocs/racktables/js/racktables.js
 htdocs/racktables/js/tag-cb.js
@@ -111,6 +107,7 @@ htdocs/racktables/pix/crystal-mimetypes-shellscript-218x200.png
 htdocs/racktables/pix/crystal-network_local-16x16.png
 htdocs/racktables/pix/crystal-network_local-32x32.png
 htdocs/racktables/pix/crystal-ok-32x32.png
+htdocs/racktables/pix/defaultlogo.png
 htdocs/racktables/pix/download-big.png
 htdocs/racktables/pix/download.png
 htdocs/racktables/pix/favicon.ico
@@ -149,10 +146,8 @@ htdocs/racktables/pix/tango-document-save-32x32.png
 htdocs/racktables/pix/tango-edit-clear-big.png
 htdocs/racktables/pix/tango-edit-clear-gray-32x32.png
 htdocs/racktables/pix/tango-edit-clear.png
-htdocs/racktables/pix/tango-edit-copy-16x16.png
 htdocs/racktables/pix/tango-edit-copy-32x32.png
 htdocs/racktables/pix/tango-edit-cut-16x16.png
-htdocs/racktables/pix/tango-edit-cut-22x22-gray.png
 htdocs/racktables/pix/tango-edit-cut-22x22.png
 htdocs/racktables/pix/tango-edit-cut-32x32.png
 htdocs/racktables/pix/tango-emblem-favorite.png
@@ -192,9 +187,11 @@ racktables/LICENSE
 racktables/README
 racktables/gateways/
 racktables/gateways/deviceconfig/
+racktables/gateways/deviceconfig/dlink.connector
 racktables/gateways/deviceconfig/fdry5.connector
 racktables/gateways/deviceconfig/ios12.connector
 racktables/gateways/deviceconfig/jun10.connector
+racktables/gateways/deviceconfig/linux.connector
 racktables/gateways/deviceconfig/main
 racktables/gateways/deviceconfig/nc.pl
 racktables/gateways/deviceconfig/nxos4.connector
@@ -203,10 +200,8 @@ racktables/gateways/deviceconfig/switch.secrets.php-sample
 racktables/gateways/deviceconfig/vrp53.connector
 racktables/gateways/deviceconfig/vrp55.connector
 racktables/gateways/deviceconfig/xos12.connector
-racktables/gateways/netcat
 racktables/gateways/sendfile/
 racktables/gateways/sendfile/main
-racktables/gateways/ssh
 racktables/gateways/switchvlans/
 racktables/gateways/switchvlans/cisco.connector
 racktables/gateways/switchvlans/cisco.secrets.php-sample
@@ -216,7 +211,6 @@ racktables/gateways/switchvlans/vlandecoder-sample
 @sample racktables/gateways/switchvlans/vlandecoder
 racktables/gateways/switchvlans/vlantable-sample
 @sample racktables/gateways/switchvlans/vlantable
-racktables/gateways/telnet
 racktables/scripts/
 racktables/scripts/init-sample-racks.sql
 racktables/scripts/syncdomain.php
