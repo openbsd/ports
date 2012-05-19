@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/05/08 21:29:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2012/05/19 02:49:45 william Exp $
 
 PV=		5.3
 V=		${PV}.13
@@ -9,6 +9,7 @@ INI_TEMPLATES=	development production
 
 # fpm
 PKGNAME-fpm?=		php-fpm-${V}
+REVISION-fpm=		0
 MULTI_PACKAGES+=        -fpm
 COMMENT-fpm=		stand-alone FPM version of PHP
 CONFIGURE_ARGS+=	--enable-fpm \

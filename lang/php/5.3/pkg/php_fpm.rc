@@ -1,15 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: php_fpm.rc,v 1.1 2011/08/27 13:13:13 robert Exp $
+# $OpenBSD: php_fpm.rc,v 1.2 2012/05/19 02:49:45 william Exp $
 
 daemon="${TRUEPREFIX}/sbin/php-fpm-${PV}"
 
 . /etc/rc.d/rc.subr
 
 pexp="php-fpm-${PV}: master.*"
-
-rc_reload() {
-	pkill -USR2 -f "^${pexp}"
-}
+rc_reload=NO
 
 rc_cmd $1
