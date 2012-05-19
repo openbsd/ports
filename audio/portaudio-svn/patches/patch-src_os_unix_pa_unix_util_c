@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_os_unix_pa_unix_util_c,v 1.1 2012/05/19 06:04:22 ajacoutot Exp $
+--- src/os/unix/pa_unix_util.c.orig	Wed May 16 20:58:26 2012
++++ src/os/unix/pa_unix_util.c	Wed May 16 21:06:25 2012
+@@ -218,6 +218,7 @@ static PaError BoostPriority( PaUnixThread* self )
+ 
+     assert( self );
+ 
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULINGG) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+     if( pthread_setschedparam( self->thread, SCHED_FIFO, &spm ) != 0 )
+     {
+         PA_UNLESS( errno == EPERM, paInternalError );  /* Lack permission to raise priority */
+@@ -228,6 +229,7 @@ static PaError BoostPriority( PaUnixThread* self )
+     {
+         result = 1; /* Success */
+     }
++#endif
+ error:
+     return result;
+ }
+@@ -266,8 +268,10 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
+ #endif
+ 
+     PA_UNLESS( !pthread_attr_init( &attr ), paInternalError );
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+     /* Priority relative to other processes */
+     PA_UNLESS( !pthread_attr_setscope( &attr, PTHREAD_SCOPE_SYSTEM ), paInternalError );   
++#endif
+ 
+     PA_UNLESS( !pthread_create( &self->thread, &attr, threadFunc, threadArg ), paInternalError );
+     started = 1;
+@@ -314,7 +318,9 @@ PaError PaUnixThread_New( PaUnixThread* self, void* (*
+         {
+             int policy;
+             struct sched_param spm;
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0)
+             pthread_getschedparam(self->thread, &policy, &spm);
++#endif
+         }
+     }
+     
