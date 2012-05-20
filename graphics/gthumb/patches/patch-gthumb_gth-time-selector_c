@@ -1,0 +1,14 @@
+$OpenBSD: patch-gthumb_gth-time-selector_c,v 1.1 2012/05/20 22:10:46 naddy Exp $
+
+Needed for strptime(3).
+
+--- gthumb/gth-time-selector.c.orig	Sun May 20 15:48:44 2012
++++ gthumb/gth-time-selector.c	Sun May 20 15:49:00 2012
+@@ -21,6 +21,7 @@
+ 
+ #include <config.h>
+ #define _XOPEN_SOURCE /* glibc2 needs this */
++#define _XOPEN_SOURCE_EXTENDED 1
+ #include <time.h>
+ #include <glib/gi18n.h>
+ #include <gdk/gdkkeysyms.h>
