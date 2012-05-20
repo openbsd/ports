@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_request_c,v 1.1 2012/05/20 20:48:01 naddy Exp $
+
+Needed for strptime(3).
+
+--- src/request.c.orig	Sun May 20 14:37:10 2012
++++ src/request.c	Sun May 20 14:37:32 2012
+@@ -33,6 +33,7 @@
+  */
+ 
+ #define _XOPEN_SOURCE 1
++#define _XOPEN_SOURCE_EXTENDED 1
+ 
+ #include <stdlib.h>
+ #include <assert.h>
