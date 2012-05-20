@@ -1,0 +1,12 @@
+$OpenBSD: patch-indextemplate2_html,v 1.1 2012/05/20 08:50:10 jasper Exp $
+--- indextemplate2.html.orig	Sat May 19 19:24:05 2012
++++ indextemplate2.html	Sat May 19 19:24:13 2012
+@@ -3,7 +3,7 @@
+ <HTML>
+   <HEAD>
+     <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+-    <META name="generator" content="igal <!--#IGAL-OPTIONS#-->">
++    <META name="generator" content="igal2 <!--#IGAL-OPTIONS#-->">
+     <TITLE>Index of Pictures</TITLE>
+     <LINK rel="stylesheet" type="text/css" href="<!--#IGAL-CSS#-->">
+   </HEAD>

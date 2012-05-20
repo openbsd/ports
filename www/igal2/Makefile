@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/24 11:40:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/20 08:50:10 jasper Exp $
 
 COMMENT=	online Image GALlery generator
 
 DISTNAME=	igal2-2.0
+REVISION=	0
 CATEGORIES=	www graphics
 
 HOMEPAGE=	http://igal.trexler.at/

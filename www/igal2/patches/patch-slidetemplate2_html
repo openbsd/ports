@@ -1,6 +1,15 @@
-$OpenBSD: patch-slidetemplate2_html,v 1.1.1.1 2012/04/24 11:40:38 jasper Exp $
---- slidetemplate2.html.orig	Tue Apr 24 12:59:29 2012
-+++ slidetemplate2.html	Tue Apr 24 12:59:40 2012
+$OpenBSD: patch-slidetemplate2_html,v 1.2 2012/05/20 08:50:10 jasper Exp $
+--- slidetemplate2.html.orig	Sun Nov 16 22:00:00 2008
++++ slidetemplate2.html	Sat May 19 19:24:24 2012
+@@ -3,7 +3,7 @@
+ <HTML>
+   <HEAD>
+     <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+-    <META name="generator" content="igal 1.4 freshmeat.net/projects/igal">
++    <META name="generator" content="igal 2.0 freshmeat.net/projects/igal">
+     <TITLE><!--SLIDE-TITLE--></TITLE>
+     <LINK rel="stylesheet" type="text/css" href="igal2.css">
+     <LINK rel="contents" href="<!--INDEX-FILE-->">
 @@ -40,6 +40,7 @@
        </TABLE>
  
