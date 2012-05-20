@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/05/20 21:39:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/05/20 21:42:50 sthen Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.41.4
-REVISION=	7
+REVISION=	8
 CATEGORIES=	sysutils devel
 SHARED_LIBS=	blkid		0.0 \
 		e2p		3.0 \
@@ -30,6 +30,7 @@ MODULES=	devel/gettext
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-elf-shlibs --disable-tls
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -D_EXT2_USE_C_VERSIONS_"
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
 
