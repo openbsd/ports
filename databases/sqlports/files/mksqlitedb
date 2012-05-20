@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.38 2012/05/18 12:11:28 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.39 2012/05/20 11:06:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -61,6 +61,8 @@ sub parse_dump
 			}
 			$pkgpath->{info}->reclaim;
 			$pkgpath->{info}{done} = 1;
+			$pkgpath->{info}{canonical} = $pkgpath;
+			$pkgpath->{done} = 1;
 			$inserter->finish_port;
 		}
 		$h = {};
@@ -152,7 +154,12 @@ while (1) {
 	for my $v (PkgPath->seen) {
 		if (defined $v->{info}) {
 			delete $v->{tried};
-			delete $v->{want};
+			if (defined $v->{want}) {
+				delete $v->{want};
+				if (!defined $v->{done}) {
+					$v->{needalias} = 1;
+				}
+			}
 			next;
 		}
 		if (defined $v->{tried}) {
@@ -166,6 +173,20 @@ while (1) {
 	print "pass #$i\n";
 	dump_dirs($inserter, $subdirlist);
 }
+
+print "Aliases\n";
+for my $v (PkgPath->seen) {
+	next unless defined $v->{needalias};
+	my $alias = $v->{info}{canonical};
+	if (defined $alias) {
+		print $v->fullpkgpath, "->", $alias->fullpkgpath, "\n";
+		$inserter->add_path($v->fullpkgpath, $alias->fullpkgpath);
+	} else {
+		print "!!! Can't figure out alias for ", $v->fullpkgpath, "\n";
+	}
+}
+
+$inserter->commit_to_db;
 
 while (my ($k, $v) = each %$Info::unknown) {
 	next if $k eq 'CHECKSUM_FILE';

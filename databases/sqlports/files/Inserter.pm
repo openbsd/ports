@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: Inserter.pm,v 1.10 2012/05/18 12:11:28 espie Exp $
+# $OpenBSD: Inserter.pm,v 1.11 2012/05/20 11:06:07 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -104,7 +104,7 @@ sub create_tables
 
 	$self->create_ports_table;
 	$self->prepare_normal_inserter('Ports', @{$self->{varlist}});
-	$self->prepare_normal_inserter('Paths', 'PKGPATH');
+	$self->prepare_normal_inserter('Paths', 'PKGPATH', 'CANONICAL');
 	$self->create_view_info;
 	$self->commit_to_db;
 	print '-'x50, "\n" if $self->{verbose};
@@ -172,9 +172,9 @@ sub new_table
 	return if defined $self->{tables_created}->{$name};
 
 	$self->db->do("DROP TABLE IF EXISTS $name");
-	print "CREATE TABLE $name (".join(', ', @cols).")\n"
-	    if $self->{verbose};
-	$self->db->do("CREATE TABLE $name (".join(', ', @cols).")");
+	my $request = "CREATE TABLE $name (".join(', ', @cols).")";
+	print "$request\n" if $self->{verbose};
+	$self->db->do($request);
 	$self->{tables_created}->{$name} = 1;
 }
 
@@ -331,7 +331,8 @@ sub create_path_table
 	my $self = shift;
 	$self->new_table("Paths", "ID INTEGER PRIMARY KEY",
 	    "FULLPKGPATH TEXT NOT NULL UNIQUE",
-	    "PKGPATH INTEGER REFERENCES Paths(ID)");
+	    "PKGPATH INTEGER REFERENCES Paths(ID)", "CANONICAL INTEGER REFERENCES Paths(ID)");
+	$self->{adjust} = $self->db->prepare("UPDATE Paths set canonical=? where id=?");
 }
 
 sub handle_column
@@ -347,10 +348,10 @@ sub create_view_info
 	my $self = shift;
 	my @columns = sort {$a->name cmp $b->name} @{$self->{columnlist}};
 	$self->create_view("Ports", @columns);
-	$self->{find_pathkey} =
-	    $self->prepare("SELECT ID From Paths WHERE FULLPKGPATH=?");
 }
 
+my $path_cache = {};
+my $newid = 1;
 sub find_pathkey
 {
 	my ($self, $key) = @_;
@@ -359,24 +360,29 @@ sub find_pathkey
 		print STDERR "Empty pathkey\n";
 		return 0;
 	}
-
-	# get pathkey for existing value
-	$self->{find_pathkey}->execute($key);
-	my $z = $self->{find_pathkey}->fetchrow_arrayref;
-	if (!defined $z) {
-		# if none, we create one
-		my $path = $key;
-		$path =~ s/\,.*//;
-		if ($path ne $key) {
-			$path = $self->find_pathkey($path);
-		} else {
-			$path = undef;
-		}
-		$self->insert('Paths', $key, $path);
-		return $self->last_id;
-	} else {
-		return $z->[0];
+	if (defined $path_cache->{$key}) {
+		return $path_cache->{$key};
 	}
+
+	# if none, we create one
+	my $path = $key;
+	$path =~ s/\,.*//;
+	if ($path ne $key) {
+		$path = $self->find_pathkey($path);
+	} else {
+		$path = $newid;
+	}
+	$self->insert('Paths', $key, $path, $newid);
+	my $r = $self->last_id;
+	$path_cache->{$key} = $r;
+	$newid++;
+	return $r;
+}
+
+sub add_path
+{
+	my ($self, $key, $alias) = @_;
+	$self->{adjust}->execute($path_cache->{$alias}, $path_cache->{$key});
 }
 
 sub set_newkey
@@ -449,7 +455,7 @@ sub create_path_table
 {
 	my $self = shift;
 	$self->new_table("Paths", "FULLPKGPATH TEXT NOT NULL PRIMARY KEY",
-	    "PKGPATH TEXT NOT NULL");
+	    "PKGPATH TEXT NOT NULL", "CANONICAL TEXT NOT NULL");
 }
 
 sub pathref
@@ -489,8 +495,16 @@ sub set_newkey
 
 	my $path = $key;
 	$path =~ s/\,.*//;
-	$self->insert('Paths', $key, $path);
+	$self->insert('Paths', $key, $path, $key);
 	$self->set($key);
+}
+
+sub add_path
+{
+	my ($self, $key, $alias) = @_;
+	my $path = $key;
+	$path =~ s/\,.*//;
+	$self->insert('Paths', $key, $path, $alias);
 }
 
 sub find_pathkey

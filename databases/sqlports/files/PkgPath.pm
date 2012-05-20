@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.1 2012/05/18 12:11:28 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.2 2012/05/20 11:06:07 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -60,7 +60,6 @@ sub equates
 
 sub simplifies_to
 {
-	my ($self, $other, $inserter) = @_;
 }
 
 1;

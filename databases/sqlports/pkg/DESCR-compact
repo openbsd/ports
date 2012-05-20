@@ -5,14 +5,16 @@ This schema is mostly optimized for tools, and cumbersome to query by
 hand.
 
 Database Schema:
-- Paths (ID, FULLPKGPATH, PKGPATH)
+- Paths (ID, FULLPKGPATH, PKGPATH, CANONICAL)
 PKGPATH points to a PATHS entry corresponding to the stripped down version of 
 FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
 is already stripped.  Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
 in the database points to this table.
-The FULLPKGPATH is complete, including flavors markers (but not pseudo 
-flavors, tack on PSEUDO_FLAVOR for that). For every port with MULTI_PACKAGES 
-settings, one entry is written for each SUBPACKAGE.
+The FULLPKGPATH is complete, including flavors and pseudo flavors markers. 
+For every port with MULTI_PACKAGES settings, one entry is written 
+for each SUBPACKAGE.
+CANONICAL points to the actual ID to use as an entry in other tables, for
+FULLPKGPATH which don't have their own entry.
 
 - Ports(FULLPKGPATH, ...)
 holds all the information retrieved through various variables that is not
