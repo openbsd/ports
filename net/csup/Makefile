@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/14 23:00:10 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2012/05/20 16:44:53 naddy Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
-DISTNAME=	csup-20111114
+# REL_20120305
+PKGNAME=	csup-20120305
+REV=		a72a17725ec3
 CATEGORIES=	net
+HOMEPAGE=	https://bitbucket.org/mux/csup
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -13,12 +16,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://shell.uugrn.org/~naddy/
+MASTER_SITES=	https://bitbucket.org/mux/csup/get/
+DIST_SUBDIR=	csup
+DISTFILES=	${REV}.tar.gz
 
 WANTLIB=	c crypto pthread z
 
-WRKDIST=	${WRKDIR}/csup
-ALL_TARGET=	depend all
+BUILD_DEPENDS=	devel/flex
+USE_GMAKE=	Yes
+
+WRKDIST=	${WRKDIR}/mux-csup-${REV}
+
+MAKE_ENV=	FLEX=gflex
+ALL_TARGET=	csup
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/csup ${PREFIX}/bin/csup
