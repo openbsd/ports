@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_rs-utils_c,v 1.1 2012/05/20 21:34:57 naddy Exp $
+
+Needed for strptime(3).
+
+--- src/rs-utils.c.orig	Sun May 20 15:10:05 2012
++++ src/rs-utils.c	Sun May 20 15:10:31 2012
+@@ -18,6 +18,7 @@
+  */
+ 
+ #define _XOPEN_SOURCE /* strptime() */
++#define _XOPEN_SOURCE_EXTENDED 1
+ #include <config.h>
+ #include <glib.h>
+ #include <glib/gstdio.h>
