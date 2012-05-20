@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_crypt_c,v 1.1 2012/05/20 17:04:56 ajacoutot Exp $
+
+https://red.libssh.org/issues/86
+
+--- src/crypt.c.orig	Sun May 20 14:38:06 2012
++++ src/crypt.c	Sun May 20 14:39:59 2012
+@@ -27,6 +27,7 @@
+ #include <string.h>
+ 
+ #ifndef _WIN32
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 

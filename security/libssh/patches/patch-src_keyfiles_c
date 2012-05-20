@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_keyfiles_c,v 1.1 2012/05/20 17:04:56 ajacoutot Exp $
+
+https://red.libssh.org/issues/86
+
+--- src/keyfiles.c.orig	Sun May 20 14:38:25 2012
++++ src/keyfiles.c	Sun May 20 14:40:13 2012
+@@ -45,6 +45,7 @@
+ #  define unlink _unlink
+ # endif /* _MSC_VER */
+ #else
++# include <netinet/in.h>
+ # include <arpa/inet.h>
+ #endif
+ 

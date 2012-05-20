@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_kex_c,v 1.1 2012/05/20 17:04:56 ajacoutot Exp $
+
+https://red.libssh.org/issues/86
+
+--- src/kex.c.orig	Sun May 20 14:38:20 2012
++++ src/kex.c	Sun May 20 14:40:06 2012
+@@ -28,6 +28,7 @@
+ #include <stdio.h>
+ 
+ #ifndef _WIN32
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 

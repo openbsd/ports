@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_channels_c,v 1.1 2012/05/20 17:04:55 ajacoutot Exp $
+
+https://red.libssh.org/issues/86
+
+--- src/channels.c.orig	Fri Sep 16 21:57:36 2011
++++ src/channels.c	Sun May 20 14:44:32 2012
+@@ -30,6 +30,7 @@
+ #include <time.h>
+ 
+ #ifndef _WIN32
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 
+@@ -678,21 +679,21 @@ SSH_PACKET_CALLBACK(channel_rcv_request) {
+ 	}
+ 
+ 	if (strcmp(request,"signal") == 0) {
+-		ssh_string signal;
++		ssh_string libssh_signal;
+         char *sig;
+ 
+ 		SAFE_FREE(request);
+ 		ssh_log(session, SSH_LOG_PACKET, "received signal");
+ 
+-		signal = buffer_get_ssh_string(packet);
+-		if (signal == NULL) {
++		libssh_signal = buffer_get_ssh_string(packet);
++		if (libssh_signal == NULL) {
+ 			ssh_log(session, SSH_LOG_PACKET, "Invalid MSG_CHANNEL_REQUEST");
+ 			leave_function();
+ 			return SSH_PACKET_USED;
+ 		}
+ 
+-		sig = ssh_string_to_char(signal);
+-		ssh_string_free(signal);
++		sig = ssh_string_to_char(libssh_signal);
++		ssh_string_free(libssh_signal);
+ 		if (sig == NULL) {
+ 			leave_function();
+ 			return SSH_PACKET_USED;

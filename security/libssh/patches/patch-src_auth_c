@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_auth_c,v 1.1 2012/05/20 17:04:55 ajacoutot Exp $
+
+https://red.libssh.org/issues/86
+
+--- src/auth.c.orig	Sun May 20 14:37:46 2012
++++ src/auth.c	Sun May 20 14:39:46 2012
+@@ -27,6 +27,7 @@
+ #include <string.h>
+ 
+ #ifndef _WIN32
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 
