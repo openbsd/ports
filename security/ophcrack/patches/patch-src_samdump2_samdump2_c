@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_samdump2_samdump2_c,v 1.1 2012/05/20 20:13:39 naddy Exp $
+--- src/samdump2/samdump2.c.orig	Sat May 19 20:24:35 2012
++++ src/samdump2/samdump2.c	Sat May 19 20:24:41 2012
+@@ -41,7 +41,7 @@
+ #ifdef BYTE_ORDER
+ #if BYTE_ORDER == LITTLE_ENDIAN
+ #elif BYTE_ORDER == BIG_ENDIAN
+-#include <byteswap.h>
++#include <bswap.h>
+ #else
+ #warning "Doesn't define a standard ENDIAN type"
+ #endif

@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_bswap_h,v 1.1 2012/05/20 20:13:39 naddy Exp $
+--- src/bswap.h.orig	Sat May 19 20:30:09 2012
++++ src/bswap.h	Sat May 19 20:36:57 2012
+@@ -41,6 +41,7 @@
+ #   include <libkern/OSByteOrder.h>
+ #   define __bswap_16(x) OSSwapInt16(x)
+ #   define __bswap_32(x) OSSwapInt32(x)
++#   define __bswap_64(x) OSSwapInt64(x)
+ #elif HAVE_BYTESWAP_H
+ #   include <byteswap.h>
+ #else
+@@ -50,5 +51,14 @@
+ 				     (((uint32_t)(x) & 0x00ff0000) >>  8) | \
+ 				     (((uint32_t)(x) & 0x0000ff00) <<  8) | \
+                                      (((uint32_t)(x) & 0x000000ff) << 24)))
++#   define __bswap_64(x) \
++	((uint64_t)((((uint64_t)(x) & 0xff00000000000000ULL) >> 56) | \
++		    (((uint64_t)(x) & 0x00ff000000000000ULL) >> 40) | \
++		    (((uint64_t)(x) & 0x0000ff0000000000ULL) >> 24) | \
++		    (((uint64_t)(x) & 0x000000ff00000000ULL) >>  8) | \
++		    (((uint64_t)(x) & 0x00000000ff000000ULL) <<  8) | \
++		    (((uint64_t)(x) & 0x0000000000ff0000ULL) << 24) | \
++		    (((uint64_t)(x) & 0x000000000000ff00ULL) << 40) | \
++		    (((uint64_t)(x) & 0x00000000000000ffULL) << 56)))
+ #endif
+ #endif
