@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/15 13:37:27 jsing Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/20 16:32:51 jsing Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		Go programming language
 
-VERSION =		1
-REVISION =		0
+VERSION =		1.0.1
 EXTRACT_SUFX =		.src.tar.gz
-DISTNAME = 		go.go${VERSION}
+DISTNAME = 		go${VERSION}
 PKGNAME = 		go-${VERSION}
 CATEGORIES =		lang
 
@@ -61,6 +60,8 @@ do-configure:
 
 do-build:
 	@cd ${WRKSRC} && \
+		GOROOT=${WRKDIST} \
+		GOBIN=${WRKDIST}/bin \
 		GOROOT_FINAL=${GOROOT} ./make.bash --no-banner
 
 do-regress:

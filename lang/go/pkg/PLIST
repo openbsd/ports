@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/15 13:19:15 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/20 16:32:51 jsing Exp $
 %%amd64%%
 %%i386%%
 bin/go
@@ -628,12 +628,6 @@ go/src/cmd/dist/buf.c
 go/src/cmd/dist/build.c
 go/src/cmd/dist/buildgc.c
 go/src/cmd/dist/buildruntime.c
-go/src/cmd/dist/dist.dSYM/
-go/src/cmd/dist/dist.dSYM/Contents/
-go/src/cmd/dist/dist.dSYM/Contents/Info.plist
-go/src/cmd/dist/dist.dSYM/Contents/Resources/
-go/src/cmd/dist/dist.dSYM/Contents/Resources/DWARF/
-go/src/cmd/dist/dist.dSYM/Contents/Resources/DWARF/dist
 go/src/cmd/dist/goc2c.c
 go/src/cmd/dist/main.c
 go/src/cmd/dist/unix.c
@@ -1882,6 +1876,8 @@ go/src/pkg/mime/multipart/formdata.go
 go/src/pkg/mime/multipart/formdata_test.go
 go/src/pkg/mime/multipart/multipart.go
 go/src/pkg/mime/multipart/multipart_test.go
+go/src/pkg/mime/multipart/testdata/
+go/src/pkg/mime/multipart/testdata/nested-mime
 go/src/pkg/mime/multipart/writer.go
 go/src/pkg/mime/multipart/writer_test.go
 go/src/pkg/mime/test.types
