@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/12/23 13:40:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2012/05/21 07:37:45 jasper Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 
@@ -6,6 +6,7 @@ V=		R14B04
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-14b.04
 EPOCH=		0
+REVISION=	0
 CATEGORIES=	lang
 
 # Erlang Public License
@@ -32,7 +33,7 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 		--enable-threads 	\
 		--enable-kernel-poll \
 		--disable-hipe \
-		--disable-smp-support
+		--enable-smp-support
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes

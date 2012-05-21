@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/12/23 13:40:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/05/21 07:37:45 jasper Exp $
 %%SHARED%%
 bin/dialyzer
 bin/epmd
@@ -191,6 +191,7 @@ lib/erlang/doc/tutorial/users_guide.html
 lib/erlang/${ERTS}/
 lib/erlang/${ERTS}/bin/
 @bin lib/erlang/${ERTS}/bin/beam
+@bin lib/erlang/${ERTS}/bin/beam.smp
 @bin lib/erlang/${ERTS}/bin/child_setup
 @bin lib/erlang/${ERTS}/bin/ct_run
 @bin lib/erlang/${ERTS}/bin/dialyzer
