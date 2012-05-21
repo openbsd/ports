@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/21 14:34:59 dcoppa Exp $
 
 COMMENT = 	fixed width sans font designed especially for coders
 PKG_ARCH =	*
 VERSION =	1.002
 PKGNAME =	anonymous-pro-${VERSION}
 DISTNAME =	AnonymousPro-${VERSION}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.zip
 CATEGORIES =	fonts x11
 
@@ -25,9 +25,9 @@ FONTSDIR =	${PREFIX}/lib/X11/fonts/anonymous-pro
 WRKDIST =	${WRKDIR}/${DISTNAME}.001
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/anonymous-pro
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/anonymous-pro
 	${INSTALL_DATA_DIR} ${FONTSDIR}
 	cd ${WRKDIST} ; /bin/pax -rw '-s/ //g' *.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/anonymous-pro
+	${INSTALL_DATA} ${WRKDIST}/*.txt ${PREFIX}/share/doc/anonymous-pro
 
 .include <bsd.port.mk>
