@@ -1,6 +1,6 @@
-$OpenBSD: patch-gthumb_gth-time-selector_c,v 1.1 2012/05/20 22:10:46 naddy Exp $
+$OpenBSD: patch-gthumb_gth-time-selector_c,v 1.2 2012/05/21 06:15:50 ajacoutot Exp $
 
-Needed for strptime(3).
+https://bugzilla.gnome.org/show_bug.cgi?id=676462
 
 --- gthumb/gth-time-selector.c.orig	Sun May 20 15:48:44 2012
 +++ gthumb/gth-time-selector.c	Sun May 20 15:49:00 2012
