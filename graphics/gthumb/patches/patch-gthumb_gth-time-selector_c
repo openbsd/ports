@@ -1,6 +1,9 @@
-$OpenBSD: patch-gthumb_gth-time-selector_c,v 1.2 2012/05/21 06:15:50 ajacoutot Exp $
+$OpenBSD: patch-gthumb_gth-time-selector_c,v 1.3 2012/05/21 09:42:57 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=676462
+From 62005629d834faa5ddc3799c6c43247182b3a814 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 21 May 2012 06:12:48 +0000
+Subject: build: OpenBSD needs _XOPEN_SOURCE_EXTENDED for strptime(3)
 
 --- gthumb/gth-time-selector.c.orig	Sun May 20 15:48:44 2012
 +++ gthumb/gth-time-selector.c	Sun May 20 15:49:00 2012
