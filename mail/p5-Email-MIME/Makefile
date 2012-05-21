@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/17 14:08:46 giovanni Exp $
+# $OpenBSD: Makefile,v 1.11 2012/05/21 13:52:55 giovanni Exp $
 
 COMMENT=	handle MIME messages
 
 MODULES=	cpan
 DISTNAME=	Email-MIME-1.910
+REVISION=	0
 CATEGORIES=	mail
 USE_GROFF =	Yes
 

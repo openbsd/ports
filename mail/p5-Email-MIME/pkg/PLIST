@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/17 14:08:46 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/21 13:52:55 giovanni Exp $
+@conflict mail/p5-Email-MIME-Creator-*
+@conflict mail/p5-Email-MIME-Modifier-*
+@pkgpath mail/p5-Email-MIME-Creator
+@pkgpath mail/p5-Email-MIME-Modifier
 ${P5SITE}/Email/MIME.pm
 ${P5SITE}/Email/MIME/Creator.pm
 ${P5SITE}/Email/MIME/Header.pm
