@@ -1,6 +1,9 @@
-$OpenBSD: patch-libedataserver_e-time-utils_c,v 1.3 2012/05/15 15:48:57 ajacoutot Exp $
+$OpenBSD: patch-libedataserver_e-time-utils_c,v 1.4 2012/05/21 06:01:03 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=676108
+From 2236bc3631b8f8c4995dabf65d27cdc39c7493f9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 21 May 2012 00:28:44 +0000
+Subject: Bug 676108 - OpenBSD needs _XOPEN_SOURCE_EXTENDED for strptime(3)
 
 --- libedataserver/e-time-utils.c.orig	Wed Nov  2 10:02:27 2011
 +++ libedataserver/e-time-utils.c	Sun May 13 15:06:14 2012
