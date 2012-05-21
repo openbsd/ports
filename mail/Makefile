@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2012/05/10 15:06:07 giovanni Exp $
+# $OpenBSD: Makefile,v 1.278 2012/05/21 14:05:24 giovanni Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -121,9 +121,7 @@
      SUBDIR += p5-Email-MIME
      SUBDIR += p5-Email-MIME-Attachment-Stripper
      SUBDIR += p5-Email-MIME-ContentType
-     SUBDIR += p5-Email-MIME-Creator
      SUBDIR += p5-Email-MIME-Encodings
-     SUBDIR += p5-Email-MIME-Modifier
      SUBDIR += p5-Email-MessageID
      SUBDIR += p5-Email-Reply
      SUBDIR += p5-Email-Send
