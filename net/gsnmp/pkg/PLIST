@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/24 16:34:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/21 18:22:36 jasper Exp $
 %%SHARED%%
 @bin bin/gsnmp-get
 include/gsnmp/
@@ -16,5 +16,4 @@ lib/libgsnmp.la
 lib/pkgconfig/
 lib/pkgconfig/gsnmp.pc
 @man man/man1/gsnmp-get.1
-share/aclocal/
 share/aclocal/gsnmp.m4

@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/29 17:23:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/21 18:22:36 jasper Exp $
 
 COMMENT=		SNMP library based on glib2 and gnet
 
-DISTNAME=		gsnmp-0.2.0
-REVISION=		0
+DISTNAME=		gsnmp-0.3.0
 SHARED_LIBS +=  gsnmp           0.0              # .0.0
 CATEGORIES=		net
 
@@ -22,7 +21,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		net/gnet
 
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 
