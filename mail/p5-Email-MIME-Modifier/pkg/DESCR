@@ -1,3 +1,0 @@
-Provides a number of useful methods for manipulating MIME
-messages. These methods are declared in the Email::MIME
-namespace, and are used with Email::MIME objects.
