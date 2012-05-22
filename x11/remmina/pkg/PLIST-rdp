@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-rdp,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
-@pkgpath x11/remmina/plugins,-rdp
-lib/remmina/plugins/remmina-plugin-rdp.so

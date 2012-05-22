@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/05/22 08:02:36 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.1 2012/05/22 08:46:16 ajacoutot Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
+@pkgpath x11/remmina,-rdp
 @pkgpath x11/remmina/core
 @pkgpath x11/remmina/plugins,-main
+@pkgpath x11/remmina/plugins,-rdp
 @pkgpath x11/remmina/plugins,-telepathy
 @bin bin/remmina
 include/remmina/
@@ -10,6 +12,7 @@ lib/pkgconfig/remmina.pc
 lib/remmina/
 lib/remmina/plugins/
 lib/remmina/plugins/remmina-plugin-nx.so
+lib/remmina/plugins/remmina-plugin-rdp.so
 lib/remmina/plugins/remmina-plugin-telepathy.so
 lib/remmina/plugins/remmina-plugin-vnc.so
 lib/remmina/plugins/remmina-plugin-xdmcp.so
