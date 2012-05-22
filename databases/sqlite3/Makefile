@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.64 2012/05/01 14:29:56 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/22 09:27:18 espie Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
 COMMENT-lemon=	LEMON LALR(1) parser generator
-V=		3.7.11
-DISTNAME=	sqlite-src-3071100
+V=		3.7.12
+DISTNAME=	sqlite-src-3071200
 EXTRACT_SUFX =	.zip
 PKGNAME-main=	sqlite3-${V}
 PKGNAME-tcl=	sqlite3-tcl-${V}
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
-SHARED_LIBS +=	sqlite3              17.0      # .8.6
 IGNORE-main = "--${FULLPKGNAME-main} comes with OpenBSD as of release 5.2"
 SUBPACKAGE ?= -lemon
 REVISION-tcl =	0
