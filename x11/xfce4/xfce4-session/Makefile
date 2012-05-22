@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.57 2012/04/30 12:55:58 landry Exp $
+# $OpenBSD: Makefile,v 1.58 2012/05/22 10:03:03 stsp Exp $
 
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
+REVISION=	0
 
 SHARED_LIBS +=	xfsm-4.6	1.0 # .0.0
 
@@ -38,5 +39,8 @@ WANTLIB += xcb-render xcb-shm stdc++ xfce4ui-1 xfce4util xfconf-0 z
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \
 		conffilesdir=${PREFIX}/share/examples/xfce4-session \
 		autostartdir=${PREFIX}/share/examples/xfce4-session
+
+post-install:
+	${SUBST_CMD} ${PREFIX}/bin/xflock4
 
 .include <bsd.port.mk>
