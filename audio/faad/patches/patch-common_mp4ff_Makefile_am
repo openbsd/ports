@@ -1,9 +1,14 @@
-$OpenBSD: patch-common_mp4ff_Makefile_am,v 1.1 2008/09/15 21:58:19 jakemsr Exp $
---- common/mp4ff/Makefile.am.orig	Fri Jul 11 14:17:17 2008
-+++ common/mp4ff/Makefile.am	Fri Jul 11 14:17:37 2008
-@@ -1,4 +1,4 @@
--noinst_LTLIBRARIES = libmp4ff.la
+$OpenBSD: patch-common_mp4ff_Makefile_am,v 1.2 2012/05/22 18:38:48 ajacoutot Exp $
+--- common/mp4ff/Makefile.am.orig	Fri Feb  6 09:24:21 2009
++++ common/mp4ff/Makefile.am	Thu May 10 19:02:20 2012
+@@ -1,7 +1,7 @@
+-lib_LIBRARIES = libmp4ff.a
 +lib_LTLIBRARIES = libmp4ff.la
+ include_HEADERS = mp4ff.h mp4ffint.h
  
- libmp4ff_la_CFLAGS = -DUSE_TAGGING=1
+-libmp4ff_a_CFLAGS = -DUSE_TAGGING=1
++libmp4ff_la_CFLAGS = -DUSE_TAGGING=1
  
+-libmp4ff_a_SOURCES = mp4ff.c mp4atom.c mp4meta.c mp4sample.c mp4util.c \
++libmp4ff_la_SOURCES = mp4ff.c mp4atom.c mp4meta.c mp4sample.c mp4util.c \
+ 		     mp4tagupdate.c mp4ff.h mp4ffint.h mp4ff_int_types.h

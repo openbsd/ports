@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.49 2011/10/17 10:38:41 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2012/05/22 18:38:48 ajacoutot Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
 
-V=		2.6.1
+V=		2.7
 DISTNAME=	faad2-${V}
 PKGNAME-main=	faad-${V}
-REVISION-main=	3
 PKGNAME-xmms=	faad-xmms-${V}
-REVISION-xmms=	2
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
+EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS +=	faad                 2.0      # .0.0
-SHARED_LIBS +=	mp4ff                1.0      # .0.0
+SHARED_LIBS=	faad	3.0 \
+		mp4ff	2.0
 
 HOMEPAGE=	http://www.audiocoding.com/
 
@@ -23,12 +22,23 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB-main=	c m
+WANTLIB-xmms=	X11 Xext Xi faad gdk glib gmodule gtk m mp4ff xcb \
+		xmms>=3 ${MODGETTEXT_WANTLIB}
+
+MODULES=	devel/gettext
 # bootstrap checks for libtoolize
 BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		devel/libtool
 
-WRKDIST=	${WRKDIR}/faad2
+LIB_DEPENDS-main=	# empty
+RUN_DEPENDS-main=	# empty
+
+LIB_DEPENDS-xmms=	${BUILD_PKGPATH} \
+			${MODGETTEXT_LIB_DEPENDS} \
+			audio/xmms
+RUN_DEPENDS-xmms=	${MODGETTEXT_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -36,8 +46,7 @@ CONFIGURE_STYLE= gnu
 AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.9
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lm"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 PSEUDO_FLAVORS=	no_xmms
 FLAVOR?= no_xmms
@@ -51,26 +60,12 @@ BUILD_DEPENDS+=	audio/id3lib
 CONFIGURE_ARGS+= --with-xmms
 .endif
 
-LIB_DEPENDS-xmms=	audio/xmms \
-			${BUILD_PKGPATH}
-RUN_DEPENDS-xmms=	audio/xmms
-WANTLIB-xmms=		${MODGETTEXT_WANTLIB} \
-			X11 Xau Xdmcp Xext Xi glib \
-			gmodule gtk gdk pthread-stubs xcb \
-			xmms>=3 faad mp4ff m
-WANTLIB-main=		c m
+post-extract:
+	@mv ${WRKSRC}/frontend/faad.man ${WRKSRC}/frontend/faad.1
 
 post-patch:
 	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
-		sh bootstrap
-
-post-configure:
-	@cp ${WRKSRC}/config.h ${WRKSRC}/faadconfig.h
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/faadconfig.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/common/mp4ff/mp4ff.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/common/mp4ff/mp4ff_int_types.h ${PREFIX}/include
+	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} PATH=${PORTPATH} \
+	    sh bootstrap
 
 .include <bsd.port.mk>
