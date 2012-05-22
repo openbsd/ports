@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/25 14:39:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/22 08:08:38 sthen Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -30,7 +30,8 @@ MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 MODULES = 	lang/lua
 WANTLIB = 	c m stdc++ lua sqlite3
 
-BUILD_DEPENDS = graphics/pngcrush
+BUILD_DEPENDS = devel/bison \
+		graphics/pngcrush
 RUN_DEPENDS =	devel/desktop-file-utils
 
 # Almost nethack...
