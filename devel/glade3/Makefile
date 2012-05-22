@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/05/22 14:53:32 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2012/05/22 14:58:41 ajacoutot Exp $
 
 COMMENT =		user interface builder for the GTK2+ toolkit
 SHARED_ONLY =		Yes
@@ -37,13 +37,12 @@ LIB_DEPENDS =		x11/dbus-glib \
 			x11/gnome/libgnomeui
 RUN_DEPENDS =		x11/gnome/devhelp
 
-MODGNOME_DESKTOP_FILE = 	Yes
+MODGNOME_DESKTOP_FILE = Yes
 MODGNOME_ICON_CACHE =	Yes
 MODGNOME_TOOLS =	yelp
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-gtk-doc \
-			--disable-python
+CONFIGURE_ARGS =	--disable-python
 MODGNOME_CPPFLAGS =	-pthread
 MODGNOME_LDFLAGS =	-pthread
 
