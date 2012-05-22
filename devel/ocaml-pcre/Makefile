@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/15 15:50:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/22 11:46:40 jasper Exp $
 
 COMMENT=	Objective Caml perl-compatible regexp library
 CATEGORIES=	devel textproc
 
-DISTNAME=	release-6.2.2
-PKGNAME=	ocaml-pcre-6.2.2
-WRKDIST=	${WRKDIR}/pcre-ocaml-${DISTNAME}
-DIST_SUBDIR=	ocaml-pcre
+V=		6.2.5
+DISTNAME=	pcre-ocaml-$V
+PKGNAME=	ocaml-pcre-$V
 
 HOMEPAGE=	http://ocaml.info/home/ocaml_sources.html
 
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
 
-MASTER_SITES=	http://hg.ocaml.info/release/pcre-ocaml/archive/
+MASTER_SITES=	https://bitbucket.org/mmottl/pcre-ocaml/downloads/
 
 RUN_DEPENDS=	sysutils/findlib
 BUILD_DEPENDS=	${RUN_DEPENDS}
