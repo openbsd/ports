@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/02/24 13:48:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/22 08:02:36 mpi Exp $
 
 # from upstream, removed at next update
 MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
@@ -17,6 +17,8 @@ WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-rdp=		remmina-plugins-rdp-${V}
+
+REVISION-main=		0
 
 CATEGORIES=		x11 net
 
@@ -44,6 +46,7 @@ cWANTLIB += atk-1.0 cairo gdk-3 glib-2.0 gtk-3 pango-1.0
 WANTLIB-main += ${cWANTLIB} intl # XXX no iconv?
 WANTLIB-main += X11 c gcrypt gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 gnome-keyring
 WANTLIB-main += gobject-2.0 gthread-2.0 pthread vte2_90 jpeg z telepathy-glib
+WANTLIB-main += util xkbfile ssh 
 
 WANTLIB-rdp += ${cWANTLIB}
 WANTLIB-rdp += freerdp-channels freerdp-codec freerdp-core freerdp-gdi
@@ -52,6 +55,7 @@ WANTLIB-rdp += freerdp-kbd freerdp-rail
 BUILD_DEPENDS=		net/avahi,-gtk3
 
 LIB_DEPENDS-main=	devel/vte3 \
+			security/libssh \
 			net/telepathy/telepathy-glib \
 			x11/gnome/libgnome-keyring
 
@@ -71,11 +75,9 @@ CFLAGS +=		-pthread
 # Only useed by Ubuntu's Unity.
 CONFIGURE_ARGS+=	-DWITH_APPINDICATOR=OFF
 
-# This needs the grantpt(3) and alike functions.
-CONFIGURE_ARGS+=	-DWITH_LIBSSH=OFF
-
 pre-configure:
 	${SUBST_CMD} \
+		${WRKSRC}/remmina-plugins/nx/CMakeLists.txt \
 		${WRKSRC}/remmina-plugins/rdp/CMakeLists.txt \
 		${WRKSRC}/remmina-plugins/telepathy/CMakeLists.txt \
 		${WRKSRC}/remmina-plugins/vnc/CMakeLists.txt \

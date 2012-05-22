@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/05/22 08:02:36 mpi Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina/core
@@ -9,6 +9,7 @@ include/remmina/
 lib/pkgconfig/remmina.pc
 lib/remmina/
 lib/remmina/plugins/
+lib/remmina/plugins/remmina-plugin-nx.so
 lib/remmina/plugins/remmina-plugin-telepathy.so
 lib/remmina/plugins/remmina-plugin-vnc.so
 lib/remmina/plugins/remmina-plugin-xdmcp.so
@@ -21,6 +22,7 @@ share/icons/hicolor/16x16/actions/remmina-pin-up.png
 share/icons/hicolor/16x16/actions/remmina-scale.png
 share/icons/hicolor/16x16/actions/remmina-switch-page.png
 share/icons/hicolor/16x16/apps/remmina.png
+share/icons/hicolor/16x16/emblems/remmina-nx.png
 share/icons/hicolor/16x16/emblems/remmina-rdp-ssh.png
 share/icons/hicolor/16x16/emblems/remmina-rdp.png
 share/icons/hicolor/16x16/emblems/remmina-sftp.png
@@ -33,6 +35,7 @@ share/icons/hicolor/22x22/actions/remmina-fullscreen.png
 share/icons/hicolor/22x22/actions/remmina-scale.png
 share/icons/hicolor/22x22/actions/remmina-switch-page.png
 share/icons/hicolor/22x22/apps/remmina.png
+share/icons/hicolor/22x22/emblems/remmina-nx.png
 share/icons/hicolor/22x22/emblems/remmina-rdp-ssh.png
 share/icons/hicolor/22x22/emblems/remmina-rdp.png
 share/icons/hicolor/22x22/emblems/remmina-sftp.png

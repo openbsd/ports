@@ -1,0 +1,52 @@
+$OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.1 2012/05/22 08:02:36 mpi Exp $
+--- remmina/src/remmina_ssh.c.orig	Fri Feb 10 19:54:23 2012
++++ remmina/src/remmina_ssh.c	Thu Apr 19 17:06:35 2012
+@@ -36,12 +36,12 @@
+ #ifdef HAVE_NETDB_H
+ #include <netdb.h>
+ #endif
+-#ifdef HAVE_ARPA_INET_H
+-#include <arpa/inet.h>
+-#endif
+ #ifdef HAVE_NETINET_IN_H
+ #include <netinet/in.h>
+ #endif
++#ifdef HAVE_ARPA_INET_H
++#include <arpa/inet.h>
++#endif
+ #ifdef HAVE_SYS_SOCKET_H
+ #include <sys/socket.h>
+ #endif
+@@ -54,6 +54,9 @@
+ #ifdef HAVE_TERMIOS_H
+ #include <termios.h>
+ #endif
++#ifdef HAVE_UTIL_H
++#include <util.h>
++#endif
+ #include "remmina_public.h"
+ #include "remmina_log.h"
+ #include "remmina_ssh.h"
+@@ -1430,8 +1433,9 @@ remmina_ssh_shell_thread (gpointer data)
+ gboolean
+ remmina_ssh_shell_open (RemminaSSHShell *shell, RemminaSSHExitFunc exit_callback, gpointer data)
+ {
+-	gchar *slavedevice;
+ 	struct termios stermios;
++#if defined(HAVE_UNIX98_PTY)
++	gchar *slavedevice;
+ 
+ 	shell->master = posix_openpt (O_RDWR | O_NOCTTY);
+ 	if (shell->master == -1 ||
+@@ -1439,6 +1443,11 @@ remmina_ssh_shell_open (RemminaSSHShell *shell, Remmin
+ 			unlockpt (shell->master) == -1 ||
+ 			(slavedevice = ptsname (shell->master)) == NULL ||
+ 			(shell->slave = open (slavedevice, O_RDWR | O_NOCTTY)) < 0)
++#elif defined(HAVE_OPENPTY)
++	if (openpty(&shell->master, &shell->slave, NULL, NULL, NULL))
++#else
++#error Have neither UNIX98 PTY nor BSD openpty!
++#endif
+ 	{
+ 		REMMINA_SSH (shell)->error = g_strdup ("Failed to create pty device.");
+ 		return FALSE;

@@ -1,7 +1,17 @@
-$OpenBSD: patch-remmina_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
+$OpenBSD: patch-remmina_CMakeLists_txt,v 1.2 2012/05/22 08:02:36 mpi Exp $
 --- remmina/CMakeLists.txt.orig	Fri Feb 10 19:54:23 2012
-+++ remmina/CMakeLists.txt	Fri Feb 24 11:47:36 2012
-@@ -90,6 +90,9 @@ set(REMMINA_SRCS
++++ remmina/CMakeLists.txt	Thu Apr 19 17:06:18 2012
+@@ -17,6 +17,9 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, 
+ # Boston, MA 02111-1307, USA.
+ 
++include(CheckFunctionExists)
++include(CheckLibraryExists)
++
+ set(REMMINA_SRCS
+ 	src/remmina_about.c
+ 	src/remmina_about.h
+@@ -90,6 +93,9 @@ set(REMMINA_SRCS
  
  add_executable(remmina ${REMMINA_SRCS})
  
@@ -11,3 +21,27 @@ $OpenBSD: patch-remmina_CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
  include_directories(${GTK_INCLUDE_DIRS})
  target_link_libraries(remmina ${GTK_LIBRARIES})
  
+@@ -130,6 +136,23 @@ if(GTK3_FOUND)
+ 		include_directories(${APPINDICATOR_INCLUDE_DIRS})
+ 		target_link_libraries(remmina ${APPINDICATOR_LIBRARIES})
+ 	endif()
++endif()
++
++
++check_function_exists(ptsname HAVE_PTSNAME)
++if(HAVE_PTSNAME)
++	add_definitions(-DHAVE_UNIX98_PTY)
++endif()
++
++check_function_exists(openpty OPENPTY_IN_LIBC)
++if(NOT OPENPTY_IN_LIBC)
++	check_library_exists(util openpty "" OPENPTY_IN_LIBUTIL)
++	if(OPENPTY_IN_LIBUTIL)
++		target_link_libraries(remmina util)
++	endif()
++endif()
++if(OPENPTY_IN_LIBC OR OPENPTY_IN_LIBUTIL)
++	add_definitions(-DHAVE_OPENPTY)
+ endif()
+ 
+ add_subdirectory(po)

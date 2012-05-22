@@ -1,7 +1,7 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
---- CMakeLists.txt.orig	Fri Feb 24 11:29:57 2012
-+++ CMakeLists.txt	Fri Feb 24 11:29:46 2012
-@@ -64,9 +64,9 @@ if(CMAKE_COMPILER_IS_GNUCC)
+$OpenBSD: patch-CMakeLists_txt,v 1.2 2012/05/22 08:02:36 mpi Exp $
+--- CMakeLists.txt.orig	Thu Apr 19 16:20:37 2012
++++ CMakeLists.txt	Thu Apr 19 16:27:53 2012
+@@ -64,15 +64,16 @@ if(CMAKE_COMPILER_IS_GNUCC)
  endif()
  
  check_include_files(sys/param.h HAVE_SYS_PARAM_H)
@@ -13,3 +13,10 @@ $OpenBSD: patch-CMakeLists_txt,v 1.1 2012/02/24 13:48:26 ajacoutot Exp $
  check_include_files(termios.h HAVE_TERMIOS_H)
  check_include_files(netdb.h HAVE_NETDB_H)
  check_include_files(fcntl.h HAVE_FCNTL_H)
+ check_include_files(unistd.h HAVE_UNISTD_H)
+ check_include_files(sys/un.h HAVE_SYS_UN_H)
+ check_include_files(errno.h HAVE_ERRNO_H)
++check_include_files(util.h HAVE_UTIL_H)
+ 
+ include_directories(.)
+ include_directories(remmina/include)

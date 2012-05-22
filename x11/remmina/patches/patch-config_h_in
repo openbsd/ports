@@ -1,0 +1,11 @@
+$OpenBSD: patch-config_h_in,v 1.1 2012/05/22 08:02:36 mpi Exp $
+--- config.h.in.orig	Thu Apr 19 16:28:12 2012
++++ config.h.in	Thu Apr 19 16:28:23 2012
+@@ -11,6 +11,7 @@
+ #cmakedefine HAVE_UNISTD_H
+ #cmakedefine HAVE_SYS_UN_H
+ #cmakedefine HAVE_ERRNO_H
++#cmakedefine HAVE_UTIL_H
+ 
+ #cmakedefine GTK_VERSION	${GTK_VERSION}
+ 
