@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.39 2012/05/20 11:06:07 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.40 2012/05/22 12:04:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -90,7 +90,7 @@ sub parse_dump
 			$h->{$o} = $o;
 			# Note we did it !
 			$o->{info} //= Info->new($o);
-			$o->{info}->create($var, $value, $arch);
+			$o->{info}->create($var, $value, $arch, $o);
 		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
 			my $dir = PkgPath->new($1);
 			$dir->break("broken dependency");

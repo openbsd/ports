@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.2 2012/05/20 11:06:07 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.3 2012/05/22 12:04:02 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -60,6 +60,19 @@ sub equates
 
 sub simplifies_to
 {
+}
+
+sub change_multi
+{
+	my ($path, $multi) = @_;
+	# make a tmp copy, non registered
+	my $tmp = ref($path)->create($path->fullpkgpath);
+	if ($multi eq '-main') {
+		$tmp->{m} = undef;
+	} else {
+		$tmp->{m} = $multi;
+	}
+	return $tmp->normalize;
 }
 
 1;

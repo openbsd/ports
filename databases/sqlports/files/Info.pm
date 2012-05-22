@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.1 2012/05/18 12:11:28 espie Exp $
+# $OpenBSD: Info.pm,v 1.2 2012/05/22 12:04:02 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -103,15 +103,16 @@ sub new
 
 sub create
 {
-	my ($self, $var, $value, $arch) = @_;
+	my ($self, $var, $value, $arch, $path) = @_;
 	my $k = $var;
 	if (defined $arch) {
 		$k .= "-$arch";
 	}
 	if (defined $vars->{$var}) {
-		$self->{vars}{$k} = $vars->{$var}->new($var, $value, $arch);
+		$self->{vars}{$k} = $vars->{$var}->new($var, $value, $arch, 
+		    $path);
 	} else {
-		$unknown->{$k} //= $self->{path};
+		$unknown->{$k} //= $path;
 	}
 }
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.14 2012/05/20 11:06:07 espie Exp $
+# $OpenBSD: Var.pm,v 1.15 2012/05/22 12:04:02 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,7 +31,7 @@ sub keyword_table() { undef }
 sub new
 {
 	my ($class, $var, $value, $arch) = @_;
-	print STDERR  "$var-$arch\n" if defined $arch;
+	die "No arch fo $var" if defined $arch;
 	bless [$var, $value], $class;
 }
 
@@ -452,11 +452,39 @@ package MultiVar;
 our @ISA = qw(ListVar);
 sub table() { 'Multi' }
 
+sub create_tables
+{
+	my ($self, $inserter) = @_;
+	$inserter->make_table($self, 'UNIQUE(FULLPKGPATH, VALUE)',
+	    TextColumn->new("VALUE"),
+	    PathColumn->new("SUBPKGPATH"));
+    	$inserter->prepare_normal_inserter($self->table,
+	    "VALUE", "SUBPKGPATH");
+}
+
+sub new
+{
+	my ($class, $var, $value, $arch, $path) = @_;
+	die "No arch fo $var" if defined $arch;
+	bless [$var, $value, $path], $class;
+}
+
+sub path
+{
+	return shift->[2];
+}
+
 sub add
 {
 	my ($self, $ins) = @_;
 	return if $self->value eq '-';
-	$self->SUPER::add($ins);
+	my $base = $self->path;
+	$self->AnyVar::add($ins);
+	for my $d ($self->words) {
+		my $path = $base->change_multi($d);
+		my $k = $ins->find_pathkey($path->fullpkgpath);
+		$self->normal_insert($ins, $d, $k) if $d ne '';
+	}
 }
 
 package ModulesVar;

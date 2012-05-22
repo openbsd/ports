@@ -61,7 +61,7 @@ CANONICAL points to the reduced version.
 
 - Flavors(FULLPKGPATH, VALUE)
 - Categories(FULLPKGPATH, VALUE)
-- Multi(FULLPKGPATH, VALUE)
+- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
 - Modules(FULLPKGPATH, VALUE)
 - Configure(FULLPKGPATH, VALUE)
 - ConfigureArgs(FULLPKGPATH, VALUE)
@@ -84,6 +84,9 @@ the rest.
 - Wantlib(FULLPKGPATH, VALUE)
 All the libraries the FULLPKGPATH depends upon, with and without version number,
 coming from either the WANTLIB variable or various LIB_DEPENDS.
+
+- Multi(FULLPKGPATH, VALUE, SUBPKGPATH)
+with SUBPKGPATH the normalized pkgpath for that subpackage.
 
 - BROKEN(FULLPKGPATH, ARCH, VALUE)
 All the broken entries, which might be arch-dependent.
