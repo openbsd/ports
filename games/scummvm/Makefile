@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2012/04/19 07:43:47 ratchov Exp $
+# $OpenBSD: Makefile,v 1.52 2012/05/22 18:39:42 ajacoutot Exp $
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.4.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -25,7 +25,7 @@ BUILD_DEPENDS=	devel/nasm
 RUN_DEPENDS=	devel/desktop-file-utils
 LIB_DEPENDS=	audio/libmad \
 		audio/flac \
-		audio/faad \
+		audio/faad>=2.7 \
 		devel/sdl \
 		multimedia/libtheora
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.38 2012/05/14 08:07:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2012/05/22 18:39:42 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
 DISTNAME =	pianobar-2012.05.06
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	ao c faad gcrypt gnutls json m mad pthread
 
-LIB_DEPENDS =	audio/faad \
+LIB_DEPENDS =	audio/faad>=2.7 \
 		audio/libao \
 		audio/libmad \
 		devel/json-c \

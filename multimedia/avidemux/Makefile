@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/04/15 11:37:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2012/05/22 18:39:42 ajacoutot Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	multimedia
 
@@ -35,7 +35,7 @@ RUN_DEPENDS =	devel/desktop-file-utils
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	x11/gtk+2 \
-		audio/faad \
+		audio/faad>=2.7 \
 		audio/lame \
 		audio/libvorbis \
 		textproc/libxml \

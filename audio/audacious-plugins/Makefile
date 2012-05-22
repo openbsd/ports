@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/05/11 11:59:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2012/05/22 18:39:42 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,7 @@ V =			3.2.2
 
 DISTNAME =		audacious-plugins-$V
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio multimedia
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS =		${RUN_DEPENDS}
 
 RUN_DEPENDS =		audio/audacious>=${V}
 
-LIB_DEPENDS =		audio/faad \
+LIB_DEPENDS =		audio/faad>=2.7 \
 			audio/flac \
 			audio/lame \
 			audio/libcdio \
