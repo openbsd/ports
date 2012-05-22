@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2012/04/03 15:40:29 ajacoutot Exp $
---- src/Makefile.in.orig	Tue Mar 27 22:25:08 2012
-+++ src/Makefile.in	Sun Apr  1 15:39:59 2012
-@@ -522,7 +522,7 @@ epiphany_LDADD = libephymain.la \
+$OpenBSD: patch-src_Makefile_in,v 1.6 2012/05/22 21:22:35 jasper Exp $
+--- src/Makefile.in.orig	Sat May 19 15:12:51 2012
++++ src/Makefile.in	Tue May 22 23:12:20 2012
+@@ -550,7 +550,7 @@ epiphany_LDADD = libephymain.la \
  	$(top_builddir)/lib/history/libephyhistory.la \
  	$(top_builddir)/lib/libephymisc.la \
  	$(top_builddir)/lib/egg/libegg.la $(DEPENDENCIES_LIBS) \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/04/18 15:39:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2012/05/22 21:22:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,7 +10,7 @@ COMMENT=	GNOME web browser based on webkit
 # www/epiphany-extensions
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.4.1
+GNOME_VERSION=	3.4.2
 
 # NOTE: when M changes, increment M accordingly and bump:
 # www/epiphany-extensions
