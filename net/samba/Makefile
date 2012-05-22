@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2012/05/03 07:40:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.164 2012/05/22 11:43:31 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.6.5
+REVISION-main=		0
 PKGNAME-main=		${DISTNAME}
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
@@ -35,7 +36,8 @@ MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		sysutils/e2fsprogs
 LIB_DEPENDS=	databases/tdb>=1.2.7 \
 		devel/popt \
 		devel/libexecinfo \
@@ -147,8 +149,8 @@ SAMBA_MANPAGES= ${WRKDIST}/docs/manpages
 
 post-patch:
 	@cd ${WRKSRC}; \
-            AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-            ./autogen.sh
+	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	    ./autogen.sh
 
 pre-configure:
 	@${SUBST_CMD} ${SAMBA_MANPAGES}/swat.8
