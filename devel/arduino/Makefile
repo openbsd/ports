@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/24 06:37:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/05/22 21:26:11 jasper Exp $
 
 COMMENT=	open-source electronics prototyping platform
 
-V=		1.0
+V=		1.0.1
 PKGNAME=	arduino-${V}
 DISTNAME=	arduino-${V}-src
 EPOCH=		0
