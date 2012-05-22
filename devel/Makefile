@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1046 2012/05/11 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1047 2012/05/22 14:54:49 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -117,6 +117,7 @@
      SUBDIR += git
      SUBDIR += git-cola
      SUBDIR += glade
+     SUBDIR += glade3
      SUBDIR += glib
      SUBDIR += glib2
      SUBDIR += glib2mm
