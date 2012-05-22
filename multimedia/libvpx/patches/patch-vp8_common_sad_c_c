@@ -1,0 +1,17 @@
+$OpenBSD: patch-vp8_common_sad_c_c,v 1.1 2012/05/22 18:22:50 ajacoutot Exp $
+--- vp8/common/sad_c.c.orig	Sun May 20 05:16:18 2012
++++ vp8/common/sad_c.c	Sun May 20 05:17:51 2012
+@@ -10,8 +10,13 @@
+ 
+ 
+ #include <stdlib.h>
++#include <sys/types.h>
+ #include "vpx_config.h"
+ #include "vpx/vpx_integer.h"
++
++#ifdef __STRICT_ALIGNMENT
++#define CONFIG_FAST_UNALIGNED 0
++#endif
+ 
+ static
+ unsigned int sad_mx_n_c(

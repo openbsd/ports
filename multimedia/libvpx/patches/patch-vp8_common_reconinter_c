@@ -1,0 +1,22 @@
+$OpenBSD: patch-vp8_common_reconinter_c,v 1.1 2012/05/22 18:22:50 ajacoutot Exp $
+--- vp8/common/reconinter.c.orig	Sun May 20 05:08:58 2012
++++ vp8/common/reconinter.c	Sun May 20 05:17:36 2012
+@@ -10,6 +10,7 @@
+ 
+ 
+ #include <limits.h>
++#include <sys/types.h>
+ #include "vpx_config.h"
+ #include "vpx_rtcd.h"
+ #include "vpx/vpx_integer.h"
+@@ -17,6 +18,10 @@
+ #include "reconinter.h"
+ #if CONFIG_RUNTIME_CPU_DETECT
+ #include "onyxc_int.h"
++#endif
++
++#ifdef __STRICT_ALIGNMENT
++#define CONFIG_FAST_UNALIGNED 0
+ #endif
+ 
+ void vp8_copy_mem16x16_c(

@@ -1,7 +1,7 @@
-$OpenBSD: patch-libs_mk,v 1.4 2012/02/28 12:28:29 dcoppa Exp $
---- libs.mk.orig	Fri Jan 27 13:36:39 2012
-+++ libs.mk	Thu Feb 23 15:00:49 2012
-@@ -192,16 +192,11 @@ LIBS-$(if $(BUILD_LIBVPX),$(CONFIG_STATIC)) += $(BUILD
+$OpenBSD: patch-libs_mk,v 1.5 2012/05/22 18:22:50 ajacoutot Exp $
+--- libs.mk.orig	Tue May  8 19:14:00 2012
++++ libs.mk	Wed May 16 17:07:35 2012
+@@ -193,16 +193,11 @@ LIBS-$(if $(BUILD_LIBVPX),$(CONFIG_STATIC)) += $(BUILD
  $(BUILD_PFX)libvpx_g.a: $(LIBVPX_OBJS)
  
  BUILD_LIBVPX_SO         := $(if $(BUILD_LIBVPX),$(CONFIG_SHARED))
@@ -20,7 +20,7 @@ $OpenBSD: patch-libs_mk,v 1.4 2012/02/28 12:28:29 dcoppa Exp $
  
  libvpx.ver: $(call enabled,CODEC_EXPORTS)
  	@echo "    [CREATE] $@"
-@@ -216,14 +211,6 @@ $(1): $(2)
+@@ -217,14 +212,6 @@ $(1): $(2)
  	$(qexec)ln -sf $(LIBVPX_SO) $$@
  endef
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-libs_mk,v 1.4 2012/02/28 12:28:29 dcoppa Exp $
  INSTALL-LIBS-$(CONFIG_SHARED) += $(LIBSUBDIR)/$(LIBVPX_SO)
  
  LIBS-$(BUILD_LIBVPX) += vpx.pc
-@@ -240,7 +227,7 @@ vpx.pc: config.mk libs.mk
+@@ -241,7 +228,7 @@ vpx.pc: config.mk libs.mk
  	$(qexec)echo 'Version: $(VERSION_MAJOR).$(VERSION_MINOR).$(VERSION_PATCH)' >> $@
  	$(qexec)echo 'Requires:' >> $@
  	$(qexec)echo 'Conflicts:' >> $@
