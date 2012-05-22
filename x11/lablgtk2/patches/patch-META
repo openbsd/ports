@@ -1,7 +1,7 @@
-$OpenBSD: patch-META,v 1.2 2009/10/27 09:25:38 giovanni Exp $
+$OpenBSD: patch-META,v 1.3 2012/05/22 13:56:33 dcoppa Exp $
 --- META.orig	Fri Feb 13 03:39:14 2009
-+++ META	Wed Oct 21 17:30:00 2009
-@@ -1,8 +1,14 @@
++++ META	Tue May 22 15:50:54 2012
+@@ -1,8 +1,13 @@
  requires=""
 -version="2.12.0"
 -archive(byte)="lablgtk.cma"
@@ -12,7 +12,6 @@ $OpenBSD: patch-META,v 1.2 2009/10/27 09:25:38 giovanni Exp $
 +version="2.14.0"
  directory="+lablgtk2"
 +requires(lablGL)="lablGL"
-+directory="+lablgtk2"
 +archive(byte)="lablgtk.cma  lablgnomecanvas.cma  gtkInit.cmo"
 +archive(native)="lablgtk.cmxa  lablgnomecanvas.cmxa gtkInit.cmx"
 +archive(byte,lablGL)="lablgtk.cma lablgtkgl.cma  lablgnomecanvas.cma  gtkInit.cmo"
