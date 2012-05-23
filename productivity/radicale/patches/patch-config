@@ -1,6 +1,6 @@
-$OpenBSD: patch-config,v 1.4 2011/08/19 20:35:34 sthen Exp $
---- config.orig	Wed Jun 15 20:03:33 2011
-+++ config	Mon Aug  1 23:41:44 2011
+$OpenBSD: patch-config,v 1.5 2012/05/23 18:02:09 sthen Exp $
+--- config.orig	Tue Mar 13 13:45:35 2012
++++ config	Wed May 23 19:20:15 2012
 @@ -22,9 +22,9 @@ pid =
  # SSL flag, enable HTTPS protocol
  ssl = False
@@ -10,12 +10,12 @@ $OpenBSD: patch-config,v 1.4 2011/08/19 20:35:34 sthen Exp $
  # SSL private key
 -key = /etc/apache2/ssl/server.key
 +key = ${SYSCONFDIR}/radicale/private/server.key
+ # Reverse DNS to resolve client address in logs
+ dns_lookup = True
  
- [encoding]
- # Encoding for responding requests
-@@ -41,10 +41,10 @@ public_users = public
- # Usernames used for private calendars, separated by a comma
+@@ -47,10 +47,10 @@ public_users = public
  private_users = private
+ 
  # Htpasswd filename
 -htpasswd_filename = /etc/radicale/users
 +htpasswd_filename = ${SYSCONFDIR}/radicale/users
@@ -23,16 +23,17 @@ $OpenBSD: patch-config,v 1.4 2011/08/19 20:35:34 sthen Exp $
  # Value: plain | sha1 | crypt
 -htpasswd_encryption = crypt
 +htpasswd_encryption = sha1
+ 
  # LDAP server URL, with protocol and port
  ldap_url = ldap://localhost:389/
- # LDAP base path
-@@ -59,14 +59,14 @@ ldap_password =
+@@ -83,15 +83,14 @@ courier_socket =
+ type = filesystem
  
- [storage]
- # Folder for storing local calendars, created if not present
--folder = ~/.config/radicale/calendars
-+folder = /var/db/radicale/calendars
+ # Folder for storing local collections, created if not present
+-filesystem_folder = ~/.config/radicale/collections
++filesystem_folder = /var/db/radicale/calendars
  
+-
  [logging]
  # Logging configuration file
  # If no config is given, simple information is printed on the standard output
