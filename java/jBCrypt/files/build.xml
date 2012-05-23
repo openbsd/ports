@@ -1,0 +1,40 @@
+<!-- $OpenBSD: build.xml,v 1.1.1.1 2012/05/23 15:02:52 sthen Exp $ -->
+
+<project name="BCrypt" default="all" basedir=".">
+
+  <!-- Properties -->
+
+  <property name="name" value="BCrypt"/>
+  <property name="src" value="src"/>
+  <property name="build" value="build"/>
+  <property name="build.classes" value="${build}/classes"/>
+  <property name="build.lib" value="${build}/lib"/>
+  <property name="packagenames" value="BCrypt.*"/>
+
+  <target name="prepare">
+    <mkdir dir="${src}"/>
+    <mkdir dir="${build}"/>
+    <mkdir dir="${build.classes}"/>
+    <mkdir dir="${build.lib}"/>
+    <copy todir="${src}">
+      <fileset dir="./">
+        <include name="BCrypt.java"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build}"/>
+    <delete dir="${src}"/>
+  </target>
+
+  <target name="classes" depends="prepare">
+    <javac srcdir="${src}/" destdir="${build.classes}" debug="off" optimize="on"/>
+  </target>
+
+  <target name="all" depends="classes">
+    <jar jarfile="${build.lib}/${name}.jar" basedir="${build.classes}"/>
+  </target>
+
+</project>
+

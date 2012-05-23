@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/23 15:02:52 sthen Exp $
+share/java/
+share/java/classes/
+share/java/classes/BCrypt.jar
+share/java/doc/
+share/java/doc/BCrypt/
+share/java/doc/BCrypt/LICENSE
+share/java/doc/BCrypt/README
