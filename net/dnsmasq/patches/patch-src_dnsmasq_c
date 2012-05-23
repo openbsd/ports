@@ -1,10 +1,31 @@
-$OpenBSD: patch-src_dnsmasq_c,v 1.1 2012/05/14 13:57:09 ajacoutot Exp $
+$OpenBSD: patch-src_dnsmasq_c,v 1.2 2012/05/23 09:16:19 ajacoutot Exp $
 
-code-size tweak.
+- code-size tweak.
+- Fix non-response to router-solicitations when router-advertisement
+  configured, but DHCPv6 not configured.
 
---- src/dnsmasq.c.orig	Sun May 13 00:37:29 2012
-+++ src/dnsmasq.c	Sun May 13 00:38:19 2012
-@@ -1209,13 +1209,9 @@ void clear_cache_and_reload(time_t now)
+--- src/dnsmasq.c.orig	Sun Apr 29 11:01:28 2012
++++ src/dnsmasq.c	Mon May 21 13:57:13 2012
+@@ -849,14 +849,11 @@ int main (int argc, char **argv)
+ 	}
+ 
+ #ifdef HAVE_DHCP6
+-      if (daemon->dhcp6)
+-	{
+-	  if (FD_ISSET(daemon->dhcp6fd, &rset))
+-	    dhcp6_packet(now);
++      if (daemon->dhcp6 && FD_ISSET(daemon->dhcp6fd, &rset))
++	dhcp6_packet(now);
+ 
+-	  if (daemon->ra_contexts && FD_ISSET(daemon->icmp6fd, &rset))
+-	    icmp6_packet();
+-	}
++      if (daemon->ra_contexts && FD_ISSET(daemon->icmp6fd, &rset))
++	icmp6_packet();
+ #endif
+ 
+ #  ifdef HAVE_SCRIPT
+@@ -1209,13 +1206,9 @@ void clear_cache_and_reload(time_t now)
      }
  #ifdef HAVE_DHCP6
    else if (daemon->ra_contexts)
