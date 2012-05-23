@@ -1,9 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: syslog_ng.rc,v 1.1 2011/09/14 02:34:06 william Exp $
+# $OpenBSD: syslog_ng.rc,v 1.2 2012/05/23 06:44:50 ajacoutot Exp $
 
 daemon="${PREFIX}/sbin/syslog-ng"
 
 . /etc/rc.d/rc.subr
+
+# needed in case syslog-ng(8) is started early in the boot sequence
+# before rc(8) had a chance to run ldconfig
+rc_pre() {
+	[ "${INRC}" ] && /sbin/ldconfig ${LOCALBASE}/lib || return 0
+}
 
 rc_cmd $1
