@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2012/04/20 10:48:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2012/05/23 15:12:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -54,6 +54,7 @@
      SUBDIR += nbfc
      SUBDIR += newlisp
      SUBDIR += nhc98
+     SUBDIR += node
      SUBDIR += nqp
      SUBDIR += obc
      SUBDIR += ocaml
