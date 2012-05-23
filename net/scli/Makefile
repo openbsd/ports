@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/05/23 07:31:46 jasper Exp $
 
 COMMENT=		snmp command line utility
 
-DISTNAME=		scli-0.3.1
-REVISION=		0
+DISTNAME=		scli-0.4.0
 CATEGORIES=		net
 
-MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/	
+MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,7 +21,7 @@ MODULES=		devel/gettext
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
-LIB_DEPENDS=		net/gsnmp \
+LIB_DEPENDS=		net/gsnmp>=0.3.0 \
 			textproc/libxml
 
 CONFIGURE_STYLE=	gnu
