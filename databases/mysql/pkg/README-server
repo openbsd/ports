@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.5 2012/03/16 00:47:54 william Exp $
+$OpenBSD: README-server,v 1.6 2012/05/23 21:33:04 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,8 +11,8 @@ ${TRUEPREFIX}/bin/mysql_install_db
 You will need to tune the values in the my.cnf file (examples
 available in ${TRUEPREFIX}/share/mysql).
 
-By default, the _mysql user, and so the mysqld processes run in
-the login(1) class of "daemon". On a busy server, it may be advisable
+By default, the _mysql user, and so the MySQL processes run in the
+login(1) class of "daemon". On a busy server, it may be advisable
 to put the _mysql user and processes in their own login(1) class
 with tuned resources, such as more open file descriptors etc.
 
@@ -26,12 +26,6 @@ For example, add this to the login.conf(5) file:
 Rebuild the login.conf.db file if necessary:
 
 	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
-
-mysqld_safe(1) is the recommended way to start a MySQL server,
-it creates the directory for the socket and adds some safety
-features such as restarting the server when an error occurs
-and logging runtime information to an error log file. Options
-may be passed in the [mysqld_safe] section of my.cnf.
 
 For larger servers and dedicated database servers, these numbers
 and memory limits (e.g. datasize and stacksize) may also need to be
