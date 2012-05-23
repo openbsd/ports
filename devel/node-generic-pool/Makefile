@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/10 13:17:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/23 15:13:20 jasper Exp $
 
 COMMENT =	generic resource pool for nodejs
 
@@ -6,7 +6,7 @@ NPM_VERSION =	1.0.9
 NPM_NAME =	generic-pool
 CATEGORIES =	devel
 
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-MODULES =		www/node
+MODULES =		lang/node
 
 CONFIGURE_STYLE =	npm expresso
 

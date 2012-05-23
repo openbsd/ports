@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/10 10:46:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/23 15:13:20 jasper Exp $
 
 COMMENT =	sqlite3 bindings for nodejs
 
 NPM_VERSION =	2.1.3
 NPM_NAME =	sqlite3
+REVISION =	0
 CATEGORIES =	databases
 
 MAINTAINER =	Aaron Bieber <deftly@gmail.com>
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP = Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP = Yes
 
-MODULES =		www/node
+MODULES =		lang/node
 
 CONFIGURE_STYLE =	npm ext
 

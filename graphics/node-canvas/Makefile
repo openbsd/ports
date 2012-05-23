@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/11 06:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/23 15:13:20 jasper Exp $
 
 COMMENT =	Cairo-backed Canvas implementation for Node.JS
 
 NPM_VERSION =	0.12.0
 NPM_NAME =	canvas
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://github.com/learnboost/node-canvas
@@ -20,7 +21,7 @@ WANTLIB += gobject-2.0 jpeg pcre pixman-1 png pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
 MODULES =		devel/gettext \
-			www/node
+			lang/node
 
 LIB_DEPENDS =		graphics/cairo \
 			graphics/jpeg \

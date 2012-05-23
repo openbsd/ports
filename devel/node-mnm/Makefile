@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/09 15:24:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/23 15:13:20 jasper Exp $
 
 COMMENT =	build tool for making native node.js modules
 
 NPM_VERSION =	0.0.3
 NPM_NAME =	mnm
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	https://github.com/nearinfinity/node-mnm
@@ -14,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		www/node
+MODULES =		lang/node
 
 CONFIGURE_STYLE =	npm
 
