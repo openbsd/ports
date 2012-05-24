@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: trickled.rc,v 1.1 2012/05/24 18:41:34 gonzalo Exp $
+
+daemon="${TRUEPREFIX}/bin/trickled"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
