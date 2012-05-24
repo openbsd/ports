@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/11/14 11:05:08 sthen Exp $
-
-BROKEN-sparc64=	illegal operands building draw_symbols.c
+# $OpenBSD: Makefile,v 1.27 2012/05/24 17:55:48 miod Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
@@ -22,6 +20,9 @@ AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
 USE_GROFF =		Yes
 MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+.if ${MACHINE} == "sparc64"
+MAKE_FLAGS=	CFLAGS="${CFLAGS} -fno-tree-ter"
+.endif
 
 CONFIGURE_ARGS=		--with-shapelib					\
 			--with-pcre					\
