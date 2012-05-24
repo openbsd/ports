@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/02/26 15:06:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/05/24 11:52:32 jasper Exp $
 %%SHARED%%
 @bin bin/grilo-simple-playlist
-@bin bin/grilo-test-ui
-@bin bin/grl-inspect
+@bin bin/grilo-test-ui-0.1
+@bin bin/grl-inspect-0.1
 include/grilo-0.1/
 include/grilo-0.1/grilo.h
 include/grilo-0.1/grl-config.h

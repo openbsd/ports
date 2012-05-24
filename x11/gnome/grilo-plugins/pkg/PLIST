@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/02/23 11:29:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/05/24 11:52:38 jasper Exp $
 lib/grilo-${API}/
 lib/grilo-${API}/grl-apple-trailers.xml
 lib/grilo-${API}/grl-bliptv.xml
@@ -10,6 +10,7 @@ lib/grilo-${API}/grl-jamendo.xml
 lib/grilo-${API}/grl-lastfm-albumart.xml
 lib/grilo-${API}/grl-local-metadata.xml
 lib/grilo-${API}/grl-metadata-store.xml
+lib/grilo-${API}/grl-optical-media.xml
 lib/grilo-${API}/grl-podcasts.xml
 lib/grilo-${API}/grl-tracker.xml
 lib/grilo-${API}/grl-upnp.xml
@@ -35,6 +36,8 @@ lib/grilo-${API}/libgrllastfm-albumart.so
 lib/grilo-${API}/libgrllocalmetadata.so
 @comment lib/grilo-${API}/libgrlmetadatastore.la
 lib/grilo-${API}/libgrlmetadatastore.so
+@comment lib/grilo-${API}/libgrloptical-media.la
+lib/grilo-${API}/libgrloptical-media.so
 @comment lib/grilo-${API}/libgrlpodcasts.la
 lib/grilo-${API}/libgrlpodcasts.so
 @comment lib/grilo-${API}/libgrltracker.la
