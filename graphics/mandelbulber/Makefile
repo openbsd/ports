@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/16 03:51:10 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/24 08:36:05 jasper Exp $
 
 COMMENT =		3D fractal renderer
 
-V =			1.08
+V =			1.11
 DISTNAME =		mandelbulber${V}
 PKGNAME =		mandelbulber-${V}
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += atk-1.0 cairo gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 png z
 WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB += Xrandr Xrender c expat fontconfig freetype m pixman-1
@@ -26,7 +26,8 @@ WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=mandelbulber/}
 
 MODULES =		devel/gettext
-LIB_DEPENDS =		graphics/png x11/gtk+2
+LIB_DEPENDS =		graphics/png \
+			x11/gtk+2
 
 NO_REGRESS =		Yes
 

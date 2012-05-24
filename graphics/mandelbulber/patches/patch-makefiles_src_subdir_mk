@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefiles_src_subdir_mk,v 1.1.1.1 2011/10/16 03:51:10 bentley Exp $
---- makefiles/src/subdir.mk.orig	Sun Aug 21 06:45:14 2011
-+++ makefiles/src/subdir.mk	Fri Sep 30 01:34:28 2011
-@@ -65,7 +65,7 @@ CPP_DEPS += \
+$OpenBSD: patch-makefiles_src_subdir_mk,v 1.2 2012/05/24 08:36:05 jasper Exp $
+--- makefiles/src/subdir.mk.orig	Sun Feb 12 12:07:21 2012
++++ makefiles/src/subdir.mk	Thu May 24 10:26:38 2012
+@@ -68,7 +68,7 @@ CPP_DEPS += \
  src/%.o: ../src/%.cpp
  	@echo 'Building file: $<'
  	@echo 'Invoking: GCC C++ Compiler'

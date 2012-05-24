@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/16 03:51:10 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/24 08:36:05 jasper Exp $
 @bin bin/mandelbulber
 share/applications/
 share/applications/mandelbulber.desktop
@@ -48,6 +48,10 @@ share/mandelbulber/examples/hypercomplex - julia - environment mapping.fract
 share/mandelbulber/examples/interior - mandelbox scale 2.fract
 share/mandelbulber/examples/interior - mandelbulb power 2.fract
 share/mandelbulber/examples/interior - mandelbulb power 8.fract
+share/mandelbulber/examples/iter fog 1.fract
+share/mandelbulber/examples/iter fog 2.fract
+share/mandelbulber/examples/iter fog 3.fract
+share/mandelbulber/examples/iter fog 4.fract
 share/mandelbulber/examples/menger sponge - equirectangular projection.fract
 share/mandelbulber/examples/menger sponge 2.fract
 share/mandelbulber/examples/menger sponge 3.fract
@@ -96,6 +100,8 @@ share/mandelbulber/icons/go-next.png
 share/mandelbulber/icons/go-previous.png
 share/mandelbulber/icons/go-up.png
 share/mandelbulber/icons/mandelbulber.png
+share/mandelbulber/icons/object-rotate-left.png
+share/mandelbulber/icons/object-rotate-right.png
 share/mandelbulber/textures/
 share/mandelbulber/textures/background.jpg
 share/mandelbulber/textures/colour palette.jpg
