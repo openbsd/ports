@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2006/03/10 09:43:37 espie Exp $
-@lib lib/libmpcdec.so.${LIBmpcdec_VERSION}

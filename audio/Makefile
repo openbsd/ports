@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.278 2012/05/24 18:30:58 shadchin Exp $
+# $OpenBSD: Makefile,v 1.279 2012/05/24 18:57:13 shadchin Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -78,7 +78,6 @@
      SUBDIR += libmikmod
      SUBDIR += libmodplug
      SUBDIR += libmp3splt
-     SUBDIR += libmpcdec
      SUBDIR += libmpd
      SUBDIR += libmpdclient
      SUBDIR += libmusicbrainz
@@ -119,7 +118,6 @@
      SUBDIR += mpegaudio
      SUBDIR += mpg123
      SUBDIR += mpg321
-     SUBDIR += mppenc
      SUBDIR += mt-daapd
      SUBDIR += multimux
      SUBDIR += musepack
