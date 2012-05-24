@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.77 2012/05/21 13:54:25 giovanni Exp $
+# $OpenBSD: Quirks.pm,v 1.78 2012/05/24 18:36:45 shadchin Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -296,7 +296,9 @@ my $stem_extensions = {
 	'apr-util-mt' => 'apr-util',
 	'xfce-utils' => 'xfce4-session',
 	'p5-Email-MIME-Creator' => 'p5-Email-MIME',
-	'p5-Email-MIME-Modifier' => 'p5-Email-MIME'
+	'p5-Email-MIME-Modifier' => 'p5-Email-MIME',
+	'libmpcdec' => 'musepack',
+	'mppenc' => 'musepack'
 };
 
 # ->is_base_system($handle, $state):

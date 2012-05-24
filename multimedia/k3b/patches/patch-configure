@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2008/07/09 02:13:01 jakemsr Exp $
---- configure.orig	Fri Nov  2 03:02:31 2007
-+++ configure	Sun Jun 22 00:56:53 2008
+$OpenBSD: patch-configure,v 1.3 2012/05/24 18:36:45 shadchin Exp $
+--- configure.orig	Fri Nov  2 15:02:31 2007
++++ configure	Mon Jan  2 17:53:12 2012
 @@ -29531,7 +29531,10 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
    fi
  
@@ -48,3 +48,21 @@ $OpenBSD: patch-configure,v 1.2 2008/07/09 02:13:01 jakemsr Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
+@@ -37326,7 +37329,7 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
+ 
+ 
+ 
+-for ac_header in mpcdec/mpcdec.h
++for ac_header in mpc/mpcdec.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if { as_var=$as_ac_Header; eval "test \"\${$as_var+set}\" = set"; }; then
+@@ -37528,7 +37531,7 @@ if test $ac_cv_lib_mpcdec_mpc_decoder_setup = yes; the
+ 		MPC_LIBS="-lmpcdec"
+ 
+ cat >>confdefs.h <<\_ACEOF
+-#define MPC_HEADER_FILE <mpcdec/mpcdec.h>
++#define MPC_HEADER_FILE <mpc/mpcdec.h>
+ _ACEOF
+ 
+ 

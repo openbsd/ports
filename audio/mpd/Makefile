@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.45 2012/04/16 09:50:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.46 2012/05/24 18:36:45 shadchin Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.16.8
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -83,7 +83,7 @@ LIB_DEPENDS +=		audio/libvorbis \
 			audio/lame \
 			net/libshout \
 			audio/faad>=2.6.1p0 \
-			audio/libmpcdec
+			audio/musepack
 CONFIGURE_ARGS +=	--enable-aac \
 			--enable-shout \
 			--enable-vorbis-encoder

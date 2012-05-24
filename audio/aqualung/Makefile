@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2012/05/15 18:04:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/05/24 18:36:45 shadchin Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	8
+REVISION=	9
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -39,8 +39,8 @@ LIB_DEPENDS=	audio/flac \
 		audio/libcddb \
 		audio/libmad \
 		audio/libmodplug \
-		audio/libmpcdec \
 		audio/mac \
+		audio/musepack \
 		audio/speex \
 		audio/wavpack \
 		graphics/ffmpeg \

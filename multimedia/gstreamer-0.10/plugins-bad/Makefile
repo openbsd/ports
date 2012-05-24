@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/05/03 06:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/05/24 18:36:45 shadchin Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -55,8 +55,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/gsm \
 			audio/libcdaudio \
 			audio/libdca \
-			audio/libmpcdec \
 			audio/libsndfile \
+			audio/musepack \
 			audio/soundtouch \
 			devel/sdl \
 			graphics/jasper \
