@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/05/15 14:31:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/24 07:58:20 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,6 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.2
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -107,7 +108,18 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${LOCALBASE}/lib/pulseaudio
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gnome-control-center
 
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+BUILD_DEPENDS +=devel/autoconf/${AUTOCONF_VERSION} \
+		devel/automake/${AUTOMAKE_VERSION} \
+		devel/libtool \
+		x11/gnome/common
+
 pre-configure:
+	@cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 	${SUBST_CMD} ${WRKSRC}/panels/printers/cc-printers-panel.c
 
 .include <bsd.port.mk>

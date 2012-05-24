@@ -1,0 +1,20 @@
+$OpenBSD: patch-panels_Makefile_am,v 1.1 2012/05/24 07:58:20 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=676714
+
+--- panels/Makefile.am.orig	Mon Mar  5 15:04:55 2012
++++ panels/Makefile.am	Thu May 24 09:23:10 2012
+@@ -13,8 +13,11 @@ SUBDIRS= \
+ 	keyboard \
+ 	universal-access \
+ 	user-accounts \
+-	datetime \
+-	wacom
++	datetime
++
++if BUILD_WACOM
++SUBDIRS += wacom
++endif
+ 
+ if BUILD_PRINTERS
+ SUBDIRS += printers
