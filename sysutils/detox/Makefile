@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.2 2012/05/24 11:35:29 kirby Exp $
 
 COMMENT =		utility designed to clean up filenames
 
