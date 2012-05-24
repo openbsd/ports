@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2012/05/18 01:30:55 bentley Exp $
+# $OpenBSD: Makefile,v 1.278 2012/05/24 18:30:58 shadchin Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -122,6 +122,7 @@
      SUBDIR += mppenc
      SUBDIR += mt-daapd
      SUBDIR += multimux
+     SUBDIR += musepack
      SUBDIR += nap
      SUBDIR += ncmpc
      SUBDIR += ncmpcpp
