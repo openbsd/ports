@@ -1,0 +1,14 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+--- CMakeLists.txt.orig	Wed Jul 28 13:24:28 2010
++++ CMakeLists.txt	Wed Jul 28 14:04:26 2010
+@@ -15,10 +15,6 @@ endif(WIN32)
+ 
+ add_definitions(-DFAST_MATH -DCVD_FASTLOG)
+ 
+-if(NOT MSVC)
+-  set(CMAKE_C_FLAGS "-O3 -Wall -fomit-frame-pointer -pipe")
+-endif(NOT MSVC)
+-
+ add_subdirectory(libmpcdec)
+ add_subdirectory(libmpcpsy)
+ add_subdirectory(libmpcenc)

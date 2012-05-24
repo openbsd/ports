@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+@conflict libmpcdec-*
+%%SHARED%%
+@bin bin/mpc2sv8
+@bin bin/mpcchap
+@bin bin/mpccut
+@bin bin/mpcdec
+@bin bin/mpcenc
+@bin bin/mpcgain
+@bin bin/wavcmp
+include/mpc/
+include/mpc/datatypes.h
+include/mpc/minimax.h
+include/mpc/mpc_types.h
+include/mpc/mpcdec.h
+include/mpc/mpcmath.h
+include/mpc/reader.h
+include/mpc/streaminfo.h
+lib/libmpcdec.a

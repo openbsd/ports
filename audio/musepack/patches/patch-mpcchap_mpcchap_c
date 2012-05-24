@@ -1,0 +1,34 @@
+$OpenBSD: patch-mpcchap_mpcchap_c,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+--- mpcchap/mpcchap.c.orig	Fri Dec  2 04:21:33 2011
++++ mpcchap/mpcchap.c	Fri Dec  2 04:27:40 2011
+@@ -24,7 +24,7 @@
+ 
+ #include <sys/stat.h>
+ 
+-#include <cuetools/cuefile.h>
++#include <libcue/libcue.h>
+ 
+ // tags.c
+ void    Init_Tags        ( void );
+@@ -153,13 +153,19 @@ mpc_status add_chaps_ini(char * mpc_file, char * chap_
+ mpc_status add_chaps_cue(char * mpc_file, char * chap_file, mpc_demux * demux, mpc_streaminfo * si)
+ {
+ 	Cd *cd = 0;
+-	int nchap, format = UNKNOWN;
++	int nchap;
+ 	struct stat stbuf;
+ 	FILE * in_file;
++	FILE * cue_file;
+ 	int chap_pos, end_pos, chap_size, i;
+ 	char * tmp_buff;
+ 
+-	if (0 == (cd = cf_parse(chap_file, &format))) {
++	if ((cue_file = fopen(chap_file, "r")) == NULL) {
++		fprintf(stderr, "%s: error opening file\n", chap_file);
++		return !MPC_STATUS_OK;
++	}
++
++	if (0 == (cd = cue_parse_file(cue_file))) {
+ 		fprintf(stderr, "%s: input file error\n", chap_file);
+ 		return !MPC_STATUS_OK;
+ 	}

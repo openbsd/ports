@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpcgain_gain_analysis_c,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+--- mpcgain/gain_analysis.c.orig	Fri Dec  2 02:14:34 2011
++++ mpcgain/gain_analysis.c	Fri Dec  2 02:14:52 2011
+@@ -50,7 +50,7 @@
+ #include <string.h>
+ #include <math.h>
+ 
+-#include <replaygain/gain_analysis.h>
++#include "gain_analysis.h"
+ 
+ typedef unsigned short  Uint16_t;
+ typedef signed short    Int16_t;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpc2sv8_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+--- mpc2sv8/CMakeLists.txt.orig	Fri Jun 18 18:45:01 2010
++++ mpc2sv8/CMakeLists.txt	Fri Jun 18 18:45:10 2010
+@@ -28,8 +28,4 @@ if(NOT MSVC)
+ target_link_libraries(mpc2sv8 m)
+ endif(NOT MSVC)
+ 
+-if(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
+-target_link_libraries(mpc2sv8 ossaudio)
+-endif(CMAKE_SYSTEM_NAME STREQUAL OpenBSD)
+-
+ install(TARGETS mpc2sv8 RUNTIME DESTINATION bin)

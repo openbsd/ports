@@ -1,0 +1,28 @@
+$OpenBSD: patch-mpcgain_CMakeLists_txt,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+--- mpcgain/CMakeLists.txt.orig	Fri Dec  2 02:10:28 2011
++++ mpcgain/CMakeLists.txt	Fri Dec  2 02:11:07 2011
+@@ -1,23 +1,8 @@
+-FIND_PATH(REPLAY_GAIN_INCLUDE_DIR replaygain/gain_analysis.h
+-	/usr/include
+-	/usr/local/include
+-	${libmpc_SOURCE_DIR}/../libreplaygain/include
+-)
+-
+-FIND_LIBRARY(REPLAY_GAIN_LIBRARY NAMES replaygain replaygain_static PATHS
+-	/usr/lib
+-	/usr/local/lib
+-	${libmpc_SOURCE_DIR}/../libreplaygain/bin/src/release
+-)
+-
+ include_directories(${libmpc_SOURCE_DIR}/include)
+-include_directories(${REPLAY_GAIN_INCLUDE_DIR})
+ 
+ link_directories(${libmpc_BINARY_DIR}/libmpcdec)
+ 
+-add_executable(mpcgain mpcgain.c)
+-
+-target_link_libraries(mpcgain ${REPLAY_GAIN_LIBRARY})
++add_executable(mpcgain mpcgain.c gain_analysis.c)
+ 
+ if(SHARED)
+   target_link_libraries(mpcgain mpcdec)
