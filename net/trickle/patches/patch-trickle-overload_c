@@ -1,7 +1,7 @@
-$OpenBSD: patch-trickle-overload_c,v 1.1 2003/12/14 23:27:44 naddy Exp $
---- trickle-overload.c.orig	2003-12-14 21:34:01.000000000 +0100
-+++ trickle-overload.c	2003-12-14 21:34:41.000000000 +0100
-@@ -473,7 +473,7 @@ select(int nfds, fd_set *rfds, fd_set *w
+$OpenBSD: patch-trickle-overload_c,v 1.2 2012/05/24 18:40:49 gonzalo Exp $
+--- trickle-overload.c.orig	Mon Jun  2 20:13:28 2003
++++ trickle-overload.c	Tue May  8 16:53:30 2012
+@@ -473,7 +473,7 @@ select(int nfds, fd_set *rfds, fd_set *wfds, fd_set *e
  #define POLL_WRMASK (POLLOUT | POLLWRNORM | POLLWRBAND)
  #define POLL_RDMASK (POLLIN | /* POLLNORM | */  POLLPRI | POLLRDNORM | POLLRDBAND)
  
