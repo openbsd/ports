@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/03/29 07:06:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/05/24 13:35:44 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -24,6 +24,8 @@ include/gedit-3.0/gedit/gedit-window.h
 lib/gedit/
 lib/gedit/girepository-1.0/
 lib/gedit/girepository-1.0/Gedit-3.0.typelib
+lib/gedit/libgedit-private.la
+lib/gedit/libgedit-private.so
 lib/gedit/plugins/
 lib/gedit/plugins/changecase.plugin
 lib/gedit/plugins/docinfo.plugin
@@ -153,8 +155,6 @@ lib/gedit/plugins/snippets/windowactivatable.pyo
 lib/gedit/plugins/sort.plugin
 lib/gedit/plugins/spell.plugin
 lib/gedit/plugins/time.plugin
-lib/libgedit-private.la
-@lib lib/libgedit-private.so.${LIBgedit-private_VERSION}
 lib/pkgconfig/gedit.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gedit.pyc
@@ -259,6 +259,7 @@ share/help/
 share/help/C/
 share/help/C/gedit/
 share/help/C/gedit/figures/
+share/help/C/gedit/figures/gedit-html-snippet.png
 share/help/C/gedit/figures/gedit-icon.png
 share/help/C/gedit/figures/gedit-new-external-tool.png
 share/help/C/gedit/figures/gedit-open-location.png
@@ -324,6 +325,7 @@ share/help/C/gedit/index.page
 share/help/ar/
 share/help/ar/gedit/
 share/help/ar/gedit/figures/
+share/help/ar/gedit/figures/gedit-html-snippet.png
 share/help/ar/gedit/figures/gedit-icon.png
 share/help/ar/gedit/figures/gedit-new-external-tool.png
 share/help/ar/gedit/figures/gedit-open-location.png
@@ -389,6 +391,7 @@ share/help/ar/gedit/index.page
 share/help/bg/
 share/help/bg/gedit/
 share/help/bg/gedit/figures/
+share/help/bg/gedit/figures/gedit-html-snippet.png
 share/help/bg/gedit/figures/gedit-icon.png
 share/help/bg/gedit/figures/gedit-new-external-tool.png
 share/help/bg/gedit/figures/gedit-open-location.png
@@ -454,6 +457,7 @@ share/help/bg/gedit/index.page
 share/help/ca/
 share/help/ca/gedit/
 share/help/ca/gedit/figures/
+share/help/ca/gedit/figures/gedit-html-snippet.png
 share/help/ca/gedit/figures/gedit-icon.png
 share/help/ca/gedit/figures/gedit-new-external-tool.png
 share/help/ca/gedit/figures/gedit-open-location.png
@@ -519,6 +523,7 @@ share/help/ca/gedit/index.page
 share/help/cs/
 share/help/cs/gedit/
 share/help/cs/gedit/figures/
+share/help/cs/gedit/figures/gedit-html-snippet.png
 share/help/cs/gedit/figures/gedit-icon.png
 share/help/cs/gedit/figures/gedit-new-external-tool.png
 share/help/cs/gedit/figures/gedit-open-location.png
@@ -584,6 +589,7 @@ share/help/cs/gedit/index.page
 share/help/da/
 share/help/da/gedit/
 share/help/da/gedit/figures/
+share/help/da/gedit/figures/gedit-html-snippet.png
 share/help/da/gedit/figures/gedit-icon.png
 share/help/da/gedit/figures/gedit-new-external-tool.png
 share/help/da/gedit/figures/gedit-open-location.png
@@ -649,6 +655,7 @@ share/help/da/gedit/index.page
 share/help/de/
 share/help/de/gedit/
 share/help/de/gedit/figures/
+share/help/de/gedit/figures/gedit-html-snippet.png
 share/help/de/gedit/figures/gedit-icon.png
 share/help/de/gedit/figures/gedit-new-external-tool.png
 share/help/de/gedit/figures/gedit-open-location.png
@@ -714,6 +721,7 @@ share/help/de/gedit/index.page
 share/help/el/
 share/help/el/gedit/
 share/help/el/gedit/figures/
+share/help/el/gedit/figures/gedit-html-snippet.png
 share/help/el/gedit/figures/gedit-icon.png
 share/help/el/gedit/figures/gedit-new-external-tool.png
 share/help/el/gedit/figures/gedit-open-location.png
@@ -779,6 +787,7 @@ share/help/el/gedit/index.page
 share/help/es/
 share/help/es/gedit/
 share/help/es/gedit/figures/
+share/help/es/gedit/figures/gedit-html-snippet.png
 share/help/es/gedit/figures/gedit-icon.png
 share/help/es/gedit/figures/gedit-new-external-tool.png
 share/help/es/gedit/figures/gedit-open-location.png
@@ -844,6 +853,7 @@ share/help/es/gedit/index.page
 share/help/eu/
 share/help/eu/gedit/
 share/help/eu/gedit/figures/
+share/help/eu/gedit/figures/gedit-html-snippet.png
 share/help/eu/gedit/figures/gedit-icon.png
 share/help/eu/gedit/figures/gedit-new-external-tool.png
 share/help/eu/gedit/figures/gedit-open-location.png
@@ -909,6 +919,7 @@ share/help/eu/gedit/index.page
 share/help/fi/
 share/help/fi/gedit/
 share/help/fi/gedit/figures/
+share/help/fi/gedit/figures/gedit-html-snippet.png
 share/help/fi/gedit/figures/gedit-icon.png
 share/help/fi/gedit/figures/gedit-new-external-tool.png
 share/help/fi/gedit/figures/gedit-open-location.png
@@ -974,6 +985,7 @@ share/help/fi/gedit/index.page
 share/help/fr/
 share/help/fr/gedit/
 share/help/fr/gedit/figures/
+share/help/fr/gedit/figures/gedit-html-snippet.png
 share/help/fr/gedit/figures/gedit-icon.png
 share/help/fr/gedit/figures/gedit-new-external-tool.png
 share/help/fr/gedit/figures/gedit-open-location.png
@@ -1039,6 +1051,7 @@ share/help/fr/gedit/index.page
 share/help/gl/
 share/help/gl/gedit/
 share/help/gl/gedit/figures/
+share/help/gl/gedit/figures/gedit-html-snippet.png
 share/help/gl/gedit/figures/gedit-icon.png
 share/help/gl/gedit/figures/gedit-new-external-tool.png
 share/help/gl/gedit/figures/gedit-open-location.png
@@ -1104,6 +1117,7 @@ share/help/gl/gedit/index.page
 share/help/hu/
 share/help/hu/gedit/
 share/help/hu/gedit/figures/
+share/help/hu/gedit/figures/gedit-html-snippet.png
 share/help/hu/gedit/figures/gedit-icon.png
 share/help/hu/gedit/figures/gedit-new-external-tool.png
 share/help/hu/gedit/figures/gedit-open-location.png
@@ -1169,6 +1183,7 @@ share/help/hu/gedit/index.page
 share/help/it/
 share/help/it/gedit/
 share/help/it/gedit/figures/
+share/help/it/gedit/figures/gedit-html-snippet.png
 share/help/it/gedit/figures/gedit-icon.png
 share/help/it/gedit/figures/gedit-new-external-tool.png
 share/help/it/gedit/figures/gedit-open-location.png
@@ -1234,6 +1249,7 @@ share/help/it/gedit/index.page
 share/help/ja/
 share/help/ja/gedit/
 share/help/ja/gedit/figures/
+share/help/ja/gedit/figures/gedit-html-snippet.png
 share/help/ja/gedit/figures/gedit-icon.png
 share/help/ja/gedit/figures/gedit-new-external-tool.png
 share/help/ja/gedit/figures/gedit-open-location.png
@@ -1299,6 +1315,7 @@ share/help/ja/gedit/index.page
 share/help/ko/
 share/help/ko/gedit/
 share/help/ko/gedit/figures/
+share/help/ko/gedit/figures/gedit-html-snippet.png
 share/help/ko/gedit/figures/gedit-icon.png
 share/help/ko/gedit/figures/gedit-new-external-tool.png
 share/help/ko/gedit/figures/gedit-open-location.png
@@ -1364,6 +1381,7 @@ share/help/ko/gedit/index.page
 share/help/lv/
 share/help/lv/gedit/
 share/help/lv/gedit/figures/
+share/help/lv/gedit/figures/gedit-html-snippet.png
 share/help/lv/gedit/figures/gedit-icon.png
 share/help/lv/gedit/figures/gedit-new-external-tool.png
 share/help/lv/gedit/figures/gedit-open-location.png
@@ -1429,6 +1447,7 @@ share/help/lv/gedit/index.page
 share/help/oc/
 share/help/oc/gedit/
 share/help/oc/gedit/figures/
+share/help/oc/gedit/figures/gedit-html-snippet.png
 share/help/oc/gedit/figures/gedit-icon.png
 share/help/oc/gedit/figures/gedit-new-external-tool.png
 share/help/oc/gedit/figures/gedit-open-location.png
@@ -1494,6 +1513,7 @@ share/help/oc/gedit/index.page
 share/help/pt_BR/
 share/help/pt_BR/gedit/
 share/help/pt_BR/gedit/figures/
+share/help/pt_BR/gedit/figures/gedit-html-snippet.png
 share/help/pt_BR/gedit/figures/gedit-icon.png
 share/help/pt_BR/gedit/figures/gedit-new-external-tool.png
 share/help/pt_BR/gedit/figures/gedit-open-location.png
@@ -1559,6 +1579,7 @@ share/help/pt_BR/gedit/index.page
 share/help/ru/
 share/help/ru/gedit/
 share/help/ru/gedit/figures/
+share/help/ru/gedit/figures/gedit-html-snippet.png
 share/help/ru/gedit/figures/gedit-icon.png
 share/help/ru/gedit/figures/gedit-new-external-tool.png
 share/help/ru/gedit/figures/gedit-open-location.png
@@ -1624,6 +1645,7 @@ share/help/ru/gedit/index.page
 share/help/sl/
 share/help/sl/gedit/
 share/help/sl/gedit/figures/
+share/help/sl/gedit/figures/gedit-html-snippet.png
 share/help/sl/gedit/figures/gedit-icon.png
 share/help/sl/gedit/figures/gedit-new-external-tool.png
 share/help/sl/gedit/figures/gedit-open-location.png
@@ -1689,6 +1711,7 @@ share/help/sl/gedit/index.page
 share/help/sv/
 share/help/sv/gedit/
 share/help/sv/gedit/figures/
+share/help/sv/gedit/figures/gedit-html-snippet.png
 share/help/sv/gedit/figures/gedit-icon.png
 share/help/sv/gedit/figures/gedit-new-external-tool.png
 share/help/sv/gedit/figures/gedit-open-location.png
@@ -1754,6 +1777,7 @@ share/help/sv/gedit/index.page
 share/help/te/
 share/help/te/gedit/
 share/help/te/gedit/figures/
+share/help/te/gedit/figures/gedit-html-snippet.png
 share/help/te/gedit/figures/gedit-icon.png
 share/help/te/gedit/figures/gedit-new-external-tool.png
 share/help/te/gedit/figures/gedit-open-location.png
@@ -1819,6 +1843,7 @@ share/help/te/gedit/index.page
 share/help/th/
 share/help/th/gedit/
 share/help/th/gedit/figures/
+share/help/th/gedit/figures/gedit-html-snippet.png
 share/help/th/gedit/figures/gedit-icon.png
 share/help/th/gedit/figures/gedit-new-external-tool.png
 share/help/th/gedit/figures/gedit-open-location.png
@@ -1884,6 +1909,7 @@ share/help/th/gedit/index.page
 share/help/uk/
 share/help/uk/gedit/
 share/help/uk/gedit/figures/
+share/help/uk/gedit/figures/gedit-html-snippet.png
 share/help/uk/gedit/figures/gedit-icon.png
 share/help/uk/gedit/figures/gedit-new-external-tool.png
 share/help/uk/gedit/figures/gedit-open-location.png
@@ -1949,6 +1975,7 @@ share/help/uk/gedit/index.page
 share/help/zh_CN/
 share/help/zh_CN/gedit/
 share/help/zh_CN/gedit/figures/
+share/help/zh_CN/gedit/figures/gedit-html-snippet.png
 share/help/zh_CN/gedit/figures/gedit-icon.png
 share/help/zh_CN/gedit/figures/gedit-new-external-tool.png
 share/help/zh_CN/gedit/figures/gedit-open-location.png
@@ -2014,6 +2041,7 @@ share/help/zh_CN/gedit/index.page
 share/help/zh_HK/
 share/help/zh_HK/gedit/
 share/help/zh_HK/gedit/figures/
+share/help/zh_HK/gedit/figures/gedit-html-snippet.png
 share/help/zh_HK/gedit/figures/gedit-icon.png
 share/help/zh_HK/gedit/figures/gedit-new-external-tool.png
 share/help/zh_HK/gedit/figures/gedit-open-location.png
@@ -2079,6 +2107,7 @@ share/help/zh_HK/gedit/index.page
 share/help/zh_TW/
 share/help/zh_TW/gedit/
 share/help/zh_TW/gedit/figures/
+share/help/zh_TW/gedit/figures/gedit-html-snippet.png
 share/help/zh_TW/gedit/figures/gedit-icon.png
 share/help/zh_TW/gedit/figures/gedit-new-external-tool.png
 share/help/zh_TW/gedit/figures/gedit-open-location.png
