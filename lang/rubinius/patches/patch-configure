@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2011/07/19 17:09:56 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2012/05/24 08:51:32 sthen Exp $
 
 Override the os setting to remove OpenBSD version from it,
 so ports don't have to be bumped when OpenBSD version changes.
 
---- configure.orig	Mon Jul 18 16:42:20 2011
-+++ configure	Mon Jul 18 16:42:55 2011
+--- configure.orig	Wed Jul  6 02:33:08 2011
++++ configure	Wed May 23 20:13:42 2012
 @@ -24,7 +24,7 @@ class Configure
      # TODO: conditionalize for Windows
      @host = `./rakelib/config.guess`.chomp
@@ -14,3 +14,16 @@ so ports don't have to be bumped when OpenBSD version changes.
      @little_endian = false
      @sizeof_long = 0
  
+@@ -549,10 +549,10 @@ class Configure
+ 
+     if which
+       config = File.join(which, "llvm-config")
+-      version = `#{@perl} #{config} --version`.strip
++      version = `#{config} --version`.strip
+       parts = version.sub(/svn$/, "").split(".").map { |i| i.to_i }
+       api_version = ("%d%02d" % parts[0..1]).to_i
+-      if `#{@perl} #{config} --cxxflags`.index("-fno-rtti")
++      if `#{config} --cxxflags`.index("-fno-rtti")
+         @log.write "incorrectly configured llvm (rtti is off)"
+       elsif api_version != 208 and api_version != 209
+         @log.write "only LLVM 2.8 and 2.9 are supported"
