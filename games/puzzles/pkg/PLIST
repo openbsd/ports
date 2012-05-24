@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/03/28 12:53:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/24 08:23:02 landry Exp $
 @bin bin/puzzle-blackbox
 @bin bin/puzzle-bridges
 @bin bin/puzzle-cube
@@ -69,10 +69,6 @@ share/applications/puzzle-unequal.desktop
 share/applications/puzzle-untangle.desktop
 share/doc/puzzles/
 share/doc/puzzles/puzzles.txt
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/puzzle-blackbox.png
 share/icons/hicolor/16x16/apps/puzzle-bridges.png
 share/icons/hicolor/16x16/apps/puzzle-cube.png
@@ -107,8 +103,6 @@ share/icons/hicolor/16x16/apps/puzzle-towers.png
 share/icons/hicolor/16x16/apps/puzzle-twiddle.png
 share/icons/hicolor/16x16/apps/puzzle-unequal.png
 share/icons/hicolor/16x16/apps/puzzle-untangle.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/puzzle-blackbox.png
 share/icons/hicolor/32x32/apps/puzzle-bridges.png
 share/icons/hicolor/32x32/apps/puzzle-cube.png
@@ -143,8 +137,6 @@ share/icons/hicolor/32x32/apps/puzzle-towers.png
 share/icons/hicolor/32x32/apps/puzzle-twiddle.png
 share/icons/hicolor/32x32/apps/puzzle-unequal.png
 share/icons/hicolor/32x32/apps/puzzle-untangle.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/puzzle-blackbox.png
 share/icons/hicolor/48x48/apps/puzzle-bridges.png
 share/icons/hicolor/48x48/apps/puzzle-cube.png
