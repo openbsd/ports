@@ -1,6 +1,6 @@
-$OpenBSD: patch-pacpl,v 1.3 2012/04/28 09:02:36 sthen Exp $
---- pacpl.orig	Sat Feb 14 17:04:50 2009
-+++ pacpl	Sat Apr 28 09:59:59 2012
+$OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
+--- pacpl.orig	Sat Feb 14 22:04:50 2009
++++ pacpl	Fri May 25 09:46:10 2012
 @@ -130,8 +130,8 @@ my %config = (
               );
  
@@ -75,6 +75,64 @@ $OpenBSD: patch-pacpl,v 1.3 2012/04/28 09:02:36 sthen Exp $
                                                    },
                                        
                                        PROMPT => {
+@@ -1124,13 +1124,13 @@ my $opts;
+                              
+        mpc  => {
+ 
+-                DEFAULT_ENCODER => "mppenc",
+-                DEFAULT_DECODER => "mppdec",
++                DEFAULT_ENCODER => "mpcenc",
++                DEFAULT_DECODER => "mpcdec",
+                 
+                 ENCODER => {
+ 
+-                            mppenc => {
+-                                        NAME => "mppenc",
++                            mpcenc => {
++                                        NAME => "mpcenc",
+                                         ESTR => sub { 
+                                                       $opts = "--$mpcqual" if $defopts == 1;
+                                                       $opts = '' if $defopts == 0;
+@@ -1142,8 +1142,8 @@ my $opts;
+                 
+                 DECODER => {
+ 
+-                            mppdec => {
+-                                        NAME => "mppdec",
++                            mpcdec => {
++                                        NAME => "mpcdec",
+                                         DSTR => sub { "$dopts %i %o" },
+                                       },
+ 
+@@ -1166,13 +1166,13 @@ my $opts;
+ 
+        mpp  => {
+ 
+-                DEFAULT_ENCODER => "mppenc",
+-                DEFAULT_DECODER => "mppdec",
++                DEFAULT_ENCODER => "mpcenc",
++                DEFAULT_DECODER => "mpcdec",
+                 
+                 ENCODER => {
+ 
+-                            mppenc => {
+-                                        NAME => "mppenc",
++                            mpcenc => {
++                                        NAME => "mpcenc",
+                                         ESTR => sub { 
+                                                       $opts = "--$mpcqual" if $defopts == 1;
+                                                       $opts = '' if $defopts == 0;
+@@ -1184,8 +1184,8 @@ my $opts;
+                 
+                 DECODER => {
+ 
+-                            mppdec => {
+-                                        NAME => "mppdec",
++                            mpcdec => {
++                                        NAME => "mpcdec",
+                                         DSTR => sub { "$dopts %i %o" },
+                                       },
+ 
 @@ -2050,11 +2050,11 @@ sub format_tags {
       
                  $tag_name{track} = 0 if not $tag_name{track};

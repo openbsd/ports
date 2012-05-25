@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/28 09:02:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/25 13:46:08 shadchin Exp $
 
 PKG_ARCH=		*
 
@@ -12,6 +12,8 @@ PKGNAME-main=		pacpl-${V}
 PKGNAME-konqueror=	pacpl-konqueror-${V}
 PKGNAME-amarok=		pacpl-amarok-${V}
 CATEGORIES=		audio converters perl5
+
+REVISION-main=		0
 
 HOMEPAGE=		http://pacpl.sourceforge.net/
 
@@ -35,7 +37,7 @@ RUN_DEPENDS=		audio/bonk \
 			audio/flac \
 			audio/lame \
 			audio/mpg321 \
-			audio/mppenc \
+			audio/musepack \
 			audio/sox \
 			audio/speex \
 			audio/vorbis-tools \

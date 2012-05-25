@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2012/05/25 13:46:08 shadchin Exp $
+--- configure.orig	Fri May 25 09:19:08 2012
++++ configure	Fri May 25 09:22:11 2012
+@@ -2792,7 +2792,7 @@ fi
+ 
+ 
+ # Extract the first word of "mppenc", so it can be a program name with args.
+-set dummy mppenc; ac_word=$2
++set dummy mpcenc; ac_word=$2
+ { $as_echo "$as_me:$LINENO: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if test "${ac_cv_prog_MPPENC+set}" = set; then
+@@ -2829,7 +2829,7 @@ fi
+ 
+ 
+ # Extract the first word of "mppdec", so it can be a program name with args.
+-set dummy mppdec; ac_word=$2
++set dummy mpcdec; ac_word=$2
+ { $as_echo "$as_me:$LINENO: checking for $ac_word" >&5
+ $as_echo_n "checking for $ac_word... " >&6; }
+ if test "${ac_cv_prog_MPPDEC+set}" = set; then
