@@ -1,15 +1,12 @@
-$OpenBSD: patch-libao_audio_out_oss_c,v 1.3 2002/08/22 12:19:17 espie Exp $
---- libao/audio_out_oss.c.orig	Sun Apr 28 12:23:02 2002
-+++ libao/audio_out_oss.c	Thu Aug 22 13:49:19 2002
-@@ -153,9 +153,9 @@ static ao_instance_t * oss_open (int fla
-     instance->set_params = 1;
-     instance->flags = flags;
+$OpenBSD: patch-libao_audio_out_oss_c,v 1.4 2012/05/25 07:15:41 ajacoutot Exp $
+--- libao/audio_out_oss.c.orig	Sun Nov 30 19:24:58 2003
++++ libao/audio_out_oss.c	Tue May 15 02:24:59 2012
+@@ -48,7 +48,7 @@
+ #include <sys/soundcard.h>
+ #endif
  
--    instance->fd = open ("/dev/dsp", O_WRONLY);
-+    instance->fd = open ("/dev/audio", O_WRONLY);
-     if (instance->fd < 0) {
--	fprintf (stderr, "Can not open /dev/dsp\n");
-+	fprintf (stderr, "Can not open /dev/audio\n");
- 	free (instance);
- 	return NULL;
-     }
+-#if defined(__NetBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ #define OSS_DEVICE "/dev/audio"
+ #else
+ #define OSS_DEVICE "/dev/dsp"
