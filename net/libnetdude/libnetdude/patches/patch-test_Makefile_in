@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_Makefile_in,v 1.1 2012/05/25 01:42:29 lteo Exp $
+
+Actually run the test suite when "make check" is executed.
+
+--- test/Makefile.in.orig	Sun Jun 24 17:37:52 2007
++++ test/Makefile.in	Sun May  6 23:35:24 2012
+@@ -405,6 +405,7 @@ distdir: $(DISTFILES)
+ check-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+ check: check-am
++	$(srcdir)/lnd-test
+ all-am: Makefile
+ installdirs:
+ install: install-am
