@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/10/07 12:11:38 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/25 22:21:53 ajacoutot Exp $
 
 COMMENT = 	Python-like language for the .NET/Mono platform
 
@@ -9,7 +9,7 @@ BUILD_NUM =	9
 DISTNAME = 	${PKGNAME}.${BUILD_NUM}
 PKGNAME = 	${PNAME}-${V}
 CATEGORIES = 	lang
-REVISION =	0
+REVISION =	1
 
 EXTRACT_SUFX = 	-src.zip
 
