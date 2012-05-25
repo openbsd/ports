@@ -1,14 +1,18 @@
-$OpenBSD: patch-version_sh,v 1.3 2010/11/06 23:05:48 jakemsr Exp $
---- version.sh.orig	Wed Aug  4 16:45:08 2010
-+++ version.sh	Thu Aug  5 13:23:09 2010
-@@ -1,20 +1,6 @@
+$OpenBSD: patch-version_sh,v 1.4 2012/05/25 07:45:33 ajacoutot Exp $
+--- version.sh.orig	Sun May 20 16:45:03 2012
++++ version.sh	Sun May 20 20:08:39 2012
+@@ -1,24 +1,6 @@
 -#!/bin/bash
+-[ -n "$1" ] && cd $1
 -git rev-list HEAD | sort > config.git-hash
 -LOCALVER=`wc -l config.git-hash | awk '{print $1}'`
 -if [ $LOCALVER \> 1 ] ; then
 -    VER=`git rev-list origin/master | sort | join config.git-hash - | wc -l | awk '{print $1}'`
--    if [ $VER != $LOCALVER ] ; then
--        VER="$VER+$(($LOCALVER-$VER))"
+-    VER_DIFF=$(($LOCALVER-$VER))
+-    echo "#define X264_REV $VER"
+-    echo "#define X264_REV_DIFF $VER_DIFF"
+-    if [ $VER_DIFF != 0 ] ; then
+-        VER="$VER+$VER_DIFF"
 -    fi
 -    if git status | grep -q "modified:" ; then
 -        VER="${VER}M"
