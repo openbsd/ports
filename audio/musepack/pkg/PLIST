@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/24 18:25:56 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/25 12:51:06 fgsch Exp $
+@pkgpath audio/libmpcdec
+@pkgpath audio/mppenc
 @conflict libmpcdec-*
 %%SHARED%%
 @bin bin/mpc2sv8

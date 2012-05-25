@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/25 09:10:52 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/25 12:51:06 fgsch Exp $
 
 COMMENT =		decoder, encoder and replaygain for musepack files
 
 V =			475
 DISTNAME =		musepack_src_r${V}
 PKGNAME =		musepack-${V}
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.musepack.net/
