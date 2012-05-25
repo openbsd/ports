@@ -1,6 +1,7 @@
---- lib/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py.orig	Wed Feb 15 17:16:24 2012
-+++ lib/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py	Wed Feb 15 17:17:29 2012
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-lib_Crypto_SelfTest_Cipher_test_pkcs1_oaep_py,v 1.2 2012/05/25 12:13:01 jasper Exp $
+--- lib/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py.orig	Thu May 24 14:55:30 2012
++++ lib/Crypto/SelfTest/Cipher/test_pkcs1_oaep.py	Fri May 25 09:16:28 2012
+@@ -31,7 +31,7 @@ from Crypto.SelfTest.st_common import list_test_cases,
  from Crypto.Util.py3compat import *
  from Crypto.PublicKey import RSA
  from Crypto.Cipher import PKCS1_OAEP as PKCS
@@ -9,7 +10,7 @@
  from Crypto import Random
  
  def rws(t):
-@@ -326,7 +326,7 @@
+@@ -326,7 +326,7 @@ class PKCS1_OAEP_Tests(unittest.TestCase):
                      asked += N
                      return self.rng(N)
                  # Verify that OAEP is friendly to all hashes

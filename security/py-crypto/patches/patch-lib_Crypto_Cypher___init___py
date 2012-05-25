@@ -1,16 +1,21 @@
-$OpenBSD: patch-lib_Crypto_Cypher___init___py,v 1.4 2012/02/17 09:32:18 mpi Exp $
---- lib/Crypto/Cipher/__init__.py.orig	Fri Jan 13 15:57:33 2012
-+++ lib/Crypto/Cipher/__init__.py	Wed Feb  8 17:21:20 2012
+$OpenBSD: patch-lib_Crypto_Cypher___init___py,v 1.5 2012/05/25 12:13:01 jasper Exp $
+--- lib/Crypto/Cipher/__init__.py.orig	Fri May 25 09:15:59 2012
++++ lib/Crypto/Cipher/__init__.py	Fri May 25 09:16:18 2012
 @@ -40,7 +40,6 @@ standard and has undergone a fair bit of examination.
- Module name               Description
- ======================    ====================
- Crypto.Cipher.AES         Advanced Encryption Standard
--Crypto.Cipher.ARC2        Alleged RC2
- Crypto.Cipher.ARC4        Alleged RC4
- Crypto.Cipher.Blowfish    Blowfish
- Crypto.Cipher.CAST        CAST
-@@ -71,7 +70,7 @@ Crypto.Cipher.PKCS1_OAEP    PKCS#1 OAEP encryption, ba
- :undocumented: __revision__, __package__
+ Module name                 Type      Description
+ ========================    =======   ========================
+ `Crypto.Cipher.AES`         Block     Advanced Encryption Standard
+-`Crypto.Cipher.ARC2`        Block     Alleged RC2
+ `Crypto.Cipher.ARC4`        Stream    Alleged RC4
+ `Crypto.Cipher.Blowfish`    Block     Blowfish
+ `Crypto.Cipher.CAST`        Block     CAST
+@@ -68,11 +67,11 @@ Module name                   Description
+ `Crypto.Cipher.PKCS1_OAEP`    PKCS#1 OAEP encryption, based on RSA key pairs
+ ==========================    =======================
+ 
+-:undocumented: __revision__, __package__, _AES, _ARC2, _ARC4, _Blowfish
++:undocumented: __revision__, __package__, _AES, _ARC4, _Blowfish
+                _CAST, _DES, _DES3, _XOR
  """
  
 -__all__ = ['AES', 'ARC2', 'ARC4',
