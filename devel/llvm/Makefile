@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2012/05/05 19:24:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2012/05/25 09:05:49 sthen Exp $
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
 COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 
-LLVM_V =	3.0
-REVISION =	2
-DISTNAME =	llvm-${LLVM_V}
+LLVM_V =	3.1
+DISTNAME =	llvm-${LLVM_V}.src
+PKGNAME =	llvm-${LLVM_V}
 
 CATEGORIES =	devel
 
@@ -28,7 +28,7 @@ WANTLIB =	c m pthread stdc++
 
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
-DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}${EXTRACT_SUFX}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} clang-${LLVM_V}.src${EXTRACT_SUFX}
 WRKDIST =	${WRKDIR}/llvm-${LLVM_V}.src
 
 post-extract:
@@ -57,7 +57,6 @@ CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH
 
 pre-configure:
-	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure
 	@${SUBST_CMD} ${WRKSRC}/tools/clang/tools/scan-build/scan-build
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 

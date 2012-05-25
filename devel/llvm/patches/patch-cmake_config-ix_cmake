@@ -1,9 +1,9 @@
-$OpenBSD: patch-cmake_config-ix_cmake,v 1.1 2012/05/05 19:24:01 dcoppa Exp $
+$OpenBSD: patch-cmake_config-ix_cmake,v 1.2 2012/05/25 09:05:49 sthen Exp $
 
 Fix CMake check for pthread_mutex_lock
 
---- cmake/config-ix.cmake.orig	Fri May  4 14:05:40 2012
-+++ cmake/config-ix.cmake	Fri May  4 14:07:10 2012
+--- cmake/config-ix.cmake.orig	Mon Mar 26 22:56:56 2012
++++ cmake/config-ix.cmake	Wed May 23 01:38:47 2012
 @@ -87,6 +87,7 @@ if( NOT PURE_WINDOWS )
    check_library_exists(pthread pthread_create "" HAVE_LIBPTHREAD)
    check_library_exists(pthread pthread_getspecific "" HAVE_PTHREAD_GETSPECIFIC)
@@ -12,7 +12,7 @@ Fix CMake check for pthread_mutex_lock
    check_library_exists(dl dlopen "" HAVE_LIBDL)
  endif()
  
-@@ -131,9 +132,6 @@ check_symbol_exists(strchr string.h HAVE_STRCHR)
+@@ -133,9 +134,6 @@ check_symbol_exists(strchr string.h HAVE_STRCHR)
  check_symbol_exists(strcmp string.h HAVE_STRCMP)
  check_symbol_exists(strdup string.h HAVE_STRDUP)
  check_symbol_exists(strrchr string.h HAVE_STRRCHR)
