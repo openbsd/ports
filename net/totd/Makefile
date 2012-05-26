@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2012/03/03 15:56:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/05/26 12:40:30 matthieu Exp $
 
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 DISTNAME=	totd-1.5.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
+MASTER_SITES=	http://www.dillema.net/software/totd/
 
-HOMEPAGE=	http://www.vermicelli.pasta.cs.uit.no/software/totd.html
+HOMEPAGE=	http://www.dillema.net/software/totd.html
 
 # BSD/ISC (built-in webserver is LGPL but we don't compile it in)
 PERMIT_PACKAGE_CDROM=	Yes

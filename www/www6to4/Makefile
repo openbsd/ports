@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/14 22:50:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/26 12:40:30 matthieu Exp $
 
 COMMENT=		IPv6 to IPv4 web proxy
 
 DISTNAME=		www6to4-1.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
-HOMEPAGE=		http://www.vermicelli.pasta.cs.uit.no/ipv6/software.html
+HOMEPAGE=		http://www.dillema.net/software/www6to4.html
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
+MASTER_SITES=		http://www.dillema.net/software/www6to4/
 
 ALL_TARGET=		www6to4
 CFLAGS+=		-DSYSCONFDIR=\"${SYSCONFDIR}\"
