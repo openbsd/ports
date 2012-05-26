@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1168 2012/05/16 06:36:56 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1169 2012/05/26 12:04:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2964,6 +2964,11 @@ all-lib-depends-args:
 		echo "-P $$pkgpath:$$pkg:$$default"; \
 	done
 
+# remove lib-depends-args if we're only scanning for common dirs in update-plist
+# and we're not shared only
+no-lib-depends-args:
+	@:
+
 # those are expensive computations, so don't do them if we don't have to
 .if empty(_DEPRUNLIBS)
 lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
@@ -3329,7 +3334,7 @@ _all_phony = ${_recursive_depends_targets} \
     show-required-by subpackage uninstall _print-metadata \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
-	port-wantlib-args fake-wantlib-args no-wantlib-args \
+	port-wantlib-args fake-wantlib-args no-wantlib-args no-lib-depends-args \
 	_recurse-show-run-depends show-run-depends
 
 .if defined(_DEBUG_TARGETS)
