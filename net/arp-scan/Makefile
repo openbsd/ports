@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/05/16 13:22:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/05/26 22:47:03 sthen Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
-REVISION =	2
+REVISION =	3
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.nta-monitor.com/tools/arp-scan/
@@ -22,7 +22,6 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB =		c pcap
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =		Yes
 BUILD_DEPENDS +=	www/p5-libwww
 
 pre-configure:
