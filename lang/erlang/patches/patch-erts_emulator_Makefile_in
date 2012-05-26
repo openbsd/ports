@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_emulator_Makefile_in,v 1.9 2011/12/23 13:40:13 jasper Exp $
---- erts/emulator/Makefile.in.orig	Mon Oct  3 20:12:07 2011
-+++ erts/emulator/Makefile.in	Wed Dec 21 15:09:44 2011
-@@ -213,13 +213,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
+$OpenBSD: patch-erts_emulator_Makefile_in,v 1.10 2012/05/26 09:08:57 jasper Exp $
+--- erts/emulator/Makefile.in.orig	Sun Apr  1 20:15:00 2012
++++ erts/emulator/Makefile.in	Tue May 22 09:22:15 2012
+@@ -231,13 +231,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
  NO_INLINE_FUNCTIONS=true
  endif
  
@@ -15,8 +15,8 @@ $OpenBSD: patch-erts_emulator_Makefile_in,v 1.9 2011/12/23 13:40:13 jasper Exp $
  
  ifeq ($(GCC),yes)
  ifeq ($(NO_INLINE_FUNCTIONS),true)
-@@ -620,7 +614,7 @@ endif
- 
+@@ -651,7 +645,7 @@ $(OBJDIR)/beam_emu.o: beam/beam_emu.c
+ endif
  
  $(OBJDIR)/%.o: beam/%.c
 -	$(CC) $(subst -O2, $(GEN_OPT_FLGS), $(CFLAGS)) $(INCLUDES) -c $< -o $@

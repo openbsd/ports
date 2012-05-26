@@ -1,7 +1,7 @@
-$OpenBSD: patch-make_target_mk,v 1.1 2006/03/26 09:18:16 steven Exp $
---- make/target.mk.orig	Sat Mar 25 22:08:13 2006
-+++ make/target.mk	Sat Mar 25 22:09:45 2006
-@@ -3,6 +3,7 @@ ifeq ($(OVERRIDE_TARGET),)
+$OpenBSD: patch-make_target_mk,v 1.2 2012/05/26 09:08:57 jasper Exp $
+--- make/target.mk.orig	Sun Apr  1 20:15:00 2012
++++ make/target.mk	Tue May 22 09:22:14 2012
+@@ -24,6 +24,7 @@ ifeq ($(OVERRIDE_TARGET),)
  ifeq ($(TARGET),)
  
  TARGET := $(shell $(ERL_TOP)/erts/autoconf/config.guess)
