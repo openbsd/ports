@@ -54,11 +54,6 @@ on [% b.arch | html %]:
 [% END %]
 [% END %]
 
-<dt>Not for arches<dd>
-[% FOREACH a in not_for %]
-[% a | html %]
-[% END %]
-
 <dt>Categories:<dd>
 [% FOREACH c IN category %]
 <a href="[% c.url | url %]">[% c.name | html %]</a>
