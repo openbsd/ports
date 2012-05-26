@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/26 12:36:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/26 12:48:55 espie Exp $
 
 COMMENT =		readmes.html
 
@@ -22,7 +22,10 @@ PLIST = ${WRKINST}/plist
 # XXX this plist *will change*
 PLIST_DB =
 do-build:
-	TEMPLATESDIR=${FILESDIR} OUTPUTDIR=${WRKBUILD} perl ${FILESDIR}/make-readmes
+	TEMPLATESDIR=${FILESDIR} \
+	OUTPUTDIR=${WRKBUILD} \
+	DATABASE=${LOCALBASE}/share/sqlports-compact \
+	    perl ${FILESDIR}/make-readmes
 
 READMES_DIR = ${PREFIX}/share/ports-readme
 
