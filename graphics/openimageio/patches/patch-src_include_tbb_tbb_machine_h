@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_include_tbb_tbb_machine_h,v 1.1.1.1 2012/05/09 12:42:06 pascal Exp $
---- src/include/tbb/tbb_machine.h.orig	Mon Apr  2 00:17:44 2012
-+++ src/include/tbb/tbb_machine.h	Mon Apr  2 00:17:59 2012
+$OpenBSD: patch-src_include_tbb_tbb_machine_h,v 1.2 2012/05/26 11:01:55 pascal Exp $
+--- src/include/tbb/tbb_machine.h.orig	Wed May  2 23:01:55 2012
++++ src/include/tbb/tbb_machine.h	Sat May 26 11:01:25 2012
 @@ -53,7 +53,7 @@ extern "C" __declspec(dllimport) int __stdcall SwitchT
  #pragma managed(pop)
  #endif
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_include_tbb_tbb_machine_h,v 1.1.1.1 2012/05/09 12:42:06 pasc
  
  #if __i386__
  #include "machine/linux_ia32.h"
+@@ -61,6 +61,8 @@ extern "C" __declspec(dllimport) int __stdcall SwitchT
+ #include "machine/linux_intel64.h"
+ #elif __ia64__
+ #include "machine/linux_ia64.h"
++#elif __powerpc__
++#include "machine/mac_ppc.h"
+ #endif
+ 
+ #elif __APPLE__
