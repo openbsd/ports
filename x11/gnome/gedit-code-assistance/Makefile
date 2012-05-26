@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/01 07:38:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/26 09:14:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	code assistance for Gedit
 
 GNOME_PROJECT=	gedit-code-assistance
 GNOME_VERSION=	0.1.3
+REVISION=	0
 
 CATEGORIES=	editors devel
 
@@ -16,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext \
+		lang/clang \
 		x11/gnome
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
@@ -29,7 +31,7 @@ WANTLIB += xcb-shm xml2 z
 
 LIB_DEPENDS=	devel/libgee06 \
 		devel/libpeas \
-		devel/llvm \
+		devel/llvm>=${MODCLANG_VERSION} \
 		x11/gtksourceview3
 
 BUILD_DEPENDS=	lang/vala \

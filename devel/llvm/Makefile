@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.42 2012/05/25 09:05:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2012/05/26 09:14:34 jasper Exp $
+
+# XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
+# updating this port.
 
 SHARED_LIBS +=  libclang                  0.0 # 3.0
 
