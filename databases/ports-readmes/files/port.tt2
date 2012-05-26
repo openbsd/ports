@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><title>The [% path | html %] port</title></head>
+<body>
+
+<h1>The [% path | html %] port</h1>
+
+<H2>[% fullpkgname | html %] &ndash; [% comment | html %]</H2>
+
+<H2>Description</H2>
+
+<pre>
+[% descr %]
+</pre>
+[% IF homepage %]
+WWW: <a href="[% homepage | url %]">[% homepage | html %]</a>
+[% ELSE %]
+No homepage
+[% END %]
+
+<dl>
+[% IF permit_cd %]
+<dt>Distribution forbidden on cdroms<dd>
+[% permit_cd | html %]
+[% END %]
+[% IF permit_ftp %]
+<dt>Distribution forbidden on ftp<dd>
+[% permit_ftp | html %]
+[% END %]
+[% IF multi %]
+<dt>Multi-packages<dd>
+[% FOREACH m IN multi %]
+<a href="[% m.url | url %]">[% m.name | html %]</a>
+[% END %]
+[% END %]
+[% IF only_for %]
+<dt>Only for arches<dd>
+[% FOREACH a IN only_for %]
+[% a | html %]
+[% END %]
+[% END %]
+[% IF not_for %]
+<dt>Not for arches<dd>
+[% FOREACH a IN not_for %]
+[% a | html %]
+[% END %]
+[% END %]
+[% IF broken %]
+<dt>Broken<dd>
+[% FOREACH b IN broken %]
+[% IF b.arch %]
+on [% b.arch | html %]: 
+[% END %]
+[% b.text | html %]
+[% END %]
+[% END %]
+
+<dt>Not for arches<dd>
+[% FOREACH a in not_for %]
+[% a | html %]
+[% END %]
+
+<dt>Categories:<dd>
+[% FOREACH c IN category %]
+<a href="[% c.url | url %]">[% c.name | html %]</a>
+[% END %]
+</dl>
+
+<H2>Library dependencies</H2>
+<ul>
+[% FOREACH d IN libdepends %]
+<li><a href="[% d.url | url %]">[% d.depends %]</a>
+[% END %]
+</ul>
+<H2>Build dependencies</H2>
+<ul>
+[% FOREACH d IN builddepends %]
+<li><a href="[% d.url | url %]">[% d.depends %]</a>
+[% END %]
+</ul>
+
+<H2>Run dependencies</H2>
+<ul>
+[% FOREACH d IN rundepends %]
+<li><a href="[% d.url | url %]">[% d.depends %]</a>
+[% END %]
+</ul>
+
+</body></html>

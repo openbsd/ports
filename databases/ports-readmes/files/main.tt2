@@ -1,0 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html><head><title>Ports index</title></head>
+<body>
+<h1>Category index</h1>
+<ul>
+[% FOREACH c IN categories %]
+<li><a href="[% c.url | url %]">[% c.name %]</a>
+[% END %]
+</ul>
+</body></html>

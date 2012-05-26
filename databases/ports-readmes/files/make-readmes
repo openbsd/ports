@@ -1,0 +1,229 @@
+#! /usr/bin/perl
+# ex:ts=8 sw=4:
+# $OpenBSD: make-readmes,v 1.1.1.1 2012/05/26 12:22:44 espie Exp $
+#
+# Copyright (c) 2012 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+use DBI;
+use Template;
+use File::Path qw(make_path);
+use File::Basename;
+use File::Spec;
+use Data::Dumper;
+
+sub relative_url
+{
+	my ($a, $b) = @_;
+	$a .= ".html";
+	$b .= ".html";
+	return File::Spec->abs2rel($a, dirname($b));
+}
+
+sub generate_web
+{
+	my ($e, $template) = @_;
+
+}
+
+my $db = DBI->connect("dbi:SQLite:dbname=/usr/local/share/sqlports-compact",
+	'', '', {});
+
+my $outputdir = $ENV{OUTPUTDIR};
+my $template = Template->new(
+	{
+		INCLUDE_PATH => $ENV{TEMPLATESDIR},
+		OUTPUT_PATH => $outputdir,
+	});
+
+
+my $info_req = $db->prepare(
+	qq{select
+		paths.id,
+		paths.fullpkgpath,
+		ports.comment,
+		ports.homepage,
+		descr.value,
+		fullpkgname,
+		permit_cd.value,
+		permit_ftp.value
+	    from paths 
+		join Ports on paths.id=Ports.fullpkgpath 
+		left join Descr on paths.id=Descr.fullpkgpath
+		join keywords2 permit_cd 
+		    on ports.permit_package_cdrom=permit_cd.keyref
+		join keywords2 permit_ftp 
+		    on ports.permit_package_ftp=permit_ftp.keyref
+	    order by paths.fullpkgpath});
+my ($id, $path, $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp);
+$info_req->bind_columns(\($id, $path,  $comment, $homepage, $descr, $fullpkgname, $permit_cd, $permit_ftp));
+
+my $dep_req = $db->prepare(
+	q{select 
+		depends.type,
+		depends.fulldepends,
+		t2.fullpkgpath
+	from depends 
+		join paths on depends.dependspath=paths.id
+		join paths t2 on paths.canonical=t2.id
+	where depends.fullpkgpath=?
+		order by depends.fulldepends
+	});
+my ($type, $fulldepends, $dependspath);
+$dep_req->bind_columns(\($type, $fulldepends, $dependspath));
+my $multi_req = $db->prepare(
+	q{select
+		ports.fullpkgname,
+		t2.fullpkgpath
+	    from multi 
+	    	join paths on multi.subpkgpath=paths.id
+		join paths t2 on paths.canonical=t2.id
+		join ports on paths.canonical=ports.fullpkgpath
+	    where multi.fullpkgpath=?
+	    });
+my ($multi, $subpath);
+$multi_req->bind_columns(\($multi, $subpath));
+my $only_for = $db->prepare(
+	q{select
+		Arch.value
+	    from OnlyForArch
+	    	join Arch on arch.keyref=OnlyForArch.value
+	    where OnlyForArch.fullpkgpath=?
+	    order by Arch.value
+	});
+my $arch;
+$only_for->bind_columns(\($arch));
+my $not_for = $db->prepare(
+	q{select
+		Arch.value
+	    from NotforArch
+	    	join Arch on arch.keyref=NotForArch.value
+	    where NotForArch.fullpkgpath=?
+	    order by Arch.value
+	});
+$not_for->bind_columns(\($arch));
+
+my $category;
+my $cat_req = $db->prepare(
+	q{select
+		categorykeys.value
+	    from categories
+	    	join categorykeys on categorykeys.keyref=categories.value
+	    where categories.fullpkgpath=?
+	    order by categorykeys.value
+	    });
+$cat_req->bind_columns(\($category));
+
+my $broken_req = $db->prepare(
+	q{select
+		arch.value,
+		broken.value
+	    from broken
+	    	left join arch on arch.keyref=broken.arch
+	    where fullpkgpath=?
+	    order by arch.value});
+	
+my $broken;
+$broken_req->bind_columns(\($broken, $arch));
+
+my $cat = {};
+
+my @depends = (qw(libdepends rundepends builddepends regressdepends));
+
+$info_req->execute;
+while ($info_req->fetch) {
+	print "+++$path\n";
+	my $e = { path => $path,
+		comment => $comment,
+		homepage => $homepage,
+		descr => $descr,
+		fullpkgname => $fullpkgname };
+	unless ($permit_cd =~ /yes/i) {
+		$e->{permit_cd} = $permit_cd;
+	}
+	unless ($permit_ftp =~ /yes/i) {
+		$e->{permit_ftp} = $permit_ftp;
+	}
+	$dep_req->execute($id);
+	while ($dep_req->fetch) {
+		push(@{$e->{$depends[$type]}},
+		    {
+			depends => $fulldepends,
+			url => relative_url($dependspath, $e->{path})
+		    });
+	}
+
+	$broken_req->execute($id);
+	while ($broken_req->fetch) {
+		push (@{$e->{broken}}, 
+		    {
+			arch => $arch,
+			text => $broken
+		    });
+	}
+	$only_for->execute($id);
+	while ($only_for->fetch) {
+		push (@{$e->{only_for}}, $arch);
+	}
+	$not_for->execute($id);
+	while ($not_for->fetch) {
+		push (@{$e->{not_for}}, $arch);
+	}
+	$multi_req->execute($id);
+	while ($multi_req->fetch) {
+		push @{$e->{multi}},
+		    {
+			name => $multi,
+			url => relative_url($subpath, $e->{path})
+		    };
+	}
+
+	$cat_req->execute($id);
+	while ($cat_req->fetch) {
+		push @{$e->{category}},
+		    {
+		    	name => $category, 
+			url => relative_url($category, $e->{path})
+		    };
+		$cat->{$category}{$e->{fullpkgname}} = $e->{path};
+	}
+	$template->process('port.tt2', $e, "$e->{path}.html") or die;
+}
+
+print "Generating category indexes\n";
+while (my ($c, $h) = each %$cat) {
+	my $e = { category => $c};
+	for my $pkgname (sort keys %$h) {
+		my $p = $h->{$pkgname};
+		push @{$e->{ports}},
+		    {
+			name => $pkgname,
+			url => relative_url($p, $c)
+		    };
+	}
+	$template->process('category.tt2', $e, "$c.html") or die;
+}
+
+print "Generating main index\n";
+my $e = {};
+for my $c (sort keys %$cat) {
+	push @{$e->{categories}},
+	    {
+	    	name => $c,
+		url => "$c.html"
+	    };
+}
+$template->process('main.tt2', $e, "index.html") or die;
