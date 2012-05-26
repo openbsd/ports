@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/15 20:45:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/05/26 08:44:32 jasper Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
 lib/lua/${MODLUA_VERSION}/lgi/corelgilua51.so
 share/examples/${FULLPKGNAME}/
+share/examples/${FULLPKGNAME}/cairo.lua
 share/examples/${FULLPKGNAME}/clutterdemo.lua
 share/examples/${FULLPKGNAME}/console.lua
 share/examples/${FULLPKGNAME}/giostream.lua
@@ -9,14 +10,18 @@ share/examples/${FULLPKGNAME}/gstplaystream.lua
 share/examples/${FULLPKGNAME}/gstvideo.lua
 share/examples/${FULLPKGNAME}/gtk-demo/
 share/examples/${FULLPKGNAME}/gtk-demo/alphatest.png
+share/examples/${FULLPKGNAME}/gtk-demo/apple-red.png
+share/examples/${FULLPKGNAME}/gtk-demo/background.jpg
 share/examples/${FULLPKGNAME}/gtk-demo/demo-application.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-assistant.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-builder.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-buttonboxes.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-changedisplay.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-clipboard.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-colorselector.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-comboboxes.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-dialogs.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-drawingarea.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-entry-buffer.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-entry-completion.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-entry-search.lua
@@ -29,6 +34,9 @@ share/examples/${FULLPKGNAME}/gtk-demo/demo-links.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-menus.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-paned.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-pickers.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-pixbufs.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-printing.lua
+share/examples/${FULLPKGNAME}/gtk-demo/demo-rotatedtext.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-sizegroup.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-spinner.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-stockbrowser.lua
@@ -41,8 +49,15 @@ share/examples/${FULLPKGNAME}/gtk-demo/demo-treeview-treestore.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo-uimanager.lua
 share/examples/${FULLPKGNAME}/gtk-demo/demo.ui
 share/examples/${FULLPKGNAME}/gtk-demo/floppybuddy.gif
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-applets.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-calendar.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-foot.png
 share/examples/${FULLPKGNAME}/gtk-demo/gnome-fs-directory.png
 share/examples/${FULLPKGNAME}/gtk-demo/gnome-fs-regular.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-gimp.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-gmush.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnome-gsame.png
+share/examples/${FULLPKGNAME}/gtk-demo/gnu-keys.png
 share/examples/${FULLPKGNAME}/gtk-demo/gtk-logo-rgb.gif
 share/examples/${FULLPKGNAME}/gtk-demo/main.lua
 share/examples/${FULLPKGNAME}/gtkclipboard.lua
@@ -57,12 +72,14 @@ share/lua/${MODLUA_VERSION}/lgi/class.lua
 share/lua/${MODLUA_VERSION}/lgi/component.lua
 share/lua/${MODLUA_VERSION}/lgi/core.lua
 share/lua/${MODLUA_VERSION}/lgi/enum.lua
+share/lua/${MODLUA_VERSION}/lgi/ffi.lua
 share/lua/${MODLUA_VERSION}/lgi/init.lua
 share/lua/${MODLUA_VERSION}/lgi/log.lua
 share/lua/${MODLUA_VERSION}/lgi/namespace.lua
 share/lua/${MODLUA_VERSION}/lgi/override/
 share/lua/${MODLUA_VERSION}/lgi/override/Clutter.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GLib-Variant.lua
+share/lua/${MODLUA_VERSION}/lgi/override/GLib.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Closure.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Object.lua
 share/lua/${MODLUA_VERSION}/lgi/override/GObject-Type.lua
@@ -72,5 +89,7 @@ share/lua/${MODLUA_VERSION}/lgi/override/Gio.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gst.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Gtk.lua
 share/lua/${MODLUA_VERSION}/lgi/override/Pango.lua
+share/lua/${MODLUA_VERSION}/lgi/override/PangoCairo.lua
+share/lua/${MODLUA_VERSION}/lgi/override/cairo.lua
 share/lua/${MODLUA_VERSION}/lgi/record.lua
 share/lua/${MODLUA_VERSION}/lgi/version.lua
