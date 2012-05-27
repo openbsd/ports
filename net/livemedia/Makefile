@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/02/28 17:55:47 stsp Exp $
+# $OpenBSD: Makefile,v 1.11 2012/05/27 09:04:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	LIVE555 streaming media library
 
 DISTNAME=	live.2012.02.04
 PKGNAME=	liveMedia-20120204
+REVISION=	0
 CATEGORIES=	net devel
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -47,12 +48,20 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/testProgs/sapWatch ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/BasicUsageEnvironment/libBasicUsageEnvironment.a \
 	    ${PREFIX}/live/BasicUsageEnvironment/
+	ln -sf libBasicUsageEnvironment.a \
+	    ${PREFIX}/live/BasicUsageEnvironment/libBasicUsageEnvironment_pic.a
 	${INSTALL_DATA} ${WRKSRC}/UsageEnvironment/libUsageEnvironment.a \
 	    ${PREFIX}/live/UsageEnvironment/
+	ln -sf libUsageEnvironment.a \
+	    ${PREFIX}/live/UsageEnvironment/libUsageEnvironment_pic.a
 	${INSTALL_DATA} ${WRKSRC}/groupsock/libgroupsock.a \
 	    ${PREFIX}/live/groupsock/
+	ln -sf libgroupsock.a \
+	    ${PREFIX}/live/groupsock/libgroupsock_pic.a
 	${INSTALL_DATA} ${WRKSRC}/liveMedia/libliveMedia.a \
 	    ${PREFIX}/live/liveMedia/
+	ln -sf libliveMedia.a \
+	    ${PREFIX}/live/liveMedia/libliveMedia_pic.a
 	cd ${WRKSRC}/BasicUsageEnvironment/include && \
 	    ${INSTALL_DATA} *.hh ${PREFIX}/live/BasicUsageEnvironment/include/
 	cd ${WRKSRC}/UsageEnvironment/include && \

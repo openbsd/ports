@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/02/28 17:55:47 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/05/27 09:04:11 ajacoutot Exp $
 @bin bin/openRTSP
 @bin bin/playSIP
 @bin bin/sapWatch
@@ -12,6 +12,7 @@ live/BasicUsageEnvironment/include/BasicUsageEnvironment_version.hh
 live/BasicUsageEnvironment/include/DelayQueue.hh
 live/BasicUsageEnvironment/include/HandlerSet.hh
 live/BasicUsageEnvironment/libBasicUsageEnvironment.a
+live/BasicUsageEnvironment/libBasicUsageEnvironment_pic.a
 live/UsageEnvironment/
 live/UsageEnvironment/include/
 live/UsageEnvironment/include/Boolean.hh
@@ -20,6 +21,7 @@ live/UsageEnvironment/include/UsageEnvironment.hh
 live/UsageEnvironment/include/UsageEnvironment_version.hh
 live/UsageEnvironment/include/strDup.hh
 live/UsageEnvironment/libUsageEnvironment.a
+live/UsageEnvironment/libUsageEnvironment_pic.a
 live/groupsock/
 live/groupsock/include/
 live/groupsock/include/GroupEId.hh
@@ -32,6 +34,7 @@ live/groupsock/include/NetInterface.hh
 live/groupsock/include/TunnelEncaps.hh
 live/groupsock/include/groupsock_version.hh
 live/groupsock/libgroupsock.a
+live/groupsock/libgroupsock_pic.a
 live/liveMedia/
 live/liveMedia/include/
 live/liveMedia/include/AC3AudioFileServerMediaSubsession.hh
@@ -165,3 +168,4 @@ live/liveMedia/include/liveMedia.hh
 live/liveMedia/include/liveMedia_version.hh
 live/liveMedia/include/uLawAudioFilter.hh
 live/liveMedia/libliveMedia.a
+live/liveMedia/libliveMedia_pic.a
