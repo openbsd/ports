@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2012/05/26 22:19:15 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2012/05/27 09:49:49 sthen Exp $
 @newgroup _icinga:667
 @newuser _icinga:667:_icinga:daemon:Icinga user:/var/icinga:/sbin/nologin
-@extraunexec rm -rf ${SYSCONFDIR}/icinga/*
+@comment done this way (rather than SYSCONFDIR/*) for safety...
+@extraunexec rm -rf ${BASESYSCONFDIR}/icinga/*
 @extraunexec rm -rf /var/icinga/*
 @extraunexec rm -f /var/log/icinga/*
 @extraunexec rm -f /var/spool/icinga/*
@@ -10,41 +11,41 @@
 bin/p1.pl
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/icinga/
-@sample ${SYSCONFDIR}/icinga/modules/
-@sample ${SYSCONFDIR}/icinga/objects/
-@sample ${SYSCONFDIR}/icinga/
+@sample ${SYSCONFDIR}/modules/
+@sample ${SYSCONFDIR}/objects/
+@sample ${SYSCONFDIR}/
 share/examples/icinga/cgi.cfg
-@sample ${SYSCONFDIR}/icinga/cgi.cfg
+@sample ${SYSCONFDIR}/cgi.cfg
 share/examples/icinga/cgiauth.cfg
-@sample ${SYSCONFDIR}/icinga/cgiauth.cfg
+@sample ${SYSCONFDIR}/cgiauth.cfg
 share/examples/icinga/conf.d/
-@sample ${SYSCONFDIR}/icinga/conf.d/
+@sample ${SYSCONFDIR}/conf.d/
 share/examples/icinga/icinga.cfg
-@sample ${SYSCONFDIR}/icinga/icinga.cfg
+@sample ${SYSCONFDIR}/icinga.cfg
 share/examples/icinga/modules/
 share/examples/icinga/objects/
 share/examples/icinga/objects/commands.cfg
-@sample ${SYSCONFDIR}/icinga/objects/commands.cfg
+@sample ${SYSCONFDIR}/objects/commands.cfg
 share/examples/icinga/objects/contacts.cfg
-@sample ${SYSCONFDIR}/icinga/objects/contacts.cfg
+@sample ${SYSCONFDIR}/objects/contacts.cfg
 share/examples/icinga/objects/ido2db_check_proc.cfg
-@sample ${SYSCONFDIR}/icinga/objects/ido2db_check_proc.cfg
+@sample ${SYSCONFDIR}/objects/ido2db_check_proc.cfg
 share/examples/icinga/objects/localhost.cfg
-@sample ${SYSCONFDIR}/icinga/objects/localhost.cfg
+@sample ${SYSCONFDIR}/objects/localhost.cfg
 share/examples/icinga/objects/notifications.cfg
-@sample ${SYSCONFDIR}/icinga/objects/notifications.cfg
+@sample ${SYSCONFDIR}/objects/notifications.cfg
 share/examples/icinga/objects/printer.cfg
-@sample ${SYSCONFDIR}/icinga/objects/printer.cfg
+@sample ${SYSCONFDIR}/objects/printer.cfg
 share/examples/icinga/objects/switch.cfg
-@sample ${SYSCONFDIR}/icinga/objects/switch.cfg
+@sample ${SYSCONFDIR}/objects/switch.cfg
 share/examples/icinga/objects/templates.cfg
-@sample ${SYSCONFDIR}/icinga/objects/templates.cfg
+@sample ${SYSCONFDIR}/objects/templates.cfg
 share/examples/icinga/objects/timeperiods.cfg
-@sample ${SYSCONFDIR}/icinga/objects/timeperiods.cfg
+@sample ${SYSCONFDIR}/objects/timeperiods.cfg
 share/examples/icinga/objects/windows.cfg
-@sample ${SYSCONFDIR}/icinga/objects/windows.cfg
+@sample ${SYSCONFDIR}/objects/windows.cfg
 share/examples/icinga/resource.cfg
-@sample ${SYSCONFDIR}/icinga/resource.cfg
+@sample ${SYSCONFDIR}/resource.cfg
 @mode 755
 @owner _icinga
 @group _icinga

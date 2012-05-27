@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ido,v 1.8 2012/05/17 11:05:40 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.9 2012/05/27 09:49:49 sthen Exp $
 @bin bin/ido2db
 @bin bin/log2ido
 lib/idomod.so
@@ -96,9 +96,9 @@ share/examples/icinga/db/scripts/prepsql
 share/examples/icinga/db/scripts/upgradedb
 @comment share/examples/icinga/db/scripts/upgradedb.in
 share/examples/icinga/ido2db.cfg-sample
-@sample ${SYSCONFDIR}/icinga/ido2db.cfg
+@sample ${SYSCONFDIR}/ido2db.cfg
 share/examples/icinga/idomod.cfg-sample
-@sample ${SYSCONFDIR}/icinga/idomod.cfg
+@sample ${SYSCONFDIR}/idomod.cfg
 share/examples/icinga/modules/idoutils.cfg-sample
-@sample ${SYSCONFDIR}/icinga/modules/idoutils.cfg
+@sample ${SYSCONFDIR}/modules/idoutils.cfg
 @rcscript ${RCDIR}/ido2db
