@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/05/24 07:58:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/05/28 15:55:12 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
