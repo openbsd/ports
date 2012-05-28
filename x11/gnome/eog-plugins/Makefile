@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2012/03/29 07:13:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/05/28 16:08:00 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		3.4.0
+GNOME_VERSION=		3.4.1
 
 CATEGORIES=		graphics
 
