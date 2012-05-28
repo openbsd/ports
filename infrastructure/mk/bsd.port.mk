@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1170 2012/05/28 09:38:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1171 2012/05/28 09:54:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2897,9 +2897,10 @@ all-lib-depends-args:
 		echo "-P $$pkgpath:$$pkg:$$default"; \
 	done
 
-# remove lib-depends-args if we're only scanning for common dirs in update-plist
-# and we're not shared only
-no-lib-depends-args:
+# - remove lib-depends-args if we're only scanning for common dirs in 
+# update-plist and we're not shared only
+# - zap wantlib-args when we're only solving for @depends in pkg_create(1).
+no-lib-depends-args no-wantlib-args:
 	@:
 
 # those are expensive computations, so don't do them if we don't have to
@@ -2958,8 +2959,6 @@ fake-wantlib-args:
 			exit 1; \
 		fi
 .endif
-
-no-wantlib-args:
 
 _print-package-signature-run:
 	@${_emit_run_depends} |while ${_read_spec}; do \
