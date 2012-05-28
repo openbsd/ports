@@ -1,5 +1,5 @@
-awesome is a highly configurable, next-generation window manager 
-framework for X. It is very fast, small, dynamic and it's heavily 
+awesome is a highly configurable, next generation framework window
+manager for X. It is very fast, small, dynamic and it's heavily
 extensible using the Lua programming language.
-It is primarily targeted at power users, developers and anyone who 
+It is primarily targeted at power users, developers and anyone who
 wants to have fine grained control over his graphical environment.
