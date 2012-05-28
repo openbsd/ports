@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/16 08:53:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/05/28 12:05:09 jasper Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
-V=			2011-05-30
+V=			2011-10-30
 DISTNAME=		naken430asm-$V
 PKGNAME=		naken430asm-${V:S/-//g}
 CATEGORIES=		devel
@@ -33,8 +33,10 @@ do-configure:
 	cp ${FILESDIR}/config.mak ${WRKSRC}
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/naken430asm/examples/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/naken430asm/
 	${INSTALL_DATA} ${WRKSRC}/testing/* \
-		${PREFIX}/share/naken430asm/examples/
+		${PREFIX}/share/examples/naken430asm/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/naken430asm/scripts/
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${PREFIX}/share/naken430asm/scripts/
 
 .include <bsd.port.mk>
