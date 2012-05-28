@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.13 2012/05/26 06:43:38 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.14 2012/05/28 15:18:18 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -31,7 +31,7 @@ rc_pre() {
 	fi
 	if [ -e /etc/printcap -a ! -e /etc/printcap.pre-cups ]; then
 		mv /etc/printcap /etc/printcap.pre-cups
-		ln -s /etc/cups/printcap /etc/printcap
+		ln -s ${SYSCONFDIR}/cups/printcap /etc/printcap
 	fi
 	for i in lpq lpr lprm; do
 		rm -f /usr/bin/$i
