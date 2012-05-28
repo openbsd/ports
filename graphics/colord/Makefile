@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/05/28 15:52:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/05/28 16:38:35 ajacoutot Exp $
 
 COMMENT-main=	device color profile management daemon
 COMMENT-gtk=	GTK integration for libcolord
@@ -35,7 +35,7 @@ WANTLIB-main += c polkit-gobject-1 pthread sqlite3
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
 PSEUDO_FLAVORS=	no_gtk bootstrap
-FLAVOR?=	no_gtk bootstrap
+FLAVOR?=
 
 MULTI_PACKAGES=	-main -gtk
 

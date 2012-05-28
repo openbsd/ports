@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/05/12 06:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/05/28 16:38:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-docs=	gtk+3-docs-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
+
+REVISION-main=	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0
@@ -73,7 +75,7 @@ PKG_ARCH-docs=	*
 RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups \
-		graphics/colord \
+		graphics/colord,no_gtk,bootstrap \
 		STEM->=${V}:${BASE_PKGPATH},-main
 
 WANTLIB-cups += ${WANTLIB}
