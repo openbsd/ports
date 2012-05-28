@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/05/28 09:18:56 bentley Exp $
+--- CMakeLists.txt.orig	Tue Dec 27 14:02:22 2011
++++ CMakeLists.txt	Mon May 28 01:52:43 2012
+@@ -414,7 +414,7 @@ IF( ENABLE_SDL )
+ 
+     INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
+     INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl/vbam.cfg-example
+-            DESTINATION ${SYSCONFDIR}
++            DESTINATION share/examples/vbam
+             RENAME vbam.cfg)
+ ENDIF( ENABLE_SDL )
+ 

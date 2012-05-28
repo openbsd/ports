@@ -1,0 +1,37 @@
+$OpenBSD: patch-src_common_Port_h,v 1.1.1.1 2012/05/28 09:18:56 bentley Exp $
+--- src/common/Port.h.orig	Mon May 14 00:25:45 2012
++++ src/common/Port.h	Mon May 14 00:26:01 2012
+@@ -4,13 +4,13 @@
+ #include "Types.h"
+ 
+ // swaps a 16-bit value
+-static inline u16 swap16(u16 v)
++static inline u16 vswap16(u16 v)
+ {
+   return (v<<8)|(v>>8);
+ }
+ 
+ // swaps a 32-bit value
+-static inline u32 swap32(u32 v)
++static inline u32 vswap32(u32 v)
+ {
+   return (v<<24)|((v<<8)&0xff0000)|((v>>8)&0xff00)|(v>>24);
+ }
+@@ -36,13 +36,13 @@ static inline u32 swap32(u32 v)
+ 
+ #else
+ #define READ16LE(x) \
+-  swap16(*((u16 *)(x)))
++  vswap16(*((u16 *)(x)))
+ #define READ32LE(x) \
+-  swap32(*((u32 *)(x)))
++  vswap32(*((u32 *)(x)))
+ #define WRITE16LE(x,v) \
+-  *((u16 *)x) = swap16((v))
++  *((u16 *)x) = vswap16((v))
+ #define WRITE32LE(x,v) \
+-  *((u32 *)x) = swap32((v))
++  *((u32 *)x) = vswap32((v))
+ #endif
+ #else
+ #define READ16LE(x) \
