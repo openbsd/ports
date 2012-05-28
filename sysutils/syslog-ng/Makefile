@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/05/23 06:44:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/05/28 16:31:31 ajacoutot Exp $
 
 COMMENT=	syslogd replacement
 
 V =		3.1.4
 DISTNAME =	syslog-ng-$V
-REVISION =	3
+REVISION =	4
 CATEGORIES =	sysutils
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
