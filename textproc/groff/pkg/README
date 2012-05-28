@@ -1,11 +1,11 @@
-$OpenBSD: README,v 1.1 2011/12/04 15:41:26 schwarze Exp $
+$OpenBSD: README,v 1.2 2012/05/28 13:23:28 schwarze Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 Even though roff is a general-purpose typesetting system, the OpenBSD
-groff port is focussed on formatting ports(5) manuals that mandoc(1)
+groff port is focussed on formatting ports(7) manuals that mandoc(1)
 is unable to handle.  To make groff output as similar as possible to
 mandoc output, the following two groff features have been disabled by
 default: adjustment of text to the right margin and hyphenation.
@@ -29,6 +29,14 @@ documents can adjust text to the right margin:
 .ad l
 .de ad
 ..
+
+In case you dislike the default string "OpenBSD ports" in mdoc(7)
+manual footers, you can add the the line
+
+.ds default-operating-system my fancy system
+
+to the file ${TRUEPREFIX}/share/groff/site-tmac/mdoc.local.
+But don't do that on a machine you intend to build ports(7) on.
 
 
 To suit the taste of OpenBSD developers, two mdoc(7) formatting

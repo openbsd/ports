@@ -1,12 +1,12 @@
-$OpenBSD: patch-tmac_doc-common,v 1.2 2011/12/04 15:41:26 schwarze Exp $
+$OpenBSD: patch-tmac_doc-common,v 1.3 2012/05/28 13:23:28 schwarze Exp $
 chunk 1: Keep traditional OpenBSD page headers (local change).
-chunk 2+3: Sync with mandoc: more architectures (accepted upstream).
+chunk 2+3: Sync with mandoc: more architectures (also in upstream CVS).
 chunk 4: default value for the .Os macro (local change).
 chunk 5-9: More OS versions (from upstream CVS).
 chunk 10: Handle .Dd Mdocdate (local change).
 chunk 11: Do not use an ugly double dash in the NAME line (local change).
 --- tmac/doc-common.orig	Fri Dec 31 08:33:09 2010
-+++ tmac/doc-common	Sun Oct 30 23:21:38 2011
++++ tmac/doc-common	Sun May 27 14:10:10 2012
 @@ -231,17 +231,17 @@
  .
  .\" an alternative, more detailed scheme for naming the manual sections
@@ -121,7 +121,7 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .\" NS override this in `mdoc.local', if necessary
  .
 -.ds doc-default-operating-system BSD
-+.ds doc-default-operating-system OpenBSD\~5.0
++.ds doc-default-operating-system OpenBSD\~ports
  .
  .
  .\" NS doc-operating-system global string
@@ -142,16 +142,17 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .
  .ds doc-operating-system-OpenBSD-2.0  2.0
  .ds doc-operating-system-OpenBSD-2.1  2.1
-@@ -487,6 +515,8 @@
+@@ -487,6 +515,9 @@
  .ds doc-operating-system-OpenBSD-4.6  4.6
  .ds doc-operating-system-OpenBSD-4.7  4.7
  .ds doc-operating-system-OpenBSD-4.8  4.8
 +.ds doc-operating-system-OpenBSD-4.9  4.9
 +.ds doc-operating-system-OpenBSD-5.0  5.0
++.ds doc-operating-system-OpenBSD-5.1  5.1
  .
  .ds doc-operating-system-FreeBSD-1.0     1.0
  .ds doc-operating-system-FreeBSD-1.1     1.1
-@@ -543,6 +573,8 @@
+@@ -543,6 +574,8 @@
  .ds doc-operating-system-FreeBSD-7.3     7.3
  .ds doc-operating-system-FreeBSD-8.0     8.0
  .ds doc-operating-system-FreeBSD-8.1     8.1
@@ -160,7 +161,7 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .
  .ds doc-operating-system-Darwin-8.0.0  8.0.0
  .ds doc-operating-system-Darwin-8.1.0  8.1.0
-@@ -563,6 +595,16 @@
+@@ -563,6 +596,16 @@
  .ds doc-operating-system-Darwin-9.4.0  9.4.0
  .ds doc-operating-system-Darwin-9.5.0  9.5.0
  .ds doc-operating-system-Darwin-9.6.0  9.6.0
@@ -177,7 +178,7 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .
  .ds doc-operating-system-DragonFly-1.0    1.0
  .ds doc-operating-system-DragonFly-1.1    1.1
-@@ -581,6 +623,11 @@
+@@ -581,6 +624,11 @@
  .ds doc-operating-system-DragonFly-2.4    2.4
  .ds doc-operating-system-DragonFly-2.6    2.6
  .ds doc-operating-system-DragonFly-2.8    2.8
@@ -189,7 +190,7 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .
  .de Os
  .  ds doc-command-name
-@@ -685,7 +732,9 @@
+@@ -685,7 +733,9 @@
  .  ds doc-command-name
  .
  .  ie \n[.$] \{\
@@ -200,7 +201,7 @@ chunk 11: Do not use an ugly double dash in the NAME line (local change).
  .      ds doc-date-string \$1\~\$2 \$3
  .    el \{\
  .      ds doc-date-string "\*[doc-date-\n[mo]]
-@@ -859,7 +908,7 @@
+@@ -859,7 +909,7 @@
  .\" NS width register `Nd' set above
  .
  .de Nd
