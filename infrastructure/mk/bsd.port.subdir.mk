@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.107 2012/05/07 21:11:44 halex Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.108 2012/05/28 09:38:04 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -25,12 +25,9 @@
 #
 # +++ targets +++
 #
-#	README.html:
-#		Creating README.html for package.
-#
 #	afterinstall, all, beforeinstall, build, checksum, clean,
 #	configure, depend, describe, extract, fetch, fetch-list,
-#	install, package, readmes, deinstall, reinstall,
+#	install, package, deinstall, reinstall,
 #	tags
 #
 
@@ -103,12 +100,6 @@ _STARTDIR_SEEN ?= true
 _SKIP_STUFF+= ; case "$${subdir}" in \
 	${MATCHDIR}) ;; \
 	*) continue ;; esac
-.endif
-TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
-.if defined(PORTSTOP)
-README = ${TEMPLATES}/README.top
-.else
-README = ${TEMPLATES}/README.category
 .endif
 
 _subdir_fragment = \
@@ -186,37 +177,6 @@ clean:
 .else
 	@${_subdir_fragment}
 .endif
-.if defined(clean) && ${clean:L:Mreadmes}
-	rm -f ${READMES_TOP}/${PKGPATH}/README.html
-.endif
-
-readmes:
-	@${_subdir_fragment}
-	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap 'rm -r $$tmpdir' 0; \
-	trap 'exit 1' 1 2 3 13 15; \
-	cd ${.CURDIR} && ${MAKE} TMPDIR=$$tmpdir \
-		${READMES_TOP}/${PKGPATH}/README.html
-
-${READMES_TOP}/${PKGPATH}/README.html:
-	@mkdir -p ${@D}
-	@>${TMPDIR}/subdirs
-.for d in ${_FULLSUBDIR}
-	@subdir=$d; \
-	${_flavor_fragment}; \
-	if name=`eval $$toset ${MAKE} _print-packagename`; then \
-		comment=`eval $$toset ${MAKE} show=_COMMENT|sed -e 's,^",,' -e 's,"$$,,' |${HTMLIFY}`; \
-	else \
-		comment=''; \
-	fi; \
-	cd ${.CURDIR}; \
-	echo "<dt><a href=\"${PKGDEPTH}$$dir/$$name.html\">$d</a><dd>$$comment" >>${TMPDIR}/subdirs
-.endfor
-	@sed -e 's%%CATEGORY%%'`echo ${.CURDIR} | sed -e 's.*/\([^/]*\)$$\1'`'g' \
-		-e '/%%DESCR%%/r${.CURDIR}/pkg/DESCR' -e '//d' \
-		-e '/%%SUBDIR%%/r${TMPDIR}/subdirs' -e '//d' \
-		${README} > $@
-	@rm ${TMPDIR}/subdirs
 
 .if defined(ERRORS)
 .BEGIN:

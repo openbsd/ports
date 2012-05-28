@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.46 2012/05/15 11:48:07 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.47 2012/05/28 09:38:04 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -20,11 +20,6 @@ PKGPATH != PORTSDIR_PATH=${PORTSDIR_PATH} \
 ERRORS += "Fatal: can't figure out PKGPATH"
 PKGPATH =${.CURDIR}
 .  endif
-.endif
-.if empty(PKGPATH)
-PKGDEPTH =
-.else
-PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 .endif
 
 # Code to invoke to split dir,-multi,flavor

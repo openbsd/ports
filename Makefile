@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2012/03/09 10:57:54 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2012/05/28 09:38:04 espie Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
 PKGPATH =
 MIRROR_MK ?= ${.CURDIR}/distfiles/Makefile
-PORTSTOP ?= yes
 DISTFILES_DB ?= ${.CURDIR}/infrastructure/db/locate.database
 
 .if defined(SUBDIR)

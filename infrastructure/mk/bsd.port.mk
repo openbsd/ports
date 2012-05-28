@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1169 2012/05/26 12:04:35 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1170 2012/05/28 09:38:04 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -137,7 +137,6 @@ X11BASE ?= /usr/X11R6
 DISTDIR ?= ${PORTSDIR}/distfiles
 BULK_COOKIES_DIR ?= ${PORTSDIR}/bulk/${MACHINE_ARCH}
 UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
-TEMPLATES ?= ${PORTSDIR}/infrastructure/templates
 PLIST_DB ?= ${PORTSDIR}/plist/${MACHINE_ARCH}
 
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
@@ -234,7 +233,7 @@ _clean += -f
 .endif
 # check that clean is clean
 _okay_words = depends work fake -f flavors dist install sub packages package \
-	readmes bulk force plist build all
+	bulk force plist build all
 .for _w in ${_clean:L}
 .  if !${_okay_words:M${_w}}
 ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
@@ -492,8 +491,6 @@ FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
 _SOLVING_DEP ?= No
 
-_READMES =
-
 .if ${MULTI_PACKAGES} == "-"
 # XXX "parse" FULLPKGNAME: is there a flavor after the version number
 .    if ${FULLPKGNAME:M*-[0-9]*-*}
@@ -515,7 +512,6 @@ FULLPKGNAME := ${FULLPKGNAME}v${EPOCH}
 PKGSPEC ?= ${FULLPKGNAME:C/-[0-9].*/-*/}
 PKGSPEC- = ${PKGSPEC}
 FULLPKGNAME- = ${FULLPKGNAME}
-_READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME}.html
 .else
 .  for _s in ${MULTI_PACKAGES}
 .    if defined(FULLPKGNAME${_s})
@@ -546,7 +542,6 @@ FULLPKGNAME${_s} := ${FULLPKGNAME${_s}}v${EPOCH${_s}}
 .      endif
 .    endif
 PKGSPEC${_s} ?= ${FULLPKGNAME${_s}:C/-[0-9].*/-*/}
-_READMES += ${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_s}}.html
 .  endfor
 .endif
 
@@ -1496,8 +1491,6 @@ _DEPLIBSPECS_COOKIES = ${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 _BUILD_DEP = ${_BUILD_DEP2:C,^[^:/]*:,,}
 _RUN_DEP = ${_RUN_DEP2:C,^[^:/]*:,,}
 _REGRESS_DEP = ${_REGRESS_DEP2:C,^[^:/]*:,,}
-
-README_NAME ?= ${TEMPLATES}/README.port
 
 REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :
@@ -2741,9 +2734,6 @@ _internal-clean:
 .elif ${_clean:L:Mpackage}
 	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
-.if ${_clean:L:Mreadmes}
-	rm -f ${_READMES}
-.endif
 .if ${_clean:L:Mbulk}
 	rm -f ${_BULK_COOKIE}
 .endif
@@ -2812,63 +2802,6 @@ describe:
 	@echo "n"
 .    endif
 .  endif
-.endfor
-
-readme:
-	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap "rm -r $$tmpdir" 0; \
-	trap 'exit 1' 1 2 3 13 15; \
-	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
-		${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${SUBPACKAGE}}.html
-
-readmes:
-	@tmpdir=`mktemp -d ${TMPDIR}/readme.XXXXXX`; \
-	trap "rm -r $$tmpdir" 0; \
-	trap 'exit 1' 1 2 3 13 15; \
-	cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} TMPDIR=$$tmpdir README_NAME=${README_NAME} \
-		${_READMES}
-
-.for _S in ${MULTI_PACKAGES}
-${READMES_TOP}/${PKGPATH}/${FULLPKGNAME${_S}}.html:
-	@mkdir -p ${@D}
-	@echo ${_COMMENT${_S}:Q} | ${HTMLIFY} >${TMPDIR}/comment${_S}
-	@echo ${FULLPKGNAME${_S}} | ${HTMLIFY} > ${TMPDIR}/pkgname${_S}
-.  if defined(HOMEPAGE)
-	@echo 'See <a href="${HOMEPAGE}">${HOMEPAGE}</a> for details.' >${TMPDIR}/home${_S}
-.  else
-	@echo "" >${TMPDIR}/home${_S}
-.  endif
-.  if ${MULTI_PACKAGES} != "-"
-	@echo "<h2>Part of a Multi-Package set</h2>" >${TMPDIR}/subpackages${_S}
-	@echo "<ul>" >>${TMPDIR}/subpackages${_S}
-.    for _T in ${MULTI_PACKAGES}
-	@echo "<li><a href=\"${FULLPKGNAME${_T}}.html\">${FULLPKGNAME${_T}}</a>" >>${TMPDIR}/subpackages${_S}
-.    endfor
-	@echo "</ul>" >>${TMPDIR}/subpackages${_S}
-.  else
-	@>${TMPDIR}/subpackages${_S}
-.  endif
-.  for _I in build run
-.    if !empty(_${_I:U}_DEP)
-	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} full-${_I}-depends _FULL_PACKAGE_NAME=Yes| \
-		while read n; do \
-			j=`dirname $$n|${HTMLIFY}`; k=`basename $$n|${HTMLIFY}`; \
-			echo "<li><a href=\"${PKGDEPTH}$$j/$$k.html\">$$k</a>"; \
-		 done  >${TMPDIR}/${_I}${_S}
-.    else
-	@echo "<li>none" >${TMPDIR}/${_I}${_S}
-.    endif
-.  endfor
-	@sed -e 's|%%PORT%%|'"`echo ${FULLPKGPATH${_S}}  | ${HTMLIFY}`"'|g' \
-		-e '/%%PKG%%/r${TMPDIR}/pkgname${_S}' -e '//d' \
-		-e '/%%COMMENT%%/r${TMPDIR}/comment${_S}' -e '//d' \
-		-e '/%%DESCR%%/r${DESCR${_S}}' -e '//d' \
-		-e '/%%HOMEPAGE%%/r${TMPDIR}/home${_S}' -e '//d' \
-		-e '/%%BUILD_DEPENDS%%/r${TMPDIR}/build${_S}' -e '//d' \
-		-e '/%%RUN_DEPENDS%%/r${TMPDIR}/run${_S}' -e '//d' \
-		-e '/%%SUBPACKAGES%%/r${TMPDIR}/subpackages${_S}' -e '//d' \
-		${README_NAME} > $@
-	@rm -f ${TMPDIR}/*${_S}
 .endfor
 
 print-build-depends:
@@ -3329,7 +3262,7 @@ _all_phony = ${_recursive_depends_targets} \
 	post-distpatch post-extract post-install \
 	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
 	pre-install pre-patch pre-regress prepare \
-	print-build-depends print-run-depends readme readmes rebuild \
+	print-build-depends print-run-depends rebuild \
 	regress-depends regress-depends-list run-depends run-depends-list \
     show-required-by subpackage uninstall _print-metadata \
 	lock unlock \
