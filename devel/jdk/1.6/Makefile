@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2012/03/22 18:53:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.31 2012/05/28 13:53:18 fgsch Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -114,7 +114,7 @@ FETCH_MANUALLY+=	"    xalan-j_2_7_0-bin.tar.gz"
 FETCH_MANUALLY+=	"from http://archive.apache.org/dist/xml/xalan-j/"
 FETCH_MANUALLY+=	"Get the Eclipse Java Compiler file:"
 FETCH_MANUALLY+=	"    ecj-3.7.1.jar"
-FETCH_MANUALLY+=	"from http://download.eclipse.org/eclipse/downloads/drops/R-3.7.1-201109091335/ecj-3.7.1.jar"
+FETCH_MANUALLY+=	"from http://archive.eclipse.org/eclipse/downloads/drops/R-3.7.1-201109091335/ecj-3.7.1.jar"
 BUILD_DEPENDS+=		lang/jamvm>=1.5.4
 MAKE_ENV+=		ALT_BOOTDIR=${WRKDIST} \
 			ALT_BOOTSTRAP=yes \
