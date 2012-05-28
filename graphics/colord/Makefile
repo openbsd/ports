@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/28 08:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/28 08:56:36 ajacoutot Exp $
 
 COMMENT=	device color profile management daemon
 
 DISTNAME=	colord-0.1.21
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS +=  colord               0.1      # 1.11
 SHARED_LIBS +=  colord-gtk           0.0      # 1.11
@@ -20,14 +21,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
-WANTLIB += pthread-stubs sqlite3 stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += lcms2 m pcre polkit-gobject-1 pthread sqlite3 z
 
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -39,8 +34,7 @@ BUILD_DEPENDS=	lang/vala \
 		textproc/docbook2x
 
 LIB_DEPENDS=	sysutils/polkit \
-		graphics/lcms2 \
-		x11/gtk+3
+		graphics/lcms2
 
 # technically not needed, however it is handy to have some profiles to
 # start working with
@@ -58,6 +52,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-reverse \
 		--disable-gudev \
+		--disable-gtk \
 		--with-daemon-user=_colord \
 		--disable-sane # needs gudev, libgusb
 

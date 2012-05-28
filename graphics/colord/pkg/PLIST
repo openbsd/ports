@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/28 08:45:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/05/28 08:56:36 ajacoutot Exp $
 @newgroup _colord:694
 @newuser _colord:694:_colord:daemon:colord Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -f /var/db/colord/mapping.db
@@ -9,11 +9,6 @@
 @bin bin/colormgr
 include/colord-1/
 include/colord-1/colord/
-include/colord-1/colord-gtk/
-include/colord-1/colord-gtk.h
-include/colord-1/colord-gtk/cd-sample-window.h
-include/colord-1/colord-gtk/cd-window-sync.h
-include/colord-1/colord-gtk/cd-window.h
 include/colord-1/colord-private.h
 include/colord-1/colord.h
 include/colord-1/colord/cd-client-sync.h
@@ -35,13 +30,9 @@ lib/colord-sensors/
 @comment lib/colord-sensors/libcolord_sensor_dummy.la
 lib/girepository-1.0/
 lib/girepository-1.0/Colord-1.0.typelib
-lib/girepository-1.0/ColordGtk-1.0.typelib
-lib/libcolord-gtk.a
-lib/libcolord-gtk.la
 lib/libcolord.a
 lib/libcolord.la
 lib/pkgconfig/
-lib/pkgconfig/colord-gtk.pc
 lib/pkgconfig/colord.pc
 @bin libexec/colord
 @man man/man1/cd-create-profile.1
@@ -71,7 +62,6 @@ share/examples/colord/dbus-1/system.d/org.freedesktop.ColorManager.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.ColorManager.conf
 share/gir-1.0/
 share/gir-1.0/Colord-1.0.gir
-share/gir-1.0/ColordGtk-1.0.gir
 share/locale/as/
 share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/colord.mo
