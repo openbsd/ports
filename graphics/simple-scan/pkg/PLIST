@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/03/29 06:42:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/05/28 08:51:45 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
@@ -11,6 +11,7 @@ share/help/C/simple-scan/crop.page
 share/help/C/simple-scan/dpi.page
 share/help/C/simple-scan/email.page
 share/help/C/simple-scan/index.page
+share/help/C/simple-scan/legal.xml
 share/help/C/simple-scan/print.page
 share/help/C/simple-scan/reorder.page
 share/help/C/simple-scan/rotate.page
@@ -24,6 +25,7 @@ share/help/de/simple-scan/crop.page
 share/help/de/simple-scan/dpi.page
 share/help/de/simple-scan/email.page
 share/help/de/simple-scan/index.page
+share/help/de/simple-scan/legal.xml
 share/help/de/simple-scan/print.page
 share/help/de/simple-scan/reorder.page
 share/help/de/simple-scan/rotate.page
