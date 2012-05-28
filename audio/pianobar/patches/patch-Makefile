@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.16 2012/05/10 11:23:18 dcoppa Exp $
+$OpenBSD: patch-Makefile,v 1.17 2012/05/28 09:47:00 dcoppa Exp $
 
 Use pkg-config for libmad and gnutls
 (upstream git commit eee4424677964ddc5b0f01d120db71f160a7c9e1)
@@ -6,8 +6,11 @@ Use pkg-config for libmad and gnutls
 Correct LDFLAGS for pianobar/libpiano linking
 (upstream git commit c9aff4f4ceddc70b8b98ca8d5d248eac6be2619f)
 
+Add libgcrypt CFLAGS to %.o target
+(upstream git commit db4c66b2956a4da2745f16131fe573962c3fcbfb)
+
 --- Makefile.orig	Sun May  6 16:33:54 2012
-+++ Makefile	Thu May 10 13:12:13 2012
++++ Makefile	Mon May 28 11:01:24 2012
 @@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -88,7 +91,8 @@ Correct LDFLAGS for pianobar/libpiano linking
 -	@${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
 +	${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
  			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
- 			${LIBJSONC_CFLAGS} -c -o $@ $<
+-			${LIBJSONC_CFLAGS} -c -o $@ $<
++			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} -c -o $@ $<
  
  # create position independent code (for shared libraries)
  %.lo: %.c

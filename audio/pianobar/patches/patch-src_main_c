@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_main_c,v 1.9 2012/05/28 09:47:00 dcoppa Exp $
+
+Move mutex initalization to main thread
+(upstream git commit ed7b2597a439c27e60d0b4cec85e801c9099173c)
+
+--- src/main.c.orig	Sun May  6 16:33:54 2012
++++ src/main.c	Mon May 28 10:51:30 2012
+@@ -206,6 +206,7 @@ static void BarMainStartPlayback (BarApp_t *app, pthre
+ 		app->player.scale = BarPlayerCalcScale (app->player.gain + app->settings.volume);
+ 		app->player.audioFormat = app->playlist->audioFormat;
+ 		app->player.settings = &app->settings;
++		pthread_mutex_init (&app->player.pauseMutex, NULL);
+ 
+ 		/* throw event */
+ 		BarUiStartEventCmd (&app->settings, "songstart",
+@@ -233,6 +234,7 @@ static void BarMainPlayerCleanup (BarApp_t *app, pthre
+ 	/* FIXME: pthread_join blocks everything if network connection
+ 	 * is hung up e.g. */
+ 	pthread_join (*playerThread, &threadRet);
++	pthread_mutex_destroy (&app->player.pauseMutex);
+ 
+ 	/* don't continue playback if thread reports error */
+ 	if (threadRet != (void *) PLAYER_RET_OK) {

@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_libpiano_piano_c,v 1.7 2012/05/28 09:47:00 dcoppa Exp $
+
+Fix ambiguous error message "Invalid Partner Login" on wrong
+email address/password failure
+(upstream git commit 81bf363ac69e0036562434ca0e7153c3e624c8c3)
+
+--- src/libpiano/piano.c.orig	Sun May  6 16:33:54 2012
++++ src/libpiano/piano.c	Mon May 28 10:51:30 2012
+@@ -250,6 +250,10 @@ const char *PianoErrorToStr (PianoReturn_t ret) {
+ 			return "Out of memory.";
+ 			break;
+ 
++		case PIANO_RET_INVALID_LOGIN:
++			return "Wrong email address or password.";
++			break;
++
+ 		/* pandora error messages */
+ 		case PIANO_RET_P_INTERNAL:
+ 			return "Internal error.";

@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_player_c,v 1.9 2012/05/22 18:39:42 ajacoutot Exp $
+$OpenBSD: patch-src_player_c,v 1.10 2012/05/28 09:47:00 dcoppa Exp $
 
 Add missing include
 
---- src/player.c.orig	Tue Mar 20 14:47:07 2012
-+++ src/player.c	Tue Mar 20 14:54:05 2012
+Move mutex initalization to main thread
+(upstream git commit ed7b2597a439c27e60d0b4cec85e801c9099173c)
+
+--- src/player.c.orig	Sun May  6 16:33:54 2012
++++ src/player.c	Mon May 28 10:51:30 2012
 @@ -28,6 +28,7 @@ THE SOFTWARE.
  #include <math.h>
  #include <stdint.h>
@@ -12,3 +15,19 @@ Add missing include
  #include <arpa/inet.h>
  
  #include "player.h"
+@@ -421,7 +422,6 @@ void *BarPlayerThread (void *data) {
+ 	WaitressReturn_t wRet = WAITRESS_RET_ERR;
+ 
+ 	/* init handles */
+-	pthread_mutex_init (&player->pauseMutex, NULL);
+ 	player->waith.data = (void *) player;
+ 	/* extraHeaders will be initialized later */
+ 	player->waith.extraHeaders = extraHeaders;
+@@ -500,7 +500,6 @@ void *BarPlayerThread (void *data) {
+ 
+ 	ao_close(player->audioOutDevice);
+ 	WaitressFree (&player->waith);
+-	pthread_mutex_destroy (&player->pauseMutex);
+ 	free (player->buffer);
+ 
+ 	player->mode = PLAYER_FINISHED_PLAYBACK;
