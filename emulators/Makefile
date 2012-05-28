@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/03/13 11:23:30 edd Exp $
+# $OpenBSD: Makefile,v 1.65 2012/05/28 09:19:31 bentley Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -35,6 +35,7 @@
     SUBDIR += stella
     SUBDIR += uae
     SUBDIR += vba
+    SUBDIR += vbam
     SUBDIR += vgb
     SUBDIR += x48
     SUBDIR += xcopilot
