@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile,v 1.8 2012/05/02 07:26:00 dcoppa Exp $
---- src/Makefile.orig	Mon Apr 30 12:27:50 2012
-+++ src/Makefile	Wed May  2 09:11:21 2012
+$OpenBSD: patch-src_Makefile,v 1.9 2012/05/28 07:39:36 dcoppa Exp $
+--- src/Makefile.orig	Wed May 23 11:32:58 2012
++++ src/Makefile	Mon May 28 09:16:31 2012
 @@ -4,7 +4,7 @@
  
  release_hdr := $(shell sh -c './mkreleasehdr.sh')
@@ -19,12 +19,7 @@ $OpenBSD: patch-src_Makefile,v 1.8 2012/05/02 07:26:00 dcoppa Exp $
  endif
  
  ifeq ($(USE_TCMALLOC),yes)
-@@ -54,11 +54,15 @@ endif
- 
- CCOPT= $(CFLAGS) $(ARCH) $(PROF)
- 
--PREFIX= /usr/local
-+PREFIX?= /usr/local
+@@ -58,7 +58,11 @@ PREFIX?=/usr/local
  INSTALL_BIN= $(PREFIX)/bin
  INSTALL= cp -pf
  
@@ -35,7 +30,7 @@ $OpenBSD: patch-src_Makefile,v 1.8 2012/05/02 07:26:00 dcoppa Exp $
 +
 +OBJ = adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o vm.o pubsub.o multi.o debug.o sort.o intset.o syncio.o endian.o slowlog.o bio.o memtest.o
  BENCHOBJ = ae.o anet.o redis-benchmark.o sds.o adlist.o zmalloc.o
- CLIOBJ = anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o
+ CLIOBJ = anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o ae.o
  CHECKDUMPOBJ = redis-check-dump.o lzf_c.o lzf_d.o
 @@ -149,9 +153,7 @@ zmalloc.o: zmalloc.c config.h zmalloc.h
  .PHONY: dependencies
