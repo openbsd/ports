@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_workspace_c,v 1.6 2012/05/28 13:37:50 dcoppa Exp $
+
+From ec4e6d1cdf5b76c79da2879635e4094e25a01f3d Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Wed, 16 May 2012 04:24:16 +0000
+Subject: Fix stray workspaces "number 1" being created when having workspace number 1 in your config
+
+--- src/workspace.c.orig	Wed Apr 25 23:21:25 2012
++++ src/workspace.c	Mon May 28 13:59:35 2012
+@@ -112,14 +112,15 @@ Con *create_workspace_on_output(Output *output, Con *c
+         DLOG("relevant command = %s\n", bind->command);
+         char *target = bind->command + strlen("workspace ");
+         /* We check if this is the workspace
+-         * next/prev/next_on_output/prev_on_output/back_and_forth command.
++         * next/prev/next_on_output/prev_on_output/back_and_forth/number command.
+          * Beware: The workspace names "next", "prev", "next_on_output",
+-         * "prev_on_output" and "back_and_forth" are OK, so we check before
+-         * stripping the double quotes */
++         * "prev_on_output", "number" and "back_and_forth" are OK, so we check
++         * before stripping the double quotes */
+         if (strncasecmp(target, "next", strlen("next")) == 0 ||
+             strncasecmp(target, "prev", strlen("prev")) == 0 ||
+             strncasecmp(target, "next_on_output", strlen("next_on_output")) == 0 ||
+             strncasecmp(target, "prev_on_output", strlen("prev_on_output")) == 0 ||
++            strncasecmp(target, "number", strlen("number")) == 0 ||
+             strncasecmp(target, "back_and_forth", strlen("back_and_forth")) == 0)
+             continue;
+         if (*target == '"')
