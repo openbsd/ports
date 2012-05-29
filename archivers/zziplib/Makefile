@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/08 15:37:28 giovanni Exp $
+# $OpenBSD: Makefile,v 1.12 2012/05/29 15:57:32 pascal Exp $
 
 COMMENT=	lightweight library for extracting data from zip files
 
 DISTNAME=	zziplib-0.13.60
+REVISION=	0
 CATEGORIES=	archivers
 
 SHARED_LIBS +=	zzip		15.52 \
