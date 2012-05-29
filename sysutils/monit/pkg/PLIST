@@ -1,15 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/06/26 10:29:11 sthen Exp $
-bin/monit
+@comment $OpenBSD: PLIST,v 1.9 2012/05/29 15:45:56 jasper Exp $
+@bin bin/monit
 @man man/man1/monit.1
 share/doc/monit/
-share/doc/monit/FAQ.txt
-share/doc/monit/NOTES
-share/doc/monit/README.SSL
-share/doc/monit/UPGRADE.txt
-share/doc/monit/examples.html
-share/doc/monit/monit.html
+share/doc/monit/README
 share/examples/monit/
-share/examples/monit/monit.php
 share/examples/monit/monitrc
 @mode 0600
 @sample ${SYSCONFDIR}/monitrc
