@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2012/05/15 18:21:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/05/29 06:18:37 bentley Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
-M_V=		0.15
-DISTNAME=	freedroidrpg-${M_V}rc2
-REVISION=	0
+DISTNAME =	freedroidRPG-0.15.1
+PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
 
-HOMEPAGE=	http://freedroid.sourceforge.net/
+HOMEPAGE =	http://www.freedroid.org/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -22,7 +21,9 @@ PERMIT_PACKAGE_FTP=	Yes
 WANTLIB += GL SDL SDL_gfx SDL_image SDL_mixer X11 c execinfo jpeg
 WANTLIB += ${MODLUA_WANTLIB} m ogg png pthread vorbis z
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/freedroidRPG/freedroidRPG-${M_V}/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=freedroid/}
+
+WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
 MODULES=	lang/lua
 
