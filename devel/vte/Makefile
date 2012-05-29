@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2012/03/09 06:45:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2012/05/29 20:31:40 jasper Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -14,7 +14,7 @@ SHARED_LIBS+=	vte	14.1    # 2609.0
 FULLPKGNAME-main=	vte-${GNOME_VERSION}
 FULLPKGNAME-python= 	py-${DISTNAME}
 
-REVISION-main =		7
+REVISION-main =		8
 REVISION-python = 	4
 
 CATEGORIES=		devel
