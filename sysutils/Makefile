@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2012/05/16 06:11:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.259 2012/05/29 11:30:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -106,6 +106,7 @@
      SUBDIR += ndesk-dbus
      SUBDIR += ndesk-dbus-glib
      SUBDIR += notification-daemon
+     SUBDIR += node-daemon
      SUBDIR += node-syslog
      SUBDIR += ns4
      SUBDIR += nut
