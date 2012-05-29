@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/10 12:49:31 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/05/29 13:49:45 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
+SUBDIR += abt
 #SUBDIR += admin-menu		GC ?
 #SUBDIR += advanced_help
 #SUBDIR += advanced_user
