@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/29 14:05:30 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}print/
@@ -26,13 +26,15 @@ ${DRUPAL_MODS}print/print.install
 ${DRUPAL_MODS}print/print.module
 ${DRUPAL_MODS}print/print.pages.inc
 ${DRUPAL_MODS}print/print.tpl.php
+${DRUPAL_MODS}print/print.views.inc
+${DRUPAL_MODS}print/print_join_page_counter.inc
 ${DRUPAL_MODS}print/print_mail/
 ${DRUPAL_MODS}print/print_mail/print_mail.admin.inc
 ${DRUPAL_MODS}print/print_mail/print_mail.inc
 ${DRUPAL_MODS}print/print_mail/print_mail.info
 ${DRUPAL_MODS}print/print_mail/print_mail.install
 ${DRUPAL_MODS}print/print_mail/print_mail.module
-${DRUPAL_MODS}print/print_mail/views_handler_sort_print_mail_sentcount.inc
+${DRUPAL_MODS}print/print_mail/print_mail.views.inc
 ${DRUPAL_MODS}print/print_pdf/
 ${DRUPAL_MODS}print/print_pdf/print_pdf.admin.inc
 ${DRUPAL_MODS}print/print_pdf/print_pdf.class.inc
@@ -41,5 +43,6 @@ ${DRUPAL_MODS}print/print_pdf/print_pdf.info
 ${DRUPAL_MODS}print/print_pdf/print_pdf.install
 ${DRUPAL_MODS}print/print_pdf/print_pdf.module
 ${DRUPAL_MODS}print/print_pdf/print_pdf.pages.inc
+${DRUPAL_MODS}print/print_pdf/print_pdf.views.inc
 ${DRUPAL_MODS}print/tests/
 ${DRUPAL_MODS}print/tests/print_basic.test

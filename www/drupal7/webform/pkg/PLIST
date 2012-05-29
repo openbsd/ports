@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/05/29 14:05:31 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}webform/
@@ -61,7 +61,9 @@ ${DRUPAL_MODS}webform/views/webform_handler_field_node_link_edit.inc
 ${DRUPAL_MODS}webform/views/webform_handler_field_node_link_results.inc
 ${DRUPAL_MODS}webform/views/webform_handler_field_submission_count.inc
 ${DRUPAL_MODS}webform/views/webform_handler_field_submission_link.inc
+${DRUPAL_MODS}webform/views/webform_handler_field_webform_status.inc
 ${DRUPAL_MODS}webform/views/webform_handler_filter_is_draft.inc
+${DRUPAL_MODS}webform/views/webform_handler_filter_webform_status.inc
 ${DRUPAL_MODS}webform/webform.api.php
 ${DRUPAL_MODS}webform/webform.info
 ${DRUPAL_MODS}webform/webform.install
