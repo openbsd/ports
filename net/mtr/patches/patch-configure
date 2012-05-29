@@ -1,27 +1,18 @@
---- configure.orig	Thu Aug 19 16:17:49 2010
-+++ configure	Thu Aug 19 16:18:59 2010
-@@ -7836,6 +7836,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
+--- configure.orig	Fri Dec  2 13:21:30 2011
++++ configure	Mon May  7 22:20:59 2012
+@@ -5325,6 +5325,7 @@ _ACEOF
  
+ 
+ ac_fn_c_check_type "$LINENO" "socklen_t" "ac_cv_type_socklen_t" "
 +#include <sys/types.h>
  #include <netinet/in.h>
  #ifdef HAVE_SOCKET_H
  #include <socket.h>
-@@ -7907,6 +7908,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
- /* end confdefs.h.  */
+@@ -5342,6 +5343,7 @@ fi
  
+ 
+ ac_fn_c_check_type "$LINENO" "struct in_addr" "ac_cv_type_struct_in_addr" "
 +#include <sys/types.h>
  #include <netinet/in.h>
  
- 
-@@ -7993,7 +7995,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 	 test -z "$ac_c_werror_flag" ||
- 	 test ! -s conftest.err
-        } && test -s conftest.$ac_objext; then
--   warning_CFLAGS="${warning_CFLAGS} -Wno-pointer-sign"
-+   warning_CFLAGS="${warning_CFLAGS}"
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
+ "
