@@ -1,6 +1,19 @@
-$OpenBSD: patch-tests_Makefile,v 1.1 2012/05/26 08:56:44 jasper Exp $
+$OpenBSD: patch-tests_Makefile,v 1.2 2012/05/30 11:09:10 jasper Exp $
 
+First chunk:
 - Ensure the libraries needed by libregress.so can also be located and are preloaded.
+
+Second chunk:
+commit 2564791c4176c19a7022762212d0afce7956e5bb
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Sat May 26 11:01:00 2012 +0200
+
+    Fix regress tests on platforms where we need to look in additional
+    library directories.
+
+    If the directory does not exist it's just silently ignored.
+
+
 --- tests/Makefile.orig	Tue May 22 11:38:39 2012
 +++ tests/Makefile	Sat May 26 10:54:39 2012
 @@ -41,7 +41,7 @@ clean :
