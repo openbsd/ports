@@ -1,0 +1,61 @@
+$OpenBSD: patch-MIME_headers_c,v 1.1.1.1 2012/05/30 16:47:01 ajacoutot Exp $
+
+http://bugs.debian.org/625307
+http://bugs.debian.org/602515
+
+--- MIME_headers.c.orig	Sun Nov 16 09:45:45 2008
++++ MIME_headers.c	Wed May 30 15:45:22 2012
+@@ -1081,12 +1081,10 @@ int MIMEH_read_headers( struct MIMEH_header_info *hinf
+ 	int linesize=0;
+ 	int totalsize_original=0;
+ 	int result = 0;
+-	int firstline = 1;
+ 	int search_count=0;
+ 	char *tmp;
+ 	char *tmp_original;
+ 	char *fget_result = NULL;
+-	char *headerline_end;
+ 	char *p;
+ 	char *linestart;
+ 	char *lineend;
+@@ -1184,7 +1182,6 @@ int MIMEH_read_headers( struct MIMEH_header_info *hinf
+ 				glb.headerline = tmp;
+ 				totalsize = linesize;
+ 				PLD_strncpy(glb.headerline, linestart, (linesize +1));
+-				headerline_end = glb.headerline +totalsize;
+ 			} // If the global headerline is currently NULL
+ 			else
+ 			{
+@@ -1271,7 +1268,6 @@ int MIMEH_read_headers( struct MIMEH_header_info *hinf
+ 				FFGET_SDL_MODE = 0;
+ 			} // FFGET_doubleCR test
+ 
+-			firstline = 0;
+ 		} // While reading more headers from the source file.
+ 
+ 
+@@ -2243,7 +2239,7 @@ int MIMEH_parse_contentlocation( char *header_name, ch
+ 		{
+ 			if (MIMEH_DNORMAL) LOGGER_log("%s:%d:MIME_parse_contentlocation:DEBUG: filename = %s\n", FL, p);
+ 			snprintf(hinfo->name, sizeof(hinfo->name),"%s",p);
+-			snprintf(hinfo->filename, sizeof(hinfo->name),"%s",p);
++			snprintf(hinfo->filename, sizeof(hinfo->filename),"%s",p);
+ 			FNFILTER_filter(hinfo->filename, _MIMEH_FILENAMELEN_MAX);
+ 			SS_push(&(hinfo->ss_filenames), hinfo->filename, strlen(hinfo->filename));
+ 
+@@ -2724,13 +2720,13 @@ int MIMEH_headers_process( struct MIMEH_header_info *h
+ {
+ 	/** scan through our headers string looking for information that is
+ 	  ** valid **/
+-	char *safeh, *h, *safehl;
++	char *h, *safehl;
+ 	char *current_header_position;
+ 	int headerlength;
+ 
+ 	if (MIMEH_DNORMAL) LOGGER_log("%s:%d:MIMEH_parse_headers:DEBUG: Start [hinfo=%p]\n",FL, hinfo);
+ 
+-	safeh = h = headers;
++	h = headers;
+ 
+ 	/** Duplicate the headers for processing - this way we don't 'taint' the
+ 	** original headers during our searching / altering. **/

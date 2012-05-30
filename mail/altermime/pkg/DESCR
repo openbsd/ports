@@ -1,0 +1,8 @@
+alterMIME is a small program which is used to alter your mime-encoded
+mailpacks as typically received by e.g. amavisd-new.
+It can:
+    * Insert disclaimers
+    * Insert arbitary X-headers
+    * Modify existing headers
+    * Remove attachments based on filename or content-type
+    * Replace attachments based on filename

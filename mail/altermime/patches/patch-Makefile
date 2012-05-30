@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/05/30 16:47:01 ajacoutot Exp $
+--- Makefile.orig	Sun Nov 16 09:45:45 2008
++++ Makefile	Wed May 30 15:27:29 2012
+@@ -9,7 +9,7 @@
+ #								opposite of a disclaimer.
+ #ALTERMIME_OPTIONS=-DALTERMIME_PRETEXT
+ ALTERMIME_OPTIONS=
+-CFLAGS=-Wall -Werror -g -I. -O2 $(ALTERMIME_OPTIONS)
++CFLAGS?=-Wall -Werror -g -I. -O2 $(ALTERMIME_OPTIONS)
+ OBJS= strstack.o mime_alter.o ffget.o pldstr.o filename-filters.o logger.o MIME_headers.o libmime-decoders.o boundary-stack.o qpe.o
+ 
+ 
+@@ -24,9 +24,7 @@ altermime: altermime.c ${OBJS}
+ 
+ # Build Install
+ install: altermime
+-	strip altermime
+-	cp altermime /usr/local/bin
+-	chmod a+rx /usr/local/bin/altermime
++	${BSD_INSTALL_PROGRAM} altermime ${PREFIX}/bin
+ 
+ uninstall:
+ 	rm -f /usr/local/bin/altermime
