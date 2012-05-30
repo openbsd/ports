@@ -1,4 +1,4 @@
-; $OpenBSD: sip.conf.sample,v 1.7 2012/05/30 22:41:30 sthen Exp $
+; $OpenBSD: sip.conf.sample,v 1.8 2012/05/30 22:45:26 sthen Exp $
 ; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 
 [general]
