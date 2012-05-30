@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.147 2012/05/06 13:58:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.148 2012/05/30 22:41:30 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
 VER=			1.8.12.0
+REVISION-main=		0
+REVISION-calendar=	0
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -145,7 +147,7 @@ CONFIGURE_ARGS+=	--with-imap=no
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
 WANTLIB-calendar=	${MODGETTEXT_WANTLIB} asn1 crypto expat gssapi \
-			ical iksemel krb5 m neon ssl xml2 z
+			ical iksemel krb5 m neon proxy ssl xml2 z
 LIB_DEPENDS-calendar=	net/neon \
 			textproc/libical \
 			${MODGETTEXT_LIB_DEPENDS}

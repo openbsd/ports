@@ -1,14 +1,20 @@
-; $OpenBSD: sip.conf.sample,v 1.6 2011/06/27 21:15:14 sthen Exp $
+; $OpenBSD: sip.conf.sample,v 1.7 2012/05/30 22:41:30 sthen Exp $
 ; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 
 [general]
 disallow=all
 allow=ulaw
+
 ; If Asterisk server is behind nat with port-forwarding for some
 ; external clients, set the external address and local network and
 ; perhaps restrict the port range (see rtpstart/rtpend in rtp.conf).
 ;externip=11.22.33.44
 ;localnet=192.168.0.0/255.255.0.0
+
+; Defaults for these include the Asterisk version number, which you
+; might not want to expose.
+useragent=Asterisk PBX
+sdpsession=Asterisk PBX
 
 ; Phone #1
 [100]
