@@ -1,0 +1,33 @@
+$OpenBSD: patch-pyglet_lib_py,v 1.1.1.1 2012/05/30 20:45:48 edd Exp $
+
+Expose libraries loaded via ctypes() globally.
+
+--- pyglet/lib.py.orig	Tue Mar 20 10:21:05 2012
++++ pyglet/lib.py	Tue Mar 20 10:21:49 2012
+@@ -101,7 +101,7 @@ class LibraryLoader(object):
+         platform_names.extend(names)
+         for name in platform_names:
+             try:
+-                lib = ctypes.cdll.LoadLibrary(name)
++                lib = ctypes.CDLL(name, ctypes.RTLD_GLOBAL)
+                 if _debug_lib:
+                     print name
+                 if _debug_trace:
+@@ -111,7 +111,7 @@ class LibraryLoader(object):
+                 path = self.find_library(name)
+                 if path:
+                     try:
+-                        lib = ctypes.cdll.LoadLibrary(path)
++                        lib = ctypes.CDLL(path, ctypes.RTLD_GLOBAL)
+                         if _debug_lib:
+                             print path
+                         if _debug_trace:
+@@ -223,7 +223,7 @@ class MachOLibraryLoader(LibraryLoader):
+     def load_framework(self, path):
+         realpath = self.find_framework(path)
+         if realpath:
+-            lib = ctypes.cdll.LoadLibrary(realpath)
++            lib = ctypes.CDLL(realpath, ctypes.RTLD_GLOBAL)
+             if _debug_lib:
+                 print realpath
+             if _debug_trace:
