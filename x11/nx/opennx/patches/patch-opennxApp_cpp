@@ -1,12 +1,12 @@
-$OpenBSD: patch-opennxApp_cpp,v 1.3 2012/01/03 16:46:36 sebastia Exp $
+$OpenBSD: patch-opennxApp_cpp,v 1.4 2012/05/30 20:38:32 jasper Exp $
 
---- opennxApp.cpp.orig	Tue Dec  6 16:01:27 2011
-+++ opennxApp.cpp	Fri Dec 30 10:31:38 2011
-@@ -573,7 +573,7 @@ opennxApp::preInit()
+--- opennxApp.cpp.orig	Tue May 29 16:07:01 2012
++++ opennxApp.cpp	Tue May 29 16:07:18 2012
+@@ -572,7 +572,7 @@ opennxApp::preInit()
          tmp = findExecutable(wxT("cupsd"));
          if (tmp.IsEmpty()) {
              const wxChar* candidates[] = {
--                wxT("/sbin/cupsd"), wxT("/usr/sbin/cupsd"), wxT("usr/local/sbin/cupsd"),
+-                wxT("/sbin/cupsd"), wxT("/usr/sbin/cupsd"), wxT("/usr/local/sbin/cupsd"),
 +                wxT("/sbin/cupsd"), wxT("/usr/sbin/cupsd"), wxT("${LOCALBASE}/sbin/cupsd"),
                  NULL
              };
