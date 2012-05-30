@@ -1,5 +1,5 @@
---- pflogsumm.pl.orig	Wed Feb  1 15:34:58 2012
-+++ pflogsumm.pl	Mon Feb 20 09:50:08 2012
+--- pflogsumm.pl.orig	Sun Feb  5 19:25:25 2012
++++ pflogsumm.pl	Wed May 30 10:52:23 2012
 @@ -4,13 +4,13 @@ eval 'exec perl -S $0 "$@"'
  
  =head1 NAME
@@ -7,7 +7,7 @@
 -pflogsumm.pl - Produce Postfix MTA logfile summary
 +pflogsumm - Produce Postfix MTA logfile summary
  
- Copyright (C) 1998-2010 by James S. Seymour, Release 1.1.4
+ Copyright (C) 1998-2010 by James S. Seymour, Release 1.1.5
  
  =head1 SYNOPSIS
  
