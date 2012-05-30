@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2012/05/05 10:12:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2012/05/30 12:16:14 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -7,12 +7,9 @@ COMMENT-ruby=		ruby interface to subversion
 COMMENT-ap2=		apache2 subversion modules
 COMMENT-gnome-keyring=	GNOME keyring support for subversion
 
-VERSION=		1.7.4
+VERSION=		1.7.5
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
-REVISION=		0
-REVISION-main=		1
-REVISION-gnome-keyring = 3
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
 FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
@@ -59,7 +56,7 @@ FLAVOR += no_perl no_python no_ruby
 
 MODULES=	devel/gettext lang/python
 
-WANTLIB=	expat db magic z
+WANTLIB=	expat magic z
 
 # autogen.sh checks for libtoolize
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
@@ -75,8 +72,9 @@ LIB_DEPENDS-main = ${LIB_DEPENDS} \
 		security/cyrus-sasl2 \
 		devel/libmagic
 
-WANTLIB-main=	${WANTLIB} asn1 c crypto gssapi krb5 ssl \
-		neon>=26 pthread apr-1 aprutil-1 sasl2>=2 sqlite3
+WANTLIB-main=	${WANTLIB} asn1 c crypto db gssapi krb5 ssl \
+		neon>=26 pthread apr-1 aprutil-1 sasl2>=2 sqlite3 \
+		m proxy stdc++
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 
 TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
@@ -88,7 +86,7 @@ TOOLS_HOOK_SCRIPTS=	commit-access-control.cfg.example \
 TOOLS_CLIENT_SIDE_SCRIPTS=	bash_completion change-svn-wc-format.py \
 	server-version.py showchange.pl svn-graph.pl
 
-WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 sqlite3
+WANTLIB-ap2=		${WANTLIB} apr-1 aprutil-1 db sqlite3
 LIB_DEPENDS-ap2=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .for _lib in svn_delta-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 \
 	svn_fs_util-1 svn_repos-1 svn_subr-1
@@ -108,8 +106,8 @@ LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 WANTLIB-perl +=	${_lib}>=${SO_VERSION}
 .endfor
 
-WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
-			krb5 neon sasl2 sqlite3 ssl ${MODPY_WANTLIB}
+WANTLIB-python=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi db \
+			krb5 neon proxy sasl2 sqlite3 ssl ${MODPY_WANTLIB}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 			${MAINSPEC}
@@ -117,8 +115,8 @@ LIB_DEPENDS-python=	${MODPY_LIB_DEPENDS} ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .endfor
 
-WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
-			krb5 m neon sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
+WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi db \
+			krb5 m neon proxy sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
