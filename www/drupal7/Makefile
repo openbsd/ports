@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/29 13:49:45 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/05/31 15:07:56 espie Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -17,7 +17,7 @@ SUBDIR += backup_migrate
 #SUBDIR += ckeditor-link
 SUBDIR += compact_forms
 #SUBDIR += contemplate
-#SUBDIR += content_access	1.2beta1
+SUBDIR += content_access	#1.2beta1
 SUBDIR += core
 SUBDIR += ctools
 SUBDIR += date
@@ -40,7 +40,7 @@ SUBDIR += globalredirect
 SUBDIR += locale-fr
 #SUBDIR += locale-it
 #SUBDIR += locale-ja
-#SUBDIR += masquerade		1.0rc4
+SUBDIR += masquerade		#1.0rc4
 #SUBDIR += menu_force
 #SUBDIR += metatag		1.0alpha5
 #SUBDIR += modalframe
@@ -61,7 +61,7 @@ SUBDIR += references
 #SUBDIR += rolereference
 SUBDIR += rules
 SUBDIR += scheduler
-#SUBDIR += schema		1.0beta3
+SUBDIR += schema		#1.0beta3
 #SUBDIR += search_config
 SUBDIR += securelogin
 #SUBDIR += session_api
@@ -69,7 +69,7 @@ SUBDIR += securelogin
 #SUBDIR += tables
 #SUBDIR += theme-acquia-marina
 SUBDIR += theme-danland
-#SUBDIR += theme-newsflash	n/a for 7
+SUBDIR += theme-newsflash
 #SUBDIR += theme-zen
 #SUBDIR += themesettingsapi
 SUBDIR += token
