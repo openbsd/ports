@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/29 07:25:36 bentley Exp $
+# $OpenBSD: Makefile,v 1.6 2012/05/31 15:16:33 landry Exp $
 
 COMMENT=	IT/MOD/XM player and library
 
@@ -21,7 +21,7 @@ WANTLIB=	alleg c m pthread
 USE_GMAKE=	yes
 LIB_DEPENDS=	games/allegro
 
-MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
+MAKE_FLAGS =	CC="${CC}"
 
 NO_REGRESS=	Yes
 
