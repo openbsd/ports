@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/04/16 23:29:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/05/31 06:06:32 ajacoutot Exp $
 @conflict gnome2-user-docs-*
 @pkgpath x11/gnome/users-guide
 share/help/
@@ -364,6 +364,8 @@ share/help/C/gnome-help/user-delete.page
 share/help/C/gnome-help/user-goodpassword.page
 share/help/C/gnome-help/video-dvd.page
 share/help/C/gnome-help/video-sending.page
+share/help/C/gnome-help/wacom-mode.page
+share/help/C/gnome-help/wacom-multi-monitor.page
 share/help/C/gnome-help/windows-key.page
 share/help/ca/
 share/help/ca/gnome-help/
@@ -727,6 +729,8 @@ share/help/ca/gnome-help/user-delete.page
 share/help/ca/gnome-help/user-goodpassword.page
 share/help/ca/gnome-help/video-dvd.page
 share/help/ca/gnome-help/video-sending.page
+share/help/ca/gnome-help/wacom-mode.page
+share/help/ca/gnome-help/wacom-multi-monitor.page
 share/help/ca/gnome-help/windows-key.page
 share/help/de/
 share/help/de/gnome-help/
@@ -1090,6 +1094,8 @@ share/help/de/gnome-help/user-delete.page
 share/help/de/gnome-help/user-goodpassword.page
 share/help/de/gnome-help/video-dvd.page
 share/help/de/gnome-help/video-sending.page
+share/help/de/gnome-help/wacom-mode.page
+share/help/de/gnome-help/wacom-multi-monitor.page
 share/help/de/gnome-help/windows-key.page
 share/help/el/
 share/help/el/gnome-help/
@@ -1453,6 +1459,8 @@ share/help/el/gnome-help/user-delete.page
 share/help/el/gnome-help/user-goodpassword.page
 share/help/el/gnome-help/video-dvd.page
 share/help/el/gnome-help/video-sending.page
+share/help/el/gnome-help/wacom-mode.page
+share/help/el/gnome-help/wacom-multi-monitor.page
 share/help/el/gnome-help/windows-key.page
 share/help/es/
 share/help/es/gnome-help/
@@ -1816,6 +1824,8 @@ share/help/es/gnome-help/user-delete.page
 share/help/es/gnome-help/user-goodpassword.page
 share/help/es/gnome-help/video-dvd.page
 share/help/es/gnome-help/video-sending.page
+share/help/es/gnome-help/wacom-mode.page
+share/help/es/gnome-help/wacom-multi-monitor.page
 share/help/es/gnome-help/windows-key.page
 share/help/fi/
 share/help/fi/gnome-help/
@@ -2179,6 +2189,8 @@ share/help/fi/gnome-help/user-delete.page
 share/help/fi/gnome-help/user-goodpassword.page
 share/help/fi/gnome-help/video-dvd.page
 share/help/fi/gnome-help/video-sending.page
+share/help/fi/gnome-help/wacom-mode.page
+share/help/fi/gnome-help/wacom-multi-monitor.page
 share/help/fi/gnome-help/windows-key.page
 share/help/fr/
 share/help/fr/gnome-help/
@@ -2542,6 +2554,8 @@ share/help/fr/gnome-help/user-delete.page
 share/help/fr/gnome-help/user-goodpassword.page
 share/help/fr/gnome-help/video-dvd.page
 share/help/fr/gnome-help/video-sending.page
+share/help/fr/gnome-help/wacom-mode.page
+share/help/fr/gnome-help/wacom-multi-monitor.page
 share/help/fr/gnome-help/windows-key.page
 share/help/gl/
 share/help/gl/gnome-help/
@@ -2905,6 +2919,8 @@ share/help/gl/gnome-help/user-delete.page
 share/help/gl/gnome-help/user-goodpassword.page
 share/help/gl/gnome-help/video-dvd.page
 share/help/gl/gnome-help/video-sending.page
+share/help/gl/gnome-help/wacom-mode.page
+share/help/gl/gnome-help/wacom-multi-monitor.page
 share/help/gl/gnome-help/windows-key.page
 share/help/hi/
 share/help/hi/gnome-help/
@@ -3268,6 +3284,8 @@ share/help/hi/gnome-help/user-delete.page
 share/help/hi/gnome-help/user-goodpassword.page
 share/help/hi/gnome-help/video-dvd.page
 share/help/hi/gnome-help/video-sending.page
+share/help/hi/gnome-help/wacom-mode.page
+share/help/hi/gnome-help/wacom-multi-monitor.page
 share/help/hi/gnome-help/windows-key.page
 share/help/hu/
 share/help/hu/gnome-help/
@@ -3631,6 +3649,8 @@ share/help/hu/gnome-help/user-delete.page
 share/help/hu/gnome-help/user-goodpassword.page
 share/help/hu/gnome-help/video-dvd.page
 share/help/hu/gnome-help/video-sending.page
+share/help/hu/gnome-help/wacom-mode.page
+share/help/hu/gnome-help/wacom-multi-monitor.page
 share/help/hu/gnome-help/windows-key.page
 share/help/id/
 share/help/id/gnome-help/
@@ -3994,6 +4014,8 @@ share/help/id/gnome-help/user-delete.page
 share/help/id/gnome-help/user-goodpassword.page
 share/help/id/gnome-help/video-dvd.page
 share/help/id/gnome-help/video-sending.page
+share/help/id/gnome-help/wacom-mode.page
+share/help/id/gnome-help/wacom-multi-monitor.page
 share/help/id/gnome-help/windows-key.page
 share/help/it/
 share/help/it/gnome-help/
@@ -4357,6 +4379,8 @@ share/help/it/gnome-help/user-delete.page
 share/help/it/gnome-help/user-goodpassword.page
 share/help/it/gnome-help/video-dvd.page
 share/help/it/gnome-help/video-sending.page
+share/help/it/gnome-help/wacom-mode.page
+share/help/it/gnome-help/wacom-multi-monitor.page
 share/help/it/gnome-help/windows-key.page
 share/help/ja/
 share/help/ja/gnome-help/
@@ -4720,6 +4744,8 @@ share/help/ja/gnome-help/user-delete.page
 share/help/ja/gnome-help/user-goodpassword.page
 share/help/ja/gnome-help/video-dvd.page
 share/help/ja/gnome-help/video-sending.page
+share/help/ja/gnome-help/wacom-mode.page
+share/help/ja/gnome-help/wacom-multi-monitor.page
 share/help/ja/gnome-help/windows-key.page
 share/help/lv/
 share/help/lv/gnome-help/
@@ -5083,6 +5109,8 @@ share/help/lv/gnome-help/user-delete.page
 share/help/lv/gnome-help/user-goodpassword.page
 share/help/lv/gnome-help/video-dvd.page
 share/help/lv/gnome-help/video-sending.page
+share/help/lv/gnome-help/wacom-mode.page
+share/help/lv/gnome-help/wacom-multi-monitor.page
 share/help/lv/gnome-help/windows-key.page
 share/help/nl/
 share/help/nl/gnome-help/
@@ -5446,6 +5474,8 @@ share/help/nl/gnome-help/user-delete.page
 share/help/nl/gnome-help/user-goodpassword.page
 share/help/nl/gnome-help/video-dvd.page
 share/help/nl/gnome-help/video-sending.page
+share/help/nl/gnome-help/wacom-mode.page
+share/help/nl/gnome-help/wacom-multi-monitor.page
 share/help/nl/gnome-help/windows-key.page
 share/help/pa/
 share/help/pa/gnome-help/
@@ -5809,6 +5839,8 @@ share/help/pa/gnome-help/user-delete.page
 share/help/pa/gnome-help/user-goodpassword.page
 share/help/pa/gnome-help/video-dvd.page
 share/help/pa/gnome-help/video-sending.page
+share/help/pa/gnome-help/wacom-mode.page
+share/help/pa/gnome-help/wacom-multi-monitor.page
 share/help/pa/gnome-help/windows-key.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-help/
@@ -6172,6 +6204,8 @@ share/help/pt_BR/gnome-help/user-delete.page
 share/help/pt_BR/gnome-help/user-goodpassword.page
 share/help/pt_BR/gnome-help/video-dvd.page
 share/help/pt_BR/gnome-help/video-sending.page
+share/help/pt_BR/gnome-help/wacom-mode.page
+share/help/pt_BR/gnome-help/wacom-multi-monitor.page
 share/help/pt_BR/gnome-help/windows-key.page
 share/help/ru/
 share/help/ru/gnome-help/
@@ -6535,6 +6569,8 @@ share/help/ru/gnome-help/user-delete.page
 share/help/ru/gnome-help/user-goodpassword.page
 share/help/ru/gnome-help/video-dvd.page
 share/help/ru/gnome-help/video-sending.page
+share/help/ru/gnome-help/wacom-mode.page
+share/help/ru/gnome-help/wacom-multi-monitor.page
 share/help/ru/gnome-help/windows-key.page
 share/help/sl/
 share/help/sl/gnome-help/
@@ -6898,6 +6934,8 @@ share/help/sl/gnome-help/user-delete.page
 share/help/sl/gnome-help/user-goodpassword.page
 share/help/sl/gnome-help/video-dvd.page
 share/help/sl/gnome-help/video-sending.page
+share/help/sl/gnome-help/wacom-mode.page
+share/help/sl/gnome-help/wacom-multi-monitor.page
 share/help/sl/gnome-help/windows-key.page
 share/help/sr/
 share/help/sr/gnome-help/
@@ -7261,6 +7299,8 @@ share/help/sr/gnome-help/user-delete.page
 share/help/sr/gnome-help/user-goodpassword.page
 share/help/sr/gnome-help/video-dvd.page
 share/help/sr/gnome-help/video-sending.page
+share/help/sr/gnome-help/wacom-mode.page
+share/help/sr/gnome-help/wacom-multi-monitor.page
 share/help/sr/gnome-help/windows-key.page
 share/help/sr@latin/
 share/help/sr@latin/gnome-help/
@@ -7624,6 +7664,8 @@ share/help/sr@latin/gnome-help/user-delete.page
 share/help/sr@latin/gnome-help/user-goodpassword.page
 share/help/sr@latin/gnome-help/video-dvd.page
 share/help/sr@latin/gnome-help/video-sending.page
+share/help/sr@latin/gnome-help/wacom-mode.page
+share/help/sr@latin/gnome-help/wacom-multi-monitor.page
 share/help/sr@latin/gnome-help/windows-key.page
 share/help/sv/
 share/help/sv/gnome-help/
@@ -7987,6 +8029,8 @@ share/help/sv/gnome-help/user-delete.page
 share/help/sv/gnome-help/user-goodpassword.page
 share/help/sv/gnome-help/video-dvd.page
 share/help/sv/gnome-help/video-sending.page
+share/help/sv/gnome-help/wacom-mode.page
+share/help/sv/gnome-help/wacom-multi-monitor.page
 share/help/sv/gnome-help/windows-key.page
 share/help/te/
 share/help/te/gnome-help/
@@ -8350,6 +8394,8 @@ share/help/te/gnome-help/user-delete.page
 share/help/te/gnome-help/user-goodpassword.page
 share/help/te/gnome-help/video-dvd.page
 share/help/te/gnome-help/video-sending.page
+share/help/te/gnome-help/wacom-mode.page
+share/help/te/gnome-help/wacom-multi-monitor.page
 share/help/te/gnome-help/windows-key.page
 share/help/vi/
 share/help/vi/gnome-help/
@@ -8713,4 +8759,6 @@ share/help/vi/gnome-help/user-delete.page
 share/help/vi/gnome-help/user-goodpassword.page
 share/help/vi/gnome-help/video-dvd.page
 share/help/vi/gnome-help/video-sending.page
+share/help/vi/gnome-help/wacom-mode.page
+share/help/vi/gnome-help/wacom-multi-monitor.page
 share/help/vi/gnome-help/windows-key.page
