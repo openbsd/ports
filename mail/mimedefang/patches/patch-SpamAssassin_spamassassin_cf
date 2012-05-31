@@ -1,0 +1,12 @@
+$OpenBSD: patch-SpamAssassin_spamassassin_cf,v 1.1 2012/05/31 18:31:42 ajacoutot Exp $
+--- SpamAssassin/spamassassin.cf.orig	Thu May 31 17:42:57 2012
++++ SpamAssassin/spamassassin.cf	Thu May 31 17:43:06 2012
+@@ -44,7 +44,7 @@ ok_locales		en
+ # By default, the subject lines of suspected spam will be tagged.
+ # This can be disabled here.
+ #
+-rewrite_subject 0
++# rewrite_header Subject *****SPAM*****
+ 
+ # By default, spamassassin will include its report in the body
+ # of suspected spam. Enabling this causes the report to go in the

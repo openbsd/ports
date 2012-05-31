@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/05/31 18:31:42 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,11 +9,18 @@ Post-installation steps
 Register the mimedefang milter with sendmail(8) by adding the following
 to your .mc file:
 
-	INPUT_MAIL_FILTER(`mimedefang', \
-		`S=unix:/var/run/mdefang/mimedefang.socket, \
-		F=T, T=S:360s;R:360s;E:15m')dnl
+    INPUT_MAIL_FILTER(`mimedefang', \
+        `S=local:/var/spool/MIMEDefang/mimedefang.sock, \
+        F=T, T=C:15m;S:4m;R:4m;E:10m')dnl
 
 Then re-generate your .cf file.
+
+IP validation header
+====================
+To retain relay's IP address information between Mail eXchangers, an
+identical ${SYSCONFDIR}/mail/mimedefang-ip-key must be installed on all
+relays. The content of this file is generated using:
+    # ${PREFIX}/share/examples/gen-ip-validator.pl
 
 Start-up order
 ==============

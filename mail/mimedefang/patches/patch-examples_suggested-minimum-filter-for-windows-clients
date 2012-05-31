@@ -1,0 +1,15 @@
+$OpenBSD: patch-examples_suggested-minimum-filter-for-windows-clients,v 1.1 2012/05/31 18:31:42 ajacoutot Exp $
+--- examples/suggested-minimum-filter-for-windows-clients.orig	Thu May 31 18:50:32 2012
++++ examples/suggested-minimum-filter-for-windows-clients	Thu May 31 18:55:33 2012
+@@ -316,6 +316,11 @@ sub filter_end {
+     # by marginal software.  Your call.
+ 
+     # action_rebuild();
++
++    # uncomment to prepend '[SPAM] ' to the subject of X-Spam-Status tagged mails
++    # if (spam_assassin_is_spam()) {
++	# action_change_header("Subject", "[SPAM] $Subject");
++    # }
+ }
+ 
+ # DO NOT delete the next line, or Perl will complain.

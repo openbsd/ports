@@ -1,0 +1,21 @@
+$OpenBSD: patch-mimedefang_pl_in,v 1.1 2012/05/31 18:31:42 ajacoutot Exp $
+--- mimedefang.pl.in.orig	Thu May 31 20:28:08 2012
++++ mimedefang.pl.in	Thu May 31 20:28:24 2012
+@@ -3472,7 +3472,7 @@ sub entity_contains_virus_hbedv ($) {
+ 
+     # Run antivir
+     my($code, $category, $action) =
+-	run_virus_scanner($Features{'Virus:HBEDV'} . " --allfiles -z -rs $path 2>&1", "!Virus!|>>>|VIRUS:|ALERT:");
++	run_virus_scanner($Features{'Virus:HBEDV'} . " --alert-action=none --scan-mode=all --scan-in-archive=yes --scan-in-mbox=yes --batch -s $path 2>&1", "!Virus!|>>>|VIRUS:|ALERT:");
+     if ($action ne 'proceed') {
+ 	return (wantarray ? ($code, $category, $action) : $code);
+     }
+@@ -3497,7 +3497,7 @@ sub message_contains_virus_hbedv () {
+ 
+     # Run antivir
+     my($code, $category, $action) =
+-	run_virus_scanner($Features{'Virus:HBEDV'} . " --allfiles -z -rs ./Work 2>&1", "!Virus!|>>>|VIRUS:|ALERT:");
++	run_virus_scanner($Features{'Virus:HBEDV'} . " --alert-action=none --scan-mode=all --scan-in-archive=yes --scan-in-mbox=yes --batch -s ./Work 2>&1", "!Virus!|>>>|VIRUS:|ALERT:");
+     return (wantarray ? interpret_hbedv_code($code) : $code);
+ }
+ 

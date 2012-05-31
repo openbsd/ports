@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/05/31 18:31:42 ajacoutot Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
-@extraunexec rm -rf /var/run/mdefang/*
 @extraunexec rm -rf /var/spool/MIMEDefang/*
 @extraunexec rm -rf /var/spool/MD-Quarantine/*
 @bin bin/md-mx-ctrl
 @bin bin/mimedefang
 @bin bin/mimedefang-multiplexor
+bin/mimedefang-util
 bin/mimedefang.pl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
+@man man/man1/mimedefang-util.1
 @man man/man5/mimedefang-filter.5
 @man man/man7/mimedefang-notify.7
 @man man/man7/mimedefang-protocol.7
@@ -20,18 +21,25 @@ bin/watch-multiple-mimedefangs.tcl
 @man man/man8/watch-mimedefang.8
 @man man/man8/watch-multiple-mimedefangs.8
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/gen-ip-validator.pl
 share/examples/mimedefang/
-@sample ${SYSCONFDIR}/mail/
-share/examples/mimedefang/mimedefang-filter
+share/examples/mimedefang/mail/
+share/examples/mimedefang/mail/mimedefang-filter
 @sample ${SYSCONFDIR}/mail/mimedefang-filter
-share/examples/mimedefang/sa-mimedefang.cf
+@mode 0400
+@owner _mdefang
+share/examples/mimedefang/mail/mimedefang-ip-key
+@mode
+@owner
+share/examples/mimedefang/mail/sa-mimedefang.cf
 @sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
-@rcscript ${RCDIR}/mimedefang_daemon
-@rcscript ${RCDIR}/mimedefang_multiplexor
 @mode 0750
 @owner _mdefang
 @group _mdefang
 @sample /var/spool/MIMEDefang/
 @sample /var/spool/MD-Quarantine/
-@mode 0755
-@sample /var/run/mdefang/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/mimedefang_daemon
+@rcscript ${RCDIR}/mimedefang_multiplexor
