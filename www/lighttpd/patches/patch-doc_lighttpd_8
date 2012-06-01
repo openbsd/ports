@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_lighttpd_8,v 1.1 2010/08/18 11:16:55 sthen Exp $
---- doc/lighttpd.8.orig	Sun Aug  8 22:29:24 2010
-+++ doc/lighttpd.8	Sun Aug  8 22:29:58 2010
+$OpenBSD: patch-doc_lighttpd_8,v 1.2 2012/06/01 08:20:50 sthen Exp $
+--- doc/lighttpd.8.orig	Mon Feb  1 23:28:20 2010
++++ doc/lighttpd.8	Fri Jun  1 08:23:27 2012
 @@ -47,7 +47,7 @@ Show a brief help message and exit.
  .
  .SH FILES
