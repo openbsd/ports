@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2012/04/05 11:42:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/06/01 15:58:00 ajacoutot Exp $
 
 COMMENT=	SDL cross-platform networking library
 
 V=		1.2.8
 DISTNAME=	SDL_net-${V}
 PKGNAME=	sdl-net-${V}
+REVISION=	0
 CATEGORIES=	devel net
 MASTER_SITES=	ftp://ftp.fr.freebsd.org/pub/FreeBSD/distfiles/ \
 		http://www.libsdl.org/projects/SDL_net/release/
