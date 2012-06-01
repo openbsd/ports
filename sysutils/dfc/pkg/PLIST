@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/01 13:01:45 landry Exp $
+@bin bin/dfc
+man/fr/
+man/fr/man1/
+@man man/fr/man1/dfc.1
+@man man/man1/dfc.1
+share/doc/dfc/
+share/doc/dfc/AUTHORS
+share/doc/dfc/HACKING
+share/doc/dfc/LICENSE
+share/doc/dfc/README
+share/doc/dfc/TRANSLATORS
+share/examples/dfc/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/dfc/
+share/examples/dfc/dfcrc
+@sample ${SYSCONFDIR}/xdg/dfc/dfcrc
+share/examples/dfc/fr/
+share/examples/dfc/fr/dfcrc
+share/locale/fr/LC_MESSAGES/dfc.mo

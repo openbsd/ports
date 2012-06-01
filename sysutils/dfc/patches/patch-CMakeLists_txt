@@ -1,0 +1,20 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2012/06/01 13:01:45 landry Exp $
+--- CMakeLists.txt.orig	Thu May 31 00:25:46 2012
++++ CMakeLists.txt	Fri Jun  1 09:58:51 2012
+@@ -70,6 +70,7 @@ endif()
+ 
+ # Check for libintl
+ find_package(Libintl)
++find_library(LIBICONV_LIBRARIES NAMES iconv)
+ if (LIBINTL_FOUND)
+ 	option(NLS_ENABLED "Translation support with gettext" on)
+ else()
+@@ -129,7 +130,7 @@ if(NLS_ENABLED)
+ 	add_subdirectory(po)
+ 
+ 	include_directories(${LIBINTL_INCLUDE_DIR})
+-	target_link_libraries(${EXECUTABLE_NAME} ${LIBINTL_LIBRARIES})
++	target_link_libraries(${EXECUTABLE_NAME} ${LIBICONV_LIBRARIES} ${LIBINTL_LIBRARIES})
+ endif()
+ 
+ set(DFC_DOC_FILES
