@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/05/28 12:32:04 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2012/06/01 22:00:27 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -29,6 +29,7 @@ MODULES=	x11/qt4 \
 MODPY_VERSION=	2.7
 MODPY_RUNDEP=	No
 
+BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	misc/shared-mime-info \
 		devel/desktop-file-utils \
 		${MODPY_TKINTER_DEPENDS} \
