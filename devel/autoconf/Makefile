@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/05/12 00:18:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2012/06/01 07:31:09 jasper Exp $
 
 SUBDIR =
 SUBDIR += 2.13
@@ -16,5 +16,6 @@ SUBDIR += 2.64
 SUBDIR += 2.65
 SUBDIR += 2.67
 SUBDIR += 2.68
+SUBDIR += 2.69
 
 .include <bsd.port.subdir.mk>
