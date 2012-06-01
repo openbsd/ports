@@ -1,0 +1,21 @@
+$OpenBSD: patch-tests_c_at,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- tests/c.at.orig	Sat Jan 21 08:46:39 2012
++++ tests/c.at	Thu May 24 23:31:45 2012
+@@ -140,7 +140,7 @@ AT_CLEANUP
+ AT_SETUP([AC_PROG_CPP without warnings])
+ 
+ # Ignore if /lib/cpp doesn't work
+-AT_CHECK([[echo '#include <stdio.h>' | /lib/cpp || exit 77]],
++AT_CHECK([[echo '#include <stdio.h>' | /usr/bin/cpp || exit 77]],
+   [], [ignore], [ignore])
+ 
+ # A cpp which exit status is meaningless.
+@@ -180,7 +180,7 @@ AT_CLEANUP
+ AT_SETUP([AC_PROG_CPP via CC])
+ 
+ # Ignore if /lib/cpp doesn't work
+-AT_CHECK([[echo '#include <stdio.h>' | /lib/cpp || exit 77]],
++AT_CHECK([[echo '#include <stdio.h>' | /usr/bin/cpp || exit 77]],
+   [], [ignore], [ignore])
+ 
+ AT_DATA([mycc],

@@ -1,0 +1,46 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- doc/Makefile.in.orig	Tue Apr 24 22:40:26 2012
++++ doc/Makefile.in	Thu May 24 23:31:45 2012
+@@ -395,6 +395,10 @@ dist-info: $(INFO_DEPS)
+ 	  for file in $$d/$$base $$d/$$base-[0-9] $$d/$$base-[0-9][0-9] $$d/$$base_i[0-9] $$d/$$base_i[0-9][0-9]; do \
+ 	    if test -f $$file; then \
+ 	      relfile=`expr "$$file" : "$$d/\(.*\)"`; \
++	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	      test -f "$(distdir)/$$relfile" || \
+ 		cp -p $$file "$(distdir)/$$relfile"; \
+ 	    else :; fi; \
+@@ -576,19 +580,26 @@ install-info-am: $(INFO_DEPS)
+ 	  for ifile in $$d/$$file $$d/$$file-[0-9] $$d/$$file-[0-9][0-9] \
+ 	               $$d/$$file_i[0-9] $$d/$$file_i[0-9][0-9] ; do \
+ 	    if test -f $$ifile; then \
+-	      echo "$$ifile"; \
++	      relfile=`echo "$$ifile" | sed 's|^.*/||'`; \
++ 	      ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	      relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	      relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
++	      echo " $(INSTALL_DATA) '$$ifile' '$(DESTDIR)$(infodir)/$$relfile'"; \
++	      $(INSTALL_DATA) "$$ifile" "$(DESTDIR)$(infodir)/$$relfile"; \
+ 	    else : ; fi; \
+ 	  done; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(infodir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(infodir)" || exit $$?; done
++	done
+ 	@$(POST_INSTALL)
+ 	@if (install-info --version && \
+ 	     install-info --version 2>&1 | sed 1q | grep -i -v debian) >/dev/null 2>&1; then \
+ 	  list='$(INFO_DEPS)'; test -n "$(infodir)" || list=; \
+ 	  for file in $$list; do \
+ 	    relfile=`echo "$$file" | sed 's|^.*/||'`; \
++ 	    ext=`echo $$relfile | sed -e 's/^.*\\.//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/\\.[0-9a-z]*$$//'`; \
++ 	    relfile=`echo $$relfile | sed -e 's/^.*\///'`; \
++ 	    relfile=`echo $$relfile | sed '$(transform)'`.$$ext; \
+ 	    echo " install-info --info-dir='$(DESTDIR)$(infodir)' '$(DESTDIR)$(infodir)/$$relfile'";\
+ 	    install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$$relfile" || :;\
+ 	  done; \

@@ -1,0 +1,16 @@
+$OpenBSD: patch-tests_tools_at,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- tests/tools.at.orig	Tue Jun  8 02:07:04 2010
++++ tests/tools.at	Thu Mar 24 23:05:42 2011
+@@ -198,12 +198,6 @@ END
+ [m4@&t@_init[]m4@&t@_include(foo.m4)
+ m4@&t@_divert([])d@&t@nl]
+ END
+-  rm -rf "$file.m4f"
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" -I "$dir" --language=m4sugar --freeze -o "$file.m4f" "$file"])
+-  AT_CHECK([test -s "$file.m4f"])
+-
+-  # Check --reload-state
+-  AT_CHECK_AUTOM4TE([-C "$cachedir" --language=m4sugar -o "$outfile" "$file.m4f" /dev/null])
+ 
+   test ! -f b
+ done

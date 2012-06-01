@@ -1,0 +1,38 @@
+$OpenBSD: patch-bin_autom4te_in,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- bin/autom4te.in.orig	Tue Apr 24 22:37:26 2012
++++ bin/autom4te.in	Thu May 24 23:31:44 2012
+@@ -88,16 +88,9 @@ my $freeze = 0;
+ 
+ # $M4.
+ my $m4 = $ENV{"M4"} || '@M4@';
+-# Some non-GNU m4's don't reject the --help option, so give them /dev/null.
+-fatal "need GNU m4 1.4 or later: $m4"
+-  if system "$m4 --help </dev/null 2>&1 | grep reload-state >/dev/null";
+ 
+-# Set some high recursion limit as the default limit, 250, has already
+-# been hit with AC_OUTPUT.  Don't override the user's choice.
+-$m4 .= ' --nesting-limit=1024'
+-  if " $m4 " !~ / (--nesting-limit(=[0-9]+)?|-L[0-9]*) /;
++$m4 .= " -g -D__gnu__";
+ 
+-
+ # @M4_BUILTIN -- M4 builtins and a useful comment.
+ my @m4_builtin = `echo dumpdef | $m4 2>&1 >/dev/null`;
+ map { s/:.*//;s/\W// } @m4_builtin;
+@@ -463,11 +456,11 @@ sub handle_m4 ($@)
+   # We don't output directly to the cache files, to avoid problems
+   # when we are interrupted (that leaves corrupted files).
+   xsystem ("$m4 @M4_GNU@"
+-	   . join (' --include=', '', map { shell_quote ($_) } @include)
+-	   . ' --debug=aflq'
+-	   . (!exists $ENV{'AUTOM4TE_NO_FATAL'} ? ' --fatal-warning' : '')
+-	   . " @M4_DEBUGFILE@=" . shell_quote ("$tcache" . $req->id . "t")
+-	   . join (' --trace=', '', map { shell_quote ($_) } sort @macro)
++	   . join (' -I', '', map { shell_quote ($_) } @include)
++	   . ' -daflq'
++#	   . (!exists $ENV{'AUTOM4TE_NO_FATAL'} ? ' --fatal-warning' : '')
++	   . " -o" . shell_quote ($tcache . $req->id . "t")
++	   . join (' -t', '', map { shell_quote ($_) } sort @macro)
+ 	   . " " . files_to_options (@ARGV)
+ 	   . " > " . shell_quote ("$ocache" . $req->id . "t"));
+ 

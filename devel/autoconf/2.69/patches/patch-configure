@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- configure.orig	Tue Apr 24 23:04:50 2012
++++ configure	Thu May 24 23:34:05 2012
+@@ -2527,19 +2527,7 @@ do
+     for ac_exec_ext in '' $ac_executable_extensions; do
+       ac_path_M4="$as_dir/$ac_prog$ac_exec_ext"
+       as_fn_executable_p "$ac_path_M4" || continue
+-      # Root out GNU M4 1.4.5, as well as non-GNU m4 that ignore -t, -F.
+-      # Root out GNU M4 1.4.15 with buggy false negative replacement strstr.
+-      # Root out Glibc 2.9 - 2.12 and GNU M4 1.4.11 - 1.4.15 with buggy
+-      # false positive strstr.
+-      ac_snippet=change'quote(<,>)in''dir(<if''def>,mac,bug)'
+-      ac_snippet=${ac_snippet}pat'subst(a,\(b\)\|\(a\),\1)d'nl
+-      ac_snippet=${ac_snippet}${as_nl}if'else(in''dex(..wi.d.,.d.),-1,bug)'
+-      ac_snippet=${ac_snippet}${as_nl}if'else(in''dex(;:11-:12-:12-:12-:12-:12-:12-:12-:12.:12.:12.:12.:12.:12.:12.:12.:12-,:12-:12-:12-:12-:12-:12-:12-:12-),-1,,strstr-bug2)'
+-      test -z "`$ac_path_M4 -F conftest.m4f </dev/null 2>&1`" \
+-      && test -z "`$as_echo $ac_snippet | $ac_path_M4 --trace=mac 2>&1`" \
+-      && test -f conftest.m4f \
+-      && ac_cv_path_M4=$ac_path_M4 ac_path_M4_found=:
+-      rm -f conftest.m4f
++      ac_cv_path_M4=$ac_path_M4 ac_path_M4_found=:
+       $ac_path_M4_found && break 3
+     done
+   done
+@@ -2586,19 +2574,7 @@ $as_echo "$as_me: WARNING: the version of M4 that was 
+ $as_echo "$as_me: WARNING: using it with POSIXLY_CORRECT set may cause problems" >&2;}
+     fi
+   fi
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking how m4 supports trace files" >&5
+-$as_echo_n "checking how m4 supports trace files... " >&6; }
+-if ${ac_cv_prog_gnu_m4_debugfile+:} false; then :
+-  $as_echo_n "(cached) " >&6
+-else
+-  case `$M4 --help < /dev/null 2>&1` in
+-      *debugfile*) ac_cv_prog_gnu_m4_debugfile=--debugfile ;;
+-      *) ac_cv_prog_gnu_m4_debugfile=--error-output ;;
+-    esac
+-fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_prog_gnu_m4_debugfile" >&5
+-$as_echo "$ac_cv_prog_gnu_m4_debugfile" >&6; }
+-  M4_DEBUGFILE=$ac_cv_prog_gnu_m4_debugfile
++  M4_DEBUGFILE=-o
+ 
+ 
+ 

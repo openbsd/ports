@@ -1,0 +1,26 @@
+$OpenBSD: patch-lib_m4sugar_m4sugar_m4,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- lib/m4sugar/m4sugar.m4.orig	Wed Sep 22 17:38:26 2010
++++ lib/m4sugar/m4sugar.m4	Sun May  1 22:23:55 2011
+@@ -2127,6 +2127,7 @@ m4_define([m4_provide],
+ [m4_ifdef([m4_provide($1)], [],
+ [m4_set_add([_m4_provide], [$1], [m4_define([m4_provide($1)],
+   m4_ifdef([_m4_diverting], [_m4_defn([_m4_diverting])]))])])])
++m4_provide([AM_SANITY_CHECK])
+ 
+ 
+ # m4_provide_if(MACRO-NAME, IF-PROVIDED, IF-NOT-PROVIDED)
+@@ -3278,13 +3279,10 @@ m4_pattern_forbid([^dnl$])
+ #
+ # Use the raw builtin to avoid tripping up include tracing.
+ # Meanwhile, avoid m4_copy, since it temporarily undefines m4_defn.
+-m4_ifdef([__m4_version__],
+-[m4_debugmode([+do])
+ m4_define([m4_defn], _m4_defn([_m4_defn]))
+ m4_define([m4_dumpdef], _m4_defn([_m4_dumpdef]))
+ m4_define([m4_popdef], _m4_defn([_m4_popdef]))
+-m4_define([m4_undefine], _m4_defn([_m4_undefine]))],
+-[m4_builtin([include], [m4sugar/foreach.m4])
++m4_define([m4_undefine], _m4_defn([_m4_undefine]))
+ m4_wrap_lifo([m4_if(__line__, [0], [m4_pushdef([m4_location],
+ ]]m4_dquote(m4_dquote(m4_dquote(__file__:__line__)))[[)])])])
+ 

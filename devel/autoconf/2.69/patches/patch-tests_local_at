@@ -1,0 +1,11 @@
+$OpenBSD: patch-tests_local_at,v 1.1.1.1 2012/06/01 07:30:46 jasper Exp $
+--- tests/local.at.orig	Sat Aug 14 14:00:57 2010
++++ tests/local.at	Sun May  1 20:49:42 2011
+@@ -119,6 +119,7 @@ m4_case([$4], [], [], [ignore], [],
+ 	s/: include:\( cannot open\)/:\1/
+ 	s/^autom4te: [^ ]*m4[.ex]* /autom4te: m4 /
+ 	s/ (E[A-Z]*)$//
++	s/: \(.*\) at line \([0-9]*\): include(\(.*\)):/:\1:\2: cannot open `\3'\'':/
+     ' stderr >&2]], [0], [], [$4])])
+ ])
+ 
