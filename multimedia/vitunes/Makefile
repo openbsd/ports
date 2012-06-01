@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/08 16:34:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/01 09:45:04 pascal Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
-DISTNAME =		vitunes-2.2
-REVISION =		0
+DISTNAME =		vitunes-2.3
 
 CATEGORIES =		multimedia
 
@@ -23,8 +22,6 @@ LIB_DEPENDS =		audio/taglib
 RUN_DEPENDS =		x11/mplayer
 			
 MASTER_SITES =		${HOMEPAGE}/files/
-
-EXTRACT_SUFX =		.tgz
 
 ALL_TARGET =		vitunes
 NO_REGRESS =		Yes
