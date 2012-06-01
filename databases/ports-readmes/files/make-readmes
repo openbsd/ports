@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: make-readmes,v 1.3 2012/05/26 12:54:36 espie Exp $
+# $OpenBSD: make-readmes,v 1.4 2012/06/01 13:21:26 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -130,7 +130,7 @@ my $broken_req = $db->prepare(
 	    order by arch.value});
 	
 my $broken;
-$broken_req->bind_columns(\($broken, $arch));
+$broken_req->bind_columns(\($arch, $broken));
 
 my $cat = {};
 
