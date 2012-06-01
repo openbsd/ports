@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.1 2012/06/01 15:35:48 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Fri Jun  1 13:33:15 2012
-+++ examples/mimedefang-filter-openbsd-ports	Fri Jun  1 13:33:45 2012
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.2 2012/06/01 15:39:22 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Fri Jun  1 17:37:14 2012
++++ examples/mimedefang-filter-openbsd-ports	Fri Jun  1 17:38:19 2012
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -44,21 +44,21 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.1 2012/06/01 15:35:
 +    # If the file(s) /etc/mail/disclaimer.txt and/or /etc/mail/disclaimer.html
 +    # are present, they will be appended to all outgoing mails.
 +    # Modify 192.168.1 to match your local network(s).
-+    if ($RelayAddr =~ /192\.168\.1\./ or $RelayAddr eq "127.0.0.1") {
-+	my $disclaimer = '/etc/mail/disclaimer.txt';
-+	my $disclaimer_html = '/etc/mail/disclaimer.html';
-+
-+	if (-e $disclaimer) {
-+	    open FILE, "<$disclaimer";
-+	    my $text_boilerplate = do { local $/; <FILE> };
-+	    append_text_boilerplate($entity, $text_boilerplate, 0);
-+	}
-+	if (-e $disclaimer_html) {
-+	    open FILE, "<$disclaimer_html";
-+	    my $html_boilerplate = do { local $/; <FILE> };
-+	    append_html_boilerplate($entity, $html_boilerplate, 0);
-+	}
-+    }
++#    if ($RelayAddr =~ /192\.168\.1\./ or $RelayAddr eq "127.0.0.1") {
++#	my $disclaimer = '/etc/mail/disclaimer.txt';
++#	my $disclaimer_html = '/etc/mail/disclaimer.html';
++#
++#	if (-e $disclaimer) {
++#	    open FILE, "<$disclaimer";
++#	    my $text_boilerplate = do { local $/; <FILE> };
++#	    append_text_boilerplate($entity, $text_boilerplate, 0);
++#	}
++#	if (-e $disclaimer_html) {
++#	    open FILE, "<$disclaimer_html";
++#	    my $html_boilerplate = do { local $/; <FILE> };
++#	    append_html_boilerplate($entity, $html_boilerplate, 0);
++#	}
++#    }
  }
  
  # DO NOT delete the next line, or Perl will complain.
