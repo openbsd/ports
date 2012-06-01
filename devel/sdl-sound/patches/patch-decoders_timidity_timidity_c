@@ -1,0 +1,214 @@
+$OpenBSD: patch-decoders_timidity_timidity_c,v 1.1 2012/06/01 15:57:51 ajacoutot Exp $
+
+- Don't underflow array when parsing timidity config file.
+- Fix read_config_file() not closing the file when there is an error.
+- Honor the return code from recursive read_config_file() call.
+- Reset some state on shutdown to prevent crash when reinitializing.
+
+--- decoders/timidity/timidity.c.orig	Fri Jun  1 02:58:25 2012
++++ decoders/timidity/timidity.c	Fri Jun  1 03:05:53 2012
+@@ -99,13 +99,18 @@ static int read_config_file(char *name)
+   while (RWgets(rw, tmp, sizeof(tmp)))
+   {
+     line++;
+-    w[words=0]=strtok(tmp, " \t\240");
++    words=0;
++    w[0]=strtok(tmp, " \t\240");
+     if (!w[0]) continue;
+ 
+         /* Originally the TiMidity++ extensions were prefixed like this */
+     if (strcmp(w[0], "#extension") == 0)
+-        words = -1;
+-    else if (*w[0] == '#')
++    {
++        w[0]=strtok(0, " \t\240");
++        if (!w[0]) continue;
++    }
++
++    if (*w[0] == '#')
+         continue;
+ 
+     while (w[words] && *w[words] != '#' && (words < MAXWORDS))
+@@ -208,7 +213,7 @@ static int read_config_file(char *name)
+       if (words < 2)
+       {
+ 	SNDDBG(("%s: line %d: No directory given\n", name, line));
+-	return -2;
++	goto fail;
+       }
+       for (i=1; i<words; i++)
+ 	add_to_pathlist(w[i]);
+@@ -218,13 +223,18 @@ static int read_config_file(char *name)
+       if (words < 2)
+       {
+ 	SNDDBG(("%s: line %d: No file name given\n", name, line));
+-	return -2;
++	goto fail;
+       }
+       for (i=1; i<words; i++)
+       {
++	int status;
+ 	rcf_count++;
+-	read_config_file(w[i]);
++	status = read_config_file(w[i]);
+ 	rcf_count--;
++	if (status != 0) {
++	  SDL_RWclose(rw);
++	  return status;
++	}
+       }
+     }
+     else if (!strcmp(w[0], "default"))
+@@ -233,7 +243,7 @@ static int read_config_file(char *name)
+       {
+ 	SNDDBG(("%s: line %d: Must specify exactly one patch name\n",
+ 		name, line));
+-	return -2;
++	goto fail;
+       }
+       strncpy(def_instr_name, w[1], 255);
+       def_instr_name[255]='\0';
+@@ -243,14 +253,14 @@ static int read_config_file(char *name)
+       if (words < 2)
+       {
+ 	SNDDBG(("%s: line %d: No drum set number given\n", name, line));
+-	return -2;
++	goto fail;
+       }
+       i=atoi(w[1]);
+       if (i<0 || i>127)
+       {
+ 	SNDDBG(("%s: line %d: Drum set must be between 0 and 127\n",
+ 		name, line));
+-	return -2;
++	goto fail;
+       }
+       if (!master_drumset[i])
+       {
+@@ -266,14 +276,14 @@ static int read_config_file(char *name)
+       if (words < 2)
+       {
+ 	SNDDBG(("%s: line %d: No bank number given\n", name, line));
+-	return -2;
++	goto fail;
+       }
+       i=atoi(w[1]);
+       if (i<0 || i>127)
+       {
+ 	SNDDBG(("%s: line %d: Tone bank must be between 0 and 127\n",
+ 		name, line));
+-	return -2;
++	goto fail;
+       }
+       if (!master_tonebank[i])
+       {
+@@ -289,20 +299,20 @@ static int read_config_file(char *name)
+       if ((words < 2) || (*w[0] < '0' || *w[0] > '9'))
+       {
+ 	SNDDBG(("%s: line %d: syntax error\n", name, line));
+-	return -2;
++	goto fail;
+       }
+       i=atoi(w[0]);
+       if (i<0 || i>127)
+       {
+ 	SNDDBG(("%s: line %d: Program must be between 0 and 127\n",
+ 		name, line));
+-	return -2;
++	goto fail;
+       }
+       if (!bank)
+       {
+ 	SNDDBG(("%s: line %d: Must specify tone bank or drum set before assignment\n",
+ 		name, line));
+-	return -2;
++	goto fail;
+       }
+       if (bank->tone[i].name)
+ 	free(bank->tone[i].name);
+@@ -316,7 +326,7 @@ static int read_config_file(char *name)
+ 	if (!(cp=strchr(w[j], '=')))
+ 	{
+ 	  SNDDBG(("%s: line %d: bad patch option %s\n", name, line, w[j]));
+-	  return -2;
++	  goto fail;
+ 	}
+ 	*cp++=0;
+ 	if (!strcmp(w[j], "amp"))
+@@ -326,7 +336,7 @@ static int read_config_file(char *name)
+ 	  {
+ 	    SNDDBG(("%s: line %d: amplification must be between 0 and %d\n",
+ 		    name, line, MAX_AMPLIFICATION));
+-	    return -2;
++	    goto fail;
+ 	  }
+ 	  bank->tone[i].amp=k;
+ 	}
+@@ -337,7 +347,7 @@ static int read_config_file(char *name)
+ 	  {
+ 	    SNDDBG(("%s: line %d: note must be between 0 and 127\n",
+ 		    name, line));
+-	    return -2;
++	    goto fail;
+ 	  }
+ 	  bank->tone[i].note=k;
+ 	}
+@@ -355,7 +365,7 @@ static int read_config_file(char *name)
+ 	  {
+ 	    SNDDBG(("%s: line %d: panning must be left, right, center, or between -100 and 100\n",
+ 		    name, line));
+-	    return -2;
++	    goto fail;
+ 	  }
+ 	  bank->tone[i].pan=k;
+ 	}
+@@ -368,7 +378,7 @@ static int read_config_file(char *name)
+ 	  else
+ 	  {
+ 	    SNDDBG(("%s: line %d: keep must be env or loop\n", name, line));
+-	    return -2;
++	    goto fail;
+ 	  }
+ 	}
+ 	else if (!strcmp(w[j], "strip"))
+@@ -383,19 +393,22 @@ static int read_config_file(char *name)
+ 	  {
+ 	    SNDDBG(("%s: line %d: strip must be env, loop, or tail\n",
+ 		    name, line));
+-	    return -2;
++	    goto fail;
+ 	  }
+ 	}
+ 	else
+ 	{
+ 	  SNDDBG(("%s: line %d: bad patch option %s\n", name, line, w[j]));
+-	  return -2;
++	  goto fail;
+ 	}
+       }
+     }
+   }
+   SDL_RWclose(rw);
+   return 0;
++fail:
++  SDL_RWclose(rw);
++  return -2;
+ }
+ 
+ int Timidity_Init_NoConfig()
+@@ -581,6 +594,7 @@ void Timidity_Exit(void)
+         free(e);
+       }
+       free(master_tonebank[i]);
++      master_tonebank[i] = NULL;
+     }
+     if (master_drumset[i])
+     {
+@@ -595,6 +609,7 @@ void Timidity_Exit(void)
+         free(e);
+       }
+       free(master_drumset[i]);
++      master_drumset[i] = NULL;
+     }
+   }
+ 

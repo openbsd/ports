@@ -1,0 +1,14 @@
+$OpenBSD: patch-decoders_modplug_c,v 1.1 2012/06/01 15:57:51 ajacoutot Exp $
+
+Disable reverb flag in modplug decoder. It's producing trash in some cases.
+
+--- decoders/modplug.c.orig	Fri Jun  1 02:57:54 2012
++++ decoders/modplug.c	Fri Jun  1 02:58:05 2012
+@@ -128,7 +128,6 @@ static int MODPLUG_init(void)
+ 
+ #ifndef _WIN32_WCE
+     settings.mFlags |= MODPLUG_ENABLE_NOISE_REDUCTION |
+-                       MODPLUG_ENABLE_REVERB |
+                        MODPLUG_ENABLE_MEGABASS |
+                        MODPLUG_ENABLE_SURROUND;
+ 

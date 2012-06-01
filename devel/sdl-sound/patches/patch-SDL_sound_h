@@ -1,0 +1,15 @@
+$OpenBSD: patch-SDL_sound_h,v 1.1 2012/06/01 15:57:51 ajacoutot Exp $
+
+Clean up symbol visibility.
+
+--- SDL_sound.h.orig	Fri Jun  1 02:52:00 2012
++++ SDL_sound.h	Fri Jun  1 02:52:38 2012
+@@ -79,6 +79,8 @@ extern "C" {
+ 
+ #ifdef SDL_SOUND_DLL_EXPORTS
+ #  define SNDDECLSPEC __declspec(dllexport)
++#elif (__GNUC__ >= 3)
++#  define SNDDECLSPEC __attribute__((visibility("default")))
+ #else
+ #  define SNDDECLSPEC
+ #endif
