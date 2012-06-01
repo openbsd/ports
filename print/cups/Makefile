@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.131 2012/05/28 15:18:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2012/06/01 07:55:12 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
 VERSION=	1.5.3
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	print sysutils
 
@@ -123,7 +123,8 @@ pre-configure:
 
 post-configure:
 	cd ${WRKBUILD} && perl -pi -e 's|\$${DESTDIR}||g' \
-		config.h cups-config man/*.man
+		config.h cups-config man/*.man conf/cupsd.conf \
+		doc/help/*.html
 
 post-install:
 	ln -sf ${LOCALBASE}/bin/smbspool \
