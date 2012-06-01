@@ -1,0 +1,64 @@
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.1 2012/06/01 15:35:48 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Fri Jun  1 13:33:15 2012
++++ examples/mimedefang-filter-openbsd-ports	Fri Jun  1 13:33:45 2012
+@@ -3,9 +3,6 @@
+ #
+ # mimedefang-filter
+ #
+-# Suggested minimum-protection filter for Microsoft Windows clients, plus
+-# SpamAssassin checks if SpamAssassin is installed.
+-#
+ # Copyright (C) 2002 Roaring Penguin Software Inc.
+ #
+ # This program may be distributed under the terms of the GNU General
+@@ -63,6 +60,12 @@ md_graphdefang_log_enable('mail', 1);
+ # $MaxMIMEParts = 50;
+ 
+ #***********************************************************************
++# Uncomment to enable the clamd(8) anti-virus daemon.
++#***********************************************************************
++# $Features{'Virus:CLAMD'} = 1;
++# $ClamdSock = "/tmp/clamd.socket";
++
++#***********************************************************************
+ # Set various stupid things your mail client does below.
+ #***********************************************************************
+ 
+@@ -137,6 +140,8 @@ sub filter_begin {
+     if ($FoundVirus) {
+ 	md_graphdefang_log('virus', $VirusName, $RelayAddr);
+ 	md_syslog('warning', "Discarding because of virus $VirusName");
++	# Uncomment to copy the message to quarantine before discarding it.
++	# action_quarantine_entire_message();
+ 	return action_discard();
+     }
+ 
+@@ -316,6 +321,28 @@ sub filter_end {
+     # by marginal software.  Your call.
+ 
+     # action_rebuild();
++
++    # Uncomment to prepend '[SPAM] ' to the subject of X-Spam-Status tagged mails.
++    # if (spam_assassin_is_spam()) { action_change_header("Subject", "[SPAM] $Subject"); }
++
++    # If the file(s) /etc/mail/disclaimer.txt and/or /etc/mail/disclaimer.html
++    # are present, they will be appended to all outgoing mails.
++    # Modify 192.168.1 to match your local network(s).
++    if ($RelayAddr =~ /192\.168\.1\./ or $RelayAddr eq "127.0.0.1") {
++	my $disclaimer = '/etc/mail/disclaimer.txt';
++	my $disclaimer_html = '/etc/mail/disclaimer.html';
++
++	if (-e $disclaimer) {
++	    open FILE, "<$disclaimer";
++	    my $text_boilerplate = do { local $/; <FILE> };
++	    append_text_boilerplate($entity, $text_boilerplate, 0);
++	}
++	if (-e $disclaimer_html) {
++	    open FILE, "<$disclaimer_html";
++	    my $html_boilerplate = do { local $/; <FILE> };
++	    append_html_boilerplate($entity, $html_boilerplate, 0);
++	}
++    }
+ }
+ 
+ # DO NOT delete the next line, or Perl will complain.

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/05/31 18:31:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/06/01 15:35:48 ajacoutot Exp $
 
 COMMENT=	mailfilter to identify and mark spam
 
 DISTNAME=	mimedefang-2.73
+REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mimedefang.org/
@@ -36,12 +37,18 @@ NO_REGRESS=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/mimedefang
 
+post-extract:
+	cp ${WRKSRC}/examples/suggested-minimum-filter-for-windows-clients \
+		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
+
 pre-configure:
 	perl -pi -e 's,/var/lib,/var/db,g' ${WRKSRC}/mimedefang.pl.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
 		${PREFIX}/share/examples/mimedefang/mail/sa-mimedefang.cf
+	${INSTALL_DATA} ${WRKSRC}/examples/mimedefang-filter-openbsd-ports \
+		${PREFIX}/share/examples/mimedefang/mail
 	${INSTALL_SCRIPT} ${WRKSRC}/gen-ip-validator.pl \
 		${PREFIX}/share/examples
 

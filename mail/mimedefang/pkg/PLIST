@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/05/31 18:31:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/06/01 15:35:48 ajacoutot Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/spool/MIMEDefang/*
@@ -25,6 +25,7 @@ share/examples/gen-ip-validator.pl
 share/examples/mimedefang/
 share/examples/mimedefang/mail/
 share/examples/mimedefang/mail/mimedefang-filter
+share/examples/mimedefang/mail/mimedefang-filter-openbsd-ports
 @sample ${SYSCONFDIR}/mail/mimedefang-filter
 @mode 0400
 @owner _mdefang
