@@ -1,0 +1,26 @@
+$OpenBSD: patch-mixer_c,v 1.1 2012/06/01 15:58:13 ajacoutot Exp $
+
+Fix crash on double free if loading WAV file failed.
+
+--- mixer.c.orig	Fri Jun  1 02:35:52 2012
++++ mixer.c	Fri Jun  1 02:37:01 2012
+@@ -610,13 +610,15 @@ Mix_Chunk *Mix_LoadWAV_RW(SDL_RWops *src, int freesrc)
+ 			break;
+ 		default:
+ 			SDL_SetError("Unrecognized sound file type");
+-			return(0);			
++			if ( freesrc ) {
++				SDL_RWclose(src);
++			}
++			loaded = NULL;
++			break;
+ 	}
+ 	if ( !loaded ) {
++		/* The individual loaders have closed src if needed */
+ 		SDL_free(chunk);
+-		if ( freesrc ) {
+-			SDL_RWclose(src);
+-		}
+ 		return(NULL);
+ 	}
+ 
