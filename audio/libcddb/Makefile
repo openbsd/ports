@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/03/19 14:37:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/02 12:21:55 jasper Exp $
 
 COMMENT=		library to access data on a CDDB server
 
-DISTNAME=		libcddb-1.3.0
+DISTNAME=		libcddb-1.3.2
 CATEGORIES=		audio devel
-SHARED_LIBS +=	cddb                 0.0      # .4.3
+SHARED_LIBS +=	cddb                 0.1      # .4.3
 
 HOMEPAGE=		http://libcddb.sourceforge.net/
 
