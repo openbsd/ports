@@ -1,0 +1,5 @@
+amtterm provides gui and cli clients for Intel AMT serial-over-lan (sol),
+and a perl script to gather information and control managed computers.
+
+To reduce depencies when only the cli version is wanted, install the
+amtterm-term subpackage instead.

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
+bin/amttool
+@bin bin/gamt
+@man man/man1/amttool.1
+@man man/man1/gamt.1
+@man man/man7/amt-howto.7
+share/applications/gamt.desktop
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mk_Maintainer_mk,v 1.1.1.1 2012/06/02 12:09:35 sthen Exp $
+--- mk/Maintainer.mk.orig	Sat Jun  2 09:16:01 2012
++++ mk/Maintainer.mk	Sat Jun  2 09:15:53 2012
+@@ -12,7 +12,7 @@ sync:: distclean
+ 	chmod 444 $(srcdir)/INSTALL $(srcdir)/mk/*.mk
+ 
+ 
+-repository := $(shell basename $(PWD))
++repository := $(shell basename $$(pwd))
+ release-dir ?= $(HOME)/projects/Releases
+ release-pub ?= bigendian.kraxel.org:/public/vhosts/www.kraxel.org/releases/$(repository)
+ tarball = $(release-dir)/$(repository)-$(VERSION).tar
