@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.562 2012/05/23 15:12:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.563 2012/06/02 21:15:59 fgsch Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -375,6 +375,7 @@
      SUBDIR += py-CherryPy
      SUBDIR += py-beaker
      SUBDIR += py-beautifulsoup
+     SUBDIR += py-beautifulsoup4
      SUBDIR += py-cherrypy2
      SUBDIR += py-clientform
      SUBDIR += py-django
