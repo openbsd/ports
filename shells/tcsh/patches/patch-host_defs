@@ -1,8 +1,11 @@
-$OpenBSD: patch-host_defs,v 1.4 2007/05/27 18:04:47 naddy Exp $
---- host.defs.orig	Thu Mar  2 11:46:44 2006
-+++ host.defs	Sat May 26 15:55:32 2007
-@@ -508,6 +508,38 @@ machtype: defined(vax)					: "vax"
- machtype: defined(alpha)				: "alpha"
+$OpenBSD: patch-host_defs,v 1.5 2012/06/02 13:17:19 jasper Exp $
+
+http://bugs.gw.com/view.php?id=181
+
+--- host.defs.orig	Wed Jan 11 21:20:15 2012
++++ host.defs	Sat May 26 12:52:56 2012
+@@ -564,6 +564,38 @@ machtype: defined(vax)					: "vax"
+ machtype: defined(x86_64)				: "x86_64"
  enddef	:
  
 +newdef : defined(__OpenBSD__)
@@ -39,4 +42,4 @@ $OpenBSD: patch-host_defs,v 1.4 2007/05/27 18:04:47 naddy Exp $
 +
  
  newdef	: defined(__FreeBSD__) 
- comment	: FreeBSD
+ comment : FreeBSD
