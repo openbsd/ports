@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.18 2012/04/24 15:20:52 ajacoutot Exp $
+$OpenBSD: README-main,v 1.19 2012/06/02 06:18:06 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -100,8 +100,7 @@ Configuration is done in the file
 
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
-    # ln -s ${PREFIX-web}/conf/modules.sample/zarafa.conf \
-        /var/www/conf/modules
+    # ln -sf ${PREFIX-web}/conf/modules.sample/zarafa.conf /var/www/conf/modules
 
 If you want to debug the webaccess, copy the following file
    ${INSTDIR}/debug.php.disabled
@@ -113,8 +112,7 @@ The debugging output will then be available under:
 You need to enable the PHP mapi module by creating a symbolic link from
 ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini to ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini:
 
-    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini \
-        ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 
 The Zarafa webaccess will be accessible from
     http://<hostname>/webaccess/
