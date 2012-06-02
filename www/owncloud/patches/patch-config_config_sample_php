@@ -1,0 +1,15 @@
+$OpenBSD: patch-config_config_sample_php,v 1.1 2012/06/02 06:54:57 ajacoutot Exp $
+
+http://bugs.owncloud.org/thebuggenie/owncloud/issues/oc-709
+
+--- config/config.sample.php.orig	Sat Jun  2 08:15:47 2012
++++ config/config.sample.php	Sat Jun  2 08:15:57 2012
+@@ -26,7 +26,7 @@ $CONFIG = array(
+ "mail_smtpname" => "",
+ "mail_smtppassword" => "",
+ "appcodechecker" => "",
+-"log_type" => "",
++"log_type" => "owncloud",
+ "logfile" => "",
+ "loglevel" => "",
+ // "datadirectory" => ""

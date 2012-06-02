@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/04/24 10:15:57 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/06/02 06:54:57 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,12 +11,11 @@ Post-installation instructions
 ==============================
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
-    # ln -s ${PREFIX}/conf/modules.sample/owncloud.conf \
-        ${PREFIX}/conf/modules
+    # ln -sf ${PREFIX}/conf/modules.sample/owncloud.conf ${PREFIX}/conf/modules
 
 "allow_url_fopen" needs to be enabled in PHP using _one_ of the
 following methods:
-    1. ${SYSCONFDIR}/etc/php-{MODPHP_VERSION}.ini
+    1. ${SYSCONFDIR}/php-{MODPHP_VERSION}.ini
     allow_url_fopen = On
     2. /var/www/conf/httpd.conf (main server or VirtualHost)
     php_admin_value allow_url_fopen 1
@@ -30,9 +29,10 @@ location outside of the document root.
 Database Configuration
 ----------------------
 When using SQLite, not further configuration is required. However, with
-MySQL or PostgreSQL, the ${INSTADIR}/config/config.php file will need to
-be configured accordingly and the corresponding php database access
-extension installed (i.e. "php-mysql" or "php-pgsql").
+MySQL or PostgreSQL, the file ${INSTADIR}/config/config.sample.php will
+need to be copied to ${INSTADIR}/config/config.php and configured
+accordingly with the corresponding php database access extension
+installed (i.e. "php-pdo_mysql" or "php-pdo_pgsql").
 
 LDAP User Backend
 -----------------

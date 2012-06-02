@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/03 07:20:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/06/02 06:54:57 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-DISTNAME=	owncloud-3.0.3
+DISTNAME=	owncloud-4.0.0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www
@@ -40,7 +40,9 @@ SUBST_VARS=	INSTDIR TINSTDIR
 
 RUN_DEPENDS=	archivers/pecl-zip \
 		lang/php/${MODPHP_VERSION},-curl \
-		lang/php/${MODPHP_VERSION},-gd
+		lang/php/${MODPHP_VERSION},-pdo_sqlite \
+		lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-xmlrpc
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
