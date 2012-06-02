@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/04 01:46:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/02 16:09:40 fgsch Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,10 +8,10 @@ MULTI_PACKAGES =	-main -tools
 COMMENT-main =		emulates a massive variety of arcades machines
 COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 
-V =			0145
+V =			0146
 DISTNAME =		mame${V}s
-PKGNAME-main =		sdlmame-${V:S/0/0./}pl3
-PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}pl3
+PKGNAME-main =		sdlmame-${V:S/0/0./}
+PKGNAME-tools =		sdlmame-tools-${V:S/0/0./}
 
 CATEGORIES =		emulators games
 
@@ -27,10 +27,9 @@ PERMIT_DISTFILES_FTP =		Yes
 WANTLIB =	GL SDL SDL_ttf X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		pixman-1 png pthread pthread-stubs stdc++ util xcb \
-		xcb-render xcb-shm z
+		gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread \
+		pthread-stubs stdc++ util xcb xcb-render xcb-shm z
 
 MASTER_SITES =		http://mamedev.org/downloader.php?file=releases/
 MASTER_SITES0 =		http://mamedev.org/updates/
@@ -41,9 +40,6 @@ DIST_SUBDIR =		mame
 
 # PATCHFILES doesn't work for .zip
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			${V}u1_diff.zip:0 \
-			${V}u2_diff.zip:0 \
-			${V}u3_diff.zip:0 \
 			mamehistory${V:S/0//}.zip:1
 
 MODULES =		devel/gettext
@@ -70,9 +66,9 @@ post-extract:
 	@${UNZIP} -oq ${WRKDIR}/mame.zip -d ${WRKSRC}
 
 pre-patch:
-.for v in 1 2 3
-	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
-.endfor
+#.for v in 1 2 3
+#	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${V}u${v}.diff
+#.endfor
 	@perl -pi -e 's|\r\n|\n|g' ${WRKDIST}/makefile \
 	    ${WRKDIST}/src/emu/fileio.h
 
