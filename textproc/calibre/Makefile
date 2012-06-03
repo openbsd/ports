@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2011/12/20 11:25:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/06/03 20:17:24 landry Exp $
 
 COMMENT =		ebook management application
+BROKEN =		fake step gets stuck
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
