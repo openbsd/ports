@@ -1,0 +1,14 @@
+$OpenBSD: patch-tools_build_Makefile_in,v 1.1 2012/06/03 12:17:54 pascal Exp $
+--- tools/build/Makefile.in.orig	Sun Jun  3 13:17:28 2012
++++ tools/build/Makefile.in	Sun Jun  3 13:18:02 2012
+@@ -14,8 +14,8 @@ PARROT_LIBRARY_DIR = $(PARROT_LIB_DIR)/library
+ NQP_LANG_DIR       = $(PARROT_LIB_DIR)/languages/nqp
+ HAS_ICU            = @has_icu@
+ 
+-CC            = @cc@
+-CFLAGS        = @ccflags@ @cc_shared@ @cc_debug@ @ccwarn@ @gc_flag@
++CC           ?= @cc@
++CFLAGS       += @ccflags@ @cc_shared@ @cc_debug@ @ccwarn@ @gc_flag@
+ EXE           = @exe@
+ LD            = @ld@
+ LDFLAGS       = @ldflags@ @ld_debug@
