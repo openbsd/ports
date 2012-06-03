@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2012/03/12 07:42:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/06/03 11:12:31 ajacoutot Exp $
 @bin bin/rhythmbox
 @bin bin/rhythmbox-client
 include/rhythmbox/
@@ -18,6 +18,8 @@ include/rhythmbox/lib/rb-stock-icons.h
 include/rhythmbox/lib/rb-string-value-map.h
 include/rhythmbox/lib/rb-util.h
 include/rhythmbox/metadata/
+include/rhythmbox/metadata/rb-ext-db-key.h
+include/rhythmbox/metadata/rb-ext-db.h
 include/rhythmbox/metadata/rb-metadata.h
 include/rhythmbox/plugins/
 include/rhythmbox/plugins/rb-plugin-macros.h
@@ -25,6 +27,7 @@ include/rhythmbox/podcast/
 include/rhythmbox/podcast/rb-podcast-entry-types.h
 include/rhythmbox/podcast/rb-podcast-manager.h
 include/rhythmbox/podcast/rb-podcast-parse.h
+include/rhythmbox/podcast/rb-podcast-search.h
 include/rhythmbox/rhythmdb/
 include/rhythmbox/rhythmdb/rb-refstring.h
 include/rhythmbox/rhythmdb/rhythmdb-entry-type.h
@@ -68,7 +71,9 @@ include/rhythmbox/widgets/rb-cell-renderer-pixbuf.h
 include/rhythmbox/widgets/rb-cell-renderer-rating.h
 include/rhythmbox/widgets/rb-dialog.h
 include/rhythmbox/widgets/rb-entry-view.h
+include/rhythmbox/widgets/rb-fading-image.h
 include/rhythmbox/widgets/rb-library-browser.h
+include/rhythmbox/widgets/rb-object-property-editor.h
 include/rhythmbox/widgets/rb-property-view.h
 include/rhythmbox/widgets/rb-rating.h
 include/rhythmbox/widgets/rb-segmented-bar.h
@@ -82,11 +87,6 @@ lib/librhythmbox-core.la
 lib/pkgconfig/rhythmbox.pc
 lib/rhythmbox/
 lib/rhythmbox/plugins/
-lib/rhythmbox/plugins/artdisplay/
-lib/rhythmbox/plugins/artdisplay/artdisplay.plugin
-lib/rhythmbox/plugins/artdisplay/artdisplay.py
-lib/rhythmbox/plugins/artdisplay/artdisplay.pyc
-lib/rhythmbox/plugins/artdisplay/artdisplay.pyo
 lib/rhythmbox/plugins/artsearch/
 lib/rhythmbox/plugins/artsearch/artsearch.plugin
 lib/rhythmbox/plugins/artsearch/artsearch.py
@@ -658,6 +658,7 @@ share/icons/hicolor/24x24/places/music-library.png
 share/icons/hicolor/256x256/apps/rhythmbox.png
 share/icons/hicolor/32x32/apps/rhythmbox.png
 share/icons/hicolor/48x48/apps/rhythmbox.png
+share/icons/hicolor/48x48/status/rhythmbox-missing-artwork.png
 share/icons/hicolor/scalable/apps/rhythmbox-symbolic.svg
 share/locale/af/LC_MESSAGES/rhythmbox.mo
 share/locale/am/LC_MESSAGES/rhythmbox.mo
@@ -829,8 +830,6 @@ share/rhythmbox/playback-prefs.ui
 share/rhythmbox/playlist-save.ui
 share/rhythmbox/playlists.xml
 share/rhythmbox/plugins/
-share/rhythmbox/plugins/artdisplay/
-share/rhythmbox/plugins/artdisplay/rhythmbox-missing-artwork.svg
 share/rhythmbox/plugins/audioscrobbler/
 share/rhythmbox/plugins/audioscrobbler/Last.fm-icon.png
 share/rhythmbox/plugins/audioscrobbler/Libre.fm-icon.png
@@ -872,6 +871,7 @@ share/rhythmbox/plugins/magnatune/magnatune_logo_color_small.png
 share/rhythmbox/plugins/magnatune/magnatune_logo_color_tiny.png
 share/rhythmbox/plugins/replaygain/
 share/rhythmbox/plugins/replaygain/replaygain-prefs.ui
+share/rhythmbox/podcast-add-dialog.ui
 share/rhythmbox/podcast-feed-properties.ui
 share/rhythmbox/podcast-prefs.ui
 share/rhythmbox/podcast-properties.ui

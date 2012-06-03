@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.99 2012/03/12 07:42:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2012/06/03 11:12:30 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.96
+GNOME_VERSION=		2.97
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -32,7 +32,7 @@ WANTLIB += gtk-3 json-glib-1.0 lzma m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 plist
 WANTLIB += png pthread pthread-stubs soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += stdc++ tdb totem-plparser xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z crypto curl idn lua quvi ssl
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -40,6 +40,7 @@ MODULES=		devel/gettext \
 			devel/dconf
 
 BUILD_DEPENDS=		audio/libmusicbrainz \
+			devel/gobject-introspection \
 			devel/py-gobject3
 
 LIB_DEPENDS=		audio/libgpod \
@@ -61,7 +62,7 @@ RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
-MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	yelp
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
