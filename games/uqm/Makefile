@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/05/18 05:22:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.34 2012/06/04 20:59:41 pascal Exp $
 
 COMMENT-main=		ur-quan masters: sdl port of star control 2; multiplayer
 COMMENT-content=	ur-quan masters: game content
@@ -82,10 +82,8 @@ DISTFILES+=	${MDIST}
 DISTFILES+=	${VDIST}
 .endif
 
-BYTEORDER!=sysctl -n hw.byteorder
-
 do-configure:
-.if ${BYTEORDER} == "1234"
+.if ${PROPERTIES:Mle}
 	@sed -e "s|@PREFIX@|${PREFIX}|g ; s|@ENDIAN@|undef|g" \
 		${FILESDIR}/config_unix.h > ${WRKSRC}/src/config_unix.h
 .else
