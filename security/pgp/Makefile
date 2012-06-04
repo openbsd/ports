@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/03/17 22:42:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.34 2012/06/04 21:04:42 pascal Exp $
 
 COMMENT=	Pretty Good Privacy 2.6.3ia
 
@@ -36,16 +36,15 @@ post-extract:
 	   exit 1; \
 	 fi
 
+.include <bsd.port.arch.mk>
+
 # Before the build figure out if we are on a big endian machine or not
 pre-build:
-	@echo "#include <machine/endian.h>" > ${WRKDIR}/.endian.c
-	@echo "BYTE_ORDER" >> ${WRKDIR}/.endian.c
-	@${CC} -E ${WRKDIR}/.endian.c > ${WRKDIR}/.endian.out
-	@if { grep -q 4321 ${WRKDIR}/.endian.out; } then \
-	   echo -DHIGHFIRST > ${WRKDIR}/.endian; \
-	 else \
-	   cp /dev/null ${WRKDIR}/.endian; \
-	 fi
+.if ${PROPERTIES:Mbe}
+	echo -DHIGHFIRST >${WRKDIR}/.endian
+.else
+	cp /dev/null ${WRKDIR}/.endian
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} -f makefile all \

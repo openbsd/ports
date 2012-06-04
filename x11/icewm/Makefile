@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/03/31 11:10:57 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2012/06/04 21:05:36 pascal Exp $
 
 COMMENT=	small and fast window manager
 
@@ -47,10 +47,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 .include <bsd.port.arch.mk>
 
 # XXX rendering bug on big-endian systems 
-.if ${MACHINE_ARCH} != "hppa" && ${MACHINE_ARCH} != "m68k" && \
-${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "mips64" && \
-${MACHINE_ARCH} != "powerpc" && ${MACHINE_ARCH} != "sparc" && \
-${MACHINE_ARCH} != "sparc64"
+.if ${PROPERTIES:Mle}
 CONFIGURE_ARGS+= --enable-gradients
 .endif
 
