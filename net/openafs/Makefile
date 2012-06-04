@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2012/06/04 20:20:07 pascal Exp $
 
 ONLY_FOR_ARCHS=		i386
 
@@ -68,13 +68,9 @@ CONFIGURE_ARGS+=	--enable-debug
 CONFIGURE_ARGS+=	--enable-debug-lwp
 .endif
 
-.if ${MACHINE} == "alpha" || \
-	${MACHINE} == "amd64" || \
-	${MACHINE} == "arm" || \
-	${MACHINE} == "i386" || \
-	${MACHINE} == "mips64" || \
-	${MACHINE} == "sh" || \
-	${MACHINE} == "vax"
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mle}
 CONFIGURE_ARGS+=	--enable-littleendian
 .else
 CONFIGURE_ARGS+=	--enable-bigendian
