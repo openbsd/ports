@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/14 09:17:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/06/04 21:02:15 pascal Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc sparc sparc64
 
@@ -29,29 +29,26 @@ FAKE_FLAGS+=		DESTDIR="${WRKINST}"
 KERNEL = 		kernl${WORDSIZE}${ENDIAN}.fi
 SUBST_VARS +=		KERNEL
 
+.include <bsd.port.arch.mk>
+
+# The filename of the gForth kernel is based on the wordsize
+# and the byte order of the system.
+.if ${PROPERTIES:Mlp64}
+WORDSIZE =	64
+.else
+WORDSIZE =	32
+.endif
+
+.if ${PROPERTIES:Mbe}
+ENDIAN =	b
+.else
+ENDIAN =	l
+.endif
+
 # Remove a bunch of unused and unneeded directories
 post-install:
 	find ${PREFIX}/share/gforth/arch/ -type d -empty | xargs rm -fr
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/gforth.el ${PREFIX}/share/emacs/site-lisp
 
-
 .include <bsd.port.mk>
-
-# The filename of the gForth kernel is based on the wordsize
-# and the byte order of the system.
-.for m in ${MACHINE_ARCH}
-.if ${LP64_ARCHS:L:M$m}
-WORDSIZE =	64
-.else
-WORDSIZE =	32
-.endif
-.endfor
-
-.if ${MACHINE_ARCH} == "hppa" || ${MACHINE_ARCH} == "mips64" \
-	|| ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sh" \
-	|| ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64"
-ENDIAN =	b
-.else
-ENDIAN =	l
-.endif
