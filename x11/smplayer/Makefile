@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/06/04 14:27:41 gonzalo Exp $
 
 COMMENT =		complete front-end for MPlayer
 
-DISTNAME =		smplayer-0.6.9
-REVISION =		2
+DISTNAME =		smplayer-0.8.0
 
 CATEGORIES =		multimedia x11
 
@@ -17,7 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c m pthread stdc++ z QtGui QtNetwork QtXml
+WANTLIB = c m pthread stdc++ z QtGui QtNetwork QtXml
+WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender fontconfig freetype
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=smplayer/}
 
@@ -27,10 +27,8 @@ MODULES =		x11/qt4
 RUN_DEPENDS =		x11/mplayer>=20090708 \
 			devel/desktop-file-utils \
 			x11/gtk+2,-guic
-LIB_DEPENDS =		x11/qt4
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 

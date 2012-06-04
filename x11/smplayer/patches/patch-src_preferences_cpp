@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_preferences_cpp,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
---- src/preferences.cpp.orig	Mon Jul  6 22:51:36 2009
-+++ src/preferences.cpp	Sat Oct 17 16:48:27 2009
-@@ -103,7 +103,7 @@ void Preferences::reset() {
+$OpenBSD: patch-src_preferences_cpp,v 1.2 2012/06/04 14:27:42 gonzalo Exp $
+--- src/preferences.cpp.orig	Mon Mar 19 01:49:58 2012
++++ src/preferences.cpp	Sat May 26 11:08:29 2012
+@@ -123,7 +123,7 @@ void Preferences::reset() {
  	softvol_max = 110; // 110 = default value in mplayer
  	use_scaletempo = Detect;
  	use_hwac3 = false;
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_preferences_cpp,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
  
  	global_volume = true;
  	volume = 50;
-@@ -125,8 +125,8 @@ void Preferences::reset() {
+@@ -145,8 +145,8 @@ void Preferences::reset() {
         Drives (CD/DVD)
         *************** */
  
@@ -21,14 +21,19 @@ $OpenBSD: patch-src_preferences_cpp,v 1.1.1.1 2009/10/18 22:24:45 edd Exp $
  
  #ifndef Q_OS_WIN
  	// Try to set default values
-@@ -234,8 +234,8 @@ void Preferences::reset() {
-     mplayer_additional_video_filters="";
+@@ -260,13 +260,13 @@ void Preferences::reset() {
      mplayer_additional_audio_filters="";
  
+ #ifdef LOG_MPLAYER
 -	log_mplayer = true;
--	log_smplayer = true;
 +	log_mplayer = false;
+ 	verbose_log = false;
+ 	autosave_mplayer_log = false;
+ 	mplayer_log_saveto = "";
+ #endif
+ #ifdef LOG_SMPLAYER
+-	log_smplayer = true;
 +	log_smplayer = false;
  	log_filter = ".*";
- 	verbose_log = false;
- 
+ 	save_smplayer_log = false;
+ #endif
