@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/31 07:27:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.6 2012/06/04 21:03:07 pascal Exp $
 
 COMMENT =	interface to the Skein digest algorithm
 
@@ -19,9 +19,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	cpan
 
-BYTEORDER !=	sysctl -n hw.byteorder
+.include <bsd.port.arch.mk>
 
-.if ${BYTEORDER} == "1234"
+.if ${PROPERTIES:Mle}
 BO=	LITTLE
 .else
 BO=	BIG
