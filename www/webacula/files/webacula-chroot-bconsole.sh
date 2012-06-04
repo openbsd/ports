@@ -3,7 +3,7 @@
 # make bconsole(8) available in Apache chroot(8)
 
 # WARNING: /var/www/bin/sh , /var/www/usr/libexec/ld.so and
-# /var/www/lib/* make be shared by other executables in the chroot(8)
+# /var/www/lib/* may be shared by other executables in the chroot(8)
 
 if [ "$(id -u)" -ne 0 ]; then
 	echo " *** Error: need root privileges to run this script"
