@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/04 16:58:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.5 2012/06/04 18:43:18 pascal Exp $
 
-NOT_FOR_ARCHS =		hppa mips64 powerpc sparc sparc64
+NOT_FOR_ARCHS =		${BE_ARCHS}
 
 SHARED_ONLY =		Yes
 
