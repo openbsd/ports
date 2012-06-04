@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/26 22:47:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/06/04 11:01:48 sthen Exp $
 
 COMMENT =	ARP scanning and fingerprinting tool
 DISTNAME =	arp-scan-1.8
-REVISION =	3
+REVISION =	4
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.nta-monitor.com/tools/arp-scan/
@@ -11,7 +11,7 @@ MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 MASTER_SITES =	${HOMEPAGE}download/
 MASTER_SITES0 =	http://spacehopper.org/mirrors/
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
-		oui-iab-20120516.tar.bz2:0
+		oui-iab-20120604.tar.bz2:0
 
 # GPLv3+
 PERMIT_DISTFILES_CDROM =Yes
@@ -33,6 +33,7 @@ post-install:
 	cd ${PREFIX}/share/arp-scan; mv mac-vendor.txt mac-vendor.txt.dist
 
 # maintainer convenience target
+# update both arp-scan and arpwatch if regen'ing
 listing:
 	t=`mktemp -d /tmp/oui-iab.XXXXXXXXXX`; \
 	    f=oui-iab-`date +%Y%m%d`.tar.bz2; \
