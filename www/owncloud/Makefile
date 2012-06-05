@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2012/06/02 06:54:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/05 07:17:12 ajacoutot Exp $
 
 COMMENT=	easy and universal access to shared and/or personnal files
 
-DISTNAME=	owncloud-4.0.0
+DISTNAME=	owncloud-4.0.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www
@@ -49,6 +49,7 @@ do-install:
 	${SUBST_CMD} -c ${FILESDIR}/owncloud.conf \
 		${INSTDIR}/owncloud.conf.dist
 	mv ${INSTDIR}/.htaccess ${INSTDIR}/.htaccess.dist
+	find ${INSTDIR} -name '*.orig' -exec rm {} \;
 	chown -R ${BINOWN}:${BINGRP} ${INSTDIR}
 
 .include <bsd.port.mk>
