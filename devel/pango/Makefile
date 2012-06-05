@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.63 2012/04/05 11:39:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2012/06/05 12:45:20 ajacoutot Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.30.0
-REVISION=		0
+GNOME_VERSION=		1.30.1
 GNOME_PROJECT=		pango
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 SHARED_LIBS +=  pango-1.0            2905.0   # 2905.0
 SHARED_LIBS +=  pangox-1.0           2905.0   # 2905.0
@@ -37,9 +40,15 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 LIB_DEPENDS=		devel/glib2>=2.31.20 \
 			graphics/cairo
 
-CONFIGURE_STYLE=	gnu
+LIBTOOL_FLAGS=		--tag=disable-static
 
-FAKE_FLAGS=		aliasdir=${PREFIX}/share/examples/pango \
-			sysconfdir=${PREFIX}/share/examples
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-static
+
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
+
+post-install:
+	rm ${PREFIX}/lib/pango/1.6.0/modules/*.la
 
 .include <bsd.port.mk>

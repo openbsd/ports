@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/03/23 13:20:21 ajacoutot Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.27 2012/06/05 12:45:20 ajacoutot Exp $
+@unexec-delete rm -f ${SYSCONFDIR}/pango/pango.modules
 @bin bin/pango-querymodules
 @bin bin/pango-view
 include/pango-1.0/
@@ -43,44 +43,31 @@ lib/girepository-1.0/Pango-1.0.typelib
 lib/girepository-1.0/PangoCairo-1.0.typelib
 lib/girepository-1.0/PangoFT2-1.0.typelib
 lib/girepository-1.0/PangoXft-1.0.typelib
-lib/libpango-1.0.a
 lib/libpango-1.0.la
-lib/libpangocairo-1.0.a
+@lib lib/libpango-1.0.so.${LIBpango-1.0_VERSION}
 lib/libpangocairo-1.0.la
-lib/libpangoft2-1.0.a
+@lib lib/libpangocairo-1.0.so.${LIBpangocairo-1.0_VERSION}
 lib/libpangoft2-1.0.la
-lib/libpangox-1.0.a
+@lib lib/libpangoft2-1.0.so.${LIBpangoft2-1.0_VERSION}
 lib/libpangox-1.0.la
-lib/libpangoxft-1.0.a
+@lib lib/libpangox-1.0.so.${LIBpangox-1.0_VERSION}
 lib/libpangoxft-1.0.la
+@lib lib/libpangoxft-1.0.so.${LIBpangoxft-1.0_VERSION}
 lib/pango/
 lib/pango/1.6.0/
 lib/pango/1.6.0/modules/
-lib/pango/1.6.0/modules/pango-arabic-fc.a
-lib/pango/1.6.0/modules/pango-arabic-fc.la
-lib/pango/1.6.0/modules/pango-arabic-lang.a
-lib/pango/1.6.0/modules/pango-arabic-lang.la
-lib/pango/1.6.0/modules/pango-basic-fc.a
-lib/pango/1.6.0/modules/pango-basic-fc.la
-lib/pango/1.6.0/modules/pango-basic-x.a
-lib/pango/1.6.0/modules/pango-basic-x.la
-lib/pango/1.6.0/modules/pango-hangul-fc.a
-lib/pango/1.6.0/modules/pango-hangul-fc.la
-lib/pango/1.6.0/modules/pango-hebrew-fc.a
-lib/pango/1.6.0/modules/pango-hebrew-fc.la
-lib/pango/1.6.0/modules/pango-indic-fc.a
-lib/pango/1.6.0/modules/pango-indic-fc.la
-lib/pango/1.6.0/modules/pango-indic-lang.a
-lib/pango/1.6.0/modules/pango-indic-lang.la
-lib/pango/1.6.0/modules/pango-khmer-fc.a
-lib/pango/1.6.0/modules/pango-khmer-fc.la
-lib/pango/1.6.0/modules/pango-syriac-fc.a
-lib/pango/1.6.0/modules/pango-syriac-fc.la
-lib/pango/1.6.0/modules/pango-thai-fc.a
-lib/pango/1.6.0/modules/pango-thai-fc.la
-lib/pango/1.6.0/modules/pango-tibetan-fc.a
-lib/pango/1.6.0/modules/pango-tibetan-fc.la
-lib/pkgconfig/
+lib/pango/1.6.0/modules/pango-arabic-fc.so
+lib/pango/1.6.0/modules/pango-arabic-lang.so
+lib/pango/1.6.0/modules/pango-basic-fc.so
+lib/pango/1.6.0/modules/pango-basic-x.so
+lib/pango/1.6.0/modules/pango-hangul-fc.so
+lib/pango/1.6.0/modules/pango-hebrew-fc.so
+lib/pango/1.6.0/modules/pango-indic-fc.so
+lib/pango/1.6.0/modules/pango-indic-lang.so
+lib/pango/1.6.0/modules/pango-khmer-fc.so
+lib/pango/1.6.0/modules/pango-syriac-fc.so
+lib/pango/1.6.0/modules/pango-thai-fc.so
+lib/pango/1.6.0/modules/pango-tibetan-fc.so
 lib/pkgconfig/pango.pc
 lib/pkgconfig/pangocairo.pc
 lib/pkgconfig/pangoft2.pc
@@ -90,8 +77,6 @@ lib/pkgconfig/pangoxft.pc
 @man man/man1/pango-view.1
 share/examples/pango/
 @sample ${SYSCONFDIR}/pango/
-share/examples/pango/pango.modules
-@sample ${SYSCONFDIR}/pango/pango.modules
 share/examples/pango/pangox.aliases
 @sample ${SYSCONFDIR}/pango/pangox.aliases
 share/gir-1.0/
@@ -99,8 +84,6 @@ share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir
 share/gir-1.0/PangoXft-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/pango/
 share/gtk-doc/html/pango/PangoEngineLang.html
 share/gtk-doc/html/pango/PangoEngineShape.html
@@ -165,3 +148,4 @@ share/gtk-doc/html/pango/rotated-text.png
 share/gtk-doc/html/pango/style.css
 share/gtk-doc/html/pango/tools.html
 share/gtk-doc/html/pango/up.png
+@exec %D/bin/pango-querymodules > ${SYSCONFDIR}/pango/pango.modules
