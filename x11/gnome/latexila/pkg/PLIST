@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/08 11:28:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/05 05:55:30 ajacoutot Exp $
 @bin bin/latexila
 @man man/man1/latexila.1
 share/applications/latexila.desktop
@@ -69,6 +69,8 @@ share/latexila/build_tools/fr/
 share/latexila/build_tools/fr/build_tools.xml
 share/latexila/build_tools/gl/
 share/latexila/build_tools/gl/build_tools.xml
+share/latexila/build_tools/id/
+share/latexila/build_tools/id/build_tools.xml
 share/latexila/build_tools/it/
 share/latexila/build_tools/it/build_tools.xml
 share/latexila/build_tools/lv/
@@ -844,6 +846,12 @@ share/latexila/templates/gl/beamer.tex
 share/latexila/templates/gl/book.tex
 share/latexila/templates/gl/letter.tex
 share/latexila/templates/gl/report.tex
+share/latexila/templates/id/
+share/latexila/templates/id/article.tex
+share/latexila/templates/id/beamer.tex
+share/latexila/templates/id/book.tex
+share/latexila/templates/id/letter.tex
+share/latexila/templates/id/report.tex
 share/latexila/templates/it/
 share/latexila/templates/it/article.tex
 share/latexila/templates/it/beamer.tex
@@ -909,6 +917,7 @@ share/locale/eo/LC_MESSAGES/latexila.mo
 share/locale/es/LC_MESSAGES/latexila.mo
 share/locale/fr/LC_MESSAGES/latexila.mo
 share/locale/gl/LC_MESSAGES/latexila.mo
+share/locale/id/LC_MESSAGES/latexila.mo
 share/locale/it/LC_MESSAGES/latexila.mo
 share/locale/lv/LC_MESSAGES/latexila.mo
 share/locale/nb/LC_MESSAGES/latexila.mo
