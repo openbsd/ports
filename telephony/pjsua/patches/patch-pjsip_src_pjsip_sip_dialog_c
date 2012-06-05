@@ -1,0 +1,11 @@
+$OpenBSD: patch-pjsip_src_pjsip_sip_dialog_c,v 1.1 2012/06/05 23:15:23 fgsch Exp $
+--- pjsip/src/pjsip/sip_dialog.c.orig	Fri Jun  1 03:38:55 2012
++++ pjsip/src/pjsip/sip_dialog.c	Fri Jun  1 03:39:01 2012
+@@ -111,6 +111,7 @@ on_error:
+ static void destroy_dialog( pjsip_dialog *dlg )
+ {
+     if (dlg->mutex_) {
++	pj_mutex_unlock(dlg->mutex_);
+ 	pj_mutex_destroy(dlg->mutex_);
+ 	dlg->mutex_ = NULL;
+     }

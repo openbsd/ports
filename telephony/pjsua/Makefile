@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/24 09:44:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.25 2012/06/05 23:15:22 fgsch Exp $
 
 COMMENT=		lightweight sip client
 
-VERSION=		1.14.2
+VERSION=		2.0
 DISTNAME=		pjproject-${VERSION}
 PKGNAME=		pjsua-${VERSION}
 EXTRACT_SUFX=		.tar.bz2
@@ -18,12 +18,15 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB+=		c crypto gsm>=1.0 m portaudio
-WANTLIB+=		pthread sndio speex speexdsp ssl
+WANTLIB =	avcodec avformat avutil bz2 c crypto gsm m mp3lame \
+		ogg orc-0.4 portaudio pthread schroedinger-1.0 speex \
+		speexdsp ssl swscale theoradec theoraenc vorbis vorbisenc \
+		vpx x264 xvidcore z
 
 LIB_DEPENDS=		audio/gsm \
 			audio/portaudio-svn \
-			audio/speex
+			audio/speex \
+			graphics/ffmpeg
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.61
