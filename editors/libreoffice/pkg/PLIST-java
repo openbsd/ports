@@ -24,6 +24,14 @@ lib/libreoffice/share/extensions/wiki-publisher/components.rdb
 lib/libreoffice/share/extensions/wiki-publisher/description-en-US.txt
 lib/libreoffice/share/extensions/wiki-publisher/description.xml
 lib/libreoffice/share/extensions/wiki-publisher/filter/
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/cmarkup.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/entities.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/glayout.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/mmltex.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/scripts.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/tables.xsl
+lib/libreoffice/share/extensions/wiki-publisher/filter/math/tokens.xsl
 lib/libreoffice/share/extensions/wiki-publisher/filter/odt2mediawiki.xsl
 lib/libreoffice/share/extensions/wiki-publisher/help/
 lib/libreoffice/share/extensions/wiki-publisher/help/en-US/
