@@ -1,16 +1,14 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/09/09 19:39:47 jolan Exp $
---- Makefile.orig	Tue Jan  6 14:18:00 2009
-+++ Makefile	Wed Sep  9 14:22:10 2009
-@@ -12,10 +12,10 @@ DEFINES=
+$OpenBSD: patch-Makefile,v 1.2 2012/06/06 11:45:01 jasper Exp $
+--- Makefile.orig	Wed Jun  6 13:43:30 2012
++++ Makefile	Wed Jun  6 13:43:48 2012
+@@ -13,8 +13,8 @@ DEFINES=
  # Lua executable name. Used to find the install path and for testing.
  LUA= lua
  
 -CC= gcc
+-CCOPT= -O2 -fomit-frame-pointer
 +#CC= gcc
- SOCFLAGS= -fPIC
- SOCC= $(CC) -shared $(SOCFLAGS)
--CFLAGS= -Wall -O2 -fomit-frame-pointer $(SOCFLAGS) $(DEFINES) $(INCLUDES)
-+CFLAGS+= -Wall $(SOCFLAGS) $(DEFINES) $(INCLUDES)
- RM= rm -f
- INSTALL= install -p
- INSTALLPATH= $(LUA) installpath.lua
++#CCOPT= -O2 -fomit-frame-pointer
+ CCWARN= -Wall
+ SOCC= $(CC) -shared
+ SOCFLAGS= -fPIC $(CCOPT) $(CCWARN) $(DEFINES) $(INCLUDES) $(CFLAGS)
