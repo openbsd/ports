@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/06/06 11:45:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/06/06 11:52:42 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
 MODULES=	lang/lua
-REGRESS_DEPENDS+=devel/luabitop
+REGRESS_DEPENDS+=${BASE_PKGPATH}
 MAKE_ENV+=	INCLUDES=-I${LOCALBASE}/include
 
 do-install:
