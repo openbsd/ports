@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/23 15:11:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/06 20:33:50 sthen Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-waf
@@ -248,8 +248,6 @@ lib/node_modules/npm/doc/cli/view.md
 lib/node_modules/npm/doc/cli/whoami.md
 lib/node_modules/npm/html/
 lib/node_modules/npm/html/api/
-lib/node_modules/npm/html/api/GubbleBum-Blocky.ttf
-lib/node_modules/npm/html/api/author.html
 lib/node_modules/npm/html/api/bin.html
 lib/node_modules/npm/html/api/bugs.html
 lib/node_modules/npm/html/api/commands.html
@@ -258,15 +256,10 @@ lib/node_modules/npm/html/api/deprecate.html
 lib/node_modules/npm/html/api/docs.html
 lib/node_modules/npm/html/api/edit.html
 lib/node_modules/npm/html/api/explore.html
-lib/node_modules/npm/html/api/find.html
-lib/node_modules/npm/html/api/get.html
 lib/node_modules/npm/html/api/help-search.html
-lib/node_modules/npm/html/api/home.html
 lib/node_modules/npm/html/api/init.html
 lib/node_modules/npm/html/api/install.html
 lib/node_modules/npm/html/api/link.html
-lib/node_modules/npm/html/api/list.html
-lib/node_modules/npm/html/api/ln.html
 lib/node_modules/npm/html/api/load.html
 lib/node_modules/npm/html/api/ls.html
 lib/node_modules/npm/html/api/npm.html
@@ -278,15 +271,12 @@ lib/node_modules/npm/html/api/prune.html
 lib/node_modules/npm/html/api/publish.html
 lib/node_modules/npm/html/api/rebuild.html
 lib/node_modules/npm/html/api/restart.html
-lib/node_modules/npm/html/api/rm.html
 lib/node_modules/npm/html/api/root.html
 lib/node_modules/npm/html/api/run-script.html
 lib/node_modules/npm/html/api/search.html
-lib/node_modules/npm/html/api/set.html
 lib/node_modules/npm/html/api/shrinkwrap.html
 lib/node_modules/npm/html/api/start.html
 lib/node_modules/npm/html/api/stop.html
-lib/node_modules/npm/html/api/style.css
 lib/node_modules/npm/html/api/submodule.html
 lib/node_modules/npm/html/api/tag.html
 lib/node_modules/npm/html/api/test.html
@@ -297,10 +287,8 @@ lib/node_modules/npm/html/api/version.html
 lib/node_modules/npm/html/api/view.html
 lib/node_modules/npm/html/api/whoami.html
 lib/node_modules/npm/html/doc/
-lib/node_modules/npm/html/doc/GubbleBum-Blocky.ttf
 lib/node_modules/npm/html/doc/README.html
 lib/node_modules/npm/html/doc/adduser.html
-lib/node_modules/npm/html/doc/author.html
 lib/node_modules/npm/html/doc/bin.html
 lib/node_modules/npm/html/doc/bugs.html
 lib/node_modules/npm/html/doc/build.html
@@ -317,21 +305,15 @@ lib/node_modules/npm/html/doc/docs.html
 lib/node_modules/npm/html/doc/edit.html
 lib/node_modules/npm/html/doc/explore.html
 lib/node_modules/npm/html/doc/faq.html
-lib/node_modules/npm/html/doc/find.html
 lib/node_modules/npm/html/doc/folders.html
-lib/node_modules/npm/html/doc/get.html
-lib/node_modules/npm/html/doc/global.html
 lib/node_modules/npm/html/doc/help-search.html
 lib/node_modules/npm/html/doc/help.html
-lib/node_modules/npm/html/doc/home.html
 lib/node_modules/npm/html/doc/index.html
 lib/node_modules/npm/html/doc/init.html
 lib/node_modules/npm/html/doc/install.html
 lib/node_modules/npm/html/doc/json.html
 lib/node_modules/npm/html/doc/link.html
 lib/node_modules/npm/html/doc/list.html
-lib/node_modules/npm/html/doc/ln.html
-lib/node_modules/npm/html/doc/ls.html
 lib/node_modules/npm/html/doc/npm.html
 lib/node_modules/npm/html/doc/outdated.html
 lib/node_modules/npm/html/doc/owner.html
@@ -343,18 +325,15 @@ lib/node_modules/npm/html/doc/rebuild.html
 lib/node_modules/npm/html/doc/registry.html
 lib/node_modules/npm/html/doc/removing-npm.html
 lib/node_modules/npm/html/doc/restart.html
-lib/node_modules/npm/html/doc/rm.html
 lib/node_modules/npm/html/doc/root.html
 lib/node_modules/npm/html/doc/run-script.html
 lib/node_modules/npm/html/doc/scripts.html
 lib/node_modules/npm/html/doc/search.html
 lib/node_modules/npm/html/doc/semver.html
-lib/node_modules/npm/html/doc/set.html
 lib/node_modules/npm/html/doc/shrinkwrap.html
 lib/node_modules/npm/html/doc/star.html
 lib/node_modules/npm/html/doc/start.html
 lib/node_modules/npm/html/doc/stop.html
-lib/node_modules/npm/html/doc/style.css
 lib/node_modules/npm/html/doc/submodule.html
 lib/node_modules/npm/html/doc/tag.html
 lib/node_modules/npm/html/doc/test.html
@@ -368,6 +347,11 @@ lib/node_modules/npm/html/docfoot.html
 lib/node_modules/npm/html/dochead.html
 lib/node_modules/npm/html/favicon.ico
 lib/node_modules/npm/html/index.html
+lib/node_modules/npm/html/style.css
+lib/node_modules/npm/html/webfonts/
+lib/node_modules/npm/html/webfonts/23242D_3_0.eot
+lib/node_modules/npm/html/webfonts/23242D_3_0.ttf
+lib/node_modules/npm/html/webfonts/23242D_3_0.woff
 lib/node_modules/npm/lib/
 lib/node_modules/npm/lib/adduser.js
 lib/node_modules/npm/lib/bin.js
@@ -884,6 +868,9 @@ lib/node_modules/npm/test/packages/npm-test-files/sub/include2
 lib/node_modules/npm/test/packages/npm-test-files/sub/include4
 lib/node_modules/npm/test/packages/npm-test-files/test.sh
 lib/node_modules/npm/test/packages/npm-test-ignore/
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/package.json
+lib/node_modules/npm/test/packages/npm-test-ignore-nested-nm/test.js
 lib/node_modules/npm/test/packages/npm-test-ignore/.npmignore
 lib/node_modules/npm/test/packages/npm-test-ignore/include4
 lib/node_modules/npm/test/packages/npm-test-ignore/package.json
