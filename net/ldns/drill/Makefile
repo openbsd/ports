@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/01/20 09:53:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/06/06 15:01:49 jakob Exp $
 
 COMMENT=	DNS debugger
 
 PKGNAME=	drill-${VERSION}
 
-WANTLIB=	c crypto ldns>=4.10
-LIB_DEPENDS+=	net/ldns/libldns>=1.6.11
+WANTLIB=	c crypto ldns>=4.11
+LIB_DEPENDS+=	net/ldns/libldns>=1.6.13
 
 WRKSRC=		${WRKDIST}/drill
 
