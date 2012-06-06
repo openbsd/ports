@@ -1,22 +1,19 @@
-Subversion is a free/open-source version control system. That is,
-Subversion manages files and directories over time. A tree of files
-is placed into a central repository. The repository is much like an
-ordinary file server, except that it remembers every change ever made
-to your files and directories. This allows you to recover older versions
-of your data, or examine the history of how your data changed.
-In this regard, many people think of a version control system as a
-sort of time machine.
+Apache Subversion exists to be universally recognized and adopted as an
+open-source, centralized version control system characterized by its
+reliability as a safe haven for valuable data; the simplicity of its
+model and usage; and its ability to support the needs of a wide variety
+of users and projects, from individuals to large-scale enterprise
+operations.
 
-Note that you need to install the following subpackages to gain
-the appropriate functionality:
-        -perl   Perl bindings to Subversion
-        -python Python bindings to Subversion
-        -ruby   Ruby bindings to Subversion
-        -ap2    Apache httpd 2 modules for Subversion
-Flavors:
-        gnome_keyring: Compile with support for gnome-keyring
+Note that you need to install the following subpackages to gain the
+appropriate functionality:
+        -perl           Perl bindings to Subversion
+        -python         Python bindings to Subversion
+        -ruby           Ruby bindings to Subversion
+        -ap2            Apache httpd 2 modules for Subversion
+        -gnome-keyring  Store Subversion passwords in gnome-keyring
 
-Also note that plaintext-password caching is disabled by default
-by setting "store-plaintext-passwords" to "no" in ${SYSCONFDIR}/subversion/servers.
-This is a different default behaviour to a standard subversion install,
+Also note that plaintext-password caching is disabled by default by
+setting "store-plaintext-passwords" to "no" in ${SYSCONFDIR}/subversion/servers.
+This is a different default behaviour to a standard Subversion install,
 which would ask the user before storing passwords in plaintext.
