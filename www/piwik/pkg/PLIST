@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2012/02/27 10:44:15 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.36 2012/06/06 10:24:26 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -10,7 +10,10 @@ piwik/config/manifest.inc.php
 piwik/core/
 piwik/core/API/
 piwik/core/API/DataTableGenericFilter.php
-piwik/core/API/DataTableLabelFilter.php
+piwik/core/API/DataTableManipulator/
+piwik/core/API/DataTableManipulator.php
+piwik/core/API/DataTableManipulator/Flattener.php
+piwik/core/API/DataTableManipulator/LabelFilter.php
 piwik/core/API/DocumentationGenerator.php
 piwik/core/API/Proxy.php
 piwik/core/API/Request.php
@@ -33,7 +36,7 @@ piwik/core/CacheFile.php
 piwik/core/Common.php
 piwik/core/Config/
 piwik/core/Config.php
-piwik/core/Config/Ini.php
+piwik/core/Config/Compat.php
 piwik/core/Controller/
 piwik/core/Controller.php
 piwik/core/Controller/Admin.php
@@ -55,6 +58,7 @@ piwik/core/DataTable/Filter/AddConstantMetadata.php
 piwik/core/DataTable/Filter/AddSummaryRow.php
 piwik/core/DataTable/Filter/BeautifyRangeLabels.php
 piwik/core/DataTable/Filter/BeautifyTimeRangeLabels.php
+piwik/core/DataTable/Filter/ColumnCallbackAddColumn.php
 piwik/core/DataTable/Filter/ColumnCallbackAddColumnPercentage.php
 piwik/core/DataTable/Filter/ColumnCallbackAddColumnQuotient.php
 piwik/core/DataTable/Filter/ColumnCallbackAddMetadata.php
@@ -62,12 +66,14 @@ piwik/core/DataTable/Filter/ColumnCallbackDeleteRow.php
 piwik/core/DataTable/Filter/ColumnCallbackReplace.php
 piwik/core/DataTable/Filter/ColumnDelete.php
 piwik/core/DataTable/Filter/ExcludeLowPopulation.php
+piwik/core/DataTable/Filter/GroupBy.php
 piwik/core/DataTable/Filter/Limit.php
 piwik/core/DataTable/Filter/MetadataCallbackAddMetadata.php
 piwik/core/DataTable/Filter/MetadataCallbackReplace.php
 piwik/core/DataTable/Filter/Null.php
 piwik/core/DataTable/Filter/Pattern.php
 piwik/core/DataTable/Filter/PatternRecursive.php
+piwik/core/DataTable/Filter/RangeCheck.php
 piwik/core/DataTable/Filter/ReplaceColumnNames.php
 piwik/core/DataTable/Filter/ReplaceSummaryRowLabel.php
 piwik/core/DataTable/Filter/SafeDecodeLabel.php
@@ -92,6 +98,7 @@ piwik/core/Date.php
 piwik/core/Db/
 piwik/core/Db/Adapter/
 piwik/core/Db/Adapter.php
+piwik/core/Db/Adapter/Interface.php
 piwik/core/Db/Adapter/Mysqli.php
 piwik/core/Db/Adapter/Pdo/
 piwik/core/Db/Adapter/Pdo/Mssql.php
@@ -99,6 +106,7 @@ piwik/core/Db/Adapter/Pdo/Mysql.php
 piwik/core/Db/Adapter/Pdo/Pgsql.php
 piwik/core/Db/Schema/
 piwik/core/Db/Schema.php
+piwik/core/Db/Schema/Interface.php
 piwik/core/Db/Schema/Myisam.php
 piwik/core/ErrorHandler.php
 piwik/core/ExceptionHandler.php
@@ -249,11 +257,14 @@ piwik/core/Updates/1.5-rc6.php
 piwik/core/Updates/1.6-b1.php
 piwik/core/Updates/1.6-rc1.php
 piwik/core/Updates/1.7-b1.php
+piwik/core/Updates/1.7.2-rc5.php
+piwik/core/Updates/1.7.2-rc7.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View/
 piwik/core/View.php
 piwik/core/View/Interface.php
+piwik/core/View/OneClickDone.php
 piwik/core/ViewDataTable/
 piwik/core/ViewDataTable.php
 piwik/core/ViewDataTable/Cloud.php
@@ -1203,6 +1214,9 @@ piwik/misc/generateDoc.sh
 piwik/misc/gpl-3.0.txt
 piwik/misc/iframeWidget.htm
 piwik/misc/iframeWidget_localhost.php
+piwik/misc/log-analytics/
+piwik/misc/log-analytics/README
+piwik/misc/log-analytics/import_logs.py
 piwik/misc/phpdoc-config.ini
 piwik/misc/proxy-hide-piwik-url/
 piwik/misc/proxy-hide-piwik-url/piwik.php
@@ -1211,6 +1225,7 @@ piwik/misc/svn-props-to-set-new-files.svnprops
 piwik/misc/test_cookies_GenerateHundredsWebsitesAndVisits.php
 piwik/misc/test_generateLotsVisitsWebsites.php
 piwik/misc/tracker_simpleImageTracker.php
+piwik/misc/uninstall-delete-piwik-directory.php
 piwik/misc/widget_example_lastvisits.html
 piwik/piwik.js
 piwik/piwik.php
@@ -1245,8 +1260,9 @@ piwik/plugins/CoreHome/
 piwik/plugins/CoreHome/Controller.php
 piwik/plugins/CoreHome/CoreHome.php
 piwik/plugins/CoreHome/DataTableAction/
-piwik/plugins/CoreHome/DataTableAction/MultiRowEvolution.php
-piwik/plugins/CoreHome/DataTableAction/RowEvolution.php
+piwik/plugins/CoreHome/DataTableRowAction/
+piwik/plugins/CoreHome/DataTableRowAction/MultiRowEvolution.php
+piwik/plugins/CoreHome/DataTableRowAction/RowEvolution.php
 piwik/plugins/CoreHome/templates/
 piwik/plugins/CoreHome/templates/autocomplete.js
 piwik/plugins/CoreHome/templates/broadcast.js
@@ -1296,6 +1312,8 @@ piwik/plugins/CoreHome/templates/menu.js
 piwik/plugins/CoreHome/templates/menu.tpl
 piwik/plugins/CoreHome/templates/period_select.tpl
 piwik/plugins/CoreHome/templates/piwik_tag.tpl
+piwik/plugins/CoreHome/templates/popover_multirowevolution.tpl
+piwik/plugins/CoreHome/templates/popover_rowevolution.tpl
 piwik/plugins/CoreHome/templates/single_report.tpl
 piwik/plugins/CoreHome/templates/sites_selection.tpl
 piwik/plugins/CoreHome/templates/sparkline.js
@@ -1318,7 +1336,7 @@ piwik/plugins/CoreUpdater/templates/footer.tpl
 piwik/plugins/CoreUpdater/templates/header.tpl
 piwik/plugins/CoreUpdater/templates/update_database_done.tpl
 piwik/plugins/CoreUpdater/templates/update_new_version_available.tpl
-piwik/plugins/CoreUpdater/templates/update_one_click_done.tpl
+piwik/plugins/CoreUpdater/templates/update_one_click_results.tpl
 piwik/plugins/CoreUpdater/templates/update_welcome.tpl
 piwik/plugins/CustomVariables/
 piwik/plugins/CustomVariables/API.php
@@ -1328,18 +1346,23 @@ piwik/plugins/DBStats/
 piwik/plugins/DBStats/API.php
 piwik/plugins/DBStats/Controller.php
 piwik/plugins/DBStats/DBStats.php
+piwik/plugins/DBStats/MySQLMetadataProvider.php
 piwik/plugins/DBStats/templates/
-piwik/plugins/DBStats/templates/DBStats.tpl
+piwik/plugins/DBStats/templates/index.tpl
 piwik/plugins/Dashboard/
 piwik/plugins/Dashboard/Controller.php
 piwik/plugins/Dashboard/Dashboard.php
 piwik/plugins/Dashboard/templates/
-piwik/plugins/Dashboard/templates/Dashboard.js
 piwik/plugins/Dashboard/templates/dashboard.css
+piwik/plugins/Dashboard/templates/dashboard.js
+piwik/plugins/Dashboard/templates/dashboardObject.js
+piwik/plugins/Dashboard/templates/dashboardWidget.js
 piwik/plugins/Dashboard/templates/header.tpl
 piwik/plugins/Dashboard/templates/index.tpl
 piwik/plugins/Dashboard/templates/standalone.tpl
 piwik/plugins/Dashboard/templates/widgetMenu.js
+piwik/plugins/DoNotTrack/
+piwik/plugins/DoNotTrack/DoNotTrack.php
 piwik/plugins/ExampleAPI/
 piwik/plugins/ExampleAPI/API.php
 piwik/plugins/ExampleAPI/ExampleAPI.php
@@ -1436,9 +1459,11 @@ piwik/plugins/Installation/templates/displayJavascriptCode.tpl
 piwik/plugins/Installation/templates/finished.tpl
 piwik/plugins/Installation/templates/firstWebsiteSetup.tpl
 piwik/plugins/Installation/templates/generalSetup.tpl
+piwik/plugins/Installation/templates/install.css
 piwik/plugins/Installation/templates/integrityDetails.tpl
 piwik/plugins/Installation/templates/structure.tpl
 piwik/plugins/Installation/templates/systemCheck.tpl
+piwik/plugins/Installation/templates/systemCheck_legend.tpl
 piwik/plugins/Installation/templates/tablesCreation.tpl
 piwik/plugins/Installation/templates/welcome.tpl
 piwik/plugins/LanguagesManager/
@@ -1501,7 +1526,9 @@ piwik/plugins/MultiSites/images/
 piwik/plugins/MultiSites/images/arrow_asc.gif
 piwik/plugins/MultiSites/images/arrow_desc.gif
 piwik/plugins/MultiSites/images/arrow_down.png
+piwik/plugins/MultiSites/images/arrow_down_green.png
 piwik/plugins/MultiSites/images/arrow_up.png
+piwik/plugins/MultiSites/images/arrow_up_red.png
 piwik/plugins/MultiSites/images/door_in.png
 piwik/plugins/MultiSites/images/link.gif
 piwik/plugins/MultiSites/images/loading-blue.gif
@@ -1510,6 +1537,7 @@ piwik/plugins/MultiSites/templates/
 piwik/plugins/MultiSites/templates/common.js
 piwik/plugins/MultiSites/templates/index.tpl
 piwik/plugins/MultiSites/templates/row.tpl
+piwik/plugins/MultiSites/templates/standalone.tpl
 piwik/plugins/MultiSites/templates/styles.css
 piwik/plugins/PDFReports/
 piwik/plugins/PDFReports/API.php
@@ -1524,8 +1552,11 @@ piwik/plugins/PDFReports/templates/list.tpl
 piwik/plugins/PDFReports/templates/pdf.js
 piwik/plugins/PrivacyManager/
 piwik/plugins/PrivacyManager/Controller.php
+piwik/plugins/PrivacyManager/LogDataPurger.php
 piwik/plugins/PrivacyManager/PrivacyManager.php
+piwik/plugins/PrivacyManager/ReportsPurger.php
 piwik/plugins/PrivacyManager/templates/
+piwik/plugins/PrivacyManager/templates/databaseSize.tpl
 piwik/plugins/PrivacyManager/templates/privacySettings.js
 piwik/plugins/PrivacyManager/templates/privacySettings.tpl
 piwik/plugins/Provider/
@@ -2132,6 +2163,7 @@ piwik/plugins/UserSettings/images/browsers/BE.gif
 piwik/plugins/UserSettings/images/browsers/BP.gif
 piwik/plugins/UserSettings/images/browsers/BX.gif
 piwik/plugins/UserSettings/images/browsers/CA.gif
+piwik/plugins/UserSettings/images/browsers/CF.gif
 piwik/plugins/UserSettings/images/browsers/CH.gif
 piwik/plugins/UserSettings/images/browsers/CO.gif
 piwik/plugins/UserSettings/images/browsers/CS.gif
@@ -2237,6 +2269,7 @@ piwik/plugins/UserSettings/images/screens/
 piwik/plugins/UserSettings/images/screens/dual.gif
 piwik/plugins/UserSettings/images/screens/mobile.gif
 piwik/plugins/UserSettings/images/screens/normal.gif
+piwik/plugins/UserSettings/images/screens/unknown.gif
 piwik/plugins/UserSettings/images/screens/wide.gif
 piwik/plugins/UserSettings/templates/
 piwik/plugins/UserSettings/templates/index.tpl
@@ -2291,6 +2324,7 @@ piwik/plugins/Widgetize/
 piwik/plugins/Widgetize/Controller.php
 piwik/plugins/Widgetize/Widgetize.php
 piwik/plugins/Widgetize/templates/
+piwik/plugins/Widgetize/templates/empty.tpl
 piwik/plugins/Widgetize/templates/iframe.tpl
 piwik/plugins/Widgetize/templates/index.tpl
 piwik/plugins/Widgetize/templates/js.tpl
@@ -2315,6 +2349,8 @@ piwik/themes/default/images/chart_line_edit_bg.png
 piwik/themes/default/images/chart_pie.png
 piwik/themes/default/images/close.png
 piwik/themes/default/images/collapsed_arrows.gif
+piwik/themes/default/images/configure-highlight.png
+piwik/themes/default/images/configure.png
 piwik/themes/default/images/dashboard_h_bg.png
 piwik/themes/default/images/dashboard_h_bg_hover.png
 piwik/themes/default/images/data_table_footer_active_item.png
@@ -2352,10 +2388,12 @@ piwik/themes/default/images/minus.png
 piwik/themes/default/images/ok.png
 piwik/themes/default/images/page_border_grad.png
 piwik/themes/default/images/plus.png
+piwik/themes/default/images/row_evolution.png
 piwik/themes/default/images/search_bg.png
 piwik/themes/default/images/search_ico.png
 piwik/themes/default/images/sites_selection.png
 piwik/themes/default/images/sort_subtable_asc.png
+piwik/themes/default/images/sort_subtable_asc_light.png
 piwik/themes/default/images/sort_subtable_desc.png
 piwik/themes/default/images/sort_subtable_desc_light.png
 piwik/themes/default/images/sortasc.png
