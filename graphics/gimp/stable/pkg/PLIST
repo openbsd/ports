@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.29 2012/02/27 10:11:38 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.30 2012/06/06 08:06:32 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
-@bin bin/gimp-2.6
+@bin bin/gimp-2.8
 bin/gimp-console
-@bin bin/gimp-console-2.6
-bin/gimp-remote
-@bin bin/gimp-remote-2.6
+@bin bin/gimp-console-2.8
 @bin bin/gimptool-2.0
 include/gimp-2.0/
 include/gimp-2.0/libgimp/
 include/gimp-2.0/libgimp/gimp.h
 include/gimp-2.0/libgimp/gimp_pdb.h
+include/gimp-2.0/libgimp/gimp_pdb_headers.h
 include/gimp-2.0/libgimp/gimpaspectpreview.h
 include/gimp-2.0/libgimp/gimpbrush_pdb.h
 include/gimp-2.0/libgimp/gimpbrushes.h
@@ -32,6 +31,7 @@ include/gimp-2.0/libgimp/gimpdrawable.h
 include/gimp-2.0/libgimp/gimpdrawable_pdb.h
 include/gimp-2.0/libgimp/gimpdrawablepreview.h
 include/gimp-2.0/libgimp/gimpdrawabletransform_pdb.h
+include/gimp-2.0/libgimp/gimpdynamics_pdb.h
 include/gimp-2.0/libgimp/gimpedit_pdb.h
 include/gimp-2.0/libgimp/gimpenums.h
 include/gimp-2.0/libgimp/gimpexport.h
@@ -57,12 +57,14 @@ include/gimp-2.0/libgimp/gimphelp_pdb.h
 include/gimp-2.0/libgimp/gimpimage.h
 include/gimp-2.0/libgimp/gimpimage_pdb.h
 include/gimp-2.0/libgimp/gimpimagecombobox.h
+include/gimp-2.0/libgimp/gimpimageselect_pdb.h
+include/gimp-2.0/libgimp/gimpitem_pdb.h
 include/gimp-2.0/libgimp/gimpitemcombobox.h
+include/gimp-2.0/libgimp/gimpitemtransform_pdb.h
 include/gimp-2.0/libgimp/gimplayer.h
 include/gimp-2.0/libgimp/gimplayer_pdb.h
 include/gimp-2.0/libgimp/gimpmenu.h
 include/gimp-2.0/libgimp/gimpmessage_pdb.h
-include/gimp-2.0/libgimp/gimpmisc_pdb.h
 include/gimp-2.0/libgimp/gimppainttools_pdb.h
 include/gimp-2.0/libgimp/gimppalette.h
 include/gimp-2.0/libgimp/gimppalette_pdb.h
@@ -72,7 +74,6 @@ include/gimp-2.0/libgimp/gimppalettes_pdb.h
 include/gimp-2.0/libgimp/gimppaletteselect.h
 include/gimp-2.0/libgimp/gimppaletteselect_pdb.h
 include/gimp-2.0/libgimp/gimppaletteselectbutton.h
-include/gimp-2.0/libgimp/gimpparasite_pdb.h
 include/gimp-2.0/libgimp/gimppaths_pdb.h
 include/gimp-2.0/libgimp/gimppattern_pdb.h
 include/gimp-2.0/libgimp/gimppatternmenu.h
@@ -107,6 +108,7 @@ include/gimp-2.0/libgimp/gimpui.h
 include/gimp-2.0/libgimp/gimpuitypes.h
 include/gimp-2.0/libgimp/gimpundo_pdb.h
 include/gimp-2.0/libgimp/gimpunit_pdb.h
+include/gimp-2.0/libgimp/gimpvectors.h
 include/gimp-2.0/libgimp/gimpvectors_pdb.h
 include/gimp-2.0/libgimp/gimpzoompreview.h
 include/gimp-2.0/libgimpbase/
@@ -130,6 +132,7 @@ include/gimp-2.0/libgimpbase/gimpversion.h
 include/gimp-2.0/libgimpcolor/
 include/gimp-2.0/libgimpcolor/gimpadaptivesupersample.h
 include/gimp-2.0/libgimpcolor/gimpbilinear.h
+include/gimp-2.0/libgimpcolor/gimpcairocolor.h
 include/gimp-2.0/libgimpcolor/gimpcmyk.h
 include/gimp-2.0/libgimpcolor/gimpcolor.h
 include/gimp-2.0/libgimpcolor/gimpcolormanaged.h
@@ -170,6 +173,7 @@ include/gimp-2.0/libgimpthumb/gimpthumb-utils.h
 include/gimp-2.0/libgimpthumb/gimpthumb.h
 include/gimp-2.0/libgimpthumb/gimpthumbnail.h
 include/gimp-2.0/libgimpwidgets/
+include/gimp-2.0/libgimpwidgets/gimp3migration.h
 include/gimp-2.0/libgimpwidgets/gimpbrowser.h
 include/gimp-2.0/libgimpwidgets/gimpbutton.h
 include/gimp-2.0/libgimpwidgets/gimpcairo-utils.h
@@ -219,7 +223,10 @@ include/gimp-2.0/libgimpwidgets/gimpscrolledpreview.h
 include/gimp-2.0/libgimpwidgets/gimpsizeentry.h
 include/gimp-2.0/libgimpwidgets/gimpstock.h
 include/gimp-2.0/libgimpwidgets/gimpstringcombobox.h
+include/gimp-2.0/libgimpwidgets/gimpunitcombobox.h
 include/gimp-2.0/libgimpwidgets/gimpunitmenu.h
+include/gimp-2.0/libgimpwidgets/gimpunitstore.h
+include/gimp-2.0/libgimpwidgets/gimpwidgets-error.h
 include/gimp-2.0/libgimpwidgets/gimpwidgets.h
 include/gimp-2.0/libgimpwidgets/gimpwidgetsenums.h
 include/gimp-2.0/libgimpwidgets/gimpwidgetstypes.h
@@ -319,15 +326,16 @@ lib/gimp/2.0/plug-ins/colorxhtml.py
 @bin lib/gimp/2.0/plug-ins/file-header
 @bin lib/gimp/2.0/plug-ins/file-html-table
 @bin lib/gimp/2.0/plug-ins/file-ico
+@bin lib/gimp/2.0/plug-ins/file-jp2-load
 @bin lib/gimp/2.0/plug-ins/file-jpeg
-@bin lib/gimp/2.0/plug-ins/file-mng
+lib/gimp/2.0/plug-ins/file-openraster.py
 @bin lib/gimp/2.0/plug-ins/file-pat
 @bin lib/gimp/2.0/plug-ins/file-pcx
-@bin lib/gimp/2.0/plug-ins/file-pdf
+@bin lib/gimp/2.0/plug-ins/file-pdf-load
+@bin lib/gimp/2.0/plug-ins/file-pdf-save
 @bin lib/gimp/2.0/plug-ins/file-pix
 @bin lib/gimp/2.0/plug-ins/file-png
 @bin lib/gimp/2.0/plug-ins/file-pnm
-@bin lib/gimp/2.0/plug-ins/file-ps
 @bin lib/gimp/2.0/plug-ins/file-psd-load
 @bin lib/gimp/2.0/plug-ins/file-psd-save
 @bin lib/gimp/2.0/plug-ins/file-psp
@@ -342,6 +350,7 @@ lib/gimp/2.0/plug-ins/colorxhtml.py
 @bin lib/gimp/2.0/plug-ins/file-wmf
 @bin lib/gimp/2.0/plug-ins/file-xbm
 @bin lib/gimp/2.0/plug-ins/file-xjt
+@bin lib/gimp/2.0/plug-ins/file-xmc
 @bin lib/gimp/2.0/plug-ins/file-xpm
 @bin lib/gimp/2.0/plug-ins/file-xwd
 @bin lib/gimp/2.0/plug-ins/film
@@ -350,12 +359,11 @@ lib/gimp/2.0/plug-ins/colorxhtml.py
 lib/gimp/2.0/plug-ins/foggify.py
 @bin lib/gimp/2.0/plug-ins/fractal-explorer
 @bin lib/gimp/2.0/plug-ins/fractal-trace
-@bin lib/gimp/2.0/plug-ins/gee
-@bin lib/gimp/2.0/plug-ins/gee-zoom
 @bin lib/gimp/2.0/plug-ins/gfig
 @bin lib/gimp/2.0/plug-ins/gimpressionist
 @bin lib/gimp/2.0/plug-ins/gradient-flare
 @bin lib/gimp/2.0/plug-ins/gradient-map
+lib/gimp/2.0/plug-ins/gradients-save-as-css.py
 @bin lib/gimp/2.0/plug-ins/grid
 @bin lib/gimp/2.0/plug-ins/guillotine
 @bin lib/gimp/2.0/plug-ins/help
@@ -416,6 +424,7 @@ lib/gimp/2.0/plug-ins/python-eval.py
 @bin lib/gimp/2.0/plug-ins/softglow
 @bin lib/gimp/2.0/plug-ins/sparkle
 @bin lib/gimp/2.0/plug-ins/sphere-designer
+lib/gimp/2.0/plug-ins/text-brush.py
 @bin lib/gimp/2.0/plug-ins/threshold-alpha
 @bin lib/gimp/2.0/plug-ins/tile
 @bin lib/gimp/2.0/plug-ins/tile-glass
@@ -481,14 +490,12 @@ lib/libgimpwidgets-2.0.la
 lib/pkgconfig/gimp-2.0.pc
 lib/pkgconfig/gimpthumb-2.0.pc
 lib/pkgconfig/gimpui-2.0.pc
-@man man/man1/gimp-2.6.1
-@man man/man1/gimp-console-2.6.1
+@man man/man1/gimp-2.8.1
+@man man/man1/gimp-console-2.8.1
 @man man/man1/gimp-console.1
-@man man/man1/gimp-remote-2.6.1
-@man man/man1/gimp-remote.1
 @man man/man1/gimp.1
 @man man/man1/gimptool-2.0.1
-@man man/man5/gimprc-2.6.5
+@man man/man5/gimprc-2.8.5
 @man man/man5/gimprc.5
 share/aclocal/gimp-2.0.m4
 share/applications/gimp.desktop
@@ -503,8 +510,6 @@ share/examples/gimp/2.0/gtkrc
 @sample ${SYSCONFDIR}/gimp/2.0/gtkrc
 share/examples/gimp/2.0/menurc
 @sample ${SYSCONFDIR}/gimp/2.0/menurc
-share/examples/gimp/2.0/ps-menurc
-@sample ${SYSCONFDIR}/gimp/2.0/ps-menurc
 share/examples/gimp/2.0/sessionrc
 @sample ${SYSCONFDIR}/gimp/2.0/sessionrc
 share/examples/gimp/2.0/templaterc
@@ -514,52 +519,126 @@ share/examples/gimp/2.0/unitrc
 share/gimp/
 share/gimp/2.0/
 share/gimp/2.0/brushes/
-share/gimp/2.0/brushes/10x10square.gbr
-share/gimp/2.0/brushes/10x10squareBlur.gbr
-share/gimp/2.0/brushes/20x20square.gbr
-share/gimp/2.0/brushes/20x20squareBlur.gbr
-share/gimp/2.0/brushes/5x5square.gbr
-share/gimp/2.0/brushes/5x5squareBlur.gbr
-share/gimp/2.0/brushes/Calligraphic-Brush-0.vbr
-share/gimp/2.0/brushes/Calligraphic-Brush-1.vbr
-share/gimp/2.0/brushes/Calligraphic-Brush-2.vbr
-share/gimp/2.0/brushes/Calligraphic-Brush-3.vbr
-share/gimp/2.0/brushes/Circle-1.vbr
-share/gimp/2.0/brushes/Circle-11.vbr
-share/gimp/2.0/brushes/Circle-13.vbr
-share/gimp/2.0/brushes/Circle-15.vbr
-share/gimp/2.0/brushes/Circle-17.vbr
-share/gimp/2.0/brushes/Circle-19.vbr
-share/gimp/2.0/brushes/Circle-3.vbr
-share/gimp/2.0/brushes/Circle-5.vbr
-share/gimp/2.0/brushes/Circle-7.vbr
-share/gimp/2.0/brushes/Circle-9.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-11.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-13.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-15.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-17.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-19.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-3.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-5.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-7.vbr
-share/gimp/2.0/brushes/Circle-Fuzzy-9.vbr
-share/gimp/2.0/brushes/Diagonal-Star-11.vbr
-share/gimp/2.0/brushes/Diagonal-Star-17.vbr
-share/gimp/2.0/brushes/Diagonal-Star-25.vbr
-share/gimp/2.0/brushes/SketchBrush-16.gih
-share/gimp/2.0/brushes/SketchBrush-32.gih
-share/gimp/2.0/brushes/SketchBrush-64.gih
-share/gimp/2.0/brushes/confetti.gbr
-share/gimp/2.0/brushes/confetti.gih
-share/gimp/2.0/brushes/dunes.gbr
-share/gimp/2.0/brushes/feltpen.gih
-share/gimp/2.0/brushes/galaxy.gbr
-share/gimp/2.0/brushes/galaxy_big.gbr
-share/gimp/2.0/brushes/galaxy_small.gbr
-share/gimp/2.0/brushes/hsparks.gih
-share/gimp/2.0/brushes/pepper.gbr
-share/gimp/2.0/brushes/pixel.gbr
-share/gimp/2.0/brushes/vine.gih
+share/gimp/2.0/brushes/Basic/
+share/gimp/2.0/brushes/Basic/1-pixel.vbr
+share/gimp/2.0/brushes/Basic/Block-01.vbr
+share/gimp/2.0/brushes/Basic/Block-02.vbr
+share/gimp/2.0/brushes/Basic/Block-03.vbr
+share/gimp/2.0/brushes/Basic/Hardness-025.vbr
+share/gimp/2.0/brushes/Basic/Hardness-050.vbr
+share/gimp/2.0/brushes/Basic/Hardness-075.vbr
+share/gimp/2.0/brushes/Basic/Hardness-100.vbr
+share/gimp/2.0/brushes/Basic/Star.vbr
+share/gimp/2.0/brushes/Basic/pixel.gbr
+share/gimp/2.0/brushes/Legacy/
+share/gimp/2.0/brushes/Legacy/confetti.gbr
+share/gimp/2.0/brushes/Legacy/confetti.gih
+share/gimp/2.0/brushes/Legacy/dunes.gbr
+share/gimp/2.0/brushes/Legacy/galaxy-big.gbr
+share/gimp/2.0/brushes/Legacy/galaxy.gbr
+share/gimp/2.0/brushes/Legacy/pepper.gbr
+share/gimp/2.0/brushes/Legacy/vine.gih
+share/gimp/2.0/brushes/Media/
+share/gimp/2.0/brushes/Media/Acrylic-01.gih
+share/gimp/2.0/brushes/Media/Acrylic-02.gih
+share/gimp/2.0/brushes/Media/Acrylic-03.gih
+share/gimp/2.0/brushes/Media/Acrylic-04.gih
+share/gimp/2.0/brushes/Media/Acrylic-05.gih
+share/gimp/2.0/brushes/Media/Bristles-01.gbr
+share/gimp/2.0/brushes/Media/Bristles-02.gbr
+share/gimp/2.0/brushes/Media/Bristles-03.gbr
+share/gimp/2.0/brushes/Media/Oils-01.gbr
+share/gimp/2.0/brushes/Media/Oils-02.gbr
+share/gimp/2.0/brushes/Media/Oils-03.gbr
+share/gimp/2.0/brushes/Sketch/
+share/gimp/2.0/brushes/Sketch/Chalk-01.gih
+share/gimp/2.0/brushes/Sketch/Chalk-02.gih
+share/gimp/2.0/brushes/Sketch/Chalk-03.gih
+share/gimp/2.0/brushes/Sketch/Charcoal-01.gbr
+share/gimp/2.0/brushes/Sketch/Charcoal-02.gbr
+share/gimp/2.0/brushes/Sketch/Pencil-01.gih
+share/gimp/2.0/brushes/Sketch/Pencil-02.gih
+share/gimp/2.0/brushes/Sketch/Pencil-Scratch.gbr
+share/gimp/2.0/brushes/Splatters/
+share/gimp/2.0/brushes/Splatters/Sparks-Hose.gih
+share/gimp/2.0/brushes/Splatters/Splats-01.gih
+share/gimp/2.0/brushes/Splatters/Splats-02.gih
+share/gimp/2.0/brushes/Splatters/Sponge-01.gbr
+share/gimp/2.0/brushes/Splatters/Sponge-02.gbr
+share/gimp/2.0/brushes/Texture/
+share/gimp/2.0/brushes/Texture/Cell-01.gbr
+share/gimp/2.0/brushes/Texture/Cell-02.gbr
+share/gimp/2.0/brushes/Texture/Grass.gih
+share/gimp/2.0/brushes/Texture/Smoke.gbr
+share/gimp/2.0/brushes/Texture/Structure.gbr
+share/gimp/2.0/brushes/Texture/Texture-01.gbr
+share/gimp/2.0/brushes/Texture/Texture-02.gbr
+share/gimp/2.0/brushes/Texture/Texture-Hose-01.gih
+share/gimp/2.0/brushes/Texture/Texture-Hose-02.gih
+share/gimp/2.0/brushes/Texture/Texture-Hose-03.gih
+share/gimp/2.0/brushes/Texture/Vegetation-01.gbr
+share/gimp/2.0/brushes/Texture/Vegetation-02.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/
+share/gimp/2.0/brushes/gimp-obsolete-files/10x10square.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/10x10squareBlur.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/20x20square.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/20x20squareBlur.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/5x5square.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/5x5squareBlur.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Calligraphic-Brush-0.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Calligraphic-Brush-1.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Calligraphic-Brush-2.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Calligraphic-Brush-3.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-1.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-11.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-13.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-15.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-17.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-19.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-3.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-5.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-7.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-9.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-11.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-13.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-15.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-17.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-19.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-3.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-5.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-7.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Circle-Fuzzy-9.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Diagonal-Star-11.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Diagonal-Star-17.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Diagonal-Star-25.vbr
+share/gimp/2.0/brushes/gimp-obsolete-files/Grass1.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/SketchBrush-16.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/SketchBrush-32.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/SketchBrush-64.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/feltpen.gih
+share/gimp/2.0/brushes/gimp-obsolete-files/galaxy_small.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/pepper.gbr
+share/gimp/2.0/brushes/gimp-obsolete-files/pixel.gbr
+share/gimp/2.0/dynamics/
+share/gimp/2.0/dynamics/Basic/
+share/gimp/2.0/dynamics/Basic-Dynamics.gdyn
+share/gimp/2.0/dynamics/Basic/Basic-Simple.gdyn
+share/gimp/2.0/dynamics/Basic/Dynamics-Random.gdyn
+share/gimp/2.0/dynamics/Basic/Negative-Size-Pressure.gdyn
+share/gimp/2.0/dynamics/Basic/Pen-Generic.gdyn
+share/gimp/2.0/dynamics/Basic/Pencil-Generic.gdyn
+share/gimp/2.0/dynamics/Basic/Pencil-Shader.gdyn
+share/gimp/2.0/dynamics/Basic/Pressure-Opacity.gdyn
+share/gimp/2.0/dynamics/Dynamics-Off.gdyn
+share/gimp/2.0/dynamics/FX/
+share/gimp/2.0/dynamics/FX/Confetti.gdyn
+share/gimp/2.0/dynamics/FX/Perspective.gdyn
+share/gimp/2.0/dynamics/FX/Speed_Size_Opacity.gdyn
+share/gimp/2.0/dynamics/Fade-Tapering.gdyn
+share/gimp/2.0/dynamics/Random-Color.gdyn
+share/gimp/2.0/dynamics/Tilt-Angle.gdyn
+share/gimp/2.0/dynamics/Track-Direction.gdyn
+share/gimp/2.0/dynamics/Velocity-Tapering.gdyn
 share/gimp/2.0/fonts/
 share/gimp/2.0/fractalexplorer/
 share/gimp/2.0/fractalexplorer/Asteroid_Field
@@ -746,12 +825,8 @@ share/gimp/2.0/gradients/Flare_Rays_Radial_2.ggr
 share/gimp/2.0/gradients/Flare_Rays_Size_1.ggr
 share/gimp/2.0/gradients/Flare_Sizefac_101.ggr
 share/gimp/2.0/gradients/Four_bars.ggr
-share/gimp/2.0/gradients/French_flag.ggr
-share/gimp/2.0/gradients/French_flag_smooth.ggr
 share/gimp/2.0/gradients/Full_saturation_spectrum_CCW.ggr
 share/gimp/2.0/gradients/Full_saturation_spectrum_CW.ggr
-share/gimp/2.0/gradients/German_flag.ggr
-share/gimp/2.0/gradients/German_flag_smooth.ggr
 share/gimp/2.0/gradients/Golden.ggr
 share/gimp/2.0/gradients/Greens.ggr
 share/gimp/2.0/gradients/Horizon_1.ggr
@@ -760,8 +835,6 @@ share/gimp/2.0/gradients/Incandescent.ggr
 share/gimp/2.0/gradients/Land_1.ggr
 share/gimp/2.0/gradients/Land_and_Sea.ggr
 share/gimp/2.0/gradients/Metallic_Something.ggr
-share/gimp/2.0/gradients/Mexican_flag.ggr
-share/gimp/2.0/gradients/Mexican_flag_smooth.ggr
 share/gimp/2.0/gradients/Nauseating_Headache.ggr
 share/gimp/2.0/gradients/Neon_Cyan.ggr
 share/gimp/2.0/gradients/Neon_Green.ggr
@@ -774,8 +847,6 @@ share/gimp/2.0/gradients/Radial_Eyeball_Brown.ggr
 share/gimp/2.0/gradients/Radial_Eyeball_Green.ggr
 share/gimp/2.0/gradients/Radial_Glow_1.ggr
 share/gimp/2.0/gradients/Radial_Rainbow_Hoop.ggr
-share/gimp/2.0/gradients/Romanian_flag.ggr
-share/gimp/2.0/gradients/Romanian_flag_smooth.ggr
 share/gimp/2.0/gradients/Rounded_edge.ggr
 share/gimp/2.0/gradients/Shadows_1.ggr
 share/gimp/2.0/gradients/Shadows_2.ggr
@@ -791,6 +862,15 @@ share/gimp/2.0/gradients/Wood_1.ggr
 share/gimp/2.0/gradients/Wood_2.ggr
 share/gimp/2.0/gradients/Yellow_Contrast.ggr
 share/gimp/2.0/gradients/Yellow_Orange.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/
+share/gimp/2.0/gradients/gimp-obsolete-files/French_flag.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/French_flag_smooth.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/German_flag.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/German_flag_smooth.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/Mexican_flag.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/Mexican_flag_smooth.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/Romanian_flag.ggr
+share/gimp/2.0/gradients/gimp-obsolete-files/Romanian_flag_smooth.ggr
 share/gimp/2.0/images/
 share/gimp/2.0/images/gimp-logo.png
 share/gimp/2.0/images/gimp-splash.png
@@ -804,6 +884,8 @@ share/gimp/2.0/menus/colormap-menu.xml
 share/gimp/2.0/menus/cursor-info-menu.xml
 share/gimp/2.0/menus/dockable-menu.xml
 share/gimp/2.0/menus/documents-menu.xml
+share/gimp/2.0/menus/dynamics-editor-menu.xml
+share/gimp/2.0/menus/dynamics-menu.xml
 share/gimp/2.0/menus/error-console-menu.xml
 share/gimp/2.0/menus/fonts-menu.xml
 share/gimp/2.0/menus/gradient-editor-menu.xml
@@ -819,8 +901,10 @@ share/gimp/2.0/menus/sample-points-menu.xml
 share/gimp/2.0/menus/selection-menu.xml
 share/gimp/2.0/menus/templates-menu.xml
 share/gimp/2.0/menus/text-editor-toolbar.xml
+share/gimp/2.0/menus/text-tool-menu.xml
 share/gimp/2.0/menus/tool-options-menu.xml
-share/gimp/2.0/menus/tools-menu.xml
+share/gimp/2.0/menus/tool-preset-editor-menu.xml
+share/gimp/2.0/menus/tool-presets-menu.xml
 share/gimp/2.0/menus/undo-menu.xml
 share/gimp/2.0/menus/vectors-menu.xml
 share/gimp/2.0/palettes/
@@ -968,8 +1052,7 @@ share/gimp/2.0/scripts/flatland.scm
 share/gimp/2.0/scripts/font-map.scm
 share/gimp/2.0/scripts/frosty-logo.scm
 share/gimp/2.0/scripts/fuzzyborder.scm
-share/gimp/2.0/scripts/gimp-headers.scm
-share/gimp/2.0/scripts/gimp-labels.scm
+share/gimp/2.0/scripts/gimp-online.scm
 share/gimp/2.0/scripts/glossy.scm
 share/gimp/2.0/scripts/glowing-logo.scm
 share/gimp/2.0/scripts/gradient-bevel-logo.scm
@@ -993,6 +1076,7 @@ share/gimp/2.0/scripts/mkbrush.scm
 share/gimp/2.0/scripts/neon-logo.scm
 share/gimp/2.0/scripts/news-text.scm
 share/gimp/2.0/scripts/old-photo.scm
+share/gimp/2.0/scripts/palette-export.scm
 share/gimp/2.0/scripts/paste-as-brush.scm
 share/gimp/2.0/scripts/paste-as-pattern.scm
 share/gimp/2.0/scripts/perspective-shadow.scm
@@ -1028,8 +1112,9 @@ share/gimp/2.0/scripts/truchet.scm
 share/gimp/2.0/scripts/unsharp-mask.scm
 share/gimp/2.0/scripts/waves-anim.scm
 share/gimp/2.0/scripts/weave.scm
-share/gimp/2.0/scripts/web-browser.scm
 share/gimp/2.0/scripts/xach-effect.scm
+share/gimp/2.0/tags/
+share/gimp/2.0/tags/gimp-tags-default.xml
 share/gimp/2.0/themes/
 share/gimp/2.0/themes/Default/
 share/gimp/2.0/themes/Default/gtkrc
@@ -1049,6 +1134,8 @@ share/gimp/2.0/themes/Default/images/preferences/environment.png
 share/gimp/2.0/themes/Default/images/preferences/folders-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders-brushes-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders-brushes.png
+share/gimp/2.0/themes/Default/images/preferences/folders-dynamics-22.png
+share/gimp/2.0/themes/Default/images/preferences/folders-dynamics.png
 share/gimp/2.0/themes/Default/images/preferences/folders-environ-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders-environ.png
 share/gimp/2.0/themes/Default/images/preferences/folders-fonts-22.png
@@ -1071,6 +1158,8 @@ share/gimp/2.0/themes/Default/images/preferences/folders-themes-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders-themes.png
 share/gimp/2.0/themes/Default/images/preferences/folders-tool-plug-ins-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders-tool-plug-ins.png
+share/gimp/2.0/themes/Default/images/preferences/folders-tool-presets-22.png
+share/gimp/2.0/themes/Default/images/preferences/folders-tool-presets.png
 share/gimp/2.0/themes/Default/images/preferences/folders-tools-22.png
 share/gimp/2.0/themes/Default/images/preferences/folders.png
 share/gimp/2.0/themes/Default/images/preferences/help-system-22.png
@@ -1103,6 +1192,44 @@ share/gimp/2.0/themes/Small/
 share/gimp/2.0/themes/Small/gtkrc
 share/gimp/2.0/tips/
 share/gimp/2.0/tips/gimp-tips.xml
+share/gimp/2.0/tool-presets/
+share/gimp/2.0/tool-presets/FX/
+share/gimp/2.0/tool-presets/FX/Crop-16-9.gtp
+share/gimp/2.0/tool-presets/FX/Crop-Composition.gtp
+share/gimp/2.0/tool-presets/FX/FX-Confetti.gtp
+share/gimp/2.0/tool-presets/FX/FX-Radial-Softlight.gtp
+share/gimp/2.0/tool-presets/FX/Fill-Paper.gtp
+share/gimp/2.0/tool-presets/FX/Glow-Lights.gtp
+share/gimp/2.0/tool-presets/FX/Smooth-Clone.gtp
+share/gimp/2.0/tool-presets/FX/Vignette.gtp
+share/gimp/2.0/tool-presets/Paint/
+share/gimp/2.0/tool-presets/Paint/Airbrush.gtp
+share/gimp/2.0/tool-presets/Paint/Basic-Knife.gtp
+share/gimp/2.0/tool-presets/Paint/Basic-Round-Detail.gtp
+share/gimp/2.0/tool-presets/Paint/Basic-Round.gtp
+share/gimp/2.0/tool-presets/Paint/Bristles.gtp
+share/gimp/2.0/tool-presets/Paint/Eraser-Hard.gtp
+share/gimp/2.0/tool-presets/Paint/Noise.gtp
+share/gimp/2.0/tool-presets/Paint/Smudge-Rough.gtp
+share/gimp/2.0/tool-presets/Paint/Smudge-Soft.gtp
+share/gimp/2.0/tool-presets/Paint/Soft-Oil.gtp
+share/gimp/2.0/tool-presets/Paint/Splatters.gtp
+share/gimp/2.0/tool-presets/Paint/Structure.gtp
+share/gimp/2.0/tool-presets/Paint/Vegetal.gtp
+share/gimp/2.0/tool-presets/Selection/
+share/gimp/2.0/tool-presets/Selection/Circle-200px.gtp
+share/gimp/2.0/tool-presets/Selection/Feathered-Selection.gtp
+share/gimp/2.0/tool-presets/Sketch/
+share/gimp/2.0/tool-presets/Sketch/Blue-Pen.gtp
+share/gimp/2.0/tool-presets/Sketch/Eraser-Soft.gtp
+share/gimp/2.0/tool-presets/Sketch/Ink-Smooth.gtp
+share/gimp/2.0/tool-presets/Sketch/Ink-Thin.gtp
+share/gimp/2.0/tool-presets/Sketch/Pencil-Soft.gtp
+share/gimp/2.0/tool-presets/Sketch/Pencil.gtp
+share/gimp/2.0/ui/
+share/gimp/2.0/ui/plug-ins/
+share/gimp/2.0/ui/plug-ins/plug-in-file-gif.ui
+share/gimp/2.0/ui/plug-ins/plug-in-file-png.ui
 share/gtk-doc/html/libgimp/
 share/gtk-doc/html/libgimp/GimpAspectPreview.html
 share/gtk-doc/html/libgimp/GimpBrushSelectButton.html
@@ -1120,10 +1247,11 @@ share/gtk-doc/html/libgimp/home.png
 share/gtk-doc/html/libgimp/index.html
 share/gtk-doc/html/libgimp/index.sgml
 share/gtk-doc/html/libgimp/left.png
+share/gtk-doc/html/libgimp/libgimp-Gimp.html
 share/gtk-doc/html/libgimp/libgimp-GimpItemComboBox.html
+share/gtk-doc/html/libgimp/libgimp-GimpProcView.html
 share/gtk-doc/html/libgimp/libgimp-data.html
 share/gtk-doc/html/libgimp/libgimp-general.html
-share/gtk-doc/html/libgimp/libgimp-gimp.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrush.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrushes.html
 share/gtk-doc/html/libgimp/libgimp-gimpbrushmenu.html
@@ -1136,6 +1264,7 @@ share/gtk-doc/html/libgimp/libgimp-gimpconvert.html
 share/gtk-doc/html/libgimp/libgimp-gimpdisplay.html
 share/gtk-doc/html/libgimp/libgimp-gimpdrawable.html
 share/gtk-doc/html/libgimp/libgimp-gimpdrawabletransform.html
+share/gtk-doc/html/libgimp/libgimp-gimpdynamics.html
 share/gtk-doc/html/libgimp/libgimp-gimpedit.html
 share/gtk-doc/html/libgimp/libgimp-gimpenums.html
 share/gtk-doc/html/libgimp/libgimp-gimpexport.html
@@ -1153,9 +1282,13 @@ share/gtk-doc/html/libgimp/libgimp-gimpgrid.html
 share/gtk-doc/html/libgimp/libgimp-gimpguides.html
 share/gtk-doc/html/libgimp/libgimp-gimphelp.html
 share/gtk-doc/html/libgimp/libgimp-gimpimage.html
+share/gtk-doc/html/libgimp/libgimp-gimpimageselect.html
+share/gtk-doc/html/libgimp/libgimp-gimpitem.html
+share/gtk-doc/html/libgimp/libgimp-gimpitemtransform.html
 share/gtk-doc/html/libgimp/libgimp-gimplayer.html
 share/gtk-doc/html/libgimp/libgimp-gimpmenu.html
 share/gtk-doc/html/libgimp/libgimp-gimpmessage.html
+share/gtk-doc/html/libgimp/libgimp-gimppainttools.html
 share/gtk-doc/html/libgimp/libgimp-gimppalette.html
 share/gtk-doc/html/libgimp/libgimp-gimppalettemenu.html
 share/gtk-doc/html/libgimp/libgimp-gimppalettes.html
@@ -1170,14 +1303,14 @@ share/gtk-doc/html/libgimp/libgimp-gimppixelfetcher.html
 share/gtk-doc/html/libgimp/libgimp-gimppixelrgn.html
 share/gtk-doc/html/libgimp/libgimp-gimpplugin.html
 share/gtk-doc/html/libgimp/libgimp-gimpproceduraldb.html
-share/gtk-doc/html/libgimp/libgimp-gimpprocview.html
 share/gtk-doc/html/libgimp/libgimp-gimpprogress.html
 share/gtk-doc/html/libgimp/libgimp-gimpregioniterator.html
 share/gtk-doc/html/libgimp/libgimp-gimpselection.html
+share/gtk-doc/html/libgimp/libgimp-gimpselectiontools.html
 share/gtk-doc/html/libgimp/libgimp-gimptextlayer.html
 share/gtk-doc/html/libgimp/libgimp-gimptexttool.html
 share/gtk-doc/html/libgimp/libgimp-gimptile.html
-share/gtk-doc/html/libgimp/libgimp-gimptools.html
+share/gtk-doc/html/libgimp/libgimp-gimptransformtools.html
 share/gtk-doc/html/libgimp/libgimp-gimpui.html
 share/gtk-doc/html/libgimp/libgimp-gimpundo.html
 share/gtk-doc/html/libgimp/libgimp-gimpvectors.html
@@ -1186,6 +1319,7 @@ share/gtk-doc/html/libgimp/libgimp-index-deprecated.html
 share/gtk-doc/html/libgimp/libgimp-index-new-in-2-2.html
 share/gtk-doc/html/libgimp/libgimp-index-new-in-2-4.html
 share/gtk-doc/html/libgimp/libgimp-index-new-in-2-6.html
+share/gtk-doc/html/libgimp/libgimp-index-new-in-2-8.html
 share/gtk-doc/html/libgimp/libgimp-index.html
 share/gtk-doc/html/libgimp/libgimp-selectors.html
 share/gtk-doc/html/libgimp/libgimp.devhelp2
@@ -1220,6 +1354,7 @@ share/gtk-doc/html/libgimpbase/libgimpbase-index-deprecated.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-2.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-4.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-6.html
+share/gtk-doc/html/libgimpbase/libgimpbase-index-new-in-2-8.html
 share/gtk-doc/html/libgimpbase/libgimpbase-index.html
 share/gtk-doc/html/libgimpbase/libgimpbase.devhelp2
 share/gtk-doc/html/libgimpbase/libgimpbase.html
@@ -1234,6 +1369,7 @@ share/gtk-doc/html/libgimpcolor/left.png
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpAdaptiveSupersample.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpBilinear.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpCMYK.html
+share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpCairoColor.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorManaged.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpColorSpace.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-GimpHSV.html
@@ -1242,6 +1378,7 @@ share/gtk-doc/html/libgimpcolor/libgimpcolor-index-deprecated.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-2.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-4.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-6.html
+share/gtk-doc/html/libgimpcolor/libgimpcolor-index-new-in-2-8.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor-index.html
 share/gtk-doc/html/libgimpcolor/libgimpcolor.devhelp2
 share/gtk-doc/html/libgimpcolor/libgimpcolor.html
@@ -1254,19 +1391,20 @@ share/gtk-doc/html/libgimpconfig/home.png
 share/gtk-doc/html/libgimpconfig/index.html
 share/gtk-doc/html/libgimpconfig/index.sgml
 share/gtk-doc/html/libgimpconfig/left.png
+share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-deserialize.html
+share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-params.html
+share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-path.html
+share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-serialize.html
+share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig-utils.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfig.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfigError.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpConfigWriter.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-GimpScanner.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig-gimpconfig-deserialize.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig-gimpconfig-params.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig-gimpconfig-path.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig-gimpconfig-serialize.html
-share/gtk-doc/html/libgimpconfig/libgimpconfig-gimpconfig-utils.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-hierarchy.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index-deprecated.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-4.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-6.html
+share/gtk-doc/html/libgimpconfig/libgimpconfig-index-new-in-2-8.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig-index.html
 share/gtk-doc/html/libgimpconfig/libgimpconfig.devhelp2
 share/gtk-doc/html/libgimpconfig/libgimpconfig.html
@@ -1293,16 +1431,17 @@ share/gtk-doc/html/libgimpmath/right.png
 share/gtk-doc/html/libgimpmath/style.css
 share/gtk-doc/html/libgimpmath/up.png
 share/gtk-doc/html/libgimpmodule/
+share/gtk-doc/html/libgimpmodule/GimpModule.html
+share/gtk-doc/html/libgimpmodule/GimpModuleDB.html
 share/gtk-doc/html/libgimpmodule/home.png
 share/gtk-doc/html/libgimpmodule/index.html
 share/gtk-doc/html/libgimpmodule/index.sgml
 share/gtk-doc/html/libgimpmodule/left.png
-share/gtk-doc/html/libgimpmodule/libgimpmodule-gimpmodule.html
-share/gtk-doc/html/libgimpmodule/libgimpmodule-gimpmoduledb.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-deprecated.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-2.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-4.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-6.html
+share/gtk-doc/html/libgimpmodule/libgimpmodule-index-new-in-2-8.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule-index.html
 share/gtk-doc/html/libgimpmodule/libgimpmodule.devhelp2
 share/gtk-doc/html/libgimpmodule/libgimpmodule.html
@@ -1315,9 +1454,9 @@ share/gtk-doc/html/libgimpthumb/home.png
 share/gtk-doc/html/libgimpthumb/index.html
 share/gtk-doc/html/libgimpthumb/index.sgml
 share/gtk-doc/html/libgimpthumb/left.png
-share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-enums.html
-share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-error.html
-share/gtk-doc/html/libgimpthumb/libgimpthumb-gimpthumb-utils.html
+share/gtk-doc/html/libgimpthumb/libgimpthumb-GimpThumb-enums.html
+share/gtk-doc/html/libgimpthumb/libgimpthumb-GimpThumb-error.html
+share/gtk-doc/html/libgimpthumb/libgimpthumb-GimpThumb-utils.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index-deprecated.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-2.html
 share/gtk-doc/html/libgimpthumb/libgimpthumb-index-new-in-2-4.html
@@ -1369,7 +1508,9 @@ share/gtk-doc/html/libgimpwidgets/GimpRuler.html
 share/gtk-doc/html/libgimpwidgets/GimpScrolledPreview.html
 share/gtk-doc/html/libgimpwidgets/GimpSizeEntry.html
 share/gtk-doc/html/libgimpwidgets/GimpStringComboBox.html
+share/gtk-doc/html/libgimpwidgets/GimpUnitComboBox.html
 share/gtk-doc/html/libgimpwidgets/GimpUnitMenu.html
+share/gtk-doc/html/libgimpwidgets/GimpUnitStore.html
 share/gtk-doc/html/libgimpwidgets/GimpZoomModel.html
 share/gtk-doc/html/libgimpwidgets/gimp-browser.png
 share/gtk-doc/html/libgimpwidgets/gimp-button.png
@@ -1404,6 +1545,7 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpCairoUtils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpEnumWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHelpUI.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpHintBox.html
+share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpOldWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpPropWidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpQueryBox.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-GimpStock.html
@@ -1414,12 +1556,12 @@ share/gtk-doc/html/libgimpwidgets/libgimpwidgets-colorselector.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-controller.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-deprecated.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-gallery.html
-share/gtk-doc/html/libgimpwidgets/libgimpwidgets-gimpoldwidgets.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-hierarchy.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-deprecated.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-new-in-2-2.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-new-in-2-4.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-new-in-2-6.html
+share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index-new-in-2-8.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-index.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-utils.html
 share/gtk-doc/html/libgimpwidgets/libgimpwidgets-widgets.html
@@ -1503,6 +1645,8 @@ share/gtk-doc/html/libgimpwidgets/stock-display-filter-lcms-24.png
 share/gtk-doc/html/libgimpwidgets/stock-display-filter-proof-16.png
 share/gtk-doc/html/libgimpwidgets/stock-display-filter-proof-24.png
 share/gtk-doc/html/libgimpwidgets/stock-duplicate-16.png
+share/gtk-doc/html/libgimpwidgets/stock-dynamics-16.png
+share/gtk-doc/html/libgimpwidgets/stock-dynamics-22.png
 share/gtk-doc/html/libgimpwidgets/stock-edit-16.png
 share/gtk-doc/html/libgimpwidgets/stock-error-64.png
 share/gtk-doc/html/libgimpwidgets/stock-eye-12.png
@@ -1552,6 +1696,8 @@ share/gtk-doc/html/libgimpwidgets/stock-images-24.png
 share/gtk-doc/html/libgimpwidgets/stock-info-16.png
 share/gtk-doc/html/libgimpwidgets/stock-info-24.png
 share/gtk-doc/html/libgimpwidgets/stock-info-64.png
+share/gtk-doc/html/libgimpwidgets/stock-input-device-16.png
+share/gtk-doc/html/libgimpwidgets/stock-input-device-22.png
 share/gtk-doc/html/libgimpwidgets/stock-invert-16.png
 share/gtk-doc/html/libgimpwidgets/stock-join-bevel-16.png
 share/gtk-doc/html/libgimpwidgets/stock-join-miter-16.png
@@ -1646,6 +1792,8 @@ share/gtk-doc/html/libgimpwidgets/stock-tool-bucket-fill-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-bucket-fill-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-by-color-select-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-by-color-select-22.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-cage-16.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-cage-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-clone-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-clone-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-color-balance-16.png
@@ -1658,6 +1806,8 @@ share/gtk-doc/html/libgimpwidgets/stock-tool-crop-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-crop-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-curves-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-curves-22.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-desaturate-16.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-desaturate-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-dodge-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-dodge-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-ellipse-select-16.png
@@ -1700,6 +1850,8 @@ share/gtk-doc/html/libgimpwidgets/stock-tool-perspective-clone-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-perspective-clone-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-posterize-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-posterize-22.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-preset-16.png
+share/gtk-doc/html/libgimpwidgets/stock-tool-preset-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-rect-select-16.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-rect-select-22.png
 share/gtk-doc/html/libgimpwidgets/stock-tool-rotate-16.png
@@ -1746,10 +1898,9 @@ share/gtk-doc/html/libgimpwidgets/up.png
 share/icons/hicolor/16x16/apps/gimp.png
 share/icons/hicolor/22x22/apps/gimp.png
 share/icons/hicolor/24x24/apps/gimp.png
+share/icons/hicolor/256x256/apps/gimp.png
 share/icons/hicolor/32x32/apps/gimp.png
 share/icons/hicolor/48x48/apps/gimp.png
-share/icons/hicolor/64x64/apps/gimp.png
-share/icons/hicolor/scalable/apps/gimp.svg
 share/locale/am/LC_MESSAGES/gimp20.mo
 share/locale/ar/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ar/LC_MESSAGES/gimp20-python.mo
@@ -1757,9 +1908,6 @@ share/locale/ar/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ar/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ar/LC_MESSAGES/gimp20-tips.mo
 share/locale/ar/LC_MESSAGES/gimp20.mo
-share/locale/ast/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/ast/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/ast/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ast/LC_MESSAGES/gimp20.mo
 share/locale/az/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/az/LC_MESSAGES/gimp20-python.mo
@@ -1777,6 +1925,12 @@ share/locale/bg/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/bg/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/bg/LC_MESSAGES/gimp20-tips.mo
 share/locale/bg/LC_MESSAGES/gimp20.mo
+share/locale/br/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/br/LC_MESSAGES/gimp20-python.mo
+share/locale/br/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/br/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/br/LC_MESSAGES/gimp20-tips.mo
+share/locale/br/LC_MESSAGES/gimp20.mo
 share/locale/ca/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ca/LC_MESSAGES/gimp20-python.mo
 share/locale/ca/LC_MESSAGES/gimp20-script-fu.mo
@@ -1795,6 +1949,9 @@ share/locale/cs/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/cs/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/cs/LC_MESSAGES/gimp20-tips.mo
 share/locale/cs/LC_MESSAGES/gimp20.mo
+share/locale/csb/
+share/locale/csb/LC_MESSAGES/
+share/locale/csb/LC_MESSAGES/gimp20.mo
 share/locale/da/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/da/LC_MESSAGES/gimp20-python.mo
 share/locale/da/LC_MESSAGES/gimp20-script-fu.mo
@@ -1909,8 +2066,10 @@ share/locale/hu/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/hu/LC_MESSAGES/gimp20-tips.mo
 share/locale/hu/LC_MESSAGES/gimp20.mo
 share/locale/id/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/id/LC_MESSAGES/gimp20-python.mo
 share/locale/id/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/id/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/id/LC_MESSAGES/gimp20-tips.mo
 share/locale/id/LC_MESSAGES/gimp20.mo
 share/locale/is/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/is/LC_MESSAGES/gimp20-python.mo
@@ -1933,8 +2092,6 @@ share/locale/ja/LC_MESSAGES/gimp20.mo
 share/locale/ka/LC_MESSAGES/gimp20.mo
 share/locale/kk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/kk/LC_MESSAGES/gimp20.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/km/LC_MESSAGES/gimp20-python.mo
 share/locale/km/LC_MESSAGES/gimp20-script-fu.mo
@@ -1968,12 +2125,6 @@ share/locale/mk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/mk/LC_MESSAGES/gimp20-tips.mo
 share/locale/mk/LC_MESSAGES/gimp20.mo
 share/locale/ml/LC_MESSAGES/gimp20.mo
-share/locale/mr/LC_MESSAGES/gimp20-libgimp.mo
-share/locale/mr/LC_MESSAGES/gimp20-python.mo
-share/locale/mr/LC_MESSAGES/gimp20-script-fu.mo
-share/locale/mr/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/mr/LC_MESSAGES/gimp20-tips.mo
-share/locale/mr/LC_MESSAGES/gimp20.mo
 share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ms/LC_MESSAGES/gimp20-python.mo
 share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
@@ -2016,9 +2167,6 @@ share/locale/oc/LC_MESSAGES/gimp20-python.mo
 share/locale/oc/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/oc/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/oc/LC_MESSAGES/gimp20.mo
-share/locale/or/LC_MESSAGES/gimp20-python.mo
-share/locale/or/LC_MESSAGES/gimp20-std-plug-ins.mo
-share/locale/or/LC_MESSAGES/gimp20.mo
 share/locale/pa/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/pa/LC_MESSAGES/gimp20-python.mo
 share/locale/pa/LC_MESSAGES/gimp20-script-fu.mo
@@ -2092,7 +2240,15 @@ share/locale/sv/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sv/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/sv/LC_MESSAGES/gimp20-tips.mo
 share/locale/sv/LC_MESSAGES/gimp20.mo
+share/locale/ta/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/ta/LC_MESSAGES/gimp20-python.mo
+share/locale/ta/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/ta/LC_MESSAGES/gimp20-tips.mo
 share/locale/ta/LC_MESSAGES/gimp20.mo
+share/locale/te/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/te/LC_MESSAGES/gimp20-python.mo
+share/locale/te/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/te/LC_MESSAGES/gimp20.mo
 share/locale/th/LC_MESSAGES/gimp20.mo
 share/locale/tr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/tr/LC_MESSAGES/gimp20-python.mo
