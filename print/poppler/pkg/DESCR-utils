@@ -1,0 +1,14 @@
+This package contains xpdf-workalike command line utilities for getting
+information of PDF documents, convert them to other formats, or
+manipulate them:
+
+    * pdffonts -- font analyzer
+    * pdfimages -- image extractor
+    * pdfinfo -- document information extractor
+    * pdfseparate -- page extractor
+    * pdftocairo -- PDF to PNG/JPEG/PDF/PS/EPS/SVG converter using cairo
+    * pdftohtml -- PDF to HTML/XML/PNG converter
+    * pdftoppm -- PDF to PPM converter
+    * pdftops -- PDF to PostScript (PS) converter
+    * pdftotext -- PDF to text converter
+    * pdfunite -- PDF merging tool

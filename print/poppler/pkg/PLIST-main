@@ -1,18 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2012/03/27 06:31:05 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2012/06/06 18:27:34 ajacoutot Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
-%%GCC4%%
-@comment @bin bin/pdffonts
-@comment @bin bin/pdfimages
-@comment @bin bin/pdfinfo
-@bin bin/pdfseparate
-@bin bin/pdftocairo
-@bin bin/pdftohtml
-@comment @bin bin/pdftoppm
-@comment @bin bin/pdftops
-@comment @bin bin/pdftotext
-@bin bin/pdfunite
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
@@ -157,6 +146,8 @@ include/poppler/splash/SplashT1FontFile.h
 include/poppler/splash/SplashTypes.h
 include/poppler/splash/SplashXPath.h
 include/poppler/splash/SplashXPathScanner.h
+lib/girepository-1.0/
+lib/girepository-1.0/Poppler-0.18.typelib
 lib/libpoppler-cpp.a
 lib/libpoppler-cpp.la
 lib/libpoppler-glib.a
@@ -169,16 +160,8 @@ lib/pkgconfig/poppler-cpp.pc
 lib/pkgconfig/poppler-glib.pc
 lib/pkgconfig/poppler-splash.pc
 lib/pkgconfig/poppler.pc
-@comment @man man/man1/pdffonts.1
-@comment @man man/man1/pdfimages.1
-@comment @man man/man1/pdfinfo.1
-@man man/man1/pdfseparate.1
-@man man/man1/pdftocairo.1
-@man man/man1/pdftohtml.1
-@comment @man man/man1/pdftoppm.1
-@comment @man man/man1/pdftops.1
-@comment @man man/man1/pdftotext.1
-@man man/man1/pdfunite.1
+share/gir-1.0/
+share/gir-1.0/Poppler-0.18.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/poppler/

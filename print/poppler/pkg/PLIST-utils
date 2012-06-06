@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST-utils,v 1.1 2012/06/06 18:27:34 ajacoutot Exp $
+@conflict xpdf-utils-*
+@pkgpath textproc/xpdf,-utils
+@conflict poppler-<0.18.4p0
+@bin bin/pdffonts
+@bin bin/pdfimages
+@bin bin/pdfinfo
+@bin bin/pdfseparate
+@bin bin/pdftocairo
+@bin bin/pdftohtml
+@bin bin/pdftoppm
+@bin bin/pdftops
+@bin bin/pdftotext
+@bin bin/pdfunite
+@man man/man1/pdffonts.1
+@man man/man1/pdfimages.1
+@man man/man1/pdfinfo.1
+@man man/man1/pdfseparate.1
+@man man/man1/pdftocairo.1
+@man man/man1/pdftohtml.1
+@man man/man1/pdftoppm.1
+@man man/man1/pdftops.1
+@man man/man1/pdftotext.1
+@man man/man1/pdfunite.1

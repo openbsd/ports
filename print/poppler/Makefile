@@ -1,16 +1,22 @@
-# $OpenBSD: Makefile,v 1.61 2012/03/27 06:31:05 kili Exp $
+# $OpenBSD: Makefile,v 1.62 2012/06/06 18:27:34 ajacoutot Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
+COMMENT-utils=	PDF conversion tools and utilities
 
 V=		0.18.4
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-FULLPKGNAME-qt=	poppler-qt-$V
-FULLPKGNAME-qt4=poppler-qt4-$V
+PKGNAME-utils= poppler-utils-$V
+PKGNAME-qt=	poppler-qt-$V
+PKGNAME-qt4=	poppler-qt4-$V
 OLDSHIT = poppler-0.16.7
+
+REVISION-main=	0
+REVISION-qt=	0
+REVISION-qt4=	0
 
 SHARED_LIBS +=	poppler              11.0
 SHARED_LIBS +=  poppler-cpp          1.0
@@ -36,10 +42,9 @@ FLAVOR?=
 
 NOT_FOR_ARCHS-qt4 = arm
 
-MULTI_PACKAGES=-main -qt -qt4
+MULTI_PACKAGES=-main -qt -qt4 -utils
 
 .include <bsd.port.arch.mk>
-
 
 cWANTLIB=	expat freetype fontconfig jpeg m tiff z stdc++
 
@@ -49,29 +54,18 @@ MODULES+=	x11/qt3
 CONFIGURE_ARGS+=	--disable-poppler-qt
 .endif
 
-
 .if ${BUILD_PACKAGES:M-qt4}
 MODULES+=	x11/qt4
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
 
-# XXX g-ir-scanner failure with gcc3
-.if ${COMPILER_VERSION:L:Mgcc4*}
-PKG_ARGS+= 	-DGCC4=1
-BUILD_DEPENDS+=	devel/gobject-introspection
-CONFIGURE_ARGS+=--enable-introspection
-.else
-PKG_ARGS+=	-DGCC4=0
-CONFIGURE_ARGS+=--disable-introspection
-.endif
+MODULES+=	devel/gettext
 
-MODULES+=	devel/gettext converters/libiconv
+BUILD_DEPENDS+= devel/gobject-introspection
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
-		${MODLIBICONV_LIB_DEPENDS} \
 		devel/glib2 \
-		devel/libffi \
 		graphics/cairo \
 		graphics/lcms \
 		graphics/openjpeg \
@@ -79,31 +73,33 @@ LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		graphics/tiff
 
 LIB_DEPENDS-qt=	${MODQT3_LIB_DEPENDS} \
-		${MODLIBICONV_LIB_DEPENDS} \
-		print/poppler \
-		graphics/png \
-		graphics/tiff
-
-LIB_DEPENDS-qt4=x11/qt4 \
-		${MODGETTEXT_LIB_DEPENDS} \
 		print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xext Xfixes c ffi \
+LIB_DEPENDS-qt4=${MODQT4_LIB_DEPENDS} \
+		print/poppler
+
+LIB_DEPENDS-utils=${MODGETTEXT_LIB_DEPENDS} \
+		print/poppler
+
+WANTLIB-main=	${cWANTLIB} Xext Xfixes ffi \
 		glib-2.0 gobject-2.0 gthread-2.0 \
 		pixman-1 openjpeg \
 		X11 Xau Xdamage Xdmcp Xrender cairo pcre png \
-		pthread pthread-stubs xcb xcb-render lcms GL Xxf86vm \
+		pthread-stubs xcb xcb-render lcms GL Xxf86vm \
 		drm xcb-shm ${MODGETTEXT_WANTLIB}
-WANTLIB-qt=	${cWANTLIB} lcms openjpeg poppler png ${MODQT3_WANTLIB} \
-		${MODLIBICONV_WANTLIB}
-WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xext Xi \
-                Xinerama Xrender lcms \
-		openjpeg png poppler \
-		QtCore QtGui QtXml
+WANTLIB-qt=	${cWANTLIB} lcms openjpeg poppler png ${MODQT3_WANTLIB}
+WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 Xext Xi \
+                Xinerama Xrender lcms openjpeg png poppler QtCore QtGui QtXml
+WANTLIB-utils=	GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
+		c cairo drm expat ffi fontconfig freetype glib-2.0 \
+		gobject-2.0 gthread-2.0 jpeg lcms m pcre pixman-1 png \
+		pthread pthread-stubs stdc++ tiff xcb xcb-render xcb-shm \
+		openjpeg poppler z ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.68
-CONFIGURE_ARGS+= --enable-xpdf-headers \
+CONFIGURE_ARGS+= --disable-gtk-doc \
+		--enable-xpdf-headers \
 		--enable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib \
