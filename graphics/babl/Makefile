@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2011/12/10 09:12:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/06/06 07:55:14 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	dynamic pixel format conversion library
 
-V=		0.1.6
+API_VERSION=	0.1
+V=		${API_VERSION}.10
 DISTNAME=	babl-${V}
 CATEGORIES=	graphics devel
 
-SHARED_LIBS +=  babl-0.1             1.0      # 105.1
+SHARED_LIBS +=  babl-${API_VERSION}		1.0      # 105.1
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -28,18 +29,22 @@ WANTLIB=	m
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-BUILD_DEPENDS=	devel/gobject-introspection \
-		lang/vala
-
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+
+SUBST_VARS=	API_VERSION
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_path_W3M=no \
 		ac_cv_path_RSVG=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
 		--disable-static
+
+# XXX https://bugzilla.gnome.org/show_bug.cgi?id=673580
+#BUILD_DEPENDS += lang/vala \
+#		devel/gobject-introspection
+CONFIGURE_ARGS += --without-vala \
+		--disable-introspection
 
 # be safe until proven stable
 CONFIGURE_ARGS+= --enable-mmx \
