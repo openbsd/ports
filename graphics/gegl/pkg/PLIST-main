@@ -1,265 +1,291 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/12/28 09:31:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2012/06/06 07:58:57 giovanni Exp $
 @bin bin/gegl
-include/gegl-0.1/
-include/gegl-0.1/gegl-buffer-backend.h
-include/gegl-0.1/gegl-buffer-iterator.h
-include/gegl-0.1/gegl-buffer.h
-include/gegl-0.1/gegl-chant.h
-include/gegl-0.1/gegl-color.h
-include/gegl-0.1/gegl-curve.h
-include/gegl-0.1/gegl-enums.h
-include/gegl-0.1/gegl-lookup.h
-include/gegl-0.1/gegl-matrix.h
-include/gegl-0.1/gegl-paramspecs.h
-include/gegl-0.1/gegl-path.h
-include/gegl-0.1/gegl-plugin.h
-include/gegl-0.1/gegl-tile-backend.h
-include/gegl-0.1/gegl-tile-source.h
-include/gegl-0.1/gegl-tile.h
-include/gegl-0.1/gegl-types.h
-include/gegl-0.1/gegl-utils.h
-include/gegl-0.1/gegl-version.h
-include/gegl-0.1/gegl.h
-include/gegl-0.1/operation/
-include/gegl-0.1/operation/gegl-operation-area-filter.h
-include/gegl-0.1/operation/gegl-operation-composer.h
-include/gegl-0.1/operation/gegl-operation-composer3.h
-include/gegl-0.1/operation/gegl-operation-filter.h
-include/gegl-0.1/operation/gegl-operation-meta.h
-include/gegl-0.1/operation/gegl-operation-point-composer.h
-include/gegl-0.1/operation/gegl-operation-point-composer3.h
-include/gegl-0.1/operation/gegl-operation-point-filter.h
-include/gegl-0.1/operation/gegl-operation-point-render.h
-include/gegl-0.1/operation/gegl-operation-sink.h
-include/gegl-0.1/operation/gegl-operation-source.h
-include/gegl-0.1/operation/gegl-operation-temporal.h
-include/gegl-0.1/operation/gegl-operation.h
-lib/gegl-0.1/
-@comment lib/gegl-0.1/add.la
-lib/gegl-0.1/add.so
-@comment lib/gegl-0.1/affine.la
-lib/gegl-0.1/affine.so
-@comment lib/gegl-0.1/bilateral-filter.la
-lib/gegl-0.1/bilateral-filter.so
-@comment lib/gegl-0.1/box-blur.la
-lib/gegl-0.1/box-blur.so
-@comment lib/gegl-0.1/brightness-contrast.la
-lib/gegl-0.1/brightness-contrast.so
-@comment lib/gegl-0.1/buffer-sink.la
-lib/gegl-0.1/buffer-sink.so
-@comment lib/gegl-0.1/buffer-source.la
-lib/gegl-0.1/buffer-source.so
-@comment lib/gegl-0.1/c2g.la
-lib/gegl-0.1/c2g.so
-@comment lib/gegl-0.1/checkerboard.la
-lib/gegl-0.1/checkerboard.so
-@comment lib/gegl-0.1/clear.la
-lib/gegl-0.1/clear.so
-@comment lib/gegl-0.1/clone.la
-lib/gegl-0.1/clone.so
-@comment lib/gegl-0.1/color-burn.la
-lib/gegl-0.1/color-burn.so
-@comment lib/gegl-0.1/color-dodge.la
-lib/gegl-0.1/color-dodge.so
-@comment lib/gegl-0.1/color-temperature.la
-lib/gegl-0.1/color-temperature.so
-@comment lib/gegl-0.1/color.la
-lib/gegl-0.1/color.so
-@comment lib/gegl-0.1/contrast-curve.la
-lib/gegl-0.1/contrast-curve.so
-@comment lib/gegl-0.1/convert-format.la
-lib/gegl-0.1/convert-format.so
-@comment lib/gegl-0.1/crop.la
-lib/gegl-0.1/crop.so
-@comment lib/gegl-0.1/darken.la
-lib/gegl-0.1/darken.so
-@comment lib/gegl-0.1/difference-of-gaussians.la
-lib/gegl-0.1/difference-of-gaussians.so
-@comment lib/gegl-0.1/difference.la
-lib/gegl-0.1/difference.so
-@comment lib/gegl-0.1/display.la
-lib/gegl-0.1/display.so
-@comment lib/gegl-0.1/divide.la
-lib/gegl-0.1/divide.so
-@comment lib/gegl-0.1/dropshadow.la
-lib/gegl-0.1/dropshadow.so
-@comment lib/gegl-0.1/dst-atop.la
-lib/gegl-0.1/dst-atop.so
-@comment lib/gegl-0.1/dst-in.la
-lib/gegl-0.1/dst-in.so
-@comment lib/gegl-0.1/dst-out.la
-lib/gegl-0.1/dst-out.so
-@comment lib/gegl-0.1/dst-over.la
-lib/gegl-0.1/dst-over.so
-@comment lib/gegl-0.1/dst.la
-lib/gegl-0.1/dst.so
-@comment lib/gegl-0.1/edge-laplace.la
-lib/gegl-0.1/edge-laplace.so
-@comment lib/gegl-0.1/edge-sobel.la
-lib/gegl-0.1/edge-sobel.so
-@comment lib/gegl-0.1/exclusion.la
-lib/gegl-0.1/exclusion.so
-@comment lib/gegl-0.1/exp-combine.la
-lib/gegl-0.1/exp-combine.so
-@comment lib/gegl-0.1/fattal02.la
-lib/gegl-0.1/fattal02.so
-@comment lib/gegl-0.1/fractal-explorer.la
-lib/gegl-0.1/fractal-explorer.so
-@comment lib/gegl-0.1/gamma.la
-lib/gegl-0.1/gamma.so
-@comment lib/gegl-0.1/gaussian-blur.la
-lib/gegl-0.1/gaussian-blur.so
-@comment lib/gegl-0.1/gegl-buffer-load-op.la
-lib/gegl-0.1/gegl-buffer-load-op.so
-@comment lib/gegl-0.1/gegl-buffer-save-op.la
-lib/gegl-0.1/gegl-buffer-save-op.so
-@comment lib/gegl-0.1/grey.la
-lib/gegl-0.1/grey.so
-@comment lib/gegl-0.1/grid.la
-lib/gegl-0.1/grid.so
-@comment lib/gegl-0.1/hard-light.la
-lib/gegl-0.1/hard-light.so
-@comment lib/gegl-0.1/introspect.la
-lib/gegl-0.1/introspect.so
-@comment lib/gegl-0.1/invert.la
-lib/gegl-0.1/invert.so
-@comment lib/gegl-0.1/jp2-load.la
-lib/gegl-0.1/jp2-load.so
-@comment lib/gegl-0.1/jpg-load.la
-lib/gegl-0.1/jpg-load.so
-@comment lib/gegl-0.1/jpg-save.la
-lib/gegl-0.1/jpg-save.so
-@comment lib/gegl-0.1/layer.la
-lib/gegl-0.1/layer.so
-@comment lib/gegl-0.1/levels.la
-lib/gegl-0.1/levels.so
-@comment lib/gegl-0.1/lighten.la
-lib/gegl-0.1/lighten.so
-@comment lib/gegl-0.1/load.la
-lib/gegl-0.1/load.so
-@comment lib/gegl-0.1/magick-load.la
-lib/gegl-0.1/magick-load.so
-@comment lib/gegl-0.1/mantiuk06.la
-lib/gegl-0.1/mantiuk06.so
-@comment lib/gegl-0.1/map_absolute.la
-lib/gegl-0.1/map-absolute.so
-@comment lib/gegl-0.1/map-relative.la
-lib/gegl-0.1/map-relative.so
-@comment lib/gegl-0.1/mblur.la
-lib/gegl-0.1/mblur.so
-@comment lib/gegl-0.1/mirrors.la
-lib/gegl-0.1/mirrors.so
-@comment lib/gegl-0.1/mono-mixer.la
-lib/gegl-0.1/mono-mixer.so
-@comment lib/gegl-0.1/motion-blur.la
-lib/gegl-0.1/motion-blur.so
-@comment lib/gegl-0.1/multiply.la
-lib/gegl-0.1/multiply.so
-@comment lib/gegl-0.1/noise-reduction.la
-lib/gegl-0.1/noise-reduction.so
-@comment lib/gegl-0.1/noise.la
-lib/gegl-0.1/noise.so
-@comment lib/gegl-0.1/nop.la
-lib/gegl-0.1/nop.so
-@comment lib/gegl-0.1/opacity.la
-lib/gegl-0.1/opacity.so
-@comment lib/gegl-0.1/open-buffer.la
-lib/gegl-0.1/open-buffer.so
-@comment lib/gegl-0.1/over.la
-lib/gegl-0.1/over.so
-@comment lib/gegl-0.1/overlay.la
-lib/gegl-0.1/overlay.so
-@comment lib/gegl-0.1/path.la
-lib/gegl-0.1/path.so
-@comment lib/gegl-0.1/pixbuf.la
-lib/gegl-0.1/pixbuf.so
-@comment lib/gegl-0.1/pixelise.la
-lib/gegl-0.1/pixelise.so
-@comment lib/gegl-0.1/plus.la
-lib/gegl-0.1/plus.so
-@comment lib/gegl-0.1/png-load.la
-lib/gegl-0.1/png-load.so
-@comment lib/gegl-0.1/png-save.la
-lib/gegl-0.1/png-save.so
-@comment lib/gegl-0.1/ppm-load.la
-lib/gegl-0.1/ppm-load.so
-@comment lib/gegl-0.1/ppm-save.la
-lib/gegl-0.1/ppm-save.so
-@comment lib/gegl-0.1/raw-load.la
-lib/gegl-0.1/raw-load.so
-@comment lib/gegl-0.1/rectangle.la
-lib/gegl-0.1/rectangle.so
-@comment lib/gegl-0.1/reinhard05.la
-lib/gegl-0.1/reinhard05.so
-@comment lib/gegl-0.1/remap.la
-lib/gegl-0.1/remap.so
-@comment lib/gegl-0.1/rgbe-load.la
-lib/gegl-0.1/rgbe-load.so
-@comment lib/gegl-0.1/rgbe-save.la
-lib/gegl-0.1/rgbe-save.so
-@comment lib/gegl-0.1/save-pixbuf.la
-lib/gegl-0.1/save-pixbuf.so
-@comment lib/gegl-0.1/save.la
-lib/gegl-0.1/save.so
-@comment lib/gegl-0.1/screen.la
-lib/gegl-0.1/screen.so
-@comment lib/gegl-0.1/snn-mean.la
-lib/gegl-0.1/snn-mean.so
-@comment lib/gegl-0.1/soft-light.la
-lib/gegl-0.1/soft-light.so
-@comment lib/gegl-0.1/src-atop.la
-lib/gegl-0.1/src-atop.so
-@comment lib/gegl-0.1/src-in.la
-lib/gegl-0.1/src-in.so
-@comment lib/gegl-0.1/src-out.la
-lib/gegl-0.1/src-out.so
-@comment lib/gegl-0.1/src-over.la
-lib/gegl-0.1/src-over.so
-@comment lib/gegl-0.1/src.la
-lib/gegl-0.1/src.so
-@comment lib/gegl-0.1/stress.la
-lib/gegl-0.1/stress.so
-@comment lib/gegl-0.1/stretch-contrast.la
-lib/gegl-0.1/stretch-contrast.so
-@comment lib/gegl-0.1/subtract.la
-lib/gegl-0.1/subtract.so
-@comment lib/gegl-0.1/svg-huerotate.la
-lib/gegl-0.1/svg-huerotate.so
-@comment lib/gegl-0.1/svg-load.la
-lib/gegl-0.1/svg-load.so
-@comment lib/gegl-0.1/svg-luminancetoalpha.la
-lib/gegl-0.1/svg-luminancetoalpha.so
-@comment lib/gegl-0.1/svg-matrix.la
-lib/gegl-0.1/svg-matrix.so
-@comment lib/gegl-0.1/svg-multiply.la
-lib/gegl-0.1/svg-multiply.so
-@comment lib/gegl-0.1/svg-saturate.la
-lib/gegl-0.1/svg-saturate.so
-@comment lib/gegl-0.1/text.la
-lib/gegl-0.1/text.so
-@comment lib/gegl-0.1/threshold.la
-lib/gegl-0.1/threshold.so
-@comment lib/gegl-0.1/unsharp-mask.la
-lib/gegl-0.1/unsharp-mask.so
-@comment lib/gegl-0.1/value-invert.la
-lib/gegl-0.1/value-invert.so
-@comment lib/gegl-0.1/vector-fill.la
-lib/gegl-0.1/vector-fill.so
-@comment lib/gegl-0.1/vector-stroke.la
-lib/gegl-0.1/vector-stroke.so
-@comment lib/gegl-0.1/vignette.la
-lib/gegl-0.1/vignette.so
-@comment lib/gegl-0.1/weighted-blend.la
-lib/gegl-0.1/weighted-blend.so
-@comment lib/gegl-0.1/whitebalance.la
-lib/gegl-0.1/whitebalance.so
-@comment lib/gegl-0.1/write-buffer.la
-lib/gegl-0.1/write-buffer.so
-@comment lib/gegl-0.1/xor.la
-lib/gegl-0.1/xor.so
-lib/girepository-1.0/Gegl-0.1.typelib
-lib/libgegl-0.1.la
-@lib lib/libgegl-0.1.so.${LIBgegl-0.1_VERSION}
-lib/pkgconfig/gegl.pc
-share/gir-1.0/Gegl-0.1.gir
-share/vala/vapi/gegl-0.1.vapi
+include/gegl-${API_VERSION}/
+include/gegl-${API_VERSION}/gegl-buffer-backend.h
+include/gegl-${API_VERSION}/gegl-buffer-iterator.h
+include/gegl-${API_VERSION}/gegl-buffer.h
+include/gegl-${API_VERSION}/gegl-chant.h
+include/gegl-${API_VERSION}/gegl-color.h
+include/gegl-${API_VERSION}/gegl-curve.h
+include/gegl-${API_VERSION}/gegl-enums.h
+include/gegl-${API_VERSION}/gegl-lookup.h
+include/gegl-${API_VERSION}/gegl-matrix.h
+include/gegl-${API_VERSION}/gegl-paramspecs.h
+include/gegl-${API_VERSION}/gegl-path.h
+include/gegl-${API_VERSION}/gegl-plugin.h
+include/gegl-${API_VERSION}/gegl-tile-backend.h
+include/gegl-${API_VERSION}/gegl-tile-source.h
+include/gegl-${API_VERSION}/gegl-tile.h
+include/gegl-${API_VERSION}/gegl-types.h
+include/gegl-${API_VERSION}/gegl-utils.h
+include/gegl-${API_VERSION}/gegl-version.h
+include/gegl-${API_VERSION}/gegl.h
+include/gegl-${API_VERSION}/opencl/
+include/gegl-${API_VERSION}/opencl/cl.h
+include/gegl-${API_VERSION}/opencl/cl_d3d10.h
+include/gegl-${API_VERSION}/opencl/cl_ext.h
+include/gegl-${API_VERSION}/opencl/cl_gl.h
+include/gegl-${API_VERSION}/opencl/cl_gl_ext.h
+include/gegl-${API_VERSION}/opencl/cl_platform.h
+include/gegl-${API_VERSION}/opencl/gegl-cl-color.h
+include/gegl-${API_VERSION}/opencl/gegl-cl-init.h
+include/gegl-${API_VERSION}/opencl/gegl-cl-types.h
+include/gegl-${API_VERSION}/opencl/gegl-cl.h
+include/gegl-${API_VERSION}/opencl/opencl.h
+include/gegl-${API_VERSION}/operation/
+include/gegl-${API_VERSION}/operation/gegl-operation-area-filter.h
+include/gegl-${API_VERSION}/operation/gegl-operation-composer.h
+include/gegl-${API_VERSION}/operation/gegl-operation-composer3.h
+include/gegl-${API_VERSION}/operation/gegl-operation-filter.h
+include/gegl-${API_VERSION}/operation/gegl-operation-meta.h
+include/gegl-${API_VERSION}/operation/gegl-operation-point-composer.h
+include/gegl-${API_VERSION}/operation/gegl-operation-point-composer3.h
+include/gegl-${API_VERSION}/operation/gegl-operation-point-filter.h
+include/gegl-${API_VERSION}/operation/gegl-operation-point-render.h
+include/gegl-${API_VERSION}/operation/gegl-operation-sink.h
+include/gegl-${API_VERSION}/operation/gegl-operation-source.h
+include/gegl-${API_VERSION}/operation/gegl-operation-temporal.h
+include/gegl-${API_VERSION}/operation/gegl-operation.h
+lib/gegl-${API_VERSION}/
+@comment lib/gegl-0.2/add.la
+lib/gegl-${API_VERSION}/add.so
+@comment lib/gegl-0.2/bilateral-filter.la
+lib/gegl-${API_VERSION}/bilateral-filter.so
+@comment lib/gegl-0.2/box-blur.la
+lib/gegl-${API_VERSION}/box-blur.so
+@comment lib/gegl-0.2/brightness-contrast.la
+lib/gegl-${API_VERSION}/brightness-contrast.so
+@comment lib/gegl-0.2/buffer-sink.la
+lib/gegl-${API_VERSION}/buffer-sink.so
+@comment lib/gegl-0.2/buffer-source.la
+lib/gegl-${API_VERSION}/buffer-source.so
+@comment lib/gegl-0.2/c2g.la
+lib/gegl-${API_VERSION}/c2g.so
+@comment lib/gegl-0.2/checkerboard.la
+lib/gegl-${API_VERSION}/checkerboard.so
+@comment lib/gegl-0.2/clear.la
+lib/gegl-${API_VERSION}/clear.so
+@comment lib/gegl-0.2/clone.la
+lib/gegl-${API_VERSION}/clone.so
+@comment lib/gegl-0.2/color-burn.la
+lib/gegl-${API_VERSION}/color-burn.so
+@comment lib/gegl-0.2/color-dodge.la
+lib/gegl-${API_VERSION}/color-dodge.so
+@comment lib/gegl-0.2/color-temperature.la
+lib/gegl-${API_VERSION}/color-temperature.so
+@comment lib/gegl-0.2/color-to-alpha.la
+lib/gegl-${API_VERSION}/color-to-alpha.so
+@comment lib/gegl-0.2/color.la
+lib/gegl-${API_VERSION}/color.so
+@comment lib/gegl-0.2/contrast-curve.la
+lib/gegl-${API_VERSION}/contrast-curve.so
+@comment lib/gegl-0.2/convert-format.la
+lib/gegl-${API_VERSION}/convert-format.so
+@comment lib/gegl-0.2/crop.la
+lib/gegl-${API_VERSION}/crop.so
+@comment lib/gegl-0.2/darken.la
+lib/gegl-${API_VERSION}/darken.so
+@comment lib/gegl-0.2/difference-of-gaussians.la
+lib/gegl-${API_VERSION}/difference-of-gaussians.so
+@comment lib/gegl-0.2/difference.la
+lib/gegl-${API_VERSION}/difference.so
+@comment lib/gegl-0.2/display.la
+lib/gegl-${API_VERSION}/display.so
+@comment lib/gegl-0.2/divide.la
+lib/gegl-${API_VERSION}/divide.so
+@comment lib/gegl-0.2/dropshadow.la
+lib/gegl-${API_VERSION}/dropshadow.so
+@comment lib/gegl-0.2/dst-atop.la
+lib/gegl-${API_VERSION}/dst-atop.so
+@comment lib/gegl-0.2/dst-in.la
+lib/gegl-${API_VERSION}/dst-in.so
+@comment lib/gegl-0.2/dst-out.la
+lib/gegl-${API_VERSION}/dst-out.so
+@comment lib/gegl-0.2/dst-over.la
+lib/gegl-${API_VERSION}/dst-over.so
+@comment lib/gegl-0.2/dst.la
+lib/gegl-${API_VERSION}/dst.so
+@comment lib/gegl-0.2/edge-laplace.la
+lib/gegl-${API_VERSION}/edge-laplace.so
+@comment lib/gegl-0.2/edge-sobel.la
+lib/gegl-${API_VERSION}/edge-sobel.so
+@comment lib/gegl-0.2/exclusion.la
+lib/gegl-${API_VERSION}/exclusion.so
+@comment lib/gegl-0.2/exp-combine.la
+lib/gegl-${API_VERSION}/exp-combine.so
+@comment lib/gegl-0.2/fattal02.la
+lib/gegl-${API_VERSION}/fattal02.so
+@comment lib/gegl-0.2/fractal-explorer.la
+lib/gegl-${API_VERSION}/fractal-explorer.so
+@comment lib/gegl-0.2/gamma.la
+lib/gegl-${API_VERSION}/gamma.so
+@comment lib/gegl-0.2/gaussian-blur.la
+lib/gegl-${API_VERSION}/gaussian-blur.so
+@comment lib/gegl-0.2/gegl-buffer-load-op.la
+lib/gegl-${API_VERSION}/gegl-buffer-load-op.so
+@comment lib/gegl-0.2/gegl-buffer-save-op.la
+lib/gegl-${API_VERSION}/gegl-buffer-save-op.so
+@comment lib/gegl-0.2/grey.la
+lib/gegl-${API_VERSION}/grey.so
+@comment lib/gegl-0.2/grid.la
+lib/gegl-${API_VERSION}/grid.so
+@comment lib/gegl-0.2/hard-light.la
+lib/gegl-${API_VERSION}/hard-light.so
+@comment lib/gegl-0.2/introspect.la
+lib/gegl-${API_VERSION}/introspect.so
+@comment lib/gegl-0.2/invert.la
+lib/gegl-${API_VERSION}/invert.so
+@comment lib/gegl-0.2/jp2-load.la
+lib/gegl-${API_VERSION}/jp2-load.so
+@comment lib/gegl-0.2/jpg-load.la
+lib/gegl-${API_VERSION}/jpg-load.so
+@comment lib/gegl-0.2/jpg-save.la
+lib/gegl-${API_VERSION}/jpg-save.so
+@comment lib/gegl-0.2/layer.la
+lib/gegl-${API_VERSION}/layer.so
+@comment lib/gegl-0.2/lens-distortion.la
+lib/gegl-${API_VERSION}/lens-distortion.so
+@comment lib/gegl-0.2/levels.la
+lib/gegl-${API_VERSION}/levels.so
+@comment lib/gegl-0.2/lighten.la
+lib/gegl-${API_VERSION}/lighten.so
+@comment lib/gegl-0.2/load.la
+lib/gegl-${API_VERSION}/load.so
+@comment lib/gegl-0.2/magick-load.la
+lib/gegl-${API_VERSION}/magick-load.so
+@comment lib/gegl-0.2/mantiuk06.la
+lib/gegl-${API_VERSION}/mantiuk06.so
+@comment lib/gegl-0.2/map-absolute.la
+lib/gegl-${API_VERSION}/map-absolute.so
+@comment lib/gegl-0.2/map-relative.la
+lib/gegl-${API_VERSION}/map-relative.so
+@comment lib/gegl-0.2/matting-global.la
+lib/gegl-${API_VERSION}/matting-global.so
+@comment lib/gegl-0.2/mblur.la
+lib/gegl-${API_VERSION}/mblur.so
+@comment lib/gegl-0.2/mirrors.la
+lib/gegl-${API_VERSION}/mirrors.so
+@comment lib/gegl-0.2/mono-mixer.la
+lib/gegl-${API_VERSION}/mono-mixer.so
+@comment lib/gegl-0.2/motion-blur.la
+lib/gegl-${API_VERSION}/motion-blur.so
+@comment lib/gegl-0.2/multiply.la
+lib/gegl-${API_VERSION}/multiply.so
+@comment lib/gegl-0.2/noise-reduction.la
+lib/gegl-${API_VERSION}/noise-reduction.so
+@comment lib/gegl-0.2/noise.la
+lib/gegl-${API_VERSION}/noise.so
+@comment lib/gegl-0.2/nop.la
+lib/gegl-${API_VERSION}/nop.so
+@comment lib/gegl-0.2/opacity.la
+lib/gegl-${API_VERSION}/opacity.so
+@comment lib/gegl-0.2/open-buffer.la
+lib/gegl-${API_VERSION}/open-buffer.so
+@comment lib/gegl-0.2/over.la
+lib/gegl-${API_VERSION}/over.so
+@comment lib/gegl-0.2/overlay.la
+lib/gegl-${API_VERSION}/overlay.so
+@comment lib/gegl-0.2/path.la
+lib/gegl-${API_VERSION}/path.so
+@comment lib/gegl-0.2/pixbuf.la
+lib/gegl-${API_VERSION}/pixbuf.so
+@comment lib/gegl-0.2/pixelize.la
+lib/gegl-${API_VERSION}/pixelize.so
+@comment lib/gegl-0.2/plus.la
+lib/gegl-${API_VERSION}/plus.so
+@comment lib/gegl-0.2/png-load.la
+lib/gegl-${API_VERSION}/png-load.so
+@comment lib/gegl-0.2/png-save.la
+lib/gegl-${API_VERSION}/png-save.so
+@comment lib/gegl-0.2/polar-coordinates.la
+lib/gegl-${API_VERSION}/polar-coordinates.so
+@comment lib/gegl-0.2/posterize.la
+lib/gegl-${API_VERSION}/posterize.so
+@comment lib/gegl-0.2/ppm-load.la
+lib/gegl-${API_VERSION}/ppm-load.so
+@comment lib/gegl-0.2/ppm-save.la
+lib/gegl-${API_VERSION}/ppm-save.so
+@comment lib/gegl-0.2/raw-load.la
+lib/gegl-${API_VERSION}/raw-load.so
+@comment lib/gegl-0.2/rectangle.la
+lib/gegl-${API_VERSION}/rectangle.so
+@comment lib/gegl-0.2/reinhard05.la
+lib/gegl-${API_VERSION}/reinhard05.so
+@comment lib/gegl-0.2/remap.la
+lib/gegl-${API_VERSION}/remap.so
+@comment lib/gegl-0.2/rgbe-load.la
+lib/gegl-${API_VERSION}/rgbe-load.so
+@comment lib/gegl-0.2/rgbe-save.la
+lib/gegl-${API_VERSION}/rgbe-save.so
+@comment lib/gegl-0.2/ripple.la
+lib/gegl-${API_VERSION}/ripple.so
+@comment lib/gegl-0.2/save-pixbuf.la
+lib/gegl-${API_VERSION}/save-pixbuf.so
+@comment lib/gegl-0.2/save.la
+lib/gegl-${API_VERSION}/save.so
+@comment lib/gegl-0.2/screen.la
+lib/gegl-${API_VERSION}/screen.so
+@comment lib/gegl-0.2/snn-mean.la
+lib/gegl-${API_VERSION}/snn-mean.so
+@comment lib/gegl-0.2/soft-light.la
+lib/gegl-${API_VERSION}/soft-light.so
+@comment lib/gegl-0.2/src-atop.la
+lib/gegl-${API_VERSION}/src-atop.so
+@comment lib/gegl-0.2/src-in.la
+lib/gegl-${API_VERSION}/src-in.so
+@comment lib/gegl-0.2/src-out.la
+lib/gegl-${API_VERSION}/src-out.so
+@comment lib/gegl-0.2/src-over.la
+lib/gegl-${API_VERSION}/src-over.so
+@comment lib/gegl-0.2/src.la
+lib/gegl-${API_VERSION}/src.so
+@comment lib/gegl-0.2/stress.la
+lib/gegl-${API_VERSION}/stress.so
+@comment lib/gegl-0.2/stretch-contrast.la
+lib/gegl-${API_VERSION}/stretch-contrast.so
+@comment lib/gegl-0.2/subtract.la
+lib/gegl-${API_VERSION}/subtract.so
+@comment lib/gegl-0.2/svg-huerotate.la
+lib/gegl-${API_VERSION}/svg-huerotate.so
+@comment lib/gegl-0.2/svg-load.la
+lib/gegl-${API_VERSION}/svg-load.so
+@comment lib/gegl-0.2/svg-luminancetoalpha.la
+lib/gegl-${API_VERSION}/svg-luminancetoalpha.so
+@comment lib/gegl-0.2/svg-matrix.la
+lib/gegl-${API_VERSION}/svg-matrix.so
+@comment lib/gegl-0.2/svg-multiply.la
+lib/gegl-${API_VERSION}/svg-multiply.so
+@comment lib/gegl-0.2/svg-saturate.la
+lib/gegl-${API_VERSION}/svg-saturate.so
+@comment lib/gegl-0.2/text.la
+lib/gegl-${API_VERSION}/text.so
+@comment lib/gegl-0.2/threshold.la
+lib/gegl-${API_VERSION}/threshold.so
+@comment lib/gegl-0.2/transformops.la
+lib/gegl-${API_VERSION}/transformops.so
+@comment lib/gegl-0.2/unsharp-mask.la
+lib/gegl-${API_VERSION}/unsharp-mask.so
+@comment lib/gegl-0.2/value-invert.la
+lib/gegl-${API_VERSION}/value-invert.so
+@comment lib/gegl-0.2/vector-fill.la
+lib/gegl-${API_VERSION}/vector-fill.so
+@comment lib/gegl-0.2/vector-stroke.la
+lib/gegl-${API_VERSION}/vector-stroke.so
+@comment lib/gegl-0.2/vignette.la
+lib/gegl-${API_VERSION}/vignette.so
+@comment lib/gegl-0.2/waves.la
+lib/gegl-${API_VERSION}/waves.so
+@comment lib/gegl-0.2/weighted-blend.la
+lib/gegl-${API_VERSION}/weighted-blend.so
+@comment lib/gegl-0.2/write-buffer.la
+lib/gegl-${API_VERSION}/write-buffer.so
+@comment lib/gegl-0.2/xor.la
+lib/gegl-${API_VERSION}/xor.so
+lib/libgegl-${API_VERSION}.la
+@lib lib/libgegl-${API_VERSION}.so.${LIBgegl-0.2_VERSION}
+lib/pkgconfig/gegl-${API_VERSION}.pc
+share/locale/es/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/fr/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/pl/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/ru/LC_MESSAGES/gegl-${API_VERSION}.mo
+share/locale/sl/LC_MESSAGES/gegl-${API_VERSION}.mo
