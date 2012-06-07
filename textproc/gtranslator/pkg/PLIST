@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/05/06 09:43:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/06/07 12:58:39 ajacoutot Exp $
 @bin bin/gtranslator
 include/gtranslator-3.0/
 include/gtranslator-3.0/gtranslator/
@@ -6,6 +6,7 @@ include/gtranslator-3.0/gtranslator/gtr-application.h
 include/gtranslator-3.0/gtranslator/gtr-context.h
 include/gtranslator-3.0/gtranslator/gtr-debug.h
 include/gtranslator-3.0/gtranslator/gtr-header.h
+include/gtranslator-3.0/gtranslator/gtr-message-container.h
 include/gtranslator-3.0/gtranslator/gtr-message-table.h
 include/gtranslator-3.0/gtranslator/gtr-msg.h
 include/gtranslator-3.0/gtranslator/gtr-notebook.h
@@ -288,6 +289,10 @@ share/gtranslator/dtd/umtf.dtd
 share/gtranslator/gir-1.0/
 share/gtranslator/gir-1.0/Gtranslator-3.0.gir
 share/gtranslator/pixmaps/
+share/gtranslator/pixmaps/debian.png
+share/gtranslator/pixmaps/fedora.png
+share/gtranslator/pixmaps/gnome-dictionary.png
+share/gtranslator/pixmaps/gnome.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-next.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-prev.png
 share/gtranslator/pixmaps/gtranslator-fuzzy-untranslated-next.png
@@ -296,6 +301,14 @@ share/gtranslator/pixmaps/gtranslator-logo.png
 share/gtranslator/pixmaps/gtranslator-plugin.png
 share/gtranslator/pixmaps/gtranslator-untranslated-next.png
 share/gtranslator/pixmaps/gtranslator-untranslated-prev.png
+share/gtranslator/pixmaps/inkscape.png
+share/gtranslator/pixmaps/kde.ico
+share/gtranslator/pixmaps/mandriva.png
+share/gtranslator/pixmaps/mozilla.png
+share/gtranslator/pixmaps/oo-logo.png
+share/gtranslator/pixmaps/open-tran.png
+share/gtranslator/pixmaps/suse.png
+share/gtranslator/pixmaps/xfce.png
 share/gtranslator/ui/
 share/gtranslator/ui/gtr-plural-forms.ini
 share/gtranslator/ui/gtr-toolbar.xml
@@ -386,20 +399,6 @@ share/omf/gtranslator/gtranslator-sl.omf
 share/omf/gtranslator/gtranslator-th.omf
 share/omf/gtranslator/gtranslator-uk.omf
 share/omf/gtranslator/gtranslator-zh_CN.omf
-share/pixmaps/
-share/pixmaps/gtranslator/
-share/pixmaps/gtranslator/debian.png
-share/pixmaps/gtranslator/fedora.png
-share/pixmaps/gtranslator/gnome-dictionary.png
-share/pixmaps/gtranslator/gnome.png
-share/pixmaps/gtranslator/inkscape.png
-share/pixmaps/gtranslator/kde.ico
-share/pixmaps/gtranslator/mandriva.png
-share/pixmaps/gtranslator/mozilla.png
-share/pixmaps/gtranslator/oo-logo.png
-share/pixmaps/gtranslator/open-tran.png
-share/pixmaps/gtranslator/suse.png
-share/pixmaps/gtranslator/xfce.png
 @exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
