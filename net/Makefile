@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.752 2012/05/30 13:10:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.753 2012/06/07 10:30:16 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -512,7 +512,6 @@
      SUBDIR += scapy
      SUBDIR += scli
      SUBDIR += sendxmpp
-     SUBDIR += ser
      SUBDIR += sharity-light
      SUBDIR += si
      SUBDIR += silc-client
