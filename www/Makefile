@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.563 2012/06/02 21:15:59 fgsch Exp $
+# $OpenBSD: Makefile,v 1.564 2012/06/07 14:22:02 gonzalo Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -514,7 +514,7 @@
      SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += xmhtml
-     SUBDIR += xxxterm
+     SUBDIR += xombrero
      SUBDIR += yaws
      SUBDIR += youtube-dl
      SUBDIR += yui
