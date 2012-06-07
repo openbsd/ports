@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.42 2012/03/13 23:17:46 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2012/06/07 10:39:25 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -1020,7 +1020,6 @@ share/examples/asterisk/default/smdi.conf
 share/examples/asterisk/default/telcordia-1.adsi
 share/examples/asterisk/default/udptl.conf
 share/examples/asterisk/default/unistim.conf
-share/examples/asterisk/default/usbradio.conf
 share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
