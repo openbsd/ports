@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2012/06/07 10:19:25 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Pyglet
+======
+
+x11/py-pyglet is a soft dependency of SymPy. You should install it if you wish
+to pretty print formulae or plot graphs.
+
+Awesome WM
+==========
+
+x11/awesome seems to have a bug which is exposed by SymPy's plotting interface.
+If you plot a graph, and dismiss it with the escape key, X will crash next time
+you open a terminal.
