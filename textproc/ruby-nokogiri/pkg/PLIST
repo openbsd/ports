@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/27 18:17:09 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/07 15:35:58 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -6,12 +6,17 @@ ${GEM_LIB}/gems/${DISTNAME}/.autotest
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.ja.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
+${GEM_LIB}/gems/${DISTNAME}/C_CODING_STYLE.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.ja.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/ROADMAP.md
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/STANDARD_RESPONSES.md
+${GEM_LIB}/gems/${DISTNAME}/Y_U_NO_GEMSPEC.md
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/nokogiri
+${GEM_LIB}/gems/${DISTNAME}/build_all
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/Makefile
@@ -29,6 +34,9 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_entity_lookup.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_parser_context.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_parser_context.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_parser_context.o
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_push_parser.c
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_push_parser.h
+${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/html_sax_push_parser.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/nokogiri.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/nokogiri/nokogiri.h
@@ -144,6 +152,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/entity_lookup.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/parser_context.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/html/sax/push_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/nokogiri.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/version.rb
@@ -193,7 +202,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/xslt/stylesheet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/
 ${GEM_LIB}/gems/${DISTNAME}/lib/xsd/xmlparser/nokogiri.rb
-${GEM_LIB}/gems/${DISTNAME}/nokogiri_help_responses.md
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/cross_compile.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/nokogiri.org.rb
@@ -230,7 +238,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.dtd
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/staff.xslt
 ${GEM_LIB}/gems/${DISTNAME}/test/files/tlm.html
+${GEM_LIB}/gems/${DISTNAME}/test/files/to_be_xincluded.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/files/valid_bar.xml
+${GEM_LIB}/gems/${DISTNAME}/test/files/xinclude.xml
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/html/
 ${GEM_LIB}/gems/${DISTNAME}/test/html/sax/
@@ -263,6 +273,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/xml/sax/test_push_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_attr.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_attribute_decl.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_builder.rb
+${GEM_LIB}/gems/${DISTNAME}/test/xml/test_c14n.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_cdata.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_comment.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_document.rb
@@ -278,6 +289,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_namespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node_attributes.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node_encoding.rb
+${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node_inheritance.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node_reparenting.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_node_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_parse_options.rb
@@ -288,8 +300,10 @@ ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_schema.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_unparented_node.rb
+${GEM_LIB}/gems/${DISTNAME}/test/xml/test_xinclude.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_xpath.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/test_custom_functions.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xslt/test_exception_handling.rb
+${GEM_LIB}/gems/${DISTNAME}/test_all
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec

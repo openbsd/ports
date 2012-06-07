@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/07 15:35:58 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.5.0
-REVISION=	0
+DISTNAME=		nokogiri-1.5.3
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.rubyforge.org/nokogiri
@@ -28,6 +27,7 @@ CONFIGURE_STYLE=	ruby gem ext
 MODRUBY_REGRESS=	rake
 REGRESS_DEPENDS =	devel/ruby-rake-compiler,${MODRUBY_FLAVOR}>=0.7.9 \
 			devel/ruby-minitest,${MODRUBY_FLAVOR}>=2.2.2 \
-			devel/ruby-hoe,${MODRUBY_FLAVOR}>=2.8.0
+			devel/ruby-hoe,${MODRUBY_FLAVOR}>=2.8.0 \
+			devel/ruby-rdoc,${MODRUBY_FLAVOR}>=3.0.0
 
 .include <bsd.port.mk>

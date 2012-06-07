@@ -1,44 +1,34 @@
-$OpenBSD: patch-Rakefile,v 1.1 2011/07/27 18:17:09 jeremy Exp $
+$OpenBSD: patch-Rakefile,v 1.2 2012/06/07 15:35:58 jeremy Exp $
 
 Allow regress tests to work.
 
---- Rakefile.orig	Fri Jul  1 13:10:50 2011
-+++ Rakefile	Fri Jul  1 13:15:01 2011
-@@ -40,15 +40,6 @@ HOE = Hoe.spec 'nokogiri' do
+--- Rakefile.orig	Wed Dec 31 16:00:00 1969
++++ Rakefile	Fri Jun  1 14:17:42 2012
+@@ -37,18 +37,6 @@ HOE = Hoe.spec 'nokogiri' do
+     GENERATED_TOKENIZER
    ]
  
-   self.extra_dev_deps += [
--    ["racc",            ">= 1.4.6"],
--    ["rexical",         ">= 1.0.5"],
--    ["rake-compiler",   ">= 0.7.9"],
--    ["minitest",        "~> 2.2.2"],
+-  self.extra_dev_deps += [
+-    ["hoe-bundler",     ">= 1.1"],
+-    ["hoe-debugging",   ">= 1.0.3"],
+-    ["hoe-gemspec",     ">= 1.0"],
+-    ["hoe-git",         ">= 1.4"],
 -    ["mini_portile",    ">= 0.2.2"],
--    ["hoe-debugging",   ">= 0"],
--    ["hoe-git",         ">= 0"],
--    ["hoe-gemspec",     ">= 0"],
--    ["hoe-bundler",     ">= 0"]
-   ]
- 
+-    ["minitest",        "~> 2.2.2"],
+-    ["racc",            ">= 1.4.6"],
+-    ["rake-compiler",   "=  0.8.0"],
+-    ["rexical",         ">= 1.0.5"],
+-  ]
+-
    if java?
-@@ -83,7 +74,6 @@ if java?
-     HOE.spec.files += ['lib/nokogiri/nokogiri.jar']
-   end
+     self.spec_extras = { :platform => 'java' }
+   else
+@@ -83,7 +71,7 @@ if java?
  else
--  require 'tasks/cross_compile'
-   require "rake/extensiontask"
- 
-   HOE.spec.files.reject! { |f| f =~ %r{^ext/java|\.jar$} }
-@@ -91,13 +81,6 @@ else
-   Rake::ExtensionTask.new("nokogiri", HOE.spec) do |ext|
-     ext.lib_dir = File.join(*['lib', 'nokogiri', ENV['FAT_DIR']].compact)
-     ext.config_options << ENV['EXTOPTS']
--    ext.cross_compile  = true
--    ext.cross_platform = ["x86-mswin32-60", "x86-mingw32"]
--    ext.cross_config_options << "--with-xml2-include=#{File.join($recipes[:libxml2].path, 'include', 'libxml2')}"
--    ext.cross_config_options << "--with-xml2-lib=#{File.join($recipes[:libxml2].path, 'lib')}"
--    ext.cross_config_options << "--with-iconv-dir=#{$recipes[:libiconv].path}"
--    ext.cross_config_options << "--with-xslt-dir=#{$recipes[:libxslt].path}"
--    ext.cross_config_options << "--with-zlib-dir=#{CROSS_DIR}"
+   mingw_available = true
+   begin
+-    require 'tasks/cross_compile'
++    raise
+   rescue
+     mingw_available = false
    end
- end
- 
