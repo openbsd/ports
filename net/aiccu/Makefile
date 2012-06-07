@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/13 15:27:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2012/06/07 20:14:07 naddy Exp $
 
 COMMENT=	SixXS automatic IPv6 connectivity client utility
 
@@ -23,7 +23,6 @@ WANTLIB=	c pthread
 
 WRKDIST=	${WRKDIR}/aiccu
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MAKE_FLAGS=	CC='${CC}' RPM_OPT_FLAGS='${CFLAGS} ${DEFS}'
 DEFS=		-DAICCU_CACHE=\"/var/db/aiccu.cache\" \
 		-DAICCU_CONFIG=\"${SYSCONFDIR}/aiccu.conf\"
