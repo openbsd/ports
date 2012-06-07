@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2012/06/07 10:26:38 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -22,15 +22,15 @@ To add the webacula DB tables, run the following commands according to
 the RDBMS that bacula(8) uses. Note that prior to run these commands,
 you will have to ajust at least "db_name", "db_user", "db_pwd" and
 "webacula_root_pwd" in ${INSTDIR}/install/db.conf.
-Also note that the scripts can take arguments:
-    e.g. ./10_make_tables.sh -U postgres
+Also note that the scripts can take arguments and you must use the
+already available bacula user for connecting to the database.
 
 * change to the directory matching your DB (PostgreSql, MySql or SqLite)
     # cd ${INSTDIR}/install/PostgreSql
 
 * run the included scripts to create the webacula tables
-    # ./10_make_tables.sh
-    # ./20_acl_make_tables.sh
+    # ./10_make_tables.sh -U bacula
+    # ./20_acl_make_tables.sh -U bacula
 
 When using SQLite3, make sure that the "www" user|group has write access
 to the directory containing the DB as well as the DB file itself.
