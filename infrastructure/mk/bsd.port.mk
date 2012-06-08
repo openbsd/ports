@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1173 2012/06/08 15:17:02 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1174 2012/06/08 23:51:21 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1725,7 +1725,7 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp=${PERMIT_PACKAGE_FTP${_S}:L} permit_cdrom=${PERMIT_PACKAGE_CDROM${_S}:L} && \
+	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp="${PERMIT_PACKAGE_FTP${_S}:L}" permit_cdrom="${PERMIT_PACKAGE_CDROM${_S}:L}" && \
 	if deps=`SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
 			${MAKE} print-package-args` && \
 		${SUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
