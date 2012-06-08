@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1171 2012/05/28 09:54:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1172 2012/06/08 14:46:54 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1534,6 +1534,31 @@ _SIMPLE_LOCK = \
 _SIMPLE_LOCK ?= :
 _DO_LOCK ?= :
 
+CHECKSUM_PACKAGES ?= No
+_PACKAGE_CHECKSUM_DIR = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cksums
+
+_do_checksum_package = \
+	mkdir -p ${_PACKAGE_CHECKSUM_DIR} && \
+	cd ${_TMP_REPO} && \
+	cksum -b -a sha256 $$pkgname \
+		>${_PACKAGE_CHECKSUM_DIR}/`basename $$pkgname .tgz`.sha256
+
+.if ${CHECKSUM_PACKAGES:L} == "yes"
+_checksum_package = ${_do_checksum_package}
+.elif ${CHECKSUM_PACKAGES:L} == "ftp"
+_checksum_package = \
+	case $${permit_ftp} in yes) \
+		${_do_checksum_package};; \
+	esac
+.elif ${CHECKSUM_PACKAGE:L} == "cdrom"
+_checksum_package = \
+	case $${permit_cdrom} in yes) \
+		${_do_checksum_package};; \
+	esac
+.else
+_checksum_package = :
+.endif
+
 _size_fragment = wc -c $$file 2>/dev/null| \
 	awk '{print "SIZE (" $$2 ") = " $$1}'
 
@@ -1700,13 +1725,14 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
+	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} permit_ftp=${PERMIT_PACKAGE_FTP${_S}:L} permit_cdrom=${PERMIT_PACKAGE_CDROM${_S}:L} && \
 	if deps=`SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
 			${MAKE} print-package-args` && \
 		${SUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 			$$deps ${PKG_ARGS${_S}} $$tmp && \
 		${_check_lib_depends} $$tmp && \
 		${_register_plist} $$tmp && \
+		${_checksum_package} && \
 		mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
 		mode=`id -u`:`id -g` && \
 		${SUDO} chown $${mode} ${_PACKAGE_COOKIE${_S}}; then \
