@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/29 11:29:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/08 05:54:04 jasper Exp $
 lib/node_modules/daemon/
 lib/node_modules/daemon/.lock-wscript
 lib/node_modules/daemon/.npmignore
@@ -20,7 +20,7 @@ lib/node_modules/daemon/examples/wrapper.js
 lib/node_modules/daemon/install
 lib/node_modules/daemon/lib/
 lib/node_modules/daemon/lib/daemon.js
-@bin lib/node_modules/daemon/lib/daemon.v0.6.18.node
+@bin lib/node_modules/daemon/lib/daemon.node
 lib/node_modules/daemon/package.json
 lib/node_modules/daemon/src/
 lib/node_modules/daemon/src/daemon.cc
