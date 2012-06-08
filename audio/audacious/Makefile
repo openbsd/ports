@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2012/05/11 09:57:29 stsp Exp $
+# $OpenBSD: Makefile,v 1.35 2012/06/08 14:44:55 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		gtk+3 media player based on BMP and XMMS
 
-DISTNAME =		audacious-3.2.2
+DISTNAME =		audacious-3.2.3
 
 SHARED_LIBS =		audclient	2.1 	# 2.1
 SHARED_LIBS +=		audcore		1.1 	# 1.1
@@ -52,7 +52,7 @@ MAKE_ENV =		LIBaudclient_VERSION=${LIBaudclient_VERSION} \
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.69
 
 NO_REGRESS =	Yes
 
