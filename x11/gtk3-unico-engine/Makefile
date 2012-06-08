@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/01 09:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/06/08 14:58:05 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Unico GTK+3 engine
 V=		1.0.2
 DISTNAME=	unico-${V}
 PKGNAME=	gtk3-unico-engine-${V}
+REVISION=	0
 
 CATEGORIES=	x11
 

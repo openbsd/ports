@@ -1,0 +1,21 @@
+$OpenBSD: patch-unico_gtkroundedbox_c,v 1.1 2012/06/08 14:58:05 dcoppa Exp $
+
+Fix segfault in draw_background(GtkThemingEngine *engine, ...)
+
+--- unico/gtkroundedbox.c.orig	Thu Mar 29 16:26:20 2012
++++ unico/gtkroundedbox.c	Fri Jun  8 16:41:41 2012
+@@ -85,10 +85,10 @@ gtk_rounded_box_clamp_border_radius (GtkRoundedBox *bo
+ }
+ 
+ void
+-_gtk_rounded_box_apply_border_radius (GtkRoundedBox    *box,
+-                                      GtkThemingEngine *engine,
+-                                      GtkStateFlags     state,
+-                                      GtkJunctionSides  junction)
++_gtk_rounded_box_apply_border_radius_for_engine (GtkRoundedBox    *box,
++                                                 GtkThemingEngine *engine,
++                                                 GtkStateFlags     state,
++                                                 GtkJunctionSides  junction)
+ {
+   GtkCssBorderCornerRadius *corner[4];
+   guint i;
