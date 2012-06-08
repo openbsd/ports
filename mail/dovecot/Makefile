@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2012/06/08 22:04:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.189 2012/06/08 23:55:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -52,6 +52,7 @@ RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
 
+# Fails to find static library while linking as used for the Kerberos workaround
 USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gssapi \
