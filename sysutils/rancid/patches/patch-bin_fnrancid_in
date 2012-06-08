@@ -1,15 +1,15 @@
-$OpenBSD: patch-bin_fnrancid_in,v 1.4 2010/04/23 11:18:43 pea Exp $
---- bin/fnrancid.in.orig	Wed Mar 24 00:33:50 2010
-+++ bin/fnrancid.in	Fri Apr 16 10:34:08 2010
+$OpenBSD: patch-bin_fnrancid_in,v 1.5 2012/06/08 13:59:08 pea Exp $
+--- bin/fnrancid.in.orig	Wed Mar  9 18:19:15 2011
++++ bin/fnrancid.in	Tue May 29 13:19:25 2012
 @@ -172,6 +172,7 @@ sub GetSystem {
  
      while (<INPUT>) {
  	tr/\015//d;
 +	s/exit//gi ;
  	next if /^\s*$/;
- 	last if(/$prompt/);
- 	ProcessHistory("","","","$_");
-@@ -201,6 +202,15 @@ sub GetConf {
+ 	last if (/$prompt/);
+ 
+@@ -215,6 +216,15 @@ sub GetConf {
  	    next;
  	}
  	ProcessHistory("","","","$_");
@@ -25,69 +25,3 @@ $OpenBSD: patch-bin_fnrancid_in,v 1.4 2010/04/23 11:18:43 pea Exp $
      }
      $found_end = 1;
      return(1);
-@@ -212,7 +222,7 @@ sub DoNothing {print STDOUT;}
- # Main
- @commandtable = (
- 	{'get system status'	=> 'GetSystem'},
--	{'get conf'		=> 'GetConf'}
-+	{'show'		=> 'GetConf'}
- );
- # Use an array to preserve the order of the commands and a hash for mapping
- # commands to the subroutine and track commands that have been completed.
-@@ -241,13 +251,13 @@ if ($file) {
-     print STDOUT "opening file $host\n" if ($log);
-     open(INPUT,"<$host") || die "open failed for $host: $!\n";
- } else {
--    print STDERR "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
--    print STDOUT "executing nlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
-+    print STDERR "executing fnlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($debug);
-+    print STDOUT "executing fnlogin -t $timeo -c\"$cisco_cmds\" $host\n" if ($log);
-     if (defined($ENV{NOPIPE})) {
--	system "nlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null > $host.raw 2>&1" || die "nlogin failed for $host: $!\n";
--	open(INPUT, "< $host.raw") || die "nlogin failed for $host: $!\n";
-+	system "fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null > $host.raw 2>&1" || die "fnlogin failed for $host: $!\n";
-+	open(INPUT, "< $host.raw") || die "fnlogin failed for $host: $!\n";
-     } else {
--	open(INPUT,"nlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "nlogin failed for $host: $!\n";
-+	open(INPUT,"fnlogin -t $timeo -c \"$cisco_cmds\" $host </dev/null |") || die "fnlogin failed for $host: $!\n";
-     }
- }
- 
-@@ -275,13 +285,32 @@ ProcessHistory("","","","!RANCID-CONTENT-TYPE: fortiga
- TOP: while(<INPUT>) {
-     tr/\015//d;
-     if (/^Error:/) {
--	print STDOUT ("$host nlogin error: $_");
--	print STDERR ("$host nlogin error: $_") if ($debug);
-+	print STDOUT ("$host fnlogin error: $_");
-+	print STDERR ("$host fnlogin error: $_") if ($debug);
- 	last;
-     }
--    while (/>\s*($cmds_regexp)\s*$/) {
--	$cmd = $1;
--	if (!defined($prompt)) { $prompt = " >\s*"; }
-+    while (/^.+(#|\$)\s*($cmds_regexp)\s*$/) {
-+		$cmd = $2;
-+		# - FortiGate prompts end with either '#' or '$'. Further, they may
-+# be prepended with a '~' if the hostname is too long. Therefore, 
-+# we need to figure out what our prompt really is.
-+		if (!defined($prompt)) {
-+		    if ( $_ =~ m/^.+\~\$/ ) {
-+			$prompt = '\~\$ .*' ;
-+		    } else {
-+			if ( $_ =~ m/^.+\$/ ) {
-+			    $prompt = ' \$ .*' ;
-+			} else {
-+			    if ( $_ =~ m/^.+\~#/ ) {
-+				 $prompt = '\~# .*' ;
-+			     } else {
-+				 if ( $_ =~ m/^.+#/ ) {
-+				      $prompt = ' # .*' ;
-+				  }
-+			     }
-+			}
-+		    }
-+		}
- 	print STDERR ("HIT COMMAND:$_") if ($debug);
- 	if (!defined($commands{$cmd})) {
- 	    print STDERR "$host: found unexpected command - \"$cmd\"\n";

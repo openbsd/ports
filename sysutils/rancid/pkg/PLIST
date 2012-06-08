@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/08 08:24:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/08 13:59:08 pea Exp $
 @conflict par-*
 @newgroup _rancid:613
 @newuser _rancid:613:_rancid:daemon:Rancid user:/var/rancid:/bin/sh
@@ -35,6 +35,8 @@ bin/jrancid
 bin/mrancid
 bin/mrvlogin
 bin/mrvrancid
+bin/mtlogin
+bin/mtrancid
 bin/nlogin
 bin/nrancid
 bin/nslogin
@@ -55,6 +57,7 @@ bin/tntlogin
 bin/tntrancid
 bin/trancid
 bin/xrancid
+bin/xrrancid
 bin/zrancid
 @man man/man1/agmrancid.1
 @man man/man1/alogin.1
@@ -73,6 +76,7 @@ bin/zrancid
 @man man/man1/f10rancid.1
 @man man/man1/f5rancid.1
 @man man/man1/flogin.1
+@man man/man1/fnlogin.1
 @man man/man1/fnrancid.1
 @man man/man1/francid.1
 @man man/man1/hlogin.1
@@ -86,6 +90,8 @@ bin/zrancid
 @man man/man1/mrancid.1
 @man man/man1/mrvlogin.1
 @man man/man1/mrvrancid.1
+@man man/man1/mtlogin.1
+@man man/man1/mtrancid.1
 @man man/man1/nlogin.1
 @man man/man1/nrancid.1
 @man man/man1/nslogin.1
@@ -106,6 +112,7 @@ bin/zrancid
 @man man/man1/tntrancid.1
 @man man/man1/trancid.1
 @man man/man1/xrancid.1
+@man man/man1/xrrancid.1
 @man man/man1/zrancid.1
 @man man/man5/cloginrc.5
 @man man/man5/lg.conf.5
@@ -134,6 +141,7 @@ share/rancid/downreport
 share/rancid/getipacctg
 share/rancid/index.html
 share/rancid/lgnotes.html
+share/rancid/rancid-cvspurge
 share/rancid/rtrfilter
 @mode 755
 @owner _rancid
