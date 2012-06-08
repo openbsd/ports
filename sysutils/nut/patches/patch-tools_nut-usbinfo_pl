@@ -1,15 +1,15 @@
-$OpenBSD: patch-tools_nut-usbinfo_pl,v 1.1 2011/09/19 15:59:57 sthen Exp $
+$OpenBSD: patch-tools_nut-usbinfo_pl,v 1.2 2012/06/08 21:07:02 sthen Exp $
 
 skip backup copy of patched files
 
---- tools/nut-usbinfo.pl.orig	Mon Sep 19 09:32:58 2011
-+++ tools/nut-usbinfo.pl	Mon Sep 19 09:34:32 2011
-@@ -211,7 +211,7 @@ sub gen_usb_files
- 
+--- tools/nut-usbinfo.pl.orig	Mon May 14 13:15:38 2012
++++ tools/nut-usbinfo.pl	Fri Jun  8 10:56:20 2012
+@@ -216,7 +216,7 @@ sub gen_usb_files
  sub find_usbdevs
  {
--	return $File::Find::prune = 1 if $_ eq '.svn';
-+	return $File::Find::prune = 1 if $_ eq '.svn' or m/.*\.orig/;
+ 	# maybe there's an option to turn off all .* files, but anyway this is stupid
+-	return $File::Find::prune = 1 if ($_ eq '.svn') || ($_ =~ /^\.#/);
++	return $File::Find::prune = 1 if ($_ eq '.svn') || ($_ =~ /^\.#/) || (m/.*\.orig/);
  
  	my $nameFile=$_;
  	my $lastComment="";

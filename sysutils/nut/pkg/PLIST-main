@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/01/26 08:03:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2012/06/08 21:07:02 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -107,6 +107,7 @@ lib/libupsclient.la
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
 @man man/man8/nut-scanner.8
+@man man/man8/nut-recorder.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
