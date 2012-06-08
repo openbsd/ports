@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
---- doc/example-config/conf.d/10-mail.conf.orig	Thu Dec 30 10:42:54 2010
-+++ doc/example-config/conf.d/10-mail.conf	Tue Mar 22 15:11:14 2011
-@@ -132,8 +132,9 @@
+$OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.2 2012/06/08 22:04:10 sthen Exp $
+--- doc/example-config/conf.d/10-mail.conf.orig	Fri May  4 17:14:02 2012
++++ doc/example-config/conf.d/10-mail.conf	Sat May 12 22:47:31 2012
+@@ -129,8 +129,9 @@ namespace inbox {
  ##
  
  # Don't use mmap() at all. This is required if you store indexes to shared
@@ -13,7 +13,7 @@ $OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.1 2011/05/23 22:54:38
  
  # Rely on O_EXCL to work when creating dotlock files. NFS supports O_EXCL
  # since version 3, so this should be safe to use nowadays by default.
-@@ -197,10 +198,10 @@
+@@ -194,10 +195,10 @@ namespace inbox {
  
  # UNIX socket path to master authentication server to find users.
  # This is used by imap (for shared users) and lda.
@@ -26,7 +26,7 @@ $OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.1 2011/05/23 22:54:38
  
  # Space separated list of plugins to load for all services. Plugins specific to
  # IMAP, LDA, etc. are added to this list in their own .conf files.
-@@ -266,7 +267,7 @@
+@@ -277,7 +278,7 @@ namespace inbox {
  # locking methods as well. Some operating systems don't allow using some of
  # them simultaneously.
  #mbox_read_locks = fcntl

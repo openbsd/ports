@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-server,v 1.30 2012/05/17 07:48:15 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.31 2012/06/08 22:04:10 sthen Exp $
+@conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -12,7 +13,6 @@
 @pkgpath mail/dovecot,postgresql
 @pkgpath mail/dovecot,sqlite
 @pkgpath mail/dovecot,-sqlite
-@conflict dovecot-sqlite-*
 @ask-update dovecot-<2.0 You will need to change your conf
 @newgroup _dovecot:518
 @newgroup _dovenull:666
@@ -21,7 +21,7 @@
 @extraunexec rm -rf /var/dovecot/*
 @bin bin/doveadm
 @bin bin/doveconf
-@bin bin/dsync
+bin/dsync
 include/dovecot/
 include/dovecot/abspath.h
 include/dovecot/access-lookup.h
@@ -40,6 +40,7 @@ include/dovecot/auth-common.h
 include/dovecot/auth-master-connection.h
 include/dovecot/auth-master.h
 include/dovecot/auth-penalty.h
+include/dovecot/auth-postfix-connection.h
 include/dovecot/auth-request-handler.h
 include/dovecot/auth-request.h
 include/dovecot/auth-server-connection.h
@@ -87,6 +88,7 @@ include/dovecot/duplicate.h
 include/dovecot/eacces-error.h
 include/dovecot/env-util.h
 include/dovecot/execv-const.h
+include/dovecot/fail-mail-storage.h
 include/dovecot/failures.h
 include/dovecot/fd-close-on-exec.h
 include/dovecot/fd-set-nonblock.h
@@ -101,6 +103,7 @@ include/dovecot/fs-api-private.h
 include/dovecot/fs-api.h
 include/dovecot/fs-sis-common.h
 include/dovecot/fsync-mode.h
+include/dovecot/guid.h
 include/dovecot/hash-format.h
 include/dovecot/hash-method.h
 include/dovecot/hash.h
@@ -108,6 +111,7 @@ include/dovecot/hash2.h
 include/dovecot/hex-binary.h
 include/dovecot/hex-dec.h
 include/dovecot/hmac-md5.h
+include/dovecot/hmac-sha1.h
 include/dovecot/home-expand.h
 include/dovecot/hostpid.h
 include/dovecot/imap-arg.h
@@ -134,10 +138,19 @@ include/dovecot/imap-status.h
 include/dovecot/imap-sync.h
 include/dovecot/imap-utf7.h
 include/dovecot/imap-util.h
+include/dovecot/imapc-client-private.h
+include/dovecot/imapc-client.h
+include/dovecot/imapc-connection.h
+include/dovecot/imapc-list.h
+include/dovecot/imapc-mail.h
+include/dovecot/imapc-msgmap.h
+include/dovecot/imapc-settings.h
+include/dovecot/imapc-storage.h
+include/dovecot/imapc-sync.h
 include/dovecot/imem.h
 include/dovecot/index-attachment.h
 include/dovecot/index-mail.h
-include/dovecot/index-mailbox-list.h
+include/dovecot/index-search-private.h
 include/dovecot/index-search-result.h
 include/dovecot/index-sort-private.h
 include/dovecot/index-sort.h
@@ -145,11 +158,15 @@ include/dovecot/index-storage.h
 include/dovecot/index-sync-changes.h
 include/dovecot/index-sync-private.h
 include/dovecot/index-thread-private.h
-include/dovecot/ioloop-internal.h
 include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
+include/dovecot/ioloop-private.h
 include/dovecot/ioloop.h
-include/dovecot/iostream-internal.h
+include/dovecot/iostream-openssl.h
+include/dovecot/iostream-private.h
+include/dovecot/iostream-rawlog-private.h
+include/dovecot/iostream-rawlog.h
+include/dovecot/iostream-ssl.h
 include/dovecot/ipc-client.h
 include/dovecot/ipc-server.h
 include/dovecot/ipwd.h
@@ -159,9 +176,10 @@ include/dovecot/istream-concat.h
 include/dovecot/istream-crlf.h
 include/dovecot/istream-dot.h
 include/dovecot/istream-header-filter.h
-include/dovecot/istream-internal.h
-include/dovecot/istream-mail-stats.h
+include/dovecot/istream-mail.h
+include/dovecot/istream-private.h
 include/dovecot/istream-raw-mbox.h
+include/dovecot/istream-rawlog.h
 include/dovecot/istream-seekable.h
 include/dovecot/istream-tee.h
 include/dovecot/istream.h
@@ -206,10 +224,11 @@ include/dovecot/mail-transaction-log-private.h
 include/dovecot/mail-transaction-log-view-private.h
 include/dovecot/mail-transaction-log.h
 include/dovecot/mail-types.h
+include/dovecot/mail-user-hash.h
 include/dovecot/mail-user.h
+include/dovecot/mailbox-guid-cache.h
 include/dovecot/mailbox-list-delete.h
 include/dovecot/mailbox-list-fs.h
-include/dovecot/mailbox-list-index-private.h
 include/dovecot/mailbox-list-index.h
 include/dovecot/mailbox-list-maildir.h
 include/dovecot/mailbox-list-private.h
@@ -219,6 +238,7 @@ include/dovecot/mailbox-log.h
 include/dovecot/mailbox-search-result-private.h
 include/dovecot/mailbox-tree.h
 include/dovecot/mailbox-uidvalidity.h
+include/dovecot/maildir-filename-flags.h
 include/dovecot/maildir-filename.h
 include/dovecot/maildir-keywords.h
 include/dovecot/maildir-settings.h
@@ -226,6 +246,7 @@ include/dovecot/maildir-storage.h
 include/dovecot/maildir-sync.h
 include/dovecot/maildir-uidlist.h
 include/dovecot/master-auth.h
+include/dovecot/master-instance.h
 include/dovecot/master-interface.h
 include/dovecot/master-login-auth.h
 include/dovecot/master-login.h
@@ -269,6 +290,7 @@ include/dovecot/mkdir-parents.h
 include/dovecot/mmap-util.h
 include/dovecot/module-context.h
 include/dovecot/module-dir.h
+include/dovecot/mountpoint-list.h
 include/dovecot/mountpoint.h
 include/dovecot/mycrypt.h
 include/dovecot/network.h
@@ -276,10 +298,12 @@ include/dovecot/nfs-workarounds.h
 include/dovecot/notify-plugin-private.h
 include/dovecot/notify-plugin.h
 include/dovecot/ostream-cmp.h
-include/dovecot/ostream-internal.h
+include/dovecot/ostream-private.h
+include/dovecot/ostream-rawlog.h
 include/dovecot/ostream.h
 include/dovecot/passdb-blocking.h
 include/dovecot/passdb-cache.h
+include/dovecot/passdb-template.h
 include/dovecot/passdb.h
 include/dovecot/password-scheme.h
 include/dovecot/pop3-capability.h
@@ -287,6 +311,10 @@ include/dovecot/pop3-client.h
 include/dovecot/pop3-commands.h
 include/dovecot/pop3-common.h
 include/dovecot/pop3-settings.h
+include/dovecot/pop3c-client.h
+include/dovecot/pop3c-settings.h
+include/dovecot/pop3c-storage.h
+include/dovecot/pop3c-sync.h
 include/dovecot/primes.h
 include/dovecot/printf-format-fix.h
 include/dovecot/priorityq.h
@@ -335,7 +363,7 @@ include/dovecot/unix-socket-create.h
 include/dovecot/unlink-directory.h
 include/dovecot/unlink-old-files.h
 include/dovecot/userdb-blocking.h
-include/dovecot/userdb-static.h
+include/dovecot/userdb-template.h
 include/dovecot/userdb-vpopmail.h
 include/dovecot/userdb.h
 include/dovecot/utc-mktime.h
@@ -345,6 +373,7 @@ include/dovecot/wildcard-match.h
 include/dovecot/write-full.h
 lib/dovecot/
 lib/dovecot/auth/
+lib/dovecot/auth/libauthdb_imap.so
 lib/dovecot/auth/libdriver_sqlite.so
 lib/dovecot/dict/
 lib/dovecot/dict/libdriver_sqlite.so
@@ -353,10 +382,12 @@ lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
 lib/dovecot/doveadm/lib10_doveadm_zlib_plugin.so
+lib/dovecot/doveadm/lib20_doveadm_fts_plugin.so
 lib/dovecot/dovecot-config
 lib/dovecot/lib01_acl_plugin.so
 lib/dovecot/lib02_imap_acl_plugin.so
 lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_pop3_migration_plugin.so
 lib/dovecot/lib05_snarf_plugin.so
 lib/dovecot/lib10_quota_plugin.so
 lib/dovecot/lib11_imap_quota_plugin.so
@@ -367,21 +398,27 @@ lib/dovecot/lib20_expire_plugin.so
 lib/dovecot/lib20_fts_plugin.so
 lib/dovecot/lib20_listescape_plugin.so
 lib/dovecot/lib20_mail_log_plugin.so
+lib/dovecot/lib20_replication_plugin.so
 lib/dovecot/lib20_virtual_plugin.so
 lib/dovecot/lib20_zlib_plugin.so
 lib/dovecot/lib21_fts_squat_plugin.so
 lib/dovecot/lib30_imap_zlib_plugin.so
+lib/dovecot/lib90_stats_plugin.so
+lib/dovecot/lib95_imap_stats_plugin.so
 @lib lib/dovecot/libdovecot-lda.so.${LIBdovecot-lda_VERSION}
 @lib lib/dovecot/libdovecot-login.so.${LIBdovecot-login_VERSION}
 @lib lib/dovecot/libdovecot-sql.so.${LIBdovecot-sql_VERSION}
+@lib lib/dovecot/libdovecot-ssl.so.${LIBdovecot-ssl_VERSION}
 @lib lib/dovecot/libdovecot-storage.so.${LIBdovecot-storage_VERSION}
 @lib lib/dovecot/libdovecot.so.${LIBdovecot_VERSION}
 lib/dovecot/libdriver_sqlite.so
 libexec/dovecot/
+@bin libexec/dovecot/aggregator
 @bin libexec/dovecot/anvil
 @bin libexec/dovecot/auth
 @bin libexec/dovecot/checkpassword-reply
 @bin libexec/dovecot/config
+libexec/dovecot/decode2text.sh
 libexec/dovecot/deliver
 @bin libexec/dovecot/dict
 @bin libexec/dovecot/director
@@ -391,17 +428,21 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/gdbhelper
 @bin libexec/dovecot/imap
 @bin libexec/dovecot/imap-login
+@bin libexec/dovecot/indexer
+@bin libexec/dovecot/indexer-worker
 @bin libexec/dovecot/ipc
-@bin libexec/dovecot/listview
 @bin libexec/dovecot/lmtp
 @bin libexec/dovecot/log
 @bin libexec/dovecot/maildirlock
 @bin libexec/dovecot/pop3
 @bin libexec/dovecot/pop3-login
 @bin libexec/dovecot/rawlog
+@bin libexec/dovecot/replicator
 @bin libexec/dovecot/script
 @bin libexec/dovecot/script-login
 @bin libexec/dovecot/ssl-params
+@bin libexec/dovecot/stats
+@bin libexec/dovecot/xml2text
 @comment @man man/man1/deliver.1
 @man man/man1/doveadm-altmove.1
 @man man/man1/doveadm-auth.1
@@ -414,9 +455,11 @@ libexec/dovecot/deliver
 @man man/man1/doveadm-help.1
 @man man/man1/doveadm-import.1
 @man man/man1/doveadm-index.1
+@man man/man1/doveadm-instance.1
 @man man/man1/doveadm-kick.1
 @man man/man1/doveadm-log.1
 @man man/man1/doveadm-mailbox.1
+@man man/man1/doveadm-mount.1
 @man man/man1/doveadm-move.1
 @man man/man1/doveadm-penalty.1
 @man man/man1/doveadm-purge.1
@@ -438,7 +481,6 @@ sbin/dovecot-mkcert.sh
 share/aclocal/
 share/aclocal/dovecot.m4
 share/doc/dovecot/
-share/doc/dovecot/auth-protocol.txt
 share/doc/dovecot/documentation.txt
 @sample ${SYSCONFDIR}/dovecot/
 @sample ${SYSCONFDIR}/dovecot/conf.d/
@@ -514,6 +556,7 @@ share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.F5SLBTLSOffload.txt
 share/doc/dovecot/wiki/HowTo.ImapcProxy.txt
 share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
 share/doc/dovecot/wiki/HowTo.PopRelay.txt
@@ -678,6 +721,8 @@ share/examples/dovecot/example-config/conf.d/10-ssl.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/10-ssl.conf
 share/examples/dovecot/example-config/conf.d/15-lda.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/15-lda.conf
+share/examples/dovecot/example-config/conf.d/15-mailboxes.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/15-mailboxes.conf
 share/examples/dovecot/example-config/conf.d/20-imap.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/20-imap.conf
 share/examples/dovecot/example-config/conf.d/20-lmtp.conf

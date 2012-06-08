@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.187 2012/05/17 07:48:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.188 2012/06/08 22:04:10 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,10 @@ COMMENT-server=	compact IMAP/POP3 server
 COMMENT-ldap=	LDAP authentication support for Dovecot
 COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
 COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
-REVISION-server= 0
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
-V_MAJOR=	2.0
-V_DOVECOT=	2.0.20
+V_MAJOR=	2.1
+V_DOVECOT=	2.1.7
 
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
@@ -21,11 +20,12 @@ PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
-SHARED_LIBS=	dovecot-lda	0.0 \
-		dovecot-login	0.0 \
-		dovecot-sql	0.0 \
-		dovecot-storage	0.0 \
-		dovecot		0.0
+SHARED_LIBS=	dovecot-lda	1.0 \
+		dovecot-login	1.0 \
+		dovecot-sql	1.0 \
+		dovecot-ssl	0.0 \
+		dovecot-storage	1.0 \
+		dovecot		1.0
 
 HOMEPAGE=	http://www.dovecot.org/
 
@@ -39,7 +39,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-server=	asn1 bz2 c crypto gssapi krb5 sqlite3 ssl z \
 		${MODLIBICONV_WANTLIB}
-WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl
+WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber ldap sasl2 ssl
 WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
 WANTLIB-postgresql= com_err crypto pq>=4 ssl
 
@@ -52,7 +52,7 @@ RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
 LIB_DEPENDS-postgresql= databases/postgresql
 RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
 
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-gssapi \
 		--with-rundir=/var/dovecot \
@@ -61,6 +61,7 @@ CONFIGURE_ARGS=	--with-gssapi \
 		--with-statedir=/var/dovecot \
 		--without-pam \
 		--without-shadow \
+		--without-stemmer \
 		--without-vpopmail
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
