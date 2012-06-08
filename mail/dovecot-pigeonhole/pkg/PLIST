@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/06/10 13:48:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/06/08 22:05:03 sthen Exp $
 @conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
@@ -8,9 +8,11 @@
 @pkgpath mail/dovecot,-sieve,sqlite
 @pkgpath mail/dovecot,-sieve,ldap,mysql,postgresql,sqlite,bdb
 @bin bin/sieve-dump
+@bin bin/sieve-filter
 @bin bin/sieve-test
 @bin bin/sievec
 include/dovecot/sieve/
+include/dovecot/sieve/edit-mail.h
 include/dovecot/sieve/pigeonhole-config.h
 include/dovecot/sieve/rfc2822.h
 include/dovecot/sieve/sieve-actions.h
@@ -47,6 +49,7 @@ include/dovecot/sieve/sieve-plugins.h
 include/dovecot/sieve/sieve-result.h
 include/dovecot/sieve/sieve-runtime-trace.h
 include/dovecot/sieve/sieve-runtime.h
+include/dovecot/sieve/sieve-script-file.h
 include/dovecot/sieve/sieve-script-private.h
 include/dovecot/sieve/sieve-script.h
 include/dovecot/sieve/sieve-settings.h
@@ -63,6 +66,7 @@ lib/dovecot/settings/libmanagesieve_settings.so
 @bin libexec/dovecot/managesieve
 @bin libexec/dovecot/managesieve-login
 @man man/man1/sieve-dump.1
+@man man/man1/sieve-filter.1
 @man man/man1/sieve-test.1
 @man man/man1/sievec.1
 @man man/man1/sieved.1
@@ -74,5 +78,4 @@ share/doc/dovecot/example-config/conf.d/20-managesieve.conf
 share/doc/dovecot/example-config/conf.d/90-sieve.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
 share/doc/dovecot/sieve/
-share/doc/dovecot/sieve/spamtest-virustest.txt
-share/doc/dovecot/sieve/vacation.txt
+share/doc/dovecot/sieve/script-location-dict.txt
