@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/03 16:29:29 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/08 09:16:32 sthen Exp $
 bin/gns3
 lib/python${MODPY_VERSION}/site-packages/GNS3/
 lib/python${MODPY_VERSION}/site-packages/GNS3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AbstractDefaults.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AbstractDefaults.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AnyEmuDefaults.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AnyEmuDefaults.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AnyVBoxEmuDefaults.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/AnyVBoxEmuDefaults.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/IOSRouter1700Defaults.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/IOSRouter1700Defaults.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Defaults/IOSRouter2600Defaults.py
@@ -50,6 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/console.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/console.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynagen.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynagen.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynagen_vbox_lib.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynagen_vbox_lib.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynamips_lib.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/dynamips_lib.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Dynagen/qemu_lib.py
@@ -70,6 +74,8 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Globals/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Globals/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/HypervisorManager.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/HypervisorManager.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/IDLEPCDialog.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/IDLEPCDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/IOSDialog.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/IOSDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/
@@ -84,6 +90,7 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_en.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_es.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_fa.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_fr.qm
+lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_gr.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_it.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_jp.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_kr.qm
@@ -114,7 +121,6 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_pt.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_pt_br.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_ru.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_sk.qm
-lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_sl.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_sr.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_sv.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/qt_uk.qm
@@ -142,6 +148,8 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AbstractNode.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AbstractNode.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AnyEmuDevice.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AnyEmuDevice.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AnyVBoxEmuDevice.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Node/AnyVBoxEmuDevice.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/Cloud.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/Cloud.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Node/DecorativeNode.py
@@ -210,14 +218,16 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_ETHSWPa
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_ETHSWPage.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_FRSWPage.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_FRSWPage.pyc
-lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_FWPage.py
-lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_FWPage.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IDSPage.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IDSPage.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IOSDialog.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IOSDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IOSRouterPage.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_IOSRouterPage.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_JunOSPage.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_JunOSPage.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PIXPage.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PIXPage.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesCapture.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesDynamips.py
@@ -226,8 +236,12 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_Prefere
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesGeneral.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesQemu.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesQemu.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesVirtualBox.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_PreferencesVirtualBox.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_QemuPage.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_QemuPage.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_VirtualBoxPage.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Form_VirtualBoxPage.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_ASA.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_ASA.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_ATMBR.py
@@ -242,14 +256,14 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_ETHSW.p
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_ETHSW.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_FRSW.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_FRSW.pyc
-lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_FW.py
-lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_FW.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_IDS.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_IDS.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_IOSRouter.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_IOSRouter.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_JunOS.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_JunOS.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PIX.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PIX.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesCapture.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesDynamips.py
@@ -258,12 +272,18 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_Prefere
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesGeneral.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesQemu.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesQemu.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesVirtualBox.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_PreferencesVirtualBox.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_Qemu.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_Qemu.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_VirtualBox.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/Page_VirtualBox.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/ConfigurationPages/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_About.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_About.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_IDLEPCDialog.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_IDLEPCDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_IOSDialog.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_IOSDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_MACTableDialog.py
@@ -298,10 +318,16 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/svg_resources_rc.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/svg_resources_rc.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Uncompress.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Uncompress.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/UndoFramework.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/UndoFramework.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Utils.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Utils.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/VBoxManager.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/VBoxManager.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/WindowManipulator.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/WindowManipulator.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Wizard.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Wizard.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Workspace.py
@@ -310,3 +336,7 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/__init__.pyc
 libexec/gns3/
 libexec/gns3/qemuwrapper.py
+libexec/gns3/vboxcontroller_4_1.py
+libexec/gns3/vboxwrapper.py
+share/examples/gns3/
+share/examples/gns3/baseconfig.txt

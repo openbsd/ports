@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/12 11:04:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/06/08 09:16:32 sthen Exp $
 
 COMMENT=	graphical network simulator
 
-MODPY_EGG_VERSION=	0.7.3
-DISTNAME=		GNS3-${MODPY_EGG_VERSION}-src
-PKGNAME=		gns3-${MODPY_EGG_VERSION}
-REVISION=		2
+MODPY_EGG_VERSION = 0.8.2
+DISTNAME=	GNS3-${MODPY_EGG_VERSION}-src
+PKGNAME=	gns3-${MODPY_EGG_VERSION}
 
 CATEGORIES=	emulators
 
 HOMEPAGE=	http://www.gns3.net/
-
-MAINTAINER=	Jonathan Armani <armani@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
