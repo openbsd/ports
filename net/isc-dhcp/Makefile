@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/01/14 12:43:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/06/08 14:12:57 jasper Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -33,6 +33,7 @@ WANTLIB=		c
 MULTI_PACKAGES=		-main -omapi -client
 
 USE_GROFF=		Yes
+USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	--enable-early-chroot \
 			--enable-paranoia \
