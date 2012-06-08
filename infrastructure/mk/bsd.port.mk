@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1172 2012/06/08 14:46:54 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1173 2012/06/08 15:17:02 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1550,7 +1550,7 @@ _checksum_package = \
 	case $${permit_ftp} in yes) \
 		${_do_checksum_package};; \
 	esac
-.elif ${CHECKSUM_PACKAGE:L} == "cdrom"
+.elif ${CHECKSUM_PACKAGES:L} == "cdrom"
 _checksum_package = \
 	case $${permit_cdrom} in yes) \
 		${_do_checksum_package};; \
