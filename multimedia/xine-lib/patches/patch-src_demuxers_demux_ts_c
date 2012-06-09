@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.4 2012/04/07 05:48:49 ajacoutot Exp $
+$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.5 2012/06/09 08:41:16 ajacoutot Exp $
 
 Lots of fixes for the MPEG Transport Stream demuxer.
 
---- src/demuxers/demux_ts.c.orig	Fri Feb 17 22:58:57 2012
-+++ src/demuxers/demux_ts.c	Fri Feb 17 22:59:04 2012
+--- src/demuxers/demux_ts.c.orig	Sat Dec 31 17:57:41 2011
++++ src/demuxers/demux_ts.c	Fri Jun  8 23:41:41 2012
 @@ -182,8 +182,6 @@
  
  #define BUF_SIZE (NPKT_PER_READ * (PKT_SIZE + 4))
@@ -13,7 +13,7 @@ Lots of fixes for the MPEG Transport Stream demuxer.
  #define CORRUPT_PES_THRESHOLD 10
  
  #define NULL_PID 0x1fff
-@@ -250,6 +248,10 @@
+@@ -250,9 +248,13 @@
        HDMV_SPU_INTERACTIVE = 0x91,
        HDMV_SPU_TEXT        = 0x92,
  
@@ -23,7 +23,11 @@ Lots of fixes for the MPEG Transport Stream demuxer.
 +
      } streamType;
  
- #define WRAP_THRESHOLD       270000
+-#define WRAP_THRESHOLD       270000
++#define WRAP_THRESHOLD       360000
+ 
+ #define PTS_AUDIO 0
+ #define PTS_VIDEO 1
 @@ -285,13 +287,14 @@
  typedef struct {
    unsigned int     pid;

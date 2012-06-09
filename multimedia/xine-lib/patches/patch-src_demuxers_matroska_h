@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_demuxers_matroska_h,v 1.6 2012/06/09 08:41:16 ajacoutot Exp $
+--- src/demuxers/matroska.h.orig	Fri Jun  8 22:48:51 2012
++++ src/demuxers/matroska.h	Fri Jun  8 22:49:18 2012
+@@ -334,6 +334,7 @@ struct matroska_track_s {
+ #define MATROSKA_CODEC_ID_A_REAL_SIPR    "A_REAL/SIPR"
+ #define MATROSKA_CODEC_ID_A_REAL_RALF    "A_REAL/RALF"
+ #define MATROSKA_CODEC_ID_A_REAL_ATRC    "A_REAL/ATRC"
++#define MATROSKA_CODEC_ID_A_FLAC         "A_FLAC"
+ 
+ #define MATROSKA_CODEC_ID_S_TEXT_UTF8    "S_TEXT/UTF8"
+ #define MATROSKA_CODEC_ID_S_TEXT_SSA     "S_TEXT/SSA"

@@ -1,80 +1,213 @@
-$OpenBSD: patch-src_video_out_yuv2rgb_mmx_c,v 1.1 2012/04/28 09:14:33 ajacoutot Exp $
+$OpenBSD: patch-src_video_out_yuv2rgb_mmx_c,v 1.2 2012/06/09 08:41:16 ajacoutot Exp $
 
 Improve mmx_yuv2rgb().
 
---- src/video_out/yuv2rgb_mmx.c.orig	Thu Apr 26 15:49:26 2012
-+++ src/video_out/yuv2rgb_mmx.c	Thu Apr 26 15:55:18 2012
-@@ -112,6 +112,7 @@ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t 
- {
-     static mmx_t mmx_80w = {0x0080008000800080ULL};
-     static mmx_t mmx_00ffw = {0x00ff00ff00ff00ffULL};
-+    static mmx_t mmx_0002w = {0x0002000200020002ULL};
+--- src/video_out/yuv2rgb_mmx.c.orig	Tue Mar  9 17:17:05 2010
++++ src/video_out/yuv2rgb_mmx.c	Fri Jun  8 23:53:28 2012
+@@ -50,7 +50,8 @@ do {				\
+ typedef struct mmx_csc_s mmx_csc_t;
  
+ struct mmx_csc_s {
+-  mmx_t subYw;
++  mmx_t x00ffw;
++  mmx_t x0080w;
+   mmx_t addYw;
+   mmx_t U_green;
+   mmx_t U_blue;
+@@ -64,30 +65,24 @@ extern const int32_t Inverse_Table_6_9[8][4];
+ void mmx_yuv2rgb_set_csc_levels(yuv2rgb_factory_t *this,
+ 				int brightness, int contrast, int saturation)
+ {
+-  int a,s,i;
+   int crv, cbu, cgu, cgv, cty;
+   mmx_csc_t *csc;
++  int i;
+ 
++  int yoffset = -16;
++  int ygain = ((1 << 16) * 255) / 219;
++
+   /* 'table_mmx' is 64bit aligned for better performance */
+   if (this->table_mmx == NULL) {
+     this->table_mmx = xine_xmalloc_aligned (8, sizeof(mmx_csc_t), &this->table_mmx_base);
+   }
+ 
+-  if( brightness <= 16 ) {
+-    a = 0;
+-    s = 16 - brightness;
+-  } else {
+-    a = brightness - 16;
+-    s = 0;
+-  }
++  yoffset += brightness;
++  /* TV set behaviour: contrast affects color difference as well */
++  saturation = (contrast * saturation + 64) >> 7;
+ 
+   csc = (mmx_csc_t *) this->table_mmx;
+ 
+-  for( i = 0; i < 8; i++ ) {
+-    csc->subYw.ub[i] = s;
+-    csc->addYw.ub[i] = a;
+-  }
+-
+   crv = Inverse_Table_6_9[this->matrix_coefficients][0];
+   crv = (crv * saturation + 512) / 1024;
+   cbu = Inverse_Table_6_9[this->matrix_coefficients][1];
+@@ -97,114 +92,105 @@ void mmx_yuv2rgb_set_csc_levels(yuv2rgb_factory_t *thi
+   cgu = (cgu * saturation + 512) / 1024;
+   cgv = Inverse_Table_6_9[this->matrix_coefficients][3];
+   cgv = (cgv * saturation + 512) / 1024;
+-  cty = (76309 * contrast + 512) / 1024;
++  cty = (ygain * contrast + 512) / 1024;
+ 
++  /* the 8 is "+0,5" for later rounding */
++  yoffset = ((cty * (yoffset << 7)) >> 16) + 8;
++
+   for (i=0; i < 4; i++) {
+     csc->U_green.w[i] = -cgu;
+     csc->U_blue.w[i]  =  cbu;
+     csc->V_red.w[i]   =  crv;
+     csc->V_green.w[i] = -cgv;
+     csc->Y_coeff.w[i] =  cty;
++
++    csc->addYw.w[i]   = yoffset;
++
++    csc->x0080w.w[i]  = 128;
++    csc->x00ffw.w[i]  = 0xff;
+   }
+ }
+ 
+ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t * pu, uint8_t * pv, mmx_csc_t *csc)
+ {
+-    static mmx_t mmx_80w = {0x0080008000800080ULL};
+-    static mmx_t mmx_00ffw = {0x00ff00ff00ff00ffULL};
+ 
++    /* OK what we're doing here is
++       y = ((cty * (y << 7)) >> 16) + yoffset;
++       u = (u - 128) << 7;
++       v = (v - 128) << 7;
++       r = (y + ((crv * v) >> 16)) >> 4;
++       g = (y + ((cgu * u) >> 16) + ((cgv * v) >> 16)) >> 4;
++       b = (y + ((cbu * u) >> 16)) >> 4; */
++
      movq_m2r (*py, mm6);		// mm6 = Y7 Y6 Y5 Y4 Y3 Y2 Y1 Y0
      pxor_r2r (mm4, mm4);		// mm4 = 0
-@@ -126,10 +127,11 @@ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t 
-     psrlw_i2r (8, mm7);			// mm7 =    Y7    Y5    Y3    Y1
+-
+-    psubusb_m2r (csc->subYw, mm6);	// Y -= 16
+-    paddusb_m2r (csc->addYw, mm6);
+-
+     movd_m2r (*pu, mm0);		// mm0 = 00 00 00 00 u3 u2 u1 u0
++
+     movq_r2r (mm6, mm7);		// mm7 = Y7 Y6 Y5 Y4 Y3 Y2 Y1 Y0
++    pand_m2r (csc->x00ffw, mm6);	// mm6 =    Y6    Y4    Y2    Y0
  
+-    pand_m2r (mmx_00ffw, mm6);		// mm6 =    Y6    Y4    Y2    Y0
+     psrlw_i2r (8, mm7);			// mm7 =    Y7    Y5    Y3    Y1
+-
++    psllw_i2r (7, mm6);			// promote precision
      movd_m2r (*pv, mm1);		// mm1 = 00 00 00 00 v3 v2 v1 v0
 -    psllw_i2r (3, mm6);			// promote precision
-+    psllw_i2r (5, mm6);			// promote precision
  
      pmulhw_m2r (csc->Y_coeff, mm6);	// mm6 = luma_rgb even
 -    psllw_i2r (3, mm7);			// promote precision
-+    paddsw_m2r (mmx_0002w, mm6);	// +0.5 for later rounding
-+    psllw_i2r (5, mm7);			// promote precision
- 
+-
++    psllw_i2r (7, mm7);			// promote precision
      punpcklbw_r2r (mm4, mm0);		// mm0 = u3 u2 u1 u0
  
-@@ -137,12 +139,13 @@ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t 
+-    psubsw_m2r (mmx_80w, mm0);		// u -= 128
++    paddsw_m2r (csc->addYw, mm6);	// += yoffset
++    psubsw_m2r (csc->x0080w, mm0);	// u -= 128
      punpcklbw_r2r (mm4, mm1);		// mm1 = v3 v2 v1 v0
- 
+-
      pmulhw_m2r (csc->Y_coeff, mm7);	// mm7 = luma_rgb odd
 -    psllw_i2r (3, mm0);			// promote precision
-+    paddsw_m2r (mmx_0002w, mm7);	// +0.5 for later rounding
-+    psllw_i2r (5, mm0);			// promote precision
  
-     psubsw_m2r (mmx_80w, mm1);		// v -= 128
+-    psubsw_m2r (mmx_80w, mm1);		// v -= 128
++    psllw_i2r (7, mm0);			// promote precision
++    psubsw_m2r (csc->x0080w, mm1);	// v -= 128
++
      movq_r2r (mm0, mm2);		// mm2 = u3 u2 u1 u0
++    psllw_i2r (7, mm1);			// promote precision
  
 -    psllw_i2r (3, mm1);			// promote precision
-+    psllw_i2r (5, mm1);			// promote precision
- 
+-
      movq_r2r (mm1, mm4);		// mm4 = v3 v2 v1 v0
  
-@@ -161,12 +164,14 @@ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t 
+-    pmulhw_m2r (csc->U_blue, mm0);		// mm0 = chroma_b
+-
+-
+-    // slot
+-
+-
+-    // slot
+-
+-
++    paddsw_m2r (csc->addYw, mm7);	// += yoffset
++    pmulhw_m2r (csc->U_blue, mm0);	// mm0 = chroma_b
+     pmulhw_m2r (csc->V_red, mm1);	// mm1 = chroma_r
++
+     movq_r2r (mm0, mm3);		// mm3 = chroma_b
+ 
      paddsw_r2r (mm6, mm0);		// mm0 = B6 B4 B2 B0
      paddsw_r2r (mm7, mm3);		// mm3 = B7 B5 B3 B1
  
-+    psraw_i2r (2, mm0);			// div round
-     packuswb_r2r (mm0, mm0);		// saturate to 0-255
- 
- 
+-    packuswb_r2r (mm0, mm0);		// saturate to 0-255
+-
+-
++    psraw_i2r (4, mm0);			// div round
      pmulhw_m2r (csc->U_green, mm2);	// mm2 = u * u_green
++    psraw_i2r (4, mm3);			// div round
  
- 
-+    psraw_i2r (2, mm3);			// div round
+-
++    packuswb_r2r (mm0, mm0);		// saturate to 0-255
      packuswb_r2r (mm3, mm3);		// saturate to 0-255
+-
+-
+-    punpcklbw_r2r (mm3, mm0);		// mm0 = B7 B6 B5 B4 B3 B2 B1 B0
+-
+-
+     pmulhw_m2r (csc->V_green, mm4);	// mm4 = v * v_green
  
+-
+-    // slot
+-
+-
+-    // slot
+-
+-
++    punpcklbw_r2r (mm3, mm0);		// mm0 = B7 B6 B5 B4 B3 B2 B1 B0
+     paddsw_r2r (mm4, mm2);		// mm2 = chroma_g
++    movq_r2r (mm1, mm4);		// mm4 = chroma_r
++
+     movq_r2r (mm2, mm5);		// mm5 = chroma_g
  
-@@ -190,16 +195,20 @@ static inline void mmx_yuv2rgb (uint8_t * py, uint8_t 
+-
+-    movq_r2r (mm1, mm4);		// mm4 = chroma_r
      paddsw_r2r (mm6, mm2);		// mm2 = G6 G4 G2 G0
  
++    psraw_i2r (4, mm2);			// div round
++    paddsw_r2r (mm6, mm1);		// mm1 = R6 R4 R2 R0
  
-+    psraw_i2r (2, mm2);			// div round
      packuswb_r2r (mm2, mm2);		// saturate to 0-255
-     paddsw_r2r (mm6, mm1);		// mm1 = R6 R4 R2 R0
+-    paddsw_r2r (mm6, mm1);		// mm1 = R6 R4 R2 R0
++    psraw_i2r (4, mm1);			// div round
++    paddsw_r2r (mm7, mm4);		// mm4 = R7 R5 R3 R1
  
-+    psraw_i2r (2, mm1);			// div round
      packuswb_r2r (mm1, mm1);		// saturate to 0-255
-     paddsw_r2r (mm7, mm4);		// mm4 = R7 R5 R3 R1
+-    paddsw_r2r (mm7, mm4);		// mm4 = R7 R5 R3 R1
++    psraw_i2r (4, mm4);			// div round
++    paddsw_r2r (mm7, mm5);		// mm5 = G7 G5 G3 G1
  
-+    psraw_i2r (2, mm4);			// div round
      packuswb_r2r (mm4, mm4);		// saturate to 0-255
-     paddsw_r2r (mm7, mm5);		// mm5 = G7 G5 G3 G1
+-    paddsw_r2r (mm7, mm5);		// mm5 = G7 G5 G3 G1
++    psraw_i2r (4, mm5);			// div round
  
+-
+-    packuswb_r2r (mm5, mm5);		// saturate to 0-255
+-
+-
+     punpcklbw_r2r (mm4, mm1);		// mm1 = R7 R6 R5 R4 R3 R2 R1 R0
+-
++    packuswb_r2r (mm5, mm5);		// saturate to 0-255
  
-+    psraw_i2r (2, mm5);			// div round
-     packuswb_r2r (mm5, mm5);		// saturate to 0-255
- 
- 
+     punpcklbw_r2r (mm5, mm2);		// mm2 = G7 G6 G5 G4 G3 G2 G1 G0
+ }
