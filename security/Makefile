@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2012/05/11 09:39:28 robert Exp $
+# $OpenBSD: Makefile,v 1.288 2012/06/09 12:35:01 mcbride Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -186,6 +186,7 @@
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += parse
      SUBDIR += passwdqc
+     SUBDIR += password-gorilla
      SUBDIR += pcsc-lite
      SUBDIR += pdfcrack
      SUBDIR += pear-Auth
