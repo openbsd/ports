@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.6 2011/09/16 09:48:09 espie Exp $
+#	$OpenBSD: Makefile,v 1.7 2012/06/09 11:26:02 sthen Exp $
 PKG_ARCH-main=		*
 PKG_ARCH-hires=		*
 
@@ -19,9 +19,9 @@ DISTFILES+=		shots_fired.zip:2
 DISTFILES +=		Marathon_2_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
-PERMIT_PACKAGE_CDROM=	"not for sale"
+PERMIT_PACKAGE_CDROM=	not for sale
 PERMIT_PACKAGE_FTP=	YES
-PERMIT_DISTFILES_CDROM= "not for sale"
+PERMIT_DISTFILES_CDROM= not for sale
 PERMIT_DISTFILES_FTP=	YES
 
 MULTI_PACKAGES= 	-main -hires

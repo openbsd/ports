@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/06/09 11:26:02 sthen Exp $
 
 COMMENT=		Configuration tool for Struts web framework
 
@@ -14,10 +14,10 @@ HOMEPAGE=		http://www.jamesholmes.com/struts/console/
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
 # Free for use, but no redistribution. 
-PERMIT_PACKAGE_CDROM=	"no redistribution"
-PERMIT_PACKAGE_FTP=	"no redistribution"
-PERMIT_DISTFILES_CDROM=	"no redistribution"
-PERMIT_DISTFILES_FTP=	"no redistribution"
+PERMIT_PACKAGE_CDROM=	no redistribution
+PERMIT_PACKAGE_FTP=	no redistribution
+PERMIT_DISTFILES_CDROM=	no redistribution
+PERMIT_DISTFILES_FTP=	no redistribution
 
 MASTER_SITES=		http://www.jamesholmes.com/struts/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/06/08 13:59:08 pea Exp $
+# $OpenBSD: Makefile,v 1.15 2012/06/09 11:26:02 sthen Exp $
 
 COMMENT =	Really Awesome New Cisco confIg Differ
 
@@ -11,8 +11,8 @@ HOMEPAGE =	http://www.shrubbery.net/rancid/
 MAINTAINER =	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # Custom
-PERMIT_PACKAGE_CDROM =	"not for commercial use"
-PERMIT_DISTFILES_CDROM ="not for commercial use"
+PERMIT_PACKAGE_CDROM =	not for commercial use
+PERMIT_DISTFILES_CDROM =not for commercial use
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 

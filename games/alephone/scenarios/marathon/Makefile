@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.7 2012/01/27 21:35:24 phessler Exp $
+#	$OpenBSD: Makefile,v 1.8 2012/06/09 11:26:02 sthen Exp $
 PKG_ARCH =	*
 
 COMMENT =	marathon one data files
@@ -10,9 +10,9 @@ DISTFILES =	Marathon-${V}-Data.zip:5
 DISTFILES +=	Marathon_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
-PERMIT_PACKAGE_CDROM =	"not for sale"
+PERMIT_PACKAGE_CDROM =	not for sale
 PERMIT_PACKAGE_FTP =	YES
-PERMIT_DISTFILES_CDROM = "not for sale"
+PERMIT_DISTFILES_CDROM = not for sale
 PERMIT_DISTFILES_FTP =	YES
 
 EXTRACT_ONLY =	Marathon-${V}-Data.zip
