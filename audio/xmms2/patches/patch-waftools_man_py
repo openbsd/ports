@@ -1,31 +1,35 @@
-$OpenBSD: patch-waftools_man_py,v 1.1.1.1 2009/06/03 18:25:25 ajacoutot Exp $
+$OpenBSD: patch-waftools_man_py,v 1.2 2012/06/09 09:46:18 pascal Exp $
 
 Bypass the gzip function that compress man files.
 
---- waftools/man.py.orig	Tue May 19 18:21:41 2009
-+++ waftools/man.py	Tue May 19 18:32:57 2009
-@@ -22,6 +22,9 @@ def gzip_func(task):
+--- waftools/man.py.orig	Thu Oct 20 21:26:08 2011
++++ waftools/man.py	Tue May  8 12:50:16 2012
+@@ -24,11 +24,11 @@ def gzip_func(task):
+         if outf:
+             outf.close()
  
+-Task.task_factory('man', gzip_func, color='BLUE')
+-
  @feature('man')
+ @before_method('process_source')
  def process_man(self):
 +    def empty(x):
 +        pass
-+
-     if not getattr(self, 'files', None):
-         return
+     source = self.to_nodes(getattr(self, 'source', []))
+     self.source = []
  
-@@ -34,12 +37,10 @@ def process_man(self):
-         if not target:
-             target = node.name
+@@ -43,13 +43,7 @@ def process_man(self):
+         if not s:
+             raise Errors.BuildError('cannot determine man section from filename')
  
--        out = self.path.find_or_declare(x + '.gz')
+-        out = self.path.find_or_declare(node.name + '.gz')
 -
-         tsk = self.create_task('copy')
-         tsk.set_inputs(node)
+-        tsk = self.create_task('man')
+-        tsk.set_inputs(node)
 -        tsk.set_outputs(out)
--        tsk.fun = gzip_func
-+        tsk.set_outputs(node)
-+        tsk.fun = empty
-         tsk.install_path = '${MANDIR}/man' + getattr(self, 'section', '1')
-         tsk.color = 'BLUE'
+-
+-        self.bld.install_files('${MANDIR}/man%s' % s, out)
++        self.bld.install_files('${MANDIR}/man%s' % s, node)
  
+ 
+ def configure(conf):

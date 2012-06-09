@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_tremor_wscript,v 1.1 2012/06/09 09:46:18 pascal Exp $
+--- src/plugins/tremor/wscript.orig	Fri Jun  1 23:27:07 2012
++++ src/plugins/tremor/wscript	Fri Jun  1 23:28:57 2012
+@@ -1,8 +1,8 @@
+ from waftools.plugin import plugin
+ 
+ def plugin_configure(conf):
+-    conf.check_cc(lib="vorbisidec", header_name="tremor/ivorbisfile.h",
+-                      uselib_store="tremor")
++    conf.check_cfg(package="vorbisidec", uselib_store="tremor",
++		args="--cflags --libs")
+ 
+ configure, build = plugin('tremor',
+                           configure=plugin_configure,

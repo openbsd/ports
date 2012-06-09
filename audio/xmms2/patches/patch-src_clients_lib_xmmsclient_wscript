@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_clients_lib_xmmsclient_wscript,v 1.2 2010/04/24 17:37:54 jasper Exp $
---- src/clients/lib/xmmsclient/wscript.orig	Sat Mar 13 19:27:38 2010
-+++ src/clients/lib/xmmsclient/wscript	Sat Mar 13 19:28:13 2010
+$OpenBSD: patch-src_clients_lib_xmmsclient_wscript,v 1.3 2012/06/09 09:46:18 pascal Exp $
+--- src/clients/lib/xmmsclient/wscript.orig	Thu Oct 20 21:26:08 2011
++++ src/clients/lib/xmmsclient/wscript	Tue May  8 01:12:42 2012
 @@ -31,7 +31,7 @@ def build(bld):
-     else:
-         obj.source += ["visualization/dummy.c"]
- 
--    obj.vnum = "6.0.0"
-+    obj.vnum = "${LIBxmmsclient_VERSION}"
+         source = source,
+         uselib = 'socket time',
+         use = 'xmmsipc xmmssocket xmmsutils xmmstypes xmmsvisualization',
+-        vnum = '6.0.0'
++        vnum = '${LIBxmmsclient_VERSION}'
+         )
  
      tool.add_install_flag(bld, obj)
- 
