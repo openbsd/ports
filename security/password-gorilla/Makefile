@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/09 12:31:55 mcbride Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/09 13:03:40 sthen Exp $
 
 COMMENT =	cross-platform password manager
 
 V =		1.5.3.6.3
+REVISION =	0
 DISTNAME =	zdia-gorilla-v${V}-0-gfc80d95
 PKGNAME =	password-gorilla-${V}
 CATEGORIES =	security
@@ -38,6 +39,7 @@ GORILLASTUFF =	blowfish isaac.tcl viewhelp.tcl pwsafe \
 
 do-install:
 	${MODTCL_WISH_ADJ} ${WRKDIST}/gorilla.tcl
+	${SUBST_CMD} ${WRKDIST}/gorilla.tcl
 	${INSTALL_PROGRAM_DIR} ${GORILLALIB}
 	@cd ${WRKDIST}; \
 		tar -cf - ${GORILLASTUFF} | tar -xf - -C ${GORILLALIB}
