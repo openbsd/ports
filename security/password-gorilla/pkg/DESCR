@@ -1,0 +1,21 @@
+The Password Gorilla helps you manage your logins. It stores all your
+user names and passwords, along with login information and other notes,
+in a securely encrypted file. A single "master password" is used to
+protect the file. This way, you only need to remember the single master
+password, instead of the many logins that you use.
+
+If you want to log in to a service or Web site, the Password Gorilla
+copies your user name and password to the clipboard, so that you can
+easily paste it into your Web browser or other application. Because the
+password does not appear on the screen, Password Gorilla is safe to use
+in the presence of others.
+
+The convenience of Password Gorilla allows you to choose different,
+non-intuitive passwords for each service. An integrated random password
+generator can provide one-time passwords, tunable to various services'
+policies.
+
+Password Gorilla is a Tcl/Tk application which can run on Linux and
+Windows, and the files written are supposed to be compatible between
+platforms. This is important for collaboration in heterogenous
+environments.
