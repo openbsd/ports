@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.204 2012/05/03 06:51:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.205 2012/06/09 23:06:24 sthen Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -6,14 +6,14 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 COMMENT =		movie player supporting many formats
 
 V =			20110309
-FFMPEG_V =		20120422
+FFMPEG_V =		20120609
 
 SUBST_VARS += 		PREFIX CONFDIR
 
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		16
+REVISION =		17
 
 CATEGORIES =		x11 multimedia
 
@@ -43,7 +43,7 @@ MODULES +=	converters/libiconv
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/libungif \
-		graphics/ffmpeg>=20120422 \
+		graphics/ffmpeg>=${FFMPEG_V} \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \
 		audio/libogg \
