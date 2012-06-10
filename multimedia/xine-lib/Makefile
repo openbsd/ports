@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.95 2012/06/09 08:41:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2012/06/10 07:35:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
-DISTNAME=	xine-lib-1.1.20.1
-REVISION=	8
+DISTNAME=	xine-lib-1.1.21
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	xine	29.0
+SHARED_LIBS=	xine	29.1
 
 HOMEPAGE=	http://www.xine-project.org/
 
@@ -35,9 +34,6 @@ XINEAPI_REV=	1.30
 SUBST_VARS+=	XINEAPI_REV
 
 MODULES=	devel/gettext
-BUILD_DEPENDS=	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	audio/faad \
 		audio/flac \
 		audio/liba52 \
@@ -58,13 +54,11 @@ LIB_DEPENDS=	audio/faad \
 		graphics/libmng \
 		graphics/vcdimager
 
-AUTOCONF_VERSION= 2.68
-AUTOMAKE_VERSION= 1.11
-
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \
@@ -97,13 +91,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
-
-post-extract:
-	@perl -pi -e 's/\r\n/\n/g' ${WRKSRC}/src/demuxers/asfheader.c
-
-post-patch:
-	@cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    sh autogen.sh noconfig
 
 post-install:
 	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm

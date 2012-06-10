@@ -1,94 +1,24 @@
-$OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
+$OpenBSD: patch-src_xine-utils_color_c,v 1.3 2012/06/10 07:35:30 ajacoutot Exp $
 
-- Use proper chroma upsampling for YV12 to YUY2 conversion.
-- Improve RGB->YUV conversion (use MPEG range instead of full range).
 - Use the same macros for both odd and even lines.
 - MMX version of yv12_to_yuy2().
 - Remove incorrect .align directives from asm code.
+- Add yv12_to_yuy2_sse2().
 
---- src/xine-utils/color.c.orig	Sat Dec 31 11:25:26 2011
-+++ src/xine-utils/color.c	Thu Apr 26 16:04:17 2012
-@@ -66,52 +66,47 @@
- 
- /*
-  * In search of the perfect colorspace conversion formulae...
-- * These are the conversion equations that xine currently uses:
-+ * These are the conversion equations that xine currently uses
-+ * (before normalisation):
-  *
-  *      Y  =  0.29900 * R + 0.58700 * G + 0.11400 * B
-  *      U  = -0.16874 * R - 0.33126 * G + 0.50000 * B + 128
-  *      V  =  0.50000 * R - 0.41869 * G - 0.08131 * B + 128
-- *
-- * Feel free to experiment with different coefficients by altering the
-- * next 9 defines.
+--- src/xine-utils/color.c.orig	Tue Feb 14 19:38:31 2012
++++ src/xine-utils/color.c	Sat Jun  9 21:04:03 2012
+@@ -62,6 +62,10 @@
+  * instructions.
   */
  
--#if 1
-+/*
-+#define Y_R (SCALEFACTOR *  0.29900 * 219.0 / 255.0)
-+#define Y_G (SCALEFACTOR *  0.58700 * 219.0 / 255.0)
-+#define Y_B (SCALEFACTOR *  0.11400 * 219.0 / 255.0)
- 
--#define Y_R (SCALEFACTOR *  0.29900)
--#define Y_G (SCALEFACTOR *  0.58700)
--#define Y_B (SCALEFACTOR *  0.11400)
-+#define U_R (SCALEFACTOR * -0.16874 * 224.0 / 255.0)
-+#define U_G (SCALEFACTOR * -0.33126 * 224.0 / 255.0)
-+#define U_B (SCALEFACTOR *  0.50000 * 224.0 / 255.0)
- 
--#define U_R (SCALEFACTOR * -0.16874)
--#define U_G (SCALEFACTOR * -0.33126)
--#define U_B (SCALEFACTOR *  0.50000)
-+#define V_R (SCALEFACTOR *  0.50000 * 224.0 / 255.0)
-+#define V_G (SCALEFACTOR * -0.41869 * 224.0 / 255.0)
-+#define V_B (SCALEFACTOR * -0.08131 * 224.0 / 255.0)
-+*/
- 
--#define V_R (SCALEFACTOR *  0.50000)
--#define V_G (SCALEFACTOR * -0.41869)
--#define V_B (SCALEFACTOR * -0.08131)
-+#define Y_R (SCALEFACTOR *  0.299         * 219.0 / 255.0)
-+#define Y_G (SCALEFACTOR *  0.587         * 219.0 / 255.0)
-+#define Y_B (SCALEFACTOR *  0.114         * 219.0 / 255.0)
- 
--#else
-+#define U_R (SCALEFACTOR * -0.299 / 1.772 * 224.0 / 255.0)
-+#define U_G (SCALEFACTOR * -0.587 / 1.772 * 224.0 / 255.0)
-+#define U_B (SCALEFACTOR *  0.886 / 1.772 * 224.0 / 255.0)
- 
-+#define V_R (SCALEFACTOR *  0.701 / 1.402 * 224.0 / 255.0)
-+#define V_G (SCALEFACTOR * -0.587 / 1.402 * 224.0 / 255.0)
-+#define V_B (SCALEFACTOR * -0.114 / 1.402 * 224.0 / 255.0)
++#ifdef HAVE_CONFIG_H
++#include "config.h"
++#endif
 +
- /*
-- * Here is another promising set of coefficients. If you use these, you
-- * must also add 16 to the Y calculation in the COMPUTE_Y macro found
-- * in xineutils.h.
-+ * With the normalisation factors above, Y needs 16 added.
-+ * This is done during setup, not in the macros in xineutils.h, because
-+ * doing it there would be an API change.
-  */
-+#define Y_MOD (16 * SCALEFACTOR)
+ #include "xine_internal.h"
  
--#define Y_R (SCALEFACTOR *  0.257)
--#define Y_G (SCALEFACTOR *  0.504)
--#define Y_B (SCALEFACTOR *  0.098)
--
--#define U_R (SCALEFACTOR * -0.148)
--#define U_G (SCALEFACTOR * -0.291)
--#define U_B (SCALEFACTOR *  0.439)
--
--#define V_R (SCALEFACTOR *  0.439)
--#define V_G (SCALEFACTOR * -0.368)
--#define V_B (SCALEFACTOR * -0.071)
--
--#endif
--
  /*
-  * Precalculate all of the YUV tables since it requires fewer than
-  * 10 kilobytes to store them.
-@@ -658,26 +653,20 @@ static void yuv411_to_yv12_c
+@@ -653,26 +657,20 @@ static void yuv411_to_yv12_c
  
  }
  
@@ -123,7 +53,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
  /*****************************************************************************
   * I420_YUY2: planar YUV 4:2:0 to packed YUYV 4:2:2
   * original conversion routine from Videolan project
-@@ -728,7 +717,7 @@ static void yv12_to_yuy2_c
+@@ -723,7 +721,7 @@ static void yv12_to_yuy2_c
  
            for( i_x = width / 2 ; i_x-- ; )
            {
@@ -132,7 +62,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            }
  
            p_y2 += i_source_margin;
-@@ -759,7 +748,7 @@ static void yv12_to_yuy2_c
+@@ -754,7 +752,7 @@ static void yv12_to_yuy2_c
  
            for( i_x = width / 2 ; i_x-- ; )
            {
@@ -141,7 +71,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            }
  
            p_y2 += i_source_margin + y_src_pitch;
-@@ -793,9 +782,10 @@ static void yv12_to_yuy2_c
+@@ -788,9 +786,10 @@ static void yv12_to_yuy2_c
              p_vb = p_v;
            }
  
@@ -153,7 +83,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            }
  
            p_y2 += i_source_margin + y_src_pitch;
-@@ -811,10 +801,11 @@ static void yv12_to_yuy2_c
+@@ -806,10 +805,11 @@ static void yv12_to_yuy2_c
  
  
  #if defined(ARCH_X86) || defined(ARCH_X86_64)
@@ -167,7 +97,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
      "movq       (%0), %%mm0 \n\t"  /* Load 8 Y          y7 y6 y5 y4 y3 y2 y1 y0 */ \
      "movd       (%1), %%mm1 \n\t"  /* Load 4 Cb         00 00 00 00 u3 u2 u1 u0 */ \
      "movd       (%2), %%mm2 \n\t"  /* Load 4 Cr         00 00 00 00 v3 v2 v1 v0 */ \
-@@ -856,24 +847,69 @@ do {                                                  
+@@ -851,24 +851,68 @@ do {                                                  
      :                                                                              \
      : "r" (p_ut), "r" (p_vt), "r" (p_ub), "r" (p_vb) );                            \
     __asm__ __volatile__(                                                           \
@@ -236,14 +166,13 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
 +  p_ub += 4; p_vb += 4; p_ut += 4; p_vt += 4;                                      \
 +} while(0)
 +
-+
 +#define MMX_YUV420_YUYV_INTERLACED(p_y1,p_y2,p_u,p_ut,p_ub,p_v,p_vt,p_vb,p_line1,p_line2)  \
 +do {                                                                               \
 +   __asm__ __volatile__(                                                           \
      "movd       (%0), %%mm1 \n\t"  /* Load 4 Cb         00 00 00 00 u3 u2 u1 u0 */ \
      "movd       (%1), %%mm2 \n\t"  /* Load 4 Cr         00 00 00 00 v3 v2 v1 v0 */ \
      "pxor      %%mm7, %%mm7 \n\t"  /*                   00 00 00 00 00 00 00 00 */ \
-@@ -906,9 +942,9 @@ do {                                                  
+@@ -901,9 +945,9 @@ do {                                                  
      "por       %%mm5, %%mm6 \n\t"  /* Cr1 Cb1 interl    v3 u3 v2 u2 v1 u1 v0 u0 */ \
      "movq      %%mm0, %%mm3 \n\t"  /*                   y7 y6 y5 y4 y3 y2 y1 y0 */ \
      "punpcklbw %%mm6, %%mm3 \n\t"  /*                   v1 y3 u1 y2 v0 y1 u0 y0 */ \
@@ -255,7 +184,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
      :                                                                              \
      : "r" (p_y1), "r" (p_ut), "r" (p_vt), "r" (p_line1) );                         \
     __asm__ __volatile__(                                                           \
-@@ -932,82 +968,60 @@ do {                                                  
+@@ -927,82 +971,60 @@ do {                                                  
      "por       %%mm1, %%mm2 \n\t"  /* Cr2 Cb2 interl    v3 u3 v2 u2 v1 u1 v0 u0 */ \
      "movq      %%mm0, %%mm1 \n\t"  /*                   Y7 Y6 Y5 Y4 Y3 Y2 Y1 Y0 */ \
      "punpcklbw %%mm2, %%mm1 \n\t"  /*                   v1 Y3 u1 Y2 v0 Y1 u0 Y0 */ \
@@ -376,7 +305,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
    p_line1 += 16; p_line2 += 16; p_y1 += 8; p_y2 += 8; p_u += 4; p_v += 4;          \
    p_ub += 4; p_vb += 4; p_ut += 4; p_vt += 4;                                      \
  } while(0)
-@@ -1037,6 +1051,11 @@ static void yv12_to_yuy2_mmxext
+@@ -1032,6 +1054,11 @@ static void yv12_to_yuy2_mmxext
      const int i_source_v_margin = v_src_pitch - width/2;
      const int i_dest_margin = yuy2_pitch - width*2;
  
@@ -388,7 +317,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
      if( progressive ) {
  
        for( i_y = height / 2; i_y-- ; )
-@@ -1057,11 +1076,11 @@ static void yv12_to_yuy2_mmxext
+@@ -1052,11 +1079,11 @@ static void yv12_to_yuy2_mmxext
  
            for( i_x = width / 8 ; i_x-- ; )
            {
@@ -402,7 +331,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            }
  
            p_y2 += i_source_margin;
-@@ -1089,16 +1108,139 @@ static void yv12_to_yuy2_mmxext
+@@ -1084,16 +1111,139 @@ static void yv12_to_yuy2_mmxext
              p_ub = p_u;
              p_vb = p_v;
            }
@@ -544,7 +473,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            p_y2 += i_source_margin + y_src_pitch;
            p_u += i_source_u_margin + u_src_pitch;
            p_v += i_source_v_margin + v_src_pitch;
-@@ -1130,13 +1272,14 @@ static void yv12_to_yuy2_mmxext
+@@ -1125,13 +1275,14 @@ static void yv12_to_yuy2_mmxext
              p_vb = p_v;
            }
  
@@ -561,7 +490,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
            }
  
            p_y2 += i_source_margin + y_src_pitch;
-@@ -1210,7 +1353,7 @@ static void yuy2_to_yv12_c
+@@ -1205,7 +1356,7 @@ static void yuy2_to_yv12_c
  /* yuy2->yv12 with subsampling (some ideas from mplayer's yuy2toyv12) */
  #define MMXEXT_YUYV_YUV420( )                                                      \
  do {                                                                               \
@@ -570,7 +499,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
      "movq       (%0), %%mm0 \n\t"  /* Load              v1 y3 u1 y2 v0 y1 u0 y0 */ \
      "movq      8(%0), %%mm1 \n\t"  /* Load              v3 y7 u3 y6 v2 y5 u2 y4 */ \
      "movq      %%mm0, %%mm2 \n\t"  /*                   v1 y3 u1 y2 v0 y1 u0 y0 */ \
-@@ -1224,7 +1367,7 @@ do {                                                  
+@@ -1219,7 +1370,7 @@ do {                                                  
      "movntq    %%mm2, (%1)  \n\t"  /* Store YYYYYYYY line1                      */ \
      :                                                                              \
      : "r" (p_line1), "r" (p_y1) );                                                 \
@@ -579,16 +508,7 @@ $OpenBSD: patch-src_xine-utils_color_c,v 1.2 2012/04/28 09:14:33 ajacoutot Exp $
      "movq       (%0), %%mm1 \n\t"  /* Load              v1 y3 u1 y2 v0 y1 u0 y0 */ \
      "movq      8(%0), %%mm2 \n\t"  /* Load              v3 y7 u3 y6 v2 y5 u2 y4 */ \
      "movq      %%mm1, %%mm3 \n\t"  /*                   v1 y3 u1 y2 v0 y1 u0 y0 */ \
-@@ -1317,7 +1460,7 @@ void init_yuv_conversion(void) {
-   /* initialize the RGB -> YUV tables */
-   for (i = 0; i < 256; i++) {
- 
--    y_r_table[i] = Y_R * i;
-+    y_r_table[i] = Y_R * i + Y_MOD;
-     y_g_table[i] = Y_G * i;
-     y_b_table[i] = Y_B * i;
- 
-@@ -1339,6 +1482,8 @@ void init_yuv_conversion(void) {
+@@ -1334,6 +1485,8 @@ void init_yuv_conversion(void) {
    /* determine best YV12 -> YUY2 converter to use */
    if (xine_mm_accel() & MM_ACCEL_X86_MMXEXT)
      yv12_to_yuy2 = yv12_to_yuy2_mmxext;

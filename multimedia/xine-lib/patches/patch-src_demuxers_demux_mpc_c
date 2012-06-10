@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_demuxers_demux_mpc_c,v 1.1 2012/06/10 07:35:30 ajacoutot Exp $
+
+Fix id3v2 tag check.
+
+--- src/demuxers/demux_mpc.c.orig	Sat Jun  9 21:40:38 2012
++++ src/demuxers/demux_mpc.c	Sat Jun  9 21:41:00 2012
+@@ -90,7 +90,7 @@ static int open_mpc_file(demux_mpc_t *this) {
+   /* TODO: non-seeking version */
+   if (INPUT_IS_SEEKABLE(this->input)) {
+     /* Check for id3v2 tag */
+-    if (id3v2_istag(this->header)) {
++    if (id3v2_istag(_X_BE_32(this->header))) {
+ 
+       lprintf("found id3v2 header\n");
+ 

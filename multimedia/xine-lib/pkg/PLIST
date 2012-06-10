@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2012/04/08 07:37:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2012/06/10 07:35:30 ajacoutot Exp $
 @conflict xine-lib-arts-*
 @conflict xine-lib-esd-*
 @conflict xine-lib-jack-*
@@ -64,6 +64,7 @@ lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_planar.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_switch.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_tvtime.so
 lib/xine/plugins/${XINEAPI_REV}/post/xineplug_post_visualizations.so
+@comment lib/xine/plugins/${XINEAPI_REV}/vidix/
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_file.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_none.so
 lib/xine/plugins/${XINEAPI_REV}/xineplug_ao_out_sndio.so

@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.10 2012/06/09 08:41:16 ajacoutot Exp $
+$OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.11 2012/06/10 07:35:30 ajacoutot Exp $
 
-- Fix Matroska header compression when using lacing (ex. multiple audio frames in one block).
-- Add support for FLAC.
+Add support for FLAC.
 
 --- src/demuxers/demux_matroska.c.orig	Thu Oct 13 16:18:39 2011
 +++ src/demuxers/demux_matroska.c	Fri Jun  8 22:48:36 2012
@@ -17,17 +16,3 @@ $OpenBSD: patch-src_demuxers_demux_matroska_c,v 1.10 2012/06/09 08:41:16 ajacout
      } else if (!strcmp(track->codec_id, MATROSKA_CODEC_ID_A_DTS)) {
        lprintf("MATROSKA_CODEC_ID_A_DTS\n");
        track->buf_type = BUF_AUDIO_DTS;
-@@ -2049,6 +2054,13 @@ static int parse_block (demux_matroska_t *this, size_t
-     }
-     /* send each frame to the decoder */
-     for (i = 0; i <= lace_num; i++) {
-+
-+      if (headers_len) {
-+        data -= headers_len;
-+        xine_fast_memcpy(data, track->compress_settings, headers_len);
-+        frame[i] += headers_len;
-+      }
-+
-       if (track->handle_content != NULL) {
-         track->handle_content((demux_plugin_t *)this, track,
-                                decoder_flags,

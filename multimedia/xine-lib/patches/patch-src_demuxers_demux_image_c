@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_demuxers_demux_image_c,v 1.1 2012/06/10 07:35:30 ajacoutot Exp $
+
+Add BMP support.
+
+--- src/demuxers/demux_image.c.orig	Sat Jun  9 21:15:05 2012
++++ src/demuxers/demux_image.c	Sat Jun  9 21:16:57 2012
+@@ -165,6 +165,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+       return NULL;
+     }
+     if (memcmp (header, "GIF", 3) == 0 /* GIF */
++	|| memcmp (header, "BM", 2) == 0 /* BMP */
+         || memcmp (header, "\377\330\377", 3) == 0 /* JPEG */
+ 	|| (_X_BE_16(&header[0]) == 0xffd8) /* another JPEG */
+ 	|| memcmp (header, "\x89PNG", 4) == 0) { /* PNG */
+@@ -232,7 +233,7 @@ static const char *get_identifier (demux_class_t *this
+ }
+ 
+ static const char *get_extensions (demux_class_t *this_gen) {
+-  return "png gif jpg jpeg";
++  return "png gif jpg jpeg bmp";
+ }
+ 
+ static const char *get_mimetypes (demux_class_t *this_gen) {

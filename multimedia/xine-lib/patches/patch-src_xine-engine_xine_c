@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_xine-engine_xine_c,v 1.15 2012/06/10 07:35:30 ajacoutot Exp $
+
+Fix using uninitialized value (return random size).
+
+--- src/xine-engine/xine.c.orig	Sat Jun  9 21:32:06 2012
++++ src/xine-engine/xine.c	Sat Jun  9 21:32:19 2012
+@@ -1985,7 +1985,7 @@ static int _x_get_current_frame_data (xine_stream_t *s
+ 				      int flags, int img_size_unknown) {
+ 
+   vo_frame_t *frame;
+-  size_t required_size;
++  size_t required_size = 0;
+ 
+   stream->xine->port_ticket->acquire(stream->xine->port_ticket, 0);
+   frame = stream->video_out->get_last_frame (stream->video_out);
