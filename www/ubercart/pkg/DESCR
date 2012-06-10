@@ -1,8 +1,0 @@
-Ubercart is a set of modules designed to allow you to run a store on
-your Drupal site.  Development has been driven by two major emphases:
-flexibility and usability.  The various systems driving Ubercart,
-including the product catalog, shopping cart and checkout, order,
-shipping, and payment systems have all been designed to be extended to
-meet any need.  Furthermore, the administrative interface, particularly
-relating to processing and fulfilling orders, has been designed for ease
-of use and efficient display of information.
