@@ -11,6 +11,7 @@ MD5 (drupal7/drupal/drupal-7.13.fr.po) = +2ah4O+IlUw+cY6aVGoOwA==
 MD5 (drupal7/entity/entity-7.x-1.0-rc3.fr.po) = AsRVYUBa6HilrYwoZ0jHZA==
 MD5 (drupal7/globalredirect/globalredirect-7.x-1.4.fr.po) = 5fnnw59ICcd3Z9HMuWms9Q==
 MD5 (drupal7/google_analytics/google_analytics-7.x-1.2.fr.po) = kluIi34UOuPDDbQ5SbzMlA==
+MD5 (drupal7/jquery_plugin/jquery_plugin-7.x-1.0.fr.po) = fpIMFyckYBNWo95toEogZw==
 MD5 (drupal7/masquerade/masquerade-7.x-1.0-rc4.fr.po) = 0mEXscVIFCh0ytybalbH0w==
 MD5 (drupal7/nodeaccess_userreference/nodeaccess_userreference-7.x-3.8.fr.po) = rD4USvZUI3Lsd55LC8uz/g==
 MD5 (drupal7/pathauto/pathauto-7.x-1.1.fr.po) = 4bPVmdFxzioZ9VHz985Ytg==
@@ -37,6 +38,7 @@ RMD160 (drupal7/drupal/drupal-7.13.fr.po) = jCNs7Vyiio3/UIhUQV4Xi65Py/k=
 RMD160 (drupal7/entity/entity-7.x-1.0-rc3.fr.po) = tBurLCRvWMHSRuslykxD5JhonFU=
 RMD160 (drupal7/globalredirect/globalredirect-7.x-1.4.fr.po) = zlEHg9BCXMkIkLjPaadIT9AItX4=
 RMD160 (drupal7/google_analytics/google_analytics-7.x-1.2.fr.po) = cqc5ZPgvQotyHVrCsLp7qn7x/N4=
+RMD160 (drupal7/jquery_plugin/jquery_plugin-7.x-1.0.fr.po) = mfUrsHsAjfkjsAN+Cbv2JjzFfRk=
 RMD160 (drupal7/masquerade/masquerade-7.x-1.0-rc4.fr.po) = xaOws/18glfGtUty8vrrMSdXfos=
 RMD160 (drupal7/nodeaccess_userreference/nodeaccess_userreference-7.x-3.8.fr.po) = F0K9b4ouODuH7uykatCL4NL+3mc=
 RMD160 (drupal7/pathauto/pathauto-7.x-1.1.fr.po) = W3SRAiYAK46Eq+fHpNruJd9KeA0=
@@ -63,6 +65,7 @@ SHA1 (drupal7/drupal/drupal-7.13.fr.po) = ++kDzy0Kl3Igf/1MsRm/WbP5CpM=
 SHA1 (drupal7/entity/entity-7.x-1.0-rc3.fr.po) = uF39Ak4sC94XuD7uXLWJScY0Zhw=
 SHA1 (drupal7/globalredirect/globalredirect-7.x-1.4.fr.po) = 28c5Ci1ozSXhjFy+YfAgaYWWSV8=
 SHA1 (drupal7/google_analytics/google_analytics-7.x-1.2.fr.po) = Dg8SxC2LvY1K5nJZ2WBYSPblOPU=
+SHA1 (drupal7/jquery_plugin/jquery_plugin-7.x-1.0.fr.po) = zg3yirfbiYrB2UsjfJ7NbGEMz/M=
 SHA1 (drupal7/masquerade/masquerade-7.x-1.0-rc4.fr.po) = 8thHGaA8LJ58qhcJi7jXcvsamf4=
 SHA1 (drupal7/nodeaccess_userreference/nodeaccess_userreference-7.x-3.8.fr.po) = +7FYLMkvcejBajiUOZd4yeNBMaw=
 SHA1 (drupal7/pathauto/pathauto-7.x-1.1.fr.po) = bc5sti3GCQss1aI2ccyaq+R853s=
@@ -89,6 +92,7 @@ SHA256 (drupal7/drupal/drupal-7.13.fr.po) = 9Yp1bVJjvICJqRT8rXwjWxa/8gPkvYDzMocW
 SHA256 (drupal7/entity/entity-7.x-1.0-rc3.fr.po) = nZhP3QvmB3TUQIlTdQ129j5h0J+7Rdc7PTrhW5cxuJw=
 SHA256 (drupal7/globalredirect/globalredirect-7.x-1.4.fr.po) = GYjaM4vRvVvJ9zpFnKlRQyHCg42o/n0CbKnO3bfCmSk=
 SHA256 (drupal7/google_analytics/google_analytics-7.x-1.2.fr.po) = c2xBU0zRW120ExPIjWNuyQ9X3OJ4IMh2KV3w1O+nOGc=
+SHA256 (drupal7/jquery_plugin/jquery_plugin-7.x-1.0.fr.po) = HDXPeFM5kuRLu5EXCt3uUfzW8VbnRHa/BVDH5wNVxEM=
 SHA256 (drupal7/masquerade/masquerade-7.x-1.0-rc4.fr.po) = 7nPEbEU0FiXYEzmDP6fRIauq1AHhF8kormMgXwU5JlU=
 SHA256 (drupal7/nodeaccess_userreference/nodeaccess_userreference-7.x-3.8.fr.po) = BLsZNojLAtolm6FtAi8FH5MiCUy1D3vppsl6EYM5PE4=
 SHA256 (drupal7/pathauto/pathauto-7.x-1.1.fr.po) = F5nmcOQ93xMxsBWesptvDjVMIdtF24gRaaoS2hOjp6A=
@@ -115,6 +119,7 @@ SIZE (drupal7/drupal/drupal-7.13.fr.po) = 706478
 SIZE (drupal7/entity/entity-7.x-1.0-rc3.fr.po) = 21674
 SIZE (drupal7/globalredirect/globalredirect-7.x-1.4.fr.po) = 7994
 SIZE (drupal7/google_analytics/google_analytics-7.x-1.2.fr.po) = 40308
+SIZE (drupal7/jquery_plugin/jquery_plugin-7.x-1.0.fr.po) = 488
 SIZE (drupal7/masquerade/masquerade-7.x-1.0-rc4.fr.po) = 8737
 SIZE (drupal7/nodeaccess_userreference/nodeaccess_userreference-7.x-3.8.fr.po) = 932
 SIZE (drupal7/pathauto/pathauto-7.x-1.1.fr.po) = 16769

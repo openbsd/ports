@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2012/06/10 19:49:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/10 20:57:01 jasper Exp $
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 DRUPAL_LANG =		fr
 EXTRACT_ONLY =
 
 DISTNAME =	drupal7-${DRUPAL_LANG}-7.13
-REVISION =	2
+REVISION =	3
 DISTFILES =	drupal/drupal-7.13.${DRUPAL_LANG}.po
 LANGFILES +=	abt 1.5
 LANGFILES += 	auto_nodetitle 1.0
@@ -19,6 +19,7 @@ LANGFILES +=	devel 1.2
 LANGFILES +=	entity 1.0-rc3
 LANGFILES +=	google_analytics 1.2
 LANGFILES +=	globalredirect 1.4
+LANGFILES +=	jquery_plugin 1.0
 LANGFILES +=	masquerade 1.0-rc4
 LANGFILES +=	nodeaccess_userreference 3.8
 LANGFILES +=	pathauto 1.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/10 19:49:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/10 20:57:01 jasper Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/profiles/standard/translations/abt-7.x-1.5.${DRUPAL_LANG}.po
@@ -14,6 +14,7 @@ ${DRUPAL_ROOT}/profiles/standard/translations/drupal-7.13.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/entity-7.x-1.0-rc3.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/globalredirect-7.x-1.4.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/google_analytics-7.x-1.2.${DRUPAL_LANG}.po
+${DRUPAL_ROOT}/profiles/standard/translations/jquery_plugin-7.x-1.0.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/masquerade-7.x-1.0-rc4.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/nodeaccess_userreference-7.x-3.8.${DRUPAL_LANG}.po
 ${DRUPAL_ROOT}/profiles/standard/translations/pathauto-7.x-1.1.${DRUPAL_LANG}.po
