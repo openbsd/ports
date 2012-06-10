@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/05/31 15:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/06/10 19:49:05 jasper Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -15,6 +15,7 @@ SUBDIR += backup_migrate
 #SUBDIR += captcha
 #SUBDIR += cck_blocks
 #SUBDIR += ckeditor-link
+SUBDIR += colorbox
 SUBDIR += compact_forms
 #SUBDIR += contemplate
 SUBDIR += content_access	#1.2beta1
@@ -30,6 +31,7 @@ SUBDIR += entity
 #SUBDIR += filefield_sources
 SUBDIR += genpass
 SUBDIR += globalredirect
+SUBDIR += google_analytics
 #SUBDIR += imageapi
 #SUBDIR += jquery_ui
 #SUBDIR += ldap_integration
@@ -74,7 +76,7 @@ SUBDIR += theme-newsflash
 #SUBDIR += themesettingsapi
 SUBDIR += token
 #SUBDIR += transliteration
-#SUBDIR += ubercart
+SUBDIR += ubercart
 #SUBDIR += user_import
 #SUBDIR += user_pic_perm	n/a for 7
 #SUBDIR += user_readonly
