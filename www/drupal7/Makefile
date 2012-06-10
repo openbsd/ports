@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/10 19:49:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/06/10 21:01:04 jasper Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -34,6 +34,7 @@ SUBDIR += globalredirect
 SUBDIR += google_analytics
 #SUBDIR += imageapi
 #SUBDIR += jquery_ui
+SUBDIR += jquery_plugin
 #SUBDIR += ldap_integration
 #SUBDIR += lightbox2
 #SUBDIR += link
@@ -42,6 +43,7 @@ SUBDIR += google_analytics
 SUBDIR += locale-fr
 #SUBDIR += locale-it
 #SUBDIR += locale-ja
+SUBDIR += locale-nl
 SUBDIR += masquerade		#1.0rc4
 #SUBDIR += menu_force
 #SUBDIR += metatag		1.0alpha5
@@ -67,6 +69,7 @@ SUBDIR += schema		#1.0beta3
 #SUBDIR += search_config
 SUBDIR += securelogin
 #SUBDIR += session_api
+SUBDIR += slideshow_creator
 #SUBDIR += spamspan
 #SUBDIR += tables
 #SUBDIR += theme-acquia-marina
