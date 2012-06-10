@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/04/10 12:52:32 espie Exp $
+$OpenBSD: README,v 1.2 2012/06/10 16:33:00 jasper Exp $
 
 To enable a decent configuration of drupal, please create a symbolic
 link:
@@ -13,9 +13,9 @@ In order to run with standard OpenBSD chroot'ed httpd:
 
 - make sure you can connect to your database.
 
-Create a directory for the mysql socket.
+Create a directory for the mysql socket and adjust permissions:
 
-	mkdir -p /var/www/var/run/mysql
+	install -d -g _mysql -o _mysql /var/www/var/run/mysql
 
 Adjust ${SYSCONFDIR}/my.cnf to put the mysql socket into the chroot.
 
