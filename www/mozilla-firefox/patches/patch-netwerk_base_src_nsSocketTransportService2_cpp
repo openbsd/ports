@@ -1,8 +1,8 @@
-$OpenBSD: patch-netwerk_base_src_nsSocketTransportService2_cpp,v 1.1 2012/03/16 21:31:24 landry Exp $
+$OpenBSD: patch-netwerk_base_src_nsSocketTransportService2_cpp,v 1.2 2012/06/11 15:29:56 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
 xpcshell hang during fake
---- netwerk/base/src/nsSocketTransportService2.cpp.orig	Mon Mar 12 19:28:27 2012
-+++ netwerk/base/src/nsSocketTransportService2.cpp	Mon Mar 12 19:29:13 2012
+--- netwerk/base/src/nsSocketTransportService2.cpp.orig	Wed May  2 05:17:08 2012
++++ netwerk/base/src/nsSocketTransportService2.cpp	Wed May  9 23:06:35 2012
 @@ -54,14 +54,6 @@
  
  #include "mozilla/FunctionTimer.h"
@@ -27,7 +27,7 @@ xpcshell hang during fake
      gSocketThread = PR_GetCurrentThread();
  
      // add thread event to poll list (mThreadEvent may be NULL)
-@@ -674,8 +664,6 @@ nsSocketTransportService::Run()
+@@ -677,8 +667,6 @@ nsSocketTransportService::Run()
      NS_ProcessPendingEvents(thread);
  
      gSocketThread = nsnull;

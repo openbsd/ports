@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2012/04/30 15:28:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.44 2012/06/11 15:29:56 landry Exp $
 @conflict firefox3-*
 @conflict mozilla-firebird-*
 @conflict mozilla-firefox-*
@@ -37,8 +37,6 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{972ce4c6-7e08-4474-a285-32
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/icons/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/icons/mozicon128.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/jsloader/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/jsloader/resource/
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libmozalloc.so.${LIBmozalloc_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxpcom.so.${LIBxpcom_VERSION}
 @lib lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/libxul.so.${LIBxul_VERSION}

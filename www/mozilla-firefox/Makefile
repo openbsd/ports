@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.200 2012/04/30 15:28:42 landry Exp $
+# $OpenBSD: Makefile,v 1.201 2012/06/11 15:29:56 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,12 +6,12 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	12.0
+MOZILLA_VERSION =	13.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-SO_VERSION =	31.0
+SO_VERSION =	32.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc \
@@ -33,6 +33,7 @@ MODPY_RUNDEP =	No
 USE_GROFF =	Yes
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
+SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
@@ -67,5 +68,9 @@ post-install:
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/chrome/icons/default/default{48,}.png
+
+	# cleanup useless dirs from #717616
+	rm -Rf ${PREFIX}/lib/firefox-${MOZILLA_VERSION:C/b.//}/js{sub,}loader
+
 
 .include <bsd.port.mk>

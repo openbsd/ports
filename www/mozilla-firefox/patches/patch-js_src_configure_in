@@ -1,10 +1,10 @@
-$OpenBSD: patch-js_src_configure_in,v 1.12 2012/04/30 15:28:42 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.13 2012/06/11 15:29:56 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648721
 https://bugzilla.mozilla.org/show_bug.cgi?id=589754
 chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
---- js/src/configure.in.orig	Wed Apr 11 15:55:00 2012
-+++ js/src/configure.in	Wed Apr 18 22:24:28 2012
-@@ -2534,7 +2534,12 @@ ia64*-hpux*)
+--- js/src/configure.in.orig	Wed May  2 05:16:48 2012
++++ js/src/configure.in	Wed May  9 23:06:34 2012
+@@ -2583,7 +2583,12 @@ ia64*-hpux*)
      ;;
  
  *-openbsd*)
@@ -18,16 +18,7 @@ chunk 4 : https://bugzilla.mozilla.org/show_bug.cgi?id=714312
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2805,7 +2810,7 @@ arm*-*)
-     AC_DEFINE(JS_CPU_ARM)
-     AC_DEFINE(JS_NUNBOX32)
-     ;;
--sparc*-*)
-+sparc-*)
-     ENABLE_METHODJIT=1
-     ENABLE_MONOIC=1
-     ENABLE_POLYIC=1
-@@ -2820,6 +2825,10 @@ mips*-*)
+@@ -2871,6 +2876,10 @@ mips*-*)
      ENABLE_METHODJIT_TYPED_ARRAY=1
      AC_DEFINE(JS_CPU_MIPS)
      AC_DEFINE(JS_NUNBOX32)

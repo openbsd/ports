@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.3 2011/08/23 20:14:52 landry Exp $
+$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.4 2012/06/11 15:29:56 landry Exp $
 Fix libnss3 opening
---- services/crypto/modules/WeaveCrypto.js.orig	Thu Aug 11 23:41:22 2011
-+++ services/crypto/modules/WeaveCrypto.js	Fri Aug 19 11:16:12 2011
-@@ -158,12 +158,12 @@ WeaveCrypto.prototype = {
+--- services/crypto/modules/WeaveCrypto.js.orig	Wed May  2 05:17:12 2012
++++ services/crypto/modules/WeaveCrypto.js	Wed May  9 23:06:35 2012
+@@ -157,12 +157,12 @@ WeaveCrypto.prototype = {
          Cc["@mozilla.org/psm;1"].getService(Ci.nsISupports);
  
          // Open the NSS library.
