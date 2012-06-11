@@ -1,0 +1,2 @@
+py-liblarch_gtk is a binding to py-liblarch that allows the use of a
+data structure into a Gtk.Treeview.
