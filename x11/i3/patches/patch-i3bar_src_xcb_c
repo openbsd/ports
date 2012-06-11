@@ -1,4 +1,9 @@
-$OpenBSD: patch-i3bar_src_xcb_c,v 1.5 2012/05/28 13:37:50 dcoppa Exp $
+$OpenBSD: patch-i3bar_src_xcb_c,v 1.6 2012/06/11 07:22:28 dcoppa Exp $
+
+From 599f7cc2a4ad0536759203cbdb03680389ae5e7b Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Sun, 10 Jun 2012 19:04:51 +0000
+Subject: i3bar: handle clicks with negative coordinates
 
 From 4f93e0587a849de00a1f50bfcd48a549009178c0 Mon Sep 17 00:00:00 2001
 From: TunnelWicht <MilkFreeze@web.de>
@@ -6,7 +11,16 @@ Date: Tue, 01 May 2012 11:35:34 +0000
 Subject: don't wrap when changing workspaces by mouse wheel scrolling
 
 --- i3bar/src/xcb.c.orig	Wed Apr 25 23:21:25 2012
-+++ i3bar/src/xcb.c	Mon May 28 12:39:58 2012
++++ i3bar/src/xcb.c	Mon Jun 11 09:15:19 2012
+@@ -281,7 +281,7 @@ void handle_button(xcb_button_press_event_t *event) {
+         return;
+     }
+ 
+-    int32_t x = event->event_x;
++    int32_t x = event->event_x >= 0 ? event->event_x : 0;
+ 
+     DLOG("Got Button %d\n", event->detail);
+ 
 @@ -302,17 +302,13 @@ void handle_button(xcb_button_press_event_t *event) {
              break;
          case 4:
