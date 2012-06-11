@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.6 2012/05/09 20:36:40 landry Exp $
+$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.7 2012/06/11 15:33:26 landry Exp $
 https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
---- mozilla/js/src/Makefile.in.orig	Sat Apr 28 21:39:18 2012
-+++ mozilla/js/src/Makefile.in	Wed May  9 22:08:15 2012
-@@ -349,20 +349,23 @@ CPPSRCS += 	checks.cc \
+--- mozilla/js/src/Makefile.in.orig	Fri May 18 06:10:47 2012
++++ mozilla/js/src/Makefile.in	Fri May 18 09:27:57 2012
+@@ -337,20 +337,23 @@ CPPSRCS += 	checks.cc \
  # END enclude sources for V8 dtoa
  #############################################
  

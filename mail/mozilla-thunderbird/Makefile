@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2012/04/30 15:32:06 landry Exp $
+# $OpenBSD: Makefile,v 1.150 2012/06/11 15:33:26 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,17 +8,18 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	12.0.1
+MOZILLA_VERSION =	13.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-1.4beta1
-ENIG_V =		1.4.1
-PKGNAME-enigmail =	enigmail-1.5pre
+PKGNAME-lightning =	lightning-1.5beta1
+ENIG_V =		1.4.2
+PKGNAME-enigmail =	enigmail-${ENIG_V}
 EPOCH-lightning =	0
+EPOCH-enigmail =	0
 
 #MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_PROJECT}/nightly/${MOZILLA_VERSION}-candidates/build1/source/
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
@@ -26,7 +27,7 @@ DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
 		enigmail-${ENIG_V}.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-SO_VERSION =	24.0
+SO_VERSION =	25.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
@@ -59,6 +60,8 @@ CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
 
+# bug #736961
+SEPARATE_BUILD =	Yes
 # XXX solved in firefox by patch-config-autoconf_mk_in ?
 CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 
@@ -91,14 +94,14 @@ ALL_TARGET =	default
 MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
-ENIGMAIL_DIR =	${WRKSRC}/mailnews/extensions/enigmail
+ENIGMAIL_DIR =	mailnews/extensions/enigmail
 
 post-build:
 	# build enigmail
-	cd ${ENIGMAIL_DIR} && ./makemake -r
-	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	cd ${MOB}/chrome/enigmail && zip -r ../enigmail.jar .
-	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+	cd ${WRKSRC}/${ENIGMAIL_DIR} && ./makemake -o ${WRKBUILD} -r
+	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKBUILD}/mozilla/dist/bin/chrome/enigmail && zip -r ../enigmail.jar .
+	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
@@ -110,11 +113,14 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}
-	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
+	unzip -q ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
+
+	# cleanup useless dirs from #717616
+	rm -Rf ${PREFIX}/lib/thunderbird-${MOZILLA_VERSION:C/b.//}/js{sub,}loader
 
 .include <bsd.port.mk>

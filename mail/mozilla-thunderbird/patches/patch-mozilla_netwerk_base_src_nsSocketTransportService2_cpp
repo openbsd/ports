@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.1 2012/03/16 21:35:25 landry Exp $
---- mozilla/netwerk/base/src/nsSocketTransportService2.cpp.orig	Tue Mar 13 03:43:37 2012
-+++ mozilla/netwerk/base/src/nsSocketTransportService2.cpp	Thu Mar 15 08:39:59 2012
+$OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.2 2012/06/11 15:33:26 landry Exp $
+--- mozilla/netwerk/base/src/nsSocketTransportService2.cpp.orig	Fri May 18 06:11:00 2012
++++ mozilla/netwerk/base/src/nsSocketTransportService2.cpp	Fri May 18 09:27:58 2012
 @@ -54,14 +54,6 @@
  
  #include "mozilla/FunctionTimer.h"
@@ -25,7 +25,7 @@ $OpenBSD: patch-mozilla_netwerk_base_src_nsSocketTransportService2_cpp,v 1.1 201
      gSocketThread = PR_GetCurrentThread();
  
      // add thread event to poll list (mThreadEvent may be NULL)
-@@ -674,8 +664,6 @@ nsSocketTransportService::Run()
+@@ -677,8 +667,6 @@ nsSocketTransportService::Run()
      NS_ProcessPendingEvents(thread);
  
      gSocketThread = nsnull;

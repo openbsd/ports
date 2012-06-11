@@ -1,78 +1,19 @@
-$OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.3 2012/04/30 15:32:06 landry Exp $
---- mozilla/js/src/vm/RegExpObject-inl.h.orig	Sat Apr 21 00:40:11 2012
-+++ mozilla/js/src/vm/RegExpObject-inl.h	Wed Apr 25 17:50:16 2012
-@@ -357,6 +357,7 @@ detail::RegExpPrivate::create(JSContext *cx, JSLinearS
-     return RetType(priv);
+$OpenBSD: patch-mozilla_js_src_vm_RegExpObject-inl_h,v 1.4 2012/06/11 15:33:26 landry Exp $
+--- mozilla/js/src/vm/RegExpObject-inl.h.orig	Fri May 18 06:10:51 2012
++++ mozilla/js/src/vm/RegExpObject-inl.h	Fri May 18 09:31:55 2012
+@@ -137,6 +137,7 @@ RegExpObject::setSticky(bool enabled)
+     setSlot(STICKY_FLAG_SLOT, BooleanValue(enabled));
  }
  
 +#if ENABLE_YARR_JIT
  /* This function should be deleted once bad Android platforms phase out. See bug 604774. */
  inline bool
- detail::RegExpPrivateCode::isJITRuntimeEnabled(JSContext *cx)
-@@ -367,12 +368,12 @@ detail::RegExpPrivateCode::isJITRuntimeEnabled(JSConte
+ detail::RegExpCode::isJITRuntimeEnabled(JSContext *cx)
+@@ -147,6 +148,7 @@ detail::RegExpCode::isJITRuntimeEnabled(JSContext *cx)
      return true;
  #endif
  }
 +#endif
  
  inline bool
- detail::RegExpPrivateCode::compile(JSContext *cx, JSLinearString &pattern, TokenStream *ts,
-                                    uintN *parenCount, RegExpFlag flags)
- {
--#if ENABLE_YARR_JIT
-     /* Parse the pattern. */
-     ErrorCode yarrError;
-     YarrPattern yarrPattern(pattern, bool(flags & IgnoreCaseFlag), bool(flags & MultilineFlag),
-@@ -389,7 +390,7 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
-      * case we have to bytecode compile it.
-      */
- 
--#ifdef JS_METHODJIT
-+#if ENABLE_YARR_JIT && defined(JS_METHODJIT)
-     if (isJITRuntimeEnabled(cx) && !yarrPattern.m_containsBackreferences) {
-         JSC::ExecutableAllocator *execAlloc = cx->runtime->getExecutableAllocator(cx);
-         if (!execAlloc) {
-@@ -410,21 +411,11 @@ detail::RegExpPrivateCode::compile(JSContext *cx, JSLi
-         return false;
-     }
- 
-+#if ENABLE_YARR_JIT
-     codeBlock.setFallBack(true);
-+#endif
-     byteCode = byteCompile(yarrPattern, bumpAlloc).get();
-     return true;
--#else /* !defined(ENABLE_YARR_JIT) */
--    int error = 0;
--    compiled = jsRegExpCompile(pattern.chars(), pattern.length(),
--                  ignoreCase() ? JSRegExpIgnoreCase : JSRegExpDoNotIgnoreCase,
--                  multiline() ? JSRegExpMultiline : JSRegExpSingleLine,
--                  parenCount, &error);
--    if (error) {
--        reportPCREError(cx, error);
--        return false;
--    }
--    return true;
--#endif
- }
- 
- inline bool
-@@ -466,18 +457,11 @@ detail::RegExpPrivateCode::execute(JSContext *cx, cons
-     else
-         result = JSC::Yarr::execute(codeBlock, chars, start, length, output);
- #else
--    result = jsRegExpExecute(cx, compiled, chars, length, start, output, outputCount);
-+    result = JSC::Yarr::interpret(byteCode, chars, start, length, output);
- #endif
- 
-     if (result == -1)
-         return RegExpRunStatus_Success_NotFound;
--
--#if !ENABLE_YARR_JIT
--    if (result < 0) {
--        reportPCREError(cx, result);
--        return RegExpRunStatus_Error;
--    }
--#endif
- 
-     JS_ASSERT(result >= 0);
-     return RegExpRunStatus_Success;
+ RegExpToShared(JSContext *cx, JSObject &obj, RegExpGuard *g)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/03/16 21:35:25 landry Exp $
---- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Tue Mar 13 03:43:40 2012
-+++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Thu Mar 15 08:47:21 2012
-@@ -112,6 +112,7 @@
+$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.8 2012/06/11 15:33:26 landry Exp $
+--- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Fri May 18 06:11:01 2012
++++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Fri May 18 09:27:58 2012
+@@ -111,6 +111,7 @@
  #include "secerr.h"
  #include "sslerr.h"
  #include "cert.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
  
  #include "nsXULAppAPI.h"
  
-@@ -125,6 +126,7 @@ extern "C" {
+@@ -124,6 +125,7 @@ extern "C" {
  }
  
  using namespace mozilla;
@@ -17,7 +17,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
  
  #ifdef PR_LOGGING
  PRLogModuleInfo* gPIPNSSLog = nsnull;
-@@ -396,6 +398,8 @@ nsNSSComponent::deleteBackgroundThreads()
+@@ -395,6 +397,8 @@ nsNSSComponent::deleteBackgroundThreads()
      delete mCertVerificationThread;
      mCertVerificationThread = nsnull;
    }
@@ -26,7 +26,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
  }
  
  void
-@@ -403,21 +407,20 @@ nsNSSComponent::createBackgroundThreads()
+@@ -402,21 +406,20 @@ nsNSSComponent::createBackgroundThreads()
  {
    NS_ASSERTION(mCertVerificationThread == nsnull,
                 "Cert verification thread already created.");
@@ -50,7 +50,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
    if (mUpdateTimerInitialized) {
      {
        MutexAutoLock lock(mCrlTimerLock);
-@@ -845,7 +848,7 @@ nsNSSComponent::InstallLoadableRoots()
+@@ -844,7 +847,7 @@ nsNSSComponent::InstallLoadableRoots()
  
      if (!possible_ckbi_locations[il])
      {
@@ -59,7 +59,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
      }
      else
      {
-@@ -1863,6 +1866,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
+@@ -1881,6 +1884,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
  
        LaunchSmartCardThreads();
  
@@ -68,7 +68,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
        PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("NSS Initialization done\n"));
      }
    }
-@@ -2006,16 +2011,6 @@ nsNSSComponent::Init()
+@@ -2023,16 +2028,6 @@ nsNSSComponent::Init()
    if (mClientAuthRememberService)
      mClientAuthRememberService->Init();
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
    InitializeCRLUpdateTimer();
    RegisterPSMContentListener();
  
-@@ -2230,6 +2225,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2247,6 +2242,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      DoProfileChangeTeardown(aSubject);
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_CHANGE_TEARDOWN_VETO_TOPIC) == 0) {
@@ -93,7 +93,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
      mShutdownObjectList->allowUI();
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_BEFORE_CHANGE_TOPIC) == 0) {
-@@ -2277,6 +2273,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2294,6 +2290,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      InitializeCRLUpdateTimer();
    }
    else if (nsCRT::strcmp(aTopic, NS_XPCOM_SHUTDOWN_OBSERVER_ID) == 0) {
@@ -101,7 +101,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
  
      PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("nsNSSComponent: XPCom shutdown observed\n"));
  
-@@ -2565,6 +2562,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
+@@ -2584,6 +2581,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
  void
  nsNSSComponent::DoProfileChangeTeardown(nsISupports* aSubject)
  {
@@ -111,7 +111,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.7 2012/0
    bool callVeto = false;
  
    if (!mShutdownObjectList->ifPossibleDisallowUI()) {
-@@ -2618,9 +2618,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
+@@ -2637,9 +2637,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
  void
  nsNSSComponent::DoProfileChangeNetRestore()
  {
