@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/11 13:44:22 gonzalo Exp $
+lib/python${MODPY_VERSION}/site-packages/liblarch/
+lib/python${MODPY_VERSION}/site-packages/liblarch-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/filteredtree.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/filteredtree.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/filters_bank.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/filters_bank.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/processqueue.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/processqueue.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/tree.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/tree.pyc
+lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.py
+lib/python${MODPY_VERSION}/site-packages/liblarch/treenode.pyc

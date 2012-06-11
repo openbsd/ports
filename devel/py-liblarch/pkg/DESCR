@@ -1,0 +1,3 @@
+Liblarch is a python library to easily handle data structure
+such are lists, trees and directed acyclic graphs (tree where nodes 
+can have multiple parents).
