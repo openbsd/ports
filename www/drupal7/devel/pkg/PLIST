@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/11 10:57:36 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}devel/
@@ -32,6 +32,7 @@ ${DRUPAL_MODS}devel/devel_generate/list.devel_generate.inc
 ${DRUPAL_MODS}devel/devel_generate/number.devel_generate.inc
 ${DRUPAL_MODS}devel/devel_generate/taxonomy.devel_generate.inc
 ${DRUPAL_MODS}devel/devel_generate/text.devel_generate.inc
+${DRUPAL_MODS}devel/devel_krumo_path.js
 ${DRUPAL_MODS}devel/devel_node_access.api.php
 ${DRUPAL_MODS}devel/devel_node_access.info
 ${DRUPAL_MODS}devel/devel_node_access.install

@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/10 21:00:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/11 10:57:35 espie Exp $
 
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 DRUPAL_LANG =	nl
 EXTRACT_ONLY =
 
 DISTNAME =	drupal7-${DRUPAL_LANG}-7.13
+REVISION = 0
 
 DISTFILES =	drupal/drupal-7.13.${DRUPAL_LANG}.po
 
 LANGFILES +=	abt 1.5
 LANGFILES += 	auto_nodetitle 1.0
-LANGFILES +=	backup_migrate 2.3
+LANGFILES +=	backup_migrate 2.4
 LANGFILES +=	colorbox 1.3
 LANGFILES += 	compact_forms 1.0
 LANGFILES += 	content_access 1.2-beta1
 LANGFILES +=	ctools 1.0
 LANGFILES +=	date 2.5
-LANGFILES +=	devel 1.2
+LANGFILES +=	devel 1.3
 LANGFILES +=	entity 1.0-rc3
 LANGFILES +=	google_analytics 1.2
 LANGFILES +=	globalredirect 1.4
