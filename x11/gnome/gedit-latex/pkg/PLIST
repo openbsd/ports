@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/29 07:10:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/06/11 21:14:10 ajacoutot Exp $
 lib/gedit/plugins/latex/
 lib/gedit/plugins/latex.plugin
 lib/gedit/plugins/latex/__init__.py
@@ -424,6 +424,7 @@ share/locale/gl/LC_MESSAGES/gedit-latex.mo
 share/locale/lv/LC_MESSAGES/gedit-latex.mo
 share/locale/nb/LC_MESSAGES/gedit-latex.mo
 share/locale/pl/LC_MESSAGES/gedit-latex.mo
+share/locale/pt_BR/LC_MESSAGES/gedit-latex.mo
 share/locale/ru/LC_MESSAGES/gedit-latex.mo
 share/locale/sl/LC_MESSAGES/gedit-latex.mo
 share/locale/sv/LC_MESSAGES/gedit-latex.mo
