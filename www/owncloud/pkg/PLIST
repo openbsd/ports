@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/06/02 06:54:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/06/11 13:11:54 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -639,6 +639,7 @@ owncloud/3rdparty/when/When.php
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
 owncloud/COPYING-README
+owncloud/Changelog
 owncloud/README
 owncloud/apps/
 owncloud/apps/admin_dependencies_chk/
@@ -771,6 +772,7 @@ owncloud/apps/calendar/l10n/es.php
 owncloud/apps/calendar/l10n/et_EE.php
 owncloud/apps/calendar/l10n/eu.php
 owncloud/apps/calendar/l10n/fa.php
+owncloud/apps/calendar/l10n/fi_FI.php
 owncloud/apps/calendar/l10n/fr.php
 owncloud/apps/calendar/l10n/gl.php
 owncloud/apps/calendar/l10n/he.php
@@ -913,6 +915,7 @@ owncloud/apps/contacts/l10n/es.php
 owncloud/apps/contacts/l10n/et_EE.php
 owncloud/apps/contacts/l10n/eu.php
 owncloud/apps/contacts/l10n/fa.php
+owncloud/apps/contacts/l10n/fi_FI.php
 owncloud/apps/contacts/l10n/fr.php
 owncloud/apps/contacts/l10n/gl.php
 owncloud/apps/contacts/l10n/he.php
@@ -1039,6 +1042,7 @@ owncloud/apps/files/l10n/es.php
 owncloud/apps/files/l10n/et_EE.php
 owncloud/apps/files/l10n/eu.php
 owncloud/apps/files/l10n/fa.php
+owncloud/apps/files/l10n/fi_FI.php
 owncloud/apps/files/l10n/fr.php
 owncloud/apps/files/l10n/gl.php
 owncloud/apps/files/l10n/he.php
@@ -1712,6 +1716,7 @@ owncloud/apps/gallery/appinfo/
 owncloud/apps/gallery/appinfo/app.php
 owncloud/apps/gallery/appinfo/database.xml
 owncloud/apps/gallery/appinfo/info.xml
+owncloud/apps/gallery/appinfo/update.php
 owncloud/apps/gallery/appinfo/version
 owncloud/apps/gallery/css/
 owncloud/apps/gallery/css/sharing.css
@@ -1724,8 +1729,8 @@ owncloud/apps/gallery/img/rename.png
 owncloud/apps/gallery/img/share.png
 owncloud/apps/gallery/index.php
 owncloud/apps/gallery/js/
-owncloud/apps/gallery/js/album_cover.js
 owncloud/apps/gallery/js/albums.js
+owncloud/apps/gallery/js/pictures.js
 owncloud/apps/gallery/js/scanner.js
 owncloud/apps/gallery/js/sharing.js
 owncloud/apps/gallery/l10n/
@@ -1740,13 +1745,17 @@ owncloud/apps/gallery/l10n/es.php
 owncloud/apps/gallery/l10n/et_EE.php
 owncloud/apps/gallery/l10n/eu.php
 owncloud/apps/gallery/l10n/fa.php
+owncloud/apps/gallery/l10n/fi_FI.php
 owncloud/apps/gallery/l10n/fr.php
 owncloud/apps/gallery/l10n/gl.php
+owncloud/apps/gallery/l10n/hr.php
 owncloud/apps/gallery/l10n/hu_HU.php
 owncloud/apps/gallery/l10n/ia.php
+owncloud/apps/gallery/l10n/id.php
 owncloud/apps/gallery/l10n/it.php
 owncloud/apps/gallery/l10n/ja_JP.php
 owncloud/apps/gallery/l10n/ko.php
+owncloud/apps/gallery/l10n/lb.php
 owncloud/apps/gallery/l10n/lt_LT.php
 owncloud/apps/gallery/l10n/mk.php
 owncloud/apps/gallery/l10n/ms_MY.php
@@ -1771,9 +1780,12 @@ owncloud/apps/gallery/lib/
 owncloud/apps/gallery/lib/album.php
 owncloud/apps/gallery/lib/hooks_handlers.php
 owncloud/apps/gallery/lib/images_utils.php
+owncloud/apps/gallery/lib/managers.php
 owncloud/apps/gallery/lib/photo.php
 owncloud/apps/gallery/lib/scanner.php
 owncloud/apps/gallery/lib/sharing.php
+owncloud/apps/gallery/lib/tiles.php
+owncloud/apps/gallery/lib/tiles_test.php
 owncloud/apps/gallery/sharing.php
 owncloud/apps/gallery/templates/
 owncloud/apps/gallery/templates/index.php
@@ -1826,6 +1838,7 @@ owncloud/apps/media/l10n/es.php
 owncloud/apps/media/l10n/et_EE.php
 owncloud/apps/media/l10n/eu.php
 owncloud/apps/media/l10n/fa.php
+owncloud/apps/media/l10n/fi_FI.php
 owncloud/apps/media/l10n/fr.php
 owncloud/apps/media/l10n/gl.php
 owncloud/apps/media/l10n/he.php
@@ -2804,6 +2817,7 @@ owncloud/settings/l10n/es.php
 owncloud/settings/l10n/et_EE.php
 owncloud/settings/l10n/eu.php
 owncloud/settings/l10n/fa.php
+owncloud/settings/l10n/fi_FI.php
 owncloud/settings/l10n/fr.php
 owncloud/settings/l10n/gl.php
 owncloud/settings/l10n/he.php
