@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.5 2012/04/30 15:38:09 landry Exp $
+$OpenBSD: patch-mozilla_toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.6 2012/06/11 15:38:33 landry Exp $
 --- mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Mon Mar 14 14:57:39 2011
 +++ mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp	Mon Mar 14 22:10:06 2011
 @@ -364,11 +364,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i

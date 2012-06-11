@@ -1,4 +1,4 @@
-$OpenBSD: patch-mozilla_widget_xpwidgets_nsPrintSettingsImpl_cpp,v 1.1 2012/04/30 15:38:09 landry Exp $
+$OpenBSD: patch-mozilla_widget_xpwidgets_nsPrintSettingsImpl_cpp,v 1.2 2012/06/11 15:38:33 landry Exp $
 --- mozilla/widget/xpwidgets/nsPrintSettingsImpl.cpp.orig	Sat Apr 21 00:40:27 2012
 +++ mozilla/widget/xpwidgets/nsPrintSettingsImpl.cpp	Wed Apr 25 17:50:16 2012
 @@ -61,7 +61,7 @@ nsPrintSettings::nsPrintSettings() :

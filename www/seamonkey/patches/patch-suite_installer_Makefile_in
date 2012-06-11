@@ -1,8 +1,18 @@
-$OpenBSD: patch-suite_installer_Makefile_in,v 1.1 2012/04/30 15:38:09 landry Exp $
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.2 2012/06/11 15:38:33 landry Exp $
 Don't install the sdk
---- suite/installer/Makefile.in.orig	Thu Apr 26 20:29:23 2012
-+++ suite/installer/Makefile.in	Thu Apr 26 20:29:41 2012
-@@ -150,10 +150,6 @@ NON_OMNIJAR_FILES = \
+Don't make packaging warnings errors (#763408)
+--- suite/installer/Makefile.in.orig	Tue Jun  5 07:50:28 2012
++++ suite/installer/Makefile.in	Mon Jun 11 12:37:50 2012
+@@ -49,7 +49,7 @@ MOZ_PKG_REMOVALS = $(srcdir)/removed-files.in
+ MOZ_PKG_MANIFEST_P = $(srcdir)/package-manifest.in
+ # Be fatal, except when building with XULRunner which already bundles some files.
+ ifndef SYSTEM_LIBXUL
+-MOZ_PKG_FATAL_WARNINGS = 1
++MOZ_PKG_FATAL_WARNINGS = 0
+ endif
+ 
+ MOZ_NONLOCALIZED_PKG_LIST = \
+@@ -161,10 +161,6 @@ NON_OMNIJAR_FILES = \
  	defaults/profile/panels.rdf \
  	$(NULL)
  

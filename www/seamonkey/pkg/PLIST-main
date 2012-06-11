@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2012/03/16 21:38:33 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2012/06/11 15:38:34 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -102,7 +102,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/run-mozilla.sh
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/${MOZILLA_PROJECT}-bin
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/searchplugins/creativecommons.xml

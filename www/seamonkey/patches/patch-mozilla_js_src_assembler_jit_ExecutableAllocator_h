@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_js_src_assembler_jit_ExecutableAllocator_h,v 1.1 2012/05/09 20:36:40 landry Exp $
+$OpenBSD: patch-mozilla_js_src_assembler_jit_ExecutableAllocator_h,v 1.2 2012/06/11 15:38:33 landry Exp $
 https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
---- mozilla/js/src/assembler/jit/ExecutableAllocator.h.orig	Wed May  9 22:06:52 2012
-+++ mozilla/js/src/assembler/jit/ExecutableAllocator.h	Wed May  9 22:07:02 2012
-@@ -445,8 +445,6 @@ class ExecutableAllocator { (public)
+--- mozilla/js/src/assembler/jit/ExecutableAllocator.h.orig	Fri May 18 06:10:47 2012
++++ mozilla/js/src/assembler/jit/ExecutableAllocator.h	Fri May 18 09:27:57 2012
+@@ -467,8 +467,6 @@ class ExecutableAllocator { (public)
      {
          sync_instruction_memory((caddr_t)code, size);
      }

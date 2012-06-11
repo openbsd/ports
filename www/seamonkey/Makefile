@@ -1,23 +1,24 @@
-# $OpenBSD: Makefile,v 1.102 2012/04/30 15:38:09 landry Exp $
+# $OpenBSD: Makefile,v 1.103 2012/06/11 15:38:33 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.9.1
+MOZILLA_VERSION=	2.10
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.4beta1
-ENIG_V =		1.4.1
-PKGNAME-enigmail =	enigmail-seamonkey-1.5pre
+PKGNAME-lightning =	lightning-seamonkey-1.5beta1
+ENIG_V =		1.4.2
+PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
+EPOCH-enigmail =	0
 
-SO_VERSION=	24.0
+SO_VERSION=	25.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -57,6 +58,8 @@ RUN_DEPENDS-enigmail =	security/gnupg
 LIB_DEPENDS-enigmail =	${LIB_DEPENDS-lightning}
 WANTLIB-enigmail =	${WANTLIB-lightning}
 
+# bug #736961
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 CONFIGURE_ARGS +=	--enable-calendar
@@ -76,14 +79,14 @@ ALL_TARGET=	default
 MOZILLA_AUTOCONF_DIRS =	ldap/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=	configure
 
-ENIGMAIL_DIR =	${WRKSRC}/mailnews/extensions/enigmail
+ENIGMAIL_DIR =	mailnews/extensions/enigmail
 
 post-build:
 	# build enigmail
-	cd ${ENIGMAIL_DIR} && ./makemake -r
-	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	cd ${MOB}/chrome/enigmail && zip -r ../enigmail.jar .
-	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+	cd ${WRKSRC}/${ENIGMAIL_DIR} && ./makemake -o ${WRKBUILD} -r
+	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKBUILD}/mozilla/dist/bin/chrome/enigmail && zip -r ../enigmail.jar .
+	cd ${WRKBUILD}/${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
 
 GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
@@ -95,14 +98,17 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION:C/b.//}/extensions/
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKBUILD}/mozilla/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/
 
 .for xpi guid in ${GUIDS}
-	${UNZIP} -oq ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
+	${UNZIP} -oq ${WRKBUILD}/mozilla/dist/xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
+
+	# cleanup useless dirs from #717616
+	rm -Rf ${PREFIX}/lib/seamonkey-${MOZILLA_VERSION:C/b.//}/js{sub,}loader
 
 .include <bsd.port.mk>
