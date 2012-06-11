@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/11 04:24:01 bentley Exp $
+@bin bin/bin2iso
+@bin bin/bincomp
+@bin bin/brrrip
+@bin bin/byteshuf
+@bin bin/byteswap
+@bin bin/cdpatch
+@bin bin/ecm
+@bin bin/fakecrc
+@bin bin/hax65816
+@bin bin/id3point
+@bin bin/pecompat
+@bin bin/rels
+@bin bin/screamf
+@bin bin/subfile
+@bin bin/uips
+@bin bin/usfv
+@bin bin/vb2rip
+@bin bin/wordadd
+@bin bin/zerofill
+share/cmdpack/
+share/cmdpack/cmdpack.txt
