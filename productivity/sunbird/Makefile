@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2012/04/24 17:49:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2012/06/11 15:26:14 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_BRANCH =	1.9.2
 MOZILLA_CODENAME =	calendar
 
 EPOCH =			0
-REVISION =		17
+REVISION =		18
 
 HOMEPAGE =	http://www.mozilla.org/projects/calendar/sunbird/
 
