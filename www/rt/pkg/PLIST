@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/21 22:56:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/06/11 08:42:18 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -255,6 +255,7 @@ share/doc/rt3/full_text_indexing.pod
 share/doc/rt3/glossary.pod
 share/doc/rt3/hacking.pod
 share/doc/rt3/network-diagram.svg
+share/doc/rt3/schema.dot
 share/doc/rt3/security.pod
 share/doc/rt3/web_deployment.pod
 share/examples/rt3/
@@ -536,6 +537,12 @@ share/examples/rt3/upgrade/4.0.4/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/
 share/examples/rt3/upgrade/4.0.4/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.4/content
+share/examples/rt3/upgrade/4.0.6/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/
+share/examples/rt3/upgrade/4.0.6/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/content
+share/examples/rt3/upgrade/4.0.6/schema.mysql
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.6/schema.mysql
 share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
@@ -735,6 +742,7 @@ share/rt3/html/Articles/Elements/NewestArticles
 share/rt3/html/Articles/Elements/QuickSearch
 share/rt3/html/Articles/Elements/SelectClass
 share/rt3/html/Articles/Elements/ShowTopic
+share/rt3/html/Articles/Elements/ShowTopicLink
 share/rt3/html/Articles/Elements/UpdatedArticles
 share/rt3/html/Articles/Topics.html
 share/rt3/html/Articles/index.html
@@ -762,6 +770,7 @@ share/rt3/html/Download/CustomFieldValue/dhandler
 share/rt3/html/Elements/
 share/rt3/html/Elements/BevelBoxRaisedEnd
 share/rt3/html/Elements/BevelBoxRaisedStart
+share/rt3/html/Elements/CSRF
 share/rt3/html/Elements/Callback
 share/rt3/html/Elements/Checkbox
 share/rt3/html/Elements/CollectionAsTable/
@@ -1225,7 +1234,6 @@ share/rt3/html/NoAuth/css/aileron/layout.css
 share/rt3/html/NoAuth/css/aileron/login.css
 share/rt3/html/NoAuth/css/aileron/main.css
 share/rt3/html/NoAuth/css/aileron/misc.css
-share/rt3/html/NoAuth/css/aileron/msie-pie.css
 share/rt3/html/NoAuth/css/aileron/msie.css
 share/rt3/html/NoAuth/css/aileron/msie6.css
 share/rt3/html/NoAuth/css/aileron/nav.css
@@ -1278,7 +1286,6 @@ share/rt3/html/NoAuth/css/base/ui.timepickr.custom.css
 share/rt3/html/NoAuth/css/base/yui-fonts.css
 share/rt3/html/NoAuth/css/dhandler
 share/rt3/html/NoAuth/css/images/
-share/rt3/html/NoAuth/css/images/PIE.htc
 share/rt3/html/NoAuth/css/images/arrows-ffffff.gif
 share/rt3/html/NoAuth/css/images/arrows-ffffff.png
 share/rt3/html/NoAuth/css/images/arrows-grey.gif
@@ -1297,7 +1304,6 @@ share/rt3/html/NoAuth/css/web2/images/source/background-gradient.png
 share/rt3/html/NoAuth/css/web2/layout.css
 share/rt3/html/NoAuth/css/web2/main.css
 share/rt3/html/NoAuth/css/web2/misc.css
-share/rt3/html/NoAuth/css/web2/msie-pie.css
 share/rt3/html/NoAuth/css/web2/msie.css
 share/rt3/html/NoAuth/css/web2/msie6.css
 share/rt3/html/NoAuth/css/web2/nav.css
@@ -1572,6 +1578,7 @@ share/rt3/html/Ticket/ModifyPeople.html
 share/rt3/html/Ticket/Reminders.html
 share/rt3/html/Ticket/ShowEmailRecord.html
 share/rt3/html/Ticket/Update.html
+share/rt3/html/Ticket/autohandler
 share/rt3/html/Tools/
 share/rt3/html/Tools/MyDay.html
 share/rt3/html/Tools/MyReminders.html
@@ -1598,6 +1605,7 @@ share/rt3/html/autohandler
 share/rt3/html/dhandler
 share/rt3/html/index.html
 share/rt3/html/l
+share/rt3/html/l_unsafe
 share/rt3/html/m/
 share/rt3/html/m/_elements/
 share/rt3/html/m/_elements/footer
@@ -1614,9 +1622,9 @@ share/rt3/html/m/login
 share/rt3/html/m/logout
 share/rt3/html/m/style.css
 share/rt3/html/m/ticket/
+share/rt3/html/m/ticket/autohandler
 share/rt3/html/m/ticket/create
 share/rt3/html/m/ticket/history
-share/rt3/html/m/ticket/modify
 share/rt3/html/m/ticket/reply
 share/rt3/html/m/ticket/select_create_queue
 share/rt3/html/m/ticket/show
