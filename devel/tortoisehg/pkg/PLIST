@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/11 05:33:57 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/06/12 07:17:19 rpointel Exp $
 bin/thg
 lib/nautilus/
 lib/nautilus/extensions-2.0/
@@ -222,8 +222,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/debugthg.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hglib.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgshelve.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgshelve.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgversion.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/hgversion.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/i18n.py
@@ -449,6 +447,7 @@ share/pixmaps/tortoisehg/icons/scalable/status/thg-file-merged.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p0.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p1.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-remote-repo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-success.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-svn-subrepo.svg
@@ -469,7 +468,6 @@ share/pixmaps/tortoisehg/icons/svg/merge.svg
 share/pixmaps/tortoisehg/icons/svg/proxy.svg
 share/pixmaps/tortoisehg/icons/svg/recovery.svg
 share/pixmaps/tortoisehg/icons/svg/refresh_overlays.svg
-share/pixmaps/tortoisehg/icons/svg/remote-repo.svg
 share/pixmaps/tortoisehg/icons/svg/remove.svg
 share/pixmaps/tortoisehg/icons/svg/repobrowse.svg
 share/pixmaps/tortoisehg/icons/svg/shelve.svg
