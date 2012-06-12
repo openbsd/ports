@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2012/05/08 15:31:58 okan Exp $
+@comment $OpenBSD: PLIST,v 1.42 2012/06/12 17:40:35 okan Exp $
 @conflict p5-PerlMagick-*
 @pkgpath graphics/ImageMagick,no_x11
 bin/Magick++-config
@@ -85,6 +85,7 @@ include/ImageMagick/magick/magick-type.h
 include/ImageMagick/magick/magick.h
 include/ImageMagick/magick/matrix.h
 include/ImageMagick/magick/memory_.h
+include/ImageMagick/magick/method-attribute.h
 include/ImageMagick/magick/methods.h
 include/ImageMagick/magick/mime.h
 include/ImageMagick/magick/module.h
@@ -139,6 +140,7 @@ include/ImageMagick/wand/magick-image.h
 include/ImageMagick/wand/magick-property.h
 include/ImageMagick/wand/magick-wand.h
 include/ImageMagick/wand/magick_wand.h
+include/ImageMagick/wand/method-attribute.h
 include/ImageMagick/wand/mogrify.h
 include/ImageMagick/wand/montage.h
 include/ImageMagick/wand/pixel-iterator.h
@@ -148,18 +150,6 @@ include/ImageMagick/wand/wand-view.h
 lib/ImageMagick/
 lib/ImageMagick/config/
 lib/ImageMagick/config/configure.xml
-lib/ImageMagick/config/delegates.xml
-lib/ImageMagick/config/english.xml
-lib/ImageMagick/config/francais.xml
-lib/ImageMagick/config/locale.xml
-lib/ImageMagick/config/policy.xml
-lib/ImageMagick/config/type-dejavu.xml
-lib/ImageMagick/config/type-ghostscript.xml
-lib/ImageMagick/config/type-windows.xml
-lib/ImageMagick/config/type.xml
-@comment lib/ImageMagick/modules-Q16/
-@comment lib/ImageMagick/modules-Q16/coders/
-@comment lib/ImageMagick/modules-Q16/filters/
 lib/libMagick++.a
 lib/libMagick++.la
 @lib lib/libMagick++.so.${LIBMagick++_VERSION}
@@ -203,18 +193,13 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Image/Magick/autosplit.ix
 @man man/man1/stream.1
 @man man/man3p/Image::Magick.3p
 share/ImageMagick/
-share/ImageMagick/ChangeLog
-share/ImageMagick/LICENSE
-share/ImageMagick/NEWS.txt
-share/ImageMagick/config/
-share/ImageMagick/config/coder.xml
-share/ImageMagick/config/colors.xml
-share/ImageMagick/config/log.xml
-share/ImageMagick/config/magic.xml
-share/ImageMagick/config/mime.xml
-share/ImageMagick/config/sRGB.icm
-share/ImageMagick/config/thresholds.xml
+share/ImageMagick/english.xml
+share/ImageMagick/francais.xml
+share/ImageMagick/locale.xml
 share/doc/ImageMagick/
+share/doc/ImageMagick/ChangeLog
+share/doc/ImageMagick/LICENSE
+share/doc/ImageMagick/NEWS.txt
 share/doc/ImageMagick/images/
 share/doc/ImageMagick/images/affine.png
 share/doc/ImageMagick/images/arc.png
@@ -229,6 +214,7 @@ share/doc/ImageMagick/images/configure.jpg
 share/doc/ImageMagick/images/cylinder_shaded.png
 share/doc/ImageMagick/images/definitive-guide.png
 share/doc/ImageMagick/images/difference.png
+share/doc/ImageMagick/images/donate.png
 share/doc/ImageMagick/images/examples.jpg
 share/doc/ImageMagick/images/frame.jpg
 share/doc/ImageMagick/images/fuzzy-magick.png
@@ -236,11 +222,69 @@ share/doc/ImageMagick/images/gaussian-blur.png
 share/doc/ImageMagick/images/granite.png
 share/doc/ImageMagick/images/imade_art2.jpg
 share/doc/ImageMagick/images/label.gif
-share/doc/ImageMagick/images/logo.eps
+share/doc/ImageMagick/images/logo-sm-flop.png
+share/doc/ImageMagick/images/logo-sm-fx.png
+share/doc/ImageMagick/images/logo-sm.png
 share/doc/ImageMagick/images/logo.jpg
+share/doc/ImageMagick/images/logo.png
 share/doc/ImageMagick/images/montage.jpg
 share/doc/ImageMagick/images/navy.png
 share/doc/ImageMagick/images/networkredux.png
+share/doc/ImageMagick/images/patterns/
+share/doc/ImageMagick/images/patterns/bricks.png
+share/doc/ImageMagick/images/patterns/checkerboard.png
+share/doc/ImageMagick/images/patterns/circles.png
+share/doc/ImageMagick/images/patterns/crosshatch.png
+share/doc/ImageMagick/images/patterns/crosshatch30.png
+share/doc/ImageMagick/images/patterns/crosshatch45.png
+share/doc/ImageMagick/images/patterns/fishscales.png
+share/doc/ImageMagick/images/patterns/gray0.png
+share/doc/ImageMagick/images/patterns/gray10.png
+share/doc/ImageMagick/images/patterns/gray100.png
+share/doc/ImageMagick/images/patterns/gray15.png
+share/doc/ImageMagick/images/patterns/gray20.png
+share/doc/ImageMagick/images/patterns/gray25.png
+share/doc/ImageMagick/images/patterns/gray30.png
+share/doc/ImageMagick/images/patterns/gray35.png
+share/doc/ImageMagick/images/patterns/gray40.png
+share/doc/ImageMagick/images/patterns/gray45.png
+share/doc/ImageMagick/images/patterns/gray5.png
+share/doc/ImageMagick/images/patterns/gray50.png
+share/doc/ImageMagick/images/patterns/gray55.png
+share/doc/ImageMagick/images/patterns/gray60.png
+share/doc/ImageMagick/images/patterns/gray65.png
+share/doc/ImageMagick/images/patterns/gray70.png
+share/doc/ImageMagick/images/patterns/gray75.png
+share/doc/ImageMagick/images/patterns/gray80.png
+share/doc/ImageMagick/images/patterns/gray85.png
+share/doc/ImageMagick/images/patterns/gray90.png
+share/doc/ImageMagick/images/patterns/gray95.png
+share/doc/ImageMagick/images/patterns/hexagons.png
+share/doc/ImageMagick/images/patterns/horizontal.png
+share/doc/ImageMagick/images/patterns/horizontal2.png
+share/doc/ImageMagick/images/patterns/horizontal3.png
+share/doc/ImageMagick/images/patterns/horizontalsaw.png
+share/doc/ImageMagick/images/patterns/hs_bdiagonal.png
+share/doc/ImageMagick/images/patterns/hs_cross.png
+share/doc/ImageMagick/images/patterns/hs_diagcross.png
+share/doc/ImageMagick/images/patterns/hs_fdiagonal.png
+share/doc/ImageMagick/images/patterns/hs_horizontal.png
+share/doc/ImageMagick/images/patterns/hs_vertical.png
+share/doc/ImageMagick/images/patterns/left30.png
+share/doc/ImageMagick/images/patterns/left45.png
+share/doc/ImageMagick/images/patterns/leftshingle.png
+share/doc/ImageMagick/images/patterns/octagons.png
+share/doc/ImageMagick/images/patterns/right30.png
+share/doc/ImageMagick/images/patterns/right45.png
+share/doc/ImageMagick/images/patterns/rightshingle.png
+share/doc/ImageMagick/images/patterns/smallfishscales.png
+share/doc/ImageMagick/images/patterns/vertical.png
+share/doc/ImageMagick/images/patterns/vertical2.png
+share/doc/ImageMagick/images/patterns/vertical3.png
+share/doc/ImageMagick/images/patterns/verticalbricks.png
+share/doc/ImageMagick/images/patterns/verticalleftshingle.png
+share/doc/ImageMagick/images/patterns/verticalrightshingle.png
+share/doc/ImageMagick/images/patterns/verticalsaw.png
 share/doc/ImageMagick/images/piechart.png
 share/doc/ImageMagick/images/project-support.jpg
 share/doc/ImageMagick/images/radial-gradient.png
@@ -260,6 +304,7 @@ share/doc/ImageMagick/images/sprite.jpg
 share/doc/ImageMagick/images/t-shirt.png
 share/doc/ImageMagick/images/tricks.png
 share/doc/ImageMagick/images/wand.ico
+share/doc/ImageMagick/images/wand.png
 share/doc/ImageMagick/images/white-highlight.png
 share/doc/ImageMagick/images/wizard.jpg
 share/doc/ImageMagick/images/wizard.png
@@ -748,6 +793,7 @@ share/doc/ImageMagick/www/api/MagickCore/struct__Ascii85Info.html
 share/doc/ImageMagick/www/api/MagickCore/struct__BlobInfo.html
 share/doc/ImageMagick/www/api/MagickCore/struct__CacheInfo.html
 share/doc/ImageMagick/www/api/MagickCore/struct__CacheMethods.html
+share/doc/ImageMagick/www/api/MagickCore/struct__CacheView.html
 share/doc/ImageMagick/www/api/MagickCore/struct__ChannelStatistics.html
 share/doc/ImageMagick/www/api/MagickCore/struct__ChromaticityInfo.html
 share/doc/ImageMagick/www/api/MagickCore/struct__Cluster.html
@@ -1044,6 +1090,7 @@ share/doc/ImageMagick/www/api/effect.html
 share/doc/ImageMagick/www/api/enhance.html
 share/doc/ImageMagick/www/api/exception.html
 share/doc/ImageMagick/www/api/feature.html
+share/doc/ImageMagick/www/api/fourier.html
 share/doc/ImageMagick/www/api/fx.html
 share/doc/ImageMagick/www/api/histogram.html
 share/doc/ImageMagick/www/api/image-view.html
@@ -1116,13 +1163,14 @@ share/doc/ImageMagick/www/magick-core.html
 share/doc/ImageMagick/www/magick-vector-graphics.html
 share/doc/ImageMagick/www/magick-wand.html
 share/doc/ImageMagick/www/magick.css
-share/doc/ImageMagick/www/mailing-list.html
 share/doc/ImageMagick/www/miff.html
 share/doc/ImageMagick/www/mirrors.html
 share/doc/ImageMagick/www/mogrify.html
 share/doc/ImageMagick/www/montage.html
 share/doc/ImageMagick/www/motion-picture.html
+share/doc/ImageMagick/www/parallel.html
 share/doc/ImageMagick/www/perl-magick.html
+share/doc/ImageMagick/www/porting.html
 share/doc/ImageMagick/www/quantize.html
 share/doc/ImageMagick/www/resources.html
 share/doc/ImageMagick/www/search.html
@@ -1132,17 +1180,24 @@ share/doc/ImageMagick/www/source/analyze.c
 share/doc/ImageMagick/www/source/coder.xml
 share/doc/ImageMagick/www/source/colors.xml
 share/doc/ImageMagick/www/source/configure.xml
+share/doc/ImageMagick/www/source/contrast.c
 share/doc/ImageMagick/www/source/core.c
 share/doc/ImageMagick/www/source/delegates.xml
 share/doc/ImageMagick/www/source/english.xml
 share/doc/ImageMagick/www/source/examples.pl
+share/doc/ImageMagick/www/source/francais.xml
 share/doc/ImageMagick/www/source/incantation.msl
 share/doc/ImageMagick/www/source/locale.xml
 share/doc/ImageMagick/www/source/log.xml
 share/doc/ImageMagick/www/source/magic.xml
+share/doc/ImageMagick/www/source/mgk.c
+share/doc/ImageMagick/www/source/mime.xml
 share/doc/ImageMagick/www/source/piechart.mvg
 share/doc/ImageMagick/www/source/piechart.svg
+share/doc/ImageMagick/www/source/policy.xml
+share/doc/ImageMagick/www/source/thresholds.xml
 share/doc/ImageMagick/www/source/type-ghostscript.xml
+share/doc/ImageMagick/www/source/type-windows.xml
 share/doc/ImageMagick/www/source/type.xml
 share/doc/ImageMagick/www/source/wand.c
 share/doc/ImageMagick/www/sponsors.html
@@ -1150,3 +1205,31 @@ share/doc/ImageMagick/www/stream.html
 share/doc/ImageMagick/www/subversion.html
 share/doc/ImageMagick/www/t-shirt.html
 share/doc/ImageMagick/www/wand.png
+share/examples/ImageMagick/
+@sample ${SYSCONFDIR}/ImageMagick/
+share/examples/ImageMagick/coder.xml
+@sample ${SYSCONFDIR}/ImageMagick/coder.xml
+share/examples/ImageMagick/colors.xml
+@sample ${SYSCONFDIR}/ImageMagick/colors.xml
+share/examples/ImageMagick/delegates.xml
+@sample ${SYSCONFDIR}/ImageMagick/delegates.xml
+share/examples/ImageMagick/log.xml
+@sample ${SYSCONFDIR}/ImageMagick/log.xml
+share/examples/ImageMagick/magic.xml
+@sample ${SYSCONFDIR}/ImageMagick/magic.xml
+share/examples/ImageMagick/mime.xml
+@sample ${SYSCONFDIR}/ImageMagick/mime.xml
+share/examples/ImageMagick/policy.xml
+@sample ${SYSCONFDIR}/ImageMagick/policy.xml
+share/examples/ImageMagick/quantization-table.xml
+@sample ${SYSCONFDIR}/ImageMagick/quantization-table.xml
+share/examples/ImageMagick/thresholds.xml
+@sample ${SYSCONFDIR}/ImageMagick/thresholds.xml
+share/examples/ImageMagick/type-dejavu.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-dejavu.xml
+share/examples/ImageMagick/type-ghostscript.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-ghostscript.xml
+share/examples/ImageMagick/type-windows.xml
+@sample ${SYSCONFDIR}/ImageMagick/type-windows.xml
+share/examples/ImageMagick/type.xml
+@sample ${SYSCONFDIR}/ImageMagick/type.xml

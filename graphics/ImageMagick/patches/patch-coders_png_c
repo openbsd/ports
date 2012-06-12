@@ -1,7 +1,7 @@
-$OpenBSD: patch-coders_png_c,v 1.8 2011/07/06 22:43:00 kili Exp $
---- coders/png.c.orig	Fri Dec 24 19:00:33 2010
-+++ coders/png.c	Sat Jan  1 23:06:23 2011
-@@ -1786,7 +1786,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
+$OpenBSD: patch-coders_png_c,v 1.9 2012/06/12 17:40:35 okan Exp $
+--- coders/png.c.orig	Thu May 17 16:47:50 2012
++++ coders/png.c	Sun May 20 20:17:39 2012
+@@ -2217,7 +2217,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
  
  #if (PNG_LIBPNG_VER < 10400)
  #  if defined(PNG_USE_PNGGCCRD) && defined(PNG_ASSEMBLER_CODE_SUPPORTED) && \
