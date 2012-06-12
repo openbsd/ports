@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/05/02 22:58:31 kili Exp $
+# $OpenBSD: Makefile,v 1.68 2012/06/12 20:11:22 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -100,8 +100,7 @@ PORTHOME =		${WRKDIR}
 
 BUILD_DEPENDS +=	devel/haddock,no_deps:patch
 
-REGRESS_DEPENDS =	print/ghostscript/gnu \
-			shells/bash
+REGRESS_DEPENDS =	print/ghostscript/gnu
 
 post-extract:
 # - Install a precompiled binary.
@@ -122,8 +121,7 @@ post-extract:
 	mv ${WRKDIR}/xhtml-${XHTML_VER} ${WRKSRC}/libraries/xhtml
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/docs/index.html \
-		${WRKSRC}/libraries/process/tests/process007.hs
+	${SUBST_CMD} ${WRKSRC}/docs/index.html
 
 post-install:
 	cd ${PREFIX}/lib/ghc && \
