@@ -5,7 +5,7 @@ COMMENT-main =		mature and flexible open source SIP server
 SHARED_ONLY =		Yes
 
 VERSION =		3.2.3
-REVISION =		0
+REVISION =		1
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}

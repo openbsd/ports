@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_defs,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- Makefile.defs.orig	Tue Jan 31 16:47:59 2012
-+++ Makefile.defs	Tue Feb  7 00:05:46 2012
+$OpenBSD: patch-Makefile_defs,v 1.2 2012/06/12 23:39:09 sthen Exp $
+--- Makefile.defs.orig	Thu Apr 19 15:10:24 2012
++++ Makefile.defs	Tue Jun 12 23:10:37 2012
 @@ -422,7 +422,7 @@ endif
  endif
  
@@ -43,3 +43,17 @@ $OpenBSD: patch-Makefile_defs,v 1.1 2012/04/22 21:44:24 sthen Exp $
  else
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
+@@ -1899,9 +1895,10 @@ endif
+ 
+ ifeq ($(OS), openbsd)
+ 	C_DEFS+=-DHAVE_SOCKADDR_SA_LEN  -DHAVE_GETHOSTBYNAME2 \
+-		-DHAVE_UNION_SEMUN -DHAVE_MSGHDR_MSG_CONTROL \
+-		-DHAVE_CONNECT_ECONNRESET_BUG -DHAVE_TIMEGM \
+-		-DHAVE_NETINET_IN_SYSTM -DUSE_SIGWAIT
++		-DHAVE_UNION_SEMUN -DHAVE_SCHED_YIELD \
++		-DHAVE_MSGHDR_MSG_CONTROL -DHAVE_CONNECT_ECONNRESET_BUG \
++		-DHAVE_TIMEGM -DHAVE_NETINET_IN_SYSTM \
++		-DUSE_SIGWAIT
+ 	ifneq ($(found_lock_method), yes)
+ 		C_DEFS+= -DUSE_PTHREAD_MUTEX  # try pthread sems
+ 		found_lock_method=yes
