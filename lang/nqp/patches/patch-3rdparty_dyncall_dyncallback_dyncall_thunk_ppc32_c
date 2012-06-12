@@ -1,9 +1,16 @@
-$OpenBSD: patch-3rdparty_dyncall_dyncallback_dyncall_thunk_ppc32_c,v 1.1 2012/05/09 13:50:58 pascal Exp $
---- 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.c.orig	Wed May  9 15:45:36 2012
-+++ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.c	Wed May  9 15:44:50 2012
-@@ -28,7 +28,7 @@
- unsigned short hi16(x) { return ( (unsigned short) (((unsigned int)x)>>16UL) ); }
- unsigned short lo16(x) { return ( (unsigned short)  ((unsigned int)x)        ); }   
+$OpenBSD: patch-3rdparty_dyncall_dyncallback_dyncall_thunk_ppc32_c,v 1.2 2012/06/12 08:21:54 pascal Exp $
+--- 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.c.orig	Wed Apr 25 22:05:34 2012
++++ 3rdparty/dyncall/dyncallback/dyncall_thunk_ppc32.c	Sat Jun  2 17:56:52 2012
+@@ -25,10 +25,12 @@
+ 
+ #include "dyncall_thunk.h"
+ 
+-unsigned short hi16(x) { return ( (unsigned short) (((unsigned int)x)>>16UL) ); }
+-unsigned short lo16(x) { return ( (unsigned short)  ((unsigned int)x)        ); }   
++unsigned short hi16(DCThunk *);
++unsigned short lo16(DCThunk *);
++unsigned short hi16(DCThunk* x) { return ( (unsigned short) (((unsigned int)x)>>16UL) ); }
++unsigned short lo16(DCThunk* x) { return ( (unsigned short)  ((unsigned int)x)        ); }   
  
 -void dcbInitThunk(DCThunk* p, void (*entry)())
 +void dcbInitThunk(DCThunk* p, void (*entry)(void))

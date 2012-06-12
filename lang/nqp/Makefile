@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/04 18:43:18 pascal Exp $
-
-NOT_FOR_ARCHS =		${BE_ARCHS}
+# $OpenBSD: Makefile,v 1.6 2012/06/12 08:21:54 pascal Exp $
 
 SHARED_ONLY =		Yes
 
