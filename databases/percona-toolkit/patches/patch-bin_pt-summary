@@ -1,9 +1,0 @@
-$OpenBSD: patch-bin_pt-summary,v 1.2 2012/04/18 13:24:21 giovanni Exp $
---- bin/pt-summary.orig	Tue Apr  3 21:51:38 2012
-+++ bin/pt-summary	Wed Apr 18 15:08:55 2012
-@@ -1,4 +1,4 @@
--#!/bin/sh
-+#!${LOCALBASE}/bin/bash
- 
- # This program is part of Percona Toolkit: http://www.percona.com/software/
- # See "COPYRIGHT, LICENSE, AND WARRANTY" at the end of this file for legal
