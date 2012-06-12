@@ -1,6 +1,4 @@
 Some specific installation is needed:
-- run the ajaxterm proxy from /etc/rc, e.g.,
-ajaxterm -d -u _ajaxterm 
 
 - modify your http config to redirect to it, only from ssl modes.
 
@@ -11,5 +9,5 @@ LoadModule proxy_module        /usr/lib/apache/modules/libproxy.so
 section <VirtualHost _default_:443>
 
 add something like:
-       ProxyPass /ajaxterm/ http://localhost:8022/
-       ProxyPassReverse /ajaxterm http://localhost:8022/
+       ProxyPass /ajaxterm/ http://127.0.0.1:8022/
+       ProxyPassReverse /ajaxterm http://127.0.0.1:8022/

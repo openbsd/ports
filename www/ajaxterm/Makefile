@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 12:00:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/12 17:20:05 jasper Exp $
 
 COMMENT = 		web-based SSH client
 
 DISTNAME =		Ajaxterm-0.10
 PKGNAME =		ajaxterm-0.10
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		net security www
 PKG_ARCH =		*
@@ -39,6 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIST}/sarissa_dhtml.js ${SHARE}
 	perl -pi -e 's/ajaxterm.py/ajaxterm/' ${WRKDIST}/ajaxterm.1
 	${INSTALL_MAN}  ${WRKDIST}/ajaxterm.1 ${PREFIX}/man/man1/ajaxterm.1
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/share/ajaxterm
 
 
 
