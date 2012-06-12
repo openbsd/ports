@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/14 13:48:27 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/06/12 17:30:48 jasper Exp $
 bin/nant
 lib/pkgconfig/nant.pc
 share/NAnt/
@@ -37,6 +37,9 @@ share/NAnt/bin/NAnt.exe
 share/NAnt/bin/NAnt.exe.config
 share/NAnt/bin/NAnt.exe.mdb
 share/NAnt/bin/NAnt.xml
+share/NAnt/bin/NDoc.Documenter.NAnt.dll
+share/NAnt/bin/NDoc.Documenter.NAnt.dll.mdb
+share/NAnt/bin/NDoc.Documenter.NAnt.xml
 share/NAnt/bin/extensions/
 share/NAnt/bin/extensions/common/
 share/NAnt/bin/extensions/common/2.0/
@@ -49,16 +52,12 @@ share/NAnt/bin/extensions/common/4.0/NAnt.MSBuild.dll.mdb
 share/NAnt/bin/extensions/common/4.0/NAnt.MSBuild.xml
 share/NAnt/bin/lib/
 share/NAnt/bin/lib/common/
-share/NAnt/bin/lib/common/1.1/
-share/NAnt/bin/lib/common/1.1/nunit-console-runner.dll
-share/NAnt/bin/lib/common/1.1/nunit-console.exe
-share/NAnt/bin/lib/common/1.1/nunit.core.dll
-share/NAnt/bin/lib/common/1.1/nunit.framework.dll
-share/NAnt/bin/lib/common/1.1/nunit.util.dll
 share/NAnt/bin/lib/common/2.0/
 share/NAnt/bin/lib/common/2.0/nunit-console-runner.dll
 share/NAnt/bin/lib/common/2.0/nunit-console.exe
+share/NAnt/bin/lib/common/2.0/nunit-console.exe.config
 share/NAnt/bin/lib/common/2.0/nunit.core.dll
+share/NAnt/bin/lib/common/2.0/nunit.core.interfaces.dll
 share/NAnt/bin/lib/common/2.0/nunit.framework.dll
 share/NAnt/bin/lib/common/2.0/nunit.util.dll
 share/NAnt/bin/lib/common/neutral/
@@ -69,13 +68,7 @@ share/NAnt/bin/lib/common/neutral/NDoc.Core.dll
 share/NAnt/bin/lib/common/neutral/NDoc.Documenter.Msdn.dll
 share/NAnt/bin/lib/common/neutral/NDoc.ExtendedUI.dll
 share/NAnt/bin/lib/common/neutral/NUnitCore.dll
-share/NAnt/bin/lib/net/
-share/NAnt/bin/lib/net/1.0/
-share/NAnt/bin/lib/net/1.0/nunit-console-runner.dll
-share/NAnt/bin/lib/net/1.0/nunit-console.exe
-share/NAnt/bin/lib/net/1.0/nunit.core.dll
-share/NAnt/bin/lib/net/1.0/nunit.framework.dll
-share/NAnt/bin/lib/net/1.0/nunit.util.dll
+share/NAnt/bin/lib/common/neutral/netDumbster.dll
 share/NAnt/bin/log4net.dll
 share/NAnt/bin/scvs.exe
 share/doc/NAnt/
@@ -83,13 +76,16 @@ share/doc/NAnt/help/
 share/doc/NAnt/help/elements/
 share/doc/NAnt/help/elements/NAnt.Compression.Tasks.ExpandBaseTask.html
 share/doc/NAnt/help/elements/NAnt.Core.DataTypeBase.html
+share/doc/NAnt/help/elements/NAnt.Core.ElementContainer.html
 share/doc/NAnt/help/elements/NAnt.Core.Filters.ChainableReader.html
 share/doc/NAnt/help/elements/NAnt.Core.Filters.Filter.html
 share/doc/NAnt/help/elements/NAnt.Core.Target.html
 share/doc/NAnt/help/elements/NAnt.Core.Task.html
 share/doc/NAnt/help/elements/NAnt.Core.TaskContainer.html
+share/doc/NAnt/help/elements/NAnt.Core.Tasks.ChooseTask.When.html
 share/doc/NAnt/help/elements/NAnt.Core.Tasks.ExternalProgramBase.html
 share/doc/NAnt/help/elements/NAnt.Core.Tasks.InElement.html
+share/doc/NAnt/help/elements/NAnt.Core.Tasks.TryCatchTask.CatchElement.html
 share/doc/NAnt/help/elements/NAnt.Core.Types.Argument.html
 share/doc/NAnt/help/elements/NAnt.Core.Types.EnvironmentSet.html
 share/doc/NAnt/help/elements/NAnt.Core.Types.EnvironmentVariable.html
@@ -132,6 +128,7 @@ share/doc/NAnt/help/enums/NAnt.Core.Level.html
 share/doc/NAnt/help/enums/NAnt.Core.Tasks.AvailableTask.ResourceType.html
 share/doc/NAnt/help/enums/NAnt.Core.Tasks.LoopTask.LoopItem.html
 share/doc/NAnt/help/enums/NAnt.Core.Tasks.LoopTask.LoopTrim.html
+share/doc/NAnt/help/enums/NAnt.Core.Tasks.MailTask.MailFormat.html
 share/doc/NAnt/help/enums/NAnt.Core.Types.ManagedExecution.html
 share/doc/NAnt/help/enums/NAnt.DotNet.Tasks.AssemblyInfoTask.CodeLanguage.html
 share/doc/NAnt/help/enums/NAnt.DotNet.Tasks.RegsvcsTask.ActionType.html
@@ -169,6 +166,7 @@ share/doc/NAnt/help/functions/convert.to-string(System.String).html
 share/doc/NAnt/help/functions/cygpath.get-dos-path(System.String).html
 share/doc/NAnt/help/functions/cygpath.get-unix-path(System.String).html
 share/doc/NAnt/help/functions/cygpath.get-windows-path(System.String).html
+share/doc/NAnt/help/functions/datetime.format-to-string(System.DateTime,System.String).html
 share/doc/NAnt/help/functions/datetime.get-day(System.DateTime).html
 share/doc/NAnt/help/functions/datetime.get-day-of-week(System.DateTime).html
 share/doc/NAnt/help/functions/datetime.get-day-of-year(System.DateTime).html
@@ -357,6 +355,7 @@ share/doc/NAnt/help/tasks/attrib.html
 share/doc/NAnt/help/tasks/available.html
 share/doc/NAnt/help/tasks/aximp.html
 share/doc/NAnt/help/tasks/call.html
+share/doc/NAnt/help/tasks/choose.html
 share/doc/NAnt/help/tasks/cl.html
 share/doc/NAnt/help/tasks/copy.html
 share/doc/NAnt/help/tasks/csc.html
@@ -417,6 +416,7 @@ share/doc/NAnt/help/tasks/tar.html
 share/doc/NAnt/help/tasks/tlbexp.html
 share/doc/NAnt/help/tasks/tlbimp.html
 share/doc/NAnt/help/tasks/touch.html
+share/doc/NAnt/help/tasks/trycatch.html
 share/doc/NAnt/help/tasks/tstamp.html
 share/doc/NAnt/help/tasks/untar.html
 share/doc/NAnt/help/tasks/unzip.html
