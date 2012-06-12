@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.41 2012/06/08 11:01:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2012/06/12 14:45:06 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2012.05.06
-REVISION =	4
+DISTNAME =	pianobar-2012.06.10
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =	http://6xq.net/projects/pianobar/
-MASTER_SITES =	${HOMEPAGE} \
-		http://spacehopper.org/mirrors/
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
-SHARED_LIBS =	piano	1.3	# 0.0.0
+SHARED_LIBS =	piano	2.0	# 0.0.0
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -38,13 +36,14 @@ CFLAGS +=	-DNDEBUG
 
 MAKE_FLAGS =	DYNLINK=1 \
 		CC=${CC} \
-		LIBpiano_VERSION="${LIBpiano_VERSION}" \
-		MANDIR="${PREFIX}/man"
+		LIBGCRYPT_CFLAGS="-I${LOCALBASE}/include" \
+		LIBpiano_VERSION="${LIBpiano_VERSION}"
 
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		MANDIR="${PREFIX}/man"
 
 USE_GMAKE =	Yes
 
