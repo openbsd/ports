@@ -1,19 +1,19 @@
-$OpenBSD: patch-Build_PL,v 1.1.1.1 2011/09/21 07:59:25 giovanni Exp $
---- Build.PL.orig	Sat Oct 31 23:16:14 2009
-+++ Build.PL	Thu Sep 15 10:32:49 2011
-@@ -63,13 +63,13 @@ my $build = $class->new(
-         Module::Build   => '0.2805',
-         Test::More      => 0,
+$OpenBSD: patch-Build_PL,v 1.2 2012/06/12 17:46:35 giovanni Exp $
+--- Build.PL.orig	Mon Jan 30 09:59:22 2012
++++ Build.PL	Thu May 31 11:51:59 2012
+@@ -67,13 +67,13 @@ my $build = $class->new(
+         Module::Build       => '0.2805',
+         Test::More          => 0,
          Net::DNS::Resolver::Programmable
--                        => 'v0.002.1',
-+                        => 0,
+-                            => '0.002001',
++                            => 0,
      },
-     script_files    => [
+     script_files        => [
          'bin/spfquery'
      ],
-     install_path    => {
--        'sbin'          => '/usr/sbin'
-+        'sbin'          => '${WRKINST}${PREFIX}/sbin'
+     install_path        => {
+-        'sbin'              => '/usr/sbin'
++        'sbin'              => '${WRKINST}${PREFIX}/sbin'
      },
-     create_makefile_pl
-                     => 'passthrough',
+     create_makefile_pl  => 'passthrough',
+     sign                => 1
