@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/05/04 14:55:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2012/06/13 16:04:56 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 %%SHARED%%
 @bin bin/escputil
@@ -201,6 +201,8 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_112.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_113.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_114.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_115.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_116.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_117.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_12.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
@@ -300,6 +302,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_99.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/p1_5.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/picturemate.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/prox900.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/v2880.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/wf40.xml
@@ -334,6 +337,8 @@ share/locale/fi/LC_MESSAGES/gutenprint.mo
 share/locale/fi/gutenprint_fi.po
 share/locale/fr/LC_MESSAGES/gutenprint.mo
 share/locale/fr/gutenprint_fr.po
+share/locale/gl/LC_MESSAGES/gutenprint.mo
+share/locale/gl/gutenprint_gl.po
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
 share/locale/it/LC_MESSAGES/gutenprint.mo
@@ -356,5 +361,9 @@ share/locale/sl/LC_MESSAGES/gutenprint.mo
 share/locale/sl/gutenprint_sl.po
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/sv/gutenprint_sv.po
+share/locale/uk/LC_MESSAGES/gutenprint.mo
+share/locale/uk/gutenprint_uk.po
+share/locale/zh_CN/LC_MESSAGES/gutenprint.mo
+share/locale/zh_CN/gutenprint_zh_CN.po
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo
 share/locale/zh_TW/gutenprint_zh_TW.po

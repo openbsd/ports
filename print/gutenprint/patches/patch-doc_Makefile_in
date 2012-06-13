@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.4 2011/05/04 14:55:02 ajacoutot Exp $
---- doc/Makefile.in.orig	Mon May  2 03:32:19 2011
-+++ doc/Makefile.in	Wed May  4 16:41:29 2011
-@@ -271,7 +271,7 @@ cups_prefix = @cups_prefix@
+$OpenBSD: patch-doc_Makefile_in,v 1.5 2012/06/13 16:04:56 ajacoutot Exp $
+--- doc/Makefile.in.orig	Fri Jun  8 02:53:28 2012
++++ doc/Makefile.in	Wed Jun 13 17:46:18 2012
+@@ -276,7 +276,7 @@ cups_prefix = @cups_prefix@
  cups_sbindir = @cups_sbindir@
  datadir = @datadir@
  datarootdir = @datarootdir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.4 2011/05/04 14:55:02 ajacoutot Exp $
  dvidir = @dvidir@
  exec_prefix = @exec_prefix@
  gimp2_plug_indir = @gimp2_plug_indir@
-@@ -724,7 +724,6 @@ html: 
+@@ -729,7 +729,6 @@ html: 
  install-data-local: FAQ.html gutenprint-users-manual.odt gutenprint-users-manual.pdf
  	$(mkdir_p) $(DESTDIR)$(docdir)
  	$(INSTALL_DATA) $(srcdir)/FAQ.html $(DESTDIR)$(docdir)
