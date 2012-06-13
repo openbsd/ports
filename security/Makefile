@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2012/06/09 12:35:01 mcbride Exp $
+# $OpenBSD: Makefile,v 1.289 2012/06/13 15:14:31 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -95,6 +95,7 @@
      SUBDIR += libnipper
      SUBDIR += libotr
      SUBDIR += libperseus
+     SUBDIR += libpwquality
      SUBDIR += libsrtp
      SUBDIR += libssh
      SUBDIR += libssh2
