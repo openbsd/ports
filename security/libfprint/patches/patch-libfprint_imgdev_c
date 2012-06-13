@@ -1,0 +1,20 @@
+$OpenBSD: patch-libfprint_imgdev_c,v 1.1 2012/06/13 09:52:23 dcoppa Exp $
+
+From 3d2e54526454ed1436b6436dffb0e8769fdbff1d Mon Sep 17 00:00:00 2001
+From: Patrick Marlier <patrick.marlier@gmail.com>
+Date: Wed, 18 Jan 2012 23:52:02 +0000
+Subject: Fix possible crash without a deactivate callback
+
+We were checking for ->activate existing instead of ->deactivate.
+
+--- libfprint/imgdev.c.orig	Thu Aug 19 21:21:32 2010
++++ libfprint/imgdev.c	Wed Jun 13 11:31:46 2012
+@@ -370,7 +370,7 @@ static void dev_deactivate(struct fp_img_dev *imgdev)
+ 	struct fp_driver *drv = imgdev->dev->drv;
+ 	struct fp_img_driver *imgdrv = fpi_driver_to_img_driver(drv);
+ 
+-	if (!imgdrv->activate)
++	if (!imgdrv->deactivate)
+ 		return;
+ 	return imgdrv->deactivate(imgdev);
+ }
