@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2012/06/13 09:45:11 espie Exp $
 
 COMMENT=	environment for rapid engineering and scientific processing
 
 V=		4.0
 DISTNAME=	FreeMat-${V}-Source
-REVISION=		0
+REVISION=		1
 PKGNAME=	freemat-${V}
 
 CATEGORIES=	graphics math
