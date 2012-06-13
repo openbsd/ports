@@ -1,6 +1,6 @@
-$OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
---- pacpl.orig	Sat Feb 14 22:04:50 2009
-+++ pacpl	Fri May 25 09:46:10 2012
+$OpenBSD: patch-pacpl,v 1.5 2012/06/13 11:43:12 jasper Exp $
+--- pacpl.orig	Sat Feb 14 12:04:50 2009
++++ pacpl	Fri May 25 05:43:14 2012
 @@ -130,8 +130,8 @@ my %config = (
               );
  
@@ -12,15 +12,28 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
  my $mod_dir   = "$conf_path/modules";
  
  my $conf_file;
-@@ -908,7 +908,7 @@ my $opts;
+@@ -708,8 +708,8 @@ my $opts;
+ 
+        flac => {
+ 
+-                DEFAULT_ENCODER => "flac",
+-                DEFAULT_DECODER => "flac",
++                DEFAULT_ENCODER => "ffmpeg",
++                DEFAULT_DECODER => "ffmpeg",
+                 
+                 ENCODER => {
+                               flac => {
+@@ -908,8 +908,8 @@ my $opts;
  
         aac  => {
  
 -                DEFAULT_ENCODER => "faac",
+-                DEFAULT_DECODER => "faad",
 +                DEFAULT_ENCODER => "ffmpeg",
-                 DEFAULT_DECODER => "faad",
++                DEFAULT_DECODER => "ffmpeg",
                  
                  ENCODER => {
+                               faac => {
 @@ -927,7 +927,7 @@ my $opts;
                                          ESTR => sub { 
                                                        $opts = "-ab $bitrate.k -ar $freq -ac $channels" if $defopts == 1;
@@ -39,15 +52,17 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
                                        },
                                
                              ffmpeg => {
-@@ -964,7 +964,7 @@ my $opts;
+@@ -964,8 +964,8 @@ my $opts;
  
         mp4  => {
  
 -                DEFAULT_ENCODER => "faac",
+-                DEFAULT_DECODER => "faad",
 +                DEFAULT_ENCODER => "ffmpeg",
-                 DEFAULT_DECODER => "faad",
++                DEFAULT_DECODER => "ffmpeg",
                  
                  ENCODER => {
+                 
 @@ -984,7 +984,7 @@ my $opts;
                                        ESTR => sub { 
                                                      $opts = "-ab $bitrate.k -ar $freq -ac $channels" if $defopts == 1;
@@ -57,15 +72,17 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
                                                    },
                                        
                                        PROMPT => {
-@@ -1022,7 +1022,7 @@ my $opts;
+@@ -1022,8 +1022,8 @@ my $opts;
  
         m4a  => {
  
 -                DEFAULT_ENCODER => "faac",
+-                DEFAULT_DECODER => "faad",
 +                DEFAULT_ENCODER => "ffmpeg",
-                 DEFAULT_DECODER => "faad",
++                DEFAULT_DECODER => "ffmpeg",
                  
                  ENCODER => {
+                   
 @@ -1042,7 +1042,7 @@ my $opts;
                                        ESTR => sub { 
                                                      $opts = "-ab $bitrate.k -ar $freq -ac $channels" if $defopts == 1;
@@ -75,6 +92,15 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
                                                    },
                                        
                                        PROMPT => {
+@@ -1084,7 +1084,7 @@ my $opts;
+        m4b  => {
+        
+                 DEFAULT_ENCODER => "faac",
+-                DEFAULT_DECODER => "faad",
++                DEFAULT_DECODER => "mplayer",
+                 
+                 ENCODER => {
+                            
 @@ -1124,13 +1124,13 @@ my $opts;
                               
         mpc  => {
@@ -133,6 +159,15 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
                                          DSTR => sub { "$dopts %i %o" },
                                        },
  
+@@ -1401,7 +1401,7 @@ my $opts;
+        wv   => {
+ 
+                 DEFAULT_ENCODER => "wavpack",
+-                DEFAULT_DECODER => "wvunpack",
++                DEFAULT_DECODER => "ffmpeg",
+                 
+                 ENCODER => {
+                               wavpack => {
 @@ -2050,11 +2050,11 @@ sub format_tags {
       
                  $tag_name{track} = 0 if not $tag_name{track};
@@ -147,3 +182,15 @@ $OpenBSD: patch-pacpl,v 1.4 2012/05/25 13:46:08 shadchin Exp $
  
                }
          } 
+@@ -3217,9 +3217,9 @@ show cddb information for current disc.
+ 
+ =item B<sox>(1) B<ffmpeg>(1) B<lame>(1) B<oggenc>(1) B<oggdec>(1)
+ 
+-=item B<flac>(1) B<shorten>(1) B<faac>(1) B<faad>(1) B<mppenc>(1)
++=item B<flac>(1) B<shorten>(1) B<faac>(1) B<faad>(1) B<mpcenc>(1)
+ 
+-=item B<mppdec>(1) B<mplayer>(1) B<speexenc>(1) B<speexdec>(1)
++=item B<mpcdec>(1) B<mplayer>(1) B<speexenc>(1) B<speexdec>(1)
+ 
+ =item B<sndfile-convert>(1) B<normalize>(1) B<cdparanoia>(1)
+ 

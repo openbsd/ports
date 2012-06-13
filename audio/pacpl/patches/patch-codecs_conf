@@ -1,0 +1,36 @@
+$OpenBSD: patch-codecs_conf,v 1.1 2012/06/13 11:43:12 jasper Exp $
+--- codecs.conf.orig	Fri May 25 05:45:56 2012
++++ codecs.conf	Fri May 25 05:48:04 2012
+@@ -5,12 +5,12 @@
+ # encoders: faac, ffmpeg
+ # decoders: faad, ffmpeg, mplayer
+ #
+-AAC = faac,faad
++AAC = ffmpeg,ffmpeg
+ 
+ # encoders: flac, ffmpeg
+ # decoders: flac, ffmpeg, mplayer
+ #
+-FLAC = flac,flac
++FLAC = ffmpeg,ffmpeg
+ 
+ # encoders: flac
+ # decoders: flac, mplayer
+@@ -21,8 +21,8 @@ FLA = flac,flac
+ # encoders: faac, ffmpeg
+ # decoders: faad, ffmpeg, mplayer
+ #
+-M4A = faac,faad
+-MP4 = faac,faad
++M4A = ffmpeg,ffmpeg
++MP4 = ffmpeg,ffmpeg
+ 
+ # encoders: lame, bladeenc, gogo, toolame, ffmpeg, sox
+ # decoders: lame, ffmpeg, mplayer, sox
+@@ -42,5 +42,5 @@ TTA = ttaenc,ttaenc
+ # encoders: wavpack
+ # decoders: wvunpack, ffmpeg, mplayer
+ #
+-WV = wavpack,wvunpack
++WV = wavpack,ffmpeg
+ 
