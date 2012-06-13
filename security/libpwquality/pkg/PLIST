@@ -1,0 +1,73 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/13 15:13:09 jasper Exp $
+@bin bin/pwmake
+@bin bin/pwscore
+include/pwquality.h
+lib/libpwquality.a
+lib/libpwquality.la
+@lib lib/libpwquality.so.${LIBpwquality_VERSION}
+lib/pkgconfig/pwquality.pc
+lib/python${MODPY_VERSION}/site-packages/pwquality.so
+@man man/man1/pwmake.1
+@man man/man1/pwscore.1
+@man man/man5/pwquality.conf.5
+share/examples/libpwquality/
+share/examples/libpwquality/pwquality.conf
+@sample ${SYSCONFDIR}/pwquality.conf
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/libpwquality.mo
+share/locale/as/LC_MESSAGES/libpwquality.mo
+share/locale/bn_IN/LC_MESSAGES/libpwquality.mo
+share/locale/ca/LC_MESSAGES/libpwquality.mo
+share/locale/cs/LC_MESSAGES/libpwquality.mo
+share/locale/da/LC_MESSAGES/libpwquality.mo
+share/locale/de/LC_MESSAGES/libpwquality.mo
+share/locale/es/LC_MESSAGES/libpwquality.mo
+share/locale/fi/LC_MESSAGES/libpwquality.mo
+share/locale/fr/LC_MESSAGES/libpwquality.mo
+share/locale/gu/LC_MESSAGES/libpwquality.mo
+share/locale/he/LC_MESSAGES/libpwquality.mo
+share/locale/hi/LC_MESSAGES/libpwquality.mo
+share/locale/hu/LC_MESSAGES/libpwquality.mo
+share/locale/it/LC_MESSAGES/libpwquality.mo
+share/locale/ja/LC_MESSAGES/libpwquality.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/libpwquality.mo
+share/locale/km/
+share/locale/km/LC_MESSAGES/
+share/locale/km/LC_MESSAGES/libpwquality.mo
+share/locale/kn/LC_MESSAGES/libpwquality.mo
+share/locale/ko/LC_MESSAGES/libpwquality.mo
+share/locale/ml/LC_MESSAGES/libpwquality.mo
+share/locale/mr/LC_MESSAGES/libpwquality.mo
+share/locale/ms/
+share/locale/ms/LC_MESSAGES/
+share/locale/ms/LC_MESSAGES/libpwquality.mo
+share/locale/nb/LC_MESSAGES/libpwquality.mo
+share/locale/nl/LC_MESSAGES/libpwquality.mo
+share/locale/or/LC_MESSAGES/libpwquality.mo
+share/locale/pa/LC_MESSAGES/libpwquality.mo
+share/locale/pl/LC_MESSAGES/libpwquality.mo
+share/locale/pt/LC_MESSAGES/libpwquality.mo
+share/locale/pt_BR/LC_MESSAGES/libpwquality.mo
+share/locale/ru/LC_MESSAGES/libpwquality.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/libpwquality.mo
+share/locale/sk/LC_MESSAGES/libpwquality.mo
+share/locale/sr/LC_MESSAGES/libpwquality.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/libpwquality.mo
+share/locale/sv/LC_MESSAGES/libpwquality.mo
+share/locale/ta/LC_MESSAGES/libpwquality.mo
+share/locale/te/LC_MESSAGES/libpwquality.mo
+share/locale/tr/LC_MESSAGES/libpwquality.mo
+share/locale/uk/LC_MESSAGES/libpwquality.mo
+share/locale/vi/LC_MESSAGES/libpwquality.mo
+share/locale/zh_CN/LC_MESSAGES/libpwquality.mo
+share/locale/zh_TW/LC_MESSAGES/libpwquality.mo
+share/locale/zu/
+share/locale/zu/LC_MESSAGES/
+share/locale/zu/LC_MESSAGES/libpwquality.mo
