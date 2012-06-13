@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2012/01/11 22:27:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/06/13 00:41:39 sthen Exp $
 
 COMMENT=	web based bug tracking
 
-V=		1.1.6
-DISTNAME=	mantisbt-${V}
-PKGNAME=	mantis-${V}
-REVISION=	5
+V=		1.2.11
+DISTNAME=	mantisbt-$V
+PKGNAME=	mantis-$V
 CATEGORIES=	www
 HOMEPAGE=	http://www.mantisbt.org/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -33,6 +32,7 @@ RUN_DEPENDS=	mail/femail,-chroot \
 do-install:
 	@-test ! -d ${PREFIX}/mantis && mkdir ${PREFIX}/mantis
 	@cd ${WRKDIST}; tar cf - . | (cd ${PREFIX}/mantis; tar xf -)
+	@find ${PREFIX}/mantis -type f -name '*.orig' -exec rm {} +
 	@echo "<?php \$$g_placeholder = 'yes'; ?>" > \
 		${PREFIX}/mantis/config_inc.php.placeholder
 
