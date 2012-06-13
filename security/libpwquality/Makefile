@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/13 15:13:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/13 15:26:16 jasper Exp $
 
 COMMENT =	library to generate, and check strenght of passwords
 
-DISTNAME =	libpwquality-1.1.0
+DISTNAME =	libpwquality-1.1.1
 SHARED_LIBS +=  pwquality                 0.0 # 0.0
 CATEGORIES =	security
 
@@ -26,10 +26,7 @@ LIB_DEPENDS =		security/cracklib
 
 USE_LIBTOOL =		Yes
 
-AUTOMAKE_VERSION =	1.11
-AUTOCONF_VERSION =	2.68
-
-CONFIGURE_STYLE =	autoconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-python-rev=${MODPY_VERSION} \
 			--with-sconfigdir=${SYSCONFDIR} \
 			--disable-pam
@@ -38,9 +35,6 @@ CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS =		secureconfdir=${PREFIX}/share/examples/libpwquality/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/python/Makefile.am
-	cd ${WRKSRC} && ${SETENV} AUTOCONF_VERSION=2.68 \
-		AUTOMAKE_VERSION=1.11 \
-		autoreconf
+	${SUBST_CMD} ${WRKSRC}/python/Makefile.in
 
 .include <bsd.port.mk>
