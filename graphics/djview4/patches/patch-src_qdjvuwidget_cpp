@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_qdjvuwidget_cpp,v 1.1 2012/06/13 09:14:53 espie Exp $
+--- src/qdjvuwidget.cpp.orig	Wed Jun 13 11:08:56 2012
++++ src/qdjvuwidget.cpp	Wed Jun 13 11:09:24 2012
+@@ -152,15 +152,6 @@ all_numbers(const char *s)
+   return true;
+ }
+ 
+-template<class T> static inline void 
+-swap(T& x, T& y)
+-{
+-  T tmp;
+-  tmp = x;
+-  x = y;
+-  y = tmp;
+-}
+-
+ template<class T> static inline int
+ ksmallest(T *v, int n, int k)
+ {
