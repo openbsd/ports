@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/04/29 15:26:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/06/14 07:06:41 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
-GNOME_VERSION=		0.14.1
+GNOME_VERSION=		0.14.2
 
 CATEGORIES=		multimedia
 
