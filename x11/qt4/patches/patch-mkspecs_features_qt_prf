@@ -1,7 +1,7 @@
-$OpenBSD: patch-mkspecs_features_qt_prf,v 1.1 2011/04/03 13:35:31 dcoppa Exp $
---- mkspecs/features/qt.prf.orig	Wed Mar 30 09:13:40 2011
-+++ mkspecs/features/qt.prf	Wed Mar 30 09:14:55 2011
-@@ -212,10 +212,10 @@ mac {
+$OpenBSD: patch-mkspecs_features_qt_prf,v 1.2 2012/06/14 09:38:35 espie Exp $
+--- mkspecs/features/qt.prf.orig	Thu Dec  8 06:06:02 2011
++++ mkspecs/features/qt.prf	Thu Dec 15 20:09:13 2011
+@@ -218,10 +218,10 @@ mac {
  mmx:DEFINES += QT_HAVE_MMX
  3dnow:DEFINES += QT_HAVE_3DNOW
  sse:DEFINES += QT_HAVE_SSE QT_HAVE_MMXEXT

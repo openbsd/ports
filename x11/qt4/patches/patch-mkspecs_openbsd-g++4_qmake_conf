@@ -1,8 +1,8 @@
-$OpenBSD: patch-mkspecs_openbsd-g++4_qmake_conf,v 1.2 2010/10/28 14:55:47 espie Exp $
---- mkspecs/openbsd-g++4/qmake.conf.orig	Sun Oct 24 12:32:06 2010
-+++ mkspecs/openbsd-g++4/qmake.conf	Sun Oct 24 12:32:06 2010
+$OpenBSD: patch-mkspecs_openbsd-g++4_qmake_conf,v 1.3 2012/06/14 09:38:35 espie Exp $
+--- mkspecs/openbsd-g++4/qmake.conf.orig	Thu Dec 15 20:09:13 2011
++++ mkspecs/openbsd-g++4/qmake.conf	Thu Dec 15 20:09:13 2011
 @@ -8,16 +8,17 @@ TEMPLATE		= app
- CONFIG			+= qt warn_on release link_prl
+ CONFIG			+= qt warn_on release link_prl gdb_dwarf_index
  QT			+= core gui
  
 +QMAKE_OPENBSD_SHLIBS    = 1

@@ -1,2 +1,2 @@
-@comment $OpenBSD: PLIST-sqlite2,v 1.1 2006/05/15 21:09:39 espie Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST-sqlite2,v 1.2 2012/06/14 09:38:36 espie Exp $
+lib/qt4/plugins/sqldrivers/libqsqlite2.so
