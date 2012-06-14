@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/14 17:30:48 pascal Exp $
+%%SHARED%%
+include/unicase.h
+include/uniconv.h
+include/unictype.h
+include/unilbrk.h
+include/uniname.h
+include/uninorm.h
+include/unistdio.h
+include/unistr.h
+include/unistring/
+include/unistring/cdefs.h
+include/unistring/iconveh.h
+include/unistring/inline.h
+include/unistring/localcharset.h
+include/unistring/stdbool.h
+include/unistring/stdint.h
+include/unistring/version.h
+include/unistring/woe32dll.h
+include/unitypes.h
+include/uniwbrk.h
+include/uniwidth.h
+@comment lib/charset.alias
+lib/libunistring.a
+lib/libunistring.la
