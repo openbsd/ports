@@ -1,14 +1,12 @@
-$OpenBSD: patch-plugins-src_TWLuaPlugin_TWLuaPlugin_pro,v 1.2 2012/04/20 08:41:27 edd Exp $
---- plugins-src/TWLuaPlugin/TWLuaPlugin.pro.orig	Mon Mar 12 11:46:27 2012
-+++ plugins-src/TWLuaPlugin/TWLuaPlugin.pro	Mon Mar 12 11:47:38 2012
-@@ -44,6 +44,10 @@ macx {
- 	INCLUDEPATH += /usr/local/include
- }
+$OpenBSD: patch-plugins-src_TWLuaPlugin_TWLuaPlugin_pro,v 1.3 2012/06/14 09:39:34 espie Exp $
+--- plugins-src/TWLuaPlugin/TWLuaPlugin.pro.orig	Wed Jun 29 19:03:14 2011
++++ plugins-src/TWLuaPlugin/TWLuaPlugin.pro	Wed Jun 13 11:22:30 2012
+@@ -46,7 +46,7 @@ macx {
  
-+openbsd-g++* {
-+       LIBS    += -L${LOCALBASE}/lib -llua
-+}
-+
  unix:!macx { # on Unix-ish platforms we rely on pkgconfig
  	CONFIG		+= link_pkgconfig
- 	PKGCONFIG	+= lua5.1
+-	PKGCONFIG	+= lua5.1
++	PKGCONFIG	+= lua
+ 
+ 	isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = /usr/local
+ 	isEmpty(TW_PLUGINPATH):TW_PLUGINPATH = $$INSTALL_PREFIX/lib/texworks

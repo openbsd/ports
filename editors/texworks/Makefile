@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/05/15 18:22:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/06/14 09:39:34 espie Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -47,7 +47,7 @@ MULTI_PACKAGES =	-main -lua -python
 
 MASTER_SITES =		http://texworks.googlecode.com/files/
 
-LIB_DEPENDS-main =	qt4->=4.7.2:${MODQT4_LIB_DEPENDS} \
+LIB_DEPENDS-main =	qt4->=4.8.2:${MODQT4_LIB_DEPENDS} \
 			textproc/hunspell \
 			x11/dbus \
 			print/poppler,-qt4
