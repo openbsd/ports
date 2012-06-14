@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_llvm-config_CMakeLists_txt,v 1.1 2012/06/14 09:32:00 dcoppa Exp $
+
+Use '-pthread', not '-lpthread'.
+
+--- tools/llvm-config/CMakeLists.txt.orig	Mon Jun 11 15:49:19 2012
++++ tools/llvm-config/CMakeLists.txt	Mon Jun 11 15:49:34 2012
+@@ -11,7 +11,7 @@ set(SEDSCRIPT_OBJPATH ${CMAKE_CURRENT_BINARY_DIR}/Buil
+ # Compute the substitution values for various items.
+ get_system_libs(LLVM_SYSTEM_LIBS_LIST)
+ foreach(l ${LLVM_SYSTEM_LIBS_LIST})
+-  set(SYSTEM_LIBS ${SYSTEM_LIBS} "-l${l}")
++  set(SYSTEM_LIBS ${SYSTEM_LIBS} "-${l}")
+ endforeach()
+ set(C_FLGS "${CMAKE_C_FLAGS} ${CMAKE_C_FLAGS_${uppercase_CMAKE_BUILD_TYPE}} ${LLVM_DEFINITIONS}")
+ set(CXX_FLGS "${CMAKE_CXX_FLAGS} ${CMAKE_CXX_FLAGS_${uppercase_CMAKE_BUILD_TYPE}} ${LLVM_DEFINITIONS}")

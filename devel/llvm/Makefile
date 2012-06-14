@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/05/26 09:14:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2012/06/14 09:32:00 dcoppa Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -10,7 +10,7 @@ COMMENT =	modular, fast C/C++/ObjC compiler, static analyzer and tools
 LLVM_V =	3.1
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
-
+REVISION =	0
 CATEGORIES =	devel
 
 # packager notes in http://llvm.org/docs/Packaging.html
