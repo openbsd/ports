@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/26 19:08:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/14 09:47:23 landry Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -6,6 +6,7 @@ V=		0.7.4
 DISTNAME=	fritzing-$Vb.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
+REVISION=	0
 
 HOMEPAGE=	http://fritzing.org/
 
@@ -28,8 +29,7 @@ MODULES=        x11/qt4
 NO_REGRESS=	Yes
 
 BUILD_DEPENDS=	devel/boost
-RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/qt4,-sqlite
+RUN_DEPENDS=	devel/desktop-file-utils
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp

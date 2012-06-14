@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/06/14 09:47:23 landry Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
 
 DISTNAME =	sqliteman-1.2.0
-REVISION =	3
+REVISION =	4
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/
@@ -24,8 +24,7 @@ LIB_DEPENDS =	x11/qt4 \
 WANTLIB +=	QtCore QtGui QtSql QtXml qscintilla2
 WANTLIB +=	c m pthread stdc++
 
-RUN_DEPENDS =	x11/qt4,-sqlite \
-		devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils
 
 
 NO_REGRESS =	Yes
