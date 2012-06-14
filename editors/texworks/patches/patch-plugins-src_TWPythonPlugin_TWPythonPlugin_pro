@@ -1,14 +1,14 @@
-$OpenBSD: patch-plugins-src_TWPythonPlugin_TWPythonPlugin_pro,v 1.4 2012/06/14 09:39:34 espie Exp $
---- plugins-src/TWPythonPlugin/TWPythonPlugin.pro.orig	Wed Jun 29 19:03:14 2011
-+++ plugins-src/TWPythonPlugin/TWPythonPlugin.pro	Wed Jun 13 11:15:34 2012
+$OpenBSD: patch-plugins-src_TWPythonPlugin_TWPythonPlugin_pro,v 1.5 2012/06/14 09:40:58 espie Exp $
+--- plugins-src/TWPythonPlugin/TWPythonPlugin.pro.orig	Wed Jun 29 18:03:14 2011
++++ plugins-src/TWPythonPlugin/TWPythonPlugin.pro	Mon Mar 12 12:02:28 2012
 @@ -50,8 +50,8 @@ macx {
  
  unix:!macx { # on Unix-ish platforms we should rely on pkgconfig
  	# Python prior to 3.x doesn't register properly with pkg-config
 -	INCLUDEPATH	+= /usr/include/python2.6/
 -	LIBS		+= -lpython2.6
-+	INCLUDEPATH	+= /usr/local/include/python2.7/
-+	LIBS		+= -lpython2.7
++	INCLUDEPATH	+= ${LOCALBASE}/include/python${MODPY_VERSION}/
++	LIBS		+= -lpython${MODPY_VERSION}
  
  	# uncomment these lines (and comment those above) to use Python 3
  #	CONFIG		+= link_pkgconfig

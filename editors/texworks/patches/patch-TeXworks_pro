@@ -1,12 +1,17 @@
-$OpenBSD: patch-TeXworks_pro,v 1.3 2012/06/14 09:39:34 espie Exp $
---- TeXworks.pro.orig	Wed Jun 29 19:03:14 2011
-+++ TeXworks.pro	Wed Jun 13 11:15:34 2012
-@@ -51,7 +51,7 @@ unix:!macx {
+$OpenBSD: patch-TeXworks_pro,v 1.4 2012/06/14 09:40:58 espie Exp $
+--- TeXworks.pro.orig	Wed Jun 29 18:03:14 2011
++++ TeXworks.pro	Thu Apr 19 17:10:51 2012
+@@ -47,11 +47,11 @@ QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
+ 
+ unix:!macx {
+ 	TARGET	=	texworks
+-	isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = /usr/local
++	isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = ${PREFIX}
  	isEmpty(DATA_DIR):DATA_DIR = $$INSTALL_PREFIX/share
  	isEmpty(TW_HELPPATH):TW_HELPPATH = $$DATA_DIR/texworks-help
  	isEmpty(TW_PLUGINPATH):TW_PLUGINPATH = $$INSTALL_PREFIX/lib/texworks
 -	isEmpty(TW_DICPATH):TW_DICPATH = /usr/share/myspell/dicts
-+	isEmpty(TW_DICPATH):TW_DICPATH = /usr/local/share/mozilla-dicts
++	isEmpty(TW_DICPATH):TW_DICPATH = ${LOCALBASE}/share/mozilla-dicts
  } else {
  	TARGET	=	TeXworks
      QMAKE_CXXFLAGS += -fexceptions
