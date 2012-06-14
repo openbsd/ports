@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/05/07 12:07:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.57 2012/06/14 17:31:38 pascal Exp $
 #
 
     SUBDIR =
@@ -13,6 +13,7 @@
     SUBDIR += libdvdcss
     SUBDIR += libiconv
     SUBDIR += libpst
+    SUBDIR += libunistring
     SUBDIR += mimepp
     SUBDIR += mpack
     SUBDIR += p5-Calendar-Simple
