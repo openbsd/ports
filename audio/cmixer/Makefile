@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/06/14 09:22:27 landry Exp $
 
 COMMENT =	simple curses mixer
 
-DISTNAME =	cmixer-0.1
+DISTNAME =	cmixer-0.2
 CATEGORIES =	audio
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +18,8 @@ MASTER_SITES =	http://rhaalovely.net/stuff/
 NO_BUILD=	yes
 NO_REGRESS=	yes
 
-RUN_DEPENDS=	devel/p5-Curses-UI
+RUN_DEPENDS=	devel/p5-Curses-UI \
+		audio/aucatctl
 
 PKG_ARCH=	*
 
