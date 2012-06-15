@@ -1,40 +1,39 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/06/15 09:07:59 jasper Exp $
 
 COMMENT=	caching IMAP proxy to be used with webmail clients
 
-DISTNAME=	up-imapproxy-1.2.5
-PKGNAME=	${DISTNAME:S/^up-//}
-REVISION =	1
+VER=		1.2.7
+DISTNAME=	squirrelmail-imap_proxy-${VER}
+PKGNAME=	imapproxy-${VER}
 CATEGORIES=	mail
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=squirrelmail/}
+EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.imapproxy.org/
 
 MAINTAINER=	Holger Mauermann <holger@mauermann.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/downloads/
+WANTLIB=	c crypto curses pthread ssl
 
-WANTLIB=	curses c ssl crypto pthread
-
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= gnu
 
 NO_REGRESS=	Yes
 
 pre-build:
-	@perl -pi -e "s,!!SYSCONFDIR!!,${SYSCONFDIR}," \
-		${WRKSRC}/include/imapproxy.h
+	@${SUBST_CMD} ${WRKSRC}/include/imapproxy.h
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/imapproxy
-	${INSTALL_DATA} ${WRKSRC}/scripts/imapproxy.conf \
-		${PREFIX}/share/examples/imapproxy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/imapproxy
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/imapproxy
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.ssl \
 		${PREFIX}/share/doc/imapproxy
+	${INSTALL_DATA} ${WRKSRC}/scripts/imapproxy.conf \
+		${PREFIX}/share/examples/imapproxy
 
 .include <bsd.port.mk>
