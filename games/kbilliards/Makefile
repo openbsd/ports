@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/03 19:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/06/15 08:32:15 ajacoutot Exp $
 
 COMMENT= 		billiard game
 CATEGORIES=		x11 x11/kde games
 DISTNAME=		kbilliards-0.8.7b
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE=		http://www.hostnotfound.it/kbilliards.php
 MASTER_SITES=		http://www.hostnotfound.it/kbilliards/

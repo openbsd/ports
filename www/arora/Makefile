@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/06/15 08:32:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	simple Qt4-based browser using WebKit
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 DISTNAME=	arora-0.11.0
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://arora.googlecode.com/files/
 

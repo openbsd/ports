@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/06/15 08:32:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		Flash plugin for Mozilla browsers
 V=			0.8.2
 DISTNAME=		swfdec-mozilla-$V
 PKGNAME=		swfdec-plugin-$V
-REVISION=		5
+REVISION=		6
 CATEGORIES=		graphics www
 
 HOMEPAGE=		http://swfdec.freedesktop.org/

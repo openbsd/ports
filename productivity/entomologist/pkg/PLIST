@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/03 23:04:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/06/15 08:32:17 ajacoutot Exp $
 @bin bin/entomologist
 share/applications/entomologist.desktop
 share/entomologist/
@@ -6,7 +6,7 @@ share/entomologist/entomologist_en.qm
 share/icons/hicolor/128x128/apps/entomologist.png
 share/icons/hicolor/32x32/apps/entomologist.png
 share/icons/hicolor/64x64/apps/entomologist.png
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

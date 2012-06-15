@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/28 13:04:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/06/15 08:32:15 ajacoutot Exp $
 
 COMMENT =	puzzle/platform game
 
 DISTNAME =	meandmyshadow-0.3-src
 CATEGORIES =	games
 PKGNAME =	${DISTNAME:S/-src//}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://meandmyshadow.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=meandmyshadow/}

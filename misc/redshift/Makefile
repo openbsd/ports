@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 20:30:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/15 08:32:17 ajacoutot Exp $
 
 COMMENT=	automatic color temperature adjustment
 
 V=		1.7
 DISTNAME=	redshift-${V}
-REVISION=	2
+REVISION=	3
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	misc

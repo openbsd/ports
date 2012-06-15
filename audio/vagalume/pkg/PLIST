@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/03 18:55:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:14 ajacoutot Exp $
 @bin bin/vagalume
 bin/vagalumectl
 @man man/man1/vagalume.1
@@ -36,7 +36,7 @@ share/pixmaps/vagalume.xpm
 share/vagalume/
 share/vagalume/cover.png
 share/vagalume/servers.xml
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

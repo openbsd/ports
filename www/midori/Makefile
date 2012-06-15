@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2012/05/16 07:16:13 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2012/06/15 08:32:18 ajacoutot Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.4.6
 XFCE_GOODIE =	midori
+REVISION=	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	www

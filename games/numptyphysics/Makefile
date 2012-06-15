@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/03 19:49:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/15 08:32:15 ajacoutot Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
 DISTNAME =		numptyphysics-0.3.r20090104
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		11
+REVISION-main =		12
 PKGNAME-npcomplete =	npcomplete-0.0.r20090116
 REVISION-npcomplete =	3
 

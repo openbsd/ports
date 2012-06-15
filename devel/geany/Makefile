@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/12/03 19:38:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2012/06/15 08:32:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.20
-REVISION =	4
+REVISION =	5
 
 CATEGORIES=	devel
 

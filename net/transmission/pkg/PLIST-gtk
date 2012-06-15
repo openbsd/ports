@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.6 2012/04/18 10:46:07 naddy Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.7 2012/06/15 08:32:17 ajacoutot Exp $
 @pkgpath net/transmission,-gui
 @bin bin/transmission-gtk
 @man man/man1/transmission-gtk.1
@@ -203,7 +203,7 @@ share/locale/zh_CN/LC_MESSAGES/transmission-gtk.mo
 share/locale/zh_TW/LC_MESSAGES/transmission-gtk.mo
 share/pixmaps/
 share/pixmaps/transmission.png
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

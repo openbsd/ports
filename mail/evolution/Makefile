@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2012/05/14 09:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2012/06/15 08:32:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		3.4.2
+REVISION-main=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}

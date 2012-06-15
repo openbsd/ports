@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/01/23 18:57:33 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2012/06/15 08:32:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,8 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 CATEGORIES=		mail news
+
+REVISION-main=		0
 
 HOMEPAGE=		http://www.claws-mail.org/
 

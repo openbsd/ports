@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/06/15 08:32:17 ajacoutot Exp $
 
 COMMENT=		GTD organizer for GNOME
 
 GNOME_PROJECT=		gtg
 GNOME_VERSION=		0.2.4
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		productivity
 

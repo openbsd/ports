@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/14 20:10:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/15 08:32:16 ajacoutot Exp $
 
 # needs to allocate 512M
 VMEM_WARNING =	Yes
@@ -6,6 +6,7 @@ VMEM_WARNING =	Yes
 COMMENT =	digital photo organizer
 
 DISTNAME =	shotwell-0.12.2
+REVISION =	0
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/stable/
 HOMEPAGE =	http://yorba.org/shotwell/

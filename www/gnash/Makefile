@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/02/22 13:22:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.51 2012/06/15 08:32:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.10
 DISTNAME=	gnash-${VER}
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/04/07 13:48:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/06/15 08:32:15 ajacoutot Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -142,5 +142,5 @@ share/locale/vi/LC_MESSAGES/libpeas.mo
 share/locale/zh_CN/LC_MESSAGES/libpeas.mo
 share/locale/zh_HK/LC_MESSAGES/libpeas.mo
 share/locale/zh_TW/LC_MESSAGES/libpeas.mo
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

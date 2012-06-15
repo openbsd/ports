@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/01/13 07:54:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:32:15 ajacoutot Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -234,5 +234,5 @@ share/pixmaps/
 share/pixmaps/openttd.32.xpm
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

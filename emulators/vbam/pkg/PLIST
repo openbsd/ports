@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/05/28 09:18:56 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/15 08:32:15 ajacoutot Exp $
 @bin bin/gvbam
 @bin bin/vbam
 share/applications/gvbam.desktop
@@ -42,5 +42,5 @@ share/vbam/ui/vbam.ui
 share/vbam/vba-over.ini
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

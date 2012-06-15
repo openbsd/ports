@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/03/15 13:38:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/06/15 08:32:14 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	4
+REVISION=	5
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}

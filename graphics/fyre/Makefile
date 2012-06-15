@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/03 18:35:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/15 08:32:16 ajacoutot Exp $
 
 COMMENT=		tool for producing computational artwork
 DISTNAME=		fyre-1.0.1
-REVISION=		11
+REVISION=		12
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://fyre.navi.cx/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/12/03 23:04:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/15 08:32:17 ajacoutot Exp $
 
 COMMENT =	personal accounting application
 
 DISTNAME =	homebank-4.4
-REVISION=	2
+REVISION=	3
 
 CATEGORIES =	productivity x11
 
