@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2012/01/01 09:03:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.119 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -93,8 +93,8 @@ LIB_DEPENDS-cups = \
 
 WANTLIB-cups = ${WANTLIB}
 
-REVISION-main = 17
-REVISION-cups = 9
+REVISION-main = 18
+REVISION-cups = 10
 WANTLIB-main += Half Iex IlmImf>=4 IlmThread Imath artsflow>=1 \
 	artsflow_idl aspell audiofile bz2 glib-2.0 gmodule-2.0 gthread-2.0 \
 	jasper kmedia2_idl mad mcop ogg pcre pcreposix qtmcop sndio \

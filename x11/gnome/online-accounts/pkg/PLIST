@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/05/14 18:01:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/06/15 08:30:20 ajacoutot Exp $
 %%SHARED%%
 include/goa-1.0/
 include/goa-1.0/goa/
@@ -162,5 +162,5 @@ share/locale/vi/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-online-accounts.mo
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

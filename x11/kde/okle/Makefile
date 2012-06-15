@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -17,7 +17,7 @@ CONFIGURE_ARGS+=--with-ogle-includes=${LOCALBASE}/include
 
 MODULES=	x11/kde devel/gettext
 
-REVISION = 7
+REVISION = 8
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c dvdcontrol fam idn \
 	jpeg lib/kde3/DCOP lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m msgevents png \

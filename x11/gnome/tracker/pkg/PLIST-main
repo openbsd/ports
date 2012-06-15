@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2012/03/08 14:14:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2012/06/15 08:30:21 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/tracker-control
 @bin bin/tracker-explorer
@@ -380,7 +380,7 @@ share/vala/vapi/tracker-sparql-${MAJ_V}.deps
 share/vala/vapi/tracker-sparql-${MAJ_V}.vapi
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

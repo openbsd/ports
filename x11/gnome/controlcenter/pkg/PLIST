@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/03/29 06:57:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/06/15 08:30:19 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -486,5 +486,5 @@ share/sounds/gnome/default/alerts/glass.ogg
 share/sounds/gnome/default/alerts/sonar.ogg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

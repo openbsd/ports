@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/29 06:36:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:30:20 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
@@ -281,5 +281,5 @@ share/icons/gnome/scalable/status/weather-showers-scattered-symbolic.svg
 share/icons/gnome/scalable/status/weather-showers-symbolic.svg
 share/icons/gnome/scalable/status/weather-snow-symbolic.svg
 share/icons/gnome/scalable/status/weather-storm-symbolic.svg
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome

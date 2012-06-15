@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/12/03 19:13:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/06/15 08:30:18 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/Faenza/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Ambiance/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/Faenza-Dark/icon-theme.cache
@@ -29105,9 +29105,9 @@ share/icons/Faenza/stock/scalable/stock_new-meeting.svg
 share/icons/Faenza/stock/scalable/stock_people.svg
 share/icons/Faenza/stock/scalable/stock_person-panel.svg
 share/icons/Faenza/stock/scalable/stock_person.svg
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Ambiance 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Dark 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Darker 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Darkest 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Faenza-Radiance 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Ambiance
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Dark
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Darker
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Darkest
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Faenza-Radiance

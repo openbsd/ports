@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/03/29 06:58:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:20 ajacoutot Exp $
 @bin bin/gnome-power-statistics
 share/applications/gnome-power-statistics.desktop
 share/glib-2.0/schemas/org.gnome.power-manager.gschema.xml
@@ -343,7 +343,7 @@ share/locale/zh_HK/LC_MESSAGES/gnome-power-manager.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-power-manager.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

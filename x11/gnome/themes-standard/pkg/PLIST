@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/26 23:12:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/06/15 08:30:20 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
@@ -2471,6 +2471,6 @@ share/themes/LowContrast/gtk-2.0/gtkrc
 share/themes/LowContrast/gtk-3.0/
 share/themes/LowContrast/gtk-3.0/gtk.css
 share/themes/LowContrast/index.theme
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/HighContrast 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/HighContrastInverse 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/LowContrast 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrast
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/HighContrastInverse
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/LowContrast

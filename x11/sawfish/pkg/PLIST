@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/12/03 23:20:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/06/15 08:30:24 ajacoutot Exp $
 @bin bin/sawfish
 bin/sawfish-client
 bin/sawfish-config
@@ -4240,7 +4240,7 @@ share/sawfish/themes/simple.tar.gz
 share/sawfish/themes/smaker.tar.gz
 share/xsessions/
 share/xsessions/sawfish.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

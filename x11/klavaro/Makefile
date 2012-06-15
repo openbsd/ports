@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-1.5.0
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	x11
 

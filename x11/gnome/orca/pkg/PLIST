@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/29 07:18:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/06/15 08:30:20 ajacoutot Exp $
 bin/orca
 lib/python${MODPY_VERSION}/site-packages/orca/
 lib/python${MODPY_VERSION}/site-packages/orca/__init__.py
@@ -1540,7 +1540,7 @@ share/orca/gfx/orca-splash.png
 share/orca/ui/
 share/orca/ui/orca-find.ui
 share/orca/ui/orca-setup.ui
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

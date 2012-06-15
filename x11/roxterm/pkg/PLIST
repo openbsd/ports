@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/01/30 10:18:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/06/15 08:30:24 ajacoutot Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
 @man man/man1/roxterm-config.1
@@ -27,7 +27,7 @@ share/roxterm/Config/Colours/Tango
 share/roxterm/Config/Shortcuts/
 share/roxterm/Config/Shortcuts/Default
 share/roxterm/roxterm-config.ui
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

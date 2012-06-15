@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/12/03 22:17:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/06/15 08:30:20 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
 GNOME_VERSION=	3.2.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 

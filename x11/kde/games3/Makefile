@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, games
 
@@ -19,7 +19,7 @@ RUN_DEPENDS +=	devel/desktop-file-utils \
 LIB_DEPENDS = 	x11/kde/libs3
 SEPARATE_BUILD =	flavored
 
-REVISION =	7
+REVISION =	8
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl \
 	audiofile c drm expat fam fontconfig freetype glib-2.0 gmodule-2.0 \

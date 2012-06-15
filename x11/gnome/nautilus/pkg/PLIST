@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2012/04/18 08:30:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.38 2012/06/15 08:30:20 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -232,8 +232,8 @@ share/nautilus/icons/hicolor/48x48/emblems/
 share/nautilus/icons/hicolor/48x48/emblems/emblem-note.png
 share/nautilus/nautilus-extras.placeholder
 share/nautilus/nautilus-suggested.placeholder
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

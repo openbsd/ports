@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/30 13:29:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:25 ajacoutot Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 @bin libexec/xfce4/panel-plugins/xfce4-wmdock-plugin
 share/icons/hicolor/48x48/apps/xfce4-wmdock.png
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/wmdock.desktop
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

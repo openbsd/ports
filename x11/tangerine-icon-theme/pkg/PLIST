@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/03 19:13:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:24 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/Tangerine/icon-theme.cache
 @comment lib/locale/
 @comment lib/locale/fr/
@@ -1357,4 +1357,4 @@ share/icons/Tangerine/scalable/status/stock_trash_full.svg
 share/icons/Tangerine/scalable/status/trashcan_full.svg
 share/icons/Tangerine/scalable/status/user-trash-full.svg
 share/icons/Tangerine/scalable/status/xfce-trash_full.svg
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/Tangerine 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/Tangerine

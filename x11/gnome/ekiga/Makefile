@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/03/02 09:06:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2012/06/15 08:30:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.3.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net multimedia
 

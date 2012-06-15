@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/12/03 23:34:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2012/06/15 08:30:23 ajacoutot Exp $
 @bin bin/atlantik
 @bin bin/kasteroids
 @bin bin/katomic
@@ -2664,7 +2664,7 @@ share/mimelnk/application/x-tuberling.desktop
 share/services/atlantik.protocol
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/crystalsvg 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/crystalsvg 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/crystalsvg

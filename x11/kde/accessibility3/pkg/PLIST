@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/12/03 19:13:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/06/15 08:30:22 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
 @bin bin/kmag
 @bin bin/kmousetool
@@ -2979,8 +2979,8 @@ share/servicetypes/kttsd_filterplugin.desktop
 share/servicetypes/kttsd_synthplugin.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/locolor 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/mono 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/locolor
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/mono

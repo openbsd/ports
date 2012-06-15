@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/06/15 08:30:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.3
 DISTNAME=		gdesklets-${V}
-REVISION=		2
+REVISION=		3
 
 EXTRACT_SUFX=		.tar.bz2
 

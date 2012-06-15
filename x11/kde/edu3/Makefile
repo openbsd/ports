@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, edutainment
 CATEGORIES =		x11 x11/kde
@@ -22,7 +22,7 @@ SEPARATE_BUILD =	flavored
 
 CONFIGURE_ARGS +=	--disable-kig-python-scripting
 
-REVISION =	7
+REVISION =	8
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2 artsflow artsflow_idl artskde \
 	audiofile c drm expat fam fontconfig freetype glib-2.0>=800 \

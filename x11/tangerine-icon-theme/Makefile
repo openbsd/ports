@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/03 19:13:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/06/15 08:30:24 ajacoutot Exp $
 
 COMMENT=		Tangerine icon theme from Ubuntu
 
 DISTNAME=		tangerine-icon-theme_0.26
 PKGNAME=		${DISTNAME:S/_/-/}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		x11
 
 MASTER_SITES=		http://archive.ubuntu.com/ubuntu/pool/main/t/tangerine-icon-theme/

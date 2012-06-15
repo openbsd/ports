@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/30 14:55:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/15 08:30:19 ajacoutot Exp $
 bin/bamz
 bin/banshee
 bin/muinshee
@@ -726,7 +726,7 @@ share/mime/packages/banshee-amz.xml
 share/mime/packages/banshee-emx.xml
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

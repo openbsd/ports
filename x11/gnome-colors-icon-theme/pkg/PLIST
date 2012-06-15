@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/12/03 19:13:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/06/15 08:30:21 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome-brave/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/gnome-colors-common/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/gnome-dust/icon-theme.cache
@@ -14008,11 +14008,11 @@ share/icons/gnome-wise/scalable/status/stock_volume-max.svg
 share/icons/gnome-wise/scalable/status/stock_volume-med.svg
 share/icons/gnome-wise/scalable/status/stock_volume-min.svg
 share/icons/gnome-wise/scalable/status/stock_volume.svg
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-brave 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-colors-common 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-dust 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-human 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-illustrious 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-noble 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-wine 2>/dev/null || true
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome-wise 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-brave
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-colors-common
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-dust
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-human
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-illustrious
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-noble
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-wine
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome-wise

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/05/22 08:46:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/15 08:30:24 ajacoutot Exp $
 @conflict remmina-plugins-*
 @conflict remmina-plugins-telepathy-*
 @pkgpath x11/remmina,-rdp
@@ -101,7 +101,7 @@ share/locale/uk/LC_MESSAGES/remmina-plugins.mo
 share/locale/uk/LC_MESSAGES/remmina.mo
 share/locale/zh_CN/LC_MESSAGES/remmina-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/remmina.mo
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

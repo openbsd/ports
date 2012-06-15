@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/03/29 18:57:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/06/15 08:30:24 ajacoutot Exp $
 
 COMMENT=	extensible window manager
 
@@ -8,7 +8,7 @@ VERSION=	1.8.2
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
-REVISION=	1
+REVISION=	2
 
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 EXTRACT_SUFX=	.tar.xz

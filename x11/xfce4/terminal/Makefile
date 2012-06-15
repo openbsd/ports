@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/04/30 13:29:03 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2012/06/15 08:30:25 ajacoutot Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -6,7 +6,7 @@ XFCE_VERSION=	0.4.8
 XFCE_GOODIE=	Terminal
 # :L is here for a reason
 PKGNAME=	xfce4-${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/12/03 23:34:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/15 08:30:24 ajacoutot Exp $
 
 COMMENT =	simple archive manager
 CATEGORIES =	x11 archivers
-REVISION=	9
+REVISION=	10
 DISTNAME =	xarchiver-0.5.2
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>

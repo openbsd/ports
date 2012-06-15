@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/04/02 06:40:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/06/15 08:30:19 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -1332,8 +1332,8 @@ share/telepathy/clients/Empathy.AudioVideo.client
 share/telepathy/clients/Empathy.Auth.client
 share/telepathy/clients/Empathy.Chat.client
 share/telepathy/clients/Empathy.FileTransfer.client
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

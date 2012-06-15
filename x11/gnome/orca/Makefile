@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/05/15 05:55:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2012/06/15 08:30:20 ajacoutot Exp $
 
 # XXX could use brltty and brlapi (with python bindinds) -- not ported yet
 
@@ -6,6 +6,7 @@ COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		3.4.2
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Orca
 

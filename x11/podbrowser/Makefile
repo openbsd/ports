@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/06/15 08:30:24 ajacoutot Exp $
 
 COMMENT =	graphical documentation browser for Perl
 
 DISTNAME =	podbrowser-0.12
-REVISION=	4
+REVISION=	5
 
 CATEGORIES =	devel x11
 

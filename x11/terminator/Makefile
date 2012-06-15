@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/12/03 23:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/15 08:30:24 ajacoutot Exp $
 
 COMMENT=		GTK2 terminal emulator with split-window and tabs support
 
 MODPY_EGG_VERSION=	0.95
 DISTNAME=		terminator-${MODPY_EGG_VERSION}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 

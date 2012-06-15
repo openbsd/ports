@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2012/03/29 06:35:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.39 2012/06/15 08:30:19 ajacoutot Exp $
 @unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 share/examples/gnome-icon-theme/
 share/examples/gnome-icon-theme/gtk-2.0/
@@ -5920,4 +5920,4 @@ share/icons/gnome/8x8/emblems/emblem-unreadable.png
 share/icons/gnome/index.theme
 share/pkgconfig/
 share/pkgconfig/gnome-icon-theme.pc
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome

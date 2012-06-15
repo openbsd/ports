@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/02/26 08:16:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2012/06/15 08:30:21 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		15
+REVISION-main=		16
 REVISION-nautilus=	5
 
 SHARED_LIBS +=  totem                     0.0 # 0.0

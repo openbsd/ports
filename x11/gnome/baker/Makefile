@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/12/03 22:17:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/06/15 08:30:18 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
 GNOME_PROJECT=		gnomebaker
 GNOME_VERSION=		0.6.4
 
-REVISION=		17
+REVISION=		18
 
 CATEGORIES=		sysutils multimedia
 

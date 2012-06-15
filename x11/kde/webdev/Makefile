@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/12/03 23:34:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2012/06/15 08:30:23 ajacoutot Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -9,7 +9,7 @@ SHARED_LIBS +=	kommanderplugin      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidget      1.0      # .0.0
 SHARED_LIBS +=	kommanderwidgets     1.0      # .0.0
 
-REVISION =	6
+REVISION =	7
 
 MODULES =	x11/kde devel/gettext
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/12/03 23:34:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:30:18 ajacoutot Exp $
 @bin bin/avant-window-navigator
 @bin bin/awn-applet
 bin/awn-settings
@@ -240,7 +240,7 @@ ${SCHEMAS_INSTDIR}/awn-applet-taskmanager.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/vala/vapi/awn.deps
 share/vala/vapi/awn.vapi
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

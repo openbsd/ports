@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2012/06/13 20:43:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/06/15 08:30:20 ajacoutot Exp $
 
 COMMENT=		serial terminal for GNOME
 
 GNOME_PROJECT=		moserial
 GNOME_VERSION=		3.0.7
+REVISION=		0
 
 CATEGORIES=		comms
 

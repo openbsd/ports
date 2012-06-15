@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/03/29 07:15:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/06/15 08:30:20 ajacoutot Exp $
 @bin bin/seahorse
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
@@ -258,7 +258,7 @@ share/seahorse/ui/seahorse-ssh-upload.xml
 share/seahorse/ui/seahorse.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/hicolor 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

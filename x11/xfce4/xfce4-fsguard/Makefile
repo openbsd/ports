@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2012/04/30 13:29:03 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2012/06/15 08:30:25 ajacoutot Exp $
 
 COMMENT =	Xfce4 disk usage monitor panel plugin
 
 XFCE_VERSION =	1.0.0
 XFCE_PLUGIN =	fsguard
-REVISION =	3
+REVISION =	4
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes

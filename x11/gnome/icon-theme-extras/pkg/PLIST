@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/03/29 06:48:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:30:20 ajacoutot Exp $
 share/icons/gnome/16x16/devices/colorimeter-colorhug.png
 share/icons/gnome/16x16/devices/computer-apple-ipad.png
 share/icons/gnome/16x16/devices/drive-harddisk-ieee1394.png
@@ -123,5 +123,5 @@ share/icons/gnome/48x48/mimetypes/application-x-blender.png
 share/icons/gnome/48x48/mimetypes/application-x-cd-image.png
 share/icons/gnome/48x48/mimetypes/application-x-mono-develop-xib.png
 share/icons/gnome/48x48/mimetypes/text-x-opml+xml.png
-@exec %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q %D/share/icons/gnome 2>/dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/gnome

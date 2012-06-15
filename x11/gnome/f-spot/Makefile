@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/12/03 22:17:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2012/06/15 08:30:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		personal photo management application for GNOME
 GNOME_VERSION=		0.8.2
 GNOME_PROJECT=		f-spot
 
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics
 
