@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1176 2012/06/14 13:34:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1177 2012/06/15 10:31:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2998,7 +2998,7 @@ _print-package-signature-lib:
 	${_emit_lib_depends}| while ${_read_spec}; do \
 		${_if_check_needed}; then \
 			${_complete_pkgspec}; \
-			echo "$$default"; \
+			echo "@$$default"; \
 		fi; \
 	done
 
