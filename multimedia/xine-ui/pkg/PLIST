@@ -1,36 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/04/28 14:08:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/06/15 09:04:07 ajacoutot Exp $
 @comment bin/fbxine
 @bin bin/xine
 bin/xine-bugreport
 bin/xine-check
 @bin bin/xine-remote
-@comment man/de/
-@comment man/de/man1/
-@comment @man man/de/man1/aaxine.1
-@comment @man man/de/man1/xine-bugreport.1
-@comment @man man/de/man1/xine-check.1
-@comment @man man/de/man1/xine-remote.1
-@comment @man man/de/man1/xine.1
-@comment man/es/
-@comment man/es/man1/
-@comment @man man/es/man1/aaxine.1
-@comment @man man/es/man1/xine-bugreport.1
-@comment @man man/es/man1/xine-check.1
-@comment @man man/es/man1/xine-remote.1
-@comment @man man/es/man1/xine.1
-@comment man/fr/
-@comment man/fr/man1/
-@comment @man man/fr/man1/xine.1
-@comment @man man/man1/aaxine.1
+man/de/
+man/de/man1/
+@man man/de/man1/aaxine.1
+@man man/de/man1/xine-bugreport.1
+@man man/de/man1/xine-check.1
+@man man/de/man1/xine-remote.1
+@man man/de/man1/xine.1
+man/es/
+man/es/man1/
+@man man/es/man1/aaxine.1
+@man man/es/man1/xine-bugreport.1
+@man man/es/man1/xine-check.1
+@man man/es/man1/xine-remote.1
+@man man/es/man1/xine.1
+man/fr/
+man/fr/man1/
+@man man/fr/man1/xine.1
+@man man/man1/aaxine.1
 @man man/man1/xine-bugreport.1
 @man man/man1/xine-check.1
 @man man/man1/xine-remote.1
 @man man/man1/xine.1
-@comment man/pl/
-@comment man/pl/man1/
-@comment @man man/pl/man1/aaxine.1
-@comment @man man/pl/man1/xine-remote.1
-@comment @man man/pl/man1/xine.1
+man/pl/
+man/pl/man1/
+@man man/pl/man1/aaxine.1
+@man man/pl/man1/xine-remote.1
+@man man/pl/man1/xine.1
 share/applications/xine.desktop
 share/doc/xine-ui/
 share/doc/xine-ui/README.config_en
@@ -107,7 +107,7 @@ share/xine/oxine/
 share/xine/oxine/mainmenu
 share/xine/oxine/mediamarks
 share/xine/skins/
-share/xine/skins/xine-ui_logo.mpv
+share/xine/skins/xine-ui_logo.png
 share/xine/skins/xine_splash.png
 share/xine/skins/xinetic/
 share/xine/skins/xinetic/BigArrowDown.png
@@ -173,8 +173,10 @@ share/xine/skins/xinetic/SmallArrowDown.png
 share/xine/skins/xinetic/SmallArrowUp.png
 share/xine/skins/xinetic/skinconfig
 share/xine/visuals/
-share/xine/visuals/default.avi
+share/xine/visuals/default.mpv
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

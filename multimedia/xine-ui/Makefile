@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2012/05/09 06:30:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/06/15 09:04:07 ajacoutot Exp $
 
 COMMENT=	multimedia player
 
-DISTNAME=	xine-ui-0.99.6
-REVISION=	5
+DISTNAME=	xine-ui-0.99.7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX=	.tar.xz
 
-HOMEPAGE=	http://xinehq.de/
+HOMEPAGE=	http://www.xine-project.org/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,21 +15,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xtst Xv Xxf86vm c curl m ncurses
-WANTLIB += png pthread readline xine z
+WANTLIB=	X11 Xext Xft Xinerama Xss Xtst Xv Xxf86vm c curl jpeg m ncurses \
+		png pthread readline xine z
 
 MODULES=	devel/gettext
 RUN_DEPENDS=	devel/desktop-file-utils \
-		misc/shared-mime-info
-LIB_DEPENDS=	multimedia/xine-lib \
-		net/curl \
-		graphics/png
+		misc/shared-mime-info \
+		x11/gtk+2,-guic
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/png \
+		multimedia/xine-lib \
+		net/curl
 
+MAKE_FLAGS=	V=1
+
+USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
-CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.65
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+=--disable-lirc \
+		--disable-nvtvsimple \
 		--disable-vdr-keys \
 		--without-aalib \
 		--without-caca
