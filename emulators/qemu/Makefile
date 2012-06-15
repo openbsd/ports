@@ -1,13 +1,17 @@
-# $OpenBSD: Makefile,v 1.85 2012/03/16 11:40:53 fgsch Exp $
+# $OpenBSD: Makefile,v 1.86 2012/06/15 11:53:28 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	amd64 arm hppa i386 mips64 mips64el powerpc sparc sparc64
 BROKEN-hppa=	compiler bug with gcc 4.2
 
 COMMENT=	multi system emulator
 
-DISTNAME=	qemu-1.0.1
+DISTNAME=	qemu-1.1.0-1
+PKGNAME=	qemu-1.1.0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
+EXTRACT_SUFX=	.tar.bz2
+
+WRKDIST=	${WRKDIR}/qemu-1.1.0
 
 HOMEPAGE=	http://www.qemu.org/
 
@@ -34,7 +38,7 @@ LIB_DEPENDS=	devel/glib2 \
 MODPY_RUNDEP=	No
 
 MAKE_ENV=	V=1
-FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
 EXTRA_CFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 EXTRA_LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -75,13 +79,15 @@ FLAVORS=	debug
 FLAVOR?=
 
 .if ${FLAVOR:Mdebug}
+CFLAGS+=	-O0
 CONFIGURE_ARGS+=--enable-debug
+.else
+CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
 NO_REGRESS=	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
 	    ${PREFIX}/share/examples/qemu
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown \

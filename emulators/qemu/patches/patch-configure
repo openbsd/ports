@@ -1,29 +1,14 @@
-$OpenBSD: patch-configure,v 1.22 2012/03/16 11:40:53 fgsch Exp $
---- configure.orig	Fri Feb 17 14:45:39 2012
-+++ configure	Fri Feb 17 16:02:57 2012
-@@ -235,13 +235,11 @@ sdl_config="${SDL_CONFIG-${cross_prefix}sdl-config}"
- 
- # default flags for all hosts
- QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
--CFLAGS="-g $CFLAGS"
- QEMU_CFLAGS="-Wall -Wundef -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
- QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
- QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
- QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
- QEMU_INCLUDES="-I. -I\$(SRC_PATH) -I\$(SRC_PATH)/fpu"
--LDFLAGS="-g $LDFLAGS"
- 
- # make source path absolute
- source_path=`cd "$source_path"; pwd`
-@@ -2684,8 +2682,9 @@ fi
+$OpenBSD: patch-configure,v 1.23 2012/06/15 11:53:28 ajacoutot Exp $
+--- configure.orig	Wed May 30 20:54:30 2012
++++ configure	Thu May 31 22:41:49 2012
+@@ -2850,10 +2850,6 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs
  
 -if test "$debug" = "no" ; then
 -  CFLAGS="-O2 $CFLAGS"
-+if test "$debug" = "yes" ; then
-+  CFLAGS="$CFLAGS -O0 -g"
-+  LDFLAGS="$LDFLAGS -g"
- fi
- 
+-fi
+-
  # Consult white-list to determine whether to enable werror
+ # by default.  Only enable by default for git builds
+ z_version=`cut -f3 -d. $source_path/VERSION`
