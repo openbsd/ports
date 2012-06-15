@@ -1,0 +1,12 @@
+$OpenBSD: patch-etc_uams_Makefile_in,v 1.1 2012/06/15 10:34:46 ajacoutot Exp $
+--- etc/uams/Makefile.in.orig	Mon May 28 03:04:55 2012
++++ etc/uams/Makefile.in	Mon May 28 03:05:16 2012
+@@ -893,7 +893,7 @@ install-data: install-data-recursive
+ uninstall: uninstall-recursive
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-data-am install-exec-am
+ 
+ installcheck: installcheck-recursive
+ install-strip:
