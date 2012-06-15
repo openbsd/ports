@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/05/08 12:49:45 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2012/06/15 12:51:32 ajacoutot Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
 
 DISTNAME=	faac-1.28
-REVISION=	3
+REVISION=	4
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 
@@ -12,8 +12,8 @@ SHARED_LIBS +=	faac                 1.0      # .0.0
 HOMEPAGE=	http://www.audiocoding.com/
 
 # LGPLv2 + MPEG reference (incompatible)
-PERMIT_PACKAGE_CDROM=	Patents
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM=	Cannot distribute
+PERMIT_PACKAGE_FTP=	Cannot distribute
 PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 
