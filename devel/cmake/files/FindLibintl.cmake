@@ -44,3 +44,4 @@ include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(Libintl  DEFAULT_MSG  LIBINTL_INCLUDE_DIR  LIBINTL_LIB_FOUND)
 
 mark_as_advanced(LIBINTL_INCLUDE_DIR  LIBINTL_LIBRARIES  LIBINTL_LIBC_HAS_DGETTEXT  LIBINTL_LIB_FOUND)
+
