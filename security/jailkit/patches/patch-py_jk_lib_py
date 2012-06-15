@@ -1,10 +1,10 @@
-$OpenBSD: patch-py_jk_lib_py,v 1.1.1.1 2010/09/20 07:15:30 sebastia Exp $
+$OpenBSD: patch-py_jk_lib_py,v 1.2 2012/06/15 13:50:58 gonzalo Exp $
 
 Fix running jk_init trying to create a jail the first time
 
---- py/jk_lib.py.orig	Wed Aug 11 10:45:24 2010
-+++ py/jk_lib.py	Wed Aug 11 10:47:07 2010
-@@ -442,7 +442,10 @@ def create_parent_path(chroot,path,be_verbose=0, copy_
+--- py/jk_lib.py.orig	Thu Jun  7 18:19:27 2012
++++ py/jk_lib.py	Thu Jun 14 11:51:39 2012
+@@ -459,7 +459,10 @@ def create_parent_path(chroot,path,be_verbose=0, copy_
  		if (stat.S_ISDIR(sb.st_mode)):
  			if (be_verbose):
  				print 'Create directory '+jailpath
