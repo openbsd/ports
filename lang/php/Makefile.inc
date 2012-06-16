@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.28 2012/04/28 08:34:56 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.29 2012/06/16 12:51:06 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -21,8 +21,8 @@ HOMEPAGE=		http://www.php.net/
 SUHOSIN_V=		0.9.33
 SUHOSIN_PHPV?=		${V}
 
-MASTER_SITES=		http://us2.php.net/distributions/ \
-			http://se.php.net/distributions/ \
+MASTER_SITES=		http://se.php.net/distributions/ \
+			http://us.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
 MASTER_SITES0=		http://download.suhosin.org/ \
@@ -126,7 +126,7 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		curl URL library extensions for php5
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		crypto idn ssl z curl>=2
+WANTLIB-curl=		crypto idn ssl z curl>=2 ${MODGETTEXT_WANTLIB}
 
 # dba
 MULTI_PACKAGES+=	-dba
@@ -299,6 +299,13 @@ COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
 WANTLIB-xsl=		${MODLIBICONV_WANTLIB} m xml2 z xslt>=3 exslt
+
+# zip
+MULTI_PACKAGES+=	-zip
+COMMENT-zip=		zip functions for php5
+CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
+LIB_DEPENDS-zip=
+WANTLIB-zip=		z
 
 # some variables to substitute
 SUBST_VARS=	MODPHP_CONFIG_PATH PV ^MODULE_NAME
