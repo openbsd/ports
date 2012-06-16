@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.1 2011/11/17 23:45:56 ajacoutot Exp $
+$OpenBSD: README-server,v 1.2 2012/06/16 07:08:55 robert Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -28,16 +28,17 @@ RDBMS like PostgreSQL or MySQL.
 PostgreSQL
 ----------
 
-Creating the DB, table and bacula user.
-    $ cd ${TRUEPREFIX}/libexec/bacula
-    $ ./create_bacula_database -U postgres
-    $ ./make_bacula_tables -U postgres
-    $ ./grant_bacula_privileges -U postgres
+Assuming you have an administrative account named `postgres',
+you can create the 'bacula' user like this:
 
-Setting up the bacula DB user password.
-    $ psql -U postgres
-    postgres=# alter user bacula with password 'dbpassword';
-    postgres=# \q
+    $ createuser -U postgres --pwprompt --no-superuser \
+      --createdb --no-createrole bacula
+
+Creating the database and tables:
+    $ cd ${TRUEPREFIX}/libexec/bacula
+    $ ./create_bacula_database -U bacula
+    $ ./make_bacula_tables -U bacula
+    $ ./grant_bacula_privileges -U bacula
 
 MySQL
 -----
