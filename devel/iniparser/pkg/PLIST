@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
+%%SHARED%%
+include/dictionary.h
+include/iniparser.h
+lib/libiniparser.a

@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
+--- Makefile.orig	Sun Apr  8 16:44:57 2012
++++ Makefile	Sat Jun 16 11:46:02 2012
+@@ -3,16 +3,16 @@
+ #
+ 
+ # Compiler settings
+-CC      = gcc
+-CFLAGS  = -O2 -fPIC -Wall -ansi -pedantic
++CC      ?= gcc
++CFLAGS  += -fPIC -Wall -ansi -pedantic
+ 
+ # Ar settings to build the library
+ AR	    = ar
+ ARFLAGS = rcv
+ 
+ SHLD = ${CC} ${CFLAGS}
+-LDSHFLAGS = -shared -Wl,-Bsymbolic  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath,/usr/lib
+-LDFLAGS = -Wl,-rpath -Wl,/usr/lib -Wl,-rpath,/usr/lib
++LDSHFLAGS = -shared -Wl,-Bsymbolic  -Wl,-rpath -Wl,/usr/lib -Wl,-rpath,${PREFIX}/lib
++LDFLAGS = -Wl,-rpath -Wl,/usr/lib -Wl,-rpath,${PREFIX}/lib
+ 
+ # Set RANLIB to ranlib on systems that require it (Sun OS < 4, Mac OSX)
+ # RANLIB  = ranlib
+@@ -40,12 +40,12 @@ OBJS = $(SRCS:.c=.o)
+ default:	libiniparser.a libiniparser.so
+ 
+ libiniparser.a:	$(OBJS)
+-	@($(AR) $(ARFLAGS) libiniparser.a $(OBJS))
+-	@($(RANLIB) libiniparser.a)
++	($(AR) $(ARFLAGS) libiniparser.a $(OBJS))
++	($(RANLIB) libiniparser.a)
+ 
+ libiniparser.so:	$(OBJS)
+-	@$(SHLD) $(LDSHFLAGS) -o $@.0 $(OBJS) $(LDFLAGS) \
+-		-Wl,-soname=`basename $@`.0
++	$(SHLD) $(LDSHFLAGS) -o $@.${LIBiniparser_VERSION} $(OBJS) $(LDFLAGS) \
++		-Wl,-soname=`basename $@`
+ 
+ clean:
+ 	$(RM) $(OBJS)
