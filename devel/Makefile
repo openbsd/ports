@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1048 2012/06/11 13:47:39 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.1049 2012/06/16 09:49:32 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -253,6 +253,7 @@
      SUBDIR += hudson
      SUBDIR += hyena
      SUBDIR += id-utils
+     SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython
      SUBDIR += iso-codes
