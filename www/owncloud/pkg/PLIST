@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/11 13:11:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/06/16 11:18:29 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -641,7 +641,9 @@ owncloud/COPYING-AGPL
 owncloud/COPYING-README
 owncloud/Changelog
 owncloud/README
+@owner www
 owncloud/apps/
+@owner
 owncloud/apps/admin_dependencies_chk/
 owncloud/apps/admin_dependencies_chk/appinfo/
 owncloud/apps/admin_dependencies_chk/appinfo/app.php

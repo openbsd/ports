@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2012/06/16 08:35:13 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/06/16 11:18:29 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,6 +25,9 @@ The maximum upload size for files can be modified in
 
 When not using Apache, make _sure_ to set the data directory to a
 location outside of the document root.
+
+To finish the installation, point you browser to:
+    http://<hostname>/owncloud/
 
 Database Configuration
 ----------------------
