@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/06/02 06:54:57 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2012/06/16 08:35:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -45,7 +45,7 @@ Accessing http://<hostname>/owncloud with a Web browser will finish the
 installation and create a new admin user.
 
 WebDAV access
--------------
+=============
 The personnal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
@@ -53,3 +53,8 @@ password for the share:
 
 NOTE that it is highly recommended to use SSL on the webserver so that
 access is done over https instead of http.
+
+Synchronization
+===============
+The "csync" package (net/csync) can be installed to synchronize local
+files with ownCloud.
