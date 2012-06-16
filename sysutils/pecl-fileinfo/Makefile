@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/04/19 21:30:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/06/16 11:27:48 ajacoutot Exp $
 
 COMMENT =		PHP support for retrieving info about files
 
 DISTNAME =		Fileinfo-1.0.4
-REVISION =		3
+REVISION =		4
 CATEGORIES =		sysutils
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
 
