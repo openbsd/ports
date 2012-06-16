@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/04/19 21:30:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/06/16 11:38:03 ajacoutot Exp $
 
 COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-2.3.0
-REVISION=	8
+REVISION=	9
 CATEGORIES=	graphics
 
 # PHP
@@ -21,7 +21,5 @@ MODULES=	converters/libiconv \
 CONFIGURE_STYLE= gnu
 
 LIB_DEPENDS=	graphics/ImageMagick
-
-MESSAGE=	${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
