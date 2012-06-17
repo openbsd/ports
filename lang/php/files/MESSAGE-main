@@ -1,9 +1,8 @@
-To enable the php-${PV} module please create a symbolic
-link from ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf
-to ${MODPHP_CONFIG_PATH}/modules/php.conf.
+To enable the php-${PV} module please create a symbolic link from
+${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf to
+${MODPHP_CONFIG_PATH}/modules/php.conf. As root:
 
-ln -s ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf \
-	${MODPHP_CONFIG_PATH}/modules/php.conf
+    ln -sf ${MODPHP_CONFIG_PATH}/modules.sample/php-${PV}.conf ${MODPHP_CONFIG_PATH}/modules/php.conf
 
-The recommended php configuration has been installed
-to ${SYSCONFDIR}/php-${PV}.ini.
+The recommended php configuration has been installed to:
+    ${SYSCONFDIR}/php-${PV}.ini.

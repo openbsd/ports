@@ -1,5 +1,4 @@
 You can disable this module by removing the
-${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini symbolic link by
-issuing the following command: 
+${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini symbolic link. As root:
 
-rm -f ${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini
+    rm -f ${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini

@@ -1,5 +1,4 @@
-To completely deinstall the package you need to
-remove the symbolic link from ${MODPHP_CONFIG_PATH}/modules
-by performing the following step as root:
+To completely deinstall the package you need to remove the symbolic link
+from ${MODPHP_CONFIG_PATH}/modules. As root:
 
- rm -rf ${MODPHP_CONFIG_PATH}/modules/php.conf
+    rm -f ${MODPHP_CONFIG_PATH}/modules/php.conf
