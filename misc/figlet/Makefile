@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2011/03/26 15:07:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.23 2012/06/17 07:39:12 benoit Exp $
 
 COMMENT =	generates ASCII banner art
 
-DISTNAME =	figlet-2.2.4
+DISTNAME =	figlet-2.2.5
 CATEGORIES =	misc graphics
 
 HOMEPAGE =	http://www.figlet.org/
