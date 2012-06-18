@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/04/19 21:30:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/18 07:56:13 ajacoutot Exp $
 
 COMMENT =		PHP support for LZF de/compression
 
@@ -6,7 +6,7 @@ DISTNAME =		LZF-1.5.2
 CATEGORIES =		archivers
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
 
-REVISION =		3
+REVISION =		4
 
 # PHP
 PERMIT_PACKAGE_CDROM =	Yes
