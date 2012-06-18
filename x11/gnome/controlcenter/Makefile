@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/06/18 11:30:50 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -37,7 +37,7 @@ WANTLIB += pixman-1 png polkit-gobject-1 pthread pthread-stubs
 WANTLIB += pulse pulse-mainloop-glib rest-0.7 sndfile soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl stdc++ upower-glib vorbis
 WANTLIB += vorbisfile webkitgtk-3.0 xcb xcb-render xcb-shm xkbfile
-WANTLIB += xklavier xml2 xslt z
+WANTLIB += xklavier xml2 xslt z lcms2
 
 MODULES=		devel/gettext \
 			x11/gnome
