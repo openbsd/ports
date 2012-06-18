@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_qdjvuwidget_cpp,v 1.1 2012/06/13 09:14:53 espie Exp $
---- src/qdjvuwidget.cpp.orig	Wed Jun 13 11:08:56 2012
-+++ src/qdjvuwidget.cpp	Wed Jun 13 11:09:24 2012
-@@ -152,15 +152,6 @@ all_numbers(const char *s)
+$OpenBSD: patch-src_qdjvuwidget_cpp,v 1.2 2012/06/18 10:14:38 espie Exp $
+--- src/qdjvuwidget.cpp.orig	Wed Aug 17 16:24:20 2011
++++ src/qdjvuwidget.cpp	Mon Jun 18 12:13:54 2012
+@@ -152,20 +152,12 @@ all_numbers(const char *s)
    return true;
  }
  
@@ -17,3 +17,9 @@ $OpenBSD: patch-src_qdjvuwidget_cpp,v 1.1 2012/06/13 09:14:53 espie Exp $
  template<class T> static inline int
  ksmallest(T *v, int n, int k)
  {
+   int lo = 0;
+   int hi = n-1;
++  using std::swap;
+   while (lo<hi)
+     {
+       int m,l,h;
