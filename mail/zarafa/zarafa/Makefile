@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2012/06/14 07:34:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2012/06/18 10:37:28 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,8 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	1
-REVISION-web=	0
+REVISION-main=	2
+REVISION-web=	1
 
 CATEGORIES=	mail www productivity
 
@@ -29,6 +29,10 @@ MULTI_PACKAGES=	-main -web
 MODULES=	devel/gettext \
 		lang/python \
 		lang/php
+
+MODPHP_DO_SAMPLE=mapi
+MESSAGE-main=	/dev/null
+UNMESSAGE-main=	/dev/null
 
 BUILD_DEPENDS=	textproc/xmlto \
 		net/curl \
@@ -84,9 +88,8 @@ WEBROOT=	/var/www
 
 PREFIX-web=	${WEBROOT}
 INSTDIR=	${PREFIX-web}/zarafa-webaccess
-MODULE_NAME=	mapi
 
-SUBST_VARS=	^MODULE_NAME INSTDIR PREFIX-web
+SUBST_VARS=	INSTDIR PREFIX-web
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
@@ -189,7 +192,7 @@ post-install:
 	mv ${PREFIX}/share/examples/zarafa.ini \
 		${PREFIX}/share/examples/zarafa
 	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
-		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODPHP_DO_SAMPLE}.ini
 	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
 	mv ${PREFIX}/share/examples/cron.daily/zarafa-client-update \
 		${PREFIX}/share/examples/zarafa/

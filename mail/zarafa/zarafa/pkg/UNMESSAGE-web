@@ -1,8 +1,0 @@
-You can disable the PHP mapi module by removing the
-${PREFIX-web}/conf/php5/${MODULE_NAME}.ini symbolic link by
-issuing the following command: 
-    # rm -f ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
-
-To completely deinstall zarafa-webaccess you need to perform the
-following step as root:
-    # rm -f /var/www/conf/modules/zarafa.conf

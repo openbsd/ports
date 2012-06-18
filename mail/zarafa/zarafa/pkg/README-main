@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.19 2012/06/02 06:18:06 ajacoutot Exp $
+$OpenBSD: README-main,v 1.20 2012/06/18 10:37:28 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -108,11 +108,6 @@ to
    ${INSTDIR}/debug.php
 The debugging output will then be available under:
    ${INSTDIR}/debug.txt
-
-You need to enable the PHP mapi module by creating a symbolic link from
-${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini to ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini:
-
-    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini ${SYSCONFDIR}/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 
 The Zarafa webaccess will be accessible from
     http://<hostname>/webaccess/
