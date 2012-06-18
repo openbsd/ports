@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2012/06/18 14:02:24 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2012/06/18 14:12:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -61,4 +61,4 @@ Synchronization
 ===============
 The "csync" package (net/csync) can be installed to synchronize local
 files with ownCloud. e.g.
-    $ csync /path/to/localdir ownclouds://username:password@<hostname>/files/webdav.php/remotedir/
+    $ csync /path/to/localdir ownclouds://<username>:<password>@<hostname>/files/webdav.php/remotedir/
