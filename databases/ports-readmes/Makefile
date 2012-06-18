@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/26 12:58:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2012/06/18 12:18:45 espie Exp $
 
 COMMENT =		readmes.html
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS =	databases/sqlports,-compact>=2.2 \
 
 PLIST = ${WRKINST}/plist
 # XXX this plist *will change*
-PLIST_DB =
+STATIC_PLIST = No
+
 do-build:
 	TEMPLATESDIR=${FILESDIR} \
 	OUTPUTDIR=${WRKBUILD} \

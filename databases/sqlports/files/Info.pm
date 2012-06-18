@@ -1,4 +1,4 @@
-# $OpenBSD: Info.pm,v 1.2 2012/05/22 12:04:02 espie Exp $
+# $OpenBSD: Info.pm,v 1.3 2012/06/18 12:18:45 espie Exp $
 #
 # Copyright (c) 2012 Marc Espie <espie@openbsd.org>
 #
@@ -83,6 +83,7 @@ our $vars = {
     SEPARATE_BUILD => 'YesKeyVar',
     SHARED_LIBS => 'SharedLibsVar',
     SHARED_ONLY => 'YesNoVar',
+    STATIC_PLIST => 'YesNoVar',
     SUBPACKAGE => 'DefinedVar',
     SUPDISTFILES => 'AnyVar',
     TARGETS => 'TargetsVar',
