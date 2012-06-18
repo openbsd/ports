@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/23 21:33:45 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2012/06/18 22:03:46 kili Exp $
 
 COMMENT =	Haskell 98 interpreter
 
 DISTNAME =	hugs98-plus-Sep2006
 PKGNAME =	hugs98-2006.09
-REVISION =	1
+REVISION =	2
 CATEGORIES =	lang
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
 HOMEPAGE =	http://www.haskell.org/hugs/
@@ -29,6 +29,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		GL GLU X11 c m ncurses pthread-stubs readline xcb
+WANTLIB =		GL GLU X11 c m ncurses pthread readline
 
 .include <bsd.port.mk>
