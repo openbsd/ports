@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_std_c_file_c,v 1.1.1.1 2012/06/18 08:51:46 ajacoutot Exp $
+--- src/std/c_file.c.orig	Mon May 21 09:50:38 2012
++++ src/std/c_file.c	Sat Jun 16 11:07:57 2012
+@@ -119,14 +119,14 @@ int c_copy(const char* src, const char *dst, mode_t mo
+       /* done */
+       break;
+     } else if (bread < 0) {
+-      errno = ENODATA;
++      errno = ENOENT;
+       rc = -1;
+       goto out;
+     }
+ 
+     bwritten = write(dstfd, buf, bread);
+     if (bwritten < 0) {
+-      errno = ENODATA;
++      errno = ENOENT;
+       rc = -1;
+       goto out;
+     }
