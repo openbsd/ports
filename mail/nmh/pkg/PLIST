@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/01/26 07:24:08 bentley Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/06/18 16:03:00 pascal Exp $
 @bin bin/ali
 @bin bin/anno
 @bin bin/burst
@@ -32,6 +32,7 @@
 @bin bin/prompter
 @bin bin/refile
 @bin bin/repl
+bin/replyfilter
 @bin bin/rmf
 @bin bin/rmm
 @bin bin/scan
@@ -148,3 +149,28 @@ lib/nmh/scan.unseen
 @man man/man8/dp.8
 @man man/man8/fmtdump.8
 @man man/man8/post.8
+share/doc/nmh/
+share/doc/nmh/COMPLETION-BASH
+share/doc/nmh/COMPLETION-TCSH
+share/doc/nmh/COMPLETION-ZSH
+share/doc/nmh/COPYRIGHT
+share/doc/nmh/DIFFERENCES
+share/doc/nmh/FAQ
+share/doc/nmh/INSTALL
+share/doc/nmh/MAIL.FILTERING
+share/doc/nmh/MAILING-LISTS
+share/doc/nmh/NEWS
+share/doc/nmh/README
+share/doc/nmh/README-ATTACHMENTS
+share/doc/nmh/README-HOOKS
+share/doc/nmh/README-components
+share/doc/nmh/README.SASL
+share/doc/nmh/README.about
+share/doc/nmh/README.developers
+share/doc/nmh/README.manpages
+share/doc/nmh/TODO
+share/doc/nmh/VERSION
+share/doc/nmh/contrib/
+share/doc/nmh/contrib/build_nmh
+share/doc/nmh/contrib/nmh.spec
+share/doc/nmh/contrib/replyfilter
