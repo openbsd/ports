@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2012/06/11 10:57:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/06/19 15:34:42 sthen Exp $
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 DRUPAL_LANG =		fr
 EXTRACT_ONLY =
 
 DISTNAME =	drupal7-${DRUPAL_LANG}-7.13
-REVISION =	4
+REVISION =	5
 DISTFILES =	drupal/drupal-7.13.${DRUPAL_LANG}.po
 LANGFILES +=	abt 1.5
 LANGFILES += 	auto_nodetitle 1.0
