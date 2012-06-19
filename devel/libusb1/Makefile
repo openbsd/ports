@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/23 08:48:08 mpi Exp $
+# $OpenBSD: Makefile,v 1.11 2012/06/19 20:45:00 mpi Exp $
 
 COMMENT =		library for USB device access from userspace
 
 VERSION =		1.0.9
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
-REVISION =		0
+REVISION =		1
 SHARED_LIBS +=  	usb-1.0                   1.0 # 1.0
 
 CATEGORIES =		devel
@@ -26,5 +26,10 @@ EXTRACT_SUFX =		.tar.bz2
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+
+.ifdef DEBUG
+CONFIGURE_ARGS +=	--enable-debug-log \
+			--enable-examples-build
+.endif
 
 .include <bsd.port.mk>
