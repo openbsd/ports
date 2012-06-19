@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/05/17 14:03:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/06/19 11:18:53 dcoppa Exp $
 @bin bin/awesome
 bin/awesome-client
 bin/awsetbg
@@ -126,12 +126,14 @@ share/awesome/themes/default/titlebar/sticky_normal_inactive.png
 share/awesome/themes/sky/
 share/awesome/themes/sky/awesome-icon.png
 share/awesome/themes/sky/layouts/
+share/awesome/themes/sky/layouts/dwindle.png
 share/awesome/themes/sky/layouts/fairh.png
 share/awesome/themes/sky/layouts/fairv.png
 share/awesome/themes/sky/layouts/floating.png
 share/awesome/themes/sky/layouts/fullscreen.png
 share/awesome/themes/sky/layouts/magnifier.png
 share/awesome/themes/sky/layouts/max.png
+share/awesome/themes/sky/layouts/spiral.png
 share/awesome/themes/sky/layouts/tile.png
 share/awesome/themes/sky/layouts/tilebottom.png
 share/awesome/themes/sky/layouts/tileleft.png
