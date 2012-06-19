@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.10 2012/05/17 11:05:40 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2012/06/19 10:01:52 sthen Exp $
 
-V ?= 1.7.0
+V ?= 1.7.1
 
 CATEGORIES+=	net net/icinga
 

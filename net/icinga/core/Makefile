@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/06/07 10:22:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2012/06/19 10:01:52 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -6,8 +6,6 @@ COMMENT-ido =		store Icinga configuration and events in a database
 
 DISTNAME =		icinga-$V
 PKGNAME-main =		icinga-$V
-REVISION =		4
-REVISION-cgi =		5
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 

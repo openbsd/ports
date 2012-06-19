@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/05/17 11:06:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/19 10:01:52 sthen Exp $
 @conflict icinga-api-*
 @pkgpath net/icinga/core,-api
 app/
@@ -67,6 +67,8 @@ app/data/i18n/mo/ja.json
 app/data/i18n/mo/ja.mo
 app/data/i18n/mo/lb.json
 app/data/i18n/mo/lb.mo
+app/data/i18n/mo/mn.json
+app/data/i18n/mo/mn.mo
 app/data/i18n/mo/nb.json
 app/data/i18n/mo/nb.mo
 app/data/i18n/mo/nl.json
@@ -85,6 +87,8 @@ app/data/i18n/mo/ru.json
 app/data/i18n/mo/ru.mo
 app/data/i18n/mo/sk.json
 app/data/i18n/mo/sk.mo
+app/data/i18n/mo/sl.json
+app/data/i18n/mo/sl.mo
 app/data/i18n/mo/sv.json
 app/data/i18n/mo/sv.mo
 app/data/i18n/mo/tr.json
@@ -1498,6 +1502,7 @@ etc/schema/updates/mysql_v1-4_to_v1-5.sql
 etc/schema/updates/mysql_v1-5_to_v1-6.sql
 etc/schema/updates/mysql_v1-6-2_to_v1-7.sql
 etc/schema/updates/mysql_v1-6_to_v1-6-2.sql
+etc/schema/updates/mysql_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/oracle_v1-0-3_to_v1-2.sql
 etc/schema/updates/oracle_v1-2_to_1-3.sql
 etc/schema/updates/oracle_v1-3_to_1-4.sql
@@ -1505,6 +1510,7 @@ etc/schema/updates/oracle_v1-4_to_v1-5.sql
 etc/schema/updates/oracle_v1-5_to_v1-6.sql
 etc/schema/updates/oracle_v1-6-2_to_v1-7.sql
 etc/schema/updates/oracle_v1-6_to_v1-6-2.sql
+etc/schema/updates/oracle_v1-7-0_to_v1-7-1.sql
 etc/schema/updates/pgsql_v1-0-3_to_v1-2.sql
 etc/schema/updates/pgsql_v1-2_to_v1-3.sql
 etc/schema/updates/pgsql_v1-3_to_1-4.sql
@@ -1512,6 +1518,7 @@ etc/schema/updates/pgsql_v1-4_to_v1-5.sql
 etc/schema/updates/pgsql_v1-5_to_v1-6.sql
 etc/schema/updates/pgsql_v1-6-2_to_v1-7.sql
 etc/schema/updates/pgsql_v1-6_to_v1-6-2.sql
+etc/schema/updates/pgsql_v1-7-0_to_v1-7-1.sql
 lib/
 lib/agavi/
 lib/agavi/src/
