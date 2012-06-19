@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/11/08 15:29:44 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2012/06/19 12:59:15 okan Exp $
 
 COMMENT=	creates DVD file structures
 
 DISTNAME=	dvdauthor-0.7.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dvdauthor/}
 
@@ -15,9 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=	ICE MagickCore SM X11 Xext Xt bz2 c djvulibre dvdread
-WANTLIB+=	expat fftw3 fontconfig freetype fribidi jasper jbig
-WANTLIB+=	jpeg lcms2 ltdl lzma m png pthread tiff xml2 z
+WANTLIB += MagickCore c dvdread expat fontconfig freetype
+WANTLIB += fribidi m png pthread xml2 z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	devel/fribidi>=0.19.2 \
@@ -30,7 +29,7 @@ MAKE_FLAGS+=	BISON="yacc"
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKDIST=	${WRKDIR}/dvdauthor
 
