@@ -1,0 +1,15 @@
+$OpenBSD: patch-microblog_identica_c,v 1.1 2012/06/19 19:06:24 stsp Exp $
+http://code.google.com/p/microblog-purple/issues/detail?id=260
+--- microblog/identica.c.orig	Fri Jun  8 10:12:36 2012
++++ microblog/identica.c	Fri Jun  8 10:13:29 2012
+@@ -155,7 +155,9 @@ gboolean plugin_load(PurplePlugin *plugin)
+ 	 * No HTTPS for Identi.ca for now
+ 	 */
+ 	_mb_conf[TC_USE_HTTPS].conf = g_strdup("use_https");
+-	_mb_conf[TC_USE_HTTPS].def_bool = FALSE;
++	_mb_conf[TC_USE_HTTPS].def_bool = TRUE;
++	option = purple_account_option_bool_new(_("Use HTTPS"), _mb_conf[TC_USE_HTTPS].conf, _mb_conf[TC_USE_HTTPS].def_bool);
++	prpl_info->protocol_options = g_list_append(prpl_info->protocol_options, option);
+ 	
+ 	_mb_conf[TC_STATUS_UPDATE].conf = g_strdup("status_update");
+ 	_mb_conf[TC_STATUS_UPDATE].def_str = g_strdup("/api/statuses/update.xml");
