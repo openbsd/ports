@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:58:20 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/19 20:32:42 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/X11/
@@ -29,6 +29,7 @@ lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Region.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Screen.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Types.hi
 lib/ghc/${DISTNAME}/Graphics/X11/Xlib/Window.hi
+lib/ghc/${DISTNAME}/Graphics/X11/Xrandr.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsAllKeysyms.h
@@ -65,6 +66,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-X11-Xlib-Region.html
 share/doc/hs-${DISTNAME}/html/Graphics-X11-Xlib-Screen.html
 share/doc/hs-${DISTNAME}/html/Graphics-X11-Xlib-Window.html
 share/doc/hs-${DISTNAME}/html/Graphics-X11-Xlib.html
+share/doc/hs-${DISTNAME}/html/Graphics-X11-Xrandr.html
 share/doc/hs-${DISTNAME}/html/Graphics-X11.html
 share/doc/hs-${DISTNAME}/html/X11.haddock
 share/doc/hs-${DISTNAME}/html/doc-index-95.html
@@ -123,6 +125,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Region.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Screen.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib-Window.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xlib.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-X11-Xrandr.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-X11.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
