@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/15 16:17:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/06/19 13:20:19 okan Exp $
+@pkgpath graphics/GraphicsMagick,no_x11
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
 bin/GraphicsMagickWand-config
@@ -97,7 +98,6 @@ lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 lib/GraphicsMagick/modules-Q16/
 lib/GraphicsMagick/modules-Q16/coders/
-%%x11%%
 @comment lib/GraphicsMagick/modules-Q16/coders/art.a
 lib/GraphicsMagick/modules-Q16/coders/art.la
 lib/GraphicsMagick/modules-Q16/coders/art.so
@@ -356,6 +356,9 @@ lib/GraphicsMagick/modules-Q16/coders/wmf.so
 @comment lib/GraphicsMagick/modules-Q16/coders/wpg.a
 lib/GraphicsMagick/modules-Q16/coders/wpg.la
 lib/GraphicsMagick/modules-Q16/coders/wpg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/x.a
+lib/GraphicsMagick/modules-Q16/coders/x.la
+lib/GraphicsMagick/modules-Q16/coders/x.so
 @comment lib/GraphicsMagick/modules-Q16/coders/xbm.a
 lib/GraphicsMagick/modules-Q16/coders/xbm.la
 lib/GraphicsMagick/modules-Q16/coders/xbm.so
@@ -368,6 +371,9 @@ lib/GraphicsMagick/modules-Q16/coders/xcf.so
 @comment lib/GraphicsMagick/modules-Q16/coders/xpm.a
 lib/GraphicsMagick/modules-Q16/coders/xpm.la
 lib/GraphicsMagick/modules-Q16/coders/xpm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xwd.a
+lib/GraphicsMagick/modules-Q16/coders/xwd.la
+lib/GraphicsMagick/modules-Q16/coders/xwd.so
 @comment lib/GraphicsMagick/modules-Q16/coders/yuv.a
 lib/GraphicsMagick/modules-Q16/coders/yuv.la
 lib/GraphicsMagick/modules-Q16/coders/yuv.so

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/12/02 14:36:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/06/19 13:20:19 okan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.12
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		bz2 c jasper jbig lcms ltdl jpeg xcb \
-			m png pthread stdc++ tiff xml2 z ${MODLIBICONV_WANTLIB}
+			m png pthread stdc++ tiff xml2 z \
+			ICE SM X11 Xext freetype wmflite-0.2 xcb
 
 MODULES=		converters/libiconv
 
@@ -33,15 +34,20 @@ LIB_DEPENDS=		archivers/bzip2 \
 			graphics/jasper \
 			graphics/jbigkit \
 			graphics/lcms \
+			graphics/libwmf \
 			graphics/png \
 			graphics/tiff \
 			textproc/libxml
 
+RUN_DEPENDS=		print/ghostscript/gnu \
+			print/transfig
+BUILD_DEPENDS=		${RUN_DEPENDS}
+
 USE_LIBTOOL=		Yes
-USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-quantum-depth=16 \
+			--with-wmf \
 			--without-dps \
 			--without-fpx \
 			--without-gslib \
@@ -51,40 +57,21 @@ CONFIGURE_ARGS+=	--with-quantum-depth=16 \
 			--with-ltdl-include=${LOCALBASE}/include \
 			--with-ltdl-lib=${LOCALBASE}/lib \
 			--disable-ltdl-install
+
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/libxml2 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${WRKBUILD}/magick/.libs -L${WRKBUILD}/wand/.libs -L${LOCALBASE}/lib" \
-			PTHREAD_LIBS="-pthread" \
+			PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread" \
 			ac_cv_path_LaunchDelegate=no
 
-FLAVORS=		no_x11
-FLAVOR?=
-
-.if ${FLAVOR:Mno_x11}
-BUILD_DEPENDS+=		print/ghostscript/gnu,no_x11
-RUN_DEPENDS+=		print/ghostscript/gnu,no_x11
-CONFIGURE_ENV+=		ac_cv_path_FIGDecodeDelegate=no
-CONFIGURE_ARGS+=	--without-x \
-			--without-ttf \
-			--without-wmf
-PKG_ARGS+=		-Dx11=0
-.else
-WANTLIB+=		ICE SM X11 Xext freetype wmflite-0.2 xcb
-LIB_DEPENDS+=		graphics/libwmf
-BUILD_DEPENDS+=		print/ghostscript/gnu \
-			print/transfig
-RUN_DEPENDS+=		print/ghostscript/gnu \
-			print/transfig
-CONFIGURE_ARGS+=	--with-wmf
-PKG_ARGS+=		-Dx11=1
-.endif
-
-# with FLAVOR=no_x11, some regession tests do not pass
-# due to the absence of freetype
-
 post-build:
-	@cd ${WRKBUILD}/PerlMagick && perl Makefile.PL && ${MAKE} ${MAKE_FLAGS}
+	@cd ${WRKBUILD}/PerlMagick && perl Makefile.PL && \
+	perl -pi -e s,'^LDLOADLIBS = ','LDLOADLIBS = -lGraphicsMagick ', \
+		Makefile && ${MAKE} ${MAKE_FLAGS}
 
 post-install:
 	@cd ${WRKBUILD}/PerlMagick && ${MAKE} ${MAKE_FLAGS} ${FAKE_TARGET}
+	@perl -pi -e s,'-L${WRKBUILD}/(magick|wand)/.libs','',g \
+		${PREFIX}/bin/GraphicsMagick++-config \
+		${PREFIX}/bin/GraphicsMagick-config
 
 .include <bsd.port.mk>
