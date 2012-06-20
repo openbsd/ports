@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1179 2012/06/19 16:43:47 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1180 2012/06/20 13:26:17 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -980,10 +980,10 @@ MTREE_FILE += ${PORTSDIR}/infrastructure/db/fake.mtree
 # Fill out package command, and package dependencies
 PKG_ARGS${_S} += -DCOMMENT=${_COMMENT${_S}:Q} -d ${DESCR${_S}}
 PKG_ARGS${_S} += -f ${PLIST${_S}} -p ${PREFIX${_S}}
-.  if defined(MESSAGE${_S})
+.  if defined(MESSAGE${_S}) && !empty(MESSAGE${_S})
 PKG_ARGS${_S} += -M ${MESSAGE${_S}}
 .  endif
-.  if defined(UNMESSAGE${_S})
+.  if defined(UNMESSAGE${_S}) && !empty(UNMESSAGE${_S})
 PKG_ARGS${_S} += -U ${UNMESSAGE${_S}}
 .  endif
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
