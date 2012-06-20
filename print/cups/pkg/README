@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.15 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.16 2012/06/20 14:54:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,7 +10,7 @@ point your browser to:
     http://localhost:631
 
 If you plan on printing non-Postscript files, the "ghostscript" package
-needs to be installed.
+must be installed.
 
 By default, CUPS only supports a handful amount of printers -- you will
 most probably want to install the "foomatic-filters" packages which
@@ -19,8 +19,8 @@ will allow you to generate a PPD (Printer Postscript Description) file
 for your printer.
 
 Depending on your printer model you may also need to install some driver
-package like (non-exhaustive list): hplip/hpijs, gutenprint, foo2zjs,
-splix...
+package like (non-exhaustive list): hplip/hpijs, foo2zjs, splix,
+gutenprint/foomatic-db-gutenprint...
 
 To be able to use CUPS printers from GTK applications, the corresponding
 package needs to be installed: "gtk+2-cups" and/or "gtk+3-cups".
@@ -59,7 +59,7 @@ will not be available to libusb.
 UPGRADING
 =========
 If you experience cups-driverd(8) crashes or printing issues after
-upgrading to a new major release (e.g. from 1.5 to 1.6), it may be
-necessary to remove the old CUPS cache and restart cups(8):
+upgrading, it may be necessary to remove the old CUPS cache and restart
+cups(8):
     # rm /var/cache/cups/* 2>/dev/null
     # ${RCDIR}/cupsd restart
