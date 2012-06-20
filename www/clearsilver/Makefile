@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2012/06/20 14:45:23 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,6 +10,7 @@ V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
 REVISION=	7
+REVISION-perl=	8
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
 PKGNAME-python=	clearsilver-python-${V}
