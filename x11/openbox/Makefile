@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/05/29 15:52:08 fgsch Exp $
+# $OpenBSD: Makefile,v 1.66 2012/06/20 21:34:04 naddy Exp $
 
 COMMENT =	small, fast & usable window manager
 
@@ -54,7 +54,7 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
 		--docdir=${PREFIX}/share/examples/openbox
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/autostart/autostart.in
