@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2012/06/01 13:02:24 landry Exp $
+# $OpenBSD: Makefile,v 1.261 2012/06/20 15:35:09 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -211,6 +211,7 @@
      SUBDIR += xps
      SUBDIR += xstatbar
      SUBDIR += xuvmstat
+     SUBDIR += ykpers
      SUBDIR += zap
 
 .include <bsd.port.subdir.mk>
