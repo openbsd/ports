@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/05/24 18:36:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.67 2012/06/20 08:45:55 jasper Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -12,6 +12,7 @@ PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
 REVISION-main =		1
+REVISION-mjpeg =	0
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -79,7 +80,7 @@ LIB_DEPENDS-neon =	${LIB_DEPENDS} \
 			net/neon
 
 WANTLIB-mjpeg =		${WANTLIB} \
-			gstbase-0.10 stdc++ mjpegutils-1.9 mpeg2encpp-1.9 mplex2-1.9
+			gstbase-0.10 stdc++ mjpegutils mpeg2encpp mplex2
 LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
 			multimedia/mjpegtools
 
