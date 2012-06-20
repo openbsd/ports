@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.206 2012/06/18 16:45:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.207 2012/06/20 12:20:37 jasper Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		18
+REVISION =		19
 
 CATEGORIES =		x11 multimedia
 
@@ -51,7 +51,6 @@ LIB_DEPENDS =	graphics/png \
 		multimedia/libbluray \
 		multimedia/libdv \
 		devel/fribidi \
-		graphics/lcms \
 		graphics/libmng \
 		archivers/bzip2 \
 		multimedia/schroedinger>=1.0.10 \
