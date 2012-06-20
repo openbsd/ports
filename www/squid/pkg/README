@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/04/28 11:06:12 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2012/06/20 07:10:39 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -39,3 +39,11 @@ pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5)
 
 (this example assumes Squid is running on 10.77.3.5 reachable over
 the vr2 interface).
+
+If the proxy server is running on the same subnet as the clients, the
+return traffic from the proxy will go directly back to them without
+ever hitting the firewall, which means the states will never get updated
+and may fill-up your pflog(4) with blocked attempts. To circumvent this
+the "no state" option needs to be specified for the route-to rule.
+e.g.
+pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5) no state
