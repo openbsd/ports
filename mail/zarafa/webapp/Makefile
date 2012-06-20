@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/05 15:27:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/06/20 13:07:48 ajacoutot Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
-WAPP_BUILD=	33778
-WAPP_VERSION=	7.1.0
+WAPP_BUILD=	35292
+WAPP_VERSION=	1.1
+EPOCH=		0
 
 DISTNAME=	zarafa-webapp-${WAPP_VERSION}-${WAPP_BUILD}.noarch.rpm
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
 
 EXTRACT_SUFX=	# empty
 
-HOMEPAGE=	http://www.zarafa.com/webapp
-
-MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/rhel/
+MASTER_SITES=	http://download.zarafa.com/community/final/WebApp/${WAPP_VERSION}/rhel/
 
 CATEGORIES=	mail www
 
