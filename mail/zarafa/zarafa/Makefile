@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2012/06/19 10:25:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.129 2012/06/20 13:45:36 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,6 +6,8 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -28,8 +30,8 @@ MODULES=	devel/gettext \
 		lang/php
 
 MODPHP_DO_SAMPLE=mapi
-MESSAGE-main=	/dev/null
-UNMESSAGE-main=	/dev/null
+MESSAGE-main=	# empty
+UNMESSAGE-main=	# empty
 
 BUILD_DEPENDS=	textproc/xmlto \
 		net/curl \
