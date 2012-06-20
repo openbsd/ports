@@ -1,0 +1,12 @@
+$OpenBSD: patch-mpeg2enc_Makefile_in,v 1.4 2012/06/20 08:45:37 jasper Exp $
+--- mpeg2enc/Makefile.in.orig	Sun Oct  9 17:32:51 2011
++++ mpeg2enc/Makefile.in	Sun Oct  9 17:33:02 2011
+@@ -356,7 +356,7 @@ libmpeg2encpp_include_HEADERS = elemstrmwriter.hh enco
+ libmpeg2encpp_la_LDFLAGS = \
+ 	${LT_STATIC} \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE) ${EXTRA_LDFLAGS}
++	${EXTRA_LDFLAGS}
+ 
+ libmpeg2encpp_la_DEPENDENCIES = $(LIBMJPEGUTILS)
+ libmpeg2encpp_la_LIBADD = $(LIBMJPEGUTILS) @PTHREAD_LIBS@
