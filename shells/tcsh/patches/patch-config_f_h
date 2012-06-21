@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_f_h,v 1.5 2012/06/02 13:17:19 jasper Exp $
+$OpenBSD: patch-config_f_h,v 1.6 2012/06/21 14:22:51 jasper Exp $
 
-http://bugs.gw.com/view.php?id=180
+http://bugs.gw.com/view.php?id=180 (committed)
 
 --- config_f.h.orig	Sat May 26 12:50:00 2012
 +++ config_f.h	Sat May 26 12:50:31 2012

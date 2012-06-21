@@ -1,6 +1,6 @@
-$OpenBSD: patch-host_defs,v 1.5 2012/06/02 13:17:19 jasper Exp $
+$OpenBSD: patch-host_defs,v 1.6 2012/06/21 14:22:51 jasper Exp $
 
-http://bugs.gw.com/view.php?id=181
+http://bugs.gw.com/view.php?id=181 (committed)
 
 --- host.defs.orig	Wed Jan 11 21:20:15 2012
 +++ host.defs	Sat May 26 12:52:56 2012
