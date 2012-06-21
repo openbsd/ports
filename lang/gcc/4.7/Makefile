@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/07 10:34:33 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2012/06/21 13:56:57 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 hppa powerpc sparc sparc64
 
@@ -18,9 +18,9 @@ PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
 #PKGNAME-go =	gccgo-${FULL_PKGVERSION}
-REVISION = 0
-REVISION-c++ = 1
-REVISION-java = 2
+REVISION = 1
+REVISION-c++ = 2
+REVISION-java = 3
 PKGSPEC-main = gcc->=4.7,<4.8
 
 SHARED_LIBS =	estdc++		15.0 \
