@@ -1,21 +1,22 @@
-$OpenBSD: patch-Makefile_in,v 1.5 2009/01/02 22:28:21 sthen Exp $
---- Makefile.in.orig	Thu Sep  4 12:20:38 2008
-+++ Makefile.in	Fri Sep 12 04:41:24 2008
-@@ -546,7 +546,7 @@ info-am:
+$OpenBSD: patch-Makefile_in,v 1.6 2012/06/21 14:40:40 gonzalo Exp $
+--- Makefile.in.orig	Fri Mar  2 13:16:52 2012
++++ Makefile.in	Fri Mar  2 13:18:22 2012
+@@ -626,7 +626,8 @@ info-am:
  
  install-data-am:
  	@$(NORMAL_INSTALL)
 -	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
 +	$(MAKE) $(AM_MAKEFLAGS)
++
+ install-dvi: install-dvi-recursive
  
- install-exec-am:
- 
-@@ -599,7 +599,7 @@ install-data-hook:
- 	$(mkinstalldirs) $(DESTDIR)$(cachedir)
- 	test -f $(DESTDIR)$(cachedir)/pdnsd.cache || \
- 	  touch $(DESTDIR)$(cachedir)/pdnsd.cache
+ install-dvi-am:
+@@ -699,7 +700,7 @@ install-data-hook:
+ 	$(mkinstalldirs) "$(DESTDIR)$(cachedir)"
+ 	test -f "$(DESTDIR)$(cachedir)/pdnsd.cache" || \
+ 	  touch "$(DESTDIR)$(cachedir)/pdnsd.cache"
 -	if test `whoami` = "root"; then \
 +	if test `userinfo -e _pdnsd`; then \
- 	  chown $(def_id) $(DESTDIR)$(cachedir)/pdnsd.cache; \
- 	  chown $(def_id) $(DESTDIR)$(cachedir); \
+ 	  chown $(def_id) "$(DESTDIR)$(cachedir)/pdnsd.cache"; \
+ 	  chown $(def_id) "$(DESTDIR)$(cachedir)"; \
  	fi
