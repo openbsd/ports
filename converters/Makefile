@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2012/06/14 17:31:38 pascal Exp $
+# $OpenBSD: Makefile,v 1.58 2012/06/21 16:57:55 sthen Exp $
 #
 
     SUBDIR =
@@ -56,6 +56,7 @@
     SUBDIR += py-iconvcodec
     SUBDIR += qprint
     SUBDIR += recode
+    SUBDIR += ripmime
     SUBDIR += rpm2cpio
     SUBDIR += ruby-multi_json
     SUBDIR += ruby-json
