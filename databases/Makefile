@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.214 2012/05/28 09:38:04 espie Exp $
+# $OpenBSD: Makefile,v 1.215 2012/06/21 15:39:52 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -149,7 +149,6 @@
      SUBDIR += py-mysql
      SUBDIR += py-odbc
      SUBDIR += py-pgsql
-     SUBDIR += py-psycopg
      SUBDIR += py-psycopg2
      SUBDIR += py-pygresql
      SUBDIR += py-redis
