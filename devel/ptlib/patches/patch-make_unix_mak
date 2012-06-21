@@ -1,6 +1,6 @@
-$OpenBSD: patch-make_unix_mak,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
---- make/unix.mak.orig	Fri Oct 14 08:54:53 2011
-+++ make/unix.mak	Wed Oct 26 08:58:01 2011
+$OpenBSD: patch-make_unix_mak,v 1.3 2012/06/21 14:23:51 ajacoutot Exp $
+--- make/unix.mak.orig	Thu Apr 26 06:47:39 2012
++++ make/unix.mak	Thu Jun 21 11:22:09 2012
 @@ -200,11 +200,19 @@ ifeq ($(MACHTYPE),x86)
  #STDCCFLAGS	+= -m486
  endif
@@ -22,7 +22,7 @@ $OpenBSD: patch-make_unix_mak,v 1.2 2011/10/26 16:59:09 ajacoutot Exp $
  
  endif # OpenBSD
  
-@@ -659,7 +667,9 @@ ifneq ($(OSTYPE),Darwin)
+@@ -658,7 +666,9 @@ ifneq ($(OSTYPE),Darwin)
        STDCCFLAGS	+= -xO3
      endif
    else
