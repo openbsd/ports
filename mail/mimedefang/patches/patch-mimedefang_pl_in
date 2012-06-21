@@ -1,6 +1,9 @@
-$OpenBSD: patch-mimedefang_pl_in,v 1.1 2012/05/31 18:31:42 ajacoutot Exp $
---- mimedefang.pl.in.orig	Thu May 31 20:28:08 2012
-+++ mimedefang.pl.in	Thu May 31 20:28:24 2012
+$OpenBSD: patch-mimedefang_pl_in,v 1.2 2012/06/21 05:57:43 ajacoutot Exp $
+
+Fix Avira/Antivir.
+
+--- mimedefang.pl.in.orig	Wed Dec 21 19:43:21 2011
++++ mimedefang.pl.in	Wed Jun 20 17:26:26 2012
 @@ -3472,7 +3472,7 @@ sub entity_contains_virus_hbedv ($) {
  
      # Run antivir
@@ -19,3 +22,12 @@ $OpenBSD: patch-mimedefang_pl_in,v 1.1 2012/05/31 18:31:42 ajacoutot Exp $
      return (wantarray ? interpret_hbedv_code($code) : $code);
  }
  
+@@ -3511,7 +3511,7 @@ sub interpret_hbedv_code ($) {
+ 
+     # Virus or virus in memory
+     if ($code == 1 || $code == 2 || $code == 3) {
+-	$VirusName = $1 if ($CurrentVirusScannerMessage =~ m/ALERT: \[(\S+)/ or
++	$VirusName = $1 if ($CurrentVirusScannerMessage =~ m/ALERT: (\S+)/ or
+ 			    $CurrentVirusScannerMessage =~ /!Virus! \S+ (\S+)/ or
+ 			    $CurrentVirusScannerMessage =~ m/VIRUS: file contains code of the virus '(\S+)'/);
+ 	$VirusName = "unknown-HBEDV-virus" if $VirusName eq "";
