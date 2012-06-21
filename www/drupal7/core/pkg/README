@@ -1,10 +1,19 @@
-$OpenBSD: README,v 1.2 2012/06/10 16:33:00 jasper Exp $
+$OpenBSD: README,v 1.3 2012/06/21 07:00:20 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To enable a decent configuration of drupal, please create a symbolic
 link:
 
 ln -sf ../modules.sample/${DRUPAL}.conf \
 	${TRUEPREFIX}/conf/modules
+
+Drupal can work with a PostgreSQL, MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pdo_pgsql or php-pdo_mysql
 
 If you just want to try out drupal, you don't need any database server,
 an sqlite file will do just fine.

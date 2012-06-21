@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.5 2011/10/16 15:56:24 ajacoutot Exp $
+$OpenBSD: README-web,v 1.6 2012/06/21 07:00:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,9 +11,10 @@ You should point this to the DocumentRoot of your web-server:
     # ln -s ../zabbix /var/www/htdocs/zabbix
 (make sure you use a relative symlink since Apache is chrooted)
 
-zabbix-web frontend can use a PostgreSQL, MySQL or SQLite3 database.
-Install the php-pgsql, php-mysql or php-pdo_sqlite package according
-to the one you wish to use.
+Zabbix Web can work with a PostgreSQL, MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pgsql or php-mysql
 
 The web frontend works reasonably well with OpenBSD's chroot'ed
 httpd (the "Status of Zabbix" page uses /bin/ps and /dev/kmem to

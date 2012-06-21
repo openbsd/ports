@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2012/06/18 14:12:02 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2012/06/21 07:00:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,11 +31,15 @@ To finish the installation, point you browser to:
 
 Database Configuration
 ----------------------
+ownCloud can work with a PostgreSQL, MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pdo_pgsql or php-pdo_mysql
+
 When using SQLite, not further configuration is required. However, with
 MySQL or PostgreSQL, the file ${INSTADIR}/config/config.sample.php will
 need to be copied to ${INSTADIR}/config/config.php and configured
-accordingly with the corresponding php database access extension
-installed (i.e. "php-pdo_mysql" or "php-pdo_pgsql").
+accordingly.
 
 LDAP User Backend
 -----------------

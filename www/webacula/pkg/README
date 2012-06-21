@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2012/06/07 10:26:38 robert Exp $
+$OpenBSD: README,v 1.10 2012/06/21 07:00:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,11 +12,10 @@ Webacula has been installed into ${INSTDIR}
 Database creation
 =================
 
-You need to install the PHP module corresponding to the database used by
-your bacula(8) installation. e.g:
-    for PostreSQL you'll need to install php-pdo_pgsql
-    for MySQL you'll need to install php-pdo_mysql
-    for SQLite3 you'll need to install php-pdo_sqlite
+Webacula can work with a PostgreSQL, MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pdo_pgsql or php-pdo_mysql
 
 To add the webacula DB tables, run the following commands according to
 the RDBMS that bacula(8) uses. Note that prior to run these commands,
