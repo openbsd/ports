@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/20 13:28:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2012/06/21 14:24:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
-DISTNAME=	opal-3.10.4
-
-REVISION=	0
+DISTNAME=	opal-3.10.5
 
 SHARED_LIBS=	opal	2.0	# 3.10.3
 

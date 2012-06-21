@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2011/10/26 16:59:34 ajacoutot Exp $
---- Makefile.in.orig	Fri Oct 14 09:00:11 2011
-+++ Makefile.in	Wed Oct 26 12:16:01 2011
-@@ -671,11 +671,9 @@ install:
+$OpenBSD: patch-Makefile_in,v 1.5 2012/06/21 14:24:22 ajacoutot Exp $
+--- Makefile.in.orig	Thu Apr 26 06:56:25 2012
++++ Makefile.in	Thu Jun 21 14:55:32 2012
+@@ -670,11 +670,9 @@ install:
  	fi )
  	( if test -e $(OPAL_LIBDIR)/$(LIB_FILENAME_SHARED_PAT) ; then \
  	  $(INSTALL) -m 755 $(OPAL_LIBDIR)/$(LIB_FILENAME_SHARED_PAT) $(DESTDIR)$(libdir) ; \
