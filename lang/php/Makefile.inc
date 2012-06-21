@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.29 2012/06/16 12:51:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.30 2012/06/21 06:58:51 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -73,7 +73,9 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-pic \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
 			--with-config-file-scan-dir=${SYSCONFDIR}/php-${PV} \
-			--program-suffix=-${PV}
+			--program-suffix=-${PV} \
+			--with-pdo-sqlite \
+			--enable-sqlite-utf8
 
 .if ${FLAVOR:L:Map2}
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
@@ -215,13 +217,6 @@ COMMENT-pdo_pgsql=	PDO database access extensions for php5
 CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
 WANTLIB-pdo_pgsql=	pq>=2
-
-# pdo-sqlite
-MULTI_PACKAGES+=	-pdo_sqlite
-COMMENT-pdo_sqlite=	PDO sqlite database access extensions for php5
-CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE} --enable-sqlite-utf8
-LIB_DEPENDS-pdo_sqlite=	
-WANTLIB-pdo_sqlite=	sqlite3>=8
 
 # pgsql
 MULTI_PACKAGES+=	-pgsql
