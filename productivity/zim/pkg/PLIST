@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/06/21 20:25:45 gonzalo Exp $
 bin/zim
 lib/python${MODPY_VERSION}/site-packages/zim/
 lib/python${MODPY_VERSION}/site-packages/zim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/zim/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/zim/_lib/
-lib/python${MODPY_VERSION}/site-packages/zim/_lib/__init__.py
-lib/python${MODPY_VERSION}/site-packages/zim/_lib/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/zim/_lib/xdot.py
-lib/python${MODPY_VERSION}/site-packages/zim/_lib/xdot.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/_version.py
 lib/python${MODPY_VERSION}/site-packages/zim/_version.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/applications.py
@@ -28,10 +23,14 @@ lib/python${MODPY_VERSION}/site-packages/zim/exporter.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/
 lib/python${MODPY_VERSION}/site-packages/zim/formats/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/formats/__main__.py
+lib/python${MODPY_VERSION}/site-packages/zim/formats/__main__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/html.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/html.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/latex.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/latex.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/formats/markdown.py
+lib/python${MODPY_VERSION}/site-packages/zim/formats/markdown.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/plain.py
 lib/python${MODPY_VERSION}/site-packages/zim/formats/plain.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/formats/wiki.py
@@ -73,6 +72,13 @@ lib/python${MODPY_VERSION}/site-packages/zim/gui/widgets.py
 lib/python${MODPY_VERSION}/site-packages/zim/gui/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/history.py
 lib/python${MODPY_VERSION}/site-packages/zim/history.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/inc/
+lib/python${MODPY_VERSION}/site-packages/zim/inc/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zim/inc/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/inc/arithmetic.py
+lib/python${MODPY_VERSION}/site-packages/zim/inc/arithmetic.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/inc/xdot.py
+lib/python${MODPY_VERSION}/site-packages/zim/inc/xdot.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/index.py
 lib/python${MODPY_VERSION}/site-packages/zim/index.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/notebook.py
@@ -82,12 +88,18 @@ lib/python${MODPY_VERSION}/site-packages/zim/parsing.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/arithmetic.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/arithmetic.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/attachmentbrowser.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/automount.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/automount.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/calendar.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/calendar.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/diagrameditor.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/diagrameditor.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/ditaaeditor.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/ditaaeditor.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/equationeditor.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/equationeditor.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/gnu_r_ploteditor.py
@@ -113,6 +125,8 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/screenshot.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/screenshot.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/spell.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/spell.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableofcontents.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/tableofcontents.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tags.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tags.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/tasklist.py
@@ -124,6 +138,10 @@ lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/bzr.py
 lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/bzr.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/git.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/git.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/hg.py
+lib/python${MODPY_VERSION}/site-packages/zim/plugins/versioncontrol/hg.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/search.py
 lib/python${MODPY_VERSION}/site-packages/zim/search.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/stores/
@@ -131,14 +149,14 @@ lib/python${MODPY_VERSION}/site-packages/zim/stores/__init__.py
 lib/python${MODPY_VERSION}/site-packages/zim/stores/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/stores/files.py
 lib/python${MODPY_VERSION}/site-packages/zim/stores/files.pyc
-lib/python${MODPY_VERSION}/site-packages/zim/stores/gjots.py
-lib/python${MODPY_VERSION}/site-packages/zim/stores/gjots.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/stores/memory.py
 lib/python${MODPY_VERSION}/site-packages/zim/stores/memory.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/stores/xml.py
 lib/python${MODPY_VERSION}/site-packages/zim/stores/xml.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/templates.py
 lib/python${MODPY_VERSION}/site-packages/zim/templates.pyc
+lib/python${MODPY_VERSION}/site-packages/zim/utils.py
+lib/python${MODPY_VERSION}/site-packages/zim/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/zim/www.py
 lib/python${MODPY_VERSION}/site-packages/zim/www.pyc
 @man man/man1/zim.1
@@ -163,6 +181,14 @@ share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-zim-notebook.png
 share/icons/hicolor/scalable/apps/zim.svg
 share/icons/hicolor/scalable/mimetypes/application-x-zim-notebook.svg
 share/icons/hicolor/scalable/mimetypes/gnome-mime-application-x-zim-notebook.svg
+share/icons/ubuntu-mono-dark/
+share/icons/ubuntu-mono-dark/apps/
+share/icons/ubuntu-mono-dark/apps/22/
+share/icons/ubuntu-mono-dark/apps/22/zim-panel.svg
+share/icons/ubuntu-mono-light/
+share/icons/ubuntu-mono-light/apps/
+share/icons/ubuntu-mono-light/apps/22/
+share/icons/ubuntu-mono-light/apps/22/zim-panel.svg
 share/locale/ca/LC_MESSAGES/zim.mo
 share/locale/cs/LC_MESSAGES/zim.mo
 share/locale/da/LC_MESSAGES/zim.mo
@@ -172,8 +198,8 @@ share/locale/en_GB/LC_MESSAGES/zim.mo
 share/locale/es/LC_MESSAGES/zim.mo
 share/locale/et/LC_MESSAGES/zim.mo
 share/locale/fr/LC_MESSAGES/zim.mo
+share/locale/gl/LC_MESSAGES/zim.mo
 share/locale/he/LC_MESSAGES/zim.mo
-share/locale/hr/LC_MESSAGES/zim.mo
 share/locale/hu/LC_MESSAGES/zim.mo
 share/locale/it/LC_MESSAGES/zim.mo
 share/locale/ja/LC_MESSAGES/zim.mo
@@ -183,6 +209,7 @@ share/locale/pl/LC_MESSAGES/zim.mo
 share/locale/ru/LC_MESSAGES/zim.mo
 share/locale/sk/LC_MESSAGES/zim.mo
 share/locale/sl/LC_MESSAGES/zim.mo
+share/locale/sr/LC_MESSAGES/zim.mo
 share/locale/sv/LC_MESSAGES/zim.mo
 share/locale/tr/LC_MESSAGES/zim.mo
 share/locale/uk/LC_MESSAGES/zim.mo
@@ -230,10 +257,16 @@ share/zim/manual/Help/Templates.txt
 share/zim/manual/Help/Wiki_Syntax.txt
 share/zim/manual/Plugins/
 share/zim/manual/Plugins.txt
+share/zim/manual/Plugins/Arithmetic.txt
+share/zim/manual/Plugins/Automount.txt
 share/zim/manual/Plugins/Calendar.txt
 share/zim/manual/Plugins/Diagram_Editor/
 share/zim/manual/Plugins/Diagram_Editor.txt
 share/zim/manual/Plugins/Diagram_Editor/diagram.png
+share/zim/manual/Plugins/Ditaa_Editor/
+share/zim/manual/Plugins/Ditaa_Editor.txt
+share/zim/manual/Plugins/Ditaa_Editor/ditaa.dia
+share/zim/manual/Plugins/Ditaa_Editor/ditaa.png
 share/zim/manual/Plugins/Equation_Editor/
 share/zim/manual/Plugins/Equation_Editor.txt
 share/zim/manual/Plugins/Equation_Editor/equation_01.png
@@ -253,6 +286,7 @@ share/zim/manual/Plugins/Insert_Symbol.txt
 share/zim/manual/Plugins/Link_Map.txt
 share/zim/manual/Plugins/Quick_Note.txt
 share/zim/manual/Plugins/Spell_Checker.txt
+share/zim/manual/Plugins/Table_Of_Contents.txt
 share/zim/manual/Plugins/Tags.txt
 share/zim/manual/Plugins/Task_List.txt
 share/zim/manual/Plugins/Tray_Icon.txt
@@ -289,6 +323,7 @@ share/zim/templates/_gnuplot.gnu
 share/zim/templates/_quicknote.txt
 share/zim/templates/html/
 share/zim/templates/html/Default.html
+share/zim/templates/html/Default_with_index.html
 share/zim/templates/html/Presentation.html
 share/zim/templates/html/Print.html
 share/zim/templates/html/SlideShow_(S5).html
@@ -296,6 +331,8 @@ share/zim/templates/latex/
 share/zim/templates/latex/Article.tex
 share/zim/templates/latex/Part.tex
 share/zim/templates/latex/Report.tex
+share/zim/templates/markdown/
+share/zim/templates/markdown/Default.markdown
 share/zim/templates/wiki/
 share/zim/templates/wiki/Calendar.txt
 share/zim/templates/wiki/Default.txt
