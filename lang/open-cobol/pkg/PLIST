@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/10/24 16:36:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/06/22 16:38:21 jasper Exp $
 %%SHARED%%
 bin/cob-config
 @bin bin/cobc
@@ -31,3 +31,5 @@ share/open-cobol/config/default.conf
 share/open-cobol/config/ibm.conf
 share/open-cobol/config/mf.conf
 share/open-cobol/config/mvs.conf
+share/open-cobol/copy/
+share/open-cobol/copy/screenio.cpy
