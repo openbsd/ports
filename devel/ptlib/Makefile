@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/21 14:23:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/06/22 16:53:51 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,11 +34,6 @@ LIB_DEPENDS=	databases/openldap \
 		devel/sdl
 
 ALL_TARGET=	default
-
-.include <bsd.own.mk>
-.if !${COMPILER_VERSION:L:Mgcc4}
-PATCH_LIST = patch-* gcc3-patch-*
-.endif
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
