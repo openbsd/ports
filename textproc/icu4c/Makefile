@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/06/22 07:07:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/06/22 09:51:22 landry Exp $
 
 COMMENT=		International Components for Unicode
 
 VERSION=		49.1.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
+REVISION =		0
 SO_VERSION=		5.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -14,7 +15,7 @@ CATEGORIES=		textproc devel
 
 HOMEPAGE=		http://www.icu-project.org
 
-MAINTAINER=		Vincent Gross <dermiste@screwball-coders.net>
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # ICU
 # http://source.icu-project.org/repos/icu/icu/trunk/license.html
