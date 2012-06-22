@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/06/22 16:56:22 naddy Exp $
 
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 
@@ -30,8 +30,9 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE= perl
 CONFIGURE_ARGS=	 EXPATLIBPATH="${X11BASE}/lib" EXPATINCPATH="${X11BASE}/include" SABLOTLIBPATH="${LOCALBASE}/lib" SABLOTINCPATH="${LOCALBASE}/include"
 
-.include <bsd.own.mk>
-.if ${COMPILER_VERSION:L:Mgcc[34]*}
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mgcc4}
 CONFIGURE_ENV+=	LDFLAGS="-lstdc++"
 WANTLIB+=	stdc++
 .endif
