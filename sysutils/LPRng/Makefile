@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2012/06/22 12:41:42 naddy Exp $
 
 COMMENT=	enhanced printer spooler
 
@@ -31,11 +31,6 @@ CONFIGURE_ARGS=	--with-sbindir=${PREFIX}/sbin \
 		--with-ldopts=-L${LOCALBASE}/lib \
 		--disable-nls
 
-.include <bsd.own.mk>
-.if ${COMPILER_VERSION:L:Mgcc4*}
-CFLAGS+=	-Wno-error=address
-.endif
-
 CFLAGS+=	-Dlog=mylog
 FAKE_FLAGS=	POSTINSTALL=NO prefix=${TRUEPREFIX} \
 		MAN=${TRUEPREFIX}/man \
@@ -48,6 +43,12 @@ CONFDIR=	${SYSCONFDIR}/LPRng
 HTMLFILES=	LPRng-HOWTO.html 
 
 SUBST_VARS=	CONFDIR
+
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mgcc4}
+CFLAGS+=	-Wno-error=address
+.endif
 
 # we don't trust LPRng's (pre|post)install scripts
 pre-fake:
