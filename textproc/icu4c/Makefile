@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2012/05/04 08:56:35 pascal Exp $
+# $OpenBSD: Makefile,v 1.22 2012/06/22 07:07:14 ajacoutot Exp $
 
 COMMENT=		International Components for Unicode
 
-VERSION=		4.8.1.1
+VERSION=		49.1.2
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		0
-SO_VERSION=		4.0
+SO_VERSION=		5.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -35,7 +34,6 @@ USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
-			--disable-renaming \
 			--disable-extras \
 			--disable-samples
 

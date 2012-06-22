@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/12 06:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/06/22 07:07:14 ajacoutot Exp $
 %%SHARED%%
 @bin bin/derb
 @bin bin/genbrk
@@ -82,10 +82,8 @@ include/unicode/parsepos.h
 include/unicode/platform.h
 include/unicode/plurfmt.h
 include/unicode/plurrule.h
-include/unicode/ppalmos.h
 include/unicode/ptypes.h
 include/unicode/putil.h
-include/unicode/pwin32.h
 include/unicode/rbbi.h
 include/unicode/rbnf.h
 include/unicode/rbtz.h
@@ -110,6 +108,8 @@ include/unicode/tmunit.h
 include/unicode/tmutamt.h
 include/unicode/tmutfmt.h
 include/unicode/translit.h
+include/unicode/tzfmt.h
+include/unicode/tznames.h
 include/unicode/tzrule.h
 include/unicode/tztrans.h
 include/unicode/ubidi.h
@@ -135,11 +135,8 @@ include/unicode/udat.h
 include/unicode/udata.h
 include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
-include/unicode/udeprctd.h
-include/unicode/udraft.h
 include/unicode/uenum.h
 include/unicode/uidna.h
-include/unicode/uintrnal.h
 include/unicode/uiter.h
 include/unicode/uldnames.h
 include/unicode/uloc.h
@@ -157,7 +154,6 @@ include/unicode/unorm.h
 include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/uobject.h
-include/unicode/uobslete.h
 include/unicode/upluralrules.h
 include/unicode/uregex.h
 include/unicode/urename.h
@@ -174,7 +170,6 @@ include/unicode/ustdio.h
 include/unicode/ustream.h
 include/unicode/ustring.h
 include/unicode/ustringtrie.h
-include/unicode/usystem.h
 include/unicode/utext.h
 include/unicode/utf.h
 include/unicode/utf16.h
@@ -230,6 +225,6 @@ share/icu/
 share/icu/${VERSION}/
 share/icu/${VERSION}/config/
 share/icu/${VERSION}/config/mh-bsd-gcc
-@comment share/icu/${VERSION}/install-sh
+share/icu/${VERSION}/install-sh
 share/icu/${VERSION}/license.html
-@comment share/icu/${VERSION}/mkinstalldirs
+share/icu/${VERSION}/mkinstalldirs
