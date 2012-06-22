@@ -1,7 +1,12 @@
-$OpenBSD: patch-src_gmtk_media_player_c,v 1.8 2012/06/13 07:50:11 dcoppa Exp $
+$OpenBSD: patch-src_gmtk_media_player_c,v 1.9 2012/06/22 15:08:45 dcoppa Exp $
 
 Set black background color for all GTK states on media widget
 (upstream svn revision r105)
+
+Fix a subtle segmentation fault at program exit time:
+gmtk_media_player_dispose() would be called multiple times, leading
+to a double free from gdk_color_free()
+(upstream svn revision r143)
 
 Fix a couple of keyboard shortcuts as they were in the wrong shift
 state, similar to gnome-mplayer fix (upstream svn revision r118)
@@ -25,7 +30,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
 (upstream svn revision r106)
 
 --- src/gmtk_media_player.c.orig	Fri Apr  6 15:19:32 2012
-+++ src/gmtk_media_player.c	Wed Jun 13 09:41:41 2012
++++ src/gmtk_media_player.c	Fri Jun 22 16:47:51 2012
 @@ -56,6 +56,11 @@ static void socket_realized(GtkWidget * widget, gpoint
      player->socket_id = GPOINTER_TO_INT(gtk_socket_get_id(GTK_SOCKET(widget)));
      style = gtk_widget_get_style(GTK_WIDGET(player));
@@ -38,7 +43,27 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
      if (player->vo != NULL) {
          if (!(g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0)) {
              gtk_widget_modify_bg(GTK_WIDGET(player->socket), GTK_STATE_NORMAL, &(style->black));
-@@ -444,7 +449,7 @@ static gboolean player_key_press_event_callback(GtkWid
+@@ -338,6 +343,7 @@ static void gmtk_media_player_init(GmtkMediaPlayer * p
+     player->profile = NULL;
+     player->alang = NULL;
+     player->slang = NULL;
++    player->disposed = FALSE;
+ }
+ 
+ static void gmtk_media_player_dispose(GObject * object)
+@@ -345,6 +351,11 @@ static void gmtk_media_player_dispose(GObject * object
+ 
+     GmtkMediaPlayer *player = GMTK_MEDIA_PLAYER(object);
+ 
++    if (player->disposed) {
++        return;
++    }
++    player->disposed = TRUE;
++
+     // cleanup the memory used
+ 
+     if (player->uri != NULL) {
+@@ -444,7 +455,7 @@ static gboolean player_key_press_event_callback(GtkWid
      if (event->is_modifier)
          return TRUE;
  
@@ -47,7 +72,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
          && (event->state & GDK_MOD1_MASK) == 0) {
          switch (event->keyval) {
          case GDK_Right:
-@@ -635,6 +640,15 @@ static void gmtk_media_player_size_allocate(GtkWidget 
+@@ -635,6 +646,15 @@ static void gmtk_media_player_size_allocate(GtkWidget 
      gdouble widget_aspect;
      gfloat xscale, yscale;
  
@@ -63,7 +88,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
      if (player->video_width == 0 || player->video_height == 0 || !gmtk_widget_get_realized(widget)) {
          gtk_alignment_set(GTK_ALIGNMENT(player->alignment), 0.0, 0.0, 1.0, 1.0);
      } else {
-@@ -1018,9 +1032,7 @@ gboolean gmtk_media_player_get_attribute_boolean(GmtkM
+@@ -1018,9 +1038,7 @@ gboolean gmtk_media_player_get_attribute_boolean(GmtkM
  
      switch (attribute) {
      case ATTRIBUTE_SUB_VISIBLE:
@@ -74,7 +99,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
          break;
  
      case ATTRIBUTE_ENABLE_FRAME_DROP:
-@@ -2578,10 +2590,10 @@ gpointer launch_mplayer(gpointer data)
+@@ -2578,10 +2596,10 @@ gpointer launch_mplayer(gpointer data)
              break;
          case ERROR_RETRY:
              if (last_error == NO_ERROR) {
@@ -88,7 +113,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
              }
              break;
  
-@@ -2679,10 +2691,18 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+@@ -2679,10 +2697,18 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
              if (player->position == 0) {
                  player->playback_error = ERROR_RETRY;
              }
@@ -107,7 +132,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
  
      if (strstr(mplayer_output->str, "Failed creating VDPAU decoder") != NULL) {
          if (player->enable_divx && (g_ascii_strncasecmp(player->vo, "vdpau", strlen("vdpau")) == 0))
-@@ -2886,6 +2906,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -2886,6 +2912,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
                  create_event_allocation(player, "size_allocate", &allocation);
                  player->video_present = TRUE;
                  write_to_mplayer(player, "get_property sub_source\n");
@@ -115,7 +140,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
                  create_event_int(player, "attribute-changed", ATTRIBUTE_SIZE);
                  create_event_int(player, "attribute-changed", ATTRIBUTE_VIDEO_PRESENT);
                  create_event_int(player, "subtitles-changed", g_list_length(player->subtitles));
-@@ -2993,6 +3014,14 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -2993,6 +3020,14 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
              create_event_int(player, "attribute-changed", ATTRIBUTE_SUBTITLE);
          }
  
@@ -130,7 +155,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
  
          if (strstr(mplayer_output->str, "DVDNAV_TITLE_IS_MENU") != 0) {
              player->title_is_menu = TRUE;
-@@ -3463,6 +3492,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
+@@ -3463,6 +3498,12 @@ gboolean thread_reader(GIOChannel * source, GIOConditi
              message = NULL;
          }
  
@@ -143,7 +168,7 @@ Replace deprecated g_strncasecmp with g_ascii_strncasecmp
      }
  
      g_string_free(mplayer_output, TRUE);
-@@ -3521,7 +3556,7 @@ gboolean write_to_mplayer(GmtkMediaPlayer * player, co
+@@ -3521,7 +3562,7 @@ gboolean write_to_mplayer(GmtkMediaPlayer * player, co
          if (player->use_mplayer2) {
              pkf_cmd = g_strdup(cmd);
          } else {
