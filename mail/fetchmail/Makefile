@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.132 2012/06/21 15:43:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2012/06/22 14:38:28 jasper Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.21
-REVISION=	3
+REVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
 
@@ -23,11 +23,9 @@ MODPY_ADJ_FILES=	fetchmailconf.py
 SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 
-CFLAGS+=		-I${LOCALBASE}/include
-
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	gnu
+CFLAGS=			-I${LOCALBASE}/include
 CONFIGURE_ENV=		PYTHON=: YACC="bison -y"
 CONFIGURE_ARGS=		--with-ssl \
 			--with-kerberos5 \
