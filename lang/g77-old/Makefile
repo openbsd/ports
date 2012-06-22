@@ -1,11 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/06/21 13:56:57 sthen Exp $
-
-.include <bsd.own.mk>
-.  if ${COMPILER_VERSION:L:Mgcc4*}
-SYSV=			4.2.1
-.  else
-SYSV=			2.95.3
-.  endif
+# $OpenBSD: Makefile,v 1.11 2012/06/22 11:59:51 naddy Exp $
 
 ONLY_FOR_ARCHS =	${GCC2_ARCHS}
 
@@ -17,6 +10,7 @@ DISTFILES = 		g77-openbsd-2.95.3.tgz \
 
 CONFIG = 		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 SUBST_VARS += 		CONFIG V
+SYSV =			2.95.3
 
 COMMENT =		GNU fortran 77 compiler
 CATEGORIES =		lang math
@@ -82,7 +76,7 @@ INSTALL_TARGET = 	install-common f77.install-info f77.install-normal
 LIBDIR =	${PREFIX}/lib/gcc-lib/${CONFIG}/$V
 SYSDIR =	/usr/lib/gcc-lib/${CONFIG}/${SYSV}
 
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "m68k"
+.if ${MACHINE_ARCH} == "m68k"
 PKG_ARGS += -DPIC=1
 .else
 PKG_ARGS += -DPIC=0
