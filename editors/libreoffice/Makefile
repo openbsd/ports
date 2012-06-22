@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/06/22 21:04:19 sthen Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -128,7 +128,8 @@ BUILD_DEPENDS+=	archivers/zip \
 		print/cups \
 		boost->=1.41.0:devel/boost \
 		misc/findutils \
-		sysutils/coreutils
+		sysutils/coreutils \
+		textproc/gsed
 
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
