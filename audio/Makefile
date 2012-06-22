@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2012/05/24 18:57:13 shadchin Exp $
+# $OpenBSD: Makefile,v 1.280 2012/06/22 14:44:07 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -58,7 +58,6 @@
      SUBDIR += hydrogen
      SUBDIR += id3ed
      SUBDIR += id3lib
-     SUBDIR += ifp-line
      SUBDIR += jack
      SUBDIR += ksmp3play
      SUBDIR += ladspa
