@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/10/20 11:31:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/23 12:04:44 ajacoutot Exp $
 @bin bin/lou_allround
 @bin bin/lou_checkhyphens
 @bin bin/lou_checktable
@@ -26,6 +26,7 @@ share/doc/liblouis/liblouis.txt
 share/liblouis/
 share/liblouis/tables/
 share/liblouis/tables/Cz-Cz-g1.utb
+share/liblouis/tables/Es-Es-G0.utb
 share/liblouis/tables/Es-Es-g1.utb
 share/liblouis/tables/Fr-Ca-g2.ctb
 share/liblouis/tables/Fr-Fr-g2.ctb
@@ -36,6 +37,7 @@ share/liblouis/tables/Se-Se-g1.utb
 share/liblouis/tables/UEBC-g1.utb
 share/liblouis/tables/UEBC-g2.ctb
 share/liblouis/tables/ar-ar-g1.utb
+share/liblouis/tables/ar-fa.utb
 share/liblouis/tables/as.ctb
 share/liblouis/tables/awa.ctb
 share/liblouis/tables/bengali.cti
@@ -55,6 +57,9 @@ share/liblouis/tables/ckb-translation.ctb
 share/liblouis/tables/compress.ctb
 share/liblouis/tables/corrections.ctb
 share/liblouis/tables/countries.cti
+share/liblouis/tables/cs-chardefs.cti
+share/liblouis/tables/cs-g1.ctb
+share/liblouis/tables/cs-translation.ctb
 share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
 share/liblouis/tables/da-1252.ctb
@@ -132,6 +137,7 @@ share/liblouis/tables/hr.ctb
 share/liblouis/tables/hu.ctb
 share/liblouis/tables/hu1.ctb
 share/liblouis/tables/hy.ctb
+share/liblouis/tables/hyph_cs_CZ.dic
 share/liblouis/tables/hyph_de_DE.dic
 share/liblouis/tables/hyph_en_US.dic
 share/liblouis/tables/hyph_es_ES.dic
@@ -210,6 +216,7 @@ share/liblouis/tables/sr-g1.ctb
 share/liblouis/tables/sr-translation.ctb
 share/liblouis/tables/sv-1989.ctb
 share/liblouis/tables/sv-1996.ctb
+share/liblouis/tables/ta-ta-g1.ctb
 share/liblouis/tables/ta.ctb
 share/liblouis/tables/tamil.cti
 share/liblouis/tables/te.ctb
