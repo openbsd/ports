@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/16 06:10:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/23 10:33:32 jasper Exp $
 
 COMMENT=		log file monitoring daemon
 
 DISTNAME=		logfmon-1.1
+REVISION=		0
 CATEGORIES=		sysutils
 
 HOMEPAGE=		http://sourceforge.net/projects/logfmon/
+
+MAINTAINER=		Tom Doherty <tom@singlesecond.com>
 
 # ISC
 PERMIT_PACKAGE_CDROM=	Yes
