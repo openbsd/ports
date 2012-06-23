@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_fifo_cpp,v 1.1 2009/04/16 16:39:17 ajacoutot Exp $
---- src/fifo.cpp.orig	Mon Dec 22 23:36:40 2008
-+++ src/fifo.cpp	Thu Apr 16 18:20:58 2009
+$OpenBSD: patch-src_fifo_cpp,v 1.2 2012/06/23 12:23:31 ajacoutot Exp $
+--- src/fifo.cpp.orig	Fri Jan  6 18:03:00 2012
++++ src/fifo.cpp	Sat Jun 23 12:40:10 2012
 @@ -39,6 +39,12 @@
  #include "wave.h"
  #include "debug.h"
@@ -14,21 +14,21 @@ $OpenBSD: patch-src_fifo_cpp,v 1.1 2009/04/16 16:39:17 ajacoutot Exp $
  
  //>
  //<decls and function prototypes
-@@ -306,10 +312,14 @@ static int sleep_until_start_request_or_inactivity()
- 	   to.tv_sec, to.tv_nsec,
- 	   ts.tv_sec, ts.tv_nsec);
-       
--      while ((err = sem_timedwait(&my_sem_start_is_required, &ts)) == -1 
--	     && errno == EINTR)
-+      while ((err = sem_trywait(&my_sem_start_is_required)) == -1 
-+	     && (errno == EINTR || errno == EAGAIN))
- 	{
--	      continue;
-+		struct timespec help;
-+		clock_gettime2(&help);
-+		if (timespeccmp(&help, &ts, >=))
-+			break;
-+		sched_yield();
- 	}
-       
-       assert (gettimeofday(&tv, NULL) != -1);
+@@ -310,10 +316,14 @@ static int sleep_until_start_request_or_inactivity()
+ 			to.tv_sec, to.tv_nsec,
+ 			ts.tv_sec, ts.tv_nsec);
+ 
+-		while ((err = sem_timedwait(&my_sem_start_is_required, &ts)) == -1 
+-			&& errno == EINTR)
++		while ((err = sem_trywait(&my_sem_start_is_required)) == -1 
++			&& (errno == EINTR || errno == EAGAIN))
+ 		{
+-			continue;
++			struct timespec help;
++			clock_gettime2(&help);
++			if (timespeccmp(&help, &ts, >=))
++				break;
++			sched_yield();
+ 		}
+ 
+ 		assert (gettimeofday(&tv, NULL) != -1);

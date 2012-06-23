@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_event_cpp,v 1.1 2009/04/16 16:39:17 ajacoutot Exp $
---- src/event.cpp.orig	Mon Dec 22 23:36:40 2008
-+++ src/event.cpp	Thu Apr 16 18:20:56 2009
+$OpenBSD: patch-src_event_cpp,v 1.2 2012/06/23 12:23:31 ajacoutot Exp $
+--- src/event.cpp.orig	Fri Jan  6 18:03:00 2012
++++ src/event.cpp	Sat Jun 23 12:36:01 2012
 @@ -40,6 +40,12 @@
  //>
  //<decls and function prototypes
@@ -14,7 +14,7 @@ $OpenBSD: patch-src_event_cpp,v 1.1 2009/04/16 16:39:17 ajacoutot Exp $
  
  // my_mutex: protects my_thread_is_talking, 
  static pthread_mutex_t my_mutex;
-@@ -400,10 +406,14 @@ ENTER("sleep_until_timeout_or_stop_request");
+@@ -404,10 +410,14 @@ ENTER("sleep_until_timeout_or_stop_request");
         to.tv_sec, to.tv_nsec,
         ts.tv_sec, ts.tv_nsec);
  
