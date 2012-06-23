@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/06/16 11:18:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/23 15:32:45 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -1114,9 +1114,11 @@ owncloud/apps/files_encryption/settings.php
 owncloud/apps/files_encryption/templates/
 owncloud/apps/files_encryption/templates/settings.php
 owncloud/apps/files_encryption/tests/
+owncloud/apps/files_encryption/tests/binary
 owncloud/apps/files_encryption/tests/encryption.php
 owncloud/apps/files_encryption/tests/proxy.php
 owncloud/apps/files_encryption/tests/stream.php
+owncloud/apps/files_encryption/tests/zeros
 owncloud/apps/files_external/
 owncloud/apps/files_external/appinfo/
 owncloud/apps/files_external/appinfo/app.php
@@ -1954,7 +1956,6 @@ owncloud/apps/user_ldap/tests/
 owncloud/apps/user_ldap/tests/group_ldap.php
 owncloud/apps/user_ldap/user_ldap.php
 owncloud/apps/user_migrate/
-owncloud/apps/user_migrate/admin.php
 owncloud/apps/user_migrate/ajax/
 owncloud/apps/user_migrate/ajax/export.php
 owncloud/apps/user_migrate/appinfo/
@@ -1965,7 +1966,6 @@ owncloud/apps/user_migrate/js/
 owncloud/apps/user_migrate/js/export.js
 owncloud/apps/user_migrate/settings.php
 owncloud/apps/user_migrate/templates/
-owncloud/apps/user_migrate/templates/admin.php
 owncloud/apps/user_migrate/templates/settings.php
 owncloud/apps/user_openid/
 owncloud/apps/user_openid/appinfo/
