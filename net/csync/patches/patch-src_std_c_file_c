@@ -1,20 +1,14 @@
-$OpenBSD: patch-src_std_c_file_c,v 1.1.1.1 2012/06/18 08:51:46 ajacoutot Exp $
---- src/std/c_file.c.orig	Mon May 21 09:50:38 2012
-+++ src/std/c_file.c	Sat Jun 16 11:07:57 2012
-@@ -119,14 +119,14 @@ int c_copy(const char* src, const char *dst, mode_t mo
-       /* done */
-       break;
-     } else if (bread < 0) {
--      errno = ENODATA;
-+      errno = ENOENT;
-       rc = -1;
-       goto out;
-     }
+$OpenBSD: patch-src_std_c_file_c,v 1.2 2012/06/24 08:01:29 ajacoutot Exp $
+--- src/std/c_file.c.orig	Mon Jun 18 17:29:20 2012
++++ src/std/c_file.c	Sun Jun 24 09:49:58 2012
+@@ -31,6 +31,10 @@
+ #include <fcntl.h>
+ #include <unistd.h>
  
-     bwritten = write(dstfd, buf, bread);
-     if (bwritten < 0) {
--      errno = ENODATA;
-+      errno = ENOENT;
-       rc = -1;
-       goto out;
-     }
++#ifndef ENODATA
++#define ENODATA ENOENT
++#endif
++
+ #include "c_file.h"
+ #include "c_string.h"
+ 

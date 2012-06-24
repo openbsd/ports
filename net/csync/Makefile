@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/18 14:07:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/06/24 08:01:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer
 
-DISTNAME=	csync-0.50.6
-EXTRACT_SUFX=	.tar.bz2
+DISTNAME=	csync-0.50.7
 
-REVISION=	1
+EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net
 
