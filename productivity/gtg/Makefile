@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/06/24 23:01:13 gonzalo Exp $
 
 COMMENT=		GTD organizer for GNOME
 
-GNOME_PROJECT=		gtg
-GNOME_VERSION=		0.2.4
-REVISION=		4
+MODPY_EGG_VERSION=	0.2.9
+DISTNAME=		gtg-${MODPY_EGG_VERSION}
 
 CATEGORIES=		productivity
 
@@ -16,30 +15,31 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://edge.launchpad.net/gtg/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${VERSION}/+download/
+MASTER_SITES=		http://launchpadlibrarian.net/92775007/
 EXTRACT_SUFX=		.tar.gz
 
-MODULES=		lang/python \
-			x11/gnome
+MODULES=		lang/python
 
-RUN_DEPENDS=		devel/py-configobj \
+RUN_DEPENDS=		devel/desktop-file-utils \
+			devel/py-configobj \
 			devel/py-simplejson \
 			devel/py-xdg \
+			devel/py-liblarch_gtk \
+			devel/py-cheetah \
 			x11/dbus-python \
-			x11/py-gtk2
-BUILD_DEPENDS=		x11/py-gtk2
+			x11/gtk+2,-guic
 
-MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_ICON_CACHE=	Yes
+MODPY_ADJ_FILES=	GTG/gtg.py gtg
 
-USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
-SUBST_VARS=		VERSION
-
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/gtg \
-			${WRKSRC}/GTG/__init__.py \
-			${WRKSRC}/GTG/gtg.py
+	perl -pi -e "s,/usr/bin/gtg,${PREFIX}/bin/gtg,g" \
+		${WRKSRC}/gtg.desktop
+	perl -pi -e "s,/usr/local,${PREFIX},g;" \
+		-e "s,/usr/share,${PREFIX}/share,g" \
+		${WRKSRC}/GTG/__init__.py
+	perl -pi -e "s,share/man,man,g" ${WRKSRC}/setup.py
+	${SUBST_CMD} ${WRKSRC}/GTG/__init__.py
 
 .include <bsd.port.mk>

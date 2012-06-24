@@ -1,13 +1,7 @@
-$OpenBSD: patch-GTG_gtg_py,v 1.4 2010/09/06 10:42:30 jasper Exp $
---- GTG/gtg.py.orig	Sat Apr 10 13:38:37 2010
-+++ GTG/gtg.py	Mon Sep  6 12:41:05 2010
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python
-+#!${MODPY_BIN}
- # -*- coding: utf-8 -*-
- # -----------------------------------------------------------------------------
- # Gettings Things Gnome! - a personal organizer for the GNOME desktop
-@@ -77,7 +77,7 @@ def check_instance(directory):
+$OpenBSD: patch-GTG_gtg_py,v 1.5 2012/06/24 23:01:13 gonzalo Exp $
+--- GTG/gtg.py.orig	Wed Feb  8 16:58:45 2012
++++ GTG/gtg.py	Fri May 18 14:49:57 2012
+@@ -79,7 +79,7 @@ def check_instance(directory, uri_list = []):
      pid = open(pidfile, "r").readline()
      if pid:
          p = os.system("/bin/ps %s >/dev/null" % pid)
@@ -15,4 +9,4 @@ $OpenBSD: patch-GTG_gtg_py,v 1.4 2010/09/06 10:42:30 jasper Exp $
 +        p_name = os.popen("/bin/ps -p %s" % pid).read()
          if p == 0 and "gtg" in p_name:
              print _("gtg is already running!")
-             d=dbus.SessionBus().get_object(CoreConfig.BUSNAME,\
+             try:
