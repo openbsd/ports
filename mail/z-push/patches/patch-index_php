@@ -1,9 +1,9 @@
-$OpenBSD: patch-index_php,v 1.1 2011/04/02 15:42:18 robert Exp $
---- index.php.orig	Sat Apr  2 15:43:08 2011
-+++ index.php	Sat Apr  2 15:42:44 2011
-@@ -53,6 +53,23 @@ include_once("debug.php");
- include_once("compat.php");
- include_once("version.php");
+$OpenBSD: patch-index_php,v 1.2 2012/06/24 18:47:20 ajacoutot Exp $
+--- index.php.orig	Thu Jun  7 23:29:14 2012
++++ index.php	Thu Jun 21 18:17:51 2012
+@@ -111,6 +111,22 @@ include_once('lib/request/requestprocessor.php');
+ include_once('config.php');
+ include_once('version.php');
  
 +// Define apache_request_headers() in case we are using nginx or lighttpd
 +// as a webserver and not apache.
@@ -21,7 +21,13 @@ $OpenBSD: patch-index_php,v 1.1 2011/04/02 15:42:18 robert Exp $
 +		return $headers;
 +	}
 +}
-+
- // Attempt to set maximum execution time
- ini_set('max_execution_time', SCRIPT_TIMEOUT);
- set_time_limit(SCRIPT_TIMEOUT);
+ 
+     // Attempt to set maximum execution time
+     ini_set('max_execution_time', SCRIPT_TIMEOUT);
+@@ -277,4 +293,4 @@ include_once('version.php');
+ 
+     // end gracefully
+     ZLog::Write(LOGLEVEL_DEBUG, '-------- End');
+-?>
+\ No newline at end of file
++?>

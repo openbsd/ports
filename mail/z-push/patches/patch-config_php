@@ -1,32 +1,18 @@
-$OpenBSD: patch-config_php,v 1.5 2011/06/02 10:40:51 ajacoutot Exp $
---- config.php.orig	Fri Mar 18 20:22:53 2011
-+++ config.php	Thu Jun  2 12:29:57 2011
-@@ -42,7 +42,7 @@
- ************************************************/
-     // Defines the default time zone
-     if (function_exists("date_default_timezone_set")){
--        date_default_timezone_set("Europe/Amsterdam");
-+        date_default_timezone_set("Europe/London");
-     }
+$OpenBSD: patch-config_php,v 1.6 2012/06/24 18:47:20 ajacoutot Exp $
+--- config.php.orig	Sat Jun  2 18:24:39 2012
++++ config.php	Thu Jun 21 19:13:05 2012
+@@ -60,7 +60,7 @@
+ /**********************************************************************************
+  *  Default FileStateMachine settings
+  */
+-    define('STATE_DIR', '/var/lib/z-push/');
++    define('STATE_DIR', '/var/db/z-push/');
  
-     // Defines the base path on the server, terminated by a slash
-@@ -53,9 +53,10 @@
-                         BASE_PATH. "include/" . PATH_SEPARATOR .
-                         BASE_PATH. PATH_SEPARATOR .
-                         ini_get('include_path') . PATH_SEPARATOR .
--                        "/usr/share/php/" . PATH_SEPARATOR .
--                        "/usr/share/php5/" . PATH_SEPARATOR .
--                        "/usr/share/pear/");
-+                        "/include/php/" . PATH_SEPARATOR .
-+                        "/var/www/include/php/" . PATH_SEPARATOR .
-+                        "/var/www/pear/" . PATH_SEPARATOR .
-+                        "/pear/");
  
-     define('STATE_DIR', BASE_PATH.'/state');
- 
-@@ -99,7 +100,8 @@
+ /**********************************************************************************
+@@ -129,7 +129,8 @@
+     //  BackendZarafa settings
      // ************************
- 
      // Defines the server to which we want to connect
 -    define('MAPI_SERVER', 'file:///var/run/zarafa');
 +    #define('MAPI_SERVER', 'file:///var/run/zarafa');

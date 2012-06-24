@@ -1,0 +1,14 @@
+$OpenBSD: patch-backend_zarafa_listfolders_php,v 1.1 2012/06/24 18:47:20 ajacoutot Exp $
+--- backend/zarafa/listfolders.php.orig	Thu Jun 21 18:28:55 2012
++++ backend/zarafa/listfolders.php	Thu Jun 21 18:30:36 2012
+@@ -45,8 +45,8 @@
+ * Consult LICENSE file for details
+ ************************************************/
+ 
+-define("PHP_MAPI_PATH", "/usr/share/php/mapi/");
+-define('MAPI_SERVER', 'file:///var/run/zarafa');
++define("PHP_MAPI_PATH", "/include/php/");
++define('MAPI_SERVER', 'http://localhost:236/zarafa');
+ 
+ $supported_classes = array (
+     "IPF.Note"          => "SYNC_FOLDER_TYPE_USER_MAIL",

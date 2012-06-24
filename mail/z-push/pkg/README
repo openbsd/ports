@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2012/03/15 13:35:53 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2012/06/24 18:47:20 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,5 +16,6 @@ directory. For Apache ou can configure this as follows:
     # ln -s ${PREFIX}/conf/modules.sample/z-push.conf \
         /var/www/conf/modules
 
-Proceed to complete the configuration by reading:
-    ${INSTDIR}/INSTALL
+Setting up a mobile device
+==========================
+See ${INSTDIR}/INSTALL

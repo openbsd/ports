@@ -1,4 +1,0 @@
-To completely deinstall z-push you need to perform the following steps
-as root:
-    # rm -f /var/www/conf/modules/z-push.conf
-    # rm -f /var/www/z-push
