@@ -1,13 +1,90 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/06/24 13:37:02 ajacoutot Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
 @bin bin/pinot-label
 bin/pinot-prefs
 @bin bin/pinot-search
+include/pinot/
+include/pinot/ActionQueue.h
+include/pinot/CommandLine.h
+include/pinot/CrawlHistory.h
+include/pinot/CurlDownloader.h
+include/pinot/DBusIndex.h
+include/pinot/DaemonState.h
+include/pinot/Document.h
+include/pinot/DocumentInfo.h
+include/pinot/DownloaderFactory.h
+include/pinot/DownloaderInterface.h
+include/pinot/FieldMapperInterface.h
+include/pinot/FileCollector.h
+include/pinot/FilterUtils.h
+include/pinot/FilterWrapper.h
+include/pinot/INotifyMonitor.h
+include/pinot/IndexInterface.h
+include/pinot/Languages.h
+include/pinot/MIMEScanner.h
+include/pinot/Memory.h
+include/pinot/MetaDataBackup.h
+include/pinot/ModuleFactory.h
+include/pinot/ModuleProperties.h
+include/pinot/MonitorEvent.h
+include/pinot/MonitorFactory.h
+include/pinot/MonitorHandler.h
+include/pinot/MonitorInterface.h
+include/pinot/NLS.h
+include/pinot/NeonDownloader.h
+include/pinot/OnDiskHandler.h
+include/pinot/OpenSearchParser.h
+include/pinot/PinotSettings.h
+include/pinot/PluginParsers.h
+include/pinot/PluginWebEngine.h
+include/pinot/QueryHistory.h
+include/pinot/QueryProperties.h
+include/pinot/ResultsExporter.h
+include/pinot/SQLDB.h
+include/pinot/SQLiteBase.h
+include/pinot/SearchEngineInterface.h
+include/pinot/SearchPluginProperties.h
+include/pinot/ServerThreads.h
+include/pinot/SherlockParser.h
+include/pinot/StringManip.h
+include/pinot/TextConverter.h
+include/pinot/TimeConverter.h
+include/pinot/Timer.h
+include/pinot/UniqueApplication.h
+include/pinot/Url.h
+include/pinot/ViewHistory.h
+include/pinot/Visibility.h
+include/pinot/WebEngine.h
+include/pinot/WorkerThreads.h
+include/pinot/filters/
+include/pinot/filters/Filter.h
+include/pinot/filters/FilterFactory.h
+include/pinot/filters/HtmlFilter.h
+include/pinot/filters/HtmlParser.h
+include/pinot/filters/TextFilter.h
+include/pinot/filters/XmlFilter.h
+include/pinot/unac/
+include/pinot/unac/unac.h
+include/pinot/xdgmime/
+include/pinot/xdgmime/xdgmime.c
+include/pinot/xdgmime/xdgmime.h
+include/pinot/xdgmime/xdgmimealias.c
+include/pinot/xdgmime/xdgmimealias.h
+include/pinot/xdgmime/xdgmimecache.c
+include/pinot/xdgmime/xdgmimecache.h
+include/pinot/xdgmime/xdgmimeglob.c
+include/pinot/xdgmime/xdgmimeglob.h
+include/pinot/xdgmime/xdgmimeint.c
+include/pinot/xdgmime/xdgmimeint.h
+include/pinot/xdgmime/xdgmimemagic.c
+include/pinot/xdgmime/xdgmimemagic.h
+include/pinot/xdgmime/xdgmimeparent.c
+include/pinot/xdgmime/xdgmimeparent.h
 lib/pinot/
 lib/pinot/backends/
-lib/pinot/backends/libxapianbackend.so
+@lib lib/pinot/backends/libxapianbackend.so.${LIBxapianbackend_VERSION}
 lib/pinot/filters/
 lib/pinot/filters/libexiv2imagefilter.so
 lib/pinot/filters/libexternalfilter.so
@@ -31,6 +108,7 @@ share/examples/pinot/pinot/external-filters.xml
 share/examples/pinot/pinot/globalconfig.xml
 @sample ${SYSCONFDIR}/pinot/globalconfig.xml
 share/examples/pinot/pinot/textcat31_conf.txt
+share/examples/pinot/pinot/textcat32_conf.txt
 share/examples/pinot/pinot/textcat3_conf.txt
 @sample ${SYSCONFDIR}/pinot/textcat3_conf.txt
 share/examples/pinot/pinot/textcat_conf.txt
@@ -64,8 +142,7 @@ share/pinot/engines/
 share/pinot/engines/AmazonAPI.src
 share/pinot/engines/Bing.src
 share/pinot/engines/Clusty.src
-share/pinot/engines/DuckDuckGo.xml
-share/pinot/engines/Freshmeat.src
+share/pinot/engines/Freecode.src
 share/pinot/engines/Google.src
 share/pinot/engines/KodersDescription.xml
 share/pinot/engines/OmegaDescription.xml
