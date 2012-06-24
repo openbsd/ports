@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/24 18:47:20 ajacoutot Exp $
-@unexec-delete rm -rf /var/www/var/db/z-push/*
-@unexec-delete rm -rf /var/www/var/log/z-push/*
+@comment $OpenBSD: PLIST,v 1.8 2012/06/24 18:50:22 ajacoutot Exp $
+@extraunexec rm -rf /var/www/var/db/z-push/*
+@extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/htdocs/z-push
+@unexec-delete rm -f /var/www/conf/modules/z-push.conf
 z-push/
 z-push/INSTALL
 z-push/LICENSE
