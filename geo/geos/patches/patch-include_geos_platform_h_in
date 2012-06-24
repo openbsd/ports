@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_geos_platform_h_in,v 1.1 2012/06/24 09:34:03 eric Exp $
+--- include/geos/platform.h.in.orig	Thu Apr 19 15:04:47 2012
++++ include/geos/platform.h.in	Thu Apr 19 15:05:07 2012
+@@ -91,7 +91,7 @@ extern "C"
+ # elif defined(__MINGW32__)
+ // sandro furieri: sanitizing MinGW32
+ #  define ISNAN(x) (std::isnan(x))
+-# elif defined(__OSX__) || defined(__APPLE__)
++# elif defined(__OSX__) || defined(__APPLE__) || defined(__OpenBSD__)
+    // Hack for OS/X <cmath> incorrectly re-defining isnan() into oblivion.
+    // It does leave a version in std.
+ #  define ISNAN(x) (std::isnan(x))

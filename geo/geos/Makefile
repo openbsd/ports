@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/06/24 09:34:03 eric Exp $
 
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.2.2
-REVISION=	0
+DISTNAME=	geos-3.3.4
 CATEGORIES=	geo
-SHARED_LIBS=	geos	6.0 \
-		geos_c	3.0
+SHARED_LIBS=	geos	7.0 \
+		geos_c	4.0
 
 MAINTAINER=	Eric Faurot <eric@openbsd.org>
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/04 20:14:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/24 09:34:03 eric Exp $
 %%SHARED%%
 @comment bin/XMLTester
 bin/geos-config
@@ -63,7 +63,6 @@ include/geos/geom/Dimension.h
 include/geos/geom/Envelope.h
 include/geos/geom/Envelope.inl
 include/geos/geom/Geometry.h
-include/geos/geom/Geometry.inl
 include/geos/geom/GeometryCollection.h
 include/geos/geom/GeometryCollection.inl
 include/geos/geom/GeometryComponentFilter.h
@@ -75,6 +74,7 @@ include/geos/geom/IntersectionMatrix.h
 include/geos/geom/LineSegment.h
 include/geos/geom/LineSegment.inl
 include/geos/geom/LineString.h
+include/geos/geom/Lineal.h
 include/geos/geom/LinearRing.h
 include/geos/geom/Location.h
 include/geos/geom/MultiLineString.h
@@ -84,8 +84,10 @@ include/geos/geom/MultiPolygon.h
 include/geos/geom/MultiPolygon.inl
 include/geos/geom/Point.h
 include/geos/geom/Polygon.h
+include/geos/geom/Polygonal.h
 include/geos/geom/PrecisionModel.h
 include/geos/geom/PrecisionModel.inl
+include/geos/geom/Puntal.h
 include/geos/geom/Triangle.h
 include/geos/geom/prep/
 include/geos/geom/prep/AbstractPreparedPolygonContains.h
@@ -107,11 +109,13 @@ include/geos/geom/util/CoordinateOperation.h
 include/geos/geom/util/GeometryCombiner.h
 include/geos/geom/util/GeometryEditor.h
 include/geos/geom/util/GeometryEditorOperation.h
+include/geos/geom/util/GeometryExtracter.h
 include/geos/geom/util/GeometryTransformer.h
 include/geos/geom/util/LinearComponentExtracter.h
 include/geos/geom/util/PointExtracter.h
 include/geos/geom/util/PolygonExtracter.h
 include/geos/geom/util/ShortCircuitedGeometryVisitor.h
+include/geos/geom/util/SineStarFactory.h
 include/geos/geomUtil.h
 include/geos/geomgraph/
 include/geos/geomgraph.h
@@ -236,6 +240,7 @@ include/geos/noding/SegmentIntersectionDetector.h
 include/geos/noding/SegmentIntersector.h
 include/geos/noding/SegmentNode.h
 include/geos/noding/SegmentNodeList.h
+include/geos/noding/SegmentPointComparator.h
 include/geos/noding/SegmentSetMutualIntersector.h
 include/geos/noding/SegmentString.h
 include/geos/noding/SegmentString.inl
@@ -248,7 +253,6 @@ include/geos/noding/snapround/HotPixel.h
 include/geos/noding/snapround/HotPixel.inl
 include/geos/noding/snapround/MCIndexPointSnapper.h
 include/geos/noding/snapround/MCIndexSnapRounder.h
-include/geos/noding/snapround/MCIndexSnapRounder.inl
 include/geos/noding/snapround/SimpleSnapRounder.h
 include/geos/nodingSnapround.h
 include/geos/opBuffer.h
@@ -270,6 +274,8 @@ include/geos/operation/buffer/BufferParameters.h
 include/geos/operation/buffer/BufferSubgraph.h
 include/geos/operation/buffer/OffsetCurveBuilder.h
 include/geos/operation/buffer/OffsetCurveSetBuilder.h
+include/geos/operation/buffer/OffsetSegmentGenerator.h
+include/geos/operation/buffer/OffsetSegmentString.h
 include/geos/operation/buffer/RightmostEdgeFinder.h
 include/geos/operation/buffer/SubgraphDepthLocater.h
 include/geos/operation/distance/
@@ -323,8 +329,14 @@ include/geos/operation/relate/RelateNode.h
 include/geos/operation/relate/RelateNodeFactory.h
 include/geos/operation/relate/RelateNodeGraph.h
 include/geos/operation/relate/RelateOp.h
+include/geos/operation/sharedpaths/
+include/geos/operation/sharedpaths/SharedPathsOp.h
 include/geos/operation/union/
 include/geos/operation/union/CascadedPolygonUnion.h
+include/geos/operation/union/CascadedUnion.h
+include/geos/operation/union/GeometryListHolder.h
+include/geos/operation/union/PointGeometryUnion.h
+include/geos/operation/union/UnaryUnionOp.h
 include/geos/operation/valid/
 include/geos/operation/valid/ConnectedInteriorTester.h
 include/geos/operation/valid/ConsistentAreaTester.h
@@ -375,6 +387,8 @@ include/geos/util/CoordinateArrayFilter.h
 include/geos/util/GEOSException.h
 include/geos/util/GeometricShapeFactory.h
 include/geos/util/IllegalArgumentException.h
+include/geos/util/IllegalStateException.h
+include/geos/util/Machine.h
 include/geos/util/TopologyException.h
 include/geos/util/UniqueCoordinateArrayFilter.h
 include/geos/util/UnsupportedOperationException.h
@@ -409,6 +423,7 @@ share/doc/geos/html/ByteOrderValues_8h_source.html
 share/doc/geos/html/CGAlgorithms_8h_source.html
 share/doc/geos/html/CLocalizer_8h_source.html
 share/doc/geos/html/CascadedPolygonUnion_8h_source.html
+share/doc/geos/html/CascadedUnion_8h_source.html
 share/doc/geos/html/CentralEndpointIntersector_8h_source.html
 share/doc/geos/html/CentroidArea_8h_source.html
 share/doc/geos/html/CentroidLine_8h_source.html
@@ -468,10 +483,12 @@ share/doc/geos/html/GeometryCombiner_8h_source.html
 share/doc/geos/html/GeometryComponentFilter_8h_source.html
 share/doc/geos/html/GeometryEditorOperation_8h_source.html
 share/doc/geos/html/GeometryEditor_8h_source.html
+share/doc/geos/html/GeometryExtracter_8h_source.html
 share/doc/geos/html/GeometryFactory_8h_source.html
 share/doc/geos/html/GeometryFilter_8h_source.html
 share/doc/geos/html/GeometryGraphOperation_8h_source.html
 share/doc/geos/html/GeometryGraph_8h_source.html
+share/doc/geos/html/GeometryListHolder_8h_source.html
 share/doc/geos/html/GeometryList_8h_source.html
 share/doc/geos/html/GeometryLocation_8h_source.html
 share/doc/geos/html/GeometrySnapper_8h_source.html
@@ -480,6 +497,7 @@ share/doc/geos/html/Geometry_8h_source.html
 share/doc/geos/html/HCoordinate_8h_source.html
 share/doc/geos/html/HotPixel_8h_source.html
 share/doc/geos/html/IllegalArgumentException_8h_source.html
+share/doc/geos/html/IllegalStateException_8h_source.html
 share/doc/geos/html/IndexedNestedRingTester_8h_source.html
 share/doc/geos/html/IndexedPointInAreaLocator_8h_source.html
 share/doc/geos/html/InteriorPointArea_8h_source.html
@@ -512,6 +530,7 @@ share/doc/geos/html/LineSegment_8h_source.html
 share/doc/geos/html/LineSequencer_8h_source.html
 share/doc/geos/html/LineStringSnapper_8h_source.html
 share/doc/geos/html/LineString_8h_source.html
+share/doc/geos/html/Lineal_8h_source.html
 share/doc/geos/html/LinearComponentExtracter_8h_source.html
 share/doc/geos/html/LinearGeometryBuilder_8h_source.html
 share/doc/geos/html/LinearIterator_8h_source.html
@@ -525,6 +544,7 @@ share/doc/geos/html/MCIndexPointSnapper_8h_source.html
 share/doc/geos/html/MCIndexSegmentSetMutualIntersector_8h_source.html
 share/doc/geos/html/MCIndexSnapRounder_8h_source.html
 share/doc/geos/html/MCPointInRing_8h_source.html
+share/doc/geos/html/Machine_8h_source.html
 share/doc/geos/html/MaximalEdgeRing_8h_source.html
 share/doc/geos/html/MinimalEdgeRing_8h_source.html
 share/doc/geos/html/MinimumDiameter_8h_source.html
@@ -545,8 +565,9 @@ share/doc/geos/html/NotRepresentableException_8h_source.html
 share/doc/geos/html/Octant_8h_source.html
 share/doc/geos/html/OffsetCurveBuilder_8h_source.html
 share/doc/geos/html/OffsetCurveSetBuilder_8h_source.html
-share/doc/geos/html/OffsetCurveVertexList_8h_source.html
 share/doc/geos/html/OffsetPointGenerator_8h_source.html
+share/doc/geos/html/OffsetSegmentGenerator_8h_source.html
+share/doc/geos/html/OffsetSegmentString_8h_source.html
 share/doc/geos/html/OrientedCoordinateArray_8h_source.html
 share/doc/geos/html/OverlayNodeFactory_8h_source.html
 share/doc/geos/html/OverlayOp_8h_source.html
@@ -554,6 +575,7 @@ share/doc/geos/html/OverlayResultValidator_8h_source.html
 share/doc/geos/html/ParseException_8h_source.html
 share/doc/geos/html/PointBuilder_8h_source.html
 share/doc/geos/html/PointExtracter_8h_source.html
+share/doc/geos/html/PointGeometryUnion_8h_source.html
 share/doc/geos/html/PointInRing_8h_source.html
 share/doc/geos/html/PointLocator_8h_source.html
 share/doc/geos/html/PointOnGeometryLocator_8h_source.html
@@ -562,6 +584,7 @@ share/doc/geos/html/Point_8h_source.html
 share/doc/geos/html/PolygonBuilder_8h_source.html
 share/doc/geos/html/PolygonExtracter_8h_source.html
 share/doc/geos/html/Polygon_8h_source.html
+share/doc/geos/html/Polygonal_8h_source.html
 share/doc/geos/html/PolygonizeDirectedEdge_8h_source.html
 share/doc/geos/html/PolygonizeEdge_8h_source.html
 share/doc/geos/html/PolygonizeGraph_8h_source.html
@@ -579,6 +602,7 @@ share/doc/geos/html/PreparedPolygonCovers_8h_source.html
 share/doc/geos/html/PreparedPolygonIntersects_8h_source.html
 share/doc/geos/html/PreparedPolygonPredicate_8h_source.html
 share/doc/geos/html/PreparedPolygon_8h_source.html
+share/doc/geos/html/Puntal_8h_source.html
 share/doc/geos/html/Quadrant_8h_source.html
 share/doc/geos/html/QuadtreeNestedRingTester_8h_source.html
 share/doc/geos/html/Quadtree_8h_source.html
@@ -601,9 +625,11 @@ share/doc/geos/html/SegmentIntersectionDetector_8h_source.html
 share/doc/geos/html/SegmentIntersectionTester_8h_source.html
 share/doc/geos/html/SegmentNodeList_8h_source.html
 share/doc/geos/html/SegmentNode_8h_source.html
+share/doc/geos/html/SegmentPointComparator_8h_source.html
 share/doc/geos/html/SegmentSetMutualIntersector_8h_source.html
 share/doc/geos/html/SegmentStringUtil_8h_source.html
 share/doc/geos/html/SegmentString_8h_source.html
+share/doc/geos/html/SharedPathsOp_8h_source.html
 share/doc/geos/html/ShortCircuitedGeometryVisitor_8h_source.html
 share/doc/geos/html/SimpleEdgeSetIntersector_8h_source.html
 share/doc/geos/html/SimpleGeometryPrecisionReducer_8h_source.html
@@ -614,6 +640,7 @@ share/doc/geos/html/SimplePointInAreaLocator_8h_source.html
 share/doc/geos/html/SimplePointInRing_8h_source.html
 share/doc/geos/html/SimpleSnapRounder_8h_source.html
 share/doc/geos/html/SimpleSweepLineIntersector_8h_source.html
+share/doc/geos/html/SineStarFactory_8h_source.html
 share/doc/geos/html/SingleInteriorIntersectionFinder_8h_source.html
 share/doc/geos/html/SinglePassNoder_8h_source.html
 share/doc/geos/html/SnapIfNeededOverlayOp_8h_source.html
@@ -638,6 +665,7 @@ share/doc/geos/html/TopologyLocation_8h_source.html
 share/doc/geos/html/TopologyPreservingSimplifier_8h_source.html
 share/doc/geos/html/TopologyValidationError_8h_source.html
 share/doc/geos/html/Triangle_8h_source.html
+share/doc/geos/html/UnaryUnionOp_8h_source.html
 share/doc/geos/html/UniqueCoordinateArrayFilter_8h_source.html
 share/doc/geos/html/UnsupportedOperationException_8h_source.html
 share/doc/geos/html/WKBConstants_8h_source.html
@@ -751,6 +779,9 @@ share/doc/geos/html/classgeos_1_1geom_1_1LineSegment.png
 share/doc/geos/html/classgeos_1_1geom_1_1LineString-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1LineString.html
 share/doc/geos/html/classgeos_1_1geom_1_1LineString.png
+share/doc/geos/html/classgeos_1_1geom_1_1Lineal-members.html
+share/doc/geos/html/classgeos_1_1geom_1_1Lineal.html
+share/doc/geos/html/classgeos_1_1geom_1_1Lineal.png
 share/doc/geos/html/classgeos_1_1geom_1_1LinearRing-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1LinearRing.html
 share/doc/geos/html/classgeos_1_1geom_1_1LinearRing.png
@@ -771,8 +802,14 @@ share/doc/geos/html/classgeos_1_1geom_1_1Point.png
 share/doc/geos/html/classgeos_1_1geom_1_1Polygon-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1Polygon.html
 share/doc/geos/html/classgeos_1_1geom_1_1Polygon.png
+share/doc/geos/html/classgeos_1_1geom_1_1Polygonal-members.html
+share/doc/geos/html/classgeos_1_1geom_1_1Polygonal.html
+share/doc/geos/html/classgeos_1_1geom_1_1Polygonal.png
 share/doc/geos/html/classgeos_1_1geom_1_1PrecisionModel-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1PrecisionModel.html
+share/doc/geos/html/classgeos_1_1geom_1_1Puntal-members.html
+share/doc/geos/html/classgeos_1_1geom_1_1Puntal.html
+share/doc/geos/html/classgeos_1_1geom_1_1Puntal.png
 share/doc/geos/html/classgeos_1_1geom_1_1Triangle-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1Triangle.html
 share/doc/geos/html/classgeos_1_1geom_1_1prep_1_1AbstractPreparedPolygonContains-members.html
@@ -825,6 +862,8 @@ share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryEditor.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryEditorOperation-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryEditorOperation.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryEditorOperation.png
+share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryExtracter-members.html
+share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryExtracter.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryTransformer-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1GeometryTransformer.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1LinearComponentExtracter-members.html
@@ -838,6 +877,9 @@ share/doc/geos/html/classgeos_1_1geom_1_1util_1_1PolygonExtracter.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1PolygonExtracter.png
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1ShortCircuitedGeometryVisitor-members.html
 share/doc/geos/html/classgeos_1_1geom_1_1util_1_1ShortCircuitedGeometryVisitor.html
+share/doc/geos/html/classgeos_1_1geom_1_1util_1_1SineStarFactory-members.html
+share/doc/geos/html/classgeos_1_1geom_1_1util_1_1SineStarFactory.html
+share/doc/geos/html/classgeos_1_1geom_1_1util_1_1SineStarFactory.png
 share/doc/geos/html/classgeos_1_1geomgraph_1_1DirectedEdge-members.html
 share/doc/geos/html/classgeos_1_1geomgraph_1_1DirectedEdge.html
 share/doc/geos/html/classgeos_1_1geomgraph_1_1DirectedEdge.png
@@ -957,6 +999,8 @@ share/doc/geos/html/classgeos_1_1io_1_1WKTWriter-members.html
 share/doc/geos/html/classgeos_1_1io_1_1WKTWriter.html
 share/doc/geos/html/classgeos_1_1linearref_1_1ExtractLineByLocation-members.html
 share/doc/geos/html/classgeos_1_1linearref_1_1ExtractLineByLocation.html
+share/doc/geos/html/classgeos_1_1linearref_1_1LengthIndexOfPoint-members.html
+share/doc/geos/html/classgeos_1_1linearref_1_1LengthIndexOfPoint.html
 share/doc/geos/html/classgeos_1_1linearref_1_1LengthIndexedLine-members.html
 share/doc/geos/html/classgeos_1_1linearref_1_1LengthIndexedLine.html
 share/doc/geos/html/classgeos_1_1linearref_1_1LengthLocationMap-members.html
@@ -1021,6 +1065,8 @@ share/doc/geos/html/classgeos_1_1noding_1_1SegmentNode-members.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentNode.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentNodeList-members.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentNodeList.html
+share/doc/geos/html/classgeos_1_1noding_1_1SegmentPointComparator-members.html
+share/doc/geos/html/classgeos_1_1noding_1_1SegmentPointComparator.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentSetMutualIntersector-members.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentSetMutualIntersector.html
 share/doc/geos/html/classgeos_1_1noding_1_1SegmentSetMutualIntersector.png
@@ -1067,8 +1113,10 @@ share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveBuilder-membe
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveBuilder.html
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveSetBuilder-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveSetBuilder.html
-share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveVertexList-members.html
-share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetCurveVertexList.html
+share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetSegmentGenerator-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetSegmentGenerator.html
+share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetSegmentString-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1OffsetSegmentString.html
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1RightmostEdgeFinder-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1RightmostEdgeFinder.html
 share/doc/geos/html/classgeos_1_1operation_1_1buffer_1_1SubgraphDepthLocater-members.html
@@ -1085,8 +1133,14 @@ share/doc/geos/html/classgeos_1_1operation_1_1distance_1_1GeometryLocation-membe
 share/doc/geos/html/classgeos_1_1operation_1_1distance_1_1GeometryLocation.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1CascadedPolygonUnion-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1CascadedPolygonUnion.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1CascadedUnion-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1CascadedUnion.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1GeometryListHolder-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1GeometryListHolder.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1PointGeometryUnion-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1PointGeometryUnion.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1UnaryUnionOp-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1geounion_1_1UnaryUnionOp.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1EdgeString-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1EdgeString.html
 share/doc/geos/html/classgeos_1_1operation_1_1linemerge_1_1LineMergeDirectedEdge-members.html
@@ -1168,6 +1222,8 @@ share/doc/geos/html/classgeos_1_1operation_1_1relate_1_1RelateNodeGraph.html
 share/doc/geos/html/classgeos_1_1operation_1_1relate_1_1RelateOp-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1relate_1_1RelateOp.html
 share/doc/geos/html/classgeos_1_1operation_1_1relate_1_1RelateOp.png
+share/doc/geos/html/classgeos_1_1operation_1_1sharedpaths_1_1SharedPathsOp-members.html
+share/doc/geos/html/classgeos_1_1operation_1_1sharedpaths_1_1SharedPathsOp.html
 share/doc/geos/html/classgeos_1_1operation_1_1valid_1_1ConnectedInteriorTester-members.html
 share/doc/geos/html/classgeos_1_1operation_1_1valid_1_1ConnectedInteriorTester.html
 share/doc/geos/html/classgeos_1_1operation_1_1valid_1_1ConsistentAreaTester-members.html
@@ -1245,9 +1301,13 @@ share/doc/geos/html/classgeos_1_1util_1_1GEOSException.html
 share/doc/geos/html/classgeos_1_1util_1_1GEOSException.png
 share/doc/geos/html/classgeos_1_1util_1_1GeometricShapeFactory-members.html
 share/doc/geos/html/classgeos_1_1util_1_1GeometricShapeFactory.html
+share/doc/geos/html/classgeos_1_1util_1_1GeometricShapeFactory.png
 share/doc/geos/html/classgeos_1_1util_1_1IllegalArgumentException-members.html
 share/doc/geos/html/classgeos_1_1util_1_1IllegalArgumentException.html
 share/doc/geos/html/classgeos_1_1util_1_1IllegalArgumentException.png
+share/doc/geos/html/classgeos_1_1util_1_1IllegalStateException-members.html
+share/doc/geos/html/classgeos_1_1util_1_1IllegalStateException.html
+share/doc/geos/html/classgeos_1_1util_1_1IllegalStateException.png
 share/doc/geos/html/classgeos_1_1util_1_1TopologyException-members.html
 share/doc/geos/html/classgeos_1_1util_1_1TopologyException.html
 share/doc/geos/html/classgeos_1_1util_1_1TopologyException.png
