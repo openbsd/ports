@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/06/24 14:40:43 mglocker Exp $
 # $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
@@ -14,6 +14,7 @@
      SUBDIR += pan
      SUBDIR += plor
      SUBDIR += py-yenc
+     SUBDIR += sabnzbd
      SUBDIR += slrn
      SUBDIR += tin
      SUBDIR += trn
