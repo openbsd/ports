@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/28 08:18:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/24 10:08:43 ajacoutot Exp $
 %%SHARED%%
 include/ares.h
 include/ares_build.h
@@ -36,6 +36,7 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_parse_naptr_reply.3
 @man man/man3/ares_parse_ns_reply.3
 @man man/man3/ares_parse_ptr_reply.3
+@man man/man3/ares_parse_soa_reply.3
 @man man/man3/ares_parse_srv_reply.3
 @man man/man3/ares_parse_txt_reply.3
 @man man/man3/ares_process.3
