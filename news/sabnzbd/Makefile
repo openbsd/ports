@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/24 14:32:43 mglocker Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/25 20:54:14 mglocker Exp $
 
 COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			0.7.0
@@ -18,6 +18,7 @@ MASTER_SITES =			${MASTER_SITE_SOURCEFORGE:=sabnzbdplus/}
 
 MODULES =			lang/python
 
+BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/unrar \
 				archivers/unzip \
