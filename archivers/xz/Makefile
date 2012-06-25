@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2012/03/29 13:38:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2012/06/25 11:07:22 naddy Exp $
 
 NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
 COMMENT=	LZMA compression and decompression tools
 
-DISTNAME=	xz-5.0.3
-REVISION=	1
-SHARED_LIBS=	lzma                 1.0      # .5.3
+DISTNAME=	xz-5.0.4
+SHARED_LIBS=	lzma                 1.0      # .5.4
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://tukaani.org/xz/

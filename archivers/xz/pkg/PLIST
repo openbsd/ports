@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/27 19:08:20 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/06/25 11:07:22 naddy Exp $
 @conflict lzma-*
 @pkgpath archivers/lzma
 %%SHARED%%
@@ -77,8 +77,14 @@ share/doc/xz/COPYING
 @comment share/doc/xz/THANKS
 @comment share/doc/xz/TODO
 share/doc/xz/examples/
-share/doc/xz/examples/xz_pipe_comp.c
-share/doc/xz/examples/xz_pipe_decomp.c
+share/doc/xz/examples/00_README.txt
+share/doc/xz/examples/01_compress_easy.c
+share/doc/xz/examples/02_decompress.c
+share/doc/xz/examples/03_compress_custom.c
+share/doc/xz/examples/Makefile
+share/doc/xz/examples_old/
+share/doc/xz/examples_old/xz_pipe_comp.c
+share/doc/xz/examples_old/xz_pipe_decomp.c
 share/doc/xz/faq.txt
 share/doc/xz/history.txt
 share/doc/xz/lzma-file-format.txt
