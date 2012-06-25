@@ -1,0 +1,20 @@
+$OpenBSD: patch-vitunes_c,v 1.1 2012/06/25 14:20:01 pascal Exp $
+--- vitunes.c.orig	Sat Jun 23 13:30:24 2012
++++ vitunes.c	Sat Jun 23 13:31:18 2012
+@@ -168,13 +168,13 @@ main(int argc, char *argv[])
+    ui.library->nrows  = mdb.nplaylists;
+    playing_playlist = NULL;
+ 
+-   /* load config file and run commands in it now */
+-   load_config();
+-
+    /* start media player child */
+    player_init(player_backend);
+    player_info.mode = DEFAULT_PLAYER_MODE;
+    atexit(player_destroy);
++
++   /* load config file and run commands in it now */
++   load_config();
+ 
+    /* initial painting of the display */
+    paint_all();
