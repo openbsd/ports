@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2012/06/24 18:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/06/25 06:47:25 ajacoutot Exp $
 
 COMMENT=	ActiveSync protocol implementation	
 
 V=		2.0
 DISTNAME=	z-push-${V}-1346
 PKGNAME=	z-push-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	mail www
 
@@ -38,8 +38,8 @@ do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	find ${INSTDIR} -type f -name \*.orig -exec rm -f {} \;
 	mv ${INSTDIR}/config.php ${INSTDIR}/config.php.dist
+	${SUBST_CMD} -c ${FILESDIR}/z-push.conf \
+		${INSTDIR}/z-push.conf.dist
 	chown -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
-		${FILESDIR}/z-push.conf ${INSTDIR}/z-push.conf.dist
 
 .include <bsd.port.mk>

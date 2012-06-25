@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/06/24 18:47:20 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/06/25 06:47:25 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -7,14 +7,12 @@ $OpenBSD: README,v 1.2 2012/06/24 18:47:20 ajacoutot Exp $
 Z-push is installed under
     ${INSTDIR}
 
-You should point the followings to the DocumentRoot of your web-server:
-    # ln -s ../z-push /var/www/htdocs/z-push
-(make sure you use a relative symlink since Apache is chrooted)
-
 Some non defaults PHP settings are required on the ${INSTDIR}
 directory. For Apache ou can configure this as follows:
     # ln -s ${PREFIX}/conf/modules.sample/z-push.conf \
         /var/www/conf/modules
+
+z-push will be available from "http://<hostname>/z-push".
 
 Setting up a mobile device
 ==========================
