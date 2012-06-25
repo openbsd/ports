@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/22 19:12:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/25 15:45:14 espie Exp $
 @option no-default-conflict
+@conflict ${PKGSPEC}
 @comment bin/aclocal
 bin/aclocal${SUFFIX}
 @comment bin/automake
