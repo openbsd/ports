@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/06/25 23:07:54 pascal Exp $
+--- Makefile.in.orig	Sat Apr 16 13:17:15 2011
++++ Makefile.in	Mon May  7 14:24:06 2012
+@@ -1,10 +1,10 @@
+ 
+ DISTNAME = $(pkgname)-$(pkgversion)
+ INSTALL = install
+-INSTALL_PROGRAM = $(INSTALL) -p -m 755
+-INSTALL_SCRIPT = $(INSTALL) -p -m 755
+-INSTALL_DATA = $(INSTALL) -p -m 644
+-INSTALL_DIR = $(INSTALL) -d -m 755
++INSTALL_PROGRAM ?= $(INSTALL) -p -m 755
++INSTALL_SCRIPT ?= $(INSTALL) -p -m 755
++INSTALL_DATA ?= $(INSTALL) -p -m 644
++INSTALL_DIR ?= $(INSTALL) -d -m 755
+ SHELL = /bin/sh
+ 
+ objs = buffer.o carg_parser.o global.o io.o \
+@@ -65,7 +65,6 @@ install : all install-info install-man
+ install-info :
+ 	if [ ! -d "$(DESTDIR)$(infodir)" ] ; then $(INSTALL_DIR) "$(DESTDIR)$(infodir)" ; fi
+ 	$(INSTALL_DATA) $(VPATH)/doc/$(pkgname).info "$(DESTDIR)$(infodir)/$(program_prefix)$(pkgname).info"
+-	-install-info --info-dir="$(DESTDIR)$(infodir)" "$(DESTDIR)$(infodir)/$(program_prefix)$(pkgname).info"
+ 
+ install-man :
+ 	if [ ! -d "$(DESTDIR)$(mandir)/man1" ] ; then $(INSTALL_DIR) "$(DESTDIR)$(mandir)/man1" ; fi
