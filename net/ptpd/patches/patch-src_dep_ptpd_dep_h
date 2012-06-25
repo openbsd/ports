@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_dep_ptpd_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
---- src/dep/ptpd_dep.h.orig	Mon Apr  2 23:57:44 2007
-+++ src/dep/ptpd_dep.h	Sun Oct 26 13:13:21 2008
-@@ -13,7 +13,9 @@
+$OpenBSD: patch-src_dep_ptpd_dep_h,v 1.2 2012/06/25 19:24:27 naddy Exp $
+--- src/dep/ptpd_dep.h.orig	Mon Apr  2 15:57:44 2007
++++ src/dep/ptpd_dep.h	Mon Jun 25 13:23:06 2012
+@@ -3,6 +3,7 @@
+ #ifndef PTPD_DEP_H
+ #define PTPD_DEP_H
+ 
++#include<limits.h>
+ #include<stdlib.h>
+ #include<stdio.h>
+ #include<string.h>
+@@ -13,7 +14,9 @@
  #include<sys/stat.h>
  #include<time.h>
  #include<sys/time.h>
@@ -11,7 +19,7 @@ $OpenBSD: patch-src_dep_ptpd_dep_h,v 1.1.1.1 2009/01/20 19:05:23 naddy Exp $
  #include<sys/socket.h>
  #include<sys/select.h>
  #include<sys/ioctl.h>
-@@ -22,7 +24,7 @@
+@@ -22,7 +25,7 @@
  
  /* system messages */
  #define ERROR(x, ...)  fprintf(stderr, "(ptpd error) " x, ##__VA_ARGS__)
