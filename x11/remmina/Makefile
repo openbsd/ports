@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/15 08:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/06/25 14:24:34 mpi Exp $
 
 # from upstream, removed at next update
 MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
@@ -15,7 +15,7 @@ DISTNAME=		Remmina-${V}
 PKGNAME=		${DISTNAME:L}
 WRKDIST=		${WRKDIR}/FreeRDP-Remmina-356c033
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11 net
 

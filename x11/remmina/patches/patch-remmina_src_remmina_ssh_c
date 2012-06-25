@@ -1,6 +1,16 @@
-$OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.1 2012/05/22 08:02:36 mpi Exp $
+$OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.2 2012/06/25 14:24:34 mpi Exp $
+
+https://github.com/FreeRDP/Remmina/issues/59
+
+Revert commit b79355b1b5ac695c052eac5a80cf63863f0a3c85 that brokes
+Remmina with OpenBSD servers.
+
+https://github.com/FreeRDP/Remmina/issues/73
+
+Add support for openpty(3)
+
 --- remmina/src/remmina_ssh.c.orig	Fri Feb 10 19:54:23 2012
-+++ remmina/src/remmina_ssh.c	Thu Apr 19 17:06:35 2012
++++ remmina/src/remmina_ssh.c	Sat Jun 23 17:56:39 2012
 @@ -36,12 +36,12 @@
  #ifdef HAVE_NETDB_H
  #include <netdb.h>
@@ -27,7 +37,38 @@ $OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.1 2012/05/22 08:02:36 mpi Exp $
  #include "remmina_public.h"
  #include "remmina_log.h"
  #include "remmina_ssh.h"
-@@ -1430,8 +1433,9 @@ remmina_ssh_shell_thread (gpointer data)
+@@ -120,29 +123,11 @@ static gint
+ remmina_ssh_auth_password (RemminaSSH *ssh)
+ {
+ 	gint ret;
+-	gint authlist;
+-	gint n;
+-	gint i;
+ 
+ 	if (ssh->authenticated) return 1;
+ 	if (ssh->password == NULL) return -1;
+ 
+-	authlist = ssh_userauth_list (ssh->session, NULL);
+-	if (authlist & SSH_AUTH_METHOD_INTERACTIVE)
+-	{
+-		while ((ret = ssh_userauth_kbdint (ssh->session, NULL, NULL)) == SSH_AUTH_INFO)
+-		{
+-			n = ssh_userauth_kbdint_getnprompts (ssh->session);
+-			for (i = 0; i < n; i++)
+-			{
+-				ssh_userauth_kbdint_setanswer(ssh->session, i, ssh->password);
+-			}
+-		}
+-	}
+-	else
+-	{
+-		ret = ssh_userauth_password (ssh->session, NULL, ssh->password);
+-	}
++	ret = ssh_userauth_password (ssh->session, NULL, ssh->password);
+ 	if (ret != SSH_AUTH_SUCCESS)
+ 	{
+ 		remmina_ssh_set_error (ssh, _("SSH password authentication failed: %s"));
+@@ -1430,8 +1415,9 @@ remmina_ssh_shell_thread (gpointer data)
  gboolean
  remmina_ssh_shell_open (RemminaSSHShell *shell, RemminaSSHExitFunc exit_callback, gpointer data)
  {
@@ -38,7 +79,7 @@ $OpenBSD: patch-remmina_src_remmina_ssh_c,v 1.1 2012/05/22 08:02:36 mpi Exp $
  
  	shell->master = posix_openpt (O_RDWR | O_NOCTTY);
  	if (shell->master == -1 ||
-@@ -1439,6 +1443,11 @@ remmina_ssh_shell_open (RemminaSSHShell *shell, Remmin
+@@ -1439,6 +1425,11 @@ remmina_ssh_shell_open (RemminaSSHShell *shell, Remmin
  			unlockpt (shell->master) == -1 ||
  			(slavedevice = ptsname (shell->master)) == NULL ||
  			(shell->slave = open (slavedevice, O_RDWR | O_NOCTTY)) < 0)
