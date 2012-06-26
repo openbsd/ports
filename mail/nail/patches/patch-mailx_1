@@ -1,6 +1,6 @@
-$OpenBSD: patch-mailx_1,v 1.3 2009/05/04 19:10:49 okan Exp $
+$OpenBSD: patch-mailx_1,v 1.4 2012/06/26 10:10:20 jasper Exp $
 --- mailx.1.orig	Mon Oct  1 09:00:39 2007
-+++ mailx.1	Mon May  4 14:18:28 2009
++++ mailx.1	Fri Jun 22 20:33:53 2012
 @@ -36,14 +36,14 @@
  .\"
  .\"     Sccsid: @(#)mailx.1	2.326 (gritter) 10/1/07
@@ -659,6 +659,15 @@ $OpenBSD: patch-mailx_1,v 1.3 2009/05/04 19:10:49 okan Exp $
  will as for a password on the user's terminal.
  .TP
  \fBsmtp-auth-user-\fIuser\fB@\fIhost\fR
+@@ -3560,7 +3560,7 @@ Only applicable if SSL/TLS support is built using Open
+ .TP
+ .B ssl-method
+ Selects a SSL/TLS protocol version;
+-valid values are `ssl2', `ssl3', and `tls1'.
++valid values are `ssl3', and `tls''.
+ If unset, the method is selected automatically,
+ if possible.
+ .TP
 @@ -3605,9 +3605,9 @@ normally, the first five
  lines are printed.
  .TP

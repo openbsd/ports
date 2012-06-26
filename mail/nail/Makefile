@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2012/01/27 04:14:03 william Exp $
+# $OpenBSD: Makefile,v 1.25 2012/06/26 10:10:20 jasper Exp $
 
 COMMENT=		enhanced, MIME capable Berkeley Mail
 
 V=			12.4
-REVISION=		1
+REVISION=		2
 DISTNAME=		mailx-${V}
 PKGNAME=		nail-${V}
 CATEGORIES=		mail

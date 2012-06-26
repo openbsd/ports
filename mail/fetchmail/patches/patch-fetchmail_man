@@ -1,6 +1,16 @@
-$OpenBSD: patch-fetchmail_man,v 1.2 2012/06/22 14:38:28 jasper Exp $
---- fetchmail.man.orig	Wed Jun 20 16:16:01 2012
-+++ fetchmail.man	Wed Jun 20 16:16:01 2012
+$OpenBSD: patch-fetchmail_man,v 1.3 2012/06/26 10:10:20 jasper Exp $
+--- fetchmail.man.orig	Tue Jun 19 20:45:20 2012
++++ fetchmail.man	Tue Jun 19 20:47:40 2012
+@@ -478,7 +478,8 @@ Also see \-\-sslcert above.
+ (Keyword: sslproto)
+ .br
+ Forces an SSL/TLS protocol. Possible values are \fB''\fP,
+-\&'\fBSSL2\fP', '\fBSSL23\fP', (use of these two values is discouraged
++\&'\fBSSL2\fP' (not supported on all systems),
++\&'\fBSSL23\fP', (use of these two values is discouraged
+ and should only be used as a last resort) \&'\fBSSL3\fP', and
+ \&'\fBTLS1\fP'.  The default behaviour if this option is unset is: for
+ connections without \-\-ssl, use \&'\fBTLS1\fP' so that fetchmail will
 @@ -7075,6 +7076,13 @@ then that name is used as the default local name.  Oth
  \fBgetpwuid\fP(3) must be able to retrieve a password entry for the
  session ID (this elaborate logic is designed to handle the case of
