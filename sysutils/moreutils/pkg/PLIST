@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/04 14:11:59 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/26 13:38:25 sthen Exp $
 bin/chronic
 bin/combine
+@bin bin/errno
 @bin bin/ifdata
 @bin bin/ifne
 @bin bin/isutf8
@@ -14,6 +15,7 @@ bin/vipe
 bin/zrun
 @man man/man1/chronic.1
 @man man/man1/combine.1
+@man man/man1/errno.1
 @man man/man1/ifdata.1
 @man man/man1/ifne.1
 @man man/man1/isutf8.1
