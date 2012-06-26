@@ -1,0 +1,19 @@
+$OpenBSD: README,v 1.1.1.1 2012/06/26 08:54:05 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+bacula-web has been installed into ${INSTDIR}
+
+bacula-web can work with a PostgreSQL, MySQL or SQLite3 database.
+Support for SQLite3 is included with the main php package; to use
+another database, the corresponding package needs to be installed:
+    php-pdo_pgsql or php-pdo_mysql
+
+Configuration is done in:
+    ${INSTDIR}/config/config.php
+
+When using Apache, running the following command and restarting httpd(8)
+will make bacula-web available from "http://<hostname>/bacula-web".
+    # ln -s ../modules.sample/bacula-web.conf ${PREFIX}/conf/modules

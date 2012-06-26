@@ -1,0 +1,37 @@
+$OpenBSD: patch-config_config_php_sample,v 1.1.1.1 2012/06/26 08:54:05 ajacoutot Exp $
+--- config/config.php.sample.orig	Thu May 24 21:28:18 2012
++++ config/config.php.sample	Mon Jun 25 08:57:44 2012
+@@ -17,22 +17,22 @@
+  // Example: 
+  
+  //MySQL bacula catalog
++ // $config[0]['label'] = 'Backup Server';
++ // $config[0]['host'] = 'localhost';
++ // $config[0]['login'] = 'bacula';
++ // $config[0]['password'] = 'verystrongpassword';
++ // $config[0]['db_name'] = 'bacula';
++ // $config[0]['db_type'] = 'mysql';
++ // $config[0]['db_port'] = '3306';
++
++ // PostgreSQL bacula catalog
+  $config[0]['label'] = 'Backup Server';
+  $config[0]['host'] = 'localhost';
+  $config[0]['login'] = 'bacula';
+  $config[0]['password'] = 'verystrongpassword';
+  $config[0]['db_name'] = 'bacula';
+- $config[0]['db_type'] = 'mysql';
+- $config[0]['db_port'] = '3306';
+-
+- // PostgreSQL bacula catalog
+- // $config[0]['label'] = 'Prod Server';
+- // $config[0]['host'] = 'db-server.domain.com';
+- // $config[0]['login'] = 'bacula';
+- // $config[0]['password'] = 'otherstrongpassword';
+- // $config[0]['db_name'] = 'bacula';
+- // $config[0]['db_type'] = 'pgsql';
+- // $config[0]['db_port'] = '5432'; 
++ $config[0]['db_type'] = 'pgsql';
++ $config[0]['db_port'] = '5432'; 
+  
+  // SQLite bacula catalog
+  // $config[0]['label'] = 'Dev backup server';
