@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
-@conflict devel/omake
+@comment $OpenBSD: PLIST,v 1.2 2012/06/26 22:08:01 pascal Exp $
+@conflict omake-*
 @bin bin/fd2
 @bin bin/glob6
 @bin bin/goto
