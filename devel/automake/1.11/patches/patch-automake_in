@@ -1,15 +1,6 @@
-$OpenBSD: patch-automake_in,v 1.2 2012/02/22 07:14:20 ajacoutot Exp $
---- automake.in.orig	Wed Feb  1 05:31:13 2012
-+++ automake.in	Thu Feb 16 22:24:10 2012
-@@ -4384,7 +4384,7 @@ sub handle_configure ($$$@)
-       # Use $(install_sh), not $(MKDIR_P) because the latter requires
-       # at least one argument, and $(mkinstalldirs) used to work
-       # even without arguments (e.g. $(mkinstalldirs) $(conditional_dir)).
--      define_variable ('mkinstalldirs', '$(install_sh) -d', INTERNAL);
-+      define_variable ('mkinstalldirs', '$(SHELL) $(install_sh) -d', INTERNAL);
-     }
- 
-   reject_var ('CONFIG_HEADER',
+$OpenBSD: patch-automake_in,v 1.3 2012/06/26 20:31:47 matthieu Exp $
+--- automake.in.orig	Fri Apr 13 10:46:00 2012
++++ automake.in	Mon Jun 25 00:19:46 2012
 @@ -5337,6 +5337,7 @@ sub scan_autoconf_traces ($)
  		_LT_AC_TAGCONFIG => 0,
  		m4_include => 1,
