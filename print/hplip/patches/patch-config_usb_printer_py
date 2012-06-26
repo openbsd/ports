@@ -1,0 +1,9 @@
+$OpenBSD: patch-config_usb_printer_py,v 1.1 2012/06/26 11:17:54 sthen Exp $
+--- config_usb_printer.py.orig	Sat Jun 23 01:45:52 2012
++++ config_usb_printer.py	Sat Jun 23 01:46:27 2012
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ # -*- coding: utf-8 -*-
+ #
+ # (c) Copyright 2011-2014 Hewlett-Packard Development Company, L.P.
