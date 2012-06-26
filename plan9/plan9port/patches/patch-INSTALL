@@ -1,0 +1,27 @@
+$OpenBSD: patch-INSTALL,v 1.1.1.1 2012/06/26 15:07:17 pascal Exp $
+--- INSTALL.orig	Mon Oct 24 06:00:05 2011
++++ INSTALL	Fri Nov  4 20:27:37 2011
+@@ -94,7 +94,7 @@ cd src
+ if $dobuild; then
+ 	if [ ! -x ../bin/mk ]; then
+ 		echo "* Building mk..."
+-		../dist/buildmk 2>&1 | sed 's/^[+] //'
++		../dist/buildmk 2>&1
+ 	fi
+ 	if [ ! -x ../bin/mk ]; then
+ 		echo "* Error: mk failed to build."
+@@ -102,7 +102,6 @@ if $dobuild; then
+ 	fi
+ 	
+ 	echo "* Building everything (be patient)..."
+-	mk clean
+ 	mk libs-nuke
+ 	mk all || exit 1
+ 	if [ ! -x $PLAN9/src/cmd/o.cleanname -o ! -x $PLAN9/src/cmd/acme/o.acme ]; then
+@@ -157,5 +156,5 @@ if $doinstall; then
+ 	echo "	PLAN9=$PLAN9 export PLAN9"
+ 	echo '	PATH=$PATH:$PLAN9/bin export PATH'
+ fi
+-) 2>&1 | tee install.log | $awk -f $PLAN9/dist/isum.awk -v 'copy='install.sum
++) 2>&1 | tee install.log
+ 

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_mkhdr,v 1.1.1.1 2012/06/26 15:07:17 pascal Exp $
+--- src/mkhdr.orig	Mon Oct 24 06:00:05 2011
++++ src/mkhdr	Wed Feb  1 17:37:09 2012
+@@ -28,8 +28,8 @@ LD=9l
+ AS=9a
+ AR=9ar
+ INSTALL=install
+-CFLAGS=
+-LDFLAGS=
++CFLAGS=${CCFLAGS} -pthread
++LDFLAGS=-pthread
+ AFLAGS=
+ CLEANFILES=
+ NUKEFILES=
