@@ -1,0 +1,9 @@
+Osh(1) is an enhanced, backward-compatible port of the Sixth Edition
+Thompson shell. Sh6(1) is an unenhanced port of the shell, and
+glob6(1) is a port of its global command. Together, sh6 and glob6
+provide a user interface which is backward compatible with that
+provided by the Sixth Edition Thompson shell and global command,
+but without the obvious enhancements found in osh.
+
+The original Thompson shell was principally written by Ken Thompson
+of Bell Labs.

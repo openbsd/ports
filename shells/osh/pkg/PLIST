@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/26 22:02:32 pascal Exp $
+@conflict devel/omake
+@bin bin/fd2
+@bin bin/glob6
+@bin bin/goto
+@bin bin/if
+@shell bin/osh
+@shell bin/sh6
+@man man/man1/fd2.1
+@man man/man1/glob6.1
+@man man/man1/goto.1
+@man man/man1/if.1
+@man man/man1/osh.1
+@man man/man1/sh6.1
+share/examples/osh/
+share/examples/osh.login
+@sample ${SYSCONFDIR}/osh.login
+share/examples/osh.logout
+@sample ${SYSCONFDIR}/osh.logout
+share/examples/osh.oshrc
+@sample ${SYSCONFDIR}/osh.oshrc
