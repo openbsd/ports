@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/01/23 10:54:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/06/26 20:23:29 jasper Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -82,7 +82,9 @@ lib/ejabberd/ebin/jd2ejd.beam
 lib/ejabberd/ebin/jlib.beam
 lib/ejabberd/ebin/mod_adhoc.beam
 lib/ejabberd/ebin/mod_announce.beam
+lib/ejabberd/ebin/mod_announce_odbc.beam
 lib/ejabberd/ebin/mod_blocking.beam
+lib/ejabberd/ebin/mod_blocking_odbc.beam
 lib/ejabberd/ebin/mod_caps.beam
 lib/ejabberd/ebin/mod_configure.beam
 lib/ejabberd/ebin/mod_configure2.beam
@@ -93,10 +95,12 @@ lib/ejabberd/ebin/mod_http_fileserver.beam
 lib/ejabberd/ebin/mod_ip_blacklist.beam
 lib/ejabberd/ebin/mod_irc.beam
 lib/ejabberd/ebin/mod_irc_connection.beam
+lib/ejabberd/ebin/mod_irc_odbc.beam
 lib/ejabberd/ebin/mod_last.beam
 lib/ejabberd/ebin/mod_last_odbc.beam
 lib/ejabberd/ebin/mod_muc.beam
 lib/ejabberd/ebin/mod_muc_log.beam
+lib/ejabberd/ebin/mod_muc_odbc.beam
 lib/ejabberd/ebin/mod_muc_room.beam
 lib/ejabberd/ebin/mod_offline.beam
 lib/ejabberd/ebin/mod_offline_odbc.beam
@@ -120,6 +124,7 @@ lib/ejabberd/ebin/mod_roster_odbc.beam
 lib/ejabberd/ebin/mod_service_log.beam
 lib/ejabberd/ebin/mod_shared_roster.beam
 lib/ejabberd/ebin/mod_shared_roster_ldap.beam
+lib/ejabberd/ebin/mod_shared_roster_odbc.beam
 lib/ejabberd/ebin/mod_sic.beam
 lib/ejabberd/ebin/mod_stats.beam
 lib/ejabberd/ebin/mod_time.beam
@@ -127,6 +132,7 @@ lib/ejabberd/ebin/mod_vcard.beam
 lib/ejabberd/ebin/mod_vcard_ldap.beam
 lib/ejabberd/ebin/mod_vcard_odbc.beam
 lib/ejabberd/ebin/mod_vcard_xupdate.beam
+lib/ejabberd/ebin/mod_vcard_xupdate_odbc.beam
 lib/ejabberd/ebin/mod_version.beam
 lib/ejabberd/ebin/node_buddy.beam
 lib/ejabberd/ebin/node_club.beam

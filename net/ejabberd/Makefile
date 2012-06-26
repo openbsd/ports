@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2012/01/23 10:54:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/06/26 20:23:29 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
-V=			2.1.10
+V=			2.1.11
 DISTNAME=		ejabberd-$V
 
 CATEGORIES=		net
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		expat crypto ssl z
 
 MASTER_SITES=		http://www.process-one.net/downloads/ejabberd/$V/
+EXTRACT_SUFX=		.tgz
 
 MODULES=		converters/libiconv
 BUILD_DEPENDS=		lang/erlang
