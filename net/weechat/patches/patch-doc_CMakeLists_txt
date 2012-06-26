@@ -1,0 +1,9 @@
+$OpenBSD: patch-doc_CMakeLists_txt,v 1.1.1.1 2012/06/26 15:06:42 sthen Exp $
+--- doc/CMakeLists.txt.orig	Tue Jun 26 12:44:21 2012
++++ doc/CMakeLists.txt	Tue Jun 26 12:45:09 2012
+@@ -35,4 +35,4 @@ IF(ENABLE_DOC)
+ 
+ ENDIF(ENABLE_DOC)
+ 
+-INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat-curses.1 DESTINATION ${SHAREDIR}/man/man1)
++INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/weechat-curses.1 DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man1)

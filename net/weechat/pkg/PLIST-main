@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2012/06/26 15:06:42 sthen Exp $
+@bin bin/weechat-curses
+include/weechat/
+include/weechat/weechat-plugin.h
+lib/pkgconfig/weechat.pc
+lib/weechat/
+lib/weechat/plugins/
+lib/weechat/plugins/alias.so
+lib/weechat/plugins/charset.so
+lib/weechat/plugins/fifo.so
+lib/weechat/plugins/irc.so
+lib/weechat/plugins/logger.so
+lib/weechat/plugins/perl.so
+lib/weechat/plugins/relay.so
+lib/weechat/plugins/rmodifier.so
+lib/weechat/plugins/xfer.so
+@man man/man1/weechat-curses.1
+share/doc/weechat/
+share/doc/weechat/weechat_dev.en.txt
+share/doc/weechat/weechat_faq.en.txt
+share/doc/weechat/weechat_plugin_api.en.txt
+share/doc/weechat/weechat_quickstart.en.txt
+share/doc/weechat/weechat_relay_protocol.en.txt
+share/doc/weechat/weechat_scripting.en.txt
+share/doc/weechat/weechat_tester.en.txt
+share/doc/weechat/weechat_user.en.txt
+share/locale/cs/LC_MESSAGES/weechat.mo
+share/locale/de/LC_MESSAGES/weechat.mo
+share/locale/es/LC_MESSAGES/weechat.mo
+share/locale/fr/LC_MESSAGES/weechat.mo
+share/locale/hu/LC_MESSAGES/weechat.mo
+share/locale/it/LC_MESSAGES/weechat.mo
+share/locale/ja/LC_MESSAGES/weechat.mo
+share/locale/pl/LC_MESSAGES/weechat.mo
+share/locale/pt_BR/LC_MESSAGES/weechat.mo
+share/locale/ru/LC_MESSAGES/weechat.mo
