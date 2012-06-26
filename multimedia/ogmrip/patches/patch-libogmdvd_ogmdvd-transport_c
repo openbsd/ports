@@ -1,0 +1,76 @@
+$OpenBSD: patch-libogmdvd_ogmdvd-transport_c,v 1.1.1.1 2012/06/26 11:46:06 pascal Exp $
+
+seems like the code for HAVE_SCSIREQ_T has not been tested/updated for a long
+time ...
+
+--- libogmdvd/ogmdvd-transport.c.orig	Mon Jun 18 22:18:17 2012
++++ libogmdvd/ogmdvd-transport.c	Mon Jun 18 22:32:49 2012
+@@ -23,12 +23,14 @@
+ #include "config.h"
+ #endif
+ 
+-#include "ogmdvd-transport.h"
++//#include "ogmdvd-transport.h"
++typedef struct _Scsi_Command Scsi_Command;
+ 
+ #include <poll.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <unistd.h>
++#include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ 
+@@ -271,13 +273,13 @@ scsi_command_set (Scsi_Command *cmd, size_t index, uns
+ {
+   if (index == 0)
+   {
+-    memset (&req, 0, sizeof (req));
+-    req.flags = SCCMD_ESCAPE;
+-    req.timeout = 30000;
+-    req.senselen = 18; //sizeof(req.sense);
++    memset (&cmd->req, 0, sizeof (cmd->req));
++    cmd->req.flags = SCCMD_ESCAPE;
++    cmd->req.timeout = 30000;
++    cmd->req.senselen = 18; //sizeof(req.sense);
+   }
+-  req.cmdlen = index + 1;
+-  req.cmd[index] = value;
++  cmd->req.cmdlen = index + 1;
++  cmd->req.cmd[index] = value;
+ }
+ 
+ int
+@@ -285,24 +287,24 @@ scsi_command_transport (Scsi_Command *cmd, Direction d
+ {
+   int ret = 0;
+ 
+-  req.databuf = (caddr_t) buf;
+-  req.datalen = sz;
+-  req.flags |= dir;
++  cmd->req.databuf = (caddr_t) buf;
++  cmd->req.datalen = sz;
++  cmd->req.flags |= dir;
+ 
+-  if (ioctl (fd, SCIOCCOMMAND, &req) < 0)
++  if (ioctl (cmd->fd, SCIOCCOMMAND, &cmd->req) < 0)
+     return -1;
+-  if (req.retsts == SCCMD_OK)
++  if (cmd->req.retsts == SCCMD_OK)
+     return 0;
+ 
+   errno = EIO;
+   ret = -1;
+-  if (req.retsts == SCCMD_SENSE)
++  if (cmd->req.retsts == SCCMD_SENSE)
+   {
+-    ret = ERRCODE (req.sense);
++    ret = ERRCODE (cmd->req.sense);
+     if (ret == 0)
+       ret = -1;
+     else
+-      CREAM_ON_ERRNO (req.sense);
++      CREAM_ON_ERRNO (cmd->req.sense);
+   }
+ 
+   return ret;
