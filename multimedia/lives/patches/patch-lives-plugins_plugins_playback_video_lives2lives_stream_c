@@ -1,11 +1,10 @@
-$OpenBSD: patch-lives-plugins_plugins_playback_video_lives2lives_stream_c,v 1.1.1.1 2011/11/16 16:52:01 phessler Exp $
---- lives-plugins/plugins/playback/video/lives2lives_stream.c.orig	Tue Nov 15 23:57:41 2011
-+++ lives-plugins/plugins/playback/video/lives2lives_stream.c	Tue Nov 15 23:57:43 2011
-@@ -11,6 +11,8 @@
+$OpenBSD: patch-lives-plugins_plugins_playback_video_lives2lives_stream_c,v 1.2 2012/06/26 14:15:23 jasper Exp $
+--- lives-plugins/plugins/playback/video/lives2lives_stream.c.orig	Thu Sep  9 19:41:26 2010
++++ lives-plugins/plugins/playback/video/lives2lives_stream.c	Tue Jun 26 16:05:07 2012
+@@ -11,6 +11,7 @@
  #include <inttypes.h>
  #include <sys/types.h>
  #include <sys/socket.h>
-+#include <netinet/in.h>
 +#include <arpa/inet.h>
  
  //////////////////////////////////////
