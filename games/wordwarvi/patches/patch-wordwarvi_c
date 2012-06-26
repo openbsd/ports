@@ -1,4 +1,4 @@
-$OpenBSD: patch-wordwarvi_c,v 1.1.1.1 2011/06/13 20:33:19 kili Exp $
+$OpenBSD: patch-wordwarvi_c,v 1.2 2012/06/26 13:41:12 jasper Exp $
 --- wordwarvi.c.orig	Tue May 24 23:48:26 2011
 +++ wordwarvi.c	Tue May 24 23:49:42 2011
 @@ -18,9 +18,10 @@
@@ -13,11 +13,3 @@ $OpenBSD: patch-wordwarvi_c,v 1.1.1.1 2011/06/13 20:33:19 kili Exp $
  /* Apple gets what it needs for malloc from stdlib.h, */
  /* or so the internets would have me believe.  I don't */
  /* have a mac to test this, so if this doesn't work, */
-@@ -37,6 +38,7 @@
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <fcntl.h>
-+#include <netinet/in.h>
- #include <arpa/inet.h> /* for htonl, etc. */
- 
- #include <gdk/gdkkeysyms.h>
