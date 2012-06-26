@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/06/12 20:11:22 kili Exp $
+# $OpenBSD: Makefile,v 1.69 2012/06/26 18:17:18 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -159,7 +159,7 @@ do-regress:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20111023
+BOOTSTRAP_DATE =	20120626
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
