@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2012/06/26 08:20:48 pea Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
-V=		0.135
+V=		0.138
 DISTNAME=	pan-${V}
-REVISION=		0
 CATEGORIES=	news x11
 
 HOMEPAGE=	http://pan.rebelbase.com/
@@ -17,22 +16,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkspell
+WANTLIB += GL X11 Xrender enchant gtkspell-3
+WANTLIB += atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z cairo-gobject gdk-3 gtk-3 gnome-keyring notify
 
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${V}/source/
 
 MODULES=	devel/gettext \
 		textproc/intltool # regress target
 
-LIB_DEPENDS=	x11/gtk+2 \
-		mail/gmime>=2.6.0 \
-		textproc/gtkspell
+# GNUTLS is not activated (need >= 3.0.0 )
+
+LIB_DEPENDS=	mail/gmime>=2.6.0 \
+		textproc/gtkspell3 \
+		textproc/enchant \
+		devel/libnotify \
+		x11/gnome/libgnome-keyring
 RUN_DEPENDS=	devel/desktop-file-utils
 
 VMEM_WARNING=	Yes
@@ -40,6 +43,7 @@ VMEM_WARNING=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gtk3 --with-gtkspell --enable-libnotify --enable-gkr
 
 post-configure:
 	cd ${WRKSRC}/po && for i in $$(ls *.po) ; do ${LOCALBASE}/bin/msgfmt -c -o $${i%%po}gmo $$i ; done
