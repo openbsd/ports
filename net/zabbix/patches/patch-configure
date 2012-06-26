@@ -1,16 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2012/03/20 12:00:37 robert Exp $
+$OpenBSD: patch-configure,v 1.6 2012/06/26 12:30:37 jasper Exp $
 --- configure.orig	Tue Mar 20 12:21:39 2012
 +++ configure	Tue Mar 20 12:23:20 2012
-@@ -566,6 +566,9 @@ ac_unique_file="src/zabbix_server/server.c"
- # Factoring default headers for most tests.
- ac_includes_default="\
- #include <stdio.h>
-+#include <sys/socket.h>
-+#include <sys/param.h>
-+#include <netinet/in.h>
- #ifdef HAVE_SYS_TYPES_H
- # include <sys/types.h>
- #endif
 @@ -5901,6 +5904,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
  $as_echo_n "checking for field ss_family in struct sockaddr_storage... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
