@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_redis_c,v 1.10 2012/05/28 07:39:36 dcoppa Exp $
+$OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
 --- src/redis.c.orig	Wed May 23 11:32:58 2012
 +++ src/redis.c	Mon May 28 09:16:01 2012
 @@ -33,7 +33,9 @@
@@ -11,14 +11,6 @@ $OpenBSD: patch-src_redis_c,v 1.10 2012/05/28 07:39:36 dcoppa Exp $
  #endif /* HAVE_BACKTRACE */
  
  #include <time.h>
-@@ -43,6 +45,7 @@
- #include <assert.h>
- #include <ctype.h>
- #include <stdarg.h>
-+#include <netinet/in.h>
- #include <arpa/inet.h>
- #include <sys/stat.h>
- #include <fcntl.h>
 @@ -1808,7 +1811,9 @@ int main(int argc, char **argv) {
  
  #ifdef HAVE_BACKTRACE
