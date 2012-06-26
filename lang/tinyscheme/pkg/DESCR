@@ -1,0 +1,6 @@
+TinyScheme is a lightweight Scheme interpreter that implements as large
+a subset of R5RS as was possible without getting very large and
+complicated. It is meant to be used as an embedded scripting interpreter
+for other programs. As such, it does not offer IDEs or extensive
+toolkits although it does sport a small top-level loop, included
+conditionally.

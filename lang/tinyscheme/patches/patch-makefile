@@ -1,0 +1,35 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2012/06/26 19:53:38 jasper Exp $
+--- makefile.orig	Sun Jan 16 08:51:17 2011
++++ makefile	Mon Jun 18 12:02:25 2012
+@@ -18,7 +18,7 @@
+ #AR= echo
+ 
+ # Unix, generally
+-CC = gcc -fpic
++CC ?= gcc -fpic
+ DEBUG=-g -Wall -Wno-char-subscripts -O
+ Osuf=o
+ SOsuf=so
+@@ -30,10 +30,10 @@ RM= -rm -f
+ AR= ar crs
+ 
+ # Linux
+-LD = gcc
+-LDFLAGS = -shared
++LD ?= gcc
++LDFLAGS = -shared 
+ DEBUG=-g -Wno-char-subscripts -O
+-SYS_LIBS= -ldl
++SYS_LIBS= -lm
+ PLATFORM_FEATURES= -DSUN_DL=1
+ 
+ # Cygwin
+@@ -66,7 +66,7 @@ $(LIBTARGET): $(OBJS)
+ 	$(LD) $(LDFLAGS) $(OUT) $(OBJS) $(SYS_LIBS)
+ 
+ scheme$(EXE_EXT): $(OBJS)
+-	$(CC) -o $@ $(DEBUG) $(OBJS) $(SYS_LIBS)
++	$(CC) $(CFLAGS) -o $@ $(DEBUG) $(OBJS) $(SYS_LIBS)
+ 
+ $(STATICLIBTARGET): $(OBJS)
+ 	$(AR) $@ $(OBJS)
