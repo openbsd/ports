@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_py,v 1.4 2012/01/17 09:54:27 ajacoutot Exp $
---- base/utils.py.orig	Fri Dec  9 12:20:37 2011
-+++ base/utils.py	Mon Jan 16 18:48:20 2012
-@@ -498,7 +498,7 @@ class UserSettings(object): # Note: Deprecated after 2
+$OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
+--- base/utils.py.orig	Mon Jun 18 12:44:13 2012
++++ base/utils.py	Tue Jun 26 07:06:28 2012
+@@ -523,7 +523,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_py,v 1.4 2012/01/17 09:54:27 ajacoutot Exp $
  
          # Copy
          path = which('hp-makecopies')
-@@ -506,7 +506,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -531,7 +531,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_utils_py,v 1.4 2012/01/17 09:54:27 ajacoutot Exp $
  
          # Fax
          path = which('hp-sendfax')
-@@ -514,7 +514,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -539,7 +539,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_utils_py,v 1.4 2012/01/17 09:54:27 ajacoutot Exp $
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -522,7 +522,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -547,7 +547,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -37,7 +37,7 @@ $OpenBSD: patch-base_utils_py,v 1.4 2012/01/17 09:54:27 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -841,8 +841,8 @@ def all(S,f=lambda x:x):
+@@ -880,8 +880,8 @@ def all(S,f=lambda x:x):
      return True
  
  

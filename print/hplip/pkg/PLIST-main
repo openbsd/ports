@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2012/01/17 09:54:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2012/06/26 06:17:12 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 @extraunexec rm -rf /var/log/hp/*
 bin/hp-check
 bin/hp-clean
+bin/hp-config_usb_printer
+bin/hp-diagnose_queues
 bin/hp-makeuri
 @bin bin/hp-mkuri
 bin/hp-pkservice
@@ -11,7 +13,9 @@ bin/hp-probe
 bin/hp-query
 bin/hp-scan
 bin/hp-timedate
+bin/hp-uninstall
 bin/hp-unload
+bin/hp-upgrade
 @comment lib/python${MODPY_VERSION}/site-packages/cupsext.la
 lib/python${MODPY_VERSION}/site-packages/cupsext.so
 @comment lib/python${MODPY_VERSION}/site-packages/hpmudext.la
@@ -73,10 +77,6 @@ share/examples/hplip/cups/pstotiff.types
 @sample ${SYSCONFDIR}/cups/pstotiff.types
 share/examples/hplip/db/
 @sample /var/db/hp/
-share/examples/hplip/db/hplip.state
-@mode 0444
-@sample /var/db/hp/hplip.state
-@mode
 share/examples/hplip/dbus-1/
 share/examples/hplip/dbus-1/system.d/
 share/examples/hplip/dbus-1/system.d/com.hp.hplip.conf
@@ -151,6 +151,8 @@ share/hplip/clean.py
 share/hplip/clean.pyc
 share/hplip/colorcal.py
 share/hplip/colorcal.pyc
+share/hplip/config_usb_printer.py
+share/hplip/config_usb_printer.pyc
 share/hplip/copier/
 share/hplip/copier/__init__.py
 share/hplip/copier/__init__.pyc
@@ -201,6 +203,8 @@ share/hplip/devicesettings.py
 share/hplip/devicesettings.pyc
 share/hplip/diagnose_plugin.py
 share/hplip/diagnose_plugin.pyc
+share/hplip/diagnose_queues.py
+share/hplip/diagnose_queues.pyc
 share/hplip/fab.py
 share/hplip/fab.pyc
 share/hplip/fax/
@@ -300,13 +304,15 @@ share/hplip/timedate.py
 share/hplip/timedate.pyc
 share/hplip/toolbox.py
 share/hplip/toolbox.pyc
+share/hplip/uninstall.py
+share/hplip/uninstall.pyc
 share/hplip/unload.py
 share/hplip/unload.pyc
+share/hplip/upgrade.py
+share/hplip/upgrade.pyc
 share/hplip/wificonfig.py
 share/hplip/wificonfig.pyc
 share/polkit-1/actions/com.hp.hplip.policy
 @mode 0774
 @group _cups
 @sample /var/log/hp/
-@group
-@mode

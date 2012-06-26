@@ -1,43 +1,50 @@
-$OpenBSD: patch-configure,v 1.10 2011/04/17 07:19:44 ajacoutot Exp $
---- configure.orig	Mon Mar 14 09:02:44 2011
-+++ configure	Sun Apr 17 08:43:04 2011
-@@ -20262,14 +20262,14 @@ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+$OpenBSD: patch-configure,v 1.11 2012/06/26 06:17:11 ajacoutot Exp $
+--- configure.orig	Mon Jun 18 12:44:47 2012
++++ configure	Tue Jun 26 07:36:13 2012
+@@ -11406,6 +11406,11 @@ else
+     lt_cv_dlopen_libs=
+     ;;
+ 
++  openbsd*)
++    lt_cv_dlopen="dlopen"
++    lt_cv_dlopen_libs=
++    ;;
++
+   darwin*)
+   # if libdl is installed we need to link against it
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
+@@ -15218,14 +15223,14 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
 -# Checks for required libraries, don't set global -lpthread, -lm, -ljpeg, ... here, set in Makefile.
--{ $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
 +# Checks for required libraries, don't set global -pthread, -lm, -ljpeg, ... here, set in Makefile.
-+{ $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -20480,82 +20480,6 @@ else
-   { { $as_echo "$as_me:$LINENO: error: \"cannot find libjpeg support\"" >&5
- $as_echo "$as_me: error: \"cannot find libjpeg support\"" >&2;}
-    { (exit 102); exit 102; }; }
--fi
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15344,50 +15349,6 @@ if test "x$ac_cv_lib_jpeg_jpeg_set_defaults" = xyes; t
+ else
+   as_fn_error 102 "\"cannot find libjpeg support\"" "$LINENO" 5
+ fi
 -
--{ $as_echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for dlopen in -ldl" >&5
 -$as_echo_n "checking for dlopen in -ldl... " >&6; }
--if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+-if ${ac_cv_lib_dl_dlopen+:} false; then :
 -  $as_echo_n "(cached) " >&6
 -else
 -  ac_check_lib_save_LIBS=$LIBS
 -LIBS="-ldl  $LIBS"
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -
 -/* Override any GCC internal prototype to avoid an error.
@@ -55,51 +62,24 @@ $OpenBSD: patch-configure,v 1.10 2011/04/17 07:19:44 ajacoutot Exp $
 -  return 0;
 -}
 -_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (ac_try="$ac_link"
--case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval ac_try_echo="\"\$as_me:$LINENO: $ac_try_echo\""
--$as_echo "$ac_try_echo") >&5
--  (eval "$ac_link") 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  $as_echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && {
--	 test -z "$ac_c_werror_flag" ||
--	 test ! -s conftest.err
--       } && test -s conftest$ac_exeext && {
--	 test "$cross_compiling" = yes ||
--	 $as_test_x conftest$ac_exeext
--       }; then
+-if ac_fn_c_try_link "$LINENO"; then :
 -  ac_cv_lib_dl_dlopen=yes
 -else
--  $as_echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--	ac_cv_lib_dl_dlopen=no
+-  ac_cv_lib_dl_dlopen=no
 -fi
--
--rm -rf conftest.dSYM
--rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
--      conftest$ac_exeext conftest.$ac_ext
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
 -LIBS=$ac_check_lib_save_LIBS
 -fi
--{ $as_echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_dl_dlopen" >&5
 -$as_echo "$ac_cv_lib_dl_dlopen" >&6; }
--if test "x$ac_cv_lib_dl_dlopen" = x""yes; then
--  LIBS="$LIBS" cat >>confdefs.h <<\_ACEOF
--#define HAVE_LIBDL 1
--_ACEOF
+-if test "x$ac_cv_lib_dl_dlopen" = xyes; then :
+-  LIBS="$LIBS" $as_echo "#define HAVE_LIBDL 1" >>confdefs.h
 -
 -else
--  { { $as_echo "$as_me:$LINENO: error: \"cannot find libdl support\"" >&5
--$as_echo "$as_me: error: \"cannot find libdl support\"" >&2;}
--   { (exit 104); exit 104; }; }
- fi
+-  as_fn_error 104 "\"cannot find libdl support\"" "$LINENO" 5
+-fi
+-
  
- 
+ # Checks for required header files.
+ for ac_header in pthread.h

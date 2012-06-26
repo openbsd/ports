@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Exp $
---- installer/core_install.py.orig	Fri Dec  9 12:20:31 2011
-+++ installer/core_install.py	Mon Jan 16 18:48:21 2012
-@@ -191,7 +191,7 @@ class CoreInstall(object):
+$OpenBSD: patch-installer_core_install_py,v 1.10 2012/06/26 06:17:11 ajacoutot Exp $
+--- installer/core_install.py.orig	Mon Jun 18 12:41:59 2012
++++ installer/core_install.py	Tue Jun 26 07:40:21 2012
+@@ -217,7 +217,7 @@ class CoreInstall(object):
          self.endian = utils.LITTLE_ENDIAN
          self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
          self.distro_version_supported = False
@@ -10,7 +10,7 @@ $OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Ex
          self.hplip_present = False
          self.have_dependencies = {}
          self.native_cups = True
-@@ -828,14 +828,14 @@ class CoreInstall(object):
+@@ -871,7 +871,7 @@ class CoreInstall(object):
  
  
      def check_make(self):
@@ -19,50 +19,59 @@ $OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Ex
  
  
      def check_libusb(self):
-         if not check_lib('libusb'):
-             return False
+@@ -880,14 +880,14 @@ class CoreInstall(object):
+             if not check_lib('libusb'):
+                 return False
+             if self.distro_name != "rhel":
+-                return len(locate_file_contains("usb.h", '/usr/include', 'usb_init'))
++                return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init'))
+             else:
+                 return True
+         else:
+             if not check_lib('libusb-1.0'):
+                 return False
+             if self.distro_name != "rhel":
+-                return len(locate_file_contains("libusb.h", '/usr/include/libusb-1.0', 'libusb_init'))
++                return len(locate_file_contains("libusb.h", '${LOCALBASE}/include/libusb-1.0', 'libusb_init'))
+             else:
+                 return True
  
--        return len(locate_file_contains("usb.h", '/usr/include', 'usb_init(void)'))
-+        return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init(void)'))
- 
- 
-     def check_libjpeg(self):
-@@ -843,11 +843,11 @@ class CoreInstall(object):
+@@ -897,11 +897,10 @@ class CoreInstall(object):
  
  
      def check_libcrypto(self):
 -        return check_lib("libcrypto") and check_file("crypto.h")
 +        return True
  
- 
+-
      def check_libpthread(self):
 -        return check_lib("libpthread") and check_file("pthread.h")
-+	return True
++        return True
  
  
      def check_libnetsnmp(self):
-@@ -899,7 +899,7 @@ class CoreInstall(object):
+@@ -953,7 +952,7 @@ class CoreInstall(object):
  
  
      def check_sane_devel(self):
 -        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init'))
-+	return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init'))
++        return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init'))
  
  
      def check_xsane(self):
-@@ -988,9 +988,8 @@ class CoreInstall(object):
+@@ -1054,9 +1053,8 @@ class CoreInstall(object):
  
  
      def check_dbus(self):
 -        log.debug("Checking for dbus running and header files present (dbus-devel)...")
 -        return check_ps(['dbus-daemon'])  and \
 -            len(locate_file_contains("dbus-message.h", '/usr/include', 'dbus_message_new_signal'))
-+        log.debug("Checking for dbus header files present (dbus-devel)...")
++        log.debug("Checking for dbus header files...")
 +        return check_file("dbus-message.h", "${LOCALBASE}/include")
  
  
      def check_cups_devel(self):
-@@ -1008,12 +1007,12 @@ class CoreInstall(object):
+@@ -1074,17 +1072,17 @@ class CoreInstall(object):
  
  
      def check_cups_image(self):
@@ -76,15 +85,23 @@ $OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Ex
 +        return locate_files('hplip.conf', '${SYSCONFDIR}/hp')
  
  
-     def check_hpssd(self):
-@@ -1038,14 +1037,14 @@ class CoreInstall(object):
+-    def check_hpssd(self):
+-        log.debug("Checking for hpssd...")
+-        return check_ps(['hpssd'])
++#    def check_hpssd(self):
++#        log.debug("Checking for hpssd...")
++#        return check_ps(['hpssd'])
+ 
+ 
+     def check_libtool(self):
+@@ -1104,14 +1102,14 @@ class CoreInstall(object):
      def check_cupsddk(self):
          log.debug("Checking for cups-ddk...")
          # TODO: Compute these paths some way or another...
 -        #return check_tool("/usr/lib/cups/driver/drv list") and os.path.exists("/usr/share/cupsddk/include/media.defs")
 -        return (check_file('drv', "/usr/lib/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
 -            check_file('media.defs', "/usr/share/cupsddk/include")
-+        #return check_tool("${LOCALBASE}/libexec/cups/driver/drv list") and os.path.exists("/usr/share/cupsddk/include/media.defs")
++        #return check_tool("${LOCALBASE}/libexec/cups/driver/drv list") and os.path.exists("${LOCALBASE}/share/cupsddk/include/media.defs")
 +        return (check_file('drv', "${LOCALBASE}/libexec/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
 +            check_file('media.defs', "${LOCALBASE}/share/cupsddk/include")
  
@@ -94,9 +111,9 @@ $OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Ex
 -        return (check_file('PolicyKit.conf', "/etc/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "/usr/share/dbus-1/services")) or (check_file('50-localauthority.conf', "/etc/polkit-1/localauthority.conf.d") and check_file('org.freedesktop.PolicyKit1.service', "/usr/share/dbus-1/system-services"))
 +        return (check_file('PolicyKit.conf', "${SYSCONFDIR}/PolicyKit") and check_file('org.gnome.PolicyKit.AuthorizationManager.service', "${LOCALBASE}/share/dbus-1/services")) or (check_file('50-localauthority.conf', "${SYSCONFDIR}/polkit-1/localauthority.conf.d") and check_file('org.freedesktop.PolicyKit1.service', "${LOCALBASE}/share/dbus-1/system-services"))
  
-     def check_pkg_mgr(self):
-         """
-@@ -1332,7 +1331,7 @@ class CoreInstall(object):
+     def check_cupsext(self):
+         log.debug("Checking 'cupsext' CUPS extension...")
+@@ -1530,7 +1528,7 @@ class CoreInstall(object):
              cmd = self.su_sudo() % '/etc/init.d/cupsys restart'
  
          else:
@@ -105,23 +122,23 @@ $OpenBSD: patch-installer_core_install_py,v 1.9 2012/01/17 09:54:27 ajacoutot Ex
  
          self.run(cmd)
  
-@@ -1659,7 +1658,7 @@ class CoreInstall(object):
-     def pre_build(self):
+@@ -1873,7 +1871,7 @@ class CoreInstall(object):
+     def pre_build(self,distro_ver=None):
          cmds = []
-         if self.get_distro_ver_data('fix_ppd_symlink', False):
+         if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):
 -            cmds.append(self.su_sudo() % 'python ./installer/fix_symlink.py')
 +            cmds.append(self.su_sudo() % '${MODPY_BIN} ./installer/fix_symlink.py')
  
          return cmds
  
-@@ -1834,8 +1833,8 @@ class CoreInstall(object):
+@@ -2048,8 +2046,8 @@ class CoreInstall(object):
          url = "http://hplip.sf.net/plugin.conf"
          home = sys_conf.get('dirs', 'home')
  
 -        if os.path.exists('/etc/hp/plugin.conf'):
 -            url = "file:///etc/hp/plugin.conf"
 +        if os.path.exists('${SYSCONFDIR}/hp/plugin.conf'):
-+            url = "file:///${SYSCONFDIR}/hp/plugin.conf"
++            url = "file://${SYSCONFDIR}/hp/plugin.conf"
  
          elif os.path.exists(os.path.join(home, 'plugin.conf')):
              url = "file://" + os.path.join(home, 'plugin.conf')

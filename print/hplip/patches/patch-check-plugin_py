@@ -1,7 +1,7 @@
-$OpenBSD: patch-check-plugin_py,v 1.1 2012/01/17 09:54:27 ajacoutot Exp $
---- check-plugin.py.orig	Tue Jan 17 10:31:58 2012
-+++ check-plugin.py	Tue Jan 17 10:32:09 2012
-@@ -227,7 +227,7 @@ sts,output = utils.run(cmd)
+$OpenBSD: patch-check-plugin_py,v 1.2 2012/06/26 06:17:11 ajacoutot Exp $
+--- check-plugin.py.orig	Mon Jun 18 12:44:13 2012
++++ check-plugin.py	Tue Jun 26 07:06:28 2012
+@@ -236,7 +236,7 @@ sts,output = utils.run(cmd)
  if sts != 0:
      log.warn("Failed to change log file permissions: %s" %output)
  

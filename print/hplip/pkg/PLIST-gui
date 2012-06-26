@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gui,v 1.7 2012/01/17 09:54:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gui,v 1.8 2012/06/26 06:17:11 ajacoutot Exp $
 @conflict hplip-<3.11.3p0
 bin/hp-align
 bin/hp-check-plugin
@@ -456,6 +456,8 @@ share/hplip/ui4/printtestpagedialog.py
 share/hplip/ui4/printtestpagedialog.pyc
 share/hplip/ui4/printtestpagedialog_base.py
 share/hplip/ui4/printtestpagedialog_base.pyc
+share/hplip/ui4/queuesconf.py
+share/hplip/ui4/queuesconf.pyc
 share/hplip/ui4/readonlyradiobutton.py
 share/hplip/ui4/readonlyradiobutton.pyc
 share/hplip/ui4/sendfaxdialog.py
@@ -478,6 +480,10 @@ share/hplip/ui4/systrayframe_base.py
 share/hplip/ui4/systrayframe_base.pyc
 share/hplip/ui4/ui_utils.py
 share/hplip/ui4/ui_utils.pyc
+share/hplip/ui4/upgradedialog.py
+share/hplip/ui4/upgradedialog.pyc
+share/hplip/ui4/upgradedialog_base.py
+share/hplip/ui4/upgradedialog_base.pyc
 share/hplip/ui4/wifisetupdialog.py
 share/hplip/ui4/wifisetupdialog.pyc
 share/hplip/ui4/wifisetupdialog_base.py

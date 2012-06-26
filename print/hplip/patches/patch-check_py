@@ -1,51 +1,43 @@
-$OpenBSD: patch-check_py,v 1.6 2011/10/09 07:42:29 ajacoutot Exp $
---- check.py.orig	Sun Oct  2 05:06:19 2011
-+++ check.py	Sun Oct  9 09:17:00 2011
-@@ -342,7 +342,7 @@ try:
-             log.warn("Version: (cups-config) Not available. Unable to determine installed version of CUPS.)")
+$OpenBSD: patch-check_py,v 1.7 2012/06/26 06:17:11 ajacoutot Exp $
+--- check.py.orig	Mon Jun 18 12:44:13 2012
++++ check.py	Tue Jun 26 07:24:00 2012
+@@ -114,9 +114,9 @@ def get_comment(package, Inst_status, installed_ver):
+                 comment = "Python Programming is not supported if version is lessthan 2.2" 
+     elif package == 'hpaio':
+         if Inst_status == 'OK':
+-            comment = "'hpaio found in /etc/sane.d/dll.conf'"
++            comment = "'hpaio found in ${SYSCONFDIR}/sane.d/dll.conf'"
+         else:
+-            comment = "'hpaio not found in /etc/sane.d/dll.conf. hpaio needs to be added in this file.'"
++            comment = "'hpaio not found in ${SYSCONFDIR}/sane.d/dll.conf. hpaio needs to be added in this file.'"
+     elif package == 'cupsext' or package == 'pcardext' or package == 'hpmudext':
+         if Inst_status != 'OK':
+             comment = "'Not Found or Failed to load, Please reinstall HPLIP'"
+@@ -506,9 +506,9 @@ try:
  
-     if cups_ok:
--        cups_conf = '/etc/cups/cupsd.conf'
-+        cups_conf = '${SYSCONFDIR}/cups/cupsd.conf'
  
+         log.info()
+-        log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))
++        log.info(log.bold("Current contents of '${SYSCONFDIR}/hp/hplip.conf' file:"))
          try:
-             f = file(cups_conf, 'r')
-@@ -373,11 +373,6 @@ try:
+-            output = file('/etc/hp/hplip.conf', 'r').read()
++            output = file('${SYSCONFDIR}/hp/hplip.conf', 'r').read()
+         except (IOError, OSError), e:
+             log.error("Could not access file: %s. Check HPLIP installation." % e.strerror)
+             num_errors += 1
+@@ -516,9 +516,9 @@ try:
+             log.info(output)
  
-     log.info(log.bold("Checking for dbus/python-dbus..."))
- 
--    if dcheck.check_ps(['dbus-daemon']):
--        log.info("dbus daemon is running.")
--    else:
--        log.warn("dbus daemon is not running.")
--
-     try:
-         import dbus
+         log.info()
+-        log.info(log.bold("Current contents of '/var/lib/hp/hplip.state' file:"))
++        log.info(log.bold("Current contents of '/var/db/hp/hplip.state' file:"))
          try:
-@@ -495,18 +490,18 @@ try:
-             log.info("HPLIP %s currently installed in '%s'." % (v, home))
- 
-             log.info()
--            log.info(log.bold("Current contents of '/etc/hp/hplip.conf' file:"))
-+            log.info(log.bold("Current contents of '${SYSCONFDIR}/hp/hplip.conf' file:"))
-             try:
--                output = file('/etc/hp/hplip.conf', 'r').read()
-+                output = file('${SYSCONFDIR}/hp/hplip.conf', 'r').read()
-             except (IOError, OSError), e:
-                 log.error("Could not access file: %s" % e.strerror)
-             else:
-                 log.info(output)
- 
-             log.info()
--            log.info(log.bold("Current contents of '/var/lib/hp/hplip.state' file:"))
-+            log.info(log.bold("Current contents of '/var/db/hp/hplip.state' file:"))
-             try:
--                output = file(os.path.expanduser('/var/lib/hp/hplip.state'), 'r').read()
-+                output = file(os.path.expanduser('/var/db/hp/hplip.state'), 'r').read()
-             except (IOError, OSError), e:
-                 log.error("Could not access file: %s" % e.strerror)
-             else:
-@@ -620,7 +615,7 @@ try:
+-            output = file(os.path.expanduser('/var/lib/hp/hplip.state'), 'r').read()
++            output = file(os.path.expanduser('/var/db/hp/hplip.state'), 'r').read()
+         except (IOError, OSError), e:
+             log.info("Plugins are not installed. Could not access file: %s" % e.strerror)
+         else:
+@@ -716,7 +716,7 @@ try:
                  #log.info("Installed in HPLIP?: %s" % x)
                  log.info("Device URI: %s" % device_uri)
  
@@ -54,27 +46,3 @@ $OpenBSD: patch-check_py,v 1.6 2011/10/09 07:42:29 ajacoutot Exp $
  
                  if os.path.exists(ppd):
                      log.info("PPD: %s" % ppd)
-@@ -722,11 +717,11 @@ try:
- 
-         if scanning_enabled:
-             tui.header("SANE CONFIGURATION")
--            log.info(log.bold("'hpaio' in '/etc/sane.d/dll.conf'..."))
-+            log.info(log.bold("'hpaio' in '${SYSCONFDIR}/sane.d/dll.conf'..."))
-             try:
--                f = file('/etc/sane.d/dll.conf', 'r')
-+                f = file('${SYSCONFDIR}/sane.d/dll.conf', 'r')
-             except IOError:
--                log.error("'/etc/sane.d/dll.conf' not found. Is SANE installed?")
-+                log.error("'${SYSCONFDIR}/sane.d/dll.conf' not found. Is SANE installed?")
-                 num_errors += 1
-             else:
-                 found = False
-@@ -741,7 +736,7 @@ try:
-                     log.info("OK, found. SANE backend 'hpaio' is properly set up.")
-                 else:
-                     num_errors += 1
--                    log.error("Not found. SANE backend 'hpaio' NOT properly setup (needs to be added to /etc/sane.d/dll.conf).")
-+                    log.error("Not found. SANE backend 'hpaio' NOT properly setup (needs to be added to ${SYSCONFDIR}/sane.d/dll.conf).")
- 
-                 log.info()
-                 log.info(log.bold("Checking output of 'scanimage -L'..."))

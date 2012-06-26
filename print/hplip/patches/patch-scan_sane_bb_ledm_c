@@ -1,0 +1,11 @@
+$OpenBSD: patch-scan_sane_bb_ledm_c,v 1.1 2012/06/26 06:17:11 ajacoutot Exp $
+--- scan/sane/bb_ledm.c.orig	Tue Jun 26 07:48:50 2012
++++ scan/sane/bb_ledm.c	Tue Jun 26 07:49:17 2012
+@@ -16,6 +16,7 @@
+ # include <string.h>
+ # include <fcntl.h>
+ # include <math.h>
++# include <unistd.h> /* usleep(3) */
+ # include "sane.h"
+ # include "saneopts.h"
+ # include "hpmud.h"
