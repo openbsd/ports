@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2012/06/26 10:14:10 jasper Exp $
 
 COMMENT=	tool to mirror contents of HTTP and FTP servers
 
 DISTNAME=	pavuk-0.9.35
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pavuk.org/

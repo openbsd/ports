@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/21 17:20:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/06/26 10:14:10 jasper Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
 DISTNAME=	tn5250-0.17.3
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	5250	0.0
 CATEGORIES=	net
 

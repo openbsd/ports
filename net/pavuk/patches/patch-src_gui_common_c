@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_gui_common_c,v 1.1 2012/06/26 10:14:10 jasper Exp $
+
+Allow building against OpenSSL without SSLv2 support.
+
+--- src/gui_common.c.orig	Fri Jun 22 20:20:31 2012
++++ src/gui_common.c	Fri Jun 22 20:25:31 2012
+@@ -2354,11 +2354,13 @@ static void cfgtab_ssl(GtkWidget * notebook)
+   gtk_container_add(GTK_CONTAINER(ptab), rb);
+   gui_cfg.ssl_version[0] = rb;
+ 
++#ifndef OPENSSL_NO_SSL2
+   rb = gtk_radio_button_new_with_label(rg, gettext("SSLv2"));
+   rg = gtk_radio_button_group(GTK_RADIO_BUTTON(rb));
+   gtk_widget_show(rb);
+   gtk_container_add(GTK_CONTAINER(ptab), rb);
+   gui_cfg.ssl_version[1] = rb;
++#endif
+ 
+   rb = gtk_radio_button_new_with_label(rg, gettext("SSLv3"));
+   rg = gtk_radio_button_group(GTK_RADIO_BUTTON(rb));

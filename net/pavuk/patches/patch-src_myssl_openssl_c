@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_myssl_openssl_c,v 1.1 2012/06/26 10:14:10 jasper Exp $
+
+Allow building against OpenSSL without SSLv2 support.
+
+--- src/myssl_openssl.c.orig	Mon Aug 15 04:59:30 2005
++++ src/myssl_openssl.c	Fri Jun 22 20:28:14 2012
+@@ -543,9 +543,11 @@ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
+ 
+   switch (cfg.ssl_version)
+   {
++#ifndef OPENSSL_NO_SSL2
+   case 2:
+     method = SSLv2_client_method();
+     break;
++#endif
+   case 3:
+     method = SSLv3_client_method();
+     break;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_sslstream_c,v 1.1 2012/06/26 10:14:10 jasper Exp $
+
+Allow building against OpenSSL without SSLv2 support.
+
+--- src/sslstream.c.orig	Fri Apr  1 19:08:55 2005
++++ src/sslstream.c	Sat Jun 23 20:26:08 2012
+@@ -367,10 +367,13 @@ int tn5250_ssl_stream_init (Tn5250Stream *This)
+         methstr[4] = '\0';
+    }
+ 
++#ifndef OPENSSL_NO_SSL2
+    if (!strcmp(methstr, "ssl2")) {
+         meth = SSLv2_client_method();         
+         TN5250_LOG(("SSL Method = SSLv2_client_method()\n"));
+-   } else if (!strcmp(methstr, "ssl3")) {
++   } else
++#endif
++   if (!strcmp(methstr, "ssl3")) {
+         meth = SSLv3_client_method();         
+         TN5250_LOG(("SSL Method = SSLv3_client_method()\n"));
+    } else {
