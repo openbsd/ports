@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.754 2012/06/18 08:52:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.755 2012/06/26 15:07:01 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -586,6 +586,7 @@
      SUBDIR += vnstat
      SUBDIR += vsftpd
      SUBDIR += walker
+     SUBDIR += weechat
      SUBDIR += weex
      SUBDIR += wget
      SUBDIR += wide-dhcp
