@@ -1,0 +1,28 @@
+$OpenBSD: patch-assl_c,v 1.1 2012/06/26 10:07:27 jasper Exp $
+
+Allow building against OpenSSL without SSLv2 support.
+
+--- assl.c.orig	Tue Apr 24 17:14:51 2012
++++ assl.c	Tue Jun 19 23:31:59 2012
+@@ -670,6 +670,7 @@ assl_alloc_context(enum assl_method m, int flags)
+ 		meth = SSLv23_server_method();
+ 		server = 1;
+ 		break;
++#ifndef OPENSSL_NO_SSL2
+ 	case ASSL_M_SSLV2:
+ 		meth = SSLv2_method();
+ 		server = 1;
+@@ -681,6 +682,13 @@ assl_alloc_context(enum assl_method m, int flags)
+ 		meth = SSLv2_server_method();
+ 		server = 1;
+ 		break;
++#else
++	case ASSL_M_SSLV2:
++	case ASSL_M_SSLV2_CLIENT:
++	case ASSL_M_SSLV2_SERVER:
++		assl_err_own("your operating system does not support SSLv2");
++		ERROR_OUT(ERR_OWN, unwind);
++#endif
+ 	case ASSL_M_SSLV3:
+ 		meth = SSLv3_method();
+ 		server = 1;
