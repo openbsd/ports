@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/03/30 13:17:28 phessler Exp $
+# $OpenBSD: Makefile,v 1.61 2012/06/26 11:46:45 pascal Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -44,6 +44,7 @@
      SUBDIR += mpgtx
      SUBDIR += oggconvert
      SUBDIR += oggz
+     SUBDIR += ogmrip
      SUBDIR += ogmtools
      SUBDIR += p5-AMF-Connection
      SUBDIR += p5-Data-AMF
