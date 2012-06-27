@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/04/26 19:36:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/27 12:01:36 jasper Exp $
 
 COMMENT=		simple, powerful configuration-file parser
 
 DISTNAME=		dotconf-1.1.0
+REVISION=		0
 SHARED_LIBS +=  dotconf              0.0      # .0.0
 SHARED_LIBS +=  dotconf-1.1          0.0      # .0.0
 CATEGORIES=		devel
