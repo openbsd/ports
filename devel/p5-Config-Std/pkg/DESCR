@@ -1,0 +1,4 @@
+Config::Std - Load and save configuration files in a standard format
+The configuration language is deliberately simple and limited, and the
+module works hard to preserve as much information (section order,
+comments, etc.) as possible when a configuration file is updated.
