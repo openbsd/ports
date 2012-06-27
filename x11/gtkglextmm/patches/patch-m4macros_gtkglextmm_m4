@@ -1,0 +1,16 @@
+$OpenBSD: patch-m4macros_gtkglextmm_m4,v 1.1 2012/06/27 11:55:54 jasper Exp $
+
+Fix a warning:
+/usr/share/aclocal/gtkglextmm-1.2.m4:225: warning: underquoted definition of AC_GTKGLEXTMM_SUPPORTS_MULTIHEAD
+
+--- m4macros/gtkglextmm.m4.orig	Wed Jun 27 13:50:40 2012
++++ m4macros/gtkglextmm.m4	Wed Jun 27 13:50:56 2012
+@@ -222,7 +222,7 @@ main ()
+ dnl AC_GTKGLEXTMM_SUPPORTS_MULTIHEAD([ACTION-IF-SUPPORTED [, ACTION-IF-NOT-SUPPORTED]])
+ dnl Checks whether gtkglextmm supports multihead.
+ dnl
+-AC_DEFUN(AC_GTKGLEXTMM_SUPPORTS_MULTIHEAD,
++AC_DEFUN([AC_GTKGLEXTMM_SUPPORTS_MULTIHEAD],
+ [ AC_LANG_SAVE
+   AC_LANG_CPLUSPLUS
+   AC_CACHE_CHECK([whether gtkglextmm supports multihead],
