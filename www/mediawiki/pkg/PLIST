@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/05/07 13:35:47 okan Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/06/27 06:37:15 jasper Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/COPYING
@@ -67,6 +67,7 @@ mediawiki/docs/upload.txt
 mediawiki/extensions/
 mediawiki/extensions/.gitignore
 mediawiki/extensions/ConfirmEdit/
+mediawiki/extensions/ConfirmEdit/.gitignore
 mediawiki/extensions/ConfirmEdit/.gitreview
 mediawiki/extensions/ConfirmEdit/Asirra.class.php
 mediawiki/extensions/ConfirmEdit/Asirra.i18n.php
@@ -94,6 +95,7 @@ mediawiki/extensions/ConfirmEdit/captcha.py
 mediawiki/extensions/ConfirmEdit/ext.confirmedit.asirra.js
 mediawiki/extensions/ConfirmEdit/recaptchalib.php
 mediawiki/extensions/Gadgets/
+mediawiki/extensions/Gadgets/.gitignore
 mediawiki/extensions/Gadgets/.gitreview
 mediawiki/extensions/Gadgets/ApiQueryGadgetCategories.php
 mediawiki/extensions/Gadgets/ApiQueryGadgets.php
@@ -106,6 +108,7 @@ mediawiki/extensions/Gadgets/README
 mediawiki/extensions/Gadgets/SpecialGadgets.php
 mediawiki/extensions/Gadgets/install.settings
 mediawiki/extensions/Nuke/
+mediawiki/extensions/Nuke/.gitignore
 mediawiki/extensions/Nuke/.gitreview
 mediawiki/extensions/Nuke/COPYING
 mediawiki/extensions/Nuke/INSTALL
@@ -118,6 +121,7 @@ mediawiki/extensions/Nuke/RELEASE-NOTES
 mediawiki/extensions/Nuke/SpecialNuke.php
 mediawiki/extensions/Nuke/ext.nuke.js
 mediawiki/extensions/ParserFunctions/
+mediawiki/extensions/ParserFunctions/.gitignore
 mediawiki/extensions/ParserFunctions/.gitreview
 mediawiki/extensions/ParserFunctions/COPYING
 mediawiki/extensions/ParserFunctions/Convert.php
@@ -134,6 +138,7 @@ mediawiki/extensions/ParserFunctions/stringFunctionTests.txt
 mediawiki/extensions/ParserFunctions/testExpr.php
 mediawiki/extensions/README
 mediawiki/extensions/Renameuser/
+mediawiki/extensions/Renameuser/.gitignore
 mediawiki/extensions/Renameuser/.gitreview
 mediawiki/extensions/Renameuser/RenameUserJob.php
 mediawiki/extensions/Renameuser/Renameuser.alias.php
@@ -143,6 +148,7 @@ mediawiki/extensions/Renameuser/Renameuser_body.php
 mediawiki/extensions/Renameuser/SpecialRenameuser.php
 mediawiki/extensions/Renameuser/renameUserCleanup.php
 mediawiki/extensions/Vector/
+mediawiki/extensions/Vector/.gitignore
 mediawiki/extensions/Vector/.gitreview
 mediawiki/extensions/Vector/README
 mediawiki/extensions/Vector/Vector.hooks.php
@@ -169,6 +175,7 @@ mediawiki/extensions/Vector/modules/images/open.png
 mediawiki/extensions/Vector/modules/images/portal-break.png
 mediawiki/extensions/Vector/switchExperimentPrefs.php
 mediawiki/extensions/WikiEditor/
+mediawiki/extensions/WikiEditor/.gitignore
 mediawiki/extensions/WikiEditor/.gitreview
 mediawiki/extensions/WikiEditor/README
 mediawiki/extensions/WikiEditor/WikiEditor.hooks.php
