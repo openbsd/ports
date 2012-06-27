@@ -1,6 +1,6 @@
-$OpenBSD: patch-source3_Makefile_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
---- source3/Makefile.in.orig	Sat Apr  7 14:23:20 2012
-+++ source3/Makefile.in	Tue Apr 10 22:56:36 2012
+$OpenBSD: patch-source3_Makefile_in,v 1.2 2012/06/27 07:29:17 sthen Exp $
+--- source3/Makefile.in.orig	Mon Jun 25 03:21:16 2012
++++ source3/Makefile.in	Tue Jun 26 12:01:27 2012
 @@ -28,7 +28,7 @@ SHLD=@SHLD@
  LIB_PATH_VAR=@LIB_PATH_VAR@
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-source3_Makefile_in,v 1.1 2012/04/10 22:01:20 sthen Exp $
  DSO_EXPORTS=@DSO_EXPORTS@
  SHLD_DSO = $(SHLD) $(LDSHFLAGS) $(DSO_EXPORTS) -o $@
  
-@@ -1674,11 +1674,7 @@ COMPILE = $(COMPILE_CC)
+@@ -1675,11 +1675,7 @@ COMPILE = $(COMPILE_CC)
  	  echo "Checking  $*.c with '$(CC_CHECKER)'";\
  	  $(CHECK_CC); \
  	 fi

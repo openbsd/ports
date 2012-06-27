@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2012/04/10 22:37:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2012/06/27 07:29:17 sthen Exp $
 @conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -148,6 +148,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/vfs_acl_tdb.8
 @man man/man8/vfs_acl_xattr.8
 @man man/man8/vfs_aio_fork.8
+@man man/man8/vfs_aio_pthread.8
 @man man/man8/vfs_audit.8
 @man man/man8/vfs_cacheprime.8
 @man man/man8/vfs_cap.8

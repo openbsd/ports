@@ -1,6 +1,6 @@
-$OpenBSD: patch-source3_configure_in,v 1.2 2012/04/16 21:58:34 sthen Exp $
---- source3/configure.in.orig	Sat Apr  7 14:23:20 2012
-+++ source3/configure.in	Tue Apr 10 23:47:13 2012
+$OpenBSD: patch-source3_configure_in,v 1.3 2012/06/27 07:29:17 sthen Exp $
+--- source3/configure.in.orig	Mon Jun 25 03:21:16 2012
++++ source3/configure.in	Tue Jun 26 12:01:27 2012
 @@ -834,9 +834,15 @@ if test x$enable_cups != xno; then
  
          if test "x$CUPS_CONFIG" != x; then
@@ -51,7 +51,7 @@ $OpenBSD: patch-source3_configure_in,v 1.2 2012/04/16 21:58:34 sthen Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -6747,13 +6753,43 @@ fi
+@@ -6750,13 +6756,43 @@ fi
  
  CFLAGS=$CFLAGS_SAVE
  
