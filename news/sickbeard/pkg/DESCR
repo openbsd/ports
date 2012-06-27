@@ -1,0 +1,4 @@
+SickBeard allows you to search for your favorite TV serie nzb-files
+at your preferred nzb search provider.  It offers a direct interface
+to SABnzbd, Black hole, and NZBget to automatically process the
+snatched nzb-files.

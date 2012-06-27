@@ -1,0 +1,2 @@
+Start the sickbeard daemon by ${TRUEPREFIX}/bin/sickbeard and do the initial
+configuration via http://localhost:8081/
