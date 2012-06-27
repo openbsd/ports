@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/26 11:46:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/06/27 10:46:00 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DVD ripper/converter
 
 DISTNAME =		ogmrip-0.13.8
+REVISION =		0
 
 SHARED_LIBS +=  ogmdvd-gtk                0.0 # 1.0
 SHARED_LIBS +=  ogmdvd                    0.0 # 1.0
@@ -47,7 +48,6 @@ RUN_DEPENDS =		x11/mplayer \
 			multimedia/mkvtoolnix \
 			multimedia/ogmtools \
 			audio/vorbis-tools \
-			audio/faac \
 			devel/desktop-file-utils \
 			graphics/gocr \
 			graphics/ocrad \
