@@ -1,0 +1,41 @@
+$OpenBSD: patch-Modules_GNUInstallDirs_cmake,v 1.1 2012/06/27 19:28:39 dcoppa Exp $
+
+Fix INFODIR/MANDIR default path on OpenBSD
+
+--- Modules/GNUInstallDirs.cmake.orig	Wed Apr 18 20:10:54 2012
++++ Modules/GNUInstallDirs.cmake	Tue Jun 26 19:58:52 2012
+@@ -107,6 +107,14 @@ if(NOT DEFINED CMAKE_INSTALL_OLDINCLUDEDIR)
+   set(CMAKE_INSTALL_OLDINCLUDEDIR "/usr/include" CACHE PATH "C header files for non-gcc (/usr/include)")
+ endif()
+ 
++if(NOT DEFINED CMAKE_INSTALL_INFODIR)
++  set(CMAKE_INSTALL_INFODIR "info" CACHE PATH "info documentation (info)")
++endif()
++
++if(NOT DEFINED CMAKE_INSTALL_MANDIR)
++  set(CMAKE_INSTALL_MANDIR "man" CACHE PATH "man documentation (man)")
++endif()
++
+ if(NOT DEFINED CMAKE_INSTALL_DATAROOTDIR)
+   set(CMAKE_INSTALL_DATAROOTDIR "share" CACHE PATH "read-only architecture-independent data root (share)")
+ endif()
+@@ -121,19 +129,9 @@ if(NOT CMAKE_INSTALL_DATADIR)
+   set(CMAKE_INSTALL_DATADIR "${CMAKE_INSTALL_DATAROOTDIR}")
+ endif()
+ 
+-if(NOT CMAKE_INSTALL_INFODIR)
+-  set(CMAKE_INSTALL_INFODIR "" CACHE PATH "info documentation (DATAROOTDIR/info)")
+-  set(CMAKE_INSTALL_INFODIR "${CMAKE_INSTALL_DATAROOTDIR}/info")
+-endif()
+-
+ if(NOT CMAKE_INSTALL_LOCALEDIR)
+   set(CMAKE_INSTALL_LOCALEDIR "" CACHE PATH "locale-dependent data (DATAROOTDIR/locale)")
+   set(CMAKE_INSTALL_LOCALEDIR "${CMAKE_INSTALL_DATAROOTDIR}/locale")
+-endif()
+-
+-if(NOT CMAKE_INSTALL_MANDIR)
+-  set(CMAKE_INSTALL_MANDIR "" CACHE PATH "man documentation (DATAROOTDIR/man)")
+-  set(CMAKE_INSTALL_MANDIR "${CMAKE_INSTALL_DATAROOTDIR}/man")
+ endif()
+ 
+ if(NOT CMAKE_INSTALL_DOCDIR)
