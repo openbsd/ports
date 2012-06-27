@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.13 2012/06/10 07:35:30 ajacoutot Exp $
---- configure.ac.orig	Sun Jan  1 12:30:52 2012
-+++ configure.ac	Sat Apr  7 13:58:35 2012
+$OpenBSD: patch-configure_ac,v 1.14 2012/06/27 06:15:47 espie Exp $
+--- configure.ac.orig	Sat Jun  9 18:40:10 2012
++++ configure.ac	Wed Jun 27 08:12:38 2012
 @@ -558,9 +558,9 @@ t q
  b
  :q
@@ -35,3 +35,12 @@ $OpenBSD: patch-configure_ac,v 1.13 2012/06/10 07:35:30 ajacoutot Exp $
    AC_SUBST(MNG_LIBS)
  else
    have_libmng=no
+@@ -2255,7 +2256,7 @@ if test "x$some_snprintf" != "xyes" -o \
+   AC_MSG_ERROR([required function not found])
+ fi
+ AC_FUNC_FSEEKO
+-AC_CHECK_HEADERS(assert.h byteswap.h malloc.h execinfo.h ucontext.h sys/mman.h sys/mixer.h libgen.h netdb.h dirent.h sys/times.h sys/ioctl.h sys/param.h alloca.h)
++AC_CHECK_HEADERS(assert.h byteswap.h malloc.h ucontext.h sys/mman.h sys/mixer.h libgen.h netdb.h dirent.h sys/times.h sys/ioctl.h sys/param.h alloca.h)
+ AC_REPLACE_FUNCS(asprintf basename gettimeofday setenv strcasestr strndup strpbrk strsep strtok_r timegm unsetenv memmem)
+ 
+ AC_LIBSOURCE(hstrerror.c)
