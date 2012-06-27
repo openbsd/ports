@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/26 15:07:17 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/27 10:43:07 pascal Exp $
+@unexec-delete rm -f ${TRUEPREFIX}/plan9/man/whatis.db
 bin/9
 plan9/
 plan9/CONTRIBUTORS
@@ -7773,4 +7774,3 @@ plan9/troff/term/tab.think
 plan9/troff/term/tab.thinkbold
 plan9/troff/term/tab.thinksmall
 plan9/troff/term/tab.utf
-@unexec rm -f ${TRUEPREFIX}/plan9/man/whatis.db
