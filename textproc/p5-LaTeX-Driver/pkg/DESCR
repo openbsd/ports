@@ -1,0 +1,12 @@
+The LaTeX::Driver module takes care of running and re-running latex on
+a LaTeX document so that forward references, tables of contents, and
+lists of figures and tables are resolved.  It will also run bibtex and
+makeindex if it detects that a bibliography or in index have been
+specified, and will re-run latex again one or more times until the
+formatting of the document has stabilized.
+
+The code was in part derived from the Template Toolkit Latex plugin
+and patches I had written for Template Toolkit before the Latex plugin
+was forked off from the main TT distribution.  It was also inspired by
+the latexn C Shell script and the latexmk script by John Collins, both
+of which are on CTAN (the Comprehensive TeX Archive Network).
