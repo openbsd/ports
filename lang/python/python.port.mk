@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.52 2012/04/03 09:21:42 ajacoutot Exp $
+# $OpenBSD: python.port.mk,v 1.53 2012/06/27 18:56:26 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -37,6 +37,9 @@ MODPY_LIB_SUFFIX =
 MODPY_FLAVOR =
 MODPY_BIN_SUFFIX =
 MODPY_PY_PREFIX =	py-
+MODPY_PYCACHE =
+MODPY_PYC_MAGIC_TAG =
+MODPY_COMMENT =	"@comment "
 
 .elif ${_MODPY_MAJOR_VERSION} == 3
 MODPY_LIB_SUFFIX =	m
@@ -46,6 +49,11 @@ MODPY_FLAVOR =	,python3
 # use MODPY_SUFFIX for binaries to avoid conflict
 MODPY_BIN_SUFFIX =	-3
 MODPY_PY_PREFIX =	py3-
+MODPY_PYCACHE =	"__pycache__/"
+MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}
+MODPY_PYC_MAGIC_TAG =	"cpython-${MODPY_MAJORMINOR}."
+MODPY_COMMENT =
+
 .  else
 ERRORS += "Fatal: unknown or unsupported _MODPY_MAJOR_VERSION: ${_MODPY_MAJOR_VERSION}"
 .endif
@@ -146,7 +154,7 @@ CONFIGURE_ENV+=	PYTHON="${MODPY_BIN}" \
 _MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
 
-SUBST_VARS:=	MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
+SUBST_VARS:=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
 MODPY_BIN_ADJ=	perl -pi \
