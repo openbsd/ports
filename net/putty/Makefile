@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/06/27 19:30:04 naddy Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
@@ -43,8 +43,3 @@ pre-configure:
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
-
-# gcc4 is smarter !
-.if ${COMPILER_VERSION:L:Mgcc4*}
-CFLAGS += -Wno-error=address
-.endif
