@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.30 2012/06/21 06:58:51 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.31 2012/06/27 19:28:52 naddy Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -49,10 +49,6 @@ CHROOT_DIR?=		/var/www
 MODULES_SUBDIR=		lib/php-${PV}/modules
 MODULES_DIR=		${LOCALBASE}/${MODULES_SUBDIR}
 
-.if ${COMPILER_VERSION:L:Mgcc3}
-PHP_LDFLAGS=		-lstdc++ -lm
-.endif
-
 FLAVORS=		ap2 no_suhosin
 FLAVOR?=
 
@@ -61,7 +57,7 @@ PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.13
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
-                        LDFLAGS="-L${LOCALBASE}/lib ${PHP_LDFLAGS} -pthread" \
+                        LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			EXTENSION_DIR=${MODULES_DIR} lt_cv_path_SED=/usr/bin/sed
 MAKE_ENV=               ${CONFIGURE_ENV}
 
