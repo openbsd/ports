@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/06/26 11:17:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2012/06/27 10:53:00 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,8 @@ COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
 V=		3.12.6
-REVISION-main=	0
+REVISION-main=	1
+REVISION-gui=	0
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -130,8 +131,8 @@ pre-configure:
 		-e "s,^PACKAGE_STRING=.*,PACKAGE_STRING='HP Linux (& Unix) Imaging and Printing ${V}'," \
 		${WRKSRC}/configure
 	@find ${WRKSRC} -name \*.py | \
-		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' \
+		xargs perl -pi -e 's,(/usr/bin/python|/usr/bin/env python),${MODPY_BIN},g'
+	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' \
 		${WRKSRC}/fax/filters/pstotiff
 	${SUBST_CMD} ${WRKSRC}/prnt/cups.py \
 		${WRKSRC}/prnt/hpcups/HPCupsFilter.cpp \
