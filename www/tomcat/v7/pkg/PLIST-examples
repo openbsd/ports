@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.5 2012/04/06 08:16:59 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2012/06/27 19:02:38 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -472,6 +472,7 @@ webapps/docs/api/org/apache/catalina/session/StandardManager.html
 webapps/docs/api/org/apache/catalina/session/StandardSession.html
 webapps/docs/api/org/apache/catalina/session/StandardSessionFacade.html
 webapps/docs/api/org/apache/catalina/session/StoreBase.html
+webapps/docs/api/org/apache/catalina/session/TooManyActiveSessionsException.html
 webapps/docs/api/org/apache/catalina/session/package-frame.html
 webapps/docs/api/org/apache/catalina/session/package-summary.html
 webapps/docs/api/org/apache/catalina/session/package-tree.html
@@ -730,6 +731,7 @@ webapps/docs/api/org/apache/catalina/util/Extension.html
 webapps/docs/api/org/apache/catalina/util/ExtensionValidator.html
 webapps/docs/api/org/apache/catalina/util/IOTools.html
 webapps/docs/api/org/apache/catalina/util/InstanceSupport.html
+webapps/docs/api/org/apache/catalina/util/Introspection.html
 webapps/docs/api/org/apache/catalina/util/LifecycleBase.html
 webapps/docs/api/org/apache/catalina/util/LifecycleMBeanBase.html
 webapps/docs/api/org/apache/catalina/util/LifecycleSupport.html
