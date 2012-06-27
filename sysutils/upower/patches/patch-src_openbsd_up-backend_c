@@ -1,76 +1,10 @@
-$OpenBSD: patch-src_openbsd_up-backend_c,v 1.4 2012/01/03 21:50:06 landry Exp $
-
-Return true if apm_fd wasn't initialized yet - fixes history
-
-XXX Sometimes apm(4) is not fast enough in calculating the right
-time-to-empty value and 'minutes_left' is left as -1, causing
-gnome-power-manager to show something like "1193046 hours 27 minutes
-of battery power remaining". To avoid this, check that battery is
-discharging *and* minutes_left is positive, otherwise set
-new_time_to_emtpy to zero XXX
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.5 2012/06/27 06:39:50 landry Exp $
 
 Properly initialize update-time when creating devices
 
---- src/openbsd/up-backend.c.orig	Tue May 31 12:07:03 2011
-+++ src/openbsd/up-backend.c	Mon Jan  2 20:40:45 2012
-@@ -62,7 +62,7 @@ enum {
- 
- static guint signals [SIGNAL_LAST] = { 0 };
- 
--int apm_fd; /* ugly global.. needs to move to a device native object */
-+int apm_fd = 0; /* ugly global.. needs to move to a device native object */
- 
- G_DEFINE_TYPE (UpBackend, up_backend, G_TYPE_OBJECT)
- 
-@@ -324,8 +324,11 @@ up_backend_update_battery_state(UpDevice* device)
- 	if (a.ac_state == APM_AC_ON)
- 		new_state = UP_DEVICE_STATE_CHARGING;
- 
--	// zero out new_time_to empty if we're not discharging
--	new_time_to_empty = (new_state == UP_DEVICE_STATE_DISCHARGING ? a.minutes_left : 0);
-+	// zero out new_time_to_empty if we're not discharging, if minutes_left has a negative value
-+	if (new_state == UP_DEVICE_STATE_DISCHARGING && (int)a.minutes_left > 0)
-+		new_time_to_empty = a.minutes_left;
-+	else
-+		new_time_to_empty = 0;
- 
- 	if (cur_state != new_state ||
- 		percentage != (gdouble) a.battery_life ||
-@@ -377,8 +380,10 @@ up_backend_update_acpibat_state(UpDevice* device, stru
- 					typev = sens.type;
- 					bst_cap = sens.value / 1000000.0f;
- 				}
--				if (sens.type == SENSOR_INTEGER && !strcmp(sens.desc, "rate"))
--					bst_rate = sens.value / 1000.0f;
-+				if ((sens.type == SENSOR_AMPS || sens.type == SENSOR_WATTS) && !strcmp(sens.desc, "rate")) {
-+					typev = sens.type;
-+					bst_rate = sens.value / 1000000.0f;
-+				}
- 				/*
- 				bif_dvolt = "voltage" = unused ?
- 				capacity = lastfull/dcap * 100 ?
-@@ -388,7 +393,7 @@ up_backend_update_acpibat_state(UpDevice* device, stru
- 			}
- 		}
- 	}
--	if (typev == SENSOR_AMPHOUR) {
-+	if (typev == SENSOR_AMPHOUR || typev == SENSOR_AMPS) {
- 		bst_cap *= bst_volt;
- 		bif_lowcap *= bst_volt;
- 		bif_lastfullcap *= bst_volt;
-@@ -424,6 +429,11 @@ up_apm_device_refresh(UpDevice* device)
- 	GTimeVal timeval;
- 	gboolean ret;
- 
-+	if (apm_fd == 0) {
-+		g_debug("refresh callback called but apm_fd is not initialized yet");
-+		return TRUE;
-+	}
-+
- 	g_object_get (device, "type", &type, NULL);
- 
- 	switch (type) {
-@@ -544,6 +554,7 @@ static void
+--- src/openbsd/up-backend.c.orig	Fri Jan  6 14:41:03 2012
++++ src/openbsd/up-backend.c	Tue Jun 26 09:28:56 2012
+@@ -529,6 +529,7 @@ static void
  up_backend_init (UpBackend *backend)
  {
  	GError *err = NULL;
@@ -78,7 +12,7 @@ Properly initialize update-time when creating devices
  	UpDeviceClass *device_class;
  
  	backend->priv = UP_BACKEND_GET_PRIVATE (backend);
-@@ -573,6 +584,7 @@ up_backend_init (UpBackend *backend)
+@@ -558,6 +559,7 @@ up_backend_init (UpBackend *backend)
  		}
  
  		/* setup dummy */
@@ -86,7 +20,7 @@ Properly initialize update-time when creating devices
  		g_object_set (backend->priv->battery,
  			      "type", UP_DEVICE_KIND_BATTERY,
  			      "power-supply", TRUE,
-@@ -582,11 +594,13 @@ up_backend_init (UpBackend *backend)
+@@ -567,11 +569,13 @@ up_backend_init (UpBackend *backend)
  			      "state", UP_DEVICE_STATE_UNKNOWN,
  			      "percentage", 0.0f,
  			      "time-to-empty", (gint64) 0,
