@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.357 2012/06/27 08:57:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.358 2012/06/27 10:58:10 sthen Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -121,6 +121,7 @@
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-HTML-Summary
      SUBDIR += p5-LaTeX-Driver
+     SUBDIR += p5-LaTeX-Encode
      SUBDIR += p5-LaTeX-Pod
      SUBDIR += p5-LaTeX-TOM
      SUBDIR += p5-LibXML-Common
