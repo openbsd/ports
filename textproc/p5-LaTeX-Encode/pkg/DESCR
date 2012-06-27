@@ -1,0 +1,18 @@
+TeX::Encode exports the function 'latex_encode' which encodes
+characters in a string, that would be incorrectly interpreted by
+LaTeX.
+
+The latex_encode function takes a text string and an optional
+reference to a hash of options.  The options currently supported
+are "exclude" to specify a list of characters that should not be
+encoded (often this is "\\{}" to allow LaTeX commands to be used
+in the text string), and "iquotes" to enable "intelligent quotes",
+that is double quotes around a phrase will be converted to "``" and
+"''" and single quotes to "`" and "'".
+
+The scripts directory contains scripts to help build the character
+encoding tables used by the module and to create and format a
+document listing the characters that the module encodes with their
+Unicode character value, HTML entity representation, LaTeX encoding
+and visual representation.  These scripts are not installed by "make
+install".
