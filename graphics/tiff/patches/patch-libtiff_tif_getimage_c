@@ -1,11 +1,9 @@
-$OpenBSD: patch-libtiff_tif_getimage_c,v 1.7 2012/04/14 15:09:55 naddy Exp $
+$OpenBSD: patch-libtiff_tif_getimage_c,v 1.8 2012/06/27 14:27:02 jasper Exp $
 
 1. sprintf()
 This one is slightly problematic.  If an application allocates less
 room for its error buffer than the recommended 1024, the error message
 buffer will still overflow.
-
-2. CVE-2012-1173: integer overflow.
 
 --- libtiff/tif_getimage.c.orig	Wed Apr 11 18:42:32 2012
 +++ libtiff/tif_getimage.c	Wed Apr 11 18:53:00 2012
@@ -220,58 +218,3 @@ buffer will still overflow.
  			goto fail_return;
  		}
  	}
-@@ -692,6 +692,7 @@ gtTileSeparate(TIFFRGBAImage* img, uint32* raster, uin
- 	unsigned char* p2;
- 	unsigned char* pa;
- 	tmsize_t tilesize;
-+	tmsize_t bufsize;
- 	int32 fromskew, toskew;
- 	int alpha = img->alpha;
- 	uint32 nrow;
-@@ -699,12 +700,18 @@ gtTileSeparate(TIFFRGBAImage* img, uint32* raster, uin
-         int colorchannels;
- 
- 	tilesize = TIFFTileSize(tif);  
--	buf = (unsigned char*) _TIFFmalloc((alpha?4:3)*tilesize);
-+	
-+	bufsize = TIFFSafeMultiply(tmsize_t,alpha?4:3,tilesize);
-+	if (bufsize == 0) {
-+		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "Integer overflow in %s", "gtTileSeparate");
-+		return (0);
-+	}
-+	buf = (unsigned char*) _TIFFmalloc(bufsize);
- 	if (buf == 0) {
- 		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "%s", "No space for tile buffer");
- 		return (0);
- 	}
--	_TIFFmemset(buf, 0, (alpha?4:3)*tilesize);
-+	_TIFFmemset(buf, 0, bufsize);
- 	p0 = buf;
- 	p1 = p0 + tilesize;
- 	p2 = p1 + tilesize;
-@@ -917,17 +924,23 @@ gtStripSeparate(TIFFRGBAImage* img, uint32* raster, ui
- 	uint32 rowsperstrip, offset_row;
- 	uint32 imagewidth = img->width;
- 	tmsize_t stripsize;
-+	tmsize_t bufsize;
- 	int32 fromskew, toskew;
- 	int alpha = img->alpha;
- 	int ret = 1, flip, colorchannels;
- 
- 	stripsize = TIFFStripSize(tif);  
--	p0 = buf = (unsigned char *)_TIFFmalloc((alpha?4:3)*stripsize);
-+	bufsize = TIFFSafeMultiply(tmsize_t,alpha?4:3,stripsize);
-+	if (bufsize == 0) {
-+		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "Integer overflow in %s", "gtStripSeparate");
-+		return (0);
-+	}
-+	p0 = buf = (unsigned char *)_TIFFmalloc(bufsize);
- 	if (buf == 0) {
- 		TIFFErrorExt(tif->tif_clientdata, TIFFFileName(tif), "No space for tile buffer");
- 		return (0);
- 	}
--	_TIFFmemset(buf, 0, (alpha?4:3)*stripsize);
-+	_TIFFmemset(buf, 0, bufsize);
- 	p1 = p0 + stripsize;
- 	p2 = p1 + stripsize;
- 	pa = (alpha?(p2+stripsize):NULL);
