@@ -1,0 +1,22 @@
+$OpenBSD: patch-node_gyp,v 1.1 2012/06/28 08:30:28 jasper Exp $
+--- node.gyp.orig	Mon Jun 25 10:03:59 2012
++++ node.gyp	Mon Jun 25 10:05:32 2012
+@@ -133,6 +133,9 @@
+       ],
+ 
+       'conditions': [
++        [ 'OS=="openbsd"', {
++          'ldflags': [ '-rdynamic' ],
++        }],
+         [ 'node_use_openssl=="true"', {
+           'defines': [ 'HAVE_OPENSSL=1' ],
+           'sources': [ 'src/node_crypto.cc' ],
+@@ -222,7 +225,7 @@
+             'PLATFORM="darwin"',
+           ],
+         }],
+-        [ 'OS=="freebsd"', {
++        [ 'OS=="freebsd" or OS=="openbsd"', {
+           'libraries': [
+             '-lutil',
+             '-lkvm',

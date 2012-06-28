@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_gyp_pylib_gyp_common_py,v 1.1 2012/06/28 08:30:28 jasper Exp $
+--- tools/gyp/pylib/gyp/common.py.orig	Wed Jun 20 11:08:26 2012
++++ tools/gyp/pylib/gyp/common.py	Wed Jun 20 11:08:49 2012
+@@ -355,6 +355,7 @@ def GetFlavor(params):
+     'sunos5': 'solaris',
+     'freebsd7': 'freebsd',
+     'freebsd8': 'freebsd',
++    'openbsd5': 'openbsd',
+   }
+   flavor = flavors.get(sys.platform, 'linux')
+   return params.get('flavor', flavor)
