@@ -1,7 +1,7 @@
-$OpenBSD: patch-get_iplayer,v 1.48 2011/11/04 22:51:19 sthen Exp $
---- get_iplayer.orig	Mon Aug 29 15:09:13 2011
-+++ get_iplayer	Wed Aug 31 18:23:50 2011
-@@ -308,6 +308,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
+$OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
+--- get_iplayer.orig	Sat Jun  2 17:37:17 2012
++++ get_iplayer	Thu Jun 28 16:08:52 2012
+@@ -311,6 +311,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
  $opt->{stdout} = 1 if $opt_pre->{stdout} || $opt_pre->{stream};
@@ -9,7 +9,7 @@ $OpenBSD: patch-get_iplayer,v 1.48 2011/11/04 22:51:19 sthen Exp $
  
  # show version and exit
  if ( $opt_pre->{showver} ) {
-@@ -344,7 +345,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -347,7 +348,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -18,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.48 2011/11/04 22:51:19 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -732,7 +733,7 @@ sub init_search {
+@@ -749,7 +750,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,16 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.48 2011/11/04 22:51:19 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -2014,7 +2015,7 @@ sub update_script {
- 		} elsif ( $opt->{packagemanager} =~ /disable/i ) {
- 			logger "ERROR: get_iplayer should only be updated using your local package management system, for more information see http://linuxcentre.net/installation\n";
- 		} else {
--			logger "ERROR: get_iplayer was installed using '$opt->{packagemanager}' package manager please refer to the update documentation at http://linuxcentre.net/getiplayer/installation/\n";
-+			logger "ERROR: Please update get_iplayer using the '$opt->{packagemanager}' package manager\n";
- 		}
- 		exit 1;
- 	} 
-@@ -9543,7 +9544,7 @@ sub tag_file_id3 {
+@@ -9646,7 +9647,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
