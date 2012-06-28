@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2012/05/17 05:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/06/28 18:49:54 jasper Exp $
 
 COMMENT=	GNUstep base library
 
 DISTNAME=	gnustep-base-1.22.1
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	gnustep-base 4.0
 CATEGORIES=	devel
@@ -27,6 +27,9 @@ MODULES=	x11/gnustep \
 MODGNUSTEP_NEEDS_GUI=	No
 MODGNUSTEP_NEEDS_BASE=	No
 
+AUTOCONF_VERSION= 2.67
+
+BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS +=	devel/libffi \
 		devel/gmp \
 		textproc/libxslt \
@@ -37,6 +40,9 @@ LIB_DEPENDS +=	devel/libffi \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS +=	--disable-procfs \
 			--disable-procfs-psinfo
+
+post-patch:
+	@cd ${WRKSRC}/SSL && env AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
 pre-configure:
 	@perl -pi -e 's,^MAJOR_VERSION=.*,MAJOR_VERSION=${LIBgnustep-base_VERSION:R},g;' \

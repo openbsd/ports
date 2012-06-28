@@ -1,0 +1,17 @@
+$OpenBSD: patch-kcontrol_crypto_crypto_h,v 1.1 2012/06/28 18:52:18 jasper Exp $
+
+Allow building against OpenSSL without SSLv2 support.
+
+--- kcontrol/crypto/crypto.h.orig	Wed Jun 27 11:44:00 2012
++++ kcontrol/crypto/crypto.h	Wed Jun 27 11:44:19 2012
+@@ -288,8 +288,8 @@ public slots: (private)
+ 
+   QWidget *tabYourSSLCert, *tabOtherSSLCert, *tabSSLCA, *tabSSLCOpts, *tabAuth;
+ 
+-  QListView *SSLv2Box, *SSLv3Box;
+-  QCheckBox *mUseTLS, *mUseSSLv2, *mUseSSLv3;
++  QListView *SSLv3Box;
++  QCheckBox *mUseTLS, *mUseSSLv3;
+   QCheckBox *mWarnOnEnter, *mWarnOnLeave;
+ 
+   /* EGD stuff */
