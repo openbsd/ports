@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/03 18:49:11 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/06/28 17:31:43 jeremy Exp $
 lib/node_modules/pg/
-lib/node_modules/pg/.lock-wscript
 lib/node_modules/pg/.npmignore
 lib/node_modules/pg/Makefile
 lib/node_modules/pg/README.md
@@ -8,17 +7,30 @@ lib/node_modules/pg/benchmark/
 lib/node_modules/pg/benchmark/js-versus-native-bench.js
 lib/node_modules/pg/benchmark/large-datatset-bench.js
 lib/node_modules/pg/benchmark/simple-query-bench.js
+lib/node_modules/pg/binding.gyp
 lib/node_modules/pg/build/
-lib/node_modules/pg/build/.wafpickle-7
+lib/node_modules/pg/build/Makefile
 lib/node_modules/pg/build/Release/
+lib/node_modules/pg/build/Release/.deps/
+lib/node_modules/pg/build/Release/.deps/Release/
+lib/node_modules/pg/build/Release/.deps/Release/binding.node.d
+lib/node_modules/pg/build/Release/.deps/Release/obj.target/
+lib/node_modules/pg/build/Release/.deps/Release/obj.target/binding/
+lib/node_modules/pg/build/Release/.deps/Release/obj.target/binding.node.d
+lib/node_modules/pg/build/Release/.deps/Release/obj.target/binding/src/
+lib/node_modules/pg/build/Release/.deps/Release/obj.target/binding/src/binding.o.d
 @bin lib/node_modules/pg/build/Release/binding.node
-lib/node_modules/pg/build/Release/src/
-lib/node_modules/pg/build/Release/src/binding_1.o
-lib/node_modules/pg/build/c4che/
-lib/node_modules/pg/build/c4che/Release.cache.py
-lib/node_modules/pg/build/c4che/build.config.py
-lib/node_modules/pg/build/config.log
+lib/node_modules/pg/build/Release/linker.lock
+lib/node_modules/pg/build/Release/obj.target/
+lib/node_modules/pg/build/Release/obj.target/binding/
+@bin lib/node_modules/pg/build/Release/obj.target/binding.node
+lib/node_modules/pg/build/Release/obj.target/binding/src/
+lib/node_modules/pg/build/Release/obj.target/binding/src/binding.o
+lib/node_modules/pg/build/binding.Makefile
+lib/node_modules/pg/build/binding.target.mk
+lib/node_modules/pg/build/config.gypi
 lib/node_modules/pg/lib/
+lib/node_modules/pg/lib/arrayParser.js
 lib/node_modules/pg/lib/binaryParsers.js
 lib/node_modules/pg/lib/client.js
 lib/node_modules/pg/lib/connection.js
@@ -54,6 +66,7 @@ lib/node_modules/pg/test/integration/client/configuration-tests.js
 lib/node_modules/pg/test/integration/client/drain-tests.js
 lib/node_modules/pg/test/integration/client/empty-query-tests.js
 lib/node_modules/pg/test/integration/client/error-handling-tests.js
+lib/node_modules/pg/test/integration/client/huge-numeric-tests.js
 lib/node_modules/pg/test/integration/client/no-data-tests.js
 lib/node_modules/pg/test/integration/client/notice-tests.js
 lib/node_modules/pg/test/integration/client/prepared-statement-tests.js
@@ -78,6 +91,9 @@ lib/node_modules/pg/test/integration/connection/bound-command-tests.js
 lib/node_modules/pg/test/integration/connection/notification-tests.js
 lib/node_modules/pg/test/integration/connection/query-tests.js
 lib/node_modules/pg/test/integration/connection/test-helper.js
+lib/node_modules/pg/test/integration/gh-issues/
+lib/node_modules/pg/test/integration/gh-issues/130.js
+lib/node_modules/pg/test/integration/gh-issues/131.js
 lib/node_modules/pg/test/integration/test-helper.js
 lib/node_modules/pg/test/native/
 lib/node_modules/pg/test/native/callback-api-tests.js
