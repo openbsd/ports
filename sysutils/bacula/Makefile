@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/06/16 07:08:55 robert Exp $
+# $OpenBSD: Makefile,v 1.45 2012/06/28 19:24:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,8 +7,6 @@ COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
 V=			5.2.6
-REVISION=		3
-REVISION-server=	4
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -16,6 +14,10 @@ PKGNAME-server=		bacula-server-$V
 FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
+
+REVISION-main=		3
+REVISION-server=	5
+REVISION-bat=		3
 
 # XXX build fails if a previous version is installed
 SHARED_LIBS +=  bac                  3.0
@@ -184,6 +186,8 @@ post-install:
 .if ${BUILD_PACKAGES:M-server}
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
+	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/chio-changer \
+		${PREFIX}/libexec/bacula/chio-changer.dist
 	rm ${PREFIX}/libexec/bacula/updatedb/update*.in
 	rm ${PREFIX}/lib/libbaccats.*
 	cd ${PREFIX}/lib && \

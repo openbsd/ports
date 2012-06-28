@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# $OpenBSD: chio-changer,v 1.1 2012/06/28 19:24:56 ajacoutot Exp $
+#
+# Bacula interface to chio autoloader
+# (adapted from NetBSD pkgsrc and FreeBSD ports)
+#
+#  If you set in your Device resource:
+#
+#  Changer Command = "${TRUEPREFIX}/libexec/bacula/chio-changer %c %o %S %a %d"
+#    you will have the following input to this script:
+#
+#  chio-changer "changer-device" "command" "slot" "archive-device" "drive-index"
+#		   $1		   $2	    $3	      $4	       $5
+#
+#  So Bacula will always call with all the following arguments, even though
+#    in come cases, not all are used.
+#
+#  N.B. If you change the script, take care to return either 
+#   the chio exit code or a 0. If the script exits with a non-zero
+#   exit code, Bacula will assume the request failed.
+
+CHIO=/bin/chio
+
+# check parameter count on commandline
+check_parm_count() {
+    pCount=$1
+    pCountNeed=$2
+    if test $pCount -lt $pCountNeed; then
+	echo "usage: chio-changer ctl-device command [slot archive-device drive-index]"
+	echo "	Insufficient number of arguments given."
+	if test $pCount -lt 2; then
+	    echo "  Mimimum usage is first two arguments ..."
+	else
+	    echo "  Command expected $pCountNeed arguments"
+	fi
+	exit 1
+    fi
+}
+
+# Check for special cases where only 2 arguments are needed, 
+# all others are a minimum of 5
+case $2 in
+    list|listall)
+	check_parm_count $# 2
+	;;
+    slots)
+	check_parm_count $# 2
+	;;
+    transfer)
+	check_parm_count $# 4
+	;;
+    *)
+	check_parm_count $# 5
+	;;
+esac
+
+
+# Setup arguments
+ctl=$1
+cmd="$2"
+slot=$3
+device=$4
+drive=$5
+
+case $cmd in 
+   unload)
+      ${CHIO} -f $ctl move drive $drive slot $slot
+      ;;
+
+   load)
+      ${CHIO} -f $ctl move slot $slot drive $drive
+      ;;
+
+   list)
+      ${CHIO} -f $ctl status -v slot | \
+      sed -ne 's/^slot *\([0-9]*:\).*FULL.*voltag.*<\(.*\):.*/\1\2/p' | \
+      awk -F: '{print $1 + 1 ":" $2 }'
+      ;;
+
+   listall)
+      echo "The listall command is not implemented on OpenBSD"
+      ;;
+
+   loaded)
+      ${CHIO} -f $ctl status -v | egrep "^drive $drive:" | grep FULL | cut -d: -f 3 | tr -d '<>a-z '
+      ;;
+
+   slots)
+      ${CHIO} -f $ctl params | awk "/slots/{print \$2}"
+      ;;
+
+   transfer)
+      ${CHIO} -f $ctl move slot $slot slot $device
+      ;;
+esac
+
+sleep 1
