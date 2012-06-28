@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:46:04 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/06/28 14:39:50 giovanni Exp $
 
 COMMENT =	extensible framework for Perl server engines
 
 MODULES =	cpan
-DISTNAME =	Net-Server-0.99
+DISTNAME =	Net-Server-2.006
 CATEGORIES =	devel net
-USE_GROFF =	Yes
 
 HOMEPAGE =	http://seamons.com/projects/
 

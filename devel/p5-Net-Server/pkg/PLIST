@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/26 09:09:18 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/06/28 14:39:50 giovanni Exp $
+bin/net-server
 ${P5SITE}/Net/
 ${P5SITE}/Net/Server/
 ${P5SITE}/Net/Server.pm
@@ -7,8 +8,14 @@ ${P5SITE}/Net/Server/Daemonize.pm
 ${P5SITE}/Net/Server/Fork.pm
 ${P5SITE}/Net/Server/HTTP.pm
 ${P5SITE}/Net/Server/INET.pm
+${P5SITE}/Net/Server/Log/
+${P5SITE}/Net/Server/Log/Log/
+${P5SITE}/Net/Server/Log/Log/Log4perl.pm
+${P5SITE}/Net/Server/Log/Sys/
+${P5SITE}/Net/Server/Log/Sys/Syslog.pm
 ${P5SITE}/Net/Server/MultiType.pm
 ${P5SITE}/Net/Server/Multiplex.pm
+${P5SITE}/Net/Server/PSGI.pm
 ${P5SITE}/Net/Server/PreFork.pm
 ${P5SITE}/Net/Server/PreForkSimple.pm
 ${P5SITE}/Net/Server/Proto/
@@ -18,15 +25,20 @@ ${P5SITE}/Net/Server/Proto/SSLEAY.pm
 ${P5SITE}/Net/Server/Proto/TCP.pm
 ${P5SITE}/Net/Server/Proto/UDP.pm
 ${P5SITE}/Net/Server/Proto/UNIX.pm
+${P5SITE}/Net/Server/Proto/UNIXDGRAM.pm
 ${P5SITE}/Net/Server/SIG.pm
 ${P5SITE}/Net/Server/Single.pm
+@man man/man1/net-server.1
 @man man/man3p/Net::Server.3p
 @man man/man3p/Net::Server::Daemonize.3p
 @man man/man3p/Net::Server::Fork.3p
 @man man/man3p/Net::Server::HTTP.3p
 @man man/man3p/Net::Server::INET.3p
+@man man/man3p/Net::Server::Log::Log::Log4perl.3p
+@man man/man3p/Net::Server::Log::Sys::Syslog.3p
 @man man/man3p/Net::Server::MultiType.3p
 @man man/man3p/Net::Server::Multiplex.3p
+@man man/man3p/Net::Server::PSGI.3p
 @man man/man3p/Net::Server::PreFork.3p
 @man man/man3p/Net::Server::PreForkSimple.3p
 @man man/man3p/Net::Server::Proto.3p
@@ -35,6 +47,7 @@ ${P5SITE}/Net/Server/Single.pm
 @man man/man3p/Net::Server::Proto::TCP.3p
 @man man/man3p/Net::Server::Proto::UDP.3p
 @man man/man3p/Net::Server::Proto::UNIX.3p
+@man man/man3p/Net::Server::Proto::UNIXDGRAM.3p
 @man man/man3p/Net::Server::SIG.3p
 @man man/man3p/Net::Server::Single.3p
 share/examples/p5-Net-Server/
