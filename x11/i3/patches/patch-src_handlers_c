@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_handlers_c,v 1.9 2012/06/28 09:33:06 dcoppa Exp $
+
+From 6e9bbe67ce5f02ff6ac24889e5a215ee46247c32 Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Wed, 27 Jun 2012 15:48:22 +0000
+Subject: Bugfix: fix reload crashes in rare cases
+
+--- src/handlers.c.orig	Wed Apr 25 23:21:25 2012
++++ src/handlers.c	Thu Jun 28 10:58:57 2012
+@@ -119,7 +119,9 @@ static void handle_key_press(xcb_key_press_event_t *ev
+         }
+     }
+ 
+-    struct CommandResult *command_output = parse_command(bind->command);
++    char *command_copy = sstrdup(bind->command);
++    struct CommandResult *command_output = parse_command(command_copy);
++    free(command_copy);
+ 
+     if (command_output->needs_tree_render)
+         tree_render();

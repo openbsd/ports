@@ -1,9 +1,14 @@
-$OpenBSD: patch-src_main_c,v 1.3 2012/05/09 11:56:49 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.4 2012/06/28 09:33:06 dcoppa Exp $
 
 OpenBSD lacks POSIX shared memory support (shm_open() and friends)
 
+From 6146f39b8a253bc84bc5ce1feb2e3cabc50d71ba Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Mon, 25 Jun 2012 19:43:41 +0000
+Subject: when using i3 -C, don't send remaining arguments via IPC
+
 --- src/main.c.orig	Wed Apr 25 23:21:25 2012
-+++ src/main.c	Wed May  9 12:26:49 2012
++++ src/main.c	Thu Jun 28 10:55:31 2012
 @@ -220,11 +220,13 @@ static void i3_exit(void) {
      ev_loop_destroy(main_loop);
  #endif
@@ -83,6 +88,15 @@ OpenBSD lacks POSIX shared memory support (shm_open() and friends)
                  fprintf(stderr, "If you pass plain text arguments, i3 will interpret them as a command\n"
                                  "to send to a currently running i3 (like i3-msg). This allows you to\n"
                                  "use nice and logical commands, such as:\n"
+@@ -417,7 +429,7 @@ int main(int argc, char *argv[]) {
+     /* If the user passes more arguments, we act like i3-msg would: Just send
+      * the arguments as an IPC message to i3. This allows for nice semantic
+      * commands such as 'i3 border none'. */
+-    if (optind < argc) {
++    if (!only_check_config && optind < argc) {
+         /* We enable verbose mode so that the user knows what’s going on.
+          * This should make it easier to find mistakes when the user passes
+          * arguments by mistake. */
 @@ -471,8 +483,10 @@ int main(int argc, char *argv[]) {
          return 0;
      }
