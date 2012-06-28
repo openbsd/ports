@@ -1,7 +1,9 @@
-$OpenBSD: patch-qca-ossl_cpp,v 1.1.1.1 2012/01/07 16:55:13 shadchin Exp $
-Looks like MD2 isn't shipped with our OpenSSL.
---- qca-ossl.cpp.orig	Tue Dec 11 09:34:57 2007
-+++ qca-ossl.cpp	Mon Oct 17 23:08:21 2011
+$OpenBSD: patch-qca-ossl_cpp,v 1.2 2012/06/28 18:57:29 jasper Exp $
+
+Allow building against OpenSSL without MD2 or SSLv2 support.
+
+--- qca-ossl.cpp.orig	Tue Dec 11 01:34:57 2007
++++ qca-ossl.cpp	Thu Jun 28 01:12:24 2012
 @@ -1771,8 +1771,10 @@ class RSAKey : public RSAContext (public)
  			md = EVP_sha1();
  		else if(alg == EMSA3_MD5)
@@ -60,7 +62,19 @@ Looks like MD2 isn't shipped with our OpenSSL.
  		case NID_ripemd160WithRSA:
  		    p.sigalgo = QCA::EMSA3_RIPEMD160;
  		    break;
-@@ -6582,7 +6592,9 @@ static QStringList all_hash_types()
+@@ -5133,9 +5143,11 @@ class MyTLSContext : public TLSContext (public)
+ 		OpenSSL_add_ssl_algorithms();
+ 		SSL_CTX *ctx = 0;
+ 		switch (version) {
++#ifndef OPENSSL_NO_SSL2
+ 		case TLS::SSL_v2:
+ 			ctx = SSL_CTX_new(SSLv2_client_method());
+ 			break;
++#endif
+ 		case TLS::SSL_v3:
+ 			ctx = SSL_CTX_new(SSLv3_client_method());
+ 			break;
+@@ -6582,7 +6594,9 @@ static QStringList all_hash_types()
  	list += "sha1";
  	list += "sha0";
  	list += "ripemd160";
@@ -70,7 +84,7 @@ Looks like MD2 isn't shipped with our OpenSSL.
  	list += "md4";
  	list += "md5";
  #ifdef SHA224_DIGEST_LENGTH
-@@ -6757,7 +6769,9 @@ class opensslProvider : public Provider (public)
+@@ -6757,7 +6771,9 @@ class opensslProvider : public Provider (public)
  		list += all_hash_types();
  		list += all_mac_types();
  		list += all_cipher_types();
@@ -80,7 +94,7 @@ Looks like MD2 isn't shipped with our OpenSSL.
  		list += "pbkdf1(sha1)";
  		list += "pbkdf2(sha1)";
  		list += "pkey";
-@@ -6788,8 +6802,10 @@ class opensslProvider : public Provider (public)
+@@ -6788,8 +6804,10 @@ class opensslProvider : public Provider (public)
  			return new opensslHashContext( EVP_sha(), this, type);
  		else if ( type == "ripemd160" )
  			return new opensslHashContext( EVP_ripemd160(), this, type);
@@ -91,7 +105,7 @@ Looks like MD2 isn't shipped with our OpenSSL.
  		else if ( type == "md4" )
  			return new opensslHashContext( EVP_md4(), this, type);
  		else if ( type == "md5" )
-@@ -6816,8 +6832,10 @@ class opensslProvider : public Provider (public)
+@@ -6816,8 +6834,10 @@ class opensslProvider : public Provider (public)
  #endif
  		else if ( type == "pbkdf1(sha1)" )
  			return new opensslPbkdf1Context( EVP_sha1(), this, type );
@@ -102,7 +116,7 @@ Looks like MD2 isn't shipped with our OpenSSL.
  		else if ( type == "pbkdf2(sha1)" )
  			return new opensslPbkdf2Context( this, type );
  		else if ( type == "hmac(md5)" )
-@@ -6934,7 +6952,7 @@ class opensslProvider : public Provider (public)
+@@ -6934,7 +6954,7 @@ class opensslProvider : public Provider (public)
  			return new CMSContext( this );
  		else if ( type == "ca" )
  			return new MyCAContext( this );

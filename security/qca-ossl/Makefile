@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2012/01/26 09:25:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2012/06/28 18:57:29 jasper Exp $
 
 SHARED_ONLY =		Yes
 
-REVISION =		0
 COMMENT =		SSL/TLS plugin for QCA2
 DISTNAME =		qca-ossl-2.0.0-beta3
 PKGNAME =		${DISTNAME:S/-beta/beta/}
+REVISION =		1
 CATEGORIES =		security
 HOMEPAGE =		http://delta.affinix.com/qca/
 MAINTAINER =		Vadim Zhukov <persgray@gmail.com>
