@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/06/28 23:10:48 sthen Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -10,25 +10,18 @@ COMMENT-pgsql=	postgresql plugin
 COMMENT-samba=	samba plugin
 COMMENT-snmp=	plugins using snmp
 
-V=		1.4.15
-DISTNAME=	nagios-plugins-${V}
-PKGNAME-main=	nagios-plugins-${V}
-PKGNAME-fping=	nagios-plugins-fping-${V}
-PKGNAME-game=	nagios-plugins-game-${V}
-PKGNAME-ldap=	nagios-plugins-ldap-${V}
-PKGNAME-mysql=	nagios-plugins-mysql-${V}
-PKGNAME-ntp=	nagios-plugins-ntp-${V}
-PKGNAME-pgsql=	nagios-plugins-pgsql-${V}
-PKGNAME-samba=	nagios-plugins-samba-${V}
-PKGNAME-snmp=	nagios-plugins-snmp-${V}
+V=		1.4.16
+DISTNAME=	nagios-plugins-$V
+PKGNAME-main=	nagios-plugins-$V
+PKGNAME-fping=	nagios-plugins-fping-$V
+PKGNAME-game=	nagios-plugins-game-$V
+PKGNAME-ldap=	nagios-plugins-ldap-$V
+PKGNAME-mysql=	nagios-plugins-mysql-$V
+PKGNAME-ntp=	nagios-plugins-ntp-$V
+PKGNAME-pgsql=	nagios-plugins-pgsql-$V
+PKGNAME-samba=	nagios-plugins-samba-$V
+PKGNAME-snmp=	nagios-plugins-snmp-$V
 CATEGORIES=	net
-
-REVISION-main=	1
-REVISION-ldap =	0
-REVISION-mysql = 0
-REVISION-pgsql = 0
-REVISION-samba = 0
-REVISION-snmp = 0
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
 
@@ -50,8 +43,8 @@ BUILD_DEPENDS=	games/qstat \
 FAKE_FLAGS=	setuid_root_mode=0555
 
 USE_LIBTOOL=	Yes
-
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.67
 CONFIGURE_ENV=	PATH_TO_FPING=${LOCALBASE}/sbin/fping \
 		PATH_TO_NTPDATE=${LOCALBASE}/sbin/ntpdate \
 		PATH_TO_NTPDC=${LOCALBASE}/sbin/ntpdc \
@@ -98,7 +91,7 @@ RUN_DEPENDS-fping=	net/fping
 RUN_DEPENDS-game=	games/qstat
 
 WANTLIB-ldap+=		${WANTLIB} asn1 com_err crypto gssapi krb5
-WANTLIB-ldap+=		lber ldap sasl2 ssl
+WANTLIB-ldap+=		lber-2.4 ldap-2.4 sasl2 ssl
 LIB_DEPENDS-ldap=	databases/openldap \
 			${LIB_DEPENDS}
 
@@ -109,7 +102,7 @@ LIB_DEPENDS-mysql=	databases/mysql \
 WANTLIB-ntp=		${WANTLIB} m
 RUN_DEPENDS-ntp=	net/ntp
 
-WANTLIB-pgsql=		${WANTLIB} crypto pq
+WANTLIB-pgsql=		${WANTLIB} com_err crypto pq ssl
 LIB_DEPENDS-pgsql=	databases/postgresql \
 			${LIB_DEPENDS}
 

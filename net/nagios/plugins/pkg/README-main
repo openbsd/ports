@@ -1,18 +1,19 @@
-$OpenBSD: README-main,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2012/06/28 23:10:48 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-The check_icmp and check_dhcp Nagios plugins need elevated privileges to
-run properly. As the code quality of these plugins is not really good,
-they are not installed suid root by default.
+The check_dhcp and check_icmp plugins need elevated privileges to
+run properly. As check_icmp drops privileges early, it is installed
+suid root. check_dhcp normally runs entirely as root; as the code
+quality of this plugin is not really good, it is not installed
+suid root by default.
 
-If you have to use these plugins (note that check_fping could be used
-in place of check_icmp), instead of running the whole plugin as root,
-it is possible to run them with systrace's privilege elevation feature.
-This way the plugin runs as _nagios, but the individual system calls
-requiring privileges are run as root.
+Instead of running the whole plugin as root, it is possible to run
+it with systrace's privilege elevation feature. This way the plugin
+runs as _nagios, but the individual system calls requiring privileges
+are run as root.
 
 1) Create a preliminary systrace policy for the plugin.
 
