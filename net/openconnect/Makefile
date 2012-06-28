@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 15:00:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/06/28 15:43:21 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-3.15
-REVISION=	1
+DISTNAME=	openconnect-4.02
 DIST_SUBDIR=	openconnect
 VPNC_SCRIPT=	vpnc-script
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${VPNC_SCRIPT}:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-SHARED_LIBS +=  openconnect               0.0 # 1.2
+SHARED_LIBS +=  openconnect               1.0 # 2.0
 
 CATEGORIES=	net
 
@@ -41,6 +40,7 @@ FAKE_FLAGS=		pkgdatadir=${PREFIX}/share/doc/openconnect
 SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=		--with-vpnc-script=${SYSCONFDIR}/vpnc/vpnc-script
 
 post-extract:
 	cp ${FULLDISTDIR}/${VPNC_SCRIPT} ${WRKSRC}/vpnc-script
