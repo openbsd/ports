@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/03 18:41:57 jeremy Exp $
-lib/node_modules/
+@comment $OpenBSD: PLIST,v 1.2 2012/06/28 17:33:05 jeremy Exp $
 lib/node_modules/bcrypt/
-lib/node_modules/bcrypt/.lock-wscript
 lib/node_modules/bcrypt/.npmignore
 lib/node_modules/bcrypt/.travis.yml
 lib/node_modules/bcrypt/CHANGELOG
@@ -9,24 +7,32 @@ lib/node_modules/bcrypt/LICENSE
 lib/node_modules/bcrypt/Makefile
 lib/node_modules/bcrypt/README.md
 lib/node_modules/bcrypt/bcrypt.js
+lib/node_modules/bcrypt/binding.gyp
 lib/node_modules/bcrypt/build/
-lib/node_modules/bcrypt/build/.conf_check_0/
-lib/node_modules/bcrypt/build/.conf_check_0/test.cpp
-lib/node_modules/bcrypt/build/.conf_check_0/testbuild/
-lib/node_modules/bcrypt/build/.conf_check_0/testbuild/.wafpickle-7
-lib/node_modules/bcrypt/build/.conf_check_0/testbuild/Release/
-lib/node_modules/bcrypt/build/.conf_check_0/testbuild/Release/test_1.o
-lib/node_modules/bcrypt/build/.wafpickle-7
+lib/node_modules/bcrypt/build/Makefile
 lib/node_modules/bcrypt/build/Release/
+lib/node_modules/bcrypt/build/Release/.deps/
+lib/node_modules/bcrypt/build/Release/.deps/Release/
+lib/node_modules/bcrypt/build/Release/.deps/Release/bcrypt_lib.node.d
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib/
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib.node.d
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib/src/
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib/src/bcrypt.o.d
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib/src/bcrypt_node.o.d
+lib/node_modules/bcrypt/build/Release/.deps/Release/obj.target/bcrypt_lib/src/blowfish.o.d
 @bin lib/node_modules/bcrypt/build/Release/bcrypt_lib.node
-lib/node_modules/bcrypt/build/Release/src/
-lib/node_modules/bcrypt/build/Release/src/bcrypt_1.o
-lib/node_modules/bcrypt/build/Release/src/bcrypt_node_1.o
-lib/node_modules/bcrypt/build/Release/src/blowfish_1.o
-lib/node_modules/bcrypt/build/c4che/
-lib/node_modules/bcrypt/build/c4che/Release.cache.py
-lib/node_modules/bcrypt/build/c4che/build.config.py
-lib/node_modules/bcrypt/build/config.log
+lib/node_modules/bcrypt/build/Release/linker.lock
+lib/node_modules/bcrypt/build/Release/obj.target/
+lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib/
+@bin lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib.node
+lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib/src/
+lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib/src/bcrypt.o
+lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib/src/bcrypt_node.o
+lib/node_modules/bcrypt/build/Release/obj.target/bcrypt_lib/src/blowfish.o
+lib/node_modules/bcrypt/build/bcrypt_lib.target.mk
+lib/node_modules/bcrypt/build/binding.Makefile
+lib/node_modules/bcrypt/build/config.gypi
 lib/node_modules/bcrypt/examples/
 lib/node_modules/bcrypt/examples/async_compare.js
 lib/node_modules/bcrypt/examples/forever_gen_salt.js
