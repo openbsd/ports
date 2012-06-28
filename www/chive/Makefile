@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2012/04/18 14:54:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/06/28 16:31:14 sthen Exp $
 
 COMMENT=	web-based MySQL management
 
-V=		1.0.3
+V=		1.1
 DISTNAME=	chive_$V
 PKGNAME=	${DISTNAME:S/_/-/}
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://launchpad.net/chive/1.0/$V/+download/
+MASTER_SITES=	http://launchpad.net/chive/1.1/$V/+download/
 
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-pdo_mysql
