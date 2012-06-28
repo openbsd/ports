@@ -1,0 +1,16 @@
+$OpenBSD: patch-reformatter_CMakeLists_txt,v 1.1 2012/06/28 08:50:49 dcoppa Exp $
+
+Fix static linking and tests
+(from gentoo linux)
+
+--- reformatter/CMakeLists.txt.orig	Tue Dec 20 01:23:22 2011
++++ reformatter/CMakeLists.txt	Thu Jun 28 10:09:59 2012
+@@ -26,7 +26,7 @@ LINK_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR}/../${YAJL
+ 
+ ADD_EXECUTABLE(json_reformat ${SRCS})
+ 
+-TARGET_LINK_LIBRARIES(json_reformat yajl_s)
++TARGET_LINK_LIBRARIES(json_reformat yajl)
+ 
+ # copy the binary into the output directory
+ GET_TARGET_PROPERTY(binPath json_reformat LOCATION)
