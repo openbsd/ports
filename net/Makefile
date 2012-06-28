@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.755 2012/06/26 15:07:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.756 2012/06/28 19:09:08 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -344,6 +344,7 @@
      SUBDIR += p5-Net-Server-SS-PreFork
      SUBDIR += p5-Net-Snort-Parser
      SUBDIR += p5-Net-Subnets
+     SUBDIR += p5-Net-TCLink
      SUBDIR += p5-Net-TFTP
      SUBDIR += p5-Net-Telnet
      SUBDIR += p5-Net-Telnet-Cisco
