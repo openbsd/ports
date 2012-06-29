@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_gnuvd_c,v 1.1 2012/06/29 21:03:35 steven Exp $
+--- src/gnuvd.c.orig	Fri Jun 29 22:54:46 2012
++++ src/gnuvd.c	Fri Jun 29 22:57:48 2012
+@@ -57,12 +57,12 @@ static const char* VANDALE_PORT   = "80";
+ 	"\r\n"
+ 
+ #define HTTP_REQUEST							\
+-	"GET /vandale/zoekService.do?selectedDictionary=nn&"		\
+-	"selectedDictionaryName=Nederlands&searchQuery=%s HTTP/1.1\r\n" HTTP_HEADERS
++	"GET /opzoeken?lang=nn&"		\
++	"pattern=%s HTTP/1.1\r\n" HTTP_HEADERS
+ 
+ #define HTTP_REQUEST_PROXY \
+-	"GET http://www.vandale.nl/vandale/zoekService.do?selectedDictionary=nn&" \
+-	"selectedDictionaryName=Nederlands&searchQuery=%s HTTP/1.1\r\n" HTTP_HEADERS
++	"GET http://www.vandale.nl/opzoeken?lang=nn&" \
++	"pattern=%s HTTP/1.1\r\n" HTTP_HEADERS
+ 
+ static char* HTTP_PROXY_HOST      = NULL;
+ static char* HTTP_PROXY_PORT      = NULL;
+@@ -401,9 +401,9 @@ vd_filter_http_buffer (Buffer *http_buffer, VDError* e
+ {
+ 	unsigned pos;
+ 	
+-	static const char *word        = "<div class=\"pnn4web_b\"";
++	static const char *word        = "<div id=\"content-area\"";
+ 	static const char *notfound    = "of het staat niet";
+-	static const char *iframe      = "<div class=\"query\">";
++	static const char *iframe      = "<div id=\"sidebar\">";
+ 
+ 	assert (http_buffer);
+ 	assert (ex);
