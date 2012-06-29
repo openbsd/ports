@@ -1,33 +1,28 @@
-$OpenBSD: patch-Rakefile,v 1.2 2012/06/07 15:35:58 jeremy Exp $
+$OpenBSD: patch-Rakefile,v 1.3 2012/06/29 16:41:53 jeremy Exp $
 
 Allow regress tests to work.
 
 --- Rakefile.orig	Wed Dec 31 16:00:00 1969
-+++ Rakefile	Fri Jun  1 14:17:42 2012
-@@ -37,18 +37,6 @@ HOE = Hoe.spec 'nokogiri' do
-     GENERATED_TOKENIZER
-   ]
- 
--  self.extra_dev_deps += [
--    ["hoe-bundler",     ">= 1.1"],
--    ["hoe-debugging",   ">= 1.0.3"],
--    ["hoe-gemspec",     ">= 1.0"],
--    ["hoe-git",         ">= 1.4"],
--    ["mini_portile",    ">= 0.2.2"],
--    ["minitest",        "~> 2.2.2"],
--    ["racc",            ">= 1.4.6"],
--    ["rake-compiler",   "=  0.8.0"],
--    ["rexical",         ">= 1.0.5"],
++++ Rakefile	Tue Jun 26 15:04:00 2012
+@@ -47,12 +47,12 @@ HOE = Hoe.spec 'nokogiri' do
+     ["minitest",        "~> 2.2.2"],
+     ["rake",            ">= 0.9"],
+     ["rake-compiler",   "=  0.8.0"]
 -  ]
--
++  ].clear
+   if ! java?
+     self.extra_dev_deps += [
+       ["racc",            ">= 1.4.6"],
+       ["rexical",         ">= 1.0.5"]
+-    ]
++    ].clear
+   end
+ 
    if java?
-     self.spec_extras = { :platform => 'java' }
-   else
-@@ -83,7 +71,7 @@ if java?
- else
+@@ -90,6 +90,7 @@ else
    mingw_available = true
    begin
--    require 'tasks/cross_compile'
+     require 'tasks/cross_compile'
 +    raise
    rescue
      mingw_available = false
