@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_common_defs_h,v 1.1 2012/06/29 14:02:54 landry Exp $
+http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2642
+--- src/common/defs.h.orig	Fri Dec 16 09:09:34 2011
++++ src/common/defs.h	Tue Apr  3 13:07:33 2012
+@@ -148,6 +148,9 @@
+ 
+ #define BUFFSIZE			8192
+ 
++/* according to RFC 821 1000 characters including CRLF */
++#define MAXSMTPTEXTLEN			1000
++
+ #ifndef MAXPATHLEN
+ #  define MAXPATHLEN			4095
+ #endif

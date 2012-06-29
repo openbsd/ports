@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_messageview_c,v 1.1 2012/06/29 14:02:54 landry Exp $
+http://www.thewildbeast.co.uk/claws-mail/bugzilla/show_bug.cgi?id=2640
+--- src/messageview.c.orig	Wed Jun 27 11:05:23 2012
++++ src/messageview.c	Thu Jun 28 00:13:06 2012
+@@ -988,8 +988,9 @@ static gint disposition_notification_send(MsgInfo *msg
+ 		extract_address(orig_to);
+ 	}
+ 	if (msginfo->subject && *(msginfo->subject)) {
+-		enc_sub = g_malloc0(strlen(msginfo->subject)*8);
+-		qp_encode_line(enc_sub, (const guchar *)msginfo->subject);
++		gint len = strlen(msginfo->subject);
++		enc_sub = g_malloc0(len*8);
++		qp_encode(TRUE, enc_sub, (const guchar *)msginfo->subject, len);
+ 		g_strstrip(enc_sub);
+ 	}
+ 	ok = fprintf(fp,"MIME-Version: 1.0\n"

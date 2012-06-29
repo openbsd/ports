@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2012/06/29 14:02:54 landry Exp $
 @pkgpath mail/sylpheed-claws,-main
 @pkgpath mail/sylpheed-claws,-main,compface
 @pkgpath mail/sylpheed-claws,-main,pgpmime
@@ -45,6 +45,7 @@ include/claws-mail/addrcustomattr.h
 include/claws-mail/addrdefs.h
 include/claws-mail/addrduplicates.h
 include/claws-mail/addressadd.h
+include/claws-mail/addressbook-dbus.h
 include/claws-mail/addressbook.h
 include/claws-mail/addressbook_foldersel.h
 include/claws-mail/addressitem.h
@@ -349,6 +350,7 @@ share/locale/sk/LC_MESSAGES/claws-mail.mo
 share/locale/sv/LC_MESSAGES/claws-mail.mo
 share/locale/uk/LC_MESSAGES/claws-mail.mo
 share/locale/zh_CN/LC_MESSAGES/claws-mail.mo
+share/locale/zh_TW/LC_MESSAGES/claws-mail.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
