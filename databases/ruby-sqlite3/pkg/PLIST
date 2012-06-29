@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/09/07 16:02:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/06/29 16:40:31 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
@@ -65,6 +65,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_open_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_pending.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_resultset.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration_statement.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_result_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_sqlite3.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_statement.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_statement_execute.rb
