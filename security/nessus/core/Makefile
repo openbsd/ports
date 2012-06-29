@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/04 08:43:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/06/29 08:33:20 jasper Exp $
 
 COMMENT=	network security scanner
 DISTNAME=	nessus-core-${V}
-REVISION=	10
+REVISION=	11
 
 FLAVORS=	no_x11
 FLAVOR?=
