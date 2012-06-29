@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/06/29 23:48:48 steven Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,12 +7,10 @@ COMMENT =	Facebook plugin for Pidgin
 V =		1.68
 DISTNAME =	pidgin-facebookchat-source-${V}
 PKGNAME =	pidgin-facebookchat-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 HOMEPAGE =	http://code.google.com/p/pidgin-facebookchat/
-
-MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
 # GPL v3
 PERMIT_PACKAGE_FTP =	Yes
