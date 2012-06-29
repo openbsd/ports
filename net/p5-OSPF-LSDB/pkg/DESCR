@@ -1,0 +1,13 @@
+OSPFView Perl module OSPF::LSDB reads the link-state database from
+an OSPF daemon.  Then it creates a dot graphic which can be displayed
+with graphviz.
+
+The OSPF::LSDB Perl module and its submodules implement the
+functionality to hold, parse, check, display the content of an OSPF
+link-state database.
+
+Additionally the OSPFView package contains command-line tools to
+read the link-state database from an ospf daemon.  Then it creates
+a dot graphic which can be displayed with graphviz.  At the moment
+OpenBSD ospfd and ospf6d and gated 3.6 are supported.  Cisco support
+is experimental.

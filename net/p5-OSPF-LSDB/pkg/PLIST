@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/29 00:10:28 bluhm Exp $
+bin/ciscoospf2yaml
+bin/gated2yaml
+bin/ospf2dot
+bin/ospfconvert
+bin/ospfd2yaml
+bin/ospfview
+${P5SITE}/OSPF/
+${P5SITE}/OSPF/LSDB/
+${P5SITE}/OSPF/LSDB.pm
+${P5SITE}/OSPF/LSDB/Cisco.pm
+${P5SITE}/OSPF/LSDB/View.pm
+${P5SITE}/OSPF/LSDB/View6.pm
+${P5SITE}/OSPF/LSDB/YAML.pm
+${P5SITE}/OSPF/LSDB/gated.pm
+${P5SITE}/OSPF/LSDB/ospf6d.pm
+${P5SITE}/OSPF/LSDB/ospfd.pm
+@man man/man1/ciscoospf2yaml.1
+@man man/man1/gated2yaml.1
+@man man/man1/ospf2dot.1
+@man man/man1/ospfconvert.1
+@man man/man1/ospfd2yaml.1
+@man man/man1/ospfview.1
+@man man/man3p/OSPF::LSDB.3p
+@man man/man3p/OSPF::LSDB::Cisco.3p
+@man man/man3p/OSPF::LSDB::View.3p
+@man man/man3p/OSPF::LSDB::View6.3p
+@man man/man3p/OSPF::LSDB::YAML.3p
+@man man/man3p/OSPF::LSDB::gated.3p
+@man man/man3p/OSPF::LSDB::ospf6d.3p
+@man man/man3p/OSPF::LSDB::ospfd.3p
