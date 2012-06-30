@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/30 13:23:29 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2012/06/30 09:33:46 landry Exp $
 
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
-XFCE_VERSION=	1.1.0
+XFCE_VERSION=	1.1.1
 XFCE_PLUGIN=	systemload
 
 # BSD
