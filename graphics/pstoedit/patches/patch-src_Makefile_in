@@ -1,7 +1,25 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2010/07/22 19:44:07 steven Exp $
---- src/Makefile.in.orig	Thu Aug 13 10:18:34 2009
-+++ src/Makefile.in	Wed Jul 21 22:59:54 2010
-@@ -396,7 +396,7 @@ libpstoedit_la_SOURCES = \
+$OpenBSD: patch-src_Makefile_in,v 1.6 2012/06/30 00:41:20 steven Exp $
+--- src/Makefile.in.orig	Sat Aug 27 17:27:38 2011
++++ src/Makefile.in	Sat Jun 30 02:21:36 2012
+@@ -372,7 +372,7 @@ libp2edrvstd_la_SOURCES = \
+         $(sample_drivers_src)                   
+ 
+ libp2edrvstd_la_LIBADD = libpstoedit.la
+-libp2edrvstd_la_LDFLAGS = -no-undefined -module
++libp2edrvstd_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ #libp2edrvplugins_la_SOURCES=drvmif.cpp drvcgm.cpp drvrtf.cpp drvwwmf.cpp
+ #libp2edrvplugins_la_LIBADD=
+@@ -388,7 +388,7 @@ libp2edrvswf_la_LDFLAGS = -no-undefined -module
+ # note the __ stand for ++ - automake treats all no alphanums chars as _
+ libp2edrvmagick___la_SOURCES = drvmagick++.cpp drvmagick++.h initlibrary.cpp
+ libp2edrvmagick___la_LIBADD = ${LIBMAGICK_LDFLAGS} libpstoedit.la
+-libp2edrvmagick___la_LDFLAGS = -no-undefined -module
++libp2edrvmagick___la_LDFLAGS = -no-undefined -module -avoid-version
+ @USE_EMFBYSOURCE_FALSE@libp2edrvwmf_la_SOURCES = drvwmf.cpp drvwmf.h initlibrary.cpp
+ # moved to configure.ac because needed only for g++ libp2edrvmagick___la_CPPFLAGS=$(LIBMAGICK_CFLAGS) $(AM_CPPFLAGS) -Wno-long-long
+ @USE_EMFBYSOURCE_TRUE@libp2edrvwmf_la_SOURCES = emflib.cpp drvwmf.cpp drvwmf.h initlibrary.cpp
+@@ -412,7 +412,7 @@ libpstoedit_la_SOURCES = \
  	genericints.h 				\
  	version.h
  
@@ -9,16 +27,4 @@ $OpenBSD: patch-src_Makefile_in,v 1.5 2010/07/22 19:44:07 steven Exp $
 +libpstoedit_la_LIBADD = ${CXX_STD_LIB} ${CXX_RUNTIME_LIB} -lm
  libpstoedit_la_LDFLAGS = -no-undefined
  pstoedit_SOURCES = cmdmain.cpp
- pstoedit_LDFLAGS = -no-undefined -L. libpstoedit.la ${LIBLD_LDFLAGS}
-@@ -524,9 +524,9 @@ clean-pkglibLTLIBRARIES:
- libp2edrvlplot.la: $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_DEPENDENCIES) 
- 	$(CXXLINK) $(am_libp2edrvlplot_la_rpath) $(libp2edrvlplot_la_LDFLAGS) $(libp2edrvlplot_la_OBJECTS) $(libp2edrvlplot_la_LIBADD) $(LIBS)
- libp2edrvmagick++.la: $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_DEPENDENCIES) 
--	$(CXXLINK) $(am_libp2edrvmagick___la_rpath) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
-+	$(CXXLINK) -module -avoid-version $(am_libp2edrvmagick___la_rpath) $(libp2edrvmagick___la_LDFLAGS) $(libp2edrvmagick___la_OBJECTS) $(libp2edrvmagick___la_LIBADD) $(LIBS)
- libp2edrvstd.la: $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_DEPENDENCIES) 
--	$(CXXLINK) -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
-+	$(CXXLINK) -module -avoid-version -rpath $(pkglibdir) $(libp2edrvstd_la_LDFLAGS) $(libp2edrvstd_la_OBJECTS) $(libp2edrvstd_la_LIBADD) $(LIBS)
- libp2edrvswf.la: $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_DEPENDENCIES) 
- 	$(CXXLINK) $(am_libp2edrvswf_la_rpath) $(libp2edrvswf_la_LDFLAGS) $(libp2edrvswf_la_OBJECTS) $(libp2edrvswf_la_LIBADD) $(LIBS)
- libp2edrvwmf.la: $(libp2edrvwmf_la_OBJECTS) $(libp2edrvwmf_la_DEPENDENCIES) 
+ pstoedit_LDADD = libpstoedit.la ${LIBLD_LDFLAGS}
