@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/06/27 10:53:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2012/06/30 04:22:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,8 +9,10 @@ COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
 V=		3.12.6
-REVISION-main=	1
+REVISION-main=	2
 REVISION-gui=	0
+REVISION-hpcups=0
+REVISION-libs=	0
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
