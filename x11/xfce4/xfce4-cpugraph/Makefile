@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/15 08:30:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/06/30 09:33:14 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
-XFCE_VERSION=	1.0.2
+XFCE_VERSION=	1.0.3
 XFCE_PLUGIN=	cpugraph
-REVISION=	0
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
