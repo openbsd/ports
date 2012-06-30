@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2012/04/30 13:24:19 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2012/06/30 09:34:01 landry Exp $
 
 COMMENT=	Xfce4 wireless interface monitor panel plugin
 
-XFCE_VERSION=	0.5.10
+XFCE_VERSION=	0.5.11
 XFCE_PLUGIN=	wavelan
 
 # BSD
