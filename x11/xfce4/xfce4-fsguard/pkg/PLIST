@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/06/30 09:32:58 landry Exp $
 @conflict xfce4-fsguard-plugin-*
-libexec/xfce4/
-libexec/xfce4/panel-plugins/
-@bin libexec/xfce4/panel-plugins/xfce4-fsguard-plugin
+@comment lib/xfce4/panel/plugins/libfsguard.a
+@comment lib/xfce4/panel/plugins/libfsguard.la
+lib/xfce4/panel/plugins/libfsguard.so
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-urgent.png
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin-warning.png
 share/icons/hicolor/16x16/apps/xfce4-fsguard-plugin.png
@@ -24,6 +24,7 @@ share/icons/hicolor/48x48/apps/xfce4-fsguard-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-urgent.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin-warning.svg
 share/icons/hicolor/scalable/apps/xfce4-fsguard-plugin.svg
+share/locale/ar/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -36,6 +37,7 @@ share/locale/eu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/fi/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/fr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/gl/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/hr/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/hu/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/id/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/it/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -51,6 +53,7 @@ share/locale/pl/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-fsguard-plugin.mo
+share/locale/sk/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-fsguard-plugin.mo
@@ -61,7 +64,6 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-fsguard-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-fsguard-plugin.mo
-share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/fsguard.desktop
+share/xfce4/panel/plugins/fsguard.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
