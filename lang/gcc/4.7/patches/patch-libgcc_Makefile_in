@@ -1,7 +1,7 @@
-$OpenBSD: patch-libgcc_Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- libgcc/Makefile.in.orig	Tue Nov 22 04:01:02 2011
-+++ libgcc/Makefile.in	Mon Apr  2 16:52:03 2012
-@@ -1050,10 +1050,10 @@ install-shared:
+$OpenBSD: patch-libgcc_Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- libgcc/Makefile.in.orig	Thu May 24 16:59:38 2012
++++ libgcc/Makefile.in	Wed Jun 20 14:39:12 2012
+@@ -1062,10 +1062,10 @@ install-shared:
  install-leaf: $(install-shared) $(install-libunwind)
  	$(mkinstalldirs) $(DESTDIR)$(inst_libdir)
  

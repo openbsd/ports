@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_pa_t-openbsd,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/config/pa/t-openbsd.orig	Wed Apr  4 10:33:01 2012
-+++ gcc/config/pa/t-openbsd	Wed Apr  4 12:50:16 2012
-@@ -0,0 +1,37 @@
+$OpenBSD: patch-libgcc_config_pa_t-openbsd,v 1.1 2012/07/01 18:56:45 pascal Exp $
+--- libgcc/config/pa/t-openbsd.orig	Wed Jun 20 14:46:16 2012
++++ libgcc/config/pa/t-openbsd	Sun Jun 24 15:16:55 2012
+@@ -0,0 +1,33 @@
 +# Copyright (C) 1999, 2001, 2002, 2008 Free Software Foundation, Inc.
 +#
 +# This file is part of GCC.
@@ -28,14 +28,10 @@ $OpenBSD: patch-gcc_config_pa_t-openbsd,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp
 +LIB1ASMSRC = pa/milli64.S
 +
 +# Compile libgcc2.a as PIC.
-+TARGET_LIBGCC2_CFLAGS = -fPIC -DELF=1
++HOST_LIBGCC2_CFLAGS = -fPIC -DELF=1
 +
-+LIB2FUNCS_EXTRA=fptr.c
-+LIB2FUNCS_STATIC_EXTRA = $(srcdir)/config/pa/linux-atomic.c
-+
-+fptr.c: $(srcdir)/config/pa/fptr.c
-+	rm -f fptr.c
-+	cp $(srcdir)/config/pa/fptr.c .
++LIB2ADD = $(srcdir)/config/pa/fptr.c
++LIB2ADD_ST = $(srcdir)/config/pa/linux-atomic.c
 +
 +# Compile crtbeginS.o and crtendS.o as PIC.
 +CRTSTUFF_T_CFLAGS_S = -fPIC

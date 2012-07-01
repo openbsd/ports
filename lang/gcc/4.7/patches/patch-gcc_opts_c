@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
+$OpenBSD: patch-gcc_opts_c,v 1.2 2012/07/01 18:56:45 pascal Exp $
 --- gcc/opts.c.orig	Tue Jan 10 17:27:55 2012
-+++ gcc/opts.c	Sat Apr 14 13:09:58 2012
++++ gcc/opts.c	Wed Jun 20 21:01:58 2012
 @@ -48,6 +48,9 @@ const char *const debug_type_names[] =
    ((strncmp (prefix, string, sizeof prefix - 1) == 0) \
     ? ((string += sizeof prefix - 1), 1) : 0)
@@ -11,35 +11,37 @@ $OpenBSD: patch-gcc_opts_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  void
  set_struct_debug_option (struct gcc_options *opts, location_t loc,
  			 const char *spec)
-@@ -457,7 +460,6 @@ static const struct default_options default_options_ta
+@@ -457,7 +460,9 @@ static const struct default_options default_options_ta
      { OPT_LEVELS_2_PLUS, OPT_fpartial_inlining, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_fthread_jumps, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_fcrossjumping, NULL, 1 },
--    { OPT_LEVELS_2_PLUS, OPT_foptimize_sibling_calls, NULL, 1 },
++#ifndef __hppa__
+     { OPT_LEVELS_2_PLUS, OPT_foptimize_sibling_calls, NULL, 1 },
++#endif
      { OPT_LEVELS_2_PLUS, OPT_fcse_follow_jumps, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_fgcse, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_fexpensive_optimizations, NULL, 1 },
-@@ -470,9 +472,6 @@ static const struct default_options default_options_ta
+@@ -470,9 +475,9 @@ static const struct default_options default_options_ta
      { OPT_LEVELS_2_PLUS, OPT_fschedule_insns2, NULL, 1 },
  #endif
      { OPT_LEVELS_2_PLUS, OPT_fregmove, NULL, 1 },
 -    { OPT_LEVELS_2_PLUS, OPT_fstrict_aliasing, NULL, 1 },
 -    { OPT_LEVELS_2_PLUS, OPT_fstrict_overflow, NULL, 1 },
--    { OPT_LEVELS_2_PLUS, OPT_freorder_blocks, NULL, 1 },
++#ifndef __hppa__
+     { OPT_LEVELS_2_PLUS, OPT_freorder_blocks, NULL, 1 },
++#endif
      { OPT_LEVELS_2_PLUS, OPT_freorder_functions, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_ftree_vrp, NULL, 1 },
      { OPT_LEVELS_2_PLUS, OPT_ftree_builtin_call_dce, NULL, 1 },
-@@ -489,6 +488,9 @@ static const struct default_options default_options_ta
+@@ -489,6 +494,7 @@ static const struct default_options default_options_ta
      { OPT_LEVELS_2_PLUS_SPEED_ONLY, OPT_foptimize_strlen, NULL, 1 },
  
      /* -O3 optimizations.  */
-+    { OPT_LEVELS_3_PLUS, OPT_foptimize_sibling_calls, NULL, 1 },
-+    { OPT_LEVELS_3_PLUS, OPT_freorder_blocks, NULL, 1 },
 +    { OPT_LEVELS_3_PLUS, OPT_fstrict_aliasing, NULL, 1 },
      { OPT_LEVELS_3_PLUS, OPT_ftree_loop_distribute_patterns, NULL, 1 },
      { OPT_LEVELS_3_PLUS, OPT_fpredictive_commoning, NULL, 1 },
      /* Inlining of functions reducing size is a good idea with -Os
-@@ -1444,6 +1446,11 @@ common_handle_option (struct gcc_options *opts,
+@@ -1444,6 +1450,11 @@ common_handle_option (struct gcc_options *opts,
      case OPT_Wframe_larger_than_:
        opts->x_frame_larger_than_size = value;
        opts->x_warn_frame_larger_than = value != -1;

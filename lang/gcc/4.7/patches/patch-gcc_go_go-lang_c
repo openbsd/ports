@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_go_go-lang_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/go/go-lang.c.orig	Wed Feb  1 19:58:44 2012
-+++ gcc/go/go-lang.c	Mon Apr  2 16:38:17 2012
-@@ -441,6 +441,12 @@ go_localize_identifier (const char *ident)
+$OpenBSD: patch-gcc_go_go-lang_c,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- gcc/go/go-lang.c.orig	Thu May 10 01:30:17 2012
++++ gcc/go/go-lang.c	Wed Jun 20 14:39:12 2012
+@@ -450,6 +450,12 @@ go_localize_identifier (const char *ident)
    return identifier_to_locale (ident);
  }
  

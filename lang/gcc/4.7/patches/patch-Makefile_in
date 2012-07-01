@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- Makefile.in.orig	Mon Jan  2 11:59:04 2012
-+++ Makefile.in	Mon Apr  2 16:34:31 2012
-@@ -2576,7 +2576,7 @@ configure-build-libiberty: 
+$OpenBSD: patch-Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- Makefile.in.orig	Wed May 16 17:54:24 2012
++++ Makefile.in	Wed Jun 20 14:37:41 2012
+@@ -2577,7 +2577,7 @@ configure-build-libiberty: 
  	srcdiroption="--srcdir=$${topdir}/libiberty"; \
  	libsrcdir="$$s/libiberty"; \
  	rm -f no-such-file || : ; \
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -2632,7 +2632,7 @@ configure-build-bison: 
+@@ -2633,7 +2633,7 @@ configure-build-bison: 
  	srcdiroption="--srcdir=$${topdir}/bison"; \
  	libsrcdir="$$s/bison"; \
  	rm -f no-such-file || : ; \
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -2688,7 +2688,7 @@ configure-build-flex: 
+@@ -2689,7 +2689,7 @@ configure-build-flex: 
  	srcdiroption="--srcdir=$${topdir}/flex"; \
  	libsrcdir="$$s/flex"; \
  	rm -f no-such-file || : ; \
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -2744,7 +2744,7 @@ configure-build-m4: 
+@@ -2745,7 +2745,7 @@ configure-build-m4: 
  	srcdiroption="--srcdir=$${topdir}/m4"; \
  	libsrcdir="$$s/m4"; \
  	rm -f no-such-file || : ; \
@@ -37,7 +37,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -2800,7 +2800,7 @@ configure-build-texinfo: 
+@@ -2801,7 +2801,7 @@ configure-build-texinfo: 
  	srcdiroption="--srcdir=$${topdir}/texinfo"; \
  	libsrcdir="$$s/texinfo"; \
  	rm -f no-such-file || : ; \
@@ -46,7 +46,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -2856,7 +2856,7 @@ configure-build-fixincludes: 
+@@ -2857,7 +2857,7 @@ configure-build-fixincludes: 
  	srcdiroption="--srcdir=$${topdir}/fixincludes"; \
  	libsrcdir="$$s/fixincludes"; \
  	rm -f no-such-file || : ; \
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(BUILD_CONFIGARGS) --build=${build_alias} --host=${build_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -30024,7 +30024,7 @@ configure-target-libstdc++-v3: 
+@@ -30025,7 +30025,7 @@ configure-target-libstdc++-v3: 
  	srcdiroption="--srcdir=$${topdir}/libstdc++-v3"; \
  	libsrcdir="$$s/libstdc++-v3"; \
  	rm -f no-such-file || : ; \
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -31008,7 +31008,7 @@ configure-target-libmudflap: 
+@@ -31009,7 +31009,7 @@ configure-target-libmudflap: 
  	srcdiroption="--srcdir=$${topdir}/libmudflap"; \
  	libsrcdir="$$s/libmudflap"; \
  	rm -f no-such-file || : ; \
@@ -73,7 +73,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -31465,7 +31465,7 @@ configure-target-libssp: 
+@@ -31466,7 +31466,7 @@ configure-target-libssp: 
  	srcdiroption="--srcdir=$${topdir}/libssp"; \
  	libsrcdir="$$s/libssp"; \
  	rm -f no-such-file || : ; \
@@ -82,7 +82,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -31922,7 +31922,7 @@ configure-target-newlib: 
+@@ -31923,7 +31923,7 @@ configure-target-newlib: 
  	srcdiroption="--srcdir=$${topdir}/newlib"; \
  	libsrcdir="$$s/newlib"; \
  	rm -f no-such-file || : ; \
@@ -91,7 +91,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -32378,7 +32378,7 @@ configure-target-libgcc: 
+@@ -32379,7 +32379,7 @@ configure-target-libgcc: 
  	srcdiroption="--srcdir=$${topdir}/libgcc"; \
  	libsrcdir="$$s/libgcc"; \
  	rm -f no-such-file || : ; \
@@ -100,7 +100,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -33357,7 +33357,7 @@ configure-target-libquadmath: 
+@@ -33358,7 +33358,7 @@ configure-target-libquadmath: 
  	srcdiroption="--srcdir=$${topdir}/libquadmath"; \
  	libsrcdir="$$s/libquadmath"; \
  	rm -f no-such-file || : ; \
@@ -109,7 +109,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -33814,7 +33814,7 @@ configure-target-libgfortran: 
+@@ -33815,7 +33815,7 @@ configure-target-libgfortran: 
  	srcdiroption="--srcdir=$${topdir}/libgfortran"; \
  	libsrcdir="$$s/libgfortran"; \
  	rm -f no-such-file || : ; \
@@ -118,7 +118,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -34271,7 +34271,7 @@ configure-target-libobjc: 
+@@ -34272,7 +34272,7 @@ configure-target-libobjc: 
  	srcdiroption="--srcdir=$${topdir}/libobjc"; \
  	libsrcdir="$$s/libobjc"; \
  	rm -f no-such-file || : ; \
@@ -127,7 +127,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -34728,7 +34728,7 @@ configure-target-libgo: 
+@@ -34729,7 +34729,7 @@ configure-target-libgo: 
  	srcdiroption="--srcdir=$${topdir}/libgo"; \
  	libsrcdir="$$s/libgo"; \
  	rm -f no-such-file || : ; \
@@ -136,7 +136,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -35185,7 +35185,7 @@ configure-target-libtermcap: 
+@@ -35186,7 +35186,7 @@ configure-target-libtermcap: 
  	srcdiroption="--srcdir=$${topdir}/libtermcap"; \
  	libsrcdir="$$s/libtermcap"; \
  	rm -f no-such-file || : ; \
@@ -145,7 +145,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -35577,7 +35577,7 @@ configure-target-winsup: 
+@@ -35578,7 +35578,7 @@ configure-target-winsup: 
  	srcdiroption="--srcdir=$${topdir}/winsup"; \
  	libsrcdir="$$s/winsup"; \
  	rm -f no-such-file || : ; \
@@ -154,7 +154,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -36034,7 +36034,7 @@ configure-target-libgloss: 
+@@ -36035,7 +36035,7 @@ configure-target-libgloss: 
  	srcdiroption="--srcdir=$${topdir}/libgloss"; \
  	libsrcdir="$$s/libgloss"; \
  	rm -f no-such-file || : ; \
@@ -163,7 +163,7 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  	  $(TARGET_CONFIGARGS) --build=${build_alias} --host=${target_alias} \
  	  --target=${target_alias} $${srcdiroption}  \
  	  || exit 1
-@@ -40211,7 +40211,7 @@ configure-target-libitm: 
+@@ -40212,7 +40212,7 @@ configure-target-libitm: 
  	srcdiroption="--srcdir=$${topdir}/libitm"; \
  	libsrcdir="$$s/libitm"; \
  	rm -f no-such-file || : ; \

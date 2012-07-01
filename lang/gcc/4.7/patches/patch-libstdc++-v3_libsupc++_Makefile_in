@@ -1,6 +1,6 @@
-$OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
---- libstdc++-v3/libsupc++/Makefile.in.orig	Fri Feb 17 21:26:32 2012
-+++ libstdc++-v3/libsupc++/Makefile.in	Mon Apr  2 17:00:38 2012
+$OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- libstdc++-v3/libsupc++/Makefile.in.orig	Tue Apr 17 02:19:12 2012
++++ libstdc++-v3/libsupc++/Makefile.in	Wed Jun 20 14:39:15 2012
 @@ -340,7 +340,7 @@ AM_CPPFLAGS = $(GLIBCXX_INCLUDES)
  # Need this library to both be part of libstdc++.a, and installed
  # separately too.
@@ -10,7 +10,7 @@ $OpenBSD: patch-libstdc++-v3_libsupc++_Makefile_in,v 1.1.1.1 2012/04/23 15:56:42
  # 2) integrated libsupc++convenience.la that is to be a part of libstdc++.a
  noinst_LTLIBRARIES = libsupc++convenience.la
  std_HEADERS = \
-@@ -555,7 +555,7 @@ clean-toolexeclibLTLIBRARIES:
+@@ -557,7 +557,7 @@ clean-toolexeclibLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/config/alpha/alpha.c.orig	Sun Jan 29 21:55:09 2012
-+++ gcc/config/alpha/alpha.c	Mon Apr  2 16:47:16 2012
+$OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- gcc/config/alpha/alpha.c.orig	Sun May 13 18:25:20 2012
++++ gcc/config/alpha/alpha.c	Wed Jun 20 14:39:11 2012
 @@ -421,11 +421,17 @@ alpha_option_override (void)
    if (!global_options_set.x_g_switch_value)
      g_switch_value = 8;
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Ex
  
    /* Align labels and loops for optimal branching.  */
    /* ??? Kludge these by not doing anything if we don't optimize and also if
-@@ -7599,6 +7605,9 @@ alpha_expand_prologue (void)
+@@ -7619,6 +7625,9 @@ alpha_expand_prologue (void)
    sa_size = alpha_sa_size ();
    frame_size = compute_frame_size (get_frame_size (), sa_size);
  
@@ -29,7 +29,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Ex
    if (flag_stack_usage_info)
      current_function_static_stack_size = frame_size;
  
-@@ -7637,6 +7646,8 @@ alpha_expand_prologue (void)
+@@ -7657,6 +7666,8 @@ alpha_expand_prologue (void)
    if (flag_stack_check)
      probed_size += STACK_CHECK_PROTECT;
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-gcc_config_alpha_alpha_c,v 1.1.1.1 2012/04/23 15:56:41 pascal Ex
    if (probed_size <= 32768)
      {
        if (probed_size > 4096)
-@@ -7829,6 +7840,44 @@ alpha_expand_prologue (void)
+@@ -7849,6 +7860,44 @@ alpha_expand_prologue (void)
  				           stack_pointer_rtx, sa_reg)));
  	}
      }

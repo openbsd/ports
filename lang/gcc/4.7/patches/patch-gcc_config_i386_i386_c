@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp $
---- gcc/config/i386/i386.c.orig	Tue Feb 28 16:28:32 2012
-+++ gcc/config/i386/i386.c	Mon Apr  2 16:38:17 2012
-@@ -2413,6 +2413,8 @@ struct ix86_frame
+$OpenBSD: patch-gcc_config_i386_i386_c,v 1.2 2012/07/01 18:56:45 pascal Exp $
+--- gcc/config/i386/i386.c.orig	Fri May 25 15:34:07 2012
++++ gcc/config/i386/i386.c	Wed Jun 20 14:39:11 2012
+@@ -2414,6 +2414,8 @@ struct ix86_frame
    HOST_WIDE_INT reg_save_offset;
    HOST_WIDE_INT sse_reg_save_offset;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp 
    /* When save_regs_using_mov is set, emit prologue using
       move instead of push instructions.  */
    bool save_regs_using_mov;
-@@ -8825,6 +8827,7 @@ ix86_compute_frame_layout (struct ix86_frame *frame)
+@@ -8820,6 +8822,7 @@ ix86_compute_frame_layout (struct ix86_frame *frame)
    HOST_WIDE_INT size = get_frame_size ();
    HOST_WIDE_INT to_allocate;
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-gcc_config_i386_i386_c,v 1.1.1.1 2012/04/23 15:56:42 pascal Exp 
    frame->nregs = ix86_nsaved_regs ();
    frame->nsseregs = ix86_nsaved_sseregs ();
  
-@@ -10152,6 +10155,9 @@ ix86_expand_prologue (void)
+@@ -10147,6 +10150,9 @@ ix86_expand_prologue (void)
        m->fs.sp_offset = INCOMING_FRAME_SP_OFFSET;
        m->fs.realigned = true;
      }
