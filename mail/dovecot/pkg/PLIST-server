@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.31 2012/06/08 22:04:10 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.32 2012/07/01 10:26:35 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -702,6 +702,7 @@ share/doc/dovecot/wiki/WhyDoesItNotWork.txt
 share/doc/dovecot/wiki/maildrop.txt
 share/doc/dovecot/wiki/mutt.txt
 share/doc/dovecot/wiki/uw2dovecot.sh.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dovecot/
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf

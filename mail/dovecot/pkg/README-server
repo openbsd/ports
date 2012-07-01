@@ -1,0 +1,27 @@
+$OpenBSD: README-server,v 1.1 2012/07/01 10:26:35 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, the _dovecot user, and so the Dovecot processes run in
+the login(1) class of "daemon". On a busy server, it may be advisable
+to put the _dovecot user and processes in their own login(1) class
+with tuned resources, such as more open file descriptors etc.
+
+For example, add this to the login.conf(5) file:
+
+       dovecot:\
+                :openfiles-cur=512:\
+                :openfiles-max=2048:\
+                :tc=daemon:
+
+Rebuild the login.conf.db file if necessary:
+
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+For larger servers these numbers and memory limits (e.g. datasize
+and stacksize) may also need to be increased. In particular, indexing
+emails for full-text search is likely to need an increased datasize.
+Please report any changes and experiences to the package maintainers
+so that we can update this file for future versions.
