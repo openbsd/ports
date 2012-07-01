@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/21 13:56:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/07/01 18:28:40 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -19,7 +19,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 
 REVISION-main = 3
-REVISION-c++ = 5
+REVISION-c++ = 6
 REVISION-estdc = 3
 REVISION-f95 = 3
 REVISION-java = 4
@@ -62,7 +62,8 @@ EXTRACT_ONLY =	${DISTNAME}.tar.bz2
 
 USE_LIBTOOL =	Yes
 
-BUILD_DEPENDS +=	devel/bison
+BUILD_DEPENDS +=	devel/bison \
+			devel/libexecinfo
 
 REGRESS_DEPENDS = 	devel/dejagnu \
 			devel/autogen
@@ -107,6 +108,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 EXTRA_ENV += am_cv_func_iconv=no JAR=no
 EXTRA_ENV += ac_cv_prog_M4=/usr/bin/m4
+EXTRA_ENV += ac_cv_header_magic_h=no
 MAKE_FLAGS +=	 ac_cv_path_mkdir=/bin/mkdir
 
 CONFIGURE_ENV += ${EXTRA_ENV}
