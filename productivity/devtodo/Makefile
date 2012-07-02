@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/05 07:57:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2012/07/02 09:01:41 jasper Exp $
 
 COMMENT=		reminder/task program aimed at developers
 
 DISTNAME=		devtodo-0.1.20
-REVISION=		0
+REVISION=		1
 CATEGORIES=		productivity devel
 
-HOMEPAGE=		http://swapoff.org/DevTodo/
+HOMEPAGE=		http://swapoff.org/devtodo1.html
 
 MASTER_SITES=		http://swapoff.org/files/devtodo/ \
 			http://spacehopper.org/mirrors/
@@ -17,14 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ncurses readline stdc++ 
+WANTLIB=		c m ncurses readline stdc++
 
 USE_LIBTOOL=		Yes
 USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 
 EXAMPLES=		doc/scripts.* doc/todorc.example contrib/*
-DOCS=			README QuickStart 
+DOCS=			README QuickStart
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/devtodo
