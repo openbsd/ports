@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/02 12:29:12 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/07/02 13:13:51 gonzalo Exp $
 @bin bin/aria2c
 @man man/man1/aria2c.1
 man/ru/
@@ -6,16 +6,11 @@ man/ru/man1/
 @man man/ru/man1/aria2c.1
 share/doc/aria2/
 share/doc/aria2/README
-share/doc/aria2/README.asciidoc
 share/doc/aria2/README.html
-share/doc/aria2/aria2c.1.asciidoc
-share/doc/aria2/aria2c.1.html
+share/doc/aria2/README.rst
 share/doc/aria2/bash_completion/
 share/doc/aria2/bash_completion/README.txt
 share/doc/aria2/bash_completion/aria2c
-share/doc/aria2/ru/
-share/doc/aria2/ru/aria2c.1.asciidoc
-share/doc/aria2/ru/aria2c.1.html
 share/doc/aria2/xmlrpc/
 share/doc/aria2/xmlrpc/README.txt
 share/doc/aria2/xmlrpc/aria2mon
