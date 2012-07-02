@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_socket_c,v 1.1 2012/01/14 12:43:25 sthen Exp $
---- common/socket.c.orig	Mon Jun 27 12:18:20 2011
-+++ common/socket.c	Fri Dec 23 14:14:40 2011
-@@ -717,6 +717,7 @@ ssize_t send_packet6(struct interface_info *interface,
+$OpenBSD: patch-common_socket_c,v 1.2 2012/07/02 10:59:03 sthen Exp $
+--- common/socket.c.orig	Fri Mar  9 06:28:11 2012
++++ common/socket.c	Sun Jun 10 00:12:59 2012
+@@ -718,6 +718,7 @@ ssize_t send_packet6(struct interface_info *interface,
  	/*
  	 * Set the target address we're sending to.
  	 */
@@ -9,7 +9,7 @@ $OpenBSD: patch-common_socket_c,v 1.1 2012/01/14 12:43:25 sthen Exp $
  	m.msg_name = to;
  	m.msg_namelen = sizeof(*to);
  
-@@ -747,7 +748,6 @@ ssize_t send_packet6(struct interface_info *interface,
+@@ -748,7 +749,6 @@ ssize_t send_packet6(struct interface_info *interface,
  	pktinfo = (struct in6_pktinfo *)CMSG_DATA(cmsg);
  	memset(pktinfo, 0, sizeof(*pktinfo));
  	pktinfo->ipi6_ifindex = if_nametoindex(interface->name);
