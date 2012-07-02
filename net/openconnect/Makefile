@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/28 15:43:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2012/07/02 15:20:15 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-4.02
+DISTNAME=	openconnect-4.03
 DIST_SUBDIR=	openconnect
 VPNC_SCRIPT=	vpnc-script
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${VPNC_SCRIPT}:0
