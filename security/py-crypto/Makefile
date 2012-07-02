@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/27 19:02:21 rpointel Exp $
+# $OpenBSD: Makefile,v 1.28 2012/07/02 16:36:33 mpi Exp $
 
 SHARED_ONLY =		Yes
 
@@ -45,7 +45,8 @@ pre-configure:
 	rm ${WRKSRC}/lib/Crypto/SelfTest/Hash/test_MD2.py
 
 do-configure:
-	${MODSIMPLE_configure}
+	cd ${WRKCONF} && ${SETENV} \
+		${CONFIGURE_ENV} ${_CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
