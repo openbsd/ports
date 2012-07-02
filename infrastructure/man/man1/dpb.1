@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.39 2012/04/10 17:00:29 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.40 2012/07/02 10:31:08 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 10 2012 $
+.Dd $Mdocdate: July 2 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -303,6 +303,11 @@ solves by preventing more than one job on a given host to be in the
 \&...
 .Ar junk
 stages at one time, by using a per-host lock.
+.Pp
+Defaults to
+.Ar 250 .
+Can be disabled by setting to
+.Ar 0 .
 .It Fl j Ar n
 Number of concurrent local jobs to run (defaults to hw.ncpu if no hosts file).
 .It Fl L Ar logdir
