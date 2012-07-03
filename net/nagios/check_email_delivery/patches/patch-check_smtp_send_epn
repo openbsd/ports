@@ -1,0 +1,54 @@
+$OpenBSD: patch-check_smtp_send_epn,v 1.1 2012/07/03 12:47:11 sthen Exp $
+
+- switch to Net::SMTP::TLS::ButMaintained instead of Net::SMTP::TLS
+- adapt to Net::SMTP::TLS' bad error handling
+
+--- check_smtp_send_epn.orig	Sun Feb 26 01:03:10 2012
++++ check_smtp_send_epn	Tue Jul  3 13:45:47 2012
+@@ -85,7 +85,7 @@ if( $smtp_server eq "" && scalar(@mailto) == 1 ) {
+ my @required_module = ();
+ push @required_module, 'Net::SMTP::SSL' if $ssl;
+ push @required_module, ('MIME::Base64','Authen::SASL') if $ssl && $username;
+-push @required_module, 'Net::SMTP::TLS' if $tls;
++push @required_module, 'Net::SMTP::TLS::ButMaintained' if $tls;
+ push @required_module, 'Net::SMTP_auth' if $auth_method and not $tls; # whereas if auth_method and tls we use TLS_auth, which is included in this script!
+ push @required_module, 'Text::Template' if $template;
+ push @required_module, 'Net::DNS' if $mx_lookup;
+@@ -154,11 +154,12 @@ eval {
+ 	}
+ 	elsif( $tls ) {
+ 		$smtp_port = $default_smtp_tls_port unless $smtp_port;
+-		$smtp = Net::SMTP::TLS->new($smtp_server, Timeout=>$timeout, Port=>$smtp_port, User=>$username, Password=>$password);
+-		if( $smtp ) {
+-			my $message = oneline($smtp->message());
+-			die "cannot connect with TLS: $message" if $smtp->code() =~ m/53\d/;
+-		}
++		$smtp = Net::SMTP::TLS::ButMaintained->new($smtp_server, Timeout=>$timeout, Port=>$smtp_port, User=>$username, Password=>$password);
++		# Net::SMTP::TLS error-handling is not the same as Net::SMTP...
++		#if( $smtp ) {
++		#	my $message = oneline($smtp->message());
++		#	die "cannot connect with TLS: $message" if $smtp->code() =~ m/53\d/;
++		#}
+ 	}
+ 	elsif( $ssl ) {
+ 		$smtp_port = $default_smtp_ssl_port unless $smtp_port;
+@@ -419,7 +420,7 @@ sub trim {
+ # Based on contribution by Brad Guillory
+ package TLS_auth;
+ #use Net::SMTP::TLS;
+-our @ISA = qw(Net::SMTP::TLS);
++our @ISA = qw(Net::SMTP::TLS::ButMaintained);
+ use Carp;
+ sub new {
+ 	my ($proto,$server,%p) = @_;
+@@ -427,8 +428,8 @@ sub new {
+ 	#my $self = bless {}, $class;
+ 	no strict 'refs';
+ 	no warnings 'once';
+-	*Net::SMTP::TLS::login = *TLS_auth::login;  # override parent's login with ours so when it's called in the constructor, our overriden version will be used
+-	my $self = Net::SMTP::TLS->new($server,%p);
++	*Net::SMTP::TLS::ButMaintained::login = *TLS_auth::login;  # override parent's login with ours so when it's called in the constructor, our overriden version will be used
++	my $self = Net::SMTP::TLS::ButMaintained->new($server,%p);
+ 	return $self;
+ }
+ 
