@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2012/06/26 08:20:48 pea Exp $
+# $OpenBSD: Makefile,v 1.43 2012/07/03 09:45:38 pea Exp $
 
 COMMENT=	powerful Gtk+2 newsreader
 
-V=		0.138
+V=		0.139
 DISTNAME=	pan-${V}
 CATEGORIES=	news x11
 
