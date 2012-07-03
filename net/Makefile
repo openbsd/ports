@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.757 2012/06/29 00:16:28 bluhm Exp $
+# $OpenBSD: Makefile,v 1.758 2012/07/03 12:48:11 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -334,7 +334,7 @@
      SUBDIR += p5-Net-SFTP
      SUBDIR += p5-Net-SFTP-Foreign
      SUBDIR += p5-Net-SMTP-SSL
-     SUBDIR += p5-Net-SMTP-TLS
+     SUBDIR += p5-Net-SMTP-TLS-ButMaintained
      SUBDIR += p5-Net-SMTP_auth
      SUBDIR += p5-Net-SNMP
      SUBDIR += p5-Net-SNPP
