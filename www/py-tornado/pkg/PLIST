@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/13 20:34:35 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/03 09:00:33 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.py
@@ -37,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/tornado/platform/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/auto.py
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/auto.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/platform/common.py
+lib/python${MODPY_VERSION}/site-packages/tornado/platform/common.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/interface.py
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/interface.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/platform/posix.py
@@ -77,6 +79,8 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/ioloop_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/ioloop_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/iostream_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/iostream_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/process_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/process_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/run_pyversion_tests.py
@@ -91,12 +95,16 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/static/
 lib/python${MODPY_VERSION}/site-packages/tornado/test/static/robots.txt
 lib/python${MODPY_VERSION}/site-packages/tornado/test/template_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/template_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/templates/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/templates/utf8.html
 lib/python${MODPY_VERSION}/site-packages/tornado/test/test.crt
 lib/python${MODPY_VERSION}/site-packages/tornado/test/test.key
 lib/python${MODPY_VERSION}/site-packages/tornado/test/testing_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/testing_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/twisted_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/twisted_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/util_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/util_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/web_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/web_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/wsgi_test.py
