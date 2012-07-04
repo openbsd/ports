@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile,v 1.1 2007/07/30 15:30:27 steven Exp $
+$OpenBSD: patch-Makefile,v 1.2 2012/07/04 18:10:06 stu Exp $
 --- Makefile.orig	Thu Jun 12 23:57:50 1997
 +++ Makefile	Sat Jul 28 12:55:51 2007
 @@ -26,14 +26,16 @@
@@ -16,7 +16,7 @@ $OpenBSD: patch-Makefile,v 1.1 2007/07/30 15:30:27 steven Exp $
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${TRUEPREFIX} --libdir ${TRUEPREFIX}/share/cbb  \
 +		--destdir ${PREFIX} --perlpath /usr/bin/perl \
-+		--wishpath ${LOCALBASE}/bin/wish8.4
++		--wishpath ${MODTK_BIN}
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/07/04 18:10:06 stu Exp $
 
 COMMENT=	checkbook balancing tool
 
 DISTNAME=	cbb-0.73
-REVISION=	5
+REVISION=	6
 CATEGORIES=	misc
-HOMEPAGE=	http://www.fifi.org/doc/cbb/html/
+HOMEPAGE=	http://gna.org/projects/cbb/
+MAINTAINER=	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,11 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MODULES=	x11/tk
-MODTK_VERSION=	8.4
 
 RUN_DEPENDS=	misc/plan \
 		${MODTK_RUN_DEPENDS}
 
+FAKE_FLAGS=	MODTK_BIN=${MODTK_BIN}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
