@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/20 22:21:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/04 12:47:50 ajacoutot Exp $
+
+BROKEN-powerpc=	Segmentation fault during build
 
 COMMENT =	coroutines for perl
 

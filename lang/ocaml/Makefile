@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2011/12/21 21:31:50 avsm Exp $
+# $OpenBSD: Makefile,v 1.55 2012/07/04 12:49:20 ajacoutot Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 
 NOT_FOR_ARCHS=	hppa
+
+BROKEN-powerpc=	build: Could not find the .cmi file for interface
 
 COMMENT=	ML language based on complete class-based objective system
 
