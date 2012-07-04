@@ -1,3 +1,4 @@
-# $OpenBSD: systrace.filter,v 1.1.1.1 2012/03/31 12:37:16 jsing Exp $
+# $OpenBSD: systrace.filter,v 1.2 2012/07/04 15:20:31 sthen Exp $
 # Go programs (including go_bootstrap) currently need sysarch().
 	native-sysarch: permit
+	native-compat_o51___tfork: permit
