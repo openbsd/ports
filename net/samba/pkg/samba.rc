@@ -1,8 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: samba.rc,v 1.4 2012/04/22 13:44:09 ajacoutot Exp $
+# $OpenBSD: samba.rc,v 1.5 2012/07/04 13:00:46 ajacoutot Exp $
 
-# "meta" script running the following rc.d(8) scripts with the given argument
+# "meta" script running the following rc.d(8) scripts with the given argument;
+# note that daemon_flags, daemon_user and daemon_class are not passed to
+# the child scripts.
 _pkg_scripts="smbd nmbd"
 
 set -A _s -- ${_pkg_scripts}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2012/06/27 07:29:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.166 2012/07/04 13:00:46 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-docs=		additional documentation and examples for Samba
 
 DISTNAME=		samba-3.6.6
 PKGNAME-main=		${DISTNAME}
+REVISION-main=		0
 FULLPKGNAME-docs=	${DISTNAME:S/-/-docs-/}
 FULLPKGPATH-docs=	net/samba,-docs
 
