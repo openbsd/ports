@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/23 15:32:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/04 12:37:15 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -865,6 +865,7 @@ owncloud/apps/contacts/ajax/loadphoto.php
 owncloud/apps/contacts/ajax/oc_photo.php
 owncloud/apps/contacts/ajax/savecrop.php
 owncloud/apps/contacts/ajax/saveproperty.php
+owncloud/apps/contacts/ajax/selectaddressbook.php
 owncloud/apps/contacts/ajax/updateaddressbook.php
 owncloud/apps/contacts/ajax/uploadimport.php
 owncloud/apps/contacts/ajax/uploadphoto.php
@@ -974,6 +975,7 @@ owncloud/apps/contacts/templates/part.editaddressbook.php
 owncloud/apps/contacts/templates/part.import.php
 owncloud/apps/contacts/templates/part.importaddressbook.php
 owncloud/apps/contacts/templates/part.no_contacts.php
+owncloud/apps/contacts/templates/part.selectaddressbook.php
 owncloud/apps/contacts/templates/settings.php
 owncloud/apps/contacts/thumbnail.php
 owncloud/apps/external/
