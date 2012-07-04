@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/13 08:54:02 steven Exp $
-include/libpgtcl.h
-lib/pgtcl1.5/
-@lib lib/pgtcl1.5/libpgtcl.so.${LIBpgtcl_VERSION}
-lib/pgtcl1.5/pgtcl.tcl
-lib/pgtcl1.5/pkgIndex.tcl
+@comment $OpenBSD: PLIST,v 1.2 2012/07/04 19:23:46 stu Exp $
+lib/tcl/pgtcl/
+@lib lib/tcl/pgtcl/libpgtcl17.so.${LIBpgtcl17_VERSION}
+lib/tcl/pgtcl/pgtcl.tcl
+lib/tcl/pgtcl/pkgIndex.tcl
 share/doc/pgtcl/
 share/doc/pgtcl/html/
 share/doc/pgtcl/html/index.html
@@ -12,6 +11,7 @@ share/doc/pgtcl/html/libpgtcl-ref.html
 share/doc/pgtcl/html/libpgtcl.html
 share/doc/pgtcl/html/pgtcl-commandhandles.html
 share/doc/pgtcl/html/pgtcl-examplesect.html
+share/doc/pgtcl/html/pgtcl-nullvaluestring.html
 share/doc/pgtcl/html/pgtcl-pgblocking.html
 share/doc/pgtcl/html/pgtcl-pgcancelrequest.html
 share/doc/pgtcl/html/pgtcl-pgconndefaults.html
@@ -38,7 +38,6 @@ share/doc/pgtcl/html/pgtcl-pglounlink.html
 share/doc/pgtcl/html/pgtcl-pglowrite.html
 share/doc/pgtcl/html/pgtcl-pgon-connection-loss.html
 share/doc/pgtcl/html/pgtcl-pgresult.html
-share/doc/pgtcl/html/pgtcl-pgresults.html
 share/doc/pgtcl/html/pgtcl-pgselect.html
 share/doc/pgtcl/html/pgtcl-pgsendquery.html
 share/doc/pgtcl/html/pgtcl-pgsendqueryprepared.html

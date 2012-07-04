@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/07/04 19:23:46 stu Exp $
 
 SHARED_ONLY=	Yes
  
 COMMENT=	Tcl interface to PostgreSQL
 
-V=		1.5
-DISTNAME=	pgtcl$V
-PKGNAME=	pgtcl-$V
-REVISION =	3
-SHARED_LIBS= 	pgtcl	0.0
+DISTNAME=	pgtcl-1.7
+SHARED_LIBS= 	pgtcl17	0.0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pgfoundry.org/projects/pgtcl/
@@ -21,25 +18,30 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/338/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2151/
 
 MODULES=	lang/tcl
 
-MODTCL_VERSION=	8.4
 LIB_DEPENDS=	databases/postgresql  
 RUN_DEPENDS=	${MODTCL_RUN_DEPENDS}
-BUILD_DEPENDS=	${RUN_DEPENDS}
-WANTLIB +=	pq>=5
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
+WANTLIB +=	pq>=5 ${MODTCL_WANTLIB}
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-tcl=${MODTCL_LIBDIR} \
-		--with-tclinclude=${MODTCL_INCDIR} \
+		--libdir=${MODTCL_TCLDIR} \
 		--with-postgres-include=${LOCALBASE}/include/postgresql \
-		--with-postgres-lib=${LOCALBASE}/lib
+		--with-postgres-lib=${LOCALBASE}/lib \
+		--disable-threads \
+		SHLIB_VERSION=${LIBpgtcl17_VERSION}
 
-MAKE_FLAGS=	PKG_LIB_FILE=libpgtcl.so.${LIBpgtcl_VERSION}
+FAKE_FLAGS=	PKG_DIR=pgtcl INSTALL_LIBRARY='${INSTALL_DATA}' PKG_HEADERS=
 NO_REGRESS=	Yes
+WRKDIST =	${WRKDIR}/lib${DISTNAME}
+ALL_TARGET =	 binaries libraries
+INSTALL_TARGET =install-binaries install-libraries
+SEPARATE_BUILD =Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pgtcl/html
