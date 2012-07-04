@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/12 21:39:40 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/07/04 18:38:36 stu Exp $
 bin/cm2rem.tcl
 bin/rem
-bin/rem2ps
-bin/remind
+@bin bin/rem2ps
+@bin bin/remind
 bin/tkremind
 @man man/man1/cm2rem.1
 @man man/man1/rem.1

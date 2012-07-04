@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2012/07/04 18:38:36 stu Exp $
 
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-03.01.03
-PKGNAME=	remind-3.1.3
-REVISION=	0
+DISTNAME=	remind-03.01.12
+PKGNAME=	remind-3.1.12
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/
@@ -20,18 +19,20 @@ PERMIT_DISTFILES_FTP=   Yes
 
 WANTLIB=		c m
 
-# Can run without TK, but most unglamorous without it.
-RUN_DEPENDS=	x11/tk/8.4 \
+MODULES=		x11/tk
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS} \
 		devel/tcllib
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE=	gnu
+
+REGRESS_TARGET=		test
+
+pre-configure:
+	${MODTCL_WISH_ADJ}  ${WRKSRC}/scripts/tkremind
+	${MODTCL_TCLSH_ADJ} ${WRKSRC}/scripts/cm2rem.tcl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/remind
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/remind
-
-do-regress:
-	cd ${WRKSRC}/tests; sh test-rem
 
 .include <bsd.port.mk>
