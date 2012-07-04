@@ -1,0 +1,17 @@
+$OpenBSD: patch-cyphertite_ct_crypto_c,v 1.1 2012/07/04 15:47:45 sthen Exp $
+
+Now hidden behind __XPG_VISIBLE
+
+--- cyphertite/ct_crypto.c.orig	Wed Jul  4 16:44:54 2012
++++ cyphertite/ct_crypto.c	Wed Jul  4 16:44:59 2012
+@@ -38,10 +38,8 @@
+ #include "ct.h"
+ 
+ 
+-#ifdef __linux__
+ #ifndef PASS_MAX
+ #define PASS_MAX		(1024)
+-#endif
+ #endif
+ 
+ const EVP_CIPHER *EVP_aes_xts(void);
