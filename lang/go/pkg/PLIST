@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/05/20 16:32:51 jsing Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/07/04 15:18:39 jsing Exp $
 %%amd64%%
 %%i386%%
 bin/go
@@ -1441,6 +1441,7 @@ go/src/pkg/fmt/stringer_test.go
 go/src/pkg/go/
 go/src/pkg/go/ast/
 go/src/pkg/go/ast/ast.go
+go/src/pkg/go/ast/ast_test.go
 go/src/pkg/go/ast/example_test.go
 go/src/pkg/go/ast/filter.go
 go/src/pkg/go/ast/import.go
@@ -2542,6 +2543,7 @@ go/src/pkg/syscall/syscall_unix.go
 go/src/pkg/syscall/syscall_windows.go
 go/src/pkg/syscall/syscall_windows_386.go
 go/src/pkg/syscall/syscall_windows_amd64.go
+go/src/pkg/syscall/syscall_windows_test.go
 go/src/pkg/syscall/types_darwin.go
 go/src/pkg/syscall/types_freebsd.go
 go/src/pkg/syscall/types_linux.go
