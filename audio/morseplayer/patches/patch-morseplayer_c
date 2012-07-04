@@ -1,5 +1,6 @@
---- morseplayer.c.old	Fri Dec 11 00:18:56 2009
-+++ morseplayer.c	Fri Dec 11 00:26:36 2009
+$OpenBSD: patch-morseplayer_c,v 1.2 2012/07/04 14:39:08 naddy Exp $
+--- morseplayer.c.orig	Tue Jan 10 20:25:45 2006
++++ morseplayer.c	Wed Jul  4 16:36:40 2012
 @@ -32,9 +32,6 @@
   *  April 1990 (http://www.arrl.org/files/infoserv/tech/code-std.txt)
   */
@@ -10,7 +11,7 @@
  #include <sys/queue.h>
  #include <sys/poll.h>
  #include <string.h>
-@@ -42,6 +39,7 @@
+@@ -42,12 +39,13 @@
  #include <err.h>
  #include <unistd.h>
  #include <math.h>
@@ -18,6 +19,13 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <sysexits.h>
+ #include <errno.h>
+ #include <ctype.h>
+-#include <limits.h>
++#include <float.h>
+ 
+ #ifndef BYTE_ORDER
+ #error "no byte order defined"
 @@ -72,6 +70,7 @@ struct play_head {
  };
  
