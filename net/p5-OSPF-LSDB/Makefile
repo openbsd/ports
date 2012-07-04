@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/29 00:10:28 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/04 08:25:45 bluhm Exp $
 
 COMMENT =		ospf link-state database viewer
 
-DISTNAME =		OSPF-LSDB-1.01
+DISTNAME =		OSPF-LSDB-1.02
 
 CATEGORIES =		net
 
@@ -21,8 +21,7 @@ RUN_DEPENDS =		devel/p5-Data-Validate \
 			devel/p5-List-MoreUtils \
 			textproc/p5-Regexp-Common \
 			devel/p5-Regexp-IPv6 \
-			devel/p5-YAML-Syck \
-			math/graphviz,-main
+			devel/p5-YAML-Syck
 REGRESS_DEPENDS =	devel/p5-Test-NoWarnings \
 			devel/p5-Test-Pod \
 			devel/p5-Test-Strict
