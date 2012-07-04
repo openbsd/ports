@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/11/26 10:55:17 ajacoutot Exp $
-@lib lib/libbotan-1.10.so.${LIBbotan-1.10_VERSION}
