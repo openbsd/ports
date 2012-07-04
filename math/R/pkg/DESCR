@@ -1,12 +1,11 @@
-R is a clone of The New S Language by Becker, Chambers, and Wilks of AT&T.
-A comprehensive statistics package with a full scripting language, many
-statistical operators, load/save, extensive help, graphical capabilities 
-including X11, PostScript, HP and other devices. Ideal for interactive
-exploration of data.
+R is a language and environment for statistical computing and graphics.
+It is a GNU project which is similar to the S language and environment
+which was developed at Bell Laboratories (formerly AT&T, now Lucent
+Technologies) by John Chambers and colleagues. R can be considered as a
+different implementation of S. There are some important differences, but
+much code written for S runs unaltered under R.
 
-Once you've installed R, you can start it just by typing R. There is
-extensive online documentation; you can start with help() (note that almost 
-every S command or function has parentheses after it, so you type
-help(A) for info about A).
-
-If you have S users onsite, you may want to "cd ${LOCALBASE}/bin; ln -s R S"
+R provides a wide variety of statistical (linear and nonlinear
+modelling, classical statistical tests, time-series analysis,
+classification, clustering, ...) and graphical techniques, and is highly
+extensible.

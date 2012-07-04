@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_main_platform_c,v 1.4 2012/07/04 12:38:06 dcoppa Exp $
+
+Allow building with USE_SYSTRACE=Yes
+
+--- src/main/platform.c.orig	Fri Mar  2 00:02:25 2012
++++ src/main/platform.c	Thu Jun 28 16:23:49 2012
+@@ -2185,18 +2185,24 @@ SEXP attribute_hidden do_dircreate(SEXP call, SEXP op,
+ 	    res = mkdir(dir, mode);
+ 	    /* Solaris 10 returns ENOSYS on automount, PR#13834
+ 	       EROFS is allowed by POSIX, so we skip that too */
++	    /* EPERM added for systrace builds */
+ 	    serrno = errno;
+-	    if (res && serrno != EEXIST && serrno != ENOSYS && serrno != EROFS) 
++	    if (res && serrno != EEXIST && serrno != ENOSYS &&
++		serrno != EROFS && serrno != EPERM)
+ 		goto end;
+ 	    *p = '/';
+ 	}
+     }
+     res = mkdir(dir, mode);
+     serrno = errno;
+-    if (show && res && serrno == EEXIST)
+-	warning(_("'%s' already exists"), dir);
++    if (show && res) {
++	if (serrno == EEXIST)
++	    warning(_("'%s' already exists"), dir);
++	if (serrno == EPERM)
++	    warning(_("'%s' permissions problem"), dir);
++    }
+ end:
+-    if (show && res && serrno != EEXIST)
++    if (show && res && serrno != EEXIST && serrno != EPERM)
+ 	warning(_("cannot create dir '%s', reason '%s'"), dir,
+ 		strerror(serrno));
+     return ScalarLogical(res == 0);

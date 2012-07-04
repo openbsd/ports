@@ -1,0 +1,11 @@
+$OpenBSD: patch-etc_Makeconf_in,v 1.1 2012/07/04 12:38:06 dcoppa Exp $
+--- etc/Makeconf.in.orig	Thu Jun 28 12:49:39 2012
++++ etc/Makeconf.in	Thu Jun 28 12:49:47 2012
+@@ -22,7 +22,6 @@ CXX = @CXX@
+ CXXCPP = @CXXCPP@
+ CXXFLAGS = @CXXFLAGS@ $(LTO)
+ CXXPICFLAGS = @CXXPICFLAGS@
+-DYLIB_EXT = @DYLIB_EXT@
+ DYLIB_LD = @DYLIB_LD@
+ DYLIB_LDFLAGS = @DYLIB_LDFLAGS@@BUILD_LTO_TRUE@ $(CFLAGS) $(CPICFLAGS)
+ DYLIB_LINK = $(DYLIB_LD) $(DYLIB_LDFLAGS) $(LDFLAGS)

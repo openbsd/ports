@@ -1,0 +1,75 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2012/07/04 12:38:05 dcoppa Exp $
+
+Do not build PDF versions of the R manuals
+
+--- Makefile.in.orig	Mon Oct  3 00:02:39 2011
++++ Makefile.in	Thu Jun 28 12:57:12 2012
+@@ -90,7 +90,7 @@ install install-strip: installdirs svnonly
+ 	@for f in $(INSTFILES); do \
+ 	  $(INSTALL_DATA) $(srcdir)/$${f} "$(DESTDIR)$(rhome)"; \
+ 	done
+-	@for f in NEWS NEWS.pdf $(NON_SVN_INSTFILES); do \
++	@for f in NEWS $(NON_SVN_INSTFILES); do \
+ 	  $(INSTALL_DATA) $${f} "$(DESTDIR)$(rhome)"; \
+ 	done
+ @WANT_R_FRAMEWORK_TRUE@		$(MAKE) -f $(srcdir)/Makefile.fw top_srcdir=$(top_srcdir) $@
+@@ -112,7 +112,7 @@ svnonly:
+ 	  fi \
+ 	fi
+ 
+-libR_la = lib/libR$(DYLIB_EXT)
++libR_la = lib/libR.so.$(LIBR_VERSION)
+ install-libR:
+ 	@if test -f $(libR_la); then $(MAKE) install-libR-exists; fi
+ install-libR-exists:
+@@ -124,13 +124,13 @@ installdirs:
+ uninstall:
+ 	@(for d in $(SUBDIRS); do rsd="$${d} $${rsd}"; done; \
+ 	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
+-	@for f in NEWS NEWS.pdf $(INSTFILES) $(NON_SVN_INSTFILES); do \
++	@for f in NEWS  $(INSTFILES) $(NON_SVN_INSTFILES); do \
+ 	  rm -f "$(DESTDIR)$(rhome)/$${f}"; \
+ 	done
+ 	@rm -rf "$(DESTDIR)$(Rexecbindir)" "$(DESTDIR)$(rhome)/lib"
+ 	@rmdir "$(DESTDIR)$(rhome)" 2>/dev/null \
+           || $(ECHO) "  dir $(DESTDIR)$(rhome) not removed"
+-	@rm -f "$(DESTDIR)${libdir}/libR$(DYLIB_EXT)"
++	@rm -f "$(DESTDIR)${libdir}/libR.so.$(LIBR_VERSION)"
+ 
+ mostlyclean: clean
+ clean:
+@@ -144,7 +144,7 @@ distclean: clean
+ 	  for d in $${rsd}; do (cd $${d} && $(MAKE) $@); done)
+ 	-@rm -rf bin include lib library modules gnome
+ 	@if test -f non-tarball ; then \
+-	  rm -f $(NON_SVN_INSTFILES) NEWS NEWS.pdf non-tarball doc/FAQ doc/RESOURCES doc/html/resources.html doc/html/NEWS.html; \
++	  rm -f $(NON_SVN_INSTFILES) NEWS non-tarball doc/FAQ doc/RESOURCES doc/html/resources.html doc/html/NEWS.html; \
+ 	fi
+ 	@if test "$(BUILDDIR_IS_SRCDIR)" = no ; then \
+ 	  rm -f $(NON_SVN_INSTFILES); \
+@@ -181,7 +181,7 @@ distdir: $(DISTFILES) vignettes
+ 	    || ln $(srcdir)/$${f} $(distdir)/$${f} 2>/dev/null \
+ 	    || cp -p $(srcdir)/$${f} $(distdir)/$${f}; \
+ 	done
+-	@for f in NEWS NEWS.pdf $(NON_SVN_INSTFILES) ; do \
++	@for f in NEWS  $(NON_SVN_INSTFILES) ; do \
+ 	  cp -p $${f} $(distdir)/$${f}; \
+ 	done
+ 	@for d in $(SUBDIRS); do \
+@@ -199,16 +199,8 @@ distdir: $(DISTFILES) vignettes
+ 	done
+ 	@for d in grid parallel utils; do \
+ 	  mkdir -p $(distdir)/src/library/$${d}/inst/doc; \
+-	  cp library/$${d}/doc/*.pdf $(distdir)/src/library/$${d}/inst/doc; \
+ 	done
+ 	@(cd $(distdir); tools/link-recommended)
+-
+-info pdf:
+-	-@(cd doc && $(MAKE) $@)
+-install-info install-pdf:
+-	-@(cd doc/manual && $(MAKE) $@)
+-uninstall-info uninstall-pdf:
+-	-@(cd doc/manual && $(MAKE) $@)
+ 
+ install-tests:
+ 	-@(cd tests && $(MAKE) $@)

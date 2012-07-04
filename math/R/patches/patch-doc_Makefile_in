@@ -1,0 +1,45 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2012/07/04 12:38:05 dcoppa Exp $
+
+Do not build PDF versions of the R manuals
+
+--- doc/Makefile.in.orig	Mon May 21 22:42:40 2012
++++ doc/Makefile.in	Mon May 21 22:42:36 2012
+@@ -34,7 +34,7 @@ R: Makefile svnonly
+ 	  $(MAKE) rdocdir=$(top_builddir)/doc install-sources; \
+ 	fi
+ 
+-docs: R.1 NEWS.rds ../NEWS html/NEWS.html ../NEWS.pdf
++docs: R.1 NEWS.rds ../NEWS html/NEWS.html
+ 	@(cd manual && $(MAKE) $@)
+ 
+ R.1:
+@@ -52,19 +52,6 @@ NEWS.rds: $(srcdir)/NEWS.Rd
+ html/NEWS.html: NEWS.rds
+ 	@$(ECHO) 'options(warn=1);tools:::Rd2HTML_NEWS_in_Rd("NEWS.rds", "html/NEWS.html")' |  $(R_EXE)
+ 
+-PDFLATEX = @PDFLATEX@
+-## needs pdflatex (and more)
+-## Need LC_COLLATE to work around the misuse of [A-z] in texi2dvi 1.135
+-## (as reported by MM)
+-../NEWS.pdf: NEWS.rds
+-	@if test -z "$(PDFLATEX)"; then \
+-	  $(ECHO) "'pdflatex' is needed to make NEWS.pdf but is missing on your system."; \
+-	else \
+-	 $(ECHO) "creating NEWS.pdf"; \
+-	 $(ECHO) 'options(warn=1);tools:::Rd2pdf_NEWS_in_Rd("NEWS.rds", "../NEWS.pdf")' |  LC_COLLATE=C $(R_EXE); \
+-	fi
+-
+-
+ install: install-message installdirs install-sources install-sources2 install-man
+ 	@for d in $(SUBDIRS); do \
+ 	  (cd $${d} && $(MAKE) $@) || exit 1; \
+@@ -107,9 +94,6 @@ uninstall:
+ 	    || $(ECHO) "  subdir $(DESTDIR)$(subdir) not removed"; \
+ 	fi
+ 	@rm -f $(DESTDIR)$(mandir)/man1/R.1 $(DESTDIR)$(mandir)/man1/Rscript.1
+-
+-dvi info pdf::
+-	@(cd manual && $(MAKE) $@)
+ 
+ mostlyclean:
+ clean:

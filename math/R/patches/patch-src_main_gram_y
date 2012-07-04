@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_gram_y,v 1.5 2008/10/26 23:04:00 mbalmer Exp $
---- src/main/gram.y.orig	Tue Oct  7 02:05:09 2008
-+++ src/main/gram.y	Sat Oct 25 22:43:34 2008
-@@ -99,7 +99,7 @@ static PROTECT_INDEX srindex;
+$OpenBSD: patch-src_main_gram_y,v 1.6 2012/07/04 12:38:06 dcoppa Exp $
+--- src/main/gram.y.orig	Wed Jan 11 00:05:03 2012
++++ src/main/gram.y	Thu May 24 17:38:12 2012
+@@ -127,7 +127,7 @@ static PROTECT_INDEX srindex;
  
  static int mbcs_get_next(int c, wchar_t *wc)
  {

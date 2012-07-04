@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_scripts_config,v 1.1 2012/07/04 12:38:06 dcoppa Exp $
+--- src/scripts/config.orig	Thu Jun 28 12:49:54 2012
++++ src/scripts/config	Thu Jun 28 12:50:08 2012
+@@ -56,7 +56,6 @@ Variables:
+   CXXFLAGS      C++ compiler flags
+   CXXPICFLAGS   special flags for compiling C++ code to be turned into a
+ 		shared library
+-  DYLIB_EXT	file extension (including '.') for dynamic libraries
+   DYLIB_LD      command for linking dynamic libraries which contain
+ 		object files from a C or Fortran compiler only
+   DYLIB_LDFLAGS
+@@ -193,7 +192,7 @@ done
+ 
+ ok_c_vars="CC CFLAGS CPICFLAGS CPP CPPFLAGS"
+ ok_cxx_vars="CXX CXXCPP CXXFLAGS CXXPICFLAGS"
+-ok_dylib_vars="DYLIB_EXT DYLIB_LD DYLIB_LDFLAGS"
++ok_dylib_vars="DYLIB_LD DYLIB_LDFLAGS"
+ ok_objc_vars="OBJC OBJCFLAGS"
+ ok_java_vars="JAVA JAVAC JAVAH JAR JAVA_HOME JAVA_LIBS JAVA_CPPFLAGS"
+ ok_f77_vars="F77 FFLAGS FPICFLAGS FLIBS SAFE_FFLAGS FC FCFLAGS FCPICFLAGS"

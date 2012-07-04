@@ -1,7 +1,14 @@
-$OpenBSD: patch-configure,v 1.11 2012/01/23 10:34:27 dcoppa Exp $
---- configure.orig	Thu Dec 18 15:03:48 2008
-+++ configure	Thu Jan 19 14:38:44 2012
-@@ -31142,7 +31142,7 @@ echo "$as_me: WARNING: Use of flat namespace is reques
+$OpenBSD: patch-configure,v 1.12 2012/07/04 12:38:05 dcoppa Exp $
+
+Fix libpthread linking (-lpthread -> -pthread)
+
+Fix "--export-dynamic" linker flag
+
+Fix linking with external libintl
+
+--- configure.orig	Fri Jun 15 00:05:51 2012
++++ configure	Fri Jun 29 12:39:52 2012
+@@ -26322,7 +26322,7 @@ $as_echo "$as_me: WARNING: Use of flat namespace is re
    openbsd*)
      ## looks like ${wl} is not defined here.  Perhaps in libtool code?
      if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`"; then
@@ -10,52 +17,86 @@ $OpenBSD: patch-configure,v 1.11 2012/01/23 10:34:27 dcoppa Exp $
        shlib_ldflags="-shared -fPIC"
      fi
      ;;
-@@ -52736,13 +52736,13 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+@@ -26513,13 +26513,6 @@ case "${host_os}" in
+       LAPACK_LDFLAGS="+s"
+     fi
+     ;;
+-  openbsd*)
+-    PACKAGE_VERSION_MAJOR=`echo "${PACKAGE_VERSION}" | \
+-      sed -e "s/\.//" -e "s/\..*$//"`
+-    PACKAGE_VERSION_MINOR=`echo "${PACKAGE_VERSION}" | \
+-      sed -e "s/.*\.\([^.][^.]*$\)/\1/"`
+-    DYLIB_EXT=".so.${PACKAGE_VERSION_MAJOR}.${PACKAGE_VERSION_MINOR}"
+-    ;;
+ esac
+ 
+ if test -z "${DYLIB_LD}"; then
+@@ -35051,8 +35044,8 @@ See config.log for details.
+ Do NOT set JAVA_LIBS/JAVA_CPPFLAGS unless you are sure they are correct!
+ Java/JNI support is optional unless you set either JAVA_LIBS or JAVA_CPPFLAGS." "$LINENO" 5
+     fi
+-    ## some OSes/Javas need -lpthread
+-    LIBS="${LIBS} -lpthread"
++    ## some OSes/Javas need -pthread
++    LIBS="${LIBS} -pthread"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -35081,7 +35074,7 @@ fi
+ $as_echo "$r_cv_jni" >&6; }
+     ##AC_MSG_RESULT([$r_cv_jni])
+     if test "${r_cv_jni}" = "yes (with pthreads)"; then
+-      JAVA_LIBS0="${JAVA_LIBS0} -lpthread"
++      JAVA_LIBS0="${JAVA_LIBS0} -pthread"
+     fi
+ 
+     # cache all detected flags
+@@ -39791,13 +39784,13 @@ rm -f core conftest.err conftest.$ac_objext \
          if test -n "$gl_have_pthread"; then
            # The program links fine without libpthread. But it may actually
            # need to link with libpthread in order to create multiple threads.
--          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
--echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
-+          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
-+echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
+-$as_echo_n "checking for pthread_kill in -lpthread... " >&6; }
++          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -pthread" >&5
++$as_echo_n "checking for pthread_kill in -pthread... " >&6; }
+ if ${ac_cv_lib_pthread_pthread_kill+:} false; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -52806,7 +52806,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_kill" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
- if test $ac_cv_lib_pthread_pthread_kill = yes; then
++LIBS="-pthread $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -39836,7 +39829,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; then :
 -  LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
 +  LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
               # On Solaris and HP-UX, most pthread functions exist also in libc.
               # Therefore pthread_in_use() needs to actually try to create a
               # thread: pthread_create from libc will fail, whereas
-@@ -52824,13 +52824,13 @@ fi
+@@ -39852,13 +39845,13 @@ fi
  
          else
            # Some library is needed. Try libpthread and libc_r.
--          { echo "$as_me:$LINENO: checking for pthread_kill in -lpthread" >&5
--echo $ECHO_N "checking for pthread_kill in -lpthread... $ECHO_C" >&6; }
-+          { echo "$as_me:$LINENO: checking for pthread_kill in -pthread" >&5
-+echo $ECHO_N "checking for pthread_kill in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
+-$as_echo_n "checking for pthread_kill in -lpthread... " >&6; }
++          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -pthread" >&5
++$as_echo_n "checking for pthread_kill in -pthread... " >&6; }
+ if ${ac_cv_lib_pthread_pthread_kill+:} false; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -52895,8 +52895,8 @@ fi
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_kill" >&6; }
- if test $ac_cv_lib_pthread_pthread_kill = yes; then
++LIBS="-pthread $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -39898,8 +39891,8 @@ fi
+ $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_kill" = xyes; then :
    gl_have_pthread=yes
 -             LIBTHREAD=-lpthread LTLIBTHREAD=-lpthread
 -             LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
@@ -64,21 +105,23 @@ $OpenBSD: patch-configure,v 1.11 2012/01/23 10:34:27 dcoppa Exp $
  fi
  
            if test -z "$gl_have_pthread"; then
-@@ -60283,7 +60283,7 @@ LIBTHREAD!$LIBTHREAD$ac_delim
- LTLIBTHREAD!$LTLIBTHREAD$ac_delim
- LIBMULTITHREAD!$LIBMULTITHREAD$ac_delim
- LTLIBMULTITHREAD!$LTLIBMULTITHREAD$ac_delim
--LIBICONV!$LIBICONV$ac_delim
-+LIBICONV!$LTLIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
- INTLBISON!$INTLBISON$ac_delim
- GLIBC21!$GLIBC21$ac_delim
-@@ -60302,7 +60302,7 @@ GENCAT!$GENCAT$ac_delim
- INTLOBJS!$INTLOBJS$ac_delim
- INTL_LIBTOOL_SUFFIX_PREFIX!$INTL_LIBTOOL_SUFFIX_PREFIX$ac_delim
- INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- XTRA_INTL_CPPFLAGS!$XTRA_INTL_CPPFLAGS$ac_delim
+@@ -42485,7 +42478,7 @@ else
+   gt_save_CPPFLAGS="$CPPFLAGS"
+             CPPFLAGS="$CPPFLAGS $INCINTL"
+             gt_save_LIBS="$LIBS"
+-            LIBS="$LIBS $LIBINTL"
++            LIBS="$LIBS $LTLIBINTL"
+                         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <libintl.h>
+@@ -42642,8 +42635,8 @@ $as_echo "$gt_source" >&6; }
+       if { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; }; then
+         { $as_echo "$as_me:${as_lineno-$LINENO}: checking how to link with libintl" >&5
+ $as_echo_n "checking how to link with libintl... " >&6; }
+-        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LIBINTL" >&5
+-$as_echo "$LIBINTL" >&6; }
++        { $as_echo "$as_me:${as_lineno-$LINENO}: result: $LTLIBINTL" >&5
++$as_echo "$LTLIBINTL" >&6; }
+ 
+   for element in $INCINTL; do
+     haveit=

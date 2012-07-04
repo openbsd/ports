@@ -1,0 +1,11 @@
+$OpenBSD: patch-Makeconf_in,v 1.1 2012/07/04 12:38:05 dcoppa Exp $
+--- Makeconf.in.orig	Thu Jun 28 12:48:22 2012
++++ Makeconf.in	Thu Jun 28 12:48:31 2012
+@@ -22,7 +22,6 @@ CPICFLAGS = @CPICFLAGS@
+ CPPFLAGS = @CPPFLAGS@
+ DEFS = @DEFS@ @R_DEFS@
+ DISTDIR_TAR_EXCLUDE = --exclude=.svn --exclude=Makefile --exclude="*.o" --exclude="*$(SHLIB_EXT)" --exclude="*~"
+-DYLIB_EXT = @DYLIB_EXT@
+ DYLIB_LD = @DYLIB_LD@
+ DYLIB_LDFLAGS = @DYLIB_LDFLAGS@@BUILD_LTO_TRUE@ $(DYLIBS_LTO)
+ DYLIB_LINK = $(DYLIB_LD) $(DYLIB_LDFLAGS) $(LDFLAGS)

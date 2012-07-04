@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_appl_Makefile_in,v 1.1 2012/07/04 12:38:06 dcoppa Exp $
+--- src/appl/Makefile.in.orig	Thu Jun 28 12:57:43 2012
++++ src/appl/Makefile.in	Thu Jun 28 12:58:09 2012
+@@ -50,7 +50,7 @@ DISTFILES = COPYRIGHT COPYRIGHT.ftn README \
+ @WANT_R_SHLIB_TRUE@ALL_CFLAGS = $(ALL_CFLAGS_LO)
+ @WANT_R_SHLIB_TRUE@ALL_FFLAGS = $(ALL_FFLAGS_LO)
+ 
+-Rblas_la = libRblas$(DYLIB_EXT)
++Rblas_la = libRblas.so.$(LIBRblas_VERSION)
+ Rblas_la_LIBADD = @DYLIB_UNDEFINED_ALLOWED_FALSE@ -flat_namespace -undefined suppress
+ 
+ all: Makefile Makedeps R
