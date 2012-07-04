@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Signature.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Signature.pm,v 1.3 2012/07/04 08:59:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -91,11 +91,7 @@ sub new
 sub run
 {
 	my ($self, $core) = @_;
-	if (defined $core->{shell}) {
-		$core->{shell}->run("ls $self->{dir}");
-	} else {
-		exec {"/bin/ls"} ("ls", $self->{dir});
-	}
+	$core->shell->exec("/bin/ls", $self->{dir});
 }
 
 sub process

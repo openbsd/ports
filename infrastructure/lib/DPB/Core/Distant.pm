@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.2 2011/12/04 12:05:41 espie Exp $
+# $OpenBSD: Distant.pm,v 1.3 2012/07/04 08:59:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,6 +20,7 @@ use warnings;
 use DPB::Core;
 use OpenBSD::Paths;
 package DPB::Ssh;
+our @ISA = qw(DPB::Shell::Abstract);
 
 sub ssh
 {
@@ -34,8 +35,11 @@ sub ssh
 
 sub new
 {
-	my ($class, $host, $timeout) = @_;
-	bless {master => DPB::Ssh::Master->find($host, $timeout)}, $class;
+	my ($class, $host) = @_;
+	bless {
+	    master => DPB::Ssh::Master->find($host->name, 
+	    	$host->{prop}->{timeout})
+	    }, $class;
 }
 
 sub is_alive
@@ -58,12 +62,27 @@ sub hostname
 	shift->{master}->hostname;
 }
 
-sub run
+sub _run
 {
 	my ($self, $cmd) = @_;
 	exec {OpenBSD::Paths->ssh}
 	    ($self->ssh($self->socket, $self->timeout),
 	    $self->hostname, $cmd);
+}
+
+sub exec
+{
+	my ($self, @argv) = @_;
+	if ($self->{env}) {
+		while (my ($k, $v) = each %{$self->{env}}) {
+			unshift @argv, "$k=$v";
+		}
+	}
+	my $cmd = join(' ', @argv);
+	if ($self->{dir}) {
+		$cmd = "cd $self->{dir} && $cmd";
+	}
+	$self->_run($cmd);
 }
 
 package DPB::Task::SshMaster;
@@ -191,20 +210,9 @@ package DPB::Core::Distant;
 our @ISA = qw(DPB::Core);
 my @dead_cores = ();
 
-sub new
+sub shellclass
 {
-	my ($class, $host, $prop) = @_;
-	my $o = $class->SUPER::new($host, $prop);
-	$o->{shell} = DPB::Ssh->new($host);
-	return $o;
-}
-
-sub new_noreg
-{
-	my ($class, $host, $prop) = @_;
-	my $o = $class->SUPER::new_noreg($host, $prop);
-	$o->{shell} = DPB::Ssh->new($host, $prop->{timeout});
-	return $o;
+	"DPB::Ssh"
 }
 
 sub is_alive

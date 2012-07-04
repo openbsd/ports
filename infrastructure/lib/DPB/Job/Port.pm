@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.30 2012/04/21 21:09:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.31 2012/07/04 08:59:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -65,8 +65,6 @@ sub run
 	my $builder = $job->{builder};
 	my $ports = $builder->ports;
 	my $fullpkgpath = $job->{v}->fullpkgpath;
-	my $sudo = OpenBSD::Paths->sudo;
-	my $shell = $core->{shell};
 	$self->handle_output($job);
 	close STDIN;
 	open STDIN, '</dev/null';
@@ -91,28 +89,17 @@ sub run
 		}
 	}
 
-	if (defined $shell) {
-		unshift(@args, @l);
-		if ($self->{sudo}) {
-			unshift(@args, $sudo, "-E");
-		}
-		$shell->run("cd $ports && ".
-		    join(' ', "SUBDIR=$fullpkgpath",
-		    "PHASE=$t",
-		    "WRAPPER_OUTPUT=$builder->{rsslog}",
-		    @args));
-	} else {
-		chdir($ports) or
-		    die "Wrong ports tree $ports";
-		$ENV{SUBDIR} = $fullpkgpath;
-		$ENV{PHASE} = $t;
-		$ENV{WRAPPER_OUTPUT} = $builder->{rsslog};
-		if ($self->{sudo}) {
-			exec {$sudo}("sudo", "-E", @l, @args);
-		} else {
-			exec {$make} (@l, @args);
-		}
+	unshift(@args, @l);
+	if ($self->{sudo}) {
+		unshift(@args, OpenBSD::Paths->sudo, "-E");
 	}
+
+	$core->shell
+	    ->chdir($ports)
+	    ->env(SUBDIR => $fullpkgpath, 
+		PHASE => $t, 
+		WRAPPER_OUTPUT => $builder->{rsslog})
+	    ->exec(@args);
 	exit(1);
 }
 
@@ -228,8 +215,6 @@ sub run
 	$self->junk_lock($core);
 
 	exit(0) unless %$dep;
-	my $sudo = OpenBSD::Paths->sudo;
-	my $shell = $core->{shell};
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-a');
 	if ($job->{builder}->{update}) {
@@ -240,13 +225,8 @@ sub run
 	}
 	print join(' ', @cmd, (sort keys %$dep)), "\n";
 	my $path = $job->{builder}->{fullrepo}.'/';
-	if (defined $shell) {
-		$shell->run(join(' ', "PKG_PATH=$path", $sudo, @cmd,
-		    (sort keys %$dep)));
-	} else {
-		$ENV{PKG_PATH} = $path;
-		exec{$sudo}($sudo, @cmd, sort keys %$dep);
-	}
+	$core->shell->env(PKG_PATH => $path)
+	    ->exec(OpenBSD::Paths->sudo, @cmd, (sort keys %$dep));
 	exit(1);
 }
 
@@ -269,7 +249,6 @@ sub run
 	my $job = $core->job;
 	my $v = $job->{v};
 
-	my $sudo = OpenBSD::Paths->sudo;
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add');
 	if ($job->{builder}->{update}) {
@@ -281,7 +260,8 @@ sub run
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
 	$ENV{PKG_PATH} = $path;
-	exec{$sudo}($sudo, @cmd, $v->fullpkgname);
+	$core->shell->env(PKG_PATH => $path)
+	    ->exec(OpenBSD::Paths->sudo, @cmd, $v->fullpkgname);
 	exit(1);
 }
 
@@ -347,7 +327,6 @@ sub run
 	my $job = $core->job;
 	my $v = $job->{v};
 
-	my $sudo = OpenBSD::Paths->sudo;
 	$self->handle_output($job);
 
 	$self->junk_lock($core);
@@ -355,12 +334,7 @@ sub run
 	    $core->hostname);
 	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @d);
 	print join(' ', @cmd, "\n");
-	my $shell = $core->{shell};
-	if (defined $shell) {
-		$shell->run(join(' ', $sudo, @cmd));
-	} else {
-		exec{$sudo}($sudo, @cmd);
-	}
+	$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
 	exit(1);
 }
 

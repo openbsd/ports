@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.40 2012/04/10 16:50:33 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.41 2012/07/04 08:59:10 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -656,20 +656,17 @@ sub run
 	}
 	my $ftp = OpenBSD::Paths->ftp;
 	$self->redirect($job->{log});
-	my @cmd = ($ftp, '-C', '-o', $job->{file}->tempfilename, '-v',
+	my @cmd = ('-C', '-o', $job->{file}->tempfilename, '-v',
 	    $site.$job->{file}->{short});
+	if ($ftp =~ /\s/) {
+		unshift @cmd, split(/\s+/, $ftp);
+	} else {
+		unshift @cmd, $ftp;
+	}
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
 	# run ftp;
-	if (defined $shell) {
-		$shell->run(join(' ', @cmd));
-	} else {
-		if ($ftp =~ /\s/) {
-			exec join(' ', @cmd);
-		} else {
-			exec{$ftp} @cmd;
-		}
-	}
+	$core->shell->exec(@cmd);
 }
 
 sub finalize
