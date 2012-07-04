@@ -180,7 +180,6 @@
 	native-renameat: filename match "${TMPDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-renameat: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-renameat: filename match "/<non-existent filename>: *" then deny[enoent]
-	native-rfork: permit
 	native-sched_yield: permit
 	native-select: permit
 	native-semctl: permit
