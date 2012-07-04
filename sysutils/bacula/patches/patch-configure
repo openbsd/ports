@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.10 2012/03/06 20:11:33 sthen Exp $
---- configure.orig	Wed Jan 18 14:57:49 2012
-+++ configure	Tue Jan 24 01:04:36 2012
+$OpenBSD: patch-configure,v 1.11 2012/07/04 12:02:56 ajacoutot Exp $
+--- configure.orig	Tue Feb 21 16:59:33 2012
++++ configure	Wed Jul  4 13:34:26 2012
 @@ -4792,7 +4792,7 @@ $as_echo "no" >&6; }
  fi
  
@@ -63,16 +63,14 @@ $OpenBSD: patch-configure,v 1.10 2012/03/06 20:11:33 sthen Exp $
  else
  
         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthreads" >&5
-@@ -30160,7 +30160,8 @@ openbsd)
+@@ -30160,6 +30160,7 @@ openbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
     llu="qu"
--   TAPEDRIVE="/dev/nrst0"
 +   COMPRESS_MANPAGES=
-+   TAPEDRIVE="/dev/rst0"
+    TAPEDRIVE="/dev/nrst0"
     PSCMD="ps -ax -o pid,command"
     PTHREAD_LIB="-pthread"
-    CFLAGS="${CFLAGS} -pthread"
 @@ -30169,6 +30170,7 @@ openbsd)
         platforms/openbsd/bacula-fd \
         platforms/openbsd/bacula-sd \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.13 2012/06/28 19:24:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.14 2012/07/04 12:02:56 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @conflict bacula-client-<5.2.6p2
 @newuser _bacula-sd:599:_bacula:daemon:Bacula Storage Daemon:/nonexistent:/sbin/nologin
@@ -16,9 +16,9 @@ libexec/bacula/bacula-ctl-sd
 libexec/bacula/btraceback.dbx
 libexec/bacula/btraceback.gdb
 libexec/bacula/btraceback.mdb
-libexec/bacula/chio-changer.dist
+libexec/bacula/chio-changer-openbsd.dist
 @mode 0755
-@sample libexec/bacula/chio-changer
+@sample libexec/bacula/chio-changer-openbsd
 @mode
 libexec/bacula/create_bacula_database
 libexec/bacula/create_${BACKEND}_database
