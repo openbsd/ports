@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.173 2012/04/30 19:21:25 jasper Exp $
+# $OpenBSD: network.conf.template,v 1.174 2012/07/04 09:18:42 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -121,21 +121,12 @@ MASTER_SITE_SUNSITE+=	\
 	http://ftp.nluug.nl/metalab/ \
 	http://ftp.chg.ru/pub/Linux/sunsite/
 
+# XXX  We ought to be using full logical directory names in all the
+# sourceforge-hosted ports, rather than relying on the redirector to
+# find them.  Many of these contain embedded spaces which don't work
+# with ${MASTER_SITE_xx:=foo/} so we need something new...
 MASTER_SITE_SOURCEFORGE+=	\
-	http://downloads.sourceforge.net/sourceforge/ \
-	http://easynews.dl.sourceforge.net/sourceforge/ \
-	http://puzzle.dl.sourceforge.net/sourceforge/ \
-	http://optusnet.dl.sourceforge.net/sourceforge/ \
-	http://heanet.dl.sourceforge.net/sourceforge/ \
-	http://jaist.dl.sourceforge.net/sourceforge/ \
-	http://nchc.dl.sourceforge.net/sourceforge/ \
-	http://switch.dl.sourceforge.net/sourceforge/ \
-	http://kent.dl.sourceforge.net/sourceforge/ \
-	http://internap.dl.sourceforge.net/sourceforge/ \
-	http://mesh.dl.sourceforge.net/sourceforge/ \
-	http://ovh.dl.sourceforge.net/sourceforge/ \
-	http://surfnet.dl.sourceforge.net/sourceforge/ \
-	http://ufpr.dl.sourceforge.net/sourceforge/
+	http://downloads.sourceforge.net/sourceforge/
 
 MASTER_SITE_SOURCEFORGE_JP+=	\
 	http://osdn.dl.sourceforge.jp/ \
