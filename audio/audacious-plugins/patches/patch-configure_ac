@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.13 2012/06/08 14:44:55 dcoppa Exp $
---- configure.ac.orig	Sat May 26 13:43:44 2012
-+++ configure.ac	Fri Jun  8 11:00:09 2012
-@@ -41,9 +41,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.2],
+$OpenBSD: patch-configure_ac,v 1.14 2012/07/05 09:29:43 dcoppa Exp $
+--- configure.ac.orig	Sat Jun 30 02:05:33 2012
++++ configure.ac	Tue Jul  3 09:59:40 2012
+@@ -45,9 +45,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.2],
      [AC_MSG_ERROR([Cannot find Audacious 3.2; have you installed Audacious yet?])]
  )
  
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2012/06/08 14:44:55 dcoppa Exp $
  dnl Default Set of Plugins
  dnl ======================
  
-@@ -95,7 +92,7 @@ dnl ===============
+@@ -101,7 +98,7 @@ dnl ===============
  PTHREAD_LIBS=
  PTHREAD_CFLAGS=
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2012/06/08 14:44:55 dcoppa Exp $
    [AC_CHECK_LIB(pthreads, pthread_create, PTHREAD_LIBS="-lpthreads",
  	[AC_CHECK_LIB(pthreadGC2, pthread_create, PTHREAD_LIBS="-lpthreadGC2")]
    )]
-@@ -963,7 +960,7 @@ AC_ARG_ENABLE(filewriter_mp3,
+@@ -969,7 +966,7 @@ AC_ARG_ENABLE(filewriter_mp3,
  )
  
  if test "x$enable_filewriter_mp3" = "xyes"; then
@@ -29,7 +29,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2012/06/08 14:44:55 dcoppa Exp $
     if test "x$have_lame" = "xyes"; then
        AC_DEFINE(FILEWRITER_MP3, 1, [Define if MP3 output part should be built])
  	  FILEWRITER_LIBS="$FILEWRITER_LIBS -lmp3lame"
-@@ -1077,8 +1074,32 @@ if test "x$enable_lyricwiki" = "xyes"; then
+@@ -1083,8 +1080,32 @@ if test "x$enable_lyricwiki" = "xyes"; then
      GENERAL_PLUGINS="$GENERAL_PLUGINS lyricwiki"
  fi
  
@@ -62,7 +62,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2012/06/08 14:44:55 dcoppa Exp $
  plugindir=`pkg-config audacious --variable=plugin_dir`
  AC_SUBST(plugindir)
  
-@@ -1148,6 +1169,7 @@ echo "    -> FileWriter Vorbis output part:     $enabl
+@@ -1154,6 +1175,7 @@ echo "    -> FileWriter Vorbis output part:     $enabl
  echo "    -> FileWriter FLAC output part:       $have_writer_flac"
  echo "  Null Audio output (null):               yes"
  echo "  Open Sound System v3 (deprecated):      $enable_oss"

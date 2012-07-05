@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2012/06/08 14:44:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.50 2012/07/05 09:29:43 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		input and output plugins for audacious
 
-V =			3.2.3
+V =			3.2.4
 
 DISTNAME =		audacious-plugins-$V
 
