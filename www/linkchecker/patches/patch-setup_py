@@ -1,6 +1,6 @@
---- setup.py.orig	Mon Jul 25 21:35:36 2011
-+++ setup.py	Sun Aug 21 18:41:33 2011
-@@ -248,6 +248,7 @@ class MyInstallLib (install_lib, object):
+--- setup.py.orig	Sun Jun 10 17:17:44 2012
++++ setup.py	Sun Jul  1 19:54:30 2012
+@@ -314,6 +314,7 @@ class MyInstallLib (install_lib, object):
              else:
                  val = getattr(cmd_obj, attr)
              if attr == 'install_data':
@@ -8,26 +8,7 @@
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              elif attr == 'install_lib':
-@@ -521,10 +522,16 @@ myname = "Bastian Kleineidam"
- myemail = "calvin@users.sourceforge.net"
- 
- data_files = [
-+    ('share/locale/de/LC_MESSAGES',
-+        ['build/share/locale/de/LC_MESSAGES/LinkChecker.mo']),
-+    ('share/locale/fr/LC_MESSAGES',
-+        ['build/share/locale/fr/LC_MESSAGES/LinkChecker.mo']),
-+    ('share/locale/es/LC_MESSAGES',
-+        ['build/share/locale/es/LC_MESSAGES/LinkChecker.mo']),
-     ('share/linkchecker',
-         ['config/linkcheckerrc', 'config/logging.conf',
--        'doc/html/lccollection.qhc', 'doc/html/lcdoc.qch']),
--    ('share/linkchecker/examples',
-+        'doc/html/lccollection.qhcp', 'doc/html/lcdoc.qhp']),
-+    ('share/examples/linkchecker',
-         ['cgi-bin/lconline/leer.html.en',
-          'cgi-bin/lconline/leer.html.de',
-          'cgi-bin/lconline/index.html',
-@@ -537,11 +544,11 @@ data_files = [
+@@ -609,11 +610,11 @@ data_files = [
  ]
  
  if os.name == 'posix':
@@ -44,7 +25,7 @@
                ['config/linkchecker-completion',
                 'doc/examples/check_blacklist.sh',
                 'doc/examples/check_for_x_errors.sh',
-@@ -753,9 +760,6 @@ o a (Fast)CGI web interface (requires HTTP server)
+@@ -841,9 +842,6 @@ o a command line, GUI and web interface
          'py2app': MyPy2app,
          'register': MyRegister,
      },
@@ -54,7 +35,7 @@
      packages = [
          'linkcheck',
          'linkcheck.bookmarks',
-@@ -768,10 +772,6 @@ o a (Fast)CGI web interface (requires HTTP server)
+@@ -856,10 +854,6 @@ o a command line, GUI and web interface
          'linkcheck.HtmlParser',
          'linkcheck.logger',
          'linkcheck.network',
