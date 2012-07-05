@@ -1,12 +1,12 @@
-$OpenBSD: patch-dbus_Makefile_in,v 1.14 2012/03/31 17:56:44 ajacoutot Exp $
---- dbus/Makefile.in.orig	Tue Mar 27 14:01:12 2012
-+++ dbus/Makefile.in	Sat Mar 31 10:32:00 2012
-@@ -566,7 +566,7 @@ configdir = $(sysconfdir)/dbus-1
- INCLUDES = -I$(top_builddir) -I$(top_srcdir) \
- 	$(DBUS_CLIENT_CFLAGS) \
+$OpenBSD: patch-dbus_Makefile_in,v 1.15 2012/07/05 07:19:48 ajacoutot Exp $
+--- dbus/Makefile.in.orig	Wed Jun 27 18:49:59 2012
++++ dbus/Makefile.in	Thu Jul  5 07:47:00 2012
+@@ -591,7 +591,7 @@ AM_CPPFLAGS = \
+ 	$(SYSTEMD_CFLAGS) \
+ 	$(VALGRIND_CFLAGS) \
  	-DDBUS_COMPILATION \
 -	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\" \
 +	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/db/dbus/machine-id"\" \
  	-DDBUS_SYSTEM_CONFIG_FILE=\""$(configdir)/system.conf"\" \
- 	-DDBUS_SESSION_CONFIG_FILE=\""$(configdir)/session.conf"\"
- 
+ 	-DDBUS_SESSION_CONFIG_FILE=\""$(configdir)/session.conf"\" \
+ 	$(NULL)

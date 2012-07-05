@@ -1,30 +1,28 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.16 2012/03/31 17:56:44 ajacoutot Exp $
---- tools/Makefile.in.orig	Tue Mar 27 14:01:13 2012
-+++ tools/Makefile.in	Sat Mar 31 10:32:00 2012
-@@ -375,7 +375,7 @@ top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- configdir = $(sysconfdir)/dbus-1
--INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\"
-+INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/db/dbus/machine-id"\"
- extra_bin_programs = $(am__append_1)
- dbus_send_SOURCES = \
- 	dbus-print-message.c			\
-@@ -416,7 +416,7 @@ CLEANFILES = \
+$OpenBSD: patch-tools_Makefile_in,v 1.17 2012/07/05 07:19:48 ajacoutot Exp $
+--- tools/Makefile.in.orig	Wed Jun 27 18:49:59 2012
++++ tools/Makefile.in	Thu Jul  5 07:48:13 2012
+@@ -358,7 +358,7 @@ AM_CPPFLAGS = \
+ 	$(DBUS_STATIC_BUILD_CPPFLAGS) \
+ 	$(DBUS_X_CFLAGS) \
+ 	-DDBUS_COMPILATION \
+-	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\" \
++	-DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/db/dbus/machine-id"\" \
+ 	$(NULL)
  
  
- #create the /var/lib/data directory for dbus-uuidgen
--localstatelibdir = $(localstatedir)/lib/dbus
-+localstatelibdir = $(localstatedir)/db/dbus
- localstatelib_DATA = 
- all: all-am
+@@ -756,12 +756,12 @@ uninstall-am: uninstall-binPROGRAMS
+ 	uninstall-binPROGRAMS
  
-@@ -713,7 +713,7 @@ info: info-am
  
- info-am:
+-# create the /var/lib/dbus directory for dbus-uuidgen
++# create the /var/db/dbus directory for dbus-uuidgen
+ install-data-local:
+-	$(MKDIR_P) $(DESTDIR)$(localstatedir)/lib/dbus
++	$(MKDIR_P) $(DESTDIR)$(localstatedir)/db/dbus
  
--install-data-am: install-localstatelibDATA
-+install-data-am:
+ installcheck-local:
+-	test -d $(DESTDIR)$(localstatedir)/lib/dbus
++	test -d $(DESTDIR)$(localstatedir)/db/dbus
  
- install-dvi: install-dvi-am
- 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

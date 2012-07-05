@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/09/09 09:00:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/07/05 07:19:48 ajacoutot Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -23,6 +23,7 @@ include/dbus-1.0/dbus/dbus-protocol.h
 include/dbus-1.0/dbus/dbus-server.h
 include/dbus-1.0/dbus/dbus-shared.h
 include/dbus-1.0/dbus/dbus-signature.h
+include/dbus-1.0/dbus/dbus-syntax.h
 include/dbus-1.0/dbus/dbus-threads.h
 include/dbus-1.0/dbus/dbus-types.h
 include/dbus-1.0/dbus/dbus.h

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2012/04/28 10:52:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2012/07/05 07:19:48 ajacoutot Exp $
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.4.20
+DISTNAME=	dbus-1.6.2
 EPOCH=		0
 
-SHARED_LIBS +=	dbus-1	9.1 # .8.9
+SHARED_LIBS +=	dbus-1	10.2 # .10.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
@@ -41,7 +41,8 @@ CONFIGURE_ARGS=	--with-dbus-user=_dbus \
 		--disable-selinux \
 		--disable-libaudit \
 		--disable-dnotify \
-		--disable-inotify
+		--disable-inotify \
+		--disable-systemd
 
 # gives no chance of picking up devel/libexecinfo
 CONFIGURE_ENV+=	ac_cv_header_execinfo_h=no \
