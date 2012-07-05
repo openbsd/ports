@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/03/31 08:45:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/07/05 07:21:14 ajacoutot Exp $
 include/dbus-1.0/dbus/dbus-python.h
 lib/pkgconfig/dbus-python.pc
 @comment lib/python${MODPY_VERSION}/site-packages/_dbus_bindings.a
@@ -35,6 +35,9 @@ lib/python${MODPY_VERSION}/site-packages/dbus/decorators.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/exceptions.pyo
+lib/python${MODPY_VERSION}/site-packages/dbus/gi_service.py
+lib/python${MODPY_VERSION}/site-packages/dbus/gi_service.pyc
+lib/python${MODPY_VERSION}/site-packages/dbus/gi_service.pyo
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.py
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyc
 lib/python${MODPY_VERSION}/site-packages/dbus/glib.pyo
@@ -69,5 +72,4 @@ share/doc/dbus-python/HACKING.txt
 share/doc/dbus-python/NEWS
 share/doc/dbus-python/PY3PORT.txt
 share/doc/dbus-python/README
-share/doc/dbus-python/TODO
 share/doc/dbus-python/tutorial.txt
