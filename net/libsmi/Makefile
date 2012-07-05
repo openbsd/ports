@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/02/28 19:26:22 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/05 12:23:18 sthen Exp $
 
-COMMENT=	library and tools to access SMI MIB information
+COMMENT=	library/tools (incl smilint) to access SMI MIB information
 
 SHARED_LIBS +=  smi                  0.0      # 2.27
 
 DISTNAME=	libsmi-0.4.8
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.ibr.cs.tu-bs.de/projects/libsmi/
