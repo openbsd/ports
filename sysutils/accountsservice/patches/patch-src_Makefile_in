@@ -1,7 +1,18 @@
-$OpenBSD: patch-src_Makefile_in,v 1.3 2012/03/28 09:05:54 ajacoutot Exp $
---- src/Makefile.in.orig	Tue Mar 27 17:51:41 2012
-+++ src/Makefile.in	Wed Mar 28 10:48:44 2012
-@@ -339,7 +339,8 @@ accounts_daemon_LDADD = \
+$OpenBSD: patch-src_Makefile_in,v 1.4 2012/07/05 07:18:59 ajacoutot Exp $
+--- src/Makefile.in.orig	Thu Jun 28 17:33:09 2012
++++ src/Makefile.in	Wed Jul  4 10:39:31 2012
+@@ -333,8 +333,8 @@ SUBDIRS = . libaccountsservice
+ INCLUDES = \
+ 	-DLOCALSTATEDIR=\""$(localstatedir)"\" \
+ 	-DDATADIR=\""$(datadir)"\" \
+-	-DICONDIR=\"$(localstatedir)/lib/AccountsService/icons\" \
+-	-DUSERDIR=\"$(localstatedir)/lib/AccountsService/users\" \
++	-DICONDIR=\"$(localstatedir)/db/AccountsService/icons\" \
++	-DUSERDIR=\"$(localstatedir)/db/AccountsService/users\" \
+ 	$(DBUS_GLIB_CFLAGS) 	\
+ 	$(GIO_CFLAGS)	 	\
+ 	$(GLIB_CFLAGS)		\
+@@ -363,7 +363,8 @@ accounts_daemon_LDADD = \
  	$(DBUS_GLIB_LIBS) 	\
  	$(GIO_LIBS)		\
  	$(GLIB_LIBS)		\
@@ -11,7 +22,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.3 2012/03/28 09:05:54 ajacoutot Exp $
  
  CLEANFILES = $(BUILT_SOURCES)
  all: $(BUILT_SOURCES)
-@@ -800,8 +801,6 @@ accounts-user-generated.c accounts-user-generated.h: $
+@@ -824,8 +825,6 @@ accounts-user-generated.c accounts-user-generated.h: $
  	gdbus-codegen --generate-c-code accounts-user-generated --c-namespace Accounts --interface-prefix=org.freedesktop.Accounts. $(top_srcdir)/data/org.freedesktop.Accounts.User.xml
  
  install-data-hook:

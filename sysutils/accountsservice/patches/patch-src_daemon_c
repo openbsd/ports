@@ -1,7 +1,14 @@
-$OpenBSD: patch-src_daemon_c,v 1.16 2012/05/11 18:19:10 ajacoutot Exp $
---- src/daemon.c.orig	Fri May  4 15:52:03 2012
-+++ src/daemon.c	Fri May 11 20:16:23 2012
-@@ -36,6 +36,10 @@
+$OpenBSD: patch-src_daemon_c,v 1.17 2012/07/05 07:18:59 ajacoutot Exp $
+
+Revert the following commit:
+This reverts commit dfa1a6239b01c823ce0fec781c6c9541c988f56e.
+The commit is wrong, since we're only interested in local users.
+http://bugs.freedesktop.org/show_bug.cgi?id=41747
+(XXX we need a way to only get local users)
+
+--- src/daemon.c.orig	Thu Jun 28 17:24:55 2012
++++ src/daemon.c	Thu Jul  5 08:58:57 2012
+@@ -35,6 +35,10 @@
  #include <utmpx.h>
  #endif
  
@@ -12,28 +19,65 @@ $OpenBSD: patch-src_daemon_c,v 1.16 2012/05/11 18:19:10 ajacoutot Exp $
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib-object.h>
-@@ -52,7 +56,7 @@
- #define PATH_FALSE "/bin/false"
- #define PATH_GDM_CUSTOM "/etc/gdm/custom.conf"
+@@ -300,22 +304,32 @@ reload_passwd (Daemon *daemon)
+         GSList *old_users;
+         GSList *new_users;
+         GSList *list;
++#ifdef HAVE_FGETPWENT
+         FILE *fp;
++#endif
+         User *user = NULL;
  
--#define USERDIR LOCALSTATEDIR "/lib/AccountsService/users"
-+#define USERDIR LOCALSTATEDIR "/db/AccountsService/users"
+         old_users = NULL;
+         new_users = NULL;
  
- static const char *default_excludes[] = {
-         "bin",
-@@ -909,7 +913,11 @@ daemon_create_user_authorized_cb (Daemon              
++#ifdef HAVE_FGETPWENT
+         errno = 0;
+         fp = fopen (PATH_PASSWD, "r");
+         if (fp == NULL) {
+                 g_warning ("Unable to open %s: %s", PATH_PASSWD, g_strerror (errno));
+                 goto out;
+         }
++#else
++        setpwent();
++#endif
+         g_hash_table_foreach (daemon->priv->users, listify_hash_values_hfunc, &old_users);
+         g_slist_foreach (old_users, (GFunc) g_object_ref, NULL);
+ 
++#ifdef HAVE_FGETPWENT
+         while ((pwent = fgetpwent (fp)) != NULL) {
++#else
++        while ((pwent = getpwent ()) != NULL) {
++#endif
+                 /* Skip system users... */
+                 if (daemon_local_user_is_excluded (daemon, pwent->pw_name, pwent->pw_shell)) {
+                         g_debug ("skipping user: %s", pwent->pw_name);
+@@ -365,10 +379,12 @@ reload_passwd (Daemon *daemon)
+                 }
+         }
+ 
++#ifdef HAVE_FGETPWENT
+  out:
+         /* Cleanup */
+ 
+         fclose (fp);
++#endif
+ 
+         g_slist_foreach (new_users, (GFunc) g_object_thaw_notify, NULL);
+         g_slist_foreach (new_users, (GFunc) g_object_unref, NULL);
+@@ -922,7 +938,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
 +#ifndef __OpenBSD__
          const gchar *argv[9];
 +#else
-+	gchar *argv[13];
++	const gchar *argv[13];
 +#endif
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -926,14 +934,31 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -939,14 +959,31 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
@@ -65,7 +109,7 @@ $OpenBSD: patch-src_daemon_c,v 1.16 2012/05/11 18:19:10 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1005,15 +1030,49 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1018,15 +1055,49 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -77,7 +121,7 @@ $OpenBSD: patch-src_daemon_c,v 1.16 2012/05/11 18:19:10 ajacoutot Exp $
 +#ifdef __OpenBSD__
 +        struct group *grp;
 +        GError *grperror;
-+        gchar *grpargv[2];
++        const gchar *grpargv[2];
 +
 +        grp = getgrnam (pwent->pw_name);
 +

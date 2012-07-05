@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_libaccountsservice_Makefile_in,v 1.4 2012/03/28 09:05:54 ajacoutot Exp $
+$OpenBSD: patch-src_libaccountsservice_Makefile_in,v 1.5 2012/07/05 07:18:59 ajacoutot Exp $
 
 OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
 
---- src/libaccountsservice/Makefile.in.orig	Tue Mar 27 17:51:41 2012
-+++ src/libaccountsservice/Makefile.in	Wed Mar 28 10:48:44 2012
-@@ -360,7 +360,6 @@ libaccountsservice_la_LDFLAGS = \
+--- src/libaccountsservice/Makefile.in.orig	Thu Jun 28 17:33:09 2012
++++ src/libaccountsservice/Makefile.in	Wed Jul  4 10:38:15 2012
+@@ -382,7 +382,6 @@ libaccountsservice_la_LDFLAGS = \
  
  libaccountsservice_la_LIBADD = \
          $(LIBACCOUNTSSERVICE_LIBS)                                            \
 -        -lcrypt                                                               \
          $(END_OF_LIST)
  
- libaccountsservice_la_SOURCES = \
+ libaccountsservice_la_sources = \

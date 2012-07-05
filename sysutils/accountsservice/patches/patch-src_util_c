@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_util_c,v 1.7 2012/03/28 09:05:54 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.8 2012/07/05 07:18:59 ajacoutot Exp $
 
 We don't use /proc on OpenBSD.
 
---- src/util.c.orig	Mon Mar 26 22:39:21 2012
-+++ src/util.c	Wed Mar 28 10:52:44 2012
-@@ -32,6 +32,14 @@
+--- src/util.c.orig	Thu Jun 28 17:28:15 2012
++++ src/util.c	Thu Jul  5 09:01:58 2012
+@@ -32,11 +32,20 @@
  
  #include <polkit/polkit.h>
  
@@ -18,54 +18,27 @@ We don't use /proc on OpenBSD.
 +
  #include "util.h"
  
- 
-@@ -40,11 +48,13 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+ static gchar *
+ get_cmdline_of_pid (GPid pid)
  {
-   PolkitSubject *process;
-   gchar *ret;
-+  GError *error;
 +#ifndef __OpenBSD__
+   gchar *ret;
    gchar *filename;
    gchar *contents;
-   gsize contents_len;
--  GError *error;
-   guint n;
-+#endif
- 
-   g_return_val_if_fail (subject != NULL, NULL);
- 
-@@ -52,8 +62,10 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
- 
-   ret = NULL;
-   process = NULL;
-+#ifndef __OpenBSD__
-   filename = NULL;
-   contents = NULL;
-+#endif
- 
-   if (POLKIT_IS_UNIX_PROCESS (subject))
-    {
-@@ -82,6 +94,7 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
-   *pid = polkit_unix_process_get_pid (POLKIT_UNIX_PROCESS (process));
-   *uid = polkit_unix_process_get_uid (POLKIT_UNIX_PROCESS (process));
- 
-+#ifndef __OpenBSD__
-   filename = g_strdup_printf ("/proc/%d/cmdline", *pid);
- 
-   if (!g_file_get_contents (filename,
-@@ -110,6 +123,28 @@ _polkit_subject_get_cmdline (PolkitSubject *subject, g
+@@ -70,7 +79,30 @@ get_cmdline_of_pid (GPid pid)
+  out:
+   g_free (filename);
    g_free (contents);
-   if (process != NULL)
-     g_object_unref (process);
-+#else
++#else /* OpenBSD */
++  gchar *ret;
 +  int nproc;
 +  struct kinfo_proc *kp;
 +  char **pargv;
-+
+ 
 +  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
-+    return ret;
++    goto out;
 +
-+  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, *pid, sizeof(*kp), &nproc)) == NULL)
++  if ((kp = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(*kp), &nproc)) == NULL)
 +    goto out;
 +
 +  if ((kp->p_flag & P_SYSTEM) != 0) 
@@ -79,36 +52,11 @@ We don't use /proc on OpenBSD.
 +out:
 +  kvm_close(kd);
 +#endif
++
    return ret;
  }
  
-@@ -164,14 +199,17 @@ get_caller_loginuid (GDBusMethodInvocation *context, g
-         gchar *cmdline;
-         gint pid;
-         gint uid;
-+#ifndef __OpenBSD__
-         gchar *path;
-         gchar *buf;
-+#endif
- 
-         subject = polkit_system_bus_name_new (g_dbus_method_invocation_get_sender (context));
-         cmdline = _polkit_subject_get_cmdline (subject, &pid, &uid);
-         g_free (cmdline);
-         g_object_unref (subject);
- 
-+#ifndef __OpenBSD__
-         path = g_strdup_printf ("/proc/%d/loginuid", pid);
-         if (g_file_get_contents (path, &buf, NULL, NULL)) {
-                 strncpy (loginuid, buf, size);
-@@ -182,17 +220,22 @@ get_caller_loginuid (GDBusMethodInvocation *context, g
-         }
- 
-         g_free (path);
-+#else
-+        g_snprintf (loginuid, size, "%d", uid);
-+#endif
- }
- 
+@@ -204,12 +236,14 @@ get_caller_loginuid (GDBusMethodInvocation *context, g
  static void
  setup_loginuid (gpointer data)
  {

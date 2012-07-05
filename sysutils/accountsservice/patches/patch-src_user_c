@@ -1,16 +1,7 @@
-$OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
---- src/user.c.orig	Mon Mar 26 22:39:21 2012
-+++ src/user.c	Wed Mar 28 10:58:04 2012
-@@ -46,7 +46,7 @@
- #include "accounts-user-generated.h"
- #include "util.h"
- 
--#define ICONDIR LOCALSTATEDIR "/lib/AccountsService/icons"
-+#define ICONDIR LOCALSTATEDIR "/db/AccountsService/icons"
- 
- enum {
-         PROP_0,
-@@ -112,7 +112,12 @@ account_type_from_pwent (struct passwd *pwent)
+$OpenBSD: patch-src_user_c,v 1.13 2012/07/05 07:18:59 ajacoutot Exp $
+--- src/user.c.orig	Thu Jun 28 17:28:15 2012
++++ src/user.c	Thu Jul  5 08:58:01 2012
+@@ -110,7 +110,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
          gid_t wheel;
@@ -23,7 +14,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
          gint ngroups;
          gint i;
  
-@@ -128,16 +133,28 @@ account_type_from_pwent (struct passwd *pwent)
+@@ -126,16 +131,28 @@ account_type_from_pwent (struct passwd *pwent)
          }
          wheel = grp->gr_gid;
  
@@ -52,7 +43,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
  
          return ACCOUNT_TYPE_STANDARD;
  }
-@@ -247,12 +264,21 @@ user_local_update_from_pwent (User          *user,
+@@ -245,12 +262,21 @@ user_local_update_from_pwent (User          *user,
                  passwd = spent->sp_pwdp;
  #endif
  
@@ -74,7 +65,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
  
          if (user->locked != locked) {
                  user->locked = locked;
-@@ -376,7 +402,7 @@ save_extra_data (User *user)
+@@ -374,7 +400,7 @@ save_extra_data (User *user)
          error = NULL;
          data = g_key_file_to_data (keyfile, NULL, &error);
          if (error == NULL) {
@@ -83,7 +74,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
                                               user->user_name,
                                               NULL);
                  g_file_set_contents (filename, data, -1, &error);
-@@ -397,9 +423,10 @@ move_extra_data (const gchar *old_name,
+@@ -395,9 +421,10 @@ move_extra_data (const gchar *old_name,
          gchar *old_filename;
          gchar *new_filename;
  
@@ -96,14 +87,14 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1183,17 +1210,34 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1199,17 +1226,34 @@ user_change_locked_authorized_cb (Daemon              
  {
          gboolean locked = GPOINTER_TO_INT (data);
          GError *error;
 +#ifndef __OpenBSD__
          const gchar *argv[5];
 +#else
-+        gchar *argv[6];
++        const gchar *argv[6];
 +        gchar *lockshell, *nolockshell;
 +        lockshell = g_strjoin (NULL, user->shell, "-", NULL);
 +        nolockshell = g_strdup (user->shell);
@@ -131,7 +122,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
  
                  error = NULL;
                  if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1202,6 +1246,11 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1218,6 +1262,11 @@ user_change_locked_authorized_cb (Daemon              
                          return;
                  }
  
@@ -143,7 +134,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
                  user->locked = locked;
  
                  accounts_user_emit_changed (ACCOUNTS_USER (user));
-@@ -1239,13 +1288,23 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1255,13 +1304,23 @@ user_change_account_type_authorized_cb (Daemon        
  {
          AccountType account_type = GPOINTER_TO_INT (data);
          GError *error;
@@ -161,13 +152,13 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
 +#ifndef __OpenBSD__
          const gchar *argv[6];
 +#else
-+        gchar *argv[8];
-+       gchar *class;
++        const gchar *argv[8];
++        gchar *class;
 +#endif
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1259,33 +1318,66 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1275,33 +1334,66 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -234,7 +225,7 @@ $OpenBSD: patch-src_user_c,v 1.12 2012/03/28 09:05:54 ajacoutot Exp $
  
                  g_string_free (str, FALSE);
  
-@@ -1394,10 +1486,18 @@ user_change_password_mode_authorized_cb (Daemon       
+@@ -1410,10 +1502,18 @@ user_change_password_mode_authorized_cb (Daemon       
                  }
                  else if (user->locked) {
                          argv[0] = "/usr/sbin/usermod";
