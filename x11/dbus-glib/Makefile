@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.37 2012/07/05 07:20:06 ajacoutot Exp $
 
 COMMENT=	glib bindings for dbus message system
 
-DISTNAME=	dbus-glib-0.98
+DISTNAME=	dbus-glib-0.100
 
 EPOCH=		0
 
-SHARED_LIBS+=	dbus-glib-1	4.3 # .4.0
+SHARED_LIBS+=	dbus-glib-1	4.3 # .4.2
 
 CATEGORIES=	x11
 
@@ -36,7 +36,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-bash-completion \
-		--enable-gtk-doc=no \
+		--disable-gtk-doc \
 		--with-test-socket-dir=${WRKDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
