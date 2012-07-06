@@ -29,6 +29,7 @@ stored in specialized tables, e.g.,:
     DIST_SUBDIR 
     EPOCH
     FLAVORS 
+    FULLPKGNAME
     HOMEPAGE 
     IS_INTERACTIVE 
     MAINTAINER

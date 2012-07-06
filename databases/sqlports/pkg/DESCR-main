@@ -20,6 +20,7 @@ holds all the information retrieved through various variables, e.g.,:
     DIST_SUBDIR 
     EPOCH
     FLAVORS 
+    FULLPKGNAME
     HOMEPAGE 
     IS_INTERACTIVE 
     MAINTAINER
