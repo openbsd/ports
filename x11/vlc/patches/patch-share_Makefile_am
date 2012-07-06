@@ -1,7 +1,7 @@
-$OpenBSD: patch-share_Makefile_am,v 1.1 2012/04/23 13:47:08 ajacoutot Exp $
---- share/Makefile.am.orig	Sun Feb 12 13:52:59 2012
-+++ share/Makefile.am	Mon Feb 13 00:54:53 2012
-@@ -55,7 +55,6 @@ CLEANFILES += osdmenu/default.cfg
+$OpenBSD: patch-share_Makefile_am,v 1.2 2012/07/06 12:51:11 sthen Exp $
+--- share/Makefile.am.orig	Sat May  5 21:03:06 2012
++++ share/Makefile.am	Sat Jun 30 22:40:47 2012
+@@ -56,7 +56,6 @@ CLEANFILES += osdmenu/default.cfg
  
  nobase_vlcdata_DATA =
  if BUILD_SKINS
@@ -9,7 +9,7 @@ $OpenBSD: patch-share_Makefile_am,v 1.1 2012/04/23 13:47:08 ajacoutot Exp $
  nobase_vlcdata_DATA += $(DIST_skins2)
  endif
  if BUILD_OSDMENU
-@@ -100,10 +99,6 @@ skins2_default_vlt_FILES = \
+@@ -105,10 +104,6 @@ skins2_default_vlt_FILES = \
  
  skins2/default.vlt: $(skins2_default_vlt_FILES)
  	mkdir -p skins2

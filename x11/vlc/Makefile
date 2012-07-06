@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.152 2012/06/20 06:44:28 ratchov Exp $
+# $OpenBSD: Makefile,v 1.153 2012/07/06 12:51:11 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		2.0.1
+V=		2.0.2
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	4
 PKGNAME-jack=	vlc-jack-${V}
-REVISION-jack=	0
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
@@ -46,7 +44,7 @@ WANTLIB-main=	GL ICE lib/qt4/QtGui QtCore SM SDL SDL_image X11 \
 		${WANTLIB-common}
 WANTLIB-jack=	jack vlccore ${WANTLIB-common}
 
-AUTOCONF_VERSION= 2.68
+AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.11
 
 MODULES=	devel/gettext \
@@ -155,7 +153,8 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
 		    -L${LOCALBASE}/live/groupsock -L${LOCALBASE}/live/BasicUsageEnvironment \
 		    -L${LOCALBASE}/live/UsageEnvironment" \
 		LOCALBASE="${LOCALBASE}" \
-		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig"
+		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig" \
+		ac_cv_header_execinfo_h=no
 
 PSEUDO_FLAVORS=	no_jack
 FLAVOR?=
