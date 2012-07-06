@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_libpiano_crypt_c,v 1.4 2012/07/06 08:32:13 dcoppa Exp $
+
+Work around libgcrypt deprecation warnings. See:
+http://lists.gnupg.org/pipermail/gcrypt-devel/2011-July/001830.html
+
+--- src/libpiano/crypt.c.orig	Fri Jul  6 10:09:40 2012
++++ src/libpiano/crypt.c	Fri Jul  6 10:10:24 2012
+@@ -23,7 +23,9 @@ THE SOFTWARE.
+ 
+ #include <string.h>
+ #include <assert.h>
++#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+ #include <gcrypt.h>
++#pragma GCC diagnostic warning "-Wdeprecated-declarations"
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdint.h>
