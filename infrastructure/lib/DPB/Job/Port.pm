@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.31 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Port.pm,v 1.32 2012/07/06 12:01:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -216,7 +216,7 @@ sub run
 
 	exit(0) unless %$dep;
 	$self->handle_output($job);
-	my @cmd = ('/usr/sbin/pkg_add', '-a');
+	my @cmd = ('/usr/sbin/pkg_add', '-aI');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
@@ -250,7 +250,7 @@ sub run
 	my $v = $job->{v};
 
 	$self->handle_output($job);
-	my @cmd = ('/usr/sbin/pkg_add');
+	my @cmd = ('/usr/sbin/pkg_add', '-I');
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
@@ -332,7 +332,7 @@ sub run
 	$self->junk_lock($core);
 	my @d = $core->job->{builder}->locker->find_dependencies(
 	    $core->hostname);
-	my @cmd = ('/usr/sbin/pkg_delete', '-aX', @d);
+	my @cmd = ('/usr/sbin/pkg_delete', '-aIX', @d);
 	print join(' ', @cmd, "\n");
 	$core->shell->exec(OpenBSD::Paths->sudo, @cmd);
 	exit(1);
