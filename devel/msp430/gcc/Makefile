@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/17 18:12:38 jasper Exp $
-
-COMMENT=		GNU Compiler Collection for msp430
+# $OpenBSD: Makefile,v 1.23 2012/07/06 16:41:21 jasper Exp $
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
+
+REVISION=		0
 
 GNU_TOOL=		Yes
 

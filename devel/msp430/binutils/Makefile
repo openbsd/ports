@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2012/04/17 13:07:36 jasper Exp $
-
-COMMENT=		GNU binutils for msp430
+# $OpenBSD: Makefile,v 1.14 2012/07/06 16:41:21 jasper Exp $
 
 TOOL=			binutils
 TOOL_V=			2.21.1a
+
+REVISION=		0
 
 GNU_TOOL=		Yes
 

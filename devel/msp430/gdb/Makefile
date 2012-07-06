@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/04/17 13:07:36 jasper Exp $
-
-COMMENT=		GNU debugger for msp430
+# $OpenBSD: Makefile,v 1.12 2012/07/06 16:41:21 jasper Exp $
 
 TOOL=			gdb
 TOOL_V= 		7.2a
 LTS_V=			20111205
+
+REVISION=		0
 
 GNU_TOOL=		Yes
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2012/05/04 08:58:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/07/06 16:41:21 jasper Exp $
 
 PKG_ARCH=	*
 
-COMMENT=	C headers and binutils linker scripts for msp430
+COMMENT=	C headers and binutils linker scripts for ${TARGET}
 
 TOOL=		msp430mcu
 TOOL_V= 	${LTS_V}

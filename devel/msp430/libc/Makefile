@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2012/05/04 08:56:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/07/06 16:41:21 jasper Exp $
 
-COMMENT=		libc for msp430
+COMMENT=		libc for ${TARGET}
 
 TOOL=			${TARGET}-libc
 TOOL_V= 		20120224
