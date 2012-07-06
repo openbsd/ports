@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1180 2012/06/20 13:26:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1181 2012/07/06 12:00:52 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -172,7 +172,7 @@ PKG_INFO ?= /usr/sbin/pkg_info
 PKG_CREATE ?= /usr/sbin/pkg_create
 PKG_DELETE ?= /usr/sbin/pkg_delete
 
-_PKG_ADD = ${PKG_ADD} ${_PROGRESS}
+_PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 
