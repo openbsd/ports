@@ -1,12 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2009/09/22 15:09:39 jasper Exp $
+$OpenBSD: patch-setup_py,v 1.2 2012/07/06 16:42:06 jasper Exp $
 
 Force usage of setuptools over distutils to prevent an:
 error: option --single-version-externally-managed not recognized
 
-And remove empty directories.
-
---- setup.py.orig	Tue Sep 22 14:58:42 2009
-+++ setup.py	Tue Sep 22 15:03:48 2009
+--- setup.py.orig	Tue Jul  3 14:00:40 2012
++++ setup.py	Tue Jul  3 14:00:44 2012
 @@ -14,6 +14,7 @@ simpler.
  
  import commands
@@ -15,16 +13,3 @@ And remove empty directories.
  import sys
  
  from kiwi import kiwi_version
-@@ -57,12 +58,6 @@ setup(name="kiwi",
-                              'kiwiwidgets', '*.png')),
-                   (get_site_packages_dir('gazpacho', 'widgets'),
-                    listfiles('gazpacho-plugin', 'kiwiwidgets.py')),
--                  ('share/doc/kiwi',
--                   ('AUTHORS', 'ChangeLog', 'NEWS', 'README')),
--                  ('share/doc/kiwi/howto',
--                   listfiles('doc/howto/', '*')),
--                  ('share/doc/kiwi/api',
--                   listfiles('doc/api/', '*')),
-                   ],
-       scripts=['bin/kiwi-i18n',
-                'bin/kiwi-ui-test'],
