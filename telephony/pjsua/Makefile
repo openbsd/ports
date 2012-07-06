@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2012/06/12 15:11:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.27 2012/07/06 17:23:43 sthen Exp $
 
 COMMENT=		lightweight sip client
 
 VERSION=		2.0
 DISTNAME=		pjproject-${VERSION}
 PKGNAME=		pjsua-${VERSION}
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		telephony
 
@@ -19,10 +19,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB =		c crypto gsm>=1.0 m portaudio pthread \
-			sndio speex speexdsp ssl
+WANTLIB =		c crypto gsm>=1.0 m opencore-amrnb portaudio \
+			pthread sndio speex speexdsp ssl
 
 LIB_DEPENDS=		audio/gsm \
+			audio/opencore-amr \
 			audio/portaudio-svn \
 			audio/speex
 
