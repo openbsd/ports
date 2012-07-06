@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.49 2012/05/03 06:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/07/06 15:01:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
