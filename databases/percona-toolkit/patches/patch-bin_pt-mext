@@ -1,7 +1,7 @@
-$OpenBSD: patch-bin_pt-mext,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
---- bin/pt-mext.orig	Mon Feb  6 21:52:31 2012
-+++ bin/pt-mext	Thu Feb 23 15:11:19 2012
-@@ -62,7 +62,7 @@ NUM=0;
+$OpenBSD: patch-bin_pt-mext,v 1.2 2012/07/06 14:42:46 giovanni Exp $
+--- bin/pt-mext.orig	Tue Jun 12 18:04:14 2012
++++ bin/pt-mext	Fri Jul  6 16:35:19 2012
+@@ -65,7 +65,7 @@ NUM=0;
  REL=0;
  
  # Command-line parsing.
@@ -10,7 +10,7 @@ $OpenBSD: patch-bin_pt-mext,v 1.1.1.1 2012/02/27 10:18:12 giovanni Exp $
  if [ "$?" = "1" ]; then
     usage;
  fi
-@@ -94,11 +94,11 @@ SPEC="%-33s %13d"
+@@ -97,11 +97,11 @@ SPEC="%-33s %13d"
  AWKS=""
  NUM=`ls "$FILE"* | wc -l`;
  # The last file will be empty...
