@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/07 13:35:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/07 17:45:45 ajacoutot Exp $
 
 COMMENT=	clutter widget toolkit
 
 V=		1.4.6
 DISTNAME=	mx-${V}
 EXTRACT_SUFX=	.tar.xz
+
+REVISION=	0
 
 SHARED_LIBS +=  mx-1.0                    0.0 # 406.0
 SHARED_LIBS +=  mx-gtk-1.0                0.0 # 0.0

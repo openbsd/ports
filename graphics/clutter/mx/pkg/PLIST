@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/07 13:35:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/07 17:45:45 ajacoutot Exp $
 @bin bin/mx-create-image-cache
 include/mx-${API_VERSION}/
 include/mx-${API_VERSION}/mx/
@@ -71,21 +71,16 @@ include/mx-${API_VERSION}/mx/mx-viewport.h
 include/mx-${API_VERSION}/mx/mx-widget.h
 include/mx-${API_VERSION}/mx/mx-window.h
 include/mx-${API_VERSION}/mx/mx.h
-lib/girepository-${API_VERSION}/
 lib/girepository-${API_VERSION}/Mx-${API_VERSION}.typelib
 lib/girepository-${API_VERSION}/MxGtk-${API_VERSION}.typelib
 lib/libmx-${API_VERSION}.la
 @lib lib/libmx-${API_VERSION}.so.${LIBmx-1.0_VERSION}
 lib/libmx-gtk-${API_VERSION}.la
 @lib lib/libmx-gtk-${API_VERSION}.so.${LIBmx-gtk-1.0_VERSION}
-lib/pkgconfig/
 lib/pkgconfig/mx-${API_VERSION}.pc
 lib/pkgconfig/mx-gtk-${API_VERSION}.pc
-share/gir-${API_VERSION}/
 share/gir-${API_VERSION}/Mx-${API_VERSION}.gir
 share/gir-${API_VERSION}/MxGtk-${API_VERSION}.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/mx/
 share/gtk-doc/html/mx-gtk/
 share/gtk-doc/html/mx-gtk/MxGtkFrame.html
@@ -192,14 +187,10 @@ share/gtk-doc/html/mx/pt01.html
 share/gtk-doc/html/mx/right.png
 share/gtk-doc/html/mx/style.css
 share/gtk-doc/html/mx/up.png
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/ca/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/da/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/de/LC_MESSAGES/mx-${API_VERSION}.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/eo/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/es/LC_MESSAGES/mx-${API_VERSION}.mo
@@ -217,8 +208,6 @@ share/locale/lo/
 share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/nl/LC_MESSAGES/mx-${API_VERSION}.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/pl/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/pt_BR/LC_MESSAGES/mx-${API_VERSION}.mo
@@ -226,13 +215,9 @@ share/locale/ro/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/ru/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/sk/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/sv/LC_MESSAGES/mx-${API_VERSION}.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/tr/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/uk/LC_MESSAGES/mx-${API_VERSION}.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/mx-${API_VERSION}.mo
 share/locale/zh_TW/LC_MESSAGES/mx-${API_VERSION}.mo
