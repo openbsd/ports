@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/07 12:49:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/07/07 22:49:15 ajacoutot Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
 GNOME_VERSION=		1.6.0
+REVISION=		0
 
 SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
 
@@ -17,8 +18,7 @@ WANTLIB += gstvideo-0.10 gthread-2.0 json-glib-1.0 m orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
 
-# XXX breaks the build
-#MODGNOME_TOOLS=		goi
+MODGNOME_TOOLS=		goi
 
 LIB_DEPENDS=		graphics/clutter/core>=${MAJOR} \
 			multimedia/gstreamer-0.10/plugins-bad
