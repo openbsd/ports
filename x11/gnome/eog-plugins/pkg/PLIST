@@ -1,28 +1,57 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/03/29 07:13:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/07/07 13:24:29 jasper Exp $
 lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/fit-to-width.plugin
+lib/eog/plugins/fullscreenbg.plugin
+lib/eog/plugins/fullscreenbg.py
+lib/eog/plugins/fullscreenbg.pyc
+lib/eog/plugins/fullscreenbg.pyo
 @comment lib/eog/plugins/libexif-display.a
 @comment lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
 @comment lib/eog/plugins/libfit-to-width.a
 @comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+lib/eog/plugins/libmap.a
+lib/eog/plugins/libmap.la
+lib/eog/plugins/libmap.so
 @comment lib/eog/plugins/libpostasa.a
 @comment lib/eog/plugins/libpostasa.la
 lib/eog/plugins/libpostasa.so
 @comment lib/eog/plugins/libsend-by-mail.a
 @comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
+lib/eog/plugins/map.plugin
 lib/eog/plugins/postasa.plugin
+lib/eog/plugins/pythonconsole/
+lib/eog/plugins/pythonconsole.plugin
+lib/eog/plugins/pythonconsole/__init__.py
+lib/eog/plugins/pythonconsole/__init__.pyc
+lib/eog/plugins/pythonconsole/__init__.pyo
+lib/eog/plugins/pythonconsole/config.py
+lib/eog/plugins/pythonconsole/config.pyc
+lib/eog/plugins/pythonconsole/config.pyo
+lib/eog/plugins/pythonconsole/console.py
+lib/eog/plugins/pythonconsole/console.pyc
+lib/eog/plugins/pythonconsole/console.pyo
 lib/eog/plugins/send-by-mail.plugin
+lib/eog/plugins/slideshowshuffle.plugin
+lib/eog/plugins/slideshowshuffle.py
+lib/eog/plugins/slideshowshuffle.pyc
+lib/eog/plugins/slideshowshuffle.pyo
 share/eog/plugins/
 share/eog/plugins/exif-display/
 share/eog/plugins/exif-display/exif-display-config.ui
 share/eog/plugins/exif-display/exif-display.ui
+share/eog/plugins/fullscreenbg/
+share/eog/plugins/fullscreenbg/preferences_dialog.ui
 share/eog/plugins/postasa/
 share/eog/plugins/postasa/postasa-config.xml
 share/eog/plugins/postasa/postasa-uploads.xml
+share/eog/plugins/pythonconsole/
+share/eog/plugins/pythonconsole/config.ui
 share/glib-2.0/schemas/org.gnome.eog.plugins.exif-display.gschema.xml
+share/glib-2.0/schemas/org.gnome.eog.plugins.fullscreenbg.gschema.xml
+share/glib-2.0/schemas/org.gnome.eog.plugins.pythonconsole.gschema.xml
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
 share/locale/as/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo

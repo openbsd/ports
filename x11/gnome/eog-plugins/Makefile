@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2012/05/28 16:08:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2012/07/07 13:24:29 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.4.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -30,19 +31,19 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 pixman-1
 WANTLIB += plc4 plds4 png pthread-stubs smime3 softokn3 soup-2.4
 WANTLIB += soup-gnome-2.4 sqlite3 ssl ssl3 xcb xcb-render xcb-shm
 WANTLIB += xml2 z curl idn stdc++
+WANTLIB += champlain-0.12 champlain-gtk-0.12 clutter-1.0 clutter-gtk-1.0
+WANTLIB += cogl cogl-pango json-glib-1.0
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \
+			geo/libchamplain/core>=0.12.2 \
 			graphics/libexif
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/eog>=${GNOME_VERSION}
 
-# XXX: All plugins minus 'map' which requires libchamplain -> clutter
-PLUGINS=		fit-to-width,exif-display,send-by-mail,postasa
-
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+=	--enable-python \
-			--with-plugins=${PLUGINS}
+			--with-plugins=all
 
 .include <bsd.port.mk>
