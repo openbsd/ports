@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.96 2012/07/07 14:04:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.97 2012/07/07 17:20:44 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.4.2
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -44,8 +45,8 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/iso-codes
-#XXX see below		x11/gnome/nautilus-sendto
+			devel/iso-codes \
+			x11/gnome/nautilus-sendto
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.0 \
 			geo/geoclue \
@@ -72,24 +73,16 @@ MODGNOME_TOOLS= 	yelp
 
 MODGNOME_LDFLAGS=	-Wl,-rpath,${LOCALBASE}/lib/pulseaudio
 
-CONFIGURE_ARGS+=	--enable-spell \
-			--enable-location \
-			--enable-goa \
-			--enable-map \
-			--disable-control-center-embedding \
-			--disable-geocode \
-			--disable-gudev \
+CONFIGURE_ARGS+=	--disable-gudev \
 			--disable-Werror \
 			--with-eds \
-			--with-ca-file=/etc/ssl/cert.pem \
 			--without-cheese
+
+# XXX needs geocode-glib
+CONFIGURE_ARGS +=	--disable-geocode
 
 # needs connman or network-manager
 CONFIGURE_ARGS+=	--without-connectivity
-
-# XXX lots of 'libnstempathy.so: undefined symbol' at runtime
-# revisit when telepathy-yell is moved out from empathy(?)
-CONFIGURE_ARGS+=	--disable-nautilus-sendto
 
 USE_GROFF=		Yes
 
