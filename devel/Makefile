@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1050 2012/06/27 09:03:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.1051 2012/07/07 14:47:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1106,6 +1106,7 @@
      SUBDIR += rats
      SUBDIR += re2c
      SUBDIR += readline
+     SUBDIR += rebar
      SUBDIR += remake
      SUBDIR += ruby-abstract
      SUBDIR += ruby-actionpack
