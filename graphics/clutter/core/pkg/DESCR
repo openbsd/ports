@@ -1,7 +1,8 @@
-Clutter is an open source software library for creating fast, visually
-rich and animated graphical user interfaces.
+Clutter is an open source software library for creating fast,
+compelling, portable, and dynamic graphical user interfaces.
 
-Clutter uses OpenGL (and optionally OpenGL ES for use on Mobile and
-embedded platforms) for rendering but with an API which hides the
-underlying GL complexity from the developer. The Clutter API is intended
-to be easy to use, efficient and flexible.
+Clutter uses OpenGL for rendering, but wraps an easy to use, efficient,
+flexible API around GL's complexity.
+Clutter enforces no particular user interface style, but provides a
+rich, generic foundation for higher-level toolkits tailored to
+specific needs.
