@@ -1,0 +1,5 @@
+rebar is an Erlang build tool that makes it easy to compile and test
+Erlang applications, port drivers and releases.
+
+For more information on using rebar, please have a look at the
+documentation on the wiki provided at the homepage.
