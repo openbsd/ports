@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/07 18:56:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/07/07 12:50:39 ajacoutot Exp $
 
 COMMENT=		python bindings for Clutter
 
@@ -8,8 +8,7 @@ REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=pyclutter/${MAJOR}/}
 
-MODULES=		devel/gettext \
-			lang/python
+MODULES=		lang/python
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo clutter-glx-0.8
