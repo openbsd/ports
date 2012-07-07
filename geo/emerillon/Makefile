@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/03 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/07/07 13:00:44 jasper Exp $
+
+BROKEN =	need fixing after libchamplain update
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
 CFLAGS +=		"-DG_CONST_RETURN=const"

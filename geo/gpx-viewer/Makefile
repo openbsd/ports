@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/07/07 13:00:44 jasper Exp $
+
+BROKEN =        need fixing after libchamplain update
 
 COMMENT =	gpx file viewer
 
