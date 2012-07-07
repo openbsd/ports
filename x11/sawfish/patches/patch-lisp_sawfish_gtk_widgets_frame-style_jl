@@ -1,14 +1,14 @@
-$OpenBSD: patch-lisp_sawfish_cfg_widgets_frame-style_jl,v 1.1 2009/12/22 22:24:10 jasper Exp $
---- lisp/sawfish/cfg/widgets/frame-style.jl.orig	Tue Dec 22 21:41:21 2009
-+++ lisp/sawfish/cfg/widgets/frame-style.jl	Tue Dec 22 21:41:44 2009
-@@ -113,9 +113,7 @@
+$OpenBSD: patch-lisp_sawfish_gtk_widgets_frame-style_jl,v 1.1 2012/07/07 09:19:16 jasper Exp $
+--- lisp/sawfish/gtk/widgets/frame-style.jl.orig	Tue Jun 26 22:50:43 2012
++++ lisp/sawfish/gtk/widgets/frame-style.jl	Sat Jul  7 11:15:48 2012
+@@ -99,9 +99,7 @@
  					  (setq full dir)
  					  (throw 'out t))
  				      (error))))
 -				'("%s" "%s.tar#tar/%s" "%s.tar.gz#tar/%s"
 -				  "%s.tar.Z#tar/%s" "%s.tar.bz2#tar/%s"
 -				  "%s.tar.lzma#tar/%s" "%s.tar.xz#tar/%s"))
-+				'("%s"))
++			      '("%s"))
  			  nil)
  		    (setq full (i18n-filename
  				(expand-file-name "README" full)))
