@@ -1,6 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.8 2011/12/20 14:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2012/07/07 12:48:00 ajacoutot Exp $
 
 SHARED_ONLY?=		Yes
+
+DIST_SUBDIR=		clutter
 
 CATEGORIES+=		graphics/clutter x11
 
@@ -12,17 +14,14 @@ PERMIT_PACKAGE_FTP?=    Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=  Yes
 
-MASTER_SITES_CLUTTER?=	${HOMEPAGE}/sources/
-DIST_SUBDIR=		clutter
+MODULES +=		devel/gettext \
+			x11/gnome
 
-USE_GMAKE?=		Yes
-
-USE_LIBTOOL?=		Yes
 LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
-CONFIGURE_ARGS+=	--disable-shave
+CONFIGURE_ARGS +=	--disable-static
 
-API_VERSION?=		0.10
-MAJOR?=			1.0
+API_VERSION?=		1.0
+MAJOR?=			1.10
 SUBST_VARS?=		MAJOR API_VERSION
