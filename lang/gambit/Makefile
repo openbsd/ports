@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/20 10:47:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/07 09:39:55 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete, efficient and reliable implementation of Scheme
 
-V=		4.6.5
+V=		4.6.6
 DISTNAME=	gambc-v${V:S/./_/g}
 PKGNAME=	gambit-$V
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/20 10:47:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/07 09:39:55 jasper Exp $
 @conflict scheme48-*
 bin/gambc-cc
 bin/gambc-doc
@@ -13,7 +13,7 @@ bin/scheme-srfi-0
 bin/six
 bin/six-script
 include/gambit-c/
-include/gambit-c/gambit-not406005.h
+include/gambit-c/gambit-not406006.h
 include/gambit-c/gambit.h
 @info info/gambit-c.info
 lib/gambit-c/
