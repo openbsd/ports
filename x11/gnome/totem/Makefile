@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/07/07 16:43:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2012/07/07 20:44:26 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -8,6 +8,8 @@ GNOME_VERSION=		3.4.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		0
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -60,6 +62,7 @@ BUILD_DEPENDS=	 	devel/iso-codes \
 RUN_DEPENDS-main=	devel/iso-codes \
 			devel/py-xdg \
 			x11/dbus-python \
+			x11/gnome/grilo-plugins \
 			x11/gnome/settings-daemon \
 			devel/py-gobject \
 			www/py-httplib2 \
