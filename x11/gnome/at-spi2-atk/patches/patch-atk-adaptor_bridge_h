@@ -1,0 +1,27 @@
+$OpenBSD: patch-atk-adaptor_bridge_h,v 1.1 2012/07/07 06:59:24 jasper Exp $
+
+From e4f3eee2e137cd34cd427875365f458c65458164 Mon Sep 17 00:00:00 2001
+From: Mike Gorse <mgorse@suse.com>
+Date: Thu, 21 Jun 2012 21:56:40 +0000
+Subject: Use XDG_RUNTIME_DIR to hold sockets, and do not make a world-writable dir
+
+If we use XDG_RUNTIME_DIR, then the directory should be owned by the
+appropriate user, so it should not need to be world-writable. Hopefully this
+won't break accessibility for administrative apps on some distro.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=678348
+
+CVE-2012-3378
+
+--- atk-adaptor/bridge.h.orig	Mon Jul  4 23:44:54 2011
++++ atk-adaptor/bridge.h	Thu Jul  5 22:19:14 2012
+@@ -59,7 +59,8 @@ struct _SpiBridge
+ */
+   gchar *desktop_name;
+   gchar *desktop_path;
+-char *app_bus_addr;
++gchar *app_tmp_dir;
++gchar *app_bus_addr;
+   GList *events;
+   gboolean events_initialized;
+ };

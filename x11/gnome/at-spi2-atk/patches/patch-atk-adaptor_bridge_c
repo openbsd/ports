@@ -1,0 +1,82 @@
+$OpenBSD: patch-atk-adaptor_bridge_c,v 1.1 2012/07/07 06:59:24 jasper Exp $
+
+From e4f3eee2e137cd34cd427875365f458c65458164 Mon Sep 17 00:00:00 2001
+From: Mike Gorse <mgorse@suse.com>
+Date: Thu, 21 Jun 2012 21:56:40 +0000
+Subject: Use XDG_RUNTIME_DIR to hold sockets, and do not make a world-writable dir
+
+If we use XDG_RUNTIME_DIR, then the directory should be owned by the
+appropriate user, so it should not need to be world-writable. Hopefully this
+won't break accessibility for administrative apps on some distro.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=678348
+
+CVE-2012-3378
+
+--- atk-adaptor/bridge.c.orig	Wed Mar 14 22:53:35 2012
++++ atk-adaptor/bridge.c	Thu Jul  5 22:19:14 2012
+@@ -327,7 +327,6 @@ register_application (SpiBridge * app)
+   DBusMessageIter iter;
+   DBusError error;
+   DBusPendingCall *pending;
+-  const int max_addr_length = 128; /* should be long enough */
+ 
+   dbus_error_init (&error);
+ 
+@@ -355,16 +354,16 @@ register_application (SpiBridge * app)
+   if (message)
+     dbus_message_unref (message);
+ 
+-  /* could this be better, we accept some amount of race in getting the temp name*/
+-  /* make sure the directory exists */
+-  mkdir ("/tmp/at-spi2/", S_IRWXU|S_IRWXG|S_IRWXO|S_ISVTX);
+-  chmod ("/tmp/at-spi2/", S_IRWXU|S_IRWXG|S_IRWXO|S_ISVTX);
+-  app->app_bus_addr = g_malloc(max_addr_length * sizeof(char));
+ #ifndef DISABLE_P2P
+-  sprintf (app->app_bus_addr, "unix:path=/tmp/at-spi2/socket-%d-%d", getpid(),
+-           rand());
+-#else
+-  app->app_bus_addr [0] = '\0';
++  app->app_tmp_dir = g_build_filename (g_get_user_runtime_dir (),
++                                       "at-spi2-XXXXXX", NULL);
++  if (!g_mkdtemp (app->app_tmp_dir))
++  {
++    g_free (app->app_tmp_dir);
++    app->app_tmp_dir = NULL;
++    return FALSE;
++  }
++  app->app_bus_addr = g_strdup_printf ("unix:path=%s/socket", app->app_tmp_dir);
+ #endif
+ 
+   return TRUE;
+@@ -395,6 +394,20 @@ deregister_application (SpiBridge * app)
+   dbus_connection_send (app->bus, message, NULL);
+   if (message)
+     dbus_message_unref (message);
++
++  if (app->app_bus_addr)
++  {
++    unlink (app->app_bus_addr);
++    g_free (app->app_bus_addr);
++    app->app_bus_addr = NULL;
++  }
++
++  if (app->app_tmp_dir)
++  {
++    rmdir (app->app_tmp_dir);
++    g_free (app->app_tmp_dir);
++    app->app_tmp_dir = NULL;
++  }
+ }
+ 
+ /*---------------------------------------------------------------------------*/
+@@ -583,6 +596,9 @@ setup_bus (void)
+ #ifndef DISABLE_P2P
+   DBusServer *server;
+   DBusError err;
++
++  if (!spi_global_app_data->app_bus_addr)
++    return -1;
+ 
+   dbus_error_init(&err);
+   server = dbus_server_listen(spi_global_app_data->app_bus_addr, &err);
