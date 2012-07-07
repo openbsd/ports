@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2012/07/07 10:15:24 jasper Exp $
+
+Don't enter emacs/, since emacs may not be available.
+
+--- Makefile.in.orig	Sat Jul  7 12:12:28 2012
++++ Makefile.in	Sat Jul  7 12:12:38 2012
+@@ -356,7 +356,7 @@ top_srcdir_absolute = @top_srcdir_absolute@
+ # config.rpath is needed
+ #
+ AUTOMAKE_OPTIONS = 1.10
+-SUBDIRS = oop libguile ice-9 guile-config guile-readline emacs \
++SUBDIRS = oop libguile ice-9 guile-config guile-readline \
+ 	  scripts srfi doc examples test-suite benchmark-suite lang am
+ 
+ bin_SCRIPTS = guile-tools

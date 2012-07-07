@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2012/07/07 09:11:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/07/07 10:15:24 jasper Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
 VERSION=	1.8.8
 DISTNAME=	guile-${VERSION}
+REVISION=	0
 SHARED_LIBS=	guile 20.0 \
 		guile-srfi-srfi-1-v-3 3.2 \
 		guile-srfi-srfi-13-14-v-3 3.1 \

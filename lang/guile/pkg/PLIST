@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/07/07 08:31:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/07/07 10:15:24 jasper Exp $
 %%SHARED%%
 @bin bin/guile
 bin/guile-config
@@ -135,9 +135,6 @@ lib/pkgconfig/
 lib/pkgconfig/guile-${V}.pc
 @man man/man1/guile.1
 share/aclocal/guile.m4
-share/emacs/site-lisp/gds-scheme.el
-share/emacs/site-lisp/gds-server.el
-share/emacs/site-lisp/gds.el
 share/guile/
 share/guile/${V}/
 share/guile/${V}/guile-procedures.txt
