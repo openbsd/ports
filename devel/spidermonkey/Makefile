@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/08 17:21:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/07 22:46:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MOZILLA_VERSION =	1.8.5
 DISTNAME =		js185-1.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
 PKGSPEC =		spidermonkey->=1.8,<1.9
-REVISION =		0
+REVISION =		1
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs185 ${SO_VERSION}
@@ -51,7 +51,6 @@ CONFIGURE_ARGS =	--with-pthread \
 
 CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
 			MOZILLA_VERSION="${MOZILLA_VERSION}" \
-			LIBS=-lncurses \
-			CPPFLAGS=-DJS_C_STRINGS_ARE_UTF8
+			LIBS=-lncurses
 
 .include <bsd.port.mk>
