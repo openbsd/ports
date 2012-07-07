@@ -1,11 +1,12 @@
-$OpenBSD: patch-amavisd,v 1.9 2011/07/20 14:46:20 giovanni Exp $
---- amavisd.orig	Fri Jul  1 18:21:07 2011
-+++ amavisd	Tue Jul 12 10:39:35 2011
-@@ -24679,6 +24679,7 @@ sub new_SpamAssassin_instance {
-     rules_filename       => $sa_configpath,
-     site_rules_filename  => $sa_siteconfigpath,
- #   LOCAL_STATE_DIR   => '/var/lib',
-+    LOCAL_STATE_DIR   => '/var/db/spamassassin',
+$OpenBSD: patch-amavisd,v 1.10 2012/07/07 19:09:36 giovanni Exp $
+--- amavisd.orig	Sat Jun 30 15:43:31 2012
++++ amavisd	Tue Jul  3 18:09:39 2012
+@@ -26609,7 +26609,7 @@ sub new_SpamAssassin_instance {
  #   PREFIX            => '/usr/local',
  #   DEF_RULES_DIR     => '/usr/local/share/spamassassin',
- #   LOCAL_RULES_DIR   => '/usr/local/etc/mail/spamassassin',
+ #   LOCAL_RULES_DIR   => '/etc/mail/spamassassin',
+-#   LOCAL_STATE_DIR   => '/var/lib/spamassassin',
++    LOCAL_STATE_DIR   => '/var/db/spamassassin',
+ #see Mail::SpamAssassin man page for other options
+   };
+   if ($sa_version_num < 3.001005 && !defined $sa_args->{LOCAL_STATE_DIR})

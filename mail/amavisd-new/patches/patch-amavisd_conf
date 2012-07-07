@@ -1,6 +1,6 @@
-$OpenBSD: patch-amavisd_conf,v 1.6 2011/07/20 14:46:20 giovanni Exp $
---- amavisd.conf.orig	Fri Jul  1 18:21:01 2011
-+++ amavisd.conf	Tue Jul 12 14:59:33 2011
+$OpenBSD: patch-amavisd_conf,v 1.7 2012/07/07 19:09:36 giovanni Exp $
+--- amavisd.conf.orig	Sat Jun 30 23:33:32 2012
++++ amavisd.conf	Tue Jul  3 18:12:15 2012
 @@ -14,12 +14,12 @@ use strict;
  # $bypass_decode_parts = 1;         # controls running of decoders&dearchivers
  
@@ -17,25 +17,23 @@ $OpenBSD: patch-amavisd_conf,v 1.6 2011/07/20 14:46:20 giovanni Exp $
  $TEMPBASE = "$MYHOME/tmp";   # working directory, needs to exist, -T
  $ENV{TMPDIR} = $TEMPBASE;    # environment variable TMPDIR, used by SA, etc.
  $QUARANTINEDIR = '/var/virusmails';  # -Q
-@@ -315,7 +315,7 @@ $banned_filename_re = new_RE(
- # ['uue',  \&do_ascii],
- # ['hqx',  \&do_ascii],
- # ['ync',  \&do_ascii],
--  ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
-+# ['F',    \&do_uncompress, ['unfreeze','freeze -d','melt','fcat'] ],
-   ['Z',    \&do_uncompress, ['uncompress','gzip -d','zcat'] ],
-   ['gz',   \&do_uncompress,  'gzip -d'],
+@@ -313,7 +313,7 @@ $banned_filename_re = new_RE(
+ @decoders = (
+   ['mail', \&do_mime_decode],
+ # [[qw(asc uue hqx ync)], \&do_ascii],  # not safe
+-  ['F',    \&do_uncompress, ['unfreeze', 'freeze -d', 'melt', 'fcat'] ],
++# ['F',    \&do_uncompress, ['unfreeze', 'freeze -d', 'melt', 'fcat'] ],
+   ['Z',    \&do_uncompress, ['uncompress', 'gzip -d', 'zcat'] ],
+   ['gz',   \&do_uncompress, 'gzip -d'],
    ['gz',   \&do_gunzip],
-@@ -333,8 +333,10 @@ $banned_filename_re = new_RE(
- # ['a',    \&do_ar,          'ar'],  # unpacking .a seems an overkill
-   ['zip',  \&do_unzip],
-   ['7z',   \&do_7zip,       ['7zr','7za','7z'] ],
--  ['rar',  \&do_unrar,      ['rar','unrar'] ],
--  ['arj',  \&do_unarj,      ['arj','unarj'] ],
-+# ['rar',  \&do_unrar,      ['rar','unrar'] ],
-+  ['rar',  \&do_7zip,       '7z'],
-+# ['arj',  \&do_unarj,      ['arj','unarj'] ],
-+  ['arj',  \&do_7zip,       '7z'],
-   ['arc',  \&do_arc,        ['nomarch','arc'] ],
-   ['zoo',  \&do_zoo,        ['zoo','unzoo'] ],
-   ['lha',  \&do_lha,         'lha'],
+@@ -331,8 +331,8 @@ $banned_filename_re = new_RE(
+            # ['/usr/local/heirloom/usr/5bin/pax', 'pax', 'gcpio', 'cpio']
+   ['deb',  \&do_ar, 'ar'],
+ # ['a',    \&do_ar, 'ar'],  # unpacking .a seems an overkill
+-  ['rar',  \&do_unrar, ['unrar', 'rar'] ],
+-  ['arj',  \&do_unarj, ['unarj', 'arj'] ],
++  ['rar',  \&do_7zip, ['7z'] ],
++  ['arj',  \&do_7zip, ['7z'] ],
+   ['arc',  \&do_arc,   ['nomarch', 'arc'] ],
+   ['zoo',  \&do_zoo,   ['zoo', 'unzoo'] ],
+   ['doc',  \&do_ole,   'ripole'],
