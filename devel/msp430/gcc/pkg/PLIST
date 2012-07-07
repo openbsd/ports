@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/04/17 13:27:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/07 20:34:25 jasper Exp $
 @bin bin/msp430-c++
 @bin bin/msp430-cpp
 @bin bin/msp430-g++
 @bin bin/msp430-gcc
-@bin bin/${FULLPKGNAME}
+@bin bin/msp430-gcc-4.6.3
 @bin bin/msp430-gcov
 lib/gcc/
 lib/gcc/msp430/
