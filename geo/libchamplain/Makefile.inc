@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2011/04/02 21:03:02 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2012/07/07 12:59:33 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -6,8 +6,8 @@ CATEGORIES+=		geo/libchamplain geo devel
 
 HOMEPAGE?=		http://projects.gnome.org/libchamplain/
 
-VERSION?=		0.8.3
-API_VERSION=		0.8
+VERSION?=		0.12.2
+API_VERSION=		0.12
 SUBST_VARS=		API_VERSION
 
 # LGPLv2.1
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 MASTER_SITES?=		http://download.gnome.org/sources/libchamplain/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+EXTRACT_SUFX?=		.tar.xz
 
 DIST_SUBDIR=		libchamplain
 
