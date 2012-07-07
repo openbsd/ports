@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2012/07/07 08:31:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2012/07/07 09:11:59 jasper Exp $
 
 COMMENT=	GNU's Ubiquitous Intelligent Language for Extension
 
@@ -33,6 +33,9 @@ CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
+# Needed because otherwise regress tests won't build:
+# warning: format '%ji' expects type 'intmax_t', but argument 4 has type 'scm_t_intmax'
+CONFIGURE_ARGS+=	--disable-error-on-warning
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		PTHREAD_CFLAGS=-pthread \
