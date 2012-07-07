@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/26 09:14:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/07 09:39:26 jasper Exp $
+
+BROKEN-powerpc=	clang dumps core
 
 SHARED_ONLY=	Yes
 
