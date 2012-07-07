@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2012/06/21 16:57:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.59 2012/07/07 07:52:50 ajacoutot Exp $
 #
 
     SUBDIR =
@@ -9,7 +9,6 @@
     SUBDIR += html2text
     SUBDIR += html2wml
     SUBDIR += ish
-    SUBDIR += libdvd
     SUBDIR += libdvdcss
     SUBDIR += libiconv
     SUBDIR += libpst
