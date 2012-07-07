@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_network_cpp,v 1.3 2012/04/07 08:32:32 kirby Exp $
---- src/network.cpp.orig	Sat Jan  7 06:35:17 2012
-+++ src/network.cpp	Mon Feb 13 17:17:39 2012
-@@ -941,9 +941,9 @@ struct bandwidth_stats {
+$OpenBSD: patch-src_network_cpp,v 1.4 2012/07/07 08:26:29 jasper Exp $
+--- src/network.cpp.orig	Mon Apr 23 21:01:51 2012
++++ src/network.cpp	Wed Jun 27 14:04:50 2012
+@@ -940,9 +940,9 @@ struct bandwidth_stats {
  	int in_packets;
  	int in_bytes;
  	int day;
