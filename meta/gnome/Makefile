@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/05/28 16:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/07/07 16:01:21 ajacoutot Exp $
 
 COMMENT-main=	GNOME desktop meta-package (base installation)
 COMMENT-extra=	GNOME desktop meta-package (full installation)
@@ -10,7 +10,7 @@ PKGNAME-main=	gnome-${V}
 PKGNAME-extra=	gnome-extra-${V}
 
 REVISION-main=	1
-REVISION-extra=	0
+REVISION-extra=	1
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -73,7 +73,6 @@ RUN_DEPENDS-extra += \
 		net/telepathy/folks,-tracker \
 		www/epiphany-extensions \
 		sysutils/deja-dup \
-		x11/gnome/contacts \
 		x11/gnome/ekiga \
 		x11/gnome/empathy \
 		x11/gnome/eog-plugins \
