@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/06/18 11:30:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2012/07/08 11:19:23 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.2
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		x11
 
@@ -54,8 +54,10 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/colord
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.4.2 \
+			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 RUN_DEPENDS=		x11/gnome/settings-daemon>=3.4.2 \
+			devel/iso-codes \
 			devel/gsettings-desktop-schemas
 
 # NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
