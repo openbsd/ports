@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2012/06/18 11:46:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.164 2012/07/08 06:09:45 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -142,7 +142,6 @@ CONFIGURE_ARGS=		--disable-static \
 			--disable-mono \
 			--disable-python \
 			--disable-contact-maps \
-			--without-clutter \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
 			--with-krb5=/usr \
