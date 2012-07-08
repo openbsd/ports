@@ -1,10 +1,10 @@
-$OpenBSD: patch-GSPdf_m,v 1.1.1.1 2010/10/26 14:56:01 sebastia Exp $
+$OpenBSD: patch-GSPdf_m,v 1.2 2012/07/08 13:45:38 sebastia Exp $
 
 Fix default location of where to find ghostscript
 
---- GSPdf.m.orig	Tue Oct 26 02:47:33 2010
-+++ GSPdf.m	Tue Oct 26 02:48:45 2010
-@@ -129,7 +129,7 @@ static GSPdf *gspdf = nil;
+--- GSPdf.m.orig	Wed Apr 18 23:58:09 2012
++++ GSPdf.m	Mon Jul  2 19:46:27 2012
+@@ -133,7 +133,7 @@ static GSPdf *gspdf = nil;
  #if defined __NetBSD__
      gsPathStr = @"/usr/pkg/bin/gs";
  #else
@@ -12,4 +12,4 @@ Fix default location of where to find ghostscript
 +    gsPathStr = @"${LOCALBASE}/bin/gs";
  #endif
      }
- 
+   [gsPath release];

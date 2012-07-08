@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2012/01/08 12:03:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2012/07/08 13:45:38 sebastia Exp $
 
 COMMENT=	PDF, PS and EPS viewer for GNUstep
 
-DISTNAME=	GSPdf-0.4
-REVISION =	0
+DISTNAME=	GSPdf-0.5
 
 HOMEPAGE=	http://gap.nongnu.org/gspdf/
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=gap/}
