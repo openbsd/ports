@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2012/05/01 07:39:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.184 2012/07/08 09:01:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -9,6 +9,7 @@
      SUBDIR += banshee
      SUBDIR += baker
      SUBDIR += baobab
+     SUBDIR += caribou
      SUBDIR += color-manager
      SUBDIR += common
      SUBDIR += contacts
@@ -18,6 +19,7 @@
      SUBDIR += devhelp
      SUBDIR += dictionary
      SUBDIR += doc-utils
+     SUBDIR += documents
      SUBDIR += ekiga
      SUBDIR += empathy
      SUBDIR += eog
@@ -100,6 +102,7 @@
      SUBDIR += seed
      SUBDIR += session
      SUBDIR += settings-daemon
+     SUBDIR += sushi
      SUBDIR += system-log
      SUBDIR += system-monitor
      SUBDIR += terminal
