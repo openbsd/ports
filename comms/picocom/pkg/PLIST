@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/08 18:19:18 lteo Exp $
+@bin bin/picocom
+@man man/man8/picocom.8
