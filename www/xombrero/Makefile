@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/07 14:18:14 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/08 21:27:42 gonzalo Exp $
 
 COMMENT=		vi-like minimalists web browser
-DISTNAME=		xombrero-1.0.0
+DISTNAME=		xombrero-1.1.0
 CATEGORIES=		www
 EPOCH=			1
 
@@ -28,7 +28,7 @@ WANTLIB += xcb xcb-render xcb-shm z javascriptcoregtk-1.0
 
 MASTER_SITES=		http://opensource.conformal.com/snapshots/xombrero/
 
-LIB_DEPENDS=		www/webkit>=1.6.1v0
+LIB_DEPENDS=		www/webkit>=1.8.0v0
 RUN_DEPENDS=		devel/desktop-file-utils
 
 EXTRACT_SUFX=		.tgz
