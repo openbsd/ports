@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.12 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Core.pm,v 1.13 2012/07/08 09:59:31 jasper Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -366,7 +366,7 @@ our @ISA = qw(DPB::Task::Pipe);
 sub run
 {
 	my ($self, $core) = @_;
-	$core->shell->exec(OpenBSD::Path->sysctl, '-n', 'hw.ncpu');
+	$core->shell->exec(OpenBSD::Paths->sysctl, '-n', 'hw.ncpu');
 }
 
 sub finalize
