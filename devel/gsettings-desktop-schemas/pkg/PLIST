@@ -1,10 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.12 2012/04/16 13:34:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/07/08 11:49:53 jasper Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
+lib/girepository-1.0/
+lib/girepository-1.0/GDesktopEnums-3.0.typelib
 share/GConf/
 share/GConf/gsettings/
 share/GConf/gsettings/gsettings-desktop-schemas.convert
 share/GConf/gsettings/wm-schemas.convert
+share/gir-1.0/
+share/gir-1.0/GDesktopEnums-3.0.gir
 share/glib-2.0/schemas/org.gnome.desktop.a11y.applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.keyboard.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
