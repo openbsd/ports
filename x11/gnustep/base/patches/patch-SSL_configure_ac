@@ -1,10 +1,10 @@
-$OpenBSD: patch-SSL_configure_ac,v 1.1 2012/06/28 18:49:54 jasper Exp $
+$OpenBSD: patch-SSL_configure_ac,v 1.2 2012/07/08 13:22:54 sebastia Exp $
 
 Allow building against OpenSSL without SSLv2 support.
 
---- SSL/configure.ac.orig	Wed Jun 27 09:18:16 2012
-+++ SSL/configure.ac	Wed Jun 27 09:18:32 2012
-@@ -161,9 +161,9 @@ if test $enable_openssl = yes; then
+--- SSL/configure.ac.orig	Thu Dec 15 10:42:39 2011
++++ SSL/configure.ac	Mon Jul  2 18:57:03 2012
+@@ -180,9 +180,9 @@ if test $enable_openssl = yes; then
      if test $ac_cv_lib_crypto_CRYPTO_malloc = yes; then
        # ssl needs socket on Solaris
        AC_CHECK_LIB(socket, main)

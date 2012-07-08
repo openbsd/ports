@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/18 11:54:49 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.13 2012/07/08 13:22:54 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -67,6 +67,7 @@ include/Foundation/NSHost.h
 include/Foundation/NSIndexPath.h
 include/Foundation/NSIndexSet.h
 include/Foundation/NSInvocation.h
+include/Foundation/NSJSONSerialization.h
 include/Foundation/NSKeyValueCoding.h
 include/Foundation/NSKeyValueObserving.h
 include/Foundation/NSKeyedArchiver.h
@@ -141,7 +142,6 @@ include/GNUstepBase/GCObject.h
 include/GNUstepBase/GNUstep.h
 include/GNUstepBase/GSBlocks.h
 include/GNUstepBase/GSConfig.h
-include/GNUstepBase/GSFileHandle.h
 include/GNUstepBase/GSFunctions.h
 include/GNUstepBase/GSIArray.h
 include/GNUstepBase/GSIMap.h
@@ -171,13 +171,13 @@ include/GNUstepBase/NSTask+GNUstepBase.h
 include/GNUstepBase/NSThread+GNUstepBase.h
 include/GNUstepBase/NSURL+GNUstepBase.h
 include/GNUstepBase/Unicode.h
-include/GNUstepBase/preface.h
 include/GNUstepBase/unicode/
 include/ObjectiveC2/
-include/ObjectiveC2/Availability.h
-include/ObjectiveC2/blocks_runtime.h
-include/ObjectiveC2/capabilities.h
-include/ObjectiveC2/runtime.h
+include/ObjectiveC2/objc/
+include/ObjectiveC2/objc/Availability.h
+include/ObjectiveC2/objc/blocks_runtime.h
+include/ObjectiveC2/objc/capabilities.h
+include/ObjectiveC2/objc/runtime.h
 include/gnustep/
 include/gnustep/base/
 include/gnustep/unicode/
@@ -271,6 +271,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Freetown
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Gaborone
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Harare
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Johannesburg
+${LIBDIR}/Resources/NSTimeZones/zones/Africa/Juba
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Kampala
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Khartoum
 ${LIBDIR}/Resources/NSTimeZones/zones/Africa/Kigali
@@ -389,10 +390,12 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Kentucky/
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Kentucky/Louisville
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Kentucky/Monticello
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Knox_IN
+${LIBDIR}/Resources/NSTimeZones/zones/America/Kralendijk
 ${LIBDIR}/Resources/NSTimeZones/zones/America/La_Paz
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Lima
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Los_Angeles
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Louisville
+${LIBDIR}/Resources/NSTimeZones/zones/America/Lower_Princes
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Maceio
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Managua
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Manaus
@@ -507,6 +510,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dubai
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Dushanbe
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Gaza
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Harbin
+${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hebron
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Ho_Chi_Minh
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hong_Kong
 ${LIBDIR}/Resources/NSTimeZones/zones/Asia/Hovd

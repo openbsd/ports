@@ -1,7 +1,19 @@
-$OpenBSD: patch-Source_NSConnection_m,v 1.2 2011/07/19 06:29:09 sebastia Exp $
---- Source/NSConnection.m.orig	Sat Jun 18 19:46:28 2011
-+++ Source/NSConnection.m	Thu Jul  7 19:32:01 2011
-@@ -2487,7 +2487,7 @@ static NSLock	*cached_proxies_gate = nil;
+$OpenBSD: patch-Source_NSConnection_m,v 1.3 2012/07/08 13:22:54 sebastia Exp $
+
+64Bit fixes comparisons to NSNotFound
+
+--- Source/NSConnection.m.orig	Mon Jan 30 12:31:40 2012
++++ Source/NSConnection.m	Mon Apr  9 14:42:01 2012
+@@ -1583,7 +1583,7 @@ static NSLock	*cached_proxies_gate = nil;
+   GS_M_LOCK(IrefGate);
+   if (IrunLoops != nil)
+     {
+-      unsigned	pos = [IrunLoops indexOfObjectIdenticalTo: loop];
++      NSUInteger	pos = [IrunLoops indexOfObjectIdenticalTo: loop];
+ 
+       if (pos != NSNotFound)
+ 	{
+@@ -2499,7 +2499,7 @@ static NSLock	*cached_proxies_gate = nil;
    NSPortCoder	*decoder = nil;
    NSPortCoder	*encoder = nil;
    NSInvocation	*inv = nil;

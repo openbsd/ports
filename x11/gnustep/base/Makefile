@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2012/06/28 18:49:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2012/07/08 13:22:54 sebastia Exp $
 
 COMMENT=	GNUstep base library
 
-DISTNAME=	gnustep-base-1.22.1
-REVISION=	2
+DISTNAME=	gnustep-base-1.24.0
 
-SHARED_LIBS=	gnustep-base 4.0
+SHARED_LIBS=	gnustep-base 5.0
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -40,13 +39,9 @@ LIB_DEPENDS +=	devel/libffi \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS +=	--disable-procfs \
 			--disable-procfs-psinfo
+MAKE_FLAGS +=		libgnustep-base_INTERFACE_VERSION=${LIBgnustep-base_VERSION}
 
 post-patch:
 	@cd ${WRKSRC}/SSL && env AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
-
-pre-configure:
-	@perl -pi -e 's,^MAJOR_VERSION=.*,MAJOR_VERSION=${LIBgnustep-base_VERSION:R},g;' \
-		-e 's,^MINOR_VERSION=.*,MINOR_VERSION=${LIBgnustep-base_VERSION:E},g' \
-		${WRKSRC}/Version
 
 .include <bsd.port.mk>
