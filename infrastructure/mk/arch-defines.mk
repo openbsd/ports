@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.5 2012/06/20 21:17:38 jasper Exp $
+# $OpenBSD: arch-defines.mk,v 1.6 2012/07/08 18:35:48 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -27,8 +27,9 @@ GCC3_ARCHS =
 GCC2_ARCHS = aviion luna88k m68k m88k mvme68k mvme88k vax
 # XXX easier for ports that depend on mono
 MONO_ARCHS = amd64 i386
+LLVM_ARCHS = amd64 i386 powerpc sparc64
 
-.for PROP in ALL APM BE LE LP64 NO_SHARED GCC4 GCC3 GCC2 MONO
+.for PROP in ALL APM BE LE LP64 NO_SHARED GCC4 GCC3 GCC2 MONO LLVM
 .  for A B in ${MACHINE_ARCH} ${ARCH}
 .    if !empty(${PROP}_ARCHS:M$A) || !empty(${PROP}_ARCHS:M$B)
 PROPERTIES += ${PROP:L}
