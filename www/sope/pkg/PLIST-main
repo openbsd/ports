@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/11/18 11:12:44 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2012/07/08 14:18:18 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -244,6 +244,7 @@ include/NGMime/NGMimePartParser.h
 include/NGMime/NGMimeType.h
 include/NGMime/NGMimeUtilities.h
 include/NGMime/NGPart.h
+include/NGMime/NSData+RFC822.h
 include/NGObjWeb/
 include/NGObjWeb/EOFetchSpecification+SoDAV.h
 include/NGObjWeb/NGObjWeb.h
