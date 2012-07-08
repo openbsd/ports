@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2012/07/08 13:57:38 sebastia Exp $
 
 COMMENT=	GNUstep integrated development environment
 
-VERSION=	0.6.0
-DISTNAME=	ProjectCenter-${VERSION}
-REVISION =	1
+DISTNAME=	ProjectCenter-0.6.1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnustep.org/experience/ProjectCenter.html
@@ -12,13 +10,15 @@ MASTER_SITES=	http://ftp.gnustep.org/pub/gnustep/dev-apps/
 
 SHARED_LIBS=	ProjectCenter 1.0
 
+RUN_DEPENDS +=	devel/gmake
 MODULES=	x11/gnustep
 WANTLIB+=	c m pthread util
 
+LIBDIR =	lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/0.6.0
 MAKE_FLAGS=	ProjectCenter_VERSION=${VERSION} \
 		ProjectCenter_INTERFACE_VERSION=${LIBProjectCenter_VERSION}
 
-SUBST_VARS +=	VERSION
+SUBST_VARS +=	LIBDIR
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Modules/Preferences/Build/PCBuildPrefs.h
