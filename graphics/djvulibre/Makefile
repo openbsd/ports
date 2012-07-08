@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/07/08 09:13:59 shadchin Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
-DISTNAME=	djvulibre-3.5.24
-REVISION=	4
-SHARED_LIBS=	djvulibre 24.0
+DISTNAME=	djvulibre-3.5.25.3
+SHARED_LIBS=	djvulibre	25.0	# 25.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/
@@ -19,41 +18,23 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=djvu/}
 
-FLAVORS=	no_x11
-FLAVOR?=
-
 WANTLIB=	c m jpeg pthread stdc++ tiff z
 
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/tiff
 
+RUN_DEPENDS+=	x11/gtk+2,-guic
+
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
-		--with-tiff=${LOCALBASE} \
-		--with-extra-libraries=${LOCALBASE}/lib \
-		--disable-i18n
-
-.if ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS+=--without-x
-.else
-MODULES=	x11/qt3
-
-WANTLIB += GL ICE SM X11 Xcursor Xdamage Xext Xfixes
-WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm expat
-WANTLIB += fontconfig freetype lcms mng png xcb
-
-RUN_DEPENDS+=	devel/desktop-file-utils \
-		x11/gtk+2,-guic
-
-CONFIGURE_ARGS+=--enable-djview
-CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \
-		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt" \
-		CPPFLAGS="-I${X11BASE}/include"
-.endif
+		--with-tiff=${LOCALBASE}
 
 NO_REGRESS=	Yes
+
+WRKDIST=	${WRKDIR}/${DISTNAME:R}
 
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2011/03/17 14:56:54 shadchin Exp $
---- configure.orig	Sun Mar  6 22:43:17 2011
-+++ configure	Sat Mar 12 21:08:54 2011
-@@ -14885,13 +14885,12 @@ fi
+$OpenBSD: patch-configure,v 1.5 2012/07/08 09:13:59 shadchin Exp $
+--- configure.orig	Sun Mar 18 04:49:02 2012
++++ configure	Sun Apr 15 20:28:01 2012
+@@ -14740,13 +14740,12 @@ fi
     for opt in $saved_CXXFLAGS ; do
       case $opt in
         -g*) test $ac_debug != no && OPTS="$OPTS $opt" ;;
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure,v 1.4 2011/03/17 14:56:54 shadchin Exp $
         *) CFLAGS="$CFLAGS $opt" ;;
       esac
     done
-@@ -14923,7 +14922,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
+@@ -14778,7 +14777,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
      rm conftest.*
@@ -24,7 +24,7 @@ $OpenBSD: patch-configure,v 1.4 2011/03/17 14:56:54 shadchin Exp $
   else
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
  $as_echo "no" >&6; }
-@@ -14937,7 +14935,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
+@@ -14792,7 +14790,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
      rm conftest.*
@@ -32,7 +32,7 @@ $OpenBSD: patch-configure,v 1.4 2011/03/17 14:56:54 shadchin Exp $
   else
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
  $as_echo "no" >&6; }
-@@ -14978,7 +14975,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
+@@ -14833,7 +14830,6 @@ $as_echo_n "checking if $CXX accepts $opt... " >&6; }
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
      rm conftest.*
