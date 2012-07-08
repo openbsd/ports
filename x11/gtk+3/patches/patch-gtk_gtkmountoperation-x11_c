@@ -1,4 +1,7 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.7 2012/07/08 17:09:17 sthen Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.8 2012/07/08 18:03:39 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679593
+
 --- gtk/gtkmountoperation-x11.c.orig	Sun Jul  8 09:40:51 2012
 +++ gtk/gtkmountoperation-x11.c	Sun Jul  8 09:42:51 2012
 @@ -731,6 +731,9 @@ pid_get_parent (GPid pid)
