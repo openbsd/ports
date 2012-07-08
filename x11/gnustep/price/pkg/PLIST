@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/10 17:24:44 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/08 13:55:48 sebastia Exp $
 bin/PRICE
 libexec/GNUstep/
 libexec/GNUstep/PRICE.app/
@@ -9,8 +9,6 @@ libexec/GNUstep/PRICE.app/Resources/BriCon.gorm/data.classes
 libexec/GNUstep/PRICE.app/Resources/BriCon.gorm/data.info
 libexec/GNUstep/PRICE.app/Resources/BriCon.gorm/objects.gorm
 libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/
-libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/.#data.info.1.1
-libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/.#objects.gorm.1.1
 libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/data.classes
 libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/data.info
 libexec/GNUstep/PRICE.app/Resources/Convolve55.gorm/objects.gorm
@@ -21,6 +19,10 @@ libexec/GNUstep/PRICE.app/Resources/Crop.gorm/objects.gorm
 libexec/GNUstep/PRICE.app/Resources/CumulHistogram.gorm/
 libexec/GNUstep/PRICE.app/Resources/CumulHistogram.gorm/data.classes
 libexec/GNUstep/PRICE.app/Resources/CumulHistogram.gorm/objects.gorm
+libexec/GNUstep/PRICE.app/Resources/Curves.gorm/
+libexec/GNUstep/PRICE.app/Resources/Curves.gorm/data.classes
+libexec/GNUstep/PRICE.app/Resources/Curves.gorm/data.info
+libexec/GNUstep/PRICE.app/Resources/Curves.gorm/objects.gorm
 libexec/GNUstep/PRICE.app/Resources/CustTraceEdges.gorm/
 libexec/GNUstep/PRICE.app/Resources/CustTraceEdges.gorm/data.classes
 libexec/GNUstep/PRICE.app/Resources/CustTraceEdges.gorm/data.info
