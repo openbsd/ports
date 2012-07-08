@@ -1,0 +1,21 @@
+$OpenBSD: patch-bin_antler-keyboard_in,v 1.1.1.1 2012/07/08 08:58:44 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679583
+
+--- bin/antler-keyboard.in.orig	Fri Sep 16 04:48:56 2011
++++ bin/antler-keyboard.in	Sun Jul  8 10:11:01 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # Antler - a Caribou keyboard implementation
+ #
+@@ -18,7 +18,7 @@
+ # along with this program; if not, write to the Free Software Foundation,
+ # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+-script_dir="$(dirname "$(readlink -f ${BASH_SOURCE[0]})")"
++script_dir="$(dirname "$(readlink -f ${0})")"
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
