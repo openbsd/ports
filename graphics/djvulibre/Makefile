@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/07/08 09:13:59 shadchin Exp $
+# $OpenBSD: Makefile,v 1.28 2012/07/08 14:46:01 shadchin Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
@@ -24,6 +24,8 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/tiff
 
 RUN_DEPENDS+=	x11/gtk+2,-guic
+
+BUILD_DEPENDS+=	x11/gnome/librsvg
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
