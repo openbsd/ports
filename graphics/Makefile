@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2012/05/28 16:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.328 2012/07/08 09:15:55 shadchin Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -40,7 +40,6 @@
      SUBDIR += discwrapper
      SUBDIR += djview4
      SUBDIR += djvulibre
-     SUBDIR += djvulibre,no_x11
      SUBDIR += dmtx-utils
      SUBDIR += dpic
      SUBDIR += dumpmpeg
