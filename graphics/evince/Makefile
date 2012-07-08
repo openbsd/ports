@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2012/07/08 10:33:49 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,6 +21,7 @@ PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
 REVISION-main=	0
+REVISION-djvu=	0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -74,10 +75,9 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
-# we don't need qt3 support in djvulibre, hence no_x11
 LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
-		graphics/djvulibre,no_x11
+		graphics/djvulibre
 
 WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
 		jpeg
