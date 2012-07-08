@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.32 2012/07/01 10:26:35 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.33 2012/07/08 23:15:11 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -556,7 +556,6 @@ share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
 share/doc/dovecot/wiki/FindMailLocation.txt
 share/doc/dovecot/wiki/FinishBasicConfiguration.txt
 share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
-share/doc/dovecot/wiki/HowTo.F5SLBTLSOffload.txt
 share/doc/dovecot/wiki/HowTo.ImapcProxy.txt
 share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
 share/doc/dovecot/wiki/HowTo.PopRelay.txt
@@ -634,6 +633,7 @@ share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.SpamtestVirustest.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.Vacation.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Extdata.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Extprograms.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Pipe.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Troubleshooting.txt

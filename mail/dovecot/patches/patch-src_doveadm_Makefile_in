@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_doveadm_Makefile_in,v 1.2 2012/06/08 22:04:10 sthen Exp $
+$OpenBSD: patch-src_doveadm_Makefile_in,v 1.3 2012/07/08 23:15:11 sthen Exp $
 
 Heimdal libkrb5 exports base64_encode and base64_decode conflicting
 with libdovecot's versions. Workaround the namespace pollution issue
 by statically linking libdovecot so its symbols take precedence.
 
---- src/doveadm/Makefile.in.orig	Fri May  4 17:14:17 2012
-+++ src/doveadm/Makefile.in	Sat May 12 23:47:29 2012
-@@ -187,7 +187,7 @@ LD = @LD@
+--- src/doveadm/Makefile.in.orig	Mon Jul  2 19:02:44 2012
++++ src/doveadm/Makefile.in	Sat Jul  7 21:07:20 2012
+@@ -209,7 +209,7 @@ LD = @LD@
  LDAP_LIBS = @LDAP_LIBS@
  LDFLAGS = @LDFLAGS@
  LIBCAP = @LIBCAP@
