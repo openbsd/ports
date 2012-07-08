@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.184 2012/07/08 09:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2012/07/08 12:53:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -81,6 +81,7 @@
      SUBDIR += mono-keyring
      SUBDIR += moserial
      SUBDIR += mousetweaks
+     SUBDIR += mutter
      SUBDIR += nautilus
      SUBDIR += nautilus-open-terminal
      SUBDIR += nautilus-sendto
