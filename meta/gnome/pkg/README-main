@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2012/07/08 08:51:05 ajacoutot Exp $
+$OpenBSD: README-main,v 1.7 2012/07/08 13:33:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,6 +38,9 @@ A note about accessibility
 Dependency on a11y packages is never enforced so to activate an
 assistive technology you need to explicitely install the corresponding
 packages:
-    * caribou - input assistive technology (i.e. virtual keyboard)
     * mousetweaks - mouse accessibility enhancements
     * orca - assistive technology for visually impaired
+
+Note that "caribou", the input assistive technology (i.e. virtual
+keyboard) is installed automatically with gnome-shell and therefore with
+this "gnome" meta-package.
