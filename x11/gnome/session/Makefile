@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.213 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2012/07/08 14:39:29 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.4.2.1
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=	x11/gnome/settings-daemon \
 RUN_DEPENDS+=	sysutils/notification-daemon
 
 # gnome.session RequiredComponents.
-#RUN_DEPENDS+=	x11/gnome/shell
+RUN_DEPENDS+=	x11/gnome/shell
 
 # gnome-fallback.session RequiredComponents.
 # polkit-gnome isn't strictly *required* but then we will loose the
