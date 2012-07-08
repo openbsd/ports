@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2012/04/23 17:15:19 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/08 14:15:11 sebastia Exp $
 
 COMMENT =	GNUstep database abstraction layer
 
 VERSION =	1.5.3
 DISTNAME =	SQLClient-${VERSION}
 PKGNAME =	gnustep-sqlclient-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  SQLClient	0.0
 

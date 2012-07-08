@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/24 10:56:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2012/07/08 14:15:11 sebastia Exp $
 
 COMMENT=	framework to major mail protocols
 
 DISTNAME=	Pantomime-1.2.0pre3
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS=	Pantomime 1.2	# .1.2
 CATEGORIES=	mail
@@ -22,10 +22,5 @@ BUILD_DEPENDS=	x11/gnustep/base
 WRKDIST=	${WRKDIR}/Pantomime
 
 MAKE_FLAGS +=	Pantomime_INTERFACE_VERSION=${LIBPantomime_VERSION}
-
-pre-configure:
-	@perl -pi -e 's,^PANTOMIME_MAJOR_VERSION=.*,PANTOMIME_MAJOR_VERSION=${LIBPantomime_VERSION:R},g;' \
-		-e 's,^PANTOMIME_MINOR_VERSION=.*,PANTOMIME_MINOR_VERSION=${LIBPantomime_VERSION:E},g' \
-		${WRKSRC}/Framework/Pantomime/GNUmakefile
 
 .include <bsd.port.mk>

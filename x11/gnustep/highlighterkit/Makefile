@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/09 17:54:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2012/07/08 14:15:11 sebastia Exp $
 
 COMMENT =	framework for highlighting and coloring syntax
 
 DISTNAME =	HighlighterKit-0.1.2
-
+REVISION =	0
 SHARED_LIBS =	HighlighterKit 0.1
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/HighlighterKit
