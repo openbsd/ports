@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2012/07/06 12:51:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.154 2012/07/08 21:33:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ COMMENT-jack=	JACK audio output module for VLC
 V=		2.0.2
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
