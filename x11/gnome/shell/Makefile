@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.4.1
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -48,13 +49,20 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/menus \
 			x11/gnome/mutter
 RUN_DEPENDS=		devel/py-gobject3 \
-			mail/evolution \
 			x11/gnome/caribou
 
-LIBTOOL_FLAGS+= 	--tag=disable-static
+# Don't depend on evolution to lower down the amount of dependencies and
+# because most users want to be able to choose their PIM. Evolution can
+# be installed separately or as part of the "gnome-extra" meta-package.
+#RUN_DEPENDS +=		mail/evolution
+
+MODGNOME_DESKTOP_FILE=	Yes
+
+LIBTOOL_FLAGS= 		--tag=disable-static
 
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--with-ca-certificates=/etc/ssl/cert.pem
+CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
+			--without-systemd
 
 .include <bsd.port.mk>

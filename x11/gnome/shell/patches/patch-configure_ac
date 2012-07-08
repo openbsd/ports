@@ -1,6 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
 
 Remove network-related functionality, as this requires NetworkManager.
+(XXX make a patch committable upstream)
 
 --- configure.ac.orig	Sun Jul  8 14:18:23 2012
 +++ configure.ac	Sun Jul  8 14:19:03 2012

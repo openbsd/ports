@@ -1,6 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
 
 Remove network-related functionality, as this requires NetworkManager.
+(XXX make a patch committable upstream)
 
 --- src/Makefile.in.orig	Sun Jul  8 14:22:03 2012
 +++ src/Makefile.in	Sun Jul  8 14:22:58 2012

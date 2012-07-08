@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
 @bin bin/gnome-shell
 bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
@@ -7,21 +7,21 @@ lib/gnome-shell/Gvc-1.0.typelib
 lib/gnome-shell/Shell-0.1.typelib
 lib/gnome-shell/ShellJS-0.1.typelib
 lib/gnome-shell/St-1.0.typelib
-lib/gnome-shell/libgnome-shell-js.la
+@comment lib/gnome-shell/libgnome-shell-js.la
 lib/gnome-shell/libgnome-shell-js.so
-lib/gnome-shell/libgnome-shell.la
+@comment lib/gnome-shell/libgnome-shell.la
 lib/gnome-shell/libgnome-shell.so
+lib/mozilla/
+lib/mozilla/plugins/
+@comment lib/mozilla/plugins/libgnome-shell-browser-plugin.la
+lib/mozilla/plugins/libgnome-shell-browser-plugin.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
 @man man/man1/gnome-shell.1
-share/GConf/
-share/GConf/gsettings/
 share/GConf/gsettings/gnome-shell-overrides.convert
-share/applications/
 share/applications/gnome-shell-extension-prefs.desktop
 share/applications/gnome-shell.desktop
-share/dbus-1/interfaces/
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
 share/dbus-1/services/org.gnome.Shell.CalendarServer.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
@@ -230,8 +230,6 @@ share/gtk-doc/html/st/styling.html
 share/gtk-doc/html/st/up.png
 share/gtk-doc/html/st/widgets.html
 share/locale/af/LC_MESSAGES/gnome-shell.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/gnome-shell.mo
 share/locale/ar/LC_MESSAGES/gnome-shell.mo
 share/locale/as/LC_MESSAGES/gnome-shell.mo
@@ -301,3 +299,5 @@ share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
