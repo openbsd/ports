@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.24 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/07/08 18:07:41 giovanni Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
-DISTNAME=	GeoIP-1.4.7
+DISTNAME=	GeoIP-1.4.8
 SHARED_LIBS +=  GeoIP		8.0	# .5.7
 SHARED_LIBS +=  GeoIPUpdate	1.0	# .0.0
 CATEGORIES=	net geo
 
-HOMEPAGE=	http://www.maxmind.com/geoip/
+HOMEPAGE=	http://www.maxmind.com/app/c
 MASTER_SITES=	http://www.maxmind.com/download/geoip/api/c/ \
 		http://www.maxmind.com/download/geoip/api/c/old/
 
@@ -24,6 +24,7 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=/var/db \
 		${CONFIGURE_SHARED}
 USE_LIBTOOL=	Yes
+USE_GROFF=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/GeoIP
 
