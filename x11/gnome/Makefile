@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.185 2012/07/08 12:53:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.186 2012/07/08 14:53:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -103,6 +103,7 @@
      SUBDIR += seed
      SUBDIR += session
      SUBDIR += settings-daemon
+     SUBDIR += shell
      SUBDIR += sushi
      SUBDIR += system-log
      SUBDIR += system-monitor
