@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sushi_in,v 1.1.1.1 2012/07/08 08:59:43 ajacoutot Exp $
+
+From 12a52e6f4d47eb9c35ea34290d2dec1cf31c016e Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 08 Jul 2012 06:50:35 +0000
+Subject: /bin/bash -> /bin/sh
+
+--- src/sushi.in.orig	Mon Apr 16 17:15:30 2012
++++ src/sushi.in	Sun Jul  8 09:17:46 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if test x"$GJS_PATH" = x ; then
+     export GJS_PATH=@pkgdatadir@/js
