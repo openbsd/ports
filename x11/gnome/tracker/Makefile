@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2012/07/05 17:46:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2012/07/08 07:10:17 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,6 +21,10 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
+REVISION-main=		0
+REVISION-evolution=	0
+REVISION-nautilus=	0
+
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
 # net/telepathy/folks
@@ -36,7 +40,7 @@ SHARED_LIBS +=  tracker-sparql-0.14  0.0      # 1400.0
 SHARED_LIBS +=  tracker-extract-0.14 0.0      # 1400.0
 SHARED_LIBS +=  tracker-miner-0.14   0.0      # 1400.0
 
-HOMEPAGE=	http://tracker-project.org/
+HOMEPAGE=	http://projects.gnome.org/tracker/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
