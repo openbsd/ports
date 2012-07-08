@@ -1,0 +1,22 @@
+$OpenBSD: patch-js_ui_main_js,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+
+Remove network-related functionality, as this requires NetworkManager.
+
+--- js/ui/main.js.orig	Sun Jul  8 15:24:59 2012
++++ js/ui/main.js	Sun Jul  8 15:25:24 2012
+@@ -26,7 +26,6 @@ const PlaceDisplay = imports.ui.placeDisplay;
+ const RunDialog = imports.ui.runDialog;
+ const Layout = imports.ui.layout;
+ const LookingGlass = imports.ui.lookingGlass;
+-const NetworkAgent = imports.ui.networkAgent;
+ const NotificationDaemon = imports.ui.notificationDaemon;
+ const WindowAttentionHandler = imports.ui.windowAttentionHandler;
+ const Scripting = imports.ui.scripting;
+@@ -85,7 +84,6 @@ function _createUserSession() {
+     telepathyClient = new TelepathyClient.Client();
+     automountManager = new AutomountManager.AutomountManager();
+     autorunManager = new AutorunManager.AutorunManager();
+-    networkAgent = new NetworkAgent.NetworkAgent();
+ }
+ 
+ function _createGDMSession() {

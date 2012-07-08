@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+
+Remove network-related functionality, as this requires NetworkManager.
+
+--- configure.ac.orig	Sun Jul  8 14:18:23 2012
++++ configure.ac	Sun Jul  8 14:19:03 2012
+@@ -94,7 +94,7 @@ PKG_CHECK_MODULES(GNOME_SHELL, gio-unix-2.0 >= $GIO_MI
+                                telepathy-glib >= $TELEPATHY_GLIB_MIN_VERSION
+                                telepathy-logger-0.2 >= $TELEPATHY_LOGGER_MIN_VERSION
+                                polkit-agent-1 >= $POLKIT_MIN_VERSION xfixes
+-                               libnm-glib libnm-util gnome-keyring-1
++                               gnome-keyring-1
+                                gcr-3 >= $GCR_MIN_VERSION)
+ 
+ PKG_CHECK_MODULES(SHELL_PERF_HELPER, gtk+-3.0 gio-2.0)

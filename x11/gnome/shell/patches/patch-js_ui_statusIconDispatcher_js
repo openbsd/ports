@@ -1,0 +1,14 @@
+$OpenBSD: patch-js_ui_statusIconDispatcher_js,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+
+Remove network-related functionality, as this requires NetworkManager.
+
+--- js/ui/statusIconDispatcher.js.orig	Sun Jul  8 15:26:54 2012
++++ js/ui/statusIconDispatcher.js	Sun Jul  8 15:26:59 2012
+@@ -13,7 +13,6 @@ const STANDARD_TRAY_ICON_IMPLEMENTATIONS = {
+     'gnome-volume-control-applet': 'volume', // renamed to gnome-sound-applet
+                                              // when moved to control center
+     'gnome-sound-applet': 'volume',
+-    'nm-applet': 'network',
+     'gnome-power-manager': 'battery',
+     'keyboard': 'keyboard',
+     'a11y-keyboard': 'a11y',

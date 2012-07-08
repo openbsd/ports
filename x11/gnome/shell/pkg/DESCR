@@ -1,0 +1,8 @@
+The GNOME Shell redefines user interactions with the GNOME desktop. In
+particular, it offers new paradigms for launching applications,
+accessing documents, and organizing open windows in GNOME. Later, it
+will introduce a new applets eco-system and offer new solutions for
+other desktop features, such as notifications and contacts management.
+The GNOME Shell is intended to replace functions handled by the GNOME
+Panel and by the window manager in previous versions of GNOME. The GNOME
+Shell has rich visual effects enabled by new graphical technologies.

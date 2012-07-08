@@ -1,0 +1,32 @@
+$OpenBSD: patch-js_ui_panel_js,v 1.1.1.1 2012/07/08 14:53:14 jasper Exp $
+
+Remove network-related functionality, as this requires NetworkManager.
+
+--- js/ui/panel.js.orig	Sun Jul  8 15:40:27 2012
++++ js/ui/panel.js	Sun Jul  8 15:40:35 2012
+@@ -32,7 +32,7 @@ const BUTTON_DND_ACTIVATION_TIMEOUT = 250;
+ const ANIMATED_ICON_UPDATE_TIMEOUT = 100;
+ const SPINNER_ANIMATION_TIME = 0.2;
+ 
+-const STANDARD_STATUS_AREA_ORDER = ['a11y', 'keyboard', 'volume', 'bluetooth', 'network', 'battery', 'userMenu'];
++const STANDARD_STATUS_AREA_ORDER = ['a11y', 'keyboard', 'volume', 'bluetooth', 'battery', 'userMenu'];
+ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
+     'a11y': imports.ui.status.accessibility.ATIndicator,
+     'volume': imports.ui.status.volume.Indicator,
+@@ -44,11 +44,11 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
+ if (Config.HAVE_BLUETOOTH)
+     STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['bluetooth'] = imports.ui.status.bluetooth.Indicator;
+ 
+-try {
+-    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
+-} catch(e) {
+-    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
+-}
++//try {
++//    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
++//} catch(e) {
++//    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
++//}
+ 
+ const GDM_STATUS_AREA_ORDER = ['a11y', 'display', 'keyboard', 'volume', 'battery', 'powerMenu'];
+ const GDM_STATUS_AREA_SHELL_IMPLEMENTATION = {
