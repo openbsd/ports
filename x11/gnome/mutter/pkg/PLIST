@@ -1,0 +1,157 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/08 12:51:16 jasper Exp $
+@bin bin/mutter
+@bin bin/mutter-message
+@bin bin/mutter-theme-viewer
+@bin bin/mutter-window-demo
+include/mutter/
+include/mutter/meta/
+include/mutter/meta/atomnames.h
+include/mutter/meta/boxes.h
+include/mutter/meta/common.h
+include/mutter/meta/compositor-mutter.h
+include/mutter/meta/compositor.h
+include/mutter/meta/display.h
+include/mutter/meta/errors.h
+include/mutter/meta/gradient.h
+include/mutter/meta/group.h
+include/mutter/meta/keybindings.h
+include/mutter/meta/main.h
+include/mutter/meta/meta-background-actor.h
+include/mutter/meta/meta-plugin.h
+include/mutter/meta/meta-shadow-factory.h
+include/mutter/meta/meta-shaped-texture.h
+include/mutter/meta/meta-window-actor.h
+include/mutter/meta/prefs.h
+include/mutter/meta/preview-widget.h
+include/mutter/meta/screen.h
+include/mutter/meta/theme.h
+include/mutter/meta/types.h
+include/mutter/meta/util.h
+include/mutter/meta/window.h
+include/mutter/meta/workspace.h
+lib/libmutter.la
+@lib lib/libmutter.so.${LIBmutter_VERSION}
+lib/mutter/
+lib/mutter/Meta-3.0.gir
+lib/mutter/Meta-3.0.typelib
+lib/mutter/plugins/
+lib/mutter/plugins/default.so
+lib/pkgconfig/libmutter.pc
+lib/pkgconfig/mutter-plugins.pc
+@man man/man1/mutter-message.1
+@man man/man1/mutter-theme-viewer.1
+@man man/man1/mutter-window-demo.1
+@man man/man1/mutter.1
+share/GConf/gsettings/mutter-schemas.convert
+share/applications/mutter.desktop
+share/glib-2.0/schemas/org.gnome.mutter.gschema.xml
+share/gnome-control-center/
+share/gnome-control-center/keybindings/
+share/gnome-control-center/keybindings/50-mutter-windows.xml
+share/gnome/wm-properties/
+share/gnome/wm-properties/mutter-wm.desktop
+share/locale/am/LC_MESSAGES/mutter.mo
+share/locale/ar/LC_MESSAGES/mutter.mo
+share/locale/as/LC_MESSAGES/mutter.mo
+share/locale/ast/LC_MESSAGES/mutter.mo
+share/locale/az/LC_MESSAGES/mutter.mo
+share/locale/be/LC_MESSAGES/mutter.mo
+share/locale/be@latin/LC_MESSAGES/mutter.mo
+share/locale/bg/LC_MESSAGES/mutter.mo
+share/locale/bn/LC_MESSAGES/mutter.mo
+share/locale/bn_IN/LC_MESSAGES/mutter.mo
+share/locale/br/LC_MESSAGES/mutter.mo
+share/locale/bs/LC_MESSAGES/mutter.mo
+share/locale/ca/LC_MESSAGES/mutter.mo
+share/locale/ca@valencia/LC_MESSAGES/mutter.mo
+share/locale/cs/LC_MESSAGES/mutter.mo
+share/locale/cy/LC_MESSAGES/mutter.mo
+share/locale/da/LC_MESSAGES/mutter.mo
+share/locale/de/LC_MESSAGES/mutter.mo
+share/locale/dz/LC_MESSAGES/mutter.mo
+share/locale/el/LC_MESSAGES/mutter.mo
+share/locale/en_CA/LC_MESSAGES/mutter.mo
+share/locale/en_GB/LC_MESSAGES/mutter.mo
+share/locale/eo/LC_MESSAGES/mutter.mo
+share/locale/es/LC_MESSAGES/mutter.mo
+share/locale/et/LC_MESSAGES/mutter.mo
+share/locale/eu/LC_MESSAGES/mutter.mo
+share/locale/fa/LC_MESSAGES/mutter.mo
+share/locale/fi/LC_MESSAGES/mutter.mo
+share/locale/fr/LC_MESSAGES/mutter.mo
+share/locale/ga/LC_MESSAGES/mutter.mo
+share/locale/gl/LC_MESSAGES/mutter.mo
+share/locale/gu/LC_MESSAGES/mutter.mo
+share/locale/ha/
+share/locale/ha/LC_MESSAGES/
+share/locale/ha/LC_MESSAGES/mutter.mo
+share/locale/he/LC_MESSAGES/mutter.mo
+share/locale/hi/LC_MESSAGES/mutter.mo
+share/locale/hr/LC_MESSAGES/mutter.mo
+share/locale/hu/LC_MESSAGES/mutter.mo
+share/locale/hy/LC_MESSAGES/mutter.mo
+share/locale/id/LC_MESSAGES/mutter.mo
+share/locale/ig/
+share/locale/ig/LC_MESSAGES/
+share/locale/ig/LC_MESSAGES/mutter.mo
+share/locale/is/LC_MESSAGES/mutter.mo
+share/locale/it/LC_MESSAGES/mutter.mo
+share/locale/ja/LC_MESSAGES/mutter.mo
+share/locale/ka/LC_MESSAGES/mutter.mo
+share/locale/kn/LC_MESSAGES/mutter.mo
+share/locale/ko/LC_MESSAGES/mutter.mo
+share/locale/ku/LC_MESSAGES/mutter.mo
+share/locale/la/LC_MESSAGES/mutter.mo
+share/locale/lt/LC_MESSAGES/mutter.mo
+share/locale/lv/LC_MESSAGES/mutter.mo
+share/locale/mai/LC_MESSAGES/mutter.mo
+share/locale/mg/LC_MESSAGES/mutter.mo
+share/locale/mk/LC_MESSAGES/mutter.mo
+share/locale/ml/LC_MESSAGES/mutter.mo
+share/locale/mn/LC_MESSAGES/mutter.mo
+share/locale/mr/LC_MESSAGES/mutter.mo
+share/locale/ms/LC_MESSAGES/mutter.mo
+share/locale/nb/LC_MESSAGES/mutter.mo
+share/locale/nds/LC_MESSAGES/mutter.mo
+share/locale/ne/LC_MESSAGES/mutter.mo
+share/locale/nl/LC_MESSAGES/mutter.mo
+share/locale/nn/LC_MESSAGES/mutter.mo
+share/locale/oc/LC_MESSAGES/mutter.mo
+share/locale/or/LC_MESSAGES/mutter.mo
+share/locale/pa/LC_MESSAGES/mutter.mo
+share/locale/pl/LC_MESSAGES/mutter.mo
+share/locale/pt/LC_MESSAGES/mutter.mo
+share/locale/pt_BR/LC_MESSAGES/mutter.mo
+share/locale/ro/LC_MESSAGES/mutter.mo
+share/locale/ru/LC_MESSAGES/mutter.mo
+share/locale/rw/LC_MESSAGES/mutter.mo
+share/locale/si/LC_MESSAGES/mutter.mo
+share/locale/sk/LC_MESSAGES/mutter.mo
+share/locale/sl/LC_MESSAGES/mutter.mo
+share/locale/sq/LC_MESSAGES/mutter.mo
+share/locale/sr/LC_MESSAGES/mutter.mo
+share/locale/sr@latin/LC_MESSAGES/mutter.mo
+share/locale/sv/LC_MESSAGES/mutter.mo
+share/locale/ta/LC_MESSAGES/mutter.mo
+share/locale/te/LC_MESSAGES/mutter.mo
+share/locale/th/LC_MESSAGES/mutter.mo
+share/locale/tk/LC_MESSAGES/mutter.mo
+share/locale/tr/LC_MESSAGES/mutter.mo
+share/locale/ug/LC_MESSAGES/mutter.mo
+share/locale/uk/LC_MESSAGES/mutter.mo
+share/locale/vi/LC_MESSAGES/mutter.mo
+share/locale/wa/LC_MESSAGES/mutter.mo
+share/locale/xh/LC_MESSAGES/mutter.mo
+share/locale/yo/
+share/locale/yo/LC_MESSAGES/
+share/locale/yo/LC_MESSAGES/mutter.mo
+share/locale/zh_CN/LC_MESSAGES/mutter.mo
+share/locale/zh_HK/LC_MESSAGES/mutter.mo
+share/locale/zh_TW/LC_MESSAGES/mutter.mo
+share/mutter/
+share/mutter/icons/
+share/mutter/icons/mutter-window-demo.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

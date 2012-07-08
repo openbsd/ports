@@ -1,0 +1,4 @@
+Mutter is a window and compositing manager that displays and manages
+your desktop via OpenGL. Mutter combines a sophisticated display engine
+using the Clutter toolkit with solid window-management logic inherited
+from the Metacity window manager.

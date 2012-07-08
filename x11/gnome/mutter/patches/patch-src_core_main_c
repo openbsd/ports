@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_core_main_c,v 1.1.1.1 2012/07/08 12:51:16 jasper Exp $
+--- src/core/main.c.orig	Wed Apr 27 10:16:57 2011
++++ src/core/main.c	Wed Apr 27 10:17:39 2011
+@@ -59,7 +59,7 @@
+ 
+ #include <stdlib.h>
+ #include <sys/types.h>
+-#include <wait.h>
++#include <sys/wait.h>
+ #include <stdio.h>
+ #include <string.h>
+ #include <signal.h>
