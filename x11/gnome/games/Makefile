@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2012/07/08 08:17:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2012/07/08 10:05:05 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		3.4.2
+REVISION=		0
 
 SHARED_LIBS +=  games-support-gi          1.0 # 0.0
 
@@ -45,9 +46,10 @@ MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 
-MODPY_ADJ_FILES+=	gnome-sudoku/src/gnome-sudoku
+MODPY_ADJ_FILES=	gnome-sudoku/src/gnome-sudoku
 
-CONFIGURE_ARGS+= 	--with-scores-group="games"
+CONFIGURE_ARGS= 	--with-scores-user=root \
+			--with-scores-group="games"
 
 REGRESS_IS_INTERACTIVE= x11
 

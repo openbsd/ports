@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/07/08 08:17:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/07/08 10:05:05 ajacoutot Exp $
 @bin bin/glchess
 @mode g+s
 @group games
@@ -14,7 +14,9 @@ bin/gnome-sudoku
 @bin bin/gnotski
 @bin bin/gtali
 @bin bin/iagno
+@mode
 @bin bin/lightsoff
+@mode g+s
 @bin bin/mahjongg
 @bin bin/quadrapassel
 @bin bin/swell-foop
