@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/06/02 12:09:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2012/07/08 18:21:49 lteo Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR =
@@ -32,6 +32,7 @@
      SUBDIR += p5-Device-Modem
      SUBDIR += p5-Device-SerialPort
      SUBDIR += p5-SendPage
+     SUBDIR += picocom
      SUBDIR += pilot-link
      SUBDIR += qpage
      SUBDIR += scmxx
