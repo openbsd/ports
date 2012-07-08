@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/12 19:03:02 shadchin Exp $
+# $OpenBSD: Makefile,v 1.26 2012/07/08 12:24:17 shadchin Exp $
 
 COMMENT =	small, portable, general purpose computer algebra system
 
-DISTNAME =	mathomatic-15.6.1
+DISTNAME =	mathomatic-16.0.0
 
 CATEGORIES =	math
 

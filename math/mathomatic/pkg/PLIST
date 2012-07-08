@@ -1,25 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/06/12 19:03:02 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/07/08 12:24:17 shadchin Exp $
 @bin bin/mathomatic
 @man man/man1/mathomatic.1
 share/applications/mathomatic.desktop
 share/doc/mathomatic/
 share/doc/mathomatic/AUTHORS
 share/doc/mathomatic/COPYING
+share/doc/mathomatic/NEWS
 share/doc/mathomatic/README.txt
 share/doc/mathomatic/VERSION
-share/doc/mathomatic/changes.txt
 share/doc/mathomatic/examples/
 share/doc/mathomatic/examples/README.txt
+share/doc/mathomatic/examples/compile.limits
+share/doc/mathomatic/examples/compile.roots
 share/doc/mathomatic/examples/fact.c
 share/doc/mathomatic/examples/fact.py
 share/doc/mathomatic/examples/factorial
 share/doc/mathomatic/examples/intfact.c
+share/doc/mathomatic/examples/limits.c
+share/doc/mathomatic/examples/roots.c
+share/doc/mathomatic/examples/testprimes
 share/doc/mathomatic/html/
 share/doc/mathomatic/html/README.txt
 share/doc/mathomatic/html/am.html
 share/doc/mathomatic/html/doc.css
 share/doc/mathomatic/html/favicon.ico
 share/doc/mathomatic/html/fdl-1.3-standalone.html
+share/doc/mathomatic/html/gnu-fdl.png
 share/doc/mathomatic/html/greenfade.png
 share/doc/mathomatic/html/index.html
 share/doc/mathomatic/html/led_circle_green.png
@@ -33,16 +39,20 @@ share/doc/mathomatic/html/mathomatic.1.html
 share/doc/mathomatic/html/mathomatic16x16.png
 share/doc/mathomatic/html/open_book_nae_02.png
 share/doc/mathomatic/html/primorial.1.html
+share/doc/mathomatic/html/quickrefcard.html
 share/doc/mathomatic/html/rmath.1.html
 share/doc/mathomatic/tests/
 share/doc/mathomatic/tests/README.txt
 share/doc/mathomatic/tests/all.in
 share/doc/mathomatic/tests/all.out
+share/doc/mathomatic/tests/batman_plot
 share/doc/mathomatic/tests/circles.in
 share/doc/mathomatic/tests/collatz.in
-share/doc/mathomatic/tests/conversions.in
 share/doc/mathomatic/tests/cubic.in
+share/doc/mathomatic/tests/cubic2.in
+share/doc/mathomatic/tests/demo
 share/doc/mathomatic/tests/demo.in
+share/doc/mathomatic/tests/demo_sub
 share/doc/mathomatic/tests/distance.in
 share/doc/mathomatic/tests/electronics.in
 share/doc/mathomatic/tests/ellipse.in
@@ -56,15 +66,17 @@ share/doc/mathomatic/tests/fix7.in
 share/doc/mathomatic/tests/fix8.in
 share/doc/mathomatic/tests/fix9.in
 share/doc/mathomatic/tests/fraction.in
-share/doc/mathomatic/tests/geometry.in
+share/doc/mathomatic/tests/heart.in
 share/doc/mathomatic/tests/heron.in
 share/doc/mathomatic/tests/how_limit_works.in
+share/doc/mathomatic/tests/hypertrig.in
 share/doc/mathomatic/tests/limits.in
 share/doc/mathomatic/tests/linear.in
 share/doc/mathomatic/tests/pie.in
 share/doc/mathomatic/tests/points.in
 share/doc/mathomatic/tests/poly.in
 share/doc/mathomatic/tests/pyth3d.in
+share/doc/mathomatic/tests/quadratic.in
 share/doc/mathomatic/tests/quartic.in
 share/doc/mathomatic/tests/radius.in
 share/doc/mathomatic/tests/simplify.in
@@ -75,6 +87,7 @@ share/doc/mathomatic/tests/test2.in
 share/doc/mathomatic/tests/test3.in
 share/doc/mathomatic/tests/test6.in
 share/doc/mathomatic/tests/trig
+share/doc/mathomatic/tests/trig.in
 share/pixmaps/
 share/pixmaps/mathomatic.png
 share/pixmaps/mathomatic.xpm
