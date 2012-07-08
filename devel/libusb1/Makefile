@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/19 20:45:00 mpi Exp $
+# $OpenBSD: Makefile,v 1.12 2012/07/08 17:41:14 sthen Exp $
 
 COMMENT =		library for USB device access from userspace
 
 VERSION =		1.0.9
 DISTNAME =		libusb-${VERSION}
 PKGNAME =		libusb1-${VERSION}
-REVISION =		1
+REVISION =		2
 SHARED_LIBS +=  	usb-1.0                   1.0 # 1.0
 
 CATEGORIES =		devel
