@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/08 15:45:35 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.4.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -49,6 +49,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			x11/gnome/menus \
 			x11/gnome/mutter
 RUN_DEPENDS=		devel/py-gobject3 \
+			x11/dbus-python \
 			x11/gnome/caribou
 
 # Don't depend on evolution to lower down the amount of dependencies and
