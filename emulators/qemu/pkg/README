@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
+$OpenBSD: README,v 1.9 2012/07/08 14:30:40 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,13 +8,13 @@ $OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
 
 1. Get a bootable CDROM image:
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd51.iso
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd52.iso
 
    or to use a 64-bit client OS or SPARC, respectively:
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/cd51.iso
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/cd52.iso
 
-    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/sparc/cd51.iso
+    $ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/sparc/cd52.iso
 
 2. Create a virtual disk image:
 
@@ -23,15 +23,15 @@ $OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
 3. Install the OS:
 
     $ qemu-system-i386 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd51.iso -boot d
+	-hda virtual.img -cdrom cd52.iso -boot d
 
    or:
 
     $ qemu-system-x86_64 -m 32 -monitor stdio -no-fd-bootchk \
-	-hda virtual.img -cdrom cd51.iso -boot d
+	-hda virtual.img -cdrom cd52.iso -boot d
 
     $ qemu-system-sparc -m 32 -monitor stdio \
-	-hda virtual.img -cdrom cd51.iso -boot d
+	-hda virtual.img -cdrom cd52.iso -boot d
 
    NOTE: start this inside an xterm or equivalent.
    NOTE: be sure to choose serial console during install.
@@ -198,7 +198,7 @@ $OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
    accomplish this, both in effect the same solution:
 
     a. qemu-system-i386 -vnc :0 -serial stdio .. virtual.img \
-         -cdrom install51.iso -boot d
+         -cdrom install52.iso -boot d
 
 	- this option permits you to use VNC from some system to
           connect to the QEMU instance and 'set tty com0' at the
@@ -206,7 +206,7 @@ $OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
 	- you may then disconnect VNC and use the terminal from
           which you started QEMU to do the install.
 
-    b. qemu-system-i386 -nographic .. virtual.img -fda floppy51.fs -boot a
+    b. qemu-system-i386 -nographic .. virtual.img -fda floppy52.fs -boot a
 
 	- this maps both the serial port and the (qemu) monitor
           prompt to the terminal QEMU was started on.
@@ -215,7 +215,7 @@ $OpenBSD: README,v 1.8 2012/03/16 11:40:53 fgsch Exp $
 	- preparation of the floppy image to force serial console
           mode is straightforward:
 
-		vnconfig vnd0 floppy51.fs
+		vnconfig vnd0 floppy52.fs
 		mount /dev/vnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf
