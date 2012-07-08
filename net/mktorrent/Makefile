@@ -1,30 +1,31 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/03/10 13:43:05 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/08 21:23:24 gonzalo Exp $
 
-COMMENT = 	command-line .torrent file creator
+COMMENT =	command-line .torrent file creator
 
-DISTNAME = 	mktorrent-0.9.9
-CATEGORIES = 	net
-HOMEPAGE = 	http://borg.uu3.net/~borg/
-MAINTAINER = 	Stefan Sperling <stsp@openbsd.org>
+DISTNAME =	mktorrent-1.0
+CATEGORIES =	net
+HOMEPAGE =	http://mktorrent.sourceforge.net/
 
-# BSD-like
-PERMIT_PACKAGE_CDROM = 		Yes
-PERMIT_PACKAGE_FTP = 		Yes
-PERMIT_DISTFILES_CDROM = 	Yes
-PERMIT_DISTFILES_FTP = 		Yes
+MAINTAINER =	Gonzalo L. R. <gonzalo@openbsd.org>
 
-WANTLIB = 	c crypto
+# GPLv2
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES = 	ftp://borg.uu3.net/pub/unix/mktorrent/
-EXTRACT_SUFX = 	.tgz
+WANTLIB =	c crypto pthread
 
-NO_REGRESS = 	Yes
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mktorrent/}
 
-WRKDIST = 	${WRKDIR}/mktorrent
+NO_REGRESS =	Yes
+
+MAKE_FILE =	BSDmakefile
+MAKE_FLAGS =	USE_PTHREADS=1 \
+		USE_OPENSSL=1 \
+		USE_LONG_OPTIONS=1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mktorrent ${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/mktorrent
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/mktorrent
 
 .include <bsd.port.mk>
