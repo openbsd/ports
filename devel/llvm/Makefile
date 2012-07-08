@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/06/14 09:32:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.45 2012/07/08 18:36:12 sthen Exp $
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
@@ -17,8 +17,11 @@ CATEGORIES =	devel
 HOMEPAGE =	http://www.llvm.org/
 
 VMEM_WARNING =	Yes
-ONLY_FOR_ARCHS = amd64 i386 powerpc sparc64
-# some chance of building on other GCC4 arch, but is known to be
+
+.include <bsd.port.arch.mk>
+ONLY_FOR_ARCHS = ${LLVM_ARCHS}
+#
+# there is some chance of building on other GCC4 arch, but is known to be
 # broken on alpha/sparc.
 
 # BSD
