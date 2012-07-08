@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/17 05:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/07/08 19:24:18 steven Exp $
 
 COMMENT =	utilities to read and parse Argus data
 
-DISTNAME =	argus-clients-3.0.2
-REVISION =	1
+DISTNAME =	argus-clients-3.0.6.2
 CATEGORIES =	net
 
 HOMEPAGE =	http://qosient.com/argus/
@@ -17,12 +16,15 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	c m ncurses readline
+WANTLIB =	c m ncurses readline z
 
 NO_REGRESS =	Yes
 
+LIB_DEPENDS =	net/flow-tools
+
 CONFIGURE_STYLE = 	gnu
-CONFIGURE_ARGS +=	--without-mysql \
+CONFIGURE_ARGS +=	--with-libft=${LOCALBASE} \
+			--without-mysql \
 			--without-GeoIP \
 			--without-sasl
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config

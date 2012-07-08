@@ -1,21 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/15 19:16:42 steven Exp $
-@comment argus/
+@comment $OpenBSD: PLIST,v 1.3 2012/07/08 19:24:18 steven Exp $
 @comment bin/argusbug
+@comment argus/
+bin/argusclientbug
 @bin bin/ra
 @bin bin/rabins
 @bin bin/racluster
+@bin bin/raconvert
 @bin bin/racount
 bin/radark
+@bin bin/radium
 @bin bin/radump
+@bin bin/raevent
 @bin bin/rafilteraddr
 bin/ragraph
+@bin bin/ragrep
 @bin bin/rahisto
 bin/rahosts
+bin/raips
 @bin bin/ralabel
 @bin bin/ranonymize
 @bin bin/rapath
+bin/raplot
 @bin bin/rapolicy
 bin/raports
+@bin bin/rarpwatch
 @bin bin/raservices
 @bin bin/rasort
 @bin bin/rasplit
@@ -24,21 +32,92 @@ bin/raports
 @bin bin/ratemplate
 @bin bin/ratimerange
 @bin bin/ratop
-@bin bin/ratree
 @bin bin/rauserdata
+include/argus/
+include/argus/argus/
+include/argus/argus/CflowdFlowPdu.h
+include/argus/argus/bootp.h
+include/argus/argus/cflowd.h
+include/argus/argus/cons_def.h
+include/argus/argus/cons_out.h
+include/argus/argus/extract.h
+include/argus/argus/fddi.h
+include/argus/argus/gencode.h
+include/argus/argus/global.h
+include/argus/argus/md5.h
+include/argus/argus/ppp.h
+include/argus/argus/saslint.h
+include/argus/argus/sflow.h
+include/argus/argus_8021q.h
+include/argus/argus_client.h
+include/argus/argus_cluster.h
+include/argus/argus_compat.h
+include/argus/argus_config.h
+include/argus/argus_debug.h
+include/argus/argus_def.h
+include/argus/argus_dscodepoints.h
+include/argus/argus_encapsulations.h
+include/argus/argus_ethernames.h
+include/argus/argus_ethertype.h
+include/argus/argus_event.h
+include/argus/argus_filter.h
+include/argus/argus_gmpls.h
+include/argus/argus_grep.h
+include/argus/argus_histo.h
+include/argus/argus_int.h
+include/argus/argus_isis.h
+include/argus/argus_label.h
+include/argus/argus_llc.h
+include/argus/argus_main.h
+include/argus/argus_mdp.h
+include/argus/argus_metric.h
+include/argus/argus_namedb.h
+include/argus/argus_os.h
+include/argus/argus_out.h
+include/argus/argus_parser.h
+include/argus/argus_sort.h
+include/argus/argus_udt.h
+include/argus/argus_util.h
+include/argus/net/
+include/argus/net/etherdefs.h
+include/argus/net/nff.h
+include/argus/netinet/
+include/argus/netinet/rtp.h
+include/argus/rabins.h
+include/argus/radium.h
+include/argus/rapolicy.h
+include/argus/rasplit.h
+lib/argus_client.a
+lib/argus_common.a
+lib/argus_parse.a
+lib/pkgconfig/
+lib/pkgconfig/argus-clients.pc
 @man man/man1/ra.1
 @man man/man1/rabins.1
 @man man/man1/racluster.1
+@man man/man1/raconvert.1
 @man man/man1/racount.1
+@man man/man1/radump.1
+@man man/man1/raevent.1
+@man man/man1/rafilteraddr.1
 @man man/man1/ragraph.1
+@man man/man1/ragrep.1
 @man man/man1/rahisto.1
+@man man/man1/ralabel.1
 @man man/man1/ranonymize.1
+@man man/man1/rapath.1
+@man man/man1/rapolicy.1
 @man man/man1/rasort.1
 @man man/man1/rasplit.1
+@man man/man1/rasql.1
+@man man/man1/rasqlinsert.1
+@man man/man1/rasqltimeindex.1
 @man man/man1/rastream.1
 @man man/man1/rastrip.1
 @man man/man5/racluster.5
 @man man/man5/radium.conf.5
+@man man/man5/ralabel.conf.5
+@man man/man5/ranonymize.5
 @man man/man5/rarc.5
 @man man/man8/radium.8
 @bin sbin/radium
@@ -47,53 +126,38 @@ share/argus/
 share/argus/delegated-ipv4-latest
 @comment share/argus/lib/
 @comment share/argus/rarc
+share/argus/wireshark.manuf.txt
 share/doc/argus-clients/
-share/doc/argus-clients/CHANGES
 share/doc/argus-clients/COPYING
-share/doc/argus-clients/FAQ
-share/doc/argus-clients/HOW-TO
 share/doc/argus-clients/README
-share/doc/argus-clients/html/
-share/doc/argus-clients/html/man/
-share/doc/argus-clients/html/man/man1/
-share/doc/argus-clients/html/man/man1/ra.1.html
-share/doc/argus-clients/html/man/man1/rabins.1.html
-share/doc/argus-clients/html/man/man1/racluster.1.html
-share/doc/argus-clients/html/man/man1/racount.1.html
-share/doc/argus-clients/html/man/man1/ragraph.1.html
-share/doc/argus-clients/html/man/man1/ragrep.1.html
-share/doc/argus-clients/html/man/man1/rahisto.1.html
-share/doc/argus-clients/html/man/man1/ranonymize.1.html
-share/doc/argus-clients/html/man/man1/rapolicy.1.html
-share/doc/argus-clients/html/man/man1/rasort.1.html
-share/doc/argus-clients/html/man/man1/rasplit.1.html
-share/doc/argus-clients/html/man/man1/rastrip.1.html
-share/doc/argus-clients/html/man/man5/
-share/doc/argus-clients/html/man/man5/racluster.5.html
-share/doc/argus-clients/html/man/man5/radium.conf.5.html
-share/doc/argus-clients/html/man/man5/ranonymize.5.html
-share/doc/argus-clients/html/man/man5/rarc.5.html
-share/doc/argus-clients/html/man/man8/
-share/doc/argus-clients/html/man/man8/radium.8.html
 share/examples/argus-clients/
 share/examples/argus-clients/Config/
+share/examples/argus-clients/Config/README
 share/examples/argus-clients/Config/delegated-ipv4-latest
 share/examples/argus-clients/Config/excel.rc
 share/examples/argus-clients/Config/iana-address-file
 share/examples/argus-clients/Config/iana-ipv4-address
 share/examples/argus-clients/Config/iana-multicast-address
 share/examples/argus-clients/Config/iana-port-numbers
-share/examples/argus-clients/Config/ra.print.all.conf
 share/examples/argus-clients/Config/racluster.conf
 share/examples/argus-clients/Config/radium.conf
 share/examples/argus-clients/Config/ragetcountrycodes.sh
 share/examples/argus-clients/Config/ralabel.conf
 share/examples/argus-clients/Config/ranonymize.conf
 share/examples/argus-clients/Config/rarc
+share/examples/argus-clients/Config/rarc.print.all.conf
 share/examples/argus-clients/Config/rastream.sh
 share/examples/argus-clients/Config/std.sig
+share/examples/argus-clients/Config/wireshark.manuf.txt
+share/examples/argus-clients/Database/
+share/examples/argus-clients/Database/MySQL.Archive.sh
+share/examples/argus-clients/Database/README
 share/examples/argus-clients/Startup/
+share/examples/argus-clients/Startup/README
+share/examples/argus-clients/Startup/com.qosient.radium.plist
+share/examples/argus-clients/Startup/com.qosient.rasplit.plist
 share/examples/argus-clients/Startup/radium
+share/examples/argus-clients/Startup/radium.service
+share/examples/argus-clients/Startup/rasplit
 share/examples/argus-clients/System/
 share/examples/argus-clients/System/magic
-share/examples/argus-clients/System/protocols

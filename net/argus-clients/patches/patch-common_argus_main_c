@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_argus_main_c,v 1.1 2012/05/17 05:01:35 ajacoutot Exp $
---- common/argus_main.c.orig	Tue May 15 22:45:33 2012
-+++ common/argus_main.c	Tue May 15 22:47:16 2012
-@@ -112,7 +112,7 @@ main (int argc, char **argv)
+$OpenBSD: patch-common_argus_main_c,v 1.2 2012/07/08 19:24:18 steven Exp $
+--- common/argus_main.c.orig	Tue Apr 17 18:22:02 2012
++++ common/argus_main.c	Wed Jun 27 22:51:25 2012
+@@ -116,7 +116,7 @@ main (int argc, char **argv)
  #if defined(ARGUS_THREADS)
     int hosts = 0;
     pthread_attr_t attr;
@@ -10,7 +10,7 @@ $OpenBSD: patch-common_argus_main_c,v 1.1 2012/05/17 05:01:35 ajacoutot Exp $
     int thread_policy;
     struct sched_param thread_param;
  #if defined(HAVE_SCHED_GET_PRIORITY_MIN)
-@@ -136,7 +136,7 @@ main (int argc, char **argv)
+@@ -140,7 +140,7 @@ main (int argc, char **argv)
     if ((status = pthread_attr_init(&attr)) != 0)
        ArgusLog (LOG_ERR, "pthreads init error");
   
