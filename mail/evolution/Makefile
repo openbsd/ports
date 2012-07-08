@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.164 2012/07/08 06:09:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.165 2012/07/08 14:30:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_VERSION=		3.4.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -127,7 +130,7 @@ MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	autoconf
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
