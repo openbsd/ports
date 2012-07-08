@@ -1,0 +1,13 @@
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.7 2012/07/08 17:09:17 sthen Exp $
+--- gtk/gtkmountoperation-x11.c.orig	Sun Jul  8 09:40:51 2012
++++ gtk/gtkmountoperation-x11.c	Sun Jul  8 09:42:51 2012
+@@ -731,6 +731,9 @@ pid_get_parent (GPid pid)
+   int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
+                 sizeof(struct kinfo_proc), 0 };
+ 
++#ifndef nitems
++#define nitems(_a)      (sizeof((_a)) / sizeof((_a)[0]))
++#endif
+   if (sysctl(mib, nitems(mib), NULL, &len, NULL, 0) == -1)
+       return (-1);
+   mib[5] = (len / sizeof(struct kinfo_proc));
