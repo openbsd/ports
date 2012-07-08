@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/08 08:59:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/08 09:04:30 ajacoutot Exp $
 
-COMMENT=	previewer for the GNOME file manager
+COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	0.4.1
+REVISION=	0
 
 SHARED_LIBS +=  sushi-1.0                 0.0 # 0.0
 
