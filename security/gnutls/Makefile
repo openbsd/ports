@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.52 2012/07/05 06:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2012/07/08 09:02:10 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=	gnutls-2.12.20
+DISTNAME=	gnutls-3.0.21
+EXTRACT_SUFX=	.tar.xz
+
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               18.2     # 48.4
-SHARED_LIBS +=  gnutlsxx             17.0     # 27.0
-SHARED_LIBS +=  gnutls-extra         18.1     # 48.4
-SHARED_LIBS +=  gnutls-openssl       17.0     # 27.0
+SHARED_LIBS +=  gnutls               38.0     # 38.0
+SHARED_LIBS +=  gnutlsxx             28.0     # 28.0
+SHARED_LIBS +=  gnutls-openssl       27.2     # 27.2
 
 HOMEPAGE=	http://www.gnutls.org/
 
@@ -20,18 +21,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gmp hogweed lzo2 m ncurses nettle p11-kit pthread
-WANTLIB += readline stdc++ tasn1 z
+WANTLIB += c gmp hogweed idn m nettle p11-kit pthread stdc++ tasn1
+WANTLIB += z
 
-EXTRACT_SUFX=	.tar.bz2
-
-MASTER_SITES=	${MASTER_SITE_GNU:=gnutls/}
+MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	security/libtasn1 \
-		archivers/lzo2 \
-		security/libnettle \
+LIB_DEPENDS=	devel/libidn \
+		security/libtasn1 \
+		security/libnettle>=2.2 \
 		security/p11-kit
 
 USE_LIBTOOL=	Yes
@@ -44,8 +43,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-guile \
 		--disable-valgrind-tests \
-		--with-included-libcfg \
-		--with-lzo \
+		--disable-hardware-acceleration \
 		--with-libtasn1-prefix=${LOCALBASE} \
 		--with-packager="OpenBSD Ports"
 
@@ -54,7 +52,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 pre-configure:
 	perl -pi -e 's,-lpthread,-pthread,g' \
-		${WRKSRC}/{,lib/,libextra/}configure
+		${WRKSRC}/tests/suite/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gnutls
