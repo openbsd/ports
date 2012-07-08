@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/31 17:02:23 sebastia Exp $
+# $OpenBSD: Makefile,v 1.19 2012/07/08 14:21:02 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	1.3.14
+VERSION =	1.3.16
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
 SHARED_LIBS +=	GDLContentStore 1.1
 SHARED_LIBS +=	NGCards		1.1
 SHARED_LIBS +=	OGoContentStore	1.1
-SHARED_LIBS +=	SOGo		1.2
+SHARED_LIBS +=	SOGo		1.3
 SHARED_LIBS +=	SOGoUI		1.1
 
 CATEGORIES =	www
@@ -44,6 +44,9 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION
 			libOGoContentStore_INTERFACE_VERSION=${LIBOGoContentStore_VERSION} \
 			libSOGoUI_INTERFACE_VERSION=${LIBSOGoUI_VERSION} \
 			SOGo_INTERFACE_VERSION=${LIBSOGo_VERSION}
+
+SOGOLIBDIR =	lib/GNUstep/Frameworks/SOGo.framework/Versions/${LIBSOGo_VERSION}
+SUBST_VARS +=	SOGOLIBDIR
 
 pre-configure:
 .for f in SOGo_Installation_Guide SOGo_Mobile_Devices_Configuration \
