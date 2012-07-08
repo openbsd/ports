@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/08 14:03:55 sebastia Exp $
 
 COMMENT =	tool for inspecting compressed archvies
 
-DISTNAME =	Zipper-1.3
-REVISION=	0
+DISTNAME =	Zipper-1.4
 
-HOMEPAGE =	http://xanthippe.dyndns.org/Zipper/
-MASTER_SITES =	${HOMEPAGE}
+HOMEPAGE =	http://gap.nongnu.org/zipper/
+MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
 
 MODULES =	x11/gnustep
-WANTLIB += 	c m pthread Renaissance
-LIB_DEPENDS +=	x11/gnustep/renaissance
+WANTLIB += 	c m pthread
 RUN_DEPENDS +=  archivers/lha \
 		archivers/p7zip \
 		archivers/unrar \
 		archivers/unzip
 
-WRKDIST =	${WRKDIR}/Zipper
+post-extract:
+	rm ${WRKSRC}/Resources/MainMenu-GNUstep.gsmarkup.orig \
+		${WRKSRC}/PreferencesController.m.orig
 
 .include <bsd.port.mk>

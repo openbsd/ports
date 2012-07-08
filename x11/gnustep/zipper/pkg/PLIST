@@ -1,14 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 13:58:02 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/08 14:03:55 sebastia Exp $
 bin/Zipper
+libexec/GNUstep/
 libexec/GNUstep/Zipper.app/
 libexec/GNUstep/Zipper.app/Resources/
 libexec/GNUstep/Zipper.app/Resources/FileIcon.tiff
 libexec/GNUstep/Zipper.app/Resources/Info-gnustep.plist
-libexec/GNUstep/Zipper.app/Resources/MainMenu-GNUstep.gsmarkup
-libexec/GNUstep/Zipper.app/Resources/Preferences.gsmarkup
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/.#data.info.1.1
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/.#objects.gorm.1.1
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/data.classes
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/data.info
+libexec/GNUstep/Zipper.app/Resources/MainMenu.gorm/objects.gorm
+libexec/GNUstep/Zipper.app/Resources/Preferences.gorm/
+libexec/GNUstep/Zipper.app/Resources/Preferences.gorm/data.classes
+libexec/GNUstep/Zipper.app/Resources/Preferences.gorm/data.info
+libexec/GNUstep/Zipper.app/Resources/Preferences.gorm/objects.gorm
 libexec/GNUstep/Zipper.app/Resources/Zipper.desktop
-libexec/GNUstep/Zipper.app/Resources/Zipper.gsmarkup
-libexec/GNUstep/Zipper.app/Resources/ZipperInfo.plist
+libexec/GNUstep/Zipper.app/Resources/ZipperDocument.gorm/
+libexec/GNUstep/Zipper.app/Resources/ZipperDocument.gorm/data.classes
+libexec/GNUstep/Zipper.app/Resources/ZipperDocument.gorm/data.info
+libexec/GNUstep/Zipper.app/Resources/ZipperDocument.gorm/objects.gorm
 libexec/GNUstep/Zipper.app/Resources/no_order.tiff
 libexec/GNUstep/Zipper.app/Resources/sort_ascending.tiff
 libexec/GNUstep/Zipper.app/Resources/sort_descending.tiff
