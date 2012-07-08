@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/17 11:36:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/08 12:17:56 sebastia Exp $
 
 COMMENT=		stub DNS resolver library
 
-VERSION=		0.0.9
-DISTNAME=		udns_${VERSION}
-PKGNAME=		udns-${VERSION}
-REVISION=		0
+DISTNAME=		udns-0.2
 CATEGORIES=		net
 
-SHARED_LIBS+=	udns 0.0
+SHARED_LIBS+=	udns 1.0
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -32,7 +29,6 @@ ALL_TARGET=		staticlib static
 .endif
 
 CONFIGURE_STYLE=	simple
-WRKDIST=		${WRKDIR}/udns-${VERSION}
 NO_REGRESS=		Yes
 
 do-install:
