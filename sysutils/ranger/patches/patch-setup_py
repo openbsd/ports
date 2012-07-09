@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2012/07/09 09:20:58 sthen Exp $
+--- setup.py.orig	Mon Nov  7 13:24:07 2011
++++ setup.py	Mon Nov  7 13:24:17 2011
+@@ -28,7 +28,7 @@ if __name__ == '__main__':
+ 		license=ranger.__license__,
+ 		url='http://savannah.nongnu.org/projects/ranger',
+ 		scripts=['ranger/data/ranger'],
+-		data_files=[('share/man/man1', ['doc/ranger.1'])],
++		data_files=[('man/man1', ['doc/ranger.1'])],
+ 		package_data={'ranger': ['data/*', 'defaults/rc.conf']},
+ 		packages=('ranger',
+ 		          'ranger.api',
