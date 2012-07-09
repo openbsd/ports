@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_procproperties_cpp,v 1.5 2012/07/09 14:55:45 sthen Exp $
+--- src/procproperties.cpp.orig	Mon Jul  9 16:50:15 2012
++++ src/procproperties.cpp	Mon Jul  9 16:54:30 2012
+@@ -120,6 +120,10 @@ fill_proc_properties (GtkWidget *tree, ProcInfo *info)
+     int HZ;
+     int mib[] = { CTL_KERN, KERN_CLOCKRATE };
+ 
++#ifndef nitems
++#define nitems(_a)      (sizeof((_a)) / sizeof((_a)[0]))
++#endif
++
+     if (sysctl (mib, nitems(mib), &cinf, &size, NULL, 0) == -1)
+         HZ = 100;
+     else
