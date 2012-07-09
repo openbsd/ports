@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/09 06:01:01 bentley Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 
@@ -42,7 +42,7 @@ NO_REGRESS =		Yes
 WRKDIST =		${WRKDIR}/${DISTNAME:S/-src//}
 
 # requires posix_openpt
-CONFIGURE_ARGS +=	-DENABLE_WX=OFF
+CONFIGURE_ARGS +=	-DENABLE_WX=OFF -DENABLE_FFMPEG=OFF
 
 VMEM_WARNING =		Yes
 
