@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/05/11 09:57:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2012/07/09 22:37:55 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -26,7 +26,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 WANTLIB += c crypto iodbc iodbcinst ncurses pthread readline ssl
 
-MASTER_SITES=	http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
+MASTER_SITES=	http://mirrors.ibiblio.org/freetds/stable/
 
 AUTOCONF_VERSION=2.65
 AUTOMAKE_VERSION=1.11
