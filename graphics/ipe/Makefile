@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/09 15:56:34 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/09 16:21:32 ajacoutot Exp $
 
 COMMENT =		extensible drawing editor
 
 V =			7.1.2
 SUBST_VARS +=		V
-DISTNAME =		ipe-7.1.2-src
+DISTNAME =		ipe-${V}-src
 PKGNAME =		ipe-${V}
+REVISION =		0
 
 # their libraries would be installed as libxxx.so.${V}, overide this.
 SHLIB_VERSION =	0.0
@@ -27,7 +28,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL QtGui X11 Xrender c cairo expat fontconfig freetype
-WANTLIB += glib-2.0 gobject-2.0 iconv intl lua m pixman-1 png
+WANTLIB += glib-2.0 gobject-2.0 lua m pixman-1 png
 WANTLIB += pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
 WANTLIB += z
 
@@ -35,10 +36,10 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ipe7/}
 
 # Dependencies
 MODULES =		lang/lua \
-			x11/qt4
+			x11/qt4 \
+			devel/gettext
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS} \
-			${MODQT4_LIB_DEPENDS} \
-			converters/libiconv
+			${MODQT4_LIB_DEPENDS}
 RUN_DEPENDS =		print/texlive/base \
 			x11/xvkbd
 
