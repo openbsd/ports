@@ -1,0 +1,51 @@
+$OpenBSD: patch-wmbiff_tlsComm_c,v 1.3 2012/07/09 09:34:26 ajacoutot Exp $
+--- wmbiff/tlsComm.c.orig	Mon Jul  9 11:24:15 2012
++++ wmbiff/tlsComm.c	Mon Jul  9 11:29:12 2012
+@@ -410,7 +410,7 @@ static void
+ tls_check_certificate(struct connection_state *scs,
+ 					  const char *remote_hostname) 
+ {
+-	int certstat;
++	int certstat, status;
+ 	const gnutls_datum *cert_list;
+ 	int cert_list_size = 0;
+ 	gnutls_x509_crt cert;
+@@ -419,16 +419,16 @@ tls_check_certificate(struct connection_state *scs,
+ 		bad_certificate(scs, "Unable to get certificate from peer.\n");
+ 		return;	/* bad_cert will exit if -skip-certificate-check was not given */
+ 	}
+-	certstat = gnutls_certificate_verify_peers(scs->tls_state);
+-	if (certstat == GNUTLS_E_NO_CERTIFICATE_FOUND) {
++	certstat = gnutls_certificate_verify_peers2(scs->tls_state, &status);
++	if (status == GNUTLS_E_NO_CERTIFICATE_FOUND) {
+ 		bad_certificate(scs, "server presented no certificate.\n");
+ #ifdef GNUTLS_CERT_CORRUPTED
+-	} else if (certstat & GNUTLS_CERT_CORRUPTED) {
++	} else if (status & GNUTLS_CERT_CORRUPTED) {
+ 		bad_certificate(scs, "server's certificate is corrupt.\n");
+ #endif
+-	} else if (certstat & GNUTLS_CERT_REVOKED) {
++	} else if (status & GNUTLS_CERT_REVOKED) {
+ 		bad_certificate(scs, "server's certificate has been revoked.\n");
+-	} else if (certstat & GNUTLS_CERT_INVALID) {
++	} else if (status & GNUTLS_CERT_INVALID) {
+ 		if (gnutls_certificate_type_get(scs->tls_state) == GNUTLS_CRT_X509) {
+ 			/* bad_certificate(scs, "server's certificate is not trusted.\n"
+ 			   "there may be a problem with the certificate stored in your certfile\n"); */
+@@ -438,14 +438,14 @@ tls_check_certificate(struct connection_state *scs,
+ 							"there may be a problem with the certificate stored in your certfile\n");
+ 		}
+ #if defined(GNUTLS_CERT_SIGNER_NOT_FOUND)
+-	} else if (certstat & GNUTLS_CERT_SIGNER_NOT_FOUND) {
++	} else if (status & GNUTLS_CERT_SIGNER_NOT_FOUND) {
+ 		TDM(DEBUG_INFO, "server's certificate is not signed.\n");
+ 		TDM(DEBUG_INFO,
+ 			"to verify that a certificate is trusted, use the certfile option.\n");
+ #endif
+ 
+ #if defined(GNUTLS_CERT_NOT_TRUSTED)
+-	} else if (certstat & GNUTLS_CERT_NOT_TRUSTED) {
++	} else if (status & GNUTLS_CERT_NOT_TRUSTED) {
+ 		TDM(DEBUG_INFO, "server's certificate is not trusted.\n");
+ 		TDM(DEBUG_INFO,
+ 			"to verify that a certificate is trusted, use the certfile option.\n");
