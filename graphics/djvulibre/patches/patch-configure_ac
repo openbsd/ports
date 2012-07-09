@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/07/09 14:18:16 shadchin Exp $
+--- configure.ac.orig	Tue May  8 08:56:53 2012
++++ configure.ac	Mon Jul  9 19:41:00 2012
+@@ -117,7 +117,7 @@ AC_SUBST(LIBTOOL_DEPS)
+ 
+ # C++
+ AC_LANG(C++)
+-AC_CXX_OPTIMIZE
++AC_SUBST(OPTS)
+ AC_CXX_BOOL
+ AC_CXX_EXCEPTIONS
+ AC_CXX_TYPENAME

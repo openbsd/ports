@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2012/07/08 14:46:01 shadchin Exp $
+# $OpenBSD: Makefile,v 1.29 2012/07/09 14:18:16 shadchin Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.25.3
+REVISION=	0
 SHARED_LIBS=	djvulibre	25.0	# 25.0
 CATEGORIES=	graphics print
 
@@ -31,9 +32,11 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
-		--with-tiff=${LOCALBASE}
+AUTOCONF_VERSION=	2.67
+
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS=		--with-jpeg=${LOCALBASE} \
+			--with-tiff=${LOCALBASE}
 
 NO_REGRESS=	Yes
 
