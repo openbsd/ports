@@ -1,1 +1,2 @@
-Install pdfinfo (from xpdf) if you want to see pdf information in konqueror.
+Install pdfinfo (from poppler-utils) if you want to see pdf information
+in konqueror.

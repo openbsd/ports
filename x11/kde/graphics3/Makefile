@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2012/07/09 09:03:00 pascal Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -62,7 +62,7 @@ WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
 WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 14
+REVISION-main = 15
 REVISION-kamera = 7
 REVISION-kpov = 7
 REVISION-sane = 11
