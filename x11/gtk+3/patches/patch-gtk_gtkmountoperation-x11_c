@@ -1,16 +1,38 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.8 2012/07/08 18:03:39 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.9 2012/07/09 16:33:21 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=679593
 
---- gtk/gtkmountoperation-x11.c.orig	Sun Jul  8 09:40:51 2012
-+++ gtk/gtkmountoperation-x11.c	Sun Jul  8 09:42:51 2012
-@@ -731,6 +731,9 @@ pid_get_parent (GPid pid)
+--- gtk/gtkmountoperation-x11.c.orig	Sun Mar 18 21:44:21 2012
++++ gtk/gtkmountoperation-x11.c	Mon Jul  9 18:07:49 2012
+@@ -731,11 +731,11 @@ pid_get_parent (GPid pid)
    int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid,
                  sizeof(struct kinfo_proc), 0 };
  
-+#ifndef nitems
-+#define nitems(_a)      (sizeof((_a)) / sizeof((_a)[0]))
-+#endif
-   if (sysctl(mib, nitems(mib), NULL, &len, NULL, 0) == -1)
+-  if (sysctl(mib, nitems(mib), NULL, &len, NULL, 0) == -1)
++  if (sysctl(mib, G_N_ELEMENTS (mib), NULL, &len, NULL, 0) == -1)
        return (-1);
    mib[5] = (len / sizeof(struct kinfo_proc));
+ 
+-  if (sysctl(mib, nitems(mib), &kp, &len, NULL, 0) < 0)
++  if (sysctl(mib, G_N_ELEMENTS (mib), &kp, &len, NULL, 0) < 0)
+       return -1;
+ 
+   ppid = kp.p_ppid;
+@@ -760,7 +760,7 @@ pid_get_env (GPid pid, const gchar *key)
+   key_len = strlen (key);
+ 
+   ret = NULL;
+-  if (sysctl(mib, nitems(mib), strs, &len, NULL, 0) != -1)
++  if (sysctl(mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) != -1)
+     {
+       for (i = 0; strs[i] != NULL; i++)
+ 	{
+@@ -792,7 +792,7 @@ pid_get_command_line (GPid pid)
+ 
+   strs = (char **)realloc(strs, len);
+ 
+-  if (sysctl(mib, nitems(mib), strs, &len, NULL, 0) == -1) {
++  if (sysctl(mib, G_N_ELEMENTS (mib), strs, &len, NULL, 0) == -1) {
+     g_free (strs);
+     return ret;
+   }
