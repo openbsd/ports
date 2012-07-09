@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2012/07/09 13:16:22 giovanni Exp $
 
 COMMENT=		modules for parsing (and creating) MIME entities
 
-DISTNAME=		MIME-tools-5.428
+DISTNAME=		MIME-tools-5.503
 CATEGORIES=		mail
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
-HOMEPAGE=		http://www.zeegee.com/code/perl/MIME-tools/
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,5 +22,7 @@ RUN_DEPENDS=		devel/p5-IO-stringy>=1.211 \
 			converters/p5-Convert-BinHex
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
+MAKE_ENV=		TEST_POD=1
+REGRESS_DEPENDS=	devel/p5-Test-Deep
 
 .include <bsd.port.mk>
