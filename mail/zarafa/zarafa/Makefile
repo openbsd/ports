@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2012/07/06 16:25:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2012/07/09 15:27:30 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	2
+REVISION-main=	3
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -38,13 +39,14 @@ BUILD_DEPENDS=	textproc/xmlto \
 		devel/boost \
 		textproc/clucene
 
-WANTLIB += m pthread stdc++ z ${MODGETTEXT_WANTLIB}
+WANTLIB += ${MODGETTEXT_WANTLIB}
+WANTLIB += m pthread stdc++ z gmp gnutls hogweed nettle p11-kit tasn1
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
 WANTLIB-main += crypto execinfo gssapi ical icalss icudata icui18n
 WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncursesw
-WANTLIB-main += sasl2 ssl util uuid vmime-zarafa xml2
+WANTLIB-main += sasl2 ssl util uuid vmime xml2
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -55,7 +57,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime>=0.9.2p2v0 \
+		devel/libvmime>=0.9.2p0 \
 		textproc/libical \
 		textproc/icu4c \
 		devel/boost
@@ -63,7 +65,7 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-web += ${WANTLIB}
 WANTLIB-web += boost_filesystem-mt boost_system-mt common_mapi common_util
 WANTLIB-web += execinfo freebusy ical icalmapi icalss icudata icui18n
-WANTLIB-web += icuuc inetmapi mapi uuid vmime-zarafa
+WANTLIB-web += icuuc inetmapi mapi uuid vmime
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=7.0.0
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
@@ -110,7 +112,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-unicode \
 		--enable-python \
 		--with-distro=openbsd \
-		--with-vmime-prefix=${LOCALBASE}/include/zarafa \
+		--with-vmime-prefix=${LOCALBASE}/include \
 		--with-ical-prefix=${LOCALBASE}/include \
 		--with-clucene-lib-prefix=${LOCALBASE}/lib \
 		--with-clucene-include-prefix=${LOCALBASE}/include \

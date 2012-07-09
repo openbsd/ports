@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.22 2012/05/05 16:56:17 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.23 2012/07/09 15:27:30 ajacoutot Exp $
 
 OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
 
@@ -39,15 +39,6 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
  fi
  
  fi
-@@ -26150,7 +26150,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
- _ACEOF
- 
- 		VMIME_CFLAGS=-I$VMIME_PREFIX
--	VMIME_LIBS="$VMIME_LIBS -lvmime"
-+	VMIME_LIBS="$VMIME_LIBS -lvmime-zarafa"
- 
- else
- 
 @@ -27761,84 +27761,10 @@ sed 's/^/| /' conftest.$ac_ext >&5
  	 { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
