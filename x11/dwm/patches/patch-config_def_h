@@ -1,17 +1,17 @@
-$OpenBSD: patch-config_def_h,v 1.8 2010/06/27 01:03:55 jim Exp $
---- config.def.h.orig	Fri Jun  4 06:39:15 2010
-+++ config.def.h	Sat Jun 26 20:24:09 2010
+$OpenBSD: patch-config_def_h,v 1.9 2012/07/09 16:33:40 zinke Exp $
+--- config.def.h.orig	Mon Dec 19 16:02:46 2011
++++ config.def.h	Sat Jul  7 22:28:18 2012
 @@ -1,13 +1,13 @@
  /* See LICENSE file for copyright and license details. */
  
  /* appearance */
 -static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
--static const char normbordercolor[] = "#cccccc";
--static const char normbgcolor[]     = "#cccccc";
--static const char normfgcolor[]     = "#000000";
--static const char selbordercolor[]  = "#0066ff";
--static const char selbgcolor[]      = "#0066ff";
--static const char selfgcolor[]      = "#ffffff";
+-static const char normbordercolor[] = "#444444";
+-static const char normbgcolor[]     = "#222222";
+-static const char normfgcolor[]     = "#bbbbbb";
+-static const char selbordercolor[]  = "#005577";
+-static const char selbgcolor[]      = "#005577";
+-static const char selfgcolor[]      = "#eeeeee";
 +static const char font[]            = "-*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*";
 +static const char normbordercolor[] = "#404040";
 +static const char normbgcolor[]     = "#202020";
@@ -31,7 +31,7 @@ $OpenBSD: patch-config_def_h,v 1.8 2010/06/27 01:03:55 jim Exp $
  };
  
  /* layout(s) */
-@@ -46,7 +48,7 @@ static const Layout layouts[] = {
+@@ -47,7 +49,7 @@ static const Layout layouts[] = {
  
  /* commands */
  static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
