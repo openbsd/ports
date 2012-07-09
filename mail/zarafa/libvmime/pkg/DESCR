@@ -1,4 +1,0 @@
-VMime is a powerful C++ class library for working with MIME messages and
-Internet messaging services like IMAP, POP or SMTP.
-This is a modified libvmime library for use with the Zarafa Outlook
-Sharing service.
