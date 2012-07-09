@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2012/03/26 20:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.53 2012/07/09 13:25:37 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
@@ -8,9 +8,10 @@ SHARED_LIBS +=	sox 3.0 # .2.0
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 MAINTAINER=	Jan Stary <hans@stare.cz>
-REVISION=	0
+REVISION=	1
 
-# GPLv2+
+# code is GPLv2+, however as opencore is under Apache License we must use
+# sox under the terms of GPLv3 to avoid license conflict.
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -20,6 +21,7 @@ MODULES=		converters/libiconv
 
 WANTLIB += c m z sndio
 WANTLIB += ogg vorbis vorbisenc vorbisfile FLAC
+WANTLIB += opencore-amrnb opencore-amrwb
 WANTLIB += mad id3tag mp3lame twolame
 WANTLIB += wavpack gsm sndfile
 WANTLIB += magic png
@@ -38,6 +40,7 @@ LIB_DEPENDS=			\
 	audio/flac		\
 	audio/wavpack		\
 	audio/libsndfile	\
+	audio/opencore-amr	\
 	audio/gsm
 
 USE_GROFF=	Yes
@@ -72,8 +75,8 @@ CONFIGURE_ARGS+=		\
 	--with-twolame		\
 	--with-oggvorbis	\
 	--with-flac		\
-	--without-amrwb		\
-	--without-amrnb		\
+	--with-amrwb		\
+	--with-amrnb		\
 	--with-wavpack		\
 	--with-sndfile		\
 	--without-ffmpeg	\
