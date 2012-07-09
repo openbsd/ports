@@ -1,6 +1,9 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.9 2012/07/09 16:33:21 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.10 2012/07/09 17:21:27 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679593
+From 974212ec825d8d50bdea8ab955b6f19b8ed1672f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 09 Jul 2012 16:20:34 +0000
+Subject: OpenBSD: use G_N_ELEMENTS instead of nitems
 
 --- gtk/gtkmountoperation-x11.c.orig	Sun Mar 18 21:44:21 2012
 +++ gtk/gtkmountoperation-x11.c	Mon Jul  9 18:07:49 2012
