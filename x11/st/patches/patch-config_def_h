@@ -1,21 +1,21 @@
-$OpenBSD: patch-config_def_h,v 1.1.1.1 2011/09/23 14:41:31 zinke Exp $
---- config.def.h.orig	Sun Apr  3 21:04:45 2011
-+++ config.def.h	Fri Sep 16 12:47:24 2011
-@@ -14,7 +14,7 @@ static const char *colorname[] = {
+$OpenBSD: patch-config_def_h,v 1.2 2012/07/09 16:37:00 zinke Exp $
+--- config.def.h.orig	Thu Feb 16 01:05:14 2012
++++ config.def.h	Mon Jul  9 11:44:48 2012
+@@ -18,7 +18,7 @@ static const char *colorname[] = {
  	"blue2",
  	"magenta3",
  	"cyan3",
 -	"gray90",
 +	"gray",
- 	"gray50",
- 	"red",
- 	"green",
-@@ -29,7 +29,7 @@ static const char *colorname[] = {
- /* foreground, background, cursor */
- #define DefaultFG 7
- #define DefaultBG 0
--#define DefaultCS 1
-+#define DefaultCS 12 
  
- /* Special keys */
- static Key key[] = {
+ 	/* 8 bright colors */
+ 	"gray50",
+@@ -41,7 +41,7 @@ static const char *colorname[] = {
+    foreground, background, cursor, unfocused cursor */
+ #define DefaultFG  7
+ #define DefaultBG  0
+-#define DefaultCS  256
++#define DefaultCS  12
+ #define DefaultUCS 257
+ 
+ /* Special keys (change & recompile st.info accordingly)

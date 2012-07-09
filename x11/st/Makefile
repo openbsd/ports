@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/26 09:32:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/09 16:37:00 zinke Exp $
 
 COMMENT=		simple X terminal
 
-DISTNAME=		0.1.1
+DISTNAME=		0.2.1
 PKGNAME=		st-${DISTNAME}
 DIST_SUBDIR=		st
-
-REVISION=		0
 
 CATEGORIES=		x11
 
