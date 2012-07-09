@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2012/04/25 06:57:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/09 15:26:37 ajacoutot Exp $
 
     SUBDIR =
-    SUBDIR += libvmime
     SUBDIR += webapp
     SUBDIR += zarafa
 
