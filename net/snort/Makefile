@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/04/07 08:31:39 mcbride Exp $
+# $OpenBSD: Makefile,v 1.66 2012/07/09 12:58:16 sthen Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -40,7 +40,7 @@ MAKE_FLAGS =		mandir=${TRUEPREFIX}/man
 LIB_DEPENDS =		devel/pcre
 WANTLIB +=		pcre
 
-FLAVORS =		postgresql mysql flexresp prelude
+FLAVORS =		postgresql mysql flexresp
 FLAVOR ?=	
 
 .if ${FLAVOR:L:Mflexresp}
@@ -61,14 +61,6 @@ WANTLIB +=		lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS +=	--with-mysql-libraries="${LOCALBASE}/lib" \
 			--with-mysql-includes="${LOCALBASE}/include"
 WANTLIB +=		z
-.endif
-
-.if ${FLAVOR:L:Mprelude}
-MODULES =		devel/gettext
-LIB_DEPENDS +=		security/prelude/libprelude
-WANTLIB +=		gcrypt gnutls gpg-error pthread tasn1 z prelude>=8
-CONFIGURE_ARGS +=	--enable-prelude
-MESSAGE =		${PKGDIR}/MESSAGE-prelude
 .endif
 
 CONFIGS	=		classification.config gen-msg.map reference.config \

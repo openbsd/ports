@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.758 2012/07/03 12:48:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.759 2012/07/09 12:58:16 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -531,7 +531,6 @@
      SUBDIR += snort
      SUBDIR += snort,mysql
      SUBDIR += snort,postgresql
-     SUBDIR += snort,prelude
      SUBDIR += socat
      SUBDIR += softflowd
      SUBDIR += spectrum
