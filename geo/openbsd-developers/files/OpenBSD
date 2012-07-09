@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.83 2012/05/21 18:19:30 gonzalo Exp $
+# $OpenBSD: OpenBSD,v 1.84 2012/07/09 00:18:55 abieber Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -23,6 +23,7 @@
 37.3706		-122.0138	"ckuethe"	# Chris Kuethe
 37.515049	-122.339528	"marc"		# Marco S. Hyman
 37.75		-122.41		"matthew"	# Matthew Dempsky
+38.2581		-104.6319	"abieber"	# Aaron Bieber
 38.66		-121.5		"jeremy"	# Jeremy Evans
 38.9693		-77.3863	"jason"		# Jason L. Wright
 39.179910	-77.058420	"merdely"	# Michael Erdely
