@@ -1,0 +1,28 @@
+$OpenBSD: patch-data_Makefile_in,v 1.1 2012/07/09 18:01:16 ajacoutot Exp $
+
+From 3d95e7bb111ca72d59e6ab81c007d3ccb2cf838d Mon Sep 17 00:00:00 2001
+From: Owen W. Taylor <otaylor@fishsoup.net>
+Date: Fri, 20 Apr 2012 14:51:32 +0000
+Subject: Mirror Evolution calendar settings into our own schema
+
+--- data/Makefile.in.orig	Mon Jul  9 19:47:23 2012
++++ data/Makefile.in	Mon Jul  9 19:47:47 2012
+@@ -349,7 +349,7 @@ dist_theme_DATA = \
+ 	theme/ws-switch-arrow-up.svg		\
+ 	theme/ws-switch-arrow-down.svg
+ 
+-gsettings_SCHEMAS = org.gnome.shell.gschema.xml
++gsettings_SCHEMAS = org.gnome.shell.gschema.xml org.gnome.shell.evolution.calendar.gschema.xml
+ convertdir = $(datadir)/GConf/gsettings
+ convert_DATA = gnome-shell-overrides.convert
+ shadersdir = $(pkgdatadir)/shaders
+@@ -363,7 +363,8 @@ EXTRA_DIST = \
+ 	$(menu_DATA)					\
+ 	$(shaders_DATA)					\
+ 	$(convert_DATA)					\
+-	org.gnome.shell.gschema.xml.in
++	org.gnome.shell.gschema.xml.in			\
++	org.gnome.shell.evolution.calendar.gschema.xml
+ 
+ CLEANFILES = \
+ 	gnome-shell.desktop.in				\
