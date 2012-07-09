@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/04 12:52:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/07/09 15:25:57 ajacoutot Exp $
+@conflict zarafa-libvmime-*
+@pkgpath mail/zarafa/libvmime
 %%SHARED%%
 include/vmime/
 include/vmime/address.hpp
@@ -121,6 +123,10 @@ include/vmime/platforms/posix/posixChildProcess.hpp
 include/vmime/platforms/posix/posixFile.hpp
 include/vmime/platforms/posix/posixHandler.hpp
 include/vmime/platforms/posix/posixSocket.hpp
+include/vmime/platforms/windows/
+include/vmime/platforms/windows/windowsFile.hpp
+include/vmime/platforms/windows/windowsHandler.hpp
+include/vmime/platforms/windows/windowsSocket.hpp
 include/vmime/propertySet.hpp
 include/vmime/relay.hpp
 include/vmime/security/
@@ -190,6 +196,6 @@ share/doc/vmime/
 share/doc/vmime/AUTHORS
 share/doc/vmime/COPYING
 share/doc/vmime/ChangeLog
-@comment share/doc/vmime/INSTALL
-@comment share/doc/vmime/NEWS
-@comment share/doc/vmime/README
+share/doc/vmime/INSTALL
+share/doc/vmime/NEWS
+share/doc/vmime/README

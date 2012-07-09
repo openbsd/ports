@@ -1,50 +1,66 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/14 22:29:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/07/09 15:25:57 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
-DISTNAME=	libvmime-0.9.1
-CATEGORIES=	devel mail
-
-SHARED_LIBS+=	vmime	1.0	# .0.0
-
+VMIME_V=	0.9.2
+DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
+
+PKGNAME=	libvmime-${VMIME_V}
+REVISION=	0
+
+SHARED_LIBS+=  vmime    2.0     # 0.0
+
+### needed for mail/zarafa (FLAVOR is possible if needed in the future)
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
+MASTER_SITES_ZARAFA=http://download.zarafa.com/community/final/7.0/7.0.8-35178/sourcecode/
+MASTER_SITES=	${MASTER_SITES_ZARAFA}
+MASTER_SITES0=	${MASTER_SITES_ZARAFA:=/vmime-patches/}
+PATCH_DIST_STRIP= -p1
+PATCHFILES= \
+	vmime-0.9.2-header-value-on-next-line.diff:0 \
+	vmime-0.9.2-qp-in-buffers.diff:0 \
+	vmime-mixed-qp-in-parameter.diff:0
+###
+
+CATEGORIES=	devel mail
 
 HOMEPAGE=	http://www.vmime.org/
 
-# GPLv2
+MAINTAINER=	Antoine Jacoutot <ajacoutot@bsdfrog.org>
+
+# GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
-
-WANTLIB += gmp gnutls hogweed m nettle stdc++ tasn1 z
+WANTLIB += gmp gnutls hogweed m nettle p11-kit stdc++ tasn1 z
 
 MODULES=	devel/gettext
 
-# "#include <gcrypt.h>" in src/net/tls/TLSSession.cpp
-BUILD_DEPENDS=	security/libgcrypt
+WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}
 
-LIB_DEPENDS=	security/gnutls
+# our old gcc is <cxx0x; so "-pedantic" warnings are turned into errors
+CFLAGS +=	-fpermissive
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
+
+BUILD_DEPENDS=	archivers/bzip2
+LIB_DEPENDS=	security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		EXTRA_CFLAGS="${CFLAGS}"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-tls \
-		--enable-messaging-proto-pop3 \
-		--enable-messaging-proto-smtp \
-		--enable-messaging-proto-imap \
-		--enable-messaging-proto-maildir \
-		--enable-messaging-proto-sendmail \
-		--enable-platform-posix
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # SASL support needs GNU SASL
-CONFIGURE_ARGS+= --disable-sasl
+CONFIGURE_ARGS += --disable-sasl
+
+pre-configure:
+	perl -pi -e 's,-l\$${ost_cv_thread_library},-\$${ost_cv_thread_library},g;' \
+		-e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
