@@ -1,0 +1,21 @@
+$OpenBSD: patch-FuzzyOcr_Scanset_pm,v 1.1 2012/07/09 21:04:03 giovanni Exp $
+--- FuzzyOcr/Scanset.pm.orig	Mon Jul  9 19:12:47 2012
++++ FuzzyOcr/Scanset.pm	Mon Jul  9 19:13:54 2012
+@@ -20,6 +20,8 @@ package FuzzyOcr::Scanset;
+ use lib qw(..);
+ use FuzzyOcr::Logging qw(errorlog);
+ 
++use File::Basename qw(dirname);
++
+ sub new {
+     my ($class, $label, $preprocessors, $command, $args, $output_in) = @_;
+ 
+@@ -36,7 +38,7 @@ sub new {
+ sub run {
+     my ($self, $input) = @_;
+     my $conf = FuzzyOcr::Config::get_config();
+-    my $tmpdir = FuzzyOcr::Config::get_tmpdir();
++    my $tmpdir = dirname($input);
+     my $label = $self->{label};
+     my $output = "$tmpdir/scanset.$label.out";
+     my $stderr = ">$tmpdir/scanset.$label.err";

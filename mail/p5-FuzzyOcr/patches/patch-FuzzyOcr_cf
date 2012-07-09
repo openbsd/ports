@@ -1,6 +1,6 @@
-$OpenBSD: patch-FuzzyOcr_cf,v 1.2 2010/07/21 05:53:07 merdely Exp $
---- FuzzyOcr.cf.orig	Wed May 27 18:16:00 2009
-+++ FuzzyOcr.cf	Wed Jul 14 13:15:58 2010
+$OpenBSD: patch-FuzzyOcr_cf,v 1.3 2012/07/09 21:04:03 giovanni Exp $
+--- FuzzyOcr.cf.orig	Thu May 28 00:16:00 2009
++++ FuzzyOcr.cf	Thu Jul  5 12:30:02 2012
 @@ -1,7 +1,7 @@
  # Syntax:
  # loadplugin <Plugin_Name> <Location>
@@ -19,7 +19,7 @@ $OpenBSD: patch-FuzzyOcr_cf,v 1.2 2010/07/21 05:53:07 merdely Exp $
  
  ###
  ### Wordlists 
-@@ -96,8 +96,8 @@ priority FUZZY_OCR 900
+@@ -96,7 +96,7 @@ priority FUZZY_OCR 900
  
  # Include additional scanner/preprocessor commands here:
  #
@@ -28,7 +28,6 @@ $OpenBSD: patch-FuzzyOcr_cf,v 1.2 2010/07/21 05:53:07 merdely Exp $
  focr_bin_helper tesseract
  
  # These helpers must be defined before enabling PDF scanning
- #focr_bin_helper pdfinfo, pdftops, pstopnm
 @@ -314,17 +314,17 @@ focr_bin_helper tesseract
  # If the image hash database feature is enabled (Type 1 Hashing),
  # specify the file to use as database

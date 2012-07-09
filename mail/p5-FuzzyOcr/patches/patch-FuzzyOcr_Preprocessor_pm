@@ -1,0 +1,21 @@
+$OpenBSD: patch-FuzzyOcr_Preprocessor_pm,v 1.1 2012/07/09 21:04:03 giovanni Exp $
+--- FuzzyOcr/Preprocessor.pm.orig	Mon Jul  9 19:11:28 2012
++++ FuzzyOcr/Preprocessor.pm	Mon Jul  9 19:12:39 2012
+@@ -17,6 +17,8 @@
+ 
+ package FuzzyOcr::Preprocessor;
+ 
++use File::Basename qw(dirname);
++
+ sub new {
+     my ($class, $label, $command, $args) = @_;
+ 
+@@ -29,7 +31,7 @@ sub new {
+ 
+ sub run {
+     my ($self, $input) = @_;
+-    my $tmpdir = FuzzyOcr::Config::get_tmpdir();
++    my $tmpdir = dirname($input);
+     my $label = $self->{label};
+     my $output = "$tmpdir/prep.$label.out";
+ 

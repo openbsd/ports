@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.7 2012/05/08 16:31:46 okan Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/09 21:04:03 giovanni Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
-V=			3.6.0
+V=			3.6.0.146
 DISTNAME=		fuzzyocr-$V
 PKGNAME=		p5-FuzzyOcr-$V
 PKG_ARCH=		*
-REVISION=		2
 CATEGORIES=		mail perl5
 
 HOMEPAGE=		http://fuzzyocr.own-hero.net/
-MASTER_SITES=		http://users.own-hero.net/~decoder/fuzzyocr/
+MASTER_SITES=		http://bigio.snb.it/openbsd/distfiles/
 
-MAINTAINER=		Michael Erdely <merdely@openbsd.org>
+MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 RUN_DEPENDS=		devel/p5-MLDBM-Sync \
 			graphics/gocr \
@@ -25,7 +24,7 @@ RUN_DEPENDS=		devel/p5-MLDBM-Sync \
 			mail/p5-Mail-SpamAssassin \
 			textproc/p5-String-Approx
 
-REGRESS_DEPENDS=	mail/p5-FuzzyOcr
+NO_REGRESS=		Yes
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM=	Yes
@@ -43,10 +42,6 @@ SUBST_VARS=		CONFDIR
 CONF=			FuzzyOcr.cf FuzzyOcr.mysql FuzzyOcr.preps \
 			FuzzyOcr.scansets FuzzyOcr.words
 
-SAMPLES=		ocr-gif.eml ocr-multi.eml ocr-png.eml \
-			ocr-animated.eml ocr-jpg.eml ocr-obfuscated.eml \
-			ocr-wrongext.eml
-
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/FuzzyOcr.pm ${PREFIX}/${P5SITE}
 	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/FuzzyOcr
@@ -54,12 +49,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/FuzzyOcr
 .for i in ${CONF}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/examples/FuzzyOcr
-.endfor
-
-do-regress:
-.for i in ${SAMPLES}
-	spamassassin -xLt --cf="focr_autodisable_score 100" < \
-		${WRKSRC}/samples/${i}
 .endfor
 
 .include <bsd.port.mk>

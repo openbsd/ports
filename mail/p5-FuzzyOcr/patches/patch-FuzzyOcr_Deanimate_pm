@@ -1,0 +1,29 @@
+$OpenBSD: patch-FuzzyOcr_Deanimate_pm,v 1.1 2012/07/09 21:04:03 giovanni Exp $
+--- FuzzyOcr/Deanimate.pm.orig	Mon Jul  9 19:15:25 2012
++++ FuzzyOcr/Deanimate.pm	Mon Jul  9 19:17:38 2012
+@@ -26,12 +26,14 @@ use FuzzyOcr::Config qw(get_config set_config get_tmpd
+ use FuzzyOcr::Misc qw(save_execute);
+ use FuzzyOcr::Logging qw(errorlog warnlog infolog);
+ 
++use File::Basename qw(dirname);
++
+ # Provide functions to deanimate gifs
+ 
+ sub deanimate {
+     my $conf = get_config();
+-    my $imgdir = get_tmpdir();
+     my $tfile = shift;
++    my $imgdir = dirname($tfile);
+     my $efile = $tfile . ".err";
+     my $tfile2 = $tfile;
+     my $tfile3 = $tfile;
+@@ -75,8 +77,8 @@ sub deanimate {
+ 
+ sub gif_info {
+     my $conf = get_config();
+-    my $imgdir = get_tmpdir();
+     my $giffile = $_[0];
++    my $imgdir = dirname($giffile);
+     
+     my $fd = new IO::Handle;
+     
