@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_net_tls_TLSSession_cpp,v 1.3 2012/07/09 10:25:05 ajacoutot Exp $
+
+Fixed with gnutls>=3 (checrry picked from upstream).
+
+--- src/net/tls/TLSSession.cpp.orig	Thu Aug 19 09:44:52 2010
++++ src/net/tls/TLSSession.cpp	Mon Jul  9 12:19:05 2012
+@@ -22,7 +22,9 @@
+ //
+ 
+ #include <gnutls/gnutls.h>
++#if GNUTLS_VERSION_NUMBER < 0x030000
+ #include <gnutls/extra.h>
++#endif
+ 
+ #include "vmime/config.hpp"
+ 
+@@ -298,10 +300,7 @@ void TLSSession::throwTLSException(const string& fname
+ 	ERROR(GNUTLS_E_FILE_ERROR)
+ 	ERROR(GNUTLS_E_TOO_MANY_EMPTY_PACKETS)
+ 	ERROR(GNUTLS_E_UNKNOWN_PK_ALGORITHM)
+-	ERROR(GNUTLS_E_INIT_LIBEXTRA)
+-	ERROR(GNUTLS_E_LIBRARY_VERSION_MISMATCH)
+ 	ERROR(GNUTLS_E_NO_TEMPORARY_RSA_PARAMS)
+-	ERROR(GNUTLS_E_LZO_INIT_FAILED)
+ 	ERROR(GNUTLS_E_NO_COMPRESSION_ALGORITHMS)
+ 	ERROR(GNUTLS_E_NO_CIPHER_SUITES)
+ 	ERROR(GNUTLS_E_OPENPGP_GETKEY_FAILED)

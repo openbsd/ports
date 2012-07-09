@@ -1,6 +1,10 @@
-$OpenBSD: patch-configure,v 1.4 2011/05/04 12:52:50 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.5 2012/07/09 10:25:05 ajacoutot Exp $
+
+Remove -pedantic which chokes on:
+/usr/local/include/gnutls/gnutls.h:162: error: comma at end of enumerator list
+
 --- configure.orig	Tue Nov 16 13:56:00 2010
-+++ configure	Wed May  4 14:39:06 2011
++++ configure	Mon Jul  9 11:55:33 2012
 @@ -4120,13 +4120,13 @@ if test "$ac_test_CFLAGS" = set; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
@@ -353,6 +357,36 @@ $OpenBSD: patch-configure,v 1.4 2011/05/04 12:52:50 ajacoutot Exp $
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-l${ost_cv_thread_library}  $LIBS"
 +LIBS="-${ost_cv_thread_library}  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -21083,29 +21083,6 @@ OLD_EXTRA_CFLAGS="$EXTRA_CFLAGS"
+ EXTRA_CFLAGS="$EXTRA_CFLAGS -ansi"
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether cc accepts -ansi" >&5
+ $as_echo_n "checking whether cc accepts -ansi... " >&6; }
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-
+-int
+-main ()
+-{
+-
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-if ac_fn_cxx_try_compile "$LINENO"; then :
+-  echo yes
+-else
+-  echo no; EXTRA_CFLAGS="$OLD_EXTRA_CFLAGS"
+-fi
+-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+-
+-# -pedantic
+-OLD_EXTRA_CFLAGS="$EXTRA_CFLAGS"
+-EXTRA_CFLAGS="$EXTRA_CFLAGS -pedantic"
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether cc accepts -pedantic" >&5
+-$as_echo_n "checking whether cc accepts -pedantic... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
