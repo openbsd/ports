@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/06/12 17:20:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/07/09 21:16:47 jasper Exp $
 
 COMMENT = 		web-based SSH client
 
@@ -22,6 +22,8 @@ MASTER_SITES =		${HOMEPAGE}/files/
 
 USE_GROFF =		Yes
 NO_BUILD =		Yes
+
+BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 
 MODULES =		lang/python
 
