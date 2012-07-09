@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_filed_Makefile_in,v 1.1 2012/03/08 17:34:34 sthen Exp $
---- src/filed/Makefile.in.orig	Wed Mar  7 22:13:02 2012
-+++ src/filed/Makefile.in	Wed Mar  7 22:15:25 2012
-@@ -145,9 +145,6 @@ install: all
+$OpenBSD: patch-src_filed_Makefile_in,v 1.2 2012/07/09 18:40:58 sthen Exp $
+--- src/filed/Makefile.in.orig	Thu Jun 28 15:52:03 2012
++++ src/filed/Makefile.in	Thu Jul  5 16:27:27 2012
+@@ -147,9 +147,6 @@ install: all
  	fi; \
  	echo "${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf"; \
  	${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf
