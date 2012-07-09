@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/22 08:08:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2012/07/09 12:59:33 jasper Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -9,7 +9,7 @@ VERSION = 	0.9.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
-REVISION =	0
+REVISION =	1
 
 BROKEN-arm=	tilegen.elf loops burning cpu
 
@@ -28,7 +28,7 @@ MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
 		V=1
 
 MODULES = 	lang/lua
-WANTLIB = 	c m stdc++ lua sqlite3
+WANTLIB = 	c m stdc++ ${MODLUA_WANTLIB} sqlite3
 
 BUILD_DEPENDS = devel/bison \
 		graphics/pngcrush
