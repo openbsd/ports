@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/06/22 21:04:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2012/07/09 08:08:53 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -229,6 +229,7 @@ CONFIGURE_ARGS+=--disable-build-mozilla \
 		--disable-randr-link \
 		--disable-unix-qstart-libpng \
 		--disable-xmlsec \
+		--enable-librsvg=no \
 		--enable-binfilter \
 		--enable-gio \
 		--enable-gstreamer \
