@@ -1,0 +1,27 @@
+$OpenBSD: patch-lib_tls_tls_c,v 1.1 2012/07/09 09:10:13 ajacoutot Exp $
+
+The gnutls_transport_set_lowat function has been removed in gnutls>=3
+(the lowat feature is always disabled now).
+
+--- lib/tls/tls.c.orig	Mon Jul  9 11:06:30 2012
++++ lib/tls/tls.c	Mon Jul  9 11:06:50 2012
+@@ -505,7 +505,9 @@ struct socket_context *tls_init_server(struct tls_para
+ 	gnutls_transport_set_ptr(tls->session, (gnutls_transport_ptr)tls);
+ 	gnutls_transport_set_pull_function(tls->session, (gnutls_pull_func)tls_pull);
+ 	gnutls_transport_set_push_function(tls->session, (gnutls_push_func)tls_push);
++#if GNUTLS_VERSION_NUMBER < 0x020c00
+ 	gnutls_transport_set_lowat(tls->session, 0);
++#endif
+ 
+ 	tls->plain_chars = plain_chars;
+ 	if (plain_chars) {
+@@ -584,7 +586,9 @@ struct socket_context *tls_init_client(struct socket_c
+ 	gnutls_transport_set_ptr(tls->session, (gnutls_transport_ptr)tls);
+ 	gnutls_transport_set_pull_function(tls->session, (gnutls_pull_func)tls_pull);
+ 	gnutls_transport_set_push_function(tls->session, (gnutls_push_func)tls_push);
++#if GNUTLS_VERSION_NUMBER < 0x020c00
+ 	gnutls_transport_set_lowat(tls->session, 0);
++#endif
+ 	tls->tls_detect = False;
+ 
+ 	tls->output_pending  = False;
