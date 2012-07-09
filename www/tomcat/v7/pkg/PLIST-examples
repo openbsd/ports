@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.6 2012/06/27 19:02:38 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.7 2012/07/09 08:16:54 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v7,-examples
 @owner _tomcat
@@ -817,6 +817,7 @@ webapps/docs/api/org/apache/catalina/websocket/StreamInbound.html
 webapps/docs/api/org/apache/catalina/websocket/Utf8Decoder.html
 webapps/docs/api/org/apache/catalina/websocket/WebSocketServlet.html
 webapps/docs/api/org/apache/catalina/websocket/WsFrame.html
+webapps/docs/api/org/apache/catalina/websocket/WsHttpServletRequestWrapper.html
 webapps/docs/api/org/apache/catalina/websocket/WsInputStream.html
 webapps/docs/api/org/apache/catalina/websocket/WsOutbound.html
 webapps/docs/api/org/apache/catalina/websocket/package-frame.html
