@@ -1,6 +1,6 @@
-$OpenBSD: patch-source_common_putilimp_h,v 1.3 2012/07/05 10:05:34 ajacoutot Exp $
+$OpenBSD: patch-source_common_putilimp_h,v 1.4 2012/07/09 22:50:18 ajacoutot Exp $
 
-hppa doesnt have atomic builtins:
+hppa and sparc don't have atomic builtins:
 __sync_val_compare_and_swap, __sync_add_and_fetch, __sync_sub_and_fetch
 don't assume having GNUC >= 401 implies they're here..
 
@@ -20,7 +20,7 @@ don't assume having GNUC >= 401 implies they're here..
  #ifdef U_HAVE_GCC_ATOMICS
      /* Use the predefined value. */
 -#elif defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__) >= 401)
-+#elif defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__) >= 401) && !defined(__hppa__)
++#elif defined(__GNUC__) && ((__GNUC__ * 100 + __GNUC_MINOR__) >= 401) && !defined(__hppa__) && (defined(__sparc__) && ! defined(__sparcv9__))
  #   define U_HAVE_GCC_ATOMICS 1
  #else
  #   define U_HAVE_GCC_ATOMICS 0
