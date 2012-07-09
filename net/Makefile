@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.759 2012/07/09 12:58:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.760 2012/07/09 13:00:24 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -224,7 +224,6 @@
      SUBDIR += nemesis
      SUBDIR += neon
      SUBDIR += nepenthes
-     SUBDIR += nepenthes,prelude
      SUBDIR += nepim
      SUBDIR += net-snmp
      SUBDIR += netatalk
