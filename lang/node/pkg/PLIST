@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/06/28 08:30:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/07/09 13:54:54 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -243,6 +243,11 @@ lib/node_modules/init-package-json/node_modules/promzard/test/fn.js
 lib/node_modules/init-package-json/node_modules/promzard/test/simple.input
 lib/node_modules/init-package-json/node_modules/promzard/test/simple.js
 lib/node_modules/init-package-json/package.json
+lib/node_modules/lockfile/
+lib/node_modules/lockfile/LICENSE
+lib/node_modules/lockfile/README.md
+lib/node_modules/lockfile/lockfile.js
+lib/node_modules/lockfile/package.json
 lib/node_modules/lru-cache/
 lib/node_modules/lru-cache/.npmignore
 lib/node_modules/lru-cache/AUTHORS
@@ -371,6 +376,7 @@ lib/node_modules/nopt/package.json
 lib/node_modules/npm/
 lib/node_modules/npm-registry-client/
 lib/node_modules/npm-registry-client/.npmignore
+lib/node_modules/npm-registry-client/LICENSE
 lib/node_modules/npm-registry-client/README.md
 lib/node_modules/npm-registry-client/index.js
 lib/node_modules/npm-registry-client/lib/
@@ -798,6 +804,7 @@ lib/node_modules/npm/node_modules/graceful-fs
 lib/node_modules/npm/node_modules/inherits
 lib/node_modules/npm/node_modules/ini
 lib/node_modules/npm/node_modules/init-package-json
+lib/node_modules/npm/node_modules/lockfile
 lib/node_modules/npm/node_modules/lru-cache
 lib/node_modules/npm/node_modules/minimatch
 lib/node_modules/npm/node_modules/mkdirp
@@ -812,6 +819,7 @@ lib/node_modules/npm/node_modules/read
 lib/node_modules/npm/node_modules/read-installed
 lib/node_modules/npm/node_modules/read-package-json
 lib/node_modules/npm/node_modules/request
+lib/node_modules/npm/node_modules/retry
 lib/node_modules/npm/node_modules/rimraf
 lib/node_modules/npm/node_modules/semver
 lib/node_modules/npm/node_modules/slide
@@ -943,6 +951,17 @@ lib/node_modules/request/vendor/
 lib/node_modules/request/vendor/cookie/
 lib/node_modules/request/vendor/cookie/index.js
 lib/node_modules/request/vendor/cookie/jar.js
+lib/node_modules/retry/
+lib/node_modules/retry/.npmignore
+lib/node_modules/retry/License
+lib/node_modules/retry/Makefile
+lib/node_modules/retry/Readme.md
+lib/node_modules/retry/equation.gif
+lib/node_modules/retry/index.js
+lib/node_modules/retry/lib/
+lib/node_modules/retry/lib/retry.js
+lib/node_modules/retry/lib/retry_operation.js
+lib/node_modules/retry/package.json
 lib/node_modules/rimraf/
 lib/node_modules/rimraf/AUTHORS
 lib/node_modules/rimraf/LICENSE
@@ -999,4 +1018,3 @@ lib/node_modules/which/bin/which
 lib/node_modules/which/package.json
 lib/node_modules/which/which.js
 @man man/man1/node.1
-@extraunexec rm -rf %D/lib/node_modules

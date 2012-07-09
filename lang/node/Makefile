@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/28 08:30:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/09 13:54:54 abieber Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-NODE_VERSION=	v0.8.0
+NODE_VERSION=	v0.8.1
 
 DISTNAME=	node-${NODE_VERSION}
 PKGNAME=	${DISTNAME:S/v//g}
@@ -17,7 +17,7 @@ CATEGORIES=	lang devel
 
 HOMEPAGE=	http://nodejs.org/
 
-MAINTAINER=	Aaron Bieber <deftly@gmail.com>
+MAINTAINER=	Aaron Bieber <abieber@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
