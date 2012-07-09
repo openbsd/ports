@@ -1,19 +1,15 @@
-$OpenBSD: patch-glib_goption_c,v 1.5 2012/07/08 21:02:45 ajacoutot Exp $
+$OpenBSD: patch-glib_goption_c,v 1.6 2012/07/09 16:34:21 ajacoutot Exp $
 
-From f9a6a97470583417a26619b5da3d56097a15c6dd Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@gnome.org>
-Date: Sun, 08 Jul 2012 17:23:18 +0000
-Subject: OpenBSD: explicitely define nitems
+https://bugzilla.gnome.org/show_bug.cgi?id=679590
 
---- glib/goption.c.orig	Sun Jul  8 08:40:22 2012
-+++ glib/goption.c	Sun Jul  8 08:40:24 2012
-@@ -1680,6 +1680,9 @@ platform_get_argv0 (void)
+--- glib/goption.c.orig	Mon May 14 23:58:01 2012
++++ glib/goption.c	Mon Jul  9 17:46:09 2012
+@@ -1680,7 +1680,7 @@ platform_get_argv0 (void)
  
    cmdline = (char **) realloc (cmdline, len);
  
-+#ifndef nitems
-+#define nitems(_a)      (sizeof((_a)) / sizeof((_a)[0]))
-+#endif
-   if (sysctl (mib, nitems (mib), cmdline, &len, NULL, 0) == -1)
+-  if (sysctl (mib, nitems (mib), cmdline, &len, NULL, 0) == -1)
++  if (sysctl (mib, G_N_ELEMENTS (mib), cmdline, &len, NULL, 0) == -1)
      {
        g_free (cmdline);
+       return NULL;
