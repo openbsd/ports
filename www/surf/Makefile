@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2011/10/13 06:55:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/07/09 15:01:26 zinke Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-0.4.1
-REVISION=	3
+REVISION=	4
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
+
+MAINTAINER=	Joerg Zinke <zinke@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes

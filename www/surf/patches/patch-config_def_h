@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_def_h,v 1.1 2012/07/09 15:01:26 zinke Exp $
+--- config.def.h.orig	Sat Jul  7 17:24:23 2012
++++ config.def.h	Sat Jul  7 17:24:50 2012
+@@ -14,7 +14,7 @@ static time_t sessiontime   = 3600;
+ 	p, q, winid, NULL } }
+ #define DOWNLOAD(d) { \
+ 	.v = (char *[]){ "/bin/sh", "-c", \
+-	"xterm -e \"wget --load-cookies ~/.surf/cookies.txt '$0';\"", \
++	"xterm -e \"ftp -c ~/.surf/cookies.txt '$0';\"", \
+ 	d, NULL } }
+ #define MODKEY GDK_CONTROL_MASK
+ static Key keys[] = {
