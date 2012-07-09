@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.290 2012/07/06 16:37:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.291 2012/07/09 09:05:42 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -201,7 +201,6 @@
      SUBDIR += portscanner
      SUBDIR += portsentry
      SUBDIR += ppgen
-     SUBDIR += prelude
      SUBDIR += pwgen
      SUBDIR += pwsafe
      SUBDIR += py-Rijndael
