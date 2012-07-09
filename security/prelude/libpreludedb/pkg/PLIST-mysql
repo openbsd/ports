@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-mysql,v 1.2 2009/08/30 20:37:16 rui Exp $
-lib/libpreludedb/plugins/sql/mysql.la
-lib/libpreludedb/plugins/sql/mysql.so

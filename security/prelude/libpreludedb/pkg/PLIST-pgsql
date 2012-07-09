@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-pgsql,v 1.2 2009/08/30 20:37:16 rui Exp $
-lib/libpreludedb/plugins/sql/pgsql.la
-lib/libpreludedb/plugins/sql/pgsql.so
