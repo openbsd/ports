@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_ffmpeg_libavcodec_pthread_c,v 1.1 2012/07/10 09:22:34 robert Exp $
+--- third_party/ffmpeg/libavcodec/pthread.c.orig	Fri Jun  1 11:50:08 2012
++++ third_party/ffmpeg/libavcodec/pthread.c	Fri Jun  1 12:04:36 2012
+@@ -39,9 +39,7 @@
+ #include <windows.h>
+ #endif
+ #if HAVE_SYSCTL
+-#if HAVE_SYS_PARAM_H
+-#include <sys/param.h>
+-#endif
++#define _BSD_SOURCE
+ #include <sys/types.h>
+ #include <sys/param.h>
+ #include <sys/sysctl.h>

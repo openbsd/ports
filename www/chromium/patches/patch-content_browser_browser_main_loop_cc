@@ -1,39 +1,30 @@
-$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.2 2012/04/03 13:59:35 robert Exp $
---- content/browser/browser_main_loop.cc.orig	Tue Mar 27 03:01:21 2012
-+++ content/browser/browser_main_loop.cc	Sun Apr  1 20:04:43 2012
-@@ -56,7 +56,7 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.3 2012/07/10 09:22:34 robert Exp $
+--- content/browser/browser_main_loop.cc.orig	Sat Jul  7 15:53:15 2012
++++ content/browser/browser_main_loop.cc	Sat Jul  7 15:53:48 2012
+@@ -67,7 +67,7 @@
  #include "ui/gfx/gtk_util.h"
  #endif
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
  #include <sys/stat.h>
  #include "content/browser/renderer_host/render_sandbox_host_linux.h"
- #include "content/browser/zygote_host_linux.h"
-@@ -68,7 +68,7 @@
+ #include "content/browser/zygote_host_impl_linux.h"
+@@ -86,7 +86,7 @@ using content::TraceControllerImpl;
  
  namespace {
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
  void SetupSandbox(const CommandLine& parsed_command_line) {
    // TODO(evanm): move this into SandboxWrapper; I'm just trying to move this
    // code en masse out of chrome_main for now.
-@@ -175,7 +175,7 @@ class BrowserShutdownImpl {
-     // At this point the message loop is still running yet we've shut everything
-     // down. If any messages are processed we'll likely crash. Exit now.
-     ExitProcess(content::RESULT_CODE_NORMAL_EXIT);
--#elif defined(OS_POSIX) && !defined(OS_MACOSX)
-+#elif defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
-     _exit(content::RESULT_CODE_NORMAL_EXIT);
- #else
-     NOTIMPLEMENTED();
-@@ -252,7 +252,7 @@ void BrowserMainLoop::EarlyInitialization() {
+@@ -267,7 +267,7 @@ void BrowserMainLoop::EarlyInitialization() {
    }
  #endif  // !defined(USE_OPENSSL)
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
    SetupSandbox(parsed_command_line_);
  #endif
  

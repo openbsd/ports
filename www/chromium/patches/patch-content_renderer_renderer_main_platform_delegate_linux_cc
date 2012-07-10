@@ -1,0 +1,13 @@
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.4 2012/07/10 09:22:34 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Sat Jul  7 17:27:38 2012
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Sat Jul  7 17:27:45 2012
+@@ -41,8 +41,8 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
+   // a file descriptor for "/proc".
+   if (SeccompSandboxEnabled() && SupportsSeccompSandbox(-1))
+     StartSeccompSandbox();
+-#endif
+   content::InitializeSandbox();
++#endif
+   return true;
+ }
+ 

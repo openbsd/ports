@@ -1,0 +1,19 @@
+$OpenBSD: patch-base_base_gypi,v 1.12 2012/07/10 09:22:34 robert Exp $
+--- base/base.gypi.orig	Thu Jun 28 15:01:49 2012
++++ base/base.gypi	Sat Jul  7 09:50:22 2012
+@@ -130,7 +130,6 @@
+           'file_version_info_win.h',
+           'files/file_path_watcher.cc',
+           'files/file_path_watcher.h',
+-          'files/file_path_watcher_kqueue.cc',
+           'files/file_path_watcher_linux.cc',
+           'files/file_path_watcher_stub.cc',
+           'files/file_path_watcher_win.cc',
+@@ -565,7 +564,6 @@
+           [ 'os_bsd==1', {
+             'sources/': [
+               ['exclude', '^files/file_path_watcher_linux\\.cc$'],
+-              ['exclude', '^files/file_path_watcher_stub\\.cc$'],
+               ['exclude', '^file_util_linux\\.cc$'],
+               ['exclude', '^process_linux\\.cc$'],
+               ['exclude', '^process_util_linux\\.cc$'],

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.9 2012/04/03 13:59:35 robert Exp $
---- tools/gyp/pylib/gyp/generator/make.py.orig	Tue Mar 27 03:04:33 2012
-+++ tools/gyp/pylib/gyp/generator/make.py	Sun Apr  1 20:04:45 2012
-@@ -269,13 +269,13 @@ ARFLAGS.target ?= %(ARFLAGS.target)s
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.10 2012/07/10 09:22:34 robert Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig	Wed May 23 03:52:36 2012
++++ tools/gyp/pylib/gyp/generator/make.py	Fri Jun  1 06:13:04 2012
+@@ -266,13 +266,13 @@ ARFLAGS.target ?= %(ARFLAGS.target)s
  # in gyp's make.py where ARFLAGS.host etc. is computed.
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.

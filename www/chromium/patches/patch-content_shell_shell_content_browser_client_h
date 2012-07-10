@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_shell_shell_content_browser_client_h,v 1.1 2012/07/10 09:22:34 robert Exp $
+--- content/shell/shell_content_browser_client.h.orig	Thu Jun 28 15:01:27 2012
++++ content/shell/shell_content_browser_client.h	Sat Jul  7 09:50:27 2012
+@@ -170,7 +170,7 @@ class ShellContentBrowserClient : public ContentBrowse
+   virtual bool AllowSocketAPI(BrowserContext* browser_context,
+                               const GURL& url) OVERRIDE;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   virtual int GetCrashSignalFD(const CommandLine& command_line) OVERRIDE;
+ #endif
+ 

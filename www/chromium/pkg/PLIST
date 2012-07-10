@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/06/15 08:32:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/07/10 09:22:34 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
 chrome/chrome.pak
+chrome/content_resources.pak
 chrome/libffmpegsumo.so
 chrome/locales/
 chrome/locales/am.pak
@@ -106,7 +107,12 @@ chrome/resources/inspector/Images/glossyHeaderSelectedPressed.png
 chrome/resources/inspector/Images/goArrow.png
 chrome/resources/inspector/Images/graphLabelCalloutLeft.png
 chrome/resources/inspector/Images/graphLabelCalloutRight.png
+chrome/resources/inspector/Images/indexedDB.png
+chrome/resources/inspector/Images/indexedDBIndex.png
+chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
+chrome/resources/inspector/Images/navigatorPinButton.png
+chrome/resources/inspector/Images/navigatorShowHideButton.png
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneBottomGrow.png
 chrome/resources/inspector/Images/paneBottomGrowActive.png
@@ -132,6 +138,8 @@ chrome/resources/inspector/Images/resourcePlainIconSmall.png
 chrome/resources/inspector/Images/resourcesSizeGraphIcon.png
 chrome/resources/inspector/Images/resourcesTimeGraphIcon.png
 chrome/resources/inspector/Images/scriptsSilhouette.png
+chrome/resources/inspector/Images/searchNext.png
+chrome/resources/inspector/Images/searchPrev.png
 chrome/resources/inspector/Images/searchSmallBlue.png
 chrome/resources/inspector/Images/searchSmallBrightBlue.png
 chrome/resources/inspector/Images/searchSmallGray.png
@@ -225,7 +233,9 @@ chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elementsPanel.css
 chrome/resources/inspector/filteredItemSelectionDialog.css
 chrome/resources/inspector/heapProfiler.css
+chrome/resources/inspector/indexedDBViews.css
 chrome/resources/inspector/inspectorCommon.css
+chrome/resources/inspector/navigatorView.css
 chrome/resources/inspector/networkLogView.css
 chrome/resources/inspector/networkPanel.css
 chrome/resources/inspector/panelEnablerView.css
@@ -238,6 +248,8 @@ chrome/resources/inspector/tabbedPane.css
 chrome/resources/inspector/textPrompt.css
 chrome/resources/inspector/textViewer.css
 chrome/resources/inspector/timelinePanel.css
+chrome/theme_resources_standard.pak
+chrome/ui_resources_standard.pak
 @man man/man1/chrome.1
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png

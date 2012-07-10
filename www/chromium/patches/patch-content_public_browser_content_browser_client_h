@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_public_browser_content_browser_client_h,v 1.1 2012/07/10 09:22:34 robert Exp $
+--- content/public/browser/content_browser_client.h.orig	Fri Jun  1 16:11:06 2012
++++ content/public/browser/content_browser_client.h	Fri Jun  1 16:10:56 2012
+@@ -409,7 +409,7 @@ class ContentBrowserClient {
+   virtual bool AllowSocketAPI(BrowserContext* browser_context,
+                               const GURL& url) = 0;
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
+   // Can return an optional fd for crash handling, otherwise returns -1. The
+   // passed |command_line| will be used to start the process in question.
+   virtual int GetCrashSignalFD(const CommandLine& command_line) = 0;

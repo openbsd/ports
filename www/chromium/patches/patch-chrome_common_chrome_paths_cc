@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.8 2012/07/10 09:22:34 robert Exp $
+--- chrome/common/chrome_paths.cc.orig	Thu Jun 28 15:02:23 2012
++++ chrome/common/chrome_paths.cc	Sat Jul  7 09:50:22 2012
+@@ -341,7 +341,7 @@ bool PathProvider(int key, FilePath* result) {
+       if (!file_util::PathExists(cur))  // We don't want to create this
+         return false;
+       break;
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+     case chrome::DIR_POLICY_FILES: {
+ #if defined(GOOGLE_CHROME_BUILD)
+       cur = FilePath(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));

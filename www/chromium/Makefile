@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2012/06/15 08:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2012/07/10 09:22:34 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			18.0.1025.168
+V=			20.0.1132.47
 DISTNAME=		chromium-${V}
-
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -36,10 +34,11 @@ MODPY_RUNDEP=	No
 
 WANTLIB += X11 Xext Xfixes Xrender Xss bz2 c cairo cups dbus-1 event
 WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += plc4 png pthread pthread-stubs smime3 speex estdc++
-WANTLIB += xml2 xslt
+WANTLIB += xml2 xslt z
+WANTLIB += Xcomposite atk-1.0 usb-1.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -56,6 +55,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gnome/libgnome-keyring
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
+		devel/libusb1 \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
@@ -101,6 +101,10 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+.for _arch in x64 ia32
+	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavcodec \
+		${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/openbsd/${_arch}/libavcodec
+.endfor
 	@cp -R ${WRKSRC}/third_party/libvpx/source/config/linux \
 		${WRKSRC}/third_party/libvpx/source/config/openbsd
 
@@ -118,8 +122,9 @@ do-install:
 		${FILESDIR}/chrome ${PREFIX}/bin/chrome
 	chmod ${BINMODE} ${PREFIX}/bin/chrome
 	${INSTALL_MAN} ${BUILDDIR}/chrome.1 ${PREFIX}/man/man1
-	${INSTALL_DATA} ${BUILDDIR}/chrome.pak ${PREFIX}/chrome
-	${INSTALL_DATA} ${BUILDDIR}/resources.pak ${PREFIX}/chrome
+.for p in chrome content_resources resources theme_resources_standard ui_resources_standard
+	${INSTALL_DATA} ${BUILDDIR}/${p}.pak ${PREFIX}/chrome
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/chrome

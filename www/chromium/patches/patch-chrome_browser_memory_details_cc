@@ -1,30 +1,30 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.8 2012/04/03 13:59:35 robert Exp $
---- chrome/browser/memory_details.cc.orig	Tue Mar 27 03:02:19 2012
-+++ chrome/browser/memory_details.cc	Sun Apr  1 20:04:42 2012
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.9 2012/07/10 09:22:34 robert Exp $
+--- chrome/browser/memory_details.cc.orig	Thu Jun 28 15:02:04 2012
++++ chrome/browser/memory_details.cc	Sat Jul  7 09:50:22 2012
 @@ -32,7 +32,7 @@
  #include "grit/generated_resources.h"
  #include "ui/base/l10n/l10n_util.h"
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
- #include "content/browser/renderer_host/render_sandbox_host_linux.h"
- #include "content/browser/zygote_host_linux.h"
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ #include "content/public/browser/zygote_host_linux.h"
  #endif
-@@ -156,7 +156,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+ 
+@@ -195,7 +195,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
  void MemoryDetails::CollectChildInfoOnUIThread() {
    DCHECK(BrowserThread::CurrentlyOn(BrowserThread::UI));
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
-   const pid_t zygote_pid = ZygoteHost::GetInstance()->pid();
-   const pid_t sandbox_helper_pid = RenderSandboxHostLinux::GetInstance()->pid();
- #endif
-@@ -304,7 +304,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
+   const pid_t sandbox_helper_pid =
+       content::ZygoteHost::GetInstance()->GetSandboxHelperPid();
+@@ -341,7 +341,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        }
      }
  
--#if defined(OS_POSIX) && !defined(OS_MACOSX)
-+#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
      if (process.pid == zygote_pid) {
        process.type = content::PROCESS_TYPE_ZYGOTE;
      } else if (process.pid == sandbox_helper_pid) {

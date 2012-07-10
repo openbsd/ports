@@ -1,0 +1,29 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.12 2012/07/10 09:22:34 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Sat Jul  7 10:28:20 2012
++++ chrome/chrome_browser.gypi	Sat Jul  7 17:35:13 2012
+@@ -1327,8 +1327,6 @@
+         'browser/media/media_stream_capture_indicator.h',
+         'browser/media/media_stream_devices_menu_model.cc',
+         'browser/media/media_stream_devices_menu_model.h',
+-        'browser/media_gallery/media_device_notifications_linux.cc',
+-        'browser/media_gallery/media_device_notifications_linux.h',
+         'browser/media_gallery/media_device_notifications_window_win.cc',
+         'browser/media_gallery/media_device_notifications_window_win.h',
+         'browser/media_gallery/media_gallery_database.cc',
+@@ -4541,10 +4539,15 @@
+             ['exclude', '^browser/usb/'],
+           ],
+         }],
+-        ['OS!="android"', {
++        ['OS!="android" and os_bsd!=1', {
+           'dependencies': [
+             '../third_party/libusb/libusb.gyp:libusb',
+           ],
++        },{
++          'link_settings': {
++            'libraries': [
++              '-lusb',
++            ]},
+         }],
+         ['OS=="mac"', {
+           'sources!': [

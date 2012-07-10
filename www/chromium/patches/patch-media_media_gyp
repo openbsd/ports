@@ -1,0 +1,11 @@
+$OpenBSD: patch-media_media_gyp,v 1.12 2012/07/10 09:22:34 robert Exp $
+--- media/media.gyp.orig	Thu Jun 28 15:01:11 2012
++++ media/media.gyp	Sat Jul  7 09:50:30 2012
+@@ -347,6 +347,7 @@
+         }],
+         ['OS=="openbsd"', {
+           'sources/': [ ['exclude', '/alsa_' ],
++                        ['exclude', '/cras_' ],
+                         ['exclude', '/audio_manager_linux' ] ],
+           'link_settings': {
+             'libraries': [

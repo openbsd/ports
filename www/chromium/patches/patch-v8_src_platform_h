@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_platform_h,v 1.5 2011/12/14 16:58:19 robert Exp $
---- v8/src/platform.h.orig	Wed Dec  7 09:04:42 2011
-+++ v8/src/platform.h	Tue Dec 13 21:23:12 2011
-@@ -88,7 +88,11 @@ namespace internal {
+$OpenBSD: patch-v8_src_platform_h,v 1.6 2012/07/10 09:22:34 robert Exp $
+--- v8/src/platform.h.orig	Wed May 23 03:52:53 2012
++++ v8/src/platform.h	Fri Jun  1 06:13:04 2012
+@@ -89,7 +89,11 @@ namespace internal {
  
  // Use AtomicWord for a machine-sized pointer. It is assumed that
  // reads and writes of naturally aligned values of this type are atomic.

@@ -1,0 +1,15 @@
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.5 2012/07/10 09:22:34 robert Exp $
+--- base/debug/stack_trace_posix.cc.orig	Tue Jul 10 10:37:42 2012
++++ base/debug/stack_trace_posix.cc	Tue Jul 10 10:42:08 2012
+@@ -153,6 +153,11 @@ StackTrace::StackTrace() {
+     count_ = 0;
+     return;
+   }
++#elif defined(OS_BSD)
++  // Disable backtrace for now, libexecinfo crashes in getframeaddr
++  // in release build / i386.
++  count_ = 0;
++  return;
+ #endif
+   // Though the backtrace API man page does not list any possible negative
+   // return values, we take no chance.

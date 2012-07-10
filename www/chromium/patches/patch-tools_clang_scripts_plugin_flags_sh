@@ -1,0 +1,9 @@
+$OpenBSD: patch-tools_clang_scripts_plugin_flags_sh,v 1.1 2012/07/10 09:22:34 robert Exp $
+--- tools/clang/scripts/plugin_flags.sh.orig	Sat Jul  7 09:51:07 2012
++++ tools/clang/scripts/plugin_flags.sh	Sat Jul  7 09:51:22 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/bin/env bash
+ # Copyright (c) 2012 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file.

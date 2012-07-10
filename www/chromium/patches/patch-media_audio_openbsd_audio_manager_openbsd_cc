@@ -1,67 +1,34 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.9 2012/04/03 13:59:35 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sun Apr  1 22:50:49 2012
-+++ media/audio/openbsd/audio_manager_openbsd.cc	Sun Apr  1 22:56:04 2012
-@@ -51,20 +51,17 @@ AudioOutputStream* AudioManagerOpenBSD::MakeAudioOutpu
-     return FakeAudioOutputStream::MakeFakeStream(params);
-   }
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.10 2012/07/10 09:22:34 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Thu Jun 28 15:01:10 2012
++++ media/audio/openbsd/audio_manager_openbsd.cc	Sat Jul  7 09:50:30 2012
+@@ -65,26 +65,26 @@ void AudioManagerOpenBSD::UnMuteAll() {
  
--  if (!initialized()) {
--    return NULL;
--  }
--
-   // Don't allow opening more than |kMaxOutputStreams| streams.
--  if (active_streams_.size() >= kMaxOutputStreams) {
-+  if (active_output_stream_count_ >= kMaxOutputStreams) {
-     return NULL;
-   }
+ AudioOutputStream* AudioManagerOpenBSD::MakeLinearOutputStream(
+     const AudioParameters& params) {
+-  DCHECK_EQ(AudioParameters::AUDIO_PCM_LINEAR, params.format);
++  DCHECK_EQ(AudioParameters::AUDIO_PCM_LINEAR, params.format());
+   return MakeOutputStream(params);
+ }
  
--  AudioOutputStream* stream;
- #if defined(USE_PULSEAUDIO)
-+  AudioOutputStream* stream;
-   if (CommandLine::ForCurrentProcess()->HasSwitch(switches::kUsePulseAudio)) {
-     stream = new PulseAudioOutputStream(params, this);
--    active_streams_.insert(stream);
-+    ++active_output_stream_count_;
-+    DCHECK(stream);
-     return stream;
-   }
- #endif
-@@ -79,23 +76,12 @@ AudioInputStream* AudioManagerOpenBSD::MakeAudioInputS
+ AudioOutputStream* AudioManagerOpenBSD::MakeLowLatencyOutputStream(
+     const AudioParameters& params) {
+-  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format);
++  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format());
+   return MakeOutputStream(params);
+ }
+ 
+ AudioInputStream* AudioManagerOpenBSD::MakeLinearInputStream(
+     const AudioParameters& params, const std::string& device_id) {
+-  DCHECK_EQ(AudioParameters::AUDIO_PCM_LINEAR, params.format);
++  DCHECK_EQ(AudioParameters::AUDIO_PCM_LINEAR, params.format());
+   NOTIMPLEMENTED();
    return NULL;
  }
  
--AudioManagerOpenBSD::AudioManagerOpenBSD() {
--}
-+AudioManagerOpenBSD::AudioManagerOpenBSD() : active_output_stream_count_(0U) {}
- 
- AudioManagerOpenBSD::~AudioManagerOpenBSD() {
--  // Make sure we stop the thread first. If we allow the default destructor to
--  // destroy the members, we may destroy audio streams before stopping the
--  // thread, resulting an unexpected behavior.
--  // This way we make sure activities of the audio streams are all stopped
--  // before we destroy them.
--  audio_thread_.Stop();
--
--  // Free output dispatchers, closing all remaining open streams.
--  output_dispatchers_.clear();
--
--  // Delete all the streams. Have to do it manually, we don't have ScopedSet<>,
--  // and we are not using ScopedVector<> because search there is slow.
--  STLDeleteElements(&active_streams_);
-+  Shutdown();
-+  // All the streams should have been deleted on the audio thread via Shutdown.
-+  CHECK_EQ(active_output_stream_count_, 0U);
+ AudioInputStream* AudioManagerOpenBSD::MakeLowLatencyInputStream(
+     const AudioParameters& params, const std::string& device_id) {
+-  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format);
++  DCHECK_EQ(AudioParameters::AUDIO_PCM_LOW_LATENCY, params.format());
+   NOTIMPLEMENTED();
+   return NULL;
  }
- 
- void AudioManagerOpenBSD::Init() {
-@@ -112,8 +98,9 @@ void AudioManagerOpenBSD::UnMuteAll() {
- 
- void AudioManagerOpenBSD::ReleaseOutputStream(AudioOutputStream* stream) {
-   if (stream) {
--    active_streams_.erase(stream);
-     delete stream;
-+    --active_output_stream_count_;
-+    DCHECK_GE(active_output_stream_count_, 0U);
-   }
- }
- 
