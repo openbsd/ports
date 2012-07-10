@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/10 12:11:22 naddy Exp $
+%%SHARED%%
+include/opus/
+include/opus/opus.h
+include/opus/opus_defines.h
+include/opus/opus_multistream.h
+include/opus/opus_types.h
+lib/libopus.a
+lib/libopus.la
+lib/pkgconfig/
+lib/pkgconfig/opus.pc
+@comment share/doc/opus/
+@comment share/doc/opus/doxygen-build.stamp
