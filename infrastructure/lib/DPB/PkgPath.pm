@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.30 2012/05/16 08:22:22 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.31 2012/07/10 09:38:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,8 +49,20 @@ sub fullpkgname
 	if (defined $self->{info} && defined $self->{info}{FULLPKGNAME}) {
 		return ${$self->{info}{FULLPKGNAME}};
 	} else {
-		return undef;
+		say STDERR $self->fullpkgpath, " has no associated fullpkgname\n";
+		if (defined $self->{info}) {
+			say STDERR "But info is defined"; 
+			require Data::Dumper;
+			say STDERR Dumper($self->{info});
+		}
+		die;
 	}
+}
+
+sub has_fullpkgname
+{
+	my $self = shift;
+	return defined $self->{info} && defined $self->{info}{FULLPKGNAME};
 }
 
 # requires flavor as a hash

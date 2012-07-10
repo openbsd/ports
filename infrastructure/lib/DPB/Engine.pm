@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.47 2012/04/07 12:16:58 espie Exp $
+# $OpenBSD: Engine.pm,v 1.48 2012/07/10 09:38:37 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -504,7 +504,7 @@ sub adjust_extra
 	for my $d (values %{$v->{info}{$kind}}) {
 		$self->{heuristics}->mark_depend($d, $v);
 		if ((defined $d->{info} && !$self->{tobuild}{$d}) ||
-		    (defined $d->fullpkgname &&
+		    ($d->has_fullpkgname &&
 		    $d->fullpkgname eq $v->fullpkgname)) {
 			delete $v->{info}{$kind}{$d};
 			$v->{info}{$kind2}{$d} = $d if defined $kind2;
