@@ -1,0 +1,29 @@
+$OpenBSD: patch-config_mk,v 1.1.1.1 2012/07/10 14:03:18 zinke Exp $
+--- config.mk.orig	Tue May 25 18:05:48 2010
++++ config.mk	Mon Jul  9 13:12:46 2012
+@@ -4,17 +4,17 @@ VERSION = 1.1
+ # Customize below to fit your system
+ 
+ # paths
+-PREFIX = /usr/local
+-MANPREFIX = ${PREFIX}/share/man
++PREFIX ?= /usr/local
++MANPREFIX = ${PREFIX}/man
+ 
+ # includes and libs
+-INCS = -I. -I/usr/include
+-LIBS = -L/usr/lib -lc
++INCS = -I${PREFIX}/include
++LIBS = -L${PREFIX}/lib
+ 
+ # flags
+-CPPFLAGS = -DVERSION=\"${VERSION}\" -D_GNU_SOURCE
+-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-LDFLAGS = -s ${LIBS}
++CPPFLAGS += -DVERSION=\"${VERSION}\" -D_GNU_SOURCE
++CFLAGS += -std=c99 -pedantic -Wall ${INCS} ${CPPFLAGS}
++LDFLAGS += ${LIBS}
+ 
+ # compiler and linker
+-CC = cc
++CC ?= cc
