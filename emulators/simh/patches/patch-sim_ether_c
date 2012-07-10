@@ -1,26 +1,17 @@
-$OpenBSD: patch-sim_ether_c,v 1.12 2010/03/21 09:26:49 jasper Exp $
---- sim_ether.c.orig	Thu Apr 24 17:11:42 2008
-+++ sim_ether.c	Tue Jan 26 13:12:30 2010
-@@ -919,7 +919,7 @@ t_stat eth_open(ETH_DEV* dev, char* name, DEVICE* dptr
-       /* probably is not ethX and has no description */
-       savname = eth_getname_byname(name, temp);
-       if (savname == 0) /* didn't translate */
--        return SCPE_OPENERR;
-+        savname = name;
-     }
-   }
- 
-@@ -945,14 +945,19 @@ t_stat eth_open(ETH_DEV* dev, char* name, DEVICE* dptr
-   dev->dptr = dptr;
-   dev->dbit = dbit;
+$OpenBSD: patch-sim_ether_c,v 1.13 2012/07/10 00:07:45 sthen Exp $
+--- sim_ether.c.orig	Fri Mar 30 16:30:26 2012
++++ sim_ether.c	Wed Jun 13 06:47:21 2012
+@@ -1750,14 +1750,19 @@ strcpy(dev->name, savname);
+ dev->dptr = dptr;
+ dev->dbit = dbit;
  
 -#if !defined(HAS_PCAP_SENDPACKET) && defined (xBSD) && !defined (__APPLE__)
 +#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
-   /* Tell the kernel that the header is fully-formed when it gets it.
-      This is required in order to fake the src address. */
-   {
-     int one = 1;
-     ioctl(pcap_fileno(dev->handle), BIOCSHDRCMPLT, &one);
+ /* Tell the kernel that the header is fully-formed when it gets it.
+    This is required in order to fake the src address. */
+ if (dev->eth_api == ETH_API_PCAP) {
+   int one = 1;
+   ioctl(pcap_fileno(dev->handle), BIOCSHDRCMPLT, &one);
 +#ifdef __OpenBSD__
 +    /* set direction filter */
 +    one = BPF_DIRECTION_OUT;
@@ -31,4 +22,4 @@ $OpenBSD: patch-sim_ether_c,v 1.12 2010/03/21 09:26:49 jasper Exp $
 +#endif /* __FreeBSD__ || __NetBSD__ || __OpenBSD__ */
  
  #if defined (USE_READER_THREAD)
-   {
+ if (1) {

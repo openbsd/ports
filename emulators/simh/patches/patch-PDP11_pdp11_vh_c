@@ -1,12 +1,12 @@
-$OpenBSD: patch-PDP11_pdp11_vh_c,v 1.4 2010/03/21 09:26:49 jasper Exp $
---- PDP11/pdp11_vh.c.orig	Wed Nov 19 15:53:14 2008
-+++ PDP11/pdp11_vh.c	Tue Jan 26 13:12:30 2010
-@@ -88,7 +88,7 @@ extern FILE	*sim_log;
+$OpenBSD: patch-PDP11_pdp11_vh_c,v 1.5 2012/07/10 00:07:44 sthen Exp $
+--- PDP11/pdp11_vh.c.orig	Mon Mar 19 18:15:14 2012
++++ PDP11/pdp11_vh.c	Wed Jun 13 06:37:14 2012
+@@ -95,7 +95,7 @@ extern int32    tmxr_poll, clk_tps;
  #endif
- #define	VH_MNOMASK	(VH_MUXES - 1)
+ #define VH_MNOMASK  (VH_MUXES - 1)
  
--#define	VH_LINES	(8)
-+#define	VH_LINES	(16)
+-#define VH_LINES    (8)
++#define VH_LINES    (16)
  
- #define	UNIT_V_MODEDHU	(UNIT_V_UF + 0)
- #define	UNIT_V_FASTDMA	(UNIT_V_UF + 1)
+ #define UNIT_V_MODEDHU  (UNIT_V_UF + 0)
+ #define UNIT_V_FASTDMA  (UNIT_V_UF + 1)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-VAX_vax780_sbi_c,v 1.4 2009/03/06 10:33:23 form Exp $
---- VAX/vax780_sbi.c.orig	Tue Nov 18 10:37:06 2008
-+++ VAX/vax780_sbi.c	Tue Feb 10 22:38:53 2009
-@@ -34,6 +34,10 @@
+$OpenBSD: patch-VAX_vax780_sbi_c,v 1.5 2012/07/10 00:07:44 sthen Exp $
+--- VAX/vax780_sbi.c.orig	Mon Mar 19 18:08:46 2012
++++ VAX/vax780_sbi.c	Wed Jun 13 06:39:29 2012
+@@ -35,6 +35,10 @@
  
  #include "vax_defs.h"
  
@@ -12,16 +12,16 @@ $OpenBSD: patch-VAX_vax780_sbi_c,v 1.4 2009/03/06 10:33:23 form Exp $
  /* 11/780 specific IPRs */
  
  /* Writeable control store */
-@@ -661,10 +665,10 @@ t_stat cpu_boot (int32 unitno, DEVICE *dptr)
+@@ -686,10 +690,10 @@ t_stat cpu_boot (int32 unitno, DEVICE *dptr)
  {
  t_stat r;
  
 -printf ("Loading boot code from vmb.exe\n");
 +printf ("Loading boot code from %s\n", PATH_VMB_EXE);
- if (sim_log) fprintf (sim_log, 
--    "Loading boot code from vmb.exe\n");
+ if (sim_log)
+-    fprintf (sim_log, "Loading boot code from vmb.exe\n");
 -r = load_cmd (0, "-O vmb.exe 200");
-+    "Loading boot code from %s\n", PATH_VMB_EXE);
++    fprintf (sim_log, "Loading boot code from %s\n", PATH_VMB_EXE);
 +r = load_cmd (0, "-O " PATH_VMB_EXE " 200");
  if (r != SCPE_OK)
      return r;
