@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.27 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Vars.pm,v 1.28 2012/07/10 22:59:06 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -63,6 +63,7 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=Yes
 WRKOBJDIR=
 IGNORE=Yes
+_MAKEFILE_INC_DONE=Yes
 ECHO_MSG=:
 .include <bsd.port.mk>
 EOT
@@ -80,6 +81,7 @@ EOT
 		waitpid($pid, 0);
 	} else {
 		close STDIN;
+		chdir('/');
 		open(STDIN, '<&', $rh);
 		exec {$make} ('make', '-f', '-');
 		die "oops couldn't exec $make";
