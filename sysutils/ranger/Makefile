@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/09 09:20:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/10 09:03:54 sthen Exp $
 
 COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION = 1.5.4
+REVISION =	0
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
 
-CATEGORIES =	sysutils
+CATEGORIES =	sysutils misc
 
 HOMEPAGE =	http://www.nongnu.org/ranger/
 
