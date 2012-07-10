@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2012/07/09 09:05:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.292 2012/07/10 19:16:35 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -46,7 +46,6 @@
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
-     SUBDIR += gnomint
      SUBDIR += gnupg
      SUBDIR += gnupg,card,idea,ldap
      SUBDIR += gnupg2
