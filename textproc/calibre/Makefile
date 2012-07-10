@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/07/10 18:33:18 kili Exp $
 
 COMMENT =		ebook management application
-BROKEN =		fake step gets stuck
 
 DISTNAME =		calibre-0.8.20
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://calibre-ebook.com/
 
@@ -19,22 +18,24 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/python \
 			x11/qt4
 
-WANTLIB +=		MagickCore MagickWand QtGui X11 Xext c fontconfig m
-WANTLIB +=		stdc++ chm icudata icui18n icuio icuuc poppler png
+WANTLIB +=		ICE MagickCore MagickWand QtGui SM X11 Xext
+WANTLIB +=		Xi Xinerama Xrender c chm fontconfig freetype
+WANTLIB +=		icudata icui18n icuio icuuc m png poppler
+WANTLIB +=		stdc++
 WANTLIB +=		${MODPY_WANTLIB}
 
 LIB_DEPENDS=		devel/chmlib \
 			graphics/ImageMagick \
-			graphics/libwmf \
 			graphics/png \
-			print/poppler,-qt4 \
 			print/poppler \
 			textproc/icu4c
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
+			graphics/libwmf \
 			graphics/py-Imaging \
 			net/py-dnspython \
+			print/poppler,-qt4 \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
 			textproc/py-pdf \
