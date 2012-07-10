@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2012/07/10 09:49:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.99 2012/07/10 12:55:25 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,7 +6,7 @@ COMMENT=		Chromium browser
 
 V=			20.0.1132.47
 DISTNAME=		chromium-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
@@ -101,6 +101,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-DOS=openbsd
 
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/webkit/plugins/npapi/plugin_list_posix.cc
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32
 	@cp -pR ${WRKSRC}/third_party/ffmpeg/chromium/config/Chromium/linux/${_arch}/libavcodec \
