@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/10 11:41:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -63,7 +63,6 @@ CONFIGURE_ARGS=	--disable-static \
 		--enable-gapless-playback \
 		--enable-user-help \
 		--with-vendor-build-id="OpenBSD Ports" \
-		--disable-clutter \
 		--disable-upnp \
 		--disable-gst-sharp \
 		--disable-gio-hardware \
