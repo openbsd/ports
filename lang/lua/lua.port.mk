@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.14 2012/07/10 15:09:25 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.15 2012/07/10 17:14:53 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -11,7 +11,9 @@ CATEGORIES+=	lang/lua
 MODLUA_DEFAULT_VERSION=	5.1
 
 # The default version is not a flavor, but any other version is.
-.if !defined(FLAVORS)
+.if defined(FLAVORS)
+FLAVORS+=		lua52
+.else
 FLAVORS?=		lua52
 .endif
 
