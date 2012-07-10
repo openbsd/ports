@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/07/09 13:54:54 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/07/10 00:45:10 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -907,7 +907,6 @@ lib/node_modules/npm/test/tap/false_name.js
 lib/node_modules/npm/test/tap/false_name/index.js
 lib/node_modules/npm/test/tap/false_name/package.json
 lib/node_modules/npm/test/update-test.sh
-@extraunexec rm -rf %D/lib/node_modules
 lib/node_modules/npmlog/
 lib/node_modules/npmlog/LICENSE
 lib/node_modules/npmlog/README.md
@@ -940,6 +939,8 @@ lib/node_modules/read/package.json
 lib/node_modules/request/
 lib/node_modules/request/LICENSE
 lib/node_modules/request/README.md
+lib/node_modules/request/aws.js
+lib/node_modules/request/aws2.js
 lib/node_modules/request/forever.js
 lib/node_modules/request/main.js
 lib/node_modules/request/mimetypes.js
