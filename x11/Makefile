@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.491 2012/07/09 08:54:53 zinke Exp $
+# $OpenBSD: Makefile,v 1.492 2012/07/10 12:32:16 zinke Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -233,6 +233,7 @@
      SUBDIR += slock
      SUBDIR += smplayer
      SUBDIR += spectrwm
+     SUBDIR += sselp
      SUBDIR += st
      SUBDIR += stalonetray
      SUBDIR += swisswatch
