@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/07/10 08:00:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.0.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics
 
@@ -29,6 +29,7 @@ WANTLIB += gobject-2.0 gstinterfaces-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += gtk-3 jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 soup-2.4
 WANTLIB += soup-gnome-2.4 stdc++ tiff xcb xcb-render xcb-shm z
+WANTLIB += clutter-1.0 clutter-gtk-1.0 cogl
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -38,10 +39,10 @@ MODULES=	devel/dconf \
 BUILD_DEPENDS +=	devel/bison
 
 LIB_DEPENDS=	devel/libsoup,-gnome \
+		graphics/clutter/clutter-gtk \
 		graphics/exiv2>=0.22 \
 		multimedia/gstreamer-0.10/plugins-base \
-		x11/gnome/librsvg \
-		x11/gtk+3
+		x11/gnome/librsvg
 RUN_DEPENDS=	misc/shared-mime-info
 
 LIBTOOL_FLAGS=		--tag=disable-static
@@ -55,14 +56,7 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/gthumb/extensions
 CONFIGURE_ARGS=		--disable-static \
 			--disable-libopenraw \
-			--disable-libbrasero \
-			--enable-libsoup \
-			--enable-gnome-keyring \
-			--enable-exiv2
-# requires libchamplain >= 0.12.0
-CONFIGURE_ARGS+=	--disable-libchamplain
-# requires clutter-gtk >= 1.0.0
-CONFIGURE_ARGS+=	--disable-clutter
+			--disable-libbrasero
 
 post-install:
 	rm ${PREFIX}/lib/gthumb/extensions/*.la
