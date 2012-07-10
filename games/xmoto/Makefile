@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2012/05/15 18:21:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
 V =	 	0.5.9
 DISTNAME =	xmoto-${V}-src
 PKGNAME =	xmoto-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES =	games
 
 MAINTAINER =	Antti Harri <iku@openbsd.fi>
@@ -24,6 +24,7 @@ WANTLIB += ${MODLUA_WANTLIB} m ode png pthread sqlite3 stdc++ xdg-basedir xml2 z
 
 MODULES=	devel/gettext \
 		lang/lua
+MODLUA_SA=	Yes
 BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	archivers/bzip2 \
@@ -42,8 +43,8 @@ SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl` -DSVN_REV='\"${V}\"'" \
-			LDFLAGS="`pkg-config --libs libpng sdl` -lGL"
+CONFIGURE_ENV =		CPPFLAGS="`pkg-config --cflags libpng sqlite3 sdl ${MODLUA_DEP}` -DSVN_REV='\"${V}\"'" \
+			LDFLAGS="`pkg-config --libs libpng sdl ${MODLUA_DEP}` -lGL"
 AUTOMAKE_VERSION =	1.11
 AUTOCONF_VERSION =	2.68
 

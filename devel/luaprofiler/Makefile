@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/05/15 15:16:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/10 15:22:44 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -27,7 +27,7 @@ NO_REGRESS=		Yes
 # but references files from elsewhere (ie. src/clock.o).
 MAKE_FILE=		../Makefile.linux
 ALL_TARGET=		# empty
-CFLAGS +=       	-I${LOCALBASE}/include -fPIC
+CFLAGS +=       	-I${MODLUA_INCL_DIR} -fPIC
 
 WRKSRC= 		${WRKDIST}/src/
 

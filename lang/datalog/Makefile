@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/11 21:36:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
 DISTNAME=	datalog-2.2
+REVISION=	0
 SHARED_LIBS +=  datalog                   0.0 # 0.0
 CATEGORIES=	lang
 
@@ -23,6 +24,7 @@ MASTER_SITES=		${HOMEPAGE} \
 USE_LIBTOOL=		gnu
 
 MODULES=		lang/lua
+MODLUA_SA=		Yes
 
 CONFIGURE_STYLE=	gnu
 

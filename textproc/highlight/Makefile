@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2012/05/15 19:38:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT =		convert source code to markup formats
 
 DISTNAME =		highlight-3.9
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -24,13 +24,16 @@ EXTRACT_SUFX =		.tar.bz2
 USE_GMAKE =		Yes
 
 MODULES =		lang/lua
+MODLUA_SA =		Yes
 
 BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CXX=${CXX} \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			CFLAGS+="`pkg-config --cflags ${MODLUA_DEP}`" \
+			LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 NO_REGRESS =		Yes
 

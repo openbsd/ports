@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/05/15 18:21:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT=		2D games framework for use with Lua
 
@@ -44,7 +44,8 @@ USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL/ \
-				-I${X11BASE}/include/ -I${X11BASE}/include/freetype2" \
+				-I${X11BASE}/include/ -I${X11BASE}/include/freetype2 \
+				`pkg-config --cflags ${MODLUA_DEP}`" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread"
 
 WRKDIST=		${WRKDIR}/love-$V/

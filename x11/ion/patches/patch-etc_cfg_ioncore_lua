@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.6 2007/03/28 19:33:04 pedro Exp $
---- etc/cfg_ioncore.lua.orig	Sun Dec 24 08:45:26 2006
-+++ etc/cfg_ioncore.lua	Sun Dec 24 08:48:23 2006
-@@ -63,8 +63,8 @@ defbindings("WScreen", {
+$OpenBSD: patch-etc_cfg_ioncore_lua,v 1.7 2012/07/10 15:22:45 jasper Exp $
+--- etc/cfg_ioncore.lua.orig	Sun Mar 18 21:31:41 2007
++++ etc/cfg_ioncore.lua	Mon Jul  9 11:20:13 2012
+@@ -65,8 +65,8 @@ defbindings("WScreen", {
      kpress(META.."F9", "ioncore.create_ws(_)"),
      
      bdoc("Display the main menu."),
@@ -12,7 +12,7 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.6 2007/03/28 19:33:04 pedro Exp $
      mpress("Button3", "mod_menu.pmenu(_, _sub, 'mainmenu')"),
      
      bdoc("Display the window list menu."),
-@@ -139,10 +139,10 @@ defbindings("WMPlex.toplevel", {
+@@ -147,10 +147,10 @@ defbindings("WMPlex.toplevel", {
      kpress(META.."T", "WRegion.set_tagged(_sub, 'toggle')", "_sub:non-nil"),
  
      bdoc("Query for manual page to be displayed."),
@@ -25,7 +25,7 @@ $OpenBSD: patch-etc_cfg_ioncore_lua,v 1.6 2007/03/28 19:33:04 pedro Exp $
  
      bdoc("Run a terminal emulator."),
      kpress(ALTMETA.."F2", "ioncore.exec_on(_, XTERM or 'xterm')"),
-@@ -158,7 +158,7 @@ defbindings("WMPlex.toplevel", {
+@@ -166,7 +166,7 @@ defbindings("WMPlex.toplevel", {
  
      bdoc("Query for file to edit."),
      kpress(ALTMETA.."F5", 

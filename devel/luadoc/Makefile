@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/05/16 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/07/10 15:22:44 jasper Exp $
 
 COMMENT=	documentation generation tool for Lua
 
 DISTNAME=	luadoc-3.0.1
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 HOMEPAGE=	http://luadoc.luaforge.net/
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES=	lang/lua
 
-RUN_DEPENDS=	devel/luafs
+MODLUA_RUN_DEPENDS=	devel/luafs
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/3185/
 
@@ -28,6 +28,9 @@ DOCLET_DIR =	${MODLUA_DATADIR}/luadoc/doclet
 TAGLET_DIR =	${MODLUA_DATADIR}/luadoc/taglet
 HTML_DIR =	${DOCLET_DIR}/html
 STANDARD_DIR =	${TAGLET_DIR}/standard
+
+pre-configure:
+	perl -pi -e 's,/usr/bin/env lua,${MODLUA_BIN},g' ${WRKSRC}/src/luadoc.lua.in
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/luadoc.lua.in ${PREFIX}/bin/luadoc

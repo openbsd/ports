@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/08/01 02:13:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.17 2012/07/10 15:22:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +21,7 @@ MODULES=	lang/lua
 REGRESS_DEPENDS=${BUILD_PKGPATH}
 
 do-build:
-	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared \
+	${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -shared \
 	${WRKDIST}/lposix.c -o ${WRKDIST}/posix.so
 
 do-install:
@@ -29,6 +29,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/posix.so ${MODLUA_LIBDIR}
 
 do-regress:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/lua *.lua
+	cd ${WRKSRC} && ${MODLUA_BIN} *.lua
 
 .include <bsd.port.mk>

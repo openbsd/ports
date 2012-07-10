@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/09 12:59:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -9,7 +9,7 @@ VERSION = 	0.9.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
-REVISION =	1
+REVISION =	2
 
 BROKEN-arm=	tilegen.elf loops burning cpu
 
@@ -18,7 +18,7 @@ WRKSRC = 	${WRKDIST}/source
 MAKE_FILE = 	${WRKSRC}/makefile
 USE_GMAKE = 	Yes
 MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
-		LUA_INCLUDE_DIR=${LOCALBASE}/include \
+		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
 		LUA_LIB=-llua \
 		SQLITE_INCLUDE_DIR=/usr/include \
 		LDFLAGS=-L${LOCALBASE}/lib \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.13 2011/03/28 09:01:24 giovanni Exp $
---- configure.orig	Wed Feb  2 16:27:11 2011
-+++ configure	Wed Feb  2 16:27:25 2011
+$OpenBSD: patch-configure,v 1.14 2012/07/10 15:22:45 jasper Exp $
+--- configure.orig	Fri Jan 21 22:00:04 2011
++++ configure	Mon Jul  9 19:34:51 2012
 @@ -6115,6 +6115,7 @@ else
  extern char pcap_version[];
  int main() {
@@ -9,3 +9,12 @@ $OpenBSD: patch-configure,v 1.13 2011/03/28 09:01:24 giovanni Exp $
    sscanf(pcap_version,"%d.%d.%d", &major, &minor1, &minor2);
    if (major > 0)
      exit(0);
+@@ -6455,7 +6456,7 @@ if test "${with_liblua+set}" = set; then :
+     no_lua="yes"
+   ;;
+   *)
+-    CPPFLAGS="-I$with_liblua/include $CPPFLAGS"
++    CPPFLAGS="-I$with_liblua/include/lua-5.1 $CPPFLAGS"
+     LDFLAGS="-L$with_liblua/lib $LDFLAGS"
+   ;;
+   esac

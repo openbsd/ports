@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2012/05/15 15:16:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/07/10 15:22:44 jasper Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
@@ -19,7 +19,7 @@ SHARED_ONLY=	Yes
 REGRESS_DEPENDS=${BUILD_PKGPATH}
 
 do-build:
-	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared \
+	${CC} ${CFLAGS} -fPIC -I${MODLUA_INCL_DIR} -shared \
 		${WRKSRC}/lpack.c -o ${WRKDIST}/pack.so
 
 do-install:

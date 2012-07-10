@@ -1,16 +1,16 @@
-$OpenBSD: patch-SConstruct,v 1.5 2010/04/14 18:29:59 ajacoutot Exp $
---- SConstruct.orig	Sun Apr 11 14:13:04 2010
-+++ SConstruct	Mon Apr 12 15:27:22 2010
+$OpenBSD: patch-SConstruct,v 1.6 2012/07/10 15:22:45 jasper Exp $
+--- SConstruct.orig	Sun Apr 18 20:04:54 2010
++++ SConstruct	Mon Jul  9 19:37:51 2012
 @@ -32,12 +32,12 @@ SConsignFile()
  
  def DefineOptions(filename, args):
     opts = Variables(filename, args)
 -   opts.Add('CPPPATH', 'Additional preprocessor paths', ['/usr/local/include'])
-+   opts.Add('CPPPATH', 'Additional preprocessor paths', ['${LOCALBASE}/include'], Split(''))
++   opts.Add('CPPPATH', 'Additional preprocessor paths', ['/usr/local/include'], Split(''))
     opts.Add('CPPFLAGS', 'Additional preprocessor flags')
     opts.Add('CPPDEFINES', 'defined constants', Split(''))
 -   opts.Add('LIBPATH', 'Additional library paths', ['/usr/local/lib'])
-+   opts.Add('LIBPATH', 'Additional library paths', ['${LOCALBASE}/lib'], Split(''))
++   opts.Add('LIBPATH', 'Additional library paths', ['/usr/local/lib'], Split(''))
     opts.Add('LIBS', 'Additional libraries')
 -   opts.Add('CCFLAGS', 'C Compiler flags', Split(ccflags))
 +   opts.Add('CCFLAGS', 'C Compiler flags', Split(ccflags), Split(''))
@@ -33,8 +33,8 @@ $OpenBSD: patch-SConstruct,v 1.5 2010/04/14 18:29:59 ajacoutot Exp $
        'CPPPATH': ['/usr/include']}
 +  opengl['openbsd'] = { 
 +      'LIBS': ['GL'], 
-+      'LIBPATH': ['${X11BASE}/lib'],
-+      'CPPPATH': ['${X11BASE}/include']}
++      'LIBPATH': ['/usr/X11R6/lib'],
++      'CPPPATH': ['/usr/X11R6/include']}
    opengl['cygwin'] = {
        'LIBS': ['opengl3']}
    opengl['darwin'] = {
@@ -47,15 +47,6 @@ $OpenBSD: patch-SConstruct,v 1.5 2010/04/14 18:29:59 ajacoutot Exp $
       glconfig = opengl.get(platform, {})
    for key in glconfig:
        if key != 'LIBS':
-@@ -170,7 +179,7 @@ def CheckOpenGL(env, conf):
- def CheckLuaLib(env, conf):
-   if not 'USE_WIN32' in env['CPPDEFINES']:
-      if env.WhereIs('pkg-config'):
--        for packagename in ['lua5.1', 'lua51', 'lua']:
-+        for packagename in ['lua']:
-            exitcode,_ = ParseConfig(env, 'pkg-config --cflags --libs ' + packagename)
-            if exitcode == 0:
-               break
 @@ -178,7 +187,7 @@ def CheckLuaLib(env, conf):
      return 1
    if conf.CheckLibWithHeader('lua5.1', 'lua.h', 'c'):

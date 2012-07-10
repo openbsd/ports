@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2012/05/29 06:18:37 bentley Exp $
+# $OpenBSD: Makefile,v 1.19 2012/07/10 15:22:45 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
 DISTNAME =	freedroidRPG-0.15.1
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 CATEGORIES=	games x11
 
@@ -26,6 +27,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=freedroid/}
 WRKDIST =	${WRKDIR}/${DISTNAME:L}
 
 MODULES=	lang/lua
+MODLUA_SA =	Yes
 
 LIB_DEPENDS=	devel/libexecinfo \
 		devel/sdl-gfx \

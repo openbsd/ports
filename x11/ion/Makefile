@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2012/05/15 19:38:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT=	light, keyboard friendly window manager
 
 V=		20070318
 DISTNAME=	ion-3ds-${V}
 PKGNAME=	ion-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://modeemi.cs.tut.fi/~tuomov/ion/
@@ -21,11 +21,15 @@ WANTLIB=	ICE X11 m c SM Xext ${MODLUA_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/lua
+MODLUA_SA=	Yes
 
 LIB_DEPENDS=	${MODLUA_LIB_DEPENDS}
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/system.mk
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/05/15 19:38:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT =	command line todo list manager
 
 VERSION =	2.0.0
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://www.taskwarrior.org/
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =		devel/cmake \
 			lang/lua
+MODLUA_SA =		Yes
 
 WANTLIB =		c e2fs-uuid m stdc++ ${MODLUA_WANTLIB}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2012/05/15 20:45:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/07/10 15:22:44 jasper Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	file system library for the lua language
 V=		1.5.0
 DISTNAME=	luafilesystem-${V}
 PKGNAME=	luafs-${V}
-REVISION=	1
+REVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://github.com/downloads/keplerproject/luafilesystem/
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/lua
 ALL_TARGET=	lib
 
+MAKE_ENV+=	LUA_LIBDIR=${MODLUA_LIBDIR} LUA_INC=${MODLUA_INCL_DIR}
+
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DOCDIR} ${MODLUA_EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/lfs.so ${MODLUA_LIBDIR}
@@ -29,6 +31,6 @@ do-install:
 
 do-regress:
 	cp ${WRKDIST}/*.so ${WRKDIST}/tests
-	cd ${WRKDIST}/tests && lua test.lua
+	cd ${WRKDIST}/tests && ${MODLUA_BIN} test.lua
 
 .include <bsd.port.mk>

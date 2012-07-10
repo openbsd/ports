@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/16 22:58:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT=	scripts libquvi uses for parsing the media details
 
 DISTNAME=	libquvi-scripts-0.4.1
-REVISION=	0
+REVISION=	1
 
 MODULES=	lang/lua
 

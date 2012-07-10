@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2012/05/24 18:36:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.32 2012/07/10 15:22:44 jasper Exp $
 
 COMMENT=	advanced music player
 
 DISTNAME=	aqualung-0.9beta11
-REVISION=	9
+REVISION=	10
 EPOCH=		0
 CATEGORIES=	audio
 
@@ -33,6 +33,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=aqualung/}
 MODULES=	devel/gettext \
 		lang/lua
 
+MODLUA_SA=	Yes
+
 LIB_DEPENDS=	audio/flac \
 		audio/jack \
 		audio/libcdio \
@@ -53,10 +55,10 @@ LIB_DEPENDS=	audio/flac \
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib " \
 		CFLAGS="${CFLAGS} -DOSS_DEVICE='\"/dev/audio\"'  \
 		-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31  \
-		-I${LOCALBASE}/include"
+		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}"
 
 # ifp (requires libifp) - no package
 CONFIGURE_ARGS=	--with-cdda \

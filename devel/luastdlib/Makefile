@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/15 15:16:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT=	lua library of common programming tasks
 DISTNAME=	stdlib-20
 PKGNAME=	lua${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 MASTER_SITES=	http://luaforge.net/frs/download.php/4805/

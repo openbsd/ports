@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2012/05/15 15:16:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2012/07/10 15:22:44 jasper Exp $
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 DISTNAME=	copas-1.1.6
 PKGNAME=	lua${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://github.com/downloads/keplerproject/copas/
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	lang/lua
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS+=	devel/coxpcall \
+MODLUA_RUN_DEPENDS+=	devel/coxpcall \
 		net/luasocket
 
 do-install:

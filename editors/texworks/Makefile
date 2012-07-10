@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/14 09:39:34 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/07/10 15:22:45 jasper Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -11,6 +11,8 @@ DISTNAME =		texworks-${V}-r${R}
 PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
+
+REVISION-lua =		0
 
 WRKDIST =		${WRKDIR}/texworks-${V}
 
@@ -60,6 +62,8 @@ RUN_DEPENDS-main = 	print/texlive/base \
 			devel/desktop-file-utils
 RUN_DEPENDS-lua =	editors/texworks,-main
 RUN_DEPENDS-python =	editors/texworks,-main
+
+MODLUA_SA =		Yes
 
 USE_GMAKE =		Yes
 NO_REGRESS =		Yes

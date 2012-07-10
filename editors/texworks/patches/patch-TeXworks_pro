@@ -1,6 +1,6 @@
-$OpenBSD: patch-TeXworks_pro,v 1.4 2012/06/14 09:40:58 espie Exp $
---- TeXworks.pro.orig	Wed Jun 29 18:03:14 2011
-+++ TeXworks.pro	Thu Apr 19 17:10:51 2012
+$OpenBSD: patch-TeXworks_pro,v 1.5 2012/07/10 15:22:45 jasper Exp $
+--- TeXworks.pro.orig	Wed Jun 29 19:03:14 2011
++++ TeXworks.pro	Mon Jul  9 16:00:26 2012
 @@ -47,11 +47,11 @@ QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas
  
  unix:!macx {
@@ -15,6 +15,15 @@ $OpenBSD: patch-TeXworks_pro,v 1.4 2012/06/14 09:40:58 espie Exp $
  } else {
  	TARGET	=	TeXworks
      QMAKE_CXXFLAGS += -fexceptions
+@@ -144,7 +144,7 @@ win32 { # paths here are specific to my setup
+ 	QMAKE_CXXFLAGS += -DSTATIC_SCRIPTING_PLUGINS
+ 
+ 	LIBS += -Lplugins-src/TWLuaPlugin/release -lTWLuaPlugin
+-	LIBS += -llua
++	LIBS += ${MODLUA_LIB}
+ 
+ 	LIBS += -Lplugins-src/TWPythonPlugin/release -lTWPythonPlugin
+ 	LIBS += -Lc:/Python26/libs -lpython26
 @@ -243,7 +243,7 @@ unix:!macx { # installation on Unix-ish platforms
  	isEmpty(BIN_DIR):BIN_DIR = $$INSTALL_PREFIX/bin
  	isEmpty(DOCS_DIR):DOCS_DIR = $$DATA_DIR/doc/texworks

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2012/05/15 19:38:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2012/07/10 15:22:45 jasper Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-REVISION=	9
+REVISION=	10
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -24,6 +24,7 @@ WANTLIB=	c crypto kvm idn m ncurses ossaudio pthread ssl z \
 
 MODULES=	devel/gettext \
 		lang/lua
+MODLUA_SA=	Yes
 
 LIB_DEPENDS=	devel/glib2 \
 		devel/pcre \
@@ -81,7 +82,9 @@ CONFIGURE_ARGS+=--enable-mpd \
 		--enable-lua \
 		--enable-curl \
 		--with-libiconv-prefix="${LOCALBASE}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
+		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/conky

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.100 2012/06/01 08:20:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2012/07/10 15:22:45 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.31
+REVISION=	0
 CATEGORIES=	www net
 MASTER_SITES=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -20,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto ${MODLUA_WANTLIB} m pcre ssl z
 
 MODULES=	lang/lua
+MODLUA_SA=	Yes
 
 LIB_DEPENDS+=	devel/pcre \
 		${MODLUA_LIB_DEPENDS}
@@ -35,7 +37,9 @@ CONFIGURE_ARGS+= --libdir="${PREFIX}/lib/lighttpd" \
 		 --without-bzip2 \
 		 --without-libev
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
+		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 FLAVORS=	ldap mysql
 FLAVOR?=

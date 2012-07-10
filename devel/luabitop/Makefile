@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/06/06 11:52:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/07/10 15:22:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		1.0.2
 DISTNAME=	LuaBitOp-$V
 PKGNAME=	luabitop-$V
 CATEGORIES=	devel
+REVISION=	0
 MASTER_SITES=	${HOMEPAGE}/download/
 
 HOMEPAGE=	http://bitop.luajit.org/
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_GMAKE=	Yes
 MODULES=	lang/lua
 REGRESS_DEPENDS+=${BASE_PKGPATH}
-MAKE_ENV+=	INCLUDES=-I${LOCALBASE}/include
+MAKE_ENV+=	INCLUDES=-I${MODLUA_INCL_DIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DOCDIR}
@@ -32,9 +33,9 @@ do-install:
 		find . ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${MODLUA_DOCDIR}/{} \;
 do-regress:
-	lua ${WRKSRC}/bittest.lua
-	lua ${WRKSRC}/md5test.lua
-	lua ${WRKSRC}/bitbench.lua
-	lua ${WRKSRC}/nsievebits.lua
+	${MODLUA_BIN} ${WRKSRC}/bittest.lua
+	${MODLUA_BIN} ${WRKSRC}/md5test.lua
+	${MODLUA_BIN} ${WRKSRC}/bitbench.lua
+	${MODLUA_BIN} ${WRKSRC}/nsievebits.lua
 
 .include <bsd.port.mk>
