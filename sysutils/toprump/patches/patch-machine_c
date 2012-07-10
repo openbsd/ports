@@ -1,0 +1,12 @@
+$OpenBSD: patch-machine_c,v 1.1 2012/07/10 07:53:21 sthen Exp $
+--- machine.c.orig	Tue Jul 10 08:21:51 2012
++++ machine.c	Tue Jul 10 08:22:32 2012
+@@ -511,7 +511,7 @@ format_next_process(caddr_t handle, char *(*get_userid
+ 				p_wait = pp->p_wmesg;
+ 			else {
+ 				snprintf(waddr, sizeof(waddr), "%llx",
+-				    (unsigned long long)(pp->p_wchan & ~KERNBASE));
++				    (unsigned long long)pp->p_wchan);
+ 				p_wait = waddr;
+ 			}
+ 		} else

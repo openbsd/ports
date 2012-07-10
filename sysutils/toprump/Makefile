@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/08 14:27:44 lum Exp $
+# $OpenBSD: Makefile,v 1.17 2012/07/10 07:53:21 sthen Exp $
 
 COMMENT=	modified OpenBSD top command
 
 DISTNAME=	toprump-0.14.8
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://cyodesigns.com/toprump/
@@ -18,7 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}
 
 NO_REGRESS=	Yes
-WANTLIB=	c curses 
+WANTLIB=	c curses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/toprump ${PREFIX}/bin
