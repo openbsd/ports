@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.10 2012/04/07 12:13:36 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.11 2012/07/10 14:28:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -213,7 +213,7 @@ sub new
 	$singleton->{clear} = $singleton->{terminal}->Tputs("cl", 1);
 	$singleton->{down} = $singleton->{terminal}->Tputs("do", 1);
 	$singleton->{glitch} = $singleton->{terminal}->Tputs("xn", 1);
-	$singleton->{cleareol} = $singleton->{terminal}->Tputs("", 1);
+	$singleton->{cleareol} = $singleton->{terminal}->Tputs("ce", 1);
 	if ($state->{subst}->value("NO_CURSOR")) {
 		$singleton->{invisible} = 
 		    $singleton->{terminal}->Tputs("vi", 1);
