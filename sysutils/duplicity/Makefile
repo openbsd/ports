@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/05 10:33:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/07/10 15:01:14 ajacoutot Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.18
+MODPY_EGG_VERSION = 0.6.19
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION =	0
 
 CATEGORIES =	sysutils
 
