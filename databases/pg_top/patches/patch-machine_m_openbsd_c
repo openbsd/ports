@@ -1,6 +1,6 @@
-$OpenBSD: patch-machine_m_openbsd_c,v 1.1 2012/01/08 20:56:03 naddy Exp $
---- machine/m_openbsd.c.orig	Sat Apr  5 11:09:06 2008
-+++ machine/m_openbsd.c	Sun Jan  8 13:54:54 2012
+$OpenBSD: patch-machine_m_openbsd_c,v 1.2 2012/07/10 12:08:29 sthen Exp $
+--- machine/m_openbsd.c.orig	Sat Apr  5 18:09:06 2008
++++ machine/m_openbsd.c	Tue Jul 10 08:26:42 2012
 @@ -51,13 +51,13 @@
  #include "loadavg.h"
  
@@ -111,6 +111,15 @@ $OpenBSD: patch-machine_m_openbsd_c,v 1.1 2012/01/08 20:56:03 naddy Exp $
  	struct handle *hp;
  	int cputime;
  	double pct;
+@@ -477,7 +477,7 @@ format_next_process(caddr_t handle, char *(*get_userid
+ 			p_wait = pp->p_wmesg;
+ 		else {
+ 			snprintf(waddr, sizeof(waddr), "%llx",
+-			    (unsigned long long)(pp->p_wchan & ~KERNBASE));
++			    (unsigned long long)pp->p_wchan);
+ 			p_wait = waddr;
+ 		}
+ 	} else
 @@ -541,13 +541,13 @@ compare_cpu(const void *v1, const void *v2)
  {
  	struct proc **pp1 = (struct proc **) v1;
