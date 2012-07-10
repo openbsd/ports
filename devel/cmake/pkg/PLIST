@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/06/15 10:26:56 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/07/10 15:20:24 jasper Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -297,8 +297,8 @@ share/cmake/Modules/FindLibLZMA.cmake
 share/cmake/Modules/FindLibXml2.cmake
 share/cmake/Modules/FindLibXslt.cmake
 share/cmake/Modules/FindLibintl.cmake
-share/cmake/Modules/FindLua50.cmake
-share/cmake/Modules/FindLua51.cmake
+share/cmake/Modules/FindLuaInterp.cmake
+share/cmake/Modules/FindLuaLibs.cmake
 share/cmake/Modules/FindMFC.cmake
 share/cmake/Modules/FindMPEG.cmake
 share/cmake/Modules/FindMPEG2.cmake
