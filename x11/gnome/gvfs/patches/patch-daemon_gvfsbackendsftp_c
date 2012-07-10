@@ -1,0 +1,14 @@
+$OpenBSD: patch-daemon_gvfsbackendsftp_c,v 1.1 2012/07/10 10:15:19 mpi Exp $
+--- daemon/gvfsbackendsftp.c.orig	Tue May 15 20:01:50 2012
++++ daemon/gvfsbackendsftp.c	Mon Jul  9 12:24:52 2012
+@@ -71,8 +71,8 @@
+  * fstat
+  */
+ 
+-#ifdef HAVE_GRANTPT
+-/* We only use this on systems with unix98 ptys */
++#if defined(HAVE_GRANTPT) || defined(HAVE_OPENPTY)
++/* We only use this on systems with unix98 or BSD ptys */
+ #define USE_PTY 1
+ #endif
+ 
