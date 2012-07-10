@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_luaconf_h,v 1.1 2012/07/10 15:04:52 jasper Exp $
+--- src/luaconf.h.orig	Fri Jan 18 18:07:48 2008
++++ src/luaconf.h	Mon Mar 24 13:53:08 2008
+@@ -33,7 +33,7 @@
+ #define LUA_WIN
+ #endif
+ 
+-#if defined(LUA_USE_LINUX)
++#if defined(LUA_USE_BSD) || defined(LUA_USE_LINUX)
+ #define LUA_USE_POSIX
+ #define LUA_USE_DLOPEN		/* needs an extra library: -ldl */
+ #define LUA_USE_READLINE	/* needs some extra libraries */

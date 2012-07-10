@@ -1,0 +1,31 @@
+$OpenBSD: patch-etc_lua_pc,v 1.1 2012/07/10 15:04:52 jasper Exp $
+--- etc/lua.pc.orig	Fri Feb 10 10:50:30 2012
++++ etc/lua.pc	Sat May 12 14:42:04 2012
+@@ -8,9 +8,9 @@ V= 5.1
+ R= 5.1.5
+ 
+ # grep '^INSTALL_.*=' ../Makefile | sed 's/INSTALL_TOP/prefix/'
+-prefix= /usr/local
++prefix= ${PREFIX}
+ INSTALL_BIN= ${prefix}/bin
+-INSTALL_INC= ${prefix}/include
++INSTALL_INC= ${prefix}/include/lua-5.1
+ INSTALL_LIB= ${prefix}/lib
+ INSTALL_MAN= ${prefix}/man/man1
+ INSTALL_LMOD= ${prefix}/share/lua/${V}
+@@ -19,13 +19,13 @@ INSTALL_CMOD= ${prefix}/lib/lua/${V}
+ # canonical vars
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+-includedir=${prefix}/include
++includedir=${prefix}/include/lua-5.1
+ 
+ Name: Lua
+ Description: An Extensible Extension Language
+ Version: ${R}
+ Requires: 
+-Libs: -L${libdir} -llua -lm
++Libs: -L${libdir} -llua5.1 -lm
+ Cflags: -I${includedir}
+ 
+ # (end of lua.pc)

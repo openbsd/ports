@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1 2012/07/10 15:04:52 jasper Exp $
+@option no-default-conflict
+@conflict lua->=5.1.5,<5.2
+@pkgpath lang/lua
+@bin bin/lua51
+@bin bin/luac51
+include/lua-5.1/
+include/lua-5.1/lauxlib.h
+include/lua-5.1/lua.h
+include/lua-5.1/lua.hpp
+include/lua-5.1/luaconf.h
+include/lua-5.1/lualib.h
+lib/liblua5.1.a
+@lib lib/liblua5.1.so.${LIBlua5.1_VERSION}
+lib/lua/
+lib/lua/5.1/
+lib/pkgconfig/
+lib/pkgconfig/lua51.pc
+@man man/man1/lua51.1
+@man man/man1/luac51.1
+share/lua/
+share/lua/5.1/
