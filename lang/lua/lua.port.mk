@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.15 2012/07/10 17:14:53 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.16 2012/07/10 18:34:26 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -23,18 +23,16 @@ FLAVOR?=		# empty
 MODLUA_VERSION=		${MODLUA_DEFAULT_VERSION}
 .elif ${FLAVOR:L:Mlua52}
 MODLUA_VERSION=		5.2
-.else
-ERRORS +=		"Fatal: Invalid FLAVOR set: ${FLAVOR}"
 .endif
 
-.if ${MODLUA_VERSION} == "5.1"
+.if "${MODLUA_VERSION}" == "5.1"
 _MODLUA_PKG_PREFIX=	lua
 MODLUA_FLAVOR=		# empty
-.elif ${MODLUA_VERSION} == "5.2"
+.elif "${MODLUA_VERSION}" == "5.2"
 _MODLUA_PKG_PREFIX=	lua52
 MODLUA_FLAVOR=		lua52
 .else
-ERRORS +=		"Fatal: Invalid MODLUA_VERSION"
+ERRORS +=		"Fatal: Invalid MODLUA_VERSION: ${MODLUA_VERSION}"
 .endif
 
 # Based on lua version, adjust the prefix. But don't change the prefix
@@ -43,7 +41,7 @@ ERRORS +=		"Fatal: Invalid MODLUA_VERSION"
 # and we'll just append the flavor suffix.
 MODLUA_SA?=		No
 
-.if ${MODLUA_VERSION} != "5.1"
+.if "${MODLUA_VERSION}" != "5.1"
 .if !${MODLUA_SA:L:Myes}
 FULLPKGNAME?=${PKGNAME:S/^lua/${_MODLUA_PKG_PREFIX}/}
 .endif
@@ -58,9 +56,9 @@ MODLUA_DEP=		lua${MODLUA_DEP_VERSION}
 MODLUA_WANTLIB=		lua${MODLUA_VERSION}
 MODLUA_LIB=		-l${MODLUA_WANTLIB}
 
-.if ${MODLUA_VERSION} == "5.1"
+.if "${MODLUA_VERSION}" == "5.1"
 _MODLUA_RUN_DEPENDS=	lang/lua/5.1
-.elif ${MODLUA_VERSION} == "5.2"
+.elif "${MODLUA_VERSION}" == "5.2"
 _MODLUA_RUN_DEPENDS=	lang/lua/5.2
 .endif
 
@@ -111,7 +109,7 @@ RUN_DEPENDS+=		${_MODLUA_RUN_DEPENDS} \
 			${_MODLUA_RUN_DEPS}
 .endif
 
-.if ${NO_BUILD:L} == "no" && ${MODLUA_BUILDDEP:L} == "yes"
+.if ${NO_BUILD:L} == "no" && "${MODLUA_BUILDDEP:L}" == "yes"
 BUILD_DEPENDS+=		${_MODLUA_BUILD_DEPENDS} \
 			${_MODLUA_RUN_DEPENDS}
 .endif
