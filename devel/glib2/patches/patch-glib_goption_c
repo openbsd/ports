@@ -1,6 +1,9 @@
-$OpenBSD: patch-glib_goption_c,v 1.6 2012/07/09 16:34:21 ajacoutot Exp $
+$OpenBSD: patch-glib_goption_c,v 1.7 2012/07/10 13:25:32 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679590
+From 4749878f9102d40d072bb5c838f2dd2e8d61d417 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 09 Jul 2012 16:17:01 +0000
+Subject: goptions: use G_N_ELEMENTS instead of nitems
 
 --- glib/goption.c.orig	Mon May 14 23:58:01 2012
 +++ glib/goption.c	Mon Jul  9 17:46:09 2012
