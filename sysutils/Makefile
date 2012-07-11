@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2012/07/09 09:21:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.263 2012/07/11 09:45:56 sebastia Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -71,7 +71,6 @@
      SUBDIR += gpioflicker
      SUBDIR += grub
      SUBDIR += gsmartcontrol
-     SUBDIR += heartbeat
      SUBDIR += hot-babe
      SUBDIR += hotplug-diskmount
      SUBDIR += idled
