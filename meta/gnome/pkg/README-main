@@ -1,14 +1,19 @@
-$OpenBSD: README-main,v 1.8 2012/07/08 14:43:59 ajacoutot Exp $
+$OpenBSD: README-main,v 1.9 2012/07/11 14:43:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
+(see "Cheat sheet" at the end of this file for a quick setup)
+
 The GNOME desktop is composed of 2 meta-packages:
     * gnome, for a standard GNOME installation
     * gnome-extra, for a full GNOME installation
-These are focused on standard usage (i.e. accessibility, development
-and office type packages are left out on purpose).
+
+The "gnome" package is focused on generic usage to give the user the
+choice to install his favorite applications for daily usage (i.e.
+accessibility, development, PIM and office type packages have been left
+out on purpose).
 
 Starting GNOME
 ==============
@@ -43,4 +48,12 @@ packages:
 
 Note that "caribou", the input assistive technology (i.e. virtual
 keyboard) is installed automatically with gnome-shell and therefore with
-this "gnome" meta-package.
+this "gnome" package.
+
+Cheat sheet
+===========
+* /etc/rc.conf.local
+	multicast_host=YES
+	pkg_scripts="${pkg_scripts} dbus_daemon avahi_daemon"
+* ~.xinitrc | ~.xsession
+	exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
