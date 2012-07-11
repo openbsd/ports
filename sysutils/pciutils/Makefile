@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/07/11 18:17:52 gonzalo Exp $
 
 NOT_FOR_ARCHS =		sparc m68k m88k vax
 
 COMMENT =		PCI bus configuration register access tools
 
-DISTNAME =		pciutils-3.1.2
-REVISION =		1
+DISTNAME =		pciutils-3.1.9
 CATEGORIES =		sysutils
 
 HOMEPAGE =		http://atrey.karlin.mff.cuni.cz/~mj/pciutils.shtml
@@ -17,18 +16,20 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
 WANTLIB =		c z
 
-MASTER_SITES =		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
+MASTER_SITES =		ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/ \
+			ftp://ftp.kernel.org/pub/software/utils/pciutils/ \
+			ftp://metalab.unc.edu/pub/Linux/hardware/
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 
 MAKE_ENV =		CC="${CC}"
 FAKE_FLAGS =		PREFIX=${TRUEPREFIX} MANDIR=${TRUEPREFIX}/man
 
 NO_REGRESS =		Yes
 
-INSTALL_TARGET =        install install-lib
+INSTALL_TARGET =	install install-lib
 
 .include <bsd.port.mk>
