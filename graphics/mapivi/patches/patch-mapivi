@@ -1,6 +1,6 @@
-$OpenBSD: patch-mapivi,v 1.5 2011/07/18 10:00:32 giovanni Exp $
+$OpenBSD: patch-mapivi,v 1.6 2012/07/11 08:59:57 giovanni Exp $
 --- mapivi.orig	Thu Feb 21 21:53:44 2008
-+++ mapivi	Mon Jul 18 11:51:32 2011
++++ mapivi	Wed Jul 11 10:47:36 2012
 @@ -148,12 +148,12 @@ if (($EvilOS) and (defined $ENV{APPDATA}) and ($maprog
  # for windows we use this path
  $maprogsdir     = $ENV{APPDATA}."/maprogs" if defined $ENV{APPDATA};
@@ -31,27 +31,31 @@ $OpenBSD: patch-mapivi,v 1.5 2011/07/18 10:00:32 giovanni Exp $
  
  # external programs used by mapivi
 -my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp-remote 0 gimp-win-remote 0 montage 0 xwd 0 identify 0 thunderbird 0 mozilla-thunderbird 0 exiftool 0/;
-+my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp-remote 0 montage 0 identify 0 exiftool 0/;
++my %exprogs = qw/convert 0 composite 0 jhead 0 jpegtran 0 jpegpixi 0 mogrify 0 gimp 0 montage 0 identify 0 exiftool 0/;
  # short comment about the usage of the external programs
  my %exprogscom = (
  		   "convert"        => "build thumbnails",
-@@ -456,11 +456,8 @@ my %exprogscom = (
+@@ -455,12 +455,9 @@ my %exprogscom = (
+ 		   "jpegpixi"       => "do nearly lossless interpolation (remove dead pixels)",
  		   "mogrify"        => "change the size/quality of pictures",
  		   "montage"        => "combine pictures to e.g. index prints",
- 		   "gimp-remote"    => "edit pictures with The GIMP (only UNIX)",
+-		   "gimp-remote"    => "edit pictures with The GIMP (only UNIX)",
 -		   "gimp-win-remote"=> "edit pictures with The GIMP (only windows)",
 -		   "xwd"            => "make a screenshot of a window or desktop",
++		   "gimp"   	    => "edit pictures with The GIMP (only UNIX)",
  		   "identify"       => "describe the format and characteristics of a picture",
  		   "thunderbird"    => "send pictures via email",
 -		   "mozilla-thunderbird" => "send pictures via email",
  		   "exiftool"       => "Read/write meta information in image files",
  		  );
  # where to find the external programs (resources)
-@@ -473,10 +470,8 @@ my %exprogsres = (
+@@ -472,11 +469,9 @@ my %exprogsres = (
+ 		   "jpegpixi"       => "http://www.zero-based.org/software/jpegpixi/",
  		   "mogrify"        => "Image Magick http://www.imagemagick.org",
  		   "montage"        => "Image Magick http://www.imagemagick.org",
- 		   "gimp-remote"    => "The GIMP http://www.gimp.org",
+-		   "gimp-remote"    => "The GIMP http://www.gimp.org",
 -		   "gimp-win-remote"=> "gimp-win-remote http://sourceforge.net/projects/gimp-win-remote/",
++		   "gimp"           => "The GIMP http://www.gimp.org",
  		   "identify"       => "Image Magick http://www.imagemagick.org",
  		   "thunderbird"    => "http://www.mozilla.org/projects/thunderbird/",
 -		   "mozilla-thunderbird" => "http://www.mozilla.org/projects/thunderbird/",
@@ -102,6 +106,15 @@ $OpenBSD: patch-mapivi,v 1.5 2011/07/18 10:00:32 giovanni Exp $
   
    $view_menu->separator;
    my $layout_menu = $view_menu->cascade(-label => "Window layout ...");
+@@ -13719,7 +13711,7 @@ sub addPicProcessing {
+     $border_menu->command(-image => compound_menu($top, 'add relative border (lossless) ...', ''), -command => sub { losslessBorder(RELATIVE); } );
+     $border_menu->command(-image => compound_menu($top, 'add border or copyright (lossy) ...', ''), -command => \&addDecoration);
+ 
+-    $menu->command(-image => compound_menu($top, 'edit in GIMP', 'applications-graphics.png'), -command => \&GIMPedit, -accelerator => "<Ctrl-e>") unless ($exprogs{"gimp-remote"} or $exprogs{"gimp-win-remote"});
++    $menu->command(-image => compound_menu($top, 'edit in GIMP', 'applications-graphics.png'), -command => \&GIMPedit, -accelerator => "<Ctrl-e>") unless ($exprogs{"gimp"} or $exprogs{"gimp-win-remote"});
+ }
+ 
+ ##############################################################
 @@ -16381,7 +16373,7 @@ sub makeButton {
  	my $picName      = shift;
  	my $func         = shift;
@@ -111,12 +124,21 @@ $OpenBSD: patch-mapivi,v 1.5 2011/07/18 10:00:32 giovanni Exp $
  	my $image = $parentWidget->Photo(-file => $pic) if -f $pic;
  
  	if ($image) {
+@@ -25675,7 +25667,7 @@ sub GIMPedit {
+ 	return if (!checkExternProgs("GIMPedit", "gimp-win-remote"));
+   }
+   else {
+-	  if (!checkExternProgs("GIMPedit", "gimp-remote")){
++	  if (!checkExternProgs("GIMPedit", "gimp")){
+ 		  $dpic  = $sellist[0];
+ 		  $pic   = basename($dpic);
+ 		  my $rc = $top->messageBox(-icon    => "question",
 @@ -25698,7 +25690,7 @@ sub GIMPedit {
  	# check if file is a link and get the real target
  	next if (!getRealFile(\$dpic));
  
 -	my $command = "gimp-remote -n      \"$dpic\" ";
-+	my $command = "gimp-remote \"$dpic\" ";
++	my $command = "gimp \"$dpic\" ";
  	#$command    = "gimp-win-remote \"$dpic\" " if $EvilOS;   # GIMP <= 2.0
  	$command    = "gimp-win-remote gimp-2.2.exe \"$dpic\" " if $EvilOS; # GIMP > 2.0
  	$command .= "2>&1 1>/dev/null &" if (!$EvilOS);
