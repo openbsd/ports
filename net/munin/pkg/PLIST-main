@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2012/02/27 15:44:58 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2012/07/11 03:46:42 william Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
@@ -60,6 +60,7 @@ libdata/perl5/site_perl/Munin/Plugin.pm
 libdata/perl5/site_perl/Munin/Plugin/Pgsql.pm
 libdata/perl5/site_perl/Munin/Plugin/SNMP.pm
 libexec/munin/plugins/
+libexec/munin/plugins/amavis
 libexec/munin/plugins/apache_accesses
 libexec/munin/plugins/apache_processes
 libexec/munin/plugins/apache_volume
@@ -79,6 +80,7 @@ libexec/munin/plugins/bind9_rndc
 libexec/munin/plugins/cmc_tc_sensor_
 libexec/munin/plugins/colour_tester
 libexec/munin/plugins/coretemp
+libexec/munin/plugins/courier_
 libexec/munin/plugins/courier_mta_mailqueue
 libexec/munin/plugins/courier_mta_mailstats
 libexec/munin/plugins/courier_mta_mailvolume
@@ -124,6 +126,7 @@ libexec/munin/plugins/load
 libexec/munin/plugins/loggrep
 libexec/munin/plugins/lpstat
 libexec/munin/plugins/mailman
+libexec/munin/plugins/mailscanner
 @comment libexec/munin/plugins/mbmon_
 libexec/munin/plugins/memcached_
 libexec/munin/plugins/mhttping
@@ -158,6 +161,7 @@ libexec/munin/plugins/nutups_
 @comment libexec/munin/plugins/nvidia_
 libexec/munin/plugins/open_files
 libexec/munin/plugins/openvpn
+libexec/munin/plugins/perdition
 libexec/munin/plugins/pf_changes
 libexec/munin/plugins/pf_searches
 libexec/munin/plugins/pf_states

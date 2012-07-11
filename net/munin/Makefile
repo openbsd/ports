@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/08 09:25:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/07/11 03:46:42 william Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -7,6 +7,7 @@ V =		1.4.7
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
+REVISION-main =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/
@@ -31,7 +32,8 @@ MODULES =		lang/python lang/ruby
 MODPY_BUILDDEP =	No
 MODRUBY_BUILDDEP =	No # not supported yet, but won't need a bump when it is
 
-RUN_DEPENDS-main =	devel/p5-Log-Log4perl \
+RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
+			devel/p5-Log-Log4perl \
 			devel/p5-Net-Server \
 			net/p5-Net-CIDR
 RUN_DEPENDS-server +=	net/rrdtool,-perl \
@@ -87,11 +89,6 @@ post-install:
 	${MODRUBY_RUBY_ADJ} ${PREFIX}/libexec/munin/plugins/tomcat_
 	${INSTALL_DATA} ${FILESDIR}/openbsd-packages \
 	    ${PREFIX}/share/examples/munin/plugin-conf.d
-# Remove some plugins which require logtail
-	rm ${PREFIX}/libexec/munin/plugins/amavis \
-	    ${PREFIX}/libexec/munin/plugins/courier_ \
-	    ${PREFIX}/libexec/munin/plugins/mailscanner \
-	    ${PREFIX}/libexec/munin/plugins/perdition
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/munin/
 	${INSTALL_DATA} ${WRKSRC}/UPGRADING ${PREFIX}/share/doc/munin/
 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_node_d_perdition_in,v 1.1 2012/07/11 03:46:42 william Exp $
+--- plugins/node.d/perdition.in.orig	Sat Mar  3 23:32:12 2012
++++ plugins/node.d/perdition.in	Sat Mar  3 23:32:32 2012
+@@ -12,7 +12,7 @@ perdition - Plugin to graph perdition connections and 
+ The following configuration variables are available for this plugin:
+ 
+  logfile - Log file to tail (default: "/var/log/perdition.log")
+- logtail - Path to logtail (default: "/usr/sbin/logtail")
++ logtail - Path to logtail (default: "/usr/local/bin/logtail")
+ 
+ =head1 DEPENDENCIES
+ 
+@@ -56,7 +56,7 @@ mktempfile () {
+ # Set the location of the perdition logs
+ PERDITION_LOG=${logfile:-/var/log/perdition.log}
+ OFFSET_FILE=@@PLUGSTATE@@/perdition.offset
+-LOGTAIL=${logtail:-/usr/sbin/logtail}
++LOGTAIL=${logtail:-/usr/local/bin/logtail}
+ 
+ case $1 in
+     autoconf|detect)

@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_node_d_courier__in,v 1.1 2012/07/11 03:46:42 william Exp $
+--- plugins/node.d/courier_.in.orig	Sat Mar  3 23:30:41 2012
++++ plugins/node.d/courier_.in	Sat Mar  3 23:31:20 2012
+@@ -27,8 +27,8 @@ variable to "imaplogin" and "courierpop3login", respec
+ The default configuration is:
+ 
+  [courier_*]
+-  env.logtail /usr/sbin/logtail
+-  env.logfile /var/log/mail.log
++  env.logtail /usr/local/bin/logtail
++  env.logfile /var/log/maillog
+   env.service <Whatever follows "courier_" in the file name>
+ 
+ =head1 MAGIC MARKERS
+@@ -52,10 +52,10 @@ Unknown
+ =cut
+ 
+ # Set the location of the courier logs
+-COURIER_LOG=${logfile:-/var/log/mail.log}
++COURIER_LOG=${logfile:-/var/log/maillog}
+ SERVICE=${service:-`basename $0 | sed 's/^courier_//g'`}
+ OFFSET_FILE=@@PLUGSTATE@@/courier_${SERVICE}.offset
+-LOGTAIL=${logtail:-/usr/sbin/logtail}
++LOGTAIL=${logtail:-/usr/local/bin/logtail}
+ 
+ mktempfile () {
+ @@MKTEMP@@
