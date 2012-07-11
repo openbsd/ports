@@ -1,4 +1,4 @@
-$OpenBSD: patch-i3bar_src_xcb_c,v 1.6 2012/06/11 07:22:28 dcoppa Exp $
+$OpenBSD: patch-i3bar_src_xcb_c,v 1.7 2012/07/11 09:34:54 dcoppa Exp $
 
 From 599f7cc2a4ad0536759203cbdb03680389ae5e7b Mon Sep 17 00:00:00 2001
 From: Michael Stapelberg <michael@stapelberg.de>
@@ -10,8 +10,13 @@ From: TunnelWicht <MilkFreeze@web.de>
 Date: Tue, 01 May 2012 11:35:34 +0000
 Subject: don't wrap when changing workspaces by mouse wheel scrolling
 
+From 8a3574f301725ba48484c05408e35ecec27aad65 Mon Sep 17 00:00:00 2001
+From: Michael Stapelberg <michael@stapelberg.de>
+Date: Tue, 10 Jul 2012 20:52:14 +0000
+Subject: i3bar: inform _all_ clients of new tray selection owner
+
 --- i3bar/src/xcb.c.orig	Wed Apr 25 23:21:25 2012
-+++ i3bar/src/xcb.c	Mon Jun 11 09:15:19 2012
++++ i3bar/src/xcb.c	Wed Jul 11 10:52:37 2012
 @@ -281,7 +281,7 @@ void handle_button(xcb_button_press_event_t *event) {
          return;
      }
@@ -41,3 +46,12 @@ Subject: don't wrap when changing workspaces by mouse wheel scrolling
                  cur_ws = TAILQ_NEXT(cur_ws, tailq);
              }
              break;
+@@ -1046,7 +1042,7 @@ void init_tray() {
+     xcb_send_event(xcb_connection,
+                    0,
+                    xcb_root,
+-                   XCB_EVENT_MASK_STRUCTURE_NOTIFY,
++                   0xFFFFFF,
+                    (char*)ev);
+     free(event);
+     free(tray_reply);
