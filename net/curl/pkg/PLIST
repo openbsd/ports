@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/07/05 08:18:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/07/11 22:15:00 naddy Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -17,6 +17,7 @@ lib/pkgconfig/
 lib/pkgconfig/libcurl.pc
 @man man/man1/curl-config.1
 @man man/man1/curl.1
+@man man/man1/mk-ca-bundle.1
 @man man/man3/curl_easy_cleanup.3
 @man man/man3/curl_easy_duphandle.3
 @man man/man3/curl_easy_escape.3

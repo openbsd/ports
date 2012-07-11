@@ -1,6 +1,7 @@
-cURL is a tool for getting files from FTP, HTTP, HTTPS, Gopher and
-DICT servers, with URL syntax support.
-
-cURL supports HTTP POST, HTTP PUT, FTP uploading, HTTP form based
-upload, proxies, user+password authentication and a busload of other
-useful tricks.
+curl is a command line tool for transferring data with URL syntax,
+supporting DICT, FILE, FTP, FTPS, Gopher, HTTP, HTTPS, IMAP, IMAPS,
+POP3, POP3S, RTSP, SMTP, SMTPS, Telnet and TFTP. curl supports SSL
+certificates, HTTP POST, HTTP PUT, FTP uploading, HTTP form based
+upload, proxies, cookies, user+password authentication (Basic,
+Digest, NTLM, Negotiate, ...), file transfer resume, proxy tunneling
+and a busload of other useful tricks.
