@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2012/06/27 10:58:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.359 2012/07/11 13:29:09 zinke Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -16,6 +16,7 @@
      SUBDIR += catfish
      SUBDIR += chmsee
      SUBDIR += clo++
+     SUBDIR += cloc
      SUBDIR += clucene
      SUBDIR += dblatex
      SUBDIR += diction
