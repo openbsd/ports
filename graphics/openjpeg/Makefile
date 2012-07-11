@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2012/03/30 07:09:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/11 08:30:39 sthen Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
 DISTNAME=		openjpeg-1.5.0
+REVISION=		0
 
 SHARED_LIBS +=	openjpeg             5.0      # 6.0
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c m z
+WANTLIB += c jpeg lcms2 m tiff z
 
 MASTER_SITES=		http://openjpeg.googlecode.com/files/
 
@@ -26,8 +27,7 @@ CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes
 USE_LIBTOOL=		Yes
 
-# static linked
-BUILD_DEPENDS=		graphics/lcms2 \
+LIB_DEPENDS=		graphics/lcms2 \
 			graphics/png \
 			graphics/tiff
 
