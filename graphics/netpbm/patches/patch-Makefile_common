@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_common,v 1.7 2010/07/02 02:54:59 naddy Exp $
---- Makefile.common.orig	Mon Nov 13 05:14:19 2006
-+++ Makefile.common	Wed Jun 30 02:05:13 2010
-@@ -408,19 +408,19 @@ install.bin: $(BINARIES:%=%_installbin) $(SCRIPTS:%=%_
+$OpenBSD: patch-Makefile_common,v 1.8 2012/07/11 09:53:52 giovanni Exp $
+--- Makefile.common.orig	Thu Jun 21 22:40:36 2012
++++ Makefile.common	Tue Jul 10 00:10:52 2012
+@@ -417,19 +417,19 @@ install.bin: $(BINARIES:%=%_installbin) $(SCRIPTS:%=%_
  INSTALLBIN_TARGETS = $(BINARIES:%=%_installbin) netpbm_installbin
  .PHONY: $(INSTALLBIN_TARGETS)
  $(INSTALLBIN_TARGETS): $(PKGDIR)/bin
