@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/11 13:26:13 zinke Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/11 13:49:01 ajacoutot Exp $
 
 COMMENT=		count lines of code
 
-VERSION=		1.56
-DISTNAME=		cloc-${VERSION}
+DISTNAME=		cloc-1.56
 DIST_SUBDIR=		cloc
 
 CATEGORIES=		textproc devel
@@ -12,7 +11,7 @@ HOMEPAGE=		http://cloc.sourceforge.net/
 
 MAINTAINER=		Joerg Zinke <zinke@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
