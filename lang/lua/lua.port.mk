@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.16 2012/07/10 18:34:26 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.17 2012/07/11 10:06:11 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -10,19 +10,21 @@ CATEGORIES+=	lang/lua
 # Define the default version and use that if MODLUA_VERSION is not set.
 MODLUA_DEFAULT_VERSION=	5.1
 
-# The default version is not a flavor, but any other version is.
-.if defined(FLAVORS)
-FLAVORS+=		lua52
-.else
+# If a port already has flavors, append our lua flavors to it, unless it requests a specific
+# version of lua. Otherwise set the FLAVORS list to just the lua flavors.
+.if !defined(MODLUA_VERSION) && !defined(FLAVORS)
 FLAVORS?=		lua52
+.else
+FLAVORS+=		lua52
 .endif
 
 FLAVOR?=		# empty
 
+# without a flavor, assume ${MODLUA_DEFAULT_VERSION}
 .if empty(FLAVOR)
 MODLUA_VERSION=		${MODLUA_DEFAULT_VERSION}
 .elif ${FLAVOR:L:Mlua52}
-MODLUA_VERSION=		5.2
+MODLUA_VERSION=		"5.2"
 .endif
 
 .if "${MODLUA_VERSION}" == "5.1"
@@ -31,8 +33,6 @@ MODLUA_FLAVOR=		# empty
 .elif "${MODLUA_VERSION}" == "5.2"
 _MODLUA_PKG_PREFIX=	lua52
 MODLUA_FLAVOR=		lua52
-.else
-ERRORS +=		"Fatal: Invalid MODLUA_VERSION: ${MODLUA_VERSION}"
 .endif
 
 # Based on lua version, adjust the prefix. But don't change the prefix
