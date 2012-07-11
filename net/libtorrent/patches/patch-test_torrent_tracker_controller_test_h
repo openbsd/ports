@@ -1,0 +1,24 @@
+$OpenBSD: patch-test_torrent_tracker_controller_test_h,v 1.1 2012/07/11 08:33:39 dcoppa Exp $
+
+Fix a bug where manual tracker update for a preferred tracker that
+fails would end up rerequesting instantly (test)
+(upstream git commit 78f56ee74cecd8e82d39baaea10395301fbec4b8)
+
+--- test/torrent/tracker_controller_test.h.orig	Tue Apr 10 14:46:33 2012
++++ test/torrent/tracker_controller_test.h	Tue Jul 10 16:33:20 2012
+@@ -18,6 +18,7 @@ class tracker_controller_test : public CppUnit::TestFi
+   CPPUNIT_TEST(test_send_stop_normal);
+   CPPUNIT_TEST(test_send_completed_normal);
+   CPPUNIT_TEST(test_send_update_normal);
++  CPPUNIT_TEST(test_send_update_failure);
+   CPPUNIT_TEST(test_send_task_timeout);
+   CPPUNIT_TEST(test_send_close_on_enable);
+ 
+@@ -51,6 +52,7 @@ class tracker_controller_test : public CppUnit::TestFi
+   void test_send_stop_normal();
+   void test_send_completed_normal();
+   void test_send_update_normal();
++  void test_send_update_failure();
+   void test_send_task_timeout();
+   void test_send_close_on_enable();
+ 

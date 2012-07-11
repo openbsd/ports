@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2012/05/02 14:06:03 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.31 2012/07/11 08:33:39 dcoppa Exp $
 
 COMMENT=		BitTorrent library written in C++
 
 DISTNAME=		libtorrent-0.13.2
+REVISION=		0
 SHARED_LIBS +=  	torrent	19.0	# .14.4
 CATEGORIES=		net devel
 

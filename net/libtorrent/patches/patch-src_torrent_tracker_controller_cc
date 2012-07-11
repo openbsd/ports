@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_torrent_tracker_controller_cc,v 1.1 2012/07/11 08:33:39 dcoppa Exp $
+
+Fix a bug where manual tracker update for a preferred tracker that
+fails would end up rerequesting instantly
+(upstream git commit 78f56ee74cecd8e82d39baaea10395301fbec4b8)
+
+--- src/torrent/tracker_controller.cc.orig	Tue Apr 10 14:46:33 2012
++++ src/torrent/tracker_controller.cc	Tue Jul 10 16:33:20 2012
+@@ -485,20 +485,12 @@ TrackerController::do_timeout() {
+     if (itr == m_tracker_list->end())
+       return;
+ 
+-    if ((m_flags & flag_send_update)) {
+-      // TODO: Also watch out for failed trackers requiring timeouts.
+-      m_tracker_list->send_state_itr(itr, send_state);
++    int32_t next_timeout = (*itr)->activity_time_next();
+ 
+-    } else {
+-      TrackerList::iterator itr = m_tracker_list->find_next_to_request(m_tracker_list->begin());
+-
+-      int32_t next_timeout = (*itr)->activity_time_next();
+-
+-      if (next_timeout <= cachedTime.seconds())
+-        m_tracker_list->send_state_itr(itr, send_state);
+-      else
+-        update_timeout(next_timeout - cachedTime.seconds());
+-    }
++    if (next_timeout <= cachedTime.seconds())
++      m_tracker_list->send_state_itr(itr, send_state);
++    else
++      update_timeout(next_timeout - cachedTime.seconds());
+   }
+ 
+   if (m_slot_timeout)
