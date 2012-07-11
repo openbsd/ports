@@ -1,0 +1,35 @@
+$OpenBSD: patch-libopenjpeg_j2k_c,v 1.1 2012/07/11 08:31:28 sthen Exp $
+
+http://code.google.com/p/openjpeg/source/detail?r=1727
+
+--- libopenjpeg/j2k.c.orig	Wed Jul 11 10:17:02 2012
++++ libopenjpeg/j2k.c	Wed Jul 11 10:19:48 2012
+@@ -1269,7 +1269,7 @@ static void j2k_read_sot(opj_j2k_t *j2k) {
+ 		static int backup_tileno = 0;
+ 
+ 		/* tileno is negative or larger than the number of tiles!!! */
+-		if ((tileno < 0) || (tileno > (cp->tw * cp->th))) {
++		if ((tileno < 0) || (tileno >= (cp->tw * cp->th))) {
+ 			opj_event_msg(j2k->cinfo, EVT_ERROR,
+ 				"JPWL: bad tile number (%d out of a maximum of %d)\n",
+ 				tileno, (cp->tw * cp->th));
+@@ -1286,8 +1286,18 @@ static void j2k_read_sot(opj_j2k_t *j2k) {
+ 
+ 		/* keep your private count of tiles */
+ 		backup_tileno++;
+-	};
++	}
++else
+ #endif /* USE_JPWL */
++  {
++    /* tileno is negative or larger than the number of tiles!!! */
++    if ((tileno < 0) || (tileno >= (cp->tw * cp->th))) {
++      opj_event_msg(j2k->cinfo, EVT_ERROR,
++        "JPWL: bad tile number (%d out of a maximum of %d)\n",
++        tileno, (cp->tw * cp->th));
++      return;
++    }
++  }
+ 	
+ 	if (cp->tileno_size == 0) {
+ 		cp->tileno[cp->tileno_size] = tileno;
