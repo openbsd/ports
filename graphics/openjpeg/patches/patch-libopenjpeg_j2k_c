@@ -1,6 +1,6 @@
-$OpenBSD: patch-libopenjpeg_j2k_c,v 1.1 2012/07/11 08:31:28 sthen Exp $
+$OpenBSD: patch-libopenjpeg_j2k_c,v 1.2 2012/07/11 08:46:46 jasper Exp $
 
-http://code.google.com/p/openjpeg/source/detail?r=1727
+http://code.google.com/p/openjpeg/source/detail?r=1727 (CVE-2012-3358)
 
 --- libopenjpeg/j2k.c.orig	Wed Jul 11 10:17:02 2012
 +++ libopenjpeg/j2k.c	Wed Jul 11 10:19:48 2012
