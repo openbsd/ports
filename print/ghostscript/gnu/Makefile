@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.90 2012/03/09 10:59:54 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2012/07/11 10:26:31 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	9.04
+VERSION=	9.05
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-SHARED_LIBS=	gs	14.0
+SHARED_LIBS=	gs	15.0
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
+MASTER_SITES=	http://downloads.ghostscript.com/public/
 
 HOMEPAGE=	http://www.cs.wisc.edu/~ghost/
 
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB=	c ijs m jbig2dec jpeg>=62 lcms png>=6 pthread tiff z
+WANTLIB=	c ijs m jbig2dec jpeg>=62 lcms2 png>=6 pthread tiff z
 
 MODULES=	converters/libiconv
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=	print/ghostscript/gnu-fonts
 BUILD_DEPENDS=	print/cups>=1.5.0
 LIB_DEPENDS=	graphics/jbig2dec	\
 		graphics/jpeg		\
-		graphics/lcms		\
+		graphics/lcms2		\
 		graphics/png		\
 		graphics/tiff		\
 		print/ijs
@@ -63,7 +63,6 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		INSTALL='${INSTALL}'			\
 		INSTALL_DATA='${INSTALL_DATA}'		\
 		INSTALL_PROGRAM='${INSTALL_PROGRAM}'	\
-		JPX_LIB=jasper				\
 		LIBgs_VERSION=${LIBgs_VERSION}		\
 		PSGENDIR=./obj				\
 		PSLIBDIR=./lib				\
@@ -89,15 +88,6 @@ MAKE_FLAGS=	BINDIR=./obj				\
 		prefix='${PREFIX}'
 
 USE_GMAKE=	Yes
-
-# Jasper needs this. Everything else seems to work better without auto*.
-WRKCONF=		${WRKSRC}/jasper
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		AWK=/usr/bin/awk			\
-			CFLAGS='${CFLAGS}'			\
-			GREP=/usr/bin/grep			\
-			LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'	\
-			LIBS=-ljpeg
 
 # Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
 # which is available only after the inclusion of bsd.port.mk.
@@ -127,7 +117,7 @@ MODULES+=	devel/gettext
 WANTLIB+=	GL Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
 WANTLIB+=	gdk-x11-2.0>=1000 gdk_pixbuf-2.0>=1000 gio-2.0 glib-2.0
-WANTLIB+=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0>=1000
+WANTLIB+=	gobject-2.0 gtk-x11-2.0>=1000
 WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
 WANTLIB+=	xcb xcb-render xcb-shm
 WANTLIB+=	${MODGETTEXT_WANTLIB}
@@ -166,7 +156,7 @@ post-configure:
 	    -e '/GS_LIB/s!/usr!${PREFIX}!' \
 	    -e 's!@SED_EXTENDED_REGEX_OPT@!-nEe!' \
 	    -e 's!@GS@!gs!' \
-	    ${WRKSRC}/cups/pstopxl.in > ${WRKSRC}/cups/pstopxl
+	    ${WRKSRC}/cups/gstopxl.in > ${WRKSRC}/cups/gstopxl
 
 # Avoid surprises in update-patches.
 # Use the old-style (non-autoconf) build.
@@ -174,14 +164,14 @@ post-extract:
 	find ${WRKDIST} -name '*.orig' -type f | xargs -r rm
 	ln -s base/unix-gcc.mak ${WRKDIST}/Makefile
 	cd ${WRKSRC} && mkdir junk && \
-		mv freetype ijs jpeg libpng jbig2dec tiff zlib junk
+		mv freetype ijs jasper jpeg libpng jbig2dec tiff zlib junk
 
 pre-build:
 	mkdir -p ${WRKDIST}/obj
 
 pre-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript 
-	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin 
+	@${INSTALL_DATA_DIR} ${PREFIX}/share/ghostscript
+	@${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
 	@${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 
 .ifdef(DEBUG)
@@ -211,7 +201,8 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/cups/filter
-	${INSTALL_SCRIPT} ${WRKSRC}/cups/pstopxl ${PREFIX}/libexec/cups/filter
+	${INSTALL_SCRIPT} ${WRKSRC}/cups/gstopxl ${PREFIX}/libexec/cups/filter
+	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
 	${INSTALL_DATA} ${WRKSRC}/cups/*.ppd ${PREFIX}/share/cups/model
 
@@ -223,7 +214,7 @@ X11_DEVICES=	x11 x11alpha x11cmyk x11cmyk2 x11cmyk4 x11cmyk8 \
 
 # HP_DEVS
 DEVICES+=	cdeskjet cdj1600 cdj500 cdj550 cdj670 cdj850 cdj880 \
-		cdj890 cdj970 cdjcolor cdjmono chp2200 cljet5 cljet5c \
+		cdj890 cdj970 cdjcolor cdjmono cdnj500 chp2200 cljet5 cljet5c \
 		cljet5pr deskjet djet500 djet500c dnj650c hpdj1120c \
 		hpdj310 hpdj320 hpdj340 hpdj400 hpdj500 hpdj500c \
 		hpdj510 hpdj520 hpdj540 hpdj550c hpdj560c hpdj600 \
@@ -239,7 +230,7 @@ DEVICES+=	pxlmono pxlcolor
 # EPSON_DEVS
 DEVICES+=	alc1900 alc2000 alc4000 alc4100 alc8500 alc8600 \
 		alc9100 epl2050 epl2050p epl2120 epl2500 epl2750 \
-		epl5800 epl5900 epl6100 epl6200 eps9high eps9mid \
+		epl5800 epl5900 epl6100 epl6200 eplcolor eplmono eps9high eps9mid \
 		epson epsonc escp lp1800 lp1900 lp2200 lp2400 lp2500 \
 		lp3000c lp7500 lp7700 lp7900 lp8000 lp8000c lp8100 \
 		lp8200c lp8300c lp8300f lp8400f lp8500c lp8600 \
@@ -250,16 +241,16 @@ DEVICES+=	alc1900 alc2000 alc4000 alc4100 alc8500 alc8600 \
 # CANON_DEVS
 DEVICES+=	bj10e bj200 bjc600 bjc800 bjccmyk bjccolor bjcgray \
 		bjcmono lbp8 lips3
- 
+
 # LEXMARK_DEVS
-DEVICES+=	lex2050 lex3200 lex5700 lex7000 lx5000 lxm3200 lxm5700m
+DEVICES+=	lxm5700m lxm3200 lex2050 lex3200 lex5700 lex7000
 
 # BROTHER_DEVS
 DEVICES+=	hl1240 hl1250 hl7x0
 
 # APPLE_DEVS
 DEVICES+=	appledmp iwhi iwlo iwlq
- 
+
 # IBM_DEVS
 DEVICES+=	ibmpro jetp3852
 
@@ -286,13 +277,13 @@ DEVICES+=	oprp opvp
 # BMP_DEVS
 DEVICES+=	bmp16 bmp16m bmp256 bmp32b bmpgray bmpmono bmpsep1 \
 		bmpsep8
- 
+
 # FAX_DEVS
 DEVICES+=	cfax dfaxhigh dfaxlow fax faxg3 faxg32d faxg4 tfax \
 		tiffg3 tiffg32d tiffg4
- 
+
 # JPEG_DEVS
-DEVICES+=	jpeg jpegcmyk jpeggray jpx
+DEVICES+=	jpeg jpegcmyk jpeggray
 
 # PNG_DEVS (note: png48 not mentioned in configure.ac)
 DEVICES+=	png16 png16m png256 png48 pngalpha pnggray pngmono
@@ -301,25 +292,22 @@ DEVICES+=	png16 png16m png256 png48 pngalpha pnggray pngmono
 DEVICES+=	jbig2
 
 # TIFF_DEVS
-DEVICES+=	tiff12nc tiff24nc tiff32nc tiffcrle tiffgray tifflzw \
-		tiffpack tiffs tiffsep
+DEVICES+=	tiff12nc tiff24nc tiff32nc tiff48nc tiff64nc tiffcrle tiffgray tifflzw \
+		tiffpack tiffs tiffscaled tiffscaled24 tiffscaled8 tiffsep tiffsep1
 
 # PCX_DEVS
 DEVICES+=	pcx16 pcx24b pcx256 pcx2up pcxcmyk pcxgray pcxmono
 
 # PBM_DEVS
-DEVICES+=	pam pamcmyk32 pbm pbmraw pgm pgmraw pgnm pgnmraw pkm pkmraw \
-		pksm pksmraw pnm pnmraw ppm ppmraw
+DEVICES+=	pam pamcmyk32 pamcmyk4 pbm pbmraw pgm pgmraw pgnm pgnmraw pkm pkmraw \
+		pksm pksmraw plan planc plang plank planm pnm pnmraw ppm ppmraw
 
 # PS_DEVS
-DEVICES+=	bbox epswrite pdfwrite ps2write psdcmyk psdf psdrgb \
-		psgray psmono psrgb pswrite
-
-# WTS_HALFTONING_DEVS
-DEVICES+=	imdi simdi wtscmyk wtsimdi
+DEVICES+=	bbox epswrite inkcov pdfwrite ps2write psdcmyk psdf psdrgb \
+		psgray psmono psrgb pswrite txtwrite
 
 # MISC_FDEVS
-DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr cgm24 cgm8 cgmmono \
+DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr \
 		cif devicen inferno mag16 mag256 mgr4 mgr8 mgrgray2 \
 		mgrgray4 mgrgray8 mgrmono miff24 plan9bm sgirgb \
 		spotcmyk sunhmono xcf

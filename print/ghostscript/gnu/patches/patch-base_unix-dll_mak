@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-dll_mak,v 1.3 2011/11/16 12:43:23 kili Exp $
---- base/unix-dll.mak.orig	Fri Aug  5 13:12:20 2011
-+++ base/unix-dll.mak	Mon Nov 14 18:48:00 2011
+$OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
+--- base/unix-dll.mak.orig	Wed Feb  8 09:48:48 2012
++++ base/unix-dll.mak	Sun Jul  8 16:04:24 2012
 @@ -23,10 +23,6 @@
  #  export LD_LIBRARY_PATH=/insert-path-here/sobin
  #  export GS_LIB=/insert-path-here/lib
@@ -87,35 +87,35 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.3 2011/11/16 12:43:23 kili Exp $
  # all the targets are correct.
 @@ -117,19 +118,27 @@ sodebug:
  	fi
- 	$(MAKE) so-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
+ 	$(MAKE) so-subtarget$(FOR_MAC) GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
 +# NOTE: Differs from gs-9.02, may be wrong
  so-subtarget:
  	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
- 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)' prefix=$(prefix)\
 +	 USE_GTK=$(USE_GTK) \
  	 directories
  	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
- 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)' prefix=$(prefix)\
 +	 USE_GTK=$(USE_GTK) \
  	 $(AUXDIR)/echogs$(XEAUX) $(AUXDIR)/genarch$(XEAUX)
  	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS) $(LDFLAGS_SO)'\
--	 CFLAGS='$(CFLAGS_STANDARD) $(CFLAGS_SO) $(GCFLAGS) $(XCFLAGS)'\
-+	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)'\
+-	 CFLAGS='$(CFLAGS_STANDARD) $(CFLAGS_SO) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)'\
++	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)'\
 +	 USE_GTK=$(USE_GTK) \
  	 prefix=$(prefix)
 +	@echo USE_GTK = $(USE_GTK)
 +	@echo GSSOC = $(GSSOC)
 +	@echo GSSOX = $(GSSOX)
  	$(MAKE) $(SODEFS) GENOPT='$(GENOPT)' LDFLAGS='$(LDFLAGS)'\
- 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix)\
+ 	 CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(AC_CFLAGS) $(XCFLAGS)' prefix=$(prefix)\
 -	 $(GSSOC_XE) $(GSSOX_XE)
 +	 USE_GTK=$(USE_GTK) \
 +	 $(GSSOC) $(GSSOX)
  
- install-so:
- 	$(MAKE) install-so-subtarget BUILDDIRPREFIX=$(SODIRPREFIX)
-@@ -145,13 +154,11 @@ install-so-subtarget: so-subtarget
+ # special so-subtarget for MAC OS X
+ so-subtarget_1:
+@@ -161,13 +170,11 @@ install-so-subtarget: so-subtarget$(FOR_MAC)
  	-mkdir -p $(DESTDIR)$(bindir)
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
@@ -131,7 +131,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.3 2011/11/16 12:43:23 kili Exp $
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
  	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
-@@ -163,6 +170,8 @@ sodebuginstall:
+@@ -179,6 +186,8 @@ sodebuginstall:
  	$(MAKE) soinstall-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
  soinstall-subtarget: install-so install-scripts install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)
