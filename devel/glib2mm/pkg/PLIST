@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2012/03/28 09:24:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2012/07/11 10:44:20 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -389,6 +389,7 @@ share/doc/glibmm-${V}/reference/glibmm-${V}.tag
 share/doc/glibmm-${V}/reference/html/
 share/doc/glibmm-${V}/reference/html/annotated.html
 share/doc/glibmm-${V}/reference/html/bc_s.png
+share/doc/glibmm-${V}/reference/html/bdwn.png
 share/doc/glibmm-${V}/reference/html/classChecksumType.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Action-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Action.html
@@ -1121,9 +1122,27 @@ share/doc/glibmm-${V}/reference/html/classresize__policy.html
 share/doc/glibmm-${V}/reference/html/classresize__policy__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/closed.png
 share/doc/glibmm-${V}/reference/html/deprecated.html
+share/doc/glibmm-${V}/reference/html/dir_02fef2a40270467d72a7f717cf991d8a.html
+share/doc/glibmm-${V}/reference/html/dir_98c789a82e29670547769c353b486e1a.html
 share/doc/glibmm-${V}/reference/html/doxygen.css
 share/doc/glibmm-${V}/reference/html/doxygen.png
 share/doc/glibmm-${V}/reference/html/examples.html
+share/doc/glibmm-${V}/reference/html/ftv2blank.png
+share/doc/glibmm-${V}/reference/html/ftv2cl.png
+share/doc/glibmm-${V}/reference/html/ftv2doc.png
+share/doc/glibmm-${V}/reference/html/ftv2folderclosed.png
+share/doc/glibmm-${V}/reference/html/ftv2folderopen.png
+share/doc/glibmm-${V}/reference/html/ftv2lastnode.png
+share/doc/glibmm-${V}/reference/html/ftv2link.png
+share/doc/glibmm-${V}/reference/html/ftv2mlastnode.png
+share/doc/glibmm-${V}/reference/html/ftv2mnode.png
+share/doc/glibmm-${V}/reference/html/ftv2mo.png
+share/doc/glibmm-${V}/reference/html/ftv2node.png
+share/doc/glibmm-${V}/reference/html/ftv2ns.png
+share/doc/glibmm-${V}/reference/html/ftv2plastnode.png
+share/doc/glibmm-${V}/reference/html/ftv2pnode.png
+share/doc/glibmm-${V}/reference/html/ftv2splitbar.png
+share/doc/glibmm-${V}/reference/html/ftv2vertline.png
 share/doc/glibmm-${V}/reference/html/functions.html
 share/doc/glibmm-${V}/reference/html/functions_0x62.html
 share/doc/glibmm-${V}/reference/html/functions_0x63.html
@@ -1404,6 +1423,7 @@ share/doc/glibmm-${V}/reference/html/namespacemembers_eval_0x73.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_eval_0x74.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_eval_0x75.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func.html
+share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x62.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x63.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x64.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_func_0x65.html
@@ -1425,6 +1445,7 @@ share/doc/glibmm-${V}/reference/html/namespacemembers_type.html
 share/doc/glibmm-${V}/reference/html/namespacemembers_vars.html
 share/doc/glibmm-${V}/reference/html/namespaces.html
 share/doc/glibmm-${V}/reference/html/nav_f.png
+share/doc/glibmm-${V}/reference/html/nav_g.png
 share/doc/glibmm-${V}/reference/html/nav_h.png
 share/doc/glibmm-${V}/reference/html/open.png
 share/doc/glibmm-${V}/reference/html/pages.html
