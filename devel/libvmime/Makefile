@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/09 15:25:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/07/12 16:31:00 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -56,7 +56,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		EXTRA_CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-# SASL support needs GNU SASL
+# security/libgsasl; not real need for this so far
 CONFIGURE_ARGS += --disable-sasl
 
 pre-configure:
