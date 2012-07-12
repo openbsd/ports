@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/24 08:13:53 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/12 16:01:53 sebastia Exp $
 %%SHARED%%
 include/gsasl-compat.h
 include/gsasl-mech.h
@@ -9,6 +9,7 @@ lib/pkgconfig/
 lib/pkgconfig/libgsasl.pc
 share/locale/en@boldquot/LC_MESSAGES/libgsasl.mo
 share/locale/en@quot/LC_MESSAGES/libgsasl.mo
+share/locale/eo/LC_MESSAGES/libgsasl.mo
 share/locale/fi/LC_MESSAGES/libgsasl.mo
 share/locale/fr/LC_MESSAGES/libgsasl.mo
 share/locale/ga/LC_MESSAGES/libgsasl.mo
@@ -20,5 +21,6 @@ share/locale/ro/LC_MESSAGES/libgsasl.mo
 share/locale/sk/LC_MESSAGES/libgsasl.mo
 share/locale/sr/LC_MESSAGES/libgsasl.mo
 share/locale/sv/LC_MESSAGES/libgsasl.mo
+share/locale/uk/LC_MESSAGES/libgsasl.mo
 share/locale/vi/LC_MESSAGES/libgsasl.mo
 share/locale/zh_CN/LC_MESSAGES/libgsasl.mo

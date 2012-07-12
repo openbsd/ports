@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2012/03/29 13:38:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/12 16:01:53 sebastia Exp $
 
 COMMENT=	GNU implementation of the SASL framework
 
-DISTNAME=	libgsasl-1.4.4
+DISTNAME=	libgsasl-1.8.0
 CATEGORIES=	security
 HOMEPAGE=	http://www.gnu.org/software/gsasl/
 MASTER_SITES=	${MASTER_SITE_GNU:=gsasl/}
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-
-REVISION=	0
 
 SHARED_LIBS +=  gsasl 0.0 # 14.6
 
