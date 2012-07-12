@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/01/03 07:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/07/12 10:30:27 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
 REVISION-main=	3
-REVISION-mp3=	3
+REVISION-mp3=	4
 REVISION-vorbis=	3
 
 SHARED_LIBS=	beep	2.1
@@ -27,7 +27,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_PACKAGE_CDROM-mp3= patents
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
