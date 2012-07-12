@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2012/07/11 14:43:43 ajacoutot Exp $
+$OpenBSD: README-main,v 1.10 2012/07/12 11:58:15 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -40,9 +40,9 @@ _after_ "dbus_daemon".
 
 A note about accessibility
 ==========================
-Dependency on a11y packages is never enforced so to activate an
-assistive technology you need to explicitely install the corresponding
-packages:
+Dependency on a11y packages is never enforced so to activate a specific
+assistive technology that is not included by default, you need to
+explicitely install the corresponding package(s):
     * mousetweaks - mouse accessibility enhancements
     * orca - assistive technology for visually impaired
 
