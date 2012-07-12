@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.97 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2012/07/12 20:17:45 rpointel Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
-DISTNAME =		sylpheed-3.1.2
-REVISION=		0
+DISTNAME =		sylpheed-3.2.0
 
-SHARED_LIBS += 	 	sylph-0                   2.0 # 2.0
-SHARED_LIBS += 		sylpheed-plugin-0         2.0 # 2.0
+SHARED_LIBS += 	 	sylph-0                   2.1 # 2.1
+SHARED_LIBS += 		sylpheed-plugin-0         2.1 # 2.1
 
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
@@ -31,7 +30,7 @@ WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell assuan
 
 RUN_DEPENDS=	devel/desktop-file-utils
-MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.1/
+MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.2/
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
