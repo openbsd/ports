@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.71 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2012/07/12 10:59:13 ajacoutot Exp $
 
 COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.4.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		security
 
@@ -28,7 +28,7 @@ WANTLIB += pixman-1 png pthread pthread-stubs sasl2 soup-2.4 ssl
 WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++ gcr-base-3
 
 LIB_DEPENDS=		databases/openldap \
-			x11/gnome/libgnome-keyring>=3.1.92 \
+			x11/gnome/libgnome-keyring \
 			x11/gnome/gcr \
 			devel/libsoup \
 			security/gpgme \
