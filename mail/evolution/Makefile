@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2012/07/08 14:30:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.166 2012/07/12 12:04:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -140,18 +140,13 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:$
 CONFIGURE_ARGS=		--disable-static \
 			--enable-plugins=all \
 			--disable-nm \
-			--disable-sens \
 			--disable-connman \
 			--disable-mono \
 			--disable-python \
-			--disable-contact-maps \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
 			--with-krb5=/usr \
 			--with-krb5-includes=/usr/include/kerberosV
-
-# no gtkimageview release for gtk+3
-CONFIGURE_ARGS+=	--disable-image-inline
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
 
