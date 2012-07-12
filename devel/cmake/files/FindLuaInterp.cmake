@@ -19,29 +19,12 @@
 #  License text for the above reference.)
 
 SET(MODLUA_VERSION $ENV{MODLUA_VERSION})
+SET(MODLUA_BIN $ENV{MODLUA_BIN})
 
-IF(MODLUA_VERSION)
-  IF(MODLUA_VERSION MATCHES "^5\\.2$")
-    find_program(LUA_EXECUTABLE
-      NAMES lua52
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES bin
-      PATHS
-      ${LOCALBASE}
-    )
-  ELSE(MODLUA_VERSION MATCHES "^5\\.2$")
-    find_program(LUA_EXECUTABLE
-      NAMES lua51
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES bin
-      PATHS
-      ${LOCALBASE}
-    )
-  ENDIF(MODLUA_VERSION MATCHES "^5\\.2$")
-ELSE(MODLUA_VERSION)
-  find_program(LUA_EXECUTABLE
+IF(MODLUA_VERSION AND MODLUA_BIN)
+  SET(LUA_EXECUTABLE "${MODLUA_BIN}")
+ELSE(MODLUA_VERSION AND MODLUA_BIN)
+  FIND_PROGRAM(LUA_EXECUTABLE
     NAMES lua51 lua5.1 lua-5.1 lua52 lua5.2 lua-5.2 lua
     HINTS
     $ENV{LUA_DIR}
@@ -56,13 +39,13 @@ ELSE(MODLUA_VERSION)
     /opt/csw
     /opt
   )
-ENDIF(MODLUA_VERSION)
+ENDIF(MODLUA_VERSION AND MODLUA_BIN)
 
-include(FindPackageHandleStandardArgs)
+INCLUDE(FindPackageHandleStandardArgs)
 # handle the QUIETLY and REQUIRED arguments and set LUAINTERP_FOUND to TRUE if
 # all listed variables are TRUE
-find_package_handle_standard_args(LuaInterp DEFAULT_MSG LUA_EXECUTABLE)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(LuaInterp DEFAULT_MSG LUA_EXECUTABLE)
 
-mark_as_advanced(
+MARK_AS_ADVANCED(
   LUA_EXECUTABLE
 )

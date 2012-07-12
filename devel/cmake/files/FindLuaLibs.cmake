@@ -20,43 +20,20 @@
 #  License text for the above reference.)
 
 SET(MODLUA_VERSION $ENV{MODLUA_VERSION})
+SET(MODLUA_INCL_DIR $ENV{MODLUA_INCL_DIR})
 
-IF(MODLUA_VERSION)
-  IF(MODLUA_VERSION MATCHES "^5\\.2$")
-    find_path(LUA_INCLUDE_DIR lua.h
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES include/lua-5.2
-      PATHS
-      ${LOCALBASE}
-    )
-    find_library(LUA_LIBRARY
-      NAMES lua5.2
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES lib
-      PATHS
-      ${LOCALBASE}
-    )
-  ELSE(MODLUA_VERSION MATCHES "^5\\.2$")
-    find_path(LUA_INCLUDE_DIR lua.h
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES include/lua-5.1
-      PATHS
-      ${LOCALBASE}
-    )
-    find_library(LUA_LIBRARY
-      NAMES lua5.1
-      HINTS
-      $ENV{LUA_DIR}
-      PATH_SUFFIXES lib
-      PATHS
-      ${LOCALBASE}
-    )
-  ENDIF(MODLUA_VERSION MATCHES "^5\\.2$")
-ELSE(MODLUA_VERSION)
-  find_path(LUA_INCLUDE_DIR lua.h
+IF(MODLUA_VERSION AND MODLUA_INCL_DIR)
+  SET(LUA_INCLUDE_DIR "${MODLUA_INCL_DIR}")
+  FIND_LIBRARY(LUA_LIBRARY
+    NAMES lua${MODLUA_VERSION}
+    HINTS
+    $ENV{LUA_DIR}
+    PATH_SUFFIXES lib
+    PATHS
+    ${LOCALBASE}
+  )
+ELSE(MODLUA_VERSION AND MODLUA_INCL_DIR)
+  FIND_PATH(LUA_INCLUDE_DIR lua.h
     HINTS
     $ENV{LUA_DIR}
     PATH_SUFFIXES include/lua-5.1 include/lua51 include/lua5.1 include/lua-5.2 include/lua52 include/lua5.2 include/lua include
@@ -70,7 +47,7 @@ ELSE(MODLUA_VERSION)
     /opt/csw # Blastwave
     /opt
   )
-  find_library(LUA_LIBRARY
+  FIND_LIBRARY(LUA_LIBRARY
     NAMES lua5.1 lua51 lua-5.1 lua5.2 lua52 lua-5.2 lua
     HINTS
     $ENV{LUA_DIR}
@@ -85,25 +62,25 @@ ELSE(MODLUA_VERSION)
     /opt/csw
     /opt
   )
-ENDIF(MODLUA_VERSION)
+ENDIF(MODLUA_VERSION AND MODLUA_INCL_DIR)
 
-if(LUA_LIBRARY)
+IF(LUA_LIBRARY)
   # include the math library for Unix
-  if(UNIX AND NOT APPLE)
-    find_library(LUA_MATH_LIBRARY m)
-    set( LUA_LIBRARIES "${LUA_LIBRARY};${LUA_MATH_LIBRARY}" CACHE STRING "Lua Libraries")
+  IF(UNIX AND NOT APPLE)
+    FIND_LIBRARY(LUA_MATH_LIBRARY m)
+    SET(LUA_LIBRARIES "${LUA_LIBRARY};${LUA_MATH_LIBRARY}" CACHE STRING "Lua Libraries")
   # For Windows and Mac, don't need to explicitly include the math library
-  else(UNIX AND NOT APPLE)
-    set( LUA_LIBRARIES "${LUA_LIBRARY}" CACHE STRING "Lua Libraries")
-  endif(UNIX AND NOT APPLE)
-endif(LUA_LIBRARY)
+  ELSE(UNIX AND NOT APPLE)
+    SET(LUA_LIBRARIES "${LUA_LIBRARY}" CACHE STRING "Lua Libraries")
+  ENDIF(UNIX AND NOT APPLE)
+ENDIF(LUA_LIBRARY)
 
-include(FindPackageHandleStandardArgs)
+INCLUDE(FindPackageHandleStandardArgs)
 # handle the QUIETLY and REQUIRED arguments and set LUALIBS_FOUND to TRUE if
 # all listed variables are TRUE
-find_package_handle_standard_args(LuaLibs DEFAULT_MSG LUA_LIBRARIES LUA_INCLUDE_DIR)
+FIND_PACKAGE_HANDLE_STANDARD_ARGS(LuaLibs DEFAULT_MSG LUA_LIBRARIES LUA_INCLUDE_DIR)
 
-mark_as_advanced(
+MARK_AS_ADVANCED(
   LUA_INCLUDE_DIR
   LUA_LIBRARIES
   LUA_LIBRARY
