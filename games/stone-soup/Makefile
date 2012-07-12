@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/07/12 19:12:18 jasper Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -18,8 +18,10 @@ WRKSRC = 	${WRKDIST}/source
 MAKE_FILE = 	${WRKSRC}/makefile
 USE_GMAKE = 	Yes
 MAKE_FLAGS = 	CC="${CC}" CXX="${CXX}" \
+		CFLAGS="-I${LOCALBASE}/include" \
+		CXXFLAGS="-I${LOCALBASE}/include" \
 		LUA_INCLUDE_DIR=${MODLUA_INCL_DIR} \
-		LUA_LIB=-llua \
+		LUA_LIB=${MODLUA_LIB} \
 		SQLITE_INCLUDE_DIR=/usr/include \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		INSTALL_UGRP=root:wheel \
