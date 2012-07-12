@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Distant.pm,v 1.3 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Distant.pm,v 1.4 2012/07/12 20:27:19 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -19,6 +19,7 @@ use warnings;
 
 use DPB::Core;
 use OpenBSD::Paths;
+
 package DPB::Ssh;
 our @ISA = qw(DPB::Shell::Abstract);
 
@@ -75,7 +76,7 @@ sub exec
 	my ($self, @argv) = @_;
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
-			unshift @argv, "$k=$v";
+			unshift @argv, "$k=\'$v\'";
 		}
 	}
 	my $cmd = join(' ', @argv);
