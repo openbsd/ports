@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.99 2012/07/10 12:55:25 robert Exp $
+# $OpenBSD: Makefile,v 1.100 2012/07/12 19:35:17 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			20.0.1132.47
+V=			20.0.1132.57
 DISTNAME=		chromium-${V}
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -38,8 +37,8 @@ WANTLIB += execinfo expat fontconfig freetype gconf-2 gcrypt gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += plc4 png pthread pthread-stubs smime3 speex estdc++
-WANTLIB += xml2 xslt z
-WANTLIB += Xcomposite atk-1.0 usb-1.0
+WANTLIB += xml2 xslt
+WANTLIB += Xcomposite atk-1.0 usb usb-1.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -56,7 +55,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		x11/gnome/libgnome-keyring
 LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
-		devel/libusb1 \
+		devel/libusb-compat \
 		security/nss \
 		devel/gconf2 \
 		textproc/libxslt \
