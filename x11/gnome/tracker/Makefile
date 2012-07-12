@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/07/08 09:09:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2012/07/12 12:18:53 jasper Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,7 +21,7 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-evolution=	0
 REVISION-nautilus=	0
 
@@ -72,7 +72,7 @@ WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
 WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
-WANTLIB-main += crypto curl idn lua quvi ssl
+WANTLIB-main += crypto curl idn lua5.1 quvi ssl
 
 WANTLIB-evolution += ${WANTLIB}
 WANTLIB-evolution += asn1 atk-1.0 cairo cairo-gobject camel-1.2
