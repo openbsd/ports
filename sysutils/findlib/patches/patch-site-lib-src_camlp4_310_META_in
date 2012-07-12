@@ -1,0 +1,24 @@
+$OpenBSD: patch-site-lib-src_camlp4_310_META_in,v 1.1 2012/07/12 10:11:38 edd Exp $
+
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=630490
+
+--- site-lib-src/camlp4.310/META.in.orig	Thu Jul 12 10:18:41 2012
++++ site-lib-src/camlp4.310/META.in	Thu Jul 12 10:19:43 2012
+@@ -6,7 +6,7 @@ dnl This file is input of the m4 macro processor.
+ `directory = "'camlp4_dir`"'
+ 
+ `# For the toploop:'
+-`requires(byte,toploop) = "'camlp4_dynlink`"'
++`requires(byte,toploop) = "dynlink"'
+ `archive(byte,toploop,camlp4o) = "camlp4o.cma"'
+ `archive(byte,toploop,camlp4r) = "camlp4r.cma"'
+ 
+@@ -16,7 +16,7 @@ dnl This file is input of the m4 macro processor.
+ `preprocessor = "'camlp4_cmd`"'
+ 
+ `package "lib" ('
+-`  requires = "camlp4 'camlp4_dynlink`"'
++`  requires = "camlp4 dynlink"'
+ `  version = "[distributed with Ocaml]"'
+ `  description = "Camlp4 library"'
+ `  archive(byte) = "camlp4lib.cma"'
