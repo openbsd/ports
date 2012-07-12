@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.26 2012/01/31 10:51:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.27 2012/07/12 16:32:48 naddy Exp $
 @option no-default-conflict
 @conflict gnupg-<2
+@pkgpath ${BASE_PKGPATH},idea
 @bin bin/gpg
 bin/gpg-zip
 @bin bin/gpgsplit
