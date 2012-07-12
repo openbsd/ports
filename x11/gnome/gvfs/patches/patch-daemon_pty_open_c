@@ -1,7 +1,6 @@
-$OpenBSD: patch-daemon_pty_open_c,v 1.3 2012/07/10 10:15:19 mpi Exp $
+$OpenBSD: patch-daemon_pty_open_c,v 1.4 2012/07/12 11:35:36 ajacoutot Exp $
 
-Use openpty(3) rather than the Unix98 function family to be able to
-login using a password.
+https://bugzilla.gnome.org/show_bug.cgi?id=679790
 
 --- daemon/pty_open.c.orig	Tue May 15 20:01:50 2012
 +++ daemon/pty_open.c	Tue Jul 10 11:03:27 2012

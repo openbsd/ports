@@ -1,4 +1,7 @@
-$OpenBSD: patch-daemon_gvfsbackendsftp_c,v 1.1 2012/07/10 10:15:19 mpi Exp $
+$OpenBSD: patch-daemon_gvfsbackendsftp_c,v 1.2 2012/07/12 11:35:36 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679790
+
 --- daemon/gvfsbackendsftp.c.orig	Tue May 15 20:01:50 2012
 +++ daemon/gvfsbackendsftp.c	Mon Jul  9 12:24:52 2012
 @@ -71,8 +71,8 @@

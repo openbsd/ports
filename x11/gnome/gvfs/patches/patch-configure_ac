@@ -1,4 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2012/07/10 10:15:19 mpi Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2012/07/12 11:35:36 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679790
+
 --- configure.ac.orig	Mon Apr  9 16:58:43 2012
 +++ configure.ac	Mon Apr  9 16:58:49 2012
 @@ -108,8 +108,12 @@ AC_CHECK_FUNCS(getpt posix_openpt grantpt unlockpt pts
