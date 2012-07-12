@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.18 2012/07/11 10:10:57 jasper Exp $
+# $OpenBSD: lua.port.mk,v 1.19 2012/07/12 12:54:50 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -64,7 +64,7 @@ _MODLUA_RUN_DEPENDS=	lang/lua/5.1
 _MODLUA_RUN_DEPENDS=	lang/lua/5.2
 .endif
 
-MODLUA_LIB_DEPENDS=	${MODLUA_RUN_DEPENDS}
+MODLUA_LIB_DEPENDS=	${_MODLUA_RUN_DEPENDS}
 
 MODLUA_BIN=		${LOCALBASE}/bin/lua${MODLUA_DEP_VERSION}
 
