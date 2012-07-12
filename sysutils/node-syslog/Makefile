@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/13 08:37:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/12 21:42:54 jasper Exp $
 
 COMMENT =	module to support sending messages to syslog
 
 NPM_VERSION =	1.1.3
 NPM_NAME =	node-syslog
+REVISION =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://github.com/schamane/node-syslog

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/06/08 05:54:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/07/12 21:42:54 jasper Exp $
 
 COMMENT =	add-on for creating *nix daemons
 
 NPM_VERSION =	0.5.1
 NPM_NAME =	daemon
 CATEGORIES =	sysutils devel
-REVISION = 0
+REVISION = 	0
 
 HOMEPAGE =	https://github.com/indexzero/daemon.node/
 

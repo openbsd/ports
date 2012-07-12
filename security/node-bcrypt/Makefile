@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/06/28 17:33:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/12 21:42:54 jasper Exp $
 
-COMMENT =	bcrypt hashing library for nodejs
+COMMENT =	bcrypt hashing library for Node.js
 
 NPM_VERSION =	0.6.0
 NPM_NAME =	bcrypt
+REVISION =	0
 CATEGORIES =	security
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
