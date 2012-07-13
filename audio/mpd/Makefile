@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2012/05/24 18:36:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.47 2012/07/13 14:10:36 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.16.8
@@ -34,32 +34,32 @@ FLAVORS =		tremor
 FLAVOR ?=
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--enable-ao \
-			--enable-pipe-output \
+CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-alsa \
-			--disable-oss \
-			--disable-pulse \
-			--disable-jack \
-			--enable-mikmod \
-			--enable-curl \
-			--disable-wavpack \
-			--bindir=${PREFIX}/sbin \
-			--with-zeroconf=no \
 			--disable-cue \
-			--disable-sqlite \
+			--disable-ffmpeg \
+			--disable-gme \
+			--disable-jack \
+			--disable-libwrap \
 			--disable-mms \
 			--disable-modplug \
-			--disable-sidplay \
-			--disable-ffmpeg \
-			--enable-mpc \
-			--disable-libwrap \
-			--enable-lsr \
-			--enable-audiofile \
-			--disable-gme \
-			--enable-mad \
 			--disable-mpg123 \
+			--disable-oss \
+			--disable-pulse \
+			--disable-sidplay \
+			--disable-sqlite \
+			--disable-twolame-encoder \
+			--disable-wavpack \
+			--enable-ao \
+			--enable-audiofile \
+			--enable-curl \
+			--enable-lsr \
+			--enable-mad \
+			--enable-mikmod \
+			--enable-mpc \
+			--enable-pipe-output \
 			--enable-sndfile \
-			--disable-twolame-encoder
+			--with-zeroconf=no
 
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
