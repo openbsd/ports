@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2009/05/18 06:02:45 phessler Exp $
+#	$OpenBSD: Makefile,v 1.2 2012/07/13 13:18:12 phessler Exp $
 PKG_ARCH =		*
 
 COMMENT =		everyone was wrong. monsters do exist.
@@ -6,7 +6,7 @@ V =			0.0.20090509
 DISTNAME =		marathon-evil-${V}
 HOMEPAGE =		http://bighouse.bungie.org/evil/
 
-DISTFILES =		MarathonEvil.zip
+DISTFILES =		MarathonEvil.zip:5
 
 ## You may, however, freely distribute this adventure as a whole, unaltered,
 ## adventure to anyone and any place.

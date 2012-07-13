@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.1.1.1 2009/05/18 06:03:57 phessler Exp $
+#	$OpenBSD: Makefile,v 1.2 2012/07/13 13:18:12 phessler Exp $
 PKG_ARCH =		*
 
 COMMENT =		dark alternate version of the Marathon universe
@@ -6,7 +6,7 @@ V =			0.0.20090509
 DISTNAME =		marathon-red-${V}
 HOMEPAGE =		http://bighouse.bungie.org/red/
 
-DISTFILES =		MarathonRED.zip
+DISTFILES =		MarathonRED.zip:5
 
 PERMIT_PACKAGE_CDROM =	not for sale
 PERMIT_PACKAGE_FTP =	YES
