@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2012/06/06 18:27:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2012/07/13 15:03:19 kili Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 COMMENT-utils=	PDF conversion tools and utilities
 
-V=		0.18.4
+V=		0.20.2
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -14,15 +14,11 @@ PKGNAME-qt=	poppler-qt-$V
 PKGNAME-qt4=	poppler-qt4-$V
 OLDSHIT = poppler-0.16.7
 
-REVISION-main=	0
-REVISION-qt=	0
-REVISION-qt4=	0
-
-SHARED_LIBS +=	poppler              11.0
-SHARED_LIBS +=  poppler-cpp          1.0
-SHARED_LIBS +=	poppler-glib         9.0
-SHARED_LIBS +=	poppler-qt           8.0
-SHARED_LIBS +=	poppler-qt4          8.0
+SHARED_LIBS +=	poppler              12.0
+SHARED_LIBS +=  poppler-cpp          2.0
+SHARED_LIBS +=	poppler-glib         10.0
+SHARED_LIBS +=	poppler-qt           9.0
+SHARED_LIBS +=	poppler-qt4          9.0
 DISTFILES = ${DISTNAME}${EXTRACT_SUFX} ${OLDSHIT}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://poppler.freedesktop.org/
@@ -67,7 +63,7 @@ BUILD_DEPENDS+= devel/gobject-introspection
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
 		graphics/cairo \
-		graphics/lcms \
+		graphics/lcms2 \
 		graphics/openjpeg \
 		graphics/png \
 		graphics/tiff
@@ -85,14 +81,14 @@ WANTLIB-main=	${cWANTLIB} Xext Xfixes ffi \
 		glib-2.0 gobject-2.0 gthread-2.0 \
 		pixman-1 openjpeg \
 		X11 Xau Xdamage Xdmcp Xrender cairo pcre png \
-		pthread-stubs xcb xcb-render lcms GL Xxf86vm \
+		pthread-stubs xcb xcb-render lcms2 GL Xxf86vm \
 		drm xcb-shm ${MODGETTEXT_WANTLIB}
-WANTLIB-qt=	${cWANTLIB} lcms openjpeg poppler png ${MODQT3_WANTLIB}
+WANTLIB-qt=	${cWANTLIB} lcms2 openjpeg poppler png ${MODQT3_WANTLIB}
 WANTLIB-qt4=	${cWANTLIB} ${MODQT4_WANTLIB} ICE QtGui QtXml SM X11 Xext Xi \
-                Xinerama Xrender lcms openjpeg png poppler QtCore QtGui QtXml
+                Xinerama Xrender lcms2 openjpeg png poppler QtCore QtGui QtXml
 WANTLIB-utils=	GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm \
 		c cairo drm expat ffi fontconfig freetype glib-2.0 \
-		gobject-2.0 gthread-2.0 jpeg lcms m pcre pixman-1 png \
+		gobject-2.0 gthread-2.0 jpeg lcms2 m pcre pixman-1 png \
 		pthread pthread-stubs stdc++ tiff xcb xcb-render xcb-shm \
 		openjpeg poppler z ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 

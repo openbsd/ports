@@ -1,7 +1,7 @@
-$OpenBSD: patch-poppler_XRef_cc,v 1.8 2011/06/04 19:03:19 kili Exp $
---- poppler/XRef.cc.orig	Mon Dec 27 21:44:28 2010
-+++ poppler/XRef.cc	Mon Apr 25 13:00:42 2011
-@@ -922,49 +922,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
+$OpenBSD: patch-poppler_XRef_cc,v 1.9 2012/07/13 15:03:19 kili Exp $
+--- poppler/XRef.cc.orig	Thu May 10 22:05:44 2012
++++ poppler/XRef.cc	Mon Jul  9 14:47:58 2012
+@@ -941,49 +941,38 @@ void XRef::setEncryption(int permFlagsA, GBool ownerPa
  }
  
  GBool XRef::okToPrint(GBool ignoreOwnerPW) {
@@ -58,4 +58,4 @@ $OpenBSD: patch-poppler_XRef_cc,v 1.8 2011/06/04 19:03:19 kili Exp $
 +  return gTrue;
  }
  
- Object *XRef::fetch(int num, int gen, Object *obj, std::set<int> *fetchOriginatorNums) {
+ Object *XRef::fetch(int num, int gen, Object *obj, int recursion) {
