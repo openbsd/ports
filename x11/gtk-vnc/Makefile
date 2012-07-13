@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2012/03/12 17:00:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2012/07/13 07:15:57 ajacoutot Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.5.0
+GNOME_VERSION=		0.5.1
 
 PKGNAME=		${DISTNAME}
 
-SHARED_LIBS +=  gtk-vnc-2.0		0.0 # 0.2
-SHARED_LIBS +=  gvnc-1.0		0.0 # 0.1
+SHARED_LIBS +=  gvnc-1.0             0.1      # 0.1
+SHARED_LIBS +=  gtk-vnc-2.0          0.1      # 0.2
 
 CATEGORIES=		x11 net
 
@@ -42,6 +42,7 @@ MODGNOME_TOOLS= 	goi vala
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--without-examples \
 			--with-sasl \
+			--without-pulseaudio \
 			--without-libview \
 			--with-gtk=3.0
 

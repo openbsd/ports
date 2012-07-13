@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2012/03/12 17:00:54 ajacoutot Exp $
---- configure.orig	Wed Dec 21 18:07:54 2011
-+++ configure	Mon Mar 12 17:12:28 2012
-@@ -10818,7 +10818,6 @@ openbsd*)
+$OpenBSD: patch-configure,v 1.12 2012/07/13 07:15:57 ajacoutot Exp $
+--- configure.orig	Thu Jul 12 10:37:45 2012
++++ configure	Fri Jul 13 09:01:57 2012
+@@ -10889,7 +10889,6 @@ openbsd*)
      *)				need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.11 2012/03/12 17:00:54 ajacoutot Exp $
    shlibpath_var=LD_LIBRARY_PATH
    if test -z "`echo __ELF__ | $CC -E - | $GREP __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
      case $host_os in
-@@ -13837,6 +13836,12 @@ case "$host" in
+@@ -14629,6 +14628,12 @@ case "$host" in
      NO_UNDEFINED_LDFLAGS="-no-undefined"
      ;;
  
@@ -22,95 +22,3 @@ $OpenBSD: patch-configure,v 1.11 2012/03/12 17:00:54 ajacoutot Exp $
    *)
      NO_UNDEFINED_FLAGS="-Wl,--no-undefined"
      VERSION_SCRIPT_FLAGS=-Wl,--version-script=
-@@ -14615,91 +14620,8 @@ _ACEOF
- 
- 
- 
--pkg_failed=no
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for PULSEAUDIO" >&5
--$as_echo_n "checking for PULSEAUDIO... " >&6; }
--
--if test -n "$PULSEAUDIO_CFLAGS"; then
--    pkg_cv_PULSEAUDIO_CFLAGS="$PULSEAUDIO_CFLAGS"
-- elif test -n "$PKG_CONFIG"; then
--    if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libpulse-simple\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "libpulse-simple") 2>&5
--  ac_status=$?
--  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
--  test $ac_status = 0; }; then
--  pkg_cv_PULSEAUDIO_CFLAGS=`$PKG_CONFIG --cflags "libpulse-simple" 2>/dev/null`
--else
--  pkg_failed=yes
--fi
-- else
--    pkg_failed=untried
--fi
--if test -n "$PULSEAUDIO_LIBS"; then
--    pkg_cv_PULSEAUDIO_LIBS="$PULSEAUDIO_LIBS"
-- elif test -n "$PKG_CONFIG"; then
--    if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libpulse-simple\""; } >&5
--  ($PKG_CONFIG --exists --print-errors "libpulse-simple") 2>&5
--  ac_status=$?
--  $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
--  test $ac_status = 0; }; then
--  pkg_cv_PULSEAUDIO_LIBS=`$PKG_CONFIG --libs "libpulse-simple" 2>/dev/null`
--else
--  pkg_failed=yes
--fi
-- else
--    pkg_failed=untried
--fi
--
--
--
--if test $pkg_failed = yes; then
--   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
--
--if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
--        _pkg_short_errors_supported=yes
--else
--        _pkg_short_errors_supported=no
--fi
--        if test $_pkg_short_errors_supported = yes; then
--	        PULSEAUDIO_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libpulse-simple" 2>&1`
--        else
--	        PULSEAUDIO_PKG_ERRORS=`$PKG_CONFIG --print-errors "libpulse-simple" 2>&1`
--        fi
--	# Put the nasty error message in config.log where it belongs
--	echo "$PULSEAUDIO_PKG_ERRORS" >&5
--
--	{ $as_echo "$as_me:${as_lineno-$LINENO}: Not building against libpulse" >&5
--$as_echo "$as_me: Not building against libpulse" >&6;}
--elif test $pkg_failed = untried; then
--     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
--	{ $as_echo "$as_me:${as_lineno-$LINENO}: Not building against libpulse" >&5
--$as_echo "$as_me: Not building against libpulse" >&6;}
--else
--	PULSEAUDIO_CFLAGS=$pkg_cv_PULSEAUDIO_CFLAGS
--	PULSEAUDIO_LIBS=$pkg_cv_PULSEAUDIO_LIBS
--        { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
--$as_echo "yes" >&6; }
--	WANT_PULSEAUDIO="yes"
--fi
--if test "x$WANT_PULSEAUDIO" = xyes; then
--
--cat >>confdefs.h <<_ACEOF
--#define HAVE_PULSEAUDIO 1
--_ACEOF
--
--fi
-- if test "x$WANT_PULSEAUDIO" = "xyes"; then
--  HAVE_PULSEAUDIO_TRUE=
--  HAVE_PULSEAUDIO_FALSE='#'
--else
-   HAVE_PULSEAUDIO_TRUE='#'
-   HAVE_PULSEAUDIO_FALSE=
--fi
--
- 
- 
- 
