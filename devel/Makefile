@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1052 2012/07/09 09:30:36 edd Exp $
+# $OpenBSD: Makefile,v 1.1053 2012/07/13 08:46:56 edd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -392,7 +392,9 @@
      SUBDIR += node-generic-pool
      SUBDIR += node-mnm
      SUBDIR += nspr
+     SUBDIR += ocaml-batteries
      SUBDIR += ocaml-calendar
+     SUBDIR += ocaml-camomile
      SUBDIR += ocaml-pcre
      SUBDIR += ode
      SUBDIR += ois
@@ -402,6 +404,7 @@
      SUBDIR += openocd
      SUBDIR += ophis
      SUBDIR += orc
+     SUBDIR += ounit
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
