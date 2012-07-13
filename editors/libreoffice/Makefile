@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/07/09 08:08:53 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2012/07/13 12:36:18 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.5
-VERSION=	3.5.4.2
+VERSION=	3.5.5.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-core-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -16,15 +16,13 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
-
 EPOCH=		0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.libreoffice.org/
 
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.5.4/ \
+MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/3.5.5/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/src/
 MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
@@ -53,7 +51,7 @@ DISTFILES+=	${EDISTFILES} \
 		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
 		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:0 \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
-		2fa6028324347860e684e75310818d43-libvisio-0.0.16.tar.bz2:0 \
+		a9a1db27688bad49418667b434d29c1f-libvisio-0.0.18.tar.bz2:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
 		34dd7951abbda99b7a75a09993a37965-libwps-0.2.4.tar.bz2:0 \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \

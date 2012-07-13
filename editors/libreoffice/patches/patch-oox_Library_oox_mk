@@ -1,7 +1,7 @@
-$OpenBSD: patch-oox_Library_oox_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
---- oox/Library_oox.mk.orig.port	Mon Mar 19 15:55:25 2012
-+++ oox/Library_oox.mk	Mon Mar 19 15:56:20 2012
-@@ -79,6 +79,16 @@ $(eval $(call gb_Library_use_external,oox,openssl))
+$OpenBSD: patch-oox_Library_oox_mk,v 1.2 2012/07/13 12:36:18 robert Exp $
+--- oox/Library_oox.mk.orig.port	Tue Jul  3 13:01:28 2012
++++ oox/Library_oox.mk	Thu Jul 12 13:12:51 2012
+@@ -80,6 +80,16 @@ $(eval $(call gb_Library_use_external,oox,openssl))
  
  $(eval $(call gb_Library_set_componentfile,oox,oox/util/oox))
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-oox_Library_oox_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
  $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/core/binarycodec \
      oox/source/core/binaryfilterbase \
-@@ -130,12 +140,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
+@@ -131,12 +141,6 @@ $(eval $(call gb_Library_add_exception_objects,oox,\
      oox/source/drawingml/color \
      oox/source/drawingml/connectorshapecontext \
      oox/source/drawingml/customshapegeometry \

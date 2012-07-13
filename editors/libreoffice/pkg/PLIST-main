@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2012/07/13 12:36:18 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -1349,8 +1349,6 @@ lib/libreoffice/share/extensions/dict-de/de_DE_frami.dic
 lib/libreoffice/share/extensions/dict-de/description.xml
 lib/libreoffice/share/extensions/dict-de/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-de/hyph_de.dic
-lib/libreoffice/share/extensions/dict-de/th_de_AT_v2.dat
-lib/libreoffice/share/extensions/dict-de/th_de_AT_v2.idx
 lib/libreoffice/share/extensions/dict-de/th_de_DE_v2.dat
 lib/libreoffice/share/extensions/dict-de/th_de_DE_v2.idx
 lib/libreoffice/share/extensions/dict-en/
@@ -1634,6 +1632,8 @@ lib/libreoffice/share/extensions/dict-sv/META-INF/manifest.xml
 lib/libreoffice/share/extensions/dict-sv/README_th_sv_SE.txt
 lib/libreoffice/share/extensions/dict-sv/description.xml
 lib/libreoffice/share/extensions/dict-sv/dictionaries.xcu
+lib/libreoffice/share/extensions/dict-sv/sv_FI.aff
+lib/libreoffice/share/extensions/dict-sv/sv_FI.dic
 lib/libreoffice/share/extensions/dict-sv/sv_SE.aff
 lib/libreoffice/share/extensions/dict-sv/sv_SE.dic
 lib/libreoffice/share/extensions/dict-sv/th_sv_SE.dat

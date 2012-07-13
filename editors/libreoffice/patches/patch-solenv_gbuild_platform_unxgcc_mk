@@ -1,6 +1,6 @@
-$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.1 2012/04/03 08:56:50 robert Exp $
---- solenv/gbuild/platform/unxgcc.mk.orig.port	Sun Apr  1 16:30:35 2012
-+++ solenv/gbuild/platform/unxgcc.mk	Sun Apr  1 16:31:14 2012
+$OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.2 2012/07/13 12:36:18 robert Exp $
+--- solenv/gbuild/platform/unxgcc.mk.orig.port	Tue Jul  3 13:01:28 2012
++++ solenv/gbuild/platform/unxgcc.mk	Thu Jul 12 13:12:52 2012
 @@ -103,7 +103,7 @@ endif
  ifeq ($(HAVE_CXX0X),TRUE)
  #Currently, as well as for its own merits, c++11/c++0x mode allows use to use
@@ -8,5 +8,5 @@ $OpenBSD: patch-solenv_gbuild_platform_unxgcc_mk,v 1.1 2012/04/03 08:56:50 rober
 -gb_CXXFLAGS += -std=c++0x
 +gb_CXXFLAGS += -std=gnu++0x
  
- #We have so many std::auto_ptr uses that we need to be able to disable
- #warnings for those so that -Werror continues to be useful, seeing as moving
+ # Does anybody care if deprecated stuff is used on a release branch?
+ gb_CXXFLAGS += -Wno-deprecated-declarations -Wno-deprecated
