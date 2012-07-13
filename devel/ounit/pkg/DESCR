@@ -1,0 +1,13 @@
+OUnit is a unit test framework for OCaml. It allows one to easily create
+unit-tests for OCaml code. It is based on HUnit, a unit testing
+framework for Haskell. It is similar to JUnit, and other XUnit testing
+frameworks.
+
+A test-oriented methodology for software development is most effective
+whent tests are easy to create, change, and execute. The JUnit tool
+pioneerded for test-first development in Java. OUnit is an adaptation of
+JUnit to OCaml.
+
+With OUnit, as with JUnit, you can easily create tests, name them, group
+them into suites, and execute them, with the framework checking the
+results automatically. 
