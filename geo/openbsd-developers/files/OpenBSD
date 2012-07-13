@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.85 2012/07/11 11:33:16 zinke Exp $
+# $OpenBSD: OpenBSD,v 1.86 2012/07/13 11:43:20 bmercer Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -34,6 +34,7 @@
 40.4		-79.7		"jaredy"	# Jared Yanovich
 40.552889	-8.333124	"rui"		# Rui Reis
 40.721300	-73.858770	"ray"		# Ray Lai
+41.2839		-81.2242	"bmercer"	# Brandon Mercer
 41.92		-87.70		"jcs"		# joshua stein
 42.2731		-83.782		"aaron"		# Aaron Campbell
 42.49538	-82.89954	"nick"		# Nick Holland
