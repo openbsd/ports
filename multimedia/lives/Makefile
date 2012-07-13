@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/11/22 15:41:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/13 12:55:07 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		video editor and a VJ tool
 V =			1.0.10
 DISTNAME =		LiVES-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		weed		0.0 # 0.2
 SHARED_LIBS +=		weed_slice	0.0 # 0.2
