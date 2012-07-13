@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_sp-image_cpp,v 1.1 2011/07/08 20:38:00 naddy Exp $
+$OpenBSD: patch-src_sp-image_cpp,v 1.2 2012/07/13 15:10:47 kili Exp $
 
 Fix build with png-1.5.
 
---- src/sp-image.cpp.orig	Wed Jul  6 18:23:19 2011
-+++ src/sp-image.cpp	Wed Jul  6 18:23:45 2011
-@@ -388,7 +388,7 @@ static bool readPngAndHeaders( PushPull &youme, gint &
+--- src/sp-image.cpp.orig	Thu Jul 12 18:27:13 2012
++++ src/sp-image.cpp	Thu Jul 12 18:27:13 2012
+@@ -389,7 +389,7 @@ static bool readPngAndHeaders( PushPull &youme, gint &
                  {
                      char* name = 0;
                      int compression_type = 0;
