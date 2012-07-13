@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1053 2012/07/13 08:46:56 edd Exp $
+# $OpenBSD: Makefile,v 1.1054 2012/07/13 18:21:58 sebastia Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -803,6 +803,7 @@
      SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
+     SUBDIR += p5-Proc-PID-File
      SUBDIR += p5-Proc-Simple
      SUBDIR += p5-Rcs
      SUBDIR += p5-Readonly
