@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/30 12:50:14 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2012/07/13 15:06:55 kili Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.1.25
 XFCE_GOODIE=	tumbler
+REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -33,7 +34,7 @@ WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xrender Xxf86vm c cairo dbus-1 dbus-glib-1
 WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 jpeg lcms m openjpeg
+WANTLIB += gthread-2.0 jpeg lcms2 m openjpeg
 WANTLIB += pcre pixman-1 png poppler poppler-glib
 WANTLIB += pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += xml2 z ffi bz2 stdc++ tiff gsf-1

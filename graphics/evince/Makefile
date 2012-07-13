@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/07/08 10:33:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2012/07/13 15:11:41 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-djvu=	0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
@@ -59,7 +59,7 @@ LIB_DEPENDS=	x11/gtk+3
 
 WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 \
 		gnome-keyring gs gcrypt gpg-error \
-		jpeg pthread tiff xml2 lcms openjpeg \
+		jpeg pthread tiff xml2 lcms2 openjpeg \
 		poppler poppler-glib spectre gnome-keyring
 LIB_DEPENDS-main= print/poppler \
 		print/libspectre \
