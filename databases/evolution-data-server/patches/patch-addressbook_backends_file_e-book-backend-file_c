@@ -1,9 +1,14 @@
-$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.12 2012/06/18 11:15:22 jasper Exp $
+$OpenBSD: patch-addressbook_backends_file_e-book-backend-file_c,v 1.13 2012/07/13 14:31:04 ajacoutot Exp $
 
 On OpenBSD, time_t is an int.
 
+From 9ce3be5e6c44ac07c0dd8020627073c7427e7677 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Tue, 19 Jun 2012 19:17:04 +0000
+Subject: e_book_backend_file_open: Fix directory existence test.
+
 --- addressbook/backends/file/e-book-backend-file.c.orig	Mon Jun 18 00:09:39 2012
-+++ addressbook/backends/file/e-book-backend-file.c	Mon Jun 18 13:06:30 2012
++++ addressbook/backends/file/e-book-backend-file.c	Fri Jul 13 16:21:56 2012
 @@ -759,7 +759,7 @@ e_book_backend_file_create_unique_id (void)
  	 * it's doubtful 2^32 id's will be created in a second, so we
  	 * should be okay. */
@@ -13,3 +18,12 @@ On OpenBSD, time_t is an int.
  }
  
  static gchar *
+@@ -1894,7 +1894,7 @@ e_book_backend_file_open (EBookBackendSync *backend,
+ 	source = e_backend_get_source (E_BACKEND (backend));
+ 	dirname = e_book_backend_file_extract_path_from_source (source, GET_PATH_DB_DIR);
+ 
+-	if (!g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
++	if (only_if_exists && !g_file_test (dirname, G_FILE_TEST_IS_DIR)) {
+ 		g_free (dirname);
+ 		g_propagate_error (perror, EDB_ERROR (NO_SUCH_BOOK));
+ 		return;
