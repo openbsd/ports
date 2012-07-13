@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/13 18:18:30 sebastia Exp $
+${P5SITE}/Proc/
+${P5SITE}/Proc/PID/
+${P5SITE}/Proc/PID/File.pm
+@man man/man3p/Proc::PID::File.3p
