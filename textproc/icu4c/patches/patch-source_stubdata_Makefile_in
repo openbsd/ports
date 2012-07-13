@@ -1,3 +1,5 @@
+$OpenBSD: patch-source_stubdata_Makefile_in,v 1.6 2012/07/13 07:23:20 ajacoutot Exp $
+
 Needed to fix a linker warning message about size mismatch. Credits to
 Andreas Vogele <andreas@kurzegrasse.de> for this one.
 
