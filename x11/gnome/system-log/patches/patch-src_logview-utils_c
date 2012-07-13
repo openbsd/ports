@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_logview-utils_c,v 1.1 2012/07/13 10:20:21 ajacoutot Exp $
+$OpenBSD: patch-src_logview-utils_c,v 1.2 2012/07/13 10:26:30 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679845
+
 --- src/logview-utils.c.orig	Fri Jul 13 12:16:32 2012
 +++ src/logview-utils.c	Fri Jul 13 12:16:54 2012
 @@ -24,6 +24,7 @@
