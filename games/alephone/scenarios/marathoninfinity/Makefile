@@ -1,21 +1,13 @@
-#	$OpenBSD: Makefile,v 1.7 2012/06/09 11:26:02 sthen Exp $
-PKG_ARCH-main =		*
-PKG_ARCH-hires =	*
+#	$OpenBSD: Makefile,v 1.8 2012/07/13 16:55:22 phessler Exp $
+PKG_ARCH =		*
 
-COMMENT-main =		marathon infinity data files
-COMMENT-hires =		hires graphics and sounds
-V =			0.0.20090509
-DISTNAME =		marathoninfinity-${V}
-PKGNAME-main =		marathoninfinity-${V}
-REVISION-main =		0
-PKGNAME-hires =		marathoninfinity-hires-${V}
-REVISION-hires =	1
+COMMENT =		marathon infinity data files
+V =			20120514
+DISTNAME =		marathoninfinity-0.0.${V}
+PKGNAME =		marathoninfinity-0.0.${V}
 HOMEPAGE =		http://source.bungie.org/get/
 
-DISTFILES =		MarathonInfinity.zip
-DISTFILES +=		LandscapeEnhancementPackv10.zip:0
-DISTFILES +=		TotalTextureEnhancementv61.zip:1
-DISTFILES +=		shots_fired.zip:2
+DISTFILES =		MarathonInfinity-${V}-Data.zip:5
 DISTFILES +=		Trilogy_Manual.pdf:4
 
 # http://trilogyrelease.bungie.org/faq.html
@@ -24,11 +16,7 @@ PERMIT_PACKAGE_FTP =	YES
 PERMIT_DISTFILES_CDROM = not for sale
 PERMIT_DISTFILES_FTP =	YES
 
-MULTI_PACKAGES =	-main -hires
-RUN_DEPENDS-hires =	games/alephone/scenarios/marathoninfinity
-
-EXTRACT_ONLY =		MarathonInfinity.zip LandscapeEnhancementPackv10.zip \
-			    TotalTextureEnhancementv61.zip shots_fired.zip
+EXTRACT_ONLY =		MarathonInfinity-${V}-Data.zip
 INSTALL_LOC =		${PREFIX}/share/alephone
 INSTALL_MI =		${INSTALL_LOC}/Infinity
 
@@ -36,15 +24,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${INSTALL_MI}
 	# Marathon Infinity
 	@cd ${WRKDIR}/"Marathon Infinity"/ && pax -rw . ${INSTALL_MI}
-	# LEP for MI
-	${INSTALL_DATA_DIR} ${INSTALL_MI}/Landscapes
-	@cd ${WRKDIR}/"Landscape Enhancement Package"/"Marathon 2 Durandal"/"Landscapes (put content in 'Aleph One' folder) "/Landscapes/ && pax -rw . ${INSTALL_MI}/Landscapes
-	# Shots Fired
-	${INSTALL_DATA_DIR} ${INSTALL_MI}/tex/shots/
-	@cd ${WRKDIR}/tex/shots/ && pax -rw . ${INSTALL_MI}/Scripts/
-	# TEP for MI
-	${INSTALL_DATA_DIR} ${INSTALL_MI}/Textures/
-	@cd ${WRKDIR}/Texture\ Enhancement\ Package\ 6.1/Texture\ Folders/Textures/Marathon\ 2\ Textures/ && pax -rw . ${INSTALL_MI}/Textures/
 	${INSTALL_SCRIPT} ${FILESDIR}/marathoninfinity.sh ${PREFIX}/bin/marathoninfinity
 	${INSTALL_DATA} ${FULLDISTDIR}/Trilogy_Manual.pdf ${INSTALL_MI}
 
