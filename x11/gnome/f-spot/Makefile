@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2012/07/13 16:57:39 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -59,7 +59,7 @@ MODGCONF2_SCHEMAS_DIR=	f-spot
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	--enable-shave=no \
+CONFIGURE_ARGS+=	--disable-shave \
 			--disable-static
 
 DLLMAP_FILES=		lib/unique-sharp/unique/unique-sharp.dll.config \
