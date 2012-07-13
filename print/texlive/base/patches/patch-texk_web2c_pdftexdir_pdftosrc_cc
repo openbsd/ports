@@ -1,0 +1,16 @@
+$OpenBSD: patch-texk_web2c_pdftexdir_pdftosrc_cc,v 1.1 2012/07/13 15:17:41 kili Exp $
+
+XRef::getSize() had been removed with poppler-0.20, so use
+XRef::getNumObjects(), which returns the same value.
+
+--- texk/web2c/pdftexdir/pdftosrc.cc.origy	Mon May  2 14:27:51 2011
++++ texk/web2c/pdftexdir/pdftosrc.cc	Wed Jul 11 15:56:50 2012
+@@ -132,7 +132,7 @@ int main(int argc, char *argv[])
+         exit(1);
+     }
+     if (extract_xref_table) {
+-        int size = xref->getSize();
++        int size = xref->getNumObjects();
+         int i;
+         for (i = 0; i < size; i++) {
+             if (xref->getEntry(i)->offset == 0xffffffff)

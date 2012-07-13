@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.57 2012/02/17 13:41:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.58 2012/07/13 15:17:41 kili Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME =		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS =		kpathsea	4.0
 SHARED_LIBS +=		ptexenc		1.0
 
 WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
-WANTLIB +=		fontconfig freetype gd jpeg lcms m ncurses
+WANTLIB +=		fontconfig freetype gd jpeg lcms2 m ncurses
 WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
 WANTLIB +=		t1>=4 tiff ttf xcb z
 
