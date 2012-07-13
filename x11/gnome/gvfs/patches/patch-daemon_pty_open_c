@@ -1,6 +1,9 @@
-$OpenBSD: patch-daemon_pty_open_c,v 1.4 2012/07/12 11:35:36 ajacoutot Exp $
+$OpenBSD: patch-daemon_pty_open_c,v 1.5 2012/07/13 15:23:59 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679790
+From 2fec402d6523e4cf416d754f69d012dc67a58a2e Mon Sep 17 00:00:00 2001
+From: Martin Pieuchot <mpi@openbsd.org>
+Date: Fri, 13 Jul 2012 14:51:39 +0000
+Subject: daemon: Support allocating PTYs through openpty on BSD
 
 --- daemon/pty_open.c.orig	Tue May 15 20:01:50 2012
 +++ daemon/pty_open.c	Tue Jul 10 11:03:27 2012
