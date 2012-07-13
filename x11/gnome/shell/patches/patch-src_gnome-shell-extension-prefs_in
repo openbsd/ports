@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gnome-shell-extension-prefs_in,v 1.1 2012/07/13 12:01:35 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679847
+
+--- src/gnome-shell-extension-prefs.in.orig	Fri Jul 13 13:48:34 2012
++++ src/gnome-shell-extension-prefs.in	Fri Jul 13 13:48:39 2012
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ if [ -n "$GI_TYPELIB_PATH" ]; then
+     export GI_TYPELIB_PATH=@pkglibdir@
