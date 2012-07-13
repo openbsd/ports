@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/08/28 10:46:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/07/13 10:11:59 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
-DISTNAME =		terminus-font-4.36
+DISTNAME =		terminus-font-4.38
 CATEGORIES =		fonts x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
@@ -42,5 +42,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${FONTDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${FONTDIR}
 	${INSTALL_DATA} ${WRKBUILD}/fonts.alias ${FONTDIR}/fonts.alias-terminus
+
+# XXX workaround for 4.38
+post-extract:
+	chmod a+x ${WRKSRC}/configure
 
 .include <bsd.port.mk>
