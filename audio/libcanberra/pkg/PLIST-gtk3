@@ -1,16 +1,16 @@
-@comment $OpenBSD: PLIST-gtk3,v 1.1 2011/04/13 06:47:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk3,v 1.2 2012/07/13 17:03:32 ajacoutot Exp $
 @conflict libcanberra-<=0.24p1
-%%SHARED%%
 @bin bin/canberra-gtk-play
 lib/gnome-settings-daemon-3.0/
 lib/gnome-settings-daemon-3.0/gtk-modules/
 lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
 lib/gtk-3.0/
 lib/gtk-3.0/modules/
-@comment lib/gtk-3.0/modules/libcanberra-gtk3-module.a
+lib/gtk-3.0/modules/libcanberra-gtk-module.so
 @comment lib/gtk-3.0/modules/libcanberra-gtk3-module.la
-lib/libcanberra-gtk3.a
+lib/gtk-3.0/modules/libcanberra-gtk3-module.so
 lib/libcanberra-gtk3.la
+@lib lib/libcanberra-gtk3.so.${LIBcanberra-gtk3_VERSION}
 lib/pkgconfig/libcanberra-gtk3.pc
 share/gdm/
 share/gdm/autostart/
