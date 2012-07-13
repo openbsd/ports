@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/13 08:40:27 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/13 11:27:16 edd Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
+REVISION =	0
 
 V =		1.4.3
 # $N changes with every release, too.
