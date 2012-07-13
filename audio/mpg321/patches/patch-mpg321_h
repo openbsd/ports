@@ -1,0 +1,20 @@
+$OpenBSD: patch-mpg321_h,v 1.1 2012/07/13 09:05:38 naddy Exp $
+--- mpg321.h.orig	Sun Mar 25 14:27:49 2012
++++ mpg321.h	Sun Jul  8 14:00:16 2012
+@@ -200,6 +200,7 @@ void check_ao_default_play_device();
+ void check_default_play_device();
+ int playdevice_is_live();
+ void open_ao_playdevice(struct mad_header const *header);
++ao_device *open_ao_playdevice_buffer(struct mad_header const *header);
+ 
+ /* remote control (-R) functions */
+ void remote_get_input_wait(buffer *buf);
+@@ -290,7 +291,7 @@ output_frame *Output_Queue;
+ /* Shared total decoded frames */
+ decoded_frames *Decoded_Frames;
+ 
+-#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)
++#if (defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)) || defined(__OpenBSD__)
+ /* */
+ #else
+ union semun {
