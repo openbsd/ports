@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/12 21:51:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/13 10:12:45 jasper Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -50,6 +50,7 @@ SUBDIR += masquerade		#1.0rc4
 #SUBDIR += metatag		1.0alpha5
 #SUBDIR += modalframe
 SUBDIR += nodeaccess_userreference
+SUBDIR += nodesinblock
 #SUBDIR += nodetype
 #SUBDIR += noderelationships
 #SUBDIR += notify
