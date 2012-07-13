@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_profiler_Makefile_in,v 1.4 2012/04/13 11:51:49 robert Exp $
---- mono/profiler/Makefile.in.orig	Wed Apr 11 13:12:23 2012
-+++ mono/profiler/Makefile.in	Wed Apr 11 13:12:39 2012
-@@ -344,7 +344,7 @@ libmono_profiler_aot_la_LIBADD = $(LIBMONO)
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.5 2012/07/13 16:59:01 jasper Exp $
+--- mono/profiler/Makefile.in.orig	Wed Feb  1 21:48:04 2012
++++ mono/profiler/Makefile.in	Fri Jul 13 16:36:08 2012
+@@ -345,7 +345,7 @@ libmono_profiler_aot_la_LIBADD = $(LIBMONO)
  #libmono_profiler_logging_la_SOURCES = mono-profiler-logging.c
  #libmono_profiler_logging_la_LIBADD = $(LIBMONO) $(GLIB_LIBS)
  libmono_profiler_iomap_la_SOURCES = mono-profiler-iomap.c
