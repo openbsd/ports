@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_logview-utils_c,v 1.1 2012/07/13 10:20:21 ajacoutot Exp $
+--- src/logview-utils.c.orig	Fri Jul 13 12:16:32 2012
++++ src/logview-utils.c	Fri Jul 13 12:16:54 2012
+@@ -24,6 +24,7 @@
+ #endif
+ 
+ #define _XOPEN_SOURCE
++#define _XOPEN_SOURCE_EXTENDED 1	/* strptime is XPG4v2 */
+ #include <time.h>
+ #include <string.h>
+ #include <stdlib.h>
