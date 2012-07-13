@@ -1,11 +1,10 @@
-#	$OpenBSD: Makefile,v 1.15 2012/04/22 16:52:18 dcoppa Exp $
+#	$OpenBSD: Makefile,v 1.16 2012/07/13 11:59:14 phessler Exp $
 
 DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
 
-DISTNAME =		AlephOne-20111201
-PKGNAME =		alephone-1.0
-REVISION =		1
+DISTNAME =		AlephOne-20120514
+PKGNAME =		alephone-1.0.2
 
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES =		games x11
