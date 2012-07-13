@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/03/31 08:52:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/07/13 11:31:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/secret-tool
 include/secret-0/
 include/secret-0/secret/
+include/secret-0/secret/secret-attributes.h
 include/secret-0/secret/secret-collection.h
 include/secret-0/secret/secret-enum-types.h
 include/secret-0/secret/secret-item.h
 include/secret-0/secret/secret-password.h
+include/secret-0/secret/secret-paths.h
 include/secret-0/secret/secret-prompt.h
 include/secret-0/secret/secret-schema.h
 include/secret-0/secret/secret-schemas.h
@@ -48,7 +50,9 @@ share/gtk-doc/html/libsecret-0/js-remove-example.html
 share/gtk-doc/html/libsecret-0/js-store-example.html
 share/gtk-doc/html/libsecret-0/left.png
 share/gtk-doc/html/libsecret-0/libsecret-0.devhelp2
+share/gtk-doc/html/libsecret-0/libsecret-DBus-Path-Related-Functions.html
 share/gtk-doc/html/libsecret-0/libsecret-Password-storage.html
+share/gtk-doc/html/libsecret-0/libsecret-Secret-Attributes.html
 share/gtk-doc/html/libsecret-0/libsecret-SecretSchema.html
 share/gtk-doc/html/libsecret-0/${MODPY_PY_PREFIX}examples.html
 share/gtk-doc/html/libsecret-0/${MODPY_PY_PREFIX}lookup-example.html
@@ -58,3 +62,8 @@ share/gtk-doc/html/libsecret-0/right.png
 share/gtk-doc/html/libsecret-0/simple.html
 share/gtk-doc/html/libsecret-0/style.css
 share/gtk-doc/html/libsecret-0/up.png
+share/gtk-doc/html/libsecret-0/vala-examples.html
+share/gtk-doc/html/libsecret-0/vala-lookup-example.html
+share/gtk-doc/html/libsecret-0/vala-remove-example.html
+share/gtk-doc/html/libsecret-0/vala-store-example.html
+share/locale/pl/LC_MESSAGES/libsecret.mo
