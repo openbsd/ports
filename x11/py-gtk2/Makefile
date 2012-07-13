@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/28 09:51:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2012/07/13 16:56:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,6 +43,7 @@ USE_GMAKE=	No
 
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-static
 
 # pick bind_textdomain_codeset
 MODGNOME_LDFLAGS=-lintl -liconv
