@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/06/12 08:21:54 pascal Exp $
+# $OpenBSD: Makefile,v 1.7 2012/07/13 09:46:41 pascal Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,11 +6,10 @@ VMEM_WARNING =		Yes
 
 COMMENT =		Not Quite Perl
 
-V =			2012.04.1
+V =			2012.06.1
 DISTNAME =		nqp-${V}
-REVISION =		0
 
-PARROT_VERSION =	4.3.0
+PARROT_VERSION =	4.5.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang
@@ -26,7 +25,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += c gmp icudata icuuc m ncurses parrot pthread
-WANTLIB += readline stdc++ util
+WANTLIB += readline stdc++ util ffi
 
 MASTER_SITES =		http://cloud.github.com/downloads/perl6/nqp/
 
