@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2012/07/07 20:44:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/07/13 09:39:03 jasper Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,7 +9,8 @@ GNOME_VERSION=		3.4.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-nautilus=	0
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -39,7 +40,7 @@ WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gstaudio-0.10 gstbase-0.10
 WANTLIB += gstbasevideo-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-3 idn json-glib-1.0 lua lzma m mx-1.0 orc-0.4 pango-1.0
+WANTLIB += gtk-3 idn json-glib-1.0 lua5.1 lzma m mx-1.0 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += quvi soup-2.4 soup-gnome-2.4 sqlite3 ssl startup-notification-1
 WANTLIB += stdc++ totem-plparser xcb xcb-aux xcb-render xcb-shm
