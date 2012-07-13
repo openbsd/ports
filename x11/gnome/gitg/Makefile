@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/07/13 16:35:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,8 @@ RUN_DEPENDS=		devel/git \
 MODGNOME_DESKTOP_FILE=	Yes
 
 # XXX remove --disable-maintainer-mode after updating to a new release
-CONFIGURE_ARGS=		--enable-compile-warnings=no \
+CONFIGURE_ARGS=		--disable-static \
+			--disable-compile-warnings \
 			--disable-maintainer-mode # -Werror
 
 .include <bsd.port.mk>

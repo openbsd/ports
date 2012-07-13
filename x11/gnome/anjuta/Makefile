@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2012/06/15 08:30:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/07/13 16:35:26 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -72,7 +72,8 @@ MODGNOME_TOOLS= 	goi vala yelp
 
 YACC=			bison -y
 
-CONFIGURE_ARGS+=	--enable-plugin-subversion \
+CONFIGURE_ARGS+=	--disable-static \
+			--enable-plugin-subversion \
 			--with-symbol-db-shm=/tmp
 
 # adds dependency on libgnomeui

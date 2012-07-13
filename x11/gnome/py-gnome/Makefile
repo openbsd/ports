@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/10/29 08:12:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/07/13 16:35:26 ajacoutot Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -42,6 +42,8 @@ RUN_DEPENDS=	x11/py-gtk2>=2.10.3 \
 		devel/py-orbit
 
 LIBTOOL_FLAGS+=	--tag=disable-static
+
+CONFIGURE_ARGS += --disable-static
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/08 16:22:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/07/13 16:35:26 ajacoutot Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
@@ -43,6 +43,8 @@ LIBTOOL_FLAGS=		--tag=disable-static
 LIB_DEPENDS=		devel/gobject-introspection>=1.32.0 \
 			devel/spidermonkey \
 			x11/dbus-glib
+
+CONFIGURE_ARGS +=	--disable-static
 
 REGRESS_DEPENDS +=	sysutils/e2fsprogs # uuidgen(1)
 REGRESS_DEPENDS +=	${MODPY_RUN_DEPENDS} # scripts/make-tests needs python to run

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/08 12:51:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/13 16:35:26 ajacoutot Exp $
 
 COMMENT=		window and compositing manager
 
@@ -43,5 +43,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas>=3.4.2p0 \
 DESKTOP_FILES=		Yes
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
+
+CONFIGURE_ARGS +=	--disable-static
 
 .include <bsd.port.mk>
