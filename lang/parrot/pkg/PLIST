@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/05/09 13:36:45 pascal Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/07/13 09:46:05 pascal Exp $
 @bin bin/ops2c
 @bin bin/parrot
 @bin bin/parrot-nqp
@@ -511,7 +511,6 @@ lib/parrot/${V}/tools/dev/
 lib/parrot/${V}/tools/dev/create_language.pl
 lib/parrot/${V}/tools/dev/gen_makefile.pl
 lib/parrot/${V}/tools/dev/mk_language_shell.pl
-lib/parrot/${V}/tools/dev/pbc_to_exe.pir
 lib/parrot/${V}/tools/dev/pprof2cg.pl
 lib/parrot/${V}/tools/dev/reconfigure.pl
 lib/parrot/${V}/tools/lib/
@@ -593,13 +592,10 @@ lib/parrot/${V}/tools/lib/Parrot/Install.pm
 lib/parrot/${V}/tools/lib/Parrot/Manifest.pm
 lib/parrot/${V}/tools/lib/Parrot/PMC.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/
-lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Attribute.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Dumper.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Emitter.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Library.pm
-lib/parrot/${V}/tools/lib/Parrot/Pmc2c/MULTI.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Method.pm
-lib/parrot/${V}/tools/lib/Parrot/Pmc2c/Object.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/PCCMETHOD.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/PCCMETHOD_BITS.pm
 lib/parrot/${V}/tools/lib/Parrot/Pmc2c/PMC/
@@ -634,13 +630,13 @@ share/doc/parrot/${V}/DONORS.pod
 share/doc/parrot/${V}/LICENSE
 share/doc/parrot/${V}/PBC_COMPAT
 share/doc/parrot/${V}/PLATFORMS
-share/doc/parrot/${V}/README
+share/doc/parrot/${V}/README.pod
 share/doc/parrot/${V}/README_cygwin.pod
 share/doc/parrot/${V}/README_win32.pod
 share/doc/parrot/${V}/RESPONSIBLE_PARTIES
 share/doc/parrot/${V}/TODO
 share/doc/parrot/${V}/examples/
-share/doc/parrot/${V}/examples/README
+share/doc/parrot/${V}/examples/README.pod
 share/doc/parrot/${V}/examples/benchmarks/
 share/doc/parrot/${V}/examples/benchmarks/addit.pasm
 share/doc/parrot/${V}/examples/benchmarks/addit.pir
@@ -687,10 +683,6 @@ share/doc/parrot/${V}/examples/benchmarks/oo3.pir
 share/doc/parrot/${V}/examples/benchmarks/oo3.pl
 share/doc/parrot/${V}/examples/benchmarks/oo3.py
 share/doc/parrot/${V}/examples/benchmarks/oo3.rb
-share/doc/parrot/${V}/examples/benchmarks/oo4.pasm
-share/doc/parrot/${V}/examples/benchmarks/oo4.pl
-share/doc/parrot/${V}/examples/benchmarks/oo4.py
-share/doc/parrot/${V}/examples/benchmarks/oo4.rb
 share/doc/parrot/${V}/examples/benchmarks/oo5.pir
 share/doc/parrot/${V}/examples/benchmarks/oo5.pl
 share/doc/parrot/${V}/examples/benchmarks/oo5.py
@@ -811,7 +803,7 @@ share/doc/parrot/${V}/examples/library/md5sum.pir
 share/doc/parrot/${V}/examples/library/ncurses_life.pir
 share/doc/parrot/${V}/examples/library/pcre.pir
 share/doc/parrot/${V}/examples/mops/
-share/doc/parrot/${V}/examples/mops/README
+share/doc/parrot/${V}/examples/mops/README.pod
 share/doc/parrot/${V}/examples/mops/mops.c
 share/doc/parrot/${V}/examples/mops/mops.cs
 share/doc/parrot/${V}/examples/mops/mops.il
@@ -908,7 +900,7 @@ share/doc/parrot/${V}/examples/sdl/lcd/
 share/doc/parrot/${V}/examples/sdl/lcd/clock.pir
 share/doc/parrot/${V}/examples/sdl/mandel.pir
 share/doc/parrot/${V}/examples/sdl/minesweeper/
-share/doc/parrot/${V}/examples/sdl/minesweeper/README
+share/doc/parrot/${V}/examples/sdl/minesweeper/README.pod
 share/doc/parrot/${V}/examples/sdl/minesweeper/eventhandler.pir
 share/doc/parrot/${V}/examples/sdl/minesweeper/field.pir
 share/doc/parrot/${V}/examples/sdl/minesweeper/mines.pir
@@ -919,7 +911,7 @@ share/doc/parrot/${V}/examples/sdl/move_parrot_logo.pir
 share/doc/parrot/${V}/examples/sdl/parrot_small.png
 share/doc/parrot/${V}/examples/sdl/raw_pixels.pir
 share/doc/parrot/${V}/examples/sdl/tetris/
-share/doc/parrot/${V}/examples/sdl/tetris/README
+share/doc/parrot/${V}/examples/sdl/tetris/README.pod
 share/doc/parrot/${V}/examples/sdl/tetris/app.pir
 share/doc/parrot/${V}/examples/sdl/tetris/block.pir
 share/doc/parrot/${V}/examples/sdl/tetris/blockdata.pir
@@ -929,7 +921,7 @@ share/doc/parrot/${V}/examples/sdl/tetris/boarddata.pir
 share/doc/parrot/${V}/examples/sdl/tetris/eventhandler.pir
 share/doc/parrot/${V}/examples/sdl/tetris/tetris.pir
 share/doc/parrot/${V}/examples/shootout/
-share/doc/parrot/${V}/examples/shootout/README
+share/doc/parrot/${V}/examples/shootout/README.pod
 share/doc/parrot/${V}/examples/shootout/ack.pir
 share/doc/parrot/${V}/examples/shootout/ack.pir_output
 share/doc/parrot/${V}/examples/shootout/binarytrees.pir
@@ -1000,7 +992,7 @@ share/doc/parrot/${V}/examples/subs/single_retval.pir
 share/doc/parrot/${V}/examples/tcl/
 share/doc/parrot/${V}/examples/tcl/tcltkdemo.pir
 share/doc/parrot/${V}/examples/tge/
-share/doc/parrot/${V}/examples/tge/README
+share/doc/parrot/${V}/examples/tge/README.pod
 share/doc/parrot/${V}/examples/tge/branch/
 share/doc/parrot/${V}/examples/tge/branch/branch.g
 share/doc/parrot/${V}/examples/tge/branch/lib/
@@ -1048,7 +1040,9 @@ share/doc/parrot/${V}/examples/tutorial/82_coroutine.pir
 share/doc/parrot/${V}/examples/tutorial/83_external_libraries.pir
 share/doc/parrot/${V}/examples/tutorial/90_writing_tests.pir
 share/doc/parrot/${V}/pod/
+share/doc/parrot/${V}/pod/README.pod
 share/doc/parrot/${V}/pod/binaries/
+share/doc/parrot/${V}/pod/binaries/README.pod
 share/doc/parrot/${V}/pod/binaries/ops2c.pod
 share/doc/parrot/${V}/pod/binaries/parrot-nqp.pod
 share/doc/parrot/${V}/pod/binaries/parrot-prove.pod
@@ -1111,10 +1105,11 @@ share/doc/parrot/${V}/pod/faq.pod
 share/doc/parrot/${V}/pod/gettingstarted.pod
 share/doc/parrot/${V}/pod/glossary.pod
 share/doc/parrot/${V}/pod/imcc/
-share/doc/parrot/${V}/pod/imcc/README
+share/doc/parrot/${V}/pod/imcc/README.pod
 share/doc/parrot/${V}/pod/imcc/imcfaq.pod
 share/doc/parrot/${V}/pod/imcc/operation.pod
 share/doc/parrot/${V}/pod/index/
+share/doc/parrot/${V}/pod/index/book.json
 share/doc/parrot/${V}/pod/index/developer.json
 share/doc/parrot/${V}/pod/index/index.json
 share/doc/parrot/${V}/pod/index/ops.json
@@ -1146,7 +1141,6 @@ share/doc/parrot/${V}/pod/pdds/draft/pdd13_bytecode.pod
 share/doc/parrot/${V}/pod/pdds/draft/pdd14_numbers.pod
 share/doc/parrot/${V}/pod/pdds/draft/pdd16_native_call.pod
 share/doc/parrot/${V}/pod/pdds/draft/pdd29_compiler_tools.pod
-share/doc/parrot/${V}/pod/pdds/draft/pdd31_hll.pod
 share/doc/parrot/${V}/pod/pdds/pdd00_pdd.pod
 share/doc/parrot/${V}/pod/pdds/pdd03_calling_conventions.pod
 share/doc/parrot/${V}/pod/pdds/pdd07_codingstd.pod
@@ -1168,6 +1162,7 @@ share/doc/parrot/${V}/pod/pdds/pdd26_ast.pod
 share/doc/parrot/${V}/pod/pdds/pdd27_multiple_dispatch.pod
 share/doc/parrot/${V}/pod/pdds/pdd28_strings.pod
 share/doc/parrot/${V}/pod/pdds/pdd30_install.pod
+share/doc/parrot/${V}/pod/pdds/pdd31_hll.pod
 share/doc/parrot/${V}/pod/pdds/pdd_template.pod
 share/doc/parrot/${V}/pod/pmc/
 share/doc/parrot/${V}/pod/pmc.pod
