@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_recover_c,v 1.1.1.1 2012/07/14 09:59:30 naddy Exp $
+--- common/recover.c.orig	Sat Jul 14 11:21:34 2012
++++ common/recover.c	Sat Jul 14 11:21:44 2012
+@@ -866,7 +866,7 @@ rcv_email(
+ 	long hostmax;
+ 	int eno;
+ 	struct addrinfo *res0;
+-	struct addrinfo hints = { AI_ADDRCONFIG, PF_UNSPEC,
++	struct addrinfo hints = { 0, PF_UNSPEC,
+ 				  SOCK_STREAM, IPPROTO_TCP };
+ 
+ 	/* Prepare the the recipient. */

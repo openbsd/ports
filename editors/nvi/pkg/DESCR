@@ -1,0 +1,20 @@
+Nvi is an implementation of the ex/vi text editor originally distributed as
+part of the Fourth Berkeley Software Distribution (4BSD), by the University
+of California, Berkeley.
+
+Nvi supports all the historic ex/vi features except for open mode and the
+lisp edit option (e.g., it has a fully implemented underlying ex mode). It
+has a number of additional features as well:
+
+* 8-bit clean data, lines and files limited by available memory
+* Multiple edit buffers
+* Colon command-line editing and path name completion
+* Tag stacks (including support for Cscope databases)
+* Extended Regular Expressions
+* Infinite undo
+* Horizontal scrolling
+* Message catalogs
+* Wide character support
+
+Available flavors:
+        iconv - support conversion between different character encodings

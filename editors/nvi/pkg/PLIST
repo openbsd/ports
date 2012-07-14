@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/14 09:59:30 naddy Exp $
+@bin bin/nex
+@bin bin/nvi
+@bin bin/nview
+@man man/man1/nex.1
+@man man/man1/nvi.1
+@man man/man1/nview.1
+share/vi/
+share/vi/catalog/
+share/vi/catalog/dutch
+share/vi/catalog/english
+share/vi/catalog/french
+share/vi/catalog/german
+share/vi/catalog/polish
+share/vi/catalog/ru_RU.KOI8-R
+share/vi/catalog/spanish
+share/vi/catalog/swedish
+share/vi/catalog/uk_UA.KOI8-U
+share/vi/catalog/zh_CN.GB2312
