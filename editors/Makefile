@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2012/06/25 23:08:24 pascal Exp $
+# $OpenBSD: Makefile,v 1.87 2012/07/14 10:01:14 naddy Exp $
 # $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += libreoffice
      SUBDIR += nano
      SUBDIR += nedit
+     SUBDIR += nvi
      SUBDIR += nvi-m17n
      SUBDIR += nvi-m17n,canna
      SUBDIR += py-qscintilla
