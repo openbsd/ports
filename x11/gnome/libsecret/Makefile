@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/13 11:31:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/14 07:51:47 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=	libsecret
-GNOME_VERSION=	0.4
+GNOME_VERSION=	0.6
 
-SHARED_LIBS +=  secret-0                  0.0 # 0.0
+SHARED_LIBS +=  secret-1             0.0      # unknown
 
 HOMEPAGE=	https://live.gnome.org/Libsecret
 
@@ -29,12 +29,12 @@ MODPY_RUNDEP=	No
 LIB_DEPENDS=	devel/glib2 \
 		security/libgcrypt
 
-# Unable to autolaunch a dbus-daemon without a $DISPLAY for X11
+# unable to autolaunch a dbus-daemon without a $DISPLAY for X11
 REGRESS_IS_INTERACTIVE=	X11
 REGRESS_DEPENDS=	${MODPY_RUN_DEPENDS}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/library/tests/mock-service.c \
-		${WRKSRC}/library/tests/Makefile.in
+	${SUBST_CMD} ${WRKSRC}/libsecret/tests/Makefile.in \
+		${WRKSRC}/libsecret/tests/mock-service.c
 
 .include <bsd.port.mk>
