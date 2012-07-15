@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/01 18:56:45 pascal Exp $
+# $OpenBSD: Makefile,v 1.9 2012/07/15 08:56:26 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -13,7 +13,8 @@ PKGNAME-main =  gcc-${FULL_PKGVERSION}
 PKGNAME-c++ =   g++-${FULL_PKGVERSION}
 PKGNAME-estdc = libstdc++-${FULL_PKGVERSION}
 PKGNAME-f95 =   g95-${FULL_PKGVERSION}
-PKGNAME-java =  gcj-${FULL_PKGVERSION}
+# problem in boehm-gc
+#PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 # needs [gs]etcontext
@@ -38,7 +39,7 @@ FLAVOR ?=
 ONLY_FOR_ARCHS-ada = i386
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
-MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
+MULTI_PACKAGES = -main -f95 -objc -c++ -estdc -ada
 
 .include <bsd.port.arch.mk>
 
