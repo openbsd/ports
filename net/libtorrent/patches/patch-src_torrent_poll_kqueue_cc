@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_torrent_poll_kqueue_cc,v 1.5 2012/07/11 08:33:39 dcoppa Exp $
+$OpenBSD: patch-src_torrent_poll_kqueue_cc,v 1.6 2012/07/15 10:20:07 dcoppa Exp $
 
 Fix a crash when total number of connections exceeds 1024
 (http://libtorrent.rakshasa.no/ticket/1581)
@@ -9,8 +9,8 @@ this will cause a segfault.
 Limit the number of events to the number of fds with an upper limit of
 maxEvents.
 
---- src/torrent/poll_kqueue.cc.orig	Wed Feb 15 05:14:30 2012
-+++ src/torrent/poll_kqueue.cc	Wed Jul 11 09:33:45 2012
+--- src/torrent/poll_kqueue.cc.orig	Tue Apr  5 12:25:53 2011
++++ src/torrent/poll_kqueue.cc	Fri Jul 13 10:59:11 2012
 @@ -37,6 +37,7 @@
  #include "config.h"
  
@@ -19,7 +19,7 @@ maxEvents.
  
  #include <algorithm>
  #include <unistd.h>
-@@ -120,12 +121,12 @@ PollKQueue::create(int maxOpenSockets) {
+@@ -111,12 +112,12 @@ PollKQueue::create(int maxOpenSockets) {
    if (fd == -1)
      return NULL;
  
