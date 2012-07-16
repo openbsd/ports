@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1054 2012/07/13 18:21:58 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1055 2012/07/16 09:28:32 edd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -395,6 +395,7 @@
      SUBDIR += ocaml-batteries
      SUBDIR += ocaml-calendar
      SUBDIR += ocaml-camomile
+     SUBDIR += ocaml-net
      SUBDIR += ocaml-pcre
      SUBDIR += ode
      SUBDIR += ois
