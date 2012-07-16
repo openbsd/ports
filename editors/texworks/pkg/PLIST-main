@@ -1,13 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/04/20 08:41:27 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/07/16 10:13:59 edd Exp $
 @pkgpath editors/texworks
 @bin bin/texworks
 lib/texworks/
+@man man/man1/texworks.1
+share/applications/
 share/applications/texworks.desktop
 share/doc/texworks/
 share/doc/texworks/COPYING
 share/doc/texworks/NEWS
 share/doc/texworks/README
-@man man/man1/texworks.1
 share/pixmaps/
 share/pixmaps/TeXworks.png
 share/texworks-help/
@@ -87,6 +88,7 @@ share/texworks-help/en/index37.html
 share/texworks-help/en/index40.html
 share/texworks-help/en/index41.html
 share/texworks-help/en/index42.html
+share/texworks-help/en/index43.html
 share/texworks-help/en/index44.html
 share/texworks-help/en/index45.html
 share/texworks-help/en/index46.html
@@ -94,6 +96,7 @@ share/texworks-help/en/index47.html
 share/texworks-help/en/index48.html
 share/texworks-help/en/index49.html
 share/texworks-help/en/index5.html
+share/texworks-help/en/index50.html
 share/texworks-help/en/index6.html
 share/texworks-help/en/index8.html
 share/texworks-help/en/index9.html

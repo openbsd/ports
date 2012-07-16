@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/07/16 10:13:59 edd Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
 COMMENT-lua =		Lua scripting for TeXworks
 
-V =			0.4.3
-R =			858
+V =			0.4.4
+R =			1004
 DISTNAME =		texworks-${V}-r${R}
 
 PKGNAME-main =		texworks-${V}
