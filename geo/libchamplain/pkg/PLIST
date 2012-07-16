@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/16 14:00:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/07/16 18:52:45 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
-bin/libchamplain-demo
+@bin bin/libchamplain-demo
 include/libchamplain-${API_VERSION}/
 include/libchamplain-${API_VERSION}/champlain/
 include/libchamplain-${API_VERSION}/champlain/champlain-adjustment.h
@@ -62,6 +62,7 @@ share/examples/libchamplain/
 share/examples/libchamplain/animated-marker.c
 share/examples/libchamplain/create-destroy-test.c
 share/examples/libchamplain/launcher-gtk.c
+share/examples/libchamplain/launcher-gtk.py
 share/examples/libchamplain/launcher-vala.c
 share/examples/libchamplain/launcher.c
 share/examples/libchamplain/local-rendering.c
@@ -69,7 +70,9 @@ share/examples/libchamplain/markers-vala.c
 share/examples/libchamplain/markers.c
 share/examples/libchamplain/minimal-gtk.c
 share/examples/libchamplain/minimal.c
+share/examples/libchamplain/minimal.py
 share/examples/libchamplain/polygons.c
+share/examples/libchamplain/polygons.py
 share/examples/libchamplain/url-marker.c
 share/gir-1.0/Champlain-${API_VERSION}.gir
 share/gir-1.0/GtkChamplain-${API_VERSION}.gir

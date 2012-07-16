@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/16 14:00:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/16 18:52:45 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	library to provide a GTK+ widget to display maps
 
 GNOME_PROJECT=	libchamplain
 GNOME_VERSION=	0.12.3
-REVISION=	3
+REVISION=	4
 API_VERSION=	0.12
 
 SHARED_LIBS +=  champlain-0.12       0.0      # 1.1
@@ -48,10 +48,10 @@ MODGNOME_TOOLS=		goi
 CONFIGURE_STYLE=	gnu
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/demos/launcher-gtk \
+	${INSTALL_PROGRAM} ${WRKSRC}/demos/.libs/launcher-gtk \
 		${PREFIX}/bin/libchamplain-demo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/libchamplain/
-	${INSTALL_DATA} ${WRKSRC}/demos/*.c \
+	${INSTALL_DATA} ${WRKSRC}/demos/*.{c,py} \
 		${PREFIX}/share/examples/libchamplain/
 
 .include <bsd.port.mk>
