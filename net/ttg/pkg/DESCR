@@ -1,0 +1,7 @@
+TTG is a small command-line utility to display the throughput (bandwidth
+usage) on an interface of a remote device such as a router, switch, etc.,
+over SNMP.
+
+Unlike tools like MRTG which sample bandwidth over a relatively long
+interval (often 5 minutes), TTG is normally used to display throughput
+over as little as one second.
