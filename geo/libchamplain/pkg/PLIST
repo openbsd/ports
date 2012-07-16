@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/07/16 07:11:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/16 14:00:29 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 @pkgpath geo/libchamplain/core
 bin/libchamplain-demo
@@ -28,6 +28,7 @@ include/libchamplain-${API_VERSION}/champlain/champlain-marker-layer.h
 include/libchamplain-${API_VERSION}/champlain/champlain-marker.h
 include/libchamplain-${API_VERSION}/champlain/champlain-marshal.h
 include/libchamplain-${API_VERSION}/champlain/champlain-memory-cache.h
+include/libchamplain-${API_VERSION}/champlain/champlain-memphis-renderer.h
 include/libchamplain-${API_VERSION}/champlain/champlain-network-bbox-tile-source.h
 include/libchamplain-${API_VERSION}/champlain/champlain-network-tile-source.h
 include/libchamplain-${API_VERSION}/champlain/champlain-null-tile-source.h
@@ -56,6 +57,7 @@ lib/libchamplain-gtk-${API_VERSION}.la
 @lib lib/libchamplain-gtk-${API_VERSION}.so.${LIBchamplain-gtk-0.12_VERSION}
 lib/pkgconfig/champlain-${API_VERSION}.pc
 lib/pkgconfig/champlain-gtk-${API_VERSION}.pc
+lib/pkgconfig/champlain-memphis-${API_VERSION}.pc
 share/examples/libchamplain/
 share/examples/libchamplain/animated-marker.c
 share/examples/libchamplain/create-destroy-test.c
