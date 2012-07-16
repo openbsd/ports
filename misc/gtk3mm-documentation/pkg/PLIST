@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/16 11:56:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/07/16 12:59:47 ajacoutot Exp $
 share/doc/gtkmm-3.0/
 share/doc/gtkmm-3.0/tutorial/
 share/doc/gtkmm-3.0/tutorial/html/
@@ -157,6 +157,7 @@ share/doc/gtkmm-3.0/tutorial/html/sec-dragcontext.html
 share/doc/gtkmm-3.0/tutorial/html/sec-draw-images.html
 share/doc/gtkmm-3.0/tutorial/html/sec-drawing-clock-example.html
 share/doc/gtkmm-3.0/tutorial/html/sec-drawing-text.html
+share/doc/gtkmm-3.0/tutorial/html/sec-exceptions-in-signal-handlers.html
 share/doc/gtkmm-3.0/tutorial/html/sec-extending-print-dialog.html
 share/doc/gtkmm-3.0/tutorial/html/sec-font-chooser-dialog.html
 share/doc/gtkmm-3.0/tutorial/html/sec-gtkmm.html
