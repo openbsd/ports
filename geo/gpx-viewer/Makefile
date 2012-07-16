@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/07/07 13:00:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2012/07/16 08:13:45 jasper Exp $
 
 BROKEN =        need fixing after libchamplain update
 
@@ -6,7 +6,7 @@ COMMENT =	gpx file viewer
 
 VERSION =	0.2.0
 DISTNAME =	gpx-viewer-${VERSION}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	geo x11
 
@@ -31,7 +31,7 @@ USE_GMAKE =		yes
 MODULES =	devel/gettext \
 		textproc/intltool
 LIB_DEPENDS =	devel/libunique \
-		geo/libchamplain/core>=0.8.0 \
+		geo/libchamplain>=0.8.0 \
 		x11/gnome/gdl1
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic

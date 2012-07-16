@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2012/07/07 14:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2012/07/16 08:13:45 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.4.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -36,7 +36,7 @@ WANTLIB += cogl cogl-pango json-glib-1.0
 
 LIB_DEPENDS=    	devel/libgdata \
 			devel/libpeas \
-			geo/libchamplain/core>=0.12.2 \
+			geo/libchamplain>=0.12.2 \
 			graphics/libexif
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/eog>=${GNOME_VERSION}

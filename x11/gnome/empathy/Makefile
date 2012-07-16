@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.97 2012/07/07 17:20:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2012/07/16 08:13:45 jasper Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.4.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -50,7 +50,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			audio/pulseaudio>=2.0 \
 			geo/geoclue \
-			geo/libchamplain/core>=0.12.2 \
+			geo/libchamplain>=0.12.2 \
 			graphics/clutter/clutter-gst>=1.6.0 \
 			net/telepathy/folks \
 			net/telepathy/telepathy-farstream \

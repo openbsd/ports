@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/07/07 13:00:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/07/16 08:13:45 jasper Exp $
 
 BROKEN =	need fixing after libchamplain update
 
@@ -9,7 +9,7 @@ COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	7
+REVISION=	8
 
 CATEGORIES =	geo x11
 
@@ -37,7 +37,7 @@ MODGCONF2_SCHEMAS_DIR=	emerillon
 
 MODGNOME_TOOLS= 	goi vala yelp
 
-LIB_DEPENDS =	geo/libchamplain/core>=0.8.0 \
+LIB_DEPENDS =	geo/libchamplain>=0.8.0 \
 		devel/ethos \
 		geo/geoclue \
 		net/librest>=0.7.9 \
