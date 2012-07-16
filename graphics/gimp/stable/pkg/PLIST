@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2012/07/16 09:42:24 giovanni Exp $
 @pkgpath ${BASE_PKGPATH},altivec
 %%SHARED%%
 bin/gimp
@@ -328,6 +328,7 @@ lib/gimp/2.0/plug-ins/colorxhtml.py
 @bin lib/gimp/2.0/plug-ins/file-ico
 @bin lib/gimp/2.0/plug-ins/file-jp2-load
 @bin lib/gimp/2.0/plug-ins/file-jpeg
+@bin lib/gimp/2.0/plug-ins/file-mng
 lib/gimp/2.0/plug-ins/file-openraster.py
 @bin lib/gimp/2.0/plug-ins/file-pat
 @bin lib/gimp/2.0/plug-ins/file-pcx
