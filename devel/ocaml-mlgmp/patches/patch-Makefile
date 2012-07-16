@@ -1,0 +1,66 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2012/07/16 15:51:33 edd Exp $
+
+ - Allow overide of includes and libs.
+ - Fix DESTDIR clash.
+ - Honour CFLAGS.
+ - Allow bytecode-only compilation.
+
+--- Makefile.orig	Fri Feb 24 08:17:29 2012
++++ Makefile	Sat Jul 14 15:46:26 2012
+@@ -2,20 +2,20 @@
+ RANLIB= ranlib
+ 
+ OCAML_LIBDIR:= $(shell ocamlc -where)
+-GMP_INCLUDES= -I/opt/gmp-4.1.2/include -I/users/absint2/local/include -I$(HOME)/packages/gmp/include
++GMP_INCLUDES?= -I/opt/gmp-4.1.2/include -I/users/absint2/local/include -I$(HOME)/packages/gmp/include
+ 
+-GMP_LIBDIR=/opt/gmp-4.1.2/lib
+-DESTDIR= $(OCAML_LIBDIR)/gmp
++GMP_LIBDIR?=/opt/gmp-4.1.2/lib
++INSTDIR= ${DESTDIR}/$(OCAML_LIBDIR)/gmp
+ 
+ #RLIBFLAGS= -cclib "-Wl,-rpath $(GMP_LIBDIR)" # Linux, FreeBSD
+ #RLIBFLAGS= -cclib "-Wl,-R $(GMP_LIBDIR)" # Solaris
+ # RLIBFLAGS= # MacOS X
+ 
+ LIBFLAGS= -cclib -L. -cclib -L$(GMP_LIBDIR) $(RLIBFLAGS) \
+-	-cclib -lmpfr -cclib -lgmp -cclib -L$(DESTDIR)
++	-cclib -lmpfr -cclib -lgmp -cclib -L${OCAML_LIBDIR}
+ 
+ #CC= icc
+-CFLAGS_MISC= -Wall -Wno-unused -Werror -g -O3
++CFLAGS_MISC?= -Wall -Wno-unused -Werror -g -O3
+ #CFLAGS_MISC=
+ CFLAGS_INCLUDE= -I $(OCAML_LIBDIR) $(GMP_INCLUDES)
+ CFLAGS= $(CFLAGS_MISC) $(CFLAGS_INCLUDE)
+@@ -27,20 +27,24 @@ OCAMLFLAGS=
+ CMODULES= mlgmp_z.c mlgmp_q.c mlgmp_f.c mlgmp_fr.c mlgmp_random.c mlgmp_misc.c
+ CMODULES_O= $(CMODULES:%.c=%.o)
+ 
+-LIBS= libmlgmp.a gmp.a gmp.cma gmp.cmxa gmp.cmi
++LIBS?= libmlgmp.a gmp.a gmp.cma gmp.cmxa gmp.cmi
+ 
+ PROGRAMS= test_creal test_creal.opt essai essai.opt toplevel\
+ 	test_suite test_suite.opt
+-TESTS= test_suite test_suite.opt
++TESTS?= test_suite test_suite.opt
+ 
+-all:	$(LIBS) tests
++all:	$(LIBS)
+ 
+ install: all
+-	-mkdir $(DESTDIR)
+-	cp $(LIBS) gmp.mli $(DESTDIR)
++	-mkdir -p $(INSTDIR)
++	cp $(LIBS) gmp.mli $(INSTDIR)
+ 
+-tests:	$(LIBS) $(TESTS)
++tests:	$(LIBS) $(TESTS) $(TESTS_RUN)
++
++tests-nonative:
+ 	./test_suite
++
++tests-native:
+ 	./test_suite.opt
+ 
+ %.i: %.c
