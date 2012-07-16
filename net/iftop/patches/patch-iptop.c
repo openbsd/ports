@@ -1,29 +1,30 @@
---- iftop.c.orig	Thu Mar 31 13:08:05 2005
-+++ iftop.c	Mon Jan 26 22:48:19 2009
-@@ -25,6 +25,8 @@
- #include <signal.h>
+--- iftop.c.orig	Tue Oct  4 14:30:37 2011
++++ iftop.c	Fri Jan 20 06:40:39 2012
+@@ -28,6 +28,8 @@
  #include <string.h>
  #include <unistd.h>
+ #include <locale.h>
 +#include <pwd.h>
 +#include <err.h>
  
  #include "iftop.h"
  #include "addr_hash.h"
-@@ -561,8 +563,12 @@ void packet_loop(void* ptr) {
+@@ -763,10 +765,13 @@ void packet_loop(void* ptr) {
   * Entry point. See usage(). */
  int main(int argc, char **argv) {
      pthread_t thread;
 -    struct sigaction sa = {};
 +    struct passwd *pw;
  
-+    if ((pw = getpwnam("_iftop")) == NULL) {
-+        errx(1, "no such user: _iftop");
-+    }
+     setlocale(LC_ALL, "");
+ 
++    if ((pw = getpwnam("_iftop")) == NULL)
++         errx(1, "no such user: _iftop");
 +
      /* TODO: tidy this up */
      /* read command line options and config file */   
      config_init();
-@@ -572,12 +578,16 @@ int main(int argc, char **argv) {
+@@ -776,12 +781,16 @@ int main(int argc, char **argv) {
      read_config(options.config_file, options.config_file_specified);
      options_make();
      

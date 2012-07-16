@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/07/16 08:49:38 landry Exp $
 
 COMMENT =		display bandwidth usage on an inteface
 
-DISTNAME =		iftop-0.17
-REVISION =		2
+DISTNAME =		iftop-1.0pre2
 CATEGORIES =		net
 
 HOMEPAGE =		http://www.ex-parrot.com/~pdw/iftop/
@@ -16,16 +15,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c curses m pcap pthread
+WANTLIB =		c ncursesw m pcap pthread
 
 MASTER_SITES =		${HOMEPAGE}download/
 
-CONFIGURE_STYLE =	gnu dest
 USE_GROFF =		Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iftop ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/iftop.8 ${PREFIX}/man/man8
+CONFIGURE_STYLE =	gnu
 
 NO_REGRESS =		Yes
 
