@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/12/21 09:06:41 sebastia Exp $
+# $OpenBSD: Makefile,v 1.33 2012/07/16 14:00:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
  
      SUBDIR =
@@ -16,6 +16,7 @@
      SUBDIR += josm
      SUBDIR += libchamplain
      SUBDIR += mapserver
+     SUBDIR += memphis
      SUBDIR += merkaartor
      SUBDIR += openbsd-developers
      SUBDIR += osm-gps-map
