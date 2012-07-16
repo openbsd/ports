@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_netstring_nethttp_mlp,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+
+Committed upstream:
+Improve Nethttp.Header.best_media_type: sort result by preference and
+specificness
+--- src/netstring/nethttp.mlp.orig	Wed Feb 29 19:02:52 2012
++++ src/netstring/nethttp.mlp	Sun Jun 17 14:59:40 2012
+@@ -988,43 +988,31 @@ module Header = struct
+     mh # update_field "Accept" s
+ 
+   let best_media_type mh supp =
+-    let supp' =
+-      (* All of [supp] not mentioned in the [Accept] field *)
+-      let toks = try get_accept mh with Not_found -> [] in
+-      List.filter (fun supp_type -> 
+-		     not (List.exists (fun (t,_,_) -> t=supp_type) toks)) supp
++    let match_mime a b =
++      let (main_type, sub_type) = Mimestring.split_mime_type b
++      in
++        sub_type = "*" (*Ignore non-wildcard types*) &&
++        (main_type = "*" ||
++        main_type = (fst (Mimestring.split_mime_type a)))
+     in
+-    let rec find_best toks =
+-      match toks with
+-	| (tok, params, qparams) :: toks' ->
+-	    ( if List.mem tok supp then
+-		(tok, params)
+-	      else
+-		let (main_type, sub_type) = Mimestring.split_mime_type tok in
+-		if sub_type = "*" then (
+-		  try
+-		    (List.find
+-		       (fun supp_type ->
+-			  (main_type = "*") || 
+-			  (sub_type = "*" && 
+-		              main_type = fst(Mimestring.split_mime_type supp_type))
+-		       )
+-		       supp',
+-		     params)
+-		  with
+-		      Not_found -> find_best toks'
+-		)
+-		else find_best toks'
+-	    )
+-	| [] ->
+-	    (* Nothing acceptable: *)
+-	    ("", [])
++    let filter p l =
++      List.fold_right
++        (fun ((tok, _, _) as e) l -> if p tok then e :: l else l)
++        l
++        []
+     in
+-    try
+-      let mt_list = sort_by_q' (get_accept mh) in  (* or Not_found *)
+-      find_best mt_list
++    let accept = try get_accept mh with Not_found -> [ "*/*",[],[] ] in
++    match
++      sort_by_q' (List.flatten (List.map
++        (fun t ->
++          filter ((=) t) accept
++          @
++          filter (match_mime t) accept
++        )
++        supp))
+     with
+-	Not_found -> ("*/*", [])
++        (tok, params, qparams) :: _ -> (tok, params)
++      | [] -> ("", [])
+ 
+   let get_accept_charset mh =
+     parse_parameterized_token_list mh

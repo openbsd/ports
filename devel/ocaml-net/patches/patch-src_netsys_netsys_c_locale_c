@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_netsys_netsys_c_locale_c,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+OpenBSD does not define the ERA_* ant ALT_DIGITS symbols. Therefore replace
+these symbols by -1. nl_langinfo(3) should return an empty string in those
+cases, which shouldn't be too bad for most programs.
+--- src/netsys/netsys_c_locale.c.orig	Wed Feb 29 19:02:52 2012
++++ src/netsys/netsys_c_locale.c	Mon Jun 11 17:11:57 2012
+@@ -19,7 +19,12 @@ static int locale_items_table[] = {
+   ABDAY_4, ABDAY_5, ABDAY_6, ABDAY_7, MON_1, MON_2, MON_3, MON_4, MON_5,
+   MON_6, MON_7, MON_8, MON_9, MON_10, MON_11, MON_12, ABMON_1, ABMON_2,
+   ABMON_3, ABMON_4, ABMON_5, ABMON_6, ABMON_7, ABMON_8, ABMON_9, ABMON_10,
+-  ABMON_11, ABMON_12, ERA, ERA_D_FMT, ERA_D_T_FMT, ERA_T_FMT, ALT_DIGITS,
++  ABMON_11, ABMON_12,
++#ifndef __OpenBSD__
++  ERA, ERA_D_FMT, ERA_D_T_FMT, ERA_T_FMT, ALT_DIGITS,
++#else
++  -1, -1, -1, -1, -1,
++#endif
+   RADIXCHAR, THOUSEP, YESEXPR, NOEXPR, CRNCYSTR
+ };
+ #endif

@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_netcgi2_netcgi_scgi_mli,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+
+Committed upstream:
+Netcgi connectors (SCGI, AJP, FCGI): unifying the ~sockaddr
+and ~port arguments. ~port now also assumes a loopback binding.
+(Suggested by Christopher Zimmermann).
+--- src/netcgi2/netcgi_scgi.mli.orig	Wed Feb 29 19:02:53 2012
++++ src/netcgi2/netcgi_scgi.mli	Wed May 30 10:46:32 2012
+@@ -31,18 +31,24 @@ val run :
+   ?output_type:output_type ->
+   ?arg_store:arg_store ->
+   ?exn_handler:exn_handler ->
+-  port:int ->
++  ?sockaddr:Unix.sockaddr ->
++  ?port:int ->
+   (cgi -> unit) -> unit
+   (** [run f] executes [f cgi] for each SCGI request.
+ 
+       @param config Default: {!Netcgi.default_config}
+       @param allow Tells whether a connection from the socket is allowed.
+-      Default: allow from all.
++        Default: allow from all.
+       @param output_type Default: [`Direct ""]
+       @param arg_store Default: [`Automatic] for all arguments.
+       @param sockaddr The socket used by the web server to send the requests.
+       @param exn_handler See {!Netcgi.exn_handler}.  Default: delegate
+-      all exceptions to the default handler.  *)
++        all exceptions to the default handler.  
++      @param sockaddr The sockaddr for listening. Overrides [port]
++      @param port The port for listening. Needs to be specified if no
++        [sockaddr] is passed.
++
++*)
+ 
+ val handle_request :
+   config -> output_type -> arg_store -> exn_handler ->

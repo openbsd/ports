@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_netcgi2_netcgi_ajp_mli,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+
+Committed upstream:
+Netcgi connectors (SCGI, AJP, FCGI): unifying the ~sockaddr
+and ~port arguments. ~port now also assumes a loopback binding.
+(Suggested by Christopher Zimmermann).
+--- src/netcgi2/netcgi_ajp.mli.orig	Wed Feb 29 19:02:53 2012
++++ src/netcgi2/netcgi_ajp.mli	Wed May 30 10:46:32 2012
+@@ -72,6 +72,7 @@ val run :
+   ?output_type:output_type ->
+   ?arg_store:arg_store ->
+   ?exn_handler:exn_handler ->
++  ?sockaddr:Unix.sockaddr ->
+   ?port:int ->
+   (cgi -> unit) -> unit
+   (** [run f] executes [f cgi] for each AJP request.
+@@ -83,6 +84,7 @@ val run :
+       @param arg_store Default: [`Automatic] for all arguments.
+       @param port The port used by the web server to send the requests
+                   (Default: 8009).
++      @param sockaddr The sockaddress (overrides [port])
+       @param exn_handler See {!Netcgi.exn_handler}.  Default: delegate
+       all exceptions to the default handler.  *)
+ 

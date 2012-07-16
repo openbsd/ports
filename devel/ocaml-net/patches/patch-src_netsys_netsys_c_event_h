@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_netsys_netsys_c_event_h,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+--- src/netsys/netsys_c_event.h.orig	Wed Feb 29 19:02:52 2012
++++ src/netsys/netsys_c_event.h	Mon Jun 11 17:11:57 2012
+@@ -6,6 +6,9 @@
+ #ifdef NETSYS_INTERNAL
+ 
+ #include "netsys_c.h"
++#ifdef HAVE_PTHREAD
++#include <pthread.h>
++#endif
+ 
+ enum not_event_type {
+     NE_PIPE = 0,
