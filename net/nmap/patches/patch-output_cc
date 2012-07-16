@@ -1,0 +1,46 @@
+$OpenBSD: patch-output_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+--- output.cc.orig	Fri May 25 12:58:18 2012
++++ output.cc	Fri May 25 13:00:46 2012
+@@ -2407,7 +2407,7 @@ void printStatusMessage() {
+   // Pre-computations
+   struct timeval tv;
+   gettimeofday(&tv, NULL);
+-  int time = (int) (o.TimeSinceStart(&tv));
++  int time = (int) (o.TimeSinceStart((const bpf_timeval*)&tv));
+ 
+   log_write(LOG_STDOUT, "Stats: %d:%02d:%02d elapsed; %d hosts completed (%d up), %d undergoing %s\n",
+             time / 60 / 60, time / 60 % 60, time % 60, o.numhosts_scanned,
+@@ -2427,13 +2427,13 @@ void print_xml_finished_open(time_t timep, const struc
+   xml_open_start_tag("finished");
+   xml_attribute("time", "%lu", (unsigned long) timep);
+   xml_attribute("timestr", "%s", mytime);
+-  xml_attribute("elapsed", "%.2f", o.TimeSinceStart(tv));
++  xml_attribute("elapsed", "%.2f", o.TimeSinceStart((const bpf_timeval*)&tv));
+   xml_attribute("summary",
+     "Nmap done at %s; %d %s (%d %s up) scanned in %.2f seconds",
+     mytime, o.numhosts_scanned,
+     (o.numhosts_scanned == 1) ? "IP address" : "IP addresses",
+     o.numhosts_up, (o.numhosts_up == 1) ? "host" : "hosts",
+-    o.TimeSinceStart(tv));
++    o.TimeSinceStart((const bpf_timeval*)&tv));
+ }
+ 
+ void print_xml_hosts() {
+@@ -2478,7 +2478,7 @@ void printfinaloutput() {
+             o.numhosts_scanned,
+             (o.numhosts_scanned == 1) ? "IP address" : "IP addresses",
+             o.numhosts_up, (o.numhosts_up == 1) ? "host" : "hosts",
+-            o.TimeSinceStart(&tv));
++            o.TimeSinceStart((const bpf_timeval*)&tv));
+   if (o.verbose && o.isr00t && o.RawScan())
+     log_write(LOG_STDOUT | LOG_SKID, "           %s\n",
+               getFinalPacketStats(statbuf, sizeof(statbuf)));
+@@ -2500,7 +2500,7 @@ void printfinaloutput() {
+             mytime, o.numhosts_scanned,
+             (o.numhosts_scanned == 1) ? "IP address" : "IP addresses",
+             o.numhosts_up, (o.numhosts_up == 1) ? "host" : "hosts",
+-            o.TimeSinceStart(&tv));
++            o.TimeSinceStart((const bpf_timeval*)&tv));
+ 
+   xml_end_tag(); /* nmaprun */
+   xml_newline();

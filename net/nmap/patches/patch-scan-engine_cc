@@ -1,26 +1,18 @@
---- scan_engine.cc.orig	Fri Jan 21 01:04:16 2011
-+++ scan_engine.cc	Wed Feb  2 13:12:14 2011
-@@ -108,6 +108,7 @@
- #include <math.h>
- #include <list>
- #include <map>
-+#include "sctp.h"
- 
- using namespace std;
- extern NmapOps o;
-@@ -4936,13 +4937,13 @@ static void begin_sniffer(UltraScanInfo *USI, vector<T
+--- scan_engine.cc.orig	Sat Apr  7 10:16:08 2012
++++ scan_engine.cc	Wed May 30 11:35:54 2012
+@@ -5421,13 +5421,13 @@ static void begin_sniffer(UltraScanInfo *USI, vector<T
      if (doIndividual){
        pcap_filter="dst host ";
-       pcap_filter+=inet_ntoa(Targets[0]->v4source());
--      pcap_filter+=" and (icmp or ((tcp or udp or sctp) and (";
-+      pcap_filter+=" and (icmp or ((tcp or udp) and (";
+       pcap_filter+=inet_ntop_ez(&source, sizeof(source));
+-      pcap_filter+=" and (icmp or icmp6 or ((tcp or udp or sctp) and (";
++      pcap_filter+=" and (icmp or icmp6 or ((tcp or udp) and (";
        pcap_filter+=dst_hosts;
        pcap_filter+=")))";
      }else{
        pcap_filter="dst host ";
-       pcap_filter+=inet_ntoa(Targets[0]->v4source());
--      pcap_filter+=" and (icmp or tcp or udp or sctp)";
-+      pcap_filter+=" and (icmp or tcp or udp)";
+       pcap_filter+=inet_ntop_ez(&source, sizeof(source));
+-      pcap_filter+=" and (icmp or icmp6 or tcp or udp or sctp)";
++      pcap_filter+=" and (icmp or icmp6 or tcp or udp)";
      }
    }else assert(0);
    if (o.debugging) log_write(LOG_PLAIN, "Packet capture filter (device %s): %s\n", Targets[0]->deviceFullName(), pcap_filter.c_str());

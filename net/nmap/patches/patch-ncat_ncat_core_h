@@ -1,0 +1,12 @@
+$OpenBSD: patch-ncat_ncat_core_h,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+--- ncat/ncat_core.h.orig	Fri May 25 12:03:54 2012
++++ ncat/ncat_core.h	Fri May 25 12:04:14 2012
+@@ -167,7 +167,7 @@ struct options {
+ extern struct options o;
+ 
+ /* The time the program was started, for exit statistics in connect mode. */
+-extern struct timeval start_time;
++extern struct bpf_timeval start_time;
+ 
+ /* Initializes global options to their default values. */
+ void options_init(void);

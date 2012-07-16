@@ -1,7 +1,19 @@
-$OpenBSD: patch-nping_ProbeMode_cc,v 1.1 2011/03/28 09:01:24 giovanni Exp $
---- nping/ProbeMode.cc.orig	Wed Feb  2 17:12:11 2011
-+++ nping/ProbeMode.cc	Wed Feb  2 17:12:51 2011
-@@ -1506,8 +1506,8 @@ void ProbeMode::probe_nping_event_handler(nsock_pool n
+$OpenBSD: patch-nping_ProbeMode_cc,v 1.2 2012/07/16 07:39:31 giovanni Exp $
+--- nping/ProbeMode.cc.orig	Thu Mar  1 07:53:35 2012
++++ nping/ProbeMode.cc	Fri May 25 15:16:04 2012
+@@ -129,9 +129,9 @@ int ProbeMode::init_nsock(){
+       /* Set nsock trace level */
+       gettimeofday(&now, NULL);
+       if( o.getDebugging() == DBG_5)
+-        nsp_settrace(nsp, NULL, 1 , &now);
++        nsp_settrace(nsp, NULL, 1 , (const bpf_timeval*)&now);
+       else if( o.getDebugging() > DBG_5 )
+-        nsp_settrace(nsp, NULL, 10 , &now);
++        nsp_settrace(nsp, NULL, 10 , (const bpf_timeval*)&now);
+       /* Flag it as already inited so we don't do it again */
+       nsock_init=true;
+   }
+@@ -1500,8 +1500,8 @@ void ProbeMode::probe_nping_event_handler(nsock_pool n
   u16 *ethtype=NULL;
   u8 buffer[512+1];
   size_t link_offset=0;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsock_src_nsock_internal_h,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+--- nsock/src/nsock_internal.h.orig	Fri May 25 10:23:15 2012
++++ nsock/src/nsock_internal.h	Fri May 25 10:23:32 2012
+@@ -200,7 +200,7 @@ typedef struct {
+   int tracelevel;
+   FILE *tracefile;
+   /* This time is subtracted from the current time for trace reports */
+-  struct timeval tracebasetime;
++  struct bpf_timeval tracebasetime;
+ 
+   /* If true, new sockets will have SO_BROADCAST set */
+   int broadcast;

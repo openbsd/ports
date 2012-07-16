@@ -1,0 +1,12 @@
+$OpenBSD: patch-FPEngine_cc,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+--- FPEngine.cc.orig	Fri May 25 11:47:44 2012
++++ FPEngine.cc	Fri May 25 11:49:23 2012
+@@ -479,7 +479,7 @@ void FPNetworkControl::response_reception_handler(nsoc
+   enum nse_type type = nse_type(nse);
+   const u8 *rcvd_pkt = NULL;                    /* Points to the captured packet */
+   size_t rcvd_pkt_len = 0;                      /* Lenght of the captured packet */
+-  struct timeval pcaptime;                    /* Time the packet was captured  */
++  struct bpf_timeval pcaptime;                    /* Time the packet was captured  */
+   struct sockaddr_storage sent_ss;
+   struct sockaddr_storage rcvd_ss;
+   struct sockaddr_in *rcvd_ss4 = (struct sockaddr_in *)&rcvd_ss;

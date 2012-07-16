@@ -1,11 +1,47 @@
---- tcpip.cc.orig	Fri Jan 21 01:04:16 2011
-+++ tcpip.cc	Wed Feb  2 13:12:14 2011
-@@ -120,6 +120,8 @@
- #endif /* NETINET_IF_ETHER_H */
- #endif /* HAVE_NETINET_IF_ETHER_H */
+--- tcpip.cc.orig	Wed Apr 11 03:46:43 2012
++++ tcpip.cc	Wed May 30 11:14:52 2012
+@@ -99,7 +99,7 @@
  
-+#include "sctp.h"
-+
- extern NmapOps o;
+ #include "nbase.h"
+ #include "portreasons.h"
+-#include <dnet.h>
++#include "dnet.h"
+ #include "tcpip.h"
+ #include "NmapOps.h"
+ #include "Target.h"
+@@ -208,7 +208,7 @@ void PacketTrace::traceArp(pdirection pdir, const u8 *
  
- #ifdef WIN32
+   log_write(LOG_STDOUT | LOG_NORMAL, "%s (%.4fs) ARP %s\n",
+             (pdir == SENT) ? "SENT" : "RCVD",
+-            o.TimeSinceStart(&tv), arpdesc);
++            o.TimeSinceStart((const bpf_timeval*)&tv), arpdesc);
+ 
+   return;
+ }
+@@ -283,7 +283,7 @@ void PacketTrace::traceND(pdirection pdir, const u8 *f
+   inet_ntop(AF_INET6, &ip6->ip6_dst, dst, sizeof(dst));
+   log_write(LOG_STDOUT | LOG_NORMAL, "%s (%.4fs) %s %s > %s %s\n",
+             (pdir == SENT) ? "SENT" : "RCVD",
+-            o.TimeSinceStart(&tv), label, src, dst, desc);
++            o.TimeSinceStart((const bpf_timeval*)&tv), label, src, dst, desc);
+ 
+   return;
+ }
+@@ -339,7 +339,7 @@ void PacketTrace::trace(pdirection pdir, const u8 *pac
+ 
+   log_write(LOG_STDOUT | LOG_NORMAL, "%s (%.4fs) %s\n",
+             (pdir == SENT) ? "SENT" : "RCVD",
+-            o.TimeSinceStart(&tv), nmap_format_ippacket(packet, len));
++            o.TimeSinceStart((const bpf_timeval*)&tv), nmap_format_ippacket(packet, len));
+ 
+   return;
+ }
+@@ -405,7 +405,7 @@ void PacketTrace::traceConnect(u8 proto, const struct 
+ 
+   log_write(LOG_STDOUT | LOG_NORMAL,
+             "CONN (%.4fs) %s localhost > %s:%d => %s\n",
+-            o.TimeSinceStart(&tv),
++            o.TimeSinceStart((const bpf_timeval*)&tv),
+             (proto == IPPROTO_TCP) ? "TCP" : "UDP", targetipstr,
+             targetport, errbuf);
+ }

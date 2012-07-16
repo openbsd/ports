@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.101 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.102 2012/07/16 07:39:31 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	5.51
+MODPY_EGG_VERSION=	6.01
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
-REVISION-main=		4
-REVISION-zenmap=	3
 
 CATEGORIES=	net security
 MASTER_SITES=	http://nmap.org/dist/
@@ -37,15 +35,14 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-openssl=/usr \
-		--with-libdnet=${LOCALBASE} \
 		--with-liblua=${LOCALBASE} \
 		--with-libpcre=${LOCALBASE} \
 		--with-mandir=${LOCALBASE}/man \
+		--without-nmap-update \
 		--disable-nls
 
-WANTLIB-main=		c crypto m pcap ssl stdc++ pcre pthread dnet ${MODLUA_WANTLIB}
+WANTLIB-main=		c crypto m pcap ssl stdc++ pcre pthread ${MODLUA_WANTLIB}
 LIB_DEPENDS-main=	devel/pcre \
-			net/libdnet \
 			${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS-main=
@@ -58,10 +55,11 @@ RUN_DEPENDS-zenmap=	x11/py-gtk2 \
 NO_REGRESS=		Yes
 
 post-extract:
-	@cp ${WRKSRC}/libdnet-stripped/include/dnet/sctp.h ${WRKSRC}/sctp.h
-	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
+	@cd ${WRKSRC} && rm -rf libpcap/ liblua/ libpcre/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh
+	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh \
+		${WRKSRC}/zenmap/install_scripts/unix/zenmap.desktop \
+		${WRKSRC}/zenmap/install_scripts/unix/zenmap-root.desktop
 
 .include <bsd.port.mk>

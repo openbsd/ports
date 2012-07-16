@@ -1,7 +1,16 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2011/03/28 09:01:24 giovanni Exp $
---- Makefile.in.orig	Thu Jan 13 02:28:52 2011
-+++ Makefile.in	Wed Feb  2 13:12:14 2011
-@@ -259,8 +259,8 @@ $(NPINGDIR)/nping.h: nmap.h
+$OpenBSD: patch-Makefile_in,v 1.13 2012/07/16 07:39:31 giovanni Exp $
+--- Makefile.in.orig	Tue Apr  3 02:21:44 2012
++++ Makefile.in	Wed May 30 10:48:53 2012
+@@ -45,7 +45,7 @@ DEFS += -D_FORTIFY_SOURCE=2
+ # Should only be enabled during debugging and not in any real release.
+ # DEFS += -DMTRACE=1
+ CXXFLAGS = @CXXFLAGS@ $(DBGFLAGS) $(CCOPT)
+-CPPFLAGS = @CPPFLAGS@ $(DEFS)
++CPPFLAGS = -I./libdnet-stripped/include @CPPFLAGS@ $(DEFS)
+ export CFLAGS = $(CXXFLAGS)
+ # CFLAGS = $(DEFS) $(INCLS)
+ STATIC =
+@@ -284,8 +284,8 @@ $(NPINGDIR)/nping.h: nmap.h
  	mv -f $@.tmp $@
  
  # Update the version number used by Zenmap.
@@ -10,5 +19,5 @@ $OpenBSD: patch-Makefile_in,v 1.12 2011/03/28 09:01:24 giovanni Exp $
 +#$(ZENMAPDIR)/zenmapCore/Version.py $(ZENMAPDIR)/share/zenmap/config/zenmap_version: nmap.h
 +#	cd $(ZENMAPDIR) && $(PYTHON) install_scripts/utils/version_update.py "$(NMAP_VERSION)"
  
- # By default distutils rewrites installed scripts to hardcode the
- # location of the Python interpreter they were built with (something
+ nmap-update/default_channel.h: nmap.h
+ 	sed -e 's/^#[ \t]*define[ \t]\+DEFAULT_CHANNEL[ \t]\+\(".*"\)/#define DEFAULT_CHANNEL "$(NMAP_UPDATE_CHANNEL)"/' $@ > $@.tmp

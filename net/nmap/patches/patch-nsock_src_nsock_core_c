@@ -1,0 +1,12 @@
+$OpenBSD: patch-nsock_src_nsock_core_c,v 1.1 2012/07/16 07:39:31 giovanni Exp $
+--- nsock/src/nsock_core.c.orig	Fri May 25 10:13:28 2012
++++ nsock/src/nsock_core.c	Fri May 25 10:13:46 2012
+@@ -1121,7 +1121,7 @@ void nsock_loop_quit(nsock_pool nsp) {
+  * avoid a system call, but in many circumstances it is better to use nsock's
+  * time rather than the system time.  If nsock has never obtained the time when
+  * you call it, it will do so before returning */
+-const struct timeval *nsock_gettimeofday() {
++const struct bpf_timeval *nsock_gettimeofday() {
+   if (nsock_tod.tv_sec == 0)
+     gettimeofday(&nsock_tod, NULL);
+   return &nsock_tod;
