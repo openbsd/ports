@@ -20,8 +20,9 @@ services:
 	- Google Analytics API
 	- Google Finance API
 	- Google Sites Data API
-        - Google Content API For Shopping
-        - Google App Marketplace API
+	- Google Content API For Shopping
+	- Google App Marketplace API
+	- Google Content API for Shopping
 	- core Google data API functionality
 The core Google data code provides sufficient functionality to use this
 library with any Google data API (even if a module hasn't been written
