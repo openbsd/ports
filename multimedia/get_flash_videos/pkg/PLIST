@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/24 22:19:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/16 10:14:28 sthen Exp $
 bin/get_flash_videos
 ${P5SITE}/FlashVideo/
 ${P5SITE}/FlashVideo/Downloader.pm
@@ -36,9 +36,11 @@ ${P5SITE}/FlashVideo/Site/Collegehumor.pm
 ${P5SITE}/FlashVideo/Site/Ctv.pm
 ${P5SITE}/FlashVideo/Site/Dailymotion.pm
 ${P5SITE}/FlashVideo/Site/Daum.pm
+${P5SITE}/FlashVideo/Site/Divxstage.pm
 ${P5SITE}/FlashVideo/Site/Ehow.pm
 ${P5SITE}/FlashVideo/Site/Escapistmagazine.pm
 ${P5SITE}/FlashVideo/Site/Expertvillage.pm
+${P5SITE}/FlashVideo/Site/Filebox.pm
 ${P5SITE}/FlashVideo/Site/Flickr.pm
 ${P5SITE}/FlashVideo/Site/Fliqz.pm
 ${P5SITE}/FlashVideo/Site/Fora.pm
@@ -48,6 +50,7 @@ ${P5SITE}/FlashVideo/Site/Gawker.pm
 ${P5SITE}/FlashVideo/Site/Globaltv.pm
 ${P5SITE}/FlashVideo/Site/Google.pm
 ${P5SITE}/FlashVideo/Site/Googlevideosearch.pm
+${P5SITE}/FlashVideo/Site/Gorillavid.pm
 ${P5SITE}/FlashVideo/Site/Grindtv.pm
 ${P5SITE}/FlashVideo/Site/Ima.pm
 ${P5SITE}/FlashVideo/Site/Itv.pm
@@ -67,12 +70,16 @@ ${P5SITE}/FlashVideo/Site/Mtvnservices.pm
 ${P5SITE}/FlashVideo/Site/Muzu.pm
 ${P5SITE}/FlashVideo/Site/Mylifetime.pm
 ${P5SITE}/FlashVideo/Site/Myvideo.pm
+${P5SITE}/FlashVideo/Site/Nasa.pm
 ${P5SITE}/FlashVideo/Site/Nbc.pm
 ${P5SITE}/FlashVideo/Site/Nfb.pm
 ${P5SITE}/FlashVideo/Site/Nick.pm
 ${P5SITE}/FlashVideo/Site/Nicovideo.pm
+${P5SITE}/FlashVideo/Site/Ooyala.pm
 ${P5SITE}/FlashVideo/Site/Pbs.pm
 ${P5SITE}/FlashVideo/Site/Pennyarcade.pm
+${P5SITE}/FlashVideo/Site/Pinkbike.pm
+${P5SITE}/FlashVideo/Site/Putlocker.pm
 ${P5SITE}/FlashVideo/Site/Redbull.pm
 ${P5SITE}/FlashVideo/Site/Redtube.pm
 ${P5SITE}/FlashVideo/Site/Ringtv.pm
@@ -119,6 +126,7 @@ ${P5SITE}/FlashVideo/Site/Youku.pm
 ${P5SITE}/FlashVideo/Site/Youtu.pm
 ${P5SITE}/FlashVideo/Site/Youtube.pm
 ${P5SITE}/FlashVideo/Site/Youtubenocookie.pm
+${P5SITE}/FlashVideo/Site/Zdf.pm
 ${P5SITE}/FlashVideo/Site/Zshare.pm
 ${P5SITE}/FlashVideo/URLFinder.pm
 ${P5SITE}/FlashVideo/Utils.pm
