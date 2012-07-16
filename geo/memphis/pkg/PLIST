@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/16 13:59:46 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2012/07/16 14:05:08 jasper Exp $
 include/libmemphis-0.2/
 include/libmemphis-0.2/memphis/
 include/libmemphis-0.2/memphis/memphis-data-pool.h
@@ -13,6 +12,7 @@ lib/girepository-1.0/
 lib/girepository-1.0/Memphis-0.2.typelib
 lib/libmemphis-0.2.a
 lib/libmemphis-0.2.la
+@lib lib/libmemphis-0.2.so.${LIBmemphis-0.2_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/memphis-0.2.pc
 share/gir-1.0/

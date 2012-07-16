@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/07/16 13:59:46 jasper Exp $
-@lib lib/libmemphis-0.2.so.${LIBmemphis-0.2_VERSION}
