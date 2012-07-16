@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/07/07 12:59:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.1 2012/07/16 07:11:28 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
+@pkgpath geo/libchamplain/core
 bin/libchamplain-demo
 include/libchamplain-${API_VERSION}/
 include/libchamplain-${API_VERSION}/champlain/
