@@ -1,13 +1,21 @@
-$OpenBSD: patch-lsusb_8_in,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+$OpenBSD: patch-lsusb_8_in,v 1.2 2012/07/16 20:17:03 mpi Exp $
 
-No '-t' under OpenBSD
+No '-t' nor '-D' under OpenBSD
 
---- lsusb.8.in.orig	Tue May 15 14:27:23 2012
-+++ lsusb.8.in	Tue May 15 14:27:43 2012
-@@ -41,12 +41,6 @@ The device file should be something like /dev/bus/usb/
- This option displays detailed information like the \fBv\fP option;
- you must be root to do this.
+--- lsusb.8.in.orig	Sun Oct 30 20:35:50 2011
++++ lsusb.8.in	Mon Jul 16 18:10:18 2012
+@@ -33,20 +33,6 @@ Both ID's are given in decimal and may be omitted.
+ Show only devices with the specified vendor and product ID.
+ Both ID's are given in hexadecimal.
  .TP
+-.B \-D \fIdevice\fP
+-Do not scan the /dev/bus/usb directory,
+-instead display only information
+-about the device whose device file is given.
+-The device file should be something like /dev/bus/usb/001/001.
+-This option displays detailed information like the \fBv\fP option;
+-you must be root to do this.
+-.TP
 -.B \-t
 -Tells
 -.I lsusb

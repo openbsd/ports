@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+# $OpenBSD: Makefile,v 1.2 2012/07/16 20:17:03 mpi Exp $
 
 COMMENT =		utility used to display information about USB devices
 
 VERSION =		005
 DISTNAME =		usbutils_${VERSION}.orig
 PKGNAME =		usbutils-${VERSION}
+
+REVISION =		0
 
 CATEGORIES =		sysutils
 HOMEPAGE =		http://www.linux-usb.org

@@ -1,9 +1,9 @@
-$OpenBSD: patch-lsusb_c,v 1.1.1.1 2012/05/15 13:44:52 mpi Exp $
+$OpenBSD: patch-lsusb_c,v 1.2 2012/07/16 20:17:03 mpi Exp $
 
-Disable unsupported '-t' option.
+Disable unsupported options.
 
 --- lsusb.c.orig	Sun Oct 30 20:35:50 2011
-+++ lsusb.c	Tue May 15 14:36:50 2012
++++ lsusb.c	Mon Jul 16 18:05:14 2012
 @@ -3902,6 +3902,7 @@ void devtree_devdisconnect(struct usbdevnode *dev)
  	dev = dev;	/* reduce compiler warnings */
  }
@@ -43,18 +43,32 @@ Disable unsupported '-t' option.
  		case 's':
  			cp = strchr(optarg, ':');
  			if (cp) {
-@@ -4006,8 +4008,10 @@ int main(int argc, char *argv[])
+@@ -3983,9 +3985,11 @@ int main(int argc, char *argv[])
+ 				product = strtoul(cp, NULL, 16);
+ 			break;
+ 
++#ifndef __OpenBSD__
+ 		case 'D':
+ 			devdump = optarg;
+ 			break;
++#endif
+ 
+ 		case '?':
+ 		default:
+@@ -4004,10 +4008,12 @@ int main(int argc, char *argv[])
+ 			"  -d vendor:[product]\n"
+ 			"      Show only devices with the specified vendor and\n"
  			"      product ID numbers (in hexadecimal)\n"
++#ifndef __OpenBSD__
  			"  -D device\n"
  			"      Selects which device lsusb will examine\n"
-+#ifndef __OpenBSD__
  			"  -t\n"
  			"      Dump the physical USB device hierarchy as a tree\n"
 +#endif
  			"  -V, --version\n"
  			"      Show version of program\n"
  			);
-@@ -4033,11 +4037,14 @@ int main(int argc, char *argv[])
+@@ -4033,13 +4039,16 @@ int main(int argc, char *argv[])
  		return EXIT_FAILURE;
  	}
  
@@ -65,8 +79,10 @@ Disable unsupported '-t' option.
  		status = treedump();
 -	} else if (devdump)
 +	} else
-+#endif
 +	if (devdump)
  		status = dump_one_device(ctx, devdump);
  	else
++#endif
  		status = list_devices(ctx, bus, devnum, vendor, product);
+ 
+ 	names_exit();
