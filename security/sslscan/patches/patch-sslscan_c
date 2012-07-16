@@ -1,6 +1,6 @@
-$OpenBSD: patch-sslscan_c,v 1.2 2012/06/26 10:12:21 jasper Exp $
+$OpenBSD: patch-sslscan_c,v 1.3 2012/07/16 08:49:31 jasper Exp $
 --- sslscan.c.orig	Tue Sep  1 08:35:59 2009
-+++ sslscan.c	Fri Jun 22 20:14:18 2012
++++ sslscan.c	Sat Jul 14 15:23:49 2012
 @@ -41,6 +41,7 @@
  #include <openssl/pkcs12.h>
  #include <openssl/x509.h>
@@ -88,7 +88,17 @@ $OpenBSD: patch-sslscan_c,v 1.2 2012/06/26 10:12:21 jasper Exp $
  
  		// SSL v3 only...
  		else if (strcmp("--ssl3", argv[argLoop]) == 0)
-@@ -1415,13 +1428,17 @@ int main(int argc, char *argv[])
+@@ -1379,7 +1392,9 @@ int main(int argc, char *argv[])
+ 			printf("                       ports (i.e. host:port).\n");
+ 			printf("  %s--no-failed%s          List only accepted ciphers  (default\n", COL_GREEN, RESET);
+ 			printf("                       is to listing all ciphers).\n");
++#ifndef OPENSSL_NO_SSL2
+ 			printf("  %s--ssl2%s               Only check SSLv2 ciphers.\n", COL_GREEN, RESET);
++#endif
+ 			printf("  %s--ssl3%s               Only check SSLv3 ciphers.\n", COL_GREEN, RESET);
+ 			printf("  %s--tls1%s               Only check TLSv1 ciphers.\n", COL_GREEN, RESET);
+ 			printf("  %s--pk=<file>%s          A file containing the private key or\n", COL_GREEN, RESET);
+@@ -1415,13 +1430,17 @@ int main(int argc, char *argv[])
  			switch (options.sslVersion)
  			{
  				case ssl_all:
