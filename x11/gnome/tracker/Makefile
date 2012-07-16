@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2012/07/12 12:18:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.110 2012/07/16 07:19:25 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,7 +21,7 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-evolution=	0
 REVISION-nautilus=	0
 
@@ -67,7 +67,7 @@ WANTLIB-main += archive atk-1.0 bz2 c cairo cairo-gobject
 WANTLIB-main += dbus-1 dbus-glib-1 e2fs-uuid enca exempi exif gconf-2
 WANTLIB-main += gcrypt gdk-3 gdk_pixbuf-2.0 gee gif gmime-2.6
 WANTLIB-main += gnome-keyring gpg-error gsf-1 gtk-3
-WANTLIB-main += jpeg lcms lzma openjpeg panel-applet-4 cue
+WANTLIB-main += jpeg lcms2 lzma openjpeg panel-applet-4 cue
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
 WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
@@ -100,11 +100,11 @@ WANTLIB-evolution += lib/evolution/${EVO_VERSION}/gnomecanvas
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/menus
 
 WANTLIB-nautilus += ${WANTLIB}
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 nautilus-extension pango-1.0 pangocairo-1.0
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.14 stdc++
-WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
-WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
 
 LIB_DEPENDS=		converters/libunistring
 
