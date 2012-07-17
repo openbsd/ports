@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_feh_pre,v 1.14 2012/05/14 08:20:40 dcoppa Exp $
+$OpenBSD: patch-man_feh_pre,v 1.15 2012/07/17 11:23:18 dcoppa Exp $
 
-fix typo
+fix typos
 
 document behaviour of duplicate key bindings
 (upstream git commit 9ed58f2c8ca3dd2dc67808676ec437838c4207e6)
@@ -9,7 +9,7 @@ document reload_{plus,minus} time delta
 (upstream git commit 655169fe6c2b93a58dca133d3144ca674c4e157c)
 
 --- man/feh.pre.orig	Sun Mar 25 13:16:58 2012
-+++ man/feh.pre	Mon May 14 10:11:03 2012
++++ man/feh.pre	Tue Jul 17 13:20:45 2012
 @@ -198,7 +198,7 @@ the caption will be looked for in
  Don't display images, print image info according to
  .Ar format
@@ -28,6 +28,15 @@ document reload_{plus,minus} time delta
  .Pp
  All config files treat lines starting with a
  .Qq #
+@@ -902,7 +902,7 @@ An example entry would be
+ .
+ .Pp
+ .
+-You cane use this theme in two ways.  Either call
++You can use this theme in two ways.  Either call
+ .Qo
+ .Nm
+ -Timagemap *.jpg
 @@ -962,6 +962,11 @@ Available modifiers are
  .Ar C No for Control ,
  .Ar S No for Shift and
