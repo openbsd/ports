@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1056 2012/07/16 15:56:25 edd Exp $
+# $OpenBSD: Makefile,v 1.1057 2012/07/17 09:56:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -390,6 +390,7 @@
      SUBIDR += node-expresso
      SUBDIR += node-fibers
      SUBDIR += node-generic-pool
+     SUBDIR += node-gir
      SUBDIR += node-mnm
      SUBDIR += nspr
      SUBDIR += ocaml-batteries
