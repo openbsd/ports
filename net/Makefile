@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.762 2012/07/16 15:22:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.763 2012/07/17 10:46:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -109,7 +109,6 @@
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
-     SUBDIR += gsnmp
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
      SUBDIR += gupnp
@@ -512,7 +511,6 @@
      SUBDIR += samba,ldap
      SUBDIR += scamper
      SUBDIR += scapy
-     SUBDIR += scli
      SUBDIR += sendxmpp
      SUBDIR += sharity-light
      SUBDIR += si
