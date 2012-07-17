@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_Makefile_in,v 1.17 2012/05/08 08:24:40 dcoppa Exp $
+$OpenBSD: patch-config_Makefile_in,v 1.18 2012/07/17 13:26:49 dcoppa Exp $
 
 Fix install on non-native architectures
 
@@ -28,7 +28,7 @@ Remove excessive optimization
 +	done
 +	cp -f mlgui.byte $(DESTDIR)$(prefix)/bin/mlgui
 +	ln -s mlgui $(DESTDIR)$(prefix)/bin/mldonkey_gui
-+	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet+gui
++	cp -f mlnet+gui.byte $(DESTDIR)$(prefix)/bin/mlnet+gui
 +	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
 +	  ln -s mlnet+gui $(DESTDIR)$(prefix)/bin/$$link; \
 +	done

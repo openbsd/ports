@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.48 2012/05/08 08:24:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.49 2012/07/17 13:26:49 dcoppa Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.1.1
-REVISION =	0
+DISTNAME =	mldonkey-3.1.2
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -18,20 +17,20 @@ PERMIT_DISTFILES_CDROM =Yes
 
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB +=		GL X11 Xcomposite Xcursor Xdamage Xext
-WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB +=		bz2 c cairo charset expat fontconfig
-WANTLIB +=		freetype gd gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB +=		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB +=		gthread-2.0 gtk-x11-2.0 jpeg m magic
-WANTLIB +=		miniupnpc natpmp pixman-1 pango-1.0
-WANTLIB +=		pangocairo-1.0 pangoft2-1.0 png pthread
-WANTLIB +=		pthread-stubs rsvg-2 stdc++ xcb
-WANTLIB +=		xcb-render xcb-shm z
+WANTLIB =		GL X11 Xcomposite Xcursor Xdamage Xext \
+			Xfixes Xi Xinerama Xrandr Xrender \
+			atk-1.0 bz2 c cairo charset curses \
+			expat fontconfig freetype gd \
+			gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
+			glib-2.0 gobject-2.0 gtk-x11-2.0 jpeg \
+			m magic miniupnpc natpmp pango-1.0 \
+			pangocairo-1.0 pangoft2-1.0 pixman-1 \
+			png pthread pthread-stubs rsvg-2 \
+			stdc++ xcb xcb-render xcb-shm z
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config
-AUTOCONF_VERSION =	2.68
+AUTOCONF_VERSION =	2.69
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 CONFIGURE_ARGS +=	--enable-gui=newgui2 \
