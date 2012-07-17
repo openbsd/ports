@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/30 22:19:10 steven Exp $
-@lib lib/libgnet-2.0.so.${LIBgnet-2.0_VERSION}
