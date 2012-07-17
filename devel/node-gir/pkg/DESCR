@@ -1,0 +1,6 @@
+Node-gir is node bindings to the girepository library making it possible
+to make automatic and dynamic calls to any library that has GI
+annotations installed.
+
+This will make it possible to script a GNOME desktop system entirely
+from Node,js much in the way it's done today with Seed, GJS or pygtk.
