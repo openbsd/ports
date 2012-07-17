@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/07/09 18:40:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2012/07/17 09:31:21 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT-server=		network backup solution (server)
 COMMENT-bat=		network backup solution (gui-client)
 
 V=			5.2.10
+REVISION-main=		0
 DISTNAME=		bacula-$V
 FULLPKGNAME-main=	bacula-client-$V
 FULLPKGPATH-main=	${PKGPATH},-main
@@ -41,7 +42,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BACULACONF=		/etc/bacula
 BACULASTATE=		/var/bacula
-SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX
+SUBST_VARS=		BACULACONF BACULASTATE TRUEPREFIX FULLPKGNAME-main
 
 CONFIGURE_STYLE=	simple
 USE_GMAKE=		yes
