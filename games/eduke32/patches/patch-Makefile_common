@@ -1,0 +1,14 @@
+$OpenBSD: patch-Makefile_common,v 1.1.1.1 2012/07/17 21:29:50 rfreeman Exp $
+
+Use default optimisation options.
+
+--- Makefile.common.orig	Fri Mar  9 06:15:40 2012
++++ Makefile.common	Fri Mar  9 06:16:13 2012
+@@ -89,7 +89,6 @@ endif
+ 
+ ifneq (0,$(RELEASE))
+     # Debugging disabled
+-    debug+= -O$(OPTLEVEL)
+     ifneq ($(CC),clang)
+         debug+= -funswitch-loops
+     endif

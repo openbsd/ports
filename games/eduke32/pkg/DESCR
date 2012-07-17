@@ -1,0 +1,17 @@
+Source-port of the venerable Duke Nukem 3D, also usable as a homebrew
+game engine. Besides increasing portability, the engine adds new
+renderers, in-game configurability, console, plus extended editing and
+scripting capabilities. Networking for dukematches and coop play is
+fully functional. 
+
+The engine supports the following games:
+(from http://wiki.eduke32.com/wiki/Frequently_Asked_Questions)
+* Duke Nukem 3D Shareware Version
+* Duke Nukem 3D
+* Duke Nukem 3D: Atomic Edition
+* NAM (Note: you must rename GAME.CON from NAM to NAM.CON)
+* Napalm (Wal-Mart only version of NAM, some .GRP differences between 
+  the two releases)
+* WWII GI (Limited Support using NAM mode as a base) 
+
+"EDuke32 makes sandwiches!" 

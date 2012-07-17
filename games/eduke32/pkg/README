@@ -1,0 +1,24 @@
+Shareware Duke Nukem 3D data has been installed to: 
+  ${PREFIX}/share/duke3d/
+
+You may also copy your registered version data files (or any other
+Duke Nukem 3D retail copies, such as the Atomic Edition) to a local
+directory such as ~/duke3d/, and run eduke32 from within that directory:
+
+  % cd ~/duke3d/ && eduke32
+
+This will load your registered version data rather than the installed
+shareware.
+
+eduke32 includes a map editor, mapster32, which is an up-to-date
+version of Ken Silverman's BUILD editor, including changes necessary
+to impliment the advanced mapping/modding functions of eduke32.
+
+Sample maps, defs and con files can be used to show how to create your
+own maps and modifications, if you are so inclined. They are located in
+${PREFIX}/share/examples/eduke32/
+
+Licenses are found under ${PREFIX}/share/doc/eduke32/
+
+http://wiki.eduke32.com/ contains a large resource of information on
+how to make full use of the eduke32 engine and mapster32 editor.
