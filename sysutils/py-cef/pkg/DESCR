@@ -1,0 +1,3 @@
+Most Mozilla Services applications need to generate CEF logs. A CEF Log
+is a formatted log that can be used by ArcSight, a central application
+used by the infrasec team to manage application security.
