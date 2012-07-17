@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/17 07:28:27 landry Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/
+share/gpx-viewer/default-layout.xml
 share/gpx-viewer/gpx-viewer-file-chooser.ui
 share/gpx-viewer/gpx-viewer-preferences.ui
 share/gpx-viewer/gpx-viewer-tracklist.ui
@@ -17,28 +18,12 @@ share/gpx-viewer/icons/hicolor/scalable/status/pin-orange.svg
 share/gpx-viewer/icons/hicolor/scalable/status/pin-purple.svg
 share/gpx-viewer/icons/hicolor/scalable/status/pin-red.svg
 share/gpx-viewer/icons/hicolor/scalable/status/pin-yellow.svg
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gpx-viewer.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gpx-viewer.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gpx-viewer.png
-share/icons/hicolor/256x256/
-share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/gpx-viewer.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gpx-viewer.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gpx-viewer.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gpx-viewer.svg
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
