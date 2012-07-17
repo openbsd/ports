@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.763 2012/07/17 10:46:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.764 2012/07/17 10:48:57 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -103,7 +103,6 @@
      SUBDIR += gloox
      SUBDIR += gmudix
      SUBDIR += gnaughty
-     SUBDIR += gnet
      SUBDIR += gnugk
      SUBDIR += gopher
      SUBDIR += gotthard
