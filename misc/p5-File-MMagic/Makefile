@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2012/06/28 21:54:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.9 2012/07/17 22:04:37 bluhm Exp $
 
 COMMENT =		perl module to guess file type from contents
 
-DISTNAME =		File-MMagic-1.28
+DISTNAME =		File-MMagic-1.29
 
 CATEGORIES =		misc
 
