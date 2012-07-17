@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_logview-utils_c,v 1.2 2012/07/13 10:26:30 ajacoutot Exp $
+$OpenBSD: patch-src_logview-utils_c,v 1.3 2012/07/17 07:47:01 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679845
+From b75701ce5c87eb125198ebfe124c829167844db1 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Fri, 13 Jul 2012 10:23:57 +0000
+Subject: OpenBSD needs _XOPEN_SOURCE_EXTENDED for strptime(3)
 
 --- src/logview-utils.c.orig	Fri Jul 13 12:16:32 2012
 +++ src/logview-utils.c	Fri Jul 13 12:16:54 2012
