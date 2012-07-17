@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2012/06/15 08:30:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2012/07/17 19:36:41 landry Exp $
 libexec/xfce4/
 libexec/xfce4/panel-plugins/
 @bin libexec/xfce4/panel-plugins/xfce4-netload-plugin
 share/icons/hicolor/24x24/apps/xfce4-netload-plugin.png
 share/icons/hicolor/48x48/apps/xfce4-netload-plugin.png
 share/icons/hicolor/scalable/apps/xfce4-netload-plugin.svg
+share/locale/ar/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/cs/LC_MESSAGES/xfce4-netload-plugin.mo
@@ -44,6 +45,7 @@ share/locale/ur/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/vi/LC_MESSAGES/xfce4-netload-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-netload-plugin.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-netload-plugin.mo
 share/xfce4/panel-plugins/
 share/xfce4/panel-plugins/netload.desktop
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
