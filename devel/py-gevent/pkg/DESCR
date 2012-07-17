@@ -1,0 +1,11 @@
+gevent is a Python networking library that uses greenlet to provide
+synchronous API on top of libevent event loop.
+
+* Fast event loop based on libevent.
+* Lightweight execution units based on greenlet.
+* Familiar API that re-uses concepts from the Python standard library.
+* Cooperative sockets with ssl support.
+* DNS queries performed through libevent-dns.
+* Ability to use standard library and 3rd party modules written for
+ standard blocking sockets
+* Fast WSGI server based on libevent-http.
