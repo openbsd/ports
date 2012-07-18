@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.32 2012/07/06 12:01:29 espie Exp $
+# $OpenBSD: Port.pm,v 1.33 2012/07/18 10:31:18 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -181,6 +181,9 @@ sub run
 		} else {
 			unlink($dist->tempfilename);
 		}
+	}
+	if (!$exit) {
+		delete $job->{v}{info}{DIST};
 	}
 	exit($exit);
 }
