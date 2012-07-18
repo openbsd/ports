@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/06/22 13:08:09 phessler Exp $
+# $OpenBSD: Makefile,v 1.50 2012/07/18 13:44:31 jasper Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -7,6 +7,7 @@ V=		R15B01
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-15b.01
 EPOCH=		0
+REVISION=	0
 CATEGORIES=	lang
 
 # Erlang Public License
