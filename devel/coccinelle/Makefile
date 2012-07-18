@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/11/03 22:13:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2012/07/18 08:04:43 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,8 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.0-rc7
-REVISION =	3
+DISTNAME =	coccinelle-1.0.0-rc11
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -43,6 +42,7 @@ REGRESS_IS_INTERACTIVE = Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
 CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
+CONFIGURE_ARGS =	--with-python=${MODPY_BIN}
 
 REGRESS_TARGET =	test
 SUBST_VARS +=		MAKE_PROGRAM
@@ -62,7 +62,7 @@ PKG_ARGS +=	-DOCAMLOPT=
 .endif
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/pycaml/Makefile
+	${SUBST_CMD} ${WRKSRC}/pycaml/Makefile
 	perl -pi -e s,/usr/local,${TRUEPREFIX},g ${WRKSRC}/scripts/spatch*
 
 post-install:
