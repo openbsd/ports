@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/09/01 13:40:09 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/07/18 08:45:42 sthen Exp $
 @newgroup _apache2:576
 @newuser _apache2:576:576:daemon:Apache HTTP Server:/var/empty:/sbin/nologin
 include/apache2/
@@ -112,16 +112,17 @@ lib/apache2/mod_userdir.so
 lib/apache2/mod_usertrack.so
 lib/apache2/mod_version.so
 lib/apache2/mod_vhost_alias.so
+@man man/man1/ab.1
+@man man/man1/apxs2.1
 @man man/man1/dbmmanage2.1
 @man man/man1/htdbm.1
 @man man/man1/htdigest2.1
 @man man/man1/htpasswd2.1
-@man man/man8/ab.8
+@man man/man1/httxt2dbm.1
+@man man/man1/logresolve2.1
 @man man/man8/apachectl2.8
-@man man/man8/apxs2.8
 @man man/man8/htcacheclean.8
 @man man/man8/httpd2.8
-@man man/man8/logresolve2.8
 @man man/man8/rotatelogs2.8
 @man man/man8/suexec2.8
 @bin sbin/ab
@@ -350,6 +351,7 @@ share/doc/apache2/license.html
 share/doc/apache2/license.html.en
 share/doc/apache2/logs.html
 share/doc/apache2/logs.html.en
+share/doc/apache2/logs.html.fr
 share/doc/apache2/logs.html.ja.utf8
 share/doc/apache2/logs.html.ko.euc-kr
 share/doc/apache2/logs.html.tr.utf8
@@ -626,11 +628,14 @@ share/doc/apache2/mod/mod_proxy_connect.html.en
 share/doc/apache2/mod/mod_proxy_connect.html.ja.utf8
 share/doc/apache2/mod/mod_proxy_ftp.html
 share/doc/apache2/mod/mod_proxy_ftp.html.en
+share/doc/apache2/mod/mod_proxy_ftp.html.ja.utf8
 share/doc/apache2/mod/mod_proxy_http.html
 share/doc/apache2/mod/mod_proxy_http.html.en
 share/doc/apache2/mod/mod_proxy_http.html.fr
+share/doc/apache2/mod/mod_proxy_http.html.ja.utf8
 share/doc/apache2/mod/mod_proxy_scgi.html
 share/doc/apache2/mod/mod_proxy_scgi.html.en
+share/doc/apache2/mod/mod_proxy_scgi.html.ja.utf8
 share/doc/apache2/mod/mod_reqtimeout.html
 share/doc/apache2/mod/mod_reqtimeout.html.en
 share/doc/apache2/mod/mod_rewrite.html
@@ -741,6 +746,7 @@ share/doc/apache2/new_features_2_0.html.tr.utf8
 share/doc/apache2/new_features_2_2.html
 share/doc/apache2/new_features_2_2.html.en
 share/doc/apache2/new_features_2_2.html.fr
+share/doc/apache2/new_features_2_2.html.ja.utf8
 share/doc/apache2/new_features_2_2.html.ko.euc-kr
 share/doc/apache2/new_features_2_2.html.pt-br
 share/doc/apache2/new_features_2_2.html.tr.utf8
@@ -810,6 +816,7 @@ share/doc/apache2/programs/httxt2dbm.html.tr.utf8
 share/doc/apache2/programs/index.html
 share/doc/apache2/programs/index.html.en
 share/doc/apache2/programs/index.html.es
+share/doc/apache2/programs/index.html.ja.utf8
 share/doc/apache2/programs/index.html.ko.euc-kr
 share/doc/apache2/programs/index.html.ru.koi8-r
 share/doc/apache2/programs/index.html.tr.utf8
@@ -934,6 +941,7 @@ share/doc/apache2/upgrading.html
 share/doc/apache2/upgrading.html.de
 share/doc/apache2/upgrading.html.en
 share/doc/apache2/upgrading.html.fr
+share/doc/apache2/upgrading.html.ja.utf8
 share/doc/apache2/urlmapping.html
 share/doc/apache2/urlmapping.html.en
 share/doc/apache2/urlmapping.html.ja.utf8
@@ -1538,3 +1546,4 @@ share/examples/apache2/icons/world2.png
 share/examples/apache2/logs/
 @sample /var/apache2/logs/
 %%ldap%%
+@rcscript ${RCDIR}/httpd2

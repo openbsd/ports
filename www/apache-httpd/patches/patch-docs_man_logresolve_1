@@ -1,12 +1,12 @@
-$OpenBSD: patch-docs_man_logresolve_8,v 1.2 2007/03/25 17:40:55 deanna Exp $
---- docs/man/logresolve.8.orig	Wed Jun 29 18:19:59 2005
-+++ docs/man/logresolve.8	Sun Mar 25 13:21:04 2007
+$OpenBSD: patch-docs_man_logresolve_1,v 1.1 2012/07/18 08:45:42 sthen Exp $
+--- docs/man/logresolve.1.orig	Tue Jan 10 23:32:02 2012
++++ docs/man/logresolve.1	Tue Feb 21 23:13:49 2012
 @@ -19,21 +19,21 @@
  .el .ne 3
  .IP "\\$1" \\$2
  ..
--.TH "LOGRESOLVE" 8 "2005-06-29" "Apache HTTP Server" "logresolve"
-+.TH "LOGRESOLVE2" 8 "2005-06-29" "Apache HTTP Server" "logresolve2"
+-.TH "LOGRESOLVE" 1 "2012-01-10" "Apache HTTP Server" "logresolve"
++.TH "LOGRESOLVE2" 1 "2012-01-10" "Apache HTTP Server" "logresolve2"
  
  .SH NAME
 -logresolve \- Resolve IP-addresses to hostnames in Apache log files

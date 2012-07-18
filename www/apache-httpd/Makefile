@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2012/04/28 09:54:44 stsp Exp $
+# $OpenBSD: Makefile,v 1.31 2012/07/18 08:45:42 sthen Exp $
 
 COMMENT=	apache HTTP server
 
-V=		2.2.20
+V=		2.2.22
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
-REVISION=	1
 
 CATEGORIES=	www net
 
@@ -78,8 +77,8 @@ FAKE_FLAGS+=		rel_user=_apache2 rel_group=_apache2 \
 
 A2SBIN=			apachectl apxs dbmmanage htdigest htpasswd \
 			logresolve rotatelogs suexec
-A2MAN1=			dbmmanage htdigest htpasswd
-A2MAN8= 		apachectl apxs httpd logresolve rotatelogs suexec
+A2MAN1=			apxs dbmmanage htdigest htpasswd logresolve
+A2MAN8=			apachectl httpd rotatelogs suexec
 
 pre-configure:
 	@perl -pi -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/config.layout
@@ -96,7 +95,7 @@ post-install:
 .for i in ${A2MAN1}
 	mv ${PREFIX}/man/man1/${i}.1 ${PREFIX}/man/man1/${i}2.1
 .endfor
-	
+
 .for i in ${A2MAN8}
 	mv ${PREFIX}/man/man8/${i}.8 ${PREFIX}/man/man8/${i}2.8
 .endfor
