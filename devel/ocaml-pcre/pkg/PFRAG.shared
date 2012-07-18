@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/15 15:50:23 sthen Exp $
-lib/ocaml/site-lib/pcre/dllpcre_stubs.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/07/18 08:04:11 sthen Exp $
+lib/ocaml/stublibs/dllpcre_stubs.so
