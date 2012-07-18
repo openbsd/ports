@@ -1,0 +1,16 @@
+$OpenBSD: patch-bridges_source_cpp_uno_gcc3_linux_x86-64_uno2cpp_cxx,v 1.1 2012/07/18 16:49:21 robert Exp $
+--- bridges/source/cpp_uno/gcc3_linux_x86-64/uno2cpp.cxx.orig.port	Wed Jul 18 18:43:00 2012
++++ bridges/source/cpp_uno/gcc3_linux_x86-64/uno2cpp.cxx	Wed Jul 18 18:43:31 2012
+@@ -26,7 +26,12 @@
+  *
+  ************************************************************************/
+ 
++#if defined (FREEBSD) || defined(NETBSD) || defined(OPENBSD) || defined(DRAGONFLY)
++#include <stdlib.h>
++#else
+ #include <alloca.h>
++#endif
++
+ #include <exception>
+ #include <typeinfo>
+ 
