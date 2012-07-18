@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/01/13 20:54:25 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/18 14:03:44 jasper Exp $
 @newgroup _rabbitmq:646
 @newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 lib/rabbitmq/
 lib/rabbitmq/ebin/
+lib/rabbitmq/ebin/credit_flow.beam
 lib/rabbitmq/ebin/delegate.beam
 lib/rabbitmq/ebin/delegate_sup.beam
+lib/rabbitmq/ebin/dtree.beam
 lib/rabbitmq/ebin/file_handle_cache.beam
 lib/rabbitmq/ebin/gatherer.beam
 lib/rabbitmq/ebin/gen_server2.beam
@@ -15,8 +17,10 @@ lib/rabbitmq/ebin/gm_tests.beam
 lib/rabbitmq/ebin/lqueue.beam
 lib/rabbitmq/ebin/mirrored_supervisor.beam
 lib/rabbitmq/ebin/mirrored_supervisor_tests.beam
+lib/rabbitmq/ebin/mnesia_sync.beam
 lib/rabbitmq/ebin/pg2_fixed.beam
 lib/rabbitmq/ebin/pg_local.beam
+lib/rabbitmq/ebin/pmon.beam
 lib/rabbitmq/ebin/priority_queue.beam
 lib/rabbitmq/ebin/rabbit.app
 lib/rabbitmq/ebin/rabbit.beam
@@ -47,6 +51,7 @@ lib/rabbitmq/ebin/rabbit_connection_sup.beam
 lib/rabbitmq/ebin/rabbit_control.beam
 lib/rabbitmq/ebin/rabbit_ctl_usage.beam
 lib/rabbitmq/ebin/rabbit_direct.beam
+lib/rabbitmq/ebin/rabbit_disk_monitor.beam
 lib/rabbitmq/ebin/rabbit_error_logger.beam
 lib/rabbitmq/ebin/rabbit_error_logger_file_h.beam
 lib/rabbitmq/ebin/rabbit_event.beam
@@ -55,6 +60,7 @@ lib/rabbitmq/ebin/rabbit_exchange_type.beam
 lib/rabbitmq/ebin/rabbit_exchange_type_direct.beam
 lib/rabbitmq/ebin/rabbit_exchange_type_fanout.beam
 lib/rabbitmq/ebin/rabbit_exchange_type_headers.beam
+lib/rabbitmq/ebin/rabbit_exchange_type_invalid.beam
 lib/rabbitmq/ebin/rabbit_exchange_type_topic.beam
 lib/rabbitmq/ebin/rabbit_file.beam
 lib/rabbitmq/ebin/rabbit_framing.beam
@@ -80,6 +86,7 @@ lib/rabbitmq/ebin/rabbit_msg_store_index.beam
 lib/rabbitmq/ebin/rabbit_net.beam
 lib/rabbitmq/ebin/rabbit_networking.beam
 lib/rabbitmq/ebin/rabbit_node_monitor.beam
+lib/rabbitmq/ebin/rabbit_nodes.beam
 lib/rabbitmq/ebin/rabbit_plugins.beam
 lib/rabbitmq/ebin/rabbit_plugins_usage.beam
 lib/rabbitmq/ebin/rabbit_prelaunch.beam
@@ -115,13 +122,8 @@ lib/rabbitmq/ebin/worker_pool_worker.beam
 lib/rabbitmq/include/
 lib/rabbitmq/include/gm_specs.hrl
 lib/rabbitmq/include/rabbit.hrl
-lib/rabbitmq/include/rabbit_auth_backend_spec.hrl
-lib/rabbitmq/include/rabbit_auth_mechanism_spec.hrl
-lib/rabbitmq/include/rabbit_backing_queue_spec.hrl
-lib/rabbitmq/include/rabbit_exchange_type_spec.hrl
 lib/rabbitmq/include/rabbit_framing.hrl
 lib/rabbitmq/include/rabbit_msg_store.hrl
-lib/rabbitmq/include/rabbit_msg_store_index.hrl
 lib/rabbitmq/plugins/
 lib/rabbitmq/plugins/README
 lib/rabbitmq/plugins/amqp_client-${V}.ez
@@ -132,6 +134,7 @@ lib/rabbitmq/plugins/rabbitmq_auth_backend_ldap-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_auth_mechanism_ssl-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_consistent_hash_exchange-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_federation-${V}.ez
+lib/rabbitmq/plugins/rabbitmq_federation_management-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_jsonrpc-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_jsonrpc_channel-${V}.ez
 lib/rabbitmq/plugins/rabbitmq_jsonrpc_channel_examples-${V}.ez
@@ -146,6 +149,7 @@ lib/rabbitmq/plugins/rabbitmq_tracing-${V}.ez
 lib/rabbitmq/plugins/rfc4627_jsonrpc-${V}-git.ez
 lib/rabbitmq/plugins/webmachine-1.7.0-rmq${V}-hg.ez
 lib/rabbitmq/sbin/
+lib/rabbitmq/sbin/rabbitmq-defaults
 lib/rabbitmq/sbin/rabbitmq-env
 lib/rabbitmq/sbin/rabbitmq-plugins
 lib/rabbitmq/sbin/rabbitmq-server
@@ -154,6 +158,7 @@ lib/rabbitmq/sbin/rabbitmqctl
 @man man/man1/rabbitmq-server.1
 @man man/man1/rabbitmqctl.1
 @man man/man5/rabbitmq-env.conf.5
+sbin/rabbitmq-defaults
 sbin/rabbitmq-env
 sbin/rabbitmq-plugins
 sbin/rabbitmq-server

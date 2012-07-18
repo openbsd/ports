@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2012/01/13 20:54:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/07/18 14:03:44 jasper Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		2.7.1
+V =		2.8.4
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
@@ -35,7 +35,7 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 		textproc/libxslt \
 		textproc/xmlto
 
-RUN_DEPENDS =	lang/erlang
+RUN_DEPENDS =	lang/erlang>=15b.01p0v0
 
 MAKE_ENV =	PYTHON=${MODPY_BIN} VERSION=${V}
 
