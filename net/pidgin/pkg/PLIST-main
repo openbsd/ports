@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2012/06/15 08:32:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2012/07/18 13:31:49 jasper Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -124,8 +124,6 @@ share/locale/id/LC_MESSAGES/pidgin.mo
 share/locale/it/LC_MESSAGES/pidgin.mo
 share/locale/ja/LC_MESSAGES/pidgin.mo
 share/locale/ka/LC_MESSAGES/pidgin.mo
-share/locale/km/
-share/locale/km/LC_MESSAGES/
 share/locale/km/LC_MESSAGES/pidgin.mo
 share/locale/kn/LC_MESSAGES/pidgin.mo
 share/locale/ko/LC_MESSAGES/pidgin.mo

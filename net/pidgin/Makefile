@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.109 2012/07/18 13:31:49 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,8 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.10.4
-REVISION-main=	1
+VERSION=	2.10.6
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -83,7 +82,6 @@ AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
-		 --disable-farsight \
 		 --disable-farstream \
 		 --disable-gevolution \
 		 --disable-gnutls \
