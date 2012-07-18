@@ -1,0 +1,15 @@
+$OpenBSD: patch-MyXmlConfig_cpp,v 1.1 2012/07/18 08:47:34 jasper Exp $
+--- MyXmlConfig.cpp.orig	Wed Jul 18 01:02:28 2012
++++ MyXmlConfig.cpp	Wed Jul 18 10:11:59 2012
+@@ -1674,7 +1674,10 @@ MyXmlConfig::loadFromStream(wxInputStream &is, bool is
+                                 wxRegEx r(wxT("^(-----BEGIN .SA PRIVATE KEY-----)\\s+(.*)(-----END .SA PRIVATE KEY-----)\\s*$"), wxRE_ADVANCED);
+                                 if (r.Matches(m_sSshKey)) {
+                                     tmp = r.GetMatch(m_sSshKey, 2);
+-                                    tmp.Replace(wxT(" "), wxT("\n"));
++				    // Do not replace ": " with a newline to avoid rendering newer
++				    // ssh keys unusable.
++				    wxRegEx re(wxT("([^:]) "), wxRE_ADVANCED);
++				    re.Replace(&tmp, wxT("\\1\n"));
+                                     m_sSshKey = r.GetMatch(m_sSshKey, 1) + wxT("\n")
+                                         + tmp + r.GetMatch(m_sSshKey, 3) + wxT("\n");
+                                 }
