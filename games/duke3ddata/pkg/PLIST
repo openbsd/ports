@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/18 20:07:29 rfreeman Exp $
+share/duke3d/
+share/duke3d/COMMIT.EXE
+share/duke3d/DEFS.CON
+share/duke3d/DEMO1.DMO
+share/duke3d/DEMO2.DMO
+share/duke3d/DEMO3.DMO
+share/duke3d/DN3DHELP.EXE
+share/duke3d/DUKE.RTS
+share/duke3d/DUKE3D.EXE
+share/duke3d/DUKE3D.GRP
+share/duke3d/GAME.CON
+share/duke3d/LICENSE.TXT
+share/duke3d/MODEM.PCK
+share/duke3d/README.DOC
+share/duke3d/SETMAIN.EXE
+share/duke3d/SETUP.EXE
+share/duke3d/ULTRAMID.INI
+share/duke3d/USER.CON
