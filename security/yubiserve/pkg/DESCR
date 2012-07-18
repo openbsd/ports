@@ -1,0 +1,6 @@
+YubiServe is a lightweight Validation Server supporting both OATH/HOTP
+and Yubico Yubikey implementations, written in Python that uses an
+SQLite database or, optionally, a MySQL database. It has an integrated
+threaded webserver, with HTTPS/SSL support, compatible with the
+Yubico validation protocol 2.0 including HMAC SHA-1 signatures to
+provide for authentication of the server.

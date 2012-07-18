@@ -1,0 +1,17 @@
+$OpenBSD: patch-yubiserve_cfg,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+--- yubiserve.cfg.orig	Thu Mar 24 11:25:52 2011
++++ yubiserve.cfg	Thu Jun  7 02:48:38 2012
+@@ -1,9 +1,10 @@
+ yubiservePORT = 8000;
+ yubiserveSSLPORT = 8001;
+ yubiserveHOST = '0.0.0.0';
+-yubiDB = 'sqlite';
++yubiDB = 'sqlite3';
+ #yubiDB = 'mysql';
+ #yubiMySQLHost = 'localhost';
+ #yubiMySQLUser = 'yubiserve';
+ #yubiMySQLPass = 'yubipass';
+-#yubiMySQLName = 'yubikeys';
+\ No newline at end of file
++#yubiMySQLName = 'yubikeys';
++yubiserveDebugLevel = 0;

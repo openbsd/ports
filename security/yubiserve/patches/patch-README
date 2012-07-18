@@ -1,0 +1,24 @@
+$OpenBSD: patch-README,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+
+sqlite3 support and doc fix from upstream
+http://code.google.com/p/yubico-yubiserve/source/list r39, r45
+
+--- README.orig	Wed Jul 18 01:16:24 2012
++++ README	Wed Jul 18 01:16:13 2012
+@@ -23,6 +23,7 @@ Under Debian, you can run:
+ apt-get install python python-crypto python-openssl
+ If you want to add the sqlite support, you should run:
+ apt-get install python-sqlite
++sqlite3 is also supported, which is included with python in RHEL6.
+ Or, if you want to add the mysql support, you should run:
+ apt-get install python-mysqldb
+ If you chosen the mysql support, you must create a database and create the
+@@ -115,7 +116,7 @@ t=2010-11-20T23:54:35
+ h=
+ 
+ As you can see, the 'h' parameter is not set, and this is because we didn't use
+-the signature through API Key. To use it, just add the 'key=<api key id>'
++the signature through API Key. To use it, just add the 'id=<api key id>'
+ parameter we had when we added the API Key.
+ ex.: http://192.168.0.1:8000/wsapi/2.0/verify?otp=vvnjbbkvjbcnhiretjvjfebbrdgrjjchdhtbderrdbhj&id=1
+ This time the response will be like:

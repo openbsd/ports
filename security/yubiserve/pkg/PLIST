@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+@newgroup _yubiserve:700
+@newuser _yubiserve:700:_yubiserve:daemon:yubiserve user:/nonexistent:/sbin/nologin
+bin/yubiserve-dbconf
+sbin/yubiserve
+share/doc/yubiserve/
+share/doc/yubiserve/LICENSE
+share/doc/yubiserve/README
+share/doc/yubiserve/dump.mysql
+share/doc/yubiserve/dump.sqlite
+share/examples/yubiserve/
+share/examples/yubiserve/yubikeys.sqlite3
+@mode 770
+@owner _yubiserve
+@group _yubiserve
+@sample /var/db/yubiserve/
+@mode 640
+@sample /var/db/yubiserve/yubikeys.sqlite3
+@mode
+@owner
+@group
+share/examples/yubiserve/yubiserve.cfg
+@mode 750
+@owner root
+@group _yubiserve
+@sample ${SYSCONFDIR}/yubiserve/
+@mode 640
+@sample ${SYSCONFDIR}/yubiserve/yubiserve.cfg
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/yubiserve

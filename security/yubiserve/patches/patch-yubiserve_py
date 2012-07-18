@@ -1,0 +1,164 @@
+$OpenBSD: patch-yubiserve_py,v 1.1.1.1 2012/07/18 08:25:07 sthen Exp $
+
+sqlite3 support from
+http://code.google.com/p/yubico-yubiserve/source/list r39
+
+--- yubiserve.py.orig	Wed Jul 18 01:16:24 2012
++++ yubiserve.py	Wed Jul 18 01:16:13 2012
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!${MODPY_BIN}
+ import re, os, time, socket
+ import urlparse, SocketServer, urllib, BaseHTTPServer
+ from Crypto.Cipher import AES
+@@ -10,12 +10,16 @@ try:
+ except ImportError:
+ 	pass
+ try:
++	import sqlite3
++except ImportError:
++	pass
++try:
+ 	import sqlite
+ except ImportError:
+ 	pass
+ 
+ def parseConfigFile():	# Originally I wrote this function to parse PHP configuration files!
+-	config = open(os.path.dirname(os.path.realpath(__file__)) + '/yubiserve.cfg', 'r').read().splitlines()
++	config = open('${SYSCONFDIR}/yubiserve/yubiserve.cfg', 'r').read().splitlines()
+ 	keys = {}
+ 	for line in config:
+ 		match = re.search('(.*?)=(.*);', line)
+@@ -45,7 +49,7 @@ class OATHValidation():
+ 	def validateOATH(self, OATH, publicID):
+ 		cur = self.con.cursor()
+ 		cur.execute("SELECT counter, secret FROM oathtokens WHERE publicname = '" + publicID + "' AND active = '1'")
+-		if (cur.rowcount != 1):
++		if cur:
+ 			validationResult = self.status['BAD_OTP']
+ 			return validationResult
+ 		(actualcounter, key) = cur.fetchone()
+@@ -99,6 +103,7 @@ class OTPValidation():
+ 	def getResponse(self):
+ 		return self.validationResponse
+ 	def validateOTP(self, OTP):
++		global config
+ 		self.OTP = re.escape(OTP)
+ 		self.validationResult = 0
+ 		if (len(OTP) <= 32) or (len(OTP) > 48):
+@@ -109,15 +114,21 @@ class OTPValidation():
+ 			if match.group(1) and match.group(2):
+ 				self.userid = match.group(1)
+ 				self.token = self.modhex2hex(match.group(2))
++				# pdb.set_trace()
+ 				cur = self.con.cursor()
+ 				cur.execute('SELECT aeskey, internalname FROM yubikeys WHERE publicname = "' + self.userid + '" AND active = "1"')
+-				if (cur.rowcount != 1):
++				if not cur:
++					if config['yubiserveDebugLevel'] > 0:
++						print "Yubikey rejected because it is not found in the database, using the query: 'SELECT aeskey, internalname FROM yubikeys WHERE publicname = \"%s\" AND active = \"1\"'" % (self.userid)
+ 					self.validationResult = self.status['BAD_OTP']
+ 					return self.validationResult
+ 				(self.aeskey, self.internalname) = cur.fetchone()
+ 				self.plaintext = self.aes128ecb_decrypt(self.aeskey, self.token)
+ 				uid = self.plaintext[:12]
+ 				if (self.internalname != uid):
++					if config['yubiserveDebugLevel'] > 0:
++						print "Yubikey rejected because the uid (6 byte secret) in the decrypted AES key (set with with ykpersonalise -ouid) does not match the secret key (internalname) in the database"
++						print "Decrypted AES: %s\n Username from yubikey: %s shoould equal the database username: %s" % (self.plaintext, uid, self.internalname)
+ 					self.validationResult = self.status['BAD_OTP']
+ 					return self.validationResult
+ 				if not (self.CRC() or self.isCRCValid()):
+@@ -126,7 +137,7 @@ class OTPValidation():
+ 				self.internalcounter = self.hexdec(self.plaintext[14:16] + self.plaintext[12:14] + self.plaintext[22:24])
+ 				self.timestamp = self.hexdec(self.plaintext[20:22] + self.plaintext[18:20] + self.plaintext[16:18])
+ 				cur.execute('SELECT counter, time FROM yubikeys WHERE publicname = "' + self.userid + '" AND active = "1"')
+-				if (cur.rowcount != 1):
++				if not cur:
+ 					self.validationResult = self.status['BAD_OTP']
+ 					return self.validationResult
+ 				(self.counter, self.time) = cur.fetchone()
+@@ -147,11 +158,13 @@ class OTPValidation():
+ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequestHandler):
+ 	__base = BaseHTTPServer.BaseHTTPRequestHandler
+ 	__base_handle = __base.handle
+-	server_version = 'Yubiserve/3.0'
++	server_version = 'Yubiserve/3.1'
+ 	global config
+ 	#try:
+-	if config['yubiDB'] == 'sqlite':
+-		con = sqlite.connect(os.path.dirname(os.path.realpath(__file__)) + '/yubikeys.sqlite')
++	if config['yubiDB'] == 'sqlite3':
++		con = sqlite3.connect('/var/db/yubiserve/yubikeys.sqlite3', check_same_thread = False)
++	elif config['yubiDB'] == 'sqlite':
++		con = sqlite.connect('/var/db/yubiserve/yubikeys.sqlite', check_same_thread = False)
+ 	elif config['yubiDB'] == 'mysql':
+ 		con = MySQLdb.connect(host=config['yubiMySQLHost'], user=config['yubiMySQLUser'], passwd=config['yubiMySQLPass'], db=config['yubiMySQLName'])
+ 	#except:
+@@ -200,16 +213,16 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 						orderedResult = 'nonce=' + getData['nonce'] + '&otp=' + getData['otp'] + '&sl=100&status=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '&t=' + iso_time
+ 					except KeyError:
+ 						result = 't=' + iso_time + '\r\notp=' + getData['otp'] + '\r\nnonce=\r\nsl=100\r\nstatus=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '\r\n'
+-						orderedResult = 'nonce=&otp=' + getData['otp'] + 'sl=100&status=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '&t=' + iso_time
++						orderedResult = 'nonce=&otp=' + getData['otp'] + '&sl=100&status=' + [k for k, v in otpvalidation.status.iteritems() if v == validation][0] + '&t=' + iso_time
+ 					otp_hmac = ''
+ 					try:
+ 						if (getData['id'] != None):
+ 							apiID = re.escape(getData['id'])
+ 							cur = self.con.cursor()
+ 							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
+-							if cur.rowcount != 0:
++							if cur:
+ 								api_key = cur.fetchone()[0]
+-								otp_hmac = hmac.new(api_key, msg=orderedResult, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
++								otp_hmac = hmac.new(str(api_key), msg=str(orderedResult), digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+ 							else:
+ 								result = 't=' + iso_time + '\r\notp=' + getData['otp'] + '\r\nstatus=NO_CLIENT\r\n'
+ 					except KeyError:
+@@ -230,7 +243,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 					apiID = re.escape(getData['id'])
+ 					cur = self.con.cursor()
+ 					cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
+-					if cur.rowcount != 0:
++					if cur:
+ 						api_key = cur.fetchone()[0]
+ 						otp_hmac = hmac.new(api_key, msg=orderedResult, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+ 			except KeyError:
+@@ -264,7 +277,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 							apiID = re.escape(getData['id'])
+ 							cur = self.con.cursor()
+ 							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
+-							if cur.rowcount != 0:
++							if cur:
+ 								api_key = cur.fetchone()[0]
+ 								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+ 							else:
+@@ -285,7 +298,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 							apiID = re.escape(getData['id'])
+ 							cur = self.con.cursor()
+ 							cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
+-							if cur.rowcount != 0:
++							if cur:
+ 								api_key = cur.fetchone()[0]
+ 								otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+ 					except KeyError:
+@@ -305,7 +318,7 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ 					apiID = re.escape(getData['id'])
+ 					cur = self.con.cursor()
+ 					cur.execute("SELECT secret from apikeys WHERE id = '" + apiID + "'")
+-					if cur.rowcount != 0:
++					if cur:
+ 						api_key = cur.fetchone()[0]
+ 						otp_hmac = hmac.new(api_key, msg=result, digestmod=hashlib.sha1).hexdigest().decode('hex').encode('base64').strip()
+ 			except KeyError:
+@@ -321,8 +334,8 @@ class YubiServeHandler (BaseHTTPServer.BaseHTTPRequest
+ class SecureHTTPServer(BaseHTTPServer.HTTPServer):
+ 	def __init__(self, server_address, HandlerClass):
+ 		BaseHTTPServer.HTTPServer.__init__(self, server_address, HandlerClass)
+-		ctx = SSL.Context(SSL.SSLv23_METHOD)
+-		fpem = os.path.dirname(os.path.realpath(__file__)) + '/yubiserve.pem'
++		ctx = SSL.Context(SSL.SSLv3_METHOD)
++		fpem = '${SYSCONFDIR}/yubiserve/yubiserve.pem'
+ 		ctx.use_privatekey_file (fpem)
+ 		ctx.use_certificate_file(fpem)
+ 		self.socket = SSL.Connection(ctx, socket.socket(self.address_family, self.socket_type))
