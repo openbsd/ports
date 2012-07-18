@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.31 2012/07/10 09:38:37 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.32 2012/07/18 10:30:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -197,7 +197,7 @@ sub merge_depends
 			}
 	    	}
 			
-		for my $k (qw(DIST LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
+		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS RUN_DEPENDS 
 		    SUBPACKAGE FLAVOR EXTRA PERMIT_DISTFILES_FTP 
 		    PERMIT_DISTFILES_CDROM)) {
 			delete $info->{$k};
