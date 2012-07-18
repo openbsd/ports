@@ -1,0 +1,14 @@
+$OpenBSD: patch-cvsps_1,v 1.1 2012/07/18 10:42:27 naddy Exp $
+--- cvsps.1.orig	Wed Jul 18 00:30:20 2012
++++ cvsps.1	Wed Jul 18 00:30:31 2012
+@@ -10,8 +10,8 @@ repository.  A patchset in this case is defined as a s
+ to a collection of files, and all committed at the same time (using a
+ single 'cvs commit' command).  This information is valuable to seeing the
+ big picture of the evolution of a cvs project.  While cvs tracks revision
+-information, it is often difficult to see what changes were committed
+-'atomically' to the repository.
++information, it is often difficult to see what changes were
++committed 'atomically' to the repository.
+ .SH OPTIONS
+ .TP
+ .B \-h
