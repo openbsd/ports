@@ -1,6 +1,13 @@
-$OpenBSD: patch-master_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
---- master.c.orig	Sun Jul  4 17:07:03 2004
-+++ master.c	Sun Feb 26 01:19:14 2006
+$OpenBSD: patch-master_c,v 1.2 2012/07/18 11:15:30 jasper Exp $
+
+Last chunk:
+Security fix for CVE-2012-3368
+Memory portion (random stack data) disclosure to the client by unclean client disconnect 
+
+Patch from upstream CVS.
+
+--- master.c.orig	Thu Jan 31 06:59:54 2008
++++ master.c	Wed Jul 18 13:14:08 2012
 @@ -17,6 +17,7 @@
      Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
@@ -9,7 +16,7 @@ $OpenBSD: patch-master_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
  
  /* The pty struct - The pty information is stored here. */
  struct pty
-@@ -124,7 +125,7 @@ create_socket(char *name)
+@@ -189,7 +190,7 @@ create_socket(char *name)
  	if (s < 0)
  		return -1;
  	sockun.sun_family = AF_UNIX;
@@ -18,3 +25,15 @@ $OpenBSD: patch-master_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
  	if (bind(s, (struct sockaddr*)&sockun, sizeof(sockun)) < 0)
  	{
  		close(s);
+@@ -351,7 +352,10 @@ client_activity(struct client *p)
+ 
+ 	/* Push out data to the program. */
+ 	if (pkt.type == MSG_PUSH)
+-		write(the_pty.fd, pkt.u.buf, pkt.len);
++	{
++		if (pkt.len <= sizeof(pkt.u.buf))
++			write(the_pty.fd, pkt.u.buf, pkt.len);
++	}
+ 
+ 	/* Attach or detach from the program. */
+ 	else if (pkt.type == MSG_ATTACH)

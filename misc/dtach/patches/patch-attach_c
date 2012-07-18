@@ -1,7 +1,14 @@
-$OpenBSD: patch-attach_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
---- attach.c.orig	Sun Feb 26 01:16:57 2006
-+++ attach.c	Sun Feb 26 01:17:00 2006
-@@ -59,7 +59,7 @@ connect_socket(char *name)
+$OpenBSD: patch-attach_c,v 1.2 2012/07/18 11:15:30 jasper Exp $
+
+Last chunk:
+Security fix for CVE-2012-3368
+Memory portion (random stack data) disclosure to the client by unclean client disconnect 
+
+Patch from upstream CVS.
+
+--- attach.c.orig	Thu Jan 31 06:59:54 2008
++++ attach.c	Wed Jul 18 13:13:39 2012
+@@ -56,7 +56,7 @@ connect_socket(char *name)
  	if (s < 0)
  		return -1;
  	sockun.sun_family = AF_UNIX;
@@ -10,3 +17,21 @@ $OpenBSD: patch-attach_c,v 1.1.1.1 2006/03/05 17:05:36 niallo Exp $
  	if (connect(s, (struct sockaddr*)&sockun, sizeof(sockun)) < 0)
  	{
  		close(s);
+@@ -237,12 +237,15 @@ attach_main(int noerror)
+ 		/* stdin activity */
+ 		if (n > 0 && FD_ISSET(0, &readfds))
+ 		{
++			ssize_t len;
++
+ 			pkt.type = MSG_PUSH;
+ 			memset(pkt.u.buf, 0, sizeof(pkt.u.buf));
+-			pkt.len = read(0, pkt.u.buf, sizeof(pkt.u.buf));
++			len = read(0, pkt.u.buf, sizeof(pkt.u.buf));
+ 
+-			if (pkt.len <= 0)
++			if (len <= 0)
+ 				exit(1);
++			pkt.len = len;
+ 			process_kbd(s, &pkt);
+ 			n--;
+ 		}
