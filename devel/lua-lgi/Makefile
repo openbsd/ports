@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/07/19 20:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/07/19 20:26:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,6 +33,9 @@ MAKE_ENV=	MAKE=${MAKE_PROGRAM} LUA_CFLAGS="-I${MODLUA_INCL_DIR}" \
 
 REGRESS_TARGET= check
 REGRESS_IS_INTERACTIVE=x11
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/lgi/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${MODLUA_EXAMPLEDIR}

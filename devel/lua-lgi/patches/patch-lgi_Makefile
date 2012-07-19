@@ -1,6 +1,6 @@
-$OpenBSD: patch-lgi_Makefile,v 1.1 2012/07/10 15:22:44 jasper Exp $
---- lgi/Makefile.orig	Sun Jul  8 19:33:05 2012
-+++ lgi/Makefile	Sun Jul  8 19:33:12 2012
+$OpenBSD: patch-lgi_Makefile,v 1.2 2012/07/19 20:26:26 jasper Exp $
+--- lgi/Makefile.orig	Mon Jun 25 10:25:20 2012
++++ lgi/Makefile	Thu Jul 19 22:21:24 2012
 @@ -6,8 +6,8 @@
  #
  
@@ -12,3 +12,12 @@ $OpenBSD: patch-lgi_Makefile,v 1.1 2012/07/10 15:22:44 jasper Exp $
  
  GINAME = gobject-introspection-1.0
  PKGS = $(GINAME) gmodule-2.0 libffi
+@@ -18,7 +18,7 @@ CORE = corelgilua51.dll
+ LIBFLAG = -shared
+ LIBS += -llua
+ else
+-CORE = corelgilua51.so
++CORE = corelgilua${MODLUA_DEP_VERSION}.so
+ LIBFLAG = -shared
+ CCSHARED = -fPIC
+ endif
