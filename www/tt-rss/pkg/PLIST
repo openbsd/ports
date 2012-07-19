@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/03/15 09:50:23 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/07/19 07:19:21 landry Exp $
 tt-rss/
 tt-rss/LICENSE
 tt-rss/README
@@ -62,7 +62,6 @@ tt-rss/images/
 tt-rss/images/archive.png
 tt-rss/images/art-email.png
 tt-rss/images/art-pub-note.png
-tt-rss/images/art-readitlater.png
 tt-rss/images/art-set-unread.png
 tt-rss/images/art-share.png
 tt-rss/images/art-tweet.png
@@ -1603,6 +1602,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/DenyElementDecorator.ph
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Filter.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Font.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/FontFamily.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Ident.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ImportantDecorator.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Length.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.php
@@ -1611,6 +1611,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Number.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Clone.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/Enum.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrDef/HTML/Bool.php
@@ -1655,6 +1656,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeEmbed.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeObject.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/SafeParam.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/ScriptRequired.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/TargetBlank.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTransform/Textarea.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrTypes.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/AttrValidator.php
@@ -1665,6 +1667,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Chameleon.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Custom.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Empty.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/List.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Optional.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/Required.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ChildDef/StrictBlockquote.php
@@ -1680,7 +1683,6 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Directive.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Id.php
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Interchange/Namespace.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/Validator.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/ValidatorAtom.php
@@ -1701,7 +1703,6 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklis
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDBlacklistRegexp.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefix.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.IDPrefixLocal.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Attr.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.AutoParagraph.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Custom.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.DisplayLinkURI.txt
@@ -1712,9 +1713,6 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.Remo
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.RemoveNbsp.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveEmpty.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.RemoveSpansWithoutAttributes.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormat.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.PurifierLinkifyDocURL.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/AutoFormatParam.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowImportant.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowTricky.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.AllowedFonts.txt
@@ -1724,16 +1722,15 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.ForbiddenPr
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.MaxImgLength.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Proprietary.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.Trusted.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/CSS.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.DefinitionImpl.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPath.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.SerializerPermissions.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cache.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.AggressivelyFixLt.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.CollectErrors.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ColorKeywords.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.ConvertDocumentToFragment.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.DirectLexLineNumberSyncInterval.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EnableIDNA.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.Encoding.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidChildren.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.EscapeInvalidTags.txt
@@ -1746,20 +1743,16 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeN
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.Custom.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Escaping.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.Scope.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.TidyImpl.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.ExtractStyleBlocks.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.YouTube.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Filter.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksEscaping.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksScope.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.ExtractStyleBlocksTidyImpl.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/FilterParam.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Allowed.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedAttributes.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedComments.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedCommentsRegexp.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedElements.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.AllowedModules.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Attr.Name.UseCDATA.txt
@@ -1777,23 +1770,22 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Nofollow.t
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Parent.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Proprietary.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeEmbed.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeIframe.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.SafeObject.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Strict.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TargetBlank.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyAdd.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyLevel.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.TidyRemove.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.Trusted.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.XHTML.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/HTML.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.CommentScriptContents.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FixInnerHTML.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.FlashCompat.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.Newline.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.SortAttr.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.TidyFormat.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Output.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.ForceNoIconv.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Test.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.AllowedSchemes.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Base.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.DefaultScheme.txt
@@ -1810,7 +1802,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.Munge.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeResources.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.MungeSecretKey.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.OverrideAllowedSchemes.txt
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.txt
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/URI.SafeIframeRegexp.txt
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/info.ini
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/ContentSets.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Context.php
@@ -1851,6 +1843,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/CommonAttributes.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Edit.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Forms.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Hypertext.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Iframe.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Image.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Legacy.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/List.php
@@ -1867,6 +1860,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Scripting.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/StyleAttribute.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tables.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Target.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/TargetBlank.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Text.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy/
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/HTMLModule/Tidy.php
@@ -1902,7 +1896,6 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer/
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer/DOMLex.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer/DirectLex.php
-tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer/PEARSax3.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Lexer/PH5P.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/PercentEncoder.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/Printer/
@@ -1947,6 +1940,7 @@ tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIFilter/DisableResources.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIFilter/HostBlacklist.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIFilter/MakeAbsolute.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIFilter/Munge.php
+tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIFilter/SafeIframe.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIParser.php
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIScheme/
 tt-rss/lib/htmlpurifier/library/HTMLPurifier/URIScheme.php
@@ -2187,6 +2181,8 @@ tt-rss/schema/versions/mysql/87.sql
 tt-rss/schema/versions/mysql/88.sql
 tt-rss/schema/versions/mysql/89.sql
 tt-rss/schema/versions/mysql/9.sql
+tt-rss/schema/versions/mysql/90.sql
+tt-rss/schema/versions/mysql/91.sql
 tt-rss/schema/versions/pgsql/
 tt-rss/schema/versions/pgsql/10.sql
 tt-rss/schema/versions/pgsql/11.sql
@@ -2275,6 +2271,8 @@ tt-rss/schema/versions/pgsql/87.sql
 tt-rss/schema/versions/pgsql/88.sql
 tt-rss/schema/versions/pgsql/89.sql
 tt-rss/schema/versions/pgsql/9.sql
+tt-rss/schema/versions/pgsql/90.sql
+tt-rss/schema/versions/pgsql/91.sql
 tt-rss/templates/
 tt-rss/templates/digest_template.txt
 tt-rss/templates/digest_template_html.txt
