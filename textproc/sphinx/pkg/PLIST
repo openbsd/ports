@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/07/21 12:42:21 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/07/19 14:56:59 giovanni Exp $
 @bin bin/indexer
+@bin bin/indextool
 @bin bin/search
 @bin bin/searchd
 @bin bin/spelldump
+@man man/man1/indexer.1
+@man man/man1/indextool.1
+@man man/man1/search.1
+@man man/man1/searchd.1
+@man man/man1/spelldump.1
 share/doc/sphinx/
 share/doc/sphinx/sphinx.txt
 share/examples/sphinx/
@@ -10,3 +16,6 @@ share/examples/sphinx/example.sql
 share/examples/sphinx/sphinx-min.conf.dist
 share/examples/sphinx/sphinx.conf.dist
 @sample ${SYSCONFDIR}/sphinx.conf
+@sample ${LOCALSTATEDIR}/
+@sample ${LOCALSTATEDIR}/data/
+@sample ${LOCALSTATEDIR}/log/

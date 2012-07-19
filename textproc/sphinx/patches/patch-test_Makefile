@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_Makefile,v 1.1 2012/07/19 14:56:59 giovanni Exp $
+--- test/Makefile.orig	Fri May 25 18:22:09 2012
++++ test/Makefile	Fri May 25 18:22:28 2012
+@@ -7,7 +7,7 @@ info:
+ dist:
+ 
+ check:
+-	php ubertest.php t -u test
++	${MODPHP_BIN} ubertest.php t -u test
+ 
+ clean:
+ 	sh clean.sh

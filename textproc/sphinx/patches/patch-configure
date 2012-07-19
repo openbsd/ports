@@ -1,20 +1,20 @@
---- configure.orig	Wed Jul  9 16:29:17 2008
-+++ configure	Fri Mar 20 12:04:00 2009
-@@ -7229,11 +7229,11 @@ extern "C"
+--- configure.orig	Thu Mar  1 10:04:19 2012
++++ configure	Mon Jul  9 08:31:19 2012
+@@ -5992,11 +5992,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
  #endif
- /* We use char because int might match the return type of a gcc2
-    builtin and then its argument prototype would still apply.  */
 -char iconv ();
 +char libiconv ();
  int
  main ()
  {
--iconv ();
-+libiconv ();
+-return iconv ();
++return libiconv ();
    ;
    return 0;
  }
-@@ -8219,7 +8219,7 @@ main ()
+@@ -7408,7 +7408,7 @@ main ()
  {
  const char * inbuf;
  			iconv_t cd;

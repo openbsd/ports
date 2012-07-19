@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_sphinxstd_cpp,v 1.1 2012/07/19 14:56:59 giovanni Exp $
+--- src/sphinxstd.cpp.orig	Fri May 25 17:44:37 2012
++++ src/sphinxstd.cpp	Fri May 25 17:44:59 2012
+@@ -742,12 +742,6 @@ CSphProcessSharedMutex::CSphProcessSharedMutex ( int i
+ 		m_sError.SetSprintf ( "pthread_mutexattr_init, errno=%d", iRes );
+ 		return;
+ 	}
+-	iRes = pthread_mutexattr_setpshared ( &tAttr, PTHREAD_PROCESS_SHARED );
+-	if ( iRes )
+-	{
+-		m_sError.SetSprintf ( "pthread_mutexattr_setpshared, errno = %d", iRes );
+-		return;
+-	}
+ 
+ 	CSphString sError, sWarning;
+ 	if ( !m_pStorage.Alloc ( sizeof(pthread_mutex_t) + iExtraSize, sError, sWarning ) )
