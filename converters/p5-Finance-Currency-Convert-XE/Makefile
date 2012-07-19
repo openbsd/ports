@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/31 09:09:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/07/19 08:25:54 jasper Exp $
 
 COMMENT= 		currency conversion
 
-DISTNAME=		Finance-Currency-Convert-XE-0.19
+DISTNAME=		Finance-Currency-Convert-XE-0.21
 CATEGORIES=		converters
 MODULES=		cpan
 
-# Perl
+# Artistic 2.0
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
