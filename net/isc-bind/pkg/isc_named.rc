@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: isc_named.rc,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/named"
+daemon_flags="-t ${LOCALSTATEDIR}/named -u named"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	if ! cmp -s /etc/rndc.key ${LOCALSTATEDIR}/named/etc/rndc.key ; then
+		if ${TRUEPREFIX}/sbin/rndc-confgen -a -t ${LOCALSTATEDIR}/named \
+		    >/dev/null 2>&1; then
+			chmod 0640 ${LOCALSTATEDIR}/named/etc/rndc.key \
+			    >/dev/null 2>&1
+		fi
+	fi
+}
+
+rc_cmd $1

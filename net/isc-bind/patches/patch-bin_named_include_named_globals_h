@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_named_include_named_globals_h,v 1.1.1.1 2012/07/19 08:36:45 sthen Exp $
+--- bin/named/include/named/globals.h.orig	Wed May  9 23:39:51 2012
++++ bin/named/include/named/globals.h	Sun May 27 11:07:48 2012
+@@ -140,7 +140,7 @@ EXTERN const char *		lwresd_g_defaultpidfile INIT(NS_L
+ 							     "/run/lwresd.pid");
+ #endif
+ 
+-EXTERN const char *		ns_g_username		INIT(NULL);
++EXTERN const char *		ns_g_username		INIT("named");
+ 
+ #ifdef USE_PKCS11
+ EXTERN const char *		ns_g_engine		INIT("pkcs11");
