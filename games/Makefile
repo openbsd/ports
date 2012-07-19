@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2012/07/18 06:38:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.244 2012/07/19 07:20:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -53,6 +53,7 @@
      SUBDIR += doomdata
      SUBDIR += dopewars
      SUBDIR += dopewars,no_x11
+     SUBDIR += duke3ddata
      SUBDIR += dungeon
      SUBDIR += dungeon-crawl
      SUBDIR += eboard
