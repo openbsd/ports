@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
---- configure.orig	Wed Sep 15 16:42:36 2010
-+++ configure	Fri Apr 13 16:05:41 2012
-@@ -73,13 +73,13 @@ NLS=auto
+$OpenBSD: patch-configure,v 1.12 2012/07/19 15:05:30 giovanni Exp $
+--- configure.orig	Wed Jun  6 02:58:38 2012
++++ configure	Mon Jul  9 15:38:11 2012
+@@ -39,7 +39,6 @@
+ #
+ DIR_BIN=/usr/local/bin
+ DIR_SBIN=/usr/local/sbin
+-DIR_LIBDATA=/usr/local/lib/fax
+ DIR_LIB=/usr/local/lib
+ DIR_LIBEXEC=$DIR_SBIN
+ DIR_SPOOL=/var/spool/hylafax
+@@ -73,13 +72,13 @@ NLS=auto
  OPTIMIZER="-O"
  LIBCRYPT=
  LIBPAM=
@@ -18,7 +26,7 @@ $OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
  INTLINC=
  REGEX=yes
  LIBREGEX='-L${DEPTH}/regex -lregex'
-@@ -1559,7 +1559,7 @@ int t() { $f(); return 0; }
+@@ -1559,7 +1558,7 @@ int t() { $f(); return 0; }
  int main(){ t(); return 0; }
  EOF
      capture cat t.c
@@ -27,7 +35,7 @@ $OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
  }
  
  #
-@@ -1587,7 +1587,7 @@ CheckForIncludeFile()
+@@ -1587,7 +1586,7 @@ CheckForIncludeFile()
  	echo "#include \"$i\""
       done)>t.c++
      capture cat t.c++
@@ -36,15 +44,15 @@ $OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
  }
  
  if [ "$SGI2FAX" = auto ]; then
-@@ -2552,6 +2552,7 @@ EOF
- 	    case ${lib_ver} in
- 		3.4)		tiff_runlen_t="uint16" ;;
- 		3.[56789])	tiff_runlen_t="uint32" ;;
-+		4.[0-9])	tiff_runlen_t="uint32" ;;
+@@ -2568,7 +2567,6 @@ EOF
+ 				tiff_bytecount_t="uint64"
+ 				echo '#define TIFFHeader	TIFFHeaderClassic'
+ 				echo '#define TIFF_VERSION	TIFF_VERSION_CLASSIC'
+-				echo '#define NEED_TIFFDIRENTRY'
+ 				;;
  	    esac
  	fi
-     else
-@@ -3383,19 +3384,8 @@ fi
+@@ -3405,19 +3403,8 @@ fi
  HAVE_JBIGTIFF="/*#define HAVE_JBIGTIFF 1*/"
  if [ "$DISABLE_JBIG" != "yes" ]; then
      Note "Checking JBIG-in-TIFF conversion support."
@@ -66,7 +74,7 @@ $OpenBSD: patch-configure,v 1.11 2012/04/14 15:13:30 naddy Exp $
  fi
  
  Note "Done checking TIFF support."
-@@ -4659,10 +4649,10 @@ case $MANSCHEME in
+@@ -4681,10 +4668,10 @@ case $MANSCHEME in
  *-0|*-0.gz|*-0.Z|*-gz|*-Z|*-z)
      suf=`echo $MANSCHEME | $SED 's/.*-/./'`
      A='`echo $$i | sed' B='`'		# workaround shell bugs

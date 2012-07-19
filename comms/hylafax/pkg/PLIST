@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/05/24 16:24:35 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/07/19 15:05:30 giovanni Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -19,13 +19,6 @@
 @bin bin/faxstat
 @bin bin/sendfax
 @bin bin/sendpage
-lib/fax/
-lib/fax/faxcover.ps
-lib/fax/faxcover_example_sgi.ps
-lib/fax/faxmail.ps
-lib/fax/hfaxd.conf
-lib/fax/pagesizes
-lib/fax/typerules
 @owner uucp
 @group dialer
 libdata/hylafax/
@@ -135,8 +128,13 @@ libdata/hylafax/etc/dialrules
 libdata/hylafax/etc/dialrules.europe
 libdata/hylafax/etc/dialrules.sf-ba
 libdata/hylafax/etc/dpsprinter.ps
+libdata/hylafax/etc/faxcover.ps
+libdata/hylafax/etc/faxcover_example_sgi.ps
+libdata/hylafax/etc/faxmail.ps
+libdata/hylafax/etc/hfaxd.conf
 libdata/hylafax/etc/hosts.hfaxd
 libdata/hylafax/etc/lutRS18.pcf
+libdata/hylafax/etc/pagesizes
 libdata/hylafax/etc/templates/
 libdata/hylafax/etc/templates/README
 libdata/hylafax/etc/templates/de/
@@ -364,6 +362,7 @@ libdata/hylafax/etc/templates/ro/notify-rejected.txt
 libdata/hylafax/etc/templates/ro/notify-removed.txt
 libdata/hylafax/etc/templates/ro/notify-requeued.txt
 libdata/hylafax/etc/templates/ro/notify-timedout.txt
+libdata/hylafax/etc/typerules
 libdata/hylafax/etc/xferfaxlog
 libdata/hylafax/info/
 libdata/hylafax/log/

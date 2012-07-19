@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.65 2012/04/14 15:13:30 naddy Exp $
+# $OpenBSD: Makefile,v 1.66 2012/07/19 15:05:30 giovanni Exp $
 
 COMMENT=		send/receive faxes and share modems
-DISTNAME=		hylafax-6.0.5
+DISTNAME=		hylafax-6.0.6
 CATEGORIES=		comms
-
-REVISION=		1
 
 HOMEPAGE=		http://www.HylaFAX.org/
 
@@ -47,6 +45,7 @@ CONFIGURE_ARGS=		--nointeractive \
 CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 			GCOPTS="${CFLAGS}" GCXXOPTS="${CXXFLAGS}" \
 			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
+			DIR_LIBDATA=${TRUEPREFIX}/libdata/hylafax/etc \
 			INETDCONF=/etc/inetd.conf MKFIFO=/sbin/mkfifo \
 			SCRIPT_SH=/bin/ksh
 

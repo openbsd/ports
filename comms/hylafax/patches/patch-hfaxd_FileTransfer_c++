@@ -1,10 +1,10 @@
-$OpenBSD: patch-hfaxd_FileTransfer_c++,v 1.4 2012/04/14 15:13:30 naddy Exp $
+$OpenBSD: patch-hfaxd_FileTransfer_c++,v 1.5 2012/07/19 15:05:30 giovanni Exp $
 
 Fix for TIFF 4.0 API.
 
---- hfaxd/FileTransfer.c++.orig	Wed Sep 15 16:42:36 2010
-+++ hfaxd/FileTransfer.c++	Fri Apr 13 16:15:22 2012
-@@ -65,11 +65,31 @@ static 	const char* typenames[] =  { "ASCII", "EBCDIC"
+--- hfaxd/FileTransfer.c++.orig	Wed Jun  6 02:58:38 2012
++++ hfaxd/FileTransfer.c++	Mon Jul  9 15:06:31 2012
+@@ -80,11 +80,31 @@ static 	const char* typenames[] =  { "ASCII", "EBCDIC"
  static 	const char* strunames[] =  { "File", "Record", "Page", "TIFF" };
  static 	const char* modenames[] =  { "Stream", "Block", "Compressed", "ZIP" };
  
@@ -37,7 +37,7 @@ Fix for TIFF 4.0 API.
  {
      if (h.tiff_magic != TIFF_BIGENDIAN && h.tiff_magic != TIFF_LITTLEENDIAN)
  	return (false);
-@@ -82,7 +102,7 @@ isTIFF(const TIFFHeader& h)
+@@ -97,7 +117,7 @@ isTIFF(const TIFFHeader& h)
      // byte swap version stamp if opposite byte order
      if ((u.c[0] == 0) ^ (h.tiff_magic == TIFF_BIGENDIAN))
  	TIFFSwabShort(&version);
@@ -46,8 +46,8 @@ Fix for TIFF 4.0 API.
  }
  
  
-@@ -229,7 +249,7 @@ HylaFAXServer::retrievePageCmd(const char* name)
- 		uint32* sb;
+@@ -244,7 +264,7 @@ HylaFAXServer::retrievePageCmd(const char* name)
+ 		tiff_bytecount_t* sb;
  		TIFFGetField(tif, TIFFTAG_STRIPBYTECOUNTS, &sb);
  		file_size = sizeof (DirTemplate) +
 -		    sizeof (TIFFHeader) + sizeof (uint16);
@@ -55,7 +55,7 @@ Fix for TIFF 4.0 API.
  		for (tstrip_t s = 0, ns = TIFFNumberOfStrips(tif); s < ns; s++)
  		    file_size += sb[s];
  		reply(code, "%s for %s (%lu bytes).",
-@@ -261,10 +281,10 @@ HylaFAXServer::openTIFF(const char* name)
+@@ -276,10 +296,10 @@ HylaFAXServer::openTIFF(const char* name)
  	if (fd >= 0) {
  	    union {
  		char buf[512];
@@ -68,7 +68,7 @@ Fix for TIFF 4.0 API.
  	      (b.h.tiff_magic == TIFF_BIGENDIAN ||
  	       b.h.tiff_magic == TIFF_LITTLEENDIAN)) {
  		(void) lseek(fd, 0L, SEEK_SET);		// rewind
-@@ -343,7 +363,7 @@ HylaFAXServer::sendTIFFHeader(TIFF* tif, int fdout)
+@@ -358,7 +378,7 @@ HylaFAXServer::sendTIFFHeader(TIFF* tif, int fdout)
  {
      static DirTemplate templ = {
  #define	TIFFdiroff(v) \
@@ -77,7 +77,7 @@ Fix for TIFF 4.0 API.
        (intptr_t) &(((DirTemplate*) 0)->v))
  	{ TIFFTAG_SUBFILETYPE,		TIFF_LONG,	1 },
  	{ TIFFTAG_IMAGEWIDTH,		TIFF_LONG,	1 },
-@@ -377,14 +397,14 @@ HylaFAXServer::sendTIFFHeader(TIFF* tif, int fdout)
+@@ -392,14 +412,14 @@ HylaFAXServer::sendTIFFHeader(TIFF* tif, int fdout)
       * of things about the contents of the TIFF file.
       */
      struct {
@@ -95,7 +95,7 @@ Fix for TIFF 4.0 API.
      buf.dircount = (uint16) NTAGS;
      getLong(tif, templ.SubFileType);
      getLong(tif, templ.ImageWidth);
-@@ -957,7 +977,7 @@ HylaFAXServer::docType(const char* docname, FaxSendOp&
+@@ -972,7 +992,7 @@ HylaFAXServer::docType(const char* docname, FaxSendOp&
  	if (FileCache::lookup(docname, sb) && S_ISREG(sb.st_mode)) {
  	    union {
  		char buf[512];
