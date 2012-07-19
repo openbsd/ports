@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/05/26 08:44:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/07/19 20:06:34 jasper Exp $
 lib/lua/${MODLUA_VERSION}/lgi/
-lib/lua/${MODLUA_VERSION}/lgi/corelgilua51.so
+lib/lua/${MODLUA_VERSION}/lgi/corelgi${MODLUA_DEP}.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/cairo.lua
 share/examples/${FULLPKGNAME}/clutterdemo.lua
