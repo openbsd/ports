@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/14 17:18:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/07/20 07:14:12 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
 GNOME_VERSION=	3.2.2
+REVISION=	0
 
 PKGNAME=	py-gobject3-${GNOME_VERSION}
 
