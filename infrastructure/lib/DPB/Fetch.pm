@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.41 2012/07/04 08:59:10 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.42 2012/07/20 11:45:33 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -135,7 +135,7 @@ sub check
 	if ($self->{repo}->{fetch_only}) {
 		return $self->checksum_and_cache($self->filename);
 	} else {
-		return $self->checksize($logger, $self->filename);
+		return $self->checkcache_or_size($logger, $self->filename);
 	}
 }
 
@@ -172,6 +172,17 @@ sub find_copy
 	return 0;
 }
 
+sub checkcache_or_size
+{
+	my ($self, $logger, $name) = @_;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	if (defined $self->cached->{$self->{name}}) {
+		return $self->checkcached($name);
+	}
+	return $self->checksize($logger, $name);
+}
+
 sub checksize
 {
 	my ($self, $logger, $name) = @_;
@@ -194,6 +205,21 @@ sub checksize
 	return 1;
 }
 
+sub checkcached
+{
+	my ($self, $name) = @_;
+	if ($self->cached->{$self->{name}}->equals($self->{sha})) {
+		$self->{okay} = 1;
+		return 1;
+	} else {
+		delete $self->cached->{$self->{name}};
+		if ($self->caches_okay($name)) {
+			return 1;
+		}
+		return 0;
+	}
+}
+
 sub do_cache
 {
 	my $self = shift;
@@ -207,6 +233,21 @@ sub do_cache
 	$self->cached->{$self->{name}} = $self->{sha};
 }
 
+sub caches_okay
+{
+	my ($self, $name) = @_;
+	if (-f -r $name) {
+		if (OpenBSD::sha->new($name)->equals($self->{sha})) {
+			$self->{okay} = 1;
+			$self->do_cache;
+			return 1;
+		} else {
+			unlink($name);
+		}
+	}
+	return 0;
+}
+
 sub checksum_and_cache
 {
 	my ($self, $name) = @_;
@@ -216,21 +257,10 @@ sub checksum_and_cache
 		return 0;
 	}
 	if (defined $self->cached->{$self->{name}}) {
-		if ($self->cached->{$self->{name}}->equals($self->{sha})) {
-			$self->{okay} = 1;
-			return 1;
-		} else {
-			return 0;
-		}
+		return $self->checkcached($name);
 	}
-	if (-f -r $name) {
-		if (OpenBSD::sha->new($name)->equals($self->{sha})) {
-			$self->{okay} = 1;
-			$self->do_cache;
-			return 1;
-		} else {
-			return 0;
-		}
+	if ($self->caches_okay($name)) {
+		return 1;
 	}
 	return $self->find_copy($name);
 }
@@ -265,13 +295,9 @@ sub checksum
 			print "OK (cached)\n";
 			$self->{okay} = 1;
 			return 1;
-		} else {
-			print "BAD\n";
-			return 0;
 		}
 	}
-	if (-f -r $name && OpenBSD::sha->new($name)->equals($self->{sha})) {
-		$self->{okay} = 1;
+	if ($self->caches_okay($name)) {
 		print "OK\n";
 		return 1;
 	}
