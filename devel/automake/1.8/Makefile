@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2012/06/25 15:45:14 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2012/07/20 12:03:50 jasper Exp $
 
 VERSION=	1.8
 DISTNAME=	automake-${VERSION}.5
-REVISION=	6
-PKGSPEC =	automake->=${VERSION},<1.9
+REVISION=	7
+PKGSPEC=	automake->=${VERSION},<1.9
 
 AUTOCONF_VERSION=	2.59
 

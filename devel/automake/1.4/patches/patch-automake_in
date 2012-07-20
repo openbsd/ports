@@ -1,6 +1,9 @@
-$OpenBSD: patch-automake_in,v 1.1.1.1 2005/01/11 07:11:00 sturm Exp $
---- automake.in.orig	Sun Jul 15 12:47:28 2001
-+++ automake.in	Fri Aug 17 12:47:25 2001
+$OpenBSD: patch-automake_in,v 1.2 2012/07/20 12:03:50 jasper Exp $
+
+Fix insecure permissions for directories in distfile build tree. CVE-2009-4029
+
+--- automake.in.orig	Sat Jul 27 16:55:58 2002
++++ automake.in	Thu Jul 19 16:04:18 2012
 @@ -2012,7 +2012,7 @@ sub handle_texinfo
  	# dependency list.
  	@texi_deps = ();
@@ -10,3 +13,21 @@ $OpenBSD: patch-automake_in,v 1.1.1.1 2005/01/11 07:11:00 sturm Exp $
  
  	# Canonicalize name first.
  	($canonical = $infobase) =~ tr/A-Za-z0-9_/_/c;
+@@ -2336,7 +2336,7 @@ sub handle_dist_worker
+ 	# Create dist directory.
+ 	$output_rules .= ("\t-rm -rf \$(distdir)\n"
+ 			  . "\tmkdir \$(distdir)\n"
+-			  . "\t-chmod 777 \$(distdir)\n");
++			  . "\t-chmod 755 \$(distdir)\n");
+     }
+ 
+     # Only run automake in `dist' target if --include-deps and
+@@ -2468,7 +2468,7 @@ sub handle_dist_worker
+ 	     . "\t" . '    test -d $(distdir)/$$subdir ' . "\\\n"
+ 	     . "\t" . '    || mkdir $(distdir)/$$subdir ' . "\\\n"
+ 	     . "\t" . '    || exit 1; ' . "\\\n"
+-	     . "\t" . '    chmod 777 $(distdir)/$$subdir; ' . "\\\n"
++	     . "\t" . '    chmod 755 $(distdir)/$$subdir; ' . "\\\n"
+ 	     . "\t" . '    (cd $$subdir'
+ 	     . ' && $(MAKE) $(AM_MAKEFLAGS) top_distdir=../$('
+ 	     . (($relative_dir eq '.') ? 'distdir' : 'top_distdir')

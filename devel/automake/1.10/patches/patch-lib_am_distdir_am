@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_am_distdir_am,v 1.1 2012/07/20 12:03:50 jasper Exp $
+
+Fix insecure permissions used for the top of the distfile build tree. CVE-2012-3386
+
+--- lib/am/distdir.am.orig	Thu Jul 19 15:05:14 2012
++++ lib/am/distdir.am	Thu Jul 19 15:06:44 2012
+@@ -362,7 +362,7 @@ distcheck: dist
+ ## Make the new source tree read-only.  Distributions ought to work in
+ ## this case.  However, make the top-level directory writable so we
+ ## can make our new subdirs.
+-	chmod -R a-w $(distdir); chmod a+w $(distdir)
++	chmod -R a-w $(distdir); chmod u+w $(distdir)
+ 	mkdir $(distdir)/_build
+ 	mkdir $(distdir)/_inst
+ ## Undo the write access.

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/25 15:45:14 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/07/20 12:03:50 jasper Exp $
 
 VERSION=	1.4
 DISTNAME=	automake-${VERSION}-p6
 PKGNAME=	automake-1.4.6
-PKGSPEC =	automake->=${VERSION},<1.5
-REVISION=	0
+REVISION=	1
+PKGSPEC=	automake->=${VERSION},<1.5
 
 MAINTAINER=	Jason Ish <ish@openbsd.org>
 
