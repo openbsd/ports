@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/04 15:18:39 jsing Exp $
+# $OpenBSD: Makefile,v 1.5 2012/07/30 15:49:55 espie Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
@@ -47,7 +47,10 @@ GOARCH =		386
 EXEPREFIX =		8
 PKG_ARGS +=		-Damd64=0
 PKG_ARGS +=		-Di386=1
+.else
+PKG_ARGS += 		-Damd64=0 -Di386=0
 .endif
+
 GOCFG =			/${GOOS}_${GOARCH}
 GOEXE =			${GOCFG}/${EXEPREFIX}
 
