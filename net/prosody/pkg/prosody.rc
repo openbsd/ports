@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: prosody.rc,v 1.2 2012/01/26 10:32:06 ajacoutot Exp $
+# $OpenBSD: prosody.rc,v 1.3 2012/08/04 15:28:14 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/prosodyctl"
 daemon_flags="start"
@@ -9,6 +9,7 @@ daemon_user="_prosody"
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+rc_usercheck=NO
 
 rc_check() {
 	# return 1 is needed: prosodyctl returns a higher error code on failure

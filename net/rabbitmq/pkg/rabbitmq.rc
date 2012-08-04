@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: rabbitmq.rc,v 1.4 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: rabbitmq.rc,v 1.5 2012/08/04 15:28:14 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/rabbitmq-server -detached"
 daemon_user="_rabbitmq"
@@ -8,6 +8,7 @@ daemon_user="_rabbitmq"
 . /etc/rc.d/rc.subr
 
 rc_reload=NO
+rc_usercheck=NO
 
 rc_pre() {
 	install -d -o ${daemon_user} /var/run/rabbitmq

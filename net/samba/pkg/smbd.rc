@@ -1,12 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: smbd.rc,v 1.5 2011/12/17 22:01:13 sthen Exp $
+# $OpenBSD: smbd.rc,v 1.6 2012/08/04 15:28:14 ajacoutot Exp $
+
+smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
 daemon="${TRUEPREFIX}/libexec/smbd -D"
 
 . /etc/rc.d/rc.subr
 
-smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
+rc_usercheck=NO
 
 rc_check() {
 	${smbcontrol} smbd ping
