@@ -1,0 +1,35 @@
+$OpenBSD: patch-documentation_Makefile,v 1.1 2012/08/04 18:07:03 pascal Exp $
+--- documentation/Makefile.orig	Thu Jan  6 00:00:33 2011
++++ documentation/Makefile	Fri May 25 12:14:18 2012
+@@ -62,7 +62,7 @@ MANPAGES =	$(SRC_DOCDIR)/fltk.$(CAT3EXT) $(SRC_DOCDIR)
+ 		$(SRC_DOCDIR)/fluid.$(CAT1EXT) $(SRC_DOCDIR)/blocks.$(CAT6EXT) \
+ 		$(SRC_DOCDIR)/checkers.$(CAT6EXT) $(SRC_DOCDIR)/sudoku.$(CAT6EXT)
+ 
+-all:	$(MANPAGES)
++all:
+ 
+ # use make dist to create all docs for distribution files
+ # you need an installed version of doxygen for this
+@@ -79,9 +79,8 @@ clean:
+ 
+ depend:
+ 
+-install: $(MANPAGES)
++install:
+ 	echo "Installing documentation files in $(DESTDIR)$(docdir) ..."
+-	-$(INSTALL_DIR) $(DESTDIR)$(docdir)
+ 	if test -f html/index.html ; then \
+ 	  for file in html/* ; do \
+ 		$(INSTALL_DATA) $$file $(DESTDIR)$(docdir); \
+@@ -92,11 +91,6 @@ install: $(MANPAGES)
+ 	  $(INSTALL_DATA) fltk.pdf $(DESTDIR)$(docdir); \
+ 	fi
+ 	echo "Installing man pages in $(DESTDIR)$(mandir) ..."
+-	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat1
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fluid.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk-config.$(CAT1EXT) $(DESTDIR)$(mandir)/cat1
+-	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/cat3
+-	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk.$(CAT3EXT) $(DESTDIR)$(mandir)/cat3
+ 	-$(INSTALL_DIR) $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL_MAN) $(SRC_DOCDIR)/fluid.man $(DESTDIR)$(mandir)/man1/fluid.1
+ 	$(INSTALL_MAN) $(SRC_DOCDIR)/fltk-config.man $(DESTDIR)$(mandir)/man1/fltk-config.1

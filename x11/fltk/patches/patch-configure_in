@@ -1,51 +1,34 @@
-$OpenBSD: patch-configure_in,v 1.12 2010/09/22 12:47:45 ajacoutot Exp $
---- configure.in.orig	Sun Jan 15 19:36:16 2006
-+++ configure.in	Tue Sep 21 07:55:56 2010
-@@ -34,9 +34,9 @@ dnl Required file in package...
- AC_INIT(src/Fl.cxx)
- 
- dnl FLTK library versions...
--FL_MAJOR_VERSION=1
--FL_MINOR_VERSION=1
--FL_PATCH_VERSION=7
-+#FL_MAJOR_VERSION=1
-+#FL_MINOR_VERSION=1
-+#FL_PATCH_VERSION=7
- FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
+$OpenBSD: patch-configure_in,v 1.13 2012/08/04 18:07:03 pascal Exp $
+--- configure.in.orig	Sun Mar  6 17:54:58 2011
++++ configure.in	Fri May 25 01:07:10 2012
+@@ -48,7 +48,7 @@ dnl FLTK library versions...
+ FL_MAJOR_VERSION=1
+ FL_MINOR_VERSION=3
+ FL_PATCH_VERSION=0
+-FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
++FL_API_VERSION=${LIBfltk_VERSION}
  
  AC_SUBST(FL_MAJOR_VERSION)
-@@ -530,13 +530,6 @@ dnl Check for pthreads for multi-threaded apps...
- have_pthread=no
+ AC_SUBST(FL_MINOR_VERSION)
+@@ -789,7 +789,7 @@ if test "x$enable_threads" != xno -a x$check_pthread =
  
- if test "x$enable_threads" = xyes; then
--    AC_CHECK_HEADER(pthread.h, AC_DEFINE(HAVE_PTHREAD_H))
--    AC_CHECK_LIB(pthread, pthread_create)
--
--    if test "x$ac_cv_lib_pthread_pthread_create" = xyes -a x$ac_cv_header_pthread_h = xyes; then
--        have_pthread=yes
--    else
--        dnl *BSD uses -pthread option...
-         AC_MSG_CHECKING([for pthread_create using -pthread])
- 	SAVELIBS="$LIBS"
- 	LIBS="-pthread $LIBS"
-@@ -546,7 +539,6 @@ if test "x$enable_threads" = xyes; then
-             have_pthread=yes,
- 	    LIBS="$SAVELIBS")
-         AC_MSG_RESULT([$have_pthread])
--    fi
- fi
- 
- dnl Define OS-specific stuff...
-@@ -647,7 +639,7 @@ case $uname in
+     if test x$ac_cv_header_pthread_h = xyes; then
+ 	dnl Check various threading options for the platforms we support
+-	for flag in -lpthreads -lpthread -pthread; do
++	for flag in -pthread; do
+             AC_MSG_CHECKING([for pthread_create using $flag])
+ 	    SAVELIBS="$LIBS"
+ 	    LIBS="$flag $LIBS"
+@@ -923,7 +923,7 @@ case $uname_GUI in
  	    AC_MSG_WARN(Ignoring libraries \"$X_PRE_LIBS\" requested by configure.)
  	fi
  
--	LIBS="$LIBS -lXext -lX11 $X_EXTRA_LIBS"
-+	LIBS="$LIBS -lXext -lX11 -lXdmcp -lXau $X_EXTRA_LIBS"
+-	LIBS="$LIBS -lX11 $X_EXTRA_LIBS"
++	LIBS="$LIBS -lX11 -lXdmcp -lXau $X_EXTRA_LIBS"
  	CFLAGS="$CFLAGS $X_CFLAGS"
  	CXXFLAGS="$CXXFLAGS $X_CFLAGS"
  	LDFLAGS="$X_LIBS $LDFLAGS"
-@@ -844,7 +836,7 @@ if test -n "$GCC"; then
+@@ -1147,7 +1147,7 @@ if test -n "$GCC"; then
          if test "x$with_optim" != x; then
  	    OPTIM="$with_optim $OPTIM"
  	else
