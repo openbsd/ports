@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/04 12:37:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/08/04 15:06:07 ajacoutot Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -582,6 +582,8 @@ owncloud/3rdparty/simpletest/url.php
 owncloud/3rdparty/simpletest/user_agent.php
 owncloud/3rdparty/simpletest/web_tester.php
 owncloud/3rdparty/simpletest/xml.php
+owncloud/3rdparty/smb4php/
+owncloud/3rdparty/smb4php/smb.php
 owncloud/3rdparty/timepicker/
 owncloud/3rdparty/timepicker/GPL-LICENSE.txt
 owncloud/3rdparty/timepicker/MIT-LICENSE.txt
@@ -639,7 +641,6 @@ owncloud/3rdparty/when/When.php
 owncloud/AUTHORS
 owncloud/COPYING-AGPL
 owncloud/COPYING-README
-owncloud/Changelog
 owncloud/README
 @owner www
 owncloud/apps/
@@ -1129,12 +1130,15 @@ owncloud/apps/files_external/appinfo/version
 owncloud/apps/files_external/lib/
 owncloud/apps/files_external/lib/ftp.php
 owncloud/apps/files_external/lib/google.php
+owncloud/apps/files_external/lib/smb.php
+owncloud/apps/files_external/lib/streamwrapper.php
 owncloud/apps/files_external/lib/swift.php
 owncloud/apps/files_external/lib/webdav.php
 owncloud/apps/files_external/tests/
 owncloud/apps/files_external/tests/config.php
 owncloud/apps/files_external/tests/ftp.php
 owncloud/apps/files_external/tests/google.php
+owncloud/apps/files_external/tests/smb.php
 owncloud/apps/files_external/tests/swift.php
 owncloud/apps/files_external/tests/webdav.php
 owncloud/apps/files_imageviewer/
@@ -1575,12 +1579,14 @@ owncloud/apps/files_sharing/ajax/getstatuses.php
 owncloud/apps/files_sharing/ajax/setpermissions.php
 owncloud/apps/files_sharing/ajax/share.php
 owncloud/apps/files_sharing/ajax/toggleresharing.php
+owncloud/apps/files_sharing/ajax/togglesharewitheveryone.php
 owncloud/apps/files_sharing/ajax/unshare.php
 owncloud/apps/files_sharing/ajax/userautocomplete.php
 owncloud/apps/files_sharing/appinfo/
 owncloud/apps/files_sharing/appinfo/app.php
 owncloud/apps/files_sharing/appinfo/database.xml
 owncloud/apps/files_sharing/appinfo/info.xml
+owncloud/apps/files_sharing/appinfo/update.php
 owncloud/apps/files_sharing/appinfo/version
 owncloud/apps/files_sharing/css/
 owncloud/apps/files_sharing/css/sharing.css
@@ -2000,10 +2006,7 @@ owncloud/config/config.sample.php
 owncloud/core/
 owncloud/core/ajax/
 owncloud/core/ajax/appconfig.php
-owncloud/core/ajax/grouplist.php
 owncloud/core/ajax/translations.php
-owncloud/core/ajax/userlist.php
-owncloud/core/ajax/validateuser.php
 owncloud/core/ajax/vcategories/
 owncloud/core/ajax/vcategories/add.php
 owncloud/core/ajax/vcategories/delete.php
