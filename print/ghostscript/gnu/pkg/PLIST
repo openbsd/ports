@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/07/11 10:26:31 kili Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/08/04 17:51:44 ajacoutot Exp $
+@conflict gstoraster-*
+@pkgpath print/gstoraster
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
 %%SHARED%%
@@ -35,7 +37,9 @@ bin/wftopfa
 libexec/cups/
 libexec/cups/filter/
 libexec/cups/filter/gstopxl
+@bin libexec/cups/filter/gstoraster
 libexec/cups/filter/pstopxl
+libexec/cups/filter/pstoraster
 man/de/
 man/de/man1/
 @man man/de/man1/dvipdf.1
@@ -443,6 +447,9 @@ share/ghostscript/${VERSION}/examples/cjk/gscjk_ak.ps
 share/ghostscript/${VERSION}/examples/cjk/iso2022.ps
 share/ghostscript/${VERSION}/examples/cjk/iso2022v.ps
 share/ghostscript/${VERSION}/examples/colorcir.ps
+share/ghostscript/${VERSION}/examples/cups/
+share/ghostscript/${VERSION}/examples/cups/gstoraster.convs
+@sample ${SYSCONFDIR}/cups/gstoraster.convs
 share/ghostscript/${VERSION}/examples/doretree.ps
 share/ghostscript/${VERSION}/examples/escher.ps
 share/ghostscript/${VERSION}/examples/golfer.eps

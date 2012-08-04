@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2012/07/11 10:26:31 kili Exp $
+# $OpenBSD: Makefile,v 1.92 2012/08/04 17:51:44 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
@@ -6,6 +6,7 @@ VERSION=	9.05
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	15.0
+REVISION=	0
 
 MASTER_SITES=	http://downloads.ghostscript.com/public/
 
@@ -32,7 +33,6 @@ WANTLIB=	c ijs m jbig2dec jpeg>=62 lcms2 png>=6 pthread tiff z
 MODULES=	converters/libiconv
 
 RUN_DEPENDS=	print/ghostscript/gnu-fonts
-BUILD_DEPENDS=	print/cups>=1.5.0
 LIB_DEPENDS=	graphics/jbig2dec	\
 		graphics/jpeg		\
 		graphics/lcms2		\
@@ -91,9 +91,9 @@ USE_GMAKE=	Yes
 
 # Hack to let ALL_TARGET etc. depend on the value of NO_SHARED_LIBS,
 # which is available only after the inclusion of bsd.port.mk.
-ALL_TARGET_NON_SHARED-No = 	so all
+ALL_TARGET_NON_SHARED-No = 	so all ${ALL_TARGET_CUPS}
 ALL_TARGET_NON_SHARED-Yes = 	all
-INSTALL_TARGET_NON_SHARED-No =	install install-so
+INSTALL_TARGET_NON_SHARED-No =	install install-so ${INSTALL_TARGET_CUPS}
 INSTALL_TARGET_NON_SHARED-Yes =	install
 
 SOC_LIBS =			-liconv -pthread
@@ -203,8 +203,10 @@ post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/cups/filter
 	${INSTALL_SCRIPT} ${WRKSRC}/cups/gstopxl ${PREFIX}/libexec/cups/filter
 	cd ${PREFIX}/libexec/cups/filter && ln -s gstopxl pstopxl
+	cd ${PREFIX}/libexec/cups/filter && ln -s gstoraster pstoraster
 	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
 	${INSTALL_DATA} ${WRKSRC}/cups/*.ppd ${PREFIX}/share/cups/model
+	mv ${DESTDIR}/${SYSCONFDIR}/cups/ ${PREFIX}/share/ghostscript/${VERSION}/examples/
 
 # Device list based on configure.ac:
 # X_DEVS (skipping x11_ and x11alt_, since those are dependencies of
@@ -316,7 +318,21 @@ DEVICES+=	bit bitcmyk bitrgb bitrgbtags ccr \
 DEVICES+=	ijs
 
 # Cups
+LIB_DEPENDS+=	print/cups,-libs
+WANTLIB += asn1 crypto cups cupsimage gssapi krb5 ssl
 DEVICES+=	cups
+ALL_TARGET_CUPS=cups
+INSTALL_TARGET_CUPS=	install-cups
+CUPSLIBS+=	$$(cups-config --image --libs)
+EXTRALIBS+=	${CUPSLIBS}
+SOC_LIBS+=	${CUPSLIBS}
+MAKE_FLAGS+=	CUPSCFLAGS="$$(cups-config --cflags)" \
+		CUPSSERVERBIN="$$(cups-config --serverbin)" \
+		CUPSSERVERROOT="$$(cups-config --serverroot)" \
+		CUPSDATA="$$(cups-config --datadir)" \
+		CUPSPDFTORASTER=1 \
+		CUPS_FONTPATH="${LOCALBASE}/share/cups/fonts" \
+		CUPS_DATA="${LOCALBASE}/share/cups"
 
 .include <bsd.port.mk>
 
