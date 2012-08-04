@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.96 2012/02/16 22:31:16 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.97 2012/08/04 14:36:31 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -10,6 +10,7 @@
     SUBDIR += auctex
     SUBDIR += bibview
     SUBDIR += cups
+    SUBDIR += cups-filters
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
     SUBDIR += detex
