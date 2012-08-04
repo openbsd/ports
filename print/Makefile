@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.97 2012/08/04 14:36:31 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.98 2012/08/04 15:18:32 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -28,7 +28,6 @@
     SUBDIR += freetype
     SUBDIR += ghostscript
     SUBDIR += ghostview
-    SUBDIR += gstoraster
     SUBDIR += gtklp
     SUBDIR += gutenprint
     SUBDIR += gv
