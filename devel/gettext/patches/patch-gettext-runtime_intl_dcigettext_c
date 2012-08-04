@@ -1,7 +1,63 @@
-$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.4 2012/07/30 15:37:10 naddy Exp $
---- gettext-runtime/intl/dcigettext.c.orig	Mon Jun 28 20:23:14 2010
-+++ gettext-runtime/intl/dcigettext.c	Mon Jun 28 20:25:07 2010
-@@ -769,13 +769,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+$OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.5 2012/08/04 14:33:14 naddy Exp $
+--- gettext-runtime/intl/dcigettext.c.orig	Sat Dec 26 14:42:37 2009
++++ gettext-runtime/intl/dcigettext.c	Tue Jul 10 20:08:14 2012
+@@ -507,6 +507,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+   const char *localename;
+ #endif
+   size_t domainname_len;
++  size_t xdomainname_len;
+ 
+   /* If no real MSGID is given return NULL.  */
+   if (msgid1 == NULL)
+@@ -627,6 +628,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+ 	  /* We have a relative path.  Make it absolute now.  */
+ 	  size_t dirname_len = strlen (dirname) + 1;
+ 	  size_t path_max;
++	  size_t resolved_dirname_len;
+ 	  char *resolved_dirname;
+ 	  char *ret;
+ 
+@@ -635,7 +637,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+ 
+ 	  for (;;)
+ 	    {
+-	      resolved_dirname = (char *) alloca (path_max + dirname_len);
++	      resolved_dirname_len = path_max + dirname_len;
++	      resolved_dirname = (char *) alloca (resolved_dirname_len);
+ 	      ADD_BLOCK (block_list, tmp_dirname);
+ 
+ 	      __set_errno (0);
+@@ -652,7 +655,8 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+ 	       error but simply return the default string.  */
+ 	    goto return_untranslated;
+ 
+-	  stpcpy (stpcpy (strchr (resolved_dirname, '\0'), "/"), dirname);
++	  strlcat (resolved_dirname, "/", resolved_dirname_len);
++	  strlcat (resolved_dirname, dirname, resolved_dirname_len);
+ 	  dirname = resolved_dirname;
+ 	}
+ #ifndef IN_LIBGLOCALE
+@@ -670,13 +674,14 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+ #endif
+ 
+   domainname_len = strlen (domainname);
+-  xdomainname = (char *) alloca (strlen (categoryname)
+-				 + domainname_len + 5);
++  xdomainname_len = strlen (categoryname) + domainname_len + 5;
++  xdomainname = (char *) alloca (xdomainname_len);
+   ADD_BLOCK (block_list, xdomainname);
+ 
+-  stpcpy ((char *) mempcpy (stpcpy (stpcpy (xdomainname, categoryname), "/"),
+-			    domainname, domainname_len),
+-	  ".mo");
++  strlcpy (xdomainname, categoryname, xdomainname_len);
++  strlcat (xdomainname, "/", xdomainname_len);
++  strlcat (xdomainname, domainname, xdomainname_len);
++  strlcat (xdomainname, ".mo", xdomainname_len);
+ 
+   /* Creating working area.  */
+   single_locale = (char *) alloca (strlen (categoryvalue) + 1);
+@@ -769,13 +774,17 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		  /* Create a new entry and add it to the search tree.  */
  		  size_t msgid_len;
  		  size_t size;
@@ -20,7 +76,7 @@ $OpenBSD: patch-gettext-runtime_intl_dcigettext_c,v 1.4 2012/07/30 15:37:10 nadd
  #endif
  		  newp = (struct known_translation_t *) malloc (size);
  		  if (newp != NULL)
-@@ -791,7 +795,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
+@@ -791,7 +800,7 @@ DCIGETTEXT (const char *domainname, const char *msgid1
  		      memcpy (new_domainname, domainname, domainname_len + 1);
  #ifdef HAVE_PER_THREAD_LOCALE
  		      new_localename = new_domainname + domainname_len + 1;
