@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/04/15 17:33:10 giovanni Exp $
+# $OpenBSD: Makefile,v 1.17 2012/08/04 18:05:20 pascal Exp $
 
      SUBDIR =
      SUBDIR += bibelot
@@ -9,6 +9,5 @@
      SUBDIR += palm2ical
      SUBDIR += palmpower
      SUBDIR += pilrc
-     SUBDIR += pose
 
 .include <bsd.port.subdir.mk>
