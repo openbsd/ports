@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/07/13 12:36:18 robert Exp $
+# $OpenBSD: Makefile,v 1.71 2012/08/04 15:05:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -123,11 +123,14 @@ BUILD_DEPENDS+=	archivers/zip \
 		devel/gperf \
 		shells/bash \
 		archivers/p5-Archive-Zip \
-		print/cups \
 		boost->=1.41.0:devel/boost \
 		misc/findutils \
 		sysutils/coreutils \
 		textproc/gsed
+
+# configure checks for cups support; no LIB/RUN_DEPENDS because libcups
+# is only dlopen()ed if found
+BUILD_DEPENDS +=	print/cups,-libs
 
 MODULES+=	gcc4
 MODGCC4_ARCHS=	*
