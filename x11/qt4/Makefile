@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2012/06/14 09:38:35 espie Exp $
+# $OpenBSD: Makefile,v 1.100 2012/08/04 15:07:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,6 +24,7 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
+REVISION-main=		0
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \
@@ -124,9 +125,12 @@ CONFIGURE_ENV =		LOCALBASE=${LOCALBASE} QTDIR="${WRKSRC}" \
 CONFIGURE_ENV +=	BOOTSTRAP_MAKE_FLAGS='-j${MAKE_JOBS}'
 .endif
 
-BUILD_DEPENDS +=	print/cups
 BUILD_DEPENDS +=	x11/dbus
 BUILD_DEPENDS +=	databases/postgresql,-server
+
+# configure checks for cups support; no LIB/RUN_DEPENDS because libcups
+# is only dlopen()ed if found
+BUILD_DEPENDS +=	print/cups,-libs
 
 MULTI_PACKAGES =	-main -examples \
 			-html -mysql -postgresql -sqlite2 -tds
