@@ -1,0 +1,13 @@
+$OpenBSD: README,v 1.5 2012/08/04 15:09:35 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+By default, xdg-open(1) opens URLs using a predefined order of known
+browsers executables. To change this behavior and set up a default
+WWW browser, the "BROWSER" variable needs be set to the corresponding
+executable.
+
+e.g. ~/.profile
+export BROWSER="firefox"
