@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 20:21:01 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/04 22:25:19 naddy Exp $
 
 VERSION =	2.13
 REVISION =	2
 
 CONFIGURE_STYLE = gnu dest
-USE_GROFF =	No
 
 MAKE_FLAGS = 	acdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS = 	acdatadir=${WRKINST}${PREFIX}/share/autoconf${SUFFIX}

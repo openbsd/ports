@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2010/11/26 07:54:43 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2012/08/04 22:25:19 naddy Exp $
 
 # most parts common to all autoconfs actually
 COMMENT ?=	automatically configure source code on many Un*x platforms
@@ -30,5 +30,3 @@ CONFIGURE_ENV +=	MKDIR_P='mkdir -p'
 CONFIGURE_ARGS += 	--program-suffix=${SUFFIX}
 MAKE_FLAGS +=		pkgdatadir=${PREFIX}/share/autoconf${SUFFIX}
 FAKE_FLAGS +=		lispdir=
-
-USE_GROFF ?=		Yes
