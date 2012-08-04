@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/07/08 11:19:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2012/08/04 14:49:51 ajacoutot Exp $
 
 # XXX Binary files patch-panels_info_hostnames-test_txt and
 # patch-panels_info_hostnames-test_txt.new differ
@@ -10,7 +10,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.4.2
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -48,7 +48,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			x11/gnome/online-accounts \
 			sysutils/upower \
 			devel/libgtop2 \
-			print/cups \
+			print/cups,-libs \
 			audio/pulseaudio \
 			audio/libcanberra,-gtk3 \
 			graphics/colord

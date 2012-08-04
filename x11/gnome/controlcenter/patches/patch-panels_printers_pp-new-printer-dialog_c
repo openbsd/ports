@@ -1,10 +1,27 @@
-$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.8 2012/04/17 11:02:32 jasper Exp $
+$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.9 2012/08/04 14:49:52 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=679759
 
 No PackageKit on OpenBSD.
 
---- panels/printers/pp-new-printer-dialog.c.orig	Mon Apr 16 14:54:29 2012
-+++ panels/printers/pp-new-printer-dialog.c	Tue Apr 17 12:52:09 2012
-@@ -1607,6 +1607,7 @@ new_printer_add_button_cb (GtkButton *button,
+--- panels/printers/pp-new-printer-dialog.c.orig	Sat Jul 28 17:57:56 2012
++++ panels/printers/pp-new-printer-dialog.c	Sat Jul 28 17:58:14 2012
+@@ -59,6 +59,14 @@
+ 
+ #define ALLOWED_CHARACTERS "abcdefghijklmnopqrtsuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_"
+ 
++#if (CUPS_VERSION_MAJOR > 1) || (CUPS_VERSION_MINOR > 5)
++#define HAVE_CUPS_1_6 1
++#endif
++
++#ifndef HAVE_CUPS_1_6
++#define ippGetState(ipp) ipp->state
++#endif
++
+ static void pp_new_printer_dialog_hide (PpNewPrinterDialog *pp);
+ static void actualize_devices_list (PpNewPrinterDialog *pp);
+ 
+@@ -1607,6 +1615,7 @@ new_printer_add_button_cb (GtkButton *button,
                         pp->devices[device_id].device_make_and_model,
                         pp->devices[device_id].device_uri);
  
@@ -12,7 +29,7 @@ No PackageKit on OpenBSD.
            if (ppd_name == NULL || ppd_name->ppd_match_level < PPD_EXACT_MATCH)
              {
                /* Try PackageKit to install printer driver */
-@@ -1668,6 +1669,7 @@ new_printer_add_button_cb (GtkButton *button,
+@@ -1668,6 +1677,7 @@ new_printer_add_button_cb (GtkButton *button,
                                 pp->devices[device_id].device_uri);
                  }
              }
@@ -20,3 +37,12 @@ No PackageKit on OpenBSD.
  
            /* Add the new printer */
            if (ppd_name && ppd_name->ppd_name)
+@@ -1760,7 +1770,7 @@ new_printer_add_button_cb (GtkButton *button,
+                                                           _("Automatic configuration"));
+                   if (response)
+                     {
+-                      if (response->state == IPP_ERROR)
++                      if (ippGetState(response) == IPP_ERROR)
+                         g_warning ("An error has occured during automatic configuration of new printer.");
+                       ippDelete (response);
+                     }

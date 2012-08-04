@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2012/08/04 14:50:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.4.2
-REVISION=	1
+REVISION=	2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,8 +34,8 @@ LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		x11/gnome/desktop \
 		x11/gnome/libgnomekbd \
 		security/nss \
-		print/cups \
-		audio/pulseaudio>=2.0 \
+		print/cups,-libs \
+		audio/pulseaudio \
 		audio/libcanberra,-gtk3 \
 		sysutils/upower \
 		graphics/colord
