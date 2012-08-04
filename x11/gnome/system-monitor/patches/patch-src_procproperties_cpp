@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_procproperties_cpp,v 1.6 2012/07/09 16:33:03 ajacoutot Exp $
+$OpenBSD: patch-src_procproperties_cpp,v 1.7 2012/08/04 14:33:09 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=679642
+From a9972b6a45b490fd316a1a536115baca465e3ae6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Mon, 09 Jul 2012 16:23:37 +0000
+Subject: OpenBSD: use G_N_ELEMENTS instead of nitems
 
 --- src/procproperties.cpp.orig	Tue Apr 17 02:17:13 2012
 +++ src/procproperties.cpp	Mon Jul  9 18:11:31 2012
