@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/10 12:12:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/04 14:42:17 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://downloads.xiph.org/releases/opus/
+MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
+		https://ftp.mozilla.org/pub/mozilla.org/opus/
 
 LIB_DEPENDS=	audio/libogg audio/opus
 WANTLIB=	c m ogg opus sndio
