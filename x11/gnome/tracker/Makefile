@@ -1,8 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2012/07/16 07:19:25 ajacoutot Exp $
-
-# XXX Binary files patch-src_tracker-control_tracker-control-general_c
-# and patch-src_tracker-control_tracker-control-general_c.new differ
-DIFF_ARGS=	-a
+# $OpenBSD: Makefile,v 1.111 2012/08/04 15:36:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,7 +17,7 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-evolution=	0
 REVISION-nautilus=	0
 
