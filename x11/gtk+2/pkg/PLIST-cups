@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-cups,v 1.2 2010/09/30 07:18:16 ajacoutot Exp $
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.a
-@comment lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.la
-lib/gtk-2.0/2.10.0/printbackends/libprintbackend-cups.so
