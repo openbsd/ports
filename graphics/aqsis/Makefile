@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/08/04 18:08:21 pascal Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -49,7 +49,7 @@ MODCMAKE_WANTCOLOR=No
 SEPARATE_BUILD=	Yes
 MAKE_FLAGS=	VERBOSE=1
 
-CFLAGS+=	-pthread
+CFLAGS+=	-pthread -I${X11BASE}/include
 
 CONFIGURE_ARGS=	-DAQSIS_BOOST_FILESYSTEM_LIBRARY_NAME=boost_filesystem-mt \
 		-DAQSIS_BOOST_REGEX_LIBRARY_NAME=boost_regex-mt \

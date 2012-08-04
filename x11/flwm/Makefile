@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2012/08/04 18:07:39 pascal Exp $
 
 COMMENT=	fast-light window manager
 
@@ -12,8 +12,8 @@ HOMEPAGE=	http://flwm.sourceforge.net/
 
 EXTRACT_SUFX=	.tgz
 CONFIGURE_STYLE=gnu dest
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DFLTK_1_0_COMPAT -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -DFL_INTERNALS -DFLTK_1_0_COMPAT \
+		 -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
 USE_GROFF =	Yes
 
