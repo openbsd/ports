@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/02/05 07:46:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/08/04 15:11:00 ajacoutot Exp $
 lib/python${MODPY_VERSION}/site-packages/pyxdg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/xdg/
 lib/python${MODPY_VERSION}/site-packages/xdg/BaseDirectory.py
@@ -25,3 +25,5 @@ lib/python${MODPY_VERSION}/site-packages/xdg/RecentFiles.py
 lib/python${MODPY_VERSION}/site-packages/xdg/RecentFiles.pyc
 lib/python${MODPY_VERSION}/site-packages/xdg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/xdg/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/xdg/util.py
+lib/python${MODPY_VERSION}/site-packages/xdg/util.pyc
