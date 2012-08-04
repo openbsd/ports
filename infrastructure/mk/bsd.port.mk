@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1182 2012/07/10 12:04:25 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1183 2012/08/04 14:23:30 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -140,6 +140,10 @@ UPDATE_COOKIES_DIR ?= ${PORTSDIR}/update/${MACHINE_ARCH}
 PLIST_DB ?= ${PORTSDIR}/plist/${MACHINE_ARCH}
 
 PACKAGE_REPOSITORY ?= ${PORTSDIR}/packages
+
+.if !exists(${X11BASE}/man/whatis.db)
+ERRORS += "Fatal: building ports requires correctly installed X11"
+.endif
 
 # local path locations
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
@@ -883,14 +887,15 @@ PKG_ARGS${_S} ?= ${PKG_ARGS}
 PKG_ARGS${_S} += ${_PKG_ARGS}
 .  for _v in ${SUBST_VARS}
 .    if defined(${_v:S/^^//}${_S})
-PKG_ARGS${_S} += -D${_v}=${${_v:S/^^//}${_S}:Q}
+_substvars${_S} += -D${_v}=${${_v:S/^^//}${_S}:Q}
 _tmpvars += ${_v}${_S}=${${_v:S/^^//}${_S}:Q}
 .    else
-PKG_ARGS${_S} += -D${_v}=${${_v:S/^^//}:Q}
+_substvars${_S} += -D${_v}=${${_v:S/^^//}:Q}
 _tmpvars += ${_v}=${${_v:S/^^//}:Q}
 .    endif
 .  endfor
 
+PKG_ARGS${_S} += ${_substvars${_S}}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
@@ -900,12 +905,10 @@ PKG_ARGS${_S} += -DREVISION=${REVISION${_S}}
 .  if !empty(EPOCH${_S})
 PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
 .  endif
-.endfor
 
-SUBST_CMD = ${_PERLSCRIPT}/pkg_subst
-.for _v in ${SUBST_VARS}
-SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
+SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 .endfor
+SUBST_CMD = ${SUBST_CMD${SUBPACKAGE}}
 
 # XXX
 .if ${MULTI_PACKAGES} == "-"
@@ -1261,10 +1264,6 @@ IGNORE += "is not an interactive port"
 .endif
 .if !empty(MISSING_FILES) && defined(BATCH)
 _EXTRA_IGNORE += "is an interactive port: missing files"
-.endif
-
-.if !exists(${X11BASE})
-IGNORE += "building ports requires X11 but ${X11BASE} not found"
 .endif
 
 .if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
@@ -2290,6 +2289,11 @@ ${_WRKDIR_COOKIE}:
 		echo 1>&2 "Fatal: ${PORTSDIR} is a symlink. Please set to the real directory"; \
 		exit 1; \
 	fi
+	@appdefaults=${LOCALBASE}/lib/X11/app-defaults; \
+	if ! test -d $$appdefaults -a -h $$appdefaults; then \
+		echo 1>&2 "Fatal: $$appdefaults should exist and be a symlink"; \
+		exit 1; \
+	fi
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
 .if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
@@ -2605,7 +2609,7 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@if test -e ${PKGDIR}/README${_s}; then \
 		r=${WRKINST}${_README_DIR}/${FULLPKGNAME${_s}}; \
 		echo "Installing ${PKGDIR}/README${_s} as $$r"; \
-		${SUDO} ${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${PKGDIR}/README${_s} $$r; \
+		${SUDO} ${SUBST_CMD${_s}} -o ${SHAREOWN} -g ${SHAREGRP} -c ${PKGDIR}/README${_s} $$r; \
 	fi
 .  endfor
 .endif
