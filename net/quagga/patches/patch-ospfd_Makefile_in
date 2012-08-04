@@ -1,0 +1,12 @@
+$OpenBSD: patch-ospfd_Makefile_in,v 1.1 2012/08/04 14:25:33 espie Exp $
+--- ospfd/Makefile.in.orig	Sat Jul 21 11:52:01 2012
++++ ospfd/Makefile.in	Sat Jul 21 11:52:14 2012
+@@ -286,7 +286,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ INSTALL_SDATA = @INSTALL@ -m 600
+ lib_LTLIBRARIES = libospf.la
+-libospf_la_LDFLAGS = -version 0:0:0
++libospf_la_LDFLAGS = -version-info 0:0:0
+ libospf_la_SOURCES = \
+ 	ospfd.c ospf_zebra.c ospf_interface.c ospf_ism.c ospf_neighbor.c \
+ 	ospf_nsm.c ospf_dump.c ospf_network.c ospf_packet.c ospf_lsa.c \
