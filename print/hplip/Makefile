@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/06/30 04:22:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2012/08/04 14:55:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,10 +9,6 @@ COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
 V=		3.12.6
-REVISION-main=	2
-REVISION-gui=	0
-REVISION-hpcups=0
-REVISION-libs=	0
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -20,6 +16,12 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	3
+REVISION-gui=	0
+REVISION-hpcups=1
+REVISION-libs=	0
+REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -54,7 +56,7 @@ BUILD_DEPENDS=	sysutils/polkit
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		graphics/sane-backends \
-		print/cups>=1.5.0 \
+		print/cups,-libs \
 		print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		print/py-reportlab/reportlab \
@@ -63,6 +65,9 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		graphics/py-Imaging \
 		print/hplip,-hpcups \
 		sysutils/polkit
+
+# package is only useful if cups is installed
+RUN_DEPENDS-main +=	print/cups
 
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0
 WANTLIB-hpijs += c jpeg netsnmp stdc++ dbus-1 hpmud
@@ -74,7 +79,7 @@ RUN_DEPENDS-hpijs= print/foomatic-filters
 WANTLIB-hpcups += ${cWANTLIB} png tiff z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage dbus-1
 LIB_DEPENDS-hpcups= print/hplip,-libs \
-		print/cups>=1.5.0
+		print/cups,-libs
 
 WANTLIB-libs +=	${cWANTLIB} netsnmp usb-1.0
 LIB_DEPENDS-libs= net/net-snmp \
