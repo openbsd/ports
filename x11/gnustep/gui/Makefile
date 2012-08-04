@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2012/07/08 13:35:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2012/08/04 14:47:41 ajacoutot Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME =	gnustep-gui-0.22.0
+REVISION =	0
 
 CATEGORIES=	devel
 
@@ -26,7 +27,8 @@ LIB_DEPENDS=	audio/libao \
 		graphics/jpeg \
 		graphics/libungif \
 		graphics/png \
-		print/cups \
+		graphics/tiff \
+		print/cups,-libs \
 		textproc/aspell/core
 
 CONFIGURE_STYLE=gnu

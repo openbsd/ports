@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2012/06/01 22:00:27 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2012/08/04 14:43:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.4.1
 CATEGORIES=	print
+REVISION=	0
 
 HOMEPAGE=	http://www.scribus.net/
 
@@ -40,7 +41,7 @@ LIB_DEPENDS= graphics/jpeg \
 		graphics/lcms2 \
 		graphics/tiff \
 		${MODPY_LIB_DEPENDS} \
-		print/cups \
+		print/cups,-libs \
 		textproc/libxml \
 		textproc/aspell/core \
 		devel/libexecinfo
