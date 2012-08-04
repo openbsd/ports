@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/20 07:15:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/04 14:31:31 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
@@ -29,7 +29,8 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/py-gobject3>=3.2.2p0
+BUILD_DEPENDS=	devel/py-gobject3>=3.2.2p0 \
+		x11/gnome/doc-utils
 
 # configure checks for it; but it isn't really used
 BUILD_DEPENDS += graphics/clutter/core
