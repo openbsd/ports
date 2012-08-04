@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/04 14:57:28 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-REVISION =	6
+REVISION =	7
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2
@@ -18,15 +18,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto gssapi krb5 m pthread ssl stdc++ z
-WANTLIB += cups>=3 cupsimage jbig>=2
+WANTLIB += asn1 c crypto cups cupsimage gssapi jbig krb5 m pthread
+WANTLIB += ssl stdc++ z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=splix/}
 
-LIB_DEPENDS=	print/cups \
+LIB_DEPENDS=	print/cups,-libs \
 		graphics/jbigkit
-# pstoraster
+
+# gstoraster
 RUN_DEPENDS=	print/ghostscript/gnu
+
+# package is only useful if cups is installed
+RUN_DEPENDS +=	print/cups
 
 USE_GMAKE=	Yes
 NO_REGRESS=	Yes
@@ -34,6 +38,7 @@ NO_REGRESS=	Yes
 MAKE_FLAGS=	V=1 \
 		MAKE=${MAKE_PROGRAM} \
 		CXX=${CXX} \
-		OPTIM_CXXFLAGS="${CXXFLAGS}"
+		OPTIM_CXXFLAGS="${CXXFLAGS}" \
+		PSTORASTER=gstoraster
 
 .include <bsd.port.mk>
