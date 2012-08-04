@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/11 16:03:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/04 14:43:10 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
 MODPY_EGG_VERSION=	1.9.61
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		py-cups-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=		print
 
@@ -26,7 +27,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		converters/libiconv \
 			lang/python
 
-LIB_DEPENDS=		print/cups \
+LIB_DEPENDS=		print/cups,-libs \
 			${MODPY_LIB_DEPENDS}
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
