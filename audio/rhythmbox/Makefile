@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/07/13 09:11:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.103 2012/08/04 14:32:25 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -43,6 +43,9 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		audio/libmusicbrainz \
 			devel/gobject-introspection \
 			devel/py-gobject3
+
+# needed for the tests
+BUILD_DEPENDS +=	devel/check
 
 LIB_DEPENDS=		audio/libgpod \
 			databases/tdb \
