@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/03/28 09:07:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/04 14:39:22 ajacoutot Exp $
 
 COMMENT=	fine-grained privileges PolicyKit helper for CUPS
 
 DISTNAME=	cups-pk-helper-0.2.2
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	print sysutils
 
@@ -24,7 +25,7 @@ MODULES=	devel/gettext \
 		textproc/intltool
 
 LIB_DEPENDS=	sysutils/polkit \
-		print/cups
+		print/cups,-libs
 
 USE_GMAKE=	Yes
 

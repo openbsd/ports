@@ -1,0 +1,323 @@
+$OpenBSD: patch-src_cups_c,v 1.1 2012/08/04 14:39:22 ajacoutot Exp $
+
+https://bugs.freedesktop.org/show_bug.cgi?id=52265
+
+--- src/cups.c.orig	Tue Mar 13 12:08:56 2012
++++ src/cups.c	Sat Jul 28 18:19:31 2012
+@@ -47,6 +47,45 @@
+ 
+ #include "cups.h"
+ 
++#if (CUPS_VERSION_MAJOR > 1) || (CUPS_VERSION_MINOR > 5)
++#define HAVE_CUPS_1_6 1
++#endif
++
++#ifndef HAVE_CUPS_1_6
++#define ippGetCount(attr)     attr->num_values
++#define ippGetGroupTag(attr)  attr->group_tag
++#define ippGetValueTag(attr)  attr->value_tag
++#define ippGetName(attr)      attr->name
++#define ippGetStatusCode(ipp) ipp->request.status.status_code
++#define ippGetString(attr, element, language) attr->values[element].string.text
++
++static ipp_attribute_t *
++ippFirstAttribute(ipp_t *ipp)
++{
++  if (!ipp)
++    return (NULL);
++  return (ipp->current = ipp->attrs);
++}
++
++static ipp_attribute_t *
++ippNextAttribute(ipp_t *ipp)
++{
++  if (!ipp || !ipp->current)
++    return (NULL);
++  return (ipp->current = ipp->current->next);
++}
++
++static int
++ippSetString(ipp_t           *ipp,
++             ipp_attribute_t **attr,
++             int             element,
++             const char      *strvalue)
++{
++  (*attr)->values[element].string.text = (char *) strvalue;
++  return (1);
++}
++#endif
++
+ /* This is 0.1 second */
+ #define RECONNECT_DELAY        100000
+ /* We try to reconnect during 3 seconds. It's still a fairly long time even for
+@@ -550,7 +589,7 @@ _cph_cups_set_error_from_reply (CphCups *cups,
+                                 ipp_t   *reply)
+ {
+         if (reply)
+-                cups->priv->last_status = reply->request.status.status_code;
++                cups->priv->last_status = ippGetStatusCode (reply);
+         else
+                 cups->priv->last_status = cupsLastError ();
+ }
+@@ -563,7 +602,7 @@ _cph_cups_is_reply_ok (CphCups  *cups,
+         /* reset the internal status: we'll use the cups status */
+         _cph_cups_set_internal_status (cups, NULL);
+ 
+-        if (reply && reply->request.status.status_code <= IPP_OK_CONFLICT) {
++        if (reply && ippGetStatusCode (reply) <= IPP_OK_CONFLICT) {
+                 cups->priv->last_status = IPP_OK;
+                 return TRUE;
+         } else {
+@@ -757,28 +796,28 @@ _cph_cups_send_new_job_attributes_request (CphCups    
+ }
+ 
+ static const char *
+-_cph_cups_get_attribute_string (ipp_attribute_t *attrs,
++_cph_cups_get_attribute_string (ipp_t           *reply,
+                                 ipp_tag_t        group,
+                                 const char      *name,
+                                 ipp_tag_t        type)
+ {
+         ipp_attribute_t *attr;
+ 
+-        for (attr = attrs; attr; attr = attr->next) {
+-                while (attr && attr->group_tag != group)
+-                        attr = attr->next;
++        for (attr = ippFirstAttribute (reply); attr; attr = ippNextAttribute (reply)) {
++                while (attr && ippGetGroupTag (attr) != group)
++                        attr = ippNextAttribute (reply);
+ 
+                 if (attr == NULL)
+                         break;
+ 
+-                while (attr && attr->group_tag == group) {
+-                        if (attr->name &&
+-                            strcmp (attr->name, name) == 0 &&
+-                            attr->value_tag == type) {
+-                                return attr->values[0].string.text;
++                while (attr && ippGetGroupTag (attr) == group) {
++                        if (ippGetName (attr) &&
++                            strcmp (ippGetName (attr), name) == 0 &&
++                            ippGetValueTag (attr) == type) {
++                                return ippGetString (attr, 0, NULL);
+                         }
+ 
+-                        attr = attr->next;
++                        attr = ippNextAttribute (reply);
+                 }
+ 
+                 if (attr == NULL)
+@@ -822,8 +861,8 @@ _cph_cups_class_has_printer (CphCups     *cups,
+         if (!printer_names)
+                 goto out;
+ 
+-        for (i = 0; i < printer_names->num_values; i++) {
+-                if (!g_ascii_strcasecmp (printer_names->values[i].string.text,
++        for (i = 0; i < ippGetCount (printer_names); i++) {
++                if (!g_ascii_strcasecmp (ippGetString (printer_names, i, NULL),
+                                          printer_name)) {
+                         retval = i;
+                         break;
+@@ -867,7 +906,7 @@ _cph_cups_printer_class_set_users (CphCups           *
+         attr = ippAddStrings (request, IPP_TAG_PRINTER, IPP_TAG_NAME,
+                               request_name, len ? len : 1, NULL, NULL);
+         if (len == 0)
+-                attr->values[0].string.text = g_strdup (default_value);
++                ippSetString (request, &attr, 0, g_strdup (default_value));
+         else {
+                 int i, j;
+                 for (i = 0, j = 0; i < real_len && j < len; i++) {
+@@ -875,7 +914,7 @@ _cph_cups_printer_class_set_users (CphCups           *
+                         if (users[i][0] == '\0')
+                                 continue;
+ 
+-                        attr->values[j].string.text = g_strdup (users[i]);
++                        ippSetString (request, &attr, j, g_strdup (users[i]));
+                         j++;
+                 }
+         }
+@@ -893,7 +932,7 @@ _cph_cups_printer_class_set_users (CphCups           *
+         attr = ippAddStrings (request, IPP_TAG_PRINTER, IPP_TAG_NAME,
+                               request_name, len ? len : 1, NULL, NULL);
+         if (len == 0)
+-                attr->values[0].string.text = g_strdup (default_value);
++                ippSetString (request, &attr, 0, g_strdup (default_value));
+         else {
+                 int i, j;
+                 for (i = 0, j = 0; i < real_len && j < len; i++) {
+@@ -901,7 +940,7 @@ _cph_cups_printer_class_set_users (CphCups           *
+                         if (users[i][0] == '\0')
+                                 continue;
+ 
+-                        attr->values[j].string.text = g_strdup (users[i]);
++                        ippSetString (request, &attr, j, g_strdup (users[i]));
+                         j++;
+                 }
+         }
+@@ -992,7 +1031,7 @@ cph_cups_printer_get_uri (CphCups    *cups,
+         if (!_cph_cups_is_reply_ok (cups, reply, TRUE))
+                 return NULL;
+ 
+-        const_uri = _cph_cups_get_attribute_string (reply->attrs, IPP_TAG_PRINTER,
++        const_uri = _cph_cups_get_attribute_string (reply, IPP_TAG_PRINTER,
+                                                     attrs[0], IPP_TAG_URI);
+ 
+         uri = NULL;
+@@ -1351,7 +1390,7 @@ _cph_cups_devices_get_old (CphCups           *cups,
+                 attr = ippAddStrings (request, IPP_TAG_OPERATION, IPP_TAG_NAME,
+                                       "include-schemes", len_include, NULL, NULL);
+                 for (i = 0; i < len_include; i++)
+-                        attr->values[i].string.text = g_strdup (include_schemes[i]);
++                        ippSetString (request, &attr, i, g_strdup (include_schemes[i]));
+         }
+ 
+         if (exclude_schemes && len_exclude > 0) {
+@@ -1360,7 +1399,7 @@ _cph_cups_devices_get_old (CphCups           *cups,
+                 attr = ippAddStrings (request, IPP_TAG_OPERATION, IPP_TAG_NAME,
+                                       "exclude-schemes", len_exclude, NULL, NULL);
+                 for (i = 0; i < len_exclude; i++)
+-                        attr->values[i].string.text = g_strdup (exclude_schemes[i]);
++                        ippSetString (request, &attr, i, g_strdup (exclude_schemes[i]));
+         }
+ 
+         resource_char = _cph_cups_get_resource (CPH_RESOURCE_ROOT);
+@@ -1370,9 +1409,9 @@ _cph_cups_devices_get_old (CphCups           *cups,
+         if (!_cph_cups_is_reply_ok (cups, reply, TRUE))
+                 return FALSE;
+ 
+-        for (attr = reply->attrs; attr; attr = attr->next) {
+-                while (attr && attr->group_tag != IPP_TAG_PRINTER)
+-                        attr = attr->next;
++        for (attr = ippFirstAttribute (reply); attr; attr = ippNextAttribute (reply)) {
++                while (attr && ippGetGroupTag (attr) != IPP_TAG_PRINTER)
++                        attr = ippNextAttribute (reply);
+ 
+                 if (attr == NULL)
+                         break;
+@@ -1384,29 +1423,29 @@ _cph_cups_devices_get_old (CphCups           *cups,
+                 device_make_and_model = NULL;
+                 device_uri            = NULL;
+ 
+-                while (attr && attr->group_tag == IPP_TAG_PRINTER) {
+-                        if (attr->name == NULL)
++                while (attr && ippGetGroupTag (attr) == IPP_TAG_PRINTER) {
++                        if (ippGetName (attr) == NULL)
+                                 /* nothing, just skip */;
+-                        else if (strcmp (attr->name, "device-class") == 0 &&
+-                                 attr->value_tag == IPP_TAG_KEYWORD)
+-                                device_class = g_strdup (attr->values[0].string.text);
+-                        else if (strcmp (attr->name, "device-id") == 0 &&
+-                                 attr->value_tag == IPP_TAG_TEXT)
+-                                device_id = g_strdup (attr->values[0].string.text);
+-                        else if (strcmp (attr->name, "device-info") == 0 &&
+-                                 attr->value_tag == IPP_TAG_TEXT)
+-                                device_info = g_strdup (attr->values[0].string.text);
+-                        else if (strcmp (attr->name, "device-location") == 0 &&
+-                                 attr->value_tag == IPP_TAG_TEXT)
+-                                device_location = g_strdup (attr->values[0].string.text);
+-                        else if (strcmp (attr->name, "device-make-and-model") == 0 &&
+-                                 attr->value_tag == IPP_TAG_TEXT)
+-                                device_make_and_model = g_strdup (attr->values[0].string.text);
+-                        else if (strcmp (attr->name, "device-uri") == 0 &&
+-                                 attr->value_tag == IPP_TAG_URI)
+-                                device_uri = g_strdup (attr->values[0].string.text);
++                        else if (strcmp (ippGetName (attr), "device-class") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_KEYWORD)
++                                device_class = g_strdup (ippGetString (attr, 0, NULL));
++                        else if (strcmp (ippGetName (attr), "device-id") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_TEXT)
++                                device_id = g_strdup (ippGetString (attr, 0, NULL));
++                        else if (strcmp (ippGetName (attr), "device-info") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_TEXT)
++                                device_info = g_strdup (ippGetString (attr, 0, NULL));
++                        else if (strcmp (ippGetName (attr), "device-location") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_TEXT)
++                                device_location = g_strdup (ippGetString (attr, 0, NULL));
++                        else if (strcmp (ippGetName (attr), "device-make-and-model") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_TEXT)
++                                device_make_and_model = g_strdup (ippGetString (attr, 0, NULL));
++                        else if (strcmp (ippGetName (attr), "device-uri") == 0 &&
++                                 ippGetValueTag (attr) == IPP_TAG_URI)
++                                device_uri = g_strdup (ippGetString (attr, 0, NULL));
+ 
+-                        attr = attr->next;
++                        attr = ippNextAttribute (reply);
+                 }
+ 
+                 if (device_uri)
+@@ -1745,7 +1784,7 @@ cph_cups_class_add_printer (CphCups    *cups,
+                 printer_uris = ippFindAttribute (reply,
+                                                  "member-uris", IPP_TAG_URI);
+                 if (printer_uris)
+-                        new_len += printer_uris->num_values;
++                        new_len += ippGetCount (printer_uris);
+         } else
+                 printer_uris = NULL;
+ 
+@@ -1755,14 +1794,14 @@ cph_cups_class_add_printer (CphCups    *cups,
+         if (printer_uris) {
+                 int i;
+ 
+-                for (i = 0; i < printer_uris->num_values; i++)
+-                        attr->values[i].string.text = g_strdup (printer_uris->values[i].string.text);
++                for (i = 0; i < ippGetCount (printer_uris); i++)
++                        ippSetString (request, &attr, i, g_strdup (ippGetString (printer_uris, i, NULL)));
+         }
+ 
+         if (reply)
+                 ippDelete (reply);
+ 
+-        attr->values[new_len - 1].string.text = g_strdup (printer_uri);
++        ippSetString (request, &attr, new_len - 1, g_strdup (printer_uri));
+ 
+         return _cph_cups_send_request (cups, request, CPH_RESOURCE_ADMIN);
+ }
+@@ -1814,7 +1853,7 @@ cph_cups_class_delete_printer (CphCups    *cups,
+         printer_uris = ippFindAttribute (reply,
+                                          "member-uris", IPP_TAG_URI);
+         if (printer_uris)
+-                new_len += printer_uris->num_values;
++                new_len += ippGetCount (printer_uris);
+ 
+         /* empty class: we delete it */
+         if (new_len <= 0) {
+@@ -1834,9 +1873,9 @@ cph_cups_class_delete_printer (CphCups    *cups,
+ 
+         /* copy all printers from the class, except the one we remove */
+         for (i = 0; i < printer_index; i++)
+-                attr->values[i].string.text = g_strdup (printer_uris->values[i].string.text);
+-        for (i = printer_index + 1; i < printer_uris->num_values; i++)
+-                attr->values[i].string.text = g_strdup (printer_uris->values[i].string.text);
++                ippSetString (request, &attr, i, g_strdup (ippGetString (printer_uris, i, NULL)));
++        for (i = printer_index + 1; i < ippGetCount (printer_uris); i++)
++                ippSetString (request, &attr, i, g_strdup (ippGetString (printer_uris, i, NULL)));
+ 
+         ippDelete (reply);
+ 
+@@ -2133,7 +2172,7 @@ cph_cups_printer_class_set_option_default (CphCups    
+                                       option_name, len, NULL, NULL);
+ 
+                 for (i = 0; i < len; i++)
+-                        attr->values[i].string.text = g_strdup (values[i]);
++                        ippSetString (request, &attr, i, g_strdup (values[i]));
+         }
+ 
+         retval = _cph_cups_send_request (cups, request, CPH_RESOURCE_ADMIN);
+@@ -2358,7 +2397,7 @@ cph_cups_printer_class_set_option (CphCups           *
+                                       option, len, NULL, NULL);
+ 
+                 for (i = 0; i < len; i++)
+-                        attr->values[i].string.text = g_strdup (values[i]);
++                        ippSetString (request, &attr, i, g_strdup (values[i]));
+         }
+ 
+         if (newppdfile) {
+@@ -2477,7 +2516,7 @@ cph_cups_job_get_status (CphCups    *cups,
+         if (!_cph_cups_is_reply_ok (cups, reply, TRUE))
+                 return CPH_JOB_STATUS_INVALID;
+ 
+-        orig_user = _cph_cups_get_attribute_string (reply->attrs, IPP_TAG_JOB,
++        orig_user = _cph_cups_get_attribute_string (reply, IPP_TAG_JOB,
+                                                     attrs[0], IPP_TAG_NAME);
+ 
+         status = CPH_JOB_STATUS_INVALID;
