@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/04 20:30:59 naddy Exp $
 
 COMMENT =	reference implementation of JPEG-2000
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c m
 
 USE_LIBTOOL =		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--without-x \
