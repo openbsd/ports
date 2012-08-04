@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/04 15:01:06 ajacoutot Exp $
 
 COMMENT=	ini file parsing library
 
 DISTNAME=	iniparser-3.1
+REVISION=	0
 
 SHARED_LIBS +=	iniparser 0.0 # 0
 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
+$OpenBSD: patch-Makefile,v 1.2 2012/08/04 15:01:06 ajacoutot Exp $
 --- Makefile.orig	Sun Apr  8 16:44:57 2012
-+++ Makefile	Sat Jun 16 11:46:02 2012
++++ Makefile	Wed Aug  1 08:32:34 2012
 @@ -3,16 +3,16 @@
  #
  
@@ -22,6 +22,15 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
  
  # Set RANLIB to ranlib on systems that require it (Sun OS < 4, Mac OSX)
  # RANLIB  = ranlib
+@@ -28,7 +28,7 @@ SUFFIXES = .o .c .h .a .so .sl
+ COMPILE.c=$(CC) $(CFLAGS) -c
+ .c.o:
+ 	@(echo "compiling $< ...")
+-	@($(COMPILE.c) -o $@ $<)
++	($(COMPILE.c) -o $@ $<)
+ 
+ 
+ SRCS = src/iniparser.c \
 @@ -40,12 +40,12 @@ OBJS = $(SRCS:.c=.o)
  default:	libiniparser.a libiniparser.so
  
@@ -35,7 +44,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/06/16 09:48:38 ajacoutot Exp $
 -	@$(SHLD) $(LDSHFLAGS) -o $@.0 $(OBJS) $(LDFLAGS) \
 -		-Wl,-soname=`basename $@`.0
 +	$(SHLD) $(LDSHFLAGS) -o $@.${LIBiniparser_VERSION} $(OBJS) $(LDFLAGS) \
-+		-Wl,-soname=`basename $@`
++		-Wl,-soname=`basename $@.${LIBiniparser_VERSION}`
  
  clean:
  	$(RM) $(OBJS)
