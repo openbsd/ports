@@ -1,0 +1,17 @@
+$OpenBSD: patch-backend_serial_c,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
+
+XXX no check for HAVE_SYS_IOCTL_H
+
+--- backend/serial.c.orig	Thu Jul 26 15:24:46 2012
++++ backend/serial.c	Thu Jul 26 15:24:55 2012
+@@ -32,9 +32,7 @@
+ #include <fcntl.h>
+ #include <termios.h>
+ #include <sys/select.h>
+-#ifdef HAVE_SYS_IOCTL_H
+-#  include <sys/ioctl.h>
+-#endif /* HAVE_SYS_IOCTL_H */
++#include <sys/ioctl.h>
+ 
+ #ifndef CRTSCTS
+ #  ifdef CNEW_RTSCTS

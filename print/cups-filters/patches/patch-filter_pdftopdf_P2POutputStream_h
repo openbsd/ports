@@ -1,0 +1,20 @@
+$OpenBSD: patch-filter_pdftopdf_P2POutputStream_h,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
+
+C allows headers to define function-like macros in addition to normal
+functions, C++ doesn't permit this... but we do so for putchar(3).
+We should only provide the function-like macros when __cplusplus is not
+defined (bug in our stdio.h header?).
+
+--- filter/pdftopdf/P2POutputStream.h.orig	Thu Jul 26 21:49:07 2012
++++ filter/pdftopdf/P2POutputStream.h	Thu Jul 26 21:49:32 2012
+@@ -40,6 +40,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ #include <zlib.h>
+ #endif
+ 
++#ifdef putchar
++#undef putchar
++#endif
++
+ class P2POutputStream {
+ public:
+   P2POutputStream(FILE *fpA);

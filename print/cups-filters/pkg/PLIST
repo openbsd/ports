@@ -1,0 +1,78 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
+@conflict cups-<1.6.0
+%%SHARED%%
+@bin bin/ttfread
+include/cupsfilters/
+include/cupsfilters/driver.h
+include/cupsfilters/image.h
+include/fontembed/
+include/fontembed/bitset.h
+include/fontembed/embed.h
+include/fontembed/fontfile.h
+include/fontembed/iofn.h
+include/fontembed/sfnt.h
+lib/libcupsfilters.a
+lib/libcupsfilters.la
+lib/libfontembed.a
+lib/libfontembed.la
+lib/pkgconfig/
+lib/pkgconfig/libcupsfilters.pc
+lib/pkgconfig/libfontembed.pc
+libexec/cups/backend/
+@bin libexec/cups/backend/parallel
+@bin libexec/cups/backend/serial
+@bin libexec/cups/filter/bannertopdf
+@bin libexec/cups/filter/commandtoescpx
+@bin libexec/cups/filter/commandtopclx
+@bin libexec/cups/filter/imagetopdf
+libexec/cups/filter/imagetops
+@bin libexec/cups/filter/imagetoraster
+@bin libexec/cups/filter/pdftoijs
+@bin libexec/cups/filter/pdftoopvp
+@bin libexec/cups/filter/pdftopdf
+@bin libexec/cups/filter/pdftops
+@bin libexec/cups/filter/pdftoraster
+libexec/cups/filter/pstopdf
+@bin libexec/cups/filter/rastertoescpx
+@bin libexec/cups/filter/rastertopclx
+libexec/cups/filter/textonly
+@bin libexec/cups/filter/texttopdf
+libexec/cups/filter/texttops
+share/cups/banners/
+share/cups/banners/classified
+share/cups/banners/confidential
+share/cups/banners/secret
+share/cups/banners/standard
+share/cups/banners/topsecret
+share/cups/banners/unclassified
+share/cups/charsets/
+share/cups/charsets/pdf.utf-8
+share/cups/charsets/pdf.utf-8.heavy
+share/cups/charsets/pdf.utf-8.simple
+share/cups/data/
+share/cups/data/default-testpage.pdf
+share/cups/data/default.pdf
+share/cups/data/testprint
+share/cups/drv/
+share/cups/drv/cupsfilters.drv
+share/cups/mime/
+share/cups/mime/cupsfilters.convs
+share/cups/mime/cupsfilters.types
+share/doc/cups-filters/
+share/doc/cups-filters/AUTHORS
+share/doc/cups-filters/COPYING
+share/doc/cups-filters/INSTALL
+share/doc/cups-filters/NEWS
+share/doc/cups-filters/README
+share/examples/cups-filters/
+share/examples/cups-filters/99pdftoopvp.conf
+@sample ${SYSCONFDIR}/fonts/conf.avail/99-pdftoopvp.conf
+share/ppd/
+share/ppd/cupsfilters/
+share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
+share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
+share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
+share/ppd/cupsfilters/textonly.ppd
+@comment XXX should be exec-add but since we have a @conflict pkg_add(1) may turn it into an exec-update
+@exec ln -sf ../conf.avail/99-pdftoopvp.conf ${SYSCONFDIR}/fonts/conf.d/
+@unexec-delete rm ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf
