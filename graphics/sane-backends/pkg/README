@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2012/02/16 22:29:15 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2012/08/04 15:08:45 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,13 +19,9 @@ addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086)
   uhub3
  port 1 powered
  port 2 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
-   ulpt0
    ugen0
 
 $ sudo chgrp _saned /dev/ugen0.* /dev/usb3
-
-Alternatively, hotplugd(4) attach/detach scripts can be used to automate
-this.
 
 The reason we are changing the group and not the user is that it will
 allow for multi-function devices to work for both printing and scanning
@@ -34,6 +30,8 @@ allow for multi-function devices to work for both printing and scanning
 To preserve your changes after a system update, use rc.local(8).
 e.g. for a multi-function printer/scanner add the following lines:
 chown _cups:_saned /dev/ugen0.* /dev/usb1
+
+Alternatively, hotplugd(8) attach/detach scripts can automate this.
 
 You can then grant users direct access to the scanner by adding them to
 the _saned group.
