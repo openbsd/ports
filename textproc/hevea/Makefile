@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/04 16:30:04 espie Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -11,10 +11,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m 
 
-BUILD_DEPENDS=	lang/ocaml
-
 DISTNAME=	hevea-1.06
-REVISION=	1
+REVISION=	2
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/moscova/hevea/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
@@ -25,13 +23,7 @@ HOMEPAGE=	http://para.inria.fr/%7Emaranget/hevea/
 MAKE_FLAGS=LIBDIR='${PREFIX}/lib/hevea' BINDIR='${PREFIX}/bin'
 FAKE_FLAGS=LIBDIR='${WRKINST}${PREFIX}/lib/hevea' BINDIR='${WRKINST}${PREFIX}/bin'
 
-.if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "sparc" && \
-	${MACHINE_ARCH} != "alpha" && ${MACHINE_ARCH} != "amd64" && \
-	${MACHINE_ARCH} != "powerpc"
-RUN_DEPENDS=	lang/ocaml
-MAKE_FLAGS+=	TARGET='byte'
-FAKE_FLAGS+=	TARGET='byte'
-.endif
+MODULES +=	lang/ocaml
 
 # Beware! this works only because the manual is flat
 post-install:
@@ -41,3 +33,8 @@ post-install:
 NO_REGRESS=	Yes
 	
 .include <bsd.port.mk>
+
+.if ${MODOCAML_NATIVE:L} == "no"
+MAKE_FLAGS+=	TARGET='byte'
+FAKE_FLAGS+=	TARGET='byte'
+.endif
