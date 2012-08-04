@@ -1,18 +1,18 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/08/04 15:10:30 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
 SYMPA is now installed, and sample configuration files were created in
-${SYMPA_HOME}/${SYSCONFDIR}/sympa.conf and ${SYMPA_HOME}/${SYSCONFDIR}/wwsympa.conf
+${SYMPA_HOME}${SYSCONFDIR}/sympa.conf and ${SYMPA_HOME}${SYSCONFDIR}/wwsympa.conf
 
 Basic configuration
 ===================
 
 You should first edit them to suit your needs, at least http_host,
 domain, listmaster, db_type, db_host, db_user, db_passwd, wwsympa_url
-settings in ${SYMPA_HOME}/${SYSCONFDIR}/sympa.conf, and then configure the needed
+settings in ${SYMPA_HOME}${SYSCONFDIR}/sympa.conf, and then configure the needed
 database with one of the ${TRUEPREFIX}/share/examples/sympa/create_db.*
 provided schemas.
 You should also install the corresponding p5-DBD-{mysql,SQLite,Pg} module.
