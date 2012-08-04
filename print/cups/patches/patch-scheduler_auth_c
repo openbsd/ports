@@ -1,12 +1,18 @@
-$OpenBSD: patch-scheduler_auth_c,v 1.2 2011/09/08 10:33:12 ajacoutot Exp $
---- scheduler/auth.c.orig	Fri May 20 05:49:49 2011
-+++ scheduler/auth.c	Fri Sep  2 09:33:11 2011
-@@ -89,7 +89,7 @@ extern const char *cssmErrorString(int error);
+$OpenBSD: patch-scheduler_auth_c,v 1.3 2012/08/04 14:37:04 ajacoutot Exp $
+
+XXX push upstream
+
+--- scheduler/auth.c.orig	Wed Aug 31 06:58:33 2011
++++ scheduler/auth.c	Wed Jul 25 17:28:20 2012
+@@ -89,7 +89,11 @@ extern const char *cssmErrorString(int error);
  typedef struct xucred cupsd_ucred_t;
  #  define CUPSD_UCRED_UID(c) (c).cr_uid
  #else
--typedef struct ucred cupsd_ucred_t;
++#  ifndef __OpenBSD__
+ typedef struct ucred cupsd_ucred_t;
++#  else
 +typedef struct sockpeercred cupsd_ucred_t;
++#  endif
  #  define CUPSD_UCRED_UID(c) (c).uid
  #endif /* HAVE_SYS_UCRED_H */
  #ifdef HAVE_KRB5_IPC_CLIENT_SET_TARGET_UID

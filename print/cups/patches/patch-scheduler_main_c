@@ -1,17 +1,23 @@
-$OpenBSD: patch-scheduler_main_c,v 1.6 2012/02/16 22:12:08 ajacoutot Exp $
+$OpenBSD: patch-scheduler_main_c,v 1.7 2012/08/04 14:37:04 ajacoutot Exp $
 
-main.c:376: warning: implicit declaration of function '_thread_sys_closefrom'
-(XXX rework after rthreads are enabled)
+XXX push upstream
 
---- scheduler/main.c.orig	Mon Feb  6 14:02:24 2012
-+++ scheduler/main.c	Mon Feb  6 14:03:01 2012
-@@ -69,6 +69,9 @@
- #  include <notify.h>
- #endif /* HAVE_NOTIFY_H */
+--- scheduler/main.c.orig	Mon Apr 23 21:19:19 2012
++++ scheduler/main.c	Thu Jul 26 10:00:31 2012
+@@ -365,16 +365,6 @@ main(int  argc,				/* I - Number of command-line args 
+       }
+     }
  
-+#ifdef __OpenBSD__
-+int	_thread_sys_closefrom(int);
-+#endif
- 
- /*
-  * Local functions...
+-#ifdef __OpenBSD__
+-   /*
+-    * Call _thread_sys_closefrom() so the child process doesn't reset the
+-    * parent's file descriptors to be blocking.  This is a workaround for a
+-    * limitation of userland libpthread on OpenBSD.
+-    */
+-
+-    _thread_sys_closefrom(0);
+-#endif /* __OpenBSD__ */
+-
+    /*
+     * Since CoreFoundation and DBUS both create fork-unsafe data on execution of
+     * a program, and since this kind of really unfriendly behavior seems to be

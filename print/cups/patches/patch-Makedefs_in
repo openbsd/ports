@@ -1,17 +1,17 @@
-$OpenBSD: patch-Makedefs_in,v 1.8 2012/05/17 10:11:23 ajacoutot Exp $
+$OpenBSD: patch-Makedefs_in,v 1.9 2012/08/04 14:37:04 ajacoutot Exp $
 
 BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
 
---- Makedefs.in.orig	Thu Mar  1 01:05:55 2012
-+++ Makedefs.in	Wed May 16 08:18:38 2012
-@@ -41,12 +41,12 @@ SHELL		=	/bin/sh
+--- Makedefs.in.orig	Wed May 23 01:58:31 2012
++++ Makedefs.in	Thu Jul 26 10:01:21 2012
+@@ -40,12 +40,12 @@ SHELL		=	/bin/sh
  # Installation programs...
  #
  
 -INSTALL_BIN	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
 +INSTALL_BIN	=	$(LIBTOOL) $(BSD_INSTALL_PROGRAM)
- INSTALL_CONFIG	=	$(INSTALL) -c -m @CUPS_CONFIG_FILE_PERM@
  INSTALL_COMPDATA =	$(INSTALL) -c -m 444 @INSTALL_GZIP@
+ INSTALL_CONFIG	=	$(INSTALL) -c -m @CUPS_CONFIG_FILE_PERM@
  INSTALL_DATA	=	$(INSTALL) -c -m 444
  INSTALL_DIR	=	$(INSTALL) -d
 -INSTALL_LIB	=	$(LIBTOOL) $(INSTALL) -c -m 555 @INSTALL_STRIP@
@@ -19,34 +19,21 @@ BSD_INSTALL_PROGRAM is used to respect INSTALL_STRIP.
  INSTALL_MAN	=	$(INSTALL) -c -m 444
  INSTALL_SCRIPT	=	$(INSTALL) -c -m 555
  
-@@ -85,15 +85,15 @@ LIBCUPSIMAGE	=	@LIBCUPSIMAGE@
- LIBCUPSMIME	=	@LIBCUPSMIME@
- LIBCUPSPPDC	=	@LIBCUPSPPDC@
- LIBCUPSSTATIC	=	@LIBCUPSSTATIC@
--LIBJPEG		=	@LIBJPEG@
--LIBLDAP		=	@LIBLDAP@
-+LIBJPEG		=	-L${LOCALBASE}/lib @LIBJPEG@
-+LIBLDAP		=	-L${LOCALBASE}/lib @LIBLDAP@
+@@ -88,7 +88,7 @@ LIBGSSAPI	=	@LIBGSSAPI@
  LIBMALLOC	=	@LIBMALLOC@
--LIBPAPER	=	@LIBPAPER@
--LIBPNG		=	@LIBPNG@
-+LIBPAPER	=	-L${LOCALBASE}/lib @LIBPAPER@
-+LIBPNG		=	-L${LOCALBASE}/lib @LIBPNG@
- LIBSLP		=	@LIBSLP@
- LIBGSSAPI	=	@LIBGSSAPI@
--LIBTIFF		=	@LIBTIFF@
+ LIBMXML		=	@LIBMXML@
+ LIBPAPER	=	@LIBPAPER@
 -LIBUSB		=	@LIBUSB@
-+LIBTIFF		=	-L${LOCALBASE}/lib @LIBTIFF@
-+LIBUSB		=	-L${LOCALBASE}/lib @LIBUSB@
++LIBUSB		=	-L${LOCALBASE} @LIBUSB@
  LIBWRAP		=	@LIBWRAP@
  LIBZ		=	@LIBZ@
  
-@@ -274,7 +274,7 @@ DBUSDIR		=	@DBUSDIR@
+@@ -235,7 +235,7 @@ DBUSDIR		=	@DBUSDIR@
  # Rules...
  #
  
 -.SILENT:
 +#.SILENT:
- .SUFFIXES:	.1 .1.gz .1m .1m.gz .3 .3.gz .5 .5.gz .7 .7.gz .8 .8.gz .a .c .cxx .h .man .o .32.o .64.o .gz
+ .SUFFIXES:	.1 .1.gz .1m .1m.gz .3 .3.gz .5 .5.gz .7 .7.gz .8 .8.gz .a .c .cxx .h .man .o .gz
  
  .c.o:

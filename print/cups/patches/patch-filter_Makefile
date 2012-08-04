@@ -1,8 +1,8 @@
-$OpenBSD: patch-filter_Makefile,v 1.10 2012/02/16 22:12:08 ajacoutot Exp $
---- filter/Makefile.orig	Fri Sep  9 18:34:29 2011
-+++ filter/Makefile	Mon Feb  6 11:18:46 2012
-@@ -150,10 +150,6 @@ install-headers:
- install-libs: $(INSTALLSTATIC) $(INSTALL32) $(INSTALL64)
+$OpenBSD: patch-filter_Makefile,v 1.11 2012/08/04 14:37:04 ajacoutot Exp $
+--- filter/Makefile.orig	Fri Jan 20 20:00:32 2012
++++ filter/Makefile	Sat Feb  4 11:17:08 2012
+@@ -128,10 +128,6 @@ install-headers:
+ install-libs: $(INSTALLSTATIC)
  	$(INSTALL_DIR) -m 755 $(LIBDIR)
  	$(INSTALL_LIB) $(LIBCUPSIMAGE) $(LIBDIR)
 -	-if test $(LIBCUPSIMAGE) = "libcupsimage.so.2" -o $(LIBCUPSIMAGE) = "libcupsimage.sl.2"; then \
@@ -12,48 +12,7 @@ $OpenBSD: patch-filter_Makefile,v 1.10 2012/02/16 22:12:08 ajacoutot Exp $
  	-if test $(LIBCUPSIMAGE) = "libcupsimage.2.dylib"; then \
  		$(RM) $(LIBDIR)/libcupsimage.dylib; \
  		$(LN) $(LIBCUPSIMAGE) $(LIBDIR)/libcupsimage.dylib; \
-@@ -171,13 +167,13 @@ installstatic:
- 
- install32bit:
- 	$(INSTALL_DIR) -m 755 $(LIB32DIR)
--	$(INSTALL_LIB) 32bit/libcupsimage.so.2 $(LIB32DIR)/libcupsimage.so.2
--	$(LN) libcupsimage.so.2 $(LIB32DIR)/libcupsimage.so
-+	$(INSTALL_LIB) 32bit/libcupsimage.so.${LIBcupsimage_VERSION} $(LIB32DIR)/libcupsimage.so.${LIBcupsimage_VERSION}
-+	$(LN) libcupsimage.so.${LIBcupsimage_VERSION} $(LIB32DIR)/libcupsimage.so
- 
- install64bit:
- 	$(INSTALL_DIR) -m 755 $(LIB64DIR)
--	$(INSTALL_LIB) 64bit/libcupsimage.so.2 $(LIB64DIR)/libcupsimage.so.2
--	$(LN) libcupsimage.so.2 $(LIB64DIR)/libcupsimage.so
-+	$(INSTALL_LIB) 64bit/libcupsimage.so.${LIBcupsimage_VERSION} $(LIB64DIR)/libcupsimage.so.${LIBcupsimage_VERSION}
-+	$(LN) libcupsimage.so.${LIBcupsimage_VERSION} $(LIB64DIR)/libcupsimage.so
- 
- 
- #
-@@ -198,19 +194,19 @@ uninstall: $(UNINSTALL32) $(UNINSTALL64)
- 	$(RM) $(LIBDIR)/libcupsimage.sl
- 	$(RM) $(LIBDIR)/libcupsimage.sl.2
- 	$(RM) $(LIBDIR)/libcupsimage.so
--	$(RM) $(LIBDIR)/libcupsimage.so.2
-+	$(RM) $(LIBDIR)/libcupsimage.so.${LIBcupsimage_VERSION}
- 	-$(RMDIR) $(LIBDIR)
- 	$(RM) $(INCLUDEDIR)/cups/image.h
- 	-$(RMDIR) $(INCLUDEDIR)/cups
- 
- uninstall32bit:
- 	$(RM) $(LIB32DIR)/libcupsimage.so
--	$(RM) $(LIB32DIR)/libcupsimage.so.2
-+	$(RM) $(LIB32DIR)/libcupsimage.so.${LIBcupsimage_VERSION}
- 	-$(RMDIR) $(LIB32DIR)
- 
- uninstall64bit:
- 	$(RM) $(LIB64DIR)/libcupsimage.so
--	$(RM) $(LIB64DIR)/libcupsimage.so.2
-+	$(RM) $(LIB64DIR)/libcupsimage.so.${LIBcupsimage_VERSION}
- 	-$(RMDIR) $(LIB64DIR)
- 
- 
-@@ -315,22 +311,20 @@ gziptoany:	gziptoany.o ../Makedefs ../cups/$(LIBCUPS)
+@@ -261,15 +257,13 @@ gziptoany:	gziptoany.o ../Makedefs ../cups/$(LIBCUPS)
  
  
  #
@@ -71,25 +30,3 @@ $OpenBSD: patch-filter_Makefile,v 1.10 2012/02/16 22:12:08 ajacoutot Exp $
  
  
  #
--# 32bit/libcupsimage.so.2
-+# 32bit/libcupsimage.so.${LIBcupsimage_VERSION}
- #
- 
--32bit/libcupsimage.so.2:	$(IMAGE32OBJS)
-+32bit/libcupsimage.so.${LIBcupsimage_VERSION}:	$(IMAGE32OBJS)
- 	echo Linking 32-bit $@...
- 	-mkdir 32bit
- 	$(DSO) $(ARCH32FLAGS) $(DSO32FLAGS) -o $@ $(IMAGE32OBJS) $(DSOLIBS) \
-@@ -338,10 +332,10 @@ libcupsimage.so.2 libcupsimage.sl.2:	$(IMAGEOBJS)
- 
- 
- #
--# 64bit/libcupsimage.so.2
-+# 64bit/libcupsimage.so.${LIBcupsimage_VERSION}
- #
- 
--64bit/libcupsimage.so.2:	$(IMAGE64OBJS)
-+64bit/libcupsimage.so.${LIBcupsimage_VERSION}:	$(IMAGE64OBJS)
- 	echo Linking 64-bit $@...
- 	-mkdir 64bit
- 	$(DSO) $(ARCH64FLAGS) $(DSO64FLAGS) -o $@ $(IMAGE64OBJS) $(DSOLIBS) \

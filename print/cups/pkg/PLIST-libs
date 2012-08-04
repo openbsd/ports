@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST-libs,v 1.1 2012/08/04 14:37:04 ajacoutot Exp $
+@conflict cups-<1.6.0
+@newgroup _cups:541
+%%SHARED%%
+bin/cups-config
+include/cups/
+include/cups/adminutil.h
+include/cups/array.h
+include/cups/backend.h
+include/cups/cgi.h
+include/cups/cups.h
+include/cups/dir.h
+include/cups/file.h
+include/cups/help-index.h
+include/cups/http.h
+include/cups/ipp.h
+include/cups/language.h
+include/cups/mime.h
+include/cups/ppd.h
+include/cups/ppdc.h
+include/cups/raster.h
+include/cups/sidechannel.h
+include/cups/transcode.h
+include/cups/versioning.h
+lib/libcups.a
+lib/libcupscgi.a
+lib/libcupsimage.a
+lib/libcupsmime.a
+lib/libcupsppdc.a
+@man man/man1/cups-config.1
+@group _cups
+@sample ${SYSCONFDIR}/cups/
+@group

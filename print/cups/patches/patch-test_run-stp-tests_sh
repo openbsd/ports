@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_run-stp-tests_sh,v 1.8 2011/09/08 10:33:12 ajacoutot Exp $
---- test/run-stp-tests.sh.orig	Sat May  7 00:53:53 2011
-+++ test/run-stp-tests.sh	Fri Sep  2 09:33:11 2011
-@@ -21,7 +21,7 @@ argcount=$#
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.9 2012/08/04 14:37:04 ajacoutot Exp $
+--- test/run-stp-tests.sh.orig	Mon May 21 17:35:25 2012
++++ test/run-stp-tests.sh	Thu Jul 26 10:00:31 2012
+@@ -36,7 +36,7 @@ umask 022
  # Make the IPP test program...
  #
  
@@ -10,12 +10,12 @@ $OpenBSD: patch-test_run-stp-tests_sh,v 1.8 2011/09/08 10:33:12 ajacoutot Exp $
  
  #
  # Solaris has a non-POSIX grep in /bin...
-@@ -431,7 +431,7 @@ fi
+@@ -478,7 +478,7 @@ fi
  
  export LD_LIBRARY_PATH
  
--LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2:$root/cgi-bin/libcupscgi.so.1:$root/scheduler/libcupsmime.so.1:$root/driver/libcupsdriver.so.1:$root/ppdc/libcupsppdc.so.1"
-+LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}:$root/cgi-bin/libcupscgi.so.${LIBcupscgi_VERSION}:$root/scheduler/libcupsmime.so.${LIBcupsmime_VERSION}:$root/driver/libcupsdriver.so.${LIBcupsdriver_VERSION}:$root/ppdc/libcupsppdc.so.${LIBcupsppdc_VERSION}"
+-LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2:$root/cgi-bin/libcupscgi.so.1:$root/scheduler/libcupsmime.so.1:$root/ppdc/libcupsppdc.so.1"
++LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}:$root/cgi-bin/libcupscgi.so.${LIBcupscgi_VERSION}:$root/scheduler/libcupsmime.so.${LIBcupsmime_VERSION}:$root/ppdc/libcupsppdc.so.${LIBcupsppdc_VERSION}"
  if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
  	LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
  fi
