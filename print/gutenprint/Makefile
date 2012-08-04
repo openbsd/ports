@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2012/06/13 16:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/08/04 14:42:04 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -9,6 +9,8 @@ V=			5.2.8
 DISTNAME=		gutenprint-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
+
+REVISION-foomatic=	0
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -37,17 +39,21 @@ MODULES=	devel/gettext
 
 WANTLIB-main +=	c m ncurses readline ijs ${MODGETTEXT_WANTLIB}
 
-BUILD_DEPENDS=		print/foomatic-db-engine>=4.0.3
+BUILD_DEPENDS=		print/foomatic-db-engine
 
 LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			print/ijs
 
 WANTLIB-foomatic += # empty
 LIB_DEPENDS-foomatic=	# empty
-RUN_DEPENDS-foomatic=	print/foomatic-db-engine \
-			print/foomatic-filters \
-			${BUILD_PKGPATH},-main
+RUN_DEPENDS-foomatic=	${BUILD_PKGPATH},-main
 PKG_ARCH-foomatic=	*
+
+# gutenprint needs xml drivers information from foomatic-db
+RUN_DEPENDS-foomatic +=	print/foomatic-db
+
+# share/foomatic/db/source/*/*.xml
+RUN_DEPENDS-foomatic +=	print/foomatic-db-engine
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
