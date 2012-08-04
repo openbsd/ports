@@ -10,7 +10,6 @@ machine as a server for Windows clients.
 
 Available flavors:
 
-cups	Enable CUPS support
 ldap	Enable LDAP support
 ads	Enable Active Directory support
 
