@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2012/07/12 19:35:17 robert Exp $
+# $OpenBSD: Makefile,v 1.101 2012/08/04 14:46:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,7 @@ COMMENT=		Chromium browser
 
 V=			20.0.1132.57
 DISTNAME=		chromium-${V}
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -42,7 +43,6 @@ WANTLIB += Xcomposite atk-1.0 usb usb-1.0
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
-		x11/gtk+2,-cups \
 		x11/gnome/icon-theme \
 		x11/gnome/libgnome-keyring \
 		x11/gtk+2,-guic
@@ -61,7 +61,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
-		print/cups>=1.5.0
+		print/cups,-libs
 
 .include <bsd.own.mk>
 
