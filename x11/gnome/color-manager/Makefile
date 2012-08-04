@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/07 18:00:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/04 15:12:16 ajacoutot Exp $
 
 COMMENT=	color profile manager for GNOME
 
 GNOME_PROJECT=	gnome-color-manager
 GNOME_VERSION=	3.4.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	audio/libcanberra,-gtk3 \
 		devel/vte3 \
 		graphics/clutter/clutter-gtk>=1.2.0 \
 		graphics/clutter/mash \
-		graphics/colord>=0.1.18 \
+		graphics/colord \
 		graphics/exiv2 \
 		graphics/libexif \
 		x11/gnome/desktop
