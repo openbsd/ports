@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/08/04 14:40:08 ajacoutot Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 
@@ -19,35 +19,26 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png poppler poppler-glib pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm z
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender asn1 atk-1.0 c cairo crypto cups expat
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gobject-2.0 gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += krb5 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB += png poppler-glib pthread pthread-stubs ssl stdc++ xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=	devel/gettext
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS=	x11/gtk+2 \
+		print/cups,-libs \
 		print/poppler>=0.16
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--with-cups
 
 USE_GMAKE=	Yes
-
-FLAVORS=	cups
-FLAVOR?=
-
-.if ${FLAVOR:L:Mcups}
-WANTLIB+=		asn1 crypto cups>=3 gssapi krb5 ssl
-LIB_DEPENDS+=		print/cups>=1.2
-CONFIGURE_ARGS+=	--with-cups
-.else
-CONFIGURE_ARGS+=	--without-cups
-.endif
 
 ICONDIR=$(PREFIX)/share/icons/hicolor
 
