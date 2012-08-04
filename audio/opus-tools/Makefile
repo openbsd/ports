@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/04 14:42:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/04 15:41:44 naddy Exp $
 
 COMMENT=	encode, inspect, and decode Opus files
 
-DISTNAME=	opus-tools-0.1.2
+DISTNAME=	opus-tools-0.1.4
 CATEGORIES=	audio
 
 HOMEPAGE=	http://opus-codec.org/
@@ -23,7 +23,5 @@ WANTLIB=	c m ogg opus sndio
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO"
-MAKE_FLAGS=	OSS_LIBS=-lsndio
 
 .include <bsd.port.mk>
