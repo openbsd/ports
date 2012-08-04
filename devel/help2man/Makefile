@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/04 15:56:24 naddy Exp $
 
 COMMENT=	GNU help2man
 
@@ -17,9 +17,5 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
-USE_GROFF =	Yes
-
-post-extract:
-	@rm -f ${WRKSRC}/help2man.info*
 
 .include <bsd.port.mk>
