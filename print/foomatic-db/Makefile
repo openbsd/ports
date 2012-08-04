@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/04/11 16:16:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/04 14:52:33 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,8 @@ V=			20120411
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 CATEGORIES=		print
+
+REVISION=		0
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -28,6 +30,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-ppds-to-cups
 
 WRKDIST=		${WRKDIR}/foomatic-db-${V}
+
+# share/foomatic/db/source/*/*.xml
+RUN_DEPENDS +=		print/foomatic-db-engine
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
