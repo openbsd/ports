@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/08/23 20:14:52 landry Exp $
+$OpenBSD: README,v 1.5 2012/08/04 15:01:50 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -45,14 +45,6 @@ Double-click on any cipher to toggle its state. For example, to
 enable TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA, double-click on
 security.ssl3.ecdhe_ecdsa_aes128_sha until its boolean entry in the
 Value column changes to true.
-
-Using CUPS and LPR for printing
-
-Since version 3, Firefox uses the standard printing dialog from gtk+2.
-In order to use CUPS for printing, you will need to install the cups
-subpackage of gtk+2, i.e.:
-
-# pkg_add gtk+2-cups
 
 Debugging
 
