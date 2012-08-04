@@ -1,0 +1,36 @@
+$OpenBSD: README,v 1.1.1.1 2012/08/04 15:19:32 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Zurmo has been installed into ${INSTDIR}
+
+PHP settings
+============
+Some specific PHP settings are required for Zurmo. With Apache, you can
+automatically configure them as follows. As root:
+    ln -s ../modules.sample/zurmo.conf ${PREFIX}/conf/modules
+    /etc/rc.d/httpd restart
+
+With other web servers, review
+    ${PREFIX}/conf/modules.sample/zurmo.conf
+to use them as a a template to adjust various PHP settings in
+${SYSCONFDIR}/php-${MODPHP_VERSION}.ini.
+
+MySQL settings
+==============
+The following MySQL server settings are required by Zurmo and must be
+set or modified in ${SYSCONFDIR}/my.cnf:
+
+max_sp_recursion_depth = 20
+thread_stack = 524288
+optimizer_search_depth = 0
+max_allowed_packet = 20M
+log_bin_trust_function_creators = 1
+
+Finishing the installation
+==========================
+Point your web browser to:
+    http://<hostname>/zurmo/app/index.php
+to run the installation script.
