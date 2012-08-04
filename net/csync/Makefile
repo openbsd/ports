@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/24 08:01:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/04 15:13:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer
+REVISION=	0
 
 DISTNAME=	csync-0.50.7
 
@@ -22,7 +23,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c log4c neon smbclient sqlite3 ssh
+WANTLIB += c iniparser log4c neon smbclient sqlite3 ssh
 
 MASTER_SITES=	http://download.owncloud.com/download/
 
@@ -30,18 +31,20 @@ MODULES=	devel/cmake
 
 BUILD_DEPENDS=	devel/argp-standalone \
 		devel/check \
-		devel/doxygen \
-		devel/iniparser
+		devel/doxygen
 
-LIB_DEPENDS=	devel/log4c \
+LIB_DEPENDS=	devel/iniparser \
+		devel/log4c \
 		net/neon \
 		net/samba \
 		security/libssh
 
 CONFIGURE_ARGS=	-DCMAKE_C_FLAGS="${CFLAGS}" \
+		-DCMAKE_SKIP_RPATH=ON \
 		-DMAN_INSTALL_DIR=${PREFIX}/man \
 		-DSYSCONFDIR=${SYSCONFDIR} \
-		-DSYSCONF_INSTALL_DIR=${PREFIX}/share/examples
+		-DSYSCONF_INSTALL_DIR=${PREFIX}/share/examples \
+		-DCMAKE_BUILD_TYPE=Release
 
 NO_REGRESS=	Yes
 USE_GROFF=	Yes
