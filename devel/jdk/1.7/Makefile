@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2012/05/03 21:48:21 kurt Exp $
+# $OpenBSD: Makefile,v 1.50 2012/08/04 15:06:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -84,7 +84,7 @@ VMEM_WARNING=	Yes
 BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
 		archivers/zip \
 		archivers/unzip \
-		print/cups
+		print/cups,-libs
 MODULES=	converters/libiconv
 WANTLIB=	X11 Xext Xi Xtst Xrender c freetype m pthread sndio stdc++ z
 

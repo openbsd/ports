@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/05/28 13:53:18 fgsch Exp $
+# $OpenBSD: Makefile,v 1.32 2012/08/04 15:06:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -47,7 +47,7 @@ BUILD_DEPENDS=		archivers/gtar \
 			archivers/zip \
 			archivers/unzip \
 			archivers/bzip2 \
-			print/cups \
+			print/cups,-libs \
 			x11/openmotif
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xtst c m ossaudio pthread \
