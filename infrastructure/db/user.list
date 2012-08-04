@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.191 2012/07/19 08:47:01 sthen Exp $
+$OpenBSD: user.list,v 1.192 2012/08/04 15:15:00 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -49,7 +49,7 @@ id  user		group		port options
 538 _vilter		_vilter		mail/smtp-vilter
 539 _clamav		_clamav		security/clamav
 540 _dspam		_dspam		mail/dspam
-541 _cups		_cups		print/cups, print/ghostscript/gnu
+541 _cups		_cups		print/cups
 542 _flowd		_flowd		net/flowd
 543 _cyrus		_cyrus		mail/cyrus-imapd
 544 _openldap		_openldap	databases/openldap
