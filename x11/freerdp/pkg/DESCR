@@ -2,6 +2,3 @@ freerdp is a fork of the rdesktop project and is an open source client
 for Windows NT and 2000 Terminal Server, capable of natively speaking
 the Remote Desktop Protocol (RDP) in order to present the user's Windows
 desktop.
-
-Flavors:
-	no_cups		Don't build CUPS support.
