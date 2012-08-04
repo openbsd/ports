@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2012/07/09 15:57:34 edd Exp $
+# $OpenBSD: Makefile,v 1.330 2012/08/04 14:59:24 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -26,6 +26,7 @@
      SUBDIR += cfdg
      SUBDIR += clutter
      SUBDIR += colord
+     SUBDIR += colord-gtk
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += compface
