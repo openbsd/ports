@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2012/08/04 14:51:38 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, libraries
 COMMENT-cups =		K Desktop Environment, cups support
@@ -54,8 +54,9 @@ FLAVORS =	debug
 VMEM_WARNING =	Yes
 
 
-MULTI_PACKAGES =	-main -cups
-CONFIGURE_ARGS += 	--enable-cups
+MULTI_PACKAGES =	-main # -cups
+# broken with cups>=1.6.0
+CONFIGURE_ARGS += 	--disable-cups
 
 MODULES =	x11/kde devel/gettext
 
@@ -89,7 +90,7 @@ RUN_DEPENDS-main = \
 LIB_DEPENDS-cups = \
 	${LIB_DEPENDS} \
 	x11/kde/libs3 \
-	print/cups>=1.5
+	print/cups,-libs
 
 WANTLIB-cups = ${WANTLIB}
 
