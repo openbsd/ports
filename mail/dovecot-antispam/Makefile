@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2012/07/08 23:15:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/08/05 09:16:07 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	anti-spam plugin for Dovecot
 
-V_DOVECOT_FULL= 2.1.8
+V_DOVECOT_FULL= 2.1.9
 
 DISTNAME=	dovecot-antispam-plugin-5e8351bcfb29
 PKGNAME=	dovecot-antispam-2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 # http://hg.dovecot.org/dovecot-antispam-plugin/
@@ -37,7 +37,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= gnu
 
 pre-configure:
-	cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	@cd ${WRKSRC}; AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    ./autogen.sh
 
