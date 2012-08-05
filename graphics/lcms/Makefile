@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/05 13:47:04 naddy Exp $
 
 COMMENT =	color management library
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c m z jpeg tiff
 
 USE_LIBTOOL =		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE = 	gnu
 CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \

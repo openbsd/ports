@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2012/08/05 06:19:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2012/08/05 13:47:04 naddy Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -82,7 +82,6 @@ AUTOCONF_VERSION= 	2.68
 AUTOMAKE_VERSION= 	1.10
 
 USE_GMAKE=		Yes
-USE_GROFF=		Yes
 
 MAKE_ENV=		${LIBS_ENV}
 
