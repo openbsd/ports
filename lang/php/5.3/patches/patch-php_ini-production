@@ -1,6 +1,15 @@
-$OpenBSD: patch-php_ini-production,v 1.5 2012/01/21 23:34:35 sthen Exp $
---- php.ini-production.orig.port	Thu Dec 15 10:31:02 2011
-+++ php.ini-production	Wed Jan 18 13:57:26 2012
+$OpenBSD: patch-php_ini-production,v 1.6 2012/08/05 10:32:09 sthen Exp $
+--- php.ini-production.orig.port	Wed Jun 13 09:18:44 2012
++++ php.ini-production	Thu Jun 28 10:25:30 2012
+@@ -432,7 +432,7 @@ zend.enable_gc = On
+ ; threat in any way, but it makes it possible to determine whether you use PHP
+ ; on your server or not.
+ ; http://php.net/expose-php
+-expose_php = On
++expose_php = Off
+ 
+ ;;;;;;;;;;;;;;;;;;;
+ ; Resource Limits ;
 @@ -793,11 +793,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
