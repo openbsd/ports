@@ -1,7 +1,7 @@
-$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.5 2012/05/08 21:29:16 sthen Exp $
---- sapi/cgi/cgi_main.c.orig.port	Fri May  4 01:28:40 2012
-+++ sapi/cgi/cgi_main.c	Fri May  4 01:28:42 2012
-@@ -1486,6 +1486,7 @@ int main(int argc, char *argv[])
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.6 2012/08/05 12:00:54 sthen Exp $
+--- sapi/cgi/cgi_main.c.orig.port	Sat Jul 21 10:36:15 2012
++++ sapi/cgi/cgi_main.c	Sat Jul 21 10:36:15 2012
+@@ -1487,6 +1487,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;
  	int ini_entries_len = 0;
@@ -9,7 +9,7 @@ $OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.5 2012/05/08 21:29:16 sthen Exp $
  	/* end of temporary locals */
  
  #ifdef ZTS
-@@ -1538,8 +1539,12 @@ int main(int argc, char *argv[])
+@@ -1539,8 +1540,12 @@ int main(int argc, char *argv[])
  	tsrm_ls = ts_resource(0);
  #endif
  

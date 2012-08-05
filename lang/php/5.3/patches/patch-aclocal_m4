@@ -1,6 +1,6 @@
-$OpenBSD: patch-aclocal_m4,v 1.6 2011/11/16 12:29:00 espie Exp $
---- aclocal.m4.orig.port	Tue Aug 23 11:33:49 2011
-+++ aclocal.m4	Wed Nov 16 12:59:21 2011
+$OpenBSD: patch-aclocal_m4,v 1.7 2012/08/05 12:00:54 sthen Exp $
+--- aclocal.m4.orig.port	Thu Jul 12 23:18:55 2012
++++ aclocal.m4	Sat Jul 21 10:36:20 2012
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -63,7 +63,7 @@ $OpenBSD: patch-aclocal_m4,v 1.6 2011/11/16 12:29:00 espie Exp $
        PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
        PHP_EVAL_INCLINE($OPENSSL_INCS)
      fi
-@@ -4326,7 +4312,7 @@ bsdi[[45]]*)
+@@ -4332,7 +4318,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'
@@ -72,7 +72,7 @@ $OpenBSD: patch-aclocal_m4,v 1.6 2011/11/16 12:29:00 espie Exp $
    shlibpath_var=LD_LIBRARY_PATH
    sys_lib_search_path_spec="/shlib /usr/lib /usr/X11/lib /usr/contrib/lib /lib /usr/local/lib"
    sys_lib_dlsearch_path_spec="/shlib /usr/lib /usr/local/lib"
-@@ -4651,7 +4637,7 @@ openbsd*)
+@@ -4657,7 +4643,7 @@ openbsd*)
      *)                         need_version=no  ;;
    esac
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${shared_ext}$versuffix'

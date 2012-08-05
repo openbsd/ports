@@ -1,6 +1,6 @@
---- sapi/fpm/config.m4.orig.port	Sat Oct  8 22:04:10 2011
-+++ sapi/fpm/config.m4	Wed Jan 18 13:57:26 2012
-@@ -594,7 +594,9 @@ if test "$PHP_FPM" != "no"; then
+--- sapi/fpm/config.m4.orig.port	Thu Jul 12 23:17:37 2012
++++ sapi/fpm/config.m4	Sat Jul 21 10:36:15 2012
+@@ -595,7 +595,9 @@ if test "$PHP_FPM" != "no"; then
    
    PHP_FPM_CFLAGS="-I$abs_srcdir/sapi/fpm"
   
@@ -11,7 +11,7 @@
    PHP_FPM_FILES="fpm/fastcgi.c \
      fpm/fpm.c \
      fpm/fpm_children.c \
-@@ -626,7 +628,8 @@ if test "$PHP_FPM" != "no"; then
+@@ -627,7 +629,8 @@ if test "$PHP_FPM" != "no"; then
  		fpm/events/port.c \
    "
  
@@ -21,7 +21,7 @@
  
    case $host_alias in
        *aix*)
-@@ -636,11 +639,19 @@ if test "$PHP_FPM" != "no"; then
+@@ -637,11 +640,19 @@ if test "$PHP_FPM" != "no"; then
          BUILD_FPM="\$(CC) \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(EXTRA_LDFLAGS_PROGRAM) \$(LDFLAGS) \$(NATIVE_RPATHS) \$(PHP_GLOBAL_OBJS:.lo=.o) \$(PHP_SAPI_OBJS:.lo=.o) \$(PHP_FRAMEWORKS) \$(EXTRA_LIBS) \$(SAPI_EXTRA_LIBS) \$(ZEND_EXTRA_LIBS) -o \$(SAPI_FPM_PATH)"
        ;;
        *)
