@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2012/05/18 13:25:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2012/08/05 00:16:50 naddy Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -28,7 +28,6 @@ WANTLIB=		m z
 MODULES=		converters/libiconv
 
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.68 # should be 2.66
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
