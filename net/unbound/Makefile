@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/08/04 20:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2012/08/05 08:02:11 sthen Exp $
 
 COMMENT=	validating DNS resolver
 
@@ -17,8 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		Yes
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		Yes
 NO_REGRESS=		Yes
 
