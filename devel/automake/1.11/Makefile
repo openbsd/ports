@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/20 12:03:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/05 07:30:55 ajacoutot Exp $
 
 VERSION=	1.11
-DISTNAME=	automake-${VERSION}.5
-REVISION=	1
+DISTNAME=	automake-${VERSION}.6
 PKGSPEC=	automake->=${VERSION},<1.12
 
 MODULES=		lang/python
@@ -10,7 +9,7 @@ MODULES=		lang/python
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
