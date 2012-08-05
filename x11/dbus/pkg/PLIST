@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/07/05 07:19:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/08/05 06:55:11 ajacoutot Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -58,7 +58,6 @@ share/doc/dbus/dbus-tutorial.html
 share/doc/dbus/diagram.png
 share/doc/dbus/diagram.svg
 share/doc/dbus/system-activation.txt
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/dbus/
 share/examples/dbus/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/

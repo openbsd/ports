@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.83 2012/07/06 16:28:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/08/05 06:55:11 ajacoutot Exp $
 
 COMMENT=	message bus system
 
 DISTNAME=	dbus-1.6.2
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 
 SHARED_LIBS +=	dbus-1	10.2 # .10.2
