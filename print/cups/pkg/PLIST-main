@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2012/08/04 14:37:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2012/08/05 06:19:40 ajacoutot Exp $
 @conflict LPRng-*
+@pkgpath print/cups
 @pkgpath print/cups,ldap
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/cups/*.conf.O /var/log/cups/*
