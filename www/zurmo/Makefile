@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/04 15:19:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/05 22:16:21 ajacoutot Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
 V=		0.7.10
 DISTNAME=	zurmo-stable-${V}.2b36c58196f9
 PKGNAME=	zurmo-${V}
+REVISION=	0
 
 CATEGORIES=	www productivity
 
