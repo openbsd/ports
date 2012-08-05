@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:45 espie Exp $
-# Uses pthreads
+# $OpenBSD: Makefile,v 1.11 2012/08/05 10:48:12 ajacoutot Exp $
 
 COMMENT=	resource manager for PCSC
 
