@@ -1,8 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/18 12:20:50 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/08/06 11:07:09 sebastia Exp $
 bin/AddressManager
-include/AddressBook
+@bin bin/adgnumailconverter
+@bin bin/adserver
+@bin bin/adtool
+include/AddressBook/
+include/AddressBook/AddressBook.h
 include/AddressView
 include/Addresses
+lib/GNUstep/Bundles/VCFViewer.inspector/
+lib/GNUstep/Bundles/VCFViewer.inspector/Resources/
+lib/GNUstep/Bundles/VCFViewer.inspector/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/VCFViewer.inspector/Resources/InspectorInfo.plist
+lib/GNUstep/Bundles/VCFViewer.inspector/Resources/VCFImage.tiff
+@bin lib/GNUstep/Bundles/VCFViewer.inspector/VCFViewer
+lib/GNUstep/Bundles/VCFViewer.inspector/stamp.make
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/AddressView.framework/
 lib/GNUstep/Frameworks/AddressView.framework/AddressView
@@ -98,6 +109,7 @@ libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/Add.tiff
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/data.classes
+libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/data.info
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/AddressManager.gorm/objects.gorm
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/ISOCountryCodes.dict
 libexec/GNUstep/AddressManager.app/Resources/Dutch.lproj/Localizable.strings
@@ -105,6 +117,7 @@ libexec/GNUstep/AddressManager.app/Resources/English.lproj/
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/AddressManager.gorm/
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/AddressManager.gorm/Add.tiff
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/AddressManager.gorm/data.classes
+libexec/GNUstep/AddressManager.app/Resources/English.lproj/AddressManager.gorm/data.info
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/AddressManager.gorm/objects.gorm
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/ISOCountryCodes.dict
 libexec/GNUstep/AddressManager.app/Resources/English.lproj/Localizable.strings
@@ -112,6 +125,7 @@ libexec/GNUstep/AddressManager.app/Resources/French.lproj/
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/AddressManager.gorm/
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/AddressManager.gorm/Add.tiff
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/AddressManager.gorm/data.classes
+libexec/GNUstep/AddressManager.app/Resources/French.lproj/AddressManager.gorm/data.info
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/AddressManager.gorm/objects.gorm
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/ISOCountryCodes.dict
 libexec/GNUstep/AddressManager.app/Resources/French.lproj/Localizable.strings
