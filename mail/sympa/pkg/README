@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/08/04 15:10:30 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2012/08/06 10:43:46 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -19,8 +19,6 @@ You should also install the corresponding p5-DBD-{mysql,SQLite,Pg} module.
 Moreover, p5-ldap package is needed if you plan to use LDAP features
 and p5-SOAP-Lite package is needed if you plan to use sympa_soap_server.
 
-Start sympa using the init.d-style ${TRUEPREFIX}/sbin/sympa script.
-
 WWSympa configuration
 =====================
 
@@ -39,12 +37,12 @@ Startup/Shutdown configuration
 ==============================
 
 You can control sympa/wwsympa.fcgi daemons using the rc scripts in
-${SYSCONFDIR}/rc.d/.
+${RCDIR}.
 
 Mail aliases configuration
 ==========================
 
-add systemwide robot aliases to your aliases file :
+Add systemwide robot aliases to your aliases file:
 
 sympa: "| ${TRUEPREFIX}/libexec/sympa/queue sympa@domain.tld"
 listmaster: "| ${TRUEPREFIX}/libexec/sympa/queue listmaster@domain.tld"
