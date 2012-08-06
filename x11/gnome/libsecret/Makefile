@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/07/14 07:51:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/06 14:39:42 ajacoutot Exp $
 
 COMMENT=	library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=	libsecret
-GNOME_VERSION=	0.6
+GNOME_VERSION=	0.8
 
 SHARED_LIBS +=  secret-1             0.0      # unknown
 
@@ -31,7 +31,8 @@ LIB_DEPENDS=	devel/glib2 \
 
 # unable to autolaunch a dbus-daemon without a $DISPLAY for X11
 REGRESS_IS_INTERACTIVE=	X11
-REGRESS_DEPENDS=	${MODPY_RUN_DEPENDS}
+REGRESS_DEPENDS=	${MODPY_RUN_DEPENDS} \
+			x11/dbus-python
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libsecret/tests/Makefile.in \
