@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/13 09:47:01 pascal Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/06 13:09:39 landry Exp $
 
 # Memory hog, stuck for days on the same file during build.
 NOT_FOR_ARCHS =		sh
+BROKEN-sparc64 =	build stuck on CORE.setting.pir generation
 
 SHARED_ONLY =		Yes
 
