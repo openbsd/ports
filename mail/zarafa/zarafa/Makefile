@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2012/07/09 15:27:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2012/08/06 17:48:35 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,8 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	3
-REVISION-web=	0
+REVISION-main=	4
+REVISION-web=	1
 
 CATEGORIES=	mail www productivity
 
@@ -40,13 +40,13 @@ BUILD_DEPENDS=	textproc/xmlto \
 		textproc/clucene
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += m pthread stdc++ z gmp gnutls hogweed nettle p11-kit tasn1
+WANTLIB += m pthread stdc++ z vmime
+WANTLIB += execinfo icudata icui18n icuuc uuid
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
-WANTLIB-main += crypto execinfo gssapi ical icalss icudata icui18n
-WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncursesw
-WANTLIB-main += sasl2 ssl util uuid vmime xml2
+WANTLIB-main += crypto gssapi ical icalss krb5 lber ldap mysqlclient
+WANTLIB-main += ncursesw sasl2 ssl util uuid xml2
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
@@ -57,15 +57,14 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		devel/libvmime>=0.9.2p0 \
+		devel/libvmime>=0.9.2p1 \
 		textproc/libical \
 		textproc/icu4c \
 		devel/boost
 
 WANTLIB-web += ${WANTLIB}
 WANTLIB-web += boost_filesystem-mt boost_system-mt common_mapi common_util
-WANTLIB-web += execinfo freebusy ical icalmapi icalss icudata icui18n
-WANTLIB-web += icuuc inetmapi mapi uuid vmime
+WANTLIB-web += freebusy ical icalmapi icalss inetmapi mapi
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=7.0.0
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
