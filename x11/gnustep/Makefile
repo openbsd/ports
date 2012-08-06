@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/11/17 23:55:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.35 2012/08/06 11:16:36 sebastia Exp $
 
      SUBDIR =
      SUBDIR += aclock
@@ -8,6 +8,7 @@
      SUBDIR += base
      SUBDIR += batmon
      SUBDIR += cdplayer
+     SUBDIR += corebase
      SUBDIR += databasin
      SUBDIR += dbuskit
      SUBDIR += edenmath
@@ -35,6 +36,7 @@
      SUBDIR += matharray
      SUBDIR += mpdcon
      SUBDIR += netclasses
+     SUBDIR += paje
      SUBDIR += pantomime
      SUBDIR += pdfkit
      SUBDIR += performance
