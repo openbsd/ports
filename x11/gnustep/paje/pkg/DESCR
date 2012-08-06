@@ -1,0 +1,5 @@
+Paje is an interactive and scalable trace-based visualization tool which
+can be used for a large variety of visualizations including performance
+monitoring of parallel applications, monitoring the execution of
+processors in a large scale PC cluster or representing the behavior of
+distributed applications.
