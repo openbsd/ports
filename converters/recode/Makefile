@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.33 2011/06/08 17:32:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2012/08/06 14:10:48 naddy Exp $
 
 COMMENT=	convert files between character sets and usages
 
 DISTNAME=	recode-3.6
-REVISION =	6
+REVISION =	7
 SHARED_LIBS +=	recode               0.0      # .0.0
 
 CATEGORIES=	converters textproc
 
-HOMEPAGE=	http://www.gnu.org/software/recode/
+HOMEPAGE=	http://recode.progiciels-bpi.ca
 
 MODULES=	devel/gettext \
 		lang/python
@@ -19,12 +19,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c
+WANTLIB=	c
 
+# moved to https://github.com/pinard/Recode/
 MASTER_SITES=	${MASTER_SITE_GNU:=recode/}
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 MODPY_RUNDEP=	No
 
 CONFIGURE_STYLE= gnu
