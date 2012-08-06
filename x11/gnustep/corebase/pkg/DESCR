@@ -1,0 +1,8 @@
+The GNUstep CoreBase Library is a library of general-purpose,
+non-graphical C objects. For example, it includes types for strings,
+collections, byte streams, typed coders, invocations, notifications,
+notification dispatchers, moments in time, network ports, and event
+loops.
+
+It provides functionality that aims to implement the non-graphical
+portion of Apple's CoreFoundation framework.
