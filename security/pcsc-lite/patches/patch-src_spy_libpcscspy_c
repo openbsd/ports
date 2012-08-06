@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_spy_libpcscspy_c,v 1.1 2012/08/06 13:03:12 dcoppa Exp $
+--- src/spy/libpcscspy.c.orig	Thu Aug  2 19:26:23 2012
++++ src/spy/libpcscspy.c	Mon Aug  6 09:33:15 2012
+@@ -28,6 +28,7 @@
+ #include <unistd.h>
+ #include <sys/time.h>
+ #include <pthread.h>
++#include <inttypes.h>
+ 
+ #include "misc.h"
+ #include <winscard.h>
+@@ -168,7 +169,7 @@ static void spy_line_direct(char *line)
+ 	if (Log_fd < 0)
+ 		return;
+ 
+-	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
++	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
+ 	pthread_mutex_lock(&Log_fd_mutex);
+ 	write(Log_fd, threadid, strlen(threadid));
+ 	write(Log_fd, line, strlen(line));
+@@ -195,7 +196,7 @@ static void spy_line(const char *fmt, ...)
+ 		printf("libpcsc-spy: Buffer is too small!\n");
+ 		return;
+ 	}
+-	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
++	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
+ 	pthread_mutex_lock(&Log_fd_mutex);
+ 	write(Log_fd, threadid, strlen(threadid));
+ 	write(Log_fd, line, size);

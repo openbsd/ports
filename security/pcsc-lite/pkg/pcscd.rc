@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: pcscd.rc,v 1.1 2012/08/06 13:03:12 dcoppa Exp $
+
+daemon="${TRUEPREFIX}/sbin/pcscd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,44 +1,47 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/05 10:48:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/06 13:03:12 dcoppa Exp $
 
-COMMENT=	resource manager for PCSC
+COMMENT=	resource manager for PC/SC
 
-DISTNAME=	pcsc-lite-1.0.1
-REVISION = 	0
+DISTNAME=	pcsc-lite-1.8.5
 CATEGORIES=	security
-SHARED_LIBS=	pcsclite-core	0.2 \
-		pcsclite	0.1
-MODGNU_SHARED_LIBS=	pcsclite-core	'' \
-			pcsclite	''
-LIBpcsclite-core_ALIAS=	realpcsclite_core
 
-MASTER_SITES=	http://www.linuxnet.com/middleware/files/
+SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
+SHARED_LIBS+=	pcscspy		0.0 # 0.0.0
 
-HOMEPAGE=	http://www.linuxnet.com/
+HOMEPAGE=	http://pcsclite.alioth.debian.org/pcsclite.html
 
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3741/
+
+EXTRACT_SUFX=	.tar.bz2
+
+MAINTAINER=	David Coppa <dcoppa@openbsd.org>
+
+# BSD and GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c pthread
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}	\
-		--enable-static		\
-		--enable-daemon		\
-		--enable-debug		\
-		--enable-syslog		\
-		--enable-threadsafe
-CONFIGURE_ENV=	PTHREAD_LIBS=-pthread
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
+WANTLIB=		c pthread usb-1.0
+
+MODULES=		lang/python
+
+LIB_DEPENDS=		devel/libusb1
+
+MODPY_ADJ_FILES=	src/spy/pcsc-spy
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+
+CONFIGURE_STYLE= gnu
+
+CONFIGURE_ARGS=	--disable-libudev \
+		--without-systemdsystemunitdir \
+		--enable-libusb \
+		--enable-confdir=${SYSCONFDIR}/ccid
+
+CONFIGURE_ENV=	ac_cv_lib_lex='none needed'
+
 NO_REGRESS=	Yes
-
-EXDIR=		${PREFIX}/share/examples/pcscd
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXDIR}
-	${INSTALL_DATA} ${FILESDIR}/reader.conf.sample ${EXDIR}
 
 .include <bsd.port.mk>
