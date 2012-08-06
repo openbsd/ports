@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/05 08:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	buffer sporadic I/O for faster tape and pipe throughput
 
@@ -23,7 +23,6 @@ MAKE_ENV=	CC="${CC}"
 
 WRKDIST=	${WRKDIR}
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>

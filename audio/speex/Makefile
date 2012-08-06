@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	patent-free speech codec
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	audio/libogg
 WANTLIB=	c m ogg>=5 sndio
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ogg=${LOCALBASE}

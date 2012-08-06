@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/07 18:54:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	analyze terminal control sequences
 
@@ -24,7 +24,6 @@ WANTLIB=	c
 
 CONFIGURE_STYLE=gnu
 MAKE_FLAGS=	AM_CFLAGS=""
-USE_GROFF =	Yes
 
 .if ${FLAVOR:L:Mregress}
 BUILD_DEPENDS=	devel/check

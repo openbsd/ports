@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	RPN and algebraic scientific calculator
 
@@ -28,7 +28,6 @@ WANTLIB += pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0>=1000 gtk-x11-2.0>=1000
 WANTLIB += GL gthread-2.0 pthread xcb-render xcb-shm
 
-USE_GROFF =	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/03/29 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.69 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	Pico editor clone with enhancements
 
@@ -20,13 +20,13 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext
 WANTLIB=	c ncursesw
 
+# required to build HTML version of man pages
+BUILD_DEPENDS=	textproc/groff>=1.21
+
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-# only required to build HTML version of man pages
-USE_GROFF =	Yes
 
 post-install:
 	perl -i -pe 's:SYSCONFDIR:${SYSCONFDIR}:g;' \

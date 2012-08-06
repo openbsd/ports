@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/05/15 19:51:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2012/08/06 12:21:05 naddy Exp $
 
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=	audio/libao \
 		audio/speex \
 		audio/libvorbis
 
-USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--without-kate
