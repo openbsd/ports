@@ -1,14 +1,14 @@
-$OpenBSD: patch-bing_c,v 1.3 2010/02/23 21:35:37 sthen Exp $
---- bing.c.orig	Fri Jan 19 13:28:53 2001
-+++ bing.c	Thu Feb 18 12:35:25 2010
-@@ -162,6 +162,7 @@ static char rcsid[] = "$Id: bing.c,v 1.16.2.1 2001/01/
- 
- #include <netinet/in_systm.h>
- #include <netinet/in.h>
-+#include <arpa/inet.h>
- #include <netinet/ip.h>
- #include <netinet/ip_icmp.h>
- #ifndef linux
+$OpenBSD: patch-bing_c,v 1.4 2012/08/06 17:35:34 naddy Exp $
+--- bing.c.orig	Fri Jan 19 19:28:53 2001
++++ bing.c	Mon Aug  6 19:33:05 2012
+@@ -170,6 +170,7 @@ static char rcsid[] = "$Id: bing.c,v 1.16.2.1 2001/01/
+ #include <netdb.h>
+ #include <unistd.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
+ #include <errno.h>
+ #include <string.h>
 @@ -755,7 +756,7 @@ int pr_pack(buf, cc, from)
  	static int old_rrlen;
  	static char old_rr[MAX_IPOPTLEN];
@@ -39,7 +39,8 @@ $OpenBSD: patch-bing_c,v 1.3 2010/02/23 21:35:37 sthen Exp $
 -	int ch, hold, recv_packlen, preload;
 +	int ch, hold = 1, recv_packlen, preload;
  	u_char *datap, *recv_packet;
- 	char *target1, *target2, *malloc();
+-	char *target1, *target2, *malloc();
++	char *target1, *target2;
  	u_char ttl, loop;
  #ifdef IP_OPTIONS
  	char rspace[3 + 4 * NROUTES + 1];	/* record route space */
