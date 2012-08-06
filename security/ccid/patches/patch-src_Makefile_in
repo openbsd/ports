@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/08/06 13:20:48 dcoppa Exp $
+--- src/Makefile.in.orig	Fri Jun 22 10:53:52 2012
++++ src/Makefile.in	Mon Aug  6 13:45:53 2012
+@@ -416,7 +416,6 @@ EXTRA_DIST = Info.plist.src create_Info_plist.pl reade
+ 	towitoko/COPYING towitoko/README openct/LICENSE \
+ 	convert_version.pl 92_pcscd_ccid.rules
+ 
+-INSTALL_UDEV_RULE_FILE = @/bin/echo -e "\n\33[01;31m***************\n" ; echo "copy the src/92_pcscd_ccid.rules file in udev directory (/etc/udev/rules.d/)" ; /bin/echo -e "\n***************\n\33[0m"
+ DISTCLEANFILES = tokenparser.c Info.plist
+ all: all-am
+ 
+@@ -1068,13 +1067,12 @@ install_ccid: libccid.la Info.plist
+ 	$(mkinstalldirs) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/
+ 	cp Info.plist $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/
+ 	cp .libs/$(CCID_LIB) $(DESTDIR)$(usbdropdir)/$(CCID_BUNDLE)/Contents/$(BUNDLE_HOST)/$(CCID_LIB)
+-	$(INSTALL_UDEV_RULE_FILE)
+ 
+ install_ccidtwin: libccidtwin.la
+ 	$(mkinstalldirs) $(DESTDIR)$(ccidtwindir)
+ 	cp .libs/$(CCIDTWIN_LIB) $(DESTDIR)$(ccidtwindir)/$(CCIDTWIN_LIB)
+-	$(mkinstalldirs) $(DESTDIR)/$(sysconfdir)/reader.conf.d ; \
+-		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)/$(sysconfdir)/reader.conf.d/libccidtwin
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/examples/ccid ; \
++		perl -ne "s|TARGET|$(ccidtwindir)/$(CCIDTWIN_LIB)| ; print" $(srcdir)/reader.conf.in > $(DESTDIR)$(datadir)/examples/ccid/libccidtwin
+ 
+ # do not uninstall the serial driver by default
+ # use explicitely 'make uninstall_ccidtwin'

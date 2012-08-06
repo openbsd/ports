@@ -1,0 +1,4 @@
+ccid is a generic USB CCID (Chip/Smart Card Interface Devices)
+driver and ICCD (Integrated Circuit(s) Card Devices) driver.
+
+See the USB CCID and ICCD specifications from the USB working group.
