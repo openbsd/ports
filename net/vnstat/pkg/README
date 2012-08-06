@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/05/17 07:30:27 sthen Exp $
+$OpenBSD: README,v 1.4 2012/08/06 08:46:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ This will create the database for the specified interface.
 3) Edit ${SYSCONFDIR}/vnstat.conf if necessary
 
 4) Finally launch the vnstatd daemon:
-   # ${SYSCONFDIR}/rc.d/vnstatd start
+   # ${RCDIR}/vnstatd start
 
 5) Create graphics with the command vnstati
 

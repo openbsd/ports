@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2012/02/18 00:50:10 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/08/06 08:47:00 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,7 +9,7 @@ Basic installation
 
 Initialize MySQL and PHP Apache modules (if not already done):
 	${LOCALBASE}/bin/mysql_install_db
-	${SYSCONFDIR}/rc.d/mysqld start
+	${RCDIR}/mysqld start
 	${LOCALBASE}/bin/mysqladmin -u root password 'changeme'
 
 	ln -fs /var/www/conf/modules.sample/php-${MODPHP_VERSION}.conf \

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/08/06 08:46:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,7 +20,7 @@ This is a small howto to get mon running in a basic setup.
     su -l _mon -c "${TRUEPREFIX}/bin/mon -c /etc/mon/mon.cf -d -P /var/run/mon/mon.pid"
 
  4. When everything is ok, launch mon as a daemon:
-    ${SYSCONFDIR}/rc.d/mon start
+    ${RCDIR}/mon start
 
  Random hints:
 

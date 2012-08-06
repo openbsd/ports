@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/07/08 02:14:59 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2012/08/06 08:46:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,7 +12,7 @@ $OpenBSD: README,v 1.4 2011/07/08 02:14:59 ajacoutot Exp $
 
 2) openfire may be started by executing:
 
-   ${SYSCONFDIR}/rc.d/openfire start
+   ${RCDIR}/openfire start
 
    as root. To arrange for this to happen at boot, include 'openfire'
    in the pkg_scripts variable in /etc/rc.conf.local
