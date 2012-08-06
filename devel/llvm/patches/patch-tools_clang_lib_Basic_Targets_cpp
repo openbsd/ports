@@ -1,0 +1,78 @@
+$OpenBSD: patch-tools_clang_lib_Basic_Targets_cpp,v 1.6 2012/08/06 22:35:26 sthen Exp $
+
+- OpenBSD does not support TLS.
+- Provide target support for powerpc, arm, mips64, mips64el and sparc.
+
+--- tools/clang/lib/Basic/Targets.cpp.orig	Wed Apr 25 14:26:22 2012
++++ tools/clang/lib/Basic/Targets.cpp	Sat Aug  4 20:18:40 2012
+@@ -371,6 +371,7 @@ class OpenBSDTargetInfo : public OSTargetInfo<Target> 
+   OpenBSDTargetInfo(const std::string &triple)
+     : OSTargetInfo<Target>(triple) {
+       this->UserLabelPrefix = "";
++      this->TLSSupported = false;
+ 
+       llvm::Triple Triple(triple);
+       switch (Triple.getArch()) {
+@@ -727,7 +728,8 @@ void PPCTargetInfo::getTargetDefines(const LangOptions
+   }
+ 
+   // Target properties.
+-  if (getTriple().getOS() != llvm::Triple::NetBSD)
++  if (getTriple().getOS() != llvm::Triple::NetBSD &&
++      getTriple().getOS() != llvm::Triple::OpenBSD)
+     Builder.defineMacro("_BIG_ENDIAN");
+   Builder.defineMacro("__BIG_ENDIAN__");
+ 
+@@ -864,6 +866,7 @@ class PPC32TargetInfo : public PPCTargetInfo { (public
+     case llvm::Triple::Linux:
+     case llvm::Triple::FreeBSD:
+     case llvm::Triple::NetBSD:
++    case llvm::Triple::OpenBSD:
+       SizeType = UnsignedInt;
+       PtrDiffType = SignedInt;
+       IntPtrType = SignedInt;
+@@ -3926,6 +3929,8 @@ static TargetInfo *AllocateTarget(const std::string &T
+       return new FreeBSDTargetInfo<ARMTargetInfo>(T);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<ARMTargetInfo>(T);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<ARMTargetInfo>(T);
+     case llvm::Triple::RTEMS:
+       return new RTEMSTargetInfo<ARMTargetInfo>(T);
+     default:
+@@ -3973,6 +3978,8 @@ static TargetInfo *AllocateTarget(const std::string &T
+       return new FreeBSDTargetInfo<Mips64EBTargetInfo>(T);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<Mips64EBTargetInfo>(T);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<Mips64EBTargetInfo>(T);
+     default:
+       return new Mips64EBTargetInfo(T);
+     }
+@@ -3987,6 +3994,8 @@ static TargetInfo *AllocateTarget(const std::string &T
+       return new FreeBSDTargetInfo<Mips64ELTargetInfo>(T);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<Mips64ELTargetInfo>(T);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<Mips64ELTargetInfo>(T);
+     default:
+       return new Mips64ELTargetInfo(T);
+     }
+@@ -4009,6 +4018,8 @@ static TargetInfo *AllocateTarget(const std::string &T
+       return new FreeBSDTargetInfo<PPC32TargetInfo>(T);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<PPC32TargetInfo>(T);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<PPC32TargetInfo>(T);
+     case llvm::Triple::RTEMS:
+       return new RTEMSTargetInfo<PPC32TargetInfo>(T);
+     default:
+@@ -4049,6 +4060,8 @@ static TargetInfo *AllocateTarget(const std::string &T
+       return new SolarisSparcV8TargetInfo(T);
+     case llvm::Triple::NetBSD:
+       return new NetBSDTargetInfo<SparcV8TargetInfo>(T);
++    case llvm::Triple::OpenBSD:
++      return new OpenBSDTargetInfo<SparcV8TargetInfo>(T);
+     case llvm::Triple::RTEMS:
+       return new RTEMSTargetInfo<SparcV8TargetInfo>(T);
+     default:
