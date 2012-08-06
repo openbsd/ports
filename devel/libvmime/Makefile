@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/12 16:31:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/06 17:47:57 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -7,7 +7,7 @@ DISTNAME=	libvmime-${VMIME_V}+svn603
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	libvmime-${VMIME_V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=  vmime    2.0     # 0.0
 
@@ -35,9 +35,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += gmp gnutls hogweed m nettle p11-kit stdc++ tasn1 z
-
-MODULES=	devel/gettext
+WANTLIB += m stdc++
 
 WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}
 
@@ -48,7 +46,6 @@ USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	archivers/bzip2
-LIB_DEPENDS=	security/gnutls
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -58,6 +55,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # security/libgsasl; not real need for this so far
 CONFIGURE_ARGS += --disable-sasl
+
+# XXX Apache crashes with php-mapi from mail/zarafa/zarafa,-webaccess
+# /usr/sbin/httpd:/usr/local/lib/libvmime.so.2.0: undefined symbol '_ZN5vmime3net12serviceInfosD2Ev'
+CONFIGURE_ARGS += --disable-tls
 
 pre-configure:
 	perl -pi -e 's,-l\$${ost_cv_thread_library},-\$${ost_cv_thread_library},g;' \
