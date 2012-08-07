@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.3 2012/06/11 15:33:26 landry Exp $
---- mozilla/js/src/vm/RegExpObject.cpp.orig	Fri May 18 06:10:51 2012
-+++ mozilla/js/src/vm/RegExpObject.cpp	Fri May 18 09:34:54 2012
-@@ -167,7 +167,6 @@ MatchPairs::checkAgainst(size_t inputLength)
+$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.4 2012/08/07 09:07:04 landry Exp $
+--- mozilla/js/src/vm/RegExpObject.cpp.orig	Wed Jun 20 05:50:41 2012
++++ mozilla/js/src/vm/RegExpObject.cpp	Fri Jun 22 22:49:26 2012
+@@ -168,7 +168,6 @@ MatchPairs::checkAgainst(size_t inputLength)
  
  /* detail::RegExpCode */
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.3 2012/06/11 15:33:26 lan
  void
  RegExpCode::reportYarrError(JSContext *cx, TokenStream *ts, ErrorCode error)
  {
-@@ -199,46 +198,9 @@ RegExpCode::reportYarrError(JSContext *cx, TokenStream
+@@ -200,46 +199,9 @@ RegExpCode::reportYarrError(JSContext *cx, TokenStream
      }
  }
  
@@ -56,7 +56,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.3 2012/06/11 15:33:26 lan
      /* Parse the pattern. */
      ErrorCode yarrError;
      YarrPattern yarrPattern(pattern, bool(flags & IgnoreCaseFlag), bool(flags & MultilineFlag),
-@@ -255,7 +217,7 @@ RegExpCode::compile(JSContext *cx, JSLinearString &pat
+@@ -256,7 +218,7 @@ RegExpCode::compile(JSContext *cx, JSLinearString &pat
       * case we have to bytecode compile it.
       */
  
@@ -65,7 +65,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.3 2012/06/11 15:33:26 lan
      if (isJITRuntimeEnabled(cx) && !yarrPattern.m_containsBackreferences) {
          JSC::ExecutableAllocator *execAlloc = cx->runtime->getExecutableAllocator(cx);
          if (!execAlloc) {
-@@ -276,21 +238,11 @@ RegExpCode::compile(JSContext *cx, JSLinearString &pat
+@@ -277,21 +239,11 @@ RegExpCode::compile(JSContext *cx, JSLinearString &pat
          return false;
      }
  
@@ -89,7 +89,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_cpp,v 1.3 2012/06/11 15:33:26 lan
  }
  
  RegExpRunStatus
-@@ -305,18 +257,11 @@ RegExpCode::execute(JSContext *cx, const jschar *chars
+@@ -306,18 +258,11 @@ RegExpCode::execute(JSContext *cx, const jschar *chars
      else
          result = JSC::Yarr::execute(codeBlock, chars, start, length, output);
  #else

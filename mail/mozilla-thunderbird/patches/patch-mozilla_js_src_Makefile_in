@@ -1,10 +1,10 @@
-$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.7 2012/06/11 15:33:26 landry Exp $
+$OpenBSD: patch-mozilla_js_src_Makefile_in,v 1.8 2012/08/07 09:07:04 landry Exp $
 https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
---- mozilla/js/src/Makefile.in.orig	Fri May 18 06:10:47 2012
-+++ mozilla/js/src/Makefile.in	Fri May 18 09:27:57 2012
-@@ -337,20 +337,23 @@ CPPSRCS += 	checks.cc \
- # END enclude sources for V8 dtoa
- #############################################
+--- mozilla/js/src/Makefile.in.orig	Wed Jun 20 05:50:38 2012
++++ mozilla/js/src/Makefile.in	Fri Jun 22 22:49:40 2012
+@@ -320,20 +320,23 @@ endif
+ 
+ endif
  
 -# For architectures without YARR JIT, PCRE is faster than the YARR
 -# interpreter (bug 684559).

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_h,v 1.4 2012/06/11 15:33:26 landry Exp $
---- mozilla/js/src/vm/RegExpObject.h.orig	Fri May 18 06:10:51 2012
-+++ mozilla/js/src/vm/RegExpObject.h	Fri May 18 09:36:17 2012
-@@ -52,8 +52,6 @@
+$OpenBSD: patch-mozilla_js_src_vm_RegExpObject_h,v 1.5 2012/08/07 09:07:04 landry Exp $
+--- mozilla/js/src/vm/RegExpObject.h.orig	Wed Jun 20 05:50:41 2012
++++ mozilla/js/src/vm/RegExpObject.h	Fri Jun 22 22:49:26 2012
+@@ -53,8 +53,6 @@
  #if ENABLE_YARR_JIT
  #include "yarr/YarrJIT.h"
  #include "yarr/YarrSyntaxChecker.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_h,v 1.4 2012/06/11 15:33:26 landr
  #endif
  
  /*
-@@ -112,40 +110,33 @@ namespace detail {
+@@ -113,40 +111,33 @@ namespace detail {
  
  class RegExpCode
  {
@@ -56,7 +56,7 @@ $OpenBSD: patch-mozilla_js_src_vm_RegExpObject_h,v 1.4 2012/06/11 15:33:26 landr
      }
  
      static bool checkSyntax(JSContext *cx, TokenStream *tokenStream, JSLinearString *source) {
-@@ -157,23 +148,17 @@ class RegExpCode
+@@ -158,23 +149,17 @@ class RegExpCode
          reportYarrError(cx, tokenStream, error);
          return false;
  #else
