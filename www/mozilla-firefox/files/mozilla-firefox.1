@@ -1,4 +1,4 @@
-.TH firefox 1 "March 28, 2005" firefox "Linux User's Manual"
+.TH firefox 1 "August 07, 2012" firefox "Unix User's Manual"
 .SH NAME
 firefox \- redesign of Mozilla's browser component.
 
@@ -6,16 +6,9 @@ firefox \- redesign of Mozilla's browser component.
 .B firefox
 [\fIOPTIONS\fR] [\fIURL\fR]
 
-.B firefox-bin
-[\fIOPTIONS\fR] [\fIURL\fR]
-
 .SH DESCRIPTION
 \fBFirefox\fR is an open-source web browser, designed for standards compliance,
 performance and portability.
-
-.SH USAGE
-\fBfirefox\fR is a simple shell script that will set up the environment for
-the actual executable, \fBfirefox-bin\fR.
 
 .SH OPTIONS
 A summary of the options supported by \fBfirefox\fR is included below.
@@ -28,44 +21,34 @@ X display to use
 .B \--sync
 Make X calls synchronous
 .TP
-.B \-\-no-xshm
-Don't use X shared memory extension
-.TP
-.BI \-\-xim-preedit= STYLE
-.TP
-.BI \-\-xim-status= STYLE
-.TP
 .B \-\-g-fatal-warnings
 Make all warnings fatal
 
 .SS "Firefox options"
 .TP
-\fB\-height\fR \fIvalue\fR
-Set height of startup window to \fIvalue\fR.
-.TP
 .B \-h, \-help
 Show summary of options.
 .TP
-\fB\-width\fR \fIvalue\fR
-Set width of startup window to \fIvalue\fR.
-.TP
 .B \-v, \-version
-Print \fBfirefox-bin\fR version.
-.TP
-\fB\-CreateProfile\fR \fIprofile\fR
-Create \fIprofile\fR.
+Print \fBfirefox\fR version.
 .TP
 \fB\-P\fR \fIprofile\fR
 Start with \fIprofile\fR.
 .TP
+.B \-migration
+Start with the migration wizard.
+.TP
 .B \-ProfileManager
 Start with profile manager.
 .TP
+.B \-no-remote
+Do not accept or send remote commands; implies -new-instance.
+.TP
+.B \-new-instance
+Open new instance, not a new window in running instance.
+.TP
 \fB\-UILocale\fR \fIlocale\fR
 Start with \fIlocale\fR resources as UI Locale.
-.TP
-\fB\-contentLocale\fR \fIlocale\fR
-Start with \fIlocale\fR resources as content Locale.
 .TP
 .B \-safe-mode
 Disables extensions and themes for the session.
@@ -76,19 +59,32 @@ Start with Javascript Console
 .B \-browser
 Open a browser window.
 .TP
+\fB\-new-window\fR \fIurl\fR
+Open \fIurl\fR in a new window.
+.TP
+\fB\-new-tab\fR \fIurl\fR
+Open \fIurl\fR in a new tab.
+.TP
+.B \-preferences
+Open Preferences dialog.
+.TP
+\fB\-search\fR \fIterm\fR
+Search \fIterm\fR with your default search engine.
+.TP
 .B \-private
 Enable private browsing mode.
+.TP
+.B \-private-toggle
+Toggle private browsing mode.
 .TP
 .B \-setDefaultBrowser
 Set \fBfirefox\fR as the default browser.
 
 .SH FILES
-\fI${TRUEPREFIX}/bin/firefox\fR - shell script wrapping \fBfirefox\fR
-.br
-\fI${TRUEPREFIX}/lib/firefox-4.0/firefox-bin\fR - \fBfirefox\fR executable
+\fI${TRUEPREFIX}/bin/firefox\fR - \fBfirefox\fR executable
 
 .SH VERSION
-${VER}
+${MOZILLA_VERSION}
 
 .SH BUGS
 To report a bug, please visit \fIhttps://bugzilla.mozilla.org/\fR
