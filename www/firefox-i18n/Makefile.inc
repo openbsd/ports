@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.6 2012/06/16 10:21:57 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2012/08/07 08:56:55 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 PKG_ARCH =	*
 
-FV =		13.0.1
+FV =		14.0.1
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
