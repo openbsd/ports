@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.244 2012/07/19 07:20:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.245 2012/08/07 13:40:47 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -115,6 +115,7 @@
      SUBDIR += manaplus
      SUBDIR += meandmyshadow
      SUBDIR += micropolis
+     SUBDIR += minetest
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
      SUBDIR += monadius
