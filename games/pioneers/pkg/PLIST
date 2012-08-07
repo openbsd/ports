@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/17 19:23:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/08/07 03:40:44 bentley Exp $
 @conflict gnocatan-*
 @pkgpath games/gnocatan
 @bin bin/pioneers
@@ -16,6 +16,8 @@
 share/applications/pioneers-editor.desktop
 share/applications/pioneers-server.desktop
 share/applications/pioneers.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/pioneers/
 share/gnome/help/pioneers/C/
 share/gnome/help/pioneers/C/images/
@@ -58,6 +60,12 @@ share/gnome/help/pioneers/C/images/trade.png
 share/gnome/help/pioneers/C/images/wool.png
 share/gnome/help/pioneers/C/legal.xml
 share/gnome/help/pioneers/C/pioneers.xml
+share/icons/hicolor/48x48/apps/pioneers-editor.png
+share/icons/hicolor/48x48/apps/pioneers-server.png
+share/icons/hicolor/48x48/apps/pioneers.png
+share/icons/hicolor/scalable/apps/pioneers-editor.svg
+share/icons/hicolor/scalable/apps/pioneers-server.svg
+share/icons/hicolor/scalable/apps/pioneers.svg
 share/locale/af/LC_MESSAGES/pioneers.mo
 share/locale/cs/LC_MESSAGES/pioneers.mo
 share/locale/da/LC_MESSAGES/pioneers.mo
@@ -72,6 +80,7 @@ share/locale/ja/LC_MESSAGES/pioneers.mo
 share/locale/nl/LC_MESSAGES/pioneers.mo
 share/locale/pt/LC_MESSAGES/pioneers.mo
 share/locale/sv/LC_MESSAGES/pioneers.mo
+share/omf/
 share/omf/pioneers/
 share/omf/pioneers/pioneers-C.omf
 share/pioneers/
@@ -94,6 +103,7 @@ share/pioneers/henjes.game
 share/pioneers/iles.game
 share/pioneers/lobby.game
 share/pioneers/lorindol.game
+share/pioneers/north_america.game
 share/pioneers/pond.game
 share/pioneers/seafarers-gold.game
 share/pioneers/seafarers.game
@@ -162,25 +172,44 @@ share/pioneers/themes/Wesnoth-like/mountain.png
 share/pioneers/themes/Wesnoth-like/pasture.png
 share/pioneers/themes/Wesnoth-like/sea.png
 share/pioneers/themes/Wesnoth-like/theme.cfg
+share/pioneers/themes/ccFlickr/
+share/pioneers/themes/ccFlickr/ATTRIB
+share/pioneers/themes/ccFlickr/board.png
+share/pioneers/themes/ccFlickr/brick.png
+share/pioneers/themes/ccFlickr/desert.png
+share/pioneers/themes/ccFlickr/gold.png
+share/pioneers/themes/ccFlickr/grain.png
+share/pioneers/themes/ccFlickr/lumber.png
+share/pioneers/themes/ccFlickr/ore.png
+share/pioneers/themes/ccFlickr/port-brick.png
+share/pioneers/themes/ccFlickr/port-gold.png
+share/pioneers/themes/ccFlickr/port-grain.png
+share/pioneers/themes/ccFlickr/port-lumber.png
+share/pioneers/themes/ccFlickr/port-ore.png
+share/pioneers/themes/ccFlickr/port-wool.png
+share/pioneers/themes/ccFlickr/sea.png
+share/pioneers/themes/ccFlickr/theme.cfg
+share/pioneers/themes/ccFlickr/wool.png
+share/pioneers/ubuntuland.game
 share/pioneers/x.game
 share/pixmaps/pioneers/
 share/pixmaps/pioneers-editor.png
 share/pixmaps/pioneers-server.png
 share/pixmaps/pioneers.png
 share/pixmaps/pioneers/brick.png
-share/pixmaps/pioneers/bridge.png
-share/pixmaps/pioneers/city.png
-share/pixmaps/pioneers/city_wall.png
-share/pixmaps/pioneers/develop.png
-share/pixmaps/pioneers/dice.png
-share/pixmaps/pioneers/finish.png
+share/pixmaps/pioneers/bridge.svg
+share/pixmaps/pioneers/city.svg
+share/pixmaps/pioneers/city_wall.svg
+share/pixmaps/pioneers/develop.svg
+share/pixmaps/pioneers/dice.svg
+share/pixmaps/pioneers/finish.svg
 share/pixmaps/pioneers/grain.png
 share/pixmaps/pioneers/lumber.png
 share/pixmaps/pioneers/ore.png
-share/pixmaps/pioneers/road.png
-share/pixmaps/pioneers/settlement.png
-share/pixmaps/pioneers/ship.png
-share/pixmaps/pioneers/ship_move.png
+share/pixmaps/pioneers/road.svg
+share/pixmaps/pioneers/settlement.svg
+share/pixmaps/pioneers/ship.svg
+share/pixmaps/pioneers/ship_move.svg
 share/pixmaps/pioneers/splash.png
 share/pixmaps/pioneers/style-ai.png
 share/pixmaps/pioneers/style-human-1.png
@@ -191,7 +220,9 @@ share/pixmaps/pioneers/style-human-5.png
 share/pixmaps/pioneers/style-human-6.png
 share/pixmaps/pioneers/style-human-7.png
 share/pixmaps/pioneers/style-human.png
-share/pixmaps/pioneers/trade.png
+share/pixmaps/pioneers/trade.svg
 share/pixmaps/pioneers/wool.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
