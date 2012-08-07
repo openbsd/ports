@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2012/06/11 15:38:34 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2012/08/07 09:02:33 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -21,12 +21,9 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/ablistWindow48.pn
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow16.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/addressbookWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bmPropsWindow48.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window16.png
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmark-window48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmarkproperties.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmarkproperties16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/bookmarkproperties48.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default16.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/default48.png
@@ -54,6 +51,9 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/messengerWindow48
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow16.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/msgcomposeWindow48.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/places.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/places16.png
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/places48.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/${MOZILLA_PROJECT}.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/venkman-window.png
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/chrome/icons/default/venkman-window16.png

@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.105 2012/06/17 18:21:43 landry Exp $
+# $OpenBSD: Makefile,v 1.106 2012/08/07 09:02:33 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.10.1
+MOZILLA_VERSION=	2.11
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-1.5beta1
-ENIG_V =		1.4.2
+PKGNAME-lightning =	lightning-seamonkey-1.6beta1
+ENIG_V =		1.4.3
 PKGNAME-enigmail =	enigmail-seamonkey-${ENIG_V}
 EPOCH-lightning =	0
 EPOCH-enigmail =	0
-REVISION-lightning =	0
-REVISION-enigmail =	0
 
 SO_VERSION=	25.0
 # NOTE: Must bump minor version if any shlib's are removed from the

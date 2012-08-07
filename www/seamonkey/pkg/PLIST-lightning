@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lightning,v 1.9 2012/06/11 15:38:33 landry Exp $
+@comment $OpenBSD: PLIST-lightning,v 1.10 2012/08/07 09:02:33 landry Exp $
 @conflict lightning-seamonkey-<=1.0b1
 @pkgpath productivity/sunbird,-seamonkey
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/calendar-timezones@mozilla.org/
@@ -362,6 +362,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a4
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calAlarmUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calAuthUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calHashedArray.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calItemUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calIteratorUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calItipUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103}/modules/calPrintUtils.jsm

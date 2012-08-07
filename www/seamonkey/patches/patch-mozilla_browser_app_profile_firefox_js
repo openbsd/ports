@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.9 2012/06/11 15:38:33 landry Exp $
---- mozilla/browser/app/profile/firefox.js.orig	Fri May 18 06:10:34 2012
-+++ mozilla/browser/app/profile/firefox.js	Fri May 18 09:27:57 2012
-@@ -152,7 +152,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
+$OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.10 2012/08/07 09:02:33 landry Exp $
+--- mozilla/browser/app/profile/firefox.js.orig	Wed Jun 13 03:44:46 2012
++++ mozilla/browser/app/profile/firefox.js	Sun Jun 17 19:57:19 2012
+@@ -157,7 +157,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
  pref("app.update.certs.2.commonName", "aus3.mozilla.org");
  
  // Whether or not app updates are enabled
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.9 2012/06/11 15:38:33
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
-@@ -596,7 +596,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
+@@ -616,7 +616,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
  pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
  
  // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
@@ -19,7 +19,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.9 2012/06/11 15:38:33
  pref("plugins.hide_infobar_for_outdated_plugin", false);
  
  #ifdef XP_MACOSX
-@@ -720,10 +720,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+@@ -742,10 +742,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
  // Safe browsing does nothing unless this pref is set
@@ -32,7 +32,7 @@ $OpenBSD: patch-mozilla_browser_app_profile_firefox_js,v 1.9 2012/06/11 15:38:33
  
  // Non-enhanced mode (local url lists) URL list to check for updates
  pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -777,10 +777,8 @@ pref("browser.EULA.version", 3);
+@@ -799,10 +799,8 @@ pref("browser.EULA.version", 3);
  pref("browser.rights.version", 3);
  pref("browser.rights.3.shown", false);
  

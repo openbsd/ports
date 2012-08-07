@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.14 2012/08/07 09:02:33 landry Exp $
+Force-disable gconf, configure arg not used
+--- configure.in.orig	Sun Jul 15 13:51:36 2012
++++ configure.in	Tue Jul 17 21:17:24 2012
+@@ -4992,14 +4992,7 @@ dnl ==================================================
+ 
+ # The GNOME component is built if one of
+ # gnome-vfs, gio, gconf or libnotify is available.
+-if test "$MOZ_ENABLE_GCONF" || \
+-   test "$MOZ_ENABLE_GNOMEVFS" || \
+-   test "$MOZ_ENABLE_GIO" || \
+-   test "$MOZ_ENABLE_LIBNOTIFY"; then
+-    MOZ_ENABLE_GNOME_COMPONENT=1
+-else
+-    MOZ_ENABLE_GNOME_COMPONENT=
+-fi
++MOZ_ENABLE_GNOME_COMPONENT=
+ AC_SUBST(MOZ_ENABLE_GNOME_COMPONENT)
+ 
+ dnl ========================================================

@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/06/11 15:38:33 landry Exp $
---- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Fri May 18 06:11:01 2012
-+++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Fri May 18 09:27:58 2012
+$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.10 2012/08/07 09:02:33 landry Exp $
+--- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Wed Jun 13 03:45:32 2012
++++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Sun Jun 17 19:57:21 2012
 @@ -111,6 +111,7 @@
  #include "secerr.h"
  #include "sslerr.h"
@@ -59,7 +59,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
      }
      else
      {
-@@ -1881,6 +1884,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
+@@ -1907,6 +1910,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
  
        LaunchSmartCardThreads();
  
@@ -68,7 +68,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
        PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("NSS Initialization done\n"));
      }
    }
-@@ -2023,16 +2028,6 @@ nsNSSComponent::Init()
+@@ -2049,16 +2054,6 @@ nsNSSComponent::Init()
    if (mClientAuthRememberService)
      mClientAuthRememberService->Init();
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
    InitializeCRLUpdateTimer();
    RegisterPSMContentListener();
  
-@@ -2247,6 +2242,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2273,6 +2268,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      DoProfileChangeTeardown(aSubject);
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_CHANGE_TEARDOWN_VETO_TOPIC) == 0) {
@@ -93,7 +93,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
      mShutdownObjectList->allowUI();
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_BEFORE_CHANGE_TOPIC) == 0) {
-@@ -2294,6 +2290,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2320,6 +2316,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      InitializeCRLUpdateTimer();
    }
    else if (nsCRT::strcmp(aTopic, NS_XPCOM_SHUTDOWN_OBSERVER_ID) == 0) {
@@ -101,7 +101,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
  
      PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("nsNSSComponent: XPCom shutdown observed\n"));
  
-@@ -2584,6 +2581,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
+@@ -2610,6 +2607,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
  void
  nsNSSComponent::DoProfileChangeTeardown(nsISupports* aSubject)
  {
@@ -111,7 +111,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
    bool callVeto = false;
  
    if (!mShutdownObjectList->ifPossibleDisallowUI()) {
-@@ -2637,9 +2637,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
+@@ -2663,9 +2663,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
  void
  nsNSSComponent::DoProfileChangeNetRestore()
  {
