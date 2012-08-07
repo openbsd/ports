@@ -1,9 +1,9 @@
-$OpenBSD: patch-Source_JavaScriptCore_wtf_Platform_h,v 1.4 2012/04/03 15:39:35 landry Exp $
+$OpenBSD: patch-Source_JavaScriptCore_wtf_Platform_h,v 1.5 2012/08/07 09:35:38 landry Exp $
 
 Allow webkit to build and run on mips64
 
---- Source/JavaScriptCore/wtf/Platform.h.orig	Tue Mar  6 16:44:16 2012
-+++ Source/JavaScriptCore/wtf/Platform.h	Sat Mar 31 09:21:30 2012
+--- Source/JavaScriptCore/wtf/Platform.h.orig	Wed Aug  1 09:55:05 2012
++++ Source/JavaScriptCore/wtf/Platform.h	Fri Aug  3 16:33:41 2012
 @@ -76,9 +76,14 @@
  
  /* CPU(MIPS) - MIPS 32-bit */
@@ -30,7 +30,7 @@ Allow webkit to build and run on mips64
  #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
  #endif
  
-@@ -898,7 +903,8 @@
+@@ -899,7 +904,8 @@
      || CPU(ALPHA) \
      || CPU(SPARC64) \
      || CPU(S390X) \
