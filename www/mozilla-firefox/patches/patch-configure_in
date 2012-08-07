@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_in,v 1.24 2012/08/07 08:55:40 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=776838
+--- configure.in.orig	Tue Jul 24 11:02:39 2012
++++ configure.in	Tue Jul 24 11:02:51 2012
+@@ -5825,7 +5825,7 @@ if test "$MOZ_GSTREAMER"; then
+                       gstreamer-plugins-base-$GST_API_VERSION)
+     if test -n "$GSTREAMER_LIBS"; then
+        _SAVE_LDFLAGS=$LDFLAGS
+-       LDFLAGS="$LDFLAGS -lgstvideo-$GST_API_VERSION"
++       LDFLAGS="$LDFLAGS $GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"
+        AC_TRY_LINK(,[return 0;],_HAVE_LIBGSTVIDEO=1,_HAVE_LIBGSTVIDEO=)
+        if test -n "$_HAVE_LIBGSTVIDEO" ; then
+           GSTREAMER_LIBS="$GSTREAMER_LIBS -lgstvideo-$GST_API_VERSION"

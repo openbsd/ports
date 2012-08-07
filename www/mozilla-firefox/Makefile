@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.203 2012/08/04 15:01:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.204 2012/08/07 08:55:40 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,13 +6,12 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	13.0.1
-REVISION =		0
+MOZILLA_VERSION =	14.0.1
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
-SO_VERSION =	32.0
+SO_VERSION =	33.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc \
@@ -42,6 +41,14 @@ CONFIGURE_ARGS +=	--with-system-libevent=/usr/ --disable-gconf
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
 
+CONFIGURE_ARGS +=	--enable-gstreamer
+LIB_DEPENDS +=	multimedia/gstreamer-0.10/plugins-base
+
+WANTLIB += gmodule-2.0 gstapp-0.10 gstbase-0.10 gstreamer-0.10
+WANTLIB += gstvideo-0.10 xml2
+
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
+
 .if ${MACHINE_ARCH:Msparc64}
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 .endif
@@ -50,7 +57,7 @@ CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 BUILD_DEPENDS +=	archivers/unzip
 
 # ensure we depend on cairo with tee backend enabled
-LIB_DEPENDS =	graphics/cairo>=1.10.2p0
+LIB_DEPENDS +=	graphics/cairo>=1.10.2p0
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
 

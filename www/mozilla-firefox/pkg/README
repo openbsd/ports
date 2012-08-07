@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/08/04 15:01:50 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2012/08/07 08:55:40 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -52,3 +52,8 @@ If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run 'firefox -g' to run firefox inside gdb, so
 that you can gather debugging logs and traces.
 Bug reports without that information will be ignored.
+
+H.264 support
+
+Due to licensing reasons, you have to manually install the
+gstreamer-ffmpeg package to play H.264 videos.

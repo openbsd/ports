@@ -1,7 +1,7 @@
-$OpenBSD: patch-gfx_thebes_Makefile_in,v 1.9 2012/06/11 15:29:56 landry Exp $
---- gfx/thebes/Makefile.in.orig	Wed May  2 05:16:45 2012
-+++ gfx/thebes/Makefile.in	Wed May  9 23:06:34 2012
-@@ -389,6 +389,10 @@ ifeq ($(MOZ_WIDGET_TOOLKIT),gtk2)
+$OpenBSD: patch-gfx_thebes_Makefile_in,v 1.10 2012/08/07 08:55:40 landry Exp $
+--- gfx/thebes/Makefile.in.orig	Wed Jun 13 01:46:41 2012
++++ gfx/thebes/Makefile.in	Sun Jun 17 12:04:02 2012
+@@ -388,6 +388,10 @@ ifeq ($(MOZ_WIDGET_TOOLKIT),gtk2)
  CXXFLAGS += $(MOZ_PANGO_CFLAGS)
  endif
  

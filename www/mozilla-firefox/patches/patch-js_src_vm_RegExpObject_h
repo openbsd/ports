@@ -1,8 +1,8 @@
-$OpenBSD: patch-js_src_vm_RegExpObject_h,v 1.5 2012/06/11 15:29:56 landry Exp $
+$OpenBSD: patch-js_src_vm_RegExpObject_h,v 1.6 2012/08/07 08:55:40 landry Exp $
 https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
---- js/src/vm/RegExpObject.h.orig	Wed May  2 05:16:54 2012
-+++ js/src/vm/RegExpObject.h	Wed May  9 23:24:14 2012
-@@ -51,10 +51,8 @@
+--- js/src/vm/RegExpObject.h.orig	Wed Jun 13 01:46:48 2012
++++ js/src/vm/RegExpObject.h	Sun Jun 17 12:04:02 2012
+@@ -52,10 +52,8 @@
  #include "yarr/Yarr.h"
  #if ENABLE_YARR_JIT
  #include "yarr/YarrJIT.h"
@@ -14,7 +14,7 @@ https://hg.mozilla.org/mozilla-central/rev/f5a3a7b9c6b0
  
  /*
   * JavaScript Regular Expressions
-@@ -112,68 +110,51 @@ namespace detail {
+@@ -113,68 +111,51 @@ namespace detail {
  
  class RegExpCode
  {

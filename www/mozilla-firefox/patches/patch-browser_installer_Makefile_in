@@ -1,0 +1,19 @@
+$OpenBSD: patch-browser_installer_Makefile_in,v 1.1 2012/08/07 08:55:40 landry Exp $
+https://hg.mozilla.org/mozilla-central/rev/ede54971747f
+--- browser/installer/Makefile.in.orig	Sun Jun 17 17:05:01 2012
++++ browser/installer/Makefile.in	Sun Jun 17 17:05:53 2012
+@@ -78,6 +78,14 @@ ifeq (gtk2, $(MOZ_WIDGET_TOOLKIT))
+ DEFINES += -DMOZ_GTK2=1
+ endif
+ 
++ifdef MOZ_NATIVE_NSPR
++DEFINES += -DMOZ_NATIVE_NSPR=1
++endif
++
++ifdef MOZ_NATIVE_NSS
++DEFINES += -DMOZ_NATIVE_NSS=1
++endif
++
+ ifdef NSS_DISABLE_DBM
+ DEFINES += -DNSS_DISABLE_DBM=1
+ endif

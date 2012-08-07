@@ -1,0 +1,15 @@
+$OpenBSD: patch-content_html_content_src_nsHTMLMediaElement_cpp,v 1.1 2012/08/07 08:55:40 landry Exp $
+https://hg.mozilla.org/mozilla-central/raw-rev/45118cc6518b
+--- content/html/content/src/nsHTMLMediaElement.cpp.orig	Fri Jul 13 23:42:49 2012
++++ content/html/content/src/nsHTMLMediaElement.cpp	Wed Jul 25 00:02:48 2012
+@@ -1942,6 +1942,10 @@ bool nsHTMLMediaElement::ShouldHandleMediaType(const c
+   if (IsWebMType(nsDependentCString(aMIMEType)))
+     return true;
+ #endif
++#ifdef MOZ_GSTREAMER
++  if (IsH264Type(nsDependentCString(aMIMEType)))
++    return true;
++#endif
+   // We should not return true for Wave types, since there are some
+   // Wave codecs actually in use in the wild that we don't support, and
+   // we should allow those to be handled by plugins or helper apps.
