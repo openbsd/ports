@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/23 15:48:06 okan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/07 14:03:58 okan Exp $
+bin/gmdb
 bin/remotetest.pl
 ${P5SITE}/GRID/
 ${P5SITE}/GRID/Machine/
@@ -6,11 +7,15 @@ ${P5SITE}/GRID/Machine.pm
 ${P5SITE}/GRID/Machine.pod
 ${P5SITE}/GRID/Machine/Core.pm
 ${P5SITE}/GRID/Machine/Core.pod
+${P5SITE}/GRID/Machine/Group.pm
+${P5SITE}/GRID/Machine/Group.pod
 ${P5SITE}/GRID/Machine/IOHandle.pm
 ${P5SITE}/GRID/Machine/IOHandle.pod
 ${P5SITE}/GRID/Machine/MakeAccessors.pm
 ${P5SITE}/GRID/Machine/Message.pm
 ${P5SITE}/GRID/Machine/Message.pod
+${P5SITE}/GRID/Machine/Process.pm
+${P5SITE}/GRID/Machine/Process.pod
 ${P5SITE}/GRID/Machine/REMOTE.pm
 ${P5SITE}/GRID/Machine/REMOTE.pod
 ${P5SITE}/GRID/Machine/RIOHandle.pm
@@ -21,9 +26,11 @@ ${P5SITE}/GRID/Machine/remotedebugtut.pod
 @man man/man1/remotetest.pl.1
 @man man/man3p/GRID::Machine.3p
 @man man/man3p/GRID::Machine::Core.3p
+@man man/man3p/GRID::Machine::Group.3p
 @man man/man3p/GRID::Machine::IOHandle.3p
 @man man/man3p/GRID::Machine::MakeAccessors.3p
 @man man/man3p/GRID::Machine::Message.3p
+@man man/man3p/GRID::Machine::Process.3p
 @man man/man3p/GRID::Machine::REMOTE.3p
 @man man/man3p/GRID::Machine::RIOHandle.3p
 @man man/man3p/GRID::Machine::Result.3p
