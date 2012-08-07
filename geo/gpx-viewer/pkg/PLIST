@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/07/17 07:28:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/08/07 13:14:45 landry Exp $
 @bin bin/gpx-viewer
 share/applications/gpx-viewer.desktop
 share/gpx-viewer/
@@ -25,8 +25,6 @@ share/icons/hicolor/256x256/apps/gpx-viewer.png
 share/icons/hicolor/32x32/apps/gpx-viewer.png
 share/icons/hicolor/48x48/apps/gpx-viewer.png
 share/icons/hicolor/scalable/apps/gpx-viewer.svg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gpx-viewer.mo
 share/locale/cs/LC_MESSAGES/gpx-viewer.mo
 share/locale/de/LC_MESSAGES/gpx-viewer.mo
@@ -36,7 +34,10 @@ share/locale/it/LC_MESSAGES/gpx-viewer.mo
 share/locale/ru/LC_MESSAGES/gpx-viewer.mo
 share/locale/uk/LC_MESSAGES/gpx-viewer.mo
 share/locale/zh_CN/LC_MESSAGES/gpx-viewer.mo
+share/mime/packages/gpx-viewer.xml
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
