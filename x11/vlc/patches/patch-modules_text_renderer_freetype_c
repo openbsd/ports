@@ -1,0 +1,32 @@
+$OpenBSD: patch-modules_text_renderer_freetype_c,v 1.1 2012/08/07 07:35:09 sthen Exp $
+
+Fix a possible buffer corruption.
+
+--- modules/text_renderer/freetype.c.orig	Sun Aug  5 21:31:50 2012
++++ modules/text_renderer/freetype.c	Sun Aug  5 21:33:41 2012
+@@ -505,6 +505,7 @@ static char* FontConfig_Select( FcConfig* config, cons
+     FcPattern *pat, *p_pat;
+     FcChar8* val_s;
+     FcBool val_b;
++    char *ret = NULL;
+ 
+     /* Create a pattern and fills it */
+     pat = FcPatternCreate();
+@@ -561,14 +562,11 @@ static char* FontConfig_Select( FcConfig* config, cons
+                             "the requested one: '%s' != '%s'\n",
+                             (const char*)val_s, family );   */
+ 
+-    if( FcResultMatch != FcPatternGetString( p_pat, FC_FILE, 0, &val_s ) )
+-    {
+-        FcPatternDestroy( p_pat );
+-        return NULL;
+-    }
++    if( FcResultMatch == FcPatternGetString( p_pat, FC_FILE, 0, &val_s ) )
++        ret = strdup( (const char*)val_s );
+ 
+     FcPatternDestroy( p_pat );
+-    return strdup( (const char*)val_s );
++    return ret;
+ }
+ #endif
+ 
