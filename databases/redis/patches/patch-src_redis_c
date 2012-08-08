@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
---- src/redis.c.orig	Wed May 23 11:32:58 2012
-+++ src/redis.c	Mon May 28 09:16:01 2012
+$OpenBSD: patch-src_redis_c,v 1.12 2012/08/08 11:24:05 dcoppa Exp $
+--- src/redis.c.orig	Wed Aug  1 11:59:08 2012
++++ src/redis.c	Wed Aug  8 13:10:58 2012
 @@ -33,7 +33,9 @@
  
  #ifdef HAVE_BACKTRACE
@@ -11,7 +11,7 @@ $OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
  #endif /* HAVE_BACKTRACE */
  
  #include <time.h>
-@@ -1808,7 +1811,9 @@ int main(int argc, char **argv) {
+@@ -1809,7 +1811,9 @@ int main(int argc, char **argv) {
  
  #ifdef HAVE_BACKTRACE
  static void *getMcontextEip(ucontext_t *uc) {
@@ -22,7 +22,7 @@ $OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
      return (void*) uc->uc_mcontext.mc_eip;
  #elif defined(__dietlibc__)
      return (void*) uc->uc_mcontext.eip;
-@@ -1837,14 +1842,6 @@ static void *getMcontextEip(ucontext_t *uc) {
+@@ -1838,14 +1842,6 @@ static void *getMcontextEip(ucontext_t *uc) {
  #endif
  }
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
  static void sigsegvHandler(int sig, siginfo_t *info, void *secret) {
      void *trace[100];
      char **messages = NULL;
-@@ -1920,7 +1917,7 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
+@@ -1921,7 +1917,7 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
  "=== REDIS BUG REPORT END. Make sure to include from START to END. ===\n\n"
  "       Please report the crash opening an issue on github:\n\n"
  "           http://github.com/antirez/redis/issues\n\n"
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_redis_c,v 1.11 2012/06/26 13:17:32 jasper Exp $
  );
      /* free(messages); Don't call free() with possibly corrupted memory. */
      if (server.daemonize) unlink(server.pidfile);
-@@ -1936,6 +1933,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
+@@ -1937,6 +1933,14 @@ static void sigsegvHandler(int sig, siginfo_t *info, v
      kill(getpid(),sig);
  }
  #endif /* HAVE_BACKTRACE */
