@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.282 2012/07/10 12:14:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.283 2012/08/08 18:12:35 shadchin Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -29,6 +29,7 @@
      SUBDIR += cmus
      SUBDIR += cplay
      SUBDIR += daapd
+     SUBDIR += deadbeef
      SUBDIR += disc-cover
      SUBDIR += dumb
      SUBDIR += easytag
