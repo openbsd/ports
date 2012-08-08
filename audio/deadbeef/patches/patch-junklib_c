@@ -1,0 +1,11 @@
+$OpenBSD: patch-junklib_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- junklib.c.orig	Sat May 14 16:45:26 2011
++++ junklib.c	Mon May 16 19:22:06 2011
+@@ -23,7 +23,6 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #if HAVE_ICONV
+-  #define LIBICONV_PLUG
+   #include <iconv.h>
+ #elif HAVE_ICU
+   #warning icu

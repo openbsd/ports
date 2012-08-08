@@ -1,0 +1,14 @@
+$OpenBSD: patch-utf8_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- utf8.c.orig	Thu May  3 02:10:22 2012
++++ utf8.c	Tue May 15 23:44:11 2012
+@@ -34,6 +34,10 @@
+ #include "utf8.h"
+ #include "u8_lc_map.h"
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)	__builtin_alloca(size)
++#endif
++
+ static const uint32_t offsetsFromUTF8[6] = {
+     0x00000000UL, 0x00003080UL, 0x000E2080UL,
+     0x03C82080UL, 0xFA082080UL, 0x82082080UL

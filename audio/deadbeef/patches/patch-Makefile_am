@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_am,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- Makefile.am.orig	Wed May 16 22:58:44 2012
++++ Makefile.am	Mon Jun 11 15:09:00 2012
+@@ -43,7 +43,8 @@ deadbeef_SOURCES =\
+ sdkdir = $(pkgincludedir)
+ sdk_HEADERS = deadbeef.h
+ 
+-deadbeef_LDADD = $(LDADD) $(DEPS_LIBS) $(ICONV_LIB) $(DL_LIBS) -lm -lpthread 
++deadbeef_LDADD = $(LDADD) $(DEPS_LIBS) $(INTLLIBS) $(ICONV_LIB) $(DL_LIBS) -lm
++deadbeef_LDFLAGS = -pthread
+ 
+ AM_CFLAGS = $(DEPS_CFLAGS) -std=c99
+ AM_CPPFLAGS = $(DEPS_CFLAGS)

@@ -1,0 +1,36 @@
+$OpenBSD: patch-plugins_musepack_Makefile_am,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- plugins/musepack/Makefile.am.orig	Sun Oct 23 21:16:11 2011
++++ plugins/musepack/Makefile.am	Fri Jun  8 22:14:44 2012
+@@ -2,30 +2,10 @@ if HAVE_MUSEPACK
+ 
+ pkglib_LTLIBRARIES = musepack.la
+ 
+-musepack_la_SOURCES = musepack.c\
+-huffman.c\
+-mpc_bits_reader.c\
+-mpc_decoder.c\
+-mpc_demux.c\
+-mpc_reader.c\
+-requant.c\
+-streaminfo.c\
+-synth_filter.c\
+-crc32.c\
+-decoder.h\
+-huffman.h\
+-internal.h\
+-mpc_bits_reader.h\
+-mpc/mpcdec.h\
+-mpcdec_math.h\
+-mpc/reader.h\
+-requant.h\
+-mpc/streaminfo.h\
+-mpc/mpc_types.h\
+-mpc/minimax.h
++musepack_la_SOURCES = musepack.c
+ 
+ musepack_la_LDFLAGS = -module
+-musepack_la_LIBADD = $(LDADD) -lm
++musepack_la_LIBADD = $(LDADD) -lm -lmpcdec
+ 
+ AM_CFLAGS = $(CFLAGS) -fPIC -std=c99
+ 

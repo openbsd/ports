@@ -1,0 +1,28 @@
+$OpenBSD: patch-plugins_mms_Makefile_am,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- plugins/mms/Makefile.am.orig	Fri Mar  4 01:06:16 2011
++++ plugins/mms/Makefile.am	Sat Jun  9 00:51:44 2012
+@@ -1,22 +1,10 @@
+ if HAVE_MMS
+ mmsdir = $(libdir)/$(PACKAGE)
+ pkglib_LTLIBRARIES = mms.la
+-mms_la_SOURCES = mmsplug.c\
+-	libmms/mms.c\
+-	libmms/mmsh.c\
+-	libmms/mmsx.c\
+-	libmms/uri.c\
+-	libmms/asfheader.h\
+-	libmms/bswap.h\
+-	libmms/mms-common.h\
+-	libmms/mms.h\
+-	libmms/mmsh.h\
+-	libmms/mmsio.h\
+-	libmms/mmsx.h\
+-	libmms/uri.h
++mms_la_SOURCES = mmsplug.c
+ 
+ mms_la_LDFLAGS = -module
+ 
+-mms_la_LIBADD = $(LDADD) $(LIBMMS_LIBS)
++mms_la_LIBADD = $(LDADD) $(LIBMMS_LIBS) -lmms
+ AM_CFLAGS = $(CFLAGS) -std=c99
+ endif

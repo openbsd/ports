@@ -1,0 +1,22 @@
+DeaDBeeF (as in 0xDEADBEEF) is an audio player for GNU/Linux, BSD,
+OpenSolaris and probably other UNIX-like systems.
+
+Some features (more can be found on the homepage):
+
+* mp3, ogg vorbis, flac, ape, wv, wav, cd audio (and many more)
+* ID3v1, ID3v2.2, ID3v2.3, ID3v2.4, APEv2, xing/info tags support
+* no GNOME or KDE dependencies
+* minimize to tray, with scrollwheel volume control
+* drag and drop, both inside the playlist, and from other applications
+* control playback from command line
+* global hotkeys
+* multiple playlists
+* album artwork display
+* 18-band graphical equalizer
+* metadata editor
+* user-customizable groups in playlists
+* user-customizable columns with flexible title formatting
+* radio and podcast support for ogg vorbis, mp3 and aac streams
+* gapless playback
+* plugin support; bundled with lots of plugins, such as global
+  hotkeys and last.fm scrobbler; sdk is included

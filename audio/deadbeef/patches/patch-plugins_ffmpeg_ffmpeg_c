@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_ffmpeg_ffmpeg_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- plugins/ffmpeg/ffmpeg.c.orig	Tue May  8 02:49:13 2012
++++ plugins/ffmpeg/ffmpeg.c	Tue May 15 23:44:47 2012
+@@ -51,6 +51,10 @@
+ 
+ #endif
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)	__builtin_alloca(size)
++#endif
++
+ //#define trace(...) { fprintf(stderr, __VA_ARGS__); }
+ #define trace(fmt,...)
+ 

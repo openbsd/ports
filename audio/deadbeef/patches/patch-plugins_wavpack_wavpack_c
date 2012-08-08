@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_wavpack_wavpack_c,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+--- plugins/wavpack/wavpack.c.orig	Sat Mar 24 16:09:38 2012
++++ plugins/wavpack/wavpack.c	Tue May 15 23:44:23 2012
+@@ -38,6 +38,10 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH D
+ #include <math.h>
+ #include "../../deadbeef.h"
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)	__builtin_alloca(size)
++#endif
++
+ #define min(x,y) ((x)<(y)?(x):(y))
+ #define max(x,y) ((x)>(y)?(x):(y))
+ 

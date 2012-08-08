@@ -1,0 +1,6 @@
+sndiodir = $(libdir)/$(PACKAGE)
+pkglib_LTLIBRARIES = sndio.la
+sndio_la_SOURCES = sndio.c
+sndio_la_LDFLAGS = -module
+sndio_la_LIBADD = $(LDADD) -lsndio
+AM_CFLAGS = $(CFLAGS) -std=c99
