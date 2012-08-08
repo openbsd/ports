@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2012/06/15 11:53:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2012/08/08 10:44:44 sthen Exp $
 @conflict kqemu-*
 @conflict qemu-*
 @pkgpath emulators/kqemu
@@ -38,6 +38,7 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/qemu/
 share/doc/qemu/qemu-doc.html
 share/doc/qemu/qemu-tech.html
+share/doc/qemu/qmp-commands.txt
 share/examples/qemu/
 share/examples/qemu/qemu-ifdown
 @mode 755
