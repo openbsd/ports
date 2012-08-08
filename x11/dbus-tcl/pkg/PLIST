@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/08 11:45:03 stu Exp $
+%%SHARED%%
+lib/tcl/dbus-tcl/
+lib/tcl/dbus-tcl/pkgIndex.tcl
+@man man/mann/dbus-tcl.n
+share/doc/dbus-tcl/
+share/doc/dbus-tcl/dbus-tcl.html
+share/doc/dbus-tcl/license.terms
+share/doc/pkg-readmes/${FULLPKGNAME}

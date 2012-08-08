@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.1.1.1 2012/08/08 11:45:03 stu Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+If used with non-threaded Tcl or an executable that is
+not linked with libpthread then it will be necessary to
+set "LD_PRELOAD=/usr/lib/libpthread.so" in the environment.

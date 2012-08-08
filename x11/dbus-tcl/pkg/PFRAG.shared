@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/08/08 11:45:03 stu Exp $
+@lib lib/tcl/dbus-tcl/libdbus-tcl10.so.${LIBdbus-tcl10_VERSION}
