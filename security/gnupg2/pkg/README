@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.1 2012/08/08 15:10:02 dcoppa Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+In order to use a card reader other than the few ones supported by
+GnuPG's internal CCID driver, ccid from security/ccid needs to be
+installed.
