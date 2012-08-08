@@ -1,0 +1,9 @@
+DBus-Intf is a Tcl library for easily providing
+an introspectable DBus interface to Tcl programs.
+
+Supports standard DBus interfaces and calls:
+  org.freedesktop.DBus.Peer, Properties, and Introspectable.
+  org.freedesktop.DBus.Properties.Get, Set, and GetAll.
+
+Provides introspection of methods, signals, and properties.
+Responds to org.freedesktop.DBus.Peer.Ping requests.

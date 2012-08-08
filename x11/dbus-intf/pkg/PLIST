@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/08 11:46:35 stu Exp $
+lib/tcl/dbus-intf/
+lib/tcl/dbus-intf/dbus-intf.tcl
+lib/tcl/dbus-intf/pkgIndex.tcl
+@man man/mann/dbus-intf.n
+share/doc/dbus-intf/
+share/doc/dbus-intf/dbus-intf.html
+share/doc/dbus-intf/license.terms
