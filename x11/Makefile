@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.493 2012/08/05 09:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.494 2012/08/08 11:48:34 stu Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -27,12 +27,15 @@
      SUBDIR += bluetile
      SUBDIR += bricons
      SUBDIR += bwidget
+     SUBDIR += byzi
      SUBDIR += chbg
      SUBDIR += compiz
      SUBDIR += ctwm
      SUBDIR += dbus
      SUBDIR += dbus-glib
+     SUBDIR += dbus-intf
      SUBDIR += dbus-python
+     SUBDIR += dbus-tcl
      SUBDIR += dclock
      SUBDIR += devilspie
      SUBDIR += dmenu
