@@ -1,7 +1,26 @@
-$OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
---- get_iplayer.orig	Sat Jun  2 17:37:17 2012
-+++ get_iplayer	Thu Jun 28 16:08:52 2012
-@@ -311,6 +311,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
+$OpenBSD: patch-get_iplayer,v 1.50 2012/08/08 23:17:28 sthen Exp $
+--- get_iplayer.orig	Thu Aug  9 00:12:51 2012
++++ get_iplayer	Thu Aug  9 00:12:46 2012
+@@ -130,8 +130,8 @@ my $opt_format = {
+ 	pidrecursive	=> [ 1, "pidrecursive|pid-recursive!", 'Recording', '--pid-recursive', "When used with --pid record all the embedded pids if the pid is a series or brand pid."],
+ 	proxy		=> [ 0, "proxy|p=s", 'Recording', '--proxy, -p <url>', "Web proxy URL e.g. 'http://USERNAME:PASSWORD\@SERVER:PORT' or 'http://SERVER:PORT'"],
+ 	raw		=> [ 0, "raw!", 'Recording', '--raw', "Don't transcode or change the recording/stream in any way (i.e. radio/realaudio, rtmp/flv)"],
+-	start		=> [ 1, "start=s", 'Recording', '--start <secs>', "Recording/streaming start offset (rtmp and realaudio only)"],
+-	stop		=> [ 1, "stop=s", 'Recording', '--stop <secs>', "Recording/streaming stop offset (can be used to limit live rtmp recording length) rtmp and realaudio only"],
++	start		=> [ 1, "start=s", 'Recording', '--start <secs|hh:mm:ss>', "Recording/streaming start offset (rtmp and realaudio only)"],
++	stop		=> [ 1, "stop=s", 'Recording', '--stop <secs|hh:mm:ss>', "Recording/streaming stop offset (can be used to limit live rtmp recording length) rtmp and realaudio only"],
+ 	suboffset	=> [ 1, "suboffset=n", 'Recording', '--suboffset <offset>', "Offset the subtitle timestamps by the specified number of milliseconds"],
+ 	subtitles	=> [ 2, "subtitles|subs!", 'Recording', '--subtitles', "Download subtitles into srt/SubRip format if available and supported"],
+ 	subsonly	=> [ 1, "subtitlesonly|subsonly|subtitles-only|subs-only!", 'Recording', '--subtitles-only', "Only download the subtitles, not the programme"],
+@@ -245,6 +245,7 @@ my $opt_format = {
+ 	mplayer		=> [ 1, "mplayer=s", 'External Program', '--mplayer <path>', "Location of mplayer binary"],
+ 
+ 	# Tagging
++	noartwork => [ 1, "noartwork|no-artwork!", 'Tagging', '--no-artwork', "Do not embed thumbnail image in output file.  All other metadata values will be written."],
+ 	notag => [ 1, "notag|no-tag!", 'Tagging', '--no-tag', "Do not tag downloaded programmes"],
+ 	tag_cnid => [ 1, "tagcnid|tag-cnid!", 'Tagging', '--tag-cnid', "AtomicParsley supports --cnID argument to add catalog ID used for combining HD and SD versions in iTunes"],
+ 	tag_fulltitle => [ 1, "tagfulltitle|tag-fulltitle!", 'Tagging', '--tag-fulltitle', "Use complete title (including series) instead of shorter episode title"],
+@@ -311,6 +312,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
  $opt->{stdout} = 1 if $opt_pre->{stdout} || $opt_pre->{stream};
@@ -9,7 +28,7 @@ $OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
  
  # show version and exit
  if ( $opt_pre->{showver} ) {
-@@ -347,7 +348,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -347,7 +349,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -18,7 +37,21 @@ $OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -749,7 +750,7 @@ sub init_search {
+@@ -534,6 +536,13 @@ if ( $opt->{webrequest} ) {
+ 	delete $opt_cmdline->{webrequest};
+ }
+ 
++# process --start and --stop if necessary
++foreach ('start', 'stop') {
++	if ($opt->{$_} && $opt->{$_} =~ /(\d\d):(\d\d)(:(\d\d))?/) {
++		$opt->{$_} = $1 * 3600 +  $2 * 60 + $4;
++	}
++}
++
+ # Add --search option to @search_args if specified
+ if ( defined $opt->{search} ) {
+ 	push @search_args, $opt->{search};
+@@ -749,7 +758,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,7 +60,73 @@ $OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -9646,7 +9647,7 @@ sub tag_file_id3 {
+@@ -4309,7 +4318,7 @@ sub tag_file {
+ 	# return if file does not exist
+ 	return if ! -f $prog->{filename};
+ 	# download thumbnail if necessary
+-	$prog->download_thumbnail if ( ! -f $prog->{thumbfile} );
++	$prog->download_thumbnail if ( ! -f $prog->{thumbfile} && ! $opt->{noartwork} );
+ 	# create metadata
+ 	my $meta = $prog->tag_metadata;
+ 	# tag file
+@@ -5033,9 +5042,19 @@ sub get_verpids {
+ 		# Live TV
+ 		if ( m{\s+simulcast="true"} ) {
+ 			$version = 'default';
+-			$verpid = "http://www.bbc.co.uk/emp/simulcast/".$1.".xml" if m{\s+live="true"\s+identifier="(.+?)"};
++			# <item kind="programme" live="true" liverewind="true" identifier="bbc_two_england" group="bbc_two_england" simulcast="true" availability_class="liverewind">
++			$verpid = "http://open.live.bbc.co.uk/mediaselector/5/select/format/xml/version/2.0/vpid/".$2."/mediaset/pc/" if m{\s+live="true"\s+(liverewind="true"\s+)?identifier="(.+?)"};
++			# old media selector URL - above seems to work fine with simulcast tv channels
++			# $verpid = "http://www.bbc.co.uk/emp/simulcast/".$2.".xml" if m{\s+live="true"\s+(liverewind="true"\s+)?identifier="(.+?)"};
+ 			main::logger "INFO: Using Live TV: $verpid\n" if $opt->{verbose} && $verpid;
+ 
++		# Live TV - not simulcast
++		} elsif ( m{kind="programme"} && m{\s+live="true"\s} ) {
++			$version = 'default';
++			# <item kind="programme" duration="29400" identifier="p00w33n1" group="p00w2rxx" publisher="pips" live="true" availability_class="liverewind" >
++			$verpid = "http://open.live.bbc.co.uk/mediaselector/5/select/format/xml/version/2.0/vpid/".$2."/mediaset/pc/" if m{\s+live="true"\s+(liverewind="true"\s+)?identifier="(.+?)"};
++			main::logger "INFO: Using Live TV non-simulcast: $verpid\n" if $opt->{verbose} && $verpid;
++
+ 		# Live/Non-live EMP tv/radio XML URL
+ 		} elsif ( $prog->{pid} =~ /^http/i && $url =~ /^http.+xml$/ ) {
+ 			$version = 'default';
+@@ -5059,7 +5078,7 @@ sub get_verpids {
+ 			main::logger "INFO: Using Live/Non-live EMP tv/radio: $verpid\n" if $opt->{verbose} && $verpid;
+ 
+ 		# Live radio
+-		} elsif ( m{\s+live="true"\s} ) {
++		} elsif ( m{kind="radioProgramme"} && m{\s+live="true"\s} ) {
+ 			# Try to get live stream version and verpid
+ 			# <item kind="radioProgramme" live="true" identifier="bbc_radio_one" group="bbc_radio_one">
+ 			$verpid = $1 if m{\s+live="true"\s+identifier="(.+?)"};
+@@ -5846,6 +5865,9 @@ sub get_stream_data_cdn {
+ 			priority	=> $cattribs->{priority},
+ 		};
+ 
++		# Allow for connections that have 'supplier' set and not 'kind'
++		$cattribs->{kind} = $cattribs->{supplier} if not defined $cattribs->{kind};
++
+ 		# Akamai CDN
+ 		if ( $cattribs->{kind} eq 'akamai' ) {
+ 			# Set the live flag if this is not an ondemand stream
+@@ -6078,6 +6100,7 @@ sub get_stream_data {
+ 		push @medias, $mattribs;
+ 
+ 	# Live simulcast verpid: http://www.bbc.co.uk/emp/simulcast/bbc_one_london.xml
++	# Live tv streams: http://open.live.bbc.co.uk/mediaselector/5/select/format/xml/version/2.0/vpid/p00w33n1/mediaset/pc/
+ 	} elsif ( $verpid =~ /http:/ ) {
+ 		$xml = main::request_url_retry( $ua, $verpid, 3, undef, undef, 1 );
+ 		main::logger "\n$xml\n" if $opt->{debug};
+@@ -9622,7 +9645,7 @@ sub tag_file_id3 {
+ 			$mp3->select_id3v2_frame_by_descr('TGID', $tags->{podcastGUID});
+ 		}
+ 		# add artwork if available
+-		if ( -f $meta->{thumbfile} ) {
++		if ( -f $meta->{thumbfile}  && ! $opt->{noartwork} ) {
+ 			my $data;
+ 			open(THUMB, $meta->{thumbfile});
+ 			binmode(THUMB);
+@@ -9646,7 +9669,7 @@ sub tag_file_id3 {
  # add basic ID3 tag with id3v2
  sub tag_file_id3_basic {
  	my ($self, $meta, $tags) = @_;
@@ -36,3 +135,12 @@ $OpenBSD: patch-get_iplayer,v 1.49 2012/06/28 15:40:25 sthen Exp $
  		main::logger "INFO: ID3 BASIC tagging \U$meta->{ext}\E file\n";
  		# notify about limitations of basic tagging
  		if ( $opt->{verbose} ) {
+@@ -9767,7 +9790,7 @@ sub tag_file_mp4 {
+ 			);
+ 		}
+ 		# add artwork if available
+-		push @cmd, ( '--artwork', $meta->{thumbfile} ) if -f $meta->{thumbfile};
++		push @cmd, ( '--artwork', $meta->{thumbfile} ) if ( -f $meta->{thumbfile} && ! $opt->{noartwork} );
+ 		# run atomicparsley command
+ 		if ( main::run_cmd( 'STDERR', @cmd ) ) {
+ 			main::logger "WARNING: Failed to tag \U$meta->{ext}\E file\n";
