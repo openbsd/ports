@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/17 18:05:00 jakob Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/08 10:18:51 giovanni Exp $
 
 COMMENT=		Berkeley DB module
 SHARED_ONLY=		Yes
 
-DISTNAME=		BerkeleyDB-0.43
-REVISION=		2
+DISTNAME=		BerkeleyDB-0.51
 CATEGORIES=		databases
 MODULES=		cpan
 
@@ -19,6 +18,7 @@ CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
 
 LIB_DEPENDS =		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
+MAKE_ENV =		TEST_POD=1
 REGRESS_DEPENDS =	devel/p5-MLDBM
 
 .include <bsd.port.mk>
