@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2012/07/12 10:30:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.79 2012/08/09 17:54:47 naddy Exp $
 
 COMMENT-main=		Multimedia player for the X Window System
 COMMENT-vorbis=		Ogg Vorbis input plugin for XMMS
@@ -34,9 +34,7 @@ WANTLIB += gtk>=1.2 gdk>=1.2 gthread>=1.2
 
 V=			1.2.x
 MASTER_SITES=		${HOMEPAGE}/files/$V/ \
-			ftp://ftp.xmms.org/xmms/$V/ \
-			ftp://ftp.sunet.se/pub/multimedia/xmms/$V/ \
-			ftp://ftp.stealth.net/xmms/$V/
+			http://legacy.xmms2.org/
 
 MULTI_PACKAGES=		-main -vorbis -mikmod -mp3
 
