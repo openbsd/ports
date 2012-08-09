@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/29 14:03:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/09 18:22:16 naddy Exp $
 
 COMMENT=	French and Italian conjugation system
 
 DISTNAME=	verbiste-0.1.34
+REVISION=	0
 SHARED_LIBS=	verbiste-0.1	4.0	# .0.0
 CATEGORIES=	education
 HOMEPAGE=	http://sarrazip.com/dev/verbiste.html
@@ -31,7 +32,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs stdc++ xcb xcb-render xcb-shm xml2 z
 
 USE_LIBTOOL=	Yes
-USE_GROFF=	Yes
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} --enable-static \
