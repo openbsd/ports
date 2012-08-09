@@ -1,0 +1,22 @@
+$OpenBSD: patch-nagelfar_tcl,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
+--- nagelfar.tcl.orig	Sun Nov 27 20:09:25 2011
++++ nagelfar.tcl	Sun Nov 27 20:10:54 2011
+@@ -46,15 +46,15 @@ while {[file type $tmplink] == "link"} {
+ unset tmplink
+ 
+ # This makes it possible to customize where files are installed
+-set dbDir      $thisDir
+-set docDir     $thisDir/doc
++set dbDir	${PREFIX}/libdata/nagelfar
++set docDir	${PREFIX}/share/doc/nagelfar
+ set libDir     $thisDir/lib
+  
+ # Search where the script is to be able to place e.g. ctext there.
+ if {[info exists ::starkit::topdir]} {
+     lappend auto_path [file dirname [file normalize $::starkit::topdir]]
+ } else {
+-    lappend auto_path $libDir
++    #lappend auto_path $libDir
+ }
+ #----------------------------------------------------------------------
+ #  Nagelfar, a syntax checker for Tcl.

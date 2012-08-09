@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_textsearch_examples_demo_tcl,v 1.1.1.1 2012/08/09 04:53:10 stu Exp $
+--- lib/textsearch/examples/demo.tcl.orig	Sat Sep 22 13:59:17 2007
++++ lib/textsearch/examples/demo.tcl	Sun Nov 27 22:22:04 2011
+@@ -47,10 +47,7 @@ menu .m.f
+ menu .m.s
+ textSearch::searchMenu .m.s
+ 
+-foreach dir {. tcl ../tcl} {
+-    if {![catch {set ch [open [file join $dir textsearch.tcl] r]}]} {
++    if {![catch {set ch [open ${PREFIX}/share/doc/textsearch/readme.txt r]}]} {
+         $w insert end [read $ch]
+         close $ch
+-        break
+     }
+-}

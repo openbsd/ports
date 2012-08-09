@@ -1,0 +1,7 @@
+A Tcl application to read a Tcl program and provide static syntax
+analysis - information regarding Tcl syntax errors like missing braces,
+incomplete commands, etc. and code coverage analysis. Extensible, using
+a customizable exposed syntax database.
+
+Comes with the "textSearch" Tcl extension which provides procedures
+to add search and incremental search functions to Tk text widgets.
