@@ -1,6 +1,6 @@
-$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.1.1.1 2011/03/26 12:26:44 sthen Exp $
---- clamav-unofficial-sigs.conf.orig	Sun Mar 20 22:43:40 2011
-+++ clamav-unofficial-sigs.conf	Sun Mar 20 22:48:26 2011
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.2 2012/08/09 00:34:29 sthen Exp $
+--- clamav-unofficial-sigs.conf.orig	Sun Jun  6 17:43:07 2010
++++ clamav-unofficial-sigs.conf	Thu Aug  9 01:30:24 2012
 @@ -31,18 +31,18 @@
  # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
  # should be used rather than the default Sun OS versions of these utilities.
@@ -24,7 +24,44 @@ $OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.1.1.1 2011/03/26 12:26:44 sthen 
  
  # Set path to clamd.pid file (see clamd.conf for path location).
  clamd_pid="/var/run/clamd.pid"
-@@ -219,7 +219,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
+@@ -122,6 +122,7 @@ ss_dbs="
+    sanesecurity.ftm
+    scam.ndb
+    spamimg.hdb
++   winnow_bad_cw.hdb
+    winnow_malware.hdb
+    winnow_malware_links.ndb
+ "
+@@ -137,6 +138,11 @@ ss_dbs="
+ # ONE DATABASE CONTAINS THE LAST TWO WEEKS OF COLLECTED SPAM DOMAINS (2w), AND
+ # THE OTHER DATABASE CONTAINS THE LAST TWO MONTHS OF COLLECTED SPAM DOMAINS (2m).
+ #
++# bofhland_cracked_URL.ndb      : LOW false-positive rating
++# bofhland_malware_URL.ndb      : LOW false-positive rating
++# bofhland_phishing_URL.ndb     : LOW false-positive rating
++# doppelstern.ndb               : MEDIUM false-positive raing
++# doppelstern.hdb               : LOW false-positive rating
+ # jurlbla.ndb                   : MEDIUM false-positive rating
+ # lott.ndb                      : MEDIUM false-positive rating
+ # spam.ldb                      : MEDIUM false-positive rating
+@@ -183,11 +189,11 @@ si_update_hours="4"   # Default is 4 hours (6 update c
+ # =========================
+ # Add or remove database file names between quote marks as needed.  To
+ # disable any of the MalwarePatrol database file downloads, remove the
+-# appropriate database file name lines below.  To disable MalwarePatrol
+-# database downloads, comment all of the following lines.
+-mbl_dbs="
+-   mbl.ndb
+-"
++# appropriate database file name lines below.  To enable MalwarePatrol
++# database downloads, uncomment all of the following lines.
++#mbl_dbs="
++#   mbl.ndb
++#"
+ 
+ # Since the MalwarePatrol database file is dynamically created,
+ # there is no way to test for changes prior to downloading.  For this
+@@ -219,7 +225,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
  # Set working directory paths (edit to meet your own needs). If these
  # directories do not exist, the script will attempt to create them.
  # Top level working directory path:
