@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2012/06/08 21:07:02 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2012/08/09 12:05:16 sthen Exp $
 @conflict nut-<2.6.2p0
 @conflict nut-scanner-*
 @conflict upsd-*
@@ -37,8 +37,8 @@
 @bin bin/mge-shut
 @bin bin/mge-utalk
 @bin bin/microdowell
-@bin bin/newmge-shut
 @bin bin/nut-scanner
+@bin bin/oldmge-shut
 @bin bin/oneac
 @bin bin/optiups
 @bin bin/powercom
@@ -106,8 +106,8 @@ lib/libupsclient.la
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
-@man man/man8/nut-scanner.8
 @man man/man8/nut-recorder.8
+@man man/man8/nut-scanner.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
@@ -176,7 +176,7 @@ share/doc/nut/images/cables/mac-940-0024C.png
 share/doc/nut/images/cables/mge-66049.png
 share/doc/nut/images/cables/mge-db9-rj12.jpg
 share/doc/nut/images/cables/mge-db9-rj45.jpg
-share/doc/nut/images/eaton-logo.png
+share/doc/nut/images/hostedby.png
 share/doc/nut/images/note.png
 share/doc/nut/images/nut-logo.png
 share/doc/nut/images/nut_layering.png
