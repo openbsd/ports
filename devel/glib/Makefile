@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2012/08/10 20:11:41 naddy Exp $
 # Uses pthreads
 
 COMMENT=	useful routines for C programming
@@ -27,7 +27,6 @@ CONFIGURE_ARGS+= --enable-static
 
 NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 
 post-extract:
 	@rm -f ${WRKSRC}/docs/glib.info*
