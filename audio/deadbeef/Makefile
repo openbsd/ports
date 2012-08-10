@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/08 18:06:48 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/10 17:25:01 shadchin Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-0.5.5
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://deadbeef.sourceforge.net/
@@ -40,7 +41,7 @@ BUILD_DEPENDS +=	devel/yasm
 .endif
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/hicolor-icon-theme
+			x11/gtk+2,-guic
 
 LIB_DEPENDS =		archivers/libzip \
 			audio/faad \
@@ -48,7 +49,6 @@ LIB_DEPENDS =		archivers/libzip \
 			audio/libcdio \
 			audio/libmad \
 			audio/libogg \
-			audio/libsamplerate \
 			audio/libsndfile \
 			audio/libvorbis \
 			audio/musepack \
@@ -70,7 +70,9 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-adplug \
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-static \
+			--disable-adplug \
 			--disable-alsa \
 			--disable-gme \
 			--disable-oss \
@@ -91,10 +93,5 @@ post-patch:
 pre-configure:
 	@cd ${WRKSRC}; env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoreconf
-
-post-install:
-	@for x in ${PREFIX}/lib/deadbeef/*.so.*; do \
-		mv $$x ${PREFIX}/lib/deadbeef/`basename $$x .0.0`; \
-	done
 
 .include <bsd.port.mk>

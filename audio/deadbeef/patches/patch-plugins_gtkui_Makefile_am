@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_gtkui_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
+--- plugins/gtkui/Makefile.am.orig	Thu Aug  9 23:56:42 2012
++++ plugins/gtkui/Makefile.am	Thu Aug  9 23:57:02 2012
+@@ -66,7 +66,7 @@ endif
+ # normal lib
+ if HAVE_GTK2
+ ddb_gui_GTK2_la_SOURCES = $(GTKUI_SOURCES)
+-ddb_gui_GTK2_la_LDFLAGS = -module
++ddb_gui_GTK2_la_LDFLAGS = -module -avoid-version
+ ddb_gui_GTK2_la_LIBADD = $(LDADD) $(GTK2_DEPS_LIBS) $(SM_LIBADD)
+ ddb_gui_GTK2_la_CFLAGS = -std=c99 $(GTK2_DEPS_CFLAGS) $(SM_CFLAGS)
+ endif

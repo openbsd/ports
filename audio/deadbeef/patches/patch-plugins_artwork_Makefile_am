@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_artwork_Makefile_am,v 1.1 2012/08/10 17:25:01 shadchin Exp $
+--- plugins/artwork/Makefile.am.orig	Thu Aug  9 23:41:44 2012
++++ plugins/artwork/Makefile.am	Thu Aug  9 23:41:54 2012
+@@ -3,7 +3,7 @@ artworkdir = $(libdir)/$(PACKAGE)
+ pkglib_LTLIBRARIES = artwork.la
+ artwork_la_SOURCES = artwork.c artwork.h albumartorg.c albumartorg.h lastfm.c lastfm.h escape.c escape.h
+ 
+-artwork_la_LDFLAGS = -module
++artwork_la_LDFLAGS = -module -avoid-version
+ 
+ if HAVE_IMLIB2
+ ARTWORK_DEPS=$(IMLIB2_DEPS_LIBS)
