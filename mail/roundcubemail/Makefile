@@ -1,21 +1,21 @@
-# $OpenBSD: Makefile,v 1.53 2012/03/14 16:20:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.54 2012/08/10 15:25:48 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-DISTNAME=	roundcubemail-0.7.2
-REVISION=	0
+DISTNAME=	roundcubemail-0.8.0
 CATEGORIES=	mail www
 HOMEPAGE=	http://www.roundcube.net/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
-# GPLv2
+# GPLv3+ with exceptions for skins & plugins
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=roundcubemail/}
+EXTRACT_SUFX=	.tar.gz
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
@@ -37,7 +37,8 @@ do-configure:
 	    -e 'close ARGV if eof;' ${WRKSRC}/bin/*
 
 do-install:
-	cp -Rp ${WRKDIST} ${INSTDIR}
+	${INSTALL_DATA_DIR} ${INSTDIR}
+	cd ${WRKSRC} && pax -rw .* * ${INSTDIR}
 .for i in .htaccess config/mimetypes.php
 	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
 .endfor
