@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_tkcon_tcl,v 1.1 2012/08/10 04:03:25 stu Exp $
+--- lib/tkcon.tcl.orig	Wed Apr 25 16:44:53 2012
++++ lib/tkcon.tcl	Wed Apr 25 16:45:04 2012
+@@ -40,7 +40,7 @@
+ if {$tcl_version < 8.0} {
+     return -code error "tkcon requires at least Tcl/Tk8"
+ } else {
+-    package require -exact Tk $tcl_version
++    package require Tk
+ }
+ 
+ # We need to load some package to get what's available, and we

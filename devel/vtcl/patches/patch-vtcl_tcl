@@ -1,0 +1,12 @@
+$OpenBSD: patch-vtcl_tcl,v 1.1 2012/08/10 04:03:25 stu Exp $
+--- vtcl.tcl.orig	Wed Apr 25 16:41:02 2012
++++ vtcl.tcl	Wed Apr 25 16:45:19 2012
+@@ -248,7 +248,7 @@ proc vTcl:setup_gui {} {
+ 
+     ## We use our own version of Bwidgets with some bug fixes. Will submit them the
+     ## bugs when time permits.
+-    package require -exact BWidget 1.3.1
++    package require BWidget
+ 
+     if {$tcl_platform(platform) == "macintosh"} {
+         set vTcl(pr,balloon) 0
