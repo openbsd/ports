@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/31 15:06:41 fgsch Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/10 20:13:37 fgsch Exp $
 
 COMMENT =		WSGI utility collection
 
-MODPY_EGG_VERSION =	0.8.2
+MODPY_EGG_VERSION =	0.8.3
 DISTNAME =		Werkzeug-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -23,16 +23,14 @@ MODPY_SETUPTOOLS =	Yes
 PKG_ARCH =		*
 
 BUILD_DEPENDS =		textproc/py-sphinx
-REGRESS_DEPENDS =	devel/py-nose \
-			textproc/py-lxml
 
 post-build:
 	cd ${WRKSRC}/docs && \
 	    ${LOCALBASE}/bin/sphinx-build -N -b html . _build/html
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-werkzeug
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
 	cd ${WRKSRC}/docs/_build/html && \
-	    pax -rw * ${PREFIX}/share/doc/py-werkzeug
+	    pax -rw * ${PREFIX}/share/doc/${MODPY_PY_PREFIX}werkzeug
 
 .include <bsd.port.mk>
