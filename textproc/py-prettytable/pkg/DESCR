@@ -1,0 +1,11 @@
+PrettyTable lets you control many aspects of the table, like the width
+of the column padding, the alignment of text within columns, which
+characters are used to draw the table border, whether you even want a
+border, and much more. You can control which subsets of the columns and
+rows are printed, and you can sort the rows by the value of a particular
+column.
+
+PrettyTable can also generate HTML code with the data in a <table>
+structure. All of the options available for controlling ASCII tables are
+also available for HTML tables, except in cases where this would not
+make sense.
