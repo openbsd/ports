@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/05/08 14:46:57 naddy Exp $
-bin/xvkbd
+@comment $OpenBSD: PLIST,v 1.5 2012/08/11 13:03:18 shadchin Exp $
+@bin bin/xvkbd
 lib/X11/app-defaults/XVkbd
 lib/X11/app-defaults/XVkbd-belgian
 lib/X11/app-defaults/XVkbd-common
@@ -18,9 +18,11 @@ lib/X11/app-defaults/XVkbd-korean
 lib/X11/app-defaults/XVkbd-latin1
 lib/X11/app-defaults/XVkbd-norwegian
 lib/X11/app-defaults/XVkbd-portuguese
+lib/X11/app-defaults/XVkbd-russian
 lib/X11/app-defaults/XVkbd-slovene
 lib/X11/app-defaults/XVkbd-small
 lib/X11/app-defaults/XVkbd-spanish
+lib/X11/app-defaults/XVkbd-strip
 lib/X11/app-defaults/XVkbd-swedish
 lib/X11/app-defaults/XVkbd-swissgerman
 lib/X11/app-defaults/XVkbd-turkish
