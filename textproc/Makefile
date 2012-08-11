@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.359 2012/07/11 13:29:09 zinke Exp $
+# $OpenBSD: Makefile,v 1.360 2012/08/11 12:13:36 edd Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -287,6 +287,7 @@
      SUBDIR += py-nltk
      SUBDIR += py-pdf
      SUBDIR += py-polib
+     SUBDIR += py-prettytable
      SUBDIR += py-pygments
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
