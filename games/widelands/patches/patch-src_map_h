@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_map_h,v 1.1 2012/08/11 22:51:13 pascal Exp $
+--- src/map.h.orig	Fri Aug 10 21:31:27 2012
++++ src/map.h	Fri Aug 10 21:31:46 2012
+@@ -29,6 +29,10 @@
+ #include <string>
+ #include <vector>
+ 
++#ifdef PIC
++#undef PIC
++#endif
++
+ class BaseImmovable;
+ class FileRead;
+ class Player;
