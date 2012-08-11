@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/03/07 19:33:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/08/11 15:16:49 ajacoutot Exp $
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
 include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-bpath.h
@@ -17,8 +17,8 @@ include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas.h
 include/libgnomecanvas-2.0/libgnomecanvas/libgnomecanvas.h
 lib/libglade/
 lib/libglade/2.0/
-lib/libglade/2.0/libcanvas.a
-lib/libglade/2.0/libcanvas.la
+@comment lib/libglade/2.0/libcanvas.a
+@comment lib/libglade/2.0/libcanvas.la
 lib/libglade/2.0/libcanvas.so
 lib/libgnomecanvas-2.a
 lib/libgnomecanvas-2.la
