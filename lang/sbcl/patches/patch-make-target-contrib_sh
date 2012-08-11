@@ -1,11 +1,11 @@
-$OpenBSD: patch-make-target-contrib_sh,v 1.1 2011/07/08 11:42:09 jasper Exp $
+$OpenBSD: patch-make-target-contrib_sh,v 1.2 2012/08/11 23:02:23 pascal Exp $
 
 Only run the contrib tests if $RUN_CONTRIB_TESTS is not empty.  This
 allows the contribs to be build when USE_SYSTRACE=Yes, and the tests
 to be run later in do-regress.
 
---- make-target-contrib.sh.orig	Mon May  9 04:49:39 2011
-+++ make-target-contrib.sh	Fri Jul  8 13:39:44 2011
+--- make-target-contrib.sh.orig	Mon Dec  5 00:09:01 2011
++++ make-target-contrib.sh	Sat Aug 11 16:55:34 2012
 @@ -43,6 +43,7 @@ export SBCL SBCL_BUILDING_CONTRIB
  # as SB-RT and SB-GROVEL, but FIXME: there's probably a better
  # solution.  -- CSR, 2003-05-30
@@ -26,7 +26,7 @@ to be run later in do-regress.
  # Ignore all source registries.
  CL_SOURCE_REGISTRY='(:source-registry :ignore-inherited-configuration)'
  export CL_SOURCE_REGISTRY
-@@ -66,7 +72,7 @@ for i in contrib/*; do
+@@ -74,7 +80,7 @@ for i in $contribs_to_build; do
      # export INSTALL_DIR=$SBCL_HOME/`basename $i `
      test -f $i/test-passed && rm $i/test-passed
      # hack to get exit codes right.

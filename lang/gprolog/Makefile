@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/11 23:02:23 pascal Exp $
 
 ONLY_FOR_ARCHS=		amd64 i386
 
@@ -33,7 +33,7 @@ CONFIGURE_ARGS+= --with-install-dir='${PREFIX}/libdata/gprolog' \
 	--with-examples-dir='${PREFIX}/share/examples/gprolog' \
 	--with-html-dir='${PREFIX}/share/doc/gprolog/html' \
 	--with-doc-dir='${PREFIX}/share/doc/gprolog' \
-	--with-c-flags="${CFLAGS}"
+	--with-c-flags="${CFLAGS} -fno-pie"
 
 WRKDIST=		${WRKDIR}/${DISTNAME}/src
 

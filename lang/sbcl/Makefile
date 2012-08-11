@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/03 02:01:25 krw Exp $
+# $OpenBSD: Makefile,v 1.13 2012/08/11 23:02:23 pascal Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -52,7 +52,9 @@ PKG_ARGS +=		-D${arch}=0
 USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
-			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
+			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
+			LINKFLAGS="-fno-pie"
+CFLAGS +=		-fno-pie
 
 # Upstream asks that packagers append something like this to the
 # version to distinguish official tarballs from third-party packages.
