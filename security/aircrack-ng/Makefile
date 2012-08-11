@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/11 22:58:18 pascal Exp $
 
 COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 DISTNAME=		aircrack-ng-1.1
-REVISION=		5
+REVISION=		6
 CATEGORIES=		security
 
 HOMEPAGE=		http://www.aircrack-ng.org/

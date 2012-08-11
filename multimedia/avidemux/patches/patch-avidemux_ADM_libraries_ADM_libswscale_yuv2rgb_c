@@ -1,6 +1,24 @@
-$OpenBSD: patch-avidemux_ADM_libraries_ADM_libswscale_yuv2rgb_c,v 1.1 2008/03/19 09:21:37 ajacoutot Exp $
---- avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c.orig	Mon Jan  7 09:23:59 2008
-+++ avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c	Mon Jan  7 09:24:33 2008
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_libswscale_yuv2rgb_c,v 1.2 2012/08/11 22:58:18 pascal Exp $
+--- avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c.orig	Tue Jul 17 20:49:16 2007
++++ avidemux/ADM_libraries/ADM_libswscale/yuv2rgb.c	Fri Aug 10 18:48:29 2012
+@@ -161,7 +161,7 @@ const uint8_t  __attribute__((aligned(8))) dither_8x8_
+ };
+ #endif
+ 
+-#ifdef HAVE_MMX
++#if defined(HAVE_MMX) && !defined(PIC)
+ 
+ /* hope these constant values are cache line aligned */
+ static uint64_t attribute_used __attribute__((aligned(8))) mmx_00ffw   = 0x00ff00ff00ff00ffULL;
+@@ -621,7 +621,7 @@ EPILOG(1)
+ 
+ SwsFunc yuv2rgb_get_func_ptr (SwsContext *c)
+ {
+-#if defined(HAVE_MMX2) || defined(HAVE_MMX)
++#if (defined(HAVE_MMX2) || defined(HAVE_MMX)) && !defined(PIC)
+     if (c->flags & SWS_CPU_CAPS_MMX2){
+         switch(c->dstFormat){
+         case PIX_FMT_RGB32:  return yuv420_rgb32_MMX2;
 @@ -665,6 +665,9 @@ SwsFunc yuv2rgb_get_func_ptr (SwsContext *c)
  
      switch(c->dstFormat){

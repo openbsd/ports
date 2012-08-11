@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sha1-sse2_S,v 1.1 2012/08/11 22:58:18 pascal Exp $
+--- src/sha1-sse2.S.orig	Mon Jul 23 18:26:22 2012
++++ src/sha1-sse2.S	Mon Jul 23 18:26:39 2012
+@@ -13,7 +13,7 @@
+ #define MANGLE(x) x
+ #endif
+ 
+-#if defined(__i386__) || defined(__x86_64__)
++#if (defined(__i386__) || defined(__x86_64__)) && !defined(PIC)
+ 
+ .globl  shasse2_init;
+ .globl  shasse2_ends;
