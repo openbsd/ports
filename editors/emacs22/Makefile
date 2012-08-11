@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/06/21 13:56:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/08/11 22:55:39 pascal Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,7 +8,7 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		13
+REVISION-main=		14
 REVISION-el=		4
 
 CATEGORIES=		editors
@@ -37,11 +37,12 @@ GCCARCH=		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		${GCCARCH} --with-pop
+CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -fno-pie"
+CFLAGS +=		-fno-pie
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 			LOGNAME="${SHAREOWN}"
@@ -82,6 +83,8 @@ WANTLIB-main+=		jpeg png tiff ungif
 
 RUN_DEPENDS-el=		emacs-${VERSION}:${PKGPATH}
 PKG_ARCH-el=		*
+
+NO_REGRESS=		Yes
 
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "mips64"
 post-extract:
