@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.2 2011/08/25 07:10:47 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2012/08/12 17:19:59 jasper Exp $
 
 SHARED_ONLY?=		Yes
-
-MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 CATEGORIES+=		devel
 
