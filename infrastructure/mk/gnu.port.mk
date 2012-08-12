@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.49 2012/04/28 10:50:35 ajacoutot Exp $
+# $OpenBSD: gnu.port.mk,v 1.50 2012/08/12 17:19:00 jasper Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -39,7 +39,8 @@ CONFIG_SITE_LIST += config.site
 	sysutils/ggrep ggrep \
 	textproc/gsed gsed \
 	archivers/gtar* gtar \
-	lang/gawk gawk
+	lang/gawk gawk \
+	misc/fileutils fileutils
 .  if !defined(BUILD_DEPENDS) || !${BUILD_DEPENDS:M$d}
 CONFIG_SITE_LIST += config.no-${name}
 .  endif
