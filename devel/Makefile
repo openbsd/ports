@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1059 2012/08/09 04:55:39 stu Exp $
+# $OpenBSD: Makefile,v 1.1060 2012/08/12 22:21:27 pascal Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -998,7 +998,6 @@
      SUBDIR += physfs
      SUBDIR += pkgconfig
      SUBDIR += plib
-     SUBDIR += pmk
      SUBDIR += poedit
      SUBDIR += popt
      SUBDIR += proj

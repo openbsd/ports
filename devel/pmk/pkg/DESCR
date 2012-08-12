@@ -1,9 +1,0 @@
-The `Pre-Make Kit` project is a configuration tool for source dependencies.
-It aims to provide an alternative to GNU autoconf.
-
-Goals:
-* Avoid the use of scripts in packages that can hide trojans.
-* Try to keep the needed dependencies near from zero (actually at zero).
-* Make it easy to use for users and developers.
-* Provide the package in a free and usable license for everybody (BSD).
-* Limit the changes in sources for a transition from autoconf. 
