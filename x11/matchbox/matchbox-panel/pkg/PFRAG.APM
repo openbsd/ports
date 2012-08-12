@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.APM,v 1.2 2008/07/11 17:46:56 ajacoutot Exp $
-@bin bin/mb-applet-battery
-share/applications/mb-applet-battery.desktop
