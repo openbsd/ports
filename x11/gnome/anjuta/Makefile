@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2012/07/13 16:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/08/12 20:43:42 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.4.3
-REVISION=		0
+GNOME_VERSION=		3.4.4
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -42,7 +41,9 @@ WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
 WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.16 vte2_90
 WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += dbus-1 dbus-glib-1 javascriptcoregtk-3.0 magic
-WANTLIB += gcrypt gda-5.0 gnome-keyring gpg-error ${MODPY_WANTLIB}
+WANTLIB += gcrypt gda-5.0 gnome-keyring gpg-error
+WANTLIB += geoclue gstaudio-0.10 gstfft-0.10 proxy
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
 			devel/bison

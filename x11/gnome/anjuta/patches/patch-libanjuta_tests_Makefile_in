@@ -1,10 +1,10 @@
-$OpenBSD: patch-libanjuta_tests_Makefile_in,v 1.1 2012/03/29 07:22:04 ajacoutot Exp $
+$OpenBSD: patch-libanjuta_tests_Makefile_in,v 1.2 2012/08/12 20:43:42 jasper Exp $
 
 /usr/bin/ld: cannot find -lgcov
 
---- libanjuta/tests/Makefile.in.orig	Wed Mar 28 18:35:13 2012
-+++ libanjuta/tests/Makefile.in	Wed Mar 28 18:35:25 2012
-@@ -376,7 +376,7 @@ AM_CPPFLAGS = \
+--- libanjuta/tests/Makefile.in.orig	Sat Jul 28 11:57:10 2012
++++ libanjuta/tests/Makefile.in	Sat Jul 28 16:52:53 2012
+@@ -382,7 +382,7 @@ AM_CPPFLAGS = \
  anjuta_tabber_test_CFLAGS = $(LIBANJUTA_CFLAGS)
  anjuta_tabber_test_LDADD = $(LIBANJUTA_LIBS) $(ANJUTA_LIBS)
  anjuta_tabber_test_SOURCES = anjuta-tabber-test.c

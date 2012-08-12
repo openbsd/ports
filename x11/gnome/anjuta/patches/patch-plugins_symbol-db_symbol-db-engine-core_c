@@ -1,9 +1,9 @@
-$OpenBSD: patch-plugins_symbol-db_symbol-db-engine-core_c,v 1.2 2012/03/29 07:22:04 ajacoutot Exp $
+$OpenBSD: patch-plugins_symbol-db_symbol-db-engine-core_c,v 1.3 2012/08/12 20:43:42 jasper Exp $
 
 Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
 
---- plugins/symbol-db/symbol-db-engine-core.c.orig	Sun Mar 11 21:52:12 2012
-+++ plugins/symbol-db/symbol-db-engine-core.c	Wed Mar 28 18:14:09 2012
+--- plugins/symbol-db/symbol-db-engine-core.c.orig	Sat Jul 28 11:42:41 2012
++++ plugins/symbol-db/symbol-db-engine-core.c	Sat Jul 28 16:52:53 2012
 @@ -1069,7 +1069,7 @@ sdb_engine_ctags_output_thread (gpointer data, gpointe
  
  			/* found out a new marker */ 
@@ -57,7 +57,7 @@ Do not use shm_open() which OpenBSD lacks (from FreeBSD ports).
  		g_free (priv->shared_mem_str);
  		priv->shared_mem_str = NULL;
  	}
-@@ -5762,12 +5762,12 @@ symbol_db_engine_update_buffer_symbols (SymbolDBEngine
+@@ -5769,12 +5769,12 @@ symbol_db_engine_update_buffer_symbols (SymbolDBEngine
  		 * target buffer one */
  		base_filename = g_filename_display_basename (relative_path);
  		
