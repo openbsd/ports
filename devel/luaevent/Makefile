@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/12 17:26:16 jasper Exp $
 
 COMMENT =	lua binding of libevent
 SHARED_ONLY =	Yes
@@ -25,6 +25,8 @@ MODULES =	lang/lua
 MODLUA_REGRESS_DEPENDS += devel/luaevent
 MODLUA_RUN_DEPENDS +=	net/luasocket
 
+REGRESS_FILES =	basic event_buffer-tests timertest
+
 CFLAGS +=	-I${MODLUA_INCL_DIR} -I../include
 LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
@@ -33,9 +35,9 @@ do-build:
 		event_buffer.c event_callback.c utility.c ${MODLUA_LIB} -levent
 
 do-regress:
-	cd ${WRKDIST}/test && ${MODLUA_BIN} basic.lua
-	cd ${WRKDIST}/test && ${MODLUA_BIN} event_buffer-tests.lua
-	cd ${WRKDIST}/test && ${MODLUA_BIN} timertest.lua
+.for r in ${REGRESS_FILES}
+	cd ${WRKDIST}/test && ${MODLUA_BIN} $r.lua
+.endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
