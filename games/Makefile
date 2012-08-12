@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2012/08/07 13:40:47 landry Exp $
+# $OpenBSD: Makefile,v 1.246 2012/08/12 17:21:03 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -82,7 +82,6 @@
      SUBDIR += gbrainy
      SUBDIR += gcompris
      SUBDIR += gemdropx
-     SUBDIR += ggz
      SUBDIR += glsfcave
      SUBDIR += glutton
      SUBDIR += gnome-mastermind
