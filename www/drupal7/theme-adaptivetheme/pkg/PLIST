@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/12 21:48:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/12 17:15:13 jasper Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_THEMES}adaptivetheme/
@@ -42,8 +42,6 @@ ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/inc/template.helpers.inc
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/inc/template.process.inc
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/inc/template.theme.inc
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/js/
-${DRUPAL_THEMES}adaptivetheme/adaptivetheme/js/html5.js
-${DRUPAL_THEMES}adaptivetheme/adaptivetheme/js/respond.js
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/js/vertical-tabs.js
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/logo.png
 ${DRUPAL_THEMES}adaptivetheme/adaptivetheme/screenshot.png
