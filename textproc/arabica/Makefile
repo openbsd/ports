@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/06 19:47:45 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/12 18:07:59 jasper Exp $
 
 COMMENT =	XML and HTML processing toolkit
 DISTNAME =	arabica-2010-November
@@ -22,5 +22,7 @@ BUILD_DEPENDS =	devel/boost
 CONFIGURE_ENV =	CPPFLAGS='-I${LOCALBASE}/include'
 USE_LIBTOOL =	Yes
 WANTLIB +=	c expat m stdc++
+
+VMEM_WARNING =	Yes
 
 .include <bsd.port.mk>
