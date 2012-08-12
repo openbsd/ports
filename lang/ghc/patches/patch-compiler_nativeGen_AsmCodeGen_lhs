@@ -1,0 +1,13 @@
+$OpenBSD: patch-compiler_nativeGen_AsmCodeGen_lhs,v 1.1 2012/08/12 11:31:33 pascal Exp $
+--- compiler/nativeGen/AsmCodeGen.lhs.orig	Sat Aug 11 22:00:05 2012
++++ compiler/nativeGen/AsmCodeGen.lhs	Sat Aug 11 22:00:20 2012
+@@ -19,6 +19,9 @@ module AsmCodeGen ( nativeCodeGen ) where
+ #include "HsVersions.h"
+ #include "nativeGen/NCG.h"
+ 
++#ifdef PIC
++#undef PIC
++#endif
+ 
+ #if   alpha_TARGET_ARCH
+ import Alpha.CodeGen

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2012/06/29 05:52:01 kili Exp $
+# $OpenBSD: Makefile,v 1.71 2012/08/12 11:31:33 pascal Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		8
+REVISION-main =		9
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 REVISION-doc =		0
 CATEGORIES =		lang devel
@@ -76,6 +76,15 @@ CONFIGURE_ARGS +=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
 			--with-iconv-libraries=${LOCALBASE}/lib
+CONFIGURE_ENV =		CONF_CC_OPTS_STAGE0="-fno-pie" \
+			CONF_CC_OPTS_STAGE1="-fno-pie" \
+			CONF_CC_OPTS_STAGE2="-fno-pie" \
+			CONF_GCC_LINKER_OPTS_STAGE0="-fno-pie" \
+			CONF_GCC_LINKER_OPTS_STAGE1="-fno-pie" \
+			CONF_GCC_LINKER_OPTS_STAGE2="-fno-pie" \
+			CONF_GCC_LD_OPTS_STAGE0="-fno-pie" \
+			CONF_GCC_LD_OPTS_STAGE1="-fno-pie" \
+			CONF_GCC_LD_OPTS_STAGE2="-fno-pie"
 
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
@@ -119,6 +128,8 @@ post-extract:
 	cp ${WRKSRC}/libraries/xhtml/GNUmakefile ${WRKDIR}/xhtml-${XHTML_VER} 
 	mv ${WRKSRC}/libraries/xhtml{,-ghcdist}
 	mv ${WRKDIR}/xhtml-${XHTML_VER} ${WRKSRC}/libraries/xhtml
+	perl -pi -e 's/(\S+ \S+)/\1 -optl -fno-pie/ if /^exec /' \
+		${WRKDIR}/bin/ghc
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/index.html

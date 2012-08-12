@@ -1,0 +1,14 @@
+$OpenBSD: patch-compiler_nativeGen_PPC_CodeGen_hs,v 1.1 2012/08/12 11:31:33 pascal Exp $
+--- compiler/nativeGen/PPC/CodeGen.hs.orig	Sat Aug 11 22:01:50 2012
++++ compiler/nativeGen/PPC/CodeGen.hs	Sat Aug 11 22:02:13 2012
+@@ -24,6 +24,10 @@ where
+ #include "nativeGen/NCG.h"
+ #include "../includes/MachDeps.h"
+ 
++#ifdef PIC
++#undef PIC
++#endif
++
+ -- NCG stuff:
+ import PPC.Instr
+ import PPC.Cond
