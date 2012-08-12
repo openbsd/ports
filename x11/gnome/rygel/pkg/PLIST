@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/15 08:30:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/08/12 20:51:02 jasper Exp $
 @bin bin/rygel
 @bin bin/rygel-preferences
 include/rygel-1.0/
@@ -32,6 +32,7 @@ share/icons/hicolor/scalable/apps/rygel-full.svg
 share/icons/hicolor/scalable/apps/rygel.svg
 share/locale/af/LC_MESSAGES/rygel.mo
 share/locale/ar/LC_MESSAGES/rygel.mo
+share/locale/as/LC_MESSAGES/rygel.mo
 share/locale/bg/LC_MESSAGES/rygel.mo
 share/locale/bn_IN/LC_MESSAGES/rygel.mo
 share/locale/ca/LC_MESSAGES/rygel.mo
