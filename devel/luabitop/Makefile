@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/12 17:24:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,8 @@ MODULES=	lang/lua
 REGRESS_DEPENDS+=${BASE_PKGPATH}
 MAKE_ENV+=	INCLUDES=-I${MODLUA_INCL_DIR}
 
+REGRESS_FILES=	bittest md5test bitbench nsievebits
+
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DOCDIR}
 	${INSTALL_DATA} ${WRKBUILD}/bit.so ${MODLUA_LIBDIR}
@@ -33,9 +35,8 @@ do-install:
 		find . ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${MODLUA_DOCDIR}/{} \;
 do-regress:
-	${MODLUA_BIN} ${WRKSRC}/bittest.lua
-	${MODLUA_BIN} ${WRKSRC}/md5test.lua
-	${MODLUA_BIN} ${WRKSRC}/bitbench.lua
-	${MODLUA_BIN} ${WRKSRC}/nsievebits.lua
+.for r in ${REGRESS_FILES}
+	${MODLUA_BIN} ${WRKSRC}/$r.lua
+.endfor
 
 .include <bsd.port.mk>

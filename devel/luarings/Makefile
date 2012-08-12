@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/12 17:25:31 jasper Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
@@ -24,6 +24,8 @@ CFLAGS +=	-I${MODLUA_INCL_DIR}
 COMPILE =	${CC} ${CFLAGS} -fPIC ${CFLAGS} -c
 LINK =		${CC} ${CFLAGS} -fPIC -shared -L${LOCALBASE}/lib -o
 
+REGRESS_FILES =	sample sample_state test
+
 do-build:
 	cd ${WRKDIST}/src && ${COMPILE} rings.c
 	cd ${WRKDIST}/src && ${LINK} rings.so rings.o
@@ -37,8 +39,8 @@ do-install:
 do-regress:
 	cp ${WRKDIST}/src/*.so ${WRKDIST}/tests
 	cp ${WRKDIST}/src/*.lua ${WRKDIST}/tests
-	cd ${WRKDIST}/tests && ${MODLUA_BIN} sample.lua
-	cd ${WRKDIST}/tests && ${MODLUA_BIN} sample_state.lua
-	cd ${WRKDIST}/tests && ${MODLUA_BIN} test.lua
+.for r in ${REGRESS_FILES}
+	cd ${WRKDIST}/tests && ${MODLUA_BIN} $r.lua
+.endfor
 
 .include <bsd.port.mk>
