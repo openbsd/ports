@@ -1,16 +1,19 @@
-$OpenBSD: patch-chrome_browser_printing_print_system_task_proxy_cc,v 1.1 2012/08/06 17:21:32 ajacoutot Exp $
+$OpenBSD: patch-chrome_browser_printing_print_system_task_proxy_cc,v 1.2 2012/08/12 15:13:57 fgsch Exp $
 
 Fix build with cups >= 1.6
 error: 'ppd_attr_t* ppdFindAttr(ppd_file_t*, const char*, const char*)' is deprecated
 
---- chrome/browser/printing/print_system_task_proxy.cc.orig	Mon Aug  6 19:18:45 2012
-+++ chrome/browser/printing/print_system_task_proxy.cc	Mon Aug  6 19:18:51 2012
-@@ -2,6 +2,8 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
+--- chrome/browser/printing/print_system_task_proxy.cc.orig	Mon Aug  6 19:00:35 2012
++++ chrome/browser/printing/print_system_task_proxy.cc	Mon Aug  6 19:00:46 2012
+@@ -444,10 +444,7 @@ bool PrintSystemTaskProxy::GetPrinterCapabilitiesCUPS(
+       }
+     }
  
-+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-+
- #include "chrome/browser/printing/print_system_task_proxy.h"
+-    bool is_color_device = false;
+-    ppd_attr_t* attr = ppdFindAttr(ppd, kColorDevice, NULL);
+-    if (attr && attr->value)
+-      is_color_device = ppd->color_device;
++    bool is_color_device = ppd->color_device;
+     *set_color_as_default = is_color_device;
  
- #include <ctype.h>
+     if (!((is_color_device && getBasicColorModelSettings(
