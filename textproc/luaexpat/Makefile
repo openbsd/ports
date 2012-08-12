@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/12 17:26:30 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -22,6 +22,8 @@ MASTER_SITES =		${HOMEPAGE}
 MODULES =		lang/lua
 MODLUA_REGRESS_DEPENDS =	textproc/luaexpat
 
+REGRESS_FILES =		test-lom test
+
 MAKE_FLAGS+=		LUA_INC="${MODLUA_INCL_DIR}"
 USE_GMAKE =		Yes
 MAKE_FILE =		makefile
@@ -39,6 +41,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/us/luaexpat.png ${MODLUA_DOCDIR}
 
 do-regress:
-	cd ${WRKSRC}/tests && ${MODLUA_BIN} test-lom.lua && ${MODLUA_BIN} test.lua
+.for r in ${REGRESS_FILES}
+	cd ${WRKSRC}/tests && ${MODLUA_BIN} $r.lua
+.endfor
 
 .include <bsd.port.mk>
