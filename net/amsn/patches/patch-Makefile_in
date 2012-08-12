@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2012/04/05 16:08:55 jasper Exp $
---- Makefile.in.orig	Thu Mar 18 20:58:48 2010
-+++ Makefile.in	Thu Apr  5 14:03:25 2012
-@@ -11,10 +11,10 @@ STATIC		:= @STATIC@
+$OpenBSD: patch-Makefile_in,v 1.7 2012/08/12 17:33:04 jasper Exp $
+--- Makefile.in.orig	Fri May 18 21:28:05 2012
++++ Makefile.in	Sat Jul 14 19:55:28 2012
+@@ -16,10 +16,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
  FILES_TO_INSTALL := *.tcl hotmlog.htm amsn amsn-remote amsn-remote-CLI amsn.desktop langlist
@@ -14,50 +14,34 @@ $OpenBSD: patch-Makefile_in,v 1.6 2012/04/05 16:08:55 jasper Exp $
  FILES_TO_INSTALL += plugins utils/sexytile
  FILES_TO_INSTALL += utils/log utils/uri utils/combobox utils/voipcontrols
  FILES_TO_INSTALL += utils/md4 utils/sasl ca-certs
-@@ -82,7 +82,7 @@ USE_MMX		:= @USE_MMX@
+@@ -88,9 +88,7 @@ HAVE_FARSTREAM  := @HAVE_FARSTREAM@
+ HAVE_FARSIGHT   := @HAVE_FARSIGHT@
+ 
+ ADDITIONAL_FLAGS = $(WARN_FLAGS) $(LFS_FLAGS) ${TCL_INC_SPEC} ${TK_INC_SPEC}
+-ifeq (@DEBUG@,no)
+-ADDITIONAL_FLAGS   += -O2
+-else
++ifeq (@DEBUG@,yes)
+ ADDITIONAL_FLAGS   += -g3 -DDEBUG
+ endif
+ ADDITIONAL_FLAGS   += -DPACKAGE='"$(PACKAGE)"'
+@@ -108,7 +106,7 @@ endif
  # build final cflags
- CFLAGS   := @CFLAGS@
- ifeq (@DEBUG@,no)
--CFLAGS   += -O2
-+#CFLAGS   += -O2
- else
- CFLAGS   += -g3 -DDEBUG
- endif
-@@ -104,9 +104,9 @@ CFLAGS   += -DPACKAGE='"$(PACKAGE)"'
- CFLAGS   += -DVERSION='"$(VERSION)"'
- CFLAGS   += -DLIBDIR='"$(LIBDIR)"'
+ CFLAGS   := @CFLAGS@ $(ADDITIONAL_FLAGS)
  
--CXXFLAGS := @CXXFLAGS@
-+CXXFLAGS := $(CFLAGS) @CXXFLAGS@
- ifeq (@DEBUG@,no)
--CXXFLAGS   += -O2
-+#CXXFLAGS   += -O2
- else
- CXXFLAGS   += -g3 -DDEBUG
- endif
-@@ -127,8 +127,8 @@ endif
+-CXXFLAGS := @CXXFLAGS@ $(ADDITIONAL_FLAGS)
++CXXFLAGS := @CFLAGS@ @CXXFLAGS@ $(ADDITIONAL_FLAGS)
  
- GST_LIBS        := @GST_LIBS@ @GST_INTERFACES_LIBS@
- GST_CFLAGS      := @GST_CFLAGS@ @GST_INTERFACES_CFLAGS@
--FARSIGHT2_LIBS  := @FARSIGHT2_LIBS@
--FARSIGHT2_CFLAGS := @FARSIGHT2_CFLAGS@
-+FARSTREAM_LIBS  := @FARSTREAM_LIBS@
-+FARSTREAM_CFLAGS := @FARSTREAM_CFLAGS@
- 
- 
- # for gcc3
-@@ -169,7 +169,7 @@ ifeq (@HAVE_GUPNP@,yes)
-   FILES_TO_INSTALL += utils/gupnp/gupnp.$(SHLIB_EXTENSION) utils/gupnp/pkgIndex.tcl
- endif
- 
--ifeq (@HAVE_FARSIGHT@,yes)
-+ifeq (@HAVE_FARSTREAM@,yes)
-   FILES_TO_INSTALL += utils/farsight/tcl_farsight.$(SHLIB_EXTENSION) utils/farsight/pkgIndex.tcl
- endif
- 
-@@ -234,9 +234,9 @@ install:: $(FILES_TO_INSTALL)
- 		rm -Rf $(DESTDIR)$(dstdir)/$(PACKAGE)/$$p; \
+ ifeq ($(STATIC),yes)
+ CXXFLAGS += -static-libgcc -L.
+@@ -249,11 +247,13 @@ install:: $(FILES_TO_INSTALL) | install_libs
  	done
+ 
+ 	# This doesn't work if the libdir has quotes in it
+-	sed -i -e 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
++	sed 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn > $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched
++	mv $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched \
++	$(DESTDIR)$(dstdir)/$(PACKAGE)/amsn && chmod +x $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
  
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
 -	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
@@ -68,12 +52,3 @@ $OpenBSD: patch-Makefile_in,v 1.6 2012/04/05 16:08:55 jasper Exp $
  
  	cp $(srcdir)/amsn.desktop $(DESTDIR)$(dstdir)/applications/
  
-@@ -319,7 +319,7 @@ include $(tclISF_dir)/src/Rules.mk
- include $(async_dir)/Rules.mk
- include $(async_dir)/src/Rules.mk
- 
--ifeq (@HAVE_FARSIGHT@,yes)
-+ifeq (@HAVE_FARSTREAM@,yes)
-   include $(tcl_farsight_dir)/Rules.mk
-   include $(tcl_farsight_dir)/src/Rules.mk
- endif

@@ -1,55 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2012/04/05 16:08:55 jasper Exp $
-
-Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
-
---- configure.orig	Sun Dec  5 04:23:14 2010
-+++ configure	Thu Apr  5 14:18:17 2012
-@@ -593,15 +593,15 @@ ac_includes_default="\
- 
- ac_subst_vars='LTLIBOBJS
- LIBOBJS
--HAVE_FARSIGHT
-+HAVE_FARSTREAM
- HAVE_GUPNP
- GUPNP_LIBS
- GUPNP_CFLAGS
- HAVE_LIBV4L
- LIBV4L_LIBS
- LIBV4L_CFLAGS
--FARSIGHT2_LIBS
--FARSIGHT2_CFLAGS
-+FARSTREAM_LIBS
-+FARSTREAM_CFLAGS
- GST_INTERFACES_LIBS
- GST_INTERFACES_CFLAGS
- GST_LIBS
-@@ -730,8 +730,8 @@ GST_CFLAGS
- GST_LIBS
- GST_INTERFACES_CFLAGS
- GST_INTERFACES_LIBS
--FARSIGHT2_CFLAGS
--FARSIGHT2_LIBS
-+FARSTREAM_CFLAGS
-+FARSTREAM_LIBS
- LIBV4L_CFLAGS
- LIBV4L_LIBS
- GUPNP_CFLAGS
-@@ -1387,10 +1387,10 @@ Some influential environment variables:
-               C compiler flags for GST_INTERFACES, overriding pkg-config
-   GST_INTERFACES_LIBS
-               linker flags for GST_INTERFACES, overriding pkg-config
--  FARSIGHT2_CFLAGS
--              C compiler flags for FARSIGHT2, overriding pkg-config
--  FARSIGHT2_LIBS
--              linker flags for FARSIGHT2, overriding pkg-config
-+  FARSTREAM_CFLAGS
-+              C compiler flags for FARSTREAM, overriding pkg-config
-+  FARSTREAM_LIBS
-+              linker flags for FARSTREAM, overriding pkg-config
-   LIBV4L_CFLAGS
-               C compiler flags for LIBV4L, overriding pkg-config
-   LIBV4L_LIBS linker flags for LIBV4L, overriding pkg-config
-@@ -2271,8 +2271,8 @@ case `uname -s` in
+$OpenBSD: patch-configure,v 1.7 2012/08/12 17:33:04 jasper Exp $
+--- configure.orig	Wed May 23 22:28:25 2012
++++ configure	Sun Jul  8 18:18:32 2012
+@@ -2305,8 +2305,8 @@ case `uname -s` in
  	OpenBSD | FreeBSD | NetBSD)
  		# *BSD has important stuff (from ports)
  		# in /usr/local ...
@@ -60,8 +12,8 @@ Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
  		FOUND_OS="bsd"
  		;;
  	Darwin)
-@@ -2395,7 +2395,7 @@ $as_echo X"$prefix" |
- fi
+@@ -2336,7 +2336,7 @@ $as_echo "maybe" >&6; }
+ esac
  
  
 -TCLSH=`which tclsh`
@@ -69,63 +21,69 @@ Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
  VERSION=`echo "puts $::tcl_version ; exit" | ${TCLSH}`
  # Check whether --enable-version-check was given.
  if test "${enable_version_check+set}" = set; then :
-@@ -3095,17 +3095,9 @@ $as_echo "$ac_cv_prog_cc_g" >&6; }
+@@ -3036,17 +3036,9 @@ $as_echo "$ac_cv_prog_cc_g" >&6; }
  if test "$ac_test_CFLAGS" = set; then
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
 -  if test "$GCC" = yes; then
 -    CFLAGS="-g -O2"
 -  else
-     CFLAGS="-g"
+-    CFLAGS="-g"
 -  fi
++  CFLAGS="-g"
  else
 -  if test "$GCC" = yes; then
 -    CFLAGS="-O2"
 -  else
-     CFLAGS=
+-    CFLAGS=
 -  fi
++  CFLAGS=
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $CC option to accept ISO C89" >&5
  $as_echo_n "checking for $CC option to accept ISO C89... " >&6; }
-@@ -3449,17 +3441,9 @@ $as_echo "$ac_cv_prog_cxx_g" >&6; }
+@@ -3389,18 +3381,11 @@ $as_echo "$ac_cv_prog_cxx_g" >&6; }
  if test "$ac_test_CXXFLAGS" = set; then
    CXXFLAGS=$ac_save_CXXFLAGS
  elif test $ac_cv_prog_cxx_g = yes; then
 -  if test "$GXX" = yes; then
 -    CXXFLAGS="-g -O2"
 -  else
-     CXXFLAGS="-g"
+-    CXXFLAGS="-g"
 -  fi
++  CXXFLAGS="-g"
  else
 -  if test "$GXX" = yes; then
 -    CXXFLAGS="-O2"
 -  else
-     CXXFLAGS=
+-    CXXFLAGS=
 -  fi
++  CXXFLAGS=
  fi
++
  ac_ext=c
  ac_cpp='$CPP $CPPFLAGS'
-@@ -3508,7 +3492,7 @@ $as_echo_n "checking tcl build dir... " >&6; }
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+@@ -3445,8 +3430,7 @@ $as_echo_n "checking tcl build dir... " >&6; }
+ 		/usr/local/lib64 \
  		/usr/lib64 \
  		/usr/lib64/tcl8.* \
- 		/usr/local/lib64/tcl8.* \
+-		/usr/local/lib64/tcl8.* \
 -		`locate tclConfig.sh`"
-+		"
++		/usr/local/lib64/tcl8.*"
  
  	for i in $dirs ; do
  
-@@ -3633,9 +3617,8 @@ $as_echo_n "checking tk build dir... " >&6; }
+@@ -3570,8 +3554,7 @@ $as_echo_n "checking tk build dir... " >&6; }
+ 		/usr/local/lib64 \
  		/usr/lib64 \
  		/usr/lib64/tk8.* \
- 		/usr/local/lib64/tk8.* \
+-		/usr/local/lib64/tk8.* \
 -		`locate tkConfig.sh`"
-+		"
++		/usr/local/lib64/tk8.*"
  
--
+ 
  		for i in $dirs ; do
- 
- 		if test -f "$i"; then
-@@ -5008,13 +4991,13 @@ fi
+@@ -4946,13 +4929,13 @@ fi
  done
  
  
@@ -133,7 +91,7 @@ Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
 +{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -142,139 +100,12 @@ Port from farsight2 to farstream, from Fedora's amsn-0.98.4-farstream.patch
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -5045,7 +5028,7 @@ fi
+@@ -4983,7 +4966,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
 -  LIBPTHREAD="-lpthread"
 +  LIBPTHREAD="-pthread"
  fi
  
  if test "$LIBPTHREAD" = ""; then
-@@ -5115,10 +5098,10 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $USE_MMX" >&5
- $as_echo "$USE_MMX" >&6; }
- 
--HAVE_FARSIGHT=no
-+HAVE_FARSTREAM=no
- GST_REQUIRED=0.10.22
- GST_MAJORMINOR=0.10
--FARSIGHT_REQUIRED=0.0.9
-+FARSTREAM_REQUIRED=0.1
- 
- # Extract the first word of "pkg-config", so it can be a program name with args.
- set dummy pkg-config; ac_word=$2
-@@ -5518,41 +5501,41 @@ fi
-         if test "x$HAVE_GST" = "xyes"; then
- 
- pkg_failed=no
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for FARSIGHT2" >&5
--$as_echo_n "checking for FARSIGHT2... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for FARSTREAM" >&5
-+$as_echo_n "checking for FARSTREAM... " >&6; }
- 
--if test -n "$FARSIGHT2_CFLAGS"; then
--    pkg_cv_FARSIGHT2_CFLAGS="$FARSIGHT2_CFLAGS"
-+if test -n "$FARSTREAM_CFLAGS"; then
-+    pkg_cv_FARSTREAM_CFLAGS="$FARSTREAM_CFLAGS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
-     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\\
--             farsight2-\$GST_MAJORMINOR >= \$FARSIGHT_REQUIRED\""; } >&5
-+             farstream-\$FARSTREAM_REQUIRED >= \$FARSTREAM_REQUIRED\""; } >&5
-   ($PKG_CONFIG --exists --print-errors "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED") 2>&5
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_FARSIGHT2_CFLAGS=`$PKG_CONFIG --cflags "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED" 2>/dev/null`
-+  pkg_cv_FARSTREAM_CFLAGS=`$PKG_CONFIG --cflags "\
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED" 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-  else
-     pkg_failed=untried
- fi
--if test -n "$FARSIGHT2_LIBS"; then
--    pkg_cv_FARSIGHT2_LIBS="$FARSIGHT2_LIBS"
-+if test -n "$FARSTREAM_LIBS"; then
-+    pkg_cv_FARSTREAM_LIBS="$FARSTREAM_LIBS"
-  elif test -n "$PKG_CONFIG"; then
-     if test -n "$PKG_CONFIG" && \
-     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\\
--             farsight2-\$GST_MAJORMINOR >= \$FARSIGHT_REQUIRED\""; } >&5
-+             farstream-\$FARSTREAM_REQUIRED >= \$FARSTREAM_REQUIRED\""; } >&5
-   ($PKG_CONFIG --exists --print-errors "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED") 2>&5
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED") 2>&5
-   ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
-   test $ac_status = 0; }; then
--  pkg_cv_FARSIGHT2_LIBS=`$PKG_CONFIG --libs "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED" 2>/dev/null`
-+  pkg_cv_FARSTREAM_LIBS=`$PKG_CONFIG --libs "\
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED" 2>/dev/null`
- else
-   pkg_failed=yes
- fi
-@@ -5572,26 +5555,26 @@ else
-         _pkg_short_errors_supported=no
- fi
-         if test $_pkg_short_errors_supported = yes; then
--	        FARSIGHT2_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED" 2>&1`
-+	        FARSTREAM_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "\
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED" 2>&1`
-         else
--	        FARSIGHT2_PKG_ERRORS=`$PKG_CONFIG --print-errors "\
--             farsight2-$GST_MAJORMINOR >= $FARSIGHT_REQUIRED" 2>&1`
-+	        FARSTREAM_PKG_ERRORS=`$PKG_CONFIG --print-errors "\
-+             farstream-$FARSTREAM_REQUIRED >= $FARSTREAM_REQUIRED" 2>&1`
-         fi
- 	# Put the nasty error message in config.log where it belongs
--	echo "$FARSIGHT2_PKG_ERRORS" >&5
-+	echo "$FARSTREAM_PKG_ERRORS" >&5
- 
--	HAVE_FARSIGHT=no
-+	HAVE_FARSTREAM=no
- elif test $pkg_failed = untried; then
-      	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
- $as_echo "no" >&6; }
--	HAVE_FARSIGHT=no
-+	HAVE_FARSTREAM=no
- else
--	FARSIGHT2_CFLAGS=$pkg_cv_FARSIGHT2_CFLAGS
--	FARSIGHT2_LIBS=$pkg_cv_FARSIGHT2_LIBS
-+	FARSTREAM_CFLAGS=$pkg_cv_FARSTREAM_CFLAGS
-+	FARSTREAM_LIBS=$pkg_cv_FARSTREAM_LIBS
-         { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
--	HAVE_FARSIGHT=yes
-+	HAVE_FARSTREAM=yes
- fi
-     fi
-   fi
-@@ -7069,16 +7052,16 @@ compile time options summary
-     TK 		 : $TK_VERSION
-     DEBUG        : $DEBUG
-     STATIC       : $STATIC
--    FARSIGHT     : $HAVE_FARSIGHT
-+    FARSTREAM    : $HAVE_FARSTREAM
-     LIBV4L       : $HAVE_LIBV4L
-     GUPNP-IGD    : $HAVE_GUPNP
- 
- EOF
- 
--if test x"$HAVE_FARSIGHT" = "xno"; then
--   echo "*** You do not seem to have gstreamer and farsight2 installed."
-+if test x"$HAVE_FARSTREAM" = "xno"; then
-+   echo "*** You do not seem to have gstreamer and farstream installed."
-    echo "*** You will not be able to build the required component for audio conversations."
--   echo "*** Read this for more information : http://amsn-project.net/wiki/Farsight"
-+   echo "*** Read this for more information : http://amsn-project.net/wiki/Farstream"
- fi
- 
- exit 0
