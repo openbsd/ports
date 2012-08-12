@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/19 06:39:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/12 17:13:22 jasper Exp $
 
 COMMENT=		C macros to add, find and delete items from a hash
 
-DISTNAME=		uthash-1.9.5
+DISTNAME=		uthash-1.9.6
 CATEGORIES=		devel
 
 HOMEPAGE=		http://uthash.sf.net/
