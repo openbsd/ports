@@ -1,10 +1,11 @@
-#$OpenBSD: Makefile,v 1.22 2012/08/12 17:33:04 jasper Exp $
+#$OpenBSD: Makefile,v 1.23 2012/08/13 14:07:01 naddy Exp $
 
 COMMENT=	open source MSN Messenger clone
 
 V=		0.98.9
 DISTNAME=	amsn-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/
@@ -32,8 +33,7 @@ RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 		x11/bwidget \
 		devel/desktop-file-utils
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
-		security/tcltls \
-		graphics/png:configure
+		security/tcltls
 
 MODTK_THREADED= Yes
 MODULES=	devel/gettext \
@@ -48,7 +48,7 @@ CONFIGURE_ARGS+=--disable-libv4l \
 		--with-tk="${MODTK_LIBDIR}"
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
-		    -I${WRKDIR}/libpng" \
+		    -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-lm -L${LOCALBASE}/lib" \
 		TK_INC_SPEC="${MODTK_INCDIR}/generic" \
 		TCLSH="${MODTCL_BIN}"
@@ -60,7 +60,6 @@ NO_REGRESS=	Yes # Generic tcl/tk tests.
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/amsn*
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/amsn
-	ln -s ${WRKDIR}/graphics/png/libpng-* ${WRKDIR}/libpng
 
 post-install:
 .for a in amsn amsn-remote amsn-remote-CLI
