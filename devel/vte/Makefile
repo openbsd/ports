@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2012/05/29 20:31:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2012/08/13 09:33:41 ajacoutot Exp $
 
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=	--enable-python
 
 MODGNOME_TOOLS= 	goi
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.11
 
 CONFIGURE_STYLE=	autoconf
