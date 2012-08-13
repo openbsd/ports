@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.112 2012/07/13 14:31:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2012/08/13 07:50:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.4.3
-REVISION=		0
+GNOME_VERSION=		3.4.4
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -66,8 +65,8 @@ YACC=			bison
 MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	addressbook/libebook/gen-western-table.py
 
-AUTOCONF_VERSION=	2.68
-AUTOMAKE_VERSION=	1.9
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.10
 
 MODGNOME_TOOLS= 	goi vala
 
