@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/18 14:31:00 pascal Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/13 10:38:25 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -43,6 +43,8 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=ogre/}
 EXTRACT_SUFX =		.tar.bz2
 
 CONFIGURE_ARGS +=	-DOGRE_INSTALL_SAMPLES=1
+
+VMEM_WARNING =		Yes
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/freeimage \
