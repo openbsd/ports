@@ -1,7 +1,8 @@
-GNS3 is a graphical network simulator that allows you to design complex
-network topologies and to launch simulations on them.
-It is an excellent complementary tool to real labs for administrators of
-Cisco networks or people wanting to pass their CCNA, CCNP, CCIP or CCIE
-certifications.  It can also be used to experiment features of Cisco IOS
-or to check configurations that need to be deployed later on real
-routers.
+GNS3 is a visual design tool and front-end to access emulated routers.
+It can export graphical network maps (with a reasonable set of icons for
+simple diagram-creations needs), control Dynamips and QEMU instances
+(including adding and removing connections between nodes) and more.
+
+Control over QEMU nodes is particularly nice; by default GNS3 uses
+a "base" disk image, allowing simple and disk-efficient creation of
+large networks based on a common operating system.

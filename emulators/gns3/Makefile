@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2012/06/08 09:16:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/13 14:18:15 gsoares Exp $
 
 COMMENT=	graphical network simulator
 
-MODPY_EGG_VERSION = 0.8.2
+MODPY_EGG_VERSION = 0.8.3
 DISTNAME=	GNS3-${MODPY_EGG_VERSION}-src
 PKGNAME=	gns3-${MODPY_EGG_VERSION}
 
@@ -20,7 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gns-3/}
 
 MODULES=	lang/python
 RUN_DEPENDS=	x11/py-qt4 \
-		emulators/dynamips
+		emulators/dynagen \
+		emulators/qemu
 
 NO_REGRESS=	Yes
 PKG_ARCH=	*
