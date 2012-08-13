@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/26 13:38:27 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/13 06:53:56 bentley Exp $
 lib/mupen64plus/
 lib/mupen64plus/mupen64plus-video-rice.so
-share/mupen64plus/
 share/mupen64plus/RiceVideoLinux.ini

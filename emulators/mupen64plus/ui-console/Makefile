@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/12/26 22:58:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/13 06:53:56 bentley Exp $
 
 COMMENT =		n64 emulator command-line ui plugin
 #
@@ -11,6 +11,8 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB = 		c pthread
 
 MUPEN64PLUS_MOD = 	ui-console
+
+MAKE_FLAGS =		MANDIR=${PREFIX}/man
 
 post-install:
 	gunzip ${PREFIX}/man/man6/mupen64plus.6.gz
