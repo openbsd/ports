@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/13 11:56:35 pea Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/15 13:09:58 gonzalo Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION= 6.5.3
+MODPY_EGG_VERSION= 6.5.4
 DISTNAME=	offlineimap-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
@@ -24,7 +24,7 @@ MODULES=	lang/python
 
 BUILD_DEPENDS=	textproc/py-docutils
 
-WRKDIST=	${WRKDIR}/spaetz-offlineimap-f2fe807
+WRKDIST=	${WRKDIR}/spaetz-offlineimap-c9e9690
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 

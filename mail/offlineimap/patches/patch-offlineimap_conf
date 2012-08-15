@@ -1,12 +1,12 @@
-$OpenBSD: patch-offlineimap_conf,v 1.1 2011/04/27 12:59:27 pea Exp $
---- offlineimap.conf.orig	Wed Mar  2 22:16:23 2011
-+++ offlineimap.conf	Wed Mar  2 22:16:37 2011
-@@ -283,7 +283,7 @@ ssl = yes
+$OpenBSD: patch-offlineimap_conf,v 1.2 2012/08/15 13:09:59 gonzalo Exp $
+--- offlineimap.conf.orig	Sat Jun  2 08:41:46 2012
++++ offlineimap.conf	Mon Aug  6 17:32:45 2012
+@@ -312,7 +312,7 @@ ssl = yes
  # specified, the CA Cert(s) need to verify the Server cert AND
  # match the hostname (* wildcard allowed on the left hand side)
  # The certificate should be in PEM format.
 -# sslcacertfile = /path/to/cacertfile.crt
 +sslcacertfile = /etc/ssl/cert.pem
  
- # Specify the port.  If not specified, use a default port.
- # remoteport = 993
+ # If you connect via SSL/TLS (ssl=true) and you have no CA certificate
+ # specified, offlineimap will refuse to sync as it connects to a server
