@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 14:21:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/15 17:58:40 sebastia Exp $
 
 COMMENT =	GNUstep desktop meta-package
 
 VERSION =	0.9.1
+REVISION =	0
 PKGNAME =	gnustep-desktop-${VERSION}
 
 RUN_DEPENDS += \
 		x11/gnustep/aclock \
 		x11/gnustep/affiche \
 		x11/gnustep/batmon \
+		x11/gnustep/corebase \
 		x11/gnustep/cdplayer \
 		x11/gnustep/databasin \
 		x11/gnustep/edenmath \
@@ -33,6 +35,7 @@ RUN_DEPENDS += \
 		x11/gnustep/matharray \
 		x11/gnustep/mpdcon \
 		x11/gnustep/netclasses \
+		x11/gnustep/paje \
 		x11/gnustep/price \
 		x11/gnustep/projectcenter \
 		x11/gnustep/remotedesk \
