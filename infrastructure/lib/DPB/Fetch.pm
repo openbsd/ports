@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.42 2012/07/20 11:45:33 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.43 2012/08/15 09:02:52 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -127,13 +127,15 @@ sub checked_already
 	return $self->{okay} || $self->{checked};
 }
 
+# this is the entry point from the Engine, this is run as soon as the path
+# has been scanned. For performance reasons, we cannot run a sha at that point.
 sub check
 {
 	my ($self, $logger) = @_;
 	# XXX in fetch_only mode, we won't build anything, so this is
 	# the only place we can check the file is okay
 	if ($self->{repo}->{fetch_only}) {
-		return $self->checksum_and_cache($self->filename);
+		return $self->checksum_and_cache($logger, $self->filename);
 	} else {
 		return $self->checkcache_or_size($logger, $self->filename);
 	}
@@ -178,7 +180,7 @@ sub checkcache_or_size
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (defined $self->cached->{$self->{name}}) {
-		return $self->checkcached($name);
+		return $self->checkcached($logger, $name);
 	}
 	return $self->checksize($logger, $name);
 }
@@ -207,16 +209,26 @@ sub checksize
 
 sub checkcached
 {
-	my ($self, $name) = @_;
+	my ($self, $logger, $name) = @_;
+	if (!defined $self->{sha}) {
+		my $fh = $logger->open('dist/'.$self->{name});
+		print $fh "incomplete distinfo: no sha\n";
+		return 0;
+	}
 	if ($self->cached->{$self->{name}}->equals($self->{sha})) {
 		$self->{okay} = 1;
 		return 1;
 	} else {
 		delete $self->cached->{$self->{name}};
+		my $fh = $logger->open('dist/'.$self->{name});
+		print $fh "sha cache info does not match,";
 		if ($self->caches_okay($name)) {
+			print $fh "but actual file had the right sha\n";
 			return 1;
+		} else {
+			print $fh "and actual file was wrong, deleted\n";
+			return 0;
 		}
-		return 0;
 	}
 }
 
@@ -233,6 +245,7 @@ sub do_cache
 	$self->cached->{$self->{name}} = $self->{sha};
 }
 
+# this is where we actually enter new files in the cache, when they do match.
 sub caches_okay
 {
 	my ($self, $name) = @_;
@@ -250,14 +263,14 @@ sub caches_okay
 
 sub checksum_and_cache
 {
-	my ($self, $name) = @_;
+	my ($self, $logger, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (!defined $self->{sha}) {
 		return 0;
 	}
 	if (defined $self->cached->{$self->{name}}) {
-		return $self->checkcached($name);
+		return $self->checkcached($logger, $name);
 	}
 	if ($self->caches_okay($name)) {
 		return 1;
