@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.28 2012/07/10 22:59:06 espie Exp $
+# $OpenBSD: Vars.pm,v 1.29 2012/08/15 09:05:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -120,6 +120,7 @@ sub grab_list
 		    };
 
 	my @current = ();
+	my ($previous, $info);
 	while(<$fh>) {
 		push(@current, $_);
 		chomp;
@@ -157,9 +158,12 @@ sub grab_list
 				$value = $1;
 			}
 			my $o = DPB::PkgPath->compose($pkgpath, $subdir);
-			$seen->{$o} //= DPB::PortInfo->new($o);
-			my $info = $seen->{$o};
-			$h->{$o} = $o;
+			if (!defined $previous || $previous != $o) {
+				$seen->{$o} = DPB::PortInfo->new($o);
+				$previous = $o;
+				$info = $seen->{$o};
+				$h->{$o} = $o;
+			}
 			eval { $info->add($var, $value, $o); };
 			if ($@) {
 				print $log $@;
