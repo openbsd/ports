@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2012/06/25 14:24:34 mpi Exp $
+# $OpenBSD: Makefile,v 1.7 2012/08/15 07:02:44 ajacoutot Exp $
 
 # from upstream, removed at next update
 MASTER_SITES0=		https://github.com/FreeRDP/Remmina/commit/
@@ -42,7 +42,7 @@ WANTLIB += gobject-2.0 gthread-2.0 pthread vte2_90 jpeg z telepathy-glib
 WANTLIB += util xkbfile ssh freerdp-kbd freerdp-rail
 WANTLIB += freerdp-channels freerdp-codec freerdp-core freerdp-gdi
 
-BUILD_DEPENDS=		net/avahi,-gtk3
+BUILD_DEPENDS=		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 
 LIB_DEPENDS=		devel/vte3 \
 			security/libssh \
