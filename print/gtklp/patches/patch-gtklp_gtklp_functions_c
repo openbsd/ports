@@ -1,0 +1,55 @@
+$OpenBSD: patch-gtklp_gtklp_functions_c,v 1.1 2012/08/15 13:22:29 ajacoutot Exp $
+
+Fix build with cups >= 1.6.0
+
+--- gtklp/gtklp_functions.c.orig	Wed Aug 15 14:47:22 2012
++++ gtklp/gtklp_functions.c	Wed Aug 15 14:47:04 2012
+@@ -173,8 +173,8 @@ void getBannerList(char *printername)
+ 		*z1='/';
+ 
+ 	request=ippNew();
+-	request->request.op.operation_id=IPP_GET_PRINTER_ATTRIBUTES;
+-	request->request.op.request_id=1;
++	ippSetOperation(request, IPP_GET_PRINTER_ATTRIBUTES);
++	ippSetRequestId(request, 1);
+ 	ippAddString(request,IPP_TAG_OPERATION,IPP_TAG_CHARSET,"attributes-charset",NULL,cupsLangEncoding(cupsLanguage));
+ 	ippAddString(request,IPP_TAG_OPERATION,IPP_TAG_LANGUAGE,"attributes-natural-language",NULL,cupsLanguage->language);
+ 	ippAddString(request,IPP_TAG_OPERATION,IPP_TAG_URI,"printer-uri",NULL,URI);
+@@ -194,7 +194,7 @@ void getBannerList(char *printername)
+ 	}
+ 	else
+ 	{
+-		bannerAnz=attr->num_values;
++		bannerAnz=ippGetCount(attr);
+ 		if(bannerAnz > MAX_BANNER)
+ 		{
+ 			if(DEBUG)
+@@ -206,8 +206,8 @@ void getBannerList(char *printername)
+ 		for(i1=0;i1<bannerAnz;i1++)
+ 		{
+ 			if(DEBUG)
+-				printf("  %s\n",attr->values[i1].string.text);
+-			strncpy(Banners[i1],(char *)attr->values[i1].string.text,(size_t)MAXLINE);
++				printf("  %s\n",ippGetString (attr, 1, NULL));
++			strncpy(Banners[i1],(char *)ippGetString (attr, 1, NULL),(size_t)MAXLINE);
+ 			bannerList=g_list_append(bannerList,(gchar *)str2str(Banners[i1]));
+ 		}
+ 	}
+@@ -1890,7 +1890,7 @@ void PrintFunc( GtkWidget *widget,gpointer   data )
+ 	cups_option_t **optionsptr;	
+ 	const char *files[MAXPRINTFILES];
+ 	char tmpprn[DEF_PRN_LEN+1];
+-  char *spoolfile;
++	char *spoolfile;
+ 	
+ 	for(i1=0;i1<=filesToPrintAnz;i1++)
+ 		files[i1]=filesToPrint[i1];
+@@ -1952,7 +1952,7 @@ void PrintFunc( GtkWidget *widget,gpointer   data )
+         {
+                 if(DEBUG)  printf("NumOpts-final(printing from stdin): %i\n",num_options);
+ 
+-                spoolfile=cupsTempFile2(tmppath,sizeof(tmppath));
++                spoolfile=(char*)cupsTempFile2(tmppath,sizeof(tmppath));
+ 
+                 if(spoolfile == (uintptr_t)NULL)
+                 {
