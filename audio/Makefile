@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2012/08/16 13:15:50 stsp Exp $
+# $OpenBSD: Makefile,v 1.285 2012/08/16 15:09:29 stsp Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -10,6 +10,7 @@
      SUBDIR += amarok
      SUBDIR += aqualung
      SUBDIR += ascd
+     SUBDIR += aubio
      SUBDIR += aucatctl
      SUBDIR += audacious
      SUBDIR += audacious-plugins
