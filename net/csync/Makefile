@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/04 15:13:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/16 08:52:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	bidirectional directories synchronizer
-REVISION=	0
 
-DISTNAME=	csync-0.50.7
+DISTNAME=	csync-0.50.8
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -23,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c iniparser log4c neon smbclient sqlite3 ssh
+WANTLIB += c crypto iniparser log4c neon smbclient sqlite3 ssh
+WANTLIB += ssl
 
 MASTER_SITES=	http://download.owncloud.com/download/
 
