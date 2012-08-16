@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/12 21:02:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/16 13:50:09 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 
 GNOME_PROJECT=	grilo
 GNOME_VERSION=	0.1.20
+API=		0.1
 
 SHARED_LIBS +=  grilo-0.1            0.0      # unknown
 SHARED_LIBS +=  grlnet-0.1           1.0      # unknown
@@ -35,5 +36,7 @@ LIB_DEPENDS=	devel/libsoup \
 MODGNOME_TOOLS= goi vala
 
 CONFIGURE_ARGS+=--enable-grl-net
+
+SUBST_VARS+=	API
 
 .include <bsd.port.mk>
