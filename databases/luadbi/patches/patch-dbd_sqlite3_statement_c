@@ -1,0 +1,81 @@
+$OpenBSD: patch-dbd_sqlite3_statement_c,v 1.1.1.1 2012/08/16 15:21:30 jasper Exp $
+
+Fix DBD.SQLite3 transaction handling
+From upstream svn rev 75
+
+--- dbd/sqlite3/statement.c.orig	Sat May  1 06:25:12 2010
++++ dbd/sqlite3/statement.c	Sun Jul 22 22:23:54 2012
+@@ -1,5 +1,8 @@
+ #include "dbd_sqlite3.h"
+ 
++extern int try_begin_transaction(connection_t *conn);
++extern int try_end_transaction(connection_t *conn);
++
+ /*
+  * Converts SQLite types to Lua types
+  */
+@@ -128,10 +131,12 @@ static int statement_execute(lua_State *L) {
+      */
+     if (sqlite3_reset(statement->stmt) != SQLITE_OK) {
+ 	lua_pushboolean(L, 0);
+-	lua_pushfstring(L, DBI_ERR_EXECUTE_FAILED, sqlite3_errmsg(statement->sqlite));
++	lua_pushfstring(L, DBI_ERR_EXECUTE_FAILED, sqlite3_errmsg(statement->conn->sqlite));
+ 	return 2;
+     }
+ 
++    sqlite3_clear_bindings(statement->stmt);
++
+     expected_params = sqlite3_bind_parameter_count(statement->stmt);
+     if (expected_params != num_bind_params) {
+ 	/*
+@@ -180,18 +185,20 @@ static int statement_execute(lua_State *L) {
+ 	if (errstr)
+ 	    lua_pushfstring(L, DBI_ERR_BINDING_PARAMS, errstr);
+ 	else
+-	    lua_pushfstring(L, DBI_ERR_BINDING_PARAMS, sqlite3_errmsg(statement->sqlite));
++	    lua_pushfstring(L, DBI_ERR_BINDING_PARAMS, sqlite3_errmsg(statement->conn->sqlite));
+     
+ 	return 2;
+     }
++    
++    try_begin_transaction(statement->conn);
+ 
+     if (!step(statement)) {
+ 	lua_pushboolean(L, 0);
+-	lua_pushfstring(L, DBI_ERR_EXECUTE_FAILED, sqlite3_errmsg(statement->sqlite));
++	lua_pushfstring(L, DBI_ERR_EXECUTE_FAILED, sqlite3_errmsg(statement->conn->sqlite));
+ 	return 2;
+     }
+ 
+-    statement->affected = sqlite3_changes(statement->sqlite);
++    statement->affected = sqlite3_changes(statement->conn->sqlite);
+ 
+     lua_pushboolean(L, 1);
+     return 1;
+@@ -283,7 +290,7 @@ static int statement_fetch_impl(lua_State *L, statemen
+ 	    /* 
+ 	     * reset needs to be called to retrieve the 'real' error message
+ 	     */
+-	    luaL_error(L, DBI_ERR_FETCH_FAILED, sqlite3_errmsg(statement->sqlite));
++	    luaL_error(L, DBI_ERR_FETCH_FAILED, sqlite3_errmsg(statement->conn->sqlite));
+ 	}
+     }
+ 
+@@ -357,14 +364,14 @@ int dbd_sqlite3_statement_create(lua_State *L, connect
+     statement_t *statement = NULL;
+ 
+     statement = (statement_t *)lua_newuserdata(L, sizeof(statement_t));
+-    statement->sqlite = conn->sqlite;
++    statement->conn = conn;
+     statement->stmt = NULL;
+     statement->more_data = 0;
+     statement->affected = 0;
+ 
+-    if (sqlite3_prepare_v2(statement->sqlite, sql_query, strlen(sql_query), &statement->stmt, NULL) != SQLITE_OK) {
++    if (sqlite3_prepare_v2(statement->conn->sqlite, sql_query, strlen(sql_query), &statement->stmt, NULL) != SQLITE_OK) {
+ 	lua_pushnil(L);
+-	lua_pushfstring(L, DBI_ERR_PREP_STATEMENT, sqlite3_errmsg(statement->sqlite));	
++	lua_pushfstring(L, DBI_ERR_PREP_STATEMENT, sqlite3_errmsg(statement->conn->sqlite));	
+ 	return 2;
+     } 
+ 
