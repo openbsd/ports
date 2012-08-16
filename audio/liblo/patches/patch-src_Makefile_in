@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2012/08/16 12:26:28 stsp Exp $
+--- src/Makefile.in.orig	Mon Jan 23 18:28:05 2012
++++ src/Makefile.in	Mon Jan 23 18:28:15 2012
+@@ -227,7 +227,7 @@ SOURCE_FILES = address.c send.c message.c server.c met
+ lib_LTLIBRARIES = liblo.la
+ liblo_la_CFLAGS = -Wall -I$(top_srcdir)
+ liblo_la_SOURCES = $(SOURCE_FILES)
+-liblo_la_LIBADD = -lpthread
++liblo_la_LIBADD = -pthread
+ liblo_la_LDFLAGS = -export-dynamic -version-info @LO_SO_VERSION@
+ testlo_CFLAGS = -Wall -I$(top_srcdir)
+ testlo_SOURCES = testlo.c

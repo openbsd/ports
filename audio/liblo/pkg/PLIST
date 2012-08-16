@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/16 12:26:28 stsp Exp $
+%%SHARED%%
+@bin bin/oscdump
+@bin bin/oscsend
+include/lo/
+include/lo/lo.h
+include/lo/lo_endian.h
+include/lo/lo_errors.h
+include/lo/lo_lowlevel.h
+include/lo/lo_macros.h
+include/lo/lo_osc_types.h
+include/lo/lo_throw.h
+include/lo/lo_types.h
+lib/liblo.a
+lib/liblo.la
+lib/pkgconfig/
+lib/pkgconfig/liblo.pc
