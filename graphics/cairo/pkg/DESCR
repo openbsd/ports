@@ -1,11 +1,15 @@
-Cairo is a vector graphics library with cross-device output
-support. Currently supported output targets include the X Window
-System and in-memory image buffers. PostScript and PDF file output is
-planned. Cairo is designed to produce identical output on all output
-media while taking advantage of display hardware acceleration when
-available (eg. through the X Render Extension).
+Cairo is a 2D graphics library with support for multiple output devices.
+Currently supported output targets include the X Window System (via both
+Xlib and XCB), quartz, win32, and image buffers, as well as PDF,
+PostScript, and SVG file output. Experimental backends include OpenGL,
+BeOS, OS/2, and DirectFB.
 
-Cairo provides a stateful user-level API with capabilities similar to
-the PDF 1.4 imaging model. Cairo provides operations including
-stroking and filling Bezier cubic splines, transforming and
-compositing translucent images, and antialiased text rendering.
+Cairo is designed to produce consistent output on all output media while
+taking advantage of display hardware acceleration when available (for
+example, through the X Render Extension).
+
+The cairo API provides operations similar to the drawing operators of
+PostScript and PDF. Operations in cairo include stroking and filling
+cubic Bezier splines, transforming and compositing translucent
+images, and antialiased text rendering. All drawing operations can be
+transformed by any affine transformation (scale, rotation, shear, etc.).

@@ -1,0 +1,14 @@
+$OpenBSD: patch-util_cairo-fdr_Makefile_in,v 1.1 2012/08/16 17:03:18 eric Exp $
+--- util/cairo-fdr/Makefile.in.orig	Sun Apr 29 20:49:57 2012
++++ util/cairo-fdr/Makefile.in	Thu Aug 16 18:08:18 2012
+@@ -376,8 +376,8 @@ AM_CPPFLAGS = -I$(top_srcdir)/src \
+ cairo_fdr_la_SOURCES = fdr.c
+ cairo_fdr_la_CPPFLAGS = $(AM_CPPFLAGS)
+ cairo_fdr_la_CFLAGS = $(CAIRO_CFLAGS)
+-cairo_fdr_la_LDFLAGS = -module -no-undefined
+-cairo_fdr_la_LIBADD = -ldl
++cairo_fdr_la_LDFLAGS = -module -no-undefined -avoid-version
++cairo_fdr_la_LIBADD = 
+ all: all-am
+ 
+ .SUFFIXES:

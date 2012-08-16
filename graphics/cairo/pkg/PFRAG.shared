@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2010/10/11 08:09:44 eric Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2012/08/16 17:03:18 eric Exp $
+lib/cairo/cairo-fdr.so
 @lib lib/cairo/libcairo-trace.so.${LIBcairo-trace_VERSION}
 @lib lib/libcairo-gobject.so.${LIBcairo-gobject_VERSION}
 @lib lib/libcairo-script-interpreter.so.${LIBcairo-script-interpreter_VERSION}

@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.9 2011/06/28 11:04:40 kili Exp $
+$OpenBSD: patch-configure,v 1.10 2012/08/16 17:03:18 eric Exp $
 
 Use `Requires', not `Requires.private', because otherwise libraries
 required for linking aren't exposed.
 
---- configure.orig	Sat Dec 25 15:22:57 2010
-+++ configure	Tue Jun 28 12:27:44 2011
-@@ -16983,10 +16983,7 @@ if test "x$PKG_CONFIG" = x; then
+--- configure.orig	Sun Apr 29 14:49:59 2012
++++ configure	Mon Aug  6 00:31:32 2012
+@@ -17696,10 +17696,7 @@ if test "x$PKG_CONFIG" = x; then
  	as_fn_error $? "pkg-config >= $PKGCONFIG_REQUIRED required but not found (http://pkgconfig.freedesktop.org/)" "$LINENO" 5
  fi
  
