@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.186 2012/07/08 14:53:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.187 2012/08/16 13:14:30 stsp Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -67,6 +67,7 @@
      SUBDIR += libgnome-keyring
      SUBDIR += libgnome-media-profiles
      SUBDIR += libgnomecanvas
+     SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomekbd
      SUBDIR += libgnomeui
      SUBDIR += libgweather
