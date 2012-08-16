@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2012/06/29 16:38:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.217 2012/08/16 15:21:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -26,6 +26,7 @@
      SUBDIR += libdbi
      SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
+     SUBDIR += luadbi
      SUBDIR += luasqlite3
      SUBDIR += luma
      SUBDIR += mdbtools/snapshot
