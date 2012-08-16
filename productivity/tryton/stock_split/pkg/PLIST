@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/16 09:33:44 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/de_DE.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/es_ES.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/locale/fr_FR.po
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/stock.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/test_stock_split.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_split/tests/test_stock_split.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_split-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
