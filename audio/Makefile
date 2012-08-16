@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2012/08/08 18:12:35 shadchin Exp $
+# $OpenBSD: Makefile,v 1.284 2012/08/16 13:15:50 stsp Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -74,6 +74,7 @@
      SUBDIR += libdca
      SUBDIR += libgpod
      SUBDIR += libid3tag
+     SUBDIR += liblo
      SUBDIR += libmad
      SUBDIR += libmikmod
      SUBDIR += libmodplug
