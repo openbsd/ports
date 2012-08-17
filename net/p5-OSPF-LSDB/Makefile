@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/04 08:25:45 bluhm Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/17 01:50:18 bluhm Exp $
 
 COMMENT =		ospf link-state database viewer
 
-DISTNAME =		OSPF-LSDB-1.02
+DISTNAME =		OSPF-LSDB-1.04
 
 CATEGORIES =		net
 
