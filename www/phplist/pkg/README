@@ -1,0 +1,23 @@
+$OpenBSD: README,v 1.1 2012/08/17 08:58:46 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+When upgrading from a previous version, please follow these instructions:
+
+  1. keep your config.php file somewhere safe (you can find your
+     config.php file in the config folder)
+
+  2. make a backup of your database. (recommended, but not essential)
+
+  3. overwrite your existing code with the new code. You will primarily
+     want to copy the "lists" folder and all files in it.
+
+  4. copy the config.php file back (to the "lists/config/" folder)
+
+  5. go to your phpList admin main page with your web browser and login
+
+  6. click the "Upgrade" link, which will now be there.
+
+  7. the upgrade has now been performed.

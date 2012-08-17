@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/11/06 20:10:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/08/17 08:58:46 jasper Exp $
 @group daemon
 lists/
 lists/.htaccess
@@ -2386,3 +2386,5 @@ lists/texts/ukrainian.inc
 lists/texts/usa.inc
 lists/texts/vietnamese.inc
 lists/ut.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
