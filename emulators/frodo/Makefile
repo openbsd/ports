@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/17 14:48:34 stu Exp $
 
 COMMENT=	Commodore 64 emulator
 
 DISTNAME=	FrodoV4_1b.Src
 PKGNAME=	frodo-4.1b
-REVISION=	5
+REVISION=	6
 DISTFILES=	FrodoV4_1b.Src${EXTRACT_SUFX}
 
 CATEGORIES=	emulators games
@@ -23,10 +23,12 @@ WANTLIB=		SDL c m pthread sndio stdc++
 
 CONFIGURE_STYLE=	gnu
 
-RUN_DEPENDS=	x11/tk/8.4
+MODULES=	x11/tk
+MODTK_VERSION=	8.4
+RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS=	sdl-*-!no_x11:devel/sdl
 
-WISH=wish8.4
+WISH=wish${MODTK_VERSION}
 FRODOLIBDIR=${PREFIX}/lib/frodo
 
 CONFIGURE_ENV=		CFLAGS='${CFLAGS} -O3 -D__unix -DX_USE_SHM -DUSE_SNDIO -fno-exceptions' \
