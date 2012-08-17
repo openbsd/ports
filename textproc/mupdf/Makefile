@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2012/05/08 22:49:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2012/08/17 13:30:16 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		1.0
-REVISION =	0
+V =		1.1
 DISTNAME =	mupdf-$V-source
-PKGNAME =	mupdf-$V
+PKGNAME =	mupdf-${V:S/-rc/rc/}
 
 CATEGORIES =	textproc x11
 
