@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/08/16 17:03:18 eric Exp $
+# $OpenBSD: Makefile,v 1.39 2012/08/17 07:58:50 ajacoutot Exp $
 
 COMMENT=		vector graphics library
 
@@ -9,6 +9,7 @@ SHARED_LIBS+=		cairo-gobject 1.0
 SHARED_LIBS+=		cairo-script-interpreter 1.0
 CATEGORIES=		graphics
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		http://cairographics.org/
 
@@ -36,11 +37,9 @@ LIB_DEPENDS=		graphics/png \
 			devel/glib2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		PTHREAD_LIBS="-pthread"
-CONFIGURE_ARGS=		--enable-gl \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--enable-gl \
 			--enable-tee \
 			--enable-xml
-
-REGRESS_DEPENDS=	print/ghostscript/gnu
 
 .include <bsd.port.mk>
