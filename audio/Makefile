@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2012/08/16 15:09:29 stsp Exp $
+# $OpenBSD: Makefile,v 1.286 2012/08/17 15:36:02 stsp Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -9,6 +9,7 @@
      SUBDIR += alac_decoder
      SUBDIR += amarok
      SUBDIR += aqualung
+     SUBDIR += ardour
      SUBDIR += ascd
      SUBDIR += aubio
      SUBDIR += aucatctl
