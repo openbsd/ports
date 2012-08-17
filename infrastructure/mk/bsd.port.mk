@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1183 2012/08/04 14:23:30 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1184 2012/08/17 22:32:29 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2258,7 +2258,7 @@ unlock:
 .endfor
 
 subpackage:
-	@${_DO_LOCK}; ${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-subpackage
+	@${_DO_LOCK}; (${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-subpackage)
 
 _internal-package: 
 	@${_cache_fragment}; cd ${.CURDIR} && ${MAKE} _internal-package-only
@@ -2668,7 +2668,7 @@ print-plist-libs:
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
-_internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}
+_internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}}
 
 # Separate target for each file fetch-all will retrieve
 
