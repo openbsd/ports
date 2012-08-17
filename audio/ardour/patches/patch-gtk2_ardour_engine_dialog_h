@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk2_ardour_engine_dialog_h,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- gtk2_ardour/engine_dialog.h.orig	Sat Jan 21 16:42:23 2012
++++ gtk2_ardour/engine_dialog.h	Sat Jan 21 16:42:41 2012
+@@ -92,6 +92,8 @@ class EngineControl : public Gtk::VBox {
+ 
+ #ifdef __APPLE__
+ 	std::vector<std::string> enumerate_coreaudio_devices ();
++#elif defined(__OpenBSD__)
++	std::vector<std::string> enumerate_sndio_devices ();
+ #else
+ 	std::vector<std::string> enumerate_alsa_devices ();
+ 	std::vector<std::string> enumerate_oss_devices ();

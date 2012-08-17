@@ -1,0 +1,13 @@
+$OpenBSD: patch-libs_pbd_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- libs/pbd/SConscript.orig	Wed Nov 23 15:08:24 2011
++++ libs/pbd/SConscript	Sat Aug 11 15:12:45 2012
+@@ -58,6 +58,9 @@ if conf.CheckCHeader('execinfo.h'):
+     conf.env.Append(CXXFLAGS="-DHAVE_EXECINFO")
+ pbd = conf.Finish()
+ 
++if libraries.has_key('execinfo'):
++    pbd.Merge([libraries['execinfo']])
++
+ pbd.Merge ([ libraries['sigc2'],
+              libraries['xml'],
+              libraries['glibmm2'],

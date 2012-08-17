@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk2_ardour_new_session_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- gtk2_ardour/new_session_dialog.cc.orig	Mon Jul  2 02:19:40 2012
++++ gtk2_ardour/new_session_dialog.cc	Sat Aug 11 15:12:45 2012
+@@ -589,7 +589,7 @@ NewSessionDialog::set_session_folder(const std::string
+ 	*/
+ 
+ 
+-#ifdef __APPLE__
++#if defined(__APPLE__) || defined(__OpenBSD__)
+ 
+ 	char buf[PATH_MAX];
+ 

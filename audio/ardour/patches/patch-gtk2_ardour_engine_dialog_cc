@@ -1,0 +1,126 @@
+$OpenBSD: patch-gtk2_ardour_engine_dialog_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- gtk2_ardour/engine_dialog.cc.orig	Thu Apr 19 16:35:13 2012
++++ gtk2_ardour/engine_dialog.cc	Sat Aug 11 15:12:45 2012
+@@ -14,7 +14,7 @@
+ #include <CoreFoundation/CFString.h>
+ #include <sys/param.h>
+ #include <mach-o/dyld.h>
+-#else
++#elif defined(__linux__)
+ #include <alsa/asoundlib.h>
+ #endif
+ 
+@@ -116,6 +116,8 @@ EngineControl::EngineControl ()
+ 	strings.clear ();
+ #ifdef __APPLE__
+ 	strings.push_back (X_("CoreAudio"));
++#elif defined(__OpenBSD__)
++	strings.push_back (X_("sndio"));
+ #else
+ 	strings.push_back (X_("ALSA"));
+ 	strings.push_back (X_("OSS"));
+@@ -131,7 +133,9 @@ EngineControl::EngineControl ()
+ 
+ 	strings.clear ();
+ 	strings.push_back (_("Playback/Recording on 1 Device"));
++#ifndef __OpenBSD__
+ 	strings.push_back (_("Playback/Recording on 2 Devices"));
++#endif
+ 	strings.push_back (_("Playback only"));
+ 	strings.push_back (_("Recording only"));
+ 	set_popdown_strings (audio_mode_combo, strings);
+@@ -162,7 +166,7 @@ EngineControl::EngineControl ()
+ 	basic_packer.attach (period_size_combo, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+ 	row++;
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	label = manage (new Label (_("Number of buffers")));
+ 	basic_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+ 	basic_packer.attach (periods_spinner, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+@@ -183,7 +187,7 @@ EngineControl::EngineControl ()
+ 	row++;
+ 	/* no audio mode with CoreAudio, its duplex or nuthin' */
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	label = manage (new Label (_("Audio Mode")));
+ 	basic_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+ 	basic_packer.attach (audio_mode_combo, 1, 2, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+@@ -223,7 +227,7 @@ EngineControl::EngineControl ()
+ 	realtime_button.signal_toggled().connect (mem_fun (*this, &EngineControl::realtime_changed));
+ 	realtime_changed ();
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	label = manage (new Label (_("Realtime Priority")));
+ 	label->set_alignment (1.0, 0.5);
+ 	options_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+@@ -273,7 +277,7 @@ EngineControl::EngineControl ()
+ 	options_packer.attach (*label, 0, 1, row, row + 1, FILL|EXPAND, (AttachOptions) 0);
+ 	++row;
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	label = manage (new Label (_("Dither")));	
+ 	label->set_alignment (1.0, 0.5);
+ 	options_packer.attach (dither_mode_combo, 1, 2, row, row + 1, FILL|EXPAND, AttachOptions(0));
+@@ -289,7 +293,7 @@ EngineControl::EngineControl ()
+ 	device_packer.set_spacings (6);
+ 	row = 0;
+ 
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	label = manage (new Label (_("Input device")));
+ 	label->set_alignment (1.0, 0.5);
+ 	device_packer.attach (*label, 0, 1, row, row+1, FILL|EXPAND, (AttachOptions) 0);
+@@ -433,6 +437,8 @@ EngineControl::build_command_line (vector<string>& cmd
+ 	} else if (driver == X_("CoreAudio")) {
+ 		using_coreaudio = true;
+ 		cmd.push_back ("coreaudio");
++	} else if (driver == X_("sndio")) {
++		cmd.push_back ("sndio");
+ 	} else if (driver == X_("NetJACK")) {
+ 		using_netjack = true;
+ 		cmd.push_back ("netjack");
+@@ -613,7 +619,7 @@ EngineControl::setup_engine ()
+ void
+ EngineControl::realtime_changed ()
+ {
+-#ifndef __APPLE__
++#if !defined(__APPLE__) && !defined(__OpenBSD__)
+ 	priority_spinner.set_sensitive (realtime_button.get_active());
+ #endif
+ }
+@@ -628,7 +634,12 @@ EngineControl::enumerate_devices (const string& driver
+ 		devices[driver] = enumerate_coreaudio_devices ();
+ #endif
+ 
+-#ifndef __APPLE__
++#ifdef __OpenBSD__
++	} else if (driver == "sndio") {
++		devices[driver] = enumerate_sndio_devices ();
++#endif
++
++#ifdef __linux__
+ 	} else if (driver == "ALSA") {
+ 		devices[driver] = enumerate_alsa_devices ();
+ 	} else if (driver == "FFADO") {
+@@ -753,6 +764,17 @@ Ardour and choose the relevant device then."
+ 		exit (1);
+ 	}
+ 
++
++	return devs;
++}
++#elif defined(__OpenBSD__)
++vector<string>
++EngineControl::enumerate_sndio_devices ()
++{
++	vector<string> devs;
++
++	backend_devs.clear ();
++	devs.push_back ("default");
+ 
+ 	return devs;
+ }

@@ -1,0 +1,21 @@
+$OpenBSD: patch-libs_midi++2_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- libs/midi++2/SConscript.orig	Mon Jan  2 20:01:31 2012
++++ libs/midi++2/SConscript	Mon Jan  2 20:05:13 2012
+@@ -32,6 +32,7 @@ version.cc
+ sysdep_sources = Split ("""
+ alsa_sequencer_midiport.cc
+ coremidi_midiport.cc
++sndio_midiport.cc
+ """)
+ 
+ if env['SYSMIDI'] == 'CoreMIDI':
+@@ -39,6 +40,9 @@ if env['SYSMIDI'] == 'CoreMIDI':
+    midi2.Append (CCFLAGS="-DWITH_COREMIDI")
+    midi2.Append (LINKFLAGS="-framework CoreMIDI")
+    midi2.Append (LINKFLAGS="-framework CoreFoundation")
++elif env['SYSMIDI'] == 'SndioMIDI':
++   sysdep_src = [ 'sndio_midiport.cc' ]
++   midi2.Append (CCFLAGS="-DWITH_SNDIO")
+ else:
+    sysdep_src = [ 'alsa_sequencer_midiport.cc' ]
+    midi2.Append (CCFLAGS="-DWITH_ALSA")

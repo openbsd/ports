@@ -1,0 +1,77 @@
+$OpenBSD: patch-libs_midi++2_midifactory_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- libs/midi++2/midifactory.cc.orig	Tue Feb 24 13:37:50 2009
++++ libs/midi++2/midifactory.cc	Mon Jan 23 17:31:34 2012
+@@ -46,7 +46,15 @@ std::string MIDI::CoreMidi_MidiPort::typestring = "cor
+ 
+ #endif // WITH_COREMIDI
+ 
++#ifdef WITH_SNDIO
+ 
++#include <midi++/sndio_midiport.h>
++
++std::string MIDI::SndioMidi_MidiPort::typestring = "sndio";
++
++#endif // WITH_SNDIO
++
++
+ using namespace std;
+ using namespace MIDI;
+ using namespace PBD;
+@@ -74,6 +82,12 @@ PortFactory::create_port (const XMLNode& node)
+ 		break;
+ #endif // WITH_COREMIDI
+ 
++#if WITH_SNDIO
++	case Port::SndioMidi_MidiPort:
++		port = new SndioMidi_MidiPort (node);
++		break;
++#endif // WITH_SNDIO
++
+ 	case Port::Null:
+ 		port = new Null_MidiPort (node);
+ 		break;
+@@ -107,6 +121,12 @@ PortFactory::ignore_duplicate_devices (Port::Type type
+ 		break;
+ #endif // WITH_COREMIDI
+ 
++#if WITH_SNDIO
++	case Port::SndioMidi_MidiPort:
++		ret = false;
++		break;
++#endif // WITH_SNDIO
++
+ 	default:
+ 		break;
+ 	}
+@@ -126,6 +146,10 @@ PortFactory::get_known_ports (vector<PortSet>& ports)
+ 	n += CoreMidi_MidiPort::discover (ports);
+ #endif // WITH_COREMIDI
+ 	
++#if WITH_SNDIO
++	n += SndioMidi_MidiPort::discover (ports);
++#endif // WITH_SNDIO
++
+ 	return n;
+ }
+ 
+@@ -141,6 +165,9 @@ PortFactory::default_port_type ()
+ 	return "coremidi";
+ #endif // WITH_COREMIDI
+ 	
++#ifdef WITH_SNDIO
++	return "sndio";
++#endif
+ 	PBD::fatal << "programming error: no default port type defined in midifactory.cc" << endmsg;
+ }
+ 
+@@ -157,6 +184,10 @@ PortFactory::string_to_type (const string& xtype)
+ #ifdef WITH_COREMIDI
+ 	} else if (strings_equal_ignore_case (xtype, CoreMidi_MidiPort::typestring)) {
+ 		return Port::CoreMidi_MidiPort;
++#endif
++#ifdef WITH_SNDIO
++	} else if (strings_equal_ignore_case (xtype, SndioMidi_MidiPort::typestring)) {
++		return Port::SndioMidi_MidiPort;
+ #endif
+ 	} else if (strings_equal_ignore_case (xtype, Null_MidiPort::typestring)) {
+ 		return Port::Null;

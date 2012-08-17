@@ -1,0 +1,11 @@
+$OpenBSD: patch-libs_ardour_SConscript,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- libs/ardour/SConscript.orig	Sat Aug 11 17:46:06 2012
++++ libs/ardour/SConscript	Sat Aug 11 17:46:10 2012
+@@ -327,7 +327,6 @@ ardour.Merge ([
+ 	     libraries['lrdf'],
+ 	     libraries['midi++2'],
+ 	     libraries['pbd'],
+-	     libraries['raptor'],
+ 	     libraries['samplerate'],
+ 	     libraries['sigc2'],
+ 	     libraries['sndfile'],

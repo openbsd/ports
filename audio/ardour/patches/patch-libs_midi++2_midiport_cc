@@ -1,0 +1,11 @@
+$OpenBSD: patch-libs_midi++2_midiport_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- libs/midi++2/midiport.cc.orig	Mon Jan 23 16:25:09 2012
++++ libs/midi++2/midiport.cc	Mon Jan 23 16:26:26 2012
+@@ -51,6 +51,7 @@ Port::Port (const XMLNode& node)
+ 	_devname = desc.device;
+ 	_tagname = desc.tag;
+ 	_mode = desc.mode;
++	_type = desc.type;
+ 
+ 	if (_mode == O_RDONLY || _mode == O_RDWR) {
+ 		input_parser = new Parser (*this);

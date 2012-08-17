@@ -1,0 +1,82 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- SConstruct.orig	Fri Jul 20 17:25:16 2012
++++ SConstruct	Fri Aug 17 15:23:17 2012
+@@ -441,7 +441,6 @@ deps = \
+ 	'gtk+-2.0'             : '2.8.1',
+ 	'libxml-2.0'           : '2.6.0',
+ 	'samplerate'           : '0.1.0',
+-	'raptor2'              : '2.0.0',
+ 	'lrdf'                 : '0.4.0',
+ 	'jack'                 : '0.120.0',
+ 	'libgnomecanvas-2.0'   : '2.0',
+@@ -588,9 +587,6 @@ libraries['lrdf'].ParseConfig('pkg-config --cflags --l
+ libraries['liblo'] = LibraryInfo()
+ libraries['liblo'].ParseConfig('pkg-config --cflags --libs liblo')
+ 
+-libraries['raptor'] = LibraryInfo()
+-libraries['raptor'].ParseConfig('pkg-config --cflags --libs raptor2')
+-
+ libraries['sndfile'] = LibraryInfo()
+ libraries['sndfile'].ParseConfig ('pkg-config --cflags --libs sndfile')
+ 
+@@ -629,6 +625,9 @@ libraries['midi++2'] = LibraryInfo (LIBS='midi++', LIB
+ libraries['pbd']    = LibraryInfo (LIBS='pbd', LIBPATH='#libs/pbd', CPPPATH='#libs/pbd')
+ libraries['gtkmm2ext'] = LibraryInfo (LIBS='gtkmm2ext', LIBPATH='#libs/gtkmm2ext', CPPPATH='#libs/gtkmm2ext')
+ 
++libraries['execinfo'] = LibraryInfo (LIBS='execinfo')
++conf = Configure(libraries['execinfo'])
++conf.Finish()
+ 
+ # SCons should really do this for us
+ 
+@@ -678,6 +677,9 @@ if env['DIST_TARGET'] == 'auto':
+         else:
+             env['DIST_TARGET'] = 'leopard'
+     else:
++        if re.search("openbsd", config[config_kernel]):
++	    if config[config_cpu] == 'amd64':
++	        config[config_cpu] = 'x86_64'
+         if re.search ("x86_64", config[config_cpu]) != None:
+             env['DIST_TARGET'] = 'x86_64'
+         elif re.search("i[0-5]86", config[config_cpu]) != None:
+@@ -698,6 +700,7 @@ if env['DIST_TARGET'] != 'tiger' and env['DIST_TARGET'
+ 	env['AUSTATE'] = 0
+ 	env['WITH_CARBON'] = 0
+ 
++build_host_supports_sse = 0
+ if config[config_cpu] == 'powerpc' and env['DIST_TARGET'] != 'none':
+     # Apple/PowerPC optimization options
+     #
+@@ -929,6 +932,7 @@ libraries['vamphost'] = LibraryInfo (LIBS='vamphostsdk
+ 
+ env['RUBBERBAND'] = False
+ 
++env.Merge([libraries['fftw3f']])
+ conf = Configure (env)
+ 
+ if conf.CheckHeader ('fftw3.h'):
+@@ -1061,6 +1065,11 @@ elif conf.CheckCHeader('/System/Library/Frameworks/Cor
+     env['SYSMIDI'] = 'CoreMIDI'
+     subst_dict['%MIDITAG%'] = "ardour"
+     subst_dict['%MIDITYPE%'] = "coremidi"
++elif conf.CheckHeader("sndio.h"):
++    libraries['sysmidi'] = LibraryInfo (LIBS='sndio')
++    env['SYSMIDI'] = 'SndioMIDI'
++    subst_dict['%MIDITAG%'] = "ardour"
++    subst_dict['%MIDITYPE%'] = "sndio"
+ else:
+     print "It appears you don't have the required MIDI libraries installed. For Linux this means you are missing the development package for ALSA libraries."
+     sys.exit (1)
+@@ -1283,11 +1292,7 @@ subst_dict['%INSTALL_PREFIX%'] = install_prefix;
+ subst_dict['%FINAL_PREFIX%'] = final_prefix;
+ subst_dict['%PREFIX%'] = final_prefix;
+ 
+-if env['PREFIX'] == '/usr':
+-    final_config_prefix = '/etc'
+-else:
+-    final_config_prefix = env['PREFIX'] + '/etc'
+-
++final_config_prefix = '/etc'
+ config_prefix = '$DESTDIR' + final_config_prefix
+ 
+ #

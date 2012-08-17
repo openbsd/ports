@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk2_ardour_ardour_ui_cc,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+--- gtk2_ardour/ardour_ui.cc.orig	Sat Aug 11 23:50:19 2012
++++ gtk2_ardour/ardour_ui.cc	Sat Aug 11 23:50:33 2012
+@@ -716,7 +716,7 @@ ARDOUR_UI::check_memory_locking ()
+ 								     "This might cause %1 to run out of memory before your system "
+ 								     "runs out of memory. \n\n"
+ 								     "You can view the memory limit with 'ulimit -l', "
+-								     "and it is normally controlled by /etc/security/limits.conf"), PROGRAM_NAME));
++								     "and it is normally controlled by /etc/login.conf"), PROGRAM_NAME));
+ 						   
+ 				VBox* vbox = msg.get_vbox();
+ 				HBox hbox;
