@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2012/07/08 14:21:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2012/08/17 09:59:08 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	1.3.16
+VERSION =	1.3.17
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
@@ -66,5 +66,11 @@ post-install:
 	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${WRKSRC}/Scripts/sql-update-1.3.11_to_1.3.12-mysql.sh \
 		${PREFIX}/share/doc/sogo/sql-update-1.3.11_to_1.3.12-mysql.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-1.3.16_to_1.3.17.sh \
+		${PREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-postgres.sh
+	${INSTALL_SCRIPT} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+		${WRKSRC}/Scripts/sql-update-1.3.16_to_1.3.17-mysql.sh \
+		${PREFIX}/share/doc/sogo/sql-update-1.3.16_to_1.3.17-mysql.sh
 
 .include <bsd.port.mk>
