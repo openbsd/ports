@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/16 12:31:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/17 07:11:39 jasper Exp $
 
-COMMENT =		open sound control protocol library
+COMMENT =		leightweight open sound control (OSC) implementation
 DISTNAME =		liblo-0.26
-SHARED_LIBS =		lo 0.0
+SHARED_LIBS +=  lo                   0.0      # 7.0
 CATEGORIES =		audio
 HOMEPAGE =		http://liblo.sourceforge.net/
-REVISION =		0
+REVISION =		1
 
-# GPLv2+
+# LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
