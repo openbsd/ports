@@ -1,0 +1,26 @@
+$OpenBSD: patch-sope-gdl1_GDLAccess_EOExpressionArray_m,v 1.1 2012/08/17 09:57:30 sebastia Exp $
+
+Fix crasher in OGo when running OGo with LC_CTYPE='de_DE.UTF-8' and searching
+with Umlauts.
+
+--- sope-gdl1/GDLAccess/EOExpressionArray.m.orig	Tue Jul 31 17:37:56 2012
++++ sope-gdl1/GDLAccess/EOExpressionArray.m	Tue Jul 31 17:38:31 2012
+@@ -140,14 +140,16 @@
+   relationshipPaths:(NSMutableArray *)relationshipPaths  
+ {
+     EOExpressionArray *exprArray;
+-    unsigned char buf[[expression cStringLength] + 4]; // TODO: not too good
++    unsigned char buf[[expression lengthOfBytesUsingEncoding:NSUTF8StringEncoding] + 4]; // TODO: not too good
+     const unsigned char *s, *start;
+     id objectToken;
+     NSAutoreleasePool *pool;
+     
+     exprArray = [[EOExpressionArray new] autorelease];
+     pool = [[NSAutoreleasePool alloc] init];
+-    [expression getCString:(char *)buf];
++    [expression getCString:(char *)buf 
++		maxLength:[expression lengthOfBytesUsingEncoding:NSUTF8StringEncoding] + 4
++		encoding:NSUTF8StringEncoding];
+     s = buf;
+     
+     /* Divide the expression string in alternating substrings that obey the
