@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/16 15:08:09 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/17 07:20:08 jasper Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -14,12 +14,18 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c m pthread fftw3f jack samplerate sndfile
-MASTER_SITES =		http://aubio.org/pub/
+
+MASTER_SITES=		${HOMEPAGE}/pub/
+
 MODULES =		lang/python
-BUILD_DEPENDS =		devel/swig
+
+BUILD_DEPENDS =		devel/swig \
+			textproc/docbook-to-man
 LIB_DEPENDS =		audio/jack \
 			math/fftw3,float
+
 USE_LIBTOOL =		Yes
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS += 	${CONFIGURE_SHARED}
 CONFIGURE_FLAGS +=	--enable-test-progs
