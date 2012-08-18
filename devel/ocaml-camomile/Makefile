@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/13 08:38:09 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/18 22:13:17 avsm Exp $
 
 COMMENT =	unicode library for objective caml
 
 CATEGORIES =	devel
 
 V =		0.8.3
+REVISION =	0
 DISTNAME =	camomile-${V}
 PKGNAME =	ocaml-camomile-${V}
 EXTRACT_SUFX =	.tar.bz2
@@ -33,7 +34,7 @@ USE_GMAKE =	Yes
 ALL_TARGET =	all dochtml
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/camomile/html/

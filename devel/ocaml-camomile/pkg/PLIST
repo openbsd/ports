@@ -1,17 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/13 08:38:10 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/18 22:13:17 avsm Exp $
 %%native%%
-lib/ocaml/
-lib/ocaml/site-lib/
-lib/ocaml/site-lib/camomile/
-lib/ocaml/site-lib/camomile/META
-lib/ocaml/site-lib/camomile/camomile.cma
-lib/ocaml/site-lib/camomile/camomileLibrary.cma
-lib/ocaml/site-lib/camomile/camomileLibrary.cmi
-lib/ocaml/site-lib/camomile/camomileLibrary.mli
-lib/ocaml/site-lib/camomile/camomileLibraryDefault.cmi
-lib/ocaml/site-lib/camomile/camomileLibraryDefault.mli
-lib/ocaml/site-lib/camomile/camomileLibraryDyn.cmi
-lib/ocaml/site-lib/camomile/camomileLibraryDyn.mli
+lib/ocaml/camomile/
+lib/ocaml/camomile/META
+lib/ocaml/camomile/camomile.cma
+lib/ocaml/camomile/camomileLibrary.cma
+lib/ocaml/camomile/camomileLibrary.cmi
+lib/ocaml/camomile/camomileLibrary.mli
+lib/ocaml/camomile/camomileLibraryDefault.cmi
+lib/ocaml/camomile/camomileLibraryDefault.mli
+lib/ocaml/camomile/camomileLibraryDyn.cmi
+lib/ocaml/camomile/camomileLibraryDyn.mli
 share/camomile/
 share/camomile/charmaps/
 share/camomile/charmaps/1026.mar
