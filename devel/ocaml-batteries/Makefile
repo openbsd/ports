@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/13 11:27:16 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/18 22:04:48 avsm Exp $
 
 COMMENT =	OCaml Batteries Included - OCaml foundation library
 CATEGORIES =	devel
-REVISION =	0
 
-V =		1.4.3
-# $N changes with every release, too.
-N =		884
+V =		1.5.0
 DISTNAME =	batteries-${V}
 PKGNAME =	ocaml-batteries-${V}
 
-MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/$N/
+# You need to update MASTER_SITES too, when changing the version number.
+MASTER_SITES =	https://forge.ocamlcore.org/frs/download.php/950/
 
 HOMEPAGE =	http://batteries.forge.ocamlcore.org/
 
@@ -30,24 +28,30 @@ REGRESS_DEPENDS = devel/ounit
 
 USE_GMAKE =	Yes
 
-MAKE_ENV =	BATTERIES_NATIVE=${MODOCAML_NATIVE:S/Yes/yes/:S/No/no/} \
-    		DOCROOT=${WRKINST}${LOCALBASE}/share/doc/ocaml-batteries \
+MAKE_ENV =	DOCROOT=${PREFIX}/share/doc/ocaml-batteries \
 		TERM=${TERM}
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_ENV +=	BATTERIES_NATIVE=yes
+.else
+MAKE_ENV +=	BATTERIES_NATIVE=no
+.endif
 
-FAKE_FLAGS =	DESTDIR=${WRKINST}${LOCALBASE}/lib/ocaml/site-lib
+FAKE_FLAGS =	DESTDIR=${WRKINST}${PREFIX}/lib/ocaml \
+		DOCROOT=${WRKINST}${PREFIX}/share/doc/ocaml-batteries
 
-ALL_TARGET =	all doc
+ALL_TARGET =		all doc
 REGRESS_TARGET =	test
 INSTALL_TARGET =	install install-doc
 
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml
 
 post-install:
 	${INSTALL_DATA} \
-	    ${WRKSRC}/ocamlinit \
-	    ${PREFIX}/share/doc/ocaml-batteries/
+		${WRKSRC}/ocamlinit \
+		${PREFIX}/share/doc/ocaml-batteries/
 
 
 .include <bsd.port.mk>
