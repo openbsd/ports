@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1061 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1062 2012/08/18 23:26:13 avsm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -398,7 +398,10 @@
      SUBDIR += ocaml-camomile
      SUBDIR += ocaml-mlgmp
      SUBDIR += ocaml-net
+     SUBDIR += ocaml-net,pcre
      SUBDIR += ocaml-pcre
+     SUBDIR += ocaml-react
+     SUBDIR += ocaml-lambda-term
      SUBDIR += ode
      SUBDIR += ois
      SUBDIR += omake
