@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/18 22:34:57 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/18 22:58:00 ajacoutot Exp $
 
 COMMENT =	OCaml bindings for libssl
 CATEGORIES =	devel security
@@ -6,9 +6,9 @@ CATEGORIES =	devel security
 NAME =		ocaml-ssl
 DISTNAME =	${NAME}-0.4.6
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=savonet/ocaml-ssl/}
+REVISION =	0
 
 HOMEPAGE =	http://sourceforge.net/projects/savonet/files/ocaml-ssl/
-
 
 # LGPL2.1
 PERMIT_PACKAGE_FTP =		Yes
