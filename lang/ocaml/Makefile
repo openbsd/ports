@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.55 2012/07/04 12:49:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/08/18 21:49:16 avsm Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
 
 NOT_FOR_ARCHS=	hppa
 
-BROKEN-powerpc=	build: Could not find the .cmi file for interface
-
 COMMENT=	ML language based on complete class-based objective system
 
-BASENAME=	ocaml-3.12
-DISTNAME=	${BASENAME}.1
-REVISION=	1
+BASENAME=	ocaml-4.00
+DISTNAME=	${BASENAME}.0
+REVISION=       1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
-DOCFILES=	${BASENAME}-refman.html.tar.gz
+DOCFILES=	${BASENAME}-refman-html.tar.gz
 DISTFILES=	${DISTNAME}.tar.gz ${DOCFILES}
 
 HOMEPAGE=	http://www.ocaml.org/
@@ -49,12 +47,12 @@ RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
 WANTLIB +=	${MODTK_WANTLIB}
 
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "sparc" || \
-	${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-	${MACHINE_ARCH} == "powerpc"
+.include <bsd.port.arch.mk>
+
+.if ${PROPERTIES:Mocaml_native}
 ALL_TARGET=	world bootstrap opt opt.opt
 PKG_ARGS+=-Dnative=1
-.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+.if ${PROPERTIES:Mocaml_native_dynlink}
 PKG_ARGS+=-Ddynlink=1
 .else
 PKG_ARGS+=-Ddynlink=0
@@ -71,6 +69,11 @@ post-extract:
 	@cp ${WRKSRC}/asmrun/power-elf.S ${WRKSRC}/asmrun/power-bsd.S
 
 post-install:
+.if ${PROPERTIES:Mocaml_native}
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.native ${PREFIX}/bin/ocamlbuild
+.else
+	@ln -sf ${LOCALBASE}/bin/ocamlbuild.byte ${PREFIX}/bin/ocamlbuild
+.endif
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml/html/libref
 	@${INSTALL_DATA} ${WRKDIR}/htmlman/*.{html,gif} \
 		${PREFIX}/share/doc/ocaml/html
@@ -78,10 +81,6 @@ post-install:
 		${PREFIX}/share/doc/ocaml/html/libref
 	@strip ${PREFIX}/bin/ocamlrun ${PREFIX}/bin/ocamlyacc
 	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml
-	@mkdir -p ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/typing ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/utils ${PREFIX}/lib/ocaml/compiler-libs
-	@cp -R ${WRKBUILD}/parsing ${PREFIX}/lib/ocaml/compiler-libs
 
 # PFRAG.native was generated from PLIST with:
 # egrep '(ocamlopt|\.cmx|\.cmxa|\.cmxs|\.opt|opt\.1|opt.cmi|\.native|\.o)$'
