@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:30:02 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.12 1996/12/01 01:23:22 obrien Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	X11 front-end program for the archie network search service
 

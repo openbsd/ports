@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/03/29 13:38:31 sthen Exp $
-# $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
+# $OpenBSD: Makefile,v 1.67 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	image manipulation library for X11
 

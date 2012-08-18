@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:57 espie Exp $
-# $FreeBSD: Makefile,v 1.10 1999/01/06 17:11:23 dt Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	userland smbfs --- SMB to NFS protocols converter
 

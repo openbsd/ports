@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:06:28 sthen Exp $
-# $FreeBSD: Makefile,v 1.1.1.1 1999/01/18 04:50:26 steve Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	fast POSIX-compliant awk
 

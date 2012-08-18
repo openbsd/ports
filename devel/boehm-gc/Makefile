@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/04/30 15:33:16 kurt Exp $
-# $FreeBSD: Makefile,v 1.4 1999/01/10 20:12:06 steve Exp $
+# $OpenBSD: Makefile,v 1.46 2012/08/18 12:41:37 ajacoutot Exp $
 
 COMMENT-main=	garbage collection and memory leak detection for C and C++
 COMMENT-atomic=	access to hardware provided atomic memory operations

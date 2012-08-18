@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2012/05/20 21:42:50 sthen Exp $
-# $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
+# $OpenBSD: Makefile,v 1.27 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	utilities to manipulate ext2 filesystems
 

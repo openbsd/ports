@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/03/29 13:38:40 sthen Exp $
-# $FreeBSD: Makefile,v 1.1.1.1 1999/03/05 17:07:28 nectar Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	delay program with feedback to the user
 

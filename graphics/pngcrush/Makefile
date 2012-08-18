@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2012/06/15 20:57:43 benoit Exp $
-# $FreeBSD: Makefile,v 1.1 1999/12/22 14:53:53 jedgar Exp $
+# $OpenBSD: Makefile,v 1.55 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT =		optimizer for PNG files
 

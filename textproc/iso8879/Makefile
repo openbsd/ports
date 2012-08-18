@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/05/08 15:18:17 sthen Exp $
-# $FreeBSD: Makefile,v 1.4 1997/07/10 03:25:28 jfieber Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:39 ajacoutot Exp $
 
 COMMENT=	character entity sets from ISO 8879:1986 (SGML)
 

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/15 11:37:59 sthen Exp $
-# $FreeBSD: Makefile,v 1.4 1998/01/17 17:25:46 jfieber Exp $
+# $OpenBSD: Makefile,v 1.20 2012/08/18 12:41:39 ajacoutot Exp $
 
 COMMENT=	Linuxdoc SGML DTD
 

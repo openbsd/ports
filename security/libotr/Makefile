@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/04 06:45:27 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.2 2005/04/21 14:22:54 pav Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	portable OTR messaging library and toolkit
 

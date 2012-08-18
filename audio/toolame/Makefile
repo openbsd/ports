@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/09/06 00:04:28 sthen Exp $
-# $FreeBSD: ports/audio/toolame/Makefile,v 1.9 2004/02/08 01:13:48 lioux Exp $
-#
+# $OpenBSD: Makefile,v 1.7 2012/08/18 12:41:37 ajacoutot Exp $
 
 COMMENT=		optimized mpeg 1/2 layer 2 audio encoder
 

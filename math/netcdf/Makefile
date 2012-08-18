@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:40 sthen Exp $ 
-# $FreeBSD: ports/math/netcdf/Makefile,v 1.7 2000/06/16 21:51:39 asami Exp $
+# $OpenBSD: Makefile,v 1.19 2012/08/18 12:41:38 ajacoutot Exp $ 
 
 COMMENT=	library for machine-independent, array-oriented data access
 

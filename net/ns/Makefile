@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/04/28 18:07:56 stu Exp $
-# $FreeBSD: ports/net/ns/Makefile,v 1.3 1999/11/28 18:31:26 steve Exp $
+# $OpenBSD: Makefile,v 1.41 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	UCB/LBNL Network Simulator Version 2
 

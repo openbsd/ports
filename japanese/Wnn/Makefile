@@ -1,7 +1,4 @@
-# From FreeBSD:		Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
-#
-# $FreeBSD: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
-# $OpenBSD: Makefile,v 1.64 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT-main = 		Japanese input method
 COMMENT-dict =		dictionaries for Japanese Wnn

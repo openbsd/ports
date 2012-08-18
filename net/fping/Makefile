@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2012/03/29 13:38:48 sthen Exp $
-# $FreeBSD: ports/net/fping/Makefile,v 1.8 2000/03/22 00:26:51 obrien Exp $
+# $OpenBSD: Makefile,v 1.30 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT =		quickly ping N hosts w/o flooding the network
 

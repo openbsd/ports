@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/28 10:51:44 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.19 1998/12/09 20:15:29 billf Exp $
+# $OpenBSD: Makefile,v 1.33 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	internet relay chat (irc) server
 

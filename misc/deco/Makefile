@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/05 08:24:49 sthen Exp $
-# $FreeBSD: Makefile,v 1.1.1.1 1998/03/27 11:56:44 tg Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	Demos Commander, a free Norton Commander clone
 

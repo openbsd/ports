@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:35 espie Exp $
-# $FreeBSD: ports/net/nslint/Makefile,v 1.10 2000/04/09 18:12:37 cpiazza Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=		performs consistency checks on BIND files
 

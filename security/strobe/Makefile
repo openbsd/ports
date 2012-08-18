@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:47 espie Exp $
-# $FreeBSD: Makefile,v 1.5 1999/03/09 00:16:14 jseger Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	fast scatter/gather TCP port scanner
 

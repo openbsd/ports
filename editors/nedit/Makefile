@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2012/04/22 10:49:11 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
+# $OpenBSD: Makefile,v 1.70 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=		X11/Motif GUI text editor
 

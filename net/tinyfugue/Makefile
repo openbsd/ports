@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/10/18 18:36:59 espie Exp $
-# $FreeBSD: Makefile,v 1.16 1999/02/16 03:06:21 jseger Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	programmable MUD client, with macro support and more
 

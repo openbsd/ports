@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2012/05/17 05:01:35 ajacoutot Exp $
-# $FreeBSD: /repoman/r/pcvs/ports/devel/nspr/Makefile,v 1.13 2003/12/13 21:30:19 peter Exp $
+# $OpenBSD: Makefile,v 1.42 2012/08/18 12:41:38 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 mips64 mips64el powerpc sparc sparc64 hppa
 

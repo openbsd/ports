@@ -1,5 +1,4 @@
-# $FreeBSD: ports/graphics/exiftran/files/Makefile,v 1.1 2011/06/03 12:51:23 mm Exp $
-# $OpenBSD: Makefile,v 1.1.1.1 2011/10/04 07:28:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/18 12:41:38 ajacoutot Exp $
 
 SUBDIR= build/exiftran build/thumbnail.cgi
 

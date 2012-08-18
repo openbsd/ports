@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/22 15:27:57 sthen Exp $
-# $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
+# $OpenBSD: Makefile,v 1.20 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	like make(1), but more powerful and clean
 

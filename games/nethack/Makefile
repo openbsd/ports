@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/12/02 14:36:14 espie Exp $
-# $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
+# $OpenBSD: Makefile,v 1.54 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3

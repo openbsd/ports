@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 12:00:09 espie Exp $
-# $FreeBSD: ports/x11-toolkits/xmhtml/Makefile,v 1.15 2001/06/29 05:19:06 lkoeller Exp $
-# Original from: Peter Hawkins <thepish@freebsd.org>
+# $OpenBSD: Makefile,v 1.20 2012/08/18 12:41:39 ajacoutot Exp $
 
 COMMENT=	Motif widget capable of displaying HTML 3.2 conforming text
 

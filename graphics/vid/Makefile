@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:16 espie Exp $
-# $FreeBSD: ports/graphics/vid/Makefile,v 1.5 2001/02/21 07:48:56 roger Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	get images from USB cameras using the OV511(+) chipsets
 

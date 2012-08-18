@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/12/02 14:36:14 espie Exp $
-# $FreeBSD: Makefile,v 1.1.1.1 1998/07/10 14:05:19 kuriyama Exp $
+# $OpenBSD: Makefile,v 1.31 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	Japanized Vim
 COMMENT-canna=	Japanized Vim, canna input method

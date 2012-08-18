@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/10/18 18:36:58 espie Exp $
-# $FreeBSD: Makefile,v 1.2 1997/11/10 11:33:04 asami Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	decode tcpdump(1) output
 

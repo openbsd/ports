@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 17:47:52 espie Exp $
-# $FreeBSD: ports/devel/cvs2cl/Makefile,v 1.8 2000/07/09 03:15:07 knu Exp $
+# $OpenBSD: Makefile,v 1.20 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	generate GNU-style ChangeLogs from CVS repositories
 

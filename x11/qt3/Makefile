@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2012/08/04 15:06:55 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
+# $OpenBSD: Makefile,v 1.103 2012/08/18 12:41:39 ajacoutot Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
 COMMENT-examples=	examples and tutorial for qt3

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:16 espie Exp $
-# $FreeBSD: Makefile,v 1.3 1997/08/26 07:12:20 tg Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	view complete directories of X bitmaps and X pixmaps
 

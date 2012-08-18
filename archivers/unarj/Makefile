@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/11/04 13:25:59 jasper Exp $
-# $FreeBSD: Makefile,v 1.12 1999/02/17 22:25:36 ache Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/18 12:41:37 ajacoutot Exp $
 
 COMMENT=	extract files from ARJ archives
 

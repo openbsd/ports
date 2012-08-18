@@ -1,5 +1,4 @@
-# $FreeBSD: ports/net/trafd/Makefile,v 1.4 2000/07/07 19:22:10 steve Exp $
-# $OpenBSD: Makefile,v 1.10 2012/04/27 09:19:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	BPF traffic collector
 

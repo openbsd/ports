@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2007/09/15 22:36:55 merdely Exp $
-# $FreeBSD: ports/net/mudix/Makefile,v 1.6 2001/06/22 19:39:12 dwcjr Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/18 12:41:38 ajacoutot Exp $
 
 COMMENT=	ncurses-based MUD client with triggers, aliases, colors
 
