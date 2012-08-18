@@ -1,0 +1,43 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/18 22:34:57 avsm Exp $
+%%SHARED%%
+%%native%%
+lib/ocaml/ssl/
+lib/ocaml/ssl/META
+lib/ocaml/ssl/libssl_stubs.a
+lib/ocaml/ssl/libssl_threads_stubs.a
+lib/ocaml/ssl/ssl.cma
+lib/ocaml/ssl/ssl.cmi
+lib/ocaml/ssl/ssl.mli
+lib/ocaml/ssl/ssl_threads.cma
+lib/ocaml/ssl/ssl_threads.cmi
+lib/ocaml/ssl/ssl_threads.mli
+@comment lib/ocaml/stublibs/dllssl_stubs.so.owner
+@comment lib/ocaml/stublibs/dllssl_threads_stubs.so.owner
+share/doc/ocaml-ssl/
+share/doc/ocaml-ssl/CHANGES
+share/doc/ocaml-ssl/README
+share/doc/ocaml-ssl/html/
+share/doc/ocaml-ssl/html/Ssl.html
+share/doc/ocaml-ssl/html/Ssl_threads.html
+share/doc/ocaml-ssl/html/index.html
+share/doc/ocaml-ssl/html/index_attributes.html
+share/doc/ocaml-ssl/html/index_class_types.html
+share/doc/ocaml-ssl/html/index_classes.html
+share/doc/ocaml-ssl/html/index_exceptions.html
+share/doc/ocaml-ssl/html/index_methods.html
+share/doc/ocaml-ssl/html/index_module_types.html
+share/doc/ocaml-ssl/html/index_modules.html
+share/doc/ocaml-ssl/html/index_types.html
+share/doc/ocaml-ssl/html/index_values.html
+share/doc/ocaml-ssl/html/style.css
+share/doc/ocaml-ssl/html/type_Ssl.html
+share/doc/ocaml-ssl/html/type_Ssl_threads.html
+share/examples/ocaml-ssl/
+share/examples/ocaml-ssl/Makefile
+share/examples/ocaml-ssl/Makefile.stalkd.in
+share/examples/ocaml-ssl/Makefile.stelnet.in
+share/examples/ocaml-ssl/OCamlMakefile
+share/examples/ocaml-ssl/configure
+share/examples/ocaml-ssl/configure.ac
+share/examples/ocaml-ssl/stalkd.ml
+share/examples/ocaml-ssl/stelnet.ml
