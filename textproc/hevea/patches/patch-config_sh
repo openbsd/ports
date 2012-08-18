@@ -1,0 +1,21 @@
+$OpenBSD: patch-config_sh,v 1.1 2012/08/18 22:47:00 avsm Exp $
+--- config.sh.orig	Tue Aug 21 14:29:05 2007
++++ config.sh	Sun Aug  5 21:49:03 2012
+@@ -1,11 +1,11 @@
+ PGM="hevea.byte hacha.byte esponja.byte bibhva.byte"
+ PGMNATIVE="hevea.native hacha.native esponja.native bibhva.native"
+-BINDIR=/usr/local/bin
+-LIBDIR=/usr/local/lib/hevea
+-DESTDIR=
+-LATEXLIBDIR=/usr/local/lib/hevea
+-OCAMLFLAGS="-w ZY"
+-OCBFLAGS="-j 4 -classic-display"
++BINDIR=${BINDIR:-'/usr/local/bin'}
++LIBDIR=${LIBDIR:-'/usr/local/lib/hevea'}
++LATEXLIBDIR=${LATEXLIBDIR:-'/usr/local/lib/hevea'}
++DESTDIR=${DESTDIR:-'/usr/local/bin'}
++OCAMLFLAGS=${OCAMLFLAGS:-''}
++OCBFLAGS=${OCBFLAGS:-'-j 4 -classic-display'}
+ ALLLIB="alltt.hva amsmath.hva articlecommon.hva babel.hva bookcommon.hva comment.hva compat.hva hyperref.hva ifthen.hva index.hva iso-symb.hva keyval.hva latexcommon.hva listings.hva lstlang1.hva lstlang2.hva lstlang3.hva makeidx.hva mathop.hva moreverb.hva multibib.hva multind.hva natbib-common.hva packages.hva plain.hva program.hva spaces.hva supertabular.hva underscore.hva url.hva verbatim.hva french-common.hva german-common.hva english.hva czech.hva ragged2e.hva chapterbib.hva deepcut.hva figcut.hva longtable.hva eurosym.hva isolatin1.hva textcomp.hva chngcntr.hva ifpdf.hva theorem.hva xspace.hva latexsym.hva iso-html.hva iso-text.hva winstyles.hva winfonts.hva epsfig.hva inputenc.hva thai.hva"
+ HTMLLIB="amssymb.hva amsfonts.hva article.hva austrian.hva book.hva color.hva colortbl.hva commongraphic.hva fancysection.hva fancyvrb.hva french.hva german.hva graphics.hva graphicx.hva hevea.hva common-math.hva mathpartir.hva natbib.hva png.hva report.hva seminar.hva sword.hva symb-eng.hva symb-ent.hva symb-fra.hva symb-mathml.hva symb-text.hva urlhref.hva xypic.hva"
+ TEXTLIB="article.hva book.hva color.hva colortbl.hva fancysection.hva hevea.hva report.hva seminar.hva french.hva austrian.hva german.hva natbib.hva"

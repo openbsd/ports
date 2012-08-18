@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/08/04 16:30:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2012/08/18 22:47:00 avsm Exp $
 
 COMMENT=	LaTeX to html translator
 
@@ -11,30 +11,33 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		c m 
 
-DISTNAME=	hevea-1.06
-REVISION=	2
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/moscova/hevea/
+BUILD_DEPENDS=	lang/ocaml
+
+DISTNAME =	hevea-1.10
+MASTER_SITES =	http://para.inria.fr/~maranget/hevea/distri/
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-manual${EXTRACT_SUFX}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 HOMEPAGE=	http://para.inria.fr/%7Emaranget/hevea/
 
-MAKE_FLAGS=LIBDIR='${PREFIX}/lib/hevea' BINDIR='${PREFIX}/bin'
-FAKE_FLAGS=LIBDIR='${WRKINST}${PREFIX}/lib/hevea' BINDIR='${WRKINST}${PREFIX}/bin'
+NO_REGRESS =	Yes
 
 MODULES +=	lang/ocaml
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+MAKE_FLAGS +=	TARGET=opt
+FAKE_FLAGS +=	TARGET=opt
+.else
+MAKE_FLAGS +=	TARGET=byte
+FAKE_FLAGS +=	TARGET=byte
+.endif
 
 # Beware! this works only because the manual is flat
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/hevea
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}-manual/* ${PREFIX}/share/doc/hevea
 
-NO_REGRESS=	Yes
-	
-.include <bsd.port.mk>
 
-.if ${MODOCAML_NATIVE:L} == "no"
-MAKE_FLAGS+=	TARGET='byte'
-FAKE_FLAGS+=	TARGET='byte'
-.endif
+.include <bsd.port.mk>
