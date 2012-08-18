@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.62 2012/07/08 10:05:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2012/08/18 21:58:13 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		3.4.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  games-support-gi          1.0 # 0.0
 
@@ -34,11 +34,13 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/py-gobject3
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			graphics/clutter/clutter-gtk \
 			x11/gnome/librsvg
 RUN_DEPENDS=		games/gnuchess \
-			multimedia/gstreamer-0.10/plugins-good
+			multimedia/gstreamer-0.10/plugins-good \
+			devel/py-gobject3
 REGRESS_DEPENDS=	devel/check
 
 MODGNOME_TOOLS= 	goi yelp
