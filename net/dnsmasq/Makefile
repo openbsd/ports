@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.26 2012/06/14 13:39:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/08/18 21:34:33 sthen Exp $
 
 NOT_FOR_ARCHS=	${GCC2_ARCHS}
 
 COMMENT=	lightweight caching DNS forwarder, DHCP and TFTP server
 
-DISTNAME=	dnsmasq-2.62
-REVISION=	0
+DISTNAME=	dnsmasq-2.63
 CATEGORIES=	net
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://www.thekelleys.org.uk/dnsmasq/doc.html
 
