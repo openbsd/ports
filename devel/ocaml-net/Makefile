@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/16 09:27:31 edd Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/18 22:19:21 avsm Exp $
 
 COMMENT =	the Ocamlnet internet protocol foundation library
 CATEGORIES =	devel www mail
 
-V =		3.5.1
+V =		3.6
 DISTNAME =	ocamlnet-${V}
 PKGNAME =	ocaml-net-${V}
 
@@ -20,32 +20,44 @@ PERMIT_DISTFILES_CDROM =	Yes
 
 MODULES =	lang/ocaml
 
-RUN_DEPENDS =	devel/ocaml-pcre
-BUILD_DEPENDS =	${RUN_DEPENDS} sysutils/findlib
-LIB_DEPENDS =	devel/pcre
-WANTLIB =	c curses m pthread pcre
+FLAVORS =	pcre
+FLAVOR ?=
 
-CONFIGURE_STYLE = simple
-CONFIGURE_ARGS = -with-nethttpd
+BUILD_DEPENDS =		sysutils/findlib
+WANTLIB =		c curses m pthread
+
+CONFIGURE_STYLE =	simple
+CONFIGURE_ARGS =	-with-nethttpd
+
+.if ${FLAVOR:Mpcre}
+RUN_DEPENDS +=		devel/ocaml-pcre
+BUILD_DEPENDS +=	devel/ocaml-pcre
+WANTLIB +=		pcre
+
+CONFIGURE_ARGS +=	-enable-pcre
+.endif
 
 NO_REGRESS =	Yes
 USE_GMAKE =	Yes
 
-ALL_TARGET =	all ${MODOCAML_NATIVE:S/Yes/opt/:S/No//}
+ALL_TARGET =	all
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=	opt
+.endif
 
 pre-fake:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/site-lib
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/ocaml/stublibs
-	ln -s ../stublibs ${PREFIX}/lib/ocaml/site-lib/
 
 EXAMPLEDIR =	${PREFIX}/share/examples/ocaml-net
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocamlnet/html
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocamlnet/
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/ocamlnet/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ocaml-net/html
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/ocaml-net/
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/ocaml-net/
 	${INSTALL_DATA} \
 	    ${WRKSRC}/doc/html-main/* \
-	    ${PREFIX}/share/doc/ocamlnet/html/
+	    ${PREFIX}/share/doc/ocaml-net/html/
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	cp -r ${WRKSRC}/examples/* ${EXAMPLEDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}

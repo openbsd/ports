@@ -1,4 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2012/07/16 09:27:32 edd Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2012/08/18 22:19:21 avsm Exp $
+@comment lib/ocaml/stublibs/
 lib/ocaml/stublibs/dllnetaccel_c.so
+@comment lib/ocaml/stublibs/dllnetaccel_c.so.owner
 lib/ocaml/stublibs/dllnetsys.so
+@comment lib/ocaml/stublibs/dllnetsys.so.owner
 lib/ocaml/stublibs/dllrpc_auth_local.so
+@comment lib/ocaml/stublibs/dllrpc_auth_local.so.owner
