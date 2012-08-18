@@ -1,34 +1,40 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/03/15 11:45:08 ajacoutot Exp $
-lib/ocaml/
+@comment $OpenBSD: PLIST,v 1.6 2012/08/18 21:55:08 avsm Exp $
 lib/ocaml/postgresql/
+lib/ocaml/postgresql/META
 lib/ocaml/postgresql/libpostgresql_stubs.a
 lib/ocaml/postgresql/postgresql.cma
 lib/ocaml/postgresql/postgresql.cmi
 lib/ocaml/postgresql/postgresql.mli
-share/examples/ocaml-postgresql/
-share/examples/ocaml-postgresql/OCamlMakefile
-share/examples/ocaml-postgresql/cursor/
-share/examples/ocaml-postgresql/cursor/Makefile
-@comment share/examples/ocaml-postgresql/cursor/Makefile.orig
-share/examples/ocaml-postgresql/cursor/cursor.ml
-share/examples/ocaml-postgresql/dump/
-share/examples/ocaml-postgresql/dump/Makefile
-@comment share/examples/ocaml-postgresql/dump/Makefile.orig
-share/examples/ocaml-postgresql/dump/dump.ml
-share/examples/ocaml-postgresql/populate/
-share/examples/ocaml-postgresql/populate/Makefile
-@comment share/examples/ocaml-postgresql/populate/Makefile.orig
-share/examples/ocaml-postgresql/populate/populate.ml
-share/examples/ocaml-postgresql/prompt/
-share/examples/ocaml-postgresql/prompt/Makefile
-@comment share/examples/ocaml-postgresql/prompt/Makefile.orig
-share/examples/ocaml-postgresql/prompt/prompt.ml
-share/examples/ocaml-postgresql/prompt_gtk/
-share/examples/ocaml-postgresql/prompt_gtk/Makefile
-@comment share/examples/ocaml-postgresql/prompt_gtk/Makefile.orig
-share/examples/ocaml-postgresql/prompt_gtk/prompt_gtk.ml
-share/examples/ocaml-postgresql/test_lo/
-share/examples/ocaml-postgresql/test_lo/Makefile
-@comment share/examples/ocaml-postgresql/test_lo/Makefile.orig
-share/examples/ocaml-postgresql/test_lo/test_lo.ml
 %%native%%
+%%SHARED%%
+@comment lib/ocaml/stublibs/
+@comment lib/ocaml/stublibs/dllpostgresql_stubs.so.owner
+share/doc/ocaml-postgresql/
+share/doc/ocaml-postgresql/api/
+share/doc/ocaml-postgresql/api/Postgresql.FFormat.html
+share/doc/ocaml-postgresql/api/Postgresql.connection-c.html
+share/doc/ocaml-postgresql/api/Postgresql.html
+share/doc/ocaml-postgresql/api/Postgresql.result-c.html
+share/doc/ocaml-postgresql/api/index.html
+share/doc/ocaml-postgresql/api/index_attributes.html
+share/doc/ocaml-postgresql/api/index_class_types.html
+share/doc/ocaml-postgresql/api/index_classes.html
+share/doc/ocaml-postgresql/api/index_exceptions.html
+share/doc/ocaml-postgresql/api/index_methods.html
+share/doc/ocaml-postgresql/api/index_module_types.html
+share/doc/ocaml-postgresql/api/index_modules.html
+share/doc/ocaml-postgresql/api/index_types.html
+share/doc/ocaml-postgresql/api/index_values.html
+share/doc/ocaml-postgresql/api/style.css
+share/doc/ocaml-postgresql/api/type_Postgresql.FFormat.html
+share/doc/ocaml-postgresql/api/type_Postgresql.connection.html
+share/doc/ocaml-postgresql/api/type_Postgresql.html
+share/doc/ocaml-postgresql/api/type_Postgresql.result.html
+share/examples/ocaml-postgresql/
+share/examples/ocaml-postgresql/README
+share/examples/ocaml-postgresql/cursor.ml
+share/examples/ocaml-postgresql/dump.ml
+share/examples/ocaml-postgresql/populate.ml
+share/examples/ocaml-postgresql/prompt.ml
+share/examples/ocaml-postgresql/prompt_gtk.ml
+share/examples/ocaml-postgresql/test_lo.ml

@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 08:48:03 espie Exp $
-
-BROKEN-hppa=		ocamldoc hangs build
+# $OpenBSD: Makefile,v 1.20 2012/08/18 21:55:07 avsm Exp $
 
 COMMENT=	Objective Caml bindings for PostgreSQL
 CATEGORIES=	databases
 
-V=		1.4.6
+V=		2.0.2
+NAME =		ocaml-postgresql
 DISTNAME=	postgresql-ocaml-${V}
-PKGNAME=	ocaml-postgresql-${V}
-REVISION=	5
-MASTER_SITES=	http://ocaml.info/ocaml_sources/
+PKGNAME=	${NAME}-${V}
+MASTER_SITES=	https://bitbucket.org/mmottl/postgresql-ocaml/downloads/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
-HOMEPAGE=	http://ocaml.info/home/ocaml_sources.html\#toc9
+HOMEPAGE=	https://bitbucket.org/mmottl/postgresql-ocaml/
 
 # LGPL
 PERMIT_PACKAGE_FTP=	Yes
@@ -21,29 +19,17 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
-NO_REGRESS= 	Yes
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,allopt,:S,No,,}
-USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	databases/postgresql
-RUN_DEPENDS=	databases/postgresql
-MY_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include/postgresql
-MY_LIBDIRS=	${LOCALBASE]/lib
-EXAMPLES_DIR=	${PREFIX}/share/examples/ocaml-postgresql
-MAKE_ENV=	MY_CFLAGS="${MY_CFLAGS}" MY_LIBDIRS="${MY_LIBDIRS}"
-PGOCAMLDIR=	${PREFIX}/lib/ocaml/postgresql
+WANTLIB =	pq
+BUILD_DEPENDS =	sysutils/findlib
+LIB_DEPENDS=	databases/postgresql
 
-BYTECODE_FILES=	postgresql.cma postgresql.cmi postgresql.mli libpostgresql_stubs.a
-NATIVE_FILES=	postgresql.a postgresql.cmxa
-INST_FILES=	${BYTECODE_FILES} ${MODOCAML_NATIVE:S,Yes,${NATIVE_FILES},:S,No,,}
+CONFIGURE_STYLE =	oasis
 
-do-install:
-	${INSTALL_DATA_DIR} ${PGOCAMLDIR}
-	for i in ${INST_FILES}; do ${INSTALL_DATA} ${WRKBUILD}/lib/$$i ${PGOCAMLDIR}; done
-	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}
-	@cp -R ${WRKSRC}/examples/* ${EXAMPLES_DIR}
-	@echo INCDIRS = ${LOCALBASE}/lib/ocaml/postgresql >> ${EXAMPLES_DIR}/OCamlMakefile
-	@echo LIBDIRS = ${LOCALBASE}/lib >> ${EXAMPLES_DIR}/OCamlMakefile
-	@cat ${WRKSRC}/OCamlMakefile >> ${EXAMPLES_DIR}/OCamlMakefile
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
+	${INSTALL_DATA} \
+		${FILESDIR}/README ${WRKDIST}/examples/* \
+		${PREFIX}/share/examples/${NAME}/
 
 .include <bsd.port.mk>

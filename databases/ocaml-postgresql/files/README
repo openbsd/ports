@@ -1,0 +1,4 @@
+To build the examles use
+ocamlfind ocamlc -thread -linkpkg -package postgresql XXX.ml
+
+prompt_gtk.ml will need -package lablgtk,postgresql
