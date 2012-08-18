@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2012/06/07 10:20:34 edd Exp $
-#
+# $OpenBSD: Makefile,v 1.110 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += R

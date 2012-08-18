@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/06/27 08:23:27 mglocker Exp $
-# $FreeBSD: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
-#
+# $OpenBSD: Makefile,v 1.26 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += aub

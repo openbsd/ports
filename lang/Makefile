@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2012/06/26 19:54:00 jasper Exp $
-# $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
-#
+# $OpenBSD: Makefile,v 1.139 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += STk

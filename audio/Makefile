@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2012/08/17 15:36:02 stsp Exp $
-# $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
+# $OpenBSD: Makefile,v 1.287 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde

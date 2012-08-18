@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2012/08/13 08:22:30 jasper Exp $
-# $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
-#
+# $OpenBSD: Makefile,v 1.332 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL

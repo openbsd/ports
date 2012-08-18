@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.217 2012/08/16 15:21:52 jasper Exp $
-# $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
-#
+# $OpenBSD: Makefile,v 1.218 2012/08/18 07:25:25 ajacoutot Exp $
+
      SUBDIR =
      SUBDIR += apache-couchdb
      SUBDIR += architect

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/06/26 22:03:02 pascal Exp $
-# $FreeBSD: Makefile,v 1.13 1997/01/03 00:40:55 max Exp $
-#
+# $OpenBSD: Makefile,v 1.24 2012/08/18 07:25:26 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += bash

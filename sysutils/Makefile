@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2012/07/17 19:34:09 landry Exp $
-# $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
+# $OpenBSD: Makefile,v 1.266 2012/08/18 07:25:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += LPRng

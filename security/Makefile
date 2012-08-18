@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2012/08/06 13:23:48 dcoppa Exp $
-# $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
-#
+# $OpenBSD: Makefile,v 1.295 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap

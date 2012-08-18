@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/26 15:07:53 pascal Exp $
-# $FreeBSD: Makefile,v 1.4 1997/11/17 11:55:01 tg Exp $
+# $OpenBSD: Makefile,v 1.17 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 9libs

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/02 09:36:05 fgsch Exp $
-#
+# $OpenBSD: Makefile,v 1.19 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += algotutor

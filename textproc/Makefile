@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.360 2012/08/11 12:13:36 edd Exp $
-# $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
+# $OpenBSD: Makefile,v 1.361 2012/08/18 07:25:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML

@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2012/08/12 17:21:03 jasper Exp $
-# $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
-#
+# $OpenBSD: Makefile,v 1.247 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abuse

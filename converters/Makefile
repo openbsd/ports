@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/07/07 07:52:50 ajacoutot Exp $
-#
+# $OpenBSD: Makefile,v 1.60 2012/08/18 07:25:25 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += base64

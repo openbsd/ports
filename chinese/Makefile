@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/07/19 16:51:34 jasper Exp $
-# $FreeBSD: Makefile,v 1.16 1997/11/17 18:36:43 max Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += c2t

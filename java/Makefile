@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/23 15:04:30 sthen Exp $
-#
+# $OpenBSD: Makefile,v 1.10 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += asm

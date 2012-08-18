@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2012/07/14 10:01:14 naddy Exp $
-# $FreeBSD: Makefile,v 1.44 1997/09/13 20:19:28 chuckr Exp $
-#
+# $OpenBSD: Makefile,v 1.88 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abiword

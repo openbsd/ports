@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.279 2012/05/30 16:47:35 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
-#
+# $OpenBSD: Makefile,v 1.280 2012/08/18 07:25:25 ajacoutot Exp $
  
      SUBDIR =
      SUBDIR += abook

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.99 2012/08/05 09:58:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2012/08/18 07:25:25 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps

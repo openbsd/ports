@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.766 2012/08/05 09:57:23 ajacoutot Exp $
-# $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
-#
+# $OpenBSD: Makefile,v 1.767 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent

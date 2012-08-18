@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.495 2012/08/12 17:29:13 jasper Exp $
-# $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
+# $OpenBSD: Makefile,v 1.496 2012/08/18 07:25:26 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d

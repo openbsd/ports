@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.153 2012/07/04 07:47:05 sthen Exp $
-# $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
-#
+# $OpenBSD: Makefile,v 1.154 2012/08/18 07:25:25 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += WordGenerator
