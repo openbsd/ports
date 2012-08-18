@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.49 2012/07/17 13:26:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.50 2012/08/18 23:47:27 avsm Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.1.2
+DISTNAME =	mldonkey-3.1.3
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -52,18 +52,21 @@ LIB_DEPENDS =	archivers/bzip2 \
 		x11/gnome/librsvg \
 		x11/gtk+2
 
-FAKE_FLAGS =	MODOCAML_NATIVE=${MODOCAML_NATIVE}
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+FAKE_FLAGS =	OCAML_NATIVE=yes
+.else
+FAKE_FLAGS =	OCAML_NATIVE=no
+.endif
+
 NO_REGRESS =	Yes
 
+.include <bsd.port.arch.mk>
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mldonkey
 	cp -R ${WRKDIST}/distrib ${PREFIX}/share/mldonkey/
-	@${strip_binaries}
+.if ${PROPERTIES:Mocaml_native}
+	@cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui
+.endif
 
 .include <bsd.port.mk>
-
-.if ${MODOCAML_NATIVE:L} == "yes"
-strip_binaries=cd ${PREFIX}/bin && strip mlnet mlgui mlnet+gui
-.else
-strip_binaries=:
-.endif
