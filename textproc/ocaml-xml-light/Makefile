@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/18 22:31:20 avsm Exp $
 
-COMMENT=	simple Objective Caml bindings for XML
+COMMENT=	simple XML parser/printer for OCaml
 CATEGORIES=	textproc
 
 V=		2.2
@@ -21,9 +21,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	lang/ocaml
 WRKDIST=	${WRKDIR}/xml-light
-NO_REGRESS= 	Yes
-ALL_TARGET=	all ${MODOCAML_NATIVE:S,Yes,opt,:S,No,,}
-INSTALL_TARGET=	install ${MODOCAML_NATIVE:S,Yes,installopt,:S,No,,}
 USE_GMAKE=	Yes
+NO_REGRESS= 	Yes
+
+ALL_TARGET=	all
+INSTALL_TARGET=	install
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mocaml_native}
+ALL_TARGET +=		opt
+INSTALL_TARGET +=	installopt
+.endif
+
 
 .include <bsd.port.mk>
