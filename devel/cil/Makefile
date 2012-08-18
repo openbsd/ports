@@ -1,15 +1,17 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/07 14:57:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/18 22:00:56 avsm Exp $
 
 # until tested on others, even though bytecode is produced
-ONLY_FOR_ARCHS=	i386 amd64 powerpc
+.include <bsd.port.arch.mk>
+ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
 COMMENT=	framework for analysis and transformation of C
+CATEGORIES =	devel lang
 
-DISTNAME=	cil-1.3.6
-REVISION=	3
-CATEGORIES=	devel lang
+DISTNAME =	cil-1.5.1
+EXTRACT_SUFX =	.tar.gz
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
+
 HOMEPAGE=	http://www.eecs.berkeley.edu/~necula/cil/
-MASTER_SITES=	${HOMEPAGE}/distrib/
 
 # BSD license
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,31 +20,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m pthread
 
-MODULES=	lang/ocaml
-WRKDIST=	${WRKDIR}/cil
+MODULES =		lang/ocaml
 
-OURFILES=	nullint kerneltrace randomvars
+CONFIGURE_STYLE =	autoconf no-autoheader
+AUTOCONF_VERSION =	2.69
+USE_GMAKE =		yes
+ALL_TARGET =		setup
+REGRESS_TARGET =	check
 
-CONFIGURE_STYLE= autoconf no-autoheader
-AUTOCONF_VERSION= 2.61
-USE_GMAKE= yes
-ALL_TARGET= setup
-CONFIGURE_ARGS= EXTRAFEATURES="${OURFILES}"
-P5SITE= libdata/perl5/site_perl
-P5INST= ${PREFIX}/${P5SITE}
-SUBST_VARS+= P5SITE
-GCC=/usr/bin/gcc  # cant use CC in case it's set to cilly
+OURFILES =		kerneltrace.ml nullint.ml randomvars.ml
+CONFIGURE_ARGS =	EXTRAFEATURES="${OURFILES:R}"
+P5SITE =		libdata/perl5/site_perl
+P5INST =		${PREFIX}/${P5SITE}
+SUBST_VARS +=		P5SITE
+GCC =			/usr/bin/gcc  # cant use CC in case it's set to cilly
 
 post-extract:
-.for i in ${OURFILES}
-	@cp ${FILESDIR}/$i.ml ${WRKSRC}/src/ext
-.endfor
-
-pre-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil
-	${INSTALL_DATA_DIR} ${P5INST}/CIL
+	cp ${FILESDIR}/*.ml ${WRKSRC}/src/ext
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/cilly ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKBUILD}/bin/patcher ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/libexec/cil
+	${INSTALL_PROGRAM} \
+		${WRKBUILD}/obj/x86_LINUX/machdep-ml*.exe \
+		${PREFIX}/libexec/cil
+	${INSTALL_DATA_DIR} ${P5INST}/CIL
+	mv ${PREFIX}/lib/*.pm ${P5INST}/CIL/
 	sed -e 's,@CILHOME@,${LOCALBASE},g' \
 	     -e 's,@CILLIBDIR@,${LOCALBASE}/${P5SITE}/CIL,g' \
 	     -e 's,@ARCHOS@,libexec/cil,g' \
@@ -50,15 +54,5 @@ post-install:
 	     -e 's,@CC@,${GCC},g' < \
 	    ${WRKSRC}/bin/CilConfig.pm.in > ${P5INST}/CilConfig.pm
 
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/cilly ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKBUILD}/bin/patcher ${PREFIX}/bin
-
-.for i in Cilly KeptFile OutputFile TempFile
-	${INSTALL_DATA} ${WRKSRC}/lib/${i}.pm ${P5INST}/CIL
-.endfor
-
-.for i in machdep.exe cilly.byte.exe cilly.asm.exe
-	${INSTALL_PROGRAM} ${WRKBUILD}/obj/x86_LINUX/${i} ${PREFIX}/libexec/cil
-.endfor
 
 .include <bsd.port.mk>
