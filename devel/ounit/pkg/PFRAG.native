@@ -1,3 +1,6 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2012/07/13 08:36:03 edd Exp $
-lib/ocaml/site-lib/oUnit/oUnit.a
-lib/ocaml/site-lib/oUnit/oUnit.cmxa
+@comment $OpenBSD: PFRAG.native,v 1.2 2012/08/18 22:26:12 avsm Exp $
+%%dynlink%%
+lib/ocaml/oUnit/oUnit.a
+lib/ocaml/oUnit/oUnit.cmx
+lib/ocaml/oUnit/oUnit.cmxa
+lib/ocaml/oUnit/oUnitDiff.cmx

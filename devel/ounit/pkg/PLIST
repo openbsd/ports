@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/07/13 08:36:03 edd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/18 22:26:12 avsm Exp $
 %%native%%
-lib/ocaml/site-lib/oUnit/
-lib/ocaml/site-lib/oUnit/META
-lib/ocaml/site-lib/oUnit/oUnit.cma
-lib/ocaml/site-lib/oUnit/oUnit.cmi
-lib/ocaml/site-lib/oUnit/oUnit.mli
-lib/ocaml/site-lib/oUnit/oUnitDiff.cmi
-lib/ocaml/site-lib/oUnit/oUnitDiff.mli
+lib/ocaml/oUnit/
+lib/ocaml/oUnit/META
+lib/ocaml/oUnit/oUnit.cma
+lib/ocaml/oUnit/oUnit.cmi
+lib/ocaml/oUnit/oUnit.mli
+lib/ocaml/oUnit/oUnitDiff.cmi
+lib/ocaml/oUnit/oUnitDiff.mli
 share/doc/ounit/
 share/doc/ounit/OUnit.html
 share/doc/ounit/OUnitDiff.DIFF_ELEMENT.html
