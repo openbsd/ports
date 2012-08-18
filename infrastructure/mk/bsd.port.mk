@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1184 2012/08/17 22:32:29 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1185 2012/08/18 07:58:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1497,6 +1497,7 @@ ECHO_REORDER ?= :
 
 # Lock infrastructure:
 # to remove locks handling, define LOCKDIR to an empty value
+LOCKDIR ?= ${WRKOBJDIR}/locks
 
 LOCK_CMD ?= ${_PERLSCRIPT}/dolock
 UNLOCK_CMD ?= rm -f
