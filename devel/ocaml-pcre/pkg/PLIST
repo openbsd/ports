@@ -1,29 +1,39 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/18 08:04:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/08/18 22:22:42 avsm Exp $
 %%SHARED%%
 %%native%%
-lib/ocaml/site-lib/pcre/
-lib/ocaml/site-lib/pcre/META
-lib/ocaml/site-lib/pcre/libpcre_stubs.a
-lib/ocaml/site-lib/pcre/pcre.cma
-lib/ocaml/site-lib/pcre/pcre.cmi
-lib/ocaml/site-lib/pcre/pcre.mli
-@comment lib/ocaml/site-lib/stublibs
-@comment lib/ocaml/stublibs/
+lib/ocaml/pcre/
+lib/ocaml/pcre/META
+lib/ocaml/pcre/libpcre_stubs.a
+lib/ocaml/pcre/pcre.cma
+lib/ocaml/pcre/pcre.cmi
+lib/ocaml/pcre/pcre.mli
 @comment lib/ocaml/stublibs/dllpcre_stubs.so.owner
 share/doc/ocaml-pcre/
-share/doc/ocaml-pcre/LICENSE
-share/doc/ocaml-pcre/README.txt
-share/doc/ocaml-pcre/html/
-share/doc/ocaml-pcre/html/Pcre.html
-share/doc/ocaml-pcre/html/index.html
-share/doc/ocaml-pcre/html/index_attributes.html
-share/doc/ocaml-pcre/html/index_class_types.html
-share/doc/ocaml-pcre/html/index_classes.html
-share/doc/ocaml-pcre/html/index_exceptions.html
-share/doc/ocaml-pcre/html/index_methods.html
-share/doc/ocaml-pcre/html/index_module_types.html
-share/doc/ocaml-pcre/html/index_modules.html
-share/doc/ocaml-pcre/html/index_types.html
-share/doc/ocaml-pcre/html/index_values.html
-share/doc/ocaml-pcre/html/style.css
-share/doc/ocaml-pcre/html/type_Pcre.html
+share/doc/ocaml-pcre/api/
+share/doc/ocaml-pcre/api/Pcre.html
+share/doc/ocaml-pcre/api/index.html
+share/doc/ocaml-pcre/api/index_attributes.html
+share/doc/ocaml-pcre/api/index_class_types.html
+share/doc/ocaml-pcre/api/index_classes.html
+share/doc/ocaml-pcre/api/index_exceptions.html
+share/doc/ocaml-pcre/api/index_methods.html
+share/doc/ocaml-pcre/api/index_module_types.html
+share/doc/ocaml-pcre/api/index_modules.html
+share/doc/ocaml-pcre/api/index_types.html
+share/doc/ocaml-pcre/api/index_values.html
+share/doc/ocaml-pcre/api/style.css
+share/doc/ocaml-pcre/api/type_Pcre.html
+share/examples/ocaml-pcre/
+share/examples/ocaml-pcre/README
+share/examples/ocaml-pcre/cloc/
+share/examples/ocaml-pcre/cloc/README.md
+share/examples/ocaml-pcre/cloc/cloc.ml
+share/examples/ocaml-pcre/count_hash/
+share/examples/ocaml-pcre/count_hash/README.md
+share/examples/ocaml-pcre/count_hash/count_hash.ml
+share/examples/ocaml-pcre/pcregrep/
+share/examples/ocaml-pcre/pcregrep/README.md
+share/examples/ocaml-pcre/pcregrep/pcregrep.ml
+share/examples/ocaml-pcre/subst/
+share/examples/ocaml-pcre/subst/README.md
+share/examples/ocaml-pcre/subst/subst.ml

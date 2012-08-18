@@ -1,0 +1,2 @@
+To build the examles use
+ocamlfind ocamlc -thread -linkpkg -package pcre XXX.ml
