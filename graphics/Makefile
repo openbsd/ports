@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.333 2012/08/18 23:36:38 avsm Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -20,7 +20,7 @@
      SUBDIR += cairo
      SUBDIR += cairomm
      SUBDIR += cal3d
-     SUBDIR += camlimages
+     SUBDIR += ocaml-camlimages
      SUBDIR += cfdg
      SUBDIR += clutter
      SUBDIR += colord
