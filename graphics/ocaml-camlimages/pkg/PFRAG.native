@@ -1,0 +1,50 @@
+@comment $OpenBSD: PFRAG.native,v 1.1 2012/08/18 23:35:30 avsm Exp $
+lib/ocaml/camlimages/camlimages_all.a
+lib/ocaml/camlimages/camlimages_all.cmxa
+lib/ocaml/camlimages/camlimages_core.a
+lib/ocaml/camlimages/camlimages_core.cmxa
+lib/ocaml/camlimages/camlimages_freetype.a
+lib/ocaml/camlimages/camlimages_freetype.cmxa
+lib/ocaml/camlimages/camlimages_gif.a
+lib/ocaml/camlimages/camlimages_gif.cmxa
+lib/ocaml/camlimages/camlimages_graphics.a
+lib/ocaml/camlimages/camlimages_graphics.cmxa
+lib/ocaml/camlimages/camlimages_jpeg.a
+lib/ocaml/camlimages/camlimages_jpeg.cmxa
+lib/ocaml/camlimages/camlimages_png.a
+lib/ocaml/camlimages/camlimages_png.cmxa
+lib/ocaml/camlimages/camlimages_ps.a
+lib/ocaml/camlimages/camlimages_ps.cmxa
+lib/ocaml/camlimages/camlimages_supported.a
+lib/ocaml/camlimages/camlimages_supported.cmxa
+lib/ocaml/camlimages/camlimages_tiff.a
+lib/ocaml/camlimages/camlimages_tiff.cmxa
+lib/ocaml/camlimages/camlimages_xpm.a
+lib/ocaml/camlimages/camlimages_xpm.cmxa
+share/examples/ocaml-camlimages/converter/converter.cmx
+share/examples/ocaml-camlimages/converter/converter.o
+@bin share/examples/ocaml-camlimages/converter/converter.opt
+share/examples/ocaml-camlimages/crop/crop.cmx
+share/examples/ocaml-camlimages/crop/crop.o
+@bin share/examples/ocaml-camlimages/crop/crop.opt
+share/examples/ocaml-camlimages/edgedetect/edge.cmx
+share/examples/ocaml-camlimages/edgedetect/edge.o
+@bin share/examples/ocaml-camlimages/edgedetect/edge.opt
+share/examples/ocaml-camlimages/imgstat/imgstat.cmx
+share/examples/ocaml-camlimages/imgstat/imgstat.o
+@bin share/examples/ocaml-camlimages/imgstat/imgstat.opt
+share/examples/ocaml-camlimages/monochrome/monochrome.cmx
+share/examples/ocaml-camlimages/monochrome/monochrome.o
+@bin share/examples/ocaml-camlimages/monochrome/monochrome.opt
+share/examples/ocaml-camlimages/normalize/normalize.cmx
+share/examples/ocaml-camlimages/normalize/normalize.o
+@bin share/examples/ocaml-camlimages/normalize/normalize.opt
+share/examples/ocaml-camlimages/resize/resize.cmx
+share/examples/ocaml-camlimages/resize/resize.o
+@bin share/examples/ocaml-camlimages/resize/resize.opt
+share/examples/ocaml-camlimages/tiffps/tiffps.cmx
+share/examples/ocaml-camlimages/tiffps/tiffps.o
+@bin share/examples/ocaml-camlimages/tiffps/tiffps.opt
+share/examples/ocaml-camlimages/ttfimg/ttfimg.cmx
+share/examples/ocaml-camlimages/ttfimg/ttfimg.o
+@bin share/examples/ocaml-camlimages/ttfimg/ttfimg.opt

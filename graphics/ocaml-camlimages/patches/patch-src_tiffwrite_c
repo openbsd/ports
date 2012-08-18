@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_tiffwrite_c,v 1.1 2012/04/14 15:13:30 naddy Exp $
+$OpenBSD: patch-src_tiffwrite_c,v 1.1 2012/08/18 23:35:30 avsm Exp $
 --- src/tiffwrite.c.orig	Sat Apr 14 16:47:53 2012
 +++ src/tiffwrite.c	Sat Apr 14 16:50:28 2012
 @@ -25,6 +25,8 @@

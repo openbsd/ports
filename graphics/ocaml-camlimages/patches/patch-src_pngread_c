@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_pngread_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+$OpenBSD: patch-src_pngread_c,v 1.1 2012/08/18 23:35:30 avsm Exp $
 
 Fix build with png-1.5.
 
---- src/pngread.c.orig	Wed Jul  6 12:21:41 2011
-+++ src/pngread.c	Wed Jul  6 12:23:21 2011
+--- src/pngread.c.orig	Wed Jun 22 20:04:32 2011
++++ src/pngread.c	Tue Jun 26 13:44:45 2012
 @@ -69,7 +69,7 @@ value read_png_file_as_rgb24( name )
    }
  
@@ -13,7 +13,18 @@ Fix build with png-1.5.
      /* Free all of the memory associated with the png_ptr and info_ptr */
      png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
      fclose(fp);
-@@ -134,7 +134,7 @@ value read_png_file_as_rgb24( name )
+@@ -101,6 +101,10 @@ value read_png_file_as_rgb24( name )
+   if ( bit_depth == 16 ) png_set_strip_16(png_ptr);
+   if ( color_type & PNG_COLOR_MASK_ALPHA ) png_set_strip_alpha(png_ptr);
+ 
++  // necessary before any call to png_read_update_info().
++  // Won't harm processing of non-interlaced images.
++  png_set_interlace_handling(png_ptr);
++
+   png_read_update_info(png_ptr, info_ptr);
+ 
+   png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth, &color_type,
+@@ -134,7 +138,7 @@ value read_png_file_as_rgb24( name )
      png_set_rows(png_ptr, info_ptr, row_pointers);
  
      /* Later, we can return something */
@@ -22,7 +33,7 @@ Fix build with png-1.5.
        /* Free all of the memory associated with the png_ptr and info_ptr */
        png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
        fclose(fp);
-@@ -243,7 +243,7 @@ value read_png_file( name )
+@@ -243,7 +247,7 @@ value read_png_file( name )
    }
  
    /* error handling */
@@ -31,7 +42,18 @@ Fix build with png-1.5.
      /* Free all of the memory associated with the png_ptr and info_ptr */
      png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
      fclose(fp);
-@@ -302,7 +302,7 @@ value read_png_file( name )
+@@ -274,6 +278,10 @@ value read_png_file( name )
+   /* We have no support for 48bit depth colors yet */
+   if ( bit_depth == 16 ) png_set_strip_16(png_ptr);
+ 
++  // necessary before any call to png_read_update_info().
++  // Won't harm processing of non-interlaced images.
++  png_set_interlace_handling(png_ptr);
++
+   png_read_update_info(png_ptr, info_ptr);
+ 
+   png_get_IHDR(png_ptr, info_ptr, &width, &height, &bit_depth, &color_type,
+@@ -302,7 +310,7 @@ value read_png_file( name )
      png_set_rows(png_ptr, info_ptr, row_pointers);
  
      /* Later, we can return something */
