@@ -1,3 +1,6 @@
-@comment $OpenBSD: PFRAG.native,v 1.1.1.1 2005/09/22 14:38:41 avsm Exp $
-lib/ocaml/calendar.a
-lib/ocaml/calendar.cmxa
+@comment $OpenBSD: PFRAG.native,v 1.2 2012/08/18 22:06:49 avsm Exp $
+%%dynlink%%
+lib/ocaml/calendar/calendarLib.a
+lib/ocaml/calendar/calendarLib.cmx
+lib/ocaml/calendar/calendarLib.cmxa
+lib/ocaml/calendar/calendarLib.o
