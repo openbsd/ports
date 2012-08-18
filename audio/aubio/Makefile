@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/17 07:20:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/18 07:18:26 ajacoutot Exp $
 
 COMMENT =		extract annotations from audio signals
 DISTNAME =		aubio-0.3.2
@@ -6,6 +6,7 @@ SHARED_LIBS += 		aubio		0.0 # 3.1
 SHARED_LIBS += 		aubioext	0.0 # 3.1
 CATEGORIES =		audio
 HOMEPAGE =		http://aubio.org
+REVISION =		0
 
 # GPLv2+ 
 PERMIT_PACKAGE_CDROM =	Yes
