@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/18 08:50:19 ajacoutot Exp $
 bin/ardour2
 lib/ardour2/
-@bin lib/ardour2/${FULLPKGNAME}
+@bin lib/ardour2/ardour-2.8.14
 lib/ardour2/engines/
 lib/ardour2/engines/libclearlooks.so
 lib/ardour2/libardour.so

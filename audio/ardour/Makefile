@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/17 15:33:32 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/18 08:50:19 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		digital audio workstation
 DISTNAME =		ardour-2.8.14
 CATEGORIES =		audio
 HOMEPAGE =		http://ardour.org
+REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -32,6 +33,9 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		devel/gettext \
 			devel/scons
 
+VMEM_WARNING =	Yes
+NO_REGRESS=	Yes
+
 MODSCONS_ENV=	CC="${CC}" \
 		CXX="${CXX}" \
 		CCFLAGS="${CFLAGS}" \
@@ -45,6 +49,7 @@ MODSCONS_ENV=	CC="${CC}" \
 		LIBLO=1 \
 		FREEDESKTOP=1 \
 		SYSLIBS=1
+
 BUILD_DEPENDS = 	devel/boost
 RUN_DEPENDS = 		devel/desktop-file-utils \
 			x11/gtk+2,-guic \
@@ -52,7 +57,7 @@ RUN_DEPENDS = 		devel/desktop-file-utils \
 LIB_DEPENDS =		audio/aubio \
 			audio/liblo \
 			devel/libexecinfo \
-			math/fftw3,-main \
+			math/fftw3 \
 			textproc/liblrdf \
 			x11/gnome/libgnomecanvasmm
 
