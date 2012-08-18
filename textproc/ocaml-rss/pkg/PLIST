@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/05/23 23:04:53 avsm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/18 22:28:53 avsm Exp $
 lib/ocaml/
-lib/ocaml/rss.cma
-lib/ocaml/rss.cmi
+lib/ocaml/rss/
+lib/ocaml/rss/LICENSE
+lib/ocaml/rss/META
+lib/ocaml/rss/rss.cma
+lib/ocaml/rss/rss.cmi
 %%native%%
+lib/ocaml/stublibs/
