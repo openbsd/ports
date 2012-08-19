@@ -1,34 +1,6 @@
-$OpenBSD: patch-configure,v 1.2 2010/09/15 09:59:39 sthen Exp $
+$OpenBSD: patch-configure,v 1.3 2012/08/19 18:55:08 jasper Exp $
 --- configure.orig	Fri Jul 16 15:52:42 2010
 +++ configure	Wed Sep 15 10:40:56 2010
-@@ -25178,13 +25178,13 @@ PTHREAD_CFLAGS=error
- PTHREAD_LDFLAGS=error
- 
- if test "x$PTHREAD_LDFLAGS" = xerror; then
--  echo "$as_me:$LINENO: checking for pthread_attr_init in -lpthread" >&5
--echo $ECHO_N "checking for pthread_attr_init in -lpthread... $ECHO_C" >&6
-+  echo "$as_me:$LINENO: checking for pthread_attr_init in -pthread" >&5
-+echo $ECHO_N "checking for pthread_attr_init in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_attr_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -25244,8 +25244,8 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_attr_init" >&6
- if test $ac_cv_lib_pthread_pthread_attr_init = yes; then
- 
--             PTHREAD_CFLAGS="-D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS"
--             PTHREAD_LDFLAGS="-lpthread"
-+             PTHREAD_CFLAGS="-pthread"
-+             PTHREAD_LDFLAGS="-pthread"
- fi
- 
- fi
 @@ -27006,8 +27006,8 @@ done
  #define  JOEPATH_H
  

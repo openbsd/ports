@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/11/13 18:23:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/08/19 18:55:08 jasper Exp $
 
 COMMENT=	enhanced performance test of filesystem I/O
 
 DISTNAME=	bonnie++-1.96
+REVISION=	0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.coker.com.au/bonnie++/experimental/
 EXTRACT_SUFX=	.tgz

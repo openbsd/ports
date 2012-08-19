@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/19 18:55:08 jasper Exp $
 
 COMMENT =		multi-threaded HTTP benchmark and regression tester
 
 DISTNAME =		siege-2.70
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		benchmarks www
 
