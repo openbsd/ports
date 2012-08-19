@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2012/08/18 23:36:38 avsm Exp $
+# $OpenBSD: Makefile,v 1.334 2012/08/19 16:31:58 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -240,6 +240,7 @@
      SUBDIR += vcdimager
      SUBDIR += vid
      SUBDIR += videod
+     SUBDIR += viewnior
      SUBDIR += wmgrabimage
      SUBDIR += wmicons
      SUBDIR += wmphoto
