@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/19 16:30:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/19 16:31:48 ajacoutot Exp $
 
 COMMENT=	fast and simple image viewer
 
@@ -7,6 +7,8 @@ DISTNAME=	viewnior-1.3
 CATEGORIES=	graphics x11
 
 HOMEPAGE=	http://xsisqox.github.com/Viewnior/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
