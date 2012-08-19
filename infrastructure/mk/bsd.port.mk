@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1185 2012/08/18 07:58:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1186 2012/08/19 10:36:35 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2171,7 +2171,7 @@ _internal-install-all: ${_INSTALL_COOKIES}
 _internal-fake: ${_FAKE_COOKIE}
 _internal-subupdate: ${_UPDATE_COOKIE${SUBPACKAGE}}
 _internal-update: ${_UPDATE_COOKIES}
-_internal-update-or-install: ${_FUPDATE_COOKIE${SUBPACKAGE}
+_internal-update-or-install: ${_FUPDATE_COOKIE${SUBPACKAGE}}
 _internal-update-or-install-all: ${_FUPDATE_COOKIES}
 
 
