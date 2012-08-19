@@ -1,15 +1,6 @@
-$OpenBSD: patch-makefile,v 1.15 2012/07/10 00:07:44 sthen Exp $
+$OpenBSD: patch-makefile,v 1.16 2012/08/19 21:20:52 jasper Exp $
 --- makefile.orig	Mon Apr 23 16:28:04 2012
 +++ makefile	Fri Jul  6 20:09:32 2012
-@@ -145,7 +145,7 @@ ifeq ($(WIN32),)  #*nix Environments (&& cygwin)
-       ifeq (,$(NOASYNCH))
-         OS_CCDEFS += -DSIM_ASYNCH_IO 
-       endif
--      OS_LDFLAGS += -lpthread
-+      OS_LDFLAGS += -pthread
-       $(info using libpthread: $(call find_lib,pthread) $(call find_include,pthread))
-     endif
-   endif
 @@ -300,7 +300,7 @@ ifneq ($(DEBUG),)
    CFLAGS_O = -O0
    BUILD_FEATURES = - debugging support

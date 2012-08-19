@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/19 21:20:52 jasper Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -6,7 +6,7 @@ DISTNAME =	snes9x-1.52-src
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	emulators games
 
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	http://www.snes9x.com/
 
