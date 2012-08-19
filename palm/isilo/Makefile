@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/19 22:59:06 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -9,6 +9,7 @@ DISTNAME=	iSiloBSD
 PKGNAME=	isilo-${VER}
 CATEGORIES=	palm textproc
 EXTRACT_SUFX=	.zip
+REVISION=	0
 
 HOMEPAGE=	http://www.iSilo.com/
 
