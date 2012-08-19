@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/07/08 13:22:54 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/08/19 10:13:29 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -893,3 +893,4 @@ ${LIBDIR}/Resources/TraditionalChinese.lproj/Localizable.strings
 @man man/man1/xmlparse.1
 @man man/man8/gdomap.8
 share/GNUstep/Makefiles/Additional/base.make
+@rcscript ${RCDIR}/gdomap
