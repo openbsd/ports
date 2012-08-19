@@ -1,0 +1,41 @@
+$OpenBSD: README,v 1.1 2012/08/19 10:11:57 sebastia Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Post-install optional steps
+===========================
+
+To take advantage of all the features from the GNUstep framework, you
+should add the following lines to your ~/.xsession or ~/.xinitrc:
+ . ${TRUEPREFIX}/share/GNUstep/Makefiles/GNUstep.sh # (gnustep-make) 
+ ${TRUEPREFIX}/bin/gdnc # notifications daemon (gnustep-base) 
+ ${TRUEPREFIX}/bin/gpbs # clipboard/pasteboard daemon (gnustep-back) 
+ ${TRUEPREFIX}/bin/make_services # update service cache (gnustep-gui)
+
+To enable gdomap(8), the distributed objects lookup daemon 
+(gnustep-base) add gdomap to the pkg_scripts variable in 
+/etc/rc.conf.local.
+
+For more Information regarding the GNUstep services see their respective
+manual pages: GNUstep(7), gdnc(1), gpbs(1), make_services(1), gdomap(8)
+
+
+Running applications
+====================
+
+According to your display, you may find the fonts to be too large/small
+for your taste.  To change the default fonts size ("9"), use the
+following command:
+ ${TRUEPREFIX}/bin/defaults write NSGlobalDomain NSFontSize <fontsize>
+
+
+Documentation
+=============
+
+Official GNUstep documentations are available from this page:
+http://www.gnustep.org/experience/documentation.html
+
+A more user oriented "GNUstep Configuration Guide" is available here:
+http://gnustep.made-it.com/Configuration/index.html
