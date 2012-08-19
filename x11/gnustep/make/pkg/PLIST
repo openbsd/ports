@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/04/18 11:30:47 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/08/19 10:12:45 sebastia Exp $
 bin/debugapp
 bin/gnustep-config
 bin/gnustep-tests
@@ -155,4 +155,3 @@ share/GNUstep/Makefiles/test-tool.make
 share/GNUstep/Makefiles/tool.make
 share/GNUstep/Makefiles/vendor.sh
 share/GNUstep/installation-domains.conf
-share/doc/pkg-readmes/${FULLPKGNAME}
