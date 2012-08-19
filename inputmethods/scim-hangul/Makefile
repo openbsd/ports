@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/11/03 17:46:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/19 21:38:05 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for hangul
 
 DISTNAME=	scim-hangul-0.3.2
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	inputmethods korean
 
