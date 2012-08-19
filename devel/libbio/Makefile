@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/08/19 10:42:26 espie Exp $
 
 COMMENT=	Simple buffered I/O library from Plan 9
 
@@ -23,6 +23,6 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-build:
-	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC
+	@cp ${FILESDIR}/Make.OpenBSD ${WRKSRC}
 
 .include <bsd.port.mk>
