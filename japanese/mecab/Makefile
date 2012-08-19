@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/04 19:29:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/19 21:00:23 jasper Exp $
 
 COMMENT-main =	japanese morphological analyzer engine
 COMMENT-ipadic = IPA japanese dictionary for mecab
 
 DISTNAME =	mecab-0.994
+REVISION-main =	0
+REVISION-ipadic = 0
 PKGNAME-main =	${DISTNAME}
 PKGNAME-ipadic = mecab-ipadic-2.7.0
 

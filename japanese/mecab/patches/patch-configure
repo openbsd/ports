@@ -1,24 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/03/20 23:43:12 fgsch Exp $
+$OpenBSD: patch-configure,v 1.2 2012/08/19 21:00:23 jasper Exp $
 --- configure.orig	Fri Feb 10 16:24:56 2012
 +++ configure	Thu Mar 15 10:43:52 2012
-@@ -17770,7 +17770,7 @@ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; t
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- fi
- 
-@@ -17815,7 +17815,7 @@ if test "x$ac_cv_lib_pthread_pthread_join" = xyes; the
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- fi
- 
 @@ -17981,8 +17981,8 @@ $as_echo "no" >&6; }
  fi
  
