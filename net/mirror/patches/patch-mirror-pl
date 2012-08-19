@@ -1,6 +1,4 @@
-# $NetBSD: patch-ac,v 1.4 2000/03/26 22:33:18 kim Exp $
-# $OpenBSD: patch-mirror-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
-
+$OpenBSD: patch-mirror-pl,v 1.3 2012/08/19 22:30:37 ajacoutot Exp $
 --- mirror.pl.orig	Mon Jun  8 04:55:27 1998
 +++ mirror.pl	Mon Mar 19 18:31:12 2007
 @@ -104,7 +104,7 @@ $load_defaults = 1;

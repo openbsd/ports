@@ -1,5 +1,4 @@
-$OpenBSD: patch-lib_pgp_helper_pgpMem_c,v 1.1 2002/04/23 06:38:48 fgsch Exp $
-$NetBSD: patch-ag,v 1.1 1999/01/05 14:31:01 frueauf Exp $
+$OpenBSD: patch-lib_pgp_helper_pgpMem_c,v 1.2 2012/08/19 22:30:37 ajacoutot Exp $
 
 From Julian Coleman <J.D.Coleman@newcastle.ac.uk> posted to
 netbsd-bugs@netbsd.org:

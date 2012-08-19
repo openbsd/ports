@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2012/05/26 12:40:30 matthieu Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/19 22:30:37 ajacoutot Exp $
 
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
 DISTNAME=	totd-1.5.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.dillema.net/software/totd/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/08/19 22:30:37 ajacoutot Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
 DISTNAME=		colortail-0.3.0
 CATEGORIES=		sysutils
+REVISION=		0
 
 MASTER_SITES=           http://keyserver.kjsl.com/~jharris/distfiles/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>

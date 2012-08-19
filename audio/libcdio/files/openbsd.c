@@ -1,6 +1,4 @@
-/*	$OpenBSD: openbsd.c,v 1.3 2008/05/01 09:05:12 fgsch Exp $	*/
-/*	$NetBSD: _cdio_netbsd.c,v 1.4 2005/05/31 17:05:36 drochner Exp $	*/
-
+/*	$OpenBSD: openbsd.c,v 1.4 2012/08/19 22:30:37 ajacoutot Exp $	*/
 /*
  * Copyright (c) 2008 Federico G. Schwindt
  * Copyright (c) 2003 Matthias Drochner

@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 07:43:00 espie Exp $
-# $NetBSD: Makefile,v 1.4 2001/11/04 03:28:45 tv Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/19 22:30:37 ajacoutot Exp $
 
 COMMENT=	.bin/.cue to .iso CD image converter
 

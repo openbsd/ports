@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/11/04 08:21:59 jasper Exp $
-# $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
+# $OpenBSD: Makefile,v 1.67 2012/08/19 22:30:37 ajacoutot Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 

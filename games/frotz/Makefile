@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/12 10:19:06 jasper Exp $
-# $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
-# Original from: Stefan Jokisch
+# $OpenBSD: Makefile,v 1.16 2012/08/19 22:30:37 ajacoutot Exp $
 
 COMMENT=	Curses-based interpreter for Infocom-compatible games
 

@@ -1,6 +1,4 @@
-# $NetBSD: patch-ad,v 1.5 1999/12/28 18:15:43 itojun Exp $
-# $OpenBSD: patch-lchat-pl,v 1.2 2007/03/20 00:35:52 pvalchev Exp $
-
+$OpenBSD: patch-lchat-pl,v 1.3 2012/08/19 22:30:37 ajacoutot Exp $
 --- lchat.pl.orig	Fri May 29 13:05:46 1998
 +++ lchat.pl	Mon Mar 19 18:31:12 2007
 @@ -117,7 +117,7 @@ sub open_port { ## public
