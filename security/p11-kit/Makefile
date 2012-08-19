@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/23 13:22:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/19 11:10:43 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
-DISTNAME=	p11-kit-0.12
+DISTNAME=	p11-kit-0.13
 
 CATEGORIES=	security
 
@@ -32,12 +32,20 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
 
-# some warning options not available with gcc < 4
-CONFIGURE_ARGS += --disable-more-warnings
-
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 
+### https://bugs.freedesktop.org/show_bug.cgi?id=53706 ###
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
+			devel/automake/${AUTOMAKE_VERSION} \
+			devel/libtool
+
 pre-configure:
-	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
+	@cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
+######
 
 .include <bsd.port.mk>
