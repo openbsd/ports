@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_build_OCaml_om,v 1.1 2012/08/19 00:06:31 avsm Exp $
+OCaml 4.00 added several new warnings, which are now triggered many times.
+Instead of fixing the code, just remove the -warn-error A.
+
+--- lib/build/OCaml.om.orig	Sat Aug  4 10:41:56 2012
++++ lib/build/OCaml.om	Sat Aug  4 10:42:02 2012
+@@ -170,7 +170,7 @@ public.PREFIXED_OCAMLPACKS =\
+ #
+ declare OCAMLDEPFLAGS
+ public.OCAMLPPFLAGS  =
+-public.OCAMLFLAGS    = -warn-error A
++public.OCAMLFLAGS    =
+ public.OCAMLCFLAGS   = -g
+ public.OCAMLOPTFLAGS =
+ public.OCAMLCPPFLAGS =

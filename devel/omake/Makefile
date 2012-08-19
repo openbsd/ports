@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/06/26 22:08:39 pascal Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/19 00:06:31 avsm Exp $
 
 COMMENT=	build system designed for scalability and portability
 CATEGORIES=	devel
@@ -7,7 +7,7 @@ V=		0.9.8.5
 VEXTRA=		3
 DISTNAME=	omake-${V}-${VEXTRA}
 PKGNAME=	omake-${V}pl${VEXTRA}
-REVISION =	3
+REVISION =	4
 WRKDIST=	${WRKDIR}/omake-${V}
 MASTER_SITES=	http://omake.metaprl.org/downloads/ \
 		http://www.ocaml-programming.de/godi-backup/
