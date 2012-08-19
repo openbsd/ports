@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/02 08:46:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/19 15:14:25 ajacoutot Exp $
 
 COMMENT =	simple and fast image viewer for X
 
@@ -25,11 +25,11 @@ PERMIT_DISTFILES_FTP =		Yes
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=lxde/}
 
-MODULES =	devel/gettext
+MODULES =	devel/gettext \
+		textproc/intltool
 
 LIB_DEPENDS =	x11/gtk+2
 RUN_DEPENDS =	devel/desktop-file-utils
-MODULES +=      textproc/intltool
 
 USE_GMAKE =	yes
 USE_LIBTOOL =	yes
