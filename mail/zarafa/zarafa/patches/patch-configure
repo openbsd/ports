@@ -1,26 +1,9 @@
-$OpenBSD: patch-configure,v 1.23 2012/07/09 15:27:30 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.24 2012/08/19 15:50:25 ajacoutot Exp $
 
 OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
 
 --- configure.orig	Thu May  3 11:28:37 2012
 +++ configure	Sat May  5 17:39:39 2012
-@@ -21942,13 +21942,13 @@ fi
- 
- # Everything uses pthread
- # check lib, but do not set in link list, but use -pthread instead (gnu c/c++ only?)
--{ echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+{ echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
 @@ -24574,7 +24574,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
