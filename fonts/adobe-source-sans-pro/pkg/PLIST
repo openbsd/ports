@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1 2012/08/19 14:35:33 matthieu Exp $
+lib/X11/fonts/
+lib/X11/fonts/adobe-source-sans-pro/
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Black.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-BlackIt.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Bold.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-BoldIt.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-ExtraLight.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-ExtraLightIt.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-It.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Light.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-LightIt.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Regular.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-Semibold.ttf
+lib/X11/fonts/adobe-source-sans-pro/SourceSansPro-SemiboldIt.ttf
+share/doc/adobe-source-sans-pro/
+share/doc/adobe-source-sans-pro/LICENSE.txt
+share/doc/adobe-source-sans-pro/ReadMe.html
+share/doc/adobe-source-sans-pro/SourceSansProReadMe.html
