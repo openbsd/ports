@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/08/30 06:43:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/08/19 13:30:04 ajacoutot Exp $
 
 COMMENT=		GnuPG Made Easy
 
 DISTNAME=		gpgme-1.3.1
 CATEGORIES=     	security devel
+REVISION=		0
 
 SHARED_LIBS +=  gpgme                18.0     # 19.0
 SHARED_LIBS +=  gpgme-pthread        18.0     # 19.0
@@ -40,9 +41,5 @@ LIB_DEPENDS=		security/libgpg-error>=1.4 \
 USE_GMAKE=		Yes
 
 USE_LIBTOOL=		Yes
-
-pre-configure:
-	perl -pi -e 's,-lpthread,-pthread,g' \
-		${WRKSRC}/{configure,src/Makefile.in,src/gpgme-config.in}
 
 .include <bsd.port.mk>

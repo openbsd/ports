@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/15 08:12:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/19 13:30:04 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -9,6 +9,7 @@ PKGNAME=	${DISTNAME:L}
 CATEGORIES=	security
 MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tbz
+REVISION=	0
 
 SHARED_LIBS=	botan-1.10	0.1
 
@@ -53,9 +54,6 @@ PKG_ARGS+=	-Damd64=1
 .else
 PKG_ARGS+=	-Damd64=0
 .endif
-
-post-configure:
-	@perl -pi -e "s|-lpthread|-pthread|g" ${WRKSRC}/Makefile
 
 do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} \
