@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/config/rs6000/openbsd.h.orig	Sun Mar 11 19:10:40 2012
-+++ gcc/config/rs6000/openbsd.h	Sun Mar 11 19:25:45 2012
-@@ -0,0 +1,135 @@
+$OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.2 2012/08/19 15:11:21 pascal Exp $
+--- gcc/config/rs6000/openbsd.h.orig	Tue Aug 14 10:43:58 2012
++++ gcc/config/rs6000/openbsd.h	Tue Aug 14 10:44:18 2012
+@@ -0,0 +1,132 @@
 +/* Configuration file for an rs6000 OpenBSD target.
 +   Copyright (C) 1999 Free Software Foundation, Inc.
 +
@@ -90,9 +90,6 @@ $OpenBSD: patch-gcc_config_rs6000_openbsd_h,v 1.1.1.1 2012/04/23 15:56:41 pascal
 +
 +#undef	LINK_OS_DEFAULT_SPEC
 +#define LINK_OS_DEFAULT_SPEC "%(link_os_openbsd)"
-+
-+#undef TARGET_VERSION
-+#define TARGET_VERSION fprintf (stderr, " (PowerPC OpenBSD)");
 +
 +/* Default ABI to use */
 +#undef RS6000_ABI_NAME 
