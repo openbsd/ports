@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
+@bin lib/ocaml/lwt/lwt-extra.cmxs
+@bin lib/ocaml/lwt/lwt-glib.cmxs
+@bin lib/ocaml/lwt/lwt-preemptive.cmxs
+@bin lib/ocaml/lwt/lwt-react.cmxs
+@bin lib/ocaml/lwt/lwt-simple-top.cmxs
+@bin lib/ocaml/lwt/lwt-ssl.cmxs
+@bin lib/ocaml/lwt/lwt-syntax-log.cmxs
+@bin lib/ocaml/lwt/lwt-syntax-options.cmxs
+@bin lib/ocaml/lwt/lwt-syntax.cmxs
+@bin lib/ocaml/lwt/lwt-unix.cmxs
+@bin lib/ocaml/lwt/lwt.cmxs

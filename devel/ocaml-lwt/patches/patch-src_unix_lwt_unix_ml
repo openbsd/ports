@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_unix_lwt_unix_ml,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
+--- src/unix/lwt_unix.ml.orig	Thu Jul 19 13:35:56 2012
++++ src/unix/lwt_unix.ml	Sat Aug 18 07:23:25 2012
+@@ -1748,7 +1748,7 @@ type credentials = {
+   cred_gid : int;
+ }
+ 
+-#if HAVE_GET_CREDENTIALS || HAVE_GETPEEREID
++#if HAVE_GET_CREDENTIALS
+ 
+ external stub_get_credentials : Unix.file_descr -> credentials = "lwt_unix_get_credentials"
+ 

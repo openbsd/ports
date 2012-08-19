@@ -1,0 +1,30 @@
+$OpenBSD: patch-setup_ml,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
+--- setup.ml.orig	Thu Jul 19 13:36:00 2012
++++ setup.ml	Fri Aug 17 15:44:30 2012
+@@ -5748,7 +5748,7 @@ let setup_t =
+                  CustomPlugin.cmd_main =
+                    [
+                       (OASISExpr.EBool true,
+-                        ("make", ["-C"; "manual"; "manual.pdf"]))
++                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
+                    ];
+                  cmd_clean = [(OASISExpr.EBool true, None)];
+                  cmd_distclean = [(OASISExpr.EBool true, None)];
+@@ -5801,7 +5801,7 @@ let setup_t =
+                  CustomPlugin.cmd_main =
+                    [
+                       (OASISExpr.EBool true,
+-                        ("make", ["-C"; "manual"; "manual.pdf"]))
++                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
+                    ];
+                  cmd_clean = [(OASISExpr.EBool true, None)];
+                  cmd_distclean = [(OASISExpr.EBool true, None)];
+@@ -5852,7 +5852,7 @@ let setup_t =
+                  CustomPlugin.cmd_main =
+                    [
+                       (OASISExpr.EBool true,
+-                        ("make", ["-C"; "manual"; "manual.pdf"]))
++                        ("gmake", ["-C"; "manual"; "manual.pdf"]))
+                    ];
+                  cmd_clean = [(OASISExpr.EBool true, None)];
+                  cmd_distclean = [(OASISExpr.EBool true, None)];
