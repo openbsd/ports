@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/11/03 22:21:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/20 07:39:36 jasper Exp $
 
 COMMENT=	qt home accounting program
 
 DISTNAME=	qhacc-3.4
-REVISION=	2
+REVISION=	3
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://qhacc.sourceforge.net/
