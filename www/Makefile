@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.568 2012/08/18 07:25:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.569 2012/08/20 18:02:31 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -221,6 +221,7 @@
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
+     SUBDIR += p5-Gravatar-URL
      SUBDIR += p5-HTML-Base
      SUBDIR += p5-HTML-CGIChecker
      SUBDIR += p5-HTML-Calendar-Month-Simple
