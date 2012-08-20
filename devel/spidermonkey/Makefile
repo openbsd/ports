@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/07 22:46:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/08/20 12:51:55 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MOZILLA_VERSION =	1.8.5
 DISTNAME =		js185-1.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
 PKGSPEC =		spidermonkey->=1.8,<1.9
-REVISION =		1
+REVISION =		2
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs185 ${SO_VERSION}
@@ -23,6 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 stdc++
+
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Djit=1 -Damd64=0
 .elif ${MACHINE_ARCH} == "amd64"
@@ -36,14 +38,15 @@ MODPY_RUNDEP =	No
 REGRESS_DEPENDS = ${MODPY_RUN_DEPENDS}
 BUILD_DEPENDS =	archivers/zip
 LIB_DEPENDS =	devel/nspr
-WANTLIB =	c m pthread readline nspr4 ncurses plc4 plds4 stdc++
+
+MODGNU_CONFIG_GUESS_DIRS=${WRKSRC} ${WRKSRC}/ctypes/libffi
 
 SUBST_VARS +=	MOZILLA_VERSION
 
 WRKDIST =	${WRKDIR}/js-${MOZILLA_VERSION}/js/src
 USE_GMAKE =	yes
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS =	--with-pthread \
+CONFIGURE_ARGS =	--with-pthreads \
 			--with-system-nspr \
 			--enable-readline \
 			--enable-ctypes \
