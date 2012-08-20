@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_aircrack-ng_c,v 1.1 2012/08/11 22:58:18 pascal Exp $
+$OpenBSD: patch-src_aircrack-ng_c,v 1.2 2012/08/20 11:50:59 pascal Exp $
 --- src/aircrack-ng.c.orig	Fri Apr  9 16:50:14 2010
 +++ src/aircrack-ng.c	Mon Jul 23 18:31:48 2012
 @@ -3852,7 +3852,7 @@ int crack_wpa_thread( void *arg )
@@ -6,7 +6,7 @@ $OpenBSD: patch-src_aircrack-ng_c,v 1.1 2012/08/11 22:58:18 pascal Exp $
  	int nparallel = 1;
  
 -#if defined(__i386__) || defined(__x86_64__)
-+#if (defined(__i386__) || defined(__x86_64__)) && !defined(PIC)
++#if (defined(__i386__) || defined(__x86_64__)) && !defined(__PIC__)
  	// Check for SSE2, with SSE2 the algorithm works with 4 keys
  	if (shasse2_cpuid()>=2)
  		nparallel = 4;
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_aircrack-ng_c,v 1.1 2012/08/11 22:58:18 pascal Exp $
  			case 'u' :
  				printf("Nb CPU detected: %d ", cpu_count);
 -#if defined(__i386__) || defined(__x86_64__)
-+#if (defined(__i386__) || defined(__x86_64__)) && !defined(PIC)
++#if (defined(__i386__) || defined(__x86_64__)) && !defined(__PIC__)
  				unused = shasse2_cpuid();
  
  				if (unused == 1) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 2012/08/11 22:58:18 pascal Exp $
+$OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.2 2012/08/20 11:51:00 pascal Exp $
 --- avidemux/ADM_libraries/ADM_utilities/ADM_imageUtils.cpp.orig	Fri Aug 10 18:45:14 2012
 +++ avidemux/ADM_libraries/ADM_utilities/ADM_imageUtils.cpp	Fri Aug 10 18:46:38 2012
 @@ -60,7 +60,7 @@ int a1,a2;
@@ -6,7 +6,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
          return 1;
  }
 -#if defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
  static uint8_t tinyAverageMMX(uint8_t *dst, uint8_t *src1, uint8_t *src2,uint32_t l)
  {
  int delta;
@@ -15,7 +15,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
  uint8_t ADMImage::merge(ADMImage *src1,ADMImage *src2)
  {
 -#if 1 && defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
          if(CpuCaps::hasMMX())
          {
                  tinyAverageMMX(YPLANE(this),YPLANE(src1),YPLANE(src2),(_width*_height*3)>>1);
@@ -24,7 +24,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
          return df;
  }
 -#if defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
  static uint64_t noise64 asm(MANGLE(noise64));
  static uint32_t computeDiffMMX(uint8_t  *s1,uint8_t *s2,uint32_t noise,uint32_t l)
  {
@@ -33,7 +33,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
  {
  
 -#if 1 && defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
  uint32_t r1,r2;
          if(CpuCaps::hasMMX())
          {
@@ -42,7 +42,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
          return 1;
  }
 -#if defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
  static uint8_t tinySubstractMMX(uint8_t *dst, uint8_t *src1, uint8_t *src2,uint32_t l)
  {
  int delta;
@@ -51,7 +51,7 @@ $OpenBSD: patch-avidemux_ADM_libraries_ADM_utilities_ADM_imageUtils_cpp,v 1.1 20
  {
  
 -#if 1 && defined( ARCH_X86 ) || defined (ARCH_X86_64)
-+#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(PIC)
++#if 1 && (defined( ARCH_X86 ) || defined (ARCH_X86_64)) && !defined(__PIC__)
  uint32_t r1,r2;
          if(CpuCaps::hasMMX())
          {
