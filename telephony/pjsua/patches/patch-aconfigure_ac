@@ -1,7 +1,6 @@
-$OpenBSD: patch-aconfigure_ac,v 1.5 2012/07/17 10:46:04 dcoppa Exp $
+$OpenBSD: patch-aconfigure_ac,v 1.6 2012/08/20 08:24:42 dcoppa Exp $
 
 zap CROSS_COMPILE variable
-use -pthread instead of -lpthread
 
 --- aconfigure.ac.orig	Thu Jun  7 04:24:51 2012
 +++ aconfigure.ac	Tue Jul 17 11:39:23 2012
@@ -19,28 +18,3 @@ use -pthread instead of -lpthread
  if test "$AR" = ""; then AR="${CROSS_COMPILE}ar rv"; fi
  AC_SUBST(AR)
  if test "$LD" = ""; then LD="$CC"; fi
-@@ -112,7 +105,23 @@ else
-     ac_cross_compile=${host_orig}-
- fi
- 
--AC_CHECK_LIB(pthread,pthread_create)
-+AC_CHECK_HEADER(pthread.h, have_pthread_h=yes)
-+if test "X$have_pthread_h" = "Xyes" ; then
-+    save_LDFLAGS="$LDFLAGS";
-+    LDFLAGS="$LDFLAGS -pthread"
-+    AC_LINK_IFELSE(
-+      [AC_LANG_PROGRAM(
-+        [[#include <pthread.h>
-+        pthread_t thr;]],
-+        [pthread_create(&thr, NULL, NULL, NULL);])],
-+      [ac_cv_support_pthreads=yes],
-+      [LDFLAGS="$save_LDFLAGS"])
-+    if test "X$ac_cv_support_pthreads" != "Xyes" ; then
-+      AC_CHECK_LIB(pthread, pthread_create,
-+        LIBS="-lpthread $LIBS")
-+    fi
-+fi
-+
- AC_CHECK_LIB(wsock32,puts)
- AC_CHECK_LIB(ws2_32,puts)
- AC_CHECK_LIB(ole32,puts)
