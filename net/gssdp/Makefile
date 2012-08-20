@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/12/09 15:16:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/20 08:52:59 jasper Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
-GNOME_VERSION=		0.12.1
+GNOME_VERSION=		0.12.2
 
 SHARED_LIBS +=  gssdp-1.0            1.0      # 3.0
 CATEGORIES=		net devel
@@ -27,7 +27,7 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 xcb
 WANTLIB += xcb-render xcb-shm xml2 z ffi stdc++
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= 	goi vala
 
 LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+2
