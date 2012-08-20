@@ -1,0 +1,33 @@
+$OpenBSD: patch-beaker_crypto_pycrypto_py,v 1.1 2012/08/20 14:38:10 jasper Exp $
+
+Security fix for CVE-2012-3458, py-beaker weak use of crypto can
+leak information to remote attackers.
+
+Patch from: https://github.com/bbangert/beaker/commit/91becae76101cf87ce8cbfabe3af2622fc328fe5
+
+--- beaker/crypto/pycrypto.py.orig	Mon Aug 20 16:30:05 2012
++++ beaker/crypto/pycrypto.py	Mon Aug 20 16:31:37 2012
+@@ -15,17 +15,19 @@ try:
+ 
+ except ImportError:
+     from Crypto.Cipher import AES
++    from Crypto.Util import Counter
+ 
+     def aesEncrypt(data, key):
+-        cipher = AES.new(key)
++        cipher = AES.new(key, AES.MODE_CTR,
++                         counter=Counter.new(128, initial_value=0))
+ 
+-        data = data + (" " * (16 - (len(data) % 16)))
+         return cipher.encrypt(data)
+ 
+     def aesDecrypt(data, key):
+-        cipher = AES.new(key)
++        cipher = AES.new(key, AES.MODE_CTR,
++	                 counter=Counter.new(128, initial_value=0))
+ 
+-        return cipher.decrypt(data).rstrip()
++        return cipher.decrypt(data)
+ 
+ def getKeyLength():
+     return 32
