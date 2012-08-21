@@ -1,18 +1,58 @@
-$OpenBSD: patch-build_detect_platform,v 1.2 2012/08/19 21:08:34 jasper Exp $
+$OpenBSD: patch-build_detect_platform,v 1.3 2012/08/21 00:28:34 jmatthew Exp $
 
-Add OpenBSD support: http://code.google.com/p/leveldb/issues/detail?id=31
+Use -lpthread instead of -pthread.
 
---- build_detect_platform.orig	Wed Jul 27 03:46:25 2011
-+++ build_detect_platform	Sun Aug 19 23:05:45 2012
-@@ -35,6 +35,11 @@ case `uname -s` in
-         echo "PLATFORM_CFLAGS=-D_REENTRANT -DOS_FREEBSD"  >> build_config.mk
-         echo "PLATFORM_LDFLAGS=-lpthread" >> build_config.mk
+Skip checks for <cstdatomic>, snappy and tcmalloc.  We don't
+have any of these, and with our current binutils, c++ -o /dev/null
+deletes /dev/null, which is kind of bad.
+
+--- build_detect_platform.orig	Thu May 31 02:56:59 2012
++++ build_detect_platform	Mon Aug 20 10:25:20 2012
+@@ -91,7 +91,7 @@ case "$TARGET_OS" in
+     OpenBSD)
+         PLATFORM=OS_OPENBSD
+         COMMON_FLAGS="-fno-builtin-memcmp -D_REENTRANT -DOS_OPENBSD"
+-        PLATFORM_LDFLAGS="-pthread"
++        PLATFORM_LDFLAGS="-lpthread"
+         PORT_FILE=port/port_posix.cc
          ;;
-+    OpenBSD)
-+        PLATFORM=OS_OPENBSD
-+        echo "PLATFORM_CFLAGS=-D_REENTRANT -DOS_OPENBSD"  >> build_config.mk
-+        echo "PLATFORM_LDFLAGS=-lpthread" >> build_config.mk
-+        ;;
-     *)
-         echo "Unknown platform!"
-         exit 1
+     DragonFly)
+@@ -132,36 +132,8 @@ if [ "$CROSS_COMPILE" = "true" ]; then
+     # Cross-compiling; do not try any compilation tests.
+     true
+ else
+-    # If -std=c++0x works, use <cstdatomic>.  Otherwise use port_posix.h.
+-    $CXX $CFLAGS -std=c++0x -x c++ - -o /dev/null 2>/dev/null  <<EOF
+-      #include <cstdatomic>
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX -DLEVELDB_CSTDATOMIC_PRESENT"
+-        PLATFORM_CXXFLAGS="-std=c++0x"
+-    else
+-        COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX"
+-    fi
+-
+-    # Test whether Snappy library is installed
+-    # http://code.google.com/p/snappy/
+-    $CXX $CFLAGS -x c++ - -o /dev/null 2>/dev/null  <<EOF
+-      #include <snappy.h>
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        COMMON_FLAGS="$COMMON_FLAGS -DSNAPPY"
+-        PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -lsnappy"
+-    fi
+-
+-    # Test whether tcmalloc is available
+-    $CXX $CFLAGS -x c++ - -o /dev/null -ltcmalloc 2>/dev/null  <<EOF
+-      int main() {}
+-EOF
+-    if [ "$?" = 0 ]; then
+-        PLATFORM_LDFLAGS="$PLATFORM_LDFLAGS -ltcmalloc"
+-    fi
++    # skip checks for <cstdatomic>, snappy and tcmalloc
++    COMMON_FLAGS="$COMMON_FLAGS -DLEVELDB_PLATFORM_POSIX"
+ fi
+ 
+ PLATFORM_CCFLAGS="$PLATFORM_CCFLAGS $COMMON_FLAGS"

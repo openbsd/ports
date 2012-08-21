@@ -1,36 +1,15 @@
-$OpenBSD: patch-port_port_posix_h,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+$OpenBSD: patch-port_port_posix_h,v 1.2 2012/08/21 00:28:34 jmatthew Exp $
 
-Add OpenBSD support: http://code.google.com/p/leveldb/issues/detail?id=31
+#define PLATFORM_IS_LITTLE_ENDIAN appropriately.
+See http://code.google.com/p/leveldb/issues/detail?id=98
 
---- port/port_posix.h.orig	Wed Jul 27 03:46:25 2011
-+++ port/port_posix.h	Thu Aug 18 17:06:57 2011
-@@ -7,7 +7,11 @@
- #ifndef STORAGE_LEVELDB_PORT_PORT_POSIX_H_
- #define STORAGE_LEVELDB_PORT_PORT_POSIX_H_
- 
--#if defined(OS_MACOSX) || defined(OS_FREEBSD)
-+#if defined(OS_OPENBSD)
-+  #include <sys/types.h>
-+#endif
-+
-+#if defined(OS_MACOSX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
-   #include <machine/endian.h>
- #elif defined(OS_SOLARIS)
-   #include <sys/isa_defs.h>
-@@ -33,13 +37,14 @@
- #define IS_LITTLE_ENDIAN (__BYTE_ORDER == __LITTLE_ENDIAN)
+--- port/port_posix.h.orig	Thu May 31 02:56:59 2012
++++ port/port_posix.h	Thu Aug 16 12:00:33 2012
+@@ -25,6 +25,7 @@
+       defined(OS_DRAGONFLYBSD) || defined(OS_ANDROID)
+   #include <sys/types.h>
+   #include <sys/endian.h>
++  #define PLATFORM_IS_LITTLE_ENDIAN (_BYTE_ORDER == _LITTLE_ENDIAN)
+ #else
+   #include <endian.h>
  #endif
- 
--#if defined(OS_MACOSX) || defined(OS_SOLARIS) || defined(OS_FREEBSD)
-+#if defined(OS_MACOSX) || defined(OS_SOLARIS) || defined(OS_FREEBSD) || \
-+	defined(OS_OPENBSD)
- #define fread_unlocked fread
- #define fwrite_unlocked fwrite
- #define fflush_unlocked fflush
- #endif
- 
--#if defined(OS_MACOSX) || defined(OS_FREEBSD)
-+#if defined(OS_MACOSX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
- #define fdatasync fsync
- #endif
- 
