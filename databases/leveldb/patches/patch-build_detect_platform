@@ -1,6 +1,4 @@
-$OpenBSD: patch-build_detect_platform,v 1.3 2012/08/21 00:28:34 jmatthew Exp $
-
-Use -lpthread instead of -pthread.
+$OpenBSD: patch-build_detect_platform,v 1.4 2012/08/21 13:51:12 ajacoutot Exp $
 
 Skip checks for <cstdatomic>, snappy and tcmalloc.  We don't
 have any of these, and with our current binutils, c++ -o /dev/null
@@ -8,15 +6,6 @@ deletes /dev/null, which is kind of bad.
 
 --- build_detect_platform.orig	Thu May 31 02:56:59 2012
 +++ build_detect_platform	Mon Aug 20 10:25:20 2012
-@@ -91,7 +91,7 @@ case "$TARGET_OS" in
-     OpenBSD)
-         PLATFORM=OS_OPENBSD
-         COMMON_FLAGS="-fno-builtin-memcmp -D_REENTRANT -DOS_OPENBSD"
--        PLATFORM_LDFLAGS="-pthread"
-+        PLATFORM_LDFLAGS="-lpthread"
-         PORT_FILE=port/port_posix.cc
-         ;;
-     DragonFly)
 @@ -132,36 +132,8 @@ if [ "$CROSS_COMPILE" = "true" ]; then
      # Cross-compiling; do not try any compilation tests.
      true
