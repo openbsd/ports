@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/18 22:56:33 avsm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/21 00:26:46 avsm Exp $
 
 COMMENT =	library for manipulating the terminal
 CATEGORIES =	devel
@@ -6,6 +6,7 @@ CATEGORIES =	devel
 DISTNAME =	lambda-term-1.2
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://forge.ocamlcore.org/frs/download.php/945/
+REVISION=	1
 
 HOMEPAGE =	http://forge.ocamlcore.org/projects/lambda-term
 
