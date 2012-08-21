@@ -1,9 +1,0 @@
-$OpenBSD: patch-vala_gssdp-1_0_deps,v 1.1 2012/08/20 08:52:59 jasper Exp $
-
-Add file that missing from the release tarball.
-https://bugzilla.gnome.org/show_bug.cgi?id=682228
-
---- vala/gssdp-1.0.deps.orig	Mon Aug 20 10:25:32 2012
-+++ vala/gssdp-1.0.deps	Mon Aug 20 10:23:12 2012
-@@ -0,0 +1 @@
-+gio-2.0
