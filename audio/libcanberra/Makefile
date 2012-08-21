@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/07/13 17:03:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/08/21 13:10:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
+
+REVISION-gtk3=	0
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
