@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.18 2011/11/14 18:00:58 ajacoutot Exp $
-lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
-@lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
