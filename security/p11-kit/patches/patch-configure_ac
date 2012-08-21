@@ -1,17 +1,18 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/08/19 11:10:43 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2012/08/21 09:13:33 sthen Exp $
 
 https://bugs.freedesktop.org/show_bug.cgi?id=53706
 
---- configure.ac.orig	Mon Jul 16 15:05:03 2012
-+++ configure.ac	Sun Aug 19 12:57:46 2012
-@@ -71,8 +71,12 @@ if test "$os_unix" = "yes"; then
+--- configure.ac.orig	Mon Jul 16 07:05:03 2012
++++ configure.ac	Mon Aug 20 17:08:15 2012
+@@ -71,8 +71,13 @@ if test "$os_unix" = "yes"; then
  
  	# Check if these are declared and/or available to link against
  	AC_CHECK_DECLS([program_invocation_short_name])
 -	AC_LINK_IFELSE([AC_LANG_SOURCE([extern char *program_invocation_short_name; void main() { }])],
 -		[AC_DEFINE(HAVE_PROGRAM_INVOCATION_SHORT_NAME, [1], [Whether program_invocation_short_name available])])
 +	AC_MSG_CHECKING([whether program_invocation_short_name is available])
-+	AC_LINK_IFELSE([AC_LANG_PROGRAM([program_invocation_short_name = "test";])],
++	AC_LINK_IFELSE([AC_LANG_PROGRAM([[#include <argp.h>]],
++                                  [[program_invocation_short_name = "test";]])],
 +		       [AC_DEFINE([HAVE_PROGRAM_INVOCATION_SHORT_NAME], [1],
 +				  [Whether program_invocation_short_name available]),
 +			AC_MSG_RESULT([yes])],
