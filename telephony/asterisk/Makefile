@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2012/08/04 21:53:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2012/08/21 22:45:59 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--with-ical=no
 
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
-LIB_DEPENDS-http_post=	mail/gmime ${MODGETTEXT_LIB_DEPENDS}
+LIB_DEPENDS-http_post=	mail/gmime,no_mono ${MODGETTEXT_LIB_DEPENDS}
 WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 \
 			${MODGETTEXT_WANTLIB}
 .if !${BUILD_PACKAGES:M-http_post}
