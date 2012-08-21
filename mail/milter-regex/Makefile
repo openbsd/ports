@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2011/05/11 12:57:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2012/08/21 13:30:55 okan Exp $
 
 COMMENT=	sendmail milter plugin for regular expression filtering
 
-DISTNAME=	milter-regex-1.8
-REVISION=	3
+DISTNAME=	milter-regex-1.9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
