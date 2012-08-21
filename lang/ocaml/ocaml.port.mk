@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.18 2012/08/18 21:49:16 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.19 2012/08/21 00:24:22 avsm Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -79,6 +79,8 @@ MODOASIS_configure = \
 	rm setup.cm[io] && \
 	${SETENV} ${CONFIGURE_ENV} ${_MODOASIS_SETUP} -configure \
 	--destdir ${WRKINST} \
+	--mandir ${PREFIX}/man \
+	--infodir ${PREFIX}/info \
 	--override pkg_name ${NAME} \
 	${CONFIGURE_ARGS}
 
