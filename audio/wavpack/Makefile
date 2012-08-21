@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/03/29 13:38:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/21 15:23:43 sthen Exp $
 
 COMMENT =		audio codec for lossless, lossy and hybrid compression
 
 DISTNAME =		wavpack-4.60.1
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://www.wavpack.com/
@@ -30,5 +31,9 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wavpack
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/wavpack
 
 .include <bsd.port.mk>
