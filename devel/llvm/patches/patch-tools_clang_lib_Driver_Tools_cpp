@@ -1,0 +1,30 @@
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.10 2012/08/21 17:51:53 pascal Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Wed Apr 18 17:32:25 2012
++++ tools/clang/lib/Driver/Tools.cpp	Thu Aug 16 02:23:30 2012
+@@ -4672,14 +4672,20 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+     // the default system libraries. Just mimic this for now.
+     CmdArgs.push_back("-lgcc");
+ 
+-    if (Args.hasArg(options::OPT_pthread))
+-      CmdArgs.push_back("-lpthread");
+-    if (!Args.hasArg(options::OPT_shared)) {
+-      if (Args.hasArg(options::OPT_pg)) 
+-         CmdArgs.push_back("-lc_p");
++    if (Args.hasArg(options::OPT_pthread)) {
++      if (!Args.hasArg(options::OPT_shared) &&
++          Args.hasArg(options::OPT_pg))
++         CmdArgs.push_back("-lpthread_p");
+       else
+-         CmdArgs.push_back("-lc");
++         CmdArgs.push_back("-lpthread");
+     }
++
++    if (!Args.hasArg(options::OPT_shared) &&
++        Args.hasArg(options::OPT_pg)) 
++      CmdArgs.push_back("-lc_p");
++    else
++      CmdArgs.push_back("-lc");
++
+     CmdArgs.push_back("-lgcc");
+   }
+ 
