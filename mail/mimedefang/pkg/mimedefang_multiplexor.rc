@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: mimedefang_multiplexor.rc,v 1.5 2012/05/31 18:31:42 ajacoutot Exp $
+# $OpenBSD: mimedefang_multiplexor.rc,v 1.6 2012/08/21 13:45:31 okan Exp $
 
 daemon="${TRUEPREFIX}/bin/mimedefang-multiplexor"
-daemon_flags="-U _mdefang -l -m 2 -b 600 -p /var/spool/MIMEDefang/mimedefang-multiplexor.pid"
+daemon_flags="-U _mdefang -E -l -m 2 -b 600 -p /var/spool/MIMEDefang/mimedefang-multiplexor.pid"
 
 . /etc/rc.d/rc.subr
 
