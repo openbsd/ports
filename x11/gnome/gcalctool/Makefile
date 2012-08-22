@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2012/05/15 11:24:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2012/08/22 07:02:01 jasper Exp $
 
 COMMENT=		GTK desktop calculator
 
 GNOME_PROJECT=		gcalctool
-GNOME_VERSION=		6.4.2.1
+# XXX: dev. version, but unbreaks gcalctool since this issue was fixed:
+# https://bugzilla.gnome.org/show_bug.cgi?id=676092
+GNOME_VERSION=		6.5.90.1
 
 CATEGORIES=		math
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/03/29 07:15:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/08/22 07:02:01 jasper Exp $
 @pkgpath x11/gnome/gcalctool,gtk2
 @bin bin/gcalccmd
 @bin bin/gcalctool
@@ -554,6 +554,36 @@ share/help/pt_BR/gcalctool/scientific.page
 share/help/pt_BR/gcalctool/superscript.page
 share/help/pt_BR/gcalctool/trigonometry.page
 share/help/pt_BR/gcalctool/variables.page
+share/help/ro/
+share/help/ro/gcalctool/
+share/help/ro/gcalctool/absolute.page
+share/help/ro/gcalctool/base.page
+share/help/ro/gcalctool/boolean.page
+share/help/ro/gcalctool/complex.page
+share/help/ro/gcalctool/conv-base.page
+share/help/ro/gcalctool/conv-character.page
+share/help/ro/gcalctool/conv-currency.page
+share/help/ro/gcalctool/conv-length.page
+share/help/ro/gcalctool/conv-time.page
+share/help/ro/gcalctool/conv-weight.page
+share/help/ro/gcalctool/equation.page
+share/help/ro/gcalctool/factorial.page
+share/help/ro/gcalctool/factorize.page
+share/help/ro/gcalctool/financial.page
+share/help/ro/gcalctool/functions.page
+share/help/ro/gcalctool/index.page
+share/help/ro/gcalctool/keyboard.page
+share/help/ro/gcalctool/legal.xml
+share/help/ro/gcalctool/logarithm.page
+share/help/ro/gcalctool/modulus.page
+share/help/ro/gcalctool/mouse.page
+share/help/ro/gcalctool/number-display.page
+share/help/ro/gcalctool/percentage.page
+share/help/ro/gcalctool/power.page
+share/help/ro/gcalctool/scientific.page
+share/help/ro/gcalctool/superscript.page
+share/help/ro/gcalctool/trigonometry.page
+share/help/ro/gcalctool/variables.page
 share/help/ru/
 share/help/ru/gcalctool/
 share/help/ru/gcalctool/absolute.page
