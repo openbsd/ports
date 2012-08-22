@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2012/08/07 09:35:37 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2012/08/22 07:48:37 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.8.2
+V =		1.8.3
 DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
