@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 14:15:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/22 07:15:51 sebastia Exp $
 
 COMMENT =	GNUstep dbus interface
 
 CATEGORIES +=   x11/gnustep devel
 VERSION =	0.1
 DISTNAME =	dbuskit-${VERSION}
-REVISION =	0
+REVISION =	1
 PKGNAME =	gnustep-dbuskit-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
 
@@ -16,7 +16,7 @@ MASTER_SITES =	http://download.gna.org/gnustep/
 
 MODULES +=		x11/gnustep
 MODGNUSTEP_NEEDS_GUI =	No
-WANTLIB += 		c dbus-1 m pthread gnustep-base objc
+WANTLIB += 		c dbus-1 m pthread gnustep-base objc2
 BUILD_DEPENDS +=	print/texlive/base \
 			textproc/texi2html
 

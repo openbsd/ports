@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/07/08 13:54:18 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/22 07:15:52 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
 BROKEN =	shows PDFs only white, and breaks GWorkspace on macppc
 
 DISTNAME =	PDFKit-0.9.2
+REVISION =	0
 SHARED_LIBS +=	PDFKit	0.0
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/PDFKit

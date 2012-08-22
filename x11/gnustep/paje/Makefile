@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/06 11:14:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/22 07:15:52 sebastia Exp $
 
 COMMENT =	GNUstep based trace visualization tool
 
 DISTNAME =	Paje-1.98
+REVISION =	0
 SHARED_LIBS +=	General	0.0
 
 HOMEPAGE =	http://paje.sourceforge.net/

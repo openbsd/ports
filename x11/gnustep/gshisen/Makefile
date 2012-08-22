@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/07/08 14:15:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/22 07:15:52 sebastia Exp $
 
 COMMENT=	little board game
 
 DISTNAME=	GShisen-1.3.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://gap.nongnu.org/gshisen/

@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.16 2011/07/19 06:19:49 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.17 2012/08/22 07:15:51 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64 macppc
@@ -25,7 +25,7 @@ MODGNUSTEP_NEEDS_GUI ?=		Yes
 MODGNUSTEP_NEEDS_BACK ?=	Yes
 
 .if ${MODGNUSTEP_NEEDS_GUI:L} == yes 
-MODGNUSTEP_WANTLIB +=		objc gnustep-base gnustep-gui
+MODGNUSTEP_WANTLIB +=		objc2 gnustep-base gnustep-gui
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/gui
 .  if ${MODGNUSTEP_NEEDS_BACK:L} == yes
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back

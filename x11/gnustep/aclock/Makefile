@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/07/08 14:15:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/22 07:15:51 sebastia Exp $
 
 COMMENT =	analog clock for the GNUstep desktop
 
 DISTNAME =	AClock-0.4.0
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://gap.nongnu.org/aclock/
 MASTER_SITES =	${MASTER_SITE_SAVANNAH:=gap/}
