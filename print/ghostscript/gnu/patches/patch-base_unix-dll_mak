@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
---- base/unix-dll.mak.orig	Wed Feb  8 09:48:48 2012
-+++ base/unix-dll.mak	Sun Jul  8 16:04:24 2012
-@@ -23,10 +23,6 @@
+$OpenBSD: patch-base_unix-dll_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
+--- base/unix-dll.mak.orig	Wed Aug  8 10:01:36 2012
++++ base/unix-dll.mak	Fri Aug 17 15:12:56 2012
+@@ -24,10 +24,6 @@
  #  export LD_LIBRARY_PATH=/insert-path-here/sobin
  #  export GS_LIB=/insert-path-here/lib
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  # ------------------- Ghostscript shared object --------------------------- #
  
  # Shared object names
-@@ -34,12 +30,16 @@ SODEBUGDIRPREFIX=sodebug
+@@ -35,12 +31,16 @@ SODEBUGDIRPREFIX=sodebug
  # simple loader (no support for display device)
  GSSOC_XENAME=$(GS)c$(XE)
  GSSOC_XE=$(BINDIR)/$(GSSOC_XENAME)
@@ -31,9 +31,9 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  
  # shared library
  GS_SONAME_BASE=lib$(GS)
-@@ -47,16 +47,10 @@ GS_SONAME_BASE=lib$(GS)
+@@ -48,16 +48,10 @@ GS_SONAME_BASE=lib$(GS)
  # GNU/Linux
- GS_SOEXT=so
+ GS_SOEXT=$(DYNANIC_LIB_EXT)
  GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
 -GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
 -GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
@@ -51,7 +51,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  # MacOS X
  #GS_SOEXT=dylib
  #GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
-@@ -83,13 +77,13 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
+@@ -84,13 +78,13 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  	ln -s $(GS_SONAME_MAJOR_MINOR) $(GS_SO_MAJOR)
  
  # Build the small Ghostscript loaders, with Gtk+ and without
@@ -71,7 +71,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  
  # ------------------------- Recursive make targets ------------------------- #
  
-@@ -99,6 +93,13 @@ SODEFS=\
+@@ -100,6 +94,13 @@ SODEFS=\
   STDIO_IMPLEMENTATION=c\
   BUILDDIRPREFIX=$(BUILDDIRPREFIX)
  
@@ -85,7 +85,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  # This is a bit nasty; because of the directory name rewriting that happens
  # on a recursive build, we have to recurse twice before we are sure that
  # all the targets are correct.
-@@ -117,19 +118,27 @@ sodebug:
+@@ -118,19 +119,27 @@ sodebug:
  	fi
  	$(MAKE) so-subtarget$(FOR_MAC) GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
@@ -115,7 +115,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  
  # special so-subtarget for MAC OS X
  so-subtarget_1:
-@@ -161,13 +170,11 @@ install-so-subtarget: so-subtarget$(FOR_MAC)
+@@ -162,13 +171,11 @@ install-so-subtarget: so-subtarget$(FOR_MAC)
  	-mkdir -p $(DESTDIR)$(bindir)
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
@@ -131,7 +131,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
  	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
-@@ -179,6 +186,8 @@ sodebuginstall:
+@@ -180,6 +187,8 @@ sodebuginstall:
  	$(MAKE) soinstall-subtarget GENOPT='-DDEBUG' BUILDDIRPREFIX=$(SODEBUGDIRPREFIX)
  
  soinstall-subtarget: install-so install-scripts install-data $(INSTALL_SHARED) $(INSTALL_CONTRIB)

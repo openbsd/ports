@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_ps2epsi,v 1.6 2007/11/19 20:06:56 kili Exp $
---- lib/ps2epsi.orig	Thu Jul  5 21:04:29 2007
-+++ lib/ps2epsi	Mon Sep  3 15:27:31 2007
-@@ -11,20 +11,7 @@ fi
+$OpenBSD: patch-lib_ps2epsi,v 1.7 2012/08/22 06:24:17 ajacoutot Exp $
+--- lib/ps2epsi.orig	Wed Aug  8 10:01:36 2012
++++ lib/ps2epsi	Fri Aug 17 15:12:56 2012
+@@ -10,20 +10,7 @@ fi
  GS_EXECUTABLE="$gs"
  
  # try to create a temporary file securely

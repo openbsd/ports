@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.24 2012/08/04 17:51:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2012/08/22 06:24:17 ajacoutot Exp $
 @conflict gstoraster-*
 @pkgpath print/gstoraster
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
 %%SHARED%%
-bin/dumphint
 bin/dvipdf
 bin/eps2eps
 bin/font2c
@@ -387,7 +386,9 @@ share/ghostscript/${VERSION}/Resource/SubstCID/Japan1-WMode
 share/ghostscript/${VERSION}/Resource/SubstCID/Korea1-WMode
 share/ghostscript/${VERSION}/doc/
 share/ghostscript/${VERSION}/doc/API.htm
+share/ghostscript/${VERSION}/doc/AUTHORS
 share/ghostscript/${VERSION}/doc/C-style.htm
+share/ghostscript/${VERSION}/doc/COPYING
 share/ghostscript/${VERSION}/doc/Changes.htm
 share/ghostscript/${VERSION}/doc/Commprod.htm
 share/ghostscript/${VERSION}/doc/DLL.htm
@@ -399,6 +400,8 @@ share/ghostscript/${VERSION}/doc/Develop.htm
 share/ghostscript/${VERSION}/doc/Devices.htm
 share/ghostscript/${VERSION}/doc/Drivers.htm
 share/ghostscript/${VERSION}/doc/Fonts.htm
+share/ghostscript/${VERSION}/doc/GS9_Color_Management.pdf
+share/ghostscript/${VERSION}/doc/GS9_Color_Management.tex
 share/ghostscript/${VERSION}/doc/Helpers.htm
 share/ghostscript/${VERSION}/doc/Hershey.htm
 share/ghostscript/${VERSION}/doc/History1.htm
@@ -420,15 +423,21 @@ share/ghostscript/${VERSION}/doc/Projects.htm
 share/ghostscript/${VERSION}/doc/Ps-style.htm
 share/ghostscript/${VERSION}/doc/Ps2epsi.htm
 share/ghostscript/${VERSION}/doc/Ps2pdf.htm
+share/ghostscript/${VERSION}/doc/Ps2ps2.htm
 share/ghostscript/${VERSION}/doc/Psfiles.htm
 share/ghostscript/${VERSION}/doc/Readme.htm
 share/ghostscript/${VERSION}/doc/Release.htm
 share/ghostscript/${VERSION}/doc/Source.htm
 share/ghostscript/${VERSION}/doc/Unix-lpr.htm
 share/ghostscript/${VERSION}/doc/Use.htm
+share/ghostscript/${VERSION}/doc/WhatIsGS.htm
 share/ghostscript/${VERSION}/doc/Xfonts.htm
+share/ghostscript/${VERSION}/doc/gs-vms.hlp
 share/ghostscript/${VERSION}/doc/gs.css
+share/ghostscript/${VERSION}/doc/gsdoc.el
 share/ghostscript/${VERSION}/doc/index.html
+share/ghostscript/${VERSION}/doc/pscet_status.txt
+share/ghostscript/${VERSION}/doc/thirdparty.htm
 share/ghostscript/${VERSION}/examples/
 share/ghostscript/${VERSION}/examples/alphabet.ps
 share/ghostscript/${VERSION}/examples/annots.pdf
@@ -456,7 +465,10 @@ share/ghostscript/${VERSION}/examples/golfer.eps
 share/ghostscript/${VERSION}/examples/grayalph.ps
 share/ghostscript/${VERSION}/examples/ridt91.eps
 share/ghostscript/${VERSION}/examples/snowflak.ps
+share/ghostscript/${VERSION}/examples/text_graph_image_cmyk_rgb.pdf
+share/ghostscript/${VERSION}/examples/text_graphic_image.pdf
 share/ghostscript/${VERSION}/examples/tiger.eps
+share/ghostscript/${VERSION}/examples/transparency_example.ps
 share/ghostscript/${VERSION}/examples/vasarely.ps
 share/ghostscript/${VERSION}/examples/waterfal.ps
 share/ghostscript/${VERSION}/iccprofiles/
@@ -510,7 +522,6 @@ share/ghostscript/${VERSION}/lib/decrypt.ps
 share/ghostscript/${VERSION}/lib/dnj750c.upp
 share/ghostscript/${VERSION}/lib/dnj750m.upp
 share/ghostscript/${VERSION}/lib/docie.ps
-share/ghostscript/${VERSION}/lib/dumphint.ps
 share/ghostscript/${VERSION}/lib/font2c.ps
 share/ghostscript/${VERSION}/lib/font2pcl.ps
 share/ghostscript/${VERSION}/lib/ghostpdf.ppd

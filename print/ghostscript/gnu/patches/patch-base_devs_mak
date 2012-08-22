@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_devs_mak,v 1.4 2012/07/11 10:26:31 kili Exp $
---- base/devs.mak.orig	Wed Feb  8 09:48:48 2012
-+++ base/devs.mak	Sun Jul  8 15:50:17 2012
-@@ -1828,14 +1828,11 @@ $(DD)plibk.dev : $(DEVS_MAK) $(plib_) $(GLD)page.dev $
+$OpenBSD: patch-base_devs_mak,v 1.5 2012/08/22 06:24:17 ajacoutot Exp $
+--- base/devs.mak.orig	Wed Aug  8 10:01:36 2012
++++ base/devs.mak	Fri Aug 17 15:12:56 2012
+@@ -1831,14 +1831,11 @@ $(DD)plibk.dev : $(DEVS_MAK) $(plib_) $(GLD)page.dev $
  	$(SETPDEV2) $(DD)plibk $(plib_)
  
  ### ------------------------------- CUPS ------------------------------- ###
