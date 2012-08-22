@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.46 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2012/08/22 09:55:01 edd Exp $
 
 COMMENT-main=	graph drawing software
 
-DISTNAME=	graphviz-2.12
+DISTNAME=	graphviz-2.28.0
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	16
 CATEGORIES=	math devel graphics
+
+# there is only one multi-package due to legacy, but maybe more
+# will appear in the form of language bindings.
 MULTI_PACKAGES=	-main
 
 # to let update-patches work in a simpler way
@@ -13,44 +15,32 @@ PATCHORIG=	.orig2
 
 MASTER_SITES=	${HOMEPAGE}pub/graphviz/ARCHIVE/
 
-SHARED_LIBS +=	gvplugin_core        0.0      # .3.0
-SHARED_LIBS +=	gvplugin_gd          0.0      # .3.0
-SHARED_LIBS +=	gvplugin_pango       0.0      # .3.0
-SHARED_LIBS +=	gvplugin_dot_layout  0.0      # .3.0
-SHARED_LIBS +=	gvplugin_neato_layout 0.0      # .3.0
-SHARED_LIBS +=	gvplugin_xlib        0.0      # .3.0
-SHARED_LIBS +=	gvplugin_gtk         0.0      # .3.0
-SHARED_LIBS +=	gvplugin_dot_layout  0.0      # .3.0
-SHARED_LIBS +=	gvplugin_neato_layout 0.0      # .3.0
+SHARED_LIBS += gvplugin_core		1.0 # 6.0
+SHARED_LIBS += gvplugin_gd		1.0 # 6.0
+SHARED_LIBS += gvplugin_pango		1.0 # 6.0
+SHARED_LIBS += gvplugin_dot_layout	1.0 # 6.0
+SHARED_LIBS += gvplugin_neato_layout	1.0 # 6.0
+SHARED_LIBS += gvplugin_xlib		1.0 # 6.0
+SHARED_LIBS += gvplugin_gtk		1.0 # 6.0
+SHARED_LIBS += gvplugin_gdk_pixbuf	0.0 # 6.0
+SHARED_LIBS += gvplugin_rsvg		0.0 # 6.0
 
-SHARED_LIBS +=	cdt                  0.0      # .3.0
-SHARED_LIBS +=	graph                1.0      # .3.0
-SHARED_LIBS +=	agraph               0.1      # .3.0
-SHARED_LIBS +=	pathplan             1.0      # .3.0
-SHARED_LIBS +=	gvc                  0.0      # .3.0
-SHARED_LIBS +=	gvc_builtins         0.0      # .3.0
-SHARED_LIBS +=	expr                 0.0      # .3.0
-SHARED_LIBS +=	gdtclft              1.0      # .0.0
-SHARED_LIBS +=	tcldot               1.0      # .0.0
-SHARED_LIBS +=	tcldot_builtin       1.0      # .0.0
-SHARED_LIBS +=	tclplan              1.0      # .0.0
-SHARED_LIBS +=	tkspline             1.0      # .0.0
-SHARED_LIBS +=	gv_guile             0.0      # .0.0
-SHARED_LIBS +=	gv_perl              0.0      # .0.0
-SHARED_LIBS +=	gv_tcl               0.0      # .0.0
-SHARED_LIBS +=	graph                1.0      # .3.0
-SHARED_LIBS +=	agraph               0.1      # .3.0
-SHARED_LIBS +=	gvc                  0.0      # .3.0
-SHARED_LIBS +=	gvc_builtins         0.0      # .3.0
-SHARED_LIBS +=	tcldot               1.0      # .0.0
-SHARED_LIBS +=	tclplan              1.0      # .0.0
-SHARED_LIBS +=	gv_guile             0.0      # .0.0
-SHARED_LIBS +=	gv_perl              0.0      # .0.0
-SHARED_LIBS +=	gv_tcl               0.0      # .0.0
+SHARED_LIBS += cdt			1.0 # 5.0
+SHARED_LIBS += graph			2.0 # 5.0
+SHARED_LIBS += pathplan			2.0 # 4.0
+SHARED_LIBS += gvc			1.0 # 6.0
+SHARED_LIBS += cgraph			0.0 # 6.0
+SHARED_LIBS += gvpr			0.0 # 2.0
+SHARED_LIBS += xdot			0.0 # 4.0
+SHARED_LIBS += gdtclft			2.0 # unknown
+SHARED_LIBS += tcldot			2.0 # unknown
+SHARED_LIBS += tcldot_builtin		2.0 # unknown
+SHARED_LIBS += tclplan			2.0 # unknown
+SHARED_LIBS += tkspline			2.0 # unknown
 
 HOMEPAGE=	http://www.graphviz.org/
 
-MAINTAINER=	Marc Espie <espie@openbsd.org>
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # Common public licence
 PERMIT_DISTFILES_FTP=	Yes
@@ -58,68 +48,68 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp \
-		Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt \
-		c dbus-1 dbus-glib-1 expat fontconfig freetype m pcre \
-		pthread-stubs util xcb z jpeg tk84 gd ffi \
-		png ltdl pthread stdc++ xcb-render GL Xxf86vm drm xcb-shm
-
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		x11/tk \
+		perl
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		devel/libtool,-ltdl \
-		tk->=8.4,<8.5:x11/tk/8.4 \
-		graphics/gd>=2.0.34
+		graphics/gd>=2.0.34 \
+		x11/gtk+2 \
+		www/libcroco \
+		x11/gnome/librsvg \
+		${_MODTK_SPEC}:x11/tk/${MODTK_VERSION}
+RUN_DEPENDS=	lang/guile
+BUILD_DEPENDS=	devel/swig
 
-# cairo stuff
-LIB_DEPENDS+= 	x11/gtk+2
-
-WANTLIB+=	cairo>=5 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
-		gmodule-2.0 glib-2.0 gobject-2.0 pixman-1 gdk_pixbuf-2.0 \
-		gdk-x11-2.0 gtk-x11-2.0
-
-# gnome stuff
-LIB_DEPENDS+=	x11/gnome/libgnomeui
-
-WANTLIB+=	atk-1.0 crypto gthread-2.0 ssl gio-2.0 \
-		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \
-		bonobo-activation bonoboui-2 gconf-2 gnome-2 \
-		gnome-keyring gnomecanvas-2 gnomevfs-2 popt xml2 gailutil \
-		gnomeui-2 canberra gcrypt gpg-error vorbis vorbisfile ogg
-
-RUN_DEPENDS=	tk->=8.4,<8.5:x11/tk/8.4 \
-		tcl->=8.4.7p5,<8.5:lang/tcl/8.4 \
-		lang/guile
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/swig
+WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm
+WANTLIB += atk-1.0 c cairo croco-0.6 drm expat ffi fontconfig
+WANTLIB += freetype gd gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg
+WANTLIB += ltdl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs rsvg-2 stdc++ xcb xcb-render
+WANTLIB += xcb-shm xml2 z ${MODTK_LIB} Xft Xss perl util
 
 USE_LIBTOOL=	Yes
+USE_GMAKE =	Yes
 USE_GROFF =	Yes
-AUTOCONF_VERSION=2.59
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-tcl=yes \
+		--enable-perl \
+		--enable-guile \
+		--with-tcl=${MODTCL_BIN} \
 		--disable-lua \
 		--disable-io \
 		--disable-java \
 		--disable-ocaml \
 		--disable-php \
-		--disable-perl \
 		--disable-python \
 		--disable-ruby \
 		--disable-rpath \
+		--disable-sharp \
+		--disable-R \
+		--disable-gts \
+		--without-ghostscript \
+		--without-devil \
+		--without-lasi \
+		--without-qt \
+		--without-glut \
 		--with-gd
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		TCLCONFIG=${LOCALBASE}/lib/tcl/tcl8.4/tclConfig.sh \
-		TKCONFIG=${LOCALBASE}/lib/tcl/tk8.4/tkConfig.sh \
-		PKG_CONFIG=/usr/bin/pkg-config
+		TCLCONFIG=${MODTCL_CONFIG} \
+		TKCONFIG=${MODTK_CONFIG}
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
 EXBASE=		${PREFIX}/share/examples/graphviz
 
-MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub84_pic' \
-		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub84_pic'
+MAKE_FLAGS=	TCL_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltclstub85_pic' \
+		TK_STUB_LIB_SPEC='-L${LOCALBASE}/lib -ltkstub85_pic'
+
+CFLAGS +=	-DLT_DEBUG_LOADERS
 
 FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		pdfdir="${DOCBASE}/pdf" \
@@ -129,6 +119,10 @@ FAKE_FLAGS=	htmldir="${DOCBASE}/html" \
 		leftydir="${EXBASE}/lefty" \
 		pathplanexampledir="${EXBASE}/demo/pathplan_data" \
 		undirecteddir="${EXBASE}/graphs/undirected" \
+		pkgtcldir="${MODTCL_TCLDIR}/graphviz"
+
+pre-configure:
+	${MODTCL_TCLSH_ADJ} ${WRKDIST}/tclpkg/gv/gv_doc_writer.tcl
 
 post-build:
 .for CMD in dotty lneato
@@ -139,9 +133,14 @@ post-build:
 .endfor
 
 post-install:
-	cd ${PREFIX}/share/examples/graphviz/demo && \
-	    perl -pi -e 's/^exec tclsh/exec tclsh8.4/' entities gcat
-	cd ${PREFIX}/share/examples/graphviz/demo && \
-	    perl -pi -e 's/^exec wish/exec wish8.4/' doted pathplan spline
+	@# install pre-generated config6 to avoid @exec/@unexec-delete
+	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
+
+# NOTE: When updating this port:
+#  * Check we have commented .la and .a corresponding to unversioned .so files
+#    in the packing list.
+#  * Run 'dot -c' manually and subsitute all hardcoded library versions to
+#    ${LIB_libname_VERSION}. Put the file in files/config6
 
 .include <bsd.port.mk>
