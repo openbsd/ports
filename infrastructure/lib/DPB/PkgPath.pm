@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.32 2012/07/18 10:30:56 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.33 2012/08/22 07:49:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -16,6 +16,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 use strict;
 use warnings;
+use feature qw(say);
 
 # Handles PkgPath;
 # all this code is *seriously* dependent on unique objects
