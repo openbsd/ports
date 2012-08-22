@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/22 07:01:45 sebastia Exp $
+include/gnustep/
+include/gnustep/objc/
+include/gnustep/objc/Availability.h
+include/gnustep/objc/Object.h
+include/gnustep/objc/Protocol.h
+include/gnustep/objc/blocks_private.h
+include/gnustep/objc/blocks_runtime.h
+include/gnustep/objc/capabilities.h
+include/gnustep/objc/developer.h
+include/gnustep/objc/encoding.h
+include/gnustep/objc/hooks.h
+include/gnustep/objc/objc-api.h
+include/gnustep/objc/objc-arc.h
+include/gnustep/objc/objc-auto.h
+include/gnustep/objc/objc.h
+include/gnustep/objc/runtime-deprecated.h
+include/gnustep/objc/runtime.h
+include/gnustep/objc/slot.h
+include/gnustep/objc/toydispatch.h
+lib/libobjc2.a
+@lib lib/libobjc2.so.${LIBobjc2_VERSION}
+@lib lib/libobjcxx.so.${LIBobjcxx_VERSION}

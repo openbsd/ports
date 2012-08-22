@@ -1,0 +1,3 @@
+This is the official GNUstep Objective-C runtime (a.k.a.  libobjc2).
+This runtime was designed to support the features of Objective-C 2 for
+use with GNUstep and other Objective-C programs.
