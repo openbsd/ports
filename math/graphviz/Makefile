@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2012/08/22 09:55:01 edd Exp $
+# $OpenBSD: Makefile,v 1.48 2012/08/22 22:15:49 edd Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -60,8 +60,8 @@ LIB_DEPENDS=	graphics/jpeg \
 		x11/gnome/librsvg \
 		${_MODTK_SPEC}:x11/tk/${MODTK_VERSION}
 RUN_DEPENDS=	lang/guile
-BUILD_DEPENDS=	devel/swig
-
+BUILD_DEPENDS=	devel/swig \
+		lang/guile
 WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm
 WANTLIB += atk-1.0 c cairo croco-0.6 drm expat ffi fontconfig
