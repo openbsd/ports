@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.18 2012/06/12 14:45:06 dcoppa Exp $
---- Makefile.orig	Tue Jun 12 14:26:20 2012
-+++ Makefile	Tue Jun 12 14:50:08 2012
+$OpenBSD: patch-Makefile,v 1.19 2012/08/22 20:14:06 naddy Exp $
+--- Makefile.orig	Sun Jun 24 16:34:26 2012
++++ Makefile	Mon Aug 20 17:01:25 2012
 @@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -26,16 +26,15 @@ $OpenBSD: patch-Makefile,v 1.18 2012/06/12 14:45:06 dcoppa Exp $
 -	@echo "  LINK  $@"
 -	@${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
 +pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} libpiano.so.${LIBpiano_VERSION}
-+	${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -pthread -lm -L. -lpiano \
++	${CC} -o $@ ${PIANOBAR_OBJ} ${LDFLAGS} -lao -lpthread -lm -L. -lpiano \
  			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS}
  else
  pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} \
  		${LIBWAITRESS_HDR}
 -	@echo "  LINK  $@"
 -	@${CC} ${CFLAGS} ${LDFLAGS} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
--			${LIBWAITRESS_OBJ} -lao -lpthread -lm \
 +	${CC} ${CFLAGS} ${LDFLAGS} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} \
-+			${LIBWAITRESS_OBJ} -lao -pthread -lm \
+ 			${LIBWAITRESS_OBJ} -lao -lpthread -lm \
  			${LIBFAAD_LDFLAGS} ${LIBMAD_LDFLAGS} ${LIBGNUTLS_LDFLAGS} \
  			${LIBGCRYPT_LDFLAGS} ${LIBJSONC_LDFLAGS} -o $@
  endif

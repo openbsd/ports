@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/07/07 11:28:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/22 20:14:06 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -90,8 +90,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-orc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/" \
-			PTHREAD_LIBS="-pthread"
+				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/"
 
 FAKE_FLAGS=		pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
 

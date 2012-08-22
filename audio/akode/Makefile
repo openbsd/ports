@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2012/08/22 20:14:05 naddy Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-REVISION=	17
+REVISION=	18
 
 SHARED_LIBS +=	akode                2.1      # .2.0
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=	FLAC avcodec avformat avutil bz2 c gsm jack ltdl m mad \
 		mp3lame ogg orc-0.4 pthread samplerate schroedinger-1.0 \
 		sndio speex stdc++ theoradec theoraenc vorbis vorbisenc \
-		vorbisfile vpx x264 z
+		vorbisfile vpx x264 xvidcore z
 
 LIB_DEPENDS=	audio/flac \
 		audio/libmad \
@@ -46,7 +46,6 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.60
 AUTOMAKE_VERSION=	1.9
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
-CONFIGURE_ENV=		PTHREAD_LIBS=-pthread
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib \
 			--with-jack \

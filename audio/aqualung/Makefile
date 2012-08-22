@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2012/08/22 20:14:05 naddy Exp $
 
 COMMENT=	advanced music player
 
@@ -55,7 +55,7 @@ LIB_DEPENDS=	audio/flac \
 RUN_DEPENDS=	devel/desktop-file-utils
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-pthread -L${LOCALBASE}/lib -L${X11BASE}/lib " \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib " \
 		CFLAGS="${CFLAGS} -DOSS_DEVICE='\"/dev/audio\"'  \
 		-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31  \
 		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}"

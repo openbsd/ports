@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/20 13:28:50 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/22 20:14:06 naddy Exp $
 
 SHARED_ONLY =		Yes
 
@@ -49,7 +49,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			LIBS="-pthread" \
 			HAVE_DOXYGEN="false"
 
 .ifdef DEBUG

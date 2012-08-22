@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/08/22 20:14:06 naddy Exp $
 
 COMMENT=		utility for Rio mp3 players
 
@@ -26,6 +26,6 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-libusb
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -pthread"
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

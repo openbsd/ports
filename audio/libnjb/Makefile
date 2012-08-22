@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/11/13 13:54:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/22 20:14:06 naddy Exp $
 
 COMMENT=		communicate with some Creative and Dell audio players
 
@@ -24,7 +24,7 @@ LIB_DEPENDS=		devel/libusb-compat
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
 
 post-install:

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/08/22 20:14:06 naddy Exp $
 
 COMMENT=	integer-only ogg vorbis command-line player
 DISTNAME=	vorbis-tools-1.0
@@ -31,8 +31,7 @@ WANTLIB=	ao>=3 c curl>=2 crypto idn ogg>=5 pthread ssl vorbisidec>=1 z
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-vorbistest
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		PTHREAD_CFLAGS="-pthread" PTHREAD_LIBS="-pthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/ogg123/cfgfile_options.c

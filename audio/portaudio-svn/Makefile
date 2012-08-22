@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/05/19 06:04:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/22 20:14:06 naddy Exp $
 
 COMMENT=		portable cross-platform audio API
 DISTNAME=		portaudio-svn-1406
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS=		portaudio	1.0
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m sndio
+WANTLIB=		c m pthread sndio
 
 MASTER_SITES=		http://jakemsr.trancell.org/distfiles/
 
