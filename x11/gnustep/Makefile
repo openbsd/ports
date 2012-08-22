@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/08/06 11:16:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.36 2012/08/22 07:03:31 sebastia Exp $
 
      SUBDIR =
      SUBDIR += aclock
@@ -32,6 +32,7 @@
      SUBDIR += jigsaw
      SUBDIR += lapispuzzle
      SUBDIR += laternamagica
+     SUBDIR += libobjc2
      SUBDIR += make
      SUBDIR += matharray
      SUBDIR += mpdcon
