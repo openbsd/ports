@@ -1,34 +1,31 @@
---- util/Makefile.in.orig	2003-09-23 14:13:37.000000000 -0400
-+++ util/Makefile.in	2003-12-20 18:44:56.000000000 -0500
-@@ -37,8 +37,8 @@ SHELL =         /bin/sh
-    exec_prefix = @exec_prefix@
-        MAN_DIR = @mandir@
-        BIN_DIR = @bindir@
--      DATA_DIR = @datadir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
--       LIB_DIR = @libdir@/`echo tkrat${VERSION} | sed '${TRANSFORM}'`
-+      DATA_DIR = @datadir@/`echo tkrat | sed '${TRANSFORM}'`
-+       LIB_DIR = @libdir@/`echo tkrat | sed '${TRANSFORM}'`
+$OpenBSD: patch-util_Makefile_in,v 1.3 2012/08/22 05:17:34 stu Exp $
+--- util/Makefile.in.orig	Tue Sep 23 14:13:37 2003
++++ util/Makefile.in	Sat May  5 04:06:00 2012
+@@ -89,12 +89,12 @@ ${DUMMYLIB}: rat_dummy.o
+ 	${SHLIB_LD} -o ${DUMMYLIB} rat_dummy.o $(EXTRA_LIBS) ${SHLIB_LD_LIBS}
  
-              CC = @CC@
-        INCLUDES = @TCL_INCLUDE@ @XINCLUDES@
-@@ -69,7 +69,7 @@ BUSYLIB_VERSION = @BUSYLIB_VERSION@
- DUMMYLIB = rat_dummy${SHLIB_SUFFIX}
- CFLAGS = ${TK_DEFS} ${EXTRA_CFLAGS} ${FIX_INCLUDE} ${INCLUDES} \
-          ${SHLIB_CFLAGS} -DBUSYLIB_VERSION=\"${BUSYLIB_VERSION}\"
--BUSYLIB = blt_busy${BUSYLIB_SUFFIX}
-+BUSYLIB = blt_busy${SHLIB_SUFFIX}.${BUSYLIB_VERSION}
+ pkgIndex.tcl: ${TARGETS} ${DUMMYLIB}
+-	echo "if [catch {load ./${DUMMYLIB}; \
+-			 load ./${BUSYLIB}; \
+-			 pkg_mkIndex . ${TARGETS}} error] \
++	echo "if [catch { pkg_mkIndex . ${TARGETS}} error] \
+ 		  {puts \$$error; exit 1}" | ${TCLSH}
  
- BUSYSRC = blt_busy.c blt_window.c
- BUSYOBJ = ${BUSYSRC:.c=.o}
-@@ -105,9 +105,8 @@ install.bin:  ${TARGETS_LIB} ${DUMMYLIB}
- 	INST=${INSTALL_PREFIX}${LIB_DIR}; \
- 	    echo "if [catch {load ./${DUMMYLIB}; \
- 		     cd $$INST; \
--		     pkg_mkIndex -load ./*${SHLIB_SUFFIX} . \
--				 *${SHLIB_SUFFIX}} error] \
--	  	  {puts \$$error; exit 1}" | ${TCLSH}
-+		     pkg_mkIndex -verbose -load ./${BUSYLIB}}]" | ${TCLSH}
+ install.bin:  ${TARGETS_LIB} ${DUMMYLIB}
 +
++dontdothis:
+ 	if test ! -d ${INSTALL_PREFIX}${LIB_DIR} ; then\
+ 	    ${INSTALL} -m 0755 -d ${INSTALL_PREFIX}${LIB_DIR} ;\
+ 	fi
+@@ -120,10 +120,7 @@ install.shared:  ${TARGETS_data}
+ 	do \
+ 	    ${INSTALL} -m 0644 $$i ${INSTALL_PREFIX}${UTIL_DIR} ;\
+ 	done
+-	cd ${INSTALL_PREFIX}${UTIL_DIR}; \
+-		echo "if [catch {pkg_mkIndex . ${TARGETS_DATA}} \
+-			error] \
+-		  {puts \$$error; exit 1}" | ${TCLSH}
++	${INSTALL} -m 0644 pkgIndex.tcl ${INSTALL_PREFIX}${UTIL_DIR}
  
- install.shared:  ${TARGETS_data}
- 	if test ! -d ${INSTALL_PREFIX}${DATA_DIR} ; then\
+ install: install.shared install.bin
+ 
