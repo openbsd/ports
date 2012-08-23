@@ -5,7 +5,7 @@ COMMENT-main =		mature and flexible open source SIP server
 SHARED_ONLY =		Yes
 
 VERSION =		3.2.3
-REVISION =		1
+REVISION =		2
 DISTNAME =		kamailio-${VERSION}_src
 PKGNAME-main =		kamailio-${VERSION}
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
@@ -81,7 +81,7 @@ PSEUDO_FLAVORS +=	no_postgresql
 MULTI_PACKAGES +=	-postgresql
 COMMENT-postgresql =	kamailio postgresql module
 KAMAILIO_MODULES +=	db_postgres
-WANTLIB-postgresql =	pq lib/kamailio/srdb1 lib/kamailio/srdb2
+WANTLIB-postgresql =	c pq lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-postgresql =databases/postgresql,-main telephony/kamailio,-main
 .endif
 
@@ -90,7 +90,7 @@ PSEUDO_FLAVORS +=	no_mysql
 MULTI_PACKAGES +=	-mysql
 COMMENT-mysql =		kamailio mysql module
 KAMAILIO_MODULES +=	db_mysql
-WANTLIB-mysql =		crypto m ssl z mysqlclient \
+WANTLIB-mysql =		c crypto m ssl z mysqlclient \
 			lib/kamailio/srdb1 lib/kamailio/srdb2
 LIB_DEPENDS-mysql =	databases/mysql,-main telephony/kamailio,-main
 .endif
@@ -100,7 +100,7 @@ PSEUDO_FLAVORS +=	no_ldap
 MULTI_PACKAGES +=	-ldap
 COMMENT-ldap =		kamailio LDAP modules
 KAMAILIO_MODULES +=	ldap h350
-WANTLIB-ldap =		ldap lib/kamailio/srdb2
+WANTLIB-ldap =		c ldap lib/kamailio/srdb2
 LIB_DEPENDS-ldap =	databases/openldap,-main telephony/kamailio,-main
 .endif
 
@@ -109,7 +109,7 @@ PSEUDO_FLAVORS +=	no_xmlrpc
 MULTI_PACKAGES +=	-xmlrpc
 COMMENT-xmlrpc =	kamailio XML-RPC module
 KAMAILIO_MODULES +=	mi_xmlrpc
-WANTLIB-xmlrpc +=	pthread xmlrpc xmlrpc_abyss xmlrpc_server
+WANTLIB-xmlrpc +=	c pthread xmlrpc xmlrpc_abyss xmlrpc_server
 WANTLIB-xmlrpc +=	xmlrpc_server_abyss xmlrpc_util
 WANTLIB-xmlrpc +=	xmlrpc_xmlparse xmlrpc_xmltok lib/kamailio/kmi
 LIB_DEPENDS-xmlrpc =	net/xmlrpc-c telephony/kamailio,-main
@@ -120,7 +120,7 @@ PSEUDO_FLAVORS +=	no_snmpstats
 MULTI_PACKAGES +=	-snmpstats
 COMMENT-snmpstats =	kamailio snmpstats module
 KAMAILIO_MODULES +=	snmpstats
-WANTLIB-snmpstats =	netsnmp netsnmpagent netsnmpmibs lib/kamailio/kcore
+WANTLIB-snmpstats =	c netsnmp netsnmpagent netsnmpmibs lib/kamailio/kcore
 LIB_DEPENDS-snmpstats =	net/net-snmp telephony/kamailio,-main
 .endif
 
@@ -129,7 +129,7 @@ PSEUDO_FLAVORS +=	no_carrierroute
 MULTI_PACKAGES +=	-carrierroute
 COMMENT-carrierroute =	kamailio carrierroute module
 KAMAILIO_MODULES +=	carrierroute
-WANTLIB-carrierroute =	confuse ${MODGETTEXT_WANTLIB} \
+WANTLIB-carrierroute =	c confuse ${MODGETTEXT_WANTLIB} \
 			lib/kamailio/kcore lib/kamailio/kmi \
 			lib/kamailio/srdb1 lib/kamailio/trie
 LIB_DEPENDS-carrierroute = devel/libconfuse \

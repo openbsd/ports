@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/10 09:36:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/23 17:42:27 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6pre18
+REVISION=	0
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 EXTRACT_SUFX=	.tgz
@@ -19,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	jpeg m tiff z
+WANTLIB=	c jpeg m tiff z
 
 WRKDIST=	${WRKDIR}/spandsp-0.0.6
 
