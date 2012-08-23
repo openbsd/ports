@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/04/05 21:15:29 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/23 17:07:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
@@ -6,7 +6,7 @@ COMMENT=	conferencing application for asterisk
 # #error Please add support for your architecture in typedefs.h
 ONLY_FOR_ARCHS=	i386 amd64
 
-DISTNAME=	appkonference-2.1
+DISTNAME=	appkonference-2.2
 
 CATEGORIES=	telephony
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+WANTLIB += c
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
