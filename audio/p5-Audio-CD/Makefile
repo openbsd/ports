@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/23 14:54:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to libcdaudio
 DISTNAME=	Audio-CD-0.04
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -14,10 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += cdaudio
+WANTLIB += c cdaudio
 
 MODULES=	cpan
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

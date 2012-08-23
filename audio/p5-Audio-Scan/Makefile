@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/21 22:12:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/23 14:54:31 sthen Exp $
 
 COMMENT=	XS parser for many common audio formats
 
 SHARED_ONLY=	Yes
 DISTNAME=	Audio-Scan-0.87
+REVISION=	0
 CATEGORIES=	audio
 
 # GPLv2
@@ -12,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	z
+WANTLIB=	c z
 MODULES=	cpan
 CPAN_AUTHOR=	AGRUNDMA
 USE_GROFF=	Yes

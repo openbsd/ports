@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/23 14:54:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Sybase database driver for the DBI module
 
 DISTNAME=	DBD-Sybase-1.10
-REVISION=	1
+REVISION=	2
 CATEGORIES=	databases
 USE_GROFF =	Yes
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m
+WANTLIB=	c m
 
 MODULES=	devel/gettext \
 		cpan

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/08/23 14:54:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	interface to iconv() codeset conversion function
 
 DISTNAME=	Text-Iconv-1.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	converters
 MODULES=	converters/libiconv cpan
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c
 
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

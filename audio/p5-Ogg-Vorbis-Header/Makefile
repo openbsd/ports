@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/23 14:54:31 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	object-oriented interface to Ogg Vorbis information
 
 MODULES=	cpan
 DISTNAME=	Ogg-Vorbis-Header-0.03
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ogg vorbis vorbisfile
+WANTLIB=	c ogg vorbis vorbisfile
 USE_GROFF =	Yes
 
 LIB_DEPENDS=	audio/libvorbis
