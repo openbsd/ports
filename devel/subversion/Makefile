@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2012/06/06 14:20:36 stsp Exp $
+# $OpenBSD: Makefile,v 1.113 2012/08/23 13:52:39 sthen Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -11,7 +11,7 @@ VERSION=		1.7.5
 DISTNAME=		subversion-${VERSION}
 PKGNAME-main=		${DISTNAME}
 REVISION-main=		0
-REVISION-perl=		0
+REVISION-perl=		1
 REVISION-python=	0
 REVISION-ruby=		0
 FULLPKGNAME-perl=	p5-SVN-${VERSION}
@@ -102,7 +102,7 @@ NOT_FOR_ARCHS-perl = ${NO_SHARED_ARCHS}
 NOT_FOR_ARCHS-python = ${NO_SHARED_ARCHS}
 NOT_FOR_ARCHS-ruby = ${NO_SHARED_ARCHS}
 
-WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 sqlite3
+WANTLIB-perl=		${WANTLIB} apr-1 aprutil-1 c sqlite3 pthread
 RUN_DEPENDS-perl=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-perl=	${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
 .for _lib in svn_diff-1 svn_ra-1 svn_delta-1 svn_subr-1 svn_fs-1 \
