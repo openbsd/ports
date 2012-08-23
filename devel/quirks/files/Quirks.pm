@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.80 2012/06/16 12:52:04 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.81 2012/08/23 14:45:14 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -300,7 +300,8 @@ my $stem_extensions = {
 	'libmpcdec' => 'musepack',
 	'mppenc' => 'musepack',
 	'xxxterm' => 'xombrero',
-	'pecl-zip' => 'php-zip'
+	'pecl-zip' => 'php-zip',
+	'XML-Sablotron' => 'p5-XML-Sablotron'
 };
 
 # ->is_base_system($handle, $state):
