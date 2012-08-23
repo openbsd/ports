@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.21 2011/04/03 19:41:25 jasper Exp $
+#   $OpenBSD: Makefile,v 1.22 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for pcap access
 
 MODULES=	cpan
 DISTNAME=	Net-Pcap-0.16
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 USE_GROFF =	Yes
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		pcap 
+WANTLIB += c pcap 
+
 RUN_DEPENDS=		net/p5-IO-Interface
 
 MODCPAN_EXAMPLES=	Yes

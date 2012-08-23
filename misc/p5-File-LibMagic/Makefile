@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/11 09:56:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		perl wrapper for libmagic
 
 DISTNAME =		File-LibMagic-0.96
+REVISION =		0
 
 CATEGORIES =		misc
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		magic
+WANTLIB += c magic
 
 EXTRACT_SUFX =		.tgz
 

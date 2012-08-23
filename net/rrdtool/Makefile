@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2012/08/23 15:50:06 sthen Exp $
 
 SHARED_ONLY=	Yes 
 
@@ -14,8 +14,8 @@ PKGNAME-perl=	p5-RRD-${VERSION}
 PKGNAME-python= py-rrd-${VERSION}
 PKGNAME-ruby=	ruby-rrd-${VERSION}
 REVISION-main=	3
-REVISION-perl=	2
-REVISION-python=4
+REVISION-perl=	3
+REVISION-python=5
 REVISION-ruby=	10
 
 SHARED_LIBS+=	rrd 3.0
@@ -62,11 +62,11 @@ LIB_DEPENDS-main=	graphics/png \
 			graphics/libart
 RUN_DEPENDS-main=	
 
-WANTLIB-perl=		m z rrd
+WANTLIB-perl=		c m z rrd
 LIB_DEPENDS-perl=	rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-perl=	
 
-WANTLIB-python =	rrd
+WANTLIB-python =	c pthread rrd ${MODPY_WANTLIB}
 LIB_DEPENDS-python=	rrdtool-${VERSION}:net/rrdtool
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 MODPY_EGG_VERSION=	0.2.1

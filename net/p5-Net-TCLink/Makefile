@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/28 19:08:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/23 15:50:06 sthen Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		interface to TrustCommerce gateway
 
 MODULES=		cpan
 DISTNAME=		Net_TCLink.pm-3.4
 PKGNAME=		p5-Net-TCLink-3.4
+REVISION=		0
 CATEGORIES=		net
 CPAN_AUTHOR=		WITTEN
 
@@ -14,8 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-SHARED_ONLY=		Yes
-WANTLIB=		crypto ssl
+WANTLIB += c crypto ssl
 
 REGRESS_IS_INTERACTIVE=	Yes
 # Requires Internet connection to TrustCommerce server

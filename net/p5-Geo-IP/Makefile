@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/19 21:17:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	look up country by IP address/hostname
 
 MODULES=	cpan
 DISTNAME=	Geo-IP-1.39
-REVISION=	0
+REVISION=	1
 CPAN_AUTHOR=	BORISZ
 CATEGORIES=	net geo
 
@@ -16,8 +16,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c GeoIP>=8
+
 LIB_DEPENDS=	net/GeoIP>=1.4.7
-WANTLIB =	GeoIP>=8
 
 CONFIGURE_ARGS= LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
 

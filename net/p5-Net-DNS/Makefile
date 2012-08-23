@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/05/14 09:08:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		module to interface the DNS resolver
 
 MODULES=		cpan
 DISTNAME=		Net-DNS-0.68
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.net-dns.org/
@@ -17,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		security/p5-Digest-HMAC>=1.00

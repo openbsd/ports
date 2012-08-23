@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/07/27 17:26:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	generate and manipulate images
 
 DISTNAME=	Imager-0.84
+REVISION=	0
 CATEGORIES=	graphics
 MODULES=	cpan
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += freetype gif jpeg m png tiff z
+WANTLIB += c freetype gif jpeg m png tiff z
 
 LIB_DEPENDS=	graphics/png \
 		graphics/jpeg \

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2011/06/25 18:01:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	module to interface with the GD graphics library
 
 DISTNAME =	GD-2.46
+REVISION =	0
 CATEGORIES =	graphics
 
 # perl
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	fontconfig freetype jpeg m png z gd>=20.28
+WANTLIB =	c fontconfig freetype jpeg m png z gd>=20.28
 
 LIB_DEPENDS =	graphics/gd
 

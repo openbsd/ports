@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/02/16 21:21:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/08/23 15:50:05 sthen Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -9,6 +9,8 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
 V =		6.0.2
+REVISION-perl=	0
+REVISION-php=	0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
@@ -50,8 +52,8 @@ WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm
 
 WANTLIB-main=	${WANTLIB} pthread c gif
 WANTLIB-utils=	${WANTLIB} pthread c gif
-WANTLIB-php=	${WANTLIB}
-WANTLIB-perl=	${WANTLIB} gif
+WANTLIB-php=	${WANTLIB} c pthread
+WANTLIB-perl=	${WANTLIB} c gif
 
 USE_GMAKE=	yes
 CONFIGURE_STYLE=gnu

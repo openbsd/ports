@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/11 18:36:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Perl interface to the Imlib2 image library
 
 DISTNAME=	Image-Imlib2-2.03
+REVISION=	0
 CATEGORIES=	graphics
 
 # Perl
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext freetype m z Imlib2>=1
+WANTLIB += c X11 Xext freetype m z Imlib2>=1
 
 LIB_DEPENDS=	graphics/imlib2
 

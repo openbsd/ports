@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/05/11 13:14:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2012/08/23 15:50:05 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
@@ -9,7 +9,7 @@ V=		5.7.1
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -perl -tkmib
 REVISION-main=	5
-REVISION-perl=	1
+REVISION-perl=	2
 REVISION-tkmib=	0
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	p5-SNMP-$V
@@ -34,7 +34,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=		c crypto kvm m perl util wrap
-WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
+WANTLIB-perl=		c crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
 
 LIB_DEPENDS-perl=	net/net-snmp,-main
 RUN_DEPENDS-tkmib=	net/net-snmp,-perl \

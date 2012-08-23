@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/18 21:41:46 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/23 15:52:47 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	OpenSSL's multiprecision integer arithmetic
 
 MODULES=	cpan
 DISTNAME=	Crypt-OpenSSL-Bignum-0.04
-REVISION=	1
+REVISION=	2
 CATEGORIES=	security
 USE_GROFF =	Yes
 
@@ -19,6 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		crypto
+
+WANTLIB += c crypto
 
 .include <bsd.port.mk>

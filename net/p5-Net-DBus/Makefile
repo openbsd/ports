@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/24 22:03:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/23 15:50:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	communicate with DBus message system
 
 MODULES=	cpan
 DISTNAME=	Net-DBus-0.33.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=	net
 USE_GROFF =	Yes
 
@@ -18,9 +18,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += c dbus-1>=6
+
 RUN_DEPENDS=	textproc/p5-XML-Twig
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	x11/dbus
-WANTLIB =	dbus-1>=6
 
 .include <bsd.port.mk>
