@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:33:59 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -413,9 +413,16 @@ ${DRUPAL_MODS}ctools/stylizer/stylizer.info
 ${DRUPAL_MODS}ctools/stylizer/stylizer.install
 ${DRUPAL_MODS}ctools/stylizer/stylizer.module
 ${DRUPAL_MODS}ctools/tests/
+${DRUPAL_MODS}ctools/tests/context.test
 ${DRUPAL_MODS}ctools/tests/css.test
 ${DRUPAL_MODS}ctools/tests/ctools.drush.sh
 ${DRUPAL_MODS}ctools/tests/ctools.plugins.test
+${DRUPAL_MODS}ctools/tests/ctools_export_test/
+${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export.test
+${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.default_ctools_export_tests.inc
+${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.info
+${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.install
+${DRUPAL_MODS}ctools/tests/ctools_export_test/ctools_export_test.module
 ${DRUPAL_MODS}ctools/tests/ctools_plugin_test.info
 ${DRUPAL_MODS}ctools/tests/ctools_plugin_test.module
 ${DRUPAL_MODS}ctools/tests/object_cache.test
