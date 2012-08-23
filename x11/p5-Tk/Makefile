@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/16 12:29:16 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2012/08/23 16:02:37 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ MODULES=	cpan
 VERSION=	804.029
 DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
 REVISION-demo=	2
 CATEGORIES=	x11 devel
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=	-main -demo
 
-WANTLIB-main=	X11 m z png
+WANTLIB-main=	c X11 m z png
 LIB_DEPENDS-main= graphics/png
 
 RUN_DEPENDS=	www/p5-HTML-Parser

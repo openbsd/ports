@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/23 16:02:37 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	perl interface to the GNOME GHTTP library
 
 MODULES=	cpan
 DISTNAME=	HTTP-GHTTP-1.07
-REVISION=	3
+REVISION=	4
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ghttp>=1
+WANTLIB += c ghttp>=1
 
 LIB_DEPENDS=	www/libghttp
 
