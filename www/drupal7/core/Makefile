@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/21 07:00:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/23 13:50:54 espie Exp $
 
 COMMENT =	powerful content management system
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-DISTNAME =	drupal-7.14
-PKGNAME =	drupal-7.14
+DISTNAME =	drupal-7.15
+PKGNAME =	drupal-7.15
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-REVISION=	1
 
 MODULES =	lang/php
 RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/04/10 12:50:24 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/23 13:50:54 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}rules/
@@ -36,7 +36,6 @@ ${DRUPAL_MODS}rules/rules.api.php
 ${DRUPAL_MODS}rules/rules.features.inc
 ${DRUPAL_MODS}rules/rules.info
 ${DRUPAL_MODS}rules/rules.install
-${DRUPAL_MODS}rules/rules.make
 ${DRUPAL_MODS}rules/rules.module
 ${DRUPAL_MODS}rules/rules.rules.inc
 ${DRUPAL_MODS}rules/rules_admin/
