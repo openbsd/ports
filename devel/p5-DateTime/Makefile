@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/23 15:05:15 sthen Exp $
 
 COMMENT=		perl objected oriented Date Time
 
@@ -7,7 +7,7 @@ SHARED_ONLY=		Yes
 MODULES=		cpan
 DISTNAME=		DateTime-0.63
 EPOCH=			0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
+
+WANTLIB += c
 
 REGRESS_DEPENDS=	devel/p5-DateTime-Format-Strptime
 

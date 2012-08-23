@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/09 19:09:47 simon Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/23 15:05:15 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	meta object protocol for perl 5
 
 MODULES=	cpan
 DISTNAME=	Class-MOP-1.12
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
@@ -14,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/p5-Devel-GlobalDestruction \

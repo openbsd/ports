@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2012/08/23 15:08:06 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,7 +14,7 @@ SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
 
 REVISION-main=		1
-REVISION-perl=		1
+REVISION-perl=		2
 
 # Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
 # If you are porting something which needs libuuid, you may need
@@ -38,7 +38,7 @@ MULTI_PACKAGES=		-main -perl
 WANTLIB-main=		c m stdc++
 
 CATEGORIES-perl=	devel perl5
-WANTLIB-perl=		uuid>=12
+WANTLIB-perl=		c uuid>=12
 LIB_DEPENDS-perl=	${BASE_PKGPATH}
 
 USE_LIBTOOL=		Yes

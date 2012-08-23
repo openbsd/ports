@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/23 15:05:15 sthen Exp $
 
 COMMENT=	change nature of data within a structure
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Data-Structure-Util-0.15
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
@@ -16,5 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c
 
 .include <bsd.port.mk>

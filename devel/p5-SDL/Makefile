@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:05 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/08/23 15:08:05 sthen Exp $
 
 SHARED_ONLY =		Yes
 COMMENT =		Simple DirectMedia Layer for Perl
@@ -8,7 +8,7 @@ MODULES =		cpan
 VER =			2.1.3
 DISTNAME =		SDL_Perl-${VER}
 PKGNAME =		p5-SDL-${VER}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel graphics
 CPAN_AUTHOR =		DGOEHRIG
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =		Yes
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 
-WANTLIB += GL GLU SDL jpeg png pthread
+WANTLIB += GL GLU SDL c jpeg png pthread
 
 RUN_DEPENDS =		devel/p5-YAML
 BUILD_DEPENDS =		${RUN_DEPENDS}

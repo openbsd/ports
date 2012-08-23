@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/03 11:44:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/23 15:08:05 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ MODULES=		cpan
 V=			2.30
 DISTNAME=		TermReadKey-${V}
 PKGNAME=		p5-Term-ReadKey-${V}
-REVISION=		3
+REVISION=		4
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c
 
 MASTER_SITES=		${MASTER_SITE_PERL_CPAN:=Term/}
 

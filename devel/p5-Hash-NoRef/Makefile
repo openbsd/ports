@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/08/23 15:05:15 sthen Exp $
 
 COMMENT=	HASH that stores values without a reference count increase
 
 SHARED_ONLY=	Yes
 
 DISTNAME=	Hash-NoRef-0.03
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 MODULES=	cpan
 USE_GROFF =	Yes
@@ -19,5 +19,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += c
 
 .include <bsd.port.mk>
