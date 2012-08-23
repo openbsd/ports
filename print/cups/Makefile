@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2012/08/05 13:47:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.139 2012/08/23 16:25:48 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -7,8 +7,8 @@ VERSION=		1.6.1
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION-main=		1
-REVISION-libs=		1
+REVISION-main=		2
+REVISION-libs=		2
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
@@ -31,12 +31,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 crypto gssapi krb5 m
+WANTLIB += asn1 c crypto gssapi krb5 m pthread
 WANTLIB += ssl stdc++ z
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 pthread
-WANTLIB-main += usb-1.0
+WANTLIB-main += cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -71,12 +70,11 @@ LIBS_ENV=		LIBcups_VERSION=${LIBcups_VERSION} \
 			LIBcupsmime_VERSION=${LIBcupsmime_VERSION} \
 			LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION} \
 
-FAKE_FLAGS=		BINMODE=${BINMODE} \
-			SHAREMODE=${SHAREMODE} \
-			DBUSDIR=${DESTDIR}${PREFIX}/share/examples/cups/dbus-1/system.d \
-			ICONDIR=${DESTDIR}${PREFIX}/share/icons \
-			MENUDIR=${DESTDIR}${PREFIX}/share/applications \
-			SERVERROOT=${DESTDIR}${PREFIX}/share/examples/cups
+FAKE_FLAGS=		BUILDROOT=${WRKINST} \
+			DBUSDIR=${PREFIX}/share/examples/cups/dbus-1/system.d \
+			ICONDIR=${PREFIX}/share/icons \
+			MENUDIR=${PREFIX}/share/applications \
+			SERVERROOT=${WRKINST}${PREFIX}/share/examples/cups
 
 AUTOCONF_VERSION= 	2.68
 AUTOMAKE_VERSION= 	1.10
@@ -90,7 +88,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread" \
 			${LIBS_ENV}
 
-CONFIGURE_STYLE=	 gnu dest
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-static \
 			--with-cups-group=_cups \
