@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_npm_lib_npm_js,v 1.1 2012/08/23 17:29:44 abieber Exp $
+--- deps/npm/lib/npm.js.orig	Tue Aug 21 19:41:11 2012
++++ deps/npm/lib/npm.js	Tue Aug 21 19:41:59 2012
+@@ -341,8 +341,8 @@ function load (npm, cli, cb) {
+       }
+ 
+       var umask = parseInt(cli.umask, 8)
+-      npm.modes = { exec: 0777 & (~umask)
+-                  , file: 0666 & (~umask)
++      npm.modes = { exec: 0755 & (~umask)
++                  , file: 0644 & (~umask)
+                   , umask: umask }
+ 
+       chain([ [ loadPrefix, npm, cli ]
