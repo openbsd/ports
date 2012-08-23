@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2012/03/19 10:28:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2012/08/23 20:03:57 sthen Exp $
 
 COMMENT=		shared mime database for desktops
 
 DISTNAME=		shared-mime-info-1.0
 CATEGORIES=		misc
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.freedesktop.org/wiki/Software/shared-mime-info
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c glib-2.0 xml2
+WANTLIB += c glib-2.0 pthread xml2
 
 MASTER_SITES=		http://people.freedesktop.org/~hadess/
 EXTRACT_SUFX=		.tar.xz
