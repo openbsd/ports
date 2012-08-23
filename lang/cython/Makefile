@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:20 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/08/23 19:19:16 sthen Exp $
 
 COMMENT =		C-Extensions for Python
 
 MODPY_EGG_VERSION = 	0.14.1
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		lang
@@ -19,9 +19,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		lang/python
+WANTLIB +=  c pthread ${MODPY_WANTLIB}
 
-WANTLIB += 		${MODPY_WANTLIB}
+MODULES =		lang/python
 
 REGRESS_TARGET =	test
 

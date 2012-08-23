@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2012/05/09 06:21:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/23 19:19:17 sthen Exp $
 
 VERSION =		2.7
 PATCHLEVEL =		.3
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		python2.7 0.0
 VERSION_SPEC =		>=2.7,<2.8
 

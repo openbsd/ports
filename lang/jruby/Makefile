@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/05/04 20:15:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.33 2012/08/23 19:19:16 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	pure-Java implementation of the Ruby language
 V =		1.6.7.2
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
+REVISION =	0
 CATEGORIES =	lang lang/ruby
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0
@@ -21,6 +22,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += c m pthread stdc++
+
 MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/${V}/
 MASTER_SITES0 =	http://distfiles.bsdfrog.org/
 
@@ -28,8 +31,6 @@ MODULES =	java
 MODJAVA_VER =	1.7+
 MODJAVA_JRERUN = Yes
 USE_GMAKE =	Yes
-
-WANTLIB =	c m stdc++
 
 BUILD_DEPENDS =	devel/apache-ant \
 		shells/bash \

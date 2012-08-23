@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.92 2012/05/09 06:21:12 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.93 2012/08/23 19:19:17 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -82,10 +82,10 @@ LIB_DEPENDS-bsddb +=	databases/db/v4,no_tcl,no_java,bootstrap
 LIB_DEPENDS-bsddb +=	databases/db/v4
 .endif
 
-WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}${LIB_SUFX}
+WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}${LIB_SUFX} c pthread
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python/${VERSION},-main
-WANTLIB-gdbm =		gdbm>=3 python${VERSION}${LIB_SUFX}
+WANTLIB-gdbm =		gdbm>=3 python${VERSION}${LIB_SUFX} c pthread
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			lang/python/${VERSION},-tkinter
 # XXX Tcl/Tk version number handled in patch-setup_py
@@ -93,6 +93,7 @@ MODULES +=		x11/tk
 LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
 			lang/python/${VERSION},-main
 WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}${LIB_SUFX}
+WANTLIB-tkinter +=	c pthread
 
 .if ${VERSION} < 3.2
 .if ${PROPERTIES:Mlp64}
