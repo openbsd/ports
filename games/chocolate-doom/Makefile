@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/23 08:47:03 rfreeman Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/23 20:20:27 rfreeman Exp $
 
 COMMENT =	portable version of iD Software's Doom
-DISTNAME =	chocolate-doom-1.6.0
-REVISION =	0
+DISTNAME =	chocolate-doom-1.7.0
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://www.chocolate-doom.org/
 
-MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
+MAINTAINER =	Ryan Freeman <rfreeman@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =		Yes
@@ -26,7 +25,6 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
 RUN_DEPENDS =	devel/desktop-file-utils
 
 USE_GROFF =	Yes
-USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
 
