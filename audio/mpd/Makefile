@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.47 2012/07/13 14:10:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.48 2012/08/23 14:28:19 dcoppa Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.16.8
-REVISION =		1
+DISTNAME =		mpd-0.17.1
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -13,8 +12,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB +=		c m pthread ogg z stdc++ sndio curl glib-2.0 gthread-2.0
-WANTLIB +=		audiofile ao samplerate sndfile FLAC id3tag mad mikmod
+WANTLIB =		FLAC ao audiofile c cdio cdio_cdda cdio_paranoia \
+			curl glib-2.0 gthread-2.0 id3tag m mad \
+			mikmod ogg pthread samplerate sndfile sndio \
+			stdc++ z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
@@ -22,6 +23,7 @@ MODULES =		devel/gettext
 
 LIB_DEPENDS =		devel/libaudiofile \
 			audio/libao \
+			audio/libcdio \
 			audio/libsamplerate \
 			audio/flac \
 			audio/libid3tag \
@@ -36,9 +38,9 @@ FLAVOR ?=
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-alsa \
-			--disable-cue \
 			--disable-ffmpeg \
 			--disable-gme \
+			--disable-inotify \
 			--disable-jack \
 			--disable-libwrap \
 			--disable-mms \
@@ -46,12 +48,17 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--disable-mpg123 \
 			--disable-oss \
 			--disable-pulse \
+			--disable-roar \
 			--disable-sidplay \
+			--disable-soundcloud \
+			--disable-soup \
 			--disable-sqlite \
+			--disable-systemd-daemon \
 			--disable-twolame-encoder \
 			--disable-wavpack \
 			--enable-ao \
 			--enable-audiofile \
+			--enable-cdio-paranoia \
 			--enable-curl \
 			--enable-lsr \
 			--enable-mad \
@@ -59,7 +66,8 @@ CONFIGURE_ARGS +=	--bindir=${PREFIX}/sbin \
 			--enable-mpc \
 			--enable-pipe-output \
 			--enable-sndfile \
-			--with-zeroconf=no
+			--with-zeroconf=no \
+			--without-systemdsystemunitdir
 
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -67,7 +75,6 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 
 .if ${FLAVOR:Mtremor}
 CONFIGURE_ARGS +=	--with-tremor \
-			--disable-oggflac \
 			--disable-shout \
 			--disable-vorbis-encoder \
 			--disable-lame-encoder \
