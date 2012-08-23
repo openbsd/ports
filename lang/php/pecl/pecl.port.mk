@@ -1,4 +1,4 @@
-# $OpenBSD: pecl.port.mk,v 1.1 2012/04/19 21:29:33 sthen Exp $
+# $OpenBSD: pecl.port.mk,v 1.2 2012/08/23 19:35:31 sthen Exp $
 # PHP PECL module
 
 MODULES +=	lang/php
@@ -34,4 +34,8 @@ MODPHP_DO_PHPIZE ?= Yes
 .if !target(do-regress) && ${NO_REGRESS:L:Mno}
 REGRESS_TARGET = test
 REGRESS_FLAGS =  NO_INTERACTION=1
+.endif
+
+.if ${SHARED_ONLY:L} == "yes"
+WANTLIB += c
 .endif

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2012/06/18 07:56:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/23 19:35:31 sthen Exp $
 
 COMMENT=	support for PHP archives (.phar)
 DISTNAME=	phar-2.0.0
-REVISION=	7
+REVISION=	8
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
