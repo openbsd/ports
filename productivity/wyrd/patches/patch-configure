@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2012/08/23 16:40:38 avsm Exp $
+--- configure.orig	Sun Aug  5 22:36:54 2012
++++ configure	Sun Aug  5 22:37:23 2012
+@@ -1791,7 +1791,7 @@ OCAMLMINORVERSION=`echo $OCAMLVERSION | cut -d '.' -f 
+ if test $OCAMLMAJORVERSION -lt 3 ; then
+    as_fn_error "Wyrd requires OCaml version 3.08 or greater." "$LINENO" 5
+ else
+-   if test $OCAMLMINORVERSION -lt 8 ; then
++   if test $OCAMLMAJORVERSION -eq 3 -a $OCAMLMINORVERSION -lt 8 ; then
+       as_fn_error "Wyrd requires OCaml version 3.08 or greater." "$LINENO" 5
+    fi
+ fi

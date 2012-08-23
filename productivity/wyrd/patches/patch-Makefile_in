@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2012/08/23 16:40:38 avsm Exp $
+--- Makefile.in.orig	Sun Aug  5 22:41:16 2012
++++ Makefile.in	Sun Aug  5 22:41:21 2012
+@@ -91,10 +91,10 @@ version.ml: Makefile
+ 
+ 
+ $(CURSES_CMA):
+-	make -C curses byte
++	$(MAKE) -C curses byte
+ 
+ $(CURSES_CMXA):
+-	make -C curses opt
++	$(MAKE) -C curses opt
+ 
+ 
+ # installation
+@@ -202,7 +202,7 @@ partly-clean::
+ 	rm -f *.aux *.log $(NAME).tex $(NAME).dvi $(NAME).ps
+ 
+ curses-clean::
+-	make -C curses clean
++	$(MAKE) -C curses clean
+ 
+ clean:: partly-clean curses-clean
+ 
