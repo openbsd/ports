@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2012/08/24 07:50:37 jasper Exp $
 
 COMMENT=	GUI toolkit for X11
 
 DISTNAME=	xforms-1.0
-REVISION=	1
+REVISION=	2
 SHARED_LIBS=	flimage	1.0 \
 		forms	1.0 \
 		formsGL	1.0
 CATEGORIES=	x11
 
-HOMEPAGE=	http://world.std.com/~xforms/
+HOMEPAGE=	http://xforms-toolkit.org/
 
 MASTER_SITES=	${MASTER_SITE_SAVANNAH:=xforms/}
 
@@ -25,7 +25,8 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	imake
 MAKE_FLAGS=		LIBflimage_VERSION=${LIBflimage_VERSION} \
 			LIBforms_VERSION=${LIBforms_VERSION} \
-			LIBformsGL_VERSION=${LIBformsGL_VERSION}
+			LIBformsGL_VERSION=${LIBformsGL_VERSION} \
+			OPTIMIZER="${CFLAGS}"
 
 BUILD_DEPENDS=		graphics/jpeg
 
