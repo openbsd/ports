@@ -1,0 +1,12 @@
+$OpenBSD: patch-make_libtool_mk,v 1.1.1.1 2012/08/24 07:38:57 ajacoutot Exp $
+--- make/libtool.mk.orig	Thu Aug 23 20:41:43 2012
++++ make/libtool.mk	Thu Aug 23 20:41:58 2012
+@@ -1,7 +1,7 @@
+ # --- Required interface definitions ---
+ 
+ # LIBTOOL needs bash
+-SHELL=/bin/bash
++#SHELL=/bin/bash
+ 
+ OBJ=o
+ LOBJ=lo

@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2012/08/24 07:38:57 ajacoutot Exp $
+--- configure.orig	Sat Aug 11 19:41:38 2012
++++ configure	Thu Aug 23 20:27:47 2012
+@@ -15399,8 +15399,8 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for gnu make >= 3.81" >&5
+ $as_echo_n "checking for gnu make >= 3.81... " >&6; }
+ make_okay=0
+-if make --version >/dev/null 2>&1; then
+-  v=`make --version | grep 'GNU Make' | sed -e 's/.*Make //'`
++if gmake --version >/dev/null 2>&1; then
++  v=`gmake --version | grep 'GNU Make' | sed -e 's/.*Make //'`
+   maj=`echo $v | cut -d. -f 1`
+   min=`echo $v | cut -d. -f 2`
+   if test $maj -gt 3 -o '(' $maj -eq 3 -a $min -ge 81 ')'; then
