@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/20 13:07:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/08/24 08:29:27 ajacoutot Exp $
 
 COMMENT=	next generation web interface for Zarafa
 
 WAPP_BUILD=	35292
 WAPP_VERSION=	1.1
 EPOCH=		0
+REVISION=	0
 
 DISTNAME=	zarafa-webapp-${WAPP_VERSION}-${WAPP_BUILD}.noarch.rpm
 PKGNAME=	zarafa-webapp-${WAPP_VERSION}
