@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: riak.rc,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+
+bin="${TRUEPREFIX}/sbin/riak"
+daemon="${TRUEPREFIX}/lib/riak/erts-5.9.1/bin/beam.smp"
+daemon_user="_riak"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	${rcexec} "${bin} start" >/dev/null
+}
+
+rc_stop() {
+	${rcexec} "${bin} stop" >/dev/null
+}
+
+rc_cmd $1

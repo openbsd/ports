@@ -1,0 +1,3 @@
+Riak combines a decentralized key-value store, a flexible map/reduce engine, 
+and a friendly HTTP/JSON query interface to provide a database ideally suited 
+for Web applications.

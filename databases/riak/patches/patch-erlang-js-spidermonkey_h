@@ -1,0 +1,16 @@
+$OpenBSD: patch-erlang-js-spidermonkey_h,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+
+Use JS_SetOperationCallback instead of JS_SetBranchCallback to perform
+periodic gc.
+
+--- deps/erlang_js/c_src/spidermonkey.h.orig	Mon Apr 23 10:16:34 2012
++++ deps/erlang_js/c_src/spidermonkey.h	Mon Apr 23 10:16:43 2012
+@@ -25,7 +25,7 @@ typedef struct _spidermonkey_error_t {
+ } spidermonkey_error;
+ 
+ typedef struct _spidermonkey_state_t {
+-  int branch_count;
++  int operation_count;
+   spidermonkey_error *error;
+   int terminate;
+ } spidermonkey_state;
