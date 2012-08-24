@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.193 2012/08/17 09:00:10 ajacoutot Exp $
+$OpenBSD: user.list,v 1.194 2012/08/24 04:18:02 jmatthew Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -210,3 +210,4 @@ id  user		group		port options
 699 _mozsync		_mozsync	www/mozilla-sync
 700 _yubiserve		_yubiserve	security/yubiserve
 701 _polkitd		_polkitd	sysutils/polkit
+702 _riak		_riak		databases/riak
