@@ -1,11 +1,10 @@
-$OpenBSD: patch-Magick++_lib_Magick++_pc_in,v 1.1 2012/06/19 12:46:12 sthen Exp $
---- Magick++/lib/Magick++.pc.in.orig	Sat Sep  5 22:47:34 2009
-+++ Magick++/lib/Magick++.pc.in	Tue Jun 19 09:13:35 2012
+$OpenBSD: patch-Magick++_lib_Magick++_pc_in,v 1.2 2012/08/24 19:50:32 jasper Exp $
+--- Magick++/lib/Magick++.pc.in.orig	Sat Sep  5 23:47:34 2009
++++ Magick++/lib/Magick++.pc.in	Fri Aug 24 21:50:03 2012
 @@ -8,5 +8,5 @@ Name: Magick++
  Version: @PACKAGE_VERSION@
  Description: Magick++ - C++ API for ImageMagick
  Requires: ImageMagick
 -Libs: -L${libdir} -lMagick++
--Cflags: -I${includedir}
 +Libs: -L${libdir} -L${X11BASE}/lib -lMagick++ -pthread
-+Cflags: -I${includedir}
+ Cflags: -I${includedir}
