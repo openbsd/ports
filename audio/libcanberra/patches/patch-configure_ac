@@ -1,18 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.9 2012/07/13 17:03:32 ajacoutot Exp $
-
-Remove --as-needed (undefined symbol pthread_*).
-
+$OpenBSD: patch-configure_ac,v 1.10 2012/08/24 12:14:47 ajacoutot Exp $
 --- configure.ac.orig	Tue May 15 12:09:53 2012
-+++ configure.ac	Fri Jul 13 18:37:21 2012
-@@ -114,7 +114,6 @@ CC_CHECK_FLAGS_APPEND([with_cflags], [CFLAGS], [\
- AC_SUBST([WARNINGFLAGS], $with_cflags)
- 
- CC_CHECK_FLAGS_APPEND([with_ldflags], [LDFLAGS], [\
--        -Wl,--as-needed \
-         -Wl,--gc-sections])
- AC_SUBST([GCLDFLAGS], $with_ldflags)
- 
-@@ -295,6 +294,36 @@ else
++++ configure.ac	Fri Aug 24 14:01:44 2012
+@@ -295,6 +295,36 @@ else
      HAVE_OSS=0
  fi
  
@@ -49,7 +38,7 @@ Remove --as-needed (undefined symbol pthread_*).
  ### PulseAudio (optional) ####
  
  AC_ARG_ENABLE([pulse],
-@@ -596,6 +625,7 @@ BUILTIN_DSO=0
+@@ -596,6 +626,7 @@ BUILTIN_DSO=0
  BUILTIN_PULSE=0
  BUILTIN_ALSA=0
  BUILTIN_OSS=0
@@ -57,7 +46,7 @@ Remove --as-needed (undefined symbol pthread_*).
  BUILTIN_GSTREAMER=0
  BUILTIN_NULL=0
  
-@@ -608,6 +638,7 @@ case "x$with_builtin" in
+@@ -608,6 +639,7 @@ case "x$with_builtin" in
          BUILTIN_PULSE=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -65,7 +54,7 @@ Remove --as-needed (undefined symbol pthread_*).
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
       ;;
-@@ -619,6 +650,7 @@ case "x$with_builtin" in
+@@ -619,6 +651,7 @@ case "x$with_builtin" in
  
          BUILTIN_ALSA=1
  	HAVE_OSS=0
@@ -73,7 +62,7 @@ Remove --as-needed (undefined symbol pthread_*).
          HAVE_PULSE=0
  	HAVE_GSTREAMER=0
          HAVE_NULL=0
-@@ -632,6 +664,7 @@ case "x$with_builtin" in
+@@ -632,6 +665,7 @@ case "x$with_builtin" in
          BUILTIN_GSTREAMER=1
          HAVE_ALSA=0
  	HAVE_OSS=0
@@ -81,7 +70,7 @@ Remove --as-needed (undefined symbol pthread_*).
          HAVE_PULSE=0
          HAVE_NULL=0
       ;;
-@@ -643,11 +676,25 @@ case "x$with_builtin" in
+@@ -643,11 +677,25 @@ case "x$with_builtin" in
  
  	BUILTIN_OSS=1
  	HAVE_ALSA=0
@@ -107,7 +96,7 @@ Remove --as-needed (undefined symbol pthread_*).
       xnull)
          if test "x$HAVE_NULL" != x1 ; then
                  AC_MSG_ERROR([*** Null output selected for builtin driver, but not enabled. ***])
-@@ -655,6 +702,7 @@ case "x$with_builtin" in
+@@ -655,6 +703,7 @@ case "x$with_builtin" in
  
          BUILTIN_NULL=1
          HAVE_PULSE=0
@@ -115,7 +104,7 @@ Remove --as-needed (undefined symbol pthread_*).
          HAVE_ALSA=0
  	HAVE_OSS=0
  	HAVE_GSTREAMER=0
-@@ -670,7 +718,7 @@ case "x$with_builtin" in
+@@ -670,7 +719,7 @@ case "x$with_builtin" in
          AC_MSG_ERROR([*** Unknown driver $with_builtin selected for builtin ***])
  esac
  
@@ -124,7 +113,7 @@ Remove --as-needed (undefined symbol pthread_*).
     AC_MSG_ERROR([*** No backend enabled. ***])
  fi
  
-@@ -678,23 +726,27 @@ AC_SUBST(HAVE_DSO)
+@@ -678,23 +727,27 @@ AC_SUBST(HAVE_DSO)
  AC_SUBST(HAVE_PULSE)
  AC_SUBST(HAVE_ALSA)
  AC_SUBST(HAVE_OSS)
@@ -152,7 +141,7 @@ Remove --as-needed (undefined symbol pthread_*).
  AM_CONDITIONAL([BUILTIN_GSTREAMER], [test "x$BUILTIN_GSTREAMER" = x1])
  AM_CONDITIONAL([BUILTIN_NULL], [test "x$BUILTIN_NULL" = x1])
  
-@@ -753,6 +805,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
+@@ -753,6 +806,15 @@ if test "x$BUILTIN_OSS" = "x1" ; then
      ENABLE_BUILTIN_OSS=yes
  fi
  
@@ -168,7 +157,7 @@ Remove --as-needed (undefined symbol pthread_*).
  ENABLE_GSTREAMER=no
  if test "x$HAVE_GSTREAMER" = "x1" ; then
     ENABLE_GSTREAMER=yes
-@@ -813,6 +874,8 @@ echo "
+@@ -813,6 +875,8 @@ echo "
      Builtin ALSA:           ${ENABLE_BUILTIN_ALSA}
      Enable OSS:             ${ENABLE_OSS}
      Builtin OSS:            ${ENABLE_BUILTIN_OSS}
