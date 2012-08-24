@@ -1,15 +1,14 @@
-$OpenBSD: patch-lib_gnutls_pc_in,v 1.4 2012/07/08 09:02:10 ajacoutot Exp $
+$OpenBSD: patch-lib_gnutls_pc_in,v 1.5 2012/08/24 12:33:14 ajacoutot Exp $
 
--pthread is needed to link with gnutls.
+libpthread is needed to link with static gnutls.
 
---- lib/gnutls.pc.in.orig	Thu Apr 12 22:05:11 2012
-+++ lib/gnutls.pc.in	Sat Jul  7 12:23:30 2012
-@@ -18,7 +18,7 @@ Name: GnuTLS
- Description: Transport Security Layer implementation for the GNU system
+--- lib/gnutls.pc.in.orig	Thu Apr 12 16:05:11 2012
++++ lib/gnutls.pc.in	Mon Aug 20 18:29:03 2012
+@@ -19,6 +19,6 @@ Description: Transport Security Layer implementation f
  URL: http://www.gnu.org/software/gnutls/
  Version: @VERSION@
--Libs: -L${libdir} -lgnutls
-+Libs: -L${libdir} -lgnutls -pthread
- Libs.private: @LTLIBNETTLE@
+ Libs: -L${libdir} -lgnutls
+-Libs.private: @LTLIBNETTLE@
++Libs.private: -lpthread @LTLIBNETTLE@
  @GNUTLS_REQUIRES_PRIVATE@
  Cflags: -I${includedir}
