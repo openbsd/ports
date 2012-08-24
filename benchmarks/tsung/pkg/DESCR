@@ -1,0 +1,6 @@
+Tsung is a distributed load testing tool that is available free of
+charge as an open source software product. It is protocol-independent
+and can be used to stress Jabber/XMPP, HTTP, SOAP, LDAP and PostgreSQL
+servers. The tool can simulate very large numbers of users per server,
+making it ideal for analysing and testing the performance of large-scale
+applications, such as instant messaging solutions.
