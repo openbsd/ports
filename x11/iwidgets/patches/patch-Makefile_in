@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2010/06/07 14:40:47 sthen Exp $
+$OpenBSD: patch-Makefile_in,v 1.3 2012/08/24 22:40:34 espie Exp $
 --- Makefile.in.orig	Tue Sep 10 22:27:21 2002
 +++ Makefile.in	Mon Jun  7 09:45:14 2010
 @@ -10,6 +10,7 @@
@@ -49,7 +49,7 @@ $OpenBSD: patch-Makefile_in,v 1.2 2010/06/07 14:40:47 sthen Exp $
 -	@$(MKINSTALLDIRS) $(SCRIPT_INSTALL_DIR)/demos/images $(SCRIPT_INSTALL_DIR)/demos/html
 -	@echo "Installing demos from $(srcdir)/demos into $(SCRIPT_INSTALL_DIR)/demos"
 +	@$(MKINSTALLDIRS) $(DEMOS_INSTALL_DIR)/images $(DEMOS_INSTALL_DIR)/html
-+	@echo "Installing demos from $(srcdir)/demos into $(DEMOS_INSTALL_DIR}"
++	@echo "Installing demos from $(srcdir)/demos into $(DEMOS_INSTALL_DIR)"
  	@for i in $(srcdir)/demos/*; \
  	    do \
  	    if [ -f $$i ] ; then \
