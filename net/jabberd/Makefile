@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/08/24 07:24:12 jasper Exp $
 
 COMMENT=		jabber server
 DISTNAME=		jabberd-2.0s11
-EPOCH=			0
+EPOCH=			1
 CATEGORIES=		net
-HOMEPAGE=		http://jabberd2.xiaoka.com/
+HOMEPAGE=		http://codex.xiaoka.com/wiki/jabberd2:start
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
