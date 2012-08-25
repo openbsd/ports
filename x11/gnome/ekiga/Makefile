@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.54 2012/06/21 14:24:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2012/08/25 13:30:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
-GNOME_VERSION=	3.3.2
-REVISION=	4
+GNOME_VERSION=	3.9.90
+SUBST_VARS +=	GNOME_VERSION # pkg/PLIST
 
 CATEGORIES=	net multimedia
 
@@ -37,7 +37,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 LIB_DEPENDS=	net/avahi \
-		net/opal>=3.10.4 \
+		net/opal>=3.10.7 \
 		devel/sdl \
 		databases/evolution-data-server \
 		devel/libnotify>=0.7.2 \
@@ -53,7 +53,7 @@ MODGCONF2_SCHEMAS_DIR= ekiga
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
 MODGNOME_TOOLS=	yelp
-MODGNOME_LDFLAGS=-L${X11BASE}/lib -pthread
+MODGNOME_LDFLAGS=-L${X11BASE}/lib
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
