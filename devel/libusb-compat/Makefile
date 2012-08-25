@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/05/09 09:43:07 mpi Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/25 15:27:40 mpi Exp $
 
 COMMENT=	libusb-0.1 compatibility layer for libusb1
 
 DISTNAME=	libusb-compat-0.1.4
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS +=  usb                  10.0      # 8.4
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += usb-1.0
+WANTLIB += pthread usb-1.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libusb/}
 
