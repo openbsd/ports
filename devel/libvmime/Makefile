@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/06 17:47:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/25 14:45:08 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -13,7 +13,7 @@ SHARED_LIBS+=  vmime    2.0     # 0.0
 
 ### needed for mail/zarafa (FLAVOR is possible if needed in the future)
 #MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
-MASTER_SITES_ZARAFA=http://download.zarafa.com/community/final/7.0/7.0.8-35178/sourcecode/
+MASTER_SITES_ZARAFA=http://download.zarafa.com/community/final/7.1/7.1.0-36420/sourcecode/
 MASTER_SITES=	${MASTER_SITES_ZARAFA}
 MASTER_SITES0=	${MASTER_SITES_ZARAFA:=/vmime-patches/}
 PATCH_DIST_STRIP= -p1
