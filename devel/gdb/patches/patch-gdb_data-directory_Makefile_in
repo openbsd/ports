@@ -1,7 +1,7 @@
-$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.1 2012/03/03 19:22:42 pascal Exp $
---- gdb/data-directory/Makefile.in.orig	Fri Jan  6 05:43:34 2012
-+++ gdb/data-directory/Makefile.in	Wed Feb 29 00:35:12 2012
-@@ -93,7 +93,7 @@ FLAGS_TO_PASS = \
+$OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.2 2012/08/25 19:15:44 pascal Exp $
+--- gdb/data-directory/Makefile.in.orig	Wed Apr 11 07:50:44 2012
++++ gdb/data-directory/Makefile.in	Sun Aug 19 14:37:28 2012
+@@ -94,7 +94,7 @@ FLAGS_TO_PASS = \
  	"RUNTESTFLAGS=$(RUNTESTFLAGS)"
  
  .PHONY: all
@@ -10,7 +10,7 @@ $OpenBSD: patch-gdb_data-directory_Makefile_in,v 1.1 2012/03/03 19:22:42 pascal 
  
  # For portability's sake, we need to handle systems that don't have
  # symbolic links.
-@@ -187,7 +187,7 @@ install: all
+@@ -188,7 +188,7 @@ install: all
  	@$(MAKE) $(FLAGS_TO_PASS) install-only
  
  .PHONY: install-only
