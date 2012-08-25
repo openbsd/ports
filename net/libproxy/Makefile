@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/30 16:28:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/08/25 13:12:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,6 +12,8 @@ DISTNAME=		libproxy-${VERSION}
 PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		net
 
@@ -73,8 +75,8 @@ WANTLIB-webkit += gtk-3 javascriptcoregtk-3.0 pango-1.0 pangocairo-1.0
 WANTLIB-webkit += pangoft2-1.0 pixman-1 png proxy pthread-stubs soup-2.4
 WANTLIB-webkit += webkitgtk-3.0 xcb xcb-render xcb-shm z
 
-CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
-			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
+CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS}" \
+			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DWITH_PYTHON:BOOL=ON \
 			-DWITH_PERL:BOOL=ON \
 			-DWITH_GNOME3:BOOL=ON \
