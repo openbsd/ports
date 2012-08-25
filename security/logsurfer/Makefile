@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/25 10:07:25 sthen Exp $
 
 COMMENT=	processes logfiles and perform certain actions
 
-VERSION=	1.7
-DISTNAME=	logsurfer+-${VERSION}
-PKGNAME=	logsurfer-${VERSION}
+DISTNAME=	logsurfer-1.8
 CATEGORIES=	security
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -22,7 +20,6 @@ MASTER_SITES=	http://kerryt.orcon.net.nz/ \
 
 CONFIGURE_STYLE=	gnu
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 NOT_FOR_ARCHS=	${LP64_ARCHS}
