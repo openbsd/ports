@@ -1,6 +1,6 @@
-$OpenBSD: patch-lib_gnutls_pc_in,v 1.5 2012/08/24 12:33:14 ajacoutot Exp $
+$OpenBSD: patch-lib_gnutls_pc_in,v 1.6 2012/08/25 13:11:35 ajacoutot Exp $
 
-libpthread is needed to link with static gnutls.
+Needed for static linking.
 
 --- lib/gnutls.pc.in.orig	Thu Apr 12 16:05:11 2012
 +++ lib/gnutls.pc.in	Mon Aug 20 18:29:03 2012
