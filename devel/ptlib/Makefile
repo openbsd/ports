@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/22 16:53:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2012/08/25 13:15:23 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	portable tools library
 
-DISTNAME=	ptlib-2.10.5
+DISTNAME=	ptlib-2.10.7
 
 SHARED_LIBS=	pt	4.0	# 2.10.3
 
@@ -22,8 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += SDL c crypto expat lber ldap ldap_r m sasl2 sndio ssl
-WANTLIB += stdc++
+WANTLIB += SDL c crypto expat lber ldap ldap_r m pthread sasl2
+WANTLIB += sndio ssl stdc++
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
@@ -39,22 +39,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-plugin-installdir=ptlib \
 		--enable-plugins \
-		--enable-bsdvideo \
-		--enable-sasl \
-		--enable-openldap \
-		--enable-audio \
-		--enable-video \
-		--enable-vidfile \
-		--enable-shmvideo \
-		--enable-v4l2 \
 		--enable-sndio \
-		--enable-openssl \
-		--disable-lua \
 		--disable-oss \
-		--disable-alsa \
-		--disable-avc \
-		--disable-dc \
-		--disable-odbc \
 		--disable-pulse
 
 # XXX needs /proc/net/if_inet6

@@ -1,8 +1,8 @@
-$OpenBSD: patch-make_lib_mak,v 1.6 2012/06/21 14:23:51 ajacoutot Exp $
---- make/lib.mak.orig	Thu Apr 26 06:47:39 2012
-+++ make/lib.mak	Thu Jun 21 11:22:09 2012
+$OpenBSD: patch-make_lib_mak,v 1.7 2012/08/25 13:15:24 ajacoutot Exp $
+--- make/lib.mak.orig	Thu Aug 23 04:12:44 2012
++++ make/lib.mak	Fri Aug 24 07:59:24 2012
 @@ -28,6 +28,13 @@
- # $Date: 2012/06/21 14:23:51 $
+ # $Date: 2012/08/25 13:15:24 $
  #
  
 +ifeq ($(OSTYPE),OpenBSD)
