@@ -51,13 +51,15 @@ static int control(int cmd, void *arg)
 {
 	ao_control_vol_t *ctl = arg;
 
-	if (!havevol)
-		return CONTROL_FALSE;
 	switch (cmd) {
 	case AOCONTROL_GET_VOLUME:
+		if (!havevol)
+			return CONTROL_FALSE;
 		ctl->left = ctl->right = vol * 100 / SIO_MAXVOL;
 		break;
 	case AOCONTROL_SET_VOLUME:
+		if (!havevol)
+			return CONTROL_FALSE;
 		sio_setvol(hdl, ctl->left * SIO_MAXVOL / 100);
 		break;
 	default:
@@ -88,100 +90,52 @@ static void volcb(void *addr, unsigned newvol)
  */
 static int init(int rate, int channels, int format, int flags)
 {
-	int bpf;
-	int ac3 = 0;
-
+	struct af_to_par {
+		int format, bits, sig, le;
+	} af_to_par[] = {
+		{AF_FORMAT_U8,	    8, 0, 0},
+		{AF_FORMAT_S8,      8, 1, 0},
+		{AF_FORMAT_U16_LE, 16, 0, 1},
+		{AF_FORMAT_U16_BE, 16, 0, 0},
+		{AF_FORMAT_S16_LE, 16, 1, 1},
+		{AF_FORMAT_S16_BE, 16, 1, 0},
+		{AF_FORMAT_U24_LE, 16, 0, 1},
+		{AF_FORMAT_U24_BE, 24, 0, 0},
+		{AF_FORMAT_S24_LE, 24, 1, 1},
+		{AF_FORMAT_S24_BE, 24, 1, 0},
+		{AF_FORMAT_U32_LE, 32, 0, 1},
+		{AF_FORMAT_U32_BE, 32, 0, 0},
+		{AF_FORMAT_S32_LE, 32, 1, 1},
+		{AF_FORMAT_S32_BE, 32, 1, 0}
+	}, *p;
+	int i, bpf, ac3 = 0;
+	
 	hdl = sio_open(NULL, SIO_PLAY, 0);
 	if (hdl == NULL) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: can't open sndio\n");
 		return 0;
 	}
 	sio_initpar(&par);
-	switch (format) {
-	case AF_FORMAT_U8:
-		par.bits = 8;
-		par.sig = 0;
-		break;
-	case AF_FORMAT_S8:
-		par.bits = 8;
-		par.sig = 1;
-		break;
-	case AF_FORMAT_U16_LE:
-		par.bits = 16;
-		par.sig = 0;
-		par.le = 1;
-		break;
-	case AF_FORMAT_S16_LE:
-		par.bits = 16;
-		par.sig = 1;
-		par.le = 1;
-		break;
-	case AF_FORMAT_U16_BE:
-		par.bits = 16;
-		par.sig = 0;
-		par.le = 0;
-		break;
-	case AF_FORMAT_S16_BE:
-		par.bits = 16;
-		par.sig = 1;
-		par.le = 0;
-		break;
-	case AF_FORMAT_U24_LE:
-		par.bits = 24;
-		par.bps = 3;
-		par.sig = 0;
-		par.le = 1;
-		break;
-	case AF_FORMAT_S24_LE:
-		par.bits = 24;
-		par.bps = 3;
-		par.sig = 1;
-		par.le = 1;
-		break;
-	case AF_FORMAT_U24_BE:
-		par.bits = 24;
-		par.bps = 3;
-		par.sig = 0;
-		par.le = 0;
-		break;
-	case AF_FORMAT_S24_BE:
-		par.bits = 24;
-		par.bps = 3;
-		par.sig = 1;
-		par.le = 0;
-		break;
-	case AF_FORMAT_U32_LE:
-		par.bits = 32;
-		par.sig = 0;
-		par.le = 1;
-		break;
-	case AF_FORMAT_U32_BE:
-		par.bits = 32;
-		par.sig = 0;
-		par.le = 0;
-		break;
-	case AF_FORMAT_S32_LE:
-		par.bits = 32;
-		par.sig = 1;
-		par.le = 1;
-		break;
-	case AF_FORMAT_S32_BE:
-		par.bits = 32;
-		par.sig = 1;
-		par.le = 0;
-		break;
-	case AF_FORMAT_AC3_BE:
-	case AF_FORMAT_AC3_LE:
-		par.bits = 16;
-		par.sig = 1;
-		par.le = SIO_LE_NATIVE;
-		ac3 = 1;
-		break;
-	default:
-		mp_msg(MSGT_AO, MSGL_V, "ao2: unsupported format\n");
-		par.bits = 16;
-		par.sig = 1;
-		par.le = SIO_LE_NATIVE;
+	for (i = 0, p = af_to_par;; i++, p++) {
+		if (i == sizeof(af_to_par) / sizeof(struct af_to_par)) {
+			if (format == AF_FORMAT_AC3_BE ||
+			    format == AF_FORMAT_AC3_LE)
+				ac3 = 1;
+			mp_msg(MSGT_AO, MSGL_V, "ao2: unsupported format\n");
+			par.bits = 16;
+			par.sig = 1;
+			par.le = SIO_LE_NATIVE;
+			break;
+		}
+		if (p->format == format) {
+			par.bits = p->bits;
+			par.sig = p->sig;
+			if (p->bits > 8)
+				par.le = p->le;
+			if (p->bits != SIO_BPS(p->bits))
+				par.bps = p->bits / 8;
+			break;
+		}
 	}
 	par.rate = rate;
 	par.pchan = channels;
@@ -218,28 +172,14 @@ static int init(int rate, int channels, int format, int flags)
 	ao_data.channels = par.pchan;
 	ao_data.format = ac3 ? AF_FORMAT_AC3_NE : format;
 	ao_data.bps = bpf * par.rate;
-	ao_data.buffersize = par.appbufsz * bpf;
+	ao_data.buffersize = par.bufsz * bpf;
 	ao_data.outburst = par.round * bpf;
-	/* avoid resampling for close rates */
-	if ((par.rate >= rate * 0.97) && (par.rate <= rate * 1.03))
-		ao_data.samplerate = rate;
-	else
-		ao_data.samplerate = par.rate;
+	ao_data.samplerate = rate;
 	havevol = sio_onvol(hdl, volcb, NULL);
 	sio_onmove(hdl, movecb, NULL);
 	delay = 0;
 	if (!sio_start(hdl)) {
 		mp_msg(MSGT_AO, MSGL_ERR, "ao2: init: couldn't start\n");
-	}
-	if (ao_data.samplerate != rate) {
-		/* apparently mplayer rounds a little when resampling.
-		 * anyway, it doesn't write quite a full buffer on the first
-		 * write, which means libsndio never actually starts up
-		 * because it's trying to fill the buffer.  this is
-		 * enough for everything I have come across.
-		 */
-		sio_write(hdl, silence, 8 * bpf);
-		delay += 8 * bpf;
 	}
 	return 1;
 }
@@ -326,8 +266,7 @@ static void audio_resume(void)
 	/*
 	 * we want to start with buffers full, because mplayer uses
 	 * get_space() pointer as clock, which would cause video to
-	 * accelerate while buffers are filled. Remove this when not
-	 * necessary anymore.
+	 * accelerate while buffers are filled.
 	 */
 	todo = par.bufsz * par.pchan * par.bps;
 	while (todo > 0) {
