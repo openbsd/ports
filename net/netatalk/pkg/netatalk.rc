@@ -1,20 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: netatalk.rc,v 1.3 2012/07/04 13:00:46 ajacoutot Exp $
+# $OpenBSD: netatalk.rc,v 1.4 2012/08/25 10:15:47 ajacoutot Exp $
 
 # "meta" script running the following rc.d(8) scripts with the given argument;
 # note that daemon_flags, daemon_user and daemon_class are not passed to
 # the child scripts.
 _pkg_scripts="cnid_metad afpd"
 
-set -A _s -- ${_pkg_scripts}
-
 if [ "$1" = stop ]; then
-	i=$(echo ${_pkg_scripts} | wc -w)
-	while [ $i -ne 0 ]; do
-		i=$((i-1))
-		${RCDIR}/${_s[$i]} $1
-	done
-else
-	for i in ${_pkg_scripts}; do ${RCDIR}/$i $1; done
+	for _i in ${_pkg_scripts}; do _l="${_i} ${_l}"; done
+	_pkg_scripts=${_l% }
 fi
+
+for _i in ${_pkg_scripts}; do ${RCDIR}/${_i} $1; done
