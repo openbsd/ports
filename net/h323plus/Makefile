@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/03/02 09:04:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/25 13:16:30 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V=		1_24_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
 CATEGORIES=	net devel
+REVISION=	0
 
 SHARED_LIBS=	h323	3.0    # 1.21.0
 
@@ -26,7 +27,7 @@ WANTLIB += m pt pthread sasl2 speex ssl stdc++ x264
 
 MASTER_SITES=	${HOMEPAGE}source/download/
 
-LIB_DEPENDS=	devel/ptlib>=2.10.4 \
+LIB_DEPENDS=	devel/ptlib>=2.10.7 \
 		graphics/ffmpeg
 
 WRKDIST=	${WRKDIR}/h323plus
@@ -39,12 +40,15 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread -lavutil"
-CONFIGURE_ARGS=	--disable-localspeex \
-		--disable-localgsm \
-		--enable-localilbc \
-		--enable-gnugk \
-		--with-plugin-installdir=h323plus
+		LDFLAGS="-L${LOCALBASE}/lib"
+# internal ilbc (port libilbc?)
+CONFIGURE_ARGS=	--with-plugin-installdir=h323plus
+
+# XXX break net/gnugk which depends on the latst h460p code from cvs;
+# enable it again on a future release.
+# h460presence.cxx:192: error: no matching function for call to
+# H323PresenceInstruction::H323PresenceInstruction(H323PresenceInstruction::Instruction, PString, const PString&, const PString&)'
+CONFIGURE_ARGS += --disable-h460p
 
 # http://www.tandberg.com/collateral/tandberg-ITU-license.pdf
 CONFIGURE_ARGS += --disable-h46018
