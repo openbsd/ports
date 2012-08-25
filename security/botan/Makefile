@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/08/19 13:30:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/08/25 17:10:58 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT=	portable, easy to use, and efficient C++ crypto library
 
 DISTNAME=	Botan-1.10.3
 PKGNAME=	${DISTNAME:L}
+REVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${HOMEPAGE}files/
 EXTRACT_SUFX=	.tbz
@@ -21,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	bz2 crypto gmp m stdc++ z
+WANTLIB=	bz2 crypto gmp m pthread stdc++ z
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

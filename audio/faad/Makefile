@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/05/22 18:38:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/08/25 17:10:58 ajacoutot Exp $
 
 COMMENT-main=	MPEG-2 and MPEG-4 AAC decoder
 COMMENT-xmms=	XMMS input plugin for AAC files
@@ -7,6 +7,7 @@ V=		2.7
 DISTNAME=	faad2-${V}
 PKGNAME-main=	faad-${V}
 PKGNAME-xmms=	faad-xmms-${V}
+REVISION-xmms=	0
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,8 +24,8 @@ PERMIT_DISTFILES_CDROM=	Patents
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB-main=	c m
-WANTLIB-xmms=	X11 Xext Xi faad gdk glib gmodule gtk m mp4ff xcb \
-		xmms>=3 ${MODGETTEXT_WANTLIB}
+WANTLIB-xmms=	X11 Xext Xi faad gdk glib gmodule gtk m mp4ff pthread \
+		xcb xmms>=3 ${MODGETTEXT_WANTLIB}
 
 MODULES=	devel/gettext
 # bootstrap checks for libtoolize

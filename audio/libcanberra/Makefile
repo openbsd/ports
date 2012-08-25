@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/08/24 12:14:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2012/08/25 17:10:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,9 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-gtk=	libcanberra-gtk-${V}
 PKGNAME-gtk3=	libcanberra-gtk3-${V}
 
-REVISION-main=	0
-REVISION-gtk=	0
-REVISION-gtk3=	1
+REVISION-main=	1
+REVISION-gtk=	1
+REVISION-gtk3=	2
 
 SHARED_LIBS +=  canberra             2.0      # 2.5
 SHARED_LIBS +=  canberra-gtk3        1.8      # 1.8
@@ -36,7 +36,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-cWANTLIB += c ltdl m ogg pthread vorbis vorbisfile
+cWANTLIB += ltdl m ogg pthread vorbis vorbisfile
 
 WANTLIB-main += ${cWANTLIB} sndio
 
@@ -50,7 +50,7 @@ WANTLIB-gtk += pixman-1 png pthread-stubs xcb xcb-render xcb-shm z stdc++
 
 WANTLIB-gtk3 += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo
+WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB-gtk3 += cairo-gobject canberra drm expat ffi fontconfig freetype
 WANTLIB-gtk3 += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-gtk3 += gthread-2.0 gtk-3 pango-1.0 pangocairo-1.0 pangoft2-1.0
