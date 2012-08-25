@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2012/08/24 07:26:30 jmatthew Exp $
+$OpenBSD: README,v 1.2 2012/08/25 06:33:14 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,4 +31,3 @@ Rebuild the login.conf.db file if necessary:
 And assign the _riak user to the riak login class:
 
 	# usermod -L riak _riak
-

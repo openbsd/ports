@@ -1,4 +1,4 @@
-$OpenBSD: patch-vars_config,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+$OpenBSD: patch-vars_config,v 1.2 2012/08/25 06:33:14 ajacoutot Exp $
 
 use system locations for riak files.
 
@@ -13,10 +13,10 @@ use system locations for riak files.
 -{platform_etc_dir,  "./etc"}.
 -{platform_lib_dir,  "./lib"}.
 -{platform_log_dir,  "./log"}.
-+{platform_bin_dir,  "/usr/local/bin"}.
++{platform_bin_dir,  "${PREFIX}/bin"}.
 +{platform_data_dir, "/var/riak"}.
-+{platform_etc_dir,  "/etc/riak"}.
-+{platform_lib_dir,  "/usr/local/lib/riak"}.
++{platform_etc_dir,  "${SYSCONFDIR}/riak"}.
++{platform_lib_dir,  "${PREFIX}/lib/riak"}.
 +{platform_log_dir,  "/var/log/riak"}.
  
  %%
@@ -31,7 +31,7 @@ use system locations for riak files.
 -{runner_log_dir,     "$RUNNER_BASE_DIR/log"}.
 -{pipe_dir,           "/tmp/$RUNNER_BASE_DIR/"}.
 -{runner_user,        ""}.
-+{runner_script_dir,  "/usr/local/sbin"}.
++{runner_script_dir,  "${PREFIX}/sbin"}.
 +{runner_base_dir,    "{{platform_lib_dir}}"}.
 +{runner_etc_dir,     "{{platform_etc_dir}}"}.
 +{runner_log_dir,     "{{platform_log_dir}}"}.

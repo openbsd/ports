@@ -1,4 +1,4 @@
-$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+$OpenBSD: patch-deps_eleveldb_rebar_config,v 1.2 2012/08/25 06:33:14 ajacoutot Exp $
 
 Use external leveldb rather than trying to patch the bundled
 tarball to get it to build.
@@ -11,8 +11,8 @@ tarball to get it to build.
               {"CXXFLAGS", "$CXXFLAGS -fPIC"},
 -             {"DRV_CFLAGS", "$DRV_CFLAGS -Werror -I c_src/leveldb/include"},
 -             {"DRV_LDFLAGS", "$DRV_LDFLAGS c_src/leveldb/libleveldb.a c_src/system/lib/libsnappy.a -lstdc++"}
-+             {"DRV_CFLAGS", "$DRV_CFLAGS -Werror -I /usr/local/include"},
-+             {"DRV_LDFLAGS", "$DRV_LDFLAGS -L /usr/local/lib -lleveldb -lstdc++"}
++             {"DRV_CFLAGS", "$DRV_CFLAGS -Werror -I ${LOCALBASE}/include"},
++             {"DRV_LDFLAGS", "$DRV_LDFLAGS -L ${LOCALBASE}/lib -lleveldb -lstdc++"}
               ]}.
  
 -{pre_hooks, [{'get-deps', "c_src/build_deps.sh get-deps"},

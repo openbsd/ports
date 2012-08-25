@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/25 06:33:14 ajacoutot Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.2.0
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
+REVISION=			0
 
 MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 
@@ -79,15 +80,18 @@ SUBST_VARS+=${_n}
 .endfor
 
 USE_GMAKE =			Yes
-MAKE_ENV =			MAKE=gmake
+MAKE_ENV =			MAKE=${MAKE_PROGRAM}
 MAKE_FLAGS =			rel
 
 WANTLIB = c crypto m ncurses pthread ssl stdc++ util mozjs nspr4 leveldb
-LIB_DEPENDS = devel/nspr \
-	databases/leveldb>=1.5.0 \
+LIB_DEPENDS = databases/leveldb>=1.5.0 \
 	lang/erlang>=15b.01 \
 	lang/spidermonkey
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/deps/eleveldb/rebar.config \
+		${WRKSRC}/deps/erlang_js/rebar.config \
+		${WRKSRC}/rel/vars.config
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/riak ${PREFIX}/share/riak
 	cp -r ${WRKSRC}/rel/riak/lib ${PREFIX}/lib/riak
