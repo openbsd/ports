@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2011/10/26 16:59:34 ajacoutot Exp $
---- configure.orig	Fri Oct 14 09:00:11 2011
-+++ configure	Tue Oct 25 12:26:05 2011
-@@ -4620,7 +4620,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2012/08/25 13:17:54 ajacoutot Exp $
+--- configure.orig	Thu Aug 23 04:19:21 2012
++++ configure	Fri Aug 24 08:24:54 2012
+@@ -4619,7 +4619,7 @@ fi
  
  WFLAGS=
  if test "x$ac_cv_c_compiler_gnu" = xyes; then
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2011/10/26 16:59:34 ajacoutot Exp $
    if test ${GXX_MAJOR} -ge 4 ; then
      WFLAGS="$WFLAGS -Winit-self -Wno-missing-field-initializers"
    fi
-@@ -5680,7 +5680,7 @@ STDCCFLAGS="$STDCCFLAGS -D__MACOSX__"
+@@ -5676,7 +5676,7 @@ case "$OSTYPE" in
  
  
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_configure,v 1.7 2012/03/02 09:04:21 ajacoutot Exp $
---- plugins/configure.orig	Wed Feb 22 00:08:24 2012
-+++ plugins/configure	Fri Mar  2 09:12:25 2012
-@@ -6482,7 +6482,7 @@ $as_echo "#define PLUGIN_CODEC_DLL_EXPORTS 1" >>confde
+$OpenBSD: patch-plugins_configure,v 1.8 2012/08/25 13:17:54 ajacoutot Exp $
+--- plugins/configure.orig	Thu Aug 23 04:18:47 2012
++++ plugins/configure	Fri Aug 24 08:24:54 2012
+@@ -6473,7 +6473,7 @@ $as_echo "#define PLUGIN_CODEC_DLL_EXPORTS 1" >>confde
  
          *)
            CFLAGS="$CFLAGS -fPIC"
@@ -10,7 +10,7 @@ $OpenBSD: patch-plugins_configure,v 1.7 2012/03/02 09:04:21 ajacoutot Exp $
            PLUGINEXT=so
            for ac_header in sys/time.h sys/file.h netinet/in.h
  do :
-@@ -6976,7 +6976,7 @@ else
+@@ -6993,7 +6993,7 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-plugins_configure,v 1.7 2012/03/02 09:04:21 ajacoutot Exp $
  
  int
  main ()
-@@ -7002,7 +7002,7 @@ fi
+@@ -7019,7 +7019,7 @@ fi
  $as_echo "$opal_gsm" >&6; }
  
              if test "x${opal_gsm}" = "xyes" ; then
@@ -28,7 +28,7 @@ $OpenBSD: patch-plugins_configure,v 1.7 2012/03/02 09:04:21 ajacoutot Exp $
                GSM_LIBS="-lgsm"
              fi
  
-@@ -7083,7 +7083,7 @@ else
+@@ -7100,7 +7100,7 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -37,7 +37,7 @@ $OpenBSD: patch-plugins_configure,v 1.7 2012/03/02 09:04:21 ajacoutot Exp $
  
  int
  main ()
-@@ -7109,7 +7109,7 @@ fi
+@@ -7126,7 +7126,7 @@ fi
  $as_echo "$opal_gsm" >&6; }
  
              if test "x${opal_gsm}" = "xyes" ; then

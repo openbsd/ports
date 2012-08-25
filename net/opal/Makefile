@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2012/06/22 12:59:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/25 13:17:54 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Open Phone Abstraction Library
 
-DISTNAME=	opal-3.10.5
-REVISION=	0
+DISTNAME=	opal-3.10.7
 
 SHARED_LIBS=	opal	2.0	# 3.10.3
 
@@ -28,12 +27,12 @@ WANTLIB += speexdsp stdc++ theora tiff x264
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=opalvoip/}
 
-LIB_DEPENDS=	devel/ptlib>=2.10.5 \
-		audio/celt>=0.11.0 \
+LIB_DEPENDS=	devel/ptlib>=2.10.7 \
+		audio/celt \
 		telephony/spandsp
 
-# dlopen(3) libavcodec.so; shows as Extra: in check-lib-depends but
-# this is ok, we want to be sure we track ABI changes
+# dlopen(3) libavcodec.so.X.Y; shows as "Extra:" in check-lib-depends
+# but we want to be sure we track ABI and shared lib version changes
 WANTLIB+=	avcodec
 LIB_DEPENDS+=	graphics/ffmpeg>=20110306
 
@@ -50,15 +49,16 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread" \
-		ac_cv_path_SWIG=${LOCALBASE}/bin/swig
-CONFIGURE_ARGS=	--disable-localspeex \
-		--disable-localgsm \
-		--enable-ixj \
-		--disable-ruby \
-		--disable-sbc \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		ac_cv_path_SWIG= # ruby, java
+# internal ilbc (port libilbc?)
+CONFIGURE_ARGS=	--disable-sbc \
 		--enable-plugins \
 		--with-plugin-installdir=opal
+
+# plugins/audio/SILK/ReadMe.txt; not for commercial
+# http://developer.skype.com/silk
+CONFIGURE_ARGS+= --disable-silk
 
 # XXX
 # ekiga:/usr/local/lib/opal-3.6.6/lid/vpb_lid_pwplugin.so:

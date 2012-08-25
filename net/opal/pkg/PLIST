@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/10/26 16:59:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/08/25 13:17:54 ajacoutot Exp $
 include/opal/
 include/opal/asn/
 include/opal/asn/gcc.h
@@ -163,7 +163,6 @@ lib/opal/codecs/audio/gsmamrcodec_ptplugin.so
 lib/opal/codecs/audio/iLBC_ptplugin.so
 lib/opal/codecs/audio/ima_adpcm_ptplugin.so
 lib/opal/codecs/audio/lpc10_ptplugin.so
-lib/opal/codecs/audio/silk_ptplugin.so
 lib/opal/codecs/audio/speex_ptplugin.so
 lib/opal/codecs/video/
 lib/opal/codecs/video/h261_vic_ptplugin.so
