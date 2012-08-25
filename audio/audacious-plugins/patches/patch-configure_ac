@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure_ac,v 1.15 2012/08/22 20:14:05 naddy Exp $
---- configure.ac.orig	Sat Jun 30 02:05:33 2012
-+++ configure.ac	Tue Jul  3 09:59:40 2012
-@@ -45,9 +45,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.2],
-     [AC_MSG_ERROR([Cannot find Audacious 3.2; have you installed Audacious yet?])]
+$OpenBSD: patch-configure_ac,v 1.16 2012/08/25 11:30:19 dcoppa Exp $
+--- configure.ac.orig	Fri Aug 24 10:53:03 2012
++++ configure.ac	Fri Aug 24 10:54:28 2012
+@@ -43,9 +43,6 @@ PKG_CHECK_MODULES(AUDACIOUS, [audacious >= 3.3],
+     [AC_MSG_ERROR([Cannot find Audacious 3.3; have you installed Audacious yet?])]
  )
  
 -CPPFLAGS="$CPPFLAGS $AUDACIOUS_CFLAGS"
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure_ac,v 1.15 2012/08/22 20:14:05 naddy Exp $
  dnl Default Set of Plugins
  dnl ======================
  
-@@ -969,7 +966,7 @@ AC_ARG_ENABLE(filewriter_mp3,
+@@ -882,7 +879,7 @@ AC_ARG_ENABLE(filewriter_mp3,
  )
  
  if test "x$enable_filewriter_mp3" = "xyes"; then
@@ -20,44 +20,13 @@ $OpenBSD: patch-configure_ac,v 1.15 2012/08/22 20:14:05 naddy Exp $
     if test "x$have_lame" = "xyes"; then
        AC_DEFINE(FILEWRITER_MP3, 1, [Define if MP3 output part should be built])
  	  FILEWRITER_LIBS="$FILEWRITER_LIBS -lmp3lame"
-@@ -1083,8 +1080,32 @@ if test "x$enable_lyricwiki" = "xyes"; then
-     GENERAL_PLUGINS="$GENERAL_PLUGINS lyricwiki"
+@@ -1013,6 +1010,9 @@ if test "x$enable_lyricwiki" = "xyes"; then
  fi
  
-+dnl *** sndio output
-+
-+AC_ARG_ENABLE(sndio,
-+    [  --disable-sndio         disable sndio output plugin (default=enabled) ],
-+    [have_sndio=$enableval],
-+    [have_sndio=yes]
-+)
-+
-+if test "x$have_sndio" = "xyes"; then
-+	AC_CHECK_HEADER(sndio.h,, have_sndio=no)
-+	if test x$have_sndio = xyes; then
-+		AC_CHECK_LIB(sndio, sio_open, haves_sndio=yes, have_sndio=no)
-+	fi
-+fi
-+
-+if test "x$have_sndio" = "xyes"; then
-+	OUTPUT_PLUGINS="$OUTPUT_PLUGINS sndio"
-+	SNDIO_LIBS="-lsndio"
-+	AC_SUBST(SNDIO_LIBS)
-+fi
-+
  dnl *** End of all plugin checks ***
- 
++
 +CPPFLAGS="$CPPFLAGS $AUDACIOUS_CFLAGS"
 +LIBS="$LIBS $AUDACIOUS_LIBS"
-+
+ 
  plugindir=`pkg-config audacious --variable=plugin_dir`
  AC_SUBST(plugindir)
- 
-@@ -1154,6 +1175,7 @@ echo "    -> FileWriter Vorbis output part:     $enabl
- echo "    -> FileWriter FLAC output part:       $have_writer_flac"
- echo "  Null Audio output (null):               yes"
- echo "  Open Sound System v3 (deprecated):      $enable_oss"
-+echo "  Sndio Audio output (sndio):             $have_sndio"
- echo
- echo "  Input Plugins"
- echo "  -------------"
