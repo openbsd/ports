@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.30 2012/05/08 06:49:41 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.31 2012/08/26 07:16:54 ajacoutot Exp $
 --- configure.ac.orig	Mon May  7 05:37:20 2012
 +++ configure.ac	Mon May  7 22:27:24 2012
-@@ -981,7 +981,7 @@ else
- 	if test "$ac_silc_libs" != "no"; then
- 		SILC_LIBS="-L$ac_silc_libs"
- 	fi
--	SILC_LIBS="$SILC_LIBS -lsilc -lsilcclient -lpthread $LIBDL"
-+	SILC_LIBS="$SILC_LIBS -lsilc -lsilcclient -pthread $LIBDL"
- 	AC_CHECK_LIB(silcclient, silc_client_init, [silcclient=yes], , $SILC_LIBS)
- 
- 	if test "x$silcincludes" = "xyes" -a "x$silcclient" = "xyes"; then
 @@ -1334,7 +1334,6 @@ if test "x$GCC" = "xyes"; then
  	fi
  
@@ -18,25 +9,6 @@ $OpenBSD: patch-configure_ac,v 1.30 2012/05/08 06:49:41 jasper Exp $
  fi
  
  if test "x$SUNCC" = "xyes"; then
-@@ -1501,7 +1500,17 @@ if test "x$enable_consoleui" = "xyes" -a ! -z "$PYTHON
- 	changequote([, ])dnl
- 	if test -f $PY_PREFIX/include/python$PY_VERSION/Python.h -a "$PY_MAJOR" = "2."; then
- 		AC_MSG_RESULT()
--		AC_CHECK_LIB(pthread, pthread_create, )
-+		AC_CHECK_HEADER(pthread.h, have_pthread_h=yes)
-+		if test "X$have_pthread_h" = "Xyes" ; then
-+		    LDFLAGS_save="${LDFLAGS}";
-+		    LDFLAGS="${LDFLAGS} -pthread"
-+		    AC_LINK_IFELSE(
-+		      [AC_LANG_PROGRAM(
-+		        [[#include <pthread.h>
-+		        pthread_t thr;]],
-+		        [pthread_create(&thr, NULL, NULL, NULL);])],,
-+		      [LDFLAGS="${LDFLAGS_save}"])
-+		fi
- 		AC_CHECK_LIB(util, openpty, )
- 		AC_CHECK_LIB(db, dbopen, )
- 		PY_LIBS="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config -lpython$PY_VERSION"
 @@ -1703,6 +1712,11 @@ AM_CONDITIONAL(INSTALL_SSL_CERTIFICATES, test "x$SSL_C
  
  dnl These two are inverses of each other <-- stolen from evolution!

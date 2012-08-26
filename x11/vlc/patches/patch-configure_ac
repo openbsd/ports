@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.23 2012/07/06 12:51:11 sthen Exp $
---- configure.ac.orig	Mon Jun 25 10:46:34 2012
-+++ configure.ac	Sat Jun 30 22:40:47 2012
+$OpenBSD: patch-configure_ac,v 1.24 2012/08/26 07:16:54 ajacoutot Exp $
+--- configure.ac.orig	Tue Jul  3 18:55:34 2012
++++ configure.ac	Thu Aug 16 14:24:29 2012
 @@ -122,10 +122,6 @@ case "${host_os}" in
      ;;
    openbsd*)
@@ -12,28 +12,7 @@ $OpenBSD: patch-configure_ac,v 1.23 2012/07/06 12:51:11 sthen Exp $
      ;;
    netbsd*)
      SYS=netbsd
-@@ -688,6 +684,20 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
-   dnl Check for pthreads - borrowed from XMMS
-   THREAD_LIB=error
-   if test "${THREAD_LIB}" = "error"; then
-+    AC_MSG_CHECKING(for pthread_create in -pthread)
-+    save_LDFLAGS="${LDFLAGS}"
-+    LDFLAGS="${LDFLAGS} -pthread"
-+    AC_LINK_IFELSE(
-+      [AC_LANG_PROGRAM(
-+        [[#include <pthread.h>
-+        pthread_t thr;]],
-+        [pthread_create(&thr, NULL, NULL, NULL);])],
-+      [THREAD_LIB="-pthread"
-+       AC_MSG_RESULT(yes)],
-+       [AC_MSG_RESULT(no)])
-+    LDFLAGS="${save_LDFLAGS}"
-+fi
-+  if test "${THREAD_LIB}" = "error"; then
-     AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
-   fi
-   if test "${THREAD_LIB}" = "error"; then
-@@ -964,33 +974,6 @@ dnl Check for various optimization flags
+@@ -964,33 +960,6 @@ dnl Check for various optimization flags
  AS_IF([test "${enable_optimizations}" != "no"], [
  
    C_O=""
@@ -67,7 +46,7 @@ $OpenBSD: patch-configure_ac,v 1.23 2012/07/06 12:51:11 sthen Exp $
    VLC_RESTORE_FLAGS
    CFLAGS="${CFLAGS} ${C_O}"
    CXXFLAGS="${CXXFLAGS} ${C_O}"
-@@ -1736,7 +1719,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
+@@ -1736,7 +1705,7 @@ AS_IF([test "${enable_live555}" != "no" -a -n "${CXX}"
    AC_LANG_PUSH(C++)
    CPPFLAGS_save="${CPPFLAGS}"
    AS_IF([test -z "${CONTRIB_DIR}"], [
@@ -76,7 +55,7 @@ $OpenBSD: patch-configure_ac,v 1.23 2012/07/06 12:51:11 sthen Exp $
    ], [
      CPPFLAGS_live555="-I${CONTRIB_DIR}/include/liveMedia -I${CONTRIB_DIR}/include/groupsock -I${CONTRIB_DIR}/include/BasicUsageEnvironment -I${CONTRIB_DIR}/include/UsageEnvironment"
    ])
-@@ -3509,6 +3492,24 @@ AS_IF([test "$enable_oss" != "no"], [
+@@ -3509,6 +3478,24 @@ AS_IF([test "$enable_oss" != "no"], [
  ])
  AC_SUBST(OSS_LIBS)
  AM_CONDITIONAL([HAVE_OSS], [test "${have_oss}" = "yes"])
