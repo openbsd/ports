@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2012/04/30 12:48:11 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2012/08/26 21:12:08 landry Exp $
 
 COMMENT-main=	Xfce4 theme engine for Gtk+2
 COMMENT-gtk3=	Xfce4 theme engine for Gtk+3
@@ -8,6 +8,7 @@ XFCE_VERSION=	3.0.0
 
 MULTI_PACKAGES = -main -gtk3
 PKGNAME-main =	${PKGNAME}
+REVISION-main =	0
 PKGNAME-gtk3 =	gtk3-xfce-engine-${XFCE_VERSION}
 
 HOMEPAGE=	http://www.xfce.org/projects/
