@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/08/17 07:58:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2012/08/26 17:22:27 eric Exp $
 %%SHARED%%
-bin/cairo-trace
 include/cairo/
 include/cairo/cairo-deprecated.h
 include/cairo/cairo-features.h
@@ -22,8 +21,8 @@ include/cairo/cairo.h
 lib/cairo/
 @comment lib/cairo/cairo-fdr.a
 @comment lib/cairo/cairo-fdr.la
-lib/cairo/libcairo-trace.a
-lib/cairo/libcairo-trace.la
+@comment lib/cairo/libcairo-trace.a
+@comment lib/cairo/libcairo-trace.la
 lib/libcairo-gobject.a
 lib/libcairo-gobject.la
 lib/libcairo-script-interpreter.a
