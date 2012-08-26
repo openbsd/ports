@@ -1,15 +1,15 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
---- unix/Makefile.in.orig	Thu Jun 23 14:37:39 2011
-+++ unix/Makefile.in	Wed Oct  5 11:26:28 2011
-@@ -550,6 +550,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
+$OpenBSD: patch-unix_Makefile_in,v 1.9 2012/08/26 16:57:58 stu Exp $
+--- unix/Makefile.in.orig	Sun Jul 22 01:01:39 2012
++++ unix/Makefile.in	Sun Jul 22 01:25:28 2012
+@@ -553,6 +553,7 @@ PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDec
  # The private headers we want installed for install-private-headers
  PRIVATE_HDRS = $(GENERIC_DIR)/tkInt.h $(GENERIC_DIR)/tkIntDecls.h \
  	$(GENERIC_DIR)/tkIntPlatDecls.h $(GENERIC_DIR)/tkPort.h \
 +	$(GENERIC_DIR)/default.h $(UNIX_DIR)/tkUnixDefault.h \
  	$(TTK_HDRS) $(@TK_WINDOWINGSYSTEM@_PRIVATE_HDRS)
  
- DEMOPROGS = browse hello ixset rmt rolodex tcolor timer widget
-@@ -582,6 +583,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
+@@ -585,6 +586,10 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
  	rm -f $@
  	@MAKE_STUB_LIB@
  
@@ -20,7 +20,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  # Build Aqua resource files
  ${TK_RSRC_FILE}: $(AQUA_RESOURCES)
  	rm -f $@
-@@ -702,14 +707,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) w
+@@ -709,14 +714,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -36,19 +36,19 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  	@if test "x$(TK_SHARED_BUILD)" = "x1"; then \
  	    echo "Creating package index $(PKG_INDEX)"; \
  	    rm -f "$(PKG_INDEX)"; \
-@@ -719,10 +720,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) w
- 	    echo "package ifneeded Tk $(MAJOR_VERSION).$(MINOR_VERSION)$(PATCH_LEVEL)\
- 		[list load [file join \$$dir $${relative}$(TK_LIB_FILE)] Tk]";\
+@@ -734,10 +735,10 @@ install-binaries: $(TK_LIB_FILE) $(TK_STUB_LIB_FILE) $
+ 	    echo "}";\
+ 	    fi \
  	    ) > "$(PKG_INDEX)"; \
 +	    chmod 444 "$(PKG_INDEX)"; \
  	    fi
- 	@echo "Installing $(LIB_FILE) to $(LIB_INSTALL_DIR)/"
+ 	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
--	@chmod 555 "$(LIB_INSTALL_DIR)"/$(LIB_FILE)
- 	@echo "Installing wish@EXEEXT@ as $(BIN_INSTALL_DIR)/wish$(VERSION)@EXEEXT@"
- 	@$(INSTALL_PROGRAM) wish@EXEEXT@ "$(BIN_INSTALL_DIR)"/wish$(VERSION)@EXEEXT@
- 	@echo "Installing tkConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -742,14 +743,10 @@ install-libraries: libraries
+-	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
+ 	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
+ 	    $(INSTALL_LIBRARY) "${TOP_DIR}/win/tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
+ 	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
+@@ -761,14 +762,10 @@ install-libraries: libraries
  	    do \
  	    if [ -n "$$i" -a ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -64,7 +64,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  	@echo "Installing header files";
  	@for i in $(PUBLIC_HDRS); \
  	    do \
-@@ -792,8 +789,7 @@ install-demos:
+@@ -811,8 +808,7 @@ install-demos:
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -74,7 +74,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -803,11 +799,12 @@ install-demos:
+@@ -822,6 +818,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -82,13 +82,16 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
- 	    do \
--	    chmod 755 "$(DEMO_INSTALL_DIR)"/$$i; \
-+	    chmod 555 "$(DEMO_INSTALL_DIR)"/$$i; \
+@@ -829,7 +826,7 @@ install-demos:
+ 	    if test $$i = "square"; then \
+ 	    rm -f  "$(DEMO_INSTALL_DIR)/$$i"; \
+ 	    else \
+-	    chmod 755 "$(DEMO_INSTALL_DIR)/$$i"; \
++	    chmod 555 "$(DEMO_INSTALL_DIR)/$$i"; \
+ 	    fi; \
  	    done;
  	@echo "Installing demo images";
- 	@for i in $(TOP_DIR)/library/demos/images/*; \
-@@ -822,8 +819,7 @@ install-doc:
+@@ -845,8 +842,7 @@ install-doc:
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \
@@ -98,7 +101,7 @@ $OpenBSD: patch-unix_Makefile_in,v 1.8 2011/10/17 15:19:22 stu Exp $
  		else true; \
  		fi; \
  	    done;
-@@ -848,14 +844,10 @@ install-private-headers: libraries
+@@ -871,14 +867,10 @@ install-private-headers: libraries
  	    do \
  	    if [ ! -d "$$i" ] ; then \
  		echo "Making directory $$i"; \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/10/17 15:19:22 stu Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/08/26 16:57:58 stu Exp $
 @option no-default-conflict
 @conflict tk->=8.5,<8.6
 %%SHARED%%
@@ -550,7 +550,6 @@ share/examples/tk8.5/ruler.tcl
 share/examples/tk8.5/sayings.tcl
 share/examples/tk8.5/search.tcl
 share/examples/tk8.5/spin.tcl
-share/examples/tk8.5/square
 share/examples/tk8.5/states.tcl
 share/examples/tk8.5/style.tcl
 share/examples/tk8.5/tclIndex

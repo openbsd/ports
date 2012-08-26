@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/03/29 13:39:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/08/26 16:57:58 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.5.11
-PKGNAME =		tk-8.5.11
-SHARED_LIBS =		tk85 0.8
+DISTNAME =		tk8.5.12
+PKGNAME =		tk-8.5.12
+SHARED_LIBS =		tk85 0.9
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -35,7 +35,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5" \
 			TK_PKG_DIR='tcl/tk$$(VERSION)'
 
-REGRESS_FLAGS =		HOME=${TESTHOME}
+REGRESS_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
@@ -57,9 +57,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS +=		tcl->=8.5.11,<8.5.12-threaded:lang/tcl/8.5,threaded
+LIB_DEPENDS +=		tcl->=8.5.12,<8.5.13-threaded:lang/tcl/8.5,threaded
 .else
-LIB_DEPENDS +=		tcl->=8.5.11,<8.5.12-!threaded:lang/tcl/8.5
+LIB_DEPENDS +=		tcl->=8.5.12,<8.5.13-!threaded:lang/tcl/8.5
 .endif
 
 .include <bsd.port.arch.mk>
@@ -76,6 +76,8 @@ WRKSRC =		${WRKDIST}/unix
 REGRESS_TARGET =	test
 
 TESTHOME =		${WRKDIR}/testhome
+# Use TESTFLAGS to control the Tk tests
+TESTFLAGS =
 
 pre-regress:
 	mkdir -p ${TESTHOME}
