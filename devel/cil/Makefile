@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/18 22:00:56 avsm Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/26 20:17:42 avsm Exp $
 
 # until tested on others, even though bytecode is produced
 .include <bsd.port.arch.mk>
@@ -8,6 +8,7 @@ COMMENT=	framework for analysis and transformation of C
 CATEGORIES =	devel lang
 
 DISTNAME =	cil-1.5.1
+REVISION =      1
 EXTRACT_SUFX =	.tar.gz
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=cil/}
 
@@ -21,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c curses m pthread
 
 MODULES =		lang/ocaml
+BUILD_DEPENDS=		sysutils/findlib
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.69
