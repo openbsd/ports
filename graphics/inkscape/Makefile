@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2012/07/13 15:10:47 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2012/08/26 07:19:26 ajacoutot Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 
@@ -55,7 +55,7 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.67
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS=	--without-gnome-vfs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include/ImageMagick \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
