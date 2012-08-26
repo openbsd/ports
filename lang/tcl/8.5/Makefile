@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/26 15:47:00 stu Exp $
 
 COMMENT =		Tool Command Language
 
-DISTNAME =		tcl8.5.11
-PKGNAME =		tcl-8.5.11
-REVISION =		0
-SHARED_LIBS =		tcl85 1.1
+DISTNAME =		tcl8.5.12
+PKGNAME =		tcl-8.5.12
+SHARED_LIBS =		tcl85 1.2
 CATEGORIES =		lang lang/tcl
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -33,7 +32,7 @@ FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			MAN3_INSTALL_DIR='$$(MAN_INSTALL_DIR)/cat3' \
 			MANN_INSTALL_DIR='$$(MAN_INSTALL_DIR)/catn'
 
-REGRESS_FLAGS =		HOME=${TESTHOME}
+REGRESS_FLAGS =		HOME=${TESTHOME} TESTFLAGS="${TESTFLAGS}"
 SEPARATE_BUILD =	Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu old
@@ -69,6 +68,8 @@ REGRESS_TARGET =	test
 SUBST_VARS +=		_README_DIR
 
 TESTHOME =		${WRKDIR}/testhome
+# Use TESTFLAGS to control the Tcl tests
+TESTFLAGS =
 
 pre-regress:
 	mkdir -p ${TESTHOME}
