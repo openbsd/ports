@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.1 2012/07/10 09:22:34 robert Exp $
---- chrome/app/chrome_main_delegate.cc.orig	Tue Jul 10 09:32:23 2012
-+++ chrome/app/chrome_main_delegate.cc	Tue Jul 10 09:32:54 2012
-@@ -285,7 +285,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
+$OpenBSD: patch-chrome_app_chrome_main_delegate_cc,v 1.2 2012/08/26 18:47:01 robert Exp $
+--- chrome/app/chrome_main_delegate.cc.orig	Tue Aug 14 09:01:53 2012
++++ chrome/app/chrome_main_delegate.cc	Wed Aug 15 23:14:34 2012
+@@ -264,7 +264,7 @@ bool SubprocessNeedsResourceBundle(const std::string& 
        // Mac needs them for the plugin process name.
        process_type == switches::kPluginProcess ||
  #endif

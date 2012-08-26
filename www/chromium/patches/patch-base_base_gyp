@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_base_gyp,v 1.12 2012/07/10 09:22:34 robert Exp $
---- base/base.gyp.orig	Thu Jun 28 15:01:49 2012
-+++ base/base.gyp	Sat Jul  7 09:50:22 2012
-@@ -386,6 +386,13 @@
+$OpenBSD: patch-base_base_gyp,v 1.13 2012/08/26 18:47:01 robert Exp $
+--- base/base.gyp.orig	Tue Aug 14 09:01:48 2012
++++ base/base.gyp	Wed Aug 15 23:14:34 2012
+@@ -612,6 +612,13 @@
            ],
          }],
        ],

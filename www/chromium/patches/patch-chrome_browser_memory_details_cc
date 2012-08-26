@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.9 2012/07/10 09:22:34 robert Exp $
---- chrome/browser/memory_details.cc.orig	Thu Jun 28 15:02:04 2012
-+++ chrome/browser/memory_details.cc	Sat Jul  7 09:50:22 2012
-@@ -32,7 +32,7 @@
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.10 2012/08/26 18:47:01 robert Exp $
+--- chrome/browser/memory_details.cc.orig	Fri Aug 17 03:02:07 2012
++++ chrome/browser/memory_details.cc	Wed Aug 22 09:56:05 2012
+@@ -31,7 +31,7 @@
  #include "grit/generated_resources.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_memory_details_cc,v 1.9 2012/07/10 09:22:34 rober
    const pid_t zygote_pid = content::ZygoteHost::GetInstance()->GetPid();
    const pid_t sandbox_helper_pid =
        content::ZygoteHost::GetInstance()->GetSandboxHelperPid();
-@@ -341,7 +341,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+@@ -333,7 +333,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
        }
      }
  

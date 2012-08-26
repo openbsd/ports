@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.102 2012/08/12 15:13:57 fgsch Exp $
+# $OpenBSD: Makefile,v 1.103 2012/08/26 18:47:01 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			20.0.1132.57
+V=			21.0.1180.81
 DISTNAME=		chromium-${V}
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -22,8 +21,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
-		http://commondatastorage.googleapis.com/chromium-browser-official/
+MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/
 
 MODULES=	gcc4 lang/python
 
@@ -85,6 +83,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libevent=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
+		-Duse_system_libusb=1 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
@@ -96,6 +95,7 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Dlinux_use_tcmalloc=0 \
 		-Dlinux_strip_binary=1 \
 		-Denable_webrtc=0 \
+		-Denable_one_click_signin=1 \
 		-Duse_kerberos=0 \
 		-DOS=openbsd
 
@@ -135,7 +135,7 @@ do-install:
 .for f in libffmpegsumo.so mksnapshot protoc
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
-.for s in 16 22 24 32 48 64 128 256
+.for s in 22 24 48 64 128 256
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
 	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
 		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/chrome.png

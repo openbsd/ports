@@ -1,0 +1,13 @@
+$OpenBSD: patch-ppapi_shared_impl_private_net_address_private_impl_cc,v 1.1 2012/08/26 18:47:01 robert Exp $
+--- ppapi/shared_impl/private/net_address_private_impl.cc.orig	Mon Aug 20 10:07:38 2012
++++ ppapi/shared_impl/private/net_address_private_impl.cc	Mon Aug 20 10:08:04 2012
+@@ -21,6 +21,9 @@
+ #include "ppapi/shared_impl/var.h"
+ #include "ppapi/thunk/thunk.h"
+ 
++#include <sys/types.h>
++#include <netinet/in.h>
++
+ #if defined(OS_MACOSX)
+ // This is a bit evil, but it's standard operating procedure for |s6_addr|....
+ #define s6_addr16 __u6_addr.__u6_addr16

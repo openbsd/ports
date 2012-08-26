@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.8 2012/04/15 10:40:44 robert Exp $
---- base/debug/debugger_posix.cc.orig	Sat Apr 14 12:17:19 2012
-+++ base/debug/debugger_posix.cc	Sat Apr 14 16:54:46 2012
-@@ -92,33 +92,36 @@ bool BeingDebugged() {
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.9 2012/08/26 18:47:01 robert Exp $
+--- base/debug/debugger_posix.cc.orig	Tue Aug 14 09:01:47 2012
++++ base/debug/debugger_posix.cc	Wed Aug 15 23:14:34 2012
+@@ -103,33 +103,36 @@ bool BeingDebugged() {
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
    // binary interfaces may change.

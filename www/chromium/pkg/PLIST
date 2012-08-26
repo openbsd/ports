@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/07/10 09:22:34 robert Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/08/26 18:47:01 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -64,6 +64,9 @@ chrome/product_logo_48.png
 chrome/protoc
 chrome/resources/
 chrome/resources.pak
+chrome/resources/extension/
+chrome/resources/extension/demo/
+chrome/resources/extension/demo/library.js
 chrome/resources/inspector/
 chrome/resources/inspector/DevTools.js
 chrome/resources/inspector/HeapSnapshotWorker.js
@@ -98,6 +101,7 @@ chrome/resources/inspector/Images/domain.png
 chrome/resources/inspector/Images/errorIcon.png
 chrome/resources/inspector/Images/errorMediumIcon.png
 chrome/resources/inspector/Images/errorRedDot.png
+chrome/resources/inspector/Images/fileSystem.png
 chrome/resources/inspector/Images/forward.png
 chrome/resources/inspector/Images/frame.png
 chrome/resources/inspector/Images/glossyHeader.png
@@ -111,7 +115,6 @@ chrome/resources/inspector/Images/indexedDB.png
 chrome/resources/inspector/Images/indexedDBIndex.png
 chrome/resources/inspector/Images/indexedDBObjectStore.png
 chrome/resources/inspector/Images/localStorage.png
-chrome/resources/inspector/Images/navigatorPinButton.png
 chrome/resources/inspector/Images/navigatorShowHideButton.png
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneBottomGrow.png
@@ -183,15 +186,7 @@ chrome/resources/inspector/Images/thumbHoriz.png
 chrome/resources/inspector/Images/thumbHoverHoriz.png
 chrome/resources/inspector/Images/thumbHoverVert.png
 chrome/resources/inspector/Images/thumbVert.png
-chrome/resources/inspector/Images/timelineBarBlue.png
-chrome/resources/inspector/Images/timelineBarGray.png
-chrome/resources/inspector/Images/timelineBarGreen.png
-chrome/resources/inspector/Images/timelineBarOrange.png
-chrome/resources/inspector/Images/timelineBarPurple.png
-chrome/resources/inspector/Images/timelineBarRed.png
-chrome/resources/inspector/Images/timelineBarYellow.png
-chrome/resources/inspector/Images/timelineCheckmarks.png
-chrome/resources/inspector/Images/timelineDots.png
+chrome/resources/inspector/Images/tickMark.png
 chrome/resources/inspector/Images/timelineHollowPillBlue.png
 chrome/resources/inspector/Images/timelineHollowPillGray.png
 chrome/resources/inspector/Images/timelineHollowPillGreen.png
@@ -233,8 +228,10 @@ chrome/resources/inspector/devtools_extension_api.js
 chrome/resources/inspector/elementsPanel.css
 chrome/resources/inspector/filteredItemSelectionDialog.css
 chrome/resources/inspector/heapProfiler.css
+chrome/resources/inspector/helpScreen.css
 chrome/resources/inspector/indexedDBViews.css
 chrome/resources/inspector/inspectorCommon.css
+chrome/resources/inspector/nativeMemoryProfiler.css
 chrome/resources/inspector/navigatorView.css
 chrome/resources/inspector/networkLogView.css
 chrome/resources/inspector/networkPanel.css
@@ -242,6 +239,7 @@ chrome/resources/inspector/panelEnablerView.css
 chrome/resources/inspector/profilesPanel.css
 chrome/resources/inspector/resourceView.css
 chrome/resources/inspector/resourcesPanel.css
+chrome/resources/inspector/revisionHistory.css
 chrome/resources/inspector/scriptsPanel.css
 chrome/resources/inspector/splitView.css
 chrome/resources/inspector/tabbedPane.css
@@ -253,11 +251,9 @@ chrome/ui_resources_standard.pak
 @man man/man1/chrome.1
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png
-share/icons/hicolor/16x16/apps/chrome.png
 share/icons/hicolor/22x22/apps/chrome.png
 share/icons/hicolor/24x24/apps/chrome.png
 share/icons/hicolor/256x256/apps/chrome.png
-share/icons/hicolor/32x32/apps/chrome.png
 share/icons/hicolor/48x48/apps/chrome.png
 share/icons/hicolor/64x64/apps/chrome.png
 @exec %D/bin/update-desktop-database
