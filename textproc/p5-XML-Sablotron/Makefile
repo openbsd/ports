@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/08/23 14:44:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2012/08/27 16:16:28 benoit Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,10 +7,10 @@ COMMENT=	perl interface to the Sablotron XSLT engine
 DISTNAME=	XML-Sablotron-1.01
 # does NOT use cpan module so the p5- prefix is not automatic.
 PKGNAME=	p5-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	textproc perl5
 
-HOMEPAGE=	http://www.gingerall.org/
+HOMEPAGE=	http://sourceforge.net/projects/sablotron/
 
 MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # even though it will be marked 'Extra' by check-lib-depends.
 WANTLIB=	c expat m perl sablot>=100
 
-MASTER_SITES=	http://download-1.gingerall.cz/download/sablot/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=sablotron/}
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	textproc/sablotron
