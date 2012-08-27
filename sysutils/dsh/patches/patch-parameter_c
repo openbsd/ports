@@ -1,0 +1,15 @@
+$OpenBSD: patch-parameter_c,v 1.1.1.1 2012/08/27 14:36:17 ajacoutot Exp $
+
+parameter.c:132: warning: passing argument 1 of 'getnetgrent' from incompatible pointer type
+
+--- parameter.c.orig	Mon Aug 27 08:44:54 2012
++++ parameter.c	Mon Aug 27 08:45:08 2012
+@@ -127,7 +127,7 @@ read_machinenetgroup(linkedlist * machinelist,
+ #endif
+   if (setnetgrent(groupname) WORKAROUND_SETNETGRENT) 
+     {
+-      char *hostp=NULL, *userp=NULL, *domainp=NULL;
++      const char *hostp=NULL, *userp=NULL, *domainp=NULL;
+       
+       while (getnetgrent(&hostp, &userp, &domainp))
+ 	{

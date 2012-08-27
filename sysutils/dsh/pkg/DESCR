@@ -1,0 +1,3 @@
+dsh is an implementation of a wrapper for executing multiple remote
+shell (rsh/remsh/ssh) commands. rsh/remsh/ssh are wrappers for executing
+shell (ksh/bash/zsh/tcsh/sh .. etc... ) on remote hosts.

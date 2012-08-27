@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/27 14:36:17 ajacoutot Exp $
+@bin bin/dsh
+man/ja/
+man/ja/man1/
+@man man/ja/man1/dsh.1
+man/ja/man5/
+@man man/ja/man5/dsh.conf.5
+@man man/man1/dsh.1
+@man man/man5/dsh.conf.5
+share/examples/dsh.conf
+@sample ${SYSCONFDIR}/dsh.conf
+share/locale/ja/LC_MESSAGES/dsh.mo
