@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.63 2012/06/28 18:53:02 jasper Exp $
+$OpenBSD: patch-configure,v 1.64 2012/08/27 06:19:48 ajacoutot Exp $
 --- configure.orig	Tue Mar  8 19:33:03 2011
-+++ configure	Thu Jun 28 02:45:17 2012
++++ configure	Thu Aug 16 17:53:14 2012
 @@ -35,29 +35,33 @@
  #
  #############################################################################
@@ -154,15 +154,6 @@ $OpenBSD: patch-configure,v 1.63 2012/06/28 18:53:02 jasper Exp $
  fi
  echores "$_memalign"
  
-@@ -3585,7 +3597,7 @@ int main(void) { pthread_t tid; return pthread_create(
- EOF
- _pthreads=no
- if ! hpux ; then
--  for _ld_tmp in "-lpthreadGC2" "" "-lpthread" "-pthread" ; do
-+  for _ld_tmp in "-lpthreadGC2" "" "-pthread" "-lpthread" ; do
-     # for crosscompilation, we cannot execute the program, be happy if we can link statically
-     cc_check $THREAD_CFLAGS $_ld_tmp && (tmp_run || test "$_ld_static") && _ld_pthread="$_ld_tmp" && _pthreads=yes && break
-   done
 @@ -4661,6 +4673,8 @@ if test "$_aa" = yes ; then
    def_aa='#define CONFIG_AA 1'
    if cygwin ; then
