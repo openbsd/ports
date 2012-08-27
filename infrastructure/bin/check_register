@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: check_register,v 1.1 2011/11/28 10:30:22 jasper Exp $
+# $OpenBSD: check_register,v 1.2 2012/08/27 11:24:52 jasper Exp $
 # Copyright (c) 2001
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -28,11 +28,10 @@
 # what's linked, and what's in there.
 
 : ${PORTSDIR:=/usr/ports}
-: ${TMPDIR:=/tmp}
 : ${diffopts:=-u}
 
-known1=`mktemp ${TMPDIR}/known.XXXXXXXXX`
-known2=`mktemp ${TMPDIR}/known.XXXXXXXXX`
+known1=`mktemp -t known.XXXXXXXXX`
+known2=`mktemp -t known.XXXXXXXXX`
 cd ${PORTSDIR} && make show=FULLPKGPATH ECHO_MSG=: | tee ${known1}
 sort -o ${known1} -u ${known1}
 
