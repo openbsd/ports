@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2012/08/23 19:19:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2012/08/27 20:06:16 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -22,6 +22,7 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.7,<4.8
 
 REVISION =	1
+REVISION-estdc = 2
 
 SHARED_LIBS =	estdc++		15.0 \
 		gfortran	4.0 \
@@ -183,7 +184,7 @@ RUN_DEPENDS-estdc =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
 			${BUILD_PKGPATH},-estdc>=4.7,<4.8
-WANTLIB-estdc =		c
+WANTLIB-estdc =		c m
 WANTLIB-java =		${WANTLIB} pthread
 WANTLIB-main =		${WANTLIB} pthread
 
