@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.266 2012/08/18 07:25:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.267 2012/08/27 14:36:49 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -45,6 +45,7 @@
      SUBDIR += dmassage
      SUBDIR += dmidecode
      SUBDIR += downtimed
+     SUBDIR += dsh
      SUBDIR += dtpstree
      SUBDIR += duplicity
      SUBDIR += dvd+rw-tools
