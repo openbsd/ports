@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2012/07/20 12:03:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2012/08/27 13:53:10 sthen Exp $
 
 VERSION=	1.4
 DISTNAME=	automake-${VERSION}-p6
 PKGNAME=	automake-1.4.6
-REVISION=	1
+REVISION=	2
 PKGSPEC=	automake->=${VERSION},<1.5
-
-MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 CONFIGURE_STYLE=gnu
 

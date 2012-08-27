@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.16 2010/09/06 00:04:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/08/27 13:53:10 sthen Exp $
 
 COMMENT=	console napster client
 
 VERSION=	1.3g
 DISTNAME=	TekNap-${VERSION}
 PKGNAME=	teknap-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://bwap.clawz.com/downloads/
 
 HOMEPAGE=	http://www.TekNap.com/
-
-MAINTAINER=	Jason Ish <ish@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
