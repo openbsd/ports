@@ -5,9 +5,6 @@ Better documentation will be written as this progresses.
 
 Quick list of what exists, most useful stuff first
 
-bin/bundle-readmes:
-	Create README.html files and bundle them as one tar archive.
-
 fetch/check-distfiles
 	Heuristic to check the whole contents of /usr/ports/distfiles against
 	all MD5 files in the ports tree.
