@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/27 15:10:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/27 22:43:04 sthen Exp $
 
 COMMENT=	dancers shell or distributed shell
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c dshconfig
 
-LIB_DEPENDS=		net/libdshconfig
+LIB_DEPENDS=		devel/libdshconfig
 
 MODULES=		devel/gettext
 
