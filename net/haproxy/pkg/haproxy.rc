@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: haproxy.rc,v 1.1 2012/08/27 13:03:06 gonzalo Exp $
+
+daemon="${TRUEPREFIX}/sbin/haproxy"
+daemon_flags="-f ${HAPROXYCONF}/haproxy.cfg"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
