@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_make_configure_sh,v 1.5 2012/05/22 18:22:50 ajacoutot Exp $
+$OpenBSD: patch-build_make_configure_sh,v 1.6 2012/08/27 20:42:25 jasper Exp $
 --- build/make/configure.sh.orig	Tue May  8 19:14:00 2012
 +++ build/make/configure.sh	Wed May 16 17:07:35 2012
 @@ -1,4 +1,4 @@
@@ -7,12 +7,3 @@ $OpenBSD: patch-build_make_configure_sh,v 1.5 2012/05/22 18:22:50 ajacoutot Exp 
  ##
  ##  configure.sh
  ##
-@@ -1082,7 +1082,7 @@ EOF
-         case ${toolchain} in
-             *-win*);;
-             *-android-gcc);;
--            *) check_header pthread.h && add_extralibs -lpthread
-+            *) check_header pthread.h && add_extralibs -pthread
-         esac
-     fi
- 

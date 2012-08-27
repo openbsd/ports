@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/05/22 18:22:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/27 20:42:25 jasper Exp $
 
 COMMENT=	Google VP8 video codec
 
 V=		1.1.0
 DISTNAME=	libvpx-v${V}
 PKGNAME=	libvpx-${V}
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://webm.googlecode.com/files/
 EXTRACT_SUFX=	.tar.bz2
@@ -38,6 +39,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
 		--disable-optimizations
+CONFIGURE_ENV=	LD="${CC}"
 
 NO_REGRESS=	Yes
 
