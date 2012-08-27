@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2012/08/04 15:06:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/08/27 10:39:42 robert Exp $
 @extra owncloud/config/config.php
 owncloud/
 owncloud/.htaccess.dist
@@ -1997,6 +1997,19 @@ owncloud/apps/user_webfinger/appinfo/info.xml
 owncloud/apps/user_webfinger/appinfo/version
 owncloud/apps/user_webfinger/host-meta.php
 owncloud/apps/user_webfinger/webfinger.php
+owncloud/apps/user_yubikey/
+owncloud/apps/user_yubikey/Yubikey.php
+owncloud/apps/user_yubikey/admin_settings.php
+owncloud/apps/user_yubikey/ajax/
+owncloud/apps/user_yubikey/ajax/changeprefix.php
+owncloud/apps/user_yubikey/appinfo/
+owncloud/apps/user_yubikey/appinfo/app.php
+owncloud/apps/user_yubikey/appinfo/info.xml
+owncloud/apps/user_yubikey/settings.php
+owncloud/apps/user_yubikey/templates/
+owncloud/apps/user_yubikey/templates/admin_settings.php
+owncloud/apps/user_yubikey/templates/settings.php
+owncloud/apps/user_yubikey/user_yubikey.php
 @mode 0700
 @owner www
 owncloud/config/

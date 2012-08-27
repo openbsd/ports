@@ -1,2 +1,4 @@
 SHA256 (owncloud-4.0.7.tar.bz2) = wjh/shebc/DNi1QtEV5qI0wboakpisuBWmnDsHCsqwQ=
+SHA256 (owncloud-yubikey.patch) = lKtpm2+tDC0v656UHsFFeDlCJI6cBv/UbYSxltHSS20=
 SIZE (owncloud-4.0.7.tar.bz2) = 4624512
+SIZE (owncloud-yubikey.patch) = 22337
