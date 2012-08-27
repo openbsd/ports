@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/27 14:36:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/27 15:10:49 ajacoutot Exp $
 
 COMMENT=	dancers shell or distributed shell
 
 DISTNAME=	dsh-0.25.7
 CATEGORIES=	sysutils net
+REVISION=	0
 
 HOMEPAGE=	http://www.netfort.gr.jp/~dancer/software/
 MASTER_SITES=	${HOMEPAGE}downloads/
