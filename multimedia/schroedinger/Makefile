@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/25 13:50:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/08/27 09:34:43 jasper Exp $
 
 COMMENT=	high-speed Dirac codec
 
 DISTNAME=	schroedinger-1.0.11
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${HOMEPAGE}/download/schroedinger/
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	m orc-0.4>=4.0 stdc++
+WANTLIB=	m orc-0.4>=4.0 pthread stdc++
 
 LIB_DEPENDS=	devel/orc>=0.4.16p0
 

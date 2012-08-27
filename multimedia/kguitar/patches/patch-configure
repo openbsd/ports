@@ -1,53 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/08/31 18:35:02 landry Exp $
+$OpenBSD: patch-configure,v 1.2 2012/08/27 09:34:42 jasper Exp $
 --- configure.orig	Wed Jan 16 21:24:31 2008
 +++ configure	Tue Aug 23 14:28:39 2011
-@@ -28481,13 +28481,13 @@ fi
-   fi
- 
-     if test -z "$LIBPTHREAD"; then
--    { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+    { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -28543,16 +28543,16 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6; }
- if test $ac_cv_lib_pthread_pthread_create = yes; then
--  LIBPTHREAD="-lpthread"
-+  LIBPTHREAD="-pthread"
- fi
- 
-   fi
- 
-     if test -z "$LIBPTHREAD" ; then
--    { echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6; }
-+    { echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6; }
-     kde_safe_libs=$LIBS
--    LIBS="$LIBS -lpthread"
-+    LIBS="$LIBS -pthread"
-     cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -28589,7 +28589,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
- 
-         { echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6; }
--        LIBPTHREAD="-lpthread"
-+        LIBPTHREAD="-pthread"
- else
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
 @@ -30012,16 +30012,16 @@ else
  	IFS=$kde_save_IFS
  
@@ -78,30 +31,3 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/08/31 18:35:02 landry Exp $
  fi
  
  if test -z ""; then
-@@ -31917,7 +31917,7 @@ fi
- if test $kde_qtver = 3; then
-    LIB_KDECORE="-lkdecore"
- 
--   LIB_KDEUI="-lkdeui -lpthread"
-+   LIB_KDEUI="-lkdeui -pthread"
- 
-    LIB_KIO="-lkio"
- 
-@@ -31947,7 +31947,7 @@ if test $kde_qtver = 3; then
- elif test $kde_qtver = 2; then
-    LIB_KDECORE="-lkdecore"
- 
--   LIB_KDEUI="-lkdeui -lpthread"
-+   LIB_KDEUI="-lkdeui -pthread"
- 
-    LIB_KIO="-lkio"
- 
-@@ -31970,7 +31970,7 @@ elif test $kde_qtver = 2; then
- else
-    LIB_KDECORE="-lkdecore -lXext $(LIB_QT)"
- 
--   LIB_KDEUI="-lkdeui -lpthread $(LIB_KDECORE)"
-+   LIB_KDEUI="-lkdeui -pthread $(LIB_KDECORE)"
- 
-    LIB_KFM="-lkfm $(LIB_KDECORE)"
- 

@@ -1,33 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2012/03/30 13:15:59 phessler Exp $
---- configure.orig	Mon Mar 26 20:02:18 2012
-+++ configure	Mon Mar 26 20:02:34 2012
-@@ -12502,13 +12502,13 @@ fi
- 
- done
- 
--  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -lpthread" >&5
--$as_echo_n "checking for pthread_mutex_init in -lpthread... " >&6; }
-+  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -pthread" >&5
-+$as_echo_n "checking for pthread_mutex_init in -pthread... " >&6; }
- if ${ac_cv_lib_pthread_pthread_mutex_init+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -12543,7 +12543,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = xye
- #define HAVE_LIBPTHREAD 1
- _ACEOF
- 
--  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread $LIBS"
- 
- else
-   as_fn_error $? "$library_not_found" "$LINENO" 5
-@@ -12808,8 +12808,6 @@ fi
+$OpenBSD: patch-configure,v 1.2 2012/08/27 09:34:42 jasper Exp $
+--- configure.orig	Mon May  7 06:48:18 2012
++++ configure	Tue May  8 01:33:37 2012
+@@ -12804,8 +12804,6 @@ fi
  
  # use optimizations
  if [ $use_optimizations = "yes" ]; then

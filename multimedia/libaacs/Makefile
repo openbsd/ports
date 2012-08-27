@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/30 13:35:42 phessler Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/27 09:34:42 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		AACS support library for Blu-ray playback
 
 V =			0.3.1
 DISTNAME =		libaacs-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		multimedia
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/06/20 08:45:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2012/08/27 09:34:42 jasper Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,8 +11,9 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		1
-REVISION-mjpeg =	0
+REVISION-main =		2
+REVISION-mjpeg =	1
+REVISION-neon =		0
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -27,7 +28,7 @@ MODULES =		devel/gettext \
 			devel/dconf
 
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
-			z m pcre gstreamer-0.10 ffi
+			z m pcre gstreamer-0.10 gstbase-0.10 ffi
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
@@ -42,11 +43,11 @@ WANTLIB-main += ${WANTLIB}
 WANTLIB-main += BPM GL SDL SoundTouch X11 Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB-main += Xrender Xxf86vm ass bz2 cairo cdaudio croco-0.6 crypto
 WANTLIB-main += curl dca drm dvdnav dvdread enca expat fontconfig
-WANTLIB-main += freetype gdk_pixbuf-2.0 gio-2.0 gsm gstaudio-0.10 gstbase-0.10
+WANTLIB-main += freetype gdk_pixbuf-2.0 gio-2.0 gsm gstaudio-0.10
 WANTLIB-main += gstcontroller-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstsdp-0.10 gsttag-0.10 gstvideo-0.10
 WANTLIB-main += idn jasper lrdf mms mpcdec orc-0.4 pango-1.0 pangocairo-1.0
-WANTLIB-main += pangoft2-1.0 pixman-1 png pthread-stubs raptor rsvg-2
+WANTLIB-main += pangoft2-1.0 pixman-1 png pthread-stubs pthread raptor rsvg-2
 WANTLIB-main += schroedinger-1.0 sndfile sndio ssl stdc++ usbhid vpx
 WANTLIB-main += fribidi gstapp-0.10 gstfft-0.10 jpeg spandsp tiff
 WANTLIB-main += xcb xcb-render xcb-shm xslt
@@ -74,13 +75,12 @@ RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
 			${MODDCONF_RUN_DEPENDS}
 
 WANTLIB-neon =		${WANTLIB} \
-			gstbase-0.10 neon \
-			crypto expat ssl asn1 gssapi krb5
+			crypto expat neon ssl asn1 gssapi krb5
 LIB_DEPENDS-neon =	${LIB_DEPENDS} \
 			net/neon
 
 WANTLIB-mjpeg =		${WANTLIB} \
-			gstbase-0.10 stdc++ mjpegutils mpeg2encpp mplex2
+			stdc++ mjpegutils mpeg2encpp mplex2
 LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
 			multimedia/mjpegtools
 

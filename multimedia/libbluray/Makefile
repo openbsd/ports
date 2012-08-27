@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/03/30 13:16:33 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/27 09:34:42 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,6 +6,7 @@ COMMENT =		library supporting Blu-ray playback
 
 V =			0.2.2
 DISTNAME =		libbluray-${V}
+REVISION =		0
 CATEGORIES =		multimedia
 
 HOMEPAGE =		http://www.videolan.org/developers/libbluray.html
