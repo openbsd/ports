@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2012/08/13 09:16:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.168 2012/08/28 15:27:49 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,9 @@ GNOME_VERSION=		3.4.4
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-plugins=	0
 
 # NOTE: when R changes, increment EVO_VERSION accordingly and bump:
 # mail/evolution-ews
@@ -44,25 +47,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
-WANTLIB += canberra com_err crypto
-WANTLIB += db dbus-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
-WANTLIB += edataserver-1.2 edataserverui-3.0 enchant
-WANTLIB += expat fontconfig freetype gailutil-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
-WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
-WANTLIB += ical icalss icalvcal krb5 ffi dbus-glib-1
-WANTLIB += m notify nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread
-WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl3
-WANTLIB += xcb xcb-render xcb-shm xml2 z stdc++
+WANTLIB += atk-1.0 c cairo camel-1.2 canberra ebook-1.2 ecal-1.2
+WANTLIB += edataserver-1.2 edataserverui-3.0 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtkhtml-4.0
+WANTLIB += gtkhtml-editor-4.0 ical notify pango-1.0 pangocairo-1.0
+WANTLIB += pthread xml2
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += canberra-gtk3 gdata gweather-3 ldap-2.4 ltdl ogg
-WANTLIB-main += vorbis vorbisfile goa-1.0 soup-gnome-2.4
+WANTLIB-main += ICE SM cairo-gobject canberra-gtk3 dbus-glib-1 ebackend-1.2
+WANTLIB-main += gailutil-3 gdata gmodule-2.0 gnome-desktop-3 goa-1.0
+WANTLIB-main += gweather-3 icalvcal ldap-2.4 m nspr4 nss3 plc4 smime3
+WANTLIB-main += soup-2.4
+#WANTLIB-main += lib/evolution/${R}/evolution-a11y
 
 WANTLIB-plugins += ${WANTLIB}
 WANTLIB-plugins += gstreamer-0.10 pst
@@ -76,7 +72,6 @@ WANTLIB-plugins += lib/evolution/${R}/eshell
 WANTLIB-plugins += lib/evolution/${R}/etable
 WANTLIB-plugins += lib/evolution/${R}/etext
 WANTLIB-plugins += lib/evolution/${R}/eutil
-WANTLIB-plugins += lib/evolution/${R}/evolution-a11y
 WANTLIB-plugins += lib/evolution/${R}/evolution-calendar
 WANTLIB-plugins += lib/evolution/${R}/evolution-mail
 WANTLIB-plugins += lib/evolution/${R}/filter
@@ -98,11 +93,11 @@ BUILD_DEPENDS=		devel/bison \
 
 LIB_DEPENDS=		databases/evolution-data-server>=${GNOME_VERSION} \
 			devel/libnotify>=0.7.2 \
-			security/nss \
-			x11/gnome/desktop \
 			www/gtkhtml4>=4.1.91
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			security/nss \
+			x11/gnome/desktop \
 			databases/openldap \
 			audio/libcanberra,-gtk3
 
@@ -131,6 +126,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	autoconf
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""
+# without --as-needed, evolution takes 20 minutes (yes, 20!) to start
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib -Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed
 
@@ -192,11 +188,6 @@ pre-configure:
 	for i in ${REVERT_BZ591436}; do perl -pi -e 's,-avoid-version,,g' ${WRKSRC}/$${i}; done
 	${SUBST_CMD} ${WRKSRC}/modules/spamassassin/evolution-spamassassin.c \
 		${WRKSRC}/modules/bogofilter/evolution-bogofilter.c
-
-# needed to prevent lazy bindings failures on pthreads(3) functions
-post-configure:
-	perl -pi -e 's|-Wl,--as-needed||g' \
-		${WRKBUILD}/{shell,calendar/alarm-notify,plugins/backup-restore,capplet,capplet/settings}/Makefile
 
 post-install:
 	rm ${PREFIX}/lib/evolution/${R}/{modules,plugins}/*.la
