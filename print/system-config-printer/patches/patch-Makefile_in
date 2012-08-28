@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2011/07/16 07:00:04 ajacoutot Exp $
---- Makefile.in.orig	Thu Jul 14 12:55:22 2011
-+++ Makefile.in	Sat Jul 16 08:47:48 2011
-@@ -441,7 +441,7 @@ dbus_DATA = \
+$OpenBSD: patch-Makefile_in,v 1.10 2012/08/28 19:16:20 ajacoutot Exp $
+--- Makefile.in.orig	Fri Aug  3 12:04:49 2012
++++ Makefile.in	Tue Aug 28 21:12:50 2012
+@@ -459,7 +459,7 @@ dbus_DATA = \
  	dbus/com.redhat.NewPrinterNotification.conf		\
  	dbus/com.redhat.PrinterDriversInstaller.conf
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.9 2011/07/16 07:00:04 ajacoutot Exp $
  dbusinterfaces_DATA = \
  	dbus/org.fedoraproject.Config.Printing.xml
  
-@@ -1600,7 +1600,7 @@ update-po: missing-languages
+@@ -1619,7 +1619,7 @@ update-po: missing-languages
  	$(MAKE) -C po update-po
  
  missing-languages:
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.9 2011/07/16 07:00:04 ajacoutot Exp $
  	eval $$(grep ALL_LINGUAS configure.in); \
  	diff -u <(echo $$ALL_LINGUAS | xargs -rn1 echo) \
  		<(cd po; ls -1 *.po | sed -e "s,\.po$$,,")'
-@@ -1633,7 +1633,7 @@ run-dbus-service:	config.py cupshelpers/config.py
+@@ -1652,7 +1652,7 @@ run-dbus-service:	config.py cupshelpers/config.py
  	$(PYTHON) $(top_srcdir)/scp-dbus-service.py --debug
  
  test-xmldriverprefs:	cupshelpers/xmldriverprefs.py xml/preferreddrivers.xml
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile_in,v 1.9 2011/07/16 07:00:04 ajacoutot Exp $
  		2>&1 | less
  
  help:
-@@ -1656,12 +1656,12 @@ test-ppd-module.sh:	FORCE
+@@ -1675,12 +1675,12 @@ test-ppd-module.sh:	FORCE
  	chmod 755 "$@"
  
  test-xml-validity.sh:	FORCE
