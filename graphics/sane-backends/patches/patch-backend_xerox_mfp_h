@@ -1,0 +1,16 @@
+$OpenBSD: patch-backend_xerox_mfp_h,v 1.1 2012/08/28 08:26:40 ajacoutot Exp $
+
+/usr/include/sys/param.h:190:1: warning: this is the location of the previous definition
+
+--- backend/xerox_mfp.h.orig	Tue Aug 28 09:29:54 2012
++++ backend/xerox_mfp.h	Tue Aug 28 09:31:42 2012
+@@ -18,7 +18,9 @@
+ #define UNUSED(x) x
+ #endif
+ 
++#ifndef MIN
+ #define MIN(a,b) (((a) < (b)) ? (a) : (b))
++#endif
+ 
+ #define UNCONST(ptr) ((void *)(long)(ptr))
+ 

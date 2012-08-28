@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/06/16 10:14:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2012/08/28 08:26:40 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -12,6 +12,8 @@ include/sane/sane.h
 include/sane/saneopts.h
 lib/libsane.a
 lib/libsane.la
+lib/pkgconfig/
+lib/pkgconfig/sane-backends.pc
 lib/sane/
 @comment lib/sane/libsane-abaton.a
 @comment lib/sane/libsane-abaton.la
@@ -87,6 +89,8 @@ lib/sane/
 @comment lib/sane/libsane-ibm.la
 @comment lib/sane/libsane-kodak.a
 @comment lib/sane/libsane-kodak.la
+@comment lib/sane/libsane-kodakaio.a
+@comment lib/sane/libsane-kodakaio.la
 @comment lib/sane/libsane-kvs1025.a
 @comment lib/sane/libsane-kvs1025.la
 @comment lib/sane/libsane-kvs20xx.a
@@ -208,6 +212,7 @@ lib/sane/
 @man man/man5/sane-hs2p.5
 @man man/man5/sane-ibm.5
 @man man/man5/sane-kodak.5
+@man man/man5/sane-kodakaio.5
 @man man/man5/sane-kvs1025.5
 @man man/man5/sane-kvs20xx.5
 @man man/man5/sane-leo.5
@@ -408,6 +413,8 @@ share/examples/sane-backends/sane.d/ibm.conf
 @sample ${SYSCONFDIR}/sane.d/ibm.conf
 share/examples/sane-backends/sane.d/kodak.conf
 @sample ${SYSCONFDIR}/sane.d/kodak.conf
+share/examples/sane-backends/sane.d/kodakaio.conf
+@sample ${SYSCONFDIR}/sane.d/kodakaio.conf
 share/examples/sane-backends/sane.d/leo.conf
 @sample ${SYSCONFDIR}/sane.d/leo.conf
 share/examples/sane-backends/sane.d/lexmark.conf
@@ -480,26 +487,63 @@ share/examples/sane-backends/sane.d/umax_pp.conf
 @sample ${SYSCONFDIR}/sane.d/umax_pp.conf
 share/examples/sane-backends/sane.d/xerox_mfp.conf
 @sample ${SYSCONFDIR}/sane.d/xerox_mfp.conf
+share/locale/
+share/locale/bg/
+share/locale/bg/LC_MESSAGES/
 share/locale/bg/LC_MESSAGES/sane-backends.mo
+share/locale/cs/
+share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/sane-backends.mo
+share/locale/da/
+share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/sane-backends.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/sane-backends.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/sane-backends.mo
+share/locale/eo/
+share/locale/eo/LC_MESSAGES/
 share/locale/eo/LC_MESSAGES/sane-backends.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/sane-backends.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/sane-backends.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/sane-backends.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/sane-backends.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/sane-backends.mo
+share/locale/ja/
+share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/sane-backends.mo
+share/locale/nb/
+share/locale/nb/LC_MESSAGES/
 share/locale/nb/LC_MESSAGES/sane-backends.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/sane-backends.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/sane-backends.mo
+share/locale/pt/
+share/locale/pt/LC_MESSAGES/
 share/locale/pt/LC_MESSAGES/sane-backends.mo
+share/locale/ru/
+share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/sane-backends.mo
+share/locale/sv/
+share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/sane-backends.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/sane-backends.mo
 share/sane/
 share/sane/artec_eplus48u/
