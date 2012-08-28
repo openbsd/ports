@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2012/08/24 07:39:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2012/08/28 19:13:11 espie Exp $
 
     SUBDIR =
     SUBDIR += a2ps
@@ -47,7 +47,7 @@
     SUBDIR += p5-PostScript-MailLabels
     SUBDIR += pdflib
     SUBDIR += pdfshuffler
-    SUBDIR += poppler
+    SUBDIR += poppler,
     SUBDIR += poppler-data
     SUBDIR += ps2eps
     SUBDIR += pscal

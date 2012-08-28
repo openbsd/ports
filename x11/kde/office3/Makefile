@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/07/03 13:37:14 okan Exp $
+# $OpenBSD: Makefile,v 1.76 2012/08/28 19:13:12 espie Exp $
 
 COMMENT=		office suite for KDE
 
@@ -88,7 +88,7 @@ LIB_DEPENDS=	x11/kde/libs3 \
 		graphics/jbigkit \
 		databases/mysql \
 		graphics/libexif \
-		print/poppler,-qt \
+		print/poppler,,-qt \
 		graphics/GraphicsMagick \
 		textproc/libwpd \
 		databases/libpqxx \

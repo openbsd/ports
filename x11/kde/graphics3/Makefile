@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2012/07/09 09:03:00 pascal Exp $
+# $OpenBSD: Makefile,v 1.104 2012/08/28 19:13:12 espie Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -42,8 +42,8 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			graphics/imlib \
 			graphics/libungif \
 			devel/fribidi>=0.19.2 \
-			print/poppler \
-			print/poppler,-qt
+			print/poppler, \
+			print/poppler,,-qt
 LIB_DEPENDS-kpov =	${LIB_DEPENDS}
 
 RUN_DEPENDS-kpov =	graphics/povray \

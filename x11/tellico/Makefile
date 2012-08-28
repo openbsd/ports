@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2012/06/15 08:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/08/28 19:13:12 espie Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
@@ -50,7 +50,7 @@ LIB_DEPENDS=	${MODQT_LIB_DEPENDS} \
 		x11/kde/multimedia3 \
 		x11/kde/libs3 \
 		graphics/lcms \
-		print/poppler,-qt \
+		print/poppler,,-qt \
 		audio/taglib \
 		net/yaz
 

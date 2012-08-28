@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/07/10 18:33:18 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/28 19:13:12 espie Exp $
 
 COMMENT =		ebook management application
 
@@ -27,7 +27,7 @@ WANTLIB +=		${MODPY_WANTLIB}
 LIB_DEPENDS=		devel/chmlib \
 			graphics/ImageMagick \
 			graphics/png \
-			print/poppler \
+			print/poppler, \
 			textproc/icu4c
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
@@ -35,7 +35,7 @@ RUN_DEPENDS =		devel/py-dateutil \
 			graphics/libwmf \
 			graphics/py-Imaging \
 			net/py-dnspython \
-			print/poppler,-qt4 \
+			print/poppler,,-qt4 \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
 			textproc/py-pdf \
