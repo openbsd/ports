@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/16 15:21:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/28 19:54:15 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,7 @@ LIB_DEPENDS-mysql=	databases/mysql
 RUN_DEPENDS-mysql=	${BASE_PKGPATH},-main
 
 WANTLIB-pgsql=		pq
-BUILD_DEPENDS-pgsql=	databases/postgresql,-server
+BUILD_DEPENDS=		databases/postgresql,-server
 LIB_DEPENDS-pgsql=	databases/postgresql
 RUN_DEPENDS-pgsql=	${BASE_PKGPATH},-main
 
