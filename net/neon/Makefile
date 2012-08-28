@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2012/06/27 12:10:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/08/28 18:42:30 ajacoutot Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
 DISTNAME=		neon-0.29.6
-REVISION=		1
+REVISION=		2
 SHARED_LIBS=		neon    28.0 # 29.6
 CATEGORIES=     	net www devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 crypto expat gssapi krb5 m proxy ssl stdc++ z
+WANTLIB += asn1 crypto expat gssapi krb5 m proxy pthread ssl stdc++ z
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =		net/libproxy
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -liconv" \
+			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_CERTUTIL="" \
 			ac_cv_path_PK12UTIL=""
 
