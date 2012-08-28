@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_openbsd-libpthread_h,v 1.2 2012/08/20 12:35:41 pascal Exp $
---- gcc/config/openbsd-libpthread.h.orig	Thu Aug 16 03:15:26 2012
-+++ gcc/config/openbsd-libpthread.h	Thu Aug 16 03:16:44 2012
+$OpenBSD: patch-gcc_config_openbsd-libpthread_h,v 1.3 2012/08/28 23:39:12 sthen Exp $
+--- gcc/config/openbsd-libpthread.h.orig	Sat Aug 25 09:20:29 2012
++++ gcc/config/openbsd-libpthread.h	Sat Aug 25 09:23:10 2012
 @@ -0,0 +1,23 @@
 +/* LIB_SPEC appropriate for OpenBSD.  Include -lpthread if -pthread is
 +   specified on the command line. */
@@ -23,5 +23,5 @@ $OpenBSD: patch-gcc_config_openbsd-libpthread_h,v 1.2 2012/08/20 12:35:41 pascal
 +the Free Software Foundation, 59 Temple Place - Suite 330,
 +Boston, MA 02111-1307, USA.  */
 +
-+#define OBSD_LIB_SPEC "%{pthread:-lpthread%{!shared:%{p|pg:_p}}} -lc%{!shared:%{p|pg:_p}}"
++#define OBSD_LIB_SPEC "%{pthread:-lpthread%{!shared:%{p|pg:_p}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
 +

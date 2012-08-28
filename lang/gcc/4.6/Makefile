@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/08/25 18:22:54 pascal Exp $
+# $OpenBSD: Makefile,v 1.32 2012/08/28 23:39:12 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -179,17 +179,17 @@ PKG_ARGS += -DI386=0
 .endif
 
 RUN_DEPENDS =		${BUILD_PKGPATH},-main
-WANTLIB =		c gmp mpc mpfr z
+WANTLIB =		c gmp m mpc mpfr z
 
 RUN_DEPENDS-main =
 RUN_DEPENDS-estdc =
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} \
 			${BUILD_PKGPATH},-estdc>=4.6,<4.7
-WANTLIB-estdc =		c m
-WANTLIB-f95 =		${WANTLIB} m
-WANTLIB-java =		${WANTLIB} m pthread
-WANTLIB-go =		${WANTLIB} m pthread
+WANTLIB-estdc =		m
+WANTLIB-f95 =		${WANTLIB}
+WANTLIB-java =		${WANTLIB} pthread
+WANTLIB-go =		${WANTLIB} pthread
 
 LIB_DEPENDS +=		devel/gmp>=4.2 \
 			devel/mpfr \

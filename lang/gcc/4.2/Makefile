@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2012/08/20 12:35:41 pascal Exp $
+# $OpenBSD: Makefile,v 1.81 2012/08/28 23:39:12 sthen Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -19,13 +19,13 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
-REVISION-main = 10
-REVISION-c++ = 14
+REVISION-main = 11
+REVISION-c++ = 15
 REVISION-estdc = 3
-REVISION-f95 = 12
-REVISION-java = 12
-REVISION-objc = 11
-REVISION-ada = 10
+REVISION-f95 = 13
+REVISION-java = 13
+REVISION-objc = 12
+REVISION-ada = 11
 EPOCH = 0
 
 SHARED_LIBS =	estdc++		13.0 \
@@ -207,7 +207,7 @@ RUN_DEPENDS-java =	archivers/unzip \
 			archivers/zip>=2.3p0
 
 RUN_DEPENDS-c++ =	${RUN_DEPENDS} libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
-WANTLIB-estdc =		c m
+WANTLIB-estdc =		m
 WANTLIB-java =		c m pthread z
 
 LIB_DEPENDS-f95 =	devel/gmp>=4.2 \
