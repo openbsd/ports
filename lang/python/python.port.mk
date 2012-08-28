@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.53 2012/06/27 18:56:26 rpointel Exp $
+# $OpenBSD: python.port.mk,v 1.54 2012/08/28 19:10:45 espie Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -85,20 +85,20 @@ SHARED_ONLY=		Yes
 .endif
 
 MODPY_PRE_BUILD_STEPS = @:
-.if (defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES)
+.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:L} == "yes"
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
 .  if ${_MODPY_MAJOR_VERSION} == 2
-MODPY_SETUPUTILS_DEPEND?=devel/py-setuptools
+MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools
 .  elif ${_MODPY_MAJOR_VERSION} == 3
-MODPY_SETUPUTILS_DEPEND?=devel/py-distribute${MODPY_FLAVOR}
+MODPY_SETUPUTILS_DEPEND ?= devel/py-distribute${MODPY_FLAVOR}
 .  endif
 
-MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
-BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
+MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
+BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 MODPY_SETUPUTILS =	Yes
 # The setuptools uses test target
-REGRESS_TARGET?=	test
+REGRESS_TARGET ?=	test
 _MODPY_USERBASE =
 .else
 # Try to detect the case where a port will build regardless of setuptools
@@ -116,14 +116,14 @@ MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
-.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:U} != YES
-MODPY_TKINTER_DEPENDS=	${MODPY_RUN_DEPENDS},-tkinter
+.if !defined(NO_SHARED_LIBS) || ${NO_SHARED_LIBS:L} != "yes"
+MODPY_TKINTER_DEPENDS =	${MODPY_RUN_DEPENDS},-tkinter
 .endif
 
-MODPY_BIN=		${LOCALBASE}/bin/python${MODPY_VERSION}
-MODPY_INCDIR=		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
-MODPY_LIBDIR=		${LOCALBASE}/lib/python${MODPY_VERSION}
-MODPY_SITEPKG=		${MODPY_LIBDIR}/site-packages
+MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
+MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+MODPY_LIBDIR =		${LOCALBASE}/lib/python${MODPY_VERSION}
+MODPY_SITEPKG =		${MODPY_LIBDIR}/site-packages
 
 .if defined(MODPY_BADEGGS)
 .  for egg in ${MODPY_BADEGGS}
@@ -133,36 +133,36 @@ MODPY_PRE_BUILD_STEPS += ;mkdir -p ${WRKBUILD}/${egg}.egg-info
 
 
 # usually setup.py but Setup.py can be found too
-MODPY_SETUP?=		setup.py
+MODPY_SETUP ?=		setup.py
 
 # build or build_ext are commonly used
-MODPY_DISTUTILS_BUILD?=		build --build-base=${WRKSRC}
+MODPY_DISTUTILS_BUILD ?=	build --build-base=${WRKSRC}
 
 .if ${MODPY_SETUPUTILS:L} == "yes"
-MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
+MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR} \
 				--single-version-externally-managed
 .else
-MODPY_DISTUTILS_INSTALL?=	install --prefix=${LOCALBASE} \
+MODPY_DISTUTILS_INSTALL ?=	install --prefix=${LOCALBASE} \
 				--root=${DESTDIR}
 .endif
 
-MAKE_ENV+=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
-CONFIGURE_ENV+=	PYTHON="${MODPY_BIN}" \
+MAKE_ENV +=	CC=${CC} PYTHONUSERBASE=${_MODPY_USERBASE}
+CONFIGURE_ENV +=PYTHON="${MODPY_BIN}" \
 		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
-_MODPY_CMD=	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+_MODPY_CMD =	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP}
 
-SUBST_VARS:=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
+SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_PYC_MAGIC_TAG MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX MODPY_PY_PREFIX ${SUBST_VARS}
 
 # set MODPY_BIN for executable scripts
-MODPY_BIN_ADJ=	perl -pi \
+MODPY_BIN_ADJ =	perl -pi \
 		-e '$$. == 1 && s|^.*env python.*$$|\#!${MODPY_BIN}|;' \
 		-e '$$. == 1 && s|^.*bin/python.*$$|\#!${MODPY_BIN}|;' \
 		-e 'close ARGV if eof;'
 
-MODPY_ADJ_FILES?=
+MODPY_ADJ_FILES ?=
 .if !empty(MODPY_ADJ_FILES)
 MODPYTHON_pre-configure += for f in ${MODPY_ADJ_FILES}; do \
 	${MODPY_BIN_ADJ} ${WRKSRC}/$${f}; done
