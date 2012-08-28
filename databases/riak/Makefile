@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/25 06:33:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/28 05:46:41 ajacoutot Exp $
 
 COMMENT=			distributed data store
 DISTNAME=			riak-1.2.0
 CATEGORIES=			databases
 HOMEPAGE=			http://basho.com/
-REVISION=			0
+REVISION=			1
 
 MAINTAINER=			Jonathan Matthew <jmatthew@openbsd.org>
 

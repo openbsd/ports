@@ -1,19 +1,25 @@
 #!/bin/sh
 #
-# $OpenBSD: riak.rc,v 1.1.1.1 2012/08/24 07:26:29 jmatthew Exp $
+# $OpenBSD: riak.rc,v 1.2 2012/08/28 05:46:41 ajacoutot Exp $
 
-bin="${TRUEPREFIX}/sbin/riak"
-daemon="${TRUEPREFIX}/lib/riak/erts-5.9.1/bin/beam.smp"
+daemon="${TRUEPREFIX}/sbin/riak"
 daemon_user="_riak"
 
 . /etc/rc.d/rc.subr
 
+rc_reload=NO
+rc_usercheck=NO
+
+rc_check() {
+	${rcexec} "${daemon} ping"
+}
+
 rc_start() {
-	${rcexec} "${bin} start" >/dev/null
+	${rcexec} "${daemon} start"
 }
 
 rc_stop() {
-	${rcexec} "${bin} stop" >/dev/null
+	${rcexec} "${daemon} stop"
 }
 
 rc_cmd $1
