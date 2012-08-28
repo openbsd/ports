@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/23 10:30:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/08/28 10:04:31 landry Exp $
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/auto.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/auto.pyc
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/__init__.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/__init__.pyc
@@ -15,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_icons.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_icons.pyc
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/clean_i18n.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/clean_i18n.pyc
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/pylint.py
+lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/pylint.pyc
 lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
