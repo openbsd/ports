@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/24 13:37:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/08/28 05:50:57 ajacoutot Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -65,8 +65,6 @@ include/pinot/filters/HtmlFilter.h
 include/pinot/filters/HtmlParser.h
 include/pinot/filters/TextFilter.h
 include/pinot/filters/XmlFilter.h
-include/pinot/unac/
-include/pinot/unac/unac.h
 include/pinot/xdgmime/
 include/pinot/xdgmime/xdgmime.c
 include/pinot/xdgmime/xdgmime.h
