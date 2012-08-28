@@ -1,3 +1,4 @@
+$OpenBSD: patch-configure,v 1.21 2012/08/28 08:06:15 ajacoutot Exp $
 --- configure.orig	Thu Sep  8 21:03:38 2011
 +++ configure	Fri Sep  9 08:38:25 2011
 @@ -5062,9 +5062,7 @@ CFLAGS=$save_CFLAGS
