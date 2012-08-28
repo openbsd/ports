@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.96 2012/06/10 07:35:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.97 2012/08/28 05:54:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.21
+REVISION=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.xz
@@ -88,7 +89,8 @@ CONFIGURE_ARGS+=--disable-aalib \
 		--without-jack \
 		--without-pulseaudio
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
-		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		ac_cv_header_execinfo_h=no
 
 NO_REGRESS=	Yes
 
