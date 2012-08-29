@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
+
+Put our CFLAGS, CXXFLAGS, CPPFLAGS and LDFLAGS at the end so that we can
+override optimisations...
+
+--- configure.orig	Thu May 24 13:31:45 2012
++++ configure	Wed Aug 29 08:56:20 2012
+@@ -3352,10 +3352,10 @@ $as_echo "$as_me: WARNING: another compiler except for
+   MYCFLAGS=""
+   MYCXXFLAGS=""
+ fi
+-test -n "$CFLAGS" && MYCFLAGS="$CFLAGS $MYCFLAGS"
+-test -n "$CXXFLAGS" && MYCXXFLAGS="$CXXFLAGS $MYCXXFLAGS"
+-test -n "$CPPFLAGS" && MYCPPFLAGS="$CPPFLAGS $MYCPPFLAGS"
+-test -n "$LDFLAGS" && MYLDFLAGS="$LDFLAGS $MYLDFLAGS"
++test -n "$CFLAGS" && MYCFLAGS="$MYCFLAGS $CFLAGS"
++test -n "$CXXFLAGS" && MYCXXFLAGS="$MYCXXFLAGS $CXXFLAGS"
++test -n "$CPPFLAGS" && MYCPPFLAGS="$MYCPPFLAGS $CPPFLAGS"
++test -n "$LDFLAGS" && MYLDFLAGS="$MYLDFLAGS $LDFLAGS"
+ 
+ # Byte order
+ 
+@@ -4554,9 +4554,7 @@ then
+     MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.dylib"
+     MYLDLIBPATHENV="DYLD_LIBRARY_PATH"
+   else
+-    MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.so.$MYLIBVER.$MYLIBREV.0"
+-    MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.so.$MYLIBVER"
+-    MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.so"
++    MYLIBRARYFILES="$MYLIBRARYFILES libkyotocabinet.so.${LIBkyotocabinet_VERSION}"
+   fi
+ fi
+ 

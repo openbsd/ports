@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
+--- Makefile.in.orig	Wed Aug 29 08:51:46 2012
++++ Makefile.in	Wed Aug 29 08:57:25 2012
+@@ -1029,23 +1029,15 @@ libkyotocabinet.a : $(LIBOBJFILES)
+ 	$(AR) $(ARFLAGS) $@ $(LIBOBJFILES)
+ 
+ 
+-libkyotocabinet.so.$(LIBVER).$(LIBREV).0 : $(LIBOBJFILES)
++libkyotocabinet.so.${LIBkyotocabinet_VERSION} : $(LIBOBJFILES)
+ 	if uname -a | egrep -i 'SunOS' > /dev/null ; \
+ 	  then \
+-	    $(CXX) $(CXXFLAGS) -shared -Wl,-G,-h,libkyotocabinet.so.$(LIBVER) -o $@ \
++	    $(CXX) $(CXXFLAGS) -shared -Wl,-G,-h,libkyotocabinet.so.${LIBkyotocabinet_VERSION} -o $@ \
+ 	      $(LIBOBJFILES) $(LDFLAGS) $(LIBS) ; \
+ 	  else \
+-	    $(CXX) $(CXXFLAGS) -shared -Wl,-soname,libkyotocabinet.so.$(LIBVER) -o $@ \
++	    $(CXX) $(CXXFLAGS) -shared -Wl,-soname,libkyotocabinet.so.${LIBkyotocabinet_VERSION} -o $@ \
+ 	      $(LIBOBJFILES) $(LDFLAGS) $(LIBS) ; \
+ 	  fi
+-
+-
+-libkyotocabinet.so.$(LIBVER) : libkyotocabinet.so.$(LIBVER).$(LIBREV).0
+-	ln -f -s libkyotocabinet.so.$(LIBVER).$(LIBREV).0 $@
+-
+-
+-libkyotocabinet.so : libkyotocabinet.so.$(LIBVER).$(LIBREV).0
+-	ln -f -s libkyotocabinet.so.$(LIBVER).$(LIBREV).0 $@
+ 
+ 
+ libkyotocabinet.$(LIBVER).$(LIBREV).0.dylib : $(LIBOBJFILES)

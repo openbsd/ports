@@ -1,0 +1,335 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
+%%SHARED%%
+@bin bin/kccachetest
+@bin bin/kcdirmgr
+@bin bin/kcdirtest
+@bin bin/kcforestmgr
+@bin bin/kcforesttest
+@bin bin/kcgrasstest
+@bin bin/kchashmgr
+@bin bin/kchashtest
+@bin bin/kclangctest
+@bin bin/kcpolymgr
+@bin bin/kcpolytest
+@bin bin/kcprototest
+@bin bin/kcstashtest
+@bin bin/kctreemgr
+@bin bin/kctreetest
+@bin bin/kcutilmgr
+@bin bin/kcutiltest
+include/kccachedb.h
+include/kccommon.h
+include/kccompare.h
+include/kccompress.h
+include/kcdb.h
+include/kcdbext.h
+include/kcdirdb.h
+include/kcfile.h
+include/kchashdb.h
+include/kclangc.h
+include/kcmap.h
+include/kcplantdb.h
+include/kcpolydb.h
+include/kcprotodb.h
+include/kcregex.h
+include/kcstashdb.h
+include/kctextdb.h
+include/kcthread.h
+include/kcutil.h
+lib/libkyotocabinet.a
+lib/pkgconfig/
+lib/pkgconfig/kyotocabinet.pc
+@man man/man1/kccachetest.1
+@man man/man1/kcdirmgr.1
+@man man/man1/kcdirtest.1
+@man man/man1/kcforestmgr.1
+@man man/man1/kcforesttest.1
+@man man/man1/kcgrasstest.1
+@man man/man1/kchashmgr.1
+@man man/man1/kchashtest.1
+@man man/man1/kclangctest.1
+@man man/man1/kcpolymgr.1
+@man man/man1/kcpolytest.1
+@man man/man1/kcprototest.1
+@man man/man1/kcstashtest.1
+@man man/man1/kctreemgr.1
+@man man/man1/kctreetest.1
+@man man/man1/kcutilmgr.1
+@man man/man1/kcutiltest.1
+share/doc/kyotocabinet/
+share/doc/kyotocabinet/COPYING
+share/doc/kyotocabinet/ChangeLog
+share/doc/kyotocabinet/FOSSEXCEPTION
+share/doc/kyotocabinet/doc/
+share/doc/kyotocabinet/doc/api/
+share/doc/kyotocabinet/doc/api/annotated.html
+share/doc/kyotocabinet/doc/api/bc_s.png
+share/doc/kyotocabinet/doc/api/classes.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ArcfourCompressor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ArcfourCompressor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1AtomicInt64-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1AtomicInt64.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Error-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Error.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1FileProcessor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1FileProcessor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Logger-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1Logger.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1MetaTrigger-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1MetaTrigger.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1ProgressChecker-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1BasicDB_1_1ProgressChecker.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CacheDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CacheDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CacheDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CacheDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Comparator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Comparator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Compressor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Compressor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CondMap-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CondMap.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CondVar-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1CondVar.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB_1_1Visitor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DB_1_1Visitor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DecimalComparator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DecimalComparator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DecimalDescendingComparator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DecimalDescendingComparator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirStream-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1DirStream.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1File-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1File.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1HashDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1HashDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1HashDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1HashDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1IndexDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1IndexDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZMA-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZMA.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZMACompressor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZMACompressor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZO-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZO.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZOCompressor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LZOCompressor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LexicalComparator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LexicalComparator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LexicalDescendingComparator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LexicalDescendingComparator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LinkedHashMap-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LinkedHashMap.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LinkedHashMap_1_1Iterator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1LinkedHashMap_1_1Iterator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce_1_1ReduceTaskQueue_1_1ReduceTask-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce_1_1ReduceTaskQueue_1_1ReduceTask.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce_1_1ValueIterator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1MapReduce_1_1ValueIterator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Mutex-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Mutex.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PlantDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PlantDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PlantDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PlantDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PolyDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PolyDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PolyDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1PolyDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ProtoDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ProtoDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ProtoDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ProtoDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1RWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1RWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Regex-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Regex.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedMutex-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedMutex.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedRWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedRWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedSpinLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedSpinLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedSpinRWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ScopedSpinRWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedMutex-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedMutex.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedRWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedRWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedSpinLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedSpinLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedSpinRWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SlottedSpinRWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SpinLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SpinLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SpinRWLock-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1SpinRWLock.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1StashDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1StashDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1StashDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1StashDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TSD-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TSD.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TSDKey-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TSDKey.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TaskQueue-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TaskQueue.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TaskQueue_1_1Task-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TaskQueue_1_1Task.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TextDB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TextDB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TextDB_1_1Cursor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TextDB_1_1Cursor.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Thread-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1Thread.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyArrayList-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyArrayList.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap_1_1Iterator-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap_1_1Iterator.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap_1_1Sorter-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1TinyHashMap_1_1Sorter.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ZLIB-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ZLIB.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ZLIBCompressor-members.html
+share/doc/kyotocabinet/doc/api/classkyotocabinet_1_1ZLIBCompressor.html
+share/doc/kyotocabinet/doc/api/closed.png
+share/doc/kyotocabinet/doc/api/doxygen.css
+share/doc/kyotocabinet/doc/api/doxygen.png
+share/doc/kyotocabinet/doc/api/files.html
+share/doc/kyotocabinet/doc/api/functions.html
+share/doc/kyotocabinet/doc/api/functions_0x62.html
+share/doc/kyotocabinet/doc/api/functions_0x63.html
+share/doc/kyotocabinet/doc/api/functions_0x64.html
+share/doc/kyotocabinet/doc/api/functions_0x65.html
+share/doc/kyotocabinet/doc/api/functions_0x66.html
+share/doc/kyotocabinet/doc/api/functions_0x67.html
+share/doc/kyotocabinet/doc/api/functions_0x68.html
+share/doc/kyotocabinet/doc/api/functions_0x69.html
+share/doc/kyotocabinet/doc/api/functions_0x6a.html
+share/doc/kyotocabinet/doc/api/functions_0x6b.html
+share/doc/kyotocabinet/doc/api/functions_0x6c.html
+share/doc/kyotocabinet/doc/api/functions_0x6d.html
+share/doc/kyotocabinet/doc/api/functions_0x6e.html
+share/doc/kyotocabinet/doc/api/functions_0x6f.html
+share/doc/kyotocabinet/doc/api/functions_0x70.html
+share/doc/kyotocabinet/doc/api/functions_0x72.html
+share/doc/kyotocabinet/doc/api/functions_0x73.html
+share/doc/kyotocabinet/doc/api/functions_0x74.html
+share/doc/kyotocabinet/doc/api/functions_0x75.html
+share/doc/kyotocabinet/doc/api/functions_0x76.html
+share/doc/kyotocabinet/doc/api/functions_0x77.html
+share/doc/kyotocabinet/doc/api/functions_0x78.html
+share/doc/kyotocabinet/doc/api/functions_0x79.html
+share/doc/kyotocabinet/doc/api/functions_0x7e.html
+share/doc/kyotocabinet/doc/api/functions_enum.html
+share/doc/kyotocabinet/doc/api/functions_eval.html
+share/doc/kyotocabinet/doc/api/functions_func.html
+share/doc/kyotocabinet/doc/api/functions_func_0x62.html
+share/doc/kyotocabinet/doc/api/functions_func_0x63.html
+share/doc/kyotocabinet/doc/api/functions_func_0x64.html
+share/doc/kyotocabinet/doc/api/functions_func_0x65.html
+share/doc/kyotocabinet/doc/api/functions_func_0x66.html
+share/doc/kyotocabinet/doc/api/functions_func_0x67.html
+share/doc/kyotocabinet/doc/api/functions_func_0x68.html
+share/doc/kyotocabinet/doc/api/functions_func_0x69.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6a.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6b.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6c.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6d.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6e.html
+share/doc/kyotocabinet/doc/api/functions_func_0x6f.html
+share/doc/kyotocabinet/doc/api/functions_func_0x70.html
+share/doc/kyotocabinet/doc/api/functions_func_0x72.html
+share/doc/kyotocabinet/doc/api/functions_func_0x73.html
+share/doc/kyotocabinet/doc/api/functions_func_0x74.html
+share/doc/kyotocabinet/doc/api/functions_func_0x75.html
+share/doc/kyotocabinet/doc/api/functions_func_0x76.html
+share/doc/kyotocabinet/doc/api/functions_func_0x77.html
+share/doc/kyotocabinet/doc/api/functions_func_0x79.html
+share/doc/kyotocabinet/doc/api/functions_func_0x7e.html
+share/doc/kyotocabinet/doc/api/functions_vars.html
+share/doc/kyotocabinet/doc/api/globals.html
+share/doc/kyotocabinet/doc/api/globals_defs.html
+share/doc/kyotocabinet/doc/api/globals_eval.html
+share/doc/kyotocabinet/doc/api/globals_func.html
+share/doc/kyotocabinet/doc/api/globals_type.html
+share/doc/kyotocabinet/doc/api/globals_vars.html
+share/doc/kyotocabinet/doc/api/hierarchy.html
+share/doc/kyotocabinet/doc/api/index.html
+share/doc/kyotocabinet/doc/api/kccachedb_8h.html
+share/doc/kyotocabinet/doc/api/kccommon_8h.html
+share/doc/kyotocabinet/doc/api/kccompare_8h.html
+share/doc/kyotocabinet/doc/api/kccompress_8h.html
+share/doc/kyotocabinet/doc/api/kcdb_8h.html
+share/doc/kyotocabinet/doc/api/kcdbext_8h.html
+share/doc/kyotocabinet/doc/api/kcdirdb_8h.html
+share/doc/kyotocabinet/doc/api/kcfile_8h.html
+share/doc/kyotocabinet/doc/api/kchashdb_8h.html
+share/doc/kyotocabinet/doc/api/kclangc_8h.html
+share/doc/kyotocabinet/doc/api/kcmap_8h.html
+share/doc/kyotocabinet/doc/api/kcplantdb_8h.html
+share/doc/kyotocabinet/doc/api/kcpolydb_8h.html
+share/doc/kyotocabinet/doc/api/kcprotodb_8h.html
+share/doc/kyotocabinet/doc/api/kcregex_8h.html
+share/doc/kyotocabinet/doc/api/kctextdb_8h.html
+share/doc/kyotocabinet/doc/api/kcthread_8h.html
+share/doc/kyotocabinet/doc/api/kcutil_8h.html
+share/doc/kyotocabinet/doc/api/namespacekyotocabinet.html
+share/doc/kyotocabinet/doc/api/namespacemembers.html
+share/doc/kyotocabinet/doc/api/namespacemembers_func.html
+share/doc/kyotocabinet/doc/api/namespacemembers_type.html
+share/doc/kyotocabinet/doc/api/namespacemembers_vars.html
+share/doc/kyotocabinet/doc/api/namespaces.html
+share/doc/kyotocabinet/doc/api/nav_f.png
+share/doc/kyotocabinet/doc/api/nav_h.png
+share/doc/kyotocabinet/doc/api/open.png
+share/doc/kyotocabinet/doc/api/structKCCUR-members.html
+share/doc/kyotocabinet/doc/api/structKCCUR.html
+share/doc/kyotocabinet/doc/api/structKCDB-members.html
+share/doc/kyotocabinet/doc/api/structKCDB.html
+share/doc/kyotocabinet/doc/api/structKCIDX-members.html
+share/doc/kyotocabinet/doc/api/structKCIDX.html
+share/doc/kyotocabinet/doc/api/structKCLIST-members.html
+share/doc/kyotocabinet/doc/api/structKCLIST.html
+share/doc/kyotocabinet/doc/api/structKCMAP-members.html
+share/doc/kyotocabinet/doc/api/structKCMAP.html
+share/doc/kyotocabinet/doc/api/structKCMAPITER-members.html
+share/doc/kyotocabinet/doc/api/structKCMAPITER.html
+share/doc/kyotocabinet/doc/api/structKCMAPSORT-members.html
+share/doc/kyotocabinet/doc/api/structKCMAPSORT.html
+share/doc/kyotocabinet/doc/api/structKCREC-members.html
+share/doc/kyotocabinet/doc/api/structKCREC.html
+share/doc/kyotocabinet/doc/api/structKCSTR-members.html
+share/doc/kyotocabinet/doc/api/structKCSTR.html
+share/doc/kyotocabinet/doc/api/structkyotocabinet_1_1File_1_1Status-members.html
+share/doc/kyotocabinet/doc/api/structkyotocabinet_1_1File_1_1Status.html
+share/doc/kyotocabinet/doc/api/tab_a.png
+share/doc/kyotocabinet/doc/api/tab_b.png
+share/doc/kyotocabinet/doc/api/tab_h.png
+share/doc/kyotocabinet/doc/api/tab_s.png
+share/doc/kyotocabinet/doc/api/tabs.css
+share/doc/kyotocabinet/doc/command.html
+share/doc/kyotocabinet/doc/common.css
+share/doc/kyotocabinet/doc/icon16.png
+share/doc/kyotocabinet/doc/index.html
+share/doc/kyotocabinet/doc/index.ja.html
+share/doc/kyotocabinet/doc/logo.png
+share/doc/kyotocabinet/doc/spex.html
+share/doc/kyotocabinet/kyotocabinet.idl
