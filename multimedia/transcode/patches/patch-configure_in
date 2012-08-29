@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.4 2012/05/03 06:06:59 ajacoutot Exp $
+$OpenBSD: patch-configure_in,v 1.5 2012/08/29 07:48:42 ajacoutot Exp $
 --- configure.in.orig	Sat Nov 19 11:50:27 2011
 +++ configure.in	Sun Apr 29 00:25:46 2012
 @@ -721,6 +721,12 @@ TC_CHECK_SUNAU(AC_DEFINE([HAVE_SUNAU], 1, [Have Sun st
@@ -14,25 +14,6 @@ $OpenBSD: patch-configure_in,v 1.4 2012/05/03 06:06:59 ajacoutot Exp $
  dnl OSS
  dnl
  TC_CHECK_OSS(AC_DEFINE([HAVE_OSS], 1, [Have OSS audio]))
-@@ -818,7 +824,8 @@ TC_PKG_HAVE(lame, LAME)
- dnl
- dnl xvid
- dnl
--TC_PKG_CHECK(xvid, no, xvid, no, xvid.h, xvidcore, xvid_global, xvid,
-+XVID_EXTRA_LIBS="$XVID_EXTRA_LIBS -pthread"
-+TC_PKG_CHECK(xvid, no, XVID, no, xvid.h, xvidcore, xvid_global, xvid,
-  [http://www.xvid.org/])
- if test x"$have_xvid" = x"yes" ; then
-   AC_MSG_CHECKING([xvid version >= 1.0])
-@@ -837,7 +844,7 @@ int main() {
-       [cannot compile and run a test program])],,
-     [AC_MSG_RESULT([cross compiling; assumed OK...])])
-   if test x"$xvid_version_ok" = x"yes"; then
--    XVID_LIBS="-lxvidcore"
-+    XVID_LIBS="-lxvidcore $XVID_EXTRA_LIBS"
-   else
-     have_xvid="no"
-     TC_PKG_ERROR(xvid, xvid.h, yes, xvid, [http://www.xvid.org/],
 @@ -1406,6 +1413,7 @@ ALSA                           $have_alsa
  OSS                            $have_oss
  bktr                           $have_bktr

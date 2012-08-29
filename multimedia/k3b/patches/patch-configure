@@ -1,18 +1,6 @@
-$OpenBSD: patch-configure,v 1.3 2012/05/24 18:36:45 shadchin Exp $
+$OpenBSD: patch-configure,v 1.4 2012/08/29 07:48:42 ajacoutot Exp $
 --- configure.orig	Fri Nov  2 15:02:31 2007
 +++ configure	Mon Jan  2 17:53:12 2012
-@@ -29531,7 +29531,10 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
-   fi
- 
-     if test "x$LIBPTHREAD" = "xPTHREAD" ; then
--    LIBPTHREAD=""
-+    case $host_os in
-+      openbsd*) LIBPTHREAD="-pthread" ;;
-+      *) LIBPTHREAD="" ;;
-+    esac
-   fi
- 
- 
 @@ -36499,8 +36502,8 @@ ac_link='rm -rf SunWS_cache; ${CXX-g++} -o conftest${a
  
  	cat >conftest.$ac_ext <<_ACEOF
