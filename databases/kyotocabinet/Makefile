@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/08/29 14:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/08/29 17:38:54 jasper Exp $
 
 COMMENT=	straightforward implementation of DBM
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # This FLAVOR should be used for local builds only and not added to
 # bulks (i.e. _no_ entry in databases/Makefile); the reason is that it
-# uses -march=native which cannot be garanteed to work on a machine it
+# uses -march=native which cannot be guaranteed to work on a machine it
 # was not compiled on.
 FLAVORS=	optimized
 FLAVOR?=
