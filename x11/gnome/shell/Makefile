@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/13 16:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2012/08/29 11:56:27 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.4.1
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -61,10 +61,26 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS= 		--tag=disable-static
 
-AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-static \
 			--with-ca-certificates=/etc/ssl/cert.pem \
 			--without-systemd
+
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.11
+BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
+			devel/automake/${AUTOMAKE_VERSION} \
+			devel/libtool \
+			x11/gnome/common
+
+pre-configure:
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} aclocal -I m4
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoconf
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} autoheader
+	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} automake
 
 .include <bsd.port.mk>

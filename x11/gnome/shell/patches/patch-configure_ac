@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.3 2012/07/13 08:03:53 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2012/08/29 11:56:27 jasper Exp $
 
-Remove network-related functionality, as this requires NetworkManager.
-(XXX make a patch committable upstream)
+Make Network Manager support optional.
+https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
 --- configure.ac.orig	Tue Apr 17 19:20:06 2012
-+++ configure.ac	Fri Jul 13 09:42:16 2012
++++ configure.ac	Sat Jul 14 11:25:47 2012
 @@ -94,7 +94,6 @@ PKG_CHECK_MODULES(GNOME_SHELL, gio-unix-2.0 >= $GIO_MI
                                 telepathy-glib >= $TELEPATHY_GLIB_MIN_VERSION
                                 telepathy-logger-0.2 >= $TELEPATHY_LOGGER_MIN_VERSION
@@ -13,3 +13,26 @@ Remove network-related functionality, as this requires NetworkManager.
                                 gcr-3 >= $GCR_MIN_VERSION)
  
  PKG_CHECK_MODULES(SHELL_PERF_HELPER, gtk+-3.0 gio-2.0)
+@@ -138,6 +137,22 @@ PKG_CHECK_EXISTS([gnome-bluetooth-1.0 >= 3.1.0],
+ 	[AC_DEFINE([HAVE_BLUETOOTH],[0])
+ 	 AC_SUBST([HAVE_BLUETOOTH],[0])
+ 	 AC_MSG_RESULT([no])])
++
++network_manager=false
++AC_MSG_CHECKING([for Network Manager support])
++PKG_CHECK_EXISTS([libnm-glib libnm-util],
++        [ NM_LIBS=`$PKG_CONFIG --libs libnm-glib libnm-util`
++	 AC_SUBST([NM_LIBS],["$NM_LIBS"])
++	 AC_DEFINE([HAVE_NETWORK_MANAGER],[1],[Define to 1 if you have Network Manager])
++	 AC_SUBST([HAVE_NETWORK_MANAGER],[1])
++	 AC_MSG_RESULT([yes])
++	 $network_manager=true],
++	[AC_DEFINE([HAVE_NETWORK_MANAGER],[0])
++	 AC_SUBST([HAVE_NETWORK_MANAGER],[0])
++	 AC_MSG_RESULT([no])])
++
++AM_CONDITIONAL(NETWORK_MANAGER, $network_manager)
++GNOME_SHELL=$GNOME_SHELL $NM_LIBS
+ 
+ PKG_CHECK_MODULES(CALENDAR_SERVER, libecal-1.2 >= $LIBECAL_MIN_VERSION libedataserver-1.2 >= $LIBEDATASERVER_MIN_VERSION libedataserverui-3.0 >= $LIBEDATASERVERUI_MIN_VERSION gio-2.0)
+ AC_SUBST(CALENDAR_SERVER_CFLAGS)

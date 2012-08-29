@@ -1,11 +1,19 @@
-$OpenBSD: patch-js_ui_main_js,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
+$OpenBSD: patch-js_ui_main_js,v 1.3 2012/08/29 11:56:27 jasper Exp $
 
-Remove network-related functionality, as this requires NetworkManager.
-(XXX make a patch committable upstream)
+Make Network Manager support optional.
+https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/ui/main.js.orig	Sun Jul  8 15:24:59 2012
-+++ js/ui/main.js	Sun Jul  8 15:25:24 2012
-@@ -26,7 +26,6 @@ const PlaceDisplay = imports.ui.placeDisplay;
+--- js/ui/main.js.orig	Mon Apr 16 18:41:48 2012
++++ js/ui/main.js	Sat Jul 14 11:56:05 2012
+@@ -12,6 +12,7 @@ const St = imports.gi.St;
+ 
+ const AutomountManager = imports.ui.automountManager;
+ const AutorunManager = imports.ui.autorunManager;
++const Config = imports.misc.config;
+ const CtrlAltTab = imports.ui.ctrlAltTab;
+ const EndSessionDialog = imports.ui.endSessionDialog;
+ const PolkitAuthenticationAgent = imports.ui.polkitAuthenticationAgent;
+@@ -26,7 +27,6 @@ const PlaceDisplay = imports.ui.placeDisplay;
  const RunDialog = imports.ui.runDialog;
  const Layout = imports.ui.layout;
  const LookingGlass = imports.ui.lookingGlass;
@@ -13,11 +21,24 @@ Remove network-related functionality, as this requires NetworkManager.
  const NotificationDaemon = imports.ui.notificationDaemon;
  const WindowAttentionHandler = imports.ui.windowAttentionHandler;
  const Scripting = imports.ui.scripting;
-@@ -85,7 +84,6 @@ function _createUserSession() {
+@@ -38,6 +38,9 @@ const XdndHandler = imports.ui.xdndHandler;
+ const StatusIconDispatcher = imports.ui.statusIconDispatcher;
+ const Util = imports.misc.util;
+ 
++if (Config.HAVE_NETWORK_MANAGER)
++        const NetworkAgent = imports.ui.networkAgent;
++
+ const OVERRIDES_SCHEMA = 'org.gnome.shell.overrides';
+ const DEFAULT_BACKGROUND_COLOR = new Clutter.Color();
+ DEFAULT_BACKGROUND_COLOR.from_pixel(0x2266bbff);
+@@ -85,7 +88,9 @@ function _createUserSession() {
      telepathyClient = new TelepathyClient.Client();
      automountManager = new AutomountManager.AutomountManager();
      autorunManager = new AutorunManager.AutorunManager();
 -    networkAgent = new NetworkAgent.NetworkAgent();
++
++    if (Config.HAVE_NETWORK_MANAGER)
++	    networkAgent = new NetworkAgent.NetworkAgent();
  }
  
  function _createGDMSession() {

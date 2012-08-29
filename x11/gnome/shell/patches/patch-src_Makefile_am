@@ -1,0 +1,52 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1 2012/08/29 11:56:27 jasper Exp $
+
+Make Network Manager support optional.
+https://bugzilla.gnome.org/show_bug.cgi?id=679871
+
+--- src/Makefile.am.orig	Mon Apr 16 19:47:21 2012
++++ src/Makefile.am	Sat Jul 14 11:27:35 2012
+@@ -112,7 +112,6 @@ shell_public_headers_h =		\
+ 	shell-idle-monitor.h		\
+ 	shell-mobile-providers.h	\
+ 	shell-mount-operation.h		\
+-	shell-network-agent.h		\
+ 	shell-perf-log.h		\
+ 	shell-screenshot.h		\
+ 	shell-screen-grabber.h		\
+@@ -161,7 +160,6 @@ libgnome_shell_la_SOURCES =		\
+ 	shell-keyring-prompt.c		\
+ 	shell-mobile-providers.c	\
+ 	shell-mount-operation.c		\
+-	shell-network-agent.c		\
+ 	shell-perf-log.c		\
+ 	shell-polkit-authentication-agent.h	\
+ 	shell-polkit-authentication-agent.c	\
+@@ -241,6 +239,16 @@ endif BUILD_RECORDER
+ 
+ ########################################
+ 
++if NETWORK_MANAGER
++
++shell_public_headers_h += shell-network-agent.h
++
++libgnome_shell_la_SOURCES += shell-network-agent.c
++
++endif NETWORK_MANAGER
++
++########################################
++
+ libexec_PROGRAMS += gnome-shell-perf-helper
+ 
+ gnome_shell_perf_helper_SOURCES = shell-perf-helper.c
+@@ -296,7 +304,10 @@ libgnome_shell_la_LIBADD =		\
+ libgnome_shell_la_CPPFLAGS = $(gnome_shell_cflags)
+ 
+ Shell-0.1.gir: libgnome-shell.la St-1.0.gir
+-Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0 NetworkManager-1.0 NMClient-1.0 Folks-0.6
++Shell_0_1_gir_INCLUDES = Clutter-1.0 ClutterX11-1.0 Meta-3.0 TelepathyGLib-0.12 TelepathyLogger-0.2 Soup-2.4 GMenu-3.0 Folks-0.6
++if NETWORK_MANAGER
++Shell_0_1_gir_INCLUDES += NetworkManager-1.0 NMClient-1.0
++endif
+ Shell_0_1_gir_CFLAGS = $(libgnome_shell_la_CPPFLAGS) -I $(srcdir)
+ Shell_0_1_gir_LIBS = libgnome-shell.la
+ Shell_0_1_gir_FILES = $(libgnome_shell_la_gir_sources)

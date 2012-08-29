@@ -1,20 +1,11 @@
-$OpenBSD: patch-js_ui_panel_js,v 1.2 2012/07/08 15:39:11 ajacoutot Exp $
+$OpenBSD: patch-js_ui_panel_js,v 1.3 2012/08/29 11:56:27 jasper Exp $
 
-Remove network-related functionality, as this requires NetworkManager.
-(XXX make a patch committable upstream)
+Make Network Manager support optional.
+https://bugzilla.gnome.org/show_bug.cgi?id=679871
 
---- js/ui/panel.js.orig	Sun Jul  8 15:40:27 2012
-+++ js/ui/panel.js	Sun Jul  8 15:40:35 2012
-@@ -32,7 +32,7 @@ const BUTTON_DND_ACTIVATION_TIMEOUT = 250;
- const ANIMATED_ICON_UPDATE_TIMEOUT = 100;
- const SPINNER_ANIMATION_TIME = 0.2;
- 
--const STANDARD_STATUS_AREA_ORDER = ['a11y', 'keyboard', 'volume', 'bluetooth', 'network', 'battery', 'userMenu'];
-+const STANDARD_STATUS_AREA_ORDER = ['a11y', 'keyboard', 'volume', 'bluetooth', 'battery', 'userMenu'];
- const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
-     'a11y': imports.ui.status.accessibility.ATIndicator,
-     'volume': imports.ui.status.volume.Indicator,
-@@ -44,11 +44,11 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
+--- js/ui/panel.js.orig	Sat Jul 14 11:20:43 2012
++++ js/ui/panel.js	Sat Jul 14 11:21:06 2012
+@@ -44,10 +44,12 @@ const STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION = {
  if (Config.HAVE_BLUETOOTH)
      STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['bluetooth'] = imports.ui.status.bluetooth.Indicator;
  
@@ -22,12 +13,12 @@ Remove network-related functionality, as this requires NetworkManager.
 -    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
 -} catch(e) {
 -    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
--}
-+//try {
-+//    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
-+//} catch(e) {
-+//    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
-+//}
++if (Config.HAVE_NETWORK_MANAGER) {
++	try {
++	    STANDARD_STATUS_AREA_SHELL_IMPLEMENTATION['network'] = imports.ui.status.network.NMApplet;
++	} catch(e) {
++	    log('NMApplet is not supported. It is possible that your NetworkManager version is too old');
++	}
+ }
  
  const GDM_STATUS_AREA_ORDER = ['a11y', 'display', 'keyboard', 'volume', 'battery', 'powerMenu'];
- const GDM_STATUS_AREA_SHELL_IMPLEMENTATION = {
