@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/02 10:02:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/29 13:31:20 sthen Exp $
 
 COMMENT=	command-line interface to Icinga
 
-DISTNAME=	icli-0.42
+DISTNAME=	icli-0.43
 
 CATEGORIES=	net
 
