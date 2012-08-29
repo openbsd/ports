@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2012/08/18 22:52:31 avsm Exp $
+# $OpenBSD: Makefile,v 1.363 2012/08/29 09:54:23 jasper Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -40,7 +40,6 @@
      SUBDIR += groff
      SUBDIR += gsed
      SUBDIR += gtk-doc
-     SUBDIR += gtkaml
      SUBDIR += gtkspell
      SUBDIR += gtkspell3
      SUBDIR += gtranslator
