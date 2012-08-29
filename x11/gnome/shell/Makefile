@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/29 11:56:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/08/29 12:20:22 jasper Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.4.1
-REVISION=		5
+GNOME_VERSION=		3.4.2
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -66,7 +65,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--with-ca-certificates=/etc/ssl/cert.pem \
 			--without-systemd
 
-AUTOCONF_VERSION=	2.68
+AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.11
 BUILD_DEPENDS +=	devel/autoconf/${AUTOCONF_VERSION} \
 			devel/automake/${AUTOMAKE_VERSION} \
