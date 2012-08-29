@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2012/08/13 14:39:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.49 2012/08/29 07:07:24 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-2.15.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	R	0.0  \
 		Rlapack	30.0 \
@@ -96,8 +96,6 @@ FAKE_FLAGS=	PREFIX=${PREFIX} \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-
-CFLAGS+=	-fPIC
 
 SEPARATE_BUILD=	Yes
 
