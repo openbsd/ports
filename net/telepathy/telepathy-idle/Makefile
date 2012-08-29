@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2012/08/29 18:27:53 jasper Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -19,10 +19,5 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/py-twisted/words
 RUN_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

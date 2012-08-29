@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2012/08/29 18:27:53 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -29,7 +29,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection \
 			--enable-vala-bindings
 #CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

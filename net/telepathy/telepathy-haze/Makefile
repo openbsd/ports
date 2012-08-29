@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/29 17:50:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/08/29 18:27:53 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
@@ -20,8 +20,5 @@ LIB_DEPENDS=		net/pidgin,-libpurple \
 			net/telepathy/telepathy-glib
 
 MODPY_RUNDEP=		No
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
