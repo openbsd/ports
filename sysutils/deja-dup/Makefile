@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/08/29 14:10:18 jasper Exp $
+
+BROKEN=		needs fixing for vala 0.18
 
 SHARED_ONLY=	Yes
 
