@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2011/04/05 19:53:03 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2012/08/29 17:50:55 jasper Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -26,3 +26,5 @@ MAINTAINER?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 USE_GMAKE?=	Yes
 
 USE_LIBTOOL?=	Yes
+
+CONFIGURE_STYLE?=gnu

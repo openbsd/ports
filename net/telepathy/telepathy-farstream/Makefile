@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/15 09:48:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=		flexible communications framework, farstream component
 
@@ -20,7 +20,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		net/farstream \
 			net/telepathy/telepathy-glib>=0.17.5
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--enable-python

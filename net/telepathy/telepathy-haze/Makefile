@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2012/04/05 13:44:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
@@ -21,7 +21,6 @@ LIB_DEPENDS=		net/pidgin,-libpurple \
 
 MODPY_RUNDEP=		No
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

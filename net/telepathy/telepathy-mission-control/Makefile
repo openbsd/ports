@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/04/04 14:41:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=		net/telepathy/telepathy-glib>=0.18.0
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-static \
 			--disable-gtk-doc \

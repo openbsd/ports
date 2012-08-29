@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/04/03 09:27:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=		flexible communications framework, python bindings
 
@@ -18,8 +18,6 @@ RUN_DEPENDS=		devel/py-gobject \
 			textproc/libxslt \
 			x11/dbus-python \
 			x11/py-gtk2
-
-CONFIGURE_STYLE=	gnu
 
 USE_LIBTOOL=		No
 

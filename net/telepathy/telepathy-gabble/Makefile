@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/04/30 09:39:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -29,7 +29,6 @@ BUILD_DEPENDS +=	devel/py-twisted/words \
 # bin/telepathy-gabble-xmpp-console
 RUN_DEPENDS +=		devel/py-gobject3
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--disable-gtk-doc \
 			--disable-Werror \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2012/04/04 14:41:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2012/08/29 17:50:55 jasper Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		devel/libglade2 \
 			net/telepathy/telepathy-glib
 
-CONFIGURE_STYLE=	gnu
 USE_LIBTOOL=		No
 
 .include <bsd.port.mk>
