@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Printing_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+Do not access static members with instance references
+http://redmine.yorba.org/projects/shotwell/repository/revisions/f5d5190a6eab8242cfd6843562e6781128f5645e
+
+--- src/Printing.vala.orig	Tue Aug 28 10:36:49 2012
++++ src/Printing.vala	Tue Aug 28 10:37:02 2012
+@@ -1221,7 +1221,7 @@ public class PrintManager {
+     private void add_title_to_canvas(double x, double y, string title, PrintJob job, Gtk.PrintContext job_context) {
+         Cairo.Context dc = job_context.get_cairo_context();
+         double dpi = job.get_local_settings().get_content_ppi();
+-        var title_font_description = new Pango.FontDescription().from_string(job.get_local_settings().get_print_titles_font());
++        var title_font_description = Pango.FontDescription.from_string(job.get_local_settings().get_print_titles_font());
+         var title_layout = Pango.cairo_create_layout(dc);
+         Pango.Context context = title_layout.get_context();
+         Pango.cairo_context_set_resolution (context, dpi);

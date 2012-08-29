@@ -1,0 +1,27 @@
+$OpenBSD: patch-backends_telepathy_lib_tpf-persona-store-cache_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+From 887aab26f35f9ac2e9bf1baa92004b4c3ccafd3e Mon Sep 17 00:00:00 2001
+From: Erick Pérez Castellanos <erick.red@gmail.com>
+Date: Thu, 09 Aug 2012 18:54:54 +0000
+Subject: telepathy backend fixed to match last vala release.
+
+--- backends/telepathy/lib/tpf-persona-store-cache.vala.orig	Thu Dec 15 19:30:56 2011
++++ backends/telepathy/lib/tpf-persona-store-cache.vala	Wed Aug 29 08:27:48 2012
+@@ -71,7 +71,7 @@ internal class Tpf.PersonaStoreCache : Folks.ObjectCac
+       // Maximum version?
+       if (object_version == uint8.MAX)
+         {
+-          object_version = this._FILE_FORMAT_VERSION;
++          object_version = PersonaStoreCache._FILE_FORMAT_VERSION;
+         }
+ 
+       if (object_version == 1)
+@@ -134,7 +134,7 @@ internal class Tpf.PersonaStoreCache : Folks.ObjectCac
+ 
+   protected override uint8 get_serialised_object_version ()
+     {
+-      return this._FILE_FORMAT_VERSION;
++      return PersonaStoreCache._FILE_FORMAT_VERSION;
+     }
+ 
+   private Variant[] serialise_abstract_field_details (

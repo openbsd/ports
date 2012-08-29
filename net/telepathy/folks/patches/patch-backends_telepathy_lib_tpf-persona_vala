@@ -1,0 +1,27 @@
+$OpenBSD: patch-backends_telepathy_lib_tpf-persona_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+From 887aab26f35f9ac2e9bf1baa92004b4c3ccafd3e Mon Sep 17 00:00:00 2001
+From: Erick Pérez Castellanos <erick.red@gmail.com>
+Date: Thu, 09 Aug 2012 18:54:54 +0000
+Subject: telepathy backend fixed to match last vala release.
+
+--- backends/telepathy/lib/tpf-persona.vala.orig	Tue Apr 17 13:17:03 2012
++++ backends/telepathy/lib/tpf-persona.vala	Wed Aug 29 08:27:48 2012
+@@ -247,7 +247,7 @@ public class Tpf.Persona : Folks.Persona,
+    */
+   public override string[] linkable_properties
+     {
+-      get { return this._linkable_properties; }
++      get { return Tpf.Persona._linkable_properties; }
+     }
+ 
+   /**
+@@ -652,7 +652,7 @@ public class Tpf.Persona : Folks.Persona,
+       unowned string id = contact.get_identifier ();
+       var connection = contact.connection;
+       var account = connection.get_account ();
+-      var uid = this.build_uid (store.type_id, store.id, id);
++      var uid = Folks.Persona.build_uid (store.type_id, store.id, id);
+ 
+       Object (contact: contact,
+               display_id: id,

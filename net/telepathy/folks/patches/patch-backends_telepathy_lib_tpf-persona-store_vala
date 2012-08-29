@@ -1,0 +1,27 @@
+$OpenBSD: patch-backends_telepathy_lib_tpf-persona-store_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+From 887aab26f35f9ac2e9bf1baa92004b4c3ccafd3e Mon Sep 17 00:00:00 2001
+From: Erick Pérez Castellanos <erick.red@gmail.com>
+Date: Thu, 09 Aug 2012 18:54:54 +0000
+Subject: telepathy backend fixed to match last vala release.
+
+--- backends/telepathy/lib/tpf-persona-store.vala.orig	Tue Apr 17 13:47:11 2012
++++ backends/telepathy/lib/tpf-persona-store.vala	Wed Aug 29 08:27:48 2012
+@@ -409,7 +409,7 @@ public class Tpf.PersonaStore : Folks.PersonaStore
+     {
+       debug ("Removing store %s (%p)", this.id, this);
+       this._emit_personas_changed (null, this._persona_set);
+-      this._cache.clear_cache ();
++      this._cache.clear_cache.begin ();
+       this.removed ();
+     }
+ 
+@@ -1327,7 +1327,7 @@ public class Tpf.PersonaStore : Folks.PersonaStore
+               _("Extended information may only be set on the user's Telepathy contact."));
+         }
+ 
+-      var info_list = this._contact_info_set_to_list (info_set);
++      var info_list = PersonaStore._contact_info_set_to_list (info_set);
+       if (this.account.connection != null)
+         {
+           GLib.Error? error = null;

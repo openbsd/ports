@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_searches_SearchBoolean_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+Do not access static members with instance references
+http://redmine.yorba.org/projects/shotwell/repository/revisions/f5d5190a6eab8242cfd6843562e6781128f5645e
+
+--- src/searches/SearchBoolean.vala.orig	Tue Aug 28 10:35:24 2012
++++ src/searches/SearchBoolean.vala	Tue Aug 28 10:35:52 2012
+@@ -621,7 +621,7 @@ public class SearchConditionDate : SearchCondition {
+         DateTime date_one, DateTime date_two) {
+         this.search_type = search_type;
+         this.context = context;
+-        if (context != context.BETWEEN || date_two.compare(date_one) >= 1) {
++        if (context != Context.BETWEEN || date_two.compare(date_one) >= 1) {
+             this.date_one = date_one;
+             this.date_two = date_two;
+         } else {

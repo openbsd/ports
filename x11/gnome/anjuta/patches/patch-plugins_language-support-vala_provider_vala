@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_language-support-vala_provider_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+From 63d60f62495a94d7743c0328315a91abb3703f31 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Fri, 22 Jun 2012 05:27:21 +0000
+Subject: vala language support: update to Vala 0.18
+
+--- plugins/language-support-vala/provider.vala.orig	Sat Jul 28 11:35:54 2012
++++ plugins/language-support-vala/provider.vala	Wed Aug 29 08:51:33 2012
+@@ -69,7 +69,11 @@ public class ValaProvider : Object, IAnjuta.Provider {
+ 		var proposals = new GLib.List<IAnjuta.EditorAssistProposal?>();
+ 		foreach (var symbol in syms) {
+ 			if (symbol is Vala.LocalVariable
++#if VALA_0_18
++			    && symbol.source_reference.begin.line > editor.get_lineno())
++#else
+ 			    && symbol.source_reference.first_line > editor.get_lineno())
++#endif
+ 				continue;
+ 
+ 			var prop = IAnjuta.EditorAssistProposal();

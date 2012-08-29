@@ -1,0 +1,40 @@
+$OpenBSD: patch-plugins_language-support-vala_report_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+From 63d60f62495a94d7743c0328315a91abb3703f31 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Fri, 22 Jun 2012 05:27:21 +0000
+Subject: vala language support: update to Vala 0.18
+
+--- plugins/language-support-vala/report.vala.orig	Sat Jul 28 11:35:54 2012
++++ plugins/language-support-vala/report.vala	Wed Aug 29 08:51:33 2012
+@@ -41,17 +41,30 @@ public class AnjutaReport : Vala.Report {
+ 			if (e.source.file.filename.has_suffix (((IAnjuta.Document)editor).get_filename ())) {
+ 				if (ind != null) {
+ 					/* begin_iter should be one cell before to select the first character */
++#if VALA_0_18
++					var begin_iter = editor.get_line_begin_position (e.source.begin.line);
++					for (var i = 1; i < e.source.begin.column; i++)
++						begin_iter.next ();
++					var end_iter = editor.get_line_begin_position (e.source.end.line);
++					for (var i = 0; i < e.source.end.column; i++)
++						end_iter.next ();
++#else
+ 					var begin_iter = editor.get_line_begin_position (e.source.first_line);
+ 					for (var i = 1; i < e.source.first_column; i++)
+ 						begin_iter.next ();
+ 					var end_iter = editor.get_line_begin_position (e.source.last_line);
+ 					for (var i = 0; i < e.source.last_column; i++)
+ 						end_iter.next ();
++#endif
+ 					ind.set(begin_iter, end_iter, e.error ? IAnjuta.IndicableIndicator.CRITICAL :
+ 					                                        IAnjuta.IndicableIndicator.WARNING);
+ 				}
+ 				if (editor is IAnjuta.Markable) {
++#if VALA_0_18
++					mark.mark(e.source.begin.line, IAnjuta.MarkableMarker.MESSAGE, e.message);
++#else
+ 					mark.mark(e.source.first_line, IAnjuta.MarkableMarker.MESSAGE, e.message);
++#endif
+ 				}
+ 			}
+ 

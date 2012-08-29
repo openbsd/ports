@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/08/12 20:43:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2012/08/29 14:11:55 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.4.4
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -38,7 +39,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2
 WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
 WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
 WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
-WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.16 vte2_90
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.18 vte2_90
 WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += dbus-1 dbus-glib-1 javascriptcoregtk-3.0 magic
 WANTLIB += gcrypt gda-5.0 gnome-keyring gpg-error
@@ -79,6 +80,11 @@ CONFIGURE_ARGS+=	--disable-static \
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz
+
+# XXX: Remove when updating to the next release
+AUTOCONF_VERSION=	2.68
+CONFIGURE_STYLE=	autoconf
+######
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/pygtk.wiz.in \

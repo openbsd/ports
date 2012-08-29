@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_Photo_vala,v 1.1 2012/08/29 14:11:55 jasper Exp $
+
+Do not access static members with instance references
+http://redmine.yorba.org/projects/shotwell/repository/revisions/f5d5190a6eab8242cfd6843562e6781128f5645e
+
+--- src/Photo.vala.orig	Tue Aug 28 10:33:57 2012
++++ src/Photo.vala	Tue Aug 28 10:34:57 2012
+@@ -1748,13 +1748,13 @@ public abstract class Photo : PhotoSource, Dateable {
+     
+     // Also makes sense to freeze the SourceCollection during this operation.
+     public static void set_many_editable_file(Gee.Map<Photo, File> map) throws DatabaseError {
+-        PhotoTable.get_instance().begin_transaction();
++        DatabaseTable.begin_transaction();
+         
+         Gee.MapIterator<Photo, File> map_iter = map.map_iterator();
+         while (map_iter.next())
+             map_iter.get_key().set_editable_file(map_iter.get_value());
+-        
+-        PhotoTable.get_instance().commit_transaction();
++
++	DatabaseTable.commit_transaction();
+     }
+     
+     // Returns the file generating pixbufs, that is, the baseline if present, the backing

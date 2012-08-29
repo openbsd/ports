@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2012/04/18 17:22:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2012/08/29 14:11:55 jasper Exp $
 
 COMMENT-main=		people aggregation library
 COMMENT-tracker=	(meta-)tracker backend for folks
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.7.0
+REVISION=		0
 API_V=			33
 
 PKGNAME-main=		${DISTNAME}
