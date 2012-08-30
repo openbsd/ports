@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.39 2012/02/17 14:48:07 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.40 2012/08/30 02:47:53 william Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -336,9 +336,6 @@ phpMyAdmin/locale/be@latin/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/bg/
 phpMyAdmin/locale/bg/LC_MESSAGES/
 phpMyAdmin/locale/bg/LC_MESSAGES/phpmyadmin.mo
-phpMyAdmin/locale/bn/
-phpMyAdmin/locale/bn/LC_MESSAGES/
-phpMyAdmin/locale/bn/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ca/
 phpMyAdmin/locale/ca/LC_MESSAGES/
 phpMyAdmin/locale/ca/LC_MESSAGES/phpmyadmin.mo
@@ -390,15 +387,9 @@ phpMyAdmin/locale/it/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ja/
 phpMyAdmin/locale/ja/LC_MESSAGES/
 phpMyAdmin/locale/ja/LC_MESSAGES/phpmyadmin.mo
-phpMyAdmin/locale/ka/
-phpMyAdmin/locale/ka/LC_MESSAGES/
-phpMyAdmin/locale/ka/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/lt/
 phpMyAdmin/locale/lt/LC_MESSAGES/
 phpMyAdmin/locale/lt/LC_MESSAGES/phpmyadmin.mo
-phpMyAdmin/locale/mn/
-phpMyAdmin/locale/mn/LC_MESSAGES/
-phpMyAdmin/locale/mn/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/nb/
 phpMyAdmin/locale/nb/LC_MESSAGES/
 phpMyAdmin/locale/nb/LC_MESSAGES/phpmyadmin.mo
@@ -408,6 +399,9 @@ phpMyAdmin/locale/nl/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/pl/
 phpMyAdmin/locale/pl/LC_MESSAGES/
 phpMyAdmin/locale/pl/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/pt/
+phpMyAdmin/locale/pt/LC_MESSAGES/
+phpMyAdmin/locale/pt/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/pt_BR/
 phpMyAdmin/locale/pt_BR/LC_MESSAGES/
 phpMyAdmin/locale/pt_BR/LC_MESSAGES/phpmyadmin.mo
