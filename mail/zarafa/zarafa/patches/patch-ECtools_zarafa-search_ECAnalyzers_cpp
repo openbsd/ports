@@ -1,0 +1,54 @@
+$OpenBSD: patch-ECtools_zarafa-search_ECAnalyzers_cpp,v 1.1 2012/08/30 18:42:26 ajacoutot Exp $
+
+Fix buil with clucene-core >= 2.x
+
+--- ECtools/zarafa-search/ECAnalyzers.cpp.orig	Wed Aug  8 17:14:58 2012
++++ ECtools/zarafa-search/ECAnalyzers.cpp	Thu Aug 30 16:38:06 2012
+@@ -78,24 +78,24 @@ EmailFilter::~EmailFilter() {
+  * @param token Output token
+  * @return false if no more token was available
+  */
+-bool EmailFilter::next(lucene::analysis::Token *token) {
++lucene::analysis::Token *EmailFilter::next(lucene::analysis::Token *token) {
+ 	// See if we had any stored tokens
+ 	if(part < parts.size()) {
+ 		token->set(parts[part].c_str(), 0, 0, _T("<EMAIL>"));
+ 		token->setPositionIncrement(0);
+ 		part++;
+-		return true;
++		return token;
+ 	} else {
+ 		// No more stored token, get a new one
+ 		if(!input->next(token))
+-			return false;
++			return NULL;
+ 
+ 		// Split EMAIL tokens into the various parts
+ 		if(wcscmp(token->type(), L"<EMAIL>") == 0) {
+ 			// Split into user, domain, com
+-			parts = tokenize((std::wstring)token->_termText, (std::wstring)L".@");
++			parts = tokenize((std::wstring)token->termBuffer(), (std::wstring)L".@");
+ 			// Split into user, domain.com
+-			std::vector<std::wstring> moreparts = tokenize((std::wstring)token->_termText, (std::wstring)L"@");
++			std::vector<std::wstring> moreparts = tokenize((std::wstring)token->termBuffer(), (std::wstring)L"@");
+ 			parts.insert(parts.end(), moreparts.begin(), moreparts.end());
+ 			
+ 			// Only add parts once (unique parts)
+@@ -105,7 +105,7 @@ bool EmailFilter::next(lucene::analysis::Token *token)
+ 			part = 0;
+ 		}
+ 		
+-		return true;
++		return token;
+ 	}
+ }
+ 
+@@ -124,7 +124,7 @@ ECAnalyzer::~ECAnalyzer()
+  * @param reader Reader to read the bytestream to tokenize
+  * @return A TokenStream outputting the tokens to be indexed
+  */
+-lucene::analysis::TokenStream* ECAnalyzer::tokenStream(const TCHAR* fieldName, lucene::util::Reader* reader) 
++lucene::analysis::TokenStream *ECAnalyzer::tokenStream(const TCHAR *fieldName, CL_NS(util)::BufferedReader *reader)
+ {
+ 	lucene::analysis::TokenStream* ret = _CLNEW lucene::analysis::standard::StandardTokenizer(reader);
+ 	ret = _CLNEW lucene::analysis::standard::StandardFilter(ret,true);

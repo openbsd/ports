@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2012/08/30 14:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2012/08/30 18:42:26 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -6,6 +6,9 @@ COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
 PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
+
+REVISION-main=	0
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -33,53 +36,49 @@ MODPHP_DO_SAMPLE=mapi
 MESSAGE-main=	# empty
 UNMESSAGE-main=	# empty
 
-BUILD_DEPENDS=	textproc/xmlto \
-		net/curl \
-		devel/boost \
-		textproc/clucene
+BUILD_DEPENDS=	textproc/xmlto
+
+# libcurl is searched by configure but unused
+BUILD_DEPENDS += net/curl
 
 WANTLIB += ${MODGETTEXT_WANTLIB}
-WANTLIB += m pthread stdc++ z vmime
-WANTLIB += execinfo icudata icui18n icuuc uuid
+WANTLIB += m pthread stdc++ z vmime execinfo icudata icui18n icuuc uuid
+WANTLIB += boost_filesystem-mt boost_system-mt
 
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
-WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
-WANTLIB-main += crypto gssapi ical icalss krb5 lber ldap mysqlclient
-WANTLIB-main += ncursesw sasl2 ssl util uuid xml2 kyotocabinet
+WANTLIB-main += asn1 c com_err crypto gssapi ical icalss krb5 lber-2.4 ldap-2.4
+WANTLIB-main += mysqlclient ncursesw sasl2 ssl util uuid xml2 kyotocabinet
+WANTLIB-main += clucene-core clucene-shared
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
-		textproc/libxml \
 		databases/kyotocabinet \
 		databases/mysql \
 		databases/openldap \
-		devel/uuid \
+		devel/boost \
 		devel/libexecinfo \
 		devel/libvmime>=0.9.2p1 \
-		textproc/libical \
+		devel/uuid \
+		textproc/clucene>=2.3.3.4 \
 		textproc/icu4c \
-		devel/boost
+		textproc/libical \
+		textproc/libxml
 
 WANTLIB-web += ${WANTLIB}
-WANTLIB-web += boost_filesystem-mt boost_system-mt common_mapi common_util
-WANTLIB-web += freebusy ical icalmapi icalss inetmapi mapi
+WANTLIB-web += common_util freebusy ical icalmapi icalss inetmapi mapi
+WANTLIB-web += common_mapi
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
 		${MODGETTEXT_RUN_DEPENDS}
 
-# XXX  ../../common/.libs/libcommon_mapi.so.1.0: undefined reference to
-# `MAPILogonEx', `zarafa_dcgettext_wide' (and more)
-# see patch-provider_server_Makefile_in
-#     patch-ECtools_zarafa-cfgchecker_Makefile_in
-#     patch-ECtools_zarafa-cfgchecker_Makefile_in
-USE_LIBTOOL=	gnu
-LIBTOOL_FLAGS=	--tag=disable-static
-
+USE_LIBTOOL=	yes
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
+
+LIBTOOL_FLAGS=	--tag=disable-static
 
 MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
 		tools/python-scripts/update-resource-recipients \
@@ -123,6 +122,11 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # XXX in-tree heimdal does not provide krb5_free_unparsed_name()
 CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
+
+# force build with clucene >= 2.x
+CONFIGURE_ENV +=ac_cv_lib_clucene__ZN6lucene5index11IndexReader4openEPKc=yes
+MAKE_FLAGS +=	CLUCENE_CFLAGS="$$(pkg-config --cflags libclucene-core)" \
+		CLUCENE_LIBS="$$(pkg-config --libs libclucene-core)"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \
