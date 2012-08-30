@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_contribs-lib_CMakeLists_txt,v 1.1 2012/08/30 18:41:09 ajacoutot Exp $
+
+https://sourceforge.net/tracker/index.php?func=detail&aid=3392466&group_id=80013&atid=558446
+
+--- src/contribs-lib/CMakeLists.txt.orig	Thu Mar 17 01:21:07 2011
++++ src/contribs-lib/CMakeLists.txt	Mon Aug  6 15:37:47 2012
+@@ -106,9 +106,26 @@ add_library(clucene-contribs-lib SHARED
+ )
+ TARGET_LINK_LIBRARIES(clucene-contribs-lib ${clucene_contrib_extra_libs})
+ 
++#install public headers.
++FOREACH(file ${HEADERS})
++	get_filename_component(apath ${file} PATH)
++	get_filename_component(aname ${file} NAME)
++	file(RELATIVE_PATH relpath ${CMAKE_SOURCE_DIR}/src/contribs-lib ${apath})
++	IF ( NOT aname MATCHES "^_.*" )
++		install(FILES ${file} 
++		        DESTINATION include/${relpath}
++		        COMPONENT development)
++	ENDIF ( NOT aname MATCHES "^_.*" )
++ENDFOREACH(file)
++
+ #set properties on the libraries
+ SET_TARGET_PROPERTIES(clucene-contribs-lib PROPERTIES
+     VERSION ${CLUCENE_VERSION}
+     SOVERSION ${CLUCENE_SOVERSION}
+     COMPILE_DEFINITIONS_DEBUG _DEBUG
+ )
++
++#and install library
++install(TARGETS clucene-contribs-lib 
++        DESTINATION ${LIB_DESTINATION}  
++        COMPONENT runtime )

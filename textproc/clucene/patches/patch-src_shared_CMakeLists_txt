@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_shared_CMakeLists_txt,v 1.1 2012/08/30 18:41:09 ajacoutot Exp $
+
+http://clucene.git.sourceforge.net/git/gitweb.cgi?p=clucene%2Fclucene;a=commitdiff_plain;h=772481ca94071ddfe65102a451926e4f9aeb4d2c;hp=a834f87bad3543b2a0331cef7202c15ded4245be
+
+--- src/shared/CMakeLists.txt.orig	Thu Mar 17 01:21:07 2011
++++ src/shared/CMakeLists.txt	Mon Aug  6 15:42:43 2012
+@@ -42,7 +42,7 @@ INCLUDE (CheckAtomicFunctions)
+ find_package(ZLIB)
+ IF ( ZLIB_FOUND )
+   SET ( EXTRA_LIBS ${EXTRA_LIBS} ${ZLIB_LIBRARY} )
+-ELSEIF ( ZLIB_FOUND )
++ELSE ( ZLIB_FOUND )
+   MESSAGE( "ZLIB not found, using local: ${clucene-ext_SOURCE_DIR}/zlib" )
+   SET(ZLIB_INCLUDE_DIR ${clucene-ext_SOURCE_DIR}/zlib )
+   SET(ZLIB_LIBRARY ${clucene-ext_BINARY_DIR})

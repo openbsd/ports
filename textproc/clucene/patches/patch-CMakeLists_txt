@@ -1,0 +1,15 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/08/30 18:41:09 ajacoutot Exp $
+
+https://sourceforge.net/tracker/index.php?func=detail&aid=3392466&group_id=80013&atid=558446
+
+--- CMakeLists.txt.orig	Thu Mar 17 01:21:07 2011
++++ CMakeLists.txt	Mon Aug  6 15:37:47 2012
+@@ -163,7 +163,7 @@ IF ( BUILD_CONTRIBS )
+   SET(BUILD_CONTRIBS_LIB 1)
+ ENDIF ( BUILD_CONTRIBS )
+ IF ( BUILD_CONTRIBS_LIB )
+-  ADD_SUBDIRECTORY (src/contribs-lib EXCLUDE_FROM_ALL)
++  ADD_SUBDIRECTORY (src/contribs-lib)
+ ENDIF ( BUILD_CONTRIBS_LIB )
+ 
+ 
