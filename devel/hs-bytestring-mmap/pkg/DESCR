@@ -1,0 +1,3 @@
+Wrapper to mmap(2), allowing files or devices to be lazily loaded
+into memory as strict or lazy ByteStrings, using the virtual memory
+subsystem to do on-demand loading.
