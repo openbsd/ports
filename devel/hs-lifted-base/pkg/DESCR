@@ -1,0 +1,2 @@
+lifted-base exports IO operations from the base library lifted to
+any instance of 'MonadBase' or 'MonadBaseControl'.
