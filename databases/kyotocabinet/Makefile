@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/29 17:38:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/30 09:19:00 ajacoutot Exp $
 
 COMMENT=	straightforward implementation of DBM
 
@@ -36,6 +36,11 @@ FLAVOR?=
 CONFIGURE_ARGS += --enable-opt
 .else
 CONFIGURE_ARGS += --disable-opt
+# i386 still need some optimized instructions
+# undefined reference to `__sync_bool_compare_and_swap_8' ...
+.if ${MACHINE_ARCH} == "i386"
+CXXFLAGS += -march=i586
+.endif
 .endif
 
 pre-configure:
