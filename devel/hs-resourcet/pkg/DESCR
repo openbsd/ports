@@ -1,0 +1,4 @@
+The Resource transformer keeps track of all registered actions, and
+calls them upon exit (via 'runResourceT'). Actions may be registered
+via 'register', or resources may be allocated atomically via
+'allocate'. allocate corresponds closely to bracket.
