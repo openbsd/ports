@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/08/11 22:55:39 pascal Exp $
+# $OpenBSD: Makefile,v 1.61 2012/08/30 20:54:59 pascal Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=		${GCCARCH} --with-pop --with-system-malloc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				  -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="${ELF_TOOLCHAIN:L:S/yes/-Z/:S/no//} \
-				 -L${LOCALBASE}/lib -fno-pie"
+				 -L${LOCALBASE}/lib -nopie"
 CFLAGS +=		-fno-pie
 
 MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}"

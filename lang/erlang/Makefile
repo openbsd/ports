@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/07/18 13:44:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2012/08/30 20:54:59 pascal Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -39,13 +39,16 @@ CONFIGURE_ARGS=	--disable-jinterface	\
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ENV=	LDFLAGS="-pthread"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION=2.59
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir
 
 .if ${MACHINE_ARCH} == i386
 CONFIGURE_ARGS+=	--enable-ethread-pre-pentium4-compatibility
+.elif ${MACHINE_ARCH} == sparc64
+CFLAGS+=		-fno-pie
+LDFLAGS+=		-nopie
 .endif
 
 MAKE_ENV+=	DESTDIR=$(DESTDIR)

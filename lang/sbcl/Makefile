@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/27 18:03:32 krw Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/30 20:54:59 pascal Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
@@ -51,7 +51,7 @@ USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
 			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info \
-			LINKFLAGS="-fno-pie"
+			LINKFLAGS="-nopie" LDFLAGS="-nopie"
 CFLAGS +=		-fno-pie
 
 # Upstream asks that packagers append something like this to the
