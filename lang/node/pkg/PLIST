@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2012/08/23 17:29:44 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/08/30 01:13:32 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -288,16 +288,12 @@ lib/node_modules/minimatch/README.md
 lib/node_modules/minimatch/minimatch.js
 lib/node_modules/minimatch/package.json
 lib/node_modules/mkdirp/
-lib/node_modules/mkdirp/.gitignore.orig
-lib/node_modules/mkdirp/.gitignore.rej
 lib/node_modules/mkdirp/.npmignore
 lib/node_modules/mkdirp/.travis.yml
 lib/node_modules/mkdirp/LICENSE
 lib/node_modules/mkdirp/README.markdown
 lib/node_modules/mkdirp/examples/
 lib/node_modules/mkdirp/examples/pow.js
-lib/node_modules/mkdirp/examples/pow.js.orig
-lib/node_modules/mkdirp/examples/pow.js.rej
 lib/node_modules/mkdirp/index.js
 lib/node_modules/mkdirp/package.json
 lib/node_modules/node-gyp/
@@ -387,12 +383,6 @@ lib/node_modules/node-gyp/lib/node-gyp.js
 lib/node_modules/node-gyp/lib/rebuild.js
 lib/node_modules/node-gyp/lib/remove.js
 lib/node_modules/node-gyp/package.json
-lib/node_modules/node-uuid/
-lib/node_modules/node-uuid/.npmignore
-lib/node_modules/node-uuid/LICENSE.md
-lib/node_modules/node-uuid/README.md
-lib/node_modules/node-uuid/package.json
-lib/node_modules/node-uuid/uuid.js
 lib/node_modules/nopt/
 lib/node_modules/nopt/.npmignore
 lib/node_modules/nopt/LICENSE
@@ -421,7 +411,6 @@ lib/node_modules/npm-registry-client/lib/unpublish.js
 lib/node_modules/npm-registry-client/lib/upload.js
 lib/node_modules/npm-registry-client/package.json
 lib/node_modules/npm/.npmignore
-lib/node_modules/npm/.travis.yml
 lib/node_modules/npm/AUTHORS
 lib/node_modules/npm/LICENSE
 lib/node_modules/npm/Makefile
@@ -487,6 +476,7 @@ lib/node_modules/npm/doc/cli/changelog.md
 lib/node_modules/npm/doc/cli/coding-style.md
 lib/node_modules/npm/doc/cli/completion.md
 lib/node_modules/npm/doc/cli/config.md
+lib/node_modules/npm/doc/cli/dedupe.md
 lib/node_modules/npm/doc/cli/deprecate.md
 lib/node_modules/npm/doc/cli/developers.md
 lib/node_modules/npm/doc/cli/disputes.md
@@ -584,6 +574,7 @@ lib/node_modules/npm/html/doc/changelog.html
 lib/node_modules/npm/html/doc/coding-style.html
 lib/node_modules/npm/html/doc/completion.html
 lib/node_modules/npm/html/doc/config.html
+lib/node_modules/npm/html/doc/dedupe.html
 lib/node_modules/npm/html/doc/deprecate.html
 lib/node_modules/npm/html/doc/developers.html
 lib/node_modules/npm/html/doc/disputes.html
@@ -646,6 +637,7 @@ lib/node_modules/npm/lib/build.js
 lib/node_modules/npm/lib/cache.js
 lib/node_modules/npm/lib/completion.js
 lib/node_modules/npm/lib/config.js
+lib/node_modules/npm/lib/dedupe.js
 lib/node_modules/npm/lib/deprecate.js
 lib/node_modules/npm/lib/docs.js
 lib/node_modules/npm/lib/edit.js
@@ -719,6 +711,7 @@ lib/node_modules/npm/man/man1/
 @man lib/node_modules/npm/man/man1/coding-style.1
 @man lib/node_modules/npm/man/man1/completion.1
 @man lib/node_modules/npm/man/man1/config.1
+@man lib/node_modules/npm/man/man1/dedupe.1
 @man lib/node_modules/npm/man/man1/deprecate.1
 @man lib/node_modules/npm/man/man1/developers.1
 @man lib/node_modules/npm/man/man1/disputes.1
@@ -838,7 +831,6 @@ lib/node_modules/npm/node_modules/lru-cache
 lib/node_modules/npm/node_modules/minimatch
 lib/node_modules/npm/node_modules/mkdirp
 lib/node_modules/npm/node_modules/node-gyp
-lib/node_modules/npm/node_modules/node-uuid
 lib/node_modules/npm/node_modules/nopt
 lib/node_modules/npm/node_modules/npm-registry-client
 lib/node_modules/npm/node_modules/npmconf
@@ -926,7 +918,6 @@ lib/node_modules/request/
 lib/node_modules/request/LICENSE
 lib/node_modules/request/README.md
 lib/node_modules/request/aws.js
-lib/node_modules/request/aws2.js
 lib/node_modules/request/forever.js
 lib/node_modules/request/main.js
 lib/node_modules/request/mimetypes.js
@@ -958,6 +949,8 @@ lib/node_modules/request/tests/test-cookie.js
 lib/node_modules/request/tests/test-cookiejar.js
 lib/node_modules/request/tests/test-defaults.js
 lib/node_modules/request/tests/test-errors.js
+lib/node_modules/request/tests/test-follow-all-303.js
+lib/node_modules/request/tests/test-follow-all.js
 lib/node_modules/request/tests/test-headers.js
 lib/node_modules/request/tests/test-httpModule.js
 lib/node_modules/request/tests/test-https-strict.js
@@ -966,10 +959,10 @@ lib/node_modules/request/tests/test-oauth.js
 lib/node_modules/request/tests/test-params.js
 lib/node_modules/request/tests/test-pipes.js
 lib/node_modules/request/tests/test-pool.js
+lib/node_modules/request/tests/test-protocol-changing-redirect.js
 lib/node_modules/request/tests/test-proxy.js
 lib/node_modules/request/tests/test-qs.js
 lib/node_modules/request/tests/test-redirect.js
-lib/node_modules/request/tests/test-s3.js
 lib/node_modules/request/tests/test-timeout.js
 lib/node_modules/request/tests/test-toJSON.js
 lib/node_modules/request/tests/test-tunnel.js
