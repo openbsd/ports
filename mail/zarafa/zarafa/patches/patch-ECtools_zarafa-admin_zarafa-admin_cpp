@@ -1,0 +1,17 @@
+$OpenBSD: patch-ECtools_zarafa-admin_zarafa-admin_cpp,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
+--- ECtools/zarafa-admin/zarafa-admin.cpp.orig	Wed Aug 29 15:19:18 2012
++++ ECtools/zarafa-admin/zarafa-admin.cpp	Wed Aug 29 14:40:35 2012
+@@ -2739,11 +2739,13 @@ int main(int argc, char* argv[])
+ 		case OPT_UTF8: {
+ 			// set early, so other arguments are parsed in this charset.
+ 			std::string locale;
++#ifndef __OpenBSD__
+ 			if (!forceUTF8Locale(false, &locale)) {
+ 				cerr << "Your system does not have the '" << locale << "' locale installed." << endl;
+ 				cerr << "Please install this locale before creating new users." << endl;
+ 				return 1;
+ 			}
++#endif
+ 			break;
+ 		}
+ 		case OPT_FORCE_RESYNC:

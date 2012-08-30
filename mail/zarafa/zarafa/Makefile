@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2012/08/25 10:17:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.137 2012/08/30 14:28:22 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,22 +7,21 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	7
-REVISION-web=	2
-
 CATEGORIES=	mail www productivity
 
-SHARED_LIBS +=  mapi                 2.0      # 0.0
-SHARED_LIBS +=  zarafaclient         2.0      # 0.0
-SHARED_LIBS +=  icalmapi             2.0      # 1.0
-SHARED_LIBS +=  inetmapi             2.0      # 1.0
-SHARED_LIBS +=  archiver             1.0      # 0.0
-SHARED_LIBS +=  common_util          2.0      # 1.0
-SHARED_LIBS +=  common_mapi          2.0      # 1.0
-SHARED_LIBS +=  common_ssl           2.0      # 1.0
-SHARED_LIBS +=  freebusy             2.0      # 1.0
-SHARED_LIBS +=  zarafasync           2.0      # 1.0
-SHARED_LIBS +=  zarafacontacts       0.0      # 0.0
+SHARED_LIBS +=  common_util          2.0      # .0.0
+SHARED_LIBS +=  common_mapi          2.0      # .0.0
+SHARED_LIBS +=  common_ssl           2.0      # .0.0
+SHARED_LIBS +=  common_service       2.0      # .0.0
+SHARED_LIBS +=  freebusy             2.0      # .0.0
+SHARED_LIBS +=  mapi                 2.0      # .0.0
+SHARED_LIBS +=  zarafasync           2.0      # .0.0
+SHARED_LIBS +=  zarafaclient         2.0      # .0.0
+SHARED_LIBS +=  zarafacontacts       0.0      # .0.0
+SHARED_LIBS +=  icalmapi             2.0      # .1.0
+SHARED_LIBS +=  inetmapi             2.0      # .1.0
+SHARED_LIBS +=  archiver             1.0      # .0.0
+SHARED_LIBS +=  archiver-core        0.0      # .0.0
 
 MULTI_PACKAGES=	-main -web
 
@@ -46,13 +45,14 @@ WANTLIB += execinfo icudata icui18n icuuc uuid
 WANTLIB-main += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
 WANTLIB-main += crypto gssapi ical icalss krb5 lber ldap mysqlclient
-WANTLIB-main += ncursesw sasl2 ssl util uuid xml2
+WANTLIB-main += ncursesw sasl2 ssl util uuid xml2 kyotocabinet
 
 RUN_DEPENDS-main=${MODGETTEXT_RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS} \
 		textproc/catdoc
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		textproc/libxml \
+		databases/kyotocabinet \
 		databases/mysql \
 		databases/openldap \
 		devel/uuid \
@@ -66,7 +66,7 @@ WANTLIB-web += ${WANTLIB}
 WANTLIB-web += boost_filesystem-mt boost_system-mt common_mapi common_util
 WANTLIB-web += freebusy ical icalmapi icalss inetmapi mapi
 
-LIB_DEPENDS-web= ${BASE_PKGPATH}>=7.0.0
+LIB_DEPENDS-web= ${BASE_PKGPATH}>=${V}
 RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
 		${MODGETTEXT_RUN_DEPENDS}
 
@@ -82,7 +82,10 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
 MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
-		installer/linux/zarafa7-upgrade
+		tools/python-scripts/update-resource-recipients \
+		installer/linux/zarafa7-upgrade \
+		ECtools/zarafa-utils/zarafa-mailbox-permissions \
+		ECtools/zarafa-utils/zarafa-set-oof
 
 WEBROOT=	/var/www
 
@@ -101,15 +104,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--disable-perl \
 		--with-mapi-configdir=${SYSCONFDIR}/mapi \
 		--with-userscript-prefix=${SYSCONFDIR}/zarafa/userscripts \
 		--with-quotatemplate-prefix=${SYSCONFDIR}/zarafa/quotamail \
-		--enable-dependency-tracking \
+		--with-searchscripts-prefix=${SYSCONFDIR}/zarafa/searchscripts \
 		--enable-release \
 		--enable-oss \
 		--enable-unicode \
 		--enable-python \
+		--enable-icu \
 		--with-distro=openbsd \
 		--with-vmime-prefix=${LOCALBASE}/include \
 		--with-ical-prefix=${LOCALBASE}/include \
@@ -124,7 +127,7 @@ CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \
 		QUOTATEMPLATEDIR=${PREFIX}/share/examples/zarafa/quotamail \
-		INDEXERSCRIPTSDIR=${PREFIX}/share/examples/zarafa/indexerscripts \
+		SEARCHSCRIPTSDIR=${PREFIX}/share/examples/zarafa/searchscripts \
 		MAPICONFIGDIR=${PREFIX}/share/examples/zarafa/mapi
 
 SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
@@ -146,8 +149,7 @@ pre-configure:
 	for i in ${SUB_SCRIPTS}; do \
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
-		${WRKSRC}/spooler/DAgent.cpp \
-		${WRKSRC}/installer/linux/zarafa-client-update.cron
+		${WRKSRC}/spooler/{DAgent,Spooler}.cpp
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \
@@ -155,7 +157,7 @@ pre-configure:
 		-e 's,ssl-certificate.sh,ssl-certificates.sh,g' \
 		${WRKSRC}/doc/manual.xml
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \
-		${WRKSRC}/installer/indexerscripts/{attachments_parser,zmktemp}
+		${WRKSRC}/installer/searchscripts/{attachments_parser,zmktemp}
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
@@ -194,8 +196,7 @@ post-install:
 	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
 		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODPHP_DO_SAMPLE}.ini
 	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
-	mv ${PREFIX}/share/examples/cron.daily/zarafa-client-update \
-		${PREFIX}/share/examples/zarafa/
+	rm ${PREFIX}/share/examples/cron.daily/zarafa-client-update
 	rm ${PREFIX}/share/examples/zarafa/unix.cfg
 	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh
 	rmdir ${PREFIX}/share/doc/{zarafa/example-config,zarafa-gateway}
@@ -212,9 +213,12 @@ post-install:
 		man/man1/zarafa-report.1 \
 		man/man1/za-aclsync.1 \
 		man/man1/zarafa-msr.1 \
+		man/man5/zarafa-ldapms.cfg.5 \
 		man/man5/zarafa-msr.cfg.5 \
 		man/man5/zarafa-backup.cfg.5
 	rmdir ${PREFIX}/share/examples/zarafa/report-ca
+	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}/plugins
+	rmdir ${WRKINST}/var/lib/zarafa/{dagent,spooler}
 	rmdir ${WRKINST}/var/lib/zarafa/report
 	rmdir ${WRKINST}/var/lib/zarafa/
 	rmdir ${WRKINST}/var/lib/

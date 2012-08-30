@@ -1,12 +1,9 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.13 2012/02/27 19:01:34 ajacoutot Exp $
-
-Needs newlocale(3).
-
---- common/ECLogger.cpp.orig	Thu Dec 22 01:02:33 2011
-+++ common/ECLogger.cpp	Thu Dec 22 12:14:19 2011
-@@ -55,6 +55,10 @@
- #include <assert.h>
+$OpenBSD: patch-common_ECLogger_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
+--- common/ECLogger.cpp.orig	Wed Aug  8 17:14:57 2012
++++ common/ECLogger.cpp	Wed Aug 29 13:27:02 2012
+@@ -56,6 +56,10 @@
  #include "stringutil.h"
+ #include "charset/localeutil.h"
  
 +#ifdef __OpenBSD__
 +#include <signal.h>
@@ -15,12 +12,13 @@ Needs newlocale(3).
  #include "config.h"
  #if HAVE_SYSLOG_H
  #include <syslog.h>
-@@ -78,15 +82,19 @@ ECLogger::ECLogger(int max_ll) {
+@@ -79,18 +83,22 @@ ECLogger::ECLogger(int max_ll) {
  	max_loglevel = max_ll;
  	msgbuffer = new char[_LOG_BUFSIZE];
  	// get system locale for time, NULL is returned if locale was not found.
 +#ifndef __OpenBSD__
- 	timelocale = createlocale(LC_TIME, "");
+ 	timelocale = createlocale(LC_TIME, "C");
+ 	datalocale = createUTF8Locale();
 +#endif
  	prefix = LP_NONE;
  	m_ulRef = 1;
@@ -31,11 +29,13 @@ Needs newlocale(3).
 +#ifndef __OpenBSD__
  	if (timelocale)
  		freelocale(timelocale);
+ 	if (datalocale)
+ 		freelocale(datalocale);
 +#endif
- 
  	pthread_mutex_destroy(&msgbuflock);
  }
-@@ -101,9 +109,11 @@ char* ECLogger::MakeTimestamp() {
+ 
+@@ -104,9 +112,11 @@ char* ECLogger::MakeTimestamp() {
  
  	localtime_r(&now, &local);
  
@@ -47,7 +47,7 @@ Needs newlocale(3).
  		strftime(timestring, _LOG_TSSIZE, "%c", &local);
  
  	return timestring;
-@@ -224,7 +234,7 @@ void ECLogger_File::DoPrefix() {
+@@ -230,7 +240,7 @@ void ECLogger_File::DoPrefix() {
  	if (timestamp)
  		fnPrintf(log, "%s: ", MakeTimestamp());
  	if (prefix == LP_TID)
@@ -56,7 +56,31 @@ Needs newlocale(3).
  	else if (prefix == LP_PID)
  		fnPrintf(log, "[%5d] ", getpid());
  }
-@@ -475,7 +485,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
+@@ -290,7 +300,11 @@ void ECLogger_File::Log(int loglevel, const char *form
+ 
+ void ECLogger_File::LogVA(int loglevel, const char *format, va_list& va) {
+ 	pthread_mutex_lock(&msgbuflock);
++#ifdef __OpenBSD__
++	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, va);
++#else
+ 	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, datalocale, va);
++#endif
+ 
+ 	pthread_mutex_lock(&filelock);
+ 
+@@ -433,7 +447,11 @@ void ECLogger_Tee::LogVA(int loglevel, const char *for
+ 	LoggerList::iterator iLogger;
+ 
+ 	pthread_mutex_lock(&msgbuflock);
++#ifdef __OpenBSD__
++	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, va);
++#else
+ 	_vsnprintf_l(msgbuffer, _LOG_BUFSIZE, format, datalocale, va);
++#endif
+ 
+ 	for (iLogger = m_loggers.begin(); iLogger != m_loggers.end(); ++iLogger)
+ 		(*iLogger)->Log(loglevel, std::string(msgbuffer));
+@@ -482,7 +500,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -64,8 +88,8 @@ Needs newlocale(3).
 +		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (uintptr_t)pthread_self());
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
- 	off += len;
-@@ -509,7 +519,7 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
+ 	if (len < 0) len = 0;
+@@ -518,7 +536,7 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
  	off += 1;
  
  	if (prefix == LP_TID)
@@ -73,8 +97,8 @@ Needs newlocale(3).
 +		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (uintptr_t)pthread_self());
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
- 	off += len;
-@@ -586,9 +596,13 @@ namespace PrivatePipe {
+ 	if (len < 0) len = 0;
+@@ -598,15 +616,21 @@ namespace PrivatePipe {
  		int l;
  		bool bNPTL = true;
  
@@ -88,3 +112,11 @@ Needs newlocale(3).
  		
  		m_lpConfig = lpConfig;
  		m_lpFileLogger = lpFileLogger;
+ 
++#ifndef __OpenBSD__
+ 		// since we forked, set it for the complete process
+ 		forceUTF8Locale(false, NULL);
++#endif
+ 
+ 		if (bNPTL) {
+ 			sigemptyset(&signal_mask);

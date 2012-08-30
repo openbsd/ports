@@ -1,24 +1,15 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.14 2012/05/05 16:56:17 ajacoutot Exp $
-
-XXX see USE_LIBTOOL=gnu in the port Makefile
-../../common/.libs/libcommon_mapi.so.X.X:
-undefined reference to `MAPILogonEx' (and more)
-
---- provider/server/Makefile.in.orig	Thu May  3 11:28:42 2012
-+++ provider/server/Makefile.in	Sat May  5 17:39:39 2012
-@@ -296,12 +296,13 @@ zarafa_server_LDADD = \
- 	${top_builddir}/provider/soap/libgsoap.la								\
- 	${top_builddir}/provider/soap/libsoapserver.la							\
- 	${top_builddir}/provider/common/libzarafacommon.la						\
--	${top_builddir}/common/libcommon_util.la								\
-+	${top_builddir}/mapi4linux/src/libmapi.la								\
+$OpenBSD: patch-provider_server_Makefile_in,v 1.15 2012/08/30 14:28:22 ajacoutot Exp $
+--- provider/server/Makefile.in.orig	Wed Aug  8 16:35:44 2012
++++ provider/server/Makefile.in	Thu Aug 30 13:45:04 2012
+@@ -336,9 +336,10 @@ zarafa_server_LDADD = \
+ 	${top_builddir}/common/libcommon_util.la								\
  	${top_builddir}/common/libcommon_mapi.la								\
-+	${top_builddir}/common/libcommon_util.la								\
  	${top_builddir}/common/libcommon_ssl.la									\
++	${top_builddir}/mapi4linux/src/libmapi.la \
  	$(PROG_LIBS)															\
  	$(BOOST_FILESYSTEM_LIBS) $(BOOST_SYSTEM_LIBS) $(ICU_LIBS) $(DL_LIBS)	\
 -	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS) $(TCMALLOC_LIBS) -lrt
-+	$(MYSQL_LIBS) $(SSL_LIBS) $(PAM_LIBS) $(KRB5_LIBS) $(TCMALLOC_LIBS)
++	$(SSL_LIBS) $(TCMALLOC_LIBS)
  
  zarafa_server_SOURCES = ECServer.cpp  \
  						ECSoapServerConnection.h ECSoapServerConnection.cpp \

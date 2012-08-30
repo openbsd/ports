@@ -1,10 +1,83 @@
-$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.23 2012/05/05 16:56:17 ajacoutot Exp $
+$OpenBSD: patch-provider_libserver_ZarafaCmd_cpp,v 1.24 2012/08/30 14:28:22 ajacoutot Exp $
 
 OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 
---- provider/libserver/ZarafaCmd.cpp.orig	Thu May  3 16:37:13 2012
-+++ provider/libserver/ZarafaCmd.cpp	Sat May  5 18:28:41 2012
-@@ -799,12 +799,12 @@ double GetTimeOfDay();
+--- provider/libserver/ZarafaCmd.cpp.orig	Wed Aug  8 17:14:58 2012
++++ provider/libserver/ZarafaCmd.cpp	Wed Aug 29 14:18:22 2012
+@@ -545,10 +545,10 @@ int ns__logon(struct soap *soap, char *user, char *pas
+     ECLicenseClient *lpLicenseClient = NULL;
+     unsigned int ulLicenseResponse;
+     unsigned char *lpLicenseResponse = NULL;
+-	struct timespec startTimes = {0}, endTimes = {0};
++	struct tms	startTimes, endTimes;
+ 	double          dblStart = GetTimeOfDay();
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &startTimes);
++	times(&startTimes);
+ 
+     LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020llu: S logon", sessionID);
+ 
+@@ -645,9 +645,9 @@ exit:
+ 
+ 	lpsResponse->er = er;
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &endTimes);
++	times(&endTimes);
+ 
+-	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020llu: E logon 0x%08x %f %f", sessionID, er, timespec2dbl(endTimes) - timespec2dbl(startTimes), GetTimeOfDay() - dblStart);
++	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020llu: E logon 0x%08x %f %f", sessionID, er, (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, GetTimeOfDay() - dblStart);
+ 
+ 	return SOAP_OK;
+ }
+@@ -665,10 +665,10 @@ int ns__ssoLogon(struct soap *soap, ULONG64 ulSessionI
+ 	xsd__base64Binary *lpOutput = NULL;
+ 	char*			lpszEnabled = NULL;
+ 	ECLicenseClient*lpLicenseClient = NULL;
+-	struct timespec startTimes = {0}, endTimes = {0};
++	struct tms	startTimes, endTimes;
+ 	double          dblStart = GetTimeOfDay();
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &startTimes);
++	times(&startTimes);
+ 
+     LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S ssoLogon", ulSessionId);
+ 
+@@ -816,9 +816,9 @@ exit:
+ nosso:
+ 	lpsResponse->er = er;
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &endTimes);
++	times(&endTimes);
+ 
+-	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": E ssoLogon 0x%08x %f %f", ulSessionId, er, timespec2dbl(endTimes) - timespec2dbl(startTimes), GetTimeOfDay() - dblStart);
++	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": E ssoLogon 0x%08x %f %f", ulSessionId, er, (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, GetTimeOfDay() - dblStart);
+ 
+ 	return SOAP_OK;
+ }
+@@ -830,10 +830,10 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
+ {
+ 	ECRESULT	er = erSuccess;
+ 	ECSession 	*lpecSession = NULL;
+-	struct timespec startTimes = {0}, endTimes = {0};
++	struct tms	startTimes, endTimes;
+ 	double          dblStart = GetTimeOfDay();
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &startTimes);
++	times(&startTimes);
+ 
+     LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S logoff", ulSessionId);
+ 
+@@ -855,20 +855,20 @@ int ns__logoff(struct soap *soap, ULONG64 ulSessionId,
+ exit:
+     *result = er;
+ 
+-	clock_gettime(CLOCK_THREAD_CPUTIME_ID, &endTimes);
+-	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": E logoff 0x%08x %f %f", ulSessionId, 0, timespec2dbl(endTimes) - timespec2dbl(startTimes), GetTimeOfDay() - dblStart);
++	times(&endTimes);
++	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": E logoff 0x%08x %f %f", ulSessionId, 0, (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, GetTimeOfDay() - dblStart);
+ 
+     return SOAP_OK;
+ }
  
  #define SOAP_ENTRY_FUNCTION_HEADER(resultvar, fname) \
      ECRESULT		er = erSuccess; \
@@ -13,13 +86,13 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
      double			dblStart = GetTimeOfDay(); \
      ECSession		*lpecSession = NULL; \
      unsigned int 	*lpResultVar = &resultvar; \
-     char 			*szFname = #fname; \
+ 	char            *szFname = #fname; \
 -    clock_gettime(CLOCK_THREAD_CPUTIME_ID, &startTimes); \
 +    times(&startTimes); \
- 	SOAP_CALLBACK(soap, pthread_self(), (std::string) "[" + PrettyIP(soap->ip) + "] " + #fname); \
- 	g_lpSessionManager->GetLogger()->Log(EC_LOGLEVEL_DEBUG, "%llu: S %s", ulSessionId, szFname); \
+ 	LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": S %s", ulSessionId, szFname); \
  	er = g_lpSessionManager->ValidateSession(soap, ulSessionId, &lpecSession, true);\
-@@ -816,12 +816,12 @@ double GetTimeOfDay();
+ 	const bool bSupportUnicode = (er == erSuccess ? (lpecSession->GetCapabilities() & ZARAFA_CAP_UNICODE) != 0 : false); \
+@@ -880,12 +880,12 @@ exit:
  #define SOAP_ENTRY_FUNCTION_FOOTER \
  __soapentry_exit: \
      *lpResultVar = er; \
@@ -29,11 +102,11 @@ OpenBSD does not have CLOCK_THREAD_CPUTIME_ID.
 -    	lpecSession->AddClocks( timespec2dbl(endTimes) - timespec2dbl(startTimes), \
 -    	                        0, \
 -							    GetTimeOfDay() - dblStart); \
--	g_lpSessionManager->GetLogger()->Log(EC_LOGLEVEL_DEBUG, "%llu: E %s %f %f", ulSessionId, szFname, timespec2dbl(endTimes) - timespec2dbl(startTimes), GetTimeOfDay() - dblStart); \
+-		LOG_SOAP_DEBUG(g_lpSessionManager->GetLogger(), "%020"PRIu64": E %s 0x%08x %f %f", ulSessionId, szFname, er, timespec2dbl(endTimes) - timespec2dbl(startTimes), GetTimeOfDay() - dblStart); \
 +    	lpecSession->AddClocks( (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, \
 +							    (double)(endTimes.tms_stime - startTimes.tms_stime) / CLOCKS_PER_SEC, \
 + 							    GetTimeOfDay() - dblStart); \
 +	g_lpSessionManager->GetLogger()->Log(EC_LOGLEVEL_DEBUG, "%llu: E %s %f %f", ulSessionId, szFname, (double)(endTimes.tms_utime - startTimes.tms_utime) / CLOCKS_PER_SEC, GetTimeOfDay() - dblStart); \
- 	lpecSession->RemoveBusyState(pthread_self()); \
+ 		lpecSession->RemoveBusyState(pthread_self()); \
          lpecSession->Unlock(); \
      } \

@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.15 2012/05/05 16:56:17 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Thu May  3 11:27:51 2012
-+++ installer/linux/server.cfg	Sat May  5 17:39:39 2012
+$OpenBSD: patch-installer_linux_server_cfg,v 1.16 2012/08/30 14:28:22 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Wed Aug  8 16:35:34 2012
++++ installer/linux/server.cfg	Mon Aug 27 10:35:52 2012
 @@ -42,16 +42,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -35,8 +35,8 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.15 2012/05/05 16:56:17 ajacoutot 
  attachment_storage	= files 
  
  # When attachment_storage is 'files', use this path to store the files
--attachment_path		= /var/lib/zarafa
-+attachment_path		= /var/db/zarafa
+-attachment_path		= /var/lib/zarafa/attachments
++attachment_path		= /var/db/zarafa/attachments
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
@@ -64,19 +64,20 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.15 2012/05/05 16:56:17 ajacoutot 
  
  ##############################################################
  # THREAD SETTINGS
-@@ -281,23 +281,24 @@ companyquota_warn      = 0
+@@ -281,23 +281,23 @@ companyquota_warn      = 0
  # Name of the plugin that handles users
  # Required, default = ldap
  # Values: ldap, unix, db, ldapms (available in enterprise license)
-+# note: the unix plugin is not supported under OpenBSD
++# note: the unix plugin is not yet supported on OpenBSD
  user_plugin		= db
  
- # configuration file of the user plugin, examples can be found in /usr/share/zarafa/example-config
+-# configuration file of the user plugin, examples can be found in /usr/share/zarafa/example-config
 -user_plugin_config	= /etc/zarafa/ldap.cfg
++# configuration file of the user plugin, examples can be found in ${PREFIX}/share/examples/zarafa
 +user_plugin_config	= ${SYSCONFDIR}/zarafa/ldap.cfg
  
  # location of the zarafa plugins
- # if you have a 64bit distribution, this probably should be changed to /usr/lib64/zarafa
+-# if you have a 64bit distribution, this probably should be changed to /usr/lib64/zarafa
 -plugin_path		= /usr/lib/zarafa
 +plugin_path		= ${PREFIX}/lib/zarafa
  
@@ -97,7 +98,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.15 2012/05/05 16:56:17 ajacoutot 
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -354,7 +355,7 @@ client_update_enabled = false
+@@ -354,7 +354,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

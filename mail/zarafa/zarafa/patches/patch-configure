@@ -1,43 +1,53 @@
-$OpenBSD: patch-configure,v 1.24 2012/08/19 15:50:25 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.25 2012/08/30 14:28:22 ajacoutot Exp $
 
-OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
+Our crypt(3) is in libc.
 
---- configure.orig	Thu May  3 11:28:37 2012
-+++ configure	Sat May  5 17:39:39 2012
-@@ -24574,7 +24574,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+--- configure.orig	Wed Aug  8 16:35:42 2012
++++ configure	Wed Aug 29 10:06:28 2012
+@@ -17292,7 +17292,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -24634,7 +24634,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
- #define HAVE_STRFTIME 1
- _ACEOF
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17325,7 +17325,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
+ if test "x$ac_cv_lib_intl_strftime" = x""yes; then :
+   $as_echo "#define HAVE_STRFTIME 1" >>confdefs.h
  
 -LIBS="-lintl $LIBS"
 +LIBS="-lintl -liconv $LIBS"
  fi
  
  fi
-@@ -27761,84 +27761,10 @@ sed 's/^/| /' conftest.$ac_ext >&5
- 	 { echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6; }
+@@ -18713,74 +18713,12 @@ rm -f core conftest.err conftest.$ac_objext \
  
--{ echo "$as_me:$LINENO: checking for crypt in -lcrypt" >&5
--echo $ECHO_N "checking for crypt in -lcrypt... $ECHO_C" >&6; }
--if test "${ac_cv_lib_crypt_crypt+set}" = set; then
--  echo $ECHO_N "(cached) $ECHO_C" >&6
+ LIBS=$LIBS_system
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for crypt" >&5
+-$as_echo_n "checking for crypt... " >&6; }
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+- int main() {
+-  char crypt();  crypt();
+-}
+-_ACEOF
+-if ac_fn_cxx_try_link "$LINENO"; then :
+-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-else
+-   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for crypt in -lcrypt" >&5
+-$as_echo_n "checking for crypt in -lcrypt... " >&6; }
+-if test "${ac_cv_lib_crypt_crypt+set}" = set; then :
+-  $as_echo_n "(cached) " >&6
 -else
 -  ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lcrypt  $LIBS"
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -
 -/* Override any GCC internal prototype to avoid an error.
@@ -55,83 +65,53 @@ OpenBSD does NOT require -lcrypt, DES encryption is part of the standard libc.
 -  return 0;
 -}
 -_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (ac_try="$ac_link"
--case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_link") 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && {
--	 test -z "$ac_cxx_werror_flag" ||
--	 test ! -s conftest.err
--       } && test -s conftest$ac_exeext &&
--       $as_test_x conftest$ac_exeext; then
+-if ac_fn_cxx_try_link "$LINENO"; then :
 -  ac_cv_lib_crypt_crypt=yes
 -else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--	ac_cv_lib_crypt_crypt=no
- fi
--
-+        
- rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
-       conftest$ac_exeext conftest.$ac_ext
+-  ac_cv_lib_crypt_crypt=no
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
 -LIBS=$ac_check_lib_save_LIBS
 -fi
--{ echo "$as_me:$LINENO: result: $ac_cv_lib_crypt_crypt" >&5
--echo "${ECHO_T}$ac_cv_lib_crypt_crypt" >&6; }
--if test $ac_cv_lib_crypt_crypt = yes; then
--  cat >>confdefs.h <<_ACEOF
--#define HAVE_LIBCRYPT 1
--_ACEOF
--
--  LIBS="-lcrypt $LIBS"
--
--else
--  { { echo "$as_me:$LINENO: error: required library libcrypt missing or unusable" >&5
--echo "$as_me: error: required library libcrypt missing or unusable" >&2;}
--   { (exit 1); exit 1; }; }
--fi
--
--fi
--
--rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
--      conftest$ac_exeext conftest.$ac_ext
- CRYPT_LIBS=$LIBS
- LIBS=$LIBS_system
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_crypt_crypt" >&5
+-$as_echo "$ac_cv_lib_crypt_crypt" >&6; }
+-if test "x$ac_cv_lib_crypt_crypt" = x""yes; then :
+   cat >>confdefs.h <<_ACEOF
+ #define HAVE_LIBCRYPT 1
+ _ACEOF
  
-@@ -27853,7 +27779,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+-  LIBS="-lcrypt $LIBS"
+ 
+-else
+-  as_fn_error $? "required library libcrypt missing or unusable" "$LINENO" 5
+-fi
+ 
+-fi
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
+-CRYPT_LIBS=$LIBS
+-LIBS=$LIBS_system
+-
+-
+ # Only specific links with uuid and dl, clients only with crypto and ssl for ssl connections
+ SSL_LIBS=
+ # TODO: version of ssl check??
+@@ -18791,7 +18729,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then 
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lssl  $LIBS"
 +LIBS="-lssl -lcrypto $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -29078,7 +29004,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -19298,7 +19236,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lintl  $LIBS"
 +LIBS="-lintl -liconv $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -29134,7 +29060,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
- echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6; }
- if test $ac_cv_lib_intl_gettext = yes; then
--  INTL_LIBS="-lintl"
-+  INTL_LIBS="-lintl -liconv"
- else
-       { { echo "$as_me:$LINENO: error: required library libintl missing or unusable" >&5
- echo "$as_me: error: required library libintl missing or unusable" >&2;}
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

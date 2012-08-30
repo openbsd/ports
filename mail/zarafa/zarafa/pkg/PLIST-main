@@ -1,6 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.39 2012/05/22 07:51:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.40 2012/08/30 14:28:22 ajacoutot Exp $
+@comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/db/zarafa/{0,1,2,3,4,5,6,7,8,9}
+@extraunexec rm -rf /var/db/zarafa/attachments
+@extraunexec rm -rf /var/db/zarafa/dagent/plugins/*
+@extraunexec rm -rf /var/db/zarafa/spooler/plugins/*
+@extraunexec rm -rf /var/db/zarafa/client/*
+@extraunexec rm -rf /var/db/zarafa/index/*
+@extraunexec rm -rf /var/log/zarafa/*.log
 @bin bin/zarafa-admin
 @bin bin/zarafa-archiver
 bin/zarafa-autorespond
@@ -8,11 +16,13 @@ bin/zarafa-autorespond
 @bin bin/zarafa-fsck
 @bin bin/zarafa-gateway
 @bin bin/zarafa-ical
-@bin bin/zarafa-indexer
+bin/zarafa-mailbox-permissions
 @bin bin/zarafa-monitor
 bin/zarafa-mr-accept
 @bin bin/zarafa-passwd
+@bin bin/zarafa-search
 @bin bin/zarafa-server
+bin/zarafa-set-oof
 @bin bin/zarafa-spooler
 @bin bin/zarafa-stats
 include/icalmapi/
@@ -76,19 +86,23 @@ include/mapi4linux/mapispi.h
 include/mapi4linux/mapitags.h
 include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
+include/zarafa/
 include/zarafa/CommonUtil.h
+include/zarafa/ConsoleTable.h
 include/zarafa/ECABEntryID.h
 include/zarafa/ECACL.h
 include/zarafa/ECCache.h
 include/zarafa/ECChannel.h
 include/zarafa/ECConfig.h
 include/zarafa/ECConfigImpl.h
+include/zarafa/ECDatabaseMySQL.h
 include/zarafa/ECDebug.h
 include/zarafa/ECDebugPrint.h
 include/zarafa/ECDefs.h
 include/zarafa/ECFeatureList.h
 include/zarafa/ECFeatures.h
 include/zarafa/ECFifoBuffer.h
+include/zarafa/ECFifoStream.h
 include/zarafa/ECGetText.h
 include/zarafa/ECGuid.h
 include/zarafa/ECIConv.h
@@ -97,6 +111,7 @@ include/zarafa/ECInvariantChecker.h
 include/zarafa/ECIterators.h
 include/zarafa/ECKeyTable.h
 include/zarafa/ECLogger.h
+include/zarafa/ECMAPIDebug.h
 include/zarafa/ECMemStream.h
 include/zarafa/ECMemTable.h
 include/zarafa/ECRestriction.h
@@ -111,6 +126,7 @@ include/zarafa/HtmlEntity.h
 include/zarafa/HtmlToTextParser.h
 include/zarafa/IECChangeAdviseSink.h
 include/zarafa/IECChangeAdvisor.h
+include/zarafa/IECExchangeModifyTable.h
 include/zarafa/IECExportAddressbookChanges.h
 include/zarafa/IECExportChanges.h
 include/zarafa/IECImportAddressbookChanges.h
@@ -125,6 +141,8 @@ include/zarafa/IECStatsCollector.h
 include/zarafa/IECTestProtocol.h
 include/zarafa/IECUnknown.h
 include/zarafa/IMAPIOffline.h
+include/zarafa/IStreamAdapter.h
+include/zarafa/MAPIConsoleTable.h
 include/zarafa/MAPINotifSink.h
 include/zarafa/RecurrenceState.h
 include/zarafa/SSLUtil.h
@@ -180,10 +198,14 @@ include/zarafa/utf8.h
 include/zarafa/utf8/checked.h
 include/zarafa/utf8/core.h
 include/zarafa/utf8/unchecked.h
+lib/libarchiver-core.la
+@lib lib/libarchiver-core.so.${LIBarchiver-core_VERSION}
 lib/libarchiver.la
 @lib lib/libarchiver.so.${LIBarchiver_VERSION}
 @comment lib/libcommon_mapi.la
 @lib lib/libcommon_mapi.so.${LIBcommon_mapi_VERSION}
+lib/libcommon_service.la
+@lib lib/libcommon_service.so.${LIBcommon_service_VERSION}
 @comment lib/libcommon_ssl.la
 @lib lib/libcommon_ssl.so.${LIBcommon_ssl_VERSION}
 @comment lib/libcommon_util.la
@@ -241,16 +263,19 @@ lib/zarafa/
 lib/zarafa/dbplugin.so
 @comment lib/zarafa/ldapplugin.la
 lib/zarafa/ldapplugin.so
+@man man/man1/za-restore.1
 @man man/man1/zarafa-admin.1
 @man man/man1/zarafa-archiver.1
 @man man/man1/zarafa-dagent.1
 @man man/man1/zarafa-fsck.1
 @man man/man1/zarafa-gateway.1
 @man man/man1/zarafa-ical.1
-@man man/man1/zarafa-indexer.1
+@man man/man1/zarafa-mailbox-permissions.1
 @man man/man1/zarafa-monitor.1
 @man man/man1/zarafa-passwd.1
+@man man/man1/zarafa-search.1
 @man man/man1/zarafa-server.1
+@man man/man1/zarafa-set-oof.1
 @man man/man1/zarafa-spooler.1
 @man man/man1/zarafa-stats.1
 @man man/man1/zarafa.1
@@ -258,10 +283,9 @@ lib/zarafa/ldapplugin.so
 @man man/man5/zarafa-dagent.cfg.5
 @man man/man5/zarafa-gateway.cfg.5
 @man man/man5/zarafa-ical.cfg.5
-@man man/man5/zarafa-indexer.cfg.5
 @man man/man5/zarafa-ldap.cfg.5
-@man man/man5/zarafa-ldapms.cfg.5
 @man man/man5/zarafa-monitor.cfg.5
+@man man/man5/zarafa-search.cfg.5
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
 @man man/man5/zarafa-unix.cfg.5
@@ -284,7 +308,10 @@ share/doc/zarafa/eula.txt
 @mode 0555
 share/doc/zarafa/ldap-switch-sendas.pl
 share/doc/zarafa/optimize-imap.py
+share/doc/zarafa/update-resource-recipients
+@mode
 share/doc/zarafa/zarafa.ldif
+@mode 0555
 share/doc/zarafa/zarafa7-upgrade
 @mode
 share/examples/zarafa/
@@ -305,22 +332,6 @@ share/examples/zarafa/gateway.cfg
 @sample ${SYSCONFDIR}/zarafa/gateway.cfg
 share/examples/zarafa/ical.cfg
 @sample ${SYSCONFDIR}/zarafa/ical.cfg
-share/examples/zarafa/indexer.cfg
-@sample ${SYSCONFDIR}/zarafa/indexer.cfg
-share/examples/zarafa/indexerscripts/
-@sample ${SYSCONFDIR}/zarafa/indexerscripts/
-share/examples/zarafa/indexerscripts/attachments_parser
-@mode 555
-@sample ${SYSCONFDIR}/zarafa/indexerscripts/attachments_parser
-@mode
-share/examples/zarafa/indexerscripts/attachments_parser.db
-@sample ${SYSCONFDIR}/zarafa/indexerscripts/attachments_parser.db
-share/examples/zarafa/indexerscripts/xmltotext.xslt
-@sample ${SYSCONFDIR}/zarafa/indexerscripts/xmltotext.xslt
-share/examples/zarafa/indexerscripts/zmktemp
-@mode 555
-@sample ${SYSCONFDIR}/zarafa/indexerscripts/zmktemp
-@mode
 share/examples/zarafa/ldap.active-directory.cfg
 @mode 640
 @group _zarafa
@@ -361,6 +372,22 @@ share/examples/zarafa/quotamail/usersoft.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/usersoft.mail
 share/examples/zarafa/quotamail/userwarning.mail
 @sample ${SYSCONFDIR}/zarafa/quotamail/userwarning.mail
+share/examples/zarafa/search.cfg
+@sample ${SYSCONFDIR}/zarafa/search.cfg
+share/examples/zarafa/searchscripts/
+@sample ${SYSCONFDIR}/zarafa/searchscripts/
+share/examples/zarafa/searchscripts/attachments_parser
+@mode 555
+@sample ${SYSCONFDIR}/zarafa/searchscripts/attachments_parser
+@mode
+share/examples/zarafa/searchscripts/attachments_parser.db
+@sample ${SYSCONFDIR}/zarafa/searchscripts/attachments_parser.db
+share/examples/zarafa/searchscripts/xmltotext.xslt
+@sample ${SYSCONFDIR}/zarafa/searchscripts/xmltotext.xslt
+share/examples/zarafa/searchscripts/zmktemp
+@mode 555
+@sample ${SYSCONFDIR}/zarafa/searchscripts/zmktemp
+@mode
 share/examples/zarafa/server.cfg
 @mode 640
 @group _zarafa
@@ -409,8 +436,6 @@ share/examples/zarafa/userscripts/groups_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/groups_common.sh
 share/examples/zarafa/userscripts/users_common.sh
 @sample ${SYSCONFDIR}/zarafa/userscripts/users_common.sh
-@mode 555
-share/examples/zarafa/zarafa-client-update
 @mode
 share/examples/zarafa/zarafa.m4
 @mode 0444
@@ -425,14 +450,45 @@ share/locale/fr/LC_MESSAGES/zarafa.mo
 share/locale/it/LC_MESSAGES/zarafa.mo
 share/locale/nl/LC_MESSAGES/zarafa.mo
 share/locale/pt/LC_MESSAGES/zarafa.mo
+share/locale/ru/LC_MESSAGES/zarafa.mo
 share/locale/sv/LC_MESSAGES/zarafa.mo
+share/zarafa-dagent/
+share/zarafa-dagent/python/
+share/zarafa-dagent/python/mapiplugin.py
+share/zarafa-dagent/python/pluginmanager.py
+share/zarafa-dagent/python/plugins/
+share/zarafa-dagent/python/plugins/BMP2PNG.py
+share/zarafa-dagent/python/plugins/examplerules.py
+share/zarafa-dagent/python/plugins/movetopublic.cfg
+@sample ${SYSCONFDIR}/zarafa/movetopublic.cfg
+share/zarafa-dagent/python/plugins/movetopublic.py
+share/zarafa-dagent/python/plugintemplates.py
+share/zarafa-dagent/python/wraplogger.py
+share/zarafa-dagent/python/zconfig.py
+share/zarafa-dagent/python/zinterval.py
+share/zarafa-dagent/python/zunit.py
+share/zarafa-spooler/
+share/zarafa-spooler/python/
+share/zarafa-spooler/python/mapiplugin.py
+share/zarafa-spooler/python/pluginmanager.py
+share/zarafa-spooler/python/plugins/
+share/zarafa-spooler/python/plugins/disclaimer.py
+share/zarafa-spooler/python/plugintemplates.py
+share/zarafa-spooler/python/wraplogger.py
+share/zarafa-spooler/python/zconfig.py
+share/zarafa-spooler/python/zinterval.py
+share/zarafa-spooler/python/zunit.py
 @rcscript ${RCDIR}/zarafa
 @rcscript ${RCDIR}/zarafa_gateway
 @rcscript ${RCDIR}/zarafa_ical
-@rcscript ${RCDIR}/zarafa_indexer
 @rcscript ${RCDIR}/zarafa_monitor
+@rcscript ${RCDIR}/zarafa_search
 @rcscript ${RCDIR}/zarafa_server
 @rcscript ${RCDIR}/zarafa_spooler
+@sample /var/db/zarafa/dagent/
+@sample /var/db/zarafa/dagent/plugins/
+@sample /var/db/zarafa/spooler/
+@sample /var/db/zarafa/spooler/plugins/
 @mode 0750
 @owner _zarafa
 @group _zarafa
@@ -440,4 +496,3 @@ share/locale/sv/LC_MESSAGES/zarafa.mo
 @sample /var/db/zarafa/client/
 @sample /var/db/zarafa/index/
 @sample /var/log/zarafa/
-@sample /var/log/zarafa/autoupdate/

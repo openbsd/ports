@@ -1,0 +1,14 @@
+$OpenBSD: patch-ECtools_zarafa-monitor_zarafa-monitor_cpp,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
+--- ECtools/zarafa-monitor/zarafa-monitor.cpp.orig	Wed Aug 29 15:19:48 2012
++++ ECtools/zarafa-monitor/zarafa-monitor.cpp	Wed Aug 29 14:50:42 2012
+@@ -242,8 +242,10 @@ int main(int argc, char *argv[]) {
+ 		{ NULL, 0, NULL, 0 }
+ 	};
+ 
++#ifndef __OpenBSD__
+ 	if (!forceUTF8Locale(true))
+ 		goto exit;
++#endif
+ 
+ 	while(1) {
+ 		c = my_getopt_long(argc, argv, "c:h:iuFV", long_options, NULL);

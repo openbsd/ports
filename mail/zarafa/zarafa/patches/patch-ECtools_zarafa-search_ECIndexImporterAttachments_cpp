@@ -1,0 +1,17 @@
+$OpenBSD: patch-ECtools_zarafa-search_ECIndexImporterAttachments_cpp,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
+
+OpenBSD does not have RLIMIT_AS.
+
+--- ECtools/zarafa-search/ECIndexImporterAttachments.cpp.orig	Mon Aug 27 10:42:56 2012
++++ ECtools/zarafa-search/ECIndexImporterAttachments.cpp	Mon Aug 27 10:43:07 2012
+@@ -76,6 +76,10 @@
+ 
+ #define STREAM_BUFFER   ( 64*1024 )
+ 
++#if defined(__OpenBSD__) && !defined(RLIMIT_AS)
++#define RLIMIT_AS	RLIMIT_DATA
++#endif
++
+ ECIndexImporterAttachment::ECIndexImporterAttachment(ECThreadData *lpThreadData, ECIndexImporter *lpIndexer)
+ {
+ 	m_lpThreadData = lpThreadData;

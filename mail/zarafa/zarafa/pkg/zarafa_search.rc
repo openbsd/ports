@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: zarafa_search.rc,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/zarafa-search"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

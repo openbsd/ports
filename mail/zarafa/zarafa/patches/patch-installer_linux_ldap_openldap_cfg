@@ -1,21 +1,21 @@
-$OpenBSD: patch-installer_linux_ldap_openldap_cfg,v 1.5 2012/02/16 22:18:36 ajacoutot Exp $
---- installer/linux/ldap.openldap.cfg.orig	Wed Feb  1 15:50:49 2012
-+++ installer/linux/ldap.openldap.cfg	Thu Feb  2 12:28:17 2012
-@@ -29,7 +29,7 @@ ldap_server_charset = utf-8
- # Optional, default = empty (anonymous bind)
- # The userPassword attribute must be readable for this user if the
- # ldap_authentication_method option is set to password.
--ldap_bind_user = cn=admin,cn=users,dc=zarafa,dc=com
-+ldap_bind_user =
+$OpenBSD: patch-installer_linux_ldap_openldap_cfg,v 1.6 2012/08/30 14:28:22 ajacoutot Exp $
+--- installer/linux/ldap.openldap.cfg.orig	Mon Aug 27 10:46:45 2012
++++ installer/linux/ldap.openldap.cfg	Mon Aug 27 10:47:02 2012
+@@ -15,7 +15,7 @@ ldap_port = 389
  
- # LDAP bind password
- # Optional, default = empty (no password)
-@@ -128,7 +128,7 @@ ldap_password_attribute = userPassword
- # Choices: bind, password
- # Active directory: bind
- # LDAP: password
--ldap_authentication_method = password
-+ldap_authentication_method = bind
+ # LDAP protocol
+ # Optional, default = ldap
+-# use 'ldaps' for SSL encryption. Make sure /etc/ldap/ldap.conf is
++# use 'ldaps' for SSL encryption. Make sure ${SYSCONFDIR}/ldap/ldap.conf is
+ # configured correctly with TLS_CACERT
+ ldap_protocol = ldap
  
- # Optional, default = mail
- # Active directory: mail
+@@ -197,7 +197,7 @@ ldap_sendas_relation_attribute = 
+ ldap_user_certificate_attribute = userCertificate
+ 
+ # Load extra user properties from the propmap file
+-!propmap /etc/zarafa/ldap.propmap.cfg
++!propmap ${SYSCONFDIR}/zarafa/ldap.propmap.cfg
+ 
+ ##########
+ # Group settings

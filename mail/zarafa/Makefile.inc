@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.21 2012/07/09 15:27:30 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2012/08/30 14:28:22 ajacoutot Exp $
 
-# there is no point in building/running this on NO_SHARED_LIBS archs
 SHARED_ONLY=	Yes
 
-V?=		7.0.8
-BUILD?=		35178
+V?=		7.1.0
+BUILD?=		36420
 DISTNAME?=	zcp-${V}
 
 CATEGORIES+=	mail/zarafa
@@ -13,7 +12,7 @@ HOMEPAGE?=	http://community.zarafa.com/
 
 MAINTAINER?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# zarafa: AGPLv3 (GNU Affero Public License)
+# AGPLv3 (GNU Affero Public License) with exceptions
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes

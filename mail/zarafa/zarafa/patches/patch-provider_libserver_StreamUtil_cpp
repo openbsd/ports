@@ -1,10 +1,7 @@
-$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.4 2011/11/17 15:14:37 ajacoutot Exp $
-
-Needs newlocale(3).
-
---- provider/libserver/StreamUtil.cpp.orig	Thu Nov 17 03:03:23 2011
-+++ provider/libserver/StreamUtil.cpp	Thu Nov 17 13:59:31 2011
-@@ -281,7 +281,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.5 2012/08/30 14:28:22 ajacoutot Exp $
+--- provider/libserver/StreamUtil.cpp.orig	Mon Aug 27 10:04:10 2012
++++ provider/libserver/StreamUtil.cpp	Mon Aug 27 10:06:17 2012
+@@ -286,7 +286,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	unsigned int ulKind;
  	unsigned int ulNameId;
  	std::string strNameString;
@@ -14,7 +11,7 @@ Needs newlocale(3).
  	convert_context converter;
  
  	short i;
-@@ -326,7 +328,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -331,7 +333,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -26,7 +23,7 @@ Needs newlocale(3).
  		er = lpSink->Write(&flt, sizeof(flt), 1);
  		break;
  	case PT_BOOLEAN:
-@@ -343,7 +349,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -348,7 +354,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -38,7 +35,7 @@ Needs newlocale(3).
  		er = lpSink->Write(&dbl, sizeof(dbl), 1);
  		break;
  	case PT_CURRENCY:
-@@ -440,7 +450,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -445,7 +455,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
  		{
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
@@ -50,7 +47,7 @@ Needs newlocale(3).
  			er = lpSink->Write(&flt, sizeof(flt), 1);
  		}
  		break;
-@@ -457,7 +471,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -462,7 +476,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
  		{
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
@@ -59,10 +56,10 @@ Needs newlocale(3).
 +#else
 +			dbl = strtod(strData.c_str(), NULL);
 +#endif
- 			er = lpSink->Write(&dbl, sizeof(flt), 1);
+ 			er = lpSink->Write(&dbl, sizeof(dbl), 1);
  		}
  		break;
-@@ -575,7 +593,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
+@@ -580,7 +598,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	}
  
  exit:

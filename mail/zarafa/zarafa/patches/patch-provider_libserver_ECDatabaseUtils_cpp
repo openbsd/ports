@@ -1,7 +1,4 @@
-$OpenBSD: patch-provider_libserver_ECDatabaseUtils_cpp,v 1.6 2012/02/16 22:18:36 ajacoutot Exp $
-
-Needs newlocale(3).
-
+$OpenBSD: patch-provider_libserver_ECDatabaseUtils_cpp,v 1.7 2012/08/30 14:28:22 ajacoutot Exp $
 --- provider/libserver/ECDatabaseUtils.cpp.orig	Wed Feb  1 22:09:34 2012
 +++ provider/libserver/ECDatabaseUtils.cpp	Thu Feb  2 12:28:17 2012
 @@ -547,7 +547,9 @@ ECRESULT CopyDatabasePropValToSOAPPropVal(struct soap 

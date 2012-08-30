@@ -1,7 +1,18 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.13 2012/05/05 16:56:17 ajacoutot Exp $
---- spooler/Spooler.cpp.orig	Thu May  3 16:37:10 2012
-+++ spooler/Spooler.cpp	Sat May  5 17:39:39 2012
-@@ -1223,6 +1223,7 @@ int main(int argc, char *argv[]) {
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.14 2012/08/30 14:28:22 ajacoutot Exp $
+--- spooler/Spooler.cpp.orig	Wed Aug  8 17:14:58 2012
++++ spooler/Spooler.cpp	Mon Aug 27 10:26:16 2012
+@@ -1139,8 +1139,8 @@ int main(int argc, char *argv[]) {
+ 		{ "archive_on_send", "no", CONFIGSETTING_RELOADABLE },
+ 		{ "enable_dsn", "yes", CONFIGSETTING_RELOADABLE },
+         { "plugin_enabled", "yes" },
+-        { "plugin_path", "/var/lib/zarafa/spooler/plugins" },
+-        { "plugin_manager_path", "/usr/share/zarafa-spooler/python" },
++        { "plugin_path", "/var/db/zarafa/spooler/plugins" },
++        { "plugin_manager_path", "${PREFIX}/share/zarafa-spooler/python" },
+ 		{ NULL, NULL },
+ 	};
+     // SIGSEGV backtrace support
+@@ -1245,6 +1245,7 @@ int main(int argc, char *argv[]) {
  
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
@@ -9,7 +20,7 @@ $OpenBSD: patch-spooler_Spooler_cpp,v 1.13 2012/05/05 16:56:17 ajacoutot Exp $
  		char buffer[256];
  		confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
  		if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0) {
-@@ -1231,6 +1232,9 @@ int main(int argc, char *argv[]) {
+@@ -1253,6 +1254,9 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: your system is running with outdated linuxthreads.");
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}

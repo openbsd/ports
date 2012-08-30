@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.12 2011/12/22 17:10:04 ajacoutot Exp $
---- common/platform.linux.h.orig	Thu Dec 22 01:02:34 2011
-+++ common/platform.linux.h	Thu Dec 22 12:14:19 2011
+$OpenBSD: patch-common_platform_linux_h,v 1.13 2012/08/30 14:28:22 ajacoutot Exp $
+--- common/platform.linux.h.orig	Wed Aug  8 17:14:57 2012
++++ common/platform.linux.h	Wed Aug 29 10:16:58 2012
 @@ -63,8 +63,16 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -16,9 +16,18 @@ $OpenBSD: patch-common_platform_linux_h,v 1.12 2011/12/22 17:10:04 ajacoutot Exp
  #include <endian.h>
 +#endif
  #include <errno.h>
+ #include <locale.h>
  
- #include <string>
-@@ -663,7 +671,11 @@ time_t GetProcessTime();
+@@ -99,6 +107,8 @@
+ #define _snprintf snprintf
+ #ifdef HAVE_VSNPRINTF_L
+ #define _vsnprintf_l vsnprintf_l
++#elif defined __OpenBSD__
++#define _vsnprintf_l vsnprintf
+ #else
+ inline int _vsnprintf_l(char *str, size_t size, const char *format, locale_t locale, va_list ap) {
+ 	locale_t prev = uselocale(locale);
+@@ -676,7 +686,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -30,7 +39,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.12 2011/12/22 17:10:04 ajacoutot Exp
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -671,14 +683,18 @@ time_t GetProcessTime();
+@@ -684,14 +698,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

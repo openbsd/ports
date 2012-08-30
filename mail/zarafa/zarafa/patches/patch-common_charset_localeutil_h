@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_charset_localeutil_h,v 1.1 2012/08/30 14:28:22 ajacoutot Exp $
+--- common/charset/localeutil.h.orig	Wed Aug 29 13:23:49 2012
++++ common/charset/localeutil.h	Wed Aug 29 13:24:13 2012
+@@ -47,6 +47,7 @@
+  * 
+  */
+ 
++#ifndef __OpenBSD__
+ #ifndef __CHARSET_UTIL_H
+ #define __CHARSET_UTIL_H
+ 
+@@ -54,3 +55,4 @@ bool forceUTF8Locale(bool bOutput, std::string *lpstrL
+ locale_t createUTF8Locale();
+ 
+ #endif
++#endif /* !OpenBSD */
