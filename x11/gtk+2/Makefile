@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.146 2012/08/04 15:04:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2012/08/30 13:55:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
-COMMENT-docs=	gtk+2 documentation
 COMMENT-guic=	gtk+ icon theme caching utility
 
 V=		2.24.11
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
-PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-guic=	gtk-update-icon-cache-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	x11 devel
 
@@ -37,7 +35,7 @@ WANTLIB += gthread-2.0 m pcre png z
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=	.tar.xz
 
-MULTI_PACKAGES=	-main -docs -guic
+MULTI_PACKAGES=	-main -guic
 
 MODULES=	devel/gettext \
 		lang/python
@@ -67,11 +65,6 @@ MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection
-
-LIB_DEPENDS-docs= # empty
-RUN_DEPENDS-docs= # empty
-WANTLIB-docs +=	# empty
-PKG_ARCH-docs=	*
 
 RUN_DEPENDS-guic= ${RUN_DEPENDS} \
 		x11/hicolor-icon-theme
