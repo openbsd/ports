@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2012/08/04 15:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/08/30 14:27:03 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	multi-platform graphical toolkit
-COMMENT-docs=	gtk+3 documentation
 COMMENT-cups=	gtk+3 CUPS print backend
 
 V=		3.4.4
@@ -11,10 +10,9 @@ DISTNAME=	gtk+-${V}
 EXTRACT_SUFX=	.tar.xz
 
 PKGNAME-main=	gtk+3-${V}
-PKGNAME-docs=	gtk+3-docs-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-cups=	0
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
@@ -49,7 +47,7 @@ WANTLIB += xcb xcb-render xcb-shm z stdc++
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gtk+/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
-MULTI_PACKAGES=	-main -docs -cups
+MULTI_PACKAGES=	-main -cups
 
 MODULES=	devel/gettext \
 		devel/dconf
@@ -67,11 +65,6 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c pthread
-
-LIB_DEPENDS-docs= # empty
-RUN_DEPENDS-docs= # empty
-WANTLIB-docs +=	# empty
-PKG_ARCH-docs=	*
 
 RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
