@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/23 19:35:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2012/08/30 14:09:21 sthen Exp $
 
 COMMENT=	PHP support for setproctitle
 
 DISTNAME=	proctitle-0.1.1
-REVISION=	5
+REVISION=	6
 
 # PHP
 PERMIT_PACKAGE_CDROM=	Yes
