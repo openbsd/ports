@@ -1,8 +1,0 @@
-The phpMyAdmin has been installed into ${INSTDIR}
-
-You should point this to the DocumentRoot of your web-server:
-   # ln -s ../phpMyAdmin /var/www/htdocs/phpMyAdmin
-(make sure you use a relative symlink since Apache is chrooted)
-
-You can ensure you have a working install by accessing:
-http://<localhost>/phpMyAdmin/index.php

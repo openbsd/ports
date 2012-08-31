@@ -1,0 +1,32 @@
+$OpenBSD: README,v 1.1 2012/08/31 16:40:38 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+phpMyAdmin has been installed into ${INSTDIR}.
+
+If using Apache, you can make this accessible to clients by enabling
+the configuration file:
+
+    # ln -s ../modules.sample/phpMyAdmin-httpd.conf /var/www/conf/modules/
+    # /etc/rc.d/httpd restart
+
+By default, this sets an alias for /phpMyAdmin and restricts access
+to connections coming from localhost.  It also uses AllowOverride to
+enable an .htaccess file restricting access from search engine bots.
+(The previously recommended method of adding a symlink under htdocs/ 
+is not compatible with <Directory> overrides).
+
+If you need to allow wider access, after considering security
+implications, edit /var/www/conf/modules.sample/phpMyAdmin-httpd.conf
+and restart Apache.
+
+You can check that you have a working installation by accessing:
+http://localhost/phpMyAdmin/index.php
+
+SECURITY WARNING
+================
+Be aware that phpMyAdmin is a frequently attacked target due to a
+history of security problems.  You are advised to restrict access to
+trusted workstations or access it on localhost via an SSH tunnel.
