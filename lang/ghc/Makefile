@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.71 2012/08/12 11:31:33 pascal Exp $
+# $OpenBSD: Makefile,v 1.72 2012/08/31 18:10:14 pascal Exp $
+
+BROKEN-amd64 =		build system fuckup with PIE
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
