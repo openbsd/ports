@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/23 15:05:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2012/08/31 18:06:36 bluhm Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		powerful feature-rich perl source code profiler
 
-DISTNAME =		Devel-NYTProf-4.06
-REVISION =		0
+DISTNAME =		Devel-NYTProf-4.08
 
 CATEGORIES =		devel
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c z
+WANTLIB +=		c z
 
 MODULES =		cpan
 RUN_DEPENDS =		converters/p5-JSON-Any

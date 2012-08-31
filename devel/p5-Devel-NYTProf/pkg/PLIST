@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/10/19 18:56:36 bluhm Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/08/31 18:06:37 bluhm Exp $
 bin/nytprofcg
 bin/nytprofcsv
 bin/nytprofhtml
@@ -39,7 +39,6 @@ ${P5ARCH}/Devel/auto/
 ${P5ARCH}/Devel/auto/Devel/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/
 ${P5ARCH}/Devel/auto/Devel/NYTProf/NYTProf.so
-@comment ${P5ARCH}/Devel/perftest.pl
 @comment ${P5ARCH}/Devel/benchmark.pl
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/NYTProf/
@@ -48,6 +47,7 @@ ${P5ARCH}/auto/Devel/NYTProf/NYTProf.so
 @man man/man1/nytprofcg.1
 @man man/man1/nytprofcsv.1
 @man man/man1/nytprofhtml.1
+@man man/man1/nytprofmerge.1
 @man man/man3p/Devel::NYTProf.3p
 @man man/man3p/Devel::NYTProf::Apache.3p
 @man man/man3p/Devel::NYTProf::Core.3p
