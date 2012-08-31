@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1187 2012/08/19 22:30:36 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1188 2012/08/31 16:48:26 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -906,7 +906,11 @@ PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 .endfor
-SUBST_CMD = ${SUBST_CMD${SUBPACKAGE}}
+
+SUBST_CMD = ${_PERLSCRIPT}/pkg_subst
+.for _v in ${SUBST_VARS}
+SUBST_CMD += -D${_v}=${${_v:S/^^//}:Q}
+.endfor
 
 # XXX
 .if ${MULTI_PACKAGES} == "-"
