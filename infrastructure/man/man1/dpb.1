@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.40 2012/07/02 10:31:08 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.41 2012/08/31 17:27:50 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 2 2012 $
+.Dd $Mdocdate: August 31 2012 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -160,7 +160,12 @@ By default,
 .Nm
 will use the
 .Ev BUILD_ONCE
-optimization if run with
+optimization
+.Po
+see
+.Xr bsd.port.mk 5
+.Pc
+if run with
 .Fl a :
 pseudo-flavors that disable subpackages and are not necessary for bootstrap
 will be disabled, so that the same port is built once, as far as possible.
