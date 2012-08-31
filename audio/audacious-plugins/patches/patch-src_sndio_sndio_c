@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_sndio_sndio_c,v 1.1 2012/08/31 20:16:40 ratchov Exp $
+--- src/sndio/sndio.c.orig	Sun Aug 26 16:51:15 2012
++++ src/sndio/sndio.c	Sun Aug 26 16:53:50 2012
+@@ -95,7 +95,7 @@ AUD_OUTPUT_PLUGIN
+ static struct fmt_to_par {
+ 	int fmt, bits, sig, le;
+ } fmt_to_par[] = {
+-	{FMT_S8,      8, 1, 0}, {FMT_U8,      8, 1, 0},
++	{FMT_S8,      8, 1, 0}, {FMT_U8,      8, 0, 0},
+ 	{FMT_S16_LE, 16, 1, 1}, {FMT_S16_BE, 16, 1, 0},
+ 	{FMT_U16_LE, 16, 0, 1},	{FMT_U16_BE, 16, 0, 0},
+ 	{FMT_S24_LE, 24, 1, 1},	{FMT_S24_BE, 24, 1, 0},
+@@ -237,6 +237,8 @@ sndio_open(int fmt, int rate, int nch)
+ 	askpar.sig = fmt_to_par[i].sig;
+ 	if (askpar.bits > 8)
+ 		askpar.le = fmt_to_par[i].le;
++	if (askpar.bits < askpar.bps * 8)                                                                                                                                                                                  
++		askpar.msb = 0;
+ 	askpar.pchan = nch;
+ 	askpar.rate = rate;
+ 	buffer_size = aud_get_int(NULL, "output_buffer_size");
+@@ -249,7 +251,7 @@ sndio_open(int fmt, int rate, int nch)
+ 		return (0);
+ 	}
+ 	if ((par.bps > 1 && par.le != askpar.le) ||
+-	    (par.bits < par.bps * 8 && !par.msb) ||
++	    (par.bits < par.bps * 8 && par.msb) ||
+ 	    par.bps != askpar.bps ||
+ 	    par.sig != askpar.sig ||
+ 	    par.pchan != askpar.pchan ||
