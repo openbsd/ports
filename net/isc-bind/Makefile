@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/07 07:44:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2012/08/31 09:16:35 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
@@ -26,6 +26,16 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c crypto m pthread xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
+MASTER_SITES0=	http://ss.vix.com/~vixie/
+
+FLAVORS=	ratelimit
+FLAVOR?=
+
+.if ${FLAVOR:L:Mratelimit}
+PATCHFILES+=	rl-$V.patch:0
+.else
+SUPDISTFILES+=	rl-$V.patch:0
+.endif
 
 MODULES=	converters/libiconv
 LIB_DEPENDS=	textproc/libxml

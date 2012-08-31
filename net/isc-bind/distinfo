@@ -1,2 +1,4 @@
 SHA256 (bind-9.9.1-P2.tar.gz) = pG7PYXe2nW6ag6FfeS0FlK3MjoAAhiCN2bhEUq+4TQ4=
+SHA256 (rl-9.9.1-P2.patch) = me/ZUVgs55DidAguC+2uppi5t/Sc8d44d1JYOZPPIRU=
 SIZE (bind-9.9.1-P2.tar.gz) = 7223896
+SIZE (rl-9.9.1-P2.patch) = 80440
