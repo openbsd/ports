@@ -1,10 +1,10 @@
-$OpenBSD: patch-Tests_CMakeLists_txt,v 1.1 2012/05/07 13:58:18 dcoppa Exp $
+$OpenBSD: patch-Tests_CMakeLists_txt,v 1.2 2012/08/31 12:28:31 dcoppa Exp $
 
 Remove troublesome "Qt4Deploy" and "CTest.UpdateCVS" tests
 (from gentoo's package/dev-util/cmake/files/)
 
---- Tests/CMakeLists.txt.orig	Wed Apr 18 20:10:54 2012
-+++ Tests/CMakeLists.txt	Mon May  7 13:45:40 2012
+--- Tests/CMakeLists.txt.orig	Thu Aug  9 20:15:19 2012
++++ Tests/CMakeLists.txt	Thu Aug 23 11:25:48 2012
 @@ -273,23 +273,6 @@ IF(BUILD_TESTING)
        )
      LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/BundleUtilities")
@@ -29,7 +29,7 @@ Remove troublesome "Qt4Deploy" and "CTest.UpdateCVS" tests
    endif()
    endif()
  
-@@ -1547,30 +1530,6 @@ ${CMake_BINARY_DIR}/bin/cmake -DVERSION=master -P ${CM
+@@ -1581,30 +1564,6 @@ ${CMake_BINARY_DIR}/bin/cmake -DVERSION=master -P ${CM
          )
        LIST(APPEND TEST_BUILD_DIRS "${CMake_BINARY_DIR}/Tests/${CTestUpdateSVN_DIR}")
      ENDIF(Subversion_FOUND)

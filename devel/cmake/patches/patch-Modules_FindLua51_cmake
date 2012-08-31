@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindLua51_cmake,v 1.1 2012/07/12 16:26:13 dcoppa Exp $
---- Modules/FindLua51.cmake.orig	Thu Jul 12 18:17:15 2012
-+++ Modules/FindLua51.cmake	Thu Jul 12 18:23:12 2012
+$OpenBSD: patch-Modules_FindLua51_cmake,v 1.2 2012/08/31 12:28:31 dcoppa Exp $
+--- Modules/FindLua51.cmake.orig	Thu Aug  9 20:15:19 2012
++++ Modules/FindLua51.cmake	Thu Aug 23 11:25:47 2012
 @@ -28,7 +28,7 @@
  FIND_PATH(LUA_INCLUDE_DIR lua.h
    HINTS
@@ -10,7 +10,7 @@ $OpenBSD: patch-Modules_FindLua51_cmake,v 1.1 2012/07/12 16:26:13 dcoppa Exp $
    PATHS
    ~/Library/Frameworks
    /Library/Frameworks
-@@ -41,7 +41,7 @@ FIND_PATH(LUA_INCLUDE_DIR lua.h
+@@ -39,7 +39,7 @@ FIND_PATH(LUA_INCLUDE_DIR lua.h
  )
  
  FIND_LIBRARY(LUA_LIBRARY 

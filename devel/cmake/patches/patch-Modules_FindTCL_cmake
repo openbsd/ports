@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Mon Apr 30 11:24:38 2012
-+++ Modules/FindTCL.cmake	Mon Apr 30 11:35:24 2012
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.4 2012/08/31 12:28:31 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Thu Aug 23 11:47:12 2012
++++ Modules/FindTCL.cmake	Thu Aug 23 12:02:49 2012
 @@ -48,19 +48,36 @@ INCLUDE(CMakeFindFrameworks)
  INCLUDE(FindTclsh)
  INCLUDE(FindWish)
@@ -48,7 +48,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
  
  GET_FILENAME_COMPONENT(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  GET_FILENAME_COMPONENT(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -75,17 +92,37 @@ GET_FILENAME_COMPONENT(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -75,15 +92,35 @@ GET_FILENAME_COMPONENT(TK_LIBRARY_PATH_PARENT "${TK_LI
  STRING(REGEX REPLACE 
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -59,8 +59,6 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
 -  "${TK_LIBRARY_PATH}"
 -  "${TCL_TCLSH_PATH_PARENT}/lib"
 -  "${TK_WISH_PATH_PARENT}/lib"
--  /usr/lib 
--  /usr/local/lib
 -  )
 +IF(MODTCL_LIBDIR)
 +  SET(TCLTK_OPENBSD_LIB_PATHS
@@ -88,15 +86,13 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
 +    "${TK_LIBRARY_PATH}"
 +    "${TCL_TCLSH_PATH_PARENT}/lib"
 +    "${TK_WISH_PATH_PARENT}/lib"
-+    /usr/lib 
-+    /usr/local/lib
 +    )
 +ENDIF(TCLTK_OPENBSD_LIB_PATHS)
 +
  IF(WIN32)
    GET_FILENAME_COMPONENT(
      ActiveTcl_CurrentVersion 
-@@ -105,31 +142,47 @@ IF(WIN32)
+@@ -103,31 +140,47 @@ IF(WIN32)
      )
  ENDIF(WIN32)
  
@@ -168,7 +164,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
  
  CMAKE_FIND_FRAMEWORKS(Tcl)
  CMAKE_FIND_FRAMEWORKS(Tk)
-@@ -153,26 +206,46 @@ IF(Tk_FRAMEWORKS)
+@@ -151,24 +204,44 @@ IF(Tk_FRAMEWORKS)
    ENDIF(NOT TK_INCLUDE_PATH)
  ENDIF(Tk_FRAMEWORKS)
  
@@ -181,8 +177,6 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
 -  ${TK_FRAMEWORK_INCLUDES} 
 -  "${TCL_TCLSH_PATH_PARENT}/include"
 -  "${TK_WISH_PATH_PARENT}/include"
--  /usr/include
--  /usr/local/include
 -  /usr/include/tcl${TK_LIBRARY_VERSION}
 -  /usr/include/tcl${TCL_LIBRARY_VERSION}
 -  /usr/include/tcl8.6
@@ -220,8 +214,6 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.3 2012/05/07 07:06:20 dcoppa Exp $
 +    ${TK_FRAMEWORK_INCLUDES} 
 +    "${TCL_TCLSH_PATH_PARENT}/include"
 +    "${TK_WISH_PATH_PARENT}/include"
-+    /usr/include
-+    /usr/local/include
 +    /usr/include/tcl${TK_LIBRARY_VERSION}
 +    /usr/include/tcl${TCL_LIBRARY_VERSION}
 +    /usr/include/tcl8.6

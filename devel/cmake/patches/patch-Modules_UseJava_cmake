@@ -1,10 +1,4 @@
-$OpenBSD: patch-Modules_UseJava_cmake,v 1.3 2012/06/15 10:26:56 dcoppa Exp $
-
-From 5593d5718ec90f6a2e37ca4e2fdf3fc4537380ff Mon Sep 17 00:00:00 2001
-From: Rolf Eike Beer <eike@sf-mail.de>
-Date: Fri, 8 Jun 2012 17:22:43 +0200
-Subject: [PATCH] UseJava: fix find_jar() called with multiple files (#13281)
-
+$OpenBSD: patch-Modules_UseJava_cmake,v 1.4 2012/08/31 12:28:31 dcoppa Exp $
 --- Modules/UseJava.cmake.orig	Wed Apr 18 20:10:54 2012
 +++ Modules/UseJava.cmake	Fri Jun 15 11:38:50 2012
 @@ -465,7 +465,7 @@ function (find_jar VARIABLE)
@@ -16,15 +10,3 @@ Subject: [PATCH] UseJava: fix find_jar() called with multiple files (#13281)
          ${Java_JAR_PATHS})
      set(_jar_doc "NOTSET")
  
-@@ -533,9 +533,9 @@ function (find_jar VARIABLE)
-         endif (${_state} STREQUAL "name")
-     endforeach (arg ${ARGN})
- 
--    if (${_jar_names} STREQUAL "")
-+    if (NOT _jar_names)
-         message(FATAL_ERROR "find_jar: No name to search for given")
--    endif (${_jar_names} STREQUAL "")
-+    endif (NOT _jar_names)
- 
-     foreach (jar_name ${_jar_names})
-         foreach (version ${_jar_versions})

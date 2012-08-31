@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindTclStub.cmake.orig	Tue May 11 14:30:20 2010
-+++ Modules/FindTclStub.cmake	Tue May 11 14:38:47 2010
+$OpenBSD: patch-Modules_FindTclStub_cmake,v 1.2 2012/08/31 12:28:31 dcoppa Exp $
+--- Modules/FindTclStub.cmake.orig	Thu Aug 23 12:09:46 2012
++++ Modules/FindTclStub.cmake	Thu Aug 23 12:09:59 2012
 @@ -38,13 +38,21 @@ INCLUDE(FindTCL)
  
  GET_FILENAME_COMPONENT(TCL_TCLSH_PATH "${TCL_TCLSH}" PATH)
@@ -27,7 +27,7 @@ $OpenBSD: patch-Modules_FindTclStub_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
  
  GET_FILENAME_COMPONENT(TCL_INCLUDE_PATH_PARENT "${TCL_INCLUDE_PATH}" PATH)
  GET_FILENAME_COMPONENT(TK_INCLUDE_PATH_PARENT "${TK_INCLUDE_PATH}" PATH)
-@@ -59,16 +67,22 @@ GET_FILENAME_COMPONENT(TK_LIBRARY_PATH_PARENT "${TK_LI
+@@ -59,14 +67,20 @@ GET_FILENAME_COMPONENT(TK_LIBRARY_PATH_PARENT "${TK_LI
  STRING(REGEX REPLACE 
    "^.*tk([0-9]\\.*[0-9]).*$" "\\1" TK_LIBRARY_VERSION "${TK_LIBRARY}")
  
@@ -38,8 +38,6 @@ $OpenBSD: patch-Modules_FindTclStub_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 -  "${TK_LIBRARY_PATH}"
 -  "${TCL_TCLSH_PATH_PARENT}/lib"
 -  "${TK_WISH_PATH_PARENT}/lib"
--  /usr/lib 
--  /usr/local/lib
 -)
 +IF(TCLTK_OPENBSD_LIB_PATHS)
 +  SET(TCLTK_POSSIBLE_LIB_PATHS
@@ -53,8 +51,6 @@ $OpenBSD: patch-Modules_FindTclStub_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 +    "${TK_LIBRARY_PATH}"
 +    "${TCL_TCLSH_PATH_PARENT}/lib"
 +    "${TK_WISH_PATH_PARENT}/lib"
-+    /usr/lib 
-+    /usr/local/lib
 +    )
 +ENDIF(TCLTK_OPENBSD_LIB_PATHS)
  

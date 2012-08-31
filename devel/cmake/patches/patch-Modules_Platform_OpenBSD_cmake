@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.5 2010/11/15 11:39:09 dcoppa Exp $
---- Modules/Platform/OpenBSD.cmake.orig	Wed Nov  3 20:58:27 2010
-+++ Modules/Platform/OpenBSD.cmake	Fri Nov 12 10:04:21 2010
+$OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.6 2012/08/31 12:28:31 dcoppa Exp $
+--- Modules/Platform/OpenBSD.cmake.orig	Thu Aug  9 20:15:19 2012
++++ Modules/Platform/OpenBSD.cmake	Fri Aug 31 14:20:36 2012
 @@ -1,5 +1,24 @@
  INCLUDE(Platform/NetBSD)
  
@@ -26,8 +26,13 @@ $OpenBSD: patch-Modules_Platform_OpenBSD_cmake,v 1.5 2010/11/15 11:39:09 dcoppa 
  # On OpenBSD, the compile time linker does not share it's configuration with
  # the runtime linker.  This will extract the library search paths from the
  # system's ld.so.hints file which will allow CMake to set the appropriate
-@@ -16,3 +35,4 @@ IF(NOT CMAKE_PLATFORM_RUNTIME_PATH)
+@@ -16,3 +35,9 @@ IF(NOT CMAKE_PLATFORM_RUNTIME_PATH)
  ENDIF()
  
  SET_PROPERTY(GLOBAL PROPERTY FIND_LIBRARY_USE_OPENBSD_VERSIONING 1)
++
++# OpenBSD policy requires that shared libraries be installed without
++# executable permission.
 +SET(CMAKE_INSTALL_SO_NO_EXE 1)
++SET(CMAKE_INSTALL_SO_NO_EXE 1 CACHE INTERNAL
++  "Install .so files without execute permission.")

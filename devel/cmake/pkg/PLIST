@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2012/07/12 15:36:20 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.21 2012/08/31 12:28:31 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -46,6 +46,7 @@ share/cmake/Modules/CMakeCXXCompiler.cmake.in
 share/cmake/Modules/CMakeCXXCompilerABI.cpp
 share/cmake/Modules/CMakeCXXCompilerId.cpp.in
 share/cmake/Modules/CMakeCXXInformation.cmake
+share/cmake/Modules/CMakeClDeps.cmake
 share/cmake/Modules/CMakeCommonLanguageInclude.cmake
 share/cmake/Modules/CMakeCompilerABI.h
 share/cmake/Modules/CMakeConfigurableFile.in
@@ -416,6 +417,7 @@ share/cmake/Modules/MacroAddFileDependencies.cmake
 share/cmake/Modules/NSIS.InstallOptions.ini.in
 share/cmake/Modules/NSIS.template.in
 share/cmake/Modules/Platform/
+share/cmake/Modules/Platform/AIX-GNU-ASM.cmake
 share/cmake/Modules/Platform/AIX-GNU-C.cmake
 share/cmake/Modules/Platform/AIX-GNU-CXX.cmake
 share/cmake/Modules/Platform/AIX-GNU-Fortran.cmake
@@ -633,6 +635,17 @@ share/cmake/Templates/UtilityHeader.dsptemplate
 share/cmake/Templates/cygwin-package.sh.in
 share/cmake/Templates/staticLibFooter.dsptemplate
 share/cmake/Templates/staticLibHeader.dsptemplate
+share/cmake/completions/
+share/cmake/completions/cmake
+share/cmake/completions/cpack
+share/cmake/completions/ctest
+share/cmake/editors/
+share/cmake/editors/emacs/
+share/cmake/editors/emacs/cmake-mode.el
+share/cmake/editors/vim/
+share/cmake/editors/vim/cmake-help.vim
+share/cmake/editors/vim/cmake-indent.vim
+share/cmake/editors/vim/cmake-syntax.vim
 share/cmake/include/
 share/cmake/include/cmCPluginAPI.h
 share/doc/cmake/
