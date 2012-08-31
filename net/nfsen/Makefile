@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/08/28 23:33:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2012/08/31 16:57:23 sthen Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
@@ -39,7 +39,7 @@ WWWDIR=			${WRKINST}${PREFIX-web}/htdocs
 PKG_ARCH=		*
 
 pre-configure:
-	@${SUBST_CMD-main} ${WRKSRC}/etc/nfsen-dist.conf
+	@${SUBST_CMD} ${WRKSRC}/etc/nfsen-dist.conf
 	@cd ${WRKSRC}/html; [ -r index.php ] || echo \
 	    '<?php header("Location: nfsen.php"); ?>' > index.php
 
