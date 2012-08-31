@@ -1,7 +1,17 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.11 2012/08/29 00:45:47 sthen Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Wed Apr 18 17:32:25 2012
-+++ tools/clang/lib/Driver/Tools.cpp	Sat Aug 25 10:29:30 2012
-@@ -4672,14 +4672,21 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.12 2012/08/31 16:21:20 pascal Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Wed Apr 18 23:32:25 2012
++++ tools/clang/lib/Driver/Tools.cpp	Fri Aug 31 13:20:45 2012
+@@ -4601,6 +4601,9 @@ void openbsd::Link::ConstructJob(Compilation &C, const
+   const Driver &D = getToolChain().getDriver();
+   ArgStringList CmdArgs;
+ 
++  // XXX
++  CmdArgs.push_back("-nopie");
++
+   if ((!Args.hasArg(options::OPT_nostdlib)) &&
+       (!Args.hasArg(options::OPT_shared))) {
+     CmdArgs.push_back("-e");
+@@ -4672,14 +4675,21 @@ void openbsd::Link::ConstructJob(Compilation &C, const
      // the default system libraries. Just mimic this for now.
      CmdArgs.push_back("-lgcc");
  
