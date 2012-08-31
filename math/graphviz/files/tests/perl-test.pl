@@ -12,4 +12,4 @@ gv::edge($n2, $n3) ;
 gv::edge($n3, $n1) ;
 
 gv::layout($g, 'dot');
-gv::render($g, 'xlib' );
+gv::render($g, 'dot' );

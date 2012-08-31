@@ -1,4 +1,4 @@
-(load-extension "/usr/local/lib/graphviz/guile/libgv_guile.so" "SWIG_init");
+(load-extension "${LOCALBASE}/lib/graphviz/guile/libgv_guile.so" "SWIG_init");
 (define g (digraph "g"));
 
 (define n1 (node g "a"));
@@ -10,5 +10,5 @@
 (define e3 (edge n3 n1));
 
 (layout g "dot");
-(render g "xlib");
+(render g "dot");
 

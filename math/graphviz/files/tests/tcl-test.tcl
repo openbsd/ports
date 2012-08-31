@@ -17,4 +17,4 @@ set E2 [gv::edge $N2 $N3]
 set E3 [gv::edge $N3 $N1]
 
 gv::layout $G dot
-gv::render $G xlib
+gv::render $G dot

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2012/08/22 22:15:49 edd Exp $
+# $OpenBSD: Makefile,v 1.49 2012/08/31 19:50:01 edd Exp $
 
 COMMENT-main=	graph drawing software
 
@@ -62,6 +62,8 @@ LIB_DEPENDS=	graphics/jpeg \
 RUN_DEPENDS=	lang/guile
 BUILD_DEPENDS=	devel/swig \
 		lang/guile
+REGRESS_DEPENDS=math/graphviz
+
 WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xxf86vm
 WANTLIB += atk-1.0 c cairo croco-0.6 drm expat ffi fontconfig
@@ -136,6 +138,17 @@ post-install:
 	@# install pre-generated config6 to avoid @exec/@unexec-delete
 	${SUBST_CMD} -c ${FILESDIR}/config6 ${PREFIX}/lib/graphviz/config6
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/graphviz/config6
+
+# Local tests for OpenBSD
+# Can't run built in tests, as requires ksh93 (some specific arguments
+# to the typeset builtin). Currently, there is no port.
+TEST_TMP=${WRKDIR}/test_tmp
+do-regress:
+	mkdir -p ${TEST_TMP}
+	cd ${FILESDIR}/tests && for i in *-test.* run_tests.sh; do \
+		${SUBST_CMD} -c $${i} ${TEST_TMP}/$${i}; \
+	done
+	cd ${TEST_TMP} && /bin/sh ./run_tests.sh
 
 # NOTE: When updating this port:
 #  * Check we have commented .la and .a corresponding to unversioned .so files
