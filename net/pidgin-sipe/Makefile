@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/23 10:33:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/08/31 12:52:12 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		SIPE plugin for Pidgin
 
-DISTNAME =		pidgin-sipe-1.13.2
-REVISION =		0
+DISTNAME =		pidgin-sipe-1.13.3
 
 CATEGORIES =		net
 
@@ -22,7 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 idn m nspr4 nss3 nssutil3 pcre
 WANTLIB += plc4 plds4 purple smime3 softokn3 sqlite3 ssl3 util
-WANTLIB += xml2 z
+WANTLIB += xml2 z pthread
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=sipe/}
 
