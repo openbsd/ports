@@ -1,0 +1,12 @@
+$OpenBSD: patch-freeze_c,v 1.1 2012/09/01 18:18:41 miod Exp $
+--- freeze.c.orig	Wed Feb 24 13:36:55 1993
++++ freeze.c	Fri Aug 10 18:43:29 2012
+@@ -816,7 +816,7 @@ char   *ifname;
+     timep.actime = statbuf.st_atime;
+     timep.modtime = statbuf.st_mtime;
+ 
+-#if defined(__m88k__)
++#if defined(__m88k__) && !defined(__OpenBSD__)
+     timep.acusec = statbuf.st_ausec;	/* pa@verano */
+     timep.modusec = statbuf.st_musec;
+ #endif				/* !m88k */
