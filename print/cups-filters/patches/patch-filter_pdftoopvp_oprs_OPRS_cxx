@@ -1,0 +1,19 @@
+$OpenBSD: patch-filter_pdftoopvp_oprs_OPRS_cxx,v 1.1 2012/09/01 18:35:15 ajacoutot Exp $
+--- filter/pdftoopvp/oprs/OPRS.cxx.orig	Thu Aug 23 20:06:55 2012
++++ filter/pdftoopvp/oprs/OPRS.cxx	Thu Aug 23 20:15:31 2012
+@@ -15,6 +15,15 @@
+ #include <string.h>
+ #include <dlfcn.h>
+ #include <stdarg.h>
++#if defined __OpenBSD__
++#include <sys/endian.h>
++#if BYTE_ORDER == BIG_ENDIAN
++#define __BYTE_ORDER __BIG_ENDIAN
++#else
++#define __BYTE_ORDER __LITTLE_ENDIAN
++#endif
++#endif
++
+ #include "goo/gmem.h"
+ #include "splash/SplashErrorCodes.h"
+ #include "splash/SplashMath.h"

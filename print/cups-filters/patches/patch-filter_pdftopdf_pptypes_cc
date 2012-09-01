@@ -1,0 +1,21 @@
+$OpenBSD: patch-filter_pdftopdf_pptypes_cc,v 1.1 2012/09/01 18:35:15 ajacoutot Exp $
+
+filter/pdftopdf/pptypes.cc:166:21: error: 'isnan' was not declared in this scope
+
+--- filter/pdftopdf/pptypes.cc.orig	Sat Aug 25 15:42:18 2012
++++ filter/pdftopdf/pptypes.cc	Sat Aug 25 15:42:40 2012
+@@ -163,10 +163,10 @@ void PageRect::translate(float tx,float ty) // {{{
+ 
+ void PageRect::set(const PageRect &rhs) // {{{
+ {
+-  if (!isnan(rhs.top)) top=rhs.top;
+-  if (!isnan(rhs.left)) left=rhs.left;
+-  if (!isnan(rhs.right)) right=rhs.right;
+-  if (!isnan(rhs.bottom)) bottom=rhs.bottom;
++  if (!std::isnan(rhs.top)) top=rhs.top;
++  if (!std::isnan(rhs.left)) left=rhs.left;
++  if (!std::isnan(rhs.right)) right=rhs.right;
++  if (!std::isnan(rhs.bottom)) bottom=rhs.bottom;
+ }
+ // }}}
+ 
