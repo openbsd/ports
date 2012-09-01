@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/07/08 08:57:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/01 14:36:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	document manager for GNOME
 
 GNOME_PROJECT=	gnome-documents
 GNOME_VERSION=	0.4.2
+REVISION=	0
 
 HOMEPAGE=	https://live.gnome.org/GnomeDocuments
 

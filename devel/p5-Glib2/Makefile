@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/01 14:36:57 ajacoutot Exp $
 
 BROKEN=		glib2 is threaded but our perl is not so we end up with undefined symbols
 
@@ -9,7 +9,7 @@ COMMENT=	perl interface to the Glib libraries
 V=		1.222
 DISTNAME=	Glib-$V
 PKGNAME=	p5-Glib2-$V
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11 devel
 
 # LGPLv2.1

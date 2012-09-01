@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:56 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/01 14:36:57 ajacoutot Exp $
 
 BROKEN=		does not work with Qt >= 4.6
 
@@ -19,7 +19,7 @@ DIST_SUBDIR=	qt4-eventsview-$V
 V=		0.1
 DISTNAME=	57337-eventsview
 PKGNAME=	qt4-eventsview-$V
-REVISION =	3
+REVISION =	4
 MASTER_SITES=	http://qt-apps.org/CONTENT/content-files/
 
 WRKDIST=	${WRKDIR}/eventsview

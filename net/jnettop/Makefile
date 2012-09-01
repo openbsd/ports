@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2012/03/29 13:38:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT=	capture network traffic, display streams sorted by bandwidth
 
 DISTNAME=	jnettop-0.13.0
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 

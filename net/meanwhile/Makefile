@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT=	implementation of Lotus Sametime Community Client protocol
 
 DISTNAME=	meanwhile-1.0.2
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	meanwhile 1.2
 CATEGORIES=	devel net
 

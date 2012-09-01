@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/01 14:36:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		console jabber client
 DISTNAME=		mcabber-0.10.1
 CATEGORIES=		net
 
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
 

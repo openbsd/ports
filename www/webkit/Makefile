@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/08/22 07:48:37 landry Exp $
+# $OpenBSD: Makefile,v 1.68 2012/09/01 14:36:58 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -9,6 +9,7 @@ DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE =	http://webkitgtk.org/
 MASTER_SITES =	${HOMEPAGE}/releases/

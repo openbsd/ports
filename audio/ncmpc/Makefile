@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2012/03/04 16:57:19 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/01 14:36:56 ajacoutot Exp $
 
 COMMENT=		curses based frontend for mpd
 
 DISTNAME=		ncmpc-0.20
 EPOCH=			0
 CATEGORIES=		audio
+REVISION=	0
 
 HOMEPAGE=		http://mpd.wikia.com/wiki/Client:Ncmpc
 

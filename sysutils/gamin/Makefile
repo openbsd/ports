@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/01/01 09:01:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/09/01 14:36:58 ajacoutot Exp $
 
 # XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
 CFLAGS +=	"-DG_CONST_RETURN=const"
@@ -12,8 +12,8 @@ GNOME_VERSION=	0.1.10
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 
-REVISION-main=	18
-REVISION-python=6
+REVISION-main=	19
+REVISION-python=7
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
 SHARED_LIBS +=  fam                  1.0      # .0.0

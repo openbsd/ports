@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2012/08/30 14:27:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2012/09/01 14:37:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,8 +12,8 @@ EXTRACT_SUFX=	.tar.xz
 PKGNAME-main=	gtk+3-${V}
 PKGNAME-cups=	gtk+3-cups-${V}
 
-REVISION-main=	1
-REVISION-cups=	0
+REVISION-main=	2
+REVISION-cups=	1
 
 # grep ^GTK_BINARY_VERSION ${WRKSRC}/Makefile (after do-configure)
 GTK_BINARY_VERSION=3.0.0

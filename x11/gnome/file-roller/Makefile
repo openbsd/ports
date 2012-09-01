@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2012/09/01 14:36:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,8 @@ GNOME_VERSION=		3.4.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-nautilus=	0
 
 CATEGORIES=		archivers
 

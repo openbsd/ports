@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2012/03/08 12:13:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) client
 
 DISTNAME=	silc-client-1.1.8
-REVISION=	7
+REVISION=	8
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.silcnet.org/

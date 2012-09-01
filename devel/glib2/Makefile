@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2012/08/30 10:08:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -6,7 +6,7 @@ DISTNAME=		glib-2.32.4
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

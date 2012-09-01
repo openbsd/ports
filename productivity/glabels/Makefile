@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT =	labels and business card designer
 
 GNOME_PROJECT =	glabels
 GNOME_VERSION =	3.0.0
 
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	productivity graphics
 

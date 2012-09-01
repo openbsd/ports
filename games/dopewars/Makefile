@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.53 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT=	game where you deal drugs on the streets of NY
 
 DISTNAME=	dopewars-1.5.12
-REVISION=	6
+REVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dopewars/}
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT =		Haskell bindings to gio
 
 DISTNAME =		gio-0.12.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

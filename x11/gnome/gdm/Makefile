@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2012/06/15 08:30:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.122 2012/09/01 14:36:59 ajacoutot Exp $
 
 BROKEN=			needs PAM(7)
 
@@ -9,7 +9,7 @@ COMMENT=		GNOME display manager
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.2.1.1
 
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 

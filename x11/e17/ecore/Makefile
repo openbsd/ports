@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2011/11/18 12:20:33 nigel Exp $
+# $OpenBSD: Makefile,v 1.20 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-1.0.0
-REVISION =		1
+REVISION =		2
 
 EPOCH =			2
 

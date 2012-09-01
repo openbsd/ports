@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:13:37 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-1.0.1
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=	castget              0.0      # .0.0
 CATEGORIES=		net
 

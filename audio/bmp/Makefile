@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2012/07/12 10:30:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.41 2012/09/01 14:36:56 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -14,9 +14,9 @@ PKGNAME-vorbis=	bmp-vorbis-$V
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=beepmp/}
 
-REVISION-main=	3
-REVISION-mp3=	4
-REVISION-vorbis=	3
+REVISION-main=	4
+REVISION-mp3=	5
+REVISION-vorbis=4
 
 SHARED_LIBS=	beep	2.1
 

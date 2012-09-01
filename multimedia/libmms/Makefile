@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2012/03/29 13:38:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT =	library for parsing mms:// and mmsh:// type network streams
 
 DISTNAME =	libmms-0.6.2
 CATEGORIES =	multimedia net
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=libmms/}
+REVISION=	0
 
 SHARED_LIBS =	mms 1.0 #0.2
 

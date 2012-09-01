@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/04/23 17:15:17 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2012/09/01 14:36:56 ajacoutot Exp $
 
 COMMENT-main=	library to access the contents of an iPod
 COMMENT-python= python bindings for libgpod
@@ -11,8 +11,8 @@ SHARED_LIBS=	gpod	721.0	# 7.1
 CATEGORIES=	audio
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=gtkpod/}
 
-REVISION-main=	2
-REVISION-python=1
+REVISION-main=	3
+REVISION-python=2
 
 HOMEPAGE=	http://www.gtkpod.org/libgpod/
 

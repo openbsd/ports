@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	data synchronization framework
 
 V=		0.36
 DISTNAME=	libopensync-${V}
-REVISION =	3
+REVISION =	4
 SHARED_LIBS +=	opensync 1.1
 CATEGORIES=	devel comms
 

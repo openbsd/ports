@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/22 20:14:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/01 14:36:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		2.0
 DISTNAME=		pulseaudio-${VERSION}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  pulse                1.1      # .14.2
 SHARED_LIBS +=  pulse-simple         0.0      # .0.3

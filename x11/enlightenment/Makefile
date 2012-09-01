@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2012/03/29 13:39:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.60 2012/09/01 14:36:58 ajacoutot Exp $
 
 COMMENT=	themed window manager
 
@@ -7,6 +7,7 @@ DISTNAME=	e16-$V
 PKGNAME=	enlightenment-$V
 DOCS=		e16-docs-0.16.8.0.2
 THEMES=		e16-themes-1.0.1
+REVISION=	0
 
 CATEGORIES=	x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/04/05 12:08:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject (deprecated)
 
@@ -7,7 +7,7 @@ GNOME_VERSION=	2.28.6
 EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
-REVISION=	4
+REVISION=	5
 
 EPOCH=		0
 

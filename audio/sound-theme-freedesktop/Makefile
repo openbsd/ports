@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2012/03/08 13:28:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:56 ajacoutot Exp $
 
 COMMENT=	XDG sound theme
 
 DISTNAME=	sound-theme-freedesktop-0.7
 CATEGORIES=	audio
 
-REVISION=	2
+REVISION=	3
 
 EXTRACT_SUFX=	.tar.bz2
 

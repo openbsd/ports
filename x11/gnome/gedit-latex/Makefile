@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2012/06/11 21:14:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/01 14:36:59 ajacoutot Exp $
 
 COMMENT=	LaTeX plugin for Gedit
 
 GNOME_PROJECT=	gedit-latex
 GNOME_VERSION=	3.4.1
+REVISION=	0
 
 CATEGORIES=	editors print
 

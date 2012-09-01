@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2012/08/30 08:00:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/01 14:36:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	simple encrypted backup tool for GNOME
 
 GNOME_VERSION=	23.90
 GNOME_PROJECT=	deja-dup
+REVISION=	0
 
 CATEGORIES=	sysutils x11/gnome
 

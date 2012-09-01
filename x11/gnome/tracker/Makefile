@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/08/04 15:36:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2012/09/01 14:36:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,9 +17,9 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=		3
-REVISION-evolution=	0
-REVISION-nautilus=	0
+REVISION-main=		4
+REVISION-evolution=	1
+REVISION-nautilus=	1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:

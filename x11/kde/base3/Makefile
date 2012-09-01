@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2012/06/28 18:52:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.109 2012/09/01 14:37:00 ajacoutot Exp $
 
 COMMENT-main = 		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -47,7 +47,7 @@ LIB_DEPENDS-samba = ${LIB_DEPENDS} \
 		net/samba>=3
 
 
-REVISION-main =		18
+REVISION-main =		19
 WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	Xcursor Xdamage Xdamage Xfixes Xfixes Xft Xi Xinerama Xmu Xrandr Xss \
 	Xt Xtst Xxf86misc Xxf86vm Xxf86vm asn1 audiofile c com_err crypto drm \
@@ -61,7 +61,7 @@ WANTLIB-main = ${WANTLIB} GL GLU Half Iex IlmImf IlmThread Imath Xcomposite \
 	mng ogg pcre pcreposix pthread qtmcop sasl2 sndio soundserver_idl ssl \
 	usb vcard vorbis vorbisenc vorbisfile xkbfile Xau Xdmcp
 
-REVISION-samba =	4
+REVISION-samba =	5
 WANTLIB-samba = ${WANTLIB} execinfo lib/samba/smbclient pthread talloc tdb \
 	wbclient Xfixes Xt expat fontconfig freetype
 

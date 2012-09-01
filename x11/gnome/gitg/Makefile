@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/07/13 16:35:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		git repository viewer for gtk+/GNOME
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		0.2.5
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  gitg-1.0                  0.0 # 0.0
 

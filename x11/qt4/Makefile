@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2012/08/04 15:07:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2012/09/01 14:37:00 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,7 +24,13 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-mysql=		0
+REVISION-postgresql=	0
+REVISION-examples=	0
+REVISION-sqlite2=	0
+REVISION-tds=		0
+REVISION-debug=		0
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \

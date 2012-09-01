@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/04/30 12:51:37 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/01 14:37:00 ajacoutot Exp $
 
 COMMENT =	Xfce4 developer tools and macros
 
 XFCE_PROJECT =	xfce4-dev-tools
 HOMEPAGE =	http://foo-projects.org/~benny/projects/xfce4-dev-tools/
+REVISION=	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM =	Yes

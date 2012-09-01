@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2012/07/13 15:11:41 kili Exp $
+# $OpenBSD: Makefile,v 1.82 2012/09/01 14:36:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,10 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	1
-REVISION-djvu=	0
+REVISION-main=	2
+REVISION-djvu=	1
+REVISION-dvi=	0
+REVISION-nautilus=0
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0

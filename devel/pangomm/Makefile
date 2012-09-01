@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/10/26 12:25:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
 GNOME_PROJECT =		pangomm
 GNOME_VERSION =		2.28.4
+REVISION=	0
 
 CATEGORIES =		devel x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2012/09/01 14:36:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
 PKGNAME-docs=		lilypond-docs-${VERSION}
-REVISION-main =		0
+REVISION-main =		1
 CATEGORIES=		print
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0

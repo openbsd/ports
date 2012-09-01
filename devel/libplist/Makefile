@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/03/23 13:28:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT-main =		library to handle Apple Property List format
 COMMENT-python =	python bindings for libplist
@@ -10,8 +10,8 @@ DISTNAME =		libplist-${VERSION}
 PKGNAME-main =		${DISTNAME}	
 PKGNAME-python =	py-plist-${VERSION}
 
-REVISION-main =		0
-REVISION-python =	0
+REVISION-main =		1
+REVISION-python =	1
 
 SHARED_LIBS +=		plist		0.0 # 1.1
 SHARED_LIBS +=		plist++		0.0 # 1.1

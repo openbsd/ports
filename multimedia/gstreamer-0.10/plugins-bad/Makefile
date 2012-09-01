@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/08/27 09:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2012/09/01 14:36:57 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,9 +11,9 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		2
-REVISION-mjpeg =	1
-REVISION-neon =		0
+REVISION-main =		3
+REVISION-mjpeg =	2
+REVISION-neon =		1
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
