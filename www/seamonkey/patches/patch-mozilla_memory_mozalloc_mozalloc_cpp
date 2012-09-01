@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_memory_mozalloc_mozalloc_cpp,v 1.6 2012/06/11 15:38:33 landry Exp $
+$OpenBSD: patch-mozilla_memory_mozalloc_mozalloc_cpp,v 1.7 2012/09/01 14:10:03 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=633857
---- mozilla/memory/mozalloc/mozalloc.cpp.orig	Fri Jul 15 07:51:40 2011
-+++ mozilla/memory/mozalloc/mozalloc.cpp	Sun Jul 31 22:20:15 2011
-@@ -45,6 +45,7 @@
+--- mozilla/memory/mozalloc/mozalloc.cpp.orig	Mon Aug 27 06:49:25 2012
++++ mozilla/memory/mozalloc/mozalloc.cpp	Sat Sep  1 02:00:14 2012
+@@ -12,6 +12,7 @@
  #include <sys/types.h>
  
  #if defined(MALLOC_H)

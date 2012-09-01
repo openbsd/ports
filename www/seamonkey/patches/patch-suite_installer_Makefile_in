@@ -1,8 +1,8 @@
-$OpenBSD: patch-suite_installer_Makefile_in,v 1.4 2012/08/07 09:02:33 landry Exp $
+$OpenBSD: patch-suite_installer_Makefile_in,v 1.5 2012/09/01 14:10:03 landry Exp $
 Don't install the sdk
---- suite/installer/Makefile.in.orig	Sun Jul 15 13:51:42 2012
-+++ suite/installer/Makefile.in	Tue Jul 17 21:37:57 2012
-@@ -175,10 +176,6 @@ NON_OMNIJAR_FILES = \
+--- suite/installer/Makefile.in.orig	Mon Aug 27 06:44:26 2012
++++ suite/installer/Makefile.in	Sat Sep  1 02:00:16 2012
+@@ -142,10 +142,6 @@ NON_OMNIJAR_FILES = \
  	defaults/profile/panels.rdf \
  	$(NULL)
  

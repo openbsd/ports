@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.3 2012/08/07 09:02:33 landry Exp $
---- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Wed Jun 13 03:45:03 2012
-+++ mozilla/gfx/thebes/gfxPlatform.cpp	Sun Jun 17 19:57:20 2012
-@@ -459,6 +459,7 @@ void SourceBufferDestroy(void *srcBuffer)
+$OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.4 2012/09/01 14:10:03 landry Exp $
+--- mozilla/gfx/thebes/gfxPlatform.cpp.orig	Mon Aug 27 06:49:13 2012
++++ mozilla/gfx/thebes/gfxPlatform.cpp	Sat Sep  1 02:00:11 2012
+@@ -443,6 +443,7 @@ void SourceBufferDestroy(void *srcBuffer)
    static_cast<SourceSurface*>(srcBuffer)->Release();
  }
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.3 2012/08/07 09:02:33 lan
  void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  {
    gfxImageSurface* origSurf =
-@@ -466,6 +467,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
+@@ -450,6 +451,7 @@ void SourceSnapshotDetached(cairo_surface_t *nullSurf)
  
    origSurf->SetData(&kSourceSurface, NULL, NULL);
  }
@@ -17,16 +17,16 @@ $OpenBSD: patch-mozilla_gfx_thebes_gfxPlatform_cpp,v 1.3 2012/08/07 09:02:33 lan
  
  RefPtr<SourceSurface>
  gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aTarget, gfxASurface *aSurface)
-@@ -535,6 +537,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
-                                                      imgSurface->Stride(),
-                                                      format);
+@@ -544,6 +546,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+ 
+     }
  
 +    #ifdef MOZ_TREE_CAIRO
      cairo_surface_t *nullSurf =
  	cairo_null_surface_create(CAIRO_CONTENT_COLOR_ALPHA);
      cairo_surface_set_user_data(nullSurf,
-@@ -543,6 +546,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
- 				NULL);
+@@ -552,6 +555,7 @@ gfxPlatform::GetSourceSurfaceForSurface(DrawTarget *aT
+                                 NULL);
      cairo_surface_attach_snapshot(imgSurface->CairoSurface(), nullSurf, SourceSnapshotDetached);
      cairo_surface_destroy(nullSurf);
 +    #endif
