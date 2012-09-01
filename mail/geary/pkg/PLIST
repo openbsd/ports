@@ -1,0 +1,63 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/01 18:16:24 landry Exp $
+@conflict postler-*
+@pkgpath mail/postler
+@bin bin/geary
+share/applications/geary.desktop
+share/geary/
+share/geary/icons/
+share/geary/icons/application-menu.svg
+share/geary/icons/archive-insert.svg
+share/geary/icons/archive.svg
+share/geary/icons/geary.png
+share/geary/icons/mail-inbox.png
+share/geary/icons/mail-sent.png
+share/geary/icons/menu-down.svg
+share/geary/icons/multiple-tags.png
+share/geary/icons/non-starred-grey.png
+share/geary/icons/one-tag.png
+share/geary/icons/remove-formatting.png
+share/geary/icons/starred.png
+share/geary/sql/
+share/geary/sql/version-001.sql
+share/geary/sql/version-002.sql
+share/geary/sql/version-003.sql
+share/geary/sql/version-004.sql
+share/geary/sql/version-005.sql
+share/geary/theming/
+share/geary/theming/message-viewer.css
+share/geary/theming/message-viewer.html
+share/geary/ui/
+share/geary/ui/accelerators.ui
+share/geary/ui/composer.glade
+share/geary/ui/composer_accelerators.ui
+share/geary/ui/login.glade
+share/geary/ui/message.glade
+share/geary/ui/password-dialog.glade
+share/geary/ui/preferences.glade
+share/geary/ui/toolbar.glade
+share/geary/ui/toolbar_mark_menu.ui
+share/geary/ui/toolbar_menu.ui
+share/glib-2.0/schemas/org.yorba.geary.gschema.xml
+share/gnome/
+share/gnome/help/
+share/gnome/help/geary/
+share/gnome/help/geary/C/
+share/gnome/help/geary/C/archive.page
+share/gnome/help/geary/C/bugs.page
+share/gnome/help/geary/C/conversation.page
+share/gnome/help/geary/C/editor.page
+share/gnome/help/geary/C/figures/
+share/gnome/help/geary/C/figures/Mail.png
+share/gnome/help/geary/C/index.page
+share/gnome/help/geary/C/limits.page
+share/gnome/help/geary/C/send.page
+share/gnome/help/geary/C/shortcuts.page
+share/gnome/help/geary/C/spell.page
+share/gnome/help/geary/C/star.page
+share/icons/hicolor/scalable/apps/geary.png
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
