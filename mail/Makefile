@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.281 2012/08/28 05:32:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.282 2012/09/01 18:17:44 landry Exp $
  
      SUBDIR =
      SUBDIR += abook
@@ -61,6 +61,7 @@
      SUBDIR += fdm
      SUBDIR += femail
      SUBDIR += fetchmail
+     SUBDIR += geary
      SUBDIR += getmail
      SUBDIR += gmime,
      SUBDIR += grepmail
@@ -171,7 +172,6 @@
      SUBDIR += poppy
      SUBDIR += postfix
      SUBDIR += postgrey
-     SUBDIR += postler
      SUBDIR += prepop
      SUBDIR += procmail
      SUBDIR += py-authres
