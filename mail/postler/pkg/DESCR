@@ -1,6 +1,0 @@
-Postler is a lean mail interface. Messages are read from Maildir folders, HTML
-is rendered, composed and spell-checked with WebKitGTK+. The application
-consists of independent modules, the reader, viewer and the composer. Each
-module runs separately. No network access occurs from within the user interface
-by default, offline access is integral. Contact completion and address book
-integration are provided by Dexter.
