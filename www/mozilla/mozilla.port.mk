@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.43 2012/06/11 15:26:14 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.44 2012/09/01 17:48:19 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -143,14 +143,6 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/${_MOZDIR}/build/autoconf \
 				${WRKSRC}/${_MOZDIR}/js/src/build/autoconf
 
 post-extract:
-# XXX nsSound.cpp different between mozilla branch - need to use local one
-.if ${MOZILLA_PROJECT} == "firefox" || \
-	 ${MOZILLA_PROJECT} == "thunderbird" || \
-	${MOZILLA_PROJECT} == "seamonkey"
-	cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/${_MOZDIR}/widget/gtk2/
-.else
-	cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/${_MOZDIR}/widget/src/gtk2/
-.endif
 # syndeyaudio sndio file comes from ffx FILESDIR
 	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
 		${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/
