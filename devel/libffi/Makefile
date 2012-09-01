@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2012/08/05 00:16:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/01 18:15:06 miod Exp $
 
 # XXX: cannot be updated to a newer version before the binutils in base
 # is updated to 2.17.
 
-# m88k - not tested yet, will it ever?
+# m68k - needs ELF and serious tinkering
+# m88k - missing code
 # vax - libffi hasn't been ported to vax, and most likely never will.
-NOT_FOR_ARCHS= 		m88k vax
+NOT_FOR_ARCHS= 		m68k m88k vax
 
 COMMENT=		Foreign Function Interface
 
