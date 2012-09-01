@@ -1,0 +1,9 @@
+Devel::TraceUse can analyze a program to see which part used which module. 
+
+Command-line usage:
+
+$ perl -d:TraceUse myprog.pl
+
+will display a tree of the modules ultimately used to run your
+program. (It also runs your program all the way through to the end with
+a small startup cost.)
