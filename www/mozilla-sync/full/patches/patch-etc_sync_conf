@@ -1,0 +1,28 @@
+$OpenBSD: patch-etc_sync_conf,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+--- etc/sync.conf.orig	Tue Jul 17 22:08:29 2012
++++ etc/sync.conf	Sat Sep  1 17:20:03 2012
+@@ -9,7 +9,7 @@ use_ssl = false
+ 
+ [storage]
+ backend = syncstorage.storage.sql.SQLStorage
+-sqluri = sqlite:////tmp/test.db
++sqluri = sqlite:////var/mozilla-sync/storage.db
+ standard_collections = false
+ use_quota = true
+ quota_size = 5120
+@@ -21,7 +21,7 @@ create_tables = true
+ 
+ [auth]
+ backend = services.user.sql.SQLUser
+-sqluri = sqlite:////tmp/test.db
++sqluri = sqlite:////var/mozilla-sync/user.db
+ pool_size = 100
+ pool_recycle = 3600
+ create_tables = true
+@@ -47,5 +47,5 @@ product = weave
+ 
+ [reset_codes]
+ backend = services.resetcodes.rc_sql.ResetCodeSQL
+-sqluri = sqlite:////tmp/test.db
++sqluri = sqlite:////var/mozilla-sync/reset.db
+ create_tables = True

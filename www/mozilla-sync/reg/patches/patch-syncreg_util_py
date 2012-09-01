@@ -1,0 +1,12 @@
+$OpenBSD: patch-syncreg_util_py,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+--- syncreg/util.py.orig	Wed Jun 27 23:20:48 2012
++++ syncreg/util.py	Wed Jun 27 23:21:20 2012
+@@ -38,7 +38,7 @@ from mako.lookup import TemplateLookup
+ 
+ _TPL_DIR = os.path.join(os.path.dirname(__file__), 'templates')
+ _lookup = TemplateLookup(directories=[_TPL_DIR],
+-                         module_directory=_TPL_DIR)  # XXX defined in prod
++                         module_directory="/var/mozilla-sync/")  # XXX defined in prod
+ 
+ 
+ def render_mako(template, **data):

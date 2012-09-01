@@ -1,0 +1,21 @@
+$OpenBSD: patch-development_ini,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+--- development.ini.orig	Tue Jun 26 22:20:43 2012
++++ development.ini	Wed Jun 27 23:44:08 2012
+@@ -12,7 +12,7 @@ threadpool_workers = 60
+ 
+ [app:main]
+ use = egg:SyncServer
+-configuration = file:%(here)s/etc/sync.conf
++configuration = file:/etc/mozilla-sync/sync.conf
+ 
+ #
+ # logging
+@@ -57,7 +57,7 @@ formatter = generic
+ 
+ [handler_syncserver_errors]
+ class = handlers.RotatingFileHandler
+-args = ('/tmp/sync-error.log',)
++args = ('/var/mozilla-sync/sync-error.log',)
+ level = ERROR
+ formatter = generic
+ 

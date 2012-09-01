@@ -1,0 +1,13 @@
+$OpenBSD: patch-syncserver_controllers_py,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+put mako template results under a _mozsync writable dir..
+--- syncserver/controllers.py.orig	Tue Jun 26 22:20:43 2012
++++ syncserver/controllers.py	Wed Jun 27 23:23:15 2012
+@@ -52,7 +52,7 @@ from syncreg.util import render_mako
+ 
+ _TPL_DIR = os.path.join(os.path.dirname(__file__), 'templates')
+ _lookup = TemplateLookup(directories=[_TPL_DIR],
+-                         module_directory=_TPL_DIR)  # XXX defined in prod
++                         module_directory="/var/mozilla-sync/")  # XXX defined in prod
+ 
+ 
+ class MainController(object):

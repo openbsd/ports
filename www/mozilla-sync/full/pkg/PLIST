@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+@newgroup _mozsync:699
+@newuser _mozsync:699:699:daemon:Mozilla Sync Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/mozilla-sync
+@mode 750
+@owner _mozsync
+@group _mozsync
+@sample /var/mozilla-sync/
+@mode
+@owner
+@group
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/SyncServer-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/syncserver/
+lib/python${MODPY_VERSION}/site-packages/syncserver/__init__.py
+lib/python${MODPY_VERSION}/site-packages/syncserver/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/syncserver/controllers.py
+lib/python${MODPY_VERSION}/site-packages/syncserver/controllers.pyc
+lib/python${MODPY_VERSION}/site-packages/syncserver/templates/
+lib/python${MODPY_VERSION}/site-packages/syncserver/templates/base.mako
+lib/python${MODPY_VERSION}/site-packages/syncserver/templates/delete_account.mako
+share/examples/mozilla-sync/
+@sample ${SYSCONFDIR}/mozilla-sync/
+share/examples/mozilla-sync/production.ini
+@sample ${SYSCONFDIR}/mozilla-sync/production.ini
+share/examples/mozilla-sync/sync.conf
+@sample ${SYSCONFDIR}/mozilla-sync/sync.conf
+@cwd ${LOCALBASE}/share/doc/pkg-readmes/
+${FULLPKGNAME}
+@rcscript ${RCDIR}/mozilla_sync

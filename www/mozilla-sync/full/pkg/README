@@ -1,0 +1,77 @@
+$OpenBSD: README,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Mozilla Sync server is now installed, and sample configuration files are in
+${SYSCONFDIR}/mozilla-sync/sync.conf and ${SYSCONFDIR}/mozilla-sync/production.ini
+
+Basic configuration
+===================
+
+You have to set the fallback_node URL in ${SYSCONFDIR}/mozilla-sync/sync.conf
+to the full url of the vhost you'll use for Sync server. Note that it
+won't work in a subdir, ie it can be http://example.com:5000/ or
+http://sync.example.com/ but NOT http://example.com/sync/.
+
+Running the Sync server
+=======================
+
+You can start/stop the server through the mozilla_sync rc.d(8) script.
+By default it listens on port 5000 (configurable in
+${SYSCONFDIR}/mozilla-sync/production.ini). If you don't mind running on
+a non-standard port, the configuration is over and you can point your
+Firefox clients to it. Otherwise, if you want to use a standard port
+and hostname, you'll need to proxy the requests to the sync server.
+For that you can use the following VirtualHost definition in httpd.conf
+(be sure to enable the proxy module):
+
+<VirtualHost *:80>
+        ServerAdmin root@example.com
+        ServerName  sync.example.com
+        ProxyRequests Off
+        ProxyPass / http://localhost:5000/
+        ProxyPassReverse / http://localhost:5000/
+</VirtualHost>
+
+The equivalent for nginx.conf is:
+
+server {
+        server_name sync.example.com;
+        listen      80;
+        listen      [::]:80;
+        location / {
+                proxy_pass      http://127.0.0.1:5000;
+                proxy_redirect  default;
+        }
+}
+
+These examples use HTTP; in production it is recommended that you
+use HTTPS to avoid passwords being sent in clear-text.
+
+Once running, go to sync.example.com/weave-password-reset, if you
+see a webform it's running fine. (This is just a test, don't try and
+reset your password yet).
+
+Configuring the clients
+=======================
+
+Now follow the steps in
+https://support.mozilla.org/en-US/kb/how-do-i-set-up-firefox-sync, and
+dont forget to use your custom server url. Setup other devices with the
+'pair a device' code (note that this communicates with the mozilla JPAKE
+server at https://setup.services.mozilla.com/ to discover the url of
+your sync server, if you want to avoid that use the 'i don't have the
+device with me' method with the recovery key) wait a while, and see
+other firefoxes history in awesome bar or other tabs in about:sync-tabs.
+
+https://support.mozilla.org/en-US/kb/how-do-i-manage-my-firefox-sync-account
+has more information on how to manage your sync data.
+The server provides convenience urls at:
+http://sync.example.com/weave-delete-account
+http://sync.example.com/weave-password-reset
+
+If you encounter a sync error, check that you really did configure
+fallback_node before starting the server.
+
