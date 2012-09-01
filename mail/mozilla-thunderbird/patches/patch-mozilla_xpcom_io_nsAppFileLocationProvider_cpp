@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.6 2012/02/20 20:17:49 landry Exp $
---- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Wed Jan 18 10:44:19 2012
-+++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Sun Jan 22 22:21:49 2012
-@@ -240,12 +240,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, b
+$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.7 2012/09/01 14:22:45 landry Exp $
+--- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Sat Aug 25 02:31:35 2012
++++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Sat Sep  1 01:59:43 2012
+@@ -206,12 +206,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, b
  #ifdef XP_UNIX
      else if (nsCRT::strcmp(prop, NS_SYSTEM_PLUGINS_DIR) == 0) {
  #ifdef ENABLE_SYSTEM_EXTENSION_DIRS

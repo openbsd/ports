@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/08/07 09:07:04 landry Exp $
---- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Wed Jun 20 05:50:51 2012
-+++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Fri Jun 22 22:49:26 2012
-@@ -111,6 +111,7 @@
+$OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.10 2012/09/01 14:22:45 landry Exp $
+--- mozilla/security/manager/ssl/src/nsNSSComponent.cpp.orig	Sat Aug 25 02:31:28 2012
++++ mozilla/security/manager/ssl/src/nsNSSComponent.cpp	Sat Sep  1 01:59:41 2012
+@@ -71,6 +71,7 @@
  #include "secerr.h"
  #include "sslerr.h"
  #include "cert.h"
@@ -9,15 +9,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
  
  #include "nsXULAppAPI.h"
  
-@@ -124,6 +125,7 @@ extern "C" {
- }
- 
- using namespace mozilla;
-+using namespace mozilla::psm;
- 
- #ifdef PR_LOGGING
- PRLogModuleInfo* gPIPNSSLog = nsnull;
-@@ -395,6 +397,8 @@ nsNSSComponent::deleteBackgroundThreads()
+@@ -356,6 +357,8 @@ nsNSSComponent::deleteBackgroundThreads()
      delete mCertVerificationThread;
      mCertVerificationThread = nsnull;
    }
@@ -26,7 +18,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
  }
  
  void
-@@ -402,21 +406,20 @@ nsNSSComponent::createBackgroundThreads()
+@@ -363,21 +366,20 @@ nsNSSComponent::createBackgroundThreads()
  {
    NS_ASSERTION(mCertVerificationThread == nsnull,
                 "Cert verification thread already created.");
@@ -50,7 +42,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
    if (mUpdateTimerInitialized) {
      {
        MutexAutoLock lock(mCrlTimerLock);
-@@ -844,7 +847,7 @@ nsNSSComponent::InstallLoadableRoots()
+@@ -806,7 +808,7 @@ nsNSSComponent::InstallLoadableRoots()
  
      if (!possible_ckbi_locations[il])
      {
@@ -59,7 +51,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
      }
      else
      {
-@@ -1907,6 +1910,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
+@@ -1869,6 +1871,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
  
        LaunchSmartCardThreads();
  
@@ -68,7 +60,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
        PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("NSS Initialization done\n"));
      }
    }
-@@ -2049,16 +2054,6 @@ nsNSSComponent::Init()
+@@ -2012,16 +2016,6 @@ nsNSSComponent::Init()
    if (mClientAuthRememberService)
      mClientAuthRememberService->Init();
  
@@ -85,7 +77,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
    InitializeCRLUpdateTimer();
    RegisterPSMContentListener();
  
-@@ -2273,6 +2268,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2236,6 +2230,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      DoProfileChangeTeardown(aSubject);
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_CHANGE_TEARDOWN_VETO_TOPIC) == 0) {
@@ -93,7 +85,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
      mShutdownObjectList->allowUI();
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_BEFORE_CHANGE_TOPIC) == 0) {
-@@ -2320,6 +2316,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2283,6 +2278,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      InitializeCRLUpdateTimer();
    }
    else if (nsCRT::strcmp(aTopic, NS_XPCOM_SHUTDOWN_OBSERVER_ID) == 0) {
@@ -101,7 +93,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
  
      PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("nsNSSComponent: XPCom shutdown observed\n"));
  
-@@ -2610,6 +2607,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
+@@ -2573,6 +2569,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
  void
  nsNSSComponent::DoProfileChangeTeardown(nsISupports* aSubject)
  {
@@ -111,7 +103,7 @@ $OpenBSD: patch-mozilla_security_manager_ssl_src_nsNSSComponent_cpp,v 1.9 2012/0
    bool callVeto = false;
  
    if (!mShutdownObjectList->ifPossibleDisallowUI()) {
-@@ -2663,9 +2663,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
+@@ -2626,9 +2625,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
  void
  nsNSSComponent::DoProfileChangeNetRestore()
  {
