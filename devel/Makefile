@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1064 2012/08/27 14:34:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1065 2012/09/01 17:11:48 espie Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -595,6 +595,7 @@
      SUBDIR += p5-Devel-StackTrace-AsHTML
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-Trace
+     SUBDIR += p5-Devel-TraceUse
      SUBDIR += p5-Devel-ebug
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Device-USB
