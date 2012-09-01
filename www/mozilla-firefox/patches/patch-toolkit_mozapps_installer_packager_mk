@@ -1,8 +1,8 @@
-$OpenBSD: patch-toolkit_mozapps_installer_packager_mk,v 1.12 2012/08/07 08:55:40 landry Exp $
+$OpenBSD: patch-toolkit_mozapps_installer_packager_mk,v 1.13 2012/09/01 13:56:45 landry Exp $
 install headers/idl/sdk libs only if xulrunner
---- toolkit/mozapps/installer/packager.mk.orig	Fri Jul 13 23:43:16 2012
-+++ toolkit/mozapps/installer/packager.mk	Tue Jul 17 18:05:03 2012
-@@ -934,7 +934,7 @@ endif
+--- toolkit/mozapps/installer/packager.mk.orig	Wed Aug 15 07:48:33 2012
++++ toolkit/mozapps/installer/packager.mk	Sun Aug 19 13:50:39 2012
+@@ -907,7 +907,7 @@ endif
  	$(NSINSTALL) -D $(DESTDIR)$(bindir)
  	$(RM) -f $(DESTDIR)$(bindir)/$(MOZ_APP_NAME)
  	ln -s $(installdir)/$(MOZ_APP_NAME) $(DESTDIR)$(bindir)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.205 2012/08/07 16:16:52 landry Exp $
+# $OpenBSD: Makefile,v 1.206 2012/09/01 13:56:45 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,13 +6,12 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	14.0.1
+MOZILLA_VERSION =	15.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
-SO_VERSION =	33.0
+SO_VERSION =	34.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	browsercomps mozalloc \
@@ -52,6 +51,12 @@ RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 
 .if ${MACHINE_ARCH:Msparc64}
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
+.endif
+
+# XXX needed since 15.0b5, relocation overflow otherwise...
+# replaces -g by -Os
+.if ${MACHINE_ARCH} == "powerpc"
+CONFIGURE_ENV +=	MOZ_DEBUG_FLAGS="-Os"
 .endif
 
 # needed during make install

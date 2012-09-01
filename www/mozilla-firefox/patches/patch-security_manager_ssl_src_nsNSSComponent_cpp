@@ -1,9 +1,9 @@
-$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.16 2012/08/07 08:55:40 landry Exp $
+$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.17 2012/09/01 13:56:45 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=706955, only needed on ppc ?
 xpcshell hang during fake
---- security/manager/ssl/src/nsNSSComponent.cpp.orig	Wed Jun 13 01:47:04 2012
-+++ security/manager/ssl/src/nsNSSComponent.cpp	Sun Jun 17 12:04:03 2012
-@@ -111,6 +111,7 @@
+--- security/manager/ssl/src/nsNSSComponent.cpp.orig	Wed Aug 15 07:48:16 2012
++++ security/manager/ssl/src/nsNSSComponent.cpp	Sun Aug 19 13:50:39 2012
+@@ -71,6 +71,7 @@
  #include "secerr.h"
  #include "sslerr.h"
  #include "cert.h"
@@ -11,15 +11,7 @@ xpcshell hang during fake
  
  #include "nsXULAppAPI.h"
  
-@@ -124,6 +125,7 @@ extern "C" {
- }
- 
- using namespace mozilla;
-+using namespace mozilla::psm;
- 
- #ifdef PR_LOGGING
- PRLogModuleInfo* gPIPNSSLog = nsnull;
-@@ -395,6 +397,8 @@ nsNSSComponent::deleteBackgroundThreads()
+@@ -356,6 +357,8 @@ nsNSSComponent::deleteBackgroundThreads()
      delete mCertVerificationThread;
      mCertVerificationThread = nsnull;
    }
@@ -28,7 +20,7 @@ xpcshell hang during fake
  }
  
  void
-@@ -402,21 +406,20 @@ nsNSSComponent::createBackgroundThreads()
+@@ -363,21 +366,20 @@ nsNSSComponent::createBackgroundThreads()
  {
    NS_ASSERTION(mCertVerificationThread == nsnull,
                 "Cert verification thread already created.");
@@ -52,7 +44,7 @@ xpcshell hang during fake
    if (mUpdateTimerInitialized) {
      {
        MutexAutoLock lock(mCrlTimerLock);
-@@ -844,7 +847,7 @@ nsNSSComponent::InstallLoadableRoots()
+@@ -806,7 +808,7 @@ nsNSSComponent::InstallLoadableRoots()
  
      if (!possible_ckbi_locations[il])
      {
@@ -61,7 +53,7 @@ xpcshell hang during fake
      }
      else
      {
-@@ -1907,6 +1910,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
+@@ -1869,6 +1871,8 @@ nsNSSComponent::InitializeNSS(bool showWarningBox)
  
        LaunchSmartCardThreads();
  
@@ -70,7 +62,7 @@ xpcshell hang during fake
        PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("NSS Initialization done\n"));
      }
    }
-@@ -2049,16 +2054,6 @@ nsNSSComponent::Init()
+@@ -2012,16 +2016,6 @@ nsNSSComponent::Init()
    if (mClientAuthRememberService)
      mClientAuthRememberService->Init();
  
@@ -87,7 +79,7 @@ xpcshell hang during fake
    InitializeCRLUpdateTimer();
    RegisterPSMContentListener();
  
-@@ -2273,6 +2268,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2236,6 +2230,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      DoProfileChangeTeardown(aSubject);
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_CHANGE_TEARDOWN_VETO_TOPIC) == 0) {
@@ -95,7 +87,7 @@ xpcshell hang during fake
      mShutdownObjectList->allowUI();
    }
    else if (nsCRT::strcmp(aTopic, PROFILE_BEFORE_CHANGE_TOPIC) == 0) {
-@@ -2320,6 +2316,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
+@@ -2283,6 +2278,7 @@ nsNSSComponent::Observe(nsISupports *aSubject, const c
      InitializeCRLUpdateTimer();
    }
    else if (nsCRT::strcmp(aTopic, NS_XPCOM_SHUTDOWN_OBSERVER_ID) == 0) {
@@ -103,7 +95,7 @@ xpcshell hang during fake
  
      PR_LOG(gPIPNSSLog, PR_LOG_DEBUG, ("nsNSSComponent: XPCom shutdown observed\n"));
  
-@@ -2610,6 +2607,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
+@@ -2573,6 +2569,9 @@ nsNSSComponent::DoProfileChangeNetTeardown()
  void
  nsNSSComponent::DoProfileChangeTeardown(nsISupports* aSubject)
  {
@@ -113,7 +105,7 @@ xpcshell hang during fake
    bool callVeto = false;
  
    if (!mShutdownObjectList->ifPossibleDisallowUI()) {
-@@ -2663,9 +2663,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
+@@ -2626,9 +2625,6 @@ nsNSSComponent::DoProfileBeforeChange(nsISupports* aSu
  void
  nsNSSComponent::DoProfileChangeNetRestore()
  {

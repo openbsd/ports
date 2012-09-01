@@ -1,10 +1,10 @@
-$OpenBSD: patch-parser_html_Makefile_in,v 1.9 2012/06/11 15:29:56 landry Exp $
+$OpenBSD: patch-parser_html_Makefile_in,v 1.10 2012/09/01 13:56:45 landry Exp $
 
 gcc runs out of memory with optimization.
 
---- parser/html/Makefile.in.orig	Wed May  2 05:17:09 2012
-+++ parser/html/Makefile.in	Wed May  9 23:06:35 2012
-@@ -128,4 +128,7 @@ INCLUDES	+= \
+--- parser/html/Makefile.in.orig	Wed Aug 15 07:48:14 2012
++++ parser/html/Makefile.in	Sun Aug 19 13:50:38 2012
+@@ -96,4 +96,7 @@ INCLUDES	+= \
  		-I$(srcdir)/../../content/base/src \
  		$(NULL)
  

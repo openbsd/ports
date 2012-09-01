@@ -1,7 +1,7 @@
-$OpenBSD: patch-security_manager_ssl_src_Makefile_in,v 1.10 2012/06/11 15:29:56 landry Exp $
---- security/manager/ssl/src/Makefile.in.orig	Wed May  2 05:17:09 2012
-+++ security/manager/ssl/src/Makefile.in	Wed May  9 23:06:35 2012
-@@ -116,7 +116,10 @@ CSRCS += md4.c
+$OpenBSD: patch-security_manager_ssl_src_Makefile_in,v 1.11 2012/09/01 13:56:45 landry Exp $
+--- security/manager/ssl/src/Makefile.in.orig	Wed Aug 15 07:48:16 2012
++++ security/manager/ssl/src/Makefile.in	Sun Aug 19 13:50:38 2012
+@@ -83,7 +83,10 @@ CSRCS += md4.c
  
  EXTRA_DEPS = $(NSS_DEP_LIBS)
  

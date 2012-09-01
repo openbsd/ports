@@ -1,8 +1,8 @@
-$OpenBSD: patch-content_base_src_nsContentUtils_cpp,v 1.1 2012/08/07 08:55:40 landry Exp $
+$OpenBSD: patch-content_base_src_nsContentUtils_cpp,v 1.2 2012/09/01 13:56:45 landry Exp $
 https://hg.mozilla.org/mozilla-central/raw-rev/45118cc6518b
---- content/base/src/nsContentUtils.cpp.orig	Fri Jul 13 23:42:48 2012
-+++ content/base/src/nsContentUtils.cpp	Wed Jul 25 00:02:48 2012
-@@ -6324,6 +6324,21 @@ nsContentUtils::FindInternalContentViewer(const char* 
+--- content/base/src/nsContentUtils.cpp.orig	Wed Aug 15 07:47:09 2012
++++ content/base/src/nsContentUtils.cpp	Sun Aug 19 13:30:27 2012
+@@ -6496,6 +6496,21 @@ nsContentUtils::FindInternalContentViewer(const char* 
      }
    }
  #endif

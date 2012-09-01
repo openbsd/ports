@@ -1,8 +1,8 @@
-$OpenBSD: patch-browser_installer_package-manifest_in,v 1.1 2012/08/07 08:55:40 landry Exp $
+$OpenBSD: patch-browser_installer_package-manifest_in,v 1.2 2012/09/01 13:56:45 landry Exp $
 https://hg.mozilla.org/mozilla-central/rev/ede54971747f
---- browser/installer/package-manifest.in.orig	Sun Jun 17 17:00:56 2012
-+++ browser/installer/package-manifest.in	Sun Jun 17 17:02:09 2012
-@@ -54,9 +54,11 @@
+--- browser/installer/package-manifest.in.orig	Wed Aug 15 07:47:06 2012
++++ browser/installer/package-manifest.in	Sun Aug 19 13:30:25 2012
+@@ -58,9 +58,11 @@
  #ifndef MOZ_STATIC_JS
  @BINPATH@/@DLL_PREFIX@mozjs@DLL_SUFFIX@
  #endif
@@ -14,7 +14,7 @@ https://hg.mozilla.org/mozilla-central/rev/ede54971747f
  @BINPATH@/@DLL_PREFIX@xpcom@DLL_SUFFIX@
  #ifdef XP_MACOSX
  @BINPATH@/XUL
-@@ -105,7 +107,9 @@
+@@ -109,7 +111,9 @@
  #endif
  @BINPATH@/platform.ini
  #ifndef XP_OS2
@@ -24,7 +24,7 @@ https://hg.mozilla.org/mozilla-central/rev/ede54971747f
  #else
  @BINPATH@/mozsqlt3@DLL_SUFFIX@
  #endif
-@@ -560,6 +564,7 @@
+@@ -579,6 +583,7 @@
  ; NSS libraries are signed in the staging directory,
  ; meaning their .chk files are created there directly.
  ;
@@ -32,7 +32,7 @@ https://hg.mozilla.org/mozilla-central/rev/ede54971747f
  @BINPATH@/@DLL_PREFIX@freebl3@DLL_SUFFIX@
  @BINPATH@/@DLL_PREFIX@nss3@DLL_SUFFIX@
  @BINPATH@/@DLL_PREFIX@nssckbi@DLL_SUFFIX@
-@@ -570,6 +575,7 @@
+@@ -589,6 +594,7 @@
  @BINPATH@/@DLL_PREFIX@smime3@DLL_SUFFIX@
  @BINPATH@/@DLL_PREFIX@softokn3@DLL_SUFFIX@
  @BINPATH@/@DLL_PREFIX@ssl3@DLL_SUFFIX@
