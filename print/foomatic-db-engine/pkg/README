@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2012/08/04 14:53:21 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2012/09/01 21:46:26 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -16,8 +16,8 @@ gutenprint/foomatic-db-gutenprint...
 PPD generation example for an Epson Stylus C64
 ==============================================
 $ foomatic-ppdfile -P C64
-Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint-ijs.5.2'
-$ foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs.5.2' > C64.ppd
+Epson Stylus C64 Id='Epson-Stylus_C64' Driver='gutenprint-ijs-simplified.5.2'
+$ foomatic-ppdfile -p 'Epson-Stylus_C64' -d 'gutenprint-ijs-simplified.5.2' > C64.ppd
 
 C64.ppd can then be used with CUPS or lpd(8) and foomatic-rip(1) from
 the foomatic-filters package as the input filter.
