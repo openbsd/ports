@@ -1,15 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: mozilla_sync.rc,v 1.1.1.1 2012/09/01 16:11:36 landry Exp $
+# $OpenBSD: mozilla_sync.rc,v 1.2 2012/09/01 16:33:26 ajacoutot Exp $
 
 daemon="${LOCALBASE}/bin/paster"
-daemon_flags="serve /etc/mozilla-sync/production.ini --daemon --log-file /var/mozilla-sync/paster.log --pid-file /var/mozilla-sync/paster.pid"
+daemon_flags="serve ${SYSCONFDIR}/mozilla-sync/production.ini --daemon --log-file /var/mozilla-sync/paster.log --pid-file /var/mozilla-sync/paster.pid"
 daemon_user="_mozsync"
 
 . /etc/rc.d/rc.subr
 
-pexp="${MODPY_BIN} ${daemon} ${daemon_flags}"
-
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_cmd $1
