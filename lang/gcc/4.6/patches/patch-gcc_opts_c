@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_opts_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
+$OpenBSD: patch-gcc_opts_c,v 1.2 2012/09/01 00:00:32 pascal Exp $
 --- gcc/opts.c.orig	Thu Feb 17 23:51:57 2011
-+++ gcc/opts.c	Sun Mar 11 22:26:06 2012
++++ gcc/opts.c	Wed Aug 29 23:59:07 2012
 @@ -43,6 +43,9 @@ along with GCC; see the file COPYING3.  If not see
    ((strncmp (prefix, string, sizeof prefix - 1) == 0) \
     ? ((string += sizeof prefix - 1), 1) : 0)
@@ -28,7 +28,16 @@ $OpenBSD: patch-gcc_opts_c,v 1.1 2012/03/31 20:02:03 pascal Exp $
      { OPT_LEVELS_3_PLUS, OPT_ftree_loop_distribute_patterns, NULL, 1 },
      { OPT_LEVELS_3_PLUS, OPT_fpredictive_commoning, NULL, 1 },
      /* Inlining of functions reducing size is a good idea with -Os
-@@ -1411,6 +1413,11 @@ common_handle_option (struct gcc_options *opts,
+@@ -691,6 +693,8 @@ finish_options (struct gcc_options *opts, struct gcc_o
+ 
+   if (!opts->x_flag_opts_finished)
+     {
++      if (opts->x_flag_pic || opts->x_profile_flag)
++        opts->x_flag_pie = 0;
+       if (opts->x_flag_pie)
+ 	opts->x_flag_pic = opts->x_flag_pie;
+       if (opts->x_flag_pic && !opts->x_flag_pie)
+@@ -1411,6 +1415,11 @@ common_handle_option (struct gcc_options *opts,
      case OPT_Wframe_larger_than_:
        opts->x_frame_larger_than_size = value;
        opts->x_warn_frame_larger_than = value != -1;

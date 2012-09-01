@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+$OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.2 2012/09/01 00:00:32 pascal Exp $
 --- gcc/config/rs6000/sysv4.h.orig	Mon Mar 29 21:16:43 2004
-+++ gcc/config/rs6000/sysv4.h	Mon Jan  3 10:17:43 2005
++++ gcc/config/rs6000/sysv4.h	Fri Aug 31 19:49:32 2012
 @@ -197,6 +197,8 @@ do {									\
      rs6000_current_abi = ABI_V4;					\
    else if (!strcmp (rs6000_abi_name, "linux"))				\
@@ -145,7 +145,7 @@ $OpenBSD: patch-gcc_config_rs6000_sysv4_h,v 1.1.1.1 2005/01/03 15:21:27 espie Ex
 +#endif
 +
 +#ifndef LIBC_OPENBSD_SPEC
-+#define LIBC_OPENBSD_SPEC "%{!shared:%{pthread:-lpthread%{p:_p}%{!p:%{pg:_p}}}} %{!shared:-lc%{p:_p}%{!p:%{pg:_p}}}"
++#define LIBC_OPENBSD_SPEC OBSD_LIB_SPEC
 +#endif
 +
 +#ifndef	STARTFILE_OPENBSD_SPEC

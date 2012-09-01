@@ -1,0 +1,21 @@
+$OpenBSD: patch-gcc_toplev_c,v 1.1 2012/09/01 00:00:32 pascal Exp $
+--- gcc/toplev.c.orig	Thu Aug 30 11:09:05 2012
++++ gcc/toplev.c	Thu Aug 30 11:09:46 2012
+@@ -713,7 +713,7 @@ int flag_pic;
+ /* Nonzero if we are compiling position independent code for executable.
+    The value is 1 if we are doing "small" pic; value is 2 if we're doing
+    "large" pic.  */
+-int flag_pie;
++int flag_pie = PIE_DEFAULT;
+ 
+ /* Nonzero if we are compiling code for a shared library, zero for
+    executable.  */
+@@ -5097,6 +5097,8 @@ parse_options_and_default_flags (argc, argv)
+ 	}
+     }
+ 
++  if (flag_pic || profile_flag)
++    flag_pie = 0;
+   if (flag_pie)
+     flag_pic = flag_pie;
+ 

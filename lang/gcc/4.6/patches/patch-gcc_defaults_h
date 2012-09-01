@@ -1,0 +1,14 @@
+$OpenBSD: patch-gcc_defaults_h,v 1.1 2012/09/01 00:00:32 pascal Exp $
+--- gcc/defaults.h.orig	Thu Aug 30 10:06:17 2012
++++ gcc/defaults.h	Thu Aug 30 10:07:41 2012
+@@ -1337,6 +1337,10 @@ see the files COPYING3 and COPYING.RUNTIME respectivel
+ #define SWITCHABLE_TARGET 0
+ #endif
+ 
++#ifndef PIE_DEFAULT
++#define PIE_DEFAULT 0
++#endif
++
+ #endif /* GCC_INSN_FLAGS_H  */
+ 
+ #endif  /* ! GCC_DEFAULTS_H */

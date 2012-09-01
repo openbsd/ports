@@ -1,0 +1,23 @@
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1 2012/09/01 00:00:32 pascal Exp $
+--- gcc/config/sparc/openbsd64.h.orig	Thu Aug 30 11:35:32 2012
++++ gcc/config/sparc/openbsd64.h	Thu Aug 30 11:36:22 2012
+@@ -51,11 +51,19 @@ Boston, MA 02111-1307, USA.  */
+ #undef MD_STARTFILE_PREFIX
+ 
+ #undef ASM_SPEC
++#ifdef PIE_DEFAULT
+ #define ASM_SPEC "\
++%{v:-V} -s %{fpic|fPIC:-K PIC} %{!fno-pie: %{!p: %{!pg: -K PIC}}} \
++%{mlittle-endian:-EL} \
++%(asm_cpu) %(asm_arch) \
++"
++#else
++#define ASM_SPEC "\
+ %{v:-V} -s %{fpic|fPIC|fpie|fPIE:-K PIC} \
+ %{mlittle-endian:-EL} \
+ %(asm_cpu) %(asm_arch) \
+ "
++#endif
+ 
+ /* Layout of source language data types.  */
+ #undef INTMAX_TYPE

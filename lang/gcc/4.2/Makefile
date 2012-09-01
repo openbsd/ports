@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2012/08/29 20:51:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.83 2012/09/01 00:00:32 pascal Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -19,13 +19,13 @@ PKGNAME-java =  gcj-${FULL_PKGVERSION}
 PKGNAME-objc =  gobjc-${FULL_PKGVERSION}
 PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 
-REVISION-main = 11
-REVISION-c++ = 15
+REVISION-main = 12
+REVISION-c++ = 16
 REVISION-estdc = 4
-REVISION-f95 = 13
-REVISION-java = 13
-REVISION-objc = 12
-REVISION-ada = 11
+REVISION-f95 = 14
+REVISION-java = 14
+REVISION-objc = 13
+REVISION-ada = 12
 EPOCH = 0
 
 SHARED_LIBS =	estdc++		13.0 \
@@ -152,6 +152,7 @@ CONFIGURE_ARGS += \
 	--with-gnu-as \
 	--enable-threads=posix \
 	--enable-wchar_t \
+	--disable-libstdcxx-pch \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the

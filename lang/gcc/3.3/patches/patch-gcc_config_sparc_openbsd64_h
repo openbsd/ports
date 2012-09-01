@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/09/01 00:00:32 pascal Exp $
 --- gcc/config/sparc/openbsd64.h.orig	Thu May 30 22:35:58 2002
-+++ gcc/config/sparc/openbsd64.h	Mon Jan  3 10:17:43 2005
++++ gcc/config/sparc/openbsd64.h	Thu Aug 30 10:37:19 2012
 @@ -21,18 +21,28 @@ Boston, MA 02111-1307, USA.  */
  #undef TARGET_VERSION
  #define TARGET_VERSION fprintf (stderr, " (sparc64 OpenBSD ELF)")
@@ -34,7 +34,7 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2005/01/03 15:21:27 espie
  
  #undef CPP_SUBTARGET_SPEC
  #define CPP_SUBTARGET_SPEC ""
-@@ -54,9 +64,14 @@ Boston, MA 02111-1307, USA.  */
+@@ -54,15 +64,21 @@ Boston, MA 02111-1307, USA.  */
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
@@ -51,7 +51,14 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.1.1.1 2005/01/03 15:21:27 espie
  #undef LINK_SPEC
  #define LINK_SPEC \
    "%{!shared:%{!nostdlib:%{!r*:%{!e*:-e __start}}}} \
-@@ -73,3 +88,88 @@ Boston, MA 02111-1307, USA.  */
+    %{shared:-shared} %{R*} \
+    %{static:-Bstatic} \
+    %{!static:-Bdynamic} \
++   -nopie \
+    %{assert*} \
+    %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
+ 
+@@ -73,3 +89,88 @@ Boston, MA 02111-1307, USA.  */
          crtbegin%O%s} %{shared:crtbeginS%O%s}"
  #undef ENDFILE_SPEC
  #define ENDFILE_SPEC "%{!shared:crtend%O%s} %{shared:crtendS%O%s}"

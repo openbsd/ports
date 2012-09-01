@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie Exp $
+$OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.2 2012/09/01 00:00:32 pascal Exp $
 --- gcc/config/alpha/openbsd.h.orig	Mon May 13 07:57:38 2002
-+++ gcc/config/alpha/openbsd.h	Mon Jan  3 10:17:43 2005
-@@ -21,30 +21,31 @@ Boston, MA 02111-1307, USA.  */
++++ gcc/config/alpha/openbsd.h	Thu Aug 30 10:39:02 2012
+@@ -21,30 +21,32 @@ Boston, MA 02111-1307, USA.  */
  /* We settle for little endian for now.  */
  #define TARGET_ENDIAN_DEFAULT 0
  
@@ -25,6 +25,7 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie E
 +   %{shared:-shared} %{R*} \
 +   %{static:-Bstatic} \
 +   %{!static:-Bdynamic} \
++   -nopie \
 +   %{assert*} \
 +   %{!dynamic-linker:-dynamic-linker /usr/libexec/ld.so}"
  
@@ -48,7 +49,7 @@ $OpenBSD: patch-gcc_config_alpha_openbsd_h,v 1.1.1.1 2005/01/03 15:21:27 espie E
      } while (0)
  
  /* Layout of source language data types.  */
-@@ -63,67 +64,22 @@ Boston, MA 02111-1307, USA.  */
+@@ -63,67 +65,22 @@ Boston, MA 02111-1307, USA.  */
  #define WCHAR_TYPE_SIZE 32
  
  

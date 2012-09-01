@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/04/02 08:51:30 pascal Exp $
+$OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.3 2012/09/01 00:00:32 pascal Exp $
 --- gcc/config/sparc/openbsd64.h.orig	Thu Dec  9 17:31:47 2010
-+++ gcc/config/sparc/openbsd64.h	Sun Apr  1 17:09:13 2012
++++ gcc/config/sparc/openbsd64.h	Thu Aug 30 10:08:05 2012
 @@ -23,7 +23,7 @@ along with GCC; see the file COPYING3.  If not see
  /* XXX - do we really want HARD_QUAD? */
  #undef TARGET_DEFAULT
@@ -22,7 +22,27 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/04/02 08:51:30 pascal Ex
  	builtin_define ("__sparc64__");		\
  	builtin_define ("__sparcv9__");		\
  	builtin_define ("__sparc_v9__");	\
-@@ -64,6 +61,15 @@ along with GCC; see the file COPYING3.  If not see
+@@ -51,11 +48,19 @@ along with GCC; see the file COPYING3.  If not see
+ #undef NO_IMPLICIT_EXTERN_C
+ 
+ #undef ASM_SPEC
++#ifdef PIE_DEFAULT
+ #define ASM_SPEC "\
++-s %{fpic|fPIC:-K PIC} %{!fno-pie: %{!p: %{!pg: -K PIC}}} \
++%{mlittle-endian:-EL} \
++%(asm_cpu) %(asm_arch) \
++"
++#else
++#define ASM_SPEC "\
+ -s %{fpic|fPIC|fpie|fPIE:-K PIC} \
+ %{mlittle-endian:-EL} \
+ %(asm_cpu) %(asm_arch) \
+ "
++#endif
+ 
+ /* Layout of source language data types.  */
+ #undef WCHAR_TYPE
+@@ -64,6 +69,15 @@ along with GCC; see the file COPYING3.  If not see
  #undef WCHAR_TYPE_SIZE
  #define WCHAR_TYPE_SIZE 32
  
@@ -38,7 +58,7 @@ $OpenBSD: patch-gcc_config_sparc_openbsd64_h,v 1.2 2012/04/02 08:51:30 pascal Ex
  #undef LONG_DOUBLE_TYPE_SIZE
  #define LONG_DOUBLE_TYPE_SIZE 128
  
-@@ -73,6 +79,7 @@ along with GCC; see the file COPYING3.  If not see
+@@ -73,6 +87,7 @@ along with GCC; see the file COPYING3.  If not see
     %{shared:-shared} %{R*} \
     %{static:-Bstatic} \
     %{!static:-Bdynamic} \

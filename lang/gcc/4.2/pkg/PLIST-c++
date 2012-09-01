@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-c++,v 1.9 2012/05/04 08:47:55 pascal Exp $
+@comment $OpenBSD: PLIST-c++,v 1.10 2012/09/01 00:00:32 pascal Exp $
 @conflict libstdc++->=4.3
 @bin bin/ec++
 @bin bin/eg++
@@ -508,13 +508,6 @@ include/c++/${V}/${CONFIG}/bits/gthr-tpf.h
 include/c++/${V}/${CONFIG}/bits/gthr.h
 include/c++/${V}/${CONFIG}/bits/messages_members.h
 include/c++/${V}/${CONFIG}/bits/os_defines.h
-include/c++/${V}/${CONFIG}/bits/stdc++.h
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O0g.gch
-include/c++/${V}/${CONFIG}/bits/stdc++.h.gch/O2g.gch
-include/c++/${V}/${CONFIG}/bits/stdtr1c++.h
-include/c++/${V}/${CONFIG}/bits/stdtr1c++.h.gch/
-include/c++/${V}/${CONFIG}/bits/stdtr1c++.h.gch/O2g.gch
 include/c++/${V}/${CONFIG}/bits/time_members.h
 include/c++/${V}/iomanip
 include/c++/${V}/ios

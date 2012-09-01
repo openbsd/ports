@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
---- gcc/common.opt.orig	Wed Feb  1 10:20:32 2012
-+++ gcc/common.opt	Mon Apr  2 16:38:17 2012
+$OpenBSD: patch-gcc_common_opt,v 1.2 2012/09/01 00:00:32 pascal Exp $
+--- gcc/common.opt.orig	Fri May  4 13:34:25 2012
++++ gcc/common.opt	Thu Aug 30 10:05:26 2012
 @@ -562,6 +562,10 @@ Wlarger-than=
  Common RejectNegative Joined UInteger Warning
  -Wlarger-than=<number>	Warn if an object is larger than <number> bytes
@@ -50,6 +50,15 @@ $OpenBSD: patch-gcc_common_opt,v 1.1.1.1 2012/04/23 15:56:41 pascal Exp $
  Process #ident directives
  
  fif-conversion
+@@ -1530,7 +1538,7 @@ Common Report Var(flag_pic,2)
+ Generate position-independent code if possible (large mode)
+ 
+ fPIE
+-Common Report Var(flag_pie,2)
++Common Report Var(flag_pie,2) Init(PIE_DEFAULT)
+ Generate position-independent code for executables if possible (large mode)
+ 
+ fpic
 @@ -1829,7 +1837,7 @@ Common RejectNegative Joined Var(common_deferred_optio
  -fstack-limit-symbol=<name>	Trap if the stack goes past symbol <name>
  

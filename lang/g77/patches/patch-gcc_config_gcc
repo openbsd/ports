@@ -1,0 +1,28 @@
+$OpenBSD: patch-gcc_config_gcc,v 1.1 2012/09/01 00:00:32 pascal Exp $
+--- gcc/config.gcc.orig	Sat May 22 18:18:42 2010
++++ gcc/config.gcc	Fri Aug 31 18:22:31 2012
+@@ -1184,6 +1184,7 @@ i[34567]86-*-openbsd*)
+ 	gnu_ld=yes
+   	;;
+ x86_64-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=1"
+ 	tm_file="i386/biarch64.h i386/i386.h i386/unix.h i386/att.h dbxelf.h elfos.h openbsd.h openbsd-libpthread.h i386/x86-64.h i386/openbsd64.h"
+ 	tm_file="${tm_file} exec-stack.h"
+ 	tmake_file="t-libc-ok t-openbsd i386/t-openbsd"
+@@ -1935,7 +1936,7 @@ mips*-*-linux*)				# Linux MIPS, either endian.
+ 	tmake_file="t-slibgcc-elf-ver t-linux mips/t-linux"
+ 	;;
+ mips*-*-openbsd*)
+-	target_cpu_default="MASK_GAS|MASK_ABICALLS"
++	target_cpu_default="MASK_GAS|MASK_ABICALLS PIE_DEFAULT=1"
+ 	tm_file="elfos.h ${tm_file}"
+ 	case $machine in
+         mips64*-*)
+@@ -2460,6 +2461,7 @@ sparc-*-openbsd*)
+ 	use_collect2=yes
+ 	;;
+ sparc64-*-openbsd*)
++	tm_defines="${tm_defines} PIE_DEFAULT=2"
+ 	tm_file="sparc/openbsd1-64.h sparc/sparc.h elfos.h svr4.h sparc/sysv4.h openbsd.h ${openbsd_libspec} sparc/openbsd64.h"
+ 	tm_file="${tm_file} exec-stack.h"
+ 	gas=yes gnu_ld=yes

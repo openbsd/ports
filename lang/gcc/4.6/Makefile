@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2012/08/29 20:53:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2012/09/01 00:00:32 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
 
@@ -19,7 +19,14 @@ PKGNAME-ada =   gnat-${FULL_PKGVERSION}
 PKGNAME-go =	gccgo-${FULL_PKGVERSION}
 PKGSPEC-main = gcc->=4.6,<4.7
 
-REVISION = 9
+REVISION-main = 10
+REVISION-c++ = 10
+REVISION-estdc = 9
+REVISION-f95 = 10
+REVISION-java = 10
+REVISION-objc = 10
+REVISION-ada = 10
+REVISION-go = 10
 
 SHARED_LIBS =	estdc++		14.0 \
 		gfortran	3.0 \
@@ -128,6 +135,7 @@ CONFIGURE_ARGS += \
 	--enable-threads=posix \
 	--enable-wchar_t \
 	--with-gmp="${LOCALBASE}" \
+	--disable-libstdcxx-pch \
 	--enable-languages=${LANGS}
 
 # This is needed, as internal cpp is no longer compatible with the
