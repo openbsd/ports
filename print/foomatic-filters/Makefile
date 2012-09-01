@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2012/08/04 14:54:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2012/09/01 21:09:24 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
@@ -27,6 +27,9 @@ BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS}
 
 RUN_DEPENDS=		print/ghostscript/gnu \
 			print/a2ps
+
+# don't enforce dependency on colord; it'll be used only if found
+#RUN_DEPENDS +=	graphics/colord
 
 AUTOMAKE_VERSION=1.10
 AUTOCONF_VERSION=2.65
