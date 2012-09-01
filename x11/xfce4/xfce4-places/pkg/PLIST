@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/04/30 13:22:49 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/01 08:39:00 landry Exp $
 @bin bin/xfce4-popup-places
-libexec/xfce4/
-libexec/xfce4/panel-plugins/
-@bin libexec/xfce4/panel-plugins/xfce4-places-plugin
+@comment lib/xfce4/panel/plugins/libplaces.a
+@comment lib/xfce4/panel/plugins/libplaces.la
+lib/xfce4/panel/plugins/libplaces.so
 share/locale/ar/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ast/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/be/LC_MESSAGES/xfce4-places-plugin.mo
@@ -43,6 +43,7 @@ share/locale/ro/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/sq/LC_MESSAGES/xfce4-places-plugin.mo
+share/locale/sr/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ug/LC_MESSAGES/xfce4-places-plugin.mo
@@ -51,5 +52,4 @@ share/locale/ur/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-places-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-places-plugin.mo
-share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/places.desktop
+share/xfce4/panel/plugins/places.desktop

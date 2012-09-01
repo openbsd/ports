@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2012/04/30 13:22:49 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/01 08:39:00 landry Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
-XFCE_VERSION=	1.3.0
+XFCE_VERSION=	1.4.0
 XFCE_PLUGIN=	places
 
 # GPLv2
