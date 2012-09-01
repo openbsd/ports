@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2012/06/27 06:37:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2012/09/01 11:10:45 sthen Exp $
 @pkgpath www/mediawiki
 mediawiki/
 mediawiki/COPYING
@@ -42,7 +42,6 @@ mediawiki/docs/export-demo.xml
 mediawiki/docs/globals.txt
 mediawiki/docs/hooks.txt
 mediawiki/docs/html/
-mediawiki/docs/html/.gitignore
 mediawiki/docs/html/README
 mediawiki/docs/language.txt
 mediawiki/docs/linkcache.txt
@@ -65,9 +64,7 @@ mediawiki/docs/uidesign/monospace.html
 mediawiki/docs/uidesign/table-layout.html
 mediawiki/docs/upload.txt
 mediawiki/extensions/
-mediawiki/extensions/.gitignore
 mediawiki/extensions/ConfirmEdit/
-mediawiki/extensions/ConfirmEdit/.gitignore
 mediawiki/extensions/ConfirmEdit/.gitreview
 mediawiki/extensions/ConfirmEdit/Asirra.class.php
 mediawiki/extensions/ConfirmEdit/Asirra.i18n.php
@@ -95,7 +92,6 @@ mediawiki/extensions/ConfirmEdit/captcha.py
 mediawiki/extensions/ConfirmEdit/ext.confirmedit.asirra.js
 mediawiki/extensions/ConfirmEdit/recaptchalib.php
 mediawiki/extensions/Gadgets/
-mediawiki/extensions/Gadgets/.gitignore
 mediawiki/extensions/Gadgets/.gitreview
 mediawiki/extensions/Gadgets/ApiQueryGadgetCategories.php
 mediawiki/extensions/Gadgets/ApiQueryGadgets.php
@@ -108,7 +104,6 @@ mediawiki/extensions/Gadgets/README
 mediawiki/extensions/Gadgets/SpecialGadgets.php
 mediawiki/extensions/Gadgets/install.settings
 mediawiki/extensions/Nuke/
-mediawiki/extensions/Nuke/.gitignore
 mediawiki/extensions/Nuke/.gitreview
 mediawiki/extensions/Nuke/COPYING
 mediawiki/extensions/Nuke/INSTALL
@@ -121,7 +116,6 @@ mediawiki/extensions/Nuke/RELEASE-NOTES
 mediawiki/extensions/Nuke/SpecialNuke.php
 mediawiki/extensions/Nuke/ext.nuke.js
 mediawiki/extensions/ParserFunctions/
-mediawiki/extensions/ParserFunctions/.gitignore
 mediawiki/extensions/ParserFunctions/.gitreview
 mediawiki/extensions/ParserFunctions/COPYING
 mediawiki/extensions/ParserFunctions/Convert.php
@@ -138,7 +132,6 @@ mediawiki/extensions/ParserFunctions/stringFunctionTests.txt
 mediawiki/extensions/ParserFunctions/testExpr.php
 mediawiki/extensions/README
 mediawiki/extensions/Renameuser/
-mediawiki/extensions/Renameuser/.gitignore
 mediawiki/extensions/Renameuser/.gitreview
 mediawiki/extensions/Renameuser/RenameUserJob.php
 mediawiki/extensions/Renameuser/Renameuser.alias.php
@@ -148,7 +141,6 @@ mediawiki/extensions/Renameuser/Renameuser_body.php
 mediawiki/extensions/Renameuser/SpecialRenameuser.php
 mediawiki/extensions/Renameuser/renameUserCleanup.php
 mediawiki/extensions/Vector/
-mediawiki/extensions/Vector/.gitignore
 mediawiki/extensions/Vector/.gitreview
 mediawiki/extensions/Vector/README
 mediawiki/extensions/Vector/Vector.hooks.php
@@ -175,7 +167,6 @@ mediawiki/extensions/Vector/modules/images/open.png
 mediawiki/extensions/Vector/modules/images/portal-break.png
 mediawiki/extensions/Vector/switchExperimentPrefs.php
 mediawiki/extensions/WikiEditor/
-mediawiki/extensions/WikiEditor/.gitignore
 mediawiki/extensions/WikiEditor/.gitreview
 mediawiki/extensions/WikiEditor/README
 mediawiki/extensions/WikiEditor/WikiEditor.hooks.php
@@ -1719,8 +1710,10 @@ mediawiki/maintenance/oracle/archives/patch-job_timestamp_field.sql
 mediawiki/maintenance/oracle/archives/patch-job_timestamp_index.sql
 mediawiki/maintenance/oracle/archives/patch-logging_type_action_index.sql
 mediawiki/maintenance/oracle/archives/patch-page_redirect_namespace_len.sql
+mediawiki/maintenance/oracle/archives/patch-page_restrictions_pkuk_fix.sql
 mediawiki/maintenance/oracle/archives/patch-rev_sha1_field.sql
 mediawiki/maintenance/oracle/archives/patch-testrun.sql
+mediawiki/maintenance/oracle/archives/patch-ufg_group-length-increase.sql
 mediawiki/maintenance/oracle/archives/patch-ug_group-length-increase.sql
 mediawiki/maintenance/oracle/archives/patch-up_property.sql
 mediawiki/maintenance/oracle/archives/patch-uploadstash.sql
