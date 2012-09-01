@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/11/18 11:16:23 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/01 12:02:26 naddy Exp $
 
 COMMENT=	simple C Library for entropy measurement
 
 DISTNAME=	libdisorder-0.0.2
+REVISION=	0
 
 SHARED_LIBS=	disorder 0.0
 

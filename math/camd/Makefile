@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/11/18 11:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT=	constrained approximate minimum degree 
 
 VERSION=	2.2.1
 DISTNAME=	CAMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	camd	0.0
 
 CATEGORIES=	math

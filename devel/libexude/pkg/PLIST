@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/07/04 16:40:21 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/01 12:02:27 naddy Exp $
 %%SHARED%%
 include/exude.h
 lib/libexude.a
 lib/libexude_p.a
-%%no_mips64%%
 @man man/man3/exude.3

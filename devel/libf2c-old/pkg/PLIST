@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/27 08:36:54 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/01 12:02:27 naddy Exp $
 %%SHARED%%
 include/g2c.h
 lib/gcc-lib/
@@ -6,14 +6,10 @@ lib/gcc-lib/${CONFIG}/
 lib/gcc-lib/${CONFIG}/${V}/
 lib/gcc-lib/${CONFIG}/${V}/libfrtbegin.a
 lib/gcc-lib/${CONFIG}/${V}/libfrtbegin_p.a
-lib/gcc-lib/${CONFIG}/${V}/libfrtbegin_pic.a
 lib/gcc-lib/${CONFIG}/${V}/libg2c.a
 lib/gcc-lib/${CONFIG}/${V}/libg2c.so.8.1
 lib/gcc-lib/${CONFIG}/${V}/libg2c_p.a
-lib/gcc-lib/${CONFIG}/${V}/libg2c_pic.a
 lib/libfrtbegin.a
 lib/libfrtbegin_p.a
-lib/libfrtbegin_pic.a
 lib/libg2c.a
 lib/libg2c_p.a
-lib/libg2c_pic.a

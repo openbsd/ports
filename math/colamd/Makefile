@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/02/17 09:02:09 pirofti Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT =	library for column approximate minimum degree ordering
 
 DISTNAME =	COLAMD-2.7.4
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 SHARED_LIBS +=  colamd	0.0
 CATEGORIES =	math
 

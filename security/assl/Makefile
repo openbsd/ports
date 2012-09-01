@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/08/07 07:34:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT=		hide awful SSL API in a sane interface
 
 DISTNAME=		assl-1.1.0
+REVISION=		0
 EPOCH=			0
 CATEGORIES=		security devel
 SHARED_LIBS=		assl	5.0

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/11/18 11:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT=	order a sparse matrix prior to Cholesky factorization
 
 VERSION=	2.2.1
 DISTNAME=	AMD-${VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION =	1
+REVISION=	2
 SHARED_LIBS=	amd	0.0 \
 		amdf77	0.0
 

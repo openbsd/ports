@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/18 11:16:24 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT=	load PNG graphics files and bind them to an OpenGL texture
 
 VERSION=	1.45
 DISTNAME=	glpng
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION =	2
+REVISION =	3
 SHARED_LIBS=	glpng 0.0
 CATEGORIES=	graphics
 

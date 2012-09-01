@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/08/07 07:34:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/01 12:02:27 naddy Exp $
 include/assl.h
 include/assl_socket.h
 lib/libassl.a
 %%SHARED%%
 lib/libassl_p.a
-%%no_mips64%%
 @man man/man3/assl.3
 @man man/man3/assl_accept.3
 @man man/man3/assl_alloc_context.3

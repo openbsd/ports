@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/26 17:55:26 pirofti Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/01 12:02:27 naddy Exp $
 %%SHARED%%
-%%no_mips64%%
 include/amd/
 include/amd/amd.h
 lib/libamd.a

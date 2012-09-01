@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/11/14 17:05:22 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.9 2012/09/01 12:02:26 naddy Exp $
 %%SHARED%%
 include/clog.h
 lib/libclog.a
 lib/libclog_p.a
-%%no_mips64%%
 @man man/man3/CABORT.3
 @man man/man3/CABORTX.3
 @man man/man3/CALERT.3

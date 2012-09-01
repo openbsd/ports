@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2012/08/07 07:33:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/01 12:02:26 naddy Exp $
 
 COMMENT=	compression wrapper library
 
 DISTNAME=	shrink-0.5.1
 PKGNAME=	lib${DISTNAME}
+REVISION=	0
 CATEGORIES=    	archivers devel
 SHARED_LIBS=	shrink	2.0
 

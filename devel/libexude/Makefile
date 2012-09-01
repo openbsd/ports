@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2012/08/07 07:32:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/01 12:02:27 naddy Exp $
 
 COMMENT=	memory allocation debugger library
 
 DISTNAME=	exude-0.7.1
 PKGNAME=	lib${DISTNAME}
+REVISION=	0
 CATEGORIES=    	devel
 SHARED_LIBS=	exude	3.1
 
