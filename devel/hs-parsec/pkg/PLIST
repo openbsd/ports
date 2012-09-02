@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:34:40 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/02 20:14:40 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -16,6 +16,9 @@ lib/ghc/${DISTNAME}/Text/Parsec/Perm.hi
 lib/ghc/${DISTNAME}/Text/Parsec/Pos.hi
 lib/ghc/${DISTNAME}/Text/Parsec/Prim.hi
 lib/ghc/${DISTNAME}/Text/Parsec/String.hi
+lib/ghc/${DISTNAME}/Text/Parsec/Text/
+lib/ghc/${DISTNAME}/Text/Parsec/Text.hi
+lib/ghc/${DISTNAME}/Text/Parsec/Text/Lazy.hi
 lib/ghc/${DISTNAME}/Text/Parsec/Token.hi
 lib/ghc/${DISTNAME}/Text/ParserCombinators/
 lib/ghc/${DISTNAME}/Text/ParserCombinators/Parsec/
@@ -48,6 +51,8 @@ share/doc/hs-${DISTNAME}/html/Text-Parsec-Perm.html
 share/doc/hs-${DISTNAME}/html/Text-Parsec-Pos.html
 share/doc/hs-${DISTNAME}/html/Text-Parsec-Prim.html
 share/doc/hs-${DISTNAME}/html/Text-Parsec-String.html
+share/doc/hs-${DISTNAME}/html/Text-Parsec-Text-Lazy.html
+share/doc/hs-${DISTNAME}/html/Text-Parsec-Text.html
 share/doc/hs-${DISTNAME}/html/Text-Parsec-Token.html
 share/doc/hs-${DISTNAME}/html/Text-Parsec.html
 share/doc/hs-${DISTNAME}/html/Text-ParserCombinators-Parsec-Char.html
@@ -99,6 +104,8 @@ share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Perm.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Pos.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Prim.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-String.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Text-Lazy.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Text.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Parsec-Token.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Parsec.html
 share/doc/hs-${DISTNAME}/html/mini_Text-ParserCombinators-Parsec-Char.html
