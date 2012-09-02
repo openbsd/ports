@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:38:45 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/02 21:29:17 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/System/
@@ -6,8 +6,10 @@ lib/ghc/${DISTNAME}/System/PosixCompat/
 lib/ghc/${DISTNAME}/System/PosixCompat.hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Extensions.hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Files.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Temp.hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Time.hi
 lib/ghc/${DISTNAME}/System/PosixCompat/Types.hi
+lib/ghc/${DISTNAME}/System/PosixCompat/Unistd.hi
 lib/ghc/${DISTNAME}/System/PosixCompat/User.hi
 lib/ghc/${DISTNAME}/include/
 lib/ghc/${DISTNAME}/include/HsUnixCompat.h
@@ -21,8 +23,10 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/System-PosixCompat-Extensions.html
 share/doc/hs-${DISTNAME}/html/System-PosixCompat-Files.html
+share/doc/hs-${DISTNAME}/html/System-PosixCompat-Temp.html
 share/doc/hs-${DISTNAME}/html/System-PosixCompat-Time.html
 share/doc/hs-${DISTNAME}/html/System-PosixCompat-Types.html
+share/doc/hs-${DISTNAME}/html/System-PosixCompat-Unistd.html
 share/doc/hs-${DISTNAME}/html/System-PosixCompat-User.html
 share/doc/hs-${DISTNAME}/html/System-PosixCompat.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
@@ -33,8 +37,10 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Extensions.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Files.html
+share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Temp.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Time.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Types.html
+share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-Unistd.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat-User.html
 share/doc/hs-${DISTNAME}/html/mini_System-PosixCompat.html
 share/doc/hs-${DISTNAME}/html/minus.gif
