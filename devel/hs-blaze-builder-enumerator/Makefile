@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/24 19:01:52 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/02 21:11:25 kili Exp $
 
 COMMENT =		integrate blaze-builder and enumerator
 
-DISTNAME =		blaze-builder-enumerator-0.2.0.2
+DISTNAME =		blaze-builder-enumerator-0.2.0.4
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/meiersi/blaze-builder-enumerator
 
@@ -17,8 +17,8 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		hs-blaze-builder->=0.2.1.4,<0.4:devel/hs-blaze-builder \
-			hs-enumerator->=0.4.3.1,<0.5:devel/hs-enumerator \
-			hs-transformers->=0.2,<0.3:devel/hs-transformers
+RUN_DEPENDS =		devel/hs-blaze-builder>=0.2.1.4,<0.4 \
+			devel/hs-enumerator>=0.4.3.1,<0.5 \
+			devel/hs-transformers>=0.2,<0.4
 
 .include <bsd.port.mk>
