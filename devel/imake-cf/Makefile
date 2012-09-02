@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/02 14:37:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/02 18:01:48 matthieu Exp $
 
 PKG_ARCH = 	*
 COMMENT =  	config files for imake
 CATEGORIES =	devel x11
 DISTNAME = 	xorg-cf-files-1.0.4
 PKGNAME = 	imake-cf-1.0.4
-MASTER_SITES = 	http://cgit.freedesktop.org/xorg/util/cf/snapshot/
-REVISION =	0
+MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
+
+REVISION =	1
 
 PERMIT_DISTFILES_CDROM = 	Yes
 PERMIT_DISTFILES_FTP = 		Yes
@@ -29,8 +30,11 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${XCONFDIR}
-	for f in ${WRKSRC}/*.{def,rules,tmpl}; do \
+	for f in ${WRKSRC}/*.{cf,def,rules,tmpl}; do \
 		${INSTALL_DATA} $$f ${XCONFDIR}; \
 	done
+	touch ${XCONFDIR}/host.def
+	touch ${XCONFDIR}/date.def
+	touch ${XCONFDIR}/version.def
 
 .include <bsd.port.mk>
