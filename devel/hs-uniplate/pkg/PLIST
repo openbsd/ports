@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/11 14:47:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/02 21:23:43 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Generics/
@@ -12,7 +12,9 @@ lib/ghc/${DISTNAME}/Data/Generics/SYB.hi
 lib/ghc/${DISTNAME}/Data/Generics/Str.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate.hi
+lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Data/
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Data.hi
+lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Data/Instances.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/DataOnly.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Direct.hi
 lib/ghc/${DISTNAME}/Data/Generics/Uniplate/Internal/
@@ -41,6 +43,7 @@ share/doc/hs-${DISTNAME}/html/Data-Generics-PlateDirect.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-PlateTypeable.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-SYB.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Str.html
+share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Data-Instances.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Data.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-DataOnly.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate-Direct.html
@@ -51,6 +54,25 @@ share/doc/hs-${DISTNAME}/html/Data-Generics-Uniplate.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateOn.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateStr.html
 share/doc/hs-${DISTNAME}/html/Data-Generics-UniplateStrOn.html
+share/doc/hs-${DISTNAME}/html/doc-index-124.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
+share/doc/hs-${DISTNAME}/html/doc-index-B.html
+share/doc/hs-${DISTNAME}/html/doc-index-C.html
+share/doc/hs-${DISTNAME}/html/doc-index-D.html
+share/doc/hs-${DISTNAME}/html/doc-index-E.html
+share/doc/hs-${DISTNAME}/html/doc-index-F.html
+share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-L.html
+share/doc/hs-${DISTNAME}/html/doc-index-M.html
+share/doc/hs-${DISTNAME}/html/doc-index-O.html
+share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-R.html
+share/doc/hs-${DISTNAME}/html/doc-index-S.html
+share/doc/hs-${DISTNAME}/html/doc-index-T.html
+share/doc/hs-${DISTNAME}/html/doc-index-U.html
+share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
@@ -64,6 +86,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Generics-PlateDirect.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-PlateTypeable.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-SYB.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Str.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Data-Instances.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Data.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-DataOnly.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Generics-Uniplate-Direct.html
