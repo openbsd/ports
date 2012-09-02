@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/02 21:45:37 kili Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
-DISTNAME =		gtk-0.12.0
-REVISION =		1
+DISTNAME =		gtk-0.12.3.1
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -23,11 +22,11 @@ MODGHC_BUILD =		cabal hackage haddock register
 BUILD_DEPENDS =		devel/gtk2hs-buildtools \
 			${RUN_DEPENDS}
 LIB_DEPENDS =		x11/gtk+2
-RUN_DEPENDS =		hs-glib->=0.12,<0.13:devel/hs-glib \
-			hs-gio->=0.12,<0.13:devel/hs-gio \
+RUN_DEPENDS =		devel/hs-glib>=0.12,<0.13 \
+			devel/hs-gio>=0.12.0,<0.13 \
 			devel/hs-mtl \
-			hs-pango->=0.12,<0.13:devel/hs-pango \
-			hs-cairo->=0.12,<0.13:graphics/hs-cairo \
+			devel/hs-pango>=0.12.0,<0.13 \
+			graphics/hs-cairo>=0.12.0,<0.13
 
 # tiny 2 GB are enough on amd64.... we need a BLOAT_WARNING
 VMEM_WARNING =		Yes
