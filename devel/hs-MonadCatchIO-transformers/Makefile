@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:50 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/02 20:31:43 kili Exp $
 
 COMMENT =		functions to throw and catch exceptions
 
-DISTNAME =		MonadCatchIO-transformers-0.2.2.0
-REVISION =		4
+DISTNAME =		MonadCatchIO-transformers-0.3.0.0
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
