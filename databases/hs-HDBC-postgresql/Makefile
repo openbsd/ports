@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/12/28 09:25:11 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/02 21:17:09 kili Exp $
 
 COMMENT=		postgresql driver for HDBC
 
-DISTNAME=		HDBC-postgresql-2.2.3.3
+DISTNAME=		HDBC-postgresql-2.3.2.1
 CATEGORIES=		databases
-REVISION =		1
 
 HOMEPAGE=		http://software.complete.org/hdbc-postgresql
 
@@ -20,8 +19,9 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD=		cabal hackage haddock register
 
-RUN_DEPENDS +=		databases/hs-HDBC \
+RUN_DEPENDS +=		databases/hs-HDBC>=2.2.0 \
 			databases/postgresql \
+			devel/hs-convertible \
 			devel/hs-mtl \
 			devel/hs-parsec
 BUILD_DEPENDS +=	${RUN_DEPENDS}
