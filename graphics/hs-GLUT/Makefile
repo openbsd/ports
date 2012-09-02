@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/02 21:21:05 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
 DISTNAME =		GLUT-2.1.2.1
-REVISION =		8
+REVISION =		9
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/ghc
 
-MODGHC_BUILD =		cabal hackage haddock register
+# Haddock vomits on this.
+MODGHC_BUILD =		cabal hackage register
 
 # Should be changed to LIB_DEPENDS as soon as we have a GHC with
 # shared libs.
