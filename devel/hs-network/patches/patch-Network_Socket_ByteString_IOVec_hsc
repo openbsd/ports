@@ -1,0 +1,11 @@
+$OpenBSD: patch-Network_Socket_ByteString_IOVec_hsc,v 1.1 2012/09/02 20:13:08 kili Exp $
+--- Network/Socket/ByteString/IOVec.hsc.orig	Tue Apr 24 05:19:39 2012
++++ Network/Socket/ByteString/IOVec.hsc	Wed Jul 11 15:44:54 2012
+@@ -7,6 +7,7 @@ import Foreign.C.Types (CChar, CInt, CSize)
+ import Foreign.Ptr (Ptr)
+ import Foreign.Storable (Storable(..))
+ 
++#include <sys/types.h>
+ #include <sys/uio.h>
+ 
+ data IOVec = IOVec
