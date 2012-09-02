@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/24 19:04:46 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/02 21:27:10 kili Exp $
 
 COMMENT=		XML parser and renderer with HTML 5 quirks mode
 
-DISTNAME=		xmlhtml-0.1.5.2
+DISTNAME=		xmlhtml-0.2.0.2
 CATEGORIES=		textproc
 
 # BSD3
@@ -15,10 +15,12 @@ MODULES=		lang/ghc
 
 MODGHC_BUILD =          cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-blaze-builder \
-			devel/hs-parsec \
-			devel/hs-text \
-			textproc/hs-blaze-html
+RUN_DEPENDS =		devel/hs-blaze-builder>=0.2,<0.4 \
+			devel/hs-parsec>=3.1.2,<3.2 \
+			devel/hs-text>=0.11,<0.12 \
+			devel/hs-unordered-containers>=0.1.4,<0.3 \
+			textproc/hs-blaze-html>=0.5,<0.6 \
+			textproc/hs-blaze-markup>=0.5,<0.6
 
 BUILD_DEPENDS = 	${RUN_DEPENDS}
 
