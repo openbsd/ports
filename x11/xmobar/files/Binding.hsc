@@ -9,6 +9,7 @@ module Plugins.Monitors.Batt.Binding (
 import Foreign
 import Foreign.C
 
+#include <sys/types.h>
 #include <machine/apmvar.h>
 type CApmPowerInfo = ()
 foreign import ccall "apm.h get_power_info"

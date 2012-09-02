@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2012/01/12 21:42:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/02 22:01:25 kili Exp $
 
 COMMENT =		minimalistic text based status bar
 
 DISTNAME =		xmobar-0.14
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://projects.haskell.org/xmobar
 
@@ -14,8 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c expat fontconfig freetype gmp m pthread pthread-stubs util \
-		X11 Xau xcb Xdmcp Xext Xft Xinerama Xrandr Xrender z
+WANTLIB =	c gmp m pthread util X11 Xext Xft Xinerama Xrandr
 
 MODULES =		lang/ghc converters/libiconv
 
