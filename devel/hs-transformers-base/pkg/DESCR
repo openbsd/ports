@@ -1,0 +1,2 @@
+This package provides a straightforward port of monadLib's BaseM
+typeclass to transformers.
