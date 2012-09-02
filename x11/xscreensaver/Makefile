@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.74 2012/09/02 09:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2012/09/02 10:04:22 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
 
-V=			5.15
+V=			5.19
 DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-data=		xscreensaver-data-${V}
-
-REVISION-main=		0
-REVISION-data=		0
 
 CATEGORIES=		x11
 
@@ -42,9 +39,6 @@ MASTER_SITES=		${HOMEPAGE}
 MODULES=		devel/gettext \
 			textproc/intltool
 
-# ${FILESDIR}/migrate-xscreensaver-config.sh needs xsltproc
-BUILD_DEPENDS=		textproc/libxslt
-
 # note that we don't need desktop-file-utils for the -data subpackage
 # because the desktop files it installs are under a subdirectory of
 # ${LOCALBASE}/share/applications/
@@ -57,6 +51,13 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
 			graphics/gdk-pixbuf2 \
 			graphics/gle
+
+# ${FILESDIR}/migrate-xscreensaver-config.sh needs xsltproc
+BUILD_DEPENDS +=	textproc/libxslt
+
+# see pre-configure
+BUILD_DEPENDS +=	devel/xdg-utils
+RUN_DEPENDS-main +=	devel/xdg-utils
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes
@@ -72,6 +73,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 post-extract:
 	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
 	cp ${FILESDIR}/xscreensaver-config.xsl ${WRKSRC}/hacks/config
+
+pre-configure:
+	perl -pi -e 's,gnome-open,xdg-open,g' ${WRKSRC}/configure
 
 post-install:
 # remove conflict on games/circuit, misc/deco
