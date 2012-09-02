@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-data,v 1.7 2012/01/08 15:36:26 dcoppa Exp $
+@comment $OpenBSD: PLIST-data,v 1.8 2012/09/02 09:36:55 ajacoutot Exp $
 @conflict xscreensaver-<5.07p3
 @conflict xscreensaver-<5.07p3-no_gle
+@conflict xscreensaver-gle-*
+@pkgpath x11/xscreensaver,-gle
 libexec/xscreensaver/
 @bin libexec/xscreensaver/abstractile
 @bin libexec/xscreensaver/anemone
@@ -55,6 +57,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/epicycle
 @bin libexec/xscreensaver/eruption
 @bin libexec/xscreensaver/euler2d
+@bin libexec/xscreensaver/extrusion
 @bin libexec/xscreensaver/fadeplot
 @bin libexec/xscreensaver/fiberlamp
 @bin libexec/xscreensaver/fireworkx
@@ -255,6 +258,7 @@ libexec/xscreensaver/webcollage
 @man man/man6/epicycle.6
 @man man/man6/eruption.6
 @man man/man6/euler2d.6
+@man man/man6/extrusion.6
 @man man/man6/fadeplot.6
 @man man/man6/fiberlamp.6
 @man man/man6/fireworkx.6
@@ -459,6 +463,7 @@ share/applications/screensavers/engine.desktop
 share/applications/screensavers/epicycle.desktop
 share/applications/screensavers/eruption.desktop
 share/applications/screensavers/euler2d.desktop
+share/applications/screensavers/extrusion.desktop
 share/applications/screensavers/fadeplot.desktop
 share/applications/screensavers/fiberlamp.desktop
 share/applications/screensavers/fireworkx.desktop
@@ -679,6 +684,7 @@ share/xscreensaver/config/engine.xml
 share/xscreensaver/config/epicycle.xml
 share/xscreensaver/config/eruption.xml
 share/xscreensaver/config/euler2d.xml
+share/xscreensaver/config/extrusion.xml
 share/xscreensaver/config/fadeplot.xml
 share/xscreensaver/config/fiberlamp.xml
 share/xscreensaver/config/fireworkx.xml

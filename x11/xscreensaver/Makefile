@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.73 2012/01/08 15:36:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.74 2012/09/02 09:36:55 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
-COMMENT-gle=		OpenGL Extrusion library support for screensaver-data
 
 V=			5.15
 DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-data=		xscreensaver-data-${V}
-PKGNAME-gle=		xscreensaver-gle-${V}
+
+REVISION-main=		0
+REVISION-data=		0
 
 CATEGORIES=		x11
 
@@ -20,21 +21,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=	-main -data -gle
+MULTI_PACKAGES=	-main -data
 
 WANTLIB=	GL GLU ICE SM X11 Xext Xmu Xpm Xt Xxf86vm c glib-2.0 \
-		gmodule-2.0 gobject-2.0 m pthread gthread-2.0
+		gmodule-2.0 gobject-2.0 m pthread
 
-WANTLIB-main=	${WANTLIB} Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes \
+WANTLIB-main=	${WANTLIB} Xcomposite Xcursor Xdamage Xfixes \
 		Xi Xinerama Xrandr Xrender Xxf86misc atk-1.0 cairo \
 		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
 		gdk_pixbuf_xlib-2.0 gio-2.0 gtk-x11-2.0 jpeg \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		pthread-stubs xcb xml2 z xcb-render glade-2.0 \
-		drm xcb-shm
+		xcb-shm
 
 WANTLIB-data=	${WANTLIB} jpeg util gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0 \
-		png z
+		gle
 
 MASTER_SITES=		${HOMEPAGE}
 
@@ -54,36 +55,19 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			devel/libglade2
 
 LIB_DEPENDS-data=	${MODGETTEXT_LIB_DEPENDS} \
-			graphics/gdk-pixbuf2
+			graphics/gdk-pixbuf2 \
+			graphics/gle
 
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-hackdir="${PREFIX}/libexec/xscreensaver" \
+CONFIGURE_ARGS=		--with-hackdir="${PREFIX}/libexec/xscreensaver" \
 			--with-x-app-defaults="${PREFIX}/lib/X11/app-defaults"
-CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
-
-# License issues with graphics/gle necessitate this
-PSEUDO_FLAVORS=		no_gle
-FLAVOR?=		no_gle
-
-.include <bsd.port.arch.mk>
-
-LIB_DEPENDS-gle=	${MODGETTEXT_LIB_DEPENDS} \
-			graphics/gle \
-			x11/gtk+2
-RUN_DEPENDS-gle=	${BUILD_PKGPATH},-data
-WANTLIB-gle=		${WANTLIB} gle gdk_pixbuf-2.0 gdk_pixbuf_xlib-2.0
-
-.if ${BUILD_PACKAGES:M-gle}
-CONFIGURE_ARGS+=	--with-gle
-.else
-CONFIGURE_ARGS+=	--without-gle
-.endif
 
 post-extract:
 	cp ${FILESDIR}/migrate-xscreensaver-config.sh ${WRKSRC}/hacks/config
