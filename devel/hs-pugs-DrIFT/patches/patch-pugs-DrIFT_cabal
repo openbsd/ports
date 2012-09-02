@@ -1,12 +1,21 @@
-$OpenBSD: patch-pugs-DrIFT_cabal,v 1.1 2011/04/11 14:46:29 kili Exp $
---- pugs-DrIFT.cabal.orig	Mon Jul 20 01:06:45 2009
-+++ pugs-DrIFT.cabal	Sun Apr 10 12:59:06 2011
-@@ -23,7 +23,7 @@ exposed-modules:     DrIFT.JSON
-                      DrIFT.Perl6Class
-                      DrIFT.YAML
- hs-source-dirs:      src
--build-depends:       base < 4, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
-+build-depends:       base < 5, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
- build-type:          Simple
- data-files:          AUTHORS, ChangeLog, README, README.old
- extensions:          ParallelListComp, ScopedTypeVariables,
+$OpenBSD: patch-pugs-DrIFT_cabal,v 1.2 2012/09/02 21:21:48 kili Exp $
+--- pugs-DrIFT.cabal.orig	Fri Feb  3 14:29:37 2012
++++ pugs-DrIFT.cabal	Tue Jul 10 15:19:20 2012
+@@ -33,7 +33,7 @@ extra-source-files:
+         src/Rules/YAML.hs
+ 
+ executable          pugs-DrIFT
+-    build-depends:       base >= 4 && < 5, old-time, random, bytestring, utf8-string, pretty, containers, mtl < 2.0.0.0, stm, HsSyck
++    build-depends:       base >= 4 && < 5, old-time, random, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
+     main-is:             DrIFT.hs
+     -- ghc-options:         -fparr
+     hs-source-dirs:      src
+@@ -44,7 +44,7 @@ executable          pugs-DrIFT
+                          IncoherentInstances
+ 
+ library
+-    build-depends:       base >= 4 && < 5, old-time, random, bytestring, utf8-string, pretty, containers, mtl < 2.0.0.0, stm, HsSyck
++    build-depends:       base >= 4 && < 5, old-time, random, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
+     hs-source-dirs:      src
+     -- ghc-options:         -fparr
+     extensions:          ParallelListComp, ScopedTypeVariables,
