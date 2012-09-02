@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2012/05/13 21:27:38 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2012/09/02 21:58:45 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.8.0
-REVISION =		0
+DISTNAME =		darcs-2.8.1
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -22,7 +21,7 @@ BUILD_DEPENDS =		archivers/hs-zlib>=0.5.1.0,<0.6.0.0 \
 			devel/hs-hashed-storage>=0.5.6,<0.6 \
 			devel/hs-haskeline>=0.6.3,<0.7 \
 			devel/hs-mmap>=0.5,<0.6 \
-			devel/hs-mtl>=1.0,<2.1 \
+			devel/hs-mtl>=1.0,<2.2 \
 			devel/hs-network>=2.2,<2.4 \
 			devel/hs-parsec>=2.0,<3.2 \
 			devel/hs-regex-compat=0.95.1 \
