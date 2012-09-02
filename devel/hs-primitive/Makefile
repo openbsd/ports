@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/02 21:24:31 kili Exp $
 
 COMMENT =		wrappers for primitive array operations from GHC.Prim
 
-DISTNAME =		primitive-0.3.1
-REVISION =		1
+DISTNAME =		primitive-0.4.1
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

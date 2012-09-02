@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:45:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/02 21:24:31 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Control/
 lib/ghc/${DISTNAME}/Control/Monad/
@@ -9,7 +9,10 @@ lib/ghc/${DISTNAME}/Data/Primitive.hi
 lib/ghc/${DISTNAME}/Data/Primitive/Addr.hi
 lib/ghc/${DISTNAME}/Data/Primitive/Array.hi
 lib/ghc/${DISTNAME}/Data/Primitive/ByteArray.hi
+lib/ghc/${DISTNAME}/Data/Primitive/Internal/
+lib/ghc/${DISTNAME}/Data/Primitive/Internal/Compat.hi
 lib/ghc/${DISTNAME}/Data/Primitive/MachDeps.hi
+lib/ghc/${DISTNAME}/Data/Primitive/MutVar.hi
 lib/ghc/${DISTNAME}/Data/Primitive/Types.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/include/
@@ -27,6 +30,7 @@ share/doc/hs-${DISTNAME}/html/Data-Primitive-Addr.html
 share/doc/hs-${DISTNAME}/html/Data-Primitive-Array.html
 share/doc/hs-${DISTNAME}/html/Data-Primitive-ByteArray.html
 share/doc/hs-${DISTNAME}/html/Data-Primitive-MachDeps.html
+share/doc/hs-${DISTNAME}/html/Data-Primitive-MutVar.html
 share/doc/hs-${DISTNAME}/html/Data-Primitive-Types.html
 share/doc/hs-${DISTNAME}/html/Data-Primitive.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
@@ -40,6 +44,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-Addr.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-Array.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-ByteArray.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-MachDeps.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-MutVar.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Primitive-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Primitive.html
 share/doc/hs-${DISTNAME}/html/minus.gif
