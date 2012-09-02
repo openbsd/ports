@@ -1,16 +1,17 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/04/28 19:34:09 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/02 21:51:15 kili Exp $
 @bin bin/snap
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/RBAC/
-lib/ghc/${DISTNAME}/Data/RBAC/Checker.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Internal/
-lib/ghc/${DISTNAME}/Data/RBAC/Internal/Role.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Internal/RoleMap.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Internal/Rule.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Internal/Types.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Role.hi
-lib/ghc/${DISTNAME}/Data/RBAC/Types.hi
+lib/ghc/${DISTNAME}/Control/
+lib/ghc/${DISTNAME}/Control/Access/
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Checker.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Internal/
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Internal/Role.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Internal/RoleMap.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Internal/Rule.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Internal/Types.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Role.hi
+lib/ghc/${DISTNAME}/Control/Access/RoleBased/Types.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Snap/
 lib/ghc/${DISTNAME}/Snap.hi
@@ -60,6 +61,7 @@ share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Auth-Backends-JsonFile.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Auth.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Heist.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session-Backends-CookieSession.html
+share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session-Common.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet-Session.html
 share/doc/hs-${DISTNAME}/html/Snap-Snaplet.html
 share/doc/hs-${DISTNAME}/html/Snap.html
@@ -104,6 +106,7 @@ share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Auth-Backends-JsonFile.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Auth.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Heist.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session-Backends-CookieSession.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session-Common.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet-Session.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Snaplet.html
 share/doc/hs-${DISTNAME}/html/mini_Snap.html
