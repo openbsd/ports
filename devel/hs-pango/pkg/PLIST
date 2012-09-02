@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/11 14:38:19 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/02 21:43:31 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -46,6 +46,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Font.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Layout.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Markup.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Rendering.html
+share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango-Types.html
 share/doc/hs-${DISTNAME}/html/Graphics-Rendering-Pango.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
@@ -54,9 +55,12 @@ share/doc/hs-${DISTNAME}/html/doc-index-D.html
 share/doc/hs-${DISTNAME}/html/doc-index-E.html
 share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
+share/doc/hs-${DISTNAME}/html/doc-index-O.html
 share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-Q.html
 share/doc/hs-${DISTNAME}/html/doc-index-R.html
 share/doc/hs-${DISTNAME}/html/doc-index-S.html
 share/doc/hs-${DISTNAME}/html/doc-index-T.html
@@ -76,6 +80,7 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Font.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Layout.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Markup.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Rendering.html
+share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-Pango.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
