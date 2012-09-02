@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:45:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/02 21:22:25 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/ListLike/
 lib/ghc/${DISTNAME}/Data/ListLike.hi
 lib/ghc/${DISTNAME}/Data/ListLike/Base.hi
+lib/ghc/${DISTNAME}/Data/ListLike/CharString.hi
 lib/ghc/${DISTNAME}/Data/ListLike/FoldableLL.hi
 lib/ghc/${DISTNAME}/Data/ListLike/IO.hi
 lib/ghc/${DISTNAME}/Data/ListLike/Instances.hi
@@ -19,6 +20,7 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/COPYRIGHT
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Data-ListLike-Base.html
+share/doc/hs-${DISTNAME}/html/Data-ListLike-CharString.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-FoldableLL.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-IO.html
 share/doc/hs-${DISTNAME}/html/Data-ListLike-Instances.html
@@ -33,6 +35,7 @@ share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Base.html
+share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-CharString.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-FoldableLL.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Data-ListLike-Instances.html
