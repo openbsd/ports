@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2012/09/02 19:53:46 kili Exp $
-
-BROKEN =		not yet ready for normal use
+# $OpenBSD: Makefile,v 1.74 2012/09/02 22:21:51 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
