@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:46:52 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/02 20:04:19 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Pugs/
@@ -20,7 +20,6 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Pugs-Compat.html
-share/doc/hs-${DISTNAME}/html/doc-index-33.html
 share/doc/hs-${DISTNAME}/html/doc-index-37.html
 share/doc/hs-${DISTNAME}/html/doc-index-43.html
 share/doc/hs-${DISTNAME}/html/doc-index-46.html
