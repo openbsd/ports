@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/02 20:01:24 kili Exp $
 
 COMMENT =		fast and easy to use XHTML 1.0 Strict combinators
 
 DISTNAME =		xhtml-combinators-0.2.2
-REVISION =		5
+REVISION =		6
 CATEGORIES =		www
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -18,7 +18,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-text \
+RUN_DEPENDS +=		devel/hs-random \
+			devel/hs-text \
 			devel/hs-transformers \
 			textproc/hs-xml
 BUILD_DEPENDS +=	${RUN_DEPENDS}
