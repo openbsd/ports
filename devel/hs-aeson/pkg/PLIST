@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/01/23 21:00:49 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/02 21:10:44 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Aeson/
@@ -13,6 +13,7 @@ lib/ghc/${DISTNAME}/Data/Aeson/TH.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/
 lib/ghc/${DISTNAME}/Data/Aeson/Types.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Class.hi
+lib/ghc/${DISTNAME}/Data/Aeson/Types/Generic.hi
 lib/ghc/${DISTNAME}/Data/Aeson/Types/Internal.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
