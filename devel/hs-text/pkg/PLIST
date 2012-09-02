@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/12/31 22:15:04 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/02 20:16:35 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Text/
@@ -41,6 +41,7 @@ lib/ghc/${DISTNAME}/Data/Text/Lazy/IO.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Internal.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Lazy/Search.hi
+lib/ghc/${DISTNAME}/Data/Text/Private.hi
 lib/ghc/${DISTNAME}/Data/Text/Read.hi
 lib/ghc/${DISTNAME}/Data/Text/Search.hi
 lib/ghc/${DISTNAME}/Data/Text/Unsafe/
