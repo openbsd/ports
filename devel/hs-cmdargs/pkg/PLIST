@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/13 22:41:25 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/02 20:27:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Generics/
@@ -14,10 +14,14 @@ lib/ghc/${DISTNAME}/System/Console/CmdArgs/Annotate.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Default.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit.hi
+lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/Complete.hi
+lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/ExpandArgsAt.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/Help.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/Process.hi
+lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/SplitJoin.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Explicit/Type.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/GetOpt.hi
+lib/ghc/${DISTNAME}/System/Console/CmdArgs/Helper.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/Ann.hi
@@ -27,6 +31,7 @@ lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/Reader.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/Reform.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/Type.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Implicit/UI.hi
+lib/ghc/${DISTNAME}/System/Console/CmdArgs/Quote.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Text.hi
 lib/ghc/${DISTNAME}/System/Console/CmdArgs/Verbosity.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
@@ -41,7 +46,9 @@ share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Annotate.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Default.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Explicit.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-GetOpt.html
+share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Helper.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Implicit.html
+share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Quote.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Text.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs-Verbosity.html
 share/doc/hs-${DISTNAME}/html/System-Console-CmdArgs.html
@@ -58,6 +65,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-F.html
 share/doc/hs-${DISTNAME}/html/doc-index-G.html
 share/doc/hs-${DISTNAME}/html/doc-index-H.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-J.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
 share/doc/hs-${DISTNAME}/html/doc-index-N.html
@@ -80,7 +88,9 @@ share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Annotate.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Default.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Explicit.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-GetOpt.html
+share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Helper.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Implicit.html
+share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Quote.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Text.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs-Verbosity.html
 share/doc/hs-${DISTNAME}/html/mini_System-Console-CmdArgs.html
