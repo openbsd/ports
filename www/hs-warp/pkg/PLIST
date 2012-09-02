@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/16 14:18:32 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/02 21:50:39 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
@@ -6,6 +6,7 @@ lib/ghc/${DISTNAME}/Network/Wai/
 lib/ghc/${DISTNAME}/Network/Wai/Handler/
 lib/ghc/${DISTNAME}/Network/Wai/Handler/Warp.hi
 lib/ghc/${DISTNAME}/Paths_warp.hi
+lib/ghc/${DISTNAME}/ReadInt.hi
 lib/ghc/${DISTNAME}/Timeout.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
