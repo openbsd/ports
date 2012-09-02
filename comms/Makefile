@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2012/09/02 13:51:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/02 15:54:30 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += amtterm
@@ -19,7 +19,6 @@
      SUBDIR += jpilot
      SUBDIR += kermit
      SUBDIR += lcdproc
-     SUBDIR += libmal
      SUBDIR += lrzsz
      SUBDIR += mgetty+sendfax
      SUBDIR += minicom
