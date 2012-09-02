@@ -1,6 +1,6 @@
-$OpenBSD: patch-slim_conf,v 1.5 2010/08/24 11:37:50 landry Exp $
---- slim.conf.orig	Thu Jul  8 07:04:10 2010
-+++ slim.conf	Mon Aug 23 21:40:33 2010
+$OpenBSD: patch-slim_conf,v 1.6 2012/09/02 09:22:59 landry Exp $
+--- slim.conf.orig	Tue Jun 26 10:20:14 2012
++++ slim.conf	Sat Sep  1 23:15:35 2012
 @@ -1,17 +1,17 @@
  # Path, X server and arguments (if needed)
  # Note: -xauth $authfile is automatically appended
@@ -37,7 +37,7 @@ $OpenBSD: patch-slim_conf,v 1.5 2010/08/24 11:37:50 landry Exp $
  # Commands executed when starting and exiting a session.
  # They can be used for registering a X11 session with
 @@ -54,7 +54,7 @@ login_cmd           exec /bin/bash -login ~/.xinitrc %
- sessions            xfce4,icewm,wmaker,blackbox
+ sessions            xfce4,icewm-session,wmaker,blackbox
  
  # Executed when pressing F11 (requires imagemagick)
 -screenshot_cmd      import -window root /slim.png

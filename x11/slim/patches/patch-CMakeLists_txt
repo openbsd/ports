@@ -1,0 +1,38 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2012/09/02 09:22:59 landry Exp $
+--- CMakeLists.txt.orig	Tue Jun 26 10:20:14 2012
++++ CMakeLists.txt	Sat Sep  1 20:39:34 2012
+@@ -24,7 +24,7 @@ set(SLIM_VERSION "${SLIM_VERSION_MAJOR}.${SLIM_VERSION
+ set(CMAKE_INSTALL_PREFIX "/usr/local" CACHE PATH "Installation Directory")
+ set(PKGDATADIR "${CMAKE_INSTALL_PREFIX}/share/slim")
+ set(SYSCONFDIR "/etc")
+-set(MANDIR "${CMAKE_INSTALL_PREFIX}/share/man")
++set(MANDIR "${CMAKE_INSTALL_PREFIX}/man")
+ 
+ set(SLIM_DEFINITIONS)
+ if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR
+@@ -132,8 +132,6 @@ endif(USE_CONSOLEKIT)
+ 
+ # system librarys
+ find_library(M_LIB m)
+-find_library(RT_LIB rt)
+-find_library(CRYPTO_LIB crypt)
+ 
+ add_definitions(${SLIM_DEFINITIONS})
+ 
+@@ -152,8 +150,6 @@ include_directories(
+ #Set up library with all found packages
+ target_link_libraries(${PROJECT_NAME}
+ 	${M_LIB}
+-	${RT_LIB}
+-	${CRYPTO_LIB}
+ 	${X11_X11_LIB}
+ 	${X11_Xft_LIB}
+ 	${X11_Xrender_LIB}
+@@ -169,6 +165,6 @@ install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bi
+ # man file
+ install(FILES slim.1 DESTINATION ${MANDIR}/man1/)
+ # configure
+-install(FILES slim.conf DESTINATION ${SYSCONFDIR})
++install(FILES slim.conf DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/slim/)
+ # themes directory
+ subdirs(themes)

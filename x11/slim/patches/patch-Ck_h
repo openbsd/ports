@@ -1,0 +1,19 @@
+$OpenBSD: patch-Ck_h,v 1.1 2012/09/02 09:22:59 landry Exp $
+Add a boolean to track the consolekit session success
+--- Ck.h.orig	Tue Jun 26 10:20:14 2012
++++ Ck.h	Sat Sep  1 23:06:38 2012
+@@ -27,12 +27,13 @@ namespace Ck {
+   private:
+     CkConnector *ckc;
+     DBusError error;
+-
++    bool session;
+     const char * get_x11_device(const std::string &display);
+     dbus_bool_t ck_connector_open_graphic_session(const std::string &display,
+                                                   uid_t uid);
+   public:
+     const char * get_xdg_session_cookie();
++    bool has_session() {return session;}
+     void open_session(const std::string &display, uid_t uid);
+     void close_session();
+ 

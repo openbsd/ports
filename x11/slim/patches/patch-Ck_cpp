@@ -1,0 +1,20 @@
+$OpenBSD: patch-Ck_cpp,v 1.1 2012/09/02 09:22:59 landry Exp $
+Keep track of the successful consolekit session opening
+--- Ck.cpp.orig	Tue Jun 26 10:20:14 2012
++++ Ck.cpp	Sat Sep  1 23:06:17 2012
+@@ -101,6 +101,7 @@ namespace Ck {
+ 
+   void Session::open_session(const std::string &display, uid_t uid)
+   {
++    session = false;
+     ckc = ck_connector_new();
+ 
+     if(!ckc)
+@@ -113,6 +114,7 @@ namespace Ck {
+         throw Exception(__func__, "cannot open ConsoleKit session: OOM, DBus system bus "
+                         " not available or insufficient privileges");
+     }
++    session = true;
+   }
+ 
+   const char * Session::get_xdg_session_cookie()
