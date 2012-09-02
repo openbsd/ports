@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/26 08:13:25 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/02 21:22:55 kili Exp $
 @bin bin/Canonicalise
 @bin bin/CanonicaliseLazy
 @bin bin/DtdToHaskell
+@bin bin/FpMLToHaskell
 @bin bin/MkOneOf
 @bin bin/Validate
+@bin bin/XsdToHaskell
 @bin bin/Xtract
-@bin bin/XtractLazy
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -25,12 +26,24 @@ lib/ghc/${DISTNAME}/Text/XML/HaXml/Html/Parse.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Html/ParseLazy.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Html/Pretty.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Lex.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Namespaces.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/OneOfN.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Parse.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/ParseLazy.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Posn.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Pretty.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/SAX.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/Environment.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/HaskellTypeModel.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/NameConversion.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/Parse.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/PrettyHaskell.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/PrettyHsBoot.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/PrimitiveTypes.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/Schema.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/TypeConversion.hi
+lib/ghc/${DISTNAME}/Text/XML/HaXml/Schema/XSDTypeModel.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/ShowXmlLazy.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/TypeMapping.hi
 lib/ghc/${DISTNAME}/Text/XML/HaXml/Types.hi
@@ -66,12 +79,23 @@ share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Html-Parse.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Html-ParseLazy.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Html-Pretty.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Lex.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Namespaces.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-OneOfN.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Parse.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-ParseLazy.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Posn.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Pretty.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-SAX.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-Environment.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-HaskellTypeModel.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-NameConversion.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-Parse.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-PrettyHaskell.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-PrettyHsBoot.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-PrimitiveTypes.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-Schema.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-TypeConversion.html
+share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Schema-XSDTypeModel.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-ShowXmlLazy.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-TypeMapping.html
 share/doc/hs-${DISTNAME}/html/Text-XML-HaXml-Types.html
@@ -135,12 +159,23 @@ share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-Parse.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-ParseLazy.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Html-Pretty.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Lex.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Namespaces.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-OneOfN.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Parse.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-ParseLazy.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Posn.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Pretty.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-SAX.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Environment.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-HaskellTypeModel.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-NameConversion.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Parse.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrettyHaskell.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrettyHsBoot.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-PrimitiveTypes.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-Schema.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-TypeConversion.html
+share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Schema-XSDTypeModel.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-ShowXmlLazy.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-TypeMapping.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Types.html
