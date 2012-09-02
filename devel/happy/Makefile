@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/30 21:30:20 kili Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/02 20:10:36 kili Exp $
 
 COMMENT=		parser generator for Haskell
 
-DISTNAME=		happy-1.18.6
-REVISION=		2
+DISTNAME=		happy-1.18.9
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.haskell.org/happy/
@@ -19,7 +18,7 @@ WANTLIB=		c gmp m
 MODULES=		lang/ghc converters/libiconv
 MODGHC_BUILD=		cabal hackage nort
 
-BUILD_DEPENDS+=		devel/hs-mtl \
+BUILD_DEPENDS+=		devel/hs-mtl>=1.0 \
 			textproc/docbook \
 			textproc/docbook-xsl \
 			textproc/libxslt
