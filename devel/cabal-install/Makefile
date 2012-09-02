@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/12/27 21:11:51 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/02 20:09:42 kili Exp $
 
 COMMENT =	command-line interface for Cabal and Hackage
 
-DISTNAME =	cabal-install-0.10.2
-REVISION =	1
+DISTNAME =	cabal-install-0.14.0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/cabal/
@@ -21,9 +20,11 @@ WANTLIB =		c gmp m pthread util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =          cabal hackage nort
 
-BUILD_DEPENDS +=	hs-network->=1,<3:devel/hs-network \
-			hs-HTTP->=4000.0.2,<4001:net/hs-HTTP \
-			hs-zlib->=0.4,<0.6:archivers/hs-zlib
+BUILD_DEPENDS +=	devel/hs-mtl>=2.0,<3 \
+			devel/hs-network>=1,<3 \
+			devel/hs-random>=1,<1.1 \
+			net/hs-HTTP>=4000.0.2,<4001 \
+			archivers/hs-zlib>=0.4,<0.6
 
 LIB_DEPENDS =		devel/gmp
 
