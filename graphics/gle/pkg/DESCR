@@ -1,16 +1,9 @@
-The GLE Tubing and Extrusion Library is a graphics application
-programming interface (API). The library consists of a number of
-"C" language subroutines for drawing tubing and extrusions. It is
-a very fast implementation of these shapes, outperforming all other
-implementations, most by orders of magnitude.  The library is
-distributed in source code form, in a package that includes
-documentation, a VRML proposal, Makefiles, and full source code and
-header files. It uses the OpenGL (TM) programming API to perform
-the actual drawing of the tubing and extrusions.
-
-GLE is designed for and maintained on the Linux operating system,
-and is known to run on other Unix operating systems such as AIX,
-IRIX, Ultrix and HPUX with OpenGL or Mesa. GLE is also known to run
-on IBM OS/2 Warp, Apple Macintosh OS9, and Microsoft Windows NT and
-has been used to develop screen-savers for some of these popular
-PC operating systems.
+GLE is a library package of C functions that draw extruded surfaces,
+including surfaces of revolution, sweeps, tubes, polycones,
+polycylinders and helicoids.  Generically, the extruded surface is
+specified with a 2D polyline that is extruded along a 3D path.  A local
+coordinate system allows for additional flexibility in the primitives
+drawn.  Extrusions may be texture mapped in a variety of ways.  The GLE
+library generates 3D triangle coordinates, lighting normal vectors and
+texture coordinates as output. GLE uses the GL or OpenGL(R) API's to
+perform the actual rendering.

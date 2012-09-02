@@ -1,33 +1,36 @@
-# $OpenBSD: Makefile,v 1.18 2012/03/29 13:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/02 09:34:19 ajacoutot Exp $
 
 COMMENT=		OpenGL Extrusion library
 
-VERSION=		3.0.4
-DISTNAME=		gle-${VERSION}
-REVISION =		4
-SHARED_LIBS=		gle	3.4
+DISTNAME=		gle-3.1.0
 CATEGORIES=     	graphics devel
+
+SHARED_LIBS +=  gle                  4.0      # 4.0
 
 HOMEPAGE=		http://www.linas.org/gle/
 
-# Artistic/custom
-PERMIT_PACKAGE_CDROM=	unclear
-PERMIT_PACKAGE_FTP=	unclear
+# Artistic/IBM standard example source code or GPLv2
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		X11 Xext Xi m xcb
+WANTLIB += m
 
-MASTER_SITES=		http://www.linas.org/gle/pub/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=project/gle/gle/${DISTNAME}/}
+
+BUILD_DEPENDS=		graphics/freeglut
 
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 SEPARATE_BUILD= 	Yes
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXi"
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 post-extract:
-	@perl -i -p -e 's/3GLE/3/;' ${WRKSRC}/man/*.man
+	perl -pi -e 's/3GLE/3/;' ${WRKSRC}/man/*.man
+	perl -pi -e 's,3gle,3,g' ${WRKSRC}/man/Makefile.in
 
 .include <bsd.port.mk>
