@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/04/28 19:32:21 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/02 21:40:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Snap/
 lib/ghc/${DISTNAME}/Snap/Core.hi
 lib/ghc/${DISTNAME}/Snap/Internal/
 lib/ghc/${DISTNAME}/Snap/Internal/Debug.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Exceptions.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Types.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Instances.hi
@@ -28,6 +29,7 @@ lib/ghc/${DISTNAME}/Snap/Util/
 lib/ghc/${DISTNAME}/Snap/Util/FileServe.hi
 lib/ghc/${DISTNAME}/Snap/Util/FileUploads.hi
 lib/ghc/${DISTNAME}/Snap/Util/GZip.hi
+lib/ghc/${DISTNAME}/Snap/Util/Proxy.hi
 lib/ghc/${DISTNAME}/Snap/Util/Readable.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
@@ -39,6 +41,7 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Snap-Core.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Debug.html
+share/doc/hs-${DISTNAME}/html/Snap-Internal-Exceptions.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Iteratee-Debug.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Parsing.html
@@ -49,6 +52,7 @@ share/doc/hs-${DISTNAME}/html/Snap-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-FileServe.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-FileUploads.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-GZip.html
+share/doc/hs-${DISTNAME}/html/Snap-Util-Proxy.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-Readable.html
 share/doc/hs-${DISTNAME}/html/doc-index-36.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
@@ -76,6 +80,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-S.html
 share/doc/hs-${DISTNAME}/html/doc-index-T.html
 share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
+share/doc/hs-${DISTNAME}/html/doc-index-X.html
 share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
@@ -85,6 +90,7 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Core.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Debug.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Exceptions.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Iteratee-Debug.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Parsing.html
@@ -95,6 +101,7 @@ share/doc/hs-${DISTNAME}/html/mini_Snap-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileServe.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileUploads.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-GZip.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Util-Proxy.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-Readable.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
