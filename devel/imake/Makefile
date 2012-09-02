@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/02 14:14:02 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/02 18:00:31 matthieu Exp $
 
 COMMENT =  	makefile generator
 CATEGORIES =	devel x11
 DISTNAME = 	imake-1.0.5
-MASTER_SITES = 	http://cgit.freedesktop.org/xorg/util/imake/snapshot/
+MASTER_SITES = 	http://ftp.x.org/pub/individual/util/
 
 PERMIT_DISTFILES_CDROM = 	Yes
 PERMIT_DISTFILES_FTP = 		Yes
