@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2012/04/23 17:15:18 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/02 18:12:56 kili Exp $
+
+BROKEN =		Does not build with new ghc and HaXml
 
 COMMENT =		command line podcast aggregator
 
