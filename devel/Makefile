@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1065 2012/09/01 17:11:48 espie Exp $
+# $OpenBSD: Makefile,v 1.1066 2012/09/02 17:00:59 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -165,8 +165,10 @@
      SUBDIR += hs-bimap
      SUBDIR += hs-binary
      SUBDIR += hs-blaze-builder
+     SUBDIR += hs-blaze-builder-conduit
      SUBDIR += hs-blaze-builder-enumerator
      SUBDIR += hs-blaze-textual
+     SUBDIR += hs-bytestring-mmap
      SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
@@ -174,6 +176,7 @@
      SUBDIR += hs-comonad
      SUBDIR += hs-comonad-transformers
      SUBDIR += hs-concurrent-extra
+     SUBDIR += hs-conduit
      SUBDIR += hs-configurator
      SUBDIR += hs-contravariant
      SUBDIR += hs-control-timeout
@@ -182,7 +185,6 @@
      SUBDIR += hs-data-lens
      SUBDIR += hs-data-lens-template
      SUBDIR += hs-dataenc
-     SUBDIR += hs-deepseq
      SUBDIR += hs-directory-tree
      SUBDIR += hs-distributive
      SUBDIR += hs-dlist
@@ -205,24 +207,29 @@
      SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
+     SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
+     SUBDIR += hs-monad-control
      SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-network
+     SUBDIR += hs-network-conduit
      SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
      SUBDIR += hs-primitive
      SUBDIR += hs-pugs-DrIFT
      SUBDIR += hs-pugs-compat
+     SUBDIR += hs-random
      SUBDIR += hs-readline
      SUBDIR += hs-regex-base
      SUBDIR += hs-regex-compat
      SUBDIR += hs-regex-pcre-builtin
      SUBDIR += hs-regex-posix
+     SUBDIR += hs-resourcet
      SUBDIR += hs-safe
      SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
@@ -241,13 +248,16 @@
      SUBDIR += hs-test-framework-quickcheck2
      SUBDIR += hs-text
      SUBDIR += hs-transformers
+     SUBDIR += hs-transformers-base
      SUBDIR += hs-type-level
      SUBDIR += hs-unbounded-delays
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
      SUBDIR += hs-unordered-containers
+     SUBDIR += hs-vault
      SUBDIR += hs-vector
      SUBDIR += hs-vector-algorithms
+     SUBDIR += hs-void
      SUBDIR += hscolour
      SUBDIR += hudson
      SUBDIR += hyena
