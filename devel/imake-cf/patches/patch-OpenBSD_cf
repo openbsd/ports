@@ -1,0 +1,140 @@
+$OpenBSD: patch-OpenBSD_cf,v 1.1.1.1 2012/09/02 14:13:10 espie Exp $
+--- OpenBSD.cf.orig	Thu Jan  6 05:31:00 2011
++++ OpenBSD.cf	Mon Aug  6 13:01:09 2012
+@@ -26,6 +26,8 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ #define LibDir			/usr/local/lib/X11
+ #define UsrLibDir		/usr/local/lib
+ #define ManDirectoryRoot	/usr/local/man
++#define FontDir			/usr/local/lib/X11/fonts
++#define FontEncDir		/usr/local/lib/X11/fonts/encodings
+ #define LdPreLib		-L/usr/X11R6/lib -L/usr/local/lib
+ #define XpmLibDir		/usr/X11R6/lib
+ #define XpmIncDir		/usr/X11R6/include
+@@ -244,9 +246,22 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+ /*
+  * Documentation formatting
+  */
+-#define NeqnCmd			neqn -Tlatin1
+-#define NroffCmd		nroff -Tlatin1
+-#define	EqnCmd 			eqn -Tps
++#ifdef Ports
++# define NroffCmd		/usr/local/bin/nroff -Tascii -c
++# define TroffCmd		/usr/local/bin/nroff -Tps
++# define HTMLroffCmd		/usr/local/bin/nroff -Thtml
++# define NeqnCmd		/usr/local/bin/neqn -Tascii
++# define EqnCmd			/usr/local/bin/eqn -Tps
++# define TblCmd			/usr/local/bin/tbl
++#else
++# define NroffCmd		mandoc
++# define TroffCmd		mandoc -Tps
++# define HTMLroffCmd		mandoc -Thtml
++# define NeqnCmd		cat
++# define EqnCmd			cat
++# define TblCmd			cat
++#endif
++
+ #define HasGroff		YES
+ 
+ #ifndef HasCookieMaker
+@@ -262,6 +277,9 @@ XCOMM operating system:  OSName (OSMajorVersion./**/OS
+  */
+ #define ManSuffix	1
+ #define FileManSuffix	5
++
++#ifdef Ports
++
+ #define ManSourcePath	$(MANPATH)/cat
+ 
+ #define InstallManPageLongBase(file,destdir,dest)			@@\
+@@ -335,6 +353,20 @@ install.man:: 								@@\
+ 		); \							@@\
+ 	done
+ 
++#else /* Ports */
++
++#define InstallManPageAliasesBase(file,destdir,aliases)			@@\
++install.man::								@@\
++	@SUFFIX=${MANSUFFIX}; \						@@\
++	for i in aliases; do \						@@\
++		(set -x; \						@@\
++		$(RM) $(DESTDIR)destdir/$$i.*; \			@@\
++		(cd $(DESTDIR)destdir; $(LN) file.$${SUFFIX} \		@@\
++		$$i.$${SUFFIX})); \					@@\
++	done
++
++#endif /* Ports */
++
+ #define InstallManPageAliases(file,destdir,aliases)			@@\
+ InstallHtmlManPageAliases(file,aliases,$(MANSUFFIX))			@@\
+ 									@@\
+@@ -436,8 +468,6 @@ install:: fonts.alias							@@\
+ #ifdef AMD64Architecture
+ 
+ # define HasWeakSymbols		YES
+-# define HasSharedLibraries	YES
+-# define HasDlopen		YES
+ 
+ # define XorgServer		YES
+ 
+@@ -666,51 +696,26 @@ install:: fonts.alias							@@\
+ 
+ 
+ /*
+- * Definitions for the mips architecture (currently arc, pmax)
++ * Definitions for the mips architecture (currently sgi)
+  */
+ #ifdef MipsArchitecture
+ 
+- /*
+-  * Mips ELF shared libs need some special handling.
+-  */
+-# define PositionIndependentCFlags
+-# define SharedLibraryLoadFlags -x -shared --whole-archive -soname `echo $@ | sed 's/\.[0-9]*$$//'`
+-# define SharedXtReqs -L$(BUILDLIBDIR) $(XONLYLIB) $(SMLIB) $(ICELIB)
+-# define SharedXmuReqs $(LDPRELIB) $(XTOOLONLYLIB) $(XLIB)
++# define HasWeakSymbols		YES
+ 
+-#endif /* MipsArchitecture */
++# define XorgServer		YES
+ 
+-
+-/*
+- * Definitions for the arc architecture
+- */
+-#ifdef ArcArchitecture
+-
+-#  define ServerExtraDefines GccGasOption XFree86ServerDefines
+-#  ifndef XFree86ConsoleDefines
+-#    define XFree86ConsoleDefines -DPCCONS_SUPPORT
++# if XorgServer
++#  ifndef DoLoadableServer
++#    define DoLoadableServer	YES
+ #  endif
++#  define XF86CardDrivers	wsfb
++#  define XFree86ConsoleDefines -DWSCONS_SUPPORT
++# endif
+ 
+ # include <xorg.cf>
+ 
+-#endif /* ArcArchitecture */
++#endif /* MipsArchitecture */
+ 
+-
+-/*
+- * Definitions for the pmax architecture
+- */
+-#ifdef PmaxArchitecture
+-
+-# include <xf86.rules>
+-# ifndef BuildServer
+-#  define BuildServer		NO
+-# endif
+-/* For the X11R5 server */
+-# define CompressAllFonts	NO
+-# define InstallFontAliases	InstallFontAliasesNoComment
+-# define UseRgbTxt		NO
+-
+-#endif /* PmaxArchitecture */
+ 
+ /*
+  * Definitions for the PowerPC architecture 

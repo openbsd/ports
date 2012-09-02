@@ -1,0 +1,14 @@
+$OpenBSD: patch-X11_tmpl,v 1.1.1.1 2012/09/02 14:13:10 espie Exp $
+--- X11.tmpl.orig	Thu Jan  6 05:31:00 2011
++++ X11.tmpl	Mon Aug  6 13:01:09 2012
+@@ -2480,8 +2480,8 @@ SharedLibReferences(EXTENSION,Xext,$(XEXTLIBSRC),SOXEX
+ ProjectUnsharedLibReferences(EXTENSION,Xext,$(XEXTLIBSRC),XBuildLibDir)
+ #endif
+ LINTEXTENSIONLIB = $(LINTEXTENSION)
+-          DEPXLIB = $(DEPEXTENSIONLIB) $(DEPXONLYLIB)
+-             XLIB = $(EXTENSIONLIB) $(XONLYLIB)
++          DEPXLIB = $(DEPEXTENSIONLIB) $(DEPXONLYLIB) $(DEPXDMCPLIB) $(DEPXAUTHLB)
++             XLIB = $(EXTENSIONLIB) $(XONLYLIB) $(XDMCPLIB) $(XAUTHLIB)
+          LINTXLIB = $(LINTXONLYLIB)
+ 
+     XSSLIBSRC = $(LIBSRC)/Xss

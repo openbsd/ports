@@ -1,0 +1,66 @@
+$OpenBSD: patch-Imake_cf,v 1.1.1.1 2012/09/02 14:13:10 espie Exp $
+--- Imake.cf.orig	Thu Jan  6 05:31:00 2011
++++ Imake.cf	Mon Aug  6 13:01:09 2012
+@@ -132,18 +132,27 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+ #   define Sparc64Architecture
+ #  endif
+ #  undef sparc
++#  undef sparc64
+ # endif
+ # if defined(__mips__) || defined(mips)
+ #   define MipsArchitecture
++#   ifdef __LP64__
++#     define Mips64Architecture
++#   endif
+ #   ifdef arc
+ #     define ArcArchitecture
+ #     undef arc
+ #   endif
++#   ifdef sgi
++#     define SGIArchitecture
++#     undef sgi
++#   endif
+ #   ifdef pmax
+ #     define PmaxArchitecture
+ #     undef pmax
+ #   endif
+ #   undef mips
++#   undef __mips__
+ # endif
+ # if defined(__alpha__) || defined(alpha)
+ #   define AlphaArchitecture
+@@ -156,6 +165,14 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+ #   undef __x86_64__
+ #   undef amd64
+ # endif
++# if defined(__arm__)
++#   define Arm32Architecture
++#   undef __arm__
++#   if defined(zaurus)
++#     undef zaurus
++#     define ZaurusArchitecture
++#   endif
++# endif
+ # if defined(__mc68020__) || defined(mc68020)
+ #  define Mc68020Architecture
+ #  if defined(amiga)
+@@ -180,11 +197,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+ #  endif
+ #  undef mc68000
+ # endif
++# if defined(__m88k__) || defined(m88k)
++#  define Mc88000Architecture
++#  undef m88k
++# endif
+ # ifdef __powerpc__
+ #  define PpcArchitecture
+ #  undef __powerpc__
+ #  undef __macppc__
+ #  undef macppc
++# endif
++# ifdef __sh__
++#  undef __sh__
++#  define SuperHArchitecture
+ # endif
+ # ifdef __vax__
+ #  undef vax
