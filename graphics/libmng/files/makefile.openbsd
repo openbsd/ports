@@ -10,13 +10,10 @@ LIBDIR=	${PREFIX}/lib
 MANDIR=	${PREFIX}/man/man
 INCDIR=	${PREFIX}/include
 
-ZLIB_INC= ${LOCALBASE}/include
-ZLIB_LIB= ${LOCALBASE}/lib
-
 JPEG_INC= ${LOCALBASE}/include
 JPEG_LIB= ${LOCALBASE}/lib
 
-LCMS_INC= ${LOCALBASE}/inc
+LCMS_INC= ${LOCALBASE}/include
 LCMS_LIB= ${LOCALBASE}/lib
 
 LIB=	mng
@@ -29,11 +26,12 @@ SRCS=	libmng_callback_xs.c libmng_chunk_io.c libmng_chunk_descr.c \
 HDRS=	libmng.h libmng_conf.h libmng_types.h
 
 CFLAGS+= -Wall
-CPPFLAGS+= -I${ZLIB_INC} -I${JPEG_INC} -I${LCMS_INC}
+CPPFLAGS+= -I${JPEG_INC} -I${LCMS_INC}
 .if !defined(NOPIC)
 CPPFLAGS+= -DMNG_BUILD_SO
 .endif
 CPPFLAGS+= -DMNG_FULL_CMS
+LDADD= -lz -lm -L${JPEG_LIB} -ljpeg -L${LCMS_LIB} -llcms
 
 NOPROFILE= Yes
 
@@ -58,7 +56,6 @@ beforeinstall:
 	fi
 
 afterinstall:
-	@rm -f ${DESTDIR}${LIBDIR}/libmng_pic.a
 	@rm -f ${DESTDIR}${LIBDIR}/debug/libmng.a
 	@rmdir ${DESTDIR}${LIBDIR}/debug 2>/dev/null || true
 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \

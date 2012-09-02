@@ -1,26 +1,29 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/02 10:25:13 ajacoutot Exp $
 
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
 DISTNAME=	lm010010
 PKGNAME=	libmng-1.0.10
-SHARED_LIBS=	mng	3.1
+REVISION=	0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libmng/}
 EXTRACT_SUFX=	.zip
 UNZIP=		unzip -a
 
-HOMEPAGE=	http://www.libmng.com/
+SHARED_LIBS=	mng	3.1
 
-LIB_DEPENDS=	graphics/jpeg \
-		graphics/lcms
-WANTLIB =	jpeg>=62 lcms
+HOMEPAGE=	http://www.libmng.com/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB=	jpeg lcms m z
+
+LIB_DEPENDS=	graphics/jpeg \
+		graphics/lcms
 
 FAKE_FLAGS=	PREFIX="${PREFIX}"
 
@@ -31,7 +34,6 @@ MAKE_FILE=	makefiles/makefile.openbsd
 
 WRKDIST=	${WRKDIR}/libmng
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-extract:
