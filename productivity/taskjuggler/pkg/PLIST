@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/21 21:03:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/02 13:49:51 ajacoutot Exp $
 %%SHARED%%
-bin/TaskJugglerUI
-bin/taskjuggler
+@bin bin/TaskJugglerUI
+@bin bin/taskjuggler
 lib/libtaskjuggler.a
 lib/libtaskjuggler.la
 share/applications/kde/taskjuggler.desktop
