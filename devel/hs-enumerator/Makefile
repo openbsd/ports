@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2011/12/31 22:19:45 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/02 20:21:42 kili Exp $
 
 COMMENT=		implementation of Oleg Kiselyov's left-fold enumerators
 
-DISTNAME=		enumerator-0.4.14
-REVISION=		0
+DISTNAME=		enumerator-0.4.19
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
