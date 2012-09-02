@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/01/23 21:06:47 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/02 21:40:46 kili Exp $
 
 COMMENT =		utilities for Data.Lens
 
-DISTNAME =		data-lens-template-2.1.3
+DISTNAME =		data-lens-template-2.1.5
 CATEGORIES =		devel
 
 # BSD3
@@ -15,7 +15,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-data-lens
+RUN_DEPENDS =		devel/hs-data-lens>=2.0,<2.11
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
