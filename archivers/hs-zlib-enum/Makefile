@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/28 19:24:04 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/02 21:09:43 kili Exp $
 
 COMMENT =		enumerator interface for zlib compression
 
-DISTNAME =		zlib-enum-0.2.1
+DISTNAME =		zlib-enum-0.2.2.1
 CATEGORIES =		archivers devel
 
 # BSD3
@@ -15,9 +15,9 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		archivers/hs-zlib-bindings \
-			devel/hs-enumerator>=0.4 \
-			devel/hs-transformers>=0.2,<0.3
+RUN_DEPENDS =		archivers/hs-zlib-bindings>=0.1,<0.2 \
+			devel/hs-enumerator>=0.4,<0.5 \
+			devel/hs-transformers>=0.2,<0.4
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
