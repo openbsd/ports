@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-lib,v 1.4 2011/04/11 14:31:01 kili Exp $
+@comment $OpenBSD: PLIST-lib,v 1.5 2012/09/02 20:06:54 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Documentation/
 lib/ghc/${DISTNAME}/Documentation/Haddock.hi
@@ -24,11 +24,9 @@ lib/ghc/${DISTNAME}/Haddock/Interface/
 lib/ghc/${DISTNAME}/Haddock/Interface.hi
 lib/ghc/${DISTNAME}/Haddock/Interface/AttachInstances.hi
 lib/ghc/${DISTNAME}/Haddock/Interface/Create.hi
-lib/ghc/${DISTNAME}/Haddock/Interface/ExtractFnArgDocs.hi
 lib/ghc/${DISTNAME}/Haddock/Interface/LexParseRn.hi
 lib/ghc/${DISTNAME}/Haddock/Interface/ParseModuleHeader.hi
 lib/ghc/${DISTNAME}/Haddock/Interface/Rename.hi
-lib/ghc/${DISTNAME}/Haddock/Interface/Rn.hi
 lib/ghc/${DISTNAME}/Haddock/InterfaceFile.hi
 lib/ghc/${DISTNAME}/Haddock/Lex.hi
 lib/ghc/${DISTNAME}/Haddock/ModuleTree.hi
@@ -48,6 +46,20 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Documentation-Haddock.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
+share/doc/hs-${DISTNAME}/html/doc-index-C.html
+share/doc/hs-${DISTNAME}/html/doc-index-D.html
+share/doc/hs-${DISTNAME}/html/doc-index-E.html
+share/doc/hs-${DISTNAME}/html/doc-index-F.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-L.html
+share/doc/hs-${DISTNAME}/html/doc-index-M.html
+share/doc/hs-${DISTNAME}/html/doc-index-N.html
+share/doc/hs-${DISTNAME}/html/doc-index-O.html
+share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-R.html
+share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js

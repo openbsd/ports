@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2012/01/12 20:20:05 kili Exp $
+# $OpenBSD: Makefile,v 1.37 2012/09/02 20:06:54 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
 
-DISTNAME =	haddock-2.9.2
+DISTNAME =	haddock-2.11.0
 PKGNAME-main =	${DISTNAME}
-REVISION-main =	2
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-lib =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -20,15 +18,15 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# This flavor is needed to let ghc extract the haddock sources
-# without pulling in haddocks own build dependencies (which would
-# include ghc).
-FLAVORS =	no_deps
-FLAVOR ?=
-
-.if ! ${FLAVOR:Mno_deps}
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage register
+
+# Currently, we use the version bundled with the ghc sources, because
+# the latest official haddock version (2.10.0) doesn't work with
+# ghc-7.4. There's hope that this situation will be fixed upstream
+# before ghc-7.6 will be released.
+DISTFILES =
+BUILD_DEPENDS +=	lang/ghc:patch
 
 LIB_DEPENDS-lib =
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
@@ -53,25 +51,9 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.61
 AUTOCONF_DIR =		${WRKSRC}/doc
 WRKCONF =		${AUTOCONF_DIR}
-.else
-MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
 
-DIST_SUBDIR =		ghc
-
-do-build:
-	@echo "*** The no_deps FLAVOR is not meant to be built at all, it is"
-	@echo "*** only used by lang/ghc to get a copy of the haddock sources."
-	@false
-.endif
-
-# Move the alex- and happy-generated files into the src dir and
-# rename the corresponding sources so cabal won't try to re-run
-# alex or happy.
 post-extract:
-	cd ${WRKSRC}/src && \
-	find . -name \*.[xy] -print | \
-	sed 's@\(.*\)\.[xy]@mv & &.source \&\& mv ../dist/build/haddock/haddock-tmp/\1.hs \1.hs@' | \
-	sh
+	mv ${WRKDIR}/lang/ghc/ghc-${MODGHC_VER}/utils/haddock ${WRKSRC}
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
