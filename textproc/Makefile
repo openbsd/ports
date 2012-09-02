@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2012/08/29 09:54:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.364 2012/09/02 16:58:02 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -51,6 +51,7 @@
      SUBDIR += hs-attoparsec-enumerator
      SUBDIR += hs-attoparsec-iteratee
      SUBDIR += hs-blaze-html
+     SUBDIR += hs-blaze-markup
      SUBDIR += hs-bytestring-nums
      SUBDIR += hs-bytestring-show
      SUBDIR += hs-heist
