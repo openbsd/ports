@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/08 22:36:40 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/02 21:56:18 kili Exp $
 
 COMMENT =		Comonad transformers
 
-DISTNAME =		comonad-transformers-2.0.2
-REVISION =		1
+DISTNAME =		comonad-transformers-2.1.2
 CATEGORIES =		devel
 
 # BSD3
@@ -16,12 +15,12 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS =		devel/hs-comonad>=1.1,<1.2 \
-			devel/hs-contravariant>=0.1.2,<0.2 \
-			devel/hs-distributive>=0.2,<0.3 \
-			devel/hs-semigroupoids>=1.2.6,<1.3 \
-			devel/hs-semigroups>=0.8,<0.9 \
-			devel/hs-transformers>=0.2.0,<=0.3
+RUN_DEPENDS =		devel/hs-comonad>=1.1.1.5,<1.2 \
+			devel/hs-contravariant>=0.2.0.1,<0.3 \
+			devel/hs-distributive>=0.2.2,<0.3 \
+			devel/hs-semigroupoids>=1.3.1.2,<1.4 \
+			devel/hs-semigroups>=0.8.3.1,<0.9 \
+			devel/hs-transformers>=0.2,<0.4
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
