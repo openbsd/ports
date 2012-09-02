@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2012/09/01 07:17:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/02 10:37:27 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk3+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	3.4.1
+REVISION=	0
 
 PKGNAME=	gtk3mm-${GNOME_VERSION}
 
@@ -37,7 +38,13 @@ LIB_DEPENDS=	devel/atk2mm \
 		x11/gtk+3>=3.4.0
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-static \
-		--disable-dependency-tracking
+CONFIGURE_ENV=	ac_cv_path_DOT= \
+		ac_cv_path_XSLTPROC= \
+		ac_cv_path_DOXYGEN=
+CONFIGURE_ARGS=	--enable-static
+
+# XXX needs doxygen and graphviz (and xsltprox)
+# pre-generated doc should be part of the official tarball...
+CONFIGURE_ARGS += --disable-documentation
 
 .include <bsd.port.mk>
