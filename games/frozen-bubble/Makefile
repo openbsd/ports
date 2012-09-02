@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/02 20:52:35 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -58,5 +58,13 @@ WANTLIB-main =		${MODGETTEXT_WANTLIB} \
 WANTLIB-server =	${MODGETTEXT_WANTLIB} c glib-2.0
 
 MULTI_PACKAGES =	-main -server
+
+post-configure:
+	${SUBST_CMD} -c ${FILESDIR}/wrapper.sh ${WRKDIR}/wrapper.sh
+
+post-install:
+	mv ${PREFIX}/bin/frozen-bubble* ${PREFIX}/libexec/frozen-bubble/
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/frozen-bubble
+	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/frozen-bubble-editor
 
 .include <bsd.port.mk>
