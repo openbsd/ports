@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:32:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/02 18:03:28 ajacoutot Exp $
 %%SHARED%%
 @bin bin/giggle
 include/giggle/
@@ -127,10 +127,6 @@ share/help/sl/giggle/introduction.page
 share/help/sl/giggle/license.page
 share/help/sl/giggle/opening-repositories.page
 share/help/sl/giggle/tagging-commits.page
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/giggle-branch.png
 share/icons/hicolor/16x16/apps/giggle-history-view.png
 share/icons/hicolor/16x16/apps/giggle-remote.png
@@ -138,25 +134,15 @@ share/icons/hicolor/16x16/apps/giggle-scm-git.png
 share/icons/hicolor/16x16/apps/giggle-scm-svn.png
 share/icons/hicolor/16x16/apps/giggle-tag.png
 share/icons/hicolor/16x16/apps/giggle.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/giggle-history-view.png
 share/icons/hicolor/22x22/apps/giggle.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/giggle-diff-view.png
 share/icons/hicolor/24x24/apps/giggle-history-view.png
 share/icons/hicolor/24x24/apps/giggle.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/giggle-history-view.png
 share/icons/hicolor/32x32/apps/giggle.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/giggle-scm-svn.png
 share/icons/hicolor/48x48/apps/giggle.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/giggle.svg
 share/locale/ca/LC_MESSAGES/giggle.mo
 share/locale/ca@valencia/LC_MESSAGES/giggle.mo
