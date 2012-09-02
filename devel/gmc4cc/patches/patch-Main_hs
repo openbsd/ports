@@ -1,0 +1,9 @@
+$OpenBSD: patch-Main_hs,v 1.1 2012/09/02 21:54:08 kili Exp $
+--- Main.hs.orig	Sun Jul 19 12:41:15 2009
++++ Main.hs	Fri Jul 13 14:28:12 2012
+@@ -1,4 +1,4 @@
+-import System
++import System.Environment
+ 
+ import Lexer
+ import Parser

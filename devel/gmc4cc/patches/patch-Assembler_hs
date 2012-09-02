@@ -1,0 +1,11 @@
+$OpenBSD: patch-Assembler_hs,v 1.1 2012/09/02 21:54:08 kili Exp $
+--- Assembler.hs.orig	Thu Jul 23 09:52:53 2009
++++ Assembler.hs	Fri Jul 13 14:27:41 2012
+@@ -1,6 +1,6 @@
+ module Assembler where
+ 
+-import Char
++import Data.Char
+ 
+ import Lexer
+ import Instruction

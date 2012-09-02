@@ -1,0 +1,11 @@
+$OpenBSD: patch-Emitter_hs,v 1.1 2012/09/02 21:54:08 kili Exp $
+--- Emitter.hs.orig	Thu Jul 23 17:38:50 2009
++++ Emitter.hs	Fri Jul 13 14:27:57 2012
+@@ -1,6 +1,6 @@
+ module Emitter where
+ 
+-import List
++import Data.List
+ 
+ import Lexer
+ import Parser

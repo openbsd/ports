@@ -1,0 +1,13 @@
+$OpenBSD: patch-Lexer_hs,v 1.1 2012/09/02 21:54:08 kili Exp $
+--- Lexer.hs.orig	Thu Jul 23 09:03:44 2009
++++ Lexer.hs	Fri Jul 13 14:26:49 2012
+@@ -1,7 +1,7 @@
+ module Lexer where
+ 
+-import Char
+-import List
++import Data.Char
++import Data.List
+ 
+ data Token =
+     TokenIdentifier String |

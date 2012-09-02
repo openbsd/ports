@@ -1,0 +1,13 @@
+$OpenBSD: patch-AssemblyParser_hs,v 1.1 2012/09/02 21:54:08 kili Exp $
+--- AssemblyParser.hs.orig	Thu Jul 23 07:47:44 2009
++++ AssemblyParser.hs	Fri Jul 13 14:27:24 2012
+@@ -1,7 +1,7 @@
+ module AssemblyParser where
+ 
+-import Char
+-import List
++import Data.Char
++import Data.List
+ 
+ import Lexer
+ import Instruction
