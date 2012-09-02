@@ -1,0 +1,5 @@
+imake is the old historic makefile generation tool used by the X window
+server.  It basically relies on preprocessing imakefiles through cpp,
+and using a bit of sed to handle various comments.
+
+imake is also infamous for abusing makefile :: rules.

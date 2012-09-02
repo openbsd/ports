@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/02 14:14:02 espie Exp $
+bin/ccmakedep
+bin/cleanlinks
+@bin bin/imake
+bin/makeg
+bin/mergelib
+bin/mkdirhier
+bin/mkhtmlindex
+@bin bin/revpath
+bin/xmkmf
+@man man/man1/ccmakedep.1
+@man man/man1/cleanlinks.1
+@man man/man1/imake.1
+@man man/man1/makeg.1
+@man man/man1/mergelib.1
+@man man/man1/mkdirhier.1
+@man man/man1/mkhtmlindex.1
+@man man/man1/revpath.1
+@man man/man1/xmkmf.1
