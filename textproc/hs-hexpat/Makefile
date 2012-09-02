@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/02 20:23:01 kili Exp $
 
 COMMENT =		XML parser/formatter based on expat
 
-DISTNAME =		hexpat-0.19.5
-REVISION =		2
+DISTNAME =		hexpat-0.19.10
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -19,7 +18,6 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
 RUN_DEPENDS +=		devel/hs-List \
-			devel/hs-deepseq \
 			devel/hs-text \
 			devel/hs-transformers
 BUILD_DEPENDS +=	${RUN_DEPENDS}
