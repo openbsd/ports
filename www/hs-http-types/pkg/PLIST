@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/11/16 14:16:13 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/02 21:49:05 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
@@ -13,6 +13,26 @@ share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Network-HTTP-Types.html
+share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
+share/doc/hs-${DISTNAME}/html/doc-index-B.html
+share/doc/hs-${DISTNAME}/html/doc-index-C.html
+share/doc/hs-${DISTNAME}/html/doc-index-D.html
+share/doc/hs-${DISTNAME}/html/doc-index-E.html
+share/doc/hs-${DISTNAME}/html/doc-index-F.html
+share/doc/hs-${DISTNAME}/html/doc-index-G.html
+share/doc/hs-${DISTNAME}/html/doc-index-H.html
+share/doc/hs-${DISTNAME}/html/doc-index-I.html
+share/doc/hs-${DISTNAME}/html/doc-index-L.html
+share/doc/hs-${DISTNAME}/html/doc-index-M.html
+share/doc/hs-${DISTNAME}/html/doc-index-N.html
+share/doc/hs-${DISTNAME}/html/doc-index-O.html
+share/doc/hs-${DISTNAME}/html/doc-index-P.html
+share/doc/hs-${DISTNAME}/html/doc-index-Q.html
+share/doc/hs-${DISTNAME}/html/doc-index-R.html
+share/doc/hs-${DISTNAME}/html/doc-index-S.html
+share/doc/hs-${DISTNAME}/html/doc-index-T.html
+share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
