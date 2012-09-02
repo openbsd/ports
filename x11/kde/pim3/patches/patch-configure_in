@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_in,v 1.6 2008/03/26 09:15:47 espie Exp $
+$OpenBSD: patch-configure_in,v 1.7 2012/09/02 15:53:32 ajacoutot Exp $
 --- configure.in.orig	Wed Feb 13 16:18:12 2008
 +++ configure.in	Tue Mar 25 22:27:11 2008
 @@ -402,29 +402,30 @@ if test -d "$with_opensync"; then
@@ -57,12 +57,3 @@ $OpenBSD: patch-configure_in,v 1.6 2008/03/26 09:15:47 espie Exp $
  		)
  fi
  fi
-@@ -899,7 +901,7 @@ if test "x$with_mal" = "xCHECK" ; then
-         mal_libdir)
-       if test -r $mal_libdir/libmal.$ext ; then
-         if test "x$mal_libdir" != "x/usr/lib$kdelibsuff" ; then
--          MAL_LIB="-L$mal_libdir "
-+          MAL_LIB="-pthread -L$mal_libdir "
-           test "$USE_RPATH" = yes && MAL_RPATH="-R $mal_libdir"
-         fi
-         MAL_LIB="${MAL_LIB}-lmal"

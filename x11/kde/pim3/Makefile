@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2012/06/15 08:30:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2012/09/02 15:53:32 ajacoutot Exp $
 
 COMMENT = 		KDE personal information applications
 COMMENT-kpilot =	KDE interface to sync with Palm Pilot
@@ -61,8 +61,8 @@ MODULES =	x11/kde devel/gettext
 
 LIB_DEPENDS +=	x11/kde/libs3
 
-REVISION =	10
-REVISION-kpilot =	2
+REVISION =	11
+REVISION-kpilot =	3
 
 WANTLIB += DCOP GL GLU ICE SM X11 Xcursor Xdamage Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xpm Xrandr Xrender Xss Xt Xxf86vm
@@ -71,19 +71,18 @@ WANTLIB += c drm expat fontconfig freetype glib-2.0 gmodule-2.0
 WANTLIB += gnokii gpg-error gpgme gthread-2.0 ical idn jpeg kabc
 WANTLIB += kabc_file kdecore kdefakes kdefx kdeprint kdesu kdeui
 WANTLIB += khtml kimproxy kio kjs kmedia2_idl knewstuff kparts
-WANTLIB += kresources kspell kutils kwalletclient lcms m mad mal
+WANTLIB += kresources kspell kutils kwalletclient lcms m mad
 WANTLIB += mcop mng ogg pcre pcreposix pisock png pthread qtmcop
 WANTLIB += qui sasl2 sndio soundserver_idl stdc++ usb usb-1.0
 WANTLIB += util vcard vorbis vorbisenc vorbisfile xcb z
 
 FLAVORS =	debug
-LIB_DEPENDS +=	comms/pilot-link
 RUN_DEPENDS +=	x11/kde/base3 \
 		devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS +=	security/gpgme>=0.4.5 \
 		security/cyrus-sasl2 \
-		comms/libmal \
+		comms/pilot-link \
 		comms/gnokii
 
 post-install:
