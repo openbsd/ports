@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_mk,v 1.6 2011/08/21 21:38:04 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.7 2012/09/02 19:53:46 kili Exp $
 
 Include utf8-string and xhtml for now, because of dependencies.
 Including *any* of those INTREE_ONLY_PACKAGES in the ghc packages
@@ -9,21 +9,21 @@ needed.
 Fix the bindist-list (for building the bootstrapper); without this,
 gtar creates an archive which our tar can't extract.
 
---- ghc.mk.orig	Mon Jun 13 19:10:05 2011
-+++ ghc.mk	Sat Aug 20 20:14:19 2011
-@@ -290,7 +290,7 @@ include rules/bindist.mk
+--- ghc.mk.orig	Wed Feb  1 19:10:32 2012
++++ ghc.mk	Sat Jun  9 20:44:38 2012
+@@ -310,7 +310,7 @@ endif
  # They do not say "this package will be built"; see $(PACKAGES_xx) for that
  
  # Packages that are built but not installed
--INTREE_ONLY_PACKAGES := haskeline mtl terminfo utf8-string xhtml
-+INTREE_ONLY_PACKAGES := haskeline mtl terminfo
+-PKGS_THAT_ARE_INTREE_ONLY := haskeline mtl terminfo utf8-string xhtml
++PKGS_THAT_ARE_INTREE_ONLY := haskeline mtl terminfo
  
- # Packages that, if present, must be built by the stage2 compiler,
- # because they use TH and/or annotations, or depend on other stage2
-@@ -1037,6 +1037,8 @@ unix-binary-dist-prep:
+ PKGS_THAT_ARE_DPH := \
+     dph/dph-base \
+@@ -973,6 +973,8 @@ unix-binary-dist-prep:
  	echo "GHC_CABAL_INPLACE  = utils/ghc-cabal/dist-install/build/tmp/ghc-cabal" >> $(BIN_DIST_MK)
  	cd $(BIN_DIST_PREP_DIR) && autoreconf
- 	"$(RM)" $(RM_OPTS) $(BIN_DIST_PREP_TAR)
+ 	$(call removeFiles,$(BIN_DIST_PREP_TAR))
 +	sed 's@/\./@/@g' ${BIN_DIST_LIST} | sort -u > ${BIN_DIST_LIST}.new
 +	mv ${BIN_DIST_LIST}.new ${BIN_DIST_LIST}
  # h means "follow symlinks", e.g. if aclocal.m4 is a symlink to a source

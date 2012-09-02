@@ -1,11 +1,11 @@
-$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Utils_hs,v 1.1 2011/07/23 16:38:54 kili Exp $
+$OpenBSD: patch-libraries_Cabal_Cabal_Distribution_Simple_Utils_hs,v 1.1 2012/09/02 19:53:46 kili Exp $
 
 Don't strip the error message down to something stupid like `resource
 exhausted' (which represents 13 different values of errno).
 
---- libraries/Cabal/Distribution/Simple/Utils.hs.orig	Mon Jun 13 19:10:10 2011
-+++ libraries/Cabal/Distribution/Simple/Utils.hs	Sat Jul 23 17:15:16 2011
-@@ -241,18 +241,7 @@ topHandler prog = catch prog handle
+--- libraries/Cabal/Cabal/Distribution/Simple/Utils.hs.orig	Wed Feb  1 19:10:49 2012
++++ libraries/Cabal/Cabal/Distribution/Simple/Utils.hs	Sat Jun  9 21:36:25 2012
+@@ -247,18 +247,7 @@ topHandler prog = catchIO prog handle
        hPutStr stderr (mesage pname)
        exitWith (ExitFailure 1)
        where

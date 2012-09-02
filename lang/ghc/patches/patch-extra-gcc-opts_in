@@ -1,6 +1,0 @@
-$OpenBSD: patch-extra-gcc-opts_in,v 1.1 2012/08/12 11:31:33 pascal Exp $
---- extra-gcc-opts.in.orig	Sat Aug 11 21:04:38 2012
-+++ extra-gcc-opts.in	Sat Aug 11 21:04:44 2012
-@@ -1 +1 @@
--@GccExtraViaCOpts@
-+@GccExtraViaCOpts@ -fno-pie

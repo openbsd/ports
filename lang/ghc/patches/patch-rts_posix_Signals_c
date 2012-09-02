@@ -1,4 +1,4 @@
-$OpenBSD: patch-rts_posix_Signals_c,v 1.1 2011/12/27 20:53:01 kili Exp $
+$OpenBSD: patch-rts_posix_Signals_c,v 1.2 2012/09/02 19:53:46 kili Exp $
 
 There are several problems with the original code:
 
@@ -13,9 +13,9 @@ There are several problems with the original code:
 - It's far too complicated compared to the simple kill(getpid(),
   SIGSTOP).
 
---- rts/posix/Signals.c.orig	Mon Jun 13 19:10:06 2011
-+++ rts/posix/Signals.c	Tue Dec 27 19:58:52 2011
-@@ -494,7 +494,7 @@ empty_handler (int sig STG_UNUSED)
+--- rts/posix/Signals.c.orig	Wed Feb  1 19:10:32 2012
++++ rts/posix/Signals.c	Sat Jun  9 21:36:25 2012
+@@ -519,7 +519,7 @@ empty_handler (int sig STG_UNUSED)
  
     The trick we use is:
       - catch SIGTSTP
@@ -24,7 +24,7 @@ There are several problems with the original code:
       - when this returns, restore the TTY settings
     This means we don't have to catch SIGCONT too.
  
-@@ -516,17 +516,8 @@ sigtstp_handler (int sig)
+@@ -541,17 +541,8 @@ sigtstp_handler (int sig)
          }
      }
  
@@ -43,7 +43,7 @@ There are several problems with the original code:
  
      // on return, restore the TTY state
      for (fd = 0; fd <= 2; fd++) {
-@@ -534,8 +525,6 @@ sigtstp_handler (int sig)
+@@ -559,8 +550,6 @@ sigtstp_handler (int sig)
              tcsetattr(0,TCSANOW,&ts[fd]);
          }
      }

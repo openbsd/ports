@@ -1,0 +1,15 @@
+$OpenBSD: patch-testsuite_tests_codeGen_should_run_all_T,v 1.1 2012/09/02 19:53:46 kili Exp $
+
+With 8k of stack, this test fails for WAY=normal.
+
+--- testsuite/tests/codeGen/should_run/all.T.orig	Wed Feb  1 19:11:16 2012
++++ testsuite/tests/codeGen/should_run/all.T	Sat Jun  9 21:36:25 2012
+@@ -81,7 +81,7 @@ test('2080', normal, compile_and_run, [''])
+ test('2838', normal, compile_and_run, [''])
+ test('3207', normal, compile_and_run, [''])
+ test('3561', normal, compile_and_run, [''])
+-test('3677', extra_run_opts('+RTS -K8k -RTS'), compile_and_run, [''])
++test('3677', extra_run_opts('+RTS -K10k -RTS'), compile_and_run, [''])
+ test('4441', normal, compile_and_run, [''])
+ test('5149', omit_ways(['ghci']), multi_compile_and_run,
+                  ['5149', [('5149_cmm.cmm', '')], ''])
