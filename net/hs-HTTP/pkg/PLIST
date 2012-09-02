@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/11 14:51:22 kili Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/02 20:20:12 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
@@ -12,7 +12,6 @@ lib/ghc/${DISTNAME}/Network/HTTP/Base64.hi
 lib/ghc/${DISTNAME}/Network/HTTP/Cookie.hi
 lib/ghc/${DISTNAME}/Network/HTTP/HandleStream.hi
 lib/ghc/${DISTNAME}/Network/HTTP/Headers.hi
-lib/ghc/${DISTNAME}/Network/HTTP/MD5.hi
 lib/ghc/${DISTNAME}/Network/HTTP/MD5Aux.hi
 lib/ghc/${DISTNAME}/Network/HTTP/Proxy.hi
 lib/ghc/${DISTNAME}/Network/HTTP/Stream.hi
@@ -21,6 +20,7 @@ lib/ghc/${DISTNAME}/Network/Stream.hi
 lib/ghc/${DISTNAME}/Network/StreamDebugger.hi
 lib/ghc/${DISTNAME}/Network/StreamSocket.hi
 lib/ghc/${DISTNAME}/Network/TCP.hi
+lib/ghc/${DISTNAME}/Paths_HTTP.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
