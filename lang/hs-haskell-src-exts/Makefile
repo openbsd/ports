@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/02 21:30:38 kili Exp $
 
 COMMENT=		abstract syntax, lexer, parser and pretty printer
 
-DISTNAME=		haskell-src-exts-1.11.1
-REVISION=		0
+DISTNAME=		haskell-src-exts-1.13.3
 CATEGORIES=		lang devel
 
 # 3-clause BSD
@@ -18,7 +17,7 @@ MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/happy
-RUN_DEPENDS=		devel/cpphs,-lib>=1.11
+RUN_DEPENDS=		devel/cpphs,-lib>=1.3
 
 VMEM_WARNING=		Yes
 NO_REGRESS=		Yes
