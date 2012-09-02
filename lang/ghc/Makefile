@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2012/09/02 22:21:51 kili Exp $
+# $OpenBSD: Makefile,v 1.75 2012/09/02 23:01:29 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -52,6 +52,7 @@ MASTER_SITES1 =		http://hackage.haskell.org/packages/archive/xhtml/${XHTML_VER}/
 
 DIST_SUBDIR =		ghc
 
+# Haddock needs about 2.5 GB for processing the ghc library.
 VMEM_WARNING =		Yes
 
 BINDISTFILE =		${BINDISTFILE-${MACHINE_ARCH}}
