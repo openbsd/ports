@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2012/09/03 17:01:54 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2012/09/03 17:35:25 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -36,9 +36,7 @@ WANTLIB-lib =
 WANTLIB-main =		${WANTLIB} \
 			c gmp m pthread util
 
-BUILD_DEPENDS +=	devel/alex \
-			devel/happy \
-			devel/hs-ghc-paths \
+BUILD_DEPENDS +=	devel/hs-ghc-paths \
 			lang/ghc,-doc \
 			textproc/docbook \
 			textproc/docbook-xsl \
@@ -56,6 +54,7 @@ WRKCONF =		${AUTOCONF_DIR}
 
 post-extract:
 	mv ${WRKDIR}/lang/ghc/ghc-${MODGHC_VER}/utils/haddock ${WRKSRC}
+	rm -f ${WRKSRC}/src/Haddock/*.source
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
