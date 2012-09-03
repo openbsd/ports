@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.6 2011/09/22 23:08:49 jasper Exp $
---- configure.ac.orig	Sun Jul  3 19:04:41 2011
-+++ configure.ac	Thu Sep 22 23:58:35 2011
-@@ -282,7 +282,7 @@ AC_CHECK_LIB([socket], [gethostent], [], AC_CHECK_LIB(
+$OpenBSD: patch-configure_ac,v 1.7 2012/09/03 07:19:34 ajacoutot Exp $
+--- configure.ac.orig	Sat Jul 28 18:48:58 2012
++++ configure.ac	Tue Aug  7 07:18:22 2012
+@@ -288,7 +288,7 @@ AC_CHECK_LIB([socket], [gethostent], [], AC_CHECK_LIB(
  
  # see if pthreads are in libc_r (as on FreeBSD) or libpthread
  AC_CHECK_LIB([c_r], [pthread_create], LIBPTHREAD="-lc_r",
@@ -10,30 +10,3 @@ $OpenBSD: patch-configure_ac,v 1.6 2011/09/22 23:08:49 jasper Exp $
       LIBPTHREAD="")]
  )
  
-@@ -725,7 +725,7 @@ if test x$enable_debug = xyes ; then
-     CFLAGS="$CFLAGS -O0"
-     CXXFLAGS="$CXXFLAGS -O0"
-     case $host_os in
--	linux*|cygwin|mingw32*)
-+	linux*|openbsd*|cygwin|mingw32*)
- 	    CONF_CFLAGS="$CONF_CFLAGS -Werror"
- 	    CONF_CXXFLAGS="$CONF_CXXFLAGS -Werror -Wno-deprecated"
- 	    if test x$enable_profiling = xyes ; then
-@@ -747,7 +747,7 @@ if test x$enable_debug = xyes ; then
-     AC_DEFINE(DEBUG, 1, [Debugging enabled])
- else
-     case $host_os in
--	linux*|cygwin|mingw32*)
-+	linux*|openbsd*|cygwin|mingw32*)
- 	    CONF_CXXFLAGS="$CONF_CXXFLAGS -fno-exceptions"
- 	    ;;
- 	solaris*)
-@@ -868,7 +868,7 @@ case $host_os in
-     irix*)
- 	irix=true
- 	;;
--    linux*|kfreebsd*|freebsd*|netbsd*|dragonfly*)
-+    linux*|kfreebsd*|freebsd*|netbsd*|openbsd*|dragonfly*)
- 	linux=true
- 	;;
-     macos|darwin*)

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2011/10/18 07:56:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2012/09/03 07:19:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	graphical multiplayer 3D tank war game
 
-DISTNAME=	bzflag-2.4.0
-REVISION=	0
+DISTNAME=	bzflag-2.4.2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 EXTRACT_SUFX=	.tar.bz2
@@ -32,10 +31,8 @@ RUN_DEPENDS=	devel/desktop-file-utils
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-USE_GROFF=	Yes
-# Should be 2.66
-AUTOCONF_VERSION= 2.65
 CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		ac_cv_lib_bind_gethostent=no

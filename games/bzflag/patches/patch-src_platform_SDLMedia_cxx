@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_platform_SDLMedia_cxx,v 1.3 2011/09/22 23:08:49 jasper Exp $
---- src/platform/SDLMedia.cxx.orig	Tue Jun  7 16:28:52 2011
-+++ src/platform/SDLMedia.cxx	Thu Sep 22 23:55:14 2011
-@@ -105,8 +105,7 @@ bool			SDLMedia::openAudio()
+$OpenBSD: patch-src_platform_SDLMedia_cxx,v 1.4 2012/09/03 07:19:34 ajacoutot Exp $
+--- src/platform/SDLMedia.cxx.orig	Sun Jul 15 19:32:02 2012
++++ src/platform/SDLMedia.cxx	Tue Aug  7 07:18:22 2012
+@@ -109,8 +109,7 @@ bool			SDLMedia::openAudio()
  
    // how big a fragment to use?  we want to hold at around 1/10th of
    // a second.
