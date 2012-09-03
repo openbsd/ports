@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/18 16:30:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/03 18:05:25 jeremy Exp $
 
 COMMENT =	friendly JRuby interface to Swing
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/ruby
+FLAVORS =	jruby
 FLAVOR =	jruby
 
 CONFIGURE_STYLE =	ruby gem

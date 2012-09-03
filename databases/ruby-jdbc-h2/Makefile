@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/09 20:10:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/03 18:05:25 jeremy Exp $
 
 COMMENT =	access an H2 database from JRuby
 
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/ruby
+FLAVORS =	jruby
 FLAVOR =	jruby
 
 CONFIGURE_STYLE =	ruby gem

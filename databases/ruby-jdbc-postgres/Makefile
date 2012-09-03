@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/14 17:53:38 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/03 18:05:25 jeremy Exp $
 
 COMMENT =	access a PostgreSQL database from JRuby
 
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 MODULES =	lang/ruby
+FLAVORS =	jruby
 FLAVOR =	jruby
 
 SUBST_VARS =	DISTNAME V

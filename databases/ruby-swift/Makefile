@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/04/06 19:26:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/03 18:05:25 jeremy Exp $
 
 COMMENT =	fast database API and ORM for ruby 1.9
 
@@ -14,6 +14,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
+FLAVORS =	ruby19
 FLAVOR =	ruby19
 
 WANTLIB =	c m stdc++ e2fs-uuid pcrecpp
