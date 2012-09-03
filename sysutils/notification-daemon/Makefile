@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2012/03/29 06:25:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/09/03 15:26:02 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
-GNOME_VERSION=		0.7.4
+GNOME_VERSION=		0.7.6
 GNOME_PROJECT=		notification-daemon
 
 CATEGORIES=		sysutils net

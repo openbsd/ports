@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/03/29 06:25:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/09/03 15:26:02 ajacoutot Exp $
 @conflict notification-daemon-xfce-*
 @conflict xfce4-notifyd-*
 @bin libexec/notification-daemon
@@ -48,6 +48,9 @@ share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/notification-daemon.mo
 share/locale/he/LC_MESSAGES/notification-daemon.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/notification-daemon.mo
 share/locale/hu/LC_MESSAGES/notification-daemon.mo
 share/locale/id/LC_MESSAGES/notification-daemon.mo
 share/locale/it/LC_MESSAGES/notification-daemon.mo
@@ -63,6 +66,9 @@ share/locale/lt/
 share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/notification-daemon.mo
 share/locale/lv/LC_MESSAGES/notification-daemon.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/notification-daemon.mo
 share/locale/ms/
 share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/notification-daemon.mo
