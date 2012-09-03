@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.6 2010/10/08 17:12:58 jasper Exp $
---- Makefile.orig	Wed Mar  3 12:57:22 2010
-+++ Makefile	Fri Oct  8 19:08:52 2010
+$OpenBSD: patch-Makefile,v 1.7 2012/09/03 09:34:59 ajacoutot Exp $
+--- Makefile.orig	Wed Jun 16 23:56:54 2010
++++ Makefile	Mon Sep  3 11:03:01 2012
 @@ -140,7 +140,7 @@ LIBS_XOBJECTS = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.s
  LIBS_XDEP_FILES = $(LIBS_XSOURCES:%.c=$(OBJECTS_DIR)/%.deps)
  
@@ -38,16 +38,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/10/08 17:12:58 jasper Exp $
  #	@bzip2 -f $(MAN_DIR)/$(TARGET).1;
  
  	@if [ "`grep "#define E2_XDG" $(BUILD_FILE)`" = "#define E2_XDG" ]; then \
-@@ -336,7 +335,7 @@ clean_plugins:
- 
- $(TARGET): $(OBJECTS)
- 	@echo "linking binary '$(TARGET)'"
--	@$(CC) $(LDFLAGS) $(OBJECTS) -o $(TARGET) -Wl,--as-needed $(lLIBS)
-+	$(CC) $(LDFLAGS) $(OBJECTS) -o $(TARGET) $(lLIBS)
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@echo "stripping binary '$(TARGET)'"
-@@ -346,11 +345,11 @@ endif
+@@ -348,11 +347,11 @@ endif
  
  $(OBJECTS): $(OBJECTS_DIR)/%.o: %.c
  	@echo "compiling '$*.c'"
@@ -61,43 +52,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/10/08 17:12:58 jasper Exp $
  ifeq ($(STRIP), 1)
  ifneq ($(DEBUG), 1)
  	@strip -g $@
-@@ -359,7 +358,7 @@ endif
- 
- $(THUMBS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(THUMBS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(THUMBS_LIBS)
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(THUMBS_FLAGS) $(LDFLAGS) -o $@ $*.c $(THUMBS_LIBS)
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@strip -g $@
-@@ -368,7 +367,7 @@ endif
- 
- $(ACL_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(ACL_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(ACL_LIBS)
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(ACL_FLAGS) $(LDFLAGS) -o $@ $*.c $(ACL_LIBS)
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@strip -g $@
-@@ -377,7 +376,7 @@ endif
- 
- $(TRACKER_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(TRACKER_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(TRACKER_LIBS)
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(TRACKER_FLAGS) $(LDFLAGS) -o $@ $*.c $(TRACKER_LIBS)
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@strip -g $@
-@@ -386,7 +385,7 @@ endif
- 
- $(VFS_OBJECTS): $(OBJECTS_DIR)/%.so: %.c
- 	@echo "compiling '$*.c'"
--	@$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(VFS_FLAGS) $(LDFLAGS) -o $@ $*.c -Wl,--as-needed $(VFS_LIBS)
-+	$(CC) $(lCFLAGS) $(lLIBS_CFLAGS) $(VFS_FLAGS) $(LDFLAGS) -o $@ $*.c $(VFS_LIBS)
- ifeq ($(STRIP), 1)
- ifneq ($(DEBUG), 1)
- 	@strip -g $@
-@@ -398,27 +397,27 @@ $(DEP_FILES): $(OBJECTS_DIR)
+@@ -400,27 +399,27 @@ $(DEP_FILES): $(OBJECTS_DIR)
  $(DEP_FILES): $(BUILD_FILE)
  $(DEP_FILES): $(OBJECTS_DIR)/%.deps: %.c
  	@echo "generating '$@'"
@@ -130,7 +85,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/10/08 17:12:58 jasper Exp $
  		-p ./$(PO_DIR) --from-code=UTF-8 --no-wrap --omit-header -i -F \
  		--copyright-holder="$(COPYRIGHT)" --keyword=_ --keyword=N_ \
  		$(foreach file, $(SOURCES) $(HEADERS) $(LIBS_SOURCES) $(LIBS_HEADERS) \
-@@ -478,7 +477,7 @@ help:
+@@ -480,7 +479,7 @@ help:
  
  $(OBJECTS_DIR):
  	@echo "creating object directories in '$(OBJECTS_DIR)'"

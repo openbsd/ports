@@ -1,8 +1,10 @@
-$OpenBSD: patch-src_utils_e2_utils_c,v 1.5 2010/05/04 07:25:54 giovanni Exp $
+$OpenBSD: patch-src_utils_e2_utils_c,v 1.6 2012/09/03 09:34:59 ajacoutot Exp $
+
 Our file(1) doesn't have all that fancy options.
---- src/utils/e2_utils.c.orig	Wed Oct  7 23:37:51 2009
-+++ src/utils/e2_utils.c	Mon Apr 12 19:47:33 2010
-@@ -545,7 +545,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
+
+--- src/utils/e2_utils.c.orig	Fri Mar 12 14:19:31 2010
++++ src/utils/e2_utils.c	Mon Sep  3 11:03:01 2012
+@@ -544,7 +544,7 @@ gchar *e2_utils_get_mimetype (VPATH *localpath)
  			}
  #else
  			g_free (command);

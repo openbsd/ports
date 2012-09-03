@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_e2_fileview_h,v 1.1.1.1 2008/10/30 19:32:32 landry Exp $
---- src/e2_fileview.h.orig	Mon Oct 27 21:41:00 2008
-+++ src/e2_fileview.h	Mon Oct 27 21:42:50 2008
-@@ -22,6 +22,7 @@ Foundation, 51 Franklin Street, Fifth Floor, Boston, M
+$OpenBSD: patch-src_e2_fileview_h,v 1.2 2012/09/03 09:34:59 ajacoutot Exp $
+--- src/e2_fileview.h.orig	Fri May 28 02:10:27 2010
++++ src/e2_fileview.h	Mon Sep  3 11:03:01 2012
+@@ -21,6 +21,7 @@ along with emelFM2; see the file GPL. If not, see http
  #define __E2_FILEVIEW_H__
  
  #include "emelfm2.h"
