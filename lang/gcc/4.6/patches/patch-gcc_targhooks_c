@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_targhooks_c,v 1.1 2012/02/16 21:30:15 pascal Exp $
---- gcc/targhooks.c.orig	Fri Jan 14 16:02:20 2011
-+++ gcc/targhooks.c	Sat Feb 11 08:52:32 2012
+$OpenBSD: patch-gcc_targhooks_c,v 1.2 2012/09/03 13:24:58 pascal Exp $
+--- gcc/targhooks.c.orig	Fri Jan 14 10:02:20 2011
++++ gcc/targhooks.c	Fri Aug 31 22:02:06 2012
 @@ -56,6 +56,7 @@ along with GCC; see the file COPYING3.  If not see
  #include "tree.h"
  #include "expr.h"
@@ -14,11 +14,20 @@ $OpenBSD: patch-gcc_targhooks_c,v 1.1 2012/02/16 21:30:15 pascal Exp $
  
        t = build_decl (UNKNOWN_LOCATION,
 -		      VAR_DECL, get_identifier ("__stack_chk_guard"),
-+		      VAR_DECL, get_identifier ("__guard"),
++		      VAR_DECL, get_identifier ("__guard_local"),
  		      ptr_type_node);
        TREE_STATIC (t) = 1;
        TREE_PUBLIC (t) = 1;
-@@ -678,67 +679,68 @@ default_stack_protect_guard (void)
+@@ -666,6 +667,8 @@ default_stack_protect_guard (void)
+       TREE_THIS_VOLATILE (t) = 1;
+       DECL_ARTIFICIAL (t) = 1;
+       DECL_IGNORED_P (t) = 1;
++      DECL_VISIBILITY (t) = VISIBILITY_HIDDEN;
++      DECL_VISIBILITY_SPECIFIED (t) = 1;
+ 
+       /* Do not share RTL as the declaration is visible outside of
+ 	 current function.  */
+@@ -678,67 +681,68 @@ default_stack_protect_guard (void)
    return t;
  }
  
