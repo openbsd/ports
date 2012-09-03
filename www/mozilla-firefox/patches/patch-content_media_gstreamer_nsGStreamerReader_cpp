@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_media_gstreamer_nsGStreamerReader_cpp,v 1.1 2012/09/03 13:33:05 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=761030
+https://hg.mozilla.org/mozilla-central/rev/b8c6c7c773c3
+--- content/media/gstreamer/nsGStreamerReader.cpp.orig	Sat Aug 25 00:55:23 2012
++++ content/media/gstreamer/nsGStreamerReader.cpp	Mon Sep  3 15:30:10 2012
+@@ -452,6 +452,8 @@ bool nsGStreamerReader::DecodeVideoFrame(bool &aKeyFra
+         i, height);
+     b.mPlanes[i].mWidth = gst_video_format_get_component_width(format,
+         i, width);
++    b.mPlanes[i].mOffset = 0;
++    b.mPlanes[i].mSkip = 0;
+   }
+ 
+   bool isKeyframe = !GST_BUFFER_FLAG_IS_SET(buffer,
