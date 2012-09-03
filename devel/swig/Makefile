@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/06/09 07:34:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2012/09/03 08:11:40 jeremy Exp $
 
 COMMENT=	simplified wrapper and interface generator
 
@@ -6,7 +6,7 @@ SUBST_VARS=	VERSION
 VERSION=	1.3.36
 
 DISTNAME=	swig-${VERSION}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE:=swig/}
 
@@ -32,6 +32,7 @@ CONFIGURE_ARGS+= --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
 		 --with-guilelib=${LOCALBASE}/lib \
 		 --with-python=${MODPY_BIN} \
+		 --with-ruby=${RUBY} \
 		 --without-php4 \
 		 --without-ocaml
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Tools/config
