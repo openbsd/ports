@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2012/07/11 03:46:42 william Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/03 18:00:32 jeremy Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -7,7 +7,7 @@ V =		1.4.7
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
-REVISION-main =	0
+REVISION-main =	1
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/
@@ -30,7 +30,8 @@ MULTI_PACKAGES =	-main -server
 MODULES =		lang/python lang/ruby
 # No need for MODx_RUNDEP as we already override RUN_DEPENDS-{main,server}
 MODPY_BUILDDEP =	No
-MODRUBY_BUILDDEP =	No # not supported yet, but won't need a bump when it is
+MODRUBY_BUILDDEP =	No
+MODRUBY_REV =		1.9
 
 RUN_DEPENDS-main =	logtail-*|logsentry-*:sysutils/logtail \
 			devel/p5-Log-Log4perl \
