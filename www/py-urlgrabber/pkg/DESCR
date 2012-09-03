@@ -1,0 +1,8 @@
+High-level cross-protocol url-grabber.
+
+Using urlgrabber, data can be fetched in three basic ways:
+
+  urlgrab(url) copy the file to the local filesystem
+  urlopen(url) open the remote file and return a file object
+     (like urllib2.urlopen)
+  urlread(url) return the contents of the file as a string

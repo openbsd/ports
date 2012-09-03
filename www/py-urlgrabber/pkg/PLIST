@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/03 15:09:10 jasper Exp $
+bin/urlgrabber
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/__init__.py
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/byterange.py
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/byterange.pyc
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/grabber.py
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/grabber.pyc
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/mirror.py
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/mirror.pyc
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/progress.py
+lib/python${MODPY_VERSION}/site-packages/urlgrabber/progress.pyc
+share/doc/urlgrabber-${MODPY_EGG_VERSION}/
+share/doc/urlgrabber-${MODPY_EGG_VERSION}/ChangeLog
+share/doc/urlgrabber-${MODPY_EGG_VERSION}/LICENSE
+share/doc/urlgrabber-${MODPY_EGG_VERSION}/README
+share/doc/urlgrabber-${MODPY_EGG_VERSION}/TODO
