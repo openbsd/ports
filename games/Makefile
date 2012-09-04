@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.247 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.248 2012/09/04 09:30:20 landry Exp $
 
      SUBDIR =
      SUBDIR += abuse
@@ -86,6 +86,7 @@
      SUBDIR += gnuchess
      SUBDIR += gnugo
      SUBDIR += gnushogi
+     SUBDIR += gottcode
      SUBDIR += grhino
      SUBDIR += gtetrinet
      SUBDIR += gtkballs
