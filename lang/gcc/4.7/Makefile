@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.15 2012/09/03 13:24:58 pascal Exp $
+# $OpenBSD: Makefile,v 1.16 2012/09/04 10:11:56 pascal Exp $
 
 ONLY_FOR_ARCHS = amd64 i386 powerpc sparc sparc64
+BROKEN-sparc64 = ICE in libgcc
 
 V = 4.7.1
 FULL_VERSION = $V
