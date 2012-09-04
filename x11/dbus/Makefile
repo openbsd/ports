@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.85 2012/08/15 08:03:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2012/09/04 06:32:52 ajacoutot Exp $
 
 COMMENT=	message bus system
 
 DISTNAME=	dbus-1.6.4
+REVISION=	0
 EPOCH=		0
 
 SHARED_LIBS +=  dbus-1               10.2     # 10.2
@@ -28,9 +29,10 @@ SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.69
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dbus-user=_dbus \
 		--with-xml=expat \
 		--with-x \

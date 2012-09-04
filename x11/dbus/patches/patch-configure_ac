@@ -1,0 +1,114 @@
+$OpenBSD: patch-configure_ac,v 1.1 2012/09/04 06:32:52 ajacoutot Exp $
+
+pthread_* chunk is from:
+https://bugs.freedesktop.org/show_bug.cgi?id=47239
+
+--- configure.ac.orig	Wed Jul 18 13:05:04 2012
++++ configure.ac	Mon Sep  3 13:25:41 2012
+@@ -766,7 +766,8 @@ dnl needed on darwin for NAME_MAX
+ AC_CHECK_HEADERS(sys/syslimits.h)
+ 
+ dnl Make it easy to check if we have MSG_NOSIGNAL without actually having to include sys/socket.h
+-AC_CHECK_DECLS([MSG_NOSIGNAL], [], [], [[ #include <sys/socket.h> ]])
++AC_CHECK_DECLS([MSG_NOSIGNAL], [], [], [[ #include <sys/types.h>
++#include <sys/socket.h> ]])
+ 
+ dnl check for flavours of varargs macros (test from GLib)
+ AC_MSG_CHECKING(for ISO C99 varargs macros in C)
+@@ -952,15 +953,53 @@ AC_SUBST([XML_CFLAGS])
+ AC_SUBST([XML_LIBS])
+ 
+ # Thread lib detection
+-AC_CHECK_FUNC(pthread_cond_timedwait,[AC_CHECK_LIB(pthread,pthread_cond_timedwait,
+-                                                    [THREAD_LIBS="-lpthread"])])
++AC_ARG_VAR([THREAD_LIBS])
+ save_libs="$LIBS"
+ LIBS="$LIBS $THREAD_LIBS"
+-AC_CHECK_FUNC(pthread_condattr_setclock,have_pthread_condattr_setclock=true,have_pthread_condattr_setclock=false)
+-if test x$have_pthread_condattr_setclock = xtrue; then
+-    AC_SEARCH_LIBS([clock_getres],[rt],[THREAD_LIBS="$THREAD_LIBS -lrt"])
+-    AC_MSG_CHECKING([for CLOCK_MONOTONIC])
+-    AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[#include <time.h>
++
++is_missing_pthread_function="is required when compiling D-Bus on Unix platforms, but is not in your libc or libpthread. Please open a bug on https://bugs.freedesktop.org/enter_bug.cgi?product=dbus with details of your platform."
++
++# Don't do these automatic checks if the user set THREAD_LIBS on the
++# configure command-line. If they did, we assume they're right.
++#
++# We also don't do these checks on Windows, because you don't need magical
++# linker flags to have threading support there.
++AS_IF([test "x$dbus_unix" = xyes && test "x$THREAD_LIBS" = x],
++  [
++    # Mandatory pthread functions. In principle, some of these could be made
++    # optional if there are platforms that don't have them.
++    #
++    # Currently, we only look in -lpthread.
++    # In principle we might need to look in -lpthreads, -lthreads, ...
++    # as well - please file a bug if your platform needs this.
++    AC_SEARCH_LIBS([pthread_cond_timedwait],
++        [pthread],
++        [THREAD_LIBS="$LIBS"],
++        [AC_MSG_ERROR([pthread_cond_timedwait $is_missing_pthread_function])],
++        [])
++    AC_SEARCH_LIBS([pthread_mutexattr_init],
++        [pthread],
++        [THREAD_LIBS="$LIBS"],
++        [AC_MSG_ERROR([pthread_mutexattr_init $is_missing_pthread_function])],
++        [])
++    AC_SEARCH_LIBS([pthread_mutexattr_settype],
++        [pthread],
++        [THREAD_LIBS="$LIBS"],
++        [AC_MSG_ERROR([pthread_mutexattr_settype $is_missing_pthread_function])],
++        [])
++
++    # Optional, for monotonic clocks. Because it's optional, this check
++    # is non-fatal if we don't find it.
++    AC_SEARCH_LIBS([pthread_condattr_setclock],
++        [pthread],
++        [THREAD_LIBS="$LIBS"])
++
++    AS_IF([test "x$ac_cv_search_pthread_condattr_setclock" != xno],
++      [
++        AC_SEARCH_LIBS([clock_getres], [rt], [THREAD_LIBS="$LIBS"])
++        AC_MSG_CHECKING([for CLOCK_MONOTONIC])
++        AC_COMPILE_IFELSE([AC_LANG_PROGRAM(
++[[#include <time.h>
+ #include <pthread.h>
+ ]], [[
+ struct timespec monotonic_timer;
+@@ -969,15 +1008,18 @@ pthread_condattr_init (&attr);
+ pthread_condattr_setclock (&attr, CLOCK_MONOTONIC);
+ clock_getres (CLOCK_MONOTONIC,&monotonic_timer);
+ ]])],
+-[have_clock_monotonic=true],
+-[have_clock_monotonic=false])
+-if test x$have_clock_monotonic = xtrue; then
+-    AC_MSG_RESULT([found])
+-    AC_DEFINE(HAVE_MONOTONIC_CLOCK, 1, [Define if we have CLOCK_MONOTONIC])
+-else
+-    AC_MSG_RESULT([not found])
+-fi
+-fi
++
++            [have_clock_monotonic=true],
++            [have_clock_monotonic=false])
++        AS_IF([test x$have_clock_monotonic = xtrue],
++	  [
++            AC_MSG_RESULT([found])
++            AC_DEFINE(HAVE_MONOTONIC_CLOCK, 1, [Define if we have CLOCK_MONOTONIC])
++	  ],
++          [AC_MSG_RESULT([not found])])
++      ]) dnl have pthread_condattr_setclock
++  ]) dnl on Unix
++
+ LIBS="$save_libs"
+ 
+ AC_SUBST([THREAD_LIBS])
+@@ -1220,6 +1262,7 @@ AC_SUBST([ADT_LIBS])
+ # Check for SCM_RIGHTS
+ AC_MSG_CHECKING([for SCM_RIGHTS])
+ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ static int x = SCM_RIGHTS;
