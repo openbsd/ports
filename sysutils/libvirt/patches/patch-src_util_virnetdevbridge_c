@@ -1,21 +1,15 @@
-$OpenBSD: patch-src_util_virnetdevbridge_c,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+$OpenBSD: patch-src_util_virnetdevbridge_c,v 1.2 2012/09/04 16:26:15 jasper Exp $
 
 Fixup some headers in virnetdevbridge.c, needed for OpenBSD.
 
 --- src/util/virnetdevbridge.c.orig	Mon Aug 27 04:12:21 2012
-+++ src/util/virnetdevbridge.c	Mon Sep  3 18:04:49 2012
-@@ -30,6 +30,15 @@
++++ src/util/virnetdevbridge.c	Tue Sep  4 18:20:20 2012
+@@ -30,6 +30,9 @@
  #include "intprops.h"
  
  #include <sys/ioctl.h>
 +
-+#ifdef HAVE_SYS_PARAM_H
-+# include <sys/param.h>
-+#endif
-+
-+#ifdef HAVE_SYS_SOCKET_H
-+# include <sys/socket.h>
-+#endif
++#include <sys/socket.h>
 +
  #ifdef HAVE_NET_IF_H
  # include <net/if.h>
