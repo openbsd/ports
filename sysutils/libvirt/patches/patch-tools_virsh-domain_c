@@ -1,0 +1,23 @@
+$OpenBSD: patch-tools_virsh-domain_c,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+
+virsh-domain.c:3807: warning: passing argument 1 of 'localtime_r' from incompatible pointer type
+
+--- tools/virsh-domain.c.orig	Tue Sep  4 14:59:29 2012
++++ tools/virsh-domain.c	Tue Sep  4 15:06:40 2012
+@@ -3786,6 +3786,7 @@ vshGenFileName(vshControl *ctl, virDomainPtr dom, cons
+     struct tm time_info;
+     const char *ext = NULL;
+     char *ret = NULL;
++    time_t sec = (time_t) cur_time.tv_sec;
+ 
+     /* We should be already connected, but doesn't
+      * hurt to check */
+@@ -3804,7 +3805,7 @@ vshGenFileName(vshControl *ctl, virDomainPtr dom, cons
+     /* add mime type here */
+ 
+     gettimeofday(&cur_time, NULL);
+-    localtime_r(&cur_time.tv_sec, &time_info);
++    localtime_r(&sec, &time_info);
+     strftime(timestr, sizeof(timestr), "%Y-%m-%d-%H:%M:%S", &time_info);
+ 
+     if (virAsprintf(&ret, "%s-%s%s", virDomainGetName(dom),
