@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2012/08/10 14:12:58 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/04 12:06:01 gonzalo Exp $
 
 COMMENT=		vi-like minimalists web browser
-DISTNAME=		xombrero-1.2.2
+DISTNAME=		xombrero-1.3.0
 CATEGORIES=		www
 EPOCH=			1
 
@@ -47,6 +47,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xombreroicon*.png ${PREFIX}/share/xombrero/
 	${INSTALL_DATA} ${WRKSRC}/{xombrero.css,style.css} ${PREFIX}/share/xombrero/
 	${INSTALL_DATA} ${WRKSRC}/tld-rules ${PREFIX}/share/xombrero/
+	${INSTALL_DATA} ${WRKSRC}/hsts-preload ${PREFIX}/share/xombrero/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${WRKSRC}/xombrero.desktop \
