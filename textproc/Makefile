@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.365 2012/09/04 07:08:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.366 2012/09/04 07:11:51 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -7,6 +7,7 @@
      SUBDIR += arabica
      SUBDIR += asciidoc
      SUBDIR += aspell
+     SUBDIR += bibelot
      SUBDIR += boust
      SUBDIR += c2html
      SUBDIR += calibre
