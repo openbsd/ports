@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/12/11 18:04:02 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/09/04 17:17:08 landry Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -12,6 +12,7 @@
 @pkgpath x11/wxWidgets/lesstif
 @pkgpath x11/wxWidgets/gtk
 @pkgpath x11/wxWidgets/gtk2
+@pkgpath x11/wxWidgets
 bin/wx-config
 @bin bin/wxrc
 include/wx/
