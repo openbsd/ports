@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2012/06/15 08:32:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2012/09/04 16:06:29 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	technical diagrams drawing tool
 
 GNOME_PROJECT=	dia
 GNOME_VERSION=	0.97.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	graphics
 
@@ -52,5 +52,9 @@ CONFIGURE_ARGS=	--disable-static \
 		--disable-db2html \
 		--disable-libemf \
 		--disable-gnome
+
+post-install:
+	mv ${PREFIX}/share/man/fr ${PREFIX}/man
+	rmdir ${PREFIX}/share/man/ ${PREFIX}/share/oaf/
 
 .include <bsd.port.mk>
