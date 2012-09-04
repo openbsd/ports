@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/04 09:29:39 landry Exp $
+@bin bin/tetzle
+share/applications/tetzle.desktop
+share/icons/hicolor/128x128/apps/tetzle.png
+share/icons/hicolor/16x16/apps/tetzle.png
+share/icons/hicolor/22x22/apps/tetzle.png
+share/icons/hicolor/32x32/apps/tetzle.png
+share/icons/hicolor/48x48/apps/tetzle.png
+share/icons/hicolor/64x64/apps/tetzle.png
+share/pixmaps/
+share/pixmaps/tetzle_32.xpm
+share/tetzle/
+share/tetzle/translations/
+share/tetzle/translations/tetzle_de.qm
+share/tetzle/translations/tetzle_en.qm
+share/tetzle/translations/tetzle_ru.qm
+share/tetzle/translations/tetzle_uk.qm
+share/tetzle/translations/tetzle_uk_UA.qm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
