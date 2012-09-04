@@ -1,0 +1,10 @@
+Palm-Bookmarks transforms a bookmarks tree into a list of records
+where each record looks like this: category, name, location,
+description. The name, location and description are directly
+copied from Netscape terminology. Each record corresponds to one
+bookmark. The category is determined by the first list of folders
+(the ones you see when you click down the bookmarks menu). A
+record gets as a category the name of the folder from this list
+it is placed in.  This way information is lost as subfolders are
+ignored. The reason for this is that the program ListDB on the
+palm support only one level of categorisation.
