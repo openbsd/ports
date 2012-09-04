@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.88 2012/06/18 16:44:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2012/09/04 06:31:08 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20120610
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
+REVISION=	0
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -27,9 +28,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	SDL X11 Xext Xfixes bz2 c gsm m mp3lame ogg orc-0.4 \
-		pthread schroedinger-1.0>=2 sndio speex theoradec \
-		theoraenc vorbis vorbisenc vpx x264>=8 xvidcore z
+WANTLIB=	SDL X11 Xext Xfixes bz2 c gsm m mp3lame pthread \
+		schroedinger-1.0>=2 sndio speex theoradec theoraenc \
+		vorbis vorbisenc vpx x264>=8 xvidcore z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -48,13 +49,13 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -pthread -Wl,-rpath,${LOCALBASE}/lib -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -lavutil -lm
-LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib -pthread -lX11 -lXext -lXfixes -lsndio -lavformat -lbz2 -lavcodec -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -lavutil -lm
-LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -pthread -lavformat -lbz2 -lavcodec -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -lswscale -lavutil -lm
-LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -pthread -lbz2 -lavcodec -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -lavutil -lm
-LIBavutil_EXTRALIBS=-L${LOCALBASE}/lib -lm
-LIBpostproc_EXTRALIBS=-L${LOCALBASE}/lib -lavutil -lm
-LIBswscale_EXTRALIBS=-L${LOCALBASE}/lib -lavutil -lm
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
+LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -Wl,-rpath,${X11BASE}/lib -lX11 -lXext -lXfixes -lsndio
+LIBavfilter_EXTRALIBS=
+LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2
+LIBavutil_EXTRALIBS=-lm
+LIBpostproc_EXTRALIBS=
+LIBswscale_EXTRALIBS=-lm
 
 # configure wants a directory it can execute files in 
 WRKTMP=		${WRKDIR}/tmp
@@ -119,13 +120,13 @@ VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 MAKE_ENV=	V=1
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
-		LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="${LIBavfilter_EXTRALIBS}" \
-		LIBavformat_EXTRALIBS="${LIBavformat_EXTRALIBS}" \
+		LIBavcodec_EXTRALIBS="-lavutil ${LIBavcodec_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavformat -lavcodec -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lavformat -lavcodec -lavutil -lswscale ${LIBavfilter_EXTRALIBS}" \
+		LIBavformat_EXTRALIBS="-lavcodec -lavutil ${LIBavformat_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
-		LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
-		LIBswscale_EXTRALIBS="${LIBswscale_EXTRALIBS}"
+		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
+		LIBswscale_EXTRALIBS="-lavutil ${LIBswscale_EXTRALIBS}"
 FAKE_FLAGS=	${VERSION_FLAGS} \
 		LDCONFIG=true
 

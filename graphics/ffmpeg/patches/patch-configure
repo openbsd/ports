@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.29 2012/04/28 08:41:32 ajacoutot Exp $
---- configure.orig	Sat Apr 21 23:53:38 2012
-+++ configure	Sun Apr 22 00:50:49 2012
+$OpenBSD: patch-configure,v 1.30 2012/09/04 06:31:08 ajacoutot Exp $
+--- configure.orig	Sun Jun 10 00:59:57 2012
++++ configure	Sat Aug 18 11:23:36 2012
 @@ -1092,7 +1092,6 @@ HAVE_LIST="
      lzo1x_999_compress
      machine_ioctl_bt848_h
@@ -26,16 +26,7 @@ $OpenBSD: patch-configure,v 1.29 2012/04/28 08:41:32 ajacoutot Exp $
  
  enable_pic() {
      enable pic
-@@ -2797,8 +2797,6 @@ if enabled asm; then
-         $nogas "GNU assembler not found, install gas-preprocessor"
- fi
- 
--check_ldflags -Wl,--as-needed
--
- if check_func dlopen; then
-     ldl=
- elif check_func dlopen -ldl; then
-@@ -2931,7 +2929,7 @@ enabled libdirac   && require_pkg_config dirac        
+@@ -2931,7 +2931,7 @@ enabled libdirac   && require_pkg_config dirac        
      "dirac_decoder_init dirac_encoder_init"
  enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
  enabled libfreetype && require_pkg_config freetype2 "ft2build.h freetype/freetype.h" FT_Init_FreeType
@@ -44,15 +35,7 @@ $OpenBSD: patch-configure,v 1.29 2012/04/28 08:41:32 ajacoutot Exp $
  enabled libmp3lame && require  "libmp3lame >= 3.98.3" lame/lame.h lame_set_VBR_quality -lmp3lame
  enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
  enabled libopencore_amrnb  && require libopencore_amrnb opencore-amrnb/interf_dec.h Decoder_Interface_init -lopencore-amrnb
-@@ -3057,7 +3055,6 @@ enabled extra_warnings && check_cflags -Winline
- 
- # add some linker flags
- check_ldflags -Wl,--warn-common
--check_ldflags -Wl,-rpath-link,libpostproc -Wl,-rpath-link,libswscale -Wl,-rpath-link,libavfilter -Wl,-rpath-link,libavdevice -Wl,-rpath-link,libavformat -Wl,-rpath-link,libavcodec -Wl,-rpath-link,libavutil
- test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
- 
- echo "X{};" > $TMPV
-@@ -3075,10 +3072,6 @@ fi
+@@ -3075,10 +3075,6 @@ fi
  
  if enabled small; then
      add_cflags $size_cflags
@@ -63,17 +46,7 @@ $OpenBSD: patch-configure,v 1.29 2012/04/28 08:41:32 ajacoutot Exp $
  fi
  check_cflags -fno-math-errno
  check_cflags -fno-signed-zeros
-@@ -3519,8 +3512,7 @@ Version: $version
- Requires: $(enabled shared || echo $requires)
- Requires.private: $(enabled shared && echo $requires)
- Conflicts:
--Libs: -L\${libdir} -l${shortname} $(enabled shared || echo $libs)
--Libs.private: $(enabled shared && echo $libs)
-+Libs: -L\${libdir} -l${shortname} $libs
- Cflags: -I\${includedir}
- EOF
- cat <<EOF > $name/$name-uninstalled.pc
-@@ -3539,10 +3531,10 @@ Cflags: -I\${includedir}
+@@ -3539,10 +3535,10 @@ Cflags: -I\${includedir}
  EOF
  }
  
