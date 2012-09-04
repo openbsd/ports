@@ -1,0 +1,12 @@
+$OpenBSD: patch-liba52_liba52_pc_in,v 1.1 2012/09/04 06:17:51 ajacoutot Exp $
+
+Needed for static linking.
+
+--- liba52/liba52.pc.in.orig	Mon Sep  3 01:16:41 2012
++++ liba52/liba52.pc.in	Mon Sep  3 01:17:08 2012
+@@ -7,4 +7,5 @@ Name: liba52
+ Description: A decoding library for ATSC A/52 streams.
+ Version: @VERSION@
+ Libs: -L${libdir} -la52
++Libs.private: -lm
+ Cflags: -I${includedir}/@PACKAGE@
