@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/15 17:31:10 giovanni Exp $
-bin/fixpdb
-bin/palm2ical

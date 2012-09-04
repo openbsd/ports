@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:22:17 espie Exp $
-bin/pila
-bin/pilotdis
-bin/splitprc
-@man man/man1/pilotdis.1
-share/doc/palmpower/
-share/doc/palmpower/FAQ
-share/doc/palmpower/README
