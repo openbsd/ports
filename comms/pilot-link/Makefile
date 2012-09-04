@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2012/08/19 22:30:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2012/09/04 07:35:52 ajacoutot Exp $
 
 COMMENT=	tools to connect your PalmOS(R) compatible handheld
 
@@ -6,9 +6,9 @@ DISTNAME=	pilot-link-0.12.5
 SHARED_LIBS +=	pisock               11.0      # .9.2
 SHARED_LIBS +=	pisync               2.0      # .0.3
 
-REVISION=	3
+REVISION=	4
 
-CATEGORIES=	comms palm
+CATEGORIES=	comms
 
 MASTER_SITES=	http://downloads.pilot-link.org/ \
 		http://ftp.belnet.be/mirror/rsync.gentoo.org/gentoo/distfiles/ \

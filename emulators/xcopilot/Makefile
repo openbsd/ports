@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:17:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2012/09/04 07:35:52 ajacoutot Exp $
 
 COMMENT=	emulator for US Robotics Pilot PDA
 
 DISTNAME=	xcopilot-0.6.6
-REVISION=	0
-CATEGORIES=	emulators palm
+REVISION=	1
+CATEGORIES=	emulators
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
