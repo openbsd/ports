@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/11/03 20:28:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/04 03:40:33 jeremy Exp $
 
 COMMENT=	number theory-oriented computer algebra system
 
 DISTNAME=	pari-2.1.6
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tgz
 CATEGORIES=	math
 
 HOMEPAGE=	http://pari.math.u-bordeaux.fr/
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

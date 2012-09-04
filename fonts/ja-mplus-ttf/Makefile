@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:13:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/04 03:40:33 jeremy Exp $
 
 COMMENT=	high quality japanese truetype fonts
 
 DISTNAME=	mixfont-mplus-ipa-TrueType-20060520
 PKGNAME=	ja-mplus-ttf-20060520
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	fonts japanese x11
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

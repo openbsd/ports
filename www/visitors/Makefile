@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 20:38:26 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/04 03:40:35 jeremy Exp $
 
 COMMENT=	very fast web log analyzer
 
 DISTNAME=	visitors-0.7
+REVISION=	0
 CATEGORIES=	www sysutils
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

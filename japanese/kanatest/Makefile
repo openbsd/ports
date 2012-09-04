@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2011/11/01 16:27:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/04 03:40:33 jeremy Exp $
 
 COMMENT =	beginner's drill tool to learn Japanese kana characters 
 
 DISTNAME =	kanatest-0.4.6
-REVISION=	6
+REVISION=	7
 
 CATEGORIES =	japanese
 
 HOMEPAGE =	http://clay.ll.pl/kanatest/
-
-MAINTAINER =	Mathieu Sauve-Frankel <msf@openbsd.org> 
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes

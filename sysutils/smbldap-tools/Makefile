@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/04 03:40:34 jeremy Exp $
 
 COMMENT=	tools for managing samba ldap 
 
 DISTNAME=	smbldap-tools-0.9.2a
-REVISION =	1
+REVISION =	2
 CATEGORIES=	sysutils
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>
 
 HOMEPAGE=	http://samba.idealx.org/
 
