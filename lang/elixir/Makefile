@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/06/02 12:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/04 08:50:52 jasper Exp $
 
 COMMENT=		modern approach to programming for the Erlang VM
 
@@ -19,7 +19,8 @@ MASTER_SITES=		https://github.com/downloads/elixir-lang/elixir/
 EXTRACT_SUFX=		.zip
 DIST_SUBDIR=		elixir
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		devel/rebar \
+			lang/erlang
 RUN_DEPENDS=		lang/erlang
 
 ALL_TARGET=		compile
