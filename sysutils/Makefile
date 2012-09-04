@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.267 2012/08/27 14:36:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.268 2012/09/04 14:41:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -83,6 +83,7 @@
      SUBDIR += libretto-config
      SUBDIR += librelp
      SUBDIR += libstatgrab
+     SUBDIR += libvirt
      SUBDIR += logfmon
      SUBDIR += login_fingerprint
      SUBDIR += login_ldap
