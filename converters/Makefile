@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.60 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/09/04 19:01:41 jasper Exp $
 
     SUBDIR =
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += d1489
     SUBDIR += dos2unix
     SUBDIR += enca
     SUBDIR += html2text

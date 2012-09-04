@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.498 2012/09/02 09:37:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.499 2012/09/04 19:03:36 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -345,6 +345,7 @@
      SUBDIR += xprompt
      SUBDIR += xrestop
      SUBDIR += xrootconsole
+     SUBDIR += xruskb
      SUBDIR += xscreensaver
      SUBDIR += xscribble
      SUBDIR += xsel
