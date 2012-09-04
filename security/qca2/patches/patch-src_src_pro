@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_src_pro,v 1.1 2012/01/26 09:25:46 sebastia Exp $
+$OpenBSD: patch-src_src_pro,v 1.2 2012/09/04 16:05:38 ajacoutot Exp $
 
 rename library to qca2
 
---- src/src.pro.orig	Tue Jan 24 13:00:44 2012
-+++ src/src.pro	Tue Jan 24 13:00:51 2012
+--- src/src.pro.orig	Sat Nov 27 22:14:12 2010
++++ src/src.pro	Tue Sep  4 17:52:57 2012
 @@ -6,7 +6,7 @@ QCA_SRCBASE = .
  
  TEMPLATE = lib
@@ -13,3 +13,12 @@ rename library to qca2
  DESTDIR  = $$QCA_BASE/lib
  windows:DLLDESTDIR = $$QCA_BASE/bin
  
+@@ -109,7 +109,7 @@ unix: {
+ 	incfiles.files += $$QCA_INC/qca.h $$QCA_INC/QtCrypto
+ 	!lib_bundle:INSTALLS += incfiles
+ 
+-	manfiles.path = $$DATADIR/man/man1
++	manfiles.path = $$PREFIX/man/man1
+ 	manfiles.files = $$QCA_BASE/man/qcatool2.1
+ 	INSTALLS += manfiles
+ }

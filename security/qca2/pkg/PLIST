@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2012/01/26 09:25:46 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/04 16:05:38 ajacoutot Exp $
 @bin bin/qcatool2
 include/QtCrypto/
 include/QtCrypto/QtCrypto
@@ -20,9 +20,7 @@ lib/libqca2.prl
 @lib lib/libqca2.so.${LIBqca2_VERSION}
 lib/pkgconfig/qca2.pc
 lib/qt4/mkspecs/features/crypto.prf
-share/man/
-share/man/man1/
-@man share/man/man1/qcatool2.1
+@man man/man1/qcatool2.1
 share/qca/
 share/qca/certs/
 share/qca/certs/README

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2012/01/26 09:25:46 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/04 16:05:38 ajacoutot Exp $
 
 COMMENT =	Qt Cryptographic Architecture
 SHARED_ONLY =	Yes
@@ -7,7 +7,7 @@ DISTNAME =	qca-2.0.3
 PKGNAME =	qca2-2.0.3
 CATEGORIES =	security
 SHARED_LIBS +=	qca2	0.0
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://delta.affinix.com/qca/
 
