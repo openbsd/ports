@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/04 19:01:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/04 21:12:20 sthen Exp $
 
 COMMENT=	cp866<>koi8-r & cp1251<>koi8-r decoders and font converter
 
 DISTNAME=	d1489-1.5.1
+REVISION=	0
 CATEGORIES=	converters
 
 MASTER_SITES=	http://koi8.pp.ru/dist/
