@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/31 21:48:31 ajacoutot Exp $
-@bin bin/a2kfcnv
-bin/fromdos
-bin/fromwin
-@bin bin/todos
-bin/towin
-share/doc/d1489/
-share/doc/d1489/README
