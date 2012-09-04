@@ -1,7 +1,7 @@
-$OpenBSD: patch-rfc2045_reformime_1,v 1.2 2010/07/08 16:35:58 giovanni Exp $
---- rfc2045/reformime.1.orig	Sat May  1 17:34:46 2010
-+++ rfc2045/reformime.1	Fri Jun 25 09:15:40 2010
-@@ -35,7 +35,7 @@ is a utility for reformatting MIME messages\&.
+$OpenBSD: patch-rfc2045_reformime_1,v 1.3 2012/09/04 11:33:35 gonzalo Exp $
+--- rfc2045/reformime.1.orig	Wed Aug 31 00:29:40 2011
++++ rfc2045/reformime.1	Mon Sep  3 14:44:36 2012
+@@ -43,7 +43,7 @@ is a utility for reformatting MIME messages\&.
  Generally,
  \fBreformime\fR
  expects to see an
@@ -10,7 +10,7 @@ $OpenBSD: patch-rfc2045_reformime_1,v 1.2 2010/07/08 16:35:58 giovanni Exp $
  compliant message on standard input, except in few cases such as the
  \fB\-m\fR
  option\&.
-@@ -94,7 +94,7 @@ Arbitrarily complex MIME constructs are possible\&.
+@@ -111,7 +111,7 @@ Arbitrarily complex MIME constructs are possible\&.
  .PP
  \-d
  .RS 4
@@ -19,7 +19,7 @@ $OpenBSD: patch-rfc2045_reformime_1,v 1.2 2010/07/08 16:35:58 giovanni Exp $
  \fBreformime\fR
  expects to see on standard input a MIME message that consists of a delivery status notification, as defined by RFC 1894\&.
  \fBreformime\fR
-@@ -154,7 +154,7 @@ MIME message digest\&.
+@@ -171,7 +171,7 @@ MIME message digest\&.
  \-r
  .RS 4
  Rewrite message, adding or standardizing
@@ -28,7 +28,7 @@ $OpenBSD: patch-rfc2045_reformime_1,v 1.2 2010/07/08 16:35:58 giovanni Exp $
  MIME headers\&.
  .RE
  .PP
-@@ -411,11 +411,11 @@ options\&.
+@@ -452,11 +452,11 @@ MIME objects\&.
  .SH "SEE ALSO"
  .PP
  
