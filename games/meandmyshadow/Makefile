@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/06/15 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/04 20:50:18 landry Exp $
 
 COMMENT =	puzzle/platform game
 
-DISTNAME =	meandmyshadow-0.3-src
+DISTNAME =	meandmyshadow-0.4-src
 CATEGORIES =	games
 PKGNAME =	${DISTNAME:S/-src//}
-REVISION =	1
 
 HOMEPAGE =	http://meandmyshadow.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=meandmyshadow/}
@@ -27,7 +26,7 @@ LIB_DEPENDS =	net/curl \
 		archivers/libarchive
 
 WANTLIB += SDL SDL_gfx SDL_image SDL_mixer SDL_ttf archive c crypto
-WANTLIB += curl m pthread ssl stdc++
+WANTLIB += curl m pthread ssl stdc++ GL GLU ICE SM X11 Xext
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+2,-guic
