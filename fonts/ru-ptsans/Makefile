@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2012/01/07 08:03:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/04 22:43:20 ajacoutot Exp $
 
 COMMENT =	free Cyrillic fonts
 PKG_ARCH =	*
 DISTNAME =	ptsans-2.0
 PKGNAME =	ru-${DISTNAME}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.zip
-CATEGORIES =	fonts x11 russian
+CATEGORIES =	fonts x11
 
 MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 # Original distfile taken from http://www.fontstock.com/public/
