@@ -1,0 +1,64 @@
+$OpenBSD: patch-todos_c,v 1.1.1.1 2012/09/04 19:01:11 jasper Exp $
+--- todos.c.orig	Fri Jan  3 01:17:18 2003
++++ todos.c	Sun Mar 20 22:24:09 2011
+@@ -33,6 +33,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #if defined(__MSDOS__) || defined(__OS2__)
+@@ -55,7 +56,6 @@ char inbuf[NEEDSIZ];
+ char outbuf[NEEDSIZ];
+ #endif
+ 
+-extern char *mktemp();
+ int RENAME(), decode();
+ 
+ #include "alt2koi8.h"
+@@ -63,6 +63,9 @@ int RENAME(), decode();
+ #include "win2koi8.h"
+ #include "koi82win.h"
+ 
++#ifdef HAVE_MKSTEMP
++int tmpfd;
++#endif
+ char tmp_pat[] = "$1489_XXXXXX";
+ char tmp_name[256], out_name[256];
+ char **table;
+@@ -258,10 +261,21 @@ usage:
+ 	}
+ 
+ 	sprintf(tmp_name, "%s%s%s", outdir, *outdir ? "/" : "", tmp_pat);
++#ifdef HAVE_MKSTEMP
++	if ((tmpfd = mkstemp(tmp_name)) < 0) {
++		perror(tmp_name);
++		return 1;
++	}
++	if ((fout = fdopen(tmpfd, WB)) == NULL) {
++		perror(tmp_name);
++		return 1;
++	}
++#else
+ 	if ((tmpn = mktemp(tmp_name)) == NULL) {
+ 		perror(tmp_name);
+ 		return 1;
+ 	}
++#endif
+ 
+ 	while (ac-- > 1) {
+ 		srcn = av[1];
+@@ -274,10 +288,12 @@ usage:
+ 			perror(srcn);
+ 			goto usage;
+ 		}
++#ifndef HAVE_MKSTEMP
+ 		if ((fout = fopen(tmpn, WB)) == NULL) {
+ 			perror(tmpn);
+ 			return 1;
+ 		}
++#endif
+ 		if (*outdir) {
+ 			sprintf(out_name, "%s/%s", outdir, basename(srcn));
+ 			if (verbose)
