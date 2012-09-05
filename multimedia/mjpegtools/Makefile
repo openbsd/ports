@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2012/06/20 08:45:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/09/05 16:31:36 jasper Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
+REVISION=		0
 CATEGORIES=		multimedia
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mjpeg/}
 
@@ -31,7 +32,7 @@ WANTLIB=		GL SDL SDL_gfx X11 Xau Xcomposite Xcursor Xdamage \
 			xcb-shm z
 
 MODULES=		devel/gettext
-LIB_DEPENDS=		sdl-*-!no_x11:devel/sdl \
+LIB_DEPENDS=		devel/sdl \
 			devel/sdl-gfx \
 			graphics/jpeg \
 			graphics/png \
@@ -46,7 +47,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-x \
 			--without-v4l
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 FLAVORS=		quicktime optimized
 FLAVOR?=
