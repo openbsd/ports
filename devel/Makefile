@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1066 2012/09/02 17:00:59 kili Exp $
+# $OpenBSD: Makefile,v 1.1067 2012/09/05 07:34:32 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -399,6 +399,7 @@
      SUBDIR += nasm
      SUBDIR += netbeans
      SUBIDR += node-expresso
+     SUBDIR += newt
      SUBDIR += node-fibers
      SUBDIR += node-generic-pool
      SUBDIR += node-gir
@@ -1069,6 +1070,7 @@
      SUBDIR += py-monthdelta
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime
+     SUBDIR += py-newt-syrup
      SUBDIR += py-nose
      SUBDIR += py-notify
      SUBDIR += py-openbsd
