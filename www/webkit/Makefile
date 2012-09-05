@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2012/09/05 17:22:24 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
@@ -56,6 +56,7 @@ MAKE_FILE =	GNUmakefile
 MAKE_FLAGS=	EXTRA_FLAGS="-O0"
 .endif
 
+# plugins-bad needed for vp8
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-bad \
 		multimedia/gstreamer-0.10/plugins-good
