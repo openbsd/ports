@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2012/08/30 14:28:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.41 2012/09/05 08:07:24 ajacoutot Exp $
 @comment chdir(2) to running_path which is set to /var/empty in the cfg files
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
@@ -247,6 +247,7 @@ lib/python${MODPY_VERSION}/site-packages/MAPI/Util/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.py
 lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/MAPICore.py
+lib/python${MODPY_VERSION}/site-packages/MAPICore.pyc
 @comment lib/python${MODPY_VERSION}/site-packages/_MAPICore.la
 lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
 @comment lib/python${MODPY_VERSION}/site-packages/_icalmapi.la
@@ -256,8 +257,11 @@ lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
 @comment lib/python${MODPY_VERSION}/site-packages/_licenseclient.la
 lib/python${MODPY_VERSION}/site-packages/_licenseclient.so
 lib/python${MODPY_VERSION}/site-packages/icalmapi.py
+lib/python${MODPY_VERSION}/site-packages/icalmapi.pyc
 lib/python${MODPY_VERSION}/site-packages/inetmapi.py
+lib/python${MODPY_VERSION}/site-packages/inetmapi.pyc
 lib/python${MODPY_VERSION}/site-packages/licenseclient.py
+lib/python${MODPY_VERSION}/site-packages/licenseclient.pyc
 lib/zarafa/
 @comment lib/zarafa/dbplugin.la
 lib/zarafa/dbplugin.so
@@ -455,29 +459,47 @@ share/locale/sv/LC_MESSAGES/zarafa.mo
 share/zarafa-dagent/
 share/zarafa-dagent/python/
 share/zarafa-dagent/python/mapiplugin.py
+share/zarafa-dagent/python/mapiplugin.pyc
 share/zarafa-dagent/python/pluginmanager.py
+share/zarafa-dagent/python/pluginmanager.pyc
 share/zarafa-dagent/python/plugins/
 share/zarafa-dagent/python/plugins/BMP2PNG.py
+share/zarafa-dagent/python/plugins/BMP2PNG.pyc
 share/zarafa-dagent/python/plugins/examplerules.py
+share/zarafa-dagent/python/plugins/examplerules.pyc
 share/zarafa-dagent/python/plugins/movetopublic.cfg
 @sample ${SYSCONFDIR}/zarafa/movetopublic.cfg
 share/zarafa-dagent/python/plugins/movetopublic.py
+share/zarafa-dagent/python/plugins/movetopublic.pyc
 share/zarafa-dagent/python/plugintemplates.py
+share/zarafa-dagent/python/plugintemplates.pyc
 share/zarafa-dagent/python/wraplogger.py
+share/zarafa-dagent/python/wraplogger.pyc
 share/zarafa-dagent/python/zconfig.py
+share/zarafa-dagent/python/zconfig.pyc
 share/zarafa-dagent/python/zinterval.py
+share/zarafa-dagent/python/zinterval.pyc
 share/zarafa-dagent/python/zunit.py
+share/zarafa-dagent/python/zunit.pyc
 share/zarafa-spooler/
 share/zarafa-spooler/python/
 share/zarafa-spooler/python/mapiplugin.py
+share/zarafa-spooler/python/mapiplugin.pyc
 share/zarafa-spooler/python/pluginmanager.py
+share/zarafa-spooler/python/pluginmanager.pyc
 share/zarafa-spooler/python/plugins/
 share/zarafa-spooler/python/plugins/disclaimer.py
+share/zarafa-spooler/python/plugins/disclaimer.pyc
 share/zarafa-spooler/python/plugintemplates.py
+share/zarafa-spooler/python/plugintemplates.pyc
 share/zarafa-spooler/python/wraplogger.py
+share/zarafa-spooler/python/wraplogger.pyc
 share/zarafa-spooler/python/zconfig.py
+share/zarafa-spooler/python/zconfig.pyc
 share/zarafa-spooler/python/zinterval.py
+share/zarafa-spooler/python/zinterval.pyc
 share/zarafa-spooler/python/zunit.py
+share/zarafa-spooler/python/zunit.pyc
 @rcscript ${RCDIR}/zarafa
 @rcscript ${RCDIR}/zarafa_gateway
 @rcscript ${RCDIR}/zarafa_ical
