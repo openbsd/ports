@@ -1,23 +1,29 @@
-$OpenBSD: patch-tools_virsh_c,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+$OpenBSD: patch-tools_virsh_c,v 1.2 2012/09/05 06:29:02 jasper Exp $
 
-virsh.c:2192: warning: passing argument 1 of 'localtime' from incompatible pointer type
+From 15d2c9fad4817176caf14b0b72c99e6e051ca0cc Mon Sep 17 00:00:00 2001
+From: Paul Eggert <eggert@cs.ucla.edu>
+Date: Tue, 4 Sep 2012 10:03:41 -0700
+Subject: [PATCH] Pass a correct pointer type to localtime_r(3).
 
---- tools/virsh.c.orig	Tue Sep  4 15:03:14 2012
-+++ tools/virsh.c	Tue Sep  4 15:06:01 2012
-@@ -2179,6 +2179,7 @@ vshOutputLogFile(vshControl *ctl, int log_level, const
+--- tools/virsh.c.orig	Fri Aug 31 14:00:20 2012
++++ tools/virsh.c	Tue Sep  4 19:25:05 2012
+@@ -2177,7 +2177,7 @@ vshOutputLogFile(vshControl *ctl, int log_level, const
+     char *str;
+     size_t len;
      const char *lvl = "";
-     struct timeval stTimeval;
+-    struct timeval stTimeval;
++    time_t stTime;
      struct tm *stTm;
-+    time_t sec = stTimeval.tv_sec;
  
      if (ctl->log_fd == -1)
-         return;
-@@ -2189,7 +2190,7 @@ vshOutputLogFile(vshControl *ctl, int log_level, const
+@@ -2188,8 +2188,8 @@ vshOutputLogFile(vshControl *ctl, int log_level, const
+      *
       * [YYYY.MM.DD HH:MM:SS SIGNATURE PID] LOG_LEVEL message
      */
-     gettimeofday(&stTimeval, NULL);
+-    gettimeofday(&stTimeval, NULL);
 -    stTm = localtime(&stTimeval.tv_sec);
-+    stTm = localtime(&sec);
++    time (&stTime);
++    stTm = localtime(&stTime);
      virBufferAsprintf(&buf, "[%d.%02d.%02d %02d:%02d:%02d %s %d] ",
                        (1900 + stTm->tm_year),
                        (1 + stTm->tm_mon),

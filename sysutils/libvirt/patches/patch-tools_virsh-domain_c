@@ -1,23 +1,29 @@
-$OpenBSD: patch-tools_virsh-domain_c,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+$OpenBSD: patch-tools_virsh-domain_c,v 1.2 2012/09/05 06:29:02 jasper Exp $
 
-virsh-domain.c:3807: warning: passing argument 1 of 'localtime_r' from incompatible pointer type
+From 15d2c9fad4817176caf14b0b72c99e6e051ca0cc Mon Sep 17 00:00:00 2001
+From: Paul Eggert <eggert@cs.ucla.edu>
+Date: Tue, 4 Sep 2012 10:03:41 -0700
+Subject: [PATCH] Pass a correct pointer type to localtime_r(3).
 
---- tools/virsh-domain.c.orig	Tue Sep  4 14:59:29 2012
-+++ tools/virsh-domain.c	Tue Sep  4 15:06:40 2012
-@@ -3786,6 +3786,7 @@ vshGenFileName(vshControl *ctl, virDomainPtr dom, cons
+--- tools/virsh-domain.c.orig	Fri Aug 31 13:59:31 2012
++++ tools/virsh-domain.c	Tue Sep  4 19:25:05 2012
+@@ -3782,7 +3782,7 @@ static char *
+ vshGenFileName(vshControl *ctl, virDomainPtr dom, const char *mime)
+ {
+     char timestr[100];
+-    struct timeval cur_time;
++    time_t cur_time;
      struct tm time_info;
      const char *ext = NULL;
      char *ret = NULL;
-+    time_t sec = (time_t) cur_time.tv_sec;
- 
-     /* We should be already connected, but doesn't
-      * hurt to check */
-@@ -3804,7 +3805,7 @@ vshGenFileName(vshControl *ctl, virDomainPtr dom, cons
+@@ -3803,8 +3803,8 @@ vshGenFileName(vshControl *ctl, virDomainPtr dom, cons
+         ext = ".png";
      /* add mime type here */
  
-     gettimeofday(&cur_time, NULL);
+-    gettimeofday(&cur_time, NULL);
 -    localtime_r(&cur_time.tv_sec, &time_info);
-+    localtime_r(&sec, &time_info);
++    time (&cur_time);
++    localtime_r(&cur_time, &time_info);
      strftime(timestr, sizeof(timestr), "%Y-%m-%d-%H:%M:%S", &time_info);
  
      if (virAsprintf(&ret, "%s-%s%s", virDomainGetName(dom),
