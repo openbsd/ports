@@ -5,4 +5,3 @@ intermediate code.
 Flavors:
 	mmap (the default; one memory segment, no maximum limit)
 	shm (multiple segments, "sysctl kern.shminfo.shmmax" is the max)
-

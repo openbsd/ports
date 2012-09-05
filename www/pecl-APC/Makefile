@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/30 14:09:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/05 09:24:13 ajacoutot Exp $
 
 COMMENT=	Alternative PHP Cache
 
 DISTNAME=	APC-3.1.9
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
