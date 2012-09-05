@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/05 10:03:45 ajacoutot Exp $
 
 COMMENT=	input assistive technology
 
 GNOME_PROJECT=	caribou
-GNOME_VERSION=	0.4.3
-REVISION=	0
+GNOME_VERSION=	0.4.4
 
 SHARED_LIBS +=  caribou                   0.0 # 0.0
 
@@ -23,15 +22,14 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gee gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += stdc++ xcb xcb-render xcb-shm xkbfile xklavier xml2
-WANTLIB += z
+WANTLIB += z pthread
 
 MODULES=	devel/gettext \
 		devel/dconf \
 		lang/python \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/py-gobject3>=3.2.2p0 \
-		x11/gnome/doc-utils
+BUILD_DEPENDS=	devel/py-gobject3
 
 # configure checks for it; but it isn't really used
 BUILD_DEPENDS += graphics/clutter/core
