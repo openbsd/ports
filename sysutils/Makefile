@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2012/09/04 14:41:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.269 2012/09/05 15:07:18 jasper Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -129,6 +129,7 @@
      SUBDIR += p5-Schedule-At
      SUBDIR += p5-Set-Crontab
      SUBDIR += p5-Sys-Syscall
+     SUBDIR += p5-Sys-Virt
      SUBDIR += p5-UPS-Nut
      SUBDIR += p5-Unix-PID
      SUBDIR += p5-Unix-Statgrab
