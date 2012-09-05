@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2012/09/05 20:26:24 gonzalo Exp $
 
 COMMENT=	library to parse Uniform Resource Identifiers
 
 MODULES=	cpan
-DISTNAME=	URI-1.54
-REVISION=	0
+DISTNAME=	URI-1.60
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
