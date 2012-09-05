@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/18 19:54:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/05 20:33:43 gonzalo Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 1.0
 
-DISTNAME=		spectrwm-1.1.2
+DISTNAME=		spectrwm-2.0.2
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -17,7 +17,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c X11 Xrandr Xtst util
+WANTLIB += X11 X11-xcb Xcursor Xft c util xcb xcb-aux xcb-icccm
+WANTLIB += xcb-keysyms xcb-randr xcb-xtest
 
 MASTER_SITES=	http://opensource.conformal.com/snapshots/spectrwm/
 
