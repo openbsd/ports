@@ -1,4 +1,4 @@
-# $OpenBSD: ocaml.port.mk,v 1.19 2012/08/21 00:24:22 avsm Exp $
+# $OpenBSD: ocaml.port.mk,v 1.20 2012/09/05 21:36:31 avsm Exp $
 
 # regular file usage for bytecode:
 # PLIST               -- bytecode base files
@@ -86,6 +86,7 @@ MODOASIS_configure = \
 
 ######################################################################
 # BUILD
+BUILD_DEPENDS+= sysutils/findlib
 MODOASIS_BUILD_TARGET = cd ${WRKSRC}
 . for TARGET in ${ALL_TARGET}
 MODOASIS_BUILD_TARGET += \
