@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/05 21:39:09 avsm Exp $
 
 COMMENT =	cooperative lightweight thread library
 CATEGORIES =	devel
 
-DISTNAME =	lwt-2.4.0
+DISTNAME =	lwt-2.4.1
 PKGNAME =	ocaml-${DISTNAME}
 MASTER_SITES =	http://ocsigen.org/download/
-REVISION=	0
 
 HOMEPAGE =	http://ocsigen.org/lwt/
 
@@ -29,6 +28,7 @@ WANTLIB =	glib-2.0 ev iconv intl pthread
 
 CONFIGURE_STYLE =	oasis
 CONFIGURE_ARGS =	--enable-tests --enable-react --enable-glib --enable-ssl
+USE_GMAKE =	Yes
 
 
 post-install:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_ml,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
---- setup.ml.orig	Thu Jul 19 13:36:00 2012
-+++ setup.ml	Fri Aug 17 15:44:30 2012
-@@ -5748,7 +5748,7 @@ let setup_t =
+$OpenBSD: patch-setup_ml,v 1.2 2012/09/05 21:39:09 avsm Exp $
+--- setup.ml.orig	Wed Sep  5 21:56:57 2012
++++ setup.ml	Wed Sep  5 21:57:13 2012
+@@ -5601,7 +5601,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
@@ -10,7 +10,7 @@ $OpenBSD: patch-setup_ml,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
                     ];
                   cmd_clean = [(OASISExpr.EBool true, None)];
                   cmd_distclean = [(OASISExpr.EBool true, None)];
-@@ -5801,7 +5801,7 @@ let setup_t =
+@@ -5654,7 +5654,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
@@ -19,7 +19,7 @@ $OpenBSD: patch-setup_ml,v 1.1.1.1 2012/08/19 00:27:50 avsm Exp $
                     ];
                   cmd_clean = [(OASISExpr.EBool true, None)];
                   cmd_distclean = [(OASISExpr.EBool true, None)];
-@@ -5852,7 +5852,7 @@ let setup_t =
+@@ -5705,7 +5705,7 @@ let setup_t =
                   CustomPlugin.cmd_main =
                     [
                        (OASISExpr.EBool true,
