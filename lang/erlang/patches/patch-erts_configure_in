@@ -1,0 +1,15 @@
+$OpenBSD: patch-erts_configure_in,v 1.6 2012/09/06 00:57:54 matthew Exp $
+--- erts/configure.in.orig	Sun Apr  1 11:15:00 2012
++++ erts/configure.in	Wed Sep  5 14:52:08 2012
+@@ -3548,6 +3548,11 @@ case $host_os in
+ 			DED_LDFLAGS="-m32 $DED_LDFLAGS"
+ 		fi
+ 	;;	
++	openbsd*)
++		DED_LD="$CC"
++		DED_LD_FLAG_RUNTIME_LIBRARY_PATH="$CFLAG_RUNTIME_LIBRARY_PATH"
++		DED_LDFLAGS="-shared"
++	;;
+ 	osf*)
+ 		# NOTE! Whitespace after -rpath is important.
+ 		DED_LD_FLAG_RUNTIME_LIBRARY_PATH="-rpath "

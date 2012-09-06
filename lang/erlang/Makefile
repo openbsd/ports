@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2012/08/30 20:54:59 pascal Exp $
+# $OpenBSD: Makefile,v 1.52 2012/09/06 00:57:54 matthew Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
@@ -7,7 +7,7 @@ V=		R15B01
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-15b.01
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 
 # Erlang Public License
@@ -41,6 +41,7 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
 AUTOCONF_VERSION=2.59
+AUTOCONF_DIR=	${WRKSRC} ${WRKSRC}/erts
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
 				${WRKSRC}/lib/erl_interface/src/auxdir
 
