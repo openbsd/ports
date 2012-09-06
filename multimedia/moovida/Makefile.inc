@@ -1,3 +1,4 @@
+# $OpenBSD: Makefile.inc,v 1.5 2012/09/06 06:06:06 ajacoutot Exp $
 
 VERSION =	1.0.7
 CATEGORIES =	multimedia x11
