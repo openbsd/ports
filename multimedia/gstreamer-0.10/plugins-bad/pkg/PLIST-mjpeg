@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-mjpeg,v 1.2 2009/12/14 11:36:26 espie Exp $
+@comment $OpenBSD: PLIST-mjpeg,v 1.3 2012/09/06 12:37:57 ajacoutot Exp $
 @conflict gstreamer-mplex-*
 @pkgpath ${BASE_PKGPATH},-mplex
-@comment lib/gstreamer-${VERSION}/libgstmpeg2enc.la
 lib/gstreamer-${VERSION}/libgstmpeg2enc.so
-@comment lib/gstreamer-${VERSION}/libgstmplex.la
 lib/gstreamer-${VERSION}/libgstmplex.so

@@ -1,16 +1,12 @@
-# $OpenBSD: Makefile,v 1.49 2012/04/28 09:03:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2012/09/06 12:37:57 ajacoutot Exp $
 
-COMMENT-main =		base elements for GStreamer
-COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
+COMMENT=		base elements for GStreamer
 
-V =			0.10.36
-DISTNAME =		gst-plugins-base-${V}
+V=			0.10.36
+DISTNAME=		gst-plugins-base-${V}
+PKGNAME=		gstreamer-plugins-base-${V}
 
-PKGNAME-main =		gstreamer-plugins-base-${V}
-REVISION-main =		0
-PKGNAME-cdda =		gstreamer-cdda-${V}
-
-MULTI_PACKAGES =	-main -cdda
+REVISION=		1
 
 SHARED_LIBS +=  gstinterfaces-0.10   2.6      # .25.0
 SHARED_LIBS +=  gsttag-0.10          2.6      # .25.0
@@ -26,52 +22,34 @@ SHARED_LIBS +=  gstcdda-0.10         2.6      # .25.0
 SHARED_LIBS +=  gstriff-0.10         2.6      # .25.0
 SHARED_LIBS +=  gstrtsp-0.10         2.6      # .25.0
 
-MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
-MODULES =		devel/gettext
+WANTLIB += GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender
+WANTLIB += Xv Xxf86vm c cairo cdda_interface cdda_paranoia drm
+WANTLIB += expat ffi fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gstbase-0.10 gstcontroller-0.10 gstdataprotocol-0.10
+WANTLIB += gstreamer-0.10 gthread-2.0 m ogg orc-0.4 orc-test-0.4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs stdc++ theoradec theoraenc
+WANTLIB += vorbis vorbisenc vorbisidec xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
-.for i in ${MULTI_PACKAGES}
-REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
-.endfor
+MASTER_SITES=		${MASTER_SITE_GST:=gst-plugins-base/}
 
-# needed for tests/
-BUILD_DEPENDS =		x11/gtk+2
+# needed for ${WRKSRC}/tests/
+BUILD_DEPENDS=		x11/gtk+2
 
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2
-WANTLIB += z m pcre gstreamer-0.10 ffi
-RUN_DEPENDS =		${BUILD_PKGPATH}
-LIB_DEPENDS =		${P}/core>=0.10.36
-
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += GL ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender
-WANTLIB-main += Xv Xxf86vm c cairo drm expat fontconfig freetype gio-2.0
-WANTLIB-main += gstbase-0.10 gstcontroller-0.10 gstdataprotocol-0.10
-WANTLIB-main += ogg orc-0.4 orc-test-0.4 pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-main += pixman-1 png pthread pthread-stubs stdc++ theoradec
-WANTLIB-main += theoraenc vorbis vorbisenc vorbisidec>=3 xcb xcb-render
-WANTLIB-main += xcb-shm
-LIB_DEPENDS-main = 	${LIB_DEPENDS} \
-			devel/orc>=0.4.11 \
+LIB_DEPENDS=		${P}/core \
+			audio/cdparanoia \
 			audio/libvorbis \
+			audio/tremor \
+			devel/orc \
 			devel/pango \
-			multimedia/libtheora \
-			audio/tremor>=20120410
-RUN_DEPENDS-main +=	${MODGETTEXT_RUN_DEPENDS}
+			multimedia/libtheora
+
 # needed for the gio plugin
 RUN_DEPENDS-main +=	x11/gnome/gvfs
 
-WANTLIB-cdda += ${WANTLIB}
-WANTLIB-cdda += gstbase-0.10 gsttag-0.10 cdda_interface cdda_paranoia
-LIB_DEPENDS-cdda = 	${LIB_DEPENDS} \
-			${BUILD_PKGPATH} \
-			audio/cdparanoia
-
-CONFIGURE_ARGS +=	--disable-libvisual \
-			--disable-alsa \
-			--disable-gst_v4l \
-			--disable-gnome_vfs \
-			--enable-orc
-CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
-USE_GROFF =		Yes
-USE_LIBTOOL =		Yes
+# XXX libvisual needs to be ported
+CONFIGURE_ARGS=		--disable-libvisual \
+			--disable-gnome_vfs
 
 .include <bsd.port.mk>

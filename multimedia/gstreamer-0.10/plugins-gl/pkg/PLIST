@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/08 21:45:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/06 12:37:58 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/gl/
 include/gstreamer-${VERSION}/gst/gl/gstglbuffer.h
 include/gstreamer-${VERSION}/gst/gl/gstgldisplay.h
@@ -8,7 +8,6 @@ include/gstreamer-${VERSION}/gst/gl/gstglmixer.h
 include/gstreamer-${VERSION}/gst/gl/gstglmixerpad.h
 include/gstreamer-${VERSION}/gst/gl/gstglshader.h
 include/gstreamer-${VERSION}/gst/gl/gstglwindow.h
-@comment lib/gstreamer-${VERSION}/libgstopengl.la
 lib/gstreamer-${VERSION}/libgstopengl.so
 lib/libgstgl-${VERSION}.la
 @lib lib/libgstgl-${VERSION}.so.${LIBgstgl-0.10_VERSION}

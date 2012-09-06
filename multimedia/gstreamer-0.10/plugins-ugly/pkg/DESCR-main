@@ -1,6 +1,10 @@
-This package contains "ugly" elements for gstreamer-${VERSION}.
-GStreamer plugins are splitted into:
-- an essential exemplary set of elements (plugins-base)
-- a set of good-quality plug-ins under LGPL (plugins-good)
-- a set of good-quality plug-ins that might pose distribution problems (plugins-ugly)
-- a set of plug-ins that need more quality (plugins-bad)
+This is GStreamer, a framework for streaming media.
+This package contains the "ugly" elements for gstreamer-${VERSION}.
+
+    "When you have to shoot, shoot.  Don't talk."
+
+There are times when the world needs a color between black and white.
+Quality code to match the good's, but two-timing, backstabbing and ready
+to sell your freedom down the river.  These plug-ins might have a patent
+noose around their neck, or a lock-up license, or any other problem that
+makes you think twice about shipping them.

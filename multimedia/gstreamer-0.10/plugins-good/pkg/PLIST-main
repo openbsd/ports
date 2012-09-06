@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2012/02/21 08:46:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2012/09/06 12:37:58 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.22
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
@@ -22,127 +22,66 @@
 @pkgpath ${BASE_PKGPATH},-speex
 @pkgpath ${BASE_PKGPATH},-taglib
 @pkgpath ${BASE_PKGPATH},-wavpack
-@comment lib/gstreamer-${VERSION}/libgstalaw.la
 lib/gstreamer-${VERSION}/libgstalaw.so
-@comment lib/gstreamer-${VERSION}/libgstalpha.la
 lib/gstreamer-${VERSION}/libgstalpha.so
-@comment lib/gstreamer-${VERSION}/libgstalphacolor.la
 lib/gstreamer-${VERSION}/libgstalphacolor.so
-@comment lib/gstreamer-${VERSION}/libgstannodex.la
 lib/gstreamer-${VERSION}/libgstannodex.so
-@comment lib/gstreamer-${VERSION}/libgstapetag.la
 lib/gstreamer-${VERSION}/libgstapetag.so
-@comment lib/gstreamer-${VERSION}/libgstaudiofx.la
 lib/gstreamer-${VERSION}/libgstaudiofx.so
-@comment lib/gstreamer-${VERSION}/libgstaudioparsers.la
 lib/gstreamer-${VERSION}/libgstaudioparsers.so
-@comment lib/gstreamer-${VERSION}/libgstauparse.la
 lib/gstreamer-${VERSION}/libgstauparse.so
-@comment lib/gstreamer-${VERSION}/libgstautodetect.la
 lib/gstreamer-${VERSION}/libgstautodetect.so
-@comment lib/gstreamer-${VERSION}/libgstavi.la
 lib/gstreamer-${VERSION}/libgstavi.so
-@comment lib/gstreamer-${VERSION}/libgstcairo.la
 lib/gstreamer-${VERSION}/libgstcairo.so
-@comment lib/gstreamer-${VERSION}/libgstcutter.la
 lib/gstreamer-${VERSION}/libgstcutter.so
-@comment lib/gstreamer-${VERSION}/libgstdebug.la
 lib/gstreamer-${VERSION}/libgstdebug.so
-@comment lib/gstreamer-${VERSION}/libgstdeinterlace.la
 lib/gstreamer-${VERSION}/libgstdeinterlace.so
-@comment lib/gstreamer-${VERSION}/libgstefence.la
 lib/gstreamer-${VERSION}/libgstefence.so
-@comment lib/gstreamer-${VERSION}/libgsteffectv.la
 lib/gstreamer-${VERSION}/libgsteffectv.so
-@comment lib/gstreamer-${VERSION}/libgstequalizer.la
 lib/gstreamer-${VERSION}/libgstequalizer.so
-@comment lib/gstreamer-${VERSION}/libgstflac.la
 lib/gstreamer-${VERSION}/libgstflac.so
-@comment lib/gstreamer-${VERSION}/libgstflv.la
 lib/gstreamer-${VERSION}/libgstflv.so
-@comment lib/gstreamer-${VERSION}/libgstflxdec.la
 lib/gstreamer-${VERSION}/libgstflxdec.so
-@comment lib/gstreamer-${VERSION}/libgstgconfelements.la
 lib/gstreamer-${VERSION}/libgstgconfelements.so
-@comment lib/gstreamer-${VERSION}/libgstgdkpixbuf.la
 lib/gstreamer-${VERSION}/libgstgdkpixbuf.so
-@comment lib/gstreamer-${VERSION}/libgstgoom.la
 lib/gstreamer-${VERSION}/libgstgoom.so
-@comment lib/gstreamer-${VERSION}/libgstgoom2k1.la
 lib/gstreamer-${VERSION}/libgstgoom2k1.so
-@comment lib/gstreamer-${VERSION}/libgsticydemux.la
 lib/gstreamer-${VERSION}/libgsticydemux.so
-@comment lib/gstreamer-${VERSION}/libgstid3demux.la
 lib/gstreamer-${VERSION}/libgstid3demux.so
-lib/gstreamer-${VERSION}/libgstimagefreeze.la
 lib/gstreamer-${VERSION}/libgstimagefreeze.so
-@comment lib/gstreamer-${VERSION}/libgstinterleave.la
 lib/gstreamer-${VERSION}/libgstinterleave.so
-@comment lib/gstreamer-${VERSION}/libgstisomp4.la
 lib/gstreamer-${VERSION}/libgstisomp4.so
-@comment lib/gstreamer-${VERSION}/libgstjpeg.la
 lib/gstreamer-${VERSION}/libgstjpeg.so
-@comment lib/gstreamer-${VERSION}/libgstlevel.la
 lib/gstreamer-${VERSION}/libgstlevel.so
-@comment lib/gstreamer-${VERSION}/libgstmatroska.la
 lib/gstreamer-${VERSION}/libgstmatroska.so
-@comment lib/gstreamer-${VERSION}/libgstmulaw.la
 lib/gstreamer-${VERSION}/libgstmulaw.so
-@comment lib/gstreamer-${VERSION}/libgstmultifile.la
 lib/gstreamer-${VERSION}/libgstmultifile.so
-@comment lib/gstreamer-${VERSION}/libgstmultipart.la
 lib/gstreamer-${VERSION}/libgstmultipart.so
-@comment lib/gstreamer-${VERSION}/libgstnavigationtest.la
 lib/gstreamer-${VERSION}/libgstnavigationtest.so
-@comment lib/gstreamer-${VERSION}/libgstossaudio.la
 lib/gstreamer-${VERSION}/libgstossaudio.so
-@comment lib/gstreamer-${VERSION}/libgstpng.la
 lib/gstreamer-${VERSION}/libgstpng.so
-@comment lib/gstreamer-${VERSION}/libgstreplaygain.la
 lib/gstreamer-${VERSION}/libgstreplaygain.so
-@comment lib/gstreamer-${VERSION}/libgstrtp.la
 lib/gstreamer-${VERSION}/libgstrtp.so
-@comment lib/gstreamer-${VERSION}/libgstrtpmanager.la
 lib/gstreamer-${VERSION}/libgstrtpmanager.so
-@comment lib/gstreamer-${VERSION}/libgstrtsp.la
 lib/gstreamer-${VERSION}/libgstrtsp.so
-@comment lib/gstreamer-${VERSION}/libgstshapewipe.la
 lib/gstreamer-${VERSION}/libgstshapewipe.so
-@comment lib/gstreamer-${VERSION}/libgstshout2.la
 lib/gstreamer-${VERSION}/libgstshout2.so
-@comment lib/gstreamer-${VERSION}/libgstsmpte.la
 lib/gstreamer-${VERSION}/libgstsmpte.so
-@comment lib/gstreamer-${VERSION}/libgstsndio.la
 lib/gstreamer-${VERSION}/libgstsndio.so
-@comment lib/gstreamer-${VERSION}/libgstsouphttpsrc.la
 lib/gstreamer-${VERSION}/libgstsouphttpsrc.so
-@comment lib/gstreamer-${VERSION}/libgstspectrum.la
 lib/gstreamer-${VERSION}/libgstspectrum.so
-@comment lib/gstreamer-${VERSION}/libgstspeex.la
 lib/gstreamer-${VERSION}/libgstspeex.so
-@comment lib/gstreamer-${VERSION}/libgsttaglib.la
 lib/gstreamer-${VERSION}/libgsttaglib.so
-@comment lib/gstreamer-${VERSION}/libgstudp.la
 lib/gstreamer-${VERSION}/libgstudp.so
-@comment lib/gstreamer-${VERSION}/libgstvideo4linux2.la
 lib/gstreamer-${VERSION}/libgstvideo4linux2.so
-@comment lib/gstreamer-${VERSION}/libgstvideobox.la
 lib/gstreamer-${VERSION}/libgstvideobox.so
-@comment lib/gstreamer-${VERSION}/libgstvideocrop.la
 lib/gstreamer-${VERSION}/libgstvideocrop.so
-@comment lib/gstreamer-${VERSION}/libgstvideofilter.la
 lib/gstreamer-${VERSION}/libgstvideofilter.so
-@comment lib/gstreamer-${VERSION}/libgstvideomixer.la
 lib/gstreamer-${VERSION}/libgstvideomixer.so
-@comment lib/gstreamer-${VERSION}/libgstwavenc.la
 lib/gstreamer-${VERSION}/libgstwavenc.so
-@comment lib/gstreamer-${VERSION}/libgstwavpack.la
 lib/gstreamer-${VERSION}/libgstwavpack.so
-@comment lib/gstreamer-${VERSION}/libgstwavparse.la
 lib/gstreamer-${VERSION}/libgstwavparse.so
-@comment lib/gstreamer-${VERSION}/libgstximagesrc.la
 lib/gstreamer-${VERSION}/libgstximagesrc.so
-@comment lib/gstreamer-${VERSION}/libgsty4menc.la
 lib/gstreamer-${VERSION}/libgsty4menc.so
 share/gstreamer-${VERSION}/
 share/gstreamer-${VERSION}/presets/

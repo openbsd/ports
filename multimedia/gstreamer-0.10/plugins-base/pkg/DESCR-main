@@ -1,6 +1,0 @@
-This package contains "base" elements for gstreamer-${VERSION}.
-GStreamer plugins are splitted into:
-- an essential exemplary set of elements (plugins-base)
-- a set of good-quality plug-ins under LGPL (plugins-good)
-- a set of good-quality plug-ins that might pose distribution problems (plugins-ugly)
-- a set of plug-ins that need more quality (plugins-bad)

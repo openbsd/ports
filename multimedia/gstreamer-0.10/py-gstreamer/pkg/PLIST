@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/10/29 18:44:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/06 12:37:58 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/pygst.h
 include/gstreamer-${VERSION}/gst/pygstexception.h
 include/gstreamer-${VERSION}/gst/pygstminiobject.h
 include/gstreamer-${VERSION}/gst/pygstvalue.h
-@comment lib/gstreamer-${VERSION}/libgstpython.la
 lib/gstreamer-${VERSION}/libgstpython.so
 lib/pkgconfig/gst-python-${VERSION}.pc
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/
@@ -11,9 +10,7 @@ lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/_gst.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/_gst.so
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/audio.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/audio.so
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/__init__.py
@@ -37,15 +34,10 @@ lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/sources.pyo
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/utils.py
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/extend/utils.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/interfaces.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/interfaces.so
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/pbutils.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/pbutils.so
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/tag.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/tag.so
-@comment lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/video.la
 lib/python${MODPY_VERSION}/site-packages/gst-${VERSION}/gst/video.so
-@comment lib/python${MODPY_VERSION}/site-packages/gstoption.la
 lib/python${MODPY_VERSION}/site-packages/gstoption.so
 lib/python${MODPY_VERSION}/site-packages/pygst.pth
 lib/python${MODPY_VERSION}/site-packages/pygst.py

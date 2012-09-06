@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/05/26 22:39:02 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/06 12:37:58 ajacoutot Exp $
 @conflict gst-ffmpeg-*
-@comment lib/gstreamer-${VERSION}/libgstffmpeg.la
 lib/gstreamer-${VERSION}/libgstffmpeg.so
-@comment lib/gstreamer-${VERSION}/libgstffmpegscale.la
 lib/gstreamer-${VERSION}/libgstffmpegscale.so
-@comment lib/gstreamer-${VERSION}/libgstpostproc.la
 lib/gstreamer-${VERSION}/libgstpostproc.so
