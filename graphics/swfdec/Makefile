@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2011/11/02 09:57:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2012/09/06 12:12:22 ajacoutot Exp $
 
 COMMENT=	flash rendering library
 
 DISTNAME=	swfdec-0.8.4
-REVISION=	5
+REVISION=	6
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics
@@ -34,7 +34,7 @@ LIB_DEPENDS=	devel/libsoup \
 		multimedia/gstreamer-0.10/plugins-base \
 		x11/gtk+2
 
-RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-bad \
+RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ugly \
 		multimedia/gstreamer-0.10/plugins-ffmpeg
 MODULES=	devel/gettext
