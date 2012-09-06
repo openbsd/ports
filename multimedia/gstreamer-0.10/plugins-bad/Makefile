@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2012/09/06 12:37:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2012/09/06 14:30:59 ajacoutot Exp $
 
 COMMENT-main=		bad elements for GStreamer
 COMMENT-neon=		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main=		gstreamer-plugins-bad-${V}
 PKGNAME-neon=		gstreamer-neon-${V}
 PKGNAME-mjpeg=		gstreamer-mjpeg-${V}
 
-REVISION-main=		4
+REVISION-main=		5
 REVISION-mjpeg=		3
 REVISION-neon=		2
 
@@ -115,5 +115,13 @@ CONFIGURE_ARGS=		--disable-acm \
 			--disable-zbar \
 			--disable-timidity \
 			--disable-swfdec
+
+preconfigure:
+	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
+		${WRKSRC}/ext/resindvd/resindvdbin.c \
+		${WRKSRC}/ext/resindvd/resindvdsrc.c
+	perl -pi -e 's,/dev/cdrom,/dev/rcd0c,g' \
+		${WRKSRC}/ext/cdaudio/gstcdaudio.c \
+		${WRKSRC}/sys/vcd/vcdsrc.c
 
 .include <bsd.port.mk>

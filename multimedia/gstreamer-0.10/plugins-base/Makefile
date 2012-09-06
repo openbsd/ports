@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2012/09/06 12:37:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/09/06 14:30:59 ajacoutot Exp $
 
 COMMENT=		base elements for GStreamer
 
@@ -6,7 +6,7 @@ V=			0.10.36
 DISTNAME=		gst-plugins-base-${V}
 PKGNAME=		gstreamer-plugins-base-${V}
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gstinterfaces-0.10   2.6      # .25.0
 SHARED_LIBS +=  gsttag-0.10          2.6      # .25.0
@@ -51,5 +51,14 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs
 # XXX libvisual needs to be ported
 CONFIGURE_ARGS=		--disable-libvisual \
 			--disable-gnome_vfs
+
+pre-configure:
+	perl -pi -e 's,/dev/cdrom1,/dev/rcd1c,g' \
+		${WRKSRC}/tests/check/libs/cddabasesrc.c
+	perl -pi -e 's,/dev/cdrom,/dev/rcd0c,g' \
+		${WRKSRC}/docs/plugins/gst-plugins-base-plugins.args \
+		${WRKSRC}/ext/cdparanoia/gstcdparanoiasrc.c \
+		${WRKSRC}/gst-libs/gst/cdda/gstcddabasesrc.c \
+		${WRKSRC}/tests/check/libs/cddabasesrc.c
 
 .include <bsd.port.mk>

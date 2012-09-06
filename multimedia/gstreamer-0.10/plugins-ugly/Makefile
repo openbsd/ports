@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2012/09/06 12:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2012/09/06 14:30:59 ajacoutot Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -11,7 +11,7 @@ PKGNAME-main=		gstreamer-plugins-ugly-${V}
 PKGNAME-sidplay=	gstreamer-sidplay-${V}
 PKGNAME-lame=		gstreamer-lame-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-sidplay=	0
 REVISION-lame=		0
 
@@ -60,5 +60,9 @@ CONFIGURE_ARGS=		--disable-amrnb \
 			--disable-amrwb \
 			--disable-cdio \
 			--disable-mpeg2dec
+
+pre-configure:
+	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
+		${WRKSRC}/ext/dvdread/dvdreadsrc.c
 
 .include <bsd.port.mk>

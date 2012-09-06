@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2012/09/06 12:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2012/09/06 14:30:59 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -17,7 +17,7 @@ PKGNAME-dv=		gstreamer-dv-${V}
 PKGNAME-caca=		gstreamer-libcaca-${V}
 EPOCH-main=		0
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-aalib=		2
 REVISION-dv=		2
 REVISION-caca=		2
@@ -112,5 +112,11 @@ pre-configure:
 		NOCONFIGURE="true" \
 		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
 ### END SNDIO ###
+	perl -pi -e 's,/dev/dsp,/dev/audio,g' \
+		${WRKSRC}/docs/plugins/gst-plugins-good-plugins.args \
+		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssink.html \
+		${WRKSRC}/docs/plugins/html/gst-plugins-good-plugins-osssrc.html \
+		${WRKSRC}/sys/oss/gstosssink.c \
+		${WRKSRC}/sys/oss/gstosssrc.c
 
 .include <bsd.port.mk>
