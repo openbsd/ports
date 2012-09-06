@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2012/06/15 08:32:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/06 09:53:15 ajacoutot Exp $
 
 COMMENT =		simple audio file converter for the GNOME Desktop
 
 DISTNAME =		soundconverter-1.5.4
-REVISION =		4
+REVISION =		5
 CATEGORIES =		audio
 
 HOMEPAGE =		http://soundconverter.berlios.de/
@@ -26,7 +26,6 @@ BUILD_DEPENDS =		x11/gnome/py-gnome \
 
 RUN_DEPENDS =		multimedia/gstreamer-0.10/py-gstreamer \
 			multimedia/gstreamer-0.10/plugins-good \
-			multimedia/gstreamer-0.10/plugins-bad \
 			multimedia/gstreamer-0.10/plugins-ffmpeg \
 			devel/desktop-file-utils \
 			x11/gnome/py-gnome \
