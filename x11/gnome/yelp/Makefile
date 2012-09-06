@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2012/09/06 08:28:51 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.4.2
-REVISION=	0
+REVISION=		1
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 
@@ -37,7 +37,8 @@ BUILD_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0 \
 			textproc/itstool
 RUN_DEPENDS=		x11/gnome/yelp-xsl>=3.2.0
 
-LIB_DEPENDS=		www/webkit,gtk3>=1.6.1v0
+LIB_DEPENDS=		archivers/xz \
+			www/webkit,gtk3
 
 MODGNOME_DESKTOP_FILE=	Yes
 
