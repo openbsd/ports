@@ -1,0 +1,15 @@
+$OpenBSD: patch-gst_udp_gstmultiudpsink_c,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
+--- gst/udp/gstmultiudpsink.c.orig	Wed Aug  8 12:07:55 2012
++++ gst/udp/gstmultiudpsink.c	Wed Sep  5 13:44:49 2012
+@@ -46,6 +46,11 @@
+ 
+ #include "gst/glib-compat-private.h"
+ 
++// iovec
++#ifdef __OpenBSD__
++#include <sys/uio.h>
++#endif
++
+ GST_DEBUG_CATEGORY_STATIC (multiudpsink_debug);
+ #define GST_CAT_DEFAULT (multiudpsink_debug)
+ 

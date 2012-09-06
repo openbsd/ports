@@ -1,0 +1,10 @@
+This is GStreamer, a framework for streaming media.
+This package contains the "good" elements for gstreamer-${VERSION}.
+
+    "Such ingratitude.  After all the times I've saved your life."
+
+A collection of plug-ins you'd want to have right next to you on the
+battlefield.  Shooting sharp and making no mistakes, these plug-ins have
+it all: good looks, good code, and good licensing.  Documented and
+dressed up in tests.  If you're looking for a role model to base your
+own plug-in on, here it is.

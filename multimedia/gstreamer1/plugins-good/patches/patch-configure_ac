@@ -1,0 +1,61 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
+--- configure.ac.orig	Wed Aug  8 12:07:57 2012
++++ configure.ac	Wed Sep  5 14:21:28 2012
+@@ -471,6 +471,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
+ #ifdef __sun /* Solaris */
+ #include <sys/types.h>
+ #include <sys/videodev2.h>
++#elif defined __OpenBSD__
++#include <sys/videoio.h>
+ #else /* Linux */
+ #include <linux/types.h>
+ #define _LINUX_TIME_H
+@@ -512,6 +514,10 @@ return 0;
+ #ifdef __sun /* Solaris */
+ #include <sys/types.h>
+ #include <sys/videodev2.h>
++#elif defined __OpenBSD__
++#include <sys/videoio.h>
++#elif defined __OpenBSD__
++#include <sys/videoio.h>
+ #else /* Linux */
+ #include <linux/types.h>
+ #define _LINUX_TIME_H
+@@ -821,6 +827,21 @@ AG_GST_CHECK_FEATURE(SHOUT2, [Shoutcast/Icecast client
+   AG_GST_PKG_CHECK_MODULES(SHOUT2, shout >= 2.0)
+ ])
+ 
++dnl *** sndio ***
++translit(dnm, m, l) AM_CONDITIONAL(USE_SNDIO, true)
++AG_GST_CHECK_FEATURE(SNDIO, [sndio audio], sndio, [
++  AC_CHECK_HEADER(sndio.h, HAVE_SNDIO="yes", HAVE_SNDIO="no")
++  if test $HAVE_SNDIO = yes
++  then
++    AC_CHECK_LIB(sndio, sio_open, HAVE_SNDIO="yes", HAVE_SNDIO="no", [])
++    if test $HAVE_SNDIO = yes
++    then
++      SNDIO_LIBS=-lsndio 
++      AC_SUBST(SNDIO_LIBS)
++    fi
++  fi
++])
++
+ dnl *** soup ***
+ translit(dnm, m, l) AM_CONDITIONAL(USE_SOUP, true)
+ AG_GST_CHECK_FEATURE(SOUP, [soup http client plugin (2.4)], souphttpsrc, [
+@@ -955,6 +976,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
+ AM_CONDITIONAL(USE_OSX_VIDEO, false)
+ AM_CONDITIONAL(USE_PULSE, false)
+ AM_CONDITIONAL(USE_SHOUT2, false)
++AM_CONDITIONAL(USE_SNDIO, false)
+ AM_CONDITIONAL(USE_SOUP, false)
+ AM_CONDITIONAL(USE_SPEEX, false)
+ AM_CONDITIONAL(USE_SUNAUDIO, false)
+@@ -1088,6 +1110,7 @@ ext/libpng/Makefile
+ ext/pulse/Makefile
+ ext/raw1394/Makefile
+ ext/shout2/Makefile
++ext/sndio/Makefile
+ ext/soup/Makefile
+ ext/speex/Makefile
+ ext/taglib/Makefile
