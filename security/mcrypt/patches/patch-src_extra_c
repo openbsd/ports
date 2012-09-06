@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_extra_c,v 1.1 2012/09/06 21:56:31 sthen Exp $
+
+CVE-2012-4409, patch from http://seclists.org/oss-sec/2012/q3/396
+
+--- src/extra.c.orig	Thu Sep  6 22:23:29 2012
++++ src/extra.c	Thu Sep  6 22:24:09 2012
+@@ -242,6 +242,8 @@ int check_file_head(FILE * fstream, char *algorithm, c
+ 			if (m_getbit(0, sflag) != 0) { /* if the first bit is set */
+ 				*salt_size = m_setbit(0, sflag, 0);
+ 				if (*salt_size > 0) {
++					if (*salt_size > sizeof(tmp_buf))
++					    err_quit(_("Salt is too long\n"));
+ 					fread(tmp_buf, 1, *salt_size,
+ 					      fstream);
+ 					memmove(salt, tmp_buf, *salt_size);

@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_errors_c,v 1.1 2012/09/06 21:56:31 sthen Exp $
+
+Format strings, http://seclists.org/oss-sec/2012/q3/396
+
+--- src/errors.c.orig	Thu Sep  6 22:24:15 2012
++++ src/errors.c	Thu Sep  6 22:24:34 2012
+@@ -24,24 +24,24 @@ extern int quiet;
+ 
+ void err_quit(char *errmsg)
+ {
+-	fprintf(stderr, errmsg);
++	fprintf(stderr, "%s", errmsg);
+ 	exit(-1);
+ }
+ 
+ void err_warn(char *errmsg)
+ {
+ 	if (quiet <= 1)
+-		fprintf(stderr, errmsg);
++		fprintf(stderr, "%s", errmsg);
+ }
+ 
+ void err_info(char *errmsg)
+ {
+ 	if (quiet == 0)
+-		fprintf(stderr, errmsg);
++		fprintf(stderr, "%s", errmsg);
+ }
+ 
+ void err_crit(char *errmsg)
+ {
+ 	if (quiet <= 2)
+-		fprintf(stderr, errmsg);
++		fprintf(stderr, "%s", errmsg);
+ }

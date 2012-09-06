@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/04/16 21:13:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/06 21:56:31 sthen Exp $
 
 COMMENT =	extendable encryption program that supports many ciphers
 
 DISTNAME =		mcrypt-2.6.8
-REVISION =		1
-CATEGORIES =     	security
+REVISION =		2
+CATEGORIES =		security
 
 HOMEPAGE =		http://mcrypt.sf.net/
 
