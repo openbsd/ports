@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/04/25 14:04:06 okan Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/06 19:22:53 sthen Exp $
 
 COMMENT =	console based password storing application
 
-DISTNAME =	kc-2.1.5
+DISTNAME =	kc-2.1.6
 CATEGORIES =    security
 
 HOMEPAGE =	http://code.google.com/p/keychain
