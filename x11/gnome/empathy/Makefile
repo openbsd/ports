@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.99 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.100 2012/09/06 18:59:54 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.4.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 
@@ -36,8 +36,8 @@ WANTLIB += sqlite3 ssl3 stdc++ tasn1 telepathy-farstream telepathy-glib
 WANTLIB += telepathy-logger vorbis vorbisfile webkitgtk-3.0 xcb
 WANTLIB += xcb-render xcb-shm xml2 xslt z farstream-0.1
 WANTLIB += champlain-0.12 champlain-gtk-0.12 clutter-1.0 clutter-gst-1.0
-WANTLIB += clutter-gtk-1.0 cogl cogl-pango gstbasevideo-0.10 gsttag-0.10
-WANTLIB += json-glib-1.0 soup-gnome-2.4
+WANTLIB += clutter-gtk-1.0 cogl cogl-pango gsttag-0.10
+WANTLIB += json-glib-1.0 soup-gnome-2.4 memphis-0.2
 
 MODULES=		devel/dconf \
 			devel/gettext \

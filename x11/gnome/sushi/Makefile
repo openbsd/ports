@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/07/08 09:04:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/06 18:59:54 ajacoutot Exp $
 
 COMMENT=	quick previewer for Nautilus
 
 GNOME_PROJECT=	sushi
 GNOME_VERSION=	0.4.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  sushi-1.0                 0.0 # 0.0
 
@@ -24,7 +24,7 @@ WANTLIB += drm enchant evdocument3 evview3 expat ffi fontconfig
 WANTLIB += freetype gailutil-3 gdk-3 gdk_pixbuf-2.0 geoclue gio-2.0
 WANTLIB += girepository-1.0 gjs gjs-dbus glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gssapi gstapp-0.10 gstaudio-0.10 gstbase-0.10
-WANTLIB += gstbasevideo-0.10 gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstfft-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 gtksourceview-3.0 icudata icui18n icuuc javascriptcoregtk-3.0
 WANTLIB += jpeg json-glib-1.0 krb5 m mozjs185 musicbrainz3 neon
