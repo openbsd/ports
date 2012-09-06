@@ -1,14 +1,7 @@
-$OpenBSD: patch-ext_Makefile_am,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
+$OpenBSD: patch-ext_Makefile_am,v 1.2 2012/09/06 13:30:12 ajacoutot Exp $
 --- ext/Makefile.am.orig	Sat May 26 13:03:30 2012
-+++ ext/Makefile.am	Wed Sep  5 13:44:54 2012
-@@ -70,13 +70,18 @@ else
- PULSE_DIR =
- endif
- 
--
- if USE_SHOUT2
- SHOUT2_DIR = shout2
- else
++++ ext/Makefile.am	Thu Sep  6 15:29:06 2012
+@@ -77,6 +77,12 @@ else
  SHOUT2_DIR =
  endif
  
@@ -21,7 +14,7 @@ $OpenBSD: patch-ext_Makefile_am,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
  if USE_SOUP
  SOUP_DIR=soup
  else
-@@ -116,6 +121,7 @@ SUBDIRS = \
+@@ -116,6 +122,7 @@ SUBDIRS = \
  	$(MIKMOD_DIR) \
  	$(PULSE_DIR) \
  	$(SHOUT2_DIR) \
@@ -29,7 +22,7 @@ $OpenBSD: patch-ext_Makefile_am,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
  	$(SOUP_DIR) \
  	$(SPEEX_DIR) \
  	$(TAGLIB_DIR) \
-@@ -134,6 +140,7 @@ DIST_SUBDIRS = \
+@@ -134,6 +141,7 @@ DIST_SUBDIRS = \
  	pulse \
  	raw1394 \
  	shout2 \
