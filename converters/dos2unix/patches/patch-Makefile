@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2012/05/07 12:07:07 sthen Exp $
---- Makefile.orig	Mon May  7 09:04:29 2012
-+++ Makefile	Mon May  7 09:06:36 2012
-@@ -195,6 +195,16 @@ endif
+$OpenBSD: patch-Makefile,v 1.2 2012/09/06 22:35:31 sthen Exp $
+--- Makefile.orig	Thu Sep  6 20:17:00 2012
++++ Makefile	Thu Sep  6 23:33:34 2012
+@@ -219,6 +219,16 @@ endif
  endif
  endif
  
@@ -16,9 +16,9 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2012/05/07 12:07:07 sthen Exp $
 +endif
 +
  ifeq (Darwin, $(shell uname -s))
- 	OS = Darwin
+ 	D2U_OS = Darwin
  ifdef ENABLE_NLS
-@@ -240,7 +250,7 @@ EO_NOTATION = -x
+@@ -264,7 +274,7 @@ EO_NOTATION = -x
  endif
  
  CFLAGS_USER	=
