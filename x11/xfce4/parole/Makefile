@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2012/06/15 08:30:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/06 11:39:24 ajacoutot Exp $
 
 COMMENT =	Xfce4 media player
 
 XFCE_VERSION =	0.2.0.5
 XFCE_GOODIE =	parole
 CATEGORIES +=	audio
-REVISION=	4
+REVISION=	5
 
 # GPLv2
 PERMIT_DISTFILES_CDROM =	Yes
@@ -26,9 +26,9 @@ LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		devel/libnotify
 
 # plugins-ffmpeg needed to play mpeg vidz
-# plugins-bad for dvd play
+# plugins-ugly needed to play mp3
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins-bad \
+		multimedia/gstreamer-0.10/plugins,-ugly \
 		multimedia/gstreamer-0.10/plugins-ffmpeg
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext

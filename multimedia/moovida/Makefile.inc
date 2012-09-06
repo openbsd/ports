@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2012/09/06 06:06:06 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2012/09/06 11:39:24 ajacoutot Exp $
 
 VERSION =	1.0.7
 CATEGORIES =	multimedia x11
@@ -32,7 +32,6 @@ RUN_DEPENDS +=	audio/libgpod,-python \
 		graphics/py-pigment \
 		multimedia/coherence \
 		multimedia/gstreamer-0.10/py-gstreamer \
-		multimedia/gstreamer-0.10/plugins-bad \
 		multimedia/gstreamer-0.10/plugins-base \
 		multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-good \
