@@ -1,0 +1,5 @@
+This is GStreamer, a framework for streaming media.
+This package provides the core around which all other modules revolve.
+
+Base functionality and libraries, some essential elements,
+documentation, and testing.
