@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_vbox_vbox_XPCOMCGlue_c,v 1.1.1.1 2012/09/04 14:41:15 jasper Exp $
+$OpenBSD: patch-src_vbox_vbox_XPCOMCGlue_c,v 1.2 2012/09/06 08:29:56 jasper Exp $
 
-Define DYNLIB_NAME on OpenBSD.
+From edc67a6f5d9f83b9411edeeac851de27d285a90c Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Tue, 4 Sep 2012 16:48:51 +0200
+Subject: [PATCH] Define DYNLIB_NAME on OpenBSD.
 
 --- src/vbox/vbox_XPCOMCGlue.c.orig	Mon Sep  3 14:14:35 2012
 +++ src/vbox/vbox_XPCOMCGlue.c	Mon Sep  3 14:14:55 2012
