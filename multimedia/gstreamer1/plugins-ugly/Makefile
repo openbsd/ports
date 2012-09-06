@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/06 13:02:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/06 14:22:49 ajacoutot Exp $
 
 COMMENT=		ugly elements for GStreamer
 
@@ -33,7 +33,6 @@ CONFIGURE_ARGS=		--disable-amrnb \
 
 pre-configure:
 	perl -pi -e 's,/dev/dvd,/dev/rcd0c,g' \
-		${WRKSRC}/ext/cdio/gstcdiocddasrc.c \
 		${WRKSRC}/ext/dvdread/dvdreadsrc.c
 
 .include <bsd.port.mk>
