@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/10 11:41:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/06 10:30:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	music management and playback application for GNOME
 
 GNOME_VERSION=	2.4.1
 GNOME_PROJECT=	banshee
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
@@ -49,8 +49,11 @@ RUN_DEPENDS=	devel/mono-notify \
 		shells/bash \
 		multimedia/gstreamer-0.10/plugins-good # libgstgconfelements
 
+# MP3 support
+RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-ugly
+
 LIB_DEPENDS=	www/webkit \
-		multimedia/gstreamer-0.10/plugins-base,-cdda \
+		multimedia/gstreamer-0.10/plugins-base
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
