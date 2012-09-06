@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.21 2012/04/28 10:51:44 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.22 2012/09/06 06:35:43 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_FTP ?=		Yes
 
 # NOTE: when VERSION changes, check the following ports that hardcode
 # the current gstreamer version in their PLIST:
-# net/farsight2
+# net/farstream
 # net/libnice
 VERSION =		0.10
 SUBST_VARS +=		VERSION
