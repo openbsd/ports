@@ -14,9 +14,12 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+#include <errno.h>
+#include <poll.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 #include <gtk/gtk.h>
 #include <libxmms/util.h>
@@ -44,8 +47,6 @@ static int op_playing (void);
 static int op_get_output_time (void);
 static int op_get_written_time (void);
 
-static void onmove_cb (void *, int);
-
 static void configure_win_ok_cb(GtkWidget *, gpointer);
 static void configure_win_cancel_cb(GtkWidget *, gpointer);
 static void configure_win_destroy(void);
@@ -54,8 +55,8 @@ static struct sio_par par;
 static struct sio_hdl *hdl;
 static long long rdpos;
 static long long wrpos;
-static int paused;
-static int volume = XMMS_MAXVOL;
+static int paused, restarted, volume;
+static int pause_pending, flush_pending, volume_pending;
 static long bytes_per_sec;
 static AFormat afmt;
 static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -91,6 +92,74 @@ get_oplugin_info (void)
 }
 
 static void
+reset(void)
+{
+	if (!restarted) {
+		restarted = 1;
+		sio_stop(hdl);
+		sio_start(hdl);
+		rdpos = wrpos;
+	}
+}
+static void
+onmove_cb (void *addr, int delta)
+{
+	rdpos += delta * (int)(par.bps * par.pchan);
+}
+
+static void
+onvol_cb(void *addr, unsigned ctl)
+{
+	/* Update volume only if it actually changed */
+	if (ctl != volume * SIO_MAXVOL / 100)
+		volume = ctl * 100 / SIO_MAXVOL;
+}
+
+static void
+pending_events(void)
+{
+	if (volume_pending) {
+		sio_setvol(hdl, volume * SIO_MAXVOL / 100);
+		volume_pending = 0;
+	}
+	if (flush_pending) {
+		reset();
+		flush_pending = 0;
+	}
+	if (pause_pending) {
+		if (paused)
+			reset();
+		pause_pending = 0;
+	}
+}
+
+static void
+wait_ready(void)
+{
+	int n;
+	struct pollfd pfds[16];
+
+	if (paused) {
+		pthread_mutex_unlock(&mutex);
+		usleep(20000);
+		pthread_mutex_lock(&mutex);
+		return;
+	}
+	n = sio_pollfd(hdl, pfds, POLLOUT);
+	if (n != 0) {
+		pthread_mutex_unlock(&mutex);
+		while (poll(pfds, n, -1) < 0) {
+			if (errno != EINTR) {
+				perror("poll");
+				exit(1);
+			}
+		}
+		pthread_mutex_lock(&mutex);
+	}
+	(void)sio_revents(hdl, pfds);
+}
+
+static void
 op_about (void)
 {
 	static GtkWidget *about;
@@ -118,7 +187,7 @@ op_init (void)
 	xmms_cfg_free(cfgfile);
 
 	if (!audiodev)
-		audiodev = g_strdup("");
+		audiodev = g_strdup(SIO_DEVANY);
 }
 
 static void
@@ -135,8 +204,7 @@ op_set_volume (int left, int right)
 	/* Ignore balance control, so use unattenuated channel. */
 	pthread_mutex_lock (&mutex);
 	volume = left > right ? left : right;
-	if (hdl != NULL)
-		sio_setvol (hdl, volume * SIO_MAXVOL / XMMS_MAXVOL);
+	volume_pending = 1;
 	pthread_mutex_unlock (&mutex);
 }
 
@@ -146,8 +214,7 @@ op_open (AFormat fmt, int rate, int nch)
 	struct sio_par askpar;
 
 	pthread_mutex_lock (&mutex);
-
-	hdl = sio_open (strlen (audiodev) > 0 ? audiodev : NULL, SIO_PLAY, 0);
+	hdl = sio_open (audiodev, SIO_PLAY, 1);
 	if (hdl == NULL) {
 		fprintf (stderr, "%s: failed to open audio device\n", __func__);
 		goto error;
@@ -217,7 +284,7 @@ op_open (AFormat fmt, int rate, int nch)
 		fprintf (stderr, "%s: parameters not supported\n", __func__);
 		xmms_show_message ("Unsupported format", "XMMS requested a "
 			"format that is not supported by the audio device.\n\n"
-			"Please try again with the aucat(1) server running.",
+			"Please try again with the sndiod(1) server running.",
 			"OK", FALSE, NULL, NULL);
 		goto error;
 	}
@@ -225,17 +292,18 @@ op_open (AFormat fmt, int rate, int nch)
 	rdpos = 0;
 	wrpos = 0;
 	sio_onmove (hdl, onmove_cb, NULL);
+	sio_onvol (hdl, onvol_cb, NULL);
 
+	bytes_per_sec = par.bps * par.pchan * par.rate;
+	pause_pending = flush_pending = volume_pending = 0;
+	restarted = 1;
 	paused = 0;
 	if (!sio_start (hdl)) {
 		fprintf (stderr, "%s: failed to start audio device\n",
 			__func__);
 		goto error;
 	}
-
-	bytes_per_sec = par.bps * par.pchan * par.rate;
 	pthread_mutex_unlock (&mutex);
-	op_set_volume (volume, volume);
 	return TRUE;
 
 error:
@@ -247,10 +315,8 @@ error:
 static void
 op_write (void *ptr, int len)
 {
+	unsigned n;
 	EffectPlugin *ep;
-
-	if (paused)
-		return;
 
 	/* This sucks but XMMS totally broke the effect plugin code when
 	   they added support for multiple enabled effects.  Complain to
@@ -259,13 +325,23 @@ op_write (void *ptr, int len)
 	ep = get_current_effect_plugin ();
 	ep->mod_samples (&ptr, len, afmt, par.rate, par.pchan);
 
-	/* Do not lock sio_write as this will cause the GUI thread
-	   to block waiting for a blocked sio_write to return. */
-	len = sio_write (hdl, ptr, len);
-
-	pthread_mutex_lock (&mutex);
-	wrpos += len;
-	pthread_mutex_unlock (&mutex);
+	pthread_mutex_lock(&mutex);
+	for (;;) {
+		pending_events();
+		if (paused)
+			break;
+		restarted = 0;
+		n = sio_write(hdl, ptr, len);
+		if (n == 0 && sio_eof(hdl))
+			break;
+		wrpos += n;
+		len -= n;
+		ptr = (char *)ptr + n;
+		if (len == 0)
+			break;
+		wait_ready();
+	}
+	pthread_mutex_unlock(&mutex);
 }
 
 static void
@@ -285,8 +361,8 @@ op_seek (int time_ms)
 	int bufused;
 
 	pthread_mutex_lock (&mutex);
-	bufused = (rdpos < 0) ? wrpos : wrpos - rdpos;
-	rdpos = time_ms / 1000 * bytes_per_sec;
+	bufused = wrpos - rdpos;
+	rdpos = (long long)time_ms * bytes_per_sec / 1000;
 	wrpos = rdpos + bufused;
 	pthread_mutex_unlock (&mutex);
 }
@@ -294,20 +370,30 @@ op_seek (int time_ms)
 static void
 op_pause (short flag)
 {
+	pthread_mutex_lock(&mutex);
 	paused = flag;
+	pause_pending = 1;
+	pthread_mutex_unlock(&mutex);
 }
 
 static int
 op_buffer_free (void)
 {
 #define MAGIC 1000000 /* See Output/{OSS,sun,esd}/audio.c */
-	return paused ? 0 : MAGIC; 
+	int ret;
+
+	pthread_mutex_lock(&mutex);
+	pending_events();
+	ret = paused ? 0 : MAGIC; 
+	pthread_mutex_unlock(&mutex);
+	return ret;
 }
 
 static int
 op_playing (void)
 {
-	return paused ? TRUE : FALSE;
+	/* sndio drains in the background, do as we're done */
+	return FALSE;
 }
 
 static int
@@ -333,18 +419,10 @@ op_get_written_time (void)
 }
 
 static void
-onmove_cb (void *addr, int delta)
-{
-	pthread_mutex_lock (&mutex);
-	rdpos += delta * (int)(par.bps * par.pchan);
-	pthread_mutex_unlock (&mutex);
-}
-
-static void
 op_configure(void)
 {
 	GtkWidget *dev_vbox;
-	GtkWidget *adevice_frame, *adevice_text, *adevice_vbox;
+	GtkWidget *adevice_frame, *adevice_vbox;
 	GtkWidget *bbox, *ok, *cancel;
 
 	if (configure_win) {
@@ -370,9 +448,6 @@ op_configure(void)
 	adevice_vbox = gtk_vbox_new(FALSE, 5);
 	gtk_container_set_border_width(GTK_CONTAINER(adevice_vbox), 5);
 	gtk_container_add(GTK_CONTAINER(adevice_frame), adevice_vbox);
-
-	adevice_text = gtk_label_new(_("(empty means default)"));
-	gtk_box_pack_start_defaults(GTK_BOX(adevice_vbox), adevice_text);
 
 	adevice_entry = gtk_entry_new();
 	gtk_entry_set_text(GTK_ENTRY(adevice_entry), audiodev);
