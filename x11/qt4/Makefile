@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2012/09/01 14:37:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2012/09/06 12:38:35 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 SHARED_ONLY =		Yes
@@ -24,7 +24,7 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-mysql=		0
 REVISION-postgresql=	0
 REVISION-examples=	0

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2012/09/06 11:47:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2012/09/06 12:38:35 ajacoutot Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 GNOME_PROJECT=		clutter-gst
 GNOME_VERSION=		1.6.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  clutter-gst-1.0    0.0      # 406.0
 

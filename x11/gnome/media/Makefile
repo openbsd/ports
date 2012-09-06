@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.66 2012/06/15 08:30:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/09/06 12:38:35 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	3.4.0
-REVISION=	0
+REVISION=	1
 
 # GPLv2/GFDLv1.1/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes

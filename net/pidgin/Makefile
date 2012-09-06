@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.112 2012/09/06 12:38:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,11 +9,11 @@ COMMENT-libpurple= multi-protocol instant messaging library
 VERSION=	2.10.6
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
-REVISION-main=	1
+REVISION-main=	2
 PKGNAME-finch=	finch-${VERSION}
-REVISION-finch=	1
+REVISION-finch=	2
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-libpurple= 1
+REVISION-libpurple= 2
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}

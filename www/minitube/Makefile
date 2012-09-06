@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2012/06/29 14:38:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/06 12:38:35 ajacoutot Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
 DISTNAME =	minitube-1.8
+REVISION =	0
 
 CATEGORIES =	www multimedia
 

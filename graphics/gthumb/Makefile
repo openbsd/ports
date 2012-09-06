@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2012/09/06 12:38:35 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
 GNOME_VERSION=	3.0.2
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 
