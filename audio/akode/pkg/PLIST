@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/26 02:01:11 jakemsr Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.10 2012/09/07 06:19:19 ajacoutot Exp $
 bin/akode-config
 @bin bin/akodeplay
 include/akode/
@@ -30,17 +29,10 @@ include/akode/volumefilter.h
 include/akode/wav_decoder.h
 lib/libakode.a
 lib/libakode.la
-@comment lib/libakode_ffmpeg_decoder.a
-@comment lib/libakode_ffmpeg_decoder.la
-@comment lib/libakode_jack_sink.a
-@comment lib/libakode_jack_sink.la
-@comment lib/libakode_mpc_decoder.a
-@comment lib/libakode_mpc_decoder.la
-@comment lib/libakode_mpeg_decoder.a
-@comment lib/libakode_mpeg_decoder.la
-@comment lib/libakode_sndio_sink.a
-@comment lib/libakode_sndio_sink.la
-@comment lib/libakode_src_resampler.a
-@comment lib/libakode_src_resampler.la
-@comment lib/libakode_xiph_decoder.a
-@comment lib/libakode_xiph_decoder.la
+@lib lib/libakode.so.${LIBakode_VERSION}
+lib/libakode_ffmpeg_decoder.so
+lib/libakode_mpc_decoder.so
+lib/libakode_mpeg_decoder.so
+lib/libakode_sndio_sink.so
+lib/libakode_src_resampler.so
+lib/libakode_xiph_decoder.so

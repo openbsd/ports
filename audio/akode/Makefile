@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2012/08/22 20:14:05 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2012/09/07 06:19:19 ajacoutot Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-REVISION=	18
+REVISION=	19
 
 SHARED_LIBS +=	akode                2.1      # .2.0
 
@@ -21,18 +23,18 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	FLAC avcodec avformat avutil bz2 c gsm jack ltdl m mad \
-		mp3lame ogg orc-0.4 pthread samplerate schroedinger-1.0 \
-		sndio speex stdc++ theoradec theoraenc vorbis vorbisenc \
-		vorbisfile vpx x264 xvidcore z
+WANTLIB=	FLAC avcodec avformat avutil bz2 c gsm ltdl m mad mp3lame ogg \
+		orc-0.4 pthread samplerate schroedinger-1.0 sndio speex stdc++ \
+		theoradec theoraenc vorbis vorbisenc vorbisfile vpx x264 \
+		xvidcore z
 
 LIB_DEPENDS=	audio/flac \
 		audio/libmad \
+		audio/libsamplerate \
 		audio/speex \
 		audio/libvorbis \
 		devel/libtool,-ltdl \
-		graphics/ffmpeg>=20100512 \
-		audio/jack
+		graphics/ffmpeg>=20100512
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -48,7 +50,7 @@ AUTOMAKE_VERSION=	1.9
 CONFIGURE=		/bin/sh ${WRKDIST}/admin/cvs.sh configure
 CONFIGURE_ARGS+=	--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib \
-			--with-jack \
+			--without-jack \
 			--without-polyaudio \
 			--without-oss \
 			--without-sun
@@ -62,5 +64,9 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
+
+post-install:
+	@rm ${PREFIX}/lib/libakode_*.a
+	@rm ${PREFIX}/lib/libakode_*.la
 
 .include <bsd.port.mk>
