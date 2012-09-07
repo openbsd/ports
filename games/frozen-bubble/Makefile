@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/09/02 20:52:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/07 08:12:50 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -26,7 +26,8 @@ MASTER_SITES =		${HOMEPAGE}/data/
 EXTRACT_SUFX =		.tar.bz2
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
+
+MAKE_ENV =	LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
 
 # No regress tests here
 NO_REGRESS =		Yes
