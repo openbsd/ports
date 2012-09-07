@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/06 12:38:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/07 07:17:46 landry Exp $
 
 COMMENT =	Xfce4 media player
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 # plugins-ffmpeg needed to play mpeg vidz
 # plugins-ugly needed to play mp3
 RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good \
-		multimedia/gstreamer-0.10/plugins,-ugly \
+		multimedia/gstreamer-0.10/plugins-ugly \
 		multimedia/gstreamer-0.10/plugins-ffmpeg
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
