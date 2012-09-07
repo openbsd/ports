@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: samhain_signed.rc,v 1.1 2012/05/18 10:28:05 robert Exp $
+# $OpenBSD: samhain_signed.rc,v 1.2 2012/09/07 13:39:43 ajacoutot Exp $
 
-daemon="${TRUEPREFIX}/sbin/samhain.signed"
+daemon="${TRUEPREFIX}/sbin/samhain.signed -t check"
 
 . /etc/rc.d/rc.subr
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/06/25 18:54:07 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/07 13:39:43 ajacoutot Exp $
 
 COMMENT-main=		Samhain Intrusion Detection System - documentation
 COMMENT-client=		Samhain Intrusion Detection System - client
@@ -12,9 +12,9 @@ FULLPKGNAME-client=	samhain-${VERSION}
 FULLPKGPATH-client=	security/samhain,-client
 PKGNAME-server=		samhain-server-${VERSION}
 
-REVISION-main=		2
-REVISION-client=	6
-REVISION-server=	4
+REVISION-main=		3
+REVISION-client=	7
+REVISION-server=	5
 
 CATEGORIES=		security
 
@@ -35,7 +35,6 @@ CONFIGURE_ARGS=		--enable-login-watch \
 			--with-state-dir=/var/samhain \
 			--enable-suidcheck \
 			--enable-identity=_yule \
-			--enable-xml-log \
 			--enable-network=server
 
 NO_REGRESS=		Yes
@@ -52,6 +51,7 @@ RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/mysql,-main
 WANTLIB-server+=	c crypto m mysqlclient ssl z
 CONFIGURE_ARGS+=	--with-database=mysql \
+			--enable-xml-log \
 			--with-cflags=-I${LOCALBASE}/include/mysql \
 			--with-libs=-L${LOCALBASE}/lib/mysql
 .elif ${FLAVOR} == "postgresql"
@@ -59,7 +59,8 @@ MULTI_PACKAGES+=	-server
 RUN_DEPENDS-server+=	security/samhain,-main
 LIB_DEPENDS-server+=	databases/postgresql,-main
 WANTLIB-server+=	c m pq
-CONFIGURE_ARGS+=	--with-database=postgresql
+CONFIGURE_ARGS+=	--with-database=postgresql \
+			--enable-xml-log
 .elif empty(FLAVOR)
 MULTI_PACKAGES+=	-client
 RUN_DEPENDS-client+=	security/samhain,-main
