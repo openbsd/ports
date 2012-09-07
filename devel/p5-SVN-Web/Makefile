@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/07 08:09:59 sthen Exp $
 
 COMMENT=	subversion repository web frontend
 
 MODULES=	cpan
 DISTNAME=	SVN-Web-0.48
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel perl5
-USE_GROFF =	Yes
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,6 +28,9 @@ RUN_DEPENDS=	devel/subversion,-perl \
 # tests broken on sparc64, server doesn't really work either
 #		www/p5-HTTP-Server-Simple
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CONFIGURE_ENV= LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
+MAKE_ENV=      LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
 
 CONFIGURE_STYLE=modbuild
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2012/09/07 08:09:59 sthen Exp $
 
 COMMENT=	decentralized version control system
 
 V=		2.2.1
+REVISION=	0
 DISTNAME=	SVK-v${V}
 PKGNAME=	svk-${V}
 CATEGORIES=	devel perl5
@@ -46,7 +47,8 @@ RUN_DEPENDS=	devel/p5-Algorithm-Annotate>=0.10 \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 CONFIGURE_STYLE= perl
-USE_GROFF =	Yes
+
+CONFIGURE_ENV=	LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
 
 REGRESS_DEPENDS=devel/p5-BSD-Resource \
 		devel/p5-Test-Pod

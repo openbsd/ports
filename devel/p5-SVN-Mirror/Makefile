@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/07 08:09:59 sthen Exp $
 
 COMMENT=	subversion repository mirroring tool
 
 DISTNAME=	SVN-Mirror-0.75
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 RUN_DEPENDS=	devel/p5-SVN-Simple>=0.27 \
 		devel/p5-Class-Accessor>=0.19 \
 		devel/p5-Data-UUID>=0.11 \
@@ -26,5 +25,7 @@ RUN_DEPENDS=	devel/p5-SVN-Simple>=0.27 \
 		textproc/p5-Sort-Versions>=1.5 \
 		www/p5-URI>=1.30
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CONFIGURE_ENV+= LD_PRELOAD=libpthread.so # XXX remove when perl is -lpthread
 
 .include <bsd.port.mk>
