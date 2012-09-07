@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.182 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2012/09/07 14:40:59 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
-DISTNAME=		glib-2.32.4
+V=			2.32.4
+DISTNAME=		glib-${V}
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
 
@@ -28,7 +29,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c elf ffi pcre pthread z
 
-MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/}
+MASTER_SITES=		${MASTER_SITE_GNOME:=sources/glib/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
 MODULES=		devel/gettext \
 			lang/python
