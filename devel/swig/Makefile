@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2012/09/03 08:11:40 jeremy Exp $
+# $OpenBSD: Makefile,v 1.54 2012/09/07 21:38:00 sthen Exp $
 
 COMMENT=	simplified wrapper and interface generator
 
@@ -27,12 +27,13 @@ BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS} \
 
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE= gnu 
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-tclincl=${MODTCL_INCDIR} \
 		 --with-tcllib=${MODTCL_LIBDIR} \
 		 --with-guilelib=${LOCALBASE}/lib \
 		 --with-python=${MODPY_BIN} \
 		 --with-ruby=${RUBY} \
+		 --without-mzscheme \
 		 --without-php4 \
 		 --without-ocaml
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Tools/config
