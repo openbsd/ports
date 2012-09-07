@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/07 07:19:36 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.4.2
-REVISION=	0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/GnomeShell
 
@@ -44,6 +44,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			net/telepathy/folks \
 			net/telepathy/telepathy-logger \
 			sysutils/polkit \
+			www/libcroco \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
 			x11/gnome/menus \
