@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.29 2012/09/06 12:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2012/09/08 16:00:40 ajacoutot Exp $
 
 COMMENT=		ffmpeg element for GStreamer
 
 V=			0.10.13
 DISTNAME=		gst-ffmpeg-${V}
 PKGNAME=		gstreamer-ffmpeg-${V}
-REVISION=		2
+REVISION=		3
+
+# sync with graphics/ffmpeg
+PERMIT_PACKAGE_CDROM=	patents
 
 WANTLIB += avcodec avformat avutil bz2 ffi glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gsm gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10
