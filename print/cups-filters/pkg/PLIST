@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/08 07:55:30 ajacoutot Exp $
 @conflict cups-<1.6.0
+@exec-update [ -h ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf ] && rm -f ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf || true
 %%SHARED%%
 @bin bin/ttfread
 include/cupsfilters/
@@ -18,9 +19,11 @@ lib/libfontembed.la
 lib/pkgconfig/
 lib/pkgconfig/libcupsfilters.pc
 lib/pkgconfig/libfontembed.pc
+libexec/cups/
 libexec/cups/backend/
 @bin libexec/cups/backend/parallel
 @bin libexec/cups/backend/serial
+libexec/cups/filter/
 @bin libexec/cups/filter/bannertopdf
 @bin libexec/cups/filter/commandtoescpx
 @bin libexec/cups/filter/commandtopclx
@@ -38,6 +41,7 @@ libexec/cups/filter/pstopdf
 libexec/cups/filter/textonly
 @bin libexec/cups/filter/texttopdf
 libexec/cups/filter/texttops
+share/cups/
 share/cups/banners/
 share/cups/banners/classified
 share/cups/banners/confidential
@@ -66,13 +70,10 @@ share/doc/cups-filters/NEWS
 share/doc/cups-filters/README
 share/examples/cups-filters/
 share/examples/cups-filters/99pdftoopvp.conf
-@sample ${SYSCONFDIR}/fonts/conf.avail/99-pdftoopvp.conf
+@sample ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf
 share/ppd/
 share/ppd/cupsfilters/
 share/ppd/cupsfilters/Generic-PDF_Printer-PDF.ppd
 share/ppd/cupsfilters/HP-Color_LaserJet_CM3530_MFP-PDF.ppd
 share/ppd/cupsfilters/HP-PhotoSmart_Pro_B8300-hpijs-pdftoijs.ppd
 share/ppd/cupsfilters/textonly.ppd
-@comment XXX should be exec-add but since we have a @conflict pkg_add(1) may turn it into an exec-update
-@exec ln -sf ../conf.avail/99-pdftoopvp.conf ${SYSCONFDIR}/fonts/conf.d/
-@unexec-delete rm ${SYSCONFDIR}/fonts/conf.d/99-pdftoopvp.conf

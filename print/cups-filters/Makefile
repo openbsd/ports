@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/01 18:35:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/08 07:55:30 ajacoutot Exp $
+
+# XXX remove @exec-update when we branch 5.4-current
 
 COMMENT=	OpenPrinting CUPS filters
 
-DISTNAME=	cups-filters-1.0.23
+DISTNAME=	cups-filters-1.0.24
 CATEGORIES=	print
 
 SHARED_LIBS +=  cupsfilters               0.0 # 1.0
@@ -35,7 +37,7 @@ BUILD_DEPENDS=	print/ghostscript/gnu
 LIB_DEPENDS=	print/cups,-libs \
 		print/ijs \
 		print/poppler \
-		print/qpdf
+		print/qpdf>=3.0.2
 
 # make it easier for users: bring in foomatic-filters, ghostscript
 # (with gstoraster) and allow the regeneration of PPD files from
