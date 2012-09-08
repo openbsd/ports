@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2012/09/08 08:03:03 rpointel Exp $
+--- setup.py.orig	Wed Sep  5 17:36:36 2012
++++ setup.py	Thu Sep  6 09:01:24 2012
+@@ -421,7 +421,7 @@ def setup_posix():
+     _data_files += [(os.path.join('share', root),
+         [os.path.join(root, file_) for file_ in files])
+         for root, dirs, files in os.walk('locale')]
+-    _data_files += [('/usr/share/nautilus-python/extensions/',
++    _data_files += [('lib/nautilus/extensions-3.0',
+                      ['contrib/nautilus-thg.py'])]
+ 
+     # Create a config.py.  Distributions will need to supply their own

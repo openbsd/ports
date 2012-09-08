@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/12 07:17:19 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/08 08:03:03 rpointel Exp $
 bin/thg
 lib/nautilus/
-lib/nautilus/extensions-2.0/
-lib/nautilus/extensions-2.0/python/
-lib/nautilus/extensions-2.0/python/nautilus-thg.py
+lib/nautilus/extensions-3.0/
+lib/nautilus/extensions-3.0/nautilus-thg.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/
 lib/python${MODPY_VERSION}/site-packages/tortoisehg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/__init__.py
@@ -41,12 +40,16 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/csinfo.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/csinfo.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cslist.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/cslist.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/customtools.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/dnd.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/dnd.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/docklog.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filectxactions.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filectxactions.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedata.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedata.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filedialogs.py
@@ -59,6 +62,8 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filerevmodel.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/filerevmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileview.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/fileview.pyc
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graft.py
+lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graft.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graph.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/graph.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/hgqt/grep.py
@@ -232,8 +237,6 @@ lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/patchctx.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/paths.pyc
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/prej.py
-lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/prej.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/settings.py
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/settings.pyc
 lib/python${MODPY_VERSION}/site-packages/tortoisehg/util/shlib.py
