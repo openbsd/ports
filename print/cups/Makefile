@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.139 2012/08/23 16:25:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2012/09/08 07:54:03 ajacoutot Exp $
 
 COMMENT-main=		Common Unix Printing System
 COMMENT-libs=		CUPS libraries and headers
@@ -7,8 +7,8 @@ VERSION=		1.6.1
 DISTNAME=		cups-${VERSION}-source
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION-main=		2
-REVISION-libs=		2
+REVISION-main=		3
+REVISION-libs=		3
 
 PKGNAME-main=		cups-${VERSION}
 PKGNAME-libs=		cups-libs-${VERSION}
@@ -31,11 +31,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += asn1 c crypto gssapi krb5 m pthread
+WANTLIB += asn1 crypto gssapi krb5 m pthread
 WANTLIB += ssl stdc++ z
 
 WANTLIB-main += ${WANTLIB}
-WANTLIB-main += cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
+WANTLIB-main += c cups cupscgi cupsimage cupsmime cupsppdc dbus-1 usb-1.0
 
 MASTER_SITES=		http://ftp.easysw.com/pub/cups/${VERSION}/ \
 			http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
