@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.16 2011/12/15 21:35:18 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/09 19:38:25 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
-SVN_REV=		3592
-DISTNAME=		josm-1.5.${SVN_REV}
-REVISION=		2
+SVN_REV=		5485
+DISTNAME=		josm-snapshot-${SVN_REV}
+EXTRACT_SUFX =		.jar
+EXTRACT_CASES+=		*.jar) unzip -qa ${FULLDISTDIR}/$$archive -d ${WRKDIST};;
+PKGNAME=		josm-${SVN_REV}
 
 PKG_ARCH=		*
 
 CATEGORIES=		geo
 
 HOMEPAGE=		http://josm.openstreetmap.de/
-MASTER_SITES=		http://www.darwinsys.com/mirror/
+MASTER_SITES=		${HOMEPAGE}/download/
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
@@ -24,21 +26,17 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		java \
 			textproc/intltool
 MODJAVA_VER=		1.6+
-MODJAVA_BUILD=		ant
-MODJAVA_BUILD_ARGS=	-Dant.build.javac.source="1.5" \
-			-Dant.build.javac.target="1.5"
-MODJAVA_BUILD_TARGET=	dist
-
-BUILD_DEPENDS=		devel/apache-ant
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 NO_REGRESS=		Yes
+NO_BUILD=		Yes
+NO_EXTRACT=		Yes
 
 INSTALL_DIR =		josm
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/${INSTALL_DIR}
-	${INSTALL_DATA} $(WRKDIST)/dist/josm-custom.jar ${PREFIX}/share/${INSTALL_DIR}/josm-latest.jar
+	${INSTALL_DATA} $(DISTDIR)/${DISTNAME}${EXTRACT_SUFX} ${PREFIX}/share/${INSTALL_DIR}/josm-latest.jar
 	@${SUBST_CMD} -c files/josm.sh $(PREFIX)/bin/josm
 	chown ${BINOWN}:${BINGRP} $(PREFIX)/bin/josm
 	chmod +x $(PREFIX)/bin/josm
