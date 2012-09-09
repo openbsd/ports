@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/15 08:30:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/09 20:34:58 landry Exp $
 @bin bin/parole
 include/parole/
 include/parole/parole-debug.h
@@ -10,6 +10,9 @@ include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
 include/parole/parole.h
 lib/parole-0/
+@comment lib/parole-0/power-manager-plugin.a
+@comment lib/parole-0/power-manager-plugin.la
+lib/parole-0/power-manager-plugin.so
 @comment lib/parole-0/stream-properties.a
 @comment lib/parole-0/stream-properties.la
 lib/parole-0/stream-properties.so
@@ -18,13 +21,13 @@ lib/parole-0/stream-properties.so
 lib/parole-0/tray-icon.so
 @comment lib/parole-0/window-title.a
 @comment lib/parole-0/window-title.la
-lib/parole-0/window-title.so
 share/applications/parole.desktop
 share/icons/hicolor/16x16/apps/parole.png
-share/icons/hicolor/22x22/apps/parole.png
+share/icons/hicolor/24x24/apps/parole.png
 share/icons/hicolor/32x32/apps/parole.png
 share/icons/hicolor/48x48/apps/parole.png
 share/icons/hicolor/scalable/apps/parole.svg
+share/locale/ar/LC_MESSAGES/parole.mo
 share/locale/ast/LC_MESSAGES/parole.mo
 share/locale/ca/LC_MESSAGES/parole.mo
 share/locale/cs/LC_MESSAGES/parole.mo
@@ -36,28 +39,38 @@ share/locale/es/LC_MESSAGES/parole.mo
 share/locale/eu/LC_MESSAGES/parole.mo
 share/locale/fr/LC_MESSAGES/parole.mo
 share/locale/gl/LC_MESSAGES/parole.mo
+share/locale/he/LC_MESSAGES/parole.mo
+share/locale/hr/LC_MESSAGES/parole.mo
 share/locale/hu/LC_MESSAGES/parole.mo
 share/locale/id/LC_MESSAGES/parole.mo
+share/locale/is/LC_MESSAGES/parole.mo
 share/locale/it/LC_MESSAGES/parole.mo
 share/locale/ja/LC_MESSAGES/parole.mo
+share/locale/ko/LC_MESSAGES/parole.mo
+share/locale/lt/LC_MESSAGES/parole.mo
 share/locale/lv/LC_MESSAGES/parole.mo
 share/locale/nl/LC_MESSAGES/parole.mo
+share/locale/nn/LC_MESSAGES/parole.mo
+share/locale/pl/LC_MESSAGES/parole.mo
 share/locale/pt/LC_MESSAGES/parole.mo
 share/locale/pt_BR/LC_MESSAGES/parole.mo
 share/locale/ru/LC_MESSAGES/parole.mo
 share/locale/sk/LC_MESSAGES/parole.mo
+share/locale/sr/LC_MESSAGES/parole.mo
 share/locale/sv/LC_MESSAGES/parole.mo
+share/locale/te/LC_MESSAGES/parole.mo
+share/locale/th/LC_MESSAGES/parole.mo
 share/locale/tr/LC_MESSAGES/parole.mo
 share/locale/ug/LC_MESSAGES/parole.mo
 share/locale/uk/LC_MESSAGES/parole.mo
 share/locale/zh_CN/LC_MESSAGES/parole.mo
+share/locale/zh_TW/LC_MESSAGES/parole.mo
 share/parole/
 share/parole/parole-plugins-0/
+share/parole/parole-plugins-0/power-manager.desktop
 share/parole/parole-plugins-0/stream-properties.desktop
 share/parole/parole-plugins-0/system-tray.desktop
-share/parole/parole-plugins-0/window-title.desktop
 share/parole/pixmaps/
-share/parole/pixmaps/loader.gif
 share/parole/pixmaps/parole.png
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
