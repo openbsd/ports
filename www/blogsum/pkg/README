@@ -1,23 +1,19 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2012/09/09 20:56:38 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-#########################
-### UPGRADING BLOGSUM ###
-#########################
-
+Upgrading Blogsum
+=================
 1) Add any new settings from Blogsum/Config.pm.dist into your
    local Blogsum/Config.pm.
 
 2)  Stop and start your Apache service.
 
 
-##########################
-### INSTALLING BLOGSUM ###
-##########################
-
+Installing Blogsum
+==================
 1)  Enable the mod_perl module:
 
 	$ sudo mod_perl-enable
