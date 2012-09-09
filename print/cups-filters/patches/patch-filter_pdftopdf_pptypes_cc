@@ -1,6 +1,6 @@
-$OpenBSD: patch-filter_pdftopdf_pptypes_cc,v 1.1 2012/09/01 18:35:15 ajacoutot Exp $
+$OpenBSD: patch-filter_pdftopdf_pptypes_cc,v 1.2 2012/09/09 14:25:10 ajacoutot Exp $
 
-filter/pdftopdf/pptypes.cc:166:21: error: 'isnan' was not declared in this scope
+https://bugs.linuxfoundation.org/show_bug.cgi?id=1068
 
 --- filter/pdftopdf/pptypes.cc.orig	Sat Aug 25 15:42:18 2012
 +++ filter/pdftopdf/pptypes.cc	Sat Aug 25 15:42:40 2012
