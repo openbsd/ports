@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/11 08:42:18 robert Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/09/09 17:05:02 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -1265,6 +1265,7 @@ share/rt3/html/NoAuth/css/base/collection.css
 share/rt3/html/NoAuth/css/base/farbtastic.css
 share/rt3/html/NoAuth/css/base/forms.css
 share/rt3/html/NoAuth/css/base/history-folding.css
+share/rt3/html/NoAuth/css/base/jquery-ui-timepicker-addon.css
 share/rt3/html/NoAuth/css/base/jquery-ui.css
 share/rt3/html/NoAuth/css/base/jquery-ui.custom.modified.css
 share/rt3/html/NoAuth/css/base/login.css
@@ -1281,8 +1282,6 @@ share/rt3/html/NoAuth/css/base/theme-editor.css
 share/rt3/html/NoAuth/css/base/ticket-form.css
 share/rt3/html/NoAuth/css/base/ticket.css
 share/rt3/html/NoAuth/css/base/tools.css
-share/rt3/html/NoAuth/css/base/ui.timepickr.css
-share/rt3/html/NoAuth/css/base/ui.timepickr.custom.css
 share/rt3/html/NoAuth/css/base/yui-fonts.css
 share/rt3/html/NoAuth/css/dhandler
 share/rt3/html/NoAuth/css/images/
@@ -1389,6 +1388,7 @@ share/rt3/html/NoAuth/js/history-folding.js
 share/rt3/html/NoAuth/js/jquery-1.4.2.min.js
 share/rt3/html/NoAuth/js/jquery-ui-1.8.4.custom.min.js
 share/rt3/html/NoAuth/js/jquery-ui-patch-datepicker.js
+share/rt3/html/NoAuth/js/jquery-ui-timepicker-addon.js
 share/rt3/html/NoAuth/js/jquery.event.hover-1.0.js
 share/rt3/html/NoAuth/js/jquery.supposition.js
 share/rt3/html/NoAuth/js/jquery.tablesorter.min.js
@@ -1398,7 +1398,6 @@ share/rt3/html/NoAuth/js/list.js
 share/rt3/html/NoAuth/js/superfish.js
 share/rt3/html/NoAuth/js/supersubs.js
 share/rt3/html/NoAuth/js/titlebox-state.js
-share/rt3/html/NoAuth/js/ui.timepickr.js
 share/rt3/html/NoAuth/js/userautocomplete.js
 share/rt3/html/NoAuth/js/util.js
 share/rt3/html/NoAuth/rss/
