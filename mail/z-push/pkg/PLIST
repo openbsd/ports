@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/06/25 06:47:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/09/09 17:15:59 robert Exp $
 @extraunexec rm -rf /var/www/var/db/z-push/*
 @extraunexec rm -rf /var/www/var/log/z-push/*
 @unexec-delete rm -f /var/www/conf/modules/z-push.conf
@@ -62,6 +62,7 @@ z-push/lib/core/devicemanager.php
 z-push/lib/core/hierarchycache.php
 z-push/lib/core/interprocessdata.php
 z-push/lib/core/loopdetection.php
+z-push/lib/core/paddingfilter.php
 z-push/lib/core/pingtracking.php
 z-push/lib/core/statemanager.php
 z-push/lib/core/stateobject.php
