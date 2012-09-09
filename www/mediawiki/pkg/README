@@ -1,11 +1,9 @@
-$OpenBSD: README,v 1.1 2012/05/07 13:35:47 okan Exp $
+$OpenBSD: README,v 1.2 2012/09/09 21:00:10 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-Setup with httpd from OpenBSD base system
-=========================================
 The MediaWiki has been installed into ${INSTDIR}
 
 You should point this to the DocumentRoot of your web server:
