@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2012/09/10 08:13:16 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/10 08:21:22 ajacoutot Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -31,7 +31,6 @@ RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 NO_REGRESS=		Yes
 NO_BUILD=		Yes
-NO_EXTRACT=		Yes
 
 INSTALL_DIR =		josm
 
