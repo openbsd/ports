@@ -1,9 +1,11 @@
-$OpenBSD: patch-configure,v 1.6 2012/03/29 06:41:05 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.7 2012/09/10 07:42:33 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=627126
 
---- configure.orig	Mon Mar 19 21:11:55 2012
-+++ configure	Fri Mar 23 22:06:09 2012
+Fix DATADIRNAME: see LOCALBASE/share/aclocal/{glib-gettext.m4,intltool.m4}
+
+--- configure.orig	Mon Sep 10 09:10:25 2012
++++ configure	Mon Sep 10 09:10:26 2012
 @@ -11372,22 +11372,10 @@ install-data-am: install-gsettings-schemas
  
  .SECONDARY: $(gsettings_SCHEMAS)
@@ -29,3 +31,13 @@ https://bugzilla.gnome.org/show_bug.cgi?id=627126
  	test -n "$(GSETTINGS_DISABLE_SCHEMAS_COMPILE)$(DESTDIR)" || $(GLIB_COMPILE_SCHEMAS) $(gsettingsschemadir)
  
  uninstall-gsettings-schemas:
+@@ -12302,6 +12290,9 @@ else
+   DATADIRNAME=lib
+ fi
+ 
++    ;;
++    *-*-openbsd*)
++    DATADIRNAME=share
+     ;;
+     *)
+     DATADIRNAME=lib
