@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2012/08/25 13:30:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2012/09/10 10:24:12 ajacoutot Exp $
+
+# if ekiga ever moves to gstreamer, detect_sndiosink_devices() will need
+# to be implemented in:
+# plugins/gstreamer/gst-audiooutput.{cpp,h}
 
 SHARED_ONLY=	Yes
 
