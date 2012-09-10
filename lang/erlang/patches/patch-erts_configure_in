@@ -1,7 +1,7 @@
-$OpenBSD: patch-erts_configure_in,v 1.6 2012/09/06 00:57:54 matthew Exp $
---- erts/configure.in.orig	Sun Apr  1 11:15:00 2012
-+++ erts/configure.in	Wed Sep  5 14:52:08 2012
-@@ -3548,6 +3548,11 @@ case $host_os in
+$OpenBSD: patch-erts_configure_in,v 1.7 2012/09/10 20:35:19 jasper Exp $
+--- erts/configure.in.orig	Mon Sep  3 11:58:05 2012
++++ erts/configure.in	Mon Sep 10 08:55:28 2012
+@@ -3575,6 +3575,11 @@ case $host_os in
  			DED_LDFLAGS="-m32 $DED_LDFLAGS"
  		fi
  	;;	

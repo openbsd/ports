@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2012/05/26 09:08:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2012/09/10 20:35:19 jasper Exp $
 %%SHARED%%
 bin/ct_run
 bin/dialyzer
@@ -133,7 +133,7 @@ lib/erlang/doc/oam/terminology.gif
 lib/erlang/doc/oam/users_guide.html
 lib/erlang/doc/otp_doc.css
 lib/erlang/doc/pdf/
-lib/erlang/doc/pdf/otp-system-documentation-5.9.1.pdf
+lib/erlang/doc/pdf/otp-system-documentation-5.9.2.pdf
 lib/erlang/doc/programming_examples/
 lib/erlang/doc/programming_examples/bit_syntax.html
 lib/erlang/doc/programming_examples/funs.html
@@ -328,6 +328,7 @@ lib/erlang/${ERTS}/man/
 lib/erlang/${ERTS}/src/
 lib/erlang/${ERTS}/src/setuid_socket_wrap.c
 lib/erlang/lib/
+@comment lib/erlang/lib/${TOOLS}/emacs/test.erl.orig
 lib/erlang/lib/${APPMON}/
 lib/erlang/lib/${APPMON}/doc/
 lib/erlang/lib/${APPMON}/doc/html/
@@ -474,6 +475,7 @@ lib/erlang/lib/${COMMON_TEST}/doc/html/ct_hooks.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_hooks_chapter.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_master.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_master_chapter.html
+lib/erlang/lib/${COMMON_TEST}/doc/html/ct_netconfc.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_rpc.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_run.html
 lib/erlang/lib/${COMMON_TEST}/doc/html/ct_slave.html
@@ -505,6 +507,7 @@ lib/erlang/lib/${COMMON_TEST}/ebin/ct.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_config.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_config_plain.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_config_xml.beam
+lib/erlang/lib/${COMMON_TEST}/ebin/ct_conn_log_h.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_cover.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_event.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_framework.beam
@@ -518,6 +521,7 @@ lib/erlang/lib/${COMMON_TEST}/ebin/ct_master.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_master_event.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_master_logs.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_master_status.beam
+lib/erlang/lib/${COMMON_TEST}/ebin/ct_netconfc.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_repeat.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_rpc.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_run.beam
@@ -528,6 +532,7 @@ lib/erlang/lib/${COMMON_TEST}/ebin/ct_telnet.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_telnet_client.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_testspec.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/ct_util.beam
+lib/erlang/lib/${COMMON_TEST}/ebin/cth_conn_log.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/cth_log_redirect.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/cth_surefire.beam
 lib/erlang/lib/${COMMON_TEST}/ebin/unix_telnet.beam
@@ -538,6 +543,8 @@ lib/erlang/lib/${COMMON_TEST}/include/ct_event.hrl
 lib/erlang/lib/${COMMON_TEST}/info
 lib/erlang/lib/${COMMON_TEST}/priv/
 lib/erlang/lib/${COMMON_TEST}/priv/ct_default.css
+lib/erlang/lib/${COMMON_TEST}/priv/jquery-latest.js
+lib/erlang/lib/${COMMON_TEST}/priv/jquery.tablesorter.min.js
 lib/erlang/lib/${COMMON_TEST}/priv/tile1.jpg
 lib/erlang/lib/${COMMON_TEST}/priv/vts.tool
 lib/erlang/lib/${COMMON_TEST}/src/
@@ -545,6 +552,7 @@ lib/erlang/lib/${COMMON_TEST}/src/ct.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_config.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_config_plain.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_config_xml.erl
+lib/erlang/lib/${COMMON_TEST}/src/ct_conn_log_h.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_cover.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_event.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_framework.erl
@@ -558,6 +566,8 @@ lib/erlang/lib/${COMMON_TEST}/src/ct_master.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_master_event.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_master_logs.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_master_status.erl
+lib/erlang/lib/${COMMON_TEST}/src/ct_netconfc.erl
+lib/erlang/lib/${COMMON_TEST}/src/ct_netconfc.hrl
 lib/erlang/lib/${COMMON_TEST}/src/ct_repeat.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_rpc.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_run.erl
@@ -569,6 +579,7 @@ lib/erlang/lib/${COMMON_TEST}/src/ct_telnet_client.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_testspec.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_util.erl
 lib/erlang/lib/${COMMON_TEST}/src/ct_util.hrl
+lib/erlang/lib/${COMMON_TEST}/src/cth_conn_log.erl
 lib/erlang/lib/${COMMON_TEST}/src/cth_log_redirect.erl
 lib/erlang/lib/${COMMON_TEST}/src/cth_surefire.erl
 lib/erlang/lib/${COMMON_TEST}/src/unix_telnet.erl
@@ -1831,6 +1842,7 @@ lib/erlang/lib/${DIALYZER}/ebin/dialyzer_cl.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_cl_parse.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_codeserver.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_contracts.beam
+lib/erlang/lib/${DIALYZER}/ebin/dialyzer_coordinator.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_dataflow.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_dep.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_explanation.beam
@@ -1840,8 +1852,10 @@ lib/erlang/lib/${DIALYZER}/ebin/dialyzer_options.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_plt.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_races.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_succ_typings.beam
+lib/erlang/lib/${DIALYZER}/ebin/dialyzer_timing.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_typesig.beam
 lib/erlang/lib/${DIALYZER}/ebin/dialyzer_utils.beam
+lib/erlang/lib/${DIALYZER}/ebin/dialyzer_worker.beam
 lib/erlang/lib/${DIALYZER}/info
 lib/erlang/lib/${DIALYZER}/src/
 lib/erlang/lib/${DIALYZER}/src/dialyzer.erl
@@ -1853,6 +1867,7 @@ lib/erlang/lib/${DIALYZER}/src/dialyzer_cl.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_cl_parse.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_codeserver.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_contracts.erl
+lib/erlang/lib/${DIALYZER}/src/dialyzer_coordinator.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_dataflow.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_dep.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_explanation.erl
@@ -1863,8 +1878,10 @@ lib/erlang/lib/${DIALYZER}/src/dialyzer_options.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_plt.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_races.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_succ_typings.erl
+lib/erlang/lib/${DIALYZER}/src/dialyzer_timing.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_typesig.erl
 lib/erlang/lib/${DIALYZER}/src/dialyzer_utils.erl
+lib/erlang/lib/${DIALYZER}/src/dialyzer_worker.erl
 lib/erlang/lib/${DIAMETER}/
 lib/erlang/lib/${DIAMETER}/bin/
 lib/erlang/lib/${DIAMETER}/bin/diameterc
@@ -1929,6 +1946,7 @@ lib/erlang/lib/${DIAMETER}/ebin/diameter_sup.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_sync.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_tcp.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_tcp_sup.beam
+lib/erlang/lib/${DIAMETER}/ebin/diameter_transport.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_transport_sup.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_types.beam
 lib/erlang/lib/${DIAMETER}/ebin/diameter_watchdog.beam
@@ -2010,6 +2028,7 @@ lib/erlang/lib/${DIAMETER}/src/transport/diameter_sctp.erl
 lib/erlang/lib/${DIAMETER}/src/transport/diameter_sctp_sup.erl
 lib/erlang/lib/${DIAMETER}/src/transport/diameter_tcp.erl
 lib/erlang/lib/${DIAMETER}/src/transport/diameter_tcp_sup.erl
+lib/erlang/lib/${DIAMETER}/src/transport/diameter_transport.erl
 lib/erlang/lib/${DIAMETER}/src/transport/diameter_transport_sup.erl
 lib/erlang/lib/${EDOC}/
 lib/erlang/lib/${EDOC}/doc/
@@ -2501,7 +2520,6 @@ lib/erlang/lib/${EUNIT}/src/eunit.erl
 lib/erlang/lib/${EUNIT}/src/eunit_autoexport.erl
 lib/erlang/lib/${EUNIT}/src/eunit_data.erl
 lib/erlang/lib/${EUNIT}/src/eunit_lib.erl
-lib/erlang/lib/${EUNIT}/src/eunit_listener.erl
 lib/erlang/lib/${EUNIT}/src/eunit_proc.erl
 lib/erlang/lib/${EUNIT}/src/eunit_serial.erl
 lib/erlang/lib/${EUNIT}/src/eunit_server.erl
@@ -2763,7 +2781,6 @@ lib/erlang/lib/${HIPE}/cerl/cerl_cconv.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_closurean.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_hipe_primops.hrl
 lib/erlang/lib/${HIPE}/cerl/cerl_hipeify.erl
-lib/erlang/lib/${HIPE}/cerl/cerl_hybrid_transform.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_lib.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_messagean.erl
 lib/erlang/lib/${HIPE}/cerl/cerl_pmatch.erl
@@ -2785,7 +2802,6 @@ lib/erlang/lib/${HIPE}/ebin/
 lib/erlang/lib/${HIPE}/ebin/cerl_cconv.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_closurean.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_hipeify.beam
-lib/erlang/lib/${HIPE}/ebin/cerl_hybrid_transform.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_lib.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_messagean.beam
 lib/erlang/lib/${HIPE}/ebin/cerl_pmatch.beam
@@ -4958,6 +4974,8 @@ lib/erlang/lib/${RUNTIME_TOOLS}/examples/process-scheduling.d
 lib/erlang/lib/${RUNTIME_TOOLS}/examples/process-scheduling.systemtap
 lib/erlang/lib/${RUNTIME_TOOLS}/examples/spawn-exit.d
 lib/erlang/lib/${RUNTIME_TOOLS}/examples/spawn-exit.systemtap
+lib/erlang/lib/${RUNTIME_TOOLS}/examples/user-probe-n.d
+lib/erlang/lib/${RUNTIME_TOOLS}/examples/user-probe-n.systemtap
 lib/erlang/lib/${RUNTIME_TOOLS}/examples/user-probe.d
 lib/erlang/lib/${RUNTIME_TOOLS}/examples/user-probe.systemtap
 lib/erlang/lib/${RUNTIME_TOOLS}/include/
@@ -6025,7 +6043,7 @@ lib/erlang/lib/${TOOLS}/emacs/erlang-start.el
 lib/erlang/lib/${TOOLS}/emacs/erlang.el
 lib/erlang/lib/${TOOLS}/emacs/erlang_appwiz.el
 lib/erlang/lib/${TOOLS}/emacs/test.erl.indented
-@comment lib/erlang/lib/${TOOLS}/emacs/test.erl.orig
+lib/erlang/lib/${TOOLS}/emacs/test.erl.orig
 lib/erlang/lib/${TOOLS}/examples/
 lib/erlang/lib/${TOOLS}/examples/xref_examples.erl
 lib/erlang/lib/${TOOLS}/info
@@ -7249,6 +7267,7 @@ lib/erlang/man/man3/
 @man lib/erlang/man/man3/ct_ftp.3
 @man lib/erlang/man/man3/ct_hooks.3
 @man lib/erlang/man/man3/ct_master.3
+@man lib/erlang/man/man3/ct_netconfc.3
 @man lib/erlang/man/man3/ct_rpc.3
 @man lib/erlang/man/man3/ct_slave.3
 @man lib/erlang/man/man3/ct_snmp.3

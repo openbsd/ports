@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2012/09/06 00:57:54 matthew Exp $
+# $OpenBSD: Makefile,v 1.53 2012/09/10 20:35:19 jasper Exp $
 
 COMMENT=	real-time, concurrent and distributed functional language
 BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 
-V=		R15B01
+V=		R15B02
 DISTNAME=	otp_src_${V}
-PKGNAME=	erlang-15b.01
+PKGNAME=	erlang-15b.02
 EPOCH=		0
-REVISION=	1
 CATEGORIES=	lang
 
 # Erlang Public License
@@ -60,11 +59,11 @@ DOC_DIR=	${PREFIX}/lib/erlang
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-SYSTEM_VSN      R15B01 \
+SYSTEM_VSN      R15B02 \
 APPMON_VSN      2.1.14.1 \
-ASN1_VSN        1.7 \
-COMMON_TEST_VSN 1.6.1 \
-COMPILER_VSN    4.8.1 \
+ASN1_VSN        1.8 \
+COMMON_TEST_VSN 1.6.2 \
+COMPILER_VSN    4.8.2 \
 COSEVENT_VSN    2.1.12 \
 COSEVENTDOMAIN_VSN      1.1.12 \
 COSFILETRANSFER_VSN     1.1.13 \
@@ -72,52 +71,52 @@ COSNOTIFICATION_VSN     1.1.18 \
 COSPROPERTY_VSN 1.1.15 \
 COSTIME_VSN     1.1.12 \
 COSTRANSACTIONS_VSN     1.2.12 \
-CRYPTO_VSN      2.1 \
+CRYPTO_VSN      2.2 \
 DEBUGGER_VSN    3.2.8 \
-DIALYZER_VSN    2.5.1 \
-DIAMETER_VSN    1.1 \
-EDOC_VSN        0.7.9.1 \
+DIALYZER_VSN    2.5.2 \
+DIAMETER_VSN    1.2 \
+EDOC_VSN        0.7.10 \
 ELDAP_VSN       1.0 \
-ERL_DOCGEN_VSN  0.3.1 \
-EI_VSN  3.7.7 \
-ET_VSN  1.4.4.1 \
-EUNIT_VSN       2.2.2 \
+ERL_DOCGEN_VSN  0.3.2 \
+EI_VSN  3.7.8 \
+ET_VSN  1.4.4.2 \
+EUNIT_VSN       2.2.3 \
 GS_VSN  1.5.15.1 \
-HIPE_VSN        3.9.1 \
-IC_VSN  4.2.30 \
-INETS_VSN       5.9 \
+HIPE_VSN        3.9.2 \
+IC_VSN  4.2.31 \
+INETS_VSN       5.9.1 \
 INVISO_VSN      0.6.3 \
 JINTERFACE_VSN  1.5.6 \
-KERNEL_VSN      2.15.1 \
-MEGACO_VSN      3.16.0.1 \
-MNESIA_VSN      4.7 \
-OBSERVER_VSN    1.1 \
-ODBC_VSN        2.10.12 \
+KERNEL_VSN      2.15.2 \
+MEGACO_VSN      3.16.0.2 \
+MNESIA_VSN      4.7.1 \
+OBSERVER_VSN    1.2 \
+ODBC_VSN        2.10.13 \
 ORBER_VSN       3.6.24 \
-OS_MON_VSN      2.2.9 \
+OS_MON_VSN      2.2.10 \
 OTP_MIBS_VSN    1.0.7 \
 PARSETOOLS_VSN  2.0.7 \
 PERCEPT_VSN     0.8.6.1 \
 PMAN_VSN        2.7.1.2 \
-PUBLIC_KEY_VSN  0.15 \
-RELTOOL_VSN     0.6 \
-RUNTIME_TOOLS_VSN       1.8.8 \
+PUBLIC_KEY_VSN  0.16 \
+RELTOOL_VSN     0.6.1 \
+RUNTIME_TOOLS_VSN       1.8.9 \
 SASL_VSN        2.2.1 \
-SNMP_VSN        4.22 \
-SSH_VSN 2.1 \
-SSL_VSN 5.0.1 \
-STDLIB_VSN      1.18.1 \
-SYNTAX_TOOLS_VSN        1.6.8 \
-TEST_SERVER_VSN 3.5.1 \
+SNMP_VSN        4.22.1 \
+SSH_VSN 2.1.1 \
+SSL_VSN 5.1 \
+STDLIB_VSN      1.18.2 \
+SYNTAX_TOOLS_VSN        1.6.9 \
+TEST_SERVER_VSN 3.5.2 \
 TOOLBAR_VSN     1.4.2.2 \
 EMACS_VSN       2.4.13 \
-TOOLS_VSN       2.6.7 \
+TOOLS_VSN       2.6.8 \
 TV_VSN  2.1.4.9 \
-TYPER_VSN       0.9.3 \
+TYPER_VSN       0.9.4 \
 WX_VSN  0.99.2 \
-XMERL_VSN       1.3.1 \
+XMERL_VSN       1.3.2 \
 WEBTOOL_VSN     0.8.9.1 \
-ERTS_VSN        5.9.1
+ERTS_VSN        5.9.2
 
 .for _n _v in ${ERL_VERSIONS}
 ${_n}=${_v}
