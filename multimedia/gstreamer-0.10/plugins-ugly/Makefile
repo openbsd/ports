@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2012/09/06 14:30:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2012/09/10 08:05:09 ajacoutot Exp $
 
 COMMENT-main=		ugly elements for GStreamer
 COMMENT-sidplay=	sidplay element for GStreamer (plugins-ugly)
@@ -6,14 +6,15 @@ COMMENT-lame=		lame element for GStreamer (plugins-ugly)
 
 V=			0.10.19
 DISTNAME=		gst-plugins-ugly-${V}
+PKGNAME=		gstreamer-plugins-ugly-${V}
 
 PKGNAME-main=		gstreamer-plugins-ugly-${V}
 PKGNAME-sidplay=	gstreamer-sidplay-${V}
 PKGNAME-lame=		gstreamer-lame-${V}
 
-REVISION-main=		1
-REVISION-sidplay=	0
-REVISION-lame=		0
+REVISION-main=		2
+REVISION-sidplay=	1
+REVISION-lame=		1
 
 PERMIT_PACKAGE_CDROM=	Patent issues
 PERMIT_DISTFILES_CDROM=	Patent issues
