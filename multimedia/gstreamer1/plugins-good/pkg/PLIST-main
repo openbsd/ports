@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2012/09/10 11:32:32 ajacoutot Exp $
 lib/gstreamer-${VERSION}/libgstalaw.so
 lib/gstreamer-${VERSION}/libgstalpha.so
 lib/gstreamer-${VERSION}/libgstalphacolor.so

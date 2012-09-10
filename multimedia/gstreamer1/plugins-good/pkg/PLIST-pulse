@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-pulse,v 1.1 2012/09/10 11:32:32 ajacoutot Exp $
+lib/gstreamer-${VERSION}/libgstpulse.so
