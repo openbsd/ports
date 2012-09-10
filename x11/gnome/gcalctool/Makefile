@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2012/09/04 06:53:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2012/09/10 08:49:18 ajacoutot Exp $
 
 COMMENT=		GTK desktop calculator
 
@@ -6,6 +6,8 @@ GNOME_PROJECT=		gcalctool
 # XXX: dev. version, but unbreaks gcalctool since this issue was fixed:
 # https://bugzilla.gnome.org/show_bug.cgi?id=676092
 GNOME_VERSION=		6.5.91
+
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -34,5 +36,8 @@ RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
+
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
 
 .include <bsd.port.mk>
