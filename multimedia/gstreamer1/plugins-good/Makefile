@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/10 11:32:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/10 17:30:15 ajacoutot Exp $
 
 # XXX ossaudio(3) is only enabled to be used as a mixing device by
 # audio/pulseaudio and x11/xfce4/xfce4-mixer
@@ -14,6 +14,7 @@ PKGNAME-main=		${PKGNAME}
 PKGNAME-pulse=		${GST_PKGNAME_PREFIX}-plugins-pulse-${V}
 
 REVISION-main=		0
+REVISION-pulse=		0
 
 WANTLIB += ffi glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstpbutils-1.0 gstreamer-1.0 gsttag-1.0 gstvideo-1.0
@@ -47,7 +48,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-pulse=	${LIB_DEPENDS} \
 			audio/pulseaudio
-RUN_DEPENDS-pulse=	${BASE_PKGPATH},-main
+RUN_DEPENDS-pulse=	${BASE_PKGPATH},-main=${V}
 
 CONFIGURE_ARGS=		--disable-aalib \
 			--disable-jack \
