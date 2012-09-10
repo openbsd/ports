@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/02/11 12:48:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/10 09:16:34 jasper Exp $
 @group daemon
 phpicalendar/
 @comment phpicalendar/.DS_Store
@@ -407,3 +407,6 @@ phpicalendar/templates/tan/todo.tpl
 phpicalendar/templates/tan/year.tpl
 phpicalendar/week.php
 phpicalendar/year.php
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

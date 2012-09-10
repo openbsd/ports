@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2012/09/10 09:16:34 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 The Puppet Dashboard has been installed into ${INSTDIR}
 
 To configure your database you must first edit config/database.yaml

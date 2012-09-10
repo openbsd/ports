@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/10 09:16:33 jasper Exp $
 
 COMMENT =		light and fast log analyzer for squid proxy
 
 DISTNAME =		lightsquid-1.8
+REVISION =		0
 
 CATEGORIES =		www
 

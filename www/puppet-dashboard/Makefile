@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2012/01/16 21:10:28 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/10 09:16:34 jasper Exp $
 
 COMMENT=	overview of your Puppet ecosystem
 
 V=		1.2.4
 DISTNAME=	puppet-dashboard-bundled-gems-${V}
 PKGNAME=	puppet-dashboard-${V}
+REVISION=	0
 CATEGORIES=	www sysutils
 
 HOMEPAGE=	http://www.puppetlabs.com/puppet/related-projects/dashboard/

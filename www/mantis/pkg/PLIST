@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/06/13 00:41:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/10 09:16:33 jasper Exp $
 @group daemon
 mantis/
 mantis/account_delete.php
@@ -1266,3 +1266,6 @@ mantis/view_filters_page.php
 mantis/view_user_page.php
 mantis/wiki.php
 mantis/xmlhttprequest.php
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

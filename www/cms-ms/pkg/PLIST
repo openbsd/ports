@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/07 19:46:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2012/09/10 09:16:33 jasper Exp $
 @group daemon
 cms/
 cms/admin/
@@ -3050,4 +3050,7 @@ cms/uploads/ngrey/wbtmleft.gif
 cms/uploads/ngrey/wfootrt.gif
 cms/uploads/ngrey/wtopleft.gif
 cms/version.php
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
 @extraunexec rm -rf ${INSTDIR}/tmp/

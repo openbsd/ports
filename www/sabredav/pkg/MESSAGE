@@ -1,3 +1,0 @@
-SabreDAV has been installed into ${INSTDIR}/lib.
-You should add '/sabredav/lib:${INSTDIR}/lib'
-to your include_path in php.ini

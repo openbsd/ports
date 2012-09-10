@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 Dokuwiki has been installed into ${INSTDIR}
 
 With Apache, this directory must be granted at least with this:
@@ -5,6 +11,7 @@ With Apache, this directory must be granted at least with this:
 
 You should point this to the DocumentRoot of your web-server:
    # ln -s ../dokuwiki /var/www/htdocs/dokuwiki
+(make sure you use a relative symlink since Apache is chrooted)
 
 Then add to your httpd.conf:
    <Directory /var/www/dokuwiki>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2012/09/10 09:16:33 jasper Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
 DISTNAME=		cmsmadesimple-1.9.4-full
-REVISION=		3
+REVISION=		4
 PKGNAME=		${DISTNAME:S/-full//}
 CATEGORIES=		www
 

@@ -1,3 +1,9 @@
+$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 FluxBB has been installed into ${INSTDIR}
 
 You should point this to the DocumentRoot of your web server:

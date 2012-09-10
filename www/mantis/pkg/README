@@ -1,4 +1,8 @@
-READ THIS MESSAGE CAREFULLY, IT CONTAINS IMPORTANT SECURITY INFORMATION
+$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Mantis has been installed into ${INSTDIR}
 

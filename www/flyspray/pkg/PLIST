@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/09 20:30:01 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/10 09:16:33 jasper Exp $
 flyspray/
 flyspray/adodb/
 flyspray/adodb/.htaccess
@@ -1032,3 +1032,5 @@ flyspray/themes/CleanFS/theme.css
 flyspray/themes/CleanFS/theme_print.css
 flyspray/themes/CleanFS/typography.css
 flyspray/themes/CleanFS/up.png
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

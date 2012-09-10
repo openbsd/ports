@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/11/25 12:16:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/10 09:16:34 jasper Exp $
 @group daemon
 pmwiki/
 pmwiki/README.txt
@@ -232,3 +232,6 @@ pmwiki/wikilib.d/SiteAdmin.AuthUser
 pmwiki/wikilib.d/SiteAdmin.GroupAttributes
 pmwiki/wikilib.d/SiteAdmin.SiteAdmin
 pmwiki/wikilib.d/SiteAdmin.Status
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,23 +1,22 @@
-$OpenBSD: README,v 1.1 2012/08/17 08:58:46 jasper Exp $
+$OpenBSD: README,v 1.2 2012/09/10 09:16:34 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
 
-When upgrading from a previous version, please follow these instructions:
+PHPlist has been installed into ${INSTDIR}
 
-  1. keep your config.php file somewhere safe (you can find your
-     config.php file in the config folder)
+You should point this to the DocumentRoot of your web-server:
+  # ln -s ../lists /var/www/htdocs/lists
+(make sure you use a relative symlink since Apache is chrooted)
 
-  2. make a backup of your database. (recommended, but not essential)
+Basic configuration of PHPlist is done by editing the file
+${INSTDIR}/config/config.php.
 
-  3. overwrite your existing code with the new code. You will primarily
-     want to copy the "lists" folder and all files in it.
+Enable the MySQL and IMAP extensions of PHP5 and create a database for phplist
+named phplistdb with username/password phplist/phplist and access the admin
+interface of PHPlist at
 
-  4. copy the config.php file back (to the "lists/config/" folder)
+http://localhost/lists/admin/
 
-  5. go to your phpList admin main page with your web browser and login
-
-  6. click the "Upgrade" link, which will now be there.
-
-  7. the upgrade has now been performed.
+Make sure PHP5 can connect to the MySQL server through a local socket.

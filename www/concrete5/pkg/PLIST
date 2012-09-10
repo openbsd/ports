@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/21 09:32:25 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/10 09:16:33 jasper Exp $
 @group daemon
 concrete5/
 concrete5/LICENSE.TXT
@@ -1458,3 +1458,6 @@ concrete5/packages/.DS_Store
 concrete5/single_pages/
 concrete5/themes/
 concrete5/tools/
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

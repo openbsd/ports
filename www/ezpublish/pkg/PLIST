@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/24 16:36:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/10 09:16:33 jasper Exp $
 ezpublish/
 ezpublish/.htaccess_root
 ezpublish/LICENSE
@@ -4451,3 +4451,5 @@ ezpublish/var/storage/contributors/
 @mode
 @group
 ezpublish/webdav.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

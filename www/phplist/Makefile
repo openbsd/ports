@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2012/08/17 08:58:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2012/09/10 09:16:34 jasper Exp $
 
 COMMENT=		web-based double opt-in newsletter manager
 
 DISTNAME=		phplist-2.10.19
+REVISION=		0
 
 CATEGORIES=		www
 

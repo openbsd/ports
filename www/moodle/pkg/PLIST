@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/01/20 22:18:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/10 09:16:33 jasper Exp $
 @pkgpath www/moodle,mysql
 @pkgpath www/moodle,pgsql
 moodle/
@@ -6260,3 +6260,5 @@ moodle/userpix/
 moodle/userpix/index.php
 moodle/userpix/upgrade.php
 moodle/version.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

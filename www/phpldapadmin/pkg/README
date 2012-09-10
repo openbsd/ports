@@ -1,10 +1,16 @@
-phpLDAPAdmin has been installed into ${INSTDIR}
+$OpenBSD: README,v 1.1 2012/09/10 09:16:34 jasper Exp $
 
-Edit ${INSTDIR}/config/config.php to configure phpLDAPAdmin
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+phpLDAPAdmin has been installed into ${INSTDIR}
 
 You should point this to the DocumentRoot of your web-server:
    # ln -s ../phpldapadmin /var/www/htdocs/phpldapadmin
 (make sure you use a relative symlink since Apache is chrooted)
+
+Edit ${INSTDIR}/config/config.php to configure phpLDAPAdmin.
 
 For jpeg photos to work properly, you must configure the variable
 $config->custom->jpeg['tmpdir'] in config.php.

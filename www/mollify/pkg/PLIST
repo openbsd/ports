@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2012/07/02 16:47:18 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2012/09/10 09:16:33 jasper Exp $
 htdocs/mollify/
 htdocs/mollify/ReadMe.txt
 htdocs/mollify/backend/
@@ -1469,3 +1469,5 @@ htdocs/mollify/client/themes/charcoal/wait.gif
 htdocs/mollify/client/themes/charcoal/wait2.gif
 htdocs/mollify/index.html.dist
 @sample ${INSTDIR}/index.html
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

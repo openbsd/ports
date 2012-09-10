@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2012/07/02 13:26:38 gonzalo Exp $
+@comment $OpenBSD: PLIST,v 1.20 2012/09/10 09:16:34 jasper Exp $
 @pkgpath www/wordpress-mu
 wordpress/
 wordpress/index.php
@@ -1077,3 +1077,5 @@ wordpress/wp-settings.php
 wordpress/wp-signup.php
 wordpress/wp-trackback.php
 wordpress/xmlrpc.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

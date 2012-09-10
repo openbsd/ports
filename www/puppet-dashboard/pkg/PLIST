@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/01/16 21:10:28 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/10 09:16:34 jasper Exp $
 @comment pax_global_header
 puppet-dashboard/
 puppet-dashboard/CHANGELOG
@@ -5151,3 +5151,5 @@ puppet-dashboard/vendor/rails/railties/lib/tasks/testing.rake
 puppet-dashboard/vendor/rails/railties/lib/tasks/tmp.rake
 puppet-dashboard/vendor/rails/railties/lib/test_help.rb
 puppet-dashboard/vendor/rails/railties/lib/webrick_server.rb
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/11/16 15:56:37 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/10 09:16:33 jasper Exp $
 
 COMMENT =	professional PHP application framework
 
 VERSION =	4.1.3
-REVISION =	3
+REVISION =	4
 DISTNAME =	ezpublish-${VERSION}-gpl
 PKGNAME =	ezpublish-${VERSION}
 CATEGORIES =	www

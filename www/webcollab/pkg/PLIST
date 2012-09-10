@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/03/09 07:46:24 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/10 09:16:34 jasper Exp $
 webcollab/
 webcollab/CHANGELOG
 webcollab/LICENSE
@@ -231,3 +231,5 @@ webcollab/users/user_menubox.php
 webcollab/users/user_online.php
 webcollab/users/user_show.php
 webcollab/users/user_submit.php
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

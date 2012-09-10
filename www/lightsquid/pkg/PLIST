@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/20 21:51:58 rui Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/10 09:16:33 jasper Exp $
 htdocs/lightsquid/
 htdocs/lightsquid/.htaccess
 htdocs/lightsquid/bigfiles.cgi
@@ -97,3 +97,5 @@ htdocs/lightsquid/user_detail.cgi
 htdocs/lightsquid/user_month.cgi
 htdocs/lightsquid/user_time.cgi
 htdocs/lightsquid/whousesite.cgi
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

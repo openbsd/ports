@@ -1,3 +1,11 @@
+$OpenBSD: README,v 1.1 2012/09/10 09:16:33 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Mollify has been installed into ${INSTDIR}
+
 Proceed to configure the software by opening the web-based installer
 at http://yourhost/mollify/backend/install/ and following the directions
 to modify ${INSTDIR}/backend/configuration.php

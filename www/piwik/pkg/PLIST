@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.37 2012/08/28 14:50:05 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.38 2012/09/10 09:16:34 jasper Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -2472,3 +2472,7 @@ piwik/themes/default/simple_structure_header.tpl
 piwik/themes/default/styles.css
 @mode 777
 piwik/tmp/
+@mode
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

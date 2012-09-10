@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/08/28 19:46:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2012/09/10 09:16:36 jasper Exp $
 @group daemon
 zendframework/
 zendframework/Zend/
@@ -3222,3 +3222,6 @@ zendframework/Zend/XmlRpc/Value/Nil.php
 zendframework/Zend/XmlRpc/Value/Scalar.php
 zendframework/Zend/XmlRpc/Value/String.php
 zendframework/Zend/XmlRpc/Value/Struct.php
+@group
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

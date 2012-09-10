@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/02/01 09:12:30 pea Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/10 09:16:33 jasper Exp $
 dokuwiki/
 dokuwiki/.htaccess.dist
 dokuwiki/COPYING
@@ -3729,3 +3729,6 @@ dokuwiki/lib/tpl/default/print.css
 dokuwiki/lib/tpl/default/rtl.css
 dokuwiki/lib/tpl/default/style.ini
 dokuwiki/lib/tpl/index.php
+@owner
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}
