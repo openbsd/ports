@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/09 19:38:25 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2012/09/10 08:13:16 landry Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -26,6 +26,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		java \
 			textproc/intltool
 MODJAVA_VER=		1.6+
+BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 NO_REGRESS=		Yes
