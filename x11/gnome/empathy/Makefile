@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.100 2012/09/06 18:59:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.101 2012/09/10 10:32:43 ajacoutot Exp $
 
 COMMENT= 		Telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		3.4.2
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		net
 
@@ -66,6 +66,9 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			net/telepathy/telepathy-salut \
 			x11/gnome/contacts \
 			x11/gnome/icon-theme
+
+# gst-pulse (src/empathy-audio-sink.c)
+RUN_DEPENDS +=		multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_ICON_CACHE=	Yes
