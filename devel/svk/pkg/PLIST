@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/14 09:24:42 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/10 14:38:00 sthen Exp $
 @conflict p5-SVK-*
 bin/svk
 ${P5SITE}/SVK/
@@ -159,6 +159,7 @@ ${P5SITE}/SVK/Util.pm
 ${P5SITE}/SVK/Version.pm
 ${P5SITE}/SVK/View.pm
 ${P5SITE}/SVK/XD.pm
+libexec/svk
 @man man/man1/svk.1
 @man man/man3p/SVK.3p
 @man man/man3p/SVK::Command.3p
