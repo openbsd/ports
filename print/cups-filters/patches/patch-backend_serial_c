@@ -1,6 +1,6 @@
-$OpenBSD: patch-backend_serial_c,v 1.1.1.1 2012/08/04 14:36:09 ajacoutot Exp $
+$OpenBSD: patch-backend_serial_c,v 1.2 2012/09/10 11:56:03 ajacoutot Exp $
 
-XXX no check for HAVE_SYS_IOCTL_H
+https://bugs.linuxfoundation.org/show_bug.cgi?id=1069
 
 --- backend/serial.c.orig	Thu Jul 26 15:24:46 2012
 +++ backend/serial.c	Thu Jul 26 15:24:55 2012

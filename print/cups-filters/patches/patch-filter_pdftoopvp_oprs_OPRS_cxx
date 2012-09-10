@@ -1,4 +1,7 @@
-$OpenBSD: patch-filter_pdftoopvp_oprs_OPRS_cxx,v 1.1 2012/09/01 18:35:15 ajacoutot Exp $
+$OpenBSD: patch-filter_pdftoopvp_oprs_OPRS_cxx,v 1.2 2012/09/10 11:56:03 ajacoutot Exp $
+
+https://bugs.linuxfoundation.org/show_bug.cgi?id=1070
+
 --- filter/pdftoopvp/oprs/OPRS.cxx.orig	Thu Aug 23 20:06:55 2012
 +++ filter/pdftoopvp/oprs/OPRS.cxx	Thu Aug 23 20:15:31 2012
 @@ -15,6 +15,15 @@
