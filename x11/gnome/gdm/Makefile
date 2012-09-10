@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2012/09/10 13:19:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.124 2012/09/10 23:03:24 espie Exp $
 
 BROKEN=			needs PAM(7)
 
@@ -43,10 +43,11 @@ BUILD_DEPENDS=		x11/gnome/zenity
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libexecinfo \
 			security/nss \
-			security/pam \
 			sysutils/accountsservice \
 			sysutils/upower \
-			x11/gnome/libxklavier
+			x11/gnome/libxklavier 
+# XXX 
+#			security/pam 
 
 MODULES=		devel/gettext \
 			x11/gnome \
