@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2012/09/10 10:13:08 ajacoutot Exp $
 
 COMMENT-main=	GNOME Virtual File System
 COMMENT-smb=	samba module for GVFS
@@ -24,10 +24,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
-
-# XXX PaxHeaders
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS+=	archivers/gtar
 
 WANTLIB += c dbus-1 gio-2.0 glib-2.0>=2800
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
