@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2012/09/10 13:19:03 ajacoutot Exp $
 
 BROKEN=			needs PAM(7)
 
@@ -7,9 +7,7 @@ SHARED_ONLY=		Yes
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.2.1.1
-
-REVISION=		3
+GNOME_VERSION=		3.4.1
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 
@@ -25,10 +23,10 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm accountsservice
 WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
-WANTLIB += crypto dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
+WANTLIB += dbus-1 dbus-glib-1 drm execinfo expat ffi fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3 nssutil3
-WANTLIB += ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += softokn3 sqlite3 ssl3 stdc++ upower-glib util vorbis
 WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
@@ -43,18 +41,16 @@ BUILD_DEPENDS=		x11/gnome/zenity
 #			sysutils/consolekit
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
-			sysutils/upower \
-			sysutils/accountsservice \
-			x11/gnome/libxklavier \
 			devel/libexecinfo \
-			security/nss
+			security/nss \
+			security/pam \
+			sysutils/accountsservice \
+			sysutils/upower \
+			x11/gnome/libxklavier
 
 MODULES=		devel/gettext \
-			devel/gconf2 \
 			x11/gnome \
 			devel/dconf
-
-MODGCONF2_SCHEMAS_DIR=	gdm
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_ICON_CACHE=	Yes
@@ -68,9 +64,7 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
 			--with-log-dir=/var/log/gdm \
 			--with-working-directory=/var/db/gdm \
-			--with-selinux=no \
 			--with-xevie=no \
-			--with-libaudit=no \
 			--with-sysconfsubdir=X11/gdm \
 			--with-pid-file=/var/run/gdm.pid \
 			--with-dmconfdir="${LOCALBASE}/share/xsessions" \
@@ -85,6 +79,7 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-console-kit \
 			--with-xauth-dir=/var/run/gdm \
 			--with-screenshot-dir=/var/run/gdm/greeter \
+			--without-systemd \
 			--enable-authentication-scheme=crypt \
 			--disable-console-helper
 
@@ -112,21 +107,7 @@ pre-configure:
 		${WRKSRC}/data/applications/gdm-simple-greeter.desktop.in
 .endfor
 
-pre-fake:
-	# cf. gconftool-2 below
-	${INSTALL_DATA_DIR} ${WRKINST}/var/db/gdm/.gconf.mandatory
-	touch ${WRKINST}/var/db/gdm/.gconf.mandatory/%gconf-tree.xml
-
 post-install:
-	# PATH is modified by the gconf2 MODULE, so give the full path
-	# to the real gconftool-2 binary.
-	${LOCALBASE}/bin/gconftool-2 --direct \
-		--config-source=xml:merged:${WRKINST}/var/db/gdm/.gconf.mandatory \
-		--recursive-unset /
-	${LOCALBASE}/bin/gconftool-2 --direct \
-		--config-source=xml:merged:${WRKINST}/var/db/gdm/.gconf.mandatory \
-		--load ${WRKSRC}/data/session-setup.entries
-	# clean up the mess
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/db
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm
 	mv ${WRKINST}/etc/X11/ ${PREFIX}/share/examples/gdm/

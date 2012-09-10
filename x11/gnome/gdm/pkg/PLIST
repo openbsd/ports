@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2012/06/15 08:30:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2012/09/10 13:19:04 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -6,8 +6,6 @@
 @extraunexec rm -rf /var/db/gdm/.aucat_cookie
 @extraunexec rm -rf /var/db/gdm/.cache
 @extraunexec rm -rf /var/db/gdm/.dbus
-@extraunexec rm -rf /var/db/gdm/.gconf
-@extraunexec rm -rf /var/db/gdm/.gconfd
 @extraunexec rm -rf /var/db/gdm/.pulse-cookie
 @extraunexec rm -rf /var/db/gdm/.config/dconf/*
 @extraunexec rm -rf /var/db/gdm/*
@@ -103,20 +101,6 @@ share/examples/gdm/db/gdm/.config/dconf/
 @sample /var/db/gdm/.config/dconf/
 @owner
 @group
-share/examples/gdm/db/gdm/.gconf.mandatory/
-@mode 1750
-@group _gdm
-@sample /var/db/gdm/.gconf.mandatory/
-@mode
-@group
-share/examples/gdm/db/gdm/.gconf.mandatory/%gconf-tree.xml
-@mode 1640
-@group _gdm
-@sample /var/db/gdm/.gconf.mandatory/%gconf-tree.xml
-@mode
-@group
-share/examples/gdm/db/gdm/.gconf.path
-@sample /var/db/gdm/.gconf.path
 share/examples/gdm/db/gdm/.local/
 @group _gdm
 @sample /var/db/gdm/.local/
@@ -180,6 +164,8 @@ share/gnome/help/gdm/
 share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
 share/gnome/help/gdm/C/legal.xml
+share/gnome/help/gdm/ca/
+share/gnome/help/gdm/ca/gdm.xml
 share/gnome/help/gdm/de/
 share/gnome/help/gdm/de/gdm.xml
 share/gnome/help/gdm/el/
@@ -190,6 +176,8 @@ share/gnome/help/gdm/es/
 share/gnome/help/gdm/es/gdm.xml
 share/gnome/help/gdm/fr/
 share/gnome/help/gdm/fr/gdm.xml
+share/gnome/help/gdm/gl/
+share/gnome/help/gdm/gl/gdm.xml
 share/gnome/help/gdm/id/
 share/gnome/help/gdm/id/gdm.xml
 share/gnome/help/gdm/it/
@@ -204,6 +192,8 @@ share/gnome/help/gdm/sl/
 share/gnome/help/gdm/sl/gdm.xml
 share/gnome/help/gdm/sv/
 share/gnome/help/gdm/sv/gdm.xml
+share/gnome/help/gdm/te/
+share/gnome/help/gdm/te/gdm.xml
 share/gnome/help/gdm/uk/
 share/gnome/help/gdm/uk/gdm.xml
 share/gnome/help/gdm/zh_CN/
@@ -217,8 +207,6 @@ share/icons/hicolor/48x48/apps/gdm-fingerprint.png
 share/icons/hicolor/48x48/apps/gdm-smartcard.png
 share/locale/af/LC_MESSAGES/gdm.mo
 share/locale/am/LC_MESSAGES/gdm.mo
-share/locale/an/
-share/locale/an/LC_MESSAGES/
 share/locale/an/LC_MESSAGES/gdm.mo
 share/locale/ar/LC_MESSAGES/gdm.mo
 share/locale/as/LC_MESSAGES/gdm.mo
@@ -269,6 +257,7 @@ share/locale/it/LC_MESSAGES/gdm.mo
 share/locale/ja/LC_MESSAGES/gdm.mo
 share/locale/ka/LC_MESSAGES/gdm.mo
 share/locale/kk/LC_MESSAGES/gdm.mo
+share/locale/km/LC_MESSAGES/gdm.mo
 share/locale/kn/LC_MESSAGES/gdm.mo
 share/locale/ko/LC_MESSAGES/gdm.mo
 share/locale/ku/LC_MESSAGES/gdm.mo
@@ -323,11 +312,13 @@ share/locale/zu/LC_MESSAGES/gdm.mo
 share/omf/
 share/omf/gdm/
 share/omf/gdm/gdm-C.omf
+share/omf/gdm/gdm-ca.omf
 share/omf/gdm/gdm-de.omf
 share/omf/gdm/gdm-el.omf
 share/omf/gdm/gdm-en_GB.omf
 share/omf/gdm/gdm-es.omf
 share/omf/gdm/gdm-fr.omf
+share/omf/gdm/gdm-gl.omf
 share/omf/gdm/gdm-id.omf
 share/omf/gdm/gdm-it.omf
 share/omf/gdm/gdm-ko.omf
@@ -335,18 +326,17 @@ share/omf/gdm/gdm-oc.omf
 share/omf/gdm/gdm-ru.omf
 share/omf/gdm/gdm-sl.omf
 share/omf/gdm/gdm-sv.omf
+share/omf/gdm/gdm-te.omf
 share/omf/gdm/gdm-uk.omf
 share/omf/gdm/gdm-zh_CN.omf
+share/pixmaps/
 share/pixmaps/gdm-foot-logo.png
 share/pixmaps/gdm-setup.png
 share/pixmaps/gdm-xnest.png
 share/pixmaps/gdm.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gdm-simple-greeter.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@rcscript ${RCDIR}/gdm
 @mode 0755
 @sample /var/log/gdm/
 @mode 1755
@@ -354,11 +344,8 @@ ${SCHEMAS_INSTDIR}/gdm-simple-greeter.schemas
 @sample /var/cache/gdm/
 @mode 1770
 @sample /var/gdm/
-@mode
-@group
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/dconf update
-@rcscript ${RCDIR}/gdm

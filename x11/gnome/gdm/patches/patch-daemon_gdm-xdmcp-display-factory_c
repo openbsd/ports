@@ -1,6 +1,14 @@
-$OpenBSD: patch-daemon_gdm-xdmcp-display-factory_c,v 1.2 2012/06/26 14:54:29 jasper Exp $
---- daemon/gdm-xdmcp-display-factory.c.orig	Fri Feb 18 04:27:53 2011
-+++ daemon/gdm-xdmcp-display-factory.c	Fri Jun 17 15:13:52 2011
+$OpenBSD: patch-daemon_gdm-xdmcp-display-factory_c,v 1.3 2012/09/10 13:19:04 ajacoutot Exp $
+--- daemon/gdm-xdmcp-display-factory.c.orig	Sat Apr 14 20:52:00 2012
++++ daemon/gdm-xdmcp-display-factory.c	Mon Sep 10 15:03:45 2012
+@@ -35,6 +35,7 @@
+ #include <netdb.h>
+ #include <arpa/inet.h>
+ #include <net/if.h>
++#include <netinet/in.h>
+ #ifdef HAVE_SYS_SOCKIO_H
+ #include <sys/sockio.h>
+ #endif
 @@ -64,7 +65,7 @@
   * On Sun, we need to define allow_severity and deny_severity to link
   * against libwrap.

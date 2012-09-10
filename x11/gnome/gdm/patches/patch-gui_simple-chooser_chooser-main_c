@@ -1,7 +1,7 @@
-$OpenBSD: patch-gui_simple-chooser_chooser-main_c,v 1.1 2011/10/07 14:04:18 ajacoutot Exp $
---- gui/simple-chooser/chooser-main.c.orig	Fri Oct  7 14:45:29 2011
-+++ gui/simple-chooser/chooser-main.c	Fri Oct  7 14:45:38 2011
-@@ -53,7 +53,7 @@ assistive_registry_launch (void)
+$OpenBSD: patch-gui_simple-chooser_chooser-main_c,v 1.2 2012/09/10 13:19:04 ajacoutot Exp $
+--- gui/simple-chooser/chooser-main.c.orig	Sat Apr 14 20:52:00 2012
++++ gui/simple-chooser/chooser-main.c	Mon Sep 10 14:58:05 2012
+@@ -52,7 +52,7 @@ assistive_registry_launch (void)
          char      **argv;
          gboolean    res;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-gui_simple-chooser_chooser-main_c,v 1.1 2011/10/07 14:04:18 ajac
  
          argv = NULL;
          error = NULL;
-@@ -82,7 +82,7 @@ assistive_registry_launch (void)
+@@ -81,7 +81,7 @@ assistive_registry_launch (void)
          }
  
          if (kill (pid, 0) < 0) {
