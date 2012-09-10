@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2012/06/15 08:32:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2012/09/10 20:54:40 landry Exp $
 
 COMMENT =	versatile file searching tool
 
-DISTNAME =	catfish-0.3.2
-REVISION=	6
+DISTNAME =	catfish-search-0.4.0.1
+PKGNAME =	${DISTNAME:S/-search//}
 CATEGORIES =	textproc
+EXTRACT_SUFX =	.tar.bz2
 
 HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -16,13 +17,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES =	http://www.twotoasts.de/media/catfish/
+MASTER_SITES =	https://launchpad.net/catfish-search/0.4/0.4.0.1/+download/
 
 MODULES=	lang/python
 CONFIGURE_STYLE=none
 USE_GMAKE=	Yes
 
-RUN_DEPENDS =	x11/py-gtk2 \
+RUN_DEPENDS =	devel/py-gobject3 \
 		x11/dbus-python \
 		devel/desktop-file-utils \
 		devel/py-xdg \
