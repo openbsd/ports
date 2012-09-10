@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2012/09/01 14:36:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2012/09/10 09:50:21 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.97
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -75,7 +75,6 @@ CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		--with-database=tree \
 			--with-gnome-keyring \
 			--with-ipod \
-			--with-mdns=avahi \
 			--with-x \
 			--enable-python \
 			--without-brasero \
@@ -89,7 +88,8 @@ CONFIGURE_ARGS=		--with-database=tree \
 CONFIGURE_ARGS +=	--disable-vala
 
 # XXX requires libdmapsharing
-CONFIGURE_ARGS +=	--disable-daap
+CONFIGURE_ARGS +=	--disable-daap --without-mdns
+#CONFIGURE_ARGS	+=	--with-mdns=avahi
 
 # XXX requires hal|udev
 CONFIGURE_ARGS +=	--without-mtp
