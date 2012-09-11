@@ -1,7 +1,7 @@
-$OpenBSD: patch-pkg_c,v 1.9 2011/07/08 17:57:44 jasper Exp $
---- pkg.c.orig	Sun May 15 14:04:08 2011
-+++ pkg.c	Fri Jul  8 19:52:01 2011
-@@ -379,7 +379,55 @@ get_package_quiet (const char *name)
+$OpenBSD: patch-pkg_c,v 1.10 2012/09/11 09:37:42 jasper Exp $
+--- pkg.c.orig	Wed May 30 14:49:24 2012
++++ pkg.c	Tue Sep 11 11:33:01 2012
+@@ -371,7 +371,55 @@ get_package_quiet (const char *name)
    return internal_get_package (name, FALSE);
  }
  
@@ -57,7 +57,7 @@ $OpenBSD: patch-pkg_c,v 1.9 2011/07/08 17:57:44 jasper Exp $
  string_list_strip_duplicates (GSList *list)
  {
    GHashTable *table;
-@@ -952,6 +1000,8 @@ get_merged (Package *pkg, GetListFunc func, gboolean i
+@@ -944,6 +992,8 @@ get_merged (Package *pkg, GetListFunc func, gboolean i
  
    g_slist_free (dups_list);
    

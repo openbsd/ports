@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2011/07/08 17:57:44 jasper Exp $
---- Makefile.in.orig	Sun May 15 14:31:20 2011
-+++ Makefile.in	Fri Jul  8 19:52:01 2011
-@@ -167,7 +167,7 @@ CFLAGS = @CFLAGS@
+$OpenBSD: patch-Makefile_in,v 1.7 2012/09/11 09:37:42 jasper Exp $
+--- Makefile.in.orig	Wed Jul 11 14:29:58 2012
++++ Makefile.in	Tue Sep 11 11:33:01 2012
+@@ -179,7 +179,7 @@ CFLAGS = @CFLAGS@
  CPP = @CPP@
  CPPFLAGS = @CPPFLAGS@
  CYGPATH_W = @CYGPATH_W@
