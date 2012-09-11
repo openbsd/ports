@@ -1,11 +1,11 @@
-$OpenBSD: patch-tac_plus_c,v 1.3 2012/09/11 12:29:56 sthen Exp $
+$OpenBSD: patch-tac_plus_c,v 1.4 2012/09/11 12:45:44 sthen Exp $
 --- tac_plus.c.orig	Sun Jun 18 18:26:53 2000
-+++ tac_plus.c	Tue Sep 11 13:28:23 2012
++++ tac_plus.c	Tue Sep 11 13:36:10 2012
 @@ -24,6 +24,9 @@
   * FITNESS FOR A PARTICULAR PURPOSE.
  */
  
-+#include <sys/types.h>
++#include <arpa/inet.h>
 +#include <grp.h>
 +
  #include "tac_plus.h"

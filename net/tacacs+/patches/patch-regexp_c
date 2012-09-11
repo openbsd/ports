@@ -1,0 +1,20 @@
+$OpenBSD: patch-regexp_c,v 1.1 2012/09/11 12:45:44 sthen Exp $
+--- regexp.c.orig	Sun Jun 18 18:26:54 2000
++++ regexp.c	Tue Sep 11 13:41:11 2012
+@@ -44,6 +44,7 @@
+  * regular-expression syntax might require a total rethink.
+  */
+ #include <stdio.h>
++#include <string.h>
+ #include "regexp.h"
+ #include "regmagic.h"
+ 
+@@ -215,7 +216,7 @@ char *exp;
+ 	register char *longest;
+ 	register int len;
+ 	int flags;
+-	extern char *malloc();
++	extern void *malloc();
+ 
+ 	if (exp == NULL)
+ 		FAIL("NULL argument");
