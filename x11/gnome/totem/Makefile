@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2012/09/06 18:59:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2012/09/11 08:29:33 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -103,6 +103,9 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 CONFIGURE_ENV= 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 # Prevent gst-inspect from writing to ${HOME}/.gstreamer-0.10/ at configure stage
 CONFIGURE_ENV +=	GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
+
+AUTOCONF_VERSION=2.68
+CONFIGURE_STYLE=autoconf
 
 CONFIGURE_ARGS= --enable-nautilus \
 		--enable-python \
