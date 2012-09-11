@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/02/19 15:02:08 robert Exp $
+@comment $OpenBSD: PLIST,v 1.1 2012/09/11 16:01:45 sthen Exp $
+%%passenger%%
+!%%passenger%%
 @man man/man8/nginx.8
 @bin sbin/nginx
 @mode 700
@@ -8,6 +10,7 @@
 @mode
 @owner
 @group
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/nginx/
 share/nginx/fastcgi_params
 share/nginx/html/
@@ -23,3 +26,4 @@ share/nginx/nginx.conf
 share/nginx/scgi_params
 share/nginx/uwsgi_params
 share/nginx/win-utf
+@rcscript ${RCDIR}/enginx
