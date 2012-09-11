@@ -1,17 +1,17 @@
-$OpenBSD: patch-prnt_cupsext_cupsext_c,v 1.1 2012/08/05 06:46:10 ajacoutot Exp $
+$OpenBSD: patch-prnt_cupsext_cupsext_c,v 1.2 2012/09/11 10:52:16 ajacoutot Exp $
 
 https://bugs.launchpad.net/hplip/+bug/1026666
 
---- prnt/cupsext/cupsext.c.orig	Sun Aug  5 08:28:22 2012
-+++ prnt/cupsext/cupsext.c	Sun Aug  5 08:35:12 2012
-@@ -87,6 +87,46 @@ typedef int Py_ssize_t;
+--- prnt/cupsext/cupsext.c.orig	Tue Sep  4 14:31:10 2012
++++ prnt/cupsext/cupsext.c	Tue Sep 11 08:13:47 2012
+@@ -87,7 +87,47 @@ typedef int Py_ssize_t;
  #define PY_SSIZE_T_MIN INT_MIN
  #endif
  
 +#if (CUPS_VERSION_MAJOR > 1) || (CUPS_VERSION_MINOR > 5)
 +#define HAVE_CUPS_1_6 1
 +#endif
-+
+ 
 +#ifndef HAVE_CUPS_1_6
 +#define ippGetCount(attr)     attr->num_values
 +#define ippGetGroupTag(attr)  attr->group_tag
@@ -48,9 +48,10 @@ https://bugs.launchpad.net/hplip/+bug/1026666
 +    return (1);
 +}
 +#endif
- 
++
  int g_num_options = 0;
  cups_option_t * g_options;
+ 
 @@ -333,8 +373,8 @@ PyObject * getPrinters( PyObject * self, PyObject * ar
      request = ippNew();
      language = cupsLangDefault();
@@ -89,63 +90,56 @@ https://bugs.launchpad.net/hplip/+bug/1026666
 +                if ( strcmp( ippGetName( attr ), "printer-name" ) == 0 &&
 +                        ippGetValueTag( attr ) == IPP_TAG_NAME )
 +                    name = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "device-uri" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_URI )
-+                    device_uri = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "printer-uri-supported" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_URI )
-+                    printer_uri = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "printer-info" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
-+                    info = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "printer-location" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
-+                    location = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "printer-make-and-model" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
-+                    make_model = ippGetString( attr, 0, NULL );
-+
-+                else if ( strcmp( ippGetName( attr ), "printer-state" ) == 0 &&
-+                        ippGetValueTag( attr ) == IPP_TAG_ENUM )
-+                    state = ( ipp_pstate_t ) ippGetInteger( attr, 0 );
-+
-+                else if (!strcmp(ippGetName( attr ), "printer-is-accepting-jobs") &&
-+                        ippGetValueTag( attr ) == IPP_TAG_BOOLEAN)
-+                    accepting = ippGetBoolean( attr, 0 );
  
 -                else if ( strcmp( attr->name, "device-uri" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_URI )
 -                    device_uri = attr->values[ 0 ].string.text;
--
++                else if ( strcmp( ippGetName( attr ), "device-uri" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_URI )
++                    device_uri = ippGetString( attr, 0, NULL );
+ 
 -                else if ( strcmp( attr->name, "printer-uri-supported" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_URI )
 -                    printer_uri = attr->values[ 0 ].string.text;
--
++                else if ( strcmp( ippGetName( attr ), "printer-uri-supported" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_URI )
++                    printer_uri = ippGetString( attr, 0, NULL );
+ 
 -                else if ( strcmp( attr->name, "printer-info" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_TEXT )
 -                    info = attr->values[ 0 ].string.text;
--
++                else if ( strcmp( ippGetName( attr ), "printer-info" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
++                    info = ippGetString( attr, 0, NULL );
+ 
 -                else if ( strcmp( attr->name, "printer-location" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_TEXT )
 -                    location = attr->values[ 0 ].string.text;
--
++                else if ( strcmp( ippGetName( attr ), "printer-location" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
++                    location = ippGetString( attr, 0, NULL );
+ 
 -                else if ( strcmp( attr->name, "printer-make-and-model" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_TEXT )
 -                    make_model = attr->values[ 0 ].string.text;
--
++                else if ( strcmp( ippGetName( attr ), "printer-make-and-model" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_TEXT )
++                    make_model = ippGetString( attr, 0, NULL );
+ 
 -                else if ( strcmp( attr->name, "printer-state" ) == 0 &&
 -                        attr->value_tag == IPP_TAG_ENUM )
 -                    state = ( ipp_pstate_t ) attr->values[ 0 ].integer;
--
++                else if ( strcmp( ippGetName( attr ), "printer-state" ) == 0 &&
++                        ippGetValueTag( attr ) == IPP_TAG_ENUM )
++                    state = ( ipp_pstate_t ) ippGetInteger( attr, 0 );
+ 
 -                else if (!strcmp(attr->name, "printer-is-accepting-jobs") &&
 -                        attr->value_tag == IPP_TAG_BOOLEAN)
 -                    accepting = attr->values[ 0 ].boolean;
--
++                else if (!strcmp(ippGetName( attr ), "printer-is-accepting-jobs") &&
++                        ippGetValueTag( attr ) == IPP_TAG_BOOLEAN)
++                    accepting = ippGetBoolean( attr, 0 );
+ 
 -                attr = attr->next;
 +                attr = ippNextAttribute( response );
              }

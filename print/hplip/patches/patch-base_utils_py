@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
---- base/utils.py.orig	Mon Jun 18 12:44:13 2012
-+++ base/utils.py	Tue Jun 26 07:06:28 2012
-@@ -523,7 +523,7 @@ class UserSettings(object): # Note: Deprecated after 2
+$OpenBSD: patch-base_utils_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
+--- base/utils.py.orig	Tue Sep  4 14:34:06 2012
++++ base/utils.py	Tue Sep 11 08:06:36 2012
+@@ -524,7 +524,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -10,7 +10,7 @@ $OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
  
          # Copy
          path = which('hp-makecopies')
-@@ -531,7 +531,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -532,7 +532,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -19,7 +19,7 @@ $OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
  
          # Fax
          path = which('hp-sendfax')
-@@ -539,7 +539,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -540,7 +540,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -28,7 +28,7 @@ $OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -547,7 +547,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -548,7 +548,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -37,14 +37,15 @@ $OpenBSD: patch-base_utils_py,v 1.5 2012/06/26 06:17:11 ajacoutot Exp $
  
      def load(self):
          self.loadDefaults()
-@@ -880,8 +880,8 @@ def all(S,f=lambda x:x):
+@@ -880,9 +880,8 @@ def all(S,f=lambda x:x):
+         if not f(x): return False
      return True
  
- 
--BROWSERS = ['firefox', 'mozilla', 'konqueror', 'galeon', 'skipstone'] # in preferred order
--BROWSER_OPTS = {'firefox': '-new-window', 'mozilla' : '', 'konqueror': '', 'galeon': '-w', 'skipstone': ''}
+-BROWSERS = ['firefox', 'mozilla', 'konqueror', 'epiphany', 'skipstone'] # in preferred order
+-BROWSER_OPTS = {'firefox': '-new-tab', 'mozilla': '', 'konqueror': '', 'epiphany': '--new-tab', 'skipstone': ''}
+-
 +BROWSERS = ['xdg-open']
 +BROWSER_OPTS = {'xdg-open' : ''}
  
- 
  def find_browser():
+     if platform_avail and platform.system() == 'Darwin':

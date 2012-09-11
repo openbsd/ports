@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2012/08/05 06:46:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/09/11 10:52:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-hpcups=	HP native CUPS driver
 COMMENT-libs=	HPLIP backend libraries
 COMMENT-gui=	HPLIP graphical tools
 
-V=		3.12.6
+V=		3.12.9
 DISTNAME=	hplip-${V}
 
 PKGNAME-main=	${DISTNAME}
@@ -16,12 +16,6 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
-
-REVISION-main=	3
-REVISION-gui=	0
-REVISION-hpcups=2
-REVISION-libs=	0
-REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1

@@ -1,7 +1,7 @@
-$OpenBSD: patch-scan_py,v 1.5 2011/10/09 07:42:29 ajacoutot Exp $
---- scan.py.orig	Sun Oct  2 05:06:19 2011
-+++ scan.py	Sun Oct  9 09:17:00 2011
-@@ -1040,7 +1040,7 @@ try:
+$OpenBSD: patch-scan_py,v 1.6 2012/09/11 10:52:16 ajacoutot Exp $
+--- scan.py.orig	Tue Sep  4 14:34:06 2012
++++ scan.py	Tue Sep 11 08:05:33 2012
+@@ -1061,7 +1061,7 @@ try:
                  if hp_print:
                      cmd = 'hp-print %s &' % output
                  else:

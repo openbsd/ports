@@ -1,6 +1,6 @@
-$OpenBSD: patch-prnt_cups_py,v 1.4 2012/06/26 06:17:11 ajacoutot Exp $
---- prnt/cups.py.orig	Mon Jun 18 12:41:22 2012
-+++ prnt/cups.py	Tue Jun 26 07:06:29 2012
+$OpenBSD: patch-prnt_cups_py,v 1.5 2012/09/11 10:52:16 ajacoutot Exp $
+--- prnt/cups.py.orig	Tue Sep  4 14:31:12 2012
++++ prnt/cups.py	Tue Sep 11 08:05:33 2012
 @@ -187,8 +187,8 @@ ppd_pat = re.compile(r'''.*hp-(.*?)(-.*)*\.ppd.*''', r
  
  def getPPDPath(addtional_paths=None):
@@ -69,7 +69,7 @@ $OpenBSD: patch-prnt_cups_py,v 1.4 2012/06/26 06:17:11 ajacoutot Exp $
  
  
  for p in models.TECH_CLASS_PDLS.values():
-@@ -543,7 +543,7 @@ def getPPDFile2(stripped_model, ppds): # New PPD find
+@@ -616,7 +616,7 @@ def getFaxPPDFile(mq, model):
  
  
  def getErrorLogLevel():
