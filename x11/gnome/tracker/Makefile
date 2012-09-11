@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2012/09/07 06:11:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.114 2012/09/11 06:03:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,8 +18,8 @@ PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
 REVISION-main=		5
-REVISION-evolution=	2
-REVISION-nautilus=	2
+REVISION-evolution=	3
+REVISION-nautilus=	3
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when MAJ_V changes, increment TRACKER_VERSION accordingly and bump:
@@ -121,12 +121,12 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
-			x11/gnome/tracker,-main \
+			x11/gnome/tracker,-main=${GNOME_VERSION} \
 			mail/evolution,-main>=3.4.0
 
 RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
-			x11/gnome/tracker,-main \
+			x11/gnome/tracker,-main=${GNOME_VERSION} \
 			x11/gnome/nautilus>=3.0.0
 
 LIBTOOL_FLAGS=	--tag=disable-static
