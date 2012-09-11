@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/26 07:19:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/11 20:42:21 landry Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -63,6 +63,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${MODPY_INCDIR}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			PYTHON_LDFLAGS="-L${LOCALBASE}/lib -lpython${MODPY_VERSION} -lm" \
 			PYTHON_BIN="python${MODPY_VERSION}"
+
+# XXX eats all memory
+.if ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH} == "hppa"
+CFLAGS+=	-O0
+.endif
 
 FAKE_FLAGS+=		htmldir="${PREFIX}/share/doc/libpst/" \
 			htmldeveldir="${PREFIX}/share/doc/libpst/devel/"
