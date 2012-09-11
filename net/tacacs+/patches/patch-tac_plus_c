@@ -1,6 +1,6 @@
-$OpenBSD: patch-tac_plus_c,v 1.2 2003/06/09 07:19:30 sturm Exp $
---- tac_plus.c.orig	Sun Jun 18 19:26:31 2000
-+++ tac_plus.c	Sat Jun  7 16:47:21 2003
+$OpenBSD: patch-tac_plus_c,v 1.3 2012/09/11 12:29:56 sthen Exp $
+--- tac_plus.c.orig	Sun Jun 18 18:26:53 2000
++++ tac_plus.c	Tue Sep 11 13:28:23 2012
 @@ -24,6 +24,9 @@
   * FITNESS FOR A PARTICULAR PURPOSE.
  */
@@ -28,12 +28,6 @@ $OpenBSD: patch-tac_plus_c,v 1.2 2003/06/09 07:19:30 sturm Exp $
 -    if (setgid(TAC_PLUS_GROUPID))
 -	report(LOG_ERR, "Cannot set group id to %d %s", 
 -	       TAC_PLUS_GROUPID, sys_errlist[errno]);
--#endif
--
--#ifdef TAC_PLUS_USERID
--    if (setuid(TAC_PLUS_USERID)) 
--	report(LOG_ERR, "Cannot set user id to %d %s", 
--	       TAC_PLUS_USERID, sys_errlist[errno]);
 +#ifdef TAC_PLUS_GROUP
 +    gr = getgrnam(TAC_PLUS_GROUP);
 +    if (gr == NULL)
@@ -41,8 +35,12 @@ $OpenBSD: patch-tac_plus_c,v 1.2 2003/06/09 07:19:30 sturm Exp $
 +    if (setgid(gr->gr_gid))
 +	report(LOG_ERR, "Cannot set group to %d %s", 
 +	       TAC_PLUS_GROUP, sys_errlist[errno]);
-+#endif
-+
+ #endif
+ 
+-#ifdef TAC_PLUS_USERID
+-    if (setuid(TAC_PLUS_USERID)) 
+-	report(LOG_ERR, "Cannot set user id to %d %s", 
+-	       TAC_PLUS_USERID, sys_errlist[errno]);
 +#ifdef TAC_PLUS_USER
 +    pw = getpwnam(TAC_PLUS_USER);
 +    if (pw == NULL)
