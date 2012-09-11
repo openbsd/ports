@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2012/03/03 11:42:06 sthen Exp $
-@newgroup _trac:693
-@newuser _trac:693:_trac:daemon:trac user:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.14 2012/09/11 13:03:34 sthen Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
+@newgroup _trac:693
+@newuser _trac:693:_trac:daemon:trac user:/nonexistent:/sbin/nologin
 bin/trac-admin
 bin/tracd
 lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -138,6 +138,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_US.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/eo.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/es.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/es_AR.js
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/et.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/fi.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/fr.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/he.js
@@ -152,6 +153,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/ru.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/sl.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/sv.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/tr.js
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/uk.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/zh_CN.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/zh_TW.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/noconflict.js
@@ -202,6 +204,9 @@ lib/python${MODPY_VERSION}/site-packages/trac/locale/es/LC_MESSAGES/messages.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/es_AR/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/es_AR/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/es_AR/LC_MESSAGES/messages.mo
+lib/python${MODPY_VERSION}/site-packages/trac/locale/et/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/et/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/et/LC_MESSAGES/messages.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/fi/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/fi/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/fi/LC_MESSAGES/messages.mo
@@ -259,6 +264,9 @@ lib/python${MODPY_VERSION}/site-packages/trac/locale/sv/LC_MESSAGES/messages.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/tr/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/tr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/tr/LC_MESSAGES/messages.mo
+lib/python${MODPY_VERSION}/site-packages/trac/locale/uk/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/uk/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/trac/locale/uk/LC_MESSAGES/messages.mo
 lib/python${MODPY_VERSION}/site-packages/trac/locale/zh_CN/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/zh_CN/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/trac/locale/zh_CN/LC_MESSAGES/messages.mo
