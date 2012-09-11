@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_util_c,v 1.8 2012/07/05 07:18:59 ajacoutot Exp $
+$OpenBSD: patch-src_util_c,v 1.9 2012/09/11 14:42:37 ajacoutot Exp $
 
 We don't use /proc on OpenBSD.
 
@@ -30,7 +30,7 @@ We don't use /proc on OpenBSD.
    g_free (filename);
    g_free (contents);
 +#else /* OpenBSD */
-+  gchar *ret;
++  gchar *ret = NULL;
 +  int nproc;
 +  struct kinfo_proc *kp;
 +  char **pargv;

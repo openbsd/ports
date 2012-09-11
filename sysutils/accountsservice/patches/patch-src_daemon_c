@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_daemon_c,v 1.18 2012/07/08 16:35:19 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.19 2012/09/11 14:42:37 ajacoutot Exp $
 
 In default_excludes[], add any ports and system users that has a login
 shell.
+
+OpenBSD does not have any function to parse a specified passwd(5) file.
 
 Revert the following commit:
 This reverts commit dfa1a6239b01c823ce0fec781c6c9541c988f56e.
@@ -9,8 +11,8 @@ The commit is wrong, since we're only interested in local users.
 http://bugs.freedesktop.org/show_bug.cgi?id=41747
 (XXX we need a way to only get local users)
 
---- src/daemon.c.orig	Thu Jun 28 17:24:55 2012
-+++ src/daemon.c	Sun Jul  8 18:33:40 2012
+--- src/daemon.c.orig	Thu Aug 16 21:03:51 2012
++++ src/daemon.c	Tue Sep 11 15:11:35 2012
 @@ -35,6 +35,10 @@
  #include <utmpx.h>
  #endif
@@ -40,65 +42,50 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          NULL
  };
  
-@@ -300,22 +315,32 @@ reload_passwd (Daemon *daemon)
-         GSList *old_users;
-         GSList *new_users;
-         GSList *list;
+@@ -291,8 +306,11 @@ entry_generator_fgetpwent (GHashTable *users,
+                            gpointer   *state)
+ {
+         struct passwd *pwent;
 +#ifdef HAVE_FGETPWENT
          FILE *fp;
 +#endif
-         User *user = NULL;
- 
-         old_users = NULL;
-         new_users = NULL;
  
 +#ifdef HAVE_FGETPWENT
-         errno = 0;
-         fp = fopen (PATH_PASSWD, "r");
-         if (fp == NULL) {
-                 g_warning ("Unable to open %s: %s", PATH_PASSWD, g_strerror (errno));
-                 goto out;
-         }
+         /* First iteration */
+         if (*state == NULL) {
+                 *state = fp = fopen (PATH_PASSWD, "r");
+@@ -305,13 +323,18 @@ entry_generator_fgetpwent (GHashTable *users,
+         /* Every iteration */
+         fp = *state;
+         pwent = fgetpwent (fp);
 +#else
-+        setpwent();
++        pwent = getpwent ();
 +#endif
-         g_hash_table_foreach (daemon->priv->users, listify_hash_values_hfunc, &old_users);
-         g_slist_foreach (old_users, (GFunc) g_object_ref, NULL);
- 
-+#ifdef HAVE_FGETPWENT
-         while ((pwent = fgetpwent (fp)) != NULL) {
-+#else
-+        while ((pwent = getpwent ()) != NULL) {
-+#endif
-                 /* Skip system users... */
-                 if (daemon_local_user_is_excluded (daemon, pwent->pw_name, pwent->pw_shell)) {
-                         g_debug ("skipping user: %s", pwent->pw_name);
-@@ -365,10 +390,12 @@ reload_passwd (Daemon *daemon)
-                 }
+         if (pwent != NULL) {
+                 return pwent;
          }
  
+         /* Last iteration */
 +#ifdef HAVE_FGETPWENT
-  out:
-         /* Cleanup */
- 
          fclose (fp);
+         *state = NULL;
 +#endif
+         return NULL;
+ }
  
-         g_slist_foreach (new_users, (GFunc) g_object_thaw_notify, NULL);
-         g_slist_foreach (new_users, (GFunc) g_object_unref, NULL);
-@@ -922,7 +949,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1020,7 +1043,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
 +#ifndef __OpenBSD__
          const gchar *argv[9];
 +#else
-+	const gchar *argv[13];
++        const gchar *argv[13];
 +#endif
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -939,14 +970,31 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1037,14 +1064,31 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
@@ -130,7 +117,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1018,15 +1066,49 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1240,6 +1284,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -142,7 +129,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 +#ifdef __OpenBSD__
 +        struct group *grp;
 +        GError *grperror;
-+        const gchar *grpargv[2];
++        const gchar *grpargv[3];
 +
 +        grp = getgrnam (pwent->pw_name);
 +
@@ -151,6 +138,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 +
 +                grpargv[0] = "/usr/sbin/groupdel";
 +                grpargv[1] = pwent->pw_name;
++                grpargv[2] = NULL;
 +
 +                grperror = NULL;
 +                if (!spawn_with_login_uid (context, grpargv, &grperror)) {
@@ -162,6 +150,9 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 +#endif
 +
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
+ 
+         filename = g_build_filename (USERDIR, pwent->pw_name, NULL);
+@@ -1252,11 +1324,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
