@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/11 09:10:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	atk-bridge for at-spi2
 
 GNOME_PROJECT=	at-spi2-atk
 GNOME_VERSION=	2.4.0
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.linuxfoundation.org/en/AT-SPI_on_D-Bus
 
@@ -27,6 +27,10 @@ LIB_DEPENDS=	x11/gnome/at-spi2-core>=2.2.2 \
 		devel/atk
 
 MODGNOME_CPPFLAGS=-I${X11BASE}/include
+
+AUTOCONF_VERSION=2.68
+CONFIGURE_STYLE=autoconf
+
 CONFIGURE_ARGS= --enable-p2p
 
 # connects to DBus
