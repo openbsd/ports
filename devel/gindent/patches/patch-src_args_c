@@ -1,23 +1,23 @@
-$OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
---- src/args.c.orig	Fri Mar 15 08:48:45 2002
-+++ src/args.c	Wed May 19 17:05:58 2010
+$OpenBSD: patch-src_args_c,v 1.3 2012/09/11 23:40:52 sthen Exp $
+--- src/args.c.orig	Tue Mar 11 18:50:42 2008
++++ src/args.c	Wed Sep 12 00:32:55 2012
 @@ -1,3 +1,5 @@
 +#define BERKELEY_DEFAULTS 1
 +
- /* Copyright (c) 1999, 2000 Carlo Wood.  All rights reserved.
-  * Copyright (c) 1994 Joseph Arceneaux.  All rights reserved.
-  * Copyright (c) 1992 Free Software Foundation, Inc.  All rights reserved.
-@@ -113,6 +115,7 @@ static int exp_gnu  = 0;
- static int exp_hnl  = 0;
+ /** \file
+  * Copyright (c) 1999, 2000 Carlo Wood.  All rights reserved.<br>
+  * Copyright (c) 1994 Joseph Arceneaux.  All rights reserved.<br>
+@@ -163,6 +165,7 @@ static int exp_hnl  = 0;
  static int exp_i    = 0;
+ static int exp_il   = 0;
  static int exp_ip   = 0;
 +static int exp_knf  = 0;
  static int exp_kr   = 0;
  static int exp_l    = 0;
  static int exp_lc   = 0;
-@@ -179,6 +182,30 @@ typedef struct pro
-                                  * variable must share the explicit flag.  */
- } pro_ty;
+@@ -237,6 +240,30 @@ typedef struct
+ 
+ static void usage (void); 
  
 +#define BSD_PRO_SETTINGS	{"orig", PRO_SETTINGS, 0, ONOFF_NA,\
 +   (int *) "-nbap\0-nbad\0-bbo\0-hnl\0-bc\0-br\0-brs\0-c33\0-cd33\0-cdb\0-ce\0\
@@ -44,9 +44,9 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
 +   &exp_gnu}
 +
  #ifdef BERKELEY_DEFAULTS
- /* Settings for original defaults */
- const pro_ty pro[] =
-@@ -202,60 +229,63 @@ const pro_ty pro[] =
+ 
+ /**
+@@ -264,63 +291,66 @@ const pro_ty pro[] =
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                           false,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -96,6 +96,7 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
 +    {"ncdb",    PRO_BOOL,                           false,      OFF, &settings.comment_delimiter_on_blankline,   &exp_cdb},
      {"nbs",     PRO_BOOL,                           false,      OFF, &settings.blank_after_sizeof,               &exp_bs},
      {"nbfda",   PRO_BOOL,                           false,      OFF, &settings.break_function_decl_args,         &exp_bfda},
+     {"nbfde",   PRO_BOOL,                           false,      OFF, &settings.break_function_decl_args_end,     &exp_bfde},
      {"nbc",     PRO_BOOL,                            true,       ON, &settings.leave_comma,                      &exp_bc},
 -    {"nbbo",    PRO_BOOL,                            true,      OFF, &settings.break_before_boolean_operator,    &exp_bbo},
 -    {"nbbb",    PRO_BOOL,                           false,      OFF, &settings.blanklines_before_blockcomments,  &exp_bbb},
@@ -105,6 +106,7 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
      {"nbadp",   PRO_BOOL,                           false,      OFF, &settings.blanklines_after_declarations_at_proctop,  &exp_badp},
      {"nbad",    PRO_BOOL,                           false,      OFF, &settings.blanklines_after_declarations,    &exp_bad},
      {"nbacc",   PRO_BOOL,                           false,      OFF, &settings.blanklines_around_conditional_compilation, &exp_bacc},
+     {"linux",   PRO_SETTINGS,                           0, ONOFF_NA, LINUX_SETTINGS_STRING,                      &exp_linux},
      {"lps",     PRO_BOOL,                           false,       ON, &settings.leave_preproc_space,              &exp_lps},
 -    {"lp",      PRO_BOOL,                            true,       ON, &settings.lineup_to_parens,                 &exp_lp},
 +    {"lp",      PRO_BOOL,                           false,       ON, &settings.lineup_to_parens,                 &exp_lp},
@@ -118,6 +120,7 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
 +    KNF_PRO_SETTINGS,
 +    {"ip",      PRO_INT,                                8, ONOFF_NA, &settings.indent_parameters,                &exp_ip},
 +    {"i",       PRO_INT,                                8, ONOFF_NA, &settings.ind_size,                         &exp_i},
+     {"il",      PRO_INT,             DEFAULT_LABEL_INDENT, ONOFF_NA, &settings.label_offset,                     &exp_il},
      {"hnl",     PRO_BOOL,                            true,       ON, &settings.honour_newlines,                  &exp_hnl},
      {"h",       PRO_FUNCTION,                           0, ONOFF_NA, (int *) usage,                              &exp_version},
 -    {"gnu",     PRO_SETTINGS,                           0, ONOFF_NA, GNU_SETTINGS_STRING,                        &exp_gnu},
@@ -136,10 +139,10 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
      {"cp",      PRO_INT,                               33, ONOFF_NA, &settings.else_endif_col,                   &exp_cp},
      {"cli",     PRO_INT,                                0, ONOFF_NA, &settings.case_indent,                      &exp_cli},
      {"ci",      PRO_INT,                                4, ONOFF_NA, &settings.continuation_indent,              &exp_ci},
-@@ -273,12 +303,12 @@ const pro_ty pro[] =
-     {"bli",     PRO_INT,                                0, ONOFF_NA, &settings.brace_indent,                     &exp_bli},
+@@ -341,12 +371,12 @@ const pro_ty pro[] =
      {"bl",      PRO_BOOL,                            true,      OFF, &settings.btype_2,                          &exp_bl},
      {"bfda",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args,         &exp_bfda},
+     {"bfde",    PRO_BOOL,                           false,       ON, &settings.break_function_decl_args_end,     &exp_bfde},
 -    {"bc",      PRO_BOOL,                            true,      OFF, &settings.leave_comma,                      &exp_bc},
 +    {"bc",      PRO_BOOL,                           false,      OFF, &settings.leave_comma,                      &exp_bc},
      {"bbo",     PRO_BOOL,                            true,       ON, &settings.break_before_boolean_operator,    &exp_bbo},
@@ -152,8 +155,8 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
 +    {"bad",     PRO_BOOL,                            true,       ON, &settings.blanklines_after_declarations,    &exp_bad},
      {"bacc",    PRO_BOOL,                           false,       ON, &settings.blanklines_around_conditional_compilation, &exp_bacc},
      {"T",       PRO_KEY,                                0, ONOFF_NA, 0,                                          &exp_T},
-     /* Signify end of structure.  */
-@@ -309,7 +339,7 @@ const pro_ty pro[] =
+     {"ppi",     PRO_INT,                                0, ONOFF_NA, &settings.force_preproc_width,              &exp_ppi},
+@@ -381,7 +411,7 @@ const pro_ty pro[] =
  #endif
      {"pi",      PRO_INT,                               -1, ONOFF_NA, &settings.paren_indent,                     &exp_pi},
      {"pcs",     PRO_BOOL,                            true,       ON, &settings.proc_calls_space,                 &exp_pcs},
@@ -162,13 +165,14 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
      {"o",       PRO_BOOL,                           false,       ON, &settings.expect_output_file,               &exp_o},
      {"nv",      PRO_BOOL,                           false,      OFF, &settings.verbose,                          &exp_v},
      {"nut",     PRO_BOOL,                            true,      OFF, &settings.use_tabs,                         &exp_ut},
-@@ -351,13 +381,14 @@ const pro_ty pro[] =
+@@ -425,14 +455,15 @@ const pro_ty pro[] =
      {"lp",      PRO_BOOL,                            true,       ON, &settings.lineup_to_parens,                 &exp_lp},
      {"lc",      PRO_INT,     DEFAULT_RIGHT_COMMENT_MARGIN, ONOFF_NA, &settings.comment_max_col,                  &exp_lc},
      {"l",       PRO_INT,             DEFAULT_RIGHT_MARGIN, ONOFF_NA, &settings.max_col,                          &exp_l},
 -    {"kr",      PRO_SETTINGS,                           0, ONOFF_NA, KR_SETTINGS_STRING,                         &exp_kr},
 +    KR_PRO_SETTINGS,
 +    KNF_PRO_SETTINGS,
+     {"il",      PRO_INT,             DEFAULT_LABEL_INDENT, ONOFF_NA, &settings.label_offset,                     &exp_il},
      {"ip",      PRO_INT,                                5, ONOFF_NA, &settings.indent_parameters,                &exp_ip},
      {"i",       PRO_INT,                                2, ONOFF_NA, &settings.ind_size,                         &exp_i},
      {"hnl",     PRO_BOOL,                            true,       ON, &settings.honour_newlines,                  &exp_hnl},
@@ -179,7 +183,7 @@ $OpenBSD: patch-src_args_c,v 1.2 2010/05/19 15:11:01 espie Exp $
      {"fca",     PRO_BOOL,                           false,       ON, &settings.format_comments,                  &exp_fca},
      {"fc1",     PRO_BOOL,                           false,       ON, &settings.format_col1_comments,             &exp_fc1},
      {"eei",     PRO_BOOL,                           false,       ON, &settings.extra_expression_indent,          &exp_eei},
-@@ -507,6 +538,9 @@ const long_option_conversion_ty option_conversions[] =
+@@ -593,6 +624,9 @@ const long_option_conversion_ty option_conversions[] =
      {"blank-lines-after-declarations",              "bad"},
      {"blank-lines-after-commas",                    "bc"},
      {"blank-before-sizeof",                         "bs"},
