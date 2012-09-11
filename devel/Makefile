@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1067 2012/09/05 07:34:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.1068 2012/09/11 07:27:03 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -642,6 +642,7 @@
      SUBDIR += p5-File-Find-Rule-Perl
      SUBDIR += p5-File-Finder
      SUBDIR += p5-File-Flat
+     SUBDIR += p5-File-FnMatch
      SUBDIR += p5-File-HomeDir
      SUBDIR += p5-File-MimeInfo
      SUBDIR += p5-File-Modified
