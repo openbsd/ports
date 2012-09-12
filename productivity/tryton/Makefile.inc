@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.8 2012/05/02 06:56:27 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2012/09/12 06:58:58 ajacoutot Exp $
 
-MODPY_EGG_VERSION ?=	2.4.1
+MODPY_EGG_VERSION ?=	2.4.2
 
 CATEGORIES +=		productivity
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 DIST_SUBDIR=		tryton
-MASTER_SITES=		http://downloads.tryton.org/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
+MASTER_SITES=		http://downloads2.tryton.org/${MODPY_EGG_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
 MODULES +=		lang/python
 
