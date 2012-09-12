@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.124 2012/09/10 23:03:24 espie Exp $
+# $OpenBSD: Makefile,v 1.125 2012/09/12 08:54:52 ajacoutot Exp $
+
+# XXX --with-lang-file=${SYSCONFDIR}/sysconfig/i18n
 
 BROKEN=			needs PAM(7)
 
@@ -32,13 +34,12 @@ WANTLIB += softokn3 sqlite3 ssl3 stdc++ upower-glib util vorbis
 WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
 WANTLIB += xml2 z
 
-BUILD_DEPENDS=		x11/gnome/zenity
+MODULES=		devel/gettext \
+			x11/gnome \
+			devel/dconf
 
-#XXX
-#RUN_DEPENDS=		audio/sox \
-#			x11/hicolor-icon-theme \
-#			x11/gnome/zenity \
-#			sysutils/consolekit
+# bring _all_ runtime dependencies (including sysutils/consolekit)
+RUN_DEPENDS=		x11/gnome/session
 
 LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libexecinfo \
@@ -47,51 +48,40 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			sysutils/upower \
 			x11/gnome/libxklavier 
 # XXX 
-#			security/pam 
+#LIB_DEPENDS +=		security/openpam 
 
-MODULES=		devel/gettext \
-			x11/gnome \
-			devel/dconf
+LIBTOOL_FLAGS=		--tag=disable-static
 
 MODGNOME_TOOLS= 	yelp
 MODGNOME_ICON_CACHE=	Yes
-
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include -DHAS_SA_LEN
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
+CONFIGURE_ARGS=		--disable-static \
+			--mandir=${PREFIX}/man \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
-			--with-custom-conf=${SYSCONFDIR}/X11/gdm/custom.conf \
+			--with-custom-conf=${SYSCONFDIR}/gdm/custom.conf \
 			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
 			--with-log-dir=/var/log/gdm \
 			--with-working-directory=/var/db/gdm \
-			--with-xevie=no \
-			--with-sysconfsubdir=X11/gdm \
+			--with-sysconfsubdir=gdm \
 			--with-pid-file=/var/run/gdm.pid \
 			--with-dmconfdir="${LOCALBASE}/share/xsessions" \
 			--with-screenshot-dir=/var/run/gdm/greeter \
 			--with-incomplete-locales \
 			--with-user=_gdm \
 			--with-group=_gdm \
-			--with-tcp-wrappers \
-			--with-x \
-			--with-xinerama \
-			--with-xdmcp \
 			--with-console-kit \
 			--with-xauth-dir=/var/run/gdm \
-			--with-screenshot-dir=/var/run/gdm/greeter \
 			--without-systemd \
-			--enable-authentication-scheme=crypt \
+			--without-tcp-wrappers \
 			--disable-console-helper
 
-# --with-lang-file=${SYSCONFDIR}/sysconfig/i18n
-# XXX --enable-authentication-scheme=bsdauth
-
 # XXX IPv6-only FLAVOR?
-CONFIGURE_ARGS+=	--disable-ipv6
+CONFIGURE_ARGS +=	--disable-ipv6
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in \
+	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/data/Makefile.in \
 		${WRKSRC}/data/{Init.in,PreSession.in,Xsession.in,gdm.schemas}
 	perl -pi -e 's,root:root,root:wheel,g;' \
 		-e 's,root:gdm,root:676,g;' \
@@ -109,13 +99,15 @@ pre-configure:
 .endfor
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/db
-	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm
-	mv ${WRKINST}/etc/X11/ ${PREFIX}/share/examples/gdm/
-	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/
-	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/db
-# XXX
-	rm -rf ${WRKINST}/etc/pam.d ${WRKINST}/var/run/gdm
+	rm ${PREFIX}/lib/gdm/simple-greeter/extensions/*.la
+	rm -r ${WRKINST}/etc/pam.d/gdm-{fingerprint,smartcard}
+	rm -rf ${WRKINST}/var/run/gdm
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc,var/db}
+	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
+	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
+	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
+	mv ${WRKINST}/etc/pam.d ${PREFIX}/share/examples/gdm/etc
+	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
 .include <bsd.port.mk>

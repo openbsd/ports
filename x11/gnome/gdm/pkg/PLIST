@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.41 2012/09/10 13:19:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2012/09/12 08:54:52 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -23,19 +23,11 @@ include/gdm/simple-greeter/gdm-login-extension.h
 lib/gdm/
 lib/gdm/simple-greeter/
 lib/gdm/simple-greeter/extensions/
-@comment lib/gdm/simple-greeter/extensions/libfingerprint.a
-@comment lib/gdm/simple-greeter/extensions/libfingerprint.la
 lib/gdm/simple-greeter/extensions/libfingerprint.so
-@comment lib/gdm/simple-greeter/extensions/libpassword.a
-@comment lib/gdm/simple-greeter/extensions/libpassword.la
 lib/gdm/simple-greeter/extensions/libpassword.so
-@comment lib/gdm/simple-greeter/extensions/libsmartcard.a
-@comment lib/gdm/simple-greeter/extensions/libsmartcard.la
 lib/gdm/simple-greeter/extensions/libsmartcard.so
-lib/libgdmgreeter.a
 lib/libgdmgreeter.la
 @lib lib/libgdmgreeter.so.${LIBgdmgreeter_VERSION}
-lib/libgdmsimplegreeter.a
 lib/libgdmsimplegreeter.la
 @lib lib/libgdmsimplegreeter.so.${LIBgdmsimplegreeter_VERSION}
 lib/pkgconfig/gdmgreeter.pc
@@ -53,84 +45,97 @@ lib/pkgconfig/gdmsimplegreeter.pc
 sbin/gdm
 @bin sbin/gdm-binary
 share/examples/gdm/
-share/examples/gdm/X11/
-share/examples/gdm/X11/gdm/
-@sample ${SYSCONFDIR}/X11/gdm/
-share/examples/gdm/X11/gdm/Init/
-@sample ${SYSCONFDIR}/X11/gdm/Init/
+share/examples/gdm/etc/
+share/examples/gdm/etc/dbus-1/
+share/examples/gdm/etc/dbus-1/system.d/
+share/examples/gdm/etc/dbus-1/system.d/gdm.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/gdm.conf
+share/examples/gdm/etc/dconf/
+share/examples/gdm/etc/dconf/db/
+share/examples/gdm/etc/dconf/db/gdm.d/
+@sample ${SYSCONFDIR}/dconf/db/gdm.d/
+share/examples/gdm/etc/dconf/db/gdm.d/00-upstream-settings
+@sample ${SYSCONFDIR}/dconf/db/gdm.d/00-upstream-settings
+share/examples/gdm/etc/dconf/db/gdm.d/locks/
+@sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/
+share/examples/gdm/etc/dconf/db/gdm.d/locks/00-upstream-settings-locks
+@sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/00-upstream-settings-locks
+share/examples/gdm/etc/dconf/profile/
+share/examples/gdm/etc/dconf/profile/gdm
+@sample ${SYSCONFDIR}/dconf/profile/gdm
+share/examples/gdm/etc/gdm/
+@sample ${SYSCONFDIR}/gdm/
+share/examples/gdm/etc/gdm/Init/
+@sample ${SYSCONFDIR}/gdm/Init/
 @mode 555
-share/examples/gdm/X11/gdm/Init/Default
-@sample ${SYSCONFDIR}/X11/gdm/Init/Default
+share/examples/gdm/etc/gdm/Init/Default
+@sample ${SYSCONFDIR}/gdm/Init/Default
 @mode
-share/examples/gdm/X11/gdm/PostLogin/
-@sample ${SYSCONFDIR}/X11/gdm/PostLogin/
+share/examples/gdm/etc/gdm/PostLogin/
+@sample ${SYSCONFDIR}/gdm/PostLogin/
 @mode 555
-share/examples/gdm/X11/gdm/PostLogin/Default.sample
-@sample ${SYSCONFDIR}/X11/gdm/PostLogin/Default.sample
+share/examples/gdm/etc/gdm/PostLogin/Default.sample
+@sample ${SYSCONFDIR}/gdm/PostLogin/Default.sample
 @mode
-share/examples/gdm/X11/gdm/PostSession/
-@sample ${SYSCONFDIR}/X11/gdm/PostSession/
+share/examples/gdm/etc/gdm/PostSession/
+@sample ${SYSCONFDIR}/gdm/PostSession/
 @mode 555
-share/examples/gdm/X11/gdm/PostSession/Default
-@sample ${SYSCONFDIR}/X11/gdm/PostSession/Default
+share/examples/gdm/etc/gdm/PostSession/Default
+@sample ${SYSCONFDIR}/gdm/PostSession/Default
 @mode
-share/examples/gdm/X11/gdm/PreSession/
-@sample ${SYSCONFDIR}/X11/gdm/PreSession/
+share/examples/gdm/etc/gdm/PreSession/
+@sample ${SYSCONFDIR}/gdm/PreSession/
 @mode 555
-share/examples/gdm/X11/gdm/PreSession/Default
-@sample ${SYSCONFDIR}/X11/gdm/PreSession/Default
-share/examples/gdm/X11/gdm/Xsession
-@sample ${SYSCONFDIR}/X11/gdm/Xsession
+share/examples/gdm/etc/gdm/PreSession/Default
+@sample ${SYSCONFDIR}/gdm/PreSession/Default
+share/examples/gdm/etc/gdm/Xsession
+@sample ${SYSCONFDIR}/gdm/Xsession
 @mode
-share/examples/gdm/X11/gdm/custom.conf
-@sample ${SYSCONFDIR}/X11/gdm/custom.conf
-share/examples/gdm/db/
-share/examples/gdm/db/gdm/
+share/examples/gdm/etc/gdm/custom.conf
+@sample ${SYSCONFDIR}/gdm/custom.conf
+share/examples/gdm/etc/pam.d/
+@mode 0444
+share/examples/gdm/etc/pam.d/gdm
+@sample ${SYSCONFDIR}/pam.d/gdm
+share/examples/gdm/etc/pam.d/gdm-autologin
+@sample ${SYSCONFDIR}/pam.d/gdm-autologin
+share/examples/gdm/etc/pam.d/gdm-password
+@sample ${SYSCONFDIR}/pam.d/gdm-password
+share/examples/gdm/etc/pam.d/gdm-welcome
+@sample ${SYSCONFDIR}/pam.d/gdm-welcome
+@mode
+share/examples/gdm/var/
+share/examples/gdm/var/db/
+share/examples/gdm/var/db/gdm/
 @mode 1770
 @group _gdm
 @sample /var/db/gdm/
 @mode
 @group
-share/examples/gdm/db/gdm/.config/
+share/examples/gdm/var/db/gdm/.config/
 @group _gdm
 @sample /var/db/gdm/.config/
 @group
-share/examples/gdm/db/gdm/.config/dconf/
+share/examples/gdm/var/db/gdm/.config/dconf/
 @owner _gdm
 @group _gdm
 @sample /var/db/gdm/.config/dconf/
 @owner
 @group
-share/examples/gdm/db/gdm/.local/
+share/examples/gdm/var/db/gdm/.local/
 @group _gdm
 @sample /var/db/gdm/.local/
 @group
-share/examples/gdm/db/gdm/.local/share/
+share/examples/gdm/var/db/gdm/.local/share/
 @group _gdm
 @sample /var/db/gdm/.local/share/
 @group
-share/examples/gdm/db/gdm/.local/share/applications/
+share/examples/gdm/var/db/gdm/.local/share/applications/
 @owner _gdm
 @group _gdm
 @sample /var/db/gdm/.local/share/applications/
 @owner
 @group
-share/examples/gdm/dbus-1/
-share/examples/gdm/dbus-1/system.d/
-share/examples/gdm/dbus-1/system.d/gdm.conf
-@sample ${SYSCONFDIR}/dbus-1/system.d/gdm.conf
-share/examples/gdm/dconf/
-share/examples/gdm/dconf/db/
-share/examples/gdm/dconf/db/gdm.d/
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/
-share/examples/gdm/dconf/db/gdm.d/00-upstream-settings
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/00-upstream-settings
-share/examples/gdm/dconf/db/gdm.d/locks/
-@sample ${SYSCONFDIR}/dconf/db/gdm.d/locks/
-share/examples/gdm/dconf/db/gdm.d/locks/00-upstream-settings-locks
-share/examples/gdm/dconf/profile/
-share/examples/gdm/dconf/profile/gdm
-@sample ${SYSCONFDIR}/dconf/profile/gdm
 share/gdm/gdb-cmd
 share/gdm/gdm-greeter-login-window.ui
 share/gdm/gdm.schemas
@@ -336,7 +341,6 @@ share/pixmaps/gdm-xnest.png
 share/pixmaps/gdm.png
 share/pixmaps/nobody.png
 share/pixmaps/nohost.png
-@rcscript ${RCDIR}/gdm
 @mode 0755
 @sample /var/log/gdm/
 @mode 1755
@@ -344,8 +348,11 @@ share/pixmaps/nohost.png
 @sample /var/cache/gdm/
 @mode 1770
 @sample /var/gdm/
+@mode
+@group
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/dconf update
+@rcscript ${RCDIR}/gdm
