@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/02 10:55:59 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/12 17:21:52 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon
 
-V=		9.9.1-P2
+V=		9.9.1-P3
+RV=		9.9.1-P2
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
-REVISION=	0
 
 SHARED_LIBS +=  bind9                     0.0 # 60.4
 SHARED_LIBS +=  dns                       0.0 # 70.2
@@ -33,9 +33,9 @@ FLAVORS=	ratelimit
 FLAVOR?=
 
 .if ${FLAVOR:L:Mratelimit}
-PATCHFILES+=	rl-$V.patch:0
+PATCHFILES+=	rl-${RV}.patch:0
 .else
-SUPDISTFILES+=	rl-$V.patch:0
+SUPDISTFILES+=	rl-${RV}.patch:0
 .endif
 
 MODULES=	converters/libiconv
