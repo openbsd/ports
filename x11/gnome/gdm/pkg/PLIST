@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2012/09/12 11:37:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2012/09/12 12:23:42 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -158,11 +158,8 @@ share/gdm/simple-greeter/extensions/smartcard/page.ui
 share/gdm/simple-greeter/extensions/unified/
 share/gdm/simple-greeter/extensions/unified/page.ui
 share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
-share/gnome-session/
-share/gnome-session/sessions/
 share/gnome-session/sessions/gdm-fallback.session
 share/gnome-session/sessions/gdm-shell.session
-share/gnome/help/
 share/gnome/help/gdm/
 share/gnome/help/gdm/C/
 share/gnome/help/gdm/C/gdm.xml
@@ -246,8 +243,6 @@ share/locale/fy/LC_MESSAGES/gdm.mo
 share/locale/ga/LC_MESSAGES/gdm.mo
 share/locale/gl/LC_MESSAGES/gdm.mo
 share/locale/gu/LC_MESSAGES/gdm.mo
-share/locale/gv/
-share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/gdm.mo
 share/locale/he/LC_MESSAGES/gdm.mo
 share/locale/hi/LC_MESSAGES/gdm.mo
@@ -312,7 +307,6 @@ share/locale/zh_CN/LC_MESSAGES/gdm.mo
 share/locale/zh_HK/LC_MESSAGES/gdm.mo
 share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
-share/omf/
 share/omf/gdm/
 share/omf/gdm/gdm-C.omf
 share/omf/gdm/gdm-ca.omf
@@ -332,7 +326,6 @@ share/omf/gdm/gdm-sv.omf
 share/omf/gdm/gdm-te.omf
 share/omf/gdm/gdm-uk.omf
 share/omf/gdm/gdm-zh_CN.omf
-share/pixmaps/
 share/pixmaps/gdm-foot-logo.png
 share/pixmaps/gdm-setup.png
 share/pixmaps/gdm-xnest.png

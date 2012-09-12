@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.126 2012/09/12 11:37:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2012/09/12 12:23:42 ajacoutot Exp $
 
 # XXX --with-lang-file=${SYSCONFDIR}/sysconfig/i18n
 
@@ -77,7 +77,7 @@ CONFIGURE_ARGS=		--disable-static \
 			--disable-console-helper
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/data/Makefile.in \
+	${SUBST_CMD} ${WRKSRC}/Makefile.in \
 		${WRKSRC}/data/{Init.in,PreSession.in,Xsession.in,gdm.schemas}
 	perl -pi -e 's,root:root,root:wheel,g;' \
 		-e 's,root:gdm,root:676,g;' \
