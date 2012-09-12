@@ -1,0 +1,12 @@
+$OpenBSD: patch-apps_man_mudraw_1,v 1.1 2012/09/12 21:32:19 sthen Exp $
+--- apps/man/mudraw.1.orig	Wed Sep 12 19:22:48 2012
++++ apps/man/mudraw.1	Wed Sep 12 19:23:01 2012
+@@ -83,7 +83,6 @@ Invert the output image colors.
+ Comma separated list of ranges to render.
+ .SH SEE ALSO
+ .BR mupdf (1),
+-.BR mupdfclean (1).
+-.BR mupdfshow (1).
++.BR mubusy (1).
+ .SH AUTHOR
+ MuPDF is Copyright 2006-2012 Artifex Software, Inc.
