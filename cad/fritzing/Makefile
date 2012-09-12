@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2012/06/14 09:47:23 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2012/09/12 10:54:57 jasper Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.7.4
+V=		0.7.7
 DISTNAME=	fritzing-$Vb.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
-REVISION=	0
 
 HOMEPAGE=	http://fritzing.org/
-
-MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Code: GPLv3+
 # Rest: CreativeCommons:BY-SA
@@ -30,6 +27,9 @@ NO_REGRESS=	Yes
 
 BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
+
+# XXX: Sigh...words fail me.
+WRKDIST=	${WRKDIR}/fritzing-0.7.6b.source
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
