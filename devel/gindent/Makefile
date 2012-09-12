@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2012/09/11 23:40:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2012/09/12 12:59:05 sthen Exp $
 
 COMMENT=	GNU utility to indent C source files
 
 DISTNAME=	indent-2.2.10
 PKGNAME=	g${DISTNAME}
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.gnu.org/software/indent/
@@ -21,6 +22,7 @@ MASTER_SITES=	${MASTER_SITE_GNU:=indent/}
 MODULES=	devel/gettext
 
 NO_REGRESS=	Yes
+BUILD_DEPENDS=	textproc/texi2html
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--program-prefix="g" \
 		--without-included-gettext
