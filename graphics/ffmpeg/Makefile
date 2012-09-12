@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.89 2012/09/04 06:31:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2012/09/12 08:15:57 ajacoutot Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20120610
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -49,8 +49,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/xvidcore
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
-LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -Wl,-rpath,${X11BASE}/lib -lX11 -lXext -lXfixes -lsndio
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lxvidcore -lz -pthread
+LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lsndio
 LIBavfilter_EXTRALIBS=
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2
 LIBavutil_EXTRALIBS=-lm
@@ -107,6 +107,13 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
 		LIBswscale_EXTRALIBS="${LIBswscale_EXTRALIBS}" \
+		LIBavcodec_LINKFLAGS="" \
+		LIBavdevice_LINKFLAGS="-Wl,-rpath-link,${X11BASE}/lib" \
+		LIBavfilter_LINKFLAGS="" \
+		LIBavformat_LINKFLAGS="" \
+		LIBavutil_LINKFLAGS="" \
+		LIBpostproc_LINKFLAGS="" \
+		LIBswscale_LINKFLAGS="" \
 		TMPDIR=${WRKTMP}
 
 VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
