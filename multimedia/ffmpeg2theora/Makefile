@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.22 2012/02/16 22:35:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/12 07:07:21 ajacoutot Exp $
 
 COMMENT=	re-encode many media file formats to Ogg Theora
 
 N=		ffmpeg2theora
-DISTNAME=	${N}-0.28
+DISTNAME=	${N}-0.29
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.v2v.cc/~j/${N}/
 
-# GPLv3
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	patents in FFmpeg
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xext Xfixes avcodec avdevice avformat avutil bz2
-WANTLIB += c gsm m mp3lame ogg orc-0.4 postproc pthread
-WANTLIB += schroedinger-1.0 sndio speex swscale theoradec theoraenc
-WANTLIB += vorbis vorbisenc vpx x264 z
+WANTLIB += avcodec avdevice avfilter avformat avutil c m ogg postproc
+WANTLIB += swscale theoradec theoraenc vorbis vorbisenc
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
@@ -28,7 +26,8 @@ LIB_DEPENDS=	graphics/ffmpeg>=20110408p5 \
 
 MODULES=	devel/scons converters/libiconv
 
-MODSCONS_FLAGS=	libkate=0
+MODSCONS_FLAGS=	libkate=0 \
+		APPEND_LINKFLAGS="-L${X11BASE}/lib"
 
 NO_REGRESS=	Yes
 
