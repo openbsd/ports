@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/07/05 00:08:05 mjc Exp $
-%%SHARED%%
-include/libnetdude/plugins/libnd_conntrack.h
-lib/libnetdude/plugins/libnd_conntrack.a
-lib/libnetdude/plugins/libnd_conntrack.la

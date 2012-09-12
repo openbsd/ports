@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.767 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.768 2012/09/12 08:26:05 sthen Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -172,7 +172,6 @@
      SUBDIR += libepc
      SUBDIR += libgadu
      SUBDIR += libnet
-     SUBDIR += libnetdude
      SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
@@ -225,7 +224,6 @@
      SUBDIR += net-snmp
      SUBDIR += netatalk
      SUBDIR += netbsd-iscsi-target
-     SUBDIR += netdude
      SUBDIR += netfwd
      SUBDIR += netpipes
      SUBDIR += netrate

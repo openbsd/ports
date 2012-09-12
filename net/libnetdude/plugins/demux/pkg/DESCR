@@ -1,5 +1,0 @@
-This plugin scans a set of input traces and creates a separate pcap
-trace file for each flow contained in the input traces. The output is
-placed in a directory tree whose first level differentiates by IP
-protocol, the second by source IP address, and the third by destination
-IP address. Arbitrarily many input traces are supported.

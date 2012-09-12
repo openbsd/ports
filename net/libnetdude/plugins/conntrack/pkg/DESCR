@@ -1,6 +1,0 @@
-This plugin implements control blocks for connections running over IP.
-The semantics of "connection" depend on the transport protocol: the
-plugin models TCP connection endpoints using a TCP connection state
-machine, UDP and other protocols are supported by a timeout mechanism.
-The plugin provides connection tables to store and retrieve connections
-conveniently. Please have a look at the README for more details.

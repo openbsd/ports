@@ -1,5 +1,0 @@
-The TCP Filter plugin removes incomplete TCP flows from a trace.
-"incomplete" here means flows that have not seen complete three-way
-handshakes and connection teardowns (through RSTs or FINs). The plugin
-can operate on one or more plugins, and provides a command line
-interface via lndtool.

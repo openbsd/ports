@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/07/05 00:08:07 mjc Exp $
-lib/libnetdude/plugins/libnd_tcpfilter.so

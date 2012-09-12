@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/07/05 00:08:08 mjc Exp $
-%%SHARED%%
-include/libnetdude/plugins/libnd_ta.h
-lib/libnetdude/plugins/libnd_tanalyzer.a
-lib/libnetdude/plugins/libnd_tanalyzer.la
