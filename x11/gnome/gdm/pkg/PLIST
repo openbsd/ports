@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2012/09/12 08:54:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.43 2012/09/12 11:37:47 ajacoutot Exp $
 @newgroup _gdm:676
 @newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @unexec-delete rm -f ${SYSCONFDIR}/dconf/db/gdm
@@ -95,8 +95,6 @@ share/examples/gdm/etc/gdm/custom.conf
 @sample ${SYSCONFDIR}/gdm/custom.conf
 share/examples/gdm/etc/pam.d/
 @mode 0444
-share/examples/gdm/etc/pam.d/gdm
-@sample ${SYSCONFDIR}/pam.d/gdm
 share/examples/gdm/etc/pam.d/gdm-autologin
 @sample ${SYSCONFDIR}/pam.d/gdm-autologin
 share/examples/gdm/etc/pam.d/gdm-password

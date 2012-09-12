@@ -1,0 +1,6 @@
+# $OpenBSD: gdm-welcome,v 1.1 2012/09/12 11:37:47 ajacoutot Exp $
+
+auth		required	pam_permit.so
+account		include		system
+password	include		system
+session		include		system

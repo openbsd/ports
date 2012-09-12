@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.125 2012/09/12 08:54:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2012/09/12 11:37:47 ajacoutot Exp $
 
 # XXX --with-lang-file=${SYSCONFDIR}/sysconfig/i18n
 
-BROKEN=			needs PAM(7)
+BROKEN=			needs pam(3)
 
 SHARED_ONLY=		Yes
 
@@ -31,8 +31,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-3 ltdl m nspr4 nss3 nssutil3
 WANTLIB += ogg pam pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs smime3
 WANTLIB += softokn3 sqlite3 ssl3 stdc++ upower-glib util vorbis
-WANTLIB += vorbisfile wrap xcb xcb-render xcb-shm xkbfile xklavier
-WANTLIB += xml2 z
+WANTLIB += vorbisfile xcb xcb-render xcb-shm xkbfile xklavier xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -48,7 +47,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			sysutils/upower \
 			x11/gnome/libxklavier 
 # XXX 
-#LIB_DEPENDS +=		security/openpam 
+#LIB_DEPENDS +=		security/openpam
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -77,9 +76,6 @@ CONFIGURE_ARGS=		--disable-static \
 			--without-tcp-wrappers \
 			--disable-console-helper
 
-# XXX IPv6-only FLAVOR?
-CONFIGURE_ARGS +=	--disable-ipv6
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile.in ${WRKSRC}/data/Makefile.in \
 		${WRKSRC}/data/{Init.in,PreSession.in,Xsession.in,gdm.schemas}
@@ -100,13 +96,14 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/gdm/simple-greeter/extensions/*.la
-	rm -r ${WRKINST}/etc/pam.d/gdm-{fingerprint,smartcard}
+	rm -r ${WRKINST}/etc/pam.d
 	rm -rf ${WRKINST}/var/run/gdm
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc,var/db}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
+	${INSTALL_DATA} ${FILESDIR}/gdm-* \
+		${PREFIX}/share/examples/gdm/etc/pam.d
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
-	mv ${WRKINST}/etc/pam.d ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
