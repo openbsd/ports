@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/12 07:07:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/13 06:04:46 ajacoutot Exp $
 
 COMMENT=	re-encode many media file formats to Ogg Theora
 
 N=		ffmpeg2theora
 DISTNAME=	${N}-0.29
+REVISION=	0
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
@@ -20,14 +21,13 @@ WANTLIB += swscale theoradec theoraenc vorbis vorbisenc
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	graphics/ffmpeg>=20110408p5 \
+LIB_DEPENDS=	graphics/ffmpeg>=20120610p1 \
 		audio/libvorbis \
 		multimedia/libtheora
 
 MODULES=	devel/scons converters/libiconv
 
-MODSCONS_FLAGS=	libkate=0 \
-		APPEND_LINKFLAGS="-L${X11BASE}/lib"
+MODSCONS_FLAGS=	libkate=0
 
 NO_REGRESS=	Yes
 
