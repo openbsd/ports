@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2012/09/12 12:23:42 ajacoutot Exp $
-
-# XXX --with-lang-file=${SYSCONFDIR}/sysconfig/i18n
+# $OpenBSD: Makefile,v 1.128 2012/09/13 08:38:12 ajacoutot Exp $
 
 BROKEN=			needs pam(3)
 
@@ -58,6 +56,7 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 CONFIGURE_ARGS=		--disable-static \
 			--mandir=${PREFIX}/man \
+			--with-lang-file=${SYSCONFDIR}/gdm/i18n \
 			--with-at-spi-registryd-directory=${LOCALBASE}/libexec \
 			--with-custom-conf=${SYSCONFDIR}/gdm/custom.conf \
 			--with-dbus-sys=${SYSCONFDIR}/dbus-1/system.d \
@@ -105,6 +104,8 @@ post-install:
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dconf ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
+	${INSTALL_DATA} ${FILESDIR}/i18n \
+		${PREFIX}/share/examples/gdm/etc/gdm/i18n
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/gdm/*
 
 .include <bsd.port.mk>
