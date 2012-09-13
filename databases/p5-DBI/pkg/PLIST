@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/06/27 18:35:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2012/09/13 09:49:39 giovanni Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
-${P5ARCH}/
 ${P5ARCH}/Bundle/
 ${P5ARCH}/Bundle/DBI.pm
 ${P5ARCH}/DBD/
@@ -74,7 +73,6 @@ ${P5ARCH}/DBI/Util/_accessor.pm
 ${P5ARCH}/DBI/W32ODBC.pm
 ${P5ARCH}/Win32/
 ${P5ARCH}/Win32/DBIODBC.pm
-${P5ARCH}/auto/
 ${P5ARCH}/auto/DBI/
 ${P5ARCH}/auto/DBI/DBI.bs
 ${P5ARCH}/auto/DBI/DBI.so
