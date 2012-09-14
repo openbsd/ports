@@ -1,26 +1,80 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/06/26 08:54:05 ajacoutot Exp $
-@extraunexec rm -rf %D/bacula-web/templates_c/*
+@comment $OpenBSD: PLIST,v 1.2 2012/09/14 06:35:09 ajacoutot Exp $
+@extraunexec rm -rf %D/bacula-web/application/view/cache/*
 @unexec-delete rm -f /var/www/conf/modules/bacula-web.conf
 bacula-web/
-bacula-web/COPYING
-bacula-web/Changelog
-bacula-web/INSTALL
-bacula-web/README
+bacula-web/application/
+bacula-web/application/config/
+bacula-web/application/config/.htaccess
+@mode 0640
+@group www
+bacula-web/application/config/config.php.sample
+@sample bacula-web/application/config/config.php
+@mode
+@group
+bacula-web/application/locale/
+bacula-web/application/locale/de_DE/
+bacula-web/application/locale/de_DE/LC_MESSAGES/
+bacula-web/application/locale/de_DE/LC_MESSAGES/messages.mo
+bacula-web/application/locale/de_DE/LC_MESSAGES/messages.po
+bacula-web/application/locale/en_EN/
+bacula-web/application/locale/en_EN/LC_MESSAGES/
+bacula-web/application/locale/en_EN/LC_MESSAGES/messages.mo
+bacula-web/application/locale/en_EN/LC_MESSAGES/messages.po
+bacula-web/application/locale/es_ES/
+bacula-web/application/locale/es_ES/LC_MESSAGES/
+bacula-web/application/locale/es_ES/LC_MESSAGES/messages.mo
+bacula-web/application/locale/es_ES/LC_MESSAGES/messages.po
+bacula-web/application/locale/fr_FR/
+bacula-web/application/locale/fr_FR/LC_MESSAGES/
+bacula-web/application/locale/fr_FR/LC_MESSAGES/messages.mo
+bacula-web/application/locale/fr_FR/LC_MESSAGES/messages.po
+bacula-web/application/locale/it_IT/
+bacula-web/application/locale/it_IT/LC_MESSAGES/
+bacula-web/application/locale/it_IT/LC_MESSAGES/messages.mo
+bacula-web/application/locale/it_IT/LC_MESSAGES/messages.po
+bacula-web/application/locale/pt_BR/
+bacula-web/application/locale/pt_BR/LC_MESSAGES/
+bacula-web/application/locale/pt_BR/LC_MESSAGES/messages.mo
+bacula-web/application/locale/pt_BR/LC_MESSAGES/messages.po
+bacula-web/application/locale/sv_SV/
+bacula-web/application/locale/sv_SV/LC_MESSAGES/
+bacula-web/application/locale/sv_SV/LC_MESSAGES/messages.mo
+bacula-web/application/locale/sv_SV/LC_MESSAGES/messages.po
+bacula-web/application/view/
+bacula-web/application/view/backupjob-report.tpl
+@owner www
+@group www
+bacula-web/application/view/cache/
+@owner
+@group
+bacula-web/application/view/cache/README
+bacula-web/application/view/client-report.tpl
+bacula-web/application/view/footer.tpl
+bacula-web/application/view/header.tpl
+bacula-web/application/view/index.tpl
+bacula-web/application/view/joblogs.tpl
+bacula-web/application/view/jobs.tpl
+bacula-web/application/view/pools.tpl
+bacula-web/application/view/style/
+bacula-web/application/view/style/default.css
+bacula-web/application/view/style/header.css
+bacula-web/application/view/style/images/
+bacula-web/application/view/style/images/canceled.png
+bacula-web/application/view/style/images/error.png
+bacula-web/application/view/style/images/ok.png
+bacula-web/application/view/style/images/running.png
+bacula-web/application/view/style/images/search.png
+bacula-web/application/view/style/images/waiting.png
+bacula-web/application/view/style/images/warning.png
+bacula-web/application/view/test.tpl
+bacula-web/backupjob-report.php
 bacula-web/bacula-web.conf.dist
 @sample /var/www/conf/modules.sample/bacula-web.conf
-bacula-web/backupjob-report.php
 bacula-web/client-report.php
-bacula-web/config/
-bacula-web/config/.htaccess
-@group www
-@mode 0640
-bacula-web/config/config.php.sample
-@sample bacula-web/config/config.php
-@group
-@mode
 bacula-web/core/
 bacula-web/core/app/
 bacula-web/core/app/cerrorhandler.class.php
+bacula-web/core/app/cview.class.php
 bacula-web/core/bweb.inc.php
 bacula-web/core/cfg/
 bacula-web/core/cfg/config.class.php
@@ -28,11 +82,16 @@ bacula-web/core/db/
 bacula-web/core/db/cdb.class.php
 bacula-web/core/db/cdbquery.class.php
 bacula-web/core/db/cdbresult.class.php
+bacula-web/core/db/cmysqldb.class.php
+bacula-web/core/db/cpgsqldb.class.php
+bacula-web/core/db/csqlitedb.class.php
 bacula-web/core/external/
 bacula-web/core/external/phplot/
 bacula-web/core/external/phplot/COPYING
 bacula-web/core/external/phplot/ChangeLog
+bacula-web/core/external/phplot/Imagemaps.txt
 bacula-web/core/external/phplot/NEWS.txt
+bacula-web/core/external/phplot/NEWS_part1.txt
 bacula-web/core/external/phplot/README.txt
 bacula-web/core/external/phplot/contrib/
 bacula-web/core/external/phplot/contrib/README.txt
@@ -40,12 +99,23 @@ bacula-web/core/external/phplot/contrib/color_range.example.php
 bacula-web/core/external/phplot/contrib/color_range.php
 bacula-web/core/external/phplot/contrib/color_range.test1.php
 bacula-web/core/external/phplot/contrib/color_range.test2.php
+bacula-web/core/external/phplot/contrib/data_table.example1.php
+bacula-web/core/external/phplot/contrib/data_table.example2.php
+bacula-web/core/external/phplot/contrib/data_table.example3.php
+bacula-web/core/external/phplot/contrib/data_table.php
 bacula-web/core/external/phplot/contrib/prune_labels.example.php
 bacula-web/core/external/phplot/contrib/prune_labels.php
 bacula-web/core/external/phplot/contrib/prune_labels.test.php
 bacula-web/core/external/phplot/phplot.php
 bacula-web/core/external/phplot/rgb.inc.php
 bacula-web/core/external/smarty/
+bacula-web/core/external/smarty-gettext/
+bacula-web/core/external/smarty-gettext/COPYING
+bacula-web/core/external/smarty-gettext/ChangeLog
+bacula-web/core/external/smarty-gettext/README
+bacula-web/core/external/smarty-gettext/smarty-gettext.php
+bacula-web/core/external/smarty-gettext/smarty_gettext.php
+bacula-web/core/external/smarty-gettext/tsmarty2c.php
 bacula-web/core/external/smarty/BUGS
 bacula-web/core/external/smarty/COPYING.lib
 bacula-web/core/external/smarty/ChangeLog
@@ -138,12 +208,6 @@ bacula-web/core/external/smarty/libs/plugins/modifier.wordwrap.php
 bacula-web/core/external/smarty/libs/plugins/outputfilter.trimwhitespace.php
 bacula-web/core/external/smarty/libs/plugins/shared.escape_special_chars.php
 bacula-web/core/external/smarty/libs/plugins/shared.make_timestamp.php
-bacula-web/core/external/smarty_gettext-0.9/
-bacula-web/core/external/smarty_gettext-0.9/COPYING
-bacula-web/core/external/smarty_gettext-0.9/ChangeLog
-bacula-web/core/external/smarty_gettext-0.9/README
-bacula-web/core/external/smarty_gettext-0.9/smarty_gettext.php
-bacula-web/core/external/smarty_gettext-0.9/tsmarty2c.php
 bacula-web/core/global.inc.php
 bacula-web/core/graph/
 bacula-web/core/graph/cgraph.class.php
@@ -153,58 +217,15 @@ bacula-web/core/utils/
 bacula-web/core/utils/chttprequest.class.php
 bacula-web/core/utils/ctimeutils.class.php
 bacula-web/core/utils/cutils.class.php
+bacula-web/docs/
+bacula-web/docs/COPYING
+bacula-web/docs/Changelog
+bacula-web/docs/INSTALL
+bacula-web/docs/README
 bacula-web/index.php
+bacula-web/joblogs.php
 bacula-web/jobs.php
-bacula-web/locale/
-bacula-web/locale/de_DE/
-bacula-web/locale/de_DE/LC_MESSAGES/
-bacula-web/locale/de_DE/LC_MESSAGES/messages.mo
-bacula-web/locale/de_DE/LC_MESSAGES/messages.po
-bacula-web/locale/en_EN/
-bacula-web/locale/en_EN/LC_MESSAGES/
-bacula-web/locale/en_EN/LC_MESSAGES/messages.mo
-bacula-web/locale/en_EN/LC_MESSAGES/messages.po
-bacula-web/locale/es_ES/
-bacula-web/locale/es_ES/LC_MESSAGES/
-bacula-web/locale/es_ES/LC_MESSAGES/messages.mo
-bacula-web/locale/es_ES/LC_MESSAGES/messages.po
-bacula-web/locale/fr_FR/
-bacula-web/locale/fr_FR/LC_MESSAGES/
-bacula-web/locale/fr_FR/LC_MESSAGES/messages.mo
-bacula-web/locale/fr_FR/LC_MESSAGES/messages.po
-bacula-web/locale/it_IT/
-bacula-web/locale/it_IT/LC_MESSAGES/
-bacula-web/locale/it_IT/LC_MESSAGES/messages.mo
-bacula-web/locale/it_IT/LC_MESSAGES/messages.po
-bacula-web/locale/sv_SV/
-bacula-web/locale/sv_SV/LC_MESSAGES/
-bacula-web/locale/sv_SV/LC_MESSAGES/messages.mo
-bacula-web/locale/sv_SV/LC_MESSAGES/messages.po
 bacula-web/pools.php
-bacula-web/style/
-bacula-web/style/default.css
-bacula-web/style/images/
-bacula-web/style/images/canceled.png
-bacula-web/style/images/error.png
-bacula-web/style/images/ok.png
-bacula-web/style/images/running.png
-bacula-web/style/images/waiting.png
-bacula-web/style/images/warning.png
-bacula-web/templates/
-bacula-web/templates/backupjob-report.tpl
-bacula-web/templates/client-report.tpl
-bacula-web/templates/footer.tpl
-bacula-web/templates/header.tpl
-bacula-web/templates/index.tpl
-bacula-web/templates/jobs.tpl
-bacula-web/templates/pools.tpl
-bacula-web/templates/test.tpl
-@owner www
-@group www
-bacula-web/templates_c/
-@owner
-@group
-bacula-web/templates_c/README
 bacula-web/test.php
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}

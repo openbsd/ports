@@ -1,0 +1,30 @@
+$OpenBSD: patch-application_config_config_php_sample,v 1.1 2012/09/14 06:35:09 ajacoutot Exp $
+--- application/config/config.php.sample.orig	Thu Aug  9 23:11:00 2012
++++ application/config/config.php.sample	Fri Sep 14 08:14:15 2012
+@@ -26,17 +26,19 @@ $config['language'] = 'en_EN';
+ // $config[0]['db_port'] = '3306';
+ 
+ // PostgreSQL bacula catalog
+-// $config[0]['label'] = 'Prod Server';
+-// $config[0]['host'] = 'db-server.domain.com';
+-// $config[0]['login'] = 'bacula';
+-// $config[0]['password'] = 'otherstrongpassword';
+-// $config[0]['db_name'] = 'bacula';
+-// $config[0]['db_type'] = 'pgsql';
+-// $config[0]['db_port'] = '5432'; 
++$config[0]['label'] = 'Backup Server';
++$config[0]['host'] = 'localhost';
++$config[0]['login'] = 'bacula';
++$config[0]['password'] = 'verystrongpassword';
++$config[0]['db_name'] = 'bacula';
++$config[0]['db_type'] = 'pgsql';
++$config[0]['db_port'] = '5432'; 
++
+ // SQLite bacula catalog
+ // $config[0]['label'] = 'Dev backup server';
+ // $config[0]['db_type'] = 'sqlite';
+ // $config[0]['db_name'] = '/path/to/database/db.sdb';
++
+ // Copy the section below only if you have at least two Bacula catalog
+ // Don't forget to modify options such as label, host, login, password, etc.
+ // 2nd bacula catalog (MySQL)
