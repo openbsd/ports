@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1 2012/09/06 12:59:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/14 08:03:53 ajacoutot Exp $
 
 COMMENT=		framework for streaming media
 
-V=			0.11.93
+V=			0.11.94
 DISTNAME=		gstreamer-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-${V}
 

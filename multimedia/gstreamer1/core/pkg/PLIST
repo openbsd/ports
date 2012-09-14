@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2012/09/06 12:59:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/14 08:03:53 ajacoutot Exp $
 @bin bin/gst-inspect-${VERSION}
 @bin bin/gst-launch-${VERSION}
 @bin bin/gst-typefind-${VERSION}
@@ -132,6 +132,7 @@ share/gir-${VERSION}/GstCheck-${VERSION}.gir
 share/gir-${VERSION}/GstController-${VERSION}.gir
 share/gir-${VERSION}/GstNet-${VERSION}.gir
 share/gtk-doc/html/gstreamer-${VERSION}/
+share/gtk-doc/html/gstreamer-${VERSION}/GstAllocator.html
 share/gtk-doc/html/gstreamer-${VERSION}/GstBin.html
 share/gtk-doc/html/gstreamer-${VERSION}/GstBus.html
 share/gtk-doc/html/gstreamer-${VERSION}/GstChildProxy.html
