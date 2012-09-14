@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2012/08/21 16:29:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/14 07:36:07 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.9.3
-REVISION =	2
+REVISION=	3
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,7 @@ WANTLIB += atk-1.0 c cairo curl exiv2 flickcurl freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gphoto2 gthread-2.0 gtk-x11-2.0 jpeg lcms2
 WANTLIB += m pango-1.0 pangocairo-1.0 png pthread rsvg-2 sqlite3
-WANTLIB += stdc++ tiff xml2 z
+WANTLIB += stdc++ tiff xml2 z lensfun
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=darktable/}
 
