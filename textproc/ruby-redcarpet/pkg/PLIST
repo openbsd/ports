@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/12/13 14:07:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/14 10:37:57 jasper Exp $
 ${GEM_BIN}/redcarpet${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -44,7 +44,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet.so
+${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_man.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redcarpet/render_strip.rb
 ${GEM_LIB}/gems/${DISTNAME}/redcarpet.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/redcarpet_test.rb

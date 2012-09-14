@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/12/13 14:07:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/14 10:37:57 jasper Exp $
 
 COMMENT=	fast, safe and extensible Markdown to (X)HTML parser
 
-DISTNAME=	redcarpet-2.0.0
+DISTNAME=	redcarpet-2.1.1
 
 CATEGORIES=	textproc
-
-HOMEPAGE=	https://github.com/tanoku/redcarpet
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
