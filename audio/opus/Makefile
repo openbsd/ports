@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2012/08/04 14:42:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/14 21:42:32 naddy Exp $
 
 COMMENT=	interactive speech and audio codec
 
-DISTNAME=	opus-0.9.14
-SHARED_LIBS=	opus		0.0	# unknown
+DISTNAME=	opus-1.0.1
+SHARED_LIBS=	opus		0.0	# 2.0
 CATEGORIES=	audio
 
 HOMEPAGE=	http://opus-codec.org/
