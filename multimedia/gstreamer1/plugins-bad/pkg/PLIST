@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/06 13:02:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/14 08:04:35 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -13,7 +13,6 @@ include/gstreamer-${VERSION}/gst/interfaces/photography-enumtypes.h
 include/gstreamer-${VERSION}/gst/interfaces/photography.h
 include/gstreamer-${VERSION}/gst/signalprocessor/
 include/gstreamer-${VERSION}/gst/signalprocessor/gstsignalprocessor.h
-include/gstreamer-${VERSION}/gst/video/
 include/gstreamer-${VERSION}/gst/video/gstsurfaceconverter.h
 include/gstreamer-${VERSION}/gst/video/gstsurfacemeta.h
 include/gstreamer-${VERSION}/gst/video/videocontext.h
@@ -34,14 +33,21 @@ lib/gstreamer-${VERSION}/libgstdvbsuboverlay.so
 lib/gstreamer-${VERSION}/libgstdvdspu.so
 lib/gstreamer-${VERSION}/libgstfestival.so
 lib/gstreamer-${VERSION}/libgstfragmented.so
+lib/gstreamer-${VERSION}/libgstfreeze.so
 lib/gstreamer-${VERSION}/libgstgaudieffects.so
+lib/gstreamer-${VERSION}/libgstgdp.so
 lib/gstreamer-${VERSION}/libgstgeometrictransform.so
+lib/gstreamer-${VERSION}/libgstid3tag.so
+lib/gstreamer-${VERSION}/libgstinter.so
 lib/gstreamer-${VERSION}/libgstinterlace.so
+lib/gstreamer-${VERSION}/libgstjpegformat.so
+lib/gstreamer-${VERSION}/libgstliveadder.so
 lib/gstreamer-${VERSION}/libgstmms.so
 lib/gstreamer-${VERSION}/libgstmpegpsdemux.so
 lib/gstreamer-${VERSION}/libgstmpegtsdemux.so
 lib/gstreamer-${VERSION}/libgstmpegtsmux.so
 lib/gstreamer-${VERSION}/libgstpcapparse.so
+lib/gstreamer-${VERSION}/libgstpnm.so
 lib/gstreamer-${VERSION}/libgstrawparse.so
 lib/gstreamer-${VERSION}/libgstremovesilence.so
 lib/gstreamer-${VERSION}/libgstrtpmux.so
@@ -50,7 +56,9 @@ lib/gstreamer-${VERSION}/libgstscaletempoplugin.so
 lib/gstreamer-${VERSION}/libgstschro.so
 lib/gstreamer-${VERSION}/libgstsdpelem.so
 lib/gstreamer-${VERSION}/libgstsegmentclip.so
+lib/gstreamer-${VERSION}/libgstsiren.so
 lib/gstreamer-${VERSION}/libgstsmooth.so
+lib/gstreamer-${VERSION}/libgstspeed.so
 lib/gstreamer-${VERSION}/libgstvideoparsersbad.so
 lib/gstreamer-${VERSION}/libgstvp8.so
 lib/gstreamer-${VERSION}/libgsty4mdec.so

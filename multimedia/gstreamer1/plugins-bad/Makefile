@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/06 13:02:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/14 08:04:35 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
-V=			0.11.93
+V=			0.11.94
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
@@ -23,8 +23,8 @@ WANTLIB += vpx z
 
 MODULES =		devel/dconf
 
-#BUILD_DEPENDS +=        audio/ladspa \
-#			graphics/libexif
+# needed for ${WRKSRC}/tests/
+BUILD_DEPENDS +=	graphics/libexif
 
 LIB_DEPENDS=		${P}/plugins-base \
 			multimedia/libass \
