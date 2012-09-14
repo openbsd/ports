@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2012/08/30 01:13:32 abieber Exp $
+@comment $OpenBSD: PLIST,v 1.8 2012/09/14 22:40:20 abieber Exp $
 @pkgpath www/node
 @bin bin/node
 bin/node-gyp
@@ -204,6 +204,11 @@ lib/node_modules/fstream/.npmignore
 lib/node_modules/fstream/.travis.yml
 lib/node_modules/fstream/LICENCE
 lib/node_modules/fstream/README.md
+lib/node_modules/fstream/examples/
+lib/node_modules/fstream/examples/filter-pipe.js
+lib/node_modules/fstream/examples/pipe.js
+lib/node_modules/fstream/examples/reader.js
+lib/node_modules/fstream/examples/symlink-write.js
 lib/node_modules/fstream/fstream.js
 lib/node_modules/fstream/lib/
 lib/node_modules/fstream/lib/abstract.js
@@ -492,7 +497,7 @@ lib/node_modules/npm/doc/cli/init.md
 lib/node_modules/npm/doc/cli/install.md
 lib/node_modules/npm/doc/cli/json.md
 lib/node_modules/npm/doc/cli/link.md
-lib/node_modules/npm/doc/cli/list.md
+lib/node_modules/npm/doc/cli/ls.md
 lib/node_modules/npm/doc/cli/npm.md
 lib/node_modules/npm/doc/cli/outdated.md
 lib/node_modules/npm/doc/cli/owner.md
@@ -591,6 +596,7 @@ lib/node_modules/npm/html/doc/install.html
 lib/node_modules/npm/html/doc/json.html
 lib/node_modules/npm/html/doc/link.html
 lib/node_modules/npm/html/doc/list.html
+lib/node_modules/npm/html/doc/ls.html
 lib/node_modules/npm/html/doc/npm.html
 lib/node_modules/npm/html/doc/outdated.html
 lib/node_modules/npm/html/doc/owner.html
@@ -624,11 +630,12 @@ lib/node_modules/npm/html/docfoot.html
 lib/node_modules/npm/html/dochead.html
 lib/node_modules/npm/html/favicon.ico
 lib/node_modules/npm/html/index.html
-lib/node_modules/npm/html/style.css
-lib/node_modules/npm/html/webfonts/
-lib/node_modules/npm/html/webfonts/23242D_3_0.eot
-lib/node_modules/npm/html/webfonts/23242D_3_0.ttf
-lib/node_modules/npm/html/webfonts/23242D_3_0.woff
+lib/node_modules/npm/html/static/
+lib/node_modules/npm/html/static/style.css
+lib/node_modules/npm/html/static/webfonts/
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.eot
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.ttf
+lib/node_modules/npm/html/static/webfonts/23242D_3_0.woff
 lib/node_modules/npm/lib/
 lib/node_modules/npm/lib/adduser.js
 lib/node_modules/npm/lib/bin.js
