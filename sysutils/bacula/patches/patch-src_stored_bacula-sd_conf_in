@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.4 2012/06/28 19:24:56 ajacoutot Exp $
+$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.5 2012/09/14 08:14:31 ajacoutot Exp $
 --- src/stored/bacula-sd.conf.in.orig	Tue Feb 21 16:59:33 2012
 +++ src/stored/bacula-sd.conf.in	Thu Jun 28 19:53:06 2012
 @@ -67,15 +67,15 @@ Device {
@@ -7,7 +7,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.4 2012/06/28 19:24:56 ajacoutot
  #  Device = Drive-2
 -#  Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
 -#  Changer Device = /dev/sg0
-+#  Changer Command = "@scriptdir@/chio-changer %c %o %S %a %d"
++#  Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
 +#  Changer Device = /dev/ch0
  #}
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.4 2012/06/28 19:24:56 ajacoutot
  #  Maximum File Size = 3GB
 -## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
 -## Changer Device = /dev/sg0
-+## Changer Command = "@scriptdir@/chio-changer %c %o %S %a %d"
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
 +## Changer Device = /dev/ch0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
@@ -45,7 +45,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.4 2012/06/28 19:24:56 ajacoutot
  #  RandomAccess = no;
  #  Maximum File Size = 4GB
 -## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
-+## Changer Command = "@scriptdir@/chio-changer %c %o %S %a %d"
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
  ## Changer Device = /dev/sg0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded
@@ -54,7 +54,7 @@ $OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.4 2012/06/28 19:24:56 ajacoutot
  #  RandomAccess = no;
  #  Maximum File Size = 5GB
 -## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
-+## Changer Command = "@scriptdir@/chio-changer %c %o %S %a %d"
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
  ## Changer Device = /dev/sg0
  ## AutoChanger = yes
  #  # Enable the Alert command only if you have the mtx package loaded

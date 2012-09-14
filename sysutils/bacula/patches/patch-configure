@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.12 2012/07/09 18:40:58 sthen Exp $
+$OpenBSD: patch-configure,v 1.13 2012/09/14 08:14:31 ajacoutot Exp $
 --- configure.orig	Thu Jun 28 15:52:03 2012
 +++ configure	Thu Jul  5 18:18:02 2012
 @@ -4804,7 +4804,7 @@ $as_echo "no" >&6; }
@@ -37,32 +37,6 @@ $OpenBSD: patch-configure,v 1.12 2012/07/09 18:40:58 sthen Exp $
  			CONS_LDFLAGS="-L${TOP_DIR}/depkgs/readline"
  			PRTREADLINE_SRC="${TOP_DIR}/depkgs/readline"
  
-@@ -30333,13 +30333,13 @@ $as_echo "#define HAVE_XATTR 1" >>confdefs.h
- fi
- 
- PTHREAD_LIB=""
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
--$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
-+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
-+$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if ${ac_cv_lib_pthread_pthread_create+:} false; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -30370,7 +30370,7 @@ fi
- { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
- $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
--  PTHREAD_LIB="-lpthread"
-+  PTHREAD_LIB="-pthread"
- else
- 
-        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthreads" >&5
 @@ -30720,6 +30720,7 @@ netbsd)
     DISTVER=`uname -a |awk '{print $3}'`
     lld="qd"
