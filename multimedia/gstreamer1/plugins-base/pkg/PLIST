@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/06 13:00:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/14 08:04:07 ajacoutot Exp $
 @bin bin/gst-discoverer-${VERSION}
-bin/gst-visualise-${VERSION}
-include/gstreamer-${VERSION}/
-include/gstreamer-${VERSION}/gst/
 include/gstreamer-${VERSION}/gst/app/
 include/gstreamer-${VERSION}/gst/app/gstappsink.h
 include/gstreamer-${VERSION}/gst/app/gstappsrc.h
@@ -102,7 +99,6 @@ lib/girepository-${VERSION}/GstRtsp-${VERSION}.typelib
 lib/girepository-${VERSION}/GstSdp-${VERSION}.typelib
 lib/girepository-${VERSION}/GstTag-${VERSION}.typelib
 lib/girepository-${VERSION}/GstVideo-${VERSION}.typelib
-lib/gstreamer-${VERSION}/
 lib/gstreamer-${VERSION}/libgstadder.so
 lib/gstreamer-${VERSION}/libgstapp.so
 lib/gstreamer-${VERSION}/libgstaudioconvert.so
@@ -111,7 +107,6 @@ lib/gstreamer-${VERSION}/libgstaudioresample.so
 lib/gstreamer-${VERSION}/libgstaudiotestsrc.so
 lib/gstreamer-${VERSION}/libgstcdparanoia.so
 lib/gstreamer-${VERSION}/libgstencodebin.so
-lib/gstreamer-${VERSION}/libgstgdp.so
 lib/gstreamer-${VERSION}/libgstgio.so
 lib/gstreamer-${VERSION}/libgstivorbisdec.so
 lib/gstreamer-${VERSION}/libgstogg.so
@@ -160,7 +155,7 @@ lib/pkgconfig/gstreamer-rtsp-${VERSION}.pc
 lib/pkgconfig/gstreamer-sdp-${VERSION}.pc
 lib/pkgconfig/gstreamer-tag-${VERSION}.pc
 lib/pkgconfig/gstreamer-video-${VERSION}.pc
-@man man/man1/gst-visualise-${VERSION}.1
+@man man/man1/gst-discoverer-${VERSION}.1
 share/gir-${VERSION}/GstApp-${VERSION}.gir
 share/gir-${VERSION}/GstAudio-${VERSION}.gir
 share/gir-${VERSION}/GstFft-${VERSION}.gir
@@ -270,7 +265,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch01.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/ch02.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-${VERSION}.devhelp2
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-adder.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsamixer.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-alsasrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-appsink.html
@@ -283,8 +277,6 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-clockoverlay.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-decodebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-encodebin.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdpdepay.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-gdppay.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosink.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giosrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-giostreamsink.html
@@ -302,9 +294,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audioresample.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-audiotestsrc.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-cdparanoia.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-decodebin.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-encoding.html
-share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gdp.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-gio.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-libvisual.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-ogg.html
@@ -314,6 +304,7 @@ share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-tcp.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-theora.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-typefindfunctions.html
+share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videoconvert.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videorate.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videoscale.html
 share/gtk-doc/html/gst-plugins-base-plugins-${VERSION}/gst-plugins-base-plugins-plugin-videotestsrc.html
