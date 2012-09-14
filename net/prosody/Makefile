@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2012/08/06 09:50:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/14 21:51:19 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	communications server for Jabber/XMPP written in Lua
 DISTNAME=	prosody-0.8.2
 CATEGORIES=	net
 MASTER_SITES=	http://prosody.im/downloads/source/
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://prosody.im/
 
@@ -19,16 +19,20 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MODULES=	lang/lua
 SUBST_VARS=	MODLUA_BIN
 LIB_DEPENDS=	devel/libidn
-RUN_DEPENDS+=	archivers/luazlib \
+MODLUA_RUN_DEPENDS+= archivers/luazlib \
+		databases/luadbi \
 		devel/luaevent \
 		devel/luafs \
 		security/luasec \
 		textproc/luaexpat
 WANTLIB+=	crypto idn
+
+SUBST_VARS+=	FLAVOR
+
+NO_REGRESS=	Yes
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \

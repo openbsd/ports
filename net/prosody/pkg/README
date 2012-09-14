@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2012/04/22 11:41:55 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2012/09/14 21:51:19 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,7 +21,7 @@ Using Prosody in an OpenBSD environment
 
    # ${RCDIR}/prosody start
 
-   You can have it start automatically on boot by adding prosody to your
+   You can have it start automatically on boot by adding 'prosody' to your
    pkg_scripts line in /etc/rc.conf.local
 
 3) Prosody comes with prosodyctl script for controlling the daemon. Run
@@ -32,3 +32,8 @@ Using Prosody in an OpenBSD environment
    For example, to add users you would use something like:
 
    # ${TRUEPREFIX}/sbin/prosodyctl adduser username@domain.tld
+
+4) In case you decide to enable 'mod_storage_sql', the default SQLite3
+   driver has already been installed. If you like to use MySQL or
+   PostgreSQL for the database, please install luadbi-mysql,${FLAVOR}
+   or luadbi-postgresql,${FLAVOR} respectively.
