@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2012/09/14 07:36:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2012/09/14 09:50:18 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
-DISTNAME=	darktable-0.9.3
-REVISION=	3
+DISTNAME=	darktable-1.0.5
 
 SHARED_ONLY=	Yes
 
@@ -54,7 +53,8 @@ USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
 
 CONFIGURE_STYLE= cmake
-CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release
+CONFIGURE_ARGS=	-DCMAKE_BUILD_TYPE=Release \
+		-DMAN_INSTALL_DIR="./man/man1"
 
 CPPFLAGS+=	-I${LOCALBASE}/include/libpng
 LDFLAGS+=	-L${LOCALBASE}/lib

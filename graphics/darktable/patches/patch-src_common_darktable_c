@@ -1,27 +1,21 @@
-$OpenBSD: patch-src_common_darktable_c,v 1.1 2011/12/09 20:11:00 sthen Exp $
---- src/common/darktable.c.orig	Fri Dec  9 16:24:27 2011
-+++ src/common/darktable.c	Fri Dec  9 16:28:10 2011
-@@ -49,7 +49,7 @@
- #include <sys/param.h>
+$OpenBSD: patch-src_common_darktable_c,v 1.2 2012/09/14 09:50:18 sthen Exp $
+--- src/common/darktable.c.orig	Sat Jul 21 04:44:08 2012
++++ src/common/darktable.c	Tue Aug 21 10:06:04 2012
+@@ -54,7 +54,7 @@
  #include <unistd.h>
+ #include <locale.h>
  
 -#if !defined(__APPLE__) && !defined(__FreeBSD__)
 +#if !defined(__APPLE__) && !defined(__FreeBSD__) && !defined(__OpenBSD__)
  #include <malloc.h>
  #endif
  #ifdef __APPLE__
-@@ -77,12 +77,12 @@ typedef void (dt_signal_handler_t)(int) ;
- static dt_signal_handler_t *_dt_sigill_old_handler = NULL;
- static dt_signal_handler_t *_dt_sigsegv_old_handler = NULL;
+@@ -87,7 +87,7 @@ static dt_signal_handler_t *_dt_sigsegv_old_handler = 
  
--#ifdef __APPLE__
-+#if defined (__APPLE__) || defined(__OpenBSD__)
+ #if (defined(__APPLE__) && defined(APPLE_NEED_DPRINTF)) ||        \
+   (defined(__FreeBSD_version) && (__FreeBSD_version < 800071)) || \
+-  defined(__SUNOS__)
++  defined(__SUNOS__) || defined(__OpenBSD__)
  static int dprintf(int fd,const char *fmt, ...)
  {
    va_list ap;
-   FILE *f = fdopen(fd,"a");
--  va_start(ap, &fmt);
-+  va_start(ap, fmt);
-   int rc = vfprintf(f, fmt, ap);
-   fclose(f);
-   va_end(ap);

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/06/15 08:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/14 09:50:19 sthen Exp $
 @bin bin/darktable
 @bin bin/darktable-cltest
-@comment bin/darktable-faster
 @bin bin/darktable-viewer
 lib/darktable/
 lib/darktable/libdarktable.so
@@ -33,25 +32,32 @@ lib/darktable/plugins/libclipping.so
 lib/darktable/plugins/libcolorcontrast.so
 lib/darktable/plugins/libcolorcorrection.so
 lib/darktable/plugins/libcolorin.so
+lib/darktable/plugins/libcolorize.so
 lib/darktable/plugins/libcolorout.so
+lib/darktable/plugins/libcolortransfer.so
 lib/darktable/plugins/libcolorzones.so
 lib/darktable/plugins/libdemosaic.so
 lib/darktable/plugins/libequalizer.so
 lib/darktable/plugins/libexposure.so
+lib/darktable/plugins/libflip.so
 lib/darktable/plugins/libgamma.so
 lib/darktable/plugins/libgraduatednd.so
 lib/darktable/plugins/libgrain.so
 lib/darktable/plugins/libhighlights.so
 lib/darktable/plugins/libhighpass.so
 lib/darktable/plugins/libhotpixels.so
+lib/darktable/plugins/libinvert.so
 lib/darktable/plugins/liblens.so
+lib/darktable/plugins/liblevels.so
 lib/darktable/plugins/liblowlight.so
+lib/darktable/plugins/liblowpass.so
 lib/darktable/plugins/libmonochrome.so
 lib/darktable/plugins/libnlmeans.so
 lib/darktable/plugins/liboverexposed.so
 lib/darktable/plugins/libprofile_gamma.so
 lib/darktable/plugins/librawdenoise.so
 lib/darktable/plugins/librelight.so
+lib/darktable/plugins/libshadhi.so
 lib/darktable/plugins/libsharpen.so
 lib/darktable/plugins/libsoften.so
 lib/darktable/plugins/libsplittoning.so
@@ -60,31 +66,54 @@ lib/darktable/plugins/libtemperature.so
 lib/darktable/plugins/libtonecurve.so
 lib/darktable/plugins/libtonemap.so
 lib/darktable/plugins/libvelvia.so
+lib/darktable/plugins/libvibrance.so
 lib/darktable/plugins/libvignette.so
 lib/darktable/plugins/libwatermark.so
 lib/darktable/plugins/libzonesystem.so
 lib/darktable/plugins/lighttable/
+lib/darktable/plugins/lighttable/libbackgroundjobs.so
 lib/darktable/plugins/lighttable/libcamera.so
 lib/darktable/plugins/lighttable/libcapture.so
 lib/darktable/plugins/lighttable/libcollect.so
+lib/darktable/plugins/lighttable/libcolorlabels.so
+lib/darktable/plugins/lighttable/libcolorpicker.so
 lib/darktable/plugins/lighttable/libcopy_history.so
+lib/darktable/plugins/lighttable/libdarktable_label.so
 lib/darktable/plugins/lighttable/libexport.so
+lib/darktable/plugins/lighttable/libfilmstrip.so
+lib/darktable/plugins/lighttable/libfilter.so
+lib/darktable/plugins/lighttable/libglobal_toolbox.so
+lib/darktable/plugins/lighttable/libhinter.so
+lib/darktable/plugins/lighttable/libhistogram.so
+lib/darktable/plugins/lighttable/libhistory.so
 lib/darktable/plugins/lighttable/libimage.so
+lib/darktable/plugins/lighttable/libimport.so
+lib/darktable/plugins/lighttable/libkeywords.so
+lib/darktable/plugins/lighttable/liblighttable_mode.so
 lib/darktable/plugins/lighttable/libmetadata.so
+lib/darktable/plugins/lighttable/libmetadata_view.so
+lib/darktable/plugins/lighttable/libmodule_toolbox.so
+lib/darktable/plugins/lighttable/libmodulegroups.so
+lib/darktable/plugins/lighttable/libmodulelist.so
+lib/darktable/plugins/lighttable/libnavigation.so
+lib/darktable/plugins/lighttable/libratings.so
 lib/darktable/plugins/lighttable/librecentcollect.so
 lib/darktable/plugins/lighttable/libselect.so
+lib/darktable/plugins/lighttable/libsnapshots.so
 lib/darktable/plugins/lighttable/libstyles.so
 lib/darktable/plugins/lighttable/libtagging.so
+lib/darktable/plugins/lighttable/libview_toolbox.so
+lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/
 lib/darktable/views/libcapture.so
 lib/darktable/views/libdarkroom.so
-lib/darktable/views/libfilmstrip.so
 lib/darktable/views/liblighttable.so
 lib/libdarktable.so
 @man man/man1/darktable.1
 share/applications/darktable.desktop
 share/darktable/
 share/darktable/darktable.gtkrc
+share/darktable/darktablerc
 share/darktable/gdb_commands
 share/darktable/kernels/
 share/darktable/kernels/atrous.cl
@@ -97,6 +126,8 @@ share/darktable/kernels/nlmeans.cl
 share/darktable/kernels/programs.conf
 share/darktable/kernels/sharpen.cl
 share/darktable/pixmaps/
+share/darktable/pixmaps/idbutton.png
+share/darktable/pixmaps/off.png
 share/darktable/pixmaps/plugins/
 share/darktable/pixmaps/plugins/darkroom/
 share/darktable/pixmaps/plugins/darkroom/anlfyeni.png
@@ -116,6 +147,7 @@ share/darktable/pixmaps/plugins/darkroom/colortransfer.png
 share/darktable/pixmaps/plugins/darkroom/colorzones.png
 share/darktable/pixmaps/plugins/darkroom/demosaic.png
 share/darktable/pixmaps/plugins/darkroom/exposure.png
+share/darktable/pixmaps/plugins/darkroom/flip.png
 share/darktable/pixmaps/plugins/darkroom/graduatednd.png
 share/darktable/pixmaps/plugins/darkroom/grain.png
 share/darktable/pixmaps/plugins/darkroom/highlights.png
@@ -123,6 +155,7 @@ share/darktable/pixmaps/plugins/darkroom/highpass.png
 share/darktable/pixmaps/plugins/darkroom/hotpixels.png
 share/darktable/pixmaps/plugins/darkroom/invert.png
 share/darktable/pixmaps/plugins/darkroom/lens.png
+share/darktable/pixmaps/plugins/darkroom/levels.png
 share/darktable/pixmaps/plugins/darkroom/lowlight.png
 share/darktable/pixmaps/plugins/darkroom/lowpass.png
 share/darktable/pixmaps/plugins/darkroom/monochrome.png
@@ -132,6 +165,7 @@ share/darktable/pixmaps/plugins/darkroom/profile_gamma.png
 share/darktable/pixmaps/plugins/darkroom/rawdenoise.png
 share/darktable/pixmaps/plugins/darkroom/rawimport.png
 share/darktable/pixmaps/plugins/darkroom/relight.png
+share/darktable/pixmaps/plugins/darkroom/shadhi.png
 share/darktable/pixmaps/plugins/darkroom/sharpen.png
 share/darktable/pixmaps/plugins/darkroom/soften.png
 share/darktable/pixmaps/plugins/darkroom/splittoning.png
@@ -161,6 +195,8 @@ share/doc/darktable/README
 share/doc/darktable/TRANSLATORS
 share/icons/hicolor/16x16/apps/darktable.png
 share/icons/hicolor/22x22/apps/darktable.png
+share/icons/hicolor/24x24/apps/darktable.png
+share/icons/hicolor/256x256/apps/darktable.png
 share/icons/hicolor/32x32/apps/darktable.png
 share/icons/hicolor/48x48/apps/darktable.png
 share/icons/hicolor/64x64/apps/darktable.png
@@ -181,6 +217,7 @@ share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
 share/locale/sv/LC_MESSAGES/darktable.mo
 share/locale/th/LC_MESSAGES/darktable.mo
+share/locale/zh_CN/LC_MESSAGES/darktable.mo
 @exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
 @exec %D/bin/update-desktop-database
