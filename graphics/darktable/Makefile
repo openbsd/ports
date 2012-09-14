@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2012/09/14 09:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/14 09:56:17 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.0.5
+REVISION=	0
 
 SHARED_ONLY=	Yes
 
@@ -25,7 +26,9 @@ WANTLIB += atk-1.0 c cairo curl exiv2 flickcurl freetype gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gphoto2 gthread-2.0 gtk-x11-2.0 jpeg lcms2
 WANTLIB += m pango-1.0 pangocairo-1.0 png pthread rsvg-2 sqlite3
-WANTLIB += stdc++ tiff xml2 z lensfun
+WANTLIB += stdc++ tiff xml2 z gphoto2_port
+
+WANTLIB += lensfun # dlopen'd. this is "Extra" in check-lib-depends; that's ok,
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=darktable/}
 
