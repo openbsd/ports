@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2012/09/14 21:59:09 jasper Exp $
 
 COMMENT=	perl extension for writing XML documents
 
-DISTNAME=	XML-Writer-0.612
-REVISION=	0
+DISTNAME=	XML-Writer-0.615
 CATEGORIES=	textproc
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
