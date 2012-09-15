@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2012/09/05 15:07:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.270 2012/09/15 17:53:15 jeremy Exp $
 
      SUBDIR =
      SUBDIR += LPRng
@@ -158,7 +158,6 @@
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
-     SUBDIR += ruby-mongrel_cluster
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-thor

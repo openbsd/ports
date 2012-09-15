@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1068 2012/09/11 07:27:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.1069 2012/09/15 17:53:15 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1156,7 +1156,6 @@
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-echoe
      SUBDIR += ruby-extlib
-     SUBDIR += ruby-facets
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-ffi
      SUBDIR += ruby-ffi,ruby19
@@ -1195,13 +1194,11 @@
      SUBDIR += ruby-rcov
      SUBDIR += ruby-rcov,ruby19
      SUBDIR += ruby-rdoc
-     SUBDIR += ruby-rparsec
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
      SUBDIR += ruby-rubyforge
      SUBDIR += ruby-rubyinline
-     SUBDIR += ruby-sexp
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-sprockets
      SUBDIR += ruby-stringex

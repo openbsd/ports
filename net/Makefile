@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.769 2012/09/12 08:26:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.770 2012/09/15 17:53:15 jeremy Exp $
 
      SUBDIR =
      SUBDIR += BitTorrent
@@ -482,9 +482,7 @@
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
      SUBDIR += ruby-amqp
-     SUBDIR += ruby-amqp-utils
      SUBDIR += ruby-bunny
-     SUBDIR += ruby-errand
      SUBDIR += ruby-eventmachine
      SUBDIR += ruby-eventmachine,ruby19
      SUBDIR += ruby-minion
