@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/15 10:37:22 sthen Exp $
 
 COMMENT=		Nagios plugin to check Microsoft SQL Server
 
-DISTNAME=		check_mssql_health-1.5.3
+DISTNAME=		check_mssql_health-1.5.10
 CATEGORIES=		net databases
 
 HOMEPAGE=		http://labs.consol.de/lang/en/nagios/check_mssql_health/
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://labs.consol.de/wp-content/uploads/2009/11/
+MASTER_SITES=		http://labs.consol.de/download/shinken-nagios-plugins/
 
 PKG_ARCH=		*
 BUILD_DEPENDS=		${RUN_DEPENDS}
@@ -21,6 +21,7 @@ RUN_DEPENDS=		databases/p5-DBD-Sybase
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		ac_cv_path_mkdir=/bin/mkdir
+MAKE_FLAGS=		AWK=/usr/bin/awk
 CONFIGURE_ARGS=		--with-mymodules-dir=${LOCALBASE}/libexec/nagios \
 			--with-mymodules-dyn-dir=${LOCALBASE}/libexec/nagios \
 			--libexecdir=${LOCALBASE}/libexec/nagios \
