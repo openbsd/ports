@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/11/17 15:31:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/15 07:01:45 jasper Exp $
 
 COMMENT =		builds man pages
 
 DISTNAME =		ronn-0.7.3
+REVISION =		0
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://rtomayko.github.com/ronn/
@@ -30,7 +31,8 @@ post-install:
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		textproc/ruby-hpricot,${MODRUBY_FLAVOR}>=0.8.2 \
 			textproc/ruby-mustache,${MODRUBY_FLAVOR}>=0.7.0 \
-			textproc/ruby-rdiscount,${MODRUBY_FLAVOR}>=1.5.8
+			textproc/ruby-rdiscount,${MODRUBY_FLAVOR}>=1.5.8 \
+			www/ruby-sinatra,${MODRUBY_FLAVOR}
 
 MODRUBY_REGRESS =	rake
 MODRUBY_REGRESS_ENV =	RUBYOPT=-rubygems
