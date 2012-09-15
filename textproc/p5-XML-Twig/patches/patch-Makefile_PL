@@ -1,13 +1,13 @@
-$OpenBSD: patch-Makefile_PL,v 1.4 2010/09/09 19:22:50 jasper Exp $
---- Makefile.PL.orig	Tue Apr 27 10:46:53 2010
-+++ Makefile.PL	Thu Sep  9 21:20:39 2010
+$OpenBSD: patch-Makefile_PL,v 1.5 2012/09/15 10:27:22 jasper Exp $
+--- Makefile.PL.orig	Sat Sep 15 12:26:05 2012
++++ Makefile.PL	Sat Sep 15 12:26:21 2012
 @@ -28,8 +28,7 @@ else
            "    'perl Makefile.PL -n' to skip installation\n";
      foreach my $prompt (@prompts)
        { my ($program, $default, $description) = @$prompt;
--        if( prompt("Do you want to install '$program' ($description)?", $default) =~ /^y/)
+-        if( prompt("Do you want to install '$program' ($description)?", $default) =~ /^y/i)
 -          { push(@programs, $program); }
-+	push(@programs, $program);
++          push(@programs, $program);
        }
    }
  
