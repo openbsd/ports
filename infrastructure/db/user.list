@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.194 2012/08/24 04:18:02 jmatthew Exp $
+$OpenBSD: user.list,v 1.195 2012/09/15 13:52:35 fgsch Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -105,7 +105,7 @@ id  user		group		port options
 594 _ejabberd		_ejabberd	net/ejabberd
 595 _poppassd		_poppassd	sysutils/openpoppassd
 596 _heartbeat		_heartbeat	sysutils/heartbeat
-597			_kqemu		emulators/kqemu
+#597			_kqemu		emulators/kqemu
 598 _iodine		_iodine		net/iodine
 599 _bacula-sd				sysutils/bacula
 600 _ntlmaps		_ntlmaps	www/ntlmaps
@@ -211,3 +211,4 @@ id  user		group		port options
 700 _yubiserve		_yubiserve	security/yubiserve
 701 _polkitd		_polkitd	sysutils/polkit
 702 _riak		_riak		databases/riak
+703 _ngircd		_ngircd		net/ngircd
