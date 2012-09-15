@@ -1,0 +1,21 @@
+$OpenBSD: patch-modules_k_perl_perl_c,v 1.1 2012/09/15 12:16:18 sthen Exp $
+--- modules_k/perl/perl.c.orig	Sat Jul 28 14:50:20 2012
++++ modules_k/perl/perl.c	Sat Jul 28 14:52:07 2012
+@@ -319,6 +319,8 @@ struct mi_root* perl_mi_reload(struct mi_root *cmd_tre
+ static int mod_init(void) {
+ 
+ 	int ret = 0;
++	int argc = 0;
++	char **argv = NULL;
+ 
+ 	if(register_mi_mod(exports.name, mi_cmds)!=0)
+ 	{
+@@ -337,7 +339,7 @@ static int mod_init(void) {
+ 		return -1;
+ 	}
+ 
+-	PERL_SYS_INIT3(NULL, NULL, &environ);
++	PERL_SYS_INIT3(&argc, &argv, &environ);
+ 
+ 	if ((my_perl = parser_init())) {
+ 		ret = 0;

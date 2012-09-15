@@ -1,43 +1,33 @@
-$OpenBSD: patch-modules_auth_auth_mod_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- modules/auth/auth_mod.c.orig	Thu Apr 19 15:10:24 2012
-+++ modules/auth/auth_mod.c	Sun Apr 22 04:07:24 2012
-@@ -79,6 +79,9 @@ static int mod_init(void);
-  */
- int w_consume_credentials(struct sip_msg* msg, char* s1, char* s2);
- 
-+int w_auth_challenge(struct sip_msg *msg, str *realm, int flags,
-+		int hftype);
-+
- static int pv_proxy_authenticate(struct sip_msg* msg, char* realm,
- 		char *passwd, char *flags);
- static int pv_www_authenticate(struct sip_msg* msg, char* realm,
-@@ -635,6 +638,11 @@ static int auth_send_reply(struct sip_msg *msg, int co
-  */
- int auth_challenge(struct sip_msg *msg, str *realm, int flags, int hftype)
- {
-+    return w_auth_challenge(msg, realm, flags, hftype);
-+}
-+
-+int w_auth_challenge(struct sip_msg *msg, str *realm, int flags, int hftype)
-+{
-     int ret, stale;
-     str hf = {0, 0};
- 	struct qp *qop = NULL;
-@@ -706,7 +714,7 @@ static int proxy_challenge(struct sip_msg *msg, char* 
+$OpenBSD: patch-modules_auth_auth_mod_c,v 1.2 2012/09/15 12:16:18 sthen Exp $
+--- modules/auth/auth_mod.c.orig	Thu Aug  2 16:54:14 2012
++++ modules/auth/auth_mod.c	Sun Sep  2 02:51:40 2012
+@@ -737,7 +737,7 @@ static int proxy_challenge(struct sip_msg *msg, char* 
  		goto error;
  	}
  
 -	return auth_challenge(msg, &srealm, vflags, HDR_PROXYAUTH_T);
-+	return w_auth_challenge(msg, &srealm, vflags, HDR_PROXYAUTH_T);
++	return auth_challenge_helper(msg, &srealm, vflags, HDR_PROXYAUTH_T, NULL);
  
  error:
  	if(!(vflags&4)) {
-@@ -739,7 +747,7 @@ static int www_challenge(struct sip_msg *msg, char* re
+@@ -770,7 +770,7 @@ static int www_challenge(struct sip_msg *msg, char* re
  		goto error;
  	}
  
 -	return auth_challenge(msg, &srealm, vflags, HDR_AUTHORIZATION_T);
-+	return w_auth_challenge(msg, &srealm, vflags, HDR_AUTHORIZATION_T);
++	return auth_challenge_helper(msg, &srealm, vflags, HDR_AUTHORIZATION_T, NULL);
+ 
+ error:
+ 	if(!(vflags&4)) {
+@@ -808,9 +808,9 @@ static int w_auth_challenge(struct sip_msg *msg, char*
+ 	}
+ 
+ 	if(msg->REQ_METHOD==METHOD_REGISTER)
+-		return auth_challenge(msg, &srealm, vflags, HDR_AUTHORIZATION_T);
++		return auth_challenge_helper(msg, &srealm, vflags, HDR_AUTHORIZATION_T, NULL);
+ 	else
+-		return auth_challenge(msg, &srealm, vflags, HDR_PROXYAUTH_T);
++		return auth_challenge_helper(msg, &srealm, vflags, HDR_PROXYAUTH_T, NULL);
  
  error:
  	if(!(vflags&4)) {

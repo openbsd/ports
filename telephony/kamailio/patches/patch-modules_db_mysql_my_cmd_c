@@ -1,6 +1,15 @@
-$OpenBSD: patch-modules_db_mysql_my_cmd_c,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- modules/db_mysql/my_cmd.c.orig	Sun Apr 22 22:25:29 2012
-+++ modules/db_mysql/my_cmd.c	Sun Apr 22 22:25:57 2012
+$OpenBSD: patch-modules_db_mysql_my_cmd_c,v 1.2 2012/09/15 12:16:18 sthen Exp $
+--- modules/db_mysql/my_cmd.c.orig	Mon Jun 18 14:36:10 2012
++++ modules/db_mysql/my_cmd.c	Sat Jul 28 12:32:54 2012
+@@ -29,7 +29,7 @@
+  */
+ 
+ /* the following macro will break the compile on solaris */
+-#if !defined (__SVR4) && !defined (__sun)
++#if !defined (__SVR4) && !defined (__sun) && !defined (__OpenBSD__)
+    #define _XOPEN_SOURCE 4     /* bsd */
+ #endif
+ #define _XOPEN_SOURCE_EXTENDED 1    /* solaris */
 @@ -47,6 +47,7 @@
  #include "../../ut.h"
  #include "../../dprint.h"

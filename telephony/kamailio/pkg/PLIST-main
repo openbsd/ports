@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2012/04/22 21:44:24 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2012/09/15 12:16:18 sthen Exp $
 @newgroup _kamailio:628
 @newuser _kamailio:628:628:daemon:Kamailio:/nonexistent:/sbin/nologin
 lib/kamailio/
@@ -17,11 +17,13 @@ lib/kamailio/kamctl/kamctl.unixsock
 lib/kamailio/kamctl/kamdbctl.base
 lib/kamailio/kamctl/kamdbctl.db_berkeley
 lib/kamailio/kamctl/kamdbctl.dbtext
+@lib lib/kamailio/libbinrpc.so.${LIBbinrpc_VERSION}
 @lib lib/kamailio/libkcore.so.${LIBkcore_VERSION}
 @lib lib/kamailio/libkmi.so.${LIBkmi_VERSION}
 @lib lib/kamailio/libser_cds.so.${LIBser_cds_VERSION}
 @lib lib/kamailio/libsrdb1.so.${LIBsrdb1_VERSION}
 @lib lib/kamailio/libsrdb2.so.${LIBsrdb2_VERSION}
+@lib lib/kamailio/libsrutils.so.${LIBsrutils_VERSION}
 @lib lib/kamailio/libtrie.so.${LIBtrie_VERSION}
 lib/kamailio/modules/
 lib/kamailio/modules/async.so
@@ -44,6 +46,7 @@ lib/kamailio/modules/matrix.so
 lib/kamailio/modules/mediaproxy.so
 lib/kamailio/modules/mi_rpc.so
 lib/kamailio/modules/mqueue.so
+lib/kamailio/modules/msrp.so
 lib/kamailio/modules/mtree.so
 lib/kamailio/modules/pdb.so
 lib/kamailio/modules/pipelimit.so
@@ -58,9 +61,11 @@ lib/kamailio/modules/sms.so
 lib/kamailio/modules/textopsx.so
 lib/kamailio/modules/tls.so
 lib/kamailio/modules/tm.so
+lib/kamailio/modules/tmrec.so
 lib/kamailio/modules/topoh.so
 lib/kamailio/modules/utils.so
 lib/kamailio/modules/xhttp.so
+lib/kamailio/modules/xhttp_rpc.so
 lib/kamailio/modules_k/
 lib/kamailio/modules_k/acc.so
 lib/kamailio/modules_k/alias_db.so
@@ -70,6 +75,7 @@ lib/kamailio/modules_k/benchmark.so
 lib/kamailio/modules_k/call_control.so
 lib/kamailio/modules_k/cfgutils.so
 lib/kamailio/modules_k/cpl-c.so
+lib/kamailio/modules_k/db_cluster.so
 lib/kamailio/modules_k/db_text.so
 lib/kamailio/modules_k/dialog.so
 lib/kamailio/modules_k/dispatcher.so
@@ -97,6 +103,7 @@ lib/kamailio/modules_k/pike.so
 lib/kamailio/modules_k/presence.so
 lib/kamailio/modules_k/presence_dialoginfo.so
 lib/kamailio/modules_k/presence_mwi.so
+lib/kamailio/modules_k/presence_profile.so
 lib/kamailio/modules_k/presence_xml.so
 lib/kamailio/modules_k/pua.so
 lib/kamailio/modules_k/pua_bla.so
@@ -198,6 +205,7 @@ share/doc/kamailio/modules/README.matrix
 share/doc/kamailio/modules/README.mediaproxy
 share/doc/kamailio/modules/README.mi_rpc
 share/doc/kamailio/modules/README.mqueue
+share/doc/kamailio/modules/README.msrp
 share/doc/kamailio/modules/README.mtree
 share/doc/kamailio/modules/README.pdb
 share/doc/kamailio/modules/README.pipelimit
@@ -212,9 +220,11 @@ share/doc/kamailio/modules/README.sms
 share/doc/kamailio/modules/README.textopsx
 share/doc/kamailio/modules/README.tls
 share/doc/kamailio/modules/README.tm
+share/doc/kamailio/modules/README.tmrec
 share/doc/kamailio/modules/README.topoh
 share/doc/kamailio/modules/README.utils
 share/doc/kamailio/modules/README.xhttp
+share/doc/kamailio/modules/README.xhttp_rpc
 share/doc/kamailio/modules_k/
 share/doc/kamailio/modules_k/README.acc
 share/doc/kamailio/modules_k/README.alias_db
@@ -224,6 +234,7 @@ share/doc/kamailio/modules_k/README.benchmark
 share/doc/kamailio/modules_k/README.call_control
 share/doc/kamailio/modules_k/README.cfgutils
 share/doc/kamailio/modules_k/README.cpl-c
+share/doc/kamailio/modules_k/README.db_cluster
 share/doc/kamailio/modules_k/README.db_text
 share/doc/kamailio/modules_k/README.dialog
 share/doc/kamailio/modules_k/README.dispatcher
@@ -251,6 +262,7 @@ share/doc/kamailio/modules_k/README.pike
 share/doc/kamailio/modules_k/README.presence
 share/doc/kamailio/modules_k/README.presence_dialoginfo
 share/doc/kamailio/modules_k/README.presence_mwi
+share/doc/kamailio/modules_k/README.presence_profile
 share/doc/kamailio/modules_k/README.presence_xml
 share/doc/kamailio/modules_k/README.pua
 share/doc/kamailio/modules_k/README.pua_bla
@@ -344,6 +356,7 @@ share/kamailio/db_berkeley/kamailio/dialog_vars
 share/kamailio/db_berkeley/kamailio/dialplan
 share/kamailio/db_berkeley/kamailio/dispatcher
 share/kamailio/db_berkeley/kamailio/domain
+share/kamailio/db_berkeley/kamailio/domain_attrs
 share/kamailio/db_berkeley/kamailio/domain_name
 share/kamailio/db_berkeley/kamailio/domainpolicy
 share/kamailio/db_berkeley/kamailio/dr_gateways
@@ -399,6 +412,7 @@ share/kamailio/dbtext/kamailio/dialog_vars
 share/kamailio/dbtext/kamailio/dialplan
 share/kamailio/dbtext/kamailio/dispatcher
 share/kamailio/dbtext/kamailio/domain
+share/kamailio/dbtext/kamailio/domain_attrs
 share/kamailio/dbtext/kamailio/domain_name
 share/kamailio/dbtext/kamailio/domainpolicy
 share/kamailio/dbtext/kamailio/dr_gateways

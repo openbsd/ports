@@ -1,6 +1,6 @@
-$OpenBSD: patch-utils_kamctl_kamctl,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- utils/kamctl/kamctl.orig	Fri Feb  3 16:43:07 2012
-+++ utils/kamctl/kamctl	Fri Feb  3 16:44:20 2012
+$OpenBSD: patch-utils_kamctl_kamctl,v 1.2 2012/09/15 12:16:18 sthen Exp $
+--- utils/kamctl/kamctl.orig	Mon Jun 18 14:36:10 2012
++++ utils/kamctl/kamctl	Mon Jul  9 00:21:55 2012
 @@ -56,7 +56,7 @@ fi
  if [ -f "$MYLIBDIR/kamctl.base" ]; then
  	. "$MYLIBDIR/kamctl.base"
@@ -10,7 +10,7 @@ $OpenBSD: patch-utils_kamctl_kamctl,v 1.1 2012/04/22 21:44:24 sthen Exp $
  	exit -1
  fi
  
-@@ -1648,7 +1648,7 @@ openser_stop() {
+@@ -1720,7 +1720,7 @@ openser_stop() {
  options_ping() {
  	myhost=`get_my_host`
  	require_ctlengine

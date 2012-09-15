@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_libs,v 1.1 2012/04/22 21:44:24 sthen Exp $
---- Makefile.libs.orig	Tue Jan 31 16:47:40 2012
-+++ Makefile.libs	Tue Feb  7 00:57:41 2012
-@@ -57,14 +57,20 @@ ifeq ($(OS), darwin)
+$OpenBSD: patch-Makefile_libs,v 1.2 2012/09/15 12:16:18 sthen Exp $
+--- Makefile.libs.orig	Mon Jun 18 14:36:09 2012
++++ Makefile.libs	Sun Jul 29 18:01:15 2012
+@@ -57,14 +57,19 @@ ifeq ($(OS), darwin)
  	NAME_LD_FLAGS= -compatibility_version $(MAJOR_VER).$(MINOR_VER) \
  					-current_version $(MAJOR_VER).$(MINOR_VER).$(BUGFIX_VER) \
  					-install_name $(LIB_INSTALL_NAME)
@@ -9,7 +9,6 @@ $OpenBSD: patch-Makefile_libs,v 1.1 2012/04/22 21:44:24 sthen Exp $
  else
 +ifeq ($(OS), openbsd)
 +	LIB_NAME:=$(LIB_PREFIX)$(NAME)$(LIB_SUFFIX).$(OBSD_VER)
-+	LIB_RUNTIME_NAME:=$(LIB_PREFIX)$(NAME)$(LIB_SUFFIX).$(OBSD_VER)
 +	NAME_LD_FLAGS= $(LIB_SONAME)$(LIB_RUNTIME_NAME)
 +	LIBINAME_F:=
 +else
@@ -23,7 +22,7 @@ $OpenBSD: patch-Makefile_libs,v 1.1 2012/04/22 21:44:24 sthen Exp $
  
  ifeq	($(strip $(compile_for_install)),yes)
  	LIB_INSTALL_NAME:=$(lib_target)/$(LIB_RUNTIME_NAME)
-@@ -111,14 +117,18 @@ endif
+@@ -111,14 +116,18 @@ endif
  $(NAME): $(LIB_RUNTIME_NAME) $(LIB_LINK_NAME) $(LIBINAME_F)
  
  $(LIB_RUNTIME_NAME):
@@ -42,7 +41,7 @@ $OpenBSD: patch-Makefile_libs,v 1.1 2012/04/22 21:44:24 sthen Exp $
  
  .PHONY: link_clean
  link_clean:
-@@ -144,14 +154,18 @@ ifeq ($(OS), freebsd)
+@@ -144,21 +153,31 @@ ifeq ($(OS), freebsd)
  	rm -f $(lib_prefix)/$(lib_dir)/$(LIB_LINK_NAME)
  	cd $(lib_prefix)/$(lib_dir) ; ln -s $(LIB_RUNTIME_NAME) $(LIB_LINK_NAME)
  else
@@ -57,8 +56,22 @@ $OpenBSD: patch-Makefile_libs,v 1.1 2012/04/22 21:44:24 sthen Exp $
  	cd $(lib_prefix)/$(lib_dir) ; ln -s $(LIB_NAME) $(LIB_RUNTIME_NAME) 
  	cd $(lib_prefix)/$(lib_dir) ; ln -s $(LIB_NAME) $(LIB_LINK_NAME) 
  endif
++endif
+ 
+-
+ .PHONY:install-if-newer
++ifeq ($(OS), openbsd)
++install-if-newer: $(lib_prefix)/$(lib_dir)/$(LIB_NAME)
++
++$(lib_prefix)/$(lib_dir)/$(LIB_NAME): $(LIBINAME_F)
++	@$(MAKE) install
++else
+ install-if-newer: $(lib_prefix)/$(lib_dir)/$(LIB_RUNTIME_NAME)
+ 
+ $(lib_prefix)/$(lib_dir)/$(LIB_RUNTIME_NAME): $(LIB_NAME) $(LIBINAME_F)
+ 	@$(MAKE) install
 -
 +endif
  
- .PHONY:install-if-newer
- install-if-newer: $(lib_prefix)/$(lib_dir)/$(LIB_RUNTIME_NAME)
+ ifneq ($(strip $(LIBINAME_F)),)
+ $(LIBINAME_F): $(ALLDEP)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_defs,v 1.2 2012/06/12 23:39:09 sthen Exp $
---- Makefile.defs.orig	Thu Apr 19 15:10:24 2012
-+++ Makefile.defs	Tue Jun 12 23:10:37 2012
+$OpenBSD: patch-Makefile_defs,v 1.3 2012/09/15 12:16:18 sthen Exp $
+--- Makefile.defs.orig	Thu Aug  2 16:54:15 2012
++++ Makefile.defs	Sun Sep  2 18:52:42 2012
 @@ -422,7 +422,7 @@ endif
  endif
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile_defs,v 1.2 2012/06/12 23:39:09 sthen Exp $
  bin_target = $(prefix)/$(bin_dir)
  #modules_target = $(prefix)/$(modules_dir)
  lib_target = $(prefix)/$(lib_dir)
-@@ -940,7 +940,7 @@ ifeq	($(ARCH), x86_64)
+@@ -944,7 +944,7 @@ ifeq	($(ARCH), x86_64)
  ifeq		($(CC_NAME), gcc)
  				C_DEFS+=-DCC_GCC_LIKE_ASM
  				#common stuff
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile_defs,v 1.2 2012/06/12 23:39:09 sthen Exp $
  			#if gcc 4.5+
  			# don't add '-mtune=$(CPU)' - gcc failure
  ifeq			($(CC_SHORTVER), 4.5+)
-@@ -954,12 +954,8 @@ else
+@@ -958,12 +958,8 @@ else
  			#if gcc 4.2+
  ifeq			($(CC_SHORTVER), 4.2+)
  $(call				set_if_empty,CPU,opteron)
@@ -43,7 +43,7 @@ $OpenBSD: patch-Makefile_defs,v 1.2 2012/06/12 23:39:09 sthen Exp $
  else
  			#if gcc 4.0+
  ifeq			($(CC_SHORTVER), 4.x)
-@@ -1899,9 +1895,10 @@ endif
+@@ -1904,9 +1900,10 @@ endif
  
  ifeq ($(OS), openbsd)
  	C_DEFS+=-DHAVE_SOCKADDR_SA_LEN  -DHAVE_GETHOSTBYNAME2 \
