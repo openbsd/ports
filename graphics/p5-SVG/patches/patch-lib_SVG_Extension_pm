@@ -1,8 +1,8 @@
-$OpenBSD: patch-lib_SVG_Extension_pm,v 1.1 2010/04/24 22:31:20 jasper Exp $
---- lib/SVG/Extension.pm.orig	Mon Apr  5 13:40:51 2010
-+++ lib/SVG/Extension.pm	Sun Apr 25 00:27:52 2010
-@@ -23,6 +23,9 @@ use constant ENTITY => "ENTITY";
- %TYPES=map { $_ => 1 } @TYPES;
+$OpenBSD: patch-lib_SVG_Extension_pm,v 1.2 2012/09/15 07:08:16 jasper Exp $
+--- lib/SVG/Extension.pm.orig	Tue May 29 08:39:32 2012
++++ lib/SVG/Extension.pm	Sat Sep 15 09:06:56 2012
+@@ -30,6 +30,9 @@ our @TYPES = (ELEMENT,ATTLIST,NOTATION,ENTITY);
+ our %TYPES = map { $_ => 1 } @TYPES;
  
  #-----------------
 +=head1 NAME
