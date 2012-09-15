@@ -1,7 +1,7 @@
-$OpenBSD: patch-main_features_c,v 1.5 2012/08/04 21:53:56 sthen Exp $
---- main/features.c.orig	Mon Jun 25 16:57:28 2012
-+++ main/features.c	Mon Jul 30 23:13:45 2012
-@@ -1014,7 +1014,9 @@ static void bridge_call_thread_launch(struct ast_bridg
+$OpenBSD: patch-main_features_c,v 1.6 2012/09/15 12:43:49 sthen Exp $
+--- main/features.c.orig	Tue Sep 11 17:15:05 2012
++++ main/features.c	Wed Sep 12 14:36:19 2012
+@@ -1045,7 +1045,9 @@ static void bridge_call_thread_launch(struct ast_bridg
  	}
  	pthread_attr_destroy(&attr);
  	memset(&sched, 0, sizeof(sched));
