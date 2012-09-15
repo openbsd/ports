@@ -1,8 +1,0 @@
-Active Merchant is an extraction from the e-commerce system Shopify.
-Shopify's requirements for a simple and unified API to access dozens
-of different payment gateways with very different internal APIs was
-the chief principle in designing the library.
-
-Active Merchant has been in production use since June 2006 and is
-now used in most modern Ruby applications which deal with financial
-transactions.

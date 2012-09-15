@@ -1,3 +1,0 @@
-A framework to allow Ruby applications to generate file/folder stubs
-(like the `rails` command does for Ruby on Rails, and the 'script/generate'
-command within a Rails application during development).
