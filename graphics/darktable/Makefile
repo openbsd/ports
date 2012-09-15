@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2012/09/14 09:56:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/15 08:37:41 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-1.0.5
-REVISION=	0
+REVISION=	1
 
 SHARED_ONLY=	Yes
 
@@ -37,6 +37,7 @@ MODULES=	devel/cmake \
 		devel/gettext \
 		textproc/intltool
 
+BUILD_DEPENDS=	sysutils/coreutils
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
 LIB_DEPENDS=	devel/sdl \
