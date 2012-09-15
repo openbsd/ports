@@ -1,0 +1,3 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/15 12:24:16 ajacoutot Exp $
+lib/gstreamer-${VERSION}/libgstavscale.so
+lib/gstreamer-${VERSION}/libgstlibav.so

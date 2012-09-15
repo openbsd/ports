@@ -1,0 +1,23 @@
+$OpenBSD: patch-gst-libs_ext_libav_configure,v 1.1.1.1 2012/09/15 12:24:16 ajacoutot Exp $
+--- gst-libs/ext/libav/configure.orig	Sat Sep 15 09:18:23 2012
++++ gst-libs/ext/libav/configure	Sat Sep 15 09:20:00 2012
+@@ -2623,7 +2623,7 @@ die_license_disabled version3 libvo_amrwbenc
+ 
+ enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
+ 
+-disabled optimizations || check_cflags -fomit-frame-pointer
++enabled x86_32 && check_cflags -fomit-frame-pointer
+ 
+ enable_pic() {
+     enable pic
+@@ -3086,10 +3086,6 @@ if [ -n "$optflags" ]; then
+     add_cflags $optflags
+ elif enabled small; then
+     add_cflags $size_cflags
+-elif enabled optimizations; then
+-    add_cflags $speed_cflags
+-else
+-    add_cflags $noopt_cflags
+ fi
+ check_cflags -fno-math-errno
+ check_cflags -fno-signed-zeros
