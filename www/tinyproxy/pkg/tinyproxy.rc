@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: tinyproxy.rc,v 1.1 2012/06/22 13:26:59 ajacoutot Exp $
+# $OpenBSD: tinyproxy.rc,v 1.2 2012/09/15 14:39:47 fgsch Exp $
 
 daemon="${TRUEPREFIX}/sbin/tinyproxy"
 
 . /etc/rc.d/rc.subr
-
-rc_reload=NO
 
 rc_pre() {
 	install -d -o _tinyproxy -g _tinyproxy /var/run/tinyproxy
