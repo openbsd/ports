@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2012/08/17 14:08:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2012/09/15 15:36:00 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
 DISTNAME=	ConsoleKit-0.4.5
 PKGNAME=	${DISTNAME:L}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	sysutils	
 
