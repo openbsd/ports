@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2012/09/02 23:01:29 kili Exp $
+# $OpenBSD: Makefile,v 1.76 2012/09/16 08:33:04 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -21,6 +21,8 @@ SUBST_VARS +=		XHTML_VER
 # in ghc.port.mk. lang/python needed for regress.
 MODULES =		lang/ghc lang/python converters/libiconv
 
+PSEUDO_FLAVORS =	no_doc
+FLAVOR ?=
 MULTI_PACKAGES =	-main -doc
 
 # BSD w/o advertising clause.
@@ -88,6 +90,14 @@ CONFIGURE_ENV =		CONF_CC_OPTS_STAGE0="-fno-pie -nopie" \
 MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO
+
+.if ${FLAVOR:Mno_doc}
+MAKE_FLAGS +=		HADDOCK_DOCS=NO \
+			LATEX_DOCS=NO \
+			BUILD_DOCBOOK_HTML=NO \
+			BUILD_DOCBOOK_PDF=NO \
+			BUILD_DOCBOOK_PS=NO
+.endif
 
 # Thank god that they're only building compilers and no nuclear
 # power plants. Note that we do not override CREATE_DATA, because
