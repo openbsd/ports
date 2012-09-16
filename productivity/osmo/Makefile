@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/06/15 08:32:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/16 10:04:20 pea Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	7
+REVISION=	8
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -21,8 +21,8 @@ WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gringotts gthread-2.0 gtk-x11-2.0 gtkspell
 WANTLIB += ical icalss icalvcal m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs tar 
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 
@@ -33,7 +33,8 @@ LIB_DEPENDS=	security/libgringotts \
 		textproc/libxml \
 		textproc/libical \
 		textproc/gtkspell \
-		x11/gtk+2
+		x11/gtk+2 \
+		archivers/libtar
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+2,-guic
