@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_modules_rules_mak,v 1.8 2011/12/28 10:44:43 pea Exp $
---- src/modules/rules.mak.orig	Mon Jun 20 16:57:14 2011
-+++ src/modules/rules.mak	Tue Nov 22 20:11:06 2011
-@@ -121,9 +121,9 @@ build-module: $(TARGET).la $(RLM_UTILS)
+$OpenBSD: patch-src_modules_rules_mak,v 1.9 2012/09/16 12:44:02 pea Exp $
+--- src/modules/rules.mak.orig	Mon Sep 10 13:51:34 2012
++++ src/modules/rules.mak	Fri Sep 14 14:54:08 2012
+@@ -120,9 +120,9 @@ build-module: $(TARGET).la $(RLM_UTILS)
  	done
  
- $(TARGET).la: $(LT_OBJS)
+ $(TARGET).la: $(RLM_SUBDIRS) $(LT_OBJS)
 -	$(LIBTOOL) --mode=link $(CC) -release $(RADIUSD_VERSION) \
 +	$(LIBTOOL) --mode=link $(CC) -avoid-version \
  	-module $(LINK_MODE) $(LDFLAGS) $(RLM_LDFLAGS) -o $@     \
@@ -13,7 +13,7 @@ $OpenBSD: patch-src_modules_rules_mak,v 1.8 2011/12/28 10:44:43 pea Exp $
  
  #######################################################################
  #
-@@ -170,7 +170,5 @@ install:
+@@ -169,7 +169,5 @@ install:
  	@[ "x$(RLM_INSTALL)" = "x" ] || $(MAKE) $(MFLAGS) $(RLM_INSTALL)
  	if [ "x$(TARGET)" != "x" ]; then \
  	    $(LIBTOOL) --mode=install $(INSTALL) -c \

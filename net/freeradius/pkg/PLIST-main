@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/12/28 10:44:43 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2012/09/16 12:44:02 pea Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -6,6 +6,7 @@
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/raddb/*
 @extraunexec rm -rf /var/log/radius/*
+bin/rad_counter
 @bin bin/radclient
 @bin bin/radconf2xml
 bin/radcrypt
@@ -56,6 +57,7 @@ lib/freeradius/rlm_acctlog.so
 lib/freeradius/rlm_always.so
 lib/freeradius/rlm_attr_filter.so
 lib/freeradius/rlm_attr_rewrite.so
+lib/freeradius/rlm_cache.so
 lib/freeradius/rlm_chap.so
 lib/freeradius/rlm_checkval.so
 lib/freeradius/rlm_copy_packet.so
@@ -97,6 +99,7 @@ lib/freeradius/rlm_sql_log.so
 lib/freeradius/rlm_sqlcounter.so
 lib/freeradius/rlm_sqlippool.so
 lib/freeradius/rlm_unix.so
+lib/freeradius/rlm_wimax.so
 lib/libfreeradius-eap.a
 lib/libfreeradius-eap.la
 @lib lib/libfreeradius-eap.so.${LIBfreeradius-eap_VERSION}
@@ -147,7 +150,7 @@ lib/libfreeradius-radius.la
 @man man/man8/radsqlrelay.8
 @man man/man8/radwatch.8
 @man man/man8/rlm_dbm_cat.8
-@man man/man8/rlm_dbm_parse.8
+@man man/man8/rlm_dbm_parser.8
 @man man/man8/rlm_ippool_tool.8
 sbin/checkrad
 sbin/raddebug
@@ -216,7 +219,6 @@ share/doc/freeradius/rfc/rfc2866.txt
 share/doc/freeradius/rfc/rfc2867.txt
 share/doc/freeradius/rfc/rfc2868.txt
 share/doc/freeradius/rfc/rfc2869.txt
-share/doc/freeradius/rfc/rfc2882.txt
 share/doc/freeradius/rfc/rfc2924.txt
 share/doc/freeradius/rfc/rfc3079.txt
 share/doc/freeradius/rfc/rfc3162.txt
@@ -225,6 +227,7 @@ share/doc/freeradius/rfc/rfc3576.txt
 share/doc/freeradius/rfc/rfc3579.txt
 share/doc/freeradius/rfc/rfc3580.txt
 share/doc/freeradius/rfc/rfc3748.txt
+share/doc/freeradius/rfc/rfc4282.txt
 share/doc/freeradius/rfc/rfc4372.txt
 share/doc/freeradius/rfc/rfc4590.txt
 share/doc/freeradius/rfc/rfc4668.txt
@@ -328,6 +331,8 @@ share/examples/freeradius/modules/attr_filter
 @sample ${SYSCONFDIR}/raddb/modules/attr_filter
 share/examples/freeradius/modules/attr_rewrite
 @sample ${SYSCONFDIR}/raddb/modules/attr_rewrite
+share/examples/freeradius/modules/cache
+@sample ${SYSCONFDIR}/raddb/modules/cache
 share/examples/freeradius/modules/chap
 @sample ${SYSCONFDIR}/raddb/modules/chap
 share/examples/freeradius/modules/checkval
@@ -342,6 +347,8 @@ share/examples/freeradius/modules/detail.example.com
 @sample ${SYSCONFDIR}/raddb/modules/detail.example.com
 share/examples/freeradius/modules/detail.log
 @sample ${SYSCONFDIR}/raddb/modules/detail.log
+share/examples/freeradius/modules/dhcp_sqlippool
+@sample ${SYSCONFDIR}/raddb/modules/dhcp_sqlippool
 share/examples/freeradius/modules/digest
 @sample ${SYSCONFDIR}/raddb/modules/digest
 share/examples/freeradius/modules/dynamic_clients
@@ -390,6 +397,8 @@ share/examples/freeradius/modules/policy
 @sample ${SYSCONFDIR}/raddb/modules/policy
 share/examples/freeradius/modules/preprocess
 @sample ${SYSCONFDIR}/raddb/modules/preprocess
+share/examples/freeradius/modules/radrelay
+@sample ${SYSCONFDIR}/raddb/modules/radrelay
 share/examples/freeradius/modules/radutmp
 @sample ${SYSCONFDIR}/raddb/modules/radutmp
 share/examples/freeradius/modules/realm
@@ -445,6 +454,8 @@ share/examples/freeradius/sites-available/default
 @sample ${SYSCONFDIR}/raddb/sites-available/default
 share/examples/freeradius/sites-available/dhcp
 @sample ${SYSCONFDIR}/raddb/sites-available/dhcp
+share/examples/freeradius/sites-available/dhcp.relay
+@sample ${SYSCONFDIR}/raddb/sites-available/dhcp.relay
 share/examples/freeradius/sites-available/dynamic-clients
 @sample ${SYSCONFDIR}/raddb/sites-available/dynamic-clients
 share/examples/freeradius/sites-available/example
@@ -518,8 +529,10 @@ share/freeradius/dictionary.azaire
 share/freeradius/dictionary.bay
 share/freeradius/dictionary.bintec
 share/freeradius/dictionary.bristol
+share/freeradius/dictionary.bt
 share/freeradius/dictionary.cablelabs
 share/freeradius/dictionary.cabletron
+share/freeradius/dictionary.camiant
 share/freeradius/dictionary.chillispot
 share/freeradius/dictionary.cisco
 share/freeradius/dictionary.cisco.bbsm
@@ -537,6 +550,7 @@ share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson
 share/freeradius/dictionary.erx
 share/freeradius/dictionary.extreme
+share/freeradius/dictionary.f5
 share/freeradius/dictionary.fortinet
 share/freeradius/dictionary.foundry
 share/freeradius/dictionary.freeradius
@@ -578,9 +592,11 @@ share/freeradius/dictionary.nortel
 share/freeradius/dictionary.ntua
 share/freeradius/dictionary.openser
 share/freeradius/dictionary.packeteer
+share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
 share/freeradius/dictionary.propel
 share/freeradius/dictionary.prosoft
+share/freeradius/dictionary.purewave
 share/freeradius/dictionary.quiconnect
 share/freeradius/dictionary.quintum
 share/freeradius/dictionary.redback
@@ -602,6 +618,7 @@ share/freeradius/dictionary.rfc4818
 share/freeradius/dictionary.rfc4849
 share/freeradius/dictionary.rfc5090
 share/freeradius/dictionary.rfc5176
+share/freeradius/dictionary.rfc5447
 share/freeradius/dictionary.rfc5580
 share/freeradius/dictionary.rfc5607
 share/freeradius/dictionary.rfc5904
@@ -620,6 +637,7 @@ share/freeradius/dictionary.symbol
 share/freeradius/dictionary.t_systems_nova
 share/freeradius/dictionary.telebit
 share/freeradius/dictionary.telkom
+share/freeradius/dictionary.terena
 share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.tropos
 share/freeradius/dictionary.ukerna

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-mysql,v 1.3 2011/04/15 09:44:06 pea Exp $
+@comment $OpenBSD: PLIST-mysql,v 1.4 2012/09/16 12:44:02 pea Exp $
 @conflict freeradius-server-<2.1.8
 lib/freeradius/rlm_sql_mysql.so
 share/examples/freeradius/sql/mysql/
@@ -13,6 +13,8 @@ share/examples/freeradius/sql/mysql/cui.conf
 share/examples/freeradius/sql/mysql/cui.sql
 share/examples/freeradius/sql/mysql/dialup.conf
 @sample ${SYSCONFDIR}/raddb/sql/mysql/dialup.conf
+share/examples/freeradius/sql/mysql/ippool-dhcp.conf
+@sample ${SYSCONFDIR}/raddb/sql/mysql/ippool-dhcp.conf
 share/examples/freeradius/sql/mysql/ippool.conf
 @sample ${SYSCONFDIR}/raddb/sql/mysql/ippool.conf
 share/examples/freeradius/sql/mysql/ippool.sql

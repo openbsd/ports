@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.42 2012/04/28 10:52:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2012/09/16 12:44:02 pea Exp $
 
 SHARED_ONLY=	Yes
-SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
+SHARED_LIBS +=  freeradius-radius    4.1      # .0.0
 SHARED_LIBS +=  freeradius-eap       4.0      # .0.0
 
 COMMENT-main=	RADIUS server implementation
@@ -10,7 +10,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-ldap=	freeradius ldap rlm addon
 
-V=		2.1.12
+V=		2.2.0
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -57,7 +57,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-rlm_sql_db2 \
 		--without-rlm_sql_unixodbc \
 		--disable-ltdl-install \
-		--with-rlm-krb5-include-dir=/usr/include/kerberosV 
+		--with-rlm-krb5-include-dir=/usr/include/kerberosV \
+		--with-system-libltdl
 
 REGRESS_TARGET=	tests
 REGRESS_DEPENDS=freeradius-$V:net/freeradius
@@ -90,7 +91,7 @@ MULTI_PACKAGES+=	-iodbc
 BUILD_DEPENDS+=		databases/iodbc
 CONFIGURE_ARGS+=	--with-rlm_sql_iodbc
 LIB_DEPENDS-iodbc=	databases/iodbc
-WANTLIB-iodbc=		iodbc>=2
+WANTLIB-iodbc=		iodbc>=2 pthread
 .endif
 
 .if ${FLAVOR:L:Mno_ldap}
@@ -101,7 +102,7 @@ BUILD_DEPENDS+=		databases/openldap
 LIB_DEPENDS-ldap=	databases/openldap \
 			${BASE_PKGPATH}
 WANTLIB-ldap=		${WANTLIB} sasl2 asn1 com_err gssapi krb5 \
-			lber>=8 ldap_r>=8 freeradius-radius>=1
+			lber>=8 ldap_r>=8 freeradius-radius>=1 pthread
 .endif
 
 .if ${FLAVOR:L:Mno_mysql}
