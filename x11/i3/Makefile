@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2012/09/16 06:24:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2012/09/16 22:05:46 ajacoutot Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
@@ -44,7 +44,8 @@ NO_REGRESS =	Yes
 
 MAKE_FLAGS =	CC="${CC}" \
 		BISON="${LOCALBASE}/bin/bison" \
-		FLEX="${LOCALBASE}/bin/gflex"
+		FLEX="${LOCALBASE}/bin/gflex" \
+		SYSCONFDIR=${SYSCONFDIR}
 
 .if defined(DEBUG)
 MAKE_FLAGS +=	DEBUG=1
