@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2012/09/16 17:45:58 ajacoutot Exp $
 
 COMMENT=		generic CSS parsing library for GNOME project
 
 GNOME_PROJECT=		libcroco
-GNOME_VERSION=		0.6.5
+GNOME_VERSION=		0.6.6
 SHARED_LIBS +=	croco-0.6            4.0      # .3.1
 CATEGORIES=		www textproc devel
-REVISION=	0
 
 HOMEPAGE=		http://www.freespiders.org/projects/libcroco/
 
