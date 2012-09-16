@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/15 12:24:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/16 06:10:16 ajacoutot Exp $
 
 COMMENT=		ffmpeg elements for GStreamer
 
@@ -16,6 +16,10 @@ WANTLIB += gstvideo-1.0 gthread-2.0 m orc-0.4 pcre pthread z
 MASTER_SITES=		${MASTER_SITE_GST:=gst-libav/}
 
 LIB_DEPENDS=		${P}/plugins-base
+
+.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
+BUILD_DEPENDS +=	devel/yasm
+.endif
 
 .if ${MACHINE_ARCH:Marm}
 # uses ARM EABI
