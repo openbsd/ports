@@ -1,6 +1,6 @@
---- session.c.orig	Tue Dec 11 15:38:52 2001
-+++ session.c	Fri Jul  5 14:36:25 2002
-@@ -892,6 +892,7 @@
+--- session.c.orig	Tue Dec 11 16:38:52 2001
++++ session.c	Sun Sep  2 18:59:56 2012
+@@ -892,6 +892,7 @@ int *occupation; /* <== [ Matthew McNeill Feb 1997 ] =
      return found;
  }
  
@@ -8,7 +8,7 @@
  /*===[ Unique Filename Generator ]===========================================*/
  
  static char *
-@@ -922,6 +923,7 @@
+@@ -922,6 +923,7 @@ char *prefix;
  #endif
  }
  
@@ -16,7 +16,7 @@
  /*===[ SAVE WINDOW INFORMATION ]=============================================*/
  
  #ifndef PATH_MAX
-@@ -951,6 +953,10 @@
+@@ -951,6 +953,10 @@ SmPointer clientData;
      char discardCommand[PATH_MAX + 4];
      int numVals, i;
      char yes = 1;
@@ -27,7 +27,7 @@
      static int first_time = 1;
  
      if (first_time)
-@@ -1003,12 +1009,20 @@
+@@ -1003,12 +1009,20 @@ SmPointer clientData;
       *        no longer the same since the new format supports
       *        virtaul workspaces.
       *========================================================*/
