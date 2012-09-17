@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2012/08/29 14:11:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2012/09/17 07:10:33 jasper Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -225,6 +225,7 @@ share/vala-${API_V}/vapi/libgdata.vapi
 share/vala-${API_V}/vapi/libglade-2.0.deps
 share/vala-${API_V}/vapi/libglade-2.0.vapi
 share/vala-${API_V}/vapi/libgnome-2.0.vapi
+share/vala-${API_V}/vapi/libgnome-menu-3.0.vapi
 share/vala-${API_V}/vapi/libgnome-menu.vapi
 share/vala-${API_V}/vapi/libgnomeui-2.0.deps
 share/vala-${API_V}/vapi/libgnomeui-2.0.vapi
