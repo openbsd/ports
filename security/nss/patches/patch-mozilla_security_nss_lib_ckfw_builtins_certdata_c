@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.12 2012/02/22 20:00:55 landry Exp $
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.13 2012/09/17 20:01:22 landry Exp $
 Don't handmerge it, cd to builtins and run gmake generate after patching certdata.txt
---- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Sat Feb 18 22:41:45 2012
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Wed Feb 22 20:50:04 2012
+--- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Thu Jun 28 15:50:28 2012
++++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Sun Sep  2 00:47:21 2012
 @@ -47,8 +47,10 @@ static const CK_BBOOL ck_true = CK_TRUE;
  static const CK_CERTIFICATE_TYPE ckc_x_509 = CKC_X_509;
  static const CK_OBJECT_CLASS cko_certificate = CKO_CERTIFICATE;
@@ -12,8 +12,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
 +static const CK_TRUST ckt_netscape_trusted_delegator = CKT_NETSCAPE_TRUSTED_DELEGATOR;
  static const CK_TRUST ckt_nss_must_verify_trust = CKT_NSS_MUST_VERIFY_TRUST;
  static const CK_TRUST ckt_nss_not_trusted = CKT_NSS_NOT_TRUSTED;
- static const CK_TRUST ckt_nss_trust_unknown = CKT_NSS_TRUST_UNKNOWN;
-@@ -1076,11 +1078,23 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_339 
+ static const CK_TRUST ckt_nss_trusted_delegator = CKT_NSS_TRUSTED_DELEGATOR;
+@@ -1075,10 +1077,10 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_339 
   CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
  };
  static const CK_ATTRIBUTE_TYPE nss_builtins_types_340 [] = {
@@ -21,24 +21,44 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
  };
  static const CK_ATTRIBUTE_TYPE nss_builtins_types_341 [] = {
+- CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
-+};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_342 [] = {
+ };
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_342 [] = {
+  CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
+@@ -1087,10 +1089,10 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_343 
+  CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
+ };
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_344 [] = {
+- CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
++ CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
+ };
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_345 [] = {
+- CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
++ CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
+ };
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_346 [] = {
+  CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
+@@ -1116,6 +1118,18 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_352 
+ static const CK_ATTRIBUTE_TYPE nss_builtins_types_353 [] = {
+  CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
+ };
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_354 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
 +};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_343 [] = {
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_355 [] = {
 + CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
 +};
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_344 [] = {
-  CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
- };
-+static const CK_ATTRIBUTE_TYPE nss_builtins_types_345 [] = {
-+ CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_356 [] = {
++ CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERTIFICATE_TYPE,  CKA_SUBJECT,  CKA_ID,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_VALUE
++};
++static const CK_ATTRIBUTE_TYPE nss_builtins_types_357 [] = {
++ CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
 +};
  #ifdef DEBUG
  static const NSSItem nss_builtins_items_0 [] = {
    { (void *)&cko_data, (PRUint32)sizeof(CK_OBJECT_CLASS) },
-@@ -14232,6 +14246,332 @@ static const NSSItem nss_builtins_items_212 [] = {
+@@ -14267,6 +14281,332 @@ static const NSSItem nss_builtins_items_212 [] = {
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
@@ -371,7 +391,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)"ePKI Root Certification Authority", (PRUint32)34 },
    { (void *)&ckc_x_509, (PRUint32)sizeof(CK_CERTIFICATE_TYPE) },
    { (void *)"\060\136\061\013\060\011\006\003\125\004\006\023\002\124\127\061"
-@@ -14346,7 +14686,7 @@ static const NSSItem nss_builtins_items_212 [] = {
+@@ -14381,7 +14721,7 @@ static const NSSItem nss_builtins_items_212 [] = {
  "\201\370\021\234"
  , (PRUint32)1460 }
  };
@@ -380,7 +400,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14372,7 +14712,7 @@ static const NSSItem nss_builtins_items_213 [] = {
+@@ -14407,7 +14747,7 @@ static const NSSItem nss_builtins_items_213 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -389,7 +409,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14506,7 +14846,7 @@ static const NSSItem nss_builtins_items_214 [] = {
+@@ -14541,7 +14881,7 @@ static const NSSItem nss_builtins_items_214 [] = {
  "\311\234\220\332\354\251\102\074\255\266\002"
  , (PRUint32)1307 }
  };
@@ -398,8 +418,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14544,7 +14884,7 @@ static const NSSItem nss_builtins_items_215 [] = {
-   { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
+@@ -14579,7 +14919,7 @@ static const NSSItem nss_builtins_items_215 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_216 [] = {
@@ -407,7 +427,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14622,7 +14962,7 @@ static const NSSItem nss_builtins_items_216 [] = {
+@@ -14657,7 +14997,7 @@ static const NSSItem nss_builtins_items_216 [] = {
  "\366\324\357\277\114\210\150"
  , (PRUint32)855 }
  };
@@ -416,8 +436,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14646,7 +14986,7 @@ static const NSSItem nss_builtins_items_217 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -14681,7 +15021,7 @@ static const NSSItem nss_builtins_items_217 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_218 [] = {
@@ -425,7 +445,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14724,7 +15064,7 @@ static const NSSItem nss_builtins_items_218 [] = {
+@@ -14759,7 +15099,7 @@ static const NSSItem nss_builtins_items_218 [] = {
  "\246\347\313\100\003\335\171"
  , (PRUint32)855 }
  };
@@ -434,8 +454,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14748,7 +15088,7 @@ static const NSSItem nss_builtins_items_219 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -14783,7 +15123,7 @@ static const NSSItem nss_builtins_items_219 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_220 [] = {
@@ -443,7 +463,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14875,7 +15215,7 @@ static const NSSItem nss_builtins_items_220 [] = {
+@@ -14910,7 +15250,7 @@ static const NSSItem nss_builtins_items_220 [] = {
  "\320\352\111\242\034\215\122\024\246\012\223"
  , (PRUint32)1515 }
  };
@@ -452,7 +472,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14903,7 +15243,7 @@ static const NSSItem nss_builtins_items_221 [] = {
+@@ -14938,7 +15278,7 @@ static const NSSItem nss_builtins_items_221 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -461,7 +481,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -14977,7 +15317,7 @@ static const NSSItem nss_builtins_items_222 [] = {
+@@ -15012,7 +15352,7 @@ static const NSSItem nss_builtins_items_222 [] = {
  "\366\356\260\132\116\111\104\124\130\137\102\203"
  , (PRUint32)828 }
  };
@@ -470,7 +490,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15000,7 +15340,7 @@ static const NSSItem nss_builtins_items_223 [] = {
+@@ -15035,7 +15375,7 @@ static const NSSItem nss_builtins_items_223 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -479,7 +499,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15076,7 +15416,7 @@ static const NSSItem nss_builtins_items_224 [] = {
+@@ -15111,7 +15451,7 @@ static const NSSItem nss_builtins_items_224 [] = {
  "\011\333\212\101\202\236\146\233\021"
  , (PRUint32)857 }
  };
@@ -488,8 +508,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15099,7 +15439,7 @@ static const NSSItem nss_builtins_items_225 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -15134,7 +15474,7 @@ static const NSSItem nss_builtins_items_225 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_226 [] = {
@@ -497,7 +517,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15182,7 +15522,7 @@ static const NSSItem nss_builtins_items_226 [] = {
+@@ -15217,7 +15557,7 @@ static const NSSItem nss_builtins_items_226 [] = {
  "\262\033\211\124"
  , (PRUint32)932 }
  };
@@ -506,7 +526,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15206,7 +15546,7 @@ static const NSSItem nss_builtins_items_227 [] = {
+@@ -15241,7 +15581,7 @@ static const NSSItem nss_builtins_items_227 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -515,7 +535,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15306,7 +15646,7 @@ static const NSSItem nss_builtins_items_228 [] = {
+@@ -15341,7 +15681,7 @@ static const NSSItem nss_builtins_items_228 [] = {
  "\021\055"
  , (PRUint32)1026 }
  };
@@ -524,7 +544,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15336,7 +15676,7 @@ static const NSSItem nss_builtins_items_229 [] = {
+@@ -15371,7 +15711,7 @@ static const NSSItem nss_builtins_items_229 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -533,7 +553,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15410,7 +15750,7 @@ static const NSSItem nss_builtins_items_230 [] = {
+@@ -15445,7 +15785,7 @@ static const NSSItem nss_builtins_items_230 [] = {
  "\367\130\077\056\162\002\127\243\217\241\024\056"
  , (PRUint32)652 }
  };
@@ -542,7 +562,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15439,7 +15779,7 @@ static const NSSItem nss_builtins_items_231 [] = {
+@@ -15474,7 +15814,7 @@ static const NSSItem nss_builtins_items_231 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -551,7 +571,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15545,7 +15885,7 @@ static const NSSItem nss_builtins_items_232 [] = {
+@@ -15580,7 +15920,7 @@ static const NSSItem nss_builtins_items_232 [] = {
  "\061\324\100\032\142\064\066\077\065\001\256\254\143\240"
  , (PRUint32)1070 }
  };
@@ -560,7 +580,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15577,7 +15917,7 @@ static const NSSItem nss_builtins_items_233 [] = {
+@@ -15612,7 +15952,7 @@ static const NSSItem nss_builtins_items_233 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -569,7 +589,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15656,7 +15996,7 @@ static const NSSItem nss_builtins_items_234 [] = {
+@@ -15691,7 +16031,7 @@ static const NSSItem nss_builtins_items_234 [] = {
  "\017\212"
  , (PRUint32)690 }
  };
@@ -578,7 +598,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15686,7 +16026,7 @@ static const NSSItem nss_builtins_items_235 [] = {
+@@ -15721,7 +16061,7 @@ static const NSSItem nss_builtins_items_235 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -587,7 +607,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15801,7 +16141,7 @@ static const NSSItem nss_builtins_items_236 [] = {
+@@ -15836,7 +16176,7 @@ static const NSSItem nss_builtins_items_236 [] = {
  "\354\315\202\141\361\070\346\117\227\230\052\132\215"
  , (PRUint32)1213 }
  };
@@ -596,7 +616,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15833,7 +16173,7 @@ static const NSSItem nss_builtins_items_237 [] = {
+@@ -15868,7 +16208,7 @@ static const NSSItem nss_builtins_items_237 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -605,7 +625,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15931,7 +16271,7 @@ static const NSSItem nss_builtins_items_238 [] = {
+@@ -15966,7 +16306,7 @@ static const NSSItem nss_builtins_items_238 [] = {
  "\055\247\330\206\052\335\056\020"
  , (PRUint32)904 }
  };
@@ -614,7 +634,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -15964,7 +16304,7 @@ static const NSSItem nss_builtins_items_239 [] = {
+@@ -15999,7 +16339,7 @@ static const NSSItem nss_builtins_items_239 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -623,7 +643,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16066,7 +16406,7 @@ static const NSSItem nss_builtins_items_240 [] = {
+@@ -16101,7 +16441,7 @@ static const NSSItem nss_builtins_items_240 [] = {
  "\330\316\304\143\165\077\131\107\261"
  , (PRUint32)1049 }
  };
@@ -632,7 +652,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16096,7 +16436,7 @@ static const NSSItem nss_builtins_items_241 [] = {
+@@ -16131,7 +16471,7 @@ static const NSSItem nss_builtins_items_241 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -641,7 +661,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16215,7 +16555,7 @@ static const NSSItem nss_builtins_items_242 [] = {
+@@ -16250,7 +16590,7 @@ static const NSSItem nss_builtins_items_242 [] = {
  "\370\161\012\334\271\374\175\062\140\346\353\257\212\001"
  , (PRUint32)1486 }
  };
@@ -650,7 +670,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16240,7 +16580,7 @@ static const NSSItem nss_builtins_items_243 [] = {
+@@ -16275,7 +16615,7 @@ static const NSSItem nss_builtins_items_243 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -659,7 +679,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16330,7 +16670,7 @@ static const NSSItem nss_builtins_items_244 [] = {
+@@ -16365,7 +16705,7 @@ static const NSSItem nss_builtins_items_244 [] = {
  "\315\345\250"
  , (PRUint32)1043 }
  };
@@ -668,7 +688,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16354,7 +16694,7 @@ static const NSSItem nss_builtins_items_245 [] = {
+@@ -16389,7 +16729,7 @@ static const NSSItem nss_builtins_items_245 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -677,7 +697,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16459,7 +16799,7 @@ static const NSSItem nss_builtins_items_246 [] = {
+@@ -16494,7 +16834,7 @@ static const NSSItem nss_builtins_items_246 [] = {
  "\115\273\306\104\333\066\313\052\234\216"
  , (PRUint32)1258 }
  };
@@ -686,7 +706,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16484,7 +16824,7 @@ static const NSSItem nss_builtins_items_247 [] = {
+@@ -16519,7 +16859,7 @@ static const NSSItem nss_builtins_items_247 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -695,7 +715,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16560,7 +16900,7 @@ static const NSSItem nss_builtins_items_248 [] = {
+@@ -16595,7 +16935,7 @@ static const NSSItem nss_builtins_items_248 [] = {
  "\002\153\331\132"
  , (PRUint32)820 }
  };
@@ -704,8 +724,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16584,7 +16924,7 @@ static const NSSItem nss_builtins_items_249 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -16619,7 +16959,7 @@ static const NSSItem nss_builtins_items_249 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_250 [] = {
@@ -713,7 +733,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16666,7 +17006,7 @@ static const NSSItem nss_builtins_items_250 [] = {
+@@ -16701,7 +17041,7 @@ static const NSSItem nss_builtins_items_250 [] = {
  "\362"
  , (PRUint32)881 }
  };
@@ -722,8 +742,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16691,7 +17031,7 @@ static const NSSItem nss_builtins_items_251 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -16726,7 +17066,7 @@ static const NSSItem nss_builtins_items_251 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_252 [] = {
@@ -731,7 +751,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16807,7 +17147,7 @@ static const NSSItem nss_builtins_items_252 [] = {
+@@ -16842,7 +17182,7 @@ static const NSSItem nss_builtins_items_252 [] = {
  "\113\076\053\070\007\125\230\136\244"
  , (PRUint32)1465 }
  };
@@ -740,7 +760,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16831,7 +17171,7 @@ static const NSSItem nss_builtins_items_253 [] = {
+@@ -16866,7 +17206,7 @@ static const NSSItem nss_builtins_items_253 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -749,7 +769,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16896,7 +17236,7 @@ static const NSSItem nss_builtins_items_254 [] = {
+@@ -16931,7 +17271,7 @@ static const NSSItem nss_builtins_items_254 [] = {
  "\375\166\004\333\142\273\220\152\003\331\106\065\331\370\174\133"
  , (PRUint32)576 }
  };
@@ -758,8 +778,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16923,7 +17263,7 @@ static const NSSItem nss_builtins_items_255 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -16958,7 +17298,7 @@ static const NSSItem nss_builtins_items_255 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_256 [] = {
@@ -767,7 +787,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -16988,7 +17328,7 @@ static const NSSItem nss_builtins_items_256 [] = {
+@@ -17023,7 +17363,7 @@ static const NSSItem nss_builtins_items_256 [] = {
  "\054\163\031\110\151\116\153\174\145\277\017\374\160\316\210\220"
  , (PRUint32)576 }
  };
@@ -776,7 +796,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17015,7 +17355,7 @@ static const NSSItem nss_builtins_items_257 [] = {
+@@ -17050,7 +17390,7 @@ static const NSSItem nss_builtins_items_257 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -785,7 +805,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17112,7 +17452,7 @@ static const NSSItem nss_builtins_items_258 [] = {
+@@ -17147,7 +17487,7 @@ static const NSSItem nss_builtins_items_258 [] = {
  "\202\042\055\172\124\253\160\303\175\042\145\202\160\226"
  , (PRUint32)1038 }
  };
@@ -794,7 +814,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17140,7 +17480,7 @@ static const NSSItem nss_builtins_items_259 [] = {
+@@ -17175,7 +17515,7 @@ static const NSSItem nss_builtins_items_259 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -803,7 +823,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17231,7 +17571,7 @@ static const NSSItem nss_builtins_items_260 [] = {
+@@ -17266,7 +17606,7 @@ static const NSSItem nss_builtins_items_260 [] = {
  "\336\102\343\055\202\361\017\345\372\227"
  , (PRUint32)954 }
  };
@@ -812,8 +832,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17259,7 +17599,7 @@ static const NSSItem nss_builtins_items_261 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -17294,7 +17634,7 @@ static const NSSItem nss_builtins_items_261 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_262 [] = {
@@ -821,7 +841,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17338,7 +17678,7 @@ static const NSSItem nss_builtins_items_262 [] = {
+@@ -17373,7 +17713,7 @@ static const NSSItem nss_builtins_items_262 [] = {
  "\130\077\137"
  , (PRUint32)867 }
  };
@@ -830,7 +850,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17362,7 +17702,7 @@ static const NSSItem nss_builtins_items_263 [] = {
+@@ -17397,7 +17737,7 @@ static const NSSItem nss_builtins_items_263 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -839,7 +859,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17455,7 +17795,7 @@ static const NSSItem nss_builtins_items_264 [] = {
+@@ -17490,7 +17830,7 @@ static const NSSItem nss_builtins_items_264 [] = {
  "\045\361\224\264\146"
  , (PRUint32)997 }
  };
@@ -848,7 +868,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17482,7 +17822,7 @@ static const NSSItem nss_builtins_items_265 [] = {
+@@ -17517,7 +17857,7 @@ static const NSSItem nss_builtins_items_265 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -857,7 +877,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17606,7 +17946,7 @@ static const NSSItem nss_builtins_items_266 [] = {
+@@ -17641,7 +17981,7 @@ static const NSSItem nss_builtins_items_266 [] = {
  "\156\117\022\176\012\074\235\225"
  , (PRUint32)1560 }
  };
@@ -866,7 +886,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17631,7 +17971,7 @@ static const NSSItem nss_builtins_items_267 [] = {
+@@ -17666,7 +18006,7 @@ static const NSSItem nss_builtins_items_267 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -875,7 +895,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17750,7 +18090,7 @@ static const NSSItem nss_builtins_items_268 [] = {
+@@ -17785,7 +18125,7 @@ static const NSSItem nss_builtins_items_268 [] = {
  "\333\374\046\210\307"
  , (PRUint32)1525 }
  };
@@ -884,7 +904,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17774,7 +18114,7 @@ static const NSSItem nss_builtins_items_269 [] = {
+@@ -17809,7 +18149,7 @@ static const NSSItem nss_builtins_items_269 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -893,7 +913,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17930,7 +18270,7 @@ static const NSSItem nss_builtins_items_270 [] = {
+@@ -17965,7 +18305,7 @@ static const NSSItem nss_builtins_items_270 [] = {
  "\167\110\320"
  , (PRUint32)1875 }
  };
@@ -902,7 +922,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -17961,7 +18301,7 @@ static const NSSItem nss_builtins_items_271 [] = {
+@@ -17996,7 +18336,7 @@ static const NSSItem nss_builtins_items_271 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -911,7 +931,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18114,7 +18454,7 @@ static const NSSItem nss_builtins_items_272 [] = {
+@@ -18149,7 +18489,7 @@ static const NSSItem nss_builtins_items_272 [] = {
  "\351\233\256\325\124\300\164\200\321\013\102\237\301"
  , (PRUint32)1869 }
  };
@@ -920,7 +940,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18144,7 +18484,7 @@ static const NSSItem nss_builtins_items_273 [] = {
+@@ -18179,7 +18519,7 @@ static const NSSItem nss_builtins_items_273 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -929,7 +949,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18280,7 +18620,7 @@ static const NSSItem nss_builtins_items_274 [] = {
+@@ -18315,7 +18655,7 @@ static const NSSItem nss_builtins_items_274 [] = {
  "\242\355\264\324\265\145\103\267\223\106\212\323"
  , (PRUint32)1532 }
  };
@@ -938,7 +958,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18310,7 +18650,7 @@ static const NSSItem nss_builtins_items_275 [] = {
+@@ -18345,7 +18685,7 @@ static const NSSItem nss_builtins_items_275 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -947,7 +967,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18461,7 +18801,7 @@ static const NSSItem nss_builtins_items_276 [] = {
+@@ -18496,7 +18836,7 @@ static const NSSItem nss_builtins_items_276 [] = {
  "\264"
  , (PRUint32)1761 }
  };
@@ -956,7 +976,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18491,7 +18831,7 @@ static const NSSItem nss_builtins_items_277 [] = {
+@@ -18526,7 +18866,7 @@ static const NSSItem nss_builtins_items_277 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -965,7 +985,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18627,7 +18967,7 @@ static const NSSItem nss_builtins_items_278 [] = {
+@@ -18662,7 +19002,7 @@ static const NSSItem nss_builtins_items_278 [] = {
  "\111\043"
  , (PRUint32)1522 }
  };
@@ -974,7 +994,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18657,7 +18997,7 @@ static const NSSItem nss_builtins_items_279 [] = {
+@@ -18692,7 +19032,7 @@ static const NSSItem nss_builtins_items_279 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -983,7 +1003,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18792,7 +19132,7 @@ static const NSSItem nss_builtins_items_280 [] = {
+@@ -18827,7 +19167,7 @@ static const NSSItem nss_builtins_items_280 [] = {
  "\172\244\047\023\326\117\364\151"
  , (PRUint32)1512 }
  };
@@ -992,7 +1012,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18822,7 +19162,7 @@ static const NSSItem nss_builtins_items_281 [] = {
+@@ -18857,7 +19197,7 @@ static const NSSItem nss_builtins_items_281 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1001,7 +1021,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18958,7 +19298,7 @@ static const NSSItem nss_builtins_items_282 [] = {
+@@ -18993,7 +19333,7 @@ static const NSSItem nss_builtins_items_282 [] = {
  "\302\021\254"
  , (PRUint32)1523 }
  };
@@ -1010,7 +1030,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -18988,7 +19328,7 @@ static const NSSItem nss_builtins_items_283 [] = {
+@@ -19023,7 +19363,7 @@ static const NSSItem nss_builtins_items_283 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1019,7 +1039,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19124,7 +19464,7 @@ static const NSSItem nss_builtins_items_284 [] = {
+@@ -19159,7 +19499,7 @@ static const NSSItem nss_builtins_items_284 [] = {
  "\147\024\060"
  , (PRUint32)1523 }
  };
@@ -1028,7 +1048,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19154,7 +19494,7 @@ static const NSSItem nss_builtins_items_285 [] = {
+@@ -19189,7 +19529,7 @@ static const NSSItem nss_builtins_items_285 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1037,7 +1057,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19288,7 +19628,7 @@ static const NSSItem nss_builtins_items_286 [] = {
+@@ -19323,7 +19663,7 @@ static const NSSItem nss_builtins_items_286 [] = {
  "\217\116\235\306\066\347\134\246\253\022\017\326\317"
  , (PRUint32)1501 }
  };
@@ -1046,7 +1066,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19318,7 +19658,7 @@ static const NSSItem nss_builtins_items_287 [] = {
+@@ -19353,7 +19693,7 @@ static const NSSItem nss_builtins_items_287 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1055,7 +1075,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19452,7 +19792,7 @@ static const NSSItem nss_builtins_items_288 [] = {
+@@ -19487,7 +19827,7 @@ static const NSSItem nss_builtins_items_288 [] = {
  "\130\113\161\203\237\146\346\254\171\110\376\376\107"
  , (PRUint32)1501 }
  };
@@ -1064,7 +1084,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19482,7 +19822,7 @@ static const NSSItem nss_builtins_items_289 [] = {
+@@ -19517,7 +19857,7 @@ static const NSSItem nss_builtins_items_289 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1073,7 +1093,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19617,7 +19957,7 @@ static const NSSItem nss_builtins_items_290 [] = {
+@@ -19652,7 +19992,7 @@ static const NSSItem nss_builtins_items_290 [] = {
  "\200\246\202\254\344\154\201\106\273\122\205\040\044\370\200\352"
  , (PRUint32)1520 }
  };
@@ -1082,7 +1102,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19647,7 +19987,7 @@ static const NSSItem nss_builtins_items_291 [] = {
+@@ -19682,7 +20022,7 @@ static const NSSItem nss_builtins_items_291 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1091,7 +1111,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19775,7 +20115,7 @@ static const NSSItem nss_builtins_items_292 [] = {
+@@ -19810,7 +20150,7 @@ static const NSSItem nss_builtins_items_292 [] = {
  "\154\174\107\306\327\224\021\041\354\326\132\322\335\217\177\221"
  , (PRUint32)1392 }
  };
@@ -1100,7 +1120,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19805,7 +20145,7 @@ static const NSSItem nss_builtins_items_293 [] = {
+@@ -19840,7 +20180,7 @@ static const NSSItem nss_builtins_items_293 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1109,7 +1129,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19898,7 +20238,7 @@ static const NSSItem nss_builtins_items_294 [] = {
+@@ -19933,7 +20273,7 @@ static const NSSItem nss_builtins_items_294 [] = {
  "\342\342\104\276\134\367\352\034\365"
  , (PRUint32)969 }
  };
@@ -1118,7 +1138,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -19926,7 +20266,7 @@ static const NSSItem nss_builtins_items_295 [] = {
+@@ -19961,7 +20301,7 @@ static const NSSItem nss_builtins_items_295 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1127,7 +1147,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20023,7 +20363,7 @@ static const NSSItem nss_builtins_items_296 [] = {
+@@ -20058,7 +20398,7 @@ static const NSSItem nss_builtins_items_296 [] = {
  "\364"
  , (PRUint32)993 }
  };
@@ -1136,7 +1156,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20052,7 +20392,7 @@ static const NSSItem nss_builtins_items_297 [] = {
+@@ -20087,7 +20427,7 @@ static const NSSItem nss_builtins_items_297 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1145,7 +1165,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20150,7 +20490,7 @@ static const NSSItem nss_builtins_items_298 [] = {
+@@ -20185,7 +20525,7 @@ static const NSSItem nss_builtins_items_298 [] = {
  "\261\050\272"
  , (PRUint32)1011 }
  };
@@ -1154,7 +1174,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20179,7 +20519,7 @@ static const NSSItem nss_builtins_items_299 [] = {
+@@ -20214,7 +20554,7 @@ static const NSSItem nss_builtins_items_299 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1163,7 +1183,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20256,7 +20596,7 @@ static const NSSItem nss_builtins_items_300 [] = {
+@@ -20291,7 +20631,7 @@ static const NSSItem nss_builtins_items_300 [] = {
  "\007\072\027\144\265\004\265\043\041\231\012\225\073\227\174\357"
  , (PRUint32)848 }
  };
@@ -1172,8 +1192,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20280,7 +20620,7 @@ static const NSSItem nss_builtins_items_301 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -20315,7 +20655,7 @@ static const NSSItem nss_builtins_items_301 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_302 [] = {
@@ -1181,7 +1201,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20357,7 +20697,7 @@ static const NSSItem nss_builtins_items_302 [] = {
+@@ -20392,7 +20732,7 @@ static const NSSItem nss_builtins_items_302 [] = {
  "\355\132\000\124\205\034\026\066\222\014\134\372\246\255\277\333"
  , (PRUint32)848 }
  };
@@ -1190,8 +1210,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20381,7 +20721,7 @@ static const NSSItem nss_builtins_items_303 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -20416,7 +20756,7 @@ static const NSSItem nss_builtins_items_303 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_304 [] = {
@@ -1199,7 +1219,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20490,7 +20830,7 @@ static const NSSItem nss_builtins_items_304 [] = {
+@@ -20525,7 +20865,7 @@ static const NSSItem nss_builtins_items_304 [] = {
  "\051\340\266\270\011\150\031\034\030\103"
  , (PRUint32)1354 }
  };
@@ -1208,8 +1228,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20514,7 +20854,7 @@ static const NSSItem nss_builtins_items_305 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -20549,7 +20889,7 @@ static const NSSItem nss_builtins_items_305 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_306 [] = {
@@ -1217,7 +1237,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20571,7 +20911,7 @@ static const NSSItem nss_builtins_items_306 [] = {
+@@ -20606,7 +20946,7 @@ static const NSSItem nss_builtins_items_306 [] = {
  "\214\171"
  , (PRUint32)514 }
  };
@@ -1226,8 +1246,8 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20595,7 +20935,7 @@ static const NSSItem nss_builtins_items_307 [] = {
-   { (void *)&ckt_nss_trust_unknown, (PRUint32)sizeof(CK_TRUST) },
+@@ -20630,7 +20970,7 @@ static const NSSItem nss_builtins_items_307 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
 -static const NSSItem nss_builtins_items_308 [] = {
@@ -1235,7 +1255,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20685,7 +21025,7 @@ static const NSSItem nss_builtins_items_308 [] = {
+@@ -20720,7 +21060,7 @@ static const NSSItem nss_builtins_items_308 [] = {
  "\326\267\064\365\176\316\071\232\331\070\361\121\367\117\054"
  , (PRUint32)959 }
  };
@@ -1244,7 +1264,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20712,7 +21052,7 @@ static const NSSItem nss_builtins_items_309 [] = {
+@@ -20747,7 +21087,7 @@ static const NSSItem nss_builtins_items_309 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1253,7 +1273,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20830,7 +21170,7 @@ static const NSSItem nss_builtins_items_310 [] = {
+@@ -20865,7 +21205,7 @@ static const NSSItem nss_builtins_items_310 [] = {
  "\377\276\013\166\026\136\067\067\346\330\164\227\242\231\105\171"
  , (PRUint32)1440 }
  };
@@ -1262,7 +1282,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20856,7 +21196,7 @@ static const NSSItem nss_builtins_items_311 [] = {
+@@ -20891,7 +21231,7 @@ static const NSSItem nss_builtins_items_311 [] = {
    { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1271,7 +1291,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -20989,7 +21329,7 @@ static const NSSItem nss_builtins_items_312 [] = {
+@@ -21024,7 +21364,7 @@ static const NSSItem nss_builtins_items_312 [] = {
  "\304\163\304\163\030\137\120\165\026\061\237\267\350\174\303"
  , (PRUint32)1679 }
  };
@@ -1280,7 +1300,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21015,7 +21355,7 @@ static const NSSItem nss_builtins_items_313 [] = {
+@@ -21050,7 +21390,7 @@ static const NSSItem nss_builtins_items_313 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1289,7 +1309,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21109,7 +21449,7 @@ static const NSSItem nss_builtins_items_314 [] = {
+@@ -21144,7 +21484,7 @@ static const NSSItem nss_builtins_items_314 [] = {
  "\204\232\315"
  , (PRUint32)979 }
  };
@@ -1298,7 +1318,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21137,7 +21477,7 @@ static const NSSItem nss_builtins_items_315 [] = {
+@@ -21172,7 +21512,7 @@ static const NSSItem nss_builtins_items_315 [] = {
    { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1307,7 +1327,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21221,7 +21561,7 @@ static const NSSItem nss_builtins_items_316 [] = {
+@@ -21256,7 +21596,7 @@ static const NSSItem nss_builtins_items_316 [] = {
  "\274\060\376\173\016\063\220\373\355\322\024\221\037\007\257"
  , (PRUint32)895 }
  };
@@ -1316,7 +1336,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21247,7 +21587,7 @@ static const NSSItem nss_builtins_items_317 [] = {
+@@ -21282,7 +21622,7 @@ static const NSSItem nss_builtins_items_317 [] = {
    { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1325,7 +1345,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21365,7 +21705,7 @@ static const NSSItem nss_builtins_items_318 [] = {
+@@ -21400,7 +21740,7 @@ static const NSSItem nss_builtins_items_318 [] = {
  "\262\345\214\360\206\231\270\345\305\337\204\301\267\353"
  , (PRUint32)1422 }
  };
@@ -1334,7 +1354,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21392,7 +21732,7 @@ static const NSSItem nss_builtins_items_319 [] = {
+@@ -21427,7 +21767,7 @@ static const NSSItem nss_builtins_items_319 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1343,7 +1363,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21476,7 +21816,7 @@ static const NSSItem nss_builtins_items_320 [] = {
+@@ -21511,7 +21851,7 @@ static const NSSItem nss_builtins_items_320 [] = {
  "\136\121\026\053\076"
  , (PRUint32)885 }
  };
@@ -1352,7 +1372,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21502,7 +21842,7 @@ static const NSSItem nss_builtins_items_321 [] = {
+@@ -21537,7 +21877,7 @@ static const NSSItem nss_builtins_items_321 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1361,7 +1381,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21615,7 +21955,7 @@ static const NSSItem nss_builtins_items_322 [] = {
+@@ -21650,7 +21990,7 @@ static const NSSItem nss_builtins_items_322 [] = {
  "\214\360\340\050\006\042\267\046\101"
  , (PRUint32)1353 }
  };
@@ -1370,7 +1390,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21641,7 +21981,7 @@ static const NSSItem nss_builtins_items_323 [] = {
+@@ -21676,7 +22016,7 @@ static const NSSItem nss_builtins_items_323 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1379,7 +1399,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21744,7 +22084,7 @@ static const NSSItem nss_builtins_items_324 [] = {
+@@ -21779,7 +22119,7 @@ static const NSSItem nss_builtins_items_324 [] = {
  "\041\225\305\242\165"
  , (PRUint32)1285 }
  };
@@ -1388,7 +1408,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21767,7 +22107,7 @@ static const NSSItem nss_builtins_items_325 [] = {
+@@ -21802,7 +22142,7 @@ static const NSSItem nss_builtins_items_325 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1397,7 +1417,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21869,7 +22209,7 @@ static const NSSItem nss_builtins_items_326 [] = {
+@@ -21904,7 +22244,7 @@ static const NSSItem nss_builtins_items_326 [] = {
  "\132\145"
  , (PRUint32)1170 }
  };
@@ -1406,7 +1426,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -21895,7 +22235,7 @@ static const NSSItem nss_builtins_items_327 [] = {
+@@ -21930,7 +22270,7 @@ static const NSSItem nss_builtins_items_327 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1415,7 +1435,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22027,7 +22367,7 @@ static const NSSItem nss_builtins_items_328 [] = {
+@@ -22062,7 +22402,7 @@ static const NSSItem nss_builtins_items_328 [] = {
  "\244\363\116\272\067\230\173\202\271"
  , (PRUint32)1689 }
  };
@@ -1424,7 +1444,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22052,7 +22392,7 @@ static const NSSItem nss_builtins_items_329 [] = {
+@@ -22087,7 +22427,7 @@ static const NSSItem nss_builtins_items_329 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1433,7 +1453,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22143,7 +22483,7 @@ static const NSSItem nss_builtins_items_330 [] = {
+@@ -22178,7 +22518,7 @@ static const NSSItem nss_builtins_items_330 [] = {
  "\131"
  , (PRUint32)977 }
  };
@@ -1442,7 +1462,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22170,7 +22510,7 @@ static const NSSItem nss_builtins_items_331 [] = {
+@@ -22205,7 +22545,7 @@ static const NSSItem nss_builtins_items_331 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1451,7 +1471,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22281,7 +22621,7 @@ static const NSSItem nss_builtins_items_332 [] = {
+@@ -22316,7 +22656,7 @@ static const NSSItem nss_builtins_items_332 [] = {
  "\355\020\342\305"
  , (PRUint32)1236 }
  };
@@ -1460,7 +1480,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22312,7 +22652,7 @@ static const NSSItem nss_builtins_items_333 [] = {
+@@ -22347,7 +22687,7 @@ static const NSSItem nss_builtins_items_333 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1469,7 +1489,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22394,7 +22734,7 @@ static const NSSItem nss_builtins_items_334 [] = {
+@@ -22429,7 +22769,7 @@ static const NSSItem nss_builtins_items_334 [] = {
  "\201\050\174\247\175\047\353\000\256\215\067"
  , (PRUint32)891 }
  };
@@ -1478,7 +1498,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22419,7 +22759,7 @@ static const NSSItem nss_builtins_items_335 [] = {
+@@ -22454,7 +22794,7 @@ static const NSSItem nss_builtins_items_335 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1487,7 +1507,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22552,7 +22892,7 @@ static const NSSItem nss_builtins_items_336 [] = {
+@@ -22587,7 +22927,7 @@ static const NSSItem nss_builtins_items_336 [] = {
  "\371\210\075\176\270\157\156\003\344\102"
  , (PRUint32)1370 }
  };
@@ -1496,7 +1516,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22588,7 +22928,7 @@ static const NSSItem nss_builtins_items_337 [] = {
+@@ -22623,7 +22963,7 @@ static const NSSItem nss_builtins_items_337 [] = {
    { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1505,7 +1525,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22690,7 +23030,7 @@ static const NSSItem nss_builtins_items_338 [] = {
+@@ -22725,7 +23065,7 @@ static const NSSItem nss_builtins_items_338 [] = {
  "\113\321\047\327\270"
  , (PRUint32)1077 }
  };
@@ -1514,7 +1534,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22719,7 +23059,7 @@ static const NSSItem nss_builtins_items_339 [] = {
+@@ -22754,7 +23094,7 @@ static const NSSItem nss_builtins_items_339 [] = {
    { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1523,7 +1543,7 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -22744,7 +23084,7 @@ static const NSSItem nss_builtins_items_340 [] = {
+@@ -22779,7 +23119,7 @@ static const NSSItem nss_builtins_items_340 [] = {
    { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -1532,22 +1552,144 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
    { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-@@ -23115,11 +23455,15 @@ nss_builtins_data[] = {
+@@ -22804,7 +23144,7 @@ static const NSSItem nss_builtins_items_341 [] = {
+   { (void *)&ckt_nss_not_trusted, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_342 [] = {
++static const NSSItem nss_builtins_items_346 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -22924,7 +23264,7 @@ static const NSSItem nss_builtins_items_342 [] = {
+ "\216\362\024\212\314\351\265\174\373\154\235\014\245\341\226"
+ , (PRUint32)1471 }
+ };
+-static const NSSItem nss_builtins_items_343 [] = {
++static const NSSItem nss_builtins_items_347 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -22950,7 +23290,7 @@ static const NSSItem nss_builtins_items_343 [] = {
+   { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_344 [] = {
++static const NSSItem nss_builtins_items_348 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23030,7 +23370,7 @@ static const NSSItem nss_builtins_items_344 [] = {
+ "\145\353\127\331\363\127\226\273\110\315\201"
+ , (PRUint32)875 }
+ };
+-static const NSSItem nss_builtins_items_345 [] = {
++static const NSSItem nss_builtins_items_349 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23055,7 +23395,7 @@ static const NSSItem nss_builtins_items_345 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_346 [] = {
++static const NSSItem nss_builtins_items_350 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23206,7 +23546,7 @@ static const NSSItem nss_builtins_items_346 [] = {
+ "\177\045\245\362\110\000\300\244\001\332\077"
+ , (PRUint32)1931 }
+ };
+-static const NSSItem nss_builtins_items_347 [] = {
++static const NSSItem nss_builtins_items_351 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23233,7 +23573,7 @@ static const NSSItem nss_builtins_items_347 [] = {
+   { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_348 [] = {
++static const NSSItem nss_builtins_items_352 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23346,7 +23686,7 @@ static const NSSItem nss_builtins_items_348 [] = {
+ "\127\055\366\320\341\327\110"
+ , (PRUint32)1383 }
+ };
+-static const NSSItem nss_builtins_items_349 [] = {
++static const NSSItem nss_builtins_items_353 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23371,7 +23711,7 @@ static const NSSItem nss_builtins_items_349 [] = {
+   { (void *)&ckt_nss_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_350 [] = {
++static const NSSItem nss_builtins_items_354 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23481,7 +23821,7 @@ static const NSSItem nss_builtins_items_350 [] = {
+ "\327\201\011\361\311\307\046\015\254\230\026\126\240"
+ , (PRUint32)1373 }
+ };
+-static const NSSItem nss_builtins_items_351 [] = {
++static const NSSItem nss_builtins_items_355 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23505,7 +23845,7 @@ static const NSSItem nss_builtins_items_351 [] = {
+   { (void *)&ckt_nss_must_verify_trust, (PRUint32)sizeof(CK_TRUST) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
+ };
+-static const NSSItem nss_builtins_items_352 [] = {
++static const NSSItem nss_builtins_items_356 [] = {
+   { (void *)&cko_certificate, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23615,7 +23955,7 @@ static const NSSItem nss_builtins_items_352 [] = {
+ "\061\356\006\274\163\277\023\142\012\237\307\271\227"
+ , (PRUint32)1373 }
+ };
+-static const NSSItem nss_builtins_items_353 [] = {
++static const NSSItem nss_builtins_items_357 [] = {
+   { (void *)&cko_nss_trust, (PRUint32)sizeof(CK_OBJECT_CLASS) },
+   { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
+   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
+@@ -23985,11 +24325,11 @@ nss_builtins_data[] = {
    { 11, nss_builtins_types_338, nss_builtins_items_338, {NULL} },
    { 13, nss_builtins_types_339, nss_builtins_items_339, {NULL} },
    { 11, nss_builtins_types_340, nss_builtins_items_340, {NULL} },
--  { 11, nss_builtins_types_341, nss_builtins_items_341, {NULL} }
+-  { 11, nss_builtins_types_341, nss_builtins_items_341, {NULL} },
 +  { 13, nss_builtins_types_341, nss_builtins_items_341, {NULL} },
-+  { 11, nss_builtins_types_342, nss_builtins_items_342, {NULL} },
-+  { 13, nss_builtins_types_343, nss_builtins_items_343, {NULL} },
-+  { 11, nss_builtins_types_344, nss_builtins_items_344, {NULL} },
-+  { 11, nss_builtins_types_345, nss_builtins_items_345, {NULL} }
+   { 11, nss_builtins_types_342, nss_builtins_items_342, {NULL} },
+   { 13, nss_builtins_types_343, nss_builtins_items_343, {NULL} },
+   { 11, nss_builtins_types_344, nss_builtins_items_344, {NULL} },
+-  { 13, nss_builtins_types_345, nss_builtins_items_345, {NULL} },
++  { 11, nss_builtins_types_345, nss_builtins_items_345, {NULL} },
+   { 11, nss_builtins_types_346, nss_builtins_items_346, {NULL} },
+   { 13, nss_builtins_types_347, nss_builtins_items_347, {NULL} },
+   { 11, nss_builtins_types_348, nss_builtins_items_348, {NULL} },
+@@ -23997,11 +24337,15 @@ nss_builtins_data[] = {
+   { 11, nss_builtins_types_350, nss_builtins_items_350, {NULL} },
+   { 13, nss_builtins_types_351, nss_builtins_items_351, {NULL} },
+   { 11, nss_builtins_types_352, nss_builtins_items_352, {NULL} },
+-  { 13, nss_builtins_types_353, nss_builtins_items_353, {NULL} }
++  { 13, nss_builtins_types_353, nss_builtins_items_353, {NULL} },
++  { 11, nss_builtins_types_354, nss_builtins_items_354, {NULL} },
++  { 13, nss_builtins_types_355, nss_builtins_items_355, {NULL} },
++  { 11, nss_builtins_types_356, nss_builtins_items_356, {NULL} },
++  { 13, nss_builtins_types_357, nss_builtins_items_357, {NULL} }
  };
  const PRUint32
  #ifdef DEBUG
--  nss_builtins_nObjects = 341+1;
-+  nss_builtins_nObjects = 345+1;
+-  nss_builtins_nObjects = 353+1;
++  nss_builtins_nObjects = 357+1;
  #else
--  nss_builtins_nObjects = 341;
-+  nss_builtins_nObjects = 345;
+-  nss_builtins_nObjects = 353;
++  nss_builtins_nObjects = 357;
  #endif /* DEBUG */
