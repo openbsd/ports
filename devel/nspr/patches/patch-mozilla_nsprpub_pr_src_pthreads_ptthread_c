@@ -1,10 +1,18 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.6 2012/05/17 10:23:24 landry Exp $
+$OpenBSD: patch-mozilla_nsprpub_pr_src_pthreads_ptthread_c,v 1.7 2012/09/17 20:00:09 landry Exp $
 Don't only check for _POSIX_THREAD_PRIORITY_SCHEDULING being defined, but check that it's > 0
 on openbsd/rthreads it's -1 atm.
 https://bugzilla.mozilla.org/show_bug.cgi?id=756047
---- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Sat May 12 17:33:01 2012
-+++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sat May 12 17:35:46 2012
-@@ -59,6 +59,10 @@
+--- mozilla/nsprpub/pr/src/pthreads/ptthread.c.orig	Fri Jun 22 03:36:02 2012
++++ mozilla/nsprpub/pr/src/pthreads/ptthread.c	Sun Sep  2 01:18:09 2012
+@@ -16,6 +16,7 @@
+ #include "prpdce.h"
+ 
+ #include <pthread.h>
++#include <pthread_np.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <signal.h>
+@@ -28,6 +29,10 @@
  #undef _POSIX_THREAD_PRIORITY_SCHEDULING
  #endif
  
@@ -15,3 +23,13 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=756047
  /*
   * Record whether or not we have the privilege to set the scheduling
   * policy and priority of threads.  0 means that privilege is available.
+@@ -1638,7 +1643,8 @@ PR_IMPLEMENT(PRStatus) PR_SetCurrentThreadName(const c
+     memcpy(thread->name, name, nameLen + 1);
+ 
+ #if defined(OPENBSD) || defined(FREEBSD)
+-    result = pthread_set_name_np(thread->id, name);
++    pthread_set_name_np(thread->id, name);
++    result = 0;
+ #else /* not BSD */
+     /*
+      * On OSX, pthread_setname_np is only available in 10.6 or later, so test

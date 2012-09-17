@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prnetdb_c,v 1.9 2011/08/23 20:07:08 landry Exp $
---- mozilla/nsprpub/pr/src/misc/prnetdb.c.orig	Thu May 12 05:13:21 2011
-+++ mozilla/nsprpub/pr/src/misc/prnetdb.c	Tue Aug 16 09:16:00 2011
-@@ -2076,7 +2076,9 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prnetdb_c,v 1.10 2012/09/17 20:00:09 landry Exp $
+--- mozilla/nsprpub/pr/src/misc/prnetdb.c.orig	Tue Mar  6 14:14:20 2012
++++ mozilla/nsprpub/pr/src/misc/prnetdb.c	Sun Sep  2 00:30:57 2012
+@@ -2044,7 +2044,9 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
           */
          hints.ai_socktype = SOCK_STREAM;
  
