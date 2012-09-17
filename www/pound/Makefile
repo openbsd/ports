@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/01/26 08:03:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/17 13:05:14 gonzalo Exp $
 
 COMMENT =		HTTP reverse proxy/load balancer/SSL offload
 
-DISTNAME =		Pound-2.5
+DISTNAME =		Pound-2.6
 PKGNAME =		${DISTNAME:L}
-REVISION =		2
 
 CATEGORIES =		www
 
@@ -29,7 +28,6 @@ CONFIGURE_ARGS +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			--with-owner=root \
 			--with-group=bin
 
-USE_GROFF =		Yes
 NO_REGRESS =		Yes
 
 pre-configure:

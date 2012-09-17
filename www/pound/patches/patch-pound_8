@@ -1,6 +1,6 @@
-$OpenBSD: patch-pound_8,v 1.2 2010/10/03 22:27:53 sthen Exp $
---- pound.8.orig	Tue Feb  2 11:49:02 2010
-+++ pound.8	Sun Oct  3 23:27:32 2010
+$OpenBSD: patch-pound_8,v 1.3 2012/09/17 13:05:14 gonzalo Exp $
+--- pound.8.orig	Wed Dec 28 10:57:45 2011
++++ pound.8	Tue Sep  4 17:04:51 2012
 @@ -155,7 +155,7 @@ running a quick syntax check before actually activatin
  \fB\-f\fR config_file
  Location of the configuration file (see below for a full description of the format).
@@ -10,7 +10,7 @@ $OpenBSD: patch-pound_8,v 1.2 2010/10/03 22:27:53 sthen Exp $
  .TP
  \fB\-p\fR pid_file
  Location of the pid file.
-@@ -1142,11 +1142,11 @@ this is where
+@@ -1191,11 +1191,11 @@ this is where
  .B Pound
  will attempt to record its process id.
  .TP
