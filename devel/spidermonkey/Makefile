@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2012/08/20 12:51:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/17 06:00:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MOZILLA_VERSION =	1.8.5
 DISTNAME =		js185-1.0.0
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}
 PKGSPEC =		spidermonkey->=1.8,<1.9
-REVISION =		2
+REVISION =		3
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs185 ${SO_VERSION}
