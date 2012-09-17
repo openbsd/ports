@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2012/07/16 12:54:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/17 12:31:35 jasper Exp $
 
 COMMENT=		open-source JPEG 2000 codec library
 
 DISTNAME=		openjpeg-1.5.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	openjpeg             5.0      # 6.0
 
