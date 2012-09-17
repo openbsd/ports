@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2012/03/06 17:17:09 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/17 19:37:09 landry Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.9.0.2
+REVISION =	0
 CATEGORIES =	www devel
 
 DISTFILES = 	cgit-0.9.0.2.tar.gz:0 \
@@ -26,7 +27,7 @@ MODULES =	converters/libiconv
 WANTLIB +=	c crypto pthread z
 
 PREFIX =	/var/www
-MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+=-L${LOCALBASE}/lib
+MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+='-static -L${LOCALBASE}/lib'
 
 post-extract:
 	rmdir ${WRKSRC}/git
