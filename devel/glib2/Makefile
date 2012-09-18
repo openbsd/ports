@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2012/09/07 14:40:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.184 2012/09/18 13:05:59 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
@@ -7,7 +7,7 @@ DISTNAME=		glib-${V}
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 EXTRACT_SUFX=		.tar.xz
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -77,7 +77,8 @@ BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			devel/libtool
 #MASTER_SITES0=		http://dmitrymatveev.co.uk/files/
 MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCHFILES=		glib-gio-kqueue-2.32.1-v1.patch:0
+PATCHFILES=		glib-gio-kqueue-2.32.4-v3.patch:0
+PATCH_DIST_STRIP=	-p1
 AUTO_ENV=		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 post-patch:
@@ -99,10 +100,5 @@ pre-configure:
 		${WRKSRC}/gio/gdbusconnection.c \
 		${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/glib2
-	${INSTALL_DATA} ${FILESDIR}/gio-kqueue.conf \
-		${PREFIX}/share/examples/glib2
 
 .include <bsd.port.mk>

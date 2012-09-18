@@ -1,4 +1,4 @@
 SHA256 (glib-2.32.4.tar.xz) = pddCpP2iL7aXWowM/NJJndHICbiv1O9wm9pNEbFn+uI=
-SHA256 (glib-gio-kqueue-2.32.1-v1.patch) = oXaLBaL0UkhlGfy1DCgx6jHx3x1LMmhzqlA93agtdDo=
+SHA256 (glib-gio-kqueue-2.32.4-v3.patch) = H8wqMyMQKnemBvZ7nYfNC6skI0uKJgL5WHhzpxNfbc4=
 SIZE (glib-2.32.4.tar.xz) = 6178556
-SIZE (glib-gio-kqueue-2.32.1-v1.patch) = 100340
+SIZE (glib-gio-kqueue-2.32.4-v3.patch) = 100892
