@@ -1,3 +1,5 @@
+@comment $OpenBSD: PLIST-java,v 1.9 2012/09/18 13:05:21 ajacoutot Exp $
+%%SHARED%%
 lib/libreoffice/share/extensions/wiki-publisher/
 lib/libreoffice/share/extensions/wiki-publisher/Addons.xcu
 lib/libreoffice/share/extensions/wiki-publisher/Filter.xcu
