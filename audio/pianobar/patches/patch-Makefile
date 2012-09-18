@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.19 2012/08/22 20:14:06 naddy Exp $
---- Makefile.orig	Sun Jun 24 16:34:26 2012
-+++ Makefile	Mon Aug 20 17:01:25 2012
+$OpenBSD: patch-Makefile,v 1.20 2012/09/18 12:35:03 dcoppa Exp $
+--- Makefile.orig	Fri Sep  7 16:44:39 2012
++++ Makefile	Tue Sep 18 14:16:04 2012
 @@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -18,7 +18,7 @@ $OpenBSD: patch-Makefile,v 1.19 2012/08/22 20:14:06 naddy Exp $
  PIANOBAR_DIR=src
  PIANOBAR_SRC=\
  		${PIANOBAR_DIR}/main.c \
-@@ -88,49 +81,40 @@ LIBJSONC_LDFLAGS=$(shell pkg-config --libs json)
+@@ -88,37 +81,31 @@ LIBJSONC_LDFLAGS=$(shell pkg-config --libs json)
  
  # build pianobar
  ifeq (${DYNLINK},1)
@@ -56,6 +56,17 @@ $OpenBSD: patch-Makefile,v 1.19 2012/08/22 20:14:06 naddy Exp $
 -	@${AR} rcs libpiano.a ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ}
 +	${AR} rcs libpiano.a ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ}
  
+ 
+ # build dependency files
+ %.d: %.c
+-	@set -e; rm -f $@; \
++	set -e; rm -f $@; \
+ 			$(CC) -M ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
+ 			${LIBFAAD_CFLAGS} ${LIBMAD_CFLAGS} ${LIBGNUTLS_CFLAGS} \
+ 			${LIBGCRYPT_CFLAGS} ${LIBJSONC_CFLAGS} $< > $@.$$$$; \
+@@ -131,21 +118,18 @@ libpiano.so.0: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LI
+ 
+ # build standard object files
  %.o: %.c
 -	@echo "    CC  $<"
 -	@${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
@@ -77,9 +88,9 @@ $OpenBSD: patch-Makefile,v 1.19 2012/08/22 20:14:06 naddy Exp $
 -	@${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} ${LIBWAITRESS_OBJ}/test.o \
 +	${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} ${LIBWAITRESS_OBJ}/test.o \
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} pianobar libpiano.so* \
- 			libpiano.a waitress-test
- 
-@@ -177,17 +161,15 @@ else
+ 			libpiano.a waitress-test $(PIANOBAR_SRC:.c=.d) $(LIBPIANO_SRC:.c=.d) \
+ 			$(LIBWAITRESS_SRC:.c=.d)
+@@ -193,17 +177,15 @@ else
  install: pianobar
  endif
  	install -d ${DESTDIR}/${BINDIR}/

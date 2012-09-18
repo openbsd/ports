@@ -1,17 +1,16 @@
-$OpenBSD: patch-src_main_c,v 1.11 2012/07/06 08:32:13 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.12 2012/09/18 12:35:03 dcoppa Exp $
 
-Properly initialize libgcrypt
-(upstream git commit 96db841a16670b52fa462337c657c6dc6bd2844a)
+Fix history memory leak
+With 'history = 0' playlist items are discarded, but not freed
+(upstream git commit e3d8f497baaf02daeddb060cd986681d0ee208de)
 
---- src/main.c.orig	Fri Jul  6 09:59:58 2012
-+++ src/main.c	Fri Jul  6 10:00:50 2012
-@@ -343,6 +343,9 @@ int main (int argc, char **argv) {
- 
- 	/* init some things */
- 	ao_initialize ();
-+	gcry_check_version (NULL);
-+	gcry_control (GCRYCTL_DISABLE_SECMEM, 0);
-+	gcry_control (GCRYCTL_INITIALIZATION_FINISHED, 0);
- 	gnutls_global_init ();
- 
- 	BarSettingsInit (&app.settings);
+--- src/main.c.orig	Tue Sep 18 14:22:12 2012
++++ src/main.c	Tue Sep 18 14:22:53 2012
+@@ -301,6 +301,7 @@ static void BarMainLoop (BarApp_t *app) {
+ 			if (app->playlist != NULL) {
+ 				PianoSong_t *histsong = app->playlist;
+ 				app->playlist = app->playlist->next;
++				histsong->next = NULL;
+ 				BarUiHistoryPrepend (app, histsong);
+ 			}
+ 			if (app->playlist == NULL) {
