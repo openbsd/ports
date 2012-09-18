@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2012/09/04 12:06:01 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/18 20:34:30 gonzalo Exp $
 
 COMMENT=		vi-like minimalists web browser
-DISTNAME=		xombrero-1.3.0
+DISTNAME=		xombrero-1.3.1
 CATEGORIES=		www
 EPOCH=			1
 
