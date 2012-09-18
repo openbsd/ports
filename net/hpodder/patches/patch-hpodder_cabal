@@ -1,0 +1,15 @@
+$OpenBSD: patch-hpodder_cabal,v 1.5 2012/09/18 17:12:56 dcoppa Exp $
+
+Unbreak build with HaXml>=1.22
+
+--- hpodder.cabal.orig	Tue Sep 18 17:18:22 2012
++++ hpodder.cabal	Tue Sep 18 17:18:49 2012
+@@ -69,7 +69,7 @@ Description:  Podcasting is a method of publishing rad
+  beginning.  It should be exceedingly difficult to lose a podcast
+  episode, even in the event of a power failure.
+ Build-Depends: network, unix, parsec, MissingH>=1.0.0,
+- HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base>=3 && < 5, HaXml >= 1.20 && < 1.21, hslogger,
++ HDBC>=1.1.0, HDBC-sqlite3>=1.1.0, mtl, base>=3 && < 5, HaXml >= 1.22 && < 1.24, hslogger,
+  ConfigFile, filepath, old-time, directory, process
+ 
+ Executable: hpodder

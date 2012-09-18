@@ -1,11 +1,13 @@
-$OpenBSD: patch-FeedParser_hs,v 1.4 2012/03/20 13:33:54 dcoppa Exp $
+$OpenBSD: patch-FeedParser_hs,v 1.5 2012/09/18 17:12:56 dcoppa Exp $
 
 Fix the "Invalid or incomplete multibyte or wide character" error
 caused by some feeds: set binary mode on the handle before hGetContents
 (upstream git commit bd08d07cc29893177efe8ef0e8be368657d56bbf)
 
+Unbreak build with HaXml>=1.22
+
 --- FeedParser.hs.orig	Tue Nov  8 16:49:38 2011
-+++ FeedParser.hs	Tue Mar 20 14:08:25 2012
++++ FeedParser.hs	Tue Sep 18 17:22:05 2012
 @@ -39,6 +39,7 @@ import Data.Maybe.Utils
  import Data.Char
  import Data.Either.Utils
@@ -24,3 +26,12 @@ caused by some feeds: set binary mode on the handle before hGetContents
         case xmlParse' name (unifrob c) of
           Left x -> return (Left x)
           Right y ->
+@@ -125,7 +127,7 @@ channel =
+ attrofelem :: String -> Content Posn -> Maybe AttValue
+ attrofelem attrname (CElem inelem _) =
+     case unesc inelem of
+-      Elem name al _ -> lookup attrname al
++      Elem name al _ -> lookup (N attrname) al
+ attrofelem _ _ =
+     error "attrofelem: called on something other than a CElem"
+ stratt :: String -> Content Posn -> Maybe [String]
