@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.499 2012/09/04 19:03:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.500 2012/09/18 08:33:28 jasper Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -259,6 +259,7 @@
      SUBDIR += unclutter
      SUBDIR += vdesk
      SUBDIR += viewfax
+     SUBDIR += virt-viewer
      SUBDIR += vlc
      SUBDIR += waimea
      SUBDIR += wampager
