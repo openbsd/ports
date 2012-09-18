@@ -1,6 +1,6 @@
-$OpenBSD: patch-redis_conf,v 1.2 2012/02/28 11:57:11 dcoppa Exp $
---- redis.conf.orig	Wed Feb 22 14:23:43 2012
-+++ redis.conf	Tue Feb 28 12:29:39 2012
+$OpenBSD: patch-redis_conf,v 1.3 2012/09/18 13:20:43 dcoppa Exp $
+--- redis.conf.orig	Thu Aug 30 17:42:47 2012
++++ redis.conf	Tue Sep 18 15:08:20 2012
 @@ -13,12 +13,13 @@
  # units are case insensitive so 1GB 1Gb 1gB are all the same.
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-redis_conf,v 1.2 2012/02/28 11:57:11 dcoppa Exp $
  
  ################################# REPLICATION #################################
  
-@@ -164,6 +165,7 @@ slave-serve-stale-data yes
+@@ -179,6 +180,7 @@ slave-priority 100
  # use a very strong password otherwise it will be very easy to break.
  #
  # requirepass foobared
@@ -68,7 +68,7 @@ $OpenBSD: patch-redis_conf,v 1.2 2012/02/28 11:57:11 dcoppa Exp $
  
  # Command renaming.
  #
-@@ -386,7 +388,7 @@ vm-enabled no
+@@ -401,7 +403,7 @@ vm-enabled no
  # *** WARNING *** if you are using a shared hosting the default of putting
  # the swap file under /tmp is not secure. Create a dir with access granted
  # only to Redis user and configure Redis to create the swap file there.
