@@ -1,9 +1,9 @@
 #!/bin/sh
 #
-# $OpenBSD: mimedefang_daemon.rc,v 1.6 2012/05/31 18:31:42 ajacoutot Exp $
+# $OpenBSD: mimedefang_daemon.rc,v 1.7 2012/09/18 15:34:39 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/mimedefang"
-daemon_flags="-U _mdefang -P /var/spool/MIMEDefang/mimedefang.pid -p /var/spool/MIMEDefang/mimedefang.sock -m /var/spool/MIMEDefang/mimedefang-multiplexor.sock"
+daemon_flags="-G -U _mdefang -P /var/spool/MIMEDefang/mimedefang.pid -p /var/spool/MIMEDefang/mimedefang.sock -m /var/spool/MIMEDefang/mimedefang-multiplexor.sock"
 
 . /etc/rc.d/rc.subr
 

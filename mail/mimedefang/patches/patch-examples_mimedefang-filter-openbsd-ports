@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.2 2012/06/01 15:39:22 ajacoutot Exp $
---- examples/mimedefang-filter-openbsd-ports.orig	Fri Jun  1 17:37:14 2012
-+++ examples/mimedefang-filter-openbsd-ports	Fri Jun  1 17:38:19 2012
+$OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.3 2012/09/18 15:34:39 ajacoutot Exp $
+--- examples/mimedefang-filter-openbsd-ports.orig	Tue Sep 18 17:05:15 2012
++++ examples/mimedefang-filter-openbsd-ports	Tue Sep 18 17:06:36 2012
 @@ -3,9 +3,6 @@
  #
  # mimedefang-filter
@@ -11,6 +11,24 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.2 2012/06/01 15:39:
  # Copyright (C) 2002 Roaring Penguin Software Inc.
  #
  # This program may be distributed under the terms of the GNU General
+@@ -20,7 +17,7 @@
+ # MIMEDefang policy.  A good example would be 'defang-admin@mydomain.com'
+ #***********************************************************************
+ $AdminAddress = 'postmaster@localhost';
+-$AdminName = "MIMEDefang Administrator's Full Name";
++$AdminName = "Postmaster";
+ 
+ #***********************************************************************
+ # Set the e-mail address from which MIMEDefang quarantine warnings and
+@@ -28,7 +25,7 @@ $AdminName = "MIMEDefang Administrator's Full Name";
+ # 'mimedefang@mydomain.com'.  Make sure to have an alias for this
+ # address if you want replies to it to work.
+ #***********************************************************************
+-$DaemonAddress = 'mimedefang@localhost';
++$DaemonAddress = 'postmaster@localhost';
+ 
+ #***********************************************************************
+ # If you set $AddWarningsInline to 1, then MIMEDefang tries *very* hard
 @@ -63,6 +60,12 @@ md_graphdefang_log_enable('mail', 1);
  # $MaxMIMEParts = 50;
  
@@ -33,7 +51,41 @@ $OpenBSD: patch-examples_mimedefang-filter-openbsd-ports,v 1.2 2012/06/01 15:39:
  	return action_discard();
      }
  
-@@ -316,6 +321,28 @@ sub filter_end {
+@@ -181,10 +186,11 @@ sub filter {
+ 	return action_discard();
+     }
+ 
+-    if (filter_bad_filename($entity)) {
+-        md_graphdefang_log('bad_filename', $fname, $type);
+-	return action_drop_with_warning("An attachment named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
+-    }
++    # Uncomment to enable bad extension filtering for MIME messages.
++#    if (filter_bad_filename($entity)) {
++#        md_graphdefang_log('bad_filename', $fname, $type);
++#	return action_drop_with_warning("An attachment named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
++#    }
+ 
+     return action_accept();
+ }
+@@ -210,11 +216,12 @@ sub filter_multipart {
+ 
+     return if message_rejected(); # Avoid unnecessary work
+ 
+-    if (filter_bad_filename($entity)) {
+-        md_graphdefang_log('bad_filename', $fname, $type);
+-	action_notify_administrator("A MULTIPART attachment of type $type, named $fname was dropped.\n");
+-	return action_drop_with_warning("An attachment of type $type, named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
+-    }
++    # Uncomment to enable bad extension filtering for multipart messages.
++#    if (filter_bad_filename($entity)) {
++#        md_graphdefang_log('bad_filename', $fname, $type);
++#	action_notify_administrator("A MULTIPART attachment of type $type, named $fname was dropped.\n");
++#	return action_drop_with_warning("An attachment of type $type, named $fname was removed from this document as it\nconstituted a security hazard.  If you require this document, please contact\nthe sender and arrange an alternate means of receiving it.\n");
++#    }
+ 
+     # Block message/partial parts
+     if (lc($type) eq "message/partial") {
+@@ -316,6 +323,28 @@ sub filter_end {
      # by marginal software.  Your call.
  
      # action_rebuild();
