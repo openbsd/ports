@@ -1,4 +1,4 @@
-$OpenBSD: patch-support_rrsync,v 1.1 2012/09/18 11:00:55 henning Exp $
+$OpenBSD: patch-support_rrsync,v 1.2 2012/09/18 11:28:23 jasper Exp $
 --- support/rrsync.orig	Fri Aug 31 11:58:47 2012
 +++ support/rrsync	Fri Aug 31 11:58:36 2012
 @@ -11,7 +11,7 @@ use File::Glob ':glob';
@@ -6,7 +6,7 @@ $OpenBSD: patch-support_rrsync,v 1.1 2012/09/18 11:00:55 henning Exp $
  # You may configure these values to your liking.  See also the section
  # of options if you want to disable any options that rsync accepts.
 -use constant RSYNC => '/usr/bin/rsync';
-+use constant RSYNC => '/usr/local/bin/rsync';
++use constant RSYNC => '${PREFIX}/bin/rsync';
  use constant LOGFILE => 'rrsync.log';
  
  my $Usage = <<EOM;
