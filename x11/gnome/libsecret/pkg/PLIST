@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/07/14 07:51:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/18 12:43:08 ajacoutot Exp $
 %%SHARED%%
 @bin bin/secret-tool
 include/libsecret-1/
@@ -24,6 +24,7 @@ lib/libsecret-1.la
 lib/pkgconfig/
 lib/pkgconfig/libsecret-1.pc
 lib/pkgconfig/libsecret-unstable.pc
+@man man/man1/secret-tool.1
 share/gir-1.0/
 share/gir-1.0/Secret-1.gir
 share/gir-1.0/SecretUnstable-0.gir
@@ -85,4 +86,12 @@ share/gtk-doc/html/libsecret-1/vala-examples.html
 share/gtk-doc/html/libsecret-1/vala-lookup-example.html
 share/gtk-doc/html/libsecret-1/vala-remove-example.html
 share/gtk-doc/html/libsecret-1/vala-store-example.html
+share/locale/ja/LC_MESSAGES/libsecret.mo
 share/locale/pl/LC_MESSAGES/libsecret.mo
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libsecret-1.deps
+share/vala/vapi/libsecret-1.vapi
+share/vala/vapi/libsecret-unstable.deps
+share/vala/vapi/libsecret-unstable.vapi
+share/vala/vapi/mock-service-0.vapi
