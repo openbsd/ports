@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2012/06/12 17:31:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/18 16:53:17 espie Exp $
 
 COMMENT = 	Python-like language for the .NET/Mono platform
 
 PNAME =		boo
 V =		0.9.4
 BUILD_NUM =	9
+BROKEN =	hangs every 2 builds
 
 DISTNAME = 	${PKGNAME}.${BUILD_NUM}
 PKGNAME = 	${PNAME}-${V}
