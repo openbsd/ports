@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/07/03 09:00:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/18 05:28:28 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/tornado/__init__.py
@@ -61,12 +61,19 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/__init__.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/auth_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/auth_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/csv_translations/fr_FR.csv
 lib/python${MODPY_VERSION}/site-packages/tornado/test/curl_httpclient_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/curl_httpclient_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/escape_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/escape_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/gen_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/gen_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.mo
+lib/python${MODPY_VERSION}/site-packages/tornado/test/gettext_translations/fr_FR/LC_MESSAGES/tornado_test.po
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httpclient_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httpclient_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/httpserver_test.py
@@ -79,12 +86,12 @@ lib/python${MODPY_VERSION}/site-packages/tornado/test/ioloop_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/ioloop_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/iostream_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/iostream_test.pyc
+lib/python${MODPY_VERSION}/site-packages/tornado/test/locale_test.py
+lib/python${MODPY_VERSION}/site-packages/tornado/test/locale_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/options_test.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/process_test.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/process_test.pyc
-lib/python${MODPY_VERSION}/site-packages/tornado/test/run_pyversion_tests.py
-lib/python${MODPY_VERSION}/site-packages/tornado/test/run_pyversion_tests.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/runtests.py
 lib/python${MODPY_VERSION}/site-packages/tornado/test/runtests.pyc
 lib/python${MODPY_VERSION}/site-packages/tornado/test/simple_httpclient_test.py
