@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2012/09/16 08:33:04 kili Exp $
+# $OpenBSD: Makefile,v 1.77 2012/09/18 18:24:26 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -172,7 +172,7 @@ do-regress:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20120626
+BOOTSTRAP_DATE =	20120917
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
@@ -186,7 +186,7 @@ bootstrap: patch
 	cd ${WRKDIR} && rm -rf bin
 
 	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
-	echo GhcLibHcOpts=-O -fgenerics -fasm >> ${WRKSRC}/mk/build.mk
+	echo GhcLibHcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo GhcStage2HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
 	echo SplitObjs=NO >> ${WRKSRC}/mk/build.mk
@@ -201,7 +201,7 @@ bootstrap: patch
 	echo BUILD_DOCBOOK_PDF=NO >> ${WRKSRC}/mk/build.mk
 	echo BUILD_DOCBOOK_PS=NO >> ${WRKSRC}/mk/build.mk
 	echo GhcWithSMP=NO >> ${WRKSRC}/mk/build.mk
-	echo INSTALL_BIN_OPTS=-s >> ${WRKSRC}/mk/build.mk
+	echo LD_OPTS=-optl-static -optl-s >> ${WRKSRC}/mk/build.mk
 
 	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
 
