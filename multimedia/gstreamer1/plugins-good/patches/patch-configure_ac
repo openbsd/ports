@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
---- configure.ac.orig	Wed Aug  8 12:07:57 2012
-+++ configure.ac	Wed Sep  5 14:21:28 2012
+$OpenBSD: patch-configure_ac,v 1.2 2012/09/18 07:54:14 ajacoutot Exp $
+--- configure.ac.orig	Mon Sep 17 17:24:49 2012
++++ configure.ac	Tue Sep 18 08:59:53 2012
 @@ -471,6 +471,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
@@ -43,7 +43,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
  dnl *** soup ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_SOUP, true)
  AG_GST_CHECK_FEATURE(SOUP, [soup http client plugin (2.4)], souphttpsrc, [
-@@ -955,6 +976,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
+@@ -980,6 +1001,7 @@ AM_CONDITIONAL(USE_OSX_AUDIO, false)
  AM_CONDITIONAL(USE_OSX_VIDEO, false)
  AM_CONDITIONAL(USE_PULSE, false)
  AM_CONDITIONAL(USE_SHOUT2, false)
@@ -51,7 +51,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2012/09/06 13:01:31 ajacoutot Exp $
  AM_CONDITIONAL(USE_SOUP, false)
  AM_CONDITIONAL(USE_SPEEX, false)
  AM_CONDITIONAL(USE_SUNAUDIO, false)
-@@ -1088,6 +1110,7 @@ ext/libpng/Makefile
+@@ -1114,6 +1136,7 @@ ext/libpng/Makefile
  ext/pulse/Makefile
  ext/raw1394/Makefile
  ext/shout2/Makefile
