@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2012/08/06 17:56:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2012/09/18 06:40:24 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -77,7 +77,6 @@ share/gtk-doc/html/
 share/gtk-doc/html/gdk-pixbuf/
 share/gtk-doc/html/gdk-pixbuf/GdkPixbufLoader.html
 share/gtk-doc/html/gdk-pixbuf/annotation-glossary.html
-share/gtk-doc/html/gdk-pixbuf/api-index-2-10.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-12.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-14.html
 share/gtk-doc/html/gdk-pixbuf/api-index-2-2.html
@@ -99,7 +98,11 @@ share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Scaling.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Utilities.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Versioning.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-X-Drawables-to-Pixbufs.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Xlib-Rendering.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-XlibRGB.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-csource.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-Xlib-initialization.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-from-drawables.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-rendering.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-query-loaders.html
