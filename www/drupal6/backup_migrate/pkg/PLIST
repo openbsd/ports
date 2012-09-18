@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/08 12:54:52 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.5 2012/09/18 14:06:57 espie Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/files/backup_migrate/
@@ -11,7 +11,6 @@ ${DRUPAL_MODS}backup_migrate/backup_migrate.install
 ${DRUPAL_MODS}backup_migrate/backup_migrate.js
 ${DRUPAL_MODS}backup_migrate/backup_migrate.module
 ${DRUPAL_MODS}backup_migrate/includes/
-${DRUPAL_MODS}backup_migrate/includes/S3.php
 ${DRUPAL_MODS}backup_migrate/includes/backup_migrate.drush.inc
 ${DRUPAL_MODS}backup_migrate/includes/crud.inc
 ${DRUPAL_MODS}backup_migrate/includes/destinations.browser.inc
@@ -31,5 +30,6 @@ ${DRUPAL_MODS}backup_migrate/includes/filters.statusnotify.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.utils.inc
 ${DRUPAL_MODS}backup_migrate/includes/profiles.inc
 ${DRUPAL_MODS}backup_migrate/includes/schedules.inc
-${DRUPAL_MODS}backup_migrate/translations/
-${DRUPAL_MODS}backup_migrate/translations/de.po
+${DRUPAL_MODS}backup_migrate/tests/
+${DRUPAL_MODS}backup_migrate/tests/backup_migrate.functionality.test
+${DRUPAL_MODS}backup_migrate/tests/backup_migrate.unit.test
