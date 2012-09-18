@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2012/09/14 08:04:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2012/09/18 07:54:38 ajacoutot Exp $
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstbasecamerasrc.h
 include/gstreamer-${VERSION}/gst/basecamerabinsrc/gstcamerabin-enum.h
@@ -33,7 +33,6 @@ lib/gstreamer-${VERSION}/libgstdvbsuboverlay.so
 lib/gstreamer-${VERSION}/libgstdvdspu.so
 lib/gstreamer-${VERSION}/libgstfestival.so
 lib/gstreamer-${VERSION}/libgstfragmented.so
-lib/gstreamer-${VERSION}/libgstfreeze.so
 lib/gstreamer-${VERSION}/libgstgaudieffects.so
 lib/gstreamer-${VERSION}/libgstgdp.so
 lib/gstreamer-${VERSION}/libgstgeometrictransform.so
@@ -60,7 +59,6 @@ lib/gstreamer-${VERSION}/libgstsiren.so
 lib/gstreamer-${VERSION}/libgstsmooth.so
 lib/gstreamer-${VERSION}/libgstspeed.so
 lib/gstreamer-${VERSION}/libgstvideoparsersbad.so
-lib/gstreamer-${VERSION}/libgstvp8.so
 lib/gstreamer-${VERSION}/libgsty4mdec.so
 lib/libgstbasecamerabinsrc-${VERSION}.la
 @lib lib/libgstbasecamerabinsrc-${VERSION}.so.${LIBgstbasecamerabinsrc-1.0_VERSION}
@@ -75,9 +73,6 @@ lib/libgstsignalprocessor-${VERSION}.la
 lib/pkgconfig/gstreamer-basevideo-${VERSION}.pc
 lib/pkgconfig/gstreamer-codecparsers-${VERSION}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${VERSION}.pc
-share/gstreamer-${VERSION}/
-share/gstreamer-${VERSION}/presets/
-share/gstreamer-${VERSION}/presets/GstVP8Enc.prs
 share/gtk-doc/html/gst-plugins-bad-libs-${VERSION}/
 share/gtk-doc/html/gst-plugins-bad-libs-${VERSION}/annotation-glossary.html
 share/gtk-doc/html/gst-plugins-bad-libs-${VERSION}/api-index-deprecated.html

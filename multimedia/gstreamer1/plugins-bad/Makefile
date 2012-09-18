@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2012/09/14 08:04:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/18 07:54:38 ajacoutot Exp $
 
 COMMENT=		bad elements for GStreamer
 
-V=			0.11.94
+V=			0.11.99
 DISTNAME=		gst-plugins-bad-${V}
 PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-bad-${V}
 
@@ -19,7 +19,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gstrtp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
 WANTLIB += gthread-2.0 m mms orc-0.4 pcre pthread schroedinger-1.0
-WANTLIB += vpx z
+WANTLIB += z
 
 MODULES =		devel/dconf
 
@@ -29,7 +29,6 @@ BUILD_DEPENDS +=	graphics/libexif
 LIB_DEPENDS=		${P}/plugins-base \
 			multimedia/libass \
 			multimedia/libmms \
-			multimedia/libvpx \
 			multimedia/schroedinger
 
 # each plugin that has an external dependency is disabled unless proved useful
