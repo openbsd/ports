@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2012/09/17 06:00:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2012/09/18 18:05:16 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,6 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c m pthread readline nspr4 ncurses plc4 plds4 stdc++
+
+VMEM_WARNING =	Yes
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Djit=1 -Damd64=0
