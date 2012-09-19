@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: syslog_ng.rc,v 1.4 2012/06/08 21:06:46 steven Exp $
+# $OpenBSD: syslog_ng.rc,v 1.5 2012/09/19 12:25:40 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/syslog-ng"
 daemon_flags="-p /var/run/syslog.pid"
@@ -12,7 +12,7 @@ pexp="${daemon}"
 # needed in case syslog-ng(8) is started early in the boot sequence
 # before rc(8) had a chance to run ldconfig
 rc_pre() {
-	[ "${INRC}" ] && /sbin/ldconfig ${LOCALBASE}/lib || return 0
+	[ "${INRC}" ] && /sbin/ldconfig -m ${LOCALBASE}/lib || return 0
 }
 
 rc_cmd $1
