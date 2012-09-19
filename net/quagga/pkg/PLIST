@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2012/04/28 11:06:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2012/09/19 16:35:06 sthen Exp $
 @conflict zebra-*
 @newgroup _quagga:525
 @newuser _quagga:525:_quagga:daemon:Quagga Account:/nonexistent:/sbin/nologin
@@ -66,12 +66,14 @@ lib/libzebra.a
 lib/libzebra.la
 @man man/man1/vtysh.1
 @man man/man8/bgpd.8
-@man man/man8/isisd.8
 @man man/man8/ospf6d.8
+@man man/man8/ospfclient.8
 @man man/man8/ospfd.8
 @man man/man8/ripd.8
 @man man/man8/ripngd.8
+@man man/man8/watchquagga.8
 @man man/man8/zebra.8
+@bin sbin/babeld
 @bin sbin/bgpd
 @bin sbin/ospf6d
 @bin sbin/ospfclient
@@ -84,6 +86,7 @@ share/doc/quagga/
 share/doc/quagga/README
 share/doc/quagga/SERVICES
 share/examples/quagga/
+share/examples/quagga/babeld.conf.sample
 share/examples/quagga/bgpd.conf.sample
 share/examples/quagga/bgpd.conf.sample2
 share/examples/quagga/ospf6d.conf.sample

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2012/03/31 10:51:47 sthen Exp $
---- configure.ac.orig	Tue Mar 20 20:59:59 2012
-+++ configure.ac	Tue Mar 20 21:00:03 2012
-@@ -935,7 +935,7 @@ AC_CHECK_MEMBERS([struct ip_mreqn.imr_ifindex], [], []
+$OpenBSD: patch-configure_ac,v 1.2 2012/09/19 16:35:06 sthen Exp $
+--- configure.ac.orig	Tue May  1 20:42:00 2012
++++ configure.ac	Wed Sep 19 14:40:30 2012
+@@ -946,7 +946,7 @@ AC_CHECK_MEMBERS([struct ip_mreqn.imr_ifindex], [], []
  AC_MSG_CHECKING([for BSD struct ip_mreq hack])
  AC_TRY_COMPILE([#ifdef HAVE_SYS_PARAM_H
  #include <sys/param.h>
