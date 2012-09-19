@@ -1,5 +1,2 @@
-MD5 (ghc/MonadCatchIO-mtl-0.3.0.4.tar.gz) = KSF+Rmf5byBxYREl3p/Icg==
-RMD160 (ghc/MonadCatchIO-mtl-0.3.0.4.tar.gz) = y8Lems31RpidX+BumHEySc7u32s=
-SHA1 (ghc/MonadCatchIO-mtl-0.3.0.4.tar.gz) = 1aUSbF/7musPQ+e9M60yX6MBx6U=
-SHA256 (ghc/MonadCatchIO-mtl-0.3.0.4.tar.gz) = p3Z5ih8HlSpxue3SJBi8z9DjthwvI7RjTZsoTq/L7XM=
-SIZE (ghc/MonadCatchIO-mtl-0.3.0.4.tar.gz) = 2965
+SHA256 (ghc/MonadCatchIO-mtl-0.3.0.5.tar.gz) = FzehCnymNmZARWx18rDIA9sXQzoxTyxepcJTRVzsggU=
+SIZE (ghc/MonadCatchIO-mtl-0.3.0.5.tar.gz) = 2985
