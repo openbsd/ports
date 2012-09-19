@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.38 2012/09/10 09:16:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.39 2012/09/19 15:53:22 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -147,6 +147,7 @@ piwik/core/PluginsFunctions/WidgetsList.php
 piwik/core/PluginsManager.php
 piwik/core/ProxyHeaders.php
 piwik/core/QuickForm2.php
+piwik/core/RankingQuery.php
 piwik/core/ReportRenderer/
 piwik/core/ReportRenderer.php
 piwik/core/ReportRenderer/Html.php
@@ -262,6 +263,7 @@ piwik/core/Updates/1.7-b1.php
 piwik/core/Updates/1.7.2-rc5.php
 piwik/core/Updates/1.7.2-rc7.php
 piwik/core/Updates/1.8.3-b1.php
+piwik/core/Updates/1.8.4-b1.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View/
@@ -1213,35 +1215,6 @@ piwik/misc/cron/archive.php
 piwik/misc/cron/archive.sh
 piwik/misc/cron/archive.windows.ps1
 piwik/misc/crossdomain.xml
-piwik/misc/deploy/
-piwik/misc/deploy/puppet/
-piwik/misc/deploy/puppet/modules/
-piwik/misc/deploy/puppet/modules/piwik/
-piwik/misc/deploy/puppet/modules/piwik/CHANGELOG
-piwik/misc/deploy/puppet/modules/piwik/LICENSE
-piwik/misc/deploy/puppet/modules/piwik/Modulefile
-piwik/misc/deploy/puppet/modules/piwik/README.md
-piwik/misc/deploy/puppet/modules/piwik/files/
-piwik/misc/deploy/puppet/modules/piwik/files/etc/
-piwik/misc/deploy/puppet/modules/piwik/files/etc/php5/
-piwik/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/
-piwik/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/mysqli.ini
-piwik/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo.ini
-piwik/misc/deploy/puppet/modules/piwik/files/etc/php5/conf.d/pdo_mysql.ini
-piwik/misc/deploy/puppet/modules/piwik/manifests/
-piwik/misc/deploy/puppet/modules/piwik/manifests/apache.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/base.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/db.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/init.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/loganalytics.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/nginx.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/params.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/php.pp
-piwik/misc/deploy/puppet/modules/piwik/manifests/repo.pp
-piwik/misc/deploy/puppet/site.pp
-piwik/misc/deploy/vagrant/
-piwik/misc/deploy/vagrant/precise64/
-piwik/misc/deploy/vagrant/precise64/Vagrantfile
 piwik/misc/download-count.txt
 piwik/misc/generateDoc.bat
 piwik/misc/generateDoc.sh
@@ -1353,6 +1326,7 @@ piwik/plugins/CoreHome/templates/sites_selection.tpl
 piwik/plugins/CoreHome/templates/sparkline.js
 piwik/plugins/CoreHome/templates/sparkline_footer.tpl
 piwik/plugins/CoreHome/templates/styles.css
+piwik/plugins/CoreHome/templates/tooltip.js
 piwik/plugins/CoreHome/templates/top_bar.tpl
 piwik/plugins/CoreHome/templates/top_screen.tpl
 piwik/plugins/CorePluginsAdmin/
@@ -1540,17 +1514,14 @@ piwik/plugins/Login/
 piwik/plugins/Login/Auth.php
 piwik/plugins/Login/Controller.php
 piwik/plugins/Login/FormLogin.php
-piwik/plugins/Login/FormPassword.php
 piwik/plugins/Login/FormResetPassword.php
 piwik/plugins/Login/Login.php
 piwik/plugins/Login/templates/
 piwik/plugins/Login/templates/header.tpl
 piwik/plugins/Login/templates/login.css
+piwik/plugins/Login/templates/login.js
 piwik/plugins/Login/templates/login.tpl
-piwik/plugins/Login/templates/lostPassword.tpl
-piwik/plugins/Login/templates/passwordchanged.tpl
-piwik/plugins/Login/templates/passwordsent.tpl
-piwik/plugins/Login/templates/resetPassword.tpl
+piwik/plugins/Login/templates/message.tpl
 piwik/plugins/MobileMessaging/
 piwik/plugins/MobileMessaging/API.php
 piwik/plugins/MobileMessaging/APIException.php
@@ -2217,6 +2188,7 @@ piwik/plugins/UserSettings/images/browsers/AM.gif
 piwik/plugins/UserSettings/images/browsers/AR.gif
 piwik/plugins/UserSettings/images/browsers/AV.gif
 piwik/plugins/UserSettings/images/browsers/AW.gif
+piwik/plugins/UserSettings/images/browsers/B2.gif
 piwik/plugins/UserSettings/images/browsers/BB.gif
 piwik/plugins/UserSettings/images/browsers/BE.gif
 piwik/plugins/UserSettings/images/browsers/BP.gif
@@ -2256,6 +2228,7 @@ piwik/plugins/UserSettings/images/browsers/NS.gif
 piwik/plugins/UserSettings/images/browsers/OP.gif
 piwik/plugins/UserSettings/images/browsers/OW.gif
 piwik/plugins/UserSettings/images/browsers/PX.gif
+piwik/plugins/UserSettings/images/browsers/RK.gif
 piwik/plugins/UserSettings/images/browsers/SF.gif
 piwik/plugins/UserSettings/images/browsers/SM.gif
 piwik/plugins/UserSettings/images/browsers/TI.gif
@@ -2266,6 +2239,7 @@ piwik/plugins/UserSettings/images/os/
 piwik/plugins/UserSettings/images/os/AIX.gif
 piwik/plugins/UserSettings/images/os/AMI.gif
 piwik/plugins/UserSettings/images/os/AND.gif
+piwik/plugins/UserSettings/images/os/BBX.gif
 piwik/plugins/UserSettings/images/os/BEO.gif
 piwik/plugins/UserSettings/images/os/BLB.gif
 piwik/plugins/UserSettings/images/os/BSD.gif
@@ -2447,6 +2421,7 @@ piwik/themes/default/images/minus.png
 piwik/themes/default/images/ok.png
 piwik/themes/default/images/page_border_grad.png
 piwik/themes/default/images/plus.png
+piwik/themes/default/images/plus_blue.png
 piwik/themes/default/images/refresh.png
 piwik/themes/default/images/row_evolution.png
 piwik/themes/default/images/search_bg.png
