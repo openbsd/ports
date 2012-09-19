@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacoutot Exp $
---- src/polkit/polkitunixprocess.c.orig	Mon Aug  1 15:42:02 2011
-+++ src/polkit/polkitunixprocess.c	Wed Aug 17 18:39:34 2011
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.4 2012/09/19 13:03:58 ajacoutot Exp $
+--- src/polkit/polkitunixprocess.c.orig	Tue Apr 24 18:05:34 2012
++++ src/polkit/polkitunixprocess.c	Wed Sep 19 14:52:25 2012
 @@ -29,6 +29,12 @@
  #include <sys/sysctl.h>
  #include <sys/user.h>
@@ -23,12 +23,13 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacout
  static gboolean get_kinfo_proc (gint pid, struct kinfo_proc *p);
  #endif
  
-@@ -554,12 +560,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
+@@ -554,12 +560,39 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
  }
  #endif
  
 +#ifdef __OpenBSD__
-+get_kinfo_proc (pid_t pid,
++static gboolean
++get_kinfo_proc (gint pid,
 +		struct kinfo_proc *p)
 +{
 +	int name[6];
@@ -63,7 +64,7 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacout
    gchar *filename;
    gchar *contents;
    size_t length;
-@@ -647,7 +679,11 @@ get_start_time_for_pid (pid_t    pid,
+@@ -647,7 +680,11 @@ get_start_time_for_pid (pid_t    pid,
        goto out;
      }
  
@@ -75,7 +76,7 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacout
  
  out:
  #endif
-@@ -662,7 +698,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -662,7 +699,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    gint result;
    gchar *contents;
    gchar **lines;
@@ -84,7 +85,7 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacout
    struct kinfo_proc p;
  #else
    gchar filename[64];
-@@ -676,7 +712,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -676,7 +713,7 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
    lines = NULL;
    contents = NULL;
  
@@ -93,7 +94,7 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.3 2011/08/17 16:59:27 ajacout
    if (get_kinfo_proc (process->pid, &p) == 0)
      {
        g_set_error (error,
-@@ -688,7 +724,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
+@@ -688,7 +725,11 @@ _polkit_unix_process_get_owner (PolkitUnixProcess  *pr
        goto out;
      }
  
