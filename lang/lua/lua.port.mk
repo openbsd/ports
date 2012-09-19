@@ -1,4 +1,4 @@
-# $OpenBSD: lua.port.mk,v 1.21 2012/08/05 08:07:28 sthen Exp $
+# $OpenBSD: lua.port.mk,v 1.22 2012/09/19 08:14:51 jasper Exp $
 
 CATEGORIES+=	lang/lua
 
@@ -117,12 +117,6 @@ BUILD_DEPENDS+=		${_MODLUA_BUILD_DEPENDS} \
 .endif
 
 REGRESS_DEPENDS+=	${_MODLUA_REGRESS_DEPENDS}
-
-# XXX This sets PKG_ARCH=* too easily.
-# When this is fixed, revert games/freedroidrpg r1.20
-.if !defined(SHARED_ONLY) || ${SHARED_ONLY:L} == "no"
-PKG_ARCH=		*
-.endif
 
 SUBST_VARS+=	MODLUA_VERSION MODLUA_LIB MODLUA_INCL_DIR \
 		MODLUA_EXAMPLEDIR MODLUA_DOCDIR MODLUA_LIBDIR \
