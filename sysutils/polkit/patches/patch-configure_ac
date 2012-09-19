@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.4 2012/02/16 22:28:23 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2012/09/19 12:39:34 ajacoutot Exp $
 
 Force disabling gtk-doc.
 Add bsd_auth(3) support.
@@ -14,15 +14,6 @@ Add bsd_auth(3) support.
  #### gcc warning flags
  
  if test "x$GCC" = "xyes"; then
-@@ -144,7 +142,7 @@ AC_SUBST(EXPAT_LIBS)
- AC_CHECK_FUNCS(clearenv)
- 
- if test "x$GCC" = "xyes"; then
--  LDFLAGS="-Wl,--as-needed $LDFLAGS"
-+  LDFLAGS="$LDFLAGS"
- fi
- 
- dnl ---------------------------------------------------------------------------
 @@ -222,6 +220,11 @@ case $POLKIT_AUTHFW in
      AC_DEFINE(POLKIT_AUTHFW_SHADOW, 1, [If using the Shadow authentication framework])
      ;;

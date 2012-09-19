@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2012/09/01 14:36:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2012/09/19 12:39:34 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
-DISTNAME=	polkit-0.104
-REVISION=	0
+DISTNAME=	polkit-0.105
 
 SHARED_LIBS +=  polkit-gobject-1	1.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	1.0 # .0.0
@@ -11,7 +10,7 @@ SHARED_LIBS +=  polkit-agent-1		1.0 # .0.0
 
 CATEGORIES=	sysutils security
 
-HOMEPAGE=	http://www.freedesktop.org/wiki/Software/PolicyKit
+HOMEPAGE=	http://www.freedesktop.org/wiki/Software/polkit
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -21,13 +20,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c expat ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 pcre pthread z
+WANTLIB += c expat gio-2.0 glib-2.0 gobject-2.0 pthread
 
-MASTER_SITES=	http://hal.freedesktop.org/releases/
+MASTER_SITES=	http://www.freedesktop.org/software/polkit/releases/
 
-MODULES=	textproc/intltool \
-		devel/gettext
+MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
@@ -48,6 +45,8 @@ LIB_DEPENDS=	devel/glib2
 
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION=1.10
+
+MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} ${WRKSRC}/test/mocklibc
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

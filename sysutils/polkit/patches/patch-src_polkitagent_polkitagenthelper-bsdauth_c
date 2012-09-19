@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.4 2011/04/28 13:09:07 ajacoutot Exp $
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.5 2012/09/19 12:39:34 ajacoutot Exp $
 --- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Sat Dec  4 09:39:18 2010
 +++ src/polkitagent/polkitagenthelper-bsdauth.c	Sat Dec  4 09:40:52 2010
 @@ -0,0 +1,190 @@
@@ -143,22 +143,22 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.4 2011/04/28 13:
 +#endif
 +
 +#ifdef PAH_DEBUG
-+  fprintf (stderr, "polkit-agent-helper-1: sending D-Bus message to PolicyKit daemon\n");
++  fprintf (stderr, "polkit-agent-helper-1: sending D-Bus message to polkit daemon\n");
 +#endif /* PAH_DEBUG */
 +
-+  /* now send a D-Bus message to the PolicyKit daemon that
++  /* now send a D-Bus message to the polkit daemon that
 +   * includes a) the cookie; and b) the user we authenticated
 +   */
 +  if (!send_dbus_message (cookie, user_to_auth))
 +    {
 +#ifdef PAH_DEBUG
-+      fprintf (stderr, "polkit-agent-helper-1: error sending D-Bus message to PolicyKit daemon\n");
++      fprintf (stderr, "polkit-agent-helper-1: error sending D-Bus message to polkit daemon\n");
 +#endif /* PAH_DEBUG */
 +      goto error;
 +    }
 +
 +#ifdef PAH_DEBUG
-+  fprintf (stderr, "polkit-agent-helper-1: successfully sent D-Bus message to PolicyKit daemon\n");
++  fprintf (stderr, "polkit-agent-helper-1: successfully sent D-Bus message to polkit daemon\n");
 +#endif /* PAH_DEBUG */
 +
 +  fprintf (stdout, "SUCCESS\n");

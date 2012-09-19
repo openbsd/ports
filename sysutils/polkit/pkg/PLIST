@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2012/02/16 22:28:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2012/09/19 12:39:34 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -8,6 +8,7 @@
 @bin bin/pkexec
 @mode
 @owner
+@bin bin/pkttyagent
 include/polkit-1/
 include/polkit-1/polkit/
 include/polkit-1/polkit/polkit.h
@@ -71,6 +72,7 @@ lib/polkit-1/extensions/
 @man man/man1/pkaction.1
 @man man/man1/pkcheck.1
 @man man/man1/pkexec.1
+@man man/man1/pkttyagent.1
 @man man/man8/pklocalauthority.8
 @man man/man8/polkit.8
 @man man/man8/polkitd.8
