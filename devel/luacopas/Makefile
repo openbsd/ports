@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/19 08:15:08 jasper Exp $
+
+PKG_ARCH =      *
 
 COMMENT=	coroutine oriented portable asynchronous services for lua
 DISTNAME=	copas-1.1.6

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2012/08/12 17:26:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2012/09/19 08:15:09 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		lua library for the expat XML parser
 DISTNAME =		luaexpat-1.2.0
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 HOMEPAGE =		http://matthewwild.co.uk/projects/luaexpat/

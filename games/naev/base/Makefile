@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/13 19:16:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:08 jasper Exp $
 
 COMMENT =		2D space trading and combat game
 
 DISTNAME =		naev-${VERSION}
-REVISION =		1
+REVISION =		2
 
 EXTRACT_SUFX = 		.tar.bz2
 

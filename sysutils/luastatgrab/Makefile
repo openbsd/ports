@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2012/09/19 08:15:09 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		libstatgrab bindings for Lua
 
 DISTNAME=		lua-statgrab-0.3.0
 PKGNAME=		${DISTNAME:S/-//}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		sysutils devel
 
 HOMEPAGE=		http://luaforge.net/projects/lua-statgrab

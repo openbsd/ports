@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.3 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/19 08:15:09 jasper Exp $
+
+PKG_ARCH =      *
 
 COMMENT=	scripts libquvi uses for parsing the media details
 

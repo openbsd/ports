@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2012/05/15 19:24:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2012/09/19 08:15:08 jasper Exp $
 
 BROKEN-sparc64 =	Illegal operands error building SDL_gfxPrimitives.cpp
 
@@ -7,7 +7,7 @@ COMMENT =		blinkensisters - hunt for the lost pixels
 V =			0.5.3
 DISTNAME =		LostPixels-${V}-source-with-addons
 PKGNAME =		lostpixels-${V}
-REVISION =		3
+REVISION =		4
 HOMEPAGE =		http://www.blinkensisters.org
 
 CATEGORIES =		games

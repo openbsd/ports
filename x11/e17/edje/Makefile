@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2012/08/21 14:25:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2012/09/19 08:15:09 jasper Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-1.0.0
 
-REVISION =		3
+REVISION =		4
 EPOCH =			2
-
-# XXX stop lua module creating a no-arch package
-SHARED_ONLY =		Yes
 
 SHARED_LIBS +=		edje 1.0
 

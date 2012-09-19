@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:09 jasper Exp $
 
 COMMENT=	library to parse flash media stream URLs
 
 DISTNAME=	libquvi-0.4.0
-REVISION=	2
+REVISION=	3
 SHARED_LIBS +=  quvi                 0.0      # 7.0
 
 MODULES=	devel/gettext \

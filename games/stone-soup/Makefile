@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2012/07/13 09:08:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2012/09/19 08:15:09 jasper Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -9,7 +9,7 @@ VERSION = 	0.9.1
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
-REVISION =	2
+REVISION =	3
 
 BROKEN-arm=	tilegen.elf loops burning cpu
 

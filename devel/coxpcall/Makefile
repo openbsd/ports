@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.4 2012/07/10 15:22:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2012/09/19 08:15:08 jasper Exp $
+
+PKG_ARCH =	*
 
 COMMENT =	encapsulate protected Lua calls with a coroutine based loop
 

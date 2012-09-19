@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2012/09/19 08:15:09 jasper Exp $
 
 COMMENT=	remote IMAP filtering utility
 
 DISTNAME=	imapfilter-2.2.3
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 
 HOMEPAGE=	http://imapfilter.hellug.gr/

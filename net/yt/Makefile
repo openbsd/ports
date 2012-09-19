@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2012/08/06 09:47:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2012/09/19 08:15:09 jasper Exp $
+
+PKG_ARCH =      *
 
 COMMENT=	fetch YouTube and Google videos
 

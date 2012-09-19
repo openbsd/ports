@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2012/07/10 15:22:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2012/09/19 08:15:09 jasper Exp $
 
 COMMENT =		the enlightened window manager
-
-# XXX stop lua module creating a no-arch package...
-SHARED_ONLY =		Yes
 
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION =		7
+REVISION =		8
 EPOCH =			0
 
 # BSD
