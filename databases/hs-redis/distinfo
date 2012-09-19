@@ -1,5 +1,2 @@
-MD5 (ghc/redis-0.12.1.tar.gz) = NLccJh/LHd7QVve67aTUMg==
-RMD160 (ghc/redis-0.12.1.tar.gz) = 7y8AGjLCa/7rbGWMGAD9wDors6w=
-SHA1 (ghc/redis-0.12.1.tar.gz) = zVCec0mW4nh/3X7JGYTiXNX+jlw=
-SHA256 (ghc/redis-0.12.1.tar.gz) = 9lta1hDARlWsE3Qdtjoqyg0MReROxx0oluGmv/KtujA=
-SIZE (ghc/redis-0.12.1.tar.gz) = 37309
+SHA256 (ghc/redis-0.13.tar.gz) = KNbQc/o5qn6Mvyo1dCH0Y2e+2zXv/69EV0SMx46H1eY=
+SIZE (ghc/redis-0.13.tar.gz) = 38224
