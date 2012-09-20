@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2012/04/30 13:11:17 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2012/09/20 16:59:47 stsp Exp $
 
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
@@ -8,6 +8,7 @@ PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
+REVISION-extras = 0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -76,6 +77,7 @@ RUN_DEPENDS-extras += \
 		x11/xfce4/xfce4-systemload \
 		x11/xfce4/xfce4-time-out \
 		x11/xfce4/xfce4-verve \
-		x11/xfce4/xfce4-wavelan
+		x11/xfce4/xfce4-wavelan \
+		x11/xfce4/xfce4-weather
 
 .include <bsd.port.mk>
