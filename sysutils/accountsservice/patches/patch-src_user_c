@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.15 2012/09/18 07:58:10 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.16 2012/09/20 11:30:31 ajacoutot Exp $
 --- src/user.c.orig	Thu Aug 16 21:03:51 2012
-+++ src/user.c	Tue Sep 18 09:26:27 2012
++++ src/user.c	Thu Sep 20 13:13:55 2012
 @@ -112,7 +112,12 @@ account_type_from_pwent (struct passwd *pwent)
  {
          struct group *grp;
@@ -108,12 +108,12 @@ $OpenBSD: patch-src_user_c,v 1.15 2012/09/18 07:58:10 ajacoutot Exp $
          const gchar *argv[6];
 +#else
 +        const gchar *argv[8];
-+        gchar *class;
++        gchar *class = "\0";
 +#endif
  
          if (user->account_type != account_type) {
                  sys_log (context,
-@@ -1294,33 +1330,66 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1294,17 +1330,35 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  wheel = grp->gr_gid;
  
@@ -149,11 +149,7 @@ $OpenBSD: patch-src_user_c,v 1.15 2012/09/18 07:58:10 ajacoutot Exp $
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-                         /* remove excess comma */
-                         g_string_truncate (str, str->len - 1);
-+#ifdef __OpenBSD__
-+                        class = "";
-+#endif
+@@ -1313,14 +1367,26 @@ user_change_account_type_authorized_cb (Daemon        
                          break;
                  }
  

@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.19 2012/09/11 14:42:37 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.20 2012/09/20 11:30:31 ajacoutot Exp $
 
 In default_excludes[], add any ports and system users that has a login
 shell.
@@ -12,7 +12,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 (XXX we need a way to only get local users)
 
 --- src/daemon.c.orig	Thu Aug 16 21:03:51 2012
-+++ src/daemon.c	Tue Sep 11 15:11:35 2012
++++ src/daemon.c	Thu Sep 20 13:17:37 2012
 @@ -35,6 +35,10 @@
  #include <utmpx.h>
  #endif
@@ -24,7 +24,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
  #include <glib.h>
  #include <glib/gi18n.h>
  #include <glib-object.h>
-@@ -77,6 +81,17 @@ static const char *default_excludes[] = {
+@@ -77,6 +81,18 @@ static const char *default_excludes[] = {
          "games",
          "man",
          "at",
@@ -36,13 +36,14 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 +        "_openfire",
 +        "_postgresql",
 +        "_rancid",
++        "_riak",
 +        "_rocrail",
 +        "_sogo",
 +        "_varnish",
          NULL
  };
  
-@@ -291,8 +306,11 @@ entry_generator_fgetpwent (GHashTable *users,
+@@ -291,8 +307,11 @@ entry_generator_fgetpwent (GHashTable *users,
                             gpointer   *state)
  {
          struct passwd *pwent;
@@ -54,7 +55,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          /* First iteration */
          if (*state == NULL) {
                  *state = fp = fopen (PATH_PASSWD, "r");
-@@ -305,13 +323,18 @@ entry_generator_fgetpwent (GHashTable *users,
+@@ -305,13 +324,18 @@ entry_generator_fgetpwent (GHashTable *users,
          /* Every iteration */
          fp = *state;
          pwent = fgetpwent (fp);
@@ -73,30 +74,28 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          return NULL;
  }
  
-@@ -1020,7 +1043,11 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1020,7 +1044,11 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
 +#ifndef __OpenBSD__
          const gchar *argv[9];
 +#else
-+        const gchar *argv[13];
++        const gchar *argv[11];
 +#endif
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1037,14 +1064,31 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1037,9 +1065,17 @@ daemon_create_user_authorized_cb (Daemon              
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
                  argv[5] = "wheel";
 +#ifdef __OpenBSD__
-+                argv[6] = "-g";
-+                argv[7] = "=uid";
-+                argv[8] = "-L";
-+                argv[9] = "staff";
-+                argv[10] = "--";
-+                argv[11] = cd->user_name;
-+                argv[12] = NULL;
++                argv[6] = "-L";
++                argv[7] = "staff";
++                argv[8] = "--";
++                argv[9] = cd->user_name;
++                argv[10] = NULL;
 +#else
                  argv[6] = "--";
                  argv[7] = cd->user_name;
@@ -104,20 +103,8 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
 +#endif
          }
          else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
-+#ifdef __OpenBSD__
-+                argv[4] = "-g";
-+                argv[5] = "=uid";
-+                argv[6] = cd->user_name;
-+                argv[7] = NULL;
-+#else
                  argv[4] = "--";
-                 argv[5] = cd->user_name;
-                 argv[6] = NULL;
-+#endif
-         }
-         else {
-                 throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1240,6 +1284,34 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1240,6 +1276,34 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -152,7 +139,7 @@ http://bugs.freedesktop.org/show_bug.cgi?id=41747
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
          filename = g_build_filename (USERDIR, pwent->pw_name, NULL);
-@@ -1252,11 +1324,18 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1252,11 +1316,18 @@ daemon_delete_user_authorized_cb (Daemon              
  
          argv[0] = "/usr/sbin/userdel";
          if (ud->remove_files) {
