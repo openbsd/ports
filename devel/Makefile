@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1070 2012/09/20 12:50:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.1071 2012/09/20 13:42:52 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -140,6 +140,7 @@
      SUBDIR += guilib
      SUBDIR += haddock
      SUBDIR += happy
+     SUBDIR += harfbuzz
      SUBDIR += hasktags
      SUBDIR += help2man
      SUBDIR += hmake
