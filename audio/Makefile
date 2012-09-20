@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.287 2012/08/18 07:25:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.288 2012/09/20 17:41:30 jasper Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -23,6 +23,7 @@
      SUBDIR += caps-plugins
      SUBDIR += cdparanoia
      SUBDIR += celt
+     SUBDIR += celt051
      SUBDIR += cmixer
      SUBDIR += cmt
      SUBDIR += cmu-sphinx3
