@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2012/09/20 00:08:58 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2012/09/20 13:20:02 fgsch Exp $
 
 COMMENT =	library to deal with Japanese kana-to-kanji conversion
 
 DISTNAME =	libskk-1.0.0
+REVISION =	0
 
 SHARED_LIBS =	skk	0.0 # 0.0
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2012/09/20 00:08:58 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/20 13:20:02 fgsch Exp $
 %%SHARED%%
 @bin bin/skk
 include/libskk/
@@ -6,7 +6,7 @@ include/libskk/libskk.h
 lib/girepository-1.0/
 lib/girepository-1.0/Skk-1.0.typelib
 lib/libskk.a
-@comment lib/libskk.la
+lib/libskk.la
 lib/pkgconfig/
 lib/pkgconfig/libskk.pc
 @man man/man1/skk.1
