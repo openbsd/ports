@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2012/09/05 07:15:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2012/09/20 17:49:10 ajacoutot Exp $
 
 # XXX check why our getopt_long(3) fails the configure test
 # + rm patch-gl_unistd_in_h
@@ -7,6 +7,7 @@ COMMENT=	GNU Transport Layer Security library
 
 DISTNAME=	gnutls-3.1.1
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 CATEGORIES=	security
 
