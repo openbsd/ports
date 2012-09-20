@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.77 2012/09/18 18:24:26 kili Exp $
+# $OpenBSD: Makefile,v 1.78 2012/09/20 16:38:16 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
+REVISION-main =		0
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		7.0.4.20120626
+BIN_VER =		7.4.2.20120917
 
 # xhtml replacement version (for meta/haskell-platform)
 XHTML_VER =		3000.2.1
