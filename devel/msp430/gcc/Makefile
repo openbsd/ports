@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2012/07/06 16:41:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2012/09/20 09:51:00 jasper Exp $
 
 TOOL=			gcc
 TOOL_V= 		4.6.3
 
-REVISION=		0
+REVISION=		1
 
 GNU_TOOL=		Yes
 
@@ -11,6 +11,9 @@ MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(TOOL_V)/}
 
 DISTFILES=		gcc-core-${TOOL_V}${EXTRACT_SUFX} \
 			gcc-g++-${TOOL_V}${EXTRACT_SUFX}
+
+LTS_PATCHES=		msp430-gcc-4.6.3-20120406-sf3540953.patch \
+			msp430-gcc-4.6.3-20120406-sf3559978.patch
 
 WANTLIB +=		c gmp mpc mpfr
 
