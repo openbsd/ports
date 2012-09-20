@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2012/09/19 08:15:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2012/09/20 14:04:24 jasper Exp $
 
 COMMENT=		2D games framework for use with Lua
 
 V=			0.8.0
 DISTNAME=		love-$V-linux-src
 PKGNAME=		love-$V
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://love2d.org/
 
@@ -27,7 +27,7 @@ WANTLIB += GL Half IL Iex IlmImf IlmThread Imath SDL X11 Xdamage
 WANTLIB += Xext Xfixes Xxf86vm c drm freetype jasper jpeg lcms
 WANTLIB += ltdl ${MODLUA_WANTLIB} m modplug mpg123 ogg openal physfs-1.0
 WANTLIB += png pthread sndio stdc++ tiff usbhid vorbis vorbisfile
-WANTLIB += xcb z
+WANTLIB += xcb z mng
 
 LIB_DEPENDS=		audio/libmodplug \
 			audio/mpg123 \
