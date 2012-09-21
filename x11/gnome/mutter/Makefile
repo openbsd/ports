@@ -1,10 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2012/09/01 14:36:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2012/09/21 13:25:27 ajacoutot Exp $
+
+# XXX remove on next update
+MASTER_SITES0=		http://distfiles.bsdfrog.org/
+PATCHFILES=		mutter-XXX.diff:0
+PATCH_DIST_STRIP=	-p1
 
 COMMENT=		window and compositing manager
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		3.4.1
-REVISION=	0
+REVISION=		1
 
 SHARED_LIBS +=  mutter                    0.0 # 0.0
 
@@ -16,12 +21,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
-WANTLIB += clutter-1.0 cogl cogl-pango drm expat ffi fontconfig
-WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
-WANTLIB += json-glib-1.0 ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += canberra canberra-gtk3 clutter-1.0 cogl cogl-pango
+WANTLIB += dbus-1 drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-3 harfbuzz icudata icule icuuc json-glib-1.0
+WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += stdc++ vorbis vorbisfile xcb xcb-aux xcb-render xcb-shm
 WANTLIB += z
 
