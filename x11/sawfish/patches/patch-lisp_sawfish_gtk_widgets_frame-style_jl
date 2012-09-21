@@ -1,7 +1,7 @@
-$OpenBSD: patch-lisp_sawfish_gtk_widgets_frame-style_jl,v 1.1 2012/07/07 09:19:16 jasper Exp $
---- lisp/sawfish/gtk/widgets/frame-style.jl.orig	Tue Jun 26 22:50:43 2012
-+++ lisp/sawfish/gtk/widgets/frame-style.jl	Sat Jul  7 11:15:48 2012
-@@ -99,9 +99,7 @@
+$OpenBSD: patch-lisp_sawfish_gtk_widgets_frame-style_jl,v 1.2 2012/09/21 09:48:53 jasper Exp $
+--- lisp/sawfish/gtk/widgets/frame-style.jl.orig	Sat Sep  1 10:46:57 2012
++++ lisp/sawfish/gtk/widgets/frame-style.jl	Fri Sep 21 10:51:22 2012
+@@ -100,9 +100,7 @@
  					  (setq full dir)
  					  (throw 'out t))
  				      (error))))
