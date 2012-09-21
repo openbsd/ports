@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2012/09/21 08:10:44 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	powerful math/statistics/graphics language
 DISTNAME=	R-2.15.1
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	R	0.0  \
 		Rlapack	30.0 \
@@ -23,11 +23,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	GL ICE SM X11 Xext Xmu Xrender Xss Xt \
 		bz2 c cairo expat fontconfig freetype glib-2.0 \
-		gobject-2.0 jpeg lzma m ncurses pango-1.0 \
-		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
-		pthread pthread-stubs readline tiff xcb \
-		xcb-render xcb-shm z ${MODFORTRAN_WANTLIB} \
-		${MODTK_WANTLIB}
+		gobject-2.0 icui18n icuuc jpeg lzma m ncurses \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
+		pixman-1 png pthread pthread-stubs readline \
+		tiff xcb xcb-render xcb-shm z \
+		${MODFORTRAN_WANTLIB} ${MODTK_WANTLIB}
 
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -60,7 +60,8 @@ LIB_DEPENDS=	${MODFORTRAN_LIB_DEPENDS} \
 		devel/glib2 \
 		devel/pango \
 		graphics/png \
-		graphics/tiff
+		graphics/tiff \
+		textproc/icu4c
 RUN_DEPENDS=	archivers/gtar \
 		devel/xdg-utils
 
@@ -70,6 +71,7 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-prebuilt-html \
 		--enable-R-shlib \
 		--enable-BLAS-shlib \
+		--with-ICU \
 		--with-readline \
 		--with-tcltk \
 		--with-cairo \
