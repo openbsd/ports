@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2012/09/21 13:17:18 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.32.1
+GNOME_VERSION=	2.33.12
 PKGNAME=	glib2mm-${GNOME_VERSION}
-REVISION=	0
 
 V=		2.4
 SUBST_VARS=	V
@@ -24,8 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += pcre z m stdc++ sigc-2.0 glib-2.0>=1803 gmodule-2.0 gobject-2.0
-WANTLIB += gio-2.0 gthread-2.0 ffi
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pcre pthread sigc-2.0 stdc++ z
 
 MODULES=	devel/gettext \
 		x11/gnome
