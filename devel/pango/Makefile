@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2012/09/21 13:18:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2012/09/21 15:48:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.31.2
 GNOME_PROJECT=		pango
+REVISION=		0
 
 SHARED_LIBS +=  pango-1.0            3200.0   # 3200.0
 SHARED_LIBS +=  pangoft2-1.0         3200.0   # 3200.0
@@ -33,10 +34,7 @@ WANTLIB += stdc++ xcb xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
-SEPARATE_BUILD=		simple
-
 MODGNOME_TOOLS=		goi
-MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
 LIB_DEPENDS=		devel/glib2>=2.33.14 \
 			devel/harfbuzz

@@ -1,0 +1,17 @@
+$OpenBSD: patch-docs_check_docs,v 1.1 2012/09/21 15:48:43 ajacoutot Exp $
+
+From 07aad8b985d3ea0de268b8b772123fbca4a4aee4 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Tue, 18 Sep 2012 00:27:33 +0000
+Subject: Revert "Temporarily work around doc build breakages"
+
+--- docs/check.docs.orig	Fri Sep 21 15:56:31 2012
++++ docs/check.docs	Fri Sep 21 15:56:34 2012
+@@ -1,7 +1,5 @@
+ #!/bin/sh
+ 
+-exit 0
+-
+ LC_ALL=C
+ export LC_ALL
+ 
