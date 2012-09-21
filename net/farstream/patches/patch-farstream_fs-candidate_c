@@ -1,0 +1,27 @@
+$OpenBSD: patch-farstream_fs-candidate_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+
+From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 07 Aug 2012 22:37:00 +0000
+Subject: Fix annotations to make new gir happier
+
+--- farstream/fs-candidate.c.orig	Mon Dec  5 21:19:49 2011
++++ farstream/fs-candidate.c	Fri Sep 21 08:57:10 2012
+@@ -70,7 +70,7 @@ fs_candidate_list_get_type (void)
+ }
+ 
+ /**
+- * fs_candidate_destroy: (skip):
++ * fs_candidate_destroy: (skip)
+  * @cand: a #FsCandidate to delete
+  *
+  * Frees a #FsCandidate and all its contents
+@@ -124,7 +124,7 @@ fs_candidate_copy (const FsCandidate * cand)
+ }
+ 
+ /**
+- * fs_candidate_list_destroy: (skip):
++ * fs_candidate_list_destroy: (skip)
+  * @candidate_list: A GList of #FsCandidate
+  *
+  * Deletes a GList of #FsCandidate and its contents

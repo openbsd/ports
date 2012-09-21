@@ -1,0 +1,36 @@
+$OpenBSD: patch-farstream_fs-rtp_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+
+From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 07 Aug 2012 22:37:00 +0000
+Subject: Fix annotations to make new gir happier
+
+--- farstream/fs-rtp.c.orig	Tue Jan 10 21:38:23 2012
++++ farstream/fs-rtp.c	Fri Sep 21 08:57:10 2012
+@@ -66,7 +66,7 @@ fs_rtp_header_extension_new (guint id, FsStreamDirecti
+ }
+ 
+ /**
+- * fs_rtp_header_extension_copy: (skip):
++ * fs_rtp_header_extension_copy: (skip)
+  * @extension: The RTP header extension definition to copy
+  *
+  * Copies a #FsRtpHeaderExtension
+@@ -115,7 +115,7 @@ fs_rtp_header_extension_are_equal (FsRtpHeaderExtensio
+ }
+ 
+ /**
+- * fs_rtp_header_extension_destroy: (skip):
++ * fs_rtp_header_extension_destroy: (skip)
+  * @extension: A RTP header extension to free
+  *
+  * Frees the passed #FsRtpHeaderExtension
+@@ -158,7 +158,7 @@ fs_rtp_header_extension_list_copy (GList *extensions)
+ }
+ 
+ /**
+- * fs_rtp_header_extension_list_destroy: (skip):
++ * fs_rtp_header_extension_list_destroy: (skip)
+  * @extensions: a #GList of #FsRtpHeaderExtension
+  *
+  * Frees the passed #GList of #FsRtpHeaderExtension

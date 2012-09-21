@@ -1,0 +1,27 @@
+$OpenBSD: patch-farstream_fs-utils_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+
+From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 07 Aug 2012 22:37:00 +0000
+Subject: Fix annotations to make new gir happier
+
+--- farstream/fs-utils.c.orig	Fri Mar 16 00:17:32 2012
++++ farstream/fs-utils.c	Fri Sep 21 08:57:10 2012
+@@ -101,7 +101,7 @@ fs_utils_get_default_codec_preferences (GstElement *el
+ }
+ 
+ /**
+- * fs_utils_get_default_element_properties: (skip):
++ * fs_utils_get_default_element_properties: (skip)
+  * @element: Element for which to fetch default element properties
+  *
+  * This function produces a #GKeyFile that can be fed to
+@@ -229,7 +229,7 @@ load_default_rtp_hdrext_preferences_from_path (const g
+ }
+ 
+ /**
+- * fs_utils_get_default_rtp_header_extension_preferences
++ * fs_utils_get_default_rtp_header_extension_preferences:
+  * @element: Element for which to fetch default RTP Header Extension preferences
+  * @media_type: The #FsMediaType for which to get default RTP Header Extension
+  *  preferences

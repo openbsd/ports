@@ -1,0 +1,36 @@
+$OpenBSD: patch-farstream_fs-stream-transmitter_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+
+From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 07 Aug 2012 22:37:00 +0000
+Subject: Fix annotations to make new gir happier
+
+--- farstream/fs-stream-transmitter.c.orig	Mon Dec  5 21:19:49 2011
++++ farstream/fs-stream-transmitter.c	Fri Sep 21 08:57:10 2012
+@@ -134,7 +134,7 @@ fs_stream_transmitter_class_init (FsStreamTransmitterC
+         G_PARAM_CONSTRUCT_ONLY | G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
+ 
+   /**
+-   * FsStreamTransmitter:associate-on-source
++   * FsStreamTransmitter:associate-on-source:
+    *
+    * This tells the stream transmitter to associate incoming data with this
+    * based on the source without looking at the content if possible.
+@@ -247,7 +247,7 @@ fs_stream_transmitter_class_init (FsStreamTransmitterC
+ 
+ 
+   /**
+-   * FsStreamTransmitter::state-changed
++   * FsStreamTransmitter::state-changed:
+    * @self: #FsStreamTransmitter that emitted the signal
+    * @component: the id of the component which state has changed
+    * @state: the new state of the component
+@@ -311,7 +311,7 @@ fs_stream_transmitter_set_property (GObject *object,
+ 
+ 
+ /**
+- * fs_stream_transmitter_add_remote_candidates
++ * fs_stream_transmitter_add_remote_candidates:
+  * @streamtransmitter: a #FsStreamTranmitter
+  * @candidates: (element-type FsCandidate): a #GList of the remote candidates
+  * @error: location of a #GError, or NULL if no error occured

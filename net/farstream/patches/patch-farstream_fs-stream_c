@@ -1,0 +1,19 @@
+$OpenBSD: patch-farstream_fs-stream_c,v 1.1 2012/09/21 07:02:07 jasper Exp $
+
+From 462fd20e8174f59cf8835871a0f3fed5eb75c5c6 Mon Sep 17 00:00:00 2001
+From: Olivier Crête <olivier.crete@collabora.com>
+Date: Tue, 07 Aug 2012 22:37:00 +0000
+Subject: Fix annotations to make new gir happier
+
+--- farstream/fs-stream.c.orig	Tue Jan 10 21:34:46 2012
++++ farstream/fs-stream.c	Fri Sep 21 08:57:10 2012
+@@ -602,8 +602,7 @@ fs_stream_iterate_src_pads (FsStream *stream)
+  * @transmitter: Name of the type of transmitter to use for this stream
+  * @stream_transmitter_n_parameters: Number of parametrs passed to the stream
+  *  transmitter
+- * @stream_transmitter_parameters:
+- *   (array length=stream_transmitter_n_parameters) (allow-none):
++ * @stream_transmitter_parameters: (array length=stream_transmitter_n_parameters) (allow-none):
+  *   an array of n_parameters #GParameter struct that will be passed
+  *   to the newly-create #FsStreamTransmitter
+  * @error: location of a #GError, or %NULL if no error occured
