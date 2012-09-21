@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.65 2012/09/01 14:36:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2012/09/21 13:18:00 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		library for layout and rendering of text
 
-GNOME_VERSION=		1.30.1
+GNOME_VERSION=		1.31.2
 GNOME_PROJECT=		pango
-REVISION=	0
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
-SHARED_LIBS +=  pango-1.0            2905.0   # 2905.0
-SHARED_LIBS +=  pangox-1.0           2905.0   # 2905.0
-SHARED_LIBS +=  pangoft2-1.0         2905.0   # 2905.0
-SHARED_LIBS +=  pangoxft-1.0         2905.0   # 2905.0
-SHARED_LIBS +=  pangocairo-1.0       2905.0   # 2905.0
+SHARED_LIBS +=  pango-1.0            3200.0   # 3200.0
+SHARED_LIBS +=  pangoft2-1.0         3200.0   # 3200.0
+SHARED_LIBS +=  pangoxft-1.0         3200.0   # 3200.0
+SHARED_LIBS +=  pangocairo-1.0       3200.0   # 3200.0
 
 CATEGORIES=		devel x11
 
-HOMEPAGE=		http://www.gtk.org/
+HOMEPAGE=		http://www.pango.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,18 +26,20 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender Xxf86vm
 WANTLIB += c cairo drm expat ffi fontconfig freetype glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 harfbuzz icudata
+WANTLIB += icule icuuc m pcre pixman-1 png pthread pthread-stubs
+WANTLIB += stdc++ xcb xcb-render xcb-shm z
 
 MODULES=		devel/gettext \
 			x11/gnome
 
+SEPARATE_BUILD=		simple
+
 MODGNOME_TOOLS=		goi
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 
-LIB_DEPENDS=		devel/glib2>=2.31.20 \
-			graphics/cairo
+LIB_DEPENDS=		devel/glib2>=2.33.14 \
+			devel/harfbuzz
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
@@ -47,9 +47,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static
 
-FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples
-
 post-install:
-	rm ${PREFIX}/lib/pango/1.6.0/modules/*.la
+	rm ${PREFIX}/lib/pango/1.8.0/modules/*.la
 
 .include <bsd.port.mk>
