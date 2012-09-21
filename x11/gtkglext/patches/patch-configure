@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure,v 1.1 2012/09/21 13:20:57 ajacoutot Exp $
+--- configure.orig	Fri Sep 21 08:34:54 2012
++++ configure	Fri Sep 21 08:36:09 2012
+@@ -19880,14 +19880,14 @@ if test -n "$PKG_CONFIG"; then
+ gtk+-2.0 >= 2.0.0 \\
+ gdk-2.0 >= 2.0.0 \\
+ pango >= 1.0.0 \\
+-pangox >= 1.0.0 \\
++pangox >= 0.0.1 \\
+ gmodule-2.0 >= 2.0.0 \\
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ ") 2>&5
+   ac_status=$?
+@@ -19897,7 +19897,7 @@ gmodule-2.0 >= 2.0.0 \
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ " 2>/dev/null`
+ else
+@@ -19916,14 +19916,14 @@ if test -n "$PKG_CONFIG"; then
+ gtk+-2.0 >= 2.0.0 \\
+ gdk-2.0 >= 2.0.0 \\
+ pango >= 1.0.0 \\
+-pangox >= 1.0.0 \\
++pangox >= 0.0.1 \\
+ gmodule-2.0 >= 2.0.0 \\
+ \"") >&5
+   ($PKG_CONFIG --exists --print-errors "\
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ ") 2>&5
+   ac_status=$?
+@@ -19933,7 +19933,7 @@ gmodule-2.0 >= 2.0.0 \
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ " 2>/dev/null`
+ else
+@@ -19958,7 +19958,7 @@ fi
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ "`
+         else
+@@ -19966,7 +19966,7 @@ gmodule-2.0 >= 2.0.0 \
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ "`
+         fi
+@@ -19977,7 +19977,7 @@ gmodule-2.0 >= 2.0.0 \
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ ) were not met:
+ 
+@@ -19994,7 +19994,7 @@ echo "$as_me: error: Package requirements (\
+ gtk+-2.0 >= 2.0.0 \
+ gdk-2.0 >= 2.0.0 \
+ pango >= 1.0.0 \
+-pangox >= 1.0.0 \
++pangox >= 0.0.1 \
+ gmodule-2.0 >= 2.0.0 \
+ ) were not met:
+ 

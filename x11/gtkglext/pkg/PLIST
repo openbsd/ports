@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/06/14 13:58:38 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2012/09/21 13:20:57 ajacoutot Exp $
 %%SHARED%%
 include/gtkglext-1.0/
 include/gtkglext-1.0/gdk/
@@ -48,7 +48,6 @@ lib/pkgconfig/gdkglext-1.0.pc
 lib/pkgconfig/gdkglext-x11-1.0.pc
 lib/pkgconfig/gtkglext-1.0.pc
 lib/pkgconfig/gtkglext-x11-1.0.pc
-share/aclocal/
 share/aclocal/gtkglext-1.0.m4
 share/examples/gtkglext/
 share/examples/gtkglext/alien.lwo
