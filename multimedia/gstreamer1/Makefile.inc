@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile.inc,v 1.2 2012/09/21 14:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2012/09/21 17:11:05 ajacoutot Exp $
 
 # Most frequent usage of the GStreamer packages:
 # core		base library
-# plugins-base	minimal set: gio, playback, Ogg Vorbis
-# plugins-good	audio (sndio), volume control
+# plugins-base	minimal set: audio (sndio), gio, playback, Ogg Vorbis
+# plugins-good	audio mixer (oss)
 # plugins-ugly	mp3 decoding, dvd
 # plugins-bad	vaapi
 # plugins-libav	divx, mpeg4, h264, vp8 (same decoding capabilities as FFmpeg)
